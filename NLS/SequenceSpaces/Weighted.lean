@@ -80,6 +80,9 @@ instance : AddCommGroup (WeightedCoeff w p) :=
 instance : Module ℂ (WeightedCoeff w p) :=
   inferInstanceAs (Module ℂ ↥(weightedSubmodule w p))
 
+@[simp]
+theorem zero_val (n : ℤ) : (0 : WeightedCoeff w p).val n = 0 := rfl
+
 /-- Multiplying coefficients by the weight is an algebraic linear equivalence. -/
 noncomputable def weightEquiv : WeightedCoeff w p ≃ₗ[ℂ] Coeff p where
   toFun a := ⟨fun n => (w n : ℂ) * a.val n, a.property⟩

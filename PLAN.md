@@ -46,7 +46,11 @@ introduced. Definition-only stubs do not count as proved results.
 
 The Fourier-side convolution multiplication estimate
 `FL^p × FL^{1,p} → FL^p` is now proved for every finite `p≥1`, with a constant
-depending only on `p`. The next targets are the domain inclusion and derivative,
-the two-component operator, the free resolvent away from `πℤ`, and compactness
-by finite-rank approximation. Physical-space interpretation is still a separate
-proof obligation.
+depending only on `p`. The scalar and pair domain inclusions, differentiation,
+and the two-component operator are also proved, with explicit period-two signs
+and maximum-pair-norm bounds. Both signed free modes have eigenvalue `π n`.
+
+The next targets are the free resolvent away from `πℤ`, compactness by finite-rank
+approximation, and closedness with relative perturbation estimates. Physical-space
+interpretation, period-one embedding, and comparison with the dissertation's pair
+norm are still separate proof obligations.

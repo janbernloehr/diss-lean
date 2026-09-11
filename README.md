@@ -6,8 +6,9 @@ Fourier Transform for the dNLS Equation* (2016).
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
 The library currently proves sequence-space foundations, the `lp × l1 → lp`
-convolution inequality, and the Fourier-side potential multiplication estimate
-on the one-derivative domain. The main dissertation theorems remain future work.
+convolution inequality, and a densely defined coefficient-space Zakharov–Shabat
+operator with norm bounds and signed free Fourier modes. The main dissertation
+theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -35,8 +36,9 @@ For the build, public-API examples, and a transitive axiom audit:
 The audit rejects admitted proofs and additional mathematical axioms in every
 declaration under `NLS`, including definitions and instances.
 
-The examples check multiplication at `p = 1, 2, 3`, convolution at `p = ∞`,
-the sign of a frequency shift, and multiplication by the constant unit potential.
+The examples check multiplication at `p = 1, 2, 3`, convolution and differentiation
+at `p = ∞`, domain density, operator bounds, Fourier signs, both signed free
+spectral equations, and nonzero off-diagonal potential coupling.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -49,8 +51,12 @@ installation is absent. No shell startup files are modified.
 - Finite projections are first defined for arbitrary finite frequency sets.
 - Weighted spaces carry the transported `lp` norm topology, not the pointwise
   topology of the underlying raw sequences.
-- Scalar sequence spaces are established before selecting a norm on potential
-  pairs. The usual product norm is not silently identified with the thesis norm.
+- Pair spaces use the maximum of the component norms. The dissertation uses a
+  different pair norm; comparison and transfer of constants remain to be proved.
+- Both scalar components use period-two modes `exp(i π n x)`. The free symbols
+  are `-π n` and `+π n`; the signed modes `eₙ⁻` and `eₙ⁺` both have eigenvalue `π n`.
+- The operator is a bounded map from the one-derivative domain to the base space.
+  Closedness of its unbounded realization and resolvent results remain future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

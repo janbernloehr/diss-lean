@@ -7,3 +7,5 @@ import NLS.SequenceSpaces.Convolution
 import NLS.SequenceSpaces.Embedding
 import NLS.SequenceSpaces.SobolevEmbedding
 import NLS.ZakharovShabat.Potential
+import NLS.ZakharovShabat.Domain
+import NLS.ZakharovShabat.Operator
