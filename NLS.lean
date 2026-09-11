@@ -28,3 +28,5 @@ import NLS.ZakharovShabat.SpectralProjections
 import NLS.ZakharovShabat.SpectralClusters
 import NLS.FunctionalAnalysis.CircleIntegral
 import NLS.ZakharovShabat.ResolventContour
+import NLS.ZakharovShabat.ContourProjection
+import NLS.ZakharovShabat.ContourSpectrum

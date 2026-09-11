@@ -626,3 +626,73 @@ example : resolventCircleIntegral (p := 3) (by simp) 0 0 (Real.pi / 2)
       simpa only [Complex.norm_real, Real.norm_eq_abs, abs_of_pos Real.pi_pos] using hnorm
     linarith [Real.pi_pos]
   · simpa using freePositive_root 1
+
+-- Nested-circle multiplication does not require a spectral gap between the circles.
+example (φ : PairSpace 3) (c : ℂ) (r R : ℝ) (hr : 0 ≤ r) (hrR : r < R)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ)
+    (hC : Metric.sphere c R ⊆ resolventSet (by simp) φ) :
+    resolventCircleIntegral (by simp) φ c r * resolventCircleIntegral (by simp) φ c R =
+      resolventCircleIntegral (by simp) φ c r :=
+  resolventCircleIntegral_mul_nested (by simp) φ c r R hr hrR hc hC
+
+example (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    IsIdempotentElem (resolventCircleIntegral (by simp) φ c r) :=
+  resolventCircleIntegral_idempotent (by simp) φ c r hr hc
+
+example (φ : PairSpace 3) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    FiniteDimensional ℂ (resolventCircleIntegral (by simp) φ c r).range :=
+  finiteDimensional_range_resolventCircleIntegral (by simp) φ c r hr hc
+
+-- This is equality of bounded operators on the entire base space.
+example (φ : PairSpace 3) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    resolventCircleIntegral (by simp) φ c r =
+      periodicClusterProjection (by simp) φ (enclosedPeriodicSpectrum (by simp) φ c r) :=
+  resolventCircleIntegral_eq_clusterProjection (by simp) φ c r hr hc
+
+example (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    Module.finrank ℂ (resolventCircleIntegral (by simp) φ c r).range =
+      ∑ z ∈ enclosedPeriodicSpectrum (by simp) φ c r, periodicAlgebraicMultiplicity (by simp) φ z :=
+  finrank_range_resolventCircleIntegral (by simp) φ c r hr hc
+
+example (φ : PairSpace 3) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    (resolventCircleIntegral (by simp) φ c r).ker =
+      ⨅ z ∈ enclosedPeriodicSpectrum (by simp) φ c r, (periodicSpectralProjection (by simp) φ z).ker :=
+  ker_resolventCircleIntegral (by simp) φ c r hr hc
+
+private theorem freeHalfPiSpectrum :
+    enclosedPeriodicSpectrum (p := 3) (by simp) 0 0 (Real.pi / 2) = {0} := by
+  ext z
+  rw [mem_enclosedPeriodicSpectrum, Finset.mem_singleton]
+  constructor
+  · rintro ⟨hspec, hball⟩
+    have hzlat : z ∈ freeLattice := by
+      by_contra hzoff
+      exact hspec (mem_resolventSet_zero_of_notMem (by simp) z hzoff)
+    obtain ⟨n, rfl⟩ := hzlat
+    have hd := Metric.mem_ball.mp hball
+    simp only [dist_zero_right, norm_mul, Complex.norm_real, Real.norm_eq_abs,
+      abs_of_pos Real.pi_pos, Complex.norm_intCast] at hd
+    have hn : n = 0 := by
+      by_contra hn
+      have habs : 1 ≤ |(n : ℝ)| := by exact_mod_cast Int.one_le_abs hn
+      nlinarith [Real.pi_pos]
+    simp [hn]
+  · intro hz
+    subst z
+    refine ⟨?_, by simpa using Real.pi_div_two_pos⟩
+    apply (mem_periodicSpectrum_iff_exists_eigenvector (by simp) 0 _).mpr
+    refine ⟨positiveMode 0, ?_, ?_⟩
+    · intro h
+      exact domainInclusion_positiveMode_ne_zero (p := 3) 0 (by rw [h, map_zero])
+    · simpa [operator_zero] using freeOperator_positiveMode (p := 3) 0
+
+-- The explicit free circle gives the whole projection at zero, not just its action on modes.
+example : resolventCircleIntegral (p := 3) (by simp) 0 0 (Real.pi / 2) =
+    periodicSpectralProjection (by simp) 0 0 :=
+  resolventCircleIntegral_eq_projection_of_singleton (by simp) 0 0 0 (Real.pi / 2)
+    (by positivity) freeHalfPiCircle_resolvent freeHalfPiSpectrum

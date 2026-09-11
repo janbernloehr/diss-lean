@@ -114,9 +114,17 @@ full root spaces and zero on excluded ones. It commutes with resolvents and
 individual spectral projections; composing with a finite cluster projection
 selects precisely the parameters inside the circle.
 
-Next are idempotence and finite rank of the contour operator, its equality with
-the enclosed finite cluster projection on the whole base space, and analytic
-dependence for fixed contours. The sharper numerical rates and vertical-strip bounds from
+Nested-circle integration now proves the contour projection law, using a
+circle-integral interchange theorem and the resolvent identity. Local spectral
+finiteness gives nearby resolvent annuli, so radius deformation proves
+idempotence for every resolvent circle. Compactness then gives finite rank.
+Decomposing the finite-dimensional contour range under a restricted resolvent
+identifies it with the enclosed root spaces, proving equality with the algebraic
+cluster projection on the whole base space. Rank is the sum of enclosed
+algebraic multiplicities; circles enclosing the same spectrum give equal operators.
+
+Next is analytic dependence of these projections on the potential for fixed
+contours, including locally constant rank. The sharper numerical rates and vertical-strip bounds from
 Lemma 3.2(ii–iii), and spectral localization, also remain open.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

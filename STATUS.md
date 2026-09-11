@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has thirty modules and 315 named public theorems. All compile on the
+The library has thirty-two modules and 329 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -35,8 +35,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.CompactDecomposition` | Fredholm bijectivity for injective compact perturbations of a nonzero scalar identity; topological kernel/range decomposition at a stabilized exponent; commutation of projections with maps preserving both summands |
 | `NLS.ZakharovShabat.SpectralProjections` | Bounded finite-rank periodic root-space projections; independence of the reference resolvent parameter; idempotence and resolvent commutation; rank equals algebraic multiplicity; compactness; unique topological decomposition; vanishing exactly on the resolvent set |
 | `NLS.ZakharovShabat.SpectralClusters` | Reciprocal resolvent representation of full root spaces; disjointness at distinct parameters; projection annihilation and commutation; finite cluster spaces and compact projections; range and kernel formulas; additive algebraic multiplicities; composition by intersection; unique cluster/complement decomposition |
-| `NLS.FunctionalAnalysis.CircleIntegral` | Bounded linear maps and evaluation commute with Banach-valued circle integrals |
+| `NLS.FunctionalAnalysis.CircleIntegral` | Bounded linear maps and evaluation commute with Banach-valued circle integrals; interchange of continuous double circle integrals |
 | `NLS.ZakharovShabat.ResolventContour` | Normalized resolvent circle integrals into the base space and domain; circle integrability, factorization, compactness, norm bound; Cauchy vanishing and annulus deformation; root-chain integral formula; inside/outside action on full root spaces; resolvent and projection commutation; finite-cluster selection |
+| `NLS.ZakharovShabat.ContourProjection` | Existence of resolvent annuli; nested-circle product law; idempotence, finite rank, and topological range/kernel decomposition of the contour operator |
+| `NLS.ZakharovShabat.ContourSpectrum` | Finite enclosed spectrum; identification of the whole contour range with enclosed root spaces; equality with the algebraic cluster projection; algebraic-multiplicity rank formula; kernel formula; equality for circles with the same enclosed spectrum; isolated-value projections |
 
 ## Current mathematical milestone
 
@@ -285,12 +287,34 @@ any finite parameter set `s`, its product with `periodicClusterProjection s` is
 the cluster projection filtered to the open disk. Boundary parameters are
 resolvent points and have zero algebraic projection.
 
-This is the circle-integral construction used in Section 3, equation (1.4), but
-idempotence and finite rank of the contour operator itself, and equality with
-the enclosed finite cluster projection on the entire base space, remain open.
-The action on all root vectors alone is not used to claim operator equality.
-Analytic dependence on the potential for fixed contours, and agreement of
-multiplicities with characteristic-function zero orders, also remain to be proved.
+The Cauchy–Riesz projection properties from Section 3, equation (1.4), are now
+proved. For two concentric resolvent circles with `0 ≤ r < R`, the product of
+their contour operators is the inner operator. The proof exchanges circle
+integrals of a continuous function on the product of circles and uses the
+resolvent identity plus the scalar Cauchy integral formulas. The annulus between
+the two circles need not be free of spectrum for this product law.
+
+Every resolvent circle has a slightly larger resolvent annulus, using local
+spectral finiteness and a positive radial gap. Radius deformation then proves
+idempotence. Its range is the eigenspace at one of a compact operator and is
+therefore finite dimensional; range and kernel form a topological direct sum.
+
+`enclosedPeriodicSpectrum hp φ c r` is the finite set of spectral values in the
+open disk. The finite-dimensional contour range is invariant under any reference
+resolvent, so its restriction decomposes into generalized eigenspaces over `ℂ`.
+Injectivity excludes a generalized eigenvalue at zero. The reciprocal spectral
+transformation and contour selection law identify the range with the sum of
+the enclosed periodic root spaces. Consequently the contour integral equals
+`periodicClusterProjection hp φ (enclosedPeriodicSpectrum hp φ c r)` as a bounded
+operator on the entire base space. Its rank is the sum of enclosed algebraic
+multiplicities, and its kernel is the intersection of the corresponding
+individual projection kernels. Circles with the same enclosed spectral values
+give equal operators, even with different centers; an isolated single value
+gives its individual root-space projection.
+
+Analytic dependence on the potential for fixed contours, local constancy of
+projection rank, and agreement of multiplicities with characteristic-function
+zero orders remain to be proved.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -298,7 +322,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 719 declarations under `NLS`, including generated
+axioms. The current audit covers 740 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -341,14 +365,16 @@ resolvent disks, annulus deformation, generalized root vectors, and selection
 within finite clusters. A circle of radius `π/2` about zero is explicitly proved
 to avoid the free lattice; its normalized integral fixes the constant free mode
 and kills the mode at `π`, checking both the orientation and the inside/outside
-selection. No admission
-or extra project axiom is used by the library.
+selection. Further contour checks cover nested-circle products, idempotence,
+finite rank, whole-space equality with the enclosed cluster projection, and the
+rank and kernel formulas. The explicit free circle of radius `π/2` is proved to
+enclose exactly zero, and its entire contour operator equals the individual
+projection at zero. No admission or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Prove idempotence and finite rank of the contour operator, identify it with
-   the enclosed finite cluster projection on the whole base space, and prove
-   analytic dependence for fixed contours.
+1. Prove analytic dependence on the potential for fixed contours and local
+   constancy of the resulting finite projection ranks.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
