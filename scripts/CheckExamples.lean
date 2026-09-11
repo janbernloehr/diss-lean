@@ -1005,3 +1005,66 @@ example : Metric.sphere ((Real.pi : ℂ) * (-200)) (Real.pi / 4) ⊆
 example : ¬ (2 * (1 : ℝ≥0∞).toReal * ‖unitPairPotential‖ < Real.pi / 4) := by
   norm_num [unitPairPotential, Prod.norm_def, lp.norm_single]
   linarith [Real.pi_le_four]
+
+-- Corollary 3.5: uniform neighborhoods and the exact central-box boundaries.
+example : IsOpen (frequencyNeighborhood (p := 1) 7 3 (1 / 100)) :=
+  isOpen_frequencyNeighborhood _ _ _
+example : Convex ℝ (frequencyNeighborhood (p := 3) 7 3 (1 / 100)) :=
+  convex_frequencyNeighborhood _ _ _
+example : (0 : PairSpace 3) ∈ frequencyNeighborhood 7 3 (1 / 100) :=
+  zero_mem_frequencyNeighborhood _ (by norm_num) (by norm_num)
+
+example (φ : PairSpace 3) :
+    ‖pairFourierTail 20 φ‖ ≤ ‖pairFourierTail 7 φ‖ :=
+  norm_pairFourierTail_antitone φ (by norm_num)
+
+-- The imaginary edge is retained in B_N, whereas the vertical edge is excluded.
+example : Complex.I ∈ centralSpectralBox 1 := by
+  norm_num [centralSpectralBox]
+  positivity
+
+private def centralRightEdge : ℂ := ((Real.pi / 2 : ℝ) : ℂ)
+
+private theorem centralRightEdge_strip : centralRightEdge ∈ verticalStrip 0 (Real.pi / 4) := by
+  simp only [verticalStrip, Set.mem_ofPred_eq, centralRightEdge, Complex.ofReal_re,
+    Int.cast_zero, mul_zero, sub_zero, Complex.norm_real, Real.norm_eq_abs,
+    abs_of_pos Real.pi_div_two_pos]
+  exact ⟨le_rfl, by linarith [Real.pi_pos]⟩
+
+private theorem centralRightEdge_exterior : centralRightEdge ∈ spectralExterior 0 (Real.pi / 4) := by
+  apply (mem_spectralExterior _ _ _).mpr
+  constructor
+  · simp [centralSpectralBox, centralRightEdge, abs_of_pos Real.pi_div_two_pos]
+  · intro n _
+    have hd := verticalStrip_denominator_lower (m := n) (by positivity) le_rfl centralRightEdge_strip
+    have hm : (0 : ℝ) ≤ (Real.pi / 4) * |((n - 0 : ℤ) : ℝ)| := by positivity
+    nlinarith
+
+example : ∃ n : ℤ, 0 ≤ n.natAbs ∧ centralRightEdge ∈ verticalStrip n (Real.pi / 4) := by
+  rcases spectralExterior_height_or_strip 0 le_rfl centralRightEdge_exterior with h | h
+  · simp [centralRightEdge] at h
+  · exact h
+
+-- The center of an excluded high-frequency disk cannot lie in the exterior.
+example : (Real.pi : ℂ) ∉ spectralExterior 0 (Real.pi / 4) := by
+  intro h
+  have hd := ((mem_spectralExterior _ _ _).mp h).2 1 (by norm_num)
+  norm_num at hd
+  linarith [Real.pi_pos]
+
+-- One cutoff works along the whole straight line from zero to an arbitrary p=3 potential.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∀ t ∈ Set.Icc (0 : ℝ) 1,
+    spectralExterior N (Real.pi / 4) ⊆ resolventSet (by simp) (t • φ) := by
+  obtain ⟨N, U, _, hc, hφ, h0, hregion⟩ :=
+    exists_uniform_spectralExterior (p := 3) (by simp) φ (r := Real.pi / 4) (by positivity) le_rfl
+  refine ⟨N, fun t ht => hregion (t • φ) ?_⟩
+  exact hc.smul_mem_of_zero_mem h0 hφ ht
+
+-- The full Corollary 3.5 package applies at the p=1 endpoint.
+example (φ : PairSpace 1) :
+    ∃ N : ℕ, ∃ U : Set (PairSpace 1), IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U,
+        AnalyticOnNhd ℂ (resolvent (by simp) ψ) (spectralExterior N (Real.pi / 4)) ∧
+        (∀ z ∈ spectralExterior N (Real.pi / 4), IsCompactOperator (resolvent (by simp) ψ z)) ∧
+        periodicSpectrum (by simp) ψ ⊆ centralSpectralBox N ∪ highSpectralDisks N (Real.pi / 4) :=
+  exists_spectralLocalization (by simp) φ

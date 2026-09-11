@@ -41,7 +41,10 @@ identities and quantitative bounds. One-sided potentials have exact two-term
 resolvents even when the original Neumann condition fails. Lemma 3.4's
 frequency-tail estimate is proved with the explicit constant `32p²` in the
 maximum pair norm, giving further punctured-strip and spectral-circle criteria.
-Arbitrary-potential localization and the main dissertation theorems remain
+Corollary 3.5 now localizes the spectrum of every potential to a central box
+and the remaining quarter-pi disks, uniformly on an open convex neighborhood
+containing both that potential and zero. The exterior resolvent is compact
+and analytic. The multiplicity counts and main dissertation theorems remain
 future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
@@ -104,7 +107,9 @@ potential at `z=i` whose perturbation norm is at least two but whose square
 vanishes, verifying failure of the original condition and validity of the new inverse.
 Frequency-tail checks exercise cutoff boundaries, both frequency signs, `p=1,3`,
 and admissible circles about `±200π` for the two-sided constant potential `(1,1)`,
-which fails the earlier small-potential strip condition.
+which fails the earlier small-potential strip condition. Localization checks
+also exercise both central-box boundary conventions, common cutoffs along
+`[0,φ]`, and the full neighborhood result at the `p=1` endpoint.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -142,7 +147,8 @@ installation is absent. No shell startup files are modified.
   height-decay estimate and its Neumann region. The double-resolvent frequency-tail
   bound of Lemma 3.4 is proved with constant `32p²` in this norm. Its squared
   criterion admits whole punctured strips and circles. Arbitrary-potential
-  localization on uniform potential neighborhoods remains future work.
+  localization is proved uniformly on open convex potential neighborhoods
+  containing zero, with the central box and disks specified in Corollary 3.5.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

@@ -157,8 +157,16 @@ the endpoint, while the near-near term contains only the potential tail
 `|k| ≥ |n|`. The symmetric tails converge to zero, and the numerical estimate
 supplies squared Neumann criteria for entire punctured strips and circles.
 
-Next combine this decay with the height region for arbitrary-potential
-localization, uniformly on potential neighborhoods, in Corollary 3.5. Use
-contour rank stability for the associated spectral multiplicity counts.
+Corollary 3.5 is also proved: the height region and the tail estimate give one
+central box and one open convex neighborhood of any potential, containing zero,
+on which every exterior resolvent is compact and analytic. The periodic
+spectrum lies in the exact central box and the high-frequency quarter-pi disks.
+The box uses a strict real boundary and a non-strict imaginary boundary; the
+coverage proof treats the vertical edges separately.
+
+Next formalize the even/odd Fourier subspaces and their invariance for
+period-one potentials (Lemma 3.6). Then construct the central rectangular
+contour and use the connected neighborhood and contour rank stability for
+the multiplicity counts of Proposition 1.1.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

@@ -44,3 +44,5 @@ import NLS.SequenceSpaces.FourierTail
 import NLS.SequenceSpaces.ConvolutionSandwich
 import NLS.SequenceSpaces.ReciprocalTail
 import NLS.ZakharovShabat.DoubleResolventEstimates
+import NLS.ZakharovShabat.FrequencyLocalization
+import NLS.ZakharovShabat.SpectralLocalization

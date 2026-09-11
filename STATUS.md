@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has forty-six modules and 449 named public theorems. All compile on the
+The library has forty-eight modules and 464 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -53,6 +53,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.ConvolutionSandwich` | Conjugate-space multipliers and weighted convolution `FL^p → FL^1`; norm bounds; exact far-output/far-input/potential-tail decomposition and the corresponding three-term estimate |
 | `NLS.SequenceSpaces.ReciprocalTail` | Half-window reciprocal-tail norm bounds, including the supremum endpoint; recentering and rescaling; explicit `8p/r * N^(-1/p)` decay |
 | `NLS.ZakharovShabat.DoubleResolventEstimates` | Pair Fourier remainders and convergence; scalar sandwich identification; reciprocal-symbol tails; Lemma 3.4 with `c_p = 32p²`; explicit squared Neumann, punctured-strip, and spectral-circle criteria |
+| `NLS.ZakharovShabat.FrequencyLocalization` | Continuous linear pair tails; monotone tail norms; open convex norm-and-tail neighborhoods containing zero; reciprocal-frequency decay; common half-size squared Neumann bounds and high-frequency resolvent strips |
+| `NLS.ZakharovShabat.SpectralLocalization` | Exact central boxes and high-frequency disks; exterior coverage including vertical edges; common open convex potential neighborhoods; Corollary 3.5 compact analytic resolvent and spectral enclosure, with a connected neighborhood containing zero |
 
 ## Current mathematical milestone
 
@@ -176,8 +178,8 @@ strip. Thus every circle of radius `r` about `πn` lies in the resolvent set.
 Choosing a nearest Fourier frequency for each spectral parameter also proves
 that the entire periodic spectrum is contained in the union of the open disks
 of radius `r` around `πℤ`. This is a uniform small-potential localization result;
-localization for arbitrary potentials uses the frequency-tail estimate below;
-the uniform neighborhood argument of Corollary 3.5 remains open.
+localization for arbitrary potentials uses the frequency-tail estimate and
+uniform neighborhood construction below.
 
 For nonzero imaginary part, Lemma 3.2(ii), printed page 24, is now proved with
 the stated height-decay rate:
@@ -240,8 +242,31 @@ The zero strip uses the global composition estimate and its full potential tail.
 Multiplying this explicit bound by `‖φ‖` and requiring it to be less than one
 puts the entire punctured strip, and its central boundary circle, in the full
 resolvent set. The symmetric potential tails converge to zero for every finite
-Banach exponent. Uniform localization on potential neighborhoods and the
-spectral multiplicity counts in Corollary 3.5 remain the next step.
+Banach exponent.
+
+**Corollary 3.5 is now proved in the coefficient spaces.** For every potential
+`φ` there are a natural cutoff `N` and an open convex neighborhood `U` containing
+both `φ` and zero such that every `ψ ∈ U` has resolvent on
+
+`C \ (centralSpectralBox N ∪ highSpectralDisks N (π/4))`.
+
+Here the box has exactly `abs(Re z) < Nπ + π/2` and `abs(Im z) ≤ N`, and the
+open disks have centers `nπ` with `|n| > N`. The full resolvent is compact and
+analytic on this entire common exterior. Equivalently, the periodic spectrum
+of every potential in `U` is contained in the stated box-and-disk union.
+The result includes the connected neighborhood containing zero used after
+Corollary 3.5; convexity also gives the whole straight line from zero to `φ`.
+
+The construction bounds `‖ψ‖` by `M = ‖φ‖ + 1` and a single tail by
+`δ = 1/(4 M C)`, where `C = 32p²/r²`. Tail monotonicity and reciprocal-frequency
+decay then give a common squared Neumann bound at most `1/2` in all sufficiently
+far strips. The uniform height estimate covers the remaining exterior after
+increasing the integer cutoff. On the strict vertical edges of the central
+box, the strip argument includes the edge index `|n| = N`; it does not assume
+these boundary points lie inside the box.
+
+Parity invariance (Lemma 3.6), the central rectangular contour, and the
+multiplicity counts in Proposition 1.1 remain to be proved.
 
 The actual unbounded realization is now defined as
 
@@ -297,8 +322,8 @@ every spectral point has a nonzero eigenvector in the one-derivative domain.
 The domain eigenspaces embed into nonzero eigenspaces of the compact resolvent,
 so their geometric multiplicities are finite. This proves the coefficient-space
 discreteness conclusion of Corollary 3.3. Generalized eigenspaces, algebraic
-multiplicities, and spectral projections are constructed below. Quantitative
-localization for arbitrary potentials remains open.
+multiplicities, and spectral projections are constructed below. The uniform
+box-and-disk localization for arbitrary potentials is proved above.
 
 The general inverse difference formula is now proved for simultaneous changes
 of potential and spectral parameter. It specializes to
@@ -441,9 +466,10 @@ in the resolvent set and both the contour rank and total enclosed algebraic
 multiplicity stay constant. Individual spectral values may move or split.
 These statements implement the fixed-contour analytic-dependence assertion
 used with Section 3, equation (1.4). The spectral circles are now uniformly
-admissible for the small-potential ball above; the arbitrary-potential case
-still requires the further localization estimates. Agreement of
-multiplicities with characteristic-function zero orders remains open.
+admissible at all sufficiently large frequencies on a common neighborhood
+of any potential, by the uniform strip result above. The central rectangular
+contour and the free-to-perturbed rank counts are still separate steps.
+Agreement of multiplicities with characteristic-function zero orders remains open.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -451,7 +477,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 963 declarations under `NLS`, including generated
+axioms. The current audit covers 994 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -520,18 +546,22 @@ Frequency-tail checks cover both retained cutoff boundaries, removal of interior
 single modes, tail convergence, negative strip centers, `p=3`'s constant `288`,
 the zero-index estimate, and admissible quarter-pi circles about `±200π` for
 the two-sided constant potential `(1,1)`. That potential is explicitly checked
-to fail the earlier uniform small-potential strip condition.
+to fail the earlier uniform small-potential strip condition. Localization checks
+cover open and convex neighborhoods at `p=1,3`, monotone tails, inclusion of the
+horizontal box boundary, exclusion and strip coverage of the vertical boundary,
+exclusion of a high-disk center, a common cutoff along every `tφ` for `0 ≤ t ≤ 1`,
+and the complete compactness/analyticity/spectral-enclosure package at `p=1`.
 
 ## Next milestones
 
-1. Use Lemma 3.4 and the height region to prove localization for arbitrary
-   potentials, uniformly on potential neighborhoods, as in Corollary 3.5.
-2. Use contour rank stability to count eigenvalues in the high-frequency disks
-   and in the remaining central region.
-3. Prove the periodic Fourier/distribution realization, period-one embedding,
-   pair-norm comparison, and compatibility with physical-space multiplication.
+1. Formalize the even/odd Fourier subspaces and their invariance for period-one
+   potentials (Lemma 3.6).
+2. Construct the central rectangular contour and use contour rank stability to
+   prove the disk and central-region multiplicity counts in Proposition 1.1.
+3. Prove the periodic Fourier/distribution realization, physical period-one
+   embedding, pair-norm comparison, and compatibility with physical multiplication.
 
-Arbitrary-potential spectral localization, classical Birkhoff prerequisites, and the main dissertation
-theorems remain unimplemented. Further sequence-space work includes
+The spectral multiplicity counts, classical Birkhoff prerequisites, and the main
+dissertation theorems remain unimplemented. Further sequence-space work includes
 embeddings between regularities and the full range of Young inequalities beyond
 the `l1`-factor case.
