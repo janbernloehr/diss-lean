@@ -67,7 +67,12 @@ Fourier recentering makes the bound uniform in the real part. Each norm ball of
 potentials therefore has a common Neumann height, and every finite-p potential
 has a compact two-sided inverse at some parameter without a smallness assumption.
 
-Next are closedness, analytic dependence, the sharper numerical rates and
+The unbounded realization is now a partial linear map on the base space with
+exactly the included one-derivative domain. Its domain is dense and its graph is
+closed, using the bounded two-sided inverse to characterize graph membership.
+Base-norm limits of graph points remain in the graph.
+
+Next are analytic dependence, the sharper numerical rates and
 vertical-strip bounds from Lemma 3.2(ii–iii), and spectral localization.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

@@ -9,7 +9,8 @@ Both components use scalar modes `exp (i π n x)` on the period-two circle.
 The pair spaces carry the maximum norm supplied by Lean's product instance.
 The dissertation uses a different, equivalent pair norm; its numerical constants
 are not asserted here. The operator is bounded from the one-derivative domain
-into the base space. Closedness as an unbounded operator is a later theorem.
+into the base space. Closedness of its unbounded realization is proved in
+`NLS.ZakharovShabat.ClosedOperator`.
 -/
 
 open scoped ENNReal

@@ -208,3 +208,26 @@ example (φ : PairSpace 3) : ∃ (z : ℂ) (R : PairSpace 3 →L[ℂ] Domain 3),
     (∀ f, R (spectralPencil (by simp) φ z f) = f) ∧
     IsCompactOperator (domainInclusion.comp R) :=
   exists_compact_inverse (by simp) φ
+
+-- Closedness is asserted for the actual partial map on the base space.
+example (φ : PairSpace 1) : (unboundedOperator (by simp) φ).IsClosed :=
+  unboundedOperator_isClosed (by simp) φ
+
+example (φ : PairSpace 3) : (unboundedOperator (by simp) φ).IsClosed :=
+  unboundedOperator_isClosed (by simp) φ
+
+example (φ : PairSpace 3) :
+    Dense ((unboundedOperator (by simp) φ).domain : Set (PairSpace 3)) :=
+  unboundedOperator_dense_domain (by simp) φ
+
+example (φ : PairSpace 3) (f : Domain 3)
+    (hf : domainInclusion f ∈ (unboundedOperator (by simp) φ).domain) :
+    unboundedOperator (by simp) φ ⟨domainInclusion f, hf⟩ = operator (by simp) φ f :=
+  unboundedOperator_apply_inclusion (by simp) φ f hf
+
+-- Base-norm limits preserve domain membership and the operator equation.
+example (φ : PairSpace 3) (f : ℕ → Domain 3) (x y : PairSpace 3)
+    (hx : Filter.Tendsto (fun n => domainInclusion (f n)) Filter.atTop (nhds x))
+    (hy : Filter.Tendsto (fun n => operator (by simp) φ (f n)) Filter.atTop (nhds y)) :
+    ∃ g : Domain 3, domainInclusion g = x ∧ operator (by simp) φ g = y :=
+  exists_domain_of_tendsto (by simp) φ f hx hy

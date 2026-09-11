@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has eighteen modules and 162 named public theorems. All compile on the
+The library has nineteen modules and 172 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -25,6 +25,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.PerturbedResolvent` | Potential/free-resolvent composition; explicit Neumann condition; convergent geometric correction; factorization and both inverse identities; domain and base-space norm bounds; compactness; an admissible parameter for every `l1` potential |
 | `NLS.SequenceSpaces.DominatedConvergence` | Coordinatewise convergence plus an `lp` majorant implies norm convergence at finite Banach exponents, along arbitrary filters |
 | `NLS.ZakharovShabat.UniformResolvent` | Explicit reciprocal envelopes; convergence of their conjugate norms; Fourier recentering; bounds uniform in real parts and bounded potential sets; existence of a compact two-sided inverse for every finite-p potential |
+| `NLS.ZakharovShabat.ClosedOperator` | Partial linear map on the base space; exact one-derivative domain; agreement with the domain-to-base operator; dense domain; closed graph via a bounded inverse; stability under base-norm graph limits |
 
 ## Current mathematical milestone
 
@@ -50,8 +51,9 @@ and `n`, respectively. Their included vectors are proved nonzero and satisfy
 
 The domain and operator follow Chapter 1, §3, printed page 23; the signed-mode
 convention follows §2, equation (1.2). The spectral pencil is explicitly a map
-from the domain to the base space. Closedness as an unbounded operator and the
-physical Fourier/distribution realization remain unproved.
+from the domain to the base space. The unbounded realization is now proved
+closed, as detailed below. The physical Fourier/distribution realization remains
+unproved.
 The dissertation's pair norm is not used for these numerical bounds; its
 comparison with the chosen maximum norm is a separate proof obligation.
 
@@ -114,13 +116,29 @@ the sharper numerical rates and vertical-strip bounds in Lemma 3.2(ii–iii).
 Those constants, analytic dependence, and Corollary 3.3's full conclusions
 remain to be proved.
 
+The actual unbounded realization is now defined as
+
+`unboundedOperator hp φ : PairSpace p →ₗ.[ℂ] PairSpace p`.
+
+Its domain is exactly the range of `domainInclusion`, independently of the
+potential, and its evaluation agrees with `operator hp φ`. It is densely defined
+and closed for every finite Banach exponent. For any constructed two-sided
+inverse `R` at `z`, its graph is characterized by the base-space equation
+
+`domainInclusion (R (z • x - y)) = x`.
+
+Continuity of this equation proves graph closedness. The accompanying limit
+lemma shows that if included domain vectors converge to `x` and their operator
+images converge to `y`, then `x` has a domain representative with image `y`.
+This establishes the coefficient-space closedness assertion on printed page 23.
+
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 415 declarations under `NLS`, including generated
+axioms. The current audit covers 434 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -134,13 +152,14 @@ bounds at `p=3`, convergence of the Neumann series, and a concrete nonzero
 potential with both entries equal to one at `z=2i`: both inverse identities,
 compactness, and the norm bound are checked. Uniform-estimate checks exercise
 `p=1,3`, a parameter with a far-negative real part, one height for a whole norm
-ball, and compact inverse existence for an arbitrary `p=3` potential. No admission
+ball, and compact inverse existence for an arbitrary `p=3` potential. Closed-operator
+checks cover `p=1,3`, domain density, evaluation on included vectors, and preservation
+of the graph under sequential base-norm limits. No admission
 or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Prove closedness of the unbounded realization using the constructed inverses,
-   and establish analytic dependence of the resolvent.
+1. Establish analytic dependence of the resolvent.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop discreteness and spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,

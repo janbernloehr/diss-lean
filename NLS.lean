@@ -16,3 +16,4 @@ import NLS.ZakharovShabat.ResolventEstimates
 import NLS.ZakharovShabat.PerturbedResolvent
 import NLS.SequenceSpaces.DominatedConvergence
 import NLS.ZakharovShabat.UniformResolvent
+import NLS.ZakharovShabat.ClosedOperator

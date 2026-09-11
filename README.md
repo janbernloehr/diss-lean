@@ -6,7 +6,7 @@ Fourier Transform for the dNLS Equation* (2016).
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
 The library currently proves sequence-space foundations, the `lp × l1 → lp`
-convolution inequality, and a densely defined coefficient-space Zakharov–Shabat
+convolution inequality, and a closed, densely defined coefficient-space Zakharov–Shabat
 operator with norm bounds and signed free Fourier modes. The free resolvent is
 constructed away from `πℤ`, with both inverse identities, explicit bounds, and
 compactness proved by finite Fourier approximation. For nonzero potentials,
@@ -51,7 +51,8 @@ include convergent Neumann series and the concrete nonzero potential `(1,1)`
 at `z = 2i`, with inverse identities, compactness, and a resolvent norm bound.
 Uniform-estimate checks cover `p = 1, 3`, Fourier recentering at a negative real
 part, bounded potential sets, and compact inverse existence for arbitrary `p=3`
-potentials.
+potentials. Closed-operator checks verify the actual partial-map realization at
+`p = 1, 3`, its dense domain, evaluation, and stability under graph limits.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -73,8 +74,9 @@ installation is absent. No shell startup files are modified.
   resolvent is compact. The perturbed inverse requires the proved Neumann
   condition `freeL1Bound * ‖φ‖ < 1`; for `p=1`, `|Im z| > ‖φ‖` suffices.
   A common high-imaginary-part region is proved for each bounded potential set
-  at every finite `p`. Closedness, sharp rates, and analytic dependence remain
-  future work.
+  at every finite `p`. The partial-map realization on the base space has exactly
+  the included one-derivative domain and is proved closed and densely defined.
+  Sharp rates and analytic dependence remain future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.
