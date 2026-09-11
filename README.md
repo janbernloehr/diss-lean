@@ -5,9 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-This is the initial foundation layer, not a formalization of the main dissertation
-theorems. Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records
-the resolved dependency commits.
+The library currently proves sequence-space foundations, the `lp × l1 → lp`
+convolution inequality, and the Fourier-side potential multiplication estimate
+on the one-derivative domain. The main dissertation theorems remain future work.
+Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
+dependency commits.
 
 ## Build
 
@@ -24,7 +26,7 @@ In the original Codex workspace, use the locally installed toolchain:
 ./scripts/lake.sh build
 ```
 
-For the build plus a transitive axiom audit:
+For the build, public-API examples, and a transitive axiom audit:
 
 ```sh
 ./scripts/check.sh
@@ -32,6 +34,9 @@ For the build plus a transitive axiom audit:
 
 The audit rejects admitted proofs and additional mathematical axioms in every
 declaration under `NLS`, including definitions and instances.
+
+The examples check multiplication at `p = 1, 2, 3`, convolution at `p = ∞`,
+the sign of a frequency shift, and multiplication by the constant unit potential.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

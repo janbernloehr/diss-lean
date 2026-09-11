@@ -2,3 +2,8 @@ import NLS.SequenceSpaces.Basic
 import NLS.SequenceSpaces.Truncation
 import NLS.SequenceSpaces.Weighted
 import NLS.SequenceSpaces.Multiplier
+import NLS.SequenceSpaces.Translation
+import NLS.SequenceSpaces.Convolution
+import NLS.SequenceSpaces.Embedding
+import NLS.SequenceSpaces.SobolevEmbedding
+import NLS.ZakharovShabat.Potential

@@ -44,6 +44,9 @@ introduced. Definition-only stubs do not count as proved results.
 
 ## Immediate next proof targets
 
-After the initial sequence layer, establish convolution multiplication
-`FL^p × FL^{1,p} → FL^p`, construct the free resolvent away from `πℤ`, and
-prove compactness by finite-rank approximation.
+The Fourier-side convolution multiplication estimate
+`FL^p × FL^{1,p} → FL^p` is now proved for every finite `p≥1`, with a constant
+depending only on `p`. The next targets are the domain inclusion and derivative,
+the two-component operator, the free resolvent away from `πℤ`, and compactness
+by finite-rank approximation. Physical-space interpretation is still a separate
+proof obligation.
