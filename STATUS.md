@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has fourteen modules and 122 named public theorems. All compile on the
+The library has sixteen modules and 150 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -21,6 +21,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.Compact` | Compactness of finite Fourier projections; uniform symbol-tail bound for the cutoff error; operator-norm convergence and compactness of vanishing diagonal multipliers, including `p=∞` |
 | `NLS.ZakharovShabat.FreeResolvent` | Closed free lattice and positive spectral gap; inverse into the one-derivative domain; both inverse identities and continuous linear equivalence; domain and base-space bounds; signed-mode formulas and resolvent identity |
 | `NLS.ZakharovShabat.FreeResolventCompact` | Uniform decay of reciprocal symbols; operator-norm convergence of scalar resolvent cutoffs; compactness of scalar and pair free resolvents for all Banach exponents |
+| `NLS.ZakharovShabat.ResolventEstimates` | Reciprocal symbols in the conjugate space; scalar and pair `FL^p → FL^1` maps and Hölder bounds; the endpoint bound `1 / abs(Im z)` for `p=1` |
+| `NLS.ZakharovShabat.PerturbedResolvent` | Potential/free-resolvent composition; explicit Neumann condition; convergent geometric correction; factorization and both inverse identities; domain and base-space norm bounds; compactness; an admissible parameter for every `l1` potential |
 
 ## Current mathematical milestone
 
@@ -65,8 +67,32 @@ The compactness proof constructs finite Fourier cutoffs and proves convergence
 in operator norm from uniform decay of the reciprocal symbol. This establishes
 the coefficient-space content of Chapter 1, Lemma 3.2(i), printed page 24, and
 extends it to all Banach exponents. It does not assert compactness of the inverse
-as a map into the stronger domain norm. The `FL^p → FL^1` estimates in Lemma
-3.2(ii–iii), including their constants, remain to be proved.
+as a map into the stronger domain norm.
+
+For finite `p≥1`, the free resolvent now also maps into `FL^1`. Let `B_p(z)` be
+`freeL1Bound p hp z hz`: the maximum of the conjugate-space norms of the two
+reciprocal symbols. These are finite by the reciprocal Sobolev-weight estimate.
+Hölder and convolution give
+
+`‖Φ R₀(z)‖ ≤ B_p(z) * ‖φ‖`.
+
+Under the explicit sufficient condition `B_p(z) * ‖φ‖ < 1`, the geometric series
+converges in operator norm and defines the correction `Q = (1 - Φ R₀(z))⁻¹`.
+We prove the factorization `z - L(φ) = (1 - Φ R₀(z)) (z - L₀)` and construct
+`Rφ = R₀(z) Q`, with both inverse identities on their correctly typed spaces.
+The inverse takes values in the one-derivative domain, is compact on the base
+space, and satisfies
+
+`‖Rφ‖ ≤ δ(z)⁻¹ / (1 - B_p(z) * ‖φ‖)`.
+
+This establishes the coefficient-space Neumann construction used before
+Corollary 3.3, printed pages 23–24. For `p=1`, `B_1(z) ≤ 1 / |Im z|`, so
+`|Im z| > ‖φ‖` suffices. Every `l1` potential therefore has an admissible
+parameter; the proof chooses `z = i (‖φ‖ + 1)`.
+
+For `p>1`, the condition remains expressed through the conjugate-symbol norms.
+The uniform numerical estimates and regions from Lemma 3.2(ii–iii), analytic
+dependence, and Corollary 3.3's full conclusions remain to be proved.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -74,7 +100,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 330 declarations under `NLS`, including generated
+axioms. The current audit covers 396 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -83,18 +109,22 @@ at `p=∞`, domain density at `p=1`, the operator bound at `p=3`, the frequency-
 sign, both signed free spectral equations, and nonzero off-diagonal coupling.
 Resolvent checks use the concrete parameter `z=i`, exercise both inverse identities,
 the bounds, compactness at `p=1,3,∞`, cutoff convergence, signed-mode denominators,
-and the resolvent identity. No admission or extra project axiom is used by the library.
+and the resolvent identity. Perturbation checks cover the Hölder and convolution
+bounds at `p=3`, convergence of the Neumann series, and a concrete nonzero
+potential with both entries equal to one at `z=2i`: both inverse identities,
+compactness, and the norm bound are checked. No admission or extra project axiom
+is used by the library.
 
 ## Next milestones
 
-1. Prove the `FL^p → FL^1` free resolvent estimates needed to control the potential
-   perturbation (Lemma 3.2(ii–iii)), with explicit norm conventions.
-2. Prove closedness and the required relative perturbation estimates for the
-   general potential operator, then construct its resolvent by a Neumann series.
+1. Establish uniform numerical bounds for the conjugate-symbol norms at `p>1`
+   (Lemma 3.2(ii–iii)), yielding nonempty resolvent regions for every such potential.
+2. Prove closedness of the unbounded realization and analytic dependence of the
+   perturbed resolvent, then develop discreteness and spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 
-General-potential spectral theory, classical Birkhoff prerequisites, and the main
-dissertation theorems remain unimplemented. Further sequence-space work includes
+Spectral localization, classical Birkhoff prerequisites, and the main dissertation
+theorems remain unimplemented. Further sequence-space work includes
 symmetric cutoff convenience functions, embeddings between regularities, and the full
 range of Young inequalities beyond the `l1`-factor case.

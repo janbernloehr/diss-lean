@@ -9,8 +9,11 @@ The library currently proves sequence-space foundations, the `lp × l1 → lp`
 convolution inequality, and a densely defined coefficient-space Zakharov–Shabat
 operator with norm bounds and signed free Fourier modes. The free resolvent is
 constructed away from `πℤ`, with both inverse identities, explicit bounds, and
-compactness proved by finite Fourier approximation. The main dissertation
-theorems remain future work.
+compactness proved by finite Fourier approximation. For nonzero potentials,
+Hölder estimates yield a Neumann-series resolvent under an explicit smallness
+condition, with both inverse identities and compactness. At `p=1`, every
+potential has an admissible parameter. The main dissertation theorems remain
+future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -42,7 +45,9 @@ The examples check multiplication at `p = 1, 2, 3`, convolution and differentiat
 at `p = ∞`, domain density, operator bounds, Fourier signs, both signed free
 spectral equations, and nonzero off-diagonal potential coupling. Resolvent checks
 cover inverse identities, bounds, signed modes, operator-norm cutoff convergence,
-the resolvent identity, and compactness at `p = 1, 3, ∞`.
+the resolvent identity, and compactness at `p = 1, 3, ∞`. Perturbation checks
+include convergent Neumann series and the concrete nonzero potential `(1,1)`
+at `z = 2i`, with inverse identities, compactness, and a resolvent norm bound.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -61,8 +66,9 @@ installation is absent. No shell startup files are modified.
   are `-π n` and `+π n`; the signed modes `eₙ⁻` and `eₙ⁺` both have eigenvalue `π n`.
 - The operator is a bounded map from the one-derivative domain to the base space.
   The free equation has a bounded inverse into that domain; its base-space
-  resolvent is compact. Closedness and general-potential resolvent results
-  remain future work.
+  resolvent is compact. The perturbed inverse requires the proved Neumann
+  condition `freeL1Bound * ‖φ‖ < 1`; for `p=1`, `|Im z| > ‖φ‖` suffices.
+  Closedness, uniform regions for `p>1`, and analytic dependence remain future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

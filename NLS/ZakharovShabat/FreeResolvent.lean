@@ -116,6 +116,20 @@ private def weightedInverseSymbol (z : ℂ) (hz : z ∉ freeLattice) : Coeff ⊤
       rintro _ ⟨n, rfl⟩
       exact weighted_inverse_bound hz n⟩⟩
 
+/-- Reciprocal free denominators belong to every conjugate space with exponent greater than one. -/
+theorem inverse_denominator_memlp {q : ℝ≥0∞} (hq : 1 < q)
+    (z : ℂ) (hz : z ∉ freeLattice) :
+    Memℓp (fun n : ℤ => (z - (Real.pi : ℂ) * n)⁻¹) q := by
+  let b : Coeff q := ⟨fun n => (Weight.sobolev 1 n : ℂ)⁻¹,
+    Weight.inverse_sobolev_one_memlp hq⟩
+  have h := lp.memℓp (Coeff.multiplier (weightedInverseSymbol z hz) b)
+  convert h using 1
+  funext n
+  change (z - (Real.pi : ℂ) * n)⁻¹ =
+    ((Weight.sobolev 1 n : ℂ) / (z - (Real.pi : ℂ) * n)) * (Weight.sobolev 1 n : ℂ)⁻¹
+  field_simp [(Weight.sobolev 1).complex_ne_zero n, free_denominator_ne_zero hz n]
+  exact (div_self ((Weight.sobolev 1).complex_ne_zero n)).symm
+
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- Inverse of the scalar free equation with symbol `z - π n`. -/

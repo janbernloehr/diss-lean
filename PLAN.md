@@ -55,7 +55,13 @@ one-derivative domain, with both inverse identities and a spectral-gap bound on
 the base space. Compactness follows from operator-norm convergence of finite
 Fourier cutoffs. The signed-mode formulas and resolvent identity are also proved.
 
-The next targets are the `FL^p → FL^1` estimates from Lemma 3.2(ii–iii), closedness
-and relative perturbation estimates, and the general-potential resolvent via a
-Neumann series. Physical-space interpretation, period-one embedding, and
-comparison with the dissertation's pair norm are separate proof obligations.
+The `FL^p → FL^1` Hölder estimate is now proved with the conjugate-symbol norms
+kept explicit. It bounds `Φ R₀` and supplies a sufficient Neumann condition.
+Under that condition, the perturbed inverse is constructed with both inverse
+identities, norm bounds, and compactness. For `p=1`, the condition follows from
+`|Im z| > ‖φ‖`, giving an admissible parameter for every `l1` potential.
+
+Next are the uniform numerical estimates for `p>1` from Lemma 3.2(ii–iii),
+closedness, analytic dependence, and spectral localization. Physical-space
+interpretation, period-one embedding, and comparison with the dissertation's pair
+norm remain separate proof obligations.

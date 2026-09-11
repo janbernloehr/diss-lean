@@ -12,3 +12,5 @@ import NLS.ZakharovShabat.Operator
 import NLS.SequenceSpaces.Compact
 import NLS.ZakharovShabat.FreeResolvent
 import NLS.ZakharovShabat.FreeResolventCompact
+import NLS.ZakharovShabat.ResolventEstimates
+import NLS.ZakharovShabat.PerturbedResolvent

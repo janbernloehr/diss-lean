@@ -127,3 +127,50 @@ example (z w : ℂ) (hz : z ∉ freeLattice) (hw : w ∉ freeLattice) :
     freeResolvent (p := 2) z hz - freeResolvent w hw =
       (w - z) • (freeResolvent z hz).comp (freeResolvent w hw) :=
   freeResolvent_identity z w hz hw
+
+-- Hölder controls the free resolvent into l1, including a non-Hilbert exponent.
+example (z : ℂ) (hz : z ∉ freeLattice) :
+    ‖freeResolventToL1 (p := 3) (by simp) z hz‖ ≤ freeL1Bound 3 (by simp) z hz :=
+  norm_freeResolventToL1_le _ _ _
+
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∉ freeLattice) :
+    ‖potentialFreeResolvent (by simp) φ z hz‖ ≤ freeL1Bound 3 (by simp) z hz * ‖φ‖ :=
+  norm_potentialFreeResolvent_le _ _ _ _
+
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∉ freeLattice)
+    (h : NeumannCondition (by simp) φ z hz) :
+    HasSum (fun n : ℕ => potentialFreeResolvent (by simp) φ z hz ^ n)
+      (neumannCorrection (by simp) φ z hz h) :=
+  neumannCorrection_hasSum _ _ _ _ h
+
+-- A concrete nonzero potential, with both off-diagonal entries equal to one.
+private def unitPairPotential : PairSpace 1 := (lp.single 1 0 1, lp.single 1 0 1)
+private def testParameter : ℂ := 2 * Complex.I
+private theorem testParameter_off : testParameter ∉ freeLattice :=
+  notMem_freeLattice_of_im_ne_zero (by norm_num [testParameter])
+private theorem unitPair_small : NeumannCondition (by simp) unitPairPotential testParameter testParameter_off := by
+  apply neumannCondition_one
+  norm_num [unitPairPotential, testParameter, Prod.norm_def, lp.norm_single]
+
+example (a : PairSpace 1) :
+    spectralPencil (by simp) unitPairPotential testParameter
+      (perturbedResolventToDomain (by simp) unitPairPotential testParameter testParameter_off unitPair_small a) = a :=
+  spectralPencil_perturbedResolventToDomain _ _ _ _ _ a
+
+example (f : Domain 1) :
+    perturbedResolventToDomain (by simp) unitPairPotential testParameter testParameter_off unitPair_small
+      (spectralPencil (by simp) unitPairPotential testParameter f) = f :=
+  perturbedResolventToDomain_spectralPencil _ _ _ _ _ f
+
+example : IsCompactOperator
+    (perturbedResolvent (by simp) unitPairPotential testParameter testParameter_off unitPair_small) :=
+  isCompactOperator_perturbedResolvent _ _ _ _ _
+
+example : ‖perturbedResolvent (by simp) unitPairPotential testParameter testParameter_off unitPair_small‖ ≤
+    (freeGap testParameter)⁻¹ * (1 - freeL1Bound 1 (by simp) testParameter testParameter_off * ‖unitPairPotential‖)⁻¹ :=
+  norm_perturbedResolvent_le _ _ _ _ _
+
+-- The endpoint construction is available for every l1 potential, not just small ones.
+example (φ : PairSpace 1) :
+    ∃ z : ℂ, ∃ hz : z ∉ freeLattice, NeumannCondition (by simp) φ z hz :=
+  exists_neumannParameter_one φ
