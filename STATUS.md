@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has thirty-six modules and 350 named public theorems. All compile on the
+The library has thirty-eight modules and 365 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -16,6 +16,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.Embedding` | General weighted Hölder embedding into `l1` when the reciprocal weight belongs to the conjugate space; explicit bound and injectivity |
 | `NLS.SequenceSpaces.SobolevEmbedding` | Reciprocal one-derivative weight is in `lq` for `q>1`, including infinity; continuous embedding `FL^{1,p} → FL^1` for every finite `p≥1` with an explicit constant |
 | `NLS.SequenceSpaces.ReciprocalSeries` | Appendix B.1 with its exact conjugate-exponent constants; summability; one-sided integral tail bounds; bilateral punctured-lattice identities and estimates; invariance under frequency translation |
+| `NLS.SequenceSpaces.SobolevConstant` | Numerical reciprocal-weight norm and Sobolev embedding constant at most `2p`, including the `p=1` endpoint |
 | `NLS.ZakharovShabat.Potential` | Scalar Fourier-side potential multiplication on the one-derivative domain; convolution coefficient formula; norm and operator-norm bounds; constant unit potential identity |
 | `NLS.ZakharovShabat.Domain` | Contractive, injective scalar inclusion with dense range for finite `p`; period-two differentiation and its norm bound; scalar Fourier modes |
 | `NLS.ZakharovShabat.Operator` | Pair domain inclusion and density; free, potential, and total operators; coefficient formulas; maximum-pair-norm bounds; nonzero signed free eigenmodes; zero and unit potential identities; spectral pencil |
@@ -43,6 +44,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.CircleIntegrationMap` | Normalized circle integration as a bounded linear map on continuous functions with the uniform norm; agreement on the circle; norm at most the radius |
 | `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections |
 | `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of contour projections; locally constant rank and total enclosed algebraic multiplicity |
+| `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 
 ## Current mathematical milestone
 
@@ -128,10 +130,10 @@ the one-derivative domain whose base-space realization is compact. The theorem
 `exists_compact_inverse` states this without a smallness hypothesis on the
 potential.
 
-These are qualitative uniform regions with a concrete envelope, rather than
-the sharper numerical rates and vertical-strip bounds in Lemma 3.2(ii–iii).
-Those constants remain to be proved. Analytic dependence and spectral
-discreteness are now established below.
+The high-imaginary-part regions above are qualitative and use a concrete
+envelope. The numerical height-decay rate in Lemma 3.2(ii) remains open.
+The punctured vertical-strip bound in part (iii) is now established below,
+as are analytic dependence and spectral discreteness.
 
 The numerical series estimate used in those sharper bounds is now proved:
 Appendix B, Lemma B.1 (printed page 124). For real conjugate exponents `p,q > 1`
@@ -148,9 +150,27 @@ case, summability, and the explicit tail estimate
 The punctured integer lattice is twice the one-sided series, giving bounds
 `2q/(q−1) * (1+α)^(1−q)` for `α ≥ 0`, and
 `2/(q−1) * α^(1−q)` for `α > 0`. The former bound is also proved around any
-integer Fourier center. These estimates are ready for the denominator geometry
-and Hölder-norm calculations in Lemmas 3.2 and 3.4; the operator estimates with
-the dissertation's numerical constants are still open.
+integer Fourier center. They are now applied to the inverse one-derivative weight,
+proving `sobolevEmbeddingConstant p hp ≤ 2 * p.toReal`, including `p=1`.
+
+Define `verticalStrip n r` by `abs(Re z − πn) ≤ π/2` and `r ≤ abs(z − πn)`.
+For `0 < r ≤ π/4`, the denominator geometry gives
+
+`r * (1 + abs(m−n)) ≤ abs(z−πm)`.
+
+Every such strip avoids the free lattice. Fourier recentering and the reciprocal
+weight bound imply `freeL1Bound p hp z hz ≤ 2p/r`, and hence the
+`FL^p → FL^1` operator estimate `‖R₀(z)‖ ≤ 8p/r` in Lemma 3.2(iii), printed
+page 24. The stronger `2p/r` estimate and all pair norms here use the library's
+maximum norm; comparison with the dissertation's pair norm remains separate.
+
+When `2p * ‖φ‖ < r`, the Neumann condition holds throughout every punctured
+strip. Thus every circle of radius `r` about `πn` lies in the resolvent set.
+Choosing a nearest Fourier frequency for each spectral parameter also proves
+that the entire periodic spectrum is contained in the union of the open disks
+of radius `r` around `πℤ`. This is a uniform small-potential localization result;
+localization for arbitrary potentials still requires Lemma 3.4 and the height
+estimate from Lemma 3.2(ii).
 
 The actual unbounded realization is now defined as
 
@@ -205,9 +225,9 @@ spectrum is finite. The spectrum is closed and has the discrete subspace topolog
 every spectral point has a nonzero eigenvector in the one-derivative domain.
 The domain eigenspaces embed into nonzero eigenspaces of the compact resolvent,
 so their geometric multiplicities are finite. This proves the coefficient-space
-discreteness conclusion of Corollary 3.3. Generalized eigenspaces and algebraic
-multiplicities are now constructed below. Spectral projections and quantitative
-localization remain separate proof obligations.
+discreteness conclusion of Corollary 3.3. Generalized eigenspaces, algebraic
+multiplicities, and spectral projections are constructed below. Quantitative
+localization for arbitrary potentials remains open.
 
 The general inverse difference formula is now proved for simultaneous changes
 of potential and spectral parameter. It specializes to
@@ -349,8 +369,9 @@ equal rank. Consequently, near any admissible potential, the circle remains
 in the resolvent set and both the contour rank and total enclosed algebraic
 multiplicity stay constant. Individual spectral values may move or split.
 These statements implement the fixed-contour analytic-dependence assertion
-used with Section 3, equation (1.4); the dissertation's specific localization
-circles still require the sharper localization estimates. Agreement of
+used with Section 3, equation (1.4). The spectral circles are now uniformly
+admissible for the small-potential ball above; the arbitrary-potential case
+still requires the further localization estimates. Agreement of
 multiplicities with characteristic-function zero orders remains open.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
@@ -359,7 +380,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 781 declarations under `NLS`, including generated
+axioms. The current audit covers 809 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -412,18 +433,20 @@ half-pi disk, and the zero-radius integration functional. No admission or extra
 project axiom is used by the library. Reciprocal-series checks cover the
 zero-shift reciprocal squares, the non-Hilbert conjugate pair `p=3, q=3/2`,
 the explicit tail after five terms, arbitrary integer centers, and the sharper
-positive-shift lattice estimate.
+positive-shift lattice estimate. Strip checks include the real parameter `π/4`,
+endpoint and non-Hilbert exponents, every spectral circle for an explicit nonzero
+small potential, analyticity on the resulting `p=3` potential ball, and global
+small-potential localization into quarter-pi disks.
 
 ## Next milestones
 
-1. Apply Appendix B.1 to the reciprocal-symbol norms and prove the sharper
-   numerical rates and vertical-strip estimates from Lemma 3.2(ii–iii).
-2. Develop spectral localization and apply the fixed-contour results to the
-   dissertation’s small and large spectral disks.
+1. Prove the numerical height-decay rate in Lemma 3.2(ii).
+2. Prove the double-resolvent estimate in Lemma 3.4, develop localization for
+   arbitrary potentials, and apply the contour results to the spectral disks.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 
-Spectral localization, classical Birkhoff prerequisites, and the main dissertation
+Arbitrary-potential spectral localization, classical Birkhoff prerequisites, and the main dissertation
 theorems remain unimplemented. Further sequence-space work includes
 symmetric cutoff convenience functions, embeddings between regularities, and the full
 range of Young inequalities beyond the `l1`-factor case.

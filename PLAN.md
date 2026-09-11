@@ -131,8 +131,13 @@ is locally constant.
 
 Appendix B.1 is now proved with both stated constants, including `α=0`,
 summability, one-sided tail estimates, and translated bilateral lattice bounds.
-Next, combine these bounds with reciprocal-denominator geometry and Hölder
-norms to prove Lemma 3.2(ii–iii), followed by the double-resolvent estimate
-in Lemma 3.4 and spectral localization.
+The reciprocal Sobolev constant is now at most `2p`. Punctured-strip geometry
+then gives `freeL1Bound ≤ 2p/r` and the stated `8p/r` operator estimate of
+Lemma 3.2(iii), with the library's maximum pair norm. Under `2p * ‖φ‖ < r`,
+all spectral circles are admissible and the entire spectrum lies in the union
+of disks about `πℤ`.
+
+Next are the height-decay rate in Lemma 3.2(ii), the double-resolvent estimate
+in Lemma 3.4, and localization for arbitrary potentials.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

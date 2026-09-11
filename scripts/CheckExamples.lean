@@ -762,3 +762,59 @@ example : (∑' m : ℤ, if m = 0 then (0 : ℝ) else (3 + |(m : ℝ)|) ^ (-2 : 
     (α := 3) (q := 2) (by norm_num) (by norm_num)
   norm_num at h ⊢
   exact h
+
+-- Appendix B.1 turns the Sobolev embedding constant into an explicit number.
+example : WeightedCoeff.sobolevEmbeddingConstant 1 (by simp) ≤ 2 := by
+  simpa using WeightedCoeff.sobolevEmbeddingConstant_le_two_mul 1 (by simp)
+
+example : WeightedCoeff.sobolevEmbeddingConstant 3 (by simp) ≤ 6 := by
+  have h := WeightedCoeff.sobolevEmbeddingConstant_le_two_mul 3 (by simp)
+  norm_num at h
+  exact h
+
+-- The strip estimate covers real spectral parameters, where a height bound cannot apply.
+private theorem quarterPi_in_strip : (Real.pi / 4 : ℂ) ∈ verticalStrip 0 (Real.pi / 4) := by
+  apply sphere_subset_verticalStrip 0 le_rfl
+  simp only [Metric.mem_sphere, Int.cast_zero, mul_zero, dist_zero_right, norm_div,
+    Complex.norm_real, Complex.norm_ofNat, Real.norm_eq_abs, abs_of_pos Real.pi_pos]
+
+example : freeL1Bound 3 (by simp) (Real.pi / 4 : ℂ)
+    (notMem_freeLattice_of_mem_verticalStrip (by positivity) le_rfl quarterPi_in_strip) ≤
+      24 / Real.pi := by
+  have h := freeL1Bound_le_verticalStrip (p := 3) (by simp) (Real.pi / 4 : ℂ)
+    (notMem_freeLattice_of_mem_verticalStrip (by positivity) le_rfl quarterPi_in_strip)
+    (by positivity) le_rfl quarterPi_in_strip
+  norm_num at h
+  convert h using 1
+  ring
+
+example (z : ℂ) (hz0 : z ∉ freeLattice) (n : ℤ) (r : ℝ) (hr : 0 < r)
+    (hrπ : r ≤ Real.pi / 4) (hz : z ∈ verticalStrip n r) :
+    ‖freeResolventToL1 (p := 1) (by simp) z hz0‖ ≤ 8 / r := by
+  simpa using norm_freeResolventToL1_le_verticalStrip (p := 1) (by simp) z hz0 hr hrπ hz
+
+-- A single explicit nonzero potential admits every quarter-pi spectral circle.
+private def smallStripPotential : PairSpace 1 := (Real.pi / 32 : ℂ) • unitPairPotential
+
+example (n : ℤ) : Metric.sphere ((Real.pi : ℂ) * n) (Real.pi / 4) ⊆
+    resolventSet (by simp) smallStripPotential := by
+  apply sphere_subset_resolventSet_of_smallPotential (by simp) smallStripPotential n
+    (by positivity) le_rfl
+  norm_num [smallStripPotential, unitPairPotential, norm_smul, Prod.norm_def, lp.norm_single,
+    abs_of_pos Real.pi_pos]
+  linarith [Real.pi_pos]
+
+-- Uniform admissibility connects the quantitative estimate to analytic contour projections.
+example (φ : PairSpace 3) (hφ : ‖φ‖ < Real.pi / 24) (n : ℤ) :
+    AnalyticAt ℂ (fun ψ => resolventCircleIntegral (by simp) ψ ((Real.pi : ℂ) * n)
+      (Real.pi / 4)) φ := by
+  apply analyticAt_resolventCircleIntegral (by simp) φ _ _ (by positivity)
+  apply sphere_subset_resolventSet_of_smallPotential (by simp) φ n (by positivity) le_rfl
+  norm_num
+  linarith
+
+example (φ : PairSpace 3) (hφ : ‖φ‖ < Real.pi / 24) :
+    periodicSpectrum (by simp) φ ⊆ ⋃ n : ℤ, Metric.ball ((Real.pi : ℂ) * n) (Real.pi / 4) := by
+  apply periodicSpectrum_subset_disks_of_smallPotential (by simp) φ (by positivity) le_rfl
+  norm_num
+  linarith
