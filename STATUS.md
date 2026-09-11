@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has thirty-eight modules and 365 named public theorems. All compile on the
+The library has forty modules and 380 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -17,6 +17,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.SobolevEmbedding` | Reciprocal one-derivative weight is in `lq` for `q>1`, including infinity; continuous embedding `FL^{1,p} → FL^1` for every finite `p≥1` with an explicit constant |
 | `NLS.SequenceSpaces.ReciprocalSeries` | Appendix B.1 with its exact conjugate-exponent constants; summability; one-sided integral tail bounds; bilateral punctured-lattice identities and estimates; invariance under frequency translation |
 | `NLS.SequenceSpaces.SobolevConstant` | Numerical reciprocal-weight norm and Sobolev embedding constant at most `2p`, including the `p=1` endpoint |
+| `NLS.SequenceSpaces.ReciprocalNorm` | Conjugate-space reciprocal-tail norm bound `4p h^(-1/p)`; central-coefficient decomposition and the additional `1/h` term |
 | `NLS.ZakharovShabat.Potential` | Scalar Fourier-side potential multiplication on the one-derivative domain; convolution coefficient formula; norm and operator-norm bounds; constant unit potential identity |
 | `NLS.ZakharovShabat.Domain` | Contractive, injective scalar inclusion with dense range for finite `p`; period-two differentiation and its norm bound; scalar Fourier modes |
 | `NLS.ZakharovShabat.Operator` | Pair domain inclusion and density; free, potential, and total operators; coefficient formulas; maximum-pair-norm bounds; nonzero signed free eigenmodes; zero and unit potential identities; spectral pencil |
@@ -45,6 +46,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections |
 | `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of contour projections; locally constant rank and total enclosed algebraic multiplicity |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
+| `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 
 ## Current mathematical milestone
 
@@ -130,10 +132,9 @@ the one-derivative domain whose base-space realization is compact. The theorem
 `exists_compact_inverse` states this without a smallness hypothesis on the
 potential.
 
-The high-imaginary-part regions above are qualitative and use a concrete
-envelope. The numerical height-decay rate in Lemma 3.2(ii) remains open.
-The punctured vertical-strip bound in part (iii) is now established below,
-as are analytic dependence and spectral discreteness.
+The envelope proof above establishes qualitative uniform regions. It is now
+supplemented by the numerical bounds of Lemma 3.2(ii–iii), proved below using
+Appendix B.1. Analytic dependence and spectral discreteness are also established.
 
 The numerical series estimate used in those sharper bounds is now proved:
 Appendix B, Lemma B.1 (printed page 124). For real conjugate exponents `p,q > 1`
@@ -169,8 +170,30 @@ strip. Thus every circle of radius `r` about `πn` lies in the resolvent set.
 Choosing a nearest Fourier frequency for each spectral parameter also proves
 that the entire periodic spectrum is contained in the union of the open disks
 of radius `r` around `πℤ`. This is a uniform small-potential localization result;
-localization for arbitrary potentials still requires Lemma 3.4 and the height
-estimate from Lemma 3.2(ii).
+localization for arbitrary potentials still requires Lemma 3.4.
+
+For nonzero imaginary part, Lemma 3.2(ii), printed page 24, is now proved with
+the stated height-decay rate:
+
+`B_p(z) ≤ 4p / abs(Im z)^(1/p) + 1 / abs(Im z)`.
+
+The same bound holds for the free `FL^p → FL^1` resolvent operator. Centering
+at a nearest Fourier frequency and removing its coefficient separates a
+`1/abs(Im z)` contribution from the tail. The remaining reciprocal denominators
+are bounded by `2/(abs(Im z) + abs(m−n))`. Appendix B.1, raised to the conjugate
+power, bounds that tail by `4p * abs(Im z)^(-1/p)`. The endpoint `p=1` uses
+the earlier supremum estimate. These are bounds in the current maximum norm
+on pairs; the physical-space realization and pair-norm comparison remain open.
+
+`heightNeumannRegion φ` is the set where `Im z ≠ 0` and the displayed height
+bound times `‖φ‖` is less than one. Every point in this numerical region lies
+in the full resolvent set, where the inverse agrees with the constructed
+Neumann inverse and is compact and analytic, giving the coefficient-space
+assertion of Corollary 3.3. The numerical bound tends to zero as height tends
+to infinity. A sufficient height controls every larger absolute imaginary
+part, uniformly in real parts and both signs. Every bounded potential set
+has a common such height, and the numerical region is nonempty for every
+finite-p potential.
 
 The actual unbounded realization is now defined as
 
@@ -380,7 +403,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 809 declarations under `NLS`, including generated
+axioms. The current audit covers 828 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -436,13 +459,17 @@ the explicit tail after five terms, arbitrary integer centers, and the sharper
 positive-shift lattice estimate. Strip checks include the real parameter `π/4`,
 endpoint and non-Hilbert exponents, every spectral circle for an explicit nonzero
 small potential, analyticity on the resulting `p=3` potential ball, and global
-small-potential localization into quarter-pi disks.
+small-potential localization into quarter-pi disks. Height-bound checks include
+`p=1` and `p=3`, a nonzero potential valid above both height ten half-planes,
+compactness and analyticity at a negative imaginary parameter, a nonzero
+`p=3` potential in the numerical region, and uniform heights for a norm ball.
 
 ## Next milestones
 
-1. Prove the numerical height-decay rate in Lemma 3.2(ii).
-2. Prove the double-resolvent estimate in Lemma 3.4, develop localization for
-   arbitrary potentials, and apply the contour results to the spectral disks.
+1. Prove the double-resolvent estimate in Lemma 3.4 and the corresponding
+   squared Neumann condition.
+2. Develop localization for arbitrary potentials (Corollary 3.5) and use the
+   contour results to count eigenvalues in the spectral disks.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 

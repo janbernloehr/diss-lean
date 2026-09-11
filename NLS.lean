@@ -36,3 +36,5 @@ import NLS.ZakharovShabat.ContourAnalytic
 import NLS.SequenceSpaces.ReciprocalSeries
 import NLS.SequenceSpaces.SobolevConstant
 import NLS.ZakharovShabat.VerticalStrips
+import NLS.SequenceSpaces.ReciprocalNorm
+import NLS.ZakharovShabat.HeightResolvent

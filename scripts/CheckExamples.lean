@@ -818,3 +818,48 @@ example (φ : PairSpace 3) (hφ : ‖φ‖ < Real.pi / 24) :
   apply periodicSpectrum_subset_disks_of_smallPotential (by simp) φ (by positivity) le_rfl
   norm_num
   linarith
+
+-- Lemma 3.2(ii) applies at a non-Hilbert exponent, with no smallness assumption.
+example : freeL1Bound 3 (by simp) Complex.I I_off_freeLattice ≤ 13 := by
+  have h := freeL1Bound_le_height (p := 3) (by simp) Complex.I I_off_freeLattice (by simp)
+  norm_num at h
+  exact h
+
+example (z : ℂ) (hz : z ∉ freeLattice) (him : z.im ≠ 0) :
+    ‖freeResolventToL1 (p := 1) (by simp) z hz‖ ≤ 5 / |z.im| := by
+  have h := norm_freeResolventToL1_le_height (p := 1) (by simp) z hz him
+  norm_num at h
+  convert h using 1
+  ring
+
+-- The numerical criterion is uniform in real parts and in the sign of Im z.
+private theorem unitHeight_region (z : ℂ) (hz : 10 ≤ |z.im|) :
+    z ∈ heightNeumannRegion unitPairPotential := by
+  apply mem_heightNeumannRegion_of_height_le (by simp) unitPairPotential
+    (H := 10) (by norm_num) _ hz
+  norm_num [unitPairPotential, Prod.norm_def, lp.norm_single]
+
+example (z : ℂ) (hz : 10 ≤ |z.im|) : z ∈ resolventSet (by simp) unitPairPotential :=
+  heightNeumannRegion_subset_resolventSet (by simp) unitPairPotential (unitHeight_region z hz)
+
+-- Corollary 3.3 supplies compactness and analyticity on its explicit region.
+example : AnalyticAt ℂ (resolvent (by simp) unitPairPotential) (-10 * Complex.I) ∧
+    IsCompactOperator (resolvent (by simp) unitPairPotential (-10 * Complex.I)) := by
+  refine ⟨analyticOnNhd_resolvent_heightRegion (by simp) unitPairPotential _ ?_,
+    isCompactOperator_resolvent (by simp) unitPairPotential _⟩
+  exact unitHeight_region _ (by norm_num)
+
+private def smallHeightPotential : PairSpace 3 :=
+  (1 / 100 : ℂ) • (lp.single 3 0 1, lp.single 3 0 1)
+
+example : Complex.I ∈ heightNeumannRegion smallHeightPotential := by
+  constructor
+  · simp
+  · norm_num [smallHeightPotential, norm_smul, Prod.norm_def, lp.norm_single]
+
+example (φ : PairSpace 3) : (heightNeumannRegion φ).Nonempty :=
+  heightNeumannRegion_nonempty (by simp) φ
+
+example (M : ℝ) : ∃ H : ℝ, 0 < H ∧ ∀ φ : PairSpace 3, ‖φ‖ ≤ M →
+    ∀ z : ℂ, H ≤ |z.im| → z ∈ heightNeumannRegion φ :=
+  exists_uniform_heightNeumannRegion (by simp) M

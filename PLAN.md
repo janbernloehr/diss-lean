@@ -137,7 +137,15 @@ Lemma 3.2(iii), with the library's maximum pair norm. Under `2p * ‖φ‖ < r`,
 all spectral circles are admissible and the entire spectrum lies in the union
 of disks about `πℤ`.
 
-Next are the height-decay rate in Lemma 3.2(ii), the double-resolvent estimate
-in Lemma 3.4, and localization for arbitrary potentials.
+Lemma 3.2(ii) is also proved: the free `FL^p → FL^1` norm is at most
+`4p / abs(Im z)^(1/p) + 1 / abs(Im z)` for nonzero imaginary part. Removing
+the central coefficient gives the separate tail and central contributions.
+The numerical Neumann region lies in the full resolvent set, where the
+resolvent is compact and analytic. Its height bound tends to zero and gives
+a common region for every bounded potential set.
+
+Next are the double-resolvent estimate and squared Neumann condition in
+Lemma 3.4, followed by arbitrary-potential localization in Corollary 3.5
+and spectral multiplicity counts.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

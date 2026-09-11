@@ -33,8 +33,9 @@ General resolvent identities and explicit spectral and potential derivatives
 are also proved in
 operator norm. Appendix B.1's quantitative reciprocal-series inequalities,
 including explicit tail and lattice bounds, are also proved. These give the
-punctured-strip resolvent bound in Lemma 3.2(iii), and uniform spectral disk
-localization for sufficiently small potentials. The main dissertation theorems
+numerical height-decay and punctured-strip bounds in Lemma 3.2(ii–iii),
+the explicit compact analytic resolvent region of Corollary 3.3, and uniform
+spectral disk localization for sufficiently small potentials. The main dissertation theorems
 remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
@@ -124,8 +125,9 @@ installation is absent. No shell startup files are modified.
   with the enclosed finite cluster projections. Fixed-contour projections depend
   analytically on the potential; their ranks and total enclosed algebraic
   multiplicities are locally constant. The punctured-strip estimate and spectral
-  localization for small potentials are proved. The numerical height-decay rate
-  and arbitrary-potential localization remain future work.
+  localization for small potentials are proved, along with the numerical
+  height-decay estimate and its Neumann region. Arbitrary-potential localization
+  remains future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.
