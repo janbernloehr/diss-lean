@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has twenty-five modules and 251 named public theorems. All compile on the
+The library has twenty-seven modules and 267 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -32,6 +32,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ResolventCalculus` | General inverse difference identities; resolvent commutation; potential differences; joint Fréchet derivatives into the domain and base space; spectral and potential derivative formulas; compatibility with the free resolvent and the pre-Neumann identity |
 | `NLS.FunctionalAnalysis.CompactGeneralized` | Compact shifted powers after removal of the constant term; finite-dimensional generalized eigenspaces at nonzero values; Riesz-lemma stabilization; finite-dimensional full generalized eigenspaces |
 | `NLS.ZakharovShabat.RootSpaces` | Domain-aware recursive periodic root spaces; reference-independent definition; bounded compact-pencil representation; finite-dimensional closed full root spaces; finite stabilization; algebraic multiplicity and its spectral characterization |
+| `NLS.FunctionalAnalysis.CompactDecomposition` | Fredholm bijectivity for injective compact perturbations of a nonzero scalar identity; topological kernel/range decomposition at a stabilized exponent; commutation of projections with maps preserving both summands |
+| `NLS.ZakharovShabat.SpectralProjections` | Bounded finite-rank periodic root-space projections; independence of the reference resolvent parameter; idempotence and resolvent commutation; rank equals algebraic multiplicity; compactness; unique topological decomposition; vanishing exactly on the resolvent set |
 
 ## Current mathematical milestone
 
@@ -227,9 +229,25 @@ closed in the base space, and reached at a finite level. Its dimension defines
 `periodicAlgebraicMultiplicity hp φ z`, which is positive exactly on the periodic
 spectrum and zero exactly on the resolvent set.
 
-Identification of these multiplicities with ranks of Riesz spectral projections
-or zero orders of characteristic functions, along with spectral decompositions,
-remains to be proved.
+Bounded projections onto these full root spaces are now constructed. For any
+stabilized exponent `n` and resolvent point `w`, the root space and
+`range (I + (z-w) Rφ(w))ⁿ` are topologically complementary. The generic proof
+compresses a shifted power to an arbitrary complement of its finite-dimensional
+kernel, applies the Fredholm alternative, and constructs a bounded projection.
+It requires no self-adjointness.
+
+`periodicSpectralProjection hp φ z` has exactly the full root space as its range,
+is idempotent and compact, and has rank equal to the algebraic multiplicity.
+It commutes with every resolvent. Changing the reference resolvent point gives
+the same projection; one stabilized exponent describes its kernel at every such
+point. Every base vector has a unique decomposition into a root vector and a
+vector in the closed projection kernel. The projection is zero exactly on the
+resolvent set.
+
+These are algebraically constructed single-root-space projections. Identification
+with the contour-integral Cauchy–Riesz projectors in Section 3, equation (1.4),
+their analytic dependence on the potential for fixed contours, and agreement of
+multiplicities with characteristic-function zero orders remain to be proved.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -237,7 +255,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 623 declarations under `NLS`, including generated
+axioms. The current audit covers 642 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -266,13 +284,18 @@ Fourier mode at `z=i`, and the pre-Neumann identity for the nonzero potential.
 Root-space checks cover `p=1,3`, finite stabilization, finite dimensionality,
 compatibility with ordinary eigenspaces, the bounded representation for arbitrary
 reference points, positive/zero algebraic multiplicity, and a two-dimensional
-Jordan block distinguishing generalized from ordinary eigenvectors. No admission
+Jordan block distinguishing generalized from ordinary eigenvectors. Projection
+checks cover `p=1,3`, the unique decomposition, idempotence, rank, compactness,
+resolvent commutation, one kernel exponent for all reference points, a fixed
+signed free eigenmode, vanishing at the nonzero test potential's resolvent point,
+and the generalized kernel/range decomposition of a Jordan block. No admission
 or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Construct spectral projections and decompositions, and relate projection ranks
-   to the defined algebraic multiplicities.
+1. Prove annihilation between projections at distinct spectral points, then
+   develop contour-integral projections and their analytic dependence, linking
+   their ranks to the defined algebraic multiplicities.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,

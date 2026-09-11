@@ -18,8 +18,11 @@ resolvent set is open, and the resolvent is compact and jointly complex analytic
 in the potential and spectral parameter throughout its domain. The periodic
 spectrum is closed and discrete, with finitely many eigenvalues in every bounded
 region. Full periodic root spaces stabilize and have finite dimension, defining
-algebraic multiplicities that are positive exactly on the spectrum. General resolvent identities and
-explicit spectral and potential derivatives are also proved in operator norm. The main
+algebraic multiplicities that are positive exactly on the spectrum. Bounded
+finite-rank projections onto these root spaces commute with every resolvent,
+give topological direct-sum decompositions, and have rank equal to algebraic
+multiplicity. General resolvent identities and explicit spectral and potential
+derivatives are also proved in operator norm. The main
 dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
@@ -66,7 +69,10 @@ eigenspaces, the free Fourier eigenvalues, and the reciprocal spectral transform
 Calculus checks cover general resolvent identities, joint derivatives, potential
 variations, and a concrete spectral-derivative sign check at `z=i`. Root-space
 checks cover stabilization, finite dimensionality, algebraic multiplicities, and
-a Jordan block with a nontrivial generalized eigenvector.
+a Jordan block with a nontrivial generalized eigenvector. Projection checks
+cover decomposition, idempotence, rank, compactness, resolvent commutation,
+reference-independent kernels, fixed free eigenmodes, and vanishing at a
+verified resolvent point of a nonzero potential.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -93,8 +99,9 @@ installation is absent. No shell startup files are modified.
   The full resolvent is jointly complex analytic in the potential and parameter
   on an open domain, and compact throughout that domain. Its periodic spectrum
   is closed and discrete, with finite-dimensional stabilized root spaces and
-  finite algebraic multiplicities. Sharp rates and spectral projections remain
-  future work.
+  finite algebraic multiplicities. Bounded root-space projections and their
+  complementary decompositions are proved. Identification with contour-integral
+  projectors, their analytic dependence, and sharp rates remain future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

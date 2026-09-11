@@ -94,8 +94,15 @@ using a bounded compact-pencil representation and the proved stabilization of
 nonzero compact-operator generalized eigenspaces. The resulting algebraic
 multiplicity is positive exactly on the periodic spectrum.
 
-Next are spectral projections and decompositions, their relation to algebraic
-multiplicity, the sharper numerical rates and vertical-strip bounds from Lemma
-3.2(ii–iii), and spectral localization.
+Bounded finite-rank projections onto individual full root spaces are now
+constructed from topological kernel/range decompositions of stabilized compact
+pencils. They are independent of the reference resolvent parameter, commute
+with every resolvent, and have rank equal to algebraic multiplicity. Every base
+vector has a unique root-space/complement decomposition.
+
+Next are annihilation between distinct spectral projections, contour-integral
+projectors as in Section 3, equation (1.4), and their analytic dependence for
+fixed contours. The sharper numerical rates and vertical-strip bounds from
+Lemma 3.2(ii–iii), and spectral localization, also remain open.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

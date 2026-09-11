@@ -407,3 +407,64 @@ example : ((0, 1) : ℂ × ℂ) ∈ Module.End.genEigenspace testJordan.toLinear
   rw [NLS.CompactSpectrum.genEigenspace_eq_ker_shift_pow, LinearMap.mem_ker,
     Module.End.mem_eigenspace_iff]
   norm_num [testJordan, pow_two, mul_apply_eq_comp]
+
+-- The nilpotent part of a Jordan block is handled by the decomposition theorem.
+example : Submodule.IsTopCompl (Module.End.genEigenspace testJordan.toLinearMap 1 ⊤)
+    ((testJordan - (1 : ℂ) • 1) ^ 2).range := by
+  have hnil : (testJordan - (1 : ℂ) • 1) ^ 2 = 0 := by
+    apply ContinuousLinearMap.ext
+    rintro ⟨a, b⟩
+    simp [testJordan, pow_two, mul_apply_eq_comp]
+  have h2 : Module.End.genEigenspace testJordan.toLinearMap 1 (2 : ℕ) = ⊤ := by
+    rw [NLS.CompactSpectrum.genEigenspace_eq_ker_shift_pow, hnil]
+    exact LinearMap.ker_zero
+  apply NLS.CompactSpectrum.isTopCompl_genEigenspace_range_pow testJordan
+    (isCompactOperator_of_locallyCompactSpace_dom testJordan) (by norm_num) 2
+  exact le_antisymm ((Module.End.genEigenspace testJordan.toLinearMap 1).monotone le_top)
+    (by rw [h2]; exact le_top)
+
+example (φ : PairSpace 1) (z : ℂ) (x : PairSpace 1) :
+    ∃! uv : periodicRootSpaceTop (by simp) φ z ×
+      (periodicSpectralProjection (by simp) φ z).ker, (uv.1 : PairSpace 1) + uv.2 = x :=
+  existsUnique_periodicRootSpace_decomposition (by simp) φ z x
+
+example (φ : PairSpace 3) (z : ℂ) :
+    IsIdempotentElem (periodicSpectralProjection (by simp) φ z) :=
+  periodicSpectralProjection_idempotent (by simp) φ z
+
+example (φ : PairSpace 3) (z : ℂ) :
+    Module.finrank ℂ (periodicSpectralProjection (by simp) φ z).range =
+      periodicAlgebraicMultiplicity (by simp) φ z :=
+  finrank_range_periodicSpectralProjection (by simp) φ z
+
+example (φ : PairSpace 3) (z w : ℂ) (hw : w ∈ resolventSet (by simp) φ) :
+    (periodicSpectralProjection (by simp) φ z).comp (resolvent (by simp) φ w) =
+      (resolvent (by simp) φ w).comp (periodicSpectralProjection (by simp) φ z) :=
+  periodicSpectralProjection_commute_resolvent (by simp) φ z w hw
+
+example (φ : PairSpace 3) (z : ℂ) :
+    ∃ n : ℕ, periodicRootSpace (by simp) φ z n = periodicRootSpaceTop (by simp) φ z ∧
+      ∀ w ∈ resolventSet (by simp) φ, (periodicSpectralProjection (by simp) φ z).ker =
+        (boundedRootPencil (by simp) φ w z ^ n).range :=
+  exists_ker_periodicSpectralProjection_eq_range (by simp) φ z
+
+example (φ : PairSpace 1) (z : ℂ) :
+    IsCompactOperator (periodicSpectralProjection (by simp) φ z) :=
+  isCompactOperator_periodicSpectralProjection (by simp) φ z
+
+-- The free projection fixes an actual signed Fourier eigenmode.
+example (n : ℤ) :
+    periodicSpectralProjection (p := 3) (by simp) 0 ((Real.pi : ℂ) * n)
+      (domainInclusion (negativeMode n)) = domainInclusion (negativeMode n) := by
+  apply periodicSpectralProjection_apply_root
+  apply (mem_periodicRootSpaceTop (by simp) 0 _ _).mpr
+  refine ⟨1, ?_⟩
+  rw [mem_periodicRootSpace_succ]
+  refine ⟨negativeMode n, rfl, ?_⟩
+  simp [freeOperator_negativeMode]
+
+-- It vanishes at a verified resolvent point of the nonzero potential.
+example : periodicSpectralProjection (by simp) unitPairPotential testParameter = 0 :=
+  (periodicSpectralProjection_eq_zero_iff (by simp) unitPairPotential testParameter).mpr
+    (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential testParameter
+      testParameter_off unitPair_small)
