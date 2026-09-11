@@ -78,3 +78,52 @@ example (f : Domain 3) :
 example :
     (operator (p := 1) (by simp) (lp.single 1 0 1, 0) (positiveMode 4)).1 4 = 1 := by
   simp [operator_fst_apply, positiveMode, lp.single_apply, Pi.single_apply]
+
+-- Nonreal parameters supply concrete, non-vacuous instances of the resolvent API.
+private theorem I_off_freeLattice : Complex.I ∉ freeLattice :=
+  notMem_freeLattice_of_im_ne_zero (by simp)
+
+example (a : PairSpace 1) :
+    freePencil Complex.I (freeResolventToDomain Complex.I I_off_freeLattice a) = a :=
+  freePencil_freeResolventToDomain _ _ a
+
+example (f : Domain 3) :
+    freeResolventToDomain Complex.I I_off_freeLattice (freePencil Complex.I f) = f :=
+  freeResolventToDomain_freePencil _ _ f
+
+example : ‖freeResolventToDomain (p := 2) Complex.I I_off_freeLattice‖ ≤
+    freeDomainBound Complex.I := norm_freeResolventToDomain_le _ _
+
+example (z : ℂ) (hz : z ∉ freeLattice) :
+    ‖freeResolvent (p := 3) z hz‖ ≤ (freeGap z)⁻¹ := norm_freeResolvent_le z hz
+
+example : IsCompactOperator (freeResolvent (p := 1) Complex.I I_off_freeLattice) :=
+  isCompactOperator_freeResolvent _ _
+
+example : IsCompactOperator (freeResolvent (p := 3) Complex.I I_off_freeLattice) :=
+  isCompactOperator_freeResolvent _ _
+
+-- Compactness here also covers infinity, unlike the finite-p domain-density theorem.
+example : IsCompactOperator (freeResolvent (p := ⊤) Complex.I I_off_freeLattice) :=
+  isCompactOperator_freeResolvent _ _
+
+example : (freeResolvent (p := 2) Complex.I I_off_freeLattice
+    (lp.single 2 0 1, 0)).1 0 = -Complex.I := by
+  simp [lp.single_apply]
+
+-- The signed negative mode still has denominator I - π n, not I + π n.
+example (n : ℤ) :
+    freeResolvent Complex.I I_off_freeLattice (domainInclusion (negativeMode (p := 3) n)) =
+      (Complex.I - (Real.pi : ℂ) * n)⁻¹ • domainInclusion (negativeMode n) :=
+  freeResolvent_negativeMode _ _ n
+
+example (z : ℂ) (hz : z ∉ freeLattice) :
+    Filter.Tendsto
+      (fun s : Finset ℤ => (Coeff.truncateCLM s).comp (scalarResolvent (p := 2) z hz))
+      Filter.atTop (nhds (scalarResolvent z hz)) :=
+  tendsto_scalarResolvent_cutoff z hz
+
+example (z w : ℂ) (hz : z ∉ freeLattice) (hw : w ∉ freeLattice) :
+    freeResolvent (p := 2) z hz - freeResolvent w hw =
+      (w - z) • (freeResolvent z hz).comp (freeResolvent w hw) :=
+  freeResolvent_identity z w hz hw

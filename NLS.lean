@@ -9,3 +9,6 @@ import NLS.SequenceSpaces.SobolevEmbedding
 import NLS.ZakharovShabat.Potential
 import NLS.ZakharovShabat.Domain
 import NLS.ZakharovShabat.Operator
+import NLS.SequenceSpaces.Compact
+import NLS.ZakharovShabat.FreeResolvent
+import NLS.ZakharovShabat.FreeResolventCompact

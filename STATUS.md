@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has eleven modules and 84 named public theorems. All compile on the
+The library has fourteen modules and 122 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -18,6 +18,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.Potential` | Scalar Fourier-side potential multiplication on the one-derivative domain; convolution coefficient formula; norm and operator-norm bounds; constant unit potential identity |
 | `NLS.ZakharovShabat.Domain` | Contractive, injective scalar inclusion with dense range for finite `p`; period-two differentiation and its norm bound; scalar Fourier modes |
 | `NLS.ZakharovShabat.Operator` | Pair domain inclusion and density; free, potential, and total operators; coefficient formulas; maximum-pair-norm bounds; nonzero signed free eigenmodes; zero and unit potential identities; spectral pencil |
+| `NLS.SequenceSpaces.Compact` | Compactness of finite Fourier projections; uniform symbol-tail bound for the cutoff error; operator-norm convergence and compactness of vanishing diagonal multipliers, including `p=∞` |
+| `NLS.ZakharovShabat.FreeResolvent` | Closed free lattice and positive spectral gap; inverse into the one-derivative domain; both inverse identities and continuous linear equivalence; domain and base-space bounds; signed-mode formulas and resolvent identity |
+| `NLS.ZakharovShabat.FreeResolventCompact` | Uniform decay of reciprocal symbols; operator-norm convergence of scalar resolvent cutoffs; compactness of scalar and pair free resolvents for all Banach exponents |
 
 ## Current mathematical milestone
 
@@ -43,10 +46,27 @@ and `n`, respectively. Their included vectors are proved nonzero and satisfy
 
 The domain and operator follow Chapter 1, §3, printed page 23; the signed-mode
 convention follows §2, equation (1.2). The spectral pencil is explicitly a map
-from the domain to the base space. Closedness as an unbounded operator, the
-resolvent, and the physical Fourier/distribution realization remain unproved.
+from the domain to the base space. Closedness as an unbounded operator and the
+physical Fourier/distribution realization remain unproved.
 The dissertation's pair norm is not used for these numerical bounds; its
 comparison with the chosen maximum norm is a separate proof obligation.
+
+For every `1 ≤ p ≤ ∞` and every `z ∉ πℤ`, the free equation is now a
+continuous linear equivalence between the one-derivative domain and base space.
+The inverse `freeResolventToDomain z hz` satisfies both inverse identities.
+Writing `δ(z) = dist(z, πℤ) > 0`, we prove
+
+- `‖freeResolvent z hz‖ ≤ 1 / δ(z)` on the base space;
+- `‖freeResolventToDomain z hz‖ ≤ 1 / δ(z) + (1 + ‖z‖ / δ(z)) / π`;
+- `R₀(z) - R₀(w) = (w - z) R₀(z) R₀(w)`;
+- compactness of `freeResolvent z hz` on the base space.
+
+The compactness proof constructs finite Fourier cutoffs and proves convergence
+in operator norm from uniform decay of the reciprocal symbol. This establishes
+the coefficient-space content of Chapter 1, Lemma 3.2(i), printed page 24, and
+extends it to all Banach exponents. It does not assert compactness of the inverse
+as a map into the stronger domain norm. The `FL^p → FL^1` estimates in Lemma
+3.2(ii–iii), including their constants, remain to be proved.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -54,25 +74,27 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 252 declarations under `NLS`, including generated
+axioms. The current audit covers 330 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
 The examples exercise multiplication at `p=1,2,3`, convolution and differentiation
 at `p=∞`, domain density at `p=1`, the operator bound at `p=3`, the frequency-shift
 sign, both signed free spectral equations, and nonzero off-diagonal coupling.
-No admission or extra project axiom is used by the library.
+Resolvent checks use the concrete parameter `z=i`, exercise both inverse identities,
+the bounds, compactness at `p=1,3,∞`, cutoff convergence, signed-mode denominators,
+and the resolvent identity. No admission or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Construct the free resolvent away from `πℤ`, establish its estimates, and
-   prove compactness by finite-rank approximation.
+1. Prove the `FL^p → FL^1` free resolvent estimates needed to control the potential
+   perturbation (Lemma 3.2(ii–iii)), with explicit norm conventions.
 2. Prove closedness and the required relative perturbation estimates for the
-   general potential operator.
+   general potential operator, then construct its resolvent by a Neumann series.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 
-The spectral theory, classical Birkhoff prerequisites, and main dissertation
-theorems remain unimplemented. Further sequence-space work includes symmetric
-cutoff convenience functions, embeddings between regularities, and the full
+General-potential spectral theory, classical Birkhoff prerequisites, and the main
+dissertation theorems remain unimplemented. Further sequence-space work includes
+symmetric cutoff convenience functions, embeddings between regularities, and the full
 range of Young inequalities beyond the `l1`-factor case.

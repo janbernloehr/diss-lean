@@ -50,7 +50,12 @@ depending only on `p`. The scalar and pair domain inclusions, differentiation,
 and the two-component operator are also proved, with explicit period-two signs
 and maximum-pair-norm bounds. Both signed free modes have eigenvalue `π n`.
 
-The next targets are the free resolvent away from `πℤ`, compactness by finite-rank
-approximation, and closedness with relative perturbation estimates. Physical-space
-interpretation, period-one embedding, and comparison with the dissertation's pair
-norm are still separate proof obligations.
+The free resolvent away from `πℤ` is now constructed as a bounded inverse into the
+one-derivative domain, with both inverse identities and a spectral-gap bound on
+the base space. Compactness follows from operator-norm convergence of finite
+Fourier cutoffs. The signed-mode formulas and resolvent identity are also proved.
+
+The next targets are the `FL^p → FL^1` estimates from Lemma 3.2(ii–iii), closedness
+and relative perturbation estimates, and the general-potential resolvent via a
+Neumann series. Physical-space interpretation, period-one embedding, and
+comparison with the dissertation's pair norm are separate proof obligations.
