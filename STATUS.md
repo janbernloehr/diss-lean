@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has twenty-three modules and 228 named public theorems. All compile on the
+The library has twenty-five modules and 251 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -30,6 +30,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.CompactSpectrum` | Riesz-lemma proof of finiteness of compact-operator eigenvalues and spectral values away from zero; finite-dimensional nonzero eigenspaces, without self-adjointness |
 | `NLS.ZakharovShabat.PeriodicSpectrum` | Closed periodic spectrum; spectral transformation through a compact resolvent; finiteness in every bounded region; discrete subspace topology; equivalence with domain eigenvalues; finite geometric multiplicities |
 | `NLS.ZakharovShabat.ResolventCalculus` | General inverse difference identities; resolvent commutation; potential differences; joint Fréchet derivatives into the domain and base space; spectral and potential derivative formulas; compatibility with the free resolvent and the pre-Neumann identity |
+| `NLS.FunctionalAnalysis.CompactGeneralized` | Compact shifted powers after removal of the constant term; finite-dimensional generalized eigenspaces at nonzero values; Riesz-lemma stabilization; finite-dimensional full generalized eigenspaces |
+| `NLS.ZakharovShabat.RootSpaces` | Domain-aware recursive periodic root spaces; reference-independent definition; bounded compact-pencil representation; finite-dimensional closed full root spaces; finite stabilization; algebraic multiplicity and its spectral characterization |
 
 ## Current mathematical milestone
 
@@ -173,9 +175,9 @@ spectrum is finite. The spectrum is closed and has the discrete subspace topolog
 every spectral point has a nonzero eigenvector in the one-derivative domain.
 The domain eigenspaces embed into nonzero eigenspaces of the compact resolvent,
 so their geometric multiplicities are finite. This proves the coefficient-space
-discreteness conclusion of Corollary 3.3. Generalized eigenspaces, algebraic
-multiplicities, spectral projections, and quantitative localization remain
-separate proof obligations.
+discreteness conclusion of Corollary 3.3. Generalized eigenspaces and algebraic
+multiplicities are now constructed below. Spectral projections and quantitative
+localization remain separate proof obligations.
 
 The general inverse difference formula is now proved for simultaneous changes
 of potential and spectral parameter. It specializes to
@@ -202,13 +204,40 @@ the pre-Neumann identity on printed page 23,
 `Rφ(z) (I - Φ R₀(z)) = R₀(z)`, now holds whenever both resolvents exist,
 without imposing the sufficient Neumann smallness condition.
 
+Periodic root spaces are now defined directly from the unbounded operator:
+
+`G₀(z) = {0}`, `Gₙ₊₁(z) = {domainInclusion f | (z-L)f ∈ Gₙ(z)}`.
+
+The definition enforces one-derivative domain membership at each step, and
+contains no choice of reference parameter. Its first level is the included
+ordinary eigenspace. For every resolvent point `w`, we prove
+
+`Gₙ(z) = ker (I + (z-w) Rφ(w))ⁿ`.
+
+Equivalently, these are the generalized eigenspaces at `-1` of the compact
+operator `(z-w) Rφ(w)`. This representation remains valid at `z=w`.
+The full root space is the increasing union of all finite levels.
+
+The generic compact-operator proof establishes finite-dimensional generalized
+eigenspaces and finite stabilization at every nonzero value. Finite-level
+dimensionality follows by removing the constant term from a shifted operator
+power; stabilization follows from Riesz vectors in successive kernels and
+compactness. Consequently, each periodic full root space is finite dimensional,
+closed in the base space, and reached at a finite level. Its dimension defines
+`periodicAlgebraicMultiplicity hp φ z`, which is positive exactly on the periodic
+spectrum and zero exactly on the resolvent set.
+
+Identification of these multiplicities with ranks of Riesz spectral projections
+or zero orders of characteristic functions, along with spectral decompositions,
+remains to be proved.
+
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 566 declarations under `NLS`, including generated
+axioms. The current audit covers 623 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -234,11 +263,16 @@ the spectral transformation at the nonzero test potential. Calculus checks
 cover `p=1,3`, general differences, commutation, joint derivatives into both
 spaces, the potential derivative, the spectral derivative sign on the zero
 Fourier mode at `z=i`, and the pre-Neumann identity for the nonzero potential.
-No admission or extra project axiom is used by the library.
+Root-space checks cover `p=1,3`, finite stabilization, finite dimensionality,
+compatibility with ordinary eigenspaces, the bounded representation for arbitrary
+reference points, positive/zero algebraic multiplicity, and a two-dimensional
+Jordan block distinguishing generalized from ordinary eigenvectors. No admission
+or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Develop generalized eigenspaces, algebraic multiplicities, and spectral projections.
+1. Construct spectral projections and decompositions, and relate projection ranks
+   to the defined algebraic multiplicities.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,

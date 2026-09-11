@@ -21,3 +21,5 @@ import NLS.ZakharovShabat.ResolventAnalytic
 import NLS.FunctionalAnalysis.CompactSpectrum
 import NLS.ZakharovShabat.PeriodicSpectrum
 import NLS.ZakharovShabat.ResolventCalculus
+import NLS.FunctionalAnalysis.CompactGeneralized
+import NLS.ZakharovShabat.RootSpaces

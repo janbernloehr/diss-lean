@@ -367,3 +367,43 @@ example : (resolvent (by simp) unitPairPotential testParameter).comp
   resolvent_comp_one_sub_potentialFreeResolvent (by simp) unitPairPotential testParameter
     testParameter_off (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential
       testParameter testParameter_off unitPair_small)
+
+-- Generalized root spaces stabilize and are finite dimensional at all parameters.
+example (φ : PairSpace 1) (z : ℂ) :
+    ∃ n : ℕ, periodicRootSpace (by simp) φ z n = periodicRootSpaceTop (by simp) φ z :=
+  exists_periodicRootSpace_eq_top (by simp) φ z
+
+example (φ : PairSpace 3) (z : ℂ) : FiniteDimensional ℂ (periodicRootSpaceTop (by simp) φ z) :=
+  finiteDimensional_periodicRootSpaceTop (by simp) φ z
+
+-- The first level agrees with the ordinary domain eigenspace.
+example (φ : PairSpace 3) (z : ℂ) : periodicRootSpace (by simp) φ z 1 =
+    (periodicEigenspace (by simp) φ z).map domainInclusion.toLinearMap :=
+  periodicRootSpace_one (by simp) φ z
+
+-- The bounded representation works for every reference resolvent point.
+example (φ : PairSpace 3) (w z : ℂ) (hw : w ∈ resolventSet (by simp) φ) (n : ℕ) :
+    periodicRootSpace (by simp) φ z n =
+      (boundedRootPencil (by simp) φ w z ^ n).toLinearMap.ker :=
+  periodicRootSpace_eq_ker (by simp) φ w z hw n
+
+example (φ : PairSpace 3) (z : ℂ) :
+    0 < periodicAlgebraicMultiplicity (by simp) φ z ↔ z ∈ periodicSpectrum (by simp) φ :=
+  periodicAlgebraicMultiplicity_pos_iff (by simp) φ z
+
+-- At an actual resolvent point of the nonzero test potential, multiplicity is zero.
+example : periodicAlgebraicMultiplicity (by simp) unitPairPotential testParameter = 0 :=
+  (periodicAlgebraicMultiplicity_eq_zero_iff (by simp) unitPairPotential testParameter).mpr
+    (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential testParameter
+      testParameter_off unitPair_small)
+
+-- A Jordan block distinguishes a generalized eigenvector from an ordinary one.
+private def testJordan : (ℂ × ℂ) →L[ℂ] (ℂ × ℂ) :=
+  ((ContinuousLinearMap.fst ℂ ℂ ℂ) + ContinuousLinearMap.snd ℂ ℂ ℂ).prod
+    (ContinuousLinearMap.snd ℂ ℂ ℂ)
+
+example : ((0, 1) : ℂ × ℂ) ∈ Module.End.genEigenspace testJordan.toLinearMap 1 (2 : ℕ) ∧
+    ((0, 1) : ℂ × ℂ) ∉ Module.End.eigenspace testJordan.toLinearMap 1 := by
+  rw [NLS.CompactSpectrum.genEigenspace_eq_ker_shift_pow, LinearMap.mem_ker,
+    Module.End.mem_eigenspace_iff]
+  norm_num [testJordan, pow_two, mul_apply_eq_comp]

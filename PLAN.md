@@ -88,8 +88,14 @@ differentiation gives `Dφ R[ψ] = R Φ(ψ) R_D`. The full and free construction
 agree at zero potential, and the pre-Neumann identity is proved without a
 smallness restriction when the required resolvents exist.
 
-Next are generalized eigenspaces, algebraic multiplicities and spectral
-projections, the sharper numerical rates and vertical-strip bounds from Lemma
+Periodic root spaces are now defined recursively with domain membership at
+each step. Their full union is finite dimensional and attained at a finite level,
+using a bounded compact-pencil representation and the proved stabilization of
+nonzero compact-operator generalized eigenspaces. The resulting algebraic
+multiplicity is positive exactly on the periodic spectrum.
+
+Next are spectral projections and decompositions, their relation to algebraic
+multiplicity, the sharper numerical rates and vertical-strip bounds from Lemma
 3.2(ii–iii), and spectral localization.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.
