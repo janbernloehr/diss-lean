@@ -14,3 +14,5 @@ import NLS.ZakharovShabat.FreeResolvent
 import NLS.ZakharovShabat.FreeResolventCompact
 import NLS.ZakharovShabat.ResolventEstimates
 import NLS.ZakharovShabat.PerturbedResolvent
+import NLS.SequenceSpaces.DominatedConvergence
+import NLS.ZakharovShabat.UniformResolvent

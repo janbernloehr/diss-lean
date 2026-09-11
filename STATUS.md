@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has sixteen modules and 150 named public theorems. All compile on the
+The library has eighteen modules and 162 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -23,6 +23,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.FreeResolventCompact` | Uniform decay of reciprocal symbols; operator-norm convergence of scalar resolvent cutoffs; compactness of scalar and pair free resolvents for all Banach exponents |
 | `NLS.ZakharovShabat.ResolventEstimates` | Reciprocal symbols in the conjugate space; scalar and pair `FL^p → FL^1` maps and Hölder bounds; the endpoint bound `1 / abs(Im z)` for `p=1` |
 | `NLS.ZakharovShabat.PerturbedResolvent` | Potential/free-resolvent composition; explicit Neumann condition; convergent geometric correction; factorization and both inverse identities; domain and base-space norm bounds; compactness; an admissible parameter for every `l1` potential |
+| `NLS.SequenceSpaces.DominatedConvergence` | Coordinatewise convergence plus an `lp` majorant implies norm convergence at finite Banach exponents, along arbitrary filters |
+| `NLS.ZakharovShabat.UniformResolvent` | Explicit reciprocal envelopes; convergence of their conjugate norms; Fourier recentering; bounds uniform in real parts and bounded potential sets; existence of a compact two-sided inverse for every finite-p potential |
 
 ## Current mathematical milestone
 
@@ -90,9 +92,27 @@ Corollary 3.3, printed pages 23–24. For `p=1`, `B_1(z) ≤ 1 / |Im z|`, so
 `|Im z| > ‖φ‖` suffices. Every `l1` potential therefore has an admissible
 parameter; the proof chooses `z = i (‖φ‖ + 1)`.
 
-For `p>1`, the condition remains expressed through the conjugate-symbol norms.
-The uniform numerical estimates and regions from Lemma 3.2(ii–iii), analytic
-dependence, and Corollary 3.3's full conclusions remain to be proved.
+For every finite `p≥1`, uniform high-imaginary-part regions are now established.
+Define `U_p(N)` as the conjugate-space norm of the explicit envelope
+
+`n ↦ min (1 / (N + 1)) (3 / (1 + abs(n)))`.
+
+We prove `U_p(N) → 0` and `B_p(z) ≤ U_p(N)` whenever `abs(Im z) ≥ N + 1`,
+uniformly in `Re z`. The proof shifts frequencies by `floor(Re z / π)` and
+uses dominated convergence at finite conjugate exponents; the infinite conjugate
+exponent uses the uniform height cap directly.
+
+Consequently, every bounded set of potentials has a common height above which
+the Neumann condition holds, for both signs of the imaginary part. Every
+potential in `PairSpace p`, for any `1 ≤ p < ∞`, has a two-sided inverse into
+the one-derivative domain whose base-space realization is compact. The theorem
+`exists_compact_inverse` states this without a smallness hypothesis on the
+potential.
+
+These are qualitative uniform regions with a concrete envelope, rather than
+the sharper numerical rates and vertical-strip bounds in Lemma 3.2(ii–iii).
+Those constants, analytic dependence, and Corollary 3.3's full conclusions
+remain to be proved.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -100,7 +120,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 396 declarations under `NLS`, including generated
+axioms. The current audit covers 415 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -112,15 +132,17 @@ the bounds, compactness at `p=1,3,∞`, cutoff convergence, signed-mode denomina
 and the resolvent identity. Perturbation checks cover the Hölder and convolution
 bounds at `p=3`, convergence of the Neumann series, and a concrete nonzero
 potential with both entries equal to one at `z=2i`: both inverse identities,
-compactness, and the norm bound are checked. No admission or extra project axiom
-is used by the library.
+compactness, and the norm bound are checked. Uniform-estimate checks exercise
+`p=1,3`, a parameter with a far-negative real part, one height for a whole norm
+ball, and compact inverse existence for an arbitrary `p=3` potential. No admission
+or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Establish uniform numerical bounds for the conjugate-symbol norms at `p>1`
-   (Lemma 3.2(ii–iii)), yielding nonempty resolvent regions for every such potential.
-2. Prove closedness of the unbounded realization and analytic dependence of the
-   perturbed resolvent, then develop discreteness and spectral localization.
+1. Prove closedness of the unbounded realization using the constructed inverses,
+   and establish analytic dependence of the resolvent.
+2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
+   3.2(ii–iii), then develop discreteness and spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 

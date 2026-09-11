@@ -174,3 +174,37 @@ example : ‖perturbedResolvent (by simp) unitPairPotential testParameter testPa
 example (φ : PairSpace 1) :
     ∃ z : ℂ, ∃ hz : z ∉ freeLattice, NeumannCondition (by simp) φ z hz :=
   exists_neumannParameter_one φ
+
+-- Uniform high-imaginary-part bounds cover both the p=1 endpoint and p>1.
+example : Filter.Tendsto (uniformFreeL1Bound 1 (by simp)) Filter.atTop (nhds 0) :=
+  tendsto_uniformFreeL1Bound_zero 1 (by simp)
+
+example : Filter.Tendsto (uniformFreeL1Bound 3 (by simp)) Filter.atTop (nhds 0) :=
+  tendsto_uniformFreeL1Bound_zero 3 (by simp)
+
+-- A far-negative real part exercises the Fourier recentering convention.
+private def shiftedTestParameter : ℂ := -100 * (Real.pi : ℂ) + 2 * Complex.I
+private theorem shiftedTestParameter_off : shiftedTestParameter ∉ freeLattice :=
+  notMem_freeLattice_of_im_ne_zero (by norm_num [shiftedTestParameter])
+
+example : freeL1Bound 3 (by simp) shiftedTestParameter shiftedTestParameter_off ≤
+    uniformFreeL1Bound 3 (by simp) 1 := by
+  apply freeL1Bound_le_uniform
+  norm_num [shiftedTestParameter]
+
+-- One height serves an entire norm ball, uniformly over real parts and both imaginary signs.
+example (M : ℝ) : ∃ N : ℕ, ∀ φ : PairSpace 3, ‖φ‖ ≤ M →
+    ∀ (z : ℂ) (hz : z ∉ freeLattice),
+      (N + 1 : ℝ) ≤ |z.im| → NeumannCondition (by simp) φ z hz :=
+  exists_uniform_neumann_height (by simp) M
+
+-- No smallness hypothesis is required on this arbitrary non-Hilbert-space potential.
+example (φ : PairSpace 3) :
+    ∃ z : ℂ, ∃ hz : z ∉ freeLattice, NeumannCondition (by simp) φ z hz :=
+  exists_neumannParameter (by simp) φ
+
+example (φ : PairSpace 3) : ∃ (z : ℂ) (R : PairSpace 3 →L[ℂ] Domain 3),
+    (∀ a, spectralPencil (by simp) φ z (R a) = a) ∧
+    (∀ f, R (spectralPencil (by simp) φ z f) = f) ∧
+    IsCompactOperator (domainInclusion.comp R) :=
+  exists_compact_inverse (by simp) φ

@@ -61,7 +61,13 @@ Under that condition, the perturbed inverse is constructed with both inverse
 identities, norm bounds, and compactness. For `p=1`, the condition follows from
 `|Im z| > ‖φ‖`, giving an admissible parameter for every `l1` potential.
 
-Next are the uniform numerical estimates for `p>1` from Lemma 3.2(ii–iii),
-closedness, analytic dependence, and spectral localization. Physical-space
-interpretation, period-one embedding, and comparison with the dissertation's pair
-norm remain separate proof obligations.
+Uniform high-imaginary-part regions are now proved for all finite Banach
+exponents. A concrete reciprocal envelope has conjugate norm tending to zero;
+Fourier recentering makes the bound uniform in the real part. Each norm ball of
+potentials therefore has a common Neumann height, and every finite-p potential
+has a compact two-sided inverse at some parameter without a smallness assumption.
+
+Next are closedness, analytic dependence, the sharper numerical rates and
+vertical-strip bounds from Lemma 3.2(ii–iii), and spectral localization.
+Physical-space interpretation, period-one embedding, and comparison with the
+dissertation's pair norm remain separate proof obligations.
