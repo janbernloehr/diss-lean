@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has thirty-five modules and 338 named public theorems. All compile on the
+The library has thirty-six modules and 350 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -15,6 +15,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.Convolution` | Absolutely convergent Banach-space construction; coefficient formula; `lp × l1 → lp` norm bound, including `p=∞`; continuous bilinear map; single-mode shift identity |
 | `NLS.SequenceSpaces.Embedding` | General weighted Hölder embedding into `l1` when the reciprocal weight belongs to the conjugate space; explicit bound and injectivity |
 | `NLS.SequenceSpaces.SobolevEmbedding` | Reciprocal one-derivative weight is in `lq` for `q>1`, including infinity; continuous embedding `FL^{1,p} → FL^1` for every finite `p≥1` with an explicit constant |
+| `NLS.SequenceSpaces.ReciprocalSeries` | Appendix B.1 with its exact conjugate-exponent constants; summability; one-sided integral tail bounds; bilateral punctured-lattice identities and estimates; invariance under frequency translation |
 | `NLS.ZakharovShabat.Potential` | Scalar Fourier-side potential multiplication on the one-derivative domain; convolution coefficient formula; norm and operator-norm bounds; constant unit potential identity |
 | `NLS.ZakharovShabat.Domain` | Contractive, injective scalar inclusion with dense range for finite `p`; period-two differentiation and its norm bound; scalar Fourier modes |
 | `NLS.ZakharovShabat.Operator` | Pair domain inclusion and density; free, potential, and total operators; coefficient formulas; maximum-pair-norm bounds; nonzero signed free eigenmodes; zero and unit potential identities; spectral pencil |
@@ -131,6 +132,25 @@ These are qualitative uniform regions with a concrete envelope, rather than
 the sharper numerical rates and vertical-strip bounds in Lemma 3.2(ii–iii).
 Those constants remain to be proved. Analytic dependence and spectral
 discreteness are now established below.
+
+The numerical series estimate used in those sharper bounds is now proved:
+Appendix B, Lemma B.1 (printed page 124). For real conjugate exponents `p,q > 1`
+and `α ≥ 0`,
+
+`∑_{m≥1} (α+m)⁻ᵠ ≤ (q+α)/(q−1) * (1+α)⁻ᵠ ≤ p/(1+α)^(q−1)`.
+
+The proof computes the improper integral and applies the integral test to the
+nonnegative decreasing reciprocal-power function. It includes the zero-shift
+case, summability, and the explicit tail estimate
+
+`∑_{k≥0} (α+k+N+1)⁻ᵠ ≤ (α+N)^(1−q)/(q−1)` for `α+N > 0`.
+
+The punctured integer lattice is twice the one-sided series, giving bounds
+`2q/(q−1) * (1+α)^(1−q)` for `α ≥ 0`, and
+`2/(q−1) * α^(1−q)` for `α > 0`. The former bound is also proved around any
+integer Fourier center. These estimates are ready for the denominator geometry
+and Hölder-norm calculations in Lemmas 3.2 and 3.4; the operator estimates with
+the dissertation's numerical constants are still open.
 
 The actual unbounded realization is now defined as
 
@@ -339,7 +359,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 759 declarations under `NLS`, including generated
+axioms. The current audit covers 781 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -389,12 +409,15 @@ enclose exactly zero, and its entire contour operator equals the individual
 projection at zero. Further checks cover openness at `p=1`, analytic dependence
 at the free `p=3` potential, local preservation of the multiplicity in the free
 half-pi disk, and the zero-radius integration functional. No admission or extra
-project axiom is used by the library.
+project axiom is used by the library. Reciprocal-series checks cover the
+zero-shift reciprocal squares, the non-Hilbert conjugate pair `p=3, q=3/2`,
+the explicit tail after five terms, arbitrary integer centers, and the sharper
+positive-shift lattice estimate.
 
 ## Next milestones
 
-1. Prove the sharper numerical rates and vertical-strip estimates from Lemma
-   3.2(ii–iii).
+1. Apply Appendix B.1 to the reciprocal-symbol norms and prove the sharper
+   numerical rates and vertical-strip estimates from Lemma 3.2(ii–iii).
 2. Develop spectral localization and apply the fixed-contour results to the
    dissertation’s small and large spectral disks.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,

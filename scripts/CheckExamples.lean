@@ -726,3 +726,39 @@ example : ∀ᶠ φ : PairSpace 3 in 𝓝 0,
 -- The integration functional also supports the degenerate radius-zero circle.
 example : ‖NLS.CircleIntegral.integrationCLM ℂ 0 0 (by rfl)‖ = 0 :=
   le_antisymm (NLS.CircleIntegral.norm_integrationCLM_le 0 0 (by rfl)) (norm_nonneg _)
+
+-- Appendix B.1 includes zero shift: the reciprocal-square series is at most two.
+example : (∑' n : ℕ, 1 / ((n : ℝ) + 1) ^ (2 : ℝ)) ≤ 2 := by
+  have h := NLS.ReciprocalSeries.shifted_reciprocal_series_bounds
+    (α := 0) (by rfl) Real.HolderConjugate.two_two
+  simpa using h.1.trans h.2
+
+-- The non-Hilbert conjugate pair p=3, q=3/2 gives the dissertation's constant p.
+example (α : ℝ) (hα : 0 ≤ α) :
+    (∑' n : ℕ, 1 / (α + (n + 1 : ℝ)) ^ (3 / 2 : ℝ)) ≤
+      3 / (1 + α) ^ ((3 / 2 : ℝ) - 1) := by
+  have hpq : Real.HolderConjugate 3 (3 / 2) := by constructor <;> norm_num
+  have h := NLS.ReciprocalSeries.shifted_reciprocal_series_bounds hα hpq
+  exact h.1.trans h.2
+
+-- The explicit tail after five terms is bounded by the integral from five.
+example : (∑' k : ℕ, ((k : ℝ) + 5 + 1) ^ (-2 : ℝ)) ≤ 1 / 5 := by
+  have h := NLS.ReciprocalSeries.tsum_nat_tail_shifted_rpow_le
+    (α := 0) (q := 2) (by norm_num) 5 (by norm_num)
+  norm_num at h ⊢
+  exact h
+
+-- The punctured reciprocal lattice bound is independent of its Fourier center.
+example (n : ℤ) :
+    (∑' m : ℤ, if m = n then (0 : ℝ) else |((m - n : ℤ) : ℝ)| ^ (-2 : ℝ)) ≤ 4 := by
+  have h := NLS.ReciprocalSeries.tsum_int_centered_shifted_rpow_le
+    (α := 0) (q := 2) (by rfl) (by norm_num) n
+  norm_num at h ⊢
+  exact h
+
+-- A strictly positive shift also admits the sharper integral bound.
+example : (∑' m : ℤ, if m = 0 then (0 : ℝ) else (3 + |(m : ℝ)|) ^ (-2 : ℝ)) ≤ 2 / 3 := by
+  have h := NLS.ReciprocalSeries.tsum_int_shifted_rpow_le_integral
+    (α := 3) (q := 2) (by norm_num) (by norm_num)
+  norm_num at h ⊢
+  exact h

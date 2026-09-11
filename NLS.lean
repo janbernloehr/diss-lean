@@ -33,3 +33,4 @@ import NLS.ZakharovShabat.ContourSpectrum
 import NLS.FunctionalAnalysis.CircleIntegrationMap
 import NLS.FunctionalAnalysis.ProjectionRank
 import NLS.ZakharovShabat.ContourAnalytic
+import NLS.SequenceSpaces.ReciprocalSeries

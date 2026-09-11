@@ -129,7 +129,10 @@ the circle and bounded linear integration establish this dependence. Projections
 less than one apart have the same rank, so total enclosed algebraic multiplicity
 is locally constant.
 
-Next are the sharper numerical rates and vertical-strip bounds from
-Lemma 3.2(ii–iii), followed by spectral localization.
+Appendix B.1 is now proved with both stated constants, including `α=0`,
+summability, one-sided tail estimates, and translated bilateral lattice bounds.
+Next, combine these bounds with reciprocal-denominator geometry and Hölder
+norms to prove Lemma 3.2(ii–iii), followed by the double-resolvent estimate
+in Lemma 3.4 and spectral localization.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

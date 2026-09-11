@@ -31,7 +31,9 @@ equal to their total algebraic multiplicity. For a fixed resolvent circle, these
 projections depend analytically on the potential and have locally constant rank.
 General resolvent
 identities and explicit spectral and potential derivatives are also proved in
-operator norm. The main dissertation theorems remain future work.
+operator norm. Appendix B.1's quantitative reciprocal-series inequalities,
+including explicit tail and lattice bounds, are also proved. The main
+dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
