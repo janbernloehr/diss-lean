@@ -26,3 +26,5 @@ import NLS.ZakharovShabat.RootSpaces
 import NLS.FunctionalAnalysis.CompactDecomposition
 import NLS.ZakharovShabat.SpectralProjections
 import NLS.ZakharovShabat.SpectralClusters
+import NLS.FunctionalAnalysis.CircleIntegral
+import NLS.ZakharovShabat.ResolventContour

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has twenty-eight modules and 292 named public theorems. All compile on the
+The library has thirty modules and 315 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -35,6 +35,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.CompactDecomposition` | Fredholm bijectivity for injective compact perturbations of a nonzero scalar identity; topological kernel/range decomposition at a stabilized exponent; commutation of projections with maps preserving both summands |
 | `NLS.ZakharovShabat.SpectralProjections` | Bounded finite-rank periodic root-space projections; independence of the reference resolvent parameter; idempotence and resolvent commutation; rank equals algebraic multiplicity; compactness; unique topological decomposition; vanishing exactly on the resolvent set |
 | `NLS.ZakharovShabat.SpectralClusters` | Reciprocal resolvent representation of full root spaces; disjointness at distinct parameters; projection annihilation and commutation; finite cluster spaces and compact projections; range and kernel formulas; additive algebraic multiplicities; composition by intersection; unique cluster/complement decomposition |
+| `NLS.FunctionalAnalysis.CircleIntegral` | Bounded linear maps and evaluation commute with Banach-valued circle integrals |
+| `NLS.ZakharovShabat.ResolventContour` | Normalized resolvent circle integrals into the base space and domain; circle integrability, factorization, compactness, norm bound; Cauchy vanishing and annulus deformation; root-chain integral formula; inside/outside action on full root spaces; resolvent and projection commutation; finite-cluster selection |
 
 ## Current mathematical milestone
 
@@ -262,10 +264,33 @@ Multiplying cluster projections selects their intersection; disjoint clusters
 therefore have annihilating projections. Parameters in the resolvent set
 contribute zero, so no separate spectral-membership assumption is needed.
 
-These are algebraically constructed individual and finite-cluster projections. Identification
-with the contour-integral Cauchy–Riesz projectors in Section 3, equation (1.4),
-their analytic dependence on the potential for fixed contours, and agreement of
-multiplicities with characteristic-function zero orders remain to be proved.
+The actual normalized circle integral is now defined as
+
+`resolventCircleIntegral hp φ c r = (2πi)⁻¹ • ∮ ζ in C(c,r), Rφ(ζ)`.
+
+For a nonnegative-radius circle contained in the resolvent set, circle
+integrability is proved in operator norm. A second integral valued in the
+one-derivative domain gives a bounded factorization through `domainInclusion`,
+which also proves compactness. A uniform bound `M` on the resolvent along the
+circle gives the bound `r*M` on the normalized integral. The contour operator
+vanishes if the closed disk is contained in the resolvent set; changing the
+radius through a closed annulus of resolvent points leaves it unchanged.
+
+The root-chain recurrence gives a weighted integral formula for every finite
+root space: all higher pole terms integrate to zero, leaving the simple-pole
+term. Consequently the contour operator fixes full root vectors at values
+inside the circle and annihilates those outside the closed disk. It commutes
+with every resolvent and every individual algebraic spectral projection. For
+any finite parameter set `s`, its product with `periodicClusterProjection s` is
+the cluster projection filtered to the open disk. Boundary parameters are
+resolvent points and have zero algebraic projection.
+
+This is the circle-integral construction used in Section 3, equation (1.4), but
+idempotence and finite rank of the contour operator itself, and equality with
+the enclosed finite cluster projection on the entire base space, remain open.
+The action on all root vectors alone is not used to claim operator equality.
+Analytic dependence on the potential for fixed contours, and agreement of
+multiplicities with characteristic-function zero orders, also remain to be proved.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -273,7 +298,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 679 declarations under `NLS`, including generated
+axioms. The current audit covers 719 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -310,13 +335,20 @@ and the generalized kernel/range decomposition of a Jordan block. Cluster
 checks cover `p=1,3`, the reciprocal representation, disjoint root spaces,
 annihilation, idempotence, unique decomposition, kernel intersections, compactness,
 rank additivity, the intersection of two overlapping clusters, and the preservation
-or annihilation of actual free Fourier modes. No admission
+or annihilation of actual free Fourier modes. Contour checks cover `p=1,3`,
+domain factorization, compactness, commutation, norm bounds, vanishing on
+resolvent disks, annulus deformation, generalized root vectors, and selection
+within finite clusters. A circle of radius `π/2` about zero is explicitly proved
+to avoid the free lattice; its normalized integral fixes the constant free mode
+and kills the mode at `π`, checking both the orientation and the inside/outside
+selection. No admission
 or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Develop contour-integral projections, identify them with finite cluster
-   projections, and prove analytic dependence for fixed contours.
+1. Prove idempotence and finite rank of the contour operator, identify it with
+   the enclosed finite cluster projection on the whole base space, and prove
+   analytic dependence for fixed contours.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,

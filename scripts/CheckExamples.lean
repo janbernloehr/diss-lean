@@ -546,3 +546,83 @@ example : periodicClusterProjection (p := 3) (by simp) 0 {0}
   apply periodicClusterProjection_apply_other_root (z := (Real.pi : ℂ))
   · simp [Real.pi_ne_zero]
   · simpa using freePositive_root 1
+
+-- Actual circle integrals are defined in operator norm and factor through the domain.
+example (φ : PairSpace 3) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    resolventCircleIntegral (by simp) φ c r =
+      domainInclusion.comp (resolventCircleIntegralToDomain (by simp) φ c r) :=
+  resolventCircleIntegral_eq_inclusion (by simp) φ c r hr hc
+
+example (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    IsCompactOperator (resolventCircleIntegral (by simp) φ c r) :=
+  isCompactOperator_resolventCircleIntegral (by simp) φ c r hr hc
+
+example (φ : PairSpace 3) (c w : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) (hw : w ∈ resolventSet (by simp) φ) :
+    Commute (resolventCircleIntegral (by simp) φ c r) (resolvent (by simp) φ w) :=
+  resolventCircleIntegral_commute_resolvent (by simp) φ c w r hr hc hw
+
+example (φ : PairSpace 3) (c : ℂ) (r M : ℝ) (hr : 0 ≤ r)
+    (hM : ∀ z ∈ Metric.sphere c r, ‖resolvent (by simp) φ z‖ ≤ M) :
+    ‖resolventCircleIntegral (by simp) φ c r‖ ≤ r * M :=
+  norm_resolventCircleIntegral_le (by simp) φ c r M hr hM
+
+-- Cauchy's theorem applies when the whole disk lies in the resolvent set.
+example (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.closedBall c r ⊆ resolventSet (by simp) φ) :
+    resolventCircleIntegral (by simp) φ c r = 0 :=
+  resolventCircleIntegral_eq_zero_of_closedBall_subset (by simp) φ c r hr hc
+
+-- Full root spaces, not just ordinary eigenvectors, are selected inside a contour.
+example (φ : PairSpace 3) (c : ℂ) (r R : ℝ) (hr : 0 < r) (hrR : r ≤ R)
+    (ha : Metric.closedBall c R \ Metric.ball c r ⊆ resolventSet (by simp) φ) :
+    resolventCircleIntegral (by simp) φ c R = resolventCircleIntegral (by simp) φ c r :=
+  resolventCircleIntegral_eq_of_annulus_subset (by simp) φ c r R hr hrR ha
+
+example (φ : PairSpace 3) (c z : ℂ) (r : ℝ)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) (hz : z ∈ Metric.ball c r)
+    (x : PairSpace 3) (hx : x ∈ periodicRootSpaceTop (by simp) φ z) :
+    resolventCircleIntegral (by simp) φ c r x = x :=
+  resolventCircleIntegral_apply_root (by simp) φ c z r hc hz x hx
+
+open Classical in
+example (φ : PairSpace 3) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) (s : Finset ℂ) :
+    resolventCircleIntegral (by simp) φ c r * periodicClusterProjection (by simp) φ s =
+      periodicClusterProjection (by simp) φ (s.filter (fun z => z ∈ Metric.ball c r)) :=
+  resolventCircleIntegral_mul_cluster (by simp) φ c r hr hc s
+
+private theorem freeHalfPiCircle_resolvent :
+    Metric.sphere (0 : ℂ) (Real.pi / 2) ⊆ resolventSet (p := 3) (by simp) 0 := by
+  intro z hz
+  apply mem_resolventSet_zero_of_notMem
+  rintro ⟨n, rfl⟩
+  have hnorm := Metric.mem_sphere.mp hz
+  simp only [dist_zero_right, norm_mul, Complex.norm_real, Real.norm_eq_abs,
+    abs_of_pos Real.pi_pos, Complex.norm_intCast] at hnorm
+  by_cases hn : n = 0
+  · subst n; norm_num at hnorm
+    linarith [Real.pi_pos]
+  · have habs : 1 ≤ |(n : ℝ)| := by exact_mod_cast Int.one_le_abs hn
+    nlinarith [Real.pi_pos]
+
+-- The positive orientation and 1/(2*pi*i) normalization give +1 on the constant mode.
+example : resolventCircleIntegral (p := 3) (by simp) 0 0 (Real.pi / 2)
+    (domainInclusion (positiveMode 0)) = domainInclusion (positiveMode 0) := by
+  apply resolventCircleIntegral_apply_root (z := 0) (hc := freeHalfPiCircle_resolvent)
+  · simpa using Real.pi_div_two_pos
+  · simpa using freePositive_root 0
+
+-- The same genuine contour excludes the next free Fourier eigenvalue, pi.
+example : resolventCircleIntegral (p := 3) (by simp) 0 0 (Real.pi / 2)
+    (domainInclusion (positiveMode 1)) = 0 := by
+  apply resolventCircleIntegral_apply_other_root (z := (Real.pi : ℂ))
+    (hr := by positivity) (hc := freeHalfPiCircle_resolvent)
+  · intro h
+    have hnorm : ‖(Real.pi : ℂ)‖ ≤ Real.pi / 2 := by simpa only [Metric.mem_closedBall, dist_zero_right] using h
+    have hpi : Real.pi ≤ Real.pi / 2 := by
+      simpa only [Complex.norm_real, Real.norm_eq_abs, abs_of_pos Real.pi_pos] using hnorm
+    linarith [Real.pi_pos]
+  · simpa using freePositive_root 1

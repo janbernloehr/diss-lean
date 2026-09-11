@@ -23,9 +23,12 @@ finite-rank projections onto these root spaces commute with every resolvent,
 give topological direct-sum decompositions, and have rank equal to algebraic
 multiplicity. Projections at distinct parameters annihilate each other. Their
 finite sums project onto finite spectral clusters, with rank equal to the sum
-of algebraic multiplicities and composition given by intersection of clusters. General resolvent identities and explicit spectral and potential
-derivatives are also proved in operator norm. The main
-dissertation theorems remain future work.
+of algebraic multiplicities and composition given by intersection of clusters.
+The normalized circle integral of the resolvent is constructed in operator norm;
+it is compact, factors through the operator domain, and selects the enclosed
+root spaces when composed with any finite cluster projection. General resolvent
+identities and explicit spectral and potential derivatives are also proved in
+operator norm. The main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -76,7 +79,10 @@ cover decomposition, idempotence, rank, compactness, resolvent commutation,
 reference-independent kernels, fixed free eigenmodes, and vanishing at a
 verified resolvent point of a nonzero potential. Cluster checks cover distinct
 root spaces, annihilation, finite-sum ranks, kernel intersections, compactness,
-overlapping clusters, and included/excluded free Fourier modes.
+overlapping clusters, and included/excluded free Fourier modes. Contour checks
+cover domain factorization, compactness, resolvent commutation, norm bounds,
+Cauchy's theorem on resolvent disks, annulus deformation, generalized root spaces,
+finite-cluster selection, and an explicit free circle of radius `π/2`.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -104,8 +110,10 @@ installation is absent. No shell startup files are modified.
   on an open domain, and compact throughout that domain. Its periodic spectrum
   is closed and discrete, with finite-dimensional stabilized root spaces and
   finite algebraic multiplicities. Bounded root-space projections and their
-  complementary decompositions are proved. Identification with contour-integral
-  projectors, their analytic dependence, and sharp rates remain future work.
+  complementary decompositions are proved. Resolvent circle integrals and their
+  action on root spaces are proved. Idempotence of the contour operator, its full
+  identification with the finite cluster projection, analytic dependence for
+  fixed contours, and sharp rates remain future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

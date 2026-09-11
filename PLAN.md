@@ -106,9 +106,17 @@ whose ranges are the sums of root spaces and whose kernels are intersections
 of the individual kernels. Cluster rank is the sum of algebraic multiplicities;
 composition corresponds to intersection of parameter sets.
 
-Next are contour-integral projectors as in Section 3, equation (1.4), their
-identification with finite cluster projections, and analytic dependence for
-fixed contours. The sharper numerical rates and vertical-strip bounds from
+The normalized resolvent circle integral from Section 3, equation (1.4), is now
+constructed as a bounded operator with a domain-valued factorization and proved
+compact. It vanishes on resolvent disks and is unchanged by radius deformation
+through resolvent annuli. A root-chain calculation proves identity on enclosed
+full root spaces and zero on excluded ones. It commutes with resolvents and
+individual spectral projections; composing with a finite cluster projection
+selects precisely the parameters inside the circle.
+
+Next are idempotence and finite rank of the contour operator, its equality with
+the enclosed finite cluster projection on the whole base space, and analytic
+dependence for fixed contours. The sharper numerical rates and vertical-strip bounds from
 Lemma 3.2(ii–iii), and spectral localization, also remain open.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.
