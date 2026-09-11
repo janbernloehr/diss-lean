@@ -9,7 +9,7 @@ factor `(Φ R₀)²` through it. A small operator square gives a two-sided inver
 of the spectral pencil, agreeing with the full resolvent.
 
 The bound here is the global composition bound. The frequency-dependent tail
-estimate of Lemma 3.4 remains a separate step.
+estimate of Lemma 3.4 is proved in `DoubleResolventEstimates`.
 -/
 
 open scoped ENNReal

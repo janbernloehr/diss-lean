@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has forty-two modules and 412 named public theorems. All compile on the
+The library has forty-six modules and 449 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -49,6 +49,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
 | `NLS.ZakharovShabat.DoubleResolvent` | `FL^1 → FL^p` potential convolution; double free resolvent and both coefficient formulas; global norm bound; square factorization and sandwich criterion; domain inverse identities; agreement with the full resolvent and quantitative bounds; nilpotence and exact two-term resolvents for one-sided potentials |
+| `NLS.SequenceSpaces.FourierTail` | Strict low-frequency cutoffs and closed centered windows; separation of opposite near windows; symmetric tails retaining the boundary; single-mode behavior; contraction, composition, monotonicity, and convergence |
+| `NLS.SequenceSpaces.ConvolutionSandwich` | Conjugate-space multipliers and weighted convolution `FL^p → FL^1`; norm bounds; exact far-output/far-input/potential-tail decomposition and the corresponding three-term estimate |
+| `NLS.SequenceSpaces.ReciprocalTail` | Half-window reciprocal-tail norm bounds, including the supremum endpoint; recentering and rescaling; explicit `8p/r * N^(-1/p)` decay |
+| `NLS.ZakharovShabat.DoubleResolventEstimates` | Pair Fourier remainders and convergence; scalar sandwich identification; reciprocal-symbol tails; Lemma 3.4 with `c_p = 32p²`; explicit squared Neumann, punctured-strip, and spectral-circle criteria |
 
 ## Current mathematical milestone
 
@@ -172,7 +176,8 @@ strip. Thus every circle of radius `r` about `πn` lies in the resolvent set.
 Choosing a nearest Fourier frequency for each spectral parameter also proves
 that the entire periodic spectrum is contained in the union of the open disks
 of radius `r` around `πℤ`. This is a uniform small-potential localization result;
-localization for arbitrary potentials still requires Lemma 3.4.
+localization for arbitrary potentials uses the frequency-tail estimate below;
+the uniform neighborhood argument of Corollary 3.5 remains open.
 
 For nonzero imaginary part, Lemma 3.2(ii), printed page 24, is now proved with
 the stated height-decay rate:
@@ -217,10 +222,26 @@ lattice and every potential norm, and the exact resolvent is `R₀ + R₀ K`.
 The checked constant potential `(2,0)` at `z=i` has `‖K‖ ≥ 2`, fails the
 original Neumann condition, and satisfies the squared criterion.
 
-**Lemma 3.4's frequency-tail estimate remains open.** The proved global
-composition bound `‖S‖ ≤ B_p(z)² * ‖φ‖` does not give the required decay
-as the strip index tends to infinity. The near/far frequency split and
-potential-tail estimate are the next step toward Corollary 3.5.
+**Lemma 3.4 is now proved in the coefficient spaces**, with the explicit
+constant `c_p = 32p²` in the maximum pair norm. If `0 < r ≤ π/4` and
+`z ∈ verticalStrip n r`, then
+
+`‖R₀ Φ R₀‖ ≤ (32p² / r²) * (‖φ‖ / abs(n)^(1/p) + ‖pairFourierTail abs(n) φ‖)`.
+
+The tail retains the boundary frequencies `|k| ≥ |n|`, as in the dissertation.
+For nonzero `n`, the proof splits the first reciprocal symbol about `-n`
+and the second about `n`, each with window radius `floor(|n|/2)`.
+Outside either window the conjugate-space norm is at most
+`8p/r * |n|^(-1/p)`, including `p=1`. Inside both windows, convolution can
+only use potential frequencies `|j-k| ≥ |n|`. The separate three-term bound
+has constants `32p²` for the frequency decay and `4p²` for the potential tail.
+The zero strip uses the global composition estimate and its full potential tail.
+
+Multiplying this explicit bound by `‖φ‖` and requiring it to be less than one
+puts the entire punctured strip, and its central boundary circle, in the full
+resolvent set. The symmetric potential tails converge to zero for every finite
+Banach exponent. Uniform localization on potential neighborhoods and the
+spectral multiplicity counts in Corollary 3.5 remain the next step.
 
 The actual unbounded realization is now defined as
 
@@ -430,7 +451,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 884 declarations under `NLS`, including generated
+axioms. The current audit covers 963 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -495,17 +516,22 @@ the global bound at `p=3`, a nonzero one-sided potential with perturbation
 norm at least two, failure of its original Neumann condition, both inverse
 identities under the squared criterion, compactness and analyticity there,
 and the exact terminating expansion for arbitrary one-sided `p=3` potentials.
+Frequency-tail checks cover both retained cutoff boundaries, removal of interior
+single modes, tail convergence, negative strip centers, `p=3`'s constant `288`,
+the zero-index estimate, and admissible quarter-pi circles about `±200π` for
+the two-sided constant potential `(1,1)`. That potential is explicitly checked
+to fail the earlier uniform small-potential strip condition.
 
 ## Next milestones
 
-1. Prove the frequency-tail estimate in Lemma 3.4 using the double-resolvent
-   coefficient formulas; feed it into the established squared Neumann criterion.
-2. Develop localization for arbitrary potentials (Corollary 3.5) and use the
-   contour results to count eigenvalues in the spectral disks.
+1. Use Lemma 3.4 and the height region to prove localization for arbitrary
+   potentials, uniformly on potential neighborhoods, as in Corollary 3.5.
+2. Use contour rank stability to count eigenvalues in the high-frequency disks
+   and in the remaining central region.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 
 Arbitrary-potential spectral localization, classical Birkhoff prerequisites, and the main dissertation
 theorems remain unimplemented. Further sequence-space work includes
-symmetric cutoff convenience functions, embeddings between regularities, and the full
-range of Young inequalities beyond the `l1`-factor case.
+embeddings between regularities and the full range of Young inequalities beyond
+the `l1`-factor case.

@@ -150,9 +150,15 @@ a two-sided domain inverse, agrees with the full resolvent, and gives a
 quantitative norm bound. One-sided potentials provide verified examples
 outside the original Neumann condition, with exact two-term inverses.
 
-Next is the near/far frequency split and potential-tail estimate of Lemma 3.4;
-the current global composition bound does not supply its high-frequency decay.
-Then apply the squared criterion to arbitrary-potential localization in
-Corollary 3.5 and spectral multiplicity counts.
+Lemma 3.4 is now proved with the explicit maximum-pair-norm constant `32p²`.
+The proof splits the reciprocal symbols into near and far windows about the
+opposite scalar frequencies. The far symbols decay as `|n|^(-1/p)`, including
+the endpoint, while the near-near term contains only the potential tail
+`|k| ≥ |n|`. The symmetric tails converge to zero, and the numerical estimate
+supplies squared Neumann criteria for entire punctured strips and circles.
+
+Next combine this decay with the height region for arbitrary-potential
+localization, uniformly on potential neighborhoods, in Corollary 3.5. Use
+contour rank stability for the associated spectral multiplicity counts.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

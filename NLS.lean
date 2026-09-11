@@ -40,3 +40,7 @@ import NLS.SequenceSpaces.ReciprocalNorm
 import NLS.ZakharovShabat.HeightResolvent
 import NLS.FunctionalAnalysis.SquaredNeumann
 import NLS.ZakharovShabat.DoubleResolvent
+import NLS.SequenceSpaces.FourierTail
+import NLS.SequenceSpaces.ConvolutionSandwich
+import NLS.SequenceSpaces.ReciprocalTail
+import NLS.ZakharovShabat.DoubleResolventEstimates

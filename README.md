@@ -39,8 +39,10 @@ spectral disk localization for sufficiently small potentials. The double-resolve
 operator and squared Neumann inversion are constructed, including both inverse
 identities and quantitative bounds. One-sided potentials have exact two-term
 resolvents even when the original Neumann condition fails. Lemma 3.4's
-frequency-tail estimate, arbitrary-potential localization, and the main
-dissertation theorems remain future work.
+frequency-tail estimate is proved with the explicit constant `32p²` in the
+maximum pair norm, giving further punctured-strip and spectral-circle criteria.
+Arbitrary-potential localization and the main dissertation theorems remain
+future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -100,6 +102,9 @@ circle of radius `π/2` whose integral equals the individual projection at zero.
 Squared-Neumann checks include both Fourier coefficient signs and a one-sided
 potential at `z=i` whose perturbation norm is at least two but whose square
 vanishes, verifying failure of the original condition and validity of the new inverse.
+Frequency-tail checks exercise cutoff boundaries, both frequency signs, `p=1,3`,
+and admissible circles about `±200π` for the two-sided constant potential `(1,1)`,
+which fails the earlier small-potential strip condition.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -134,8 +139,10 @@ installation is absent. No shell startup files are modified.
   analytically on the potential; their ranks and total enclosed algebraic
   multiplicities are locally constant. The punctured-strip estimate and spectral
   localization for small potentials are proved, along with the numerical
-  height-decay estimate and its Neumann region. Arbitrary-potential localization
-  remains future work.
+  height-decay estimate and its Neumann region. The double-resolvent frequency-tail
+  bound of Lemma 3.4 is proved with constant `32p²` in this norm. Its squared
+  criterion admits whole punctured strips and circles. Arbitrary-potential
+  localization on uniform potential neighborhoods remains future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

@@ -946,3 +946,62 @@ example (φ : PairSpace 3) (z : ℂ) (hz : z ∉ freeLattice)
 -- The earlier two-sided Neumann example also satisfies the new criterion.
 example : SquaredNeumannCondition (by simp) unitPairPotential testParameter testParameter_off :=
   squaredNeumannCondition_of_neumannCondition (by simp) _ _ _ unitPair_small
+
+-- Lemma 3.4: symmetric tail boundaries and both frequency signs.
+example : Coeff.fourierTail 5 (lp.single 3 (-5) (2 : ℂ)) = lp.single 3 (-5) 2 := by simp
+example : Coeff.fourierTail 5 (lp.single 1 5 (3 : ℂ)) = lp.single 1 5 3 := by simp
+example : Coeff.fourierTail 5 (lp.single 3 (-4) (2 : ℂ)) = 0 := by simp
+example : Coeff.fourierTail 5 (lp.single 1 4 (3 : ℂ)) = 0 := by simp
+
+example (a : Coeff 3) : Filter.Tendsto (fun N : ℕ => Coeff.fourierTail N a)
+    Filter.atTop (𝓝 0) := Coeff.tendsto_fourierTail (by simp) a
+
+example (j k : ℤ) (hj : j ∈ Coeff.frequencyWindow 3 1)
+    (hk : k ∈ Coeff.frequencyWindow (-3) 1) : 3 ≤ (j - k).natAbs := by
+  have h := Coeff.opposite_frequencyWindows_separated (-3)
+  norm_num only [Int.natAbs_neg, Int.natAbs_natCast, Nat.reduceDiv, neg_neg] at h
+  exact Nat.le_of_not_gt (by simpa only [Coeff.mem_lowFrequencies] using h j hj k hk)
+
+-- A non-Hilbert exponent, and the zero-index case of Lemma 3.4.
+example (φ : PairSpace 3) (z : ℂ) (hz0 : z ∉ freeLattice) (n : ℤ) (r : ℝ)
+    (hr : 0 < r) (hrπ : r ≤ Real.pi / 4) (hz : z ∈ verticalStrip n r) :
+    ‖doubleResolvent (by simp) φ z hz0‖ ≤ (288 / r ^ 2) *
+      (‖φ‖ / |(n : ℝ)| ^ ((1 : ℝ) / 3) + ‖pairFourierTail n.natAbs φ‖) := by
+  have h := norm_doubleResolvent_le_verticalStrip (p := 3) (by simp) φ z hz0 hr hrπ hz
+  norm_num at h
+  exact h
+
+example (φ : PairSpace 1) (z : ℂ) (hz0 : z ∉ freeLattice) (r : ℝ)
+    (hr : 0 < r) (hrπ : r ≤ Real.pi / 4) (hz : z ∈ verticalStrip 0 r) :
+    ‖doubleResolvent (by simp) φ z hz0‖ ≤ (32 / r ^ 2) * ‖φ‖ := by
+  simpa using norm_doubleResolvent_le_verticalStrip (p := 1) (by simp) φ z hz0 hr hrπ hz
+
+private theorem unitPair_frequencyTail_small (n : ℤ) (hn : n.natAbs = 200) :
+    ‖unitPairPotential‖ * ((32 * (1 : ℝ≥0∞).toReal ^ 2 / (Real.pi / 4) ^ 2) *
+      (‖unitPairPotential‖ / |(n : ℝ)| ^ (1 / (1 : ℝ≥0∞).toReal) +
+        ‖pairFourierTail n.natAbs unitPairPotential‖)) < 1 := by
+  have habs : |(n : ℝ)| = 200 := by
+    have he : (n.natAbs : ℝ) = |(n : ℝ)| := by simp only [Nat.cast_natAbs, Int.cast_abs]
+    rw [hn] at he
+    exact he.symm
+  have hpi : (0 : ℝ) < Real.pi ^ 2 := sq_pos_of_pos Real.pi_pos
+  norm_num [hn, habs, unitPairPotential, pairFourierTail, Prod.norm_def, lp.norm_single]
+  field_simp
+  nlinarith [Real.two_le_pi]
+
+-- The non-small, two-sided constant potential has admissible circles in both directions.
+example : Metric.sphere ((Real.pi : ℂ) * 200) (Real.pi / 4) ⊆
+    resolventSet (by simp) unitPairPotential :=
+  sphere_subset_resolventSet_of_frequencyTail (by simp) _ 200 (by positivity) le_rfl
+    (unitPair_frequencyTail_small 200 (by norm_num))
+
+example : Metric.sphere ((Real.pi : ℂ) * (-200)) (Real.pi / 4) ⊆
+    resolventSet (by simp) unitPairPotential := by
+  have h := sphere_subset_resolventSet_of_frequencyTail (p := 1) (by simp) unitPairPotential
+    (-200) (r := Real.pi / 4) (by positivity) le_rfl
+    (unitPair_frequencyTail_small (-200) (by norm_num))
+  simpa only [Int.cast_neg, Int.cast_ofNat] using h
+
+example : ¬ (2 * (1 : ℝ≥0∞).toReal * ‖unitPairPotential‖ < Real.pi / 4) := by
+  norm_num [unitPairPotential, Prod.norm_def, lp.norm_single]
+  linarith [Real.pi_le_four]
