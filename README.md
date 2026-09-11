@@ -17,7 +17,8 @@ parameter; one height works for any fixed norm ball of potentials. The full
 resolvent set is open, and the resolvent is compact and jointly complex analytic
 in the potential and spectral parameter throughout its domain. The periodic
 spectrum is closed and discrete, with finitely many eigenvalues in every bounded
-region and finite geometric multiplicities. The main
+region and finite geometric multiplicities. General resolvent identities and
+explicit spectral and potential derivatives are also proved in operator norm. The main
 dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
@@ -61,6 +62,8 @@ Analytic-resolvent checks cover the full inverse identities, openness, joint
 analyticity, compactness, and agreement with the nonzero Neumann example.
 Spectral checks cover discreteness, finiteness in bounded sets, finite-dimensional
 eigenspaces, the free Fourier eigenvalues, and the reciprocal spectral transformation.
+Calculus checks cover general resolvent identities, joint derivatives, potential
+variations, and a concrete spectral-derivative sign check at `z=i`.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

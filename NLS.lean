@@ -20,3 +20,4 @@ import NLS.ZakharovShabat.ClosedOperator
 import NLS.ZakharovShabat.ResolventAnalytic
 import NLS.FunctionalAnalysis.CompactSpectrum
 import NLS.ZakharovShabat.PeriodicSpectrum
+import NLS.ZakharovShabat.ResolventCalculus

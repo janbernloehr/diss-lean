@@ -82,8 +82,14 @@ points in every bounded region. Each point is an eigenvalue with a
 finite-dimensional domain eigenspace. The proof includes compact-operator
 spectral finiteness away from zero and the reciprocal spectral transformation.
 
-Next are the general resolvent identity and derivative formulas, generalized
-eigenspaces and algebraic multiplicities, the sharper numerical rates and
-vertical-strip bounds from Lemma 3.2(ii–iii), and spectral localization.
+The general resolvent identities, commutation, and explicit joint Fréchet
+derivative are now proved. Spectral differentiation gives `∂z R = -R²`; potential
+differentiation gives `Dφ R[ψ] = R Φ(ψ) R_D`. The full and free constructions
+agree at zero potential, and the pre-Neumann identity is proved without a
+smallness restriction when the required resolvents exist.
+
+Next are generalized eigenspaces, algebraic multiplicities and spectral
+projections, the sharper numerical rates and vertical-strip bounds from Lemma
+3.2(ii–iii), and spectral localization.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

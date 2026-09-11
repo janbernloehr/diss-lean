@@ -313,3 +313,57 @@ example (z : ℂ) (hz : z ≠ testParameter) :
   mem_periodicSpectrum_iff_resolvent_spectrum (by simp) unitPairPotential testParameter z
     (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential testParameter
       testParameter_off unitPair_small) hz
+
+-- General resolvent identities allow changes in both potential and parameter.
+example (φ ψ : PairSpace 3) (z w : ℂ)
+    (hz : z ∈ resolventSet (by simp) φ) (hw : w ∈ resolventSet (by simp) ψ) :
+    resolvent (by simp) φ z - resolvent (by simp) ψ w =
+      (resolvent (by simp) φ z).comp
+        ((spectralPencil (by simp) ψ w - spectralPencil (by simp) φ z).comp
+          (resolventToDomain (by simp) ψ w)) :=
+  resolvent_difference (by simp) φ ψ z w hz hw
+
+example (φ : PairSpace 3) (z w : ℂ)
+    (hz : z ∈ resolventSet (by simp) φ) (hw : w ∈ resolventSet (by simp) φ) :
+    (resolvent (by simp) φ z).comp (resolvent (by simp) φ w) =
+      (resolvent (by simp) φ w).comp (resolvent (by simp) φ z) :=
+  resolvent_commute (by simp) φ z w hz hw
+
+-- The full joint Fréchet derivative is verified in operator norm.
+example (s : PairSpace 3 × ℂ) (hs : s ∈ resolventDomain (by simp)) :
+    HasFDerivAt (fun t : PairSpace 3 × ℂ => resolventToDomain (by simp) t.1 t.2)
+      (resolventToDomainDerivative (by simp) s.1 s.2) s :=
+  hasFDerivAt_resolventToDomain (by simp) s hs
+
+example (s : PairSpace 3 × ℂ) (hs : s ∈ resolventDomain (by simp)) :
+    HasFDerivAt (fun t : PairSpace 3 × ℂ => resolvent (by simp) t.1 t.2)
+      (resolventDerivative (by simp) s.1 s.2) s :=
+  hasFDerivAt_resolvent (by simp) s hs
+
+example (φ : PairSpace 1) (z : ℂ) (hz : z ∈ resolventSet (by simp) φ) :
+    deriv (resolvent (by simp) φ) z = -(resolvent (by simp) φ z).comp (resolvent (by simp) φ z) :=
+  deriv_resolvent (by simp) φ z hz
+
+example (φ ψ a : PairSpace 3) (z : ℂ) (hz : z ∈ resolventSet (by simp) φ) :
+    fderiv ℂ (fun χ : PairSpace 3 => resolvent (by simp) χ z) φ ψ a =
+      resolvent (by simp) φ z (potentialOperator (by simp) ψ (resolventToDomain (by simp) φ z a)) := by
+  rw [fderiv_resolvent_potential (by simp) φ z hz, potentialResolventDerivative_apply]
+
+-- A concrete sign check: d(1/z)/dz at z=i equals +1 on the zero Fourier mode.
+example : deriv (resolvent (p := 3) (by simp) 0) Complex.I
+    (domainInclusion (positiveMode 0)) = domainInclusion (positiveMode 0) := by
+  rw [deriv_resolvent (by simp) 0 Complex.I
+    (mem_resolventSet_zero_of_notMem (by simp) Complex.I I_off_freeLattice),
+    resolvent_zero_eq_free (by simp) Complex.I I_off_freeLattice]
+  change -freeResolvent Complex.I I_off_freeLattice
+    (freeResolvent Complex.I I_off_freeLattice (domainInclusion (positiveMode (p := 3) 0))) = _
+  rw [freeResolvent_positiveMode, map_smul, freeResolvent_positiveMode]
+  norm_num [smul_smul]
+
+-- Recover the dissertation's free/perturbed identity at a nonzero potential.
+example : (resolvent (by simp) unitPairPotential testParameter).comp
+    (1 - potentialFreeResolvent (by simp) unitPairPotential testParameter testParameter_off) =
+      freeResolvent testParameter testParameter_off :=
+  resolvent_comp_one_sub_potentialFreeResolvent (by simp) unitPairPotential testParameter
+    testParameter_off (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential
+      testParameter testParameter_off unitPair_small)

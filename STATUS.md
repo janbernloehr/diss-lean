@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has twenty-two modules and 206 named public theorems. All compile on the
+The library has twenty-three modules and 228 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -29,6 +29,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ResolventAnalytic` | Full resolvent set and joint open domain; potential dependence in operator norm; totalized inverse with both identities; nonempty resolvent set; agreement with Neumann construction; joint complex analyticity; compactness on the full resolvent set |
 | `NLS.FunctionalAnalysis.CompactSpectrum` | Riesz-lemma proof of finiteness of compact-operator eigenvalues and spectral values away from zero; finite-dimensional nonzero eigenspaces, without self-adjointness |
 | `NLS.ZakharovShabat.PeriodicSpectrum` | Closed periodic spectrum; spectral transformation through a compact resolvent; finiteness in every bounded region; discrete subspace topology; equivalence with domain eigenvalues; finite geometric multiplicities |
+| `NLS.ZakharovShabat.ResolventCalculus` | General inverse difference identities; resolvent commutation; potential differences; joint Fréchet derivatives into the domain and base space; spectral and potential derivative formulas; compatibility with the free resolvent and the pre-Neumann identity |
 
 ## Current mathematical milestone
 
@@ -176,13 +177,38 @@ discreteness conclusion of Corollary 3.3. Generalized eigenspaces, algebraic
 multiplicities, spectral projections, and quantitative localization remain
 separate proof obligations.
 
+The general inverse difference formula is now proved for simultaneous changes
+of potential and spectral parameter. It specializes to
+
+`Rφ(z) - Rφ(w) = (w-z) Rφ(z) Rφ(w)`
+
+and commutation of the resolvents. Varying the potential at a fixed parameter gives
+
+`Rφ(z) - Rψ(z) = Rφ(z) Φ(φ-ψ) R_D,ψ(z)`.
+
+Here `R_D` takes values in the one-derivative domain, so each potential operator
+is applied on its actual domain. Differentiating the inverse equations proves
+the explicit joint complex Fréchet derivative in operator norm. Applied to an
+increment `(δφ,δz)` and a base vector `a`, it is
+
+`Rφ(z) (Φ(δφ) (R_D,φ(z) a)) - δz • Rφ(z) (Rφ(z) a)`.
+
+The domain-valued derivative is proved as well. In particular,
+`∂z Rφ(z) = -Rφ(z)²` and `Dφ Rφ(z)[ψ] = Rφ(z) Φ(ψ) R_D,φ(z)`.
+These formulas are available through both derivative predicates and mathlib's
+`deriv`/`fderiv`. All derivative assertions are restricted to the open full
+resolvent domain. The zero-potential inverse agrees with the free inverse, and
+the pre-Neumann identity on printed page 23,
+`Rφ(z) (I - Φ R₀(z)) = R₀(z)`, now holds whenever both resolvents exist,
+without imposing the sufficient Neumann smallness condition.
+
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 495 declarations under `NLS`, including generated
+axioms. The current audit covers 566 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -204,13 +230,15 @@ analyticity, both full inverse identities, compactness, and agreement with the
 concrete nonzero Neumann example at `z=2i`. Spectral checks cover `p=1,3`,
 finiteness in balls and arbitrary bounded sets, the discrete topology, domain
 eigenvectors, finite geometric multiplicity, the free Fourier eigenvalues, and
-the spectral transformation at the nonzero test potential. No admission or
-extra project axiom is used by the library.
+the spectral transformation at the nonzero test potential. Calculus checks
+cover `p=1,3`, general differences, commutation, joint derivatives into both
+spaces, the potential derivative, the spectral derivative sign on the zero
+Fourier mode at `z=i`, and the pre-Neumann identity for the nonzero potential.
+No admission or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Prove the general resolvent identity and derivative formulas, then develop
-   generalized eigenspaces, algebraic multiplicities, and spectral projections.
+1. Develop generalized eigenspaces, algebraic multiplicities, and spectral projections.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
