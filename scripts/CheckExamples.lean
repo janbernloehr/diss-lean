@@ -276,3 +276,40 @@ example : AnalyticAt ℂ (resolvent (by simp) unitPairPotential) testParameter :
   analyticOnNhd_resolvent (by simp) unitPairPotential testParameter
     (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential testParameter
       testParameter_off unitPair_small)
+
+-- Discreteness includes finiteness in every bounded region, at both p=1 and p>1.
+example (φ : PairSpace 1) (r : ℝ) :
+    Set.Finite (periodicSpectrum (by simp) φ ∩ Metric.closedBall 0 r) :=
+  finite_periodicSpectrum_inter_closedBall (by simp) φ r
+
+example (φ : PairSpace 3) {K : Set ℂ} (hK : Bornology.IsBounded K) :
+    Set.Finite (periodicSpectrum (by simp) φ ∩ K) :=
+  finite_periodicSpectrum_inter_of_isBounded (by simp) φ hK
+
+example (φ : PairSpace 3) : DiscreteTopology (periodicSpectrum (by simp) φ) :=
+  discreteTopology_periodicSpectrum (by simp) φ
+
+-- Spectral points are actual eigenvalues, with finite-dimensional eigenspaces.
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∈ periodicSpectrum (by simp) φ) :
+    ∃ f : Domain 3, f ≠ 0 ∧ operator (by simp) φ f = z • domainInclusion f :=
+  (mem_periodicSpectrum_iff_exists_eigenvector (by simp) φ z).mp hz
+
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∈ periodicSpectrum (by simp) φ) :
+    FiniteDimensional ℂ (periodicEigenspace (by simp) φ z) :=
+  finiteDimensional_periodicEigenspace (by simp) φ z hz
+
+-- The previously constructed free modes give points in the new periodic spectrum.
+example (n : ℤ) : (Real.pi : ℂ) * n ∈ periodicSpectrum (p := 3) (by simp) 0 := by
+  apply (mem_periodicSpectrum_iff_exists_eigenvector (by simp) 0 _).mpr
+  refine ⟨positiveMode n, ?_, ?_⟩
+  · intro h
+    exact domainInclusion_positiveMode_ne_zero (p := 3) n (by rw [h, map_zero])
+  · simpa only [operator_zero] using freeOperator_positiveMode (p := 3) n
+
+-- The spectral transformation is checked at the concrete nonzero potential.
+example (z : ℂ) (hz : z ≠ testParameter) :
+    z ∈ periodicSpectrum (by simp) unitPairPotential ↔
+      (testParameter - z)⁻¹ ∈ spectrum ℂ (resolvent (by simp) unitPairPotential testParameter) :=
+  mem_periodicSpectrum_iff_resolvent_spectrum (by simp) unitPairPotential testParameter z
+    (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential testParameter
+      testParameter_off unitPair_small) hz

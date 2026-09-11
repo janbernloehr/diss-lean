@@ -77,8 +77,13 @@ It is nonempty for every potential; the joint domain in potential and parameter
 is open. A single totalized resolvent agrees with the Neumann construction and
 is jointly complex analytic on its domain, with compact base-space values.
 
-Next are spectral discreteness, the general resolvent identity and derivative
-formulas, the sharper numerical rates and vertical-strip bounds from Lemma
-3.2(ii–iii), and spectral localization.
+The periodic spectrum is now proved closed and discrete, with finitely many
+points in every bounded region. Each point is an eigenvalue with a
+finite-dimensional domain eigenspace. The proof includes compact-operator
+spectral finiteness away from zero and the reciprocal spectral transformation.
+
+Next are the general resolvent identity and derivative formulas, generalized
+eigenspaces and algebraic multiplicities, the sharper numerical rates and
+vertical-strip bounds from Lemma 3.2(ii–iii), and spectral localization.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

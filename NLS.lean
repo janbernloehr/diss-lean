@@ -18,3 +18,5 @@ import NLS.SequenceSpaces.DominatedConvergence
 import NLS.ZakharovShabat.UniformResolvent
 import NLS.ZakharovShabat.ClosedOperator
 import NLS.ZakharovShabat.ResolventAnalytic
+import NLS.FunctionalAnalysis.CompactSpectrum
+import NLS.ZakharovShabat.PeriodicSpectrum

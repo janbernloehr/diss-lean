@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has twenty modules and 192 named public theorems. All compile on the
+The library has twenty-two modules and 206 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -27,6 +27,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.UniformResolvent` | Explicit reciprocal envelopes; convergence of their conjugate norms; Fourier recentering; bounds uniform in real parts and bounded potential sets; existence of a compact two-sided inverse for every finite-p potential |
 | `NLS.ZakharovShabat.ClosedOperator` | Partial linear map on the base space; exact one-derivative domain; agreement with the domain-to-base operator; dense domain; closed graph via a bounded inverse; stability under base-norm graph limits |
 | `NLS.ZakharovShabat.ResolventAnalytic` | Full resolvent set and joint open domain; potential dependence in operator norm; totalized inverse with both identities; nonempty resolvent set; agreement with Neumann construction; joint complex analyticity; compactness on the full resolvent set |
+| `NLS.FunctionalAnalysis.CompactSpectrum` | Riesz-lemma proof of finiteness of compact-operator eigenvalues and spectral values away from zero; finite-dimensional nonzero eigenspaces, without self-adjointness |
+| `NLS.ZakharovShabat.PeriodicSpectrum` | Closed periodic spectrum; spectral transformation through a compact resolvent; finiteness in every bounded region; discrete subspace topology; equivalence with domain eigenvalues; finite geometric multiplicities |
 
 ## Current mathematical milestone
 
@@ -114,8 +116,8 @@ potential.
 
 These are qualitative uniform regions with a concrete envelope, rather than
 the sharper numerical rates and vertical-strip bounds in Lemma 3.2(ii–iii).
-Those constants and the spectral-discreteness conclusion of Corollary 3.3
-remain to be proved. Analytic dependence is now established below.
+Those constants remain to be proved. Analytic dependence and spectral
+discreteness are now established below.
 
 The actual unbounded realization is now defined as
 
@@ -149,8 +151,30 @@ It agrees with the constructive Neumann inverse wherever the Neumann condition
 holds, so every potential has a nonempty resolvent set. The full base-space
 resolvent is compact by factoring through the fixed compact free resolvent.
 These results establish compactness and analytic dependence throughout the full
-coefficient-space resolvent set; the corollary's specific numerical region and
-spectral discreteness are still open proof obligations.
+coefficient-space resolvent set; the corollary's specific numerical region
+remains an open proof obligation.
+
+The periodic coefficient-space spectrum is now defined as the complement of
+the full resolvent set. At any fixed resolvent point `w`, we prove, for `z ≠ w`,
+
+`z ∈ periodicSpectrum hp φ ↔ (w-z)⁻¹ ∈ spectrum ℂ (resolvent hp φ w)`.
+
+The generic compact-operator argument is proved using Riesz's lemma on the
+successive finite-dimensional spans of eigenvectors. Infinitely many distinct
+eigenvalues bounded away from zero would produce bounded vectors whose compact
+images stay a fixed distance apart. Together with mathlib's Fredholm alternative,
+this gives finiteness of the compact spectrum away from zero, with no
+self-adjointness hypothesis. Nonzero compact-operator eigenspaces are also
+proved finite dimensional by compactness of their identity map.
+
+The spectral transformation implies that every bounded part of the periodic
+spectrum is finite. The spectrum is closed and has the discrete subspace topology;
+every spectral point has a nonzero eigenvector in the one-derivative domain.
+The domain eigenspaces embed into nonzero eigenspaces of the compact resolvent,
+so their geometric multiplicities are finite. This proves the coefficient-space
+discreteness conclusion of Corollary 3.3. Generalized eigenspaces, algebraic
+multiplicities, spectral projections, and quantitative localization remain
+separate proof obligations.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -158,7 +182,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 472 declarations under `NLS`, including generated
+axioms. The current audit covers 495 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -177,13 +201,16 @@ checks cover `p=1,3`, domain density, evaluation on included vectors, and preser
 of the graph under sequential base-norm limits. Analytic-resolvent checks cover
 `p=1,3`, the open joint domain, nonempty resolvent sets, joint and separate
 analyticity, both full inverse identities, compactness, and agreement with the
-concrete nonzero Neumann example at `z=2i`. No admission or extra project axiom
-is used by the library.
+concrete nonzero Neumann example at `z=2i`. Spectral checks cover `p=1,3`,
+finiteness in balls and arbitrary bounded sets, the discrete topology, domain
+eigenvectors, finite geometric multiplicity, the free Fourier eigenvalues, and
+the spectral transformation at the nonzero test potential. No admission or
+extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Develop discreteness of the periodic spectrum from the compact resolvent,
-   and the general resolvent identity and derivative formulas needed for spectral analysis.
+1. Prove the general resolvent identity and derivative formulas, then develop
+   generalized eigenspaces, algebraic multiplicities, and spectral projections.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
