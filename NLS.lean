@@ -25,3 +25,4 @@ import NLS.FunctionalAnalysis.CompactGeneralized
 import NLS.ZakharovShabat.RootSpaces
 import NLS.FunctionalAnalysis.CompactDecomposition
 import NLS.ZakharovShabat.SpectralProjections
+import NLS.ZakharovShabat.SpectralClusters

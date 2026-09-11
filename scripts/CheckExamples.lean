@@ -468,3 +468,81 @@ example : periodicSpectralProjection (by simp) unitPairPotential testParameter =
   (periodicSpectralProjection_eq_zero_iff (by simp) unitPairPotential testParameter).mpr
     (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential testParameter
       testParameter_off unitPair_small)
+
+-- Reciprocal generalized eigenvalues are computed using a single reference resolvent.
+example (φ : PairSpace 3) (w z : ℂ) (hw : w ∈ resolventSet (by simp) φ) (hzw : z ≠ w) :
+    periodicRootSpaceTop (by simp) φ z =
+      Module.End.genEigenspace (resolvent (by simp) φ w).toLinearMap (w - z)⁻¹ ⊤ :=
+  periodicRootSpaceTop_eq_resolvent_genEigenspace (by simp) φ w z hw hzw
+
+example (φ : PairSpace 1) (z v : ℂ) (hzv : z ≠ v) :
+    Disjoint (periodicRootSpaceTop (by simp) φ z) (periodicRootSpaceTop (by simp) φ v) :=
+  disjoint_periodicRootSpaceTop (by simp) φ z v hzv
+
+example (φ : PairSpace 3) (z v : ℂ) (hzv : z ≠ v) :
+    (periodicSpectralProjection (by simp) φ z).comp (periodicSpectralProjection (by simp) φ v) = 0 :=
+  periodicSpectralProjection_mul_eq_zero (by simp) φ z v hzv
+
+example (φ : PairSpace 3) (s : Finset ℂ) :
+    IsIdempotentElem (periodicClusterProjection (by simp) φ s) :=
+  periodicClusterProjection_idempotent (by simp) φ s
+
+example (φ : PairSpace 1) (s : Finset ℂ) (x : PairSpace 1) :
+    ∃! uv : periodicClusterSpace (by simp) φ s × (periodicClusterProjection (by simp) φ s).ker,
+      (uv.1 : PairSpace 1) + uv.2 = x :=
+  existsUnique_periodicCluster_decomposition (by simp) φ s x
+
+example (φ : PairSpace 3) (s : Finset ℂ) :
+    (periodicClusterProjection (by simp) φ s).ker =
+      ⨅ z ∈ s, (periodicSpectralProjection (by simp) φ z).ker :=
+  ker_periodicClusterProjection (by simp) φ s
+
+example (φ : PairSpace 3) (s : Finset ℂ) :
+    IsCompactOperator (periodicClusterProjection (by simp) φ s) :=
+  isCompactOperator_periodicClusterProjection (by simp) φ s
+
+-- Overlapping clusters retain their common point, rather than adding projections twice.
+example (φ : PairSpace 3) :
+    periodicClusterProjection (by simp) φ {0, 1} * periodicClusterProjection (by simp) φ {1, 2} =
+      periodicSpectralProjection (by simp) φ 1 := by
+  classical
+  rw [periodicClusterProjection_mul]
+  have hset : ({0, 1} : Finset ℂ) ∩ {1, 2} = {1} := by
+    ext x
+    simp only [Finset.mem_inter, Finset.mem_insert, Finset.mem_singleton]
+    constructor
+    · rintro ⟨h | h, hx⟩
+      · subst x; norm_num at hx
+      · exact h
+    · intro h; subst x; simp
+  rw [hset]
+  simp [periodicClusterProjection]
+
+example (φ : PairSpace 3) (z v : ℂ) (hzv : z ≠ v) :
+    Module.finrank ℂ (periodicClusterProjection (by simp) φ {z, v}).range =
+      periodicAlgebraicMultiplicity (by simp) φ z + periodicAlgebraicMultiplicity (by simp) φ v := by
+  rw [finrank_range_periodicClusterProjection]
+  simp [hzv]
+
+private theorem freePositive_root (n : ℤ) :
+    domainInclusion (positiveMode (p := 3) n) ∈
+      periodicRootSpaceTop (by simp) 0 ((Real.pi : ℂ) * n) := by
+  apply (mem_periodicRootSpaceTop (by simp) 0 _ _).mpr
+  refine ⟨1, ?_⟩
+  rw [mem_periodicRootSpace_succ]
+  refine ⟨positiveMode n, rfl, ?_⟩
+  simp [freeOperator_positiveMode]
+
+-- A cluster containing zero preserves its free constant mode.
+example : periodicClusterProjection (p := 3) (by simp) 0 {0, (Real.pi : ℂ)}
+    (domainInclusion (positiveMode 0)) = domainInclusion (positiveMode 0) := by
+  apply periodicClusterProjection_apply_root (z := 0)
+  · simp
+  · simpa using freePositive_root 0
+
+-- A cluster containing only zero kills the free mode at pi.
+example : periodicClusterProjection (p := 3) (by simp) 0 {0}
+    (domainInclusion (positiveMode 1)) = 0 := by
+  apply periodicClusterProjection_apply_other_root (z := (Real.pi : ℂ))
+  · simp [Real.pi_ne_zero]
+  · simpa using freePositive_root 1

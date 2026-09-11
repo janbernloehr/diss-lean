@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has twenty-seven modules and 267 named public theorems. All compile on the
+The library has twenty-eight modules and 292 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -34,6 +34,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.RootSpaces` | Domain-aware recursive periodic root spaces; reference-independent definition; bounded compact-pencil representation; finite-dimensional closed full root spaces; finite stabilization; algebraic multiplicity and its spectral characterization |
 | `NLS.FunctionalAnalysis.CompactDecomposition` | Fredholm bijectivity for injective compact perturbations of a nonzero scalar identity; topological kernel/range decomposition at a stabilized exponent; commutation of projections with maps preserving both summands |
 | `NLS.ZakharovShabat.SpectralProjections` | Bounded finite-rank periodic root-space projections; independence of the reference resolvent parameter; idempotence and resolvent commutation; rank equals algebraic multiplicity; compactness; unique topological decomposition; vanishing exactly on the resolvent set |
+| `NLS.ZakharovShabat.SpectralClusters` | Reciprocal resolvent representation of full root spaces; disjointness at distinct parameters; projection annihilation and commutation; finite cluster spaces and compact projections; range and kernel formulas; additive algebraic multiplicities; composition by intersection; unique cluster/complement decomposition |
 
 ## Current mathematical milestone
 
@@ -244,7 +245,24 @@ point. Every base vector has a unique decomposition into a root vector and a
 vector in the closed projection kernel. The projection is zero exactly on the
 resolvent set.
 
-These are algebraically constructed single-root-space projections. Identification
+Distinct full root spaces are now proved disjoint by representing them as
+generalized eigenspaces of the same resolvent at distinct reciprocal values.
+Any bounded map commuting with that resolvent preserves every full root space.
+Consequently, projections at distinct parameters annihilate each other, and
+all individual spectral projections commute.
+
+For a finite set `s` of parameters, `periodicClusterSpace hp φ s` is the sum of
+the associated root spaces and `periodicClusterProjection hp φ s` is the sum of
+their projections. We prove that it is bounded, idempotent, and compact, has
+exactly the cluster space as its range, and has kernel equal to the intersection
+of the individual kernels. It commutes with every resolvent, and its rank is
+`∑ z ∈ s, periodicAlgebraicMultiplicity hp φ z`. Cluster and kernel form a
+topological direct sum with unique decomposition of every base vector.
+Multiplying cluster projections selects their intersection; disjoint clusters
+therefore have annihilating projections. Parameters in the resolvent set
+contribute zero, so no separate spectral-membership assumption is needed.
+
+These are algebraically constructed individual and finite-cluster projections. Identification
 with the contour-integral Cauchy–Riesz projectors in Section 3, equation (1.4),
 their analytic dependence on the potential for fixed contours, and agreement of
 multiplicities with characteristic-function zero orders remain to be proved.
@@ -255,7 +273,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 642 declarations under `NLS`, including generated
+axioms. The current audit covers 679 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -288,14 +306,17 @@ Jordan block distinguishing generalized from ordinary eigenvectors. Projection
 checks cover `p=1,3`, the unique decomposition, idempotence, rank, compactness,
 resolvent commutation, one kernel exponent for all reference points, a fixed
 signed free eigenmode, vanishing at the nonzero test potential's resolvent point,
-and the generalized kernel/range decomposition of a Jordan block. No admission
+and the generalized kernel/range decomposition of a Jordan block. Cluster
+checks cover `p=1,3`, the reciprocal representation, disjoint root spaces,
+annihilation, idempotence, unique decomposition, kernel intersections, compactness,
+rank additivity, the intersection of two overlapping clusters, and the preservation
+or annihilation of actual free Fourier modes. No admission
 or extra project axiom is used by the library.
 
 ## Next milestones
 
-1. Prove annihilation between projections at distinct spectral points, then
-   develop contour-integral projections and their analytic dependence, linking
-   their ranks to the defined algebraic multiplicities.
+1. Develop contour-integral projections, identify them with finite cluster
+   projections, and prove analytic dependence for fixed contours.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
    3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,

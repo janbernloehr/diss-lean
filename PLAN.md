@@ -100,8 +100,14 @@ pencils. They are independent of the reference resolvent parameter, commute
 with every resolvent, and have rank equal to algebraic multiplicity. Every base
 vector has a unique root-space/complement decomposition.
 
-Next are annihilation between distinct spectral projections, contour-integral
-projectors as in Section 3, equation (1.4), and their analytic dependence for
+Distinct full root spaces are now proved disjoint, and their projections
+annihilate each other. Finite sums give bounded, compact cluster projections
+whose ranges are the sums of root spaces and whose kernels are intersections
+of the individual kernels. Cluster rank is the sum of algebraic multiplicities;
+composition corresponds to intersection of parameter sets.
+
+Next are contour-integral projectors as in Section 3, equation (1.4), their
+identification with finite cluster projections, and analytic dependence for
 fixed contours. The sharper numerical rates and vertical-strip bounds from
 Lemma 3.2(ii–iii), and spectral localization, also remain open.
 Physical-space interpretation, period-one embedding, and comparison with the

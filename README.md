@@ -21,7 +21,9 @@ region. Full periodic root spaces stabilize and have finite dimension, defining
 algebraic multiplicities that are positive exactly on the spectrum. Bounded
 finite-rank projections onto these root spaces commute with every resolvent,
 give topological direct-sum decompositions, and have rank equal to algebraic
-multiplicity. General resolvent identities and explicit spectral and potential
+multiplicity. Projections at distinct parameters annihilate each other. Their
+finite sums project onto finite spectral clusters, with rank equal to the sum
+of algebraic multiplicities and composition given by intersection of clusters. General resolvent identities and explicit spectral and potential
 derivatives are also proved in operator norm. The main
 dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -72,7 +74,9 @@ checks cover stabilization, finite dimensionality, algebraic multiplicities, and
 a Jordan block with a nontrivial generalized eigenvector. Projection checks
 cover decomposition, idempotence, rank, compactness, resolvent commutation,
 reference-independent kernels, fixed free eigenmodes, and vanishing at a
-verified resolvent point of a nonzero potential.
+verified resolvent point of a nonzero potential. Cluster checks cover distinct
+root spaces, annihilation, finite-sum ranks, kernel intersections, compactness,
+overlapping clusters, and included/excluded free Fourier modes.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
