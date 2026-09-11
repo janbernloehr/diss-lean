@@ -7,7 +7,7 @@ Operator checks cover the domain inclusion, signed free eigenmodes, a nonzero
 potential coupling, and the spectral equation between distinct spaces.
 -/
 
-open scoped ENNReal
+open scoped ENNReal Topology
 open NLS
 
 noncomputable section
@@ -696,3 +696,33 @@ example : resolventCircleIntegral (p := 3) (by simp) 0 0 (Real.pi / 2) =
     periodicSpectralProjection (by simp) 0 0 :=
   resolventCircleIntegral_eq_projection_of_singleton (by simp) 0 0 0 (Real.pi / 2)
     (by positivity) freeHalfPiCircle_resolvent freeHalfPiSpectrum
+
+-- A valid fixed contour gives an open domain in the potential space.
+example (c : ℂ) (r : ℝ) : IsOpen (resolventCircleDomain (p := 1) (by simp) c r) :=
+  isOpen_resolventCircleDomain (by simp) c r
+
+-- Analyticity is in operator norm, including at the explicit free contour.
+example : AnalyticAt ℂ
+    (fun φ : PairSpace 3 => resolventCircleIntegral (by simp) φ 0 (Real.pi / 2)) 0 :=
+  analyticAt_resolventCircleIntegral (by simp) 0 0 (Real.pi / 2)
+    (by positivity) freeHalfPiCircle_resolvent
+
+example (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    ∀ᶠ ψ in 𝓝 φ, Metric.sphere c r ⊆ resolventSet (by simp) ψ ∧
+      Module.finrank ℂ (resolventCircleIntegral (by simp) ψ c r).range =
+        Module.finrank ℂ (resolventCircleIntegral (by simp) φ c r).range :=
+  eventually_finrank_resolventCircleIntegral_eq (by simp) φ c r hr hc
+
+-- Small perturbations preserve the total multiplicity in the free half-pi disk.
+example : ∀ᶠ φ : PairSpace 3 in 𝓝 0,
+    ∑ z ∈ enclosedPeriodicSpectrum (by simp) φ 0 (Real.pi / 2),
+        periodicAlgebraicMultiplicity (by simp) φ z =
+      periodicAlgebraicMultiplicity (p := 3) (by simp) 0 0 := by
+  simpa only [freeHalfPiSpectrum, Finset.sum_singleton] using
+    eventually_sum_enclosed_multiplicity_eq (by simp) (0 : PairSpace 3) 0
+      (Real.pi / 2) (by positivity) freeHalfPiCircle_resolvent
+
+-- The integration functional also supports the degenerate radius-zero circle.
+example : ‖NLS.CircleIntegral.integrationCLM ℂ 0 0 (by rfl)‖ = 0 :=
+  le_antisymm (NLS.CircleIntegral.norm_integrationCLM_le 0 0 (by rfl)) (norm_nonneg _)

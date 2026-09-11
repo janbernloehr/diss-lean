@@ -30,3 +30,6 @@ import NLS.FunctionalAnalysis.CircleIntegral
 import NLS.ZakharovShabat.ResolventContour
 import NLS.ZakharovShabat.ContourProjection
 import NLS.ZakharovShabat.ContourSpectrum
+import NLS.FunctionalAnalysis.CircleIntegrationMap
+import NLS.FunctionalAnalysis.ProjectionRank
+import NLS.ZakharovShabat.ContourAnalytic

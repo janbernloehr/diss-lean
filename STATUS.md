@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has thirty-two modules and 329 named public theorems. All compile on the
+The library has thirty-five modules and 338 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -39,6 +39,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ResolventContour` | Normalized resolvent circle integrals into the base space and domain; circle integrability, factorization, compactness, norm bound; Cauchy vanishing and annulus deformation; root-chain integral formula; inside/outside action on full root spaces; resolvent and projection commutation; finite-cluster selection |
 | `NLS.ZakharovShabat.ContourProjection` | Existence of resolvent annuli; nested-circle product law; idempotence, finite rank, and topological range/kernel decomposition of the contour operator |
 | `NLS.ZakharovShabat.ContourSpectrum` | Finite enclosed spectrum; identification of the whole contour range with enclosed root spaces; equality with the algebraic cluster projection; algebraic-multiplicity rank formula; kernel formula; equality for circles with the same enclosed spectrum; isolated-value projections |
+| `NLS.FunctionalAnalysis.CircleIntegrationMap` | Normalized circle integration as a bounded linear map on continuous functions with the uniform norm; agreement on the circle; norm at most the radius |
+| `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections |
+| `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of contour projections; locally constant rank and total enclosed algebraic multiplicity |
 
 ## Current mathematical milestone
 
@@ -312,9 +315,23 @@ individual projection kernels. Circles with the same enclosed spectral values
 give equal operators, even with different centers; an isolated single value
 gives its individual root-space projection.
 
-Analytic dependence on the potential for fixed contours, local constancy of
-projection rank, and agreement of multiplicities with characteristic-function
-zero orders remain to be proved.
+For any fixed circle, the potentials whose resolvent set contains the entire
+circle form an open set. The normalized spectral pencils along that circle
+form an affine analytic family in the Banach algebra of continuous
+operator-valued functions with the uniform norm. Pointwise invertibility is
+invertibility in this algebra. Analytic inversion, followed by bounded linear
+circle integration, proves operator-norm analytic dependence of the contour
+projection on the potential. The integration map has norm at most the radius.
+
+If two bounded projections are less than one apart in operator norm, each is
+injective on the range of the other. For finite-rank projections this implies
+equal rank. Consequently, near any admissible potential, the circle remains
+in the resolvent set and both the contour rank and total enclosed algebraic
+multiplicity stay constant. Individual spectral values may move or split.
+These statements implement the fixed-contour analytic-dependence assertion
+used with Section 3, equation (1.4); the dissertation's specific localization
+circles still require the sharper localization estimates. Agreement of
+multiplicities with characteristic-function zero orders remains open.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -322,7 +339,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 740 declarations under `NLS`, including generated
+axioms. The current audit covers 759 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -369,14 +386,17 @@ selection. Further contour checks cover nested-circle products, idempotence,
 finite rank, whole-space equality with the enclosed cluster projection, and the
 rank and kernel formulas. The explicit free circle of radius `π/2` is proved to
 enclose exactly zero, and its entire contour operator equals the individual
-projection at zero. No admission or extra project axiom is used by the library.
+projection at zero. Further checks cover openness at `p=1`, analytic dependence
+at the free `p=3` potential, local preservation of the multiplicity in the free
+half-pi disk, and the zero-radius integration functional. No admission or extra
+project axiom is used by the library.
 
 ## Next milestones
 
-1. Prove analytic dependence on the potential for fixed contours and local
-   constancy of the resulting finite projection ranks.
-2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
-   3.2(ii–iii), then develop spectral localization.
+1. Prove the sharper numerical rates and vertical-strip estimates from Lemma
+   3.2(ii–iii).
+2. Develop spectral localization and apply the fixed-contour results to the
+   dissertation’s small and large spectral disks.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 

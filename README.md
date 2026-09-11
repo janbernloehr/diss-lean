@@ -27,7 +27,9 @@ of algebraic multiplicities and composition given by intersection of clusters.
 The normalized circle integral of the resolvent is constructed in operator norm,
 factors through the operator domain, and is a compact finite-rank projection.
 It equals the algebraic projection onto all enclosed root spaces, with rank
-equal to their total algebraic multiplicity. General resolvent
+equal to their total algebraic multiplicity. For a fixed resolvent circle, these
+projections depend analytically on the potential and have locally constant rank.
+General resolvent
 identities and explicit spectral and potential derivatives are also proved in
 operator norm. The main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -115,8 +117,9 @@ installation is absent. No shell startup files are modified.
   finite algebraic multiplicities. Bounded root-space projections and their
   complementary decompositions are proved. Resolvent circle integrals and their
   action on root spaces are proved, as are their idempotence and full equality
-  with the enclosed finite cluster projections. Analytic dependence for fixed
-  contours and sharp rates remain future work.
+  with the enclosed finite cluster projections. Fixed-contour projections depend
+  analytically on the potential; their ranks and total enclosed algebraic
+  multiplicities are locally constant. Sharp rates remain future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

@@ -123,8 +123,13 @@ identifies it with the enclosed root spaces, proving equality with the algebraic
 cluster projection on the whole base space. Rank is the sum of enclosed
 algebraic multiplicities; circles enclosing the same spectrum give equal operators.
 
-Next is analytic dependence of these projections on the potential for fixed
-contours, including locally constant rank. The sharper numerical rates and vertical-strip bounds from
-Lemma 3.2(ii–iii), and spectral localization, also remain open.
+For a fixed circle, the admissible potential set is open, and the contour
+projection is analytic in operator norm. Uniform Banach-algebra inversion along
+the circle and bounded linear integration establish this dependence. Projections
+less than one apart have the same rank, so total enclosed algebraic multiplicity
+is locally constant.
+
+Next are the sharper numerical rates and vertical-strip bounds from
+Lemma 3.2(ii–iii), followed by spectral localization.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.
