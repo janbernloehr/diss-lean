@@ -144,8 +144,15 @@ The numerical Neumann region lies in the full resolvent set, where the
 resolvent is compact and analytic. Its height bound tends to zero and gives
 a common region for every bounded potential set.
 
-Next are the double-resolvent estimate and squared Neumann condition in
-Lemma 3.4, followed by arbitrary-potential localization in Corollary 3.5
-and spectral multiplicity counts.
+The double-resolvent operator, its coefficient formulas, and the factorization
+of `(Φ R₀)²` through `FL^1` are proved. The squared Neumann condition yields
+a two-sided domain inverse, agrees with the full resolvent, and gives a
+quantitative norm bound. One-sided potentials provide verified examples
+outside the original Neumann condition, with exact two-term inverses.
+
+Next is the near/far frequency split and potential-tail estimate of Lemma 3.4;
+the current global composition bound does not supply its high-frequency decay.
+Then apply the squared criterion to arbitrary-potential localization in
+Corollary 3.5 and spectral multiplicity counts.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

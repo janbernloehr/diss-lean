@@ -863,3 +863,86 @@ example (φ : PairSpace 3) : (heightNeumannRegion φ).Nonempty :=
 example (M : ℝ) : ∃ H : ℝ, 0 < H ∧ ∀ φ : PairSpace 3, ‖φ‖ ≤ M →
     ∀ z : ℂ, H ≤ |z.im| → z ∈ heightNeumannRegion φ :=
   exists_uniform_heightNeumannRegion (by simp) M
+
+-- Squared Neumann inversion, including a perturbation whose norm is at least two.
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∉ freeLattice) (j m : ℤ) :
+    (doubleResolvent (by simp) φ z hz (0, lp.single 3 m 1)).1 j =
+      φ.1 (j - m) / ((z + (Real.pi : ℂ) * j) * (z - (Real.pi : ℂ) * m)) := by
+  rw [doubleResolvent_fst_apply]
+  simp [lp.single_apply, Pi.single_apply, ite_div]
+
+example (φ : PairSpace 1) (z : ℂ) (hz : z ∉ freeLattice) (j m : ℤ) :
+    (doubleResolvent (by simp) φ z hz (lp.single 1 m 1, 0)).2 j =
+      φ.2 (j - m) / ((z - (Real.pi : ℂ) * j) * (z + (Real.pi : ℂ) * m)) := by
+  rw [doubleResolvent_snd_apply]
+  simp [lp.single_apply, Pi.single_apply, ite_div]
+
+private def oneSidedPotential : PairSpace 1 := (lp.single 1 0 2, 0)
+private def positiveZeroMode : PairSpace 1 := (0, lp.single 1 0 1)
+
+private theorem large_perturbation :
+    2 ≤ ‖potentialFreeResolvent (by simp) oneSidedPotential Complex.I I_off_freeLattice‖ := by
+  have he : (potentialFreeResolvent (by simp) oneSidedPotential Complex.I I_off_freeLattice
+      positiveZeroMode).1 0 = 2 / Complex.I := by
+    simp [potentialFreeResolvent_apply, Coeff.convolution_apply, oneSidedPotential,
+      positiveZeroMode, lp.single_apply, Pi.single_apply]
+  have hc := lp.norm_apply_le_norm (p := 1) (by simp)
+    (potentialFreeResolvent (by simp) oneSidedPotential Complex.I I_off_freeLattice positiveZeroMode).1 0
+  rw [he] at hc
+  have hm := (potentialFreeResolvent (by simp) oneSidedPotential Complex.I I_off_freeLattice).le_opNorm
+    positiveZeroMode
+  norm_num [norm_div] at hc
+  norm_num [positiveZeroMode, Prod.norm_def, lp.norm_single] at hm
+  exact hc.trans hm.1
+
+example : ¬ NeumannCondition (by simp) oneSidedPotential Complex.I I_off_freeLattice := by
+  intro h
+  have hK := (norm_potentialFreeResolvent_le (by simp) oneSidedPotential Complex.I I_off_freeLattice).trans_lt h
+  linarith [large_perturbation]
+
+private theorem oneSided_squared :
+    SquaredNeumannCondition (by simp) oneSidedPotential Complex.I I_off_freeLattice :=
+  squaredNeumannCondition_of_oneSided (by simp) _ _ _ (Or.inr rfl)
+
+example : Complex.I ∈ resolventSet (by simp) oneSidedPotential :=
+  mem_resolventSet_of_squaredNeumannCondition (by simp) _ _ _ oneSided_squared
+
+example (a : PairSpace 1) :
+    spectralPencil (by simp) oneSidedPotential Complex.I
+      (squaredResolventToDomain (by simp) oneSidedPotential Complex.I I_off_freeLattice oneSided_squared a) = a :=
+  spectralPencil_squaredResolventToDomain _ _ _ _ _ _
+
+example (f : Domain 1) :
+    squaredResolventToDomain (by simp) oneSidedPotential Complex.I I_off_freeLattice oneSided_squared
+      (spectralPencil (by simp) oneSidedPotential Complex.I f) = f :=
+  squaredResolventToDomain_spectralPencil _ _ _ _ _ _
+
+example (ψ : Coeff 3) (z : ℂ) (hz : z ∉ freeLattice) :
+    resolvent (by simp) (0, ψ) z = freeResolvent z hz +
+      (freeResolvent z hz).comp (potentialFreeResolvent (by simp) (0, ψ) z hz) :=
+  resolvent_eq_two_terms_of_oneSided (by simp) _ _ _ (Or.inl rfl)
+
+example (φ : PairSpace 3) :
+    ‖doubleResolvent (by simp) φ Complex.I I_off_freeLattice‖ ≤ 169 * ‖φ‖ := by
+  have hB := freeL1Bound_le_height (p := 3) (by simp) Complex.I I_off_freeLattice (by simp)
+  norm_num at hB
+  have hB0 := freeL1Bound_nonneg 3 (by simp) Complex.I I_off_freeLattice
+  exact (norm_doubleResolvent_le (by simp) φ Complex.I I_off_freeLattice).trans
+    (mul_le_mul_of_nonneg_right (by nlinarith) (norm_nonneg _))
+
+example : AnalyticAt ℂ (resolvent (by simp) oneSidedPotential) Complex.I ∧
+    IsCompactOperator (resolvent (by simp) oneSidedPotential Complex.I) :=
+  ⟨analyticOnNhd_resolvent (by simp) _ _
+    (mem_resolventSet_of_squaredNeumannCondition (by simp) _ _ _ oneSided_squared),
+    isCompactOperator_resolvent (by simp) _ _⟩
+
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∉ freeLattice)
+    (h : ‖φ‖ * ‖doubleResolvent (by simp) φ z hz‖ < 1) :
+    ‖resolvent (by simp) φ z‖ ≤ (freeGap z)⁻¹ *
+      ((1 + freeL1Bound 3 (by simp) z hz * ‖φ‖) *
+        (1 - ‖φ‖ * ‖doubleResolvent (by simp) φ z hz‖)⁻¹) :=
+  norm_resolvent_le_of_doubleResolvent (by simp) φ z hz h
+
+-- The earlier two-sided Neumann example also satisfies the new criterion.
+example : SquaredNeumannCondition (by simp) unitPairPotential testParameter testParameter_off :=
+  squaredNeumannCondition_of_neumannCondition (by simp) _ _ _ unitPair_small

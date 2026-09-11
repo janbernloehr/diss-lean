@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has forty modules and 380 named public theorems. All compile on the
+The library has forty-two modules and 412 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -47,6 +47,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of contour projections; locally constant rank and total enclosed algebraic multiplicity |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
+| `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
+| `NLS.ZakharovShabat.DoubleResolvent` | `FL^1 → FL^p` potential convolution; double free resolvent and both coefficient formulas; global norm bound; square factorization and sandwich criterion; domain inverse identities; agreement with the full resolvent and quantitative bounds; nilpotence and exact two-term resolvents for one-sided potentials |
 
 ## Current mathematical milestone
 
@@ -194,6 +196,31 @@ to infinity. A sufficient height controls every larger absolute imaginary
 part, uniformly in real parts and both signs. Every bounded potential set
 has a common such height, and the numerical region is nonempty for every
 finite-p potential.
+
+The squared Neumann construction preceding Lemma 3.4 is now proved. With
+`K = Φ R₀` and `S = R₀ Φ R₀ : PairSpace p →L[ℂ] PairSpace 1`, we have
+
+`K² = potentialFromL1 φ ∘ S` and `‖K²‖ ≤ ‖φ‖ * ‖S‖`.
+
+The explicit criterion `‖K²‖ < 1` yields the correction
+`C = (1 + K) (1 - K²)⁻¹`, proved to be both a left and right inverse of
+`1 - K`. The geometric series is taken in `K²`, with
+`‖C‖ ≤ (1 + ‖K‖) / (1 - ‖K²‖)`. Composition with the free domain inverse
+solves both spectral equations and agrees with the full resolvent. In
+particular, `‖φ‖ * ‖S‖ < 1` suffices and gives an explicit resolvent bound.
+Both raw Fourier coefficient formulas for `S` are proved, retaining the
+opposite signs of the two free symbols.
+
+This criterion extends the earlier Neumann construction. For a one-sided
+potential (either component zero), `K² = 0` for every parameter off the free
+lattice and every potential norm, and the exact resolvent is `R₀ + R₀ K`.
+The checked constant potential `(2,0)` at `z=i` has `‖K‖ ≥ 2`, fails the
+original Neumann condition, and satisfies the squared criterion.
+
+**Lemma 3.4's frequency-tail estimate remains open.** The proved global
+composition bound `‖S‖ ≤ B_p(z)² * ‖φ‖` does not give the required decay
+as the strip index tends to infinity. The near/far frequency split and
+potential-tail estimate are the next step toward Corollary 3.5.
 
 The actual unbounded realization is now defined as
 
@@ -403,7 +430,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 828 declarations under `NLS`, including generated
+axioms. The current audit covers 884 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -463,11 +490,16 @@ small-potential localization into quarter-pi disks. Height-bound checks include
 `p=1` and `p=3`, a nonzero potential valid above both height ten half-planes,
 compactness and analyticity at a negative imaginary parameter, a nonzero
 `p=3` potential in the numerical region, and uniform heights for a norm ball.
+Double-resolvent checks include each Fourier sign on single-mode inputs,
+the global bound at `p=3`, a nonzero one-sided potential with perturbation
+norm at least two, failure of its original Neumann condition, both inverse
+identities under the squared criterion, compactness and analyticity there,
+and the exact terminating expansion for arbitrary one-sided `p=3` potentials.
 
 ## Next milestones
 
-1. Prove the double-resolvent estimate in Lemma 3.4 and the corresponding
-   squared Neumann condition.
+1. Prove the frequency-tail estimate in Lemma 3.4 using the double-resolvent
+   coefficient formulas; feed it into the established squared Neumann criterion.
 2. Develop localization for arbitrary potentials (Corollary 3.5) and use the
    contour results to count eigenvalues in the spectral disks.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,

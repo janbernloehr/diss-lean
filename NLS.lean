@@ -38,3 +38,5 @@ import NLS.SequenceSpaces.SobolevConstant
 import NLS.ZakharovShabat.VerticalStrips
 import NLS.SequenceSpaces.ReciprocalNorm
 import NLS.ZakharovShabat.HeightResolvent
+import NLS.FunctionalAnalysis.SquaredNeumann
+import NLS.ZakharovShabat.DoubleResolvent

@@ -35,8 +35,12 @@ operator norm. Appendix B.1's quantitative reciprocal-series inequalities,
 including explicit tail and lattice bounds, are also proved. These give the
 numerical height-decay and punctured-strip bounds in Lemma 3.2(ii–iii),
 the explicit compact analytic resolvent region of Corollary 3.3, and uniform
-spectral disk localization for sufficiently small potentials. The main dissertation theorems
-remain future work.
+spectral disk localization for sufficiently small potentials. The double-resolvent
+operator and squared Neumann inversion are constructed, including both inverse
+identities and quantitative bounds. One-sided potentials have exact two-term
+resolvents even when the original Neumann condition fails. Lemma 3.4's
+frequency-tail estimate, arbitrary-potential localization, and the main
+dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -93,6 +97,9 @@ Cauchy's theorem on resolvent disks, annulus deformation, generalized root space
 finite-cluster selection, nested-circle products, idempotence, finite rank,
 whole-space identification, the rank and kernel formulas, and an explicit free
 circle of radius `π/2` whose integral equals the individual projection at zero.
+Squared-Neumann checks include both Fourier coefficient signs and a one-sided
+potential at `z=i` whose perturbation norm is at least two but whose square
+vanishes, verifying failure of the original condition and validity of the new inverse.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -111,8 +118,9 @@ installation is absent. No shell startup files are modified.
   are `-π n` and `+π n`; the signed modes `eₙ⁻` and `eₙ⁺` both have eigenvalue `π n`.
 - The operator is a bounded map from the one-derivative domain to the base space.
   The free equation has a bounded inverse into that domain; its base-space
-  resolvent is compact. The perturbed inverse requires the proved Neumann
-  condition `freeL1Bound * ‖φ‖ < 1`; for `p=1`, `|Im z| > ‖φ‖` suffices.
+  resolvent is compact. Sufficient conditions for the perturbed inverse are
+  `freeL1Bound * ‖φ‖ < 1` or the broader squared criterion `‖(Φ R₀)²‖ < 1`;
+  for `p=1`, `|Im z| > ‖φ‖` suffices for the first condition.
   A common high-imaginary-part region is proved for each bounded potential set
   at every finite `p`. The partial-map realization on the base space has exactly
   the included one-derivative domain and is proved closed and densely defined.
