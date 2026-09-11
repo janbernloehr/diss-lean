@@ -13,7 +13,9 @@ compactness proved by finite Fourier approximation. For nonzero potentials,
 Hölder estimates yield a Neumann-series resolvent under an explicit smallness
 condition, with both inverse identities and compactness. Uniform estimates now
 prove that every potential at every finite Banach exponent has an admissible
-parameter; one height works for any fixed norm ball of potentials. The main
+parameter; one height works for any fixed norm ball of potentials. The full
+resolvent set is open, and the resolvent is compact and jointly complex analytic
+in the potential and spectral parameter throughout its domain. The main
 dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
@@ -53,6 +55,8 @@ Uniform-estimate checks cover `p = 1, 3`, Fourier recentering at a negative real
 part, bounded potential sets, and compact inverse existence for arbitrary `p=3`
 potentials. Closed-operator checks verify the actual partial-map realization at
 `p = 1, 3`, its dense domain, evaluation, and stability under graph limits.
+Analytic-resolvent checks cover the full inverse identities, openness, joint
+analyticity, compactness, and agreement with the nonzero Neumann example.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -76,7 +80,9 @@ installation is absent. No shell startup files are modified.
   A common high-imaginary-part region is proved for each bounded potential set
   at every finite `p`. The partial-map realization on the base space has exactly
   the included one-derivative domain and is proved closed and densely defined.
-  Sharp rates and analytic dependence remain future work.
+  The full resolvent is jointly complex analytic in the potential and parameter
+  on an open domain, and compact throughout that domain. Sharp rates and
+  spectral discreteness remain future work.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

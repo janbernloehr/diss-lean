@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has nineteen modules and 172 named public theorems. All compile on the
+The library has twenty modules and 192 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -26,6 +26,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.DominatedConvergence` | Coordinatewise convergence plus an `lp` majorant implies norm convergence at finite Banach exponents, along arbitrary filters |
 | `NLS.ZakharovShabat.UniformResolvent` | Explicit reciprocal envelopes; convergence of their conjugate norms; Fourier recentering; bounds uniform in real parts and bounded potential sets; existence of a compact two-sided inverse for every finite-p potential |
 | `NLS.ZakharovShabat.ClosedOperator` | Partial linear map on the base space; exact one-derivative domain; agreement with the domain-to-base operator; dense domain; closed graph via a bounded inverse; stability under base-norm graph limits |
+| `NLS.ZakharovShabat.ResolventAnalytic` | Full resolvent set and joint open domain; potential dependence in operator norm; totalized inverse with both identities; nonempty resolvent set; agreement with Neumann construction; joint complex analyticity; compactness on the full resolvent set |
 
 ## Current mathematical milestone
 
@@ -113,8 +114,8 @@ potential.
 
 These are qualitative uniform regions with a concrete envelope, rather than
 the sharper numerical rates and vertical-strip bounds in Lemma 3.2(ii–iii).
-Those constants, analytic dependence, and Corollary 3.3's full conclusions
-remain to be proved.
+Those constants and the spectral-discreteness conclusion of Corollary 3.3
+remain to be proved. Analytic dependence is now established below.
 
 The actual unbounded realization is now defined as
 
@@ -132,13 +133,32 @@ lemma shows that if included domain vectors converge to `x` and their operator
 images converge to `y`, then `x` has a domain representative with image `y`.
 This establishes the coefficient-space closedness assertion on printed page 23.
 
+The full resolvent set `resolventSet hp φ` is now defined by bijectivity of the
+spectral pencil, with no exclusion of the free lattice. Normalizing the pencil
+by the fixed free inverse at `i` gives an endomorphism of `PairSpace p`;
+bijectivity of the pencil is equivalent to invertibility of this endomorphism.
+Banach-algebra inversion then defines `resolventToDomain hp φ z` and its included
+base-space version `resolvent hp φ z`. Both functions are extended by zero outside
+the resolvent set; inverse identities and analyticity are asserted only on it.
+
+The joint domain `{(φ,z) | z ∈ resolventSet hp φ}` is open. On that domain,
+the resolvent is jointly complex analytic in `(φ,z)`, in operator norm, both
+into the one-derivative domain and into the base space. In particular it is
+analytic in `z` for each fixed potential, as in Corollary 3.3, printed page 24.
+It agrees with the constructive Neumann inverse wherever the Neumann condition
+holds, so every potential has a nonempty resolvent set. The full base-space
+resolvent is compact by factoring through the fixed compact free resolvent.
+These results establish compactness and analytic dependence throughout the full
+coefficient-space resolvent set; the corollary's specific numerical region and
+spectral discreteness are still open proof obligations.
+
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 434 declarations under `NLS`, including generated
+axioms. The current audit covers 472 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -154,14 +174,18 @@ compactness, and the norm bound are checked. Uniform-estimate checks exercise
 `p=1,3`, a parameter with a far-negative real part, one height for a whole norm
 ball, and compact inverse existence for an arbitrary `p=3` potential. Closed-operator
 checks cover `p=1,3`, domain density, evaluation on included vectors, and preservation
-of the graph under sequential base-norm limits. No admission
-or extra project axiom is used by the library.
+of the graph under sequential base-norm limits. Analytic-resolvent checks cover
+`p=1,3`, the open joint domain, nonempty resolvent sets, joint and separate
+analyticity, both full inverse identities, compactness, and agreement with the
+concrete nonzero Neumann example at `z=2i`. No admission or extra project axiom
+is used by the library.
 
 ## Next milestones
 
-1. Establish analytic dependence of the resolvent.
+1. Develop discreteness of the periodic spectrum from the compact resolvent,
+   and the general resolvent identity and derivative formulas needed for spectral analysis.
 2. Prove the sharper numerical rates and vertical-strip estimates from Lemma
-   3.2(ii–iii), then develop discreteness and spectral localization.
+   3.2(ii–iii), then develop spectral localization.
 3. Prove the periodic Fourier/distribution realization, period-one embedding,
    pair-norm comparison, and compatibility with physical-space multiplication.
 

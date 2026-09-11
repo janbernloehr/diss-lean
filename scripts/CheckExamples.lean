@@ -231,3 +231,48 @@ example (φ : PairSpace 3) (f : ℕ → Domain 3) (x y : PairSpace 3)
     (hy : Filter.Tendsto (fun n => operator (by simp) φ (f n)) Filter.atTop (nhds y)) :
     ∃ g : Domain 3, domainInclusion g = x ∧ operator (by simp) φ g = y :=
   exists_domain_of_tendsto (by simp) φ f hx hy
+
+-- The full resolvent domain is open and nonempty for every finite-p potential.
+example : IsOpen (resolventDomain (p := 3) (by simp)) :=
+  isOpen_resolventDomain (by simp)
+
+example (φ : PairSpace 1) : (resolventSet (by simp) φ).Nonempty :=
+  resolventSet_nonempty (by simp) φ
+
+-- Joint analytic dependence uses the operator norm, including variation in φ.
+example : AnalyticOnNhd ℂ
+    (fun s : PairSpace 3 × ℂ => resolvent (by simp) s.1 s.2)
+    (resolventDomain (by simp)) :=
+  analyticOnNhd_resolvent_joint (by simp)
+
+example (φ : PairSpace 1) :
+    AnalyticOnNhd ℂ (resolvent (by simp) φ) (resolventSet (by simp) φ) :=
+  analyticOnNhd_resolvent (by simp) φ
+
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∈ resolventSet (by simp) φ) :
+    AnalyticAt ℂ (fun ψ : PairSpace 3 => resolvent (by simp) ψ z) φ :=
+  analyticAt_resolvent_potential (by simp) φ z hz
+
+-- On the complete resolvent set, with no off-free-lattice hypothesis.
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∈ resolventSet (by simp) φ)
+    (a : PairSpace 3) :
+    spectralPencil (by simp) φ z (resolventToDomain (by simp) φ z a) = a :=
+  spectralPencil_resolventToDomain (by simp) φ z hz a
+
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∈ resolventSet (by simp) φ)
+    (f : Domain 3) :
+    resolventToDomain (by simp) φ z (spectralPencil (by simp) φ z f) = f :=
+  resolventToDomain_spectralPencil (by simp) φ z hz f
+
+example (φ : PairSpace 3) (z : ℂ) : IsCompactOperator (resolvent (by simp) φ z) :=
+  isCompactOperator_resolvent (by simp) φ z
+
+-- Agreement and analyticity at the concrete nonzero test potential.
+example : resolvent (by simp) unitPairPotential testParameter =
+    perturbedResolvent (by simp) unitPairPotential testParameter testParameter_off unitPair_small :=
+  resolvent_eq_perturbed (by simp) unitPairPotential testParameter testParameter_off unitPair_small
+
+example : AnalyticAt ℂ (resolvent (by simp) unitPairPotential) testParameter :=
+  analyticOnNhd_resolvent (by simp) unitPairPotential testParameter
+    (mem_resolventSet_of_neumannCondition (by simp) unitPairPotential testParameter
+      testParameter_off unitPair_small)

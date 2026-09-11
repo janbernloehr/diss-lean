@@ -72,7 +72,13 @@ exactly the included one-derivative domain. Its domain is dense and its graph is
 closed, using the bounded two-sided inverse to characterize graph membership.
 Base-norm limits of graph points remain in the graph.
 
-Next are analytic dependence, the sharper numerical rates and
-vertical-strip bounds from Lemma 3.2(ii–iii), and spectral localization.
+The full resolvent set is now defined by bijectivity of the spectral pencil.
+It is nonempty for every potential; the joint domain in potential and parameter
+is open. A single totalized resolvent agrees with the Neumann construction and
+is jointly complex analytic on its domain, with compact base-space values.
+
+Next are spectral discreteness, the general resolvent identity and derivative
+formulas, the sharper numerical rates and vertical-strip bounds from Lemma
+3.2(ii–iii), and spectral localization.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.
