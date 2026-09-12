@@ -109,8 +109,11 @@ on printed page 31: the even coefficient carries `1/2`, and the odd kernel carri
 Hilbert coefficient pairs: the squared output norm is the mean of the two
 input energies. The extension is injective, contractive in the maximum pair
 norm, and boundary-valued. Its odd coefficients define a bounded shifted
-Hilbert transform with the exact finite-input kernel. The other exponents in
-`1<p<∞` remain needed for the full Lemma 4.3 and period-one spectral transfer.
+Hilbert transform with the exact finite-input kernel. The ordinary and shifted
+Hilbert kernels now also have bounded extensions on all `ℓ4`: a summable kernel
+correction gives the ordinary `ℓ2` operator, and the discrete Cotlar identity
+with Hölder proves a uniform quartic bound. The remaining exponents and their
+interval completions are still needed for the full Lemma 4.3 and spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

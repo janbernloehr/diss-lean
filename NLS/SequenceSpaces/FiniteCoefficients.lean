@@ -1,4 +1,5 @@
 import NLS.SequenceSpaces.Truncation
+import NLS.SequenceSpaces.Convolution
 import Mathlib.Analysis.Normed.Operator.Extend
 
 /-!
@@ -35,5 +36,15 @@ theorem norm_ofFinsupp_sq (a : ℤ →₀ ℂ) :
   simp only [ENNReal.toReal_ofNat, Real.rpow_two, ofFinsupp_apply] at h
   rw [h]
   exact tsum_eq_sum fun n hn => by simp [Finsupp.notMem_support_iff.mp hn]
+
+/-- Convolution with finite input is the finite translated sum of the second factor. -/
+theorem convolution_ofFinsupp_apply [Fact (1 ≤ p)] (a : ℤ →₀ ℂ) (b : Coeff 1) (n : ℤ) :
+    convolution (ofFinsupp (p := p) a) b n = a.sum (fun k z => z * b (n - k)) := by
+  rw [convolution_apply]
+  have he := (Equiv.subLeft n).tsum_eq (fun k : ℤ => a (n - k) * b k)
+  simp only [Equiv.subLeft_apply, sub_sub_cancel] at he
+  simp only [ofFinsupp_apply]
+  rw [← he]
+  exact tsum_eq_sum fun k hk => by simp [Finsupp.notMem_support_iff.mp hk]
 
 end NLS.Coeff

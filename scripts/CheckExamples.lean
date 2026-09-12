@@ -2663,3 +2663,107 @@ end
 end HilbertIntervalExtensionChecks
 
 end HilbertIntervalExtensionChecks
+
+section QuarticHilbertChecks
+
+namespace QuarticHilbertChecks
+
+open NLS NLS.Fourier Complex
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The correction has a special diagonal value and asymmetric neighboring values.
+example : hilbertCorrection 0 = 2 := hilbertCorrection_zero
+example : hilbertCorrection (-1) = -1 := by
+  rw [hilbertCorrection_of_ne_zero _ (by norm_num)]
+  norm_num
+example : hilbertCorrection 1 = -1 / 3 := by
+  rw [hilbertCorrection_of_ne_zero _ (by norm_num)]
+  norm_num
+example (a : Coeff 1) : ‖hilbertCorrectionCLM a‖ ≤ ‖a‖ * ‖hilbertCorrectionCoeffs‖ :=
+  norm_hilbertCorrectionCLM_apply_le a
+example (a : Coeff ⊤) : ‖hilbertSquare a‖ ≤ ‖a‖ * ‖hilbertSquareCoeffs‖ :=
+  norm_hilbertSquare_apply_le a
+
+-- Ordinary transforms exclude the diagonal and preserve the raw source signs.
+example : discreteHilbert (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-3) = 0 := by
+  rw [discreteHilbert_finite]
+  norm_num [finiteHilbert]
+example : discreteHilbertFour (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-4) = I := by
+  rw [discreteHilbertFour_finite]
+  norm_num [finiteHilbert]
+example : discreteHilbertFour (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-2) = -I := by
+  rw [discreteHilbertFour_finite]
+  norm_num [finiteHilbert, div_neg]
+example : hilbertSquare (Coeff.ofFinsupp (p := 4) (Finsupp.single 0 1)) (-2) = 1 / 4 := by
+  rw [hilbertSquare_finite]
+  norm_num [finiteHilbertSquare]
+
+-- Multiplication here is complex multiplication, with no conjugation.
+example : Coeff.quarticProduct (Coeff.ofFinsupp (Finsupp.single (-3) I))
+    (Coeff.ofFinsupp (Finsupp.single (-3) I)) = Coeff.ofFinsupp (Finsupp.single (-3) (-1)) := by
+  apply lp.ext
+  funext n
+  by_cases h : n = -3 <;> simp [h]
+example (a : Coeff 4) : ‖Coeff.quarticProduct a a‖ = ‖a‖^2 := Coeff.norm_quarticProduct_self a
+
+-- Two occupied sites make both discrete correction terms essential.
+def twoSites : ℤ →₀ ℂ := Finsupp.single 0 1 + Finsupp.single 1 1
+
+theorem twoSites_H_zero : finiteHilbert twoSites 0 = 1 := by
+  norm_num [finiteHilbert, twoSites, Finsupp.sum_add_index, add_div]
+theorem twoSites_H_one : finiteHilbert twoSites 1 = -1 := by
+  norm_num [finiteHilbert, twoSites, Finsupp.sum_add_index, add_div]
+theorem twoSites_product : finiteProduct twoSites (finiteHilbert twoSites) =
+    Finsupp.single 0 1 + Finsupp.single 1 (-1) := by
+  apply Finsupp.ext
+  intro n
+  by_cases h0 : n = 0
+  · subst n
+    simp only [finiteProduct_apply]
+    rw [twoSites_H_zero]
+    simp [twoSites]
+  · by_cases h1 : n = 1
+    · subst n
+      simp only [finiteProduct_apply]
+      rw [twoSites_H_one]
+      simp [twoSites]
+    · simp [finiteProduct_apply, twoSites, h0, h1]
+theorem twoSites_square : finiteProduct twoSites twoSites = twoSites := by
+  apply Finsupp.ext
+  intro n
+  by_cases h0 : n = 0 <;> by_cases h1 : n = 1 <;>
+    simp [finiteProduct_apply, twoSites, h0, h1]
+example : (finiteHilbert twoSites 0)^2 -
+    2 * finiteHilbert (finiteProduct twoSites (finiteHilbert twoSites)) 0 -
+    finiteHilbertSquare (finiteProduct twoSites twoSites) 0 = 2 := by
+  rw [twoSites_H_zero, twoSites_product, twoSites_square]
+  norm_num [finiteHilbert, finiteHilbertSquare, twoSites, Finsupp.sum_add_index,
+    Finsupp.sum_neg_index, add_div, neg_div]
+example (a : ℤ →₀ ℂ) : (finiteHilbert a (-3))^2 =
+    2 * finiteHilbert (finiteProduct a (finiteHilbert a)) (-3) +
+    finiteHilbertSquare (finiteProduct a a) (-3) + 2 * a (-3) * finiteHilbertSquare a (-3) :=
+  finiteHilbert_cotlar a (-3)
+
+-- The completion and shifted correction hold for all quartic-summable inputs.
+example (a : Coeff 4) : ‖discreteHilbertFour a‖ ≤ quarticHilbertBound * ‖a‖ :=
+  norm_discreteHilbertFour_apply_le a
+example (a : Coeff 4) : ‖shiftedHilbertFour a‖ ≤ shiftedQuarticBound * ‖a‖ :=
+  norm_shiftedHilbertFour_apply_le a
+example (a : Coeff 4) : AnalyticAt ℂ discreteHilbertFour a := discreteHilbertFour.analyticAt a
+example : shiftedHilbertFour (Coeff.ofFinsupp (Finsupp.single 0 1)) 0 = -2 / (Real.pi : ℂ) := by
+  rw [shiftedHilbertFour_finite]
+  norm_num [div_neg, neg_div]
+example : shiftedHilbertFour (Coeff.ofFinsupp (Finsupp.single 0 1)) (-1) = 2 / (Real.pi : ℂ) := by
+  rw [shiftedHilbertFour_finite]
+  norm_num
+example (a : ℤ →₀ ℂ) (n : ℤ) :
+    discreteHilbertFour (Coeff.ofFinsupp a) n = discreteHilbert (Coeff.ofFinsupp a) n := by
+  rw [discreteHilbertFour_finite, discreteHilbert_finite]
+
+end
+
+end QuarticHilbertChecks
+
+end QuarticHilbertChecks

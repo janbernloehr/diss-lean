@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 87 modules and 951 named public theorems. All compile on the
+The library has 93 modules and 990 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -90,10 +90,16 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntervalKernelLp` | Translation identity; reciprocal norm envelope; kernel membership for every `p>1`; failure at `p=1` via the harmonic series |
 | `NLS.ZakharovShabat.IntervalExtension` | Physical reflected/swapped linear maps; Fourier reflection relation; normalized finite-input amplitudes; constant and one-sided coefficient formulas |
 | `NLS.ZakharovShabat.FiniteIntervalExtension` | Linear finite-input maps into actual boundary `ℓp` spaces; exact equality with physical Fourier integrals; physical `p=1` counterexample |
-| `NLS.SequenceSpaces.FiniteCoefficients` | Canonical linear inclusion of finite coefficients into `ℓp`; dense range for finite Banach exponents; exact finite Hilbert energy |
+| `NLS.SequenceSpaces.FiniteCoefficients` | Canonical linear inclusion of finite coefficients into `ℓp`; dense range for finite Banach exponents; exact finite Hilbert energy; finite-input convolution formula |
 | `NLS.Fourier.IntervalParseval` | Agreement with mathlib interval Fourier coefficients; square integrability across reflected joins; Parseval; polynomial and reflected-block energy identities |
 | `NLS.ZakharovShabat.HilbertIntervalExtension` | Exact finite-input energy and uniform contraction; completion to all Hilbert pairs; physical agreement on polynomials; closed boundary membership; exact energy, injectivity, and uniqueness after completion |
 | `NLS.Fourier.ShiftedHilbert` | Contractive odd-index sampling; normalized shifted Hilbert operator on all `ℓ2`; explicit norm bound and exact finite reciprocal kernel |
+| `NLS.Fourier.HilbertKernel` | Ordinary/shifted kernel comparison; reciprocal and square-decay bounds; absolutely summable correction and its bounded convolution on every Banach exponent |
+| `NLS.Fourier.DiscreteHilbert` | Ordinary Hilbert transform on `ℓ2`; exact source kernel and zero diagonal; uniform bound; finite synthesis at every `p>1` |
+| `NLS.Fourier.CotlarIdentity` | Scalar cancellation at all index collisions; finite complex-sequence Cotlar identity with both discrete correction terms |
+| `NLS.Fourier.HilbertSquare` | Absolutely summable square kernel; bounded remainder operator at all Banach exponents; equality with the finite rational remainder |
+| `NLS.SequenceSpaces.QuarticProduct` | Hölder product `ℓ4 × ℓ4 → ℓ2`; norm bound and exact square-product norm identity |
+| `NLS.Fourier.QuarticHilbert` | Uniform finite-input quartic estimate from Cotlar; completed ordinary and shifted `ℓ4` transforms; explicit bounds and exact finite reciprocal formulas |
 
 ## Current mathematical milestone
 
@@ -665,8 +671,35 @@ Odd-index sampling is a contraction on `ℓ2`. Applied to the second component
 of the completed extension of `(0,a)`, and multiplied by `-2i`, it gives
 `shiftedHilbert : Coeff 2 →L[ℂ] Coeff 2`, with norm at most `2`. Its finite-input
 formula is `Σₖ a(k) 2/[π(2k-2n-1)]`, the shifted reciprocal transform needed in
-Lemma 4.3. This bound is sufficient and is not claimed optimal. Extending the
-boundedness result to the other exponents remains the next analytic obligation.
+Lemma 4.3. This bound is sufficient and is not claimed optimal. The quartic exponent is
+now also proved as follows; further exponents and their interval completions
+remain open.
+
+**Ordinary and shifted Hilbert transforms are bounded on `ℓ4`.** The ordinary
+source kernel is `h(j)=-1/j`, with `h(0)=0`. Its difference from the unnormalized
+shifted kernel is `d(0)=2` and `d(j)=-1/[j(2j+1)]` elsewhere. The proved bound
+`|d(j)|≤4/(1+|j|)²` puts it in `ℓ1`, so its convolution is bounded even at
+`p=1` and `p=∞`. Adding it to `π` times the shifted `ℓ2` operator constructs
+the actual ordinary transform, with coefficient `Σₖ a(k)/(k-n)` on finite input.
+The diagonal term is zero. One uniform constant is `B₂=2π+‖d‖₁`.
+
+The scalar partial-fraction identity explicitly handles every collision of
+indices. Summing it proves the discrete Cotlar identity
+`(Ha)²=2H(aHa)+R(a²)+2aRa`, where `R` has convolution kernel `h(j)²`.
+Products retain the finite support of `a`; both correction terms are necessary.
+The square kernel is in `ℓ1`, and `R` is bounded at every Banach exponent.
+Hölder constructs the actual `ℓ4 × ℓ4 → ℓ2` product with norm at most one;
+its square product has norm exactly `‖a‖₄²`.
+
+Finite Hilbert images already belong to `ℓ4` by the reciprocal kernel bound,
+independently of any uniform estimate. The Cotlar identity therefore gives
+`x²≤2B₂yx+3My²`, with `x=‖Ha‖₄`, `y=‖a‖₄`, and `M=‖h²‖₁`. Solving it proves
+`x≤B₄y` for the explicit constant `B₄=2B₂+3M+1`. Dense finite coefficient
+inclusion constructs `discreteHilbertFour` on all `Coeff 4`, and subtraction of
+the same correction constructs `shiftedHilbertFour`, with bound
+`(B₄+‖d‖₁)/π`. Both maps have the exact finite-input reciprocal formulas.
+This proves the quartic Hilbert-kernel step; it does not yet complete the
+quartic interval map or prove the whole exponent range in Lemma 4.3.
 
 The actual unbounded realization is now defined as
 
@@ -880,7 +913,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1982 declarations under `NLS`, including generated
+axioms. The current audit covers 2101 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1070,11 +1103,20 @@ cover negative odd reindexing, annihilation of even modes, opposite signs
 across the half-integer pole, a complex negative-frequency input, and the
 uniform bound and complex linearity.
 
+Quartic-Hilbert checks verify the correction at zero and both neighboring
+indices, its `p=1` bound, and the square-kernel bound at `p=∞`. They check
+zero diagonal, signed negative-frequency action with a complex coefficient,
+and multiplication without conjugation. A two-site input makes both Cotlar
+correction terms visible. Other checks cover arbitrary-input quartic bounds,
+analyticity, shifted-kernel signs, and agreement of the `ℓ2` and `ℓ4` finite
+ordinary formulas.
+
 ## Next milestones
 
-1. Extend the proved shifted Hilbert `ℓ2` bound to the other exponents in
-   `1<p<∞`, then complete their finite interval-extension maps. Construct the
-   physical Sobolev identifications in Lemmas 4.1–4.2, then transfer Theorem 1.4 and Lemma 4.5 to
+1. Generalize the proved `ℓ2 → ℓ4` exponent-doubling argument, then prove
+   interpolation and duality to cover all `1<p<∞`. Complete the corresponding
+   interval maps, including `p=4`. Construct the physical Sobolev identifications
+   in Lemmas 4.1–4.2, then transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.

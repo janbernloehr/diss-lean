@@ -305,11 +305,21 @@ interval extensions on all `PairSpace 2`, with boundary membership, injectivity,
 and the same energy identity. Odd-index sampling extracts the normalized
 shifted Hilbert kernel `2/[π(2k-2n-1)]` as a bounded `ℓ2` operator.
 
-Next prove the shifted discrete Hilbert estimate for the remaining exponents
-`1<p<∞`, then complete the corresponding finite-input maps by density. The
-library search found Parseval but no existing discrete Hilbert, weak-type
-interpolation, or Riesz–Thorin theorem; those analytic steps need proof or a
-different boundedness argument. Individual kernel membership alone is insufficient.
+The first non-Hilbert exponent is now proved. The ordinary kernel `-1/j`
+and unnormalized shifted kernel `-2/(2j+1)` differ by an absolutely summable
+sequence with square decay. Young's inequality handles this correction at
+all Banach exponents and supplies the ordinary Hilbert `ℓ2` bound.
+The discrete Cotlar identity is proved on finite complex sequences, including
+both diagonal square-kernel terms. Hölder `ℓ4 × ℓ4 → ℓ2` and the ordinary
+`ℓ2` bound give a support-independent quartic estimate. Density constructs
+both ordinary and normalized shifted Hilbert transforms on all `ℓ4`, with
+exact agreement with the finite reciprocal formulas.
+
+Next generalize exponent doubling, then supply interpolation and duality to
+cover the remaining `1<p<∞` range. Complete the corresponding interval maps,
+including the now-bounded quartic kernel case. The library search found
+Parseval and Hölder but no existing discrete Hilbert or interpolation theorem.
+Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
 is not assumed here.
 Construct the physical Sobolev-domain identifications of Lemmas 4.1–4.2 and
