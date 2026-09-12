@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has seventy-one modules and 768 named public theorems. All compile on the
+The library has seventy-three modules and 804 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -78,6 +78,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.BoundaryOperators` | Coefficient form of Lemma 4.4 for already-reflected potentials: both invariant subspaces, bounded restricted operators, projection intertwining, and exact positive/negative mode-action signs |
 | `NLS.ZakharovShabat.BoundaryResolvent` | Actual Dirichlet/Neumann pencils and full resolvent sets; fixed-free normalization; two-sided inverses; compactness; joint analyticity and openness; agreement with periodic restrictions on the common domain; boundary preservation by resolvents and circle projections |
 | `NLS.ZakharovShabat.BoundarySpectrum` | Closed discrete boundary spectra, finite bounded portions, compact-resolvent spectral transformation and eigenvector characterization; periodic resolvent intersection and spectral union |
+| `NLS.ZakharovShabat.BoundaryRootSpaces` | Actual restricted-pencil root chains; exact periodic boundary intersections; domain representatives; finite dimension, stabilization, and closed full root spaces; spectral characterization of algebraic multiplicity; periodic multiplicity as the sum of both boundary contributions |
+| `NLS.ZakharovShabat.FreeBoundaryMultiplicity` | Signed free boundary modes and exact lattice spectra; algebraic multiplicity one and absence of longer free chains; rank one in each free quarter-pi contour summand; free central count `2N+1` for each boundary condition |
 
 ## Current mathematical milestone
 
@@ -532,8 +534,29 @@ with both boundary projections and preserve both subspaces.
 The distinction between the individual and common resolvent sets matters:
 for the constant potential `(1,1)`, `1` is a Dirichlet eigenvalue but a Neumann
 resolvent point. The Neumann inverse is proved nonzero and analytic there.
-Boundary algebraic multiplicities, the high-disk and central counts in Theorem 1.4,
-and Lemma 4.5's analytic simple eigenvalues remain next steps.
+
+**Boundary root spaces and free algebraic counts are proved.** Each root chain
+is defined recursively using the actual boundary pencil and inclusion, requiring
+a boundary-domain representative at every step. Its image in the periodic base
+space is exactly the intersection of the periodic root space with that boundary
+space. This holds at every finite level and for the full root space. Finite
+dimension, stabilization, closedness, and domain representatives follow.
+Algebraic multiplicity is the dimension of the full root space; it is positive
+exactly on the boundary spectrum and zero on the individual resolvent set.
+
+The boundary projections preserve every periodic root level, giving a direct
+sum decomposition of both finite and full periodic root spaces. Consequently,
+periodic algebraic multiplicity equals Dirichlet plus Neumann multiplicity,
+including at eigenvalues with Jordan chains. Both free boundary spectra equal
+the signed lattice `πℤ`. Nonzero free modes and periodic multiplicity two give
+multiplicity one in each boundary space, with no longer free chains. Each free
+quarter-pi contour has rank one in either summand; the free central sum is
+`2N+1` for either boundary condition.
+
+Boundary cluster ranks, their deformation to the high-disk and central counts
+for nonzero potentials in Theorem 1.4, and Lemma 4.5's analytic simple eigenvalues
+remain next steps. The physical interval-extension maps are still separate
+obligations.
 
 The actual unbounded realization is now defined as
 
@@ -747,7 +770,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1621 declarations under `NLS`, including generated
+axioms. The current audit covers 1691 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -895,11 +918,20 @@ They also verify totalization outside the individual resolvent set, compatibilit
 with the preceding bounded operator, the spectral union and bounded spectral
 finiteness at `p=1`, and boundary preservation by a negative-index circle.
 
+Boundary-root checks construct a nonconstant complex reflected potential with a
+length-two Dirichlet Jordan chain at `π`. Its top vector is outside the ordinary
+eigenspace, and its algebraic multiplicity is at least two. Free checks cover a
+negative Neumann index, absence of longer chains at `p=1`, zero multiplicity at
+an off-lattice point, contour rank one at a negative index, and central counts
+one and five at cutoffs zero and two. The multiplicity splitting is also
+instantiated at the endpoint `p=1`.
+
 ## Next milestones
 
-1. Prove the Dirichlet/Neumann algebraic multiplicities and spectral counts of
-   Theorem 1.4, followed by analytic simple eigenvalues in Lemma 4.5. Prove the interval-extension maps
-   and the discrete Hilbert transform bound needed in Lemmas 4.1–4.3.
+1. Construct boundary cluster projections and deform their free ranks to prove
+   the spectral counts of Theorem 1.4, followed by analytic simple eigenvalues
+   in Lemma 4.5. Prove the interval-extension maps and the discrete Hilbert
+   transform bound needed in Lemmas 4.1–4.3.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

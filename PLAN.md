@@ -262,8 +262,18 @@ finite bounded portions; compact-resolvent spectral transformation proves that
 every spectral point has an eigenvector satisfying the selected boundary condition.
 The periodic resolvent and circle projections preserve both boundary spaces.
 
-Next prove the boundary root-space multiplicities and the high-disk and central
-counts in Theorem 1.4, then the analytic simple eigenvalues of Lemma 4.5.
+Boundary root chains now use the actual restricted pencils, and their ambient
+images equal the corresponding boundary intersections of periodic root spaces
+at every level. The full spaces are finite dimensional and stabilize; their
+ranks define algebraic multiplicity and sum to periodic multiplicity. Free
+boundary spectra are the full signed lattice, each value has multiplicity one,
+and the free quarter-pi contour has rank one in each summand. The free central
+algebraic count is `2N+1` for both boundary conditions.
+
+Next construct boundary cluster projections and identify their ranks with sums
+of boundary multiplicities. Deform the free high-disk and central ranks to prove
+the coefficient counts in Theorem 1.4, then prove the analytic simple eigenvalues
+of Lemma 4.5.
 The physical interval-extension maps of Lemmas 4.1–4.2 and the discrete Hilbert
 transform estimate of Lemma 4.3 still need proofs. The period-two projections
 just constructed are not substitutes for those extension maps.

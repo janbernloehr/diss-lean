@@ -2012,3 +2012,171 @@ example (b : BoundaryCondition) (φ : PairSpace 3) (hφ : φ ∈ dirichletSubspa
 end BoundaryResolventChecks
 
 end BoundarySpectralChecks
+
+section BoundaryRootSpaceChecks
+
+set_option autoImplicit false
+open Complex
+
+namespace BoundaryRootChecks
+
+def jordanPotential : PairSpace 3 :=
+  (lp.single 3 (-2) (I * (Real.pi : ℂ)), lp.single 3 2 (I * (Real.pi : ℂ)))
+
+theorem jordanPotential_mem : jordanPotential ∈ dirichletSubspace := by
+  rw [mem_dirichletSubspace]
+  intro n
+  simp [jordanPotential, lp.single_apply, Pi.single_apply,
+    show n = -2 ↔ -n = 2 by omega]
+
+theorem potential_dir_mode (n : ℤ) :
+    potentialOperator (by simp) jordanPotential (dirichletMode n) =
+      (I * (Real.pi : ℂ)) • domainInclusion (dirichletMode (2 - n)) := by
+  rw [potentialOperator_dirichletMode _ _ jordanPotential_mem]
+  simp only [dirichletMode, positiveMode, negativeMode, Prod.mk_add_mk, zero_add, add_zero,
+    domainInclusion_apply, scalarInclusion_scalarMode]
+  apply Prod.ext <;> ext k
+  · change (Coeff.shift (-n) (lp.single 3 2 (I * (Real.pi : ℂ)))) (-k) =
+      (I * (Real.pi : ℂ)) * (lp.single 3 (-(2 - n)) 1 : Coeff 3) k
+    simp [Coeff.shift_apply, lp.single_apply, Pi.single_apply,
+      show -k + n = 2 ↔ k = n - 2 by omega]
+  · change (Coeff.shift (-n) (lp.single 3 2 (I * (Real.pi : ℂ)))) k =
+      (I * (Real.pi : ℂ)) * (lp.single 3 (2 - n) 1 : Coeff 3) k
+    simp [Coeff.shift_apply, lp.single_apply, Pi.single_apply,
+      show k + n = 2 ↔ k = 2 - n by omega]
+
+theorem pencil_dir_mode (n : ℤ) :
+    spectralPencil (by simp) jordanPotential (Real.pi : ℂ) (dirichletMode n) =
+      ((Real.pi : ℂ) - (Real.pi : ℂ) * n) • domainInclusion (dirichletMode n) -
+        (I * (Real.pi : ℂ)) • domainInclusion (dirichletMode (2 - n)) := by
+  change (Real.pi : ℂ) • domainInclusion (dirichletMode n) -
+    (freeOperator (dirichletMode n) + potentialOperator (by simp) jordanPotential (dirichletMode n)) = _
+  rw [freeOperator_dirichletMode, potential_dir_mode]
+  module
+
+def eigenvector : Domain 3 := I • dirichletMode 0 + dirichletMode 2
+
+theorem pencil_eigenvector :
+    spectralPencil (by simp) jordanPotential (Real.pi : ℂ) eigenvector = 0 := by
+  simp only [eigenvector, map_add, map_smul, pencil_dir_mode]
+  norm_num only [Int.cast_zero, Int.cast_ofNat, mul_zero, sub_zero, Int.sub_self] at ⊢
+  simp only [smul_sub, smul_smul, ← mul_assoc, I_mul_I]
+  module
+
+theorem pencil_generalized :
+    spectralPencil (by simp) jordanPotential (Real.pi : ℂ) (dirichletMode 2) =
+      -(Real.pi : ℂ) • domainInclusion eigenvector := by
+  simp only [pencil_dir_mode, eigenvector, map_add, map_smul]
+  norm_num only [Int.cast_ofNat, Int.sub_self]
+  module
+
+theorem included_eigenvector_ne_zero : domainInclusion eigenvector ≠ 0 := by
+  intro h
+  have he := congrArg (fun a : PairSpace 3 => a.2 2) h
+  simp [eigenvector, dirichletMode, positiveMode, negativeMode] at he
+  change I * (lp.single 3 0 1 : Coeff 3) 2 + (lp.single 3 2 1 : Coeff 3) 2 = 0 at he
+  norm_num at he
+
+theorem pencil_generalized_ne_zero :
+    spectralPencil (by simp) jordanPotential (Real.pi : ℂ) (dirichletMode 2) ≠ 0 := by
+  rw [pencil_generalized]
+  exact smul_ne_zero (neg_ne_zero.mpr (ofReal_ne_zero.mpr Real.pi_ne_zero)) included_eigenvector_ne_zero
+
+def generalized : BoundaryCondition.space (p := 3) .dirichlet :=
+  BoundaryCondition.inclusion .dirichlet ⟨dirichletMode 2, dirichletMode_mem 2⟩
+
+-- This vector has a boundary root chain of length two.
+theorem generalized_mem_two : generalized ∈ BoundaryCondition.rootSpace .dirichlet (by simp)
+    jordanPotential jordanPotential_mem (Real.pi : ℂ) 2 := by
+  rw [BoundaryCondition.mem_rootSpace_iff_periodic, mem_periodicRootSpace_succ]
+  refine ⟨dirichletMode 2, rfl, ?_⟩
+  rw [pencil_generalized]
+  apply Submodule.smul_mem
+  rw [mem_periodicRootSpace_succ]
+  exact ⟨eigenvector, rfl, pencil_eigenvector⟩
+
+-- It is not an ordinary eigenvector.
+theorem generalized_not_mem_one : generalized ∉ BoundaryCondition.rootSpace .dirichlet (by simp)
+    jordanPotential jordanPotential_mem (Real.pi : ℂ) 1 := by
+  rw [BoundaryCondition.mem_rootSpace_iff_periodic]
+  intro h
+  obtain ⟨f, hf, he⟩ := (mem_periodicRootSpace_succ (by simp) jordanPotential (Real.pi : ℂ) 0 _).mp h
+  have hf' : f = dirichletMode 2 := domainInclusion_injective hf
+  exact pencil_generalized_ne_zero (hf' ▸ he)
+
+theorem root_one_ne_top : BoundaryCondition.rootSpace .dirichlet (by simp) jordanPotential jordanPotential_mem
+    (Real.pi : ℂ) 1 ≠ BoundaryCondition.rootSpaceTop .dirichlet (by simp)
+      jordanPotential jordanPotential_mem (Real.pi : ℂ) := by
+  intro h
+  apply generalized_not_mem_one
+  rw [h, BoundaryCondition.mem_rootSpaceTop]
+  exact ⟨2, generalized_mem_two⟩
+
+example : BoundaryCondition.algebraicMultiplicity (p := 3) .neumann (by simp) 0 (by simp)
+    (-3 * (Real.pi : ℂ)) = 1 := by
+  simpa [mul_comm] using BoundaryCondition.algebraicMultiplicity_zero (p := 3) .neumann (by simp) (-3)
+
+example (b : BoundaryCondition) : BoundaryCondition.rootSpace (p := 1) b (by simp) 0 (by simp) 0 1 =
+    BoundaryCondition.rootSpaceTop b (by simp) 0 (by simp) 0 := by
+  simpa using BoundaryCondition.rootSpace_one_zero_eq_top (p := 1) b (by simp) 0
+
+example (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace) (z : ℂ) :
+    periodicAlgebraicMultiplicity (by simp) φ z =
+      BoundaryCondition.algebraicMultiplicity .dirichlet (by simp) φ hφ z +
+      BoundaryCondition.algebraicMultiplicity .neumann (by simp) φ hφ z :=
+  periodicAlgebraicMultiplicity_eq_boundary_sum _ _ _ _
+
+example (b : BoundaryCondition) : BoundaryCondition.algebraicMultiplicity (p := 3) b (by simp)
+    0 (by simp) I = 0 := by
+  rw [BoundaryCondition.algebraicMultiplicity_eq_zero_iff]
+  exact BoundaryCondition.mem_resolventSet_of_periodic b (by simp) 0 (by simp) I
+    (mem_resolventSet_zero_of_notMem (by simp) I (notMem_freeLattice_of_im_ne_zero (by simp)))
+
+-- A genuine Jordan chain contributes at least two to algebraic multiplicity.
+example : 2 ≤ BoundaryCondition.algebraicMultiplicity .dirichlet (by simp)
+    jordanPotential jordanPotential_mem (Real.pi : ℂ) := by
+  let R := BoundaryCondition.rootSpace .dirichlet (by simp)
+    jordanPotential jordanPotential_mem (Real.pi : ℂ) 1
+  let T := BoundaryCondition.rootSpaceTop .dirichlet (by simp)
+    jordanPotential jordanPotential_mem (Real.pi : ℂ)
+  let : FiniteDimensional ℂ R := BoundaryCondition.finiteDimensional_rootSpace _ _ _ _ _ _
+  let : FiniteDimensional ℂ T := BoundaryCondition.finiteDimensional_rootSpaceTop _ _ _ _ _
+  have hle : R ≤ T := by
+    exact le_iSup (BoundaryCondition.rootSpace .dirichlet (by simp)
+      jordanPotential jordanPotential_mem (Real.pi : ℂ)) 1
+  have hlt := Submodule.finrank_lt_finrank_of_lt (lt_of_le_of_ne hle root_one_ne_top)
+  have hne : R ≠ ⊥ := by
+    intro h
+    obtain ⟨f, hf, hn⟩ := (BoundaryCondition.mem_rootSpace_succ .dirichlet (by simp)
+      jordanPotential jordanPotential_mem (Real.pi : ℂ) 1 generalized).mp generalized_mem_two
+    have hf' : f.val = dirichletMode 2 :=
+      domainInclusion_injective (congrArg Subtype.val hf)
+    change BoundaryCondition.pencil .dirichlet (by simp)
+      jordanPotential jordanPotential_mem (Real.pi : ℂ) f ∈ R at hn
+    rw [h] at hn
+    have he := congrArg Subtype.val (show BoundaryCondition.pencil .dirichlet (by simp)
+      jordanPotential jordanPotential_mem (Real.pi : ℂ) f = 0 from hn)
+    exact pencil_generalized_ne_zero (hf' ▸ he)
+  have hp : 0 < Module.finrank ℂ R := Nat.pos_iff_ne_zero.mpr
+    (fun h => hne (Submodule.finrank_eq_zero.mp h))
+  change 2 ≤ Module.finrank ℂ T
+  omega
+
+example (b : BoundaryCondition) : Module.finrank ℂ ↥((resolventCircleIntegral (p := 3)
+    (by simp) 0 ((Real.pi : ℂ) * (-3 : ℤ)) (Real.pi / 4)).range ⊓
+      BoundaryCondition.space b) = 1 :=
+  BoundaryCondition.finrank_free_contour_boundary b (by simp) (-3)
+
+example (b : BoundaryCondition) :
+    (∑ z ∈ centralPeriodicSpectrum (p := 1) (by simp) 0 0,
+      BoundaryCondition.algebraicMultiplicity (p := 1) b (by simp) 0 (by simp) z) = 1 := by
+  simpa using BoundaryCondition.sum_central_multiplicity_zero (p := 1) b (by simp) 0
+
+example (b : BoundaryCondition) :
+    (∑ z ∈ centralPeriodicSpectrum (p := 3) (by simp) 0 2,
+      BoundaryCondition.algebraicMultiplicity (p := 3) b (by simp) 0 (by simp) z) = 5 := by
+  simpa using BoundaryCondition.sum_central_multiplicity_zero (p := 3) b (by simp) 2
+
+end BoundaryRootChecks
+
+end BoundaryRootSpaceChecks

@@ -84,7 +84,11 @@ Both boundary restrictions now have full compact resolvents, jointly analytic
 on their own open domains. Their spectra are closed and discrete, with finite
 bounded portions and an eigenvector characterization. The periodic spectrum is
 exactly their union. Periodic resolvents and circle projections preserve both
-boundary spaces; boundary eigenvalue counts remain to be proved.
+boundary spaces. Domain-aware boundary root spaces are finite dimensional and
+stabilize, and periodic algebraic multiplicity is the sum of the two boundary
+multiplicities. Each free boundary eigenvalue has multiplicity one; the free
+central count is `2N+1` for each boundary condition. Counts for nonzero potentials
+and Lemma 4.5's analytic simple eigenvalues remain to be proved.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -186,6 +190,14 @@ nonzero Neumann inverse, its inverse identity, compactness, and joint analyticit
 They also verify totalization outside the individual resolvent set, compatibility
 with the preceding bounded operator, the spectral union and bounded spectral
 finiteness at `p=1`, and boundary preservation by a negative-index circle.
+
+Boundary-root checks construct a nonconstant complex reflected potential with a
+length-two Dirichlet Jordan chain at `π`. Its top vector is outside the ordinary
+eigenspace, and its algebraic multiplicity is at least two. Free checks cover a
+negative Neumann index, absence of longer chains at `p=1`, zero multiplicity at
+an off-lattice point, contour rank one at a negative index, and central counts
+one and five at cutoffs zero and two. The multiplicity splitting is also
+instantiated at the endpoint `p=1`.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
