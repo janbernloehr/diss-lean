@@ -147,3 +147,4 @@ import NLS.SequenceSpaces.YoungFinite
 import NLS.SequenceSpaces.YoungExponents
 import NLS.SequenceSpaces.YoungInequality
 import NLS.SequenceSpaces.YoungConvolution
+import NLS.Fourier.YoungDistributionProduct

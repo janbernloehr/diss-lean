@@ -6,7 +6,8 @@ Fourier Transform for the dNLS Equation* (2016).
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
 The library currently proves sequence-space foundations, the full discrete
-Young convolution inequality, and a closed, densely defined coefficient-space Zakharov–Shabat
+Young convolution inequality and its canonical periodic-distribution product
+(Appendices B.2 and A.7), and a closed, densely defined coefficient-space Zakharov–Shabat
 operator with norm bounds and signed free Fourier modes. The free resolvent is
 constructed away from `πℤ`, with both inverse identities, explicit bounds, and
 compactness proved by finite Fourier approximation. For nonzero potentials,
@@ -471,11 +472,16 @@ installation is absent. No shell startup files are modified.
   and the parity of all enclosed root vectors for even-supported potentials.
 - Every Banach coefficient sequence now defines a genuine period-two tempered
   distribution, with exact coefficient recovery and period-one/even-support
-  equivalence. The converse characterization of arbitrary periodic distributions
-  remains open. Scalar differentiation and the signed-pair free operator have exact
+  equivalence. Arbitrary periodic distributions with Banach Fourier regularity
+  have unique coefficient representations, including the infinity endpoint.
+  Scalar differentiation and the signed-pair free operator have exact
   distributional graph identifications. Potential multiplication is the unique
   continuous extension of the actual smooth operation, with real-line test integrals
-  and faithful identification of the full operator equation.
+  and faithful identification of the full operator equation. General Young triples
+  give periodic distribution products with the exact constant-one Fourier norm
+  bound. These agree with smooth polynomial multiplication, are independent of
+  exponent representations, and are uniquely determined by continuous extension
+  from polynomial multipliers, including both infinity-input endpoints.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -5626,3 +5626,95 @@ example : ¬YoungRelation 2 2 2 := by
   norm_num at he
 
 end YoungInequalityChecks
+
+namespace YoungDistributionChecks
+open NLS.Coeff NLS.Fourier
+open scoped ENNReal SchwartzMap FourierTransform
+
+local instance : Fact (1 ≤ (4 / 3 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by norm_num) (by finiteness)).mp
+  norm_num⟩
+
+private theorem fractionalYoung : YoungRelation (4 / 3) (4 / 3) 2 := by
+  unfold YoungRelation
+  apply (ENNReal.toReal_eq_toReal_iff' (by simp) (by simp)).mp
+  norm_num [ENNReal.toReal_add, ENNReal.toReal_inv, ENNReal.toReal_div]
+
+private theorem hilbertYoung : YoungRelation 2 2 ⊤ := by
+  simpa [YoungRelation] using (ENNReal.HolderConjugate.inv_add_inv_eq_one 2 2).symm
+
+-- The source's constant-one estimate is realized by an actual periodic distribution.
+example (a b : Coeff (4 / 3)) :
+    ∃ c : Coeff 2, distributionSynthesis c = youngDistributionProduct fractionalYoung a b ∧
+      ‖c‖ ≤ ‖a‖ * ‖b‖ := youngDistributionProduct_regular fractionalYoung a b
+
+-- Actual distribution tests detect frequency addition and multiplication of imaginary amplitudes.
+example : youngDistributionProduct fractionalYoung (lp.single (4 / 3) (-2) Complex.I)
+    (lp.single (4 / 3) 3 Complex.I) (coefficientTest 1) = -1 := by
+  rw [youngDistributionProduct_coefficientTest]
+  simp [lp.single_apply, Pi.single_apply]
+
+example : youngDistributionProduct fractionalYoung (lp.single (4 / 3) (-2) Complex.I)
+    (lp.single (4 / 3) 3 Complex.I) (coefficientTest (-1)) = 0 := by
+  rw [youngDistributionProduct_coefficientTest]
+  simp [lp.single_apply, Pi.single_apply]
+
+-- Smooth approximation takes place in the actual tempered-distribution topology.
+example (a b : Coeff 2) : Filter.Tendsto
+    (fun S : Finset ℤ => TemperedDistribution.smulLeftCLM ℂ
+      (fourierPolynomial S b) (distributionSynthesis a)) Filter.atTop
+    (nhds (youngDistributionProduct hilbertYoung a b)) :=
+  tendsto_polynomial_youngDistributionProduct_right hilbertYoung (by simp) a b
+
+-- At the infinity input endpoint, approximate the opposite, finite-exponent factor.
+example (a : Coeff 1) (b : Coeff ⊤) : Filter.Tendsto
+    (fun S : Finset ℤ => TemperedDistribution.smulLeftCLM ℂ
+      (fourierPolynomial S a) (distributionSynthesis b)) Filter.atTop
+    (nhds (youngDistributionProduct (show YoungRelation 1 ⊤ ⊤ by simp [YoungRelation]) a b)) :=
+  tendsto_polynomial_youngDistributionProduct_left _ (by simp) a b
+
+-- Both endpoint orders recover the original Wiener-multiplier operation.
+example (a : Coeff 1) (b : Coeff ⊤) :
+    youngDistributionProduct (show YoungRelation 1 ⊤ ⊤ by simp [YoungRelation]) a b =
+      distributionProduct b a := by
+  rw [youngDistributionProduct_comm, youngDistributionProduct_eq_distributionProduct]
+
+example (a : Coeff ⊤) (b : Coeff 1) :
+    youngDistributionProduct (show YoungRelation ⊤ 1 ⊤ by simp [YoungRelation]) a b =
+      distributionProduct a b := youngDistributionProduct_eq_distributionProduct _ a b
+
+-- Uniqueness applies with an infinity input, without finite-support density in that input.
+example (F : Coeff 1 × Coeff ⊤ → 𝓢'(ℝ, ℂ)) (hF : Continuous F)
+    (hl : ∀ a b S, F (truncate S a, b) =
+      TemperedDistribution.smulLeftCLM ℂ (fourierPolynomial S a) (distributionSynthesis b))
+    (hr : ∀ a b S, F (a, truncate S b) =
+      TemperedDistribution.smulLeftCLM ℂ (fourierPolynomial S b) (distributionSynthesis a)) :
+    F = fun ab => youngDistributionProduct
+      (show YoungRelation 1 ⊤ ⊤ by simp [YoungRelation]) ab.1 ab.2 :=
+  youngDistributionProduct_unique _ F hF hl hr
+
+-- Changing both input exponents and the output exponent leaves the actual product unchanged.
+example (a b : Coeff 1) :
+    youngDistributionProduct hilbertYoung (exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 2) a)
+      (exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 2) b) = distributionProduct a b := by
+  rw [youngDistributionProduct_eq_wiener_product hilbertYoung _ _ b
+    ((distributionSynthesis_eq_iff _ _).mpr (fun _ => rfl))]
+  exact distributionProduct_eq_of_synthesis_eq (p := 2) (q := 1)
+    (exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 2) a) a
+    ((distributionSynthesis_eq_iff _ _).mpr (fun _ => rfl)) b
+
+-- Arbitrary simultaneous approximations yield the same distributional limit.
+example {aᵢ bᵢ : ℕ → Coeff (4 / 3)} {a b : Coeff (4 / 3)}
+    (ha : Filter.Tendsto aᵢ Filter.atTop (nhds a))
+    (hb : Filter.Tendsto bᵢ Filter.atTop (nhds b)) :
+    Filter.Tendsto (fun i => youngDistributionProduct fractionalYoung (aᵢ i) (bᵢ i))
+      Filter.atTop (nhds (youngDistributionProduct fractionalYoung a b)) :=
+  tendsto_youngDistributionProduct fractionalYoung ha hb
+
+-- The convolution formula characterizes the output among arbitrary periodic distributions.
+example (a b : Coeff 2) (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
+    (hc : ∀ n, T (coefficientTest n) = ∑' k : ℤ, a (n - k) * b k) :
+    youngDistributionProduct hilbertYoung a b = T :=
+  youngDistributionProduct_eq_of_periodic_coefficients hilbertYoung a b T hT hc
+
+end YoungDistributionChecks

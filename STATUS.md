@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 199 modules and 1893 named public theorems. All compile on the
+The library has 200 modules and 1912 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -17,6 +17,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.TestConvolution` | Absolutely convergent bilinear test/convolution transposition with reflected multiplier and signed lattice reindexing |
 | `NLS.Fourier.DistributionModulation` | Smooth temperate Fourier waves; exact Mathlib distribution multiplication as coefficient shifts; finite-polynomial multiplier identity |
 | `NLS.Fourier.ProductTestSamples` | Summable actual Fourier integrals of continuous multiplier times Schwartz test; reflected convolution formula; norm control; compatibility with smooth tests |
+| `NLS.Fourier.YoungDistributionProduct` | Appendix A.7 in the period-two model: actual periodic product for every Banach Young triple; exact Fourier norm bound; joint limits; genuine polynomial multiplication; uniqueness at both infinity endpoints; intrinsic coefficient characterization and exponent independence |
 | `NLS.Fourier.DistributionProduct` | Unique continuous extension of smooth multiplication to Wiener coefficients; joint approximation independence; actual integral action; agreement with smooth and ordinary function products |
 | `NLS.ZakharovShabat.DistributionPotential` | Actual extended domain product; absolute test-integral formula and norm bound; arbitrary smooth approximations; full distributional operator and eigenvalue-equation identification |
 | `NLS.Fourier.SchwartzPeriodization` | Continuous period-two Schwartz periodization; absolutely convergent translates and Poisson formula; exact coefficient and integral normalization; polynomial lifts and uniform density; kernel and synthesized-distribution annihilator |
@@ -2043,13 +2044,34 @@ shift the other sequence after its contractive exponent inclusion. Arbitrary
 norm-convergent input approximations converge in output norm. In particular,
 both finite input cutoffs converge in the output norm whenever the inputs
 have finite exponents, even for conjugate inputs with infinity output.
-The canonical distribution-product extension in Appendix A.7 and the mixed
-three-sequence inequality in Appendix B.3 remain subsequent steps.
+The distribution-product extension in Appendix A.7 is now proved below. The
+mixed three-sequence inequality in Appendix B.3 remains a subsequent step.
+
+## General periodic distribution products: Appendix A.7
+
+`YoungDistributionProduct` synthesizes the full Young convolution into an actual
+period-two tempered distribution for every Banach Young triple. Its recovered
+coefficients are the absolutely convergent convolution series, and its unique
+output coefficient representative has norm at most the product of the input
+norms. It is intrinsically periodic and is characterized among all periodic
+tempered distributions by these coefficients. This proves the product statement
+and exact estimate of Appendix A.7 in the project's period-two convention.
+
+The product is jointly continuous, commutative, and independent of both inputs'
+coefficient-space representations, including changes of the output exponent.
+Every finite multiplier agrees with Mathlib's actual smooth distribution
+multiplication. Arbitrary norm-convergent inputs give the same distributional
+limit. A finite right exponent gives convergence of right polynomial
+multipliers; a finite left exponent gives the symmetric result. Every admissible
+triple has at least one finite input exponent, which proves uniqueness of the
+continuous extension at all endpoints without asserting finite-support norm
+density in `l∞`. Shared Wiener representatives recover the prior product, its
+smooth-multiplier compatibility, and ordinary real-line function-product integrals.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3920 declarations under `NLS`, including generated
+axioms. The current audit covers 3942 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2527,13 +2549,21 @@ is checked in the full infinity output norm, and a two-mode Hilbert example
 has the expected coefficient two from two distinct summands. Arbitrary finite
 supports exercise the non-Hilbert bound; an invalid output exponent is rejected.
 
+Young-distribution checks realize the non-Hilbert constant-one estimate as an
+actual distribution and recover the signed single-mode coefficients `-1` and
+zero. Hilbert-input polynomial products converge with infinity output. The
+infinity-input endpoint uses approximation in its finite opposite factor, and
+both endpoint orders agree with the old Wiener product. Joint uniqueness,
+arbitrary simultaneous approximations, changes of both input and output
+exponents, and characterization among arbitrary periodic distributions are
+checked explicitly.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Extend the full Young convolution to the canonical distribution product
-   of Appendix A.7, prove the mixed three-sequence inequality in Appendix B.3,
-   and identify the fractional interval Sobolev spaces used in Appendix A.9.
-   The full two-sequence inequality in Appendix B.2 is complete.
+2. Prove the mixed three-sequence inequality in Appendix B.3 and identify the
+   fractional interval Sobolev spaces used in Appendix A.9. The full two-sequence
+   inequality in Appendix B.2 and its periodic product in Appendix A.7 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
    dissertation results. Both finite and infinity source pair norms and their
    sharp comparisons are complete.

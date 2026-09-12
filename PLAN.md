@@ -550,6 +550,16 @@ convergence of finite cutoffs and the `lp` Fatou property give full membership
 and the norm bound. The convolution is a continuous complex bilinear map with
 operator norm exactly one, is commutative, and agrees with the old `l1`-factor
 construction. Finite input cutoffs converge in output norm, including conjugate
-inputs with infinity output. The next extensions are the corresponding
-canonical distribution product from Appendix A.7 and the mixed three-sequence
-estimate in Appendix B.3.
+inputs with infinity output.
+
+Appendix A.7 is now proved in the period-two model: every Banach Young triple
+gives an actual periodic tempered product with the exact Fourier norm bound.
+The construction is intrinsic to the two distributions, independently of their
+exponent representations. It agrees with genuine polynomial multiplication
+and is the unique joint continuous extension agreeing with polynomial
+multipliers in either variable. Every admissible triple has a finite input
+exponent; approximation in that factor handles the infinity endpoints without
+claiming norm density in `l∞`. Shared Wiener representations recover actual
+smooth and ordinary function multiplication. Next are the mixed three-sequence
+estimate in Appendix B.3 and the physical fractional Sobolev identification in
+Appendix A.9.
