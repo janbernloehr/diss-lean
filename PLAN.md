@@ -509,7 +509,14 @@ preserves the raw Fourier coefficients, and is intrinsic across weights and
 exponents. Arbitrary finite truncations converge distributionally, including
 at infinity. Actual periodicity and weighted `Memℓp` are equivalent to unique
 weighted synthesis. The full real Sobolev scale has a direct public API.
-Next connect differentiation and embeddings across these intrinsic weighted
-classes, preserving the source's regularity conventions.
+Weighted multipliers now have continuous linear maps with the pointwise
+weight-comparison constant. Monotone real Sobolev embeddings are contractive,
+injective, compose correctly, and preserve the actual distribution.
+Differentiation maps regularity `s+1` to `s` with constant `π`, at every real `s`
+and Banach exponent including infinity. The actual distributional derivative
+has exactly this domain and a closed graph. Intrinsically, simultaneous
+regularity `s` of a periodic distribution and its derivative is equivalent to
+regularity `s+1` of the distribution. Further work includes exponent-changing
+embeddings and Young inequalities beyond an `l1` factor.
 The source's distinct infinity-endpoint pair norm also remains a separate proof
 obligation.

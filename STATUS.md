@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 185 modules and 1758 named public theorems. All compile on the
+The library has 188 modules and 1783 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -31,6 +31,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.WeightedDistributionSynthesis` | Genuine weighted tempered-distribution synthesis; absolute raw-coefficient action; norm bound and continuity; injectivity and recovery; intrinsic periodicity; infinity-endpoint truncation convergence; weight/exponent independence |
 | `NLS.Fourier.WeightedDistributionIdentification` | Intrinsic weighted Fourier regularity iff unique synthesis; continuous realization and exact coefficients for every real Sobolev exponent; distributional truncation convergence throughout the scale |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
+| `NLS.SequenceSpaces.WeightedMultiplier` | General weighted symbol bound; bounded linear multipliers; contractive, injective monotone-weight inclusions |
+| `NLS.SequenceSpaces.SobolevDerivative` | Monotone real regularity embeddings and composition; period-two derivative with norm bound `π`; exact one-unit regularity recovery from raw and derivative data |
+| `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
 | `NLS.ZakharovShabat.PairNormHeight` | Resolvent and strict strip bounds in the source's finite pair norm; uniform open convex parameter neighborhoods; analytic actual norm-height contours with rank `4N+2` |
@@ -1924,13 +1927,30 @@ prove the full intrinsic converse: actual period-two invariance and weighted
 `Memℓp` hold exactly when there is a unique weighted synthesis representative.
 The public Sobolev synthesis map and characterization cover every real exponent,
 including negative and fractional exponents, and every Banach `p`, including
-infinity. Differentiation and embeddings across these weighted classes, and the
-source's distinct infinity pair norm, remain subsequent steps.
+infinity.
+
+`WeightedMultiplier` builds continuous linear maps from the pointwise inequality
+`v(n) |m(n)| ≤ C w(n)`, retaining the same norm bound at all Banach exponents.
+Monotone weights give contractive injective inclusions preserving raw values.
+`SobolevDerivative` specializes these maps to all real Sobolev regularities.
+The inclusions compose, and the period-two derivative has norm at most `π`
+from regularity `s+1` to `s`. Applying the one-derivative domain criterion to
+weighted data recovers exactly one regularity unit from a sequence and its
+derivative in regularity `s`.
+
+`SobolevDistributionDerivative` proves that regularity inclusions preserve the
+actual distribution, and identifies differentiation with Mathlib's tempered-
+distribution derivative, retaining the `iπn` multiplier. The derivative graph
+in each Sobolev coefficient norm is exactly the included `s+1` space and is
+closed, including infinity. An intrinsic criterion for arbitrary periodic
+inputs characterizes regularity `s+1` by simultaneous regularity `s` of the
+distribution and its derivative. All statements include negative fractional
+regularity. The source's distinct infinity pair norm remains a subsequent step.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3636 declarations under `NLS`, including generated
+axioms. The current audit covers 3676 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2372,17 +2392,24 @@ derivative of the constant-one coefficient distribution. Other checks compare
 raw data across weights and exponents and recover the earlier unweighted
 realization at zero regularity.
 
+Sobolev-derivative checks cross zero regularity at exponent three and compose
+successive inclusions at infinity. An imaginary negative-frequency mode has
+the positive real derivative coefficient `3π`; a constant mode differentiates
+to zero. Fractional inputs satisfy genuine integration by parts. Endpoint
+graph recovery and the intrinsic criterion recover the next regularity, and
+zero regularity agrees with the existing Zakharov–Shabat domain derivative.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove differentiation and embeddings across the intrinsic weighted Fourier
-   classes. Synthesis, coefficient recovery, the periodic-distribution converse,
-   and distributional truncation convergence are complete for every real Sobolev
-   regularity and every Banach exponent, including infinity.
+2. Extend the sequence-space embeddings to changes of exponent and prove Young
+   inequalities beyond an `l1` factor. The real Sobolev scale now has actual
+   synthesis, intrinsic characterization, regularity inclusions, and exact
+   distributional derivative domains, including infinity.
 3. Implement the source's infinity-endpoint pair norm. The finite-`p`
    component-sum norm and its sharp comparison are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes
-embeddings between regularities and the full range of Young inequalities beyond
+embeddings between exponents and the full range of Young inequalities beyond
 the `l1`-factor case.

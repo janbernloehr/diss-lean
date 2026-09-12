@@ -5243,3 +5243,90 @@ example (a : WeightedCoeff (Weight.sobolev 0) 3) :
   simp
 
 end WeightedDistributionChecks
+
+namespace SobolevDistributionDerivativeChecks
+open NLS.Fourier NLS.WeightedCoeff
+open scoped SchwartzMap
+
+-- Crossing zero regularity retains exactly the same distribution and decreases the norm.
+example (a : WeightedCoeff (Weight.sobolev (3 / 4)) 3) :
+    sobolevDistributionSynthesisCLM (-3 / 2) (sobolevInclusion (by norm_num) a) =
+      sobolevDistributionSynthesisCLM (3 / 4) a ∧
+      ‖sobolevInclusion (show (-3 / 2 : ℝ) ≤ 3 / 4 by norm_num) a‖ ≤ ‖a‖ :=
+  ⟨sobolevDistributionSynthesis_inclusion _ a, norm_sobolevInclusion_le _ a⟩
+
+-- Two successive embeddings agree, including at infinity.
+example (a : WeightedCoeff (Weight.sobolev (1 / 2)) ⊤) :
+    sobolevInclusion (show (-2 : ℝ) ≤ -1 / 2 by norm_num)
+      (sobolevInclusion (show (-1 / 2 : ℝ) ≤ 1 / 2 by norm_num) a) =
+    sobolevInclusion (show (-2 : ℝ) ≤ 1 / 2 by norm_num) a :=
+  sobolevInclusion_trans _ _ a
+
+private def mode (s : ℝ) (k : ℤ) (c : ℂ) : WeightedCoeff (Weight.sobolev s) ⊤ :=
+  (weightEquiv (Weight.sobolev s) ⊤).symm
+    (lp.single ⊤ k ((Weight.sobolev s k : ℂ) * c))
+
+private theorem mode_apply (s : ℝ) (k n : ℤ) (c : ℂ) :
+    (mode s k c).val n = if n = k then c else 0 := by
+  change (lp.single ⊤ k ((Weight.sobolev s k : ℂ) * c) : Coeff ⊤) n /
+    (Weight.sobolev s n : ℂ) = _
+  by_cases h : n = k
+  · subst n
+    simp only [lp.single_apply, Pi.single_apply]
+    exact mul_div_cancel_left₀ c ((Weight.sobolev s).complex_ne_zero k)
+  · simp [lp.single_apply, h]
+
+-- An imaginary negative mode differentiates to a positive real coefficient, with factor pi.
+example : sobolevDistributionSynthesisCLM (-3 / 2)
+    (WeightedCoeff.sobolevDerivative (-3 / 2) (mode (-3 / 2 + 1) (-3) Complex.I))
+    (coefficientTest (-3)) = 3 * (Real.pi : ℂ) := by
+  simp only [sobolevDistributionSynthesisCLM_coefficientTest,
+    WeightedCoeff.sobolevDerivative_apply, mode_apply, ite_true]
+  push_cast
+  calc
+    _ = -3 * (Real.pi : ℂ) * (Complex.I * Complex.I) := by ring
+    _ = _ := by rw [Complex.I_mul_I]; ring
+
+-- Differentiation kills the constant mode even at negative fractional regularity.
+example : WeightedCoeff.sobolevDerivative (-3 / 2) (mode (-3 / 2 + 1) 0 Complex.I) = 0 := by
+  apply Subtype.ext
+  funext n
+  simp only [WeightedCoeff.sobolevDerivative_apply, mode_apply, zero_val]
+  by_cases h : n = 0 <;> simp [h]
+
+-- The same map is the genuine derivative on Schwartz tests, with the integration-by-parts sign.
+example (a : WeightedCoeff (Weight.sobolev (-3 / 2 + 1)) 3) (g : 𝓢(ℝ, ℂ)) :
+    sobolevDistributionSynthesisCLM (-3 / 2) (WeightedCoeff.sobolevDerivative (-3 / 2) a) g =
+      -sobolevDistributionSynthesisCLM (-3 / 2 + 1) a (SchwartzMap.derivCLM ℂ ℂ g) := by
+  rw [sobolevDistributionSynthesis_derivative, TemperedDistribution.derivCLM_apply_apply, map_neg]
+
+-- Endpoint derivative equality recovers one full unit of regularity without tail decay.
+example (a b : WeightedCoeff (Weight.sobolev (-3 / 2)) ⊤)
+    (h : TemperedDistribution.derivCLM ℂ (sobolevDistributionSynthesisCLM (-3 / 2) a) =
+      sobolevDistributionSynthesisCLM (-3 / 2) b) :
+    ∃ f : WeightedCoeff (Weight.sobolev (-3 / 2 + 1)) ⊤,
+      sobolevInclusion (show (-3 / 2 : ℝ) ≤ -3 / 2 + 1 by norm_num) f = a ∧
+      WeightedCoeff.sobolevDerivative (-3 / 2) f = b :=
+  (sobolevDistributionDerivative_graph_iff (-3 / 2) a b).mp h
+
+-- Arbitrary periodic inputs satisfy the intrinsic regularity criterion at infinity.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
+    (ha : Memℓp (fun n : ℤ => (Weight.sobolev (-3 / 2) n : ℂ) * T (coefficientTest n)) ⊤)
+    (hd : Memℓp (fun n : ℤ => (Weight.sobolev (-3 / 2) n : ℂ) *
+      (TemperedDistribution.derivCLM ℂ T) (coefficientTest n)) ⊤) :
+    Memℓp (fun n : ℤ => (Weight.sobolev (-1 / 2) n : ℂ) * T (coefficientTest n)) ⊤ := by
+  have h := (periodicDistribution_sobolev_derivative_memlp_iff (-3 / 2) T hT).mp ⟨ha, hd⟩
+  convert h using 1
+  norm_num
+
+-- Zero regularity gives exactly the previously constructed period-two domain derivative.
+example (f : ZakharovShabat.ScalarDomain 3) :
+    weightEquiv (Weight.sobolev 0) 3
+      (WeightedCoeff.sobolevDerivative 0 ⟨f.val, by simpa using f.property⟩) =
+      ZakharovShabat.derivative f := by
+  ext n
+  change (Weight.sobolev 0 n : ℂ) * (Complex.I * (Real.pi : ℂ) * n * f.val n) =
+    Complex.I * (Real.pi : ℂ) * n * f.val n
+  simp only [Weight.sobolev_zero_apply, Complex.ofReal_one, one_mul]
+
+end SobolevDistributionDerivativeChecks

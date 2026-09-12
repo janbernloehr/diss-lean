@@ -264,6 +264,12 @@ convergent action independent of the weight and exponent. Intrinsic weighted
 coefficient regularity is equivalent to unique weighted synthesis, and finite
 Fourier truncations converge distributionally even at negative regularity and
 `p=∞`.
+Monotone Sobolev embeddings now preserve this actual distribution and decrease
+the coefficient norm. At every real regularity `s`, differentiation is bounded
+from `FL^{s+1,p}` to `FL^{s,p}` with constant `π`. Its actual distributional graph
+is closed and has exactly that domain, including infinity. Intrinsically, a
+periodic distribution and its derivative both lie in regularity `s` exactly
+when the distribution lies in regularity `s+1`.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

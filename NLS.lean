@@ -133,3 +133,6 @@ import NLS.SequenceSpaces.TemperedWeight
 import NLS.Fourier.WeightedSchwartzSampling
 import NLS.Fourier.WeightedDistributionSynthesis
 import NLS.Fourier.WeightedDistributionIdentification
+import NLS.SequenceSpaces.WeightedMultiplier
+import NLS.SequenceSpaces.SobolevDerivative
+import NLS.Fourier.SobolevDistributionDerivative
