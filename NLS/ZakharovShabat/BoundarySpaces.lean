@@ -10,7 +10,8 @@ coefficient convention, Dirichlet amplitudes give `(a(-n), a(n))`, and Neumann
 amplitudes give `(-b(-n), b(n))`. These are closed complementary spaces, both
 in the base norm and at every Sobolev regularity. The projections below split
 an existing period-two sequence; they are not the interval-extension maps of
-Lemmas 4.1–4.3. Identification with physical endpoint conditions remains open.
+Lemmas 4.1–4.3. At exponent two, `ClassicalIntervalExtension` and `ClassicalIntervalRestriction`
+identify these domains with the original physical endpoint conditions.
 -/
 
 open scoped ENNReal

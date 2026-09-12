@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 119 modules and 1202 named public theorems. All compile on the
+The library has 120 modules and 1212 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -126,6 +126,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.FoldedSobolev` | Original interval `H¹` regularity without periodic endpoints; integrable and `L²` folding, half-coefficient formula, matching-join integral reconstruction, absolute continuity, and the reflected derivative sign |
 | `NLS.Fourier.PeriodicSobolevLift` | Matching-endpoint circle lift; exact values on the closed period, derivative agreement almost everywhere, classical `H¹` and weighted Fourier recovery, including reflected interval coordinates |
 | `NLS.ZakharovShabat.ClassicalIntervalExtension` | Original Dirichlet/Neumann endpoint domains; signed-swap extension into actual weighted boundary domains; normalized physical coefficients, closed-period reconstruction, exact restriction recovery, and injectivity on the original interval |
+| `NLS.ZakharovShabat.ClassicalIntervalRestriction` | Physical restriction to the original classical endpoint domain; signed reflection and exact extension right inverse; surjectivity, equality precisely on the closed interval, injectivity of restriction, and unique weighted representatives |
 
 ## Current mathematical milestone
 
@@ -1116,15 +1117,24 @@ Dirichlet conditions or opposite-component Neumann conditions at both endpoints.
 Synthesis recovers the physical extension everywhere on `[0,2]`, and restriction
 recovers the original pair everywhere on `[0,1]`. Equal extensions therefore
 identify the original functions on that interval, independently of values outside
-it. This proves the classical Sobolev extension portion of Lemmas 4.1–4.2.
-Surjectivity of restriction, physical norm comparison, and spectral intertwining
-remain open. Both eventual spectral transfers must use the Dirichlet extension
+it.
+
+Conversely, `classicalIntervalRestriction` synthesizes a weighted boundary pair.
+Its components have classical `H¹` regularity on `[0,1]`, and the frequency
+reflection graph implies the equal or opposite values at both endpoints.
+Folding this restriction recovers its physical representative, and taking
+coefficients recovers the original weighted pair. Extension and restriction are
+therefore inverse after identifying original functions by equality on `[0,1]`.
+Each original classical pair has a unique weighted boundary representative.
+This proves the set-theoretic domain identification in Lemma 4.2; physical norm
+comparison, a normed linear equivalence, and spectral intertwining remain open.
+Both eventual spectral transfers must use the Dirichlet extension
 of the potential, including for Neumann eigenfunctions.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2555 declarations under `NLS`, including generated
+axioms. The current audit covers 2573 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1383,11 +1393,17 @@ cover both actual weighted boundary spaces, the Neumann signed swap on the
 second half, exact endpoint restriction, general `L²` folding without matching
 joins, and signed negative-frequency coefficient reflection.
 
+Restriction checks retain positive and negative odd modes, prove that a valid
+Dirichlet mode has different values at the two interval endpoints, and verify
+the Neumann endpoint signs. They also exercise the right inverse on a negative
+odd mode, full-interval injectivity, and unique representation of arbitrary
+classical Neumann data.
+
 ## Next milestones
 
-1. Prove that restriction of the weighted boundary domains inverts the classical
-   interval extensions, compare physical norms, and establish the `H¹` / `FL^{1,2}` boundary-domain
-   isomorphisms in Lemmas 4.1–4.2, then
+1. Compare physical Sobolev norms with weighted Fourier norms and package the
+   proved extension/restriction inverses as normed linear boundary-domain
+   isomorphisms for Lemma 4.2. Prove physical operator intertwining in Lemma 4.1, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and

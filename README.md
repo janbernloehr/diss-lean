@@ -143,9 +143,11 @@ Dirichlet and Neumann pairs now extend into the actual weighted boundary domains
 matching endpoints make the signed component-swap fold absolutely continuous,
 with a square-integrable reflected derivative. Synthesis recovers the physical
 extension on `[0,2]` and the original pair on `[0,1]`, including all endpoints.
-The inverse restriction theorem, physical Sobolev norm comparison,
-Fourier/distribution realization, and physical multiplication remain needed for
-the full spectral transfer.
+Conversely, every weighted boundary pair restricts to the original classical
+endpoint domain, and extending that restriction recovers the pair. Each classical
+interval pair has a unique weighted boundary representative; equality depends
+only on values on `[0,1]`. Physical Sobolev norm comparison, Fourier/distribution
+realization, and physical multiplication remain needed for the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

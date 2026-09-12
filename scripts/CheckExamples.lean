@@ -3393,3 +3393,62 @@ example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .neumann f) :
 
 end
 end ClassicalIntervalChecks
+
+
+namespace ClassicalRestrictionChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+-- Odd modes belong to the original domains; period-one periodicity is not imposed.
+example : HasClassicalIntervalDomain .dirichlet
+    (classicalIntervalRestriction (dirichletMode (p := 2) 1)) :=
+  classicalIntervalRestriction_mem .dirichlet _ (dirichletMode_mem 1)
+
+example : HasClassicalIntervalDomain .neumann
+    (classicalIntervalRestriction (neumannMode (p := 2) (-7))) :=
+  classicalIntervalRestriction_mem .neumann _ (neumannMode_mem (-7))
+
+private theorem mode_at_zero (n : ℤ) :
+    sobolevSynthesis (p := 2) (by simp) (scalarMode n 1) 0 = 1 := by
+  simpa using sobolevSynthesis_scalarMode (p := 2) (by simp) n 1 0
+
+private theorem odd_mode_endpoints :
+    classicalIntervalRestriction (dirichletMode (p := 2) 1) 0 = (1, 1) ∧
+    classicalIntervalRestriction (dirichletMode (p := 2) 1) 1 = (-1, -1) := by
+  have hp : wave 1 1 = -1 := by simpa using wave_odd_at_one 0
+  have hm : wave (-1) 1 = -1 := by simpa using wave_odd_at_one (-1)
+  simp [classicalIntervalRestriction, dirichletMode, positiveMode, negativeMode,
+    sobolevSynthesis_scalarMode, mode_at_zero, hp, hm]
+
+-- This valid Dirichlet pair really fails period-one endpoint matching.
+example : classicalIntervalRestriction (dirichletMode (p := 2) 1) 0 ≠
+    classicalIntervalRestriction (dirichletMode (p := 2) 1) 1 := by
+  rw [odd_mode_endpoints.1, odd_mode_endpoints.2]
+  norm_num
+
+-- Neumann endpoint signs agree with the source's positive-minus-negative mode convention.
+example : classicalIntervalRestriction (neumannMode (p := 2) 0) 0 = (-1, 1) := by
+  simp [classicalIntervalRestriction, neumannMode, positiveMode, negativeMode,
+    mode_at_zero]
+
+-- The right inverse retains arbitrary signed odd frequencies.
+example : classicalIntervalExtension .neumann
+    (classicalIntervalRestriction (neumannMode (p := 2) (-7)))
+    (classicalIntervalRestriction_mem .neumann _ (neumannMode_mem (-7))) = neumannMode (-7) :=
+  classicalIntervalExtension_classicalIntervalRestriction .neumann _ (neumannMode_mem (-7))
+
+-- A trace-zero pair need not vanish; agreement on the whole interval is required for injectivity.
+example (a c : Domain 2) (ha : a ∈ weightedDirichletSubspace 1)
+    (hc : c ∈ weightedDirichletSubspace 1)
+    (h : ∀ x ∈ Icc (0 : ℝ) 1, classicalIntervalRestriction a x = classicalIntervalRestriction c x) :
+    a = c := classicalIntervalRestriction_injective_on_domain .dirichlet a c ha hc h
+
+-- Arbitrary original Neumann data has a unique representative with exact closed-interval recovery.
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .neumann f) :
+    ∃! a : Domain 2, a ∈ weightedNeumannSubspace 1 ∧
+      EqOn (classicalIntervalRestriction a) f (Icc 0 1) :=
+  existsUnique_classicalIntervalRepresentative .neumann f hf
+
+end
+end ClassicalRestrictionChecks
