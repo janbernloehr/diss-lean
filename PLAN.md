@@ -695,3 +695,26 @@ coefficient bounds into a single bound in an intrinsic interval norm, then
 prove the Fourier scaling needed for the arbitrary-period statement. The
 current membership theorems use period two; arbitrary-length energy estimates
 alone do not establish the source's general-period identification.
+
+
+The uniform intrinsic bounds above are now proved. The coercive Hardy gap is
+inverted explicitly, giving a finite exterior constant for every positive
+interval length below half regularity. Almost-everywhere replacement extends
+the quantitative bound to arbitrary interval `L²` representatives. The
+period-two Parseval identity retains its exact factor `1/2`; combining Hardy,
+periodization, and the lower spectral estimate gives a finite weighted Fourier
+norm bound in the original full intrinsic energy `N+E_s`.
+
+Composition with the continuous coefficient embedding gives the complete
+period-two Fourier-Lebesgue norm bound throughout the positive subcritical
+range. The explicit intermediate index
+`t(q)=(max(0,1/q-1/2)+1/2)/2` and a quantitative lowering inequality give the
+half-regularity bound in the original intrinsic half size. At zero, only `N`
+is used, and the constant `sqrt(1/2)` is attained by a constant function even
+for the infinity target. These are uniform inequalities on representatives;
+a separate intrinsic normed quotient type has not been introduced.
+
+The next A.9 step is the actual Fourier scaling from period two to arbitrary
+positive periods, including the normalization of physical square and
+fractional energies. The existing arbitrary-length kernel estimates do not
+replace that coefficient identification.

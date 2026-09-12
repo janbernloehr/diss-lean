@@ -507,8 +507,11 @@ installation is absent. No shell startup files are modified.
   `q>1/(s+1/2)`. At `s=0`, interval `L²` alone suffices for every `q≥2`,
   including infinity. Intrinsic half regularity gives every finite `q>1`
   by lowering regularity first. The weighted coefficient embedding is an
-  injective continuous linear map. Packaging the composite bound in an
-  intrinsic interval norm and rescaling to arbitrary periods remain.
+  injective continuous linear map. The composite bound is now proved in
+  the original interval's intrinsic Gagliardo size, with finite constants
+  depending only on regularity and the target exponent. Its zero-regularity
+  normalization is sharp, and the half-regularity bound uses an explicit lower
+  index. Rescaling the Fourier statement to arbitrary periods remains.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

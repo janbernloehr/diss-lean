@@ -6325,3 +6325,82 @@ example : intervalRamp 0 ≠ intervalRamp 2 ∧
   refine ⟨by norm_num [intervalRamp], ?_⟩
   exact Fourier.memlp_periodTwoCoefficient_of_half_interval (by norm_num) intervalRamp
     intervalRamp_memLp (intervalRamp_half_energy_le.trans_lt (by norm_num))
+
+-- The inhomogeneous intrinsic size retains constants despite their zero difference energy.
+example : Fourier.intrinsicIntervalEnergy (1 / 3) 2 (fun _ => Complex.I) = 2 := by
+  norm_num [Fourier.intrinsicIntervalEnergy, Fourier.intervalSquareEnergy, Real.volume_Ioo]
+
+example : Fourier.intrinsicIntervalSize (1 / 3) 2 (fun _ => Complex.I) = Real.sqrt 2 := by
+  norm_num [Fourier.intrinsicIntervalSize, Fourier.intrinsicIntervalEnergy,
+    Fourier.intervalSquareEnergy, Real.volume_Ioo]
+
+-- The uniform Hardy bound has a finite constant below half and loses its gap at half.
+example : Fourier.fractionalExteriorBoundConstant (1 / 3) 4 < ⊤ :=
+  Fourier.fractionalExteriorBoundConstant_lt_top (by norm_num) (by norm_num) 4
+
+example : Fourier.fractionalHardyGap (1 / 2) = 0 := by
+  norm_num [Fourier.fractionalHardyGap, Fourier.hardyAveragingConstant]
+
+-- Uniform exterior control applies to arbitrary interval representatives without global measurability.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioo 0 4))) :
+    Fourier.fractionalExteriorEnergy (1 / 3) 4 f ≤
+      Fourier.fractionalExteriorBoundConstant (1 / 3) 4 * Fourier.intrinsicIntervalEnergy (1 / 3) 4 f :=
+  Fourier.fractionalExteriorEnergy_le_intrinsic (by norm_num) (by norm_num) (by norm_num) f hf
+
+-- Parseval's square norm has exactly half the physical interval square energy.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 2))) :
+    ENNReal.ofReal (‖Fourier.periodTwoL2Coefficients f hf‖ ^ 2) =
+      ENNReal.ofReal (1 / 2 : ℝ) * Fourier.intervalSquareEnergy 2 f :=
+  Fourier.ofReal_norm_sq_periodTwoL2Coefficients f hf
+
+-- All constants in the subcritical weighted bound are finite independently of the function.
+example : Fourier.intervalSobolevBoundConstant (1 / 4) < ⊤ :=
+  Fourier.intervalSobolevBoundConstant_lt_top (by norm_num) (by norm_num)
+
+-- Explicit half-regularity choices move towards half as q moves towards one.
+example : Fourier.halfIntervalRegularity (6 / 5) = 5 / 12 := by
+  norm_num [Fourier.halfIntervalRegularity]
+
+example : Fourier.halfIntervalRegularity 3 = 1 / 4 := by
+  norm_num [Fourier.halfIntervalRegularity]
+
+local instance : Fact (1 ≤ ENNReal.ofReal (6 / 5 : ℝ)) := ⟨by norm_num⟩
+
+-- The nonperiodic ramp has a proved uniform Fourier–Lebesgue bound in its own interval size.
+example :
+    ‖Fourier.intervalFourierLebesgueCoefficients (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+      (by norm_num : (1 : ℝ) ≤ 3 / 2) (by norm_num) intervalRamp intervalRamp_memLp
+      (intervalRamp_energy_le.trans_lt (by norm_num))‖ ≤
+        Fourier.intervalFourierLebesgueBoundConstant (by norm_num : (0 : ℝ) ≤ 1 / 4)
+          (by norm_num : (1 : ℝ) ≤ 3 / 2) (by norm_num) * Fourier.intrinsicIntervalSize (1 / 4) 2 intervalRamp :=
+  Fourier.norm_intervalFourierLebesgueCoefficients_le _ _ _ _ _ _ _
+
+example :
+    ‖Fourier.halfIntervalFourierLebesgueCoefficients (by norm_num : (1 : ℝ) < 6 / 5)
+      intervalRamp intervalRamp_memLp (intervalRamp_half_energy_le.trans_lt (by norm_num))‖ ≤
+        Fourier.halfIntervalFourierLebesgueBoundConstant (by norm_num : (1 : ℝ) < 6 / 5) *
+          Fourier.intrinsicIntervalSize (1 / 2) 2 intervalRamp :=
+  Fourier.norm_halfIntervalFourierLebesgueCoefficients_le _ _ _ _
+
+-- At zero regularity the infinity norm is controlled solely by the physical L² integral.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 2))) :
+    ‖Fourier.intervalL2TargetCoefficients (q := ⊤) le_top f hf‖ ≤
+      Real.sqrt (1 / 2 : ℝ) * Real.sqrt (Fourier.intervalSquareEnergy 2 f).toReal :=
+  Fourier.norm_intervalL2TargetCoefficients_le le_top f hf
+
+-- A constant imaginary function attains the zero-regularity bound at infinity.
+private theorem imaginaryConstant_memLp :
+    MeasureTheory.MemLp (fun _ : ℝ => Complex.I) 2 (MeasureTheory.volume.restrict (Set.Ioc 0 2)) :=
+  MeasureTheory.memLp_const Complex.I
+
+example :
+    ‖Fourier.intervalL2TargetCoefficients (q := ⊤) le_top (fun _ : ℝ => Complex.I) imaginaryConstant_memLp‖ = 1 := by
+  apply le_antisymm
+  · have hb := Fourier.norm_intervalL2TargetCoefficients_le (q := ⊤) le_top
+      (fun _ : ℝ => Complex.I) imaginaryConstant_memLp
+    norm_num [Fourier.intervalSquareEnergy, Real.volume_Ioo, ← Real.sqrt_mul (by norm_num : (0 : ℝ) ≤ 1 / 2)] at hb
+    exact hb
+  · have hn := lp.norm_apply_le_norm (by simp : (⊤ : ℝ≥0∞) ≠ 0)
+      (Fourier.intervalL2TargetCoefficients (q := ⊤) le_top (fun _ : ℝ => Complex.I) imaginaryConstant_memLp) 0
+    norm_num [Fourier.intervalL2TargetCoefficients_apply, Fourier.periodTwoCoefficient] at hn
+    exact hn

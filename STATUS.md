@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 225 modules and 2120 named public theorems. All compile on the
+The library has 229 modules and 2147 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -53,6 +53,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.HilbertSobolevEmbedding` | Explicit auxiliary Hölder exponent; exact extended-exponent relation; injective continuous weighted Hilbert inclusion into every finite Banach target with `1/q<s+1/2`; raw coefficient recovery |
 | `NLS.Fourier.FractionalIntervalEmbedding` | Explicit diameter bound for lowering intrinsic fractional regularity on arbitrary positive interval lengths; finiteness descends without endpoint matching |
 | `NLS.Fourier.IntervalFourierLebesgue` | Appendix A.9 membership in the period-two model: actual interval Fourier coefficients for `0<s<1/2`, `q>1/(s+1/2)`; `s=0` from `L²` alone including target two and infinity; separate intrinsic half-regularity consequence for every finite `q>1` |
+| `NLS.Fourier.IntrinsicIntervalEnergy` | Physical square integral plus intrinsic difference energy; almost-everywhere invariance; finiteness; real square-root size; explicit lowering bounds with finiteness before conversion to real values |
+| `NLS.Fourier.FractionalHardyBound` | Positive coercive gap below half; explicit finite exterior constant; uniform exterior bound in full intrinsic energy for arbitrary interval `L²` representatives |
+| `NLS.Fourier.IntervalSobolevBound` | Exact nonnegative Parseval normalization; combined uniform periodization bound; actual weighted interval coefficients and synthesis; finite spectral/Hardy constant and weighted square/norm estimates in original intrinsic data |
+| `NLS.Fourier.IntervalFourierLebesgueBound` | Uniform period-two A.9 bounds in intrinsic size for positive subcritical and half regularity; explicit half-regularity index depending on `q`; zero-regularity bound from physical `L²` alone, including target two and infinity |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2320,15 +2324,56 @@ zero-extension energy.
 
 These are the actual coefficient membership conclusions for the period-two
 model, with a continuous linear embedding between the coefficient spaces.
-The existing physical estimates have not yet been packaged into a single
-embedding bound for an intrinsic interval norm. The arbitrary-period version
-also still needs Fourier scaling; the arbitrary-length energy comparison
-alone does not provide that identification.
+The combined bounds in the original intrinsic interval size are proved below.
+The arbitrary-period version still needs Fourier scaling; the arbitrary-length
+energy comparison alone does not provide that identification.
+
+## Appendix A.9 quantitative intrinsic bounds
+
+`IntrinsicIntervalEnergy` retains `I_s(f)=N(f)+E_s(f)`, where `N` is the
+unnormalized physical square integral. For positive regularity its finite
+square root is the intrinsic Gagliardo size. Almost-everywhere invariance and
+finiteness are proved before converting the nonnegative energy to real values
+in the norm estimates. At zero regularity, the final theorem uses `N` alone.
+Lowering regularity on an interval of length `L` gives
+`I_t ≤ (1+L^(2(s-t))) I_s` and the corresponding square-root bound.
+
+`FractionalHardyBound` explicitly inverts the positive Hardy gap
+`g_s=1-(1+c_s)/2`. Its finite constant is
+`C_ext=(1/(2s)) g_s^(-1) 2 (1+1/ε_s+(L/2)^(-2s))`.
+The resulting bound `E_ext ≤ C_ext I_s` holds for arbitrary interval `L²`
+representatives, even if the fractional energy is infinite. The constant is
+not claimed optimal. Almost-everywhere replacement removes the global
+measurability assumption from the quantitative result.
+
+`IntervalSobolevBound` proves the nonnegative Parseval identity with its exact
+factor `1/2`, then combines periodization and the lower spectral bound:
+`C_per=(9/2)(1+2 C_ext)` and
+`C_Sob=c_low^(-1) 2^(2s)(c_low/2+C_per)`.
+Both constants are proved finite below half. The actual weighted Fourier
+sequence satisfies `‖a‖² ≤ C_Sob I_s(f)` and the corresponding square-root
+bound. Synthesis returns the original interval Fourier `L²` reconstruction.
+
+`IntervalFourierLebesgueBound` composes this with the continuous coefficient
+inclusion. The finite constant is its operator norm times `sqrt(C_Sob)`,
+independent of the interval function. Thus the actual `ℓ^q` norm is bounded
+by that constant times the original intrinsic size throughout the positive
+subcritical A.9 range. For half regularity the explicit choice
+`t(q)=(max(0,1/q-1/2)+1/2)/2` lies strictly between zero and half and satisfies
+the needed reciprocal inequality. The quantitative lowering estimate gives
+a uniform bound in `I_(1/2)`, without periodizing at the critical index.
+At zero regularity, every extended target `q≥2`, including infinity, satisfies
+`‖a‖_q ≤ sqrt(1/2) sqrt(N(f))`; an imaginary constant attains equality.
+
+These are uniform inequalities in the actual intrinsic interval size. The
+implementation does not introduce a separate normed quotient type for
+intrinsic interval functions. The Fourier normalization is still period two;
+the source's arbitrary-period form needs the scaling identification.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4330 declarations under `NLS`, including generated
+axioms. The current audit covers 4388 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2889,19 +2934,30 @@ only `L²`, including target two and infinity. The actual nonperiodic ramp has
 proved intrinsic half energy is at most four, giving `ℓ^(6/5)` coefficients
 despite unequal endpoint values.
 
+Intrinsic-bound checks preserve the nonzero size of an imaginary constant,
+verify finite exterior and spectral constants below half, and evaluate the
+vanishing Hardy gap at half. Arbitrary interval representatives exercise the
+uniform exterior bound without global measurability. Nonnegative Parseval
+retains the factor `1/2`. The explicit lower indices are `5/12` at `q=6/5`
+and `1/4` at `q=3`. The actual nonperiodic ramp exercises both the subcritical
+and half-regularity Fourier norm bounds in its own intrinsic size. The zero
+case uses only `L²`, and an imaginary constant attains its infinity norm bound.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Package Appendix A.9's composite bound in an intrinsic interval norm and
-   extend the Fourier identification from period two to arbitrary periods.
-   The exponent and endpoint membership conclusions, fractional Hardy
-   inequality, and forward periodization comparison are complete. The
-   two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
+2. Extend Appendix A.9's Fourier identification and uniform intrinsic bounds
+   from period two to arbitrary periods. The exponent and endpoint conclusions,
+   quantitative Hardy inequality, and forward periodization comparison are
+   complete. A separate normed quotient API for intrinsic interval data has
+   not been introduced. The two-sequence inequality in Appendix B.2, its
+   periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
    dissertation results. Both finite and infinity source pair norms and their
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. Appendix A.9's intrinsic norm packaging and arbitrary-period
-Fourier scaling, and the printed general-`p` spectral height, remain open.
+unimplemented. Appendix A.9's arbitrary-period Fourier scaling and the printed
+general-`p` spectral height remain open; intrinsic normed quotient types have
+not been introduced.

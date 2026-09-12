@@ -173,3 +173,7 @@ import NLS.Fourier.PeriodizationIncrement
 import NLS.Fourier.FractionalPeriodization
 import NLS.Fourier.FractionalIntervalEmbedding
 import NLS.Fourier.IntervalFourierLebesgue
+import NLS.Fourier.IntrinsicIntervalEnergy
+import NLS.Fourier.FractionalHardyBound
+import NLS.Fourier.IntervalSobolevBound
+import NLS.Fourier.IntervalFourierLebesgueBound
