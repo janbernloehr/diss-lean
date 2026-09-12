@@ -560,6 +560,14 @@ and is the unique joint continuous extension agreeing with polynomial
 multipliers in either variable. Every admissible triple has a finite input
 exponent; approximation in that factor handles the infinity endpoints without
 claiming norm density in `l∞`. Shared Wiener representations recover actual
-smooth and ordinary function multiplication. Next are the mixed three-sequence
-estimate in Appendix B.3 and the physical fractional Sobolev identification in
-Appendix A.9.
+smooth and ordinary function multiplication.
+
+The displayed mixed three-sequence inequality in Appendix B.3 is now proved
+for its positive finite real exponents, including values below one. Powers of
+magnitudes divide the sequence exponent with exact norm identities. The source
+conditions construct an intermediate exponent satisfying the two scaled Young
+relations. Applying the full Young inequality twice gives the exact nested
+norm bound with constant one and proves convergence at all three summation
+levels. Unit modes attain the bound. The next Fourier-space target is the
+physical fractional Sobolev identification in Appendix A.9; the printed
+general-`p` central spectral height and the main Birkhoff dependencies also remain.

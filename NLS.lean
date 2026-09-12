@@ -148,3 +148,7 @@ import NLS.SequenceSpaces.YoungExponents
 import NLS.SequenceSpaces.YoungInequality
 import NLS.SequenceSpaces.YoungConvolution
 import NLS.Fourier.YoungDistributionProduct
+import NLS.SequenceSpaces.PowerCoefficients
+import NLS.SequenceSpaces.PowerYoung
+import NLS.SequenceSpaces.MixedYoungExponents
+import NLS.SequenceSpaces.MixedYoung

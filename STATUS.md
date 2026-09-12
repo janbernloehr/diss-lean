@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 200 modules and 1912 named public theorems. All compile on the
+The library has 204 modules and 1931 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -43,6 +43,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.PairNormHeight` | Resolvent and strict strip bounds in the source's finite pair norm; uniform open convex parameter neighborhoods; analytic actual norm-height contours with rank `4N+2` |
 | `NLS.SequenceSpaces.Multiplier` | Bounded diagonal symbols; norm bound; continuous linear operator; commutation with truncations |
 | `NLS.SequenceSpaces.Translation` | Reindexing by an integer equivalence preserves the norm; shifts as linear isometry equivalences |
+| `NLS.SequenceSpaces.PowerCoefficients` | Positive powers of magnitudes divide the coefficient exponent with exact norm identity, including original exponents below one |
+| `NLS.SequenceSpaces.PowerYoung` | Scaled real Young relations; powered convolution summability and root representatives with exact constant-one norm bound |
+| `NLS.SequenceSpaces.MixedYoungExponents` | Source reciprocal identity and order constraints construct the intermediate exponent and both scaled Young relations |
+| `NLS.SequenceSpaces.MixedYoung` | Appendix B.3 for finite positive exponents: exact nested norm estimate; convergence at all three levels; unit modes attain constant one |
 | `NLS.SequenceSpaces.YoungTrilinear` | Weighted arithmetic-geometric mean estimate for three factors; translated finite energy bounds; unit and homogeneous finite convolution-pairing estimates with exact constant one |
 | `NLS.SequenceSpaces.YoungFinite` | Single-frequency decomposition and convolution expansion; exact finite dual kernel; uniform finite-input Young norm estimate |
 | `NLS.SequenceSpaces.YoungExponents` | Exact reciprocal exponent relation; input/output comparisons; conjugate endpoint and real dual-exponent identities |
@@ -2044,8 +2048,8 @@ shift the other sequence after its contractive exponent inclusion. Arbitrary
 norm-convergent input approximations converge in output norm. In particular,
 both finite input cutoffs converge in the output norm whenever the inputs
 have finite exponents, even for conjugate inputs with infinity output.
-The distribution-product extension in Appendix A.7 is now proved below. The
-mixed three-sequence inequality in Appendix B.3 remains a subsequent step.
+The distribution-product extension in Appendix A.7 and the mixed
+three-sequence inequality in Appendix B.3 are now proved below.
 
 ## General periodic distribution products: Appendix A.7
 
@@ -2068,10 +2072,33 @@ continuous extension at all endpoints without asserting finite-support norm
 density in `l∞`. Shared Wiener representatives recover the prior product, its
 smooth-multiplier compatibility, and ordinary real-line function-product integrals.
 
+## Mixed three-sequence Young inequality: Appendix B.3
+
+`PowerCoefficients` constructs the magnitude power `|a(n)|^t` in exponent `p/t`
+with norm exactly `‖a‖^t` for positive finite real `p,t`. Original exponents may
+be below one; no Banach-space instance is assumed for those inputs. Only the
+powered exponents in each application of Young must be at least one.
+`PowerYoung` proves absolute convergence of the powered convolution and constructs
+its positive-root representative with norm at most the product of the input norms.
+
+`MixedYoungRelation` records the source conditions `γ ≥ p₁ ≥ β > 0`,
+`p₂,p₃ ≥ α > 0`, and `1/α + 1/β + 1/γ = 1/p₁ + 1/p₂ + 1/p₃` for finite
+real exponents. These conditions construct a positive intermediate exponent
+`q` with `1/q = 1/β + 1/γ - 1/p₁`, satisfying both powered Young relations.
+The first application estimates the `α`-root convolution of `b,c`; the second
+estimates the `β`-root convolution of `a` with that intermediate sequence.
+
+`mixedYoung_le` states the source's full three-level sum explicitly, with powers
+`α`, `β/α`, `γ/β`, and final root `1/γ`, bounded by `‖a‖‖b‖‖c‖`.
+`mixedYoung_summable_and_le` additionally proves convergence of every inner sum,
+every middle sum, and the outer sum. Unit modes attain one in the mixed norm,
+so the constant is sharp. This establishes the displayed finite-positive-exponent
+statement in Appendix B.3, including exponent values below one.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3942 declarations under `NLS`, including generated
+axioms. The current audit covers 4011 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2558,16 +2585,25 @@ arbitrary simultaneous approximations, changes of both input and output
 exponents, and characterization among arbitrary periodic distributions are
 checked explicitly.
 
+Mixed-Young checks instantiate `α=1, β=2, γ=p₁=4, p₂=p₃=4/3`, exercise
+convergence at all three levels, and construct the required intermediate
+exponent. All six exponents equal to `1/2` test the full inequality below the
+Banach range. Power transport from exponent `1/2` by power `1/4` has the exact
+norm identity, and single-mode quasi-norms equal one. Unit modes attain the
+mixed bound with distinct nesting exponents. A two-mode calculation gives the
+middle sum five at output frequency one, distinguishing the mixed nesting
+from the square of the ordinary convolution coefficient three.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the mixed three-sequence inequality in Appendix B.3 and identify the
-   fractional interval Sobolev spaces used in Appendix A.9. The full two-sequence
-   inequality in Appendix B.2 and its periodic product in Appendix A.7 are proved.
+2. Identify the fractional interval Sobolev spaces used in Appendix A.9. The
+   two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
+   and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
    dissertation results. Both finite and infinity source pair norms and their
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. Further sequence-space work includes the mixed three-sequence
-Young estimate in Appendix B.3.
+unimplemented. Fractional physical Sobolev identification and the printed
+general-`p` spectral height remain open.

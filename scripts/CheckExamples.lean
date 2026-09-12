@@ -5718,3 +5718,78 @@ example (a b : Coeff 2) (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
   youngDistributionProduct_eq_of_periodic_coefficients hilbertYoung a b T hT hc
 
 end YoungDistributionChecks
+
+namespace MixedYoungChecks
+open NLS.Coeff
+
+private theorem differentPowers : MixedYoungRelation 1 2 4 4 (4 / 3) (4 / 3) := by
+  constructor <;> norm_num
+
+private theorem belowOne : MixedYoungRelation (1 / 2) (1 / 2) (1 / 2) (1 / 2) (1 / 2) (1 / 2) := by
+  constructor <;> norm_num
+
+-- Distinct nesting powers produce the source's actual mixed norm, with exact constant one.
+example (a : Coeff (ENNReal.ofReal 4)) (b c : Coeff (ENNReal.ofReal (4 / 3))) :
+    (∑' k : ℤ, (∑' l : ℤ,
+      (∑' m : ℤ, ‖a (k - l) * b (l - m) * c m‖) ^ (2 : ℝ)) ^ (2 : ℝ)) ^ (1 / 4 : ℝ) ≤
+      ‖a‖ * ‖b‖ * ‖c‖ := by
+  simpa [show (4 : ℝ) / 2 = 2 by norm_num] using mixedYoung_le differentPowers a b c
+
+-- Original sequence exponents below one need no fictitious Banach instance.
+example (a b c : Coeff (ENNReal.ofReal (1 / 2))) :
+    (∑' k : ℤ, ∑' l : ℤ, ∑' m : ℤ,
+      ‖a (k - l) * b (l - m) * c m‖ ^ (1 / 2 : ℝ)) ^ (2 : ℝ) ≤ ‖a‖ * ‖b‖ * ‖c‖ := by
+  simpa using mixedYoung_le belowOne a b c
+
+-- All three summation levels have independent convergence guarantees.
+example (a : Coeff (ENNReal.ofReal 4)) (b c : Coeff (ENNReal.ofReal (4 / 3))) :
+    Summable (fun m : ℤ => ‖a (-3 - 2) * b (2 - m) * c m‖) := by
+  simpa using (mixedYoung_summable_and_le differentPowers a b c).1 (-3) 2
+
+example (a : Coeff (ENNReal.ofReal 4)) (b c : Coeff (ENNReal.ofReal (4 / 3))) :
+    Summable (fun l : ℤ => (∑' m : ℤ, ‖a (-3 - l) * b (l - m) * c m‖) ^ (2 : ℝ)) := by
+  simpa using (mixedYoung_summable_and_le differentPowers a b c).2.1 (-3)
+
+example (a : Coeff (ENNReal.ofReal 4)) (b c : Coeff (ENNReal.ofReal (4 / 3))) :
+    Summable (fun k : ℤ => mixedYoungRow 1 2 a b c k ^ (2 : ℝ)) := by
+  simpa [show (4 : ℝ) / 2 = 2 by norm_num] using (mixedYoung_summable_and_le differentPowers a b c).2.2.1
+
+-- The derived intermediate exponent supports the two required Young steps.
+example : ∃ q : ℝ, PowerYoungRelation (4 / 3) (4 / 3) q 1 ∧ PowerYoungRelation 4 q 4 2 :=
+  differentPowers.exists_intermediate
+
+-- Powers transport a quasi-norm exponent to a Banach exponent with exact norm equality.
+example (a : Coeff (ENNReal.ofReal (1 / 2))) :
+    ‖normPower (by norm_num : (0 : ℝ) < 1 / 2) (by norm_num : (0 : ℝ) < 1 / 4) a‖ =
+      ‖a‖ ^ (1 / 4 : ℝ) := norm_normPower _ _ a
+
+-- Unit modes attain the constant in a case with three distinct nesting exponents.
+example : (∑' k : ℤ, mixedYoungRow 1 2 (Pi.single 0 1) (Pi.single 0 1) (Pi.single 0 1) k ^
+    (4 / 2 : ℝ)) ^ (1 / 4 : ℝ) = 1 := mixedYoung_unit_modes (by norm_num) (by norm_num) (by norm_num)
+
+-- The single-input quasi-norm is one too, so sharpness is not an artifact of scaling.
+example : ‖lp.single (E := fun _ : ℤ => ℂ) (ENNReal.ofReal (1 / 2)) (-3 : ℤ) (1 : ℂ)‖ = 1 := by
+  norm_num [lp.norm_single]
+
+private def twoModes (n : ℤ) : ℂ := if n = 0 ∨ n = 1 then 1 else 0
+
+-- The middle sum is five, rather than the square of the ordinary convolution coefficient three.
+example : mixedYoungRow 1 2 twoModes twoModes twoModes 1 = 5 := by
+  unfold mixedYoungRow
+  have hi (l : ℤ) : (∑' m : ℤ, ‖twoModes (1 - l) * twoModes (l - m) * twoModes m‖ ^ (1 : ℝ)) =
+      ‖twoModes (1 - l) * twoModes l‖ + ‖twoModes (1 - l) * twoModes (l - 1)‖ := by
+    rw [tsum_eq_sum (s := {0, 1}) (by
+      intro m hm
+      have hm' : m ≠ 0 ∧ m ≠ 1 := by simpa using hm
+      simp [twoModes, hm'.1, hm'.2])]
+    simp [twoModes]
+  simp_rw [hi]
+  rw [tsum_eq_sum (s := {0, 1}) (by
+    intro l hl
+    have hl' : l ≠ 0 ∧ l ≠ 1 := by simpa using hl
+    have h₀ : 1 - l ≠ 0 := by omega
+    have h₁ : 1 - l ≠ 1 := by omega
+    simp [twoModes, h₀, h₁])]
+  norm_num [twoModes]
+
+end MixedYoungChecks

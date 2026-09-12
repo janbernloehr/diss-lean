@@ -6,8 +6,9 @@ Fourier Transform for the dNLS Equation* (2016).
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
 The library currently proves sequence-space foundations, the full discrete
-Young convolution inequality and its canonical periodic-distribution product
-(Appendices B.2 and A.7), and a closed, densely defined coefficient-space Zakharov–Shabat
+Young convolution inequality, the mixed three-sequence inequality, and the
+canonical periodic-distribution product (Appendices B.2, B.3, and A.7). It also
+proves a closed, densely defined coefficient-space Zakharov–Shabat
 operator with norm bounds and signed free Fourier modes. The free resolvent is
 constructed away from `πℤ`, with both inverse identities, explicit bounds, and
 compactness proved by finite Fourier approximation. For nonzero potentials,
