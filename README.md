@@ -215,7 +215,13 @@ Its continuous linear equivalence with the maximum norm has sharp reverse
 factor `2^(1/p)`. The proved heights and analytic contour neighborhoods now
 transfer to this actual source-norm parameter space. The source's infinity
 norm, full physical Fourier realization, and main dissertation theorems remain
-future work.
+future work. The canonical period-one coefficient embedding is now an isometry
+onto the even subspace and commutes with convolution. Actual integrable
+period-one functions have exactly the inserted period-two Fourier integrals,
+with their coefficient norm preserved. Absolutely summable data has an
+injective continuous period-one realization. The pair embedding covers exactly
+the even potentials and supplies the existing resolvent parity hypotheses;
+the distribution-level interpretation of arbitrary coefficient data remains open.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

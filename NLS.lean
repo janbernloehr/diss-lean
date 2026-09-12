@@ -108,3 +108,6 @@ import NLS.ZakharovShabat.RectangleSpectrum
 import NLS.ZakharovShabat.HeightRectangleContour
 import NLS.SequenceSpaces.PairNorm
 import NLS.ZakharovShabat.PairNormHeight
+import NLS.SequenceSpaces.PeriodDoubling
+import NLS.Fourier.PeriodOneCoefficients
+import NLS.ZakharovShabat.PeriodOneEmbedding

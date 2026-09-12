@@ -4566,3 +4566,75 @@ example (u : CoeffPair 2) :
   exact ⟨N₀, U, ho, hc, hu, h0, han, fun v hv N hN => (h v hv N hN).2.2⟩
 
 end PairNormChecks
+
+namespace PeriodOneChecks
+open NLS.Fourier NLS.ZakharovShabat Complex MeasureTheory Set
+
+-- A negative odd period-one frequency becomes negative even, never a positive index.
+example : Coeff.periodDouble (lp.single 1 (-3) (2 * I)) (-6) = 2 * I := by
+  simpa using Coeff.periodDouble_even (lp.single 1 (-3) (2 * I)) (-3)
+example : Coeff.periodDouble (lp.single 1 (-3) (2 * I)) (-3) = 0 := by
+  simpa using Coeff.periodDouble_odd (lp.single 1 (-3) (2 * I)) (-2)
+
+-- Every even sequence is recovered by sampling, at both finite and supremum exponents.
+example (a : Coeff 3) (ha : a ∈ Coeff.paritySubspace 0) :
+    Coeff.periodDouble (Coeff.periodDoubleEquiv.symm ⟨a, ha⟩) = a :=
+  congrArg Subtype.val (Coeff.periodDoubleEquiv.apply_symm_apply ⟨a, ha⟩)
+example (a : Coeff ⊤) : ‖Coeff.periodDouble a‖ = ‖a‖ := Coeff.norm_periodDouble a
+
+-- Convolution shifts -2 by 3 before doubling; the output is at period-two index 2.
+example : Coeff.convolution (Coeff.periodDouble (lp.single 3 (-2) I))
+    (Coeff.periodDouble (lp.single 1 3 (2 : ℂ))) 2 = 2 * I := by
+  rw [← Coeff.periodDouble_convolution]
+  change Coeff.periodDouble (Coeff.convolution (lp.single 3 (-2) I) (lp.single 1 3 (2 : ℂ))) (2 * 1) = _
+  rw [Coeff.periodDouble_even, Coeff.convolution_single_right]
+  norm_num [Coeff.shift_apply, lp.single_apply]
+
+-- The physical wave has the unit-period exponent, including its negative frequency.
+example (x : ℝ) : periodOneSynthesis (lp.single 1 (-3) (2 * I)) x = 2 * I * wave (-6) x := by
+  rw [periodOneSynthesis_eq_tsum]
+  simp [lp.single_apply, Pi.single_apply]
+
+example : periodOneCoefficient (periodOneSynthesis (lp.single 1 (-3) (2 * I))) (-3) = 2 * I := by simp
+
+-- A discontinuous sawtooth is allowed; no continuity or endpoint matching is assumed.
+private def sawtooth (x : ℝ) : ℂ := ((Int.fract x : ℝ) : ℂ)
+private theorem sawtooth_periodic : Function.Periodic sawtooth 1 := by
+  intro x
+  simp [sawtooth, Int.fract_add_one]
+private theorem sawtooth_integrable : IntervalIntegrable sawtooth volume 0 1 := by
+  apply (Complex.continuous_ofReal.intervalIntegrable 0 1).congr_uIoo
+  intro x hx
+  have hx' : 0 < x ∧ x < 1 := by simpa only [uIoo_of_le (by norm_num : (0 : ℝ) ≤ 1), mem_Ioo] using hx
+  exact (congrArg (fun t : ℝ => (t : ℂ)) (Int.fract_eq_self.mpr ⟨hx'.1.le, hx'.2⟩)).symm
+
+example : periodTwoCoefficient sawtooth (-7) = 0 := by
+  simpa using periodTwoCoefficient_periodic_odd sawtooth sawtooth_periodic sawtooth_integrable (-4)
+
+-- The mean is exactly 1/2, so period doubling introduces no spurious half factor.
+example : periodTwoCoefficient sawtooth 0 = (1 / 2 : ℂ) := by
+  have h := periodTwoCoefficient_periodic_even sawtooth sawtooth_periodic sawtooth_integrable 0
+  simp only [mul_zero, periodOneCoefficient, fourierCoeffOn_one, halfCoefficient, neg_zero, wave_zero, mul_one] at h
+  have he : (∫ x in (0 : ℝ)..1, sawtooth x) = ∫ x in (0 : ℝ)..1, (x : ℂ) := by
+    apply intervalIntegral.integral_congr_Ioo_of_le (by norm_num)
+    intro x hx
+    exact congrArg (fun t : ℝ => (t : ℂ)) (Int.fract_eq_self.mpr ⟨hx.1.le, hx.2⟩)
+  rw [he, intervalIntegral.integral_ofReal, integral_id] at h
+  norm_num at h ⊢
+  exact h
+
+-- Both components preserve their norm and automatically satisfy the operator's even-potential criterion.
+example (u : CoeffPair 3) : ‖periodOnePair u‖ = ‖u‖ ∧ periodOnePotential u ∈ pairParitySubspace 0 :=
+  ⟨norm_periodOnePair u, periodOnePotential_mem u⟩
+example (u : CoeffPair 1) (n : ℤ) :
+    (periodOnePotential u).1 (2 * n) = periodOneCoefficient (periodOneSynthesis u.fst) n := by
+  simp [periodOnePotential_apply]
+
+-- Odd input states stay in their antiperiodic sector under the full perturbed resolvent.
+example (u : CoeffPair 3) (z : ℂ) (hz : z ∈ resolventSet (by simp) (periodOnePotential u))
+    (a : PairSpace 3) (ha : a ∈ pairParitySubspace 1) :
+    z ∈ resolventSet (by simp) (periodOnePotential u) ∧
+      resolvent (by simp) (periodOnePotential u) z a ∈ pairParitySubspace 1 :=
+  ⟨hz, resolvent_mem_pairParitySubspace (by simp) _ (periodOnePotential_mem u) 1 z hz a ha⟩
+
+end PeriodOneChecks

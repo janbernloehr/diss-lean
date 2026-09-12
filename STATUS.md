@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 160 modules and 1540 named public theorems. All compile on the
+The library has 163 modules and 1573 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -119,6 +119,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.HilbertBoundedness` | Admissible interpolation parameters; completed ordinary and shifted transforms for every `1<p<∞`; bounds, uniqueness, exact finite formulas, and full-range transposition |
 | `NLS.Fourier.HilbertSeries` | Absolutely convergent ordinary and shifted reciprocal series; exact coefficient formulas for arbitrary inputs via conjugate tests and density |
 | `NLS.SequenceSpaces.Insertion` | Zero insertion along an integer embedding as a linear isometry at every Banach exponent; image and outside-image formulas; even/odd index embeddings |
+| `NLS.SequenceSpaces.PeriodDoubling` | Isometric even insertion; equivalence onto the even subspace; contractive even sampling and projection identity; convolution compatibility |
+| `NLS.Fourier.PeriodOneCoefficients` | Actual integrable period-one Fourier integral identity; even/odd coefficient formulas; preservation of coefficient norm; injective continuous absolute-series realization |
+| `NLS.ZakharovShabat.PeriodOneEmbedding` | Isometric pair insertion; exact even-potential range; physical absolute-series identification; automatic resolvent and contour parity |
 | `NLS.Fourier.HalfIntervalBoundedness` | Bounded half-interval Fourier map for every `1<p<∞`; exact even/odd coefficients, finite integral agreement, explicit bound, and injectivity |
 | `NLS.ZakharovShabat.BoundedIntervalExtension` | Full-range Dirichlet/Neumann interval maps into the actual boundary spaces; bounds and analyticity; finite physical integral agreement, uniqueness, parity formulas, and equality with the Parseval completion at `p=2` |
 | `NLS.Fourier.ContinuousSynthesis` | Uniformly convergent period-two synthesis from `ℓ1`; contraction, injectivity, continuous coefficient extraction, actual normalized interval integrals, and single-mode agreement |
@@ -396,9 +399,10 @@ and preserve both subspaces, supplying the invariant spaces used in (1.5).
 Both signed free modes have the parity of their spectral index, since `n`
 and `-n` have the same residue modulo two.
 
-The general Fourier/distribution realization and canonical physical period-one
-embedding remain open. The actual rectangular contour identification is proved
-below.
+The canonical period-one coefficient embedding and its physical integral
+identification for integrable functions are now proved below. The general
+Fourier/distribution realization remains open. The actual rectangular contour
+identification is also proved below.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
 Every free root vector at `π n` has first component supported at `-n` and second
@@ -1609,10 +1613,43 @@ still act on the original coefficient base space. The general physical
 Fourier/distribution realization, the source's infinity norm, and the printed
 general-`p` height remain open.
 
+## Canonical period-one embedding and physical Fourier integrals
+
+`PeriodDoubling` identifies a period-one frequency `n` with period-two frequency
+`2n`, inserting zeros at odd indices. It is a complex linear isometry onto the
+entire closed even coefficient subspace, including both scalar endpoints.
+The inverse samples even frequencies. Sampling and reinserting any sequence
+gives exactly the existing even projection, and sampling is contractive.
+Convolution commutes with period doubling for the proved `lp × l1` product.
+This supplies the canonical coefficient identification before Lemma 3.6
+(Chapter 1, printed page 26).
+
+`PeriodOneCoefficients` proves the physical integral formula by splitting
+`[0,2]` into two halves and translating the second half. For a period-one
+function integrable over `[0,1]`, the even normalized period-two coefficients
+are exactly its unit-period coefficients and all odd coefficients vanish.
+If its unit-period coefficients lie in `lp`, the actual period-two integral
+sequence lies in the same `lp` space with exactly the same norm. This proof
+allows jumps. Absolutely summable input coefficients have an injective
+continuous physical period-one synthesis, whose actual unit-interval integrals
+recover every input coefficient. Its series uses `exp(2πinx)`.
+
+`PeriodOneEmbedding` applies insertion to both components in the source's
+finite-exponent component-sum norm. The pair map is isometric; the operator
+parameter map is contractive and covers exactly the even potential subspace.
+At absolute summability, both components are identified with actual physical
+period-one functions. These embedded parameters automatically satisfy the
+existing resolvent and spectral contour parity hypotheses.
+
+The full realization of arbitrary coefficient data as periodic distributions,
+including the corresponding distribution-level period-one embedding, remains
+open. The new physical identification assumes integrability of the function;
+it does not claim every `lp` sequence is represented by an integrable function.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3215 declarations under `NLS`, including generated
+axioms. The current audit covers 3279 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1983,13 +2020,21 @@ Both printed Hilbert edges at height 1681 are admissible in the source norm.
 Further checks exercise coefficient preservation and uniform analytic rank
 on the actual component-sum parameter space.
 
+Period-one checks retain negative-frequency signs, sample arbitrary even
+sequences, and preserve the scalar supremum norm. A convolution shifts input
+index `-2` by `3` before doubling to output index `2`. The actual wave and
+unit-period coefficient of a negative odd input are recovered. A discontinuous
+sawtooth has vanishing negative odd coefficients and mean exactly `1/2`,
+checking the period normalization independently of continuous synthesis.
+Further checks preserve the component-sum pair norm and the odd resolvent sector.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the periodic Fourier/distribution realization, physical period-one
-   embedding, and multiplication beyond the Hilbert realization. The finite-`p`
-   coefficient pair-norm comparison is complete; the source's infinity endpoint
-   remains distinct.
+2. Extend the physical Fourier and period-one identifications to the full
+   periodic distribution setting, and prove multiplication beyond the Hilbert
+   realization. The finite-`p` coefficient pair-norm comparison is complete;
+   the source's infinity endpoint remains distinct.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes

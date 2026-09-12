@@ -445,5 +445,13 @@ The source's finite-exponent coefficient pair norm and weighted pair norm are
 now implemented exactly, with energy exponent `sp` and sharp comparison factor
 `2^(1/p)`. The proved heights and actual analytic contour neighborhoods transfer
 to the component-sum parameter space without increasing the height constants.
-The general Fourier/distribution interpretation, physical period-one embedding,
-and the source's distinct infinity-endpoint norm remain separate proof obligations.
+Canonical period doubling is now an isometry onto the even coefficient space,
+with contractive sampling, exact projection identities, and convolution
+compatibility. Splitting the actual physical integrals identifies every
+integrable period-one function's period-two coefficients with even insertion,
+preserving the coefficient norm. Absolutely summable sequences have an injective
+continuous period-one realization. Pair insertion covers all even potentials
+and supplies the parity hypotheses for resolvents and contours.
+Extend this physical interpretation to arbitrary periodic distributions; do not
+assume every `lp` sequence has an integrable function representative. The source's
+distinct infinity-endpoint pair norm also remains a separate proof obligation.
