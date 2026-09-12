@@ -184,8 +184,8 @@ every chain level. They are finite dimensional, stabilize, and correspond to
 the coefficient root spaces. Physical algebraic multiplicities therefore agree.
 One common physical neighborhood gives central count `2N+1`, one algebraically
 simple eigenvalue in each high disk, and no other spectrum, for both boundary
-conditions and every larger cutoff. Distributional operator compatibility
-and multiplication beyond the Hilbert realization remain needed for the full transfer.
+conditions and every larger cutoff. Distributional potential multiplication
+beyond the Hilbert realization remains needed for the full transfer.
 The actual rectangular resolvent integral now uses four oriented Bochner edge
 integrals. It factors through the domain, is compact, and commutes with
 resolvents and algebraic projections. Subdivision and Cauchy's theorem prove
@@ -225,8 +225,12 @@ arbitrary Banach `ℓᵖ` data now has an injective continuous linear realizatio
 as actual tempered distributions. Schwartz tests recover each coefficient, and
 finite Fourier sums converge distributionally even at `p=∞`. Period one is
 equivalent to even Fourier support; for `ℓ¹` input this agrees with integration
-against the continuous synthesis. Distributional operator compatibility and
-the converse characterization of periodic distributions remain open.
+against the continuous synthesis. The multiplier `iπn` now agrees with actual
+distributional differentiation, with an exact characterization of the scalar
+and signed-pair free operator domains. Their graphs are closed even at `p=∞`,
+and finite-exponent continuous representatives satisfy weak integration by parts.
+Distributional potential multiplication and the converse characterization of
+periodic distributions remain open.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -404,7 +408,8 @@ installation is absent. No shell startup files are modified.
 - Every Banach coefficient sequence now defines a genuine period-two tempered
   distribution, with exact coefficient recovery and period-one/even-support
   equivalence. The converse characterization of arbitrary periodic distributions
-  and distributional differentiation/multiplication compatibility remain open.
+  and distributional potential multiplication remain open. Scalar differentiation
+  and the signed-pair free operator now have exact distributional graph identifications.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

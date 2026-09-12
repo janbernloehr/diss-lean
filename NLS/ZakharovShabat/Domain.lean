@@ -6,8 +6,9 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 We use scalar Fourier modes `exp (i π n x)` on a circle of period two.
 Thus differentiation has symbol `i π n`. See the dissertation, Chapter 1,
-§2 (the scalar and signed-pair Fourier conventions) and §3, p. 23 (the domain). These are coefficient-space maps;
-a physical-space Fourier realization is a separate construction.
+§2 (the scalar and signed-pair Fourier conventions) and §3, p. 23 (the domain).
+The exact graph of the genuine distributional derivative is identified with
+these coefficient-space maps in `NLS.Fourier.DistributionDerivative`.
 -/
 
 open scoped ENNReal
@@ -120,5 +121,24 @@ theorem scalarInclusion_denseRange (hp : p ≠ ⊤) :
   intro s
   refine ⟨∑ n ∈ s, scalarMode n (a n), ?_⟩
   simp only [map_sum, scalarInclusion_scalarMode, Coeff.truncate]
+
+omit [Fact (1 ≤ p)] in
+/-- Control of raw and differentiated coefficients implies one-derivative weighted regularity. -/
+theorem memlp_sobolev_weight_of_derivative {a : ℤ → ℂ} (ha : Memℓp a p)
+    (hd : Memℓp (fun n : ℤ => Complex.I * (Real.pi : ℂ) * n * a n) p) :
+    Memℓp (fun n : ℤ => (Weight.sobolev 1 n : ℂ) * a n) p := by
+  apply (ha.norm.add (hd.norm.const_mul Real.pi⁻¹)).mono
+  intro n
+  have hw : ‖(Weight.sobolev 1 n : ℂ) * a n‖ = (1 + |(n : ℝ)|) * ‖a n‖ := by
+    simp only [norm_mul, Complex.norm_real, Real.norm_eq_abs,
+      Weight.sobolev_apply, Real.rpow_one,
+      abs_of_nonneg (by positivity : (0 : ℝ) ≤ 1 + |(n : ℝ)|)]
+  have hdv : ‖Complex.I * (Real.pi : ℂ) * n * a n‖ = Real.pi * |(n : ℝ)| * ‖a n‖ := by
+    simp [Complex.norm_intCast, Real.norm_eq_abs, Real.pi_pos.le]
+  change ‖(Weight.sobolev 1 n : ℂ) * a n‖ ≤
+    ‖a n‖ + Real.pi⁻¹ * ‖Complex.I * (Real.pi : ℂ) * n * a n‖
+  rw [hw, hdv]
+  field_simp
+  exact le_rfl
 
 end NLS.ZakharovShabat

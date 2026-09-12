@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 167 modules and 1605 named public theorems. All compile on the
+The library has 169 modules and 1627 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -12,6 +12,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.SchwartzSampling` | Signed half-integer samples in `l1`, controlled by a finite family of genuine Schwartz seminorms |
 | `NLS.Fourier.DistributionSynthesis` | Actual tempered distributions for all Banach exponents; continuous linear injection; exact coefficient recovery; single-wave action; distributional convergence of finite Fourier sums including infinity |
 | `NLS.Fourier.DistributionPeriodicity` | Physical period two; period one iff even support; doubled coefficients give period one; agreement with continuous synthesis under actual real-line integrals |
+| `NLS.Fourier.DistributionDerivative` | Actual derivative multiplier `iπn`; exact scalar derivative graph and domain; weak integration by parts for continuous representatives; closed graph for all Banach exponents |
+| `NLS.ZakharovShabat.DistributionFreeOperator` | Injective pair synthesis; actual signed free derivative; exact pair graph/domain; closedness and base-norm graph limits including infinity |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -201,7 +203,8 @@ The domain and operator follow Chapter 1, §3, printed page 23; the signed-mode
 convention follows §2, equation (1.2). The spectral pencil is explicitly a map
 from the domain to the base space. The unbounded realization is now proved
 closed, as detailed below. The forward realization of coefficients as periodic
-distributions is now proved below; compatibility with this operator remains open.
+distributions and exact free derivative graph are now proved below;
+distributional potential multiplication remains open.
 These original numerical operator bounds use the maximum pair norm. The finite-`p`
 comparison with the dissertation's component-sum norm is now proved in `PairNorm`;
 `PairNormHeight` transfers the spectral-height conclusions without increasing constants.
@@ -406,7 +409,7 @@ and `-n` have the same residue modulo two.
 The canonical period-one coefficient embedding and its physical integral
 identification for integrable functions are now proved below. The forward
 distributional realization and period-one characterization are also proved below;
-distributional operator compatibility remains open. The actual rectangular contour
+distributional potential multiplication remains open. The actual rectangular contour
 identification is also proved below.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
@@ -1678,15 +1681,48 @@ Fourier sum with the integral proves agreement with the existing continuous
 period-two synthesis and period-one synthesis on every Schwartz test.
 
 This completes the forward realization and exact recovery for Banach coefficient
-data. Compatibility with the differentiated and multiplied operators, and the
-converse characterization of all periodic distributions with the prescribed
-coefficient regularity, remain open. No function representative is assumed for
-general coefficient data.
+data. The following milestone identifies actual distributional differentiation.
+Potential multiplication and the converse characterization of all periodic
+distributions with the prescribed coefficient regularity remain open. No
+function representative is assumed for general coefficient data.
+
+## Exact distributional derivative and free operator graphs
+
+`DistributionDerivative` proves the Fourier transform formula for differentiated
+Schwartz tests at the signed half-integer lattice. The actual tempered-distribution
+derivative of synthesis has multiplier `iπn`. Localized tests recover those
+derivative coefficients even when they no longer lie in the original `lp` class.
+For `a,b : Coeff p`, the equation `D(Ta)=Tb` is equivalent both to the coefficient
+identity `b_n=iπn a_n` and to the existence of `f : ScalarDomain p` with
+`scalarInclusion f=a` and `derivative f=b`. Thus the existing one-derivative domain
+is exactly the distributional derivative domain in the same Fourier class,
+including at infinity. The weighted-membership estimate used for the converse
+is now shared with the existing classical Hilbert Sobolev identification.
+
+Synthesis is independent of the Banach exponent used to package identical raw
+coefficients. Consequently, for every finite exponent the domain's synthesized
+distribution agrees with integration against its continuous Sobolev representative.
+Its derivative acts as minus the integral against the actual derivative of a
+Schwartz test. This is a real-line weak integration-by-parts identity, without
+an unproved classical derivative assumption at non-Hilbert exponents.
+
+`DistributionFreeOperator` constructs the actual signed differential operator
+`diag(i,-i)D` on pairs of tempered distributions. The injective continuous pair
+synthesis intertwines it with `freeOperator`, both pointwise and as a continuous
+linear-map identity. The distributional free equation is equivalent to the
+signed coefficient equations and to the exact existing pair-domain graph.
+Pulling back the closed distributional equality proves that the scalar and
+pair free graphs are closed for every Banach exponent. At infinity this also
+gives stability under limits in the two base coefficient norms, without assuming
+convergence in the stronger domain norm.
+
+Distributional potential multiplication remains the next operator-identification
+step. These statements do not settle the source's distinct infinity pair norm.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3363 declarations under `NLS`, including generated
+axioms. The current audit covers 3405 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2073,13 +2109,22 @@ converge distributionally. An explicit odd-frequency test distinguishes its
 period two from period one, while doubling makes it period one. Arbitrary
 Schwartz tests also check agreement with both continuous synthesis conventions.
 
+Derivative checks recover the physical negative-frequency sign, the zero-mode
+derivative, and the full cubic derivative domain. They verify weak integration
+by parts on continuous non-Hilbert representatives and exponent-independent
+synthesis. The constant-one sequence at infinity has a genuine distributional
+derivative whose coefficients are proved unbounded, so it is outside the
+one-derivative domain. Both free-component signs and endpoint graph limits
+are checked through the public API.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove distributional differentiation and multiplication compatibility beyond
+2. Prove distributional potential multiplication compatibility beyond
    the Hilbert realization, then characterize all periodic distributions with
    the required Fourier coefficient regularity. The forward Banach coefficient
-   realization and period-one/even-support equivalence are complete.
+   realization, period-one/even-support equivalence, and exact scalar/free-pair
+   distributional derivative graphs are complete.
    The finite-`p` coefficient pair-norm comparison is complete;
    the source's infinity endpoint remains distinct.
 

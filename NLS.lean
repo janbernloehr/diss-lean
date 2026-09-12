@@ -115,3 +115,5 @@ import NLS.SequenceSpaces.TestDuality
 import NLS.Fourier.SchwartzSampling
 import NLS.Fourier.DistributionSynthesis
 import NLS.Fourier.DistributionPeriodicity
+import NLS.Fourier.DistributionDerivative
+import NLS.ZakharovShabat.DistributionFreeOperator

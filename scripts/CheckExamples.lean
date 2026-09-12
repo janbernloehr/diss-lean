@@ -4715,3 +4715,82 @@ example (a : Coeff 1) (g : 𝓢(ℝ, ℂ)) :
   distributionSynthesis_periodDouble_eq_integral a g
 
 end DistributionChecks
+
+namespace DistributionDerivativeChecks
+open NLS.Fourier NLS.ZakharovShabat MeasureTheory
+open scoped SchwartzMap FourierTransform
+
+-- Differentiation keeps the physical iπn factor and its negative-frequency sign.
+example : TemperedDistribution.derivCLM ℂ
+    (distributionSynthesis (lp.single 3 (-3) Complex.I)) (coefficientTest (-3)) =
+      3 * (Real.pi : ℂ) := by
+  rw [distributionDerivative_coefficientTest]
+  simp only [lp.single_apply, Pi.single_eq_same]
+  norm_num
+  ring_nf
+  simp [Complex.I_sq]
+
+example (a : Coeff 3) :
+    TemperedDistribution.derivCLM ℂ (distributionSynthesis a) (coefficientTest 0) = 0 := by
+  simp only [distributionDerivative_coefficientTest, Int.cast_zero, mul_zero, zero_mul]
+
+-- The characterization recovers the actual domain, not only the symbol on smooth modes.
+example (a b : Coeff 3)
+    (h : TemperedDistribution.derivCLM ℂ (distributionSynthesis a) = distributionSynthesis b) :
+    ∃ f : ScalarDomain 3, scalarInclusion f = a ∧ derivative f = b :=
+  (distributionDerivative_graph_iff a b).mp h
+
+example (f : ScalarDomain 3) (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis (derivative f) g =
+      -(∫ x : ℝ, sobolevSynthesis (by simp) f (x : AddCircle (2 : ℝ)) * deriv g x) :=
+  distributionSynthesis_derivative_eq_integral (by simp) f g
+
+-- Equality is independent of which Banach exponent packages the same data.
+example : distributionSynthesis (lp.single 1 (-2) Complex.I) =
+    distributionSynthesis (lp.single ⊤ (-2) Complex.I) := by
+  apply (distributionSynthesis_eq_iff _ _).mpr
+  intro n
+  simp [lp.single_apply]
+
+private def allOnes : Coeff ⊤ := ⟨fun _ => 1, one_memℓp_infty⟩
+
+-- The distribution derivative always exists, but need not stay in the original Fourier class.
+private theorem allOnes_derivative_not_bounded :
+    ¬ ∃ b : Coeff ⊤, TemperedDistribution.derivCLM ℂ (distributionSynthesis allOnes) =
+      distributionSynthesis b := by
+  rintro ⟨b, hb⟩
+  have hc := (distributionDerivative_eq_iff allOnes b).mp hb
+  obtain ⟨n, hn⟩ := exists_nat_gt (‖b‖ / Real.pi)
+  have hnorm := lp.norm_apply_le_norm (by simp : (⊤ : ℝ≥0∞) ≠ 0) b (n : ℤ)
+  rw [hc] at hnorm
+  simp [allOnes, abs_of_pos Real.pi_pos] at hnorm
+  have hgt := (div_lt_iff₀ Real.pi_pos).mp hn
+  nlinarith
+
+example : allOnes ∉ LinearMap.range (scalarInclusion (p := ⊤)).toLinearMap := by
+  rw [← distributionDerivative_exists_iff]
+  exact allOnes_derivative_not_bounded
+
+-- Both signed components of the genuine free differential operator are checked.
+example (f : Domain 3) (n : ℤ) :
+    (distributionFreeOperator (distributionPairCLM (domainInclusion f))).1 (coefficientTest n) =
+      -(Real.pi : ℂ) * n * f.1.val n ∧
+    (distributionFreeOperator (distributionPairCLM (domainInclusion f))).2 (coefficientTest n) =
+      (Real.pi : ℂ) * n * f.2.val n := by
+  rw [← distributionPairCLM_freeOperator]
+  simp only [distributionPairCLM_apply, distributionSynthesis_coefficientTest,
+    freeOperator_fst_apply, freeOperator_snd_apply, and_self]
+
+example (a b : PairSpace ⊤)
+    (h : distributionFreeOperator (distributionPairCLM a) = distributionPairCLM b) :
+    ∃ f : Domain ⊤, domainInclusion f = a ∧ freeOperator f = b :=
+  (distributionFreeOperator_graph_iff a b).mp h
+
+-- Endpoint graph limits only assume convergence in the base coefficient norms.
+example (f : ℕ → Domain ⊤) (a b : PairSpace ⊤)
+    (ha : Filter.Tendsto (fun n => domainInclusion (f n)) Filter.atTop (nhds a))
+    (hb : Filter.Tendsto (fun n => freeOperator (f n)) Filter.atTop (nhds b)) :
+    ∃ g : Domain ⊤, domainInclusion g = a ∧ freeOperator g = b :=
+  exists_domain_of_tendsto_free f ha hb
+
+end DistributionDerivativeChecks

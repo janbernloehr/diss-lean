@@ -10,7 +10,8 @@ The pair spaces carry the maximum norm supplied by Lean's product instance.
 The dissertation uses a different, equivalent pair norm; its numerical constants
 are not asserted here. The operator is bounded from the one-derivative domain
 into the base space. Closedness of its unbounded realization is proved in
-`NLS.ZakharovShabat.ClosedOperator`.
+`NLS.ZakharovShabat.ClosedOperator`. The exact free differential graph on actual
+tempered distributions is identified in `NLS.ZakharovShabat.DistributionFreeOperator`.
 -/
 
 open scoped ENNReal

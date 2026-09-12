@@ -146,4 +146,16 @@ theorem tendsto_distributionSynthesis_truncate (a : Coeff p) :
   simp_rw [distributionSynthesis_truncate_apply]
   exact (summable_norm_distributionSynthesis a g).of_norm.hasSum
 
+/-- The distribution depends on raw coefficients, independently of the chosen exponent. -/
+theorem distributionSynthesis_eq_iff {q : ℝ≥0∞} [Fact (1 ≤ q)] (a : Coeff p) (b : Coeff q) :
+    distributionSynthesis a = distributionSynthesis b ↔ ∀ n : ℤ, a n = b n := by
+  constructor
+  · intro h n
+    simpa only [distributionSynthesis_coefficientTest] using
+      congrArg (fun T : 𝓢'(ℝ, ℂ) => T (coefficientTest n)) h
+  · intro h
+    ext g
+    simp only [distributionSynthesis_apply]
+    exact tsum_congr (fun n => by rw [h n])
+
 end NLS.Fourier

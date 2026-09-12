@@ -459,7 +459,12 @@ frequency tests recover every coefficient. Finite Fourier sums converge in the
 pointwise tempered-distribution topology, including at infinity. Translation
 proves period two and characterizes period one exactly by even support. At
 absolute summability the action is integration against the existing continuous
-series. Next prove compatibility with differentiation and potential multiplication,
-and the converse characterization of arbitrary periodic distributions with the
-required coefficient regularity. The source's distinct infinity-endpoint pair norm
+series. Actual distributional differentiation now agrees with `iπn`, and its
+graph within the same Fourier class is exactly the scalar one-derivative domain.
+The signed-pair free operator has the same exact domain identification. Scalar
+and free pair graphs are closed even at infinity; limits only require the two
+base coefficient norms. Finite-exponent continuous representatives satisfy
+weak integration by parts against Schwartz tests. Next prove distributional
+potential multiplication compatibility and the converse characterization of
+arbitrary periodic distributions with the required coefficient regularity. The source's distinct infinity-endpoint pair norm
 also remains a separate proof obligation.
