@@ -483,6 +483,12 @@ installation is absent. No shell startup files are modified.
   bound. These agree with smooth polynomial multiplication, are independent of
   exponent representations, and are uniquely determined by continuous extension
   from polynomial multipliers, including both infinity-input endpoints.
+- Physical translations of arbitrary periodic `L²` functions are strongly
+  continuous isometries with exact Fourier phases and increment Parseval energy.
+  The fractional translation seminorm is an actual nonnegative double integral
+  and equals its exact Fourier-weighted sum, including infinite energies.
+  Comparing these weights with the conventional Sobolev weights and handling
+  nonperiodic interval boundaries remain steps toward Appendix A.9.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

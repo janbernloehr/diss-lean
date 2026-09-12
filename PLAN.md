@@ -571,3 +571,16 @@ norm bound with constant one and proves convergence at all three summation
 levels. Unit modes attain the bound. The next Fourier-space target is the
 physical fractional Sobolev identification in Appendix A.9; the printed
 general-`p` central spectral height and the main Birkhoff dependencies also remain.
+
+
+The physical translation-energy foundation for Appendix A.9 is now in place.
+Actual circle `L²` translations are strongly continuous isometries, and Parseval
+gives both their exact Fourier increment energy and the factor-two physical
+interval normalization. Nonnegative kernel energies admit a genuine physical
+double-integral formula and an exact Fourier diagonalization by Tonelli,
+including infinite energies. The fractional kernel on `[-1,1]` defines a
+physical regularity predicate and has translation-invariant energy, symmetric
+frequency weights, and exact single-mode and constant-function identities.
+Next, prove comparison of the spectral kernel with `|n|^(2s)` for `0<s<1`,
+then the nonperiodic interval boundary estimate below `s=1/2`. These remaining
+steps are necessary before claiming the physical statement of Appendix A.9.

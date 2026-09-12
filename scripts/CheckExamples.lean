@@ -5793,3 +5793,86 @@ example : mixedYoungRow 1 2 twoModes twoModes twoModes 1 = 5 := by
   norm_num [twoModes]
 
 end MixedYoungChecks
+
+namespace TranslationEnergyChecks
+open NLS.Fourier MeasureTheory Set
+open scoped ENNReal
+
+private theorem phase_half : wave 1 (1 / 2) = Complex.I := by
+  unfold wave
+  have he : ((Real.pi : ℂ) * Complex.I * (1 : ℤ)) * ((1 / 2 : ℝ) : ℂ) =
+      ((Real.pi / 2 : ℝ) : ℂ) * Complex.I := by push_cast; ring
+  rw [he, Complex.exp_ofReal_mul_I]
+  simp
+
+-- A negative-frequency imaginary mode rotates with the positive physical-translation convention.
+example : fourierCoeff (circleTranslation (1 / 2)
+    (l2Synthesis (lp.single 2 (-1) Complex.I))) (-1) = 1 := by
+  rw [fourierCoeff_circleTranslation, fourierCoeff_l2Synthesis, wave_neg, phase_half]
+  simp [lp.single_apply]
+
+example : fourierCoeff (circleTranslation (1 / 2)
+    (l2Synthesis (lp.single 2 (-1) Complex.I))) 1 = 0 := by
+  simp [fourierCoeff_circleTranslation, fourierCoeff_l2Synthesis, lp.single_apply]
+
+-- Inverse translations hold for arbitrary L² classes, not only smooth representatives.
+example (f : CircleL2) : circleTranslation (-(3 / 7)) (circleTranslation (3 / 7) f) = f :=
+  circleTranslation_neg _ f
+
+-- Translation is strongly continuous for every square-summable Fourier sequence.
+example (a : Coeff 2) : Filter.Tendsto (fun t : ℝ => circleTranslation t (l2Synthesis a))
+    (nhds 0) (nhds (l2Synthesis a)) := by
+  simpa only [circleTranslation_zero] using (continuous_circleTranslation (l2Synthesis a)).tendsto 0
+
+-- Physical interval increments really represent the translated difference almost everywhere.
+example (f : CircleL2) : circlePullback (circleTranslation (-3 / 7) f - f)
+    =ᵐ[volume.restrict (Ioc 0 2)]
+      fun x : ℝ => circlePullback f (-3 / 7 + x) - circlePullback f x :=
+  circlePullback_circleTranslation_sub _ f
+
+private def negativeMode : CircleL2 := l2Synthesis (lp.single 2 (-3) Complex.I)
+
+private theorem negativeMode_energy : ‖circleTranslation 1 negativeMode - negativeMode‖ ^ 2 = 4 := by
+  have hs := hasSum_sq_circleTranslation_sub 1 negativeMode
+  rw [← hs.tsum_eq]
+  rw [tsum_eq_single (-3) (by intro n hn; simp [negativeMode, fourierCoeff_l2Synthesis, lp.single_apply, hn])]
+  have hw : wave (-3) 1 = -1 := by simpa using wave_odd_at_one (-2)
+  norm_num [negativeMode, fourierCoeff_l2Synthesis, lp.single_apply, hw]
+
+-- The physical period has length two, so its unnormalized increment energy is eight.
+example : (∫ x in (0 : ℝ)..2,
+    ‖circlePullback negativeMode (1 + x) - circlePullback negativeMode x‖ ^ 2) = 8 := by
+  have he := norm_sq_circleTranslation_sub 1 negativeMode
+  rw [negativeMode_energy] at he
+  linarith
+
+-- Exact fractional diagonalization applies even before finiteness is known.
+example (f : CircleL2) : fractionalTranslationEnergy (1 / 3) f = ∑' n : ℤ,
+    fractionalSpectralWeight (1 / 3) n * ENNReal.ofReal (‖fourierCoeff f n‖ ^ 2) :=
+  fractionalTranslationEnergy_eq_tsum _ f
+
+-- Translation invariance and frequency reflection retain the same physical seminorm.
+example (f : CircleL2) : fractionalTranslationEnergy (1 / 3) (circleTranslation (-2 / 5) f) =
+    fractionalTranslationEnergy (1 / 3) f := fractionalTranslationEnergy_circleTranslation _ _ f
+
+example : fractionalSpectralWeight (1 / 3) (-3) = fractionalSpectralWeight (1 / 3) 3 :=
+  fractionalSpectralWeight_neg _ _
+
+-- An imaginary constant has zero seminorm despite the kernel's singularity at displacement zero.
+example : fractionalTranslationEnergy (1 / 3) (l2Synthesis (lp.single 2 0 Complex.I)) = 0 :=
+  fractionalTranslationEnergy_constant _ _
+
+-- A nonzero negative mode has exactly its weight times the squared amplitude.
+example : fractionalTranslationEnergy (1 / 3) (l2Synthesis (lp.single 2 (-3) (2 * Complex.I))) =
+    fractionalSpectralWeight (1 / 3) (-3) * 4 := by
+  rw [fractionalTranslationEnergy_single]
+  norm_num
+
+-- The energy has a physical double-integral interpretation with the correct half normalization.
+example (f : CircleL2) : fractionalTranslationEnergy (1 / 3) f = ENNReal.ofReal (1 / 2 : ℝ) *
+    ∫⁻ t in Icc (-1 : ℝ) 1, ∫⁻ x in Ioc (0 : ℝ) 2,
+      fractionalTranslationKernel (1 / 3) t *
+        ENNReal.ofReal (‖circlePullback f (t + x) - circlePullback f x‖ ^ 2) :=
+  translationEnergy_eq_double_lintegral _ _ f
+
+end TranslationEnergyChecks

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 204 modules and 1931 named public theorems. All compile on the
+The library has 206 modules and 1959 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -34,6 +34,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.WeightedMultiplier` | General weighted symbol bound; bounded linear multipliers; contractive, injective monotone-weight inclusions |
 | `NLS.SequenceSpaces.SobolevDerivative` | Monotone real regularity embeddings and composition; period-two derivative with norm bound `π`; exact one-unit regularity recovery from raw and derivative data |
+| `NLS.Fourier.CircleTranslation` | Actual periodic `L²` translation isometries; almost-everywhere physical representatives; positive Fourier phase; composition, inversion, strong continuity; exact increment Parseval identity and period-two physical energy normalization |
+| `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNormInfty` | Actual frequencywise sum then supremum norm on signed pairs; complete `lp` construction; continuous equivalences to signed and scalar maximum products; sharp factor two and reflected first component |
@@ -2095,10 +2097,40 @@ every middle sum, and the outer sum. Unit modes attain one in the mixed norm,
 so the constant is sharp. This establishes the displayed finite-positive-exponent
 statement in Appendix B.3, including exponent values below one.
 
+## Physical fractional translation energy: toward Appendix A.9
+
+`CircleTranslation` is a linear isometry of actual normalized circle `L²`,
+constructed from measure-preserving physical translation. Its representative
+is `f(t+x)` almost everywhere and its Fourier coefficients are multiplied by
+`exp(iπnt)`. Translations compose, have inverse displacement `-t`, and are
+strongly continuous on every `L²` class. The continuity proof uses dominated
+convergence of the Fourier coefficients and does not require smooth input.
+
+Parseval gives the exact normalized squared increment energy as the sum of
+`|exp(iπnt)-1|² |f̂(n)|²`. It also equals half the ordinary integral of
+`|f(t+x)-f(x)|²` on `[0,2]`. Every such physical increment is square integrable.
+For any measurable nonnegative displacement kernel and any displacement measure,
+Tonelli exchanges the Fourier sum and the kernel integral, retaining infinite
+values. A second formula identifies this energy with a genuine nonnegative
+physical double integral, with the same normalization factor `1/2`.
+
+The fractional specialization uses displacement `t∈[-1,1]` and kernel
+`|t|^(-1-2s)`. Its regularity predicate is defined by finiteness of physical
+increment energy. Exact Fourier diagonalization gives a spectral finiteness
+criterion; it does not define the physical space through its coefficients.
+Translations preserve this energy, positive and negative frequencies have the
+same spectral weight, each single mode has its exact diagonal energy, and
+constants have zero seminorm despite the kernel singularity.
+
+This is a prerequisite for Appendix A.9, not its completion. The next steps
+are to compare the spectral kernel integral with `|n|^(2s)` for `0<s<1`, and
+to prove the interval-to-periodic boundary estimate for `0≤s<1/2`. The separate
+`H^(1/2)` conclusion also remains to be connected to the physical interval space.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4011 declarations under `NLS`, including generated
+axioms. The current audit covers 4058 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2594,10 +2626,21 @@ mixed bound with distinct nesting exponents. A two-mode calculation gives the
 middle sum five at output frequency one, distinguishing the mixed nesting
 from the square of the ordinary convolution coefficient three.
 
+Translation-energy checks recover the positive physical phase sign from an
+imaginary negative-frequency mode translated by half a unit. They check
+inverse translations and strong continuity for arbitrary `L²` classes, as well
+as the almost-everywhere physical increment formula. A negative mode has
+normalized squared increment energy four and physical interval energy eight.
+Fractional examples check exact diagonalization without finiteness assumptions,
+translation invariance, frequency reflection, zero energy for imaginary
+constants, the amplitude factor four for a nonzero mode, and the physical
+double-integral normalization.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Identify the fractional interval Sobolev spaces used in Appendix A.9. The
+2. Compare the fractional translation spectral weights with Sobolev weights,
+   then prove the physical interval identification in Appendix A.9. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main

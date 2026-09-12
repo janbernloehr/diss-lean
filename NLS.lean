@@ -152,3 +152,5 @@ import NLS.SequenceSpaces.PowerCoefficients
 import NLS.SequenceSpaces.PowerYoung
 import NLS.SequenceSpaces.MixedYoungExponents
 import NLS.SequenceSpaces.MixedYoung
+import NLS.Fourier.CircleTranslation
+import NLS.Fourier.FractionalTranslationEnergy
