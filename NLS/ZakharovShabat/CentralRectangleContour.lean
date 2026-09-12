@@ -7,7 +7,7 @@ import NLS.ZakharovShabat.CentralDeformation
 The corner-based boundary is exactly the existing central rectangle boundary,
 including all four corners. Its actual normalized resolvent integral is compact
 and factors through the domain, uniformly on the existing counting neighborhood.
-Equality with the central algebraic projection still requires contour deformation.
+Equality with the whole central algebraic projection is proved in `CentralRectangleProjection`.
 -/
 
 noncomputable section

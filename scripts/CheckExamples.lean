@@ -4246,3 +4246,69 @@ example (φ : PairSpace 3) (N : ℕ) (hc : centralRectangleBoundary N ⊆ resolv
 
 end
 end RectangleResidueChecks
+
+
+namespace RectangleProjectionChecks
+open NLS NLS.ZakharovShabat Complex Set Metric
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- Both integrands have interior poles; Fubini requires continuity only on the product of contours.
+example : RectangleIntegral.integral (fun ζ => ∮ η in C(0, 4), (ζ : ℂ)⁻¹ * η⁻¹) (-1 - I) (1 + I) =
+    ∮ η in C(0, 4), RectangleIntegral.integral (fun ζ : ℂ => ζ⁻¹ * η⁻¹) (-1 - I) (1 + I) := by
+  have hrect : ContinuousOn (fun ζ : ℂ => ζ⁻¹) (RectangleIntegral.boundary (-1 - I) (1 + I)) := by
+    simpa only [sub_zero] using RectangleIntegral.continuousOn_inv_sub
+      (a := 0) (z := -1 - I) (w := 1 + I) (by norm_num [RectangleIntegral.boundary])
+  have hc : ContinuousOn (fun η : ℂ => η⁻¹) (sphere 0 4) := by
+    apply continuousOn_id.inv₀
+    intro η hη
+    change η ≠ 0
+    intro hzero
+    subst η
+    norm_num at hη
+  apply RectangleIntegral.circle_swap (by norm_num)
+  exact (hrect.comp continuousOn_fst (fun _ h => h.1)).mul
+    (hc.comp continuousOn_snd (fun _ h => h.2))
+
+-- The mixed integral keeps both orientation factors: (2 pi i)^2.
+example : RectangleIntegral.integral (fun ζ => ∮ η in C(0, 4), (ζ : ℂ)⁻¹ * η⁻¹) (-1 - I) (1 + I) =
+    (2 * Real.pi * I : ℂ) ^ 2 := by
+  have hcircle : (∮ η in C(0, 4), (η : ℂ)⁻¹) = 2 * Real.pi * I := by
+    simpa only [sub_zero] using circleIntegral.integral_sub_inv_of_mem_ball
+      (c := 0) (R := 4) (w := 0) (by norm_num)
+  have hrect : RectangleIntegral.integral (fun ζ : ℂ => ζ⁻¹) (-1 - I) (1 + I) = 2 * Real.pi * I := by
+    simpa only [sub_zero] using RectangleIntegral.integral_inv_sub_of_mem
+      (z := -1 - I) (w := 1 + I) (a := 0) (by norm_num [mem_reProdIm])
+  simp only [circleIntegral.integral_const_mul, hcircle]
+  calc
+    _ = RectangleIntegral.integral (fun ζ : ℂ => (2 * Real.pi * I : ℂ) • ζ⁻¹) (-1 - I) (1 + I) := by
+      apply RectangleIntegral.congr
+      intro ζ _
+      simp [smul_eq_mul, mul_comm]
+    _ = _ := by rw [RectangleIntegral.integral_smul, hrect]; simp [smul_eq_mul, pow_two]
+
+-- Whole-space equality also holds at p=1, on arbitrary base-space inputs.
+example (φ x : PairSpace 1) (N : ℕ) (hc : centralRectangleBoundary N ⊆ resolventSet (by simp) φ) :
+    centralRectangleIntegral (by simp) φ N x = centralSpectralProjection (by simp) φ N x := by
+  rw [centralRectangleIntegral_eq_centralSpectralProjection (by simp) φ N hc]
+
+-- In particular, every vector in the complementary component is annihilated.
+example (φ x : PairSpace 3) (N : ℕ) (hc : centralRectangleBoundary N ⊆ resolventSet (by simp) φ) :
+    centralRectangleIntegral (by simp) φ N (x - centralSpectralProjection (by simp) φ N x) = 0 := by
+  rw [centralRectangleIntegral_eq_centralSpectralProjection (by simp) φ N hc, map_sub]
+  have h := DFunLike.congr_fun (centralSpectralProjection_idempotent (by simp) φ N) x
+  change centralSpectralProjection (by simp) φ N (centralSpectralProjection (by simp) φ N x) =
+    centralSpectralProjection (by simp) φ N x at h
+  rw [h, sub_self]
+
+-- One neighborhood gives the actual contour formula, analyticity, and exact rank for every larger cutoff.
+example (φ : PairSpace 3) :
+    ∃ N₀ : ℕ, ∃ U : Set (PairSpace 3), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      (∀ N : ℕ, N₀ ≤ N → AnalyticOnNhd ℂ (fun ψ => centralRectangleIntegral (by simp) ψ N) U) ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        Module.finrank ℂ (centralRectangleIntegral (by simp) ψ N).range = 4 * N + 2 := by
+  obtain ⟨N₀, U, hN, ho, hc, hφ, h0, ha, h⟩ := exists_uniform_centralRectangleProjection (by simp) φ
+  exact ⟨N₀, U, hN, ho, hc, hφ, h0, ha, fun ψ hψ N hn => (h ψ hψ N hn).2.2⟩
+
+end
+end RectangleProjectionChecks

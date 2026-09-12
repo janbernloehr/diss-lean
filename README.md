@@ -193,9 +193,12 @@ invariance when an edge moves through a resolvent strip. The central corners
 and boundary agree exactly with the existing box. Scalar residue formulas now
 prove selection of full generalized eigenspaces and every finite spectral
 cluster, and the central rectangular integral fixes the central algebraic
-projection. Its action outside finite clusters still needs to be controlled.
-Equality with the central spectral projection, the overview theorem's exact
-norm-dependent height, and the main dissertation theorems remain future work.
+projection. Mixed rectangular/circular integration now controls the whole
+space and proves equality with the central spectral projection. The actual
+rectangular integral is idempotent, has exactly the central generalized-eigenspace
+range, and is analytic with rank `4N+2` on one common counting neighborhood.
+The overview theorem's exact norm-dependent height and the main dissertation
+theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

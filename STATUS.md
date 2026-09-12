@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 151 modules and 1477 named public theorems. All compile on the
+The library has 154 modules and 1487 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -158,6 +158,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.RectangleResidues` | Horizontal/vertical primitive formulas; closed-contour primitive cancellation; logarithmic evaluation of enclosed simple poles; exterior vanishing; all higher pole terms vanish when the boundary avoids the pole |
 | `NLS.ZakharovShabat.RectangleRootSelection` | Weighted rectangular integration along all finite Jordan chains; full enclosed root spaces fixed and exterior root spaces annihilated; individual projection selection, including boundary points; exact finite-cluster filtering |
 | `NLS.ZakharovShabat.CentralRectangleSelection` | Exact open-corner geometry; actual central contour selects individual root-space projections; absorption of the central algebraic projection and inclusion of its range in the rectangular integral range |
+| `NLS.FunctionalAnalysis.RectangleCircleIntegral` | Integrability of continuous edge-integral families on a circle; edge/circle Fubini; interchange of the actual rectangular and circular Banach-valued integrals using only product-boundary continuity |
+| `NLS.ZakharovShabat.RectangleCircleComparison` | Resolvent identity integrated against exterior resolvents; a rectangular contour operator is unchanged by multiplication with any admissible circle enclosing its filled rectangle, on the whole base space |
+| `NLS.ZakharovShabat.CentralRectangleProjection` | Actual rectangular integral equals the central algebraic projection on the whole space; idempotence, exact generalized-eigenspace range, algebraic rank formula, and uniform operator-norm analyticity and rank `4N+2` |
 
 ## Current mathematical milestone
 
@@ -386,8 +389,9 @@ and preserve both subspaces, supplying the invariant spaces used in (1.5).
 Both signed free modes have the parity of their spectral index, since `n`
 and `-n` have the same residue modulo two.
 
-The physical Fourier realization and canonical period-one embedding remain
-open. Identification with a rectangular contour integral remains to be proved.
+The general Fourier/distribution realization and canonical physical period-one
+embedding remain open. The actual rectangular contour identification is proved
+below.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
 Every free root vector at `π n` has first component supported at `-n` and second
@@ -1066,8 +1070,8 @@ admissible at all sufficiently large frequencies on a common neighborhood
 of any potential, by the uniform strip result above. The high-frequency
 free-to-perturbed rank counts are proved. The central boundary is admissible
 as described above. The central projection equals a large-circle integral,
-and its perturbed rank count is now proved. Identification with the integral
-over the rectangular boundary remains separate.
+and its perturbed rank count is now proved. Identification with the actual
+integral over the rectangular boundary is proved below.
 Agreement of multiplicities with characteristic-function zero orders remains open.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
@@ -1455,11 +1459,10 @@ retained rectangle's interior need not be in the resolvent set.
 central rectangle and its boundary, including corners. `centralRectangleIntegral`
 is the actual integral along those four edges. The existing common neighborhood
 makes every sufficiently large central contour integrable in the domain norm,
-with a compact base-space integral. Equality with `centralSpectralProjection`
-is not yet proved. The enclosed-pole and full root-space selection argument is
-proved below; the remaining step controls the contour's action outside finite
-spectral clusters, for example by comparison with an enclosing circular contour.
-The overview theorem's norm-dependent height also remains separate.
+with a compact base-space integral. The enclosed-pole selection and
+whole-space enclosing-circle comparison below prove equality with
+`centralSpectralProjection`. The overview theorem's norm-dependent height
+remains separate.
 
 ## Rectangular residues and full root-space selection
 
@@ -1483,15 +1486,43 @@ For the actual central corners this proves
 `centralRectangleIntegral * centralSpectralProjection = centralSpectralProjection`.
 
 Consequently the range of the central algebraic projection lies in the range
-of the actual rectangular integral. This does not yet prove equality of the
-operators or the reverse range inclusion. The remaining comparison must rule
-out additional action outside finite spectral clusters; an enclosing-circle
-resolvent identity and interchange of integrations would supply that step.
+of the actual rectangular integral. The whole-space comparison below supplies
+the additional argument needed for operator equality, including the complementary
+component outside finite spectral clusters.
+
+## Whole-space rectangular contour identification
+
+Continuous Banach-valued functions on the product of a rectangular boundary
+and a circle satisfy the mixed-contour Fubini identity. Continuity on the
+contours suffices; the interiors may contain poles. The proof uses integrability
+on compact parameter rectangles and retains the orientation factors on all
+four straight edges and the circle.
+
+For a resolvent circle enclosing the entire filled rectangle, integrating the
+resolvent identity in both parameters proves
+
+`resolventRectangleIntegral * resolventCircleIntegral = resolventRectangleIntegral`.
+
+This identity holds on the entire base space. A sufficiently large admissible
+circle therefore captures all action of the rectangular operator. The circular
+projection is already identified with its finite spectral cluster; rectangular
+root-space selection filters that cluster to exactly the central spectrum.
+Consequently `centralRectangleIntegral_eq_centralSpectralProjection` proves
+equality of the actual four-edge integral and the central algebraic projection
+whenever the central boundary lies in the resolvent set.
+
+The rectangular integral is idempotent, its range is exactly the sum of the
+central full generalized eigenspaces, and its rank is the sum of their algebraic
+multiplicities. One open convex neighborhood containing the potential and zero
+makes every sufficiently large rectangular projection analytic in operator norm
+with rank `4N+2`. This closes the rectangular contour identification for the
+existing height-`N` box. The overview's exact norm-dependent height and the
+remaining physical Fourier/distribution interpretation are still open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3128 declarations under `NLS`, including generated
+axioms. The current audit covers 3140 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1833,10 +1864,16 @@ chain at `π`; an admissible central rectangle fixes its generalized vector,
 which remains outside the ordinary eigenspace. A further check exercises the
 inclusion of the whole central algebraic range in the rectangular integral range.
 
+Whole-space contour checks interchange an integrand with poles inside both
+contours and evaluate its mixed integral as `(2πi)²`. At `p=1` the rectangular
+and algebraic operators agree on arbitrary inputs. At `p=3` every complementary
+component `x-Px` is annihilated. Further checks instantiate one neighborhood
+with operator-norm analytic actual rectangular projections and exact rank
+`4N+2` for every larger cutoff.
+
 ## Next milestones
 
-1. Identify the central projection with the rectangular contour integral and
-   transfer the overview theorem's exact norm-dependent central-height convention.
+1. Transfer the overview theorem's exact norm-dependent central-height convention.
 2. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, general-`p` potential pair-norm comparison, and multiplication
    beyond the Hilbert realization.

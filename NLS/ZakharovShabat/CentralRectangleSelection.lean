@@ -6,8 +6,8 @@ import NLS.ZakharovShabat.RectangleRootSelection
 
 The actual four-edge contour fixes all central full root spaces and annihilates
 all exterior ones. In particular it absorbs the algebraic central projection,
-and its range contains the full central cluster. The reverse range inclusion
-still requires comparison with an enclosing circle.
+and its range contains the full central cluster. The whole operator equality
+is proved by enclosing-circle comparison in `CentralRectangleProjection`.
 -/
 
 noncomputable section

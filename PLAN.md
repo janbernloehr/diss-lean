@@ -423,9 +423,12 @@ exterior poles and all higher pole terms integrate to zero. Applying these
 formulas along finite Jordan chains proves full root-space selection and exact
 finite-cluster filtering. In particular the actual central rectangular integral
 absorbs the central algebraic projection, and its range contains the central
-algebraic range. Identification of the whole operators remains open: next
-control the action outside finite clusters by comparison with an enclosing
-circle, using the resolvent identity and interchange of integrations. The unified statement uses Corollary 3.5's height-`N` box;
+algebraic range. Mixed-contour Fubini and the resolvent identity now show that
+an enclosing circular projection captures all action of the rectangular integral.
+Finite-cluster filtering then identifies the whole rectangular operator with the
+central algebraic projection. The actual rectangle is idempotent, has exactly
+the central full-root-space range, and varies analytically with rank `4N+2` on
+one common neighborhood for all larger cutoffs. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 The general Fourier/distribution interpretation, physical period-one embedding,

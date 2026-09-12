@@ -122,6 +122,11 @@ theorem integral_sub {f g : ℂ → E} {z w : ℂ} (hf : Integrable f z w) (hg :
     intervalIntegral.integral_sub hf.left hg.left, smul_sub]
   abel
 
+/-- Multiplication by a constant complex scalar commutes with rectangular integration. -/
+theorem integral_smul (a : ℂ) (f : ℂ → E) (z w : ℂ) :
+    integral (fun ζ => a • f ζ) z w = a • integral f z w := by
+  simp only [integral, intervalIntegral.integral_smul, smul_sub, smul_add, smul_comm I a]
+
 variable [CompleteSpace E] [CompleteSpace F]
 
 omit [CompleteSpace F] in
