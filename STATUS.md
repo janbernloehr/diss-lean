@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has sixty-nine modules and 719 named public theorems. All compile on the
+The library has seventy-one modules and 768 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -76,6 +76,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.ReflectionSplit` | Closed complementary positive/negative graphs of an isometry; isometric amplitude coordinates; contractive complementary projections and their algebraic identities |
 | `NLS.ZakharovShabat.BoundarySpaces` | Section 4 equations (1.8)–(1.9): closed Dirichlet/Neumann coefficient spaces at every Sobolev regularity; amplitude isometries; domain/base projection compatibility; nonzero signed free boundary modes |
 | `NLS.ZakharovShabat.BoundaryOperators` | Coefficient form of Lemma 4.4 for already-reflected potentials: both invariant subspaces, bounded restricted operators, projection intertwining, and exact positive/negative mode-action signs |
+| `NLS.ZakharovShabat.BoundaryResolvent` | Actual Dirichlet/Neumann pencils and full resolvent sets; fixed-free normalization; two-sided inverses; compactness; joint analyticity and openness; agreement with periodic restrictions on the common domain; boundary preservation by resolvents and circle projections |
+| `NLS.ZakharovShabat.BoundarySpectrum` | Closed discrete boundary spectra, finite bounded portions, compact-resolvent spectral transformation and eigenvector characterization; periodic resolvent intersection and spectral union |
 
 ## Current mathematical milestone
 
@@ -509,6 +511,30 @@ and the discrete-Hilbert-transform estimate in Lemma 4.3 remain open. In
 particular, projecting period-two data here is distinct from extending
 period-one data by reflection; the latter estimate requires `1<p<∞`.
 
+**The full boundary resolvents and spectral decomposition are proved.**
+`BoundaryCondition` selects either restriction without changing its operator.
+Each resolvent set consists exactly of the parameters at which that restriction's
+pencil is bijective. A fixed free inverse at `i` normalizes each pencil to a
+bounded endomorphism. Banach-algebra inversion then supplies the full
+boundary-domain inverse, extended by zero only outside its own resolvent set.
+Both inverse identities are proved. The base resolvents are compact and jointly
+analytic on their open domains in the reflected potential space and parameter.
+
+The periodic resolvent set is the intersection of these two resolvent sets,
+and the periodic spectrum is exactly the union of the boundary spectra. Each
+boundary spectrum is closed, discrete and finite in every bounded region.
+Transformation to the nonzero spectrum of a compact boundary resolvent proves
+that every boundary spectral point has an eigenvector in that boundary domain.
+On the common periodic resolvent set, the boundary inverses equal the restrictions
+of the periodic inverse. The periodic resolvent and the circle projectors commute
+with both boundary projections and preserve both subspaces.
+
+The distinction between the individual and common resolvent sets matters:
+for the constant potential `(1,1)`, `1` is a Dirichlet eigenvalue but a Neumann
+resolvent point. The Neumann inverse is proved nonzero and analytic there.
+Boundary algebraic multiplicities, the high-disk and central counts in Theorem 1.4,
+and Lemma 4.5's analytic simple eigenvalues remain next steps.
+
 The actual unbounded realization is now defined as
 
 `unboundedOperator hp φ : PairSpace p →ₗ.[ℂ] PairSpace p`.
@@ -721,7 +747,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1524 declarations under `NLS`, including generated
+axioms. The current audit covers 1621 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -862,10 +888,17 @@ to `5`. Further checks cover restricted norm bounds, odd-frequency reflected
 potentials and projection intertwining at `p=1`, and failure of invariance for
 a potential lacking reflection symmetry.
 
+Boundary-resolvent checks distinguish the two spectra for the constant potential
+`(1,1)`: `1` is a Dirichlet eigenvalue and a Neumann resolvent point, with a
+nonzero Neumann inverse, its inverse identity, compactness, and joint analyticity.
+They also verify totalization outside the individual resolvent set, compatibility
+with the preceding bounded operator, the spectral union and bounded spectral
+finiteness at `p=1`, and boundary preservation by a negative-index circle.
+
 ## Next milestones
 
-1. Continue Section 4 with the resolvents and spectral counting of the restricted
-   Dirichlet and Neumann operators. Prove the physical interval-extension maps
+1. Prove the Dirichlet/Neumann algebraic multiplicities and spectral counts of
+   Theorem 1.4, followed by analytic simple eigenvalues in Lemma 4.5. Prove the interval-extension maps
    and the discrete Hilbert transform bound needed in Lemmas 4.1–4.3.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.

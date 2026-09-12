@@ -1893,3 +1893,122 @@ example (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace) (f : Domain 1) :
   operator_neumannProjection (by simp) φ hφ f
 
 end BoundarySpaceChecks
+
+section BoundarySpectralChecks
+
+set_option autoImplicit false
+open Complex
+
+namespace BoundaryResolventChecks
+
+def unitPotential : PairSpace 3 := (lp.single 3 0 1, lp.single 3 0 1)
+
+theorem unitPotential_mem : unitPotential ∈ dirichletSubspace := by
+  rw [mem_dirichletSubspace]
+  intro n
+  simp [unitPotential, lp.single_apply, Pi.single_apply]
+
+-- The Dirichlet constant mode has eigenvalue 1.
+theorem one_mem_dirichletSpectrum :
+    1 ∈ BoundaryCondition.spectrum .dirichlet (by simp) unitPotential unitPotential_mem := by
+  rw [BoundaryCondition.mem_spectrum_iff_exists_eigenvector]
+  refine ⟨dirichletMode 0, dirichletMode_mem 0, ?_, ?_⟩
+  · intro h
+    exact domainInclusion_dirichletMode_ne_zero 0 (by rw [h, map_zero])
+  · apply Prod.ext <;> ext n <;>
+      simp [operator_fst_apply, operator_snd_apply, unitPotential, dirichletMode,
+        positiveMode, negativeMode, lp.single_apply, Pi.single_apply, mul_ite]
+
+-- The same parameter is in the full Neumann resolvent set.
+theorem one_mem_neumannResolvent :
+    1 ∈ BoundaryCondition.resolventSet .neumann (by simp) unitPotential unitPotential_mem := by
+  by_contra hz
+  obtain ⟨f, hf, hne, he⟩ := (BoundaryCondition.mem_spectrum_iff_exists_eigenvector
+    .neumann (by simp) unitPotential unitPotential_mem 1).mp hz
+  have hN := (mem_weightedNeumannSubspace 1 f).mp hf
+  have h₁ (n : ℤ) : -(Real.pi : ℂ) * n * f.1.val n + f.2.val n = f.1.val n := by
+    have h := congrArg (fun a : PairSpace 3 => a.1 n) he
+    simpa [operator, unitPotential, potentialMul_unit_apply] using h
+  have h₂ (n : ℤ) : (Real.pi : ℂ) * n * f.2.val n + f.1.val n = f.2.val n := by
+    have h := congrArg (fun a : PairSpace 3 => a.2 n) he
+    simpa [operator, unitPotential, potentialMul_unit_apply] using h
+  have hs (n : ℤ) : f.2.val n = 0 := by
+    by_cases hn : n = 0
+    · subst n
+      have ha := h₂ 0
+      have hb := hN 0
+      norm_num at ha hb
+      linear_combination (hb - ha) / 2
+    · have ht : ((Real.pi : ℂ) * n)^2 * f.2.val n = 0 := by
+        linear_combination h₁ n + ((Real.pi : ℂ) * n + 1) * h₂ n
+      have hc : ((Real.pi : ℂ) * n)^2 ≠ 0 := by
+        exact pow_ne_zero _ (mul_ne_zero (ofReal_ne_zero.mpr Real.pi_ne_zero) (Int.cast_ne_zero.mpr hn))
+      exact (mul_eq_zero.mp ht).resolve_left hc
+  apply hne
+  apply Prod.ext <;> apply Subtype.ext <;> funext n
+  · change f.1.val n = 0
+    rw [hN n, hs, neg_zero]
+  · exact hs n
+
+example : 1 ∉ resolventSet (by simp) unitPotential :=
+  BoundaryCondition.spectrum_subset_periodic .dirichlet _ _ _ one_mem_dirichletSpectrum
+
+example (a : BoundaryCondition.space (p := 3) .neumann) :
+    BoundaryCondition.pencil .neumann (by simp) unitPotential unitPotential_mem 1
+      (BoundaryCondition.resolventToDomain .neumann (by simp) unitPotential unitPotential_mem 1 a) = a :=
+  BoundaryCondition.pencil_resolventToDomain _ _ _ _ _ one_mem_neumannResolvent a
+
+example : AnalyticAt ℂ
+    (fun t : ↥(dirichletSubspace (p := 3)) × ℂ =>
+      BoundaryCondition.resolvent .neumann (by simp) t.1.val t.1.property t.2)
+    (⟨unitPotential, unitPotential_mem⟩, 1) :=
+  BoundaryCondition.analyticAt_resolvent .neumann (by simp) _ one_mem_neumannResolvent
+
+example : IsCompactOperator
+    (BoundaryCondition.resolvent .neumann (by simp) unitPotential unitPotential_mem 1) :=
+  BoundaryCondition.isCompactOperator_resolvent _ _ _ _ _
+
+example : BoundaryCondition.resolventToDomain .dirichlet (by simp)
+    unitPotential unitPotential_mem 1 = 0 :=
+  BoundaryCondition.resolventToDomain_eq_zero_of_notMem _ _ _ _ _ one_mem_dirichletSpectrum
+
+-- The Neumann inverse is nonzero at this periodic spectral point.
+example : BoundaryCondition.resolventToDomain .neumann (by simp)
+    unitPotential unitPotential_mem 1 ≠ 0 := by
+  intro h
+  have hf := BoundaryCondition.resolventToDomain_pencil .neumann (by simp)
+    unitPotential unitPotential_mem 1 one_mem_neumannResolvent
+    (⟨neumannMode 0, neumannMode_mem 0⟩ : BoundaryCondition.domain (p := 3) .neumann)
+  rw [h, zero_apply] at hf
+  have hz : neumannMode (p := 3) 0 = 0 := (congrArg Subtype.val hf).symm
+  exact domainInclusion_neumannMode_ne_zero 0 (by rw [hz, map_zero])
+
+-- The pencil uses the bounded restriction from the preceding milestone.
+example (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace) (z : ℂ) :
+    BoundaryCondition.pencil .dirichlet (by simp) φ hφ z =
+      z • BoundaryCondition.inclusion .dirichlet - dirichletOperator (by simp) φ hφ := by
+  apply ContinuousLinearMap.ext
+  intro f
+  rfl
+
+-- Both boundary spectra are retained by the exact union identity.
+example (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace) :
+    periodicSpectrum (by simp) φ = BoundaryCondition.spectrum .dirichlet (by simp) φ hφ ∪
+      BoundaryCondition.spectrum .neumann (by simp) φ hφ :=
+  periodicSpectrum_eq_boundary_union _ _ _
+
+example (b : BoundaryCondition) (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace) :
+    Set.Finite (BoundaryCondition.spectrum b (by simp) φ hφ ∩ Metric.closedBall 0 10) :=
+  BoundaryCondition.finite_spectrum_inter_of_isBounded b _ _ _ (Metric.isBounded_closedBall)
+
+-- A high-frequency circle preserves both boundary spaces.
+example (b : BoundaryCondition) (φ : PairSpace 3) (hφ : φ ∈ dirichletSubspace)
+    (hc : Metric.sphere ((Real.pi : ℂ) * (-3)) (Real.pi / 4) ⊆ resolventSet (by simp) φ)
+    (a : PairSpace 3) (ha : a ∈ BoundaryCondition.space b) :
+    resolventCircleIntegral (by simp) φ ((Real.pi : ℂ) * (-3)) (Real.pi / 4) a ∈
+      BoundaryCondition.space b :=
+  BoundaryCondition.contour_mem b (by simp) φ hφ _ _ (by positivity) hc a ha
+
+end BoundaryResolventChecks
+
+end BoundarySpectralChecks

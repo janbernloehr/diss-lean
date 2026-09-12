@@ -80,6 +80,11 @@ projections. The operator preserves both spaces for already-reflected potentials
 its bounded restrictions and the exact signed free-mode and potential-action
 formulas are proved. Identification with physical boundary conditions and the
 interval-extension estimates in Lemmas 4.1–4.3 remain open.
+Both boundary restrictions now have full compact resolvents, jointly analytic
+on their own open domains. Their spectra are closed and discrete, with finite
+bounded portions and an eigenvector characterization. The periodic spectrum is
+exactly their union. Periodic resolvents and circle projections preserve both
+boundary spaces; boundary eigenvalue counts remain to be proved.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -174,6 +179,13 @@ has the exact positive Dirichlet and negative Neumann coupling from index `-3`
 to `5`. Further checks cover restricted norm bounds, odd-frequency reflected
 potentials and projection intertwining at `p=1`, and failure of invariance for
 a potential lacking reflection symmetry.
+
+Boundary-resolvent checks distinguish the two spectra for the constant potential
+`(1,1)`: `1` is a Dirichlet eigenvalue and a Neumann resolvent point, with a
+nonzero Neumann inverse, its inverse identity, compactness, and joint analyticity.
+They also verify totalization outside the individual resolvent set, compatibility
+with the preceding bounded operator, the spectral union and bounded spectral
+finiteness at `p=1`, and boundary preservation by a negative-index circle.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

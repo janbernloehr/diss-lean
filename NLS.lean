@@ -60,3 +60,4 @@ import NLS.ZakharovShabat.RealType
 import NLS.ZakharovShabat.SpectralReduction
 import NLS.ZakharovShabat.SymmetricEigenvalues
 import NLS.ZakharovShabat.BoundaryOperators
+import NLS.ZakharovShabat.BoundarySpectrum

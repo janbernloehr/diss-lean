@@ -252,11 +252,22 @@ and contractive projections. Both signed boundary modes have free eigenvalue
 restricted bounded operators, projection intertwining, and the opposite signs
 in the potential's mode action are proved for every finite Banach exponent.
 
-Next continue with the Dirichlet/Neumann resolvents and spectral counting.
+The full resolvents of both boundary restrictions are now constructed. Each
+resolvent set is defined by bijectivity of its own pencil, and normalization
+by the fixed free inverse gives both inverse identities, compactness, and joint
+analyticity on the full open domain of reflected potentials and parameters.
+The periodic resolvent set is their intersection and the periodic spectrum is
+the union of the boundary spectra. Both spectra are closed and discrete with
+finite bounded portions; compact-resolvent spectral transformation proves that
+every spectral point has an eigenvector satisfying the selected boundary condition.
+The periodic resolvent and circle projections preserve both boundary spaces.
+
+Next prove the boundary root-space multiplicities and the high-disk and central
+counts in Theorem 1.4, then the analytic simple eigenvalues of Lemma 4.5.
 The physical interval-extension maps of Lemmas 4.1–4.2 and the discrete Hilbert
 transform estimate of Lemma 4.3 still need proofs. The period-two projections
-just constructed are not substitutes for those extension maps. Identification with the rectangular
-contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
+just constructed are not substitutes for those extension maps.
+Identification with the rectangular contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 Physical-space interpretation, period-one embedding, and comparison with the
