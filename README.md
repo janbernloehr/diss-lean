@@ -44,8 +44,10 @@ maximum pair norm, giving further punctured-strip and spectral-circle criteria.
 Corollary 3.5 now localizes the spectrum of every potential to a central box
 and the remaining quarter-pi disks, uniformly on an open convex neighborhood
 containing both that potential and zero. The exterior resolvent is compact
-and analytic. The multiplicity counts and main dissertation theorems remain
-future work.
+and analytic. Closed complementary even/odd Fourier subspaces and their
+invariance under even-supported potentials are also proved (Lemma 3.6),
+including preservation by the full resolvent and spectral circle projections.
+The multiplicity counts and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -109,7 +111,9 @@ Frequency-tail checks exercise cutoff boundaries, both frequency signs, `p=1,3`,
 and admissible circles about `±200π` for the two-sided constant potential `(1,1)`,
 which fails the earlier small-potential strip condition. Localization checks
 also exercise both central-box boundary conventions, common cutoffs along
-`[0,φ]`, and the full neighborhood result at the `p=1` endpoint.
+`[0,φ]`, and the full neighborhood result at the `p=1` endpoint. Parity checks
+include negative frequencies, nonconstant even potentials, resolvent and contour
+preservation, and a counterexample when the even-support hypothesis is omitted.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
@@ -149,6 +153,9 @@ installation is absent. No shell startup files are modified.
   criterion admits whole punctured strips and circles. Arbitrary-potential
   localization is proved uniformly on open convex potential neighborhoods
   containing zero, with the central box and disks specified in Corollary 3.5.
+  The closed even/odd coefficient subspaces are complementary. Even-supported
+  potentials preserve both subspaces, as do their resolvents and spectral
+  circle projections.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

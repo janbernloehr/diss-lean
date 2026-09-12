@@ -164,9 +164,16 @@ spectrum lies in the exact central box and the high-frequency quarter-pi disks.
 The box uses a strict real boundary and a non-strict imaginary boundary; the
 coverage proof treats the vertical edges separately.
 
-Next formalize the even/odd Fourier subspaces and their invariance for
-period-one potentials (Lemma 3.6). Then construct the central rectangular
-contour and use the connected neighborhood and contour rank stability for
-the multiplicity counts of Proposition 1.1.
+Lemma 3.6 is proved for even-supported coefficient potentials. Closed
+complementary parity subspaces have contractive coordinate projections, which
+also preserve the weighted operator domain. The operator, spectral pencil,
+full resolvent, and spectral circle integrals satisfy the corresponding
+projection identities and preserve both parities. Signed free modes retain
+the parity of their spectral index, including negative frequencies.
+
+Next combine the free-mode decomposition with contour rank stability on the
+connected potential neighborhood to prove the high-frequency disk counts
+and their parity. Construct the central rectangular contour for the remaining
+counts in Proposition 1.1.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

@@ -46,3 +46,5 @@ import NLS.SequenceSpaces.ReciprocalTail
 import NLS.ZakharovShabat.DoubleResolventEstimates
 import NLS.ZakharovShabat.FrequencyLocalization
 import NLS.ZakharovShabat.SpectralLocalization
+import NLS.SequenceSpaces.Parity
+import NLS.ZakharovShabat.PeriodicParity

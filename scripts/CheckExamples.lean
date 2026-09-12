@@ -1068,3 +1068,56 @@ example (φ : PairSpace 1) :
         (∀ z ∈ spectralExterior N (Real.pi / 4), IsCompactOperator (resolvent (by simp) ψ z)) ∧
         periodicSpectrum (by simp) ψ ⊆ centralSpectralBox N ∪ highSpectralDisks N (Real.pi / 4) :=
   exists_spectralLocalization (by simp) φ
+
+-- Lemma 3.6: parity decomposition, nonconstant even potentials, and the required hypothesis.
+example : Coeff.parityProjection 0 (lp.single 3 (-2) (3 : ℂ)) = lp.single 3 (-2) 3 := by simp
+example : Coeff.parityProjection 1 (lp.single 1 (-3) (2 : ℂ)) = lp.single 1 (-3) 2 := by simp
+example : Coeff.parityProjection 0 (lp.single ⊤ (-3) (2 : ℂ)) = 0 := by simp
+example : IsCompl (pairParitySubspace (p := 3) 0) (pairParitySubspace 1) :=
+  isCompl_pairParitySubspaces
+example : IsClosed (pairParitySubspace (p := 1) 1 : Set (PairSpace 1)) :=
+  isClosed_pairParitySubspace 1
+
+private def evenShiftPotential : PairSpace 1 := (lp.single 1 2 1, lp.single 1 (-2) 1)
+private theorem evenShift_even : evenShiftPotential ∈ pairParitySubspace 0 :=
+  ⟨Coeff.single_mem_paritySubspace 0 2 1 (by norm_num),
+    Coeff.single_mem_paritySubspace 0 (-2) 1 (by norm_num)⟩
+
+-- Nonconstant even potentials couple odd modes only to odd frequencies.
+example : operator (by simp) evenShiftPotential (positiveMode 1) ∈ pairParitySubspace 1 :=
+  operator_mem_pairParitySubspace (by simp) _ evenShift_even 1 _ (positiveMode_mem_domainParitySubspace 1)
+example : (operator (by simp) evenShiftPotential (positiveMode 1)).1 3 = 1 := by
+  simp [operator_fst_apply, evenShiftPotential, positiveMode, lp.single_apply, Pi.single_apply]
+example : (operator (by simp) evenShiftPotential (negativeMode 1)).2 (-3) = 1 := by
+  simp [operator_snd_apply, evenShiftPotential, negativeMode, lp.single_apply, Pi.single_apply]
+
+private def parityParameter : ℂ := 2 * Complex.I
+private theorem parityParameter_off : parityParameter ∉ freeLattice :=
+  notMem_freeLattice_of_im_ne_zero (by norm_num [parityParameter])
+private theorem parityParameter_mem : parityParameter ∈ resolventSet (by simp) evenShiftPotential := by
+  apply mem_resolventSet_of_neumannCondition (by simp) _ _ parityParameter_off
+  apply neumannCondition_one
+  norm_num [parityParameter, evenShiftPotential, Prod.norm_def, lp.norm_single]
+
+example : Commute (pairParityProjection 1) (resolvent (by simp) evenShiftPotential parityParameter) :=
+  pairParityProjection_commute_resolvent (by simp) _ evenShift_even 1 _ parityParameter_mem
+
+example (a : PairSpace 1) (ha : a ∈ pairParitySubspace 1) :
+    resolvent (by simp) evenShiftPotential parityParameter a ∈ pairParitySubspace 1 :=
+  resolvent_mem_pairParitySubspace (by simp) _ evenShift_even 1 _ parityParameter_mem a ha
+
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hc : Metric.sphere c R ⊆ resolventSet (by simp) φ) (a : PairSpace 3)
+    (ha : a ∈ pairParitySubspace 1) :
+    resolventCircleIntegral (by simp) φ c R a ∈ pairParitySubspace 1 :=
+  resolventCircleIntegral_mem_pairParitySubspace (by simp) φ hφ 1 c R hR hc a ha
+
+-- An odd potential gives a counterexample when the period-one hypothesis is omitted.
+private def oddShiftPotential : PairSpace 1 := (lp.single 1 1 1, 0)
+example : operator (by simp) oddShiftPotential (positiveMode 0) ∉ pairParitySubspace 0 := by
+  intro h
+  have hzero := (Coeff.mem_paritySubspace 0 _).mp h.1 1 (by norm_num)
+  have hvalue : (operator (by simp) oddShiftPotential (positiveMode 0)).1 1 = 1 := by
+    simp [operator_fst_apply, oddShiftPotential, positiveMode, lp.single_apply, Pi.single_apply]
+  rw [hvalue] at hzero
+  exact one_ne_zero hzero

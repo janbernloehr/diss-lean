@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has forty-eight modules and 464 named public theorems. All compile on the
+The library has fifty modules and 504 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -55,6 +55,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.DoubleResolventEstimates` | Pair Fourier remainders and convergence; scalar sandwich identification; reciprocal-symbol tails; Lemma 3.4 with `c_p = 32p²`; explicit squared Neumann, punctured-strip, and spectral-circle criteria |
 | `NLS.ZakharovShabat.FrequencyLocalization` | Continuous linear pair tails; monotone tail norms; open convex norm-and-tail neighborhoods containing zero; reciprocal-frequency decay; common half-size squared Neumann bounds and high-frequency resolvent strips |
 | `NLS.ZakharovShabat.SpectralLocalization` | Exact central boxes and high-frequency disks; exterior coverage including vertical edges; common open convex potential neighborhoods; Corollary 3.5 compact analytic resolvent and spectral enclosure, with a connected neighborhood containing zero |
+| `NLS.SequenceSpaces.Parity` | Contractive residue-class Fourier projections; coefficient and single-mode formulas; closed complementary even/odd subspaces; even-potential convolution commutation and invariance; parity masks on arbitrary weighted coefficient spaces |
+| `NLS.ZakharovShabat.PeriodicParity` | Closed complementary pair parity spaces and closed domain parity spaces; domain/base projection intertwining; Lemma 3.6; spectral-pencil, domain-resolvent, base-resolvent, and contour-projection parity preservation; signed free-mode parity |
 
 ## Current mathematical milestone
 
@@ -265,8 +267,27 @@ increasing the integer cutoff. On the strict vertical edges of the central
 box, the strip argument includes the edge index `|n| = N`; it does not assume
 these boundary points lie inside the box.
 
-Parity invariance (Lemma 3.6), the central rectangular contour, and the
-multiplicity counts in Proposition 1.1 remain to be proved.
+**Lemma 3.6 is now proved in the coefficient spaces.** The residues `0` and
+`1` modulo two define closed complementary subspaces of the scalar and pair
+spaces. Contractive coordinate projections give the even/odd decomposition,
+including negative indices and the `p=∞` projection endpoint. Transporting the
+same masks through the weighted norm gives projections on the operator domain.
+The domain parity spaces are closed and agree with the base parity condition
+under the canonical inclusion.
+
+For a potential with both components supported on even frequencies,
+convolution commutes with each parity projection. The operator therefore
+satisfies `Lφ P_domain = P_base Lφ` and preserves both domain parity classes.
+The same identity holds for the spectral pencil. Both the full inverse into
+the domain and the base-space resolvent preserve parity at every resolvent
+parameter. The spectral circle integrals commute with the parity projections
+and preserve both subspaces, supplying the invariant spaces used in (1.5).
+Both signed free modes have the parity of their spectral index, since `n`
+and `-n` have the same residue modulo two.
+
+The physical Fourier realization and canonical period-one embedding remain
+open. The central rectangular contour and the multiplicity counts in
+Proposition 1.1 also remain to be proved.
 
 The actual unbounded realization is now defined as
 
@@ -477,7 +498,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 994 declarations under `NLS`, including generated
+axioms. The current audit covers 1062 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -551,13 +572,19 @@ cover open and convex neighborhoods at `p=1,3`, monotone tails, inclusion of the
 horizontal box boundary, exclusion and strip coverage of the vertical boundary,
 exclusion of a high-disk center, a common cutoff along every `tφ` for `0 ≤ t ≤ 1`,
 and the complete compactness/analyticity/spectral-enclosure package at `p=1`.
+Parity checks cover negative even/odd single modes, an infinity-exponent
+projection, closed complementary pair spaces, nonconstant even potentials
+coupling odd modes to frequencies `±3`, resolvent commutation at a verified
+nonzero-potential parameter, and contour preservation at `p=3`. An explicit odd
+potential sends an even input to a nonzero odd coefficient, checking the need
+for the even-support hypothesis.
 
 ## Next milestones
 
-1. Formalize the even/odd Fourier subspaces and their invariance for period-one
-   potentials (Lemma 3.6).
-2. Construct the central rectangular contour and use contour rank stability to
-   prove the disk and central-region multiplicity counts in Proposition 1.1.
+1. Use contour rank stability and the free-mode decomposition to prove the
+   high-frequency disk multiplicities and their parity in Proposition 1.1.
+2. Construct the central rectangular contour and prove the central-region
+   multiplicity count and its even/odd split.
 3. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, pair-norm comparison, and compatibility with physical multiplication.
 
