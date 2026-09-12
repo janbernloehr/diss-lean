@@ -7,7 +7,8 @@ import NLS.SequenceSpaces.FiniteCoefficients
 
 Parseval gives an exact energy identity for finite input, hence a uniform bound.
 Density extends the actual finite Fourier construction to all period-one `ℓ2`
-pairs, with range in the chosen boundary space. Other exponents remain separate.
+pairs, with range in the chosen boundary space. `BoundedIntervalExtension`
+constructs the full-range map and proves agreement with this Parseval completion.
 -/
 
 noncomputable section

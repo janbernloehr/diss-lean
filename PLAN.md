@@ -345,15 +345,24 @@ with previous constructions at overlapping exponents. Hölder duality and densit
 also prove absolute convergence and the exact reciprocal coefficient series on
 all inputs. Thus the boundedness part of Appendix C.1 needed here is established.
 
-Next complete the corresponding interval maps beyond `p=2`, using the proved
-full-range shifted bounds. The physical interval formulas and finite maps are
-already available; the uniform norm estimate and completion must now be connected.
+The full-range interval maps are now constructed. Zero insertion along integer
+embeddings is a linear isometry, including the supremum endpoint. Inserting
+`a/2` at even indices and `i Sa/2` at odd indices defines the bounded
+half-interval Fourier map and recovers the exact physical finite coefficients.
+Combining the two input halves with signed reflection defines the Dirichlet
+and Neumann maps on all `PairSpace p`, `1<p<∞`. They land in the actual closed
+boundary spaces, are bounded and analytic there, and are uniquely determined
+by the finite Fourier formulas. At `p=2` they equal the earlier Parseval maps.
+The coefficient statement of Lemma 4.3 is therefore proved.
+
+Next construct the classical `H¹` / `FL^{1,2}` identifications of Lemmas 4.1–4.2
+and transfer the coefficient counting and analytic-eigenvalue results to the
+original period-one potentials. Both boundary spectral problems use the
+Dirichlet extension of the potential; the boundary sign selects the eigenfunction
+extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
 is not assumed here.
-Construct the physical Sobolev-domain identifications of Lemmas 4.1–4.2 and
-transfer the coefficient counting and analytic-eigenvalue theorems to the
-original period-one potentials.
 Identification with the rectangular contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.

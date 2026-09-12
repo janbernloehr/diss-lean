@@ -70,3 +70,4 @@ import NLS.Fourier.QuarticHilbert
 import NLS.Fourier.DyadicHilbert
 import NLS.Fourier.ConjugateHilbert
 import NLS.Fourier.HilbertSeries
+import NLS.ZakharovShabat.BoundedIntervalExtension

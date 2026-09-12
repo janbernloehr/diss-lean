@@ -120,8 +120,13 @@ at `2, 4/3, 8/7, …`, with exponents arbitrarily close to one. The transpositio
 identity holds on all conjugate inputs. Finite analytic power families and
 mathlib's three-lines theorem now interpolate between proved endpoints, giving
 ordinary and shifted Hilbert transforms for every `1<p<∞`. Their reciprocal
-series converge absolutely and give the coefficients on all inputs. Interval
-completions beyond `p=2` are still needed for the full Lemma 4.3 and spectral transfer.
+series converge absolutely and give the coefficients on all inputs. Even/odd
+insertion now assembles the bounded half-interval map. Signed reflection gives
+unique bounded, analytic Dirichlet and Neumann interval extensions for every
+`1<p<∞`, proving the coefficient form of Lemma 4.3. They agree with physical
+Fourier integrals on finite polynomials and with the Parseval map at `p=2`.
+Fourier/distribution and physical Sobolev-domain identifications remain needed
+for the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

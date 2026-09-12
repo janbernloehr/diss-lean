@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 105 modules and 1078 named public theorems. All compile on the
+The library has 108 modules and 1108 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -112,6 +112,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.HilbertInterpolation` | Hilbert kernel endpoint pairing bounds; interpolation of conjugate reciprocal exponents; finite unit estimate and rescaling; completed intermediate Hilbert estimate |
 | `NLS.Fourier.HilbertBoundedness` | Admissible interpolation parameters; completed ordinary and shifted transforms for every `1<p<∞`; bounds, uniqueness, exact finite formulas, and full-range transposition |
 | `NLS.Fourier.HilbertSeries` | Absolutely convergent ordinary and shifted reciprocal series; exact coefficient formulas for arbitrary inputs via conjugate tests and density |
+| `NLS.SequenceSpaces.Insertion` | Zero insertion along an integer embedding as a linear isometry at every Banach exponent; image and outside-image formulas; even/odd index embeddings |
+| `NLS.Fourier.HalfIntervalBoundedness` | Bounded half-interval Fourier map for every `1<p<∞`; exact even/odd coefficients, finite integral agreement, explicit bound, and injectivity |
+| `NLS.ZakharovShabat.BoundedIntervalExtension` | Full-range Dirichlet/Neumann interval maps into the actual boundary spaces; bounds and analyticity; finite physical integral agreement, uniqueness, parity formulas, and equality with the Parseval completion at `p=2` |
 
 ## Current mathematical milestone
 
@@ -540,10 +543,10 @@ into the base subspaces, with the existing explicit operator bound.
 This proves the coefficient content of Lemma 4.4 for every finite Banach
 exponent, including `p=1`, under the already-reflected-potential hypothesis.
 The physical endpoint interpretation and Sobolev-domain isomorphisms in
-Lemmas 4.1–4.2 remain open. The later finite interval-extension construction
-below connects physical integrals to these base coefficient spaces, but the
-uniform discrete-Hilbert-transform estimate in Lemma 4.3 is now proved at
-`p=2` below; the other exponents in `1<p<∞` still require proof.
+Lemmas 4.1–4.2 remain open. The interval-extension construction below connects
+physical finite integrals to these base coefficient spaces and gives the uniform
+bounded, analytic extensions for every `1<p<∞`, proving the coefficient part
+of Lemma 4.3.
 
 **The full boundary resolvents and spectral decomposition are proved.**
 `BoundaryCondition` selects either restriction without changing its operator.
@@ -627,8 +630,9 @@ of reflected potentials containing the given potential and zero, with the same
 cutoff and counting data for every larger central box. The total trace definition
 has an eigenvalue interpretation under these rank-one hypotheses.
 
-The uniform interval-extension estimates remain necessary to transfer
-Theorem 1.4 and Lemma 4.5 to the original period-one potentials.
+The uniform interval-extension estimates needed for transfer are now available
+below. The physical Fourier and Sobolev identifications still need to be connected
+to Theorem 1.4 and Lemma 4.5 for the original period-one potentials.
 
 **Physical interval extensions are constructed for finite Fourier input.**
 The piecewise map retains the input on `[0,1]` and swaps its components at
@@ -657,8 +661,8 @@ physical coefficient sequence is not in `ℓ1`.
 
 Kernel membership and finite synthesis alone do not justify completion by
 density. The uniform estimate at `p=2` is now proved using Parseval as follows;
-the full-range Hilbert bounds established below must still be assembled into
-the interval-map estimate for other exponents. Only boundedness of the relevant
+the full-range Hilbert bounds established below then give the interval-map
+estimates for all other finite exponents above one. Only boundedness of the relevant
 discrete Hilbert transform is needed; no invertibility assertion from Appendix C.1
 is assumed.
 
@@ -686,7 +690,7 @@ of the completed extension of `(0,a)`, and multiplied by `-2i`, it gives
 formula is `Σₖ a(k) 2/[π(2k-2n-1)]`, the shifted reciprocal transform needed in
 Lemma 4.3. This bound is sufficient and is not claimed optimal. The argument
 below proceeds through quartic, dyadic, and conjugate exponents to full-range
-Hilbert boundedness. Interval completions beyond `p=2` remain open.
+Hilbert boundedness and the full-range interval completions.
 
 **Ordinary and shifted Hilbert transforms are bounded on `ℓ4`.** The ordinary
 source kernel is `h(j)=-1/j`, with `h(0)=0`. Its difference from the unnormalized
@@ -711,8 +715,8 @@ independently of any uniform estimate. The Cotlar identity therefore gives
 inclusion constructs `discreteHilbertFour` on all `Coeff 4`, and subtraction of
 the same correction constructs `shiftedHilbertFour`, with bound
 `(B₄+‖d‖₁)/π`. Both maps have the exact finite-input reciprocal formulas.
-This proves the quartic Hilbert-kernel step; it does not yet complete the
-quartic interval map or prove the whole exponent range in Lemma 4.3.
+This proves the quartic Hilbert-kernel step. Its interval-map consequence is
+included in the full-range construction below.
 
 **Exponent doubling is proved and iterated at every dyadic exponent.**
 `HilbertEstimate p` packages a uniform finite-input bound together with
@@ -788,7 +792,34 @@ absolute convergence of `Σ a(k)/(k-n)` and
 `Σ a(k) 2/[π(2k-2n-1)]`. Density proves that these series equal the completed
 ordinary and shifted output coefficients for arbitrary inputs. This establishes
 the boundedness needed from Appendix C.1. Its additional invertibility assertion
-is not used. Completing the physical interval maps beyond `p=2` remains open.
+is not used. The resulting interval maps are now constructed as follows.
+
+**The coefficient form of Lemma 4.3 is proved for every `1<p<∞`.**
+Zero insertion along an injective integer index map is a linear isometry for
+every Banach exponent, including `∞`. It fills the complement of the image
+with zero. Applying it to `n↦2n` and `n↦2n+1` assembles the half-interval map
+`Q a`, with `(Q a)(2n)=a(n)/2` and `(Q a)(2n+1)=i(Sa)(n)/2`.
+If `Kₚ=(hilbertTransformBound+‖d‖₁)/π` is the proved shifted bound, then
+`‖Q a‖≤(1+Kₚ)‖a‖/2`. The even coefficients show that `Q` is injective.
+On finite polynomials it is exactly `polynomialHalfCoeffs`, hence equals the
+normalized physical integral over the original unit interval.
+
+For either boundary sign `ε`, the completed amplitude is
+`A(a₁,a₂)=Q a₂+ε reflection(Q a₁)` and the ambient extension is
+`(ε reflection(A), A)`. Its norm equals the amplitude norm, and the bound
+`(1+Kₚ)‖(a₁,a₂)‖` holds in the maximum pair norm. The map lands in the selected
+Dirichlet or Neumann space for every input. `intervalExtensionToBoundary`
+packages this actual boundary-valued continuous linear map, and its complex
+analyticity is proved.
+
+Both physical finite Fourier component integrals agree with the completed map.
+Density makes the extension unique, and at `p=2` it equals the preceding
+Parseval construction, preserving its sharper energy identity and injectivity.
+For arbitrary inputs the even amplitude is `(a₂(n)+εa₁(-n))/2`; the odd amplitude
+is `i(Sa₂(n)+εSa₁(-n-1))/2`, with the reflected odd index handled explicitly.
+The full Fourier/distribution realization, source pair-norm comparison, and
+physical Sobolev-domain identifications remain separate obligations before
+claiming the entire physical formulation.
 
 The actual unbounded realization is now defined as
 
@@ -1002,7 +1033,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2304 declarations under `NLS`, including generated
+axioms. The current audit covers 2374 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1225,11 +1256,17 @@ They recover the old `p=2` operator, instantiate the all-exponent existence
 statement, and verify absolute convergence and exact reciprocal series for
 arbitrary inputs at both intermediate exponents.
 
+Full-range interval checks cover norm-preserving insertion at `p=1` and `p=∞`,
+negative odd indices and opposite-parity zeros, the half-map normalization and
+injectivity, and reflected nonreal input modes that distinguish Dirichlet and
+Neumann signs. The one-sided constant displays the normalized odd reciprocal
+tail. Other checks cover arbitrary-input boundary membership, bounds into the
+boundary subtype, analyticity, physical finite integral agreement, uniqueness,
+and preservation of the exact Parseval energy identity at `p=2`.
+
 ## Next milestones
 
-1. Use full-range shifted Hilbert boundedness to complete the interval maps
-   for every `1<p<∞`, extending the already completed `p=2` case.
-   Construct the physical Sobolev identifications in Lemmas 4.1–4.2, then
+1. Construct the classical `H¹` / `FL^{1,2}` identifications in Lemmas 4.1–4.2, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and

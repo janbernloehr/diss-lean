@@ -3011,3 +3011,85 @@ example (a : Coeff (3/2)) (n : ℤ) :
 
 end
 end HilbertInterpolationChecks
+
+
+namespace BoundedIntervalChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition Complex
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Insertion handles negative odd indices and both Banach endpoints.
+example (a : Coeff 1) : ‖Coeff.insert (Coeff.parityEmbedding 0) a‖ = ‖a‖ := Coeff.norm_insert _ a
+example (a : Coeff ⊤) : ‖Coeff.insert (Coeff.parityEmbedding 1) a‖ = ‖a‖ := Coeff.norm_insert _ a
+example : Coeff.insert (Coeff.parityEmbedding 1)
+    (Coeff.ofFinsupp (p := 3) (Finsupp.single (-3) I)) (-5) = I := by
+  simpa using Coeff.insert_apply_image (Coeff.parityEmbedding 1)
+    (Coeff.ofFinsupp (p := 3) (Finsupp.single (-3) I)) (-3)
+example (a : Coeff 3) : Coeff.insert (Coeff.parityEmbedding 1) a (-6) = 0 := by
+  simpa using Coeff.insert_parity_other 1 0 (by norm_num) a (-3)
+
+-- Half-interval coefficients retain the exact normalization and original even modes.
+example : halfIntervalCoeffs (p := 3) (by norm_num) (by simp)
+    (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-6) = I/2 := by
+  rw [show (-6 : ℤ) = 2*(-3) by norm_num, halfIntervalCoeffs_even]
+  simp
+  ring
+example : Function.Injective (halfIntervalCoeffs (p := 3) (by norm_num) (by simp)) :=
+  halfIntervalCoeffs_injective _ _
+
+-- A reflected pair of nonreal modes distinguishes the two boundary signs.
+def mixedModes : (ℤ →₀ ℂ) × (ℤ →₀ ℂ) := (Finsupp.single (-3) I, Finsupp.single 3 (2-I))
+example : intervalAmplitudeCLM .dirichlet (p := 3) (by norm_num) (by simp)
+    (finitePairCoeffs mixedModes) 6 = 1 := by
+  rw [show (6 : ℤ) = 2*3 by norm_num, intervalAmplitudeCLM_even]
+  norm_num [finitePairCoeffs_apply, mixedModes, extensionSign]
+example : intervalAmplitudeCLM .neumann (p := 3) (by norm_num) (by simp)
+    (finitePairCoeffs mixedModes) 6 = 1-I := by
+  rw [show (6 : ℤ) = 2*3 by norm_num, intervalAmplitudeCLM_even]
+  norm_num [finitePairCoeffs_apply, mixedModes, extensionSign]
+  ring
+
+-- One-sided constant input displays the normalized odd Hilbert tail.
+example : intervalAmplitudeCLM .dirichlet (p := 3) (by norm_num) (by simp)
+    (0, Coeff.ofFinsupp (Finsupp.single 0 1)) 1 = -I/(Real.pi : ℂ) := by
+  rw [show (1 : ℤ) = 2*0+1 by norm_num, intervalAmplitudeCLM_odd]
+  simp only [map_zero, lp.coeFn_zero, Pi.zero_apply, mul_zero, add_zero]
+  rw [shiftedHilbertTransform_finite]
+  norm_num [div_neg, neg_div]
+  ring
+example : (intervalExtensionCLM .neumann (p := 3) (by norm_num) (by simp)
+    (0, Coeff.ofFinsupp (Finsupp.single 0 1))).1 0 = -1/2 := by
+  rw [intervalExtensionCLM_fst]
+  change extensionSign .neumann * intervalAmplitudeCLM .neumann _ _ _ 0 = _
+  rw [show (0 : ℤ) = 2*0 by norm_num, intervalAmplitudeCLM_even]
+  norm_num [extensionSign]
+
+-- The output type enforces the requested boundary condition for arbitrary inputs.
+example (a : PairSpace 3) : intervalExtensionCLM .dirichlet (by norm_num) (by simp) a ∈
+    space .dirichlet := intervalExtensionCLM_mem _ _ _ a
+example (a : PairSpace 3) : ‖intervalExtensionToBoundary .neumann (by norm_num) (by simp) a‖ ≤
+    intervalExtensionBound (p := 3) (by norm_num) (by simp) * ‖a‖ :=
+  norm_intervalExtensionToBoundary_le _ _ _ a
+example (a : PairSpace 3) : AnalyticAt ℂ
+    (intervalExtensionToBoundary .dirichlet (p := 3) (by norm_num) (by simp)) a :=
+  analyticAt_intervalExtensionToBoundary _ _ _ a
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (n : ℤ) :
+    (periodTwoCoefficient (fun x => (intervalExtension b (periodOnePair a) x).1) n,
+      periodTwoCoefficient (fun x => (intervalExtension b (periodOnePair a) x).2) n) =
+    ((intervalExtensionCLM b (p := 3) (by norm_num) (by simp) (finitePairCoeffs a)).1 n,
+      (intervalExtensionCLM b (p := 3) (by norm_num) (by simp) (finitePairCoeffs a)).2 n) :=
+  intervalExtensionCLM_finite_integrals b _ _ a n
+
+-- Agreement with the earlier map preserves its sharper Parseval identity.
+example (b : BoundaryCondition) (a : PairSpace 2) :
+    ‖intervalExtensionCLM b (by norm_num) (by simp) a‖^2 = (‖a.1‖^2 + ‖a.2‖^2)/2 := by
+  rw [intervalExtensionCLM_two]
+  exact norm_hilbertIntervalExtension_sq b a
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (b : BoundaryCondition) (hp : 1 < p) (hptop : p ≠ ⊤)
+    (F : PairSpace p →L[ℂ] PairSpace p)
+    (hF : ∀ a, F (finitePairCoeffs a) = finiteIntervalExtension b hp a) :
+    F = intervalExtensionCLM b hp hptop := intervalExtensionCLM_unique b hp hptop F hF
+
+end
+end BoundedIntervalChecks

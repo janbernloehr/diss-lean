@@ -8,8 +8,8 @@ import Mathlib.LinearAlgebra.Finsupp.LinearCombination
 The maps below take finitely supported period-one coefficients to the existing
 period-two boundary spaces. Their coefficients equal the Fourier integrals of
 the physical reflected extension. The construction works for `1 < p ≤ ∞`;
-the uniform input-`ℓp` bound and completion are proved at `p=2` in
-`HilbertIntervalExtension`. The other exponents in `1 < p < ∞` remain open.
+the uniform bound and completion are proved at `p=2` in
+`HilbertIntervalExtension` and for every `1<p<∞` in `BoundedIntervalExtension`.
 -/
 
 noncomputable section
