@@ -227,3 +227,8 @@ import NLS.ZakharovShabat.ResonantCoordinates
 import NLS.ZakharovShabat.WeightedResonantReduction
 import NLS.ZakharovShabat.UnitWeightedRealization
 import NLS.ZakharovShabat.PeriodicResonantReduction
+import NLS.SequenceSpaces.ReflectedTestSymmetry
+import NLS.ZakharovShabat.BilinearGreen
+import NLS.ZakharovShabat.ResonantDiagonalSymmetry
+import NLS.ZakharovShabat.ConstantResonantCoefficient
+import NLS.ZakharovShabat.ResonantRealityCounterexample

@@ -933,6 +933,23 @@ original periodic spectrum, with nonzero eigenvectors preserved in both
 directions. One open convex neighborhood and one cutoff `N≥1` make the
 criterion valid on every full closed strip with `|n|≥N`.
 
-Next, prove the matrix-coefficient symmetries in Lemma 6.7, followed by the
-refined eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
+Lemma 6.7(i), on source pages 40–41, is now proved for arbitrary complex
+potentials and every finite Banach exponent. Reflected bilinear convolution
+testing gives a Green identity for the actual free pencil and potential.
+Applied to the reconstructed vectors, the exact residual identity forces
+equality of both resonant diagonals. The common coefficient `a_n`, both
+`b_n` coefficients, and the displayed common-diagonal matrix are implemented.
+
+The printed unconditional reality clause in Lemma 6.7(ii) is false for
+general complex potentials. Constant components `(a,b)` have the actual
+correction `ab/(λ+nπ)` for `n≠0`. Choosing `(1,i)` gives `i/(2πn)` at a
+positive central resonance. The formal counterexample meets the source's
+half-size contraction at arbitrarily large indices. The source proof assumes
+`φ*=±φ` for both conjugation identities; retain that condition when proving
+the corrected statement.
+
+Next, implement conjugate reflection of weighted coefficients and use
+Q-solution uniqueness to prove the conditional conjugation identities for
+`a_n` and `b_n`. Then establish the coefficient estimates and refined
+eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
 The printed general-`p` central-height constant remains a separate open item.

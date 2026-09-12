@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 279 modules and 2561 named public theorems. All compile on the
+The library has 284 modules and 2586 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -92,6 +92,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.WeightedResonantReduction` | Explicit `2×2` resonant matrix, eigenfunction reconstruction, exact residual identity, both kernel directions, and weighted-domain determinant criterion |
 | `NLS.ZakharovShabat.UnitWeightedRealization` | Coefficient-preserving equivalences for the original base and derivative domain; exact equation and periodic-spectrum identification |
 | `NLS.ZakharovShabat.PeriodicResonantReduction` | Lemma 6.6 for the original periodic spectrum, valid with a locally uniform cutoff over full closed strips for every finite Banach exponent |
+| `NLS.SequenceSpaces.ReflectedTestSymmetry` | Commutativity of original `ℓ¹` convolution and symmetric reflected bilinear tests; free-symbol sign reversal |
+| `NLS.ZakharovShabat.BilinearGreen` | Unconjugated cross-component Green identity for the actual weighted differential pencil and arbitrary complex potentials at every finite Banach exponent |
+| `NLS.ZakharovShabat.ResonantDiagonalSymmetry` | Lemma 6.7(i), equal diagonal corrections, named source coefficients, and the common-diagonal resonant matrix form |
+| `NLS.ZakharovShabat.ConstantResonantCoefficient` | Actual constant component potentials, exact complementary action, and the diagonal correction `ab/(λ+nπ)` for nonzero indices |
+| `NLS.ZakharovShabat.ResonantRealityCounterexample` | Constant `(1,i)` violates the printed unconditional reality clause at arbitrarily large positive resonances within the half-size contraction regime |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2774,13 +2779,44 @@ It identifies the full eigenvector equations and preserves nonzero vectors
 in both directions. `PeriodicResonantReduction` therefore proves Lemma 6.6
 for the existing original periodic spectrum, for every finite Banach exponent.
 A single open convex neighborhood and cutoff `N≥1` make the criterion valid
-on all full closed strips with `|n|≥N`. The matrix symmetries in Lemma 6.7,
-refined eigenvalue tails, and weighted-gap estimates remain next.
+on all full closed strips with `|n|≥N`.
+
+### Lemma 6.7(i) and the reality hypothesis in 6.7(ii)
+
+`ReflectedTestSymmetry` proves the transposition identity for absolutely
+convergent convolution tests. `BilinearGreen` pairs base coefficients with
+opposite reflected derivative-domain components, without conjugation.
+The actual free pencil and arbitrary complex off-diagonal potential are
+symmetric for this pairing. The proof works at every finite Banach exponent,
+including `p=1`, using the derivative-domain embedding into `ℓ¹`.
+
+`ResonantDiagonalSymmetry` applies Green's identity to the reconstructed
+vectors and uses their exact residuals. The resulting cross-coordinate
+identity forces equality of the two diagonal entries, and hence of the
+correction diagonals `a_n⁺=a_n⁻`. It defines the common coefficient `a_n`
+and both `b_n` coefficients and proves the displayed source matrix form.
+This establishes Lemma 6.7(i), on source pages 40–41.
+
+The reality assertion for `a_n` in the printed Lemma 6.7(ii) lacks the
+hypothesis used in its proof. The proof starts by assuming `φ*=±φ` and uses
+it for both the diagonal and off-diagonal conjugation identities.
+`ConstantResonantCoefficient` computes the actual correction for constant
+components `(a,b)` through the uniqueness of the already constructed inverse:
+`a_n(λ)=ab/(λ+nπ)` for `n≠0`. At the central parameter this is `ab/(2πn)`.
+
+`ResonantRealityCounterexample` takes `(a,b)=(1,i)` and proves that the
+imaginary part is strictly positive at every positive central resonance
+where the inverse is defined. For every cutoff, it constructs a positive
+index beyond that cutoff satisfying the actual shifted square bound `≤1/2`
+and having a nonreal diagonal. Thus a large-frequency restriction cannot
+repair the unconditional assertion for general complex potentials. The
+conditional conjugation identities under `φ*=±φ` remain to be proved;
+Lemma 6.7(ii) is not claimed complete.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5276 declarations under `NLS`, including generated
+axioms. The current audit covers 5330 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3448,10 +3484,18 @@ negative resonance and exclude a nonreal free parameter from the original
 periodic spectrum at `p=1`. They also instantiate nonzero eigenfunction
 reconstruction and the locally uniform criterion on original potential space.
 
+The Lemma 6.7 checks distinguish the bilinear pairing from a Hermitian one
+using opposite imaginary Fourier modes at `p=3`. They check the vanishing
+constant-potential diagonal at the zero strip, the signed denominator at a
+negative resonance, the determinant's off-diagonal product sign at `p=1`,
+and positive imaginary diagonals beyond every cutoff at `p=3` with the
+actual half-size contraction.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the Lemma 6.7 matrix symmetries and continue the refined eigenvalue
+2. Prove the conditional conjugation identities in Lemma 6.7(ii), retaining
+   `φ*=±φ` for both coefficients, and continue the refined eigenvalue
    and weighted-gap estimates toward Propositions 6.1/6.3. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
    finite Banach exponents, including the source's `c₂=2` in Lemma 6.4.

@@ -7572,3 +7572,57 @@ example (φ : PairSpace 1) :
   exact ⟨N, hN, U, ho, hφ, h⟩
 
 end Lemma66Checks
+
+section Lemma67Checks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The Green pairing reflects frequency and is bilinear, so i times i gives -1.
+example (w : SpectralWeight) :
+    weightedGreenPairing (p := 3) (by norm_num) w
+      (weightedPairMode w.toWeight (-2) Complex.I 0)
+      (weightedPairMode w.toWeight.oneDerivative 2 0 Complex.I) = -1 := by
+  simp [weightedGreenPairing_apply, weightedPairMode_fst, weightedPairMode_snd, ite_mul, neg_eq_iff_eq_neg]
+
+-- At the zero resonance, constant potentials have no diagonal correction.
+example (w : SpectralWeight) (a b : ℂ) (z : ℂ) (hz : z ∈ resonantStrip 0)
+    (h : ‖weightedPotentialSquareInShift (p := 1) (by simp) w (constantSpectralPotential w a b) 0 z hz‖ < 1) :
+    weightedResonantA (by simp) w (constantSpectralPotential w a b) 0 z hz h = 0 := by
+  rw [weightedResonantA_constant]
+  simp [complementarySymbol]
+
+-- Negative indices retain the signed denominator, even for a complex product.
+example (w : SpectralWeight)
+    (h : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) w (constantSpectralPotential w 2 Complex.I)
+      (-2) ((Real.pi : ℂ) * (-2 : ℤ)) (center_mem_resonantStrip (-2))‖ < 1) :
+    weightedResonantA (by norm_num) w (constantSpectralPotential w 2 Complex.I)
+      (-2) ((Real.pi : ℂ) * (-2 : ℤ)) (center_mem_resonantStrip (-2)) h =
+      2 * Complex.I / (-4 * (Real.pi : ℂ)) := by
+  rw [weightedResonantA_constant_center (by norm_num) w 2 Complex.I (-2) (by norm_num) h]
+  congr 1
+  push_cast
+  ring
+
+-- The equal diagonals give the source determinant with the correct off-diagonal product sign.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by simp) w φ n z hz‖ < 1) :
+    (weightedResonantMatrix (by simp) w φ n z hz h).det =
+      (z - (Real.pi : ℂ) * n - weightedResonantA (by simp) w φ n z hz h)^2 -
+        weightedResonantBPlus (by simp) w φ n z hz h * weightedResonantBMinus (by simp) w φ n z hz h := by
+  rw [weightedResonantMatrix_form]
+  simp [Matrix.det_fin_two, pow_two]
+
+-- The counterexample survives arbitrary cutoffs within the actual half-size contraction regime.
+example (w : SpectralWeight) (M : ℕ) :
+    ∃ n : ℤ, (M : ℤ) ≤ n ∧ 0 < n ∧
+      ∃ h : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) w (constantSpectralPotential w 1 Complex.I)
+        n ((Real.pi : ℂ) * n) (center_mem_resonantStrip n)‖ < 1,
+        ‖weightedPotentialSquareInShift (p := 3) (by norm_num) w (constantSpectralPotential w 1 Complex.I)
+          n ((Real.pi : ℂ) * n) (center_mem_resonantStrip n)‖ ≤ 1/2 ∧
+        0 < (weightedResonantA (by norm_num) w (constantSpectralPotential w 1 Complex.I)
+          n ((Real.pi : ℂ) * n) (center_mem_resonantStrip n) h).im := by
+  obtain ⟨n, hnM, hn, h, hh, _⟩ := exists_large_nonreal_resonantA (p := 3) (by norm_num) w M
+  exact ⟨n, hnM, hn, h, hh, constantResonantA_im_pos (by norm_num) w n hn h⟩
+
+end Lemma67Checks

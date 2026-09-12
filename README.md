@@ -562,7 +562,13 @@ installation is absent. No shell startup files are modified.
   `λ` is a periodic eigenvalue exactly when the explicit `2×2` resonant
   matrix has determinant zero, with a locally uniform frequency cutoff.
   Eigenfunctions are reconstructed in the actual derivative domain.
-  The matrix symmetries in Lemma 6.7 are next.
+  Lemma 6.7(i) is now proved: the two diagonal corrections agree for
+  arbitrary complex potentials. A bilinear Green identity gives the source
+  matrix form at every finite Banach exponent. The printed unconditional
+  reality clause in 6.7(ii) has a proved counterexample: constant components
+  `(1,i)` give `a_n(nπ)=i/(2πn)` at arbitrarily large positive indices
+  satisfying the half-size contraction. The conditional conjugation identities
+  under the proof's assumption `φ*=±φ` are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
