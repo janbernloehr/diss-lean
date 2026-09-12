@@ -7022,3 +7022,119 @@ example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 3) :
   Fourier.spectralWeight_synthesis_modulation w (-3) a
 
 end SpectralWeightChecks
+
+section ComplementaryInverseChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+private def complementaryCheckMode (w : Weight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (k : ℤ) (c : ℂ) :
+    WeightedCoeff w p := (WeightedCoeff.weightEquiv w p).symm (lp.single p k ((w k : ℂ) * c))
+
+private theorem complementaryCheckMode_apply (w : Weight) (p : ℝ≥0∞) [Fact (1 ≤ p)]
+    (k : ℤ) (c : ℂ) (j : ℤ) :
+    (complementaryCheckMode w p k c).val j = if j = k then c else 0 := by
+  change (lp.single p k ((w k : ℂ) * c) : Coeff p) j / (w j : ℂ) = _
+  by_cases hj : j = k <;> simp [hj, lp.single_apply, w.complex_ne_zero]
+
+private def complementaryResonantPair (p : ℝ≥0∞) [Fact (1 ≤ p)] : WeightedCoeffPair Weight.one p :=
+  WithLp.toLp p (complementaryCheckMode Weight.one p (-2) Complex.I,
+    complementaryCheckMode Weight.one p 2 3)
+
+-- At the lattice center, the two selected physical modes are precisely the kernel.
+example : resonantProjection Weight.one 2 (complementaryResonantPair 1) = complementaryResonantPair 1 := by
+  apply weightedPair_ext <;> intro k
+  · simp only [resonantProjection_fst]
+    change (if k = -2 then (complementaryCheckMode Weight.one 1 (-2) Complex.I).val k else 0) =
+      (complementaryCheckMode Weight.one 1 (-2) Complex.I).val k
+    simp only [complementaryCheckMode_apply]; split_ifs <;> rfl
+  · simp only [resonantProjection_snd]
+    change (if k = 2 then (complementaryCheckMode Weight.one 1 2 3).val k else 0) =
+      (complementaryCheckMode Weight.one 1 2 3).val k
+    simp only [complementaryCheckMode_apply]; split_ifs <;> rfl
+
+example : complementaryFreeDomainInverse Weight.one 2 ((Real.pi : ℂ) * 2)
+    (center_mem_resonantStrip 2) (complementaryResonantPair 3) = 0 := by
+  apply weightedPair_ext <;> intro k
+  · rw [complementaryFreeDomainInverse_fst]
+    change complementarySymbol 2 ((Real.pi : ℂ) * 2) (-k) * (complementaryCheckMode Weight.one 3 (-2) Complex.I).val k = 0
+    by_cases hk : k = -2 <;> simp [complementaryCheckMode_apply, hk]
+  · rw [complementaryFreeDomainInverse_snd]
+    change complementarySymbol 2 ((Real.pi : ℂ) * 2) k * (complementaryCheckMode Weight.one 3 2 3).val k = 0
+    by_cases hk : k = 2 <;> simp [complementaryCheckMode_apply, hk]
+
+private def complementarySignPair : WeightedCoeffPair Weight.one 2 :=
+  WithLp.toLp 2 (complementaryCheckMode Weight.one 2 1 1,
+    complementaryCheckMode Weight.one 2 1 Complex.I)
+
+-- The same physical frequency has opposite free denominators in the two components.
+example : (complementaryFreeInverse Weight.one 0 0 (by simpa using center_mem_resonantStrip 0)
+    complementarySignPair).fst.val 1 = (Real.pi : ℂ)⁻¹ := by
+  rw [complementaryFreeInverse_fst]
+  change complementarySymbol 0 0 (-1) * (complementaryCheckMode Weight.one 2 1 1).val 1 = _
+  simp [complementarySymbol, complementaryCheckMode_apply]
+
+example : (complementaryFreeInverse Weight.one 0 0 (by simpa using center_mem_resonantStrip 0)
+    complementarySignPair).snd.val 1 = -(Real.pi : ℂ)⁻¹ * Complex.I := by
+  rw [complementaryFreeInverse_snd]
+  change complementarySymbol 0 0 1 * (complementaryCheckMode Weight.one 2 1 Complex.I).val 1 = _
+  simp [complementarySymbol, complementaryCheckMode_apply]
+
+-- The closed strip includes its boundary and arbitrarily large imaginary parts.
+example : (Real.pi / 2 : ℂ) + 17 * Complex.I ∈ resonantStrip 0 := by
+  simp [resonantStrip, abs_of_pos (div_pos Real.pi_pos (by norm_num : (0 : ℝ) < 2))]
+
+example : 1 ≤ ‖((Real.pi / 2 : ℂ) + 17 * Complex.I) - (Real.pi : ℂ)‖ := by
+  have hz : (Real.pi / 2 : ℂ) + 17 * Complex.I ∈ resonantStrip 0 := by
+    simp [resonantStrip, abs_of_pos (div_pos Real.pi_pos (by norm_num : (0 : ℝ) < 2))]
+  simpa using resonantStrip_denominator_one_le (m := 1) hz (by norm_num)
+
+-- Algebraic domain identities also work at infinity, without a finite-p norm claim.
+example (a : WeightedCoeffPair Weight.one ⊤) :
+    weightedFreePencil Weight.one ((Real.pi : ℂ) * (-4 : ℤ))
+      (complementaryFreeDomainInverse Weight.one (-4) ((Real.pi : ℂ) * (-4 : ℤ))
+        (center_mem_resonantStrip (-4)) a) = complementaryProjection Weight.one (-4) a :=
+  pencil_complementaryFreeDomainInverse _ _ _ _ _
+
+example (u : WeightedDomain Weight.one 1) :
+    complementaryFreeDomainInverse Weight.one (-3) ((Real.pi : ℂ) * (-3 : ℤ))
+      (center_mem_resonantStrip (-3)) (weightedFreePencil Weight.one ((Real.pi : ℂ) * (-3 : ℤ)) u) =
+      complementaryProjection Weight.one.oneDerivative (-3) u :=
+  complementaryFreeDomainInverse_pencil _ _ _ _ _
+
+example (w : SpectralWeight) (a : WeightedCoeffPair w.toWeight 3) (n i : ℤ) :
+    w.shiftedPairNorm i (complementaryFreeInverse w.toWeight n ((Real.pi : ℂ) * n)
+      (center_mem_resonantStrip n) a) ≤ w.shiftedPairNorm i a :=
+  shiftedPairNorm_complementaryFreeInverse_le w (by norm_num) n i _ _ a
+
+example (w : SpectralWeight) (a : WeightedCoeffPair w.toWeight 1) :
+    w.shiftedPairNorm (-7) (complementaryProjection w.toWeight 2 a) ≤ w.shiftedPairNorm (-7) a :=
+  shiftedPairNorm_complementaryProjection_le w (by norm_num) 2 (-7) a
+
+example (w : Weight) (a : WeightedCoeff w ⊤) :
+    ‖complementaryScalar w 0 0 (by simpa using center_mem_resonantStrip 0) false a‖ ≤ ‖a‖ :=
+  norm_complementaryScalar_le _ _ _ _ _ _
+
+example (w : Weight) (a : WeightedCoeffPair w 2) :
+    ‖complementaryFreeDomainInverse w 0 0 (by simpa using center_mem_resonantStrip 0) a‖ ≤
+      (1 + 1 / Real.pi) * ‖a‖ := by
+  simpa [complementaryDomainBound] using norm_complementaryFreeDomainInverse_le (by norm_num) w 0 0
+    (by simpa using center_mem_resonantStrip 0) a
+
+-- Solves the already formalized differential pencil, with its actual derivative domain.
+example (w : SpectralWeight) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (a : WeightedCoeffPair w.toWeight 2) :
+    let u := complementaryFreeDomainInverse w.toWeight n z hz a
+    z • domainInclusion (weightedDomainToDomain w u) - freeOperator (weightedDomainToDomain w u) =
+      weightedBaseToPair w (complementaryProjection w.toWeight n a) := by
+  dsimp only
+  rw [← weightedFreePencil_eq_original, pencil_complementaryFreeDomainInverse]
+
+example (w : Weight) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (a : WeightedCoeffPair w 2) (u : WeightedDomain w 2)
+    (h₁ : u.fst.val (-n) = 0) (h₂ : u.snd.val n = 0)
+    (he : weightedFreePencil w z u = complementaryProjection w n a) :
+    u = complementaryFreeDomainInverse w n z hz a :=
+  complementaryFreeDomainInverse_unique w n z hz a u
+    ((complementaryProjection_eq_self_iff _ _ _).mpr ⟨h₁, h₂⟩) he
+
+end ComplementaryInverseChecks

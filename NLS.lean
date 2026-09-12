@@ -197,3 +197,9 @@ import NLS.SequenceSpaces.SpectralWeight
 import NLS.SequenceSpaces.ShiftedWeight
 import NLS.SequenceSpaces.ShiftedPairNorm
 import NLS.Fourier.SpectralWeightModulation
+import NLS.SequenceSpaces.WeightedPairMap
+import NLS.ZakharovShabat.ComplementaryStrip
+import NLS.ZakharovShabat.WeightedResonance
+import NLS.ZakharovShabat.WeightedFreePencil
+import NLS.ZakharovShabat.ComplementaryFreeInverse
+import NLS.ZakharovShabat.ComplementaryShiftedNorm

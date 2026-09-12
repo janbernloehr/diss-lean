@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 249 modules and 2316 named public theorems. All compile on the
+The library has 255 modules and 2382 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -73,6 +73,12 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntrinsicSobolevSynthesis` | Bidirectional physical coordinate energy finiteness; intrinsic norm dilation bound; injective continuous weighted synthesis for `0<s<1`; exact actual Fourier coefficients and arbitrary-length norm constant |
 | `NLS.Fourier.IntrinsicSobolevEquivalence` | Actual weighted Fourier analysis; both inverse identities; continuous intrinsic/weighted Hilbert equivalence below half; explicit forward and inverse arbitrary-length bounds; A.9 factorization |
 | `NLS.Fourier.IntrinsicSobolevApproximation` | Finite physical Fourier truncations; exact coefficient selection; uniform norm bound; convergence in the full intrinsic norm and density of finite Fourier support below half |
+| `NLS.SequenceSpaces.WeightedPairMap` | Componentwise continuous linear maps preserve a common scalar bound in the exact finite-exponent pair norm |
+| `NLS.ZakharovShabat.ComplementaryStrip` | Unpunctured closed strip; nonresonant denominator lower bound; zeroed reciprocal symbol; uniform base and one-derivative bounds |
+| `NLS.ZakharovShabat.WeightedResonance` | Correctly signed resonant and complementary projections; decomposition, idempotence, mutual annihilation, coefficient characterization and contractivity |
+| `NLS.ZakharovShabat.WeightedFreePencil` | Arbitrary positive weighted derivative domain; coefficient-preserving inclusions; free pencil with exact identification with the existing differential operator |
+| `NLS.ZakharovShabat.ComplementaryFreeInverse` | Base and domain-valued complementary inverse at every strip point including resonance; quantitative derivative gain; both projected inverse identities and uniqueness |
+| `NLS.ZakharovShabat.ComplementaryShiftedNorm` | Coefficient norm monotonicity; projections and complementary inverse contract every signed shifted finite-exponent pair norm uniformly |
 | `NLS.SequenceSpaces.SpectralWeight` | Section 6's exact weight class; signed monotonicity; unit, constant, scaled Sobolev and physical `π` weights; tempered reciprocal; forward and reverse translation comparisons |
 | `NLS.SequenceSpaces.ShiftedWeight` | Contractive unweighted inclusion; continuously equivalent translated-weight spaces; exact scalar shifted energy; coefficient modulation and group law; isometric shift-weight identification; scalar comparisons including infinity |
 | `NLS.SequenceSpaces.ShiftedPairNorm` | Opposite physical component modulations; exact finite-`p` signed energy; both norm comparisons with factor `w(i)`; additive shift law and zero shift |
@@ -2562,12 +2568,46 @@ for finite `p`; the source's separate infinity pair norm is not substituted.
 unweighted tempered distribution obtained through the contractive inclusion.
 It then proves that weighted coefficient modulation is exactly Mathlib's
 physical multiplication by `exp(iπix)`.
-The complementary free inverse and the uniform bound of Lemma 6.4 remain next.
+The complementary free inverse is now implemented as follows.
+
+## Section 6 resonant splitting and complementary inverse
+
+`WeightedResonance` selects exactly the first physical frequency `-n` and the
+second frequency `n`. Its two continuous projections sum to the identity,
+are idempotent, and annihilate each other. A vector is fixed by the complement
+exactly when its two resonant coefficients vanish. Both projections contract
+the source's finite-exponent pair norm for any positive weight.
+
+`ComplementaryStrip` uses the entire closed strip `|Re λ-nπ|≤π/2`, without
+removing a disk. For every `m≠n`, `|λ-mπ|≥|m-n|≥1`. The reciprocal symbol is
+explicitly zero at `m=n`, so its construction also applies at `λ=nπ`.
+Its base bound is one and its one-derivative bound is `1+(1+|λ|)/π`.
+
+`WeightedFreePencil` uses the domain weight `w(k)(1+|k|)` and physical symbols
+`λ+πk` and `λ-πk`. Domain inclusion is injective and preserves coefficients.
+For every source spectral weight, forgetting the weight identifies the pencil
+exactly with `λ*domainInclusion-freeOperator` on the existing differential
+domain. Thus this construction uses the previously identified free derivative.
+
+`ComplementaryFreeInverse` provides continuous linear base and domain-valued
+inverses, with the same coefficients. Composing the domain inverse with the
+pencil in either order gives precisely the complementary projection, in the
+appropriate space. Its image is complementary and it is the unique
+complementary solution of the projected free equation. The base norm is at
+most one; the domain norm has the explicit bound above.
+
+`ComplementaryShiftedNorm` proves that coefficient norm domination survives
+every signed shift. Both projections and the base inverse are contractions
+in every such norm, independently of the shift, weight, strip index, and
+spectral parameter within the strip. Pair norm estimates concern finite Banach
+exponents; the algebraic identities and scalar bounds also cover infinity.
+The potential-composed operator `T_n=Φ A_λ⁻¹ Q_n` and Lemma 6.4's bound remain
+next; the inverse bound alone does not assert the potential estimate.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4802 declarations under `NLS`, including generated
+axioms. The current audit covers 4906 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3193,12 +3233,17 @@ source sum norm. Unit weights give an isometry; general weights retain both
 comparison bounds. The actual tempered-distribution modulation identity is
 also checked at a negative frequency.
 
+The complementary-inverse examples check resonant modes at `p=1,3`, opposite
+physical signs at the same frequency, the closed strip boundary with a nonzero
+imaginary part, algebraic inversion at infinity, and negative resonant indices.
+They also check shifted bounds, the explicit derivative bound, the original
+free differential equation, and uniqueness from vanishing resonant coordinates.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Construct Section 6's resonant/nonresonant Fourier projections and the
-   complementary free inverse throughout the closed strip, then prove
-   Lemma 6.4's uniform bound in the now implemented shifted weighted norms
+2. Compose the implemented complementary free inverse with the potential and
+   prove Lemma 6.4's uniform bound in the signed shifted weighted norms
    toward Propositions 6.1/6.3. A.9's intrinsic Hilbert space and continuous
    subcritical weighted identification are implemented on every positive interval,
    as are the finite Fourier approximation and the zero/half coefficient bounds.

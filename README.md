@@ -536,8 +536,13 @@ installation is absent. No shell startup files are modified.
   and translated weights give the same coefficient space with comparison
   factor `w(i)` in both directions. The finite-`p` pair norm uses opposite
   component shifts and has the exact signed coefficient energy, without an
-  extra pair-norm factor. The resonant decomposition and its complementary
-  free inverse remain next.
+  extra pair-norm factor. The resonant projections now select first-component
+  frequency `-n` and second-component frequency `n`. The complementary free
+  inverse exists throughout the closed strip, including `λ=nπ`, and gains one
+  weighted derivative. Both projected inverse identities and uniqueness are
+  proved, with exact agreement with the existing free differential pencil.
+  The projections and base inverse are contractions in every signed shifted
+  finite-`p` norm. Lemma 6.4's potential-composed bound remains next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

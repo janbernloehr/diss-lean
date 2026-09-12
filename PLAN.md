@@ -849,7 +849,22 @@ component by `-i` and the second by `i`. The exact energy is
 coordinates. Both comparisons again have factor `w(i)`, with no additional
 pair-norm constant. Unit weights give isometric pair shifts.
 
-Next, construct the resonant projection onto the first physical frequency
-`-n` and the second frequency `n`, its complement, and the complementary free
-inverse throughout the strip `|Re λ-nπ|≤π/2`, including `λ=nπ`. Then use these
-operators with the shifted weighted norms to prove Lemma 6.4's uniform bound.
+The resonant projections and complementary free inverse are now implemented.
+The projections select physical frequencies `-n` and `n`, sum to the identity,
+and are idempotent and mutually annihilating. The complement is characterized
+by vanishing of those two coordinates.
+
+All nonresonant denominators dominate `|m-n|≥1` throughout the closed strip,
+including its center. The zeroed reciprocal defines a continuous linear inverse
+into the domain with weight `w(k)(1+|k|)`. Both compositions with the free pencil
+give the appropriate complementary projection, and the complementary solution
+is unique. The domain map has bound `1+(1+|λ|)/π`. Forgetting the source weight
+identifies the pencil with the original free differential operator on its
+existing domain. The base inverse and both projections contract every signed
+shifted finite-exponent pair norm with constant one.
+
+Next, construct the potential-composed map `T_n=Φ A_λ⁻¹ Q_n` and prove the
+shift-reversing bound in Lemma 6.4, using the source weight inequalities and
+convolution estimates. Then estimate its square and derive the high-frequency
+weighted reduction needed for Propositions 6.1 and 6.3. The printed general-`p`
+central-height constant remains a separate open item.
