@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 188 modules and 1783 named public theorems. All compile on the
+The library has 191 modules and 1823 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -35,6 +35,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.SobolevDerivative` | Monotone real regularity embeddings and composition; period-two derivative with norm bound `π`; exact one-unit regularity recovery from raw and derivative data |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
+| `NLS.SequenceSpaces.PairNormInfty` | Actual frequencywise sum then supremum norm on signed pairs; complete `lp` construction; continuous equivalences to signed and scalar maximum products; sharp factor two and reflected first component |
+| `NLS.SequenceSpaces.WeightedPairNormInfty` | Complete weighted endpoint pairs; isometric weighting; exact weighted and real Sobolev supremum formulas; sharp comparisons; scalar-coordinate conversion with the source's first-component reflection |
+| `NLS.Fourier.PairDistributionInfty` | Continuous injective actual endpoint pair synthesis; signed coefficient recovery; physical periodicity; exact source norm from distributional coefficients; unique representation of arbitrary periodic endpoint pairs |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
 | `NLS.ZakharovShabat.PairNormHeight` | Resolvent and strict strip bounds in the source's finite pair norm; uniform open convex parameter neighborhoods; analytic actual norm-height contours with rank `4N+2` |
 | `NLS.SequenceSpaces.Multiplier` | Bounded diagonal symbols; norm bound; continuous linear operator; commutation with truncations |
@@ -1623,7 +1626,7 @@ Sobolev regularity `s`, the weight in the combined energy is exactly
 Continuous linear equivalences preserve all coefficients while identifying
 these spaces with the existing maximum-norm products. The forward norm bound
 is one; the reverse factor is exactly `2^(1/p)`, attained by equal components.
-These results do not identify the source's different infinity-endpoint norm.
+The distinct infinity-endpoint construction is given in `PairNormInfty` below.
 
 The source-norm parameter map is contractive, so all-exponent height
 `(1+8pM)^p` and printed Hilbert height `(1+8M)^2` remain sufficient when `M`
@@ -1636,9 +1639,9 @@ uniformly bounded sufficient height, with no regularity assumed.
 
 This completes the finite coefficient pair-norm comparison and the potential
 parameter transfer for the proved heights. Operators in these contour statements
-still act on the original coefficient base space. The general physical
-Fourier/distribution realization, the source's infinity norm, and the printed
-general-`p` height remain open.
+still act on the original coefficient base space. The physical distributional
+realization and the source's infinity norm are implemented below. The printed
+general-`p` height remains open.
 
 ## Canonical period-one embedding and physical Fourier integrals
 
@@ -1736,7 +1739,7 @@ gives stability under limits in the two base coefficient norms, without assuming
 convergence in the stronger domain norm.
 
 The following milestone identifies distributional potential multiplication.
-These statements do not settle the source's distinct infinity pair norm.
+The separate source infinity pair norm is implemented below.
 
 ## Actual distribution multiplication and the full operator
 
@@ -1780,7 +1783,7 @@ used in the spectral theory.
 This is the full operator identification on the realized Fourier domain.
 The intrinsic characterization of arbitrary periodic tempered distributions in
 these Fourier classes, including the full real Sobolev scale, is proved below.
-The separate source infinity pair norm remains open.
+The separate source infinity pair norm is implemented below.
 
 ## Schwartz periodization and the converse bridge
 
@@ -1896,7 +1899,7 @@ and `Memℓp` of the coefficient-test values hold if and only if there is a uniq
 It applies to every Banach exponent, including infinity without a vanishing-tail
 assumption. This completes the intrinsic unweighted Banach Fourier-class
 identification. The following milestone extends it to the full real Sobolev
-scale; the distinct source infinity pair norm remains separate.
+scale; the distinct source infinity pair norm is implemented subsequently below.
 
 ## Weighted distributions and the full real Sobolev scale
 
@@ -1945,12 +1948,41 @@ in each Sobolev coefficient norm is exactly the included `s+1` space and is
 closed, including infinity. An intrinsic criterion for arbitrary periodic
 inputs characterizes regularity `s+1` by simultaneous regularity `s` of the
 distribution and its derivative. All statements include negative fractional
-regularity. The source's distinct infinity pair norm remains a subsequent step.
+regularity.
+
+## Exact infinity pair norm and signed distributional realization
+
+`CoeffPairInfty` is the actual `lp` space at infinity of pairs carrying their
+local sum norm. Thus its norm is `sup_n (|a(n)| + |b(n)|)`, exactly the source's
+endpoint convention following (1.2), printed page 22. It is a complete complex
+normed space. Continuous linear equivalences identify the topology with the
+existing maximum product; the forward bound is one and the reverse bound is
+two, attained by equal signed sequences including nondecaying data.
+
+The source's pair basis uses scalar frequency `-n` in its first component.
+Consequently, `toMax` preserves signed coordinates, while `toScalarMax`
+reflects the first sequence to enter the existing scalar-coordinate spaces.
+In scalar coefficients the source supremum pairs the first component at `-n`
+with the second at `n`. This matters at infinity: reflecting only one component
+can change the frequencywise sum norm even though it preserves both scalar norms.
+
+`WeightedCoeffPairInfty` retains raw signed weighted sequences and transports
+its norm through weighting into `CoeffPairInfty`. This gives completeness and
+exact `sup_n w(n)(|a(n)|+|b(n)|)` for every positive weight. The same sharp
+comparisons hold. Every real Sobolev weight has an explicit scalar-coordinate
+conversion using its reflection isometry, including negative fractional weights.
+
+`PairDistributionInfty` synthesizes these weighted endpoint pairs continuously
+and injectively into two genuine period-two tempered distributions. Coefficient
+tests recover the first signed sequence at the reflected frequency and the
+second directly. The exact source norm is recovered from these actual
+coefficients. Every pair of periodic distributions with endpoint Sobolev
+regularity has a unique representative in this source-norm space.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3676 declarations under `NLS`, including generated
+axioms. The current audit covers 3788 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2399,6 +2431,15 @@ to zero. Fractional inputs satisfy genuine integration by parts. Endpoint
 graph recovery and the intrinsic criterion recover the next regularity, and
 zero regularity agrees with the existing Zakharov–Shabat domain derivative.
 
+Endpoint-pair checks use nondecaying equal components to attain factor two
+against the maximum norm. Disjoint signed single modes have norm one while the
+sum of the separate scalar suprema is two. Their scalar coordinates coincide
+at frequency `-1`, checking the essential first-component reflection. Weighted
+diagonal modes exercise negative fractional regularity and the exact numerical
+norm `1/2` at regularity `-1`. Actual pair synthesis recovers imaginary first
+coefficients at the opposite frequency and annihilates the wrong frequency.
+Arbitrary periodic inputs exercise the unique endpoint pair representation.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -2406,8 +2447,9 @@ zero regularity agrees with the existing Zakharov–Shabat domain derivative.
    inequalities beyond an `l1` factor. The real Sobolev scale now has actual
    synthesis, intrinsic characterization, regularity inclusions, and exact
    distributional derivative domains, including infinity.
-3. Implement the source's infinity-endpoint pair norm. The finite-`p`
-   component-sum norm and its sharp comparison are complete.
+3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
+   dissertation results. Both finite and infinity source pair norms and their
+   sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes

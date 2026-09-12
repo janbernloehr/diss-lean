@@ -518,5 +518,11 @@ has exactly this domain and a closed graph. Intrinsically, simultaneous
 regularity `s` of a periodic distribution and its derivative is equivalent to
 regularity `s+1` of the distribution. Further work includes exponent-changing
 embeddings and Young inequalities beyond an `l1` factor.
-The source's distinct infinity-endpoint pair norm also remains a separate proof
-obligation.
+The source's distinct infinity pair norm is now implemented as `lp` of
+sum-norm pairs, with complete weighted variants and exact supremum formulas.
+Its comparison with the maximum product has sharp factor two. The first signed
+coefficient is reflected explicitly in the equivalences to the scalar-coordinate
+spaces, respecting (1.2). At every real Sobolev regularity, the endpoint pair
+space has continuous injective actual distributional synthesis, coefficient
+recovery, its exact intrinsic norm formula, and a unique representation theorem
+for arbitrary periodic pairs with the stated endpoint regularity.

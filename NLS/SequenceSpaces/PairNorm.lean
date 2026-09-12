@@ -8,7 +8,7 @@ Chapter 1, equation (1.2), uses the sum of both component coefficient energies.
 `CoeffPair` and `WeightedCoeffPair` carry that actual norm for finite `p ≥ 1`.
 Their continuous linear equivalences with maximum-norm products preserve the
 coefficients and give explicit norm comparisons. The `p = ∞` norm in the
-source is different and is not identified here.
+source is different and is implemented in `NLS.SequenceSpaces.PairNormInfty`.
 -/
 
 noncomputable section

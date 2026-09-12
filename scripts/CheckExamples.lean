@@ -5330,3 +5330,112 @@ example (f : ZakharovShabat.ScalarDomain 3) :
   simp only [Weight.sobolev_zero_apply, Complex.ofReal_one, one_mul]
 
 end SobolevDistributionDerivativeChecks
+
+namespace PairNormInftyChecks
+open NLS.Fourier
+open scoped SchwartzMap
+
+private def ones : Coeff ⊤ := ⟨fun _ => 1, one_memℓp_infty⟩
+
+private theorem norm_ones : ‖ones‖ = 1 := by
+  rw [lp.norm_eq_ciSup]
+  change (⨆ _ : ℤ, ‖(1 : ℂ)‖) = 1
+  simp
+
+-- Nondecaying endpoint data attains the sharp factor two over the maximum pair norm.
+example : ‖CoeffPairInfty.ofPair ones ones‖ = 2 ∧ ‖(ones, ones)‖ = 1 := by
+  rw [CoeffPairInfty.norm_diagonal, Prod.norm_def, norm_ones]
+  norm_num
+
+private def disjoint : CoeffPairInfty :=
+  CoeffPairInfty.ofPair (lp.single ⊤ 1 1) (lp.single ⊤ (-1) 1)
+
+-- Separate signed frequencies have norm one, even though the scalar suprema sum to two.
+private theorem norm_disjoint : ‖disjoint‖ = 1 := by
+  apply le_antisymm
+  · apply lp.norm_le_of_forall_le zero_le_one
+    intro n
+    change ‖WithLp.toLp 1
+      ((lp.single ⊤ 1 (1 : ℂ) : Coeff ⊤) n, (lp.single ⊤ (-1) (1 : ℂ) : Coeff ⊤) n)‖ ≤ 1
+    rw [WithLp.prod_norm_eq_of_L1]
+    by_cases h₁ : n = 1
+    · subst n
+      norm_num [lp.single_apply, Pi.single_apply]
+    · by_cases h₂ : n = -1
+      · subst n
+        norm_num [lp.single_apply, Pi.single_apply]
+      · simp [lp.single_apply, h₁, h₂]
+  · have h := lp.norm_apply_le_norm (by simp) disjoint 1
+    change ‖WithLp.toLp 1
+      ((lp.single ⊤ 1 (1 : ℂ) : Coeff ⊤) 1, (lp.single ⊤ (-1) (1 : ℂ) : Coeff ⊤) 1)‖ ≤ _ at h
+    rw [WithLp.prod_norm_eq_of_L1] at h
+    norm_num [lp.single_apply, Pi.single_apply] at h
+    exact h
+
+example : ‖disjoint‖ = 1 ∧ ‖CoeffPairInfty.fst disjoint‖ + ‖CoeffPairInfty.snd disjoint‖ = 2 := by
+  refine ⟨norm_disjoint, ?_⟩
+  change ‖(lp.single ⊤ 1 (1 : ℂ) : Coeff ⊤)‖ + ‖(lp.single ⊤ (-1) (1 : ℂ) : Coeff ⊤)‖ = 2
+  norm_num
+
+-- These two signed modes become coincident scalar frequencies after reflecting the first component.
+example : (CoeffPairInfty.toScalarMax disjoint).1 (-1) = 1 ∧
+    (CoeffPairInfty.toScalarMax disjoint).2 (-1) = 1 ∧ ‖disjoint‖ = 1 := by
+  refine ⟨?_, ?_, norm_disjoint⟩ <;>
+    norm_num [CoeffPairInfty.toScalarMax_apply, Coeff.reflection_apply,
+      CoeffPairInfty.fst_apply, CoeffPairInfty.snd_apply, disjoint,
+      CoeffPairInfty.ofPair_apply, lp.single_apply, Pi.single_apply]
+
+private def mode (s : ℝ) (k : ℤ) (c : ℂ) : WeightedCoeff (Weight.sobolev s) ⊤ :=
+  (WeightedCoeff.weightEquiv (Weight.sobolev s) ⊤).symm
+    (lp.single ⊤ k ((Weight.sobolev s k : ℂ) * c))
+
+private theorem mode_apply (s : ℝ) (k n : ℤ) (c : ℂ) :
+    (mode s k c).val n = if n = k then c else 0 := by
+  change (lp.single ⊤ k ((Weight.sobolev s k : ℂ) * c) : Coeff ⊤) n /
+    (Weight.sobolev s n : ℂ) = _
+  by_cases h : n = k
+  · subst n
+    simp only [lp.single_apply, Pi.single_apply]
+    exact mul_div_cancel_left₀ c ((Weight.sobolev s).complex_ne_zero k)
+  · simp [lp.single_apply, h]
+
+private theorem norm_mode (s : ℝ) (k : ℤ) (c : ℂ) :
+    ‖mode s k c‖ = Weight.sobolev s k * ‖c‖ := by
+  rw [WeightedCoeff.norm_eq, mode, LinearEquiv.apply_symm_apply, lp.norm_single (by simp)]
+  simp only [norm_mul, Complex.norm_real, Real.norm_eq_abs,
+    abs_of_pos ((Weight.sobolev s).positive k)]
+
+-- The weight is applied once to the component sum at negative fractional regularity.
+example : ‖WeightedCoeffPairInfty.ofPair (Weight.sobolev (-1 / 2))
+    (mode (-1 / 2) 3 1) (mode (-1 / 2) 3 1)‖ = 2 * (4 : ℝ) ^ (-1 / 2 : ℝ) := by
+  rw [WeightedCoeffPairInfty.norm_diagonal, norm_mode]
+  norm_num [Weight.sobolev_apply]
+
+-- A negative integral regularity gives an exact numerical endpoint norm.
+example : ‖WeightedCoeffPairInfty.ofPair (Weight.sobolev (-1))
+    (mode (-1) 3 1) (mode (-1) 3 1)‖ = 1 / 2 := by
+  rw [WeightedCoeffPairInfty.norm_diagonal, norm_mode]
+  norm_num [Weight.sobolev_apply, Real.rpow_neg_one]
+
+-- Signed basis coefficients synthesize opposite first and second scalar frequencies.
+example :
+    let u := WeightedCoeffPairInfty.ofPair (Weight.sobolev (-1 / 2))
+      (mode (-1 / 2) 3 Complex.I) (mode (-1 / 2) 3 1)
+    (pairDistributionInftyCLM (-1 / 2) u).1 (coefficientTest (-3)) = Complex.I ∧
+    (pairDistributionInftyCLM (-1 / 2) u).1 (coefficientTest 3) = 0 ∧
+    (pairDistributionInftyCLM (-1 / 2) u).2 (coefficientTest 3) = 1 := by
+  dsimp only
+  simp only [pairDistributionInfty_fst_coefficientTest, pairDistributionInfty_snd_coefficientTest,
+    WeightedCoeffPairInfty.ofPair_fst, WeightedCoeffPairInfty.ofPair_snd, mode_apply]
+  norm_num
+
+-- Independent arbitrary periodic inputs recover a unique pair in the source endpoint space.
+example (T : 𝓢'(ℝ, ℂ) × 𝓢'(ℝ, ℂ))
+    (h₁ : IsPeriodTwoDistribution T.1) (h₂ : IsPeriodTwoDistribution T.2)
+    (ha : Memℓp (fun n : ℤ => (Weight.sobolev (-1 / 2) n : ℂ) * T.1 (coefficientTest n)) ⊤)
+    (hb : Memℓp (fun n : ℤ => (Weight.sobolev (-1 / 2) n : ℂ) * T.2 (coefficientTest n)) ⊤) :
+    ∃! u : WeightedCoeffPairInfty (Weight.sobolev (-1 / 2)),
+      pairDistributionInftyCLM (-1 / 2) u = T :=
+  (periodicDistribution_pair_infty_iff_existsUnique (-1 / 2) T).mp ⟨⟨h₁, ha⟩, ⟨h₂, hb⟩⟩
+
+end PairNormInftyChecks

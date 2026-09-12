@@ -214,10 +214,10 @@ of uniformly bounded sufficient heights. The finite-exponent component-sum
 pair norm is now implemented exactly, including all real Sobolev weights.
 Its continuous linear equivalence with the maximum norm has sharp reverse
 factor `2^(1/p)`. The proved heights and analytic contour neighborhoods now
-transfer to this actual source-norm parameter space. The source's infinity
-norm, full physical Fourier realization, and main dissertation theorems remain
-future work. The canonical period-one coefficient embedding is now an isometry
-onto the even subspace and commutes with convolution. Actual integrable
+transfer to this actual source-norm parameter space. The separate infinity
+norm and full weighted distributional realization are now implemented below.
+The main dissertation theorems remain future work. The canonical period-one
+coefficient embedding is now an isometry onto the even subspace and commutes with convolution. Actual integrable
 period-one functions have exactly the inserted period-two Fourier integrals,
 with their coefficient norm preserved. Absolutely summable data has an
 injective continuous period-one realization. The pair embedding covers exactly
@@ -270,6 +270,14 @@ from `FL^{s+1,p}` to `FL^{s,p}` with constant `π`. Its actual distributional gr
 is closed and has exactly that domain, including infinity. Intrinsically, a
 periodic distribution and its derivative both lie in regularity `s` exactly
 when the distribution lies in regularity `s+1`.
+The source's infinity pair norm is now implemented as the supremum of the
+frequencywise component sum, with a complete complex normed space for every
+positive weight and exact real Sobolev formulas. Its comparison with the
+maximum pair norm has sharp factor two. Signed pair coordinates and scalar
+Fourier coordinates are related explicitly by reflection of the first
+component, as in (1.2). The weighted endpoint space synthesizes injectively
+into actual periodic distribution pairs, with the exact source norm recovered
+from their coefficients and a unique representation for every endpoint pair.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -413,7 +421,10 @@ installation is absent. No shell startup files are modified.
   `WeightedCoeffPair` implement the dissertation's finite-`p` component-sum
   norms, with continuous linear equivalences and sharp factor `2^(1/p)`.
   The spectral-height bounds transfer without increasing their constants.
-  The source's infinity-endpoint norm is not identified.
+  `CoeffPairInfty` and `WeightedCoeffPairInfty` implement the distinct infinity
+  norm `sup_n w(n)(|a(n)|+|b(n)|)` in signed pair coefficients, with sharp factor
+  two. Their `toScalarMax` equivalences reflect the first sequence before
+  entering the original scalar-coordinate operator spaces.
 - Both scalar components use period-two modes `exp(i π n x)`. The free symbols
   are `-π n` and `+π n`; the signed modes `eₙ⁻` and `eₙ⁺` both have eigenvalue `π n`.
 - The operator is a bounded map from the one-derivative domain to the base space.
