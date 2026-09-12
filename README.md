@@ -78,8 +78,8 @@ Section 4's Dirichlet and Neumann coefficient spaces are now constructed as
 closed complementary subspaces, including their weighted domains and contractive
 projections. The operator preserves both spaces for already-reflected potentials;
 its bounded restrictions and the exact signed free-mode and potential-action
-formulas are proved. Identification with physical boundary conditions and the
-interval-extension estimates in Lemmas 4.1–4.3 remain open.
+formulas are proved. Identification of the weighted domains with physical
+boundary conditions and the uniform interval-extension estimates remain open.
 Both boundary restrictions now have full compact resolvents, jointly analytic
 on their own open domains. Their spectra are closed and discrete, with finite
 bounded portions and an eigenvector characterization. The periodic spectrum is
@@ -98,6 +98,14 @@ projectors lift analytically into the weighted boundary domains, and the trace
 of the bounded restriction defines each high-index simple eigenvalue. Both
 functions are analytic on one open convex neighborhood in the reflected
 potential space, with the same cutoff and counting data.
+The physical reflected interval extensions are now defined, and their normalized
+Fourier integrals are computed for continuous input and finite Fourier polynomials.
+Finite input gives actual elements of both boundary coefficient spaces for `p>1`,
+with an explicit reciprocal kernel bound. A one-sided constant proves failure at
+`p=1`. The integrals also detect missing normalization factors in the calculation
+on printed page 31: the even coefficient carries `1/2`, and the odd kernel carries
+`i/π`. The uniform `ℓp → ℓp` estimate for `1<p<∞`, and completion from finite
+input, are still needed for Lemma 4.3 and the period-one spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

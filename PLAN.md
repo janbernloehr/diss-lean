@@ -291,11 +291,20 @@ and Neumann functions are analytic on one open convex neighborhood in the
 reflected potential space and agree with the previously counted simple values.
 Their free values are `πn`, and they have actual weighted-domain eigenvectors.
 
-Next construct the physical interval-extension maps of Lemmas 4.1–4.2 and
-prove the discrete Hilbert transform estimate in Lemma 4.3. Transfer the
-coefficient counting and analytic-eigenvalue theorems through these maps to the
-original period-one potentials. The period-two projections are not substitutes
-for interval extensions.
+The physical piecewise interval extensions and their normalized Fourier formulas
+are now proved. Translates of the half-interval kernel give linear maps from
+finite period-one coefficient pairs into the actual boundary `ℓp` spaces for
+`p>1`, including `∞` for this finite-input construction. The odd reciprocal tail
+is not in `ℓ1`, as witnessed by the constant input `(0,1)`. The derivation from
+(1.8)–(1.9) corrects the missing normalization on printed page 31.
+
+Next prove a uniform bound for the shifted discrete Hilbert kernel in the input
+`ℓp` norm, `1<p<∞`, then complete the finite-input maps by density. Individual
+kernel membership does not supply this uniform bound. Only boundedness is needed
+from Appendix C.1; its additional isomorphism assertion is not assumed here.
+Construct the physical Sobolev-domain identifications of Lemmas 4.1–4.2 and
+transfer the coefficient counting and analytic-eigenvalue theorems to the
+original period-one potentials.
 Identification with the rectangular contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.

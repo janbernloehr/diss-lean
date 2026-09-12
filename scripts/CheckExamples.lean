@@ -2514,3 +2514,80 @@ example (φ : dirichletSubspace (p := 1)) : ∃ N : ℕ, ∀ b : BoundaryConditi
 end BoundaryEigenvalueChecks
 
 end BoundaryEigenvalueChecksSection
+
+section IntervalExtensionChecks
+
+namespace IntervalExtensionChecks
+
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition Complex
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The same one-sided input is unchanged before the join and changes sign after it.
+example (b : BoundaryCondition) : intervalExtension b (fun _ => ((0 : ℂ), 1)) 1 = (0, 1) :=
+  intervalExtension_left b _ _ le_rfl
+example : intervalExtension .dirichlet (fun _ => ((0 : ℂ), 1)) (3 / 2) = (1, 0) := by
+  rw [intervalExtension_right _ _ _ (by norm_num)]
+  norm_num [extensionSign]
+example : intervalExtension .neumann (fun _ => ((0 : ℂ), 1)) (3 / 2) = (-1, 0) := by
+  rw [intervalExtension_right _ _ _ (by norm_num)]
+  norm_num [extensionSign]
+
+-- These evaluate actual normalized integrals, not just formal sequence formulas.
+example : periodTwoCoefficient
+    (fun x => (intervalExtension .dirichlet (fun _ => ((1 : ℂ), 1)) x).2) 0 = 1 := by
+  rw [intervalExtension_coefficient_snd _ _ continuous_const, intervalAmplitude_dirichlet_unit_zero]
+example : periodTwoCoefficient
+    (fun x => (intervalExtension .neumann (fun _ => ((1 : ℂ), 1)) x).2) 0 = 0 := by
+  rw [intervalExtension_coefficient_snd _ _ continuous_const, intervalAmplitude_const_zero]
+  norm_num [extensionSign]
+example (b : BoundaryCondition) : intervalAmplitude b (fun _ => ((0 : ℂ), 1)) 0 = 1 / 2 := by
+  rw [intervalAmplitude_const_zero]
+  simp
+example (b : BoundaryCondition) : intervalAmplitude b (fun _ => ((0 : ℂ), 1)) 1 = -I / Real.pi := by
+  simpa using intervalAmplitude_oneSided_odd b 0
+example (b : BoundaryCondition) : intervalAmplitude b (fun _ => ((0 : ℂ), 1)) (-1) = I / Real.pi := by
+  convert intervalAmplitude_oneSided_odd b (-1) using 1 <;> norm_num
+
+-- Nonconstant input at raw index -2 appears at output +4 in the first-component contribution.
+def intervalTestInput : (ℤ →₀ ℂ) × (ℤ →₀ ℂ) := (Finsupp.single (-2) I, Finsupp.single 3 2)
+example : finiteIntervalAmplitude .dirichlet (p := 3) (by norm_num) intervalTestInput 4 = I / 2 := by
+  rw [finiteIntervalAmplitude_apply, show (4 : ℤ) = 2 * 2 by norm_num, intervalAmplitude_even]
+  norm_num [intervalTestInput, extensionSign]
+  ring
+example : finiteIntervalAmplitude .neumann (p := 3) (by norm_num) intervalTestInput 4 = -I / 2 := by
+  rw [finiteIntervalAmplitude_apply, show (4 : ℤ) = 2 * 2 by norm_num, intervalAmplitude_even]
+  norm_num [intervalTestInput, extensionSign]
+  ring
+example : finiteIntervalAmplitude .dirichlet (p := 3) (by norm_num) intervalTestInput (-4) = 0 := by
+  rw [finiteIntervalAmplitude_apply, show (-4 : ℤ) = 2 * (-2) by norm_num, intervalAmplitude_even]
+  norm_num [intervalTestInput, extensionSign]
+
+-- Equality with physical integrals and boundary membership hold at non-Hilbert p.
+example (b : BoundaryCondition) (n : ℤ) :
+    periodTwoCoefficient (fun x => (intervalExtension b (periodOnePair intervalTestInput) x).1) n =
+      (finiteIntervalExtension b (p := 3) (by norm_num) intervalTestInput).1 n :=
+  finiteIntervalExtension_coefficient_fst b _ _ n
+example (b : BoundaryCondition) :
+    finiteIntervalExtension b (p := 3) (by norm_num) intervalTestInput ∈ space b :=
+  finiteIntervalExtension_mem b _ _
+example (b : BoundaryCondition) :
+    finiteIntervalExtension b (p := ⊤) (by simp) intervalTestInput ∈ space b :=
+  finiteIntervalExtension_mem b _ _
+example (b : BoundaryCondition) (a c : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) :
+    finiteIntervalExtension b (p := 2) (by norm_num) (a + I • c) =
+      finiteIntervalExtension b (p := 2) (by norm_num) a +
+      I • finiteIntervalExtension b (p := 2) (by norm_num) c := by
+  rw [map_add, map_smul]
+
+-- The p=1 failure concerns the actual physical Fourier coefficients.
+example (b : BoundaryCondition) : ¬Memℓp (fun n => periodTwoCoefficient
+    (fun x => (intervalExtension b (fun _ => ((0 : ℂ), 1)) x).2) n) 1 :=
+  not_memlp_intervalExtension_oneSided b
+
+end
+
+end IntervalExtensionChecks
+
+end IntervalExtensionChecks

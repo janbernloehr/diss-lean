@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has seventy-eight modules and 875 named public theorems. All compile on the
+The library has 83 modules and 922 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -85,6 +85,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.ProjectionTrace` | Intrinsic restriction and trace on varying projection ranges; conjugacy under local transport; analytic traces for commuting analytic families; trace equals the eigenvalue on a one-dimensional range |
 | `NLS.ZakharovShabat.BoundarySpectralReduction` | Analytic contour lifts into the actual weighted boundary domains; inclusion and projection identities; bounded analytic `L P`; spectral support, commutation, and exact action on enclosed boundary eigenvectors |
 | `NLS.ZakharovShabat.BoundaryEigenvalues` | Trace-defined boundary eigenvalues; analytic intrinsic traces on reflected potentials; rank-one identification with the actual spectrum; signed free values; coefficient Lemma 4.5 on one open convex neighborhood with uniform counting data and actual domain eigenvectors |
+| `NLS.Fourier.IntervalKernel` | Actual half-period Fourier integrals; reflected waves; exact even and odd overlap coefficients with normalization |
+| `NLS.Fourier.FoldedInterval` | Piecewise reflected integral formula for continuous inputs; finite Fourier synthesis and even/odd half-coefficients |
+| `NLS.Fourier.IntervalKernelLp` | Translation identity; reciprocal norm envelope; kernel membership for every `p>1`; failure at `p=1` via the harmonic series |
+| `NLS.ZakharovShabat.IntervalExtension` | Physical reflected/swapped linear maps; Fourier reflection relation; normalized finite-input amplitudes; constant and one-sided coefficient formulas |
+| `NLS.ZakharovShabat.FiniteIntervalExtension` | Linear finite-input maps into actual boundary `ℓp` spaces; exact equality with physical Fourier integrals; physical `p=1` counterexample |
 
 ## Current mathematical milestone
 
@@ -512,11 +517,11 @@ into the base subspaces, with the existing explicit operator bound.
 
 This proves the coefficient content of Lemma 4.4 for every finite Banach
 exponent, including `p=1`, under the already-reflected-potential hypothesis.
-It does not construct the source's interval-extension maps. Those maps,
-the physical endpoint interpretation and the isomorphisms in Lemmas 4.1–4.2,
-and the discrete-Hilbert-transform estimate in Lemma 4.3 remain open. In
-particular, projecting period-two data here is distinct from extending
-period-one data by reflection; the latter estimate requires `1<p<∞`.
+The physical endpoint interpretation and Sobolev-domain isomorphisms in
+Lemmas 4.1–4.2 remain open. The later finite interval-extension construction
+below connects physical integrals to these base coefficient spaces, but the
+uniform discrete-Hilbert-transform estimate in Lemma 4.3 still requires proof
+for `1<p<∞`.
 
 **The full boundary resolvents and spectral decomposition are proved.**
 `BoundaryCondition` selects either restriction without changing its operator.
@@ -600,8 +605,38 @@ of reflected potentials containing the given potential and zero, with the same
 cutoff and counting data for every larger central box. The total trace definition
 has an eigenvalue interpretation under these rank-one hypotheses.
 
-The physical interval-extension maps and their estimates remain necessary to
-transfer Theorem 1.4 and Lemma 4.5 to the original period-one potentials.
+The uniform interval-extension estimates remain necessary to transfer
+Theorem 1.4 and Lemma 4.5 to the original period-one potentials.
+
+**Physical interval extensions are constructed for finite Fourier input.**
+The piecewise map retains the input on `[0,1]` and swaps its components at
+`2-x` on `(1,2]`, with a plus sign for Dirichlet and a minus sign for Neumann.
+Its normalized period-two Fourier integrals are proved by splitting the
+interval and changing variables; the join point does not require continuity
+of the extension. No global periodic or physical Sobolev realization is asserted.
+
+For raw period-one input coefficients `(u,v)`, the even boundary amplitude at
+`2l` is `(v(l)+εu(-l))/2`. The odd amplitude is the finite sum of
+`v(k)i/[π(2k-2l-1)] + εu(k)i/[π(2k+2l+1)]`. The first component uses raw
+negative frequencies consistently with the existing signed boundary modes.
+These constants follow from equations (1.8)–(1.9), including the factor `1/2`.
+The calculation on printed page 31 omits that half-normalization and the odd
+kernel's `π` denominator. In particular, the Dirichlet extension of `(1,1)`
+has zeroth coefficient `1`; the printed even formula would give `2`.
+
+The overlap kernel obeys `|K(n)| ≤ 2/(1+|n|)` and belongs to every `ℓp` with
+`p>1`. Finite linear combinations of its shifts therefore define actual
+`PairSpace p` elements, with proved linearity, selected boundary membership,
+and equality of both component sequences with the physical Fourier integrals.
+This finite-input construction also works at `p=∞`, without claiming a uniform
+`ℓ∞` input bound. For either boundary condition the constant input `(0,1)` has
+odd amplitude `-i/[π(2l+1)]`; comparison with the harmonic series proves its
+physical coefficient sequence is not in `ℓ1`.
+
+A bound uniform in the input `ℓp` norm, `1<p<∞`, remains unproved. Kernel
+membership and finite synthesis alone do not justify completion by density.
+Only boundedness of the relevant discrete Hilbert transform is needed; no
+invertibility assertion from Appendix C.1 is assumed.
 
 The actual unbounded realization is now defined as
 
@@ -815,7 +850,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1816 declarations under `NLS`, including generated
+axioms. The current audit covers 1922 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -991,11 +1026,18 @@ of a negative free boundary mode by the domain lift, analyticity into the weight
 boundary domain at `p=1`, shared neighborhoods for both analytic simple eigenvalue
 functions at `p=3`, and actual weighted-domain eigenvectors at `p=1`.
 
+Interval-extension checks evaluate physical reflected signs before and after the
+join, normalized constant integrals, opposite odd-frequency signs, and the
+first raw input index reversal on nonconstant data. They check physical/coefficient
+agreement and boundary membership at `p=3`, finite-input membership at `p=∞`,
+linearity at `p=2`, and the physical one-sided-constant obstruction at `p=1`.
+
 ## Next milestones
 
-1. Construct the interval-extension maps and discrete Hilbert transform bound
-   in Lemmas 4.1–4.3. Transfer the coefficient counting and analytic-eigenvalue
-   results of Theorem 1.4 and Lemma 4.5 to the original period-one potentials.
+1. Prove the uniform shifted discrete Hilbert transform bound and complete the
+   finite interval-extension maps for `1<p<∞`. Construct the physical Sobolev
+   identifications in Lemmas 4.1–4.2, then transfer Theorem 1.4 and Lemma 4.5 to
+   the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one
