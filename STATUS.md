@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 213 modules and 2029 named public theorems. All compile on the
+The library has 218 modules and 2074 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -41,6 +41,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.FractionalSobolevIdentification` | Physical periodic fractional regularity iff unique weighted Hilbert synthesis for `0<s<1`; actual Fourier coefficient recovery and both inverse identities; quantitative physical energy and weighted norm bounds retaining the zero mode |
 | `NLS.Fourier.FractionalBoundaryKernel` | Arbitrary-length interval exterior kernel mass; exact nonnegative boundary-energy formula including infinity; genuine zero-extension mixed interaction; intrinsic interval difference energy and almost-everywhere invariance; magnitude monotonicity |
 | `NLS.Fourier.FractionalBoundaryWeight` | Exact endpoint-weight integral and sharp half-regularity integrability threshold; constant exterior energies and critical divergence; explicit exterior bound for almost-everywhere bounded interval data |
+| `NLS.Fourier.FractionalHardyKernel` | Exact averaging coefficient and annular mass; strict contraction below half; explicit absorption parameter; adjustable complex square estimate and local kernel domination |
+| `NLS.Fourier.FractionalHardyAveraging` | Jointly measurable triangular kernel; exact Tonelli identity including infinite input; row normalization; uniform truncated mass bound; intrinsic difference-energy control |
+| `NLS.Fourier.FractionalHardyPreestimate` | Actual truncated boundary square-energy estimate with adjustable and contracting constants; positive-cutoff finiteness from arbitrary interval `L²` data |
+| `NLS.Fourier.FractionalHardyLeft` | Finite-energy absorption; cutoff-independent coercive Hardy estimate; increasing cutoff exhaustion and monotone limit; left endpoint finiteness from intrinsic energy and `L²` |
+| `NLS.Fourier.FractionalHardy` | Measure-preserving interval reflection; energy invariance; quantitative control of both endpoint weights; finite exterior interaction for arbitrary interval representatives without global measurability or boundedness |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2201,15 +2206,52 @@ An almost-everywhere bound `|f|≤M` yields the same upper estimate with `M²`.
 These are zero-extension statements; they do not assert a boundary obstruction
 for periodically extended constant functions.
 
-The general fractional Hardy inequality remains to be proved: boundary-weighted
-square integrability must follow from intrinsic interval energy and `L²`,
-without assuming boundedness. Extension/periodization comparison then connects
-this result to the completed periodic identification. Appendix A.9 remains open.
+The general fractional Hardy inequality is now proved below. The remaining
+extension/periodization comparison must connect it to the completed periodic
+identification before claiming Appendix A.9.
+
+## Fractional Hardy inequality for arbitrary interval data
+
+`FractionalHardyKernel` computes the averaging coefficient
+`c_s=(2^(2s)-1)/(2s)=∫₁² t^(2s-1)dt`. It is positive and strictly below one
+when `0<s<1/2`. The explicit parameter `ε_s=(1-c_s)/(2c_s)` satisfies
+`(1+ε_s)c_s=(1+c_s)/2<1`. The adjustable complex square inequality and the
+annular integral are proved directly.
+
+`FractionalHardyAveraging` represents the triangle `x<y<2x` by a jointly
+measurable kernel. Exact Tonelli interchange recovers its weighted column
+mass, including infinite nonnegative inputs. The row mass recovers the left
+boundary weight, and the intrinsic difference kernel dominates the averaging
+kernel. These statements give a uniform truncated operator bound.
+
+`FractionalHardyPreestimate` integrates the actual squared function inequality.
+Writing `J_δ` for left-boundary energy over `(δ,L)`, `E` for intrinsic interval
+energy, and `a_s=(1+c_s)/2`, its result is
+`J_(δ,L/2) ≤ a_s J_δ + (1+1/ε_s)E`.
+Positive-distance truncation is finite for every interval `L²` function.
+`FractionalHardyLeft` first proves this finiteness, then legitimately absorbs
+the `a_s J_δ` term. The rest of the interval contributes only
+`(L/2)^(-2s)N`, where `N=∫₀ᴸ |f|²`. Cutoffs `1/(n+1)` exhaust `(0,L)`;
+nonnegative monotone convergence gives the coercive bound
+`(1-a_s)J_0 ≤ (1+1/ε_s)E+(L/2)^(-2s)N`.
+
+`FractionalHardy` proves that interval reflection preserves restricted measure,
+the intrinsic energy, and the square energy. Adding the reflected estimate
+controls the full endpoint-weighted square integral by twice the displayed
+right side. Therefore finite intrinsic interval energy and `L²` imply finite
+zero-extension exterior energy for `0<s<1/2`. No boundedness assumption is
+used. The finiteness theorem applies to arbitrary interval representatives:
+almost-everywhere replacement supplies a measurable representative and both
+energies respect that replacement.
+
+The fractional Hardy dependency is complete. Full zero-extension/periodization
+comparison, the interval-to-periodic identification, and the remaining A.9
+embedding and endpoint consequences are still open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4192 declarations under `NLS`, including generated
+axioms. The current audit covers 4258 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2740,12 +2782,22 @@ using length four gives energy 64. Further checks cover almost-everywhere
 bounded data, almost-everywhere invariance, and the physical zero-extension
 difference formula.
 
+Hardy checks exercise positivity and contraction at `s=1/3`, exact loss of
+contraction at `s=1/2`, the square-root coefficient at `s=1/4`, the adjustable
+square bound for imaginary values, the numerical annular mass, exact row
+normalization, triangle support and nonpositive columns. They check truncated
+averaging and the contracting physical preestimate for arbitrary data, cutoff
+finiteness even above half regularity, and exhaustion of the open interval.
+Reflection is tested without any finiteness assumption. The final check derives
+finite exterior interaction from interval `L²` and intrinsic fractional energy
+alone, with no global measurability or boundedness hypothesis.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the fractional Hardy inequality for arbitrary interval Sobolev data,
-   then the extension/periodization comparison needed in Appendix A.9. Exact
-   boundary kernels and their sharp integrability threshold are complete. The
+2. Prove the extension/periodization comparison needed in Appendix A.9,
+   then the interval Fourier-Lebesgue embedding and endpoint consequences.
+   The fractional Hardy inequality and exact boundary kernels are complete. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
@@ -2753,5 +2805,5 @@ difference formula.
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. The nonperiodic fractional interval boundary estimate and the
-printed general-`p` spectral height remain open.
+unimplemented. The fractional interval-to-periodic comparison and the printed
+general-`p` spectral height remain open.

@@ -634,3 +634,21 @@ The difference term is controlled by the intrinsic interval kernel because
 with `δ>0`, where weighted square integrability follows from `L²`, then pass
 to the nonnegative integral as `δ` decreases to zero. Reflection supplies the
 right endpoint. This avoids assuming the weighted integrability being proved.
+
+
+The fractional Hardy estimate described above is now proved. The annular mass
+produces `c_s=(2^(2s)-1)/(2s)`, and its integral representation proves
+`0<c_s<1` for `0<s<1/2`. A measurable triangular kernel gives an exact Tonelli
+identity for arbitrary nonnegative data, a uniform truncated averaging bound,
+and domination of the difference term by the intrinsic interval energy.
+With `ε_s=(1-c_s)/(2c_s)`, the actual square-energy preestimate has coefficient
+`a_s=(1+c_s)/2<1`. Every positive cutoff has finite weighted energy from `L²`;
+only then is the averaged term absorbed. Increasing cutoff intervals and
+nonnegative monotone convergence give the full left endpoint estimate.
+Reflection yields both endpoint weights. In particular, arbitrary interval
+`L²` data with finite intrinsic fractional energy has finite zero-extension
+exterior interaction below one half. Almost-everywhere replacement removes the
+global measurability assumption in the finiteness conclusion.
+The next A.9 step is the extension/periodization comparison with the already
+identified physical periodic space, followed by the Fourier-Lebesgue embedding
+and the separate half-regularity consequence through lower regularity.

@@ -495,9 +495,11 @@ installation is absent. No shell startup files are modified.
   retaining the constant mode. For arbitrary positive interval length, the
   interaction with the exterior is exactly an endpoint-weighted integral. Its
   weight is integrable precisely below half regularity; exact constant-function
-  energies and bounds for bounded interval data are proved. The fractional
-  Hardy estimate for general interval Sobolev data and the passage to periodic
-  regularity remain necessary for Appendix A.9.
+  energies and bounds for bounded interval data are proved. A fractional Hardy
+  inequality now controls both endpoint weights for general interval `L²` data
+  with finite intrinsic energy when `0<s<1/2`, including arbitrary almost-everywhere
+  representatives. The extension/periodization comparison remains necessary
+  for Appendix A.9.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

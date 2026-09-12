@@ -6077,3 +6077,81 @@ example (f : ℝ → ℂ) :
         ENNReal.ofReal (‖(Set.Ioo 0 2).indicator f x - (Set.Ioo 0 2).indicator f y‖ ^ 2) *
           Fourier.fractionalDistanceKernel (1 / 3) x y :=
   Fourier.fractionalExteriorEnergy_eq_zeroExtension _ _ _
+
+-- The averaging coefficient contracts strictly below one half and reaches one at the threshold.
+example : 0 < Fourier.hardyAveragingConstant (1 / 3) ∧ Fourier.hardyAveragingConstant (1 / 3) < 1 :=
+  ⟨Fourier.hardyAveragingConstant_pos (by norm_num),
+    Fourier.hardyAveragingConstant_lt_one (by norm_num) (by norm_num)⟩
+
+example : Fourier.hardyAveragingConstant (1 / 2) = 1 := by
+  norm_num [Fourier.hardyAveragingConstant]
+
+example : Fourier.hardyAveragingConstant (1 / 4) = 2 * (Real.sqrt 2 - 1) := by
+  norm_num [Fourier.hardyAveragingConstant, Real.rpow_div_two_eq_sqrt]
+  ring
+
+example : 0 < Fourier.hardyAbsorptionParameter (1 / 3) ∧
+    (1 + Fourier.hardyAbsorptionParameter (1 / 3)) * Fourier.hardyAveragingConstant (1 / 3) < 1 :=
+  ⟨Fourier.hardyAbsorptionParameter_pos (by norm_num) (by norm_num),
+    Fourier.hardyAbsorptionParameter_contracts (by norm_num) (by norm_num)⟩
+
+example : ‖(2 : ℂ) * Complex.I‖ ^ 2 ≤
+    (1 + (1 : ℝ)) * ‖Complex.I‖ ^ 2 + (1 + 1 / (1 : ℝ)) * ‖2 * Complex.I - Complex.I‖ ^ 2 :=
+  Fourier.norm_sq_le_weighted_difference (by norm_num) _ _
+
+example : (∫ x in (1 : ℝ)..2, x ^ (-2 : ℝ)) = 1 / 2 := by
+  have h := Fourier.integral_hardy_annulus (s := 1 / 2) (y := 2) (by norm_num) (by norm_num)
+  norm_num [Fourier.hardyAveragingConstant] at h ⊢
+  exact h
+
+example : (∫⁻ y : ℝ, Fourier.hardyAveragingKernel (1 / 2) 4 y) = 1 / 4 := by
+  rw [Fourier.lintegral_hardyAveragingKernel_row _ (by norm_num)]
+  norm_num [ENNReal.ofReal_div_of_pos (by norm_num : (0 : ℝ) < 4)]
+
+example : Fourier.hardyAveragingKernel (1 / 2) 1 (3 / 2) = 1 ∧
+    Fourier.hardyAveragingKernel (1 / 2) 1 3 = 0 := by
+  constructor
+  · rw [Fourier.hardyAveragingKernel_of_mem _ (by norm_num) (by norm_num)]
+    norm_num
+  · norm_num [Fourier.hardyAveragingKernel, Set.indicator_apply]
+
+example (x : ℝ) : Fourier.hardyAveragingKernel (1 / 3) x (-2) = 0 :=
+  Fourier.hardyAveragingKernel_of_nonpos _ (by norm_num) _
+
+-- Tonelli retains possibly infinite measurable inputs and the truncated estimate retains its coefficient.
+example (g : ℝ → ℝ≥0∞) (hg : Measurable g) :
+    (∫⁻ x : ℝ in Set.Ioo (1 / 4) 1, ∫⁻ y : ℝ in Set.Ioo x (2 * x),
+      ENNReal.ofReal (x ^ (-(1 + 2 * (1 / 3 : ℝ)))) * g y) ≤
+      ENNReal.ofReal (Fourier.hardyAveragingConstant (1 / 3)) *
+        ∫⁻ y : ℝ in Set.Ioo (1 / 4) 2, ENNReal.ofReal (y ^ (-2 * (1 / 3 : ℝ))) * g y := by
+  simpa only [div_self (by norm_num : (2 : ℝ) ≠ 0)] using
+    Fourier.lintegral_hardyAveraging_truncated_le (s := 1 / 3) (δ := 1 / 4) (L := 2)
+    (by norm_num) (by norm_num) g hg
+
+example (f : ℝ → ℂ) (hf : Measurable f) :
+    Fourier.leftBoundaryEnergy (1 / 3) (1 / 4) 1 f ≤
+      ENNReal.ofReal ((1 + Fourier.hardyAveragingConstant (1 / 3)) / 2) *
+        Fourier.leftBoundaryEnergy (1 / 3) (1 / 4) 2 f +
+      ENNReal.ofReal (1 + 1 / Fourier.hardyAbsorptionParameter (1 / 3)) *
+        Fourier.fractionalIntervalEnergy (1 / 3) 2 f := by
+  simpa only [div_self (by norm_num : (2 : ℝ) ≠ 0)] using
+    Fourier.leftBoundaryEnergy_preestimate_contracting (s := 1 / 3) (δ := 1 / 4) (L := 2)
+    (by norm_num) (by norm_num) (by norm_num) f hf
+
+-- Positive cutoffs give finite energies from L² even above half regularity.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioo 0 2))) :
+    Fourier.leftBoundaryEnergy (3 / 4) (1 / 4) 2 f < ⊤ :=
+  Fourier.leftBoundaryEnergy_lt_top (by norm_num) (by norm_num) f hf
+
+example (f : ℝ → ℂ) : Fourier.leftBoundaryEnergy (1 / 3) 0 2 f =
+    ⨆ n : ℕ, Fourier.leftBoundaryEnergy (1 / 3) (1 / ((n : ℝ) + 1)) 2 f :=
+  Fourier.leftBoundaryEnergy_eq_iSup _ _ _
+
+example (f : ℝ → ℂ) : Fourier.fractionalIntervalEnergy (1 / 3) 2 (fun x => f (2 - x)) =
+    Fourier.fractionalIntervalEnergy (1 / 3) 2 f := Fourier.fractionalIntervalEnergy_reflect _ _ _
+
+-- The full Hardy conclusion needs neither boundedness nor global measurability of the representative.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioo 0 2)))
+    (hE : Fourier.fractionalIntervalEnergy (1 / 3) 2 f < ⊤) :
+    Fourier.fractionalExteriorEnergy (1 / 3) 2 f < ⊤ :=
+  Fourier.fractionalExteriorEnergy_lt_top_of_interval (by norm_num) (by norm_num) (by norm_num) f hf hE
