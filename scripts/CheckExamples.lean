@@ -3656,3 +3656,86 @@ example (a : Domain 2) (ha : a ≠ 0) :
 
 end
 end PhysicalOperatorChecks
+
+
+namespace IntervalTransferChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+-- Arbitrary L2 reconstruction includes a reflected potential with a jump at the midpoint.
+private theorem step_memLp : MemLp (folded 1 (fun _ : ℝ => (1 : ℂ)) (fun _ => -1)) 2
+    (volume.restrict (Ioc 0 2)) := memLp_folded_of_memLp 1 (memLp_const 1) (memLp_const (-1))
+example : circlePullback (l2Synthesis (periodTwoL2Coefficients
+    (folded 1 (fun _ : ℝ => (1 : ℂ)) (fun _ => -1)) step_memLp))
+    =ᵐ[volume.restrict (Ioc 0 2)] (fun x : ℝ => if x ≤ 1 then (1 : ℂ) else -1) := by
+  apply (circlePullback_periodTwoL2Coefficients _ step_memLp).trans
+  exact Filter.Eventually.of_forall fun x => by simp [folded]
+
+private theorem potential_memLp : MemLp (fun _ : ℝ => ((2 : ℂ), (2 : ℂ))) 2 (volume.restrict (Ioc 0 1)) :=
+  memLp_const ((2 : ℂ), (2 : ℂ))
+
+private theorem neumann_constant : HasClassicalIntervalDomain .neumann (fun _ => ((1 : ℂ), -1)) := by
+  constructor
+  · constructor
+    · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => (1 : ℂ))).contDiffOn.absolutelyContinuousOnInterval
+    · simp
+  · constructor
+    · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => (-1 : ℂ))).contDiffOn.absolutelyContinuousOnInterval
+    · simp
+  · norm_num [extensionSign]
+  · norm_num [extensionSign]
+
+private theorem original_equation :
+    physicalOperator (fun _ => ((2 : ℂ), 2)) (fun _ => ((1 : ℂ), -1))
+      =ᵐ[volume.restrict (Ioc 0 1)] (fun _ => (-2 : ℂ) • ((1 : ℂ), -1)) := by
+  exact Filter.Eventually.of_forall fun x => by norm_num [physicalOperator]
+
+private theorem original_nonzero : ¬ EqOn (fun _ : ℝ => ((1 : ℂ), (-1 : ℂ))) 0 (Icc 0 1) := by
+  intro h
+  have hx := h (by norm_num : (0 : ℝ) ∈ Icc 0 1)
+  have hc := congrArg Prod.fst hx
+  norm_num at hc
+
+-- The Neumann eigenfunction has eigenvalue -2 with the positive Dirichlet-reflected potential.
+example : operator (by simp) (dirichletPotentialCoefficients (fun _ => ((2 : ℂ), 2)) potential_memLp)
+    (classicalIntervalExtension .neumann (fun _ => ((1 : ℂ), -1)) neumann_constant) =
+      (-2 : ℂ) • domainInclusion
+        (classicalIntervalExtension .neumann (fun _ => ((1 : ℂ), -1)) neumann_constant) :=
+  classical_interval_equation_transfer .neumann _ _ potential_memLp neumann_constant (-2) original_equation
+
+-- The potential's zero coefficient is +2; applying the Neumann sign to it would destroy this identity.
+example : (dirichletPotentialCoefficients (fun _ => ((2 : ℂ), 2)) potential_memLp).1 0 = 2 := by
+  rw [dirichletPotentialCoefficients_fst]
+  norm_num [periodTwoCoefficient, intervalExtension, folded, extensionSign]
+
+-- On the reflected half the physical equation keeps the same eigenvalue.
+example : physicalOperator (intervalExtension .dirichlet (fun _ => ((2 : ℂ), 2)))
+    (intervalExtension .neumann (fun _ => ((1 : ℂ), -1))) (3 / 2) = (-2, 2) := by
+  have he : intervalExtension .neumann (fun _ : ℝ => ((1 : ℂ), -1)) = fun _ => ((1 : ℂ), -1) := by
+    funext x
+    by_cases hx : x ≤ 1 <;> simp [intervalExtension, folded, hx, extensionSign]
+  rw [he]
+  norm_num [physicalOperator, intervalExtension, folded, extensionSign]
+
+-- This original nonzero Neumann eigenfunction enters the existing boundary spectrum.
+example : (-2 : ℂ) ∈ spectrum .neumann (by simp)
+    (dirichletPotentialCoefficients (fun _ => ((2 : ℂ), 2)) potential_memLp)
+    (dirichletPotentialCoefficients_mem _ potential_memLp) :=
+  classical_interval_eigenvalue_mem_boundarySpectrum .neumann _ _ potential_memLp neumann_constant
+    (-2) original_nonzero original_equation
+
+-- The same eigenvalue is periodic for that same Dirichlet potential extension.
+example : (-2 : ℂ) ∈ periodicSpectrum (by simp)
+    (dirichletPotentialCoefficients (fun _ => ((2 : ℂ), 2)) potential_memLp) :=
+  classical_interval_eigenvalue_mem_periodicSpectrum .neumann _ _ potential_memLp neumann_constant
+    (-2) original_nonzero original_equation
+
+-- Almost-everywhere original equations survive either signed extension, with no pointwise assumption.
+example (b : BoundaryCondition) (f g : ℝ → ℂ × ℂ)
+    (h : f =ᵐ[volume.restrict (Ioc 0 1)] g) :
+    intervalExtension b f =ᵐ[volume.restrict (Ioc 0 2)] intervalExtension b g :=
+  intervalExtension_congr_ae b h
+
+end
+end IntervalTransferChecks

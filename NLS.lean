@@ -79,3 +79,4 @@ import NLS.ZakharovShabat.ClassicalIntervalRestriction
 import NLS.ZakharovShabat.ClassicalIntervalNorm
 import NLS.ZakharovShabat.ClassicalIntervalIsomorphism
 import NLS.ZakharovShabat.PhysicalOperator
+import NLS.ZakharovShabat.ClassicalIntervalTransfer

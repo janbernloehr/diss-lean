@@ -366,9 +366,16 @@ actual multiplication of arbitrary `L²` potentials with `H¹` functions, and th
 full coefficient and physical eigen-equations agree on `[0,2]`. Nonzero domain
 vectors remain nonzero as physical `L²` functions.
 
-Next realize the reflected original `L²` potential and prove the signed interval
-equation transfer in Lemma 4.1. Then transfer the coefficient counting and
-analytic-eigenvalue results to the original period-one potentials. Both boundary spectral problems use the
+Lemma 4.1's classical interval transfer is now proved. Arbitrary original `L²`
+potentials have an a.e. reconstructed Dirichlet coefficient extension. Both
+signed eigenfunction extensions intertwine the actual differential equation,
+and nonzero original eigenfunctions enter the selected boundary and periodic
+coefficient spectra with the same eigenvalue.
+
+Next prove the converse restriction of coefficient boundary eigenvectors and
+identify the original classical spectra. Then transfer the counting and
+analytic-eigenvalue results using the physical potential parameter spaces and
+norms. Both boundary spectral problems use the
 Dirichlet extension of the potential; the boundary sign selects the eigenfunction
 extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 129 modules and 1279 named public theorems. All compile on the
+The library has 132 modules and 1297 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -136,6 +136,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.CircleMultiplication` | Actual multiplication of continuous circle functions and arbitrary `L²` classes; a.e. product, uniform-norm bound, bounded complex bilinearity, unit identity, and physical-period pullback |
 | `NLS.Fourier.PhysicalConvolution` | Physical Fourier modulation and norm preservation; exact `ℓ2 × ℓ1` convolution/product identification, Sobolev potential multiplication, physical square integrability, and normalized real-interval coefficient integrals |
 | `NLS.ZakharovShabat.PhysicalOperator` | Actual base and domain representatives, full physical differential expression with opposite derivative signs, square-integrable output, a.e. coefficient/operator realization, injectivity and nonzero preservation, and equivalence of physical and coefficient eigen-equations |
+| `NLS.Fourier.IntervalL2Realization` | Actual normalized coefficients of arbitrary physical `L²` period data; a.e. reconstruction through a measurable circle lift, the other inverse, and invariance under a.e. equality |
+| `NLS.ZakharovShabat.IntervalEquationReflection` | Physical operator congruence on a period, a.e. signed-reflection congruence, differential-expression intertwining with Dirichlet potential reflection for both boundary signs, and the original physical equation transfer |
+| `NLS.ZakharovShabat.ClassicalIntervalTransfer` | Arbitrary original `L²` potential extension, exact physical coefficients and reconstruction, Dirichlet coefficient membership, Lemma 4.1 in the existing coefficient operator, nonzero eigenvector preservation, and original eigenvalue inclusion in boundary and periodic spectra |
 
 ## Current mathematical milestone
 
@@ -564,8 +567,7 @@ into the base subspaces, with the existing explicit operator bound.
 This proves the coefficient content of Lemma 4.4 for every finite Banach
 exponent, including `p=1`, under the already-reflected-potential hypothesis.
 The classical endpoint interpretation and the Sobolev-domain isomorphisms of
-Lemma 4.2 are now proved below. Physical operator intertwining in Lemma 4.1
-remains open. The interval-extension construction below connects
+Lemma 4.2 and the physical equation transfer in Lemma 4.1 are now proved below. The interval-extension construction below connects
 physical finite integrals to these base coefficient spaces and gives the uniform
 bounded, analytic extensions for every `1<p<∞`, proving the coefficient part
 of Lemma 4.3.
@@ -1137,10 +1139,10 @@ coefficients recovers the original weighted pair. Extension and restriction are
 therefore inverse after identifying original functions by equality on `[0,1]`.
 Each original classical pair has a unique weighted boundary representative.
 This proves the set-theoretic domain identification in Lemma 4.2. Physical norm
-comparison and the continuous linear equivalences are now proved below; spectral
-intertwining remains open.
-Both eventual spectral transfers must use the Dirichlet extension
-of the potential, including for Neumann eigenfunctions.
+comparison, continuous linear equivalences, and the classical equation transfer
+are now proved below. Both boundary cases use the Dirichlet extension of the
+potential, including for Neumann eigenfunctions. The converse identification of
+the original spectra remains open.
 
 ## Physical Sobolev norm comparison
 
@@ -1197,8 +1199,8 @@ signed extension with its normalized Fourier integrals, and the inverse is
 physical restriction at every point of `[0,1]`. Their operator norms are bounded
 by `1` and `√2 π`, respectively. Both original interval domains are complete.
 This establishes Lemma 4.2 in the classical `H¹` realization. Lemma 4.1's physical
-operator intertwining and the transfer of boundary spectral results to original
-potentials remain separate proof obligations.
+equation transfer is now proved below. The full identification of the original
+spectra and transfer of all boundary counting and analytic results remain open.
 
 ## Physical multiplication and the Hilbert operator
 
@@ -1229,16 +1231,45 @@ physical representative is zero almost everywhere. Finally,
 and physical eigen-equations on a full period.
 
 These results establish the physical Hilbert-space multiplication and operator
-bridge needed for Lemma 4.1. The remaining interval step must realize the
-Dirichlet-reflected original `L²` potential and prove that signed eigenfunction
-reflection transports the original equation. Both boundary conditions use the
-Dirichlet extension of the potential. The general `FLᵖ` distribution product
-beyond the Hilbert realization remains open.
+bridge used in the interval transfer below. The general `FLᵖ` distribution
+product beyond the Hilbert realization remains open.
+
+## Classical interval equation transfer (Lemma 4.1)
+
+`periodTwoL2Coefficients` takes the actual normalized Fourier integrals of
+arbitrary square-integrable data on `[0,2]`. A measurable circle lift and Fourier
+completeness prove reconstruction almost everywhere, including potentials with
+jumps and without matching endpoints. Synthesis and extraction are inverse,
+and the coefficients depend only on the original a.e. function.
+
+For every original `L²` pair `φ`, `dirichletPotentialCoefficients φ` reconstructs
+`intervalExtension .dirichlet φ` almost everywhere on `[0,2]` and lies in the
+actual Dirichlet coefficient subspace. No endpoint regularity is required of
+the potential.
+
+For either classical endpoint domain, the actual differential expression obeys
+
+`L(φdir)(extension_b f) = extension_b(L(φ) f)`
+
+almost everywhere on the doubled interval. Reflection transports a.e. equations;
+the derivative acquires the required minus sign. The potential is Dirichlet
+reflected for **both** choices of `b`. Consequently an original equation
+`L(φ)f = z f` yields the existing coefficient equation for
+`classicalIntervalExtension b f`, with the same eigenvalue `z` and with the
+reconstructed Dirichlet potential coefficients. The extended vector belongs
+to the chosen weighted boundary domain and realizes the classical periodic
+`H¹` extension. A nonzero original function on `[0,1]` remains nonzero.
+
+This proves Lemma 4.1's classical eigenfunction transfer. The original eigenvalue
+is now proved to belong to both the selected coefficient boundary spectrum
+and the periodic spectrum of `φdir`. These are forward inclusions; the converse
+restriction theorem and equality with an original classical spectrum have not
+yet been proved.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2724 declarations under `NLS`, including generated
+axioms. The current audit covers 2750 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1523,13 +1554,19 @@ a nonzero wave verifies both derivative signs and the factor `π`. Further
 checks establish square-integrable physical outputs and exercise the reverse
 physical-to-coefficient eigen-equation and nonzero preservation.
 
+Interval-transfer checks reconstruct a square-integrable potential with a
+midpoint jump. The constant Neumann eigenfunction `(1,-1)` for potential `(2,2)`
+retains eigenvalue `-2`; the potential's zero coefficient stays `+2` and the
+reflected-half equation has the correct sign. This example enters both the
+already-constructed boundary and periodic spectra. The checks also exercise
+transport of a.e. equalities for either signed extension.
+
 ## Next milestones
 
-1. Realize the reflected original `L²` potential and transport the original
-   interval equation through signed eigenfunction reflection in Lemma 4.1. Then
-   use the completed domain and physical-operator bridges to transfer Theorem 1.4
-   and Lemma 4.5 to the original potentials. Both boundary choices must use the
-   Dirichlet extension of the potential.
+1. Restrict coefficient boundary eigenvectors back to original classical
+   eigenfunctions and identify the two spectra. Then transfer the counting and
+   analytic statements of Theorem 1.4 and Lemma 4.5 to original potentials, with
+   their physical potential norms and parameter spaces.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

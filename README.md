@@ -156,9 +156,13 @@ complete. The inverse evaluates the physical representative on `[0,1]`.
 At the Hilbert exponent, `ℓ2 × ℓ1` convolution now equals actual physical
 multiplication. The full coefficient operator agrees almost everywhere with
 `diag(i,-i)∂ₓ + [[0,φ₋],[φ₊,0]]` for arbitrary `L²` potentials, and the physical
-and coefficient eigen-equations are equivalent on a full period. The interval
-reflection step in Lemma 4.1, the general Fourier/distribution realization, and
-multiplication beyond the Hilbert realization remain needed for the full transfer.
+and coefficient eigen-equations are equivalent on a full period. Lemma 4.1 now
+transfers both original classical boundary eigenfunctions through signed
+reflection, using the Dirichlet extension of the potential in both cases.
+Nonzero original eigenfunctions give eigenvalues in the selected boundary
+spectrum and the periodic spectrum. The converse spectral identification,
+general Fourier/distribution realization, and multiplication beyond the Hilbert
+realization remain needed for the full transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
