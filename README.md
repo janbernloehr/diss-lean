@@ -153,8 +153,12 @@ and derivative factor `π` retained. Lemma 4.2 is now bundled as a continuous
 linear equivalence from each original interval domain, carrying exactly this
 physical `H¹` norm, onto its weighted boundary domain. Both interval spaces are
 complete. The inverse evaluates the physical representative on `[0,1]`.
-Physical operator intertwining, Fourier/distribution realization, and physical
-multiplication remain needed for the full spectral transfer.
+At the Hilbert exponent, `ℓ2 × ℓ1` convolution now equals actual physical
+multiplication. The full coefficient operator agrees almost everywhere with
+`diag(i,-i)∂ₓ + [[0,φ₋],[φ₊,0]]` for arbitrary `L²` potentials, and the physical
+and coefficient eigen-equations are equivalent on a full period. The interval
+reflection step in Lemma 4.1, the general Fourier/distribution realization, and
+multiplication beyond the Hilbert realization remain needed for the full transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

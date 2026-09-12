@@ -3592,3 +3592,67 @@ example : ‖(classicalIntervalEquiv .neumann).symm.toContinuousLinearMap‖ ≤
 
 end
 end IntervalEquivalenceChecks
+
+
+namespace PhysicalOperatorChecks
+open NLS NLS.Fourier NLS.ZakharovShabat MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+-- Modulation shifts arbitrary L2 data in the correct direction at negative odd frequencies.
+example (φ : Coeff 2) : fourierCoeff (circleMul (fourier (-3)) (l2Synthesis φ)) 4 = φ 7 := by
+  rw [fourierCoeff_circleMul_fourier, fourierCoeff_l2Synthesis,
+    show (4 : ℤ) - (-3) = 7 by norm_num]
+
+-- Unit-modulus modulation preserves energy without assuming the potential is continuous.
+example (g : CircleL2) : ‖circleMul (fourier (-7)) g‖ = ‖g‖ := norm_circleMul_fourier g (-7)
+
+-- A complex single mode multiplies an arbitrary coefficient potential by its physical wave.
+example (φ : Coeff 2) : circlePullback (l2Synthesis (potentialMul (by simp) φ
+    (scalarMode (-3) Complex.I))) =ᵐ[volume.restrict (Ioc 0 2)]
+    (fun x : ℝ => circlePullback (l2Synthesis φ) x * (Complex.I * wave (-3) x)) := by
+  simpa only [sobolevSynthesis_scalarMode] using
+    circlePullback_potentialMul φ (scalarMode (-3) Complex.I)
+
+-- Actual normalized interval integrals, including frequency zero, equal the convolution coefficient.
+example (φ : Coeff 2) (a : ScalarDomain 2) :
+    (1 / 2 : ℂ) * (∫ x in (0 : ℝ)..2, circlePullback (l2Synthesis φ) x *
+      sobolevSynthesis (by simp) a (x : AddCircle (2 : ℝ))) =
+      ∑' k : ℤ, φ (-k) * a.val k := by
+  have h := periodTwoCoefficient_physical_potentialMul φ a 0
+  simpa [periodTwoCoefficient, potentialMul_apply] using h
+
+-- Distinct constant potential entries test the off-diagonal coupling convention.
+example (x : ℝ) : physicalOperator (fun _ => ((2 : ℂ), 3))
+    (fun _ => ((5 : ℂ), 7)) x = (14, 15) := by
+  norm_num [physicalOperator]
+
+-- The two components have opposite free derivative signs, with the factor pi retained.
+example (x : ℝ) : physicalOperator 0 (fun t => (wave 3 t, wave 3 t)) x =
+    (-3 * (Real.pi : ℂ) * wave 3 x, 3 * (Real.pi : ℂ) * wave 3 x) := by
+  simp only [physicalOperator, Pi.zero_apply, Prod.fst_zero, Prod.snd_zero, zero_mul, add_zero]
+  simp only [deriv_wave]
+  apply Prod.ext <;> dsimp only
+  · simp only [← mul_assoc, Complex.I_mul_I]
+    ring
+  · simp only [neg_mul, ← mul_assoc, Complex.I_mul_I]
+    ring
+
+-- No smoothness or finite support is assumed in the full physical operator theorem.
+example (φ : PairSpace 2) (a : Domain 2) :
+    MemLp (physicalOperator (physicalBase φ) (physicalDomain a)) 2 (volume.restrict (Ioc 0 2)) :=
+  memLp_physicalOperator φ a
+
+-- The physical eigen-equation also implies the coefficient equation, not just the forward direction.
+example (φ : PairSpace 2) (a : Domain 2) (z : ℂ)
+    (h : physicalOperator (physicalBase φ) (physicalDomain a)
+      =ᵐ[volume.restrict (Ioc 0 2)] (fun x => z • physicalDomain a x)) :
+    operator (by simp) φ a = z • domainInclusion a := (operator_eq_smul_iff_physical φ a z).mpr h
+
+-- Nonzero coefficient vectors remain nonzero as physical L2 eigenfunctions.
+example (a : Domain 2) (ha : a ≠ 0) :
+    ¬(physicalDomain a =ᵐ[volume.restrict (Ioc 0 2)] (0 : ℝ → ℂ × ℂ)) := by
+  rwa [physicalDomain_eq_zero_ae_iff]
+
+end
+end PhysicalOperatorChecks

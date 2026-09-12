@@ -361,9 +361,14 @@ component-sum `H¹` norm. Signed extension and physical restriction are continuo
 linear inverses, with operator bounds `1` and `√2 π`. Membership agrees with the
 original equal/opposite component endpoint conditions, including odd modes.
 
-Next prove physical multiplication compatibility and operator intertwining in
-Lemma 4.1, then transfer the coefficient counting and analytic-eigenvalue results
-to the original period-one potentials. Both boundary spectral problems use the
+The physical Hilbert-space operator bridge is now proved. Convolution realizes
+actual multiplication of arbitrary `L²` potentials with `H¹` functions, and the
+full coefficient and physical eigen-equations agree on `[0,2]`. Nonzero domain
+vectors remain nonzero as physical `L²` functions.
+
+Next realize the reflected original `L²` potential and prove the signed interval
+equation transfer in Lemma 4.1. Then transfer the coefficient counting and
+analytic-eigenvalue results to the original period-one potentials. Both boundary spectral problems use the
 Dirichlet extension of the potential; the boundary sign selects the eigenfunction
 extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.

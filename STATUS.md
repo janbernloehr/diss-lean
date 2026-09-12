@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 126 modules and 1256 named public theorems. All compile on the
+The library has 129 modules and 1279 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -133,6 +133,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.SobolevEnergyEmbedding` | Injective linear embedding into the Euclidean product of the physical `L²` function and derivative spaces; exact unnormalized physical Sobolev energy and norm |
 | `NLS.ZakharovShabat.ClassicalIntervalSpace` | Actual functions on `[0,1]` with pointwise linear structure; membership exactly from original classical endpoint data; algebraic Fourier restriction equivalence, original-function constructors and representatives, continuity, and both endpoint conditions |
 | `NLS.ZakharovShabat.ClassicalIntervalIsomorphism` | Exact physical `H¹` norm and Banach-space structure on both original interval domains; Lemma 4.2 as continuous linear extension equivalences, exact Fourier-integral forward maps, physical restriction inverses, and operator-norm bounds `1` and `√2 π` |
+| `NLS.Fourier.CircleMultiplication` | Actual multiplication of continuous circle functions and arbitrary `L²` classes; a.e. product, uniform-norm bound, bounded complex bilinearity, unit identity, and physical-period pullback |
+| `NLS.Fourier.PhysicalConvolution` | Physical Fourier modulation and norm preservation; exact `ℓ2 × ℓ1` convolution/product identification, Sobolev potential multiplication, physical square integrability, and normalized real-interval coefficient integrals |
+| `NLS.ZakharovShabat.PhysicalOperator` | Actual base and domain representatives, full physical differential expression with opposite derivative signs, square-integrable output, a.e. coefficient/operator realization, injectivity and nonzero preservation, and equivalence of physical and coefficient eigen-equations |
 
 ## Current mathematical milestone
 
@@ -1197,10 +1200,45 @@ This establishes Lemma 4.2 in the classical `H¹` realization. Lemma 4.1's physi
 operator intertwining and the transfer of boundary spectral results to original
 potentials remain separate proof obligations.
 
+## Physical multiplication and the Hilbert operator
+
+`circleMul` multiplies a continuous period-two function with an arbitrary `L²`
+class. It agrees with their pointwise product almost everywhere and obeys
+`‖circleMul f g‖₂ ≤ ‖f‖∞ ‖g‖₂`. The operation is bounded and complex bilinear.
+Multiplication by a Fourier wave shifts coefficients and preserves the `L²`
+norm. Applying this operation to a uniformly convergent Fourier series proves
+
+`circleMul (continuousSynthesis a) (l2Synthesis φ) = l2Synthesis (convolution φ a)`
+
+for every `φ : Coeff 2` and `a : Coeff 1`. Consequently the existing
+`potentialMul` at exponent two is actual multiplication by an arbitrary `L²`
+potential on the classical `H¹` domain. Its output is square integrable and its
+normalized physical Fourier integrals equal the convolution coefficients.
+No smoothness or finite support is imposed on the potential.
+
+`physicalOperator` is the actual expression
+
+`(i f₋′ + φ₋ f₊, -i f₊′ + φ₊ f₋)`.
+
+The synthesized coefficient operator equals this expression almost everywhere
+on `[0,2]`, and the physical output lies in `L²`. The continuous domain and base
+representatives agree almost everywhere; equality on one physical period
+determines the coefficient pair. A domain vector is zero exactly when its
+physical representative is zero almost everywhere. Finally,
+`operator_eq_smul_iff_physical` proves both directions between the coefficient
+and physical eigen-equations on a full period.
+
+These results establish the physical Hilbert-space multiplication and operator
+bridge needed for Lemma 4.1. The remaining interval step must realize the
+Dirichlet-reflected original `L²` potential and prove that signed eigenfunction
+reflection transports the original equation. Both boundary conditions use the
+Dirichlet extension of the potential. The general `FLᵖ` distribution product
+beyond the Hilbert realization remains open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2676 declarations under `NLS`, including generated
+axioms. The current audit covers 2724 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1478,16 +1516,25 @@ Further checks recover actual Fourier integrals at an odd negative index,
 exercise inverse identities on an odd Neumann mode and original classical data,
 and instantiate both operator-norm bounds.
 
+Physical-product checks cover negative odd modulation of arbitrary `L²` data,
+norm preservation, complex mode amplitudes, and the exact zero-frequency
+physical integral. Distinct constant matrix entries detect off-diagonal swaps;
+a nonzero wave verifies both derivative signs and the factor `π`. Further
+checks establish square-integrable physical outputs and exercise the reverse
+physical-to-coefficient eigen-equation and nonzero preservation.
+
 ## Next milestones
 
-1. Prove physical multiplication compatibility and operator intertwining in
-   Lemma 4.1, then use the completed classical domain equivalences to transfer
-   Theorem 1.4 and Lemma 4.5 to the original period-one potentials. Both boundary
-   choices must use the Dirichlet extension of the potential.
+1. Realize the reflected original `L²` potential and transport the original
+   interval equation through signed eigenfunction reflection in Lemma 4.1. Then
+   use the completed domain and physical-operator bridges to transfer Theorem 1.4
+   and Lemma 4.5 to the original potentials. Both boundary choices must use the
+   Dirichlet extension of the potential.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one
-   embedding, pair-norm comparison, and compatibility with physical multiplication.
+   embedding, potential pair-norm comparison, and multiplication beyond the
+   Hilbert realization.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes
