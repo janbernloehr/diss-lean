@@ -5539,3 +5539,90 @@ example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
     (by simp) (by norm_num) T hT ha
 
 end ExponentEmbeddingChecks
+
+namespace YoungInequalityChecks
+open NLS.Coeff
+
+local instance : Fact (1 ≤ (4 / 3 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by norm_num) (by finiteness)).mp
+  norm_num⟩
+
+private theorem fractionalYoung : YoungRelation (4 / 3) (4 / 3) 2 := by
+  unfold YoungRelation
+  apply (ENNReal.toReal_eq_toReal_iff' (by simp) (by simp)).mp
+  norm_num [ENNReal.toReal_add, ENNReal.toReal_inv, ENNReal.toReal_div]
+
+private theorem hilbertYoung : YoungRelation 2 2 ⊤ := by
+  simpa [YoungRelation] using (ENNReal.HolderConjugate.inv_add_inv_eq_one 2 2).symm
+
+-- The non-endpoint Young estimate has the printed constant one.
+example (a b : Coeff (4 / 3)) : ‖youngConvolution fractionalYoung a b‖ ≤ ‖a‖ * ‖b‖ :=
+  norm_youngConvolution_le fractionalYoung a b
+
+-- Its bilinear operator norm is exactly one, not merely bounded by an unspecified constant.
+example : ‖youngConvolutionCLM fractionalYoung‖ = 1 := norm_youngConvolutionCLM fractionalYoung
+
+-- Oppositely signed frequency indices add, and imaginary amplitudes multiply to minus one.
+example : youngConvolution fractionalYoung (lp.single (4 / 3) (-2) Complex.I)
+    (lp.single (4 / 3) 3 Complex.I) 1 = -1 := by
+  simp [youngConvolution_single_right, shift_apply, lp.single_apply]
+
+example : youngConvolution fractionalYoung (lp.single (4 / 3) (-2) Complex.I)
+    (lp.single (4 / 3) 3 Complex.I) (-1) = 0 := by
+  simp [youngConvolution_single_right, shift_apply, lp.single_apply]
+
+-- The old Banach-series construction is recovered at the infinity/l1 endpoint.
+example (a : Coeff ⊤) (b : Coeff 1) :
+    youngConvolution (show YoungRelation ⊤ 1 ⊤ by simp [YoungRelation]) a b = convolution a b :=
+  youngConvolution_eq_convolution _ a b
+
+-- Swapping the endpoint inputs retains the same output and bound.
+example (a : Coeff 1) (b : Coeff ⊤) :
+    youngConvolution (show YoungRelation 1 ⊤ ⊤ by simp [YoungRelation]) a b = convolution b a := by
+  rw [youngConvolution_comm]
+  exact youngConvolution_eq_convolution _ b a
+
+-- The smallest output exponent is included as well.
+example (a b : Coeff 1) :
+    ‖youngConvolution (show YoungRelation 1 1 1 by simp [YoungRelation]) a b‖ ≤ ‖a‖ * ‖b‖ :=
+  norm_youngConvolution_le _ a b
+
+private def harmonic : Coeff 2 :=
+  ⟨fun n => (Weight.sobolev 1 n : ℂ)⁻¹,
+    Weight.inverse_sobolev_memlp (by norm_num) (by norm_num)⟩
+
+-- Both factors of this new Hilbert convolution genuinely lie outside l1.
+example : ¬Memℓp (harmonic : ℤ → ℂ) 1 := by
+  change ¬Memℓp (fun n : ℤ => (Weight.sobolev 1 n : ℂ)⁻¹) 1
+  rw [Weight.inverse_sobolev_memlp_iff (by norm_num)]
+  norm_num
+
+-- Nevertheless every scalar convolution series is absolutely convergent, at a negative frequency too.
+example : Summable (fun k : ℤ => ‖harmonic (-3 - k) * harmonic k‖) :=
+  summable_norm_youngConvolution_terms hilbertYoung harmonic harmonic (-3)
+
+-- Norm convergence of both finite input cutoffs holds even though the output exponent is infinity.
+example (a b : Coeff 2) : Filter.Tendsto
+    (fun S : Finset ℤ => youngConvolution hilbertYoung (truncate S a) (truncate S b))
+    Filter.atTop (nhds (youngConvolution hilbertYoung a b)) :=
+  tendsto_youngConvolution_truncate hilbertYoung (by simp) (by simp) a b
+
+-- A two-mode example detects the nontrivial contribution from both convolution summands.
+private def twoModes : Coeff 2 := lp.single 2 0 1 + lp.single 2 1 1
+
+example : youngConvolution hilbertYoung twoModes twoModes 1 = 2 := by
+  norm_num [twoModes, youngConvolution_add_right,
+    youngConvolution_single_right, shift_apply, lp.single_apply]
+
+-- Finite input estimates are independent of their support sizes and retain a non-Hilbert source norm.
+example (a b : ℤ →₀ ℂ) :
+    ‖finiteConvolution 2 a b‖ ≤ ‖ofFinsupp (p := 4 / 3) a‖ * ‖ofFinsupp (p := 4 / 3) b‖ :=
+  norm_finiteConvolution_young fractionalYoung a b
+
+-- An invalid output exponent is rejected by the exponent relation.
+example : ¬YoungRelation 2 2 2 := by
+  intro h
+  have he := h.toReal
+  norm_num at he
+
+end YoungInequalityChecks

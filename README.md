@@ -5,8 +5,8 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-The library currently proves sequence-space foundations, the `lp × l1 → lp`
-convolution inequality, and a closed, densely defined coefficient-space Zakharov–Shabat
+The library currently proves sequence-space foundations, the full discrete
+Young convolution inequality, and a closed, densely defined coefficient-space Zakharov–Shabat
 operator with norm bounds and signed free Fourier modes. The free resolvent is
 constructed away from `πℤ`, with both inverse identities, explicit bounds, and
 compactness proved by finite Fourier approximation. For nonzero potentials,
@@ -285,6 +285,13 @@ Sobolev regularities. A weight ratio in `ℓʳ` gives a bounded embedding when
 weights the finite-`r` reciprocal is summable exactly when `(s-t)r > 1`.
 This proves the coefficient estimate used in Appendix A.9; the separate
 fractional interval-Sobolev identification in that lemma remains to be proved.
+Appendix B.2 is now proved for every Banach exponent triple satisfying
+`1 + 1/r = 1/p + 1/q`, including all infinity endpoints. Convolution is
+absolutely convergent at every frequency, belongs to `ℓʳ`, and satisfies the
+printed norm bound with constant one. Its continuous bilinear map has norm
+exactly one, agrees with the earlier `ℓ¹`-factor construction, and is commutative.
+Finite cutoffs of finite-exponent inputs converge in the full output norm,
+even when that output norm is `ℓ∞`.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

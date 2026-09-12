@@ -517,7 +517,7 @@ and Banach exponent including infinity. The actual distributional derivative
 has exactly this domain and a closed graph. Intrinsically, simultaneous
 regularity `s` of a periodic distribution and its derivative is equivalent to
 regularity `s+1` of the distribution. The exponent-changing embeddings are
-now implemented below; Young inequalities beyond an `l1` factor remain open.
+now implemented below; the full two-input Young inequality is proved subsequently.
 The source's distinct infinity pair norm is now implemented as `lp` of
 sum-norm pairs, with complete weighted variants and exact supremum formulas.
 Its comparison with the maximum product has sharp factor two. The first signed
@@ -538,4 +538,18 @@ All these embeddings preserve the actual periodic distribution, and arbitrary
 periodic source inputs have unique target representatives under the Hölder
 condition. This supplies the coefficient estimate in Appendix A.9, without
 asserting its separate fractional interval-Sobolev identification. That physical
-identification and the full Young inequality are subsequent proof targets.
+identification remains a subsequent proof target; the full two-input Young
+inequality is now proved below.
+
+Appendix B.2 is now proved with its exact exponent relation and constant one
+for all Banach exponents, including infinity. A weighted arithmetic-geometric
+mean argument bounds finite trilinear convolution pairings. Finite norming
+tests turn this into uniform finite Young estimates. Hölder and exponent
+inclusion prove pointwise absolute convergence for arbitrary inputs; dominated
+convergence of finite cutoffs and the `lp` Fatou property give full membership
+and the norm bound. The convolution is a continuous complex bilinear map with
+operator norm exactly one, is commutative, and agrees with the old `l1`-factor
+construction. Finite input cutoffs converge in output norm, including conjugate
+inputs with infinity output. The next extensions are the corresponding
+canonical distribution product from Appendix A.7 and the mixed three-sequence
+estimate in Appendix B.3.

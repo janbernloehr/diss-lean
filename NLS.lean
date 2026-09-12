@@ -142,3 +142,8 @@ import NLS.Fourier.PairDistributionInfty
 import NLS.SequenceSpaces.ExponentEmbedding
 import NLS.SequenceSpaces.HolderEmbedding
 import NLS.Fourier.DistributionEmbeddings
+import NLS.SequenceSpaces.YoungTrilinear
+import NLS.SequenceSpaces.YoungFinite
+import NLS.SequenceSpaces.YoungExponents
+import NLS.SequenceSpaces.YoungInequality
+import NLS.SequenceSpaces.YoungConvolution

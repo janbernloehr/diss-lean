@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 194 modules and 1850 named public theorems. All compile on the
+The library has 199 modules and 1893 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -42,6 +42,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.PairNormHeight` | Resolvent and strict strip bounds in the source's finite pair norm; uniform open convex parameter neighborhoods; analytic actual norm-height contours with rank `4N+2` |
 | `NLS.SequenceSpaces.Multiplier` | Bounded diagonal symbols; norm bound; continuous linear operator; commutation with truncations |
 | `NLS.SequenceSpaces.Translation` | Reindexing by an integer equivalence preserves the norm; shifts as linear isometry equivalences |
+| `NLS.SequenceSpaces.YoungTrilinear` | Weighted arithmetic-geometric mean estimate for three factors; translated finite energy bounds; unit and homogeneous finite convolution-pairing estimates with exact constant one |
+| `NLS.SequenceSpaces.YoungFinite` | Single-frequency decomposition and convolution expansion; exact finite dual kernel; uniform finite-input Young norm estimate |
+| `NLS.SequenceSpaces.YoungExponents` | Exact reciprocal exponent relation; input/output comparisons; conjugate endpoint and real dual-exponent identities |
+| `NLS.SequenceSpaces.YoungInequality` | Appendix B.2 for every Banach Young triple; pointwise absolute convergence; finite-cutoff convergence; `lp` Fatou membership; exact norm bound including infinity |
+| `NLS.SequenceSpaces.YoungConvolution` | Continuous complex bilinear convolution with norm exactly one; commutativity; old-construction compatibility; single-mode action; joint limits and full output-norm cutoff convergence |
 | `NLS.SequenceSpaces.Convolution` | Absolutely convergent Banach-space construction; coefficient formula; `lp × l1 → lp` norm bound, including `p=∞`; continuous bilinear map; single-mode shift identity |
 | `NLS.SequenceSpaces.ExponentEmbedding` | Contractive increasing-exponent embeddings including infinity; injectivity and composition; weighted transport and simultaneous regularity decrease |
 | `NLS.SequenceSpaces.HolderEmbedding` | General Banach Hölder products; weighted ratio embeddings with explicit constants; exact finite-exponent Sobolev reciprocal threshold; fractional Sobolev embeddings into smaller exponents |
@@ -2008,10 +2013,43 @@ preserves the actual tempered distribution, across both weights and exponents.
 An arbitrary periodic input satisfying the source Sobolev coefficient condition
 has a unique target representative under the Hölder condition.
 
+## Full discrete Young inequality: Appendix B.2
+
+`YoungRelation` encodes exactly `1 + 1/r = 1/p + 1/q`, interpreting the
+reciprocal of infinity as zero. Both input exponents are at most the output
+exponent, and the second input embeds into the Hölder conjugate of the first.
+This supplies absolute convergence of the scalar convolution sum at every
+frequency for all admissible inputs, including the infinity endpoints.
+
+`YoungTrilinear` uses weighted arithmetic-geometric mean with inverse
+exponents summing to two. It bounds each product of three coefficient
+magnitudes by a weighted sum of three products of energies. Finite translated
+energy sums give a trilinear unit-ball bound one; homogeneity gives the product
+of all three norms. `YoungFinite` expands the existing convolution into its
+finite single-frequency sums. Finite conjugate norming tests then give the
+full Young norm estimate uniformly over input supports.
+
+`YoungInequality` includes the `l1` output and infinity output endpoints in
+that finite bound. Simultaneous finite input cutoffs converge at every output
+frequency by a summable Hölder majorant. The `lp` Fatou property proves that
+the raw convolution belongs to the exact output exponent and retains the
+constant-one bound. This proves Appendix B.2 without an `l1`-factor hypothesis.
+
+`YoungConvolution` packages the result as a continuous complex bilinear map.
+Its norm equals one, as unit single modes attain the bound. The construction
+is commutative with exchanged input exponents and agrees with the previous
+Banach-series convolution when the right factor is in `l1`. Single inputs
+shift the other sequence after its contractive exponent inclusion. Arbitrary
+norm-convergent input approximations converge in output norm. In particular,
+both finite input cutoffs converge in the output norm whenever the inputs
+have finite exponents, even for conjugate inputs with infinity output.
+The canonical distribution-product extension in Appendix A.7 and the mixed
+three-sequence inequality in Appendix B.3 remain subsequent steps.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3851 declarations under `NLS`, including generated
+axioms. The current audit covers 3920 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2479,17 +2517,27 @@ is not in `l1`, and coefficient uniqueness proves that its synthesized periodic
 distribution has no alternative `l1` representation. Abstract periodic data
 exercises the unique target-representation theorem.
 
+Young checks cover `l^(4/3) × l^(4/3) → l2` and its exact bilinear operator
+norm one. Negative and positive single modes test frequency addition and
+imaginary amplitudes. Both `l∞ × l1` and `l1 × l∞` agree with the existing
+convolution, and the `l1` output endpoint is checked. The harmonic coefficient
+sequence is constructed in `l2` and proved not in `l1`; its self-convolution
+still has absolute convergence at a negative output frequency. Cutoff convergence
+is checked in the full infinity output norm, and a two-mode Hilbert example
+has the expected coefficient two from two distinct summands. Arbitrary finite
+supports exercise the non-Hilbert bound; an invalid output exponent is rejected.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove Young inequalities beyond an `l1` factor and the fractional interval
-   Sobolev identification used in Appendix A.9. Exponent embeddings, their
-   intrinsic distributional realization, and the strict weighted Hölder
-   coefficient estimate are complete.
+2. Extend the full Young convolution to the canonical distribution product
+   of Appendix A.7, prove the mixed three-sequence inequality in Appendix B.3,
+   and identify the fractional interval Sobolev spaces used in Appendix A.9.
+   The full two-sequence inequality in Appendix B.2 is complete.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
    dissertation results. Both finite and infinity source pair norms and their
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. Further sequence-space work includes
-the full range of Young inequalities beyond the `l1`-factor case.
+unimplemented. Further sequence-space work includes the mixed three-sequence
+Young estimate in Appendix B.3.
