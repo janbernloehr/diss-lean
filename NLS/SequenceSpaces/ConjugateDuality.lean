@@ -28,6 +28,13 @@ def dualPairing : Coeff p →L[ℂ] Coeff q →L[ℂ] ℂ :=
 theorem dualPairing_apply (a : Coeff p) (b : Coeff q) :
     dualPairing a b = ∑' n : ℤ, a n * b n := rfl
 
+/-- Hölder makes the coefficient pairing absolutely convergent. -/
+theorem summable_norm_dualPairing (a : Coeff p) (b : Coeff q) :
+    Summable (fun n : ℤ => ‖a n * b n‖) := by
+  let c : Coeff 1 := lp.holderL 1 (fun _ : ℤ => ContinuousLinearMap.mul ℂ ℂ)
+    (K := 1) (fun _ => norm_mul_le_one) a b
+  exact (lp.memℓp c).norm.summable_of_one
+
 theorem norm_dualPairing_le (a : Coeff p) (b : Coeff q) :
     ‖dualPairing a b‖ ≤ ‖a‖ * ‖b‖ := by
   have h : ‖dualPairing (p := p) (q := q)‖ ≤ 1 :=
@@ -108,6 +115,20 @@ theorem exists_finite_norming_test (hp : 0 < p.toReal) (hq : 0 < q.toReal)
   intro n hn
   rw [hb, if_pos hn, mul_left_comm, mul_phase, Complex.ofReal_mul]
   ring
+
+omit [Fact (1 ≤ q)] in
+/-- Tests in the finite conjugate unit ball already determine the full norm. -/
+theorem norm_le_of_finite_dual_unit (hp : 0 < p.toReal) (hq : 0 < q.toReal)
+    (hptop : p ≠ ⊤) (a : Coeff p) {C : ℝ}
+    (h : ∀ b : ℤ →₀ ℂ, ‖ofFinsupp (p := q) b‖ ≤ 1 →
+      ‖b.sum (fun n z => a n * z)‖ ≤ C) : ‖a‖ ≤ C := by
+  apply le_of_tendsto (tendsto_truncate hptop a).norm
+  apply Filter.Eventually.of_forall
+  intro s
+  obtain ⟨b, hb, he⟩ := exists_finite_norming_test hp hq s a
+  have ht := h b hb
+  simpa only [he, Complex.norm_real, Real.norm_eq_abs,
+    abs_of_nonneg (norm_nonneg _)] using ht
 
 omit [Fact (1 ≤ q)] in
 /-- Uniform bounds against finite conjugate tests determine the full sequence norm. -/

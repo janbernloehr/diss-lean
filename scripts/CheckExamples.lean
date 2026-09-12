@@ -2920,3 +2920,94 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate 
 
 end
 end HilbertDualityChecks
+
+
+namespace HilbertInterpolationChecks
+open NLS NLS.Fourier Complex
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem one_lt_half : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  (ENNReal.HolderConjugate.ne_top_iff_ne_one (3/2) 3).mpr (by norm_num)
+local instance : Fact (1 ≤ (3 / 2 : ℝ≥0∞)) := ⟨one_lt_half.le⟩
+
+-- Zero coefficients remain identically zero even where ordinary zero powers are problematic.
+example : Coeff.powerCurve 0 (-1) = 0 := by simp
+example : Coeff.powerCurve I 1 = I := by simp
+example : Differentiable ℂ (Coeff.powerCurve 0) := Coeff.differentiable_powerCurve 0
+example : ‖Coeff.powerCurve (2*I) (1+1000*I)‖ = 2 := by
+  rw [Coeff.norm_powerCurve _ _ (by norm_num)]
+  norm_num
+
+-- Endpoint lines allow arbitrary imaginary parts.
+example (y : ℝ) (a : ℤ →₀ ℂ) (ha : ‖Coeff.ofFinsupp (p := 3) a‖ ≤ 1) :
+    ‖Coeff.ofFinsupp (p := 2)
+      (Coeff.powerFamily a (Coeff.interpolationWeight 3 2 4 ((y : ℂ)*I)))‖ ≤ 1 :=
+  Coeff.norm_powerFamily_le_one (by norm_num) (by norm_num) a ha
+    (by rw [Coeff.interpolationWeight_re]; norm_num)
+
+-- The interior exponent three has the explicit reciprocal parameter two thirds.
+def thirdEstimate : HilbertEstimate 3 :=
+  hilbertEstimateTwo.interpolate (dyadicHilbertEstimate 1) (by norm_num) (by simp)
+    (t := 2/3) (by norm_num) (by norm_num) (by norm_num)
+example : thirdEstimate.bound = max discreteHilbertBound (dyadicHilbertBound 1) := rfl
+example : thirdEstimate.operator = hilbertTransform (p := 3) (by norm_num) (by simp) :=
+  (hilbertTransform_eq_estimate _ _ thirdEstimate).symm
+
+-- These exponents lie in gaps between the earlier dyadic and conjugate families.
+example : hilbertTransform (p := 3) (by norm_num) (by simp)
+    (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-3) = 0 := by
+  rw [hilbertTransform_finite]; norm_num [finiteHilbert]
+example : hilbertTransform (p := 3) (by norm_num) (by simp)
+    (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-2) = -I := by
+  rw [hilbertTransform_finite]; norm_num [finiteHilbert, div_neg]
+example : hilbertTransform (p := 3/2) one_lt_half half_ne_top
+    (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-4) = I := by
+  rw [hilbertTransform_finite]; norm_num [finiteHilbert]
+example : shiftedHilbertTransform (p := 3/2) one_lt_half half_ne_top
+    (Coeff.ofFinsupp (Finsupp.single 0 1)) 0 = -2 / (Real.pi : ℂ) := by
+  rw [shiftedHilbertTransform_finite]; norm_num [div_neg, neg_div]
+example : shiftedHilbertTransform (p := 3) (by norm_num) (by simp)
+    (Coeff.ofFinsupp (Finsupp.single 0 1)) (-1) = 2 / (Real.pi : ℂ) := by
+  rw [shiftedHilbertTransform_finite]; norm_num
+
+-- Bounds and transposition apply on the full spaces, not just finite inputs.
+example (a : Coeff 3) : ‖hilbertTransform (p := 3) (by norm_num) (by simp) a‖ ≤
+    hilbertTransformBound (p := 3) (by norm_num) (by simp) * ‖a‖ :=
+  norm_hilbertTransform_apply_le _ _ a
+example (a : Coeff (3/2)) : ‖shiftedHilbertTransform (p := 3/2) one_lt_half half_ne_top a‖ ≤
+    Real.pi⁻¹ * (hilbertTransformBound (p := 3/2) one_lt_half half_ne_top +
+      ‖hilbertCorrectionCoeffs‖) * ‖a‖ := norm_shiftedHilbertTransform_apply_le _ _ a
+example (a : Coeff 3) (b : Coeff (3/2)) :
+    Coeff.dualPairing (hilbertTransform (p := 3) (by norm_num) (by simp) a) b =
+      -Coeff.dualPairing a (hilbertTransform (p := 3/2) one_lt_half half_ne_top b) :=
+  dualPairing_hilbertTransform _ _ _ _ a b
+example (a : Coeff 3) : AnalyticAt ℂ (hilbertTransform (p := 3) (by norm_num) (by simp)) a :=
+  (hilbertTransform _ _).analyticAt a
+example : hilbertTransform (p := 2) (by norm_num) (by simp) = discreteHilbert := by
+  rw [hilbertTransform_eq_estimate _ _ hilbertEstimateTwo, hilbertEstimateTwo_operator]
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : 1 < p) (hptop : p ≠ ⊤) :
+    ∃ T : Coeff p →L[ℂ] Coeff p, ∀ a : ℤ →₀ ℂ, ∀ n : ℤ,
+      T (Coeff.ofFinsupp a) n = a.sum (fun k z => z / ((k : ℂ)-n)) :=
+  ⟨hilbertTransform hp hptop, hilbertTransform_finite hp hptop⟩
+
+-- Every coefficient is given by an absolutely convergent source series.
+example (a : Coeff 3) (n : ℤ) : Summable (fun k : ℤ => ‖a k / ((k : ℂ)-n)‖) :=
+  summable_norm_hilbertSeries one_lt_half half_ne_top a n
+example (a : Coeff 3) (n : ℤ) :
+    hilbertTransform (p := 3) (by norm_num) (by simp) a n = ∑' k : ℤ, a k / ((k : ℂ)-n) :=
+  hilbertTransform_apply _ _ one_lt_half half_ne_top a n
+example (a : Coeff (3/2)) (n : ℤ) :
+    shiftedHilbertTransform one_lt_half half_ne_top a n =
+      ∑' k : ℤ, a k * (2 / ((Real.pi : ℂ) * (2*k-2*n-1))) :=
+  shiftedHilbertTransform_apply _ _ (q := 3) (by norm_num) (by simp) a n
+example (a : Coeff (3/2)) (n : ℤ) :
+    Summable (fun k : ℤ => ‖a k * (2 / ((Real.pi : ℂ) * (2*k-2*n-1)))‖) :=
+  summable_norm_shiftedHilbertSeries (q := 3) (by norm_num) (by simp) a n
+
+end
+end HilbertInterpolationChecks

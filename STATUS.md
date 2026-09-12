@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 100 modules and 1040 named public theorems. All compile on the
+The library has 105 modules and 1078 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -104,9 +104,14 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.HilbertEstimate` | Quantitative finite-input estimates; unique continuous ordinary and shifted completions; exact coefficient formulas and bounds; independence of the estimate package |
 | `NLS.Fourier.HilbertDoubling` | General Cotlar quadratic estimate and its solution; constructs a proved estimate at `2p` from one at `p` |
 | `NLS.Fourier.DyadicHilbert` | Recursive ordinary and shifted operators at every `2^(n+1)`; exact finite formulas; explicit recurrence and closed bound; unboundedness of the proved exponents |
-| `NLS.SequenceSpaces.ConjugateDuality` | Bounded bilinear Hölder pairing; finite coefficient formulas; finite norming tests for truncations; norm detection by finite conjugate tests |
+| `NLS.SequenceSpaces.ConjugateDuality` | Absolutely convergent bounded bilinear Hölder pairing; finite coefficient formulas; finite norming tests for truncations; norm detection by finite conjugate tests and their unit ball |
 | `NLS.Fourier.HilbertDuality` | Finite Hilbert antisymmetry; conjugate-exponent estimate with unchanged constant; transposition identity on arbitrary completed inputs |
 | `NLS.Fourier.ConjugateHilbert` | Ordinary and shifted operators at dyadic conjugates `2, 4/3, 8/7, …`; exact coefficients and bounds; exponents in `(1,2]` arbitrarily close to one; transposition with the dyadic family |
+| `NLS.SequenceSpaces.InterpolationFamily` | Entire complex phase/power families with fixed finite support; exact coefficient norms and interior recovery; normalized edge norms and strip coefficient bounds |
+| `NLS.SequenceSpaces.FiniteInterpolation` | Finite complex kernel pairings; entire scalar strip family and explicit strip bound; three-lines interpolation of endpoint estimates on normalized input/test pairs |
+| `NLS.Fourier.HilbertInterpolation` | Hilbert kernel endpoint pairing bounds; interpolation of conjugate reciprocal exponents; finite unit estimate and rescaling; completed intermediate Hilbert estimate |
+| `NLS.Fourier.HilbertBoundedness` | Admissible interpolation parameters; completed ordinary and shifted transforms for every `1<p<∞`; bounds, uniqueness, exact finite formulas, and full-range transposition |
+| `NLS.Fourier.HilbertSeries` | Absolutely convergent ordinary and shifted reciprocal series; exact coefficient formulas for arbitrary inputs via conjugate tests and density |
 
 ## Current mathematical milestone
 
@@ -652,9 +657,10 @@ physical coefficient sequence is not in `ℓ1`.
 
 Kernel membership and finite synthesis alone do not justify completion by
 density. The uniform estimate at `p=2` is now proved using Parseval as follows;
-the remaining exponents still require a boundedness argument. Only boundedness
-of the relevant discrete Hilbert transform is needed; no invertibility assertion
-from Appendix C.1 is assumed.
+the full-range Hilbert bounds established below must still be assembled into
+the interval-map estimate for other exponents. Only boundedness of the relevant
+discrete Hilbert transform is needed; no invertibility assertion from Appendix C.1
+is assumed.
 
 **The uniform Hilbert-space interval extension is proved.** The actual
 period-two coefficient integrals agree with mathlib's interval Fourier
@@ -678,9 +684,9 @@ Odd-index sampling is a contraction on `ℓ2`. Applied to the second component
 of the completed extension of `(0,a)`, and multiplied by `-2i`, it gives
 `shiftedHilbert : Coeff 2 →L[ℂ] Coeff 2`, with norm at most `2`. Its finite-input
 formula is `Σₖ a(k) 2/[π(2k-2n-1)]`, the shifted reciprocal transform needed in
-Lemma 4.3. This bound is sufficient and is not claimed optimal. The quartic and
-all higher dyadic exponents are now also proved as follows; intermediate
-exponents and interval completions beyond `p=2` remain open.
+Lemma 4.3. This bound is sufficient and is not claimed optimal. The argument
+below proceeds through quartic, dyadic, and conjugate exponents to full-range
+Hilbert boundedness. Interval completions beyond `p=2` remain open.
 
 **Ordinary and shifted Hilbert transforms are bounded on `ℓ4`.** The ordinary
 source kernel is `h(j)=-1/j`, with `h(0)=0`. Its difference from the unnormalized
@@ -724,9 +730,8 @@ an actual `HilbertEstimate q`, so the argument can be iterated.
 At exponent `2^(n+1)`, `dyadicHilbert` and `dyadicShiftedHilbert` are continuous
 linear operators on the entire coefficient space. The ordinary bound is
 `Cₙ=2^n B₂+(2^n-1)(3M+1)` and the shifted bound is `(Cₙ+‖d‖₁)/π`.
-The proved exponents exceed every prescribed real number. Duality now gives
-further exponents as described next; interpolation is still needed for the
-whole range `1<p<∞`.
+The proved exponents exceed every prescribed real number. Duality and
+interpolation then supply the whole range `1<p<∞`, as described next.
 
 **Hilbert bounds transfer to conjugate exponents without increasing the constant.**
 The bilinear coefficient pairing `Σ a(n)b(n)` is a continuous map on conjugate
@@ -748,8 +753,42 @@ Applying this to every dyadic estimate constructs `conjugateHilbert` and
 `(Cₙ+‖d‖₁)/π`, respectively, and their finite-input coefficients retain the exact
 reciprocal formulas. Every `rₙ` lies in `(1,2]`, and for every real `r>1` some
 `rₙ<r`. Thus proved exponents occur arbitrarily close to one as well as arbitrarily
-far above two. Interpolation between these exponents and completion of interval
-maps beyond `p=2` remain separate proof obligations.
+far above two. Interpolation between them is now established as follows.
+
+**Ordinary and shifted Hilbert transforms are bounded for every `1<p<∞`.**
+For a nonzero complex coefficient `a`, the analytic power curve is its phase
+`a/‖a‖` times `exp(w log ‖a‖)`; zero coefficients stay identically zero. It is
+entire in `w`, has norm `‖a‖^(Re w)` when `Re w>0`, and recovers `a` at `w=1`.
+Applying it coefficientwise preserves a fixed finite support. The affine weight
+`r((1-z)/p₀+z/p₁)` gives endpoint unit norms when the original input has `ℓr`
+norm at most one, with no restriction on the imaginary part of `z`.
+
+The finite kernel pairing of two such families is entire and uniformly bounded
+on the closed unit strip by a finite sum of kernel magnitudes. Endpoint operator
+and Hölder bounds control the two edges. Mathlib's three-lines theorem then gives
+the interior bound `max(B₀,B₁)`; this sufficient constant is not claimed optimal.
+The conjugate reciprocal exponents use the same interpolation parameter.
+Finite conjugate unit tests detect the output norm, and rescaling gives the
+support-independent estimate for arbitrary finite input. Density turns it into
+`HilbertEstimate.interpolate` on the entire intermediate coefficient space.
+
+An intermediate-value argument supplies the interpolation parameter whenever
+proved exponents bracket the desired one. The dyadic and conjugate families
+bracket every finite `p>1`. Consequently, `hilbertTransform` and
+`shiftedHilbertTransform` are continuous linear maps on every `Coeff p` in that
+range, with ordinary bound `hilbertTransformBound` and shifted bound
+`(hilbertTransformBound+‖d‖₁)/π`. Uniqueness identifies the ordinary construction
+with all previous estimates at the same exponent; full conjugate transposition
+continues to hold.
+
+The series definitions are identified on all inputs as well. Ordinary
+single-mode Hilbert images and reflected shifted single-mode images in the
+conjugate space represent the two coefficient functionals. Hölder proves
+absolute convergence of `Σ a(k)/(k-n)` and
+`Σ a(k) 2/[π(2k-2n-1)]`. Density proves that these series equal the completed
+ordinary and shifted output coefficients for arbitrary inputs. This establishes
+the boundedness needed from Appendix C.1. Its additional invertibility assertion
+is not used. Completing the physical interval maps beyond `p=2` remains open.
 
 The actual unbounded realization is now defined as
 
@@ -963,7 +1002,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2231 declarations under `NLS`, including generated
+axioms. The current audit covers 2304 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1176,10 +1215,20 @@ normalization. A nonzero nonreal pairing detects the transposition sign;
 arbitrary-input bounds and transposition, analyticity, and independence after
 two conjugate transfers are also checked.
 
+Interpolation checks retain zero phases at negative powers and verify complex
+phase recovery and norms with large imaginary parameters. They check endpoint
+unit norms along an entire vertical line, the explicit `p=3` interpolation
+parameter `2/3`, its bound, and uniqueness against the full-range operator.
+Further checks use `p=3` and `p=3/2` for zero diagonal, signed complex input,
+shifted normalization, arbitrary-input bounds and transposition, and analyticity.
+They recover the old `p=2` operator, instantiate the all-exponent existence
+statement, and verify absolute convergence and exact reciprocal series for
+arbitrary inputs at both intermediate exponents.
+
 ## Next milestones
 
-1. Interpolate the proved dyadic and conjugate Hilbert estimates to cover all
-   `1<p<∞`. Complete the corresponding interval maps beyond `p=2`.
+1. Use full-range shifted Hilbert boundedness to complete the interval maps
+   for every `1<p<∞`, extending the already completed `p=2` case.
    Construct the physical Sobolev identifications in Lemmas 4.1–4.2, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.

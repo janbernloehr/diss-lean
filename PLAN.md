@@ -330,16 +330,24 @@ The transposition identity extends to arbitrary conjugate inputs. Applying this
 to the dyadic estimates constructs ordinary and shifted transforms at
 `2, 4/3, 8/7, …`, all in `(1,2]` and arbitrarily close to one.
 
-Next supply interpolation to cover the remaining `1<p<∞` range.
-Complete the corresponding interval maps beyond the already completed `p=2`
-case, using the proved shifted bounds. The library search found no ready-made
-sequence-operator interpolation theorem, but mathlib has Hadamard's three-lines
-estimate in `Mathlib.Analysis.Complex.Hadamard`. The next route is finite complex
-input/test families with interpolated powers: apply
-`Complex.HadamardThreeLines.norm_le_interp_of_mem_verticalClosedStrip₀₁'`
-to their scalar Hilbert pairing, then use finite dual norm detection to obtain
-a uniform intermediate-exponent estimate. The analytic strip bounds and the
-finite-to-completed transfer must be proved before claiming the full range.
+Finite interpolation and the full Hilbert exponent range are now proved.
+Complex phase/exponential families retain finite support, are entire in the
+strip parameter, and have normalized endpoint norms. Their finite scalar kernel
+pairing is uniformly bounded in the imaginary direction. Mathlib's Hadamard
+three-lines theorem bounds the interior pairing by the maximum endpoint constant.
+Conjugate unit tests detect the output norm, and rescaling removes normalization.
+This constructs `HilbertEstimate.interpolate` with a support-independent bound.
+
+An intermediate-value argument chooses a reciprocal interpolation parameter.
+The dyadic and conjugate estimates bracket every finite `p>1`, supplying completed
+ordinary and shifted transforms on every `Coeff p`. Uniqueness identifies them
+with previous constructions at overlapping exponents. Hölder duality and density
+also prove absolute convergence and the exact reciprocal coefficient series on
+all inputs. Thus the boundedness part of Appendix C.1 needed here is established.
+
+Next complete the corresponding interval maps beyond `p=2`, using the proved
+full-range shifted bounds. The physical interval formulas and finite maps are
+already available; the uniform norm estimate and completion must now be connected.
 Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
 is not assumed here.

@@ -117,9 +117,11 @@ now iterates this argument to construct both transforms at every `p=2^(n+1)`,
 with explicit bounds and exact finite-input formulas. Duality transfers the
 ordinary bounds unchanged to conjugate exponents, constructing both transforms
 at `2, 4/3, 8/7, …`, with exponents arbitrarily close to one. The transposition
-identity holds on all conjugate inputs. Interpolation for the remaining exponents,
-and interval completions beyond `p=2`, are still needed for the full Lemma 4.3
-and spectral transfer.
+identity holds on all conjugate inputs. Finite analytic power families and
+mathlib's three-lines theorem now interpolate between proved endpoints, giving
+ordinary and shifted Hilbert transforms for every `1<p<∞`. Their reciprocal
+series converge absolutely and give the coefficients on all inputs. Interval
+completions beyond `p=2` are still needed for the full Lemma 4.3 and spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
