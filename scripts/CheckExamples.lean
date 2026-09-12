@@ -4096,3 +4096,89 @@ example (u : IntervalPairL2) (z : ℂ) :
 
 end
 end ClassicalMultiplicityChecks
+
+
+namespace RectangleContourChecks
+open NLS NLS.ZakharovShabat Complex Set MeasureTheory
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- Nonholomorphic coordinate functions detect both horizontal and vertical orientation.
+example : RectangleIntegral.integral (fun z : ℂ => (z.im : ℂ)) 0 (1 + I) = -1 := by
+  simp [RectangleIntegral.integral]
+
+example : RectangleIntegral.integral (fun z : ℂ => (z.re : ℂ)) 0 (1 + I) = I := by
+  simp [RectangleIntegral.integral]
+
+-- Reversing just the vertical orientation changes the sign.
+example : RectangleIntegral.integral (fun z : ℂ => (z.re : ℂ)) I 1 = -I := by
+  simp [RectangleIntegral.integral]
+
+-- The rectangle is genuine: its corners lie on the contour while its center does not.
+example : centralLowerCorner 2 ∈ RectangleIntegral.boundary (centralLowerCorner 2) (centralUpperCorner 2) := by
+  simp [RectangleIntegral.boundary, left_mem_uIcc]
+
+example : (0 : ℂ) ∉ RectangleIntegral.boundary (centralLowerCorner 2) (centralUpperCorner 2) := by
+  intro h
+  rw [centralCorner_boundary] at h
+  apply h.2
+  exact ⟨by simpa only [Complex.zero_re, abs_zero, centralCircleRadius] using centralCircleRadius_pos 2,
+    by norm_num⟩
+
+-- An entire Banach-valued integrand contributes zero on a nonsquare rectangle.
+example : RectangleIntegral.integral (fun z : ℂ => z ^ 3 + 2 * z) (-2 - I) (3 + 2 * I) = 0 := by
+  apply RectangleIntegral.eq_zero_of_differentiableOn
+  exact ((differentiable_id.pow 3).add ((differentiable_const (2 : ℂ)).mul differentiable_id)).differentiableOn
+
+-- The two subdivisions cancel their common edges for arbitrary continuous integrands.
+example (f : ℂ → ℂ) (hf : Continuous f) :
+    RectangleIntegral.integral f 0 (2 + 3 * I) =
+      RectangleIntegral.integral f 0 (2 + I) + RectangleIntegral.integral f I (2 + 3 * I) := by
+  simpa [Complex.mk_eq_add_mul_I] using RectangleIntegral.split_horizontal (f := f) (z := 0) (w := 2 + 3 * I) 1
+    (RectangleIntegral.integrable_of_continuousOn hf.continuousOn)
+    (RectangleIntegral.integrable_of_continuousOn hf.continuousOn)
+
+example (f : ℂ → ℂ) (hf : Continuous f) :
+    RectangleIntegral.integral f 0 (2 + 3 * I) =
+      RectangleIntegral.integral f 0 (1 + 3 * I) + RectangleIntegral.integral f 1 (2 + 3 * I) := by
+  simpa [Complex.mk_eq_add_mul_I] using RectangleIntegral.split_vertical (f := f) (z := 0) (w := 2 + 3 * I) 1
+    (RectangleIntegral.integrable_of_continuousOn hf.continuousOn)
+    (RectangleIntegral.integrable_of_continuousOn hf.continuousOn)
+
+-- A closed rectangle strictly above the real axis lies in the free resolvent set at p=3.
+private theorem upper_free_rectangle (z w : ℂ) (hz : 0 < z.im) (hw : 0 < w.im) :
+    uIcc z.re w.re ×ℂ uIcc z.im w.im ⊆ resolventSet (p := 3) (by simp) 0 := by
+  intro ζ hζ
+  apply mem_resolventSet_zero_of_notMem
+  apply notMem_freeLattice_of_im_ne_zero
+  exact ne_of_gt ((lt_min hz hw).trans_le hζ.2.1)
+
+example : resolventRectangleIntegral (p := 3) (by simp) 0 (-2 + I) (3 + 2 * I) = 0 :=
+  resolventRectangleIntegral_eq_zero_of_rectangle_subset (by simp) 0 _ _
+    (upper_free_rectangle _ _ (by norm_num) (by norm_num))
+
+-- Edge deformation does not require the retained interior to be in the resolvent set.
+example (φ : PairSpace 3) (hc : RectangleIntegral.boundary (-2 - I) (3 + I) ⊆ resolventSet (by simp) φ)
+    (hs : uIcc (-2 : ℝ) 3 ×ℂ uIcc (1 : ℝ) 4 ⊆ resolventSet (by simp) φ) :
+    resolventRectangleIntegral (by simp) φ (-2 - I) (3 + 4 * I) =
+      resolventRectangleIntegral (by simp) φ (-2 - I) (3 + I) := by
+  simpa [Complex.mk_eq_add_mul_I] using resolventRectangleIntegral_eq_of_horizontal_strip
+    (by simp) φ (-2 - I) (3 + 4 * I) 1 (by simpa [Complex.mk_eq_add_mul_I] using hc) (by simpa using hs)
+
+-- Every original counting potential admits actual compact, domain-valued rectangular contours.
+example (φ : PairSpace 3) :
+    ∃ N₀ : ℕ, ∃ U : Set (PairSpace 3), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        IsCompactOperator (centralRectangleIntegral (by simp) ψ N) := by
+  obtain ⟨N₀, U, hN₀, ho, hc, hφ, h0, h⟩ := exists_uniform_centralRectangleIntegral (by simp) φ
+  exact ⟨N₀, U, hN₀, ho, hc, hφ, h0, fun ψ hψ N hN => (h ψ hψ N hN).2.2⟩
+
+-- Domain factorization evaluates on arbitrary Lp data, using the stronger domain integral.
+example (φ x : PairSpace 3) (N : ℕ) (hc : centralRectangleBoundary N ⊆ resolventSet (by simp) φ) :
+    centralRectangleIntegral (by simp) φ N x = domainInclusion
+      (resolventRectangleIntegralToDomain (by simp) φ (centralLowerCorner N) (centralUpperCorner N) x) := by
+  rw [centralRectangleIntegral_eq_inclusion (by simp) φ N hc]
+  rfl
+
+end
+end RectangleContourChecks

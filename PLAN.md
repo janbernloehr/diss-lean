@@ -411,7 +411,16 @@ the boundary sign selects the eigenfunction extension and restricted domain. Pre
 Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
 is not assumed here.
-Identification with the rectangular contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
+The actual rectangular contour integral is now constructed as four oriented
+operator-norm edge integrals. Its domain-valued factorization proves compactness,
+and it commutes with resolvents and algebraic root-space projections. Horizontal
+and vertical subdivision cancel shared edges; Cauchy's theorem gives invariance
+under edge motion through filled resolvent strips. The central corner rectangle
+and boundary agree exactly with the existing box, and one common neighborhood
+admits all sufficiently large contours in the domain norm.
+Identification of this actual integral with the central algebraic projection
+remains open: next prove enclosed-pole selection or deformation to the already
+identified circular contour. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 The general Fourier/distribution interpretation, physical period-one embedding,

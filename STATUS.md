@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 145 modules and 1428 named public theorems. All compile on the
+The library has 148 modules and 1454 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -152,6 +152,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalIntervalRootSpaces` | Independent physical pencil root chains; preservation of every chain level and full root space; original domain membership; linear equivalence, finite dimension, stabilization, and closedness |
 | `NLS.ZakharovShabat.ClassicalIntervalMultiplicity` | Physical algebraic multiplicity as full root-space dimension; equality with coefficient multiplicity; spectral characterization; free simplicity; periodic multiplicity splitting into both original boundary contributions |
 | `NLS.ZakharovShabat.ClassicalIntervalCounting` | Finite central set from the physical spectrum; common physical neighborhood for central multiplicity `2N+1`, high-disk algebraic simplicity, localization, and analytic branches for both boundary conditions |
+| `NLS.FunctionalAnalysis.RectangleIntegral` | Actual four-edge Banach-valued integral; boundary integrability and congruence; evaluation and bounded linear maps; horizontal/vertical subdivision; Cauchy vanishing and analytic-strip deformation |
+| `NLS.ZakharovShabat.ResolventRectangle` | Operator- and domain-valued rectangular resolvent integrals; domain factorization and compactness; commutation with resolvents and algebraic projections; zero on filled resolvent rectangles; edge deformation through resolvent strips |
+| `NLS.ZakharovShabat.CentralRectangleContour` | Exact corner and boundary identification with the central box; actual central rectangular integral; domain factorization and compactness uniformly on a common neighborhood for all larger cutoffs |
 
 ## Current mathematical milestone
 
@@ -1423,10 +1426,41 @@ neighborhood. These statements now use physical spectra and physical root-space
 multiplicities throughout. The box still has height `N`; the overview theorem's
 norm-dependent height and general-`p` physical interpretation remain open.
 
+## Actual rectangular resolvent contours
+
+`RectangleIntegral.integral` is the sum of four actual oriented Bochner edge
+integrals. Ordered lower-left and upper-right corners give counterclockwise
+orientation, with the factor `i` on the vertical edges. Continuity on the full
+boundary gives all four integrability conditions without assuming anything in
+the interior. Boundary equality determines the integral, and bounded complex
+linear maps and evaluation commute with it.
+
+Horizontal and vertical subdivision cancel the oppositely oriented common edge.
+Cauchy's theorem makes the integral over an analytic filled rectangle vanish;
+combined with subdivision, it proves invariance when an edge moves through an
+analytic strip. These are Banach-valued results and apply to operator norms.
+
+`resolventRectangleIntegral` and its domain-valued version use the same
+normalization `(2πi)⁻¹` as the circular contour. On a resolvent boundary the
+actual integral factors through the weighted domain and is compact. It commutes
+with every full resolvent and every algebraic root-space projection. A filled
+resolvent rectangle contributes zero, and moving either a horizontal or vertical
+edge through a filled resolvent strip preserves the contour operator. The
+retained rectangle's interior need not be in the resolvent set.
+
+`centralLowerCorner` and `centralUpperCorner` give exactly the existing closed
+central rectangle and its boundary, including corners. `centralRectangleIntegral`
+is the actual integral along those four edges. The existing common neighborhood
+makes every sufficiently large central contour integrable in the domain norm,
+with a compact base-space integral. Equality with `centralSpectralProjection`
+is not yet proved; the remaining contour identification needs the enclosed-pole
+selection argument or a deformation to the already-identified circular contour.
+The overview theorem's norm-dependent height also remains separate.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3033 declarations under `NLS`, including generated
+axioms. The current audit covers 3092 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1752,6 +1786,14 @@ vectors admit original classical domain representatives. Further checks combine
 central physical multiplicity sums, unique algebraically simple high-disk
 spectral points, and analytic branches on one common neighborhood, and verify
 the periodic multiplicity split.
+
+Rectangle-contour checks compute both coordinate-function integrals around the
+unit square and reverse one orientation, detecting the signs of both edge pairs.
+They retain corners and exclude the central interior, check polynomial Cauchy
+vanishing on a nonsquare rectangle, and exercise both subdivisions. At `p=3`,
+a free rectangle above the real axis contributes zero. Further checks exercise
+edge deformation without a resolvent-interior assumption on the retained box,
+uniform compactness, and evaluation of the domain factorization.
 
 ## Next milestones
 

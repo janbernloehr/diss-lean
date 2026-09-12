@@ -93,3 +93,6 @@ import NLS.ZakharovShabat.ClassicalIntervalClosed
 import NLS.ZakharovShabat.ClassicalIntervalRootSpaces
 import NLS.ZakharovShabat.ClassicalIntervalMultiplicity
 import NLS.ZakharovShabat.ClassicalIntervalCounting
+import NLS.FunctionalAnalysis.RectangleIntegral
+import NLS.ZakharovShabat.ResolventRectangle
+import NLS.ZakharovShabat.CentralRectangleContour

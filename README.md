@@ -186,8 +186,13 @@ One common physical neighborhood gives central count `2N+1`, one algebraically
 simple eigenvalue in each high disk, and no other spectrum, for both boundary
 conditions and every larger cutoff. The general Fourier/distribution realization
 and multiplication beyond the Hilbert realization remain needed for the full transfer.
-The overview theorem's exact norm-dependent height, rectangular contour
-identification, and main dissertation theorems remain future work.
+The actual rectangular resolvent integral now uses four oriented Bochner edge
+integrals. It factors through the domain, is compact, and commutes with
+resolvents and algebraic projections. Subdivision and Cauchy's theorem prove
+invariance when an edge moves through a resolvent strip. The central corners
+and boundary agree exactly with the existing box. Equality of this integral
+with the central spectral projection, the overview theorem's exact
+norm-dependent height, and the main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
