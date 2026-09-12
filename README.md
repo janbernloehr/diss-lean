@@ -173,10 +173,15 @@ Both signed extensions are now continuous linear isomorphisms from the full
 physical `L²` space onto their coefficient boundary spaces, with exact inverse
 norm factor `√2`. Their inverses are actual interval restrictions, and their
 base coefficients agree with classical `H¹` extension followed by inclusion.
-An independent physical operator/resolvent correspondence, physical algebraic
-multiplicity identification, the general
-Fourier/distribution realization, and multiplication beyond the Hilbert
-realization remain needed for the full transfer.
+The original unbounded interval operator is now constructed on physical `L²`,
+with exactly the classical endpoint domain and the actual differential action.
+It is closed and densely defined. Its physical pencil has the same resolvent
+set as the coefficient boundary pencil, with a bounded inverse and compact
+base-space resolvent. The physical spectrum equals the original classical
+eigenvalue set.
+Physical algebraic multiplicity identification, the general Fourier/distribution
+realization, and multiplication beyond the Hilbert realization remain needed
+for the full transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

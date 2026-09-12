@@ -87,3 +87,6 @@ import NLS.ZakharovShabat.ClassicalIntervalAnalytic
 import NLS.ZakharovShabat.DirichletIntervalL2
 import NLS.ZakharovShabat.IntervalComponentFlip
 import NLS.ZakharovShabat.IntervalL2Isomorphism
+import NLS.ZakharovShabat.ClassicalIntervalOperator
+import NLS.ZakharovShabat.ClassicalIntervalResolvent
+import NLS.ZakharovShabat.ClassicalIntervalClosed

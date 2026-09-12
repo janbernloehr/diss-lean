@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 139 modules and 1365 named public theorems. All compile on the
+The library has 142 modules and 1403 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -146,6 +146,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.DirichletIntervalL2` | Dense weighted boundary inclusions; compatibility of physical Dirichlet extension with classical restriction; closed dense image and surjectivity; full Dirichlet `L²` continuous linear equivalence, exact norm factors, and physical inverse restriction |
 | `NLS.ZakharovShabat.IntervalComponentFlip` | Isometric component sign changes on physical classes and coefficient boundary spaces; a.e. physical realization; exact relation between Dirichlet and Neumann signed reflection |
 | `NLS.ZakharovShabat.IntervalL2Isomorphism` | Both signed base-space continuous linear equivalences; exact forward/inverse norm factors; physical reconstruction and actual Fourier integrals; inverse restriction; compatibility with classical functions, weighted restriction, and domain inclusion |
+| `NLS.ZakharovShabat.ClassicalIntervalOperator` | Physical domain inclusion and operator maps; injective dense inclusion; arbitrary-interval differential congruence; exact action on original representatives and square-integrable outputs |
+| `NLS.ZakharovShabat.ClassicalIntervalResolvent` | Independently defined physical pencil and resolvent set; full intertwining and equality with boundary resolvents; bounded two-sided physical inverse; compact base-space resolvent; original spectrum equals coefficient boundary spectrum and classical eigenvalues |
+| `NLS.ZakharovShabat.ClassicalIntervalClosed` | Original physical unbounded partial linear operator; exact classical endpoint-domain membership; potential-independent dense domain; evaluation by the actual differential expression; physical graph recognition and closedness |
 
 ## Current mathematical milestone
 
@@ -1207,8 +1210,8 @@ physical restriction at every point of `[0,1]`. Their operator norms are bounded
 by `1` and `√2 π`, respectively. Both original interval domains are complete.
 This establishes Lemma 4.2 in the classical `H¹` realization. Lemma 4.1's physical
 equation transfer, original eigenvalue-set identification, and high-index
-analytic branches are proved below. Physical
-operator/resolvent and algebraic-multiplicity identifications remain open.
+analytic branches and the original operator/resolvent correspondence are proved
+below. Physical algebraic-multiplicity identification remains open.
 
 ## Physical multiplication and the Hilbert operator
 
@@ -1291,11 +1294,11 @@ topology, and meet every bounded region in finitely many points. Their union is
 the periodic coefficient spectrum of the Dirichlet-reflected potential. For the
 zero potential both original sets are exactly `πℤ`, with odd indices retained.
 
-These are eigenvalue-set identities. An independently defined original interval
-`L²` operator and its resolvent correspondence remain to be constructed; the
-required physical base-space equivalences are now proved below. Physical algebraic multiplicities remain separate from the
-eigenvalue-set identification. Analytic branches and uniform coefficient counting
-data are now pulled back to the physical potential space below.
+These are eigenvalue-set identities. The independently defined original
+interval operator and its resolvent correspondence are now constructed below.
+Physical algebraic multiplicities remain separate from eigenvalue-set equality.
+Analytic branches and uniform coefficient counting data are now pulled back to
+the physical potential space below.
 
 ## Physical potential parameters and analytic eigenvalue branches
 
@@ -1327,9 +1330,10 @@ Both free branches have the exact value `π n`.
 This proves physical analyticity and uniqueness of the high-index classical
 branches. Simplicity and central multiplicity counts are still expressed by the
 coefficient operator. Identifying them with independently defined physical
-operator multiplicities requires the physical operator/resolvent correspondence.
-The signed base-space equivalences are now established below. The general-`p` physical parameter transfer
-and the exact central-height convention also remain open.
+operator multiplicities requires identifying physical generalized eigenspaces.
+The signed base-space and operator/resolvent correspondences are now proved
+below. The general-`p` physical parameter transfer and the exact central-height
+convention also remain open.
 
 ## Signed physical base-space isomorphisms
 
@@ -1357,14 +1361,48 @@ These maps commute with the domain/base inclusions. For an original classical
 function, its base-space image equals the raw coefficients of its weighted
 classical extension. Conversely, inverse base restriction of an included
 weighted boundary vector is the physical `L²` class of its classical restriction.
-This supplies the base-space part of the original operator correspondence;
-construction of the original operator and identification of its resolvent and
-generalized eigenspaces remain next.
+This supplies the base-space part of the original operator correspondence
+constructed below. Physical generalized eigenspaces remain to be identified.
+
+## Original interval operator and resolvent
+
+`classicalInclusion b` embeds the original physical `H¹` endpoint domain into
+`IntervalPairL2`; it is injective and has dense range. `classicalOperator b u`
+is the bounded domain-to-base operator for an arbitrary original `L²` potential.
+On original representatives it is exactly the `L²` class of
+
+`diag(i,-i) f′ + (φ₋ f₊, φ₊ f₋)`.
+
+This realization uses actual derivatives and holds without global smoothness,
+period-one domain conditions, or pointwise representatives of the potential.
+The output is square integrable. A.e. potential equality and equality of domain
+functions on the original interval preserve the physical differential action.
+
+The physical pencil is defined as `z • classicalInclusion - classicalOperator`;
+`classicalResolventSet` is defined by its bijectivity. The base and domain
+isomorphisms intertwine it with the coefficient boundary pencil. Their resolvent
+sets are equal, open, and nonempty. `classicalResolventToDomain` is a bounded
+two-sided inverse on that set. The physical base-space resolvent is conjugate
+to the coefficient boundary resolvent and is compact. `classicalSpectrum`,
+defined as failure of physical-pencil invertibility, equals both the coefficient
+boundary spectrum and the original classical differential-equation eigenvalues.
+
+`classicalUnboundedOperator` is a partial linear map on the physical base space.
+Its domain is exactly the `L²` classes admitting original classical `H¹`
+representatives with the selected endpoint conditions, independently of the
+potential. Evaluation is the class of the actual differential expression. The
+domain is dense. A physical resolvent identity recognizes graph points using
+only base-space data, proving that the graph and the unbounded operator are
+closed. No convergence in the stronger domain norm is required for closedness.
+
+Physical generalized eigenspaces and algebraic multiplicities still need their
+own transport proofs before the full original simplicity and central counting
+statements can be claimed.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2892 declarations under `NLS`, including generated
+axioms. The current audit covers 2964 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1676,12 +1714,18 @@ without the frequency weight. A discontinuous original step function also
 round-trips through Neumann extension, and arbitrary Neumann inverse classes
 agree with actual physical restriction almost everywhere.
 
+Original-operator checks verify physical inclusion and the matrix action
+`(1,-1) ↦ (-2,2)` for the Neumann domain and potential `(2,2)`, for both the
+bounded domain map and the unbounded partial map. Original classical data alone
+proves domain membership. The free physical spectrum is exactly `πℤ`; at `i`
+both inverse identities hold on arbitrary physical inputs. Further checks cover
+compactness for arbitrary potentials, closedness, and base-space graph recognition.
+
 ## Next milestones
 
-1. Construct the original interval operator/resolvent correspondence using the
-   now-proved signed base-space and classical domain equivalences. Identify
-   physical generalized eigenspaces and algebraic multiplicities to complete the original counting and simplicity
-   transfer in Theorem 1.4 and Lemma 4.5.
+1. Identify physical generalized eigenspaces and algebraic multiplicities using
+   the now-proved original operator/resolvent correspondence, completing the
+   original counting and simplicity transfer in Theorem 1.4 and Lemma 4.5.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

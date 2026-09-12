@@ -390,10 +390,17 @@ give the Neumann map. Forward synthesis is actual signed reflection, and the
 inverse is actual restriction almost everywhere. Both exact norm factors are
 proved. The maps commute with classical domain extension and base inclusion.
 
-Next construct the original interval operator/resolvent correspondence using
-these base and domain equivalences. Then identify original root spaces and
-algebraic multiplicities to complete physical simplicity and central counting.
-These do not follow from eigenvalue-set equality alone.
+The original operator/resolvent correspondence is now proved. The physical
+classical-domain operator realizes the actual differential expression for any
+original representatives. Its partial linear realization is closed and densely
+defined on exactly the original endpoint domain. Physical and coefficient
+pencils intertwine, their resolvent sets agree, and the physical inverse is
+bounded with compact base-space resolvent. Its spectrum is exactly the original
+classical eigenvalue set.
+
+Next identify original root spaces and algebraic multiplicities to complete
+physical simplicity and central counting. Use the proved operator and resolvent
+correspondence rather than eigenvalue-set equality alone.
 Both boundary spectral problems use the Dirichlet extension of the potential;
 the boundary sign selects the eigenfunction extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.

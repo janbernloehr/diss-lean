@@ -3941,3 +3941,83 @@ example (a : space (p := 2) .neumann) :
 
 end
 end IntervalL2IsoChecks
+
+
+namespace ClassicalOperatorChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+noncomputable section
+
+private def φ : ℝ → ℂ × ℂ := fun _ => (2, 2)
+private def f : ℝ → ℂ × ℂ := fun _ => (1, -1)
+private theorem hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)) := memLp_const _
+private theorem hL : MemLp f 2 (volume.restrict (Ioc 0 1)) := memLp_const _
+private theorem hf : HasClassicalIntervalDomain .neumann f := by
+  constructor
+  · constructor
+    · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => (1 : ℂ))).contDiffOn.absolutelyContinuousOnInterval
+    · simp [f]
+  · constructor
+    · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => (-1 : ℂ))).contDiffOn.absolutelyContinuousOnInterval
+    · simp [f]
+  · norm_num [f, extensionSign]
+  · norm_num [f, extensionSign]
+
+-- Inclusion preserves the original function as a physical L2 class.
+example : classicalInclusion .neumann (classicalDomainOfFunction .neumann f hf) = intervalL2OfFunction f hL :=
+  classicalInclusion_ofFunction .neumann f hf hL
+
+-- The original matrix operator sends (1,-1) to (-2,2), using the same potential for Neumann data.
+example : classicalOperator .neumann (intervalL2OfFunction φ hφ) (classicalDomainOfFunction .neumann f hf) =
+    intervalL2OfFunction (fun _ => ((-2 : ℂ), (2 : ℂ))) (memLp_const _) := by
+  rw [classicalOperator_ofFunction]
+  apply (intervalL2OfFunction_eq_iff _ _ _ _).mpr
+  exact Filter.Eventually.of_forall fun x => by norm_num [physicalOperator, φ, f]
+
+-- The unbounded operator has that same physical action on its actual included domain.
+example (hx : intervalL2OfFunction f hL ∈ (classicalUnboundedOperator .neumann (intervalL2OfFunction φ hφ)).domain) :
+    classicalUnboundedOperator .neumann (intervalL2OfFunction φ hφ) ⟨intervalL2OfFunction f hL, hx⟩ =
+      intervalL2OfFunction (fun _ => ((-2 : ℂ), (2 : ℂ))) (memLp_const _) := by
+  rw [classicalUnboundedOperator_apply_ofFunction .neumann φ f hφ hf hL hx]
+  apply (intervalL2OfFunction_eq_iff _ _ _ _).mpr
+  exact Filter.Eventually.of_forall fun x => by norm_num [physicalOperator, φ, f]
+
+-- Membership follows from original H1 data and endpoint conditions, without coefficient assumptions.
+example (u : IntervalPairL2) : intervalL2OfFunction f hL ∈ (classicalUnboundedOperator .neumann u).domain :=
+  (mem_classicalUnboundedOperator_domain_iff_original .neumann u _).mpr ⟨f, hf, hL, rfl⟩
+
+private theorem h0 : MemLp (0 : ℝ → ℂ × ℂ) 2 (volume.restrict (Ioc 0 1)) := by simp
+private def zeroPotential : IntervalPairL2 := intervalL2OfFunction 0 h0
+
+-- The independently defined original spectrum of the free operator is exactly pi Z.
+example (b : BoundaryCondition) : classicalSpectrum b zeroPotential = freeLattice := by
+  rw [zeroPotential, classicalSpectrum_ofFunction, classicalEigenvalues_zero]
+
+private theorem i_resolvent (b : BoundaryCondition) : Complex.I ∈ classicalResolventSet b zeroPotential := by
+  have hn : Complex.I ∉ classicalSpectrum b zeroPotential := by
+    rw [zeroPotential, classicalSpectrum_ofFunction, classicalEigenvalues_zero]
+    exact notMem_freeLattice_of_im_ne_zero (by simp)
+  exact Classical.not_not.mp hn
+
+-- At i the inverse solves every physical L2 right-hand side for both original boundary problems.
+example (b : BoundaryCondition) (v : IntervalPairL2) :
+    classicalPencil b zeroPotential Complex.I (classicalResolventToDomain b zeroPotential Complex.I v) = v :=
+  classicalPencil_classicalResolventToDomain b zeroPotential Complex.I (i_resolvent b) v
+
+-- The other inverse recovers every original classical domain element.
+example (b : BoundaryCondition) (v : ClassicalIntervalDomain b) :
+    classicalResolventToDomain b zeroPotential Complex.I (classicalPencil b zeroPotential Complex.I v) = v :=
+  classicalResolventToDomain_classicalPencil b zeroPotential Complex.I (i_resolvent b) v
+
+-- Compactness and closedness hold for arbitrary physical L2 potentials, without smallness.
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ) : IsCompactOperator (classicalResolvent b u z) :=
+  isCompactOperator_classicalResolvent b u z
+example (b : BoundaryCondition) (u : IntervalPairL2) : (classicalUnboundedOperator b u).IsClosed :=
+  classicalUnboundedOperator_isClosed b u
+
+-- Base-space graph recognition does not require convergence in the stronger H1 norm.
+example (b : BoundaryCondition) (u x y : IntervalPairL2) (z : ℂ) (hz : z ∈ classicalResolventSet b u)
+    (h : classicalResolvent b u z (z • x - y) = x) : (x, y) ∈ classicalOperatorGraph b u :=
+  (mem_classicalOperatorGraph_iff_resolvent b u z hz x y).mpr h
+
+end
+end ClassicalOperatorChecks
