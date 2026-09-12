@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 209 modules and 1987 named public theorems. All compile on the
+The library has 211 modules and 2009 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -37,6 +37,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.CircleTranslation` | Actual periodic `L²` translation isometries; almost-everywhere physical representatives; positive Fourier phase; composition, inversion, strong continuity; exact increment Parseval identity and period-two physical energy normalization |
 | `NLS.Fourier.FractionalKernel` | Unit phase bounds; near-zero cancellation and tail decay; globally integrable model kernel for `0<s<1`; reflection, positivity between crossings, and positive core mass |
 | `NLS.Fourier.FractionalKernelScaling` | Exact real/nonnegative kernel agreement including zero; positive-frequency integrability; change of variables yielding `n^(2s)` times model mass over `[-n,n]` |
+| `NLS.SequenceSpaces.SobolevHomogeneous` | Exact weighted Hilbert square energy; equivalence of weighted membership with homogeneous moment summability on `ℓ²`; contractive unweighted inclusion; explicit two-sided inhomogeneous estimates |
+| `NLS.Fourier.FractionalSobolevIdentification` | Physical periodic fractional regularity iff unique weighted Hilbert synthesis for `0<s<1`; actual Fourier coefficient recovery and both inverse identities; quantitative physical energy and weighted norm bounds retaining the zero mode |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2155,14 +2157,32 @@ fractional energy is equivalent to ordinary summability of this conventional
 homogeneous Fourier square sum. Every Fourier mode consequently has finite
 physical fractional energy.
 
-The next step is to pass from this homogeneous criterion and the existing `L²`
-condition to the project's weighted coefficient norm, then establish the
-nonperiodic interval boundary estimate required by Appendix A.9.
+## Periodic fractional Sobolev identification
+
+`SobolevHomogeneous` identifies weighted Hilbert membership with homogeneous
+moment summability on `ℓ²`. It proves the exact weighted square energy and
+the comparisons `H ≤ W ≤ 2^(2s)(L+H)`, where `W` is the weighted norm squared,
+`L` is the raw `ℓ²` norm squared, and `H` is the homogeneous square sum.
+The inclusion into unweighted coefficients is a contractive linear map.
+
+`FractionalSobolevIdentification` composes this inclusion with Hilbert Fourier
+synthesis. For `0<s<1`, finite physical fractional energy is equivalent to
+weighted square summability of the actual Fourier coefficients and to a unique
+weighted synthesis representation. Both inverse identities hold in the genuine
+periodic `L²` space. Writing `E` for the physical fractional energy and `c,C`
+for the positive model-kernel constants, the bounds are
+`E ≤ C W` and `c W ≤ 2^(2s)(c L+E)`. They are stated in extended nonnegative
+reals, preserving the earlier physical definition without a totalized integral.
+The `L²` term controls constant functions whose fractional seminorm vanishes.
+
+This completes the periodic identification throughout `0<s<1`, including
+`1/2`. The nonperiodic interval boundary estimate required by Appendix A.9
+and its separate endpoint consequence remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4105 declarations under `NLS`, including generated
+axioms. The current audit covers 4143 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2677,11 +2697,18 @@ weights. Arbitrary physical `L²` data exercises both energy bounds and the
 `|n|^(2/3)` summability criterion. Imaginary negative modes exercise actual
 fractional regularity at `s=3/4`.
 
+Fractional identification checks exercise actual reconstruction at `s=3/4`,
+unique representation at `s=1/2`, the exact weighted exponent `3/2`, both
+physical norm bounds, and imaginary negative-frequency coefficient recovery.
+An imaginary constant has weighted norm one although its physical seminorm
+vanishes. The actual `L²` synthesis with coefficients `(1+|n|)^(-1)` fails
+physical regularity at `s=1/2`, using the exact reciprocal summability threshold.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Identify the physical fractional criterion with the weighted coefficient
-   space, then prove the interval boundary estimate in Appendix A.9. The
+2. Prove the nonperiodic interval boundary estimate in Appendix A.9, using
+   the completed periodic fractional Sobolev identification. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
@@ -2689,5 +2716,5 @@ fractional regularity at `s=3/4`.
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. Fractional physical Sobolev identification and the printed
-general-`p` spectral height remain open.
+unimplemented. The nonperiodic fractional interval boundary estimate and the
+printed general-`p` spectral height remain open.

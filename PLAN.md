@@ -594,5 +594,16 @@ on `[-n,n]`; its positive core and finite total mass give frequency-independent
 constants. The bounds include zero and negative frequencies and lift to the
 full physical energy, including infinite values. Physical fractional regularity
 is now equivalent to summability of the conventional homogeneous Fourier square
-sum. Next combine that criterion with `L²` to identify the weighted coefficient
-space, then prove the nonperiodic interval boundary estimate for Appendix A.9.
+sum. The weighted coefficient identification is now proved below; the
+nonperiodic interval boundary estimate for Appendix A.9 remains.
+
+
+The periodic fractional Sobolev identification is now proved for `0<s<1`.
+Homogeneous moment summability together with `L²` is equivalent to the project’s
+`(1+|n|)^s` weighted square summability. Contractive Hilbert synthesis and actual
+Fourier coefficients give both inverse identities and a unique weighted
+representative for every physically regular periodic function. Explicit bounds
+compare the weighted norm with the physical fractional energy plus the `L²`
+term, which retains the zero mode. The next Appendix A.9 dependency is the
+nonperiodic interval boundary estimate below one half, followed by the endpoint
+conclusion through lower regularity.

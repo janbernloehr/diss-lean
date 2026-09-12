@@ -5947,3 +5947,76 @@ example : HasFractionalPeriodicRegularity (3 / 4) (l2Synthesis (lp.single 2 (-3)
   hasFractionalPeriodicRegularity_single (by norm_num) (by norm_num) _ _
 
 end FractionalBoundsChecks
+
+-- Physical periodic fractional Sobolev reconstruction and both norm bounds.
+example (f : Fourier.CircleL2) :
+    Fourier.HasFractionalPeriodicRegularity (1 / 3) f ↔
+      Memℓp (fun n => (Weight.sobolev (1 / 3) n : ℂ) * fourierCoeff f n) 2 :=
+  Fourier.hasFractionalPeriodicRegularity_iff_memlp (by norm_num) (by norm_num) f
+
+example (f : Fourier.CircleL2) (hf : Fourier.HasFractionalPeriodicRegularity (3 / 4) f) :
+    Fourier.sobolevL2Synthesis (by norm_num : (0 : ℝ) ≤ 3 / 4)
+      (Fourier.fractionalSobolevCoefficients (by norm_num) (by norm_num) f hf) = f :=
+  Fourier.sobolevL2Synthesis_fractionalSobolevCoefficients (by norm_num) (by norm_num) f hf
+
+example (f : Fourier.CircleL2) :
+    Fourier.HasFractionalPeriodicRegularity (1 / 2) f ↔
+      ∃! a : WeightedCoeff (Weight.sobolev (1 / 2)) 2,
+        Fourier.sobolevL2Synthesis (by norm_num) a = f :=
+  Fourier.hasFractionalPeriodicRegularity_iff_existsUnique (by norm_num) (by norm_num) f
+
+example (a : WeightedCoeff (Weight.sobolev (3 / 4)) 2) :
+    HasSum (fun n : ℤ => (1 + |(n : ℝ)|) ^ (3 / 2 : ℝ) * ‖a.val n‖ ^ 2) (‖a‖ ^ 2) := by
+  convert WeightedCoeff.hasSum_sobolev_sq (3 / 4) a using 1
+  norm_num
+
+example (a : WeightedCoeff (Weight.sobolev (1 / 3)) 2) :
+    Fourier.fractionalTranslationEnergy (1 / 3) (Fourier.sobolevL2Synthesis (by norm_num) a) ≤
+      ENNReal.ofReal (Fourier.fractionalUpperConstant (1 / 3) * ‖a‖ ^ 2) :=
+  Fourier.fractionalTranslationEnergy_sobolevL2Synthesis_le (by norm_num) (by norm_num) a
+
+example (a : WeightedCoeff (Weight.sobolev (1 / 2)) 2) :
+    ENNReal.ofReal (Fourier.fractionalLowerConstant (1 / 2) * ‖a‖ ^ 2) ≤
+      2 * (ENNReal.ofReal (Fourier.fractionalLowerConstant (1 / 2) *
+        ‖Fourier.sobolevL2Synthesis (by norm_num) a‖ ^ 2) +
+        Fourier.fractionalTranslationEnergy (1 / 2) (Fourier.sobolevL2Synthesis (by norm_num) a)) := by
+  simpa using Fourier.sobolev_norm_sq_le_physical_energy (by norm_num) (by norm_num) a
+
+example :
+    (Fourier.fractionalSobolevCoefficients (by norm_num : (0 : ℝ) < 3 / 4) (by norm_num)
+      (Fourier.l2Synthesis (lp.single 2 (-3) Complex.I))
+      (Fourier.hasFractionalPeriodicRegularity_single (by norm_num) (by norm_num) _ _)).val (-3) =
+        Complex.I := by
+  rw [Fourier.fractionalSobolevCoefficients_apply, Fourier.fourierCoeff_l2Synthesis]
+  simp
+
+-- Constant physical functions have zero seminorm and a nonzero inhomogeneous norm.
+example :
+    ‖Fourier.fractionalSobolevCoefficients (by norm_num : (0 : ℝ) < 1 / 2) (by norm_num)
+      (Fourier.l2Synthesis (lp.single 2 0 Complex.I))
+      (Fourier.hasFractionalPeriodicRegularity_single (by norm_num) (by norm_num) _ _)‖ = 1 := by
+  rw [WeightedCoeff.norm_eq]
+  have he : WeightedCoeff.weightEquiv (Weight.sobolev (1 / 2)) 2
+      (Fourier.fractionalSobolevCoefficients (by norm_num) (by norm_num)
+        (Fourier.l2Synthesis (lp.single 2 0 Complex.I))
+        (Fourier.hasFractionalPeriodicRegularity_single (by norm_num) (by norm_num) _ _)) =
+      lp.single 2 0 Complex.I := by
+    ext n
+    simp only [WeightedCoeff.weightEquiv_apply, Fourier.fractionalSobolevCoefficients_apply,
+      Fourier.fourierCoeff_l2Synthesis, lp.single_apply, Pi.single_apply]
+    split_ifs with hn
+    · subst n
+      simp [Weight.sobolev_apply]
+    · simp
+  rw [he, lp.norm_single (by norm_num)]
+  simp
+
+-- The inverse bracket gives an actual L² function failing critical half regularity.
+example :
+    ¬ Fourier.HasFractionalPeriodicRegularity (1 / 2)
+      (Fourier.l2Synthesis (⟨fun n : ℤ => (Weight.sobolev 1 n : ℂ)⁻¹,
+        Weight.inverse_sobolev_memlp (by norm_num) (by norm_num)⟩ : Coeff 2)) := by
+  rw [Fourier.hasFractionalPeriodicRegularity_iff_memlp (by norm_num) (by norm_num)]
+  simp only [Fourier.fourierCoeff_l2Synthesis, ← div_eq_mul_inv, Weight.sobolev_ratio]
+  rw [Weight.inverse_sobolev_memlp_iff (by norm_num)]
+  norm_num

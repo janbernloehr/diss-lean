@@ -157,3 +157,5 @@ import NLS.Fourier.FractionalTranslationEnergy
 import NLS.Fourier.FractionalKernel
 import NLS.Fourier.FractionalKernelScaling
 import NLS.Fourier.FractionalSpectralBounds
+import NLS.SequenceSpaces.SobolevHomogeneous
+import NLS.Fourier.FractionalSobolevIdentification

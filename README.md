@@ -489,9 +489,11 @@ installation is absent. No shell startup files are modified.
   and equals its exact Fourier-weighted sum, including infinite energies.
   For `0<s<1`, these weights have proved two-sided bounds by `|n|^(2s)`, with
   positive finite constants. Physical fractional regularity is equivalent to
-  summability of the conventional homogeneous Fourier energy. The weighted
-  coefficient-space identification and nonperiodic interval boundary estimate
-  remain steps toward Appendix A.9.
+  summability of the conventional homogeneous Fourier energy and to a unique
+  representative in the project’s weighted Sobolev coefficient space. Fourier
+  synthesis reconstructs the original function, with quantitative norm bounds
+  retaining the constant mode. The nonperiodic interval boundary estimate
+  remains necessary for Appendix A.9.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
