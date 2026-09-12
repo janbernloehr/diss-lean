@@ -93,7 +93,11 @@ common neighborhood and for every sufficiently large cutoff, each high disk has
 one simple Dirichlet and one simple Neumann eigenvalue, and each central count
 is `2N+1`. Boundary cluster and contour ranks count the actual restricted root
 spaces, including Jordan chains. The projectors are analytic on that same
-neighborhood; Lemma 4.5's analytic eigenvalue functions remain to be constructed.
+neighborhood. Lemma 4.5's coefficient statement is now proved: the boundary
+projectors lift analytically into the weighted boundary domains, and the trace
+of the bounded restriction defines each high-index simple eigenvalue. Both
+functions are analytic on one open convex neighborhood in the reflected
+potential space, with the same cutoff and counting data.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -214,6 +218,15 @@ a two-index free cluster, one cutoff for every larger box along the full path
 neighborhoods at `p=3`. For `(1,1)`, the value `1` belongs to the Dirichlet disk
 spectrum but is excluded from the Neumann disk spectrum and contributes rank
 zero to the Neumann cluster.
+
+Boundary-eigenvalue checks evaluate the intrinsic trace on nonorthogonal moving
+one-dimensional ranges and verify its analyticity. A nonzero imaginary constant
+potential has trace-defined Dirichlet value `i/1000` and Neumann value `-i/1000`
+in the same disk, using actual domain eigenvectors and an explicit rank-one
+deformation. Further checks cover the signed negative free value, exact recovery
+of a negative free boundary mode by the domain lift, analyticity into the weighted
+boundary domain at `p=1`, shared neighborhoods for both analytic simple eigenvalue
+functions at `p=3`, and actual weighted-domain eigenvectors at `p=1`.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

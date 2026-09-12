@@ -281,12 +281,21 @@ every reflected potential there. `BoundaryCountingData` gives one simple value
 in each high disk and `2N+1` central values counted algebraically, for both
 conditions and every larger cutoff, together with the periodic localization.
 
-Next construct the boundary contour lift into the weighted domain and its
-analytic finite-dimensional operator restriction. Use its rank-one trace to
-prove the analytic simple eigenvalue functions in Lemma 4.5.
-The physical interval-extension maps of Lemmas 4.1–4.2 and the discrete Hilbert
-transform estimate of Lemma 4.3 still need proofs. The period-two projections
-just constructed are not substitutes for those extension maps.
+Lemma 4.5 is now proved for the coefficient restrictions. The boundary contour
+lifts analytically into its weighted boundary domain; inclusion recovers the
+base projector, and applying the original operator through the lift gives a
+bounded analytic spectral restriction. A general trace theorem handles varying
+finite-dimensional ranges using local projection transport. In dimension one,
+its intrinsic trace equals the enclosed eigenvalue. The trace-defined Dirichlet
+and Neumann functions are analytic on one open convex neighborhood in the
+reflected potential space and agree with the previously counted simple values.
+Their free values are `πn`, and they have actual weighted-domain eigenvectors.
+
+Next construct the physical interval-extension maps of Lemmas 4.1–4.2 and
+prove the discrete Hilbert transform estimate in Lemma 4.3. Transfer the
+coefficient counting and analytic-eigenvalue theorems through these maps to the
+original period-one potentials. The period-two projections are not substitutes
+for interval extensions.
 Identification with the rectangular contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.

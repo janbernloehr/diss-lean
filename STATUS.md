@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has seventy-five modules and 848 named public theorems. All compile on the
+The library has seventy-eight modules and 875 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -82,6 +82,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.FreeBoundaryMultiplicity` | Signed free boundary modes and exact lattice spectra; algebraic multiplicity one and absence of longer free chains; rank one in each free quarter-pi contour summand; free central count `2N+1` for each boundary condition |
 | `NLS.ZakharovShabat.BoundaryClusters` | Boundary-preserving individual and cluster projections; finite sums of actual boundary root spaces and exact periodic intersections; bounded restricted and ambient projections, idempotence, and rank/multiplicity formulas; contour identification and operator-norm analyticity |
 | `NLS.ZakharovShabat.BoundaryCounting` | Actual finite boundary spectra in disks and central boxes; coefficient Theorem 1.4 counts on one neighborhood for every larger cutoff; central ranks/counts `2N+1`, high-disk ranks/counts one, unique simple eigenvalues, and shared analytic projection families and localization |
+| `NLS.FunctionalAnalysis.ProjectionTrace` | Intrinsic restriction and trace on varying projection ranges; conjugacy under local transport; analytic traces for commuting analytic families; trace equals the eigenvalue on a one-dimensional range |
+| `NLS.ZakharovShabat.BoundarySpectralReduction` | Analytic contour lifts into the actual weighted boundary domains; inclusion and projection identities; bounded analytic `L P`; spectral support, commutation, and exact action on enclosed boundary eigenvectors |
+| `NLS.ZakharovShabat.BoundaryEigenvalues` | Trace-defined boundary eigenvalues; analytic intrinsic traces on reflected potentials; rank-one identification with the actual spectrum; signed free values; coefficient Lemma 4.5 on one open convex neighborhood with uniform counting data and actual domain eigenvectors |
 
 ## Current mathematical milestone
 
@@ -577,9 +580,28 @@ condition. Both counts, the analytic central and disk projector families, and
 periodic localization share one neighborhood and work for every larger cutoff.
 Singleton disk spectra and algebraic multiplicity one are proved explicitly.
 
-Lemma 4.5's analytic simple eigenvalue functions remain next. The physical
-interval-extension maps and their estimates are still needed to transfer this
-coefficient theorem to the dissertation's original period-one potentials.
+**The coefficient form of Lemma 4.5 is proved.** The boundary contour projector
+has an analytic lift into the actual one-derivative boundary domain. Inclusion
+recovers the base projector, and the lift is unchanged by first applying that
+projector. The original operator composed with the lift gives a bounded
+analytic operator supported on the same finite-dimensional spectral range.
+On every enclosed boundary eigenvector, the lift returns the original domain
+vector and the bounded operator has exactly its original eigenvalue action.
+
+The general `ProjectionTrace` construction takes the trace on a varying range,
+using projection transport to prove independence of the local reference range
+and analyticity for any commuting analytic operator family. On a one-dimensional
+range, this trace is the eigenvalue of a nonzero eigenvector. Applying it to
+the boundary restriction defines the Dirichlet and Neumann high-index functions.
+Their trace formulas agree with the unique simple values already obtained from
+`BoundaryCountingData`; the functions have free values `πn` and actual nonzero
+weighted-domain eigenvectors. Both are analytic on one open convex neighborhood
+of reflected potentials containing the given potential and zero, with the same
+cutoff and counting data for every larger central box. The total trace definition
+has an eigenvalue interpretation under these rank-one hypotheses.
+
+The physical interval-extension maps and their estimates remain necessary to
+transfer Theorem 1.4 and Lemma 4.5 to the original period-one potentials.
 
 The actual unbounded realization is now defined as
 
@@ -793,7 +815,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1774 declarations under `NLS`, including generated
+axioms. The current audit covers 1816 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -960,12 +982,20 @@ neighborhoods at `p=3`. For `(1,1)`, the value `1` belongs to the Dirichlet disk
 spectrum but is excluded from the Neumann disk spectrum and contributes rank
 zero to the Neumann cluster.
 
+Boundary-eigenvalue checks evaluate the intrinsic trace on nonorthogonal moving
+one-dimensional ranges and verify its analyticity. A nonzero imaginary constant
+potential has trace-defined Dirichlet value `i/1000` and Neumann value `-i/1000`
+in the same disk, using actual domain eigenvectors and an explicit rank-one
+deformation. Further checks cover the signed negative free value, exact recovery
+of a negative free boundary mode by the domain lift, analyticity into the weighted
+boundary domain at `p=1`, shared neighborhoods for both analytic simple eigenvalue
+functions at `p=3`, and actual weighted-domain eigenvectors at `p=1`.
+
 ## Next milestones
 
-1. Construct the boundary contour lift and analytic spectral restriction, then
-   prove Lemma 4.5's analytic simple eigenvalues. Prove the interval-extension
-   maps and discrete Hilbert transform bound in Lemmas 4.1–4.3 to transfer the
-   coefficient counts of Theorem 1.4 to the original period-one potentials.
+1. Construct the interval-extension maps and discrete Hilbert transform bound
+   in Lemmas 4.1–4.3. Transfer the coefficient counting and analytic-eigenvalue
+   results of Theorem 1.4 and Lemma 4.5 to the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

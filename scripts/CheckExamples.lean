@@ -2326,3 +2326,191 @@ example : (1 : ℂ) ∈ BoundaryCondition.enclosedSpectrum .dirichlet (by simp)
 end BoundaryCountChecks
 
 end BoundaryCountingChecks
+
+section BoundaryEigenvalueChecksSection
+
+set_option autoImplicit false
+open Complex
+
+namespace BoundaryEigenvalueChecks
+
+-- Nonorthogonal moving ranges exercise the generic trace construction.
+def graphProjection (t : ℂ) : ℂ × ℂ →L[ℂ] ℂ × ℂ :=
+  (ContinuousLinearMap.fst ℂ ℂ ℂ).prod (t • ContinuousLinearMap.fst ℂ ℂ ℂ)
+
+theorem graphProjection_idempotent (t : ℂ) : IsIdempotentElem (graphProjection t) := by
+  apply ContinuousLinearMap.ext
+  intro x
+  rfl
+
+theorem graphProjection_rank (t : ℂ) : Module.finrank ℂ (graphProjection t).range = 1 := by
+  have he : (graphProjection t).range = Submodule.span ℂ {(1, t)} := by
+    apply le_antisymm
+    · rintro x ⟨y, rfl⟩
+      rw [Submodule.mem_span_singleton]
+      refine ⟨y.1, ?_⟩
+      ext <;> simp [graphProjection, mul_comm]
+    · apply Submodule.span_le.mpr
+      intro x hx
+      have hx' : x = (1, t) := Set.mem_singleton_iff.mp hx
+      subst x
+      exact ⟨(1, 0), by simp [graphProjection]⟩
+  rw [he]
+  exact finrank_span_singleton (by simp)
+
+theorem graphProjection_analytic (t : ℂ) : AnalyticAt ℂ graphProjection t := by
+  let B : ℂ × ℂ →L[ℂ] ℂ × ℂ :=
+    (0 : ℂ × ℂ →L[ℂ] ℂ).prod (ContinuousLinearMap.fst ℂ ℂ ℂ)
+  have he (u : ℂ) : graphProjection u = graphProjection 0 + u • B := by
+    apply ContinuousLinearMap.ext
+    intro x
+    ext <;> simp [graphProjection, B]
+  exact (analyticAt_const.add (analyticAt_id.smul analyticAt_const)).congr
+    (Filter.Eventually.of_forall fun u => (he u).symm)
+
+example (t : ℂ) : ProjectionTrace.trace (graphProjection t)
+    ((t ^ 2 + I) • (1 : ℂ × ℂ →L[ℂ] ℂ × ℂ)) = t ^ 2 + I := by
+  let x : (graphProjection t).range := ⟨(1, t), ⟨(1, 0), by simp [graphProjection]⟩⟩
+  apply ProjectionTrace.trace_eq_of_finrank_one _ _ (graphProjection_idempotent t)
+    ((Commute.one_right _).smul_right (t ^ 2 + I)) (graphProjection_rank t) _ x
+  · intro h
+    have he := congrArg (fun y : (graphProjection t).range => y.val.1) h
+    norm_num [x] at he
+  · rfl
+
+example : AnalyticOnNhd ℂ (fun t : ℂ => ProjectionTrace.trace (graphProjection t)
+    ((t ^ 2 + I) • (1 : ℂ × ℂ →L[ℂ] ℂ × ℂ))) Set.univ := by
+  intro t _
+  apply ProjectionTrace.analyticAt_trace (graphProjection_analytic t)
+    ((analyticAt_id.pow 2 |>.add analyticAt_const).smul analyticAt_const)
+    (graphProjection_idempotent t)
+  exact Filter.Eventually.of_forall fun u => ⟨graphProjection_idempotent u,
+    (Commute.one_right _).smul_right (u ^ 2 + I)⟩
+
+-- The two boundary functions detect opposite nonreal shifts for the same potential.
+def constantPotential : PairSpace 3 :=
+  (lp.single 3 0 (I / 1000), lp.single 3 0 (I / 1000))
+
+theorem constantPotential_mem : constantPotential ∈ dirichletSubspace := by
+  rw [mem_dirichletSubspace]
+  intro n
+  simp [constantPotential, lp.single_apply, Pi.single_apply]
+
+theorem norm_constantPotential : ‖constantPotential‖ = 1 / 1000 := by
+  norm_num [constantPotential, Prod.norm_def, lp.norm_single, norm_div]
+
+theorem constant_circle (n : ℤ) : Metric.sphere ((Real.pi : ℂ) * n) (Real.pi / 4) ⊆
+    resolventSet (by simp) constantPotential := by
+  apply sphere_subset_resolventSet_of_smallPotential (by simp) constantPotential n (by positivity) le_rfl
+  rw [norm_constantPotential]
+  norm_num only [ENNReal.toReal_ofNat]
+  nlinarith [Real.two_le_pi]
+
+theorem constant_rank (b : BoundaryCondition) (n : ℤ) :
+    Module.finrank ℂ (b.contourProjection (by simp) constantPotential
+      ((Real.pi : ℂ) * n) (Real.pi / 4)).range = 1 := by
+  let U := Metric.ball (0 : PairSpace 3) (1 / 100) ∩
+    (dirichletSubspace (p := 3) : Set (PairSpace 3))
+  have hU : Convex ℝ U := (convex_ball (0 : PairSpace 3) (1 / 100)).inter
+    ((dirichletSubspace (p := 3)).restrictScalars ℝ).convex
+  have hc (a : PairSpace 3) (ha : a ∈ U) :
+      Metric.sphere ((Real.pi : ℂ) * n) (Real.pi / 4) ⊆ resolventSet (by simp) a := by
+    apply sphere_subset_resolventSet_of_smallPotential (by simp) a n (by positivity) le_rfl
+    have hn : ‖a‖ < 1 / 100 := by simpa using ha.1
+    norm_num only [ENNReal.toReal_ofNat]
+    nlinarith [Real.two_le_pi]
+  have hs : constantPotential ∈ U := ⟨by simpa [norm_constantPotential] using
+    (show (1 : ℝ) / 1000 < 1 / 100 by norm_num), constantPotential_mem⟩
+  have h0 : (0 : PairSpace 3) ∈ U := ⟨by simp, Submodule.zero_mem _⟩
+  have he := BoundaryCondition.finrank_contour_eq_on_preconnected b (by simp)
+    ((Real.pi : ℂ) * n) (Real.pi / 4) (by positivity) hU.isPreconnected
+    (fun _ ha => ha.2) hc hs h0
+  rw [BoundaryCondition.range_contourProjection b (by simp) 0 (by simp) _ _
+    (by positivity) (hc 0 h0), BoundaryCondition.finrank_free_contour_boundary] at he
+  exact he
+
+theorem dirichlet_constant_eigenvector : operator (by simp) constantPotential (dirichletMode 0) =
+    (I / 1000) • domainInclusion (dirichletMode 0) := by
+  apply Prod.ext <;> ext n <;>
+    simp [operator_fst_apply, operator_snd_apply, constantPotential, dirichletMode,
+      positiveMode, negativeMode, lp.single_apply, Pi.single_apply, mul_ite]
+
+theorem neumann_constant_eigenvector : operator (by simp) constantPotential (neumannMode 0) =
+    -(I / 1000) • domainInclusion (neumannMode 0) := by
+  apply Prod.ext <;> ext n <;> by_cases hn : n = 0 <;>
+    simp [operator_fst_apply, operator_snd_apply, constantPotential, neumannMode,
+      positiveMode, negativeMode, lp.single_apply, Pi.single_apply, mul_ite, tsum_neg,
+      Pi.smul_apply, hn]
+  · change -(I / 1000) = -((I / 1000) * (lp.single 3 0 1 : Coeff 3) 0)
+    norm_num
+  · change 0 = -((I / 1000) * (lp.single 3 0 1 : Coeff 3) n)
+    simp [lp.single_apply, hn]
+
+example : BoundaryCondition.eigenvalue .dirichlet (by simp) constantPotential 0 = I / 1000 := by
+  apply BoundaryCondition.contourTrace_eq_of_rank_one .dirichlet (by simp) constantPotential
+    constantPotential_mem _ _ _ (constant_circle 0) (constant_rank .dirichlet 0)
+  rw [BoundaryCondition.mem_enclosedSpectrum]
+  constructor
+  · rw [BoundaryCondition.mem_spectrum_iff_exists_eigenvector]
+    refine ⟨dirichletMode 0, dirichletMode_mem 0, ?_, dirichlet_constant_eigenvector⟩
+    intro h
+    exact domainInclusion_dirichletMode_ne_zero 0 (by rw [h, map_zero])
+  · have hn : ‖I / 1000‖ = (1 : ℝ) / 1000 := by norm_num [norm_div]
+    simp only [Int.cast_zero, mul_zero, Metric.mem_ball, dist_zero_right, hn]
+    nlinarith [Real.two_le_pi]
+
+example : BoundaryCondition.eigenvalue .neumann (by simp) constantPotential 0 = -(I / 1000) := by
+  apply BoundaryCondition.contourTrace_eq_of_rank_one .neumann (by simp) constantPotential
+    constantPotential_mem _ _ _ (constant_circle 0) (constant_rank .neumann 0)
+  rw [BoundaryCondition.mem_enclosedSpectrum]
+  constructor
+  · rw [BoundaryCondition.mem_spectrum_iff_exists_eigenvector]
+    refine ⟨neumannMode 0, neumannMode_mem 0, ?_, neumann_constant_eigenvector⟩
+    intro h
+    exact domainInclusion_neumannMode_ne_zero 0 (by rw [h, map_zero])
+  · have hn : ‖-(I / 1000)‖ = (1 : ℝ) / 1000 := by norm_num [norm_div]
+    simp only [Int.cast_zero, mul_zero, Metric.mem_ball, dist_zero_right, hn]
+    nlinarith [Real.two_le_pi]
+
+-- The strong boundary-domain lift is analytic at the endpoint p=1.
+example (b : BoundaryCondition) (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ resolventSet (by simp) φ) :
+    AnalyticAt ℂ (fun ψ => b.contourLiftToDomain (by simp) ψ c r) φ :=
+  BoundaryCondition.analyticAt_contourLiftToDomain b (by simp) φ c r hr hc
+
+example (b : BoundaryCondition) : b.eigenvalue (p := 3) (by simp) 0 (-3) = -3 * (Real.pi : ℂ) := by
+  simpa [mul_comm] using BoundaryCondition.eigenvalue_zero (p := 3) b (by simp) (-3)
+
+-- The boundary lift returns the actual free domain vector at a negative index.
+example (b : BoundaryCondition) : b.contourLift (p := 3) (by simp) 0
+    ((Real.pi : ℂ) * (-3 : ℤ)) (Real.pi / 4) (domainInclusion (b.mode (-3))) = b.mode (-3) := by
+  apply BoundaryCondition.contourLift_apply_eigenvector
+  · exact sphere_subset_resolventSet_of_smallPotential (by simp) 0 (-3)
+      (by positivity) le_rfl (by simp; positivity)
+  · exact Metric.mem_ball_self (by positivity)
+  · exact BoundaryCondition.mode_mem b (-3)
+  · rw [operator_zero]
+    exact BoundaryCondition.freeOperator_mode b (-3)
+
+-- The same neighborhood gives both analytic functions and their actual simple spectra.
+example (φ : dirichletSubspace (p := 3)) : ∃ N : ℕ, ∃ U : Set ↥(dirichletSubspace (p := 3)),
+    φ ∈ U ∧ ∀ b : BoundaryCondition, ∀ n : ℤ, N < n.natAbs →
+      AnalyticOnNhd ℂ (fun ψ : dirichletSubspace (p := 3) => b.eigenvalue (by simp) ψ.val n) U ∧
+      ∀ ψ ∈ U, b.eigenvalue (by simp) ψ.val n ∈ b.spectrum (by simp) ψ.val ψ.property ∧
+        b.algebraicMultiplicity (by simp) ψ.val ψ.property (b.eigenvalue (by simp) ψ.val n) = 1 := by
+  obtain ⟨N, U, _, _, _, hφ, _, hd, he⟩ := exists_uniform_analytic_boundaryEigenvalues (by simp) φ
+  refine ⟨N, U, hφ, ?_⟩
+  intro b n hn
+  exact ⟨(he b n hn).1, fun ψ hψ => ⟨((hd ψ hψ N le_rfl).eigenvalue_mem_spectrum b n hn).1,
+    ((he b n hn).2 ψ hψ).2⟩⟩
+
+-- No choice of eigenvectors is needed for analyticity, but actual domain eigenvectors exist.
+example (φ : dirichletSubspace (p := 1)) : ∃ N : ℕ, ∀ b : BoundaryCondition, ∀ n : ℤ,
+    N < n.natAbs → ∃ f : Domain 1, f ∈ b.domain ∧ f ≠ 0 ∧
+      operator (by simp) φ.val f = b.eigenvalue (by simp) φ.val n • domainInclusion f := by
+  obtain ⟨N, U, _, _, _, hφ, _, hd, _⟩ := exists_uniform_analytic_boundaryEigenvalues (by simp) φ
+  exact ⟨N, fun b n hn => (hd φ hφ N le_rfl).exists_eigenvector_eigenvalue b n hn⟩
+
+end BoundaryEigenvalueChecks
+
+end BoundaryEigenvalueChecksSection
