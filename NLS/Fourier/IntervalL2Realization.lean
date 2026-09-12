@@ -20,6 +20,16 @@ def periodTwoL2Coefficients (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (
     (hf : MemLp f 2 (volume.restrict (Ioc 0 2))) (n : ℤ) :
     periodTwoL2Coefficients f hf n = periodTwoCoefficient f n := rfl
 
+/-- Parseval retains the half-normalization of the physical period. -/
+theorem norm_sq_periodTwoL2Coefficients (f : ℝ → ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 2))) :
+    ‖periodTwoL2Coefficients f hf‖ ^ 2 = (1 / 2 : ℝ) * ∫ x in (0 : ℝ)..2, ‖f x‖ ^ 2 := by
+  have hs : HasSum (fun n => ‖periodTwoL2Coefficients f hf n‖ ^ 2)
+      (‖periodTwoL2Coefficients f hf‖ ^ 2) := by
+    simpa only [ENNReal.toReal_ofNat, Real.rpow_two] using
+      lp.hasSum_norm (p := 2) (by norm_num) (periodTwoL2Coefficients f hf)
+  exact hs.unique (hasSum_sq_periodTwoCoefficient hf)
+
 /-- Fourier synthesis reconstructs arbitrary physical `L²` data on the full period. -/
 theorem circlePullback_periodTwoL2Coefficients (f : ℝ → ℂ)
     (hf : MemLp f 2 (volume.restrict (Ioc 0 2))) :

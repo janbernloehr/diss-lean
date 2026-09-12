@@ -163,7 +163,14 @@ Restriction proves the converse: the independently defined original classical
 eigenvalue sets equal the coefficient boundary spectra. They are closed,
 discrete, finite in bounded regions, and their union is the periodic spectrum
 of the reflected potential. For the zero potential both sets are exactly `πℤ`.
-An independent physical `L²` operator/resolvent equivalence, the general
+Original potentials now form the actual complete component-sum `L²[0,1]` space.
+Their Dirichlet Fourier extension is bounded, injective, and complex analytic,
+with exact norm factor `√2/2` into the maximum coefficient-pair norm. The
+high-index eigenvalue branches are analytic on one open convex physical
+neighborhood with one cutoff for both boundary conditions. Each high disk
+contains exactly that original classical eigenvalue.
+An independent physical `L²` operator/resolvent equivalence, physical algebraic
+multiplicity identification, the general
 Fourier/distribution realization, and multiplication beyond the Hilbert
 realization remain needed for the full transfer.
 The overview theorem's exact norm-dependent height, rectangular contour

@@ -3795,3 +3795,81 @@ example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)))
 
 end
 end IntervalEigenvalueChecks
+
+
+namespace PhysicalPotentialChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set Metric
+noncomputable section
+
+-- These are genuine complete physical spaces with complex scalar multiplication.
+example : CompleteSpace IntervalPairL2 := inferInstance
+example : NormedSpace ℂ IntervalPairL2 := inferInstance
+
+private def φ : ℝ → ℂ × ℂ := fun _ => (3, 4 * Complex.I)
+private theorem hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)) := memLp_const _
+
+-- Distinct complex components distinguish the physical sum norm from a maximum norm.
+example : ‖intervalL2OfFunction φ hφ‖ = 5 := by
+  have h := norm_sq_intervalL2OfFunction φ hφ
+  norm_num [φ, norm_mul] at h
+  nlinarith [norm_nonneg (intervalL2OfFunction φ hφ)]
+
+-- The reflected coefficient pair retains the exact half-normalized physical energy.
+example : ‖intervalPotentialCLM (intervalL2OfFunction φ hφ)‖ ^ 2 = 25 / 2 := by
+  rw [intervalPotentialCLM_apply, intervalPotentialCoefficients_ofFunction, norm_sq_dirichletPotentialCoefficients]
+  norm_num [φ, norm_mul]
+
+-- The zero mode is the mean of the two distinct component values, not either value alone.
+example : (intervalPotentialCLM (intervalL2OfFunction φ hφ)).1 0 = (3 + 4 * Complex.I) / 2 := by
+  rw [intervalPotentialCLM_apply, intervalPotentialCoefficients_ofFunction, dirichletPotentialCoefficients_fst]
+  change periodTwoCoefficient (folded 1 (fun _ => (3 : ℂ)) (fun _ => 4 * Complex.I)) 0 = _
+  rw [periodTwoCoefficient_folded_of_intervalIntegrable 1 (intervalIntegrable_const) (intervalIntegrable_const)]
+  norm_num [halfCoefficient]
+  ring
+
+-- Null-set changes give exactly the same physical class, not merely the same spectrum.
+example (ψ : ℝ → ℂ × ℂ) (hψ : MemLp ψ 2 (volume.restrict (Ioc 0 1)))
+    (he : ψ =ᵐ[volume.restrict (Ioc 0 1)] φ) :
+    intervalL2OfFunction ψ hψ = intervalL2OfFunction φ hφ :=
+  (intervalL2OfFunction_eq_iff _ _ _ _).mpr he
+
+-- Physical complex linearity survives choosing arbitrary L2 representatives.
+example (u v : IntervalPairL2) :
+    intervalPotentialCLM (Complex.I • u + v) = Complex.I • intervalPotentialCLM u + intervalPotentialCLM v := by
+  rw [map_add, map_smul]
+
+-- The exact normalization implies injectivity of the map into the actual Dirichlet space.
+example (u v : IntervalPairL2) (h : intervalPotentialToDirichlet u = intervalPotentialToDirichlet v) : u = v :=
+  intervalPotentialToDirichlet_injective h
+
+-- Both physical trace branches retain negative odd frequencies at the free potential.
+example (b : BoundaryCondition) : classicalEigenvalue b 0 (-3) = -3 * (Real.pi : ℂ) := by
+  rw [classicalEigenvalue_zero]
+  norm_num
+  ring
+
+-- Every sufficiently high branch on one common physical neighborhood has an original H1 eigenfunction.
+example (u : IntervalPairL2) : ∃ N : ℕ, ∃ U : Set IntervalPairL2,
+    IsOpen U ∧ u ∈ U ∧ 0 ∈ U ∧
+    ∀ v ∈ U, ∀ b : BoundaryCondition, ∀ n : ℤ, N < n.natAbs →
+      ∃ f : ℝ → ℂ × ℂ, HasClassicalIntervalDomain b f ∧ ¬ EqOn f 0 (Icc 0 1) ∧
+        physicalOperator (intervalL2Representative v) f =ᵐ[volume.restrict (Ioc 0 1)]
+          (fun x => classicalEigenvalue b v n • f x) := by
+  obtain ⟨N, U, _, ho, _, hu, h0, _, he⟩ := exists_uniform_analytic_classicalEigenvalues u
+  refine ⟨N, U, ho, hu, h0, ?_⟩
+  intro v hv b n hn
+  have hz : classicalEigenvalue b v n ∈ classicalEigenvalues b (intervalL2Representative v) ∩
+      ball ((Real.pi : ℂ) * n) (Real.pi / 4) := by
+    rw [(he b n hn).2 v hv]
+    exact Set.mem_singleton _
+  exact hz.1
+
+-- Analyticity is with respect to the original physical Hilbert norm.
+example (u : IntervalPairL2) : ∃ N : ℕ, ∃ U : Set IntervalPairL2, u ∈ U ∧
+    ∀ b : BoundaryCondition, ∀ n : ℤ, N < n.natAbs →
+      AnalyticOnNhd ℂ (fun v : IntervalPairL2 => classicalEigenvalue b v n) U := by
+  obtain ⟨N, U, _, _, _, hu, _, _, he⟩ := exists_uniform_analytic_classicalEigenvalues u
+  exact ⟨N, U, hu, fun b n hn => (he b n hn).1⟩
+
+end
+end PhysicalPotentialChecks

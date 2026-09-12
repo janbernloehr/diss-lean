@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 133 modules and 1308 named public theorems. All compile on the
+The library has 136 modules and 1339 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -140,6 +140,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.IntervalEquationReflection` | Physical operator congruence on a period, a.e. signed-reflection congruence, differential-expression intertwining with Dirichlet potential reflection for both boundary signs, and the original physical equation transfer |
 | `NLS.ZakharovShabat.ClassicalIntervalTransfer` | Arbitrary original `L²` potential extension, exact physical coefficients and reconstruction, Dirichlet coefficient membership, Lemma 4.1 in the existing coefficient operator, nonzero eigenvector preservation, and original eigenvalue inclusion in boundary and periodic spectra |
 | `NLS.ZakharovShabat.ClassicalIntervalEigenvalues` | Converse physical restriction and nonzero preservation; original eigenvalues defined by the differential equation and classical endpoints; equality with coefficient boundary spectra; a.e. potential invariance; closedness, discreteness, bounded-region finiteness, periodic union, and exact free lattice |
+| `NLS.ZakharovShabat.PhysicalIntervalL2` | Original scalar and pair Lebesgue `L²` classes with the component-sum Hilbert norm; representative construction, a.e. equality criterion, linear operations, and exact physical energy |
+| `NLS.ZakharovShabat.PhysicalPotentialExtension` | A.e.-invariant, complex-linear Dirichlet potential extension; exact norm factor `√2/2`; bounded analytic map into the actual Dirichlet coefficient space; agreement with original Fourier integrals and injectivity |
+| `NLS.ZakharovShabat.ClassicalIntervalAnalytic` | Original physical potential parameterization of trace eigenvalues; analytic branches on one open convex neighborhood and cutoff for both boundary conditions; unique classical eigenvalue in each high disk; uniform coefficient counting data and exact free branches |
 
 ## Current mathematical milestone
 
@@ -1200,8 +1203,9 @@ signed extension with its normalized Fourier integrals, and the inverse is
 physical restriction at every point of `[0,1]`. Their operator norms are bounded
 by `1` and `√2 π`, respectively. Both original interval domains are complete.
 This establishes Lemma 4.2 in the classical `H¹` realization. Lemma 4.1's physical
-equation transfer is now proved below. The full identification of the original
-spectra and transfer of all boundary counting and analytic results remain open.
+equation transfer, original eigenvalue-set identification, and high-index
+analytic branches are proved below. Physical
+operator/resolvent and algebraic-multiplicity identifications remain open.
 
 ## Physical multiplication and the Hilbert operator
 
@@ -1286,13 +1290,48 @@ zero potential both original sets are exactly `πℤ`, with odd indices retained
 
 These are eigenvalue-set identities. An independently defined original interval
 `L²` operator and its resolvent equivalence still require a physical base-space
-construction. Multiplicity, counting, and analytic transfer also remain separate
-from the eigenvalue-set identification.
+equivalence. Physical algebraic multiplicities remain separate from the
+eigenvalue-set identification. Analytic branches and uniform coefficient counting
+data are now pulled back to the physical potential space below.
+
+## Physical potential parameters and analytic eigenvalue branches
+
+`IntervalPairL2` is the original pair of scalar Lebesgue `L²[0,1]` classes with
+the component-sum Hilbert norm. It is a complete complex normed space, has no
+endpoint conditions, and is represented by actual square-integrable functions.
+`intervalL2OfFunction` identifies exactly a.e. equal original functions. The
+squared norm equals the sum of their two unnormalized interval energies.
+
+The actual Dirichlet-reflected potential coefficients depend only on this class
+and respect addition and complex multiplication. Parseval and reflection give
+
+`‖intervalPotentialToDirichlet u‖ = (√2 / 2) ‖u‖`.
+
+This is the exact normalization for the existing maximum coefficient-pair norm.
+It proves boundedness and injectivity of the map into the actual Dirichlet
+coefficient subspace. The map is complex analytic and agrees with the previously
+constructed original Fourier integrals, even for nonsmooth potentials.
+
+`classicalEigenvalue b u n` parameterizes the intrinsic trace branch by the
+original physical potential. Pulling back the reflected-potential neighborhood
+gives one open convex neighborhood containing both `u` and zero and one positive
+cutoff for both boundary conditions. All larger cutoffs carry the existing
+coefficient counting data. Every high disk contains exactly the corresponding
+original classical eigenvalue, and the branch is analytic in the physical `L²`
+norm. The original eigenvalue set is independent of the representative chosen.
+Both free branches have the exact value `π n`.
+
+This proves physical analyticity and uniqueness of the high-index classical
+branches. Simplicity and central multiplicity counts are still expressed by the
+coefficient operator. Identifying them with independently defined physical
+operator multiplicities requires signed base-space equivalences and the physical
+operator/resolvent correspondence. The general-`p` physical parameter transfer
+and the exact central-height convention also remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2765 declarations under `NLS`, including generated
+axioms. The current audit covers 2826 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1591,17 +1630,22 @@ at one interior point has exactly the free lattice. Further checks cover finite
 intersection with any closed disk and original eigenfunction existence for every
 periodic spectral point of a Dirichlet-reflected potential.
 
+Physical-potential checks verify completeness and complex scalars. The constant
+pair `(3,4i)` has physical norm `5`, reflected coefficient squared norm `25/2`,
+and zero coefficient `(3+4i)/2`. Further checks cover a.e. equality of the classes,
+complex linearity, injectivity, negative odd free branches, and original nonzero
+`H¹` eigenfunctions and analytic branches on a common physical neighborhood.
+
 ## Next milestones
 
-1. Construct the original physical potential parameter spaces and norm
-   comparisons, then transfer the counting and analytic statements of
-   Theorem 1.4 and Lemma 4.5. Construct the physical `L²` base-space and
-   interval operator/resolvent equivalence separately from the now-proved
-   eigenvalue-set equality.
+1. Prove signed physical `L²` base-space equivalences and the original interval
+   operator/resolvent correspondence. Identify physical generalized eigenspaces
+   and algebraic multiplicities to complete the original counting and simplicity
+   transfer in Theorem 1.4 and Lemma 4.5.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one
-   embedding, potential pair-norm comparison, and multiplication beyond the
+   embedding, general-`p` potential pair-norm comparison, and multiplication beyond the
    Hilbert realization.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain

@@ -81,3 +81,6 @@ import NLS.ZakharovShabat.ClassicalIntervalIsomorphism
 import NLS.ZakharovShabat.PhysicalOperator
 import NLS.ZakharovShabat.ClassicalIntervalTransfer
 import NLS.ZakharovShabat.ClassicalIntervalEigenvalues
+import NLS.ZakharovShabat.PhysicalIntervalL2
+import NLS.ZakharovShabat.PhysicalPotentialExtension
+import NLS.ZakharovShabat.ClassicalIntervalAnalytic

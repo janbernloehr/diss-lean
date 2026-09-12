@@ -378,12 +378,18 @@ in bounded regions; their union equals the periodic coefficient spectrum.
 Both free sets are exactly `πℤ`, including odd modes, and a.e. equal potentials
 have equal eigenvalue sets.
 
-Next construct the physical potential parameter spaces and norm comparisons,
-then transfer counting and analytic-eigenvalue results. A physical `L²` base-space
-equivalence and an independently defined interval operator/resolvent remain
-separate obligations; equality of eigenvalue sets does not supply these.
-Both boundary spectral problems use the Dirichlet extension of the potential; the boundary sign selects the eigenfunction
-extension and restricted domain. Preserve this distinction in the transfer.
+Original physical potential classes now carry the exact component-sum `L²` norm.
+Their Dirichlet coefficient map has norm factor `√2/2` and is bounded, injective,
+and analytic. Pullback gives one open convex physical neighborhood and cutoff
+for both high-index branches, unique original eigenvalues in the high disks,
+and uniform coefficient counting data.
+
+Next prove the signed physical `L²` base-space equivalences and construct the
+original interval operator/resolvent correspondence. Then identify original
+root spaces and algebraic multiplicities to complete physical simplicity and
+central counting. These do not follow from eigenvalue-set equality alone.
+Both boundary spectral problems use the Dirichlet extension of the potential;
+the boundary sign selects the eigenfunction extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
 is not assumed here.
@@ -391,5 +397,5 @@ Identification with the rectangular contour integral remains open. The unified s
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 The general Fourier/distribution interpretation, physical period-one embedding,
-and comparison with the dissertation's potential pair norm remain separate
+and general-`p` comparison with the dissertation's potential pair norm remain separate
 proof obligations.
