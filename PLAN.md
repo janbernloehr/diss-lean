@@ -418,9 +418,14 @@ and vertical subdivision cancel shared edges; Cauchy's theorem gives invariance
 under edge motion through filled resolvent strips. The central corner rectangle
 and boundary agree exactly with the existing box, and one common neighborhood
 admits all sufficiently large contours in the domain norm.
-Identification of this actual integral with the central algebraic projection
-remains open: next prove enclosed-pole selection or deformation to the already
-identified circular contour. The unified statement uses Corollary 3.5's height-`N` box;
+Logarithmic edge primitives now compute the exact simple-pole residue `2πi`;
+exterior poles and all higher pole terms integrate to zero. Applying these
+formulas along finite Jordan chains proves full root-space selection and exact
+finite-cluster filtering. In particular the actual central rectangular integral
+absorbs the central algebraic projection, and its range contains the central
+algebraic range. Identification of the whole operators remains open: next
+control the action outside finite clusters by comparison with an enclosing
+circle, using the resolvent identity and interchange of integrations. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 The general Fourier/distribution interpretation, physical period-one embedding,

@@ -4182,3 +4182,67 @@ example (φ x : PairSpace 3) (N : ℕ) (hc : centralRectangleBoundary N ⊆ reso
 
 end
 end RectangleContourChecks
+
+namespace RectangleResidueChecks
+open NLS NLS.ZakharovShabat Complex Set
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- The pole is off-center in a nonsquare rectangle; both logarithm branch jumps are needed.
+example : RectangleIntegral.integral (fun ζ : ℂ => (ζ - (1 / 2 + I / 3))⁻¹)
+    (-2 - I) (3 + 2 * I) = 2 * Real.pi * I := by
+  apply RectangleIntegral.integral_inv_sub_of_mem
+  norm_num [mem_reProdIm]
+
+-- The exterior simple pole contributes zero.
+example : RectangleIntegral.integral (fun ζ : ℂ => (ζ - 5 * I)⁻¹) (-2 - I) (3 + 2 * I) = 0 := by
+  apply RectangleIntegral.integral_inv_sub_of_notMem
+  norm_num [mem_reProdIm, uIcc]
+
+-- Arbitrarily high pole terms vanish even though their pole is inside the contour.
+example (k : ℕ) : RectangleIntegral.integral (fun ζ : ℂ => (ζ - (1 + I))⁻¹ ^ (k + 2))
+    (-2 - I) (3 + 2 * I) = 0 := by
+  apply RectangleIntegral.integral_inv_sub_pow_succ_succ
+  norm_num [RectangleIntegral.boundary]
+
+-- Vector-valued residue evaluation preserves the exact 2 pi i normalization.
+example (v : PairSpace 3) :
+    (2 * Real.pi * I : ℂ)⁻¹ • RectangleIntegral.integral (fun ζ : ℂ => (ζ - I)⁻¹ • v)
+      (-2 - I) (3 + 2 * I) = v := by
+  rw [RectangleIntegral.integral_smul_const,
+    RectangleIntegral.integral_inv_sub_of_mem (by norm_num [mem_reProdIm])]
+  exact inv_smul_smul₀ (by simp [Real.pi_ne_zero]) v
+
+-- The explicit coupled potential already has a genuine length-two chain at pi.
+-- Some admissible central rectangular contour fixes its generalized vector, which is not an eigenvector.
+example : ∃ N : ℕ, 0 < N ∧
+    centralRectangleIntegral (by simp) BoundaryRootChecks.jordanPotential N
+      BoundaryRootChecks.generalized.val = BoundaryRootChecks.generalized.val ∧
+    BoundaryRootChecks.generalized ∉ BoundaryCondition.rootSpace .dirichlet (by simp)
+      BoundaryRootChecks.jordanPotential BoundaryRootChecks.jordanPotential_mem (Real.pi : ℂ) 1 := by
+  obtain ⟨N, U, hN, _, _, hφ, _, h⟩ := exists_uniform_centralCircle (by simp) BoundaryRootChecks.jordanPotential
+  have hc := (h _ hφ N le_rfl).1
+  refine ⟨N, hN, ?_, BoundaryRootChecks.generalized_not_mem_one⟩
+  apply resolventRectangleIntegral_apply_root (by simp) BoundaryRootChecks.jordanPotential
+    (centralLowerCorner N) (centralUpperCorner N) (Real.pi : ℂ)
+    (by rwa [centralCorner_boundary])
+  · rw [centralCorner_openRectangle]
+    have h1 : (1 : ℝ) ≤ (N : ℝ) := by exact_mod_cast hN
+    constructor
+    · change |Real.pi| < (N : ℝ) * Real.pi + Real.pi / 2
+      rw [abs_of_pos Real.pi_pos]
+      nlinarith [Real.pi_pos]
+    · change |(0 : ℝ)| < (N : ℝ)
+      simpa using (show (0 : ℝ) < (N : ℝ) by exact_mod_cast hN)
+  · apply (mem_periodicRootSpaceTop (by simp) BoundaryRootChecks.jordanPotential (Real.pi : ℂ) _).mpr
+    exact ⟨2, (BoundaryCondition.mem_rootSpace_iff_periodic .dirichlet (by simp)
+      BoundaryRootChecks.jordanPotential BoundaryRootChecks.jordanPotential_mem
+      (Real.pi : ℂ) 2 BoundaryRootChecks.generalized).mp BoundaryRootChecks.generalized_mem_two⟩
+
+-- The whole central algebraic cluster is retained, without assuming diagonalizability.
+example (φ : PairSpace 3) (N : ℕ) (hc : centralRectangleBoundary N ⊆ resolventSet (by simp) φ) :
+    (centralSpectralProjection (by simp) φ N).range ≤ (centralRectangleIntegral (by simp) φ N).range :=
+  range_centralSpectralProjection_le_rectangle (by simp) φ N hc
+
+end
+end RectangleResidueChecks

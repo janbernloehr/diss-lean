@@ -33,6 +33,21 @@ theorem boundary_subset_rectangle (z w : ℂ) :
     boundary z w ⊆ uIcc z.re w.re ×ℂ uIcc z.im w.im :=
   fun _ h => ⟨h.1, h.2.1⟩
 
+/-- For ordered corners, a point in the closed rectangle but outside its interior is on the boundary. -/
+theorem mem_boundary_of_mem_rectangle_of_not_mem_open {z w a : ℂ}
+    (hre : z.re ≤ w.re) (him : z.im ≤ w.im)
+    (hc : a ∈ uIcc z.re w.re ×ℂ uIcc z.im w.im)
+    (ho : a ∉ Ioo z.re w.re ×ℂ Ioo z.im w.im) : a ∈ boundary z w := by
+  refine ⟨hc.1, hc.2, ?_⟩
+  have hr := hc.1
+  have hi := hc.2
+  rw [uIcc_of_le hre] at hr
+  rw [uIcc_of_le him] at hi
+  by_contra hne
+  simp only [not_or] at hne
+  exact ho ⟨⟨lt_of_le_of_ne hr.1 (Ne.symm hne.1), lt_of_le_of_ne hr.2 hne.2.1⟩,
+    ⟨lt_of_le_of_ne hi.1 (Ne.symm hne.2.2.1), lt_of_le_of_ne hi.2 hne.2.2.2⟩⟩
+
 /-- Integrability of the four edge parameterizations. -/
 structure Integrable (f : ℂ → E) (z w : ℂ) : Prop where
   bottom : IntervalIntegrable (fun x : ℝ => f (x + z.im * I)) volume z.re w.re
@@ -40,12 +55,14 @@ structure Integrable (f : ℂ → E) (z w : ℂ) : Prop where
   right : IntervalIntegrable (fun y : ℝ => f (w.re + y * I)) volume z.im w.im
   left : IntervalIntegrable (fun y : ℝ => f (z.re + y * I)) volume z.im w.im
 
-private theorem horizontal_mem (z w : ℂ) {x y : ℝ} (hx : x ∈ uIcc z.re w.re)
+/-- Every point on either horizontal edge lies on the rectangular boundary. -/
+theorem horizontal_mem (z w : ℂ) {x y : ℝ} (hx : x ∈ uIcc z.re w.re)
     (hy : y = z.im ∨ y = w.im) : (x : ℂ) + y * I ∈ boundary z w := by
   rcases hy with rfl | rfl <;>
     simp [boundary, hx, left_mem_uIcc, right_mem_uIcc]
 
-private theorem vertical_mem (z w : ℂ) {x y : ℝ} (hy : y ∈ uIcc z.im w.im)
+/-- Every point on either vertical edge lies on the rectangular boundary. -/
+theorem vertical_mem (z w : ℂ) {x y : ℝ} (hy : y ∈ uIcc z.im w.im)
     (hx : x = z.re ∨ x = w.re) : (x : ℂ) + y * I ∈ boundary z w := by
   rcases hx with rfl | rfl <;>
     simp [boundary, hy, left_mem_uIcc, right_mem_uIcc]
@@ -97,7 +114,21 @@ theorem split_vertical {f : ℂ → E} {z w : ℂ} (c : ℝ)
   rw [← hb, ← ht]
   abel
 
+/-- Subtraction commutes with the four-edge integral when both integrands are integrable. -/
+theorem integral_sub {f g : ℂ → E} {z w : ℂ} (hf : Integrable f z w) (hg : Integrable g z w) :
+    integral (fun ζ => f ζ - g ζ) z w = integral f z w - integral g z w := by
+  simp only [integral, intervalIntegral.integral_sub hf.bottom hg.bottom,
+    intervalIntegral.integral_sub hf.top hg.top, intervalIntegral.integral_sub hf.right hg.right,
+    intervalIntegral.integral_sub hf.left hg.left, smul_sub]
+  abel
+
 variable [CompleteSpace E] [CompleteSpace F]
+
+omit [CompleteSpace F] in
+/-- A constant vector can be taken outside a scalar rectangular integral. -/
+theorem integral_smul_const (f : ℂ → ℂ) (z w : ℂ) (v : E) :
+    integral (fun ζ => f ζ • v) z w = integral f z w • v := by
+  simp only [integral, intervalIntegral.integral_smul_const, sub_smul, add_smul, smul_smul, smul_eq_mul]
 
 /-- Bounded complex-linear maps commute with rectangular integration. -/
 theorem map (A : E →L[ℂ] F) {f : ℂ → E} {z w : ℂ} (hf : Integrable f z w) :

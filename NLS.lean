@@ -96,3 +96,6 @@ import NLS.ZakharovShabat.ClassicalIntervalCounting
 import NLS.FunctionalAnalysis.RectangleIntegral
 import NLS.ZakharovShabat.ResolventRectangle
 import NLS.ZakharovShabat.CentralRectangleContour
+import NLS.FunctionalAnalysis.RectangleResidues
+import NLS.ZakharovShabat.RectangleRootSelection
+import NLS.ZakharovShabat.CentralRectangleSelection

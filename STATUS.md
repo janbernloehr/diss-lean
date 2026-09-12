@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 148 modules and 1454 named public theorems. All compile on the
+The library has 151 modules and 1477 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -155,6 +155,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.RectangleIntegral` | Actual four-edge Banach-valued integral; boundary integrability and congruence; evaluation and bounded linear maps; horizontal/vertical subdivision; Cauchy vanishing and analytic-strip deformation |
 | `NLS.ZakharovShabat.ResolventRectangle` | Operator- and domain-valued rectangular resolvent integrals; domain factorization and compactness; commutation with resolvents and algebraic projections; zero on filled resolvent rectangles; edge deformation through resolvent strips |
 | `NLS.ZakharovShabat.CentralRectangleContour` | Exact corner and boundary identification with the central box; actual central rectangular integral; domain factorization and compactness uniformly on a common neighborhood for all larger cutoffs |
+| `NLS.FunctionalAnalysis.RectangleResidues` | Horizontal/vertical primitive formulas; closed-contour primitive cancellation; logarithmic evaluation of enclosed simple poles; exterior vanishing; all higher pole terms vanish when the boundary avoids the pole |
+| `NLS.ZakharovShabat.RectangleRootSelection` | Weighted rectangular integration along all finite Jordan chains; full enclosed root spaces fixed and exterior root spaces annihilated; individual projection selection, including boundary points; exact finite-cluster filtering |
+| `NLS.ZakharovShabat.CentralRectangleSelection` | Exact open-corner geometry; actual central contour selects individual root-space projections; absorption of the central algebraic projection and inclusion of its range in the rectangular integral range |
 
 ## Current mathematical milestone
 
@@ -1453,14 +1456,42 @@ central rectangle and its boundary, including corners. `centralRectangleIntegral
 is the actual integral along those four edges. The existing common neighborhood
 makes every sufficiently large central contour integrable in the domain norm,
 with a compact base-space integral. Equality with `centralSpectralProjection`
-is not yet proved; the remaining contour identification needs the enclosed-pole
-selection argument or a deformation to the already-identified circular contour.
+is not yet proved. The enclosed-pole and full root-space selection argument is
+proved below; the remaining step controls the contour's action outside finite
+spectral clusters, for example by comparison with an enclosing circular contour.
 The overview theorem's norm-dependent height also remains separate.
+
+## Rectangular residues and full root-space selection
+
+The scalar kernel `(ζ-a)⁻¹` integrates to `2πi` for every strictly enclosed pole
+in an ordered rectangle. Horizontal and vertical fundamental-theorem formulas
+use logarithmic primitives; changing to `log(a-ζ)` on the left edge accounts for
+the two logarithm branch values. Poles outside the filled rectangle contribute
+zero. Every higher inverse power has a single primitive along all four edges,
+so its integral vanishes even when the pole lies inside the contour.
+
+The resolvent recurrence along finite Jordan chains now gives the corresponding
+weighted rectangular integral formula. The only nonzero contribution is the
+simple-pole term. Thus the normalized integral fixes every vector of each full
+root space strictly inside the rectangle and annihilates every full root space
+outside it. Resolvent boundary points contribute zero. Composition with any
+finite algebraic cluster projection filters exactly its enclosed full root
+spaces, without a diagonalizability assumption.
+
+For the actual central corners this proves
+
+`centralRectangleIntegral * centralSpectralProjection = centralSpectralProjection`.
+
+Consequently the range of the central algebraic projection lies in the range
+of the actual rectangular integral. This does not yet prove equality of the
+operators or the reverse range inclusion. The remaining comparison must rule
+out additional action outside finite spectral clusters; an enclosing-circle
+resolvent identity and interchange of integrations would supply that step.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3092 declarations under `NLS`, including generated
+axioms. The current audit covers 3128 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1794,6 +1825,13 @@ vanishing on a nonsquare rectangle, and exercise both subdivisions. At `p=3`,
 a free rectangle above the real axis contributes zero. Further checks exercise
 edge deformation without a resolvent-interior assumption on the retained box,
 uniform compactness, and evaluation of the domain factorization.
+
+Residue checks use an off-center pole in a nonsquare rectangle, an exterior
+pole, every higher pole order, and a vector-valued normalized residue. The
+existing explicit coupled `p=3` potential supplies a genuine length-two Jordan
+chain at `π`; an admissible central rectangle fixes its generalized vector,
+which remains outside the ordinary eigenspace. A further check exercises the
+inclusion of the whole central algebraic range in the rectangular integral range.
 
 ## Next milestones
 

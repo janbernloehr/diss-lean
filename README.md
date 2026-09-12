@@ -190,8 +190,11 @@ The actual rectangular resolvent integral now uses four oriented Bochner edge
 integrals. It factors through the domain, is compact, and commutes with
 resolvents and algebraic projections. Subdivision and Cauchy's theorem prove
 invariance when an edge moves through a resolvent strip. The central corners
-and boundary agree exactly with the existing box. Equality of this integral
-with the central spectral projection, the overview theorem's exact
+and boundary agree exactly with the existing box. Scalar residue formulas now
+prove selection of full generalized eigenspaces and every finite spectral
+cluster, and the central rectangular integral fixes the central algebraic
+projection. Its action outside finite clusters still needs to be controlled.
+Equality with the central spectral projection, the overview theorem's exact
 norm-dependent height, and the main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
