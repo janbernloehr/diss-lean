@@ -69,8 +69,11 @@ lies in the resolvent set. The analytic reduction needed for Lemma 3.7 is also
 constructed: explicit invertible transport identifies nearby spectral ranges,
 and the domain-valued contour projection makes `L P_D` bounded and analytic.
 The transported operator acts on one fixed finite-dimensional space and
-intertwines with the actual spectral restriction. Identification of its traces
-with the eigenvalue midpoint and squared gap remains open.
+intertwines with the actual spectral restriction. Lemma 3.7 is now proved:
+the first and second traces give the actual eigenvalue midpoint and squared
+gap, analytic on the common potential neighborhood for all high-frequency disks.
+The proof includes repeated eigenvalues and nontrivial Jordan blocks, without
+choosing analytic branches of individual eigenvalues.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -154,6 +157,9 @@ constant potential with a verified nonreal eigenvalue when real type fails.
 Reduction checks use moving nonorthogonal projections, their explicit shear
 transport and analytic inverse, compressed identity, a negative free eigenmode,
 two-dimensional reference ranges at `p=3`, and domain-norm analyticity at `p=1`.
+Symmetric-eigenvalue checks cover a nontrivial Jordan block, distinct eigenvalues,
+negative free indices, the source normalization `γ²/2`, the `p=1` endpoint,
+and exclusion of a free eigenvalue outside the selected contour.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

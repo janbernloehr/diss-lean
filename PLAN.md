@@ -236,9 +236,17 @@ is bounded and analytic. Its commutation with the spectral projection gives
 an analytic operator on a fixed finite-dimensional reference range, with an
 exact intertwining identity and the correct enclosed-eigenvector action.
 
-Next identify the traces of this reduction with the eigenvalue midpoint and
-squared gap to finish Lemma 3.7. Identification with the rectangular contour
-integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
+Lemma 3.7 is now proved. The range equivalence conjugates the local reduction
+to the intrinsic restriction, so traces of all powers are reference-independent
+and analytic. Its eigenvalues are exactly the enclosed spectral values. In
+dimension two, the characteristic polynomial and Cayley–Hamilton give the
+midpoint and squared-gap identities, including repeated values and Jordan blocks.
+One counting neighborhood supports analyticity for every sufficiently high index;
+the source normalization `γ²/2` follows from the centered-square trace identity.
+
+Next audit and implement Section 4's Fourier formulation of the Dirichlet and
+Neumann boundary conditions and operators. Identification with the rectangular
+contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 Physical-space interpretation, period-one embedding, and comparison with the

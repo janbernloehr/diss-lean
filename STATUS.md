@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has sixty-two modules and 631 named public theorems. All compile on the
+The library has sixty-five modules and 648 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -47,6 +47,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of base-space and domain-valued contour projections; locally constant rank and total enclosed algebraic multiplicity |
 | `NLS.FunctionalAnalysis.ProjectionTransport` | Explicit projection intertwiner; invertible ambient and range equivalences; analytic transport and inverse; fixed-range compression, analytic dependence, and exact intertwining |
 | `NLS.ZakharovShabat.SpectralReduction` | Bounded analytic `L P` through the domain contour lift; projection/operator intertwining; fixed-range analytic spectral reduction on an open neighborhood; reference and enclosed-eigenvector identities |
+| `NLS.FunctionalAnalysis.FiniteSpectralTrace` | Two-dimensional characteristic roots with repetition; first, second, and centered trace identities; bounded trace functional and analytic traces |
+| `NLS.ZakharovShabat.ContourTrace` | Exact conjugacy of local and intrinsic restrictions; reference-independent traces of all powers; analyticity of power traces and symmetric trace expressions |
+| `NLS.ZakharovShabat.SymmetricEigenvalues` | Exact enclosed-eigenvalue characterization of the restriction; midpoint and squared-gap trace identities; free values; Lemma 3.7 uniformly on the counting neighborhood, with counted eigenvalue pairs |
 | `NLS.ZakharovShabat.FreeMultiplicity` | Resonant coefficient embedding; independence of the signed free modes; support of every free root chain; equality of ordinary and full root spaces; free algebraic multiplicity two |
 | `NLS.ZakharovShabat.DiskMultiplicity` | Constant contour rank and total multiplicity on preconnected admissible families; isolated free disk spectrum; Proposition 1.1(i)’s high-frequency rank and algebraic-multiplicity count, uniform on a convex neighborhood containing zero |
 | `NLS.ZakharovShabat.DiskParity` | Free contour range in index parity; parity preservation under preconnected deformations; generalized root-space and domain eigenfunction parity; opposite-parity contour annihilation; uniform multiplicity and parity package for Proposition 1.1(i) |
@@ -445,9 +448,38 @@ analytic in operator norm. It satisfies the exact intertwining identity with
 `Aφ`, and at the reference potential it equals the original spectral restriction.
 An open neighborhood supports the transport, its inverse, the reduced operator,
 and the range equivalences simultaneously. For the high-frequency circles,
-the earlier disk count makes the reference range two-dimensional. Identifying
-the reduced traces with the eigenvalue midpoint and squared gap, and hence
-finishing Lemma 3.7, remains the next step.
+the earlier disk count makes the reference range two-dimensional.
+
+**Lemma 3.7 is now proved in coefficient space.** The range equivalence
+conjugates each local reduction to the intrinsic restriction at the current
+potential. Traces of every power are invariant under this equivalence. Since
+trace is a bounded linear functional on the fixed finite-dimensional operator
+space, these intrinsic power traces are analytic wherever the circle is
+admissible.
+
+The intrinsic restriction has exactly the eigenvalues enclosed by the contour.
+For the forward implication, its nonzero eigenvector lifts into the weighted
+domain and satisfies the original eigenvalue equation. A value outside the
+closed disk would have its root vector annihilated by the same projection,
+contradicting its range membership. Boundary values are resolvent points.
+Conversely, each enclosed eigenvector is fixed by the projection and becomes
+an eigenvector of the restriction.
+
+In dimension two, the characteristic polynomial is `(X-a)(X-b)`, allowing
+`a=b`. Cayley–Hamilton and trace linearity give `Tr A = a+b` and
+`Tr A² = a²+b²`. Thus the intrinsic definitions
+
+- `τ = Tr A / 2`;
+- `γ² = 2 Tr A² - (Tr A)²`
+
+are exactly `(a+b)/2` and `(a-b)²`. The source's centered identity
+`Tr (A-τI)² = γ²/2` is proved as well. No diagonalization or analytic labeling
+of individual eigenvalues is assumed. `periodicMidpoint` and
+`periodicSquaredGap` use the quarter-pi disks; one positive cutoff and open
+convex neighborhood support their analyticity for every high index, the full
+counting data, and eigenvalue pairs with the correct algebraic multiplicities.
+For the free potential, the midpoint is `π n` and the squared gap is zero
+at every signed index.
 
 The actual unbounded realization is now defined as
 
@@ -661,7 +693,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1314 declarations under `NLS`, including generated
+axioms. The current audit covers 1364 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -787,11 +819,17 @@ identity are checked. Spectral checks verify the action on a negative free mode,
 analytic reductions of arbitrary `p=3` potentials on two-dimensional reference
 ranges, the stronger domain norm at `p=1`, and equality with the original
 spectral restriction at the reference potential.
+Symmetric-eigenvalue checks use upper triangular operators with both distinct
+eigenvalues and a repeated eigenvalue having a nontrivial Jordan chain. Their
+trace midpoints and squared gaps are verified explicitly. Further checks cover
+the free double value at a negative index, analyticity of the exact source
+normalization `γ²/2` on the common convex neighborhood at `p=3`, eigenvalue-pair
+identification at `p=1`, and exclusion of a free eigenvalue outside its contour.
 
 ## Next milestones
 
-1. Identify the analytic reduced operator's traces with the eigenvalue midpoint
-   and squared gap, completing Lemma 3.7.
+1. Audit and implement Section 4's Fourier formulation of Dirichlet and Neumann
+   boundary conditions and operators.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

@@ -1697,3 +1697,105 @@ example (φ : PairSpace 3) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
   reducedContourOperator_self_apply (by simp) φ c r hr hc x
 
 end SpectralReductionChecks
+
+section SymmetricEigenvalueChecks
+open Complex Metric NLS.FiniteSpectralTrace
+set_option autoImplicit false
+
+private def traceTriangle (a b : ℂ) : Module.End ℂ (ℂ × ℂ) :=
+  (a • LinearMap.fst ℂ ℂ ℂ + LinearMap.snd ℂ ℂ ℂ).prod (b • LinearMap.snd ℂ ℂ ℂ)
+
+private theorem traceTriangle_eigenvalues (a b : ℂ) :
+    (traceTriangle a b).HasEigenvalue a ∧ (traceTriangle a b).HasEigenvalue b ∧
+    ∀ z : ℂ, (traceTriangle a b).HasEigenvalue z → z = a ∨ z = b := by
+  constructor
+  · apply Module.End.hasEigenvalue_of_hasEigenvector (x := (1, 0))
+    constructor
+    · rw [Module.End.mem_eigenspace_iff]
+      simp [traceTriangle]
+    · simp
+  constructor
+  · apply Module.End.hasEigenvalue_of_hasEigenvector (x := (1, b-a))
+    constructor
+    · rw [Module.End.mem_eigenspace_iff]
+      apply Prod.ext <;> simp [traceTriangle]
+    · intro h
+      have hh := congrArg Prod.fst h
+      norm_num at hh
+  · intro z hz
+    obtain ⟨x, hx⟩ := hz.exists_hasEigenvector
+    have he := hx.apply_eq_smul
+    have h₁ : a * x.1 + x.2 = z * x.1 := congrArg Prod.fst he
+    have h₂ : b * x.2 = z * x.2 := congrArg Prod.snd he
+    by_cases hzb : z = b
+    · exact Or.inr hzb
+    · have hy : x.2 = 0 := by
+        have hh : (z-b) * x.2 = 0 := by linear_combination -h₂
+        exact (mul_eq_zero.mp hh).resolve_left (sub_ne_zero.mpr hzb)
+      have hx1 : x.1 ≠ 0 := by
+        intro h
+        exact hx.2 (Prod.ext h hy)
+      have hh : (z-a) * x.1 = 0 := by rw [hy] at h₁; linear_combination -h₁
+      exact Or.inl (sub_eq_zero.mp ((mul_eq_zero.mp hh).resolve_right hx1))
+
+-- The coincident case includes a nontrivial Jordan chain.
+example : (0,1) ∈ Module.End.genEigenspace (traceTriangle 1 1) 1 (2 : ℕ) ∧
+    (0,1) ∉ Module.End.eigenspace (traceTriangle 1 1) 1 := by
+  rw [Module.End.mem_genEigenspace_nat, Module.End.mem_eigenspace_iff]
+  norm_num [traceTriangle, pow_two, mul_apply_eq_comp]
+
+example : LinearMap.trace ℂ (ℂ × ℂ) (traceTriangle 1 1) / 2 = 1 ∧
+    2 * LinearMap.trace ℂ (ℂ × ℂ) ((traceTriangle 1 1)^2) -
+      (LinearMap.trace ℂ (ℂ × ℂ) (traceTriangle 1 1))^2 = 0 := by
+  obtain ⟨ha, hb, honly⟩ := traceTriangle_eigenvalues 1 1
+  have h := midpoint_gap_eq (traceTriangle 1 1) (by simp) 1 1 ha hb honly
+  constructor
+  · simpa using h.1
+  · simpa using h.2.1
+
+-- The distinct case has midpoint 7/2 and squared gap 9.
+example : LinearMap.trace ℂ (ℂ × ℂ) (traceTriangle 2 5) / 2 = 7/2 ∧
+    2 * LinearMap.trace ℂ (ℂ × ℂ) ((traceTriangle 2 5)^2) -
+      (LinearMap.trace ℂ (ℂ × ℂ) (traceTriangle 2 5))^2 = 9 := by
+  obtain ⟨ha, hb, honly⟩ := traceTriangle_eigenvalues 2 5
+  have h := midpoint_gap_eq (traceTriangle 2 5) (by simp) 2 5 ha hb honly
+  constructor
+  · norm_num at h ⊢; exact h.1
+  · norm_num at h ⊢; exact h.2.1
+
+-- The free midpoint and gap have their expected values at a negative index.
+example : periodicMidpoint (p := 3) (by simp) 0 (-3) = (Real.pi : ℂ) * (-3 : ℤ) ∧
+    periodicSquaredGap (p := 3) (by simp) 0 (-3) = 0 :=
+  periodicMidpoint_squaredGap_zero (by simp) (-3)
+
+-- This is the source's normalization gamma^2/2, on one common convex neighborhood.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧
+    ∀ n : ℤ, N < n.natAbs → AnalyticOnNhd ℂ (fun ψ => periodicMidpoint (by simp) ψ n) U ∧
+      AnalyticOnNhd ℂ (fun ψ => periodicSquaredGap (by simp) ψ n / 2) U := by
+  obtain ⟨N,U,_,ho,hconv,hφ,_,ha,_⟩ := exists_uniform_analytic_periodicMidpoint_squaredGap (by simp) φ
+  refine ⟨N,U,ho,hconv,hφ,?_⟩
+  intro n hn
+  exact ⟨(ha n hn).1, fun ψ hψ => ((ha n hn).2 ψ hψ).div_const⟩
+
+-- Analytic invariants equal actual eigenvalue pairs also at the p=1 endpoint.
+example (φ : PairSpace 1) : ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs → ∃ a b : ℂ,
+    enclosedPeriodicSpectrum (by simp) φ ((Real.pi : ℂ) * n) (Real.pi / 4) = {a,b} ∧
+    periodicMidpoint (by simp) φ n = (a+b)/2 ∧ periodicSquaredGap (by simp) φ n = (a-b)^2 := by
+  obtain ⟨N,U,_,_,_,hφ,_,_,h⟩ := exists_uniform_analytic_periodicMidpoint_squaredGap (by simp) φ
+  refine ⟨N, ?_⟩
+  intro n hn
+  obtain ⟨a,b,hs,hm,hg,_⟩ := (h φ hφ).2 n hn
+  exact ⟨a,b,hs,hm,hg⟩
+
+-- Reduction excludes a free eigenvalue outside its contour.
+example : ¬ Module.End.HasEigenvalue
+    (reducedContourOperator (p := 3) (by simp) 0 0 0 (Real.pi / 4)).toLinearMap (Real.pi : ℂ) := by
+  have hr : 0 < Real.pi / 4 := by positivity
+  have hc : sphere (0 : ℂ) (Real.pi / 4) ⊆ resolventSet (p := 3) (by simp) 0 := by
+    simpa using sphere_subset_resolventSet_of_smallPotential (p := 3) (by simp) 0 0 hr le_rfl (by simpa using hr)
+  rw [reducedContourOperator_hasEigenvalue_iff (by simp) 0 0 _ _ hr.le hc]
+  have hs : enclosedPeriodicSpectrum (p := 3) (by simp) 0 0 (Real.pi / 4) = {0} := by
+    simpa using enclosedPeriodicSpectrum_zero (p := 3) (by simp) 0 hr (by linarith [Real.pi_pos])
+  simp [hs, Real.pi_ne_zero]
+
+end SymmetricEigenvalueChecks

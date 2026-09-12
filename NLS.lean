@@ -58,3 +58,4 @@ import NLS.ZakharovShabat.CentralParity
 import NLS.ZakharovShabat.PeriodicCounting
 import NLS.ZakharovShabat.RealType
 import NLS.ZakharovShabat.SpectralReduction
+import NLS.ZakharovShabat.SymmetricEigenvalues

@@ -7,8 +7,8 @@ import NLS.FunctionalAnalysis.ProjectionTransport
 The domain-valued contour projection makes `L P` a bounded analytic operator.
 Explicit projection transport identifies nearby spectral ranges with one fixed
 finite-dimensional range. This constructs the analytic reduction in the proof
-of Lemma 3.7 (printed page 27); identifying its traces with the eigenvalue
-midpoint and squared gap is a subsequent step.
+of Lemma 3.7 (printed page 27). The trace identities and analytic eigenvalue
+midpoint and squared gap are proved in `SymmetricEigenvalues`.
 -/
 
 noncomputable section
