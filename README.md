@@ -498,8 +498,12 @@ installation is absent. No shell startup files are modified.
   energies and bounds for bounded interval data are proved. A fractional Hardy
   inequality now controls both endpoint weights for general interval `L²` data
   with finite intrinsic energy when `0<s<1/2`, including arbitrary almost-everywhere
-  representatives. The extension/periodization comparison remains necessary
-  for Appendix A.9.
+  representatives. Zero extension has an exact full-energy decomposition,
+  and periodization is now controlled by its line translation energy. Thus
+  interval data with finite intrinsic fractional energy has weighted square-
+  summable actual Fourier coefficients for `0<s<1/2`, without endpoint matching.
+  The sharp Fourier-Lebesgue exponent statement and endpoint consequences
+  remain to be assembled for Appendix A.9.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

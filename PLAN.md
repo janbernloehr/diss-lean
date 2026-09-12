@@ -652,3 +652,25 @@ global measurability assumption in the finiteness conclusion.
 The next A.9 step is the extension/periodization comparison with the already
 identified physical periodic space, followed by the Fourier-Lebesgue embedding
 and the separate half-regularity consequence through lower regularity.
+
+
+The zero-extension and forward periodization comparison are now proved.
+Full line difference energy equals intrinsic interval energy plus twice the
+exterior interaction, including infinite values. This yields the exact
+zero-extension regularity equivalence for arbitrary positive interval length
+and `0<s<1/2`. A measure-preserving change of variables and Tonelli identify
+line difference energy with actual translation-increment energy, also for
+arbitrary `L²` representatives.
+
+For period two and displacements at most one, the periodic increment is the
+sum of three adjacent zero-extension increments, outside an irrelevant finite
+set of endpoint crossings. Its square integral is at most nine times the full
+line square increment integral. The normalization of circle `L²` gives a
+periodic energy bound by `9/2` times the line translation energy. Actual
+interval Fourier reconstruction and almost-everywhere invariance transfer
+this bound to arbitrary original interval data. In particular, finite intrinsic
+energy and interval `L²` imply `(1+|n|)^s` weighted square summability of the
+actual Fourier integrals throughout `0<s<1/2`, with no matching endpoint values.
+The next step is to assemble the sharp `q>1/(s+1/2)` Fourier-Lebesgue conclusion
+from the existing Hölder coefficient embedding, handle `s=0`, and deduce the
+separate `s=1/2` consequence by decreasing regularity.

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 218 modules and 2074 named public theorems. All compile on the
+The library has 222 modules and 2102 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -46,6 +46,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.FractionalHardyPreestimate` | Actual truncated boundary square-energy estimate with adjustable and contracting constants; positive-cutoff finiteness from arbitrary interval `L²` data |
 | `NLS.Fourier.FractionalHardyLeft` | Finite-energy absorption; cutoff-independent coercive Hardy estimate; increasing cutoff exhaustion and monotone limit; left endpoint finiteness from intrinsic energy and `L²` |
 | `NLS.Fourier.FractionalHardy` | Measure-preserving interval reflection; energy invariance; quantitative control of both endpoint weights; finite exterior interaction for arbitrary interval representatives without global measurability or boundedness |
+| `NLS.Fourier.FractionalZeroExtension` | Actual indicator zero extension; exact square norm and `L²` membership; full difference energy equals intrinsic plus twice exterior, including infinity; subcritical physical interval/line regularity equivalence for arbitrary positive length |
+| `NLS.Fourier.FractionalLineTranslation` | Actual line translation energy; measure-preserving change of variables and Tonelli identity; almost-everywhere invariance; exact zero-extension translation-energy decomposition and subcritical finiteness |
+| `NLS.Fourier.PeriodizationIncrement` | Three-translate formula for actual periodic increments away from endpoint crossings; almost-everywhere integrated square bound by nine times the line increment energy |
+| `NLS.Fourier.FractionalPeriodization` | Real-kernel periodic energy identity including zero displacement; `9/2` physical periodization bound; arbitrary interval Fourier reconstruction gains periodic regularity and weighted square summability for `0<s<1/2`; bound in original interval energies |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2244,14 +2248,51 @@ used. The finiteness theorem applies to arbitrary interval representatives:
 almost-everywhere replacement supplies a measurable representative and both
 energies respect that replacement.
 
-The fractional Hardy dependency is complete. Full zero-extension/periodization
-comparison, the interval-to-periodic identification, and the remaining A.9
-embedding and endpoint consequences are still open.
+The fractional Hardy dependency and the forward zero-extension/periodization
+comparison below are complete. The sharp A.9 Fourier-Lebesgue embedding
+statement and its endpoint consequences remain to be assembled.
+
+## Zero extension and forward periodization
+
+`FractionalZeroExtension` defines the actual indicator extension and full line
+Gagliardo energy. Square integrability and square energy agree exactly with
+the interval quantities. Partitioning the product measure and exchanging the
+two mixed terms by Tonelli gives
+`E_line(zeroExtension f)=E_interval(f)+2 E_exterior(f)`.
+The identity retains infinite energies and holds for arbitrary interval `L²`
+representatives by almost-everywhere replacement. With Hardy, zero extension
+has finite line energy if and only if the original interval energy is finite
+for `0<s<1/2` and every positive interval length.
+
+`FractionalLineTranslation` changes the inner variable by actual translation
+and then uses Tonelli to identify line difference energy with the nonnegative
+double integral of physical translation increments. Both this identity and the
+exact zero-extension decomposition apply to arbitrary `L²` representatives.
+
+`PeriodizationIncrement` proves the periodic increment formula from three
+adjacent zero-extension translates when `|t|≤1`. The exceptional endpoint
+crossings form a null set. A three-term square estimate and translation
+invariance bound its interval square integral by nine times the line increment
+integral. No finite-energy assumption is needed for this comparison.
+
+`FractionalPeriodization` reconciles the real-distance kernel with the circle
+kernel, handling zero displacement explicitly. Circle normalization gives the
+bound `E_periodic ≤ (9/2) E_line_translation(zeroExtension f)`; this constant is
+not claimed sharp. Combining it with interval Fourier reconstruction proves
+that arbitrary period-two interval `L²` data with finite intrinsic energy has
+physical periodic regularity and actual `(1+|n|)^s` weighted Fourier square
+summability for `0<s<1/2`. Matching endpoint values are not assumed. The
+quantitative bound can be stated entirely in the original interval energies:
+`E_periodic ≤ (9/2)(E_interval+2 E_exterior)`.
+
+This proves the forward physical regularity passage needed for A.9 in the
+period-two model. The sharp Fourier-Lebesgue exponent conclusion, `s=0`, and
+the separate half-regularity consequence still need their final assembly.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4258 declarations under `NLS`, including generated
+axioms. The current audit covers 4297 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2792,12 +2833,22 @@ Reflection is tested without any finiteness assumption. The final check derives
 finite exterior interaction from interval `L²` and intrinsic fractional energy
 alone, with no global measurability or boundedness hypothesis.
 
+Zero-extension checks retain the factor two between exterior and full line
+energy, recover energy 16 for imaginary unit interval data at `s=1/4`, and
+verify infinite line energy for a constant zero extension at `s=1/2`. Line
+translation energy has the same exact value. At a wrap crossing the nonzero
+zero-extension pieces cancel for a periodic constant. The periodic comparison
+and actual interval Fourier membership are exercised for arbitrary data.
+A concrete ramp `f(x)=x` has unequal endpoint values, interval square
+integrability, and proved fractional energy at most eight at `s=1/4`; the new
+bridge yields its weighted Fourier square summability without periodicity.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the extension/periodization comparison needed in Appendix A.9,
-   then the interval Fourier-Lebesgue embedding and endpoint consequences.
-   The fractional Hardy inequality and exact boundary kernels are complete. The
+2. Assemble the sharp interval Fourier-Lebesgue embedding in Appendix A.9,
+   including `s=0` and the separate half-regularity consequence. The fractional
+   Hardy inequality and forward periodization comparison are complete. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
@@ -2805,5 +2856,5 @@ alone, with no global measurability or boundedness hypothesis.
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. The fractional interval-to-periodic comparison and the printed
-general-`p` spectral height remain open.
+unimplemented. The remaining Appendix A.9 exponent/endpoint conclusions and
+the printed general-`p` spectral height remain open.

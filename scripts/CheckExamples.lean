@@ -6155,3 +6155,92 @@ example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.re
     (hE : Fourier.fractionalIntervalEnergy (1 / 3) 2 f < ⊤) :
     Fourier.fractionalExteriorEnergy (1 / 3) 2 f < ⊤ :=
   Fourier.fractionalExteriorEnergy_lt_top_of_interval (by norm_num) (by norm_num) (by norm_num) f hf hE
+
+-- Zero extension retains L² and the exact factor two from the two exterior interactions.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioo 0 3))) :
+    MeasureTheory.MemLp (Fourier.intervalZeroExtension 3 f) 2 MeasureTheory.volume :=
+  (Fourier.memLp_intervalZeroExtension_iff 3 f).mpr hf
+
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioo 0 3))) :
+    Fourier.fractionalLineEnergy (1 / 3) (Fourier.intervalZeroExtension 3 f) =
+      Fourier.fractionalIntervalEnergy (1 / 3) 3 f + 2 * Fourier.fractionalExteriorEnergy (1 / 3) 3 f :=
+  Fourier.fractionalLineEnergy_zeroExtension _ f hf
+
+example : Fourier.fractionalLineEnergy (1 / 4) (Fourier.intervalZeroExtension 1 (fun _ => Complex.I)) = 16 := by
+  rw [Fourier.fractionalLineEnergy_zeroExtension_of_measurable _ _ _ measurable_const,
+    Fourier.fractionalIntervalEnergy_const, Fourier.fractionalExteriorEnergy_const (by norm_num) (by norm_num) (by norm_num)]
+  norm_num
+
+example : Fourier.fractionalLineTranslationEnergy (1 / 4) (Fourier.intervalZeroExtension 1 (fun _ => Complex.I)) = 16 := by
+  rw [Fourier.fractionalLineTranslationEnergy_zeroExtension _ _ (MeasureTheory.memLp_const Complex.I),
+    Fourier.fractionalIntervalEnergy_const, Fourier.fractionalExteriorEnergy_const (by norm_num) (by norm_num) (by norm_num)]
+  norm_num
+
+example : Fourier.fractionalLineEnergy (1 / 2) (Fourier.intervalZeroExtension 1 (fun _ => 1)) = ⊤ := by
+  rw [Fourier.fractionalLineEnergy_zeroExtension_of_measurable _ _ _ measurable_const,
+    Fourier.fractionalIntervalEnergy_const, zero_add]
+  have h : Fourier.fractionalExteriorEnergy (1 / 2) 1 (fun _ => 1) = ⊤ := by
+    by_contra h
+    have hh := (Fourier.fractionalExteriorEnergy_one_lt_top_iff
+      (by norm_num : (0 : ℝ) < 1 / 2) (by norm_num : (0 : ℝ) < 1)).mp (lt_top_iff_ne_top.mpr h)
+    norm_num at hh
+  rw [h]
+  norm_num
+
+-- The zero-extension pieces at a wrap crossing cancel to give the periodic constant increment.
+example :
+    Fourier.intervalZeroExtension 2 (fun _ => Complex.I) (5 / 2) -
+      Fourier.intervalZeroExtension 2 (fun _ => Complex.I) (3 / 2) = -Complex.I ∧
+    Fourier.intervalZeroExtension 2 (fun _ => Complex.I) (1 / 2) -
+      Fourier.intervalZeroExtension 2 (fun _ => Complex.I) (-1 / 2) = Complex.I := by
+  norm_num [Fourier.intervalZeroExtension, Set.indicator_apply]
+
+example (f : Fourier.CircleL2) : Fourier.fractionalTranslationEnergy (1 / 3) f ≤
+    ENNReal.ofReal (9 / 2 : ℝ) *
+      Fourier.fractionalLineTranslationEnergy (1 / 3) (Fourier.intervalZeroExtension 2 (Fourier.circlePullback f)) :=
+  Fourier.fractionalTranslationEnergy_le_zeroExtension _ _
+
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 2)))
+    (hE : Fourier.fractionalIntervalEnergy (1 / 3) 2 f < ⊤) :
+    Memℓp (fun n => (Weight.sobolev (1 / 3) n : ℂ) * Fourier.periodTwoCoefficient f n) 2 :=
+  Fourier.memlp_sobolev_periodTwoCoefficient_of_interval (by norm_num) (by norm_num) f hf hE
+
+private def intervalRamp (x : ℝ) : ℂ := x
+
+private theorem intervalRamp_memLp :
+    MeasureTheory.MemLp intervalRamp 2 (MeasureTheory.volume.restrict (Set.Ioc 0 2)) := by
+  apply MeasureTheory.MemLp.of_bound (by unfold intervalRamp; fun_prop) 2
+  filter_upwards [MeasureTheory.ae_restrict_mem measurableSet_Ioc] with x hx
+  simpa only [intervalRamp, Complex.norm_real, Real.norm_of_nonneg hx.1.le] using hx.2
+
+private theorem intervalRamp_energy_le : Fourier.fractionalIntervalEnergy (1 / 4) 2 intervalRamp ≤ 8 := by
+  have hpoint (x y : ℝ) (hx : x ∈ Set.Ioo 0 2) (hy : y ∈ Set.Ioo 0 2) :
+      ENNReal.ofReal (‖intervalRamp x - intervalRamp y‖ ^ 2) * Fourier.fractionalDistanceKernel (1 / 4) x y ≤ 2 := by
+    simp only [intervalRamp, ← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs,
+      Fourier.fractionalDistanceKernel]
+    rw [← ENNReal.ofReal_mul (sq_nonneg _)]
+    apply (ENNReal.ofReal_le_ofReal (show |x - y| ^ 2 * |x - y| ^ (-(1 + 2 * (1 / 4 : ℝ))) ≤ 2 from ?_)).trans_eq (by norm_num)
+    by_cases he : |x - y| = 0
+    · simp [he]
+    have hp : 0 < |x - y| := lt_of_le_of_ne (abs_nonneg _) (Ne.symm he)
+    rw [← Real.rpow_two |x - y|, ← Real.rpow_add hp]
+    norm_num only [show (2 : ℝ) + -(1 + 2 * (1 / 4)) = 1 / 2 by norm_num]
+    calc
+      _ ≤ (4 : ℝ) ^ (1 / 2 : ℝ) := Real.rpow_le_rpow (abs_nonneg _) (abs_le.mpr ⟨by linarith [hx.1, hy.2], by linarith [hx.2, hy.1]⟩) (by norm_num)
+      _ = 2 := by norm_num [Real.rpow_div_two_eq_sqrt]
+  calc
+    _ ≤ ∫⁻ x : ℝ in Set.Ioo 0 2, ∫⁻ y : ℝ in Set.Ioo 0 2, (2 : ℝ≥0∞) := by
+      apply MeasureTheory.setLIntegral_mono' measurableSet_Ioo
+      intro x hx
+      apply MeasureTheory.setLIntegral_mono' measurableSet_Ioo
+      intro y hy
+      exact hpoint x y hx hy
+    _ = 8 := by norm_num [Real.volume_Ioo]
+
+-- A genuine nonperiodic ramp has unequal endpoints and weighted periodic Fourier coefficients below half.
+example : intervalRamp 0 ≠ intervalRamp 2 ∧
+    Memℓp (fun n => (Weight.sobolev (1 / 4) n : ℂ) * Fourier.periodTwoCoefficient intervalRamp n) 2 := by
+  constructor
+  · norm_num [intervalRamp]
+  · exact Fourier.memlp_sobolev_periodTwoCoefficient_of_interval (by norm_num) (by norm_num)
+      intervalRamp intervalRamp_memLp (intervalRamp_energy_le.trans_lt (by norm_num))

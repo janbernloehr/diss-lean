@@ -166,3 +166,7 @@ import NLS.Fourier.FractionalHardyAveraging
 import NLS.Fourier.FractionalHardyPreestimate
 import NLS.Fourier.FractionalHardyLeft
 import NLS.Fourier.FractionalHardy
+import NLS.Fourier.FractionalZeroExtension
+import NLS.Fourier.FractionalLineTranslation
+import NLS.Fourier.PeriodizationIncrement
+import NLS.Fourier.FractionalPeriodization
