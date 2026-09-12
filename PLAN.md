@@ -516,8 +516,8 @@ Differentiation maps regularity `s+1` to `s` with constant `π`, at every real `
 and Banach exponent including infinity. The actual distributional derivative
 has exactly this domain and a closed graph. Intrinsically, simultaneous
 regularity `s` of a periodic distribution and its derivative is equivalent to
-regularity `s+1` of the distribution. Further work includes exponent-changing
-embeddings and Young inequalities beyond an `l1` factor.
+regularity `s+1` of the distribution. The exponent-changing embeddings are
+now implemented below; Young inequalities beyond an `l1` factor remain open.
 The source's distinct infinity pair norm is now implemented as `lp` of
 sum-norm pairs, with complete weighted variants and exact supremum formulas.
 Its comparison with the maximum product has sharp factor two. The first signed
@@ -526,3 +526,16 @@ spaces, respecting (1.2). At every real Sobolev regularity, the endpoint pair
 space has continuous injective actual distributional synthesis, coefficient
 recovery, its exact intrinsic norm formula, and a unique representation theorem
 for arbitrary periodic pairs with the stated endpoint regularity.
+
+Increasing the sequence exponent is now a contractive continuous injection,
+including the infinity target. Weighted versions preserve raw coefficients,
+compose across exponents, and combine with decreasing real Sobolev regularity.
+General Hölder triples provide weight-ratio embeddings into smaller exponents,
+with the ratio norm as the explicit constant. Finite-exponent Sobolev reciprocal
+summability is characterized exactly by the strict threshold `(s-t)r > 1`;
+at the infinity multiplier endpoint zero regularity gain is allowed.
+All these embeddings preserve the actual periodic distribution, and arbitrary
+periodic source inputs have unique target representatives under the Hölder
+condition. This supplies the coefficient estimate in Appendix A.9, without
+asserting its separate fractional interval-Sobolev identification. That physical
+identification and the full Young inequality are subsequent proof targets.

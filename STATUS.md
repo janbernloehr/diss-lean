@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 191 modules and 1823 named public theorems. All compile on the
+The library has 194 modules and 1850 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -43,6 +43,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.Multiplier` | Bounded diagonal symbols; norm bound; continuous linear operator; commutation with truncations |
 | `NLS.SequenceSpaces.Translation` | Reindexing by an integer equivalence preserves the norm; shifts as linear isometry equivalences |
 | `NLS.SequenceSpaces.Convolution` | Absolutely convergent Banach-space construction; coefficient formula; `lp × l1 → lp` norm bound, including `p=∞`; continuous bilinear map; single-mode shift identity |
+| `NLS.SequenceSpaces.ExponentEmbedding` | Contractive increasing-exponent embeddings including infinity; injectivity and composition; weighted transport and simultaneous regularity decrease |
+| `NLS.SequenceSpaces.HolderEmbedding` | General Banach Hölder products; weighted ratio embeddings with explicit constants; exact finite-exponent Sobolev reciprocal threshold; fractional Sobolev embeddings into smaller exponents |
+| `NLS.Fourier.DistributionEmbeddings` | Exponent and weighted Hölder embeddings preserve actual distributions; arbitrary periodic source data has a unique target representative |
 | `NLS.SequenceSpaces.Embedding` | General weighted Hölder embedding into `l1` when the reciprocal weight belongs to the conjugate space; explicit bound and injectivity |
 | `NLS.SequenceSpaces.SobolevEmbedding` | Reciprocal one-derivative weight is in `lq` for `q>1`, including infinity; continuous embedding `FL^{1,p} → FL^1` for every finite `p≥1` with an explicit constant |
 | `NLS.SequenceSpaces.ReciprocalSeries` | Appendix B.1 with its exact conjugate-exponent constants; summability; one-sided integral tail bounds; bilateral punctured-lattice identities and estimates; invariance under frequency translation |
@@ -1979,10 +1982,36 @@ second directly. The exact source norm is recovered from these actual
 coefficients. Every pair of periodic distributions with endpoint Sobolev
 regularity has a unique representative in this source-norm space.
 
+## Exponent embeddings and the Sobolev Hölder threshold
+
+`ExponentEmbedding` proves that the identity from `ℓᵖ` to `ℓᑫ` is contractive
+for every pair of Banach exponents `p≤q`, including infinity. A unit-ball
+power comparison gives the exact constant one, then homogeneity removes the
+normalization. The maps are continuous linear injections and compose. Weighted
+transport keeps raw coefficients unchanged, and combining with the earlier
+regularity inclusion gives a contractive map whenever `t≤s` and `p≤q`.
+
+`HolderEmbedding` constructs continuous pointwise products for arbitrary Banach
+Hölder triples with `1/q = 1/p + 1/r`. A target/source weight ratio in `ℓʳ`
+therefore gives a continuous injective map of weighted coefficient spaces.
+The norm is bounded by the explicit `ℓʳ` ratio norm times the input norm.
+For finite positive `r`, the reciprocal Sobolev weight is in `ℓʳ` exactly when
+its regularity times `r` exceeds one; restricting the series to nonnegative
+frequencies proves necessity as well as sufficiency. At `r=∞`, nonnegative
+regularity suffices. Thus the embedding from `FL^{s,p}` to `FL^{t,q}` follows
+for every finite multiplier exponent with `(s-t)r>1`, retaining its explicit
+constant. This is the coefficient estimate in Appendix A.9. The identification
+of fractional interval `Hˢ` with periodic Sobolev data used there is not claimed.
+
+`DistributionEmbeddings` proves that every exponent or Hölder embedding above
+preserves the actual tempered distribution, across both weights and exponents.
+An arbitrary periodic input satisfying the source Sobolev coefficient condition
+has a unique target representative under the Hölder condition.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3788 declarations under `NLS`, including generated
+axioms. The current audit covers 3851 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2440,18 +2469,27 @@ norm `1/2` at regularity `-1`. Actual pair synthesis recovers imaginary first
 coefficients at the opposite frequency and annihilates the wrong frequency.
 Arbitrary periodic inputs exercise the unique endpoint pair representation.
 
+Exponent-embedding checks retain imaginary negative modes, attain the unit
+norm bound on a singleton, and compose exponent changes at negative fractional
+regularity. They exercise `FL^{3/8,2} → FL^{0,4/3}` with multiplier exponent four
+and its exact reciprocal-weight norm constant, as well as an infinity-to-`l1`
+embedding with two regularity units. The critical fractional reciprocal fails
+at equality. The harmonic raw sequence is an actual element of `FL^{1,∞}` but
+is not in `l1`, and coefficient uniqueness proves that its synthesized periodic
+distribution has no alternative `l1` representation. Abstract periodic data
+exercises the unique target-representation theorem.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Extend the sequence-space embeddings to changes of exponent and prove Young
-   inequalities beyond an `l1` factor. The real Sobolev scale now has actual
-   synthesis, intrinsic characterization, regularity inclusions, and exact
-   distributional derivative domains, including infinity.
+2. Prove Young inequalities beyond an `l1` factor and the fractional interval
+   Sobolev identification used in Appendix A.9. Exponent embeddings, their
+   intrinsic distributional realization, and the strict weighted Hölder
+   coefficient estimate are complete.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
    dissertation results. Both finite and infinity source pair norms and their
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes
-embeddings between exponents and the full range of Young inequalities beyond
-the `l1`-factor case.
+the full range of Young inequalities beyond the `l1`-factor case.

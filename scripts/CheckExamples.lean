@@ -5439,3 +5439,103 @@ example (T : 𝓢'(ℝ, ℂ) × 𝓢'(ℝ, ℂ))
   (periodicDistribution_pair_infty_iff_existsUnique (-1 / 2) T).mp ⟨⟨h₁, ha⟩, ⟨h₂, hb⟩⟩
 
 end PairNormInftyChecks
+
+namespace ExponentEmbeddingChecks
+open NLS.Fourier
+open scoped SchwartzMap
+
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 / 3 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by norm_num) (by finiteness)).mp
+  norm_num⟩
+local instance : ENNReal.HolderTriple 2 4 (4 / 3) := ⟨by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness)
+    (by simp)).mp
+  norm_num [ENNReal.toReal_add, ENNReal.toReal_inv, ENNReal.toReal_div]⟩
+
+-- Increasing exponent includes the infinity target and retains the negative imaginary mode.
+example : Coeff.exponentInclusion (show (1 : ℝ≥0∞) ≤ ⊤ by simp)
+    (lp.single 1 (-3) Complex.I) (-3) = Complex.I := by simp [lp.single_apply]
+
+-- The contractive constant one is attained on a singleton.
+example : ‖Coeff.exponentInclusion (show (1 : ℝ≥0∞) ≤ 4 by norm_num)
+    (lp.single 1 (-3) Complex.I)‖ = 1 := by
+  have h : Coeff.exponentInclusion (show (1 : ℝ≥0∞) ≤ 4 by norm_num)
+      (lp.single 1 (-3) Complex.I) = lp.single 4 (-3) Complex.I := by ext n; simp
+  rw [h]
+  simp
+
+-- Successive exponent changes at negative fractional regularity preserve the same coefficients.
+example (a : WeightedCoeff (Weight.sobolev (-3 / 2)) 1) :
+    WeightedCoeff.exponentInclusion _ (show (4 : ℝ≥0∞) ≤ ⊤ by simp)
+      (WeightedCoeff.exponentInclusion _ (show (1 : ℝ≥0∞) ≤ 4 by norm_num) a) =
+    WeightedCoeff.exponentInclusion _ (show (1 : ℝ≥0∞) ≤ ⊤ by simp) a :=
+  WeightedCoeff.exponentInclusion_trans _ _ _ a
+
+-- Simultaneously lowering regularity and increasing exponent preserves the actual distribution.
+example (a : WeightedCoeff (Weight.sobolev (1 / 4)) 1) :
+    sobolevDistributionSynthesisCLM (-3 / 2)
+      (WeightedCoeff.sobolevExponentInclusion (by norm_num) (show (1 : ℝ≥0∞) ≤ ⊤ by simp) a) =
+    sobolevDistributionSynthesisCLM (1 / 4) a :=
+  sobolevDistributionSynthesis_exponentInclusion _ _ a
+
+-- The A.9 coefficient estimate works from exponent two to four-thirds using r=4.
+example (a : WeightedCoeff (Weight.sobolev (3 / 8)) 2) :
+    sobolevDistributionSynthesisCLM 0
+      (WeightedCoeff.sobolevHolderInclusion (r := 4) (q := 4 / 3)
+        (3 / 8) 0 (by simp) (by norm_num) a) = sobolevDistributionSynthesisCLM (3 / 8) a :=
+  sobolevDistributionSynthesis_holderInclusion _ _ _ _ a
+
+-- The quantitative constant is the fourth norm of the exact reciprocal weight.
+example (a : WeightedCoeff (Weight.sobolev (3 / 8)) 2) :
+    ‖WeightedCoeff.sobolevHolderInclusion (r := 4) (q := 4 / 3)
+      (3 / 8) 0 (by simp) (by norm_num) a‖ ≤
+      WeightedCoeff.sobolevHolderConstant (r := 4) (3 / 8) 0 (by simp) (by norm_num) * ‖a‖ :=
+  WeightedCoeff.norm_sobolevHolderInclusion_le _ _ _ _ a
+
+-- Infinity source data embeds into l1 with a sufficient regularity gain.
+example (a : WeightedCoeff (Weight.sobolev 2) ⊤) :
+    sobolevDistributionSynthesisCLM 0
+      (WeightedCoeff.sobolevHolderInclusion (r := 1) (q := 1) 2 0 (by simp) (by norm_num) a) =
+    sobolevDistributionSynthesisCLM 2 a :=
+  sobolevDistributionSynthesis_holderInclusion _ _ _ _ a
+
+-- Strictness of the reciprocal-weight condition: equality fails at a fractional threshold.
+example : ¬Memℓp (fun n : ℤ => (Weight.sobolev (1 / 4) n : ℂ)⁻¹) 4 := by
+  rw [Weight.inverse_sobolev_memlp_iff (by norm_num)]
+  norm_num
+
+private def ones : Coeff ⊤ := ⟨fun _ => 1, one_memℓp_infty⟩
+private def harmonic : WeightedCoeff (Weight.sobolev 1) ⊤ :=
+  (WeightedCoeff.weightEquiv (Weight.sobolev 1) ⊤).symm ones
+
+private theorem harmonic_apply (n : ℤ) : harmonic.val n = (Weight.sobolev 1 n : ℂ)⁻¹ := by
+  change 1 / (Weight.sobolev 1 n : ℂ) = _
+  exact one_div _
+
+-- The critical infinity-to-l1 embedding really fails for an inhabited source space.
+private theorem harmonic_not_memlp : ¬Memℓp harmonic.val 1 := by
+  have he : harmonic.val = fun n : ℤ => (Weight.sobolev 1 n : ℂ)⁻¹ := funext harmonic_apply
+  rw [he, Weight.inverse_sobolev_memlp_iff (by norm_num)]
+  norm_num
+
+-- Its actual periodic distribution cannot acquire an l1 representation through another choice of data.
+example : ¬∃ b : Coeff 1, distributionSynthesis b = sobolevDistributionSynthesisCLM 1 harmonic := by
+  rintro ⟨b, hb⟩
+  apply harmonic_not_memlp
+  have he : harmonic.val = (b : ℤ → ℂ) := by
+    funext n
+    have hc := congrArg (fun T : 𝓢'(ℝ, ℂ) => T (coefficientTest n)) hb
+    simpa only [distributionSynthesis_coefficientTest, sobolevDistributionSynthesisCLM_coefficientTest]
+      using hc.symm
+  rw [he]
+  exact lp.memℓp b
+
+-- Periodicity and weighted source data suffice for an intrinsic, unique target representative.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
+    (ha : Memℓp (fun n : ℤ => (Weight.sobolev (3 / 8) n : ℂ) * T (coefficientTest n)) 2) :
+    ∃! b : WeightedCoeff (Weight.sobolev 0) (4 / 3), sobolevDistributionSynthesisCLM 0 b = T :=
+  periodicDistribution_sobolevHolder_existsUnique (r := 4) (3 / 8) 0
+    (by simp) (by norm_num) T hT ha
+
+end ExponentEmbeddingChecks

@@ -278,6 +278,13 @@ Fourier coordinates are related explicitly by reflection of the first
 component, as in (1.2). The weighted endpoint space synthesizes injectively
 into actual periodic distribution pairs, with the exact source norm recovered
 from their coefficients and a unique representation for every endpoint pair.
+Exponent embeddings now preserve the same actual distribution. Increasing
+sequence exponent is contractive, including the infinity target and all real
+Sobolev regularities. A weight ratio in `ℓʳ` gives a bounded embedding when
+`1/q = 1/p + 1/r`, with its explicit Hölder norm as constant. For Sobolev
+weights the finite-`r` reciprocal is summable exactly when `(s-t)r > 1`.
+This proves the coefficient estimate used in Appendix A.9; the separate
+fractional interval-Sobolev identification in that lemma remains to be proved.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

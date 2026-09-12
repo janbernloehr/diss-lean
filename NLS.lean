@@ -139,3 +139,6 @@ import NLS.Fourier.SobolevDistributionDerivative
 import NLS.SequenceSpaces.PairNormInfty
 import NLS.SequenceSpaces.WeightedPairNormInfty
 import NLS.Fourier.PairDistributionInfty
+import NLS.SequenceSpaces.ExponentEmbedding
+import NLS.SequenceSpaces.HolderEmbedding
+import NLS.Fourier.DistributionEmbeddings
