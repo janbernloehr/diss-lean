@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has fifty-seven modules and 569 named public theorems. All compile on the
+The library has fifty-eight modules and 580 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -52,6 +52,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.CentralSpectrum` | Finite central spectrum and boundary-convention independence; exact free lattice interval; free multiplicity `4N+2`; compact idempotent central algebraic projection, rank formula, and free rank |
 | `NLS.ZakharovShabat.CentralDeformation` | Half-integer-radius lattice gap; enlarged-circle geometry; exact spectral selection and whole central/circle projection equality; analytic central projection and total count `4K+2`, uniform in the potential and every larger cutoff |
 | `NLS.ZakharovShabat.CentralParity` | Signed parity index count; free parity projector equals filtered spectral cluster; finite rank and exact range intersection; analytic components; uniform `2N+2`/`2N` parity split with the total central count on one neighborhood |
+| `NLS.ZakharovShabat.PeriodicCounting` | One cutoff and neighborhood for localization, central and disk counts, parity, and analytic projections; unique high-disk classification; eigenvalue pairs with repetition and exact multiplicities |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
@@ -383,6 +384,27 @@ projection families share one open convex neighborhood and one threshold,
 valid for every larger cutoff. The physical Fourier interpretation and
 characteristic-function zero-order interpretation are still separate.
 
+**The coefficient-space localization and counting conclusions now share one
+cutoff and neighborhood.** `exists_uniform_periodicCountingData` gives a positive
+threshold and an open convex neighborhood containing the potential and zero.
+For every potential in that neighborhood and every larger cutoff, the record
+`PeriodicCountingData` supplies the exterior and boundary resolvents, central
+rank and multiplicity `4N+2`, high-disk rank and multiplicity two, and the parity
+conclusions for even-supported potentials. Central, parity-component, and high-disk
+projections are analytic on this same neighborhood.
+
+Distinct quarter-pi disks are disjoint, and every high disk is disjoint from
+the central box. Every spectral value belongs either to the finite central
+cluster or to exactly one high disk. Each high disk contains one double value
+or two distinct simple values; `disk_eigenvalue_pair` returns the corresponding
+unordered pair, allowing repetition. Root-space and eigenfunction parity follow
+from the same counting data.
+
+This uses Corollary 3.5's height-`N` central box. The overview's Theorem 1.1 uses
+a norm-dependent height; transferring that exact numerical convention, as well
+as the physical Fourier realization and pair norm, remains a separate obligation.
+The real-type clause (iv) is not yet proved.
+
 The actual unbounded realization is now defined as
 
 `unboundedOperator hp φ : PairSpace p →ₗ.[ℂ] PairSpace p`.
@@ -595,7 +617,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1178 declarations under `NLS`, including generated
+axioms. The current audit covers 1210 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -703,15 +725,18 @@ and odd rank zero), even cutoff two (ranks six/four), and odd cutoff three
 (ranks six/eight). Further checks exercise both signed free modes, arbitrary
 nonconstant even two-mode potentials, dimensions of the actual parity
 intersections, addition of both parity ranks to `4N+2`, and analyticity of the
-parity components on the shared neighborhood.
+parity components on the shared neighborhood. Unified counting checks cover
+negative adjacent disks, central/high-disk separation, every larger cutoff along
+`[0,φ]` at `p=3`, unique exterior disk indices at `p=1`, the free double-value
+case, actual spectral membership and multiplicities of the returned eigenvalue
+pair, and a common neighborhood for analytic central and high-disk projections.
 
 ## Next milestones
 
-1. Combine localization, high-frequency multiplicities, and central counts
-   with one cutoff and neighborhood for Proposition 1.1(i–iii).
-   Identify the central projection with the rectangular contour integral.
-2. Prove the real-type spectral assertion and analytic symmetric eigenvalue
+1. Prove the real-type spectral assertion and analytic symmetric eigenvalue
    combinations in Lemma 3.7.
+2. Identify the central projection with the rectangular contour integral and
+   transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, pair-norm comparison, and compatibility with physical multiplication.
 

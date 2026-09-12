@@ -1462,3 +1462,80 @@ example (φ : PairSpace 3) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ r :
   exact ⟨N₀, fun N hN r => (han N hN).2 r φ hφ⟩
 
 end CentralParityChecks
+
+section PeriodicCountingChecks
+open Complex
+set_option autoImplicit false
+
+example : Disjoint (Metric.ball ((Real.pi : ℂ) * (-3 : ℤ)) (Real.pi / 4))
+    (Metric.ball ((Real.pi : ℂ) * (-2 : ℤ)) (Real.pi / 4)) :=
+  periodicDisks_disjoint (-3) (-2) (by norm_num)
+
+example : Disjoint (centralSpectralBox 3)
+    (Metric.ball ((Real.pi : ℂ) * (-4 : ℤ)) (Real.pi / 4)) :=
+  centralBox_disjoint_periodicDisk 3 (by norm_num) (-4) (by norm_num)
+
+-- The same cutoff works for every larger central box and every point along
+-- the real deformation from zero to a non-Hilbert potential.
+example (φ : PairSpace 3) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ t : ℝ, t ∈ Set.Icc 0 1 →
+    PeriodicCountingData (by simp) (t • φ) N := by
+  obtain ⟨N₀, U, _, _, hconv, hφ, h0, _, _, h⟩ := exists_uniform_periodicCountingData (by simp) φ
+  exact ⟨N₀, fun N hN t ht => h (t • φ) (hconv.smul_mem_of_zero_mem h0 hφ ht) N hN⟩
+
+-- At p=1, every spectral value outside the chosen central box has exactly one
+-- high-frequency disk index, with the same cutoff used by the counting data.
+example (φ : PairSpace 1) : ∃ N : ℕ, ∀ z ∈ periodicSpectrum (by simp) φ,
+    z ∉ centralSpectralBox N → ∃! n : ℤ, N < n.natAbs ∧
+      z ∈ Metric.ball ((Real.pi : ℂ) * n) (Real.pi / 4) := by
+  obtain ⟨N, U, _, _, _, hφ, _, _, _, h⟩ := exists_uniform_periodicCountingData (by simp) φ
+  let data := h φ hφ N le_rfl
+  refine ⟨N, ?_⟩
+  intro z hz hout
+  rcases (data.mem_spectrum_iff_central_or_disk z).mp hz with hc | ⟨n, hn, huniq⟩
+  · exact False.elim (hout ((mem_centralPeriodicSpectrum (by simp) φ N z).mp hc).2)
+  · refine ⟨n, ⟨hn.1, ((mem_enclosedPeriodicSpectrum (by simp) φ _ z _).mp hn.2).2⟩, ?_⟩
+    intro m hm
+    exact huniq m ⟨hm.1, (mem_enclosedPeriodicSpectrum (by simp) φ _ z _).mpr ⟨hz, hm.2⟩⟩
+
+-- Free disks have one double spectral value, consistent with total multiplicity two.
+example : ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs → ∃ a : ℂ,
+    enclosedPeriodicSpectrum (p := 1) (by simp) 0 ((Real.pi : ℂ) * n) (Real.pi / 4) = {a} ∧
+      periodicAlgebraicMultiplicity (p := 1) (by simp) 0 a = 2 := by
+  obtain ⟨N, U, _, _, _, h0, _, _, _, h⟩ :=
+    exists_uniform_periodicCountingData (p := 1) (by simp) 0
+  refine ⟨N, ?_⟩
+  intro n hn
+  have hs := enclosedPeriodicSpectrum_zero (p := 1) (by simp) n
+    (by positivity : 0 < Real.pi / 4) (by linarith [Real.pi_pos])
+  refine ⟨(Real.pi : ℂ) * n, hs, ?_⟩
+  simpa only [hs, Finset.sum_singleton] using (h 0 h0 N le_rfl).disk_multiplicity n hn
+
+-- The eigenvalue pair returned for each high disk consists of actual spectral
+-- values; coincidence is allowed and the algebraic multiplicities are retained.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs → ∃ a b : ℂ,
+    a ∈ periodicSpectrum (by simp) φ ∧ b ∈ periodicSpectrum (by simp) φ ∧
+      enclosedPeriodicSpectrum (by simp) φ ((Real.pi : ℂ) * n) (Real.pi / 4) = {a, b} ∧
+      (if a = b then periodicAlgebraicMultiplicity (by simp) φ a = 2 else
+        periodicAlgebraicMultiplicity (by simp) φ a = 1 ∧ periodicAlgebraicMultiplicity (by simp) φ b = 1) := by
+  obtain ⟨N, U, _, _, _, hφ, _, _, _, h⟩ := exists_uniform_periodicCountingData (by simp) φ
+  refine ⟨N, ?_⟩
+  intro n hn
+  obtain ⟨a, b, hs, hm⟩ := (h φ hφ N le_rfl).disk_eigenvalue_pair n hn
+  refine ⟨a, b, ?_, ?_, hs, hm⟩
+  · have ha : a ∈ enclosedPeriodicSpectrum (by simp) φ ((Real.pi : ℂ) * n) (Real.pi / 4) := by
+      rw [hs]; simp
+    exact ((mem_enclosedPeriodicSpectrum (by simp) φ _ a _).mp ha).1
+  · have hb : b ∈ enclosedPeriodicSpectrum (by simp) φ ((Real.pi : ℂ) * n) (Real.pi / 4) := by
+      rw [hs]; simp
+    exact ((mem_enclosedPeriodicSpectrum (by simp) φ _ b _).mp hb).1
+
+-- The exterior analytic domain and both projection families use one neighborhood.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), φ ∈ U ∧
+    AnalyticOnNhd ℂ (fun ψ => centralSpectralProjection (by simp) ψ N) U ∧
+    (∀ n : ℤ, N < n.natAbs → AnalyticOnNhd ℂ
+      (fun ψ => resolventCircleIntegral (by simp) ψ ((Real.pi : ℂ) * n) (Real.pi / 4)) U) ∧
+    ∀ ψ ∈ U, AnalyticOnNhd ℂ (resolvent (by simp) ψ) (spectralExterior N (Real.pi / 4)) := by
+  obtain ⟨N, U, _, _, _, hφ, _, hc, hd, h⟩ := exists_uniform_periodicCountingData (by simp) φ
+  exact ⟨N, U, hφ, (hc N le_rfl).1, hd, fun ψ hψ => (h ψ hψ N le_rfl).analyticOnNhd_exterior⟩
+
+end PeriodicCountingChecks

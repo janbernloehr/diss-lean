@@ -58,7 +58,13 @@ analytically on the potential; its rank and central algebraic multiplicity are
 `4N+2`, uniformly for every sufficiently large cutoff. For even-supported
 potentials, the cutoff’s parity contributes `2N+2` and the other parity `2N`;
 both parity-component projections are analytic on the same neighborhood.
-Rectangular contour identification and the main dissertation theorems remain future work.
+All localization and counting conclusions now use one cutoff and one open
+convex neighborhood, valid for every larger cutoff. Each noncentral spectral
+value has a unique high-disk index; each disk supplies an eigenvalue pair,
+allowing a repeated double value. The central box uses Corollary 3.5's height-`N`
+convention. The overview theorem's exact norm-dependent height, real-type
+assertion, rectangular contour identification, and main dissertation theorems
+remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -132,6 +138,8 @@ spectral selection from geometric containment, exercise negative endpoint and
 excluded disks, and verify the central count along the entire segment `[0,φ]`.
 Central parity checks cover zero, even, and odd cutoffs, negative residue
 representatives, nonconstant even potentials, and addition to the total count.
+Unified counting checks cover unique disk assignment, repeated and distinct
+value alternatives, spectral membership, and common cutoffs and analytic domains.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

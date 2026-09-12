@@ -213,8 +213,16 @@ space, so their dimensions are `2N+2` and `2N`, with the larger part switching
 with the cutoff’s parity. The total count, parity counts, and analytic
 projection families share one neighborhood and one cutoff.
 
-Next combine the localization and multiplicity statements with common data,
-then prove the real-type spectral assertion and Lemma 3.7. Identification with
-the rectangular contour integral remains open.
+The localization and counting conclusions are now assembled in
+`PeriodicCountingData`. One open convex neighborhood and threshold support all
+larger cutoffs, central and high-disk multiplicities, parity conclusions, and
+analytic projection families. Every noncentral spectral value has a unique disk
+index, and each high disk admits a pair of eigenvalues counted with multiplicity,
+allowing repetition for a double value.
+
+Next prove the real-type spectral assertion and Lemma 3.7. Identification with
+the rectangular contour integral remains open. The unified statement uses
+Corollary 3.5's height-`N` box; the overview theorem's exact norm-dependent height
+still requires a separate transfer.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.
