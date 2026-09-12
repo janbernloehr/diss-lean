@@ -355,9 +355,15 @@ boundary spaces, are bounded and analytic there, and are uniquely determined
 by the finite Fourier formulas. At `p=2` they equal the earlier Parseval maps.
 The coefficient statement of Lemma 4.3 is therefore proved.
 
-Next construct the classical `H¹` / `FL^{1,2}` identifications of Lemmas 4.1–4.2
-and transfer the coefficient counting and analytic-eigenvalue results to the
-original period-one potentials. Both boundary spectral problems use the
+The classical domain identifications in Lemma 4.2 are now proved. Actual
+functions on `[0,1]` form complex Banach spaces with their exact physical
+component-sum `H¹` norm. Signed extension and physical restriction are continuous
+linear inverses, with operator bounds `1` and `√2 π`. Membership agrees with the
+original equal/opposite component endpoint conditions, including odd modes.
+
+Next prove physical multiplication compatibility and operator intertwining in
+Lemma 4.1, then transfer the coefficient counting and analytic-eigenvalue results
+to the original period-one potentials. Both boundary spectral problems use the
 Dirichlet extension of the potential; the boundary sign selects the eigenfunction
 extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.
@@ -366,5 +372,6 @@ is not assumed here.
 Identification with the rectangular contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.
-Physical-space interpretation, period-one embedding, and comparison with the
-dissertation's pair norm remain separate proof obligations.
+The general Fourier/distribution interpretation, physical period-one embedding,
+and comparison with the dissertation's potential pair norm remain separate
+proof obligations.

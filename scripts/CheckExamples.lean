@@ -3518,3 +3518,77 @@ example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .dirichlet f)
 
 end
 end SobolevEnergyChecks
+
+
+namespace IntervalEquivalenceChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+-- Both original physical domains are complex Banach spaces.
+example : CompleteSpace (ClassicalIntervalDomain .dirichlet) := inferInstance
+example : CompleteSpace (ClassicalIntervalDomain .neumann) := inferInstance
+example : NormedSpace ℂ (ClassicalIntervalDomain .neumann) := inferInstance
+
+-- The actual interval values carry the pointwise linear operations.
+example (b : BoundaryCondition) (u v : ClassicalIntervalDomain b) (c : ℂ)
+    (x : Icc (0 : ℝ) 1) : (u + c • v).val x = u.val x + c • v.val x := rfl
+
+-- Complex linearity is available through the bundled equivalence.
+example (u v : ClassicalIntervalDomain .neumann) :
+    classicalIntervalEquiv .neumann (u + Complex.I • v) =
+      classicalIntervalEquiv .neumann u + Complex.I • classicalIntervalEquiv .neumann v := by
+  simp only [map_add, map_smul]
+
+-- Original endpoint conditions and continuity are properties of the stored interval functions.
+example (u : ClassicalIntervalDomain .neumann) : Continuous u.val :=
+  continuous_classicalIntervalDomain .neumann u
+example (u : ClassicalIntervalDomain .neumann) :
+    (u.val ⟨1, by norm_num⟩).1 = -(u.val ⟨1, by norm_num⟩).2 := by
+  simpa only [extensionSign, neg_one_mul] using classicalIntervalDomain_right .neumann u
+
+private theorem constant_neumann : HasClassicalIntervalDomain .neumann (fun _ => ((1 : ℂ), -1)) := by
+  constructor
+  · constructor
+    · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => (1 : ℂ))).contDiffOn.absolutelyContinuousOnInterval
+    · simp
+  · constructor
+    · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => (-1 : ℂ))).contDiffOn.absolutelyContinuousOnInterval
+    · simp
+  · norm_num [extensionSign]
+  · norm_num [extensionSign]
+
+-- The norm really is the physical component-sum norm, not the maximum coefficient norm.
+example : ‖classicalDomainOfFunction .neumann (fun _ => ((1 : ℂ), -1)) constant_neumann‖ = Real.sqrt 2 := by
+  rw [norm_classicalDomainOfFunction]
+  norm_num [classicalIntervalNorm, classicalIntervalEnergy, intervalH1Energy]
+
+-- The forward map returns the actual normalized physical Fourier integral, even at odd indices.
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .dirichlet f) :
+    (classicalIntervalEquiv .dirichlet (classicalDomainOfFunction .dirichlet f hf)).val.2.val (-7) =
+      periodTwoCoefficient (fun x => (intervalExtension .dirichlet f x).2) (-7) := by
+  rw [classicalIntervalEquiv_ofFunction]
+  exact classicalIntervalExtension_snd .dirichlet f hf (-7)
+
+-- The inverse retains a negative odd Neumann mode without assuming period-one periodicity.
+example : classicalIntervalEquiv .neumann
+    ((classicalIntervalEquiv .neumann).symm ⟨neumannMode (-7), neumannMode_mem (-7)⟩) =
+      ⟨neumannMode (-7), neumannMode_mem (-7)⟩ :=
+  (classicalIntervalEquiv .neumann).apply_symm_apply _
+
+-- Original interval values, including endpoints, survive the continuous round trip.
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .dirichlet f)
+    (x : Icc (0 : ℝ) 1) :
+    ((classicalIntervalEquiv .dirichlet).symm
+      (classicalIntervalEquiv .dirichlet (classicalDomainOfFunction .dirichlet f hf))).val x = f x.val := by
+  rw [ContinuousLinearEquiv.symm_apply_apply]
+  rfl
+
+-- Both operator-norm estimates use the physical normalization.
+example : ‖(classicalIntervalEquiv .dirichlet).toContinuousLinearMap‖ ≤ 1 :=
+  norm_classicalIntervalEquiv_le .dirichlet
+example : ‖(classicalIntervalEquiv .neumann).symm.toContinuousLinearMap‖ ≤ Real.sqrt 2 * Real.pi :=
+  norm_classicalIntervalEquiv_symm_le .neumann
+
+end
+end IntervalEquivalenceChecks

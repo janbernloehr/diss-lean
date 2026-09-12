@@ -149,9 +149,12 @@ interval pair has a unique weighted boundary representative; equality depends
 only on values on `[0,1]`. The physical Sobolev energy now satisfies exact Parseval
 and reflection identities. The standard interval pair norm obeys
 `‖extension f‖ ≤ ‖f‖H¹ ≤ √2 π ‖extension f‖`, with the length-two normalization
-and derivative factor `π` retained. Packaging this correspondence as a normed
-linear equivalence, Fourier/distribution realization, and physical multiplication
-remain needed for the full spectral transfer.
+and derivative factor `π` retained. Lemma 4.2 is now bundled as a continuous
+linear equivalence from each original interval domain, carrying exactly this
+physical `H¹` norm, onto its weighted boundary domain. Both interval spaces are
+complete. The inverse evaluates the physical representative on `[0,1]`.
+Physical operator intertwining, Fourier/distribution realization, and physical
+multiplication remain needed for the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
