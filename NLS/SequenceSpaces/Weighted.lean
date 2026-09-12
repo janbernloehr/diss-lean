@@ -83,6 +83,18 @@ instance : Module ℂ (WeightedCoeff w p) :=
 @[simp]
 theorem zero_val (n : ℤ) : (0 : WeightedCoeff w p).val n = 0 := rfl
 
+@[simp] theorem add_val (a b : WeightedCoeff w p) (n : ℤ) :
+    (a + b).val n = a.val n + b.val n := rfl
+
+@[simp] theorem neg_val (a : WeightedCoeff w p) (n : ℤ) :
+    (-a).val n = -a.val n := rfl
+
+@[simp] theorem sub_val (a b : WeightedCoeff w p) (n : ℤ) :
+    (a - b).val n = a.val n - b.val n := rfl
+
+@[simp] theorem smul_val (c : ℂ) (a : WeightedCoeff w p) (n : ℤ) :
+    (c • a).val n = c * a.val n := rfl
+
 /-- Multiplying coefficients by the weight is an algebraic linear equivalence. -/
 noncomputable def weightEquiv : WeightedCoeff w p ≃ₗ[ℂ] Coeff p where
   toFun a := ⟨fun n => (w n : ℂ) * a.val n, a.property⟩

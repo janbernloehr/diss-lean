@@ -74,6 +74,12 @@ the first and second traces give the actual eigenvalue midpoint and squared
 gap, analytic on the common potential neighborhood for all high-frequency disks.
 The proof includes repeated eigenvalues and nontrivial Jordan blocks, without
 choosing analytic branches of individual eigenvalues.
+Section 4's Dirichlet and Neumann coefficient spaces are now constructed as
+closed complementary subspaces, including their weighted domains and contractive
+projections. The operator preserves both spaces for already-reflected potentials;
+its bounded restrictions and the exact signed free-mode and potential-action
+formulas are proved. Identification with physical boundary conditions and the
+interval-extension estimates in Lemmas 4.1–4.3 remain open.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -160,6 +166,14 @@ two-dimensional reference ranges at `p=3`, and domain-norm analyticity at `p=1`.
 Symmetric-eigenvalue checks cover a nontrivial Jordan block, distinct eigenvalues,
 negative free indices, the source normalization `γ²/2`, the `p=1` endpoint,
 and exclusion of a free eigenvalue outside the selected contour.
+
+Boundary-space checks cover reflection without conjugation, negative Sobolev
+regularity at `p=∞`, the complementary decomposition, negative free indices,
+and separation of the two boundary conditions. A nonconstant complex potential
+has the exact positive Dirichlet and negative Neumann coupling from index `-3`
+to `5`. Further checks cover restricted norm bounds, odd-frequency reflected
+potentials and projection intertwining at `p=1`, and failure of invariance for
+a potential lacking reflection symmetry.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

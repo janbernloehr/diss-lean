@@ -244,8 +244,18 @@ midpoint and squared-gap identities, including repeated values and Jordan blocks
 One counting neighborhood supports analyticity for every sufficiently high index;
 the source normalization `γ²/2` follows from the centered-square trace identity.
 
-Next audit and implement Section 4's Fourier formulation of the Dirichlet and
-Neumann boundary conditions and operators. Identification with the rectangular
+Section 4's coefficient boundary spaces are now constructed. Frequency reflection
+is an isometry at every Sobolev regularity, and the positive/negative reflected
+graphs are closed complementary subspaces with isometric amplitude coordinates
+and contractive projections. Both signed boundary modes have free eigenvalue
+`π n`. For already-reflected Dirichlet potentials, Lemma 4.4's operator invariance,
+restricted bounded operators, projection intertwining, and the opposite signs
+in the potential's mode action are proved for every finite Banach exponent.
+
+Next continue with the Dirichlet/Neumann resolvents and spectral counting.
+The physical interval-extension maps of Lemmas 4.1–4.2 and the discrete Hilbert
+transform estimate of Lemma 4.3 still need proofs. The period-two projections
+just constructed are not substitutes for those extension maps. Identification with the rectangular
 contour integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
 the overview theorem's exact norm-dependent height
 still requires a separate transfer.

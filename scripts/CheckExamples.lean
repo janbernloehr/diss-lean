@@ -1799,3 +1799,97 @@ example : ¬ Module.End.HasEigenvalue
   simp [hs, Real.pi_ne_zero]
 
 end SymmetricEigenvalueChecks
+
+section BoundarySpaceChecks
+
+set_option autoImplicit false
+open Complex
+
+-- Frequency reflection does not conjugate a complex amplitude.
+example : Coeff.reflection (lp.single (3 : ℝ≥0∞) 2 I) (-2) = I := by simp
+
+-- Sobolev reflection remains an isometry at negative regularity and p=infinity.
+example (a : WeightedCoeff (Weight.sobolev (-2)) ⊤) :
+    ‖WeightedCoeff.reflection (-2) a‖ = ‖a‖ := (WeightedCoeff.reflection (-2)).norm_map a
+
+example (f : PairSpace ⊤) : dirichletProjection f + neumannProjection f = f :=
+  dirichlet_neumann_decomposition f
+
+-- Both boundary conditions retain the signed negative spectral index.
+example : freeOperator (neumannMode (p := 3) (-3)) =
+    (-3 * (Real.pi : ℂ)) • domainInclusion (neumannMode (-3)) := by
+  simpa [mul_comm] using freeOperator_neumannMode (p := 3) (-3)
+
+-- Opposite boundary spaces intersect only at zero, even at a nonzero mode.
+example : domainInclusion (dirichletMode (p := 3) (-3)) ∉ neumannSubspace (p := 3) := by
+  intro hn
+  have hc := (mem_neumannSubspace _).mp hn 3
+  norm_num [dirichletMode, positiveMode, negativeMode] at hc
+
+-- A nonconstant reflected potential with a complex amplitude.
+def boundaryTestPotential : PairSpace 3 := (lp.single 3 (-2) I, lp.single 3 2 I)
+
+theorem boundaryTestPotential_mem : boundaryTestPotential ∈ dirichletSubspace := by
+  rw [mem_dirichletSubspace]
+  intro n
+  simp [boundaryTestPotential, lp.single_apply, Pi.single_apply,
+    show n = -2 ↔ -n = 2 by omega]
+
+example : potentialOperator (by simp) boundaryTestPotential (dirichletMode (-3)) =
+    I • domainInclusion (dirichletMode 5) := by
+  rw [potentialOperator_dirichletMode _ _ boundaryTestPotential_mem]
+  simp only [dirichletMode, positiveMode, negativeMode, Prod.mk_add_mk, zero_add, add_zero,
+    domainInclusion_apply, scalarInclusion_scalarMode]
+  apply Prod.ext <;> ext k
+  · change (Coeff.shift 3 (lp.single 3 2 I)) (-k) = I * (lp.single 3 (-5) 1 : Coeff 3) k
+    simp [Coeff.shift_apply, lp.single_apply, Pi.single_apply,
+      show -k - 3 = 2 ↔ k = -5 by omega]
+  · change (Coeff.shift 3 (lp.single 3 2 I)) k = I * (lp.single 3 5 1 : Coeff 3) k
+    simp [Coeff.shift_apply, lp.single_apply, Pi.single_apply,
+      show k - 3 = 2 ↔ k = 5 by omega]
+
+example : potentialOperator (by simp) boundaryTestPotential (neumannMode (-3)) =
+    -I • domainInclusion (neumannMode 5) := by
+  rw [potentialOperator_neumannMode _ _ boundaryTestPotential_mem]
+  simp only [neumannMode, positiveMode, negativeMode, Prod.mk_sub_mk, zero_sub, sub_zero,
+    domainInclusion_apply, map_neg, scalarInclusion_scalarMode]
+  apply Prod.ext <;> ext k
+  · change -(-(Coeff.shift 3 (lp.single 3 2 I)) (-k)) = -I * (-(lp.single 3 (-5) 1 : Coeff 3) k)
+    simp [Coeff.shift_apply, lp.single_apply, Pi.single_apply,
+      show -k - 3 = 2 ↔ k = -5 by omega]
+    split_ifs <;> simp
+  · change -(Coeff.shift 3 (lp.single 3 2 I)) k = -I * (lp.single 3 5 1 : Coeff 3) k
+    simp [Coeff.shift_apply, lp.single_apply, Pi.single_apply,
+      show k - 3 = 2 ↔ k = 5 by omega]
+    split_ifs <;> simp
+
+example (f : weightedNeumannSubspace (p := 3) 1) :
+    ‖neumannOperator (by simp) boundaryTestPotential boundaryTestPotential_mem f‖ ≤
+    (Real.pi + WeightedCoeff.sobolevEmbeddingConstant 3 (by simp) * ‖boundaryTestPotential‖) * ‖f‖ :=
+  norm_neumannOperator_apply_le _ _ _ _
+
+-- Dirichlet symmetry is essential: a one-sided constant potential breaks it.
+example : operator (p := 1) (by simp) (lp.single 1 0 1, 0) (dirichletMode 0) ∉
+    dirichletSubspace := by
+  intro h
+  have hc := (mem_dirichletSubspace _).mp h 0
+  norm_num [operator_fst_apply, operator_snd_apply, dirichletMode, positiveMode,
+    negativeMode, lp.single_apply, Pi.single_apply, mul_ite] at hc
+
+example (f : Domain 1) : domainInclusion (domainNeumannProjection f) =
+    neumannProjection (domainInclusion f) := domainInclusion_neumannProjection f
+
+-- Already-reflected potentials may contain odd frequencies.
+example : operator (p := 1) (by simp)
+    (Coeff.reflection (lp.single 1 1 I), lp.single 1 1 I) (dirichletMode 0) ∈
+    dirichletSubspace (p := 1) := by
+  apply operator_mem_dirichlet (by simp) _ _ _ (dirichletMode_mem 0)
+  simp
+
+-- The restriction and projection identities also cover the p=1 endpoint.
+example (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace) (f : Domain 1) :
+    neumannProjection (operator (by simp) φ f) =
+      operator (by simp) φ (domainNeumannProjection f) :=
+  operator_neumannProjection (by simp) φ hφ f
+
+end BoundarySpaceChecks

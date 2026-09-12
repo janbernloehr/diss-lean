@@ -59,3 +59,4 @@ import NLS.ZakharovShabat.PeriodicCounting
 import NLS.ZakharovShabat.RealType
 import NLS.ZakharovShabat.SpectralReduction
 import NLS.ZakharovShabat.SymmetricEigenvalues
+import NLS.ZakharovShabat.BoundaryOperators

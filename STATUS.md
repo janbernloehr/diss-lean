@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has sixty-five modules and 648 named public theorems. All compile on the
+The library has sixty-nine modules and 719 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -72,6 +72,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.SpectralLocalization` | Exact central boxes and high-frequency disks; exterior coverage including vertical edges; common open convex potential neighborhoods; Corollary 3.5 compact analytic resolvent and spectral enclosure; retained uniform positive integer height and strip bounds, including height equality |
 | `NLS.SequenceSpaces.Parity` | Contractive residue-class Fourier projections; coefficient and single-mode formulas; closed complementary even/odd subspaces; even-potential convolution commutation and invariance; parity masks on arbitrary weighted coefficient spaces |
 | `NLS.ZakharovShabat.PeriodicParity` | Closed complementary pair parity spaces and closed domain parity spaces; domain/base projection intertwining; Lemma 3.6; spectral-pencil, domain-resolvent, base-resolvent, and contour-projection parity preservation; signed free-mode parity |
+| `NLS.SequenceSpaces.Reflection` | Frequency reversal as a linear isometry, involution, and convolution identity; reflection for every real Sobolev weight |
+| `NLS.FunctionalAnalysis.ReflectionSplit` | Closed complementary positive/negative graphs of an isometry; isometric amplitude coordinates; contractive complementary projections and their algebraic identities |
+| `NLS.ZakharovShabat.BoundarySpaces` | Section 4 equations (1.8)–(1.9): closed Dirichlet/Neumann coefficient spaces at every Sobolev regularity; amplitude isometries; domain/base projection compatibility; nonzero signed free boundary modes |
+| `NLS.ZakharovShabat.BoundaryOperators` | Coefficient form of Lemma 4.4 for already-reflected potentials: both invariant subspaces, bounded restricted operators, projection intertwining, and exact positive/negative mode-action signs |
 
 ## Current mathematical milestone
 
@@ -481,6 +485,30 @@ counting data, and eigenvalue pairs with the correct algebraic multiplicities.
 For the free potential, the midpoint is `π n` and the squared gap is zero
 at every signed index.
 
+**Section 4's coefficient boundary spaces and operator invariance are proved.**
+With frequency reflection `J a(n) = a(-n)`, Dirichlet amplitudes embed as
+`(J a,a)` and Neumann amplitudes as `(-J b,b)`. Both graphs are closed and
+complementary, with isometric scalar amplitude coordinates in the maximum pair
+norm. Their projections are contractive. The same construction works for every
+real Sobolev regularity, including the one-derivative operator domain, and the
+domain projections commute with inclusion into the base space.
+
+The free modes `Eₙ^dir = eₙ⁺+eₙ⁻` and `Eₙ^neu = eₙ⁺-eₙ⁻` are nonzero and have
+free eigenvalue `π n`. For a potential already satisfying `φ₋ = J φ₊`, potential
+multiplication sends these modes to the Dirichlet embedding of
+`shift(-n) φ₊`, respectively the negative of the Neumann embedding of that
+amplitude. The full operator preserves both spaces and intertwines their
+projections. Its restrictions are bounded from the respective weighted domains
+into the base subspaces, with the existing explicit operator bound.
+
+This proves the coefficient content of Lemma 4.4 for every finite Banach
+exponent, including `p=1`, under the already-reflected-potential hypothesis.
+It does not construct the source's interval-extension maps. Those maps,
+the physical endpoint interpretation and the isomorphisms in Lemmas 4.1–4.2,
+and the discrete-Hilbert-transform estimate in Lemma 4.3 remain open. In
+particular, projecting period-two data here is distinct from extending
+period-one data by reflection; the latter estimate requires `1<p<∞`.
+
 The actual unbounded realization is now defined as
 
 `unboundedOperator hp φ : PairSpace p →ₗ.[ℂ] PairSpace p`.
@@ -693,7 +721,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1364 declarations under `NLS`, including generated
+axioms. The current audit covers 1524 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -826,10 +854,19 @@ the free double value at a negative index, analyticity of the exact source
 normalization `γ²/2` on the common convex neighborhood at `p=3`, eigenvalue-pair
 identification at `p=1`, and exclusion of a free eigenvalue outside its contour.
 
+Boundary-space checks cover reflection without conjugation, negative Sobolev
+regularity at `p=∞`, the complementary decomposition, negative free indices,
+and separation of the two boundary conditions. A nonconstant complex potential
+has the exact positive Dirichlet and negative Neumann coupling from index `-3`
+to `5`. Further checks cover restricted norm bounds, odd-frequency reflected
+potentials and projection intertwining at `p=1`, and failure of invariance for
+a potential lacking reflection symmetry.
+
 ## Next milestones
 
-1. Audit and implement Section 4's Fourier formulation of Dirichlet and Neumann
-   boundary conditions and operators.
+1. Continue Section 4 with the resolvents and spectral counting of the restricted
+   Dirichlet and Neumann operators. Prove the physical interval-extension maps
+   and the discrete Hilbert transform bound needed in Lemmas 4.1–4.3.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one
