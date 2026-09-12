@@ -6595,3 +6595,140 @@ example : ∃! a : WeightedCoeff (Weight.sobolev (1 / 4)) 2,
     intervalRamp lengthFourRamp_memLp).mp
   exact Fourier.fractionalIntervalEnergy_lt_top_of_regularity (by norm_num) (by norm_num) (by norm_num)
     intervalRamp (lengthFourRamp_half_energy_le.trans_lt (by norm_num))
+
+-- The intrinsic quotient retains the physical interval norm and permits unequal endpoints at half regularity.
+section IntrinsicSobolevSpaceChecks
+open Fourier.IntrinsicIntervalSobolev
+local instance : Fact ((0 : ℝ) < 2) := ⟨by norm_num⟩
+local instance : Fact ((0 : ℝ) < 4) := ⟨by norm_num⟩
+private theorem intrinsic_sqrt_four : Real.sqrt 4 = 2 := by
+  rw [Real.sqrt_eq_iff_eq_sq (by norm_num) (by norm_num)]
+  norm_num
+
+-- The quotient kernel identity includes diagonal points at the exceptional exponent.
+example : Fourier.fractionalDifferenceQuotient (-1 / 2) intervalRamp (1, 1) = 0 := by
+  norm_num [Fourier.fractionalDifferenceQuotient]
+
+-- The physical square norm of an imaginary negative mode scales with interval length.
+example : Fourier.intervalSquareEnergy 4
+    (Fourier.intervalPullback 4 (Fourier.l2Synthesis (lp.single 2 (-3) Complex.I))) = 4 := by
+  rw [Fourier.intervalSquareEnergy_intervalPullback (by norm_num), Fourier.norm_l2Synthesis,
+    lp.norm_single (by norm_num)]
+  norm_num
+
+-- Both inverse directions operate on actual L² quotient classes.
+example (f : Fourier.CircleL2) :
+    Fourier.intervalL2Class (by norm_num) (Fourier.intervalPullback 4 f)
+      (Fourier.memLp_intervalPullback (by norm_num) f) = f :=
+  Fourier.intervalL2Class_intervalPullback _ _
+
+example : Fourier.intervalPullback 4 (Fourier.intervalL2Class (by norm_num) intervalRamp lengthFourRamp_memLp)
+    =ᵐ[MeasureTheory.volume.restrict (Set.Ioo 0 4)] intervalRamp :=
+  Fourier.intervalPullback_intervalL2Class _ _ _
+
+private def intrinsicImaginaryConstant : Fourier.IntrinsicIntervalSobolev (1 / 2) 4 :=
+  ofFunction (fun _ => Complex.I) (MeasureTheory.memLp_const _) (by simp)
+
+-- A constant has vanishing fractional seminorm, but physical full norm sqrt(4)=2.
+example : ‖intrinsicImaginaryConstant‖ = 2 := by
+  rw [intrinsicImaginaryConstant, norm_ofFunction]
+  norm_num [Fourier.intrinsicIntervalSize, Fourier.intrinsicIntervalEnergy,
+    Fourier.intervalSquareEnergy, Real.volume_Ioo]
+  exact intrinsic_sqrt_four
+
+example : quotient intrinsicImaginaryConstant = 0 := by
+  apply norm_eq_zero.mp
+  have h := Fourier.ofReal_norm_sq_fractionalDifferenceQuotient_toLp (1 / 2) 4 _
+    (Fourier.measurable_intervalPullback 4 intrinsicImaginaryConstant.val) intrinsicImaginaryConstant.property
+  have he : Fourier.intervalPullback 4 intrinsicImaginaryConstant.val
+      =ᵐ[MeasureTheory.volume.restrict (Set.Ioo 0 4)] (fun _ => Complex.I) :=
+    ofFunction_reconstruct _ _ _
+  rw [Fourier.fractionalIntervalEnergy_congr he] at h
+  change ENNReal.ofReal (‖quotient intrinsicImaginaryConstant‖ ^ 2) = _ at h
+  simp only [Fourier.fractionalIntervalEnergy_const, ENNReal.ofReal_eq_zero] at h
+  nlinarith [norm_nonneg (quotient intrinsicImaginaryConstant)]
+
+private def intrinsicHalfRamp : Fourier.IntrinsicIntervalSobolev (1 / 2) 4 :=
+  ofFunction intervalRamp lengthFourRamp_memLp (lengthFourRamp_half_energy_le.trans_lt (by norm_num))
+
+-- The graph norm is exactly the original ramp's intrinsic size, with no periodic boundary requirement.
+example : intervalRamp 0 ≠ intervalRamp 4 ∧
+    ‖intrinsicHalfRamp‖ = Fourier.intrinsicIntervalSize (1 / 2) 4 intervalRamp := by
+  refine ⟨by norm_num [intervalRamp], ?_⟩
+  exact norm_ofFunction _ _ _
+
+example (f : Fourier.IntrinsicIntervalSobolev (1 / 3) 4) :
+    ‖f‖ ^ 2 = 4 * ‖f.val‖ ^ 2 + ‖quotient f‖ ^ 2 := norm_sq f
+
+-- The normalized L² inclusion has the concrete factor one half on length four.
+example (f : Fourier.IntrinsicIntervalSobolev (1 / 2) 4) : ‖toL2Continuous f‖ ≤ (1 / 2 : ℝ) * ‖f‖ := by
+  have h := norm_toL2_le f
+  norm_num [intrinsic_sqrt_four] at h
+  exact h
+
+-- The full sequence map, rather than each scalar coordinate separately, is continuous.
+example : Continuous (halfFourierEmbedding (L := 4) (by norm_num : (1 : ℝ) < 6 / 5)) :=
+  (halfFourierEmbedding _).continuous
+
+example : Function.Injective (halfFourierEmbedding (L := 4) (by norm_num : (1 : ℝ) < 6 / 5)) :=
+  halfFourierEmbedding_injective _
+
+example (n : ℤ) : halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicHalfRamp n =
+    Fourier.intervalFourierCoefficient 4 intervalRamp n := halfFourierEmbedding_ofFunction _ _ _ _ _
+
+-- The critical map is complex linear on actual intrinsic classes.
+example : halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) (Complex.I • intrinsicHalfRamp + intrinsicImaginaryConstant) =
+    Complex.I • halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicHalfRamp +
+      halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicImaginaryConstant := by
+  simp only [map_add, map_smul]
+
+example : ‖halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicHalfRamp‖ ≤
+    (Fourier.halfIntervalFourierLebesgueBoundConstant (by norm_num : (1 : ℝ) < 6 / 5) *
+      Real.sqrt (Fourier.intrinsicDilationConstant (1 / 2) 2).toReal) * ‖intrinsicHalfRamp‖ := by
+  simpa only [show (4 : ℝ) / 2 = 2 by norm_num] using norm_halfFourierEmbedding_le
+    (by norm_num : (1 : ℝ) < 6 / 5) intrinsicHalfRamp
+
+-- Subcritical normed-space embedding retains the q=3/2 conclusion for the nonperiodic ramp.
+example (n : ℤ) : fourierEmbedding (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+    (by norm_num : 1 / ((1 / 4 : ℝ) + 1 / 2) < 3 / 2)
+    (ofFunction intervalRamp intervalRamp_memLp (intervalRamp_energy_le.trans_lt (by norm_num))) n =
+      Fourier.intervalFourierCoefficient 2 intervalRamp n := fourierEmbedding_ofFunction _ _ _ _ _ _ _
+
+-- The imaginary constant coefficient survives passage to the quotient and coefficient extraction.
+example : halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicImaginaryConstant 0 = Complex.I := by
+  rw [intrinsicImaginaryConstant, halfFourierEmbedding_ofFunction]
+  norm_num [Fourier.intervalFourierCoefficient]
+  ring
+
+example (f : Fourier.IntrinsicIntervalSobolev (1 / 4) 4) :
+    ‖fourierEmbedding (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+      (by norm_num : 1 / ((1 / 4 : ℝ) + 1 / 2) < 3 / 2) f‖ ≤
+        Fourier.arbitraryPeriodFourierBoundConstant 4 (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+          (by norm_num : 1 / ((1 / 4 : ℝ) + 1 / 2) < 3 / 2) * ‖f‖ :=
+  norm_fourierEmbedding_le _ _ _ _
+
+-- A negative Fourier mode gives the expected imaginary coefficient and no reflected mode.
+private def intrinsicNegativeMode : Fourier.IntrinsicIntervalSobolev (1 / 2) 4 :=
+  ⟨Fourier.l2Synthesis (lp.single 2 (-3) Complex.I), by
+    apply (Fourier.memLp_fractionalDifferenceQuotient_iff _ _ _
+      (Fourier.measurable_intervalPullback _ _)).mpr
+    rw [Fourier.intervalPullback, Fourier.fractionalIntervalEnergy_dilation (by norm_num : (0 : ℝ) < 2 / 4)]
+    norm_num
+    exact Fourier.fractionalIntervalEnergy_lt_top_of_periodic (by norm_num) _
+      (Fourier.hasFractionalPeriodicRegularity_single (by norm_num) (by norm_num) _ _)⟩
+
+example : halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicNegativeMode (-3) = Complex.I ∧
+    halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicNegativeMode 3 = 0 := by
+  simp only [halfFourierEmbedding_apply, Fourier.intervalFourierCoefficient_intervalPullback (by norm_num : (0 : ℝ) < 4)]
+  norm_num [intrinsicNegativeMode, Fourier.fourierCoeff_l2Synthesis, lp.single_apply]
+
+-- There are no hidden representative choices in equality of intrinsic classes.
+example (f g : ℝ → ℂ)
+    (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 4)))
+    (hg : MeasureTheory.MemLp g 2 (MeasureTheory.volume.restrict (Set.Ioc 0 4)))
+    (hEf : Fourier.fractionalIntervalEnergy (1 / 2) 4 f < ⊤)
+    (hEg : Fourier.fractionalIntervalEnergy (1 / 2) 4 g < ⊤) :
+    ofFunction f hf hEf = ofFunction g hg hEg ↔ f =ᵐ[MeasureTheory.volume.restrict (Set.Ioo 0 4)] g :=
+  ofFunction_eq_iff _ _ _ _ _ _
+
+end IntrinsicSobolevSpaceChecks

@@ -712,7 +712,7 @@ range. The explicit intermediate index
 half-regularity bound in the original intrinsic half size. At zero, only `N`
 is used, and the constant `sqrt(1/2)` is attained by a constant function even
 for the infinity target. These are uniform inequalities on representatives;
-a separate intrinsic normed quotient type has not been introduced.
+the intrinsic normed quotient API is implemented in the later step below.
 
 The next A.9 step is the actual Fourier scaling from period two to arbitrary
 positive periods, including the normalization of physical square and
@@ -755,7 +755,30 @@ retains the zero mode: `I_s ≤ R_s ‖a‖²` with
 `R_s=2+2(C_upper(s)+4/s)` for `0<s<1`. Below half, the forward and reverse
 bounds give explicit norm equivalence for arbitrary period-two interval data.
 
-The next step is to package these proved identifications into a normed
-intrinsic interval function space and its continuous Fourier embedding.
-The analytic equivalence is established; the normed quotient API has not yet
-been introduced.
+The intrinsic normed quotient and continuous Fourier embedding are now
+implemented in the following step.
+
+
+The intrinsic function-space step is now proved on every positive interval.
+A normalized circle `L²` class represents arbitrary interval data by the
+coordinate change `x ↦ 2x/L`, with exact square-energy factor `L`. Reconstruction
+is almost everywhere, and equality of constructed classes is exactly interval
+almost-everywhere equality. Thus the representation imposes no endpoint condition.
+
+The physical difference quotient `(f(x)-f(y))/|x-y|^(1/2+s)` is square integrable
+precisely when the intrinsic fractional energy is finite. Its class and the
+scaled original `L²` class form an injective linear graph in a product of `L²`
+spaces. The induced norm has square exactly `N+E_s`; its equality with the
+previously defined intrinsic size is proved. Both graph components are
+continuous, with the normalized `L²` inclusion factor `1/sqrt(L)`.
+
+The existing A.9 bounds now give continuous complex-linear Fourier injections
+from this actual normed space, preserving the original normalized Fourier
+integrals. The positive subcritical source range and the separate half case
+are both covered, including nonperiodic ramps. At zero regularity, the earlier
+ordinary `L²` API still applies; the fractional graph at zero is not identified
+with the ordinary `L²` norm.
+
+Next, prove completeness of the intrinsic graph space, including at half,
+and package the subcritical weighted Fourier identification as a continuous
+linear equivalence with quantitative bounds on arbitrary interval lengths.

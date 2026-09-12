@@ -184,3 +184,7 @@ import NLS.Fourier.ArbitraryPeriodFourierLebesgue
 import NLS.Fourier.FractionalRestriction
 import NLS.Fourier.IntervalSobolevIdentification
 import NLS.Fourier.IntervalSobolevNormEquivalence
+import NLS.Fourier.FractionalDifferenceQuotient
+import NLS.Fourier.PhysicalIntervalL2
+import NLS.Fourier.IntrinsicIntervalSobolev
+import NLS.Fourier.IntrinsicFourierEmbedding

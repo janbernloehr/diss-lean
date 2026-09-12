@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 236 modules and 2194 named public theorems. All compile on the
+The library has 240 modules and 2244 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -64,6 +64,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.FractionalRestriction` | Interval energy bounded by full displacement energy; exact tail mass `1/s`; central real-kernel identity including zero displacement; reverse periodic-to-interval estimate and regularity restriction for every positive index |
 | `NLS.Fourier.IntervalSobolevIdentification` | Exact interval/periodic regularity equivalence below half; actual weighted Fourier criterion for arbitrary `L²` representatives on every positive interval; bidirectional dilation finiteness; unique weighted representation |
 | `NLS.Fourier.IntervalSobolevNormEquivalence` | Exact square-energy normalization; finite reverse restriction constant; intrinsic size controlled by weighted Fourier norm for `0<s<1`; two-sided intrinsic/Fourier bounds for original period-two interval data below half |
+| `NLS.Fourier.FractionalDifferenceQuotient` | Measurable physical difference quotient; interval almost-everywhere invariance; linearity; finite fractional energy iff product-space square integrability; exact quotient `L²` norm |
+| `NLS.Fourier.PhysicalIntervalL2` | Actual quotient representatives on every positive interval; exact length normalization; normalized coefficients; arbitrary-input reconstruction and faithful almost-everywhere identification |
+| `NLS.Fourier.IntrinsicIntervalSobolev` | Intrinsic finite-energy normed complex quotient; exact graph norm square `N+E_s`; continuous `L²` and difference-quotient maps; reconstruction, input norm equality, and exact almost-everywhere class equality |
+| `NLS.Fourier.IntrinsicFourierEmbedding` | Continuous complex-linear Fourier injections in the intrinsic norm for positive subcritical and half regularity on every positive interval; exact original coefficients; uniform norm bounds |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2372,9 +2376,8 @@ At zero regularity, every extended target `q≥2`, including infinity, satisfies
 `‖a‖_q ≤ sqrt(1/2) sqrt(N(f))`; an imaginary constant attains equality.
 
 These are uniform inequalities in the actual intrinsic interval size. The
-implementation does not introduce a separate normed quotient type for
-intrinsic interval functions. The period-two results are extended to arbitrary
-positive periods by the scaling identification below.
+normed quotient API is described below. The period-two results are extended
+to arbitrary positive periods by the scaling identification below.
 
 ## Appendix A.9 on arbitrary positive periods
 
@@ -2447,14 +2450,41 @@ proves explicit inequalities in both directions between intrinsic interval
 size and the actual weighted Fourier norm. The result preserves constant
 functions and does not require endpoint matching.
 
-The regularity identification and two-sided period-two bounds are now proved;
-a separate normed quotient type and continuous-map API for intrinsic interval
-functions have not yet been introduced.
+`FractionalDifferenceQuotient` identifies the physical energy with the square
+norm of `(f(x)-f(y))/|x-y|^(1/2+s)` on the interval product. This holds on the
+diagonal as well. The quotient is measurable for measurable representatives,
+linear, and invariant under almost-everywhere changes of interval data.
+
+`PhysicalIntervalL2` represents an interval `L²` class in normalized coordinates
+and proves exact square-energy factor `L`, actual Fourier coefficient agreement,
+and both reconstruction identities. Arbitrary square-integrable input is
+accepted, without global measurability or an endpoint condition. Equality of
+classes is precisely almost-everywhere equality on the physical interval.
+
+`IntrinsicIntervalSobolev` is the finite-energy submodule of these actual `L²`
+classes. The graph into two `L²` spaces, with first component multiplied by
+`sqrt(L)`, induces a normed complex vector space. Its squared norm is exactly
+`N+E_s`, and its norm equals the previous intrinsic size. Both the underlying
+`L²` map and the physical difference-quotient operator are continuous. The
+former has norm bound `1/sqrt(L)` and the latter bound one. Construction from
+arbitrary original interval data preserves its intrinsic size and reconstructs
+it almost everywhere. Equality of constructed elements is exactly equality
+almost everywhere of the input data.
+
+`IntrinsicFourierEmbedding` packages the actual A.9 maps as continuous
+complex-linear injections from this normed space. The finite targets are
+`q>1/(s+1/2)` for `0<s<1/2` and every `q>1` at `s=1/2`. The existing uniform
+bounds now use the actual norm; coefficient extraction is exactly the original
+normalized interval integral, including for unequal endpoint values.
+
+Completeness of the intrinsic graph space and the continuous weighted Fourier
+equivalence are not yet packaged. At zero, ordinary `L²` remains the source of
+the earlier A.9 API; the graph norm at zero includes the extra difference term.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4471 declarations under `NLS`, including generated
+axioms. The current audit covers 4623 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3044,13 +3074,22 @@ The nonperiodic ramp exercises the two-sided bound below half. Further checks
 cover bidirectional dilation finiteness, the arbitrary-length weighted criterion,
 and unique weighted representation of the length-four ramp.
 
+Intrinsic-space checks evaluate the exceptional diagonal, the length-four
+square energy of an imaginary negative mode, both quotient reconstruction
+directions, and the exact norm two of an imaginary constant on length four.
+The constant has zero difference-quotient class. A nonperiodic ramp with proved
+half energy defines an actual intrinsic class and maps continuously into
+`ℓ^(6/5)`. Checks cover complex linearity, injectivity, full sequence norm
+bounds, the `1/2` normalized `L²` inclusion factor, the quarter-to-`3/2` map,
+negative-frequency coefficient signs, and exact almost-everywhere class equality.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Package the intrinsic Sobolev function-space identification as a normed
-   quotient and continuous Fourier embedding. The regularity equivalence is
-   complete on every positive interval, with explicit two-sided bounds for
-   period two. A.9's coefficient membership and uniform intrinsic bounds are
+2. Prove completeness of the intrinsic normed quotient, including half
+   regularity, and package the continuous weighted Fourier equivalence with
+   quantitative bounds for every positive interval. The intrinsic graph norm
+   and continuous A.9 Fourier injections are implemented. A.9's coefficient membership and uniform intrinsic bounds are
    complete for every positive period, including zero and half regularity. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
@@ -3060,4 +3099,4 @@ and unique weighted representation of the length-four ramp.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-intrinsic normed quotient types have not been introduced.
+completeness of the intrinsic normed quotient remains to be proved.
