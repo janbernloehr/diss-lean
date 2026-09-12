@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has seventy-three modules and 804 named public theorems. All compile on the
+The library has seventy-five modules and 848 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -80,6 +80,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.BoundarySpectrum` | Closed discrete boundary spectra, finite bounded portions, compact-resolvent spectral transformation and eigenvector characterization; periodic resolvent intersection and spectral union |
 | `NLS.ZakharovShabat.BoundaryRootSpaces` | Actual restricted-pencil root chains; exact periodic boundary intersections; domain representatives; finite dimension, stabilization, and closed full root spaces; spectral characterization of algebraic multiplicity; periodic multiplicity as the sum of both boundary contributions |
 | `NLS.ZakharovShabat.FreeBoundaryMultiplicity` | Signed free boundary modes and exact lattice spectra; algebraic multiplicity one and absence of longer free chains; rank one in each free quarter-pi contour summand; free central count `2N+1` for each boundary condition |
+| `NLS.ZakharovShabat.BoundaryClusters` | Boundary-preserving individual and cluster projections; finite sums of actual boundary root spaces and exact periodic intersections; bounded restricted and ambient projections, idempotence, and rank/multiplicity formulas; contour identification and operator-norm analyticity |
+| `NLS.ZakharovShabat.BoundaryCounting` | Actual finite boundary spectra in disks and central boxes; coefficient Theorem 1.4 counts on one neighborhood for every larger cutoff; central ranks/counts `2N+1`, high-disk ranks/counts one, unique simple eigenvalues, and shared analytic projection families and localization |
 
 ## Current mathematical milestone
 
@@ -553,10 +555,31 @@ multiplicity one in each boundary space, with no longer free chains. Each free
 quarter-pi contour has rank one in either summand; the free central sum is
 `2N+1` for either boundary condition.
 
-Boundary cluster ranks, their deformation to the high-disk and central counts
-for nonzero potentials in Theorem 1.4, and Lemma 4.5's analytic simple eigenvalues
-remain next steps. The physical interval-extension maps are still separate
-obligations.
+**The coefficient counting argument of Theorem 1.4 is proved.** Commutation with
+one resolvent implies commutation with every individual periodic spectral
+projection. Thus boundary projections commute with every finite cluster, and
+the boundary cluster space is precisely the boundary part of the periodic
+cluster. These spaces are finite sums of actual restricted root spaces, with
+bounded projections on the boundary space itself as well as the periodic
+ambient space. Their ranks are sums of the full boundary algebraic
+multiplicities; no diagonalizability assumption is used. Circle components
+have exactly the corresponding cluster ranges and inherit operator-norm
+analyticity from the periodic contour.
+
+The finite boundary spectra are filtered from the periodic spectra, with exact
+membership characterizations. Removing points outside an individual boundary
+spectrum leaves its multiplicity sum unchanged. `BoundaryCountingData` connects
+these actual spectral sets and multiplicities to the projection ranks. Rank
+constancy on the reflected part of a convex neighborhood containing zero and
+the given potential proves the nonzero-potential counts: `2N+1` central values
+counted algebraically and one simple value per high disk for each boundary
+condition. Both counts, the analytic central and disk projector families, and
+periodic localization share one neighborhood and work for every larger cutoff.
+Singleton disk spectra and algebraic multiplicity one are proved explicitly.
+
+Lemma 4.5's analytic simple eigenvalue functions remain next. The physical
+interval-extension maps and their estimates are still needed to transfer this
+coefficient theorem to the dissertation's original period-one potentials.
 
 The actual unbounded realization is now defined as
 
@@ -770,7 +793,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1691 declarations under `NLS`, including generated
+axioms. The current audit covers 1774 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -926,12 +949,23 @@ an off-lattice point, contour rank one at a negative index, and central counts
 one and five at cutoffs zero and two. The multiplicity splitting is also
 instantiated at the endpoint `p=1`.
 
+Boundary-counting checks use a nonconstant complex reflected potential with
+explicit norm `1/1000`; a connected small-potential ball proves rank one for
+both boundary components in every disk, including a negative-index multiplicity
+count. Its Dirichlet cluster annihilates Neumann input. A restricted cluster fixes
+the earlier length-two Jordan-chain vector. Other checks cover empty clusters,
+a two-index free cluster, one cutoff for every larger box along the full path
+`[0,φ]`, unique simple boundary eigenvalues at `p=1`, and shared analytic projector
+neighborhoods at `p=3`. For `(1,1)`, the value `1` belongs to the Dirichlet disk
+spectrum but is excluded from the Neumann disk spectrum and contributes rank
+zero to the Neumann cluster.
+
 ## Next milestones
 
-1. Construct boundary cluster projections and deform their free ranks to prove
-   the spectral counts of Theorem 1.4, followed by analytic simple eigenvalues
-   in Lemma 4.5. Prove the interval-extension maps and the discrete Hilbert
-   transform bound needed in Lemmas 4.1–4.3.
+1. Construct the boundary contour lift and analytic spectral restriction, then
+   prove Lemma 4.5's analytic simple eigenvalues. Prove the interval-extension
+   maps and discrete Hilbert transform bound in Lemmas 4.1–4.3 to transfer the
+   coefficient counts of Theorem 1.4 to the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

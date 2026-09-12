@@ -87,8 +87,13 @@ exactly their union. Periodic resolvents and circle projections preserve both
 boundary spaces. Domain-aware boundary root spaces are finite dimensional and
 stabilize, and periodic algebraic multiplicity is the sum of the two boundary
 multiplicities. Each free boundary eigenvalue has multiplicity one; the free
-central count is `2N+1` for each boundary condition. Counts for nonzero potentials
-and Lemma 4.5's analytic simple eigenvalues remain to be proved.
+central count is `2N+1` for each boundary condition. The coefficient counting
+argument of Theorem 1.4 is now proved for reflected nonzero potentials: on one
+common neighborhood and for every sufficiently large cutoff, each high disk has
+one simple Dirichlet and one simple Neumann eigenvalue, and each central count
+is `2N+1`. Boundary cluster and contour ranks count the actual restricted root
+spaces, including Jordan chains. The projectors are analytic on that same
+neighborhood; Lemma 4.5's analytic eigenvalue functions remain to be constructed.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
@@ -198,6 +203,17 @@ negative Neumann index, absence of longer chains at `p=1`, zero multiplicity at
 an off-lattice point, contour rank one at a negative index, and central counts
 one and five at cutoffs zero and two. The multiplicity splitting is also
 instantiated at the endpoint `p=1`.
+
+Boundary-counting checks use a nonconstant complex reflected potential with
+explicit norm `1/1000`; a connected small-potential ball proves rank one for
+both boundary components in every disk, including a negative-index multiplicity
+count. Its Dirichlet cluster annihilates Neumann input. A restricted cluster fixes
+the earlier length-two Jordan-chain vector. Other checks cover empty clusters,
+a two-index free cluster, one cutoff for every larger box along the full path
+`[0,φ]`, unique simple boundary eigenvalues at `p=1`, and shared analytic projector
+neighborhoods at `p=3`. For `(1,1)`, the value `1` belongs to the Dirichlet disk
+spectrum but is excluded from the Neumann disk spectrum and contributes rank
+zero to the Neumann cluster.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

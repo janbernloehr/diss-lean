@@ -270,10 +270,20 @@ boundary spectra are the full signed lattice, each value has multiplicity one,
 and the free quarter-pi contour has rank one in each summand. The free central
 algebraic count is `2N+1` for both boundary conditions.
 
-Next construct boundary cluster projections and identify their ranks with sums
-of boundary multiplicities. Deform the free high-disk and central ranks to prove
-the coefficient counts in Theorem 1.4, then prove the analytic simple eigenvalues
-of Lemma 4.5.
+The coefficient counting argument of Theorem 1.4 is now proved. Boundary cluster
+spaces are finite sums of the actual restricted full root spaces, and their
+images are exactly the boundary intersections of periodic clusters. Bounded
+cluster projections on both the boundary and ambient spaces have these ranges
+and ranks equal to sums of boundary algebraic multiplicities. Circle projectors
+select the same clusters and are analytic in operator norm. Rank constancy on
+the reflected part of a common convex neighborhood carries the free counts to
+every reflected potential there. `BoundaryCountingData` gives one simple value
+in each high disk and `2N+1` central values counted algebraically, for both
+conditions and every larger cutoff, together with the periodic localization.
+
+Next construct the boundary contour lift into the weighted domain and its
+analytic finite-dimensional operator restriction. Use its rank-one trace to
+prove the analytic simple eigenvalue functions in Lemma 4.5.
 The physical interval-extension maps of Lemmas 4.1–4.2 and the discrete Hilbert
 transform estimate of Lemma 4.3 still need proofs. The period-two projections
 just constructed are not substitutes for those extension maps.

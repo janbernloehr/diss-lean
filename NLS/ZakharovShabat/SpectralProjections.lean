@@ -129,6 +129,14 @@ theorem periodicSpectralProjection_commute_resolvent (hp : p ≠ ⊤) (φ : Pair
     Commute (periodicSpectralProjection hp φ z) (resolvent hp φ w) :=
   (resolvent_commute_projectionAt hp φ _ z w _ hw).symm
 
+/-- Commutation with one resolvent implies commutation with every root-space projection. -/
+theorem commute_periodicSpectralProjection_of_resolvent (hp : p ≠ ⊤) (φ : PairSpace p)
+    (w z : ℂ) (hw : w ∈ resolventSet hp φ) (A : PairSpace p →L[ℂ] PairSpace p)
+    (hA : Commute A (resolvent hp φ w)) : Commute A (periodicSpectralProjection hp φ z) := by
+  unfold periodicSpectralProjection
+  rw [projectionAt_eq hp φ _ w z _ hw]
+  exact commute_projectionAt hp φ w z hw A hA
+
 /-- The projection has finite rank. -/
 theorem finiteDimensional_range_periodicSpectralProjection (hp : p ≠ ⊤)
     (φ : PairSpace p) (z : ℂ) : FiniteDimensional ℂ (periodicSpectralProjection hp φ z).range := by

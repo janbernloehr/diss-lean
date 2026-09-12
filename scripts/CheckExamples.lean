@@ -2180,3 +2180,149 @@ example (b : BoundaryCondition) :
 end BoundaryRootChecks
 
 end BoundaryRootSpaceChecks
+
+section BoundaryCountingChecks
+
+set_option autoImplicit false
+open Complex
+
+namespace BoundaryCountChecks
+
+def smallPotential : PairSpace 3 :=
+  (lp.single 3 (-2) (I / 1000), lp.single 3 2 (I / 1000))
+
+theorem smallPotential_mem : smallPotential ∈ dirichletSubspace := by
+  rw [mem_dirichletSubspace]
+  intro n
+  simp [smallPotential, lp.single_apply, Pi.single_apply, show n = -2 ↔ -n = 2 by omega]
+
+theorem norm_smallPotential : ‖smallPotential‖ = 1 / 1000 := by
+  norm_num [smallPotential, Prod.norm_def, lp.norm_single, norm_div]
+
+-- This nonconstant complex potential has rank one in every boundary disk,
+-- including low and negative indices, using an explicit small-potential ball.
+theorem small_contour_rank (b : BoundaryCondition) (n : ℤ) :
+    Module.finrank ℂ (b.contourProjection (by simp) smallPotential
+      ((Real.pi : ℂ) * n) (Real.pi / 4)).range = 1 := by
+  let U := Metric.ball (0 : PairSpace 3) (1 / 100) ∩
+    (dirichletSubspace (p := 3) : Set (PairSpace 3))
+  have hU : Convex ℝ U := (convex_ball (0 : PairSpace 3) (1 / 100)).inter
+    ((dirichletSubspace (p := 3)).restrictScalars ℝ).convex
+  have hc (a : PairSpace 3) (ha : a ∈ U) :
+      Metric.sphere ((Real.pi : ℂ) * n) (Real.pi / 4) ⊆ resolventSet (by simp) a := by
+    apply sphere_subset_resolventSet_of_smallPotential (by simp) a n (by positivity) le_rfl
+    have hn : ‖a‖ < 1 / 100 := by simpa using ha.1
+    norm_num only [ENNReal.toReal_ofNat]
+    nlinarith [Real.two_le_pi]
+  have hs : smallPotential ∈ U := ⟨by simpa [norm_smallPotential] using
+    (show (1 : ℝ) / 1000 < 1 / 100 by norm_num), smallPotential_mem⟩
+  have h0 : (0 : PairSpace 3) ∈ U := ⟨by simp, Submodule.zero_mem _⟩
+  have he := BoundaryCondition.finrank_contour_eq_on_preconnected b (by simp)
+    ((Real.pi : ℂ) * n) (Real.pi / 4) (by positivity) hU.isPreconnected
+    (fun _ ha => ha.2) hc hs h0
+  rw [BoundaryCondition.range_contourProjection b (by simp) 0 (by simp) _ _
+    (by positivity) (hc 0 h0), BoundaryCondition.finrank_free_contour_boundary] at he
+  exact he
+
+example (b : BoundaryCondition) :
+    (∑ z ∈ b.enclosedSpectrum (by simp) smallPotential smallPotential_mem
+      ((Real.pi : ℂ) * (-3 : ℤ)) (Real.pi / 4),
+      b.algebraicMultiplicity (by simp) smallPotential smallPotential_mem z) = 1 := by
+  have hc : Metric.sphere ((Real.pi : ℂ) * (-3 : ℤ)) (Real.pi / 4) ⊆
+      resolventSet (by simp) smallPotential := by
+    apply sphere_subset_resolventSet_of_smallPotential (by simp) smallPotential (-3) (by positivity) le_rfl
+    rw [norm_smallPotential]
+    norm_num only [ENNReal.toReal_ofNat]
+    nlinarith [Real.two_le_pi]
+  rw [← BoundaryCondition.finrank_contour_eq_sum_enclosed b (by simp) smallPotential
+    smallPotential_mem _ _ (by positivity) hc]
+  exact small_contour_rank b (-3)
+
+-- A boundary cluster fixes the top of the previously verified nontrivial Jordan chain.
+example : BoundaryCondition.clusterProjection .dirichlet (by simp) BoundaryRootChecks.jordanPotential
+    {(Real.pi : ℂ)} BoundaryRootChecks.generalized = BoundaryRootChecks.generalized := by
+  have hr : BoundaryRootChecks.generalized ∈ BoundaryCondition.rootSpaceTop .dirichlet (by simp)
+      BoundaryRootChecks.jordanPotential BoundaryRootChecks.jordanPotential_mem (Real.pi : ℂ) :=
+    (BoundaryCondition.mem_rootSpaceTop .dirichlet (by simp) BoundaryRootChecks.jordanPotential
+      BoundaryRootChecks.jordanPotential_mem (Real.pi : ℂ) BoundaryRootChecks.generalized).mpr
+        ⟨2, BoundaryRootChecks.generalized_mem_two⟩
+  apply Subtype.ext
+  rw [BoundaryCondition.clusterProjection_val .dirichlet (by simp) BoundaryRootChecks.jordanPotential
+    BoundaryRootChecks.jordanPotential_mem]
+  exact periodicClusterProjection_apply_root (by simp) BoundaryRootChecks.jordanPotential
+    {(Real.pi : ℂ)} (Real.pi : ℂ) (Finset.mem_singleton_self _) BoundaryRootChecks.generalized.val
+      ((BoundaryCondition.mem_rootSpaceTop_iff_periodic .dirichlet (by simp)
+        BoundaryRootChecks.jordanPotential BoundaryRootChecks.jordanPotential_mem
+        (Real.pi : ℂ) BoundaryRootChecks.generalized).mp hr)
+
+-- A Dirichlet cluster kills Neumann input, even for a nonzero complex potential.
+example (s : Finset ℂ) (x : PairSpace 3) (hx : x ∈ neumannSubspace) :
+    BoundaryCondition.ambientClusterProjection .dirichlet (by simp) smallPotential s x = 0 := by
+  apply ReflectionSplit.positiveProjection_eq_zero
+  exact BoundaryCondition.periodicClusterProjection_mem .neumann (by simp)
+    smallPotential smallPotential_mem s x hx
+
+-- Empty clusters have zero rank; a mixed free cluster retains one contribution per index.
+example (b : BoundaryCondition) :
+    Module.finrank ℂ (b.clusterProjection (p := 1) (by simp) 0 ∅).range = 0 := by
+  rw [BoundaryCondition.finrank_range_clusterProjection b (by simp) 0 (by simp)]
+  simp
+
+example (b : BoundaryCondition) :
+    Module.finrank ℂ (b.clusterProjection (p := 3) (by simp) 0 {-(Real.pi : ℂ), 0}).range = 2 := by
+  rw [BoundaryCondition.finrank_range_clusterProjection b (by simp) 0 (by simp)]
+  have hneg : -(Real.pi : ℂ) ≠ 0 := neg_ne_zero.mpr (ofReal_ne_zero.mpr Real.pi_ne_zero)
+  have hleft := BoundaryCondition.algebraicMultiplicity_zero (p := 3) b (by simp) (-1)
+  have hright := BoundaryCondition.algebraicMultiplicity_zero (p := 3) b (by simp) 0
+  simp [hneg, show b.algebraicMultiplicity (p := 3) (by simp) 0 (by simp) (-(Real.pi : ℂ)) = 1 by
+    simpa using hleft, show b.algebraicMultiplicity (p := 3) (by simp) 0 (by simp) 0 = 1 by simpa using hright]
+
+-- One cutoff works for every larger central box and the whole path from zero to a reflected potential.
+example (φ : PairSpace 3) (hφ : φ ∈ dirichletSubspace) :
+    ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ t ∈ Set.Icc (0 : ℝ) 1,
+      ∃ ht : t • φ ∈ dirichletSubspace, BoundaryCountingData (by simp) (t • φ) ht N := by
+  obtain ⟨N₀, U, _, _, hconv, hφU, h0, _, _, hdata⟩ := exists_uniform_boundaryCountingData (by simp) φ
+  refine ⟨N₀, ?_⟩
+  intro N hN t ht
+  have hDir : t • φ ∈ dirichletSubspace :=
+    ((dirichletSubspace (p := 3)).restrictScalars ℝ).smul_mem t hφ
+  exact ⟨hDir, hdata (t • φ) (hconv.smul_mem_of_zero_mem h0 hφU ht) hDir N hN⟩
+
+-- The endpoint p=1 gives actual simple eigenvalues for both boundary conditions.
+example (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace) :
+    ∃ N : ℕ, ∀ b : BoundaryCondition, ∀ n : ℤ, N < n.natAbs →
+      ∃! z : ℂ, z ∈ b.spectrum (by simp) φ hφ ∧
+        z ∈ Metric.ball ((Real.pi : ℂ) * n) (Real.pi / 4) ∧
+        b.algebraicMultiplicity (by simp) φ hφ z = 1 := by
+  obtain ⟨N, U, _, _, _, hφU, _, _, _, hdata⟩ := exists_uniform_boundaryCountingData (by simp) φ
+  exact ⟨N, fun b n hn => (hdata φ hφU hφ N le_rfl).disk_unique_simple b n hn⟩
+
+-- Analytic central and high-disk boundary projections share the counting neighborhood.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), φ ∈ U ∧
+    (∀ b : BoundaryCondition, AnalyticOnNhd ℂ (fun ψ => b.centralProjection (by simp) ψ N) U) ∧
+    (∀ b : BoundaryCondition, ∀ n : ℤ, N < n.natAbs → AnalyticOnNhd ℂ
+      (fun ψ => b.contourProjection (by simp) ψ ((Real.pi : ℂ) * n) (Real.pi / 4)) U) := by
+  obtain ⟨N, U, _, _, _, hφ, _, hc, hd, _⟩ := exists_uniform_boundaryCountingData (by simp) φ
+  exact ⟨N, U, hφ, hc N le_rfl, fun b n hn => hd n hn b⟩
+
+-- A periodic eigenvalue belonging only to Dirichlet contributes zero to the Neumann cluster.
+example : Module.finrank ℂ (BoundaryCondition.clusterProjection .neumann (by simp)
+    BoundaryResolventChecks.unitPotential {1}).range = 0 := by
+  rw [BoundaryCondition.finrank_range_clusterProjection .neumann (by simp)
+    BoundaryResolventChecks.unitPotential BoundaryResolventChecks.unitPotential_mem,
+    Finset.sum_singleton, BoundaryCondition.algebraicMultiplicity_eq_zero_iff]
+  exact BoundaryResolventChecks.one_mem_neumannResolvent
+
+example : (1 : ℂ) ∈ BoundaryCondition.enclosedSpectrum .dirichlet (by simp)
+    BoundaryResolventChecks.unitPotential BoundaryResolventChecks.unitPotential_mem 1 (1 / 10) ∧
+    (1 : ℂ) ∉ BoundaryCondition.enclosedSpectrum .neumann (by simp)
+    BoundaryResolventChecks.unitPotential BoundaryResolventChecks.unitPotential_mem 1 (1 / 10) := by
+  constructor
+  · rw [BoundaryCondition.mem_enclosedSpectrum]
+    exact ⟨BoundaryResolventChecks.one_mem_dirichletSpectrum, by simp⟩
+  · rw [BoundaryCondition.mem_enclosedSpectrum]
+    exact fun h => h.1 BoundaryResolventChecks.one_mem_neumannResolvent
+
+end BoundaryCountChecks
+
+end BoundaryCountingChecks
