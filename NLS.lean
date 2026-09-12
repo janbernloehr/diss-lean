@@ -154,3 +154,6 @@ import NLS.SequenceSpaces.MixedYoungExponents
 import NLS.SequenceSpaces.MixedYoung
 import NLS.Fourier.CircleTranslation
 import NLS.Fourier.FractionalTranslationEnergy
+import NLS.Fourier.FractionalKernel
+import NLS.Fourier.FractionalKernelScaling
+import NLS.Fourier.FractionalSpectralBounds

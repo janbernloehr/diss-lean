@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 206 modules and 1959 named public theorems. All compile on the
+The library has 209 modules and 1987 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -35,6 +35,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.WeightedMultiplier` | General weighted symbol bound; bounded linear multipliers; contractive, injective monotone-weight inclusions |
 | `NLS.SequenceSpaces.SobolevDerivative` | Monotone real regularity embeddings and composition; period-two derivative with norm bound `π`; exact one-unit regularity recovery from raw and derivative data |
 | `NLS.Fourier.CircleTranslation` | Actual periodic `L²` translation isometries; almost-everywhere physical representatives; positive Fourier phase; composition, inversion, strong continuity; exact increment Parseval identity and period-two physical energy normalization |
+| `NLS.Fourier.FractionalKernel` | Unit phase bounds; near-zero cancellation and tail decay; globally integrable model kernel for `0<s<1`; reflection, positivity between crossings, and positive core mass |
+| `NLS.Fourier.FractionalKernelScaling` | Exact real/nonnegative kernel agreement including zero; positive-frequency integrability; change of variables yielding `n^(2s)` times model mass over `[-n,n]` |
+| `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
@@ -2122,15 +2125,44 @@ Translations preserve this energy, positive and negative frequencies have the
 same spectral weight, each single mode has its exact diagonal energy, and
 constants have zero seminorm despite the kernel singularity.
 
-This is a prerequisite for Appendix A.9, not its completion. The next steps
-are to compare the spectral kernel integral with `|n|^(2s)` for `0<s<1`, and
-to prove the interval-to-periodic boundary estimate for `0≤s<1/2`. The separate
-`H^(1/2)` conclusion also remains to be connected to the physical interval space.
+This is a prerequisite for Appendix A.9, not its completion. The spectral
+comparison is now proved below. The interval-to-periodic boundary estimate for
+`0≤s<1/2` and the separate `H^(1/2)` conclusion remain to be connected to the
+physical interval space.
+
+## Fractional spectral comparison and homogeneous regularity
+
+`FractionalKernel` proves two bounds for the real unit-frequency kernel
+`|exp(iπx)-1|² |x|^(-1-2s)`: it is at most `π² |x|^(1-2s)` near zero and at
+most `4 |x|^(-1-2s)` at infinity. The resulting powers prove global integrability
+for `0<s<1`, including the singular but integrable range `s>1/2`. The kernel is
+even and strictly positive on `(0,2)`, giving positive mass on `[0,1]`.
+
+`FractionalKernelScaling` identifies the real kernel with the extended-nonnegative
+physical kernel, including the zero-phase point. For every positive integer `n`,
+an exact change of variables expresses its spectral weight as `n^(2s)` times
+the model-kernel integral on `[-n,n]`. Integrability is established before any
+conversion from nonnegative energy to an ordinary integral.
+
+`FractionalSpectralBounds` uses the positive core mass as a lower constant and
+the finite total model mass as an upper constant. The constants are actual
+integrals and do not depend on frequency. The corresponding two-sided bounds
+hold for every integer frequency, including the zero mode and negative indices.
+All weights are finite, and precisely the nonzero modes have positive weight.
+Summing the bounds compares physical fractional energy with
+`Σ |n|^(2s)|f̂(n)|²`, retaining infinite values. For `0<s<1`, finite physical
+fractional energy is equivalent to ordinary summability of this conventional
+homogeneous Fourier square sum. Every Fourier mode consequently has finite
+physical fractional energy.
+
+The next step is to pass from this homogeneous criterion and the existing `L²`
+condition to the project's weighted coefficient norm, then establish the
+nonperiodic interval boundary estimate required by Appendix A.9.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4058 declarations under `NLS`, including generated
+axioms. The current audit covers 4105 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2636,11 +2668,20 @@ translation invariance, frequency reflection, zero energy for imaginary
 constants, the amplitude factor four for a nonzero mode, and the physical
 double-integral normalization.
 
+Fractional spectral checks evaluate the model kernel at zero and both unit
+displacements, prove integrability at regularities `1/4` and `3/4`, and check the
+negative near-zero power at `3/4`. They verify positivity and order of the actual
+integral constants, the exact `n=3, s=1/4` scaling and interval endpoints,
+negative-frequency two-sided bounds, and positivity and finiteness of nonzero
+weights. Arbitrary physical `L²` data exercises both energy bounds and the
+`|n|^(2/3)` summability criterion. Imaginary negative modes exercise actual
+fractional regularity at `s=3/4`.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Compare the fractional translation spectral weights with Sobolev weights,
-   then prove the physical interval identification in Appendix A.9. The
+2. Identify the physical fractional criterion with the weighted coefficient
+   space, then prove the interval boundary estimate in Appendix A.9. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main

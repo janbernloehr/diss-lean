@@ -487,8 +487,11 @@ installation is absent. No shell startup files are modified.
   continuous isometries with exact Fourier phases and increment Parseval energy.
   The fractional translation seminorm is an actual nonnegative double integral
   and equals its exact Fourier-weighted sum, including infinite energies.
-  Comparing these weights with the conventional Sobolev weights and handling
-  nonperiodic interval boundaries remain steps toward Appendix A.9.
+  For `0<s<1`, these weights have proved two-sided bounds by `|n|^(2s)`, with
+  positive finite constants. Physical fractional regularity is equivalent to
+  summability of the conventional homogeneous Fourier energy. The weighted
+  coefficient-space identification and nonperiodic interval boundary estimate
+  remain steps toward Appendix A.9.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

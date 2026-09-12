@@ -5876,3 +5876,74 @@ example (f : CircleL2) : fractionalTranslationEnergy (1 / 3) f = ENNReal.ofReal 
   translationEnergy_eq_double_lintegral _ _ f
 
 end TranslationEnergyChecks
+
+namespace FractionalBoundsChecks
+open NLS.Fourier MeasureTheory
+open scoped ENNReal
+
+-- The model kernel removes the zero-phase singularity and keeps the nonzero unit phase.
+example (s : ℝ) : fractionalModelKernel s 0 = 0 := fractionalModelKernel_zero s
+
+example (s : ℝ) : fractionalModelKernel s 1 = 4 := by
+  have hw : wave 1 1 = -1 := by simpa using wave_odd_at_one 0
+  norm_num [fractionalModelKernel, hw]
+
+example (s : ℝ) : fractionalModelKernel s (-1) = 4 := by
+  rw [fractionalModelKernel_neg]
+  have hw : wave 1 1 = -1 := by simpa using wave_odd_at_one 0
+  norm_num [fractionalModelKernel, hw]
+
+-- Below half regularity the near-zero power is positive; above half it is negative but integrable.
+example : Integrable (fractionalModelKernel (1 / 4)) :=
+  integrable_fractionalModelKernel (by norm_num) (by norm_num)
+
+example : Integrable (fractionalModelKernel (3 / 4)) :=
+  integrable_fractionalModelKernel (by norm_num) (by norm_num)
+
+example (x : ℝ) : fractionalModelKernel (3 / 4) x ≤ Real.pi ^ 2 * |x| ^ (-1 / 2 : ℝ) := by
+  convert fractionalModelKernel_le_near (3 / 4) x using 1
+  norm_num
+
+-- Both comparison constants are actual integrals, with proved positivity and order.
+example : 0 < fractionalLowerConstant (1 / 4) ∧
+    fractionalLowerConstant (1 / 4) ≤ fractionalUpperConstant (1 / 4) :=
+  ⟨fractionalLowerConstant_pos (by norm_num) (by norm_num),
+    fractionalLowerConstant_le_upper (by norm_num) (by norm_num)⟩
+
+-- The Jacobian leaves exactly n^(2s), with the correctly scaled symmetric interval.
+example : fractionalSpectralWeight (1 / 4) 3 = ENNReal.ofReal ((3 : ℝ) ^ (1 / 2 : ℝ) *
+    ∫ x in (-3 : ℝ)..3, fractionalModelKernel (1 / 4) x) := by
+  convert fractionalSpectralWeight_scale (s := 1 / 4) (by norm_num) (by norm_num)
+    (by norm_num : (0 : ℤ) < 3) using 1
+  norm_num
+
+-- Negative-frequency weights have the same two-sided power estimate.
+example : ENNReal.ofReal (fractionalLowerConstant (1 / 4) * (3 : ℝ) ^ (1 / 2 : ℝ)) ≤
+    fractionalSpectralWeight (1 / 4) (-3) ∧
+    fractionalSpectralWeight (1 / 4) (-3) ≤
+      ENNReal.ofReal (fractionalUpperConstant (1 / 4) * (3 : ℝ) ^ (1 / 2 : ℝ)) := by
+  convert fractionalSpectralWeight_bounds (s := 1 / 4) (by norm_num) (by norm_num) (-3) using 1 <;> norm_num
+
+-- Every nonzero frequency has a finite, strictly positive weight.
+example : 0 < fractionalSpectralWeight (3 / 4) (-5) ∧ fractionalSpectralWeight (3 / 4) (-5) < ⊤ :=
+  ⟨fractionalSpectralWeight_pos (by norm_num) (by norm_num) (by norm_num),
+    fractionalSpectralWeight_lt_top (by norm_num) (by norm_num) _⟩
+
+-- The comparison is valid for arbitrary physical L² classes, allowing infinite energies.
+example (f : CircleL2) : ENNReal.ofReal (fractionalLowerConstant (1 / 3)) * homogeneousFourierEnergy (1 / 3) f ≤
+    fractionalTranslationEnergy (1 / 3) f ∧
+    fractionalTranslationEnergy (1 / 3) f ≤
+      ENNReal.ofReal (fractionalUpperConstant (1 / 3)) * homogeneousFourierEnergy (1 / 3) f :=
+  fractionalTranslationEnergy_bounds (by norm_num) (by norm_num) f
+
+-- Physical regularity is characterized by the conventional fractional square sum.
+example (f : CircleL2) : HasFractionalPeriodicRegularity (1 / 3) f ↔
+    Summable (fun n : ℤ => |(n : ℝ)| ^ (2 / 3 : ℝ) * ‖fourierCoeff f n‖ ^ 2) := by
+  convert hasFractionalPeriodicRegularity_iff_summable (s := 1 / 3) (by norm_num) (by norm_num) f using 1
+  norm_num
+
+-- Finiteness is established for actual modes, including imaginary negative-frequency data.
+example : HasFractionalPeriodicRegularity (3 / 4) (l2Synthesis (lp.single 2 (-3) (2 * Complex.I))) :=
+  hasFractionalPeriodicRegularity_single (by norm_num) (by norm_num) _ _
+
+end FractionalBoundsChecks

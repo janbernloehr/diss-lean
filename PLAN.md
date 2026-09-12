@@ -581,6 +581,18 @@ double-integral formula and an exact Fourier diagonalization by Tonelli,
 including infinite energies. The fractional kernel on `[-1,1]` defines a
 physical regularity predicate and has translation-invariant energy, symmetric
 frequency weights, and exact single-mode and constant-function identities.
-Next, prove comparison of the spectral kernel with `|n|^(2s)` for `0<s<1`,
-then the nonperiodic interval boundary estimate below `s=1/2`. These remaining
-steps are necessary before claiming the physical statement of Appendix A.9.
+The spectral comparison is now proved below; the interval boundary estimate
+below `s=1/2` remains necessary before claiming the physical statement of
+Appendix A.9.
+
+
+The fractional spectral weights now have uniform two-sided bounds by
+`|n|^(2s)` for `0<s<1`. Quadratic phase cancellation and bounded phase increments
+prove that the unit-frequency model kernel is globally integrable, and its
+mass on `[0,1]` is positive. Exact frequency scaling gives the model integral
+on `[-n,n]`; its positive core and finite total mass give frequency-independent
+constants. The bounds include zero and negative frequencies and lift to the
+full physical energy, including infinite values. Physical fractional regularity
+is now equivalent to summability of the conventional homogeneous Fourier square
+sum. Next combine that criterion with `L²` to identify the weighted coefficient
+space, then prove the nonperiodic interval boundary estimate for Appendix A.9.
