@@ -7404,3 +7404,90 @@ example (w : SpectralWeight) : weightedFrequencyBound (p := 2) (by norm_num) w 0
   simp [weightedFrequencyBound]
 
 end WeightedContractionChecks
+
+section WeightedQChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A large nilpotent operator is inverted from its square after exchanging coordinates.
+private def weightedQNilpotent : (ℂ × ℂ) →L[ℂ] (ℂ × ℂ) :=
+  ((4 : ℂ) • ContinuousLinearMap.snd ℂ ℂ ℂ).prod 0
+
+private theorem weightedQNilpotent_sq : weightedQNilpotent ^ 2 = 0 := by
+  ext <;> simp [pow_two, weightedQNilpotent]
+
+example (e : (ℂ × ℂ) ≃L[ℂ] (ℂ × ℂ)) :
+    SquaredNeumann.conjugateCorrection e weightedQNilpotent
+      (by simp [weightedQNilpotent_sq]) (1, Complex.I) = (1 + 4 * Complex.I, Complex.I) := by
+  symm
+  apply SquaredNeumann.conjugateCorrection_unique
+  ext <;> simp [weightedQNilpotent]
+
+example : 4 ≤ ‖weightedQNilpotent‖ := by
+  have h := weightedQNilpotent.le_opNorm (0, 1)
+  norm_num [weightedQNilpotent] at h
+  simpa [weightedQNilpotent] using h
+
+-- The transported even series converges despite the original operator having norm at least four.
+example (e : (ℂ × ℂ) ≃L[ℂ] (ℂ × ℂ)) :
+    HasSum (fun j : ℕ => (weightedQNilpotent ^ 2) ^ j)
+      (SquaredNeumann.conjugateEvenCorrection e weightedQNilpotent (by simp [weightedQNilpotent_sq])) :=
+  SquaredNeumann.conjugateEvenCorrection_hasSum _ _ _
+
+-- The weighted derivative embedding preserves negative imaginary coefficients at p=1.
+example (w : Weight) (f : WeightedCoeff w.oneDerivative 1) :
+    (weightedDomainScalarL1 (by simp) w (Complex.I • f)).val (-3) = Complex.I * f.val (-3) := by
+  simp [weightedDomainScalarL1_apply]
+
+-- The genuine weighted domain potential has the same physical coefficients at p=3.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (f : WeightedDomain w.toWeight 3) :
+    weightedBaseToPair w (weightedDomainPotential (by norm_num) w φ f) =
+      potentialOperator (by norm_num) (weightedBaseToPair w φ) (weightedDomainToDomain w f) :=
+  weightedDomainPotential_eq_original _ _ _ _
+
+-- At a negative resonance the inverse yields both the Q-equation and its exact source formula.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) (u : WeightedDomain w.toWeight 1)
+    (h : ‖weightedPotentialSquareInShift (by simp) w φ (-3) ((Real.pi : ℂ) * (-3 : ℤ))
+      (center_mem_resonantStrip (-3))‖ < 1) :
+    let v := weightedQSolution (by simp) w φ (-3) ((Real.pi : ℂ) * (-3 : ℤ)) (center_mem_resonantStrip (-3)) h u
+    complementaryProjection w.toWeight.oneDerivative (-3) v = v ∧
+      weightedDomainPotential (by simp) w φ v =
+        weightedCorrection (by simp) w φ (-3) ((Real.pi : ℂ) * (-3 : ℤ)) (center_mem_resonantStrip (-3)) h
+          (weightedPotentialInverse (by simp) w φ (-3) ((Real.pi : ℂ) * (-3 : ℤ))
+            (center_mem_resonantStrip (-3)) (weightedDomainPotential (by simp) w φ u)) :=
+  ⟨weightedQSolution_nonresonant _ _ _ _ _ _ _ _, weightedQSolution_potential_source _ _ _ _ _ _ _ _⟩
+
+-- Existence and uniqueness are locally uniform at p=3, including every point of each closed strip.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3), IsOpen U ∧ φ ∈ U ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs → ∀ z : ℂ, z ∈ resonantStrip n →
+        ∀ u : WeightedDomain w.toWeight 3, ∃! v : WeightedDomain w.toWeight 3,
+          complementaryProjection w.toWeight.oneDerivative n v = v ∧
+          weightedFreePencil w.toWeight z v = complementaryProjection w.toWeight n
+            (weightedDomainPotential (by norm_num) w ψ (u+v)) := by
+  obtain ⟨N, hN, U, ho, _, hφ, _, h⟩ := exists_uniform_unique_weightedQSolution (by norm_num) w φ
+  exact ⟨N, hN, U, ho, hφ, h⟩
+
+-- The two inverses are compatible on all weighted inputs, not just on resonant vectors.
+example (w : SpectralWeight) (φ a : WeightedCoeffPair w.toWeight 2) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (hw : ‖weightedPotentialSquareInShift (by norm_num) w φ n z hz‖ < 1)
+    (h1 : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (w.forgetPairWeight φ) n z hz‖ < 1) :
+    w.forgetPairWeight (weightedCorrection (by norm_num) w φ n z hz hw a) =
+      weightedCorrection (by norm_num) SpectralWeight.one (w.forgetPairWeight φ) n z hz h1 (w.forgetPairWeight a) :=
+  forgetPairWeight_weightedCorrection _ _ _ _ _ _ _ _ _
+
+-- With no potential, the unique complementary solution is zero even at the zero strip.
+example (w : SpectralWeight) (u : WeightedDomain w.toWeight 2) :
+    let hz : (0 : ℂ) ∈ resonantStrip 0 := by simpa using center_mem_resonantStrip 0
+    let h : ‖weightedPotentialSquareInShift (p := 2) (by norm_num) w 0 0 0 hz‖ < 1 :=
+      (norm_weightedPotentialSquareInShift_le (by norm_num) w 0 0 0 hz).trans_lt (by simp [weightedSquareBound])
+    weightedQSolution (by norm_num) w 0 0 0 hz h u = 0 := by
+  dsimp
+  symm
+  apply weightedQSolution_unique
+  · simp
+  · have he : weightedDomainPotential (p := 2) (by norm_num) w 0 u = 0 := by
+      apply weightedPair_ext <;> intro k <;> simp
+    simpa using congrArg (complementaryProjection w.toWeight 0) he.symm
+
+end WeightedQChecks

@@ -901,7 +901,24 @@ containing the potential and zero has a common cutoff `N≥1` valid on every
 full closed strip with `|n|≥N`. Taking tolerance `1/2` gives the source's
 simultaneous unweighted and weighted shifted contraction.
 
-Next, use the squared Neumann construction to invert `Id-T_n`, solve the
-Q-equation, and prove the Lemma 6.6 determinant criterion on the two-dimensional
-resonant subspace. Then continue toward Propositions 6.1 and 6.3. The printed
-general-`p` central-height constant remains a separate open item.
+The squared Neumann inverse and the Q-equation are now proved. Conjugating
+by the signed shift gives a small square; the geometric series is then
+transported continuously back to the original operator algebra. It gives
+both inverses of `Id-T_n²` and the factorization
+`T̂_n=(Id+T_n)(Id-T_n²)⁻¹`, with both inverse identities for `Id-T_n`.
+The inverse commutes with `T_n` and agrees with the unweighted inverse on
+common inputs.
+
+The actual potential is implemented continuously from the weighted derivative
+domain to the base via the one-derivative weighted Hölder embedding and
+convolution. Its coefficients identify it with the original potential and
+its composition with the complementary inverse is exactly `T_n`. The
+reconstructed `v=A_λ⁻¹ Q_n T̂_n Φu` lies in the complementary derivative
+domain, satisfies the Q-equation and `Φv=T̂_n T_n Φu`, and is unique.
+Existence and uniqueness hold uniformly over the previously constructed
+open convex neighborhood and every sufficiently distant full closed strip.
+
+Next, construct the two-dimensional resonant map `S_n` and prove the
+Lemma 6.6 determinant criterion using the Q-equation solution. Then continue
+toward Propositions 6.1 and 6.3. The printed general-`p` central-height constant
+remains a separate open item.

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 271 modules and 2492 named public theorems. All compile on the
+The library has 275 modules and 2528 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -85,6 +85,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.WeightedSquareEstimate` | Lemma 6.5 for every finite Banach exponent; actual square factorization; exact shifted pair norm and conjugated operator norm with both source terms |
 | `NLS.ZakharovShabat.UnweightedComplementary` | Contractive inclusion into the exact unit-weight pair norm; shift isometries; compatibility of tails and the actual complementary potential operator |
 | `NLS.ZakharovShabat.WeightedContraction` | Locally uniform simultaneous weighted/unweighted square bounds on an open convex potential neighborhood, for every positive tolerance; the source half-size contraction |
+| `NLS.ZakharovShabat.WeightedDomainPotential` | Weighted one-derivative Hölder embedding into weighted `ℓ¹`; continuous actual domain potential; original coefficients and exact composition giving `T_n` |
+| `NLS.ZakharovShabat.WeightedCorrection` | The convergent squared Neumann inverse in the source shifted norm, transported back; two-sided inversion, source factorization, commutation, and weighted/unweighted compatibility |
+| `NLS.ZakharovShabat.WeightedQEquation` | Actual complementary derivative-domain solution, source potential formula, Q-equation, uniqueness, and locally uniform existence on full closed strips |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -177,6 +180,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.RectangleSpectrum` | Arbitrary ordered resolvent rectangles; finite enclosed spectrum; whole cluster projection formula; exact range and rank; contour equality from spectral selection |
 | `NLS.ZakharovShabat.HeightRectangleContour` | Independent-height corners and actual contours; boundary admissibility; whole central projection equality; uniform analyticity and rank at Hilbert and all-exponent norm heights |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
+| `NLS.FunctionalAnalysis.ConjugatedSquaredNeumann` | Transport of small-square inversion through a continuous linear equivalence; original-space geometric series, two-sided inverses, uniqueness, and commutation |
 | `NLS.ZakharovShabat.DoubleResolvent` | `FL^1 → FL^p` potential convolution; double free resolvent and both coefficient formulas; global norm bound; square factorization and sandwich criterion; domain inverse identities; agreement with the full resolvent and quantitative bounds; nilpotence and exact two-term resolvents for one-sided potentials |
 | `NLS.SequenceSpaces.FourierTail` | Strict low-frequency cutoffs and closed centered windows; separation of opposite near windows; symmetric tails retaining the boundary; single-mode behavior; contraction, composition, monotonicity, and convergence |
 | `NLS.SequenceSpaces.ConvolutionSandwich` | Conjugate-space multipliers and weighted convolution `FL^p → FL^1`; norm bounds; exact far-output/far-input/potential-tail decomposition and the corresponding three-term estimate |
@@ -2714,13 +2718,39 @@ most `ε` for all `|n|≥N` and every point of the full closed strip `U_n`.
 The special case `ε=1/2` is exactly the simultaneous contraction assertion
 on printed page 39. It holds for every finite Banach exponent, including
 `p=1`, without removing the central lattice point or the strip boundary.
-The squared Neumann inverse, Q-equation solution, and Lemma 6.6 determinant
-reduction remain next.
+### Squared Neumann inverse and the Q-equation
+
+`ConjugatedSquaredNeumann` transports the geometric series through a continuous
+linear equivalence. The even series converges in the original operator algebra
+and inverts `Id-K²` on both sides. Its product with `Id+K` inverts `Id-K` on
+both sides and commutes with `K`. Smallness is tested on the conjugated square.
+`WeightedCorrection` applies this construction using the signed pair modulation.
+It proves the displayed factorization for `T̂_n`, both inverse identities,
+uniqueness, and commutation with `T_n`. Forgetting the weight carries this
+inverse to the unit-weight inverse on every common input.
+
+`WeightedDomainPotential` embeds the weighted one-derivative scalar domain
+into weighted `ℓ¹` with the same exponent-only constant as the ordinary
+Sobolev embedding. Composing with weighted convolution gives the actual
+continuous domain-to-base potential. Its physical coefficients agree with the
+original operator, and applying it after the complementary domain inverse
+gives exactly the previously estimated `T_n`.
+
+`WeightedQEquation` constructs the continuous domain-valued map
+`u ↦ v=A_λ⁻¹ Q_n T̂_n Φu`. Its values have zero resonant coordinates and
+satisfy `A_λ v=Q_n Φ(u+v)`. The source formula `Φv=T̂_n T_n Φu` and the
+identity `Φ(u+v)=T̂_n Φu` are proved. The solution is unique among actual
+complementary weighted derivative-domain vectors. A single open convex
+neighborhood and frequency cutoff give existence and uniqueness for every
+input `u` on every sufficiently distant full closed strip. These results
+include `p=1` and require no eigenvalue or determinant assumptions.
+
+The resonant `S_n` map and Lemma 6.6 determinant criterion remain next.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5124 declarations under `NLS`, including generated
+axioms. The current audit covers 5198 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3372,12 +3402,20 @@ negative resonance. They instantiate the simultaneous open-neighborhood
 half bound at `p=1` and a quarter bound along negative resonances at `p=3`.
 The zero-potential frequency bound also vanishes at the zero strip.
 
+The Q-equation checks invert a nilpotent operator whose norm is at least four
+through an arbitrary coordinate equivalence, and verify its transported
+geometric series. They check the weighted derivative embedding at `p=1`,
+the original domain potential at `p=3`, the source Q-solution formula at a
+negative resonance, locally uniform existence and uniqueness at `p=3`,
+and weighted/unweighted inverse compatibility. With zero potential, the
+solution is exactly zero even at the central zero strip.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Use the proved locally uniform large-frequency contraction threshold to
-   invert the Q-equation, and implement the Lemma 6.6 determinant
-   reduction toward Propositions 6.1/6.3. Lemmas 6.4 and 6.5 are proved for all
+2. Use the proved locally uniform inverse and Q-equation solution to
+   construct the resonant map and prove the Lemma 6.6 determinant criterion
+   toward Propositions 6.1/6.3. Lemmas 6.4 and 6.5 are proved for all
    finite Banach exponents, including the source's `c₂=2` in Lemma 6.4.
    A.9's intrinsic Hilbert space and continuous
    subcritical weighted identification are implemented on every positive interval,

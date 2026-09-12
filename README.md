@@ -554,8 +554,11 @@ installation is absent. No shell startup files are modified.
   The actual square agrees with the double-inverse factorization. The locally
   uniform contraction threshold is now proved: one open convex neighborhood
   and one frequency cutoff bound both the unweighted and weighted shifted
-  squared norms by `1/2` throughout the closed strips. The Q-equation
-  inversion and determinant reduction are next.
+  squared norms by `1/2` throughout the closed strips. The squared Neumann
+  inverse and the Q-equation are now solved: `v=A_λ⁻¹ Q_n T̂_n Φu` is the
+  unique complementary solution in the weighted derivative domain, with
+  `Φv=T̂_n T_n Φu`. The weighted and unweighted inverses agree on common
+  inputs. The Lemma 6.6 determinant reduction is next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

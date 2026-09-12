@@ -219,3 +219,7 @@ import NLS.ZakharovShabat.ComplementaryDoubleEstimate
 import NLS.ZakharovShabat.WeightedSquareEstimate
 import NLS.ZakharovShabat.UnweightedComplementary
 import NLS.ZakharovShabat.WeightedContraction
+import NLS.FunctionalAnalysis.ConjugatedSquaredNeumann
+import NLS.ZakharovShabat.WeightedDomainPotential
+import NLS.ZakharovShabat.WeightedCorrection
+import NLS.ZakharovShabat.WeightedQEquation
