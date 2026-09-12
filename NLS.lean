@@ -232,3 +232,8 @@ import NLS.ZakharovShabat.BilinearGreen
 import NLS.ZakharovShabat.ResonantDiagonalSymmetry
 import NLS.ZakharovShabat.ConstantResonantCoefficient
 import NLS.ZakharovShabat.ResonantRealityCounterexample
+import NLS.SequenceSpaces.ConjugateReflection
+import NLS.ZakharovShabat.WeightedReality
+import NLS.ZakharovShabat.ConjugateComplementary
+import NLS.ZakharovShabat.ConjugateCorrection
+import NLS.ZakharovShabat.ResonantConjugation

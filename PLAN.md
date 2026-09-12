@@ -945,11 +945,24 @@ general complex potentials. Constant components `(a,b)` have the actual
 correction `ab/(λ+nπ)` for `n≠0`. Choosing `(1,i)` gives `i/(2πn)` at a
 positive central resonance. The formal counterexample meets the source's
 half-size contraction at arbitrarily large indices. The source proof assumes
-`φ*=±φ` for both conjugation identities; retain that condition when proving
-the corrected statement.
+`φ*=±φ` for both conjugation identities; the corrected statement now
+retains that condition.
 
-Next, implement conjugate reflection of weighted coefficients and use
-Q-solution uniqueness to prove the conditional conjugation identities for
-`a_n` and `b_n`. Then establish the coefficient estimates and refined
-eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
+The conditional identities in Lemma 6.7(ii) are now proved. Physical conjugation
+is a norm-preserving involution on every symmetric weighted coefficient space,
+including infinity. The potential star exchanges these conjugate-reflected
+components; both Fourier coefficient identities characterize `φ*=εφ`.
+For `ε²=1`, signed conjugation commutes with the actual domain potential and
+intertwines the complementary inverse at `λ` with that at `conj λ`.
+
+Uniqueness of the actual Neumann inverse proves the corresponding correction
+identity. Its resonant action gives `a_n(conj λ)=conj(a_n(λ))` and both signed
+off-diagonal exchange formulas. On the real spectral axis, the diagonal has
+zero imaginary part for either reality type. A common open convex neighborhood
+and frequency cutoff provide both inverse hypotheses throughout the full
+closed strips. The argument covers every finite Banach exponent.
+
+Next, prove the component parity expansions (1.14)–(1.15) after Lemma 6.7,
+then the analytic dependence and coefficient estimates in Lemma 6.8. Continue
+the refined eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
 The printed general-`p` central-height constant remains a separate open item.

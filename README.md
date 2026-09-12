@@ -568,7 +568,10 @@ installation is absent. No shell startup files are modified.
   reality clause in 6.7(ii) has a proved counterexample: constant components
   `(1,i)` give `a_n(nπ)=i/(2πn)` at arbitrarily large positive indices
   satisfying the half-size contraction. The conditional conjugation identities
-  under the proof's assumption `φ*=±φ` are next.
+  under the proof's assumption `φ*=±φ` are now proved for both coefficients,
+  with a locally uniform cutoff. On the real spectral axis, `a_n` is real
+  for either type; the off-diagonal relation retains the appropriate sign.
+  The coefficient estimates following Lemma 6.7 are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

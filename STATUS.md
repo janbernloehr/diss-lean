@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 284 modules and 2586 named public theorems. All compile on the
+The library has 289 modules and 2614 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -97,6 +97,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ResonantDiagonalSymmetry` | Lemma 6.7(i), equal diagonal corrections, named source coefficients, and the common-diagonal resonant matrix form |
 | `NLS.ZakharovShabat.ConstantResonantCoefficient` | Actual constant component potentials, exact complementary action, and the diagonal correction `ab/(λ+nπ)` for nonzero indices |
 | `NLS.ZakharovShabat.ResonantRealityCounterexample` | Constant `(1,i)` violates the printed unconditional reality clause at arbitrarily large positive resonances within the half-size contraction regime |
+| `NLS.SequenceSpaces.ConjugateReflection` | Physical conjugation on arbitrary symmetric weighted coefficients, norm preservation including infinity, involution, and conjugated convolution sums |
+| `NLS.ZakharovShabat.WeightedReality` | Signed conjugation on weighted pairs and derivative weights; source potential star and exact Fourier coefficient characterization of `φ*=εφ` |
+| `NLS.ZakharovShabat.ConjugateComplementary` | Closed-strip conjugation invariance and conjugation of the actual domain potential, complementary inverse, and `T_n` under the reality hypothesis |
+| `NLS.ZakharovShabat.ConjugateCorrection` | Conjugation of the actual inverse from uniqueness; exact signed action on resonant amplitudes and corrected synthesis |
+| `NLS.ZakharovShabat.ResonantConjugation` | Corrected Lemma 6.7(ii) for both reality signs, both off-diagonal identities, real-axis diagonal reality, and locally uniform cutoffs throughout closed strips |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2810,13 +2815,48 @@ where the inverse is defined. For every cutoff, it constructs a positive
 index beyond that cutoff satisfying the actual shifted square bound `≤1/2`
 and having a nonreal diagonal. Thus a large-frequency restriction cannot
 repair the unconditional assertion for general complex potentials. The
-conditional conjugation identities under `φ*=±φ` remain to be proved;
-Lemma 6.7(ii) is not claimed complete.
+conditional conjugation identities under `φ*=±φ` are now proved below.
+The printed unconditional assertion remains false for general complex potentials.
+
+### Lemma 6.7(ii): conditional conjugation identities
+
+`ConjugateReflection` constructs physical conjugation on every symmetric
+weighted coefficient space: the coefficient at `k` becomes the complex
+conjugate of the original coefficient at `-k`. It preserves the scalar norm,
+including the infinity endpoint, and is involutive. Conjugation reverses
+both factors in the actual convolution sum.
+
+`WeightedReality` defines the source potential star by exchanging the two
+conjugate-reflected components. Its equality to `εφ` is characterized by
+both raw coefficient identities. For `ε²=1`, the signed map on vectors is
+`J_ε(f)=(conj(f₂(-k)), ε conj(f₁(-k)))`. Symmetry of the derivative weight
+makes it available on the actual domain as well as the base.
+
+`ConjugateComplementary` proves that the full closed strip is invariant
+under conjugation, and that the zeroed reciprocal symbol conjugates at the
+same integer index. Under `φ*=εφ`, signed conjugation commutes with the
+actual domain potential and intertwines the complementary domain inverse,
+and hence `T_n(λ)`, with the operators at `conj λ`.
+
+`ConjugateCorrection` uses uniqueness of `(Id-T_n)⁻¹` to obtain the identity
+for the already constructed correction. Extraction and synthesis agree with
+the signed action on the two resonant coordinates. `ResonantConjugation`
+then proves `a_n(conj λ)=conj(a_n(λ))` and
+`b_n⁺(conj λ)=ε conj(b_n⁻(λ))`, together with the reverse off-diagonal
+identity. The reality hypothesis applies to every conclusion. The common
+diagonal has zero imaginary part on the real axis for either reality type.
+
+These identities hold at every finite Banach exponent with the two inverse
+hypotheses. The final uniform theorem supplies both hypotheses on every
+sufficiently distant full closed strip, using one open convex neighborhood
+and one cutoff. Thus the corrected Lemma 6.7(ii), with the hypothesis from
+its source proof on pages 40–41, is established for both signs. The parity
+expansions and estimates of the coefficients remain next.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5330 declarations under `NLS`, including generated
+axioms. The current audit covers 5374 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3491,12 +3531,20 @@ negative resonance, the determinant's off-diagonal product sign at `p=1`,
 and positive imaginary diagonals beyond every cutoff at `p=3` with the
 actual half-size contraction.
 
+Conjugation checks cover the infinity endpoint under a constant weight with
+`w(0)=2`, negative imaginary Fourier modes, and nonconstant real/imaginary
+type potentials with opposite frequencies and complex amplitudes at `p=1,3`.
+They check real-axis diagonal reality for complex real-type components,
+the minus sign in the imaginary-type off-diagonal identity, and conjugation
+of a nonreal parameter on the closed strip boundary.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the conditional conjugation identities in Lemma 6.7(ii), retaining
-   `φ*=±φ` for both coefficients, and continue the refined eigenvalue
-   and weighted-gap estimates toward Propositions 6.1/6.3. Lemma 6.6 is proved
+2. Prove the parity expansions after Lemma 6.7 and the coefficient estimates
+   in Lemma 6.8, then continue the refined eigenvalue and weighted-gap estimates
+   toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
+   both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
    finite Banach exponents, including the source's `c₂=2` in Lemma 6.4.
    A.9's intrinsic Hilbert space and continuous

@@ -7626,3 +7626,85 @@ example (w : SpectralWeight) (M : ℕ) :
   exact ⟨n, hnM, hn, h, hh, constantResonantA_im_pos (by norm_num) w n hn h⟩
 
 end Lemma67Checks
+
+section ConjugationChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Physical conjugation reverses a negative frequency, including at infinity and w(0)=2.
+example :
+    (WeightedCoeff.conjugateReflection (SpectralWeight.constant 2 (by norm_num)).toWeight
+      (SpectralWeight.constant 2 (by norm_num)).neg_eq
+      (weightedMode (p := ⊤) (SpectralWeight.constant 2 (by norm_num)).toWeight (-3) Complex.I)).val 3 = -Complex.I := by
+  simp
+
+-- Nonconstant real and imaginary types have opposite physical frequencies.
+example (w : SpectralWeight) :
+    HasRealitySign w 1 ((WeightedCoeffPair.toMax w.toWeight 1).symm
+      (weightedMode w.toWeight (-4) (2 + Complex.I), weightedMode w.toWeight 4 (2 - Complex.I))) := by
+  rw [hasRealitySign_iff]
+  constructor <;> intro k
+  · change (starRingEnd ℂ) ((weightedMode w.toWeight 4 (2 - Complex.I)).val (-k)) =
+      1 * (weightedMode w.toWeight (-4) (2 + Complex.I)).val k
+    by_cases hk : k = -4 <;> simp [hk, neg_eq_iff_eq_neg, map_ofNat, sub_eq_add_neg, add_comm]
+  · change (starRingEnd ℂ) ((weightedMode w.toWeight (-4) (2 + Complex.I)).val (-k)) =
+      1 * (weightedMode w.toWeight 4 (2 - Complex.I)).val k
+    by_cases hk : k = 4 <;> simp [hk, neg_eq_iff_eq_neg, map_ofNat, sub_eq_add_neg, add_comm]
+
+example (w : SpectralWeight) :
+    HasRealitySign w (-1) ((WeightedCoeffPair.toMax w.toWeight 3).symm
+      (weightedMode w.toWeight (-4) (2 + Complex.I), weightedMode w.toWeight 4 (-2 + Complex.I))) := by
+  rw [hasRealitySign_iff]
+  constructor <;> intro k
+  · change (starRingEnd ℂ) ((weightedMode w.toWeight 4 (-2 + Complex.I)).val (-k)) =
+      -1 * (weightedMode w.toWeight (-4) (2 + Complex.I)).val k
+    by_cases hk : k = -4 <;> simp [hk, neg_eq_iff_eq_neg, map_ofNat, add_comm]
+  · change (starRingEnd ℂ) ((weightedMode w.toWeight (-4) (2 + Complex.I)).val (-k)) =
+      -1 * (weightedMode w.toWeight 4 (-2 + Complex.I)).val k
+    by_cases hk : k = 4 <;> simp [hk, neg_eq_iff_eq_neg, map_ofNat, add_comm]
+
+private theorem conjugationConstantReal {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (w : SpectralWeight) (a : ℂ) :
+    HasRealitySign (p := p) w 1 (constantSpectralPotential w a ((starRingEnd ℂ) a)) := by
+  rw [hasRealitySign_iff]
+  constructor <;> intro k <;> by_cases hk : k = 0 <;>
+    simp [constantSpectralPotential, hk]
+
+private theorem conjugationConstantImaginary {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (w : SpectralWeight) (a : ℂ) :
+    HasRealitySign (p := p) w (-1) (constantSpectralPotential w a (-(starRingEnd ℂ) a)) := by
+  rw [hasRealitySign_iff]
+  constructor <;> intro k <;> by_cases hk : k = 0 <;>
+    simp [constantSpectralPotential, hk]
+
+-- The repaired diagonal theorem is applicable to a genuinely complex real-type potential at p=1.
+example (w : SpectralWeight) (n : ℤ) (x : ℝ) (hx : (x : ℂ) ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (p := 1) (by simp) w
+      (constantSpectralPotential w Complex.I (-Complex.I)) n (x : ℂ) hx‖ < 1) :
+    (weightedResonantA (by simp) w (constantSpectralPotential w Complex.I (-Complex.I)) n (x : ℂ) hx h).im = 0 := by
+  apply weightedResonantA_im_eq_zero (by simp) w 1 (by norm_num)
+  simpa using conjugationConstantReal (p := 1) w Complex.I
+
+-- Imaginary type keeps the minus sign on the exchanged off-diagonal coefficients at p=3.
+example (w : SpectralWeight) (a : ℂ) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) w
+      (constantSpectralPotential w a (-(starRingEnd ℂ) a)) n z hz‖ < 1)
+    (hc : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) w
+      (constantSpectralPotential w a (-(starRingEnd ℂ) a)) n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz)‖ < 1) :
+    weightedResonantBPlus (by norm_num) w (constantSpectralPotential w a (-(starRingEnd ℂ) a))
+      n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc =
+      -(starRingEnd ℂ) (weightedResonantBMinus (by norm_num) w
+        (constantSpectralPotential w a (-(starRingEnd ℂ) a)) n z hz h) := by
+  simpa only [neg_one_mul] using weightedResonantBPlus_conj (by norm_num) w (-1) (by norm_num)
+    (constantSpectralPotential w a (-(starRingEnd ℂ) a)) (conjugationConstantImaginary w a) n z hz h hc
+
+-- A full strip, including its boundary and the central real point, stays inside after conjugation.
+example : (starRingEnd ℂ) ((Real.pi : ℂ) * (-3 : ℤ) + Real.pi / 2 + Complex.I) ∈ resonantStrip (-3) := by
+  apply conj_mem_resonantStrip
+  simp only [resonantStrip, Set.mem_ofPred_eq, Complex.add_re, Complex.mul_re,
+    Complex.ofReal_re, Complex.ofReal_im, Complex.intCast_re, Complex.intCast_im, Complex.I_re,
+    mul_zero, sub_zero, add_zero]
+  rw [add_sub_cancel_left]
+  norm_num [Complex.div_re, abs_div, abs_of_pos Real.pi_pos]
+
+end ConjugationChecks
