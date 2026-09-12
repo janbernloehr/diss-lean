@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 275 modules and 2528 named public theorems. All compile on the
+The library has 279 modules and 2561 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -88,6 +88,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.WeightedDomainPotential` | Weighted one-derivative Hölder embedding into weighted `ℓ¹`; continuous actual domain potential; original coefficients and exact composition giving `T_n` |
 | `NLS.ZakharovShabat.WeightedCorrection` | The convergent squared Neumann inverse in the source shifted norm, transported back; two-sided inversion, source factorization, commutation, and weighted/unweighted compatibility |
 | `NLS.ZakharovShabat.WeightedQEquation` | Actual complementary derivative-domain solution, source potential formula, Q-equation, uniqueness, and locally uniform existence on full closed strips |
+| `NLS.ZakharovShabat.ResonantCoordinates` | Continuous physical-mode extraction and synthesis, actual resonant projection, domain lift, free-pencil action, and complementary identities |
+| `NLS.ZakharovShabat.WeightedResonantReduction` | Explicit `2×2` resonant matrix, eigenfunction reconstruction, exact residual identity, both kernel directions, and weighted-domain determinant criterion |
+| `NLS.ZakharovShabat.UnitWeightedRealization` | Coefficient-preserving equivalences for the original base and derivative domain; exact equation and periodic-spectrum identification |
+| `NLS.ZakharovShabat.PeriodicResonantReduction` | Lemma 6.6 for the original periodic spectrum, valid with a locally uniform cutoff over full closed strips for every finite Banach exponent |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2745,12 +2749,38 @@ neighborhood and frequency cutoff give existence and uniqueness for every
 input `u` on every sufficiently distant full closed strip. These results
 include `p=1` and require no eigenvalue or determinant assumptions.
 
-The resonant `S_n` map and Lemma 6.6 determinant criterion remain next.
+### Lemma 6.6: the resonant determinant criterion
+
+`ResonantCoordinates` extracts the physical first-component frequency `-n`
+and second-component frequency `n`. Synthesis recovers the actual resonant
+projection and has a coefficient-preserving derivative-domain lift. Its two
+amplitudes remain independent at `n=0`. The free pencil acts on this space
+by the scalar `λ-nπ`, and the complementary projection commutes with the
+pencil between the domain and base.
+
+`WeightedResonantReduction` defines the source map
+`S_n=(λ-nπ)Id - coordinates ∘ T̂_n Φ ∘ synthesis` and its `2×2` matrix.
+Each entry is the free diagonal minus the corresponding corrected potential
+coefficient. Reconstruction adds the unique Q-solution to the synthesized
+resonant vector. Its resonant coordinates are exactly the prescribed input,
+and its full differential residual equals the synthesis of `S_n c`.
+Every actual domain eigenvector is reconstructed from its coordinates.
+Consequently, the existence of a nonzero weighted domain eigenvector is
+equivalent to a nonzero matrix-kernel vector and to `det S_n=0`.
+
+`UnitWeightedRealization` gives continuous coefficient-preserving equivalences
+between the unit-weight and original base and derivative-domain spaces.
+It identifies the full eigenvector equations and preserves nonzero vectors
+in both directions. `PeriodicResonantReduction` therefore proves Lemma 6.6
+for the existing original periodic spectrum, for every finite Banach exponent.
+A single open convex neighborhood and cutoff `N≥1` make the criterion valid
+on all full closed strips with `|n|≥N`. The matrix symmetries in Lemma 6.7,
+refined eigenvalue tails, and weighted-gap estimates remain next.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5198 declarations under `NLS`, including generated
+axioms. The current audit covers 5276 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3410,12 +3440,20 @@ negative resonance, locally uniform existence and uniqueness at `p=3`,
 and weighted/unweighted inverse compatibility. With zero potential, the
 solution is exactly zero even at the central zero strip.
 
+The Lemma 6.6 checks cover negative-frequency synthesis at `p=1`, two
+independent amplitudes at the zero strip with `p=3`, and the exact domain
+lift. The free matrix determinant is exactly `(λ-nπ)²` for arbitrary spectral
+weights and finite Banach exponents. Checks recover its double root at a
+negative resonance and exclude a nonreal free parameter from the original
+periodic spectrum at `p=1`. They also instantiate nonzero eigenfunction
+reconstruction and the locally uniform criterion on original potential space.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Use the proved locally uniform inverse and Q-equation solution to
-   construct the resonant map and prove the Lemma 6.6 determinant criterion
-   toward Propositions 6.1/6.3. Lemmas 6.4 and 6.5 are proved for all
+2. Prove the Lemma 6.7 matrix symmetries and continue the refined eigenvalue
+   and weighted-gap estimates toward Propositions 6.1/6.3. Lemma 6.6 is proved
+   for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
    finite Banach exponents, including the source's `c₂=2` in Lemma 6.4.
    A.9's intrinsic Hilbert space and continuous
    subcritical weighted identification are implemented on every positive interval,

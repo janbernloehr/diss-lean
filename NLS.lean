@@ -223,3 +223,7 @@ import NLS.FunctionalAnalysis.ConjugatedSquaredNeumann
 import NLS.ZakharovShabat.WeightedDomainPotential
 import NLS.ZakharovShabat.WeightedCorrection
 import NLS.ZakharovShabat.WeightedQEquation
+import NLS.ZakharovShabat.ResonantCoordinates
+import NLS.ZakharovShabat.WeightedResonantReduction
+import NLS.ZakharovShabat.UnitWeightedRealization
+import NLS.ZakharovShabat.PeriodicResonantReduction

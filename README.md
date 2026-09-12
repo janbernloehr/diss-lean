@@ -558,7 +558,11 @@ installation is absent. No shell startup files are modified.
   inverse and the Q-equation are now solved: `v=A_λ⁻¹ Q_n T̂_n Φu` is the
   unique complementary solution in the weighted derivative domain, with
   `Φv=T̂_n T_n Φu`. The weighted and unweighted inverses agree on common
-  inputs. The Lemma 6.6 determinant reduction is next.
+  inputs. Lemma 6.6 is now proved for the original periodic spectrum:
+  `λ` is a periodic eigenvalue exactly when the explicit `2×2` resonant
+  matrix has determinant zero, with a locally uniform frequency cutoff.
+  Eigenfunctions are reconstructed in the actual derivative domain.
+  The matrix symmetries in Lemma 6.7 are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

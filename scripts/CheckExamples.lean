@@ -7491,3 +7491,84 @@ example (w : SpectralWeight) (u : WeightedDomain w.toWeight 2) :
     simpa using congrArg (complementaryProjection w.toWeight 0) he.symm
 
 end WeightedQChecks
+
+section Lemma66Checks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Negative resonant indices exchange the physical signs but keep the two amplitudes distinct.
+example (w : Weight) :
+    (resonantSynthesis (p := 1) w (-3) ![Complex.I, 2]).fst.val 3 = Complex.I ∧
+    (resonantSynthesis (p := 1) w (-3) ![Complex.I, 2]).snd.val (-3) = 2 ∧
+    (resonantSynthesis (p := 1) w (-3) ![Complex.I, 2]).fst.val (-3) = 0 := by simp
+
+-- At n=0 the two independent components remain a two-dimensional space.
+example (w : Weight) :
+    resonantCoordinates w 0 (resonantSynthesis (p := 3) w 0 ![Complex.I, -2]) = ![Complex.I, -2] := by simp
+
+-- The derivative-domain lift preserves the prescribed base Fourier modes.
+example (w : Weight) :
+    weightedDomainInclusion w (resonantSynthesis (p := 2) w.oneDerivative (-2) ![1, Complex.I]) =
+      resonantSynthesis w (-2) ![1, Complex.I] := include_resonantSynthesis _ _ _
+
+private theorem lemma66ZeroPotential {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    (w : SpectralWeight) (f : WeightedDomain w.toWeight p) : weightedDomainPotential hp w 0 f = 0 := by
+  apply weightedPair_ext <;> intro k <;> simp
+
+private theorem lemma66ZeroSmall {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    (w : SpectralWeight) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    ‖weightedPotentialSquareInShift hp w 0 n z hz‖ < 1 :=
+  (norm_weightedPotentialSquareInShift_le hp w 0 n z hz).trans_lt (by simp [weightedSquareBound])
+
+-- The free determinant is exactly the expected double root, with no weight normalization assumption.
+private theorem lemma66FreeDet {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    (w : SpectralWeight) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp w 0 n z hz‖ < 1) :
+    (weightedResonantMatrix hp w 0 n z hz h).det = (z - (Real.pi : ℂ) * n) ^ 2 := by
+  simp [Matrix.det_fin_two, weightedResonantMatrix_entry, lemma66ZeroPotential, pow_two]
+
+example (w : SpectralWeight) :
+    (weightedResonantMatrix (p := 3) (by norm_num) w 0 (-2) ((Real.pi : ℂ) * (-2 : ℤ))
+      (center_mem_resonantStrip (-2)) (lemma66ZeroSmall (by norm_num) w _ _ _)).det = 0 := by
+  rw [lemma66FreeDet]
+  simp
+
+-- The original periodic spectrum criterion excludes a genuinely nonreal free parameter at p=1.
+example : (Real.pi : ℂ) * (-3 : ℤ) + Complex.I ∉ periodicSpectrum (p := 1) (by simp) 0 := by
+  let z : ℂ := (Real.pi : ℂ) * (-3 : ℤ) + Complex.I
+  have hz : z ∈ resonantStrip (-3) := by
+    simp only [z, resonantStrip, Set.mem_ofPred_eq, Complex.add_re, Complex.mul_re,
+      Complex.ofReal_re, Complex.ofReal_im, Complex.intCast_re, Complex.intCast_im, Complex.I_re,
+      mul_zero, sub_zero, add_zero, sub_self, abs_zero]
+    positivity
+  have h : PeriodicReductionSmall (p := 1) (by simp) 0 (-3) z hz := by
+    simpa only [PeriodicReductionSmall, map_zero] using lemma66ZeroSmall (p := 1) (by simp) SpectralWeight.one (-3) z hz
+  rw [mem_periodicSpectrum_iff_resonant_det_zero (p := 1) (by simp) 0 (-3) z hz h]
+  have hdet (ψ : WeightedCoeffPair SpectralWeight.one.toWeight 1) (hψ : ψ = 0)
+      (hh : ‖weightedPotentialSquareInShift (by simp) SpectralWeight.one ψ (-3) z hz‖ < 1) :
+      (weightedResonantMatrix (by simp) SpectralWeight.one ψ (-3) z hz hh).det =
+        (z - (Real.pi : ℂ) * (-3 : ℤ)) ^ 2 := by
+    subst ψ
+    exact lemma66FreeDet _ _ _ _ _ _
+  have hd := hdet (unitBaseEquiv.symm 0) (map_zero _) h
+  change ¬(weightedResonantMatrix (by simp) SpectralWeight.one (unitBaseEquiv.symm 0) (-3) z hz h).det = 0
+  rw [hd]
+  simp [z]
+
+-- Every matrix-kernel vector reconstructs to a nonzero domain eigenfunction.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by norm_num) w φ n z hz‖ < 1)
+    (c : Fin 2 → ℂ) (hc : c ≠ 0) (hs : weightedResonantMap (by norm_num) w φ n z hz h c = 0) :
+    ∃ f : WeightedDomain w.toWeight 3, f ≠ 0 ∧ weightedFreePencil w.toWeight z f = weightedDomainPotential (by norm_num) w φ f :=
+  (weighted_eigenvector_iff_resonant_kernel (by norm_num) w φ n z hz h).mpr ⟨c, hc, hs⟩
+
+-- Lemma 6.6 has one locally uniform cutoff for the original p=1 potential space.
+example (φ : PairSpace 1) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (PairSpace 1), IsOpen U ∧ φ ∈ U ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs → ∀ z : ℂ, ∀ hz : z ∈ resonantStrip n,
+        ∃ h : PeriodicReductionSmall (by simp) ψ n z hz,
+          z ∈ periodicSpectrum (by simp) ψ ↔ (periodicResonantMatrix (by simp) ψ n z hz h).det = 0 := by
+  obtain ⟨N, hN, U, ho, _, hφ, _, h⟩ := exists_uniform_periodicResonantReduction (by simp) φ
+  exact ⟨N, hN, U, ho, hφ, h⟩
+
+end Lemma66Checks

@@ -918,7 +918,21 @@ domain, satisfies the Q-equation and `Φv=T̂_n T_n Φu`, and is unique.
 Existence and uniqueness hold uniformly over the previously constructed
 open convex neighborhood and every sufficiently distant full closed strip.
 
-Next, construct the two-dimensional resonant map `S_n` and prove the
-Lemma 6.6 determinant criterion using the Q-equation solution. Then continue
-toward Propositions 6.1 and 6.3. The printed general-`p` central-height constant
-remains a separate open item.
+Lemma 6.6 is now proved. Continuous extraction and synthesis identify the
+two physical resonant modes with `Fin 2 → ℂ`, including an explicit lift
+into the derivative domain. The free pencil acts there by `λ-nπ`. The map
+`S_n=(λ-nπ)Id - coordinates ∘ T̂_n Φ ∘ synthesis` has an explicit `2×2`
+matrix in this basis. Reconstruction preserves the resonant amplitudes and
+its full differential residual is the synthesis of `S_n c`. Conversely,
+every domain eigenvector is reconstructed from its two coefficients.
+
+The unit-weight base and derivative-domain equivalences preserve original
+Fourier coefficients and identify the full weighted equation with the
+existing periodic operator. Thus the determinant criterion concerns the
+original periodic spectrum, with nonzero eigenvectors preserved in both
+directions. One open convex neighborhood and one cutoff `N≥1` make the
+criterion valid on every full closed strip with `|n|≥N`.
+
+Next, prove the matrix-coefficient symmetries in Lemma 6.7, followed by the
+refined eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
+The printed general-`p` central-height constant remains a separate open item.
