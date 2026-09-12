@@ -192,4 +192,61 @@ theorem eventually_sum_enclosed_multiplicity_eq (hp : p ≠ ⊤) (φ : PairSpace
     ← finrank_range_resolventCircleIntegral hp φ c r hr hc]
   exact hψ.2
 
+private def circleResolventToDomain (hp : p ≠ ⊤) (c : ℂ) (r : ℝ) (φ : PairSpace p) :
+    C(sphere c r, PairSpace p →L[ℂ] Domain p) :=
+  (ContinuousLinearMap.compLeftContinuous ℂ (sphere c r)
+    ((ContinuousLinearMap.compL ℂ (PairSpace p) (PairSpace p) (Domain p))
+      (freeResolventToDomain I reference_off))) (Ring.inverse (circlePencil hp c r φ))
+
+private theorem circleResolventToDomain_apply (hp : p ≠ ⊤) (c : ℂ) (r : ℝ) (φ : PairSpace p)
+    (hc : φ ∈ resolventCircleDomain hp c r) (z : sphere c r) :
+    circleResolventToDomain hp c r φ z = resolventToDomain hp φ z := by
+  have hu := (mem_circleDomain_iff hp c r φ).mp hc
+  calc
+    circleResolventToDomain hp c r φ z = (freeResolventToDomain I reference_off).comp
+        (Ring.inverse (circlePencil hp c r φ) z) := compLeftContinuous_apply _ _ _
+    _ = (freeResolventToDomain I reference_off).comp
+        (Ring.inverse (normalizedPencil hp φ z)) :=
+      congrArg (fun A : PairSpace p →L[ℂ] PairSpace p =>
+        (freeResolventToDomain I reference_off).comp A)
+        (continuousMap_inverse_apply (circlePencil hp c r φ) hu z)
+    _ = resolventToDomain hp φ z := rfl
+
+private theorem analyticAt_circleResolventToDomain (hp : p ≠ ⊤) (c : ℂ) (r : ℝ) (φ : PairSpace p)
+    (hc : φ ∈ resolventCircleDomain hp c r) :
+    AnalyticAt ℂ (circleResolventToDomain hp c r) φ := by
+  have hi := (analyticOnNhd_inverse (𝕜 := ℂ)
+    (A := C(sphere c r, PairSpace p →L[ℂ] PairSpace p)) _
+    ((mem_circleDomain_iff hp c r φ).mp hc)).comp
+      (f := circlePencil hp c r) (analyticAt_circlePencil hp c r φ)
+  exact (ContinuousLinearMap.analyticAt (𝕜 := ℂ)
+    (E := C(sphere c r, PairSpace p →L[ℂ] PairSpace p))
+    (F := C(sphere c r, PairSpace p →L[ℂ] Domain p))
+    (ContinuousLinearMap.compLeftContinuous ℂ (sphere c r)
+      ((ContinuousLinearMap.compL ℂ (PairSpace p) (PairSpace p) (Domain p))
+        (freeResolventToDomain I reference_off))) _).comp hi
+
+/-- Contour projections depend analytically on the potential even in the
+stronger one-derivative domain norm. This permits applying the unbounded
+operator to the moving spectral subspace. -/
+theorem analyticAt_resolventCircleIntegralToDomain (hp : p ≠ ⊤) (φ : PairSpace p)
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r) (hc : sphere c r ⊆ resolventSet hp φ) :
+    AnalyticAt ℂ (fun ψ => resolventCircleIntegralToDomain hp ψ c r) φ := by
+  have ha := (ContinuousLinearMap.analyticAt (𝕜 := ℂ)
+    (E := C(sphere c r, PairSpace p →L[ℂ] Domain p))
+    (F := PairSpace p →L[ℂ] Domain p)
+    (NLS.CircleIntegral.integrationCLM (PairSpace p →L[ℂ] Domain p) c r hr) _).comp
+      (analyticAt_circleResolventToDomain hp c r φ hc)
+  apply ha.congr
+  filter_upwards [(isOpen_resolventCircleDomain hp c r).mem_nhds hc] with ψ hψ
+  exact NLS.CircleIntegral.integrationCLM_eq c r hr _ (resolventToDomain hp ψ)
+    (circleResolventToDomain_apply hp c r ψ hψ)
+
+/-- Domain-valued analyticity holds on the whole admissible-potential set. -/
+theorem analyticOnNhd_resolventCircleIntegralToDomain (hp : p ≠ ⊤) (c : ℂ) (r : ℝ)
+    (hr : 0 ≤ r) :
+    AnalyticOnNhd ℂ (fun ψ => resolventCircleIntegralToDomain hp ψ c r)
+      (resolventCircleDomain hp c r) :=
+  fun φ hc => analyticAt_resolventCircleIntegralToDomain hp φ c r hr hc
+
 end NLS.ZakharovShabat

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has sixty modules and 602 named public theorems. All compile on the
+The library has sixty-two modules and 631 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -44,7 +44,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ContourSpectrum` | Finite enclosed spectrum; identification of the whole contour range with enclosed root spaces; equality with the algebraic cluster projection; algebraic-multiplicity rank formula; kernel formula; equality for circles with the same enclosed spectrum; isolated-value projections |
 | `NLS.FunctionalAnalysis.CircleIntegrationMap` | Normalized circle integration as a bounded linear map on continuous functions with the uniform norm; agreement on the circle; norm at most the radius |
 | `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections; norm gap for nonzero idempotents; zero and fixed-range containment persist under preconnected continuous deformations; rank constancy for arbitrary continuous preconnected finite-rank projection families |
-| `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of contour projections; locally constant rank and total enclosed algebraic multiplicity |
+| `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of base-space and domain-valued contour projections; locally constant rank and total enclosed algebraic multiplicity |
+| `NLS.FunctionalAnalysis.ProjectionTransport` | Explicit projection intertwiner; invertible ambient and range equivalences; analytic transport and inverse; fixed-range compression, analytic dependence, and exact intertwining |
+| `NLS.ZakharovShabat.SpectralReduction` | Bounded analytic `L P` through the domain contour lift; projection/operator intertwining; fixed-range analytic spectral reduction on an open neighborhood; reference and enclosed-eigenvector identities |
 | `NLS.ZakharovShabat.FreeMultiplicity` | Resonant coefficient embedding; independence of the signed free modes; support of every free root chain; equality of ordinary and full root spaces; free algebraic multiplicity two |
 | `NLS.ZakharovShabat.DiskMultiplicity` | Constant contour rank and total multiplicity on preconnected admissible families; isolated free disk spectrum; Proposition 1.1(i)’s high-frequency rank and algebraic-multiplicity count, uniform on a convex neighborhood containing zero |
 | `NLS.ZakharovShabat.DiskParity` | Free contour range in index parity; parity preservation under preconnected deformations; generalized root-space and domain eigenfunction parity; opposite-parity contour annihilation; uniform multiplicity and parity package for Proposition 1.1(i) |
@@ -425,6 +427,28 @@ full resolvent set, with no amplitude restriction and no restriction to `p≤2`.
 Physical Fourier identification remains separate; no self-adjointness or
 Hilbert-space spectral theorem is assumed.
 
+**The local analytic reduction in Lemma 3.7 is constructed.** For projections
+`P,Q`, the explicit transport `T = QP + (1-Q)(1-P)` satisfies `QT = TP` and
+is the identity at `Q=P`. Banach-algebra inversion gives a neighborhood where
+`T` is invertible and both `T` and its inverse vary analytically. The resulting
+continuous linear equivalence maps the whole reference range onto the varying
+range, including nonorthogonal projections.
+
+The contour projection is now analytic with values in operators into the
+one-derivative domain. Consequently `Aφ = Lφ P_D,φ` is a bounded analytic
+operator on the base space. The contour projection intertwines `Lφ` with its
+domain lift, and `Pφ Aφ = Aφ Pφ = Aφ`. Thus `Aφ` is the actual spectral
+restriction, retaining its action on every enclosed eigenvector.
+
+The operator `P₀ Tφ⁻¹ Aφ Tφ`, restricted to the fixed reference range, is
+analytic in operator norm. It satisfies the exact intertwining identity with
+`Aφ`, and at the reference potential it equals the original spectral restriction.
+An open neighborhood supports the transport, its inverse, the reduced operator,
+and the range equivalences simultaneously. For the high-frequency circles,
+the earlier disk count makes the reference range two-dimensional. Identifying
+the reduced traces with the eigenvalue midpoint and squared gap, and hence
+finishing Lemma 3.7, remains the next step.
+
 The actual unbounded realization is now defined as
 
 `unboundedOperator hp φ : PairSpace p →ₗ.[ℂ] PairSpace p`.
@@ -637,7 +661,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1241 declarations under `NLS`, including generated
+axioms. The current audit covers 1314 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -756,10 +780,18 @@ and nonreal resolvent parameters at `p=3`, the real spectrum at `p=1`, and energ
 positivity in the second component. A constant imaginary potential has a
 verified eigenvalue `i`, testing the necessity of the real-type hypothesis.
 The full two-vector operator symmetry is also checked for nonconstant potentials.
+Reduction checks construct nonorthogonal projections onto the lines `(x,t*x)`;
+the transport is the explicit shear `(x,y) ↦ (x,t*x+y)`, is invertible for every
+`t`, and has an analytic inverse. Its range equivalence and compression of the
+identity are checked. Spectral checks verify the action on a negative free mode,
+analytic reductions of arbitrary `p=3` potentials on two-dimensional reference
+ranges, the stronger domain norm at `p=1`, and equality with the original
+spectral restriction at the reference potential.
 
 ## Next milestones
 
-1. Prove the analytic symmetric eigenvalue combinations in Lemma 3.7.
+1. Identify the analytic reduced operator's traces with the eigenvalue midpoint
+   and squared gap, completing Lemma 3.7.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

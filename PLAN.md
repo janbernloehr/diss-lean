@@ -228,9 +228,18 @@ coefficient energy forces every eigenvalue to be real. Spectral discreteness
 and the eigenvector characterization then put every nonreal parameter in the
 resolvent set, without assuming a Hilbert-space realization.
 
-Next prove the analytic symmetric eigenvalue combinations in Lemma 3.7.
-Identification with the rectangular contour integral remains open. The unified statement uses
-Corollary 3.5's height-`N` box; the overview theorem's exact norm-dependent height
+The analytic local reduction used in Lemma 3.7 is now constructed. The explicit
+intertwiner `QP + (1-Q)(1-P)` equals the identity at the reference projection,
+has analytic inverse nearby, and induces equivalences of the full ranges.
+The contour projection is analytic in the stronger domain norm, so `L P_D`
+is bounded and analytic. Its commutation with the spectral projection gives
+an analytic operator on a fixed finite-dimensional reference range, with an
+exact intertwining identity and the correct enclosed-eigenvector action.
+
+Next identify the traces of this reduction with the eigenvalue midpoint and
+squared gap to finish Lemma 3.7. Identification with the rectangular contour
+integral remains open. The unified statement uses Corollary 3.5's height-`N` box;
+the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

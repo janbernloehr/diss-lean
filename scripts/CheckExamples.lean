@@ -1604,3 +1604,96 @@ example (a : ℂ) (f g : Domain 3) :
   domainPairing_operator_conj (by simp) _ (isRealType_single 2 a) f g
 
 end RealTypeChecks
+
+section SpectralReductionChecks
+open Complex Metric NLS.ProjectionTransport
+set_option autoImplicit false
+
+-- A nonorthogonal projection onto the moving line {(x,t*x)}.
+private def graphProjection (t : ℂ) : ℂ × ℂ →L[ℂ] ℂ × ℂ :=
+  (ContinuousLinearMap.fst ℂ ℂ ℂ).prod (t • ContinuousLinearMap.fst ℂ ℂ ℂ)
+
+private theorem graphProjection_idempotent (t : ℂ) : IsIdempotentElem (graphProjection t) := by
+  apply ContinuousLinearMap.ext
+  intro x
+  rfl
+
+private theorem graphTransport_apply (t : ℂ) (x : ℂ × ℂ) :
+    transport (graphProjection 0) (graphProjection t) x = (x.1, t * x.1 + x.2) := by
+  apply Prod.ext <;> simp [transport, graphProjection]
+
+private theorem graphTransport_unit (t : ℂ) : IsUnit (transport (graphProjection 0) (graphProjection t)) := by
+  refine ⟨⟨transport (graphProjection 0) (graphProjection t),
+    transport (graphProjection 0) (graphProjection (-t)), ?_, ?_⟩, rfl⟩ <;>
+    apply ContinuousLinearMap.ext <;> intro x <;>
+    change transport (graphProjection 0) _ (transport (graphProjection 0) _ x) = x <;>
+    simp [graphTransport_apply]
+
+-- Transport really moves the range, even for nonorthogonal projections.
+example (t : ℂ) (x : (graphProjection 0).range) :
+    (rangeEquivalence _ _ (graphProjection_idempotent 0) (graphProjection_idempotent t)
+      (graphTransport_unit t) x : ℂ × ℂ) = (x.val.1, t * x.val.1 + x.val.2) := by
+  rw [rangeEquivalence_apply, graphTransport_apply]
+
+-- Compression preserves the identity under this moving range.
+example (t : ℂ) (x : (graphProjection 0).range) :
+    (compressed (graphProjection 0) (graphProjection t) 1 x : ℂ × ℂ) = x := by
+  apply (equivalence _ _ (graphTransport_unit t)).injective
+  simp only [equivalence_apply]
+  simpa only [one_apply_eq_self] using transport_compressed_apply _ _ 1
+    (graphProjection_idempotent 0) (graphProjection_idempotent t) (graphTransport_unit t)
+    (Commute.one_right _) x
+
+example : AnalyticOnNhd ℂ (fun t : ℂ =>
+    Ring.inverse (transport (graphProjection 0) (graphProjection t))) Set.univ := by
+  intro t _
+  apply analyticAt_inverse_transport _ _ (graphTransport_unit t)
+  let B : ℂ × ℂ →L[ℂ] ℂ × ℂ :=
+    (0 : ℂ × ℂ →L[ℂ] ℂ).prod (ContinuousLinearMap.fst ℂ ℂ ℂ)
+  have he (u : ℂ) : graphProjection u = graphProjection 0 + u • B := by
+    apply ContinuousLinearMap.ext
+    intro x
+    apply Prod.ext <;> simp [graphProjection, B]
+  have h : AnalyticAt ℂ (fun u : ℂ => graphProjection 0 + u • B) t :=
+    analyticAt_const.add (analyticAt_id.smul analyticAt_const)
+  exact h.congr (Filter.Eventually.of_forall fun u => (he u).symm)
+
+-- The actual unbounded operator acts correctly on an enclosed negative free mode.
+example : contourOperator (p := 3) (by simp) 0 ((Real.pi : ℂ) * (-3 : ℤ)) (Real.pi / 4)
+    (domainInclusion (negativeMode (-3))) =
+      ((Real.pi : ℂ) * (-3 : ℤ)) • domainInclusion (negativeMode (-3)) := by
+  apply contourOperator_apply_eigenvector
+  · exact sphere_subset_resolventSet_of_smallPotential (by simp) 0 (-3)
+      (by positivity) le_rfl (by simp; positivity)
+  · exact mem_ball_self (by positivity)
+  · rw [operator_zero]
+    exact freeOperator_negativeMode (-3)
+
+-- Arbitrary p=3 potentials admit analytic reductions on a fixed two-dimensional range.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs →
+    Module.finrank ℂ (resolventCircleIntegral (by simp) φ ((Real.pi : ℂ) * n) (Real.pi / 4)).range = 2 ∧
+    ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧
+      AnalyticOnNhd ℂ (fun ψ => reducedContourOperator (by simp) φ ψ ((Real.pi : ℂ) * n) (Real.pi / 4)) U := by
+  obtain ⟨N, U, _, _, _, hφ, _, _, _, h⟩ := exists_uniform_periodicCountingData (by simp) φ
+  refine ⟨N, ?_⟩
+  intro n hn
+  have hdata := h φ hφ N le_rfl
+  obtain ⟨V, ho, hv, _, _, ha, _⟩ := exists_local_contourReduction (by simp) φ _ _
+    (by positivity) (hdata.disk_resolvent n hn)
+  exact ⟨hdata.disk_rank n hn, V, ho, hv, ha⟩
+
+-- The projection is analytic as an operator into the stronger domain, at p=1 too.
+example (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) φ) :
+    AnalyticAt ℂ (fun ψ => resolventCircleIntegralToDomain (by simp) ψ c r) φ :=
+  analyticAt_resolventCircleIntegralToDomain (by simp) φ c r hr hc
+
+-- At the reference potential, compression is exactly the spectral restriction.
+example (φ : PairSpace 3) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) φ)
+    (x : (resolventCircleIntegral (by simp) φ c r).range) :
+    (reducedContourOperator (by simp) φ φ c r x : PairSpace 3) =
+      operator (by simp) φ (resolventCircleIntegralToDomain (by simp) φ c r x) :=
+  reducedContourOperator_self_apply (by simp) φ c r hr hc x
+
+end SpectralReductionChecks
