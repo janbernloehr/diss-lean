@@ -146,8 +146,12 @@ extension on `[0,2]` and the original pair on `[0,1]`, including all endpoints.
 Conversely, every weighted boundary pair restricts to the original classical
 endpoint domain, and extending that restriction recovers the pair. Each classical
 interval pair has a unique weighted boundary representative; equality depends
-only on values on `[0,1]`. Physical Sobolev norm comparison, Fourier/distribution
-realization, and physical multiplication remain needed for the full spectral transfer.
+only on values on `[0,1]`. The physical Sobolev energy now satisfies exact Parseval
+and reflection identities. The standard interval pair norm obeys
+`‖extension f‖ ≤ ‖f‖H¹ ≤ √2 π ‖extension f‖`, with the length-two normalization
+and derivative factor `π` retained. Packaging this correspondence as a normed
+linear equivalence, Fourier/distribution realization, and physical multiplication
+remain needed for the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

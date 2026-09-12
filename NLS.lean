@@ -76,3 +76,4 @@ import NLS.Fourier.SobolevDerivative
 import NLS.Fourier.SobolevIdentification
 import NLS.ZakharovShabat.ClassicalIntervalExtension
 import NLS.ZakharovShabat.ClassicalIntervalRestriction
+import NLS.ZakharovShabat.ClassicalIntervalNorm

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 120 modules and 1212 named public theorems. All compile on the
+The library has 123 modules and 1233 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -127,6 +127,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.PeriodicSobolevLift` | Matching-endpoint circle lift; exact values on the closed period, derivative agreement almost everywhere, classical `H¹` and weighted Fourier recovery, including reflected interval coordinates |
 | `NLS.ZakharovShabat.ClassicalIntervalExtension` | Original Dirichlet/Neumann endpoint domains; signed-swap extension into actual weighted boundary domains; normalized physical coefficients, closed-period reconstruction, exact restriction recovery, and injectivity on the original interval |
 | `NLS.ZakharovShabat.ClassicalIntervalRestriction` | Physical restriction to the original classical endpoint domain; signed reflection and exact extension right inverse; surjectivity, equality precisely on the closed interval, injectivity of restriction, and unique weighted representatives |
+| `NLS.Fourier.SobolevEnergy` | Physical classical energy, invariance under interval equality, exact function and derivative Parseval formulas, coefficient graph-energy comparison, and explicit two-sided weighted norm bounds |
+| `NLS.Fourier.FoldedEnergy` | Classical interval square integrability, exact folded `L²` energy for arbitrary square-integrable halves, derivative energy through a.e. reflection, and additive `H¹` energy |
+| `NLS.ZakharovShabat.ClassicalIntervalNorm` | Physical component-sum interval pair energy and norm; exact extended-component energy, maximum weighted pair norm comparison with constants `1` and `√2 π`, restriction bounds, and zero norm precisely for the zero interval function |
 
 ## Current mathematical milestone
 
@@ -1126,15 +1129,53 @@ Folding this restriction recovers its physical representative, and taking
 coefficients recovers the original weighted pair. Extension and restriction are
 therefore inverse after identifying original functions by equality on `[0,1]`.
 Each original classical pair has a unique weighted boundary representative.
-This proves the set-theoretic domain identification in Lemma 4.2; physical norm
-comparison, a normed linear equivalence, and spectral intertwining remain open.
+This proves the set-theoretic domain identification in Lemma 4.2. Physical norm
+comparison is now proved below; a normed linear equivalence and spectral
+intertwining remain open.
 Both eventual spectral transfers must use the Dirichlet extension
 of the potential, including for Neumann eigenfunctions.
+
+## Physical Sobolev norm comparison
+
+`intervalH1Energy f a b` is the sum of the ordinary Lebesgue integrals of `|f|²`
+and `|f′|²`. It depends only on the function on the closed interval. For a
+weighted period-two representative, Parseval gives the exact identity
+
+`E(synthesis a; 0,2) = 2 (‖scalarInclusion a‖² + ‖derivative a‖²)`.
+
+The factor two is the physical period length, and the derivative includes the
+symbol `iπn`. Comparing `(1+|n|)²` with `1+π²n²` gives
+
+`‖a‖² ≤ E(synthesis a; 0,2) ≤ 2π² ‖a‖²`.
+
+For arbitrary square-integrable halves, signed reflection adds their energies
+without a cross term. Applied to classical `H¹` data, the derivative reflection
+has the opposite sign almost everywhere, so the same identity holds for the
+full Sobolev energy, even when the fold has a corner. No behavior outside the
+original interval enters these formulas.
+
+`classicalIntervalEnergy f` sums the two component energies on `[0,1]`, and
+`classicalIntervalNorm f` is its square root. Each extended component has exactly
+that total energy. The two weighted component norms agree by signed reflection,
+so the repository's maximum pair norm satisfies
+
+`‖classicalIntervalExtension f‖ ≤ classicalIntervalNorm f`
+
+and
+
+`classicalIntervalNorm f ≤ √2 π ‖classicalIntervalExtension f‖`.
+
+The corresponding bounds hold under restriction of every weighted boundary
+pair. For classical endpoint-domain data, zero physical norm means equality to
+zero everywhere on `[0,1]`, including both endpoints. These are explicit norm
+estimates for Lemma 4.2. The physical function space still needs to be packaged
+as a normed linear space with a continuous linear extension/restriction
+equivalence; no such bundled equivalence is asserted yet.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2573 declarations under `NLS`, including generated
+axioms. The current audit covers 2599 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1399,11 +1440,17 @@ the Neumann endpoint signs. They also exercise the right inverse on a negative
 odd mode, full-interval injectivity, and unique representation of arbitrary
 classical Neumann data.
 
+Energy checks retain the length-two factor for arbitrary complex constants, the
+component-sum pair norm, and the exact derivative energy `2(1+9π²)` of the odd
+mode `exp(3iπx)`. A reflected ramp has energy `8/3` despite its corner. Further
+checks cover both norm bounds for a negative odd Neumann mode and vanishing of
+both endpoint values when the physical norm is zero.
+
 ## Next milestones
 
-1. Compare physical Sobolev norms with weighted Fourier norms and package the
-   proved extension/restriction inverses as normed linear boundary-domain
-   isomorphisms for Lemma 4.2. Prove physical operator intertwining in Lemma 4.1, then
+1. Package the physical interval domains as normed linear spaces and use the
+   proved inverse identities and norm estimates to construct the continuous
+   linear boundary-domain equivalences in Lemma 4.2. Prove physical operator intertwining in Lemma 4.1, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and

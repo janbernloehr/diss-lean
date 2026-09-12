@@ -3452,3 +3452,69 @@ example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .neumann f) :
 
 end
 end ClassicalRestrictionChecks
+
+
+namespace SobolevEnergyChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+-- Ordinary Lebesgue energy on a length-two period retains its factor two.
+example (c : ℂ) : intervalH1Energy (fun _ => c) 0 2 = 2 * ‖c‖ ^ 2 := by
+  simp [intervalH1Energy]
+
+-- The standard pair norm uses the sum of component energies, rather than the maximum.
+example : classicalIntervalNorm (fun _ => ((1 : ℂ), -1)) = Real.sqrt 2 := by
+  norm_num [classicalIntervalNorm, classicalIntervalEnergy, intervalH1Energy]
+
+-- A nonzero odd mode checks the physical derivative's pi normalization.
+example : intervalH1Energy (wave 3) 0 2 = 2 * (1 + 9 * Real.pi ^ 2) := by
+  have hd : derivative (scalarMode (p := 2) 3 1) = lp.single 2 3 (Complex.I * Real.pi * 3) := by
+    ext n
+    simp only [derivative_apply, scalarMode_apply, lp.single_apply, Pi.single_apply]
+    split_ifs with h
+    · subst n; simp
+    · simp
+  have h := intervalH1Energy_sobolevSynthesis (scalarMode (p := 2) 3 1)
+  simp only [sobolevSynthesis_scalarMode, one_mul, scalarInclusion_scalarMode, hd] at h
+  have he : intervalH1Energy (wave 3) 0 2 = 2 * (1 + Real.pi ^ 2 * 3 ^ 2) := by
+    simpa [lp.norm_single, Real.norm_eq_abs, mul_pow] using h
+  rw [he]
+  ring
+
+private theorem ramp_regular : HasIntervalH1Regularity (fun x : ℝ => (x : ℂ)) := by
+  constructor
+  · exact Complex.ofRealCLM.contDiff.contDiffOn.absolutelyContinuousOnInterval
+  · have hd : deriv (fun x : ℝ => (x : ℂ)) = fun _ => 1 := by
+      funext x
+      exact Complex.ofRealCLM.hasDerivAt.deriv
+    rw [hd]
+    exact memLp_const 1
+
+private theorem ramp_energy : intervalH1Energy (fun x : ℝ => (x : ℂ)) 0 1 = 4 / 3 := by
+  have hd : deriv (fun x : ℝ => (x : ℂ)) = fun _ => 1 := by
+    funext x
+    exact Complex.ofRealCLM.hasDerivAt.deriv
+  simp [intervalH1Energy, hd, Complex.norm_real, Real.norm_eq_abs, sq_abs, integral_pow]
+  norm_num
+
+-- A corner at the fold does not contribute a spurious derivative energy term.
+example : intervalH1Energy (folded 1 (fun x : ℝ => (x : ℂ)) (fun x : ℝ => (x : ℂ))) 0 2 = 8 / 3 := by
+  rw [intervalH1Energy_folded 1 (by simp) ramp_regular ramp_regular (by simp), ramp_energy]
+  norm_num
+
+-- Both norm bounds hold for a negative odd Neumann mode.
+example : ‖neumannMode (p := 2) (-7)‖ ≤
+    classicalIntervalNorm (classicalIntervalRestriction (neumannMode (p := 2) (-7))) ∧
+    classicalIntervalNorm (classicalIntervalRestriction (neumannMode (p := 2) (-7))) ≤
+      Real.sqrt 2 * Real.pi * ‖neumannMode (p := 2) (-7)‖ :=
+  classicalIntervalRestriction_norm_bounds .neumann _ (neumannMode_mem (-7))
+
+-- Zero norm means zero everywhere on the closed interval, including both endpoint traces.
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .dirichlet f)
+    (h : classicalIntervalNorm f = 0) : f 0 = 0 ∧ f 1 = 0 := by
+  have hz := (classicalIntervalNorm_eq_zero_iff .dirichlet f hf).mp h
+  exact ⟨hz (by norm_num), hz (by norm_num)⟩
+
+end
+end SobolevEnergyChecks
