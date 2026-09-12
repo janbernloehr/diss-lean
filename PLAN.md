@@ -863,8 +863,22 @@ identifies the pencil with the original free differential operator on its
 existing domain. The base inverse and both projections contract every signed
 shifted finite-exponent pair norm with constant one.
 
-Next, construct the potential-composed map `T_n=Φ A_λ⁻¹ Q_n` and prove the
-shift-reversing bound in Lemma 6.4, using the source weight inequalities and
-convolution estimates. Then estimate its square and derive the high-frequency
-weighted reduction needed for Propositions 6.1 and 6.3. The printed general-`p`
-central-height constant remains a separate open item.
+Lemma 6.4 is now proved. Weighted convolution is a continuous bilinear map
+with Young constant one, constructed by a norm-summable series and identified
+with the existing raw-coefficient product. The punctured reciprocal lattice
+belongs to the conjugate space for every finite Banach input exponent,
+including `p=1`. Its Hilbert norm is at most two. The chosen exponent-only
+constant `c_p=max(‖puncturedLattice‖_{p′},2)` therefore has `c₂=2`.
+
+The complementary inverse gains weighted `ℓ¹` regularity uniformly in the
+strip and in every scalar shifted norm. Composing it with the off-diagonal
+weighted product gives the actual `T_n`, with the source's sign-reversing bound
+`‖T_n f‖_{w,p;i}≤c_p‖φ‖_{w,p}‖f‖_{w,p;-i}`. The original potential/domain
+identification is proved. Squaring restores the shift with bound `(c_p‖φ‖)²`.
+
+Next, prove the sharper Lemma 6.5 estimate by splitting the double reciprocal
+sum into distant denominators and the potential's high-frequency tail. This
+must give decay at shift `n`, not just the already proved uniform boundedness
+of the square. Then prove eventual contraction and the weighted reduction
+needed for Propositions 6.1 and 6.3. The printed general-`p` central-height
+constant remains a separate open item.

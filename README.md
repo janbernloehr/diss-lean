@@ -542,7 +542,12 @@ installation is absent. No shell startup files are modified.
   weighted derivative. Both projected inverse identities and uniqueness are
   proved, with exact agreement with the existing free differential pencil.
   The projections and base inverse are contractions in every signed shifted
-  finite-`p` norm. Lemma 6.4's potential-composed bound remains next.
+  finite-`p` norm. Weighted Young convolution has constant one and agrees with
+  the existing product. Lemma 6.4 is now proved for every finite Banach exponent:
+  `T_n=Φ A_λ⁻¹ Q_n` maps shift `-i` to shift `i` with bound
+  `c_p ‖φ‖`, uniformly on the full strip, and `c_2=2`. It agrees exactly with
+  the original potential applied to the complementary domain inverse. Two
+  applications restore the input shift. Lemma 6.5's high-frequency decay is next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

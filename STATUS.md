@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 255 modules and 2382 named public theorems. All compile on the
+The library has 259 modules and 2419 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -73,6 +73,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntrinsicSobolevSynthesis` | Bidirectional physical coordinate energy finiteness; intrinsic norm dilation bound; injective continuous weighted synthesis for `0<s<1`; exact actual Fourier coefficients and arbitrary-length norm constant |
 | `NLS.Fourier.IntrinsicSobolevEquivalence` | Actual weighted Fourier analysis; both inverse identities; continuous intrinsic/weighted Hilbert equivalence below half; explicit forward and inverse arbitrary-length bounds; A.9 factorization |
 | `NLS.Fourier.IntrinsicSobolevApproximation` | Finite physical Fourier truncations; exact coefficient selection; uniform norm bound; convergence in the full intrinsic norm and density of finite Fourier support below half |
+| `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
+| `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
+| `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
+| `NLS.ZakharovShabat.WeightedPotentialInverse` | Lemma 6.4 for all finite Banach exponents with sign reversal and `c₂=2`; original potential/domain-inverse identification; operator norm and same-shift squared bound |
 | `NLS.SequenceSpaces.WeightedPairMap` | Componentwise continuous linear maps preserve a common scalar bound in the exact finite-exponent pair norm |
 | `NLS.ZakharovShabat.ComplementaryStrip` | Unpunctured closed strip; nonresonant denominator lower bound; zeroed reciprocal symbol; uniform base and one-derivative bounds |
 | `NLS.ZakharovShabat.WeightedResonance` | Correctly signed resonant and complementary projections; decomposition, idempotence, mutual annihilation, coefficient characterization and contractivity |
@@ -2601,13 +2605,47 @@ every signed shift. Both projections and the base inverse are contractions
 in every such norm, independently of the shift, weight, strip index, and
 spectral parameter within the strip. Pair norm estimates concern finite Banach
 exponents; the algebraic identities and scalar bounds also cover infinity.
-The potential-composed operator `T_n=Φ A_λ⁻¹ Q_n` and Lemma 6.4's bound remain
-next; the inverse bound alone does not assert the potential estimate.
+The potential-composed operator and Lemma 6.4 are now implemented below.
+
+## Section 6, Lemma 6.4: uniform weighted potential estimate
+
+`SpectralConvolution` constructs weighted convolution as an absolutely
+convergent series in the weighted Banach space. Submultiplicativity controls
+each translated summand, giving the exact Young bound
+`‖a*b‖_{w,p}≤‖a‖_{w,p}‖b‖_{w,1}`, including `p=∞`. Forgetting the weight gives
+the existing convolution of the raw coefficients. The map is continuous and
+complex bilinear. Product modulation can be assigned to the second factor,
+so the corresponding scalar shifted bound has no extra weight factor.
+
+`PuncturedLattice` bundles the sequence `k⁻¹` off the origin and zero at the
+origin. It belongs to every `ℓᑫ` with `q>1`, including infinity. The bilateral
+integral estimate gives its `ℓ²` norm at most two. For finite Banach `p`, the
+chosen constant is `c_p=max(‖puncturedLattice‖_{p′},2)`; it depends only on `p`
+and is proved to equal two when `p=2`.
+
+`ComplementaryL1` bounds the actual reciprocal by a translated, signed copy
+of that lattice. Weighted Hölder multiplication then maps the complementary
+inverse from `ℓᵖ_w` into `ℓ¹_w` with constant `c_p`. The arbitrary positive
+weight cancels exactly. Translated weights give the same estimate in every
+scalar shifted norm, independently of the shift, strip center, and parameter.
+The argument includes `p=1`, where the conjugate exponent is infinity.
+
+`WeightedPotentialInverse` constructs `T_n=Φ A_λ⁻¹ Q_n` as a continuous linear
+operator on the source's weighted finite-`p` pair space. The two off-diagonal
+products exchange physical components. Combining their estimates in the exact
+pair norm proves `‖T_n f‖_{w,p;i}≤c_p‖φ‖_{w,p}‖f‖_{w,p;-i}`. At `p=2`, the
+constant is exactly two. Forgetting the weight identifies this map with the
+original potential operator applied to the previously constructed domain-valued
+complementary inverse. There is also a bound for its ordinary operator norm.
+
+Two applications restore the initial shift and have bound `(c_p‖φ‖)²`.
+This establishes boundedness of the square; Lemma 6.5's decaying bound and
+large-frequency invertibility remain unproved.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4906 declarations under `NLS`, including generated
+axioms. The current audit covers 4989 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3239,12 +3277,19 @@ imaginary part, algebraic inversion at infinity, and negative resonant indices.
 They also check shifted bounds, the explicit derivative bound, the original
 free differential equation, and uniqueness from vanishing resonant coordinates.
 
+The Lemma 6.4 examples check weighted Fourier-mode multiplication, Young's
+infinity endpoint, shifted scalar bounds at `p=1,2`, the exact `c₂=2` constant,
+and the physical signs and component exchange in `T_n`. They instantiate the
+pair estimate at `p=1,2,3`, verify the same-shift squared estimate, and check
+agreement with the original potential and derivative-domain inverse.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Compose the implemented complementary free inverse with the potential and
-   prove Lemma 6.4's uniform bound in the signed shifted weighted norms
-   toward Propositions 6.1/6.3. A.9's intrinsic Hilbert space and continuous
+2. Prove Lemma 6.5's high-frequency bound for the square of `T_n`, then its
+   eventual contraction and the weighted reduction toward Propositions 6.1/6.3.
+   Lemma 6.4's uniform sign-reversing bound, including `c₂=2`, is implemented.
+   A.9's intrinsic Hilbert space and continuous
    subcritical weighted identification are implemented on every positive interval,
    as are the finite Fourier approximation and the zero/half coefficient bounds.
    Appendix B.2, its periodic product in A.7, and the displayed B.3 inequality

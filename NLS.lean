@@ -203,3 +203,7 @@ import NLS.ZakharovShabat.WeightedResonance
 import NLS.ZakharovShabat.WeightedFreePencil
 import NLS.ZakharovShabat.ComplementaryFreeInverse
 import NLS.ZakharovShabat.ComplementaryShiftedNorm
+import NLS.SequenceSpaces.SpectralConvolution
+import NLS.SequenceSpaces.PuncturedLattice
+import NLS.ZakharovShabat.ComplementaryL1
+import NLS.ZakharovShabat.WeightedPotentialInverse

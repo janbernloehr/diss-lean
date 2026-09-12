@@ -7138,3 +7138,100 @@ example (w : Weight) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
     ((complementaryProjection_eq_self_iff _ _ _).mpr ⟨h₁, h₂⟩) he
 
 end ComplementaryInverseChecks
+
+section Lemma64Checks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+private def lemma64Mode (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (k : ℤ) (c : ℂ) :
+    WeightedCoeff w.toWeight p := (WeightedCoeff.weightEquiv w.toWeight p).symm (lp.single p k ((w k : ℂ) * c))
+
+private theorem lemma64Mode_apply (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)]
+    (k : ℤ) (c : ℂ) (j : ℤ) : (lemma64Mode w p k c).val j = if j = k then c else 0 := by
+  change (lp.single p k ((w k : ℂ) * c) : Coeff p) j / (w j : ℂ) = _
+  by_cases hj : j = k <;> simp [hj, lp.single_apply, w.toWeight.complex_ne_zero]
+
+-- Weighted convolution preserves the actual product and frequency addition.
+example (w : SpectralWeight) :
+    (w.convolution (lemma64Mode w 3 3 2) (lemma64Mode w 1 (-1) Complex.I)).val 2 = 2 * Complex.I := by
+  simp [SpectralWeight.convolution_apply, lemma64Mode_apply]
+
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight ⊤) (b : WeightedCoeff w.toWeight 1) :
+    ‖w.convolution a b‖ ≤ ‖a‖ * ‖b‖ := w.norm_convolution_le a b
+
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight ⊤) (b : WeightedCoeff w.toWeight 1) :
+    w.shiftedNorm (-3) (w.convolution a b) ≤ ‖a‖ * w.shiftedNorm (-3) b :=
+  w.shiftedNorm_convolution_le (-3) a b
+
+example : Coeff.complementaryConstant 2 (by norm_num) = 2 := Coeff.complementaryConstant_two
+
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 1) (n i : ℤ) :
+    w.shiftedNorm i (complementaryScalarL1 (by simp) w.toWeight n ((Real.pi : ℂ) * n)
+      (center_mem_resonantStrip n) true a) ≤ Coeff.complementaryConstant 1 (by simp) * w.shiftedNorm i a :=
+  shiftedNorm_complementaryScalarL1_le (by simp) w i n _ _ true a
+
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 2) :
+    w.shiftedNorm 7 (complementaryScalarL1 (by norm_num) w.toWeight (-3) ((Real.pi : ℂ) * (-3 : ℤ))
+      (center_mem_resonantStrip (-3)) false a) ≤ 2 * w.shiftedNorm 7 a := by
+  simpa only [Coeff.complementaryConstant_two] using
+    shiftedNorm_complementaryScalarL1_le (by norm_num) w 7 (-3) _ _ false a
+
+private def lemma64UnitPotential : WeightedCoeffPair SpectralWeight.one.toWeight 2 :=
+  WithLp.toLp 2 (lemma64Mode SpectralWeight.one 2 0 1, lemma64Mode SpectralWeight.one 2 0 1)
+
+private def lemma64SignInput : WeightedCoeffPair SpectralWeight.one.toWeight 2 :=
+  WithLp.toLp 2 (lemma64Mode SpectralWeight.one 2 2 Complex.I, lemma64Mode SpectralWeight.one 2 (-1) 3)
+
+-- T_n exchanges components after applying their differently signed free inverses.
+example : (weightedPotentialInverse (by norm_num) SpectralWeight.one lemma64UnitPotential 0 0
+    (by simpa using center_mem_resonantStrip 0) lemma64SignInput).fst.val (-1) = (Real.pi : ℂ)⁻¹ * 3 := by
+  rw [weightedPotentialInverse_fst, SpectralWeight.convolution_apply]
+  change (∑' k : ℤ, (lemma64Mode SpectralWeight.one 2 0 1).val (-1 - k) *
+    (complementaryScalarL1 (by norm_num) SpectralWeight.one.toWeight 0 0 _ false
+      (lemma64Mode SpectralWeight.one 2 (-1) 3)).val k) = _
+  simp [lemma64Mode_apply, complementaryScalarL1_apply, complementarySymbol, sub_eq_zero]
+
+example : (weightedPotentialInverse (by norm_num) SpectralWeight.one lemma64UnitPotential 0 0
+    (by simpa using center_mem_resonantStrip 0) lemma64SignInput).snd.val 2 = ((Real.pi : ℂ) * 2)⁻¹ * Complex.I := by
+  rw [weightedPotentialInverse_snd, SpectralWeight.convolution_apply]
+  change (∑' k : ℤ, (lemma64Mode SpectralWeight.one 2 0 1).val (2 - k) *
+    (complementaryScalarL1 (by norm_num) SpectralWeight.one.toWeight 0 0 _ true
+      (lemma64Mode SpectralWeight.one 2 2 Complex.I)).val k) = _
+  simp [lemma64Mode_apply, complementaryScalarL1_apply, complementarySymbol, sub_eq_zero]
+
+-- The source's full sign-reversing pair estimate includes p=1 and p=3.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 1) (n i : ℤ) :
+    w.shiftedPairNorm i (weightedPotentialInverse (by simp) w φ n ((Real.pi : ℂ) * n)
+      (center_mem_resonantStrip n) f) ≤
+      (Coeff.complementaryConstant 1 (by simp) * ‖φ‖) * w.shiftedPairNorm (-i) f :=
+  shiftedPairNorm_weightedPotentialInverse_le (by simp) w φ i n _ _ f
+
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3) (n i : ℤ) (z : ℂ)
+    (hz : z ∈ resonantStrip n) :
+    w.shiftedPairNorm i (weightedPotentialInverse (by norm_num) w φ n z hz f) ≤
+      (Coeff.complementaryConstant 3 (by norm_num) * ‖φ‖) * w.shiftedPairNorm (-i) f :=
+  shiftedPairNorm_weightedPotentialInverse_le (by norm_num) w φ i n z hz f
+
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 2) (n i : ℤ) (z : ℂ)
+    (hz : z ∈ resonantStrip n) :
+    w.shiftedPairNorm i (weightedPotentialInverse (by norm_num) w φ n z hz f) ≤
+      (2 * ‖φ‖) * w.shiftedPairNorm (-i) f :=
+  shiftedPairNorm_weightedPotentialInverse_two_le w φ i n z hz f
+
+-- Squaring restores the original shift; no high-frequency decay is assumed here.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 2) (n i : ℤ) (z : ℂ)
+    (hz : z ∈ resonantStrip n) :
+    w.shiftedPairNorm i (weightedPotentialInverse (by norm_num) w φ n z hz
+      (weightedPotentialInverse (by norm_num) w φ n z hz f)) ≤
+      (2 * ‖φ‖) ^ 2 * w.shiftedPairNorm i f := by
+  simpa only [Coeff.complementaryConstant_two] using
+    shiftedPairNorm_weightedPotentialInverse_sq_le (by norm_num) w φ i n z hz f
+
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3) (n : ℤ) (z : ℂ)
+    (hz : z ∈ resonantStrip n) :
+    weightedBaseToPair w (weightedPotentialInverse (by norm_num) w φ n z hz f) =
+      potentialOperator (by norm_num) (weightedBaseToPair w φ)
+        (weightedDomainToDomain w (complementaryFreeDomainInverse w.toWeight n z hz f)) :=
+  weightedPotentialInverse_eq_original (by norm_num) w φ n z hz f
+
+end Lemma64Checks
