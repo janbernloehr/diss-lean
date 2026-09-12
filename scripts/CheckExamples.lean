@@ -3300,3 +3300,96 @@ example (f : ℝ → ℂ) (hf : AbsolutelyContinuousOnInterval f 0 2)
 
 end
 end SobolevIdentificationChecks
+
+
+namespace ClassicalIntervalChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+private theorem linear_h1 (c : ℂ) : HasIntervalH1Regularity (fun x : ℝ => c * x) := by
+  have hc : ContDiff ℝ 1 (fun x : ℝ => c * x) := contDiff_const.mul Complex.ofRealCLM.contDiff
+  constructor
+  · exact hc.contDiffOn.absolutelyContinuousOnInterval
+  · have hd : deriv (fun x : ℝ => c * x) = fun _ => c := by
+      funext x
+      simpa using ((Complex.ofRealCLM.hasDerivAt (x := x)).const_mul c).deriv
+    rw [hd]
+    exact memLp_const c
+
+private theorem dir_ramp : HasClassicalIntervalDomain .dirichlet (fun x : ℝ => ((x : ℂ), (x : ℂ))) := by
+  constructor
+  · simpa using linear_h1 1
+  · simpa using linear_h1 1
+  · simp [extensionSign]
+  · simp [extensionSign]
+
+private theorem neu_ramp : HasClassicalIntervalDomain .neumann (fun x : ℝ => ((x : ℂ), -(x : ℂ))) := by
+  constructor
+  · simpa using linear_h1 1
+  · simpa using linear_h1 (-1)
+  · simp [extensionSign]
+  · simp [extensionSign]
+
+-- A nonperiodic interval ramp folds into a periodic triangle with a corner at the join.
+example : AbsolutelyContinuousOnInterval
+    (folded 1 (fun x : ℝ => (x : ℂ)) (fun x : ℝ => (x : ℂ))) 0 2 := by
+  apply absolutelyContinuous_folded
+  · simpa using linear_h1 1
+  · simpa using linear_h1 1
+  · simp
+
+-- The derivative changes sign on the reflected half; only an a.e. identity is claimed at the corner.
+example : deriv (folded 1 (fun x : ℝ => (x : ℂ)) (fun x : ℝ => (x : ℂ)))
+    =ᵐ[volume.restrict (Ioc 0 2)] (fun x => if x ≤ 1 then (1 : ℂ) else -1) := by
+  have hf : HasIntervalH1Regularity (fun x : ℝ => (x : ℂ)) := by simpa using linear_h1 1
+  have h := deriv_folded_ae 1 hf hf (by simp)
+  have hd : deriv (fun x : ℝ => (x : ℂ)) = fun _ => 1 := by
+    funext x
+    exact Complex.ofRealCLM.hasDerivAt.deriv
+  have he : folded (-1) (fun _ : ℝ => (1 : ℂ)) (fun _ => 1) =
+      fun x => if x ≤ 1 then (1 : ℂ) else -1 := by
+    funext x
+    simp [folded]
+  rw [hd, he] at h
+  exact h
+
+-- Both endpoint-domain choices produce elements of the actual weighted boundary spaces.
+example : classicalIntervalExtension .dirichlet (fun x : ℝ => ((x : ℂ), (x : ℂ))) dir_ramp ∈
+    weightedDirichletSubspace 1 := classicalIntervalExtension_mem .dirichlet _ dir_ramp
+example : classicalIntervalExtension .neumann (fun x : ℝ => ((x : ℂ), -(x : ℂ))) neu_ramp ∈
+    weightedNeumannSubspace 1 := classicalIntervalExtension_mem .neumann _ neu_ramp
+
+-- The signed swap on the Neumann second half preserves the positive first component here.
+example :
+    (sobolevSynthesis (by simp)
+      (classicalIntervalExtension .neumann (fun x : ℝ => ((x : ℂ), -(x : ℂ))) neu_ramp).1
+      ((3 / 2 : ℝ) : AddCircle (2 : ℝ)),
+    sobolevSynthesis (by simp)
+      (classicalIntervalExtension .neumann (fun x : ℝ => ((x : ℂ), -(x : ℂ))) neu_ramp).2
+      ((3 / 2 : ℝ) : AddCircle (2 : ℝ))) = ((1 / 2 : ℂ), -(1 / 2 : ℂ)) := by
+  rw [classicalIntervalExtension_reconstruct _ _ _ (by norm_num : (3 / 2 : ℝ) ∈ Icc 0 2),
+    intervalExtension_right _ _ _ (by norm_num : (1 : ℝ) < 3 / 2)]
+  norm_num [extensionSign]
+
+-- Original values are retained at the right endpoint, not just almost everywhere.
+example : sobolevSynthesis (by simp)
+    (classicalIntervalExtension .dirichlet (fun x : ℝ => ((x : ℂ), (x : ℂ))) dir_ramp).1
+    ((1 : ℝ) : AddCircle (2 : ℝ)) = 1 := by
+  exact congrArg Prod.fst (classicalIntervalExtension_restrict _ _ _ (by norm_num : (1 : ℝ) ∈ Icc 0 1))
+
+-- Square integrability of the fold does not require the halves to meet.
+example (f g : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1)))
+    (hg : MemLp g 2 (volume.restrict (Ioc 0 1))) :
+    MemLp (folded (2 * Complex.I) f g) 2 (volume.restrict (Ioc 0 2)) :=
+  memLp_folded_of_memLp _ hf hg
+
+-- The signed coefficient relation holds at negative frequencies for arbitrary classical inputs.
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalIntervalDomain .neumann f) :
+    (classicalIntervalExtension .neumann f hf).1.val (-7) =
+      -(classicalIntervalExtension .neumann f hf).2.val 7 := by
+  simpa only [extensionSign, neg_neg, neg_one_mul] using
+    classicalIntervalExtension_reflection .neumann f hf (-7)
+
+end
+end ClassicalIntervalChecks

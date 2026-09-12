@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 116 modules and 1181 named public theorems. All compile on the
+The library has 119 modules and 1202 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -123,6 +123,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.ComplexAbsoluteContinuity` | Bounded linear preservation of absolute continuity, complex almost-everywhere differentiability, vector-valued fundamental theorem, and complex integration by parts |
 | `NLS.Fourier.AbsoluteContinuousCoefficients` | Smooth physical waves; derivative coefficient formula with endpoint jump at every frequency, periodic cancellation, and Parseval square summability |
 | `NLS.Fourier.SobolevIdentification` | Classical periodic `H¹` criterion via absolute continuity and the actual `L²` derivative; weighted Fourier recovery, both inverse identities, and unique-representative characterization |
+| `NLS.Fourier.FoldedSobolev` | Original interval `H¹` regularity without periodic endpoints; integrable and `L²` folding, half-coefficient formula, matching-join integral reconstruction, absolute continuity, and the reflected derivative sign |
+| `NLS.Fourier.PeriodicSobolevLift` | Matching-endpoint circle lift; exact values on the closed period, derivative agreement almost everywhere, classical `H¹` and weighted Fourier recovery, including reflected interval coordinates |
+| `NLS.ZakharovShabat.ClassicalIntervalExtension` | Original Dirichlet/Neumann endpoint domains; signed-swap extension into actual weighted boundary domains; normalized physical coefficients, closed-period reconstruction, exact restriction recovery, and injectivity on the original interval |
 
 ## Current mathematical milestone
 
@@ -1090,10 +1093,38 @@ representative. This is a classical regularity characterization; comparison with
 a separately normed physical `H¹` space and the boundary-domain isomorphisms on
 `[0,1]` remain open.
 
+## Classical interval reflection
+
+`HasIntervalH1Regularity` now describes absolute continuity on `[0,1]` and square
+integrability of the actual derivative. No period-one endpoint condition is
+imposed. Arbitrary `L²` data can be folded across the midpoint; matching values
+at the join give the integral reconstruction
+
+`folded ε f g(x) = f(0) + ∫₀ˣ folded (-ε) f′ g′(t) dt`.
+
+Thus the fold is absolutely continuous and its classical derivative agrees
+almost everywhere with the reflected derivative of opposite sign. That derivative
+is square integrable. Matching at the outer endpoints then gives a continuous
+period-two lift, with the same classical regularity and exact physical values on
+the whole closed period. Its weighted coefficients are the normalized interval
+Fourier integrals.
+
+For pairs, `HasClassicalIntervalDomain` uses the original equal-component
+Dirichlet conditions or opposite-component Neumann conditions at both endpoints.
+`classicalIntervalExtension` constructs the signed component-swap extension in
+`Domain 2` and proves membership in the selected weighted boundary subspace.
+Synthesis recovers the physical extension everywhere on `[0,2]`, and restriction
+recovers the original pair everywhere on `[0,1]`. Equal extensions therefore
+identify the original functions on that interval, independently of values outside
+it. This proves the classical Sobolev extension portion of Lemmas 4.1–4.2.
+Surjectivity of restriction, physical norm comparison, and spectral intertwining
+remain open. Both eventual spectral transfers must use the Dirichlet extension
+of the potential, including for Neumann eigenfunctions.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2506 declarations under `NLS`, including generated
+axioms. The current audit covers 2555 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1346,10 +1377,16 @@ for an imaginary ramp at frequency zero, complex integration by parts on a
 reversed interval, and negative-frequency derivative coefficients with matching
 endpoints.
 
+Classical interval checks fold a nonperiodic ramp into a triangle with a corner
+at the join and verify its reflected derivative sign almost everywhere. They
+cover both actual weighted boundary spaces, the Neumann signed swap on the
+second half, exact endpoint restriction, general `L²` folding without matching
+joins, and signed negative-frequency coefficient reflection.
+
 ## Next milestones
 
-1. Construct the classical interval Sobolev restrictions and reflection extensions,
-   compare their norms, and establish the `H¹` / `FL^{1,2}` boundary-domain
+1. Prove that restriction of the weighted boundary domains inverts the classical
+   interval extensions, compare physical norms, and establish the `H¹` / `FL^{1,2}` boundary-domain
    isomorphisms in Lemmas 4.1–4.2, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.

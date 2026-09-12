@@ -138,9 +138,14 @@ and the derivative's Fourier integrals recover the symbol `iπn`. Conversely,
 complex integration by parts and Parseval recover weighted coefficients from any
 classical periodic `H¹` function. Both reconstruction identities are proved, giving
 a characterization by unique weighted Fourier representatives. The general derivative
-formula retains the endpoint jump for nonperiodic input. Physical Sobolev norm
-comparison, interval-domain isomorphisms, Fourier/distribution realization, and
-physical multiplication remain needed for the full spectral transfer.
+formula retains the endpoint jump for nonperiodic input. Classical `H¹[0,1]`
+Dirichlet and Neumann pairs now extend into the actual weighted boundary domains:
+matching endpoints make the signed component-swap fold absolutely continuous,
+with a square-integrable reflected derivative. Synthesis recovers the physical
+extension on `[0,2]` and the original pair on `[0,1]`, including all endpoints.
+The inverse restriction theorem, physical Sobolev norm comparison,
+Fourier/distribution realization, and physical multiplication remain needed for
+the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
