@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has fifty-eight modules and 580 named public theorems. All compile on the
+The library has sixty modules and 602 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -53,6 +53,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.CentralDeformation` | Half-integer-radius lattice gap; enlarged-circle geometry; exact spectral selection and whole central/circle projection equality; analytic central projection and total count `4K+2`, uniform in the potential and every larger cutoff |
 | `NLS.ZakharovShabat.CentralParity` | Signed parity index count; free parity projector equals filtered spectral cluster; finite rank and exact range intersection; analytic components; uniform `2N+2`/`2N` parity split with the total central count on one neighborhood |
 | `NLS.ZakharovShabat.PeriodicCounting` | One cutoff and neighborhood for localization, central and disk counts, parity, and analytic projections; unique high-disk classification; eigenvalue pairs with repetition and exact multiplicities |
+| `NLS.SequenceSpaces.Pairing` | Absolutely convergent `lp`/`l1` coefficient duality; norm bound and linearity; positive squared energy; product-index summability and conjugate-reflected convolution adjoint identity |
+| `NLS.ZakharovShabat.RealType` | Fourier-coordinate real type; conjugate single-mode potentials; domain duality, Hermitian inclusion and operator symmetry; positive energy; real periodic spectrum and resolvent inclusion for every nonreal parameter |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
@@ -403,7 +405,25 @@ from the same counting data.
 This uses Corollary 3.5's height-`N` central box. The overview's Theorem 1.1 uses
 a norm-dependent height; transferring that exact numerical convention, as well
 as the physical Fourier realization and pair norm, remains a separate obligation.
-The real-type clause (iv) is not yet proved.
+
+**The real-type clause (iv) is now proved in coefficient space.** Real type means
+`φ₂(n) = conj(φ₁(-n))`, including the reversal of Fourier frequency. For every
+finite `p≥1`, domain coefficients lie in `l1` and potential coefficients are
+bounded. The pairing `∑ a(n) conj(b(n))` therefore converges absolutely, as does
+the double convolution pairing, bounded by the product of the two domain
+`l1` norms and the potential norm. Exchanging the two summation indices proves
+the adjoint identity for conjugate-reflected kernels.
+
+The real diagonal symbols and off-diagonal adjoint identity imply
+`domainPairing (Lφ f) g = conj(domainPairing (Lφ g) f)` for every pair of domain
+vectors. The inclusion pairing of a nonzero vector with itself has strictly
+positive real part: it is the sum of squared coefficient magnitudes. Applying
+symmetry to an eigenvector gives `z E = conj(z) E` with `E ≠ 0`, hence `Im z = 0`.
+The previously proved eigenvector characterization extends this conclusion to
+the entire periodic spectrum. Every nonreal parameter is consequently in the
+full resolvent set, with no amplitude restriction and no restriction to `p≤2`.
+Physical Fourier identification remains separate; no self-adjointness or
+Hilbert-space spectral theorem is assumed.
 
 The actual unbounded realization is now defined as
 
@@ -617,7 +637,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1210 declarations under `NLS`, including generated
+axioms. The current audit covers 1241 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -730,17 +750,22 @@ negative adjacent disks, central/high-disk separation, every larger cutoff along
 `[0,φ]` at `p=3`, unique exterior disk indices at `p=1`, the free double-value
 case, actual spectral membership and multiplicities of the returned eigenvalue
 pair, and a common neighborhood for analytic central and high-disk projections.
+Real-type checks verify the pairing's conjugation convention, negative reflected
+frequencies, failure of real type without index reversal, arbitrary amplitudes
+and nonreal resolvent parameters at `p=3`, the real spectrum at `p=1`, and energy
+positivity in the second component. A constant imaginary potential has a
+verified eigenvalue `i`, testing the necessity of the real-type hypothesis.
+The full two-vector operator symmetry is also checked for nonconstant potentials.
 
 ## Next milestones
 
-1. Prove the real-type spectral assertion and analytic symmetric eigenvalue
-   combinations in Lemma 3.7.
+1. Prove the analytic symmetric eigenvalue combinations in Lemma 3.7.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, pair-norm comparison, and compatibility with physical multiplication.
 
-The real-type spectral assertion, classical Birkhoff prerequisites, and the main
-dissertation theorems remain unimplemented. Further sequence-space work includes
+Classical Birkhoff prerequisites and the main dissertation theorems remain
+unimplemented. Further sequence-space work includes
 embeddings between regularities and the full range of Young inequalities beyond
 the `l1`-factor case.

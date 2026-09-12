@@ -56,3 +56,4 @@ import NLS.ZakharovShabat.CentralSpectrum
 import NLS.ZakharovShabat.CentralDeformation
 import NLS.ZakharovShabat.CentralParity
 import NLS.ZakharovShabat.PeriodicCounting
+import NLS.ZakharovShabat.RealType

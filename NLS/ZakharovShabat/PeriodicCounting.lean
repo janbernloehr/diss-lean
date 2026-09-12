@@ -7,7 +7,8 @@ This assembles the coefficient-space conclusions of Proposition 1.1(i–iii),
 using the height-`N` central box of Corollary 3.5. One cutoff and one open convex
 neighborhood simultaneously support the exterior resolvent, the central and
 high-frequency counts, the parity assertions, and the analytic projections.
-The real-type assertion and physical Fourier realization remain separate.
+The real-type assertion is proved in `RealType`; physical Fourier realization
+remains separate.
 -/
 
 noncomputable section

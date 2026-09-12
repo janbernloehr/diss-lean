@@ -62,9 +62,11 @@ All localization and counting conclusions now use one cutoff and one open
 convex neighborhood, valid for every larger cutoff. Each noncentral spectral
 value has a unique high-disk index; each disk supplies an eigenvalue pair,
 allowing a repeated double value. The central box uses Corollary 3.5's height-`N`
-convention. The overview theorem's exact norm-dependent height, real-type
-assertion, rectangular contour identification, and main dissertation theorems
-remain future work.
+convention. For real-type potentials, every periodic spectral value is now
+proved real at every finite Banach exponent, using absolutely convergent
+coefficient duality and convolution symmetry. Every nonreal parameter therefore
+lies in the resolvent set. The overview theorem's exact norm-dependent height,
+rectangular contour identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -140,6 +142,9 @@ Central parity checks cover zero, even, and odd cutoffs, negative residue
 representatives, nonconstant even potentials, and addition to the total count.
 Unified counting checks cover unique disk assignment, repeated and distinct
 value alternatives, spectral membership, and common cutoffs and analytic domains.
+Real-type checks cover conjugate frequency reversal, nonconstant complex-amplitude
+potentials at `p=3`, the `p=1` endpoint, positive energy, and an imaginary
+constant potential with a verified nonreal eigenvalue when real type fails.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

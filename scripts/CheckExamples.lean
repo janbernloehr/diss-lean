@@ -1539,3 +1539,68 @@ example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), φ ∈ U �
   exact ⟨N, U, hφ, (hc N le_rfl).1, hd, fun ψ hψ => (h ψ hψ N le_rfl).analyticOnNhd_exterior⟩
 
 end PeriodicCountingChecks
+
+section RealTypeChecks
+open Complex
+open scoped ComplexConjugate
+set_option autoImplicit false
+
+-- The pairing is linear in its first argument, fixing the conjugation convention.
+example (a b : ℂ) : Coeff.pairing (lp.single 3 (-2) a) (lp.single 1 (-2) b) = a * conj b := by
+  simp [Coeff.pairing, lp.single_apply, Pi.single_apply]
+
+-- Conjugation reverses frequencies even when the amplitudes are real.
+example : ¬ IsRealType ((lp.single 3 2 1), (lp.single 3 2 1)) := by
+  intro h
+  have hh := h 2
+  norm_num [lp.single_apply, Pi.single_apply] at hh
+
+example (a : ℂ) : IsRealType (lp.single 3 (-2) a, lp.single 3 2 (conj a)) := by
+  simpa using isRealType_single (p := 3) (-2) a
+
+-- No smallness bound on the amplitude is required for nonreal resolvent parameters.
+example (a z : ℂ) (hz : z.im ≠ 0) : z ∈ resolventSet (p := 3) (by simp)
+    (lp.single 3 2 a, lp.single 3 (-2) (conj a)) :=
+  mem_resolventSet_of_realType_of_im_ne_zero (by simp) _ (isRealType_single 2 a) z hz
+
+-- The real-spectrum theorem includes the p=1 endpoint and arbitrary potentials.
+example (φ : PairSpace 1) (hφ : IsRealType φ) (z : ℂ)
+    (hz : z ∈ periodicSpectrum (by simp) φ) : ∃ r : ℝ, z = (r : ℂ) := by
+  exact ⟨z.re, (Complex.ext rfl (by simpa using
+    periodicSpectrum_im_eq_zero_of_realType (by simp) φ hφ z hz))⟩
+
+-- Energy positivity holds on both components, including non-Hilbert domains.
+example : 0 < (domainPairing (p := 3) (by simp)
+    (domainInclusion (positiveMode (-3))) (positiveMode (-3))).re := by
+  apply domainPairing_inclusion_re_pos
+  intro h
+  apply domainInclusion_positiveMode_ne_zero (p := 3) (-3)
+  rw [h, map_zero]
+
+-- Real type is necessary: the imaginary constant potential has eigenvalue i.
+example : I ∈ periodicSpectrum (p := 3) (by simp)
+    (lp.single 3 0 I, lp.single 3 0 I) := by
+  rw [mem_periodicSpectrum_iff_exists_eigenvector]
+  refine ⟨(scalarMode 0 1, scalarMode 0 1), ?_, ?_⟩
+  · intro h
+    have hh := congrArg (fun f : Domain 3 => f.1.val 0) h
+    simp at hh
+  · apply Prod.ext <;> apply lp.ext <;> funext n
+    · change (operator (by simp) (lp.single 3 0 I, lp.single 3 0 I)
+        (scalarMode 0 1, scalarMode 0 1)).1 n = _
+      by_cases hn : n = 0 <;>
+        simp [operator_fst_apply, scalarMode_apply, lp.single_apply, Pi.single_apply, hn]
+    · change (operator (by simp) (lp.single 3 0 I, lp.single 3 0 I)
+        (scalarMode 0 1, scalarMode 0 1)).2 n = _
+      by_cases hn : n = 0 <;>
+        simp [operator_snd_apply, scalarMode_apply, lp.single_apply, Pi.single_apply, hn]
+
+-- Real-type symmetry is available on different domain vectors, not only eigenvectors.
+example (a : ℂ) (f g : Domain 3) :
+    domainPairing (by simp) (operator (by simp)
+      (lp.single 3 2 a, lp.single 3 (-2) (conj a)) f) g =
+    conj (domainPairing (by simp) (operator (by simp)
+      (lp.single 3 2 a, lp.single 3 (-2) (conj a)) g) f) :=
+  domainPairing_operator_conj (by simp) _ (isRealType_single 2 a) f g
+
+end RealTypeChecks

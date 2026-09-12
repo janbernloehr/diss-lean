@@ -220,8 +220,16 @@ analytic projection families. Every noncentral spectral value has a unique disk
 index, and each high disk admits a pair of eigenvalues counted with multiplicity,
 allowing repetition for a double value.
 
-Next prove the real-type spectral assertion and Lemma 3.7. Identification with
-the rectangular contour integral remains open. The unified statement uses
+The real-type clause (iv) is now proved for all finite Banach exponents. Absolute
+convergence of coefficient duality and of the double convolution sum establishes
+the adjoint identity for conjugate-reflected kernels. Together with the real
+free symbols, this gives symmetry on the weighted domain. Its strictly positive
+coefficient energy forces every eigenvalue to be real. Spectral discreteness
+and the eigenvector characterization then put every nonreal parameter in the
+resolvent set, without assuming a Hilbert-space realization.
+
+Next prove the analytic symmetric eigenvalue combinations in Lemma 3.7.
+Identification with the rectangular contour integral remains open. The unified statement uses
 Corollary 3.5's height-`N` box; the overview theorem's exact norm-dependent height
 still requires a separate transfer.
 Physical-space interpretation, period-one embedding, and comparison with the
