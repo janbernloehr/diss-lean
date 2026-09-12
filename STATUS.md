@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 181 modules and 1737 named public theorems. All compile on the
+The library has 185 modules and 1758 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -26,6 +26,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.SchwartzTranslateProduct` | Inverse-square decay of every weighted seminorm under separation of Schwartz factors; bilateral translated products sum in Schwartz space to the window times actual periodization |
 | `NLS.Fourier.PeriodicDistributionKernel` | Intrinsic period-two invariance; all signed integer translations; periodization exchange and normalized window reconstruction; exact kernel-annihilation characterization |
 | `NLS.Fourier.PeriodicDistributionIdentification` | Fourier reconstruction and absolute convergence for arbitrary periodic tempered distributions; coefficient uniqueness; intrinsic Banach `lp` regularity iff unique synthesis representation, including infinity |
+| `NLS.SequenceSpaces.TemperedWeight` | Polynomial reciprocal-weight growth criterion; unit weight and every real Sobolev weight satisfy it |
+| `NLS.Fourier.WeightedSchwartzSampling` | Absolutely summable reciprocal-weighted lattice samples; finite Schwartz seminorm control; continuous complex-linear sampling into `l1` |
+| `NLS.Fourier.WeightedDistributionSynthesis` | Genuine weighted tempered-distribution synthesis; absolute raw-coefficient action; norm bound and continuity; injectivity and recovery; intrinsic periodicity; infinity-endpoint truncation convergence; weight/exponent independence |
+| `NLS.Fourier.WeightedDistributionIdentification` | Intrinsic weighted Fourier regularity iff unique synthesis; continuous realization and exact coefficients for every real Sobolev exponent; distributional truncation convergence throughout the scale |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -1696,7 +1700,7 @@ This completes the forward realization and exact recovery for Banach coefficient
 data. The following milestone identifies actual distributional differentiation.
 Potential multiplication and the intrinsic converse for unweighted Banach classes
 are proved below. No function representative is assumed for general coefficient
-data; the full weighted regularity scale remains a separate obligation.
+data. The weighted extension for every real Sobolev exponent is also proved below.
 
 ## Exact distributional derivative and free operator graphs
 
@@ -1772,8 +1776,8 @@ used in the spectral theory.
 
 This is the full operator identification on the realized Fourier domain.
 The intrinsic characterization of arbitrary periodic tempered distributions in
-these unweighted Fourier classes is proved below. The full weighted scale and
-the separate source infinity pair norm remain open.
+these Fourier classes, including the full real Sobolev scale, is proved below.
+The separate source infinity pair norm remains open.
 
 ## Schwartz periodization and the converse bridge
 
@@ -1888,13 +1892,45 @@ and `Memℓp` of the coefficient-test values hold if and only if there is a uniq
 `Coeff p` whose distributional synthesis equals the given tempered distribution.
 It applies to every Banach exponent, including infinity without a vanishing-tail
 assumption. This completes the intrinsic unweighted Banach Fourier-class
-identification. The full weighted scale, including negative Sobolev regularity,
-and the distinct source infinity pair norm remain separate obligations.
+identification. The following milestone extends it to the full real Sobolev
+scale; the distinct source infinity pair norm remains separate.
+
+## Weighted distributions and the full real Sobolev scale
+
+`TemperedWeight` gives the precise hypothesis used for general positive weights:
+the reciprocal weight must be bounded by a polynomial on the lattice. It proves
+this for the unit weight and for `(1+|n|)^s` at every real `s`, by bounding `-s`
+above by a natural exponent. No smooth extension of the lattice weight is assumed.
+
+`WeightedSchwartzSampling` proves that `f(-n/2)/w(n)` is absolutely summable for
+every Schwartz test. A sufficiently high finite family of standard Schwartz
+seminorms absorbs the reciprocal-weight polynomial and leaves a summable inverse-
+square envelope. This constructs an actual continuous complex-linear sampling
+map from Schwartz space into `ℓ¹`.
+
+`WeightedDistributionSynthesis` tests the weighted `lp` sequence against these
+samples. The weight cancels exactly, leaving the absolutely convergent raw
+Fourier action `Σ_n a(n) (𝓕g)(-n/2)`. The weighted norm controls each test action,
+and synthesis is a continuous complex-linear map into genuine tempered
+distributions. The existing coefficient tests recover every raw coefficient,
+proving injectivity. The resulting distributions have actual period two.
+Finite Fourier truncations converge in distribution topology even at infinity,
+without any requirement that the raw coefficients be bounded. Equal raw data
+has identical action across admissible weights and Banach exponents; compatibility
+with the earlier unweighted synthesis is explicit.
+
+`WeightedDistributionIdentification` applies periodic coefficient uniqueness to
+prove the full intrinsic converse: actual period-two invariance and weighted
+`Memℓp` hold exactly when there is a unique weighted synthesis representative.
+The public Sobolev synthesis map and characterization cover every real exponent,
+including negative and fractional exponents, and every Banach `p`, including
+infinity. Differentiation and embeddings across these weighted classes, and the
+source's distinct infinity pair norm, remain subsequent steps.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3586 declarations under `NLS`, including generated
+axioms. The current audit covers 3636 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2327,14 +2363,22 @@ nondecaying infinity synthesis. A single real-line Dirac mass is proved not
 periodic, testing the necessity of that hypothesis. A geometric Schwartz series
 sums to exactly twice its window in Schwartz topology.
 
+Weighted-distribution checks instantiate the intrinsic converse at regularity
+`-3/2` and exponent three. The raw sequence `a(n)=n` is constructed at regularity
+`-1`, exponent infinity, and proved unbounded in the unweighted infinity class.
+Its negative coefficient is recovered without a weight factor, its truncations
+converge as distributions, and multiplying its synthesis by `iπ` gives the genuine
+derivative of the constant-one coefficient distribution. Other checks compare
+raw data across weights and exponents and recover the earlier unweighted
+realization at zero regularity.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Extend the intrinsic periodic-distribution identification from unweighted
-   Banach `lp` classes to the weighted regularity scale, including negative
-   Sobolev exponents. The unweighted converse, full periodization kernel
-   criterion, and absolutely convergent reconstruction are complete, together
-   with the earlier exact derivative domains and full operator identification.
+2. Prove differentiation and embeddings across the intrinsic weighted Fourier
+   classes. Synthesis, coefficient recovery, the periodic-distribution converse,
+   and distributional truncation convergence are complete for every real Sobolev
+   regularity and every Banach exponent, including infinity.
 3. Implement the source's infinity-endpoint pair norm. The finite-`p`
    component-sum norm and its sharp comparison are complete.
 

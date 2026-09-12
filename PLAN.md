@@ -500,7 +500,16 @@ periodization kernel. Every periodic tempered distribution has an absolutely
 convergent Fourier reconstruction from its coefficient-test values, and those
 values determine it uniquely. The intrinsic Banach `ℓᵖ` condition is now equivalent
 to unique representation by distributional synthesis, including `p=∞`.
-Next extend the intrinsic realization to the weighted Fourier regularity scale,
-including negative Sobolev exponents.
+The realization now extends to every positive weight with polynomially bounded
+reciprocal. This condition is proved for every real Sobolev exponent, including
+negative and fractional regularity. Weighted Schwartz sampling is a continuous
+linear map into `ℓ¹`; weighting the coefficient sequence cancels the reciprocal
+weight in the actual action. Weighted synthesis is continuous and injective,
+preserves the raw Fourier coefficients, and is intrinsic across weights and
+exponents. Arbitrary finite truncations converge distributionally, including
+at infinity. Actual periodicity and weighted `Memℓp` are equivalent to unique
+weighted synthesis. The full real Sobolev scale has a direct public API.
+Next connect differentiation and embeddings across these intrinsic weighted
+classes, preserving the source's regularity conventions.
 The source's distinct infinity-endpoint pair norm also remains a separate proof
 obligation.

@@ -5166,3 +5166,80 @@ example (w : 𝓢(ℝ, ℂ)) : HasSum (fun n : ℕ => (1 / 2 : ℂ) ^ n • w) (
   exact hasSum_schwartzSum u hs
 
 end PeriodicDistributionIdentificationChecks
+
+namespace WeightedDistributionChecks
+open NLS.Fourier
+open scoped SchwartzMap FourierTransform
+
+-- Fractional negative Sobolev regularity has the full intrinsic converse at a non-Hilbert exponent.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
+    (h : Memℓp (fun n : ℤ => (((1 + |(n : ℝ)|) ^ (-3 / 2 : ℝ) : ℝ) : ℂ) *
+      T (coefficientTest n)) 3) :
+    ∃! a : WeightedCoeff (Weight.sobolev (-3 / 2)) 3,
+      sobolevDistributionSynthesisCLM (-3 / 2) a = T :=
+  (periodicDistribution_sobolev_memlp_iff_existsUnique (-3 / 2) T).mp ⟨hT, h⟩
+
+-- The raw sequence n is allowed at regularity -1 and exponent infinity.
+private def linearGrowth : WeightedCoeff (Weight.sobolev (-1)) ⊤ :=
+  ⟨fun n => (n : ℂ), by
+    change Memℓp (fun n : ℤ => ((Weight.sobolev (-1) n : ℝ) : ℂ) * (n : ℂ)) ⊤
+    apply memℓp_infty
+    refine ⟨1, ?_⟩
+    rintro y ⟨n, rfl⟩
+    have hn : 0 < 1 + |(n : ℝ)| := by positivity
+    simp only [Weight.sobolev_apply, Real.rpow_neg_one, norm_mul, Complex.norm_real,
+      Real.norm_eq_abs, abs_inv, abs_of_pos hn, Complex.norm_intCast]
+    rw [inv_mul_eq_div]
+    exact (div_le_one hn).mpr (by linarith)⟩
+
+-- It is not covered by unweighted infinity synthesis: the raw coefficients are unbounded.
+example : ¬Memℓp linearGrowth.val ⊤ := by
+  intro h
+  obtain ⟨C, hC⟩ := memℓp_infty_iff.mp h
+  obtain ⟨n, hn⟩ := exists_nat_gt C
+  have hb := hC ⟨(n : ℤ), rfl⟩
+  change ‖((n : ℤ) : ℂ)‖ ≤ C at hb
+  norm_num at hb
+  exact (not_le_of_gt hn) hb
+
+-- The negative-frequency value is recovered raw, with no extra Sobolev weight.
+example : sobolevDistributionSynthesisCLM (-1) linearGrowth (coefficientTest (-3)) = -3 := by
+  rw [sobolevDistributionSynthesisCLM_coefficientTest]
+  norm_num [linearGrowth]
+
+-- Negative regularity retains distributional convergence even without bounded raw coefficients.
+example : Filter.Tendsto
+    (fun s : Finset ℤ => sobolevDistributionSynthesisCLM (-1)
+      (WeightedCoeff.truncate (Weight.sobolev (-1)) ⊤ s linearGrowth))
+    Filter.atTop (nhds (sobolevDistributionSynthesisCLM (-1) linearGrowth)) :=
+  tendsto_sobolevDistributionSynthesis_truncate (-1) linearGrowth
+
+private def allOnes : Coeff ⊤ := ⟨fun _ => 1, one_memℓp_infty⟩
+
+-- The unbounded weighted data realizes the genuine derivative of the constant-coefficient distribution.
+example : (Complex.I * (Real.pi : ℂ)) • sobolevDistributionSynthesisCLM (-1) linearGrowth =
+    TemperedDistribution.derivCLM ℂ (distributionSynthesis allOnes) := by
+  ext g
+  change (Complex.I * (Real.pi : ℂ)) * sobolevDistributionSynthesisCLM (-1) linearGrowth g = _
+  rw [sobolevDistributionSynthesisCLM_apply, distributionDerivative_apply, ← tsum_mul_left]
+  apply tsum_congr
+  intro n
+  change (Complex.I * (Real.pi : ℂ)) * ((n : ℂ) * (𝓕 g) (-(n : ℝ) / 2)) =
+    (Complex.I * (Real.pi : ℂ) * n * 1) * (𝓕 g) (-(n : ℝ) / 2)
+  ring
+
+-- The same raw coefficients give the same distribution regardless of weight or exponent.
+example {w v : Weight} (hw : w.HasTemperedInverse) (hv : v.HasTemperedInverse)
+    (a : WeightedCoeff w 3) (b : WeightedCoeff v ⊤) (h : ∀ n : ℤ, a.val n = b.val n) :
+    weightedDistributionSynthesis w hw a = weightedDistributionSynthesis v hv b :=
+  (weightedDistributionSynthesis_eq_iff w v hw hv a b).mpr h
+
+-- The zero Sobolev weight agrees with the existing unweighted realization.
+example (a : WeightedCoeff (Weight.sobolev 0) 3) :
+    sobolevDistributionSynthesisCLM 0 a =
+      distributionSynthesis (WeightedCoeff.weightEquiv (Weight.sobolev 0) 3 a) := by
+  apply weightedDistributionSynthesis_eq_distributionSynthesis
+  intro n
+  simp
+
+end WeightedDistributionChecks

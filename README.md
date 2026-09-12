@@ -257,7 +257,13 @@ A direct Schwartz-series construction and summable translated-product estimates
 prove that every periodic distribution annihilates the periodization kernel.
 Normalized window reconstruction then gives an absolutely convergent Fourier
 formula and coefficient uniqueness, without assuming the distribution came from
-synthesis. Extension to the full weighted regularity scale remains separate.
+synthesis. This realization now extends to every positive weight with a
+polynomially bounded reciprocal, including every real Sobolev exponent. Weighted
+sampling is continuous into `ℓ¹`; the raw coefficients give an absolutely
+convergent action independent of the weight and exponent. Intrinsic weighted
+coefficient regularity is equivalent to unique weighted synthesis, and finite
+Fourier truncations converge distributionally even at negative regularity and
+`p=∞`.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

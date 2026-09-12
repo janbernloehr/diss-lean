@@ -129,3 +129,7 @@ import NLS.Fourier.SchwartzSeries
 import NLS.Fourier.SchwartzTranslateProduct
 import NLS.Fourier.PeriodicDistributionKernel
 import NLS.Fourier.PeriodicDistributionIdentification
+import NLS.SequenceSpaces.TemperedWeight
+import NLS.Fourier.WeightedSchwartzSampling
+import NLS.Fourier.WeightedDistributionSynthesis
+import NLS.Fourier.WeightedDistributionIdentification
