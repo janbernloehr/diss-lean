@@ -241,8 +241,13 @@ gives its exact half-integer Fourier samples, including the normalization factor
 one half. Explicit Schwartz lifts cover all Fourier polynomials, and their
 periodizations are dense in the uniform norm. The kernel is exactly the common
 annihilator of all synthesized distributions at each Banach exponent.
-The converse characterization of arbitrary periodic distributions remains open;
-uniform density alone does not supply the required smooth-test argument.
+Periodization now commutes with classical differentiation of every order.
+Each derivative is a continuous circle-valued linear image of the original
+Schwartz test, and the same Fourier truncations converge uniformly in every
+fixed derivative order. These bounds prove that periodizations are genuine
+smooth multipliers of Schwartz space. The converse characterization of arbitrary
+periodic distributions still requires the kernel and Schwartz reconstruction
+arguments.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

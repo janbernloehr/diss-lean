@@ -4931,3 +4931,67 @@ example (g : 𝓢(ℝ, ℂ)) (h : ∀ a : Coeff 3, distributionSynthesis a g = 0
   (periodization_eq_zero_iff_distributionSynthesis g).mpr h
 
 end SchwartzPeriodizationChecks
+
+namespace SchwartzPeriodizationSmoothChecks
+open NLS.Fourier
+open scoped SchwartzMap FourierTransform ContDiff
+
+-- The differentiated series is the classical derivative at every real point.
+example (g : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    HasDerivAt (fun y : ℝ => periodizationCLM g (y : AddCircle (2 : ℝ)))
+      (∑' n : ℤ, deriv (g : ℝ → ℂ) (x + 2 * n)) x := by
+  have h := hasDerivAt_periodization g x
+  rw [periodization_eq_tsum] at h
+  exact h
+
+-- Odd modes survive, and the second derivative has the negative Laplacian sign.
+example : fourierCoeff (periodizationDerivCLM 2 (coefficientTest 3)) (-3) =
+    -(9 / 2 : ℂ) * (Real.pi : ℂ) ^ 2 := by
+  rw [fourierCoeff_periodizationDerivCLM, periodization_coefficientTest]
+  norm_num [fourierCoeff.const_smul, fourierCoeff_fourier, Pi.single_apply, pow_two]
+  ring_nf
+  simp only [Complex.I_sq]
+  ring
+
+-- All positive-order derivatives of the constant periodization vanish.
+example (k : ℕ) : periodizationDerivCLM (k + 1) (coefficientTest 0) = 0 := by
+  apply continuousFourierCLM_injective
+  ext n
+  simp only [continuousFourierCLM_apply, map_zero, lp.coeFn_zero, Pi.zero_apply,
+    fourierCoeff_periodizationDerivCLM, periodization_coefficientTest]
+  by_cases hn : n = 0
+  · subst n
+    simp
+  · simp [ContinuousMap.coe_smul, fourierCoeff.const_smul, fourierCoeff_fourier,
+      hn]
+
+-- The very same polynomial cutoffs approximate the fifth derivative uniformly on all of R.
+example (g : 𝓢(ℝ, ℂ)) :
+    TendstoUniformly
+      (fun s : Finset ℤ => iteratedDeriv 5
+        (fourierPolynomial s (fourierCoeff (periodizationCLM g))))
+      (iteratedDeriv 5 (fun x : ℝ => periodizationCLM g (x : AddCircle (2 : ℝ))))
+      Filter.atTop :=
+  tendstoUniformly_iteratedDeriv_periodization 5 g
+
+-- The sixth physical derivative has an absolutely convergent bilateral translate sum.
+example (g : 𝓢(ℝ, ℂ)) :
+    Summable (fun n : ℤ => ‖iteratedDeriv 6 (g : ℝ → ℂ) (-7 / 3 + 2 * n)‖) :=
+  summable_norm_iteratedDeriv_periodization 6 g (-7 / 3)
+
+-- Schwartz convergence controls the uniform norm of each derivative, here order four.
+example {ι : Type*} {l : Filter ι} {u : ι → 𝓢(ℝ, ℂ)} {g : 𝓢(ℝ, ℂ)}
+    (hu : Filter.Tendsto u l (nhds g)) :
+    Filter.Tendsto (fun i => periodizationDerivCLM 4 (u i)) l
+      (nhds (periodizationDerivCLM 4 g)) :=
+  ((periodizationDerivCLM 4).continuous.tendsto g).comp hu
+
+-- Genuine Schwartz multiplication uses its actual pointwise product.
+example (g h : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    SchwartzMap.smulLeftCLM ℂ
+      (fun y : ℝ => periodizationCLM g (y : AddCircle (2 : ℝ))) h x =
+      periodizationCLM g (x : AddCircle (2 : ℝ)) * h x := by
+  rw [SchwartzMap.smulLeftCLM_apply_apply (periodization_hasTemperateGrowth g)]
+  rfl
+
+end SchwartzPeriodizationSmoothChecks

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 175 modules and 1685 named public theorems. All compile on the
+The library has 176 modules and 1703 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -20,6 +20,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.DistributionProduct` | Unique continuous extension of smooth multiplication to Wiener coefficients; joint approximation independence; actual integral action; agreement with smooth and ordinary function products |
 | `NLS.ZakharovShabat.DistributionPotential` | Actual extended domain product; absolute test-integral formula and norm bound; arbitrary smooth approximations; full distributional operator and eigenvalue-equation identification |
 | `NLS.Fourier.SchwartzPeriodization` | Continuous period-two Schwartz periodization; absolutely convergent translates and Poisson formula; exact coefficient and integral normalization; polynomial lifts and uniform density; kernel and synthesized-distribution annihilator |
+| `NLS.Fourier.SchwartzPeriodizationSmooth` | Classical differentiation of every order; continuous circle-valued derivative maps; globally bounded derivatives and temperate growth; absolute physical derivative sums; uniform Fourier approximation in every derivative order |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -1796,10 +1797,37 @@ density does not suffice for arbitrary distributions. Proving that every abstrac
 periodic distribution annihilates this kernel, and establishing reconstruction
 with the required smooth/Schwartz convergence, remain open.
 
+## Smooth periodization and all derivative orders
+
+`SchwartzPeriodizationSmooth` proves a general classical differentiation theorem
+for absolutely summable Fourier data whose differentiated coefficients are also
+absolutely summable. Applying the Schwartz Fourier derivative identity proves
+that periodization commutes with the actual real-line derivative at every point.
+Induction gives all finite smooth orders and genuine `C∞` regularity.
+
+`periodizationDerivCLM k` is a continuous complex-linear map from Schwartz space
+to continuous circle functions. Its physical pullback is exactly the `k`th
+classical derivative of periodization. Its uniform norm bounds that derivative
+on the whole real line. Consequently, periodizations satisfy Mathlib's actual
+`HasTemperateGrowth` condition and can multiply Schwartz tests through the
+genuine smooth-multiplier API.
+
+The Fourier coefficients of the `k`th derivative multiply the original ones by
+`(iπn)^k` and remain absolutely summable. The same finite Fourier polynomials
+converge uniformly to periodization together with each fixed derivative order,
+using arbitrary finite lattice cutoffs. Every derivative also equals the
+absolutely convergent physical translate sum of the corresponding Schwartz
+derivative. Thus approximation now controls all smooth orders, beyond the earlier
+uniform density statement.
+
+The remaining converse still needs reconstruction in the Schwartz topology,
+for example after multiplication by a Schwartz window, and the proof that every
+abstract periodic distribution annihilates the periodization kernel.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3513 declarations under `NLS`, including generated
+axioms. The current audit covers 3539 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2208,6 +2236,13 @@ with imaginary amplitudes. Testing against an infinity-exponent imaginary mode
 produces `-2`, checking bilinearity and the period factor. Further checks exercise
 uniform approximation, translation differences, and the cubic annihilator criterion.
 
+Smooth-periodization checks identify the derivative at every real argument with
+the sum of translated Schwartz derivatives, retain an odd mode's negative
+second-derivative sign, and annihilate the constant window at every positive
+order. They exercise fifth-derivative uniform approximation, absolute sixth-
+derivative translate sums, continuity in the fourth-derivative uniform norm,
+and genuine pointwise Schwartz multiplication by periodized tests.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -2215,8 +2250,10 @@ uniform approximation, translation differences, and the cubic annihilator criter
    regularity. The forward realization, period-one/even-support equivalence,
    exact derivative domains, and full operator identification using the unique
    continuous extension of smooth potential multiplication are complete.
-   The Schwartz periodization bridge, polynomial lifts, and uniform density are
-   now proved; the arbitrary-distribution kernel and reconstruction steps remain.
+   The Schwartz periodization bridge and polynomial lifts are proved, including
+   smoothness, globally bounded derivatives, and uniform Fourier approximation
+   at every derivative order. The arbitrary-distribution kernel and Schwartz
+   reconstruction steps remain.
    The finite-`p` coefficient pair-norm comparison is complete;
    the source's infinity endpoint remains distinct.
 

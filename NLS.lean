@@ -123,3 +123,4 @@ import NLS.Fourier.ProductTestSamples
 import NLS.Fourier.DistributionProduct
 import NLS.ZakharovShabat.DistributionPotential
 import NLS.Fourier.SchwartzPeriodization
+import NLS.Fourier.SchwartzPeriodizationSmooth

@@ -479,8 +479,13 @@ It preserves the integral; a coefficient test at `n` periodizes to half the wave
 at `-n`. Explicit Schwartz lifts cover all Fourier polynomials and prove uniform
 density of periodizations. Its kernel is the common annihilator of the realized
 Fourier distributions, and translating a test by two preserves periodization.
-Next prove that every abstract periodic distribution annihilates this kernel,
-using convergence in the smooth/Schwartz topology rather than uniform density,
-and complete reconstruction under the prescribed coefficient regularity. The
-source's distinct infinity-endpoint pair norm also remains a separate proof
-obligation.
+Periodization now commutes with every classical derivative. Each derivative is
+a continuous linear image into continuous circle functions, is uniformly bounded,
+and has an absolutely convergent physical translate sum. The same Fourier
+truncations converge uniformly in every fixed derivative order, and periodizations
+satisfy the genuine temperate-growth condition for smooth Schwartz multipliers.
+Next use these estimates with a Schwartz window to obtain convergence in Schwartz
+topology, prove that every abstract periodic distribution annihilates the
+periodization kernel, and reconstruct it under the prescribed coefficient
+regularity. The source's distinct infinity-endpoint pair norm also remains a
+separate proof obligation.
