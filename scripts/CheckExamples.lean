@@ -2838,3 +2838,85 @@ example (a : Coeff (dyadicHilbertExponent 2)) :
 
 end
 end DyadicHilbertChecks
+
+
+namespace HilbertDualityChecks
+open NLS NLS.Fourier Complex
+open scoped ENNReal
+noncomputable section
+
+-- The bilinear convention includes no hidden conjugation.
+example : Coeff.dualPairing (Coeff.ofFinsupp (p := 2) (Finsupp.single (-3) I))
+    (Coeff.ofFinsupp (p := 2) (Finsupp.single (-3) I)) = -1 := by
+  rw [Coeff.dualPairing_finite_left]
+  norm_num
+example (a : Coeff 1) (b : Coeff ⊤) : ‖Coeff.dualPairing a b‖ ≤ ‖a‖ * ‖b‖ :=
+  Coeff.norm_dualPairing_le a b
+
+-- Norming tests allow unused and zero coefficients, including an empty truncation.
+example (a : Coeff 2) : ∃ b : ℤ →₀ ℂ, ‖Coeff.ofFinsupp (p := 2) b‖ ≤ 1 ∧
+    b.sum (fun n z => a n * z) = (‖Coeff.truncate {-3, 0, 5} a‖ : ℂ) :=
+  Coeff.exists_finite_norming_test (by norm_num) (by norm_num) _ a
+example : ∃ b : ℤ →₀ ℂ, ‖Coeff.ofFinsupp (p := 2) b‖ ≤ 1 ∧
+    b.sum (fun n z => (0 : Coeff 2) n * z) = 0 := by
+  simpa using Coeff.exists_finite_norming_test (p := 2) (q := 2)
+    (by norm_num) (by norm_num) ∅ 0
+
+-- Duality creates a new sequence of exponents below two, arbitrarily near one.
+example : (dyadicConjugateExponent 0).toReal = 2 := by
+  rw [dyadicConjugateExponent_toReal]; norm_num
+example : (dyadicConjugateExponent 1).toReal = 4 / 3 := by
+  rw [dyadicConjugateExponent_toReal]; norm_num
+example : (dyadicConjugateExponent 2).toReal = 8 / 7 := by
+  rw [dyadicConjugateExponent_toReal]; norm_num
+example : (dyadicConjugateExponent 3).toReal = 16 / 15 := by
+  rw [dyadicConjugateExponent_toReal]; norm_num
+example : ∃ n, (dyadicConjugateExponent n).toReal < 1001 / 1000 :=
+  dyadicConjugateExponent_near_one (by norm_num)
+example (n : ℕ) : 1 < dyadicConjugateExponent n ∧ dyadicConjugateExponent n ≤ 2 :=
+  ⟨one_lt_dyadicConjugateExponent n, dyadicConjugateExponent_le_two n⟩
+
+-- The ℓ(4/3) and ℓ(8/7) operators retain the source signs and the zero diagonal.
+example : conjugateHilbert 1 (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-3) = 0 := by
+  rw [conjugateHilbert_finite]; norm_num [finiteHilbert]
+example : conjugateHilbert 1 (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-2) = -I := by
+  rw [conjugateHilbert_finite]; norm_num [finiteHilbert, div_neg]
+example : conjugateHilbert 2 (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-4) = I := by
+  rw [conjugateHilbert_finite]; norm_num [finiteHilbert]
+example : conjugateShiftedHilbert 1 (Coeff.ofFinsupp (Finsupp.single 0 1)) 0 =
+    -2 / (Real.pi : ℂ) := by
+  rw [conjugateShiftedHilbert_finite]; norm_num [div_neg, neg_div]
+example : conjugateShiftedHilbert 2 (Coeff.ofFinsupp (Finsupp.single 0 1)) (-1) =
+    2 / (Real.pi : ℂ) := by
+  rw [conjugateShiftedHilbert_finite]; norm_num
+
+-- A nonreal, nonzero pairing detects the transposition sign.
+example : Coeff.dualPairing
+    (dyadicHilbert 1 (Coeff.ofFinsupp (Finsupp.single (-3) I)))
+    (Coeff.ofFinsupp (p := dyadicConjugateExponent 1) (Finsupp.single (-2) (1+I))) = 1-I := by
+  rw [Coeff.dualPairing_finite_right]
+  simp only [Finsupp.sum_single_index, mul_zero, dyadicHilbert_finite]
+  norm_num [finiteHilbert, div_neg]
+  ring_nf
+  norm_num
+  ring
+example (n : ℕ) (a : Coeff (dyadicHilbertExponent n)) (b : Coeff (dyadicConjugateExponent n)) :
+    Coeff.dualPairing (dyadicHilbert n a) b = -Coeff.dualPairing a (conjugateHilbert n b) :=
+  dualPairing_dyadicHilbert n a b
+
+-- The ordinary bound is unchanged by duality, and applies to arbitrary inputs.
+example (n : ℕ) (a : Coeff (dyadicConjugateExponent n)) :
+    ‖conjugateHilbert n a‖ ≤ dyadicHilbertBound n * ‖a‖ := norm_conjugateHilbert_apply_le n a
+example (n : ℕ) (a : Coeff (dyadicConjugateExponent n)) :
+    ‖conjugateShiftedHilbert n a‖ ≤
+      Real.pi⁻¹ * (dyadicHilbertBound n + ‖hilbertCorrectionCoeffs‖) * ‖a‖ :=
+  norm_conjugateShiftedHilbert_apply_le n a
+example (a : Coeff (dyadicConjugateExponent 1)) : AnalyticAt ℂ (conjugateHilbert 1) a :=
+  (conjugateHilbert 1).analyticAt a
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q]
+    (h : HilbertEstimate p) (hq : 1 < q) (hqtop : q ≠ ⊤) :
+    ((h.conjugateTo hq hqtop).conjugateTo h.one_lt h.ne_top).operator = h.operator :=
+  HilbertEstimate.operator_eq _ _
+
+end
+end HilbertDualityChecks

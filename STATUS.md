@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 97 modules and 1020 named public theorems. All compile on the
+The library has 100 modules and 1040 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -104,6 +104,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.HilbertEstimate` | Quantitative finite-input estimates; unique continuous ordinary and shifted completions; exact coefficient formulas and bounds; independence of the estimate package |
 | `NLS.Fourier.HilbertDoubling` | General Cotlar quadratic estimate and its solution; constructs a proved estimate at `2p` from one at `p` |
 | `NLS.Fourier.DyadicHilbert` | Recursive ordinary and shifted operators at every `2^(n+1)`; exact finite formulas; explicit recurrence and closed bound; unboundedness of the proved exponents |
+| `NLS.SequenceSpaces.ConjugateDuality` | Bounded bilinear Hölder pairing; finite coefficient formulas; finite norming tests for truncations; norm detection by finite conjugate tests |
+| `NLS.Fourier.HilbertDuality` | Finite Hilbert antisymmetry; conjugate-exponent estimate with unchanged constant; transposition identity on arbitrary completed inputs |
+| `NLS.Fourier.ConjugateHilbert` | Ordinary and shifted operators at dyadic conjugates `2, 4/3, 8/7, …`; exact coefficients and bounds; exponents in `(1,2]` arbitrarily close to one; transposition with the dyadic family |
 
 ## Current mathematical milestone
 
@@ -721,8 +724,32 @@ an actual `HilbertEstimate q`, so the argument can be iterated.
 At exponent `2^(n+1)`, `dyadicHilbert` and `dyadicShiftedHilbert` are continuous
 linear operators on the entire coefficient space. The ordinary bound is
 `Cₙ=2^n B₂+(2^n-1)(3M+1)` and the shifted bound is `(Cₙ+‖d‖₁)/π`.
-The proved exponents exceed every prescribed real number. Interpolation and
-duality are still required for other `1<p<∞`; no whole-range estimate is assumed.
+The proved exponents exceed every prescribed real number. Duality now gives
+further exponents as described next; interpolation is still needed for the
+whole range `1<p<∞`.
+
+**Hilbert bounds transfer to conjugate exponents without increasing the constant.**
+The bilinear coefficient pairing `Σ a(n)b(n)` is a continuous map on conjugate
+sequence spaces, with the Hölder norm bound. Mathlib's finite nonnegative Hölder
+extremizer, combined with complex phases, constructs a finite conjugate test of
+norm at most one realizing the norm of each truncation. Truncation convergence
+then proves that bounds against all finite conjugate tests detect the full norm.
+Zero coefficients and empty truncations are included.
+
+The finite ordinary kernel is antisymmetric, including the zero diagonal, giving
+`Σ(Ha)b = -Σa(Hb)`. Combining it with norm detection transfers a proved finite
+estimate at `q` to conjugate `p`, with exactly the same bound. The resulting
+`HilbertEstimate.conjugateTo` supplies the unique completed ordinary transform
+and its shifted correction. Double density extends the transposition identity
+to arbitrary inputs in the two conjugate spaces.
+
+Applying this to every dyadic estimate constructs `conjugateHilbert` and
+`conjugateShiftedHilbert` at `rₙ=2^(n+1)/(2^(n+1)-1)`. Their bounds are `Cₙ` and
+`(Cₙ+‖d‖₁)/π`, respectively, and their finite-input coefficients retain the exact
+reciprocal formulas. Every `rₙ` lies in `(1,2]`, and for every real `r>1` some
+`rₙ<r`. Thus proved exponents occur arbitrarily close to one as well as arbitrarily
+far above two. Interpolation between these exponents and completion of interval
+maps beyond `p=2` remain separate proof obligations.
 
 The actual unbounded realization is now defined as
 
@@ -936,7 +963,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2197 declarations under `NLS`, including generated
+axioms. The current audit covers 2231 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1141,10 +1168,18 @@ inputs, uniqueness against the existing Hilbert and quartic operators, and
 independence of the estimate package. The next Hölder product is checked for
 complex squaring without conjugation and the exact square-norm identity.
 
+Hilbert-duality checks distinguish the bilinear convention on imaginary
+coefficients, instantiate the Hölder bound at `p=1, q=∞`, and allow zero and
+empty norming inputs. They verify the fractional exponents, existence below
+`1.001`, zero-diagonal and signed complex action below two, and shifted-kernel
+normalization. A nonzero nonreal pairing detects the transposition sign;
+arbitrary-input bounds and transposition, analyticity, and independence after
+two conjugate transfers are also checked.
+
 ## Next milestones
 
-1. Use the proved dyadic Hilbert estimates with interpolation and duality to
-   cover all `1<p<∞`. Complete the corresponding interval maps beyond `p=2`.
+1. Interpolate the proved dyadic and conjugate Hilbert estimates to cover all
+   `1<p<∞`. Complete the corresponding interval maps beyond `p=2`.
    Construct the physical Sobolev identifications in Lemmas 4.1–4.2, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.

@@ -322,10 +322,24 @@ at general doubled exponents. Induction constructs both operators at every
 `2^(n+1)`, with bound `2^n B₂ + (2^n-1)(3M+1)`. These exponents are proved
 unbounded. The old quartic product is a specialization of the general product.
 
-Next supply interpolation and duality to cover the remaining `1<p<∞` range.
+The duality step is now proved. Finite conjugate tests detect each truncated
+sequence norm, using mathlib's finite Hölder extremizer; density detects the
+full norm. Antisymmetry of the finite Hilbert kernel transfers every proved
+finite-exponent estimate to the conjugate exponent with the same constant.
+The transposition identity extends to arbitrary conjugate inputs. Applying this
+to the dyadic estimates constructs ordinary and shifted transforms at
+`2, 4/3, 8/7, …`, all in `(1,2]` and arbitrarily close to one.
+
+Next supply interpolation to cover the remaining `1<p<∞` range.
 Complete the corresponding interval maps beyond the already completed `p=2`
-case, using the proved shifted bounds. The library search found
-Parseval and Hölder but no existing discrete Hilbert or interpolation theorem.
+case, using the proved shifted bounds. The library search found no ready-made
+sequence-operator interpolation theorem, but mathlib has Hadamard's three-lines
+estimate in `Mathlib.Analysis.Complex.Hadamard`. The next route is finite complex
+input/test families with interpolated powers: apply
+`Complex.HadamardThreeLines.norm_le_interp_of_mem_verticalClosedStrip₀₁'`
+to their scalar Hilbert pairing, then use finite dual norm detection to obtain
+a uniform intermediate-exponent estimate. The analytic strip bounds and the
+finite-to-completed transfer must be proved before claiming the full range.
 Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
 is not assumed here.

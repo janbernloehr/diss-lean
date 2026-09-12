@@ -114,9 +114,12 @@ Hilbert kernels now also have bounded extensions on all `ℓ4`: a summable kerne
 correction gives the ordinary `ℓ2` operator, and the discrete Cotlar identity
 with Hölder proves a uniform quartic bound. The general exponent-doubling theorem
 now iterates this argument to construct both transforms at every `p=2^(n+1)`,
-with explicit bounds and exact finite-input formulas. Interpolation and duality
-for the remaining exponents, and interval completions beyond `p=2`, are still
-needed for the full Lemma 4.3 and spectral transfer.
+with explicit bounds and exact finite-input formulas. Duality transfers the
+ordinary bounds unchanged to conjugate exponents, constructing both transforms
+at `2, 4/3, 8/7, …`, with exponents arbitrarily close to one. The transposition
+identity holds on all conjugate inputs. Interpolation for the remaining exponents,
+and interval completions beyond `p=2`, are still needed for the full Lemma 4.3
+and spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
