@@ -738,3 +738,24 @@ fractional energy to intrinsic interval energy, followed by the normed
 intrinsic Sobolev function-space identification. The forward comparison alone
 already proves A.9's coefficient conclusions; the reverse direction is the
 remaining part of the equality of Sobolev spaces invoked in its proof.
+
+
+The reverse comparison is now proved. Enlarging the intrinsic interval
+integral, changing to displacement variables, and applying Tonelli bounds it
+by twice the full translation energy. The exact tail mass is `1/s`, and the
+uniform `L²` increment estimate gives
+`E_interval ≤ 2(E_periodic+(4/s)‖f‖²)` for every positive index, including
+infinite energies. Below half this combines with forward periodization to
+identify the physical periodic and intrinsic interval regularity conditions.
+
+Actual Fourier reconstruction and bidirectional dilation finiteness give the
+weighted square-summability criterion on every positive interval length,
+together with a unique weighted representative. The reverse spectral bound
+retains the zero mode: `I_s ≤ R_s ‖a‖²` with
+`R_s=2+2(C_upper(s)+4/s)` for `0<s<1`. Below half, the forward and reverse
+bounds give explicit norm equivalence for arbitrary period-two interval data.
+
+The next step is to package these proved identifications into a normed
+intrinsic interval function space and its continuous Fourier embedding.
+The analytic equivalence is established; the normed quotient API has not yet
+been introduced.

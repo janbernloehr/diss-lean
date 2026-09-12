@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 233 modules and 2176 named public theorems. All compile on the
+The library has 236 modules and 2194 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -61,6 +61,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.FractionalDilation` | Kernel homogeneity including the diagonal; exact `c^(2s-1)` intrinsic energy scaling including infinite values; separate inhomogeneous factors and a quantitative intrinsic size bound |
 | `NLS.Fourier.IntervalCoefficientScaling` | Actual normalized Fourier integrals on length `L`; agreement with mathlib's interval coefficient; exact period-two dilation identity; square-integrable interval data transport |
 | `NLS.Fourier.ArbitraryPeriodFourierLebesgue` | A.9 membership and uniform intrinsic norm bounds for every positive period, including the source's zero and half conclusions; weighted square summability; exact zero-regularity normalization `L^(-1/2)` including infinity |
+| `NLS.Fourier.FractionalRestriction` | Interval energy bounded by full displacement energy; exact tail mass `1/s`; central real-kernel identity including zero displacement; reverse periodic-to-interval estimate and regularity restriction for every positive index |
+| `NLS.Fourier.IntervalSobolevIdentification` | Exact interval/periodic regularity equivalence below half; actual weighted Fourier criterion for arbitrary `L²` representatives on every positive interval; bidirectional dilation finiteness; unique weighted representation |
+| `NLS.Fourier.IntervalSobolevNormEquivalence` | Exact square-energy normalization; finite reverse restriction constant; intrinsic size controlled by weighted Fourier norm for `0<s<1`; two-sided intrinsic/Fourier bounds for original period-two interval data below half |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2404,15 +2407,54 @@ the function. The zero-regularity normalization is exactly
 `‖a‖_q ≤ sqrt(1/L) sqrt(N_L(f))`, including the infinity target.
 
 This completes the arbitrary-period coefficient and quantitative embedding
-statements in the intrinsic interval formulation. The source's separate
-interval/periodic Sobolev identification has only its forward direction here;
-a reverse comparison and normed intrinsic function-space API have not been
-introduced. The main nonlinear Fourier/Birkhoff results remain separate work.
+statements in the intrinsic interval formulation. The reverse Sobolev comparison
+and resulting regularity identification are proved below. A separate normed
+intrinsic function-space API and the main nonlinear Fourier/Birkhoff results
+remain separate work.
+
+## Reverse restriction and Sobolev identification
+
+`FractionalRestriction` first enlarges the inner spatial integral to the real
+line, changes to displacement variables, and applies Tonelli. This gives
+`E_interval ≤ 2 E_full_translation` with the exact circle normalization.
+The real-distance kernel is measurable and agrees with the singular extended
+kernel in the central energy: at zero displacement the actual increment
+vanishes. Translating the already evaluated exterior kernel gives tail mass
+`∫_(|t|>1) |t|^(-1-2s) dt = 1/s` for every `s>0`.
+The `L²` increment bound then yields
+`E_interval ≤ 2(E_periodic+(4/s)‖f‖²)`.
+No energy finiteness is assumed for this comparison. Periodic fractional
+regularity therefore implies finite intrinsic interval energy for every
+positive index, including indices above half.
+
+`IntervalSobolevIdentification` combines the reverse estimate with the
+subcritical periodization theorem. For `0<s<1/2`, physical periodic regularity
+is equivalent to finite intrinsic energy on a period. Almost-everywhere
+Fourier reconstruction gives the exact weighted square-summability criterion
+for arbitrary interval representatives. Positive dilation preserves fractional
+energy finiteness in both directions, so the criterion holds on every interval
+`[0,L]` with `L>0`. Finite intrinsic energy is also equivalent to a unique
+weighted sequence whose raw entries are the actual normalized Fourier integrals.
+
+`IntervalSobolevNormEquivalence` retains the square term and the tail in the
+finite reverse constant
+`R_s=2+2(C_upper(s)+4/s)`.
+For `0<s<1`, the periodic synthesis of weighted coefficients `a` satisfies
+`I_s ≤ R_s ‖a‖²` and `size_s ≤ sqrt(R_s) ‖a‖`.
+Below half, reconstruction transfers the reverse bound to arbitrary original
+period-two interval data. Together with the forward periodization bound this
+proves explicit inequalities in both directions between intrinsic interval
+size and the actual weighted Fourier norm. The result preserves constant
+functions and does not require endpoint matching.
+
+The regularity identification and two-sided period-two bounds are now proved;
+a separate normed quotient type and continuous-map API for intrinsic interval
+functions have not yet been introduced.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4443 declarations under `NLS`, including generated
+axioms. The current audit covers 4471 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2993,20 +3035,29 @@ giving the subcritical target `3/2` and half target `6/5`. Additional checks
 cover the vacuous zero-energy hypothesis, both arbitrary-length intrinsic norm
 bounds, and the infinity normalization factor `1/2` at length four.
 
+Restriction checks distinguish the real and extended kernels at zero while
+verifying equality of their actual central energies. The two tails have exact
+mass four at `s=1/4`; an imaginary constant has zero full displacement energy.
+Periodic input at `s=3/4` exercises restriction and the reverse norm bound above
+half. A nonzero imaginary negative mode verifies the square normalization.
+The nonperiodic ramp exercises the two-sided bound below half. Further checks
+cover bidirectional dilation finiteness, the arbitrary-length weighted criterion,
+and unique weighted representation of the length-four ramp.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the reverse interval/periodic fractional comparison and package the
-   intrinsic Sobolev function-space identification. A.9's actual coefficient
-   membership and uniform intrinsic bounds are complete for every positive
-   period, including zero and half regularity. The two-sequence inequality in
-   Appendix B.2, its periodic product in Appendix A.7,
+2. Package the intrinsic Sobolev function-space identification as a normed
+   quotient and continuous Fourier embedding. The regularity equivalence is
+   complete on every positive interval, with explicit two-sided bounds for
+   period two. A.9's coefficient membership and uniform intrinsic bounds are
+   complete for every positive period, including zero and half regularity. The
+   two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
    dissertation results. Both finite and infinity source pair norms and their
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. The printed general-`p` spectral height and the reverse
-interval/periodic Sobolev identification remain open; intrinsic normed quotient
-types have not been introduced.
+unimplemented. The printed general-`p` spectral height remains open, and
+intrinsic normed quotient types have not been introduced.

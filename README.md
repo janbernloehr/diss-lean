@@ -514,8 +514,11 @@ installation is absent. No shell startup files are modified.
   index. Actual Fourier scaling now extends these conclusions to every
   positive interval length. Square energy scales by `c⁻¹` and fractional
   energy by `c^(2s-1)`; the zero-regularity norm bound has normalization
-  `L^(-1/2)` on length `L`. The intrinsic normed function-space API and reverse
-  interval/periodic identification remain separate work.
+  `L^(-1/2)` on length `L`. The reverse periodic-to-interval bound is now
+  proved as well. Below half, weighted square summability is equivalent to
+  finite intrinsic interval energy on every positive length; explicit two-sided
+  norm bounds hold in the period-two model. A separate normed intrinsic
+  function-space API remains to be introduced.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -181,3 +181,6 @@ import NLS.Fourier.IntervalDilation
 import NLS.Fourier.FractionalDilation
 import NLS.Fourier.IntervalCoefficientScaling
 import NLS.Fourier.ArbitraryPeriodFourierLebesgue
+import NLS.Fourier.FractionalRestriction
+import NLS.Fourier.IntervalSobolevIdentification
+import NLS.Fourier.IntervalSobolevNormEquivalence

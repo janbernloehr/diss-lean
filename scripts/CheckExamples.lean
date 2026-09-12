@@ -6517,3 +6517,81 @@ example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.re
   simpa only [show Real.sqrt (1 / (4 : ℝ)) = 1 / 2 by
     rw [Real.sqrt_eq_iff_eq_sq (by norm_num) (by norm_num)]
     norm_num] using Fourier.norm_intervalFourierCoefficients_of_memLp_le (by norm_num) le_top f hf hm
+
+-- The real and extended kernels differ at zero, while actual translation energy agrees.
+example : Fourier.realFractionalKernel (1 / 3) 0 = 0 := by
+  norm_num [Fourier.realFractionalKernel]
+
+example : Fourier.fractionalTranslationKernel (1 / 3) 0 = ⊤ := by
+  norm_num [Fourier.fractionalTranslationKernel]
+
+example (f : Fourier.CircleL2) :
+    Fourier.translationEnergy (MeasureTheory.volume.restrict (Set.Icc (-1) 1)) (Fourier.realFractionalKernel (1 / 3)) f =
+      Fourier.fractionalTranslationEnergy (1 / 3) f :=
+  Fourier.translationEnergy_realFractionalKernel_central _ _
+
+-- Both tails together have mass four at s=1/4.
+example : (∫⁻ t : ℝ in (Set.Icc (-1) 1)ᶜ, Fourier.realFractionalKernel (1 / 4) t) = 4 := by
+  convert Fourier.lintegral_realFractionalKernel_tail (by norm_num : (0 : ℝ) < 1 / 4) using 1
+  norm_num
+
+-- A constant has zero full displacement energy, even though the reverse bound retains its L² term.
+example : Fourier.translationEnergy MeasureTheory.volume (Fourier.realFractionalKernel (1 / 4))
+    (Fourier.l2Synthesis (lp.single 2 0 Complex.I)) = 0 := by
+  rw [Fourier.translationEnergy_eq_tsum _ _ (Fourier.measurable_realFractionalKernel _)]
+  rw [tsum_eq_single 0 (by
+    intro n hn
+    simp [Fourier.fourierCoeff_l2Synthesis, lp.single_apply, hn])]
+  simp
+
+-- Restriction remains valid above half regularity for periodic input.
+example (f : Fourier.CircleL2) (hf : Fourier.HasFractionalPeriodicRegularity (3 / 4) f) :
+    Fourier.fractionalIntervalEnergy (3 / 4) 2 (Fourier.circlePullback f) < ⊤ :=
+  Fourier.fractionalIntervalEnergy_lt_top_of_periodic (by norm_num) f hf
+
+example (a : WeightedCoeff (Weight.sobolev (3 / 4)) 2) :
+    Fourier.intrinsicIntervalSize (3 / 4) 2 (Fourier.circlePullback (Fourier.sobolevL2Synthesis (by norm_num) a)) ≤
+      Real.sqrt (Fourier.intervalRestrictionConstant (3 / 4)).toReal * ‖a‖ :=
+  Fourier.intrinsicIntervalSize_sobolevL2Synthesis_le (by norm_num) (by norm_num) a
+
+-- The physical interval and periodic conditions are equivalent below half.
+example (f : Fourier.CircleL2) : Fourier.HasFractionalPeriodicRegularity (1 / 3) f ↔
+    Fourier.fractionalIntervalEnergy (1 / 3) 2 (Fourier.circlePullback f) < ⊤ :=
+  Fourier.hasFractionalPeriodicRegularity_iff_intervalEnergy (by norm_num) (by norm_num) f
+
+-- Exact square-energy normalization also holds for a nonzero imaginary negative mode.
+example : Fourier.intervalSquareEnergy 2
+    (Fourier.circlePullback (Fourier.l2Synthesis (lp.single 2 (-3) Complex.I))) = 2 := by
+  rw [Fourier.intervalSquareEnergy_circlePullback, Fourier.norm_l2Synthesis, lp.norm_single (by norm_num)]
+  norm_num
+
+-- The original nonperiodic interval data has two-sided intrinsic/Fourier norm bounds.
+example :
+    ‖Fourier.intervalSobolevCoefficients (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+      intervalRamp intervalRamp_memLp (intervalRamp_energy_le.trans_lt (by norm_num))‖ ≤
+        Real.sqrt (Fourier.intervalSobolevBoundConstant (1 / 4)).toReal * Fourier.intrinsicIntervalSize (1 / 4) 2 intervalRamp ∧
+    Fourier.intrinsicIntervalSize (1 / 4) 2 intervalRamp ≤
+      Real.sqrt (Fourier.intervalRestrictionConstant (1 / 4)).toReal *
+        ‖Fourier.intervalSobolevCoefficients (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+          intervalRamp intervalRamp_memLp (intervalRamp_energy_le.trans_lt (by norm_num))‖ :=
+  Fourier.intervalSobolev_norm_equivalence _ _ _ _ _
+
+-- Dilation preserves energy finiteness in both directions, including the scale-invariant half index.
+example (f : ℝ → ℂ) :
+    Fourier.fractionalIntervalEnergy (1 / 2) 2 (Fourier.intervalDilation 3 f) < ⊤ ↔
+      Fourier.fractionalIntervalEnergy (1 / 2) 6 f < ⊤ := by
+  convert Fourier.fractionalIntervalEnergy_dilation_lt_top_iff (by norm_num : (0 : ℝ) < 3) (1 / 2) 2 f using 1
+  norm_num
+
+-- Weighted coefficients characterize intrinsic interval regularity on length four without matching endpoints.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 4))) :
+    Memℓp (fun n => (Weight.sobolev (1 / 4) n : ℂ) * Fourier.intervalFourierCoefficient 4 f n) 2 ↔
+      Fourier.fractionalIntervalEnergy (1 / 4) 4 f < ⊤ :=
+  Fourier.memlp_sobolev_intervalFourierCoefficient_iff_intervalEnergy (by norm_num) (by norm_num) (by norm_num) f hf
+
+example : ∃! a : WeightedCoeff (Weight.sobolev (1 / 4)) 2,
+    ∀ n, a.val n = Fourier.intervalFourierCoefficient 4 intervalRamp n := by
+  apply (Fourier.intervalEnergy_lt_top_iff_existsUnique_sobolev (by norm_num) (by norm_num) (by norm_num)
+    intervalRamp lengthFourRamp_memLp).mp
+  exact Fourier.fractionalIntervalEnergy_lt_top_of_regularity (by norm_num) (by norm_num) (by norm_num)
+    intervalRamp (lengthFourRamp_half_energy_le.trans_lt (by norm_num))
