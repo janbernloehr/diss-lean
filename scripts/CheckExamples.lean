@@ -4638,3 +4638,80 @@ example (u : CoeffPair 3) (z : ℂ) (hz : z ∈ resolventSet (by simp) (periodOn
   ⟨hz, resolvent_mem_pairParitySubspace (by simp) _ (periodOnePotential_mem u) 1 z hz a ha⟩
 
 end PeriodOneChecks
+
+namespace DistributionChecks
+open NLS.Fourier MeasureTheory
+open scoped SchwartzMap FourierTransform
+
+-- Complex tests use linear duality, including at negative frequencies.
+example (a : Coeff 3) :
+    distributionSynthesis a (Complex.I • coefficientTest (-7)) = Complex.I * a (-7) := by
+  rw [map_smul]
+  simp only [distributionSynthesis_coefficientTest, smul_eq_mul]
+
+-- A constant mode has no spurious factor of one half in its real-line action.
+example (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis (lp.single 1 0 (2 * Complex.I)) g =
+      (2 * Complex.I) * ∫ x : ℝ, g x := by
+  simp only [distributionSynthesis_single, wave_zero, one_mul]
+
+example (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis (lp.single 3 (-3) Complex.I) g =
+      Complex.I * ∫ x : ℝ, wave (-3) x * g x :=
+  distributionSynthesis_single _ _ _
+
+-- Recovery distinguishes coefficients even for arbitrary infinite-support data.
+example (a b : Coeff 3) (h : distributionSynthesis a = distributionSynthesis b) : a = b :=
+  distributionSynthesis_injective h
+
+private def allOnes : Coeff ⊤ := ⟨fun _ => 1, one_memℓp_infty⟩
+
+-- This genuinely exercises the new endpoint, beyond absolutely summable synthesis.
+example : ¬ Memℓp (fun n : ℤ => allOnes n) 1 := by
+  intro h
+  have hs := h.summable (by simp : (0 : ℝ) < (1 : ℝ≥0∞).toReal)
+  simp [allOnes, summable_const_iff] at hs
+
+example : distributionSynthesis allOnes (coefficientTest (-11)) = 1 := by
+  rw [distributionSynthesis_coefficientTest]
+  rfl
+
+example : Filter.Tendsto
+    (fun s : Finset ℤ => distributionSynthesis (Coeff.truncate s allOnes))
+    Filter.atTop (nhds (distributionSynthesis allOnes)) :=
+  tendsto_distributionSynthesis_truncate allOnes
+
+example (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis allOnes (SchwartzMap.compSubConstCLM ℂ 2 g) =
+      distributionSynthesis allOnes g := distributionSynthesis_period_two _ _
+
+-- The same endpoint distinguishes period two from period one.
+example : distributionSynthesis allOnes (SchwartzMap.compSubConstCLM ℂ 1 (coefficientTest (-3))) ≠
+    distributionSynthesis allOnes (coefficientTest (-3)) := by
+  rw [distributionSynthesis_translate_coefficientTest, distributionSynthesis_coefficientTest]
+  have hw : wave (-3) 1 = -1 := by convert wave_odd_at_one (-2) using 1; norm_num
+  rw [hw]
+  norm_num [allOnes]
+
+example (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis (Coeff.periodDouble allOnes) (SchwartzMap.compSubConstCLM ℂ 1 g) =
+      distributionSynthesis (Coeff.periodDouble allOnes) g :=
+  distributionSynthesis_periodDouble_period_one _ _
+
+example (a : Coeff 3)
+    (h : ∀ g : 𝓢(ℝ, ℂ), distributionSynthesis a (SchwartzMap.compSubConstCLM ℂ 1 g) =
+      distributionSynthesis a g) : a (-5) = 0 := by
+  exact (Coeff.mem_paritySubspace 0 a).mp
+    ((distributionSynthesis_period_one_iff a).mp h) (-5) (by norm_num)
+
+-- Agreement with actual functions is checked against arbitrary Schwartz tests.
+example (a : Coeff 1) (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis a g =
+      ∫ x : ℝ, continuousSynthesis a (x : AddCircle (2 : ℝ)) * g x :=
+  distributionSynthesis_eq_integral_continuousSynthesis a g
+
+example (a : Coeff 1) (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis (Coeff.periodDouble a) g = ∫ x : ℝ, periodOneSynthesis a x * g x :=
+  distributionSynthesis_periodDouble_eq_integral a g
+
+end DistributionChecks

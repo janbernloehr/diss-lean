@@ -2,12 +2,16 @@
 
 ## Implemented and checked
 
-The library has 163 modules and 1573 named public theorems. All compile on the
+The library has 167 modules and 1605 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
 | `NLS.SequenceSpaces.Basic` | Integer-indexed complex `lp` coefficients |
+| `NLS.SequenceSpaces.TestDuality` | Complex bilinear `lp × l1` testing, absolute convergence, norm bound, and continuous coefficient-to-dual map |
+| `NLS.Fourier.SchwartzSampling` | Signed half-integer samples in `l1`, controlled by a finite family of genuine Schwartz seminorms |
+| `NLS.Fourier.DistributionSynthesis` | Actual tempered distributions for all Banach exponents; continuous linear injection; exact coefficient recovery; single-wave action; distributional convergence of finite Fourier sums including infinity |
+| `NLS.Fourier.DistributionPeriodicity` | Physical period two; period one iff even support; doubled coefficients give period one; agreement with continuous synthesis under actual real-line integrals |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -196,8 +200,8 @@ and `n`, respectively. Their included vectors are proved nonzero and satisfy
 The domain and operator follow Chapter 1, §3, printed page 23; the signed-mode
 convention follows §2, equation (1.2). The spectral pencil is explicitly a map
 from the domain to the base space. The unbounded realization is now proved
-closed, as detailed below. The physical Fourier/distribution realization remains
-unproved.
+closed, as detailed below. The forward realization of coefficients as periodic
+distributions is now proved below; compatibility with this operator remains open.
 These original numerical operator bounds use the maximum pair norm. The finite-`p`
 comparison with the dissertation's component-sum norm is now proved in `PairNorm`;
 `PairNormHeight` transfers the spectral-height conclusions without increasing constants.
@@ -400,8 +404,9 @@ Both signed free modes have the parity of their spectral index, since `n`
 and `-n` have the same residue modulo two.
 
 The canonical period-one coefficient embedding and its physical integral
-identification for integrable functions are now proved below. The general
-Fourier/distribution realization remains open. The actual rectangular contour
+identification for integrable functions are now proved below. The forward
+distributional realization and period-one characterization are also proved below;
+distributional operator compatibility remains open. The actual rectangular contour
 identification is also proved below.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
@@ -1641,15 +1646,47 @@ At absolute summability, both components are identified with actual physical
 period-one functions. These embedded parameters automatically satisfy the
 existing resolvent and spectral contour parity hypotheses.
 
-The full realization of arbitrary coefficient data as periodic distributions,
-including the corresponding distribution-level period-one embedding, remains
-open. The new physical identification assumes integrability of the function;
-it does not claim every `lp` sequence is represented by an integrable function.
+The following milestone extends this construction to general Banach coefficient
+data, without assuming an integrable function representative.
+
+## Genuine distributional Fourier synthesis
+
+`SchwartzSampling` bounds the signed half-integer samples `g(-n/2)` by
+`16 S(g)/(1+|n|)^2`, where `S` is a finite supremum of standard Schwartz
+seminorms of decay degree at most two and derivative degree zero. This gives a
+continuous complex-linear map from mathlib's Schwartz space into `Coeff 1`.
+`TestDuality` supplies the bounded, unconjugated coefficient pairing, so the
+test action is complex-linear rather than conjugate-linear.
+
+`DistributionSynthesis` maps each `a : Coeff p`, for every `1 ≤ p ≤ ∞`, into
+mathlib's actual `TemperedDistribution ℝ ℂ`. Its action on a Schwartz test is
+`Σ_n a_n (𝓕g)(-n/2)`, with absolute convergence. The map is complex-linear and
+continuous for mathlib's pointwise distribution topology. A smooth frequency
+bump of radius `1/4` isolates each half-integer lattice point; its inverse
+Fourier transform tests the corresponding original coefficient exactly. Thus
+the synthesis map is injective. The normalization is verified by actual
+real-line integrals: a single coefficient at `n` acts as its amplitude times
+integration against `exp(iπnx)`. Finite Fourier truncations converge in the
+distribution topology, including at `p=∞`, where norm convergence of coefficient
+truncations is not asserted.
+
+`DistributionPeriodicity` proves the physical translation law on Schwartz tests.
+All synthesized distributions have period two. Period one holds if and only if
+the coefficients have even support, extending the earlier period-doubling map to
+actual distributions. For absolutely summable coefficients, exchanging the
+Fourier sum with the integral proves agreement with the existing continuous
+period-two synthesis and period-one synthesis on every Schwartz test.
+
+This completes the forward realization and exact recovery for Banach coefficient
+data. Compatibility with the differentiated and multiplied operators, and the
+converse characterization of all periodic distributions with the prescribed
+coefficient regularity, remain open. No function representative is assumed for
+general coefficient data.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3279 declarations under `NLS`, including generated
+axioms. The current audit covers 3363 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2028,12 +2065,22 @@ sawtooth has vanishing negative odd coefficients and mean exactly `1/2`,
 checking the period normalization independently of continuous synthesis.
 Further checks preserve the component-sum pair norm and the odd resolvent sector.
 
+Distribution checks test complex linearity at negative frequencies, the constant
+mode's integral normalization, and coefficient recovery for arbitrary cubic
+inputs. The constant-one sequence at infinity is proved not to lie in `l1`;
+its coefficients are nevertheless recovered, and its finite Fourier truncations
+converge distributionally. An explicit odd-frequency test distinguishes its
+period two from period one, while doubling makes it period one. Arbitrary
+Schwartz tests also check agreement with both continuous synthesis conventions.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Extend the physical Fourier and period-one identifications to the full
-   periodic distribution setting, and prove multiplication beyond the Hilbert
-   realization. The finite-`p` coefficient pair-norm comparison is complete;
+2. Prove distributional differentiation and multiplication compatibility beyond
+   the Hilbert realization, then characterize all periodic distributions with
+   the required Fourier coefficient regularity. The forward Banach coefficient
+   realization and period-one/even-support equivalence are complete.
+   The finite-`p` coefficient pair-norm comparison is complete;
    the source's infinity endpoint remains distinct.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain

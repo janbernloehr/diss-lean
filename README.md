@@ -184,7 +184,7 @@ every chain level. They are finite dimensional, stabilize, and correspond to
 the coefficient root spaces. Physical algebraic multiplicities therefore agree.
 One common physical neighborhood gives central count `2N+1`, one algebraically
 simple eigenvalue in each high disk, and no other spectrum, for both boundary
-conditions and every larger cutoff. The general Fourier/distribution realization
+conditions and every larger cutoff. Distributional operator compatibility
 and multiplication beyond the Hilbert realization remain needed for the full transfer.
 The actual rectangular resolvent integral now uses four oriented Bochner edge
 integrals. It factors through the domain, is compact, and commutes with
@@ -221,7 +221,12 @@ period-one functions have exactly the inserted period-two Fourier integrals,
 with their coefficient norm preserved. Absolutely summable data has an
 injective continuous period-one realization. The pair embedding covers exactly
 the even potentials and supplies the existing resolvent parity hypotheses;
-the distribution-level interpretation of arbitrary coefficient data remains open.
+arbitrary Banach `ℓᵖ` data now has an injective continuous linear realization
+as actual tempered distributions. Schwartz tests recover each coefficient, and
+finite Fourier sums converge distributionally even at `p=∞`. Period one is
+equivalent to even Fourier support; for `ℓ¹` input this agrees with integration
+against the continuous synthesis. Distributional operator compatibility and
+the converse characterization of periodic distributions remain open.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -396,8 +401,10 @@ installation is absent. No shell startup files are modified.
   circle projections. At `π n`, free root spaces are exactly two-dimensional
   ordinary eigenspaces; deformation from zero proves the high-frequency disk count
   and the parity of all enclosed root vectors for even-supported potentials.
-- The coefficient representation is not yet identified with periodic
-  distributions. That equivalence is a separate proof obligation.
+- Every Banach coefficient sequence now defines a genuine period-two tempered
+  distribution, with exact coefficient recovery and period-one/even-support
+  equivalence. The converse characterization of arbitrary periodic distributions
+  and distributional differentiation/multiplication compatibility remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

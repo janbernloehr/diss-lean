@@ -452,6 +452,14 @@ integrable period-one function's period-two coefficients with even insertion,
 preserving the coefficient norm. Absolutely summable sequences have an injective
 continuous period-one realization. Pair insertion covers all even potentials
 and supplies the parity hypotheses for resolvents and contours.
-Extend this physical interpretation to arbitrary periodic distributions; do not
-assume every `lp` sequence has an integrable function representative. The source's
-distinct infinity-endpoint pair norm also remains a separate proof obligation.
+Every Banach `lp` sequence now synthesizes continuously and injectively into
+mathlib's genuine tempered distributions. Signed half-integer Fourier samples
+of Schwartz tests give an absolutely convergent action, and localized smooth
+frequency tests recover every coefficient. Finite Fourier sums converge in the
+pointwise tempered-distribution topology, including at infinity. Translation
+proves period two and characterizes period one exactly by even support. At
+absolute summability the action is integration against the existing continuous
+series. Next prove compatibility with differentiation and potential multiplication,
+and the converse characterization of arbitrary periodic distributions with the
+required coefficient regularity. The source's distinct infinity-endpoint pair norm
+also remains a separate proof obligation.

@@ -111,3 +111,7 @@ import NLS.ZakharovShabat.PairNormHeight
 import NLS.SequenceSpaces.PeriodDoubling
 import NLS.Fourier.PeriodOneCoefficients
 import NLS.ZakharovShabat.PeriodOneEmbedding
+import NLS.SequenceSpaces.TestDuality
+import NLS.Fourier.SchwartzSampling
+import NLS.Fourier.DistributionSynthesis
+import NLS.Fourier.DistributionPeriodicity
