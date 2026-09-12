@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 136 modules and 1339 named public theorems. All compile on the
+The library has 139 modules and 1365 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -143,6 +143,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.PhysicalIntervalL2` | Original scalar and pair Lebesgue `L²` classes with the component-sum Hilbert norm; representative construction, a.e. equality criterion, linear operations, and exact physical energy |
 | `NLS.ZakharovShabat.PhysicalPotentialExtension` | A.e.-invariant, complex-linear Dirichlet potential extension; exact norm factor `√2/2`; bounded analytic map into the actual Dirichlet coefficient space; agreement with original Fourier integrals and injectivity |
 | `NLS.ZakharovShabat.ClassicalIntervalAnalytic` | Original physical potential parameterization of trace eigenvalues; analytic branches on one open convex neighborhood and cutoff for both boundary conditions; unique classical eigenvalue in each high disk; uniform coefficient counting data and exact free branches |
+| `NLS.ZakharovShabat.DirichletIntervalL2` | Dense weighted boundary inclusions; compatibility of physical Dirichlet extension with classical restriction; closed dense image and surjectivity; full Dirichlet `L²` continuous linear equivalence, exact norm factors, and physical inverse restriction |
+| `NLS.ZakharovShabat.IntervalComponentFlip` | Isometric component sign changes on physical classes and coefficient boundary spaces; a.e. physical realization; exact relation between Dirichlet and Neumann signed reflection |
+| `NLS.ZakharovShabat.IntervalL2Isomorphism` | Both signed base-space continuous linear equivalences; exact forward/inverse norm factors; physical reconstruction and actual Fourier integrals; inverse restriction; compatibility with classical functions, weighted restriction, and domain inclusion |
 
 ## Current mathematical milestone
 
@@ -1289,8 +1292,8 @@ the periodic coefficient spectrum of the Dirichlet-reflected potential. For the
 zero potential both original sets are exactly `πℤ`, with odd indices retained.
 
 These are eigenvalue-set identities. An independently defined original interval
-`L²` operator and its resolvent equivalence still require a physical base-space
-equivalence. Physical algebraic multiplicities remain separate from the
+`L²` operator and its resolvent correspondence remain to be constructed; the
+required physical base-space equivalences are now proved below. Physical algebraic multiplicities remain separate from the
 eigenvalue-set identification. Analytic branches and uniform coefficient counting
 data are now pulled back to the physical potential space below.
 
@@ -1324,14 +1327,44 @@ Both free branches have the exact value `π n`.
 This proves physical analyticity and uniqueness of the high-index classical
 branches. Simplicity and central multiplicity counts are still expressed by the
 coefficient operator. Identifying them with independently defined physical
-operator multiplicities requires signed base-space equivalences and the physical
-operator/resolvent correspondence. The general-`p` physical parameter transfer
+operator multiplicities requires the physical operator/resolvent correspondence.
+The signed base-space equivalences are now established below. The general-`p` physical parameter transfer
 and the exact central-height convention also remain open.
+
+## Signed physical base-space isomorphisms
+
+The weighted domain inclusion has dense range in either coefficient boundary
+space. Physical Dirichlet extension of a restricted classical domain vector
+recovers precisely its unweighted coefficients, so the image of the physical
+potential map contains this dense range. Its lower norm bound makes its image
+closed, proving surjectivity onto the full Dirichlet coefficient subspace.
+
+`dirichletIntervalL2Equiv` bundles this map as a continuous linear equivalence.
+Negating the second physical component and then the second coefficient component
+turns Dirichlet reflection into Neumann reflection; both sign changes are
+complex-linear isometric involutions. This gives `neumannIntervalL2Equiv`.
+`BoundaryCondition.intervalL2Equiv b` selects the corresponding isomorphism from
+the complete original physical `L²` space to `b.space`.
+
+For either choice, the forward norm factor is exactly `√2/2` and the inverse
+norm factor is exactly `√2`. Synthesis of the forward output agrees almost
+everywhere with the actual signed extension of the original function, and each
+output coefficient equals its normalized physical Fourier integral. The inverse
+is actual restriction to `[0,1]` almost everywhere, for every boundary base
+vector, without weighted regularity or endpoint hypotheses.
+
+These maps commute with the domain/base inclusions. For an original classical
+function, its base-space image equals the raw coefficients of its weighted
+classical extension. Conversely, inverse base restriction of an included
+weighted boundary vector is the physical `L²` class of its classical restriction.
+This supplies the base-space part of the original operator correspondence;
+construction of the original operator and identification of its resolvent and
+generalized eigenspaces remain next.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2826 declarations under `NLS`, including generated
+axioms. The current audit covers 2892 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1636,17 +1669,24 @@ and zero coefficient `(3+4i)/2`. Further checks cover a.e. equality of the class
 complex linearity, injectivity, negative odd free branches, and original nonzero
 `H¹` eigenfunctions and analytic branches on a common physical neighborhood.
 
+Base-space isomorphism checks cover full surjectivity and both-sided inversion,
+Neumann zero-mode differences, and the negative swap on the reflected half.
+Negative odd modes survive base/domain transport and have physical norm `√2`
+without the frequency weight. A discontinuous original step function also
+round-trips through Neumann extension, and arbitrary Neumann inverse classes
+agree with actual physical restriction almost everywhere.
+
 ## Next milestones
 
-1. Prove signed physical `L²` base-space equivalences and the original interval
-   operator/resolvent correspondence. Identify physical generalized eigenspaces
-   and algebraic multiplicities to complete the original counting and simplicity
+1. Construct the original interval operator/resolvent correspondence using the
+   now-proved signed base-space and classical domain equivalences. Identify
+   physical generalized eigenspaces and algebraic multiplicities to complete the original counting and simplicity
    transfer in Theorem 1.4 and Lemma 4.5.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one
-   embedding, general-`p` potential pair-norm comparison, and multiplication beyond the
-   Hilbert realization.
+   embedding, general-`p` potential pair-norm comparison, and multiplication
+   beyond the Hilbert realization.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes

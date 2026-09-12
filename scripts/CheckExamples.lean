@@ -3873,3 +3873,71 @@ example (u : IntervalPairL2) : ∃ N : ℕ, ∃ U : Set IntervalPairL2, u ∈ U 
 
 end
 end PhysicalPotentialChecks
+
+
+namespace IntervalL2IsoChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+noncomputable section
+
+-- Every base boundary vector has a physical preimage, including vectors outside the weighted domain.
+example (b : BoundaryCondition) (a : space (p := 2) b) :
+    ∃ u : IntervalPairL2, intervalL2Equiv b u = a := (intervalL2Equiv b).surjective a
+
+-- The two directions really are inverses on all physical L2 classes.
+example (b : BoundaryCondition) (u : IntervalPairL2) :
+    (intervalL2Equiv b).symm (intervalL2Equiv b u) = u := (intervalL2Equiv b).symm_apply_apply u
+
+private def φ : ℝ → ℂ × ℂ := fun _ => (3, 4 * Complex.I)
+private theorem hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)) := memLp_const _
+
+-- Neumann extension changes the average to a difference, preserving the normalized factor 1/2.
+example : (intervalL2Equiv .neumann (intervalL2OfFunction φ hφ)).val.1 0 =
+    (3 - 4 * Complex.I) / 2 := by
+  rw [intervalL2Equiv_ofFunction_fst]
+  change periodTwoCoefficient (folded (-1) (fun _ => (3 : ℂ)) (fun _ => 4 * Complex.I)) 0 = _
+  rw [periodTwoCoefficient_folded_of_intervalIntegrable (-1) intervalIntegrable_const intervalIntegrable_const]
+  norm_num [halfCoefficient]
+  ring
+
+-- The reflected half has the negative swap of the original pair for Neumann data.
+example : physicalBase (intervalL2Equiv .neumann (intervalL2OfFunction φ hφ)).val
+    =ᵐ[volume.restrict (Ioc 1 2)] (fun _ => (-4 * Complex.I, (-3 : ℂ))) := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_left (show (0 : ℝ) ≤ 1 by norm_num))
+    (physicalBase_intervalL2Equiv_ofFunction .neumann φ hφ)
+  filter_upwards [h, ae_restrict_mem measurableSet_Ioc] with x hx hmem
+  rw [hx, intervalExtension_right .neumann φ x hmem.1]
+  simp [φ, extensionSign]
+
+-- Negative odd modes survive passing through the physical base space.
+example (b : BoundaryCondition) :
+    (intervalL2Equiv b (intervalL2OfFunction (classicalIntervalRestriction (mode (p := 2) b (-3)))
+      (memLp_classicalIntervalRestriction b _ (mode_mem b (-3))))).val.2 (-3) = 1 := by
+  rw [intervalL2Equiv_classicalRestriction b _ (mode_mem b (-3))]
+  cases b <;> simp [mode, dirichletMode, neumannMode, positiveMode, negativeMode]
+
+-- Restricting a unit odd mode has norm sqrt(2), without the H1 frequency weight.
+example (b : BoundaryCondition) :
+    ‖(intervalL2Equiv b).symm (inclusion b ⟨mode (p := 2) b (-3), mode_mem b (-3)⟩)‖ = Real.sqrt 2 := by
+  rw [norm_intervalL2Equiv_symm]
+  have hn : ‖inclusion b ⟨mode (p := 2) b (-3), mode_mem b (-3)⟩‖ = 1 := by
+    change ‖domainInclusion (mode (p := 2) b (-3))‖ = 1
+    cases b <;> simp [mode, dirichletMode, neumannMode, positiveMode, negativeMode, domainInclusion_apply,
+      scalarInclusion_scalarMode, Prod.norm_def, lp.norm_single]
+  rw [hn, mul_one]
+
+private def step : ℝ → ℂ × ℂ := fun x => if x ≤ 1 / 2 then ((1 : ℂ), 0) else (0, Complex.I)
+private theorem step_memLp : MemLp step 2 (volume.restrict (Ioc 0 1)) := by
+  apply MemLp.piecewise measurableSet_Iic <;> exact memLp_const _
+
+-- No continuity or endpoint condition is imposed on the physical base space.
+example : (intervalL2Equiv .neumann).symm (intervalL2Equiv .neumann (intervalL2OfFunction step step_memLp)) =
+    intervalL2OfFunction step step_memLp := (intervalL2Equiv .neumann).symm_apply_apply _
+
+-- Inverse representatives are actual restrictions, even when only an L2 class is given.
+example (a : space (p := 2) .neumann) :
+    intervalL2Representative ((intervalL2Equiv .neumann).symm a) =ᵐ[volume.restrict (Ioc 0 1)] physicalBase a.val :=
+  intervalL2Equiv_symm_restrict .neumann a
+
+end
+end IntervalL2IsoChecks

@@ -169,7 +169,11 @@ with exact norm factor `√2/2` into the maximum coefficient-pair norm. The
 high-index eigenvalue branches are analytic on one open convex physical
 neighborhood with one cutoff for both boundary conditions. Each high disk
 contains exactly that original classical eigenvalue.
-An independent physical `L²` operator/resolvent equivalence, physical algebraic
+Both signed extensions are now continuous linear isomorphisms from the full
+physical `L²` space onto their coefficient boundary spaces, with exact inverse
+norm factor `√2`. Their inverses are actual interval restrictions, and their
+base coefficients agree with classical `H¹` extension followed by inclusion.
+An independent physical operator/resolvent correspondence, physical algebraic
 multiplicity identification, the general
 Fourier/distribution realization, and multiplication beyond the Hilbert
 realization remain needed for the full transfer.

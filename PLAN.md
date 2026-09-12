@@ -384,10 +384,16 @@ and analytic. Pullback gives one open convex physical neighborhood and cutoff
 for both high-index branches, unique original eigenvalues in the high disks,
 and uniform coefficient counting data.
 
-Next prove the signed physical `L²` base-space equivalences and construct the
-original interval operator/resolvent correspondence. Then identify original
-root spaces and algebraic multiplicities to complete physical simplicity and
-central counting. These do not follow from eigenvalue-set equality alone.
+Both signed physical `L²` base-space equivalences are now proved. The Dirichlet
+map has closed, dense range and hence is onto; isometric component sign changes
+give the Neumann map. Forward synthesis is actual signed reflection, and the
+inverse is actual restriction almost everywhere. Both exact norm factors are
+proved. The maps commute with classical domain extension and base inclusion.
+
+Next construct the original interval operator/resolvent correspondence using
+these base and domain equivalences. Then identify original root spaces and
+algebraic multiplicities to complete physical simplicity and central counting.
+These do not follow from eigenvalue-set equality alone.
 Both boundary spectral problems use the Dirichlet extension of the potential;
 the boundary sign selects the eigenfunction extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.
