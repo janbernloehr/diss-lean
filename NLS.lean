@@ -102,3 +102,5 @@ import NLS.ZakharovShabat.CentralRectangleSelection
 import NLS.FunctionalAnalysis.RectangleCircleIntegral
 import NLS.ZakharovShabat.RectangleCircleComparison
 import NLS.ZakharovShabat.CentralRectangleProjection
+import NLS.ZakharovShabat.ExplicitHeight
+import NLS.ZakharovShabat.HeightSpectralBox

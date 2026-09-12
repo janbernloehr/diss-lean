@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 154 modules and 1487 named public theorems. All compile on the
+The library has 156 modules and 1501 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -62,6 +62,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.RealType` | Fourier-coordinate real type; conjugate single-mode potentials; domain duality, Hermitian inclusion and operator symmetry; positive energy; real periodic spectrum and resolvent inclusion for every nonreal parameter |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
+| `NLS.ZakharovShabat.ExplicitHeight` | Explicit norm-ball height `(1+8pM)^p` for every finite exponent; printed Hilbert height `(1+8M)^2`; boundary resolvent inclusion and strict spectral strip bounds |
+| `NLS.ZakharovShabat.HeightSpectralBox` | Independent-height central boxes and finite spectra; height transfer; uniform Hilbert count `4N+2` and agreement with the existing rectangular projection |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
 | `NLS.ZakharovShabat.DoubleResolvent` | `FL^1 → FL^p` potential convolution; double free resolvent and both coefficient formulas; global norm bound; square factorization and sandwich criterion; domain inverse identities; agreement with the full resolvent and quantitative bounds; nilpotence and exact two-term resolvents for one-sided potentials |
 | `NLS.SequenceSpaces.FourierTail` | Strict low-frequency cutoffs and closed centered windows; separation of opposite near windows; symmetric tails retaining the boundary; single-mode behavior; contraction, composition, monotonicity, and convergence |
@@ -1519,10 +1521,38 @@ with rank `4N+2`. This closes the rectangular contour identification for the
 existing height-`N` box. The overview's exact norm-dependent height and the
 remaining physical Fourier/distribution interpretation are still open.
 
+## Explicit heights and the Hilbert central box
+
+`ExplicitHeight` proves the concrete norm-ball resolvent bound
+`|Im z| ≥ (1 + 8 p M)^p` for `‖φ‖ ≤ M`, at every finite Banach exponent.
+At `p=2`, the sharper printed height `(1 + 8 M)^2` suffices, including both
+horizontal edges. Consequently every spectral value lies strictly inside the
+corresponding horizontal strip. The estimates include zero potentials.
+
+`HeightSpectralBox` defines bounded central boxes with independent heights and
+their finite spectral sets. A global strip bound identifies their spectral
+sets with the height-`N` central spectrum for sufficiently large `N`.
+For `p=2`, one open convex neighborhood containing the potential and zero now
+has count `4N+2` in each potential's box of height `(1 + 8 ‖ψ‖)^2`, for every
+larger cutoff. Its full cluster projection equals the existing height-`N`
+rectangular integral. This does not yet construct the integral around the
+moving norm-height boundary itself.
+
+Source fidelity: the printed Proposition 3.1 (p. 23) uses `(1 + 8 ‖φ‖ₚ)^p`,
+while Lemma 3.2(ii) and Corollary 3.3 (p. 24) retain `4p` in the numerical
+estimate. At `p=3`, norm bound one and printed height `729`, that numerical
+expression is `12/9 + 1/729 > 1`. This only shows that direct substitution
+cannot justify the height from this estimate; it does not refute the spectral
+claim. A checked example also puts that parameter in the actual resolvent of
+a nonzero real-type potential. The all-exponent result above deliberately
+retains the factor `p`. The printed height for arbitrary finite `p` remains
+open. All present norms are coefficient maximum pair norms; the dissertation's
+general pair-norm comparison remains a separate obligation.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3140 declarations under `NLS`, including generated
+axioms. The current audit covers 3160 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1871,9 +1901,17 @@ component `x-Px` is annihilated. Further checks instantiate one neighborhood
 with operator-norm analytic actual rectangular projections and exact rank
 `4N+2` for every larger cutoff.
 
+Explicit-height checks exercise both printed Hilbert boundary signs at norm
+one, the whole `p=3` unit norm ball at height `15625`, and signed free spectral
+endpoints in the height-one box. A numerical-criterion failure is paired with
+a proof of actual resolvent membership, keeping those concepts distinct.
+Further checks instantiate uniform full algebraic counting in each potential's
+own Hilbert height box.
+
 ## Next milestones
 
-1. Transfer the overview theorem's exact norm-dependent central-height convention.
+1. Resolve the printed general-`p` central height beyond the proved Hilbert case;
+   transfer the actual contour to the moving norm-height boundary.
 2. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, general-`p` potential pair-norm comparison, and multiplication
    beyond the Hilbert realization.

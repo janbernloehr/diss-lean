@@ -4312,3 +4312,61 @@ example (φ : PairSpace 3) :
 
 end
 end RectangleProjectionChecks
+
+namespace ExplicitHeightChecks
+open NLS.ZakharovShabat
+
+-- The printed Hilbert height works exactly on both horizontal edges for nonzero coupling.
+private def coupled : PairSpace 2 := (lp.single 2 0 (1 : ℂ), lp.single 2 0 (1 : ℂ))
+
+example : (81 * Complex.I : ℂ) ∈ resolventSet (by norm_num) coupled := by
+  apply mem_resolventSet_of_hilbert_height coupled (M := 1)
+  · norm_num [coupled, Prod.norm_def, lp.norm_single]
+  · norm_num
+
+example : (-81 * Complex.I : ℂ) ∈ resolventSet (by norm_num) coupled := by
+  apply mem_resolventSet_of_hilbert_height coupled (M := 1)
+  · norm_num [coupled, Prod.norm_def, lp.norm_single]
+  · norm_num
+
+-- A common explicit height works for the whole non-Hilbert unit norm ball.
+example (φ : PairSpace 3) (hφ : ‖φ‖ ≤ 1) (z : ℂ) (hz : 15625 ≤ |z.im|) :
+    z ∈ resolventSet (by norm_num) φ := by
+  apply mem_resolventSet_of_explicit_height (by norm_num) φ hφ
+  norm_num [Real.rpow_natCast] at ⊢
+  exact hz
+
+-- Substitution of the printed general-p height does not satisfy the existing
+-- numerical criterion. This is not a spectral counterexample: the same point
+-- is in the resolvent of this real-type potential.
+private def coupledThree : PairSpace 3 := (lp.single 3 0 (1 : ℂ), lp.single 3 0 (1 : ℂ))
+
+example : (729 * Complex.I : ℂ) ∉ heightNeumannRegion coupledThree ∧
+    (729 * Complex.I : ℂ) ∈ resolventSet (by norm_num) coupledThree := by
+  have hroot : (729 : ℝ) ^ (1 / (3 : ℝ)) = 9 := by
+    calc
+      (729 : ℝ) ^ (1 / (3 : ℝ)) = ((9 : ℝ) ^ (3 : ℝ)) ^ (1 / (3 : ℝ)) := by norm_num
+      _ = 9 := by rw [← Real.rpow_mul (by norm_num)]; norm_num
+  constructor
+  · norm_num [heightNeumannRegion, coupledThree, Prod.norm_def, lp.norm_single, hroot]
+  · apply mem_resolventSet_of_realType_of_im_ne_zero (by norm_num) coupledThree
+    · simpa [coupledThree] using (isRealType_single (p := 3) 0 (1 : ℂ))
+    · norm_num
+
+-- The zero-potential height is one; both signed endpoints and the zero mode survive.
+example : heightPeriodicSpectrum (p := 2) (by norm_num) 0 1 1 =
+    (Finset.Icc (-1 : ℤ) 1).image (fun n : ℤ => (Real.pi : ℂ) * n) := by
+  rw [heightPeriodicSpectrum_eq_central (by norm_num) 0 1 (H := 1) (by norm_num)
+    (fun z hz => by simpa using (abs_im_lt_hilbert_height 0 (M := 0) (by simp) hz).le)]
+  exact centralPeriodicSpectrum_zero (by norm_num) 1
+
+-- Uniform counting uses full algebraic multiplicities in each potential's own height box.
+example (φ : PairSpace 2) :
+    ∃ N₀ : ℕ, ∃ U : Set (PairSpace 2), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        (∑ a ∈ heightPeriodicSpectrum (by norm_num) ψ N ((1 + 8 * ‖ψ‖) ^ 2),
+          periodicAlgebraicMultiplicity (by norm_num) ψ a) = 4 * N + 2 := by
+  obtain ⟨N₀, U, _, ho, hc, hφ, h0, h⟩ := exists_uniform_hilbert_height_count φ
+  exact ⟨N₀, U, ho, hc, hφ, h0, fun ψ hψ N hN => (h ψ hψ N hN).2.2⟩
+
+end ExplicitHeightChecks

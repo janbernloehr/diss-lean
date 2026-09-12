@@ -429,8 +429,13 @@ Finite-cluster filtering then identifies the whole rectangular operator with the
 central algebraic projection. The actual rectangle is idempotent, has exactly
 the central full-root-space range, and varies analytically with rank `4N+2` on
 one common neighborhood for all larger cutoffs. The unified statement uses Corollary 3.5's height-`N` box;
-the overview theorem's exact norm-dependent height
-still requires a separate transfer.
+the printed norm-dependent height is now proved at `p=2`, with uniform
+central count `4N+2` and equality of spectral clusters. The explicit sufficient
+height `(1+8pM)^p` holds for every finite exponent. Direct substitution of the
+printed `(1+8M)^p` into the existing `4p` estimate fails already at `p=3`,
+`M=1`; this is a limitation of that argument, not a spectral counterexample.
+Resolve the general printed bound separately, retaining the distinction from
+the proved bound, and transfer the actual contour to the moving-height edges.
 The general Fourier/distribution interpretation, physical period-one embedding,
 and general-`p` comparison with the dissertation's potential pair norm remain separate
 proof obligations.

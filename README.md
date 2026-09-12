@@ -197,8 +197,15 @@ projection. Mixed rectangular/circular integration now controls the whole
 space and proves equality with the central spectral projection. The actual
 rectangular integral is idempotent, has exactly the central generalized-eigenspace
 range, and is analytic with rank `4N+2` on one common counting neighborhood.
-The overview theorem's exact norm-dependent height and the main dissertation
-theorems remain future work.
+Explicit bounds now place the resolvent on and above height `(1+8pM)^p`
+for every finite exponent and every potential of norm at most `M`. At `p=2`,
+the smaller printed height `(1+8M)^2` also works. One common neighborhood gives
+central algebraic count `4N+2` in each potential's Hilbert norm-height box,
+with its cluster projection equal to the existing rectangular integral.
+These use coefficient maximum pair norms. The printed general-`p` height
+`(1+8‖φ‖ₚ)^p` still needs an additional argument: direct substitution into the
+proved `4p` Neumann estimate is insufficient. The moving-height contour,
+general pair-norm transfer, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
