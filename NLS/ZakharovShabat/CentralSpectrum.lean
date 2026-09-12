@@ -100,7 +100,7 @@ theorem sum_central_multiplicity_zero (hp : p ≠ ⊤) (N : ℕ) :
     exact_mod_cast mul_left_cancel₀ hπ h
 
 /-- The algebraic projection onto all central full root spaces. Analytic dependence
-and identification with the rectangular contour integral are separate results. -/
+is proved in `CentralDeformation`; rectangular contour identification remains separate. -/
 def centralSpectralProjection (hp : p ≠ ⊤) (φ : PairSpace p) (N : ℕ) :
     PairSpace p →L[ℂ] PairSpace p :=
   periodicClusterProjection hp φ (centralPeriodicSpectrum hp φ N)

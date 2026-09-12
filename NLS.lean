@@ -53,3 +53,4 @@ import NLS.ZakharovShabat.DiskMultiplicity
 import NLS.ZakharovShabat.DiskParity
 import NLS.ZakharovShabat.CentralRectangle
 import NLS.ZakharovShabat.CentralSpectrum
+import NLS.ZakharovShabat.CentralDeformation

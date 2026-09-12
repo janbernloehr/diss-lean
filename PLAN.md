@@ -195,8 +195,15 @@ boundary conventions then give identical central spectra. The finite central
 algebraic spectral projection is constructed, and its free rank is `4N+2`,
 by counting the signed indices `-N,…,N` with multiplicity two.
 
-Next establish the central projection’s analytic deformation and transfer its
-free count to general potentials, including the even/odd split in Proposition
-1.1(ii). Identification with the rectangular contour integral remains open.
+The central projection’s analytic deformation and total count in Proposition
+1.1(ii) are now proved. At a sufficiently larger cutoff, a circle of radius
+`πK+π/2` avoids the entire localized spectrum and selects exactly the central
+box’s spectral values. The full projections are equal, so circle analyticity
+and rank stability give central rank and total multiplicity `4K+2`. One open
+convex neighborhood works for every larger cutoff. The proof does not require
+that the circle contain the corners of the box with the same cutoff.
+
+Next prove the even/odd split of the central count in Proposition 1.1(ii).
+Identification with the rectangular contour integral remains open.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has fifty-five modules and 551 named public theorems. All compile on the
+The library has fifty-six modules and 558 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -50,6 +50,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.DiskParity` | Free contour range in index parity; parity preservation under preconnected deformations; generalized root-space and domain eigenfunction parity; opposite-parity contour annihilation; uniform multiplicity and parity package for Proposition 1.1(i) |
 | `NLS.ZakharovShabat.CentralRectangle` | Compact closed rectangle and boundary; vertical edge strip coverage; uniform resolvent inclusion on every larger boundary and exterior; equality of open, closed, and mixed central spectra |
 | `NLS.ZakharovShabat.CentralSpectrum` | Finite central spectrum and boundary-convention independence; exact free lattice interval; free multiplicity `4N+2`; compact idempotent central algebraic projection, rank formula, and free rank |
+| `NLS.ZakharovShabat.CentralDeformation` | Half-integer-radius lattice gap; enlarged-circle geometry; exact spectral selection and whole central/circle projection equality; analytic central projection and total count `4K+2`, uniform in the potential and every larger cutoff |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
@@ -291,9 +292,8 @@ Both signed free modes have the parity of their spectral index, since `n`
 and `-n` have the same residue modulo two.
 
 The physical Fourier realization and canonical period-one embedding remain
-open. The central projection’s analytic deformation, identification with a
-rectangular contour integral, and its perturbed multiplicity count remain to
-be proved.
+open. Identification with a rectangular contour integral and the central
+even/odd multiplicity split remain to be proved.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
 Every free root vector at `π n` has first component supported at `-n` and second
@@ -344,8 +344,24 @@ well-defined without boundary ambiguity. For the free potential it is exactly
 the image of the integer interval `[-N,N]` under `n ↦ π n`, and the sum of
 algebraic multiplicities is `4N+2`. The central algebraic spectral projection is
 constructed as the finite cluster projection: it is compact and idempotent,
-its rank is the central multiplicity sum, and its free rank is `4N+2`. Analytic
-deformation to general potentials and the even/odd central count are next.
+its rank is the central multiplicity sum, and its free rank is `4N+2`.
+
+**The total central count in Proposition 1.1(ii) and its analytic deformation
+are now proved for general potentials.** Starting from localization with
+cutoff `N`, choose any `K ≥ 2N+1`. The circle of radius `πK+π/2` stays at least
+`π/2` from every free lattice point and lies outside the original central box.
+It is therefore uniformly in the resolvent set. On the localized spectrum,
+this circle and the box `B_K` select exactly the same parameters: the original
+central part lies inside both, and the other disks are selected precisely when
+`|n| ≤ K`. This argument does not assume geometric containment of all corners
+of `B_K` by its associated circle.
+
+Equality of the finite selected spectra proves equality of the entire central
+and circle projection operators. Their local equality on an open neighborhood
+gives analytic dependence of the central projection. Circle rank stability
+along the convex neighborhood containing zero then gives rank `4K+2`, hence
+the same total central algebraic multiplicity. One neighborhood works for every
+cutoff above the threshold. The central even/odd split remains to be proved.
 
 The actual unbounded realization is now defined as
 
@@ -548,8 +564,9 @@ used with Section 3, equation (1.4). The spectral circles are now uniformly
 admissible at all sufficiently large frequencies on a common neighborhood
 of any potential, by the uniform strip result above. The high-frequency
 free-to-perturbed rank counts are proved. The central boundary is admissible
-as described above; its contour-integral identification and perturbed rank
-count remain separate steps.
+as described above. The central projection equals a large-circle integral,
+and its perturbed rank count is now proved. Identification with the integral
+over the rectangular boundary remains separate.
 Agreement of multiplicities with characteristic-function zero orders remains open.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
@@ -558,7 +575,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1133 declarations under `NLS`, including generated
+axioms. The current audit covers 1149 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -655,19 +672,23 @@ every larger cutoff, inclusion of a negative free endpoint, exclusion of the
 next index, the singleton free spectrum at cutoff zero, and free multiplicity
 ten at `N=2` and projection rank fourteen at `N=3`. Horizontal boundary
 parameters are excluded from the finite spectrum under the admissibility
-hypothesis.
+hypothesis. Central-deformation checks include a corner lying in the closed
+rectangle but outside its associated circle, full negative endpoint disks
+selected by both regions, and the next negative disk excluded from both.
+The total central count is instantiated at `p=1`, and one cutoff is checked
+along every `tφ`, `0 ≤ t ≤ 1`, at `p=3`, together with analyticity at the
+chosen potential for every larger cutoff.
 
 ## Next milestones
 
-1. Prove analytic deformation of the central projection and transfer its free
-   rank to general potentials, including the even/odd split in Proposition 1.1(ii).
-   Identify the algebraic projection with the rectangular contour integral.
+1. Prove the even/odd split of the central multiplicity count in Proposition 1.1(ii).
+   Identify the central projection with the rectangular contour integral.
 2. Prove the real-type spectral assertion and analytic symmetric eigenvalue
    combinations in Lemma 3.7.
 3. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, pair-norm comparison, and compatibility with physical multiplication.
 
-The central-region multiplicity counts, classical Birkhoff prerequisites, and the main
+The central parity counts, classical Birkhoff prerequisites, and the main
 dissertation theorems remain unimplemented. Further sequence-space work includes
 embeddings between regularities and the full range of Young inequalities beyond
 the `l1`-factor case.

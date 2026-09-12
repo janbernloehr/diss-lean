@@ -1339,3 +1339,62 @@ example (φ : PairSpace 3) (N : ℕ) (hc : centralRectangleBoundary N ⊆ resolv
   exact (lt_irrefl _ hi)
 
 end CentralRectangleChecks
+
+section CentralDeformationChecks
+open Complex
+set_option autoImplicit false
+
+-- The larger-circle argument uses spectral localization: the circle with the
+-- same cutoff does not geometrically contain all corners of its rectangle.
+private def centralTestCorner : ℂ := (centralCircleRadius 1 : ℂ) + I
+example : centralTestCorner ∈ closedCentralRectangle 1 ∧
+    centralTestCorner ∉ Metric.ball 0 (centralCircleRadius 1) := by
+  have hR := centralCircleRadius_pos 1
+  constructor
+  · constructor
+    · have he : centralTestCorner.re = centralCircleRadius 1 := by simp [centralTestCorner]
+      rw [he, abs_of_pos hR]
+      exact le_rfl
+    · simp [centralTestCorner]
+  · intro h
+    have hn : ‖centralTestCorner‖ < centralCircleRadius 1 := by simpa using h
+    have hs : ‖centralTestCorner‖ ^ 2 = centralCircleRadius 1 ^ 2 + 1 := by
+      rw [← Complex.normSq_eq_norm_sq]
+      simp [centralTestCorner, Complex.normSq_apply, sq]
+    nlinarith [norm_nonneg centralTestCorner]
+
+-- All points in the negative endpoint disk are selected, while the next
+-- negative disk is excluded by both the circle and the central box.
+example (z : ℂ) (hz : z ∈ Metric.ball ((Real.pi : ℂ) * (-3 : ℤ)) (Real.pi / 4)) :
+    z ∈ Metric.ball 0 (centralCircleRadius 3) ∧ z ∈ centralSpectralBox 3 := by
+  have h := smallDisk_central_selection 3 (-3) le_rfl (by linarith [Real.pi_le_four]) hz
+  exact ⟨h.1.mpr (by norm_num), h.2.mpr (by norm_num)⟩
+
+example (z : ℂ) (hz : z ∈ Metric.ball ((Real.pi : ℂ) * (-4 : ℤ)) (Real.pi / 4)) :
+    z ∉ Metric.ball 0 (centralCircleRadius 3) ∧ z ∉ centralSpectralBox 3 := by
+  have h := smallDisk_central_selection 3 (-4) le_rfl (by linarith [Real.pi_le_four]) hz
+  constructor
+  · intro hz'; have hbad := h.1.mp hz'; norm_num at hbad
+  · intro hz'; have hbad := h.2.mp hz'; norm_num at hbad
+
+-- The endpoint p=1 has the full central multiplicity count for every larger box.
+example (φ : PairSpace 1) : ∃ N : ℕ, ∀ K : ℕ, N ≤ K →
+    (∑ z ∈ centralPeriodicSpectrum (by simp) φ K,
+      periodicAlgebraicMultiplicity (by simp) φ z) = 4 * K + 2 := by
+  obtain ⟨N, U, _, _, _, hφ, _, _, h⟩ := exists_uniform_central_multiplicity (by simp) φ
+  exact ⟨N, fun K hK => (h φ hφ K hK).2.2⟩
+
+-- One cutoff works along the whole real deformation of a non-Hilbert potential.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∀ K : ℕ, N ≤ K → ∀ t : ℝ, t ∈ Set.Icc 0 1 →
+    Module.finrank ℂ (centralSpectralProjection (by simp) (t • φ) K).range = 4 * K + 2 := by
+  obtain ⟨N, U, _, _, hconv, hφ, h0, _, h⟩ := exists_uniform_central_multiplicity (by simp) φ
+  refine ⟨N, ?_⟩
+  intro K hK t ht
+  exact (h (t • φ) (hconv.smul_mem_of_zero_mem h0 hφ ht) K hK).2.1
+
+example (φ : PairSpace 3) : ∃ N : ℕ, ∀ K : ℕ, N ≤ K →
+    AnalyticAt ℂ (fun ψ => centralSpectralProjection (by simp) ψ K) φ := by
+  obtain ⟨N, U, _, _, _, hφ, _, han, _⟩ := exists_uniform_central_multiplicity (by simp) φ
+  exact ⟨N, fun K hK => han K hK φ hφ⟩
+
+end CentralDeformationChecks

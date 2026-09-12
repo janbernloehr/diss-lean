@@ -53,9 +53,10 @@ For even-supported potentials, each such disk’s entire generalized eigenspace
 has the parity of its index, and its contour projection annihilates the opposite
 parity. All four edges of every sufficiently large central rectangle are now
 uniformly in the resolvent set. The finite central spectral projection is
-constructed algebraically, and its free rank is `4N+2`. Transferring this central
-count to general potentials, its parity split, and the main dissertation theorems
-remain future work.
+constructed algebraically. It equals a large-circle projection and depends
+analytically on the potential; its rank and central algebraic multiplicity are
+`4N+2`, uniformly for every sufficiently large cutoff. The central parity split,
+rectangular contour identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -124,7 +125,9 @@ include negative frequencies, nonconstant even potentials, resolvent and contour
 preservation, and a counterexample when the even-support hypothesis is omitted.
 Central-region checks cover horizontal edges, a negative corner, the degenerate
 zero-height boundary, every larger cutoff, signed free endpoints, and free
-central ranks at both even and odd cutoffs.
+central ranks at both even and odd cutoffs. Deformation checks distinguish
+spectral selection from geometric containment, exercise negative endpoint and
+excluded disks, and verify the central count along the entire segment `[0,φ]`.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
