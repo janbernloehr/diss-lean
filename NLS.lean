@@ -104,3 +104,5 @@ import NLS.ZakharovShabat.RectangleCircleComparison
 import NLS.ZakharovShabat.CentralRectangleProjection
 import NLS.ZakharovShabat.ExplicitHeight
 import NLS.ZakharovShabat.HeightSpectralBox
+import NLS.ZakharovShabat.RectangleSpectrum
+import NLS.ZakharovShabat.HeightRectangleContour

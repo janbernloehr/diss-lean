@@ -434,8 +434,13 @@ central count `4N+2` and equality of spectral clusters. The explicit sufficient
 height `(1+8pM)^p` holds for every finite exponent. Direct substitution of the
 printed `(1+8M)^p` into the existing `4p` estimate fails already at `p=3`,
 `M=1`; this is a limitation of that argument, not a spectral counterexample.
+The actual contour now equals the full enclosed cluster projection for every
+ordered admissible rectangle. At the printed Hilbert height and the proved
+all-exponent height, its boundary is admissible and the moving integral is
+analytic with rank `4N+2`, uniformly on one counting neighborhood; no regularity
+of the height function is needed beyond a uniform sufficient bound.
 Resolve the general printed bound separately, retaining the distinction from
-the proved bound, and transfer the actual contour to the moving-height edges.
+the proved bound.
 The general Fourier/distribution interpretation, physical period-one embedding,
 and general-`p` comparison with the dissertation's potential pair norm remain separate
 proof obligations.

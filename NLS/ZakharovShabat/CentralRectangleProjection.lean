@@ -1,5 +1,5 @@
 import NLS.ZakharovShabat.CentralRectangleSelection
-import NLS.ZakharovShabat.RectangleCircleComparison
+import NLS.ZakharovShabat.RectangleSpectrum
 
 /-!
 # Identification of the actual central rectangular spectral projection
@@ -20,37 +20,15 @@ variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 theorem centralRectangleIntegral_eq_centralSpectralProjection (hp : p ≠ ⊤) (φ : PairSpace p) (N : ℕ)
     (hc : centralRectangleBoundary N ⊆ resolventSet hp φ) :
     centralRectangleIntegral hp φ N = centralSpectralProjection hp φ N := by
-  obtain ⟨K₀, U, _, _, _, hφ, _, h⟩ := exists_uniform_centralCircle hp φ
-  let K := max K₀ (2 * N + 1)
-  have hK : K₀ ≤ K := le_max_left _ _
-  have hKN : 2 * N + 1 ≤ K := le_max_right _ _
-  have hC := (h φ hφ K hK).2.1
-  have hb : uIcc (centralLowerCorner N).re (centralUpperCorner N).re ×ℂ
-      uIcc (centralLowerCorner N).im (centralUpperCorner N).im ⊆ ball 0 (centralCircleRadius K) := by
-    rw [centralCorner_rectangle]
-    exact closedCentralRectangle_subset_centralCircleBall N K hKN
-  have hrect : RectangleIntegral.boundary (centralLowerCorner N) (centralUpperCorner N) ⊆ resolventSet hp φ := by
-    rwa [centralCorner_boundary]
-  have hfilter : (enclosedPeriodicSpectrum hp φ 0 (centralCircleRadius K)).filter
-      (fun a => a ∈ Ioo (centralLowerCorner N).re (centralUpperCorner N).re ×ℂ
-        Ioo (centralLowerCorner N).im (centralUpperCorner N).im) = centralPeriodicSpectrum hp φ N := by
+  have hs : rectanglePeriodicSpectrum hp φ (centralLowerCorner N) (centralUpperCorner N) =
+      centralPeriodicSpectrum hp φ N := by
     ext a
-    rw [Finset.mem_filter, mem_enclosedPeriodicSpectrum, centralCorner_openRectangle,
-      mem_centralPeriodicSpectrum_iff_open hp φ N hc a]
-    constructor
-    · rintro ⟨⟨ha, _⟩, ho⟩
-      exact ⟨ha, ho⟩
-    · rintro ⟨ha, ho⟩
-      refine ⟨⟨ha, hb ?_⟩, ho⟩
-      rw [centralCorner_rectangle]
-      exact ⟨ho.1.le, ho.2.le⟩
+    rw [mem_rectanglePeriodicSpectrum, centralCorner_openRectangle,
+      mem_centralPeriodicSpectrum_iff_open hp φ N hc]
   change resolventRectangleIntegral hp φ (centralLowerCorner N) (centralUpperCorner N) = _
-  rw [← resolventRectangleIntegral_mul_enclosing_circle hp φ _ _ 0 _
-    (centralCircleRadius_pos K).le hrect hC hb,
-    resolventCircleIntegral_eq_clusterProjection hp φ 0 _ (centralCircleRadius_pos K).le hC,
-    resolventRectangleIntegral_mul_cluster hp φ _ _
-      (neg_le_self (centralCircleRadius_pos N).le) (neg_le_self (Nat.cast_nonneg N)) hrect,
-    hfilter]
+  rw [resolventRectangleIntegral_eq_clusterProjection hp φ _ _
+    (neg_le_self (centralCircleRadius_pos N).le) (neg_le_self (Nat.cast_nonneg N))
+    (by rwa [centralCorner_boundary]), hs]
   rfl
 
 /-- The actual central rectangular integral is idempotent on the entire base space. -/

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 156 modules and 1501 named public theorems. All compile on the
+The library has 158 modules and 1518 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -64,6 +64,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 | `NLS.ZakharovShabat.ExplicitHeight` | Explicit norm-ball height `(1+8pM)^p` for every finite exponent; printed Hilbert height `(1+8M)^2`; boundary resolvent inclusion and strict spectral strip bounds |
 | `NLS.ZakharovShabat.HeightSpectralBox` | Independent-height central boxes and finite spectra; height transfer; uniform Hilbert count `4N+2` and agreement with the existing rectangular projection |
+| `NLS.ZakharovShabat.RectangleSpectrum` | Arbitrary ordered resolvent rectangles; finite enclosed spectrum; whole cluster projection formula; exact range and rank; contour equality from spectral selection |
+| `NLS.ZakharovShabat.HeightRectangleContour` | Independent-height corners and actual contours; boundary admissibility; whole central projection equality; uniform analyticity and rank at Hilbert and all-exponent norm heights |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
 | `NLS.ZakharovShabat.DoubleResolvent` | `FL^1 → FL^p` potential convolution; double free resolvent and both coefficient formulas; global norm bound; square factorization and sandwich criterion; domain inverse identities; agreement with the full resolvent and quantitative bounds; nilpotence and exact two-term resolvents for one-sided potentials |
 | `NLS.SequenceSpaces.FourierTail` | Strict low-frequency cutoffs and closed centered windows; separation of opposite near windows; symmetric tails retaining the boundary; single-mode behavior; contraction, composition, monotonicity, and convergence |
@@ -1535,8 +1537,8 @@ sets with the height-`N` central spectrum for sufficiently large `N`.
 For `p=2`, one open convex neighborhood containing the potential and zero now
 has count `4N+2` in each potential's box of height `(1 + 8 ‖ψ‖)^2`, for every
 larger cutoff. Its full cluster projection equals the existing height-`N`
-rectangular integral. This does not yet construct the integral around the
-moving norm-height boundary itself.
+rectangular integral. The actual moving-height boundary integral is now
+identified below as well.
 
 Source fidelity: the printed Proposition 3.1 (p. 23) uses `(1 + 8 ‖φ‖ₚ)^p`,
 while Lemma 3.2(ii) and Corollary 3.3 (p. 24) retain `4p` in the numerical
@@ -1549,10 +1551,36 @@ retains the factor `p`. The printed height for arbitrary finite `p` remains
 open. All present norms are coefficient maximum pair norms; the dissertation's
 general pair-norm comparison remains a separate obligation.
 
+## Arbitrary rectangles and moving-height contours
+
+`RectangleSpectrum` defines the finite enclosed spectrum of any rectangle and
+proves agreement of open and closed selections when the ordered boundary lies
+in the resolvent set. Every bounded set admits an enclosing resolvent circle.
+The actual four-edge rectangular integral therefore equals its full finite
+cluster projection, is idempotent, has exactly the enclosed generalized-eigenspace
+range, and has rank equal to the total enclosed algebraic multiplicity. Any two
+ordered admissible rectangles selecting the same spectrum define the same
+operator. The previous central rectangle proof now uses this general theorem.
+
+`HeightRectangleContour` constructs the two corners and actual integral at an
+independent height. The global high strip controls the horizontal edges, while
+the existing height-`N` boundary controls the vertical edges when `H ≤ N`.
+The resulting actual integral equals the whole central spectral projection.
+A uniformly bounded sufficient height function gives analytic integral operators
+and rank `4N+2` on one open convex neighborhood containing the potential and zero,
+for every sufficiently large cutoff. The height function itself needs no
+continuity or analyticity assumption: local equality to the fixed-contour
+projection supplies analyticity.
+
+This applies both to the printed Hilbert height `(1+8‖ψ‖)^2` and to the proved
+all-exponent height `(1+8p‖ψ‖)^p`. Thus the actual moving norm-height contour
+formula is now proved for those heights. The printed general-`p` height and
+the dissertation's general pair-norm comparison remain separate obligations.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3160 declarations under `NLS`, including generated
+axioms. The current audit covers 3185 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1908,10 +1936,15 @@ a proof of actual resolvent membership, keeping those concepts distinct.
 Further checks instantiate uniform full algebraic counting in each potential's
 own Hilbert height box.
 
+Moving-contour checks identify the whole free projection in a rectangle with
+asymmetric vertical endpoints and compute its rank two. A discontinuous choice
+of sufficient height still yields analytic projections. The explicit non-Hilbert
+norm-height contour also retains the existing genuine length-two Jordan chain,
+whose generalized vector remains outside the ordinary eigenspace.
+
 ## Next milestones
 
-1. Resolve the printed general-`p` central height beyond the proved Hilbert case;
-   transfer the actual contour to the moving norm-height boundary.
+1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
 2. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, general-`p` potential pair-norm comparison, and multiplication
    beyond the Hilbert realization.

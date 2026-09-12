@@ -4370,3 +4370,124 @@ example (φ : PairSpace 2) :
   exact ⟨N₀, U, ho, hc, hφ, h0, fun ψ hψ N hN => (h ψ hψ N hN).2.2⟩
 
 end ExplicitHeightChecks
+
+namespace HeightContourChecks
+open NLS.ZakharovShabat Complex Set
+
+-- An asymmetric rectangle about the zero frequency, with different vertical endpoints.
+private def lo : ℂ := ⟨-Real.pi / 2, -1⟩
+private def hi : ℂ := ⟨Real.pi / 2, 2⟩
+
+private theorem ordered_re : lo.re ≤ hi.re := by
+  change -Real.pi / 2 ≤ Real.pi / 2
+  linarith [Real.pi_pos]
+
+private theorem lattice_index_zero (n : ℤ)
+    (hn : (Real.pi : ℂ) * n ∈ uIcc lo.re hi.re ×ℂ uIcc lo.im hi.im) : n = 0 := by
+  have hr := hn.1
+  rw [uIcc_of_le ordered_re] at hr
+  have hr' : -Real.pi / 2 ≤ Real.pi * (n : ℝ) ∧ Real.pi * (n : ℝ) ≤ Real.pi / 2 := by
+    simpa [lo, hi, mem_Icc, mul_re] using hr
+  have hn1 : (-1 : ℤ) < n := by exact_mod_cast (show (-1 : ℝ) < (n : ℝ) by nlinarith [Real.pi_pos])
+  have hn2 : n < (1 : ℤ) := by exact_mod_cast (show (n : ℝ) < (1 : ℝ) by nlinarith [Real.pi_pos])
+  omega
+
+private theorem boundary_free : RectangleIntegral.boundary lo hi ⊆ resolventSet (p := 3) (by simp) 0 := by
+  intro z hz
+  apply mem_resolventSet_zero_of_notMem (by simp) z
+  rintro ⟨n, rfl⟩
+  have hn := lattice_index_zero n (RectangleIntegral.boundary_subset_rectangle lo hi hz)
+  subst n
+  norm_num [RectangleIntegral.boundary, lo, hi, Real.pi_ne_zero] at hz
+  rcases hz.2 with hr | hr <;> linarith [Real.pi_pos]
+
+private theorem spectrum_singleton : rectanglePeriodicSpectrum (p := 3) (by simp) 0 lo hi = {0} := by
+  ext z
+  rw [mem_rectanglePeriodicSpectrum_iff_closed (by simp) 0 lo hi z ordered_re (by norm_num [lo, hi]) boundary_free,
+    Finset.mem_singleton]
+  constructor
+  · rintro ⟨hz, hbox⟩
+    have hlat : z ∈ freeLattice := by
+      by_contra hoff
+      exact hz (mem_resolventSet_zero_of_notMem (by simp) z hoff)
+    obtain ⟨n, rfl⟩ := hlat
+    rw [lattice_index_zero n hbox]
+    simp
+  · rintro rfl
+    refine ⟨?_, ?_⟩
+    · have h := periodicAlgebraicMultiplicity_zero (p := 3) (by simp) (0 : ℤ)
+      apply (periodicAlgebraicMultiplicity_pos_iff (by simp) 0 0).mp
+      simpa using (show 0 < periodicAlgebraicMultiplicity (p := 3) (by simp) 0 ((Real.pi : ℂ) * (0 : ℤ)) by
+        rw [h]; norm_num)
+    · rw [uIcc_of_le ordered_re, uIcc_of_le (by norm_num [lo, hi] : lo.im ≤ hi.im)]
+      change (-Real.pi / 2 ≤ 0 ∧ 0 ≤ Real.pi / 2) ∧ (-1 ≤ (0 : ℝ) ∧ 0 ≤ 2)
+      constructor
+      · constructor <;> linarith [Real.pi_pos]
+      · norm_num
+
+-- Whole-space projection identification, not just action on a chosen eigenvector.
+example (x : PairSpace 3) :
+    resolventRectangleIntegral (by simp) 0 lo hi x = periodicSpectralProjection (by simp) 0 0 x := by
+  rw [resolventRectangleIntegral_eq_clusterProjection (by simp) 0 lo hi ordered_re
+    (by norm_num [lo, hi]) boundary_free, spectrum_singleton]
+  simp [periodicClusterProjection]
+
+example : Module.finrank ℂ (resolventRectangleIntegral (p := 3) (by simp) 0 lo hi).range = 2 := by
+  rw [finrank_range_resolventRectangleIntegral (by simp) 0 lo hi ordered_re
+    (by norm_num [lo, hi]) boundary_free, spectrum_singleton]
+  simpa using periodicAlgebraicMultiplicity_zero (p := 3) (by simp) (0 : ℤ)
+
+-- A deliberately discontinuous choice of sufficient height still gives analytic projections.
+private def jumpingHeight (φ : PairSpace 2) : ℝ :=
+  (1 + 8 * ‖φ‖) ^ 2 + if ‖φ‖ ≤ 1 then 0 else 1
+
+example (φ : PairSpace 2) :
+    ∃ N₀ : ℕ, ∃ U : Set (PairSpace 2), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N → AnalyticOnNhd ℂ
+        (fun ψ => heightRectangleIntegral (by simp) ψ N (jumpingHeight ψ)) U := by
+  have hpos (ψ : PairSpace 2) : 0 ≤ jumpingHeight ψ := by
+    unfold jumpingHeight
+    split_ifs <;> positivity
+  have hbound (ψ : PairSpace 2) (hψ : ‖ψ‖ ≤ ‖φ‖ + 1) :
+      jumpingHeight ψ ≤ (1 + 8 * (‖φ‖ + 1)) ^ 2 + 1 := by
+    have hb : (1 + 8 * ‖ψ‖) ^ 2 ≤ (1 + 8 * (‖φ‖ + 1)) ^ 2 := by gcongr
+    unfold jumpingHeight
+    split_ifs <;> linarith
+  have hh (ψ : PairSpace 2) (z : ℂ) (hz : jumpingHeight ψ ≤ |z.im|) : z ∈ resolventSet (by simp) ψ := by
+    apply mem_resolventSet_of_hilbert_height ψ le_rfl
+    apply le_trans _ hz
+    unfold jumpingHeight
+    split_ifs <;> linarith
+  obtain ⟨N₀, U, _, ho, _, hφ, h0, han, _⟩ := exists_uniform_heightRectangleProjection_of_bound
+    (by simp) φ jumpingHeight _ hpos hbound hh
+  exact ⟨N₀, U, ho, hφ, h0, han⟩
+
+-- At the explicit non-Hilbert norm height, a genuine Jordan chain is retained.
+example : ∃ N : ℕ, 0 < N ∧
+    heightRectangleIntegral (by simp) BoundaryRootChecks.jordanPotential N
+      ((1 + 8 * (3 : ℝ) * ‖BoundaryRootChecks.jordanPotential‖) ^ (3 : ℝ))
+      BoundaryRootChecks.generalized.val = BoundaryRootChecks.generalized.val ∧
+    BoundaryRootChecks.generalized ∉ BoundaryCondition.rootSpace .dirichlet (by simp)
+      BoundaryRootChecks.jordanPotential BoundaryRootChecks.jordanPotential_mem (Real.pi : ℂ) 1 := by
+  obtain ⟨N, U, hN, _, _, hφ, _, _, h⟩ :=
+    exists_uniform_explicit_heightRectangleProjection (by simp) BoundaryRootChecks.jordanPotential
+  have hc := (h _ hφ N le_rfl).1
+  refine ⟨N, hN, ?_, BoundaryRootChecks.generalized_not_mem_one⟩
+  apply resolventRectangleIntegral_apply_root (by simp) BoundaryRootChecks.jordanPotential
+    (heightLowerCorner N _) (heightUpperCorner N _) (Real.pi : ℂ)
+  · simpa only [ENNReal.toReal_ofNat] using hc
+  · rw [heightCorner_openRectangle]
+    have h1 : (1 : ℝ) ≤ (N : ℝ) := by exact_mod_cast hN
+    constructor
+    · change |Real.pi| < (N : ℝ) * Real.pi + Real.pi / 2
+      rw [abs_of_pos Real.pi_pos]
+      nlinarith [Real.pi_pos]
+    · change |(0 : ℝ)| < _
+      rw [abs_zero]
+      positivity
+  · apply (mem_periodicRootSpaceTop (by simp) BoundaryRootChecks.jordanPotential (Real.pi : ℂ) _).mpr
+    exact ⟨2, (BoundaryCondition.mem_rootSpace_iff_periodic .dirichlet (by simp)
+      BoundaryRootChecks.jordanPotential BoundaryRootChecks.jordanPotential_mem
+      (Real.pi : ℂ) 2 BoundaryRootChecks.generalized).mp BoundaryRootChecks.generalized_mem_two⟩
+
+end HeightContourChecks

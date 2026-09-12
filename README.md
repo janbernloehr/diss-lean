@@ -204,8 +204,13 @@ central algebraic count `4N+2` in each potential's Hilbert norm-height box,
 with its cluster projection equal to the existing rectangular integral.
 These use coefficient maximum pair norms. The printed general-`p` height
 `(1+8‖φ‖ₚ)^p` still needs an additional argument: direct substitution into the
-proved `4p` Neumann estimate is insufficient. The moving-height contour,
-general pair-norm transfer, and main dissertation theorems remain future work.
+proved `4p` Neumann estimate is insufficient. The actual contour formula now
+holds for every ordered rectangle with resolvent boundary, with its whole
+range and rank identified. In particular, contours at the printed Hilbert
+height and the proved all-exponent height equal the fixed central projection
+and are analytic with rank `4N+2`. This even holds for discontinuous choices
+of uniformly bounded sufficient heights. The general pair-norm transfer and
+main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
