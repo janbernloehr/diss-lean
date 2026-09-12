@@ -4021,3 +4021,78 @@ example (b : BoundaryCondition) (u x y : IntervalPairL2) (z : ℂ) (hz : z ∈ c
 
 end
 end ClassicalOperatorChecks
+
+
+namespace ClassicalMultiplicityChecks
+open NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition Set Metric
+noncomputable section
+
+-- A genuine length-two chain belongs to level two but not the ordinary eigenspace.
+private theorem chain_levels (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ)
+    (f g : ClassicalIntervalDomain b)
+    (hfg : classicalPencil b u z f = classicalInclusion b g)
+    (hg : classicalPencil b u z g = 0) (hgne : g ≠ 0) :
+    classicalInclusion b f ∈ classicalRootSpace b u z 2 ∧
+      classicalInclusion b f ∉ classicalRootSpace b u z 1 := by
+  constructor
+  · apply (mem_classicalRootSpace_succ b u z 1 _).mpr
+    refine ⟨f, rfl, ?_⟩
+    rw [hfg]
+    apply (mem_classicalRootSpace_succ b u z 0 _).mpr
+    exact ⟨g, rfl, by simpa using hg⟩
+  · intro h
+    obtain ⟨f', hf', hp⟩ := (mem_classicalRootSpace_succ b u z 0 _).mp h
+    have he : f' = f := classicalInclusion_injective b hf'
+    subst f'
+    have hp0 : classicalPencil b u z f = 0 := hp
+    have hinc : classicalInclusion b g = classicalInclusion b 0 := by simpa [← hfg] using hp0
+    exact hgne (classicalInclusion_injective b hinc)
+
+-- Transport preserves the distinction between generalized and ordinary vectors.
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ)
+    (f g : ClassicalIntervalDomain b)
+    (hfg : classicalPencil b u z f = classicalInclusion b g)
+    (hg : classicalPencil b u z g = 0) (hgne : g ≠ 0) :
+    intervalL2Equiv b (classicalInclusion b f) ∈
+      rootSpace b (by simp) (intervalPotentialCoefficients u) (intervalPotentialCoefficients_mem u) z 2 ∧
+    intervalL2Equiv b (classicalInclusion b f) ∉
+      rootSpace b (by simp) (intervalPotentialCoefficients u) (intervalPotentialCoefficients_mem u) z 1 := by
+  simpa only [← mem_classicalRootSpace_iff] using chain_levels b u z f g hfg hg hgne
+
+-- Negative odd free eigenvalues have full root-space dimension one for both boundary conditions.
+example (b : BoundaryCondition) :
+    Module.finrank ℂ (classicalRootSpaceTop b 0 ((Real.pi : ℂ) * (-3 : ℤ))) = 1 :=
+  classicalAlgebraicMultiplicity_zero b (-3)
+
+-- Every generalized eigenvector satisfies the actual original domain requirement.
+example (b : BoundaryCondition) (u x : IntervalPairL2) (z : ℂ)
+    (hx : x ∈ classicalRootSpaceTop b u z) :
+    ∃ (f : ℝ → ℂ × ℂ) (_hf : HasClassicalIntervalDomain b f)
+      (hL : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Ioc 0 1))),
+      intervalL2OfFunction f hL = x :=
+  (mem_classicalUnboundedOperator_domain_iff_original b u x).mp
+    (classicalRootSpaceTop_le_domain b u z hx)
+
+-- One neighborhood simultaneously supplies physical multiplicities and analytic branches.
+example (u : IntervalPairL2) :
+    ∃ N₀ : ℕ, ∃ U : Set IntervalPairL2,
+      0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ u ∈ U ∧ 0 ∈ U ∧
+      (∀ v ∈ U, ∀ N : ℕ, N₀ ≤ N → ∀ b : BoundaryCondition,
+        (∑ z ∈ classicalCentralSpectrum b v N, classicalAlgebraicMultiplicity b v z) = 2 * N + 1) ∧
+      ∀ b : BoundaryCondition, ∀ n : ℤ, N₀ < n.natAbs →
+        AnalyticOnNhd ℂ (fun v : IntervalPairL2 => classicalEigenvalue b v n) U ∧
+        ∀ v ∈ U, ∃! z : ℂ, z ∈ classicalSpectrum b v ∧
+          z ∈ ball ((Real.pi : ℂ) * n) (Real.pi / 4) ∧ classicalAlgebraicMultiplicity b v z = 1 := by
+  obtain ⟨N₀, U, hN, ho, hc, hu, h0, hd, ha⟩ := exists_uniform_classicalBoundaryCountingData u
+  refine ⟨N₀, U, hN, ho, hc, hu, h0, ?_, ?_⟩
+  · exact fun v hv N hNN b => (hd v hv N hNN).central_multiplicity b
+  · exact fun b n hn => ⟨ha b n hn, fun v hv => (hd v hv N₀ le_rfl).disk_unique_simple b n hn⟩
+
+-- The periodic reflected problem counts both original boundary multiplicities.
+example (u : IntervalPairL2) (z : ℂ) :
+    periodicAlgebraicMultiplicity (by simp) (intervalPotentialCoefficients u) z =
+      classicalAlgebraicMultiplicity .dirichlet u z + classicalAlgebraicMultiplicity .neumann u z :=
+  periodicAlgebraicMultiplicity_eq_classical_sum u z
+
+end
+end ClassicalMultiplicityChecks

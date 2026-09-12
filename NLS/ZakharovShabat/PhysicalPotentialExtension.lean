@@ -88,6 +88,11 @@ open BoundaryCondition
 def intervalPotentialCoefficients (u : IntervalPairL2) : PairSpace 2 :=
   dirichletPotentialCoefficients (intervalL2Representative u) (memLp_intervalL2Representative u)
 
+/-- The physical potential coefficients lie in the Dirichlet subspace used by both boundary operators. -/
+theorem intervalPotentialCoefficients_mem (u : IntervalPairL2) :
+    intervalPotentialCoefficients u ∈ dirichletSubspace :=
+  dirichletPotentialCoefficients_mem _ (memLp_intervalL2Representative u)
+
 @[simp] theorem intervalPotentialCoefficients_ofFunction (φ : ℝ → ℂ × ℂ)
     (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) :
     intervalPotentialCoefficients (intervalL2OfFunction φ hφ) = dirichletPotentialCoefficients φ hφ :=

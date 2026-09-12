@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 142 modules and 1403 named public theorems. All compile on the
+The library has 145 modules and 1428 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -149,6 +149,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalIntervalOperator` | Physical domain inclusion and operator maps; injective dense inclusion; arbitrary-interval differential congruence; exact action on original representatives and square-integrable outputs |
 | `NLS.ZakharovShabat.ClassicalIntervalResolvent` | Independently defined physical pencil and resolvent set; full intertwining and equality with boundary resolvents; bounded two-sided physical inverse; compact base-space resolvent; original spectrum equals coefficient boundary spectrum and classical eigenvalues |
 | `NLS.ZakharovShabat.ClassicalIntervalClosed` | Original physical unbounded partial linear operator; exact classical endpoint-domain membership; potential-independent dense domain; evaluation by the actual differential expression; physical graph recognition and closedness |
+| `NLS.ZakharovShabat.ClassicalIntervalRootSpaces` | Independent physical pencil root chains; preservation of every chain level and full root space; original domain membership; linear equivalence, finite dimension, stabilization, and closedness |
+| `NLS.ZakharovShabat.ClassicalIntervalMultiplicity` | Physical algebraic multiplicity as full root-space dimension; equality with coefficient multiplicity; spectral characterization; free simplicity; periodic multiplicity splitting into both original boundary contributions |
+| `NLS.ZakharovShabat.ClassicalIntervalCounting` | Finite central set from the physical spectrum; common physical neighborhood for central multiplicity `2N+1`, high-disk algebraic simplicity, localization, and analytic branches for both boundary conditions |
 
 ## Current mathematical milestone
 
@@ -1211,7 +1214,7 @@ by `1` and `√2 π`, respectively. Both original interval domains are complete.
 This establishes Lemma 4.2 in the classical `H¹` realization. Lemma 4.1's physical
 equation transfer, original eigenvalue-set identification, and high-index
 analytic branches and the original operator/resolvent correspondence are proved
-below. Physical algebraic-multiplicity identification remains open.
+below, along with physical root-space and algebraic-multiplicity identification.
 
 ## Physical multiplication and the Hilbert operator
 
@@ -1296,7 +1299,7 @@ zero potential both original sets are exactly `πℤ`, with odd indices retained
 
 These are eigenvalue-set identities. The independently defined original
 interval operator and its resolvent correspondence are now constructed below.
-Physical algebraic multiplicities remain separate from eigenvalue-set equality.
+Physical algebraic multiplicities require the independent root-space correspondence proved below.
 Analytic branches and uniform coefficient counting data are now pulled back to
 the physical potential space below.
 
@@ -1328,11 +1331,10 @@ norm. The original eigenvalue set is independent of the representative chosen.
 Both free branches have the exact value `π n`.
 
 This proves physical analyticity and uniqueness of the high-index classical
-branches. Simplicity and central multiplicity counts are still expressed by the
-coefficient operator. Identifying them with independently defined physical
-operator multiplicities requires identifying physical generalized eigenspaces.
-The signed base-space and operator/resolvent correspondences are now proved
-below. The general-`p` physical parameter transfer and the exact central-height
+branches. The signed base-space, operator/resolvent, and root-space
+correspondences below identify the coefficient multiplicities with independently
+defined physical multiplicities and transfer simplicity and central counts.
+The general-`p` physical parameter transfer and the exact central-height
 convention also remain open.
 
 ## Signed physical base-space isomorphisms
@@ -1361,8 +1363,8 @@ These maps commute with the domain/base inclusions. For an original classical
 function, its base-space image equals the raw coefficients of its weighted
 classical extension. Conversely, inverse base restriction of an included
 weighted boundary vector is the physical `L²` class of its classical restriction.
-This supplies the base-space part of the original operator correspondence
-constructed below. Physical generalized eigenspaces remain to be identified.
+This supplies the base-space part of the original operator and root-space
+correspondences constructed below.
 
 ## Original interval operator and resolvent
 
@@ -1395,14 +1397,36 @@ domain is dense. A physical resolvent identity recognizes graph points using
 only base-space data, proving that the graph and the unbounded operator are
 closed. No convergence in the stronger domain norm is required for closedness.
 
-Physical generalized eigenspaces and algebraic multiplicities still need their
-own transport proofs before the full original simplicity and central counting
-statements can be claimed.
+## Original physical root spaces and algebraic counting
+
+`classicalRootSpace b u z n` is defined recursively from the original physical
+pencil and inclusion, requiring the classical domain at every step. Level one
+is the included ordinary eigenspace; higher levels retain full Jordan chains.
+The physical Fourier isomorphism preserves each level and the increasing union
+`classicalRootSpaceTop`. The union lies in the actual unbounded operator domain,
+is finite dimensional and closed, and stabilizes at a finite chain length.
+
+`classicalAlgebraicMultiplicity` is the dimension of this full physical root
+space. A proved linear equivalence identifies it with coefficient multiplicity.
+It is positive exactly on the physical spectrum and zero exactly on the
+resolvent set. All free boundary eigenvalues, including negative odd indices,
+have multiplicity one. Periodic multiplicity of the reflected potential is the
+sum of the two original physical boundary multiplicities.
+
+`classicalCentralSpectrum` is the finite intersection of the independently
+defined physical spectrum with the existing central box. On one open convex
+physical neighborhood containing the chosen potential and zero, both boundary
+conditions have central multiplicity sum `2N+1`, one algebraically simple
+spectral point in each high disk, and no other spectrum. One cutoff works for
+every larger cutoff, and the high-index branches are analytic on that same
+neighborhood. These statements now use physical spectra and physical root-space
+multiplicities throughout. The box still has height `N`; the overview theorem's
+norm-dependent height and general-`p` physical interpretation remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2964 declarations under `NLS`, including generated
+axioms. The current audit covers 3033 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1721,14 +1745,19 @@ proves domain membership. The free physical spectrum is exactly `πℤ`; at `i`
 both inverse identities hold on arbitrary physical inputs. Further checks cover
 compactness for arbitrary potentials, closedness, and base-space graph recognition.
 
+Physical-root checks distinguish length-two Jordan chains from ordinary
+eigenvectors and preserve that distinction under Fourier transport. Negative
+odd free eigenvalues have full physical root-space dimension one. Generalized
+vectors admit original classical domain representatives. Further checks combine
+central physical multiplicity sums, unique algebraically simple high-disk
+spectral points, and analytic branches on one common neighborhood, and verify
+the periodic multiplicity split.
+
 ## Next milestones
 
-1. Identify physical generalized eigenspaces and algebraic multiplicities using
-   the now-proved original operator/resolvent correspondence, completing the
-   original counting and simplicity transfer in Theorem 1.4 and Lemma 4.5.
-2. Identify the central projection with the rectangular contour integral and
+1. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
-3. Prove the periodic Fourier/distribution realization, physical period-one
+2. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, general-`p` potential pair-norm comparison, and multiplication
    beyond the Hilbert realization.
 

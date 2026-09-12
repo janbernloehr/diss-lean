@@ -398,9 +398,14 @@ pencils intertwine, their resolvent sets agree, and the physical inverse is
 bounded with compact base-space resolvent. Its spectrum is exactly the original
 classical eigenvalue set.
 
-Next identify original root spaces and algebraic multiplicities to complete
-physical simplicity and central counting. Use the proved operator and resolvent
-correspondence rather than eigenvalue-set equality alone.
+Original physical root spaces are now independently defined using the physical
+pencil and domain at every chain level. The base/domain isomorphisms identify
+each level and the full generalized eigenspaces. Their finite dimensions define
+physical algebraic multiplicities and prove agreement with coefficient counts.
+The physical central finite set, central multiplicity `2N+1`, unique algebraically
+simple high-disk eigenvalues, and exclusion of other spectrum now hold uniformly
+on one physical neighborhood for both boundary conditions, with analytic branches.
+The free physical multiplicities and the periodic sum formula are also proved.
 Both boundary spectral problems use the Dirichlet extension of the potential;
 the boundary sign selects the eigenfunction extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.

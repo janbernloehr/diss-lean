@@ -179,9 +179,13 @@ It is closed and densely defined. Its physical pencil has the same resolvent
 set as the coefficient boundary pencil, with a bounded inverse and compact
 base-space resolvent. The physical spectrum equals the original classical
 eigenvalue set.
-Physical algebraic multiplicity identification, the general Fourier/distribution
-realization, and multiplication beyond the Hilbert realization remain needed
-for the full transfer.
+Physical root spaces are now defined using the original pencil and domain at
+every chain level. They are finite dimensional, stabilize, and correspond to
+the coefficient root spaces. Physical algebraic multiplicities therefore agree.
+One common physical neighborhood gives central count `2N+1`, one algebraically
+simple eigenvalue in each high disk, and no other spectrum, for both boundary
+conditions and every larger cutoff. The general Fourier/distribution realization
+and multiplication beyond the Hilbert realization remain needed for the full transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

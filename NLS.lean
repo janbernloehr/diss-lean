@@ -90,3 +90,6 @@ import NLS.ZakharovShabat.IntervalL2Isomorphism
 import NLS.ZakharovShabat.ClassicalIntervalOperator
 import NLS.ZakharovShabat.ClassicalIntervalResolvent
 import NLS.ZakharovShabat.ClassicalIntervalClosed
+import NLS.ZakharovShabat.ClassicalIntervalRootSpaces
+import NLS.ZakharovShabat.ClassicalIntervalMultiplicity
+import NLS.ZakharovShabat.ClassicalIntervalCounting
