@@ -187,7 +187,16 @@ ordinary eigenfunctions have it in the weighted domain, and opposite-parity
 inputs are annihilated. The result is uniform on the even potentials in the
 same open convex neighborhood used for the multiplicity count.
 
-Next construct the central rectangular contour for the remaining counts in
-Proposition 1.1, including its even/odd split.
+The closed/open central rectangles and all boundary edges are constructed.
+The uniform height estimate is retained at equality, proving that the horizontal
+edges, as well as the vertical edges, are resolvent points. One open convex
+neighborhood works for every larger positive cutoff. Open, closed, and mixed
+boundary conventions then give identical central spectra. The finite central
+algebraic spectral projection is constructed, and its free rank is `4N+2`,
+by counting the signed indices `-N,…,N` with multiplicity two.
+
+Next establish the central projection’s analytic deformation and transfer its
+free count to general potentials, including the even/odd split in Proposition
+1.1(ii). Identification with the rectangular contour integral remains open.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

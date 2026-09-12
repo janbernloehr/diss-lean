@@ -51,3 +51,5 @@ import NLS.ZakharovShabat.PeriodicParity
 import NLS.ZakharovShabat.FreeMultiplicity
 import NLS.ZakharovShabat.DiskMultiplicity
 import NLS.ZakharovShabat.DiskParity
+import NLS.ZakharovShabat.CentralRectangle
+import NLS.ZakharovShabat.CentralSpectrum

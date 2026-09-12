@@ -68,12 +68,14 @@ theorem spectralExterior_height_or_strip (N : ℕ) {r : ℝ} (hrπ : r ≤ Real.
 
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
-/-- One central rectangle and one open convex potential neighborhood work
-simultaneously for all exterior spectral parameters. -/
-theorem exists_uniform_spectralExterior (hp : p ≠ ⊤) (φ : PairSpace p)
+/-- A common positive integer height and frequency cutoff, retaining the bounds
+on the horizontal boundary as well as all sufficiently far punctured strips. -/
+theorem exists_uniform_height_and_strips (hp : p ≠ ⊤) (φ : PairSpace p)
     {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4) :
-    ∃ N : ℕ, ∃ U : Set (PairSpace p), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
-      ∀ ψ ∈ U, spectralExterior N r ⊆ resolventSet hp ψ := by
+    ∃ N : ℕ, ∃ U : Set (PairSpace p), 0 < N ∧ IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U,
+        (∀ z : ℂ, (N : ℝ) ≤ |z.im| → z ∈ resolventSet hp ψ) ∧
+        (∀ n : ℤ, N ≤ n.natAbs → verticalStrip n r ⊆ resolventSet hp ψ) := by
   obtain ⟨N₀, U, ho, hc, hφ, h0, hnorm, hstrips⟩ :=
     exists_uniform_highFrequency_resolvent hp φ hr hrπ
   obtain ⟨H, hH, hheight⟩ := exists_uniform_heightNeumannRegion hp (‖φ‖ + 1)
@@ -81,12 +83,26 @@ theorem exists_uniform_spectralExterior (hp : p ≠ ⊤) (φ : PairSpace p)
   let N := max N₀ K
   have hN₀ : N₀ ≤ N := le_max_left _ _
   have hHN : H ≤ (N : ℝ) := hK.le.trans (by exact_mod_cast (le_max_right N₀ K))
+  have hN : 0 < N := by exact_mod_cast (hH.trans_le hHN)
+  refine ⟨N, U, hN, ho, hc, hφ, h0, ?_⟩
+  intro ψ hψ
+  exact ⟨fun z hz => heightNeumannRegion_subset_resolventSet hp ψ
+      (hheight ψ (hnorm ψ hψ).le z (hHN.trans hz)),
+    fun n hn => hstrips ψ hψ n (hN₀.trans hn)⟩
+
+/-- One central rectangle and one open convex potential neighborhood work
+simultaneously for all exterior spectral parameters. -/
+theorem exists_uniform_spectralExterior (hp : p ≠ ⊤) (φ : PairSpace p)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4) :
+    ∃ N : ℕ, ∃ U : Set (PairSpace p), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, spectralExterior N r ⊆ resolventSet hp ψ := by
+  obtain ⟨N, U, _, ho, hc, hφ, h0, hbounds⟩ :=
+    exists_uniform_height_and_strips hp φ hr hrπ
   refine ⟨N, U, ho, hc, hφ, h0, ?_⟩
   intro ψ hψ z hz
   rcases spectralExterior_height_or_strip N hrπ hz with him | ⟨n, hn, hzstrip⟩
-  · exact heightNeumannRegion_subset_resolventSet hp ψ
-      (hheight ψ (hnorm ψ hψ).le z (hHN.trans him.le))
-  · exact hstrips ψ hψ n (hN₀.trans hn) hzstrip
+  · exact (hbounds ψ hψ).1 z him.le
+  · exact (hbounds ψ hψ).2 n hn hzstrip
 
 /-- Resolvent inclusion gives the precise central-box and disk enclosure of the spectrum. -/
 theorem periodicSpectrum_subset_box_union_disks (hp : p ≠ ⊤) (φ : PairSpace p)

@@ -1272,3 +1272,70 @@ example (x : PairSpace 1) (hx : x ∈ periodicRootSpaceTop (by simp) parityJorda
   exact periodicRootSpaceTop_le_parity_of_contour (by simp) _ 0 0 (Real.pi / 4) 0
     (by simpa using parityJordan_circle 0) (by simpa using (by positivity : 0 < Real.pi / 4))
     (by simpa using parityJordan_range 0) hx
+
+section CentralRectangleChecks
+open Complex
+set_option autoImplicit false
+
+-- A horizontal edge lies in the original box, so exterior inclusion alone
+-- would not prove it is a resolvent point.
+example : I ∈ centralRectangleBoundary 1 ∧ I ∉ spectralExterior 1 (Real.pi / 4) := by
+  constructor
+  · rw [mem_centralRectangleBoundary]
+    constructor
+    · constructor
+      · simp; positivity
+      · simp
+    · right; simp
+  · intro h
+    exact h (Or.inl ⟨by simp; positivity, by simp⟩)
+
+-- The lower-left corner is included, with both coordinate signs negative.
+example : ((-(3 * Real.pi / 2) : ℝ) : ℂ) - I ∈ centralRectangleBoundary 1 := by
+  rw [mem_centralRectangleBoundary]
+  have hπ : 0 ≤ (3 : ℝ) * Real.pi / 2 := by positivity
+  constructor
+  · constructor
+    · simp only [sub_re, ofReal_re, I_re, sub_zero, Nat.cast_one, one_mul,
+        abs_neg, abs_of_nonneg hπ]
+      linarith
+    · norm_num
+  · right; norm_num
+
+-- Zero height is degenerate: the zero eigenvalue is on the boundary.
+example : (0 : ℂ) ∈ centralRectangleBoundary 0 := by
+  rw [mem_centralRectangleBoundary]
+  exact ⟨⟨by simp; positivity, by simp⟩, Or.inr (by simp)⟩
+
+example (φ : PairSpace 1) : ∃ N : ℕ, 0 < N ∧ ∀ M : ℕ, N ≤ M →
+    centralRectangleBoundary M ⊆ resolventSet (by simp) φ := by
+  obtain ⟨N, U, hN, _, _, hφ, _, h⟩ :=
+    exists_uniform_centralRectangle_resolvent (by simp) φ (by positivity) le_rfl
+  exact ⟨N, hN, fun M hM => (h φ hφ M hM).1⟩
+
+-- Both signed endpoint indices are included; the next lattice value is excluded.
+example : (Real.pi : ℂ) * (-3 : ℤ) ∈ centralSpectralBox 3 := by
+  rw [free_mem_centralSpectralBox_iff]; norm_num
+example : (Real.pi : ℂ) * (4 : ℤ) ∉ centralSpectralBox 3 := by
+  rw [free_mem_centralSpectralBox_iff]; norm_num
+
+example : centralPeriodicSpectrum (p := 1) (by simp) 0 0 = {0} := by
+  rw [centralPeriodicSpectrum_zero]
+  simp
+
+example : (∑ z ∈ centralPeriodicSpectrum (p := 3) (by simp) 0 2,
+    periodicAlgebraicMultiplicity (p := 3) (by simp) 0 z) = 10 := by
+  simpa using sum_central_multiplicity_zero (p := 3) (by simp) 2
+
+example : Module.finrank ℂ (centralSpectralProjection (p := 1) (by simp) 0 3).range = 14 := by
+  simpa using finrank_range_centralSpectralProjection_zero (p := 1) (by simp) 3
+
+example (φ : PairSpace 3) (N : ℕ) (hc : centralRectangleBoundary N ⊆ resolventSet (by simp) φ)
+    (z : ℂ) (hz : |z.im| = (N : ℝ)) : z ∉ centralPeriodicSpectrum (by simp) φ N := by
+  intro h
+  have h' := (mem_centralPeriodicSpectrum_iff_open (by simp) φ N hc z).mp h
+  have hi := h'.2.2
+  rw [hz] at hi
+  exact (lt_irrefl _ hi)
+
+end CentralRectangleChecks

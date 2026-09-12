@@ -51,7 +51,11 @@ The high-frequency disk count in Proposition 1.1(i) is proved: each sufficiently
 far disk has total algebraic multiplicity two, uniformly on such a neighborhood.
 For even-supported potentials, each such disk’s entire generalized eigenspace
 has the parity of its index, and its contour projection annihilates the opposite
-parity. The central-region counts and main dissertation theorems remain future work.
+parity. All four edges of every sufficiently large central rectangle are now
+uniformly in the resolvent set. The finite central spectral projection is
+constructed algebraically, and its free rank is `4N+2`. Transferring this central
+count to general potentials, its parity split, and the main dissertation theorems
+remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -118,6 +122,9 @@ also exercise both central-box boundary conventions, common cutoffs along
 `[0,φ]`, and the full neighborhood result at the `p=1` endpoint. Parity checks
 include negative frequencies, nonconstant even potentials, resolvent and contour
 preservation, and a counterexample when the even-support hypothesis is omitted.
+Central-region checks cover horizontal edges, a negative corner, the degenerate
+zero-height boundary, every larger cutoff, signed free endpoints, and free
+central ranks at both even and odd cutoffs.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.
