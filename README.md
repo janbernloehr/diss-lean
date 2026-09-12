@@ -79,7 +79,8 @@ closed complementary subspaces, including their weighted domains and contractive
 projections. The operator preserves both spaces for already-reflected potentials;
 its bounded restrictions and the exact signed free-mode and potential-action
 formulas are proved. Identification of the weighted domains with physical
-boundary conditions and the uniform interval-extension estimates remain open.
+boundary conditions and the interval-extension estimates at general exponents
+remain open.
 Both boundary restrictions now have full compact resolvents, jointly analytic
 on their own open domains. Their spectra are closed and discrete, with finite
 bounded portions and an eigenvector characterization. The periodic spectrum is
@@ -104,8 +105,12 @@ Finite input gives actual elements of both boundary coefficient spaces for `p>1`
 with an explicit reciprocal kernel bound. A one-sided constant proves failure at
 `p=1`. The integrals also detect missing normalization factors in the calculation
 on printed page 31: the even coefficient carries `1/2`, and the odd kernel carries
-`i/π`. The uniform `ℓp → ℓp` estimate for `1<p<∞`, and completion from finite
-input, are still needed for Lemma 4.3 and the period-one spectral transfer.
+`i/π`. Parseval now gives the uniform `p=2` estimate and completion to all
+Hilbert coefficient pairs: the squared output norm is the mean of the two
+input energies. The extension is injective, contractive in the maximum pair
+norm, and boundary-valued. Its odd coefficients define a bounded shifted
+Hilbert transform with the exact finite-input kernel. The other exponents in
+`1<p<∞` remain needed for the full Lemma 4.3 and period-one spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

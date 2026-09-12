@@ -2591,3 +2591,75 @@ end
 end IntervalExtensionChecks
 
 end IntervalExtensionChecks
+
+section HilbertIntervalExtensionChecks
+
+namespace HilbertIntervalExtensionChecks
+
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition Complex
+open scoped ENNReal
+noncomputable section
+
+-- The unit-interval energy uses the raw period-one frequency, including negative indices.
+example : (∫ x in (0 : ℝ)..1, ‖polynomial (Finsupp.single (-3) I) x‖ ^ 2) = 1 := by
+  rw [integral_sq_polynomial]
+  simp
+
+-- Unequal component energies detect the half-normalization in the completed operator.
+example (b : BoundaryCondition) :
+    ‖hilbertIntervalExtension b (finitePairCoeffs (Finsupp.single (-3) I, Finsupp.single 2 2))‖ ^ 2 = 5 / 2 := by
+  rw [norm_hilbertIntervalExtension_sq]
+  simp only [finitePairCoeffs_apply, Coeff.norm_ofFinsupp_sq]
+  norm_num
+example (b : BoundaryCondition) :
+    ‖hilbertIntervalExtension b (finitePairCoeffs (0, Finsupp.single 0 1))‖ ^ 2 = 1 / 2 := by
+  rw [norm_hilbertIntervalExtension_sq]
+  simp only [finitePairCoeffs_apply, Coeff.norm_ofFinsupp_sq]
+  norm_num
+
+-- The extension of arbitrary infinite coefficient data is bounded, analytic, and boundary-valued.
+example (b : BoundaryCondition) (a : PairSpace 2) : ‖hilbertIntervalExtension b a‖ ≤ ‖a‖ :=
+  norm_hilbertIntervalExtension_apply_le b a
+example (b : BoundaryCondition) (a : PairSpace 2) : hilbertIntervalExtension b a ∈ space b :=
+  hilbertIntervalExtension_mem b a
+example (b : BoundaryCondition) (a : PairSpace 2) : AnalyticAt ℂ (hilbertIntervalExtension b) a :=
+  (hilbertIntervalExtension b).analyticAt a
+example (b : BoundaryCondition) (a : PairSpace 2) (ha : a ≠ 0) : hilbertIntervalExtension b a ≠ 0 := by
+  intro h
+  apply ha
+  apply hilbertIntervalExtension_injective b
+  simpa using h
+
+-- Completed coefficients still agree with physical Fourier integrals on polynomial input.
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (n : ℤ) :
+    (hilbertIntervalExtension b (finitePairCoeffs a)).2 n =
+      periodTwoCoefficient (fun x => (intervalExtension b (periodOnePair a) x).2) n := by
+  rw [hilbertIntervalExtension_finite]
+  exact (finiteIntervalExtension_coefficient_snd b (by norm_num) a n).symm
+
+-- Odd sampling keeps the correct negative index and eliminates every even mode.
+example : oddSample (lp.single 2 (-3) I) (-2) = I := by simp [lp.single_apply]
+example : oddSample (lp.single 2 (-2) 1) = 0 := by
+  apply lp.ext
+  funext n
+  simp [lp.single_apply, show 2 * n + 1 ≠ -2 by omega]
+
+-- The shifted kernel has opposite signs on the two sides of its half-integer pole.
+example : shiftedHilbert (Coeff.ofFinsupp (Finsupp.single 0 1)) 0 = -2 / (Real.pi : ℂ) := by
+  rw [shiftedHilbert_finite]
+  norm_num [div_neg, neg_div]
+example : shiftedHilbert (Coeff.ofFinsupp (Finsupp.single 0 1)) (-1) = 2 / (Real.pi : ℂ) := by
+  rw [shiftedHilbert_finite]
+  norm_num
+example : shiftedHilbert (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-2) = -2 * I / (3 * (Real.pi : ℂ)) := by
+  rw [shiftedHilbert_finite]
+  norm_num
+  ring
+example (a : Coeff 2) : ‖shiftedHilbert a‖ ≤ 2 * ‖a‖ := norm_shiftedHilbert_apply_le a
+example (a : Coeff 2) : shiftedHilbert (I • a) = I • shiftedHilbert a := map_smul _ _ _
+
+end
+
+end HilbertIntervalExtensionChecks
+
+end HilbertIntervalExtensionChecks

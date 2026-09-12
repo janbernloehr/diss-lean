@@ -65,3 +65,4 @@ import NLS.ZakharovShabat.FreeBoundaryMultiplicity
 import NLS.ZakharovShabat.BoundaryCounting
 import NLS.ZakharovShabat.BoundaryEigenvalues
 import NLS.ZakharovShabat.FiniteIntervalExtension
+import NLS.Fourier.ShiftedHilbert

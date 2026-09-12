@@ -298,10 +298,20 @@ finite period-one coefficient pairs into the actual boundary `ℓp` spaces for
 is not in `ℓ1`, as witnessed by the constant input `(0,1)`. The derivation from
 (1.8)–(1.9) corrects the missing normalization on printed page 31.
 
-Next prove a uniform bound for the shifted discrete Hilbert kernel in the input
-`ℓp` norm, `1<p<∞`, then complete the finite-input maps by density. Individual
-kernel membership does not supply this uniform bound. Only boundedness is needed
-from Appendix C.1; its additional isomorphism assertion is not assumed here.
+The Hilbert exponent is now handled uniformly. Mathlib's interval Parseval
+identity is connected to our normalization, giving the exact finite-input
+energy identity. Dense finite coefficient inclusion then yields unique bounded
+interval extensions on all `PairSpace 2`, with boundary membership, injectivity,
+and the same energy identity. Odd-index sampling extracts the normalized
+shifted Hilbert kernel `2/[π(2k-2n-1)]` as a bounded `ℓ2` operator.
+
+Next prove the shifted discrete Hilbert estimate for the remaining exponents
+`1<p<∞`, then complete the corresponding finite-input maps by density. The
+library search found Parseval but no existing discrete Hilbert, weak-type
+interpolation, or Riesz–Thorin theorem; those analytic steps need proof or a
+different boundedness argument. Individual kernel membership alone is insufficient.
+Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
+is not assumed here.
 Construct the physical Sobolev-domain identifications of Lemmas 4.1–4.2 and
 transfer the coefficient counting and analytic-eigenvalue theorems to the
 original period-one potentials.

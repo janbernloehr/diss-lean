@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 83 modules and 922 named public theorems. All compile on the
+The library has 87 modules and 951 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -90,6 +90,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntervalKernelLp` | Translation identity; reciprocal norm envelope; kernel membership for every `p>1`; failure at `p=1` via the harmonic series |
 | `NLS.ZakharovShabat.IntervalExtension` | Physical reflected/swapped linear maps; Fourier reflection relation; normalized finite-input amplitudes; constant and one-sided coefficient formulas |
 | `NLS.ZakharovShabat.FiniteIntervalExtension` | Linear finite-input maps into actual boundary `ℓp` spaces; exact equality with physical Fourier integrals; physical `p=1` counterexample |
+| `NLS.SequenceSpaces.FiniteCoefficients` | Canonical linear inclusion of finite coefficients into `ℓp`; dense range for finite Banach exponents; exact finite Hilbert energy |
+| `NLS.Fourier.IntervalParseval` | Agreement with mathlib interval Fourier coefficients; square integrability across reflected joins; Parseval; polynomial and reflected-block energy identities |
+| `NLS.ZakharovShabat.HilbertIntervalExtension` | Exact finite-input energy and uniform contraction; completion to all Hilbert pairs; physical agreement on polynomials; closed boundary membership; exact energy, injectivity, and uniqueness after completion |
+| `NLS.Fourier.ShiftedHilbert` | Contractive odd-index sampling; normalized shifted Hilbert operator on all `ℓ2`; explicit norm bound and exact finite reciprocal kernel |
 
 ## Current mathematical milestone
 
@@ -520,8 +524,8 @@ exponent, including `p=1`, under the already-reflected-potential hypothesis.
 The physical endpoint interpretation and Sobolev-domain isomorphisms in
 Lemmas 4.1–4.2 remain open. The later finite interval-extension construction
 below connects physical integrals to these base coefficient spaces, but the
-uniform discrete-Hilbert-transform estimate in Lemma 4.3 still requires proof
-for `1<p<∞`.
+uniform discrete-Hilbert-transform estimate in Lemma 4.3 is now proved at
+`p=2` below; the other exponents in `1<p<∞` still require proof.
 
 **The full boundary resolvents and spectral decomposition are proved.**
 `BoundaryCondition` selects either restriction without changing its operator.
@@ -633,10 +637,36 @@ This finite-input construction also works at `p=∞`, without claiming a uniform
 odd amplitude `-i/[π(2l+1)]`; comparison with the harmonic series proves its
 physical coefficient sequence is not in `ℓ1`.
 
-A bound uniform in the input `ℓp` norm, `1<p<∞`, remains unproved. Kernel
-membership and finite synthesis alone do not justify completion by density.
-Only boundedness of the relevant discrete Hilbert transform is needed; no
-invertibility assertion from Appendix C.1 is assumed.
+Kernel membership and finite synthesis alone do not justify completion by
+density. The uniform estimate at `p=2` is now proved using Parseval as follows;
+the remaining exponents still require a boundedness argument. Only boundedness
+of the relevant discrete Hilbert transform is needed; no invertibility assertion
+from Appendix C.1 is assumed.
+
+**The uniform Hilbert-space interval extension is proved.** The actual
+period-two coefficient integrals agree with mathlib's interval Fourier
+coefficients. Parseval computes the energy of each finite period-one polynomial.
+Splitting at the reflected join gives the sum of the two input energies, even
+when that join has a jump. Thus, for either boundary sign, the output amplitude
+has squared `ℓ2` norm `(‖u‖²+‖v‖²)/2`. The reflected pair has exactly the
+amplitude norm, so the finite extension is contractive in the maximum pair norm,
+with a bound independent of Fourier support.
+
+The canonical finite coefficient inclusion has dense range at every finite
+Banach exponent. At `p=2`, the uniform bound constructs
+`hilbertIntervalExtension : PairSpace 2 →L[ℂ] PairSpace 2`. It agrees with the
+physical Fourier formulas on polynomial input and is the unique continuous
+linear map with that agreement. Closedness carries boundary membership and
+the exact energy identity to arbitrary coefficient pairs. The latter also
+proves injectivity. Physical Sobolev-domain identification and surjectivity
+onto the boundary space are not asserted by this construction.
+
+Odd-index sampling is a contraction on `ℓ2`. Applied to the second component
+of the completed extension of `(0,a)`, and multiplied by `-2i`, it gives
+`shiftedHilbert : Coeff 2 →L[ℂ] Coeff 2`, with norm at most `2`. Its finite-input
+formula is `Σₖ a(k) 2/[π(2k-2n-1)]`, the shifted reciprocal transform needed in
+Lemma 4.3. This bound is sufficient and is not claimed optimal. Extending the
+boundedness result to the other exponents remains the next analytic obligation.
 
 The actual unbounded realization is now defined as
 
@@ -850,7 +880,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1922 declarations under `NLS`, including generated
+axioms. The current audit covers 1982 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1032,11 +1062,19 @@ first raw input index reversal on nonconstant data. They check physical/coeffici
 agreement and boundary membership at `p=3`, finite-input membership at `p=∞`,
 linearity at `p=2`, and the physical one-sided-constant obstruction at `p=1`.
 
+Hilbert-extension checks verify polynomial energy at a negative frequency,
+unequal component energies and the one-sided half-normalization, boundedness
+and boundary membership for arbitrary coefficients, analyticity, injectivity,
+and agreement with physical integrals on finite input. Shifted-kernel checks
+cover negative odd reindexing, annihilation of even modes, opposite signs
+across the half-integer pole, a complex negative-frequency input, and the
+uniform bound and complex linearity.
+
 ## Next milestones
 
-1. Prove the uniform shifted discrete Hilbert transform bound and complete the
-   finite interval-extension maps for `1<p<∞`. Construct the physical Sobolev
-   identifications in Lemmas 4.1–4.2, then transfer Theorem 1.4 and Lemma 4.5 to
+1. Extend the proved shifted Hilbert `ℓ2` bound to the other exponents in
+   `1<p<∞`, then complete their finite interval-extension maps. Construct the
+   physical Sobolev identifications in Lemmas 4.1–4.2, then transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.

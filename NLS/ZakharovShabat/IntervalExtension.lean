@@ -9,7 +9,8 @@ The Dirichlet extension retains a pair on `[0,1]` and reflects/swaps it on
 actual piecewise extensions in Chapter 1, §4, not the period-two boundary
 projections. The coefficient formulas are proved from the normalized integrals
 in (1.8)–(1.9), first for continuous functions and then finite Fourier polynomials.
-The uniform `ℓp → ℓp` estimate for `1 < p < ∞` is a separate remaining step.
+The uniform `ℓp → ℓp` estimate is separate: `HilbertIntervalExtension` proves
+the case `p=2`; the other exponents in `1 < p < ∞` remain open.
 -/
 
 noncomputable section
