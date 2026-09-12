@@ -718,3 +718,23 @@ The next A.9 step is the actual Fourier scaling from period two to arbitrary
 positive periods, including the normalization of physical square and
 fractional energies. The existing arbitrary-length kernel estimates do not
 replace that coefficient identification.
+
+
+The arbitrary-period scaling step is now proved. Restricted Lebesgue measure
+under `x ↦ cx` has inverse Jacobian `c⁻¹`; `MemLp` and nonnegative integrals
+transport with that exact factor. Kernel homogeneity and two changes of
+variables give the fractional factor `c^(2s-1)`, including infinite energies.
+The full intrinsic size has a proved bound accounting separately for its
+square-integral and fractional terms.
+
+The actual normalized integral on `[0,L]` with frequency `2πn/L` agrees with
+mathlib's interval Fourier coefficient and with the period-two coefficient of
+`f((L/2)·)`. Thus A.9's membership and uniform intrinsic bounds now hold on every
+positive period, including the zero branch with no fractional hypothesis and
+the separate half conclusion. At zero the normalization is `L^(-1/2)`.
+
+The next function-space step is the reverse comparison from physical periodic
+fractional energy to intrinsic interval energy, followed by the normed
+intrinsic Sobolev function-space identification. The forward comparison alone
+already proves A.9's coefficient conclusions; the reverse direction is the
+remaining part of the equality of Sobolev spaces invoked in its proof.

@@ -286,7 +286,7 @@ Sobolev regularities. A weight ratio in `ℓʳ` gives a bounded embedding when
 `1/q = 1/p + 1/r`, with its explicit Hölder norm as constant. For Sobolev
 weights the finite-`r` reciprocal is summable exactly when `(s-t)r > 1`.
 This estimate now composes with the physical interval regularity bridge to
-prove Appendix A.9's Fourier-Lebesgue membership range for period two,
+prove Appendix A.9's Fourier-Lebesgue membership range for every positive period,
 including the zero- and half-regularity conclusions.
 Appendix B.2 is now proved for every Banach exponent triple satisfying
 `1 + 1/r = 1/p + 1/q`, including all infinity endpoints. Convolution is
@@ -511,7 +511,11 @@ installation is absent. No shell startup files are modified.
   the original interval's intrinsic Gagliardo size, with finite constants
   depending only on regularity and the target exponent. Its zero-regularity
   normalization is sharp, and the half-regularity bound uses an explicit lower
-  index. Rescaling the Fourier statement to arbitrary periods remains.
+  index. Actual Fourier scaling now extends these conclusions to every
+  positive interval length. Square energy scales by `c⁻¹` and fractional
+  energy by `c^(2s-1)`; the zero-regularity norm bound has normalization
+  `L^(-1/2)` on length `L`. The intrinsic normed function-space API and reverse
+  interval/periodic identification remain separate work.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -6404,3 +6404,116 @@ example :
       (Fourier.intervalL2TargetCoefficients (q := ⊤) le_top (fun _ : ℝ => Complex.I) imaginaryConstant_memLp) 0
     norm_num [Fourier.intervalL2TargetCoefficients_apply, Fourier.periodTwoCoefficient] at hn
     exact hn
+
+-- Positive physical dilation has the inverse Jacobian on square energy.
+example (f : ℝ → ℂ) : Fourier.intervalSquareEnergy 2 (Fourier.intervalDilation 4 f) =
+    ENNReal.ofReal (1 / 4 : ℝ) * Fourier.intervalSquareEnergy 8 f := by
+  convert Fourier.intervalSquareEnergy_dilation (by norm_num : (0 : ℝ) < 4) 2 f using 1
+  norm_num
+
+-- At quarter regularity a dilation of four contributes one half, not a square Jacobian alone.
+example (f : ℝ → ℂ) : Fourier.fractionalIntervalEnergy (1 / 4) 2 (Fourier.intervalDilation 4 f) =
+    ENNReal.ofReal (1 / 2 : ℝ) * Fourier.fractionalIntervalEnergy (1 / 4) 8 f := by
+  have h := Fourier.fractionalIntervalEnergy_dilation (by norm_num : (0 : ℝ) < 4) (1 / 4) 2 f
+  norm_num [show 2 * (1 / 4 : ℝ) - 1 = -(1 / 2 : ℝ) by norm_num,
+    Real.rpow_neg (by norm_num : (0 : ℝ) ≤ 4), Real.rpow_div_two_eq_sqrt] at h ⊢
+  exact h
+
+-- Intrinsic half energy is invariant under positive dilation, including infinite energy.
+example (f : ℝ → ℂ) : Fourier.fractionalIntervalEnergy (1 / 2) 2 (Fourier.intervalDilation 3 f) =
+    Fourier.fractionalIntervalEnergy (1 / 2) 6 f := by
+  convert Fourier.fractionalIntervalEnergy_dilation (by norm_num : (0 : ℝ) < 3) (1 / 2) 2 f using 1
+  norm_num
+
+-- The kernel identity also covers the diagonal at the exceptional exponent s=-1/2.
+example : Fourier.fractionalDistanceKernel (-1 / 2) 1 1 = 1 := by
+  norm_num [Fourier.fractionalDistanceKernel]
+
+-- Periods on either side of two have the actual coefficient normalization.
+example (f : ℝ → ℂ) (n : ℤ) :
+    Fourier.periodTwoCoefficient (Fourier.intervalDilation (1 / 2) f) n = Fourier.intervalFourierCoefficient 1 f n := by
+  simpa using Fourier.periodTwoCoefficient_intervalDilation (by norm_num : (0 : ℝ) < 1) f n
+
+example (f : ℝ → ℂ) (n : ℤ) :
+    Fourier.intervalFourierCoefficient 4 f n = fourierCoeffOn (by norm_num : (0 : ℝ) < 4) f n :=
+  Fourier.intervalFourierCoefficient_eq_fourierCoeffOn (by norm_num) f n
+
+-- A nonzero imaginary negative-frequency wave on period four recovers its own coefficient.
+example : Fourier.intervalFourierCoefficient 4 (fun x : ℝ => Complex.I * Fourier.wave (-3) (x / 2)) (-3) = Complex.I := by
+  unfold Fourier.intervalFourierCoefficient
+  have he : (fun x : ℝ => Complex.I * Fourier.wave (-3) (x / 2) * Fourier.wave (-(-3)) ((2 / 4) * x)) =
+      fun _ => Complex.I := by
+    funext x
+    rw [show (2 / 4 : ℝ) * x = x / 2 by ring, mul_assoc, ← Fourier.wave_add]
+    norm_num
+  rw [he]
+  norm_num
+  ring
+
+private theorem lengthFourRamp_memLp :
+    MeasureTheory.MemLp intervalRamp 2 (MeasureTheory.volume.restrict (Set.Ioc 0 4)) := by
+  apply MeasureTheory.MemLp.of_bound (by unfold intervalRamp; fun_prop) 4
+  filter_upwards [MeasureTheory.ae_restrict_mem measurableSet_Ioc] with x hx
+  simpa only [intervalRamp, Complex.norm_real, Real.norm_of_nonneg hx.1.le] using hx.2
+
+private theorem lengthFourRamp_half_energy_le : Fourier.fractionalIntervalEnergy (1 / 2) 4 intervalRamp ≤ 16 := by
+  have hpoint (x y : ℝ) : ENNReal.ofReal (‖intervalRamp x - intervalRamp y‖ ^ 2) *
+      Fourier.fractionalDistanceKernel (1 / 2) x y ≤ 1 := by
+    simp only [intervalRamp, ← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs,
+      Fourier.fractionalDistanceKernel]
+    rw [← ENNReal.ofReal_mul (sq_nonneg _)]
+    apply (ENNReal.ofReal_le_ofReal (show |x - y| ^ 2 * |x - y| ^ (-(1 + 2 * (1 / 2 : ℝ))) ≤ 1 from ?_)).trans_eq (by norm_num)
+    by_cases he : |x - y| = 0
+    · simp [he]
+    have hp : 0 < |x - y| := lt_of_le_of_ne (abs_nonneg _) (Ne.symm he)
+    rw [← Real.rpow_two |x - y|, ← Real.rpow_add hp]
+    norm_num
+  calc
+    _ ≤ ∫⁻ x : ℝ in Set.Ioo 0 4, ∫⁻ y : ℝ in Set.Ioo 0 4, (1 : ℝ≥0∞) := by
+      apply MeasureTheory.lintegral_mono
+      intro x
+      apply MeasureTheory.lintegral_mono
+      exact hpoint x
+    _ = 16 := by norm_num [Real.volume_Ioo]
+
+-- The general source range applies to a genuinely nonperiodic interval of length four.
+example : Memℓp (Fourier.intervalFourierCoefficient 4 intervalRamp) (ENNReal.ofReal (3 / 2)) := by
+  exact Fourier.memlp_intervalFourierCoefficient (by norm_num) (s := 1 / 4) (by norm_num) (by norm_num)
+    (by norm_num) intervalRamp lengthFourRamp_memLp
+    (Fourier.fractionalIntervalEnergy_lt_top_of_regularity (by norm_num) (by norm_num) (by norm_num)
+      intervalRamp (lengthFourRamp_half_energy_le.trans_lt (by norm_num)))
+
+example : Memℓp (Fourier.intervalFourierCoefficient 4 intervalRamp) (ENNReal.ofReal (6 / 5)) :=
+  Fourier.memlp_intervalFourierCoefficient_of_half (by norm_num) (by norm_num) intervalRamp lengthFourRamp_memLp
+    (lengthFourRamp_half_energy_le.trans_lt (by norm_num))
+
+-- The zero branch of the unified A.9 statement requires no fractional energy.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 1))) :
+    Memℓp (Fourier.intervalFourierCoefficient 1 f) (ENNReal.ofReal (3 : ℝ)) :=
+  Fourier.memlp_intervalFourierCoefficient_of_nonneg (s := 0) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) f hf (by norm_num)
+
+-- Both the subcritical and half bounds use the original arbitrary-length intrinsic size.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 4)))
+    (hE : Fourier.fractionalIntervalEnergy (1 / 4) 4 f < ⊤)
+    (hm : Memℓp (Fourier.intervalFourierCoefficient 4 f) (ENNReal.ofReal (3 / 2))) :
+    ‖Fourier.intervalFourierCoefficients 4 f hm‖ ≤
+      Fourier.arbitraryPeriodFourierBoundConstant 4 (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+        (by norm_num : 1 / ((1 / 4 : ℝ) + 1 / 2) < 3 / 2) * Fourier.intrinsicIntervalSize (1 / 4) 4 f :=
+  Fourier.norm_intervalFourierCoefficients_le (by norm_num) (by norm_num) (by norm_num) (by norm_num) f hf hE hm
+
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 4)))
+    (hE : Fourier.fractionalIntervalEnergy (1 / 2) 4 f < ⊤)
+    (hm : Memℓp (Fourier.intervalFourierCoefficient 4 f) (ENNReal.ofReal (6 / 5))) :
+    ‖Fourier.intervalFourierCoefficients 4 f hm‖ ≤
+      (Fourier.halfIntervalFourierLebesgueBoundConstant (by norm_num : (1 : ℝ) < 6 / 5) *
+        Real.sqrt (Fourier.intrinsicDilationConstant (1 / 2) 2).toReal) * Fourier.intrinsicIntervalSize (1 / 2) 4 f := by
+  simpa only [show (4 : ℝ) / 2 = 2 by norm_num] using Fourier.norm_intervalFourierCoefficients_half_le (by norm_num) (by norm_num) f hf hE hm
+
+-- The infinity bound at length four has the sharp normalization factor one half.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 4)))
+    (hm : Memℓp (Fourier.intervalFourierCoefficient 4 f) ⊤) :
+    ‖Fourier.intervalFourierCoefficients 4 f hm‖ ≤ (1 / 2 : ℝ) * Real.sqrt (Fourier.intervalSquareEnergy 4 f).toReal := by
+  simpa only [show Real.sqrt (1 / (4 : ℝ)) = 1 / 2 by
+    rw [Real.sqrt_eq_iff_eq_sq (by norm_num) (by norm_num)]
+    norm_num] using Fourier.norm_intervalFourierCoefficients_of_memLp_le (by norm_num) le_top f hf hm

@@ -177,3 +177,7 @@ import NLS.Fourier.IntrinsicIntervalEnergy
 import NLS.Fourier.FractionalHardyBound
 import NLS.Fourier.IntervalSobolevBound
 import NLS.Fourier.IntervalFourierLebesgueBound
+import NLS.Fourier.IntervalDilation
+import NLS.Fourier.FractionalDilation
+import NLS.Fourier.IntervalCoefficientScaling
+import NLS.Fourier.ArbitraryPeriodFourierLebesgue
