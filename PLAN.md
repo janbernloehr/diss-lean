@@ -372,11 +372,17 @@ signed eigenfunction extensions intertwine the actual differential equation,
 and nonzero original eigenfunctions enter the selected boundary and periodic
 coefficient spectra with the same eigenvalue.
 
-Next prove the converse restriction of coefficient boundary eigenvectors and
-identify the original classical spectra. Then transfer the counting and
-analytic-eigenvalue results using the physical potential parameter spaces and
-norms. Both boundary spectral problems use the
-Dirichlet extension of the potential; the boundary sign selects the eigenfunction
+The converse restriction now identifies the original classical eigenvalue sets
+with the coefficient boundary spectra. They are closed, discrete, and finite
+in bounded regions; their union equals the periodic coefficient spectrum.
+Both free sets are exactly `πℤ`, including odd modes, and a.e. equal potentials
+have equal eigenvalue sets.
+
+Next construct the physical potential parameter spaces and norm comparisons,
+then transfer counting and analytic-eigenvalue results. A physical `L²` base-space
+equivalence and an independently defined interval operator/resolvent remain
+separate obligations; equality of eigenvalue sets does not supply these.
+Both boundary spectral problems use the Dirichlet extension of the potential; the boundary sign selects the eigenfunction
 extension and restricted domain. Preserve this distinction in the transfer.
 Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion

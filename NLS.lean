@@ -80,3 +80,4 @@ import NLS.ZakharovShabat.ClassicalIntervalNorm
 import NLS.ZakharovShabat.ClassicalIntervalIsomorphism
 import NLS.ZakharovShabat.PhysicalOperator
 import NLS.ZakharovShabat.ClassicalIntervalTransfer
+import NLS.ZakharovShabat.ClassicalIntervalEigenvalues

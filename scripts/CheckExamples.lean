@@ -3739,3 +3739,59 @@ example (b : BoundaryCondition) (f g : ℝ → ℂ × ℂ)
 
 end
 end IntervalTransferChecks
+
+
+namespace IntervalEigenvalueChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+noncomputable section
+
+-- Both free interval problems retain negative odd lattice eigenvalues.
+example (b : BoundaryCondition) : (-3 * (Real.pi : ℂ)) ∈ classicalEigenvalues b 0 := by
+  rw [classicalEigenvalues_zero]
+  exact ⟨-3, by norm_num; ring⟩
+
+-- The converse produces an actual nonzero H1 function satisfying the physical equation.
+example : ∃ f : ℝ → ℂ × ℂ, HasClassicalIntervalDomain .neumann f ∧
+    ¬ EqOn f 0 (Icc 0 1) ∧
+    physicalOperator 0 f =ᵐ[volume.restrict (Ioc 0 1)]
+      (fun x => (-3 * (Real.pi : ℂ)) • f x) := by
+  change (-3 * (Real.pi : ℂ)) ∈ classicalEigenvalues .neumann 0
+  rw [classicalEigenvalues_zero]
+  exact ⟨-3, by norm_num; ring⟩
+
+-- The exact characterization excludes nonreal spectral values for the zero potential.
+example (b : BoundaryCondition) : Complex.I ∉ classicalEigenvalues b 0 := by
+  rw [classicalEigenvalues_zero]
+  rintro ⟨n, hn⟩
+  have hi := congrArg Complex.im hn
+  simp at hi
+
+-- A nonzero potential at a single interior point does not alter the free eigenvalue set.
+example (b : BoundaryCondition) :
+    classicalEigenvalues b (fun x : ℝ => if x = 1 / 2 then ((2 : ℂ), (3 : ℂ)) else 0) =
+      freeLattice := by
+  calc
+    _ = classicalEigenvalues b 0 := classicalEigenvalues_congr_ae b (by
+      filter_upwards [ae_restrict_of_ae (volume.ae_ne (1 / 2 : ℝ))] with x hx
+      exact if_neg hx)
+    _ = freeLattice := classicalEigenvalues_zero b
+
+-- Arbitrary original L2 potentials have finitely many eigenvalues in each closed disk.
+example (b : BoundaryCondition) (φ : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) (c : ℂ) (r : ℝ) :
+    Set.Finite (classicalEigenvalues b φ ∩ Metric.closedBall c r) :=
+  finite_classicalEigenvalues_inter_of_isBounded b φ hφ Metric.isBounded_closedBall
+
+-- Every periodic eigenvalue of the Dirichlet-reflected potential has an original boundary eigenfunction.
+example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) (z : ℂ)
+    (hz : z ∈ periodicSpectrum (by simp) (dirichletPotentialCoefficients φ hφ)) :
+    ∃ b : BoundaryCondition, ∃ f : ℝ → ℂ × ℂ, HasClassicalIntervalDomain b f ∧
+      ¬ EqOn f 0 (Icc 0 1) ∧
+      physicalOperator φ f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x) := by
+  rw [periodicSpectrum_eq_classicalEigenvalues_union φ hφ] at hz
+  rcases hz with hd | hn
+  · exact ⟨.dirichlet, hd⟩
+  · exact ⟨.neumann, hn⟩
+
+end
+end IntervalEigenvalueChecks

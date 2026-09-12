@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 132 modules and 1297 named public theorems. All compile on the
+The library has 133 modules and 1308 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -139,6 +139,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntervalL2Realization` | Actual normalized coefficients of arbitrary physical `L²` period data; a.e. reconstruction through a measurable circle lift, the other inverse, and invariance under a.e. equality |
 | `NLS.ZakharovShabat.IntervalEquationReflection` | Physical operator congruence on a period, a.e. signed-reflection congruence, differential-expression intertwining with Dirichlet potential reflection for both boundary signs, and the original physical equation transfer |
 | `NLS.ZakharovShabat.ClassicalIntervalTransfer` | Arbitrary original `L²` potential extension, exact physical coefficients and reconstruction, Dirichlet coefficient membership, Lemma 4.1 in the existing coefficient operator, nonzero eigenvector preservation, and original eigenvalue inclusion in boundary and periodic spectra |
+| `NLS.ZakharovShabat.ClassicalIntervalEigenvalues` | Converse physical restriction and nonzero preservation; original eigenvalues defined by the differential equation and classical endpoints; equality with coefficient boundary spectra; a.e. potential invariance; closedness, discreteness, bounded-region finiteness, periodic union, and exact free lattice |
 
 ## Current mathematical milestone
 
@@ -1261,15 +1262,37 @@ to the chosen weighted boundary domain and realizes the classical periodic
 `H¹` extension. A nonzero original function on `[0,1]` remains nonzero.
 
 This proves Lemma 4.1's classical eigenfunction transfer. The original eigenvalue
-is now proved to belong to both the selected coefficient boundary spectrum
-and the periodic spectrum of `φdir`. These are forward inclusions; the converse
-restriction theorem and equality with an original classical spectrum have not
-yet been proved.
+belongs to both the selected coefficient boundary spectrum and the periodic
+spectrum of `φdir`.
+
+## Original interval eigenvalue sets
+
+`classicalEigenvalues b φ` is defined directly by the original physical equation
+almost everywhere on `[0,1]`, classical `H¹` regularity, the selected endpoint
+conditions, and nonvanishing on the interval. Its definition uses no Fourier
+coefficients. A.e. equal potentials give the same eigenvalue set.
+
+The coefficient potential restricts to the original potential almost everywhere.
+Every coefficient eigen-equation therefore restricts to the original equation.
+For boundary vectors, the restriction satisfies the classical endpoint domain;
+injectivity of restriction ensures that a nonzero vector remains nonzero.
+Together with forward extension, this proves exact equality with the selected
+coefficient boundary spectrum.
+
+Consequently the original eigenvalue sets are closed, have the discrete subspace
+topology, and meet every bounded region in finitely many points. Their union is
+the periodic coefficient spectrum of the Dirichlet-reflected potential. For the
+zero potential both original sets are exactly `πℤ`, with odd indices retained.
+
+These are eigenvalue-set identities. An independently defined original interval
+`L²` operator and its resolvent equivalence still require a physical base-space
+construction. Multiplicity, counting, and analytic transfer also remain separate
+from the eigenvalue-set identification.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2750 declarations under `NLS`, including generated
+axioms. The current audit covers 2765 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1561,12 +1584,20 @@ reflected-half equation has the correct sign. This example enters both the
 already-constructed boundary and periodic spectra. The checks also exercise
 transport of a.e. equalities for either signed extension.
 
+Eigenvalue-set checks retain negative odd free modes for both boundary conditions,
+produce an original nonzero Neumann eigenfunction from a coefficient eigenvalue,
+and exclude the nonreal value `i` for the free potential. A potential supported
+at one interior point has exactly the free lattice. Further checks cover finite
+intersection with any closed disk and original eigenfunction existence for every
+periodic spectral point of a Dirichlet-reflected potential.
+
 ## Next milestones
 
-1. Restrict coefficient boundary eigenvectors back to original classical
-   eigenfunctions and identify the two spectra. Then transfer the counting and
-   analytic statements of Theorem 1.4 and Lemma 4.5 to original potentials, with
-   their physical potential norms and parameter spaces.
+1. Construct the original physical potential parameter spaces and norm
+   comparisons, then transfer the counting and analytic statements of
+   Theorem 1.4 and Lemma 4.5. Construct the physical `L²` base-space and
+   interval operator/resolvent equivalence separately from the now-proved
+   eigenvalue-set equality.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.
 3. Prove the periodic Fourier/distribution realization, physical period-one

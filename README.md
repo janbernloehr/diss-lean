@@ -159,9 +159,12 @@ multiplication. The full coefficient operator agrees almost everywhere with
 and coefficient eigen-equations are equivalent on a full period. Lemma 4.1 now
 transfers both original classical boundary eigenfunctions through signed
 reflection, using the Dirichlet extension of the potential in both cases.
-Nonzero original eigenfunctions give eigenvalues in the selected boundary
-spectrum and the periodic spectrum. The converse spectral identification,
-general Fourier/distribution realization, and multiplication beyond the Hilbert
+Restriction proves the converse: the independently defined original classical
+eigenvalue sets equal the coefficient boundary spectra. They are closed,
+discrete, finite in bounded regions, and their union is the periodic spectrum
+of the reflected potential. For the zero potential both sets are exactly `πℤ`.
+An independent physical `L²` operator/resolvent equivalence, the general
+Fourier/distribution realization, and multiplication beyond the Hilbert
 realization remain needed for the full transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
