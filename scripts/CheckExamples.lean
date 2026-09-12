@@ -1121,3 +1121,53 @@ example : operator (by simp) oddShiftPotential (positiveMode 0) ∉ pairParitySu
     simp [operator_fst_apply, oddShiftPotential, positiveMode, lp.single_apply, Pi.single_apply]
   rw [hvalue] at hzero
   exact one_ne_zero hzero
+
+-- The constant eigenvalue has two independent components even though the raw indices coincide.
+example : periodicAlgebraicMultiplicity (p := 1) (by simp) 0 0 = 2 := by
+  simpa using periodicAlgebraicMultiplicity_zero (p := 1) (by simp) 0
+
+example : periodicAlgebraicMultiplicity (p := 3) (by simp) 0
+    ((Real.pi : ℂ) * (-3 : ℤ)) = 2 :=
+  periodicAlgebraicMultiplicity_zero (by simp) (-3)
+
+example (n : ℤ) : periodicRootSpace (p := 3) (by simp) 0 ((Real.pi : ℂ) * n) 1 =
+    periodicRootSpaceTop (by simp) 0 ((Real.pi : ℂ) * n) :=
+  periodicRootSpace_one_zero_eq_top (by simp) n
+
+-- At radius pi the adjacent lattice points lie on the boundary, outside the open disk.
+example : enclosedPeriodicSpectrum (p := 1) (by simp) 0
+    ((Real.pi : ℂ) * (-2 : ℤ)) Real.pi = {((Real.pi : ℂ) * (-2 : ℤ))} :=
+  enclosedPeriodicSpectrum_zero (by simp) (-2) Real.pi_pos le_rfl
+
+example (φ : PairSpace 3) : ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+    (∑ z ∈ enclosedPeriodicSpectrum (by simp) φ ((Real.pi : ℂ) * n) (Real.pi / 4),
+      periodicAlgebraicMultiplicity (by simp) φ z) = 2 := by
+  obtain ⟨N, U, _, _, hφ, _, h⟩ :=
+    exists_uniform_disk_multiplicity_two (by simp) φ (by positivity) le_rfl
+  exact ⟨N, fun n hn => (h φ hφ n hn).2.2⟩
+
+-- A large one-sided potential has count two in every quarter-pi disk: the
+-- deformation uses nilpotence, with no smallness bound on the potential.
+example (a : Coeff 3) (n : ℤ) :
+    (∑ z ∈ enclosedPeriodicSpectrum (by simp) (a, 0)
+      ((Real.pi : ℂ) * n) (Real.pi / 4),
+      periodicAlgebraicMultiplicity (by simp) (a, 0) z) = 2 := by
+  let U : Set (PairSpace 3) := {ψ | ψ.2 = 0}
+  have hconv : Convex ℝ U := by
+    intro x hx y hy s t _ _ _
+    change s • x.2 + t • y.2 = 0
+    change x.2 = 0 at hx
+    change y.2 = 0 at hy
+    rw [hx, hy, smul_zero, smul_zero, add_zero]
+  have hc : ∀ ψ ∈ U, Metric.sphere ((Real.pi : ℂ) * n) (Real.pi / 4) ⊆
+      resolventSet (by simp) ψ := by
+    intro ψ hψ z hz
+    have hz0 := notMem_freeLattice_of_mem_verticalStrip (by positivity : 0 < Real.pi / 4)
+      le_rfl (sphere_subset_verticalStrip n le_rfl hz)
+    exact mem_resolventSet_of_squaredNeumannCondition (by simp) ψ z hz0
+      (squaredNeumannCondition_of_oneSided (by simp) ψ z hz0 (Or.inr hψ))
+  have he := sum_enclosed_multiplicity_eq_on_preconnected (by simp) ((Real.pi : ℂ) * n)
+    (Real.pi / 4) (by positivity) hconv.isPreconnected hc
+    (show (a, 0) ∈ U from rfl) (show (0 : PairSpace 3) ∈ U from rfl)
+  exact he.trans (sum_enclosed_multiplicity_zero (by simp) n (by positivity)
+    (by linarith [Real.pi_pos]))

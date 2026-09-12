@@ -47,7 +47,10 @@ containing both that potential and zero. The exterior resolvent is compact
 and analytic. Closed complementary even/odd Fourier subspaces and their
 invariance under even-supported potentials are also proved (Lemma 3.6),
 including preservation by the full resolvent and spectral circle projections.
-The multiplicity counts and main dissertation theorems remain future work.
+The high-frequency disk count in Proposition 1.1(i) is proved: each sufficiently
+far disk has total algebraic multiplicity two, uniformly on such a neighborhood.
+The parity of these eigenvalues, central-region counts, and main dissertation
+theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -155,7 +158,8 @@ installation is absent. No shell startup files are modified.
   containing zero, with the central box and disks specified in Corollary 3.5.
   The closed even/odd coefficient subspaces are complementary. Even-supported
   potentials preserve both subspaces, as do their resolvents and spectral
-  circle projections.
+  circle projections. At `π n`, free root spaces are exactly two-dimensional
+  ordinary eigenspaces; deformation from zero proves the high-frequency disk count.
 - The coefficient representation is not yet identified with periodic
   distributions. That equivalence is a separate proof obligation.
 - No spectral or classical Birkhoff results are introduced as axioms.

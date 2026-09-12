@@ -171,9 +171,15 @@ full resolvent, and spectral circle integrals satisfy the corresponding
 projection identities and preserve both parities. Signed free modes retain
 the parity of their spectral index, including negative frequencies.
 
-Next combine the free-mode decomposition with contour rank stability on the
-connected potential neighborhood to prove the high-frequency disk counts
-and their parity. Construct the central rectangular contour for the remaining
-counts in Proposition 1.1.
+The high-frequency disk count in Proposition 1.1(i) is proved. A coefficient
+induction rules out longer free Jordan chains, and the two signed modes give
+algebraic multiplicity two. Contour rank and total multiplicity are constant on
+any preconnected admissible family. The uniform convex neighborhood from
+Lemma 3.4 therefore gives rank two and total algebraic multiplicity two in
+every sufficiently far disk, for every positive radius at most `π/4`.
+
+Next apply the deformation argument to the parity projections to establish
+the parity assertion in Proposition 1.1(i). Construct the central rectangular
+contour for the remaining counts in Proposition 1.1.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

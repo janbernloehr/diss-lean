@@ -48,3 +48,5 @@ import NLS.ZakharovShabat.FrequencyLocalization
 import NLS.ZakharovShabat.SpectralLocalization
 import NLS.SequenceSpaces.Parity
 import NLS.ZakharovShabat.PeriodicParity
+import NLS.ZakharovShabat.FreeMultiplicity
+import NLS.ZakharovShabat.DiskMultiplicity
