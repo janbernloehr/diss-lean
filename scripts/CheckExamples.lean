@@ -3093,3 +3093,75 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (b : BoundaryCondition) (hp : 1 < p) (
 
 end
 end BoundedIntervalChecks
+
+namespace SobolevSynthesisChecks
+open NLS NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- A negative odd mode keeps its complex amplitude and changes sign at x = 1.
+example : sobolevSynthesis (p := 2) (by simp) (scalarMode (-1) Complex.I)
+    ((1 : ℝ) : AddCircle (2 : ℝ)) = -Complex.I := by
+  rw [sobolevSynthesis_scalarMode]
+  have h : wave (-1) 1 = -1 := by
+    convert wave_odd_at_one (-1) using 1
+    norm_num
+  rw [h]
+  ring
+
+-- An odd mode is a valid domain representative but is not period one.
+example : ¬Function.Periodic (fun x : ℝ =>
+    sobolevSynthesis (p := 2) (by simp) (scalarMode 1 1) (x : AddCircle (2 : ℝ))) 1 := by
+  intro h
+  have h0 := h 0
+  simp only [zero_add, sobolevSynthesis_scalarMode, one_mul, wave_at_zero] at h0
+  have h1 : wave 1 1 = -1 := by simpa using wave_odd_at_one 0
+  rw [h1] at h0
+  norm_num at h0
+
+-- Actual integrals recover a negative-frequency coefficient with no conjugation.
+example : periodTwoCoefficient (fun x : ℝ =>
+    continuousSynthesis (lp.single 1 (-3) Complex.I) (x : AddCircle (2 : ℝ))) (-3) =
+      Complex.I := by
+  rw [periodTwoCoefficient_continuousSynthesis]
+  simp
+
+-- Uniform control at the p = 1 endpoint uses the explicit constant 2p.
+example (a : ScalarDomain 1) : ‖sobolevSynthesis (by simp) a‖ ≤ 2 * ‖a‖ := by
+  simpa using norm_sobolevSynthesis_le_two_mul (by simp) a
+
+-- Uniform finite approximation holds at a non-Hilbert exponent as well.
+example (a : ScalarDomain 3) :
+    HasSum (fun n : ℤ => a.val n • fourier n) (sobolevSynthesis (by simp) a) :=
+  hasSum_sobolevSynthesis _ a
+
+-- Reflection reverses frequency without conjugating the imaginary amplitude.
+example : sobolevSynthesis (p := 3) (by simp)
+    (WeightedCoeff.reflection 1 (scalarMode 1 Complex.I)) (0 : AddCircle (2 : ℝ)) =
+      Complex.I := by
+  change sobolevTrace (p := 3) (by simp) 0
+    (WeightedCoeff.reflection 1 (scalarMode 1 Complex.I)) = _
+  rw [sobolevTrace_reflection_zero, sobolevTrace_apply, sobolevSynthesis_scalarMode,
+    wave_at_zero, mul_one]
+
+-- A nonzero sine-type combination has zero values at both interval endpoints.
+example : sobolevTrace (p := 2) (by simp) 0
+      (scalarMode 1 Complex.I - WeightedCoeff.reflection 1 (scalarMode 1 Complex.I)) = 0 ∧
+    sobolevTrace (p := 2) (by simp) 1
+      (scalarMode 1 Complex.I - WeightedCoeff.reflection 1 (scalarMode 1 Complex.I)) = 0 := by
+  apply sobolevTrace_eq_zero_of_odd
+  rw [map_sub, WeightedCoeff.reflection_reflection, neg_sub]
+
+-- The continuous and L² representatives agree as Lp equivalence classes.
+example (a : ScalarDomain 2) :
+    ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (sobolevSynthesis (by simp) a) =
+      l2Synthesis (scalarInclusion a) := toLp_sobolevSynthesis a
+example (a : Coeff 2) (n : ℤ) : fourierCoeff (l2Synthesis a) n = a n := by simp
+
+-- Agreement of all coefficients identifies a continuous representative everywhere.
+example (a : ScalarDomain 2) (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ∀ n, fourierCoeff f n = a.val n) : f = sobolevSynthesis (by simp) a :=
+  eq_sobolevSynthesis_of_fourierCoeff _ a f hf
+
+end
+end SobolevSynthesisChecks

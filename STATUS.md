@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 108 modules and 1108 named public theorems. All compile on the
+The library has 110 modules and 1142 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -115,6 +115,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.Insertion` | Zero insertion along an integer embedding as a linear isometry at every Banach exponent; image and outside-image formulas; even/odd index embeddings |
 | `NLS.Fourier.HalfIntervalBoundedness` | Bounded half-interval Fourier map for every `1<p<∞`; exact even/odd coefficients, finite integral agreement, explicit bound, and injectivity |
 | `NLS.ZakharovShabat.BoundedIntervalExtension` | Full-range Dirichlet/Neumann interval maps into the actual boundary spaces; bounds and analyticity; finite physical integral agreement, uniqueness, parity formulas, and equality with the Parseval completion at `p=2` |
+| `NLS.Fourier.ContinuousSynthesis` | Uniformly convergent period-two synthesis from `ℓ1`; contraction, injectivity, continuous coefficient extraction, actual normalized interval integrals, and single-mode agreement |
+| `NLS.Fourier.SobolevSynthesis` | Continuous representatives for every finite Banach exponent; explicit `2p` bound, uniform finite approximation, uniqueness, bounded traces, physical reflection, odd endpoint vanishing, and agreement with the normalized `L²` Fourier inverse |
 
 ## Current mathematical milestone
 
@@ -1030,10 +1032,33 @@ Agreement of multiplicities with characteristic-function zero orders remains ope
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
 
+## Continuous Fourier representatives
+
+Absolutely summable coefficients now synthesize to continuous functions on the
+period-two circle, with uniform norm at most the coefficient `ℓ1` norm. The
+normalized physical integrals over `[0,2]` recover every coefficient. Fourier
+coefficients determine a continuous function everywhere, giving injectivity and
+uniqueness of the representative.
+
+Composing with the one-derivative embedding gives `sobolevSynthesis` for every
+`1 ≤ p < ∞`, with uniform norm bounded by `C_p ‖a‖ ≤ 2p ‖a‖`. Its Fourier series
+converges in the uniform norm, as do the finite weighted truncations. Evaluation
+at every real point is a bounded linear trace functional. Weighted frequency
+reflection agrees with physical reflection `x ↦ 2-x`; it fixes both original
+interval endpoint traces, and odd reflection symmetry forces them to vanish.
+All integer modes are retained. In particular, odd modes are period two and
+need not be period one.
+
+At `p=2`, the representative agrees as an `L²` class with the inverse of
+mathlib's normalized Fourier Hilbert basis, so its normalized `L²` norm equals
+the raw coefficient norm. These are prerequisites for Lemmas 4.1–4.2. The
+identification of the Fourier derivative with the classical weak derivative,
+absolute continuity, and the interval-domain isomorphisms remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2374 declarations under `NLS`, including generated
+axioms. The current audit covers 2445 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1264,9 +1289,18 @@ tail. Other checks cover arbitrary-input boundary membership, bounds into the
 boundary subtype, analyticity, physical finite integral agreement, uniqueness,
 and preservation of the exact Parseval energy identity at `p=2`.
 
+Continuous-synthesis checks recover a negative odd mode with imaginary amplitude,
+verify actual normalized integrals, and rule out an accidental period-one
+restriction. They cover uniform convergence at `p=3`, the uniform bound at `p=1`,
+reflection without complex conjugation, both zero endpoint traces of a sine-type
+combination, uniqueness of continuous representatives, and agreement with the
+`L²` Fourier inverse.
+
 ## Next milestones
 
-1. Construct the classical `H¹` / `FL^{1,2}` identifications in Lemmas 4.1–4.2, then
+1. Identify the Fourier derivative of the continuous representative with its
+   classical weak derivative and establish the `H¹` / `FL^{1,2}` interval-domain
+   isomorphisms in Lemmas 4.1–4.2, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and

@@ -125,8 +125,15 @@ insertion now assembles the bounded half-interval map. Signed reflection gives
 unique bounded, analytic Dirichlet and Neumann interval extensions for every
 `1<p<∞`, proving the coefficient form of Lemma 4.3. They agree with physical
 Fourier integrals on finite polynomials and with the Parseval map at `p=2`.
-Fourier/distribution and physical Sobolev-domain identifications remain needed
-for the full spectral transfer.
+Absolutely summable Fourier series now give continuous period-two functions with
+exactly the prescribed normalized interval integrals. Every one-derivative
+coefficient domain at finite `p` has a unique continuous representative, with
+uniform bound `2p`, uniform finite approximation, and bounded endpoint traces.
+Reflection agrees with `x ↦ 2-x`, and odd reflection symmetry gives zero endpoint
+values. At `p=2` the representative agrees with the normalized `L²` Fourier
+inverse. The classical weak-derivative and interval-domain identifications,
+Fourier/distribution realization, and physical multiplication remain needed for
+the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
