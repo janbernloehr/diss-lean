@@ -473,6 +473,14 @@ the continuous multiplier times a Schwartz test. This also proves agreement with
 all temperate smooth multipliers and with ordinary function products for `ℓ¹`
 potential data. On the finite-exponent one-derivative domain the full signed
 operator and its eigenvalue equations agree with these distributional products.
-Next characterize arbitrary periodic distributions with the required coefficient
-regularity. The source's distinct infinity-endpoint pair norm also remains a
-separate proof obligation.
+The Schwartz-to-circle bridge is now a continuous periodization map, with an
+absolutely convergent physical translate sum and exact period-two Poisson formula.
+It preserves the integral; a coefficient test at `n` periodizes to half the wave
+at `-n`. Explicit Schwartz lifts cover all Fourier polynomials and prove uniform
+density of periodizations. Its kernel is the common annihilator of the realized
+Fourier distributions, and translating a test by two preserves periodization.
+Next prove that every abstract periodic distribution annihilates this kernel,
+using convergence in the smooth/Schwartz topology rather than uniform density,
+and complete reconstruction under the prescribed coefficient regularity. The
+source's distinct infinity-endpoint pair norm also remains a separate proof
+obligation.

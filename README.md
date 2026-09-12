@@ -235,7 +235,14 @@ and extends uniquely to `ℓ¹` multiplier data by continuity. Its action uses
 absolutely convergent sums of real-line integrals against the continuous domain
 representative. The full signed derivative plus off-diagonal product, including
 its eigenvalue equations, agrees with the existing coefficient operator.
-The converse characterization of arbitrary periodic distributions remains open.
+Schwartz periodization is now a continuous map to the period-two circle, proved
+to equal the absolutely convergent sum of physical translates. Poisson summation
+gives its exact half-integer Fourier samples, including the normalization factor
+one half. Explicit Schwartz lifts cover all Fourier polynomials, and their
+periodizations are dense in the uniform norm. The kernel is exactly the common
+annihilator of all synthesized distributions at each Banach exponent.
+The converse characterization of arbitrary periodic distributions remains open;
+uniform density alone does not supply the required smooth-test argument.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 174 modules and 1672 named public theorems. All compile on the
+The library has 175 modules and 1685 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -19,6 +19,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.ProductTestSamples` | Summable actual Fourier integrals of continuous multiplier times Schwartz test; reflected convolution formula; norm control; compatibility with smooth tests |
 | `NLS.Fourier.DistributionProduct` | Unique continuous extension of smooth multiplication to Wiener coefficients; joint approximation independence; actual integral action; agreement with smooth and ordinary function products |
 | `NLS.ZakharovShabat.DistributionPotential` | Actual extended domain product; absolute test-integral formula and norm bound; arbitrary smooth approximations; full distributional operator and eigenvalue-equation identification |
+| `NLS.Fourier.SchwartzPeriodization` | Continuous period-two Schwartz periodization; absolutely convergent translates and Poisson formula; exact coefficient and integral normalization; polynomial lifts and uniform density; kernel and synthesized-distribution annihilator |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -1767,10 +1768,38 @@ This is the full operator identification on the realized Fourier domain.
 It does not yet characterize every abstract periodic distribution as an element
 of that domain, or settle the separate source infinity pair norm.
 
+## Schwartz periodization and the converse bridge
+
+`SchwartzPeriodization` constructs a continuous complex-linear map from genuine
+Schwartz tests on the real line to continuous functions on the period-two circle.
+Poisson summation proves that its value is exactly `Σ_k g(x+2k)`, with absolute
+convergence proved separately. Its normalized coefficient at `n` is
+`(1/2)(𝓕g)(n/2)`, and integration over one period recovers the real-line integral.
+The frequency reflection and period factor are explicit throughout.
+
+The coefficient-extracting test at `n` periodizes to `(1/2) fourier(-n)`.
+In particular, the zero-mode test is a Schwartz window whose translates sum to
+one half. Finite sums of these tests explicitly lift every Fourier polynomial;
+testing the lift against a synthesized distribution gives the reflected finite
+coefficient pairing, with factor two and no complex conjugation. The Fourier
+polynomial density theorem implies uniform density of Schwartz periodizations
+in continuous circle functions.
+
+Periodization is invariant under test translation by two. Its kernel consists
+exactly of tests whose Fourier transform vanishes at every half-integer, and
+also exactly of tests annihilated by every synthesized distribution at any fixed
+Banach exponent, including infinity. Synthesized distributions therefore assign
+the same value to tests with equal periodization.
+
+This is a bridge toward the converse, not the full converse theorem. Uniform
+density does not suffice for arbitrary distributions. Proving that every abstract
+periodic distribution annihilates this kernel, and establishing reconstruction
+with the required smooth/Schwartz convergence, remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3483 declarations under `NLS`, including generated
+axioms. The current audit covers 3513 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2172,6 +2201,13 @@ arbitrary simultaneous smooth approximations, and uniqueness of the continuous
 extension. A unit off-diagonal potential has a nonzero constant-pair eigenstate
 for the full actual distributional equation at eigenvalue one.
 
+Periodization checks verify the opposite sign for a negative-frequency test,
+the window's real-line integral one versus its periodization one half, absolute
+convergence at a negative nonintegral argument, and an explicit two-mode lift
+with imaginary amplitudes. Testing against an infinity-exponent imaginary mode
+produces `-2`, checking bilinearity and the period factor. Further checks exercise
+uniform approximation, translation differences, and the cubic annihilator criterion.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -2179,6 +2215,8 @@ for the full actual distributional equation at eigenvalue one.
    regularity. The forward realization, period-one/even-support equivalence,
    exact derivative domains, and full operator identification using the unique
    continuous extension of smooth potential multiplication are complete.
+   The Schwartz periodization bridge, polynomial lifts, and uniform density are
+   now proved; the arbitrary-distribution kernel and reconstruction steps remain.
    The finite-`p` coefficient pair-norm comparison is complete;
    the source's infinity endpoint remains distinct.
 

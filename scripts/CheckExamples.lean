@@ -4882,3 +4882,52 @@ example (a : Coeff 1) (a' : Coeff ⊤) (h : distributionSynthesis a = distributi
   distributionProduct_eq_of_synthesis_eq a a' h b
 
 end DistributionProductChecks
+
+namespace SchwartzPeriodizationChecks
+open NLS.Fourier MeasureTheory
+open scoped SchwartzMap FourierTransform
+
+-- Negative-frequency coefficient tests produce the opposite physical wave.
+example (x : ℝ) : (∑' k : ℤ, coefficientTest (-3) (x + 2 * k)) =
+    (1 / 2 : ℂ) * wave 3 x := by
+  rw [← periodization_eq_tsum, periodization_coefficientTest]
+  simp only [neg_neg, ContinuousMap.smul_apply, smul_eq_mul, fourier_two_eq_wave]
+
+-- The Schwartz window has real-line integral one, despite periodizing to one half.
+example : (∫ x : ℝ, coefficientTest 0 x) = 1 := by
+  have h := distributionSynthesis_single (p := (1 : ℝ≥0∞)) 0 1 (coefficientTest 0)
+  rw [distributionSynthesis_coefficientTest] at h
+  simpa using h.symm
+
+-- The translate sum is absolutely convergent, including the negative tail.
+example (g : 𝓢(ℝ, ℂ)) : Summable (fun k : ℤ => ‖g (-7 / 3 + 2 * k)‖) :=
+  summable_norm_periodization g (-7 / 3)
+
+-- A two-mode polynomial is lifted with both its complex amplitudes intact.
+example : periodizationCLM (polynomialTest {-3, 2} (fun _ => Complex.I)) =
+    Complex.I • fourier (-3) + Complex.I • fourier 2 := by
+  simp [periodization_polynomialTest]
+
+-- Bilinear distribution testing reflects the index and does not conjugate i.
+example : distributionSynthesis (lp.single (⊤ : ℝ≥0∞) (-2) Complex.I)
+    (polynomialTest {-3, 2} (fun _ => Complex.I)) = -2 := by
+  rw [distributionSynthesis_polynomialTest]
+  simp [lp.single_apply, Pi.single_apply, mul_assoc]
+
+-- Every continuous periodic function can be approximated uniformly by actual periodizations.
+example (f : C(AddCircle (2 : ℝ), ℂ)) {ε : ℝ} (hε : 0 < ε) :
+    ∃ g : 𝓢(ℝ, ℂ), ‖f - periodizationCLM g‖ < ε := by
+  simpa only [dist_eq_norm] using denseRange_periodization.exists_dist_lt f hε
+
+-- Period-two coboundaries vanish under every realized infinity-exponent distribution.
+example (a : Coeff ⊤) (g : 𝓢(ℝ, ℂ)) :
+    distributionSynthesis a (SchwartzMap.compSubConstCLM ℂ 2 g - g) = 0 := by
+  apply (periodization_eq_zero_iff_distributionSynthesis _).mp _ a
+  rw [map_sub, periodization_translate_two, sub_self]
+
+-- A test invisible to all cubic Fourier distributions has zero periodization.
+example (g : 𝓢(ℝ, ℂ)) (h : ∀ a : Coeff 3, distributionSynthesis a g = 0) :
+    periodizationCLM g = 0 :=
+  (periodization_eq_zero_iff_distributionSynthesis g).mpr h
+
+end SchwartzPeriodizationChecks
