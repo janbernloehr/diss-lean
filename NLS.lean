@@ -159,3 +159,5 @@ import NLS.Fourier.FractionalKernelScaling
 import NLS.Fourier.FractionalSpectralBounds
 import NLS.SequenceSpaces.SobolevHomogeneous
 import NLS.Fourier.FractionalSobolevIdentification
+import NLS.Fourier.FractionalBoundaryKernel
+import NLS.Fourier.FractionalBoundaryWeight

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 211 modules and 2009 named public theorems. All compile on the
+The library has 213 modules and 2029 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -39,6 +39,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.FractionalKernelScaling` | Exact real/nonnegative kernel agreement including zero; positive-frequency integrability; change of variables yielding `n^(2s)` times model mass over `[-n,n]` |
 | `NLS.SequenceSpaces.SobolevHomogeneous` | Exact weighted Hilbert square energy; equivalence of weighted membership with homogeneous moment summability on `ℓ²`; contractive unweighted inclusion; explicit two-sided inhomogeneous estimates |
 | `NLS.Fourier.FractionalSobolevIdentification` | Physical periodic fractional regularity iff unique weighted Hilbert synthesis for `0<s<1`; actual Fourier coefficient recovery and both inverse identities; quantitative physical energy and weighted norm bounds retaining the zero mode |
+| `NLS.Fourier.FractionalBoundaryKernel` | Arbitrary-length interval exterior kernel mass; exact nonnegative boundary-energy formula including infinity; genuine zero-extension mixed interaction; intrinsic interval difference energy and almost-everywhere invariance; magnitude monotonicity |
+| `NLS.Fourier.FractionalBoundaryWeight` | Exact endpoint-weight integral and sharp half-regularity integrability threshold; constant exterior energies and critical divergence; explicit exterior bound for almost-everywhere bounded interval data |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2179,10 +2181,35 @@ This completes the periodic identification throughout `0<s<1`, including
 `1/2`. The nonperiodic interval boundary estimate required by Appendix A.9
 and its separate endpoint consequence remain open.
 
+## Interval exterior kernel and sharp boundary threshold
+
+`FractionalBoundaryKernel` evaluates both exterior tails for arbitrary interval
+length `L>0` and `s>0`. Their sum at `0<x<L` is exactly
+`[x^(-2s)+(L-x)^(-2s)]/(2s)`. Thus the one-direction exterior interaction
+is `1/(2s)` times the endpoint-weighted square integral. Both sides are
+nonnegative integrals and may be infinite. The exterior interaction is proved
+to equal the mixed difference energy of the actual indicator zero extension.
+The intrinsic interval Gagliardo energy is defined separately and is invariant
+under almost-everywhere changes to interval data.
+
+`FractionalBoundaryWeight` proves that this weight is integrable exactly when
+`s<1/2`; its mass is `2 L^(1-2s)/(1-2s)`. For constant complex amplitude `z`,
+the exterior interaction below one half is
+`L^(1-2s)|z|²/[s(1-2s)]`. Constant amplitude one has infinite exterior
+interaction at and above one half, despite zero intrinsic interval energy.
+An almost-everywhere bound `|f|≤M` yields the same upper estimate with `M²`.
+These are zero-extension statements; they do not assert a boundary obstruction
+for periodically extended constant functions.
+
+The general fractional Hardy inequality remains to be proved: boundary-weighted
+square integrability must follow from intrinsic interval energy and `L²`,
+without assuming boundedness. Extension/periodization comparison then connects
+this result to the completed periodic identification. Appendix A.9 remains open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4143 declarations under `NLS`, including generated
+axioms. The current audit covers 4192 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2704,11 +2731,21 @@ An imaginary constant has weighted norm one although its physical seminorm
 vanishes. The actual `L²` synthesis with coefficients `(1+|n|)^(-1)` fails
 physical regularity at `s=1/2`, using the exact reciprocal summability threshold.
 
+Boundary checks evaluate the exterior kernel at the midpoint of `[0,2]`,
+its positive tail at distance four, and the boundary-weight mass at `s=1/4`.
+They test nonintegrability at `s=1/2`, zero intrinsic energy alongside infinite
+exterior interaction for constant data at that threshold, and exterior energy
+eight for imaginary unit amplitude on `[0,1]`. Doubling the amplitude and
+using length four gives energy 64. Further checks cover almost-everywhere
+bounded data, almost-everywhere invariance, and the physical zero-extension
+difference formula.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the nonperiodic interval boundary estimate in Appendix A.9, using
-   the completed periodic fractional Sobolev identification. The
+2. Prove the fractional Hardy inequality for arbitrary interval Sobolev data,
+   then the extension/periodization comparison needed in Appendix A.9. Exact
+   boundary kernels and their sharp integrability threshold are complete. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main

@@ -607,3 +607,30 @@ compare the weighted norm with the physical fractional energy plus the `L²`
 term, which retains the zero mode. The next Appendix A.9 dependency is the
 nonperiodic interval boundary estimate below one half, followed by the endpoint
 conclusion through lower regularity.
+
+
+The interval boundary kernel is now evaluated exactly for arbitrary positive
+length `L`: its exterior mass at `x∈(0,L)` is
+`[x^(-2s)+(L-x)^(-2s)]/(2s)`. The corresponding nonnegative double integral is
+the mixed interaction of the actual zero extension and equals the weighted
+boundary energy, including infinite values. The intrinsic interval difference
+energy has also been defined and respects almost-everywhere equality.
+The boundary weight has exact mass `2 L^(1-2s)/(1-2s)` below one half and is
+integrable if and only if `s<1/2`. Constant interval data therefore has finite
+zero-extension interaction exactly below half regularity; its intrinsic energy
+vanishes at every exponent. Bounded interval data has an explicit exterior
+energy bound below half. The next dependency is the fractional Hardy estimate
+controlling the boundary-weighted square integral by the intrinsic interval
+energy plus `L²` for arbitrary data, followed by the extension/periodization
+comparison. These results do not yet prove the interval identification in A.9.
+
+Planned Hardy proof: for `0<s<1/2`, average the inequality
+`|f(x)|² ≤ (1+ε)|f(y)|²+(1+1/ε)|f(x)-f(y)|²` over `x<y<2x`,
+with `δ<x<L/2`. Reversing the triangular integral gives the coefficient
+`c_s=(2^(2s)-1)/(2s)=∫₁² t^(2s-1)dt<1` in front of the truncated
+left-boundary energy. Choose `ε>0` with `(1+ε)c_s<1` and absorb that term.
+The difference term is controlled by the intrinsic interval kernel because
+`0<y-x<x`; the remaining half interval is controlled by `L²`. First work
+with `δ>0`, where weighted square integrability follows from `L²`, then pass
+to the nonnegative integral as `δ` decreases to zero. Reflection supplies the
+right endpoint. This avoids assuming the weighted integrability being proved.

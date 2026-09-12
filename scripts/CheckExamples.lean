@@ -6020,3 +6020,60 @@ example :
   simp only [Fourier.fourierCoeff_l2Synthesis, ← div_eq_mul_inv, Weight.sobolev_ratio]
   rw [Weight.inverse_sobolev_memlp_iff (by norm_num)]
   norm_num
+
+-- Exact endpoint interaction at half regularity, at an interior point of [0,2].
+example : (∫⁻ y : ℝ in (Set.Icc 0 2)ᶜ, Fourier.fractionalDistanceKernel (1 / 2) 1 y) = 2 := by
+  rw [Fourier.lintegral_fractionalDistanceKernel_exterior (by norm_num) (by constructor <;> norm_num)]
+  norm_num [Fourier.fractionalBoundaryWeight]
+
+example : (∫⁻ y : ℝ in Set.Ioi 4, ENNReal.ofReal (y ^ (-2 : ℝ))) = 1 / 4 := by
+  have h := Fourier.lintegral_fractional_tail (s := 1 / 2) (d := 4) (by norm_num) (by norm_num)
+  norm_num [ENNReal.ofReal_div_of_pos (by norm_num : (0 : ℝ) < 4)] at h ⊢
+  exact h
+
+example : (∫⁻ x : ℝ in Set.Ioo 0 1, ENNReal.ofReal (Fourier.fractionalBoundaryWeight (1 / 4) 1 x)) = 4 := by
+  rw [Fourier.lintegral_fractionalBoundaryWeight (by norm_num) (by norm_num)]
+  norm_num
+
+example : ¬ MeasureTheory.IntegrableOn (Fourier.fractionalBoundaryWeight (1 / 2) 2) (Set.Ioo 0 2) := by
+  rw [Fourier.integrableOn_fractionalBoundaryWeight_iff (by norm_num)]
+  norm_num
+
+-- A constant has zero intrinsic energy but infinite zero-extension interaction at the threshold.
+example : Fourier.fractionalIntervalEnergy (1 / 2) 2 (fun _ => 1) = 0 ∧
+    Fourier.fractionalExteriorEnergy (1 / 2) 2 (fun _ => 1) = ⊤ := by
+  constructor
+  · exact Fourier.fractionalIntervalEnergy_const _ _ _
+  · by_contra h
+    have hh := (Fourier.fractionalExteriorEnergy_one_lt_top_iff
+      (by norm_num : (0 : ℝ) < 1 / 2) (by norm_num : (0 : ℝ) < 2)).mp (lt_top_iff_ne_top.mpr h)
+    norm_num at hh
+
+example : Fourier.fractionalExteriorEnergy (1 / 4) 1 (fun _ => Complex.I) = 8 := by
+  rw [Fourier.fractionalExteriorEnergy_const (by norm_num) (by norm_num) (by norm_num)]
+  norm_num
+
+-- Sharp length scaling and squared amplitude for a non-real interval constant.
+example : Fourier.fractionalExteriorEnergy (1 / 4) 4 (fun _ => 2 * Complex.I) = 64 := by
+  rw [Fourier.fractionalExteriorEnergy_const (by norm_num) (by norm_num) (by norm_num)]
+  norm_num [Real.rpow_div_two_eq_sqrt]
+
+example (f : ℝ → ℂ)
+    (hf : ∀ᵐ x ∂MeasureTheory.volume.restrict (Set.Ioo 0 1), ‖f x‖ ≤ 3) :
+    Fourier.fractionalExteriorEnergy (1 / 4) 1 f ≤ 72 := by
+  have h := Fourier.fractionalExteriorEnergy_le_of_bounded (s := 1 / 4)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) f hf
+  norm_num at h
+  exact h
+
+example (f g : ℝ → ℂ)
+    (h : f =ᵐ[MeasureTheory.volume.restrict (Set.Ioo 0 2)] g) :
+    Fourier.fractionalIntervalEnergy (1 / 3) 2 f = Fourier.fractionalIntervalEnergy (1 / 3) 2 g :=
+  Fourier.fractionalIntervalEnergy_congr h
+
+example (f : ℝ → ℂ) :
+    Fourier.fractionalExteriorEnergy (1 / 3) 2 f =
+      ∫⁻ x : ℝ in Set.Ioo 0 2, ∫⁻ y : ℝ in (Set.Icc 0 2)ᶜ,
+        ENNReal.ofReal (‖(Set.Ioo 0 2).indicator f x - (Set.Ioo 0 2).indicator f y‖ ^ 2) *
+          Fourier.fractionalDistanceKernel (1 / 3) x y :=
+  Fourier.fractionalExteriorEnergy_eq_zeroExtension _ _ _
