@@ -125,3 +125,7 @@ import NLS.ZakharovShabat.DistributionPotential
 import NLS.Fourier.SchwartzPeriodization
 import NLS.Fourier.SchwartzPeriodizationSmooth
 import NLS.Fourier.SchwartzMultiplierConvergence
+import NLS.Fourier.SchwartzSeries
+import NLS.Fourier.SchwartzTranslateProduct
+import NLS.Fourier.PeriodicDistributionKernel
+import NLS.Fourier.PeriodicDistributionIdentification

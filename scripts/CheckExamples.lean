@@ -5073,3 +5073,96 @@ example (g w : 𝓢(ℝ, ℂ)) (x : ℝ) :
     (TemperedDistribution.derivCLM ℂ (TemperedDistribution.delta x)) g w
 
 end SchwartzMultiplierConvergenceChecks
+
+namespace PeriodicDistributionIdentificationChecks
+open NLS.Fourier
+open scoped SchwartzMap FourierTransform ContDiff
+
+-- The actual sum of translated products converges in Schwartz space, with no compact-support assumption.
+example (g w : 𝓢(ℝ, ℂ)) :
+    HasSum (fun m : ℤ => translatedSchwartzProduct g w m)
+      (SchwartzMap.smulLeftCLM ℂ
+        (fun x : ℝ => periodizationCLM g (x : AddCircle (2 : ℝ))) w) :=
+  hasSum_translatedSchwartzProduct g w
+
+-- Polynomial weights and derivative orders survive the bilateral summability estimate.
+example (g w : 𝓢(ℝ, ℂ)) :
+    Summable (fun m : ℤ => SchwartzMap.seminorm ℂ 3 4 (translatedSchwartzProduct g w m)) :=
+  summable_seminorm_translatedSchwartzProduct g w 3 4
+
+-- Negative integer multiples of the period preserve every periodic distribution.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T) (g : 𝓢(ℝ, ℂ)) :
+    T (SchwartzMap.compSubConstCLM ℂ (-6) g) = T g := by
+  have ht := hT.translate_int (-3) g
+  norm_num at ht
+  exact ht
+
+-- A negative-frequency modulated window reads the positive coefficient with no conjugation.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T) :
+    T (Complex.I • SchwartzMap.smulLeftCLM ℂ (wave (-3)) (coefficientTest 0)) =
+      Complex.I * T (coefficientTest 3) := by
+  rw [map_smul, hT.wave_window]
+  simp
+
+-- Arbitrary periodic distributions, rather than only synthesized ones, annihilate the kernel.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T) (g : 𝓢(ℝ, ℂ))
+    (hg : ∀ n : ℤ, (𝓕 g) (-(n : ℝ) / 2) = 0) : T g = 0 :=
+  hT.eq_zero_of_periodization_eq_zero ((periodization_eq_zero_iff g).mpr hg)
+
+-- Every periodic tempered distribution has an absolutely convergent reconstruction on every test.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T) (g : 𝓢(ℝ, ℂ)) :
+    Summable (fun n : ℤ => ‖T (coefficientTest n) * (𝓕 g) (-(n : ℝ) / 2)‖) :=
+  hT.summable_norm_fourier_reconstruction g
+
+-- The cubic regularity assumption is intrinsic and produces a unique actual distributional representative.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
+    (ha : Memℓp (fun n : ℤ => T (coefficientTest n)) 3) :
+    ∃! a : Coeff 3, distributionSynthesis a = T :=
+  (periodicDistribution_memlp_iff_existsUnique T).mp ⟨hT, ha⟩
+
+-- The same converse holds at infinity without a vanishing-tail hypothesis.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
+    (ha : Memℓp (fun n : ℤ => T (coefficientTest n)) ⊤) :
+    ∃! a : Coeff ⊤, distributionSynthesis a = T :=
+  (periodicDistribution_memlp_iff_existsUnique T).mp ⟨hT, ha⟩
+
+-- A periodic distribution with all coefficients one equals the nondecaying infinity synthesis.
+example (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodTwoDistribution T)
+    (ha : ∀ n : ℤ, T (coefficientTest n) = 1) :
+    T = distributionSynthesis (⟨fun _ : ℤ => (1 : ℂ), one_memℓp_infty⟩ : Coeff ⊤) := by
+  symm
+  apply distributionSynthesis_eq_of_periodic_coefficients hT
+  intro n
+  exact (ha n).symm
+
+-- Genuine periodicity is essential: a single real-line Dirac mass is not period two.
+example : ¬IsPeriodTwoDistribution (TemperedDistribution.delta (0 : ℝ)) := by
+  intro h
+  have he := h (frequencyTest 0)
+  simp only [TemperedDistribution.delta_apply, SchwartzMap.compSubConstCLM_apply, zero_sub] at he
+  have hleft : frequencyTest 0 (-2) = 0 := by
+    have ht := frequencyTest_sample 0 4
+    norm_num at ht
+    exact ht
+  have hright : frequencyTest 0 0 = 1 := by
+    simpa using frequencyTest_sample 0 0
+  rw [hleft, hright] at he
+  exact zero_ne_one he
+
+-- A geometric Schwartz series really sums in Schwartz topology, with its exact factor two.
+example (w : 𝓢(ℝ, ℂ)) : HasSum (fun n : ℕ => (1 / 2 : ℂ) ^ n • w) ((2 : ℂ) • w) := by
+  let u : ℕ → 𝓢(ℝ, ℂ) := fun n => (1 / 2 : ℂ) ^ n • w
+  have hs (k j : ℕ) : Summable (fun n => SchwartzMap.seminorm ℂ k j (u n)) := by
+    simpa [u, map_smul_eq_mul, norm_pow] using
+      (summable_geometric_of_lt_one (by norm_num : (0 : ℝ) ≤ 1 / 2)
+        (by norm_num : (1 / 2 : ℝ) < 1)).mul_right (SchwartzMap.seminorm ℂ k j w)
+  have he : schwartzSum u hs = (2 : ℂ) • w := by
+    ext x
+    rw [schwartzSum_apply]
+    change (∑' n : ℕ, (1 / 2 : ℂ) ^ n * w x) = (2 : ℂ) * w x
+    rw [tsum_mul_right, tsum_geometric_of_norm_lt_one (by norm_num : ‖(1 / 2 : ℂ)‖ < 1)]
+    norm_num
+  rw [← he]
+  exact hasSum_schwartzSum u hs
+
+end PeriodicDistributionIdentificationChecks

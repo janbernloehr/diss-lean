@@ -490,8 +490,17 @@ multiplication by any fixed Schwartz window. Windowed Fourier reconstruction
 converges in that topology, and every tempered distribution evaluates it through
 an absolutely convergent scalar coefficient series, without a periodicity or
 Fourier-class hypothesis on the distribution.
-Next identify the action of every periodic distribution on an arbitrary test
-with its action on a windowed periodization. Prove annihilation of the
-periodization kernel and complete reconstruction under coefficient regularity.
+A direct construction now sums any series absolutely summable in all Schwartz
+seminorms, with quantitative seminorm tails and actual Schwartz convergence.
+Products of two Schwartz tests have inverse-square seminorm decay as one factor
+is translated by the period lattice. Their convergent sums identify the two
+sides of the periodization/window exchange under arbitrary periodic distributions.
+Consequently, actual period-two invariance is equivalent to annihilating the
+periodization kernel. Every periodic tempered distribution has an absolutely
+convergent Fourier reconstruction from its coefficient-test values, and those
+values determine it uniquely. The intrinsic Banach `ℓᵖ` condition is now equivalent
+to unique representation by distributional synthesis, including `p=∞`.
+Next extend the intrinsic realization to the weighted Fourier regularity scale,
+including negative Sobolev exponents.
 The source's distinct infinity-endpoint pair norm also remains a separate proof
 obligation.

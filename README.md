@@ -250,8 +250,14 @@ uniform convergence of every multiplier derivative to convergence in every
 weighted Schwartz seminorm after fixing any Schwartz window. Windowed Fourier
 series therefore converge in genuine Schwartz space, and every tempered
 distribution acts on them through an absolutely convergent scalar series.
-The converse still needs the periodic-distribution kernel argument and the
-identification of arbitrary tests with their windowed periodic representatives.
+The converse is now proved for every Banach `ℓᵖ` class, including infinity:
+an arbitrary period-two tempered distribution has a unique synthesis
+representation exactly when its coefficient-test values belong to `ℓᵖ`.
+A direct Schwartz-series construction and summable translated-product estimates
+prove that every periodic distribution annihilates the periodization kernel.
+Normalized window reconstruction then gives an absolutely convergent Fourier
+formula and coefficient uniqueness, without assuming the distribution came from
+synthesis. Extension to the full weighted regularity scale remains separate.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

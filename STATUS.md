@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 177 modules and 1713 named public theorems. All compile on the
+The library has 181 modules and 1737 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -22,6 +22,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.SchwartzPeriodization` | Continuous period-two Schwartz periodization; absolutely convergent translates and Poisson formula; exact coefficient and integral normalization; polynomial lifts and uniform density; kernel and synthesized-distribution annihilator |
 | `NLS.Fourier.SchwartzPeriodizationSmooth` | Classical differentiation of every order; continuous circle-valued derivative maps; globally bounded derivatives and temperate growth; absolute physical derivative sums; uniform Fourier approximation in every derivative order |
 | `NLS.Fourier.SchwartzMultiplierConvergence` | Weighted Leibniz seminorm bound; smooth multiplier convergence in genuine Schwartz topology; windowed Fourier reconstruction; termwise action and absolute scalar convergence for every tempered distribution |
+| `NLS.Fourier.SchwartzSeries` | Direct sum construction for series absolutely summable in every Schwartz seminorm; derivative and decay control; quantitative seminorm tails; convergence in actual Schwartz topology |
+| `NLS.Fourier.SchwartzTranslateProduct` | Inverse-square decay of every weighted seminorm under separation of Schwartz factors; bilateral translated products sum in Schwartz space to the window times actual periodization |
+| `NLS.Fourier.PeriodicDistributionKernel` | Intrinsic period-two invariance; all signed integer translations; periodization exchange and normalized window reconstruction; exact kernel-annihilation characterization |
+| `NLS.Fourier.PeriodicDistributionIdentification` | Fourier reconstruction and absolute convergence for arbitrary periodic tempered distributions; coefficient uniqueness; intrinsic Banach `lp` regularity iff unique synthesis representation, including infinity |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -1690,9 +1694,9 @@ period-two synthesis and period-one synthesis on every Schwartz test.
 
 This completes the forward realization and exact recovery for Banach coefficient
 data. The following milestone identifies actual distributional differentiation.
-The converse characterization of all periodic distributions with the prescribed
-coefficient regularity remains open; potential multiplication is identified below. No
-function representative is assumed for general coefficient data.
+Potential multiplication and the intrinsic converse for unweighted Banach classes
+are proved below. No function representative is assumed for general coefficient
+data; the full weighted regularity scale remains a separate obligation.
 
 ## Exact distributional derivative and free operator graphs
 
@@ -1767,8 +1771,9 @@ distributional eigenvalue equations with the coefficient equations already
 used in the spectral theory.
 
 This is the full operator identification on the realized Fourier domain.
-It does not yet characterize every abstract periodic distribution as an element
-of that domain, or settle the separate source infinity pair norm.
+The intrinsic characterization of arbitrary periodic tempered distributions in
+these unweighted Fourier classes is proved below. The full weighted scale and
+the separate source infinity pair norm remain open.
 
 ## Schwartz periodization and the converse bridge
 
@@ -1793,10 +1798,9 @@ also exactly of tests annihilated by every synthesized distribution at any fixed
 Banach exponent, including infinity. Synthesized distributions therefore assign
 the same value to tests with equal periodization.
 
-This is a bridge toward the converse, not the full converse theorem. Uniform
-density does not suffice for arbitrary distributions. Proving that every abstract
-periodic distribution annihilates this kernel, and establishing reconstruction
-with the required smooth/Schwartz convergence, remain open.
+Uniform density alone does not suffice for arbitrary distributions. The subsequent
+smooth approximation, Schwartz reconstruction, and kernel arguments below
+complete the converse for unweighted Banach coefficient classes.
 
 ## Smooth periodization and all derivative orders
 
@@ -1821,9 +1825,8 @@ absolutely convergent physical translate sum of the corresponding Schwartz
 derivative. Thus approximation now controls all smooth orders, beyond the earlier
 uniform density statement.
 
-The remaining converse still needs reconstruction in the Schwartz topology,
-for example after multiplication by a Schwartz window, and the proof that every
-abstract periodic distribution annihilates the periodization kernel.
+The subsequent windowed reconstruction in Schwartz topology and the periodic-
+distribution kernel argument below complete the unweighted Banach converse.
 
 ## Windowed Fourier reconstruction in Schwartz topology
 
@@ -1846,15 +1849,52 @@ wave expansion has a genuine `HasSum` in Schwartz space. Every Mathlib tempered
 distribution, with no periodicity or Fourier-class hypothesis, evaluates this
 series term by term. Its scalar series converges absolutely.
 
-The remaining converse needs to identify a periodic distribution's action on
-an arbitrary test with its action on a windowed periodization. The periodization
-kernel argument and the final coefficient-regularity characterization remain
-open; windowed series convergence itself is now proved.
+The following milestone identifies the action on an arbitrary test with the
+action on its normalized windowed periodization, proving the kernel criterion
+and the intrinsic unweighted Banach coefficient characterization.
+
+## Intrinsic identification of periodic tempered distributions
+
+`SchwartzSeries` constructs a genuine Schwartz sum when every standard seminorm
+is summable over the terms. Smooth-series differentiation and weighted derivative
+bounds prove the sum is Schwartz. Its seminorm is bounded by the corresponding
+scalar series; every finite truncation error is bounded by that series' tail.
+This proves convergence in Schwartz topology directly, without assuming an
+unavailable Schwartz completeness instance.
+
+`SchwartzTranslateProduct` uses rapid decay of both Schwartz factors to bound
+every weighted product seminorm by `C/(1+|m|)^2` when one factor is translated
+by `2m`. The bilateral sum therefore converges in Schwartz topology, and its
+pointwise values identify it with the fixed window times actual periodization.
+
+`PeriodicDistributionKernel` defines period two by actual translation invariance
+on all Schwartz tests and proves invariance for every signed integer multiple.
+Translating each product term interchanges its two Schwartz factors and reverses
+the lattice index. The two convergent series give periodization exchange under
+any periodic tempered distribution. The zero-mode window's periodization one
+half then gives `T(g)=2 T((Pg) coefficientTest(0))`. Thus arbitrary periodic
+distributions act only on periodization, and period-two invariance is equivalent
+to annihilating its full kernel.
+
+`PeriodicDistributionIdentification` identifies modulated zero-mode windows with
+the existing coefficient-extracting tests under every periodic distribution.
+Windowed Fourier reconstruction consequently gives
+`T(g)=Σ_n T(coefficientTest n) (𝓕g)(-n/2)`, with absolute convergence for every
+Schwartz test and no coefficient regularity assumption. These coefficients
+determine every periodic tempered distribution uniquely.
+
+The main characterization is now an equivalence: actual period-two invariance
+and `Memℓp` of the coefficient-test values hold if and only if there is a unique
+`Coeff p` whose distributional synthesis equals the given tempered distribution.
+It applies to every Banach exponent, including infinity without a vanishing-tail
+assumption. This completes the intrinsic unweighted Banach Fourier-class
+identification. The full weighted scale, including negative Sobolev regularity,
+and the distinct source infinity pair norm remain separate obligations.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3551 declarations under `NLS`, including generated
+axioms. The current audit covers 3586 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2277,21 +2317,26 @@ on a polynomial with negative and positive modes. Genuine nonperiodic point
 masses and their derivatives act term by term on the series; the derivative
 check retains the dual minus sign and includes absolute convergence.
 
+Intrinsic-identification checks cover Schwartz convergence of translated products
+with unrestricted windows, polynomial weight three and derivative order four,
+and invariance under translation by `-6`. Imaginary amplitudes on a negative
+wave test the reflected coefficient and complex linearity. Abstract periodic
+inputs exercise kernel annihilation, absolute reconstruction, cubic regularity,
+and the full infinity endpoint. Constant-one coefficients identify the
+nondecaying infinity synthesis. A single real-line Dirac mass is proved not
+periodic, testing the necessity of that hypothesis. A geometric Schwartz series
+sums to exactly twice its window in Schwartz topology.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Characterize all periodic distributions with the required Fourier coefficient
-   regularity. The forward realization, period-one/even-support equivalence,
-   exact derivative domains, and full operator identification using the unique
-   continuous extension of smooth potential multiplication are complete.
-   The Schwartz periodization bridge and polynomial lifts are proved, including
-   smoothness, globally bounded derivatives, and uniform Fourier approximation
-   at every derivative order. Windowed Fourier reconstruction now converges in
-   Schwartz topology, with absolute termwise action by arbitrary tempered
-   distributions. Identifying periodic distributions with these windowed
-   representatives and proving the kernel criterion remain.
-   The finite-`p` coefficient pair-norm comparison is complete;
-   the source's infinity endpoint remains distinct.
+2. Extend the intrinsic periodic-distribution identification from unweighted
+   Banach `lp` classes to the weighted regularity scale, including negative
+   Sobolev exponents. The unweighted converse, full periodization kernel
+   criterion, and absolutely convergent reconstruction are complete, together
+   with the earlier exact derivative domains and full operator identification.
+3. Implement the source's infinity-endpoint pair norm. The finite-`p`
+   component-sum norm and its sharp comparison are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes
