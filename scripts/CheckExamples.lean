@@ -7235,3 +7235,106 @@ example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3) (n : ℤ) (
   weightedPotentialInverse_eq_original (by norm_num) w φ n z hz f
 
 end Lemma64Checks
+
+section Lemma65Checks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (1 : ℝ≥0∞).conjExponent) :=
+  ⟨ENNReal.HolderConjugate.one_le (1 : ℝ≥0∞).conjExponent 1⟩
+
+private def lemma65Mode (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (k : ℤ) (c : ℂ) :
+    WeightedCoeff w.toWeight p := (WeightedCoeff.weightEquiv w.toWeight p).symm (lp.single p k ((w k : ℂ) * c))
+
+private theorem lemma65Mode_apply (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)]
+    (k : ℤ) (c : ℂ) (j : ℤ) : (lemma65Mode w p k c).val j = if j = k then c else 0 := by
+  change (lp.single p k ((w k : ℂ) * c) : Coeff p) j / (w j : ℂ) = _
+  by_cases hj : j = k <;> simp [hj, lp.single_apply, w.toWeight.complex_ne_zero]
+
+-- Both signs of the cutoff boundary must survive in the source's remainder.
+example (w : SpectralWeight) :
+    (WeightedCoeff.fourierTail w.toWeight 2 (lemma65Mode w 3 (-2) Complex.I)).val (-2) = Complex.I := by
+  simp [WeightedCoeff.fourierTail_apply, lemma65Mode_apply]
+
+example (w : SpectralWeight) :
+    (WeightedCoeff.fourierTail w.toWeight 2 (lemma65Mode w 1 2 3)).val 2 = 3 := by
+  simp [WeightedCoeff.fourierTail_apply, lemma65Mode_apply]
+
+example (w : SpectralWeight) : WeightedCoeff.fourierTail w.toWeight 3 (lemma65Mode w 2 (-2) Complex.I) = 0 := by
+  apply Subtype.ext
+  funext k
+  by_cases hk : k = -2 <;> simp [WeightedCoeff.fourierTail_apply, lemma65Mode_apply, hk]
+
+example (w : SpectralWeight) (f : WeightedCoeffPair w.toWeight 3) :
+    Filter.Tendsto (fun N : ℕ => weightedPairFourierTail w.toWeight N f) Filter.atTop (nhds 0) :=
+  tendsto_weightedPairFourierTail (by norm_num) _ f
+
+-- Closed window endpoints at n=2 interact exactly at the retained potential-tail boundary.
+example : (1 : ℤ) ∈ resonantWindow 2 ∧ (-1 : ℤ) ∈ resonantWindow (-2) := by
+  norm_num [mem_resonantWindow]
+
+example (w : SpectralWeight) : w (1-2) * w 2 ≤ w (1-(-1)) * w ((-1)-2) :=
+  resonantWindows_weight_gain w (by norm_num [mem_resonantWindow]) (by norm_num [mem_resonantWindow])
+
+example (w : SpectralWeight) : w ((-1)-(-2)) * w (-2) ≤ w ((-1)-1) * w (1-(-2)) :=
+  resonantWindows_weight_gain w (by norm_num [mem_resonantWindow]) (by norm_num [mem_resonantWindow])
+
+example : (3 : ℤ) ∈ resonantWindow 3 ∧ (2 : ℤ) ∈ resonantWindow 3 ∧ (1 : ℤ) ∉ resonantWindow 3 := by
+  norm_num [mem_resonantWindow]
+
+-- The far reciprocal bound includes the p=1 / conjugate-infinity endpoint at resonance.
+example :
+    let a := complementaryReciprocal (q := (1 : ℝ≥0∞).conjExponent)
+      ((ENNReal.HolderConjugate.lt_top_iff_one_lt 1 (1 : ℝ≥0∞).conjExponent).mp (by simp))
+      4 ((Real.pi : ℂ) * 4) (center_mem_resonantStrip 4) false
+    ‖a - Coeff.truncate (resonantWindow 4) a‖ ≤ 4 := by
+  have h := norm_complementaryReciprocal_windowTail_le (p := 1) (by simp) (n := 4)
+    (by norm_num) ((Real.pi : ℂ) * 4) (center_mem_resonantStrip 4) false
+  norm_num [reciprocalCenter] at h ⊢
+  exact h
+
+-- The improved near-near estimate exposes the extra division by the resonant weight.
+example (w : SpectralWeight) (a b : Coeff 2) (φ f : WeightedCoeff w.toWeight 2) :
+    w.shiftedNorm (-2) (w.sandwich (Coeff.truncate (resonantWindow 2) a) φ
+      (Coeff.truncate (resonantWindow (-2)) b) f) ≤
+      (‖a‖ * ‖WeightedCoeff.fourierTail w.toWeight 2 φ‖ * ‖b‖ / w 2) * w.shiftedNorm (-2) f := by
+  simpa using shiftedNorm_near_sandwich_le w 2 a φ b f
+
+example : weightedDoubleConstant (p := 2) (by norm_num) = 260 := by
+  norm_num [weightedDoubleConstant, Coeff.complementaryConstant_two]
+
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    w.shiftedPairNorm n (weightedPotentialInverse (by simp) w φ n z hz
+      (weightedPotentialInverse (by simp) w φ n z hz f)) ≤
+      weightedSquareBound (by simp) w φ n * w.shiftedPairNorm n f :=
+  shiftedPairNorm_weightedPotentialInverse_sq_refined (by simp) w φ n z hz f
+
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 3) :
+    w.shiftedPairNorm (-5) (weightedPotentialInverse (by norm_num) w φ (-5) ((Real.pi : ℂ) * (-5 : ℤ))
+      (center_mem_resonantStrip (-5))
+      (weightedPotentialInverse (by norm_num) w φ (-5) ((Real.pi : ℂ) * (-5 : ℤ))
+        (center_mem_resonantStrip (-5)) f)) ≤
+      weightedSquareBound (by norm_num) w φ (-5) * w.shiftedPairNorm (-5) f :=
+  shiftedPairNorm_weightedPotentialInverse_sq_refined (by norm_num) w φ (-5) _ _ f
+
+-- The zero strip remains covered and does not require a nonzero center.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2) :
+    ‖weightedPotentialSquareInShift (by norm_num) w φ 0 0 (by simpa using center_mem_resonantStrip 0)‖ ≤
+      weightedSquareBound (by norm_num) w φ 0 := norm_weightedPotentialSquareInShift_le _ _ _ _ _ _
+
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2) :
+    ‖weightedPotentialSquareInShift (by norm_num) w φ 2 ((Real.pi : ℂ) * 2) (center_mem_resonantStrip 2)‖ ≤
+      260 * ‖φ‖ * (‖φ‖ * (1 + |(2 : ℝ)|) ^ (-(1/(2 : ℝ))) + ‖weightedPairFourierTail w.toWeight 2 φ‖ / w 2) := by
+  have h := norm_weightedPotentialSquareInShift_le (p := 2) (by norm_num) w φ 2 ((Real.pi : ℂ) * 2) (center_mem_resonantStrip 2)
+  norm_num only [weightedSquareBound, weightedDoubleConstant, Coeff.complementaryConstant_two,
+    ENNReal.toReal_ofNat, Int.cast_ofNat] at h
+  norm_num at h ⊢
+  exact h
+
+-- The actual square has the expected two-potential factorization, with the correct sign.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 2) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    (weightedPotentialInverse (by norm_num) w φ n z hz
+      (weightedPotentialInverse (by norm_num) w φ n z hz f)).fst =
+      w.convolution φ.fst (complementarySandwich (by norm_num) w φ.snd n z hz false f.fst) :=
+  weightedPotentialInverse_sq_fst _ _ _ _ _ _ _
+
+end Lemma65Checks

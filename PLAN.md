@@ -876,9 +876,25 @@ weighted product gives the actual `T_n`, with the source's sign-reversing bound
 `‖T_n f‖_{w,p;i}≤c_p‖φ‖_{w,p}‖f‖_{w,p;-i}`. The original potential/domain
 identification is proved. Squaring restores the shift with bound `(c_p‖φ‖)²`.
 
-Next, prove the sharper Lemma 6.5 estimate by splitting the double reciprocal
-sum into distant denominators and the potential's high-frequency tail. This
-must give decay at shift `n`, not just the already proved uniform boundedness
-of the square. Then prove eventual contraction and the weighted reduction
-needed for Propositions 6.1 and 6.3. The printed general-`p` central-height
-constant remains a separate open item.
+Lemma 6.5 is now proved. Weighted scalar and pair tails retain `|k|=|n|`
+and converge in norm for every finite exponent. The two closed half-radius
+windows isolate the potential remainder. Monotonicity and symmetry give the
+near-near comparison `w(j-n)w(n)≤w(j-k)w(k-n)`, which positive coefficient
+majorants transfer to a full shifted norm bound with the factor `1/w(n)`.
+The two far terms use uniform reciprocal-tail decay, including the `p=1`
+conjugate-infinity endpoint and the central lattice parameter.
+
+The actual square factors through the two scalar double-complementary
+inverses. The resulting estimate in shift `n`, and equivalently in the induced
+operator norm, is
+`C_p‖φ‖(‖φ‖/(1+|n|)^(1/p)+‖R_n φ‖/w(n))`, with
+`C_p=64p c_p+c_p²`. It is valid for every integer center, including zero,
+and all parameters of the full closed strip. The exact finite-`p` pair norm
+and the inverse-weight improvement are retained.
+
+Next, turn this estimate into the locally uniform threshold after Lemma 6.5,
+with both the unweighted and the weighted shifted squared norms at most one
+half. Use the squared Neumann construction to invert `Id-T_n`, solve the
+Q-equation, and prove the Lemma 6.6 determinant criterion on the two-dimensional
+resonant subspace. Then continue toward Propositions 6.1 and 6.3. The printed
+general-`p` central-height constant remains a separate open item.

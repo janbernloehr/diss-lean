@@ -207,3 +207,13 @@ import NLS.SequenceSpaces.SpectralConvolution
 import NLS.SequenceSpaces.PuncturedLattice
 import NLS.ZakharovShabat.ComplementaryL1
 import NLS.ZakharovShabat.WeightedPotentialInverse
+import NLS.SequenceSpaces.WeightedFourierTail
+import NLS.SequenceSpaces.WeightedHolderMultiplier
+import NLS.SequenceSpaces.WeightedSandwich
+import NLS.SequenceSpaces.SandwichMajorant
+import NLS.SequenceSpaces.WeightedSandwichGain
+import NLS.ZakharovShabat.ResonantWindowGeometry
+import NLS.ZakharovShabat.ComplementaryReciprocalTail
+import NLS.ZakharovShabat.WeightedResonantSandwich
+import NLS.ZakharovShabat.ComplementaryDoubleEstimate
+import NLS.ZakharovShabat.WeightedSquareEstimate

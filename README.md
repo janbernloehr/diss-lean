@@ -547,7 +547,12 @@ installation is absent. No shell startup files are modified.
   `T_n=Φ A_λ⁻¹ Q_n` maps shift `-i` to shift `i` with bound
   `c_p ‖φ‖`, uniformly on the full strip, and `c_2=2`. It agrees exactly with
   the original potential applied to the complementary domain inverse. Two
-  applications restore the input shift. Lemma 6.5's high-frequency decay is next.
+  applications restore the input shift. Lemma 6.5 is now proved for all finite
+  Banach exponents on the full strip: the shifted square has bound
+  `C_p ‖φ‖ (‖φ‖/(1+|n|)^(1/p) + ‖R_n φ‖/w(n))`. The tail retains its boundary,
+  and the additional inverse-weight gain is proved in the near-near term.
+  The actual square agrees with the double-inverse factorization. Eventual
+  contraction, locally uniform thresholds, and the Q-equation inversion are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

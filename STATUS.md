@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 259 modules and 2419 named public theorems. All compile on the
+The library has 269 modules and 2470 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -73,6 +73,16 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntrinsicSobolevSynthesis` | Bidirectional physical coordinate energy finiteness; intrinsic norm dilation bound; injective continuous weighted synthesis for `0<s<1`; exact actual Fourier coefficients and arbitrary-length norm constant |
 | `NLS.Fourier.IntrinsicSobolevEquivalence` | Actual weighted Fourier analysis; both inverse identities; continuous intrinsic/weighted Hilbert equivalence below half; explicit forward and inverse arbitrary-length bounds; A.9 factorization |
 | `NLS.Fourier.IntrinsicSobolevApproximation` | Finite physical Fourier truncations; exact coefficient selection; uniform norm bound; convergence in the full intrinsic norm and density of finite Fourier support below half |
+| `NLS.SequenceSpaces.WeightedFourierTail` | Weighted scalar and pair remainders retaining `|k|=N`; exact coefficient and weighting identities; contractivity and finite-exponent norm convergence |
+| `NLS.SequenceSpaces.WeightedHolderMultiplier` | Arbitrary conjugate-space symbols from weighted `ℓᵖ` to weighted `ℓ¹`; linear dependence on the symbol and uniform scalar shifted bounds |
+| `NLS.SequenceSpaces.WeightedSandwich` | Actual weighted double-multiplier product; shifted estimate; near/far decomposition and exact potential-tail substitution |
+| `NLS.SequenceSpaces.SandwichMajorant` | Norm-preserving complex magnitude coefficients; exact positive absolute sandwich rows and product norm estimate |
+| `NLS.SequenceSpaces.WeightedSandwichGain` | Pointwise weight gains on two finite windows imply the corresponding shifted `ℓ¹` sandwich norm gain |
+| `NLS.ZakharovShabat.ResonantWindowGeometry` | Closed opposite half-radius windows; retained potential-tail boundary; signed distance comparisons and source's extra inverse-weight gain |
+| `NLS.ZakharovShabat.ComplementaryReciprocalTail` | Complementary inverse-bracket envelope; uniform conjugate-space tail decay for both signs, including resonance and the `p=1` endpoint |
+| `NLS.ZakharovShabat.WeightedResonantSandwich` | Refined scalar near/far estimate with the potential tail divided by `w(n)` |
+| `NLS.ZakharovShabat.ComplementaryDoubleEstimate` | Scalar double-complementary estimate throughout the closed strip; both signs and zero center; inhomogeneous bracket and explicit exponent-only constant |
+| `NLS.ZakharovShabat.WeightedSquareEstimate` | Lemma 6.5 for every finite Banach exponent; actual square factorization; exact shifted pair norm and conjugated operator norm with both source terms |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2639,13 +2649,56 @@ original potential operator applied to the previously constructed domain-valued
 complementary inverse. There is also a bound for its ordinary operator norm.
 
 Two applications restore the initial shift and have bound `(c_p‖φ‖)²`.
-This establishes boundedness of the square; Lemma 6.5's decaying bound and
-large-frequency invertibility remain unproved.
+The stronger Lemma 6.5 estimate is now proved below.
+
+## Section 6, Lemma 6.5: refined weighted square estimate
+
+`WeightedFourierTail` defines the scalar and pair remainder with the exact
+source cutoff `|k|≥N`, including equality. It is a continuous projection,
+contracts the relevant norms, and tends to zero in norm for finite exponents.
+Weighting commutes with this cutoff. Symmetry makes it compatible with both
+physical signs.
+
+`WeightedHolderMultiplier` and `WeightedSandwich` construct the actual weighted
+`ℓᵖ→ℓ¹` double-inverse product for arbitrary conjugate-space symbols. Their
+bounds hold in every scalar shifted norm. Splitting the two symbols gives
+far-output, far-input, and near-near terms; separated near windows replace
+the potential exactly by its high-frequency remainder.
+
+`ResonantWindowGeometry` uses the closed radius-`|n|/2` integer windows around
+`n` and `-n`. Opposite near frequencies satisfy `|j-k|≥|n|`, including the
+boundary, and the sharper weight comparison
+`w(j-n)w(n)≤w(j-k)w(k-n)`. Positive coefficient majorants preserve all input
+sequence norms. `WeightedSandwichGain` transfers this pointwise comparison
+to the full shifted output norm using the existing Hölder–Young sandwich.
+Thus the near-near contribution is bounded by the potential tail divided
+by `w(n)`, rather than merely by the tail alone.
+
+`ComplementaryReciprocalTail` proves a normalized inverse-bracket envelope
+for the zeroed reciprocal and the uniform bound
+`16p |n|^(-1/p)` outside either physical near window, for `n≠0`. This includes
+`p=1` with conjugate exponent infinity and every parameter of the unpunctured
+closed strip. Combining this with the full reciprocal bound `c_p` gives the
+scalar two-term estimate. The inhomogeneous bracket handles the zero strip.
+The explicit double-inverse constant is `C_p=64p c_p+c_p²`; for `p=2` it is 260.
+No optimality of this Lemma 6.5 constant is asserted.
+
+`WeightedSquareEstimate` identifies both components of the actual `T_n²` with
+the appropriate outer potential times the opposite scalar double inverse.
+It proves, for every finite Banach exponent and every `λ∈U_n`,
+`‖T_n² f‖_{w,p;n}≤C_p‖φ‖(‖φ‖/(1+|n|)^(1/p)+‖R_n φ‖/w(n))‖f‖_{w,p;n}`.
+Conjugating the square by the source shift gives the same displayed bound
+for its induced operator norm. All factors use the source's exact finite-`p`
+pair norm, and the weighted remainder retains its boundary.
+
+The subsequent locally uniform threshold, simultaneous weighted/unweighted
+contraction, Q-equation inversion, and Lemma 6.6 determinant reduction remain
+next. The refined estimate does not yet package those inversion consequences.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4989 declarations under `NLS`, including generated
+axioms. The current audit covers 5098 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3283,12 +3336,20 @@ and the physical signs and component exchange in `T_n`. They instantiate the
 pair estimate at `p=1,2,3`, verify the same-shift squared estimate, and check
 agreement with the original potential and derivative-domain inverse.
 
+The Lemma 6.5 examples check both signed tail boundaries, deletion strictly
+inside the cutoff, finite-exponent pair-tail convergence, closed and odd-radius
+windows, and the weight gain for positive and negative centers. They cover the
+conjugate-infinity reciprocal tail at resonance, the improved near-near norm,
+the explicit Hilbert constant 260, the pair estimate at `p=1,3`, zero-strip
+operator bounds, and the actual two-potential factorization.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove Lemma 6.5's high-frequency bound for the square of `T_n`, then its
-   eventual contraction and the weighted reduction toward Propositions 6.1/6.3.
-   Lemma 6.4's uniform sign-reversing bound, including `c₂=2`, is implemented.
+2. Derive the locally uniform large-frequency contraction threshold from
+   Lemma 6.5, invert the Q-equation, and implement the Lemma 6.6 determinant
+   reduction toward Propositions 6.1/6.3. Lemmas 6.4 and 6.5 are proved for all
+   finite Banach exponents, including the source's `c₂=2` in Lemma 6.4.
    A.9's intrinsic Hilbert space and continuous
    subcritical weighted identification are implemented on every positive interval,
    as are the finite Fourier approximation and the zero/half coefficient bounds.
