@@ -892,9 +892,16 @@ operator norm, is
 and all parameters of the full closed strip. The exact finite-`p` pair norm
 and the inverse-weight improvement are retained.
 
-Next, turn this estimate into the locally uniform threshold after Lemma 6.5,
-with both the unweighted and the weighted shifted squared norms at most one
-half. Use the squared Neumann construction to invert `Id-T_n`, solve the
+The locally uniform threshold after Lemma 6.5 is now proved. Forgetting the
+weight preserves both physical Fourier components and commutes with `T_n`.
+The exact unit-weight pair norm is invariant under signed shifts. A common
+bound in the weighted full norm and weighted tail therefore controls both
+operator squares. For every positive tolerance, one open convex neighborhood
+containing the potential and zero has a common cutoff `N≥1` valid on every
+full closed strip with `|n|≥N`. Taking tolerance `1/2` gives the source's
+simultaneous unweighted and weighted shifted contraction.
+
+Next, use the squared Neumann construction to invert `Id-T_n`, solve the
 Q-equation, and prove the Lemma 6.6 determinant criterion on the two-dimensional
 resonant subspace. Then continue toward Propositions 6.1 and 6.3. The printed
 general-`p` central-height constant remains a separate open item.

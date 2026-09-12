@@ -7338,3 +7338,69 @@ example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 2) (n : ℤ) (
   weightedPotentialInverse_sq_fst _ _ _ _ _ _ _
 
 end Lemma65Checks
+
+section WeightedContractionChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Unit weights remove shifts in the source sum norm, also at the endpoint p=1.
+example (f : WeightedCoeffPair SpectralWeight.one.toWeight 1) :
+    SpectralWeight.one.shiftedPairNorm (-7) f = ‖f‖ :=
+  SpectralWeight.shiftedPairNorm_one (by simp) _ _
+
+example (f : WeightedCoeffPair SpectralWeight.one.toWeight 3) :
+    SpectralWeight.one.shiftedPairNorm 4 f = ‖f‖ :=
+  SpectralWeight.shiftedPairNorm_one (by norm_num) _ _
+
+-- Forgetting a non-normalized weight preserves an imaginary negative Fourier mode.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    let f := (WeightedCoeff.weightEquiv w.toWeight 1).symm
+      (lp.single 1 (-3 : ℤ) (2 * Complex.I))
+    (w.forgetWeight f).val (-3) = Complex.I := by
+  dsimp
+  rw [SpectralWeight.forgetWeight_apply]
+  change (lp.single 1 (-3 : ℤ) (2 * Complex.I) : Coeff 1) (-3) / (2 : ℂ) = Complex.I
+  simp [lp.single_apply]
+
+-- Larger cutoffs contract the same exact weighted pair norm.
+example (w : SpectralWeight) (f : WeightedCoeffPair w.toWeight 3) :
+    ‖weightedPairFourierTail w.toWeight 9 f‖ ≤ ‖weightedPairFourierTail w.toWeight 2 f‖ :=
+  norm_weightedPairFourierTail_antitone (by norm_num) _ _ (by norm_num)
+
+-- The square commutes with forgetting weights, including at a negative resonance.
+example (w : SpectralWeight) (φ f : WeightedCoeffPair w.toWeight 1) :
+    let T := weightedPotentialInverse (p := 1) (by simp) w φ (-4)
+      ((Real.pi : ℂ) * (-4 : ℤ)) (center_mem_resonantStrip (-4))
+    let S := weightedPotentialInverse (p := 1) (by simp) SpectralWeight.one (w.forgetPairWeight φ) (-4)
+      ((Real.pi : ℂ) * (-4 : ℤ)) (center_mem_resonantStrip (-4))
+    w.forgetPairWeight (T (T f)) = S (S (w.forgetPairWeight f)) := by
+  dsimp
+  rw [forgetPairWeight_potentialInverse, forgetPairWeight_potentialInverse]
+
+-- The endpoint p=1 has a threshold shared by every potential in an actual open neighborhood.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 1),
+      IsOpen U ∧ φ ∈ U ∧ ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs →
+        ∀ z : ℂ, ∀ hz : z ∈ resonantStrip n,
+          ‖weightedPotentialSquareInShift (by simp) w ψ n z hz‖ ≤ 1 / 2 ∧
+          ‖(weightedPotentialInverse (by simp) SpectralWeight.one (w.forgetPairWeight ψ) n z hz).comp
+            (weightedPotentialInverse (by simp) SpectralWeight.one (w.forgetPairWeight ψ) n z hz)‖ ≤ 1 / 2 := by
+  obtain ⟨N, hN, U, ho, _, hφ, _, _, hbound⟩ := exists_uniform_complementarySquare_half (by simp) w φ
+  exact ⟨N, hN, U, ho, hφ, hbound⟩
+
+-- The theorem gives bounds smaller than one half and applies along negative resonances.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∀ m : ℕ, N ≤ m →
+      ‖weightedPotentialSquareInShift (by norm_num) w φ (-(m : ℤ))
+        ((Real.pi : ℂ) * (-(m : ℤ))) (by simpa using center_mem_resonantStrip (-(m : ℤ)))‖ ≤ 1 / 4 := by
+  obtain ⟨N, hN, U, _, _, hφ, _, _, hbound⟩ :=
+    exists_uniform_complementarySquare_bound (p := 3) (by norm_num) w φ (ε := 1/4) (by norm_num)
+  refine ⟨N, hN, fun m hm => ?_⟩
+  exact (hbound φ hφ (-(m : ℤ)) (by simpa using hm) _ _).1
+
+-- The common bound is zero for the zero potential, even at the zero strip.
+example (w : SpectralWeight) : weightedFrequencyBound (p := 2) (by norm_num) w 0 0 = 0 := by
+  simp [weightedFrequencyBound]
+
+end WeightedContractionChecks

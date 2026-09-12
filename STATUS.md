@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 269 modules and 2470 named public theorems. All compile on the
+The library has 271 modules and 2492 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -83,6 +83,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.WeightedResonantSandwich` | Refined scalar near/far estimate with the potential tail divided by `w(n)` |
 | `NLS.ZakharovShabat.ComplementaryDoubleEstimate` | Scalar double-complementary estimate throughout the closed strip; both signs and zero center; inhomogeneous bracket and explicit exponent-only constant |
 | `NLS.ZakharovShabat.WeightedSquareEstimate` | Lemma 6.5 for every finite Banach exponent; actual square factorization; exact shifted pair norm and conjugated operator norm with both source terms |
+| `NLS.ZakharovShabat.UnweightedComplementary` | Contractive inclusion into the exact unit-weight pair norm; shift isometries; compatibility of tails and the actual complementary potential operator |
+| `NLS.ZakharovShabat.WeightedContraction` | Locally uniform simultaneous weighted/unweighted square bounds on an open convex potential neighborhood, for every positive tolerance; the source half-size contraction |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2691,14 +2693,34 @@ Conjugating the square by the source shift gives the same displayed bound
 for its induced operator norm. All factors use the source's exact finite-`p`
 pair norm, and the weighted remainder retains its boundary.
 
-The subsequent locally uniform threshold, simultaneous weighted/unweighted
-contraction, Q-equation inversion, and Lemma 6.6 determinant reduction remain
-next. The refined estimate does not yet package those inversion consequences.
+### Locally uniform contraction after Lemma 6.5
+
+`UnweightedComplementary` forgets a spectral weight without changing Fourier
+coefficients. This inclusion contracts the exact finite-exponent pair norm,
+commutes with Fourier tails and the actual `T_n`, and preserves the physical
+component signs. Unit-weight signed shifts preserve the source pair norm.
+Thus Lemma 6.5 also gives an ordinary unshifted operator bound on the full
+unweighted space, with the same potential after inclusion.
+
+`WeightedContraction` proves that weighted tail norms decrease with the
+cutoff. A common upper bound controls both the weighted shifted square and
+the unweighted square: the weighted full norm dominates the unweighted one,
+and likewise for every Fourier remainder. Given any potential and any
+positive tolerance `ε`, it constructs `N≥1` and an open convex neighborhood
+containing both that potential and zero. Every potential in the neighborhood
+has norm less than the original norm plus one. Both operator norms are at
+most `ε` for all `|n|≥N` and every point of the full closed strip `U_n`.
+
+The special case `ε=1/2` is exactly the simultaneous contraction assertion
+on printed page 39. It holds for every finite Banach exponent, including
+`p=1`, without removing the central lattice point or the strip boundary.
+The squared Neumann inverse, Q-equation solution, and Lemma 6.6 determinant
+reduction remain next.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5098 declarations under `NLS`, including generated
+axioms. The current audit covers 5124 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3343,11 +3365,18 @@ conjugate-infinity reciprocal tail at resonance, the improved near-near norm,
 the explicit Hilbert constant 260, the pair estimate at `p=1,3`, zero-strip
 operator bounds, and the actual two-potential factorization.
 
+The contraction checks cover unit-weight shift isometries at `p=1,3`, an
+imaginary negative Fourier mode under a constant weight with `w(0)=2`,
+nested tail norms, and compatibility of the actual operator square at a
+negative resonance. They instantiate the simultaneous open-neighborhood
+half bound at `p=1` and a quarter bound along negative resonances at `p=3`.
+The zero-potential frequency bound also vanishes at the zero strip.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Derive the locally uniform large-frequency contraction threshold from
-   Lemma 6.5, invert the Q-equation, and implement the Lemma 6.6 determinant
+2. Use the proved locally uniform large-frequency contraction threshold to
+   invert the Q-equation, and implement the Lemma 6.6 determinant
    reduction toward Propositions 6.1/6.3. Lemmas 6.4 and 6.5 are proved for all
    finite Banach exponents, including the source's `c₂=2` in Lemma 6.4.
    A.9's intrinsic Hilbert space and continuous

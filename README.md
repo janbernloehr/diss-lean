@@ -551,8 +551,11 @@ installation is absent. No shell startup files are modified.
   Banach exponents on the full strip: the shifted square has bound
   `C_p ‖φ‖ (‖φ‖/(1+|n|)^(1/p) + ‖R_n φ‖/w(n))`. The tail retains its boundary,
   and the additional inverse-weight gain is proved in the near-near term.
-  The actual square agrees with the double-inverse factorization. Eventual
-  contraction, locally uniform thresholds, and the Q-equation inversion are next.
+  The actual square agrees with the double-inverse factorization. The locally
+  uniform contraction threshold is now proved: one open convex neighborhood
+  and one frequency cutoff bound both the unweighted and weighted shifted
+  squared norms by `1/2` throughout the closed strips. The Q-equation
+  inversion and determinant reduction are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

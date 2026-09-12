@@ -217,3 +217,5 @@ import NLS.ZakharovShabat.ComplementaryReciprocalTail
 import NLS.ZakharovShabat.WeightedResonantSandwich
 import NLS.ZakharovShabat.ComplementaryDoubleEstimate
 import NLS.ZakharovShabat.WeightedSquareEstimate
+import NLS.ZakharovShabat.UnweightedComplementary
+import NLS.ZakharovShabat.WeightedContraction
