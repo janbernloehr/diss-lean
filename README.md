@@ -134,9 +134,13 @@ values. At `p=2` the representative agrees with the normalized `L²` Fourier
 inverse. Its Fourier derivative now has a square-integrable physical realization:
 integrating it recovers the function's increment. The representative is absolutely
 continuous, its classical derivative agrees almost everywhere with that realization,
-and the derivative's Fourier integrals recover the symbol `iπn`. The converse
-Sobolev reconstruction, interval-domain isomorphisms, Fourier/distribution realization,
-and physical multiplication remain needed for the full spectral transfer.
+and the derivative's Fourier integrals recover the symbol `iπn`. Conversely,
+complex integration by parts and Parseval recover weighted coefficients from any
+classical periodic `H¹` function. Both reconstruction identities are proved, giving
+a characterization by unique weighted Fourier representatives. The general derivative
+formula retains the endpoint jump for nonperiodic input. Physical Sobolev norm
+comparison, interval-domain isomorphisms, Fourier/distribution realization, and
+physical multiplication remain needed for the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

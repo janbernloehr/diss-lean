@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 113 modules and 1165 named public theorems. All compile on the
+The library has 116 modules and 1181 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -120,6 +120,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.FunctionalAnalysis.IntegralAbsoluteContinuity` | Absolute continuity of vector-valued integral primitives via scalar norm control; invariance under equality on the interval and addition of constants |
 | `NLS.Fourier.CirclePrimitive` | Physical `L²` pullback, transfer of almost-everywhere equality, normalized full-period bound, bounded primitive functionals on `[0,2]`, and agreement with physical Fourier integrals |
 | `NLS.Fourier.SobolevDerivative` | Actual `L²` Fourier derivative; integral reconstruction from finite modes, absolute continuity, almost-everywhere classical differentiation, square integrability of the actual derivative, and exact physical derivative coefficients |
+| `NLS.FunctionalAnalysis.ComplexAbsoluteContinuity` | Bounded linear preservation of absolute continuity, complex almost-everywhere differentiability, vector-valued fundamental theorem, and complex integration by parts |
+| `NLS.Fourier.AbsoluteContinuousCoefficients` | Smooth physical waves; derivative coefficient formula with endpoint jump at every frequency, periodic cancellation, and Parseval square summability |
+| `NLS.Fourier.SobolevIdentification` | Classical periodic `H¹` criterion via absolute continuity and the actual `L²` derivative; weighted Fourier recovery, both inverse identities, and unique-representative characterization |
 
 ## Current mathematical milestone
 
@@ -1069,13 +1072,28 @@ vector-valued absolute-continuity lemma proves that `f` is absolutely continuous
 on `[0,2]`. The Lebesgue differentiation theorem identifies `g` with the actual
 classical derivative almost everywhere. Consequently `deriv f` is in physical
 `L²`, and its normalized Fourier integrals are exactly `i π n aₙ`. This proves
-the forward classical Sobolev realization needed for Lemmas 4.1–4.2. The converse
-reconstruction and the boundary-domain isomorphisms on `[0,1]` remain open.
+the forward classical Sobolev realization needed for Lemmas 4.1–4.2.
+
+The converse is now proved on the period-two circle. Real and imaginary
+projections give almost-everywhere complex differentiability of absolutely
+continuous functions. A vector-valued fundamental theorem then gives complex
+integration by parts. For any complex AC function on `[0,2]` with integrable
+classical derivative, its derivative coefficient is
+
+`(f′)ₙ = iπn fₙ + (f(2) - f(0))/2`,
+
+including `n=0`. Matching endpoints cancel the boundary term. Parseval for both
+`f` and `f′` then gives the one-derivative weighted `ℓ2` condition. The constructed
+`sobolevCoefficients` and `sobolevSynthesis` satisfy both inverse identities, and
+`HasPeriodicH1Regularity` is equivalent to existence of a unique weighted
+representative. This is a classical regularity characterization; comparison with
+a separately normed physical `H¹` space and the boundary-domain isomorphisms on
+`[0,1]` remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2485 declarations under `NLS`, including generated
+axioms. The current audit covers 2506 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1320,10 +1338,19 @@ amplitude. They instantiate absolute continuity, almost-everywhere classical
 differentiation, physical square integrability, the factor-two integral bound,
 and vector-valued primitives on reversed intervals.
 
+Converse-Sobolev checks construct classical hypotheses directly from smooth
+physical waves, recover a negative odd mode and its coefficient support, and
+retain the odd mode's endpoint sign. They check reconstruction from arbitrary
+classical AC/`L²` hypotheses, the other inverse, the nonzero endpoint correction
+for an imaginary ramp at frequency zero, complex integration by parts on a
+reversed interval, and negative-frequency derivative coefficients with matching
+endpoints.
+
 ## Next milestones
 
-1. Prove the converse classical Sobolev reconstruction and establish the
-   `H¹` / `FL^{1,2}` interval-domain isomorphisms in Lemmas 4.1–4.2, then
+1. Construct the classical interval Sobolev restrictions and reflection extensions,
+   compare their norms, and establish the `H¹` / `FL^{1,2}` boundary-domain
+   isomorphisms in Lemmas 4.1–4.2, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and

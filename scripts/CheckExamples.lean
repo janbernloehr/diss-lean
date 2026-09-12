@@ -3230,3 +3230,73 @@ example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 2 0) :
 
 end
 end SobolevDerivativeChecks
+
+
+namespace SobolevIdentificationChecks
+open NLS NLS.Fourier NLS.ZakharovShabat MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+-- A classical hypothesis established directly from a smooth physical wave.
+private theorem fourier_h1 (n : ℤ) : HasPeriodicH1Regularity (fourier n) := by
+  have he : (fun x : ℝ => fourier n (x : AddCircle (2 : ℝ))) = wave n := by
+    funext x
+    exact fourier_two_eq_wave n x
+  constructor
+  · rw [he]
+    exact (contDiff_wave n).contDiffOn.absolutelyContinuousOnInterval
+  · rw [he, deriv_wave]
+    exact memLp_two_interval (continuous_const.mul (continuous_wave n)) 0 2 (by norm_num)
+
+-- Converse recovery retains a negative odd mode, with no period-one restriction.
+example : sobolevCoefficients (fourier (-3)) (fourier_h1 (-3)) = scalarMode (-3) 1 := by
+  apply Subtype.ext
+  funext n
+  simp [sobolevCoefficients_apply, fourierCoeff_fourier, Pi.single_apply, scalarMode_apply]
+example : sobolevSynthesis (by simp) (sobolevCoefficients (fourier 1) (fourier_h1 1))
+    ((1 : ℝ) : AddCircle (2 : ℝ)) = -1 := by
+  rw [sobolevSynthesis_sobolevCoefficients, fourier_two_eq_wave]
+  simpa using wave_odd_at_one 0
+
+-- The converse works under exactly the classical AC and L²-derivative assumptions.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hac : AbsolutelyContinuousOnInterval (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 0 2)
+    (hd : MemLp (deriv (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+      2 (volume.restrict (Ioc 0 2))) :
+    ∃! a : ScalarDomain 2, sobolevSynthesis (by simp) a = f :=
+  (hasPeriodicH1Regularity_iff_existsUnique f).mp ⟨hac, hd⟩
+example (a : ScalarDomain 2) :
+    sobolevCoefficients (sobolevSynthesis (by simp) a)
+      (hasPeriodicH1Regularity_sobolevSynthesis a) = a := by simp
+
+-- A nonperiodic imaginary ramp has the nonzero endpoint correction i at frequency zero.
+example : periodTwoCoefficient (deriv (fun x : ℝ => (x : ℂ) * Complex.I)) 0 = Complex.I := by
+  have hc : ContDiff ℝ 1 (fun x : ℝ => (x : ℂ) * Complex.I) :=
+    Complex.ofRealCLM.contDiff.mul contDiff_const
+  have hd : deriv (fun x : ℝ => (x : ℂ) * Complex.I) = fun _ => Complex.I := by
+    funext x
+    simpa using (Complex.ofRealCLM.hasDerivAt (x := x)).mul_const Complex.I |>.deriv
+  have hi : IntervalIntegrable (deriv (fun x : ℝ => (x : ℂ) * Complex.I)) volume 0 2 := by
+    rw [hd]
+    exact intervalIntegrable_const
+  rw [periodTwoCoefficient_deriv_of_ac hc.contDiffOn.absolutelyContinuousOnInterval hi]
+  norm_num
+
+-- Integration by parts retains complex multiplication and its endpoint term.
+example (f g : ℝ → ℂ) (hf : AbsolutelyContinuousOnInterval f 2 0)
+    (hg : AbsolutelyContinuousOnInterval g 2 0)
+    (hfi : IntervalIntegrable (deriv f) volume 2 0)
+    (hgi : IntervalIntegrable (deriv g) volume 2 0) :
+    (∫ x in (2 : ℝ)..0, f x * deriv g x) =
+      f 0 * g 0 - f 2 * g 2 - ∫ x in (2 : ℝ)..0, deriv f x * g x :=
+  NLS.FunctionalAnalysis.integral_mul_deriv_eq_complex hf hg hfi hgi
+
+-- Endpoint matching, rather than everywhere differentiability, is sufficient.
+example (f : ℝ → ℂ) (hf : AbsolutelyContinuousOnInterval f 0 2)
+    (hfi : IntervalIntegrable (deriv f) volume 0 2) (hend : f 2 = f 0) :
+    periodTwoCoefficient (deriv f) (-7) =
+      Complex.I * (Real.pi : ℂ) * (-7 : ℤ) * periodTwoCoefficient f (-7) :=
+  periodTwoCoefficient_deriv_of_ac_periodic hf hfi hend (-7)
+
+end
+end SobolevIdentificationChecks
