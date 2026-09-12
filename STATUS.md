@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 110 modules and 1142 named public theorems. All compile on the
+The library has 113 modules and 1165 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -117,6 +117,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.BoundedIntervalExtension` | Full-range Dirichlet/Neumann interval maps into the actual boundary spaces; bounds and analyticity; finite physical integral agreement, uniqueness, parity formulas, and equality with the Parseval completion at `p=2` |
 | `NLS.Fourier.ContinuousSynthesis` | Uniformly convergent period-two synthesis from `ℓ1`; contraction, injectivity, continuous coefficient extraction, actual normalized interval integrals, and single-mode agreement |
 | `NLS.Fourier.SobolevSynthesis` | Continuous representatives for every finite Banach exponent; explicit `2p` bound, uniform finite approximation, uniqueness, bounded traces, physical reflection, odd endpoint vanishing, and agreement with the normalized `L²` Fourier inverse |
+| `NLS.FunctionalAnalysis.IntegralAbsoluteContinuity` | Absolute continuity of vector-valued integral primitives via scalar norm control; invariance under equality on the interval and addition of constants |
+| `NLS.Fourier.CirclePrimitive` | Physical `L²` pullback, transfer of almost-everywhere equality, normalized full-period bound, bounded primitive functionals on `[0,2]`, and agreement with physical Fourier integrals |
+| `NLS.Fourier.SobolevDerivative` | Actual `L²` Fourier derivative; integral reconstruction from finite modes, absolute continuity, almost-everywhere classical differentiation, square integrability of the actual derivative, and exact physical derivative coefficients |
 
 ## Current mathematical milestone
 
@@ -1051,14 +1054,28 @@ need not be period one.
 
 At `p=2`, the representative agrees as an `L²` class with the inverse of
 mathlib's normalized Fourier Hilbert basis, so its normalized `L²` norm equals
-the raw coefficient norm. These are prerequisites for Lemmas 4.1–4.2. The
-identification of the Fourier derivative with the classical weak derivative,
-absolute continuity, and the interval-domain isomorphisms remain open.
+the raw coefficient norm.
+
+The Fourier derivative now has an actual square-integrable realization on the
+physical interval. Pullback of circle Haar measure to a full interval retains the
+normalization factor two. Integration from zero to any `x ∈ [0,2]` is a bounded
+linear functional on the circle `L²` space; continuous extension of the single-mode
+fundamental theorem yields
+
+`f(x) = f(0) + ∫₀ˣ g(t) dt`,
+
+where `f` is `sobolevSynthesis a` and `g` realizes the Fourier derivative. A
+vector-valued absolute-continuity lemma proves that `f` is absolutely continuous
+on `[0,2]`. The Lebesgue differentiation theorem identifies `g` with the actual
+classical derivative almost everywhere. Consequently `deriv f` is in physical
+`L²`, and its normalized Fourier integrals are exactly `i π n aₙ`. This proves
+the forward classical Sobolev realization needed for Lemmas 4.1–4.2. The converse
+reconstruction and the boundary-domain isomorphisms on `[0,1]` remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2445 declarations under `NLS`, including generated
+axioms. The current audit covers 2485 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1296,11 +1313,17 @@ reflection without complex conjugation, both zero endpoint traces of a sine-type
 combination, uniqueness of continuous representatives, and agreement with the
 `L²` Fourier inverse.
 
+Derivative checks cover the imaginary constant's zero derivative, a negative odd
+mode's signed half-period increment, vanishing full-period derivative mean, and
+the positive real derivative coefficient from a negative frequency with imaginary
+amplitude. They instantiate absolute continuity, almost-everywhere classical
+differentiation, physical square integrability, the factor-two integral bound,
+and vector-valued primitives on reversed intervals.
+
 ## Next milestones
 
-1. Identify the Fourier derivative of the continuous representative with its
-   classical weak derivative and establish the `H¹` / `FL^{1,2}` interval-domain
-   isomorphisms in Lemmas 4.1–4.2, then
+1. Prove the converse classical Sobolev reconstruction and establish the
+   `H¹` / `FL^{1,2}` interval-domain isomorphisms in Lemmas 4.1–4.2, then
    transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and

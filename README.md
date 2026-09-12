@@ -131,9 +131,12 @@ coefficient domain at finite `p` has a unique continuous representative, with
 uniform bound `2p`, uniform finite approximation, and bounded endpoint traces.
 Reflection agrees with `x ↦ 2-x`, and odd reflection symmetry gives zero endpoint
 values. At `p=2` the representative agrees with the normalized `L²` Fourier
-inverse. The classical weak-derivative and interval-domain identifications,
-Fourier/distribution realization, and physical multiplication remain needed for
-the full spectral transfer.
+inverse. Its Fourier derivative now has a square-integrable physical realization:
+integrating it recovers the function's increment. The representative is absolutely
+continuous, its classical derivative agrees almost everywhere with that realization,
+and the derivative's Fourier integrals recover the symbol `iπn`. The converse
+Sobolev reconstruction, interval-domain isomorphisms, Fourier/distribution realization,
+and physical multiplication remain needed for the full spectral transfer.
 The overview theorem's exact norm-dependent height, rectangular contour
 identification, and main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved

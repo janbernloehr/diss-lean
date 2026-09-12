@@ -72,3 +72,4 @@ import NLS.Fourier.ConjugateHilbert
 import NLS.Fourier.HilbertSeries
 import NLS.ZakharovShabat.BoundedIntervalExtension
 import NLS.Fourier.SobolevSynthesis
+import NLS.Fourier.SobolevDerivative

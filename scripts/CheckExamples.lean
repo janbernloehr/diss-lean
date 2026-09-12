@@ -3165,3 +3165,68 @@ example (a : ScalarDomain 2) (f : C(AddCircle (2 : ℝ), ℂ))
 
 end
 end SobolevSynthesisChecks
+
+
+namespace SobolevDerivativeChecks
+open NLS NLS.Fourier NLS.ZakharovShabat MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+
+-- The zero frequency has zero derivative, even with a nonreal constant.
+example : sobolevDerivative (scalarMode 0 Complex.I) = 0 := by
+  apply fourierBasis.repr.injective
+  ext n
+  rw [fourierBasis_repr]
+  simp [fourierCoeff_sobolevDerivative, scalarMode_apply]
+
+-- The negative odd mode integrates over the original interval to the signed increment.
+example : circlePrimitive 1 (sobolevDerivative (scalarMode (-1) Complex.I)) =
+    -2 * Complex.I := by
+  rw [circlePrimitive_sobolevDerivative_scalarMode (by norm_num : (1 : ℝ) ∈ Icc 0 2)]
+  simp only [sobolevTrace_apply, sobolevSynthesis_scalarMode, wave_at_zero, mul_one]
+  have h : wave (-1) 1 = -1 := by
+    convert wave_odd_at_one (-1) using 1
+    norm_num
+  rw [h]
+  ring
+
+-- Every Sobolev derivative has zero mean over the full period.
+example (a : ScalarDomain 2) : circlePrimitive 2 (sobolevDerivative a) = 0 := by
+  rw [circlePrimitive_sobolevDerivative (by norm_num : (2 : ℝ) ∈ Icc 0 2)]
+  have h := periodic_sobolevSynthesis (by simp) a 0
+  simp only [zero_add] at h
+  simp only [sobolevTrace_apply, h, sub_self]
+
+-- At frequency -3 and coefficient i, i π n gives the positive real value 3π.
+example : periodTwoCoefficient
+    (deriv (fun x : ℝ => sobolevSynthesis (by simp) (scalarMode (p := 2) (-3) Complex.I)
+      (x : AddCircle (2 : ℝ)))) (-3) = 3 * (Real.pi : ℂ) := by
+  rw [periodTwoCoefficient_deriv_sobolevSynthesis]
+  simp only [scalarMode_apply, ↓reduceIte]
+  ring_nf
+  simp
+
+-- Absolute continuity and the classical derivative are established for arbitrary inputs.
+example (a : ScalarDomain 2) :
+    AbsolutelyContinuousOnInterval
+      (fun x : ℝ => sobolevSynthesis (by simp) a (x : AddCircle (2 : ℝ))) 0 2 :=
+  absolutelyContinuous_sobolevSynthesis a
+example (a : ScalarDomain 2) :
+    MemLp (deriv (fun x : ℝ => sobolevSynthesis (by simp) a (x : AddCircle (2 : ℝ))))
+      2 (volume.restrict (Ioc 0 2)) := memLp_deriv_sobolevSynthesis a
+example (a : ScalarDomain 2) :
+    ∀ᵐ x : ℝ, x ∈ Ioo (0 : ℝ) 2 →
+      HasDerivAt (fun t : ℝ => sobolevSynthesis (by simp) a (t : AddCircle (2 : ℝ)))
+        (circlePullback (sobolevDerivative a) x) x := ae_hasDerivAt_sobolevSynthesis a
+
+-- The full-period pullback bound retains the normalization factor two.
+example (f : CircleL2) : (∫ x in (0 : ℝ)..2, ‖circlePullback f x‖) ≤ 2 * ‖f‖ :=
+  integral_norm_circlePullback_le f
+
+-- The generic absolute-continuity result also handles reversed intervals and complex functions.
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 2 0) :
+    AbsolutelyContinuousOnInterval (fun x => ∫ t in (1 : ℝ)..x, f t) 2 0 :=
+  NLS.FunctionalAnalysis.absolutelyContinuousOnInterval_integral hf (by norm_num)
+
+end
+end SobolevDerivativeChecks
