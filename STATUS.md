@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 158 modules and 1518 named public theorems. All compile on the
+The library has 160 modules and 1540 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -10,6 +10,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.SequenceSpaces.Basic` | Integer-indexed complex `lp` coefficients |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
+| `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
+| `NLS.ZakharovShabat.PairNormHeight` | Resolvent and strict strip bounds in the source's finite pair norm; uniform open convex parameter neighborhoods; analytic actual norm-height contours with rank `4N+2` |
 | `NLS.SequenceSpaces.Multiplier` | Bounded diagonal symbols; norm bound; continuous linear operator; commutation with truncations |
 | `NLS.SequenceSpaces.Translation` | Reindexing by an integer equivalence preserves the norm; shifts as linear isometry equivalences |
 | `NLS.SequenceSpaces.Convolution` | Absolutely convergent Banach-space construction; coefficient formula; `lp × l1 → lp` norm bound, including `p=∞`; continuous bilinear map; single-mode shift identity |
@@ -193,8 +195,9 @@ convention follows §2, equation (1.2). The spectral pencil is explicitly a map
 from the domain to the base space. The unbounded realization is now proved
 closed, as detailed below. The physical Fourier/distribution realization remains
 unproved.
-The dissertation's pair norm is not used for these numerical bounds; its
-comparison with the chosen maximum norm is a separate proof obligation.
+These original numerical operator bounds use the maximum pair norm. The finite-`p`
+comparison with the dissertation's component-sum norm is now proved in `PairNorm`;
+`PairNormHeight` transfers the spectral-height conclusions without increasing constants.
 
 For every `1 ≤ p ≤ ∞` and every `z ∉ πℤ`, the free equation is now a
 continuous linear equivalence between the one-derivative domain and base space.
@@ -281,7 +284,7 @@ Every such strip avoids the free lattice. Fourier recentering and the reciprocal
 weight bound imply `freeL1Bound p hp z hz ≤ 2p/r`, and hence the
 `FL^p → FL^1` operator estimate `‖R₀(z)‖ ≤ 8p/r` in Lemma 3.2(iii), printed
 page 24. The stronger `2p/r` estimate and all pair norms here use the library's
-maximum norm; comparison with the dissertation's pair norm remains separate.
+maximum norm; finite-`p` comparison with the dissertation's pair norm is proved below.
 
 When `2p * ‖φ‖ < r`, the Neumann condition holds throughout every punctured
 strip. Thus every circle of radius `r` about `πn` lies in the resolvent set.
@@ -302,7 +305,7 @@ at a nearest Fourier frequency and removing its coefficient separates a
 are bounded by `2/(abs(Im z) + abs(m−n))`. Appendix B.1, raised to the conjugate
 power, bounds that tail by `4p * abs(Im z)^(-1/p)`. The endpoint `p=1` uses
 the earlier supremum estimate. These are bounds in the current maximum norm
-on pairs; the physical-space realization and pair-norm comparison remain open.
+on pairs; the physical-space realization remains open. The finite pair-norm comparison is proved below.
 
 `heightNeumannRegion φ` is the set where `Im z ≠ 0` and the displayed height
 bound times `‖φ‖` is less than one. Every point in this numerical region lies
@@ -502,8 +505,9 @@ unordered pair, allowing repetition. Root-space and eigenfunction parity follow
 from the same counting data.
 
 This uses Corollary 3.5's height-`N` central box. The overview's Theorem 1.1 uses
-a norm-dependent height; transferring that exact numerical convention, as well
-as the physical Fourier realization and pair norm, remains a separate obligation.
+a norm-dependent height. Its Hilbert case and finite coefficient pair-norm
+transfer are now proved below. The printed general-`p` height and the full
+physical Fourier realization remain separate obligations.
 
 **The real-type clause (iv) is now proved in coefficient space.** Real type means
 `φ₂(n) = conj(φ₁(-n))`, including the reversal of Fourier frequency. For every
@@ -868,8 +872,9 @@ Density makes the extension unique, and at `p=2` it equals the preceding
 Parseval construction, preserving its sharper energy identity and injectivity.
 For arbitrary inputs the even amplitude is `(a₂(n)+εa₁(-n))/2`; the odd amplitude
 is `i(Sa₂(n)+εSa₁(-n-1))/2`, with the reflected odd index handled explicitly.
-The full Fourier/distribution realization, source pair-norm comparison, and
-physical Sobolev-domain identifications remain separate obligations before
+The finite source pair-norm comparison is now proved below. The full
+Fourier/distribution realization and physical Sobolev-domain identifications
+remain separate obligations before
 claiming the entire physical formulation.
 
 The actual unbounded realization is now defined as
@@ -1548,8 +1553,8 @@ cannot justify the height from this estimate; it does not refute the spectral
 claim. A checked example also puts that parameter in the actual resolvent of
 a nonzero real-type potential. The all-exponent result above deliberately
 retains the factor `p`. The printed height for arbitrary finite `p` remains
-open. All present norms are coefficient maximum pair norms; the dissertation's
-general pair-norm comparison remains a separate obligation.
+open. These original estimates use coefficient maximum pair norms. The finite
+component-sum norm comparison and height transfer are now proved below.
 
 ## Arbitrary rectangles and moving-height contours
 
@@ -1574,13 +1579,40 @@ projection supplies analyticity.
 
 This applies both to the printed Hilbert height `(1+8‖ψ‖)^2` and to the proved
 all-exponent height `(1+8p‖ψ‖)^p`. Thus the actual moving norm-height contour
-formula is now proved for those heights. The printed general-`p` height and
-the dissertation's general pair-norm comparison remain separate obligations.
+formula is now proved for those heights. The finite coefficient pair-norm
+transfer is proved below; the printed general-`p` height remains open.
+
+## Finite-exponent source pair norms and parameter transfer
+
+`CoeffPair p` and `WeightedCoeffPair w p` are actual complete complex normed
+spaces with the component-sum `lp` norm. For every finite `p≥1`, their `p`-th
+norm powers equal the sums of both coefficient energies. At arbitrary real
+Sobolev regularity `s`, the weight in the combined energy is exactly
+`(1+|n|)^(s*p)`, as in Chapter 1, equation (1.2), printed page 22.
+Continuous linear equivalences preserve all coefficients while identifying
+these spaces with the existing maximum-norm products. The forward norm bound
+is one; the reverse factor is exactly `2^(1/p)`, attained by equal components.
+These results do not identify the source's different infinity-endpoint norm.
+
+The source-norm parameter map is contractive, so all-exponent height
+`(1+8pM)^p` and printed Hilbert height `(1+8M)^2` remain sufficient when `M`
+bounds the component-sum norm. Their horizontal edges lie in the resolvent
+set and the whole spectrum lies strictly inside. An open convex neighborhood
+containing the parameter and zero is constructed in `CoeffPair p` itself.
+The actual norm-height contour projections are analytic there and have rank
+`4N+2` for every sufficiently large cutoff. The height function can be any
+uniformly bounded sufficient height, with no regularity assumed.
+
+This completes the finite coefficient pair-norm comparison and the potential
+parameter transfer for the proved heights. Operators in these contour statements
+still act on the original coefficient base space. The general physical
+Fourier/distribution realization, the source's infinity norm, and the printed
+general-`p` height remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3185 declarations under `NLS`, including generated
+axioms. The current audit covers 3215 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1942,12 +1974,22 @@ of sufficient height still yields analytic projections. The explicit non-Hilbert
 norm-height contour also retains the existing genuine length-two Jordan chain,
 whose generalized vector remains outside the ordinary eigenspace.
 
+Pair-norm checks use components of amplitudes `3` and `4i` at frequencies
+`-3` and `5`: the `p=1` norm is seven, the Hilbert norm is five while the
+maximum norm is four, and the cubic energy is 91. Equal negative-frequency
+components attain the comparison constant. A one-derivative pair has exact
+energy 720; a negative fractional Sobolev exponent retains the product `sp`.
+Both printed Hilbert edges at height 1681 are admissible in the source norm.
+Further checks exercise coefficient preservation and uniform analytic rank
+on the actual component-sum parameter space.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
 2. Prove the periodic Fourier/distribution realization, physical period-one
-   embedding, general-`p` potential pair-norm comparison, and multiplication
-   beyond the Hilbert realization.
+   embedding, and multiplication beyond the Hilbert realization. The finite-`p`
+   coefficient pair-norm comparison is complete; the source's infinity endpoint
+   remains distinct.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. Further sequence-space work includes

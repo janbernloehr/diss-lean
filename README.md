@@ -209,8 +209,13 @@ holds for every ordered rectangle with resolvent boundary, with its whole
 range and rank identified. In particular, contours at the printed Hilbert
 height and the proved all-exponent height equal the fixed central projection
 and are analytic with rank `4N+2`. This even holds for discontinuous choices
-of uniformly bounded sufficient heights. The general pair-norm transfer and
-main dissertation theorems remain future work.
+of uniformly bounded sufficient heights. The finite-exponent component-sum
+pair norm is now implemented exactly, including all real Sobolev weights.
+Its continuous linear equivalence with the maximum norm has sharp reverse
+factor `2^(1/p)`. The proved heights and analytic contour neighborhoods now
+transfer to this actual source-norm parameter space. The source's infinity
+norm, full physical Fourier realization, and main dissertation theorems remain
+future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -350,8 +355,11 @@ installation is absent. No shell startup files are modified.
 - Finite projections are first defined for arbitrary finite frequency sets.
 - Weighted spaces carry the transported `lp` norm topology, not the pointwise
   topology of the underlying raw sequences.
-- Pair spaces use the maximum of the component norms. The dissertation uses a
-  different pair norm; comparison and transfer of constants remain to be proved.
+- The original operator spaces use maximum pair norms. `CoeffPair` and
+  `WeightedCoeffPair` implement the dissertation's finite-`p` component-sum
+  norms, with continuous linear equivalences and sharp factor `2^(1/p)`.
+  The spectral-height bounds transfer without increasing their constants.
+  The source's infinity-endpoint norm is not identified.
 - Both scalar components use period-two modes `exp(i π n x)`. The free symbols
   are `-π n` and `+π n`; the signed modes `eₙ⁻` and `eₙ⁺` both have eigenvalue `π n`.
 - The operator is a bounded map from the one-derivative domain to the base space.

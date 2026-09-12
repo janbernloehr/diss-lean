@@ -4491,3 +4491,78 @@ example : ∃ N : ℕ, 0 < N ∧
       (Real.pi : ℂ) 2 BoundaryRootChecks.generalized).mp BoundaryRootChecks.generalized_mem_two⟩
 
 end HeightContourChecks
+
+namespace PairNormChecks
+open NLS.ZakharovShabat Complex
+
+private def unequal (p : ℝ≥0∞) : CoeffPair p :=
+  WithLp.toLp p (lp.single p (-3) (3 : ℂ), lp.single p 5 (4 * I))
+
+-- Both components contribute at signed, different frequencies.
+example : ‖unequal 1‖ = 7 := by
+  norm_num [unequal, WithLp.prod_norm_eq_of_L1, lp.norm_single]
+
+private theorem hilbert_norm : ‖unequal 2‖ = 5 := by
+  have h := WithLp.prod_norm_sq_eq_of_L2 (unequal 2)
+  norm_num [unequal, lp.norm_single] at h
+  change ‖unequal 2‖ ^ 2 = 25 at h
+  nlinarith [norm_nonneg (unequal 2)]
+
+example : ‖CoeffPair.toMax 2 (unequal 2)‖ = 4 ∧ ‖unequal 2‖ = 5 := by
+  exact ⟨by norm_num [unequal, Prod.norm_def, lp.norm_single], hilbert_norm⟩
+
+private theorem cubic_energy : ‖unequal 3‖ ^ (3 : ℝ) = 91 := by
+  have h := norm_withLp_prod_rpow (by simp : (3 : ℝ≥0∞) ≠ ⊤) (unequal 3)
+  norm_num [unequal, lp.norm_single] at h ⊢
+  exact h
+
+example : (∑' n : ℤ, (‖(unequal 3).fst n‖ ^ (3 : ℝ) + ‖(unequal 3).snd n‖ ^ (3 : ℝ))) = 91 := by
+  have h := CoeffPair.norm_rpow_eq_tsum (by simp : (3 : ℝ≥0∞) ≠ ⊤) (unequal 3)
+  norm_num only [ENNReal.toReal_ofNat] at h
+  exact h.symm.trans cubic_energy
+
+-- The comparison constant is attained by equal nonzero components at a negative frequency.
+example : ‖(CoeffPair.toMax 3).symm (lp.single 3 (-7) I, lp.single 3 (-7) I)‖ =
+    (2 : ℝ) ^ (1 / (3 : ℝ)) := by
+  simpa using CoeffPair.norm_diagonal (by simp : (3 : ℝ≥0∞) ≠ ⊤) (lp.single 3 (-7) I)
+
+-- The one-derivative pair domain uses both frequency weights: (4*3)^2 + (6*4)^2.
+example : ‖(WithLp.toLp 2 (scalarMode (p := 2) (-3) (3 : ℂ), scalarMode (p := 2) 5 (4 * I)) :
+    WeightedCoeffPair (Weight.sobolev 1) 2)‖ ^ 2 = 720 := by
+  rw [WithLp.prod_norm_sq_eq_of_L2]
+  norm_num [WeightedCoeff.norm_eq, scalarMode, lp.norm_single, Weight.sobolev_apply]
+
+-- Arbitrary real Sobolev regularity is retained in the source exponent sp.
+example (u : WeightedCoeffPair (Weight.sobolev (-(1 / 2 : ℝ))) 3) :
+    ‖u‖ ^ (3 : ℝ) = ∑' n : ℤ, (1 + |(n : ℝ)|) ^ (-(3 / 2 : ℝ)) *
+      (‖u.fst.val n‖ ^ (3 : ℝ) + ‖u.snd.val n‖ ^ (3 : ℝ)) := by
+  have h := WeightedCoeffPair.sobolev_norm_rpow_eq_tsum
+    (by simp : (3 : ℝ≥0∞) ≠ ⊤) (-(1 / 2 : ℝ)) u
+  norm_num only [ENNReal.toReal_ofNat] at h
+  convert h using 1
+
+-- The exact source norm, five rather than four, gives the printed height 1681.
+example : (1681 * I : ℂ) ∈ resolventSet (by simp) (CoeffPair.toMax 2 (unequal 2)) ∧
+    (-1681 * I : ℂ) ∈ resolventSet (by simp) (CoeffPair.toMax 2 (unequal 2)) := by
+  constructor <;> apply mem_resolventSet_of_coeffPair_hilbert_height (unequal 2) (M := 5)
+  · exact hilbert_norm.le
+  · norm_num
+  · exact hilbert_norm.le
+  · norm_num
+
+-- Norm conversion preserves every coefficient, including a negative odd index.
+example (u : CoeffPair 3) : (CoeffPair.toMax 3 u).1 (-7) = u.fst (-7) := rfl
+example (u : CoeffPair 3) : (CoeffPair.toMax 3).symm (CoeffPair.toMax 3 u) = u :=
+  (CoeffPair.toMax 3).symm_apply_apply u
+
+-- Uniform analyticity and rank are parameterized by the genuine Hilbert sum-norm space.
+example (u : CoeffPair 2) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ Convex ℝ U ∧ u ∈ U ∧ 0 ∈ U ∧
+      (∀ N : ℕ, N₀ ≤ N → AnalyticOnNhd ℂ
+        (fun v => heightRectangleIntegral (by simp) (CoeffPair.toMax 2 v) N ((1 + 8 * ‖v‖) ^ 2)) U) ∧
+      ∀ v ∈ U, ∀ N : ℕ, N₀ ≤ N → Module.finrank ℂ
+        (heightRectangleIntegral (by simp) (CoeffPair.toMax 2 v) N ((1 + 8 * ‖v‖) ^ 2)).range = 4 * N + 2 := by
+  obtain ⟨N₀, U, _, ho, hc, hu, h0, han, h⟩ := exists_uniform_coeffPair_hilbert_heightRectangleProjection u
+  exact ⟨N₀, U, ho, hc, hu, h0, han, fun v hv N hN => (h v hv N hN).2.2⟩
+
+end PairNormChecks

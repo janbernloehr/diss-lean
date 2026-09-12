@@ -106,3 +106,5 @@ import NLS.ZakharovShabat.ExplicitHeight
 import NLS.ZakharovShabat.HeightSpectralBox
 import NLS.ZakharovShabat.RectangleSpectrum
 import NLS.ZakharovShabat.HeightRectangleContour
+import NLS.SequenceSpaces.PairNorm
+import NLS.ZakharovShabat.PairNormHeight

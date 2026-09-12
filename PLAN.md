@@ -441,6 +441,9 @@ analytic with rank `4N+2`, uniformly on one counting neighborhood; no regularity
 of the height function is needed beyond a uniform sufficient bound.
 Resolve the general printed bound separately, retaining the distinction from
 the proved bound.
+The source's finite-exponent coefficient pair norm and weighted pair norm are
+now implemented exactly, with energy exponent `sp` and sharp comparison factor
+`2^(1/p)`. The proved heights and actual analytic contour neighborhoods transfer
+to the component-sum parameter space without increasing the height constants.
 The general Fourier/distribution interpretation, physical period-one embedding,
-and general-`p` comparison with the dissertation's potential pair norm remain separate
-proof obligations.
+and the source's distinct infinity-endpoint norm remain separate proof obligations.
