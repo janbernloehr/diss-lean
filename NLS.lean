@@ -193,3 +193,7 @@ import NLS.Fourier.IntrinsicSobolevComplete
 import NLS.Fourier.IntrinsicSobolevSynthesis
 import NLS.Fourier.IntrinsicSobolevEquivalence
 import NLS.Fourier.IntrinsicSobolevApproximation
+import NLS.SequenceSpaces.SpectralWeight
+import NLS.SequenceSpaces.ShiftedWeight
+import NLS.SequenceSpaces.ShiftedPairNorm
+import NLS.Fourier.SpectralWeightModulation

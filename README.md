@@ -530,6 +530,14 @@ installation is absent. No shell startup files are modified.
   forward and inverse bounds for every positive interval length. Finite Fourier
   truncations converge in the full intrinsic norm, and finite Fourier support
   is dense. Synthesis alone remains continuous throughout `0<s<1`.
+- Section 6's normalized, symmetric, monotone submultiplicative weights are
+  now represented, including `(1+|nπ|)^s` and the displayed normalization
+  `w(n)≥1`. Shifted scalar norms agree with actual Fourier-wave multiplication,
+  and translated weights give the same coefficient space with comparison
+  factor `w(i)` in both directions. The finite-`p` pair norm uses opposite
+  component shifts and has the exact signed coefficient energy, without an
+  extra pair-norm factor. The resonant decomposition and its complementary
+  free inverse remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

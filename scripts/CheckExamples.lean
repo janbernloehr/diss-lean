@@ -6898,3 +6898,127 @@ example (t : Finset ℤ) : ‖fourierTruncate (by norm_num : (0 : ℝ) < 1 / 4) 
   norm_fourierTruncate_le _ _ _ _
 
 end IntrinsicSobolevEquivalenceChecks
+
+section SpectralWeightChecks
+open SpectralWeight
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The displayed source normalization allows w(0)>1.
+example : SpectralWeight.constant 2 (by norm_num) 0 = 2 := rfl
+example : SpectralWeight.one 7 = 1 := rfl
+
+-- The exact physical π scale is retained, including negative and fractional indices.
+example : SpectralWeight.piSobolev 1 (by norm_num) (-3) = 1 + 3 * Real.pi := by
+  norm_num [SpectralWeight.piSobolev_apply, abs_mul, abs_of_pos Real.pi_pos]
+
+example : SpectralWeight.scaledSobolev 2 (1 / 2) (by norm_num) (by norm_num) (-4) = 3 := by
+  norm_num [SpectralWeight.scaledSobolev_apply, Real.rpow_div_two_eq_sqrt]
+
+example (w : SpectralWeight) : w (-3) ≤ w 5 := w.mono_abs (by norm_num)
+example (w : SpectralWeight) : w.toWeight.HasTemperedInverse := w.hasTemperedInverse
+
+private def spectralTestMode (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (k : ℤ) (c : ℂ) :
+    WeightedCoeff w.toWeight p :=
+  (WeightedCoeff.weightEquiv w.toWeight p).symm (lp.single p k ((w k : ℂ) * c))
+
+private theorem spectralTestMode_apply (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (k : ℤ) (c : ℂ) (n : ℤ) :
+    (spectralTestMode w p k c).val n = if n = k then c else 0 := by
+  change (lp.single p k ((w k : ℂ) * c) : Coeff p) n / (w n : ℂ) = _
+  by_cases hn : n = k
+  · subst n
+    simp [lp.single_apply, w.toWeight.complex_ne_zero]
+  · simp [lp.single_apply, hn]
+
+private theorem spectralTestMode_norm (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (k : ℤ) (c : ℂ) :
+    ‖spectralTestMode w p k c‖ = w k * ‖c‖ := by
+  rw [WeightedCoeff.norm_eq, spectralTestMode, LinearEquiv.apply_symm_apply,
+    lp.norm_single (zero_lt_one.trans_le (Fact.out : 1 ≤ p))]
+  simp only [norm_mul, Complex.norm_real, Real.norm_eq_abs, abs_of_pos (w.positive k)]
+
+private theorem spectralTestMode_modulation (w : SpectralWeight) (p : ℝ≥0∞) [Fact (1 ≤ p)]
+    (i k : ℤ) (c : ℂ) : w.modulation i (spectralTestMode w p k c) = spectralTestMode w p (k + i) c := by
+  apply Subtype.ext
+  funext n
+  rw [SpectralWeight.modulation_apply, spectralTestMode_apply, spectralTestMode_apply]
+  simp only [show n - i = k ↔ n = k + i by omega]
+
+private def testSpectralWeight : SpectralWeight := SpectralWeight.sobolev 1 (by norm_num)
+
+-- Scalar shifts act by a(n-i), and the exact norm uses w(k+i) for a mode at k.
+example : testSpectralWeight.shiftedNorm 3 (spectralTestMode testSpectralWeight 2 (-2) Complex.I) = 2 := by
+  rw [← SpectralWeight.norm_modulation, spectralTestMode_modulation, spectralTestMode_norm]
+  norm_num [testSpectralWeight, SpectralWeight.sobolev_apply, Weight.sobolev_apply]
+
+-- The scalar construction includes infinity, independently of the finite-p pair formula.
+example : testSpectralWeight.shiftedNorm 3 (spectralTestMode testSpectralWeight ⊤ (-2) Complex.I) = 2 := by
+  rw [← SpectralWeight.norm_modulation, spectralTestMode_modulation, spectralTestMode_norm]
+  norm_num [testSpectralWeight, SpectralWeight.sobolev_apply, Weight.sobolev_apply]
+
+example : (testSpectralWeight.modulation 3 (spectralTestMode testSpectralWeight 2 (-2) Complex.I)).val 1 = Complex.I := by
+  rw [SpectralWeight.modulation_apply, spectralTestMode_apply]
+  norm_num
+
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 3) :
+    (w.shiftEquiv (-5)).symm (w.shiftEquiv (-5) a) = a := ContinuousLinearEquiv.symm_apply_apply _ _
+
+-- Translated weights retain the same underlying space with two-sided factor w(i).
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 3) :
+    w.shiftedNorm (-5) a ≤ w 5 * ‖a‖ ∧ ‖a‖ ≤ w 5 * w.shiftedNorm (-5) a := by
+  constructor
+  · simpa only [SpectralWeight.apply_neg] using w.shiftedNorm_le (-5) a
+  · simpa only [SpectralWeight.apply_neg] using w.norm_le_shiftedNorm (-5) a
+
+private def spectralTestPair (p : ℝ≥0∞) [Fact (1 ≤ p)] : WeightedCoeffPair testSpectralWeight.toWeight p :=
+  WithLp.toLp p (spectralTestMode testSpectralWeight p (-2) Complex.I, spectralTestMode testSpectralWeight p 1 2)
+
+-- Opposite component shifts give 6²+(5*2)²=136; a common sign would give a different answer.
+example : testSpectralWeight.shiftedPairNorm 3 (spectralTestPair 2) ^ 2 = 136 := by
+  have h := SpectralWeight.shiftedPairNorm_rpow testSpectralWeight (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) 3 (spectralTestPair 2)
+  change _ = testSpectralWeight.shiftedNorm (-3) (spectralTestMode testSpectralWeight 2 (-2) Complex.I) ^ (2 : ℝ≥0∞).toReal +
+    testSpectralWeight.shiftedNorm 3 (spectralTestMode testSpectralWeight 2 1 2) ^ (2 : ℝ≥0∞).toReal at h
+  rw [← SpectralWeight.norm_modulation, ← SpectralWeight.norm_modulation,
+    spectralTestMode_modulation, spectralTestMode_modulation, spectralTestMode_norm, spectralTestMode_norm] at h
+  norm_num [testSpectralWeight, SpectralWeight.sobolev_apply, Weight.sobolev_apply, Real.rpow_two] at h
+  exact h
+
+-- The same signed formula uses the sum of cubes, not the maximum pair norm, at p=3.
+example : testSpectralWeight.shiftedPairNorm 3 (spectralTestPair 3) ^ (3 : ℝ) = 1216 := by
+  have h := SpectralWeight.shiftedPairNorm_rpow testSpectralWeight (by norm_num : (3 : ℝ≥0∞) ≠ ⊤) 3 (spectralTestPair 3)
+  change _ = testSpectralWeight.shiftedNorm (-3) (spectralTestMode testSpectralWeight 3 (-2) Complex.I) ^ (3 : ℝ≥0∞).toReal +
+    testSpectralWeight.shiftedNorm 3 (spectralTestMode testSpectralWeight 3 1 2) ^ (3 : ℝ≥0∞).toReal at h
+  rw [← SpectralWeight.norm_modulation, ← SpectralWeight.norm_modulation,
+    spectralTestMode_modulation, spectralTestMode_modulation, spectralTestMode_norm, spectralTestMode_norm] at h
+  norm_num [testSpectralWeight, SpectralWeight.sobolev_apply, Weight.sobolev_apply] at h
+  simpa only [Real.rpow_ofNat] using h
+
+-- The Banach endpoint p=1 uses the exact sum 6+10=16.
+example : testSpectralWeight.shiftedPairNorm 3 (spectralTestPair 1) = 16 := by
+  have h := SpectralWeight.shiftedPairNorm_rpow testSpectralWeight (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) 3 (spectralTestPair 1)
+  change _ = testSpectralWeight.shiftedNorm (-3) (spectralTestMode testSpectralWeight 1 (-2) Complex.I) ^ (1 : ℝ≥0∞).toReal +
+    testSpectralWeight.shiftedNorm 3 (spectralTestMode testSpectralWeight 1 1 2) ^ (1 : ℝ≥0∞).toReal at h
+  rw [← SpectralWeight.norm_modulation, ← SpectralWeight.norm_modulation,
+    spectralTestMode_modulation, spectralTestMode_modulation, spectralTestMode_norm, spectralTestMode_norm] at h
+  norm_num [testSpectralWeight, SpectralWeight.sobolev_apply, Weight.sobolev_apply] at h
+  exact h
+
+-- Unit weights make the signed pair shift isometric, with no hidden factor two.
+example (f : WeightedCoeffPair SpectralWeight.one.toWeight 3) : SpectralWeight.one.shiftedPairNorm 7 f = ‖f‖ := by
+  apply le_antisymm
+  · simpa only [SpectralWeight.one_apply, one_mul] using SpectralWeight.one.shiftedPairNorm_le (by norm_num) 7 f
+  · simpa only [SpectralWeight.one_apply, one_mul] using SpectralWeight.one.norm_le_shiftedPairNorm (by norm_num) 7 f
+
+-- The unweighted coefficient inclusion is contractive for arbitrary source weights.
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 3) : ‖w.toCoeff a‖ ≤ ‖a‖ := w.norm_toCoeff_le a
+
+example (w : SpectralWeight) (f : WeightedCoeffPair w.toWeight 3) :
+    w.shiftedPairNorm 4 f ≤ w 4 * ‖f‖ ∧ ‖f‖ ≤ w 4 * w.shiftedPairNorm 4 f :=
+  ⟨w.shiftedPairNorm_le (by norm_num) 4 f, w.norm_le_shiftedPairNorm (by norm_num) 4 f⟩
+
+-- Modulation is actual physical multiplication of the synthesized tempered distribution.
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 3) :
+    Fourier.weightedDistributionSynthesis w.toWeight w.hasTemperedInverse (w.modulation (-3) a) =
+      TemperedDistribution.smulLeftCLM ℂ (Fourier.wave (-3))
+        (Fourier.weightedDistributionSynthesis w.toWeight w.hasTemperedInverse a) :=
+  Fourier.spectralWeight_synthesis_modulation w (-3) a
+
+end SpectralWeightChecks

@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 245 modules and 2273 named public theorems. All compile on the
+The library has 249 modules and 2316 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -73,6 +73,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntrinsicSobolevSynthesis` | Bidirectional physical coordinate energy finiteness; intrinsic norm dilation bound; injective continuous weighted synthesis for `0<s<1`; exact actual Fourier coefficients and arbitrary-length norm constant |
 | `NLS.Fourier.IntrinsicSobolevEquivalence` | Actual weighted Fourier analysis; both inverse identities; continuous intrinsic/weighted Hilbert equivalence below half; explicit forward and inverse arbitrary-length bounds; A.9 factorization |
 | `NLS.Fourier.IntrinsicSobolevApproximation` | Finite physical Fourier truncations; exact coefficient selection; uniform norm bound; convergence in the full intrinsic norm and density of finite Fourier support below half |
+| `NLS.SequenceSpaces.SpectralWeight` | Section 6's exact weight class; signed monotonicity; unit, constant, scaled Sobolev and physical `π` weights; tempered reciprocal; forward and reverse translation comparisons |
+| `NLS.SequenceSpaces.ShiftedWeight` | Contractive unweighted inclusion; continuously equivalent translated-weight spaces; exact scalar shifted energy; coefficient modulation and group law; isometric shift-weight identification; scalar comparisons including infinity |
+| `NLS.SequenceSpaces.ShiftedPairNorm` | Opposite physical component modulations; exact finite-`p` signed energy; both norm comparisons with factor `w(i)`; additive shift law and zero shift |
+| `NLS.Fourier.SpectralWeightModulation` | Weighted realization agrees with unweighted synthesis; coefficient modulation equals actual multiplication by the physical Fourier wave as tempered distributions |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2526,10 +2530,44 @@ so classes with finite Fourier support are dense below half regularity.
 No matching-endpoint assumption is needed. Surjectivity and this Fourier
 truncation convergence are not asserted at or above half regularity.
 
+## Section 6 weight class and shifted weighted norms
+
+`SpectralWeight` implements the displayed class `M`: `w(n)≥1`, symmetry,
+submultiplicativity, and monotonicity on nonnegative integer frequencies.
+Monotonicity is also proved for arbitrary signed magnitudes. The displayed
+normalization permits `w(0)>1`, so constant weights greater than one are
+included. Scaled Sobolev weights `(1+c|n|)^s`, `c,s≥0`, include the exact
+source convention `(1+|nπ|)^s`. All source weights have tempered inverses.
+
+`ShiftedWeight` proves the two translation comparisons with factor `w(i)`.
+The identity on raw coefficients gives a continuous linear equivalence between
+the original and translated-weight spaces. Reindexing gives an isometric
+identification of the latter with the original weight; its output coefficients
+are exactly `a(n-i)`. Thus the shifted norm equals the norm after Fourier
+modulation. The finite-`p` scalar energy is exactly
+`Σ_n w(n+i)^p |a(n)|^p`; the scalar construction and norm comparisons also
+hold at infinity. Changing the shift by `j` costs at most `w(j)`, independently
+of the original shift. There is also a contractive unweighted inclusion.
+
+`ShiftedPairNorm` uses the existing source sum norm for finite Banach exponents.
+The first physical component is modulated by `-i` and the second by `i`.
+Frequency reflection in the first component gives the exact source energy
+`Σ_n w(n+i)^p (|f_minus(-n)|^p+|f_plus(n)|^p)`.
+Both comparisons with the unshifted pair norm have factor `w(i)`, without an
+extra factor from passing through a maximum norm. Pair shifts satisfy the
+additive law and zero shift is the identity. These pair formulas are stated
+for finite `p`; the source's separate infinity pair norm is not substituted.
+
+`SpectralWeightModulation` identifies the weighted realization with the
+unweighted tempered distribution obtained through the contractive inclusion.
+It then proves that weighted coefficient modulation is exactly Mathlib's
+physical multiplication by `exp(iπix)`.
+The complementary free inverse and the uniform bound of Lemma 6.4 remain next.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4694 declarations under `NLS`, including generated
+axioms. The current audit covers 4802 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3145,12 +3183,23 @@ zero, and finite support is dense. Additional checks cover continuous synthesis
 above half, its exact raw coefficients, and the A.9 factorization through the
 weighted equivalence.
 
+Spectral-weight checks allow a constant weight with value two at zero, retain
+the physical `π` scale at a negative frequency, and evaluate a fractional
+scaled weight. They exercise signed monotonicity and tempered compatibility.
+An imaginary negative scalar mode is shifted with the correct sign, including
+at infinity. An asymmetric pair gives shifted energies 16 at `p=1`, 136 at
+`p=2`, and 1216 at `p=3`, distinguishing the opposite component signs and the
+source sum norm. Unit weights give an isometry; general weights retain both
+comparison bounds. The actual tempered-distribution modulation identity is
+also checked at a negative frequency.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Develop Chapter 1, Section 6: the normalized submultiplicative weight class,
-   shifted weighted norms, and resonant/nonresonant Fourier decomposition for
-   Lemma 6.4 and Propositions 6.1/6.3. A.9's intrinsic Hilbert space and continuous
+2. Construct Section 6's resonant/nonresonant Fourier projections and the
+   complementary free inverse throughout the closed strip, then prove
+   Lemma 6.4's uniform bound in the now implemented shifted weighted norms
+   toward Propositions 6.1/6.3. A.9's intrinsic Hilbert space and continuous
    subcritical weighted identification are implemented on every positive interval,
    as are the finite Fourier approximation and the zero/half coefficient bounds.
    Appendix B.2, its periodic product in A.7, and the displayed B.3 inequality

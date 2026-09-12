@@ -821,9 +821,35 @@ independent of their finite support, and converge in the full intrinsic norm
 below half regularity. Hence classes with finite Fourier support are dense,
 including when the original interval input has unequal endpoint values.
 
-Next, return to Chapter 1, Section 6: formalize the source's normalized,
-symmetric, monotone, submultiplicative weight class and shifted weighted norms,
-then the resonant/nonresonant Fourier splitting and complementary free inverse
-used in Lemma 6.4. These feed the eigenvalue and weighted-gap asymptotics of
-Propositions 6.1 and 6.3. The printed general-`p` central-height constant in
-Proposition 3.1 remains an independent open item.
+The next Section 6 weight and shifted-norm step is now implemented below.
+The resonant splitting and complementary free inverse feed Lemma 6.4 and the
+eigenvalue and weighted-gap asymptotics of Propositions 6.1 and 6.3. The printed
+general-`p` central-height constant in Proposition 3.1 remains independent.
+
+
+The displayed Section 6 weight class is now formalized with lower bound one,
+symmetry, submultiplicativity, and monotonicity on the nonnegative integers.
+The normalization does not impose `w(0)=1`; constant weights greater than one
+are included. Scaled Sobolev weights `(1+c|n|)^s` with `c,s≥0` include both the
+existing normalized-frequency weights and the source's exact `π` scale. Every
+source weight has tempered reciprocal and a contractive inclusion into the
+unweighted coefficient space.
+
+Translated weights `w(n+i)` define the same coefficient space, with continuous
+identity maps and comparison factor `w(i)` in both directions. Reindexing gives
+an isometric map from the shifted-weight class to the original weight, and the
+resulting modulation has raw coefficients `a(n-i)`. Its norm is exactly the
+source's shifted scalar norm. The modulation also agrees with Mathlib's actual
+multiplication of the synthesized tempered distribution by `exp(iπix)`.
+The scalar results include the infinity exponent.
+
+For finite Banach exponents, the pair norm modulates the first physical
+component by `-i` and the second by `i`. The exact energy is
+`Σ_n w(n+i)^p (|f_minus(-n)|^p+|f_plus(n)|^p)`, as in Section 6's signed mode
+coordinates. Both comparisons again have factor `w(i)`, with no additional
+pair-norm constant. Unit weights give isometric pair shifts.
+
+Next, construct the resonant projection onto the first physical frequency
+`-n` and the second frequency `n`, its complement, and the complementary free
+inverse throughout the strip `|Re λ-nπ|≤π/2`, including `λ=nπ`. Then use these
+operators with the shifted weighted norms to prove Lemma 6.4's uniform bound.
