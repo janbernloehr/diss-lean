@@ -141,6 +141,7 @@ import NLS.SequenceSpaces.WeightedPairNormInfty
 import NLS.Fourier.PairDistributionInfty
 import NLS.SequenceSpaces.ExponentEmbedding
 import NLS.SequenceSpaces.HolderEmbedding
+import NLS.SequenceSpaces.HilbertSobolevEmbedding
 import NLS.Fourier.DistributionEmbeddings
 import NLS.SequenceSpaces.YoungTrilinear
 import NLS.SequenceSpaces.YoungFinite
@@ -170,3 +171,5 @@ import NLS.Fourier.FractionalZeroExtension
 import NLS.Fourier.FractionalLineTranslation
 import NLS.Fourier.PeriodizationIncrement
 import NLS.Fourier.FractionalPeriodization
+import NLS.Fourier.FractionalIntervalEmbedding
+import NLS.Fourier.IntervalFourierLebesgue

@@ -674,3 +674,24 @@ actual Fourier integrals throughout `0<s<1/2`, with no matching endpoint values.
 The next step is to assemble the sharp `q>1/(s+1/2)` Fourier-Lebesgue conclusion
 from the existing Hölder coefficient embedding, handle `s=0`, and deduce the
 separate `s=1/2` consequence by decreasing regularity.
+
+
+The period-two A.9 membership conclusions are now assembled. The coefficient
+map uses monotone exponent inclusion for `q≥2` and the explicit Hölder exponent
+`r=(1/q-1/2)⁻¹` below two. It is an injective continuous linear map and preserves
+raw coefficients. Composing with the physical interval bridge gives the
+source's strict range `q>1/(s+1/2)` for positive subcritical regularity.
+At zero, only `L²` is required, and the equality target two is also available.
+Infinity follows from `L²` independently of fractional energy.
+
+An arbitrary-length kernel comparison proves
+`E_t(f) ≤ L^(2(s-t)) E_s(f)` for `0≤t≤s`. For each finite `q>1`, choose
+`max(0,1/q-1/2)<t<1/2`; lowering the intrinsic half energy before periodization
+then proves the separate half-regularity conclusion. No critical
+zero-extension or matching-endpoint assumption is introduced.
+
+Next, combine the existing quantitative Hardy, periodization, spectral, and
+coefficient bounds into a single bound in an intrinsic interval norm, then
+prove the Fourier scaling needed for the arbitrary-period statement. The
+current membership theorems use period two; arbitrary-length energy estimates
+alone do not establish the source's general-period identification.

@@ -285,8 +285,9 @@ sequence exponent is contractive, including the infinity target and all real
 Sobolev regularities. A weight ratio in `ℓʳ` gives a bounded embedding when
 `1/q = 1/p + 1/r`, with its explicit Hölder norm as constant. For Sobolev
 weights the finite-`r` reciprocal is summable exactly when `(s-t)r > 1`.
-This proves the coefficient estimate used in Appendix A.9; the separate
-fractional interval-Sobolev identification in that lemma remains to be proved.
+This estimate now composes with the physical interval regularity bridge to
+prove Appendix A.9's Fourier-Lebesgue membership range for period two,
+including the zero- and half-regularity conclusions.
 Appendix B.2 is now proved for every Banach exponent triple satisfying
 `1 + 1/r = 1/p + 1/q`, including all infinity endpoints. Convolution is
 absolutely convergent at every frequency, belongs to `ℓʳ`, and satisfies the
@@ -502,8 +503,12 @@ installation is absent. No shell startup files are modified.
   and periodization is now controlled by its line translation energy. Thus
   interval data with finite intrinsic fractional energy has weighted square-
   summable actual Fourier coefficients for `0<s<1/2`, without endpoint matching.
-  The sharp Fourier-Lebesgue exponent statement and endpoint consequences
-  remain to be assembled for Appendix A.9.
+  Appendix A.9's actual Fourier coefficients now belong to `ℓ^q` for
+  `q>1/(s+1/2)`. At `s=0`, interval `L²` alone suffices for every `q≥2`,
+  including infinity. Intrinsic half regularity gives every finite `q>1`
+  by lowering regularity first. The weighted coefficient embedding is an
+  injective continuous linear map. Packaging the composite bound in an
+  intrinsic interval norm and rescaling to arbitrary periods remain.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

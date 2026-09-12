@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 222 modules and 2102 named public theorems. All compile on the
+The library has 225 modules and 2120 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -50,6 +50,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.FractionalLineTranslation` | Actual line translation energy; measure-preserving change of variables and Tonelli identity; almost-everywhere invariance; exact zero-extension translation-energy decomposition and subcritical finiteness |
 | `NLS.Fourier.PeriodizationIncrement` | Three-translate formula for actual periodic increments away from endpoint crossings; almost-everywhere integrated square bound by nine times the line increment energy |
 | `NLS.Fourier.FractionalPeriodization` | Real-kernel periodic energy identity including zero displacement; `9/2` physical periodization bound; arbitrary interval Fourier reconstruction gains periodic regularity and weighted square summability for `0<s<1/2`; bound in original interval energies |
+| `NLS.SequenceSpaces.HilbertSobolevEmbedding` | Explicit auxiliary Hölder exponent; exact extended-exponent relation; injective continuous weighted Hilbert inclusion into every finite Banach target with `1/q<s+1/2`; raw coefficient recovery |
+| `NLS.Fourier.FractionalIntervalEmbedding` | Explicit diameter bound for lowering intrinsic fractional regularity on arbitrary positive interval lengths; finiteness descends without endpoint matching |
+| `NLS.Fourier.IntervalFourierLebesgue` | Appendix A.9 membership in the period-two model: actual interval Fourier coefficients for `0<s<1/2`, `q>1/(s+1/2)`; `s=0` from `L²` alone including target two and infinity; separate intrinsic half-regularity consequence for every finite `q>1` |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2028,8 +2031,8 @@ its regularity times `r` exceeds one; restricting the series to nonnegative
 frequencies proves necessity as well as sufficiency. At `r=∞`, nonnegative
 regularity suffices. Thus the embedding from `FL^{s,p}` to `FL^{t,q}` follows
 for every finite multiplier exponent with `(s-t)r>1`, retaining its explicit
-constant. This is the coefficient estimate in Appendix A.9. The identification
-of fractional interval `Hˢ` with periodic Sobolev data used there is not claimed.
+constant. This is the coefficient estimate in Appendix A.9. The forward
+physical interval bridge and resulting membership conclusions are described below.
 
 `DistributionEmbeddings` proves that every exponent or Hölder embedding above
 preserves the actual tempered distribution, across both weights and exponents.
@@ -2249,8 +2252,8 @@ almost-everywhere replacement supplies a measurable representative and both
 energies respect that replacement.
 
 The fractional Hardy dependency and the forward zero-extension/periodization
-comparison below are complete. The sharp A.9 Fourier-Lebesgue embedding
-statement and its endpoint consequences remain to be assembled.
+comparison below are complete, as are the A.9 Fourier-Lebesgue membership
+range and endpoint conclusions described after them.
 
 ## Zero extension and forward periodization
 
@@ -2286,13 +2289,46 @@ quantitative bound can be stated entirely in the original interval energies:
 `E_periodic ≤ (9/2)(E_interval+2 E_exterior)`.
 
 This proves the forward physical regularity passage needed for A.9 in the
-period-two model. The sharp Fourier-Lebesgue exponent conclusion, `s=0`, and
-the separate half-regularity consequence still need their final assembly.
+period-two model. Its Fourier-Lebesgue membership conclusions are assembled below.
+
+## Appendix A.9 exponent and endpoint conclusions
+
+`HilbertSobolevEmbedding` constructs the injective continuous identity map
+from weighted Hilbert coefficients of regularity `s≥0` to finite real Banach
+targets `q≥1` satisfying `1/q<s+1/2`. For `q≥2` this is the contractive
+exponent inclusion after removal of the weight. Below two, the explicit
+auxiliary exponent `r=(1/q-1/2)⁻¹` satisfies the exact extended-real Hölder
+relation and `sr>1`. Both branches preserve every raw coefficient.
+
+`FractionalIntervalEmbedding` proves
+`E_t(f) ≤ L^(2(s-t)) E_s(f)` for `0≤t≤s` and positive interval length `L`.
+The proof includes the diagonal of the kernel and permits infinite energies;
+no measurability hypothesis on the representative is needed for the comparison.
+In particular, finite intrinsic half-regularity energy gives all smaller
+positive regularities.
+
+`IntervalFourierLebesgue` composes the actual interval Fourier reconstruction
+with the coefficient inclusion. For `0<s<1/2`, `L²` and finite intrinsic energy
+give `periodTwoCoefficient f ∈ ℓ^q` whenever `q>1/(s+1/2)`. The zero case
+requires only `L²`, permits equality `q=2`, and also gives bounded coefficients.
+The unified nonnegative-regularity theorem makes its difference-energy
+hypothesis conditional on `s>0`, so it imposes no extra energy assumption at
+zero. At half regularity, a positive `t<1/2` with `1/q<t+1/2` exists for every
+finite `q>1`; lowering intrinsic regularity before periodization proves the
+separate conclusion without assuming matching endpoints or finite critical
+zero-extension energy.
+
+These are the actual coefficient membership conclusions for the period-two
+model, with a continuous linear embedding between the coefficient spaces.
+The existing physical estimates have not yet been packaged into a single
+embedding bound for an intrinsic interval norm. The arbitrary-period version
+also still needs Fourier scaling; the arbitrary-length energy comparison
+alone does not provide that identification.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4297 declarations under `NLS`, including generated
+axioms. The current audit covers 4330 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2843,12 +2879,23 @@ A concrete ramp `f(x)=x` has unequal endpoint values, interval square
 integrability, and proved fractional energy at most eight at `s=1/4`; the new
 bridge yields its weighted Fourier square summability without periodicity.
 
+A.9 checks evaluate the auxiliary exponent at `q=3/2`, recover an imaginary
+negative-frequency coefficient through the continuous inclusion, and cover
+targets above two and the Banach endpoint at higher regularity. The reciprocal
+weight fails summability at equality in its threshold. Lowering half regularity
+to a quarter on length four has constant two. Zero-regularity examples require
+only `L²`, including target two and infinity. The actual nonperiodic ramp has
+`ℓ^(3/2)` Fourier coefficients from quarter regularity; its independently
+proved intrinsic half energy is at most four, giving `ℓ^(6/5)` coefficients
+despite unequal endpoint values.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Assemble the sharp interval Fourier-Lebesgue embedding in Appendix A.9,
-   including `s=0` and the separate half-regularity consequence. The fractional
-   Hardy inequality and forward periodization comparison are complete. The
+2. Package Appendix A.9's composite bound in an intrinsic interval norm and
+   extend the Fourier identification from period two to arbitrary periods.
+   The exponent and endpoint membership conclusions, fractional Hardy
+   inequality, and forward periodization comparison are complete. The
    two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
    and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
@@ -2856,5 +2903,5 @@ bridge yields its weighted Fourier square summability without periodicity.
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
-unimplemented. The remaining Appendix A.9 exponent/endpoint conclusions and
-the printed general-`p` spectral height remain open.
+unimplemented. Appendix A.9's intrinsic norm packaging and arbitrary-period
+Fourier scaling, and the printed general-`p` spectral height, remain open.

@@ -6244,3 +6244,84 @@ example : intervalRamp 0 ≠ intervalRamp 2 ∧
   · norm_num [intervalRamp]
   · exact Fourier.memlp_sobolev_periodTwoCoefficient_of_interval (by norm_num) (by norm_num)
       intervalRamp intervalRamp_memLp (intervalRamp_energy_le.trans_lt (by norm_num))
+
+-- Appendix A.9: the auxiliary Hölder exponent at q=3/2 is six.
+example : hilbertHolderExponent (3 / 2) = 6 := by norm_num [hilbertHolderExponent]
+
+example : (2 : ℝ≥0∞).HolderTriple (ENNReal.ofReal 6) (ENNReal.ofReal (3 / 2)) := by
+  simpa only [show hilbertHolderExponent (3 / 2) = 6 by norm_num [hilbertHolderExponent]] using
+    holderTriple_hilbertHolderExponent (q := 3 / 2) (by norm_num) (by norm_num)
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3 / 2 : ℝ)) := ⟨by norm_num⟩
+
+-- The explicit continuous map keeps an imaginary negative-frequency coefficient.
+example :
+    (WeightedCoeff.hilbertSobolevInclusion (1 / 4) (3 / 2) (by norm_num) (by norm_num) (by norm_num)
+      (Fourier.fractionalSobolevCoefficients (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+        (Fourier.l2Synthesis (lp.single 2 (-3) Complex.I))
+        (Fourier.hasFractionalPeriodicRegularity_single (by norm_num) (by norm_num) _ _))) (-3) = Complex.I := by
+  simp [Fourier.fractionalSobolevCoefficients_apply, Fourier.fourierCoeff_l2Synthesis]
+
+-- The same inclusion covers both sides of two, and the Banach endpoint at higher regularity.
+example (a : WeightedCoeff (Weight.sobolev (1 / 4)) 2) : Memℓp a.val (ENNReal.ofReal (3 : ℝ)) :=
+  WeightedCoeff.memlp_of_hilbertSobolev (by norm_num) (by norm_num) (by norm_num) a
+
+example (a : WeightedCoeff (Weight.sobolev 1) 2) : Memℓp a.val 1 := by
+  simpa using WeightedCoeff.memlp_of_hilbertSobolev (q := 1) (by norm_num) (by norm_num) (by norm_num) a
+
+-- Equality in the reciprocal-weight summability condition fails.
+example : ¬ Memℓp (fun n : ℤ => (Weight.sobolev (1 / 4) n : ℂ)⁻¹) 4 := by
+  rw [Weight.inverse_sobolev_memlp_iff (by norm_num : (0 : ℝ) < (4 : ℝ≥0∞).toReal)]
+  norm_num
+
+-- The diameter constant for lowering half regularity to a quarter on length four is two.
+example (f : ℝ → ℂ) : Fourier.fractionalIntervalEnergy (1 / 4) 4 f ≤
+    2 * Fourier.fractionalIntervalEnergy (1 / 2) 4 f := by
+  have h := Fourier.fractionalIntervalEnergy_le_of_regularity
+    (t := 1 / 4) (s := 1 / 2) (L := 4) (by norm_num) (by norm_num) (by norm_num) f
+  norm_num [Real.rpow_div_two_eq_sqrt] at h ⊢
+  exact h
+
+-- The zero-regularity conclusion includes equality q=2 and infinity with no difference-energy assumption.
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 2))) :
+    Memℓp (Fourier.periodTwoCoefficient f) 2 ∧ Memℓp (Fourier.periodTwoCoefficient f) ⊤ :=
+  ⟨Fourier.memlp_periodTwoCoefficient_of_memLp le_rfl f hf,
+    Fourier.memlp_top_periodTwoCoefficient_of_memLp f hf⟩
+
+example (f : ℝ → ℂ) (hf : MeasureTheory.MemLp f 2 (MeasureTheory.volume.restrict (Set.Ioc 0 2))) :
+    Memℓp (Fourier.periodTwoCoefficient f) (ENNReal.ofReal (3 : ℝ)) :=
+  Fourier.memlp_periodTwoCoefficient_of_nonneg_interval (s := 0)
+    (by norm_num) (by norm_num) (by norm_num) f hf (by norm_num)
+
+-- Subcritical nonperiodic data gives the genuinely smaller sequence exponent 3/2.
+example : Memℓp (Fourier.periodTwoCoefficient intervalRamp) (ENNReal.ofReal (3 / 2)) :=
+  Fourier.memlp_periodTwoCoefficient_of_interval (s := 1 / 4)
+    (by norm_num) (by norm_num) (by norm_num) intervalRamp intervalRamp_memLp
+    (intervalRamp_energy_le.trans_lt (by norm_num))
+
+private theorem intervalRamp_half_energy_le : Fourier.fractionalIntervalEnergy (1 / 2) 2 intervalRamp ≤ 4 := by
+  have hpoint (x y : ℝ) : ENNReal.ofReal (‖intervalRamp x - intervalRamp y‖ ^ 2) *
+      Fourier.fractionalDistanceKernel (1 / 2) x y ≤ 1 := by
+    simp only [intervalRamp, ← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs,
+      Fourier.fractionalDistanceKernel]
+    rw [← ENNReal.ofReal_mul (sq_nonneg _)]
+    apply (ENNReal.ofReal_le_ofReal (show |x - y| ^ 2 * |x - y| ^ (-(1 + 2 * (1 / 2 : ℝ))) ≤ 1 from ?_)).trans_eq (by norm_num)
+    by_cases he : |x - y| = 0
+    · simp [he]
+    have hp : 0 < |x - y| := lt_of_le_of_ne (abs_nonneg _) (Ne.symm he)
+    rw [← Real.rpow_two |x - y|, ← Real.rpow_add hp]
+    norm_num
+  calc
+    _ ≤ ∫⁻ x : ℝ in Set.Ioo 0 2, ∫⁻ y : ℝ in Set.Ioo 0 2, (1 : ℝ≥0∞) := by
+      apply MeasureTheory.lintegral_mono
+      intro x
+      apply MeasureTheory.lintegral_mono
+      exact hpoint x
+    _ = 4 := by norm_num [Real.volume_Ioo]
+
+-- Unequal endpoints are allowed even for the half-regularity consequence into q=6/5.
+example : intervalRamp 0 ≠ intervalRamp 2 ∧
+    Memℓp (Fourier.periodTwoCoefficient intervalRamp) (ENNReal.ofReal (6 / 5)) := by
+  refine ⟨by norm_num [intervalRamp], ?_⟩
+  exact Fourier.memlp_periodTwoCoefficient_of_half_interval (by norm_num) intervalRamp
+    intervalRamp_memLp (intervalRamp_half_energy_le.trans_lt (by norm_num))
