@@ -4794,3 +4794,91 @@ example (f : ℕ → Domain ⊤) (a b : PairSpace ⊤)
   exists_domain_of_tendsto_free f ha hb
 
 end DistributionDerivativeChecks
+
+namespace DistributionProductChecks
+open NLS.Fourier NLS.ZakharovShabat MeasureTheory
+open scoped SchwartzMap FourierTransform
+
+-- Mathlib's actual smooth multiplication shifts negative frequencies with the correct sign.
+example : TemperedDistribution.smulLeftCLM ℂ (wave (-3))
+    (distributionSynthesis (lp.single 3 (-2) Complex.I)) (coefficientTest (-5)) = Complex.I := by
+  rw [← distributionSynthesis_shift, distributionSynthesis_coefficientTest, Coeff.shift_apply]
+  norm_num [lp.single_apply]
+
+-- Both complex amplitudes survive the extended product.
+example : distributionProduct (lp.single 3 (-2) Complex.I)
+    (lp.single 1 (-3) (2 * Complex.I)) (coefficientTest (-5)) = -2 := by
+  rw [distributionProduct_coefficientTest]
+  simp [lp.single_apply, Pi.single_apply, mul_left_comm]
+
+private def allOnes : Coeff ⊤ := ⟨fun _ => 1, one_memℓp_infty⟩
+
+-- An infinite, nondecaying potential can still be multiplied by every Wiener-class input.
+example (b : Coeff 1) : Filter.Tendsto
+    (fun s : Finset ℤ => TemperedDistribution.smulLeftCLM ℂ
+      (fourierPolynomial s b) (distributionSynthesis allOnes))
+    Filter.atTop (nhds (distributionProduct allOnes b)) :=
+  tendsto_polynomial_distributionProduct allOnes b
+
+example (b : Coeff 1)
+    (hb : (fun x : ℝ => continuousSynthesis b (x : AddCircle (2 : ℝ))).HasTemperateGrowth) :
+    distributionProduct allOnes b = TemperedDistribution.smulLeftCLM ℂ
+      (fun x : ℝ => continuousSynthesis b (x : AddCircle (2 : ℝ))) (distributionSynthesis allOnes) :=
+  distributionProduct_eq_smooth_mul allOnes b hb
+
+-- At ordinary function inputs, this is the ordinary product inside an actual integral.
+example (a b : Coeff 1) (g : 𝓢(ℝ, ℂ)) : distributionProduct a b g =
+    ∫ x : ℝ, continuousSynthesis a (x : AddCircle (2 : ℝ)) *
+      (continuousSynthesis b (x : AddCircle (2 : ℝ)) * g x) :=
+  distributionProduct_eq_integral a b g
+
+-- The extended test action is absolutely convergent at non-Hilbert exponents.
+example (φ : Coeff 3) (f : ScalarDomain 3) (g : 𝓢(ℝ, ℂ)) :
+    Summable (fun n : ℤ => ‖φ n * ∫ x : ℝ,
+      wave n x * (sobolevSynthesis (by simp) f (x : AddCircle (2 : ℝ)) * g x)‖) :=
+  summable_norm_distributionPotentialMul_integrals (by simp) φ f g
+
+-- Polynomial approximations may vary along with the potential.
+example (φᵢ : ℕ → Coeff 3) (fᵢ : ℕ → ScalarDomain 3) (φ : Coeff 3) (f : ScalarDomain 3)
+    (s : ℕ → Finset ℤ) (hs : ∀ i n, n ∉ s i → (fᵢ i).val n = 0)
+    (hφ : Filter.Tendsto φᵢ Filter.atTop (nhds φ))
+    (hf : Filter.Tendsto fᵢ Filter.atTop (nhds f)) :
+    Filter.Tendsto (fun i => TemperedDistribution.smulLeftCLM ℂ
+      (fourierPolynomial (s i) (fᵢ i).val) (distributionSynthesis (φᵢ i))) Filter.atTop
+      (nhds (distributionPotentialMul (by simp) φ f)) :=
+  tendsto_distributionPotentialMul_smooth_approximation (by simp) s hs hφ hf
+
+-- Agreement on smooth Fourier polynomials determines the extension uniquely.
+example (φ : Coeff 3) (F : Coeff 1 → 𝓢'(ℝ, ℂ)) (hF : Continuous F)
+    (hpoly : ∀ (b : Coeff 1) (s : Finset ℤ), F (Coeff.truncate s b) =
+      TemperedDistribution.smulLeftCLM ℂ (fourierPolynomial s b) (distributionSynthesis φ)) :
+    F = distributionProduct φ := distributionProduct_unique φ F hF hpoly
+
+private def constantPair : Domain 3 := (scalarMode 0 1, scalarMode 0 1)
+private def unitPotential : PairSpace 3 := (lp.single 3 0 1, lp.single 3 0 1)
+
+-- A nonzero off-diagonal potential gives a genuine distributional eigenstate.
+example : distributionOperator (by simp) unitPotential constantPair =
+    (1 : ℂ) • distributionPairCLM (domainInclusion constantPair) := by
+  apply (distributional_eigen_equation_iff (by simp) unitPotential constantPair 1).mpr
+  rw [one_smul]
+  change freeOperator constantPair + potentialOperator (by simp) unitPotential constantPair = _
+  have hf : freeOperator constantPair = 0 := by
+    apply Prod.ext <;> ext n <;> by_cases hn : n = 0 <;>
+      simp [constantPair, hn]
+  rw [hf, zero_add]
+  exact potentialOperator_unit (by simp) constantPair
+
+example : distributionPairCLM (domainInclusion constantPair) ≠ 0 := by
+  intro h
+  have ht := congrArg (fun T : 𝓢'(ℝ, ℂ) × 𝓢'(ℝ, ℂ) => T.1 (coefficientTest 0)) h
+  change distributionSynthesis (scalarInclusion constantPair.1) (coefficientTest 0) = 0 at ht
+  rw [distributionSynthesis_coefficientTest, scalarInclusion_apply] at ht
+  norm_num [constantPair] at ht
+
+-- The product is intrinsic to the represented distribution across coefficient exponents.
+example (a : Coeff 1) (a' : Coeff ⊤) (h : distributionSynthesis a = distributionSynthesis a')
+    (b : Coeff 1) : distributionProduct a b = distributionProduct a' b :=
+  distributionProduct_eq_of_synthesis_eq a a' h b
+
+end DistributionProductChecks

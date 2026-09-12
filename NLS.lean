@@ -117,3 +117,8 @@ import NLS.Fourier.DistributionSynthesis
 import NLS.Fourier.DistributionPeriodicity
 import NLS.Fourier.DistributionDerivative
 import NLS.ZakharovShabat.DistributionFreeOperator
+import NLS.SequenceSpaces.TestConvolution
+import NLS.Fourier.DistributionModulation
+import NLS.Fourier.ProductTestSamples
+import NLS.Fourier.DistributionProduct
+import NLS.ZakharovShabat.DistributionPotential

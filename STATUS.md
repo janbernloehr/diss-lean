@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 169 modules and 1627 named public theorems. All compile on the
+The library has 174 modules and 1672 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -14,6 +14,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.DistributionPeriodicity` | Physical period two; period one iff even support; doubled coefficients give period one; agreement with continuous synthesis under actual real-line integrals |
 | `NLS.Fourier.DistributionDerivative` | Actual derivative multiplier `iπn`; exact scalar derivative graph and domain; weak integration by parts for continuous representatives; closed graph for all Banach exponents |
 | `NLS.ZakharovShabat.DistributionFreeOperator` | Injective pair synthesis; actual signed free derivative; exact pair graph/domain; closedness and base-norm graph limits including infinity |
+| `NLS.SequenceSpaces.TestConvolution` | Absolutely convergent bilinear test/convolution transposition with reflected multiplier and signed lattice reindexing |
+| `NLS.Fourier.DistributionModulation` | Smooth temperate Fourier waves; exact Mathlib distribution multiplication as coefficient shifts; finite-polynomial multiplier identity |
+| `NLS.Fourier.ProductTestSamples` | Summable actual Fourier integrals of continuous multiplier times Schwartz test; reflected convolution formula; norm control; compatibility with smooth tests |
+| `NLS.Fourier.DistributionProduct` | Unique continuous extension of smooth multiplication to Wiener coefficients; joint approximation independence; actual integral action; agreement with smooth and ordinary function products |
+| `NLS.ZakharovShabat.DistributionPotential` | Actual extended domain product; absolute test-integral formula and norm bound; arbitrary smooth approximations; full distributional operator and eigenvalue-equation identification |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -204,7 +209,7 @@ convention follows §2, equation (1.2). The spectral pencil is explicitly a map
 from the domain to the base space. The unbounded realization is now proved
 closed, as detailed below. The forward realization of coefficients as periodic
 distributions and exact free derivative graph are now proved below;
-distributional potential multiplication remains open.
+distributional potential multiplication is also identified below.
 These original numerical operator bounds use the maximum pair norm. The finite-`p`
 comparison with the dissertation's component-sum norm is now proved in `PairNorm`;
 `PairNormHeight` transfers the spectral-height conclusions without increasing constants.
@@ -409,7 +414,7 @@ and `-n` have the same residue modulo two.
 The canonical period-one coefficient embedding and its physical integral
 identification for integrable functions are now proved below. The forward
 distributional realization and period-one characterization are also proved below;
-distributional potential multiplication remains open. The actual rectangular contour
+distributional potential multiplication is also identified below. The actual rectangular contour
 identification is also proved below.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
@@ -1682,8 +1687,8 @@ period-two synthesis and period-one synthesis on every Schwartz test.
 
 This completes the forward realization and exact recovery for Banach coefficient
 data. The following milestone identifies actual distributional differentiation.
-Potential multiplication and the converse characterization of all periodic
-distributions with the prescribed coefficient regularity remain open. No
+The converse characterization of all periodic distributions with the prescribed
+coefficient regularity remains open; potential multiplication is identified below. No
 function representative is assumed for general coefficient data.
 
 ## Exact distributional derivative and free operator graphs
@@ -1716,13 +1721,56 @@ pair free graphs are closed for every Banach exponent. At infinity this also
 gives stability under limits in the two base coefficient norms, without assuming
 convergence in the stronger domain norm.
 
-Distributional potential multiplication remains the next operator-identification
-step. These statements do not settle the source's distinct infinity pair norm.
+The following milestone identifies distributional potential multiplication.
+These statements do not settle the source's distinct infinity pair norm.
+
+## Actual distribution multiplication and the full operator
+
+`DistributionModulation` proves smoothness and exact iterated derivatives for
+every period-two wave, and hence temperate growth. Mathlib's multiplication of
+actual tempered distributions by a wave is exactly the coefficient shift.
+Finite Fourier polynomials therefore give precisely the existing truncated
+convolution product under the genuine smooth-multiplier API. No totalized
+smooth-multiplier operation is used on a nonsmooth function.
+
+`DistributionProduct` proves that synthesis of convolution is the unique
+continuous extension of that smooth operation from Fourier polynomials to
+`ℓ¹` multiplier coefficients. It is jointly continuous in the two coefficient
+norms, has a quantitative bound on every Schwartz test, and is independent of
+arbitrary converging coefficient approximations. It depends only on the actual
+potential distribution, independently of the coefficient exponent used to
+represent it. The potential may lie in any
+Banach `lp`, including infinity. The multiplier remains in `l1`.
+
+`TestConvolution` transposes convolution onto reflected test coefficients using
+absolute convergence on the product lattice. `ProductTestSamples` identifies
+that test sequence with actual real-line Fourier integrals of the continuous
+multiplier times the Schwartz test, with an `l1` norm bound. Thus the extended
+product's action is an absolutely convergent integral series even when the
+multiplied test is not Schwartz. For temperate smooth multipliers this proves
+agreement with Mathlib's actual distribution multiplication. For `l1` potential
+data as well, it proves agreement with ordinary multiplication of the two
+continuous synthesized functions under integration.
+
+`DistributionPotential` applies this extension to the existing finite-exponent
+one-derivative domain. The test-integral formula uses its actual continuous
+Sobolev representative, and the bound retains the existing scalar domain
+constant. Both the canonical Fourier truncations and arbitrary finite Fourier
+approximations converging in the domain norm give the same product, even with
+simultaneously varying potentials. The signed actual distribution derivative
+plus the off-diagonal extended products agrees exactly with `operator hp φ`.
+Injectivity of synthesis identifies both general operator equations and
+distributional eigenvalue equations with the coefficient equations already
+used in the spectral theory.
+
+This is the full operator identification on the realized Fourier domain.
+It does not yet characterize every abstract periodic distribution as an element
+of that domain, or settle the separate source infinity pair norm.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3405 declarations under `NLS`, including generated
+axioms. The current audit covers 3483 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2117,14 +2165,20 @@ derivative whose coefficients are proved unbounded, so it is outside the
 one-derivative domain. Both free-component signs and endpoint graph limits
 are checked through the public API.
 
+Product checks exercise Mathlib's actual wave multiplication with two negative
+frequencies, complex amplitudes, and a nondecaying infinity-exponent potential.
+They check ordinary integral products, absolute convergence on the cubic domain,
+arbitrary simultaneous smooth approximations, and uniqueness of the continuous
+extension. A unit off-diagonal potential has a nonzero constant-pair eigenstate
+for the full actual distributional equation at eigenvalue one.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove distributional potential multiplication compatibility beyond
-   the Hilbert realization, then characterize all periodic distributions with
-   the required Fourier coefficient regularity. The forward Banach coefficient
-   realization, period-one/even-support equivalence, and exact scalar/free-pair
-   distributional derivative graphs are complete.
+2. Characterize all periodic distributions with the required Fourier coefficient
+   regularity. The forward realization, period-one/even-support equivalence,
+   exact derivative domains, and full operator identification using the unique
+   continuous extension of smooth potential multiplication are complete.
    The finite-`p` coefficient pair-norm comparison is complete;
    the source's infinity endpoint remains distinct.
 

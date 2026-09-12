@@ -464,7 +464,15 @@ graph within the same Fourier class is exactly the scalar one-derivative domain.
 The signed-pair free operator has the same exact domain identification. Scalar
 and free pair graphs are closed even at infinity; limits only require the two
 base coefficient norms. Finite-exponent continuous representatives satisfy
-weak integration by parts against Schwartz tests. Next prove distributional
-potential multiplication compatibility and the converse characterization of
-arbitrary periodic distributions with the required coefficient regularity. The source's distinct infinity-endpoint pair norm
-also remains a separate proof obligation.
+weak integration by parts against Schwartz tests. Multiplication by every Fourier
+polynomial is now Mathlib's genuine smooth distribution multiplication; the
+coefficient convolution is its unique continuous extension to `ℓ¹` multiplier
+data. Arbitrary converging smooth coefficient approximations give the same limit.
+The test action is an absolutely convergent sum of actual Fourier integrals of
+the continuous multiplier times a Schwartz test. This also proves agreement with
+all temperate smooth multipliers and with ordinary function products for `ℓ¹`
+potential data. On the finite-exponent one-derivative domain the full signed
+operator and its eigenvalue equations agree with these distributional products.
+Next characterize arbitrary periodic distributions with the required coefficient
+regularity. The source's distinct infinity-endpoint pair norm also remains a
+separate proof obligation.
