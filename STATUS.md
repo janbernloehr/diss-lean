@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 93 modules and 990 named public theorems. All compile on the
+The library has 97 modules and 1020 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -100,6 +100,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.HilbertSquare` | Absolutely summable square kernel; bounded remainder operator at all Banach exponents; equality with the finite rational remainder |
 | `NLS.SequenceSpaces.QuarticProduct` | Hölder product `ℓ4 × ℓ4 → ℓ2`; norm bound and exact square-product norm identity |
 | `NLS.Fourier.QuarticHilbert` | Uniform finite-input quartic estimate from Cotlar; completed ordinary and shifted `ℓ4` transforms; explicit bounds and exact finite reciprocal formulas |
+| `NLS.SequenceSpaces.DoublingProduct` | General Hölder product `ℓq × ℓq → ℓp` at `q=2p`; norm bound and exact square-product norm identity; specializes to the quartic product |
+| `NLS.Fourier.HilbertEstimate` | Quantitative finite-input estimates; unique continuous ordinary and shifted completions; exact coefficient formulas and bounds; independence of the estimate package |
+| `NLS.Fourier.HilbertDoubling` | General Cotlar quadratic estimate and its solution; constructs a proved estimate at `2p` from one at `p` |
+| `NLS.Fourier.DyadicHilbert` | Recursive ordinary and shifted operators at every `2^(n+1)`; exact finite formulas; explicit recurrence and closed bound; unboundedness of the proved exponents |
 
 ## Current mathematical milestone
 
@@ -671,9 +675,9 @@ Odd-index sampling is a contraction on `ℓ2`. Applied to the second component
 of the completed extension of `(0,a)`, and multiplied by `-2i`, it gives
 `shiftedHilbert : Coeff 2 →L[ℂ] Coeff 2`, with norm at most `2`. Its finite-input
 formula is `Σₖ a(k) 2/[π(2k-2n-1)]`, the shifted reciprocal transform needed in
-Lemma 4.3. This bound is sufficient and is not claimed optimal. The quartic exponent is
-now also proved as follows; further exponents and their interval completions
-remain open.
+Lemma 4.3. This bound is sufficient and is not claimed optimal. The quartic and
+all higher dyadic exponents are now also proved as follows; intermediate
+exponents and interval completions beyond `p=2` remain open.
 
 **Ordinary and shifted Hilbert transforms are bounded on `ℓ4`.** The ordinary
 source kernel is `h(j)=-1/j`, with `h(0)=0`. Its difference from the unnormalized
@@ -700,6 +704,25 @@ the same correction constructs `shiftedHilbertFour`, with bound
 `(B₄+‖d‖₁)/π`. Both maps have the exact finite-input reciprocal formulas.
 This proves the quartic Hilbert-kernel step; it does not yet complete the
 quartic interval map or prove the whole exponent range in Lemma 4.3.
+
+**Exponent doubling is proved and iterated at every dyadic exponent.**
+`HilbertEstimate p` packages a uniform finite-input bound together with
+`1<p<∞`. Density constructs its unique continuous ordinary transform; subtracting
+the same summable correction gives the normalized shifted transform. Both retain
+the exact finite formulas, and uniqueness makes the ordinary operator independent
+of the bound or proof used to construct it.
+
+Hölder now constructs `ℓq × ℓq → ℓp` for general doubled exponents `q=2p`,
+with exact square norm `‖a²‖p=‖a‖q²`. The old quartic product specializes this
+construction. The general Cotlar inequality is `x²≤2Byx+3My²`, and its proved
+solution gives the uniform bound `2B+3M+1`, including zero input. This produces
+an actual `HilbertEstimate q`, so the argument can be iterated.
+
+At exponent `2^(n+1)`, `dyadicHilbert` and `dyadicShiftedHilbert` are continuous
+linear operators on the entire coefficient space. The ordinary bound is
+`Cₙ=2^n B₂+(2^n-1)(3M+1)` and the shifted bound is `(Cₙ+‖d‖₁)/π`.
+The proved exponents exceed every prescribed real number. Interpolation and
+duality are still required for other `1<p<∞`; no whole-range estimate is assumed.
 
 The actual unbounded realization is now defined as
 
@@ -913,7 +936,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 2101 declarations under `NLS`, including generated
+axioms. The current audit covers 2197 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -1111,12 +1134,19 @@ correction terms visible. Other checks cover arbitrary-input quartic bounds,
 analyticity, shifted-kernel signs, and agreement of the `ℓ2` and `ℓ4` finite
 ordinary formulas.
 
+Dyadic-Hilbert checks verify exponents eight and sixteen, the explicit constant
+at exponent eight, signed complex single-mode action, the zero diagonal, and
+both shifted-kernel signs. They instantiate bounds and analyticity on arbitrary
+inputs, uniqueness against the existing Hilbert and quartic operators, and
+independence of the estimate package. The next Hölder product is checked for
+complex squaring without conjugation and the exact square-norm identity.
+
 ## Next milestones
 
-1. Generalize the proved `ℓ2 → ℓ4` exponent-doubling argument, then prove
-   interpolation and duality to cover all `1<p<∞`. Complete the corresponding
-   interval maps, including `p=4`. Construct the physical Sobolev identifications
-   in Lemmas 4.1–4.2, then transfer Theorem 1.4 and Lemma 4.5 to
+1. Use the proved dyadic Hilbert estimates with interpolation and duality to
+   cover all `1<p<∞`. Complete the corresponding interval maps beyond `p=2`.
+   Construct the physical Sobolev identifications in Lemmas 4.1–4.2, then
+   transfer Theorem 1.4 and Lemma 4.5 to
    the original period-one potentials.
 2. Identify the central projection with the rectangular contour integral and
    transfer the overview theorem's exact norm-dependent central-height convention.

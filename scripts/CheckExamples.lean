@@ -2767,3 +2767,74 @@ end
 end QuarticHilbertChecks
 
 end QuarticHilbertChecks
+
+
+namespace DyadicHilbertChecks
+open NLS NLS.Fourier Complex
+open scoped ENNReal
+noncomputable section
+
+-- The recursive family goes past the previously established quartic case.
+example : dyadicHilbertExponent 2 = 8 := by norm_num [dyadicHilbertExponent]
+example : dyadicHilbertExponent 3 = 16 := by norm_num [dyadicHilbertExponent]
+example : dyadicHilbertBound 2 = 4 * discreteHilbertBound + 9 * ‖hilbertSquareCoeffs‖ + 3 := by
+  rw [dyadicHilbertBound_eq]
+  norm_num
+  ring
+example (r : ℝ) : ∃ n, r < (dyadicHilbertExponent n).toReal :=
+  dyadicHilbertExponent_unbounded r
+
+-- Complex coefficients detect the source sign and the omitted diagonal at ℓ8 and ℓ16.
+example : dyadicHilbert 2 (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-3) = 0 := by
+  rw [dyadicHilbert_finite]
+  norm_num [finiteHilbert]
+example : dyadicHilbert 2 (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-4) = I := by
+  rw [dyadicHilbert_finite]
+  norm_num [finiteHilbert]
+example : dyadicHilbert 3 (Coeff.ofFinsupp (Finsupp.single (-3) I)) (-2) = -I := by
+  rw [dyadicHilbert_finite]
+  norm_num [finiteHilbert, div_neg]
+example : dyadicShiftedHilbert 2 (Coeff.ofFinsupp (Finsupp.single 0 1)) 0 =
+    -2 / (Real.pi : ℂ) := by
+  rw [dyadicShiftedHilbert_finite]
+  norm_num [div_neg, neg_div]
+example : dyadicShiftedHilbert 3 (Coeff.ofFinsupp (Finsupp.single 0 1)) (-1) =
+    2 / (Real.pi : ℂ) := by
+  rw [dyadicShiftedHilbert_finite]
+  norm_num
+
+-- The operators and estimates apply to all coefficients, not just finite support.
+example (n : ℕ) (a : Coeff (dyadicHilbertExponent n)) :
+    ‖dyadicHilbert n a‖ ≤ dyadicHilbertBound n * ‖a‖ := norm_dyadicHilbert_apply_le n a
+example (n : ℕ) (a : Coeff (dyadicHilbertExponent n)) :
+    AnalyticAt ℂ (dyadicHilbert n) a := (dyadicHilbert n).analyticAt a
+example (n : ℕ) (a : Coeff (dyadicHilbertExponent n)) :
+    ‖dyadicShiftedHilbert n a‖ ≤
+      Real.pi⁻¹ * (dyadicHilbertBound n + ‖hilbertCorrectionCoeffs‖) * ‖a‖ :=
+  norm_dyadicShiftedHilbert_apply_le n a
+
+-- Independence of the estimate package recovers the old completed operator.
+example : (dyadicHilbertEstimate 0).operator = discreteHilbert :=
+  ((dyadicHilbertEstimate 0).operator_unique discreteHilbert discreteHilbert_finite).symm
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+example (h : HilbertEstimate 4) : h.operator = discreteHilbertFour :=
+  (h.operator_unique discreteHilbertFour discreteHilbertFour_finite).symm
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (h g : HilbertEstimate p) : h.operator = g.operator :=
+  h.operator_eq g
+
+-- Squaring at the next doubling step remains complex multiplication.
+local instance : (dyadicHilbertExponent 2).HolderTriple (dyadicHilbertExponent 2)
+    (dyadicHilbertExponent 1) := dyadicHilbertExponent_holder 1
+example : Coeff.doublingProduct (p := dyadicHilbertExponent 1)
+    (Coeff.ofFinsupp (p := dyadicHilbertExponent 2) (Finsupp.single (-3) I))
+    (Coeff.ofFinsupp (Finsupp.single (-3) I)) = Coeff.ofFinsupp (Finsupp.single (-3) (-1)) := by
+  apply lp.ext
+  funext n
+  by_cases h : n = -3 <;> simp [h]
+example (a : Coeff (dyadicHilbertExponent 2)) :
+    ‖Coeff.doublingProduct (p := dyadicHilbertExponent 1) a a‖ = ‖a‖^2 :=
+  Coeff.norm_doublingProduct_self (p := dyadicHilbertExponent 1)
+    (q := dyadicHilbertExponent 2) (by norm_num) (dyadicHilbertExponent_succ_toReal 1) a
+
+end
+end DyadicHilbertChecks

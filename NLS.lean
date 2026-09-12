@@ -67,3 +67,4 @@ import NLS.ZakharovShabat.BoundaryEigenvalues
 import NLS.ZakharovShabat.FiniteIntervalExtension
 import NLS.Fourier.ShiftedHilbert
 import NLS.Fourier.QuarticHilbert
+import NLS.Fourier.DyadicHilbert

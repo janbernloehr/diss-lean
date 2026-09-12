@@ -315,9 +315,16 @@ both diagonal square-kernel terms. Hölder `ℓ4 × ℓ4 → ℓ2` and the ordin
 both ordinary and normalized shifted Hilbert transforms on all `ℓ4`, with
 exact agreement with the finite reciprocal formulas.
 
-Next generalize exponent doubling, then supply interpolation and duality to
-cover the remaining `1<p<∞` range. Complete the corresponding interval maps,
-including the now-bounded quartic kernel case. The library search found
+The general doubling step is now proved: any uniform finite-input estimate at
+`p` gives an estimate at `2p`, and density supplies unique continuous ordinary
+and shifted operators. The Hölder product and exact square-norm identity work
+at general doubled exponents. Induction constructs both operators at every
+`2^(n+1)`, with bound `2^n B₂ + (2^n-1)(3M+1)`. These exponents are proved
+unbounded. The old quartic product is a specialization of the general product.
+
+Next supply interpolation and duality to cover the remaining `1<p<∞` range.
+Complete the corresponding interval maps beyond the already completed `p=2`
+case, using the proved shifted bounds. The library search found
 Parseval and Hölder but no existing discrete Hilbert or interpolation theorem.
 Individual kernel membership alone remains insufficient for uniform boundedness.
 Only boundedness is needed from Appendix C.1; its additional isomorphism assertion
