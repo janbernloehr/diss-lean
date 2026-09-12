@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 176 modules and 1703 named public theorems. All compile on the
+The library has 177 modules and 1713 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -21,6 +21,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.DistributionPotential` | Actual extended domain product; absolute test-integral formula and norm bound; arbitrary smooth approximations; full distributional operator and eigenvalue-equation identification |
 | `NLS.Fourier.SchwartzPeriodization` | Continuous period-two Schwartz periodization; absolutely convergent translates and Poisson formula; exact coefficient and integral normalization; polynomial lifts and uniform density; kernel and synthesized-distribution annihilator |
 | `NLS.Fourier.SchwartzPeriodizationSmooth` | Classical differentiation of every order; continuous circle-valued derivative maps; globally bounded derivatives and temperate growth; absolute physical derivative sums; uniform Fourier approximation in every derivative order |
+| `NLS.Fourier.SchwartzMultiplierConvergence` | Weighted Leibniz seminorm bound; smooth multiplier convergence in genuine Schwartz topology; windowed Fourier reconstruction; termwise action and absolute scalar convergence for every tempered distribution |
 | `NLS.SequenceSpaces.Truncation` | Finite projections; coefficient formula; linearity; composition and idempotence; projection and tail norm bounds; continuous linear projections; convergence for finite `p`; density of finite-support coefficients |
 | `NLS.SequenceSpaces.Weighted` | Positive, unit, and real-exponent Sobolev weights; weighted coefficient spaces; weighting equivalence and isometry; normed complex vector space and completeness; coefficient decay; weighted truncation bounds and convergence |
 | `NLS.SequenceSpaces.PairNorm` | Actual finite-`p` component-sum coefficient and weighted pair spaces; exact combined energies; arbitrary Sobolev exponent `sp`; continuous linear norm equivalences; sharp factor `2^(1/p)` |
@@ -1824,10 +1825,36 @@ The remaining converse still needs reconstruction in the Schwartz topology,
 for example after multiplication by a Schwartz window, and the proof that every
 abstract periodic distribution annihilates the periodization kernel.
 
+## Windowed Fourier reconstruction in Schwartz topology
+
+`SchwartzMultiplierConvergence` proves a weighted Leibniz estimate for smooth
+multiplier products with a fixed Schwartz window. At polynomial weight `k` and
+derivative order `n`, a common uniform bound on multiplier derivatives through
+order `n` controls the product seminorm by the finite sum of window seminorms
+with exact binomial coefficients. The polynomial weight remains `k` throughout.
+
+For arbitrary index types and filters, uniform convergence of every derivative
+of temperate smooth multipliers now implies convergence of the products in the
+actual Schwartz topology. Each weighted seminorm uses only finitely many
+uniform derivative estimates; the proof does not replace Schwartz topology by
+pointwise or distributional convergence.
+
+Applied to the established Fourier truncations of a periodized test, this gives
+Schwartz convergence after multiplication by any fixed Schwartz window. The
+finite products equal finite sums of modulated windows, so the resulting infinite
+wave expansion has a genuine `HasSum` in Schwartz space. Every Mathlib tempered
+distribution, with no periodicity or Fourier-class hypothesis, evaluates this
+series term by term. Its scalar series converges absolutely.
+
+The remaining converse needs to identify a periodic distribution's action on
+an arbitrary test with its action on a windowed periodization. The periodization
+kernel argument and the final coefficient-regularity characterization remain
+open; windowed series convergence itself is now proved.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 3539 declarations under `NLS`, including generated
+axioms. The current audit covers 3551 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -2243,6 +2270,13 @@ order. They exercise fifth-derivative uniform approximation, absolute sixth-
 derivative translate sums, continuity in the fourth-derivative uniform norm,
 and genuine pointwise Schwartz multiplication by periodized tests.
 
+Windowed-reconstruction checks retain the exact `1,2,1` Leibniz coefficients
+in the polynomial-weight-three, derivative-order-two estimate. They verify the
+constant-window factor one half in Schwartz convergence and imaginary amplitudes
+on a polynomial with negative and positive modes. Genuine nonperiodic point
+masses and their derivatives act term by term on the series; the derivative
+check retains the dual minus sign and includes absolute convergence.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -2252,8 +2286,10 @@ and genuine pointwise Schwartz multiplication by periodized tests.
    continuous extension of smooth potential multiplication are complete.
    The Schwartz periodization bridge and polynomial lifts are proved, including
    smoothness, globally bounded derivatives, and uniform Fourier approximation
-   at every derivative order. The arbitrary-distribution kernel and Schwartz
-   reconstruction steps remain.
+   at every derivative order. Windowed Fourier reconstruction now converges in
+   Schwartz topology, with absolute termwise action by arbitrary tempered
+   distributions. Identifying periodic distributions with these windowed
+   representatives and proving the kernel criterion remain.
    The finite-`p` coefficient pair-norm comparison is complete;
    the source's infinity endpoint remains distinct.
 

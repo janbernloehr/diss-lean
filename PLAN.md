@@ -484,8 +484,14 @@ a continuous linear image into continuous circle functions, is uniformly bounded
 and has an absolutely convergent physical translate sum. The same Fourier
 truncations converge uniformly in every fixed derivative order, and periodizations
 satisfy the genuine temperate-growth condition for smooth Schwartz multipliers.
-Next use these estimates with a Schwartz window to obtain convergence in Schwartz
-topology, prove that every abstract periodic distribution annihilates the
-periodization kernel, and reconstruct it under the prescribed coefficient
-regularity. The source's distinct infinity-endpoint pair norm also remains a
-separate proof obligation.
+A finite Leibniz seminorm estimate now proves that uniform convergence of all
+multiplier derivatives gives convergence in genuine Schwartz topology after
+multiplication by any fixed Schwartz window. Windowed Fourier reconstruction
+converges in that topology, and every tempered distribution evaluates it through
+an absolutely convergent scalar coefficient series, without a periodicity or
+Fourier-class hypothesis on the distribution.
+Next identify the action of every periodic distribution on an arbitrary test
+with its action on a windowed periodization. Prove annihilation of the
+periodization kernel and complete reconstruction under coefficient regularity.
+The source's distinct infinity-endpoint pair norm also remains a separate proof
+obligation.

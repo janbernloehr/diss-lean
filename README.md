@@ -245,9 +245,13 @@ Periodization now commutes with classical differentiation of every order.
 Each derivative is a continuous circle-valued linear image of the original
 Schwartz test, and the same Fourier truncations converge uniformly in every
 fixed derivative order. These bounds prove that periodizations are genuine
-smooth multipliers of Schwartz space. The converse characterization of arbitrary
-periodic distributions still requires the kernel and Schwartz reconstruction
-arguments.
+smooth multipliers of Schwartz space. A finite Leibniz estimate now upgrades
+uniform convergence of every multiplier derivative to convergence in every
+weighted Schwartz seminorm after fixing any Schwartz window. Windowed Fourier
+series therefore converge in genuine Schwartz space, and every tempered
+distribution acts on them through an absolutely convergent scalar series.
+The converse still needs the periodic-distribution kernel argument and the
+identification of arbitrary tests with their windowed periodic representatives.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 

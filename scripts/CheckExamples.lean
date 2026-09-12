@@ -4995,3 +4995,81 @@ example (g h : 𝓢(ℝ, ℂ)) (x : ℝ) :
   rfl
 
 end SchwartzPeriodizationSmoothChecks
+
+namespace SchwartzMultiplierConvergenceChecks
+open NLS.Fourier
+open scoped SchwartzMap FourierTransform ContDiff
+
+-- The x^3-weighted second-derivative estimate retains the middle binomial coefficient.
+example (w : 𝓢(ℝ, ℂ)) {f : ℝ → ℂ} (hf : f.HasTemperateGrowth)
+    {M : ℝ} (hM : 0 ≤ M) (hb : ∀ j ≤ 2, ∀ x : ℝ, ‖iteratedDeriv j f x‖ ≤ M) :
+    SchwartzMap.seminorm ℂ 3 2 (SchwartzMap.smulLeftCLM ℂ f w) ≤
+      M * (SchwartzMap.seminorm ℂ 3 2 w + 2 * SchwartzMap.seminorm ℂ 3 1 w +
+        SchwartzMap.seminorm ℂ 3 0 w) := by
+  simpa [windowSeminormBound, Finset.sum_range_succ] using
+    seminorm_smulLeftCLM_le_of_deriv_le w hf 3 2 hM hb
+
+-- The normalization survives convergence in Schwartz space, not only pointwise convergence.
+example (w : 𝓢(ℝ, ℂ)) :
+    Filter.Tendsto
+      (fun s : Finset ℤ => SchwartzMap.smulLeftCLM ℂ
+        (fourierPolynomial s (fourierCoeff (periodizationCLM (coefficientTest 0)))) w)
+      Filter.atTop (nhds ((1 / 2 : ℂ) • w)) := by
+  have h := tendsto_schwartz_mul_fourierPolynomial (coefficientTest 0) w
+  have he : (fun x : ℝ => periodizationCLM (coefficientTest 0) (x : AddCircle (2 : ℝ))) =
+      fun _ => (1 / 2 : ℂ) := by
+    funext x
+    simp
+  rw [he, SchwartzMap.smulLeftCLM_const] at h
+  exact h
+
+-- A polynomial with negative and positive modes gives the actual complex-linear wave sum.
+example (w : 𝓢(ℝ, ℂ)) :
+    SchwartzMap.smulLeftCLM ℂ (fourierPolynomial {-3, 2} (fun _ => Complex.I)) w =
+      Complex.I • SchwartzMap.smulLeftCLM ℂ (wave (-3)) w +
+      Complex.I • SchwartzMap.smulLeftCLM ℂ (wave 2) w := by
+  rw [schwartz_mul_fourierPolynomial_eq_sum]
+  simp
+
+-- The theorem accepts genuine nonperiodic point-mass distributions.
+example (g w : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    HasSum (fun n : ℤ => fourierCoeff (periodizationCLM g) n * (wave n x * w x))
+      (periodizationCLM g (x : AddCircle (2 : ℝ)) * w x) := by
+  simpa only [TemperedDistribution.delta_apply,
+    SchwartzMap.smulLeftCLM_apply_apply (wave_hasTemperateGrowth _),
+    SchwartzMap.smulLeftCLM_apply_apply (periodization_hasTemperateGrowth g), smul_eq_mul] using
+      hasSum_distribution_windowed_fourier (TemperedDistribution.delta x) g w
+
+private theorem derivDelta_mul (f : ℝ → ℂ) (hf : f.HasTemperateGrowth)
+    (w : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    TemperedDistribution.derivCLM ℂ (TemperedDistribution.delta x)
+      (SchwartzMap.smulLeftCLM ℂ f w) =
+      -(deriv f x * w x + f x * deriv (w : ℝ → ℂ) x) := by
+  rw [TemperedDistribution.derivCLM_apply_apply, TemperedDistribution.delta_apply]
+  change -(deriv (SchwartzMap.smulLeftCLM ℂ f w : ℝ → ℂ) x) = _
+  rw [SchwartzMap.smulLeftCLM_apply hf]
+  change -(deriv (fun y : ℝ => f y * w y) x) = _
+  rw [deriv_fun_mul (hf.1.differentiable (by simp)).differentiableAt w.differentiableAt]
+
+-- Passing a derivative of a point mass through the series retains its dual minus sign.
+example (g w : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    HasSum
+      (fun n : ℤ => fourierCoeff (periodizationCLM g) n *
+        -(deriv (wave n) x * w x + wave n x * deriv (w : ℝ → ℂ) x))
+      (-(periodizationCLM (SchwartzMap.derivCLM ℂ ℂ g) (x : AddCircle (2 : ℝ)) * w x +
+        periodizationCLM g (x : AddCircle (2 : ℝ)) * deriv (w : ℝ → ℂ) x)) := by
+  have h := hasSum_distribution_windowed_fourier
+    (TemperedDistribution.derivCLM ℂ (TemperedDistribution.delta x)) g w
+  simp_rw [derivDelta_mul _ (wave_hasTemperateGrowth _),
+    derivDelta_mul _ (periodization_hasTemperateGrowth g), deriv_periodization] at h
+  exact h
+
+-- Absolute convergence also holds for the derivative of a point mass.
+example (g w : 𝓢(ℝ, ℂ)) (x : ℝ) :
+    Summable (fun n : ℤ => ‖fourierCoeff (periodizationCLM g) n *
+      TemperedDistribution.derivCLM ℂ (TemperedDistribution.delta x)
+        (SchwartzMap.smulLeftCLM ℂ (wave n) w)‖) :=
+  summable_norm_distribution_windowed_fourier
+    (TemperedDistribution.derivCLM ℂ (TemperedDistribution.delta x)) g w
+
+end SchwartzMultiplierConvergenceChecks
