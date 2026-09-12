@@ -779,6 +779,28 @@ are both covered, including nonperiodic ramps. At zero regularity, the earlier
 ordinary `L²` API still applies; the fractional graph at zero is not identified
 with the ordinary `L²` norm.
 
-Next, prove completeness of the intrinsic graph space, including at half,
-and package the subcritical weighted Fourier identification as a continuous
-linear equivalence with quantitative bounds on arbitrary interval lengths.
+The completeness step is now proved below. The remaining identification step
+is the subcritical continuous weighted Fourier equivalence with quantitative
+bounds on arbitrary interval lengths.
+
+
+The intrinsic space is now a complete complex Hilbert space. Convergence in
+`L²` gives an almost-everywhere convergent subsequence of the original circle
+classes. Pulling its convergence back to the physical interval and taking a
+further subsequence for the difference quotients identifies the graph limit
+pointwise almost everywhere on the interval square. This proves closedness
+of the actual physical graph, with no restriction on its real index and no
+endpoint assumptions. Completeness follows from its isometric inclusion into
+the product of complete `L²` spaces, including at the critical half index.
+
+The induced complex inner product is
+`L * inner(f,g) + inner(Q_s f,Q_s g)` in normalized circle coordinates, with
+the usual conjugate-linearity in the first argument. Convergence in the
+intrinsic norm is equivalent to simultaneous convergence of the two graph
+components. Norm-summable series of nonperiodic half-regularity ramps now
+exist in the intrinsic space, and both difference-quotient and Fourier maps
+commute with these sums.
+
+Next, package the already proved subcritical weighted Fourier identification
+as a continuous linear equivalence on arbitrary positive interval lengths,
+retaining explicit forward and inverse norm bounds.

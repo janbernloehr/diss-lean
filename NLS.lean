@@ -188,3 +188,5 @@ import NLS.Fourier.FractionalDifferenceQuotient
 import NLS.Fourier.PhysicalIntervalL2
 import NLS.Fourier.IntrinsicIntervalSobolev
 import NLS.Fourier.IntrinsicFourierEmbedding
+import NLS.Fourier.IntrinsicGraphClosed
+import NLS.Fourier.IntrinsicSobolevComplete

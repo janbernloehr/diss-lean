@@ -522,7 +522,10 @@ installation is absent. No shell startup files are modified.
   physical square energy plus fractional difference energy. Every original
   interval input reconstructs almost everywhere. The actual Fourier maps
   are continuous linear injections in this norm, including at half regularity.
-  Completeness and the continuous weighted Sobolev equivalence remain next.
+  The graph is closed, so the intrinsic space is now proved complete, including
+  at half regularity. Its complex inner product preserves the physical
+  normalization. Intrinsic convergence is equivalent to convergence of both
+  graph components. The continuous weighted Sobolev equivalence remains next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

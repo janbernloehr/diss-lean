@@ -6732,3 +6732,79 @@ example (f g : ℝ → ℂ)
   ofFunction_eq_iff _ _ _ _ _ _
 
 end IntrinsicSobolevSpaceChecks
+
+section IntrinsicSobolevCompleteChecks
+open Fourier.IntrinsicIntervalSobolev
+local instance : Fact ((0 : ℝ) < 4) := ⟨by norm_num⟩
+local instance : Fact ((0 : ℝ) < 1) := ⟨by norm_num⟩
+
+-- Completeness is available at the critical index and above it, without a periodic boundary condition.
+example : CompleteSpace (Fourier.IntrinsicIntervalSobolev (1 / 2) 4) := inferInstance
+example : CompleteSpace (Fourier.IntrinsicIntervalSobolev (3 / 4) 1) := inferInstance
+example : InnerProductSpace ℂ (Fourier.IntrinsicIntervalSobolev (1 / 2) 4) := inferInstance
+
+-- The complex Hilbert inner product has the original physical normalization.
+example : inner ℂ intrinsicImaginaryConstant intrinsicImaginaryConstant = 4 := by
+  rw [inner_self_eq_norm_sq_to_K]
+  have hn : ‖intrinsicImaginaryConstant‖ = 2 := by
+    rw [intrinsicImaginaryConstant, norm_ofFunction]
+    norm_num [Fourier.intrinsicIntervalSize, Fourier.intrinsicIntervalEnergy,
+      Fourier.intervalSquareEnergy, Real.volume_Ioo, intrinsic_sqrt_four]
+  norm_num [hn]
+
+-- Lean's complex convention is conjugate-linear in the first argument.
+example : inner ℂ (Complex.I • intrinsicImaginaryConstant) intrinsicImaginaryConstant = -4 * Complex.I := by
+  rw [inner_smul_left, inner_self_eq_norm_sq_to_K]
+  have hn : ‖intrinsicImaginaryConstant‖ = 2 := by
+    rw [intrinsicImaginaryConstant, norm_ofFunction]
+    norm_num [Fourier.intrinsicIntervalSize, Fourier.intrinsicIntervalEnergy,
+      Fourier.intervalSquareEnergy, Real.volume_Ioo, intrinsic_sqrt_four]
+  norm_num [hn]
+  ring
+
+-- The graph remains closed under simultaneous L² limits for half-regularity input.
+example {f : ℕ → Fourier.CircleL2}
+    {g : ℕ → MeasureTheory.Lp ℂ 2 (Fourier.intervalProductMeasure 4)}
+    {F : Fourier.CircleL2} {G : MeasureTheory.Lp ℂ 2 (Fourier.intervalProductMeasure 4)}
+    (hf : Filter.Tendsto f Filter.atTop (𝓝 F)) (hg : Filter.Tendsto g Filter.atTop (𝓝 G))
+    (hgraph : ∀ n, (g n : ℝ × ℝ → ℂ) =ᵐ[Fourier.intervalProductMeasure 4]
+      Fourier.fractionalDifferenceQuotient (1 / 2) (Fourier.intervalPullback 4 (f n))) :
+    Fourier.fractionalDifferenceQuotient (1 / 2) (Fourier.intervalPullback 4 F) =ᵐ[Fourier.intervalProductMeasure 4] G :=
+  Fourier.fractionalDifferenceQuotient_closed (by norm_num) hf hg hgraph
+
+-- The component criterion recovers convergence in the full intrinsic norm.
+example {f : ℕ → Fourier.IntrinsicIntervalSobolev (1 / 2) 4}
+    (hf : Filter.Tendsto (fun n => (f n).val) Filter.atTop (𝓝 intrinsicHalfRamp.val))
+    (hg : Filter.Tendsto (fun n => quotient (f n)) Filter.atTop (𝓝 (quotient intrinsicHalfRamp))) :
+    Filter.Tendsto f Filter.atTop (𝓝 intrinsicHalfRamp) := tendsto_iff_components.mpr ⟨hf, hg⟩
+
+-- Every intrinsic Cauchy sequence has a limit in the same half-regularity space.
+example {f : ℕ → Fourier.IntrinsicIntervalSobolev (1 / 2) 4} (hf : CauchySeq f) :
+    ∃ F : Fourier.IntrinsicIntervalSobolev (1 / 2) 4, Filter.Tendsto f Filter.atTop (𝓝 F) :=
+  exists_limit_of_cauchy hf
+
+-- A norm-summable series of nonperiodic ramps exists in the intrinsic space by completeness.
+private theorem intrinsicRampSeries_summable :
+    Summable (fun n : ℕ => ((1 / 2 : ℂ) ^ n) • intrinsicHalfRamp) := by
+  apply Summable.of_norm
+  have h : Summable (fun n : ℕ => (1 / 2 : ℝ) ^ n * ‖intrinsicHalfRamp‖) :=
+    (summable_geometric_of_norm_lt_one (by norm_num : ‖(1 / 2 : ℝ)‖ < 1)).mul_right _
+  simpa only [norm_smul, norm_pow, norm_div, norm_one, Complex.norm_ofNat,
+    show ‖(2 : ℂ)‖ = 2 by norm_num] using h
+
+-- Fourier extraction commutes with this genuinely intrinsic convergent series.
+example : halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5)
+    (∑' n : ℕ, ((1 / 2 : ℂ) ^ n) • intrinsicHalfRamp) =
+      ∑' n : ℕ, ((1 / 2 : ℂ) ^ n) • halfFourierEmbedding (by norm_num : (1 : ℝ) < 6 / 5) intrinsicHalfRamp := by
+  rw [ContinuousLinearMap.map_tsum _ intrinsicRampSeries_summable]
+  simp only [map_smul]
+
+-- The physical difference quotient commutes with the same series.
+example : quotient (∑' n : ℕ, ((1 / 2 : ℂ) ^ n) • intrinsicHalfRamp) =
+    ∑' n : ℕ, ((1 / 2 : ℂ) ^ n) • quotient intrinsicHalfRamp := by
+  change quotientContinuous (∑' n : ℕ, ((1 / 2 : ℂ) ^ n) • intrinsicHalfRamp) = _
+  rw [ContinuousLinearMap.map_tsum _ intrinsicRampSeries_summable]
+  simp only [map_smul]
+  rfl
+
+end IntrinsicSobolevCompleteChecks
