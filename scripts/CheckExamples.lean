@@ -1171,3 +1171,104 @@ example (a : Coeff 3) (n : ℤ) :
     (show (a, 0) ∈ U from rfl) (show (0 : PairSpace 3) ∈ U from rfl)
   exact he.trans (sum_enclosed_multiplicity_zero (by simp) n (by positivity)
     (by linarith [Real.pi_pos]))
+
+-- Negative residues obey the same parity split as positive ones.
+example : Disjoint (pairParitySubspace (p := 3) (-3)) (pairParitySubspace (-2)) :=
+  disjoint_pairParitySubspaces (-3) (-2) (by norm_num)
+
+-- Every high-frequency eigenfunction of a nonconstant even potential has the index parity.
+example (a b : ℂ) : ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+    ∀ z ∈ Metric.ball ((Real.pi : ℂ) * n) (Real.pi / 4), ∀ f : Domain 3,
+      operator (by simp) (lp.single 3 2 a, lp.single 3 (-2) b) f = z • domainInclusion f →
+        f ∈ domainParitySubspace n := by
+  exact exists_highFrequency_eigenvector_parity (by simp) _
+    ⟨Coeff.single_mem_paritySubspace 0 2 a (by norm_num),
+      Coeff.single_mem_paritySubspace 0 (-2) b (by norm_num)⟩
+
+private def parityJordanPotential : PairSpace 1 := (lp.single 1 0 2, 0)
+private theorem parityJordan_even : parityJordanPotential ∈ pairParitySubspace 0 :=
+  ⟨Coeff.single_mem_paritySubspace 0 0 2 rfl, Submodule.zero_mem _⟩
+
+private theorem parityJordan_circle (n : ℤ) :
+    Metric.sphere ((Real.pi : ℂ) * n) (Real.pi / 4) ⊆
+      resolventSet (by simp) parityJordanPotential := by
+  intro z hz
+  have hz0 := notMem_freeLattice_of_mem_verticalStrip (by positivity : 0 < Real.pi / 4)
+    le_rfl (sphere_subset_verticalStrip n le_rfl hz)
+  exact mem_resolventSet_of_squaredNeumannCondition (by simp) _ z hz0
+    (squaredNeumannCondition_of_oneSided (by simp) _ z hz0 (Or.inr rfl))
+
+-- A concrete nonzero potential admits every circle. Its parity is proved by
+-- deformation within the even one-sided potentials, with no frequency cutoff.
+private theorem parityJordan_range (n : ℤ) :
+    (resolventCircleIntegral (by simp) parityJordanPotential
+      ((Real.pi : ℂ) * n) (Real.pi / 4)).range ≤ pairParitySubspace n := by
+  let U : Set (PairSpace 1) := {ψ | ψ.2 = 0} ∩ (pairParitySubspace (p := 1) 0 : Set (PairSpace 1))
+  have hleft : Convex ℝ {ψ : PairSpace 1 | ψ.2 = 0} := by
+    intro x hx y hy s t _ _ _
+    change s • x.2 + t • y.2 = 0
+    rw [hx, hy, smul_zero, smul_zero, add_zero]
+  have hU : Convex ℝ U := hleft.inter ((pairParitySubspace (p := 1) 0).restrictScalars ℝ).convex
+  apply range_diskContour_le_parity_on_preconnected (by simp) n (by positivity)
+    (by linarith [Real.pi_pos]) hU.isPreconnected (fun _ h => h.2)
+    (h0 := ⟨rfl, Submodule.zero_mem _⟩) (hφ := ⟨rfl, parityJordan_even⟩)
+  intro ψ hψ z hz
+  have hz0 := notMem_freeLattice_of_mem_verticalStrip (by positivity : 0 < Real.pi / 4)
+    le_rfl (sphere_subset_verticalStrip n le_rfl hz)
+  exact mem_resolventSet_of_squaredNeumannCondition (by simp) ψ z hz0
+    (squaredNeumannCondition_of_oneSided (by simp) ψ z hz0 (Or.inr hψ.1))
+
+-- The negative odd disk annihilates every even input, not just free modes.
+example (x : PairSpace 1) (hx : x ∈ pairParitySubspace 0) :
+    resolventCircleIntegral (by simp) parityJordanPotential
+      ((Real.pi : ℂ) * (-1 : ℤ)) (Real.pi / 4) x = 0 :=
+  resolventCircleIntegral_eq_zero_of_opposite_parity (by simp) _ parityJordan_even _ _
+    (by positivity) (parityJordan_circle (-1)) (-1) 0 (by norm_num)
+    (parityJordan_range (-1)) x hx
+
+-- The constant potential has a genuine length-two Jordan chain at zero;
+-- the parity theorem applies to this generalized vector as well.
+private theorem parityJordan_chain : domainInclusion (positiveMode (p := 1) 0) ∈
+    periodicRootSpaceTop (by simp) parityJordanPotential 0 := by
+  apply (mem_periodicRootSpaceTop (by simp) _ _ _).mpr
+  refine ⟨2, (mem_periodicRootSpace_succ (by simp) _ _ 1 _).mpr ⟨positiveMode 0, rfl, ?_⟩⟩
+  have he : spectralPencil (by simp) parityJordanPotential 0 (positiveMode 0) =
+      domainInclusion ((-2 : ℂ) • negativeMode 0) := by
+    rw [spectralPencil_apply, zero_smul, zero_sub, map_smul]
+    apply Prod.ext <;> apply lp.ext <;> funext k
+    · change -(operator (by simp) parityJordanPotential (positiveMode 0)).1 k =
+        (-2 : ℂ) * (domainInclusion (negativeMode 0)).1 k
+      by_cases hk : k = 0 <;>
+        simp [operator_fst_apply, parityJordanPotential, positiveMode, negativeMode,
+          lp.single_apply, Pi.single_apply, hk]
+    · change -(operator (by simp) parityJordanPotential (positiveMode 0)).2 k =
+        (-2 : ℂ) * (domainInclusion (negativeMode 0)).2 k
+      simp [operator_snd_apply, parityJordanPotential, positiveMode, negativeMode]
+  rw [he, mem_periodicRootSpace_succ]
+  refine ⟨(-2 : ℂ) • negativeMode 0, rfl, ?_⟩
+  change spectralPencil (by simp) parityJordanPotential 0 _ = 0
+  rw [map_smul]
+  have he0 : spectralPencil (by simp) parityJordanPotential 0 (negativeMode 0) = 0 := by
+    apply Prod.ext <;> ext k <;>
+      simp [spectralPencil_apply, operator_fst_apply, operator_snd_apply,
+        parityJordanPotential, negativeMode, lp.single_apply, Pi.single_apply]
+  rw [he0, smul_zero]
+
+example : resolventCircleIntegral (by simp) parityJordanPotential 0 (Real.pi / 4)
+    (domainInclusion (positiveMode 0)) = domainInclusion (positiveMode 0) := by
+  apply resolventCircleIntegral_apply_root (by simp) _ _ 0 _
+    (by simpa using parityJordan_circle 0) (by simpa using (by positivity : 0 < Real.pi / 4))
+  exact parityJordan_chain
+
+-- This generalized vector is not an ordinary zero eigenvector.
+example : operator (by simp) parityJordanPotential (positiveMode (p := 1) 0) ≠ 0 := by
+  intro he
+  have hc := congrArg (fun x : PairSpace 1 => x.1 0) he
+  simp [operator_fst_apply, parityJordanPotential, positiveMode, lp.single_apply,
+    Pi.single_apply] at hc
+
+example (x : PairSpace 1) (hx : x ∈ periodicRootSpaceTop (by simp) parityJordanPotential 0) :
+    x ∈ pairParitySubspace 0 := by
+  exact periodicRootSpaceTop_le_parity_of_contour (by simp) _ 0 0 (Real.pi / 4) 0
+    (by simpa using parityJordan_circle 0) (by simpa using (by positivity : 0 < Real.pi / 4))
+    (by simpa using parityJordan_range 0) hx

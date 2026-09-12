@@ -25,6 +25,14 @@ def pairParityProjection (r : ℤ) : PairSpace p →L[ℂ] PairSpace p :=
 @[simp] theorem pairParityProjection_apply (r : ℤ) (a : PairSpace p) :
     pairParityProjection r a = (Coeff.parityProjection r a.1, Coeff.parityProjection r a.2) := rfl
 
+/-- The pair parity mask is a bounded projection. -/
+theorem pairParityProjection_idempotent (r : ℤ) :
+    IsIdempotentElem (pairParityProjection (p := p) r) := by
+  apply ContinuousLinearMap.ext
+  intro a
+  exact Prod.ext (Coeff.parityProjection_idempotent r a.1)
+    (Coeff.parityProjection_idempotent r a.2)
+
 /-- The coefficient versions of `FL_per+` (`r=0`) and `FL_per-` (`r=1`). -/
 def pairParitySubspace (r : ℤ) : Submodule ℂ (PairSpace p) :=
   (Coeff.paritySubspace r).prod (Coeff.paritySubspace r)
@@ -66,6 +74,19 @@ theorem isCompl_pairParitySubspaces :
     intro a _
     exact Submodule.mem_sup.mpr ⟨pairParityProjection 0 a, pairParityProjection_mem 0 a,
       pairParityProjection 1 a, pairParityProjection_mem 1 a, pairParityProjection_zero_add_one a⟩
+
+/-- Distinct residues define disjoint Fourier parity subspaces. -/
+theorem disjoint_pairParitySubspaces (r s : ℤ) (hrs : r % 2 ≠ s % 2) :
+    Disjoint (pairParitySubspace (p := p) r) (pairParitySubspace s) := by
+  apply Submodule.disjoint_def.mpr
+  intro a ha hb
+  apply Prod.ext <;> ext k
+  · by_cases hk : k % 2 = r % 2
+    · exact (Coeff.mem_paritySubspace s a.1).mp hb.1 k (by omega)
+    · exact (Coeff.mem_paritySubspace r a.1).mp ha.1 k hk
+  · by_cases hk : k % 2 = r % 2
+    · exact (Coeff.mem_paritySubspace s a.2).mp hb.2 k (by omega)
+    · exact (Coeff.mem_paritySubspace r a.2).mp ha.2 k hk
 
 /-- The parity projection preserves the one-derivative domain. -/
 def domainParityProjection (r : ℤ) : Domain p →L[ℂ] Domain p :=

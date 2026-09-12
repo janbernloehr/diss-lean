@@ -178,8 +178,16 @@ any preconnected admissible family. The uniform convex neighborhood from
 Lemma 3.4 therefore gives rank two and total algebraic multiplicity two in
 every sufficiently far disk, for every positive radius at most `π/4`.
 
-Next apply the deformation argument to the parity projections to establish
-the parity assertion in Proposition 1.1(i). Construct the central rectangular
-contour for the remaining counts in Proposition 1.1.
+The parity assertion in Proposition 1.1(i) is also proved. A continuous
+preconnected family of projections cannot deform zero into a nonzero
+projection, since a nonzero projection has norm at least one. Applied to
+the complementary parity part of each contour, this keeps its entire range
+in parity `n`. All enclosed generalized eigenvectors have that parity, all
+ordinary eigenfunctions have it in the weighted domain, and opposite-parity
+inputs are annihilated. The result is uniform on the even potentials in the
+same open convex neighborhood used for the multiplicity count.
+
+Next construct the central rectangular contour for the remaining counts in
+Proposition 1.1, including its even/odd split.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

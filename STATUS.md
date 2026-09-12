@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has fifty-two modules and 516 named public theorems. All compile on the
+The library has fifty-three modules and 529 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -43,10 +43,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ContourProjection` | Existence of resolvent annuli; nested-circle product law; idempotence, finite rank, and topological range/kernel decomposition of the contour operator |
 | `NLS.ZakharovShabat.ContourSpectrum` | Finite enclosed spectrum; identification of the whole contour range with enclosed root spaces; equality with the algebraic cluster projection; algebraic-multiplicity rank formula; kernel formula; equality for circles with the same enclosed spectrum; isolated-value projections |
 | `NLS.FunctionalAnalysis.CircleIntegrationMap` | Normalized circle integration as a bounded linear map on continuous functions with the uniform norm; agreement on the circle; norm at most the radius |
-| `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections |
+| `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections; norm gap for nonzero idempotents; zero and fixed-range containment persist under preconnected continuous deformations |
 | `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of contour projections; locally constant rank and total enclosed algebraic multiplicity |
 | `NLS.ZakharovShabat.FreeMultiplicity` | Resonant coefficient embedding; independence of the signed free modes; support of every free root chain; equality of ordinary and full root spaces; free algebraic multiplicity two |
 | `NLS.ZakharovShabat.DiskMultiplicity` | Constant contour rank and total multiplicity on preconnected admissible families; isolated free disk spectrum; Proposition 1.1(i)’s high-frequency rank and algebraic-multiplicity count, uniform on a convex neighborhood containing zero |
+| `NLS.ZakharovShabat.DiskParity` | Free contour range in index parity; parity preservation under preconnected deformations; generalized root-space and domain eigenfunction parity; opposite-parity contour annihilation; uniform multiplicity and parity package for Proposition 1.1(i) |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
@@ -288,8 +289,8 @@ Both signed free modes have the parity of their spectral index, since `n`
 and `-n` have the same residue modulo two.
 
 The physical Fourier realization and canonical period-one embedding remain
-open. The central rectangular contour and its multiplicity count, as well as
-the parity of the high-frequency eigenvalues, remain to be proved.
+open. The central rectangular contour and its multiplicity count remain to
+be proved.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
 Every free root vector at `π n` has first component supported at `-n` and second
@@ -306,6 +307,23 @@ that, for any `0 < r ≤ π/4`, every disk about `π n` with `|n| ≥ N` has con
 rank two and total algebraic multiplicity two, uniformly near the chosen
 potential and along its deformation to zero. This counts algebraic multiplicity
 and does not assert that the two eigenvalues are distinct.
+
+**The parity assertion in Proposition 1.1(i) is also proved.** A bounded
+nonzero projection has norm at least one. The intermediate value theorem
+therefore shows that a continuous family of projections on a preconnected
+set remains zero if it is zero at one point; finite rank is unnecessary.
+For a fixed commuting projection `A`, this transports `A P = P` along the
+family. Apply this with `A` the projection onto index parity `n`, using the
+free contour range as the starting point and intersecting the convex
+potential neighborhood with the even subspace.
+
+Consequently, the whole contour range, every enclosed full root space,
+and every enclosed eigenfunction in the weighted domain have parity `n`.
+A contour with this range annihilates every input of the opposite parity.
+One cutoff and one open convex ambient neighborhood supply both multiplicity
+two and the parity statement, the latter conditional on the nearby potential
+being even-supported. This is the coefficient-space periodic/antiperiodic
+distinction; its physical Fourier interpretation remains separate.
 
 The actual unbounded realization is now defined as
 
@@ -516,7 +534,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1078 declarations under `NLS`, including generated
+axioms. The current audit covers 1096 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -601,13 +619,19 @@ and a radius-`π` disk whose adjacent lattice points lie on the boundary. The
 uniform high-frequency count is instantiated at `p=3`. A whole preconnected
 family of one-sided potentials, with no size restriction, has count two in
 every quarter-pi disk by the squared Neumann criterion and deformation.
+Parity-deformation checks cover disjoint negative residues at `p=3`, arbitrary
+nonconstant even two-mode potentials, and a concrete even one-sided potential
+with every spectral circle admissible. Its negative odd disk annihilates any
+even input. At zero, the same potential has an explicit length-two root chain
+whose top vector is verified not to be an ordinary eigenvector; its contour
+fixes that vector, and its full root space has even parity.
 
 ## Next milestones
 
-1. Apply contour rank stability to the parity projections to prove the
-   even/odd assertion for the high-frequency eigenvalues in Proposition 1.1(i).
-2. Construct the central rectangular contour and prove the central-region
-   multiplicity count and its even/odd split.
+1. Construct the central rectangular contour and prove the central-region
+   multiplicity count and its even/odd split in Proposition 1.1(ii).
+2. Prove the real-type spectral assertion and analytic symmetric eigenvalue
+   combinations in Lemma 3.7.
 3. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, pair-norm comparison, and compatibility with physical multiplication.
 
