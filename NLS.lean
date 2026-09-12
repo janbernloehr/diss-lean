@@ -190,3 +190,6 @@ import NLS.Fourier.IntrinsicIntervalSobolev
 import NLS.Fourier.IntrinsicFourierEmbedding
 import NLS.Fourier.IntrinsicGraphClosed
 import NLS.Fourier.IntrinsicSobolevComplete
+import NLS.Fourier.IntrinsicSobolevSynthesis
+import NLS.Fourier.IntrinsicSobolevEquivalence
+import NLS.Fourier.IntrinsicSobolevApproximation

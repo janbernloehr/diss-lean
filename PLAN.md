@@ -779,9 +779,8 @@ are both covered, including nonperiodic ramps. At zero regularity, the earlier
 ordinary `L²` API still applies; the fractional graph at zero is not identified
 with the ordinary `L²` norm.
 
-The completeness step is now proved below. The remaining identification step
-is the subcritical continuous weighted Fourier equivalence with quantitative
-bounds on arbitrary interval lengths.
+The completeness and continuous weighted Fourier equivalence steps are now
+proved below, with quantitative bounds on arbitrary interval lengths.
 
 
 The intrinsic space is now a complete complex Hilbert space. Convergence in
@@ -801,6 +800,30 @@ components. Norm-summable series of nonperiodic half-regularity ramps now
 exist in the intrinsic space, and both difference-quotient and Fourier maps
 commute with these sums.
 
-Next, package the already proved subcritical weighted Fourier identification
-as a continuous linear equivalence on arbitrary positive interval lengths,
-retaining explicit forward and inverse norm bounds.
+The continuous weighted Fourier equivalence and its approximation consequences
+are now proved in the next step.
+
+
+The subcritical identification is now a genuine continuous linear equivalence
+between the intrinsic Hilbert quotient and the normalized-frequency weighted
+coefficient space `(1+|n|)^s ℓ²`. Analysis is given by the actual normalized
+physical Fourier integrals; synthesis is the existing `L²` Fourier inverse.
+Both inverse identities are proved. For physical interval length `L`, the
+analysis bound is `sqrt(C_Sob(s)) sqrt(D_s(L/2))`, while the synthesis bound is
+`sqrt(D_s(2/L)) sqrt(R_s)`, with `D_s(c)=c⁻¹+c^(2s-1)`. The dependence on interval
+length is retained in both directions. Synthesis and its norm bound hold for
+all `0<s<1`; the two-sided equivalence requires `0<s<1/2`.
+
+The A.9 intrinsic Fourier map factors through this exact equivalence and the
+proved weighted Hilbert coefficient inclusion. Finite Fourier truncations
+retain precisely the selected actual coefficients, have a uniform bound
+independent of their finite support, and converge in the full intrinsic norm
+below half regularity. Hence classes with finite Fourier support are dense,
+including when the original interval input has unequal endpoint values.
+
+Next, return to Chapter 1, Section 6: formalize the source's normalized,
+symmetric, monotone, submultiplicative weight class and shifted weighted norms,
+then the resonant/nonresonant Fourier splitting and complementary free inverse
+used in Lemma 6.4. These feed the eigenvalue and weighted-gap asymptotics of
+Propositions 6.1 and 6.3. The printed general-`p` central-height constant in
+Proposition 3.1 remains an independent open item.

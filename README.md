@@ -525,7 +525,11 @@ installation is absent. No shell startup files are modified.
   The graph is closed, so the intrinsic space is now proved complete, including
   at half regularity. Its complex inner product preserves the physical
   normalization. Intrinsic convergence is equivalent to convergence of both
-  graph components. The continuous weighted Sobolev equivalence remains next.
+  graph components. Below half, actual Fourier analysis is now a continuous
+  linear equivalence with the weighted Hilbert coefficient space, with explicit
+  forward and inverse bounds for every positive interval length. Finite Fourier
+  truncations converge in the full intrinsic norm, and finite Fourier support
+  is dense. Synthesis alone remains continuous throughout `0<s<1`.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

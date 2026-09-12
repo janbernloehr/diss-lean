@@ -6808,3 +6808,93 @@ example : quotient (∑' n : ℕ, ((1 / 2 : ℂ) ^ n) • intrinsicHalfRamp) =
   rfl
 
 end IntrinsicSobolevCompleteChecks
+
+section IntrinsicSobolevEquivalenceChecks
+open Fourier.IntrinsicIntervalSobolev
+local instance : Fact ((0 : ℝ) < 4) := ⟨by norm_num⟩
+local instance : Fact ((0 : ℝ) < 1) := ⟨by norm_num⟩
+
+private def equivalenceQuarterRamp : Fourier.IntrinsicIntervalSobolev (1 / 4) 4 :=
+  ofFunction intervalRamp lengthFourRamp_memLp
+    (Fourier.fractionalIntervalEnergy_lt_top_of_regularity (by norm_num) (by norm_num) (by norm_num)
+      intervalRamp (lengthFourRamp_half_energy_le.trans_lt (by norm_num)))
+
+-- Actual Fourier analysis and synthesis are mutual inverses on arbitrary intrinsic classes.
+example (f : Fourier.IntrinsicIntervalSobolev (1 / 3) 4) :
+    (weightedEquiv (L := 4) (by norm_num : (0 : ℝ) < 1 / 3) (by norm_num)).symm
+      (weightedEquiv (by norm_num : (0 : ℝ) < 1 / 3) (by norm_num) f) = f :=
+  ContinuousLinearEquiv.symm_apply_apply _ _
+
+example (a : WeightedCoeff (Weight.sobolev (1 / 3)) 2) :
+    weightedEquiv (L := 1) (by norm_num : (0 : ℝ) < 1 / 3) (by norm_num)
+      ((weightedEquiv (L := 1) (by norm_num : (0 : ℝ) < 1 / 3) (by norm_num)).symm a) = a :=
+  ContinuousLinearEquiv.apply_symm_apply _ _
+
+-- Both directions have their quantitative bounds on the original interval.
+example (f : Fourier.IntrinsicIntervalSobolev (1 / 3) 4) :
+    ‖weightedEquiv (by norm_num : (0 : ℝ) < 1 / 3) (by norm_num) f‖ ≤
+      weightedAnalysisBoundConstant (1 / 3) 4 * ‖f‖ := norm_weightedEquiv_le _ _ _
+
+example (a : WeightedCoeff (Weight.sobolev (1 / 3)) 2) :
+    ‖(weightedEquiv (L := 1) (by norm_num : (0 : ℝ) < 1 / 3) (by norm_num)).symm a‖ ≤
+      weightedSynthesisBoundConstant (1 / 3) 1 * ‖a‖ := norm_weightedEquiv_symm_le _ _ _
+
+-- The equivalence acts on the actual unequal-endpoint length-four ramp.
+example (n : ℤ) :
+    (weightedEquiv (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num) equivalenceQuarterRamp).val n =
+      Fourier.intervalFourierCoefficient 4 intervalRamp n := weightedEquiv_ofFunction _ _ _ _ _ _
+
+example : intervalRamp 0 ≠ intervalRamp 4 ∧
+    Filter.Tendsto (fun t : Finset ℤ => fourierTruncate (by norm_num : (0 : ℝ) < 1 / 4)
+      (by norm_num) t equivalenceQuarterRamp) Filter.atTop (𝓝 equivalenceQuarterRamp) :=
+  ⟨by norm_num [intervalRamp], tendsto_fourierTruncate _ _ _⟩
+
+-- Selected negative frequencies are retained and absent positive frequencies are exactly zero.
+example : Fourier.intervalFourierCoefficient 4
+    (Fourier.intervalPullback 4 (fourierTruncate (by norm_num : (0 : ℝ) < 1 / 4)
+      (by norm_num) {(-3 : ℤ), 0} equivalenceQuarterRamp).val) (-3) =
+      Fourier.intervalFourierCoefficient 4 intervalRamp (-3) := by
+  rw [fourierTruncate_coefficient]
+  norm_num
+  rw [← weightedEquiv_apply (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)]
+  exact weightedEquiv_ofFunction _ _ _ _ _ _
+
+example : Fourier.intervalFourierCoefficient 4
+    (Fourier.intervalPullback 4 (fourierTruncate (by norm_num : (0 : ℝ) < 1 / 4)
+      (by norm_num) {(-3 : ℤ), 0} equivalenceQuarterRamp).val) 3 = 0 := by
+  rw [fourierTruncate_coefficient]
+  norm_num
+
+-- Convergence is in the full intrinsic norm, so the physical difference quotient converges as well.
+example : Filter.Tendsto (fun t : Finset ℤ => quotient
+    (fourierTruncate (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num) t equivalenceQuarterRamp))
+      Filter.atTop (𝓝 (quotient equivalenceQuarterRamp)) :=
+  (tendsto_iff_components.mp (tendsto_fourierTruncate _ _ equivalenceQuarterRamp)).2
+
+-- Finite Fourier support is dense in the original interval Hilbert space below half.
+example : Dense {f : Fourier.IntrinsicIntervalSobolev (1 / 3) 1 | ∃ t : Finset ℤ, ∀ n ∉ t,
+    Fourier.intervalFourierCoefficient 1 (Fourier.intervalPullback 1 f.val) n = 0} :=
+  dense_finite_fourierSupport (by norm_num) (by norm_num)
+
+-- Synthesis itself remains continuous above half; no surjectivity there is asserted.
+example : Continuous (weightedSynthesisContinuous (L := 4) (by norm_num : (0 : ℝ) < 3 / 4) (by norm_num)) :=
+  (weightedSynthesisContinuous _ _).continuous
+
+example (a : WeightedCoeff (Weight.sobolev (3 / 4)) 2) (n : ℤ) :
+    Fourier.intervalFourierCoefficient 4 (Fourier.intervalPullback 4
+      (weightedSynthesis (L := 4) (by norm_num : (0 : ℝ) < 3 / 4) (by norm_num) a).val) n = a.val n :=
+  weightedSynthesis_coefficient _ _ _ _
+
+-- The A.9 map agrees with the same intrinsic-to-weighted identification.
+example : fourierEmbedding (L := 4) (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)
+    (by norm_num : 1 / ((1 / 4 : ℝ) + 1 / 2) < 3 / 2) =
+      (WeightedCoeff.hilbertSobolevInclusion (1 / 4) (3 / 2) (by norm_num) (by norm_num) (by norm_num)).comp
+        (weightedEquiv (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num)).toContinuousLinearMap :=
+  fourierEmbedding_eq_weightedEquiv _ _ _
+
+-- The frequency projections are uniformly bounded independently of the finite set.
+example (t : Finset ℤ) : ‖fourierTruncate (by norm_num : (0 : ℝ) < 1 / 4) (by norm_num) t equivalenceQuarterRamp‖ ≤
+    (weightedSynthesisBoundConstant (1 / 4) 4 * weightedAnalysisBoundConstant (1 / 4) 4) * ‖equivalenceQuarterRamp‖ :=
+  norm_fourierTruncate_le _ _ _ _
+
+end IntrinsicSobolevEquivalenceChecks

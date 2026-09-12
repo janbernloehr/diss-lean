@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 242 modules and 2251 named public theorems. All compile on the
+The library has 245 modules and 2273 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -70,6 +70,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.Fourier.IntrinsicFourierEmbedding` | Continuous complex-linear Fourier injections in the intrinsic norm for positive subcritical and half regularity on every positive interval; exact original coefficients; uniform norm bounds |
 | `NLS.Fourier.IntrinsicGraphClosed` | Transfer of arbitrary circle almost-everywhere properties to physical coordinates; simultaneous `L²` graph limits identify the actual fractional difference quotient, including at half regularity |
 | `NLS.Fourier.IntrinsicSobolevComplete` | Closed isometric graph image; complete intrinsic complex Hilbert space; exact length-normalized inner product; intrinsic convergence iff both graph components converge; existence of Cauchy limits |
+| `NLS.Fourier.IntrinsicSobolevSynthesis` | Bidirectional physical coordinate energy finiteness; intrinsic norm dilation bound; injective continuous weighted synthesis for `0<s<1`; exact actual Fourier coefficients and arbitrary-length norm constant |
+| `NLS.Fourier.IntrinsicSobolevEquivalence` | Actual weighted Fourier analysis; both inverse identities; continuous intrinsic/weighted Hilbert equivalence below half; explicit forward and inverse arbitrary-length bounds; A.9 factorization |
+| `NLS.Fourier.IntrinsicSobolevApproximation` | Finite physical Fourier truncations; exact coefficient selection; uniform norm bound; convergence in the full intrinsic norm and density of finite Fourier support below half |
 | `NLS.Fourier.FractionalSpectralBounds` | Positive integral comparison constants; uniform two-sided bounds for all integer frequencies; finite and positive nonzero weights; physical-energy comparison and conventional homogeneous square-sum regularity criterion |
 | `NLS.Fourier.FractionalTranslationEnergy` | Physical nonnegative translation energies; exact Tonelli diagonalization for arbitrary measurable kernels and displacement measures; genuine double-integral formula; fractional kernel, spectral finiteness criterion, translation invariance, single modes, constants, and frequency reflection |
 | `NLS.Fourier.SobolevDistributionDerivative` | Embeddings preserve actual distributions; genuine derivative multiplier; exact graph and closedness at every real regularity including infinity; intrinsic periodic regularity criterion |
@@ -2499,13 +2502,34 @@ physical norm. Intrinsic convergence is equivalent to simultaneous `L²`
 convergence of its two graph components; every intrinsic Cauchy sequence has
 a limit in the same space.
 
-The remaining normed identification step is the continuous weighted Fourier
-equivalence with quantitative bounds on arbitrary positive interval lengths.
+`IntrinsicSobolevSynthesis` gives an injective continuous map from weighted
+Hilbert coefficients to actual intrinsic interval classes for every `0<s<1`.
+Its actual Fourier coefficients are exactly the original entries. The inverse
+coordinate dilation preserves fractional energy finiteness, and the intrinsic
+norm bound accounts for both the square and difference energies.
+
+`IntrinsicSobolevEquivalence` proves that below half regularity this synthesis
+is inverse to actual Fourier analysis, giving a continuous complex-linear
+equivalence with the normalized-frequency weight `(1+|n|)^s`. The forward
+constant is `sqrt(C_Sob(s)) sqrt(D_s(L/2))`; the inverse constant is
+`sqrt(D_s(2/L)) sqrt(R_s)`, where `D_s(c)=c⁻¹+c^(2s-1)` and the period-two
+constants were proved earlier. Both estimates use the existing exact intrinsic
+norm. Passing arbitrary interval representatives to their quotient preserves
+every original Fourier integral. The earlier A.9 map equals the composition
+of this equivalence with the weighted Hilbert coefficient inclusion.
+
+`IntrinsicSobolevApproximation` transports finite coefficient truncations back
+to the intrinsic space. These retain exactly the selected physical Fourier
+coefficients and satisfy a uniform bound independent of the finite set. They
+converge in the full intrinsic norm as the finite sets exhaust the integers,
+so classes with finite Fourier support are dense below half regularity.
+No matching-endpoint assumption is needed. Surjectivity and this Fourier
+truncation convergence are not asserted at or above half regularity.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 4640 declarations under `NLS`, including generated
+axioms. The current audit covers 4694 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3112,21 +3136,29 @@ the full intrinsic convergence criterion, and Cauchy limits. A norm-summable
 series of nonperiodic half-regularity ramps exists by completeness, and both
 its Fourier coefficients and physical difference quotients commute with the sum.
 
+Equivalence checks verify both inverse identities on different interval lengths,
+explicit forward and inverse norm bounds, and original Fourier coefficients of
+the nonperiodic length-four ramp. Its finite Fourier truncations converge in
+the full quarter-regularity norm and in the difference-quotient `L²` norm.
+Negative selected frequencies are retained, excluded positive frequencies are
+zero, and finite support is dense. Additional checks cover continuous synthesis
+above half, its exact raw coefficients, and the A.9 factorization through the
+weighted equivalence.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Package the continuous weighted Fourier equivalence with quantitative
-   forward and inverse bounds for every positive interval below half. The
-   intrinsic complex Hilbert space, including half regularity, and continuous
-   A.9 Fourier injections are implemented. Its coefficient membership and
-   uniform intrinsic bounds are
-   complete for every positive period, including zero and half regularity. The
-   two-sequence inequality in Appendix B.2, its periodic product in Appendix A.7,
-   and the displayed mixed three-sequence inequality in Appendix B.3 are proved.
+2. Develop Chapter 1, Section 6: the normalized submultiplicative weight class,
+   shifted weighted norms, and resonant/nonresonant Fourier decomposition for
+   Lemma 6.4 and Propositions 6.1/6.3. A.9's intrinsic Hilbert space and continuous
+   subcritical weighted identification are implemented on every positive interval,
+   as are the finite Fourier approximation and the zero/half coefficient bounds.
+   Appendix B.2, its periodic product in A.7, and the displayed B.3 inequality
+   are proved.
 3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
    dissertation results. Both finite and infinity source pair norms and their
    sharp comparisons are complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the continuous weighted Fourier equivalence remains to be packaged.
+the Section 6 refined eigenvalue and weighted-gap asymptotics remain unproved.
