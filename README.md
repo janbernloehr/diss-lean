@@ -55,8 +55,10 @@ parity. All four edges of every sufficiently large central rectangle are now
 uniformly in the resolvent set. The finite central spectral projection is
 constructed algebraically. It equals a large-circle projection and depends
 analytically on the potential; its rank and central algebraic multiplicity are
-`4N+2`, uniformly for every sufficiently large cutoff. The central parity split,
-rectangular contour identification, and main dissertation theorems remain future work.
+`4N+2`, uniformly for every sufficiently large cutoff. For even-supported
+potentials, the cutoff’s parity contributes `2N+2` and the other parity `2N`;
+both parity-component projections are analytic on the same neighborhood.
+Rectangular contour identification and the main dissertation theorems remain future work.
 Lean and mathlib are pinned to **v4.33.1**; `lake-manifest.json` records the resolved
 dependency commits.
 
@@ -128,6 +130,8 @@ zero-height boundary, every larger cutoff, signed free endpoints, and free
 central ranks at both even and odd cutoffs. Deformation checks distinguish
 spectral selection from geometric containment, exercise negative endpoint and
 excluded disks, and verify the central count along the entire segment `[0,φ]`.
+Central parity checks cover zero, even, and odd cutoffs, negative residue
+representatives, nonconstant even potentials, and addition to the total count.
 
 The wrapper also works with a standard `lake` on `PATH` when the workspace-local
 installation is absent. No shell startup files are modified.

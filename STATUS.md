@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has fifty-six modules and 558 named public theorems. All compile on the
+The library has fifty-seven modules and 569 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -43,7 +43,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ContourProjection` | Existence of resolvent annuli; nested-circle product law; idempotence, finite rank, and topological range/kernel decomposition of the contour operator |
 | `NLS.ZakharovShabat.ContourSpectrum` | Finite enclosed spectrum; identification of the whole contour range with enclosed root spaces; equality with the algebraic cluster projection; algebraic-multiplicity rank formula; kernel formula; equality for circles with the same enclosed spectrum; isolated-value projections |
 | `NLS.FunctionalAnalysis.CircleIntegrationMap` | Normalized circle integration as a bounded linear map on continuous functions with the uniform norm; agreement on the circle; norm at most the radius |
-| `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections; norm gap for nonzero idempotents; zero and fixed-range containment persist under preconnected continuous deformations |
+| `NLS.FunctionalAnalysis.ProjectionRank` | Injectivity on the range of a projection under perturbations smaller than one; equality of ranks for nearby finite-rank projections; norm gap for nonzero idempotents; zero and fixed-range containment persist under preconnected continuous deformations; rank constancy for arbitrary continuous preconnected finite-rank projection families |
 | `NLS.ZakharovShabat.ContourAnalytic` | Open admissible-potential domain for a fixed circle; operator-norm analytic dependence of contour projections; locally constant rank and total enclosed algebraic multiplicity |
 | `NLS.ZakharovShabat.FreeMultiplicity` | Resonant coefficient embedding; independence of the signed free modes; support of every free root chain; equality of ordinary and full root spaces; free algebraic multiplicity two |
 | `NLS.ZakharovShabat.DiskMultiplicity` | Constant contour rank and total multiplicity on preconnected admissible families; isolated free disk spectrum; Proposition 1.1(i)’s high-frequency rank and algebraic-multiplicity count, uniform on a convex neighborhood containing zero |
@@ -51,6 +51,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.CentralRectangle` | Compact closed rectangle and boundary; vertical edge strip coverage; uniform resolvent inclusion on every larger boundary and exterior; equality of open, closed, and mixed central spectra |
 | `NLS.ZakharovShabat.CentralSpectrum` | Finite central spectrum and boundary-convention independence; exact free lattice interval; free multiplicity `4N+2`; compact idempotent central algebraic projection, rank formula, and free rank |
 | `NLS.ZakharovShabat.CentralDeformation` | Half-integer-radius lattice gap; enlarged-circle geometry; exact spectral selection and whole central/circle projection equality; analytic central projection and total count `4K+2`, uniform in the potential and every larger cutoff |
+| `NLS.ZakharovShabat.CentralParity` | Signed parity index count; free parity projector equals filtered spectral cluster; finite rank and exact range intersection; analytic components; uniform `2N+2`/`2N` parity split with the total central count on one neighborhood |
 | `NLS.ZakharovShabat.VerticalStrips` | Punctured vertical strips; denominator geometry and free-lattice avoidance; uniform `2p/r` reciprocal-symbol bound and Lemma 3.2(iii)’s `8p/r` operator bound; explicit Neumann condition; common spectral circles and disk localization for small potentials |
 | `NLS.ZakharovShabat.HeightResolvent` | Lemma 3.2(ii)’s numerical height bound; explicit Neumann region and Corollary 3.3 analyticity; decay to zero; larger-height inclusion; uniform heights on bounded potential sets; nonempty region and agreement with the constructive inverse |
 | `NLS.FunctionalAnalysis.SquaredNeumann` | Geometric inversion of `1-K²`; both inverse identities for `(1+K)(1-K²)⁻¹`; correction norm bound; terminating inverse for square-zero operators |
@@ -292,8 +293,7 @@ Both signed free modes have the parity of their spectral index, since `n`
 and `-n` have the same residue modulo two.
 
 The physical Fourier realization and canonical period-one embedding remain
-open. Identification with a rectangular contour integral and the central
-even/odd multiplicity split remain to be proved.
+open. Identification with a rectangular contour integral remains to be proved.
 
 **The high-frequency disk count in Proposition 1.1(i) is now proved.**
 Every free root vector at `π n` has first component supported at `-n` and second
@@ -361,7 +361,27 @@ and circle projection operators. Their local equality on an open neighborhood
 gives analytic dependence of the central projection. Circle rank stability
 along the convex neighborhood containing zero then gives rank `4K+2`, hence
 the same total central algebraic multiplicity. One neighborhood works for every
-cutoff above the threshold. The central even/odd split remains to be proved.
+cutoff above the threshold.
+
+**The central parity split in Proposition 1.1(ii) is now proved.** The central
+indices with residue `r` have cardinality `N+1` when `N` has that residue and
+`N` otherwise. This is proved by adding the two signed endpoints at each
+cutoff, including the base case `N=0`. On each free root space, the pair parity
+projection selects or kills both signed modes together. Thus the free central
+parity projection is the spectral cluster filtered by those indices, with
+rank `2N+2` or `2N`.
+
+Rank is now proved constant on any continuous preconnected family of
+finite-rank projections, including families defined on a parameter subspace.
+Intersecting the potential neighborhood with the even subspace and using
+commutation with the large-circle projector transfers the free parity ranks.
+The component ranges are exactly the intersections of the full central
+spectral space with the corresponding parity subspaces. Hence for even `N`,
+the even/odd dimensions are `2N+2`/`2N`; for odd `N`, they are `2N`/`2N+2`.
+The total count, parity dimensions, and analytic central and parity-component
+projection families share one open convex neighborhood and one threshold,
+valid for every larger cutoff. The physical Fourier interpretation and
+characteristic-function zero-order interpretation are still separate.
 
 The actual unbounded realization is now defined as
 
@@ -575,7 +595,7 @@ prevents accidental inheritance of pointwise convergence from raw sequences.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 1149 declarations under `NLS`, including generated
+axioms. The current audit covers 1178 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -677,18 +697,25 @@ rectangle but outside its associated circle, full negative endpoint disks
 selected by both regions, and the next negative disk excluded from both.
 The total central count is instantiated at `p=1`, and one cutoff is checked
 along every `tφ`, `0 ≤ t ≤ 1`, at `p=3`, together with analyticity at the
-chosen potential for every larger cutoff.
+chosen potential for every larger cutoff. Central-parity checks cover signed
+index sets with negative residue representatives, zero cutoff (even rank two
+and odd rank zero), even cutoff two (ranks six/four), and odd cutoff three
+(ranks six/eight). Further checks exercise both signed free modes, arbitrary
+nonconstant even two-mode potentials, dimensions of the actual parity
+intersections, addition of both parity ranks to `4N+2`, and analyticity of the
+parity components on the shared neighborhood.
 
 ## Next milestones
 
-1. Prove the even/odd split of the central multiplicity count in Proposition 1.1(ii).
+1. Combine localization, high-frequency multiplicities, and central counts
+   with one cutoff and neighborhood for Proposition 1.1(i–iii).
    Identify the central projection with the rectangular contour integral.
 2. Prove the real-type spectral assertion and analytic symmetric eigenvalue
    combinations in Lemma 3.7.
 3. Prove the periodic Fourier/distribution realization, physical period-one
    embedding, pair-norm comparison, and compatibility with physical multiplication.
 
-The central parity counts, classical Birkhoff prerequisites, and the main
+The real-type spectral assertion, classical Birkhoff prerequisites, and the main
 dissertation theorems remain unimplemented. Further sequence-space work includes
 embeddings between regularities and the full range of Young inequalities beyond
 the `l1`-factor case.

@@ -203,7 +203,18 @@ and rank stability give central rank and total multiplicity `4K+2`. One open
 convex neighborhood works for every larger cutoff. The proof does not require
 that the circle contain the corners of the box with the same cutoff.
 
-Next prove the even/odd split of the central count in Proposition 1.1(ii).
-Identification with the rectangular contour integral remains open.
+The central parity split in Proposition 1.1(ii) is now proved. Filtering the
+signed free indices gives `N+1` indices in the cutoff’s parity and `N` in the
+other. The parity components of the free projector equal the corresponding
+filtered spectral clusters. General rank stability for continuous preconnected
+families of finite-rank projections transfers their ranks to even potentials.
+The component ranges equal the parity intersections of the central spectral
+space, so their dimensions are `2N+2` and `2N`, with the larger part switching
+with the cutoff’s parity. The total count, parity counts, and analytic
+projection families share one neighborhood and one cutoff.
+
+Next combine the localization and multiplicity statements with common data,
+then prove the real-type spectral assertion and Lemma 3.7. Identification with
+the rectangular contour integral remains open.
 Physical-space interpretation, period-one embedding, and comparison with the
 dissertation's pair norm remain separate proof obligations.

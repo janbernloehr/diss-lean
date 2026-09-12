@@ -1398,3 +1398,67 @@ example (φ : PairSpace 3) : ∃ N : ℕ, ∀ K : ℕ, N ≤ K →
   exact ⟨N, fun K hK => han K hK φ hφ⟩
 
 end CentralDeformationChecks
+
+section CentralParityChecks
+open Complex
+set_option autoImplicit false
+
+-- Negative residue representatives select the same odd signed indices.
+example : centralParityIndices 2 (-1) = {-1, 1} := by decide
+example : centralParityIndices 2 0 = {-2, 0, 2} := by decide
+
+-- At zero cutoff, both constant components are even and the odd range vanishes.
+example : Module.finrank ℂ (centralParityProjection (p := 1) (by simp) 0 0 0).range = 2 := by
+  simpa using finrank_range_centralParityProjection_zero (p := 1) (by simp) 0 0
+example : Module.finrank ℂ (centralParityProjection (p := 1) (by simp) 0 0 1).range = 0 := by
+  simpa using finrank_range_centralParityProjection_zero (p := 1) (by simp) 0 1
+
+-- The larger parity switches when the cutoff switches parity.
+example : Module.finrank ℂ (centralParityProjection (p := 3) (by simp) 0 2 0).range = 6 := by
+  simpa using finrank_range_centralParityProjection_zero (p := 3) (by simp) 2 0
+example : Module.finrank ℂ (centralParityProjection (p := 3) (by simp) 0 2 1).range = 4 := by
+  simpa using finrank_range_centralParityProjection_zero (p := 3) (by simp) 2 1
+example : Module.finrank ℂ (centralParityProjection (p := 1) (by simp) 0 3 0).range = 6 := by
+  simpa using finrank_range_centralParityProjection_zero (p := 1) (by simp) 3 0
+example : Module.finrank ℂ (centralParityProjection (p := 1) (by simp) 0 3 1).range = 8 := by
+  simpa using finrank_range_centralParityProjection_zero (p := 1) (by simp) 3 1
+
+-- The free even component keeps both signed even modes and kills odd ones.
+example (a : ℂ × ℂ) : pairParityProjection 0 (freeModeEmbedding (p := 3) (-2) a) =
+    freeModeEmbedding (-2) a := by
+  rw [pairParityProjection_freeModeEmbedding]; norm_num
+example (a : ℂ × ℂ) : pairParityProjection 0 (freeModeEmbedding (p := 3) (-3) a) = 0 := by
+  rw [pairParityProjection_freeModeEmbedding]; norm_num
+
+-- The uniform result counts the parity intersections themselves for arbitrary
+-- nonconstant even potentials, rather than counting only selected free modes.
+example (a b : ℂ) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
+    Module.finrank ℂ ↥((centralSpectralProjection (p := 3) (by simp)
+      (lp.single 3 2 a, lp.single 3 (-2) b) N).range ⊓ pairParitySubspace 0) =
+      if (N : ℤ) % 2 = 0 then 2 * N + 2 else 2 * N := by
+  let φ : PairSpace 3 := (lp.single 3 2 a, lp.single 3 (-2) b)
+  have heven : φ ∈ pairParitySubspace 0 :=
+    ⟨Coeff.single_mem_paritySubspace 0 2 a (by norm_num),
+      Coeff.single_mem_paritySubspace 0 (-2) b (by norm_num)⟩
+  obtain ⟨N₀, U, _, _, _, hφ, _, _, h⟩ := exists_uniform_central_counts (by simp) φ
+  refine ⟨N₀, ?_⟩
+  intro N hN
+  simpa using (h φ hφ N hN).2.2.2 heven 0
+
+-- The two parity ranks add to the total central count throughout the family.
+example (φ : PairSpace 1) (hφ : φ ∈ pairParitySubspace 0) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
+    Module.finrank ℂ (centralParityProjection (by simp) φ N 0).range +
+      Module.finrank ℂ (centralParityProjection (by simp) φ N 1).range = 4 * N + 2 := by
+  obtain ⟨N₀, U, _, _, _, hφU, _, h⟩ := exists_uniform_central_parity_ranks (by simp) φ
+  refine ⟨N₀, ?_⟩
+  intro N hN
+  rw [(h φ hφU hφ N hN 0).1, (h φ hφU hφ N hN 1).1]
+  split_ifs <;> omega
+
+-- Analyticity of the parity components uses the same cutoff as the total count.
+example (φ : PairSpace 3) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ r : ℤ,
+    AnalyticAt ℂ (fun ψ => centralParityProjection (by simp) ψ N r) φ := by
+  obtain ⟨N₀, U, _, _, _, hφ, _, han, _⟩ := exists_uniform_central_counts (by simp) φ
+  exact ⟨N₀, fun N hN r => (han N hN).2 r φ hφ⟩
+
+end CentralParityChecks

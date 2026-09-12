@@ -2,6 +2,7 @@ import Mathlib.Analysis.Normed.Operator.NormedSpace
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.Topology.Order.IntermediateValue
+import Mathlib.Topology.LocallyConstant.Basic
 import Mathlib.Algebra.Ring.Idempotent
 
 /-!
@@ -96,5 +97,26 @@ theorem mul_eq_self_on_preconnected {X : Type*} [TopologicalSpace X]
   intro x hx
   have hz := he x hx
   simpa only [sub_mul, one_mul, sub_eq_zero, eq_comm] using hz
+
+/-- Rank is constant on every preconnected continuous family of finite-rank
+projections, including families defined only on a subspace of parameters. -/
+theorem finrank_eq_on_preconnected {X : Type*} [TopologicalSpace X]
+    {U : Set X} (hU : IsPreconnected U) (P : X → E →L[ℂ] E)
+    (hcont : ContinuousOn P U) (hid : ∀ x ∈ U, IsIdempotentElem (P x))
+    (hfinite : ∀ x ∈ U, FiniteDimensional ℂ (P x).range)
+    {a b : X} (ha : a ∈ U) (hb : b ∈ U) :
+    Module.finrank ℂ (P a).range = Module.finrank ℂ (P b).range := by
+  let : PreconnectedSpace U := Subtype.preconnectedSpace hU
+  have hc : Continuous (fun x : U => P x.val) := continuousOn_iff_continuous_domRestrict.mp hcont
+  have hl : IsLocallyConstant (fun x : U => Module.finrank ℂ (P x.val).range) := by
+    rw [IsLocallyConstant.iff_eventually_eq]
+    intro x
+    have he := hc.continuousAt.preimage_mem_nhds (Metric.ball_mem_nhds (P x.val) zero_lt_one)
+    filter_upwards [he] with y hy
+    let : FiniteDimensional ℂ (P x.val).range := hfinite x.val x.property
+    let : FiniteDimensional ℂ (P y.val).range := hfinite y.val y.property
+    exact finrank_eq_of_norm_sub_lt_one _ _ (hid y.val y.property) (hid x.val x.property)
+      (by simpa only [Set.mem_preimage, Metric.mem_ball, dist_eq_norm] using hy)
+  exact hl.apply_eq_of_preconnectedSpace ⟨a, ha⟩ ⟨b, hb⟩
 
 end NLS.ProjectionRank
