@@ -2,11 +2,20 @@
 
 ## Implemented and checked
 
-The library has 346 modules and 2883 named public theorems. All compile on the
+The library has 355 modules and 2912 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.LogDerivativeLocal` | Analytic remainder after subtracting the exact analytic-order principal part of a logarithmic derivative |
+| `NLS.ComplexAnalysis.FinitePoleRemoval` | Meromorphic normal form fills all finitely many removable logarithmic-derivative remainders |
+| `NLS.ComplexAnalysis.AnalyticZeroCount` | Natural analytic zero count, finite zeros and finite orders on compact connected analytic domains |
+| `NLS.ComplexAnalysis.ArgumentPrinciple` | Disc contour integral of `f'/f` equals `2πi` times the actual analytic zero count |
+| `NLS.ComplexAnalysis.Rouche` | Strict boundary perturbations preserve contour integrals and scalar analytic multiplicity counts |
+| `NLS.ComplexAnalysis.ZeroCountComparison` | Exact centered-monomial count, set transport, and open/closed disc count equality |
+| `NLS.ComplexAnalysis.ZeroMultiset` | Roots represented with exact analytic multiplicities; count two gives two roots allowing coincidence |
+| `NLS.ZakharovShabat.ResonantZeroCount` | Locally uniform count two for the actual determinant on closed/open refined discs and full signed strips |
+| `NLS.ZakharovShabat.ResonantRoots` | Two roots exhausting each distant strip, exact analytic orders, localization, and factor-six gap bound |
 | `NLS.ZakharovShabat.UniformPowerTail` | Open convex norm-and-tail neighborhoods giving uniform decay of general power-tail budgets |
 | `NLS.ZakharovShabat.ResonantSupSmallness` | Arbitrarily small actual diagonal and weighted remainder suprema, uniformly on all distant strips |
 | `NLS.ZakharovShabat.ResonantCoefficientSmallness` | Signed weighted leading-mode decay and locally uniform bounds on all three full coefficients |
@@ -3257,18 +3266,55 @@ proves it nonnegative, finite, and at most `(π/16)²`, and establishes
 are locally uniform; no distinctness or reality assumption on the roots is
 needed, and the spectral weight need not satisfy `w(0)=1`.
 
-**Remaining scope.** Lemma 6.9 is not yet complete. The count of scalar
-analytic zeros with multiplicity and the quantitative power sum of their
-displacements remain unproved. The existing spectral algebraic multiplicity
-count does not by itself identify analytic zero orders of this determinant.
-The pinned Mathlib has no named Rouché theorem or argument-principle theorem;
-the required analytic counting argument must be established or connected to
-the existing spectral count with a proved multiplicity identification.
+### Lemma 6.9: scalar analytic multiplicity two and the two roots
+
+`LogDerivativeLocal` factors each finite-order analytic germ and proves that
+its logarithmic derivative is its natural analytic order divided by the
+centered coordinate, plus an analytic remainder. `FinitePoleRemoval` subtracts
+all finitely many such terms and uses meromorphic normal form to fill their
+removable values. The filled function is analytic on the whole domain and
+agrees with the original remainder away from the listed poles.
+
+`AnalyticZeroCount` sums natural analytic orders. For a function analytic on
+a neighborhood of a compact connected set and nonzero at one point, all
+orders are finite and the zero set is finite. `ArgumentPrinciple` applies
+Cauchy's theorem to the filled remainder and integrates each principal part.
+For every positive-radius closed disc with nonzero boundary values, it proves
+`∮ f'/f = 2πi · analyticZeroCount f (closedBall c R)`.
+
+`Rouche` proves that a strict relative boundary perturbation has its ratio
+in the open disc centered at one with radius one. The principal logarithm of
+that ratio has derivative `g'/g-f'/f` along the circle; its contour integral
+vanishes. The argument principle then gives equal natural zero counts.
+`ZeroCountComparison` computes every centered monomial's count, transports
+counts between sets containing the same zeros, and equates open and closed
+disc counts when the boundary is nonvanishing.
+
+`ResonantZeroCount` applies these results to the actual determinant and its
+centered square. Its scalar analytic multiplicity is exactly two on the
+closed radius-`π/4` disc, the open refined disc, and the full source strip.
+The boundary is nonvanishing, the strip zero set is finite, and every analytic
+order in the strip is finite. One open convex neighborhood containing the
+potential and zero and one cutoff work for all distant signed resonances,
+all finite `p>1`, and every source spectral weight.
+
+`ZeroMultiset` represents the actual natural orders as root multiplicities.
+`ResonantRoots` produces two roots allowing coincidence, proves that they
+exhaust the whole strip's determinant zeros, and identifies every strip
+point's analytic order with its occurrence count in this pair. Both roots
+lie in the refined disc, satisfy the `3π/32` localization bound, and obey
+`|ξ-η|²≤6|b_n⁺b_n⁻|_{U_n}` on a common potential neighborhood and cutoff.
+No reality, distinctness, or normalization `w(0)=1` is required.
+
+**Remaining scope.** Lemma 6.9's quantitative root displacement power sum
+remains unproved. The scalar counting argument is established directly;
+identification with the separate spectral algebraic multiplicities is not
+asserted.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5825 declarations under `NLS`, including generated
+axioms. The current audit covers 5866 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4026,11 +4072,20 @@ the actual determinant circle comparison is tested below two and its root-gap
 bound at `p=3`. A negative-resonance example checks the scalar zero criterion
 against the original periodic spectrum.
 
+Scalar counting checks compute a nonreal triple root and the zero-degree
+monomial, then count a cubic with a double root at `i` and a simple root at
+`-i`. Its contour integral is checked against total multiplicity three.
+A complex perturbation of a square centered at `i` exercises Rouché's theorem.
+The actual full-strip determinant count is instantiated at `p=3/2` with
+`w(0)=2`; the actual free determinant has count two at a negative resonance.
+At `p=3`, the two-root theorem is checked with complete strip zero detection,
+exact analytic multiplicities, and the factor-six gap bound.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove Lemma 6.9's scalar analytic zero count with multiplicity and its
-   root displacement power sum, then continue the weighted-gap estimates
+2. Prove Lemma 6.9's remaining root displacement power sum, then continue
+   the weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

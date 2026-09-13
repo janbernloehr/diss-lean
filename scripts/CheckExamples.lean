@@ -8494,3 +8494,104 @@ example (φ : PairSpace 3) (z : ℂ) (hz : z ∈ resonantStrip (-3))
   mem_periodicSpectrum_iff_resonantDeterminantExtension_zero (by norm_num) φ (-3) z hz h
 
 end ResonantLocalizationChecks
+
+namespace ArgumentPrincipleChecks
+open NLS.ComplexAnalysis NLS.ZakharovShabat Metric
+open scoped Classical ENNReal
+
+-- A nonreal repeated root contributes its full degree, even when the degree is zero.
+example : analyticZeroCount (fun z : ℂ => (z-Complex.I)^3) (closedBall Complex.I 2) = 3 :=
+  analyticZeroCount_centeredMonomial Complex.I 3 (mem_closedBall_self (by norm_num))
+
+example : analyticZeroCount (fun z : ℂ => (z-Complex.I)^0) (closedBall Complex.I 2) = 0 :=
+  analyticZeroCount_centeredMonomial Complex.I 0 (mem_closedBall_self (by norm_num))
+
+private def cubic (z : ℂ) : ℂ := (z-Complex.I)^2*(z-(-Complex.I))
+
+private theorem cubicZeroIff (z : ℂ) : cubic z = 0 ↔ z = Complex.I ∨ z = -Complex.I := by
+  simp only [cubic, mul_eq_zero, pow_eq_zero_iff (by norm_num : (2 : ℕ) ≠ 0), sub_eq_zero]
+
+-- Two distinct nonreal roots contribute orders two and one, respectively.
+private theorem cubicCount : analyticZeroCount cubic (closedBall 0 2) = 3 := by
+  rw [analyticZeroCount_eq_sum {Complex.I,-Complex.I} ?_ ?_]
+  · have hmul (z : ℂ) : analyticOrderAt cubic z =
+        analyticOrderAt (fun z : ℂ => (z-Complex.I)^2) z +
+        analyticOrderAt (fun z : ℂ => z-(-Complex.I)) z :=
+      analyticOrderAt_mul (by fun_prop) (by fun_prop)
+    have hi : Complex.I ≠ -Complex.I := by intro h; have := congrArg Complex.im h; norm_num at this
+    simp only [Finset.sum_pair hi, analyticOrderNatAt, hmul]
+    change (analyticOrderAt ((· - Complex.I)^2) Complex.I +
+      analyticOrderAt (· - (-Complex.I)) Complex.I).toNat +
+      (analyticOrderAt ((· - Complex.I)^2) (-Complex.I) +
+      analyticOrderAt (· - (-Complex.I)) (-Complex.I)).toNat = 3
+    rw [analyticOrderAt_centeredMonomial, analyticOrderAt_id_sub_const_of_ne hi,
+      analyticOrderAt_pow (by fun_prop), analyticOrderAt_id_sub_const_of_ne hi.symm,
+      analyticOrderAt_id_sub_const_self]
+    norm_num
+  · intro z hz
+    simp only [Finset.mem_coe, Finset.mem_insert, Finset.mem_singleton] at hz
+    rcases hz with rfl | rfl <;> norm_num [mem_closedBall, dist_eq_norm]
+  · intro z hz
+    simpa using (cubicZeroIff z).mp hz.2
+
+-- The contour detects both the repeated pole and the distinct simple pole.
+example : (∮ z in C(0, 2), logDeriv cubic z) = 2 * (Real.pi : ℂ) * Complex.I * 3 := by
+  have ha : AnalyticOnNhd ℂ cubic (closedBall 0 2) := by
+    intro z _
+    change AnalyticAt ℂ (fun z : ℂ => (z-Complex.I)^2*(z-(-Complex.I))) z
+    fun_prop
+  have hb : ∀ z ∈ sphere (0 : ℂ) 2, cubic z ≠ 0 := by
+    intro z hz hfz
+    rcases (cubicZeroIff z).mp hfz with rfl | rfl <;> norm_num [mem_sphere, dist_eq_norm] at hz
+  rw [circleIntegral_logDeriv_eq_analyticZeroCount (by norm_num) ha hb, cubicCount]
+  norm_num
+
+-- A complex perturbation of a square centered off the real axis retains count two.
+example : analyticZeroCount (fun z : ℂ => (z-Complex.I)^2+Complex.I/2) (closedBall Complex.I 1) = 2 := by
+  apply analyticZeroCount_eq_degree_of_boundary_lt 2 (by norm_num) (by intro z _; fun_prop)
+  intro z hz
+  have hn : ‖z-Complex.I‖ = 1 := by simpa [mem_sphere, dist_eq_norm] using hz
+  rw [add_sub_cancel_left, norm_pow, hn]
+  norm_num
+
+private theorem countHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem countHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨le_of_lt countHalfAboveOne⟩
+private def countWeight : SpectralWeight := SpectralWeight.constant 2 (by norm_num)
+
+-- Below two and with w(0)=2, the actual full-strip scalar count is two.
+example (φ : WeightedCoeffPair countWeight.toWeight (3/2)) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs →
+      analyticZeroCount (resonantDeterminantExtension countHalfFinite countWeight φ n) (resonantStrip n) = 2 := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantDeterminant_zeroCount countHalfFinite countHalfAboveOne countWeight φ
+  exact ⟨N,hN,fun n hn => (hb φ hφ n hn).2.2.2.2.2.2⟩
+
+-- The actual free determinant has a double scalar root at a negative resonance.
+example : analyticZeroCount (resonantDeterminantExtension (p := 3) (by norm_num) countWeight 0 (-3))
+    (refinedResonantDisk (-3)) = 2 := by
+  have he : resonantDeterminantExtension (p := 3) (by norm_num) countWeight 0 (-3) =
+      fun z => (z-(Real.pi : ℂ)*(-3 : ℤ))^2 := by
+    funext z
+    exact resonantDeterminantExtension_zero (p := 3) (by norm_num) countWeight (-3) z
+  rw [he]
+  apply analyticZeroCount_centeredMonomial
+  exact mem_ball_self (by positivity : 0 < Real.pi/4)
+
+-- Above two, two actual roots exhaust the strip and include analytic multiplicities.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs →
+      ∃ x ∈ refinedResonantDisk n, ∃ y ∈ refinedResonantDisk n,
+        (∀ z ∈ resonantStrip n, resonantDeterminantExtension (by norm_num) w φ n z = 0 ↔ z = x ∨ z = y) ∧
+        (∀ z ∈ resonantStrip n, analyticOrderNatAt (resonantDeterminantExtension (by norm_num) w φ n) z =
+          ({x,y} : Multiset ℂ).count z) ∧
+        ‖x-y‖^2 ≤ 6 * resonantBProductSup (by norm_num) w φ n := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantRoots (p := 3) (by norm_num) (by norm_num) w φ
+  refine ⟨N,hN,?_⟩
+  intro n hn
+  obtain ⟨x,hx,y,hy,_,_,hzeros,hmult,_,_,hgap⟩ := hb φ hφ n hn
+  exact ⟨x,hx,y,hy,hzeros,hmult,hgap⟩
+
+end ArgumentPrincipleChecks

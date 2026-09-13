@@ -294,3 +294,12 @@ import NLS.ZakharovShabat.ResonantDeterminantBounds
 import NLS.ZakharovShabat.ResonantDeterminantLocalization
 import NLS.ZakharovShabat.ResonantCauchyGap
 import NLS.ZakharovShabat.ResonantRootGap
+import NLS.ComplexAnalysis.AnalyticZeroCount
+import NLS.ComplexAnalysis.ArgumentPrinciple
+import NLS.ComplexAnalysis.FinitePoleRemoval
+import NLS.ComplexAnalysis.LogDerivativeLocal
+import NLS.ComplexAnalysis.Rouche
+import NLS.ComplexAnalysis.ZeroCountComparison
+import NLS.ComplexAnalysis.ZeroMultiset
+import NLS.ZakharovShabat.ResonantZeroCount
+import NLS.ZakharovShabat.ResonantRoots

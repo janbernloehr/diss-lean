@@ -1089,11 +1089,18 @@ potential neighborhood. Cauchy's estimate gives the derivative bound `1/8`,
 and the actual full-strip product supremum controls any pair of zeros by
 `|ξ-η|²≤6|b_n⁺b_n⁻|_{U_n}`, without choosing square-root branches.
 
-Next, establish the scalar analytic zero count with multiplicity. The pinned
-Mathlib has no named Rouché or argument-principle theorem. Either develop
-that counting argument from the available complex-analytic tools or prove
-that the determinant zero orders equal the existing spectral algebraic
-multiplicities. The existing spectral count alone does not settle this point.
-Then prove the root displacement power sum in Lemma 6.9 and proceed to
-Propositions 6.1 and 6.3. The printed general-`p` central-height constant
-remains a separate open item.
+The scalar analytic zero count is now proved independently of the existing
+spectral algebraic count. Local analytic factorization identifies each pole
+of `f'/f` with its analytic zero order. Finite pole removal and Cauchy's
+integral theorem give the disc argument principle. The principal logarithm
+of a strict boundary ratio gives Rouché's theorem. Applied to the actual
+determinant and its centered square, it gives count two on the closed disc,
+open refined disc, and whole strip. A multiset representation yields two
+roots allowing coincidence, exhausts all strip zeros, and records their
+exact analytic orders. Their localization and factor-six gap estimate hold
+on one open convex potential neighborhood with one signed-frequency cutoff.
+
+Next, prove the root displacement power sum in Lemma 6.9 and proceed to
+Propositions 6.1 and 6.3. Identification of scalar analytic orders with the
+separate spectral algebraic multiplicities has not been asserted. The printed
+general-`p` central-height constant remains a separate open item.

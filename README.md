@@ -603,8 +603,11 @@ installation is absent. No shell startup files are modified.
   and the centered square strictly dominates the determinant perturbation
   on the radius-`π/4` circle. Cauchy's estimate gives `|a_n′|≤1/8` in that
   disc, and any two strip zeros satisfy `|ξ-η|²≤6|b_n⁺b_n⁻|_{U_n}`.
-  The analytic zero count with multiplicity and the quantitative root
-  displacement sum remain to be proved.
+  A proved scalar argument principle and Rouché theorem now give exactly two
+  analytic zeros, with multiplicity, on both the refined disc and the full strip.
+  Two roots, allowing coincidence, exhaust all strip zeros and have exactly the
+  corresponding analytic orders. The quantitative root displacement sum remains
+  to be proved.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
