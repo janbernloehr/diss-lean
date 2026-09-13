@@ -1320,7 +1320,17 @@ of limits gives equality of the entire functions for arbitrary admissible
 cutoffs and pair labels. Every finite `p>1` potential has one such function for
 all larger cutoffs, retaining exact orders and polynomial/derivative convergence.
 
-Next, prove analytic dependence on potentials. Complete the odd free-product
+The finite polynomial part of potential analyticity is now proved. Generalized
+root chains of the contour reduction agree with the original domain recursion,
+so the determinant has exactly the original spectral multiplicities. Local
+projection transport and the finite determinant formula give joint analyticity
+of all sufficiently large central polynomials on one potential neighborhood.
+Their normalized limits define the canonical full periodic product directly
+from the potential, with the exact original zeros, orders, and locally uniform
+spectral-parameter and derivative convergence.
+
+Next, prove convergence uniform over potential neighborhoods and pass joint
+analyticity to the infinite product. Complete the odd free-product
 identity, the perturbed parity subproducts, and identification of the correctly
 normalized discriminant. Then continue with the anti-discriminant and
 action-coordinate prerequisites.

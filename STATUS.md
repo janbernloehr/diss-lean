@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 424 modules and 3309 named public theorems. All compile on the
+The library has 429 modules and 3336 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.FunctionalAnalysis.FiniteSpectralDeterminant` | Analytic determinant and spectral shifts, conjugacy invariance, and exact root-product orientation with repeated roots |
+| `NLS.ZakharovShabat.ContourReductionMultiplicity` | Finite generalized chains equal the original domain recursion; full root-space pullback and exact characteristic multiplicities |
+| `NLS.ZakharovShabat.ContourSpectralDeterminant` | Intrinsic determinant on the varying range, transport invariance, joint analyticity, and equality with the actual finite spectral product |
+| `NLS.ZakharovShabat.CentralPolynomialAnalytic` | Joint analyticity of all large central polynomials on one potential neighborhood; intrinsic normalized approximants equal every sufficiently large original cutoff |
+| `NLS.ZakharovShabat.CanonicalPeriodicProduct` | Full product defined from the potential alone; agreement with all admissible weighted constructions, entire spectral dependence, exact orders and zeros, and locally uniform polynomial/derivative limits |
 | `NLS.ZakharovShabat.CentralSpectrumCutoffs` | Monotone central clusters and exact disjoint decomposition into the old cluster and newly enclosed periodic discs |
 | `NLS.ZakharovShabat.PeriodicPolynomialCutoffIndependence` | Exact central polynomial and normalization identities, repeated roots, and equality of all sufficiently large finite cutoffs |
 | `NLS.ZakharovShabat.EntirePeriodicProductIndependence` | Independence from arbitrary admissible central cutoffs and pair labels; one entire function with exact orders and polynomial/derivative limits for all larger cutoffs |
@@ -3924,10 +3929,50 @@ cutoffs on the same open convex potential neighborhood, with the exact original
 zero orders and locally uniform polynomial and derivative limits. Convergence
 and analyticity here remain in the spectral parameter for each fixed potential.
 
+## Section 8: analytic finite determinants and the canonical product
+
+`ContourReductionMultiplicity` proves that every finite generalized chain of
+the contour restriction is exactly the original unbounded operator's root
+recursion inside the spectral range. The domain-valued contour map supplies
+the representative at each step. Its full generalized eigenspace is the
+pullback of the original full root space. For enclosed values, equality of
+finite dimensions identifies the characteristic-root multiplicity with the
+original algebraic multiplicity, without diagonalizability assumptions.
+
+`FiniteSpectralDeterminant` proves analyticity of the finite-dimensional
+determinant by its finite permutation formula. Spectral shifts remain analytic
+at determinant zeros; conjugacy preserves the exact determinant. The split
+characteristic polynomial gives the root product with the original `(root-z)`
+orientation and all repeated roots.
+
+`ContourSpectralDeterminant` identifies the intrinsic determinant on each
+varying contour range with the transported determinant on a fixed range.
+It is jointly analytic in the spectral parameter and potential wherever the
+contour lies in the resolvent. The generalized-chain identification proves
+that it equals the actual enclosed root product with original multiplicities.
+`CentralPolynomialAnalytic` applies this to large circles enclosing precisely
+the central cluster. At every finite Banach exponent, including `p=1`, all
+sufficiently large central polynomials and their constant normalizations are
+jointly analytic on one common open convex potential neighborhood.
+
+`CanonicalPeriodicProduct` defines the full product directly from the actual
+potential as the limit of these intrinsic normalized central polynomials.
+They eventually equal every admissible earlier pair-product cutoff, so the
+canonical product agrees with every such construction, including weighted
+ones. For every actual finite `p>1` potential, it is entire in the spectral
+parameter, has exactly the original spectral zeros and analytic orders, and
+is the locally uniform limit of the intrinsic polynomials and their spectral
+derivatives. No eigenvalue labeling or central threshold is an input to this
+canonical definition.
+
+Joint convergence over potential neighborhoods and joint analyticity of the
+infinite product are still open. This milestone proves joint analyticity of
+the finite approximants, not yet that of their limit.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6799 declarations under `NLS`, including generated
+axioms. The current audit covers 6845 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4838,11 +4883,18 @@ cutoffs with exchanged labels at the filled zero lattice point. An arbitrary
 actual weighted `p=3` potential supplies one entire function for all larger
 cutoffs without assumed root data.
 
+Analytic-central examples cover spectral shifts through a collision, nilpotent
+rank-two operators including Jordan blocks, an actual third-level domain
+chain, and the correctly oriented free negative-disc determinant. They also
+instantiate joint finite-approximant analyticity for an actual `p=1` potential,
+the canonical double zero at the free origin, and canonical nonvanishing in
+an arbitrary actual `p=3` resolvent.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove analytic dependence on the potential for the cutoff-independent
-   entire products with exact multiplicities, and identify
+2. Prove convergence uniform over potential neighborhoods and joint analyticity
+   of the canonical infinite product, and identify
    the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors

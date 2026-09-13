@@ -683,8 +683,13 @@ installation is absent. No shell startup files are modified.
   explicitly proved at every parameter. Every finite `p>1` potential supplies
   the required data on a common open convex neighborhood. Exact identities
   between finite cutoffs preserve the normalization, including at spectral
-  zeros and double roots. Analytic dependence on potentials and discriminant
-  identification remain open.
+  zeros and double roots. The finite central polynomials are now jointly
+  analytic in the spectral parameter and potential, using transported contour
+  determinants with original generalized-root-space multiplicities. Their
+  normalized limits define a canonical product directly from the potential,
+  agreeing with every admissible earlier construction. Joint convergence over
+  potential neighborhoods, joint analyticity of the infinite product, and
+  discriminant identification remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -372,3 +372,8 @@ import NLS.ZakharovShabat.EntirePeriodicProductOrders
 import NLS.ZakharovShabat.CentralSpectrumCutoffs
 import NLS.ZakharovShabat.PeriodicPolynomialCutoffIndependence
 import NLS.ZakharovShabat.EntirePeriodicProductIndependence
+import NLS.FunctionalAnalysis.FiniteSpectralDeterminant
+import NLS.ZakharovShabat.ContourReductionMultiplicity
+import NLS.ZakharovShabat.ContourSpectralDeterminant
+import NLS.ZakharovShabat.CentralPolynomialAnalytic
+import NLS.ZakharovShabat.CanonicalPeriodicProduct

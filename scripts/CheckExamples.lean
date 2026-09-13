@@ -9985,3 +9985,67 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end CutoffIndependenceChecks
+
+namespace AnalyticCentralChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Spectral shifts stay analytic at a collision, for arbitrary fixed non-diagonal operators.
+example (B : (Fin 2 → ℂ) →L[ℂ] (Fin 2 → ℂ)) :
+    AnalyticAt ℂ (fun t : ℂ × ℂ =>
+      (((t.2 • (1 : (Fin 2 → ℂ) →L[ℂ] (Fin 2 → ℂ))) + B).toLinearMap-t.1 • 1).det) (0,0) := by
+  apply NLS.FiniteSpectralDeterminant.analyticAt_shifted_det
+  · exact (analyticAt_snd.smul analyticAt_const).add analyticAt_const
+  · exact analyticAt_fst
+
+-- A nilpotent rank-two operator has a double determinant root even with a Jordan block.
+example (B : Module.End ℂ (Fin 2 → ℂ)) (hB : IsNilpotent B) (z : ℂ) :
+    (B-z • 1).det = z^2 := by
+  have h := NLS.FiniteSpectralDeterminant.shifted_det_eq_prod_roots B z
+  rw [hB.charpoly_eq_X_pow_finrank] at h
+  have hm : Polynomial.rootMultiplicity (0 : ℂ) (Polynomial.X^2) = 2 := by
+    simpa using Polynomial.rootMultiplicity_X_sub_C_pow (0 : ℂ) 2
+  simpa [hm] using h
+
+-- An actual third-level contour root vector retains the original unbounded-domain recursion.
+example (φ : PairSpace 2) (c z : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet ENNReal.ofNat_ne_top φ)
+    (x : (resolventCircleIntegral ENNReal.ofNat_ne_top φ c r).range)
+    (hx : x ∈ Module.End.genEigenspace (reducedContourOperator _ φ φ c r).toLinearMap z 3) :
+    ∃ f : Domain 2, domainInclusion f = (x : PairSpace 2) ∧
+      spectralPencil ENNReal.ofNat_ne_top φ z f ∈ periodicRootSpace ENNReal.ofNat_ne_top φ z 2 := by
+  apply (mem_periodicRootSpace_succ ENNReal.ofNat_ne_top φ z 2 x).mp
+  exact (reducedContourOperator_mem_genEigenspace_iff ENNReal.ofNat_ne_top φ c z r hr hc 3 x).mp hx
+
+-- The actual free negative disc gives a squared factor with the correct orientation.
+example (z : ℂ) : contourSpectralDeterminant (p := 3) (by simp) 0
+    ((Real.pi : ℂ)*(-3 : ℤ)) (Real.pi/4) z = ((Real.pi : ℂ)*(-3 : ℤ)-z)^2 := by
+  have hr : 0 < Real.pi/4 := by positivity
+  have hc := sphere_subset_resolventSet_of_smallPotential (p := 3) (by simp) 0 (-3) hr le_rfl (by simpa using hr)
+  rw [contourSpectralDeterminant_eq_prod (by simp) 0 _ _ hr.le hc z,
+    enclosedPeriodicSpectrum_zero (by simp) (-3) hr (by linarith [Real.pi_pos]), Finset.prod_singleton,
+    periodicAlgebraicMultiplicity_zero]
+
+-- At p=1, all sufficiently large finite approximants already have joint potential analyticity.
+example (φ : PairSpace 1) : ∃ N : ℕ, ∃ U : Set (PairSpace 1), IsOpen U ∧ φ ∈ U ∧
+    ∀ M ≥ N, AnalyticOnNhd ℂ (fun t : ℂ × PairSpace 1 =>
+      normalizedCentralPeriodicPolynomial (by simp) t.2 M t.1) (Set.univ ×ˢ U) := by
+  obtain ⟨N,U,_,ho,_,hφ,_,h⟩ := exists_uniform_analytic_normalizedCentralPolynomials (by simp) φ
+  exact ⟨N,U,ho,hφ,h⟩
+
+-- The canonical product needs neither a selected cutoff nor eigenvalue labels.
+example : analyticOrderAt (canonicalPeriodicProduct (p := 3) (by simp) 0) 0 = 2 := by
+  have he := analyticOrderAt_canonicalPeriodicProduct (p := 3) (by simp) (by norm_num) 0 ((Real.pi : ℂ)*(0 : ℤ))
+  rw [periodicAlgebraicMultiplicity_zero (by simp) (0 : ℤ)] at he
+  simpa using he
+
+-- An arbitrary actual p=3 potential has no new canonical zeros in its resolvent.
+example (φ : PairSpace 3) (hφ : Complex.I ∈ resolventSet (by simp) φ) :
+    canonicalPeriodicProduct (by simp) φ Complex.I ≠ 0 := by
+  intro hz
+  exact ((canonicalPeriodicProduct_eq_zero_iff (by simp) (by norm_num) φ Complex.I).mp hz) hφ
+
+end
+end AnalyticCentralChecks
