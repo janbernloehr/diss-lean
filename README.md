@@ -697,8 +697,11 @@ installation is absent. No shell startup files are modified.
   spectral covers and maximum modulus retain the whole potential neighborhood
   without assuming it compact. The canonical product is jointly continuous,
   and the intrinsic polynomials converge locally uniformly jointly in both
-  variables. Joint analyticity of the infinite product and discriminant
-  identification remain open.
+  variables. Banach-space Schwarz estimates now also give joint complex
+  Fréchet smoothness and local uniform operator-norm convergence of the
+  polynomial derivatives. Every complex affine-line restriction is entire,
+  including simultaneous spectral and potential perturbations. The explicit
+  Banach power-series conclusion and discriminant identification remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

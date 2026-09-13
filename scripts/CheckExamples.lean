@@ -10161,3 +10161,76 @@ example (φ : PairSpace 3) : ∃ V ∈ 𝓝 (((Real.pi : ℂ)*(-3 : ℤ)),φ),
 
 end
 end UniformCanonicalChecks
+
+namespace CanonicalSmoothChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal ContDiff
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Schwarz estimates bound full operator norms on an infinite-dimensional coefficient domain.
+example (L : Coeff 2 →L[ℂ] ℂ) (x : Coeff 2) (hx : x ∈ ball 0 1) :
+    ‖fderiv ℂ (fun y : Coeff 2 => L y) x-fderiv ℂ (fun _ : Coeff 2 => (0 : ℂ)) x‖ ≤ 4*‖L‖ := by
+  have h := NLS.ComplexAnalysis.norm_fderiv_sub_le_of_bound (fun y : Coeff 2 => L y)
+    (fun _ => (0 : ℂ)) 0 x 1 (2*‖L‖) (by norm_num) L.differentiable.differentiableOn
+    (by fun_prop) (fun y hy => by
+      have hlt : ‖y‖ < 2 := by simpa only [mem_ball, dist_zero_right, mul_one] using hy
+      have hnorm := hlt.le
+      simp only [sub_zero]
+      exact (L.le_opNorm y).trans (by nlinarith [norm_nonneg L])) hx
+  convert h using 1; ring
+
+-- A bad first approximant is allowed: only the eventual analytic tail matters.
+example (L : Coeff 2 →L[ℂ] ℂ) : TendstoUniformlyOn
+    (fun (n : ℕ) => fderiv ℂ (fun x : Coeff 2 => if n = 0 then (‖x‖ : ℂ) else (n : ℂ)⁻¹*L x))
+    (fun _ => (0 : Coeff 2 →L[ℂ] ℂ)) atTop (ball 0 1) := by
+  let u (n : ℕ) (x : Coeff 2) : ℂ := if n = 0 then (‖x‖ : ℂ) else (n : ℂ)⁻¹*L x
+  have hu : ∀ᶠ n in atTop, DifferentiableOn ℂ (u n) (ball 0 (2*1)) := by
+    filter_upwards [eventually_ge_atTop 1] with n hn
+    simp only [u, if_neg (by omega : n ≠ 0)]
+    fun_prop
+  have hI : TendstoUniformlyOn (fun (n : ℕ) (_ : Coeff 2) => (n : ℂ)⁻¹)
+      (fun _ => (0 : ℂ)) atTop (ball 0 (2*1)) :=
+    tendsto_inv_atTop_nhds_zero_nat.tendstoUniformlyOn_const _
+  have hL : TendstoUniformlyOn (fun (_ : ℕ) (x : Coeff 2) => L x)
+      (fun x => L x) atTop (ball 0 (2*1)) := by
+    rw [Metric.tendstoUniformlyOn_iff]
+    exact fun ε hε => Filter.Eventually.of_forall (fun _ _ _ => by simpa using hε)
+  have hp := NLS.ComplexAnalysis.tendstoUniformlyOn_mul_bounded _ _ _ _ _ 0 (2*‖L‖)
+    (by norm_num) (by positivity) hI hL (fun _ _ => by simp) (fun x hx => by
+      have hlt : ‖x‖ < 2 := by simpa only [mem_ball, dist_zero_right, mul_one] using hx
+      have hn := hlt.le
+      exact (L.le_opNorm x).trans (by nlinarith [norm_nonneg L]))
+  have hf : TendstoUniformlyOn u (fun _ => (0 : ℂ)) atTop (ball 0 (2*1)) := by
+    have he := hp.congr (F' := u) (Filter.Eventually.mono (eventually_ge_atTop 1) (fun n hn x _ => by
+      simp only [u, if_neg (by omega : n ≠ 0)]))
+    simpa only [zero_mul] using he
+  have hz : fderiv ℂ (fun _ : Coeff 2 => (0 : ℂ)) = fun _ => 0 := by
+    funext x
+    exact fderiv_const_apply 0
+  simpa only [u, hz] using
+    (NLS.ComplexAnalysis.tendstoUniformlyOn_fderiv_ball u (fun _ => (0 : ℂ)) 0 1 (by norm_num) hu hf).2
+
+-- Simultaneous spectral and potential derivatives are continuous at the free double zero.
+example : ContinuousAt (fderiv ℂ (fun t : ℂ × PairSpace 3 =>
+    canonicalPeriodicProduct (by simp) t.2 t.1)) (0,0) :=
+  ((contDiff_canonicalPeriodicProduct_joint (by simp) (by norm_num)).continuous_fderiv (by simp)).continuousAt
+
+-- The original p=3 product has mixed Fréchet derivatives of arbitrarily high finite order.
+example : ContDiff ℂ 7 (fun t : ℂ × PairSpace 3 => canonicalPeriodicProduct (by simp) t.2 t.1) :=
+  (localUniformAnalyticApproximation_canonicalPeriodicProduct (by simp) (by norm_num)).contDiff_nat 7
+
+-- Operator-norm convergence holds near a negative lattice point, for any actual p=3 potential.
+example (φ : PairSpace 3) : ∃ r : ℝ, 0 < r ∧ TendstoUniformlyOn
+    (fun M => fderiv ℂ (fun t : ℂ × PairSpace 3 => normalizedCentralPeriodicPolynomial (by simp) t.2 M t.1))
+    (fderiv ℂ (fun t : ℂ × PairSpace 3 => canonicalPeriodicProduct (by simp) t.2 t.1))
+    atTop (ball (((Real.pi : ℂ)*(-3 : ℤ)),φ) r) :=
+  exists_uniform_fderiv_canonicalPeriodicProduct (by simp) (by norm_num) _
+
+-- Every simultaneous affine perturbation has an entire scalar-parameter restriction.
+example (t : ℂ × PairSpace 3) (ψ : PairSpace 3) : AnalyticOnNhd ℂ
+    (fun a : ℂ => canonicalPeriodicProduct (by simp) (t+a • (1,ψ)).2 (t+a • (1,ψ)).1) Set.univ :=
+  analyticOnNhd_canonicalPeriodicProduct_line (by simp) (by norm_num) t (1,ψ)
+
+end
+end CanonicalSmoothChecks

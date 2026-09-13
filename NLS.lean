@@ -386,3 +386,6 @@ import NLS.ComplexAnalysis.UniformEntireFamilies
 import NLS.ZakharovShabat.CentralPolynomialBounds
 import NLS.ZakharovShabat.CanonicalPeriodicProductUniform
 import NLS.ZakharovShabat.CanonicalPeriodicProductContinuity
+import NLS.ComplexAnalysis.BanachHolomorphicLimit
+import NLS.ComplexAnalysis.LocalAnalyticApproximation
+import NLS.ZakharovShabat.CanonicalPeriodicProductSmooth

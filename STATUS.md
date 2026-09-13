@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 438 modules and 3368 named public theorems. All compile on the
+The library has 441 modules and 3383 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.BanachHolomorphicLimit` | Schwarz operator-norm estimates; uniformly Cauchy Fréchet derivatives on smaller balls; complex differentiability and uniform derivative convergence of limits |
+| `NLS.ComplexAnalysis.LocalAnalyticApproximation` | Actual-neighborhood uniform analytic approximation is preserved by Fréchet differentiation and yields continuous complex derivatives of every finite order |
+| `NLS.ZakharovShabat.CanonicalPeriodicProductSmooth` | Joint complex Fréchet smoothness of the canonical product; operator-norm convergence of polynomial derivatives on actual joint neighborhoods; entire restrictions to all complex affine lines |
 | `NLS.ComplexAnalysis.UniformEntireFamilies` | Products with bounded limits; compact spectral covers with arbitrary parameter sets; uniform maximum-modulus extension across countable exceptional sets |
 | `NLS.ZakharovShabat.CentralPolynomialBounds` | Counting and root localization uniformly bound central polynomials and off-lattice quotients; exact restoration of all three product factors |
 | `NLS.ZakharovShabat.CanonicalPeriodicProductUniform` | Full normalized polynomials converge uniformly on every compact spectral set times one open convex actual potential neighborhood, including the free lattice |
@@ -4037,13 +4040,46 @@ neighborhood is not assumed compact.
 potential space and proves joint locally uniform convergence in the spectral
 parameter and potential. The eventual joint analytic finite approximants then
 prove joint continuity of the canonical product, including at free lattice
-points and colliding roots. Joint analyticity still requires an analytic-limit
-argument in the Banach product domain; discriminant identification remains open.
+points and colliding roots. The following section proves full complex Fréchet
+smoothness; the Banach power-series statement and discriminant identification
+remain open.
+
+## Section 8: joint complex Fréchet smoothness
+
+`BanachHolomorphicLimit` uses the Banach-space Schwarz lemma to bound the
+operator norm of a derivative difference on a radius-`r` ball by `2δ/r`, where
+`δ` bounds the function difference on the concentric radius-`2r` ball. Uniformly
+Cauchy functions therefore have uniformly Cauchy Fréchet derivatives on the
+smaller ball. Completeness gives a uniform derivative limit, and the uniform
+limit differentiation theorem identifies it with the actual Fréchet derivative.
+Only eventual differentiability of the approximants is needed.
+
+`LocalAnalyticApproximation` records convergence uniform on an actual ball
+around every point, with eventual analyticity on that same ball. This is
+stronger than only pointwise convergence or a compact-set hypothesis on an
+infinite-dimensional domain. The property survives Fréchet differentiation,
+using the preceding operator-norm convergence and analyticity of finite
+approximant derivatives. Induction gives `ContDiff ℂ ∞` for the limit.
+
+`CanonicalPeriodicProductSmooth` combines the proved compact-by-potential
+uniform convergence with eventual joint analyticity of the intrinsic
+polynomials. Their intersection contains an actual joint ball at every point.
+The canonical product is jointly complex Fréchet differentiable and smooth;
+all its finite-order mixed derivatives exist and are continuous. The first
+polynomial Fréchet derivatives converge uniformly in operator norm on a
+neighborhood of each joint point, hence locally uniformly on the full product
+domain. Restriction to every complex affine line is entire, including lines
+perturbing the spectral parameter and potential simultaneously.
+
+The explicit Banach-space `AnalyticOnNhd` power-series conclusion remains to
+be proved. Mathlib's differentiability-to-power-series theorem has domain `ℂ`;
+the result here is on the full infinite-dimensional product space, without
+assuming that missing implication. Discriminant identification is still open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6890 declarations under `NLS`, including generated
+axioms. The current audit covers 6907 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4974,11 +5010,18 @@ weighted `p=3` neighborhood valid for every disc. Joint continuity is checked
 at the free double zero, and joint uniform convergence near a negative lattice
 point is checked for an arbitrary actual `p=3` potential.
 
+Complex-smoothness examples use an infinite-dimensional coefficient domain for
+the Schwarz operator-norm bound and uniform derivative convergence. A deliberately
+nonanalytic first approximant is permitted by the eventual hypotheses. Actual
+`p=3` checks cover derivative continuity at the free double zero, mixed seventh
+Fréchet derivatives, operator-norm convergence near a negative lattice point,
+and entire simultaneous affine perturbations.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Pass joint analyticity to the canonical infinite product using the proved
-   joint locally uniform convergence, and identify
+2. Bridge the proved complex Fréchet smoothness to a convergent Banach
+   power series for the canonical infinite product, and identify
    the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors

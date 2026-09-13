@@ -1347,8 +1347,18 @@ neighborhood works for every compact spectral set. The intrinsic approximants
 therefore converge locally uniformly jointly in both variables, and their
 eventual joint analyticity proves joint continuity of the canonical product.
 
-Next, pass joint analyticity to the canonical infinite product using the
-Banach-domain analytic-limit argument. Complete the odd free-product
+The Banach-space derivative limit argument is now proved. Schwarz estimates
+turn uniform function differences on a larger ball into operator-norm bounds
+for Fréchet derivative differences on a smaller ball. Local uniform analytic
+approximation is preserved by differentiation, giving continuous complex
+Fréchet derivatives of every finite order. Applied to the canonical product,
+this proves joint complex smoothness, locally uniform operator-norm convergence
+of the polynomial derivatives, and entire restrictions to every complex affine
+line. The hypotheses use actual joint balls, not a compactness assumption on
+the infinite-dimensional potential domain.
+
+Next, construct the Banach power-series bridge from this complex smoothness
+and the Schwarz estimates to the joint `AnalyticOnNhd` statement. Complete the odd free-product
 identity, the perturbed parity subproducts, and identification of the correctly
 normalized discriminant. Then continue with the anti-discriminant and
 action-coordinate prerequisites.
