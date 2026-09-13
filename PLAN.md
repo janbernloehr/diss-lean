@@ -1277,9 +1277,20 @@ subproduct gives `2 cos λ-2` with prefactor `-1`. The formal source audit above
 refutes the printed prefactors in Lemma 8.1(ii) and determines their necessary
 replacements from free values.
 
-Next, construct the perturbed spectral products in Section 8 from the proved
-eigenvalue displacements, with locally uniform convergence and analytic
-dependence. Complete the odd free-product identity and identify the correctly
-normalized discriminant. Then continue with the anti-discriminant and
-action-coordinate prerequisites.
+The full perturbed periodic product now converges pointwise off `πℤ`.
+The free resolvent and Sobolev embedding make relative displacements absolutely
+summable at every finite Banach exponent. The actual finite central polynomial
+retains original algebraic multiplicities; distant counted pairs supply the
+tail. The resulting product has exactly the actual periodic spectral zeros
+off the lattice and is unchanged by modewise label exchanges. For large finite
+cutoffs, all artificial central free factors cancel and only constant
+normalizations remain. One open convex neighborhood and threshold support
+this construction for every larger central cutoff and every finite `p>1`
+potential, using the already proved displacement and counting results.
+
+Next, prove locally uniform convergence, extension across the free lattice,
+analytic dependence, and independence of the central cutoff. Complete the odd
+free-product identity, the perturbed parity subproducts, and identification
+of the correctly normalized discriminant. Then continue with the anti-discriminant
+and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

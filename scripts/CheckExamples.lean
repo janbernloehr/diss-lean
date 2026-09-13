@@ -9604,3 +9604,84 @@ example (c : ℂ)
 
 end
 end SpectralProductNormalizationChecks
+
+namespace PerturbedProductChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+private theorem imaginary_off_lattice : Complex.I ∉ freeLattice := by
+  rintro ⟨n,hn⟩
+  have hi := congrArg Complex.im hn
+  simp at hi
+
+-- The relative convergence argument includes the lower Banach endpoint.
+example (a : Coeff 1) :
+    Summable (fun n : ℤ => ‖a n/(Complex.I-(Real.pi : ℂ)*n)‖) := by
+  have hmem : Memℓp (fun n => ((Real.pi : ℂ)*n+a n)-(Real.pi : ℂ)*n) 1 := by
+    simpa only [add_sub_cancel_left] using (show Memℓp (fun n : ℤ => a n) _ from a.property)
+  simpa only [add_sub_cancel_left] using summable_norm_spectralRelativeDisplacement (by simp)
+    (fun n => (Real.pi : ℂ)*n+a n) hmem Complex.I imaginary_off_lattice
+
+-- Full perturbed cutoffs at a non-Hilbert exponent, without finite-support assumptions.
+example (a b : Coeff 3) :
+    Tendsto (spectralPairPartialProduct (fun n => (Real.pi : ℂ)*n+a n)
+      (fun n => (Real.pi : ℂ)*n+b n) Complex.I) atTop
+      (𝓝 (spectralPairProductOffLattice (fun n => (Real.pi : ℂ)*n+a n)
+        (fun n => (Real.pi : ℂ)*n+b n) ⟨Complex.I,imaginary_off_lattice⟩)) := by
+  apply tendsto_spectralPairPartialProduct (p := 3) (by simp)
+  · simpa only [add_sub_cancel_left] using (show Memℓp (fun n : ℤ => a n) _ from a.property)
+  · simpa only [add_sub_cancel_left] using (show Memℓp (fun n : ℤ => b n) _ from b.property)
+
+private theorem shifted_product_zero (a : Coeff 2) (n : ℤ)
+    (ha : a n = Complex.I-(Real.pi : ℂ)*n) :
+    spectralPairProductOffLattice (fun k => (Real.pi : ℂ)*k+a k)
+      (fun k => (Real.pi : ℂ)*k) ⟨Complex.I,imaginary_off_lattice⟩ = 0 := by
+  have hξ : Memℓp (fun k => ((Real.pi : ℂ)*k+a k)-(Real.pi : ℂ)*k) 2 := by
+    simpa only [add_sub_cancel_left] using (show Memℓp (fun k : ℤ => a k) 2 from a.property)
+  have hη : Memℓp (fun k : ℤ => (Real.pi : ℂ)*k-(Real.pi : ℂ)*k) 2 := by
+    have hzero : Memℓp (fun _ : ℤ => (0 : ℂ)) 2 := (0 : Coeff 2).property
+    simpa only [sub_self] using hzero
+  apply (spectralPairProductOffLattice_eq_zero_iff (by simp) _ _ hξ hη
+    Complex.I imaginary_off_lattice).mpr
+  exact ⟨n,Or.inl (by rw [ha]; ring)⟩
+
+-- A displacement at a negative mode creates an actual zero of the limiting product.
+example :
+    let a : Coeff 2 := lp.single 2 (-3) (Complex.I-(Real.pi : ℂ)*(-3 : ℤ))
+    spectralPairProductOffLattice (fun n => (Real.pi : ℂ)*n+a n)
+      (fun n => (Real.pi : ℂ)*n) ⟨Complex.I,imaginary_off_lattice⟩ = 0 := by
+  apply shifted_product_zero _ (-3)
+  exact lp.single_apply_self _ _ _
+
+-- No artificial central labels survive in a large literal cutoff.
+example (φ : PairSpace 2) (ξ η : ℤ → ℂ) :
+    periodicSpectralProductCutoff (by simp) φ 2 ξ η ⟨Complex.I,imaginary_off_lattice⟩ 4 =
+      (-4 * centralPeriodicPolynomial (by simp) φ 2 Complex.I / centralSpectralNormalization 2) *
+        ∏ n ∈ Finset.Icc (-4 : ℤ) 4 \ Finset.Icc (-2 : ℤ) 2, spectralPairFactor ξ η Complex.I n :=
+  periodicSpectralProductCutoff_eq (by simp) φ 2 ξ η _ 4 (by norm_num)
+
+-- Double roots and arbitrary modewise label exchanges do not change the value.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η α β : ℤ → ℂ)
+    (h : ∀ n : ℤ, N < n.natAbs → PeriodicResonantPair (by simp) w φ n (ξ n) (η n))
+    (k : ∀ n : ℤ, N < n.natAbs → PeriodicResonantPair (by simp) w φ n (α n) (β n)) :
+    periodicSpectralProductOffLattice (by simp) (weightedBaseToPair w φ) N ξ η
+        ⟨Complex.I,imaginary_off_lattice⟩ =
+      periodicSpectralProductOffLattice (by simp) (weightedBaseToPair w φ) N α β
+        ⟨Complex.I,imaginary_off_lattice⟩ :=
+  periodicSpectralProductOffLattice_eq_of_pairs N ξ η α β h k _
+
+-- An arbitrary actual p=3 potential supplies every hypothesis, not just assumed root sequences.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, ∃ ξ η : ℤ → ℂ, ∀ z : {z : ℂ // z ∉ freeLattice},
+      Tendsto (periodicSpectralProductCutoff (by simp) (weightedBaseToPair w φ) N ξ η z) atTop
+        (𝓝 (periodicSpectralProductOffLattice (by simp) (weightedBaseToPair w φ) N ξ η z)) ∧
+      (periodicSpectralProductOffLattice (by simp) (weightedBaseToPair w φ) N ξ η z = 0 ↔
+        z.val ∈ periodicSpectrum (by simp) (weightedBaseToPair w φ)) := by
+  obtain ⟨N,_,U,_,_,hφ,_,h⟩ := exists_uniform_periodicSpectralProducts (by simp) (by norm_num) w φ
+  obtain ⟨ξ,η,_,_,_,hprod⟩ := h φ hφ
+  exact ⟨N,ξ,η,(hprod N le_rfl).2⟩
+
+end
+end PerturbedProductChecks

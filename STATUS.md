@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 402 modules and 3201 named public theorems. All compile on the
+The library has 407 modules and 3229 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.RelativeSpectralProducts` | Absolute relative convergence for all finite Banach exponents, symmetric cutoff convergence, and exact selected zero set off the free lattice |
+| `NLS.ZakharovShabat.PerturbedSpectralProducts` | Original normalized two-root factors, exact free-relative decomposition, and pointwise convergence with no spurious zeros off `πℤ` |
+| `NLS.ZakharovShabat.PeriodicSpectralProducts` | Actual finite central algebraic multiplicities, counted high pairs, exact original periodic zero set, and independence of pair labels |
+| `NLS.ZakharovShabat.PeriodicSpectralProductExistence` | Proved displacement and counting hypotheses instantiate actual products at every finite `p>1`, on one open convex neighborhood for all larger central cutoffs |
+| `NLS.ZakharovShabat.PeriodicSpectralProductCutoffs` | Exact cancellation of artificial central free factors; sufficiently large cutoffs are actual spectral products with constant nonzero denominators |
 | `NLS.ZakharovShabat.FreeSpectralProducts` | Symmetric integer cutoff identity, opposite-mode pairing, Euler convergence at all complex parameters, full free discriminant product, and correctly normalized even subproduct |
 | `NLS.ZakharovShabat.SpectralProductSourceAudit` | Formal counterexample to the prefactors in (2.4)/Lemma 8.1(ii), incompatible limiting identities at zero, periodic failure at π, and necessary prefactors `-1` and `4` |
 | `NLS.ZakharovShabat.BoundedAuxiliaryExtension` | Completed phased auxiliary maps for all `1<p<∞`, exact raw and physical finite Fourier formulas, uniqueness by density, Sobolev compatibility, and the physical `p=1` obstruction |
@@ -3734,15 +3739,47 @@ printed periodic product also has the wrong limit at `λ=π`. The free values
 force periodic prefactor `-1` and antiperiodic prefactor `4`. The proof on the
 same source page already uses `-1` for its periodic partial products.
 
-This milestone proves free full/even product convergence and audits the source
-constants. It does not yet construct perturbed products, prove their locally
-uniform or analytic dependence, identify a general discriminant, or prove the
-full odd free-product formula. Those remain the next Section 8 work.
+The free full/even product milestone audits the source constants. The full
+odd free-product formula and general discriminant identification remain open.
+
+## Section 8: perturbed periodic products off the free lattice
+
+`RelativeSpectralProducts` sends an `ℓp` displacement sequence through the free
+resolvent and the proved Sobolev-to-`ℓ¹` embedding. Thus the relative factors
+have absolutely summable deviations from one at every fixed parameter off
+`πℤ`, for every finite Banach exponent including `p=1`. Their unordered product
+converges, agrees with symmetric cutoffs, and vanishes exactly at a selected
+root. `PerturbedSpectralProducts` splits the original normalized factors into
+free and relative factors. Euler convergence gives the full symmetric product
+with the source's correct prefactor `-4` and no additional zeros off the lattice.
+
+`PeriodicSpectralProducts` replaces arbitrary central sequence labels by a
+finite polynomial over the actual central spectrum, with the actual algebraic
+multiplicity as each exponent. The completed free central factors are divided
+out on the explicit off-lattice domain. Counting data identify the resulting
+zero set with the original periodic spectrum. Any modewise exchange of counted
+high roots gives the same product, including coincident pairs.
+`PeriodicSpectralProductCutoffs` proves exact cancellation: every cutoff larger
+than the central threshold consists of this central polynomial times the actual
+high two-root factors, divided only by nonzero constants.
+
+`PeriodicSpectralProductExistence` derives both full `ℓp` memberships from the
+proved paired displacement tails and intersects the root and counting
+neighborhoods. For every finite `p>1` potential, one open convex neighborhood
+containing it and zero supports these products for every larger central cutoff.
+Convergence is pointwise; the theorem does not assert uniform convergence on
+that neighborhood. The generic relative argument covers `p=1`, whereas this
+actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
+
+Local uniform convergence, extension across `πℤ`, analytic dependence, equality
+between different central-cutoff constructions, analytic zero orders, perturbed
+parity products, and discriminant identification remain open. No entire
+function or analytic family is claimed by these off-lattice constructions.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6555 declarations under `NLS`, including generated
+axioms. The current audit covers 6642 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4619,11 +4656,18 @@ free eigenvalue. The printed normalizations fail both at finite cutoffs and
 as simultaneous limits at zero, and the periodic formula fails at `π`.
 The public audit theorems force both corrected prefactors.
 
+Perturbed-product examples cover absolute relative convergence at `p=1`,
+full cutoff convergence for arbitrary coefficient sequences at `p=3`, a
+negative-mode displacement creating a nonreal limiting zero, exact cancellation
+in a finite cutoff, independence of counted pair labels, and construction
+from an arbitrary actual weighted `p=3` potential without assumed root data.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Construct the perturbed spectral products of Section 8 with locally uniform
-   convergence and analytic dependence, then identify the discriminant.
+2. Extend the proved pointwise full perturbed products off `πℤ` to locally
+   uniform convergence, lattice extension, central-cutoff independence, and
+   analytic dependence, then identify the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors
    `-1` and `4`, not the inconsistent displayed `-2` and `2`. Bounded source
