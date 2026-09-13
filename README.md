@@ -648,8 +648,11 @@ installation is absent. No shell startup files are modified.
   unique weighted representatives under the source phased reflection. Their
   eigenvalue equations transfer in both directions, and the physical eigenvalue
   sets equal the actual auxiliary coefficient spectra at the Neumann-extended
-  potential. A physical L² operator realization, generalized multiplicities,
-  and locally uniform physical starred asymptotics remain to be constructed.
+  potential. The original auxiliary domains now have their exact physical H¹
+  norm and complete-space structure. The physical L² operators are densely
+  defined and closed, with compact two-sided resolvents and spectra equal to
+  the original auxiliary eigenvalue sets. Physical generalized multiplicities
+  and locally uniform starred asymptotics remain to be transferred.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -9273,3 +9273,86 @@ example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
   classical_auxiliary_equation_transfer b φ f hφ hf z he
 
 end ClassicalAuxiliaryChecks
+
+namespace AuxiliaryOperatorChecks
+open NLS NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition NLS.Fourier
+open MeasureTheory Set
+
+private theorem constant_regular (c : ℂ) : HasIntervalH1Regularity (fun _ => c) := by
+  constructor
+  · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => c)).contDiffOn.absolutelyContinuousOnInterval
+  · simp
+private theorem constant_D : HasClassicalAuxiliaryDomain .dirichlet (fun _ => ((1 : ℂ),Complex.I)) := by
+  refine ⟨constant_regular 1, constant_regular Complex.I, ?_, ?_⟩ <;> norm_num [extensionSign]
+private def f : ClassicalAuxiliaryDomain .dirichlet :=
+  classicalAuxiliaryDomainOfFunction .dirichlet (fun _ => ((1 : ℂ),Complex.I)) constant_D
+private def u : IntervalPairL2 := intervalL2OfFunction (fun _ => ((1 : ℂ),-1)) (memLp_const _)
+
+-- The norm is the original component-sum H¹ norm, with the actual physical normalization.
+example : ‖f‖ = Real.sqrt 2 := by
+  rw [f, norm_classicalAuxiliaryDomainOfFunction]
+  norm_num [classicalIntervalNorm, classicalIntervalEnergy, intervalH1Energy]
+
+example (b : BoundaryCondition) : CompleteSpace (ClassicalAuxiliaryDomain b) := inferInstance
+
+-- Both the function and potential phase maps preserve the original physical L² norm.
+example (v : IntervalPairL2) : ‖intervalAuxiliaryPhase v‖ = ‖v‖ ∧ ‖intervalAuxiliaryPotential v‖ = ‖v‖ :=
+  ⟨intervalAuxiliaryPhase.norm_map v, intervalAuxiliaryPotential.norm_map v⟩
+
+example (b : BoundaryCondition) :
+    ‖(classicalAuxiliaryIntervalEquiv b).toContinuousLinearMap‖ ≤ 1 ∧
+    ‖(classicalAuxiliaryIntervalEquiv b).symm.toContinuousLinearMap‖ ≤ Real.sqrt 2 * Real.pi :=
+  ⟨norm_classicalAuxiliaryIntervalEquiv_le b, norm_classicalAuxiliaryIntervalEquiv_symm_le b⟩
+
+-- The actual physical operator at the nonzero potential (1,-1) has the eigenvalue i.
+private theorem operator_i : classicalAuxiliaryOperator .dirichlet u f =
+    Complex.I • classicalAuxiliaryInclusion .dirichlet f := by
+  apply intervalL2Representative_injective
+  have ho := classicalAuxiliaryOperator_realization_ofFunction .dirichlet
+    (fun _ => ((1 : ℂ),-1)) (fun _ => ((1 : ℂ),Complex.I)) (memLp_const _) constant_D
+  have hi := intervalL2Representative_smul Complex.I (classicalAuxiliaryInclusion .dirichlet f)
+  have he := intervalL2Representative_ofFunction (fun _ => ((1 : ℂ),Complex.I)) (memLp_const _)
+  have hf : classicalAuxiliaryInclusion .dirichlet f =
+      intervalL2OfFunction (fun _ => ((1 : ℂ),Complex.I)) (memLp_const _) :=
+    classicalAuxiliaryInclusion_ofFunction .dirichlet _ constant_D (memLp_const _)
+  rw [hf] at hi
+  filter_upwards [ho, hi, he] with x ho hi he
+  change intervalL2Representative (classicalAuxiliaryOperator .dirichlet u f) x = _ at ho
+  rw [ho, hf, hi, he]
+  ext <;> simp [physicalOperator]
+
+-- This is spectral membership by actual failure of physical-pencil injectivity.
+example : Complex.I ∈ classicalAuxiliarySpectrum .dirichlet u := by
+  intro h
+  have hp : classicalAuxiliaryPencil .dirichlet u Complex.I f = 0 := by
+    rw [classicalAuxiliaryPencil_apply, operator_i, sub_self]
+  have hz : f = 0 := h.injective (hp.trans (map_zero _).symm)
+  have hv := congrArg (fun a : ClassicalAuxiliaryDomain .dirichlet => (a.val ⟨0, by norm_num⟩).1) hz
+  change (1 : ℂ) = 0 at hv
+  exact one_ne_zero hv
+
+-- Both inverse equations hold in the original physical spaces, for arbitrary data and potential.
+example (b : BoundaryCondition) (v : IntervalPairL2) (z : ℂ)
+    (hz : z ∈ classicalAuxiliaryResolventSet b v) (x : IntervalPairL2) (g : ClassicalAuxiliaryDomain b) :
+    classicalAuxiliaryPencil b v z (classicalAuxiliaryResolventToDomain b v z x) = x ∧
+    classicalAuxiliaryResolventToDomain b v z (classicalAuxiliaryPencil b v z g) = g :=
+  ⟨classicalAuxiliaryPencil_resolventToDomain b v z hz x, classicalAuxiliaryResolventToDomain_pencil b v z hz g⟩
+
+example (b : BoundaryCondition) (v : IntervalPairL2) :
+    (classicalAuxiliaryResolventSet b v).Nonempty ∧
+    (classicalAuxiliaryUnboundedOperator b v).IsClosed ∧
+    Dense ((classicalAuxiliaryUnboundedOperator b v).domain : Set IntervalPairL2) :=
+  ⟨classicalAuxiliaryResolventSet_nonempty b v, classicalAuxiliaryUnboundedOperator_isClosed b v,
+    classicalAuxiliaryUnboundedOperator_dense_domain b v⟩
+
+example (b : BoundaryCondition) (v : IntervalPairL2) (z : ℂ) :
+    IsCompactOperator (classicalAuxiliaryResolvent b v z) := isCompactOperator_classicalAuxiliaryResolvent b v z
+
+-- The unbounded domain is exactly the physical classes of original auxiliary endpoint functions.
+example (b : BoundaryCondition) (v x : IntervalPairL2) :
+    x ∈ (classicalAuxiliaryUnboundedOperator b v).domain ↔
+      ∃ (g : ℝ → ℂ × ℂ) (_hg : HasClassicalAuxiliaryDomain b g)
+        (hL : MemLp g 2 (volume.restrict (Ioc 0 1))), intervalL2OfFunction g hL = x :=
+  mem_classicalAuxiliaryUnboundedOperator_domain_iff_original b v x
+
+end AuxiliaryOperatorChecks

@@ -1218,9 +1218,21 @@ with the actual coefficient spectra. Both directions of the physical/coefficient
 eigenvalue equation transfer are proved, completing this physical form of
 Lemma 5.1.
 
-Next, equip the original auxiliary domain with its physical H¹ norm, construct
-the actual physical L² operator and resolvent, and transfer generalized root
-spaces and multiplicity counts. Prove locally uniform physical starred
-square-summable displacements, then continue to the Chapter 2 discriminant,
-product, and action-coordinate prerequisites.
+The auxiliary physical domain now stores actual closed-interval functions and
+has exactly the original component-sum H¹ norm. Phase rotation is an isometry
+from the ordinary domain, proving completeness. Actual Fourier extension and
+restriction are continuous linear inverses with bounds `1` and `√2 π`.
+Physical L² phase isometries transport inclusion and the differential operator;
+representative theorems prove their actual physical action. The independently
+defined physical pencil is invertible exactly at the conjugate ordinary
+resolvent parameters. Its bounded inverse satisfies both original-space inverse
+identities, and its base-space resolvent is compact. The resulting unbounded
+operator has precisely the original auxiliary endpoint domain, is densely
+defined and closed, and has spectrum equal to the original auxiliary eigenvalue
+set and the actual coefficient auxiliary spectrum.
+
+Next, construct the physical auxiliary generalized root spaces and transfer
+multiplicity counts. Prove locally uniform physical starred square-summable
+displacements, then continue to the Chapter 2 discriminant, product, and
+action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

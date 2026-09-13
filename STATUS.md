@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 386 modules and 3062 named public theorems. All compile on the
+The library has 391 modules and 3112 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalAuxiliarySpace` | Actual auxiliary interval functions with exact physical H¹ norm; phase isometry, completeness, and bounded Fourier extension/restriction equivalence |
+| `NLS.ZakharovShabat.AuxiliaryPhysicalL2` | Function and potential phase isometries on the original component-sum L² space, with actual a.e. representative identities |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryOperator` | Dense injective physical inclusion and bounded domain-to-base operator, realizing the actual differential expression for original representatives |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryResolvent` | Independently defined physical pencil and spectrum, two-sided inverse, compact physical resolvent, and equality with original auxiliary eigenvalues and coefficient spectrum |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryClosed` | Original auxiliary unbounded L² operator with exact endpoint domain, actual differential-expression evaluation, dense domain, and closed graph |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryPhase` | Original auxiliary H¹ endpoint conditions, actual differential-expression conjugation, and physical eigenvalue-set equivalence and discreteness |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryExtension` | Source phased reflection, exact Sobolev reconstruction on the original closed interval, and unique auxiliary coefficient-domain representatives |
 | `NLS.ZakharovShabat.ClassicalAuxiliarySpectrum` | Actual Neumann potential Fourier coefficients, both equation-transfer directions in Lemma 5.1, and physical eigenvalue-set equality with the auxiliary coefficient spectrum |
@@ -3520,8 +3525,9 @@ on the same open convex neighborhood and cutoff as the quantitative tails.
 The ordinary coefficient/physical realizations and midpoint consequence are
 proved above. The auxiliary coefficient realization and starred displacement
 conclusions, coefficient multiplicities, and physical auxiliary endpoint and
-eigenvalue-set identifications are proved below. The independent physical
-operator, generalized multiplicities, and uniform starred asymptotics remain.
+eigenvalue-set identifications are proved below, together with the independent
+physical operator and resolvent. Physical generalized multiplicities and uniform
+starred asymptotics remain.
 
 ## Auxiliary spectra, physical endpoint realization, and starred asymptotics
 
@@ -3590,27 +3596,53 @@ these sets are closed, discrete, and finite in bounded regions for L² potential
 reconstructs the source function on `[0,2]` and the original function including
 both endpoints of `[0,1]`. Every auxiliary coefficient-domain vector comes
 from an original endpoint function, and that weighted representative is unique.
-This is the set-theoretic domain identification; physical norm comparisons and
-the topological domain isomorphism remain separate.
+This establishes the set-theoretic domain identification; the physical norm
+and topological isomorphism are constructed below.
 
 `ClassicalAuxiliarySpectrum` defines the Neumann potential extension by actual
 normalized physical Fourier integrals. Its phase equals the Dirichlet extension
 of the physically transformed potential. This gives equality of the original
 auxiliary eigenvalue sets with the actual coefficient spectra and proves both
 directions of the eigenvalue equation transfer, using the actual Sobolev
-extension in Lemma 5.1. It does not yet construct an independent physical L²
-resolvent or define multiplicity by physical generalized root spaces.
+extension in Lemma 5.1. The independent physical L² resolvent is constructed
+below; multiplicity from physical generalized root spaces remains separate.
 
-**Remaining scope.** Construct the normed physical auxiliary domain, original
-L² operator and resolvent, then transfer generalized multiplicities and locally
-uniform physical starred square-summability.
+`ClassicalAuxiliarySpace` stores actual functions on the original closed
+interval. Its membership criterion is exactly the auxiliary H¹ endpoint
+condition. The norm equals the physical component-sum H¹ norm, and phase
+rotation is an isometry from the complete ordinary endpoint domain. Actual
+Fourier extension and physical restriction give a continuous linear equivalence
+with the auxiliary weighted domain, with explicit bounds `1` and `√2 π`.
+
+`AuxiliaryPhysicalL2` supplies isometries for the function and potential phases
+on the original physical L² space. `ClassicalAuxiliaryOperator` uses them to
+construct actual domain inclusion and the auxiliary operator; its realization
+theorems identify the outputs with the original physical functions and their
+differential expression for arbitrary representatives. Inclusion is injective
+and has dense range.
+
+`ClassicalAuxiliaryResolvent` defines its resolvent set by actual physical-pencil
+bijectivity. It equals the ordinary physical resolvent set at the transformed
+potential. The constructed bounded inverse satisfies both inverse identities
+between original L² and auxiliary H¹, and the base-space resolvent is compact.
+The physical spectrum equals both the original auxiliary eigenvalue set and
+the actual auxiliary coefficient spectrum of the Neumann potential extension.
+
+`ClassicalAuxiliaryClosed` constructs the unbounded operator inside physical
+L². Its potential-independent domain is exactly the L² classes of original
+auxiliary H¹ functions. Its values are the actual differential expression,
+its domain is dense, and the physical resolvent proves its graph is closed.
+
+**Remaining scope.** Construct actual physical auxiliary generalized root
+spaces, then transfer multiplicity counts and locally uniform physical starred
+square-summability.
 The printed general-`p` central-height issue and the global nonlinear
 coordinate construction remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6245 declarations under `NLS`, including generated
+axioms. The current audit covers 6371 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4448,13 +4480,22 @@ to the actual auxiliary coefficient spectrum. The potential's zeroth Fourier
 coefficients are checked directly from the Neumann extension integrals, and
 the original differential equation transfers through the actual Sobolev extension.
 
+Physical auxiliary operator checks verify the exact norm `√2` of the constant
+function `(1,i)`, completeness, both physical L² phase isometries, and the two
+explicit domain-isomorphism bounds. At the nonzero potential `(1,-1)`, the
+actual L² operator has eigenvalue `i`, and the original pencil is proved
+noninjective there. Both inverse identities hold for arbitrary physical data
+and potentials. The checks also cover nonempty resolvent sets, compactness,
+closedness, density, and exact original-function membership in the unbounded
+domain.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Construct the normed physical auxiliary domain and L² operator/resolvent,
-   then transport generalized multiplicities and locally uniform starred
-   asymptotics. The original physical endpoint identification and eigenvalue-set
-   transfer are now proved. The coefficient auxiliary spectra and all four
+2. Construct physical auxiliary generalized root spaces and transport
+   multiplicity counts and locally uniform starred asymptotics. The physical
+   endpoint domains, normed isomorphisms, closed densely defined L² operator,
+   compact resolvent, and eigenvalue-set identification are now proved. The coefficient auxiliary spectra and all four
    coefficient Corollary 6.2 displacement conclusions are now proved,
    as are the midpoint consequence and ordinary physical `L²` transfer.
    Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue
@@ -4475,5 +4516,5 @@ the original differential equation transfers through the actual Sobolev extensio
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the auxiliary physical operator/multiplicity transfers and Chapter 2 nonlinear
+the auxiliary physical multiplicity/asymptotic transfers and Chapter 2 nonlinear
 coordinate construction remain incomplete.

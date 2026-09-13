@@ -334,3 +334,8 @@ import NLS.ZakharovShabat.AuxiliaryCounting
 import NLS.ZakharovShabat.ClassicalAuxiliaryPhase
 import NLS.ZakharovShabat.ClassicalAuxiliaryExtension
 import NLS.ZakharovShabat.ClassicalAuxiliarySpectrum
+import NLS.ZakharovShabat.ClassicalAuxiliarySpace
+import NLS.ZakharovShabat.AuxiliaryPhysicalL2
+import NLS.ZakharovShabat.ClassicalAuxiliaryOperator
+import NLS.ZakharovShabat.ClassicalAuxiliaryResolvent
+import NLS.ZakharovShabat.ClassicalAuxiliaryClosed
