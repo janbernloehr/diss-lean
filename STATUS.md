@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 555 modules and 4011 named public theorems. All compile on the
+The library has 560 modules and 4027 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.FreeStripInverseBounds` | Nonvanishing free parity factors, even lattice translation identities, and uniform inverse bounds on every separated horizontal strip |
+| `NLS.ZakharovShabat.UniformThresholds` | Uniform real thresholds from pulled-back eventual statements, with upper and positive lower norm bounds from a limit of one |
+| `NLS.ZakharovShabat.ClassicalExteriorRatioBounds` | A global bound for either shifted classical/free ratio outside fixed free discs, combining strip bounds with both half-plane limits |
+| `NLS.ZakharovShabat.CanonicalExteriorLowerBounds` | Uniform positive lower bounds for full and parity canonical/free ratios at exterior infinity, for every finite p>1 |
+| `NLS.ZakharovShabat.ClassicalCanonicalIdentity` | Proved exterior quotient bound and exact identities between canonical even/odd/full products and Δ−2, Δ+2, Δ²−4 for compatible continuous Hilbert potentials |
 | `NLS.ZakharovShabat.ClassicalSolutionGrowth` | Coefficient norm bound and Gronwall exponential growth for the actual initial-value solution |
 | `NLS.ZakharovShabat.RealSpectralGauge` | Unit-modulus real phases, their product and derivative, and a potential phase rotation preserving the supremum norm |
 | `NLS.ZakharovShabat.ClassicalRealSpectralGauge` | Exact rotated differential equation and unique solution at the shifted spectral parameter, preserving the actual solution norm |
@@ -3922,7 +3927,8 @@ actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
 
 Later milestones prove the entire extension, central-cutoff independence,
 joint potential analyticity of the full product, and actual parity products.
-Discriminant identification remains open.
+Classical discriminant identification for compatible continuous Hilbert
+potentials is proved below; the general finite-p extension remains open.
 
 ## Section 8: locally uniform convergence and holomorphy
 
@@ -4028,7 +4034,8 @@ theorem at every finite `p>1`, for every larger central cutoff.
 
 The entire full product retains the exact original spectrum and all its
 multiplicities. Subsequent milestones prove joint potential analyticity and
-construct actual parity products; discriminant identification remains open.
+construct actual parity products. Their classical discriminant identification
+for compatible continuous Hilbert potentials is now proved below.
 
 ## Section 8: central-cutoff independence
 
@@ -4157,7 +4164,8 @@ parameter and potential. The eventual joint analytic finite approximants then
 prove joint continuity of the canonical product, including at free lattice
 points and colliding roots. The following section proves full complex Fréchet
 smoothness, and the final subsection establishes the Banach power-series
-statement. Discriminant identification remains open.
+statement. Classical discriminant identification for compatible continuous Hilbert
+potentials is proved below; the general finite-p extension remains open.
 
 ## Section 8: joint complex Fréchet smoothness
 
@@ -4216,8 +4224,9 @@ finite `p>1`, including at colliding roots and all free lattice points. The
 actual Fréchet series is supplied with positive radius and its sum identity.
 Fixed-spectral potential maps and arbitrary weighted base-map pullbacks are
 analytic as well. Every mixed iterated Fréchet derivative is itself analytic.
-The normalized discriminant identification remains open; complete-sequence
-parity products are constructed in the next milestone.
+Complete-sequence parity products are constructed in the next milestone.
+Their normalized classical identification for compatible continuous Hilbert
+potentials is now proved below.
 
 ## Section 8: entire products for complete parity sequences
 
@@ -4245,8 +4254,9 @@ convergence. Repeated roots and roots at free lattice points are permitted.
 and `Δ_free+2`, fixing the corrected prefactors `−1` and `4`. Their discriminant
 values agree at the free potential. The following milestones construct actual
 central parity root multisets, entire parity products, and their joint potential
-analyticity. The identity `f+2=g−2` remains open; arbitrary displaced sequences
-do not imply this compatibility.
+analyticity. The identity `f+2=g−2` is now proved below for compatible
+continuous Hilbert potentials; arbitrary displaced sequences do not imply
+this compatibility.
 
 ## Section 8: actual central parity spectra and multiplicities
 
@@ -4619,8 +4629,9 @@ exactly when its original parity algebraic multiplicity is positive. Intrinsic
 even and odd product zero sets are exactly the trace-`2` and trace-`-2` sets.
 The full product and the classical trace squared minus four have identical
 zero sets. Equality of determinant orders with original algebraic
-multiplicities is now established by the Taylor comparison below; entire
-normalization and finite-p extension remain open.
+multiplicities is established by the Taylor comparison below. The subsequent
+exterior argument also proves exact normalization; the finite-p extension
+remains open.
 
 ## Section 8: inhomogeneous equations and original root-chain extension
 
@@ -4803,7 +4814,8 @@ to the actual formal boundary matrix. Its determinant is nonzero, and its
 order equals the original parity algebraic multiplicity, by the two proven
 eventual nullity identities. No formal nonsingularity assumption is needed.
 The analytic determinant identification and order comparison are now proved
-below. Normalized infinite-product identification remains open.
+below, followed by normalized infinite-product identification for compatible
+continuous Hilbert potentials.
 
 The new examples check a coupled Jordan-type formal matrix with nullities
 one and two at the first two lengths, an off-diagonal pivot of positive order,
@@ -5018,9 +5030,9 @@ one, including at `p=3`. They also check odd rescaling, both vertical quotient
 limits, and the remaining boundedness criterion for the exact full identity.
 
 Uniform classical trace bounds and maximum-modulus propagation across the
-discs are now proved below. Bounding the actual entire factors at exterior
-infinity, exact normalization, the finite-p compatibility extension, and
-spectral-derivative asymptotics remain open.
+discs are proved below. The subsequent exterior bounds also prove exact
+normalization for compatible continuous Hilbert potentials. The finite-p
+compatibility extension and spectral-derivative asymptotics remain open.
 
 ## Section 8: horizontal growth bounds and filling the free discs
 
@@ -5048,9 +5060,8 @@ boundedness, since the omitted central closed ball has compact image.
 quotient factors. Their already proved vertical limits determine the constant
 as one. Thus exact parity/full product normalization now requires only a bound
 on the actual factor at large spectral parameters outside fixed free discs.
-That exterior bound is still a hypothesis: lower bounds for the free factors
-and the canonical exterior ratios must be combined with the classical trace
-estimate to discharge it. The exact infinite-product identity is not yet proved.
+The following development discharges that exterior bound using the free
+inverse bounds, classical trace estimates, and canonical exterior ratios.
 
 Examples check real gauge shifts with nonzero potentials, norm preservation,
 a complex initial vector at half the interval, both imaginary signs, arbitrary
@@ -5059,10 +5070,48 @@ strip. They also exercise separation of all free spheres, maximum modulus at
 the central free point, omission of a central region, and the exterior-only
 criterion for the exact full product identity.
 
+## Section 8: exact classical normalization of the spectral products
+
+`FreeStripInverseBounds` proves nonvanishing of both free parity factors away
+from `πℤ`. Translating by an even lattice point preserves the free trace and
+all free-disc separation inequalities. This reduces each separated horizontal
+strip to a compact central rectangle, where both free inverses are bounded.
+`ClassicalExteriorRatioBounds` combines this inverse bound with the trace strip
+bound and the upper/lower half-plane limits. Each shifted classical/free ratio
+is therefore bounded throughout the exterior of fixed positive free discs.
+
+`UniformThresholds` converts a limit along a pulled-back real at-top filter
+into a threshold valid at every point above that height. Applying this to the
+norm of the spectral parameter on the separated subtype gives
+`CanonicalExteriorLowerBounds`: the canonical/free parity and full ratios
+have norm at least one half beyond one radius. These bounds work for every
+finite p>1, with the potential fixed; no uniformity over potential neighborhoods
+is asserted.
+
+`ClassicalCanonicalIdentity` divides the bounded classical/free ratio by the
+canonical/free ratio to prove the missing exterior bound on the filled parity
+quotient. For compatible continuous representatives, its entireness, maximum
+modulus, and vertical limit make this factor exactly one. Thus, for every
+even Hilbert potential with such a representative and every complex z,
+`canonicalEven(z)=Δ(z)−2`, `canonicalOdd(z)=Δ(z)+2`, and
+`canonicalPeriodic(z)=Δ(z)²−4`. The two shifted products recover exactly the
+same classical trace. These identities include all spectral roots and use the
+corrected parity prefactors already recorded in the statement audit.
+
+Regression examples check a negative even lattice translation, the odd free
+inverse on a strip, a nonzero two-sided classical potential, the p=3 odd ratio
+lower bound, both free parity values and the full value at π/2, and the free
+double root at zero. A genuinely coupled potential with classical eigenvalue
+one gives canonical parity values zero and exactly four, and full value zero.
+The shifted identity also holds for that potential at every complex parameter.
+
+The general finite-p identity, the resulting intrinsic discriminant construction,
+and locally uniform spectral-derivative asymptotics remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8086 declarations under `NLS`, including generated
+axioms. The current audit covers 8103 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6176,9 +6225,12 @@ formal matrix representation.
    suffices for exact normalization. Real phase rotation now gives global
    classical trace growth depending only on imaginary height. Maximum modulus
    extends exterior entire-function bounds across all free discs, so the exact
-   identity now needs only a bound on the quotient at exterior infinity. Next
-   prove that bound using the free-factor lower bounds and canonical asymptotics,
-   then extend the compatibility identity to finite-p potentials.
+   identity reduces to a bound on the quotient at exterior infinity. That bound
+   is now proved using periodic free inverse bounds and uniform canonical ratio
+   lower bounds. The corrected parity/full infinite products equal the classical
+   shifted trace and squared discriminant for compatible continuous Hilbert
+   potentials. Next extend the shifted identity to all finite-p potentials
+   and prove the spectral-derivative asymptotics.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

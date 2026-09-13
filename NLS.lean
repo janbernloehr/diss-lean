@@ -503,3 +503,8 @@ import NLS.ZakharovShabat.ClassicalRealSpectralGauge
 import NLS.ZakharovShabat.ClassicalHorizontalStripBounds
 import NLS.ZakharovShabat.EntireFreeDiscBounds
 import NLS.ZakharovShabat.ClassicalExteriorNormalization
+import NLS.ZakharovShabat.FreeStripInverseBounds
+import NLS.ZakharovShabat.UniformThresholds
+import NLS.ZakharovShabat.ClassicalExteriorRatioBounds
+import NLS.ZakharovShabat.CanonicalExteriorLowerBounds
+import NLS.ZakharovShabat.ClassicalCanonicalIdentity

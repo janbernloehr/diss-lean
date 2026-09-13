@@ -12436,3 +12436,111 @@ example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (Φ : Curve (ℂ 
 
 end
 end HorizontalStripChecks
+
+namespace ClassicalIdentityChecks
+open Set Complex MeasureTheory Filter Topology NLS NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- Both parity inverse bounds cover all real translates, at a genuinely positive radius.
+example : ∃ C : ℝ, 0 ≤ C ∧ ∀ z : ℂ, |z.im| ≤ 3 →
+    (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) → ‖(freeDiscriminant z+2)⁻¹‖ ≤ C := by
+  simpa only [sub_neg_eq_add] using exists_bound_freeDiscriminant_sub_inv_strip (-2)
+    (by norm_num) (by positivity : 0 < Real.pi/4) 3
+
+-- Even negative lattice translations preserve both the trace and separation.
+example (z : ℂ) : freeDiscriminant (z+6*Real.pi) = freeDiscriminant z := by
+  have h := freeDiscriminant_sub_even_center z (-3)
+  convert! h using 2
+  push_cast
+  ring
+
+-- This bound allows a nonzero two-sided continuous potential and arbitrary real part.
+example : ∃ B : ℝ, 0 ≤ B ∧ ∀ z : ℂ,
+    (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+    ‖(classicalDiscriminant (ContinuousMap.const _ (1,I)) z-2)/(freeDiscriminant z-2)‖ ≤ B :=
+  exists_bound_classicalDiscriminant_sub_div_free _ 2 (by norm_num) (by positivity)
+
+-- The uniform lower bound also supports a non-Hilbert exponent and the odd factor.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ → (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+    (1 : ℝ)/2 ≤ ‖canonicalParityProduct (by simp) φ 1 z/(freeDiscriminant z+2)‖ := by
+  have hw : wave 1 1 = -1 := by simpa using wave_odd_at_one 0
+  simpa only [hw, mul_neg_one, sub_neg_eq_add] using
+    exists_threshold_canonicalParity_div_free_lower (by simp : (3 : ENNReal) ≠ ⊤)
+      (by norm_num) φ hφ 1 (Or.inr rfl) (by positivity : 0 < Real.pi/4) le_rfl
+
+private theorem free_representative :
+    physicalBase (0 : PairSpace 2) =ᵐ[volume.restrict (Ioc 0 1)] extend (0 : Curve (ℂ × ℂ)) := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num)) physicalBase_zero
+  filter_upwards [h] with t ht
+  simpa only [NLS.LinearVolterra.extend,ContinuousMap.zero_apply,Pi.zero_apply] using! ht
+
+-- Exact values at a point outside both parity spectra test both normalization constants.
+example : canonicalParityProduct (by simp) (0 : PairSpace 2) 0 (Real.pi/2) = -2 ∧
+    canonicalParityProduct (by simp) (0 : PairSpace 2) 1 (Real.pi/2) = 2 ∧
+    canonicalPeriodicProduct (by simp) (0 : PairSpace 2) (Real.pi/2) = -4 := by
+  rw [canonicalEven_eq_classical 0 (Submodule.zero_mem _) 0 free_representative,
+    canonicalOdd_eq_classical 0 (Submodule.zero_mem _) 0 free_representative,
+    canonicalPeriodic_eq_classical 0 (Submodule.zero_mem _) 0 free_representative]
+  norm_num [classicalDiscriminant_free, freeDiscriminant]
+
+-- The identity also includes the common free double root, without division by zero.
+example : canonicalPeriodicProduct (by simp) (0 : PairSpace 2) 0 = 0 := by
+  rw [canonicalPeriodic_eq_classical 0 (Submodule.zero_mem _) 0 free_representative]
+  norm_num [classicalDiscriminant_free, freeDiscriminant]
+
+private def coupledDomain : Domain 2 := (scalarMode 0 1,scalarMode 0 1)
+private def coupledPotential : PairSpace 2 := domainInclusion coupledDomain
+private def coupledCurve : Curve (ℂ × ℂ) where
+  toFun t := physicalDomain coupledDomain t
+  continuous_toFun := (continuous_physicalDomain coupledDomain).comp continuous_subtype_val
+
+private theorem coupled_representative :
+    physicalBase coupledPotential =ᵐ[volume.restrict (Ioc 0 1)] extend coupledCurve := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num))
+    (physicalBase_domainInclusion coupledDomain)
+  filter_upwards [h,ae_restrict_mem measurableSet_Ioc] with t ht hmem
+  change physicalBase (domainInclusion coupledDomain) t = _
+  rw [ht]
+  simp [NLS.LinearVolterra.extend,projIcc_of_mem _ (Ioc_subset_Icc_self hmem),coupledCurve]
+
+private theorem coupled_even : coupledPotential ∈ pairParitySubspace 0 := by
+  apply (mem_domainParitySubspace 0 coupledDomain).mp
+  intro n hn
+  have hne : n ≠ 0 := by omega
+  simp [coupledDomain,scalarMode_apply,hne]
+
+private theorem coupled_solution (t : Icc (0 : ℝ) 1) :
+    classicalSolution coupledCurve 1 (1,1) t = (1,1) := by
+  have h := classicalSolution_unique coupledCurve 1 (1,1) (fun _ => (1,1))
+    continuous_const.continuousOn rfl (by
+      intro s _
+      simp only [classicalODECoefficient_apply,coupledCurve,ContinuousMap.coe_mk,physicalDomain,
+        coupledDomain,sobolevSynthesis_scalarMode,wave_zero,mul_one]
+      convert! hasDerivAt_const s.val ((1,1) : ℂ × ℂ) using 1; simp)
+  exact (h t.property).symm
+
+-- A genuinely coupled eigenvalue fixes the OTHER product to exactly four, not merely nonzero.
+example : canonicalParityProduct (by simp) coupledPotential 0 1 = 0 ∧
+    canonicalParityProduct (by simp) coupledPotential 1 1 = 4 ∧
+    canonicalPeriodicProduct (by simp) coupledPotential 1 = 0 := by
+  have hd : classicalDiscriminant coupledCurve 1 = 2 := by
+    apply (classicalDiscriminant_eq_two_iff coupledCurve 1).mpr
+    exact ⟨(1,1),by simp,coupled_solution ⟨1,by constructor <;> norm_num⟩⟩
+  rw [canonicalEven_eq_classical coupledPotential coupled_even coupledCurve coupled_representative,
+    canonicalOdd_eq_classical coupledPotential coupled_even coupledCurve coupled_representative,
+    canonicalPeriodic_eq_classical coupledPotential coupled_even coupledCurve coupled_representative, hd]
+  norm_num
+
+-- The same nonzero potential has one exact trace at every complex parameter.
+example (z : ℂ) : canonicalParityProduct (by simp) coupledPotential 0 z+2 =
+    canonicalParityProduct (by simp) coupledPotential 1 z-2 := by
+  obtain ⟨he, ho⟩ := canonicalParity_shifted_eq_classical coupledPotential coupled_even
+    coupledCurve coupled_representative z
+  exact he.trans ho.symm
+
+end
+end ClassicalIdentityChecks

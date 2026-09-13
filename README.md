@@ -778,8 +778,8 @@ installation is absent. No shell startup files are modified.
   have the same vanishing orders as the canonical even, odd, and full spectral
   products. Their quotients now extend to entire nonvanishing functions,
   giving exact factorizations even at common zeros; the two parity factors
-  multiply to the full factor. A quotient limit of one would prove the exact
-  normalization by Liouville's theorem. The canonical full, even, and odd
+  multiply to the full factor. Their exact normalization is now proved below
+  using Liouville's theorem. The canonical full, even, and odd
   products now have ratio one to their free functions at both ends of every
   fixed vertical line, for all finite `p>1` and even-supported potentials.
   The actual continuous-potential solutions now satisfy free-propagator
@@ -791,16 +791,23 @@ installation is absent. No shell startup files are modified.
   `2‖Φ‖²/a+2‖Φ‖²/a²`, with `a=2|Im z|`. Its shifted and full characteristic
   ratios tend to one against their free functions at both imaginary ends,
   allowing the real spectral part to vary arbitrarily. The entire quotient
-  factors now have vertical limit one, so their boundedness would prove exact
-  normalization. The canonical full and parity products also have free ratio
+  factors now have vertical limit one, which determines their constant value
+  once boundedness is established. The canonical full and parity products also have free ratio
   one along every path escaping to infinity at a fixed positive distance from
   `πℤ`, for all finite `p>1`. This includes real paths between the lattice
   points. A norm-preserving real phase rotation now gives the global bound
   `|Δ(z)|≤2 exp(|Im z|+‖Φ‖)`, including the real axis and uniformly on potential
   norm balls. Maximum modulus extends an entire-function bound across all free
   discs, and a bounded central region may be omitted from the hypothesis.
-  Exact normalization now only requires a bound on the actual quotient at large
-  exterior parameters. That bound and the finite-p identity `f+2=g−2` remain open.
+  Periodicity and compactness now bound the inverses of both free parity
+  factors on every strip outside fixed free discs. Combining this with the
+  half-plane limits bounds the classical/free ratios globally on that exterior.
+  The canonical/free ratios have norm at least one half beyond a uniform
+  spectral threshold, proving the missing quotient bound. Consequently, for
+  even Hilbert potentials with compatible continuous representatives, the
+  intrinsic products are exactly `Δ−2`, `Δ+2`, and `Δ²−4`, including at their
+  roots. Extension of `f+2=g−2` to all finite `p>1` and the spectral-derivative
+  asymptotics remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

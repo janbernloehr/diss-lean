@@ -32,7 +32,9 @@
   (as used in the proof on the same page); the free value at zero forces the
   antiperiodic prefactor to be `4`. The full periodic product's `-4` in (2.1)
   is correct. Retain these distinctions when implementing Section 8; the
-  perturbed products and their discriminant identification are still open.
+  corrected perturbed products are implemented, and their classical
+  discriminant identification is proved for continuously represented even
+  Hilbert potentials. The general finite-p extension remains open.
 - Lemma 6.9's printed page-43 displacement estimate fails with its claimed
   local uniformity at zero. The actual signed single-mode family has roots
   `nπ±t` and Hilbert pair norm squared `2t²`, whereas the printed budget is
@@ -1585,13 +1587,18 @@ therefore extends an exterior entire-function bound across every disc, and
 compactness handles an omitted bounded central region. Exact parity and full
 normalization now reduce to a quotient bound at large exterior parameters.
 
-Next, obtain lower bounds for the free shifted factors away from their zeros
-and combine the classical growth and canonical exterior estimates to prove that
-remaining quotient bound. Apply the proved exterior normalization criteria,
-then use potential approximation to prove `f+2=g−2` for finite p>1. The classical
-boundary-determinant compatibility is proved; the infinite-product identity
-is not yet proved.
-The factorization proves the product equality in Lemma 8.1(iv);
-identification with the discriminant squared minus four remains open.
+The remaining quotient bound is now proved. Periodic reduction bounds both
+free parity inverses on every horizontal strip outside fixed free discs. The
+classical half-plane limits give bounds above and below this strip. Pulling back
+real at-top filters turns the canonical exterior limits into one uniform
+positive lower bound for all large separated spectral parameters. Division
+then bounds the actual filled quotient at exterior infinity. Maximum modulus
+and its vertical limit fix the entire factor to one. Thus the corrected
+identities `f=Δ−2`, `g=Δ+2`, and `fg=Δ²−4` hold for every even Hilbert potential
+with a compatible continuous representative, at every complex parameter.
+
+Next, use potential approximation and compatibility between exponents to prove
+`f+2=g−2` for all finite p>1. The general-p discriminant construction and the
+locally uniform spectral-derivative asymptotics still require proofs.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
