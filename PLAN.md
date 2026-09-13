@@ -1288,8 +1288,16 @@ normalizations remain. One open convex neighborhood and threshold support
 this construction for every larger central cutoff and every finite `p>1`
 potential, using the already proved displacement and counting results.
 
-Next, prove locally uniform convergence, extension across the free lattice,
-analytic dependence, and independence of the central cutoff. Complete the odd
+The products now converge locally uniformly in the spectral parameter off
+`πℤ`. Half-gap balls give summable uniform relative majorants, while compact
+quadratic majorants upgrade the free Euler products on the whole plane.
+The actual normalized polynomial cutoffs converge to a holomorphic limit off
+the lattice, and their derivatives also converge locally uniformly there.
+This holds for each fixed potential; uniform convergence or analytic dependence
+in the potential is not yet proved.
+
+Next, extend the perturbed products across the free lattice, prove analytic
+dependence on potentials and independence of the central cutoff. Complete the odd
 free-product identity, the perturbed parity subproducts, and identification
 of the correctly normalized discriminant. Then continue with the anti-discriminant
 and action-coordinate prerequisites.

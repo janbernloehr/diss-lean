@@ -9685,3 +9685,82 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end PerturbedProductChecks
+
+namespace UniformProductChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+private theorem imaginary_off_lattice : Complex.I ∉ freeLattice :=
+  notMem_freeLattice_of_im_ne_zero (by simp)
+
+private theorem shifted_mem {p : ℝ≥0∞} (a : Coeff p) :
+    Memℓp (fun n => ((Real.pi : ℂ)*n+a n)-(Real.pi : ℂ)*n) p := by
+  simpa only [add_sub_cancel_left] using (show Memℓp (fun n : ℤ => a n) p from a.property)
+
+-- The common local majorant handles negative free modes as well as positive ones.
+example (z : ℂ) (hz : z ∈ Metric.closedBall Complex.I (freeGap Complex.I/2)) :
+    ‖Complex.I-(Real.pi : ℂ)*(-7 : ℤ)‖ ≤ 2*‖z-(Real.pi : ℂ)*(-7 : ℤ)‖ :=
+  free_denominator_norm_le_twice Complex.I z hz (-7)
+
+-- Uniform convergence for arbitrary p=1 displacement sequences on a genuine compact neighborhood.
+example (a b : Coeff 1) :
+    TendstoUniformlyOn (fun N z => spectralPairPartialProduct (fun n => (Real.pi : ℂ)*n+a n)
+      (fun n => (Real.pi : ℂ)*n+b n) z N)
+      (spectralPairProductFormula (fun n => (Real.pi : ℂ)*n+a n) (fun n => (Real.pi : ℂ)*n+b n))
+      atTop (Metric.closedBall Complex.I (freeGap Complex.I/2)) :=
+  tendstoUniformlyOn_spectralPairPartialProduct (by simp) _ _ (shifted_mem a) (shifted_mem b) _
+    (isCompact_closedBall _ _) (closedBall_half_freeGap_subset Complex.I imaginary_off_lattice)
+
+-- A perturbed zero is included in the holomorphic domain; nonvanishing of the product is unnecessary.
+example (a : Coeff 3) (ha : a (-3) = Complex.I-(Real.pi : ℂ)*(-3 : ℤ)) :
+    AnalyticAt ℂ (spectralPairProductFormula (fun n => (Real.pi : ℂ)*n+a n)
+      (fun n => (Real.pi : ℂ)*n+a n)) Complex.I ∧
+    spectralPairProductFormula (fun n => (Real.pi : ℂ)*n+a n)
+      (fun n => (Real.pi : ℂ)*n+a n) Complex.I = 0 := by
+  refine ⟨analyticOnNhd_spectralPairProductFormula (by simp) _ _ (shifted_mem a) (shifted_mem a)
+    Complex.I imaginary_off_lattice,?_⟩
+  rw [spectralPairProductFormula_eq _ _ ⟨Complex.I,imaginary_off_lattice⟩]
+  apply (spectralPairProductOffLattice_eq_zero_iff (by simp) _ _ (shifted_mem a) (shifted_mem a)
+    Complex.I imaginary_off_lattice).mpr
+  exact ⟨-3,Or.inl (by rw [ha]; ring)⟩
+
+-- The free Euler convergence is uniform even on compact sets containing several free eigenvalues.
+example :
+    TendstoUniformlyOn (fun N z => -4*freeSpectralPartialProduct (Real.pi : ℂ) z N)
+      (fun z => (freeDiscriminant z)^2-4) atTop (Metric.closedBall 0 (3*Real.pi)) :=
+  ((tendstoLocallyUniformlyOn_iff_forall_isCompact isOpen_univ).mp
+    tendstoLocallyUniformlyOn_freePeriodicFullProduct) _ (Set.subset_univ _) (isCompact_closedBall _ _)
+
+-- Actual central multiplicities give entire finite cutoffs, including at the free zero mode.
+example (φ : PairSpace 3) (ξ η : ℤ → ℂ) :
+    AnalyticAt ℂ (periodicSpectralPolynomialCutoff (by simp) φ 4 ξ η 7) 0 :=
+  analyticOnNhd_periodicSpectralPolynomialCutoff (by simp) φ 4 ξ η 7 0 (Set.mem_univ 0)
+
+-- Complex derivatives of the actual central-corrected cutoffs converge locally uniformly too.
+example (φ : PairSpace 2) (a b : Coeff 2) :
+    TendstoLocallyUniformlyOn (fun M => deriv (periodicSpectralPolynomialCutoff (by simp) φ 2
+      (fun n => (Real.pi : ℂ)*n+a n) (fun n => (Real.pi : ℂ)*n+b n) M))
+      (deriv (periodicSpectralProductFormula (by simp) φ 2
+        (fun n => (Real.pi : ℂ)*n+a n) (fun n => (Real.pi : ℂ)*n+b n))) atTop freeLatticeᶜ :=
+  tendstoLocallyUniformlyOn_deriv_periodicSpectralPolynomialCutoff (by simp) φ 2 _ _
+    (shifted_mem a) (shifted_mem b)
+
+-- An arbitrary actual p=3 potential supplies root data and a holomorphic spectral product.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, ∃ ξ η : ℤ → ℂ,
+      AnalyticOnNhd ℂ (periodicSpectralProductFormula (by simp) (weightedBaseToPair w φ) N ξ η)
+        freeLatticeᶜ ∧
+      TendstoLocallyUniformlyOn (periodicSpectralPolynomialCutoff (by simp) (weightedBaseToPair w φ) N ξ η)
+        (periodicSpectralProductFormula (by simp) (weightedBaseToPair w φ) N ξ η) atTop freeLatticeᶜ ∧
+      ∀ z : ℂ, z ∉ freeLattice →
+        (periodicSpectralProductFormula (by simp) (weightedBaseToPair w φ) N ξ η z = 0 ↔
+          z ∈ periodicSpectrum (by simp) (weightedBaseToPair w φ)) := by
+  obtain ⟨N,_,U,_,_,hφ,_,h⟩ := exists_uniform_holomorphicPeriodicSpectralProducts
+    (by simp) (by norm_num) w φ
+  obtain ⟨ξ,η,hprod⟩ := h φ hφ
+  exact ⟨N,ξ,η,hprod N le_rfl⟩
+
+end
+end UniformProductChecks

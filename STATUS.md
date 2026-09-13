@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 407 modules and 3229 named public theorems. All compile on the
+The library has 411 modules and 3255 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.RelativeSpectralProductsUniform` | Half-gap uniform majorants, locally uniform unordered and symmetric products, and holomorphy off the free lattice, including at perturbed zeros |
+| `NLS.ZakharovShabat.FreeSpectralProductsUniform` | Compact quadratic Euler majorants, continuous unordered Euler product, and locally uniform symmetric free products on the whole plane |
+| `NLS.ZakharovShabat.PerturbedSpectralProductsUniform` | Locally uniform original normalized cutoffs, uniform convergence on every off-lattice compact set, and holomorphy of the exact previous product formula |
+| `NLS.ZakharovShabat.PeriodicSpectralProductsUniform` | Entire actual polynomial cutoffs, holomorphic off-lattice limit, locally uniform convergence of cutoffs and derivatives, and instantiation from actual spectral data for every finite `p>1` potential |
 | `NLS.ZakharovShabat.RelativeSpectralProducts` | Absolute relative convergence for all finite Banach exponents, symmetric cutoff convergence, and exact selected zero set off the free lattice |
 | `NLS.ZakharovShabat.PerturbedSpectralProducts` | Original normalized two-root factors, exact free-relative decomposition, and pointwise convergence with no spurious zeros off `πℤ` |
 | `NLS.ZakharovShabat.PeriodicSpectralProducts` | Actual finite central algebraic multiplicities, counted high pairs, exact original periodic zero set, and independence of pair labels |
@@ -3767,19 +3771,55 @@ high two-root factors, divided only by nonzero constants.
 proved paired displacement tails and intersects the root and counting
 neighborhoods. For every finite `p>1` potential, one open convex neighborhood
 containing it and zero supports these products for every larger central cutoff.
-Convergence is pointwise; the theorem does not assert uniform convergence on
-that neighborhood. The generic relative argument covers `p=1`, whereas this
+The original existence theorem is pointwise; it does not assert uniform
+convergence over that potential neighborhood. The generic relative argument covers `p=1`, whereas this
 actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
 
-Local uniform convergence, extension across `πℤ`, analytic dependence, equality
-between different central-cutoff constructions, analytic zero orders, perturbed
-parity products, and discriminant identification remain open. No entire
-function or analytic family is claimed by these off-lattice constructions.
+Extension across `πℤ`, analytic dependence on potentials, equality between
+different central-cutoff constructions, analytic zero orders, perturbed parity
+products, and discriminant identification remain open. No entire limit or
+analytic family in the potential is claimed by these off-lattice constructions.
+
+## Section 8: locally uniform convergence and holomorphy
+
+`RelativeSpectralProductsUniform` controls all free denominators on the closed
+ball of half the free spectral gap by twice their values at the center. The
+ball avoids the free lattice. Applying the existing absolute displacement
+sum at the center gives a summable bound common to the entire ball. Thus
+unordered single and paired relative products, as well as literal symmetric
+relative cutoffs, converge locally uniformly off `πℤ`. The limits are
+holomorphic there, including at perturbed spectral zeros: no nonvanishing
+assumption on the numerator or product is used.
+
+`FreeSpectralProductsUniform` uses the summable quadratic Euler-factor bound
+on every compact subset of the plane. Uniqueness of pointwise limits identifies
+the locally uniform limit with the earlier sine formula for every nonzero
+complex spacing. This includes compact sets containing free eigenvalues.
+`PerturbedSpectralProductsUniform` multiplies free and relative convergence
+and recovers the exact original symmetric normalized cutoffs. Its ambient
+formula equals the previous subtype-based product on the off-lattice domain,
+is holomorphic there, and is the uniform limit on every compact subset.
+
+`PeriodicSpectralProductsUniform` defines the actual finite spectral cutoffs
+on the whole plane using the original central algebraic multiplicities and
+only constant normalizations. These cutoffs are entire polynomials and agree
+with the previous relative cutoffs once the center is included. They converge
+locally uniformly off `πℤ` to the exact earlier actual spectral product, whose
+spectral-parameter dependence is holomorphic there. Their derivatives converge
+locally uniformly as well. The earlier actual-spectrum existence theorem
+supplies all hypotheses for every finite `p>1` potential, with one common open
+convex potential neighborhood and threshold for every larger central cutoff.
+
+All locally uniform convergence and holomorphy here concern the spectral
+parameter at each fixed potential. Joint analyticity and uniform convergence
+in the potential remain open, as does extension of the perturbed limit across
+the free lattice. Entire polynomial approximants alone do not establish an
+entire limit, and no such conclusion is claimed.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6642 declarations under `NLS`, including generated
+axioms. The current audit covers 6683 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4662,12 +4702,19 @@ negative-mode displacement creating a nonreal limiting zero, exact cancellation
 in a finite cutoff, independence of counted pair labels, and construction
 from an arbitrary actual weighted `p=3` potential without assumed root data.
 
+Uniform-product examples cover a negative free denominator on a half-gap ball,
+compact uniform convergence for arbitrary `p=1` displacement sequences,
+holomorphy at a double perturbed zero at `p=3`, and free convergence on a compact
+ball containing several lattice values. Actual finite cutoffs are checked at
+the free zero mode, differentiated cutoffs converge at `p=2`, and arbitrary
+actual weighted `p=3` potentials supply the holomorphic spectral product.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Extend the proved pointwise full perturbed products off `πℤ` to locally
-   uniform convergence, lattice extension, central-cutoff independence, and
-   analytic dependence, then identify the discriminant.
+2. Extend the proved locally uniform holomorphic perturbed products across
+   `πℤ`, prove central-cutoff independence and analytic dependence on the
+   potential, then identify the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors
    `-1` and `4`, not the inconsistent displayed `-2` and `2`. Bounded source

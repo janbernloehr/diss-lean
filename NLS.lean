@@ -355,3 +355,7 @@ import NLS.ZakharovShabat.PerturbedSpectralProducts
 import NLS.ZakharovShabat.PeriodicSpectralProducts
 import NLS.ZakharovShabat.PeriodicSpectralProductExistence
 import NLS.ZakharovShabat.PeriodicSpectralProductCutoffs
+import NLS.ZakharovShabat.RelativeSpectralProductsUniform
+import NLS.ZakharovShabat.FreeSpectralProductsUniform
+import NLS.ZakharovShabat.PerturbedSpectralProductsUniform
+import NLS.ZakharovShabat.PeriodicSpectralProductsUniform
