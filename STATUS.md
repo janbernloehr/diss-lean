@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 467 modules and 3518 named public theorems. All compile on the
+The library has 471 modules and 3543 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ParityContourReduction` | Analytic parity contour projections, finite parity ranges, domain-lift invariance, and transported original operator restrictions |
+| `NLS.ZakharovShabat.ParityContourDeterminant` | Conjugate local parity reductions and jointly analytic intrinsic determinants on the actual even-supported potential subspace |
+| `NLS.ZakharovShabat.ParityContourMultiplicity` | All finite generalized chains, maximal parity root spaces, characteristic multiplicities, and exact original parity root-product determinants |
+| `NLS.ZakharovShabat.CentralParityPolynomialAnalytic` | Actual central parity polynomials and normalized approximants are jointly analytic on common neighborhoods for all sufficiently large cutoffs |
 | `NLS.ZakharovShabat.ParityProductFactorization` | Exact literal parity cutoff multiplication and boundary-factor limit; entire parity products multiply to the normalized full paired product |
 | `NLS.ZakharovShabat.ActualParityProductFactorization` | Completed full cutoffs equal intrinsic central polynomials; actual parity factors multiply exactly to the canonical product; derivative identity and neighborhood existence |
 | `NLS.ZakharovShabat.ParityCutoffOrders` | Central boxes exhaust the plane; intrinsic parity polynomial orders and eventual exact literal cutoff orders |
@@ -4302,10 +4306,44 @@ This proves the full-product factorization portion of Lemma 8.1(iv), using the
 corrected parity prefactors `-1` and `4`. It does not yet prove a common
 discriminant `f+2=g−2`, its joint potential analyticity, or its asymptotics.
 
+## Section 8: jointly analytic finite parity approximants
+
+`ParityContourReduction` forms the product of the fixed parity projection and
+the contour spectral projection. For even-supported potentials this is an
+idempotent with range exactly the full contour range intersected with the
+selected parity subspace. That range is finite dimensional. The domain-valued
+contour lift respects parity, so the original bounded contour restriction
+commutes with this projection. Analytic projection transport reduces the
+operator to a fixed reference parity range.
+
+`ParityContourDeterminant` proves that the local and intrinsic reductions are
+conjugate, with identical shifted determinants. The intrinsic determinant is
+jointly analytic in the complex spectral parameter and the actual subspace
+of even-supported potentials wherever the contour is in the resolvent set.
+This is not an ambient analyticity claim for arbitrary noneven potentials.
+
+`ParityContourMultiplicity` identifies every finite generalized chain of the
+reduction with the original domain recursion. The maximal generalized
+eigenspace is the pullback of the original root space intersected with the
+parity sector. Thus enclosed characteristic-root multiplicities equal the
+original parity algebraic multiplicities. No eigenvalues of the reduction lie
+outside the original enclosed spectrum. Its determinant is exactly the finite
+parity root polynomial, including zero exponents from the other sector.
+
+`CentralParityPolynomialAnalytic` identifies the actual central parity
+polynomials with these determinants. One open convex ambient neighborhood
+and positive threshold work for every larger central cutoff and both parities,
+after restriction to the even-supported potential subspace. The intrinsic
+normalized approximants retain the corrected factors `-1` and `4`; they also
+are jointly analytic. They recover the even literal cutoff and the central
+part of the odd literal cutoff, whose extra positive boundary pair is retained.
+Joint local uniform convergence in the potential and spectral parameter, and
+joint analyticity of the infinite parity products, remain to be proved.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7189 declarations under `NLS`, including generated
+axioms. The current audit covers 7235 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5286,15 +5324,23 @@ limit for constant bounded nonsummable displacements, check the exact free
 full-product normalization, recover a parity factor by division off the other
 sector's roots, and instantiate actual entire factorization at p=3.
 
+Parity-analytic examples check a negative odd free contour with double and
+empty parity determinants, the normalized zero-cutoff formulas `-z²` and `4`,
+joint analyticity at a free root, a common threshold for every spectral
+parameter and parity at an arbitrary actual p=3 potential, and preservation
+of length-three original generalized chains.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
 2. The entire actual parity products now have exact original analytic orders,
    label and cutoff independence, locally uniform spectral convergence, and
    exact original parity zero sets, with necessary prefactors `-1` and `4`.
-   Their product equals the canonical full product exactly. Establish joint
-   potential analyticity of the individual parity factors and `f+2=g−2` to
-   identify the correctly normalized discriminant.
+   Their product equals the canonical full product exactly. The finite central
+   parity polynomials and normalized approximants are now jointly analytic on
+   common actual potential neighborhoods. Prove joint locally uniform convergence
+   and pass analyticity to the infinite parity factors, then establish `f+2=g−2`
+   to identify the correctly normalized discriminant.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

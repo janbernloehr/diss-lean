@@ -10721,3 +10721,59 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
 
 end
 end ParityFactorizationChecks
+
+namespace ParityAnalyticChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+private theorem hp3 : (3 : ℝ≥0∞) ≠ ⊤ := by norm_num
+
+-- A negative odd free disk contributes a double root to odd parity and the empty determinant to even parity.
+example (z : ℂ) :
+    parityContourDeterminant (p := 3) hp3 0 ((Real.pi : ℂ)*(-3 : ℤ)) (Real.pi/4) (-1) z =
+      ((Real.pi : ℂ)*(-3 : ℤ)-z)^2 ∧
+    parityContourDeterminant (p := 3) hp3 0 ((Real.pi : ℂ)*(-3 : ℤ)) (Real.pi/4) 0 z = 1 := by
+  have hr : 0 < Real.pi/4 := by positivity
+  have hc := sphere_subset_resolventSet_of_smallPotential (p := 3) hp3 0 (-3) hr le_rfl (by simpa using hr)
+  have h0 : (0 : PairSpace 3) ∈ pairParitySubspace 0 := (pairParitySubspace 0).zero_mem
+  rw [parityContourDeterminant_eq_prod hp3 0 h0 _ _ (-1) hr.le hc,
+    parityContourDeterminant_eq_prod hp3 0 h0 _ _ 0 hr.le hc,
+    enclosedPeriodicSpectrum_zero hp3 (-3) hr (by linarith [Real.pi_pos])]
+  simp only [Finset.prod_singleton]
+  rw [parityAlgebraicMultiplicity_zero hp3 (-1) (-3), parityAlgebraicMultiplicity_zero hp3 0 (-3)]
+  norm_num
+
+-- Normalization at the exceptional zero cutoff gives the even quadratic and constant odd factor four.
+example (z : ℂ) :
+    normalizedCentralParityPolynomial (p := 3) hp3 0 0 0 z = -z^2 ∧
+    normalizedCentralParityPolynomial (p := 3) hp3 0 0 1 z = 4 := by
+  simp [normalizedCentralParityPolynomial, centralParityPolynomial_zero,
+    centralParityNormalization, centralParityIndices, Finset.filter_singleton, spectralPairDenominator]
+
+-- Joint analyticity holds at a free eigenvalue itself, where the determinant vanishes.
+example : AnalyticAt ℂ (fun t : ℂ × pairParitySubspace (p := 3) 0 =>
+    parityContourDeterminant hp3 t.2 0 (Real.pi/4) 0 t.1) (0,0) := by
+  have hr : 0 < Real.pi/4 := by positivity
+  have hc := sphere_subset_resolventSet_of_smallPotential (p := 3) hp3 0 0 hr le_rfl (by simpa using hr)
+  norm_num only [Int.cast_zero, mul_zero] at hc
+  exact analyticAt_parityContourDeterminant hp3 0 0 _ 0 hr.le hc 0
+
+-- One threshold works for every spectral parameter and every parity at any actual even-supported p=3 potential.
+example (φ : pairParitySubspace (p := 3) 0) :
+    ∃ N₀ : ℕ, 0 < N₀ ∧ ∀ N ≥ N₀, ∀ r : ℤ, ∀ z : ℂ,
+      AnalyticAt ℂ (fun t : ℂ × pairParitySubspace (p := 3) 0 =>
+        normalizedCentralParityPolynomial hp3 t.2 N r t.1) (z,φ) := by
+  obtain ⟨N₀,U,hN₀,_,_,hφ,_,h⟩ := exists_uniform_analytic_normalizedCentralParityPolynomials hp3 (φ : PairSpace 3)
+  exact ⟨N₀,hN₀,fun N hN r z => h N hN r (z,φ) hφ⟩
+
+-- The contour reduction retains length-three generalized chains in the original domain formulation.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (c z : ℂ) (R : ℝ)
+    (hc : sphere c R ⊆ resolventSet hp3 φ) (hR : 0 ≤ R)
+    (x : (parityContourProjection hp3 φ c R 1).range) :
+    x ∈ Module.End.genEigenspace (reducedParityContourOperator hp3 φ φ c R 1).toLinearMap z 3 ↔
+      (x : PairSpace 3) ∈ periodicRootSpace hp3 φ z 3 :=
+  reducedParityContourOperator_mem_genEigenspace_iff hp3 φ hφ c z R 1 hR hc 3 x
+
+end
+end ParityAnalyticChecks

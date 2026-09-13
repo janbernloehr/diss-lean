@@ -1415,8 +1415,19 @@ central polynomial. Thus the limit fixes the entire normalization, and its
 spectral derivative satisfies the product rule. Actual potential neighborhoods
 admit choice-independent entire factors with exact orders and this identity.
 
-Next, prove joint potential analyticity of the individual parity factors and
-`f+2=g−2`. The factorization proves the product equality in Lemma 8.1(iv);
+Joint analyticity of the finite central parity polynomials is now proved on
+the actual even-supported potential subspace. The parity contour projection
+has precisely the full contour range intersected with the parity subspace.
+Its analytic transport gives a fixed finite-dimensional operator whose root
+chains and characteristic-root multiplicities equal the original parity root
+spaces. Its determinant is therefore the actual central parity polynomial.
+All sufficiently large normalized parity approximants are jointly analytic on
+one common neighborhood, with the corrected prefactors and odd endpoint intact.
+
+Next, establish locally uniform convergence in both potential and spectral
+parameter for these parity approximants, then pass joint analyticity to the
+individual infinite parity products and prove `f+2=g−2`. The factorization
+proves the product equality in Lemma 8.1(iv);
 identification with the discriminant squared minus four remains open.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
