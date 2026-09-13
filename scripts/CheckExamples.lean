@@ -10445,3 +10445,75 @@ example (φ : PairSpace 3) (N : ℕ) (z : ℂ) :
 
 end
 end CentralParityChecks
+
+namespace ActualParityChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Empty parity clusters can be enumerated without inventing roots.
+example : ∃ ξ η : ℤ → ℂ, (∑ n ∈ (∅ : Finset ℤ), ({ξ n,η n} : Multiset ℂ)) = 0 :=
+  exists_paired_multiset_enumeration ∅ 0 (by simp)
+
+-- Repetitions can span both slots at multiple signed indices.
+example (z : ℂ) : ∃ ξ η : ℤ → ℂ,
+    (∑ n ∈ ({-2,0} : Finset ℤ), ({ξ n,η n} : Multiset ℂ)) = Multiset.replicate 4 z :=
+  exists_paired_multiset_enumeration {-2,0} (Multiset.replicate 4 z) (by norm_num)
+
+-- The negative central boundary is replaced; the next negative index retains the distant label.
+example (a ξ : ℤ → ℂ) : spliceCentralRoots 2 a ξ (-2) = a (-2) ∧
+    spliceCentralRoots 2 a ξ (-3) = ξ (-3) := by
+  norm_num [spliceCentralRoots]
+
+-- A finite arbitrary replacement preserves exponent-one displacements.
+example (a : ℤ → ℂ) : Memℓp
+    (fun n => spliceCentralRoots 0 a (fun k => (Real.pi : ℂ)*k) n-(Real.pi : ℂ)*n) 1 := by
+  apply memℓp_spliceCentralRoots
+  simpa only [sub_self] using (zero_mem_ℓp' : Memℓp (fun _ : ℤ => (0 : ℂ)) 1)
+
+-- The original zero-mode denominator contributes no extra zero.
+example (ξ η : ℤ → ℂ) (z : ℂ) :
+    spectralPairFactor ξ η z 0 = 0 ↔ ξ 0 = z ∨ η 0 = z :=
+  spectralPairFactor_eq_zero_iff ξ η z 0
+
+-- Every actual completed sequence has an odd product whose zeros are exactly odd domain eigenvalues.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (z : ℂ) :
+    oddSpectralPairProduct ξ η z = 0 ↔ ∃ f : Domain 3, f ≠ 0 ∧ f ∈ domainParitySubspace 1 ∧
+      spectralPencil (by simp) (weightedBaseToPair w φ) z f = 0 :=
+  (h.oddProduct_eq_zero_iff z).trans
+    (parityAlgebraicMultiplicity_pos_iff (by simp) _ h.even_potential 1 z)
+
+-- An eigenvalue of the opposite sector cannot create an odd-product zero, even on the free lattice.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η)
+    (hz : parityAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 1 0 = 0) :
+    oddSpectralPairProduct ξ η 0 ≠ 0 := by
+  rw [ne_eq, h.oddProduct_eq_zero_iff, hz]
+  omega
+
+-- For any completed free labeling, zero belongs only to the even product.
+example (w : SpectralWeight) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (p := 3) (by simp) w 0 N ξ η) :
+    evenSpectralPairProduct ξ η 0 = 0 ∧ oddSpectralPairProduct ξ η 0 ≠ 0 := by
+  have he := parityAlgebraicMultiplicity_zero (p := 3) (by simp) 0 0
+  have ho := parityAlgebraicMultiplicity_zero (p := 3) (by simp) 1 0
+  norm_num at he ho
+  rw [h.evenProduct_eq_zero_iff, ne_eq, h.oddProduct_eq_zero_iff]
+  simp only [map_zero, he, ho]
+  norm_num
+
+-- Actual weighted p=3 data supply entire products and derivatives including at negative lattice points.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
+    (hφ : weightedBaseToPair w φ ∈ pairParitySubspace 0) :
+    ∃ N : ℕ, ∃ ξ η : ℤ → ℂ, CompletePeriodicParityPairs (by simp) w φ N ξ η ∧
+      AnalyticAt ℂ (evenSpectralPairProduct ξ η) (-3*(Real.pi : ℂ)) ∧
+      TendstoLocallyUniformlyOn (fun M => deriv (fun z => oddSpectralPairCutoff ξ η z M))
+        (deriv (oddSpectralPairProduct ξ η)) atTop Set.univ := by
+  obtain ⟨N₀,_,U,_,_,hmem,_,h⟩ := exists_uniform_actualParityProducts (by simp) (by norm_num) w φ
+  obtain ⟨ξ,η,hd,ha,_,_,_,_,hder,_⟩ := h φ hmem hφ N₀ le_rfl
+  exact ⟨N₀,ξ,η,hd,ha _ (Set.mem_univ _),hder⟩
+
+end
+end ActualParityChecks

@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 452 modules and 3455 named public theorems. All compile on the
+The library has 459 modules and 3480 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.FinitePairedEnumeration` | Finite multiset enumeration and two-slot assignment on prescribed finite index sets, retaining repetitions |
+| `NLS.ZakharovShabat.CentralParityLabeling` | Counted central parity labels, exact root-multiset enumeration, root criterion, and intrinsic central polynomial identity |
+| `NLS.ZakharovShabat.CompletePeriodicParityPairs` | Finite splicing preserves ℓp displacements; completed actual pairs retain central multiplicities and distant counted roots; uniform neighborhood existence |
+| `NLS.ZakharovShabat.CompleteParitySpectrum` | Exact completed parity root set, original weighted-domain eigenvector criterion, and distant root-space parity |
+| `NLS.ZakharovShabat.ParityProductsOffLattice` | Rescaled entire products have precisely the selected even/odd roots off the free lattice; actual parity multiplicity criterion |
+| `NLS.ZakharovShabat.ActualParityProductZeros` | Eventual cutoff zeros and spectral isolation prevent additional lattice zeros; exact whole-plane actual parity zero sets |
+| `NLS.ZakharovShabat.ActualParityProductExistence` | Entire actual parity products for finite p>1 on common neighborhoods and thresholds, with locally uniform cutoff/derivative convergence and exact zero sets |
 | `NLS.ZakharovShabat.ParityRootMultiplicity` | Actual parity root-space multiplicities, direct-sum splitting, domain eigenvector criterion, and signed free multiplicities |
 | `NLS.ZakharovShabat.ParityClusterMultiplicity` | Spectral projection commutation, parity distribution over finite root clusters, and exact uniform central parity multiplicity sums |
 | `NLS.ZakharovShabat.CentralParityPolynomials` | Actual central parity root multisets, cardinalities, polynomials, exact full-polynomial factorization, zero sets, analytic orders, and free specialization |
@@ -3784,8 +3791,9 @@ printed periodic product also has the wrong limit at `λ=π`. The free values
 force periodic prefactor `-1` and antiperiodic prefactor `4`. The proof on the
 same source page already uses `-1` for its periodic partial products.
 
-The free full/even product milestone audits the source constants. The full
-odd free-product formula and general discriminant identification remain open.
+The free full/even product milestone audits the source constants. The odd
+free-product formula is proved below; general discriminant identification
+remains open.
 
 ## Section 8: perturbed periodic products off the free lattice
 
@@ -3816,9 +3824,9 @@ The original existence theorem is pointwise; it does not assert uniform
 convergence over that potential neighborhood. The generic relative argument covers `p=1`, whereas this
 actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
 
-Analytic dependence on potentials, perturbed parity products, and discriminant
-identification remain open. The entire extension and equality between different
-central-cutoff constructions are proved below.
+Later milestones prove the entire extension, central-cutoff independence,
+joint potential analyticity of the full product, and actual parity products.
+Discriminant identification remains open.
 
 ## Section 8: locally uniform convergence and holomorphy
 
@@ -3888,8 +3896,8 @@ and threshold support the construction for every larger central cutoff.
 Analyticity and locally uniform convergence are in the spectral parameter
 for each fixed potential; no joint potential analyticity is claimed.
 
-Joint analytic dependence and central-cutoff independence are proved below.
-Perturbed parity products and identification with the discriminant remain open.
+Joint analytic dependence, central-cutoff independence, and actual parity
+products are proved below. Identification with the discriminant remains open.
 
 ## Section 8: exact analytic multiplicities
 
@@ -3922,9 +3930,9 @@ lattice points. The extended order is explicitly finite. One common open
 convex potential neighborhood and threshold support the strengthened existence
 theorem at every finite `p>1`, for every larger central cutoff.
 
-The entire full product now retains the exact original spectrum and all its
-multiplicities. Analytic dependence on potentials, parity products, and
-discriminant identification remain open.
+The entire full product retains the exact original spectrum and all its
+multiplicities. Subsequent milestones prove joint potential analyticity and
+construct actual parity products; discriminant identification remains open.
 
 ## Section 8: central-cutoff independence
 
@@ -4139,10 +4147,10 @@ convergence. Repeated roots and roots at free lattice points are permitted.
 
 `ParitySpectralProductsFree` identifies the free specializations with `Δ_free−2`
 and `Δ_free+2`, fixing the corrected prefactors `−1` and `4`. Their discriminant
-values agree at the free potential. The following milestone constructs actual
-central parity root multisets. Connecting those factors to the entire parity
-products, proving joint potential analyticity, and proving `f+2=g−2` remain
-open. Arbitrary displaced sequences do not imply this compatibility.
+values agree at the free potential. The following milestones construct actual
+central parity root multisets and entire parity products. Joint potential
+analyticity of these parity products and `f+2=g−2` remain open. Arbitrary
+displaced sequences do not imply this compatibility.
 
 ## Section 8: actual central parity spectra and multiplicities
 
@@ -4173,15 +4181,52 @@ The free specialization filters the signed central indices and retains
 multiplicity two, including the zero cutoff with two even roots and no odd
 roots.
 
-It remains to combine these actual central factors with the distant parity
-pairs to identify entire actual parity products, prove their joint potential
-analyticity, and establish discriminant compatibility. Analyticity here is in
-the spectral parameter; no analytic choice of individual roots is asserted.
+The next milestone combines these actual central factors with the distant
+parity pairs. Analyticity here is in the spectral parameter; no analytic choice
+of individual roots is asserted.
+
+## Section 8: entire parity products from actual completed root pairs
+
+`FinitePairedEnumeration` assigns any root multiset of cardinality twice a
+finite index set to two slots per index, retaining repetitions.
+`CentralParityLabeling` applies the actual central parity counts, including
+negative indices. Each sector's labels recover its exact central root multiset
+and intrinsic polynomial. This is an algebraic choice, without root-label
+continuity assumptions.
+
+`CompletePeriodicParityPairs` replaces the artificial central labels in the
+distant pair sequences by these actual roots. Finite replacement preserves
+ℓp displacements at every exponent. The completed data retain actual central
+parity multiplicities and every distant counted eigenvalue pair. For finite
+p>1, the proved spectral estimates supply such data for every even-supported
+potential on a common open convex neighborhood and every larger cutoff.
+`CompleteParitySpectrum` shows that each completed parity sequence enumerates
+exactly the eigenvalues with positive original parity algebraic multiplicity,
+equivalently the eigenvalues with a nonzero original weighted-domain
+eigenvector of that parity.
+
+`ParityProductsOffLattice` identifies the selected even and odd roots after
+rescaling the generic entire paired products. `ActualParityProductZeros`
+extends this identification over the whole plane. An original spectral
+isolating disc about a point without a selected parity root contains no other
+selected root. A smaller circle avoids the free lattice, and reciprocal
+maximum-modulus bounds prevent the locally uniform limit from acquiring a
+zero inside it. Conversely, an actual parity root appears in every sufficiently
+large literal cutoff. The limit therefore has exactly the original parity
+zero set, including at the free lattice and opposite-sector eigenvalues.
+
+`ActualParityProductExistence` packages the completed roots, both entire
+products, whole-plane locally uniform polynomial and derivative convergence,
+and their exact zero sets for actual finite p>1 even-supported potentials.
+The source's literal cutoffs and corrected prefactors −1 and 4 are retained.
+Convergence here is locally uniform in the spectral parameter for each fixed
+potential. Independence of central labels and cutoff, exact analytic orders,
+joint potential analyticity, and discriminant compatibility remain to be proved.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7025 declarations under `NLS`, including generated
+axioms. The current audit covers 7106 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5138,15 +5183,22 @@ and eigenvalues with positive multiplicity in both sectors. A nonconstant
 p=3 potential supplies all large central root cardinalities. Factorization
 and root-multiset product identities are checked without division at roots.
 
+Completed-pair examples exercise empty and repeated-root enumerations, the
+negative splice boundary, arbitrary exponent-one central replacements, and the
+exceptional zero-mode denominator. Actual p=3 data identify product zeros with
+original domain eigenvalues, exclude opposite-sector lattice zeros, and supply
+entire products and derivative convergence at negative lattice points. Every
+completed free labeling has the even zero and a nonzero odd product at zero.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Combine the actual central parity root multisets and polynomials with the
-   distant parity pairs to identify the entire actual parity products.
-   Complete-sequence parity products and the free full/even/odd identities are
-   proved with necessary prefactors `-1` and `4`. Prove joint potential
-   analyticity and compatibility of the actual parity factors to identify the
-   correctly normalized discriminant.
+2. Prove label and cutoff independence and exact analytic orders of the entire
+   actual parity products. Their construction, locally uniform spectral
+   convergence, and exact original parity zero sets are proved, using the
+   necessary prefactors `-1` and `4`. Establish joint potential analyticity and
+   compatibility of the parity factors to identify the correctly normalized
+   discriminant.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

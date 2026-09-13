@@ -1382,9 +1382,19 @@ sums. The two central polynomials multiply to the full original polynomial,
 with the precise parity zero sets and analytic orders. Root multisets retain
 shared eigenvalues and have the exact uniform central cardinalities.
 
-Next, combine these actual central factors with the distant parity pairs to
-identify entire actual parity products. Then prove their joint potential
-analyticity and discriminant compatibility. The complete-sequence construction
-alone does not imply a common discriminant.
+The actual central roots are now assigned two slots per parity index and
+spliced into the distant counted pairs. Finite replacement preserves ℓp
+displacements. The completed sequences enumerate exactly the original parity
+eigenvalues, including the weighted-domain eigenvector characterization.
+Their entire parity products have exactly these whole-plane zero sets:
+spectral isolation and reciprocal maximum-modulus bounds prevent extra zeros
+when filling the free lattice. Both the literal cutoffs and their derivatives
+converge locally uniformly in the spectral parameter. Actual data supply this
+construction on common neighborhoods and central thresholds for finite p>1.
+
+Next, prove label and cutoff independence and exact analytic orders for these
+actual parity products, then joint potential analyticity and discriminant
+compatibility. The product construction alone does not imply a common
+discriminant.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

@@ -712,8 +712,12 @@ installation is absent. No shell startup files are modified.
   root multisets are now constructed with original Jordan multiplicities and
   exact uniform cardinalities. Their polynomials factor the full central
   polynomial and retain the exact parity zero sets and analytic orders.
-  Connecting these central factors to the entire parity products, proving joint
-  potential analyticity, and identifying their common discriminant remain open.
+  The central roots are now spliced into the distant counted pairs, preserving
+  ℓp displacements and the actual parity root multisets. The completed pairs
+  give entire products whose whole-plane zero sets are exactly the original
+  parity eigenvalues, with locally uniform cutoff and derivative convergence.
+  Label and cutoff independence, exact analytic orders of the parity products,
+  joint potential analyticity, and discriminant compatibility remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
