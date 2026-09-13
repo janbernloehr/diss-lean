@@ -1509,9 +1509,19 @@ space. All finite nullities agree with the original root dimensions, increase,
 and eventually equal the full original parity algebraic multiplicity. The
 free nullity sequence is computed exactly at all lengths and Fourier indices.
 
-Next, prove that the eventual boundary-jet kernel dimension equals the actual
-boundary determinant order. This will identify classical determinant orders
-with original algebraic multiplicities. Then prove the normalized entire-product
+Scalar truncated multiplication is now identified with its formal Taylor
+convolution, with exact nullity `min(N,m)` for a scalar series of order `m`.
+Its formal order equals the analytic vanishing order for convergent Taylor
+series, including infinite order. Diagonal two-by-two formal systems split
+linearly and have eventual nullity equal to their determinant order. The
+actual monodromy boundary maps now equal the formal matrix Taylor actions
+built from their convergent coefficients.
+
+Next, reduce a general two-by-two formal matrix while preserving finite
+nullities, and identify its formal determinant with the analytic determinant
+Taylor series. These steps will prove that the eventual boundary-jet kernel
+dimension equals the actual boundary determinant order and identify classical
+determinant orders with original algebraic multiplicities. Then prove the normalized entire-product
 identity and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.

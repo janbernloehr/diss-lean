@@ -11624,3 +11624,90 @@ example (σ : ℂ) : boundaryJetNullity triangular 0 σ 0 = 0 := boundaryJetNull
 
 end
 end BoundaryJetChecks
+
+namespace ScalarFormalJetChecks
+open Complex PowerSeries Matrix NLS.ComplexAnalysis
+noncomputable section
+
+private def unitTail : PowerSeries ℂ := PowerSeries.C I+PowerSeries.X
+private def doubleZero : PowerSeries ℂ := PowerSeries.X^2*unitTail
+
+private theorem unitTail_order : unitTail.order = 0 := by
+  apply PowerSeries.order_eq_nat.mpr
+  constructor
+  · simp [unitTail]
+  · intro i hi
+    omega
+
+private theorem doubleZero_order : doubleZero.order = 2 := by
+  simp [doubleZero,PowerSeries.order_mul,PowerSeries.order_X_pow,unitTail_order]
+
+-- A nonconstant unit tail does not change the exact scalar kernel dimensions.
+example (N : ℕ) : Module.finrank ℂ (LinearMap.ker (scalarTaylorJetMap doubleZero N)) = min N 2 :=
+  finrank_ker_scalarTaylorJetMap doubleZero 2 doubleZero_order N
+
+-- The first retained nonzero convolution coefficient has the correct complex scalar and index.
+example (a b c : ℂ) : scalarTaylorJetMap doubleZero 3 ![a,b,c] = ![0,0,I*a] := by
+  funext k
+  rw [scalarTaylorJetMap_apply_eq_sum]
+  fin_cases k <;> norm_num [doubleZero,unitTail,PowerSeries.coeff_mul,PowerSeries.coeff_X,
+    Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk,PowerSeries.coeff_X_pow,Finset.sum_range_succ,PowerSeries.coeff_C]
+
+-- Multiplication and intermediate truncation give the same finite convolution operator.
+example (N : ℕ) : (scalarTaylorJetMap (PowerSeries.X^2) N).comp (scalarTaylorJetMap unitTail N) =
+    scalarTaylorJetMap doubleZero N := (scalarTaylorJetMap_mul _ _ N).symm
+
+-- A genuine complex formal unit acts bijectively at every finite length.
+example (N : ℕ) : Function.Bijective (scalarTaylorJetMap (PowerSeries.C I) N) := by
+  apply scalarTaylorJetMap_bijective_of_isUnit
+  exact (isUnit_iff_ne_zero.mpr I_ne_zero).map PowerSeries.C
+
+-- Diagonal orders two and three have finite nullity min(N,2)+min(N,3), stabilizing at five.
+example (N : ℕ) :
+    Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap !![doubleZero,0;0,PowerSeries.X^3] N)) = min N 2+min N 3 :=
+  finrank_ker_matrixTaylorJetMap_diagonal doubleZero (PowerSeries.X^3) 2 3
+    doubleZero_order (PowerSeries.order_X_pow 3) N
+
+example : Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap !![doubleZero,0;0,PowerSeries.X^3] 7)) = 5 := by
+  rw [finrank_ker_matrixTaylorJetMap_diagonal doubleZero (PowerSeries.X^3) 2 3 doubleZero_order (PowerSeries.order_X_pow 3)]
+  norm_num
+
+-- The scalar analytic theorem computes the order of an actual analytic germ, with no assumed Taylor coefficients.
+example : ∃ p : FormalMultilinearSeries ℂ ℂ ℂ,
+    HasFPowerSeriesAt (fun z : ℂ => z^3*(1+z)) p 0 ∧ ∀ N : ℕ,
+      Module.finrank ℂ (LinearMap.ker (scalarTaylorJetMap (scalarFormalTaylor p) N)) = min N 3 := by
+  have ha : AnalyticAt ℂ (fun z : ℂ => z^3*(1+z)) 0 := by fun_prop
+  have ho : analyticOrderAt (fun z : ℂ => z^3*(1+z)) 0 = 3 := by
+    have hid : AnalyticAt ℂ (fun z : ℂ => z) 0 := analyticAt_id
+    have huA : AnalyticAt ℂ (fun z : ℂ => 1+z) 0 := analyticAt_const.add hid
+    have he := analyticOrderAt_mul (hid.pow 3) huA
+    have hi : analyticOrderAt (fun z : ℂ => z) 0 = 1 := analyticOrderAt_id
+    have hu : analyticOrderAt (fun z : ℂ => 1+z) 0 = 0 := analyticOrderAt_eq_zero.mpr (Or.inr (by norm_num))
+    calc
+      _ = analyticOrderAt ((fun z : ℂ => z)^3) 0+analyticOrderAt (fun z : ℂ => 1+z) 0 := by
+        convert! he using 1
+      _ = 3 := by rw [analyticOrderAt_pow hid,hi,hu]; norm_num
+  obtain ⟨p,hp⟩ := ha
+  exact ⟨p,hp,fun N => finrank_scalarTaylorKernel_of_analyticOrder hp 3 ho N⟩
+
+-- Infinite analytic order is handled separately: every input coefficient is in the kernel.
+example (N : ℕ) : Module.finrank ℂ (LinearMap.ker
+    (scalarTaylorJetMap (scalarFormalTaylor (constFormalMultilinearSeries ℂ ℂ (0 : ℂ))) N)) = N := by
+  apply finrank_scalarTaylorKernel_of_analyticOrder_top (f := fun _ : ℂ => 0) (z := 0) hasFPowerSeriesAt_const
+  exact analyticOrderAt_eq_top.mpr (Filter.Eventually.of_forall (fun _ => rfl))
+
+end
+end ScalarFormalJetChecks
+
+namespace BoundaryJetChecks
+open Set Complex Matrix NLS.LinearVolterra NLS.ZakharovShabat NLS.ComplexAnalysis
+noncomputable section
+
+-- The genuine triangular chain also lies in the formal-matrix kernel used by the determinant-order calculation.
+example : ![((1 : ℂ),0),(0,1)] ∈ LinearMap.ker
+    (matrixTaylorJetMap (classicalBoundaryFormalMatrix triangular 0 1) 2) := by
+  rw [← finiteBoundaryJetMap_eq_matrixTaylorJetMap]
+  exact triangular_jet_kernel
+
+end
+end BoundaryJetChecks

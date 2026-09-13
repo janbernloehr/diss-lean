@@ -460,3 +460,8 @@ import NLS.ZakharovShabat.OriginalChainLinearity
 import NLS.ZakharovShabat.BoundaryJetRootEquivalence
 import NLS.ZakharovShabat.BoundaryJetMultiplicity
 import NLS.ZakharovShabat.BoundaryJetFreeMultiplicity
+import NLS.ComplexAnalysis.FinitePowerSeriesJets
+import NLS.ComplexAnalysis.ScalarTaylorJetNullity
+import NLS.ComplexAnalysis.AnalyticScalarJetOrder
+import NLS.ComplexAnalysis.MatrixTaylorJets
+import NLS.ZakharovShabat.ClassicalBoundaryFormalJets

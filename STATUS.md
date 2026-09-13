@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 512 modules and 3792 named public theorems. All compile on the
+The library has 517 modules and 3828 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.FinitePowerSeriesJets` | Formal extension and restriction of finite scalar jets, order-based truncation, exact Taylor convolution, multiplicative composition, and invertibility for formal units |
+| `NLS.ComplexAnalysis.ScalarTaylorJetNullity` | Scalar kernel as a prefix-vanishing subspace, exact nullity `min(N,m)`, eventual order recovery, and the identically zero series |
+| `NLS.ComplexAnalysis.AnalyticScalarJetOrder` | Equality of formal Taylor order and analytic vanishing order, exact finite and eventual scalar analytic nullities, including infinite-order germs |
+| `NLS.ComplexAnalysis.MatrixTaylorJets` | Two-by-two formal Taylor action, linear splitting of diagonal kernels, exact diagonal nullities, and eventual diagonal determinant order |
+| `NLS.ZakharovShabat.ClassicalBoundaryFormalJets` | Formal entries from actual convergent boundary coefficients, exact equality of the formal matrix action and original finite boundary map, and identical nullities |
 | `NLS.ZakharovShabat.OriginalChainLinearity` | Physical evaluation additivity and complex scaling, linearity of every original parity-chain level, and linear alternating initial-jet conversion |
 | `NLS.ZakharovShabat.BoundaryJetRootEquivalence` | Linear original domain reconstruction, exact physical curve and initial value, and linear equivalence of finite Taylor kernels with original finite parity root spaces |
 | `NLS.ZakharovShabat.BoundaryJetMultiplicity` | Equality of nullity and original root dimension at every length, monotonicity, dimension bounds, and eventual equality with full original parity algebraic multiplicity |
@@ -4703,10 +4708,46 @@ dimension as the vanishing order of the actual boundary determinant. Entire
 normalization and extension beyond continuously represented Hilbert potentials
 remain open.
 
+## Section 8: scalar orders and formal boundary Taylor systems
+
+`FinitePowerSeriesJets` extends finite complex coefficient vectors by zero
+and restricts formal series to their first coefficients. An order bound is
+equivalent to vanishing of every retained coefficient. Intermediate truncation
+preserves finite multiplication, so formal products act by composition and
+formal units act bijectively on every finite Taylor space.
+
+`ScalarTaylorJetNullity` identifies the kernel of multiplication by a scalar
+series of order `m` with the subspace whose first `N-m` coefficients vanish.
+Its dimension is exactly `min(N,m)`, hence equals `m` once `N≥m`. The zero
+series has nullity `N` at every length.
+
+`AnalyticScalarJetOrder` proves that the ordinary coefficients of a convergent
+multilinear Taylor series have formal order equal to the analytic vanishing
+order. Coefficient vanishing is equivalent to iterated-derivative vanishing,
+with the factorial retained. This gives exact scalar analytic nullities at
+every length, including full nullity for an infinite-order germ.
+
+`MatrixTaylorJets` defines the two-by-two formal matrix action on finite
+pair-valued coefficient vectors. A diagonal system has a kernel linearly
+equivalent to the product of its scalar kernels. Its exact nullity is
+`min(N,a)+min(N,b)`, and its eventual nullity equals the formal determinant
+order when both diagonal entries are nonzero.
+
+`ClassicalBoundaryFormalJets` takes its formal entries from the actual
+convergent monodromy boundary Taylor series. The resulting finite formal
+matrix action equals the existing boundary map exactly at every length,
+so the previously proved original multiplicity comparison applies to these
+formal systems directly.
+
+General two-by-two reduction preserving finite nullities, identification of
+the formal determinant with the analytic determinant Taylor series, and the
+resulting full determinant-order comparison remain open. The diagonal result
+is not yet a proof for arbitrary boundary matrices.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7753 declarations under `NLS`, including generated
+axioms. The current audit covers 7839 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5761,6 +5802,13 @@ They exercise the inverse identity on that generalized vector. Free nullity
 checks cover every positive length, negative odd indices in both boundary
 parities, and the zero-length system with an arbitrary multiplier.
 
+Formal-Taylor checks use a double zero multiplied by a nonconstant unit tail
+with constant coefficient `i`, verify the retained complex convolution
+coefficient, and check multiplication with intermediate truncation. They cover
+unit bijectivity, diagonal orders two and three, the analytic germ `z³(1+z)`,
+the identically zero germ, and the genuine triangular boundary jet under the
+formal matrix representation.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5792,7 +5840,10 @@ parities, and the zero-length system with an arbitrary multiplier.
    directions to the kernels of the actual finite boundary Taylor equations.
    This correspondence is now a complex linear equivalence, and all finite
    nullities eventually equal the full original parity algebraic multiplicity.
-   Next compute the eventual kernel dimension as the boundary determinant order.
+   Scalar Taylor kernels now recover the exact analytic vanishing order,
+   and diagonal formal matrices have eventual nullity equal to determinant
+   order. The actual boundary maps equal their formal matrix Taylor actions.
+   Next prove general matrix reduction and determinant Taylor compatibility.
    Equality of classical and original algebraic multiplicities
    remains open. The classical boundary determinants have the required compatibility, but
    their equality with the infinite spectral products and extension to finite-p
