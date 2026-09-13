@@ -256,3 +256,11 @@ import NLS.ZakharovShabat.UnweightedEvenCorrection
 import NLS.ZakharovShabat.ComplementaryRowEstimate
 import NLS.ZakharovShabat.ResonantDiagonalEstimate
 import NLS.ZakharovShabat.ResonantDiagonalSup
+import NLS.SequenceSpaces.ConvolutionRows
+import NLS.SequenceSpaces.ConvolutionRowTails
+import NLS.SequenceSpaces.PuncturedLatticeTail
+import NLS.ZakharovShabat.ReciprocalRowSummation
+import NLS.ZakharovShabat.DiagonalSummationExponent
+import NLS.ZakharovShabat.DiagonalSupSummability
+import NLS.ZakharovShabat.DiagonalTailPower
+import NLS.ZakharovShabat.DiagonalSummability

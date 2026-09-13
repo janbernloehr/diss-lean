@@ -584,7 +584,11 @@ installation is absent. No shell startup files are modified.
   source coefficients, including at strip centers and boundaries. The diagonal
   coefficient and its actual full-strip supremum now satisfy the source's
   Hölder bound with the exact reciprocal sum and unweighted potential norms.
-  Summation over frequencies and the coefficient tail estimates remain next.
+  Lemma 6.8(i) is now proved for every finite `p>1`: the actual diagonal
+  suprema have a summable `p`-power tail, bounded using the unweighted pair
+  norm, the `N/2` Fourier tail, and decay `N^(-min(1,p-1))`. One cutoff and
+  open convex potential neighborhood work for every larger tail cutoff.
+  The off-diagonal remainder estimates in Lemma 6.8(ii) remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

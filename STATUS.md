@@ -2,11 +2,19 @@
 
 ## Implemented and checked
 
-The library has 308 modules and 2729 named public theorems. All compile on the
+The library has 316 modules and 2758 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.ConvolutionRows` | Powered Young sequence of convolution row norms and contractive extraction at twice the frequency |
+| `NLS.SequenceSpaces.ConvolutionRowTails` | Exact distant-frequency support split and outer norm majorant retaining both tails |
+| `NLS.SequenceSpaces.PuncturedLatticeTail` | Explicit reciprocal-tail decay and compatible full reciprocal norm bound |
+| `NLS.ZakharovShabat.ReciprocalRowSummation` | Signed reciprocal row reindexing, inner exponent inclusion, and outer sequence tail majorants |
+| `NLS.ZakharovShabat.DiagonalSummationExponent` | Common inner exponent for both regimes and exact source decay exponent |
+| `NLS.ZakharovShabat.DiagonalSupSummability` | Actual full-strip supremum tails in lp, with locally uniform quantitative norm bounds |
+| `NLS.ZakharovShabat.DiagonalTailPower` | Explicit exponent-only constant and quantitative diagonal p-power tail inequality |
+| `NLS.ZakharovShabat.DiagonalSummability` | Lemma 6.8(i): convergent actual diagonal sum and source unweighted pair bound, uniformly for all larger cutoffs |
 | `NLS.SequenceSpaces.Basic` | Integer-indexed complex `lp` coefficients |
 | `NLS.SequenceSpaces.TestDuality` | Complex bilinear `lp × l1` testing, absolute convergence, norm bound, and continuous coefficient-to-dual map |
 | `NLS.Fourier.SchwartzSampling` | Signed half-integer samples in `l1`, controlled by a finite family of genuine Schwartz seminorms |
@@ -2909,7 +2917,7 @@ the actual scalar `HasSum` statements: `a_n` is the sum of the odd terms
 strictly positive even terms `T_n²(T_n²)^j Φe_n∓`. All results hold for
 arbitrary complex potentials and every finite Banach exponent under the
 existing shifted-square hypothesis. The even-vector bounds and analytic
-dependence are proved below; Lemma 6.8's summability estimates remain open.
+dependence and diagonal summability are proved below; Lemma 6.8(ii) remains open.
 
 ### Lemma 6.8: uniform even-vector bounds and approximation
 
@@ -2938,7 +2946,7 @@ cutoff `N≥1`, give these bounds throughout every full closed strip with
 `|n|≥N`. Both vector errors are bounded by `2·2⁻ᵐ (‖φ‖+1)` on that entire
 parameter set. An epsilon-form theorem proves that one truncation length
 works for both vectors, every potential in this neighborhood, and all those
-strips. The scalar coefficient summability estimates in Lemma 6.8 remain
+strips. The off-diagonal coefficient summability estimates in Lemma 6.8(ii) remain
 open; analytic dependence is proved below.
 
 ### Lemma 6.8: analytic dependence of the actual resonant coefficients
@@ -2979,7 +2987,8 @@ cutoff `N≥1`, give joint analyticity over its product with each closed strip
 agreement with all three original source coefficients on that entire set.
 Restricting the joint result to a fixed potential gives the analytic assertion
 of Lemma 6.8. The argument works for every finite Banach exponent, including
-`p=1`; Lemma 6.8's scalar summability estimates are still unproved.
+`p=1`; the diagonal summability estimate for `p>1` is proved below, while
+the off-diagonal estimates in (ii) remain unproved.
 
 ### Lemma 6.8(i): diagonal row and full-strip supremum estimates
 
@@ -3015,14 +3024,43 @@ supremum of the actual coefficient norm over the entire unbounded closed
 strip. The uniform pointwise estimate proves that image bounded, that the
 supremum dominates every actual coefficient value, and that it is nonnegative
 and bounded by the same reciprocal expression. All these conclusions share
-one open convex potential neighborhood and one cutoff. The sum over large
-frequencies and the quantitative tail decay in Lemma 6.8(i) remain unproved,
-as do the off-diagonal summability estimates in (ii).
+one open convex potential neighborhood and one cutoff. The diagonal sum and
+quantitative tail decay are now proved below; the off-diagonal estimates
+in (ii) remain unproved.
+
+### Lemma 6.8(i): quantitative diagonal summability
+
+`ConvolutionRows` applies powered Young to construct an actual `ℓ^p` sequence
+of inner row norms. Contractive exponent inclusion permits the common inner
+exponent `r=min(p,p')`, and extraction at `2n` does not increase the outer norm.
+`ConvolutionRowTails` proves the exact support split: when `|n|≥N`, either the
+kernel index has magnitude at least `N`, or the potential index does. Thus
+the majorant norm is at most `‖a‖‖R_N L_r‖ + ‖R_N a‖‖L_r‖`.
+
+`ReciprocalRowSummation` identifies the physical reciprocal row norms with
+these convolution rows. The signed reindexing preserves norms; it does not
+assert equality of complex coefficients with opposite reciprocal signs.
+`PuncturedLatticeTail` uses Appendix B.1 to prove
+`‖R_N L_r‖ ≤ 4s N^(-1/s)` and `‖L_r‖ ≤ 4s`, where `s` is conjugate to `r`.
+`DiagonalSummationExponent` shows `p/s=min(1,p-1)` and `s≤max(p,p')`.
+
+`DiagonalSupSummability` constructs the actual diagonal supremum tail in
+`ℓ^p` by domination, with bound
+`8s ‖φ_-‖_p (‖φ_+‖_p N^(-1/s) + ‖R_N φ_+‖_p)`.
+`DiagonalTailPower` raises this estimate to `p` and proves the quantitative
+sum bound with explicit constant `c_p=(8 max(p,p'))^p 2^(p-1)`.
+`DiagonalSummability` separately proves convergence of the power series,
+then bounds component norms by the exact unweighted pair norm and enlarges
+the tail from `N` to `N/2`. Its theorem `exists_uniform_diagonalSummability`
+is Lemma 6.8(i): one cutoff and open convex potential neighborhood containing
+both the given potential and zero work for every larger cutoff. The bound is
+`c_p ‖φ‖_p^p (‖φ‖_p^p/N^min(1,p-1) + ‖R_(N/2) φ‖_p^p)`.
+The source range `1<p<∞` is retained; no endpoint summability is asserted.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5560 declarations under `NLS`, including generated
+axioms. The current audit covers 5606 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3736,10 +3774,18 @@ Checks instantiate the row bounds at `p=1` and the exact reciprocal-sum
 formula at `p=3/2`. The full-strip supremum is proved strictly positive for
 an actual complex potential at arbitrarily distant positive real centers.
 
+Diagonal-summability checks retain negative cutoff-boundary kernel modes and
+complex phases, and exercise the low-kernel potential-tail contribution at a
+negative resonance. They recover the decay powers `1/2` and `1` at `p=3/2`
+and `p=3`, evaluate the Hilbert constant as `512`, and check an odd half-cutoff
+under `w(0)=2`. The full locally uniform source inequality is instantiated
+below two; a separate cubic-tail check establishes summability of the actual
+supremum sequence above two.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the coefficient summability estimates in Lemma 6.8, then continue
+2. Prove the off-diagonal remainder estimates in Lemma 6.8(ii), then continue
    the refined eigenvalue and weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved

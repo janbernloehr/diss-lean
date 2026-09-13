@@ -1015,17 +1015,22 @@ infinity norm. The actual full-strip supremum is defined, bounded by this
 same expression, and dominates all original coefficient values, uniformly
 on one potential neighborhood and every distant closed strip.
 
-Next, sum the diagonal reciprocal-row bounds over `|n|≥N` to finish
-Lemma 6.8(i). Split reciprocal indices at half the frequency into distant
-indices and potential tails; retain the decay `N^(-min(1,p-1))`.
-A common route for both exponent ranges is to put `r=min(p,p')`, use
-contractive exponent inclusion to bound the conjugate row by its `ℓ^r`
-norm, then apply `PowerYoung` with exponents `(p,r,p,r)`. After reindexing,
-the row norm is a convolution-root sequence evaluated at `2n`; the existing
-`PeriodDoubling` extraction controls this subsequence. Splitting the kernel
-at a fixed half-cutoff separates a small reciprocal tail from a potential
-tail. The cases `p≥2` and `1<p<2` then identify the stated decay power.
-Then treat the second-iterate off-diagonal remainders using the three index
-regions and B.3, and continue the refined eigenvalue and weighted-gap
-estimates toward Propositions 6.1 and 6.3.
+Lemma 6.8(i) is now proved. Powered Young with inner exponent `min(p,p')`
+constructs an outer `ℓ^p` sequence of reciprocal row norms. Contractive
+exponent inclusion treats both sides of two. At the sampled frequency `2n`,
+the exact support split at `N` separates a reciprocal tail from a potential
+tail; this even improves the intermediate potential cutoff from `N/2` to `N`.
+Appendix B.1 bounds the reciprocal tail, and the inner conjugate identity
+produces the exact power `min(1,p-1)` after raising to `p`.
+
+The actual full-strip supremum tail is an `ℓ^p` sequence. Its power series
+converges and obeys the printed bound with the unweighted source pair norm
+and `N/2` tail, with explicit constant `(8 max(p,p'))^p 2^(p-1)`.
+All cutoffs beyond one threshold work uniformly on an open convex potential
+neighborhood containing the given potential and zero. The source range
+`1<p<∞` is retained for this summability result.
+
+Next, treat the second-iterate off-diagonal remainders in Lemma 6.8(ii)
+using the three index regions and B.3, then continue the refined eigenvalue
+and weighted-gap estimates toward Propositions 6.1 and 6.3.
 The printed general-`p` central-height constant remains a separate open item.

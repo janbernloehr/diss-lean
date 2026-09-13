@@ -8025,3 +8025,76 @@ example (w : SpectralWeight) (M : ℕ) :
   exact ⟨n, hnM, (norm_pos_iff.mpr hne).trans_le hv⟩
 
 end DiagonalEstimateChecks
+
+section DiagonalSummabilityChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem summabilityHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem summabilityHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨summabilityHalfAboveOne.le⟩
+
+-- The negative cutoff boundary belongs to the kernel tail, with the complex phase intact.
+example : Coeff.convolutionRow (lp.single 3 (-2) Complex.I)
+    (Coeff.fourierTail 2 (lp.single 2 (-2) (1 : ℂ))) (-4) (-2) = Complex.I := by
+  norm_num [Coeff.convolutionRow_apply, Coeff.fourierTail_apply, lp.single_apply]
+
+-- The low-kernel part sees a distant potential mode, also at a negative resonance.
+example : Coeff.convolutionRow (Coeff.fourierTail 2 (lp.single 3 (-3) Complex.I))
+    (Coeff.truncate (Coeff.lowFrequencies 2) (lp.single 2 (-1) (2 : ℂ))) (-4) (-1) = 2*Complex.I := by
+  norm_num [Coeff.convolutionRow_apply, Coeff.fourierTail_apply, Coeff.truncate_apply,
+    Coeff.mem_lowFrequencies, lp.single_apply, mul_comm]
+
+-- Below two, raising the reciprocal decay gives p-1=1/2.
+example : ∃ s : ℝ, s.HolderConjugate (diagonalInnerExponent (3/2)).toReal ∧ (3/2 : ℝ)/s = 1/2 := by
+  obtain ⟨s, hc, _, he⟩ := exists_diagonalInnerConjugate summabilityHalfFinite summabilityHalfAboveOne
+  refine ⟨s, hc, ?_⟩
+  norm_num at he ⊢
+  exact he
+
+-- Above two, the decay saturates at one.
+example : ∃ s : ℝ, s.HolderConjugate (diagonalInnerExponent 3).toReal ∧ (3 : ℝ)/s = 1 := by
+  obtain ⟨s, hc, _, he⟩ := exists_diagonalInnerConjugate (p := 3) (by norm_num) (by norm_num)
+  refine ⟨s, hc, ?_⟩
+  norm_num at he ⊢
+  exact he
+
+-- The Hilbert constant can be evaluated numerically.
+example : diagonalSummationConstant 2 = 512 := by
+  have he : (2 : ℝ≥0∞).conjExponent = 2 := ENNReal.HolderConjugate.conjExponent_eq
+  norm_num [diagonalSummationConstant, he, Real.rpow_natCast]
+
+-- An odd cutoff uses floor(N/2), and a non-unit weight still gives the unweighted pair tail.
+example (φ : WeightedCoeffPair (SpectralWeight.constant 2 (by norm_num)).toWeight 3) :
+    ‖Coeff.fourierTail 5 ((SpectralWeight.constant 2 (by norm_num)).toCoeff φ.snd)‖ ≤
+      ‖weightedPairFourierTail SpectralWeight.one.toWeight 2
+        ((SpectralWeight.constant 2 (by norm_num)).forgetPairWeight φ)‖ :=
+  norm_diagonal_componentTail_le _ φ 5
+
+-- The complete source inequality below two is uniform in the potential and every larger cutoff.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (3/2)) :
+    ∃ N₀ : ℕ, 1 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight (3/2)),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        Summable (fun n : ℤ => if N ≤ n.natAbs then (resonantDiagonalSup summabilityHalfFinite w ψ n)^(3/2 : ℝ) else 0) ∧
+        (∑' n : ℤ, if N ≤ n.natAbs then (resonantDiagonalSup summabilityHalfFinite w ψ n)^(3/2 : ℝ) else 0) ≤
+          diagonalSummationConstant (3/2) * ‖w.forgetPairWeight ψ‖^(3/2 : ℝ) *
+            (‖w.forgetPairWeight ψ‖^(3/2 : ℝ) / (N : ℝ)^(1/2 : ℝ) +
+              ‖weightedPairFourierTail SpectralWeight.one.toWeight (N/2) (w.forgetPairWeight ψ)‖^(3/2 : ℝ)) := by
+  have h := exists_uniform_diagonalSummability summabilityHalfFinite summabilityHalfAboveOne w φ
+  norm_num at h ⊢
+  exact h
+
+-- Above two the original diagonal, not merely its row majorant, has a convergent cubic tail.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 1 ≤ N ∧ Summable (fun n : ℤ =>
+      if N ≤ n.natAbs then (resonantDiagonalSup (by norm_num) w φ n)^(3 : ℝ) else 0) := by
+  obtain ⟨N, hN, _, _, _, hφ, _, hb⟩ :=
+    exists_uniform_diagonalSummability (p := 3) (by norm_num) (by norm_num) w φ
+  refine ⟨N, hN, ?_⟩
+  simpa using (hb φ hφ N le_rfl).1
+
+end DiagonalSummabilityChecks
