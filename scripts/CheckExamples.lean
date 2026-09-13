@@ -8815,3 +8815,95 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
   exact ⟨N,hN,ξ,η,fun n hn => (hr n hn).2.2.2.2.2.1,hs⟩
 
 end RootGapSumChecks
+
+namespace PeriodicRootBridgeChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (2 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem bridgeHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem bridgeHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨bridgeHalfAboveOne.le⟩
+private def bridgeWeight : SpectralWeight := SpectralWeight.constant 2 (by norm_num)
+private def bridgePotential : WeightedCoeffPair bridgeWeight.toWeight 3 :=
+  singleResonantPotential bridgeWeight (-7) Complex.I 2
+
+-- An actual complex single-mode determinant at a negative resonance detects the original spectrum.
+example (z : ℂ) (hz : z ∈ resonantStrip (-7))
+    (hw : ‖weightedPotentialSquareInShift (by norm_num) bridgeWeight bridgePotential (-7) z hz‖ < 1)
+    (h1 : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one
+      (bridgeWeight.forgetPairWeight bridgePotential) (-7) z hz‖ < 1) :
+    z ∈ periodicSpectrum (by norm_num) (weightedBaseToPair bridgeWeight bridgePotential) ↔
+      (z-(Real.pi : ℂ)*(-7 : ℤ))^2-2*Complex.I = 0 := by
+  rw [mem_periodicSpectrum_iff_weightedDeterminant_zero (by norm_num) bridgeWeight bridgePotential (-7) z hz hw h1]
+  rw [show bridgePotential = singleResonantPotential bridgeWeight (-7) Complex.I 2 from rfl,
+    resonantDeterminant_singleResonantPotential (by norm_num) bridgeWeight (-7) Complex.I 2 z hz hw]
+
+-- A repeated value has spectral algebraic multiplicity two, not merely analytic order two.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (x : ℂ)
+    (h : PeriodicResonantPair (by norm_num) w φ (-7) x x) :
+    periodicAlgebraicMultiplicity (by norm_num) (weightedBaseToPair w φ) x = 2 := by
+  simpa using h.multiplicity_eq_count x (refinedResonantDisk_subset_strip (-7) h.left_mem)
+
+-- Two distinct values each have algebraic multiplicity one.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (x y : ℂ) (hxy : x ≠ y)
+    (h : PeriodicResonantPair (by norm_num) w φ (-7) x y) :
+    periodicAlgebraicMultiplicity (by norm_num) (weightedBaseToPair w φ) x = 1 ∧
+      periodicAlgebraicMultiplicity (by norm_num) (weightedBaseToPair w φ) y = 1 := by
+  constructor
+  · simpa [hxy] using h.multiplicity_eq_count x (refinedResonantDisk_subset_strip (-7) h.left_mem)
+  · simpa [hxy, Ne.symm hxy] using h.multiplicity_eq_count y (refinedResonantDisk_subset_strip (-7) h.right_mem)
+
+-- The squared-gap formula handles a nonreal gap above exponent two without a branch choice.
+example : ‖(3*Complex.I)^2‖^((3 : ℝ)/2) = 27 := by
+  rw [norm_sq_rpow_half]
+  norm_num
+
+-- The original free squared gap vanishes even at a negative boundary with w(0)=2 and p=3/2.
+example : periodicGapPowerTail bridgeHalfFinite bridgeWeight 0 7 (-7) = 0 := by
+  simp [periodicGapPowerTail, periodicMidpoint_squaredGap_zero, ENNReal.toReal_div]
+
+-- On one neighborhood, every large strip identifies scalar and spectral multiplicities below two.
+example (φ : WeightedCoeffPair bridgeWeight.toWeight (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair bridgeWeight.toWeight (3/2)),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ n : ℤ, N₀ ≤ n.natAbs →
+        ∀ z ∈ resonantStrip n,
+          analyticOrderNatAt (resonantDeterminantExtension bridgeHalfFinite bridgeWeight ψ n) z =
+            periodicAlgebraicMultiplicity bridgeHalfFinite (weightedBaseToPair bridgeWeight ψ) z := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hroots⟩ := exists_uniform_periodicRoots_with_power_sums
+    bridgeHalfFinite bridgeHalfAboveOne bridgeWeight φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ n hn
+  obtain ⟨ξ,η,hpair,_⟩ := hroots ψ hψ
+  exact (hpair n hn).analyticOrder_eq_multiplicity
+
+-- Above two, the original spectral pair has both corrected convergent quantitative tails.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ ξ η : ℤ → ℂ,
+      (∀ n : ℤ, N₀ ≤ n.natAbs → PeriodicResonantPair (by norm_num) w φ n (ξ n) (η n)) ∧
+      ∀ N : ℕ, N₀ ≤ N → Summable (rootDisplacementPowerTail 3 N ξ η) ∧
+        (∑' n : ℤ, rootDisplacementPowerTail 3 N ξ η n) ≤ rootDisplacementBudget w φ N ∧
+        Summable (rootGapPowerTail 3 w N ξ η) ∧
+        (∑' n : ℤ, rootGapPowerTail 3 w N ξ η n) ≤ rootGapBudget w φ N := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hroots⟩ := exists_uniform_periodicRoots_with_power_sums (p := 3) (by norm_num) (by norm_num) w φ
+  exact ⟨N,hN,hroots φ hφ⟩
+
+-- The p=3/2 intrinsic contour-gap series has the precise N^(-1/2) remainder decay.
+example (φ : WeightedCoeffPair bridgeWeight.toWeight (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      Summable (periodicGapPowerTail bridgeHalfFinite bridgeWeight φ N) ∧
+      (∑' n : ℤ, periodicGapPowerTail bridgeHalfFinite bridgeWeight φ N n) ≤ rootGapSummationConstant (3/2) *
+        (‖weightedPairFourierTail bridgeWeight.toWeight (N/2) φ‖^(3/2 : ℝ) +
+          offDiagonalSummationConstant (3/2) * ‖φ‖^(3/2 : ℝ) *
+            (‖φ‖^(3 : ℝ)/(N : ℝ)^(1/2 : ℝ) + ‖weightedPairFourierTail bridgeWeight.toWeight (N/2) φ‖^(3 : ℝ))) := by
+  obtain ⟨N,hN,_,_,_,hφ,_,htail⟩ := exists_uniform_periodicGapSummability bridgeHalfFinite bridgeHalfAboveOne bridgeWeight φ
+  refine ⟨N,hN,?_⟩
+  intro K hK
+  have ht := htail φ hφ K hK
+  norm_num [rootGapBudget, ENNReal.toReal_div] at ht ⊢
+  exact ht
+
+end PeriodicRootBridgeChecks

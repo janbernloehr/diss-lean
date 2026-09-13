@@ -617,8 +617,14 @@ installation is absent. No shell startup files are modified.
   The same roots now also have convergent weighted gap power tails for every
   larger cutoff. Their bound retains the leading weighted Fourier tail and
   uses only the off-diagonal remainder estimate, with an explicit exponent-only
-  constant. This proves the corrected scalar-root estimate toward Proposition
-  6.3; the connection to the original periodic spectral labels remains open.
+  constant. The weighted determinant now agrees with the original periodic
+  spectrum, and each scalar analytic order equals the corresponding spectral
+  algebraic multiplicity in distant strips. The same two actual periodic
+  eigenvalues have both corrected power sums; their midpoint and squared gap
+  agree with the intrinsic contour invariants. The weighted gap estimate is
+  also proved directly for that intrinsic squared-gap sequence, independently
+  of root ordering. This gives corrected forms of Propositions 6.1 and 6.3;
+  the literal nonlinear-only printed budgets are not asserted.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

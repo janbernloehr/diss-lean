@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 368 modules and 2950 named public theorems. All compile on the
+The library has 372 modules and 2965 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.UnweightedResonantDeterminant` | Exact weight-forgetting compatibility and locally uniform equivalence of weighted determinant zeros with the original periodic spectrum |
+| `NLS.ZakharovShabat.SpectralRootPair` | Enclosed spectrum equals the scalar pair; algebraic count two identifies its individual spectral multiplicities with scalar analytic orders |
+| `NLS.ZakharovShabat.PeriodicRootSequence` | The same original periodic eigenvalue pair has exact multiplicities, contour invariants, localization, and both corrected power sums, independently of label exchange |
+| `NLS.ZakharovShabat.PeriodicGapSummability` | Corrected weighted gap power sum for the original intrinsic contour-defined squared-gap sequence, locally uniformly for every larger cutoff |
 | `NLS.ZakharovShabat.ResonantGapMajorant` | Weighted product-supremum bound and a branch-free power majorant retaining both leading coefficients and remainders |
 | `NLS.ZakharovShabat.UniformGapMajorant` | Convergent weighted gap majorant tails with a corrected explicit budget, locally uniformly for every larger cutoff |
 | `NLS.ZakharovShabat.RootGapSequence` | The same roots retain exact analytic orders and simultaneous corrected displacement and weighted gap power sums |
@@ -1292,7 +1296,8 @@ free-to-perturbed rank counts are proved. The central boundary is admissible
 as described above. The central projection equals a large-circle integral,
 and its perturbed rank count is now proved. Identification with the actual
 integral over the rectangular boundary is proved below.
-Agreement of multiplicities with characteristic-function zero orders remains open.
+Agreement with the resonant determinant zero orders is now proved on distant
+strips below. A general global characteristic-function identification remains open.
 
 The weighted topology is induced by the weighted `lp` norm. A type synonym
 prevents accidental inheritance of pointwise convergence from raw sequences.
@@ -3397,10 +3402,9 @@ two-sided displacement power tail is genuinely summable and satisfies the
 corrected budget. This holds for every finite `p>1` and every source spectral
 weight, including `w(0)>1`. No continuous root labeling is claimed.
 
-**Remaining scope.** Connect these scalar root sequences to the original
-periodic spectral labels toward Propositions 6.1/6.3. The literal printed
-displacement bound is not asserted; identification with the separate spectral algebraic multiplicities is not
-asserted.
+The original periodic spectral identification and individual algebraic
+multiplicities are now proved below. The literal printed displacement bound
+remains excluded by the source audit.
 
 ## Corrected weighted gap power sums
 
@@ -3428,12 +3432,51 @@ The signed tail includes its boundary and allows nonnormalized weights.
 This is a corrected scalar-root estimate toward Proposition 6.3. Propositions
 6.1 and 6.3 repeat the source's nonlinear-only budget with locally uniform
 cutoffs; those literal displays are not claimed. The bridge to the original
-periodic spectral labels and their algebraic multiplicities remains open.
+periodic spectrum and its algebraic multiplicities is now proved below.
+
+## Original periodic eigenvalue identification and intrinsic gap sums
+
+`UnweightedResonantDeterminant` proves that the actual correction entries,
+and therefore the full scalar determinant, survive forgetting the spectral
+weight. Both complementary inverses must be in their contraction domains;
+the uniform square estimate supplies these hypotheses simultaneously on all
+distant strips. The resulting zero criterion detects the original periodic
+spectrum of the physical coefficient pair for every source weight.
+
+`SpectralRootPair` identifies the enclosed spectral set with the scalar root
+pair. The previously proved spectral algebraic count two and positivity force
+multiplicity one at each distinct value, or multiplicity two when they
+coincide. Therefore each scalar analytic order equals the original spectral
+algebraic multiplicity throughout that distant strip, including zero away
+from the two roots. This is a local high-frequency identification, not a
+claim about arbitrary operator-valued analytic determinants.
+
+`PeriodicResonantPair` packages the exact original strip spectrum, both
+multiplicity descriptions, root localization, and the intrinsic contour
+midpoint and squared gap. The latter are exactly `(ξ+η)/2` and `(ξ-η)²`.
+`exists_uniform_periodicRoots_with_power_sums` gives these pairs together
+with both corrected quantitative power tails on one open convex potential
+neighborhood and cutoff. Any two counted pairs agree up to exchange;
+`periodicRoot_powerTails_eq` allows that exchange independently at every mode.
+No continuous labeling or distinct-root assumption is used.
+
+`periodicGapPowerTail` uses the original contour-defined squared gap directly:
+its nonzero terms are `w_(2n)^p |periodicSquaredGap_n|^(p/2)`.
+`exists_uniform_periodicGapSummability` proves convergence and the corrected
+`rootGapBudget` for every larger cutoff, independently of all root choices.
+Thus the corrected versions of Propositions 6.1 and 6.3 now concern original
+periodic eigenvalues and the intrinsic spectral gap, with the additive
+leading-tail contributions retained.
+
+**Remaining Section 6 scope.** Prove the midpoint power-tail consequence and
+Corollary 6.2's Dirichlet/Neumann asymptotics through the established boundary
+realizations. The original nonlinear-only quantitative displays remain
+excluded; the general-`p` central-height issue is also still open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5953 declarations under `NLS`, including generated
+axioms. The current audit covers 5997 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4226,11 +4269,22 @@ budget, and a four-term estimate above exponent two are checked. Actual
 `p=3` test retains exact analytic orders and both simultaneous quantitative
 power tails for all larger cutoffs.
 
+Periodic bridge checks detect the original spectrum through the actual
+complex single-mode determinant at a negative resonance with `w(0)=2` and
+`p=3`. Repeated and distinct pairs have spectral algebraic multiplicities two
+and one respectively. A nonreal gap checks the squared-modulus power identity,
+and the free intrinsic gap vanishes at a negative cutoff boundary below
+exponent two. At `p=3/2`, one neighborhood identifies analytic and spectral
+multiplicities and the intrinsic gap budget retains `N^(-1/2)`; at `p=3`, the
+actual periodic pair retains both simultaneous quantitative tails.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Connect the scalar roots to the original periodic spectral labels toward
-   Propositions 6.1/6.3. The corrected displacement and weighted gap power sums are proved.
+2. Prove the midpoint sequence consequence and Corollary 6.2's locally uniform
+   Dirichlet/Neumann asymptotics through the boundary realizations. Corrected
+   Propositions 6.1/6.3 now hold for the original periodic eigenvalue pairs and
+   intrinsic squared gaps, with exact spectral algebraic multiplicities.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
@@ -4240,11 +4294,12 @@ power tails for all larger cutoffs.
    as are the finite Fourier approximation and the zero/half coefficient bounds.
    Appendix B.2, its periodic product in A.7, and the displayed B.3 inequality
    are proved.
-3. Develop the remaining nonlinear Fourier/Birkhoff prerequisites and main
-   dissertation results. Both finite and infinity source pair norms and their
-   sharp comparisons are complete.
+3. Continue to the Chapter 2 discriminant, product, and action-coordinate
+   prerequisites, then the remaining nonlinear Fourier/Birkhoff main results.
+   Both finite and infinity source pair norms and their sharp comparisons are
+   complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the connection of the corrected Section 6 scalar-root asymptotics to the
-original periodic spectral labels remains unproved.
+the Section 6 boundary-spectrum consequences and Chapter 2 nonlinear
+coordinate construction remain incomplete.

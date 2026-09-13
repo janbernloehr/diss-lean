@@ -37,7 +37,8 @@
   budget with locally uniform cutoffs. The scalar-root formalization retains
   the additive leading-tail term required by the single-mode audit. Do not
   present these corrected estimates as proofs of the literal printed bounds;
-  the original periodic spectral labels and multiplicities still need a bridge.
+  the original periodic spectral multiplicities are now identified with the
+  scalar analytic orders in all sufficiently distant strips.
 - Preserve `1 < p < ∞` versus `1 < p ≤ 2` hypotheses. Do not assume that the
   Birkhoff map is surjective for `p > 2`.
 - Treat analyticity on a positive cone using an ambient open extension.
@@ -1144,8 +1145,25 @@ remainder majorants. No diagonal term is needed. The same open convex
 neighborhood, signed cutoff, root localization, and exact analytic orders
 support both displacement and weighted gap tails for every larger cutoff.
 
-Next, connect these scalar roots to the original periodic spectral labels for
-Propositions 6.1/6.3, preserving the corrected quantitative budgets.
-Identification of scalar analytic orders with the separate spectral algebraic
-multiplicities has not been asserted. The printed general-`p` central-height
-constant remains a separate open item.
+The bridge to the original periodic spectrum is now proved. Forgetting the
+spectral weight commutes with the complementary inverse, so the weighted and
+unit-weight determinants agree on their common contraction domain. The
+uniform square estimate provides both domains together. On a distant disc,
+the spectral count two and positivity identify each algebraic multiplicity
+with the occurrence count in the scalar pair, hence with its analytic order.
+The contour midpoint and squared gap coincide with the same pair's formulas.
+
+`PeriodicResonantPair` records these original spectral identifications and
+localization bounds. Any two such pairs agree up to exchange, and arbitrary
+modewise label choices give exactly the same displacement and gap tails.
+`exists_uniform_periodicRoots_with_power_sums` retains both quantitative sums
+on the same neighborhood. `exists_uniform_periodicGapSummability` expresses
+the weighted bound directly using the intrinsic contour-defined squared gap,
+via `|γ²|^(p/2)=|γ|^p`. These are corrected original spectral versions of
+Propositions 6.1 and 6.3, with the additive leading Fourier-tail terms retained.
+
+Next, prove the midpoint sequence consequence and the Dirichlet/Neumann
+asymptotics in Corollary 6.2, transferring through the already implemented
+boundary realizations and preserving local uniformity. Then continue to the
+Chapter 2 discriminant, product, and action-coordinate prerequisites. The
+printed general-`p` central-height constant remains a separate open item.

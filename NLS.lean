@@ -316,3 +316,7 @@ import NLS.ZakharovShabat.RootDisplacementSequence
 import NLS.ZakharovShabat.ResonantGapMajorant
 import NLS.ZakharovShabat.UniformGapMajorant
 import NLS.ZakharovShabat.RootGapSequence
+import NLS.ZakharovShabat.UnweightedResonantDeterminant
+import NLS.ZakharovShabat.SpectralRootPair
+import NLS.ZakharovShabat.PeriodicRootSequence
+import NLS.ZakharovShabat.PeriodicGapSummability
