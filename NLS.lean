@@ -392,3 +392,8 @@ import NLS.ZakharovShabat.CanonicalPeriodicProductSmooth
 import NLS.ComplexAnalysis.BanachTaylorBounds
 import NLS.ComplexAnalysis.BanachSmoothAnalytic
 import NLS.ZakharovShabat.CanonicalPeriodicProductAnalytic
+import NLS.ZakharovShabat.FreeParityProducts
+import NLS.ZakharovShabat.EntireSpectralPairProducts
+import NLS.ZakharovShabat.ParitySpectralCutoffs
+import NLS.ZakharovShabat.ParitySpectralProducts
+import NLS.ZakharovShabat.ParitySpectralProductsFree

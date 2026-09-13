@@ -704,7 +704,12 @@ installation is absent. No shell startup files are modified.
   factorial-normalized Fréchet series now has positive convergence radius and
   sums to the product, proving joint Banach-space analyticity. This includes
   weighted potential pullbacks and every mixed iterated derivative.
-  Discriminant identification and the perturbed parity subproducts remain open.
+  Complete paired root sequences with finite-exponent ℓp displacements now
+  also give entire even and odd subproducts, with locally uniform cutoff and
+  derivative convergence on the whole spectral plane. Exact rescaling identities
+  retain the central denominator and asymmetric odd cutoff. The free limits
+  are Δ−2 and Δ+2, with corrected prefactors −1 and 4. Identifying the central
+  parity spectra of actual potentials and their common discriminant remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

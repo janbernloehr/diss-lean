@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 444 modules and 3397 named public theorems. All compile on the
+The library has 449 modules and 3426 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.FreeParityProducts` | Exact translated odd cutoff identity, nonzero reference factors, and whole-plane locally uniform convergence to the free discriminant plus two |
+| `NLS.ZakharovShabat.EntireSpectralPairProducts` | Entire normalized products for complete paired sequences with finite-exponent ℓp displacements, and agreement with the off-lattice formula |
+| `NLS.ZakharovShabat.ParitySpectralCutoffs` | ℓp-preserving affine reindexing, exact even/odd finite cutoff identities, and the odd reference limit |
+| `NLS.ZakharovShabat.ParitySpectralProducts` | Entire even and odd perturbed products and locally uniform cutoff/derivative convergence, including p=1 and lattice points |
+| `NLS.ZakharovShabat.ParitySpectralProductsFree` | Exact free specialization of factors, cutoffs, and entire products; compatibility of the two free discriminant values |
 | `NLS.ComplexAnalysis.BanachTaylorBounds` | Schwarz estimates with fixed radial margins; geometric factorial-normalized Fréchet Taylor bounds; positive convergence radius on complex normed domains |
 | `NLS.ComplexAnalysis.BanachSmoothAnalytic` | Affine-line derivative identity, exact directional Taylor sums, and convergent Banach power series for globally complex smooth scalar-valued maps |
 | `NLS.ZakharovShabat.CanonicalPeriodicProductAnalytic` | Joint Banach-space analyticity of the canonical product, explicit positive-radius Fréchet series, potential and weighted pullbacks, and analyticity of all mixed iterated derivatives |
@@ -4104,13 +4109,42 @@ finite `p>1`, including at colliding roots and all free lattice points. The
 actual Fréchet series is supplied with positive radius and its sum identity.
 Fixed-spectral potential maps and arbitrary weighted base-map pullbacks are
 analytic as well. Every mixed iterated Fréchet derivative is itself analytic.
-The normalized discriminant identification and perturbed parity subproducts
-remain open.
+The normalized discriminant identification remains open; complete-sequence
+parity products are constructed in the next milestone.
+
+## Section 8: entire products for complete parity sequences
+
+`FreeParityProducts` proves the literal odd cutoff identity by shifting the
+spacing-`2π` free product by `π` and dividing by its value at `−π`. The
+reference factors never vanish, and the reference product tends to four.
+Consequently the odd cutoffs with prefactor four converge locally uniformly
+to `Δ_free+2` on the whole plane, including every free lattice point.
+
+`EntireSpectralPairProducts` extends the complete paired root-sequence product
+across the free lattice. For finite `1≤p<∞`, any two sequences with ℓp
+displacements give an entire normalized product and locally uniform polynomial
+convergence. Away from the lattice it agrees with the earlier free-relative
+formula. This construction assumes no actual spectral counting data.
+
+`ParitySpectralCutoffs` proves that `n↦(ξ(2n+j)−πj)/2` preserves the displacement
+hypothesis. Exact finite-product identities retain the original denominator
+one at mode zero. The even cutoff is the rescaled full product; the odd cutoff
+is the negative rescaled full product divided by its half-step reference,
+which tends to one. The literal odd indices remain `−2N+1,…,2N+1`.
+`ParitySpectralProducts` gives both entire limits and locally uniform derivative
+convergence. Repeated roots and roots at free lattice points are permitted.
+
+`ParitySpectralProductsFree` identifies the free specializations with `Δ_free−2`
+and `Δ_free+2`, fixing the corrected prefactors `−1` and `4`. Their discriminant
+values agree at the free potential. For general actual potentials, identifying
+complete central parity root lists, proving joint potential analyticity of the
+parity products, and proving `f+2=g−2` remain open. Arbitrary displaced sequences
+do not imply this compatibility.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6927 declarations under `NLS`, including generated
+axioms. The current audit covers 6985 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5055,14 +5089,21 @@ gets an actual Fréchet power series. Actual `p=3` checks cover joint analyticit
 at the free double zero, a convergent series at negative lattice points,
 arbitrary weighted pullbacks, and analyticity of mixed third derivatives.
 
+Parity-product examples check the normalization at zero, the asymmetric negative
+odd endpoint, nonzero reference denominators at every cutoff, negative-mode
+reindexing, and repeated roots without cancellation. The endpoint `p=1`
+retains entire products and derivative convergence. The free specializations
+have compatible discriminant values and multiply to `Δ_free²−4` everywhere.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Identify the correctly normalized discriminant and construct the perturbed
-   parity subproducts, using the proved joint analytic canonical product.
-   Free full/even symmetric products and the source prefactor audit are proved;
-   complete the odd free-product identity and use the necessary prefactors
-   `-1` and `4`, not the inconsistent displayed `-2` and `2`. Bounded source
+2. Identify the actual central parity spectra and the correctly normalized
+   discriminant, using the proved joint analytic canonical full product.
+   Complete-sequence parity products and the free full/even/odd identities are
+   proved with necessary prefactors `-1` and `4`. Joint potential analyticity
+   and compatibility of the actual parity factors remain to be established.
+   Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient
    and original physical L² potentials. The

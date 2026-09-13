@@ -10291,3 +10291,76 @@ example : AnalyticOnNhd ℂ (iteratedFDeriv ℂ 3
 
 end
 end CanonicalAnalyticChecks
+
+namespace ParityProductChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- The odd cutoff starts at the single root pi, with the required value four at zero.
+example : freeAntiperiodicProduct 0 0 = 4 := by
+  simp [freeAntiperiodicProduct, freeSpectralFactor, Real.pi_ne_zero]
+
+-- The asymmetric negative endpoint for N=2 is -3*pi; it remains a double zero.
+example : freeAntiperiodicProduct (-3*(Real.pi : ℂ)) 2 = 0 := by
+  unfold freeAntiperiodicProduct
+  have hz : (∏ n ∈ Finset.Icc (-(2 : ℤ)) 2,
+      freeSpectralFactor (Real.pi : ℂ) (-3*(Real.pi : ℂ)) (2*n+1)) = 0 := by
+    apply Finset.prod_eq_zero (i := (-2 : ℤ)) (by decide)
+    norm_num [freeSpectralFactor]
+    ring_nf
+  norm_num only [Nat.cast_ofNat]
+  rw [hz, mul_zero]
+
+-- Every reference denominator is nonzero, rather than only eventually nonzero.
+example (N : ℕ) : freeSpectralPartialProduct (2*(Real.pi : ℂ)) (-(Real.pi : ℂ)) N ≠ 0 :=
+  freeSpectralPartialProduct_halfShift_ne_zero _ (Complex.ofReal_ne_zero.mpr Real.pi_ne_zero) N
+
+-- Reindexing the negative odd mode selects -1, not +1.
+example (ξ : ℤ → ℂ) : parityRescale ξ 1 (-1) = (ξ (-1)-(Real.pi : ℂ))/2 := by
+  norm_num [parityRescale]
+
+-- A repeated arbitrary central root keeps the original denominator one.
+example (a z : ℂ) : evenSpectralPairCutoff (fun _ => a) (fun _ => a) z 0 = -(a-z)^2 := by
+  simp [evenSpectralPairCutoff, spectralPairFactor, pow_two]
+
+-- Collision at the negative odd mode causes no invalid cancellation in the quotient.
+example (ξ : ℤ → ℂ) : spectralPairFactor ξ ξ (ξ (-1)) (-1) =
+    spectralPairFactor (parityRescale ξ 1) (parityRescale ξ 1)
+      ((ξ (-1)-(Real.pi : ℂ))/2) (-1) /
+      freeSpectralFactor (Real.pi : ℂ) (-(Real.pi : ℂ)/2) (-1) := by
+  simpa using spectralPairFactor_odd_eq ξ ξ (ξ (-1)) (-1)
+
+-- The exponent-one endpoint supports both entire products across every lattice point.
+example (ξ η : ℤ → ℂ)
+    (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 1)
+    (hη : Memℓp (fun n => η n-(Real.pi : ℂ)*n) 1) :
+    AnalyticOnNhd ℂ (evenSpectralPairProduct ξ η) Set.univ ∧
+    AnalyticOnNhd ℂ (oddSpectralPairProduct ξ η) Set.univ :=
+  ⟨analyticOnNhd_evenSpectralPairProduct (by simp) ξ η hξ hη,
+    analyticOnNhd_oddSpectralPairProduct (by simp) ξ η hξ hη⟩
+
+-- Odd derivative convergence includes the free lattice, with no restriction on root collisions.
+example (ξ η : ℤ → ℂ)
+    (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 1)
+    (hη : Memℓp (fun n => η n-(Real.pi : ℂ)*n) 1) :
+    TendstoLocallyUniformlyOn (fun N => deriv (fun z => oddSpectralPairCutoff ξ η z N))
+      (deriv (oddSpectralPairProduct ξ η)) atTop Set.univ :=
+  (tendstoLocallyUniformlyOn_deriv_paritySpectralProducts (by simp) ξ η hξ hη).2
+
+-- Both corrected free products give the same discriminant on the entire plane.
+example (z : ℂ) :
+    evenSpectralPairProduct (fun k => (Real.pi : ℂ)*k) (fun k => (Real.pi : ℂ)*k) z+2 =
+      oddSpectralPairProduct (fun k => (Real.pi : ℂ)*k) (fun k => (Real.pi : ℂ)*k) z-2 :=
+  paritySpectralPairProducts_free_compatible z
+
+-- Their free product has the full normalization, including at all double roots.
+example (z : ℂ) :
+    evenSpectralPairProduct (fun k => (Real.pi : ℂ)*k) (fun k => (Real.pi : ℂ)*k) z *
+      oddSpectralPairProduct (fun k => (Real.pi : ℂ)*k) (fun k => (Real.pi : ℂ)*k) z =
+        (freeDiscriminant z)^2-4 := by
+  rw [evenSpectralPairProduct_free, oddSpectralPairProduct_free]
+  ring
+
+end
+end ParityProductChecks

@@ -1366,7 +1366,16 @@ sum with the canonical product, yielding its actual joint Fréchet power
 series. Potential and weighted pullbacks and all mixed iterated derivatives
 are analytic as well.
 
-Next, complete the odd free-product identity, the perturbed parity subproducts,
-and identification of the correctly normalized discriminant. Then continue with the anti-discriminant and
-action-coordinate prerequisites.
+The odd free-product identity and complete-sequence perturbed parity products
+are now proved. Affine reindexing preserves finite-exponent ℓp displacements.
+Exact finite cutoff identities keep the zero-mode denominator and the literal
+asymmetric odd interval. The resulting even and odd limits are entire, with
+locally uniform polynomial and derivative convergence, including at p=1 and
+free lattice points. Their free specializations recover Δ−2 and Δ+2 with
+prefactors −1 and 4.
+
+Next, identify complete central parity root lists for actual potentials and
+prove joint potential analyticity and compatibility of their parity products.
+The complete-sequence construction alone does not imply a common discriminant.
+Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
