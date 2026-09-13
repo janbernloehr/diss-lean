@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 462 modules and 3495 named public theorems. All compile on the
+The library has 465 modules and 3507 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ParityCutoffOrders` | Central boxes exhaust the plane; intrinsic parity polynomial orders and eventual exact literal cutoff orders |
+| `NLS.ZakharovShabat.ActualParityProductOrders` | Spectral isolation transfers exact orders to both entire parity products; their product has the full original multiplicity |
+| `NLS.ZakharovShabat.ActualParityProductOrderExistence` | Choice-independent entire parity functions with exact original orders on actual finite-p potential neighborhoods |
 | `NLS.ZakharovShabat.ParityCentralCutoffGrowth` | Nested parity index sets, absorption of counted distant parity pairs, and intrinsic central polynomial identities for completed labels |
 | `NLS.ZakharovShabat.ParityLiteralCutoffs` | Exact even/odd index reindexing, nonzero central parity normalizations, and intrinsic cutoff formulas retaining the odd positive boundary pair |
 | `NLS.ZakharovShabat.ActualParityProductIndependence` | Exact finite cutoff equality and entire product independence for arbitrary admissible central cutoffs and root labels; common entire functions on actual potential neighborhoods |
@@ -4224,8 +4227,8 @@ and their exact zero sets for actual finite p>1 even-supported potentials.
 The source's literal cutoffs and corrected prefactors −1 and 4 are retained.
 Convergence here is locally uniform in the spectral parameter for each fixed
 potential. The following milestone proves independence of central labels and
-cutoff. Exact analytic orders, joint potential analyticity, and discriminant
-compatibility remain to be proved.
+cutoff. Exact analytic orders are proved below; joint potential analyticity
+and discriminant compatibility remain to be proved.
 
 ## Section 8: independence of actual parity products from spectral choices
 
@@ -4253,13 +4256,32 @@ pair is a counted distant pair, hence independent of its label order. Uniqueness
 of locally uniform limits proves equality of both entire parity functions.
 One pair of entire functions serves every admissible central cutoff and root
 labeling on the actual potential neighborhood and retains the exact parity
-zero sets. Exact analytic orders, joint potential analyticity, and discriminant
-compatibility remain open.
+zero sets. The next milestone proves exact analytic orders; joint potential
+analyticity and discriminant compatibility remain open.
+
+## Section 8: exact original parity orders
+
+`ParityCutoffOrders` proves that every fixed complex parameter eventually lies
+inside the doubled central box. A central parity polynomial then has order
+exactly the original parity root-space dimension, with order zero outside the
+spectrum. The normalization constants do not change its order. The retained
+odd boundary pair lies in a distant disk disjoint from the box and contributes
+order zero. Thus both literal cutoff orders eventually equal their original
+parity multiplicities, without excluding lattice points or shared roots.
+
+`ActualParityProductOrders` uses isolation of the full original spectrum and
+Rouché stability to transfer these eventual orders to the entire limits. Their
+extended orders are finite and equal the original parity Jordan multiplicities.
+Multiplication adds the two orders to the full original spectral multiplicity.
+This order statement does not assert equality with the canonical full product
+or identify a discriminant. `ActualParityProductOrderExistence` packages the
+exact orders together with entire analyticity, zero sets, and independence of
+all admissible root labels and central cutoffs on actual potential neighborhoods.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7147 declarations under `NLS`, including generated
+axioms. The current audit covers 7165 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5230,13 +5252,18 @@ and independent admissible cutoffs agree at a filled lattice zero. Entire
 function equality also identifies their derivatives. Actual even-supported
 p=3 potentials supply one pair of functions for all admissible choices.
 
+Parity-order examples check the negative odd free index `-3`, the filled zero
+mode, addition of multiplicities two and three at a shared root, extraction
+of natural orders, and choice-independent exact-order existence for an
+arbitrary actual even-supported p=3 potential.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove exact analytic orders of the entire actual parity products. Their
-   construction, label and cutoff independence, locally uniform spectral
-   convergence, and exact original parity zero sets are proved with necessary
-   prefactors `-1` and `4`. Establish joint potential analyticity and compatibility
+2. The entire actual parity products now have exact original analytic orders,
+   label and cutoff independence, locally uniform spectral convergence, and
+   exact original parity zero sets, with necessary prefactors `-1` and `4`.
+   Establish joint potential analyticity and compatibility
    of the parity factors to identify the correctly normalized discriminant.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type

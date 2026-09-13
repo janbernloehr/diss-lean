@@ -719,7 +719,9 @@ installation is absent. No shell startup files are modified.
   Exact central growth and normalization identities now show that sufficiently
   large literal cutoffs agree for every admissible labeling and central cutoff.
   Thus both entire parity products are independent of those choices, including
-  at roots. Exact analytic orders, joint potential analyticity, and discriminant
+  at roots. Both entire products now have exactly the original parity root-space
+  multiplicities at every point, including the free lattice. Their product has
+  the full spectral multiplicities. Joint potential analyticity and discriminant
   compatibility remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 

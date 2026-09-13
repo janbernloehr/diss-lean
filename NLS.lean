@@ -410,3 +410,6 @@ import NLS.ZakharovShabat.ActualParityProductExistence
 import NLS.ZakharovShabat.ParityCentralCutoffGrowth
 import NLS.ZakharovShabat.ParityLiteralCutoffs
 import NLS.ZakharovShabat.ActualParityProductIndependence
+import NLS.ZakharovShabat.ParityCutoffOrders
+import NLS.ZakharovShabat.ActualParityProductOrders
+import NLS.ZakharovShabat.ActualParityProductOrderExistence

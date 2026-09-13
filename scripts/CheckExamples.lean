@@ -10596,3 +10596,64 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
 
 end
 end ParityIndependenceChecks
+
+namespace ParityOrderChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- At a negative odd free lattice point, the odd product is double and the even product is nonzero.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (hfree : weightedBaseToPair w φ = 0) :
+    analyticOrderAt (evenSpectralPairProduct ξ η) ((Real.pi : ℂ)*(-3 : ℤ)) = 0 ∧
+    analyticOrderAt (oddSpectralPairProduct ξ η) ((Real.pi : ℂ)*(-3 : ℤ)) = 2 := by
+  rw [h.evenProduct_order, h.oddProduct_order, hfree,
+    parityAlgebraicMultiplicity_zero (by simp) 0 (-3),
+    parityAlgebraicMultiplicity_zero (by simp) 1 (-3)]
+  norm_num
+
+-- The filled zero-mode lattice point retains the even double root and odd order zero.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (hfree : weightedBaseToPair w φ = 0) :
+    analyticOrderAt (evenSpectralPairProduct ξ η) 0 = 2 ∧
+    analyticOrderAt (oddSpectralPairProduct ξ η) 0 = 0 := by
+  have he := parityAlgebraicMultiplicity_zero (p := 3) (by simp) 0 0
+  have ho := parityAlgebraicMultiplicity_zero (p := 3) (by simp) 1 0
+  norm_num at he ho
+  rw [h.evenProduct_order, h.oddProduct_order, hfree, he, ho]
+  norm_num
+
+-- At a root shared by both sectors, the product retains the sum of their Jordan multiplicities.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (z : ℂ)
+    (he : parityAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 0 z = 2)
+    (ho : parityAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 1 z = 3) :
+    analyticOrderAt (evenSpectralPairProduct ξ η * oddSpectralPairProduct ξ η) z = 5 := by
+  rw [h.parityProduct_mul_order,
+    periodicAlgebraicMultiplicity_eq_parity_sum (by simp) _ h.even_potential z, he, ho]
+  norm_num
+
+-- Natural orders can be extracted without losing the distinction between finite and infinite orders.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (z : ℂ) :
+    analyticOrderNatAt (oddSpectralPairProduct ξ η) z =
+      parityAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 1 z := by
+  simpa only [analyticOrderNatAt, ENat.toNat_natCast] using congrArg ENat.toNat (h.oddProduct_order z)
+
+-- An arbitrary actual non-Hilbert potential has choice-independent functions with all exact orders.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0) :
+    ∃ f g : ℂ → ℂ,
+      (∀ z : ℂ,
+        analyticOrderAt f z = (parityAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 0 z : ℕ∞) ∧
+        analyticOrderAt g z = (parityAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 1 z : ℕ∞)) ∧
+      ∀ N : ℕ, ∀ ξ η : ℤ → ℂ, CompletePeriodicParityPairs (by simp) w φ N ξ η →
+        evenSpectralPairProduct ξ η = f ∧ oddSpectralPairProduct ξ η = g := by
+  obtain ⟨_,_,U,_,_,hφ,_,h⟩ := exists_uniform_choiceIndependent_actualParityProducts_with_orders
+    (by simp) (by norm_num) w φ
+  obtain ⟨f,g,_,_,_,horders,hall⟩ := h φ hφ heven
+  exact ⟨f,g,horders,hall⟩
+
+end
+end ParityOrderChecks

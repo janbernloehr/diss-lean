@@ -1400,8 +1400,14 @@ sufficiently large finite cutoffs agree exactly for arbitrary admissible
 central cutoffs and root labels, including at spectral zeros. Uniqueness of
 limits gives one pair of entire functions independent of these choices.
 
-Next, prove exact analytic orders for the actual parity products, then joint
-potential analyticity and discriminant compatibility. The product construction
-alone does not imply a common discriminant.
+Exact analytic orders of both actual parity products are now proved. Every
+fixed point eventually lies inside the central box, where the intrinsic parity
+polynomial has the original order and the odd boundary factor has order zero.
+Spectral isolation and Rouché stability pass these orders to the entire limits.
+The orders of their product add to the full original spectral multiplicity.
+The neighborhood existence theorem retains these orders and choice independence.
+
+Next, prove joint potential analyticity and discriminant compatibility. Exact
+zero sets and multiplicities alone do not identify a common discriminant.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
