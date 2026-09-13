@@ -1312,8 +1312,16 @@ identifies the unique contributing factor, and Rouché stability on isolating
 discs passes these orders to the limit. Infinite analytic order is excluded
 explicitly, including at filled free lattice points.
 
-Next, prove independence of the central cutoff and analytic dependence on
-potentials. Complete the odd free-product identity, the perturbed parity
-subproducts, and identification of the correctly normalized discriminant. Then continue with the anti-discriminant
-and action-coordinate prerequisites.
+The central-cutoff choice is now eliminated. Enlarging the central cluster
+absorbs exactly the intervening disjoint spectral pairs, preserving their
+original multiplicities and the constant normalization. All sufficiently large
+finite polynomial cutoffs agree exactly, including at spectral zeros. Uniqueness
+of limits gives equality of the entire functions for arbitrary admissible
+cutoffs and pair labels. Every finite `p>1` potential has one such function for
+all larger cutoffs, retaining exact orders and polynomial/derivative convergence.
+
+Next, prove analytic dependence on potentials. Complete the odd free-product
+identity, the perturbed parity subproducts, and identification of the correctly
+normalized discriminant. Then continue with the anti-discriminant and
+action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

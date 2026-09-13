@@ -369,3 +369,6 @@ import NLS.ComplexAnalysis.IsolatedOrderStability
 import NLS.ZakharovShabat.SpectralPolynomialOrders
 import NLS.ZakharovShabat.PeriodicPolynomialMultiplicity
 import NLS.ZakharovShabat.EntirePeriodicProductOrders
+import NLS.ZakharovShabat.CentralSpectrumCutoffs
+import NLS.ZakharovShabat.PeriodicPolynomialCutoffIndependence
+import NLS.ZakharovShabat.EntirePeriodicProductIndependence

@@ -675,14 +675,16 @@ installation is absent. No shell startup files are modified.
   converge locally uniformly on the whole complex plane, using actual central
   algebraic multiplicities and distant spectral pairs. The limits are entire,
   have exactly the periodic spectrum as their zeros (including lattice points),
-  and are independent of pair labels. Their derivatives also converge locally
-  uniformly on the whole plane. The extension across `πℤ` is uniquely fixed by
+  and are independent of both pair labels and admissible central cutoffs.
+  Their derivatives also converge locally uniformly on the whole plane.
+  The extension across `πℤ` is uniquely fixed by
   continuity and the earlier relative formula. Every analytic zero order now
   equals the original spectral algebraic multiplicity, with finite order
   explicitly proved at every parameter. Every finite `p>1` potential supplies
-  the required data on a common open convex neighborhood. Analytic dependence
-  on potentials, central-cutoff independence, and discriminant identification
-  remain open.
+  the required data on a common open convex neighborhood. Exact identities
+  between finite cutoffs preserve the normalization, including at spectral
+  zeros and double roots. Analytic dependence on potentials and discriminant
+  identification remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 421 modules and 3295 named public theorems. All compile on the
+The library has 424 modules and 3309 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.CentralSpectrumCutoffs` | Monotone central clusters and exact disjoint decomposition into the old cluster and newly enclosed periodic discs |
+| `NLS.ZakharovShabat.PeriodicPolynomialCutoffIndependence` | Exact central polynomial and normalization identities, repeated roots, and equality of all sufficiently large finite cutoffs |
+| `NLS.ZakharovShabat.EntirePeriodicProductIndependence` | Independence from arbitrary admissible central cutoffs and pair labels; one entire function with exact orders and polynomial/derivative limits for all larger cutoffs |
 | `NLS.ComplexAnalysis.FiniteProductOrders` | Extended analytic orders of normalized finite products, linear factors, and finite root polynomials with prescribed multiplicities |
 | `NLS.ComplexAnalysis.IsolatedOrderStability` | Rouché stability of isolated natural orders under uniform boundary convergence and exclusion of infinite order |
 | `NLS.ZakharovShabat.SpectralPolynomialOrders` | Actual central polynomial orders, repeated pair counts, and decomposition of complete cutoff orders |
@@ -3785,9 +3788,9 @@ The original existence theorem is pointwise; it does not assert uniform
 convergence over that potential neighborhood. The generic relative argument covers `p=1`, whereas this
 actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
 
-Analytic dependence on potentials, equality between different central-cutoff
-constructions, perturbed parity products, and discriminant
-identification remain open. The entire extension is constructed below.
+Analytic dependence on potentials, perturbed parity products, and discriminant
+identification remain open. The entire extension and equality between different
+central-cutoff constructions are proved below.
 
 ## Section 8: locally uniform convergence and holomorphy
 
@@ -3857,8 +3860,8 @@ and threshold support the construction for every larger central cutoff.
 Analyticity and locally uniform convergence are in the spectral parameter
 for each fixed potential; no joint potential analyticity is claimed.
 
-Central-cutoff independence, analytic dependence on potentials, perturbed
-parity products, and identification with the discriminant remain open.
+Analytic dependence on potentials, perturbed parity products, and identification
+with the discriminant remain open. Central-cutoff independence is proved below.
 
 ## Section 8: exact analytic multiplicities
 
@@ -3892,13 +3895,39 @@ convex potential neighborhood and threshold support the strengthened existence
 theorem at every finite `p>1`, for every larger central cutoff.
 
 The entire full product now retains the exact original spectrum and all its
-multiplicities. Independence of central-cutoff choice, analytic dependence on
-potentials, parity products, and discriminant identification remain open.
+multiplicities. Analytic dependence on potentials, parity products, and
+discriminant identification remain open.
+
+## Section 8: central-cutoff independence
+
+`CentralSpectrumCutoffs` proves that the central boxes and their finite spectra
+increase with the cutoff. Given counting data at the smaller cutoff, the larger
+central spectrum is exactly the disjoint union of the old central spectrum and
+the intervening periodic-disc spectra. No additional counting data at the
+larger cutoff are needed for this decomposition.
+
+`PeriodicPolynomialCutoffIndependence` turns this geometric decomposition into
+an identity of actual root polynomials. A repeated pair contributes a square,
+while two distinct entries each contribute once. The constant normalization
+absorbs exactly the intervening mode denominators. Splitting the finite tail
+therefore proves equality of the original normalized polynomial cutoffs as
+soon as the outer cutoff contains both central clusters. This identity holds
+at every complex parameter, including spectral zeros; no root factor is divided
+out.
+
+`EntirePeriodicProductIndependence` passes the finite identities to the entire
+limits. Enlarging an admissible cutoff preserves the normalized entire
+function. Comparing arbitrary cutoffs at their maximum and using pair-label
+independence proves equality for any two admissible choices. At every finite
+`p>1`, the proved spectral data supply one entire function for all larger
+cutoffs on the same open convex potential neighborhood, with the exact original
+zero orders and locally uniform polynomial and derivative limits. Convergence
+and analyticity here remain in the spectral parameter for each fixed potential.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6766 declarations under `NLS`, including generated
+axioms. The current audit covers 6799 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4802,11 +4831,18 @@ zero potential the entire product has order two at both zero and a negative
 lattice point, and order zero at `i`. Arbitrary actual weighted `p=3` potentials
 supply the exact finite extended analytic order without assumed root data.
 
+Cutoff-independence examples cover an empty inner annulus with zero factors,
+a repeated actual pair at a negative mode, preservation of a negative endpoint
+zero when its pair is absorbed and the remaining tail is empty, and unordered
+cutoffs with exchanged labels at the filled zero lattice point. An arbitrary
+actual weighted `p=3` potential supplies one entire function for all larger
+cutoffs without assumed root data.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove central-cutoff independence and analytic dependence on the
-   potential for the entire products with exact multiplicities, and identify
+2. Prove analytic dependence on the potential for the cutoff-independent
+   entire products with exact multiplicities, and identify
    the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors

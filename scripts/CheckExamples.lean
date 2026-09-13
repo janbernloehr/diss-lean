@@ -9918,3 +9918,70 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end ProductOrderChecks
+
+namespace CutoffIndependenceChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Annular splitting remains valid when every factor is zero and the inner annulus is empty.
+example : (∏ _n ∈ Finset.Icc (-5 : ℤ) 5 \ Finset.Icc (-2 : ℤ) 2, (0 : ℂ)) =
+    (∏ _n ∈ Finset.Icc (-2 : ℤ) 2 \ Finset.Icc (-2 : ℤ) 2, (0 : ℂ)) *
+      ∏ _n ∈ Finset.Icc (-5 : ℤ) 5 \ Finset.Icc (-2 : ℤ) 2, (0 : ℂ) :=
+  prod_spectralIndexAnnulus (fun _ => 0) (N := 2) (K := 2) (M := 5) (by norm_num) (by norm_num)
+
+-- A repeated actual pair contributes a square, including at its own root.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2) (x z : ℂ)
+    (h : PeriodicResonantPair (by simp) w φ (-7) x x) :
+    (∏ a ∈ enclosedPeriodicSpectrum (by simp) (weightedBaseToPair w φ)
+      ((Real.pi : ℂ)*(-7 : ℤ)) (Real.pi/4),
+      (a-z)^periodicAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) a) = (x-z)^2 := by
+  rw [h.rootPolynomial z, pow_two]
+
+-- Absorbing the negative endpoint pair preserves its zero even when the new tail is empty.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2) (ξ η : ℤ → ℂ)
+    (hc : PeriodicCountingData (by simp) (weightedBaseToPair w φ) 2)
+    (hr : ∀ n : ℤ, 2 < n.natAbs → PeriodicResonantPair (by simp) w φ n (ξ n) (η n)) :
+    periodicSpectralPolynomialCutoff (by simp) (weightedBaseToPair w φ) 7 ξ η 7 (ξ (-7)) = 0 := by
+  rw [← periodicSpectralPolynomialCutoff_eq_of_le (by simp) w φ 2 7 7
+    (by norm_num) le_rfl ξ η hc hr]
+  unfold periodicSpectralPolynomialCutoff
+  have he : (∏ n ∈ Finset.Icc (-7 : ℤ) 7 \ Finset.Icc (-2 : ℤ) 2,
+      spectralPairFactor ξ η (ξ (-7)) n) = 0 := by
+    apply Finset.prod_eq_zero (i := (-7 : ℤ))
+    · norm_num
+    · simp [spectralPairFactor_eq_div]
+  change _ * (∏ n ∈ Finset.Icc (-7 : ℤ) 7 \ Finset.Icc (-2 : ℤ) 2,
+    spectralPairFactor ξ η (ξ (-7)) n) = 0
+  rw [he, mul_zero]
+
+-- Unordered cutoffs and exchanged labels give equal values at the filled zero lattice point.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (ξ η α β : ℤ → ℂ)
+    (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3)
+    (hη : Memℓp (fun n => η n-(Real.pi : ℂ)*n) 3)
+    (hα : Memℓp (fun n => α n-(Real.pi : ℂ)*n) 3)
+    (hβ : Memℓp (fun n => β n-(Real.pi : ℂ)*n) 3)
+    (hc : PeriodicCountingData (by simp) (weightedBaseToPair w φ) 7)
+    (hd : PeriodicCountingData (by simp) (weightedBaseToPair w φ) 2)
+    (hr : ∀ n : ℤ, 7 < n.natAbs → PeriodicResonantPair (by simp) w φ n (ξ n) (η n))
+    (hs : ∀ n : ℤ, 2 < n.natAbs → PeriodicResonantPair (by simp) w φ n (β n) (α n)) :
+    entirePeriodicProduct (by simp) (weightedBaseToPair w φ) 7 ξ η 0 =
+      entirePeriodicProduct (by simp) (weightedBaseToPair w φ) 2 β α 0 :=
+  congrFun (entirePeriodicProduct_eq_of_choices (by simp) w φ 7 2 ξ η β α hξ hη hβ hα hc hd hr hs) 0
+
+-- An arbitrary actual p=3 potential supplies one entire function for every larger cutoff.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, ∃ ξ η : ℤ → ℂ, ∃ f : ℂ → ℂ,
+      AnalyticOnNhd ℂ f Set.univ ∧
+      analyticOrderAt f 0 = (periodicAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 0 : ℕ∞) ∧
+      ∀ N ≥ N₀, entirePeriodicProduct (by simp) (weightedBaseToPair w φ) N ξ η = f ∧
+        TendstoLocallyUniformlyOn (periodicSpectralPolynomialCutoff (by simp) (weightedBaseToPair w φ) N ξ η)
+          f atTop Set.univ := by
+  obtain ⟨N₀,_,U,_,_,hφ,_,h⟩ := exists_uniform_cutoffIndependent_entirePeriodicProducts
+    (by simp) (by norm_num) w φ
+  obtain ⟨ξ,η,f,ha,ho,hcut⟩ := h φ hφ
+  exact ⟨N₀,ξ,η,f,ha,(ho 0).1,fun N hN => ⟨(hcut N hN).1,(hcut N hN).2.1⟩⟩
+
+end
+end CutoffIndependenceChecks
