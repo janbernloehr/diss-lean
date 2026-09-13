@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 477 modules and 3556 named public theorems. All compile on the
+The library has 480 modules and 3569 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.CanonicalParityProducts` | Intrinsic potential-only parity limits, agreement with all admissible labels, exact original zero orders, and canonical full-product factorization |
+| `NLS.ZakharovShabat.CanonicalParityProductsUniform` | Uniform convergence to the intrinsic limits on weighted and even-supported potential neighborhoods; joint locally uniform convergence |
+| `NLS.ZakharovShabat.CanonicalParityProductsAnalytic` | Joint Banach analyticity, positive-radius Fréchet series, uniform polynomial-derivative convergence, analytic mixed derivatives, and source period-one pullback |
 | `NLS.ZakharovShabat.EntireSpectralPairFamilies` | Entire paired products converge uniformly over bounded displacement families on spectral compact sets, with common bounds |
 | `NLS.ZakharovShabat.ParitySpectralFamilies` | Affine parity sampling preserves displacement bounds; both literal parity cutoffs converge uniformly over bounded families |
 | `NLS.ZakharovShabat.CompleteParityDisplacementBounds` | Finite-replacement norm bound, uniform central label bounds, and uniformly bounded actual completed parity pairs |
@@ -4166,9 +4169,9 @@ convergence. Repeated roots and roots at free lattice points are permitted.
 `ParitySpectralProductsFree` identifies the free specializations with `Δ_free−2`
 and `Δ_free+2`, fixing the corrected prefactors `−1` and `4`. Their discriminant
 values agree at the free potential. The following milestones construct actual
-central parity root multisets and entire parity products. Joint potential
-analyticity of these parity products and `f+2=g−2` remain open. Arbitrary
-displaced sequences do not imply this compatibility.
+central parity root multisets, entire parity products, and their joint potential
+analyticity. The identity `f+2=g−2` remains open; arbitrary displaced sequences
+do not imply this compatibility.
 
 ## Section 8: actual central parity spectra and multiplicities
 
@@ -4343,9 +4346,8 @@ after restriction to the even-supported potential subspace. The intrinsic
 normalized approximants retain the corrected factors `-1` and `4`; they also
 are jointly analytic. They recover the even literal cutoff and the central
 part of the odd literal cutoff, whose extra positive boundary pair is retained.
-The following milestone proves joint uniform convergence in the potential
-and spectral parameter. Joint analyticity of the infinite parity products
-remains to be proved.
+The following milestones prove joint uniform convergence in the potential
+and spectral parameter, and joint analyticity of the infinite parity products.
 
 ## Section 8: parity convergence uniform in the potential
 
@@ -4378,13 +4380,40 @@ in that family. `CentralParityPolynomialsUniform` consequently removes the odd
 boundary pair and proves that both intrinsic normalized central polynomials
 at cutoff `2M` converge uniformly to the actual parity products on every compact
 spectral set over one common actual potential neighborhood. This supplies the
-joint convergence needed for the analytic-limit construction. Intrinsic
-potential-only parity limit definitions and their joint analyticity remain next.
+joint convergence needed for the analytic-limit construction below.
+
+## Section 8: intrinsic jointly analytic parity products
+
+`CanonicalParityProducts` defines each product as the limit of normalized
+central parity polynomials at doubled cutoffs, without any root labels. For
+finite p>1 and even-supported potentials, these limits equal every admissible
+completed-root construction. Consequently they are entire in the spectral
+parameter, have exactly the original parity zero sets and analytic orders,
+and multiply to the canonical full product.
+
+`CanonicalParityProductsUniform` removes the chosen roots from the uniform
+convergence theorem. On each spectral compact set, both intrinsic limits
+have uniform polynomial approximation over one open convex neighborhood in
+the even-supported potential subspace. The weighted version retains the
+intersection with even-supported potentials. This proves local uniform
+convergence on the full joint spectral and even-potential domain.
+
+`CanonicalParityProductsAnalytic` intersects these neighborhoods with those
+where the approximants are eventually analytic. Banach-space Schwarz estimates
+give joint complex smoothness and uniform operator-norm convergence of the
+polynomial derivatives on actual joint balls. The Fréchet Taylor series has
+positive radius and sums to the intrinsic product. Both products and all
+mixed iterated derivatives are jointly analytic, including at spectral zeros
+and collisions. Pullback by the continuous linear period-one embedding proves
+joint analyticity in the source coefficient-potential space. This supplies
+the corrected parity-product analyticity assertion of Lemma 8.1(i) for finite
+p>1. It does not yet prove the common-discriminant identity `f+2=g−2`, its
+large-parameter asymptotics, or analyticity for noneven ambient potentials.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7261 declarations under `NLS`, including generated
+axioms. The current audit covers 7279 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5379,6 +5408,13 @@ lattice points over an actual p=3 potential neighborhood. The p=∞ check is onl
 for the boundary factor; the infinite-product convergence theorem retains p>1
 and p<∞.
 
+Intrinsic-parity examples check the odd double root and nonzero even factor
+at the negative free index `-3`, propagation of an intrinsic factor zero to
+the full product, joint analyticity at the free even double root, simultaneous
+spectral and source-potential affine perturbations, a common neighborhood for
+both polynomial derivative limits at an arbitrary p=3 potential, and analytic
+mixed third derivatives.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5389,9 +5425,10 @@ and p<∞.
    parity polynomials and normalized approximants are now jointly analytic on
    common actual potential neighborhoods. Their doubled-cutoff sequences now
    converge uniformly over those even-supported potentials on every spectral
-   compact set. Define the intrinsic potential-only parity limits and pass
-   joint analyticity to them, then establish `f+2=g−2` to identify the correctly
-   normalized discriminant.
+   compact set. Intrinsic potential-only parity limits are now jointly analytic
+   on the even-supported and source period-one potential spaces, with convergent
+   Taylor series and analytic mixed derivatives. Next establish `f+2=g−2` to
+   identify the correctly normalized discriminant.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

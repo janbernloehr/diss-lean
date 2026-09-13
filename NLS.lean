@@ -425,3 +425,6 @@ import NLS.ZakharovShabat.CompleteParityDisplacementBounds
 import NLS.ZakharovShabat.ActualParityProductsUniform
 import NLS.ZakharovShabat.ParityBoundaryUniform
 import NLS.ZakharovShabat.CentralParityPolynomialsUniform
+import NLS.ZakharovShabat.CanonicalParityProducts
+import NLS.ZakharovShabat.CanonicalParityProductsUniform
+import NLS.ZakharovShabat.CanonicalParityProductsAnalytic

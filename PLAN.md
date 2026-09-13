@@ -1434,8 +1434,16 @@ potentials. The odd boundary factor and its inverse tend uniformly to one,
 with simultaneous eventual nonvanishing. Removing it proves uniform convergence
 of both intrinsic central parity approximants at `2M` to their actual products.
 
-Next, define the intrinsic parity limits as functions of the potential alone
-and pass joint analyticity to the infinite products, then prove `f+2=g−2`.
+Intrinsic parity limits are now defined directly from the potential, agree
+with every admissible completed-root construction, and retain its exact
+orders and factorization. The normalized polynomials converge uniformly on
+actual joint neighborhoods of the even-supported potential space. Combined
+with eventual analyticity, this gives complex smoothness, uniform convergence
+of Fréchet derivatives, and positive-radius Taylor expansions. Both limits
+are jointly analytic, including on the source period-one coefficient space
+and at spectral collisions. Every mixed iterated derivative is analytic.
+
+Next, prove the discriminant compatibility `f+2=g−2`.
 The factorization proves the product equality in Lemma 8.1(iv);
 identification with the discriminant squared minus four remains open.
 Then continue with the anti-discriminant and action-coordinate prerequisites.

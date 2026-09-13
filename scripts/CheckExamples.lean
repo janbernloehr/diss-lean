@@ -10846,3 +10846,63 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end ParityUniformChecks
+
+namespace CanonicalParityChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal ContDiff
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+private theorem hp3 : (3 : ℝ≥0∞) ≠ ⊤ := by norm_num
+
+-- At a negative odd free lattice point, the intrinsic odd factor has order two and the even factor is nonzero.
+example : analyticOrderAt (canonicalParityProduct hp3 (0 : PairSpace 3) 1) ((Real.pi : ℂ)*(-3 : ℤ)) = 2 ∧
+    canonicalParityProduct hp3 (0 : PairSpace 3) 0 ((Real.pi : ℂ)*(-3 : ℤ)) ≠ 0 := by
+  have ho := (canonicalParityProduct_spec hp3 (by norm_num) 0 (Submodule.zero_mem _) 1 (Or.inr rfl)).2 ((Real.pi : ℂ)*(-3 : ℤ))
+  have he := (canonicalParityProduct_spec hp3 (by norm_num) 0 (Submodule.zero_mem _) 0 (Or.inl rfl)).2 ((Real.pi : ℂ)*(-3 : ℤ))
+  rw [parityAlgebraicMultiplicity_zero] at ho he
+  norm_num at ho he
+  constructor
+  · simpa using ho.1
+  · simpa using he.2
+
+-- An intrinsic parity zero forces a zero of the intrinsic full product, with no root labels supplied.
+example (u : CoeffPair 3) (z : ℂ) (hz : canonicalParityProduct hp3 (periodOnePotential u) 0 z = 0) :
+    canonicalPeriodicProduct hp3 (periodOnePotential u) z = 0 := by
+  rw [← canonicalParityProducts_mul hp3 (by norm_num) _ (periodOnePotential_mem u),hz,zero_mul]
+
+-- Joint analyticity includes the free even double root at zero.
+example : AnalyticAt ℂ (fun t : ℂ × pairParitySubspace (p := 3) 0 =>
+    canonicalParityProduct hp3 t.2 0 t.1) (0,0) :=
+  analyticOnNhd_canonicalParityProduct_joint hp3 (by norm_num) 0 (Or.inl rfl) _ (Set.mem_univ _)
+
+-- Simultaneous spectral and source-potential perturbations give an entire affine-line restriction.
+example (t v : ℂ × CoeffPair 3) :
+    AnalyticOnNhd ℂ (fun a : ℂ =>
+      canonicalParityProduct hp3 (periodOnePotential (t+a • v).2) 1 (t+a • v).1) Set.univ := by
+  intro a _
+  exact (analyticOnNhd_canonicalParityProduct_periodOne hp3 (by norm_num) 1 (Or.inr rfl)
+    (t+a • v) (Set.mem_univ _)).comp (f := fun a : ℂ => t+a • v)
+      (analyticAt_const.add (analyticAt_id.smul analyticAt_const))
+
+-- At every actual p=3 potential, both polynomial derivative sequences converge on one common joint ball.
+example (t : ℂ × pairParitySubspace (p := 3) 0) :
+    ∃ ρ : ℝ, 0 < ρ ∧ ∀ r : ℤ, r = 0 ∨ r = 1 → TendstoUniformlyOn
+      (fun M => fderiv ℂ (fun t : ℂ × pairParitySubspace (p := 3) 0 =>
+        normalizedCentralParityPolynomial hp3 t.2 (2*M) r t.1))
+      (fderiv ℂ (fun t : ℂ × pairParitySubspace (p := 3) 0 => canonicalParityProduct hp3 t.2 r t.1))
+      atTop (ball t ρ) := by
+  obtain ⟨ρ,hρ,he⟩ := exists_uniform_fderiv_canonicalParityProduct hp3 (by norm_num) 0 (Or.inl rfl) t
+  obtain ⟨σ,hσ,ho⟩ := exists_uniform_fderiv_canonicalParityProduct hp3 (by norm_num) 1 (Or.inr rfl) t
+  refine ⟨min ρ σ,lt_min hρ hσ,?_⟩
+  intro r hr
+  rcases hr with rfl | rfl
+  · exact he.mono (ball_subset_ball (min_le_left _ _))
+  · exact ho.mono (ball_subset_ball (min_le_right _ _))
+
+-- Mixed third derivatives retain joint analyticity.
+example : AnalyticOnNhd ℂ (iteratedFDeriv ℂ 3
+    (fun t : ℂ × pairParitySubspace (p := 3) 0 => canonicalParityProduct hp3 t.2 1 t.1)) Set.univ :=
+  analyticOnNhd_iteratedFDeriv_canonicalParityProduct hp3 (by norm_num) 1 (Or.inr rfl) 3
+
+end
+end CanonicalParityChecks

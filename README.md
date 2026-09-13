@@ -729,8 +729,13 @@ installation is absent. No shell startup files are modified.
   determinants retain the original parity generalized eigenspaces. The literal
   cutoffs and intrinsic approximants at `2M` now converge uniformly on each
   compact spectral set over one actual potential neighborhood, including roots
-  and free-lattice points. Passing joint analyticity to the infinite parity
-  products and proving `f+2=g−2` remain open.
+  and free-lattice points. Intrinsic parity limits now depend only on the
+  potential, retain the exact original orders, and factor the canonical full
+  product. Both are jointly Banach-space analytic on the even-supported
+  potential space and on the source period-one coefficient space for finite
+  p>1. Their Taylor series converge locally, their polynomial derivatives
+  converge uniformly on joint neighborhoods, and all mixed derivatives are
+  analytic. The discriminant compatibility `f+2=g−2` remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
