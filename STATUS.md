@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 355 modules and 2912 named public theorems. All compile on the
+The library has 358 modules and 2927 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SingleResonantPotential` | Signed single-mode potentials, vanishing complementary sources, exact actual determinant, and Hilbert norm |
+| `NLS.ZakharovShabat.RootDisplacementSourceAudit` | Formal failure of the printed Lemma 6.9 displacement budget locally uniformly at zero, on the actual small-square domain |
+| `NLS.ZakharovShabat.RootDisplacementPower` | Branch-free residual and power bounds for actual roots, retaining both signed leading Fourier modes |
 | `NLS.ComplexAnalysis.LogDerivativeLocal` | Analytic remainder after subtracting the exact analytic-order principal part of a logarithmic derivative |
 | `NLS.ComplexAnalysis.FinitePoleRemoval` | Meromorphic normal form fills all finitely many removable logarithmic-derivative remainders |
 | `NLS.ComplexAnalysis.AnalyticZeroCount` | Natural analytic zero count, finite zeros and finite orders on compact connected analytic domains |
@@ -3306,15 +3309,55 @@ lie in the refined disc, satisfy the `3π/32` localization bound, and obey
 `|ξ-η|²≤6|b_n⁺b_n⁻|_{U_n}` on a common potential neighborhood and cutoff.
 No reality, distinctness, or normalization `w(0)=1` is required.
 
-**Remaining scope.** Lemma 6.9's quantitative root displacement power sum
-remains unproved. The scalar counting argument is established directly;
-identification with the separate spectral algebraic multiplicities is not
-asserted.
+### Lemma 6.9: displacement source audit and valid per-root powers
+
+Visual inspection of printed page 43 confirms that its displacement budget
+is `C_p (B^p/N^min(1,p-1) + T^p) (1+B^p) B^p`, where `B=‖φ‖_p`
+and `T=‖R_(N/2)φ‖_p`. The displayed left-hand side repeats the positive root
+label; the discussion concerns both roots. The norm-factor issue below also
+persists with that repeated label.
+
+`SingleResonantPotential` puts amplitudes `a,b` at physical frequencies
+`-2n,2n`. The actual complementary free inverse annihilates both resonant
+potential sources, so the full correction fixes them and the determinant
+is exactly `(z-nπ)²-ba` wherever the proved small-square condition holds.
+Unit-weight Fourier modes have precisely their amplitude norm; at `p=2`,
+the squared pair norm is `|a|²+|b|²`.
+
+`RootDisplacementSourceAudit` specializes to `a=b=t>0`. Its roots are `nπ±t`
+and the pair norm squared is `2t²`. Using the actual Fourier-tail contraction,
+the printed Hilbert budget is at most `24 C t⁴` for `t≤1` and cutoffs at least
+one. The formal theorem `exists_resonantRoot_exceeding_printed_budget` proves:
+for every nonnegative proposed constant, every open potential neighborhood
+of zero, and every prescribed cutoff, there is a positive resonance beyond
+that cutoff and a potential in the neighborhood with an actual refined-disc
+root whose squared displacement exceeds the printed budget. The witness
+satisfies the actual small-square condition. The companion negation theorem
+rules out even the locally uniform single-root consequence of the display.
+
+This disproves the claimed local uniformity at zero. It does not assert
+failure of an eventual bound for each fixed potential with an unrestricted
+potential-dependent cutoff: a fixed finitely supported potential could have
+its exceptional resonance excluded. The counterexample instead allows the
+single resonant frequency to lie beyond any shared cutoff.
+
+`RootDisplacementPower` supplies the valid starting estimate. For
+`(q-a)²=bc`, it proves `|q-a|≤(|b|+|c|)/2` and, for every real `P≥1`,
+`|q|^P≤2^(P-1)(|a|^P+(|b|^P+|c|^P)/2)`. The actual determinant corollary
+splits each full off-diagonal coefficient into its signed leading Fourier
+coefficient and remainder, retaining all four power terms. It uses no
+square-root branch, root distinctness, or reality assumption.
+
+**Remaining scope.** Sum the valid per-root estimate with an additive
+leading Fourier-tail contribution to obtain a corrected quantitative
+version. The literal printed bound is not asserted. Scalar counting is
+proved directly; identification with the separate spectral algebraic
+multiplicities is not asserted.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5866 declarations under `NLS`, including generated
+axioms. The current audit covers 5893 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4081,11 +4124,19 @@ The actual full-strip determinant count is instantiated at `p=3/2` with
 At `p=3`, the two-root theorem is checked with complete strip zero detection,
 exact analytic multiplicities, and the factor-six gap bound.
 
+Displacement checks compute the exact Hilbert norm of unequal complex
+amplitudes at a negative resonance, and an actual nonreal determinant root
+at `p=3`. A concrete small-amplitude budget is strictly below one squared
+root displacement for every larger cutoff. The counterexample is instantiated
+with a large proposed constant, a tiny open ball, and an arbitrary lower
+frequency threshold. Aligned imaginary coefficients test the power estimate
+at `P=3` and its endpoint `P=1`.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove Lemma 6.9's remaining root displacement power sum, then continue
-   the weighted-gap estimates
+2. Prove a corrected Lemma 6.9 root displacement power sum retaining its
+   additive leading-tail contribution, then continue the weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

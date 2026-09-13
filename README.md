@@ -606,8 +606,11 @@ installation is absent. No shell startup files are modified.
   A proved scalar argument principle and Rouché theorem now give exactly two
   analytic zeros, with multiplicity, on both the refined disc and the full strip.
   Two roots, allowing coincidence, exhaust all strip zeros and have exactly the
-  corresponding analytic orders. The quantitative root displacement sum remains
-  to be proved.
+  corresponding analytic orders. A formal single-mode counterexample shows that
+  the printed displacement bound cannot hold locally uniformly at zero: the
+  roots move linearly with amplitude, while its budget is of higher order.
+  The valid per-root power estimate retains both leading Fourier coefficients;
+  a corrected tail sum including their additive contribution remains to be proved.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

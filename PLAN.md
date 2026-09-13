@@ -24,6 +24,15 @@
 
 ## Statement audit
 
+- Lemma 6.9's printed page-43 displacement estimate fails with its claimed
+  local uniformity at zero. The actual signed single-mode family has roots
+  `nπ±t` and Hilbert pair norm squared `2t²`, whereas the printed budget is
+  at most `24 C t⁴` for `t≤1` and cutoffs at least one. The formal counterexample
+  works in every open neighborhood of zero and beyond every prescribed cutoff.
+  It refutes a necessary single-root consequence of the sum estimate; it does
+  not assert failure of an eventual estimate for each fixed potential with an
+  unrestricted potential-dependent cutoff. Retain an additive leading-tail
+  term in the corrected estimate.
 - Preserve `1 < p < ∞` versus `1 < p ≤ 2` hypotheses. Do not assume that the
   Birkhoff map is surjective for `p > 2`.
 - Treat analyticity on a positive cone using an ambient open extension.
@@ -1100,7 +1109,17 @@ roots allowing coincidence, exhausts all strip zeros, and records their
 exact analytic orders. Their localization and factor-six gap estimate hold
 on one open convex potential neighborhood with one signed-frequency cutoff.
 
-Next, prove the root displacement power sum in Lemma 6.9 and proceed to
-Propositions 6.1 and 6.3. Identification of scalar analytic orders with the
-separate spectral algebraic multiplicities has not been asserted. The printed
-general-`p` central-height constant remains a separate open item.
+The source displacement display has now been audited against the actual
+operator. `SingleResonantPotential` places amplitudes at `-2n` and `2n`; the
+complementary source vanishes and the actual determinant is `(z-nπ)²-ba`.
+`RootDisplacementSourceAudit` uses equal real amplitudes to refute the printed
+budget locally uniformly at zero, including on the valid small-square domain.
+`RootDisplacementPower` proves a branch-free per-root power estimate and
+separates both leading Fourier modes from their actual remainders.
+
+Next, sum that valid estimate, preserving an additive leading-tail term,
+and prove the corrected quantitative displacement bound. Then proceed to
+Propositions 6.1 and 6.3, auditing their dependence on the source correction.
+Identification of scalar analytic orders with the separate spectral algebraic
+multiplicities has not been asserted. The printed general-`p` central-height
+constant remains a separate open item.

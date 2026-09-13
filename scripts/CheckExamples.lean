@@ -8595,3 +8595,60 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
   exact ⟨x,hx,y,hy,hzeros,hmult,hgap⟩
 
 end ArgumentPrincipleChecks
+
+namespace RootDisplacementAuditChecks
+open NLS NLS.ZakharovShabat Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ (2 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The unit-weight Hilbert norm is independent of resonance and preserves unequal complex amplitudes.
+example : ‖singleResonantPotential (p := 2) SpectralWeight.one (-7) (2*Complex.I) 3‖^2 = 13 := by
+  rw [norm_singleResonantPotential_sq]
+  norm_num
+
+-- At a negative resonance, complex amplitudes give an exact nonreal root of the actual determinant.
+example (hz : (Real.pi : ℂ)*(-7 : ℤ)+Complex.I/1000 ∈ resonantStrip (-7))
+    (h : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) SpectralWeight.one
+      (singleResonantPotential SpectralWeight.one (-7) (Complex.I/1000) (Complex.I/1000)) (-7)
+      ((Real.pi : ℂ)*(-7 : ℤ)+Complex.I/1000) hz‖ < 1) :
+    resonantDeterminantExtension (p := 3) (by norm_num) SpectralWeight.one
+      (singleResonantPotential SpectralWeight.one (-7) (Complex.I/1000) (Complex.I/1000)) (-7)
+      ((Real.pi : ℂ)*(-7 : ℤ)+Complex.I/1000) = 0 := by
+  rw [resonantDeterminant_singleResonantPotential (p := 3) (by norm_num) SpectralWeight.one
+    (-7) (Complex.I/1000) (Complex.I/1000) _ hz h]
+  ring
+
+-- This concrete printed budget is smaller than even one root's squared displacement.
+example (N : ℕ) (hN : 2 ≤ N) :
+    printedHilbertRootBudget 1
+      (singleResonantPotential SpectralWeight.one (N : ℤ) (1/100) (1/100)) N < (1/100 : ℝ)^2 := by
+  have h := printedHilbertRootBudget_single_le (C := 1) (t := 1/100)
+    (by norm_num) (by norm_num) (by norm_num) (N : ℤ) N (by omega)
+  norm_num at h ⊢
+  linarith
+
+-- A large proposed constant and a tiny open ball still fail beyond an arbitrary prescribed cutoff.
+example (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧
+      ∃ φ ∈ ball (0 : WeightedCoeffPair SpectralWeight.one.toWeight 2) (1/1000000),
+      ∃ z ∈ refinedResonantDisk (n : ℤ), ∃ hz : z ∈ resonantStrip (n : ℤ),
+        ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one φ (n : ℤ) z hz‖ < 1 ∧
+        resonantDeterminantExtension (by norm_num) SpectralWeight.one φ (n : ℤ) z = 0 ∧
+        printedHilbertRootBudget 1000000 φ n < ‖z-(Real.pi : ℂ)*(n : ℤ)‖^2 :=
+  exists_resonantRoot_exceeding_printed_budget 1000000 (by norm_num) _ isOpen_ball
+    (mem_ball_self (by norm_num)) M
+
+-- The power estimate is sharp for this aligned imaginary configuration above two.
+example : ‖(2 : ℂ)*Complex.I‖^(3 : ℝ) ≤ 8 := by
+  have h := norm_quadraticRoot_rpow_le (P := 3) (by norm_num) (2*Complex.I) Complex.I Complex.I Complex.I
+    (by ring)
+  norm_num at h ⊢
+
+-- The scalar residual argument also includes the endpoint exponent one.
+example : ‖Complex.I‖^(1 : ℝ) ≤ 1 := by
+  have h := norm_quadraticRoot_rpow_le (P := 1) (by norm_num) Complex.I 0 Complex.I Complex.I
+    (by ring)
+  norm_num at h ⊢
+
+end RootDisplacementAuditChecks
