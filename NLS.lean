@@ -444,3 +444,7 @@ import NLS.Fourier.SignedSobolevExtension
 import NLS.ZakharovShabat.PhysicalBaseParity
 import NLS.ZakharovShabat.ClassicalParityEigenvectors
 import NLS.ZakharovShabat.CanonicalParityClassicalSpectrum
+import NLS.FunctionalAnalysis.ForcedVolterraSolution
+import NLS.ZakharovShabat.ClassicalForcedSolution
+import NLS.ZakharovShabat.PhysicalForcedEquation
+import NLS.ZakharovShabat.ClassicalForcedParity

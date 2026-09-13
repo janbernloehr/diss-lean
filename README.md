@@ -751,9 +751,13 @@ installation is absent. No shell startup files are modified.
   by signed Sobolev extension: every nonzero classical periodic or antiperiodic
   solution gives an original parity eigenvector. Thus both intrinsic parity
   zero sets equal the corresponding classical trace sets, and the full product
-  has exactly the zeros of the trace squared minus four. Equality of algebraic
-  multiplicities with the classical determinants and normalized infinite-product
-  identification needed for `f+2=g−2` remain open.
+  has exactly the zeros of the trace squared minus four. Inhomogeneous Volterra
+  solutions now handle the actual equation `(z-L)a=b` for domain-valued sources.
+  Each original parity root-chain extension is equivalent to a two-coordinate
+  classical endpoint equation, and fixing the initial vector makes the original
+  preimage unique. Equality of algebraic multiplicities with the classical
+  determinants and normalized infinite-product identification needed for
+  `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 496 modules and 3675 named public theorems. All compile on the
+The library has 500 modules and 3704 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.FunctionalAnalysis.ForcedVolterraSolution` | Bounded continuous primitive, inverse Volterra construction with arbitrary continuous source, physical C¹ regularity, and absolutely continuous almost-everywhere uniqueness |
+| `NLS.ZakharovShabat.ClassicalForcedSolution` | Correctly signed inhomogeneous physical pencil equation, initial-value uniqueness, affine dependence on initial data, and two-coordinate endpoint criterion |
+| `NLS.ZakharovShabat.PhysicalForcedEquation` | Original source-pencil realization, unit-interval localization in parity, and agreement of domain-valued source equations with actual classical forced solutions |
+| `NLS.ZakharovShabat.ClassicalForcedParity` | Signed C¹ source extensions, exact original parity-preimage endpoint criterion, uniqueness with fixed initial value, and extension criterion for every finite original root-chain length |
 | `NLS.Fourier.SignedSobolevExtension` | Signed doubling, absolute continuity and square-integrable derivatives across the join, exact Fourier integral formula, and weighted parity coordinates for classical endpoint data |
 | `NLS.ZakharovShabat.PhysicalBaseParity` | Almost-everywhere Hilbert parity translation, unit-interval uniqueness for original base vectors, and checking the original parity eigen-equation on one unit interval |
 | `NLS.ZakharovShabat.ClassicalParityEigenvectors` | Physical C¹ regularity, signed extension of classical solutions to the original parity domain, and nonzero original eigenvectors from classical endpoint multipliers |
@@ -4562,10 +4566,45 @@ The full product and the classical trace squared minus four have identical
 zero sets. Equality of classical determinant orders with original algebraic
 multiplicities, entire normalization, and finite-p extension remain open.
 
+## Section 8: inhomogeneous equations and original root-chain extension
+
+`ForcedVolterraSolution` applies the globally invertible complex Volterra
+operator to the initial constant plus the continuous source primitive. The
+result satisfies the actual forced integral equation and has a real-time C¹
+representative on the whole real line. Its forced ODE holds on the closed
+unit interval. Absolute continuity and the almost-everywhere equation suffice
+for uniqueness, proved by the fundamental theorem and inverse operator.
+
+`ClassicalForcedSolution` uses the source map `diag(i,-i)` for the original
+pencil `z-L`. Its constructed solution satisfies `z u-Lu=g` pointwise on the
+closed unit interval. Changing the initial vector adds precisely the previous
+homogeneous solution. Thus its endpoint multiplier condition is a linear
+equation in two complex initial coordinates, with the zero-initial forced
+endpoint on the right-hand side.
+
+`PhysicalForcedEquation` realizes the actual coefficient pencil and its
+source on the physical interval. For even potentials and a fixed parity,
+the equation can be checked on `(0,1]`. If the source lies in the original
+weighted domain and the potential has a continuous representative, the physical
+solution agrees with the constructed forced solution with its own initial data.
+
+`ClassicalForcedParity` lifts C¹ endpoint solutions back to the original parity
+domain and transfers their source equation. For any original parity-domain
+source `b`, a preimage under `z-L` with a specified initial vector exists exactly
+when its constructed forced solution has the required endpoint multiplier.
+That original preimage is unique. Solvability without prescribed initial data
+is therefore equivalent to the two-coordinate boundary equation. This criterion
+also extends every prescribed finite original root chain by one step, retaining
+the original recursive domain requirements.
+
+This supplies the inhomogeneous chain step needed for algebraic multiplicity
+comparison. Equality of classical determinant orders with the full original
+root-space dimensions, entire normalization, and finite-p extension remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7473 declarations under `NLS`, including generated
+axioms. The current audit covers 7542 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5594,6 +5633,14 @@ produces an original even eigenvector and determines the two intrinsic parity
 factors there. A negative odd free classical root also reconstructs a nonzero
 original odd weighted-domain eigenvector.
 
+Forced-equation checks solve arbitrary constant sources for a nonzero upper
+triangular potential, verifying both source signs and the quadratic term.
+The first constant vector is checked to be an original nonzero eigenvector;
+it has a generalized preimage with initial value minus the second vector.
+A further preimage of that second vector is ruled out by its nonzero endpoint
+increment. A genuinely nonconstant source checks the integrated quadratic
+solution and the second-component sign.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5616,8 +5663,10 @@ original odd weighted-domain eigenvector.
    intrinsic even/odd zeros force trace values `2`/`-2` and cannot coincide.
    Signed Sobolev extension now proves the reverse bridge and exact equality
    of both parity spectral sets with the classical monodromy root sets.
-   Equality of classical and original algebraic multiplicities remains open.
-   The classical boundary determinants have the required compatibility, but
+   Inhomogeneous Volterra solutions now give the exact endpoint criterion for
+   every original parity root-chain extension and uniqueness with fixed
+   initial data. Equality of classical and original algebraic multiplicities
+   remains open. The classical boundary determinants have the required compatibility, but
    their equality with the infinite spectral products and extension to finite-p
    potentials remain open.
    Bounded source

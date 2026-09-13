@@ -1478,6 +1478,15 @@ The extension therefore gives a nonzero original parity eigenvector. Intrinsic
 even and odd product zeros are now equivalent to trace values `2` and `-2`;
 the full-product zero set equals the trace-squared-minus-four zero set.
 
+The inhomogeneous bridge is now proved for original domain-valued sources.
+The inverse Volterra operator constructs physical C¹ forced solutions, with
+uniqueness among absolutely continuous almost-everywhere solutions. The source
+signs agree with `(z-L)a=b`. Fixed-parity source equations can be checked on the
+unit interval, and signed extension proves the converse. Fixing the initial
+vector gives a unique original preimage. At every finite root-chain length,
+extending a prescribed original source is equivalent to a two-coordinate
+classical endpoint equation involving the zero-initial forced solution.
+
 Next, identify the classical determinant orders with original algebraic
 multiplicities and prove the normalized entire-product identity,
 and use potential approximation to prove `f+2=g−2` for finite p>1. The classical

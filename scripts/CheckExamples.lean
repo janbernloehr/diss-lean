@@ -11206,3 +11206,102 @@ example : ∃ a : Domain 2, a ≠ 0 ∧ a ∈ domainParitySubspace (-3) ∧
 
 end
 end ClassicalParitySpectrumChecks
+
+namespace ForcedParityChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.LinearVolterra Set Complex MeasureTheory
+noncomputable section
+
+private def constantDomain (v : ℂ × ℂ) : Domain 2 := (scalarMode 0 v.1,scalarMode 0 v.2)
+private theorem physical_constant (v : ℂ × ℂ) (t : ℝ) : physicalDomain (constantDomain v) t = v := by
+  simp [physicalDomain,constantDomain,sobolevSynthesis_scalarMode]
+private theorem constant_parity (v : ℂ × ℂ) : constantDomain v ∈ domainParitySubspace 0 := by
+  intro n hn
+  have hn0 : n ≠ 0 := by omega
+  simp [constantDomain,scalarMode_apply,hn0]
+private def triangularPotential : PairSpace 2 := domainInclusion (constantDomain (1,0))
+private def triangularCurve : Curve (ℂ × ℂ) := ContinuousMap.const _ (1,0)
+private theorem triangular_even : triangularPotential ∈ pairParitySubspace 0 :=
+  (mem_domainParitySubspace 0 _).mp (constant_parity (1,0))
+private theorem triangular_representative :
+    physicalBase triangularPotential =ᵐ[volume.restrict (Ioc 0 1)] LinearVolterra.extend triangularCurve := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num)) (physicalBase_domainInclusion (constantDomain (1,0)))
+  filter_upwards [h] with t ht
+  simpa only [triangularPotential,physical_constant,LinearVolterra.extend,triangularCurve,ContinuousMap.const_apply] using ht
+
+-- An explicit forced solution detects the source signs and the nonzero triangular coupling.
+private theorem forced_formula (b v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalForcedSolution triangularCurve 0 (physicalDomainCurve (constantDomain b)) v t =
+      (v.1+I*(v.2+b.1)*(t.val : ℂ)+(b.2/2)*(t.val : ℂ)^2,v.2-I*b.2*(t.val : ℂ)) := by
+  have ht : ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)) := Complex.ofRealCLM.contDiff
+  have hu : ContDiff ℝ 1 (fun x : ℝ =>
+      (v.1+I*(v.2+b.1)*(x : ℂ)+(b.2/2)*(x : ℂ)^2,v.2-I*b.2*(x : ℂ))) :=
+    ((contDiff_const.add (contDiff_const.mul ht)).add (contDiff_const.mul (ht.pow 2))).prodMk
+      (contDiff_const.sub (contDiff_const.mul ht))
+  have h := classicalForcedSolution_unique triangularCurve 0 (physicalDomainCurve (constantDomain b)) v _
+    hu.contDiffOn.absolutelyContinuousOnInterval (by simp) (by
+      intro s
+      have h₁ := (((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul (I*(v.2+b.1))).const_add v.1).add
+        (((Complex.ofRealCLM.hasDerivAt (x := s.val)).pow 2).const_mul (b.2/2))
+      have h₂ := ((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul (I*b.2)).const_sub v.2
+      convert! h₁.prodMk h₂ using 1
+      simp only [classicalODECoefficient_apply,triangularCurve,ContinuousMap.const_apply,
+        classicalSource_apply,physicalDomainCurve,ContinuousMap.coe_mk,physical_constant]
+      apply Prod.ext <;> dsimp <;> ring_nf
+      simp [I_sq])
+  exact (h t.property).symm
+
+-- The first vector really is an original eigenvector, with a nonzero physical initial value.
+example : spectralPencil (by simp) triangularPotential 0 (constantDomain (1,0)) = 0 ∧
+    physicalDomain (constantDomain (1,0)) 0 ≠ 0 := by
+  constructor
+  · rw [spectralPencil_apply]
+    simp only [zero_smul,zero_sub,neg_eq_zero]
+    apply Prod.ext <;> ext n <;> by_cases hn : n = 0 <;>
+      simp [operator_fst_apply,operator_snd_apply,triangularPotential,constantDomain,scalarMode_apply,hn]
+  · rw [physical_constant]
+    simp
+
+-- The eigenvector e₁ has a nontrivial original generalized preimage with initial value -e₂.
+example : ∃ a : Domain 2, a ∈ domainParitySubspace 0 ∧
+    spectralPencil (by simp) triangularPotential 0 a = domainInclusion (constantDomain (1,0)) ∧
+    physicalDomain a 0 = (0,-1) := by
+  apply (exists_parity_preimage_iff_forced_endpoint triangularPotential triangular_even triangularCurve
+    triangular_representative 0 0 (constantDomain (1,0)) (constant_parity (1,0)) (0,-1)).mpr
+  rw [forced_formula _ _ ⟨1,by constructor <;> norm_num⟩]
+  norm_num
+
+-- That chain cannot be extended through -e₂: its second component acquires a nonzero endpoint increment.
+example : ¬ ∃ a : Domain 2, a ∈ domainParitySubspace 0 ∧
+    spectralPencil (by simp) triangularPotential 0 a = domainInclusion (constantDomain (0,-1)) := by
+  rintro ⟨a,ha,he⟩
+  have ht := (exists_parity_preimage_iff_forced_endpoint triangularPotential triangular_even triangularCurve
+    triangular_representative 0 0 (constantDomain (0,-1)) (constant_parity (0,-1)) (physicalDomain a 0)).mp
+      ⟨a,ha,he,rfl⟩
+  rw [forced_formula _ _ ⟨1,by constructor <;> norm_num⟩] at ht
+  have h₂ := congrArg Prod.snd ht
+  simp only [wave_zero,one_smul] at h₂
+  have hi : I = 0 := by
+    dsimp at h₂
+    linear_combination h₂
+  exact I_ne_zero hi
+
+-- A genuinely nonconstant source is integrated, with the correct second-component sign.
+example (t : Icc (0 : ℝ) 1) :
+    classicalForcedSolution (0 : Curve (ℂ × ℂ)) 0
+      ⟨fun s => (0,(s.val : ℂ)),by fun_prop⟩ 0 t = (0,-I*(t.val : ℂ)^2/2) := by
+  have hc : ContDiff ℝ 1 (fun x : ℝ => ((0 : ℂ),-I*(x : ℂ)^2/2)) :=
+    contDiff_const.prodMk ((contDiff_const.mul
+      ((show ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)) from Complex.ofRealCLM.contDiff).pow 2)).div_const 2)
+  have h := classicalForcedSolution_unique 0 0
+    ⟨fun s => (0,(s.val : ℂ)),by fun_prop⟩ 0 _ hc.contDiffOn.absolutelyContinuousOnInterval (by simp) (by
+      intro s
+      have hd := (hasDerivAt_const s.val (0 : ℂ)).prodMk
+        ((((Complex.ofRealCLM.hasDerivAt (x := s.val)).pow 2).const_mul (-I)).div_const 2)
+      convert! hd using 1
+      simp only [classicalODECoefficient_apply,ContinuousMap.zero_apply,ContinuousMap.coe_mk,classicalSource_apply]
+      apply Prod.ext <;> dsimp <;> ring)
+  exact (h t.property).symm
+
+end
+end ForcedParityChecks
