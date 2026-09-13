@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 488 modules and 3625 named public theorems. All compile on the
+The library has 492 modules and 3648 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.FunctionalAnalysis.LinearVolterraRegularity` | Absolutely continuous almost-everywhere ODE solutions equal the constructed classical solution and satisfy the ODE at every interior point |
+| `NLS.ZakharovShabat.PhysicalParity` | Pointwise unit-translation law for Fourier parity, injective unit-interval restriction, and continuous absolutely continuous physical Hilbert domain vectors |
+| `NLS.ZakharovShabat.PhysicalParityMonodromy` | Original Hilbert eigenvectors agree with classical solutions; nonzero parity eigenvectors give nonzero initial data and the actual monodromy endpoint multiplier |
+| `NLS.ZakharovShabat.CanonicalParityClassicalZeros` | Intrinsic parity zeros force trace values two and minus two for continuously represented Hilbert potentials; disjoint parity zero sets and the full-product zero implication |
 | `NLS.FunctionalAnalysis.ComplexVolterraOperator` | Complex Volterra operator, factorial operator-power bounds, and global invertibility of one minus the integral operator |
 | `NLS.FunctionalAnalysis.ComplexVolterraAnalytic` | Bounded linear coefficient-to-operator map, inverse solution formula, and analytic dependence of the whole continuous solution curve |
 | `NLS.ZakharovShabat.ClassicalMonodromyAnalytic` | Joint analytic classical solutions, fundamental matrix, monodromy, trace discriminant, boundary determinants, and all mixed trace derivatives |
@@ -4485,10 +4489,43 @@ to original coefficient spectral multiplicities, normalized infinite products,
 and finite-p distributional potentials remains open, as do the required
 large-spectral-parameter asymptotics.
 
+## Section 8: original parity eigenvectors and classical monodromy
+
+`LinearVolterraRegularity` uses the fundamental theorem of calculus to show
+that an absolutely continuous solution of the continuous linear ODE almost
+everywhere equals the constructed initial-value solution. It consequently
+satisfies the ODE at every interior point.
+
+`PhysicalParity` proves the pointwise unit-translation law from Fourier parity
+support, first for absolutely summable series and then for weighted Sobolev
+representatives. The original Hilbert domain vector is continuous and absolutely
+continuous on a full period. A parity-supported domain vector vanishing on
+`[0,1]` vanishes identically, including for negative odd parity labels.
+
+`PhysicalParityMonodromy` assumes an original Hilbert potential and a continuous
+representative agreeing almost everywhere on `(0,1]`. The original coefficient
+eigen-equation gives an almost-everywhere physical ODE, and the regularity result
+identifies its physical domain vector with the constructed classical solution.
+For a nonzero parity eigenvector, zero initial data would force the vector to
+vanish on the unit interval and hence everywhere. Its nonzero initial vector
+therefore has the endpoint multiplier supplied by its Fourier parity, forcing
+the corresponding monodromy characteristic determinant to vanish.
+
+`CanonicalParityClassicalZeros` applies this bridge to the original parity root
+multiplicities and intrinsic spectral products for even-supported Hilbert
+potentials with continuous representatives. An even-product zero gives classical
+trace `2`, and an odd-product zero gives trace `-2`. Thus the two intrinsic
+factors cannot vanish together. Exact intrinsic full-product factorization also
+makes every full-product zero a zero of the classical trace squared minus four.
+
+These are forward zero implications. The reverse spectral bridge, agreement
+of classical and original algebraic multiplicities, normalized entire-product
+identification, and extension to finite-p distributional potentials remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7415 declarations under `NLS`, including generated
+axioms. The current audit covers 7442 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5502,6 +5539,13 @@ characteristic determinant at its free multiple zero, simultaneous spectral
 and potential affine perturbations, analytic mixed third trace derivatives,
 and convergence of whole solution curves under uniform coefficient convergence.
 
+The physical-parity bridge is checked on a nonconstant triangular potential
+with Fourier coefficient 100 and the negative odd mode at index `-3`. The
+original equation gives the antiperiodic classical endpoint, an intrinsic odd
+product zero, and a nonzero even factor. A separate check uses an absolutely
+continuous almost-everywhere scalar solution with coefficient 100 to derive
+pointwise zero-initial-data uniqueness.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5519,9 +5563,13 @@ and convergence of whole solution curves under uniform coefficient convergence.
    now constructed for continuous potentials, with determinant one, exact
    endpoint multiplier criteria, and the free normalization. Joint analyticity
    of the solutions, monodromy, trace, and endpoint determinants is now proved
-   on the continuous-potential Banach space. Its boundary
-   determinants have the required compatibility, but their equality with the
-   infinite spectral products and extension to finite-p potentials remain open.
+   on the continuous-potential Banach space. Original Hilbert parity eigenvectors
+   now give classical monodromy roots for continuously represented potentials;
+   intrinsic even/odd zeros force trace values `2`/`-2` and cannot coincide.
+   The reverse bridge and equality of algebraic multiplicities remain open.
+   The classical boundary determinants have the required compatibility, but
+   their equality with the infinite spectral products and extension to finite-p
+   potentials remain open.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

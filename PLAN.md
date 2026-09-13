@@ -1460,8 +1460,18 @@ the actual joint coefficient map proves analyticity of the monodromy, trace,
 and boundary determinants, including at multiple roots. All mixed derivatives
 of the trace are analytic.
 
-Next, connect the classical endpoint determinants to the original coefficient
-spectral products, retaining algebraic multiplicities and entire normalization,
+The forward bridge from original Hilbert parity eigenvectors to classical
+monodromy is now proved for potentials with a continuous representative on
+the unit interval. Absolute continuity and the almost-everywhere original
+equation give the constructed classical solution. Fourier parity supplies
+the endpoint sign and makes restriction to the unit interval injective.
+Nonzero eigenvectors have nonzero initial values, so intrinsic even and odd
+product zeros force trace values `2` and `-2`. Their zero sets are disjoint;
+full-product zeros force zeros of the classical discriminant squared minus four.
+
+Next, prove the reverse spectral bridge and identify classical endpoint
+determinants with the original coefficient spectral products, retaining
+algebraic multiplicities and entire normalization,
 and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.

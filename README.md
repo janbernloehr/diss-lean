@@ -743,9 +743,13 @@ installation is absent. No shell startup files are modified.
   inverse with factorial power bounds. This proves joint Banach-space
   analyticity of the classical solutions, monodromy, trace, and boundary
   determinants for arbitrary continuous potentials, including at multiple
-  roots. All mixed derivatives of the trace are analytic. Identifying these
-  classical determinants with
-  the infinite spectral products, and thus proving `f+2=g−2`, remains open.
+  roots. All mixed derivatives of the trace are analytic. Original Hilbert
+  parity eigenvectors now give nonzero classical solutions whenever the
+  potential has a continuous representative on the unit interval. Intrinsic
+  even and odd product zeros therefore force trace values `2` and `-2`, and
+  the two factors have disjoint zero sets. The reverse implication, equality
+  of algebraic multiplicities with the classical determinants, and normalized
+  infinite-product identification needed for `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

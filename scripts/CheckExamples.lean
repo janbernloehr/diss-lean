@@ -11025,3 +11025,89 @@ example (A : ℕ → Curve (ℂ →L[ℂ] ℂ)) (B : Curve (ℂ →L[ℂ] ℂ))
 
 end
 end MonodromyAnalyticChecks
+
+namespace PhysicalParityMonodromyChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.LinearVolterra Set Complex MeasureTheory
+noncomputable section
+
+-- A nonconstant, size-100 triangular potential supplied by actual Fourier coefficients.
+private def triangularDomain : Domain 2 := (scalarMode 2 100,0)
+private def triangularPotential : PairSpace 2 := domainInclusion triangularDomain
+private def triangularCurve : Curve (ℂ × ℂ) where
+  toFun t := physicalDomain triangularDomain t
+  continuous_toFun := (continuous_physicalDomain triangularDomain).comp continuous_subtype_val
+
+private theorem triangular_representative :
+    physicalBase triangularPotential =ᵐ[volume.restrict (Ioc 0 1)] extend triangularCurve := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num))
+    (physicalBase_domainInclusion triangularDomain)
+  filter_upwards [h,ae_restrict_mem measurableSet_Ioc] with t ht hmem
+  change physicalBase (domainInclusion triangularDomain) t = _
+  rw [ht]
+  simp [LinearVolterra.extend,projIcc_of_mem _ (Ioc_subset_Icc_self hmem),triangularCurve]
+
+private theorem triangular_even : triangularPotential ∈ pairParitySubspace 0 := by
+  apply (mem_domainParitySubspace 0 triangularDomain).mp
+  intro n hn
+  have hne : n ≠ 2 := by omega
+  simp [triangularDomain,scalarMode_apply,hne]
+
+private theorem negative_odd_mode : negativeMode (p := 2) (-3) ∈ domainParitySubspace (-3) := by
+  intro n hn
+  have hne : n ≠ 3 := by omega
+  simp [negativeMode,scalarMode_apply,hne]
+
+private theorem triangular_mode_equation :
+    operator (by simp) triangularPotential (negativeMode (-3)) =
+      ((Real.pi : ℂ)*(-3 : ℤ)) • domainInclusion (negativeMode (-3)) := by
+  have hP : potentialOperator (by simp) triangularPotential (negativeMode (-3)) = 0 := by
+    apply Prod.ext <;> ext n <;>
+      simp [potentialOperator_apply,potentialMul_apply,triangularPotential,triangularDomain,negativeMode]
+  rw [operator,_root_.add_apply,hP,add_zero]
+  exact freeOperator_negativeMode (-3)
+
+-- Negative parity labels retain the antiperiodic endpoint sign for a nonzero potential.
+example : classicalSolution triangularCurve ((Real.pi : ℂ)*(-3 : ℤ)) (1,0) 1 = -(1,0) := by
+  have h := physicalDomain_eq_classicalSolution triangularPotential triangularCurve
+    triangular_representative (negativeMode (-3)) _ triangular_mode_equation
+  have hs := physicalDomain_add_one_of_parity (negativeMode (p := 2) (-3)) (-3) negative_odd_mode 0
+  have hi : physicalDomain (negativeMode (p := 2) (-3)) 0 = (1,0) := by
+    simp only [physicalDomain,negativeMode,sobolevSynthesis_scalarMode,map_zero,ContinuousMap.zero_apply]
+    simp [wave]
+  rw [zero_add,h (show (1 : ℝ) ∈ Icc 0 1 by simp),hi] at hs
+  have hw : wave (-3) 1 = -1 := by simpa using wave_odd_at_one (-2)
+  simpa only [hw,neg_one_smul] using hs
+
+-- The same original mode forces an intrinsic odd-product zero and excludes an even zero.
+example : canonicalParityProduct (by simp) triangularPotential 1 ((Real.pi : ℂ)*(-3 : ℤ)) = 0 ∧
+    canonicalParityProduct (by simp) triangularPotential 0 ((Real.pi : ℂ)*(-3 : ℤ)) ≠ 0 := by
+  have hpos : 0 < parityAlgebraicMultiplicity (by simp) triangularPotential 1 ((Real.pi : ℂ)*(-3 : ℤ)) := by
+    apply (parityAlgebraicMultiplicity_pos_iff (by simp) triangularPotential triangular_even 1 _).mpr
+    refine ⟨negativeMode (-3),?_,?_,?_⟩
+    · intro hz
+      apply domainInclusion_negativeMode_ne_zero (p := 2) (-3)
+      rw [hz,map_zero]
+    · intro n hn
+      exact negative_odd_mode n (by omega)
+    · rw [spectralPencil_apply,triangular_mode_equation,sub_self]
+  have ho := (((canonicalParityProduct_spec (by simp) (by norm_num) triangularPotential triangular_even
+    1 (Or.inr rfl)).2 _).2).mpr hpos
+  refine ⟨ho,fun he => canonicalParityProducts_not_both_zero triangularPotential triangular_even
+    triangularCurve triangular_representative _ ⟨he,ho⟩⟩
+
+-- Absolute continuity and an almost-everywhere equation suffice for pointwise uniqueness.
+example (u : ℝ → ℝ) (hu : AbsolutelyContinuousOnInterval u 0 1)
+    (h0 : u 0 = 0) (hd : ∀ᵐ t : ℝ, t ∈ Icc (0 : ℝ) 1 → HasDerivAt u (100*u t) t) :
+    EqOn u 0 (Icc 0 1) := by
+  let A : Curve (ℝ →L[ℝ] ℝ) := ContinuousMap.const _ ((100 : ℝ) • ContinuousLinearMap.id ℝ ℝ)
+  have h := solution_unique_of_ac A u hu (by
+    simpa only [A,LinearVolterra.extend,ContinuousMap.const_apply,smul_apply,ContinuousLinearMap.id_apply,smul_eq_mul] using hd)
+  have hz := solution_unique A 0 (fun _ => (0 : ℝ)) continuous_const.continuousOn rfl
+    (fun t _ => by simpa only [map_zero] using hasDerivAt_const t.val (0 : ℝ))
+  intro t ht
+  rw [h ht,h0,← hz ht]
+  rfl
+
+end
+end PhysicalParityMonodromyChecks

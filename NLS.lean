@@ -436,3 +436,7 @@ import NLS.ZakharovShabat.ClassicalFreeDiscriminant
 import NLS.FunctionalAnalysis.ComplexVolterraOperator
 import NLS.FunctionalAnalysis.ComplexVolterraAnalytic
 import NLS.ZakharovShabat.ClassicalMonodromyAnalytic
+import NLS.FunctionalAnalysis.LinearVolterraRegularity
+import NLS.ZakharovShabat.PhysicalParity
+import NLS.ZakharovShabat.PhysicalParityMonodromy
+import NLS.ZakharovShabat.CanonicalParityClassicalZeros
