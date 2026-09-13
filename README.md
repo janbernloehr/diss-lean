@@ -739,7 +739,12 @@ installation is absent. No shell startup files are modified.
   continuous potential on the unit interval, with no smallness assumption.
   Its determinant is one, its trace has the exact free value `2 cos z`, and
   its boundary determinants detect periodic and antiperiodic solutions at
-  trace values `2` and `-2`. Identifying these classical determinants with
+  trace values `2` and `-2`. The Volterra integral operator now has a global
+  inverse with factorial power bounds. This proves joint Banach-space
+  analyticity of the classical solutions, monodromy, trace, and boundary
+  determinants for arbitrary continuous potentials, including at multiple
+  roots. All mixed derivatives of the trace are analytic. Identifying these
+  classical determinants with
   the infinite spectral products, and thus proving `f+2=g−2`, remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 

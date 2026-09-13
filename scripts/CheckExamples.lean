@@ -10973,3 +10973,55 @@ example (A : Curve (ℝ →L[ℝ] ℝ)) (hA : ∀ t, ‖A t‖ ≤ 100) (x : ℝ
 
 end
 end ClassicalMonodromyChecks
+
+namespace MonodromyAnalyticChecks
+open NLS NLS.LinearVolterra NLS.ZakharovShabat Set Complex Matrix
+open scoped Matrix.Norms.Elementwise
+noncomputable section
+
+-- The inverse handles nonconstant forcing, not only constant initial curves.
+example (A : Curve (ℂ →L[ℂ] ℂ)) (g : Curve ℂ) (t : Icc (0 : ℝ) 1) :
+    solutionOperator A g t = g t + ∫ s in (0 : ℝ)..t.val, extend A s (extend (solutionOperator A g) s) := by
+  have h := congrArg (fun L : Curve ℂ →L[ℂ] Curve ℂ => L g t) (mul_solutionOperator A)
+  simp only [mul_apply_eq_comp,_root_.sub_apply,one_apply_eq_self,ContinuousMap.sub_apply,volterra_apply] at h
+  exact sub_eq_iff_eq_add.mp h
+
+-- Even a coefficient of norm 100 has an analytic inverse Volterra operator.
+example : AnalyticAt ℂ (solutionOperator (E := ℂ))
+    (ContinuousMap.const _ ((100 : ℂ) • ContinuousLinearMap.id ℂ ℂ)) :=
+  analyticOnNhd_solutionOperator _ (Set.mem_univ _)
+
+-- The periodic characteristic determinant stays analytic at its free multiple zero.
+example : AnalyticAt ℂ (fun q : ℂ × Curve (ℂ × ℂ) => (classicalMonodromy q.2 q.1-1).det) (0,0) ∧
+    (classicalMonodromy (0 : Curve (ℂ × ℂ)) 0-1).det = 0 := by
+  constructor
+  · simpa only [one_smul] using analyticOnNhd_classicalBoundaryDeterminant_joint 1 (0,0) (Set.mem_univ _)
+  · have h := (classicalBoundaryDeterminants_compatible (0 : Curve (ℂ × ℂ)) 0).1
+    rw [classicalDiscriminant_free] at h
+    norm_num [freeDiscriminant] at h ⊢
+    exact h
+
+-- Both spectral and potential coordinates may vary along a complex affine line.
+example (q v : ℂ × Curve (ℂ × ℂ)) :
+    AnalyticOnNhd ℂ (fun a : ℂ => classicalDiscriminant (q+a • v).2 (q+a • v).1) Set.univ := by
+  intro a _
+  exact (analyticOnNhd_classicalDiscriminant_joint (q+a • v) (Set.mem_univ _)).comp
+    (f := fun a : ℂ => q+a • v) (by
+      have hs : AnalyticAt ℂ (fun a : ℂ => a • v) a :=
+        (ContinuousLinearMap.toSpanSingleton ℂ v).analyticAt a
+      exact analyticAt_const.add hs)
+
+-- Third mixed derivatives of the trace are analytic on the infinite-dimensional potential space.
+example : AnalyticOnNhd ℂ (iteratedFDeriv ℂ 3
+    (fun q : ℂ × Curve (ℂ × ℂ) => classicalDiscriminant q.2 q.1)) Set.univ :=
+  analyticOnNhd_iteratedFDeriv_classicalDiscriminant 3
+
+-- Uniform coefficient convergence gives convergence of the entire initial-value solution curve in supremum norm.
+example (A : ℕ → Curve (ℂ →L[ℂ] ℂ)) (B : Curve (ℂ →L[ℂ] ℂ))
+    (h : Filter.Tendsto A Filter.atTop (nhds B)) :
+    Filter.Tendsto (fun n => solutionCurve (realCoefficient (A n)) (1 : ℂ)) Filter.atTop
+      (nhds (solutionCurve (realCoefficient B) 1)) :=
+  (analyticOnNhd_solutionCurve_coefficient (1 : ℂ) B (Set.mem_univ _)).continuousAt.tendsto.comp h
+
+end
+end MonodromyAnalyticChecks

@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 485 modules and 3605 named public theorems. All compile on the
+The library has 488 modules and 3625 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.FunctionalAnalysis.ComplexVolterraOperator` | Complex Volterra operator, factorial operator-power bounds, and global invertibility of one minus the integral operator |
+| `NLS.FunctionalAnalysis.ComplexVolterraAnalytic` | Bounded linear coefficient-to-operator map, inverse solution formula, and analytic dependence of the whole continuous solution curve |
+| `NLS.ZakharovShabat.ClassicalMonodromyAnalytic` | Joint analytic classical solutions, fundamental matrix, monodromy, trace discriminant, boundary determinants, and all mixed trace derivatives |
 | `NLS.FunctionalAnalysis.LinearVolterra` | Factorial Picard-iterate estimates and unique continuous solutions of arbitrary-size linear Volterra equations on the whole unit interval |
 | `NLS.FunctionalAnalysis.LinearVolterraSolution` | Differentiable solution construction, endpoint initial value, actual ODE on the closed interval, and uniqueness from interior derivatives and endpoint continuity |
 | `NLS.ZakharovShabat.ClassicalFundamentalSolution` | Classical initial-value solutions of the original physical spectral equation, normalized fundamental columns, constant Wronskian one, and unimodular monodromy |
@@ -4448,14 +4451,44 @@ identifies the trace with the existing `2 cos z` normalization for all complex z
 The equality of these classical determinants with the intrinsic infinite
 spectral products remains open. It requires a bridge to the original coefficient
 spectrum and its multiplicities, together with the correct entire normalization.
-Joint parameter analyticity of this monodromy construction and its large-spectral-
-parameter asymptotics are not asserted here. The distributional-potential
-compatibility identity remains a subsequent approximation step.
+Joint parameter analyticity is proved in the next milestone. The large-spectral-
+parameter asymptotics and distributional-potential compatibility identity
+remain open.
+
+## Section 8: analytic dependence of classical monodromy
+
+`ComplexVolterraOperator` makes the zero-initial-value integral map a bounded
+complex-linear operator on the Banach space of continuous curves. The earlier
+Picard estimate gives `‖V^n‖ ≤ ‖A‖^n/n!`. A sufficiently high power has norm
+less than one. Finite geometric-sum identities and commutation then show
+that `1-V` itself is invertible for every continuous coefficient, including
+coefficients whose norm is larger than one.
+
+`ComplexVolterraAnalytic` proves that the coefficient-to-operator map is
+bounded complex linear. The inverse `Ring.inverse (1-V)` has both inverse
+identities and gives the previous Volterra solution when applied to the
+constant initial curve. Analytic inversion proves coefficient analyticity
+in operator norm and analyticity of the whole solution curve in supremum
+norm. Evaluation at every point of the closed interval retains analyticity.
+
+`ClassicalMonodromyAnalytic` bundles the original signed ODE coefficient as
+a continuous complex-linear map of the spectral parameter and continuous
+potential. Restriction of scalars recovers the earlier construction exactly.
+Its solutions, fundamental matrix, endpoint monodromy, trace discriminant,
+and fixed-multiplier characteristic determinants are jointly analytic. Every
+mixed iterated Fréchet derivative of the trace is analytic. These assertions
+hold at multiple roots as well; inversion is applied to the Volterra operator,
+whose invertibility does not require the boundary determinant to be nonzero.
+
+This gives analytic dependence on the continuous-potential space. The bridge
+to original coefficient spectral multiplicities, normalized infinite products,
+and finite-p distributional potentials remains open, as do the required
+large-spectral-parameter asymptotics.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7357 declarations under `NLS`, including generated
+axioms. The current audit covers 7415 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5463,6 +5496,12 @@ multipliers. They check the negative odd free index, propagation of either
 boundary-determinant zero to a discriminant-square zero, and the third Picard
 iterate's factorial bound with coefficient norm 100.
 
+Monodromy-analytic examples check arbitrary nonconstant Volterra forcing,
+analytic inversion at a constant coefficient of norm 100, the periodic
+characteristic determinant at its free multiple zero, simultaneous spectral
+and potential affine perturbations, analytic mixed third trace derivatives,
+and convergence of whole solution curves under uniform coefficient convergence.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5478,7 +5517,9 @@ iterate's factorial bound with coefficient norm 100.
    Taylor series and analytic mixed derivatives. Next establish `f+2=g−2` to
    identify the correctly normalized discriminant. The classical monodromy is
    now constructed for continuous potentials, with determinant one, exact
-   endpoint multiplier criteria, and the free normalization. Its boundary
+   endpoint multiplier criteria, and the free normalization. Joint analyticity
+   of the solutions, monodromy, trace, and endpoint determinants is now proved
+   on the continuous-potential Banach space. Its boundary
    determinants have the required compatibility, but their equality with the
    infinite spectral products and extension to finite-p potentials remain open.
    Bounded source

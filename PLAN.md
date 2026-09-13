@@ -1451,6 +1451,15 @@ columns have Wronskian one, their matrix propagates every initial vector, and
 the monodromy trace detects periodic and antiperiodic solutions through the
 characteristic determinant. The free trace is exactly `2 cos z`.
 
+The classical construction is now jointly analytic in the spectral parameter
+and continuous potential. The coefficient-to-Volterra map is bounded complex
+linear, and its factorial power bound makes `1-V` invertible for every
+coefficient size. The inverse equals the earlier initial-value solution and
+depends analytically on the coefficient in the supremum norm. Composing with
+the actual joint coefficient map proves analyticity of the monodromy, trace,
+and boundary determinants, including at multiple roots. All mixed derivatives
+of the trace are analytic.
+
 Next, connect the classical endpoint determinants to the original coefficient
 spectral products, retaining algebraic multiplicities and entire normalization,
 and use potential approximation to prove `f+2=g−2` for finite p>1. The classical

@@ -433,3 +433,6 @@ import NLS.FunctionalAnalysis.LinearVolterraSolution
 import NLS.ZakharovShabat.ClassicalFundamentalSolution
 import NLS.ZakharovShabat.ClassicalBoundaryDeterminants
 import NLS.ZakharovShabat.ClassicalFreeDiscriminant
+import NLS.FunctionalAnalysis.ComplexVolterraOperator
+import NLS.FunctionalAnalysis.ComplexVolterraAnalytic
+import NLS.ZakharovShabat.ClassicalMonodromyAnalytic
