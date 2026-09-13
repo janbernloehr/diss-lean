@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 398 modules and 3157 named public theorems. All compile on the
+The library has 400 modules and 3182 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.BoundedAuxiliaryExtension` | Completed phased auxiliary maps for all `1<p<∞`, exact raw and physical finite Fourier formulas, uniqueness by density, Sobolev compatibility, and the physical `p=1` obstruction |
+| `NLS.ZakharovShabat.AuxiliarySourceExtension` | Closed auxiliary target in the actual component-sum pair norm, bounded analytic source extension with explicit constant, finite integral agreement, and exact norm preservation at `p=2` |
 | `NLS.Fourier.HalfIntervalReality` | Conjugate-index compatibility of the completed half-interval map for all `1<p<∞`, including the odd shifted-Hilbert coefficients |
 | `NLS.ZakharovShabat.AuxiliaryReality` | Real-type compatibility of source interval extensions and potential phase; real actual auxiliary spectra and nonreal resolvent inclusion, including source period-one potentials |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryReality` | A.e. original real type, actual Neumann Fourier-integral compatibility, representative invariance, and real physical auxiliary eigenvalues and spectra |
@@ -3688,15 +3690,31 @@ L² data. Both original endpoint eigenvalue sets and both closed physical
 auxiliary operator spectra are real; nonreal parameters lie in their physical
 resolvent sets. These results include potentials changed on null sets.
 
-**Remaining scope.** Verify the bounded source period-one auxiliary
-eigenfunction extensions.
-The printed general-`p` central-height issue and the global nonlinear
-coordinate construction remain open.
+`BoundedAuxiliaryExtension` constructs both completed period-one auxiliary
+eigenfunction maps by phase conjugation. Their first and second raw coefficients
+have the source's exact reflected frequencies and phase factors. On finite
+period-one polynomials they equal the actual normalized Fourier integrals of
+the physical phased reflection in (1.11)–(1.12); these formulas uniquely determine
+the continuous map by density. Compatible finite original H¹ inputs agree with
+the already constructed Sobolev auxiliary extension. The constant input `(0,1)`
+has second auxiliary Fourier coefficients outside `ℓ¹`, proving the strict
+lower exponent restriction is necessary.
+
+`AuxiliarySourceExtension` equips the output auxiliary subspace with the actual
+component-sum coefficient norm and proves it is closed. The original period-one
+input carries that same source norm. Both maps are complex continuous linear,
+hence analytic, with sufficient bound `2^(1/p) intervalExtensionBound`, and
+retain the actual finite-input integrals. At `p=2` the source norm is preserved
+exactly, as follows from the completed Parseval energy identity.
+
+**Remaining scope.** The printed general-`p` central-height issue remains open.
+The next construction is the convergent spectral products and discriminant
+of Chapter 2, followed by the nonlinear coordinates and main results.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6459 declarations under `NLS`, including generated
+axioms. The current audit covers 6501 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4559,13 +4577,22 @@ actual pair topology and Neumann potential extension. Physical checks allow
 a non-real exceptional value at an interior singleton and place `i` in the
 actual closed physical operator's resolvent for arbitrary real-type L² data.
 
+Bounded auxiliary extension checks cover closed source-norm targets, quantitative
+bounds and analyticity at `p=3`, and exact norm preservation at `p=2`. Negative
+even coefficients check the half-normalization and both phase signs; negative
+odd coefficients check agreement with the actual physical integral. Compatible
+finite H¹ inputs recover the original Sobolev extension, and the actual constant
+input `(0,1)` verifies failure of `ℓ¹` membership at the lower endpoint.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Verify bounded source period-one auxiliary eigenfunction extension maps.
-   Source-extension real-type compatibility and Proposition 5.2(iv) are now
-   proved for source coefficient and original physical L² potentials. The
-   physical endpoint domains, normed isomorphisms, closed densely defined L² operators, compact resolvents,
+2. Construct the convergent spectral products of Section 8 and prove their
+   analytic dependence, then identify the discriminant. Bounded source
+   period-one auxiliary eigenfunction extensions, source-extension real-type
+   compatibility, and Proposition 5.2(iv) are now proved for source coefficient and original physical L² potentials. The
+   physical endpoint domains, normed isomorphisms, closed densely defined L²
+   operators, compact resolvents,
    actual generalized multiplicities, counts, and uniform starred asymptotics
    are now proved. All four coefficient and physical L² Corollary 6.2
    displacement conclusions hold, together with the midpoint consequence.
@@ -4580,12 +4607,12 @@ actual closed physical operator's resolvent for arbitrary real-type L² data.
    as are the finite Fourier approximation and the zero/half coefficient bounds.
    Appendix B.2, its periodic product in A.7, and the displayed B.3 inequality
    are proved.
-3. Continue to the Chapter 2 discriminant, product, and action-coordinate
-   prerequisites, then the remaining nonlinear Fourier/Birkhoff main results.
+3. Continue with the anti-discriminant and action-coordinate prerequisites,
+   then the remaining nonlinear Fourier/Birkhoff main results.
    Both finite and infinity source pair norms and their sharp comparisons are
    complete.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the remaining bounded auxiliary eigenfunction extension and Chapter 2 nonlinear
-coordinate construction remain incomplete.
+the Chapter 2 spectral products, discriminant, and nonlinear coordinate
+construction remain incomplete.

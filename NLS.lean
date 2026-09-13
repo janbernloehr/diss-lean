@@ -346,3 +346,5 @@ import NLS.ZakharovShabat.ClassicalAuxiliaryAsymptotics
 import NLS.Fourier.HalfIntervalReality
 import NLS.ZakharovShabat.AuxiliaryReality
 import NLS.ZakharovShabat.ClassicalAuxiliaryReality
+import NLS.ZakharovShabat.BoundedAuxiliaryExtension
+import NLS.ZakharovShabat.AuxiliarySourceExtension

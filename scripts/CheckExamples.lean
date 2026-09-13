@@ -9487,3 +9487,65 @@ example (b : BoundaryCondition) (φ : ℝ → ℂ × ℂ)
 
 end
 end AuxiliaryRealityChecks
+
+namespace AuxiliaryExtensionChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Actual source norms on both sides, with a closed auxiliary target at p=3.
+example (b : BoundaryCondition) (a : CoeffPair 3) :
+    auxiliarySourceExtension b (by norm_num) (by simp) a ∈ auxiliarySourceSpace b ∧
+    ‖auxiliarySourceExtension b (by norm_num) (by simp) a‖ ≤
+      auxiliarySourceExtensionBound (p := 3) (by norm_num) (by simp) * ‖a‖ :=
+  ⟨auxiliarySourceExtension_mem b (by norm_num) (by simp) a,
+    norm_auxiliarySourceExtension_apply_le b (by norm_num) (by simp) a⟩
+
+example (b : BoundaryCondition) :
+    IsClosed (auxiliarySourceSpace (p := 3) b : Set (CoeffPair 3)) :=
+  isClosed_auxiliarySourceSpace b
+
+example (b : BoundaryCondition) (a : CoeffPair 3) :
+    AnalyticAt ℂ (auxiliarySourceExtensionToBoundary b (by norm_num) (by simp)) a :=
+  analyticAt_auxiliarySourceExtensionToBoundary b (by norm_num) (by simp) a
+
+-- The Hilbert case preserves the actual component-sum norm exactly.
+example (b : BoundaryCondition) (a : CoeffPair 2) :
+    ‖auxiliarySourceExtension b (by norm_num) (by simp) a‖ = ‖a‖ :=
+  norm_auxiliarySourceExtension_two b a
+
+-- Both phases and the half-normalization occur at a negative even index.
+example (b : BoundaryCondition) :
+    (auxiliaryIntervalExtensionCLM b (by norm_num : (1 : ℝ≥0∞) < 3) (by simp)
+      (lp.single 3 2 (2+Complex.I), lp.single 3 (-2) (1-Complex.I))).2 (-4) =
+      ((1-Complex.I) + Complex.I * extensionSign b * (2+Complex.I)) / 2 := by
+  have h := auxiliaryIntervalExtensionCLM_snd_even b (by norm_num : (1 : ℝ≥0∞) < 3) (by simp)
+    (lp.single 3 2 (2+Complex.I), lp.single 3 (-2) (1-Complex.I)) (-2)
+  simpa only [show 2*(-2 : ℤ) = -4 by norm_num, show -(-2 : ℤ) = 2 by norm_num,
+    lp.single_apply, Pi.single_eq_same] using h
+
+-- Odd coefficients of any finite original polynomial agree with the actual phased reflection integral.
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) :
+    let u := auxiliarySourceExtension b (by norm_num : (1 : ℝ≥0∞) < 3) (by simp)
+      ((CoeffPair.toMax 3).symm (finitePairCoeffs a))
+    (u.fst (-7), u.snd (-7)) =
+      (periodTwoCoefficient (fun x => (auxiliaryIntervalExtension b (periodOnePair a) x).1) (-7),
+        periodTwoCoefficient (fun x => (auxiliaryIntervalExtension b (periodOnePair a) x).2) (-7)) :=
+  auxiliarySourceExtension_finite_integrals b (by norm_num) (by simp) a (-7)
+
+-- Original Sobolev and completed period-one constructions coincide on compatible finite input.
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ))
+    (ha : HasClassicalAuxiliaryDomain b (periodOnePair a)) :
+    auxiliaryIntervalExtensionCLM b (by norm_num : (1 : ℝ≥0∞) < 2) (by simp) (finitePairCoeffs a) =
+      domainInclusion (classicalAuxiliaryExtension b (periodOnePair a) ha) :=
+  auxiliaryIntervalExtensionCLM_finite_eq_classical b a ha
+
+-- The source's strict p>1 assumption is necessary even for the constant input (0,1).
+example (b : BoundaryCondition) :
+    ¬Memℓp (fun n => periodTwoCoefficient
+      (fun x => (auxiliaryIntervalExtension b (fun _ => ((0 : ℂ), 1)) x).2) n) 1 :=
+  not_memlp_auxiliaryIntervalExtension_oneSided b
+
+end
+end AuxiliaryExtensionChecks

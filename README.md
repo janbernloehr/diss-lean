@@ -662,6 +662,11 @@ installation is absent. No shell startup files are modified.
   auxiliary problems and both original physical L² operators. The physical
   hypothesis is imposed a.e. on the original interval, and every nonreal
   parameter belongs to the actual auxiliary resolvent set.
+  Both period-one auxiliary eigenfunction extensions are now bounded in the
+  source's actual component-sum pair norms for `1<p<∞`. Their finite Fourier
+  formulas agree with the physical phased reflection and uniquely determine
+  the completed maps. At `p=2` they preserve the source norm exactly; at
+  `p=1` the constant input `(0,1)` proves failure of coefficient membership.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

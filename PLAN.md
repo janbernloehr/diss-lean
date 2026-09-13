@@ -1251,7 +1251,16 @@ proves it for arbitrary real-type original physical L² potentials, with the
 real-type hypothesis imposed only a.e. and invariant under representatives.
 Both actual auxiliary resolvent sets contain every nonreal parameter.
 
-Next, verify the bounded period-one auxiliary eigenfunction extensions.
-Then continue to the Chapter 2 discriminant, product, and action-coordinate
-prerequisites.
+Both bounded period-one auxiliary eigenfunction extensions are now constructed
+in the source's actual component-sum pair norms. Their finite Fourier formulas
+are the actual integrals of the phased reflection, and density proves uniqueness
+of the completed map. Compatible finite H¹ inputs agree with the original
+Sobolev extension. The maps have an explicit common bound at every `1<p<∞`,
+are analytic into the closed source-norm auxiliary targets, and preserve the
+source norm exactly at `p=2`. The constant input `(0,1)` also proves that the
+strict lower exponent restriction cannot be dropped.
+
+Next, construct the convergent spectral products in Section 8, prove their
+analytic dependence, and identify the discriminant. Then continue with the
+anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
