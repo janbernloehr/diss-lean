@@ -609,8 +609,11 @@ installation is absent. No shell startup files are modified.
   corresponding analytic orders. A formal single-mode counterexample shows that
   the printed displacement bound cannot hold locally uniformly at zero: the
   roots move linearly with amplitude, while its budget is of higher order.
-  The valid per-root power estimate retains both leading Fourier coefficients;
-  a corrected tail sum including their additive contribution remains to be proved.
+  The corrected quantitative tail sum is now proved, including the additive
+  leading Fourier-tail contribution. One open convex neighborhood and cutoff
+  give two roots with exact analytic multiplicities, localization, gap control,
+  and every larger convergent displacement power tail, for all finite `p>1`.
+  The bound holds for arbitrary source spectral weights and all signed modes.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

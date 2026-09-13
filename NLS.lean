@@ -306,3 +306,10 @@ import NLS.ZakharovShabat.ResonantRoots
 import NLS.ZakharovShabat.SingleResonantPotential
 import NLS.ZakharovShabat.RootDisplacementSourceAudit
 import NLS.ZakharovShabat.RootDisplacementPower
+import NLS.SequenceSpaces.SampledPowerTail
+import NLS.ZakharovShabat.ResonantLeadingPowerTail
+import NLS.ZakharovShabat.ResonantDisplacementMajorant
+import NLS.ZakharovShabat.RootDisplacementBudget
+import NLS.ZakharovShabat.DisplacementMajorantSum
+import NLS.ZakharovShabat.UniformDisplacementMajorant
+import NLS.ZakharovShabat.RootDisplacementSequence

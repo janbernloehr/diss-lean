@@ -1117,9 +1117,21 @@ budget locally uniformly at zero, including on the valid small-square domain.
 `RootDisplacementPower` proves a branch-free per-root power estimate and
 separates both leading Fourier modes from their actual remainders.
 
-Next, sum that valid estimate, preserving an additive leading-tail term,
-and prove the corrected quantitative displacement bound. Then proceed to
-Propositions 6.1 and 6.3, auditing their dependence on the source correction.
-Identification of scalar analytic orders with the separate spectral algebraic
-multiplicities has not been asserted. The printed general-`p` central-height
-constant remains a separate open item.
+The corrected displacement power sum is now proved. Injective frequency
+sampling controls the two weighted leading coefficients by the pair Fourier
+tail, retaining its cutoff boundary. The actual diagonal and remainder
+suprema give one summable majorant for both roots. For `B=‖φ‖_(w,p)`,
+`T=‖R_(N/2)φ‖_(w,p)`, and `δ=min(1,p-1)`, its sum is at most
+`C_p [T^p + (B^p/N^δ+T^p)(1+B^p)B^p]`, with an explicit exponent-only
+constant. Root selection preserves the scalar analytic multiplicities,
+localization, and factor-six gap bound on the same open convex neighborhood
+and signed-frequency cutoff; every larger displacement tail converges and
+obeys this estimate. This is the corrected quantitative form of Lemma 6.9,
+not the disproved printed display.
+
+Next, prove the quantitative weighted root-gap tail estimate toward
+Proposition 6.3 and connect the scalar roots to the original periodic spectral
+labels for Propositions 6.1/6.3. Audit those statements against the source
+correction. Identification of scalar analytic orders with the separate
+spectral algebraic multiplicities has not been asserted. The printed
+general-`p` central-height constant remains a separate open item.

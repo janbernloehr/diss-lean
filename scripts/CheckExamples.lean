@@ -8652,3 +8652,81 @@ example : ‖Complex.I‖^(1 : ℝ) ≤ 1 := by
   norm_num at h ⊢
 
 end RootDisplacementAuditChecks
+
+namespace RootDisplacementSumChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (2 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem displacementHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem displacementHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨displacementHalfAboveOne.le⟩
+private def displacementWeight : SpectralWeight := SpectralWeight.constant 2 (by norm_num)
+
+-- The leading weighted sum retains a negative cutoff-boundary mode, with both unequal amplitudes.
+example : (∑' n : ℤ, if 3 ≤ n.natAbs then
+    resonantLeadingPower displacementWeight
+      (singleResonantPotential (p := 2) displacementWeight (-3) (2*Complex.I) 3) n else 0) = 52 := by
+  rw [tsum_eq_single (-3)]
+  · norm_num [resonantLeadingPower, displacementWeight]
+  · intro n hn
+    have h₁ : -(2*n) ≠ 6 := by omega
+    have h₂ : 2*n ≠ -6 := by omega
+    simp [resonantLeadingPower, h₁, h₂]
+
+-- The generic sampling estimate permits the exact doubled cutoff rather than losing another tail.
+example (a : Coeff 3) (N : ℕ) :
+    Summable (fun n : ℤ => if N ≤ n.natAbs then ‖a (-(2*n))‖^(3 : ℝ) else 0) ∧
+      (∑' n : ℤ, if N ≤ n.natAbs then ‖a (-(2*n))‖^(3 : ℝ) else 0) ≤ ‖Coeff.fourierTail (2*N) a‖^(3 : ℝ) := by
+  simpa using Coeff.sampled_fourierTail_power (p := 3) (by norm_num) a (fun n : ℤ => -(2*n))
+    (by intro x y h; change -(2*x) = -(2*y) at h; omega) N (2*N) (by intro n hn; omega)
+
+-- Both roots at a negative boundary contribute to the actual two-sided displacement sum.
+private def testRoot (a : ℂ) (n : ℤ) : ℂ := (Real.pi : ℂ)*n + if n = -3 then a else 0
+example : (∑' n : ℤ, rootDisplacementPowerTail 2 3 (testRoot Complex.I) (testRoot (2*Complex.I)) n) = 5 := by
+  rw [tsum_eq_single (-3)]
+  · norm_num [rootDisplacementPowerTail, testRoot]
+  · intro n hn
+    simp [rootDisplacementPowerTail, testRoot, hn]
+
+-- The corrected Hilbert constant is explicit and the zero-potential budget vanishes.
+example : rootDisplacementSummationConstant 2 = 3149832 := by
+  have he : (2 : ℝ≥0∞).conjExponent = 2 := ENNReal.HolderConjugate.conjExponent_eq
+  norm_num [rootDisplacementSummationConstant, diagonalSummationConstant, offDiagonalSummationConstant,
+    offDiagonalRegionConstant, doubleReciprocalSummationConstant, he, Real.rpow_natCast]
+
+example (N : ℕ) : rootDisplacementBudget displacementWeight (0 : WeightedCoeffPair displacementWeight.toWeight 2) N = 0 := by
+  simp [rootDisplacementBudget]
+
+-- Below two, actual roots admit every larger convergent tail with decay N^(-1/2), even when w(0)=2.
+example (φ : WeightedCoeffPair displacementWeight.toWeight (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ ξ η : ℤ → ℂ, ∀ N : ℕ, N₀ ≤ N →
+      Summable (rootDisplacementPowerTail (3/2) N ξ η) ∧
+      (∑' n : ℤ, rootDisplacementPowerTail (3/2) N ξ η n) ≤ rootDisplacementSummationConstant (3/2) *
+        (‖weightedPairFourierTail displacementWeight.toWeight (N/2) φ‖^(3/2 : ℝ) +
+          (‖φ‖^(3/2 : ℝ)/(N : ℝ)^(1/2 : ℝ) + ‖weightedPairFourierTail displacementWeight.toWeight (N/2) φ‖^(3/2 : ℝ)) *
+            (1+‖φ‖^(3/2 : ℝ))*‖φ‖^(3/2 : ℝ)) := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantRoots_with_displacement_sum
+    displacementHalfFinite displacementHalfAboveOne displacementWeight φ
+  obtain ⟨ξ,η,_,hs⟩ := hb φ hφ
+  refine ⟨N,hN,ξ,η,?_⟩
+  intro K hK
+  have ht := hs K hK
+  norm_num [rootDisplacementBudget, ENNReal.toReal_div] at ht
+  exact ht
+
+-- Above two, the summed sequences still enumerate all scalar zeros with their exact analytic orders.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ ξ η : ℤ → ℂ,
+      (∀ n : ℤ, N₀ ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+        analyticOrderNatAt (resonantDeterminantExtension (by norm_num) w φ n) z = ({ξ n,η n} : Multiset ℂ).count z) ∧
+      ∀ N : ℕ, N₀ ≤ N → Summable (rootDisplacementPowerTail 3 N ξ η) ∧
+        (∑' n : ℤ, rootDisplacementPowerTail 3 N ξ η n) ≤ rootDisplacementBudget w φ N := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantRoots_with_displacement_sum (p := 3) (by norm_num) (by norm_num) w φ
+  obtain ⟨ξ,η,hr,hs⟩ := hb φ hφ
+  exact ⟨N,hN,ξ,η,fun n hn => (hr n hn).2.2.2.2.2.1,hs⟩
+
+end RootDisplacementSumChecks

@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 358 modules and 2927 named public theorems. All compile on the
+The library has 365 modules and 2939 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.SampledPowerTail` | Injective Fourier sampling gives convergent power tails bounded by the exact source remainder norm |
+| `NLS.ZakharovShabat.ResonantLeadingPowerTail` | Both signed weighted leading coefficients have a convergent power sum with no extra potential-norm factor |
+| `NLS.ZakharovShabat.ResonantDisplacementMajorant` | One actual-supremum sequence bounds both root displacement powers for every pair of strip zeros |
+| `NLS.ZakharovShabat.RootDisplacementBudget` | Explicit exponent-only constant and corrected budget retaining the additive leading Fourier tail |
+| `NLS.ZakharovShabat.DisplacementMajorantSum` | Exact convergent majorant sum and quantitative combination of all four component series |
+| `NLS.ZakharovShabat.UniformDisplacementMajorant` | Common open convex potential neighborhood and cutoff control every larger actual majorant tail |
+| `NLS.ZakharovShabat.RootDisplacementSequence` | Corrected Lemma 6.9: two roots with exact analytic orders, localization, gap bound, and all convergent displacement power tails |
 | `NLS.ZakharovShabat.SingleResonantPotential` | Signed single-mode potentials, vanishing complementary sources, exact actual determinant, and Hilbert norm |
 | `NLS.ZakharovShabat.RootDisplacementSourceAudit` | Formal failure of the printed Lemma 6.9 displacement budget locally uniformly at zero, on the actual small-square domain |
 | `NLS.ZakharovShabat.RootDisplacementPower` | Branch-free residual and power bounds for actual roots, retaining both signed leading Fourier modes |
@@ -3348,16 +3355,55 @@ splits each full off-diagonal coefficient into its signed leading Fourier
 coefficient and remainder, retaining all four power terms. It uses no
 square-root branch, root distinctness, or reality assumption.
 
-**Remaining scope.** Sum the valid per-root estimate with an additive
-leading Fourier-tail contribution to obtain a corrected quantitative
-version. The literal printed bound is not asserted. Scalar counting is
-proved directly; identification with the separate spectral algebraic
-multiplicities is not asserted.
+### Lemma 6.9: corrected quantitative displacement power sum
+
+`SampledPowerTail` proves that injective sampling of high Fourier modes has
+a convergent power sum bounded by the exact source remainder norm.
+`ResonantLeadingPowerTail` applies this to both signed frequencies `-2n,2n`
+and preserves the spectral weight. The sum of their weighted `p`-powers for
+`|n|≥N` is bounded by `‖R_M φ‖_(w,p)^p` for every `M≤2N`, including the
+cutoff boundary. In particular, the half-cutoff tail gives the required
+additive term without a potential-norm prefactor.
+
+`ResonantDisplacementMajorant` combines the actual diagonal supremum, both
+actual weighted remainder suprema, and the two leading powers. This same
+nonnegative sequence bounds `|ξ-nπ|^p+|η-nπ|^p` for every pair of actual
+strip zeros. `DisplacementMajorantSum` proves convergence and the exact
+linear combination of these four convergent series.
+
+`RootDisplacementBudget` combines the estimates into
+`C_p [T^p + (B^p/N^δ+T^p)(1+B^p)B^p]`, where
+`B=‖φ‖_(w,p)`, `T=‖R_(N/2)φ‖_(w,p)`, and `δ=min(1,p-1)`.
+The explicit constant is `(2K+K²)(1+C_diagonal+C_offDiagonal)`, with
+`K=2^(p-1)` and the previously proved diagonal/remainder constants. Its
+Hilbert value is `3149832`. The additive `T^p` is retained separately from
+the nonlinear expression whose literal printed form failed near zero.
+
+`UniformDisplacementMajorant` supplies one open convex neighborhood containing
+the potential and zero and one cutoff for all larger convergent majorant
+tails. Forgetting a spectral weight contracts both the potential and its
+Fourier tail, so the diagonal estimate fits the same weighted pair budget.
+The two off-diagonal component prefactors combine into the exact pair norm.
+
+`exists_uniform_resonantRoots_with_displacement_sum` selects the two actual
+scalar roots for each distant signed mode. Their occurrence counts equal
+all actual analytic zero orders in the strip, they exhaust its zeros, both
+lie in the refined disc and within `3π/32` of its center, and they satisfy
+the factor-six gap bound. On the same neighborhood and cutoff, every larger
+two-sided displacement power tail is genuinely summable and satisfies the
+corrected budget. This holds for every finite `p>1` and every source spectral
+weight, including `w(0)>1`. No continuous root labeling is claimed.
+
+**Remaining scope.** Prove the weighted root-gap power tails and connect
+these scalar root sequences to the original periodic spectral labels toward
+Propositions 6.1/6.3. The literal printed displacement bound is not asserted;
+identification with the separate spectral algebraic multiplicities is not
+asserted.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5893 declarations under `NLS`, including generated
+axioms. The current audit covers 5926 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4132,12 +4178,22 @@ with a large proposed constant, a tiny open ball, and an arbitrary lower
 frequency threshold. Aligned imaginary coefficients test the power estimate
 at `P=3` and its endpoint `P=1`.
 
+Corrected summation checks compute a weighted leading sum of `52` from unequal
+complex amplitudes at the negative cutoff-boundary resonance, preserving
+`w(0)=2`. Injective sampling is checked with the exact doubled cutoff. Two
+nonreal test roots contribute `5` to a two-sided displacement sum at a negative
+boundary. The explicit Hilbert constant and the vanishing zero-potential budget
+are checked. At `p=3/2`, actual root tails use the decay `N^(-1/2)` with every
+larger cutoff and a nonnormalized weight; at `p=3`, the summable sequences
+retain the exact analytic zero multiplicities.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove a corrected Lemma 6.9 root displacement power sum retaining its
-   additive leading-tail contribution, then continue the weighted-gap estimates
-   toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
+2. Prove the quantitative weighted root-gap power tail and connect the
+   scalar roots to the original periodic spectral labels toward Propositions
+   6.1/6.3. The corrected Lemma 6.9 displacement power sum is proved.
+   Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
    finite Banach exponents, including the source's `c₂=2` in Lemma 6.4.
