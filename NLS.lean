@@ -377,3 +377,8 @@ import NLS.ZakharovShabat.ContourReductionMultiplicity
 import NLS.ZakharovShabat.ContourSpectralDeterminant
 import NLS.ZakharovShabat.CentralPolynomialAnalytic
 import NLS.ZakharovShabat.CanonicalPeriodicProduct
+import NLS.ComplexAnalysis.UniformProductTails
+import NLS.SequenceSpaces.UniformHolderTails
+import NLS.ZakharovShabat.RelativeSpectralProductsFamilies
+import NLS.ZakharovShabat.UniformSpectralDisplacements
+import NLS.ZakharovShabat.ActualRelativeProductsUniform

@@ -10049,3 +10049,51 @@ example (φ : PairSpace 3) (hφ : Complex.I ∈ resolventSet (by simp) φ) :
 
 end
 end AnalyticCentralChecks
+
+namespace UniformPotentialChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The nested product estimate permits a zero factor already in the central finite set.
+example : ‖(∏ n ∈ ({0,1} : Finset ℤ), (1+(if n = 0 then (-1 : ℂ) else Complex.I))) -
+    ∏ n ∈ ({0} : Finset ℤ), (1+(if n = 0 then (-1 : ℂ) else Complex.I))‖ ≤
+      Real.exp 1*(Real.exp 1-1) := by
+  apply NLS.ComplexAnalysis.norm_prod_one_add_sub_le _ (by simp) 1 1
+  · simp
+  · simp
+
+-- The boundary mode is retained in the conjugate multiplier's tail, including negative indices.
+example (b : Coeff 2) : ‖b (-7)‖ ≤ ‖Coeff.fourierTail 7 b‖ := by
+  have h := Coeff.sum_norm_holderProduct_tail_le (lp.single 2 (-7) (1 : ℂ)) b 7 {(-7)}
+    (by intro n hn; simp only [Finset.mem_singleton] at hn; subst n; norm_num)
+  simpa using h
+
+-- Unit mass can escape to arbitrarily distant frequencies while the weighted products converge uniformly.
+example : UniformCauchySeqOn
+    (fun (N : ℕ) (k : ℤ) => ∏ n ∈ Finset.Icc (-(N : ℤ)) (N : ℤ),
+      (1+(lp.single 2 k (1 : ℂ) : Coeff 2) n * (Weight.sobolev 1 n : ℂ)⁻¹)) atTop Set.univ := by
+  let b : Coeff 2 := ⟨_,Weight.inverse_sobolev_one_memlp (by norm_num : (1 : ℝ≥0∞) < 2)⟩
+  exact Coeff.uniformCauchySeqOn_holder_products (fun k => lp.single 2 k (1 : ℂ)) b (by simp)
+    (fun k n => (lp.single 2 k (1 : ℂ) : Coeff 2) n*b n) Set.univ 1 1 (by norm_num)
+    (fun _ _ => by simp) (fun _ _ _ => by simp)
+
+-- The same escaping-mass family need not itself have small tails uniformly.
+example (N : ℕ) : ‖Coeff.fourierTail N (lp.single 2 (N : ℤ) (1 : ℂ))‖ = 1 := by
+  simp
+
+-- Arbitrary actual weighted p=3 potentials supply uniform relative products with no assumed root data.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ U : Set (WeightedCoeffPair w.toWeight 3), IsOpen U ∧ φ ∈ U ∧
+      ∃ ξ η : U → ℤ → ℂ,
+      TendstoUniformlyOn (fun (M : ℕ) (t : ℂ × U) => ∏ n ∈ Finset.Icc (-(M : ℤ)) (M : ℤ),
+        spectralRelativeFactor (ξ t.2) t.1 n*spectralRelativeFactor (η t.2) t.1 n)
+        (fun t => spectralRelativePairProduct (ξ t.2) (η t.2) t.1) atTop
+        (closedBall Complex.I (freeGap Complex.I/2) ×ˢ Set.univ) := by
+  obtain ⟨_,_,U,ho,_,hφ,_,ξ,η,_,_,_,_,h⟩ := exists_uniform_actualRelativeProducts
+    (by simp) (by norm_num) w φ
+  exact ⟨U,ho,hφ,ξ,η,h Complex.I (notMem_freeLattice_of_im_ne_zero (by simp))⟩
+
+end
+end UniformPotentialChecks

@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 429 modules and 3336 named public theorems. All compile on the
+The library has 434 modules and 3352 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.UniformProductTails` | Exponential finite-product bounds, nested differences without division, uniform tail criteria, and multiplication of bounded uniformly Cauchy families |
+| `NLS.SequenceSpaces.UniformHolderTails` | Finite Hölder absolute sums, conjugate-multiplier tail bounds uniform on bounded families, and uniformly Cauchy products |
+| `NLS.ZakharovShabat.RelativeSpectralProductsFamilies` | Uniform relative displacement tails and paired relative-product convergence on closed half-gap balls times arbitrary bounded displacement families |
+| `NLS.ZakharovShabat.UniformSpectralDisplacements` | Corrected power budgets bounded on norm balls; uniformly bounded completed actual root sequences with all larger counting data on common potential neighborhoods |
+| `NLS.ZakharovShabat.ActualRelativeProductsUniform` | Actual finite `p>1` potentials supply uniformly convergent paired relative products over one open convex potential neighborhood, without continuity of eigenvalue labels |
 | `NLS.FunctionalAnalysis.FiniteSpectralDeterminant` | Analytic determinant and spectral shifts, conjugacy invariance, and exact root-product orientation with repeated roots |
 | `NLS.ZakharovShabat.ContourReductionMultiplicity` | Finite generalized chains equal the original domain recursion; full root-space pullback and exact characteristic multiplicities |
 | `NLS.ZakharovShabat.ContourSpectralDeterminant` | Intrinsic determinant on the varying range, transport invariance, joint analyticity, and equality with the actual finite spectral product |
@@ -3965,14 +3970,52 @@ is the locally uniform limit of the intrinsic polynomials and their spectral
 derivatives. No eigenvalue labeling or central threshold is an input to this
 canonical definition.
 
-Joint convergence over potential neighborhoods and joint analyticity of the
-infinite product are still open. This milestone proves joint analyticity of
-the finite approximants, not yet that of their limit.
+Joint convergence of the full approximants over potential neighborhoods and
+joint analyticity of the infinite product are still open. The finite
+approximants are jointly analytic; the next section controls their relative
+tails uniformly over potential neighborhoods.
+
+## Section 8: relative tails uniform over potential neighborhoods
+
+`UniformProductTails` bounds finite products by the exponential of the sum of
+absolute displacements and bounds nested-product differences by the omitted
+absolute tail. No existing factor is divided out, so spectral zeros are
+permitted. Uniform total bounds and a common vanishing tail bound give
+uniformly Cauchy symmetric products and uniform convergence to a known
+pointwise limit. Products of uniformly bounded uniformly Cauchy families
+remain uniformly Cauchy.
+
+`UniformHolderTails` places the tail on the fixed conjugate-exponent multiplier,
+not on the varying displacement family. A finite exponent makes that multiplier
+tail converge in norm, giving uniform `ℓ1` tail control on every bounded `ℓp`
+family. This remains valid when unit mass escapes to arbitrarily distant
+frequencies, so no false assertion of uniform coordinatewise tails is used.
+
+`RelativeSpectralProductsFamilies` applies this to inverse free denominators
+on closed half-gap balls. For finite `p>1`, the conjugate exponent is finite
+and greater than one. Single relative products are uniformly bounded and
+uniformly Cauchy; pairing them gives uniform convergence to the previously
+constructed relative product. The parameter family need not be topological,
+and continuity of individual eigenvalue labels is not assumed.
+
+`UniformSpectralDisplacements` bounds the corrected source power budget on
+norm balls. Freely completing omitted central entries gives a common global
+`ℓp` norm bound for both actual high-root sequences on one open convex
+neighborhood containing the reference potential and zero. The actual counted
+pairs and counting data for every larger cutoff are retained.
+`ActualRelativeProductsUniform` instantiates the relative convergence theorem
+with these actual potential families: one potential neighborhood works for
+every off-lattice half-gap ball, uniformly over its whole potential factor.
+
+The remaining step for full joint convergence is to restore the finite central
+and free factors and extend the estimates across the free lattice. Joint
+analyticity of the canonical infinite product still requires the analytic
+limit argument after that extension.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6845 declarations under `NLS`, including generated
+axioms. The current audit covers 6869 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4890,11 +4933,18 @@ instantiate joint finite-approximant analyticity for an actual `p=1` potential,
 the canonical double zero at the free origin, and canonical nonvanishing in
 an arbitrary actual `p=3` resolvent.
 
+Uniform-potential examples check nested products with an existing zero factor,
+the negative boundary mode in a Hölder tail, and weighted products of a family
+whose unit mass escapes to infinity. The same family explicitly has tail norm
+one at every cutoff. An arbitrary actual weighted `p=3` potential supplies
+uniform paired relative convergence near `i` with no assumed spectral data.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove convergence uniform over potential neighborhoods and joint analyticity
-   of the canonical infinite product, and identify
+2. Restore the finite central and free factors in the potential-uniform relative
+   convergence, extend across the lattice, prove joint analyticity of the
+   canonical infinite product, and identify
    the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors

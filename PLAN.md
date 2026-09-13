@@ -1329,8 +1329,19 @@ Their normalized limits define the canonical full periodic product directly
 from the potential, with the exact original zeros, orders, and locally uniform
 spectral-parameter and derivative convergence.
 
-Next, prove convergence uniform over potential neighborhoods and pass joint
-analyticity to the infinite product. Complete the odd free-product
+The relative-product tails are now controlled uniformly over actual potential
+neighborhoods. Finite products satisfy exponential perturbation bounds even
+when factors vanish. A fixed finite conjugate-exponent multiplier has uniformly
+small absolute tails on bounded `ℓp` families, although those families may have
+no uniform coordinatewise tails. Reciprocal free denominators give these
+multipliers on closed half-gap balls. The corrected root displacement budget
+supplies one common displacement norm bound on an open convex potential
+neighborhood, proving uniform paired relative-product convergence there without
+continuity of root labels.
+
+Next, restore the finite central and free factors, extend uniform convergence
+across the free lattice, and pass joint analyticity to the canonical infinite
+product. Complete the odd free-product
 identity, the perturbed parity subproducts, and identification of the correctly
 normalized discriminant. Then continue with the anti-discriminant and
 action-coordinate prerequisites.

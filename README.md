@@ -687,9 +687,13 @@ installation is absent. No shell startup files are modified.
   analytic in the spectral parameter and potential, using transported contour
   determinants with original generalized-root-space multiplicities. Their
   normalized limits define a canonical product directly from the potential,
-  agreeing with every admissible earlier construction. Joint convergence over
-  potential neighborhoods, joint analyticity of the infinite product, and
-  discriminant identification remain open.
+  agreeing with every admissible earlier construction. Paired relative products
+  now converge uniformly over a common open convex potential neighborhood and
+  each closed off-lattice half-gap ball. Hölder tails and the corrected spectral
+  displacement budget give this convergence without continuous root labels.
+  Uniform convergence of the full polynomial approximants across the lattice,
+  joint analyticity of the infinite product, and discriminant identification
+  remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
