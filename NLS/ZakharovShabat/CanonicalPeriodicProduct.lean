@@ -6,9 +6,9 @@ import NLS.ZakharovShabat.EntirePeriodicProductOrders
 
 The normalized central polynomials define a product from the actual potential
 alone. They are eventually identical to every admissible spectral-pair cutoff,
-so their limit is the entire product already constructed. Joint analyticity of
-the finite approximants is proved; joint locally uniform convergence remains
-separate from the fixed-potential convergence established here.
+so their limit is the entire product already constructed. This module establishes
+fixed-potential convergence. Joint locally uniform convergence and continuity
+are proved in the subsequent uniform-convergence modules.
 -/
 
 noncomputable section

@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 434 modules and 3352 named public theorems. All compile on the
+The library has 438 modules and 3368 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.UniformEntireFamilies` | Products with bounded limits; compact spectral covers with arbitrary parameter sets; uniform maximum-modulus extension across countable exceptional sets |
+| `NLS.ZakharovShabat.CentralPolynomialBounds` | Counting and root localization uniformly bound central polynomials and off-lattice quotients; exact restoration of all three product factors |
+| `NLS.ZakharovShabat.CanonicalPeriodicProductUniform` | Full normalized polynomials converge uniformly on every compact spectral set times one open convex actual potential neighborhood, including the free lattice |
+| `NLS.ZakharovShabat.CanonicalPeriodicProductContinuity` | Original potential-space convergence, joint locally uniform convergence of the intrinsic approximants, and joint continuity of the canonical product |
 | `NLS.ComplexAnalysis.UniformProductTails` | Exponential finite-product bounds, nested differences without division, uniform tail criteria, and multiplication of bounded uniformly Cauchy families |
 | `NLS.SequenceSpaces.UniformHolderTails` | Finite Hölder absolute sums, conjugate-multiplier tail bounds uniform on bounded families, and uniformly Cauchy products |
 | `NLS.ZakharovShabat.RelativeSpectralProductsFamilies` | Uniform relative displacement tails and paired relative-product convergence on closed half-gap balls times arbitrary bounded displacement families |
@@ -3832,9 +3836,9 @@ locally uniformly as well. The earlier actual-spectrum existence theorem
 supplies all hypotheses for every finite `p>1` potential, with one common open
 convex potential neighborhood and threshold for every larger central cutoff.
 
-All locally uniform convergence and holomorphy here concern the spectral
-parameter at each fixed potential. Joint analyticity and uniform convergence
-in the potential remain open.
+These modules concern the spectral parameter at each fixed potential.
+Uniform convergence in the potential is proved in the later sections below;
+joint analyticity of the infinite product remains open.
 
 ## Section 8: entire products and the full spectral zero set
 
@@ -3970,10 +3974,9 @@ is the locally uniform limit of the intrinsic polynomials and their spectral
 derivatives. No eigenvalue labeling or central threshold is an input to this
 canonical definition.
 
-Joint convergence of the full approximants over potential neighborhoods and
-joint analyticity of the infinite product are still open. The finite
-approximants are jointly analytic; the next section controls their relative
-tails uniformly over potential neighborhoods.
+The finite approximants are jointly analytic. The following sections prove
+uniform relative tails, full joint convergence, and joint continuity.
+Joint analyticity of the infinite product remains open.
 
 ## Section 8: relative tails uniform over potential neighborhoods
 
@@ -4007,15 +4010,40 @@ pairs and counting data for every larger cutoff are retained.
 with these actual potential families: one potential neighborhood works for
 every off-lattice half-gap ball, uniformly over its whole potential factor.
 
-The remaining step for full joint convergence is to restore the finite central
-and free factors and extend the estimates across the free lattice. Joint
-analyticity of the canonical infinite product still requires the analytic
-limit argument after that extension.
+## Section 8: full uniform convergence and joint continuity
+
+`UniformEntireFamilies` proves uniform multiplication under bounded limits and
+uses finite spectral covers while retaining the whole unrestricted parameter
+set. Maximum modulus propagates the same Cauchy estimate from each circle to
+its disc for all parameters. Circles avoiding a countable exceptional set then
+extend local estimates to every compact spectral set.
+
+`CentralPolynomialBounds` combines bounded central root locations with the
+counted total multiplicity `4N+2`. This uniformly bounds the central polynomial
+for all potentials having the counting data, without continuous root labels.
+On an off-lattice compact set, the inverse central free polynomial is bounded.
+An exact identity restores the central quotient, free factor, and relative
+factors in every sufficiently large normalized intrinsic polynomial.
+
+`CanonicalPeriodicProductUniform` bounds the paired relative limits and
+restores uniform convergence on half-gap balls. The family maximum-modulus
+theorem extends this convergence across all of `πℤ`, and the already proved
+pointwise limit identifies the result with the canonical product. For every
+actual weighted finite `p>1` potential, one open convex neighborhood containing
+that potential and zero works for **every** compact spectral set. The potential
+neighborhood is not assumed compact.
+
+`CanonicalPeriodicProductContinuity` transfers the result to the original
+potential space and proves joint locally uniform convergence in the spectral
+parameter and potential. The eventual joint analytic finite approximants then
+prove joint continuity of the canonical product, including at free lattice
+points and colliding roots. Joint analyticity still requires an analytic-limit
+argument in the Banach product domain; discriminant identification remains open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6869 declarations under `NLS`, including generated
+axioms. The current audit covers 6890 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4939,12 +4967,18 @@ whose unit mass escapes to infinity. The same family explicitly has tail norm
 one at every cutoff. An arbitrary actual weighted `p=3` potential supplies
 uniform paired relative convergence near `i` with no assumed spectral data.
 
+Full-uniform examples exercise a noncompact family of every monomial degree,
+with one maximum-modulus estimate on the unit disc, and central bounds at
+`p=1`. They retain the negative central endpoint and instantiate one actual
+weighted `p=3` neighborhood valid for every disc. Joint continuity is checked
+at the free double zero, and joint uniform convergence near a negative lattice
+point is checked for an arbitrary actual `p=3` potential.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Restore the finite central and free factors in the potential-uniform relative
-   convergence, extend across the lattice, prove joint analyticity of the
-   canonical infinite product, and identify
+2. Pass joint analyticity to the canonical infinite product using the proved
+   joint locally uniform convergence, and identify
    the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors

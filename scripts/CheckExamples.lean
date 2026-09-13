@@ -10097,3 +10097,67 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end UniformPotentialChecks
+
+namespace UniformCanonicalChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- A noncompact parameter family of all monomial degrees shares one disc estimate.
+example : UniformCauchySeqOn
+    (fun (N : ℕ) (t : ℂ × ℕ) => (N : ℂ)⁻¹*t.1^t.2) atTop
+    (closedBall (0 : ℂ) 1 ×ˢ Set.univ) := by
+  apply NLS.ComplexAnalysis.uniformCauchySeqOn_closedBall_prod_of_sphere _ Set.univ
+    (fun N k => by
+      change Differentiable ℂ (fun z => (N : ℂ)⁻¹*z^k)
+      fun_prop) 0 1 (by norm_num)
+  have hf : TendstoUniformlyOn (fun (N : ℕ) (_ : ℂ × ℕ) => (N : ℂ)⁻¹)
+      (fun _ => (0 : ℂ)) atTop (sphere (0 : ℂ) 1 ×ˢ Set.univ) :=
+    tendsto_inv_atTop_nhds_zero_nat.tendstoUniformlyOn_const _
+  have hg : TendstoUniformlyOn (fun (_ : ℕ) (t : ℂ × ℕ) => t.1^t.2)
+      (fun t => t.1^t.2) atTop (sphere (0 : ℂ) 1 ×ˢ Set.univ) := by
+    rw [Metric.tendstoUniformlyOn_iff]
+    exact fun ε hε => Filter.Eventually.of_forall (fun _ _ _ => by simpa using hε)
+  exact (NLS.ComplexAnalysis.tendstoUniformlyOn_mul_bounded _ _ _ _ _ 0 1 (by norm_num) (by norm_num)
+    hf hg (fun _ _ => by simp) (fun t ht => by
+      have hn : ‖t.1‖ = 1 := by simpa only [mem_sphere, dist_zero_right] using ht.1
+      simp [norm_pow, hn])).uniformCauchySeqOn
+
+-- Central correction bounds include p=1 and a compact set containing the origin.
+example : ∃ B : ℝ, 0 ≤ B ∧ ∀ φ : PairSpace 1,
+    PeriodicCountingData (by simp) φ 2 → ∀ z ∈ closedBall (0 : ℂ) 10,
+      ‖centralPeriodicPolynomial (by simp) φ 2 z‖ ≤ B :=
+  exists_bound_centralPeriodicPolynomial (by simp) 2 _ (isCompact_closedBall _ _)
+
+-- Completion preserves the negative endpoint of the central block.
+example (ξ : ℤ → ℂ) (hξ : ∀ n : ℤ, n.natAbs ≤ 3 → ξ n = (Real.pi : ℂ)*n) :
+    centralFreeCompletion 3 ξ (-3) = ξ (-3) := by
+  rw [centralFreeCompletion_eq_self 3 ξ hξ]
+
+-- One actual weighted p=3 neighborhood works for every disc, including lattice points of both signs.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ U : Set (WeightedCoeffPair w.toWeight 3), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ r : ℝ, TendstoUniformlyOn
+        (fun (M : ℕ) (t : ℂ × WeightedCoeffPair w.toWeight 3) =>
+          normalizedCentralPeriodicPolynomial (by simp) (weightedBaseToPair w t.2) M t.1)
+        (fun t => canonicalPeriodicProduct (by simp) (weightedBaseToPair w t.2) t.1)
+        atTop (closedBall (0 : ℂ) r ×ˢ U) := by
+  obtain ⟨U,ho,_,hφ,h0,h⟩ := exists_uniform_canonicalPeriodicProduct (by simp) (by norm_num) w φ
+  exact ⟨U,ho,hφ,h0,fun r => h _ (isCompact_closedBall _ r)⟩
+
+-- Perturb both the spectral point and the potential at the free double zero.
+example : ContinuousAt (fun t : ℂ × PairSpace 3 => canonicalPeriodicProduct (by simp) t.2 t.1) (0,0) :=
+  (continuous_canonicalPeriodicProduct_joint (by simp) (by norm_num)).continuousAt
+
+-- Joint convergence also holds near a negative lattice point for any actual p=3 potential.
+example (φ : PairSpace 3) : ∃ V ∈ 𝓝 (((Real.pi : ℂ)*(-3 : ℤ)),φ),
+    TendstoUniformlyOn (fun (M : ℕ) (t : ℂ × PairSpace 3) =>
+      normalizedCentralPeriodicPolynomial (by simp) t.2 M t.1)
+      (fun t => canonicalPeriodicProduct (by simp) t.2 t.1) atTop V := by
+  obtain ⟨U,ho,_,hφ,_,h⟩ := exists_uniform_canonicalPeriodicProduct_pair (by simp) (by norm_num) φ
+  exact ⟨closedBall ((Real.pi : ℂ)*(-3 : ℤ)) 1 ×ˢ U,
+    prod_mem_nhds (closedBall_mem_nhds _ (by norm_num)) (ho.mem_nhds hφ),h _ (isCompact_closedBall _ _)⟩
+
+end
+end UniformCanonicalChecks

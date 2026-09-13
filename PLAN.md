@@ -1293,8 +1293,8 @@ The products now converge locally uniformly in the spectral parameter off
 quadratic majorants upgrade the free Euler products on the whole plane.
 The actual normalized polynomial cutoffs converge to a holomorphic limit off
 the lattice, and their derivatives also converge locally uniformly there.
-This holds for each fixed potential; uniform convergence or analytic dependence
-in the potential is not yet proved.
+This stage concerns fixed potentials; uniform convergence in the potential
+is established in the later stages below.
 
 The actual products now extend to entire functions, with polynomial and
 derivative convergence locally uniform on the whole plane. The maximum
@@ -1339,9 +1339,16 @@ supplies one common displacement norm bound on an open convex potential
 neighborhood, proving uniform paired relative-product convergence there without
 continuity of root labels.
 
-Next, restore the finite central and free factors, extend uniform convergence
-across the free lattice, and pass joint analyticity to the canonical infinite
-product. Complete the odd free-product
+The central and free factors are now restored. Central root localization and
+the exact total multiplicity give a uniform bound for the central correction.
+Finite spectral covers preserve the unrestricted potential factor, and maximum
+modulus fills the free lattice uniformly over it. One open convex potential
+neighborhood works for every compact spectral set. The intrinsic approximants
+therefore converge locally uniformly jointly in both variables, and their
+eventual joint analyticity proves joint continuity of the canonical product.
+
+Next, pass joint analyticity to the canonical infinite product using the
+Banach-domain analytic-limit argument. Complete the odd free-product
 identity, the perturbed parity subproducts, and identification of the correctly
 normalized discriminant. Then continue with the anti-discriminant and
 action-coordinate prerequisites.

@@ -691,9 +691,14 @@ installation is absent. No shell startup files are modified.
   now converge uniformly over a common open convex potential neighborhood and
   each closed off-lattice half-gap ball. Hölder tails and the corrected spectral
   displacement budget give this convergence without continuous root labels.
-  Uniform convergence of the full polynomial approximants across the lattice,
-  joint analyticity of the infinite product, and discriminant identification
-  remain open.
+  Restoring the bounded central correction and free factor now gives full
+  polynomial convergence uniformly on every compact spectral set times one
+  open convex potential neighborhood, including the free lattice. Finite
+  spectral covers and maximum modulus retain the whole potential neighborhood
+  without assuming it compact. The canonical product is jointly continuous,
+  and the intrinsic polynomials converge locally uniformly jointly in both
+  variables. Joint analyticity of the infinite product and discriminant
+  identification remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

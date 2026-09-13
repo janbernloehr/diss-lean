@@ -382,3 +382,7 @@ import NLS.SequenceSpaces.UniformHolderTails
 import NLS.ZakharovShabat.RelativeSpectralProductsFamilies
 import NLS.ZakharovShabat.UniformSpectralDisplacements
 import NLS.ZakharovShabat.ActualRelativeProductsUniform
+import NLS.ComplexAnalysis.UniformEntireFamilies
+import NLS.ZakharovShabat.CentralPolynomialBounds
+import NLS.ZakharovShabat.CanonicalPeriodicProductUniform
+import NLS.ZakharovShabat.CanonicalPeriodicProductContinuity
