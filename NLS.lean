@@ -313,3 +313,6 @@ import NLS.ZakharovShabat.RootDisplacementBudget
 import NLS.ZakharovShabat.DisplacementMajorantSum
 import NLS.ZakharovShabat.UniformDisplacementMajorant
 import NLS.ZakharovShabat.RootDisplacementSequence
+import NLS.ZakharovShabat.ResonantGapMajorant
+import NLS.ZakharovShabat.UniformGapMajorant
+import NLS.ZakharovShabat.RootGapSequence

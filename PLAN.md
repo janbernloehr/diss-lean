@@ -33,6 +33,11 @@
   not assert failure of an eventual estimate for each fixed potential with an
   unrestricted potential-dependent cutoff. Retain an additive leading-tail
   term in the corrected estimate.
+- Propositions 6.1 and 6.3 on printed pages 35–36 repeat the nonlinear-only
+  budget with locally uniform cutoffs. The scalar-root formalization retains
+  the additive leading-tail term required by the single-mode audit. Do not
+  present these corrected estimates as proofs of the literal printed bounds;
+  the original periodic spectral labels and multiplicities still need a bridge.
 - Preserve `1 < p < ∞` versus `1 < p ≤ 2` hypotheses. Do not assume that the
   Birkhoff map is surjective for `p > 2`.
 - Treat analyticity on a positive cone using an ambient open extension.
@@ -1129,9 +1134,18 @@ and signed-frequency cutoff; every larger displacement tail converges and
 obeys this estimate. This is the corrected quantitative form of Lemma 6.9,
 not the disproved printed display.
 
-Next, prove the quantitative weighted root-gap tail estimate toward
-Proposition 6.3 and connect the scalar roots to the original periodic spectral
-labels for Propositions 6.1/6.3. Audit those statements against the source
-correction. Identification of scalar analytic orders with the separate
-spectral algebraic multiplicities has not been asserted. The printed
-general-`p` central-height constant remains a separate open item.
+The weighted gap power tail is now proved for the same root sequences. For
+`B=‖φ‖_(w,p)`, `T=‖R_(N/2)φ‖_(w,p)`, and `δ=min(1,p-1)`, its sum is bounded by
+`G_p [T^p + E_p B^p (B^(2p)/N^δ + T^(2p))]`, where
+`G_p=2^p (2^(p-1))²` and `E_p` is the existing off-diagonal summation constant.
+The proof transfers weights to the full-strip product supremum, applies a
+valid power-mean bound for every finite exponent, and sums the leading and
+remainder majorants. No diagonal term is needed. The same open convex
+neighborhood, signed cutoff, root localization, and exact analytic orders
+support both displacement and weighted gap tails for every larger cutoff.
+
+Next, connect these scalar roots to the original periodic spectral labels for
+Propositions 6.1/6.3, preserving the corrected quantitative budgets.
+Identification of scalar analytic orders with the separate spectral algebraic
+multiplicities has not been asserted. The printed general-`p` central-height
+constant remains a separate open item.

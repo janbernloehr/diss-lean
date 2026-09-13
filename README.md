@@ -614,6 +614,11 @@ installation is absent. No shell startup files are modified.
   give two roots with exact analytic multiplicities, localization, gap control,
   and every larger convergent displacement power tail, for all finite `p>1`.
   The bound holds for arbitrary source spectral weights and all signed modes.
+  The same roots now also have convergent weighted gap power tails for every
+  larger cutoff. Their bound retains the leading weighted Fourier tail and
+  uses only the off-diagonal remainder estimate, with an explicit exponent-only
+  constant. This proves the corrected scalar-root estimate toward Proposition
+  6.3; the connection to the original periodic spectral labels remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

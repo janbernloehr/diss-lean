@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 365 modules and 2939 named public theorems. All compile on the
+The library has 368 modules and 2950 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ResonantGapMajorant` | Weighted product-supremum bound and a branch-free power majorant retaining both leading coefficients and remainders |
+| `NLS.ZakharovShabat.UniformGapMajorant` | Convergent weighted gap majorant tails with a corrected explicit budget, locally uniformly for every larger cutoff |
+| `NLS.ZakharovShabat.RootGapSequence` | The same roots retain exact analytic orders and simultaneous corrected displacement and weighted gap power sums |
 | `NLS.SequenceSpaces.SampledPowerTail` | Injective Fourier sampling gives convergent power tails bounded by the exact source remainder norm |
 | `NLS.ZakharovShabat.ResonantLeadingPowerTail` | Both signed weighted leading coefficients have a convergent power sum with no extra potential-norm factor |
 | `NLS.ZakharovShabat.ResonantDisplacementMajorant` | One actual-supremum sequence bounds both root displacement powers for every pair of strip zeros |
@@ -3394,16 +3397,43 @@ two-sided displacement power tail is genuinely summable and satisfies the
 corrected budget. This holds for every finite `p>1` and every source spectral
 weight, including `w(0)>1`. No continuous root labeling is claimed.
 
-**Remaining scope.** Prove the weighted root-gap power tails and connect
-these scalar root sequences to the original periodic spectral labels toward
-Propositions 6.1/6.3. The literal printed displacement bound is not asserted;
-identification with the separate spectral algebraic multiplicities is not
+**Remaining scope.** Connect these scalar root sequences to the original
+periodic spectral labels toward Propositions 6.1/6.3. The literal printed
+displacement bound is not asserted; identification with the separate spectral algebraic multiplicities is not
 asserted.
+
+## Corrected weighted gap power sums
+
+`resonantRoots_gap_le_majorant` transfers the weight to the actual full-strip
+product supremum and bounds the weighted gap power by leading and remainder
+powers. The explicit constant `G_p=2^p (2^(p-1))²` is valid for every finite
+`p≥1`, including above two; it equals `16` in the Hilbert case. No square-root
+branch or reality assumption is used.
+
+For finite `p>1`, `exists_uniform_resonantGapMajorant` supplies a common open
+convex potential neighborhood and signed cutoff. Every larger majorant tail
+converges and is at most
+`G_p [T^p + E_p B^p (B^(2p)/N^min(1,p-1) + T^(2p))]`,
+where `B=‖φ‖_(w,p)`, `T=‖R_(N/2)φ‖_(w,p)`, and `E_p` is the proved
+`offDiagonalSummationConstant p`. Only the off-diagonal remainder estimates
+enter; the leading Fourier tail remains additive.
+
+`exists_uniform_resonantRoots_with_power_sums` gives the same two roots with
+both displacement and weighted gap power sums for every larger cutoff. It
+retains full-strip zero detection, exact scalar analytic multiplicities,
+localization, and the factor-six squared gap bound. The gap tail is unchanged
+by exchanging the roots and agrees with the source product `w_(2n)^p |γ_n|^p`.
+The signed tail includes its boundary and allows nonnormalized weights.
+
+This is a corrected scalar-root estimate toward Proposition 6.3. Propositions
+6.1 and 6.3 repeat the source's nonlinear-only budget with locally uniform
+cutoffs; those literal displays are not claimed. The bridge to the original
+periodic spectral labels and their algebraic multiplicities remains open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5926 declarations under `NLS`, including generated
+axioms. The current audit covers 5953 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4187,12 +4217,20 @@ are checked. At `p=3/2`, actual root tails use the decay `N^(-1/2)` with every
 larger cutoff and a nonnormalized weight; at `p=3`, the summable sequences
 retain the exact analytic zero multiplicities.
 
+Weighted gap checks compute the exact sum `36` from unequal imaginary roots
+at a negative cutoff-boundary mode with `w(0)=2`, then remove it by raising
+the cutoff. Coincident roots give zero gap; exchanging root order preserves
+the tail below exponent two. The explicit Hilbert constant, zero-potential
+budget, and a four-term estimate above exponent two are checked. Actual
+`p=3/2` gap tails retain `N^(-1/2)` and the leading Fourier tail, while the
+`p=3` test retains exact analytic orders and both simultaneous quantitative
+power tails for all larger cutoffs.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the quantitative weighted root-gap power tail and connect the
-   scalar roots to the original periodic spectral labels toward Propositions
-   6.1/6.3. The corrected Lemma 6.9 displacement power sum is proved.
+2. Connect the scalar roots to the original periodic spectral labels toward
+   Propositions 6.1/6.3. The corrected displacement and weighted gap power sums are proved.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
@@ -4208,4 +4246,5 @@ retain the exact analytic zero multiplicities.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the Section 6 refined eigenvalue and weighted-gap asymptotics remain unproved.
+the connection of the corrected Section 6 scalar-root asymptotics to the
+original periodic spectral labels remains unproved.

@@ -8730,3 +8730,88 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
   exact ⟨N,hN,ξ,η,fun n hn => (hr n hn).2.2.2.2.2.1,hs⟩
 
 end RootDisplacementSumChecks
+
+namespace RootGapSumChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (2 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem gapHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem gapHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨gapHalfAboveOne.le⟩
+private def gapWeight : SpectralWeight := SpectralWeight.constant 2 (by norm_num)
+private def gapRoot (a : ℂ) (n : ℤ) : ℂ := (Real.pi : ℂ)*n + if n = -3 then a else 0
+
+-- Unequal imaginary roots, a nonnormalized weight, and a negative boundary yield the exact sum 36.
+example : (∑' n : ℤ, rootGapPowerTail 2 gapWeight 3 (gapRoot Complex.I) (gapRoot (-2*Complex.I)) n) = 36 := by
+  rw [tsum_eq_single (-3)]
+  · have hi : Complex.I + 2*Complex.I = 3*Complex.I := by ring
+    norm_num [rootGapPowerTail, gapRoot, gapWeight, hi]
+  · intro n hn
+    simp [rootGapPowerTail, gapRoot, hn]
+
+-- Raising the cutoff removes that boundary contribution; double roots have zero gap.
+example : (∑' n : ℤ, rootGapPowerTail 2 gapWeight 4 (gapRoot Complex.I) (gapRoot (-2*Complex.I)) n) = 0 := by
+  have hz : rootGapPowerTail 2 gapWeight 4 (gapRoot Complex.I) (gapRoot (-2*Complex.I)) = fun _ => 0 := by
+    funext n
+    by_cases hn : n = -3
+    · subst n
+      norm_num [rootGapPowerTail]
+    · simp [rootGapPowerTail, gapRoot, hn]
+  rw [hz]
+  simp
+
+example (ξ : ℤ → ℂ) (N : ℕ) : rootGapPowerTail 3 gapWeight N ξ ξ = 0 := by
+  funext n
+  simp [rootGapPowerTail]
+
+-- Root ordering does not affect weighted powers, including below exponent two.
+example (ξ η : ℤ → ℂ) (N : ℕ) :
+    rootGapPowerTail (3/2) gapWeight N ξ η = rootGapPowerTail (3/2) gapWeight N η ξ :=
+  rootGapPowerTail_swap _ _ _ _ _
+
+example : rootGapSummationConstant 2 = 16 := by
+  norm_num [rootGapSummationConstant, Real.rpow_natCast]
+
+example (N : ℕ) : rootGapBudget gapWeight (0 : WeightedCoeffPair gapWeight.toWeight 2) N = 0 := by
+  simp [rootGapBudget]
+
+-- The algebraic estimate works above two with all four contributions nonzero.
+example : (5 : ℝ)^(3 : ℝ) ≤ (2 : ℝ)^(3 : ℝ) * ((2 : ℝ)^((3 : ℝ)-1))^2 *
+    ((1 : ℝ)^(3 : ℝ)+(2 : ℝ)^(3 : ℝ)+(3 : ℝ)^(3 : ℝ)+(4 : ℝ)^(3 : ℝ)) :=
+  gap_rpow_le_four_terms (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num)
+
+-- The actual gap budget below two retains N^(-1/2) and the additive leading tail.
+example (φ : WeightedCoeffPair gapWeight.toWeight (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ ξ η : ℤ → ℂ, ∀ N : ℕ, N₀ ≤ N →
+      Summable (rootGapPowerTail (3/2) gapWeight N ξ η) ∧
+      (∑' n : ℤ, rootGapPowerTail (3/2) gapWeight N ξ η n) ≤ rootGapSummationConstant (3/2) *
+        (‖weightedPairFourierTail gapWeight.toWeight (N/2) φ‖^(3/2 : ℝ) +
+          offDiagonalSummationConstant (3/2) * ‖φ‖^(3/2 : ℝ) *
+            (‖φ‖^(3 : ℝ)/(N : ℝ)^(1/2 : ℝ) + ‖weightedPairFourierTail gapWeight.toWeight (N/2) φ‖^(3 : ℝ))) := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantRoots_with_power_sums gapHalfFinite gapHalfAboveOne gapWeight φ
+  obtain ⟨ξ,η,_,hs⟩ := hb φ hφ
+  refine ⟨N,hN,ξ,η,?_⟩
+  intro K hK
+  have ht := (hs K hK).2.2
+  norm_num [rootGapBudget, ENNReal.toReal_div] at ht ⊢
+  exact ht
+
+-- At p=3 the same roots retain exact orders and both simultaneous quantitative tails for all larger cutoffs.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ ξ η : ℤ → ℂ,
+      (∀ n : ℤ, N₀ ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+        analyticOrderNatAt (resonantDeterminantExtension (by norm_num) w φ n) z = ({ξ n,η n} : Multiset ℂ).count z) ∧
+      ∀ N : ℕ, N₀ ≤ N → Summable (rootDisplacementPowerTail 3 N ξ η) ∧
+        (∑' n : ℤ, rootDisplacementPowerTail 3 N ξ η n) ≤ rootDisplacementBudget w φ N ∧
+        Summable (rootGapPowerTail 3 w N ξ η) ∧
+        (∑' n : ℤ, rootGapPowerTail 3 w N ξ η n) ≤ rootGapBudget w φ N := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantRoots_with_power_sums (p := 3) (by norm_num) (by norm_num) w φ
+  obtain ⟨ξ,η,hr,hs⟩ := hb φ hφ
+  exact ⟨N,hN,ξ,η,fun n hn => (hr n hn).2.2.2.2.2.1,hs⟩
+
+end RootGapSumChecks
