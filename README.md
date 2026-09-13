@@ -786,9 +786,13 @@ installation is absent. No shell startup files are modified.
   integral formulas with a common exponential weight. In both half-planes,
   the decaying coordinate's error is at most the potential supremum norm
   times a bound for the opposite weighted coordinate, divided by twice the
-  imaginary height. The opposite-coordinate bound, complete classical
-  asymptotics, control outside spectral discs in the full plane, and the
-  finite-p identity `f+2=g−2` remain open.
+  imaginary height. The coupled equations now supply that coordinate bound
+  when `|Im z|≥‖Φ‖²`. The normalized classical trace has error at most
+  `2‖Φ‖²/a+2‖Φ‖²/a²`, with `a=2|Im z|`. Its shifted and full characteristic
+  ratios tend to one against their free functions at both imaginary ends,
+  allowing the real spectral part to vary arbitrarily. Control near the real
+  axis outside spectral discs, exact canonical normalization, and the finite-p
+  identity `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

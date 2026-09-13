@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 538 modules and 3942 named public theorems. All compile on the
+The library has 543 modules and 3956 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.IntegratedDecayBounds` | Inverse-rate integral bound for an exponential and integration of a bounded coefficient against a decaying term plus a uniform error |
+| `NLS.ComplexAnalysis.CoupledVolterraBounds` | Supremum-norm absorption for coupled slow/fast Volterra equations, with explicit bounds and no assumed bound on either unknown coordinate |
+| `NLS.ZakharovShabat.ClassicalHalfPlaneBounds` | Unconditional weighted coordinate bounds above the squared-potential-norm height, in both half-planes |
+| `NLS.ZakharovShabat.ClassicalTraceHalfPlaneBounds` | Weighted-column trace identity and explicit normalized trace errors `2M²/a+2M²/a²`, independent of the real spectral part |
+| `NLS.ZakharovShabat.ClassicalHalfPlaneAsymptotics` | Upper/lower normalized trace limits and shifted/full characteristic ratios tending to one along arbitrary paths with imaginary part tending to the corresponding end |
 | `NLS.ComplexAnalysis.ScalarDuhamel` | Complex integrating factor, propagator composition, and scalar variation of constants with interior derivatives |
 | `NLS.ComplexAnalysis.DecayingDuhamelKernel` | Exact exponential kernel integral, inverse-rate bound, and quantitative stable scalar Duhamel error uniform in the oscillatory coefficient |
 | `NLS.ZakharovShabat.ClassicalDuhamel` | Actual exponentially weighted solutions, their differential equation, and signed free-propagator formulas in both half-planes |
@@ -4846,8 +4851,9 @@ continuous-representative even Hilbert hypotheses, all factors are entire
 and nonvanishing and give exact factorizations at every spectral point.
 The two parity factors multiply to the full factor. A limit of one at
 infinity would give the exact canonical normalization. The first vertical
-product asymptotics are proved below, but the classical estimates and the
-whole-plane bounds needed for these quotient limits remain open; neither
+product asymptotics and matching classical half-plane estimates are proved
+below, but the whole-plane bounds needed for these quotient limits remain
+open; neither
 the unit factors nor equality of vanishing orders alone establishes them.
 
 Examples distinguish ordinary zero division from the filled value one in
@@ -4884,9 +4890,10 @@ and odd ratios tend to one against `freeDiscriminant−2` and
 transfer all three limits to the intrinsic potential-only products for every
 finite `p>1` and every even-supported potential. No continuous representative
 is required. These are fixed-potential, fixed-real-part limits; uniformity over
-potential neighborhoods, full-plane estimates outside the spectral discs,
-and the matching classical monodromy estimates are not yet proved. The entire
-classical/canonical quotient factors are therefore not yet identified with one.
+potential neighborhoods and full-plane estimates outside the spectral discs
+are not yet proved for these canonical products. Matching classical half-plane
+asymptotics are now proved below for continuous potentials. The entire
+classical/canonical quotient factors are not yet identified with one.
 
 Examples use an infinite inverse-Sobolev-weight displacement at `p=2,3`, a
 finite complex displacement at `p=1`, the lower half-plane, nonzero real
@@ -4916,8 +4923,8 @@ integral bounded by `M/a`, independent of the oscillatory part.
 the difference from the free coordinate is at most `‖Φ‖ B/a`, assuming the
 opposite weighted coordinate is bounded by `B` on the unit interval. The two
 half-plane specializations have `a=2|Im z|`. This is a conditional coordinate
-estimate; the uniform opposite-coordinate bound and the full classical
-monodromy asymptotics are still to be proved.
+estimate. The coupled argument below now removes the coordinate hypothesis
+and proves the classical half-plane trace asymptotics.
 
 Examples check a nonzero relaxing scalar forcing, zero and positive interval
 lengths, a large oscillatory coefficient, and both orientations of a nonzero
@@ -4925,10 +4932,41 @@ triangular potential. In those triangular cases the opposite normalized
 coordinate is exactly one, so the actual forced coordinate has the explicit
 bound `‖Φ‖/4` at heights `2` and `−2`.
 
+## Section 8: unconditional classical half-plane asymptotics
+
+`IntegratedDecayBounds` integrates a bounded coefficient against a decaying
+term and a uniform error. `CoupledVolterraBounds` uses the finite supremum norm
+of the continuous slow coordinate, first as an unknown bound. Feeding the
+fast-coordinate estimate into the slow integral equation gives a term
+`M²/a` times that supremum. If `a≥2M²`, this term is absorbed, giving the bound
+`K=2(|u(0)|+M|v(0)|/a)`. The slow-coordinate error is at most
+`M(|v(0)|/a+MK/a)`, and the fast-coordinate error at most `MK/a`.
+No a priori bound on the unknown coordinates is assumed.
+
+`ClassicalHalfPlaneBounds` applies this argument to both signed weighted
+systems, with `M=‖Φ‖` and `a=2|Im z|`. The threshold is `|Im z|≥‖Φ‖²`, with
+nonzero imaginary height. `ClassicalTraceHalfPlaneBounds` combines the two
+initial columns: their normalized diagonal errors sum to at most
+`2M²/a+2M²/a²`. This estimate has no real-part dependence.
+
+`ClassicalHalfPlaneAsymptotics` proves that `exp(iz)Δ(z)` tends to one as
+`Im z→+∞`, and `exp(−iz)Δ(z)` tends to one as `Im z→−∞`. The real part of
+`z` may vary arbitrarily. For every fixed complex shift `b`, the ratio
+`(Δ−b)/(2 cos z−b)` tends to one at each end. Multiplying the shifts `2` and
+`−2` gives the corresponding limit for `(Δ²−4)/((2 cos z)²−4)`.
+These statements concern fixed continuous potentials. Bounds near the real
+axis, the full-plane canonical quotient normalization, spectral-derivative
+asymptotics, and the finite-p compatibility extension remain open.
+
+Examples use the coupled potential `(1,1)`, both imaginary signs,
+and real spectral part `100`. They check the exact trace-error bound `5/8`
+at heights `±2`, the zero-potential error, an arbitrary real-part path, a
+parabolic path, a nonreal trace shift, and both full-characteristic ratios.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8005 declarations under `NLS`, including generated
+axioms. The current audit covers 8019 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6033,8 +6071,10 @@ formal matrix representation.
    products now have ratio one to their free functions on both ends of every
    fixed vertical line for every finite `p>1`. The actual classical solutions
    now have both half-plane Duhamel formulas and inverse-height coordinate
-   error bounds conditional on the opposite weighted coordinate. Next bound
-   that coordinate, complete the classical estimates, and prove whole-plane
+   error bounds conditional on the opposite weighted coordinate. The coupled
+   argument now removes that condition, yielding explicit trace errors and
+   shifted/full free ratio limits at both imaginary ends, with arbitrary real
+   part. Next combine these with the canonical limits and prove whole-plane
    quotient bounds, which give exact normalization,
    and extend the compatibility identity to finite-p potentials.
    Bounded source

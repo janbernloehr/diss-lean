@@ -1557,11 +1557,20 @@ bounded by `‖Φ‖ B/(2|Im z|)`, provided the opposite weighted coordinate is 
 by `B`. Nonzero triangular potentials verify both signs and the height-two
 constant `1/4`.
 
-Next, use the coupled integral equations to obtain a uniform bound for that
-opposite coordinate and hence the matching classical monodromy asymptotics.
-Also control the product ratios outside the spectral discs with unbounded real
-part. Control across the excluded discs is also needed to bound or normalize the entire filled
-quotients. Then use potential approximation to prove `f+2=g−2` for finite p>1. The classical
+The coupled integral equations now close this bound without a hypothesis on
+the unknown solution: for decay rate `a≥2‖Φ‖²`, the slow coordinate is bounded
+by `2(|u(0)|+‖Φ‖|v(0)|/a)`. Applying this to the two normalized columns gives
+trace error at most `2‖Φ‖²/a+2‖Φ‖²/a²`. Thus the exponentially normalized
+classical trace tends to one at both imaginary ends, and every fixed shift
+of the trace, as well as `Δ²−4`, has ratio one to its free function. These
+limits allow an arbitrary varying real spectral part for fixed continuous
+potentials.
+
+Next, combine the classical and canonical vertical limits for the entire
+quotients, and control the product ratios outside the spectral discs with
+unbounded real part and bounded imaginary part. Control across the excluded
+discs is also needed to bound or normalize the entire filled quotients. Then
+use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);

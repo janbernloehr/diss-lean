@@ -486,3 +486,8 @@ import NLS.ComplexAnalysis.ScalarDuhamel
 import NLS.ComplexAnalysis.DecayingDuhamelKernel
 import NLS.ZakharovShabat.ClassicalDuhamel
 import NLS.ZakharovShabat.ClassicalDuhamelBounds
+import NLS.ComplexAnalysis.IntegratedDecayBounds
+import NLS.ComplexAnalysis.CoupledVolterraBounds
+import NLS.ZakharovShabat.ClassicalHalfPlaneBounds
+import NLS.ZakharovShabat.ClassicalTraceHalfPlaneBounds
+import NLS.ZakharovShabat.ClassicalHalfPlaneAsymptotics

@@ -12178,3 +12178,78 @@ example (φ : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) :
 
 end
 end ClassicalDuhamelChecks
+
+namespace ClassicalHalfPlaneChecks
+open Set Complex Filter Topology NLS.LinearVolterra NLS.ZakharovShabat NLS.ComplexAnalysis
+noncomputable section
+
+private def coupledPotential : Curve (ℂ × ℂ) := ContinuousMap.const _ (1,1)
+private theorem coupledPotential_norm : ‖coupledPotential‖ = 1 := by
+  simp [coupledPotential, ContinuousMap.norm_eq_iSup_norm]
+
+-- Both potential components are nonzero. The bound needs no assumed solution supremum.
+example (t : Icc (0 : ℝ) 1) :
+    ‖(classicalWeightedSolution coupledPotential (2*I) (I*(2*I)) (1,0) t).1‖ ≤ 2 := by
+  have h := (classicalWeightedSolution_upper_bounds coupledPotential (2*I)
+    (by simp) (by norm_num [coupledPotential_norm]) (1,0) t).1
+  simpa using h
+
+-- The same interacting potential has the explicit trace error 5/8, far along the real axis.
+example : ‖exp (I*(100+2*I)) * classicalDiscriminant coupledPotential (100+2*I) -
+    (1 + exp (2*I*(100+2*I)))‖ ≤ 5/8 := by
+  have h := norm_classicalDiscriminant_upper_sub_free_le coupledPotential (100+2*I)
+    (by simp) (by norm_num [coupledPotential_norm])
+  norm_num [coupledPotential_norm] at h ⊢
+  exact h
+
+-- Reflection to height minus two retains that constant and uses the other exponential weight.
+example : ‖exp (-I*(100-2*I)) * classicalDiscriminant coupledPotential (100-2*I) -
+    (1 + exp (-2*I*(100-2*I)))‖ ≤ 5/8 := by
+  have h := norm_classicalDiscriminant_lower_sub_free_le coupledPotential (100-2*I)
+    (by simp) (by norm_num [coupledPotential_norm])
+  norm_num [coupledPotential_norm] at h ⊢
+  exact h
+
+-- The zero potential forces zero error for every positive height, including below the nonzero threshold.
+example (z : ℂ) (hz : 0 < z.im) :
+    exp (I*z) * classicalDiscriminant 0 z = 1 + exp (2*I*z) := by
+  have h := norm_classicalDiscriminant_upper_sub_free_le 0 z hz (by simpa using hz.le)
+  simpa only [norm_zero, zero_pow (by decide : 2 ≠ 0), mul_zero, zero_div, zero_add,
+    norm_le_zero_iff, sub_eq_zero] using h
+
+-- No continuity or growth restriction is imposed on the real spectral path.
+example (φ : Curve (ℂ × ℂ)) (x : ℝ → ℝ) :
+    Tendsto (fun y : ℝ => exp (I*((x y : ℂ)+I*y)) *
+      classicalDiscriminant φ ((x y : ℂ)+I*y)) atTop (𝓝 1) := by
+  apply tendsto_classicalDiscriminant_upper_normalized
+  simpa using! (tendsto_id : Tendsto (fun y : ℝ => y) atTop atTop)
+
+-- The periodic shifted ratio tends to one on the parabola y²+iy.
+example (φ : Curve (ℂ × ℂ)) :
+    Tendsto (fun y : ℝ => (classicalDiscriminant φ ((y : ℂ)^2+I*y)-2) /
+      (freeDiscriminant ((y : ℂ)^2+I*y)-2)) atTop (𝓝 1) := by
+  apply tendsto_classicalDiscriminant_sub_div_free_upper
+  simpa [pow_two] using! (tendsto_id : Tendsto (fun y : ℝ => y) atTop atTop)
+
+-- A nonreal shift is supported as well, at the lower end.
+example (φ : Curve (ℂ × ℂ)) (x : ℝ → ℝ) :
+    Tendsto (fun y : ℝ => (classicalDiscriminant φ ((x y : ℂ)-I*y)-I) /
+      (freeDiscriminant ((x y : ℂ)-I*y)-I)) atTop (𝓝 1) := by
+  apply tendsto_classicalDiscriminant_sub_div_free_lower
+  simpa using (tendsto_neg_atTop_atBot : Tendsto (fun y : ℝ => -y) atTop atBot)
+
+-- Full characteristic functions have both upper and lower normalizations.
+example (φ : Curve (ℂ × ℂ)) (x : ℝ → ℝ) :
+    Tendsto (fun y : ℝ => ((classicalDiscriminant φ ((x y : ℂ)+I*y))^2-4) /
+      ((freeDiscriminant ((x y : ℂ)+I*y))^2-4)) atTop (𝓝 1) := by
+  apply tendsto_classicalDiscriminant_sq_div_free_upper
+  simpa using! (tendsto_id : Tendsto (fun y : ℝ => y) atTop atTop)
+
+example (φ : Curve (ℂ × ℂ)) (x : ℝ → ℝ) :
+    Tendsto (fun y : ℝ => ((classicalDiscriminant φ ((x y : ℂ)-I*y))^2-4) /
+      ((freeDiscriminant ((x y : ℂ)-I*y))^2-4)) atTop (𝓝 1) := by
+  apply tendsto_classicalDiscriminant_sq_div_free_lower
+  simpa using (tendsto_neg_atTop_atBot : Tendsto (fun y : ℝ => -y) atTop atBot)
+
+end
+end ClassicalHalfPlaneChecks
