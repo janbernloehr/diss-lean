@@ -397,3 +397,6 @@ import NLS.ZakharovShabat.EntireSpectralPairProducts
 import NLS.ZakharovShabat.ParitySpectralCutoffs
 import NLS.ZakharovShabat.ParitySpectralProducts
 import NLS.ZakharovShabat.ParitySpectralProductsFree
+import NLS.ZakharovShabat.ParityRootMultiplicity
+import NLS.ZakharovShabat.ParityClusterMultiplicity
+import NLS.ZakharovShabat.CentralParityPolynomials

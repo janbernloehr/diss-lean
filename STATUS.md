@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 449 modules and 3426 named public theorems. All compile on the
+The library has 452 modules and 3455 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ParityRootMultiplicity` | Actual parity root-space multiplicities, direct-sum splitting, domain eigenvector criterion, and signed free multiplicities |
+| `NLS.ZakharovShabat.ParityClusterMultiplicity` | Spectral projection commutation, parity distribution over finite root clusters, and exact uniform central parity multiplicity sums |
+| `NLS.ZakharovShabat.CentralParityPolynomials` | Actual central parity root multisets, cardinalities, polynomials, exact full-polynomial factorization, zero sets, analytic orders, and free specialization |
 | `NLS.ZakharovShabat.FreeParityProducts` | Exact translated odd cutoff identity, nonzero reference factors, and whole-plane locally uniform convergence to the free discriminant plus two |
 | `NLS.ZakharovShabat.EntireSpectralPairProducts` | Entire normalized products for complete paired sequences with finite-exponent ℓp displacements, and agreement with the off-lattice formula |
 | `NLS.ZakharovShabat.ParitySpectralCutoffs` | ℓp-preserving affine reindexing, exact even/odd finite cutoff identities, and the odd reference limit |
@@ -4136,15 +4139,49 @@ convergence. Repeated roots and roots at free lattice points are permitted.
 
 `ParitySpectralProductsFree` identifies the free specializations with `Δ_free−2`
 and `Δ_free+2`, fixing the corrected prefactors `−1` and `4`. Their discriminant
-values agree at the free potential. For general actual potentials, identifying
-complete central parity root lists, proving joint potential analyticity of the
-parity products, and proving `f+2=g−2` remain open. Arbitrary displaced sequences
-do not imply this compatibility.
+values agree at the free potential. The following milestone constructs actual
+central parity root multisets. Connecting those factors to the entire parity
+products, proving joint potential analyticity, and proving `f+2=g−2` remain
+open. Arbitrary displaced sequences do not imply this compatibility.
+
+## Section 8: actual central parity spectra and multiplicities
+
+`ParityRootMultiplicity` defines each parity multiplicity as the dimension of
+the corresponding part of the original full periodic root space. For
+even-supported potentials, parity masks preserve root spaces and their even
+and odd parts form a direct sum. Thus the original multiplicity is the sum of
+the two parity multiplicities. Positivity in a parity is equivalent to a
+nonzero eigenvector in the original weighted operator domain of that parity:
+induction down a finite Jordan chain gives the eigenvector. No simplicity or
+exclusive assignment of a spectral value to one sector is assumed.
+
+`ParityClusterMultiplicity` proves that each original spectral projector and
+finite cluster projector commutes with the parity mask. Mapping the finite
+root-space sum distributes the parity intersection over it. The resulting
+dimension is the sum of the actual parity multiplicities. Applied to the
+central contour projection, the existing uniform rank theorem gives exact
+`2N+2` versus `2N` multiplicity sums on one open convex potential neighborhood.
+
+`CentralParityPolynomials` forms the central parity root multisets by repeating
+each actual central spectral value with its parity multiplicity. Their counts
+and total cardinalities are exact, and their root products are the central
+parity polynomials. The two polynomials multiply to the full original central
+polynomial at every parameter, including shared or repeated roots. Their zeros
+are exactly the central eigenvalues with a domain eigenvector of the selected
+parity; their extended analytic orders are exactly the parity multiplicities.
+The free specialization filters the signed central indices and retains
+multiplicity two, including the zero cutoff with two even roots and no odd
+roots.
+
+It remains to combine these actual central factors with the distant parity
+pairs to identify entire actual parity products, prove their joint potential
+analyticity, and establish discriminant compatibility. Analyticity here is in
+the spectral parameter; no analytic choice of individual roots is asserted.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6985 declarations under `NLS`, including generated
+axioms. The current audit covers 7025 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5095,14 +5132,21 @@ reindexing, and repeated roots without cancellation. The endpoint `p=1`
 retains entire products and derivative convergence. The free specializations
 have compatible discriminant values and multiply to `Δ_free²−4` everywhere.
 
+Central-parity examples cover negative residues, the empty odd zero-cutoff
+cluster, the even double root and its exact analytic order, long root chains,
+and eigenvalues with positive multiplicity in both sectors. A nonconstant
+p=3 potential supplies all large central root cardinalities. Factorization
+and root-multiset product identities are checked without division at roots.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Identify the actual central parity spectra and the correctly normalized
-   discriminant, using the proved joint analytic canonical full product.
+2. Combine the actual central parity root multisets and polynomials with the
+   distant parity pairs to identify the entire actual parity products.
    Complete-sequence parity products and the free full/even/odd identities are
-   proved with necessary prefactors `-1` and `4`. Joint potential analyticity
-   and compatibility of the actual parity factors remain to be established.
+   proved with necessary prefactors `-1` and `4`. Prove joint potential
+   analyticity and compatibility of the actual parity factors to identify the
+   correctly normalized discriminant.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -1374,8 +1374,17 @@ locally uniform polynomial and derivative convergence, including at p=1 and
 free lattice points. Their free specializations recover Δ−2 and Δ+2 with
 prefactors −1 and 4.
 
-Next, identify complete central parity root lists for actual potentials and
-prove joint potential analyticity and compatibility of their parity products.
-The complete-sequence construction alone does not imply a common discriminant.
+Actual central parity root multisets and polynomials are now constructed.
+Parity root-space dimensions count the original Jordan chains and sum to the
+full algebraic multiplicity. Projection commutation distributes parity over
+finite spectral clusters, turning central rank counts into exact multiplicity
+sums. The two central polynomials multiply to the full original polynomial,
+with the precise parity zero sets and analytic orders. Root multisets retain
+shared eigenvalues and have the exact uniform central cardinalities.
+
+Next, combine these actual central factors with the distant parity pairs to
+identify entire actual parity products. Then prove their joint potential
+analyticity and discriminant compatibility. The complete-sequence construction
+alone does not imply a common discriminant.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

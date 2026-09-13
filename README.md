@@ -708,8 +708,12 @@ installation is absent. No shell startup files are modified.
   also give entire even and odd subproducts, with locally uniform cutoff and
   derivative convergence on the whole spectral plane. Exact rescaling identities
   retain the central denominator and asymmetric odd cutoff. The free limits
-  are Δ−2 and Δ+2, with corrected prefactors −1 and 4. Identifying the central
-  parity spectra of actual potentials and their common discriminant remains open.
+  are Δ−2 and Δ+2, with corrected prefactors −1 and 4. Actual central parity
+  root multisets are now constructed with original Jordan multiplicities and
+  exact uniform cardinalities. Their polynomials factor the full central
+  polynomial and retain the exact parity zero sets and analytic orders.
+  Connecting these central factors to the entire parity products, proving joint
+  potential analyticity, and identifying their common discriminant remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

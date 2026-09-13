@@ -10364,3 +10364,84 @@ example (z : ℂ) :
 
 end
 end ParityProductChecks
+
+namespace CentralParityChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal ENat
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Negative odd indices retain their doubled free multiplicity in the odd sector.
+example : parityAlgebraicMultiplicity (p := 1) (by simp) 0 (-3) ((Real.pi : ℂ)*(-1 : ℤ)) = 2 := by
+  rw [parityAlgebraicMultiplicity_zero]
+  norm_num
+example : parityAlgebraicMultiplicity (p := 1) (by simp) 0 0 ((Real.pi : ℂ)*(-1 : ℤ)) = 0 := by
+  rw [parityAlgebraicMultiplicity_zero]
+  norm_num
+
+-- The zero cutoff has two even roots and an empty odd root multiset.
+example : (centralParityRoots (p := 1) (by simp) 0 0 0).card = 2 ∧
+    (centralParityRoots (p := 1) (by simp) 0 0 1).card = 0 := by
+  simp only [card_centralParityRoots_zero]
+  norm_num
+example (z : ℂ) : centralParityPolynomial (p := 1) (by simp) 0 0 0 z = z^2 ∧
+    centralParityPolynomial (p := 1) (by simp) 0 0 1 z = 1 := by
+  simp [centralParityPolynomial_zero, centralParityIndices, Finset.filter_singleton]
+
+-- Analytic orders distinguish the zero-cutoff double root from the empty odd sector.
+example : analyticOrderAt (centralParityPolynomial (p := 1) (by simp) 0 0 0) 0 = 2 := by
+  rw [analyticOrderAt_centralParityPolynomial]
+  have hm := parityAlgebraicMultiplicity_zero (p := 1) (by simp) 0 0
+  norm_num at hm
+  norm_num [centralPeriodicSpectrum_zero, hm]
+
+-- An arbitrarily long nonzero odd root chain yields an actual odd domain eigenvector.
+example (φ : PairSpace 1) (hφ : φ ∈ pairParitySubspace 0) (z : ℂ) (x : PairSpace 1)
+    (hx : x ∈ periodicRootSpace (by simp) φ z 7) (hr : x ∈ pairParitySubspace (-1)) (hne : x ≠ 0) :
+    ∃ f : Domain 1, f ≠ 0 ∧ f ∈ domainParitySubspace (-1) ∧ spectralPencil (by simp) φ z f = 0 :=
+  exists_parity_eigenvector_of_root (by simp) φ hφ (-1) z 7 x hx hr hne
+
+-- A shared spectral value may have positive multiplicity in both sectors.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (z : ℂ)
+    (hz : z ∈ centralPeriodicSpectrum (by simp) φ N)
+    (he : 0 < parityAlgebraicMultiplicity (by simp) φ 0 z)
+    (ho : 0 < parityAlgebraicMultiplicity (by simp) φ 1 z) :
+    centralParityPolynomial (by simp) φ N 0 z = 0 ∧
+      centralParityPolynomial (by simp) φ N 1 z = 0 := by
+  constructor
+  · exact (centralParityPolynomial_eq_zero_iff (by simp) φ hφ N 0 z).mpr
+      ⟨hz, (parityAlgebraicMultiplicity_pos_iff (by simp) φ hφ 0 z).mp he⟩
+  · exact (centralParityPolynomial_eq_zero_iff (by simp) φ hφ N 1 z).mpr
+      ⟨hz, (parityAlgebraicMultiplicity_pos_iff (by simp) φ hφ 1 z).mp ho⟩
+
+-- Both parity multiplicities add to the original multiplicity at a collision as everywhere else.
+example (φ : PairSpace 1) (hφ : φ ∈ pairParitySubspace 0) (z : ℂ) :
+    parityAlgebraicMultiplicity (by simp) φ 0 z + parityAlgebraicMultiplicity (by simp) φ 1 z =
+      periodicAlgebraicMultiplicity (by simp) φ z :=
+  (periodicAlgebraicMultiplicity_eq_parity_sum (by simp) φ hφ z).symm
+
+-- Actual nonconstant p=3 potentials supply all large central parity root cardinalities.
+example (a b : ℂ) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ r : ℤ,
+    (centralParityRoots (p := 3) (by simp) (lp.single 3 2 a, lp.single 3 (-2) b) N r).card =
+      if (N : ℤ) % 2 = r % 2 then 2*N+2 else 2*N := by
+  let φ : PairSpace 3 := (lp.single 3 2 a, lp.single 3 (-2) b)
+  have heven : φ ∈ pairParitySubspace 0 :=
+    ⟨Coeff.single_mem_paritySubspace 0 2 a (by norm_num),
+      Coeff.single_mem_paritySubspace 0 (-2) b (by norm_num)⟩
+  obtain ⟨N₀, U, _, _, _, hφ, _, h⟩ := exists_uniform_centralParityRoots_card (by simp) φ
+  exact ⟨N₀, fun N hN r => h φ hφ heven N hN r⟩
+
+-- The full central polynomial splits even at roots, without dividing either factor.
+example (φ : PairSpace 1) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (z : ℂ) :
+    centralPeriodicPolynomial (by simp) φ N z =
+      centralParityPolynomial (by simp) φ N 0 z * centralParityPolynomial (by simp) φ N 1 z :=
+  centralPeriodicPolynomial_eq_parity_mul (by simp) φ hφ N z
+
+-- Repeated-root multisets recover the same polynomial for an arbitrary p=3 potential.
+example (φ : PairSpace 3) (N : ℕ) (z : ℂ) :
+    ((centralParityRoots (by simp) φ N (-1)).map (fun ζ => ζ-z)).prod =
+      centralParityPolynomial (by simp) φ N (-1) z :=
+  prod_centralParityRoots (by simp) φ N (-1) z
+
+end
+end CentralParityChecks
