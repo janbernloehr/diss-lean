@@ -640,9 +640,11 @@ installation is absent. No shell startup files are modified.
   source Neumann potential extension now gives both starred coefficient
   branches full `ℓp` displacements, common quantitative tails, and unique
   high-disc spectral identification. This completes all four coefficient
-  displacement conclusions of Corollary 6.2. Auxiliary generalized root-space
-  multiplicities and the original physical starred boundary transfer remain
-  to be proved.
+  displacement conclusions of Corollary 6.2. Actual auxiliary generalized
+  root spaces are now conjugate to ordinary boundary root spaces, including
+  all Jordan chains. Both auxiliary spectra have simple high-disc eigenvalues
+  and central algebraic count `2N+1`, uniformly for source period-one
+  potentials. The original physical starred boundary transfer remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -9069,3 +9069,117 @@ example (b : BoundaryCondition) : auxiliaryPeriodOneEigenvalue (p := 3) (by norm
     (Real.pi : ℂ)*(-11 : ℤ) := auxiliaryPeriodOneEigenvalue_zero _ _ _ _
 
 end AuxiliarySpectrumChecks
+
+namespace AuxiliaryCountingChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The whole recursive chain is transported, including levels beyond ordinary eigenvectors.
+example (φ : PairSpace 3) (hφ : φ ∈ neumannSubspace) (z : ℂ)
+    (b : BoundaryCondition) (x : b.space (p := 3)) :
+    b.auxiliaryBaseEquiv x ∈ b.auxiliaryRootSpace (by norm_num) φ hφ z 3 ↔
+      x ∈ b.rootSpace (by norm_num) (auxiliaryPotential φ)
+        ((auxiliaryPotential_mem_dirichlet_iff φ).mpr hφ) z 3 :=
+  b.mem_auxiliaryRootSpace_conjugate _ _ _ _ _ _
+
+example (φ : PairSpace 3) (hφ : φ ∈ neumannSubspace) (z : ℂ) (b : BoundaryCondition) :
+    FiniteDimensional ℂ (b.auxiliaryRootSpaceTop (by norm_num) φ hφ z) ∧
+      ∃ n, b.auxiliaryRootSpace (by norm_num) φ hφ z n = b.auxiliaryRootSpaceTop (by norm_num) φ hφ z :=
+  ⟨b.finiteDimensional_auxiliaryRootSpaceTop _ _ _ _, b.exists_auxiliaryRootSpace_eq_top _ _ _ _⟩
+
+-- All signed free eigenvalues, including negative modes, have actual root-space dimension one.
+example (b : BoundaryCondition) :
+    b.auxiliaryAlgebraicMultiplicity (p := 3) (by norm_num) 0 (by simp) ((Real.pi : ℂ) * (-11 : ℤ)) = 1 := by
+  rw [BoundaryCondition.auxiliaryAlgebraicMultiplicity_eq]
+  simp only [map_zero]
+  exact b.algebraicMultiplicity_zero _ _
+
+-- Counts hold for the original source pair topology, both conditions, and every larger cutoff.
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 3), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N → ∀ b : BoundaryCondition,
+        (∑ z ∈ b.auxiliaryCentralSpectrum (by norm_num)
+          (auxiliaryPeriodOnePotential (by norm_num) (by norm_num) ψ).val
+          (auxiliaryPeriodOnePotential (by norm_num) (by norm_num) ψ).property N,
+          b.auxiliaryAlgebraicMultiplicity (by norm_num)
+            (auxiliaryPeriodOnePotential (by norm_num) (by norm_num) ψ).val
+            (auxiliaryPeriodOnePotential (by norm_num) (by norm_num) ψ).property z) = 2 * N + 1 ∧
+        ∀ n : ℤ, N < n.natAbs →
+          b.auxiliaryAlgebraicMultiplicity (by norm_num)
+            (auxiliaryPeriodOnePotential (by norm_num) (by norm_num) ψ).val
+            (auxiliaryPeriodOnePotential (by norm_num) (by norm_num) ψ).property
+            (auxiliaryPeriodOneEigenvalue (by norm_num) (by norm_num) b ψ n) = 1 := by
+  obtain ⟨N₀,U,_,ho,hc,hφ,h0,hcount⟩ := exists_uniform_auxiliaryPeriodOneCountingData (by norm_num) (by norm_num) φ
+  refine ⟨N₀,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ N hN b
+  exact ⟨(hcount ψ hψ N hN).central_multiplicity b, fun n hn => (hcount ψ hψ N hN).eigenvalue_spec b n hn |>.2⟩
+
+end AuxiliaryCountingChecks
+
+namespace AuxiliaryJordanChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+private def φ : PairSpace 3 := (lp.single 3 0 (Real.pi : ℂ), -lp.single 3 0 (Real.pi : ℂ))
+private def f : Domain 3 := (scalarMode (-1) 1, scalarMode 1 Complex.I)
+private def g : Domain 3 :=
+  (scalarMode (-1) (-(Real.pi : ℂ)) + scalarMode 1 (-Complex.I * Real.pi),
+   scalarMode 1 (-Complex.I * Real.pi) + scalarMode (-1) (Real.pi : ℂ))
+private theorem pencil_f : spectralPencil (by norm_num) φ 0 f = domainInclusion g := by
+  apply Prod.ext <;> ext n <;> by_cases h1 : n = 1 <;> by_cases hm : n = -1
+  all_goals simp [spectralPencil, operator_fst_apply, operator_snd_apply, φ, f, g,
+    lp.single_apply, Pi.single_apply, sub_eq_zero, h1, hm]
+  all_goals ring
+private theorem pencil_g : spectralPencil (by norm_num) φ 0 g = 0 := by
+  apply Prod.ext <;> ext n <;> by_cases h1 : n = 1 <;> by_cases hm : n = -1
+  all_goals simp [spectralPencil, operator_fst_apply, operator_snd_apply, φ, g,
+    lp.single_apply, Pi.single_apply, sub_eq_zero, h1, hm, tsum_neg]
+
+private theorem φ_mem : φ ∈ neumannSubspace := by
+  simp [mem_neumannSubspace, φ, lp.single_apply, Pi.single_apply]
+private theorem f_mem : f ∈ BoundaryCondition.auxiliaryDomain .dirichlet := by
+  change f ∈ BoundaryCondition.auxiliaryWeightedSpace .dirichlet 1
+  rw [BoundaryCondition.mem_auxiliaryWeightedSpace]
+  intro n
+  by_cases h1 : n = 1 <;> by_cases hm : n = -1
+  all_goals simp [f, h1, hm, neg_eq_iff_eq_neg]
+private theorem g_mem : g ∈ BoundaryCondition.auxiliaryDomain .dirichlet := by
+  change g ∈ BoundaryCondition.auxiliaryWeightedSpace .dirichlet 1
+  rw [BoundaryCondition.mem_auxiliaryWeightedSpace]
+  intro n
+  by_cases h1 : n = 1 <;> by_cases hm : n = -1
+  all_goals simp [g, h1, hm, neg_eq_iff_eq_neg]
+  all_goals ring_nf
+  all_goals simp
+
+private def fd : BoundaryCondition.auxiliaryDomain (p := 3) .dirichlet := ⟨f, f_mem⟩
+private def gd : BoundaryCondition.auxiliaryDomain (p := 3) .dirichlet := ⟨g, g_mem⟩
+private theorem gd_nonzero : BoundaryCondition.auxiliaryInclusion .dirichlet gd ≠ 0 := by
+  intro h
+  have hc := congrArg (fun x : BoundaryCondition.auxiliarySpace (p := 3) .dirichlet => x.val.1 (-1)) h
+  change (domainInclusion g).1 (-1) = 0 at hc
+  simp [g] at hc
+
+-- A genuine chain of length two is recognized by the actual recursive root-space API.
+example :
+    BoundaryCondition.auxiliaryInclusion .dirichlet fd ∈
+      BoundaryCondition.auxiliaryRootSpace .dirichlet (by norm_num) φ φ_mem 0 2 ∧
+    BoundaryCondition.auxiliaryInclusion .dirichlet fd ∉
+      BoundaryCondition.auxiliaryRootSpace .dirichlet (by norm_num) φ φ_mem 0 1 := by
+  have hf : BoundaryCondition.auxiliaryPencil .dirichlet (by norm_num) φ φ_mem 0 fd =
+      BoundaryCondition.auxiliaryInclusion .dirichlet gd := Subtype.ext pencil_f
+  have hg : BoundaryCondition.auxiliaryPencil .dirichlet (by norm_num) φ φ_mem 0 gd = 0 := Subtype.ext pencil_g
+  constructor
+  · apply (BoundaryCondition.mem_auxiliaryRootSpace_succ .dirichlet _ _ _ _ 1 _).mpr
+    refine ⟨fd, rfl, ?_⟩
+    rw [hf]
+    apply (BoundaryCondition.mem_auxiliaryRootSpace_succ .dirichlet _ _ _ _ 0 _).mpr
+    exact ⟨gd, rfl, hg⟩
+  · intro h
+    obtain ⟨u, hu, hn⟩ := (BoundaryCondition.mem_auxiliaryRootSpace_succ .dirichlet _ _ _ _ 0 _).mp h
+    have he : u = fd := Subtype.ext (domainInclusion_injective (congrArg Subtype.val hu))
+    rw [he, hf] at hn
+    exact gd_nonzero hn
+
+end AuxiliaryJordanChecks

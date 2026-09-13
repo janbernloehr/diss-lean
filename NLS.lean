@@ -329,3 +329,5 @@ import NLS.ZakharovShabat.AuxiliaryPhase
 import NLS.ZakharovShabat.AuxiliarySpaces
 import NLS.ZakharovShabat.AuxiliarySpectrum
 import NLS.ZakharovShabat.AuxiliaryEigenvalueAsymptotics
+import NLS.ZakharovShabat.AuxiliaryRootSpaces
+import NLS.ZakharovShabat.AuxiliaryCounting

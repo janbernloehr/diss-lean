@@ -1199,9 +1199,15 @@ one open convex potential neighborhood. Together with the ordinary branches,
 this proves all four coefficient displacement conclusions in Corollary 6.2.
 The budgets use the actual reflected/conjugated potential tails.
 
-Next, transport the auxiliary generalized root spaces and algebraic
-multiplicities, proving the remaining counted assertions of Proposition 5.2,
-and identify the phase-transformed coefficient domains with the original
+The actual auxiliary root-chain recursion is now identified level by level
+with ordinary boundary chains. Its full root space is finite dimensional and
+stabilizes, and its dimension equals the conjugate ordinary multiplicity.
+`AuxiliaryCountingData` records actual spectral localization, central algebraic
+count `2N+1`, and simple high-disc eigenvalues for both auxiliary restrictions.
+These hold on one open convex neighborhood containing the given potential and
+zero, for every larger cutoff, including after source period-one extension.
+
+Next, identify the phase-transformed coefficient domains with the original
 physical endpoint conditions in (1.10). Transfer the physical starred
 boundary eigenvalues and their square-summable displacements. Then continue
 to the Chapter 2 discriminant, product, and action-coordinate prerequisites.

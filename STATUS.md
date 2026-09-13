@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 381 modules and 3004 named public theorems. All compile on the
+The library has 383 modules and 3026 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.AuxiliaryRootSpaces` | Actual recursive auxiliary root chains, phase equivalence at every level, finite dimensionality and stabilization, and algebraic multiplicity equality |
+| `NLS.ZakharovShabat.AuxiliaryCounting` | Actual finite spectral clusters, central algebraic count `2N+1`, simple high-disc eigenvalues, and common uniform counts after source period-one extension |
 | `NLS.ZakharovShabat.AuxiliaryPhase` | Exact phase and potential isometries, reflected-potential compatibility, and conjugation of the actual operator, pencil, and eigenvalue equation |
 | `NLS.ZakharovShabat.AuxiliarySpaces` | Closed complementary auxiliary base and Sobolev spaces, explicit ±i Fourier reflection conditions, domain/base isometries, and inclusion compatibility |
 | `NLS.ZakharovShabat.AuxiliarySpectrum` | Actual auxiliary restricted pencils defined by bijectivity; spectral conjugation, closure, discreteness, finite bounded clusters, and actual-domain eigenvectors |
@@ -3555,9 +3557,24 @@ potential. Both free auxiliary branches retain every signed index.
 Together with the ordinary result, all four coefficient displacement
 conclusions of Corollary 6.2 hold for every finite `p>1`.
 
-**Remaining scope.** Transport auxiliary generalized root spaces and
-algebraic multiplicities for the remaining counted conclusions of
-Proposition 5.2. Prove the original physical auxiliary endpoint realization
+`AuxiliaryRootSpaces` defines generalized eigenspaces recursively using the
+actual auxiliary pencil and domain inclusion at every step. Phase conjugation
+identifies each level with the ordinary boundary root space of the transformed
+potential. The full root space has finite dimension, is closed, and stabilizes.
+Auxiliary algebraic multiplicity is defined as its actual dimension; the root
+space equivalence proves equality with ordinary boundary multiplicity. It is
+positive exactly on the actual auxiliary spectrum and zero on the resolvent set.
+
+`AuxiliaryCounting` defines finite clusters directly from the actual auxiliary
+spectrum. Both auxiliary restrictions have central algebraic count `2N+1`
+and one simple eigenvalue in each high disc, with no spectrum outside the
+proved localization regions. One open convex neighborhood containing the
+potential and zero supports these conclusions for every larger cutoff. The
+source Neumann extension transfers the same counts to period-one coefficient
+pairs for every finite `p>1`. These use the proved safe central box, retaining
+the separate qualification on the printed general-p height.
+
+**Remaining scope.** Prove the original physical auxiliary endpoint realization
 in (1.10), then its starred spectral and square-summability transfers.
 The printed general-`p` central-height issue and the global nonlinear
 coordinate construction remain open.
@@ -3565,7 +3582,7 @@ coordinate construction remain open.
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6111 declarations under `NLS`, including generated
+axioms. The current audit covers 6178 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4386,13 +4403,21 @@ are discrete above two. The starred source branches retain global `ℓp`
 displacements, actual unique high-disc spectral values, and every quantitative
 tail at `p=3/2`. Both free branches retain a negative index.
 
+Auxiliary root-space checks cover level-three conjugation, finite dimension,
+stabilization, and actual multiplicity one at a negative free index. The source
+period-one API retains one open convex neighborhood for both conditions and
+every larger cutoff, with central count `2N+1` and simple high-disc values at
+`p=3`. A nonzero constant potential `(π,-π)` gives a genuine auxiliary
+Dirichlet Jordan chain at zero: its initial vector lies in level two but not
+level one. The check verifies both actual pencil equations and domain conditions.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Transport the auxiliary generalized multiplicities and original physical
-   endpoint realization to finish the counted Section 5 conclusions and
-   physical starred asymptotics. The coefficient auxiliary spectra and all
-   four coefficient Corollary 6.2 displacement conclusions are now proved,
+2. Prove the original physical auxiliary endpoint realization and transport
+   the coefficient spectra and multiplicities to obtain the physical counted
+   Section 5 conclusions and starred asymptotics. The coefficient auxiliary
+   spectra and all four coefficient Corollary 6.2 displacement conclusions are now proved,
    as are the midpoint consequence and ordinary physical `L²` transfer.
    Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue
    pairs and intrinsic squared gaps, with exact spectral algebraic multiplicities.
@@ -4412,5 +4437,5 @@ tail at `p=3/2`. Both free branches retain a negative index.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the auxiliary physical/multiplicity transfers and Chapter 2 nonlinear
+the auxiliary physical transfers and Chapter 2 nonlinear
 coordinate construction remain incomplete.
