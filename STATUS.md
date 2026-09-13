@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 508 modules and 3767 named public theorems. All compile on the
+The library has 512 modules and 3792 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.OriginalChainLinearity` | Physical evaluation additivity and complex scaling, linearity of every original parity-chain level, and linear alternating initial-jet conversion |
+| `NLS.ZakharovShabat.BoundaryJetRootEquivalence` | Linear original domain reconstruction, exact physical curve and initial value, and linear equivalence of finite Taylor kernels with original finite parity root spaces |
+| `NLS.ZakharovShabat.BoundaryJetMultiplicity` | Equality of nullity and original root dimension at every length, monotonicity, dimension bounds, and eventual equality with full original parity algebraic multiplicity |
+| `NLS.ZakharovShabat.BoundaryJetFreeMultiplicity` | Exact free nullities at all lengths and all Fourier indices: two in the matching parity, zero in the opposite parity, and zero for the empty system |
 | `NLS.ZakharovShabat.ClassicalFiniteChains` | Arbitrary initial jets, exact finite convolution of normalized chain curves, initial values, and propagation by normalized columns |
 | `NLS.ZakharovShabat.OriginalFiniteChains` | All original finite parity-domain chains, exact root-space recursion, classical representatives, endpoint solvability, and uniqueness of top vectors and finite initial data |
 | `NLS.ZakharovShabat.ClassicalBoundaryJets` | Standard matrix action in pair coordinates, actual boundary Taylor convolution, alternating initial-jet involution, and exact endpoint-defect formula |
@@ -4663,14 +4667,46 @@ one and only one original parity-chain top vector. Conversely, each vector
 of the original finite parity root space has a unique representing finite
 Taylor jet in that kernel. Empty jets have no equations.
 
-The finite correspondence is now proved. Turning it into a linear equivalence,
-computing the eventual kernel dimension as the boundary determinant order,
-and comparing normalized entire products remain the next multiplicity steps.
+The finite correspondence is proved. The linear equivalence and stabilized
+original multiplicity identification are established below. Computing the
+eventual kernel dimension as the boundary determinant order and comparing
+normalized entire products remain open.
+
+## Section 8: linear boundary-root equivalence and stabilized multiplicity
+
+`OriginalChainLinearity` proves that addition and complex scaling preserve
+original parity chains, including all weighted domains, source equations,
+and physical initial values. Alternating initial coefficients is linear.
+
+`BoundaryJetRootEquivalence` turns the unique reconstruction into a complex
+linear map to the original weighted domain. Its physical representative is
+the whole classical initial-jet curve, and its initial value has the expected
+alternating sign. Domain inclusion gives a linear equivalence of the actual
+finite boundary Taylor kernel with the full original finite parity root space.
+Their dimensions agree, including all generalized directions.
+
+`BoundaryJetMultiplicity` includes the empty system and proves that every
+finite boundary nullity equals the corresponding original finite parity root
+dimension. The nullities are nondecreasing, bounded by the original algebraic
+multiplicity and by twice the number of Taylor levels. Original root-space
+stabilization proves eventual equality with the full original parity algebraic
+multiplicity. Any independently computed eventual nullity must therefore equal
+that same multiplicity.
+
+`BoundaryJetFreeMultiplicity` gives the exact free sequence at every length.
+At any positive length, nullity is two when the boundary parity matches the
+Fourier index and zero otherwise. This includes negative indices. The empty
+system has nullity zero.
+
+The remaining analytic multiplicity step is to compute the eventual kernel
+dimension as the vanishing order of the actual boundary determinant. Entire
+normalization and extension beyond continuously represented Hilbert potentials
+remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7713 declarations under `NLS`, including generated
+axioms. The current audit covers 7753 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5718,6 +5754,13 @@ verify the genuine jet `(e₁,e₂)`, reject omission of its second initial vect
 and obtain a unique original chain with the alternating initial data. The top
 vector retains membership in the original root-space recursion at level two.
 
+Linear-equivalence checks reconstruct the explicit triangular generalized
+vector minus `e₂` in the original domain, verify its inclusion into the root
+space, and check reconstruction of a combination involving an imaginary scalar.
+They exercise the inverse identity on that generalized vector. Free nullity
+checks cover every positive length, negative odd indices in both boundary
+parities, and the zero-length system with an arbitrary multiplier.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5747,8 +5790,9 @@ vector retains membership in the original root-space recursion at level two.
    agree with the signed normalized forced-chain curves and endpoints.
    Finite original parity root vectors now correspond uniquely in both
    directions to the kernels of the actual finite boundary Taylor equations.
-   Next formalize the linear equivalence and compute the eventual kernel
-   dimension as the boundary determinant order.
+   This correspondence is now a complex linear equivalence, and all finite
+   nullities eventually equal the full original parity algebraic multiplicity.
+   Next compute the eventual kernel dimension as the boundary determinant order.
    Equality of classical and original algebraic multiplicities
    remains open. The classical boundary determinants have the required compatibility, but
    their equality with the infinite spectral products and extension to finite-p

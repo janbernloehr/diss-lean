@@ -456,3 +456,7 @@ import NLS.ZakharovShabat.ClassicalFiniteChains
 import NLS.ZakharovShabat.OriginalFiniteChains
 import NLS.ZakharovShabat.ClassicalBoundaryJets
 import NLS.ZakharovShabat.OriginalBoundaryJets
+import NLS.ZakharovShabat.OriginalChainLinearity
+import NLS.ZakharovShabat.BoundaryJetRootEquivalence
+import NLS.ZakharovShabat.BoundaryJetMultiplicity
+import NLS.ZakharovShabat.BoundaryJetFreeMultiplicity

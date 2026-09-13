@@ -764,6 +764,10 @@ installation is absent. No shell startup files are modified.
   with arbitrary initial data are now identified with the actual boundary Taylor
   equations. The finite linear convolution kernel uniquely parametrizes every
   original finite parity root vector, with the alternating initial signs retained.
+  This correspondence is now a complex linear equivalence. Every finite kernel
+  dimension equals the original finite root dimension, and the dimensions
+  eventually equal the full original parity algebraic multiplicity. The free
+  sequence has its exact value at every length, including negative Fourier indices.
   Equality of algebraic multiplicities with the classical
   determinants and normalized infinite-product identification needed for
   `f+2=g−2` remain open.

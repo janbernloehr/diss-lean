@@ -11562,3 +11562,65 @@ example (a : Domain 2)
 
 end
 end BoundaryJetChecks
+
+namespace BoundaryJetChecks
+open Set Complex Matrix MeasureTheory NLS NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+open scoped Matrix.Norms.Elementwise
+noncomputable section
+
+private def triangularJet : LinearMap.ker (finiteBoundaryJetMap triangular 0 (wave 0 1) 2) :=
+  ⟨![((1 : ℂ),0),(0,1)],by simpa only [wave_zero] using triangular_jet_kernel⟩
+
+-- The linear reconstruction sends the genuine triangular jet to its actual generalized vector -e₂.
+private theorem triangularJet_reconstruction :
+    boundaryJetDomainMap triangularPotential triangular_even triangular triangular_representative 0 0 1 triangularJet =
+      constantDomain (0,-1) := by
+  apply physicalDomain_unit_injective_parity 0 _ _
+    (boundaryJetDomainMap_chain triangularPotential triangular_even triangular triangular_representative 0 0 1 triangularJet).parity
+    (constant_parity (0,-1))
+  intro t ht
+  have hc := congrArg (fun g : Curve (ℂ × ℂ) => g ⟨t,ht⟩)
+    (boundaryJetDomainMap_physical_curve triangularPotential triangular_even triangular triangular_representative 0 0 1 triangularJet)
+  change physicalDomain _ t = _ at hc
+  rw [hc,physical_constant,classicalJetCurve_succ,classicalJetCurve_zero]
+  norm_num [signedInitialJet,initialJetExtension,triangularJet]
+  rw [show classicalChainOperator triangular 0 (classicalSolutionCurve triangular 0 (1,0)) =
+      classicalChainCurve triangular 0 1 (1,0) from by simp [classicalChainCurve]]
+  rw [triangular_solution _ ⟨t,ht⟩,triangular_chain_one _ ⟨t,ht⟩]
+  apply Prod.ext <;> dsimp <;> ring
+
+-- The base-space equivalence includes precisely that original weighted-domain vector.
+example : (boundaryJetRootEquiv triangularPotential triangular_even triangular triangular_representative 0 0 1 triangularJet : PairSpace 2) =
+    domainInclusion (constantDomain (0,-1)) := by
+  rw [boundaryJetRootEquiv_coe,triangularJet_reconstruction]
+
+-- Complex linear combinations commute with reconstruction, including the imaginary scalar.
+example : boundaryJetDomainMap triangularPotential triangular_even triangular triangular_representative 0 0 1
+    ((2+I) • triangularJet + (-3 : ℂ) • triangularJet) = constantDomain (0,1-I) := by
+  rw [map_add,map_smul,map_smul,triangularJet_reconstruction]
+  apply Prod.ext <;> (apply Subtype.ext; funext k; by_cases hk : k = 0 <;>
+    simp [constantDomain,scalarMode_apply,hk] <;> ring)
+
+-- Both inverse identities apply to the concrete generalized vector, not just an ordinary eigenvector.
+example : (boundaryJetRootEquiv triangularPotential triangular_even triangular triangular_representative 0 0 1).symm
+    (boundaryJetRootEquiv triangularPotential triangular_even triangular triangular_representative 0 0 1 triangularJet) = triangularJet :=
+  LinearEquiv.symm_apply_apply _ _
+
+-- A free double eigenvalue has exactly two directions at every positive length.
+example (N : ℕ) : boundaryJetNullity 0 0 1 (N+1) = 2 := by
+  simpa using boundaryJetNullity_free_succ 0 0 N
+
+-- Negative odd Fourier indices have antiperiodic multiplicity two at every positive length.
+example (N : ℕ) : boundaryJetNullity 0 (-3*(Real.pi : ℂ)) (-1) (N+1) = 2 := by
+  have hw : wave 1 1 = -1 := by simpa using wave_odd_at_one 0
+  simpa [mul_comm,hw] using boundaryJetNullity_free_succ 1 (-3) N
+
+-- The opposite parity has zero nullity, including in arbitrarily long systems.
+example (N : ℕ) : boundaryJetNullity 0 (-3*(Real.pi : ℂ)) 1 (N+1) = 0 := by
+  simpa [mul_comm] using boundaryJetNullity_free_succ 0 (-3) N
+
+-- Zero-length systems stay zero-dimensional for nonzero potentials and arbitrary multipliers.
+example (σ : ℂ) : boundaryJetNullity triangular 0 σ 0 = 0 := boundaryJetNullity_zero _ _ _
+
+end
+end BoundaryJetChecks

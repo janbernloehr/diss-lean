@@ -1502,10 +1502,17 @@ map on finitely many complex pairs; each kernel vector yields a unique original
 chain top vector, and each original finite parity root vector has a unique
 representing kernel jet.
 
-Next, turn this finite correspondence into a linear equivalence and prove that
-the eventual boundary-jet kernel dimension equals the determinant order. This
-will identify classical determinant orders with original algebraic multiplicities.
-Then prove the normalized entire-product identity and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
+The reconstruction is now complex linear, with the actual physical curve and
+initial values retained. Domain inclusion gives a linear equivalence of each
+finite boundary Taylor kernel with the corresponding original parity root
+space. All finite nullities agree with the original root dimensions, increase,
+and eventually equal the full original parity algebraic multiplicity. The
+free nullity sequence is computed exactly at all lengths and Fourier indices.
+
+Next, prove that the eventual boundary-jet kernel dimension equals the actual
+boundary determinant order. This will identify classical determinant orders
+with original algebraic multiplicities. Then prove the normalized entire-product
+identity and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);
