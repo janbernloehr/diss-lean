@@ -1517,11 +1517,16 @@ linearly and have eventual nullity equal to their determinant order. The
 actual monodromy boundary maps now equal the formal matrix Taylor actions
 built from their convergent coefficients.
 
-Next, reduce a general two-by-two formal matrix while preserving finite
-nullities, and identify its formal determinant with the analytic determinant
-Taylor series. These steps will prove that the eventual boundary-jet kernel
-dimension equals the actual boundary determinant order and identify classical
-determinant orders with original algebraic multiplicities. Then prove the normalized entire-product
+General formal matrices now reduce to diagonal form through row and column
+units. Every finite nullity is preserved, and for nonzero determinant it has
+the exact form `min(N,a)+min(N,b)`, where `a+b` is the determinant order. A
+singular formal matrix has nullity at least `N`; the original root-dimension
+bound therefore proves that each actual boundary formal determinant is
+nonzero. Its order now equals the original parity algebraic multiplicity.
+
+Next, identify this formal determinant with the analytic determinant Taylor
+series. This will identify classical analytic determinant orders with the
+original algebraic multiplicities. Then prove the normalized entire-product
 identity and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.

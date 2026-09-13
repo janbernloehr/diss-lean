@@ -465,3 +465,8 @@ import NLS.ComplexAnalysis.ScalarTaylorJetNullity
 import NLS.ComplexAnalysis.AnalyticScalarJetOrder
 import NLS.ComplexAnalysis.MatrixTaylorJets
 import NLS.ZakharovShabat.ClassicalBoundaryFormalJets
+import NLS.ComplexAnalysis.MatrixTaylorMultiplication
+import NLS.ComplexAnalysis.MatrixTaylorEquivalence
+import NLS.ComplexAnalysis.FormalMatrixReduction
+import NLS.ComplexAnalysis.MatrixTaylorNullity
+import NLS.ZakharovShabat.BoundaryFormalDeterminantOrder

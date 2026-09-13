@@ -11711,3 +11711,96 @@ example : ![((1 : ℂ),0),(0,1)] ∈ LinearMap.ker
 
 end
 end BoundaryJetChecks
+
+namespace GeneralMatrixJetChecks
+open Complex PowerSeries Matrix NLS.ComplexAnalysis
+noncomputable section
+
+private def jordanFormal : Matrix (Fin 2) (Fin 2) (PowerSeries ℂ) := !![X,1;0,X]
+private def inputChange : Matrix (Fin 2) (Fin 2) (PowerSeries ℂ) := !![0,1;1,-X]
+private def outputChange : Matrix (Fin 2) (Fin 2) (PowerSeries ℂ) := !![1,0;-X,1]
+
+private theorem inputChange_unit : IsUnit inputChange := by
+  rw [Matrix.isUnit_iff_isUnit_det]
+  simp [inputChange,Matrix.det_fin_two_of]
+
+private theorem outputChange_unit : IsUnit outputChange := by
+  rw [Matrix.isUnit_iff_isUnit_det]
+  simp [outputChange,Matrix.det_fin_two_of]
+
+private theorem jordan_reduction : outputChange*jordanFormal*inputChange = !![1,0;0,-X^2] := by
+  apply Matrix.ext
+  intro i j
+  fin_cases i <;> fin_cases j <;>
+    simp [outputChange,jordanFormal,inputChange,Matrix.mul_apply,Fin.sum_univ_two]; ring
+
+private theorem jordan_nullity (N : ℕ) :
+    Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap jordanFormal N)) = min N 2 := by
+  rw [← finrank_ker_matrixTaylorJetMap_units outputChange jordanFormal inputChange
+    outputChange_unit inputChange_unit N,jordan_reduction,
+    finrank_ker_matrixTaylorJetMap_diagonal 1 (-X^2) 0 2
+      (by simp) (by simp [PowerSeries.order_neg,PowerSeries.order_X_pow])]
+  simp
+
+-- The off-diagonal unit couples the coefficients: the first nullity is one, the next two.
+example : Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap jordanFormal 1)) = 1 := by
+  rw [jordan_nullity]; norm_num
+example : Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap jordanFormal 2)) = 2 := by
+  rw [jordan_nullity]; norm_num
+example (N : ℕ) : Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap jordanFormal (N+2))) = 2 := by
+  rw [jordan_nullity,min_eq_right (by omega)]
+
+-- General determinant-order recovery agrees with the explicit coupled example.
+example : ∀ᶠ N : ℕ in Filter.atTop,
+    (Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap jordanFormal N)) : ℕ∞) = 2 := by
+  have hd : jordanFormal.det ≠ 0 := by
+    simp [jordanFormal,Matrix.det_fin_two_of]
+  have ho : jordanFormal.det.order = 2 := by
+    norm_num [jordanFormal,Matrix.det_fin_two_of,PowerSeries.order_mul,PowerSeries.order_X]
+  simpa only [ho] using eventually_finrank_matrixTaylorKernel_eq_det_order jordanFormal hd
+
+-- Here every entry vanishes; the off-diagonal least-order pivot is not a unit.
+example (N : ℕ) : Module.finrank ℂ
+    (LinearMap.ker (matrixTaylorJetMap !![X^2,X;X^3,0] N)) = min N 1+min N 3 := by
+  have he : (1 : Matrix (Fin 2) (Fin 2) (PowerSeries ℂ))*!![X^2,X;X^3,0]*inputChange = !![X,0;0,X^3] := by
+    apply Matrix.ext
+    intro i j
+    fin_cases i <;> fin_cases j <;>
+      simp [inputChange,Matrix.mul_apply,Fin.sum_univ_two]; ring
+  rw [← finrank_ker_matrixTaylorJetMap_units 1 _ inputChange isUnit_one inputChange_unit N,he]
+  exact finrank_ker_matrixTaylorJetMap_diagonal X (X^3) 1 3 PowerSeries.order_X (PowerSeries.order_X_pow 3) N
+
+-- Singular matrices are included in the reduction and force an unbounded kernel sequence.
+example (N : ℕ) : N ≤ Module.finrank ℂ
+    (LinearMap.ker (matrixTaylorJetMap !![X,1;0,0] N)) := by
+  apply le_finrank_matrixTaylorKernel_of_det_eq_zero
+  simp [Matrix.det_fin_two_of]
+
+-- Empty jets remain valid under an arbitrary invertible formal change.
+example (A : Matrix (Fin 2) (Fin 2) (PowerSeries ℂ)) :
+    Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap (outputChange*A*inputChange) 0)) =
+      Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap A 0)) :=
+  finrank_ker_matrixTaylorJetMap_units _ _ _ outputChange_unit inputChange_unit 0
+
+end
+end GeneralMatrixJetChecks
+
+namespace BoundaryFormalOrderChecks
+open Set Complex MeasureTheory NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+noncomputable section
+open scoped Matrix.Norms.Elementwise
+
+-- Original free multiplicities determine the actual formal determinant order at every signed index.
+example (r k : ℤ) :
+    (classicalBoundaryFormalMatrix 0 ((Real.pi : ℂ)*k) (wave r 1)).det.order =
+      (if k % 2 = r % 2 then 2 else 0 : ℕ) := by
+  have hΦ : physicalBase (0 : PairSpace 2) =ᵐ[volume.restrict (Ioc 0 1)] extend (0 : Curve (ℂ × ℂ)) := by
+    have h := ae_restrict_of_ae_restrict_of_subset
+      (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num)) physicalBase_zero
+    filter_upwards [h] with t ht
+    simpa only [NLS.LinearVolterra.extend,ContinuousMap.zero_apply,Pi.zero_apply] using! ht
+  rw [order_classicalBoundaryFormalMatrix_det 0 (Submodule.zero_mem _) 0 hΦ,
+    parityAlgebraicMultiplicity_zero]
+
+end
+end BoundaryFormalOrderChecks

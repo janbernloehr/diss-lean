@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 517 modules and 3828 named public theorems. All compile on the
+The library has 522 modules and 3850 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.MatrixTaylorMultiplication` | Formal matrix multiplication acts by finite Taylor composition; identity action and bijectivity for formal units |
+| `NLS.ComplexAnalysis.MatrixTaylorEquivalence` | Left-unit kernel equality, right-unit kernel equivalence, invariance of all finite nullities and formal determinant order |
+| `NLS.ComplexAnalysis.FormalMatrixReduction` | Least-valuation dividing entry, permutation to a pivot, unit triangular elimination, and general two-by-two diagonal reduction |
+| `NLS.ComplexAnalysis.MatrixTaylorNullity` | Exact general finite nullity formula, eventual determinant order, bounds and monotonicity, singular nullity growth, and nonsingularity from bounded nullities |
+| `NLS.ZakharovShabat.BoundaryFormalDeterminantOrder` | Nonzero actual formal boundary determinant, eventual boundary nullity as its order, and equality with original parity algebraic multiplicity |
 | `NLS.ComplexAnalysis.FinitePowerSeriesJets` | Formal extension and restriction of finite scalar jets, order-based truncation, exact Taylor convolution, multiplicative composition, and invertibility for formal units |
 | `NLS.ComplexAnalysis.ScalarTaylorJetNullity` | Scalar kernel as a prefix-vanishing subspace, exact nullity `min(N,m)`, eventual order recovery, and the identically zero series |
 | `NLS.ComplexAnalysis.AnalyticScalarJetOrder` | Equality of formal Taylor order and analytic vanishing order, exact finite and eventual scalar analytic nullities, including infinite-order germs |
@@ -4739,15 +4744,41 @@ matrix action equals the existing boundary map exactly at every length,
 so the previously proved original multiplicity comparison applies to these
 formal systems directly.
 
-General two-by-two reduction preserving finite nullities, identification of
-the formal determinant with the analytic determinant Taylor series, and the
-resulting full determinant-order comparison remain open. The diagonal result
-is not yet a proof for arbitrary boundary matrices.
+`MatrixTaylorMultiplication` proves that formal matrix products act by
+composition on finite jets and that formal units act bijectively.
+`MatrixTaylorEquivalence` identifies the kernel under output units and gives
+an explicit linear equivalence under input units. These operations preserve
+every finite kernel dimension and the formal determinant order.
+
+`FormalMatrixReduction` chooses an entry of least discrete valuation, which
+divides every entry. Row and column permutations move it to the upper-left
+corner; unit triangular operations then eliminate the off-diagonal entries.
+This proves diagonal reduction for every two-by-two formal matrix, including
+singular matrices and pivots of positive vanishing order.
+
+`MatrixTaylorNullity` gives two finite orders `a,b` for every matrix with
+nonzero determinant: its exact nullity is `min(N,a)+min(N,b)` and `a+b` is
+the determinant order. Thus its nullities increase, are bounded by that
+order, and eventually equal it. A zero determinant forces nullity at least
+`N`, so any uniform finite bound implies a nonzero formal determinant.
+
+`BoundaryFormalDeterminantOrder` applies the original root-dimension bound
+to the actual formal boundary matrix. Its determinant is nonzero, and its
+order equals the original parity algebraic multiplicity, by the two proven
+eventual nullity identities. No formal nonsingularity assumption is needed.
+Identification of this formal determinant with the analytic determinant
+Taylor series remains open; analytic determinant orders and normalized
+infinite-product identification are not yet concluded.
+
+The new examples check a coupled Jordan-type formal matrix with nullities
+one and two at the first two lengths, an off-diagonal pivot of positive order,
+singular nullity growth, empty jets, and the free actual formal determinant
+order at arbitrary positive or negative Fourier indices.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7839 declarations under `NLS`, including generated
+axioms. The current audit covers 7880 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5840,10 +5871,11 @@ formal matrix representation.
    directions to the kernels of the actual finite boundary Taylor equations.
    This correspondence is now a complex linear equivalence, and all finite
    nullities eventually equal the full original parity algebraic multiplicity.
-   Scalar Taylor kernels now recover the exact analytic vanishing order,
-   and diagonal formal matrices have eventual nullity equal to determinant
-   order. The actual boundary maps equal their formal matrix Taylor actions.
-   Next prove general matrix reduction and determinant Taylor compatibility.
+   Scalar Taylor kernels now recover the exact analytic vanishing order.
+   General formal matrix reduction preserves all finite nullities, and the
+   actual boundary formal determinant is nonzero with order equal to original
+   parity algebraic multiplicity. Next prove analytic determinant Taylor
+   compatibility.
    Equality of classical and original algebraic multiplicities
    remains open. The classical boundary determinants have the required compatibility, but
    their equality with the infinite spectral products and extension to finite-p

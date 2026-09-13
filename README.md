@@ -768,11 +768,12 @@ installation is absent. No shell startup files are modified.
   dimension equals the original finite root dimension, and the dimensions
   eventually equal the full original parity algebraic multiplicity. The free
   sequence has its exact value at every length, including negative Fourier indices.
-  Scalar Taylor kernels now recover analytic vanishing orders exactly, and the
-  determinant-order calculation is proved for diagonal formal matrix systems.
-  The actual boundary maps are identified with their formal matrix Taylor actions.
-  General matrix reduction and equality of algebraic multiplicities with the classical
-  determinants and normalized infinite-product identification needed for
+  Scalar Taylor kernels now recover analytic vanishing orders exactly. General
+  two-by-two formal matrices reduce to diagonal form through invertible operations
+  preserving every finite nullity and determinant order. The actual boundary
+  formal determinant is nonzero and its order equals the original parity
+  algebraic multiplicity. Identifying it with the analytic determinant Taylor
+  series and the normalized infinite-product identification needed for
   `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
