@@ -667,6 +667,12 @@ installation is absent. No shell startup files are modified.
   formulas agree with the physical phased reflection and uniquely determine
   the completed maps. At `p=2` they preserve the source norm exactly; at
   `p=1` the constant input `(0,1)` proves failure of coefficient membership.
+- Section 8 now has symmetric free spectral products and their Euler limits.
+  The full product has the correct `-4` normalization; the even subproduct
+  needs `-1`. A formal audit of (2.4)/Lemma 8.1(ii) finds that the printed
+  `-2` and `2` prefactors give incompatible discriminant values at zero.
+  The free values require `-1` and `4`. Perturbed products, their analytic
+  dependence, and the general discriminant remain unimplemented.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

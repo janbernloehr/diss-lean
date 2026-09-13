@@ -24,6 +24,15 @@
 
 ## Statement audit
 
+- Equation (2.4) and Lemma 8.1 on printed page 48 use inconsistent prefactors.
+  With the actual zero-potential spectra, the displayed `-2` periodic product
+  is zero at `λ=0`, while the displayed `2` antiperiodic product equals two.
+  Thus no value of `∆` can satisfy both `∆=f+2=g-2`, even as limits. Euler's
+  symmetric free product proves that the periodic prefactor must be `-1`
+  (as used in the proof on the same page); the free value at zero forces the
+  antiperiodic prefactor to be `4`. The full periodic product's `-4` in (2.1)
+  is correct. Retain these distinctions when implementing Section 8; the
+  perturbed products and their discriminant identification are still open.
 - Lemma 6.9's printed page-43 displacement estimate fails with its claimed
   local uniformity at zero. The actual signed single-mode family has roots
   `nπ±t` and Hilbert pair norm squared `2t²`, whereas the printed budget is
@@ -1260,7 +1269,17 @@ are analytic into the closed source-norm auxiliary targets, and preserve the
 source norm exactly at `p=2`. The constant input `(0,1)` also proves that the
 strict lower exponent restriction cannot be dropped.
 
-Next, construct the convergent spectral products in Section 8, prove their
-analytic dependence, and identify the discriminant. Then continue with the
-anti-discriminant and action-coordinate prerequisites.
+The free spectral products now have an explicit symmetric cutoff and a proof
+that pairing positive and negative indices equals the original integer cutoff,
+including zero factors. Euler's product proves convergence at every complex
+parameter. The full product gives `(2 cos λ)^2-4` with prefactor `-4`; the even
+subproduct gives `2 cos λ-2` with prefactor `-1`. The formal source audit above
+refutes the printed prefactors in Lemma 8.1(ii) and determines their necessary
+replacements from free values.
+
+Next, construct the perturbed spectral products in Section 8 from the proved
+eigenvalue displacements, with locally uniform convergence and analytic
+dependence. Complete the odd free-product identity and identify the correctly
+normalized discriminant. Then continue with the anti-discriminant and
+action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

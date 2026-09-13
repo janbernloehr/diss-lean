@@ -348,3 +348,5 @@ import NLS.ZakharovShabat.AuxiliaryReality
 import NLS.ZakharovShabat.ClassicalAuxiliaryReality
 import NLS.ZakharovShabat.BoundedAuxiliaryExtension
 import NLS.ZakharovShabat.AuxiliarySourceExtension
+import NLS.ZakharovShabat.FreeSpectralProducts
+import NLS.ZakharovShabat.SpectralProductSourceAudit

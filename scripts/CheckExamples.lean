@@ -9549,3 +9549,58 @@ example (b : BoundaryCondition) :
 
 end
 end AuxiliaryExtensionChecks
+
+namespace SpectralProductNormalizationChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- The factors represent the actual multiplicity-two free spectral values, including negative modes.
+example : periodicAlgebraicMultiplicity (p := 2) (by simp) 0 ((Real.pi : ℂ)*(-3 : ℤ)) = 2 :=
+  periodicAlgebraicMultiplicity_zero (by simp) (-3)
+
+-- Zero factors are allowed; no division by a spectral factor is used to regroup the cutoff.
+example (f : ℤ → ℂ) :
+    (∏ n ∈ Finset.Icc (-3 : ℤ) 3, f n) =
+      f 0 * ∏ j ∈ Finset.range 3, (f ((j : ℤ)+1) * f (-((j : ℤ)+1))) :=
+  prod_symmetric_interval f 3
+
+example (z : ℂ) :
+    printedFreePeriodicProduct z 4 =
+      -2 * ∏ n ∈ Finset.Icc (-4 : ℤ) 4, freeSpectralFactor (Real.pi : ℂ) z (2*n) :=
+  printedFreePeriodicProduct_eq z 4
+
+-- The full periodic product agrees with equation (2.1) at every complex parameter.
+example : Tendsto (fun N => -4 * freeSpectralPartialProduct (Real.pi : ℂ) Complex.I N) atTop
+    (𝓝 ((freeDiscriminant Complex.I)^2-4)) :=
+  tendsto_freePeriodicFullProduct Complex.I
+
+-- Euler convergence also includes zeros of the free product.
+example : Tendsto (fun N => -freeSpectralPartialProduct (2*(Real.pi : ℂ)) (2*(Real.pi : ℂ)) N)
+    atTop (𝓝 (freeDiscriminant (2*(Real.pi : ℂ))-2)) :=
+  tendsto_freePeriodOneProduct (2*(Real.pi : ℂ))
+
+-- At zero every antiperiodic cutoff equals two with the printed prefactor.
+example : printedFreePeriodicProduct 0 7 = 0 ∧ printedFreeAntiperiodicProduct 0 7 = 2 := by simp
+
+-- This refutes simultaneous limiting identities, not merely equality of finite cutoffs.
+example : ¬∃ Δ : ℂ, Tendsto (printedFreePeriodicProduct 0) atTop (𝓝 (Δ-2)) ∧
+    Tendsto (printedFreeAntiperiodicProduct 0) atTop (𝓝 (Δ+2)) :=
+  not_exists_discriminant_value_for_printed_products
+
+example : ¬Tendsto (printedFreePeriodicProduct (Real.pi : ℂ)) atTop
+    (𝓝 (freeDiscriminant (Real.pi : ℂ)-2)) :=
+  printedFreePeriodicProduct_wrong_at_pi
+
+example (c : ℂ)
+    (hc : Tendsto (fun N : ℕ => c * freeSpectralPartialProduct (2*(Real.pi : ℂ)) (Real.pi : ℂ) N)
+      atTop (𝓝 (freeDiscriminant (Real.pi : ℂ)-2))) : c = -1 :=
+  freePeriodOne_prefactor_eq_neg_one c hc
+
+example (c : ℂ)
+    (hc : Tendsto (fun N : ℕ => c * ∏ n ∈ Finset.Icc (-(N : ℤ)) (N : ℤ),
+      freeSpectralFactor (Real.pi : ℂ) 0 (2*n+1)) atTop (𝓝 (freeDiscriminant 0+2))) : c = 4 :=
+  freeAntiperiodic_prefactor_eq_four c hc
+
+end
+end SpectralProductNormalizationChecks

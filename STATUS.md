@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 400 modules and 3182 named public theorems. All compile on the
+The library has 402 modules and 3201 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.FreeSpectralProducts` | Symmetric integer cutoff identity, opposite-mode pairing, Euler convergence at all complex parameters, full free discriminant product, and correctly normalized even subproduct |
+| `NLS.ZakharovShabat.SpectralProductSourceAudit` | Formal counterexample to the prefactors in (2.4)/Lemma 8.1(ii), incompatible limiting identities at zero, periodic failure at π, and necessary prefactors `-1` and `4` |
 | `NLS.ZakharovShabat.BoundedAuxiliaryExtension` | Completed phased auxiliary maps for all `1<p<∞`, exact raw and physical finite Fourier formulas, uniqueness by density, Sobolev compatibility, and the physical `p=1` obstruction |
 | `NLS.ZakharovShabat.AuxiliarySourceExtension` | Closed auxiliary target in the actual component-sum pair norm, bounded analytic source extension with explicit constant, finite integral agreement, and exact norm preservation at `p=2` |
 | `NLS.Fourier.HalfIntervalReality` | Conjugate-index compatibility of the completed half-interval map for all `1<p<∞`, including the odd shifted-Hilbert coefficients |
@@ -3711,10 +3713,36 @@ exactly, as follows from the completed Parseval energy identity.
 The next construction is the convergent spectral products and discriminant
 of Chapter 2, followed by the nonlinear coordinates and main results.
 
+## Section 8: free spectral products and normalization audit
+
+`FreeSpectralProducts` defines the doubled free factor with the source's
+exceptional denominator one at index zero. Symmetric integer cutoffs equal
+the zero factor times products of opposite nonzero modes, without a nonvanishing
+assumption. Pairing cancels the linear reciprocal term. For every nonzero
+complex lattice spacing `h`, Euler's product proves convergence to
+`((h/π) sin(π λ/h))²`, including values at free eigenvalues. Thus spacing `π`
+and prefactor `-4` give `(2 cos λ)²-4`, verifying (2.1). Spacing `2π` and
+prefactor `-1` give `2 cos λ-2`.
+
+`SpectralProductSourceAudit` implements the actual printed prefactors in (2.4)
+and Lemma 8.1 on page 48, with the free even/odd spectra and literal symmetric
+integer cutoffs. At `λ=0`, every printed periodic cutoff is zero and every
+printed antiperiodic cutoff is two. No complex value can satisfy both displayed
+limiting identities `∆-2=f` and `∆+2=g`. This is a formal contradiction to
+Lemma 8.1(ii), independent of any product ordering convention at zero. The
+printed periodic product also has the wrong limit at `λ=π`. The free values
+force periodic prefactor `-1` and antiperiodic prefactor `4`. The proof on the
+same source page already uses `-1` for its periodic partial products.
+
+This milestone proves free full/even product convergence and audits the source
+constants. It does not yet construct perturbed products, prove their locally
+uniform or analytic dependence, identify a general discriminant, or prove the
+full odd free-product formula. Those remain the next Section 8 work.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6501 declarations under `NLS`, including generated
+axioms. The current audit covers 6555 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4584,13 +4612,24 @@ odd coefficients check agreement with the actual physical integral. Compatible
 finite H¹ inputs recover the original Sobolev extension, and the actual constant
 input `(0,1)` verifies failure of `ℓ¹` membership at the lower endpoint.
 
+Spectral-product checks retain actual free algebraic multiplicity two at a
+negative mode, verify symmetric regrouping with zero factors, and identify
+the even free cutoff. Euler limits are checked at a nonreal parameter and a
+free eigenvalue. The printed normalizations fail both at finite cutoffs and
+as simultaneous limits at zero, and the periodic formula fails at `π`.
+The public audit theorems force both corrected prefactors.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Construct the convergent spectral products of Section 8 and prove their
-   analytic dependence, then identify the discriminant. Bounded source
+2. Construct the perturbed spectral products of Section 8 with locally uniform
+   convergence and analytic dependence, then identify the discriminant.
+   Free full/even symmetric products and the source prefactor audit are proved;
+   complete the odd free-product identity and use the necessary prefactors
+   `-1` and `4`, not the inconsistent displayed `-2` and `2`. Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
-   compatibility, and Proposition 5.2(iv) are now proved for source coefficient and original physical L² potentials. The
+   compatibility, and Proposition 5.2(iv) are now proved for source coefficient
+   and original physical L² potentials. The
    physical endpoint domains, normed isomorphisms, closed densely defined L²
    operators, compact resolvents,
    actual generalized multiplicities, counts, and uniform starred asymptotics
