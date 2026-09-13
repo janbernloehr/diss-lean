@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 299 modules and 2672 named public theorems. All compile on the
+The library has 304 modules and 2704 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -112,6 +112,11 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ResonantSourceNorm` | Signed modulation cancels each resonant wave; exact single-component source norms |
 | `NLS.ZakharovShabat.WeightedEvenApproximation` | Actual even partial sums, exact remainder, and shifted error bounded by `2·2⁻ᵐ` at half contraction |
 | `NLS.ZakharovShabat.ResonantEvenBounds` | Factor-two shifted and unweighted component bounds; uniform geometric approximation on a potential neighborhood and distant closed strips |
+| `NLS.ZakharovShabat.ComplementaryResolventIdentity` | Scalar, base-space, and derivative-domain resolvent identities on full closed strips |
+| `NLS.ZakharovShabat.ComplementaryAnalytic` | Entire center normalization, explicit two-sided inverse, and analytic domain-valued extension agreeing with the actual complementary inverse, including infinity |
+| `NLS.ZakharovShabat.WeightedPotentialAnalytic` | Weighted potential as a continuous linear operator-valued map; exact bilinear bound; jointly analytic extension of the actual `T_n` |
+| `NLS.ZakharovShabat.WeightedCorrectionAnalytic` | Open joint correction domain; analytic even and full extensions equal to the shifted Neumann inverses |
+| `NLS.ZakharovShabat.ResonantAnalytic` | Lemma 6.8's analytic assertion for all three source coefficients, with a uniform potential neighborhood and cutoff and explicit agreement on distant closed strips |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2899,8 +2904,8 @@ the actual scalar `HasSum` statements: `a_n` is the sum of the odd terms
 `T_n(T_n²)^j Φe_n⁺`; each off-diagonal Fourier remainder is the sum of the
 strictly positive even terms `T_n²(T_n²)^j Φe_n∓`. All results hold for
 arbitrary complex potentials and every finite Banach exponent under the
-existing shifted-square hypothesis. Analytic dependence and Lemma 6.8's
-summability estimates remain to be proved; the even-vector bounds are below.
+existing shifted-square hypothesis. The even-vector bounds and analytic
+dependence are proved below; Lemma 6.8's summability estimates remain open.
 
 ### Lemma 6.8: uniform even-vector bounds and approximation
 
@@ -2929,13 +2934,53 @@ cutoff `N≥1`, give these bounds throughout every full closed strip with
 `|n|≥N`. Both vector errors are bounded by `2·2⁻ᵐ (‖φ‖+1)` on that entire
 parameter set. An epsilon-form theorem proves that one truncation length
 works for both vectors, every potential in this neighborhood, and all those
-strips. Analytic dependence and the scalar coefficient summability estimates
-in Lemma 6.8 are still open.
+strips. The scalar coefficient summability estimates in Lemma 6.8 remain
+open; analytic dependence is proved below.
+
+### Lemma 6.8: analytic dependence of the actual resonant coefficients
+
+`ComplementaryResolventIdentity` proves the scalar, base-space, and
+derivative-domain resolvent identities for two parameters in a closed strip.
+They include the removed resonant frequency, which is exactly zero.
+`ComplementaryAnalytic` normalizes at `c=nπ` by the entire bounded pencil
+`A(z)=Id+(z-c)R_c`. On the full closed strip its two-sided inverse is
+`Id-(z-c)R_z`. The domain-valued total extension `R_c^domain A(z)⁻¹`
+is proved equal to the actual complementary inverse throughout that strip.
+Banach-algebra inversion proves operator-norm analyticity on a neighborhood
+of every strip point, including the central lattice point and both edges.
+This free-inverse construction also covers the infinity endpoint in the
+existing `WithLp ∞` maximum pair norm.
+
+`WeightedPotentialAnalytic` bundles the actual derivative-domain potential
+as a continuous complex-linear operator-valued map of the potential. Its
+bilinear bound retains the exponent-only Sobolev embedding constant in the
+exact finite-exponent pair norm. Composition with the complementary extension
+gives a jointly analytic extension of `T_n=Φ A_λ⁻¹Q_n`, with exact agreement
+on the closed strip.
+
+`WeightedCorrectionAnalytic` defines total even and full corrections by
+Banach-algebra inversion and the squared factorization. Their joint domain
+requires the free normalization and the even denominator to be invertible;
+this domain is proved open. The shifted small-square hypothesis implies both
+requirements. Two-sided inverse uniqueness proves that these extensions are
+the actual existing Neumann inverses at every such parameter.
+
+`ResonantAnalytic` applies continuous resonant extraction to the actual
+corrected potential-source vectors. Every correction matrix entry and all
+three source coefficients `a_n`, `b_n⁺`, and `b_n⁻` are jointly analytic on
+this open domain. The source basis labels are preserved. One open convex
+potential neighborhood containing the given potential and zero, and one
+cutoff `N≥1`, give joint analyticity over its product with each closed strip
+`|n|≥N`. The same theorem explicitly supplies the smallness witness and
+agreement with all three original source coefficients on that entire set.
+Restricting the joint result to a fixed potential gives the analytic assertion
+of Lemma 6.8. The argument works for every finite Banach exponent, including
+`p=1`; Lemma 6.8's scalar summability estimates are still unproved.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5453 declarations under `NLS`, including generated
+axioms. The current audit covers 5523 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3633,10 +3678,19 @@ space, distinct exact source norms under `w(0)=2` at a negative resonance
 with `p=3`, the unweighted positive-mode bound at `p=1`, and the four-term
 error constant `1/8` at a negative resonance with `p=3`.
 
+Analytic-coefficient checks cover removal of the two exact resonant modes at
+`p=∞`, center normalization at `p=3`, and ambient analyticity at a nonreal
+point on a negative strip boundary. They check operator-norm linearity of
+the actual potential at `p=1`, spectral restriction of both off-diagonal joint
+analyticity results at `p=3`, and an actual nonreal analytic diagonal at
+arbitrarily large real centers. A final `p=1` check extracts one cutoff for
+all signed distant strips together with exact source-coefficient agreement.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove analytic dependence and the coefficient estimates in Lemma 6.8, then continue the refined eigenvalue and weighted-gap estimates
+2. Prove the coefficient summability estimates in Lemma 6.8, then continue
+   the refined eigenvalue and weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

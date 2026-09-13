@@ -7852,3 +7852,87 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (z : ℂ) (hz
     shiftedPairNorm_evenVector_zero_error_le (by norm_num) w φ (-2) z hz h hh 4
 
 end EvenBoundsChecks
+
+section ResonantAnalyticChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The extension remains domain-valued at the infinity endpoint and kills the exact resonant modes.
+example (w : Weight) (c : Fin 2 → ℂ) :
+    complementaryDomainExtension (p := ⊤) w (-2) ((Real.pi : ℂ)*(-2 : ℤ))
+      (resonantSynthesis w (-2) c) = 0 := by
+  rw [complementaryDomainExtension_eq w (-2) _ (center_mem_resonantStrip (-2))]
+  apply weightedPair_ext <;> intro k <;> by_cases hk : k = 2 <;> by_cases hk' : k = -2 <;>
+    simp [complementarySymbol, hk, hk']
+
+-- A central lattice point normalizes to the identity, even for weights without w(0)=1.
+example (w : Weight) (n : ℤ) :
+    complementaryNormalizedPencil (p := 3) w n ((Real.pi : ℂ)*n) = 1 := by
+  apply ContinuousLinearMap.ext
+  intro f
+  change f + (((Real.pi : ℂ)*n) - (Real.pi : ℂ)*n) •
+    (complementaryFreeInverse w n _ (center_mem_resonantStrip n) f) = f
+  rw [sub_self, zero_smul, add_zero]
+
+private theorem analyticCheckBoundary :
+    (Real.pi : ℂ)*(-3 : ℤ) + Real.pi/2 + Complex.I ∈ resonantStrip (-3) := by
+  simp only [resonantStrip, Set.mem_ofPred_eq, Complex.add_re, Complex.mul_re,
+    Complex.ofReal_re, Complex.ofReal_im, Complex.intCast_re, Complex.intCast_im, Complex.I_re,
+    mul_zero, sub_zero, add_zero]
+  rw [add_sub_cancel_left]
+  norm_num [Complex.div_re, abs_div, abs_of_pos Real.pi_pos]
+
+-- Analyticity means an ambient neighborhood, including at a nonreal point of the closed strip edge.
+example (w : Weight) :
+    AnalyticAt ℂ (complementaryDomainExtension (p := ⊤) w (-3))
+      ((Real.pi : ℂ)*(-3 : ℤ) + Real.pi/2 + Complex.I) :=
+  analyticOnNhd_complementaryDomainExtension w (-3) _ analyticCheckBoundary
+
+-- The actual potential dependence is linear in operator norm at the p=1 endpoint.
+example (w : SpectralWeight) (φ ψ : WeightedCoeffPair w.toWeight 1) :
+    weightedDomainPotential (by simp) w (φ + Complex.I • ψ) =
+      weightedDomainPotential (by simp) w φ + Complex.I • weightedDomainPotential (by simp) w ψ := by
+  exact (weightedDomainPotentialCLM (by simp) w).map_add φ (Complex.I • ψ) |>.trans
+    (by rw [map_smul]; rfl)
+
+-- Restricting the joint theorem proves ordinary spectral analyticity for any small shifted square.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (n : ℤ) (z : ℂ)
+    (hz : z ∈ resonantStrip n) (h : ‖weightedPotentialSquareInShift (by norm_num) w φ n z hz‖ < 1) :
+    AnalyticAt ℂ (weightedResonantBPlusExtension (by norm_num) w φ n) z ∧
+    AnalyticAt ℂ (weightedResonantBMinusExtension (by norm_num) w φ n) z := by
+  have hs := mem_weightedCorrectionDomain (by norm_num) w φ n z hz h
+  exact ⟨(analyticAt_weightedResonantBPlusExtension (by norm_num) w n (φ,z) hs).comp
+      (f := fun t : ℂ => (φ,t)) (analyticAt_const.prod analyticAt_id),
+    (analyticAt_weightedResonantBMinusExtension (by norm_num) w n (φ,z) hs).comp
+      (f := fun t : ℂ => (φ,t)) (analyticAt_const.prod analyticAt_id)⟩
+
+-- The analytic extension has a genuine nonreal diagonal at arbitrarily large real centers.
+example (w : SpectralWeight) (M : ℕ) :
+    ∃ n : ℤ, (M : ℤ) ≤ n ∧
+      AnalyticAt ℂ (fun s : WeightedCoeffPair w.toWeight 3 × ℂ => weightedResonantAExtension (by norm_num) w s.1 n s.2)
+        (constantSpectralPotential w 1 Complex.I, (Real.pi : ℂ)*n) ∧
+      0 < (weightedResonantAExtension (p := 3) (by norm_num) w (constantSpectralPotential w 1 Complex.I) n ((Real.pi : ℂ)*n)).im := by
+  obtain ⟨n, hn, hn0, h, _, _⟩ := exists_large_nonreal_resonantA (p := 3) (by norm_num) w M
+  refine ⟨n, hn, analyticAt_weightedResonantAExtension (by norm_num) w n _
+    (mem_weightedCorrectionDomain (by norm_num) w _ n _ (center_mem_resonantStrip n) h), ?_⟩
+  rw [weightedResonantAExtension_eq (by norm_num) w _ n _ (center_mem_resonantStrip n) h]
+  exact constantResonantA_im_pos (by norm_num) w n hn0 h
+
+-- A single cutoff gives ordinary analyticity on every signed distant strip, at p=1.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs →
+      AnalyticOnNhd ℂ (weightedResonantAExtension (by simp) w φ n) (resonantStrip n) ∧
+      ∀ z : ℂ, ∀ hz : z ∈ resonantStrip n,
+        ∃ h : ‖weightedPotentialSquareInShift (by simp) w φ n z hz‖ < 1,
+          weightedResonantAExtension (by simp) w φ n z = weightedResonantA (by simp) w φ n z hz h := by
+  obtain ⟨N, hN, U, _, _, hφ, _, hb⟩ := exists_uniform_analyticResonantCoefficients (by simp) w φ
+  refine ⟨N, hN, ?_⟩
+  intro n hn
+  obtain ⟨hA, _, _, he⟩ := hb n hn
+  refine ⟨fun z hz => (hA (φ,z) ⟨hφ,hz⟩).comp (f := fun t : ℂ => (φ,t))
+    (analyticAt_const.prod analyticAt_id), ?_⟩
+  intro z hz
+  obtain ⟨h, ha, _, _⟩ := he φ hφ z hz
+  exact ⟨h,ha⟩
+
+end ResonantAnalyticChecks

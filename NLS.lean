@@ -247,3 +247,8 @@ import NLS.FunctionalAnalysis.ConjugatedNeumannBounds
 import NLS.ZakharovShabat.ResonantSourceNorm
 import NLS.ZakharovShabat.WeightedEvenApproximation
 import NLS.ZakharovShabat.ResonantEvenBounds
+import NLS.ZakharovShabat.ComplementaryResolventIdentity
+import NLS.ZakharovShabat.ComplementaryAnalytic
+import NLS.ZakharovShabat.WeightedPotentialAnalytic
+import NLS.ZakharovShabat.WeightedCorrectionAnalytic
+import NLS.ZakharovShabat.ResonantAnalytic

@@ -579,7 +579,10 @@ installation is absent. No shell startup files are modified.
   by twice the opposite potential component norm. Their finite even sums have
   error at most `2·2⁻ᵐ` times that component norm, uniformly on a potential
   neighborhood and all sufficiently distant full closed strips. Lemma 6.8's
-  analytic dependence and coefficient estimates remain next.
+  analytic assertion is now proved: all three coefficients have jointly analytic
+  extensions in the potential and spectral parameter that equal the actual
+  source coefficients, including at strip centers and boundaries. The scalar
+  coefficient summability estimates remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

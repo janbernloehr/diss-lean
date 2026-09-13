@@ -986,10 +986,30 @@ gives the geometric error `2·2⁻ᵐ`, uniformly on one open convex potential
 neighborhood and every sufficiently distant full closed strip. One truncation
 length works for both vectors and every parameter in that set.
 
-Next, prove analytic dependence and the coefficient estimates in Lemma 6.8.
-An analytic extension of the complementary inverse can be normalized at the
-strip center, then combined with Banach-algebra inversion for the even
-correction. The uniform approximation above also supplies quantitative
-control of its finite series. Then continue the refined eigenvalue and
+The analytic assertion of Lemma 6.8 is now proved. Resolvent identities
+normalize the complementary inverse at the strip center. Its domain-valued
+extension is analytic and equals the actual inverse, including at central
+lattice points and closed strip edges. Weighted convolution makes the actual
+domain potential continuous linear in the potential; composition proves
+joint analyticity of `T_n`.
+
+Banach-algebra inversion and the squared factorization give analytic even
+and full corrections on a proved open joint domain. Inverse uniqueness
+identifies them with the existing Neumann constructions. Continuous resonant
+extraction gives all three source coefficients with the correct basis labels.
+One open convex potential neighborhood and one cutoff give joint analyticity
+on every distant closed strip, explicitly accompanied by the small-square
+witness and equality to the actual coefficients. All finite Banach exponents,
+including `p=1`, are covered; the free complementary extension also covers
+infinity in the existing `WithLp ∞` maximum pair norm.
+
+Next, prove the coefficient summability estimates in Lemma 6.8. For the
+diagonal estimate, transfer the even inverse to unit weight to retain the
+unweighted potential norm, then estimate the odd correction. The off-diagonal
+remainders use the second iterate. Split reciprocal kernels into distant
+indices and potential tails; use Young/B.3 for `p≥2` and subadditivity of
+powers for `1<p<2`. Keep the frequency sums and tails explicit. The uniform
+even-vector bounds and simultaneous weighted/unweighted contraction are
+available. Then continue the refined eigenvalue and
 weighted-gap estimates toward Propositions 6.1 and 6.3.
 The printed general-`p` central-height constant remains a separate open item.
