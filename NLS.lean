@@ -477,3 +477,8 @@ import NLS.ZakharovShabat.ClassicalDiscriminantMultiplicity
 import NLS.ComplexAnalysis.EqualOrderQuotient
 import NLS.ComplexAnalysis.AnalyticQuotientUniqueness
 import NLS.ZakharovShabat.ClassicalProductQuotients
+import NLS.ComplexAnalysis.SmallAbsoluteProducts
+import NLS.ZakharovShabat.VerticalSpectralDisplacements
+import NLS.ZakharovShabat.RelativeProductsVerticalLimit
+import NLS.ZakharovShabat.SpectralProductsVerticalLimit
+import NLS.ZakharovShabat.CanonicalProductsVerticalLimit

@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 529 modules and 3894 named public theorems. All compile on the
+The library has 534 modules and 3920 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.SmallAbsoluteProducts` | Exponential error bound for unconditional products and convergence to one from vanishing absolute perturbation sums |
+| `NLS.ZakharovShabat.VerticalSpectralDisplacements` | Vertical spectral coordinates, exact denominator norm, height-one summable domination, and vanishing total relative displacements at both vertical ends |
+| `NLS.ZakharovShabat.RelativeProductsVerticalLimit` | Quantitative relative product error, eventual avoidance of the free lattice, and single/pair product limits one at every finite exponent |
+| `NLS.ZakharovShabat.SpectralProductsVerticalLimit` | Exact free-relative ratio, vertical full/even/odd product asymptotics, free half-parameter identities, and parity rescaling |
+| `NLS.ZakharovShabat.CanonicalProductsVerticalLimit` | Potential-only full and signed parity product ratios tend to one on every fixed vertical line for all finite `p>1` and even-supported potentials |
 | `NLS.ComplexAnalysis.EqualOrderQuotient` | Filled meromorphic quotient, zero quotient order, entire nonvanishing extension, exact factorization at common zeros, and Liouville normalization criteria |
 | `NLS.ComplexAnalysis.AnalyticQuotientUniqueness` | Punctured nonvanishing of finite-order analytic germs, uniqueness of the filled factor from an entire factorization, and multiplicativity of quotient factors |
 | `NLS.ZakharovShabat.ClassicalProductQuotients` | Actual parity/full entire nonvanishing factors, exact product factorizations, ordinary division away from roots, parity factor multiplication, and normalization from quotient limits |
@@ -4836,8 +4841,9 @@ zeros. This proves multiplicativity of filled quotient factors.
 continuous-representative even Hilbert hypotheses, all factors are entire
 and nonvanishing and give exact factorizations at every spectral point.
 The two parity factors multiply to the full factor. A limit of one at
-infinity would give the exact canonical normalization. These limits and
-the needed classical/product asymptotic bounds are not yet proved; neither
+infinity would give the exact canonical normalization. The first vertical
+product asymptotics are proved below, but the classical estimates and the
+whole-plane bounds needed for these quotient limits remain open; neither
 the unit factors nor equality of vanishing orders alone establishes them.
 
 Examples distinguish ordinary zero division from the filled value one in
@@ -4847,10 +4853,46 @@ a complex value of the numerator. Actual free examples check nonvanishing
 at a double eigenvalue, multiplication at signed Fourier points, and full
 factorization at arbitrary complex points.
 
+## Section 8: spectral products at vertical infinity
+
+`VerticalSpectralDisplacements` uses the exact denominator norm
+`(x−πn)²+y²` on the vertical line `x+iy`. When `|y|≥1`, every denominator
+dominates its value at `x+i`. The already proved finite-exponent relative
+summability therefore supplies a single summable majorant. Each fixed relative
+displacement tends to zero as `|y|` tends to infinity, and dominated convergence
+proves that their total absolute sum tends to zero. The statement works along
+any filter and either vertical end, with fixed real part.
+
+`SmallAbsoluteProducts` bounds the full unconditional product error by
+`exp(∑ ‖uₙ‖)−1`, passing the finite-product estimate to the limit. A vanishing
+absolute perturbation sum thus implies convergence of the product to one.
+`RelativeProductsVerticalLimit` applies this to both single and paired displaced
+spectral sequences, for every finite Banach exponent including one.
+
+`SpectralProductsVerticalLimit` identifies the ratio of the entire paired
+product and its free characteristic function with the relative pair product.
+It follows that this ratio tends to one at vertical infinity. Exact
+half-parameter free identities and affine parity rescaling prove the even
+and odd ratios tend to one against `freeDiscriminant−2` and
+`freeDiscriminant+2`, preserving the corrected prefactors.
+
+`CanonicalProductsVerticalLimit` uses completed actual spectral pairs to
+transfer all three limits to the intrinsic potential-only products for every
+finite `p>1` and every even-supported potential. No continuous representative
+is required. These are fixed-potential, fixed-real-part limits; uniformity over
+potential neighborhoods, full-plane estimates outside the spectral discs,
+and the matching classical monodromy estimates are not yet proved. The entire
+classical/canonical quotient factors are therefore not yet identified with one.
+
+Examples use an infinite inverse-Sobolev-weight displacement at `p=2,3`, a
+finite complex displacement at `p=1`, the lower half-plane, nonzero real
+parts, both free parity signs, and the actual canonical limits without any
+continuous-representative assumptions.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7952 declarations under `NLS`, including generated
+axioms. The current audit covers 7980 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5951,9 +5993,11 @@ formal matrix representation.
    original parity multiplicities, and the shifted and full discriminants
    have exactly the orders of their canonical spectral products. Their
    filled quotients are now entire and nonvanishing, give exact factorizations,
-   and satisfy parity/full multiplication. Next prove their quotient limits
-   at infinity, which give the exact normalization, and extend to finite-p
-   potentials.
+   and satisfy parity/full multiplication. The canonical full and parity
+   products now have ratio one to their free functions on both ends of every
+   fixed vertical line for every finite `p>1`. Next prove matching classical
+   estimates and whole-plane quotient bounds, which give exact normalization,
+   and extend the compatibility identity to finite-p potentials.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

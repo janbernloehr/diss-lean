@@ -1539,10 +1539,19 @@ including at common zeros. The parity quotients multiply to the full quotient.
 A bounded quotient is a nonzero constant; a prescribed finite limit at infinity
 determines that constant and, in particular, a limit of one proves normalization.
 
-Next, establish the classical and product asymptotic bounds needed to show
-that the actual filled quotients tend to one. Control across the excluded
-spectral discs is also needed for a limit on the whole complement of compact
-sets. Then use potential approximation to prove `f+2=g−2` for finite p>1. The classical
+The first product estimates at infinity are now proved. On a fixed vertical
+line, all free denominators dominate their height-one values once the absolute
+imaginary height is at least one. The existing finite-exponent resolvent
+summability gives a common summable majorant. Dominated convergence makes the
+absolute relative-displacement sum tend to zero; an exponential product bound
+then makes the relative product tend to one. Rescaling retains the even and
+odd signs, and completed actual pairs transfer this limit to all three
+canonical products for every finite `p>1` and even-supported potential.
+
+Next, prove the matching classical monodromy estimates and control the product
+ratios outside the spectral discs with unbounded real part. Control across the
+excluded discs is also needed to bound or normalize the entire filled
+quotients. Then use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);

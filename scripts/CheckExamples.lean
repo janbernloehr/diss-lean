@@ -12026,3 +12026,81 @@ example (z : ℂ) : classicalPeriodicProductQuotient 0 0 z*canonicalPeriodicProd
 
 end
 end ClassicalQuotientChecks
+
+namespace VerticalProductChecks
+open Complex Filter Topology NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+private def harmonicShift (n : ℤ) : ℂ := (Real.pi : ℂ)*n+(Weight.sobolev 1 n : ℂ)⁻¹
+
+private theorem harmonicShift_mem (p : ℝ≥0∞) (hp : 1 < p) :
+    Memℓp (fun n => harmonicShift n-(Real.pi : ℂ)*n) p := by
+  simpa only [harmonicShift,add_sub_cancel_left] using Weight.inverse_sobolev_one_memlp hp
+
+-- An infinite inverse-weight displacement has vanishing total relative size at positive imaginary infinity.
+example : Tendsto (fun y : ℝ => ∑' n : ℤ,
+    ‖(harmonicShift n-(Real.pi : ℂ)*n)/(verticalSpectralPoint (1/3) y-(Real.pi : ℂ)*n)‖) atTop (𝓝 0) :=
+  tendsto_tsum_norm_vertical_relativeDisplacement tendsto_abs_atTop_atTop (by simp : (2 : ℝ≥0∞) ≠ ⊤)
+    harmonicShift (harmonicShift_mem 2 (by norm_num)) (1/3)
+
+-- Both roots may have infinitely many nonzero displacements; their relative product still tends to one.
+example : Tendsto (fun y : ℝ => spectralRelativePairProduct harmonicShift harmonicShift (verticalSpectralPoint 0 y))
+    atTop (𝓝 1) :=
+  tendsto_spectralRelativePairProduct_vertical tendsto_abs_atTop_atTop (by simp : (2 : ℝ≥0∞) ≠ ⊤)
+    harmonicShift harmonicShift (harmonicShift_mem 2 (by norm_num)) (harmonicShift_mem 2 (by norm_num)) 0
+
+-- Reflection to the lower half-plane retains the limit, and the general non-Hilbert exponent is supported.
+example : Tendsto (fun y : ℝ => entireSpectralPairProduct harmonicShift harmonicShift (verticalSpectralPoint (1/2) (-y))/
+    ((freeDiscriminant (verticalSpectralPoint (1/2) (-y)))^2-4)) atTop (𝓝 1) := by
+  apply tendsto_entireSpectralPairProduct_div_free_vertical
+    (hp := (by simp : (3 : ℝ≥0∞) ≠ ⊤)) _ harmonicShift harmonicShift
+    (harmonicShift_mem 3 (by norm_num)) (harmonicShift_mem 3 (by norm_num))
+  simpa only [abs_neg] using tendsto_abs_atTop_atTop
+
+-- The endpoint exponent one permits a finite complex displacement.
+example : Tendsto (fun y : ℝ => ∏' n : ℤ, spectralRelativeFactor
+    (fun k => (Real.pi : ℂ)*k+(lp.single 1 0 I : Coeff 1) k) (verticalSpectralPoint 0 y) n) atTop (𝓝 1) := by
+  apply tendsto_spectralRelativeProduct_vertical tendsto_abs_atTop_atTop (by simp : (1 : ℝ≥0∞) ≠ ⊤)
+  simpa only [add_sub_cancel_left] using! lp.memℓp (lp.single 1 0 I : Coeff 1)
+
+-- The explicit estimate keeps the entire absolute sum and needs no assumptions about displaced roots.
+example (x y : ℝ) (hy : y ≠ 0) :
+    ‖(∏' n, spectralRelativeFactor harmonicShift (verticalSpectralPoint x y) n)-1‖ ≤
+      Real.exp (∑' n : ℤ, ‖(harmonicShift n-(Real.pi : ℂ)*n)/(verticalSpectralPoint x y-(Real.pi : ℂ)*n)‖)-1 :=
+  norm_spectralRelativeProduct_sub_one_le (by simp : (2 : ℝ≥0∞) ≠ ⊤)
+    harmonicShift (harmonicShift_mem 2 (by norm_num)) _ (verticalSpectralPoint_notMem_freeLattice x y hy)
+
+-- Height minus three is controlled by the same height-one denominators as the upper end.
+example (x : ℝ) (n : ℤ) : ‖verticalSpectralPoint x 1-(Real.pi : ℂ)*n‖ ≤
+    ‖verticalSpectralPoint x (-3)-(Real.pi : ℂ)*n‖ :=
+  norm_vertical_free_denominator_le x (-3) (by norm_num) n
+
+-- The two parity rescalings retain the correct free signs.
+example (z : ℂ) : (freeDiscriminant (z/2))^2-4 = freeDiscriminant z-2 :=
+  freeDiscriminant_half_sq_sub_four z
+example (z : ℂ) : (freeDiscriminant ((z-(Real.pi : ℂ))/2))^2-4 = -(freeDiscriminant z+2) :=
+  freeDiscriminant_odd_half_sq_sub_four z
+
+-- Odd rescaling on an infinite displaced pair uses the positive free trace shift.
+example : Tendsto (fun y : ℝ => oddSpectralPairProduct harmonicShift harmonicShift (verticalSpectralPoint Real.pi y)/
+    (freeDiscriminant (verticalSpectralPoint Real.pi y)+2)) atTop (𝓝 1) :=
+  tendsto_oddSpectralPairProduct_div_free_vertical tendsto_abs_atTop_atTop (by simp : (2 : ℝ≥0∞) ≠ ⊤)
+    harmonicShift harmonicShift (harmonicShift_mem 2 (by norm_num)) (harmonicShift_mem 2 (by norm_num)) Real.pi
+
+-- The actual potential-only theorem applies to a non-Hilbert exponent without any continuous representative.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun y : ℝ => canonicalParityProduct (by simp) φ 1 (verticalSpectralPoint (Real.pi/2) (-y))/
+      (freeDiscriminant (verticalSpectralPoint (Real.pi/2) (-y))+2)) atTop (𝓝 1) := by
+  apply tendsto_canonicalOdd_div_free_vertical _ (by simp) (by norm_num) φ hφ
+  simpa only [abs_neg] using tendsto_abs_atTop_atTop
+
+-- Full canonical products have the same vertical normalization on every fixed real line.
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (x : ℝ) :
+    Tendsto (fun y : ℝ => canonicalPeriodicProduct (by simp) φ (verticalSpectralPoint x y)/
+      ((freeDiscriminant (verticalSpectralPoint x y))^2-4)) atTop (𝓝 1) :=
+  tendsto_canonicalPeriodic_div_free_vertical tendsto_abs_atTop_atTop (by simp) (by norm_num) φ hφ x
+
+end
+end VerticalProductChecks

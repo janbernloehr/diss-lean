@@ -779,8 +779,11 @@ installation is absent. No shell startup files are modified.
   products. Their quotients now extend to entire nonvanishing functions,
   giving exact factorizations even at common zeros; the two parity factors
   multiply to the full factor. A quotient limit of one would prove the exact
-  normalization by Liouville's theorem. Those limits and the finite-p identity
-  `f+2=g−2` remain open.
+  normalization by Liouville's theorem. The canonical full, even, and odd
+  products now have ratio one to their free functions at both ends of every
+  fixed vertical line, for all finite `p>1` and even-supported potentials.
+  The corresponding classical estimates, control outside spectral discs in
+  the full plane, and the finite-p identity `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
