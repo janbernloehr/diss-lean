@@ -1407,7 +1407,16 @@ Spectral isolation and Rouché stability pass these orders to the entire limits.
 The orders of their product add to the full original spectral multiplicity.
 The neighborhood existence theorem retains these orders and choice independence.
 
-Next, prove joint potential analyticity and discriminant compatibility. Exact
-zero sets and multiplicities alone do not identify a common discriminant.
+The actual parity products now multiply exactly to the canonical full product.
+The literal finite identity retains the positive odd boundary factor; bounded
+spectral displacements make this factor tend to one. Completed central labels
+also identify every sufficiently large full cutoff with the intrinsic normalized
+central polynomial. Thus the limit fixes the entire normalization, and its
+spectral derivative satisfies the product rule. Actual potential neighborhoods
+admit choice-independent entire factors with exact orders and this identity.
+
+Next, prove joint potential analyticity of the individual parity factors and
+`f+2=g−2`. The factorization proves the product equality in Lemma 8.1(iv);
+identification with the discriminant squared minus four remains open.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

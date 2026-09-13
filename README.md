@@ -721,8 +721,10 @@ installation is absent. No shell startup files are modified.
   Thus both entire parity products are independent of those choices, including
   at roots. Both entire products now have exactly the original parity root-space
   multiplicities at every point, including the free lattice. Their product has
-  the full spectral multiplicities. Joint potential analyticity and discriminant
-  compatibility remain open.
+  the full spectral multiplicities and now equals the canonically normalized
+  full product exactly. This equality follows from the finite cutoff identities
+  and the odd boundary factor tending to one. Joint potential analyticity of
+  the individual parity factors and `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

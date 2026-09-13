@@ -10657,3 +10657,67 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
 
 end
 end ParityOrderChecks
+
+namespace ParityFactorizationChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The literal zero cutoff retains both the exceptional zero mode and the odd positive endpoint.
+example (ξ η : ℤ → ℂ) (z : ℂ) :
+    evenSpectralPairCutoff ξ η z 0 * oddSpectralPairCutoff ξ η z 0 =
+      -4 * spectralPairFactor ξ η z 0 * spectralPairFactor ξ η z 1 := by
+  rw [paritySpectralPairCutoffs_mul]
+  simp [spectralPairPartialProduct]
+
+-- The discarded boundary factor tends to one even for bounded, nonsummable displacements.
+example : Tendsto (fun M : ℕ => spectralPairFactor
+    (fun n => (Real.pi : ℂ)*n+1) (fun n => (Real.pi : ℂ)*n-2) 0 (2*(M : ℤ)+1)) atTop (𝓝 1) := by
+  apply tendsto_spectralPairFactor_oddBoundary (p := ∞)
+  · simp only [add_sub_cancel_left]
+    apply memℓp_infty_iff.mpr
+    refine ⟨1, ?_⟩
+    rintro a ⟨n,rfl⟩
+    norm_num
+  · have he : (fun n : ℤ => (Real.pi : ℂ)*n-2-(Real.pi : ℂ)*n) = fun _ : ℤ => (-2 : ℂ) := by
+      funext n; ring
+    rw [he]
+    apply memℓp_infty_iff.mpr
+    refine ⟨2, ?_⟩
+    rintro a ⟨n,rfl⟩
+    norm_num
+
+-- The full complete free product has the exact source normalization, not just the same zero set.
+example (z : ℂ) : entireSpectralPairProduct (fun n => (Real.pi : ℂ)*n)
+    (fun n => (Real.pi : ℂ)*n) z = (freeDiscriminant z)^2-4 := by
+  have hz : Memℓp (fun n : ℤ => (Real.pi : ℂ)*n-(Real.pi : ℂ)*n) 3 := by
+    simpa only [sub_self] using (zero_mem_ℓp' : Memℓp (fun _ : ℤ => (0 : ℂ)) 3)
+  rw [← paritySpectralPairProducts_mul (by simp : (3 : ℝ≥0∞) ≠ ⊤) _ _ hz hz,
+    evenSpectralPairProduct_free, oddSpectralPairProduct_free]
+  ring
+
+-- Away from the odd roots, division by the odd factor recovers the even factor exactly.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (z : ℂ)
+    (hz : parityAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) 1 z = 0) :
+    canonicalPeriodicProduct (by simp) (weightedBaseToPair w φ) z / oddSpectralPairProduct ξ η z =
+      evenSpectralPairProduct ξ η z := by
+  have hne : oddSpectralPairProduct ξ η z ≠ 0 := by
+    intro hzero
+    have hp := (h.oddProduct_eq_zero_iff z).mp hzero
+    rw [hz] at hp
+    omega
+  rw [← h.parityProducts_mul_eq_canonical z, mul_div_cancel_right₀ _ hne]
+
+-- Actual even-supported non-Hilbert potentials admit entire factors of their intrinsic full product.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0) :
+    ∃ f g : ℂ → ℂ, AnalyticOnNhd ℂ f Set.univ ∧ AnalyticOnNhd ℂ g Set.univ ∧
+      ∀ z : ℂ, f z * g z = canonicalPeriodicProduct (by simp) (weightedBaseToPair w φ) z := by
+  obtain ⟨_,_,U,_,_,hφ,_,h⟩ := exists_uniform_actualParityFactorization (by simp) (by norm_num) w φ
+  obtain ⟨f,g,hf,hg,_,_,hm,_⟩ := h φ hφ heven
+  exact ⟨f,g,hf,hg,hm⟩
+
+end
+end ParityFactorizationChecks

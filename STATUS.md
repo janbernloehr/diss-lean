@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 465 modules and 3507 named public theorems. All compile on the
+The library has 467 modules and 3518 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ParityProductFactorization` | Exact literal parity cutoff multiplication and boundary-factor limit; entire parity products multiply to the normalized full paired product |
+| `NLS.ZakharovShabat.ActualParityProductFactorization` | Completed full cutoffs equal intrinsic central polynomials; actual parity factors multiply exactly to the canonical product; derivative identity and neighborhood existence |
 | `NLS.ZakharovShabat.ParityCutoffOrders` | Central boxes exhaust the plane; intrinsic parity polynomial orders and eventual exact literal cutoff orders |
 | `NLS.ZakharovShabat.ActualParityProductOrders` | Spectral isolation transfers exact orders to both entire parity products; their product has the full original multiplicity |
 | `NLS.ZakharovShabat.ActualParityProductOrderExistence` | Choice-independent entire parity functions with exact original orders on actual finite-p potential neighborhoods |
@@ -4273,15 +4275,37 @@ parity multiplicities, without excluding lattice points or shared roots.
 Rouché stability to transfer these eventual orders to the entire limits. Their
 extended orders are finite and equal the original parity Jordan multiplicities.
 Multiplication adds the two orders to the full original spectral multiplicity.
-This order statement does not assert equality with the canonical full product
-or identify a discriminant. `ActualParityProductOrderExistence` packages the
-exact orders together with entire analyticity, zero sets, and independence of
+The following milestone strengthens the order statement to equality with
+the canonical full product; discriminant identification remains separate.
+`ActualParityProductOrderExistence` packages the exact orders together with entire analyticity, zero sets, and independence of
 all admissible root labels and central cutoffs on actual potential neighborhoods.
+
+## Section 8: exact factorization of the canonical full product
+
+`ParityProductFactorization` proves that the literal even cutoff times the odd
+cutoff equals the full cutoff at `2M` times the pair factor at `2M+1`. Bounded
+displacements suffice for that boundary factor to tend to one at each fixed
+spectral parameter, even at the lattice. Locally uniform convergence of the
+three entire products then proves their exact pointwise multiplicative identity.
+No division by a limiting product or nonvanishing assumption is used.
+
+`ActualParityProductFactorization` splits the central normalization into its
+two parity parts. For completed actual root pairs, every sufficiently large
+full cutoff equals the intrinsic normalized central polynomial. Its limit is
+therefore the canonical full product. The actual entire even and odd products
+multiply to that function, with the full normalization `-4`. Their spectral
+derivatives satisfy the corresponding product rule. The neighborhood theorem
+packages this equality with entire factors, original zero sets and exact
+orders, and independence of all admissible labels and central cutoffs.
+
+This proves the full-product factorization portion of Lemma 8.1(iv), using the
+corrected parity prefactors `-1` and `4`. It does not yet prove a common
+discriminant `f+2=g−2`, its joint potential analyticity, or its asymptotics.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7165 declarations under `NLS`, including generated
+axioms. The current audit covers 7189 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5257,14 +5281,20 @@ mode, addition of multiplicities two and three at a shared root, extraction
 of natural orders, and choice-independent exact-order existence for an
 arbitrary actual even-supported p=3 potential.
 
+Factorization checks retain the zero-cutoff odd endpoint, prove the boundary
+limit for constant bounded nonsummable displacements, check the exact free
+full-product normalization, recover a parity factor by division off the other
+sector's roots, and instantiate actual entire factorization at p=3.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
 2. The entire actual parity products now have exact original analytic orders,
    label and cutoff independence, locally uniform spectral convergence, and
    exact original parity zero sets, with necessary prefactors `-1` and `4`.
-   Establish joint potential analyticity and compatibility
-   of the parity factors to identify the correctly normalized discriminant.
+   Their product equals the canonical full product exactly. Establish joint
+   potential analyticity of the individual parity factors and `f+2=g−2` to
+   identify the correctly normalized discriminant.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

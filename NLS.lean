@@ -413,3 +413,5 @@ import NLS.ZakharovShabat.ActualParityProductIndependence
 import NLS.ZakharovShabat.ParityCutoffOrders
 import NLS.ZakharovShabat.ActualParityProductOrders
 import NLS.ZakharovShabat.ActualParityProductOrderExistence
+import NLS.ZakharovShabat.ParityProductFactorization
+import NLS.ZakharovShabat.ActualParityProductFactorization
