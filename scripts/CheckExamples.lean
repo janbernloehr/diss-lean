@@ -9764,3 +9764,78 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
 
 end
 end UniformProductChecks
+
+namespace EntireProductChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+private theorem shifted_mem {p : ℝ≥0∞} (a : Coeff p) :
+    Memℓp (fun n => ((Real.pi : ℂ)*n+a n)-(Real.pi : ℂ)*n) p := by
+  simpa only [add_sub_cancel_left] using (show Memℓp (fun n : ℤ => a n) p from a.property)
+
+-- Arbitrary p=1 displacement sequences give uniform convergence on compact sets crossing the lattice.
+example (φ : PairSpace 1) (a b : Coeff 1) :
+    TendstoUniformlyOn (periodicSpectralPolynomialCutoff (by simp) φ 2
+      (fun n => (Real.pi : ℂ)*n+a n) (fun n => (Real.pi : ℂ)*n+b n))
+      (entirePeriodicProduct (by simp) φ 2 (fun n => (Real.pi : ℂ)*n+a n)
+        (fun n => (Real.pi : ℂ)*n+b n)) atTop (Metric.closedBall 0 (4*Real.pi)) :=
+  ((tendstoLocallyUniformlyOn_iff_forall_isCompact isOpen_univ).mp
+    (tendstoLocallyUniformlyOn_entirePeriodicProduct (by simp) φ 2 _ _ (shifted_mem a) (shifted_mem b)))
+    _ (Set.subset_univ _) (isCompact_closedBall _ _)
+
+-- The limit, not just its finite approximants, is holomorphic at a formerly excluded negative mode.
+example (φ : PairSpace 3) (a b : Coeff 3) :
+    AnalyticAt ℂ (entirePeriodicProduct (by simp) φ 4 (fun n => (Real.pi : ℂ)*n+a n)
+      (fun n => (Real.pi : ℂ)*n+b n)) ((Real.pi : ℂ)*(-3 : ℤ)) :=
+  analyticOnNhd_entirePeriodicProduct (by simp) φ 4 _ _ (shifted_mem a) (shifted_mem b) _ (Set.mem_univ _)
+
+-- The filled values are forced by continuity and the already proved relative formula.
+example (φ : PairSpace 2) (ξ η : ℤ → ℂ)
+    (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 2)
+    (hη : Memℓp (fun n => η n-(Real.pi : ℂ)*n) 2) (f : ℂ → ℂ) (hf : Continuous f)
+    (he : freeLatticeᶜ.EqOn f (periodicSpectralProductFormula (by simp) φ 2 ξ η)) :
+    f 0 = entirePeriodicProduct (by simp) φ 2 ξ η 0 :=
+  congrFun (entirePeriodicProduct_unique (by simp) φ 2 ξ η hξ hη f hf he) 0
+
+-- Derivative convergence now holds on compact neighborhoods of free lattice points.
+example (φ : PairSpace 2) (a b : Coeff 2) :
+    TendstoUniformlyOn (fun M => deriv (periodicSpectralPolynomialCutoff (by simp) φ 2
+      (fun n => (Real.pi : ℂ)*n+a n) (fun n => (Real.pi : ℂ)*n+b n) M))
+      (deriv (entirePeriodicProduct (by simp) φ 2 (fun n => (Real.pi : ℂ)*n+a n)
+        (fun n => (Real.pi : ℂ)*n+b n))) atTop (Metric.closedBall 0 Real.pi) :=
+  ((tendstoLocallyUniformlyOn_iff_forall_isCompact isOpen_univ).mp
+    (tendstoLocallyUniformlyOn_deriv_entirePeriodicProduct (by simp) φ 2 _ _ (shifted_mem a) (shifted_mem b)))
+    _ (Set.subset_univ _) (isCompact_closedBall _ _)
+
+-- At the actual zero potential, a filled negative lattice point is a zero and i is not.
+example (w : SpectralWeight) :
+    ∃ N : ℕ, ∃ ξ η : ℤ → ℂ,
+      entirePeriodicProduct (p := 3) (by simp) 0 N ξ η ((Real.pi : ℂ)*(-3 : ℤ)) = 0 ∧
+      entirePeriodicProduct (p := 3) (by simp) 0 N ξ η Complex.I ≠ 0 := by
+  obtain ⟨N,_,U,_,_,_,h0,h⟩ := exists_uniform_entirePeriodicProducts (p := 3)
+    (by simp) (by norm_num) w 0
+  obtain ⟨ξ,η,hprod⟩ := h 0 h0
+  have hz := (hprod N le_rfl).2.2.2
+  simp only [map_zero] at hz
+  refine ⟨N,ξ,η,(hz _).mpr ?_,fun hi => ?_⟩
+  · apply (periodicAlgebraicMultiplicity_pos_iff (p := 3) (by simp) 0 _).mp
+    rw [periodicAlgebraicMultiplicity_zero (by simp) (-3)]
+    norm_num
+  · exact (hz Complex.I).mp hi (mem_resolventSet_zero_of_notMem (p := 3) (by simp) Complex.I
+      (notMem_freeLattice_of_im_ne_zero (by simp)))
+
+-- If zero is in the actual resolvent, filling the free zero mode cannot create a spurious zero.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
+    (hres : (0 : ℂ) ∈ resolventSet (by simp) (weightedBaseToPair w φ)) :
+    ∃ N : ℕ, ∃ ξ η : ℤ → ℂ,
+      AnalyticAt ℂ (entirePeriodicProduct (by simp) (weightedBaseToPair w φ) N ξ η) 0 ∧
+      entirePeriodicProduct (by simp) (weightedBaseToPair w φ) N ξ η 0 ≠ 0 := by
+  obtain ⟨N,_,U,_,_,hφ,_,h⟩ := exists_uniform_entirePeriodicProducts (by simp) (by norm_num) w φ
+  obtain ⟨ξ,η,hprod⟩ := h φ hφ
+  have hp := hprod N le_rfl
+  exact ⟨N,ξ,η,hp.1 0 (Set.mem_univ 0),fun hz => (hp.2.2.2 0).mp hz hres⟩
+
+end
+end EntireProductChecks

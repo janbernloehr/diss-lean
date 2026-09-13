@@ -359,3 +359,8 @@ import NLS.ZakharovShabat.RelativeSpectralProductsUniform
 import NLS.ZakharovShabat.FreeSpectralProductsUniform
 import NLS.ZakharovShabat.PerturbedSpectralProductsUniform
 import NLS.ZakharovShabat.PeriodicSpectralProductsUniform
+import NLS.ComplexAnalysis.EntireLimit
+import NLS.ComplexAnalysis.LimitNonvanishing
+import NLS.ZakharovShabat.EntirePeriodicProducts
+import NLS.ZakharovShabat.EntirePeriodicProductZeros
+import NLS.ZakharovShabat.EntirePeriodicProductExistence

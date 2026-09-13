@@ -1296,8 +1296,18 @@ the lattice, and their derivatives also converge locally uniformly there.
 This holds for each fixed potential; uniform convergence or analytic dependence
 in the potential is not yet proved.
 
-Next, extend the perturbed products across the free lattice, prove analytic
-dependence on potentials and independence of the central cutoff. Complete the odd
+The actual products now extend to entire functions, with polynomial and
+derivative convergence locally uniform on the whole plane. The maximum
+modulus principle transfers uniform Cauchy estimates from circles avoiding
+the countable lattice to their discs. Continuity uniquely fixes the filled
+values. Reciprocal maximum-modulus bounds prevent extra zeros at lattice
+points, while every actual spectral value makes all sufficiently large
+cutoffs vanish. Thus the entire zero set is precisely the original periodic
+spectrum, and pair-label independence holds globally.
+
+Next, prove equality of analytic zero orders with spectral multiplicities,
+independence of the central cutoff, and analytic dependence on potentials.
+Complete the odd
 free-product identity, the perturbed parity subproducts, and identification
 of the correctly normalized discriminant. Then continue with the anti-discriminant
 and action-coordinate prerequisites.

@@ -672,16 +672,16 @@ installation is absent. No shell startup files are modified.
   needs `-1`. A formal audit of (2.4)/Lemma 8.1(ii) finds that the printed
   `-2` and `2` prefactors give incompatible discriminant values at zero.
   The free values require `-1` and `4`. Perturbed full periodic products now
-  converge locally uniformly off `πℤ`, using the actual central algebraic multiplicities
-  and distant spectral pairs. They have exactly the periodic spectral zeros
-  there and are independent of pair labels. Large finite cutoffs have only
-  constant denominators and are entire polynomials. The limits are holomorphic
-  in the spectral parameter off `πℤ`, and their derivatives converge locally
-  uniformly there. Free Euler convergence is locally uniform on the whole
-  plane, including its lattice zeros. Every finite `p>1` potential supplies
-  the required data on a common open convex neighborhood. Extension of the
-  perturbed limit across the lattice, analytic dependence on potentials,
-  central-cutoff independence, and discriminant identification remain open.
+  converge locally uniformly on the whole complex plane, using actual central
+  algebraic multiplicities and distant spectral pairs. The limits are entire,
+  have exactly the periodic spectrum as their zeros (including lattice points),
+  and are independent of pair labels. Their derivatives also converge locally
+  uniformly on the whole plane. The extension across `πℤ` is uniquely fixed by
+  continuity and the earlier relative formula. Every finite `p>1` potential
+  supplies the required data on a common open convex neighborhood. Analytic
+  dependence on potentials, central-cutoff independence, equality of analytic
+  zero orders with spectral multiplicities, and discriminant identification
+  remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

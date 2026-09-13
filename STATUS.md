@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 411 modules and 3255 named public theorems. All compile on the
+The library has 416 modules and 3276 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.EntireLimit` | Maximum-modulus propagation of uniform Cauchy bounds from circles to discs; entire locally uniform limits across countable exceptional sets |
+| `NLS.ComplexAnalysis.LimitNonvanishing` | Reciprocal boundary bounds prevent new central zeros of holomorphic limits; small circles avoiding countable exceptional sets |
+| `NLS.ZakharovShabat.EntirePeriodicProducts` | Entire actual product, locally uniform polynomial and derivative convergence on the whole plane, agreement off the lattice, and uniqueness of continuous extension |
+| `NLS.ZakharovShabat.EntirePeriodicProductZeros` | No spurious finite-cutoff zeros, eventual vanishing at every spectral value, and exact entire zero set including free lattice points |
+| `NLS.ZakharovShabat.EntirePeriodicProductExistence` | Global pair-label independence and entire products with exact spectral zero sets for all finite `p>1` potentials on common potential neighborhoods |
 | `NLS.ZakharovShabat.RelativeSpectralProductsUniform` | Half-gap uniform majorants, locally uniform unordered and symmetric products, and holomorphy off the free lattice, including at perturbed zeros |
 | `NLS.ZakharovShabat.FreeSpectralProductsUniform` | Compact quadratic Euler majorants, continuous unordered Euler product, and locally uniform symmetric free products on the whole plane |
 | `NLS.ZakharovShabat.PerturbedSpectralProductsUniform` | Locally uniform original normalized cutoffs, uniform convergence on every off-lattice compact set, and holomorphy of the exact previous product formula |
@@ -3775,10 +3780,9 @@ The original existence theorem is pointwise; it does not assert uniform
 convergence over that potential neighborhood. The generic relative argument covers `p=1`, whereas this
 actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
 
-Extension across `πℤ`, analytic dependence on potentials, equality between
-different central-cutoff constructions, analytic zero orders, perturbed parity
-products, and discriminant identification remain open. No entire limit or
-analytic family in the potential is claimed by these off-lattice constructions.
+Analytic dependence on potentials, equality between different central-cutoff
+constructions, analytic zero orders, perturbed parity products, and discriminant
+identification remain open. The entire extension is constructed below.
 
 ## Section 8: locally uniform convergence and holomorphy
 
@@ -3812,14 +3816,52 @@ convex potential neighborhood and threshold for every larger central cutoff.
 
 All locally uniform convergence and holomorphy here concern the spectral
 parameter at each fixed potential. Joint analyticity and uniform convergence
-in the potential remain open, as does extension of the perturbed limit across
-the free lattice. Entire polynomial approximants alone do not establish an
-entire limit, and no such conclusion is claimed.
+in the potential remain open.
+
+## Section 8: entire products and the full spectral zero set
+
+`EntireLimit` proves a general complex-analysis extension theorem. Uniform
+Cauchy estimates for entire functions on a circle propagate to its closed
+disc by the maximum modulus principle applied to differences. Arbitrarily
+large circles avoiding a countable exceptional set then give convergence at
+every point and locally uniform convergence on the whole plane. The limit is
+entire and agrees with the previously determined values off the exceptional
+set. The new values come from limits of the same approximants, rather than
+arbitrary assignments at excluded points.
+
+`EntirePeriodicProducts` applies this theorem to the actual normalized
+spectral polynomial cutoffs and the countable free lattice. Both the cutoffs
+and their derivatives converge locally uniformly on the whole plane. The
+limit agrees with the earlier relative formula off `πℤ`, and continuity
+uniquely fixes its extension across the lattice.
+
+`LimitNonvanishing` propagates a positive boundary lower bound for nonvanishing
+holomorphic approximants to the center, using the maximum modulus principle
+on their reciprocals. `EntirePeriodicProductZeros` first proves that every
+actual cutoff is nonzero outside the actual spectrum. Small circles in the
+resolvent set avoid the free lattice and supply the boundary lower bounds;
+hence filling a free lattice point cannot add a spurious zero. Conversely,
+every original spectral value makes all sufficiently large cutoffs vanish.
+The entire product therefore has exactly the original periodic spectrum as
+its zero set at every complex parameter, including all lattice points.
+
+`EntirePeriodicProductExistence` retains pair-label independence on the whole
+plane and instantiates the construction from the proved displacement and
+counting results at every finite `p>1`. One open convex potential neighborhood
+and threshold support the construction for every larger central cutoff.
+Analyticity and locally uniform convergence are in the spectral parameter
+for each fixed potential; no joint potential analyticity is claimed.
+
+Equality of the entire product's analytic zero orders with original spectral
+algebraic multiplicities remains open, as do central-cutoff independence,
+analytic dependence on potentials, perturbed parity products, and
+identification with the discriminant. The original multiplicities are already
+retained as exponents in the finite spectral polynomials.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6683 declarations under `NLS`, including generated
+axioms. The current audit covers 6724 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4709,12 +4751,19 @@ ball containing several lattice values. Actual finite cutoffs are checked at
 the free zero mode, differentiated cutoffs converge at `p=2`, and arbitrary
 actual weighted `p=3` potentials supply the holomorphic spectral product.
 
+Entire-product examples cover compact uniform convergence crossing the lattice
+at `p=1`, holomorphy at a negative free mode at `p=3`, uniqueness of the filled
+zero-mode value, and compact derivative convergence at `p=2`. The actual zero
+potential gives a product vanishing at a negative lattice point and nonzero
+at `i`. An arbitrary actual `p=3` potential whose resolvent contains zero has
+a holomorphic product nonzero at that formerly excluded free point.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Extend the proved locally uniform holomorphic perturbed products across
-   `πℤ`, prove central-cutoff independence and analytic dependence on the
-   potential, then identify the discriminant.
+2. Prove analytic zero orders equal spectral algebraic multiplicities for
+   the entire products, then central-cutoff independence and analytic
+   dependence on the potential, and identify the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors
    `-1` and `4`, not the inconsistent displayed `-2` and `2`. Bounded source
