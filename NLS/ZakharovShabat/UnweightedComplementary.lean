@@ -48,6 +48,20 @@ theorem norm_forgetPairWeight_le (hp : p ≠ ⊤) (w : SpectralWeight) (f : Weig
   · simpa only [one_apply, one_mul] using one.shiftedPairNorm_le hp i f
   · simpa only [one_apply, one_mul] using one.norm_le_shiftedPairNorm hp i f
 
+/-- Forgetting the weight commutes with the physical signed shifts. -/
+theorem forgetPairWeight_pairModulation (w : SpectralWeight) (i : ℤ) (f : WeightedCoeffPair w.toWeight p) :
+    w.forgetPairWeight (w.pairModulation i f) = one.pairModulation i (w.forgetPairWeight f) := by
+  apply ZakharovShabat.weightedPair_ext <;> intro k <;> simp
+
+/-- The unweighted source norm is bounded by every shifted spectral-weight norm, with constant one. -/
+theorem norm_forgetPairWeight_le_shifted (hp : p ≠ ⊤) (w : SpectralWeight) (i : ℤ)
+    (f : WeightedCoeffPair w.toWeight p) : ‖w.forgetPairWeight f‖ ≤ w.shiftedPairNorm i f := by
+  calc
+    _ = ‖one.pairModulation i (w.forgetPairWeight f)‖ := (shiftedPairNorm_one hp i _).symm
+    _ = ‖w.forgetPairWeight (w.pairModulation i f)‖ := by rw [forgetPairWeight_pairModulation]
+    _ ≤ ‖w.pairModulation i f‖ := w.norm_forgetPairWeight_le hp _
+    _ = _ := rfl
+
 end NLS.SpectralWeight
 namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]

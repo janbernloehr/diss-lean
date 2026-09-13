@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 295 modules and 2647 named public theorems. All compile on the
+The library has 299 modules and 2672 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -108,6 +108,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ResonantPotentialModes` | Actual potential applied to either resonant domain mode; exact component shifts and signed leading Fourier coefficients |
 | `NLS.ZakharovShabat.ResonantParityExpansion` | Equations (1.14)–(1.15): odd diagonal part, even off-diagonal parts, and second-iterate Fourier remainders |
 | `NLS.ZakharovShabat.ResonantCoefficientSeries` | Individual unwanted parity terms vanish; actual convergent odd series for `a_n` and positive even series for both Fourier remainders |
+| `NLS.FunctionalAnalysis.ConjugatedNeumannBounds` | Exact transported inverse bound and geometric finite-series remainder, including trivial Banach spaces |
+| `NLS.ZakharovShabat.ResonantSourceNorm` | Signed modulation cancels each resonant wave; exact single-component source norms |
+| `NLS.ZakharovShabat.WeightedEvenApproximation` | Actual even partial sums, exact remainder, and shifted error bounded by `2·2⁻ᵐ` at half contraction |
+| `NLS.ZakharovShabat.ResonantEvenBounds` | Factor-two shifted and unweighted component bounds; uniform geometric approximation on a potential neighborhood and distant closed strips |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2895,13 +2899,43 @@ the actual scalar `HasSum` statements: `a_n` is the sum of the odd terms
 `T_n(T_n²)^j Φe_n⁺`; each off-diagonal Fourier remainder is the sum of the
 strictly positive even terms `T_n²(T_n²)^j Φe_n∓`. All results hold for
 arbitrary complex potentials and every finite Banach exponent under the
-existing shifted-square hypothesis. Analytic dependence, uniform bounds
-for the even vectors, and Lemma 6.8's summability estimates remain to be proved.
+existing shifted-square hypothesis. Analytic dependence and Lemma 6.8's
+summability estimates remain to be proved; the even-vector bounds are below.
+
+### Lemma 6.8: uniform even-vector bounds and approximation
+
+`ConjugatedNeumannBounds` measures the even inverse in the exact norm obtained
+by the chosen continuous change of coordinates. If the conjugated square has
+norm `q<1`, the inverse bound is `(1-q)⁻¹`. The remainder after the first `m`
+even terms is exactly `(T²)^m (Id-T²)⁻¹`, with bound `q^m/(1-q)`.
+These results also cover trivial Banach spaces. At `q≤1/2`, the inverse
+bound is two and the approximation error is at most `2·2⁻ᵐ` times the input norm.
+
+`ResonantSourceNorm` proves that the signed modulation removes each resonant
+wave exactly. The source at physical index zero has shifted norm `‖φ.snd‖`,
+and the source at index one has shifted norm `‖φ.fst‖`. No normalization
+`w(0)=1` or comparison with the maximum pair norm is needed.
+`WeightedEvenApproximation` transfers the inverse and remainder bounds to
+the actual complementary operator in this shifted norm.
+
+`ResonantEvenBounds` therefore bounds each actual even vector by twice its
+opposite potential component norm. Forgetting the weight commutes with signed
+modulation; the unweighted finite-exponent pair norm is bounded by every
+shifted spectral-weight norm with constant one. The same factor-two bounds
+thus hold in the source's unweighted norm.
+
+One open convex neighborhood containing the potential and zero, and one
+cutoff `N≥1`, give these bounds throughout every full closed strip with
+`|n|≥N`. Both vector errors are bounded by `2·2⁻ᵐ (‖φ‖+1)` on that entire
+parameter set. An epsilon-form theorem proves that one truncation length
+works for both vectors, every potential in this neighborhood, and all those
+strips. Analytic dependence and the scalar coefficient summability estimates
+in Lemma 6.8 are still open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5420 declarations under `NLS`, including generated
+axioms. The current audit covers 5453 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3592,11 +3626,17 @@ indices. Additional checks cover arbitrary unwanted even terms at `p=1`
 and the convergent positive remainder series at a negative resonance with
 `p=3`. The determinant comparison uses the same source coefficient labels.
 
+Even-vector checks use a nonzero operator with square exactly half the identity
+and an arbitrary continuous change of coordinates, obtaining the three-term
+error constant `1/4`. They cover the empty partial sum on a trivial Banach
+space, distinct exact source norms under `w(0)=2` at a negative resonance
+with `p=3`, the unweighted positive-mode bound at `p=1`, and the four-term
+error constant `1/8` at a negative resonance with `p=3`.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove uniform even-vector bounds, analytic dependence, and the coefficient
-   estimates in Lemma 6.8, then continue the refined eigenvalue and weighted-gap estimates
+2. Prove analytic dependence and the coefficient estimates in Lemma 6.8, then continue the refined eigenvalue and weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

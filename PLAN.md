@@ -979,7 +979,17 @@ corrections, with their actual Fourier leading terms removed by `T_n²`.
 Individual unwanted terms vanish, and the remaining odd/positive-even
 scalar series converge to the precise source coefficients and remainders.
 
-Next, prove the uniform shifted bound on `(Id-T_n²)⁻¹ Φe_n±`, then the
-analytic dependence and coefficient estimates in Lemma 6.8. Continue the
-refined eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
+The uniform shifted bound on `(Id-T_n²)⁻¹ Φe_n±` is now proved with the
+source constant two and the exact opposite component norm. It also controls
+the unweighted finite-exponent pair norm. The exact finite-series remainder
+gives the geometric error `2·2⁻ᵐ`, uniformly on one open convex potential
+neighborhood and every sufficiently distant full closed strip. One truncation
+length works for both vectors and every parameter in that set.
+
+Next, prove analytic dependence and the coefficient estimates in Lemma 6.8.
+An analytic extension of the complementary inverse can be normalized at the
+strip center, then combined with Banach-algebra inversion for the even
+correction. The uniform approximation above also supplies quantitative
+control of its finite series. Then continue the refined eigenvalue and
+weighted-gap estimates toward Propositions 6.1 and 6.3.
 The printed general-`p` central-height constant remains a separate open item.

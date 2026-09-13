@@ -575,7 +575,11 @@ installation is absent. No shell startup files are modified.
   Neumann series are now proved. The `b_n⁺`/`b_n⁻` names follow the source's
   basis order, with leading physical coefficients `φ_+(2n)` and `φ_-(-2n)`.
   An explicit basis reversal gives the printed matrix and preserves its
-  determinant. Lemma 6.8's analytic dependence and coefficient estimates are next.
+  determinant. Both even vectors now have shifted and unweighted norm bounded
+  by twice the opposite potential component norm. Their finite even sums have
+  error at most `2·2⁻ᵐ` times that component norm, uniformly on a potential
+  neighborhood and all sufficiently distant full closed strips. Lemma 6.8's
+  analytic dependence and coefficient estimates remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

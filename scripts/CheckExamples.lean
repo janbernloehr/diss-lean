@@ -7781,3 +7781,74 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (z : ℂ) (hz
   simpa using weightedResonantBPlus_remainder_hasSum (by norm_num) w φ (-2) z hz h
 
 end ParityExpansionChecks
+
+section EvenBoundsChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- This operator has nonzero square exactly one half of the identity.
+private noncomputable def evenBoundHalfSquare : (ℂ × ℂ) →L[ℂ] (ℂ × ℂ) :=
+  ((1/2 : ℂ) • ContinuousLinearMap.snd ℂ ℂ ℂ).prod (ContinuousLinearMap.fst ℂ ℂ ℂ)
+
+private theorem evenBoundHalfSquare_sq : evenBoundHalfSquare^2 = (1/2 : ℂ) • (1 : (ℂ × ℂ) →L[ℂ] (ℂ × ℂ)) := by
+  ext <;> simp [evenBoundHalfSquare, pow_two, mul_apply_eq_comp]
+
+private theorem evenBoundHalfSquare_norm (e : (ℂ × ℂ) ≃L[ℂ] (ℂ × ℂ)) :
+    ‖e.conjContinuousAlgEquiv (evenBoundHalfSquare^2)‖ = 1/2 := by
+  rw [evenBoundHalfSquare_sq, map_smul, map_one, norm_smul]
+  norm_num
+
+-- The geometric error at the exact half threshold survives arbitrary continuous changes of coordinates.
+example (e : (ℂ × ℂ) ≃L[ℂ] (ℂ × ℂ)) (f : ℂ × ℂ) :
+    ‖e ((SquaredNeumann.conjugateEvenCorrection e evenBoundHalfSquare
+      (by rw [evenBoundHalfSquare_norm]; norm_num) - ∑ j ∈ Finset.range 3, (evenBoundHalfSquare^2)^j) f)‖ ≤
+      (1/4 : ℝ) * ‖e f‖ := by
+  simpa only [show (2 * (1/2 : ℝ)^3) = 1/4 by norm_num] using
+    SquaredNeumann.norm_conjugateEvenCorrection_sub_sum_apply_le_half e evenBoundHalfSquare
+      (by rw [evenBoundHalfSquare_norm]; norm_num) (by rw [evenBoundHalfSquare_norm]) 3 f
+
+-- The empty partial sum leaves precisely the even inverse, including in a trivial Banach space.
+example (e : (Fin 0 → ℂ) ≃L[ℂ] (Fin 0 → ℂ)) (K : (Fin 0 → ℂ) →L[ℂ] (Fin 0 → ℂ))
+    (h : ‖e.conjContinuousAlgEquiv (K^2)‖ < 1) :
+    SquaredNeumann.conjugateEvenCorrection e K h - ∑ j ∈ Finset.range 0, (K^2)^j =
+      SquaredNeumann.conjugateEvenCorrection e K h := by simp
+
+private theorem evenBoundsModeNorm {p : ℝ≥0∞} [Fact (1 ≤ p)] (w : Weight) (k : ℤ) (a : ℂ) :
+    ‖weightedMode (p := p) w k a‖ = w k * ‖a‖ := by
+  have he : WeightedCoeff.weightEquiv w p (weightedMode w k a) = lp.single p k ((w k : ℂ)*a) := by
+    ext j
+    by_cases hj : j = k <;> simp [WeightedCoeff.weightEquiv_apply, weightedMode_apply, lp.single_apply, hj]
+  rw [WeightedCoeff.norm_eq, he, lp.norm_single (zero_lt_one.trans_le (Fact.out : 1 ≤ p)), norm_mul]
+  simp [abs_of_pos (w.positive k)]
+
+-- Signed modulation cancels the resonant wave with no extra pair factor, even when w(0)=2.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    let φ := (WeightedCoeffPair.toMax w.toWeight 3).symm
+      (weightedMode w.toWeight 0 (2 : ℂ), weightedMode w.toWeight 0 Complex.I)
+    w.shiftedPairNorm (-3) (weightedResonantSource (by norm_num) w φ (-3) 0) = 2 ∧
+    w.shiftedPairNorm (-3) (weightedResonantSource (by norm_num) w φ (-3) 1) = 4 := by
+  dsimp only
+  rw [shiftedPairNorm_source_zero, shiftedPairNorm_source_one]
+  change ‖weightedMode (p := 3) _ 0 Complex.I‖ = 2 ∧ ‖weightedMode (p := 3) _ 0 (2 : ℂ)‖ = 4
+  rw [evenBoundsModeNorm, evenBoundsModeNorm]
+  norm_num
+
+-- The source positive mode is controlled by the negative potential component at p=1.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) (n : ℤ)
+    (h : ‖weightedPotentialSquareInShift (by simp) w φ n ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ < 1)
+    (hh : ‖weightedPotentialSquareInShift (by simp) w φ n ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ ≤ 1/2) :
+    ‖w.forgetPairWeight (weightedResonantEvenVector (by simp) w φ n ((Real.pi : ℂ)*n)
+      (center_mem_resonantStrip n) h 1)‖ ≤ 2 * ‖φ.fst‖ :=
+  norm_forget_evenVector_one_le (by simp) w φ n _ _ h hh
+
+-- Four terms give error at most one eighth of the opposite component norm at a negative resonance.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (z : ℂ) (hz : z ∈ resonantStrip (-2))
+    (h : ‖weightedPotentialSquareInShift (by norm_num) w φ (-2) z hz‖ < 1)
+    (hh : ‖weightedPotentialSquareInShift (by norm_num) w φ (-2) z hz‖ ≤ 1/2) :
+    w.shiftedPairNorm (-2) (weightedResonantEvenVector (by norm_num) w φ (-2) z hz h 0 -
+      weightedResonantEvenApproximation (by norm_num) w φ (-2) z hz 4 0) ≤ (1/8 : ℝ) * ‖φ.snd‖ := by
+  simpa only [show (2 * (1/2 : ℝ)^4) = 1/8 by norm_num] using
+    shiftedPairNorm_evenVector_zero_error_le (by norm_num) w φ (-2) z hz h hh 4
+
+end EvenBoundsChecks

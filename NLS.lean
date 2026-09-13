@@ -243,3 +243,7 @@ import NLS.ZakharovShabat.SourceResonantMatrix
 import NLS.ZakharovShabat.ResonantPotentialModes
 import NLS.ZakharovShabat.ResonantParityExpansion
 import NLS.ZakharovShabat.ResonantCoefficientSeries
+import NLS.FunctionalAnalysis.ConjugatedNeumannBounds
+import NLS.ZakharovShabat.ResonantSourceNorm
+import NLS.ZakharovShabat.WeightedEvenApproximation
+import NLS.ZakharovShabat.ResonantEvenBounds
