@@ -7611,7 +7611,7 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1)
       (z - (Real.pi : ℂ) * n - weightedResonantA (by simp) w φ n z hz h)^2 -
         weightedResonantBPlus (by simp) w φ n z hz h * weightedResonantBMinus (by simp) w φ n z hz h := by
   rw [weightedResonantMatrix_form]
-  simp [Matrix.det_fin_two, pow_two]
+  simp [Matrix.det_fin_two, pow_two, mul_comm]
 
 -- The counterexample survives arbitrary cutoffs within the actual half-size contraction regime.
 example (w : SpectralWeight) (M : ℕ) :
@@ -7708,3 +7708,76 @@ example : (starRingEnd ℂ) ((Real.pi : ℂ) * (-3 : ℤ) + Real.pi / 2 + Comple
   norm_num [Complex.div_re, abs_div, abs_of_pos Real.pi_pos]
 
 end ConjugationChecks
+
+section ParityExpansionChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The leading signed coefficients distinguish the two components at a negative resonance.
+example (w : SpectralWeight) :
+    let φ := (WeightedCoeffPair.toMax w.toWeight 3).symm
+      (weightedMode w.toWeight 4 (2 : ℂ), weightedMode w.toWeight (-4) Complex.I)
+    resonantCoordinates w.toWeight (-2) (weightedResonantSource (by norm_num) w φ (-2) 0) = ![0, Complex.I] ∧
+    resonantCoordinates w.toWeight (-2) (weightedResonantSource (by norm_num) w φ (-2) 1) = ![2, 0] := by
+  dsimp only
+  rw [resonantCoordinates_source_zero, resonantCoordinates_source_one]
+  simp only [show 2 * (-2 : ℤ) = -4 by norm_num, show -(-4 : ℤ) = 4 by norm_num]
+  constructor <;> congr 1 <;> simp [WeightedCoeffPair.toMax]
+
+private theorem parityConstantZeroCorrection {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    (w : SpectralWeight) (a b : ℂ) (z : ℂ) (hz : z ∈ resonantStrip 0)
+    (h : ‖weightedPotentialSquareInShift hp w (constantSpectralPotential w a b) 0 z hz‖ < 1) (i : Fin 2) :
+    weightedCorrection hp w (constantSpectralPotential w a b) 0 z hz h
+      (weightedResonantSource hp w (constantSpectralPotential w a b) 0 i) =
+      weightedResonantSource hp w (constantSpectralPotential w a b) 0 i := by
+  symm
+  apply weightedCorrection_unique
+  have ht : weightedPotentialInverse hp w (constantSpectralPotential w a b) 0 z hz
+      (weightedResonantSource hp w (constantSpectralPotential w a b) 0 i) = 0 := by
+    fin_cases i <;> apply weightedPair_ext <;> intro k <;> by_cases hk : k = 0 <;>
+      simp [constantSpectralPotential, complementarySymbol, hk]
+  rw [ht, sub_zero]
+
+-- The source b-plus belongs to the second physical component; b-minus belongs to the first.
+private theorem parityConstantCoefficients {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    (w : SpectralWeight) (a b : ℂ) (z : ℂ) (hz : z ∈ resonantStrip 0)
+    (h : ‖weightedPotentialSquareInShift hp w (constantSpectralPotential w a b) 0 z hz‖ < 1) :
+    weightedResonantBPlus hp w (constantSpectralPotential w a b) 0 z hz h = b ∧
+    weightedResonantBMinus hp w (constantSpectralPotential w a b) 0 z hz h = a := by
+  constructor
+  · change resonantCoordinates w.toWeight 0 (weightedCorrection hp w (constantSpectralPotential w a b) 0 z hz h
+      (weightedResonantSource hp w (constantSpectralPotential w a b) 0 0)) 1 = b
+    rw [parityConstantZeroCorrection, resonantCoordinates_source_zero]
+    simp [constantSpectralPotential]
+  · change resonantCoordinates w.toWeight 0 (weightedCorrection hp w (constantSpectralPotential w a b) 0 z hz h
+      (weightedResonantSource hp w (constantSpectralPotential w a b) 0 1)) 0 = a
+    rw [parityConstantZeroCorrection, resonantCoordinates_source_one]
+    simp [constantSpectralPotential]
+
+-- An asymmetric complex example verifies the precise source basis order, not only its determinant.
+example (w : SpectralWeight) (z : ℂ) (hz : z ∈ resonantStrip 0)
+    (h : ‖weightedPotentialSquareInShift (p := 1) (by simp) w (constantSpectralPotential w 2 Complex.I) 0 z hz‖ < 1) :
+    weightedSourceResonantMatrix (by simp) w (constantSpectralPotential w 2 Complex.I) 0 z hz h =
+      !![z, -Complex.I; -2, z] := by
+  obtain ⟨hb₁, hb₂⟩ := parityConstantCoefficients (by simp) w 2 Complex.I z hz h
+  rw [weightedSourceResonantMatrix_form, hb₁, hb₂, weightedResonantA_constant]
+  simp [complementarySymbol]
+
+-- All unwanted even terms in the diagonal vanish at the endpoint p=1, including the zeroth term.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) (j : ℕ) :
+    resonantCoordinates w.toWeight (-3)
+      ((((weightedPotentialInverse (by simp) w φ (-3) ((Real.pi : ℂ) * (-3 : ℤ))
+        (center_mem_resonantStrip (-3)))^2)^j) (weightedResonantSource (by simp) w φ (-3) 1)) 1 = 0 :=
+  weightedResonantA_even_term_zero (by simp) w φ (-3) _ _ j
+
+-- The positive remainder has an actual convergent scalar series at a negative resonance and p=3.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (z : ℂ) (hz : z ∈ resonantStrip (-2))
+    (h : ‖weightedPotentialSquareInShift (by norm_num) w φ (-2) z hz‖ < 1) :
+    HasSum (fun j : ℕ => resonantCoordinates w.toWeight (-2) (weightedPotentialInverse (by norm_num) w φ (-2) z hz
+      (weightedPotentialInverse (by norm_num) w φ (-2) z hz
+        ((((weightedPotentialInverse (by norm_num) w φ (-2) z hz)^2)^j)
+          (weightedResonantSource (by norm_num) w φ (-2) 0)))) 1)
+      (weightedResonantBPlus (by norm_num) w φ (-2) z hz h - φ.snd.val (-4)) := by
+  simpa using weightedResonantBPlus_remainder_hasSum (by norm_num) w φ (-2) z hz h
+
+end ParityExpansionChecks

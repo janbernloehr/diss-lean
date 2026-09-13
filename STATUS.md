@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 289 modules and 2614 named public theorems. All compile on the
+The library has 295 modules and 2647 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -102,6 +102,12 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ConjugateComplementary` | Closed-strip conjugation invariance and conjugation of the actual domain potential, complementary inverse, and `T_n` under the reality hypothesis |
 | `NLS.ZakharovShabat.ConjugateCorrection` | Conjugation of the actual inverse from uniqueness; exact signed action on resonant amplitudes and corrected synthesis |
 | `NLS.ZakharovShabat.ResonantConjugation` | Corrected Lemma 6.7(ii) for both reality signs, both off-diagonal identities, real-axis diagonal reality, and locally uniform cutoffs throughout closed strips |
+| `NLS.FunctionalAnalysis.SquaredNeumannInvariant` | Continuous testing of convergent even operator series and preservation of every closed kernel invariant under the operator square |
+| `NLS.ZakharovShabat.WeightedComponentParity` | The actual `T_n` exchanges physical components; even powers and their convergent Neumann sum preserve component subspaces |
+| `NLS.ZakharovShabat.SourceResonantMatrix` | Exact source basis order, displayed matrix form, determinant preservation under reversal, and the source-order eigenvalue criterion |
+| `NLS.ZakharovShabat.ResonantPotentialModes` | Actual potential applied to either resonant domain mode; exact component shifts and signed leading Fourier coefficients |
+| `NLS.ZakharovShabat.ResonantParityExpansion` | Equations (1.14)–(1.15): odd diagonal part, even off-diagonal parts, and second-iterate Fourier remainders |
+| `NLS.ZakharovShabat.ResonantCoefficientSeries` | Individual unwanted parity terms vanish; actual convergent odd series for `a_n` and positive even series for both Fourier remainders |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2799,7 +2805,7 @@ including `p=1`, using the derivative-domain embedding into `ℓ¹`.
 vectors and uses their exact residuals. The resulting cross-coordinate
 identity forces equality of the two diagonal entries, and hence of the
 correction diagonals `a_n⁺=a_n⁻`. It defines the common coefficient `a_n`
-and both `b_n` coefficients and proves the displayed source matrix form.
+and both `b_n` coefficients and proves the common-diagonal matrix form.
 This establishes Lemma 6.7(i), on source pages 40–41.
 
 The reality assertion for `a_n` in the printed Lemma 6.7(ii) lacks the
@@ -2850,13 +2856,52 @@ These identities hold at every finite Banach exponent with the two inverse
 hypotheses. The final uniform theorem supplies both hypotheses on every
 sufficiently distant full closed strip, using one open convex neighborhood
 and one cutoff. Thus the corrected Lemma 6.7(ii), with the hypothesis from
-its source proof on pages 40–41, is established for both signs. The parity
-expansions and estimates of the coefficients remain next.
+its source proof on pages 40–41, is established for both signs.
+
+### Equations (1.14)–(1.15): parity and the source basis order
+
+The implementation's resonant coordinates use the physical order
+`(e_n⁻,e_n⁺)`, whereas the displayed matrix on source page 40 uses
+`(e_n⁺,e_n⁻)`. The `weightedResonantBPlus` and `weightedResonantBMinus`
+names now follow the source definitions: they are respectively the lower
+and upper correction entries in physical order. This corrects the earlier
+label assignment. The conjugation theorems have been updated accordingly.
+`SourceResonantMatrix` explicitly reverses both indices, proves the exact
+printed matrix form, and proves equality of its determinant with the
+physical-order determinant and the resulting eigenvalue criterion.
+
+`ResonantPotentialModes` applies the actual potential to the two resonant
+derivative-domain basis vectors. Column zero has only a second component,
+with coefficient `φ_+(k+n)`; column one has only a first component, with
+coefficient `φ_-(k-n)`. Consequently the source leading term `φ^+_{2n}` is
+the raw second coefficient at `2n`, while `φ^-_{2n}` is the raw first
+coefficient at `-2n`. The signs follow equation (1.2) on source page 22.
+
+`SquaredNeumannInvariant` proves that continuous testing commutes with the
+sum of a convergent even operator series, and that any kernel preserved by
+its square is preserved by the sum. `WeightedComponentParity` proves that
+`T_n` exchanges the physical components and its even powers preserve them.
+The convergent even Neumann inverse therefore preserves each component
+subspace as well. This is component parity, not parity of Fourier indices.
+
+Writing `u_i=(Id-T_n²)⁻¹ Φe_i` in physical order, `ResonantParityExpansion`
+proves (1.14) as `a_n=coordinates(T_n u_1)_1`. The off-diagonal coefficients
+are `b_n⁺=coordinates(u_0)_1` and `b_n⁻=coordinates(u_1)_0`. Subtracting the
+actual leading Fourier coefficients gives precisely `coordinates(T_n²u_i)`
+in the same output component, proving both parts of (1.15).
+
+`ResonantCoefficientSeries` proves the individual parity cancellations and
+the actual scalar `HasSum` statements: `a_n` is the sum of the odd terms
+`T_n(T_n²)^j Φe_n⁺`; each off-diagonal Fourier remainder is the sum of the
+strictly positive even terms `T_n²(T_n²)^j Φe_n∓`. All results hold for
+arbitrary complex potentials and every finite Banach exponent under the
+existing shifted-square hypothesis. Analytic dependence, uniform bounds
+for the even vectors, and Lemma 6.8's summability estimates remain to be proved.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5374 declarations under `NLS`, including generated
+axioms. The current audit covers 5420 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3538,11 +3583,20 @@ They check real-axis diagonal reality for complex real-type components,
 the minus sign in the imaginary-type off-diagonal identity, and conjugation
 of a nonreal parameter on the closed strip boundary.
 
+Parity checks recover distinct leading coefficients from asymmetric Fourier
+modes at a negative resonance. For constant components `(a,b)` at the zero
+resonance, the actual inverse fixes the potential-source vectors; thus
+`b_n⁺=b` and `b_n⁻=a`. The asymmetric example `(2,i)` verifies the exact
+source matrix `[[λ,-i],[-2,λ]]` at `p=1`, catching swapped names and basis
+indices. Additional checks cover arbitrary unwanted even terms at `p=1`
+and the convergent positive remainder series at a negative resonance with
+`p=3`. The determinant comparison uses the same source coefficient labels.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the parity expansions after Lemma 6.7 and the coefficient estimates
-   in Lemma 6.8, then continue the refined eigenvalue and weighted-gap estimates
+2. Prove uniform even-vector bounds, analytic dependence, and the coefficient
+   estimates in Lemma 6.8, then continue the refined eigenvalue and weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

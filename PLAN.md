@@ -962,7 +962,24 @@ zero imaginary part for either reality type. A common open convex neighborhood
 and frequency cutoff provide both inverse hypotheses throughout the full
 closed strips. The argument covers every finite Banach exponent.
 
-Next, prove the component parity expansions (1.14)–(1.15) after Lemma 6.7,
-then the analytic dependence and coefficient estimates in Lemma 6.8. Continue
-the refined eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
+The source's basis order is now explicit. Physical coordinates use
+`(e_n⁻,e_n⁺)`, and the displayed matrix uses the reverse order. The `b_n⁺`
+and `b_n⁻` names have been corrected to follow the source definitions. An
+explicit simultaneous reversal of both matrix indices gives the printed
+form, preserves the determinant, and retains the eigenvalue criterion.
+The actual potential-source vectors have exactly the component shifts
+`φ_+(k+n)` and `φ_-(k-n)`. Thus the leading signed coefficients are the raw
+second coefficient at `2n` and the raw first coefficient at `-2n`.
+
+Equations (1.14)–(1.15) are now proved. The operator exchanges physical
+components, its square preserves them, and continuous testing of its
+convergent even Neumann series preserves those closed component subspaces.
+The common diagonal is the odd correction. The off-diagonals are the even
+corrections, with their actual Fourier leading terms removed by `T_n²`.
+Individual unwanted terms vanish, and the remaining odd/positive-even
+scalar series converge to the precise source coefficients and remainders.
+
+Next, prove the uniform shifted bound on `(Id-T_n²)⁻¹ Φe_n±`, then the
+analytic dependence and coefficient estimates in Lemma 6.8. Continue the
+refined eigenvalue and weighted-gap estimates toward Propositions 6.1 and 6.3.
 The printed general-`p` central-height constant remains a separate open item.

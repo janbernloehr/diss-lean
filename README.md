@@ -571,7 +571,11 @@ installation is absent. No shell startup files are modified.
   under the proof's assumption `φ*=±φ` are now proved for both coefficients,
   with a locally uniform cutoff. On the real spectral axis, `a_n` is real
   for either type; the off-diagonal relation retains the appropriate sign.
-  The coefficient estimates following Lemma 6.7 are next.
+  The component parity expansions (1.14)–(1.15) and their convergent scalar
+  Neumann series are now proved. The `b_n⁺`/`b_n⁻` names follow the source's
+  basis order, with leading physical coefficients `φ_+(2n)` and `φ_-(-2n)`.
+  An explicit basis reversal gives the printed matrix and preserves its
+  determinant. Lemma 6.8's analytic dependence and coefficient estimates are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

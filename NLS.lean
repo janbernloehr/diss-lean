@@ -237,3 +237,9 @@ import NLS.ZakharovShabat.WeightedReality
 import NLS.ZakharovShabat.ConjugateComplementary
 import NLS.ZakharovShabat.ConjugateCorrection
 import NLS.ZakharovShabat.ResonantConjugation
+import NLS.FunctionalAnalysis.SquaredNeumannInvariant
+import NLS.ZakharovShabat.WeightedComponentParity
+import NLS.ZakharovShabat.SourceResonantMatrix
+import NLS.ZakharovShabat.ResonantPotentialModes
+import NLS.ZakharovShabat.ResonantParityExpansion
+import NLS.ZakharovShabat.ResonantCoefficientSeries

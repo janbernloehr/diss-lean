@@ -44,23 +44,6 @@ theorem weightedResonantA_conj (hp : p ≠ ⊤) (w : SpectralWeight)
   exact he.symm
 
 /-- The off-diagonal reality identity, with the sign of the source potential type. -/
-theorem weightedResonantBPlus_conj (hp : p ≠ ⊤) (w : SpectralWeight)
-    (ε : ℂ) (hε : ε * ε = 1) (φ : WeightedCoeffPair w.toWeight p) (hφ : HasRealitySign w ε φ)
-    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
-    (h : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1)
-    (hc : ‖weightedPotentialSquareInShift hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz)‖ < 1) :
-    weightedResonantBPlus hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc =
-      ε * (starRingEnd ℂ) (weightedResonantBMinus hp w φ n z hz h) := by
-  have he := congrArg (resonantCoordinates w.toWeight n)
-    (weightedConjugation_correctedSynthesis hp w ε hε φ hφ n z hz h hc (Pi.single 0 1))
-  simp only [resonantCoordinates_conjugation, resonantConjugation_basis_zero, map_smul] at he
-  have he := congrFun he 0
-  change (starRingEnd ℂ) (weightedCorrectionMatrix hp w φ n z hz h 1 0) =
-    ε * weightedCorrectionMatrix hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc 0 1 at he
-  have hm := congrArg (fun c : ℂ => ε * c) he
-  simpa only [← mul_assoc, hε, one_mul, weightedResonantBPlus, weightedResonantBMinus] using hm.symm
-
-/-- The lower off-diagonal identity follows directly from the second signed component. -/
 theorem weightedResonantBMinus_conj (hp : p ≠ ⊤) (w : SpectralWeight)
     (ε : ℂ) (hε : ε * ε = 1) (φ : WeightedCoeffPair w.toWeight p) (hφ : HasRealitySign w ε φ)
     (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
@@ -68,6 +51,23 @@ theorem weightedResonantBMinus_conj (hp : p ≠ ⊤) (w : SpectralWeight)
     (hc : ‖weightedPotentialSquareInShift hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz)‖ < 1) :
     weightedResonantBMinus hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc =
       ε * (starRingEnd ℂ) (weightedResonantBPlus hp w φ n z hz h) := by
+  have he := congrArg (resonantCoordinates w.toWeight n)
+    (weightedConjugation_correctedSynthesis hp w ε hε φ hφ n z hz h hc (Pi.single 0 1))
+  simp only [resonantCoordinates_conjugation, resonantConjugation_basis_zero, map_smul] at he
+  have he := congrFun he 0
+  change (starRingEnd ℂ) (weightedCorrectionMatrix hp w φ n z hz h 1 0) =
+    ε * weightedCorrectionMatrix hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc 0 1 at he
+  have hm := congrArg (fun c : ℂ => ε * c) he
+  simpa only [← mul_assoc, hε, one_mul, weightedResonantBMinus, weightedResonantBPlus] using hm.symm
+
+/-- The source `b_n⁺` identity follows directly from the second physical component. -/
+theorem weightedResonantBPlus_conj (hp : p ≠ ⊤) (w : SpectralWeight)
+    (ε : ℂ) (hε : ε * ε = 1) (φ : WeightedCoeffPair w.toWeight p) (hφ : HasRealitySign w ε φ)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1)
+    (hc : ‖weightedPotentialSquareInShift hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz)‖ < 1) :
+    weightedResonantBPlus hp w φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc =
+      ε * (starRingEnd ℂ) (weightedResonantBMinus hp w φ n z hz h) := by
   have he := congrArg (resonantCoordinates w.toWeight n)
     (weightedConjugation_correctedSynthesis hp w ε hε φ hφ n z hz h hc (Pi.single 1 1))
   rw [resonantCoordinates_conjugation, resonantConjugation_basis_one] at he

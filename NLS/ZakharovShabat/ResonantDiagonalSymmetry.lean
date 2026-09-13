@@ -62,23 +62,23 @@ def weightedResonantA (hp : p ≠ ⊤) (w : SpectralWeight)
     (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
     (h : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1) : ℂ := weightedCorrectionMatrix hp w φ n z hz h 0 0
 
-/-- The upper off-diagonal coefficient `b_n⁺`. -/
+/-- The source coefficient `b_n⁺`, lower off-diagonal in our `(e_n⁻, e_n⁺)` basis. -/
 def weightedResonantBPlus (hp : p ≠ ⊤) (w : SpectralWeight)
-    (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
-    (h : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1) : ℂ := weightedCorrectionMatrix hp w φ n z hz h 0 1
-
-/-- The lower off-diagonal coefficient `b_n⁻`. -/
-def weightedResonantBMinus (hp : p ≠ ⊤) (w : SpectralWeight)
     (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
     (h : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1) : ℂ := weightedCorrectionMatrix hp w φ n z hz h 1 0
 
-/-- The matrix form displayed immediately after Lemma 6.7. -/
+/-- The source coefficient `b_n⁻`, upper off-diagonal in our `(e_n⁻, e_n⁺)` basis. -/
+def weightedResonantBMinus (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1) : ℂ := weightedCorrectionMatrix hp w φ n z hz h 0 1
+
+/-- The common-diagonal matrix in our `(e_n⁻, e_n⁺)` basis, the reverse of the displayed source order. -/
 theorem weightedResonantMatrix_form (hp : p ≠ ⊤) (w : SpectralWeight)
     (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
     (h : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1) :
     weightedResonantMatrix hp w φ n z hz h =
-      !![z - (Real.pi : ℂ) * n - weightedResonantA hp w φ n z hz h, -weightedResonantBPlus hp w φ n z hz h;
-        -weightedResonantBMinus hp w φ n z hz h, z - (Real.pi : ℂ) * n - weightedResonantA hp w φ n z hz h] := by
+      !![z - (Real.pi : ℂ) * n - weightedResonantA hp w φ n z hz h, -weightedResonantBMinus hp w φ n z hz h;
+        -weightedResonantBPlus hp w φ n z hz h, z - (Real.pi : ℂ) * n - weightedResonantA hp w φ n z hz h] := by
   ext i j
   rw [weightedResonantMatrix_entry]
   change (if i = j then z - (Real.pi : ℂ) * n else 0) - weightedCorrectionMatrix hp w φ n z hz h i j = _
