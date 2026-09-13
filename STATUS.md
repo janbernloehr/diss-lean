@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 395 modules and 3141 named public theorems. All compile on the
+The library has 398 modules and 3157 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.Fourier.HalfIntervalReality` | Conjugate-index compatibility of the completed half-interval map for all `1<p<∞`, including the odd shifted-Hilbert coefficients |
+| `NLS.ZakharovShabat.AuxiliaryReality` | Real-type compatibility of source interval extensions and potential phase; real actual auxiliary spectra and nonreal resolvent inclusion, including source period-one potentials |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryReality` | A.e. original real type, actual Neumann Fourier-integral compatibility, representative invariance, and real physical auxiliary eigenvalues and spectra |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryRootSpaces` | Actual physical auxiliary Jordan-chain recursion, phase equivalence, full-root-space stabilization and finite dimension, and membership in the original unbounded domain |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryMultiplicity` | Actual physical full-root-space dimension, equality with ordinary physical and auxiliary coefficient multiplicities, positivity on spectrum, and signed free simplicity |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryCounting` | Actual physical central counts `2N+1`, simple high-disc eigenvalues, and analytic starred branches on common original L² neighborhoods |
@@ -3664,16 +3667,36 @@ algebraically simple high-disc values, and every larger convergent displacement
 power tail bounded by the corrected budget of the transformed reflected
 potential. This proves the original physical L² starred part of Corollary 6.2.
 
-**Remaining scope.** Complete auxiliary real-type compatibility and the
-reality clause in Proposition 5.2(iv), and the bounded source period-one
-auxiliary eigenfunction extensions.
+`HalfIntervalReality` proves that the completed half-interval map commutes
+with conjugation and index reversal for every `1<p<∞`. Even coefficients use
+the exact half-normalization; odd coefficients use the full shifted-Hilbert
+series and its reflected reciprocal kernel.
+
+`AuxiliaryReality` then proves that both signed source interval extensions
+preserve real type. In particular, the Neumann potential extension used for
+both auxiliary problems preserves it in the source period-one pair topology.
+For real-type potentials, every actual auxiliary spectral value is real, and
+every nonreal parameter belongs to the actual auxiliary resolvent set. The reflected coefficient
+result also includes `p=1`. This proves Proposition 5.2(iv) for the source
+coefficient problems without an extra assumption on the extended potential.
+
+`ClassicalAuxiliaryReality` defines physical real type a.e. on the original
+interval and proves its invariance under changes of representative. Conjugation
+of the actual half-interval integrals and the folded coefficient formula prove
+real type of the actual Neumann potential coefficients for arbitrary original
+L² data. Both original endpoint eigenvalue sets and both closed physical
+auxiliary operator spectra are real; nonreal parameters lie in their physical
+resolvent sets. These results include potentials changed on null sets.
+
+**Remaining scope.** Verify the bounded source period-one auxiliary
+eigenfunction extensions.
 The printed general-`p` central-height issue and the global nonlinear
 coordinate construction remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6438 declarations under `NLS`, including generated
+axioms. The current audit covers 6459 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4529,13 +4552,20 @@ one open convex neighborhood for both conditions, actual central counts at
 every larger cutoff, analytic simple branches, full square-summability, and
 all quantitative displacement tails.
 
+Auxiliary reality checks cover negative odd half coefficients, nonconstant
+complex-amplitude real-type inputs at `p=3`, both signed source extensions,
+and actual spectral reality at `p=1`. The source period-one theorem uses its
+actual pair topology and Neumann potential extension. Physical checks allow
+a non-real exceptional value at an interior singleton and place `i` in the
+actual closed physical operator's resolvent for arbitrary real-type L² data.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Complete auxiliary source-extension real-type compatibility and
-   Proposition 5.2(iv), and verify bounded source period-one auxiliary
-   eigenfunction extension maps. The physical endpoint domains, normed
-   isomorphisms, closed densely defined L² operators, compact resolvents,
+2. Verify bounded source period-one auxiliary eigenfunction extension maps.
+   Source-extension real-type compatibility and Proposition 5.2(iv) are now
+   proved for source coefficient and original physical L² potentials. The
+   physical endpoint domains, normed isomorphisms, closed densely defined L² operators, compact resolvents,
    actual generalized multiplicities, counts, and uniform starred asymptotics
    are now proved. All four coefficient and physical L² Corollary 6.2
    displacement conclusions hold, together with the midpoint consequence.
@@ -4557,5 +4587,5 @@ all quantitative displacement tails.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the remaining auxiliary source-extension/reality results and Chapter 2 nonlinear
+the remaining bounded auxiliary eigenfunction extension and Chapter 2 nonlinear
 coordinate construction remain incomplete.

@@ -1242,8 +1242,16 @@ high-index branches, together with full square-summable displacements and
 all larger quantitative tails. This completes the physical starred part of
 Corollary 6.2.
 
-Next, complete the auxiliary source extension's real-type compatibility and
-Proposition 5.2(iv), and verify the bounded period-one auxiliary eigenfunction
-extensions. Then continue to the Chapter 2 discriminant, product, and
-action-coordinate prerequisites.
+The completed half-interval map now preserves conjugation with index reversal
+at every `1<p<∞`, including its odd Hilbert tail. Hence both signed source
+extensions preserve real type, in particular the Neumann potential extension
+used by both auxiliary problems. Proposition 5.2(iv) now holds for source
+period-one coefficient potentials. Actual Fourier-integral compatibility also
+proves it for arbitrary real-type original physical L² potentials, with the
+real-type hypothesis imposed only a.e. and invariant under representatives.
+Both actual auxiliary resolvent sets contain every nonreal parameter.
+
+Next, verify the bounded period-one auxiliary eigenfunction extensions.
+Then continue to the Chapter 2 discriminant, product, and action-coordinate
+prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

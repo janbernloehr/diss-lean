@@ -9428,3 +9428,62 @@ example (u : IntervalPairL2) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ b
   exact ⟨N,fun M hM b => (hcount u hu M hM).central_multiplicity b⟩
 
 end PhysicalAuxiliaryCountsChecks
+
+namespace AuxiliaryRealityChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition
+open MeasureTheory Set
+open scoped ENNReal ComplexConjugate
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Negative odd coefficients test the Hilbert tail, not only the even insertion.
+example (a b : Coeff 3) (h : ∀ k : ℤ, b k = (starRingEnd ℂ) (a (-k))) :
+    halfIntervalCoeffs (by norm_num) (by simp) b (-7) =
+      (starRingEnd ℂ) (halfIntervalCoeffs (by norm_num) (by simp) a 7) := by
+  simpa using halfIntervalCoeffs_conj (by norm_num : (1 : ℝ≥0∞) < 3) (by simp) a b h (-7)
+
+-- Both completed source extensions preserve a nonconstant, complex-amplitude real-type input.
+example (b : BoundaryCondition) :
+    IsRealType (intervalExtensionCLM b (by norm_num : (1 : ℝ≥0∞) < 3) (by simp)
+      (lp.single 3 (-4) (1+Complex.I), lp.single 3 4 (1-Complex.I))) := by
+  apply isRealType_intervalExtensionCLM
+  simpa only [map_add, map_one, Complex.conj_I, sub_eq_add_neg,
+    show -(-4 : ℤ) = 4 by norm_num] using isRealType_single (p := 3) (-4) (1+Complex.I)
+
+-- Reality of the actual auxiliary pencil also holds at the finite endpoint p=1.
+example (b : BoundaryCondition) (φ : PairSpace 1) (hφ : φ ∈ neumannSubspace)
+    (hr : IsRealType φ) (z : ℂ) (hz : z ∈ auxiliarySpectrum b (by simp) φ hφ) : z.im = 0 :=
+  auxiliarySpectrum_im_eq_zero_of_realType b (by simp) φ hφ hr z hz
+
+-- The source theorem uses its actual period-one pair norm and actual Neumann extension.
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hr : IsRealType (CoeffPair.toMax 3 φ))
+    (z : ℂ) (hz : z ∈ auxiliarySpectrum b (by simp)
+      (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).val
+      (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).property) : z.im = 0 :=
+  auxiliaryPeriodOneSpectrum_im_eq_zero_of_realType (by simp) (by norm_num) b φ hr z hz
+
+-- A non-real value at an interior null set does not destroy physical real type.
+private def exceptionalPotential (x : ℝ) : ℂ × ℂ :=
+  if x = 1/2 then (0, Complex.I) else (1+Complex.I, 1-Complex.I)
+
+private theorem exceptionalPotential_real : IsClassicalRealType exceptionalPotential := by
+  have h : ∀ᵐ x ∂volume.restrict (Ioc (0 : ℝ) 1), x ≠ 1/2 := by
+    exact ae_restrict_of_ae (by simp [ae_iff, measure_singleton])
+  filter_upwards [h] with x hx
+  simp only [exceptionalPotential, if_neg hx, map_add, map_one, Complex.conj_I]
+  rfl
+
+example (b : BoundaryCondition)
+    (hφ : MemLp exceptionalPotential 2 (volume.restrict (Ioc 0 1))) (z : ℂ)
+    (hz : z ∈ classicalAuxiliaryEigenvalues b exceptionalPotential) : z.im = 0 :=
+  classicalAuxiliaryEigenvalues_im_eq_zero_of_realType b _ hφ exceptionalPotential_real z hz
+
+-- A nonreal resolvent parameter for the actual closed physical operator.
+example (b : BoundaryCondition) (φ : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) (hr : IsClassicalRealType φ) :
+    Complex.I ∈ classicalAuxiliaryResolventSet b (intervalL2OfFunction φ hφ) :=
+  mem_classicalAuxiliaryResolventSet_of_realType_of_im_ne_zero b _
+    (isClassicalRealType_intervalL2Representative_ofFunction φ hφ hr) Complex.I (by simp)
+
+end
+end AuxiliaryRealityChecks

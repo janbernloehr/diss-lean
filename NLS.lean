@@ -343,3 +343,6 @@ import NLS.ZakharovShabat.ClassicalAuxiliaryRootSpaces
 import NLS.ZakharovShabat.ClassicalAuxiliaryMultiplicity
 import NLS.ZakharovShabat.ClassicalAuxiliaryCounting
 import NLS.ZakharovShabat.ClassicalAuxiliaryAsymptotics
+import NLS.Fourier.HalfIntervalReality
+import NLS.ZakharovShabat.AuxiliaryReality
+import NLS.ZakharovShabat.ClassicalAuxiliaryReality

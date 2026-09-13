@@ -657,6 +657,11 @@ installation is absent. No shell startup files are modified.
   have locally uniform algebraic counts, analytic simple high-disc values,
   and square-summable displacements with quantitative tails. This completes
   the physical L² starred displacement conclusions of Corollary 6.2.
+  The actual source Neumann potential extension now preserves real type at
+  every `1<p<∞`. Proposition 5.2(iv) holds for both source coefficient
+  auxiliary problems and both original physical L² operators. The physical
+  hypothesis is imposed a.e. on the original interval, and every nonreal
+  parameter belongs to the actual auxiliary resolvent set.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
