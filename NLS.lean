@@ -470,3 +470,7 @@ import NLS.ComplexAnalysis.MatrixTaylorEquivalence
 import NLS.ComplexAnalysis.FormalMatrixReduction
 import NLS.ComplexAnalysis.MatrixTaylorNullity
 import NLS.ZakharovShabat.BoundaryFormalDeterminantOrder
+import NLS.ComplexAnalysis.ScalarTaylorAlgebra
+import NLS.ComplexAnalysis.MatrixTaylorDeterminant
+import NLS.ZakharovShabat.ClassicalBoundaryMultiplicity
+import NLS.ZakharovShabat.ClassicalDiscriminantMultiplicity

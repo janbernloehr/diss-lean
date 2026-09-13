@@ -11804,3 +11804,111 @@ example (r k : ℤ) :
 
 end
 end BoundaryFormalOrderChecks
+
+namespace AnalyticDeterminantChecks
+open Complex PowerSeries Matrix NLS.ComplexAnalysis
+open scoped Matrix.Norms.Elementwise
+noncomputable section
+
+private def cancellationMatrix (z : ℂ) : Matrix (Fin 2) (Fin 2) ℂ :=
+  !![1+z,1;1+z-z^3,1]
+
+private theorem cancellationMatrix_analytic (z : ℂ) : AnalyticAt ℂ cancellationMatrix z := by
+  apply AnalyticAt.pi
+  intro i
+  apply AnalyticAt.pi
+  intro j
+  fin_cases i <;> fin_cases j <;> dsimp [cancellationMatrix] <;> fun_prop
+
+private theorem cancellationMatrix_det : (fun z => (cancellationMatrix z).det) = fun z => z^3 := by
+  funext z
+  simp [cancellationMatrix,Matrix.det_fin_two_of]
+
+-- Every entry is a unit at zero, but cancellation gives determinant order three.
+-- The recovered formal determinant and eventual matrix nullity detect that order.
+example : ∃ p : FormalMultilinearSeries ℂ ℂ (Matrix (Fin 2) (Fin 2) ℂ),
+    HasFPowerSeriesAt cancellationMatrix p 0 ∧ (matrixFormalTaylor p).det.order = 3 ∧
+      ∀ᶠ N : ℕ in Filter.atTop,
+        (Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap (matrixFormalTaylor p) N)) : ℕ∞) = 3 := by
+  obtain ⟨p,hp⟩ := cancellationMatrix_analytic 0
+  have ho : analyticOrderAt (fun z => (cancellationMatrix z).det) 0 = 3 := by
+    rw [cancellationMatrix_det]
+    simpa using! analyticOrderAt_pow (n := 3) (analyticAt_id (𝕜 := ℂ) (z := 0))
+  refine ⟨p,hp,(order_det_matrixFormalTaylor hp).trans ho,?_⟩
+  simpa only [ho] using eventually_matrixTaylorNullity_eq_analytic_det_order hp (by rw [ho]; simp)
+
+-- The extracted third determinant coefficient is exactly one, including its factorial normalization.
+example {p : FormalMultilinearSeries ℂ ℂ (Matrix (Fin 2) (Fin 2) ℂ)}
+    (hp : HasFPowerSeriesAt cancellationMatrix p 0) :
+    PowerSeries.coeff 3 (matrixFormalTaylor p).det = 1 := by
+  obtain ⟨s,hs,he⟩ := exists_hasFPowerSeriesAt_det_matrixFormalTaylor hp
+  have h := factorial_mul_coeff_scalarFormalTaylor hs 3
+  rw [cancellationMatrix_det,iteratedDeriv_pow] at h
+  norm_num at h
+  rw [← he]
+  simpa only [coeff_scalarFormalTaylor,FormalMultilinearSeries.coeff] using! h
+
+-- Equal analytic rows make the determinant identically zero and leave at least N free coefficients.
+example : ∃ p : FormalMultilinearSeries ℂ ℂ (Matrix (Fin 2) (Fin 2) ℂ),
+    HasFPowerSeriesAt (fun z => !![exp z,1+z;exp z,1+z]) p 0 ∧
+      ∀ N : ℕ, N ≤ Module.finrank ℂ (LinearMap.ker (matrixTaylorJetMap (matrixFormalTaylor p) N)) := by
+  have ha : AnalyticAt ℂ (fun z : ℂ => ( !![exp z,1+z;exp z,1+z] : Matrix (Fin 2) (Fin 2) ℂ)) 0 := by
+    apply AnalyticAt.pi
+    intro i
+    apply AnalyticAt.pi
+    intro j
+    fin_cases i <;> fin_cases j <;> dsimp <;> fun_prop
+  obtain ⟨p,hp⟩ := ha
+  have ho : (matrixFormalTaylor p).det.order = ⊤ := by
+    rw [order_det_matrixFormalTaylor hp]
+    apply analyticOrderAt_eq_top.mpr
+    filter_upwards [] with z
+    simp [Matrix.det_fin_two_of,mul_comm]
+  exact ⟨p,hp,fun N => le_finrank_matrixTaylorKernel_of_det_eq_zero _ (PowerSeries.order_eq_top.mp ho) N⟩
+
+end
+end AnalyticDeterminantChecks
+
+namespace ClassicalMultiplicityChecks
+open Set Complex MeasureTheory NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+open scoped Matrix.Norms.Elementwise
+noncomputable section
+
+private theorem free_representative :
+    physicalBase (0 : PairSpace 2) =ᵐ[volume.restrict (Ioc 0 1)] extend (0 : Curve (ℂ × ℂ)) := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num)) physicalBase_zero
+  filter_upwards [h] with t ht
+  simpa only [NLS.LinearVolterra.extend,ContinuousMap.zero_apply,Pi.zero_apply] using! ht
+
+-- The analytic endpoint determinant has order two in the matching parity and zero in the other.
+example (r k : ℤ) :
+    analyticOrderAt (fun z => (classicalMonodromy 0 z-wave r 1 • 1).det) ((Real.pi : ℂ)*k) =
+      (if k % 2 = r % 2 then 2 else 0 : ℕ) := by
+  rw [analyticOrderAt_classicalBoundaryDeterminant 0 (Submodule.zero_mem _) 0 free_representative,
+    parityAlgebraicMultiplicity_zero]
+
+-- Negative Fourier indices obey the same signed parity conventions.
+example : analyticOrderAt (fun z => classicalDiscriminant 0 z-2) ((Real.pi : ℂ)*(-2 : ℤ)) = 2 := by
+  rw [analyticOrderAt_classicalDiscriminant_sub_two 0 (Submodule.zero_mem _) 0 free_representative,
+    parityAlgebraicMultiplicity_zero]
+  norm_num
+
+example : analyticOrderAt (fun z => classicalDiscriminant 0 z+2) ((Real.pi : ℂ)*(-3 : ℤ)) = 2 := by
+  rw [analyticOrderAt_classicalDiscriminant_add_two 0 (Submodule.zero_mem _) 0 free_representative,
+    parityAlgebraicMultiplicity_zero]
+  norm_num
+
+-- The full characteristic function has multiplicity two at every free Fourier point.
+example (k : ℤ) : analyticOrderAt (fun z => (classicalDiscriminant 0 z)^2-4) ((Real.pi : ℂ)*k) = 2 := by
+  rw [analyticOrderAt_classicalDiscriminant_sq_sub_four 0 (Submodule.zero_mem _) 0 free_representative,
+    periodicAlgebraicMultiplicity_zero]
+  norm_num
+
+-- The canonical product and classical characteristic function agree in order even at a collision.
+example : analyticOrderAt (canonicalPeriodicProduct (by simp) (0 : PairSpace 2)) 0 =
+    analyticOrderAt (fun z => (classicalDiscriminant 0 z)^2-4) 0 :=
+  analyticOrderAt_canonicalPeriodic_eq_classicalDiscriminant_sq_sub_four 0 (Submodule.zero_mem _) 0 free_representative 0
+
+end
+end ClassicalMultiplicityChecks

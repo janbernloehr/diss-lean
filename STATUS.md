@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 522 modules and 3850 named public theorems. All compile on the
+The library has 526 modules and 3872 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.ScalarTaylorAlgebra` | Exact factorial coefficient formula, additive and subtractive formal extraction, and product convolution for convergent scalar Taylor series |
+| `NLS.ComplexAnalysis.MatrixTaylorDeterminant` | Continuous entry extraction, convergent scalar determinant series, equality of formal and analytic determinant orders, and eventual analytic determinant nullity |
+| `NLS.ZakharovShabat.ClassicalBoundaryMultiplicity` | Actual formal/analytic boundary determinant compatibility, exact original parity multiplicities, finite orders, and eventual analytic boundary nullities |
+| `NLS.ZakharovShabat.ClassicalDiscriminantMultiplicity` | Original multiplicities for `Δ−2`, `Δ+2`, and `Δ²−4`, with equality of all canonical parity/full product vanishing orders |
 | `NLS.ComplexAnalysis.MatrixTaylorMultiplication` | Formal matrix multiplication acts by finite Taylor composition; identity action and bijectivity for formal units |
 | `NLS.ComplexAnalysis.MatrixTaylorEquivalence` | Left-unit kernel equality, right-unit kernel equivalence, invariance of all finite nullities and formal determinant order |
 | `NLS.ComplexAnalysis.FormalMatrixReduction` | Least-valuation dividing entry, permutation to a pivot, unit triangular elimination, and general two-by-two diagonal reduction |
@@ -4585,8 +4589,9 @@ unit interval, the classical characteristic determinant for each parity vanishes
 exactly when its original parity algebraic multiplicity is positive. Intrinsic
 even and odd product zero sets are exactly the trace-`2` and trace-`-2` sets.
 The full product and the classical trace squared minus four have identical
-zero sets. Equality of classical determinant orders with original algebraic
-multiplicities, entire normalization, and finite-p extension remain open.
+zero sets. Equality of determinant orders with original algebraic
+multiplicities is now established by the Taylor comparison below; entire
+normalization and finite-p extension remain open.
 
 ## Section 8: inhomogeneous equations and original root-chain extension
 
@@ -4619,9 +4624,10 @@ is therefore equivalent to the two-coordinate boundary equation. This criterion
 also extends every prescribed finite original root chain by one step, retaining
 the original recursive domain requirements.
 
-This supplies the inhomogeneous chain step needed for algebraic multiplicity
-comparison. Equality of classical determinant orders with the full original
-root-space dimensions, entire normalization, and finite-p extension remain open.
+This supplies the inhomogeneous chain step used in the algebraic multiplicity
+comparison below. Classical determinant orders now equal the corresponding
+original root-space dimensions; entire normalization and finite-p extension
+remain open.
 
 ## Section 8: spectral Taylor coefficients from classical chains
 
@@ -4647,8 +4653,9 @@ series at the endpoint. Their derivatives are the same factorial-scaled signed
 chain matrices. For every multiplier `σ`, the boundary series has constant
 coefficient `M(z)-σI`; all positive coefficients are the signed chain endpoints.
 These formulas supply the coefficients for the finite-jet boundary
-comparison below. Equality of classical determinant orders with original algebraic
-multiplicities, entire normalization, and finite-p extension remain open.
+comparison below, which now identifies classical determinant orders with
+original algebraic multiplicities. Entire normalization and finite-p extension
+remain open.
 
 ## Section 8: finite boundary Taylor kernels and original chains
 
@@ -4766,19 +4773,51 @@ order, and eventually equal it. A zero determinant forces nullity at least
 to the actual formal boundary matrix. Its determinant is nonzero, and its
 order equals the original parity algebraic multiplicity, by the two proven
 eventual nullity identities. No formal nonsingularity assumption is needed.
-Identification of this formal determinant with the analytic determinant
-Taylor series remains open; analytic determinant orders and normalized
-infinite-product identification are not yet concluded.
+The analytic determinant identification and order comparison are now proved
+below. Normalized infinite-product identification remains open.
 
 The new examples check a coupled Jordan-type formal matrix with nullities
 one and two at the first two lengths, an off-diagonal pivot of positive order,
 singular nullity growth, empty jets, and the free actual formal determinant
 order at arbitrary positive or negative Fourier indices.
 
+## Section 8: analytic determinant orders and original multiplicities
+
+`ScalarTaylorAlgebra` identifies each ordinary coefficient with its spectral
+derivative divided by the factorial. The iterated product rule and the
+binomial factorial identity prove that product Taylor coefficients are exactly
+formal convolution. Addition and subtraction commute with extraction directly.
+
+`MatrixTaylorDeterminant` extracts every entry through a continuous linear map.
+The two diagonal-entry products and their difference produce a convergent
+scalar series for the determinant whose formal extraction equals the formal
+matrix determinant. Their orders agree, including infinite order. When the
+analytic determinant has finite order, finite matrix nullities stabilize at it.
+
+`ClassicalBoundaryMultiplicity` identifies the actual boundary formal matrix
+with this general extraction. Formal and analytic determinant orders agree
+for every continuous potential and multiplier. For even Hilbert potentials
+represented continuously on the unit interval, the analytic parity determinant
+order equals the original parity algebraic multiplicity at every spectral
+parameter. The orders are finite and are the eventual boundary nullities.
+
+`ClassicalDiscriminantMultiplicity` converts these characteristic determinants
+to shifted trace functions. The orders of `Δ−2` and `Δ+2` are the original
+even and odd multiplicities; the order of `Δ²−4` is their sum, the full
+periodic algebraic multiplicity. Canonical even, odd, and full products agree
+with these classical functions in all vanishing orders. Equal orders alone
+do not identify their entire-function normalization; that step and finite-p
+extension remain open.
+
+Examples check a matrix whose unit entries cancel to give determinant order
+three, its exact third Taylor coefficient, identical analytic rows and their
+unbounded nullities, signed free parity orders at negative Fourier indices,
+and the full free characteristic multiplicity at every Fourier point.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7880 declarations under `NLS`, including generated
+axioms. The current audit covers 7923 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5874,12 +5913,12 @@ formal matrix representation.
    Scalar Taylor kernels now recover the exact analytic vanishing order.
    General formal matrix reduction preserves all finite nullities, and the
    actual boundary formal determinant is nonzero with order equal to original
-   parity algebraic multiplicity. Next prove analytic determinant Taylor
-   compatibility.
-   Equality of classical and original algebraic multiplicities
-   remains open. The classical boundary determinants have the required compatibility, but
-   their equality with the infinite spectral products and extension to finite-p
-   potentials remain open.
+   parity algebraic multiplicity. Taylor extraction now commutes with the
+   analytic determinant. Classical analytic boundary determinant orders equal
+   original parity multiplicities, and the shifted and full discriminants
+   have exactly the orders of their canonical spectral products. Next prove
+   their exact entire-function normalization and extension to finite-p
+   potentials.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

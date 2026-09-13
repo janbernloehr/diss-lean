@@ -1524,10 +1524,17 @@ singular formal matrix has nullity at least `N`; the original root-dimension
 bound therefore proves that each actual boundary formal determinant is
 nonzero. Its order now equals the original parity algebraic multiplicity.
 
-Next, identify this formal determinant with the analytic determinant Taylor
-series. This will identify classical analytic determinant orders with the
-original algebraic multiplicities. Then prove the normalized entire-product
-identity and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
+Scalar Taylor extraction now respects multiplication, by the iterated
+product rule and its factorial coefficients. Consequently, forming the
+formal determinant commutes with the convergent matrix Taylor expansion.
+Classical analytic boundary determinant orders now equal original parity
+algebraic multiplicities. The shifted traces `Δ−2`, `Δ+2` and the full
+characteristic function `Δ²−4` have the exact original multiplicities,
+and hence the same vanishing orders as the intrinsic canonical products.
+
+Next, prove the normalized entire-product identity, using these equal orders
+together with growth and normalization, and use potential approximation to
+prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);

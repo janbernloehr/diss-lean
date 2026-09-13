@@ -772,8 +772,11 @@ installation is absent. No shell startup files are modified.
   two-by-two formal matrices reduce to diagonal form through invertible operations
   preserving every finite nullity and determinant order. The actual boundary
   formal determinant is nonzero and its order equals the original parity
-  algebraic multiplicity. Identifying it with the analytic determinant Taylor
-  series and the normalized infinite-product identification needed for
+  algebraic multiplicity. Formal extraction now commutes with the analytic
+  determinant Taylor series, proving equality of classical analytic determinant
+  orders and original multiplicities. The functions `Δ−2`, `Δ+2`, and `Δ²−4`
+  have the same vanishing orders as the canonical even, odd, and full spectral
+  products. Exact entire-function normalization and the finite-p identity
   `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
