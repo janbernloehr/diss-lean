@@ -11111,3 +11111,98 @@ example (u : ℝ → ℝ) (hu : AbsolutelyContinuousOnInterval u 0 1)
 
 end
 end PhysicalParityMonodromyChecks
+
+namespace ClassicalParitySpectrumChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.LinearVolterra Set Complex MeasureTheory
+noncomputable section
+
+-- Signed extension admits a corner at the join; it does not require a globally C¹ periodic extension.
+example : ∃ a : ScalarDomain 2,
+    a.val 0 = 0 ∧ a.val (-2) = 0 ∧
+    sobolevSynthesis (by simp) a ((1 : ℝ) : AddCircle (2 : ℝ)) = -1 ∧
+    sobolevSynthesis (by simp) a ((3/2 : ℝ) : AddCircle (2 : ℝ)) = 0 ∧
+    sobolevSynthesis (by simp) a ((2 : ℝ) : AddCircle (2 : ℝ)) = 1 := by
+  have hw : wave (-3) 1 = -1 := by simpa using wave_odd_at_one (-2)
+  obtain ⟨a,ha,hs⟩ := exists_parity_sobolev_extension (-3)
+    (f := fun x : ℝ => 1-2*(x : ℂ))
+    (contDiff_const.sub (contDiff_const.mul (show ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)) from Complex.ofRealCLM.contDiff))) (by norm_num [hw])
+  refine ⟨a,ha 0 (by norm_num),ha (-2) (by norm_num),?_,?_,?_⟩
+  · rw [hs 1 (by norm_num)]
+    norm_num [signedDouble]
+  · rw [hs (3/2) (by constructor <;> norm_num),hw]
+    norm_num [signedDouble]
+  · rw [hs 2 (by norm_num),hw]
+    norm_num [signedDouble]
+
+private def coupledDomain : Domain 2 := (scalarMode 0 1,scalarMode 0 1)
+private def coupledPotential : PairSpace 2 := domainInclusion coupledDomain
+private def coupledCurve : Curve (ℂ × ℂ) where
+  toFun t := physicalDomain coupledDomain t
+  continuous_toFun := (continuous_physicalDomain coupledDomain).comp continuous_subtype_val
+
+private theorem coupled_representative :
+    physicalBase coupledPotential =ᵐ[volume.restrict (Ioc 0 1)] LinearVolterra.extend coupledCurve := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num))
+    (physicalBase_domainInclusion coupledDomain)
+  filter_upwards [h,ae_restrict_mem measurableSet_Ioc] with t ht hmem
+  change physicalBase (domainInclusion coupledDomain) t = _
+  rw [ht]
+  simp [LinearVolterra.extend,projIcc_of_mem _ (Ioc_subset_Icc_self hmem),coupledCurve]
+
+private theorem coupled_even : coupledPotential ∈ pairParitySubspace 0 := by
+  apply (mem_domainParitySubspace 0 coupledDomain).mp
+  intro n hn
+  have hne : n ≠ 0 := by omega
+  simp [coupledDomain,scalarMode_apply,hne]
+
+private theorem coupled_solution (t : Icc (0 : ℝ) 1) :
+    classicalSolution coupledCurve 1 (1,1) t = (1,1) := by
+  have h := classicalSolution_unique coupledCurve 1 (1,1) (fun _ => (1,1))
+    continuous_const.continuousOn rfl (by
+      intro s _
+      simp only [classicalODECoefficient_apply,coupledCurve,ContinuousMap.coe_mk,physicalDomain,
+        coupledDomain,sobolevSynthesis_scalarMode,wave_zero,mul_one]
+      convert! hasDerivAt_const s.val ((1,1) : ℂ × ℂ) using 1; simp)
+  exact (h t.property).symm
+
+-- Both off-diagonal entries are nonzero: the classical solution at z=1 produces an original eigenvector.
+example : ∃ a : Domain 2, a ≠ 0 ∧ a ∈ domainParitySubspace 0 ∧
+    spectralPencil (by simp) coupledPotential 1 a = 0 := by
+  apply exists_parity_eigenvector_of_classicalSolution coupledPotential coupled_even coupledCurve
+    coupled_representative 1 0 (1,1) (by simp)
+  simpa only [wave_zero,one_smul] using coupled_solution ⟨1,by constructor <;> norm_num⟩
+
+-- The same coupled classical root determines both intrinsic parity factors at a nonfree spectral parameter.
+example : canonicalParityProduct (by simp) coupledPotential 0 1 = 0 ∧
+    canonicalParityProduct (by simp) coupledPotential 1 1 ≠ 0 := by
+  have hd : classicalDiscriminant coupledCurve 1 = 2 := by
+    apply (classicalDiscriminant_eq_two_iff coupledCurve 1).mpr
+    exact ⟨(1,1),by simp,coupled_solution ⟨1,by constructor <;> norm_num⟩⟩
+  rw [canonicalEven_zero_iff_classicalDiscriminant_eq_two coupledPotential coupled_even
+    coupledCurve coupled_representative 1]
+  rw [ne_eq,canonicalOdd_zero_iff_classicalDiscriminant_eq_neg_two coupledPotential coupled_even
+    coupledCurve coupled_representative 1,hd]
+  norm_num
+
+-- A negative odd free monodromy root reconstructs an original odd weighted-domain eigenvector.
+example : ∃ a : Domain 2, a ≠ 0 ∧ a ∈ domainParitySubspace (-3) ∧
+    spectralPencil (by simp) (0 : PairSpace 2) ((Real.pi : ℂ)*(-3 : ℤ)) a = 0 := by
+  have hrep : physicalBase (0 : PairSpace 2) =ᵐ[volume.restrict (Ioc 0 1)]
+      LinearVolterra.extend (0 : Curve (ℂ × ℂ)) := by
+    have h := ae_restrict_of_ae_restrict_of_subset
+      (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num)) physicalBase_zero
+    filter_upwards [h] with x hx
+    simpa only [LinearVolterra.extend,ContinuousMap.zero_apply,Pi.zero_apply] using! hx
+  have hd : classicalDiscriminant (0 : Curve (ℂ × ℂ)) ((Real.pi : ℂ)*(-3 : ℤ)) = -2 := by
+    rw [classicalDiscriminant_free]
+    unfold freeDiscriminant
+    rw [mul_comm (Real.pi : ℂ),← Complex.ofReal_intCast,← Complex.ofReal_mul,← Complex.ofReal_cos,Real.cos_int_mul_pi]
+    norm_num
+  obtain ⟨v,hv,he⟩ := (classicalDiscriminant_eq_neg_two_iff _ _).mp hd
+  apply exists_parity_eigenvector_of_classicalSolution 0 (Submodule.zero_mem _) 0 hrep _ (-3) v hv
+  have hw : wave (-3) 1 = -1 := by simpa using wave_odd_at_one (-2)
+  simpa only [hw,neg_one_smul] using he
+
+end
+end ClassicalParitySpectrumChecks

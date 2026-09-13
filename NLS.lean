@@ -440,3 +440,7 @@ import NLS.FunctionalAnalysis.LinearVolterraRegularity
 import NLS.ZakharovShabat.PhysicalParity
 import NLS.ZakharovShabat.PhysicalParityMonodromy
 import NLS.ZakharovShabat.CanonicalParityClassicalZeros
+import NLS.Fourier.SignedSobolevExtension
+import NLS.ZakharovShabat.PhysicalBaseParity
+import NLS.ZakharovShabat.ClassicalParityEigenvectors
+import NLS.ZakharovShabat.CanonicalParityClassicalSpectrum

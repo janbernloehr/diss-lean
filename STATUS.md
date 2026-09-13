@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 492 modules and 3648 named public theorems. All compile on the
+The library has 496 modules and 3675 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.Fourier.SignedSobolevExtension` | Signed doubling, absolute continuity and square-integrable derivatives across the join, exact Fourier integral formula, and weighted parity coordinates for classical endpoint data |
+| `NLS.ZakharovShabat.PhysicalBaseParity` | Almost-everywhere Hilbert parity translation, unit-interval uniqueness for original base vectors, and checking the original parity eigen-equation on one unit interval |
+| `NLS.ZakharovShabat.ClassicalParityEigenvectors` | Physical C¹ regularity, signed extension of classical solutions to the original parity domain, and nonzero original eigenvectors from classical endpoint multipliers |
+| `NLS.ZakharovShabat.CanonicalParityClassicalSpectrum` | Exact original parity spectral-set and intrinsic product-zero equivalence with classical monodromy roots for continuously represented even Hilbert potentials |
 | `NLS.FunctionalAnalysis.LinearVolterraRegularity` | Absolutely continuous almost-everywhere ODE solutions equal the constructed classical solution and satisfy the ODE at every interior point |
 | `NLS.ZakharovShabat.PhysicalParity` | Pointwise unit-translation law for Fourier parity, injective unit-interval restriction, and continuous absolutely continuous physical Hilbert domain vectors |
 | `NLS.ZakharovShabat.PhysicalParityMonodromy` | Original Hilbert eigenvectors agree with classical solutions; nonzero parity eigenvectors give nonzero initial data and the actual monodromy endpoint multiplier |
@@ -4518,14 +4522,50 @@ trace `2`, and an odd-product zero gives trace `-2`. Thus the two intrinsic
 factors cannot vanish together. Exact intrinsic full-product factorization also
 makes every full-product zero a zero of the classical trace squared minus four.
 
-These are forward zero implications. The reverse spectral bridge, agreement
-of classical and original algebraic multiplicities, normalized entire-product
-identification, and extension to finite-p distributional potentials remain open.
+These are forward zero implications. The reverse spectral bridge is proved
+in the next milestone. Agreement of classical and original algebraic
+multiplicities, normalized entire-product identification, and extension to
+finite-p distributional potentials remain open.
+
+## Section 8: reverse parity bridge and exact spectral sets
+
+`SignedSobolevExtension` repeats a scalar function from `[0,1]` to `[0,2]` with
+a prescribed sign. For continuously differentiable original data with matching
+signed endpoints, its derivative may jump at the join, but the extension is
+absolutely continuous with square-integrable derivative. The normalized Fourier
+integral is exactly `(1 + ε wave(-n,1))` times the original half coefficient.
+Choosing the phase for an integer parity label annihilates all opposite-parity
+coefficients, including negative indices. The periodic Sobolev lift supplies
+original weighted coefficients that reconstruct the entire doubled interval.
+
+`PhysicalBaseParity` proves the almost-everywhere unit-translation multiplier
+for arbitrary original Hilbert parity base vectors. Translation on physical
+circle L² acts by the exact Fourier phase. If such a vector vanishes on the
+unit interval, translation makes it vanish on the second half as well, so it
+is zero. For even potentials, the original operator preserves parity; this
+lets the original coefficient eigen-equation be checked solely on `(0,1]`.
+
+`ClassicalParityEigenvectors` proves physical C¹ regularity of the constructed
+classical solution. Signed Sobolev extension of its components gives an original
+parity-domain vector agreeing on the closed unit interval. Their actual
+derivatives agree throughout the interior. The continuous representative of
+the original potential therefore transfers the original physical equation,
+and the preceding localization gives the full coefficient eigen-equation.
+Nonzero classical initial data yield a nonzero original domain vector.
+
+`CanonicalParityClassicalSpectrum` combines the forward and reverse bridges.
+For even-supported Hilbert potentials with a continuous representative on the
+unit interval, the classical characteristic determinant for each parity vanishes
+exactly when its original parity algebraic multiplicity is positive. Intrinsic
+even and odd product zero sets are exactly the trace-`2` and trace-`-2` sets.
+The full product and the classical trace squared minus four have identical
+zero sets. Equality of classical determinant orders with original algebraic
+multiplicities, entire normalization, and finite-p extension remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7442 declarations under `NLS`, including generated
+axioms. The current audit covers 7473 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5546,6 +5586,14 @@ product zero, and a nonzero even factor. A separate check uses an absolutely
 continuous almost-everywhere scalar solution with coefficient 100 to derive
 pointwise zero-initial-data uniqueness.
 
+Reverse-bridge checks reconstruct a signed linear function whose extension has
+a derivative jump at the join, with zero coefficients at opposite-parity indices
+and exact values on both halves. A potential with both off-diagonal entries
+one gives a classical solution at spectral parameter one; the reverse bridge
+produces an original even eigenvector and determines the two intrinsic parity
+factors there. A negative odd free classical root also reconstructs a nonzero
+original odd weighted-domain eigenvector.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5566,7 +5614,9 @@ pointwise zero-initial-data uniqueness.
    on the continuous-potential Banach space. Original Hilbert parity eigenvectors
    now give classical monodromy roots for continuously represented potentials;
    intrinsic even/odd zeros force trace values `2`/`-2` and cannot coincide.
-   The reverse bridge and equality of algebraic multiplicities remain open.
+   Signed Sobolev extension now proves the reverse bridge and exact equality
+   of both parity spectral sets with the classical monodromy root sets.
+   Equality of classical and original algebraic multiplicities remains open.
    The classical boundary determinants have the required compatibility, but
    their equality with the infinite spectral products and extension to finite-p
    potentials remain open.

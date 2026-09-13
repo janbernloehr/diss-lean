@@ -1469,9 +1469,17 @@ Nonzero eigenvectors have nonzero initial values, so intrinsic even and odd
 product zeros force trace values `2` and `-2`. Their zero sets are disjoint;
 full-product zeros force zeros of the classical discriminant squared minus four.
 
-Next, prove the reverse spectral bridge and identify classical endpoint
-determinants with the original coefficient spectral products, retaining
-algebraic multiplicities and entire normalization,
+The reverse spectral bridge is now proved under the same Hilbert and continuous
+representative assumptions. Signed repetition of a classical endpoint solution
+has weighted Fourier coordinates with the correct parity. An almost-everywhere
+parity translation identity makes unit-interval vanishing determine an original
+base vector, so the original eigen-equation can be checked on that interval.
+The extension therefore gives a nonzero original parity eigenvector. Intrinsic
+even and odd product zeros are now equivalent to trace values `2` and `-2`;
+the full-product zero set equals the trace-squared-minus-four zero set.
+
+Next, identify the classical determinant orders with original algebraic
+multiplicities and prove the normalized entire-product identity,
 and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.

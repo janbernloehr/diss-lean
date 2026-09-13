@@ -747,9 +747,13 @@ installation is absent. No shell startup files are modified.
   parity eigenvectors now give nonzero classical solutions whenever the
   potential has a continuous representative on the unit interval. Intrinsic
   even and odd product zeros therefore force trace values `2` and `-2`, and
-  the two factors have disjoint zero sets. The reverse implication, equality
-  of algebraic multiplicities with the classical determinants, and normalized
-  infinite-product identification needed for `f+2=g−2` remain open.
+  the two factors have disjoint zero sets. The reverse bridge is now proved
+  by signed Sobolev extension: every nonzero classical periodic or antiperiodic
+  solution gives an original parity eigenvector. Thus both intrinsic parity
+  zero sets equal the corresponding classical trace sets, and the full product
+  has exactly the zeros of the trace squared minus four. Equality of algebraic
+  multiplicities with the classical determinants and normalized infinite-product
+  identification needed for `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
