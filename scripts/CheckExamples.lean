@@ -8991,3 +8991,81 @@ example (u : IntervalPairL2) :
   exact ⟨N,hN,fun b => ⟨(hb u hu b).1,(hb u hu b).2.1⟩⟩
 
 end MidpointBoundaryChecks
+
+namespace AuxiliarySpectrumChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem auxiliaryHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem auxiliaryHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨auxiliaryHalfAboveOne.le⟩
+
+-- The phase map keeps the physical signed modes and rotates exactly the positive component.
+example : (auxiliaryPhase (ScalarDomain 3) (dirichletMode (-3))).1.val 3 = 1 ∧
+    (auxiliaryPhase (ScalarDomain 3) (dirichletMode (-3))).2.val (-3) = Complex.I ∧
+    (auxiliaryPhase (ScalarDomain 3) (neumannMode (-3))).1.val 3 = -1 := by
+  norm_num [dirichletMode, neumannMode, positiveMode, negativeMode]
+
+-- Both auxiliary spaces stay complementary at negative fractional Sobolev regularity.
+example : IsCompl (BoundaryCondition.auxiliaryWeightedSpace (p := 3/2) .dirichlet (-3/2))
+    (BoundaryCondition.auxiliaryWeightedSpace (p := 3/2) .neumann (-3/2)) :=
+  BoundaryCondition.isCompl_auxiliaryWeightedSpaces _
+
+example (φ : PairSpace (3/2)) : ‖auxiliaryPotential φ‖ = ‖φ‖ := auxiliaryPotential.norm_map φ
+
+private def imaginarySpectralPotential : PairSpace 3 := (lp.single 3 0 1,-lp.single 3 0 1)
+private theorem imaginarySpectralPotential_neumann : imaginarySpectralPotential ∈ neumannSubspace := by
+  simp [mem_neumannSubspace, imaginarySpectralPotential, lp.single_apply, Pi.single_apply]
+
+-- A nonzero Neumann-reflected constant potential has an actual nonreal auxiliary D eigenvalue i.
+private theorem imaginary_auxiliary_equation :
+    operator (by norm_num) imaginarySpectralPotential (auxiliaryPhase (ScalarDomain 3) (dirichletMode 0)) =
+      Complex.I • domainInclusion (auxiliaryPhase (ScalarDomain 3) (dirichletMode 0)) := by
+  apply Prod.ext <;> ext n <;> by_cases hn : n = 0
+  all_goals simp [operator_fst_apply, operator_snd_apply, imaginarySpectralPotential, dirichletMode,
+    positiveMode, negativeMode, lp.single_apply, Pi.single_apply, sub_eq_zero, hn]
+
+example : Complex.I ∈ BoundaryCondition.auxiliarySpectrum .dirichlet (by norm_num)
+    imaginarySpectralPotential imaginarySpectralPotential_neumann := by
+  apply (BoundaryCondition.mem_auxiliarySpectrum_iff_exists_eigenvector .dirichlet (by norm_num)
+    imaginarySpectralPotential imaginarySpectralPotential_neumann Complex.I).mpr
+  refine ⟨auxiliaryPhase (ScalarDomain 3) (dirichletMode 0),⟨dirichletMode 0,dirichletMode_mem 0,rfl⟩,?_,imaginary_auxiliary_equation⟩
+  apply (auxiliaryPhase (ScalarDomain 3)).map_ne_zero_iff.mpr
+  intro h
+  apply domainInclusion_dirichletMode_ne_zero (p := 3) 0
+  rw [h, map_zero]
+
+-- The full operator conjugation works below exponent two and with both nonzero input components.
+example (φ : PairSpace (3/2)) (f : Domain (3/2)) :
+    operator auxiliaryHalfFinite φ (f.1,Complex.I • f.2) =
+      auxiliaryPhase (Coeff (3/2)) (operator auxiliaryHalfFinite (Complex.I • φ.1,-Complex.I • φ.2) f) :=
+  operator_auxiliaryPhase auxiliaryHalfFinite φ f
+
+-- Both actual auxiliary spectra are discrete for arbitrary Neumann-reflected potentials above two.
+example (φ : PairSpace 3) (hφ : φ ∈ neumannSubspace) (b : BoundaryCondition) :
+    DiscreteTopology (b.auxiliarySpectrum (by norm_num) φ hφ) :=
+  BoundaryCondition.discreteTopology_auxiliarySpectrum b (by norm_num) φ hφ
+
+-- The starred source branches are actual unique high-disc eigenvalues and have full ℓp displacements.
+example (φ : CoeffPair (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ b : BoundaryCondition,
+      Memℓp (fun n : ℤ => auxiliaryPeriodOneEigenvalue auxiliaryHalfFinite auxiliaryHalfAboveOne b φ n-(Real.pi : ℂ)*n) (3/2) ∧
+      (∀ n : ℤ, N₀ ≤ n.natAbs →
+        b.auxiliarySpectrum auxiliaryHalfFinite (auxiliaryPeriodOnePotential auxiliaryHalfFinite auxiliaryHalfAboveOne φ).val
+          (auxiliaryPeriodOnePotential auxiliaryHalfFinite auxiliaryHalfAboveOne φ).property ∩
+          Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) = {auxiliaryPeriodOneEigenvalue auxiliaryHalfFinite auxiliaryHalfAboveOne b φ n}) ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        Summable (spectralDisplacementPowerTail (3/2) N (auxiliaryPeriodOneEigenvalue auxiliaryHalfFinite auxiliaryHalfAboveOne b φ)) ∧
+        (∑' n : ℤ, spectralDisplacementPowerTail (3/2) N (auxiliaryPeriodOneEigenvalue auxiliaryHalfFinite auxiliaryHalfAboveOne b φ) n) ≤
+          rootDisplacementBudget SpectralWeight.one (unitBaseEquiv.symm
+            (auxiliaryPotential (auxiliaryPeriodOnePotential auxiliaryHalfFinite auxiliaryHalfAboveOne φ).val)) N := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_auxiliaryPeriodOneAsymptotics auxiliaryHalfFinite auxiliaryHalfAboveOne φ
+  exact ⟨N,hN,hb φ hφ⟩
+
+example (b : BoundaryCondition) : auxiliaryPeriodOneEigenvalue (p := 3) (by norm_num) (by norm_num) b 0 (-11) =
+    (Real.pi : ℂ)*(-11 : ℤ) := auxiliaryPeriodOneEigenvalue_zero _ _ _ _
+
+end AuxiliarySpectrumChecks

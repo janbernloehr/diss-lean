@@ -1177,12 +1177,32 @@ interval extension also gives the actual original `L²` boundary eigenvalues
 square-summable displacements, together with their unique high-disc spectral
 characterization on the same neighborhood.
 
-Next, implement the auxiliary starred boundary realization in Section 5 and
-complete its Corollary 6.2 consequences. The phase change `G(f₋,f₊)=(f₋,if₊)`
-transports ordinary boundary spaces to the auxiliary ones; conjugating the
-operator changes the potential to `(iφ₋,-iφ₊)`, which is Dirichlet-reflected
-when the original potential is Neumann-reflected. Prove these identities and
-the spectral/physical transfers rather than introducing auxiliary eigenvalues
-by an unsupported analogy. Then continue to the Chapter 2 discriminant,
-product, and action-coordinate prerequisites. The printed general-`p`
-central-height constant remains a separate open item.
+The auxiliary coefficient realization is now proved. `AuxiliaryPhase`
+constructs `G(f₋,f₊)=(f₋,if₊)` as a linear isometry in both base and domain
+norms, and verifies the exact operator and pencil conjugation with potential
+`(iφ₋,-iφ₊)`. Neumann-reflected potentials become Dirichlet-reflected ones.
+The phase images give the auxiliary closed complementary spaces, their raw
+`±i` reflection conditions, and the same decomposition at all real Sobolev
+regularities. Domain inclusion preserves the auxiliary boundary condition.
+
+`AuxiliarySpectrum` defines the actual restricted auxiliary operator and
+pencil; its resolvent set is actual bijectivity. Restricted-pencil conjugation
+then proves equality with the ordinary spectrum at the transformed potential.
+The spectra are closed, discrete, finite in bounded sets, and every spectral
+point has a nonzero eigenvector in the actual auxiliary domain.
+
+The source Neumann potential extension feeds both auxiliary branches.
+`exists_uniform_auxiliaryPeriodOneAsymptotics` supplies both starred source
+coefficient branches with global `ℓp` displacement membership, unique actual
+high-disc spectral identification, and every larger corrected power tail on
+one open convex potential neighborhood. Together with the ordinary branches,
+this proves all four coefficient displacement conclusions in Corollary 6.2.
+The budgets use the actual reflected/conjugated potential tails.
+
+Next, transport the auxiliary generalized root spaces and algebraic
+multiplicities, proving the remaining counted assertions of Proposition 5.2,
+and identify the phase-transformed coefficient domains with the original
+physical endpoint conditions in (1.10). Transfer the physical starred
+boundary eigenvalues and their square-summable displacements. Then continue
+to the Chapter 2 discriminant, product, and action-coordinate prerequisites.
+The printed general-`p` central-height constant remains a separate open item.

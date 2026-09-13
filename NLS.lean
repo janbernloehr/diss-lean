@@ -325,3 +325,7 @@ import NLS.ZakharovShabat.PeriodicMidpointSummability
 import NLS.ZakharovShabat.BoundaryDisplacementSummability
 import NLS.ZakharovShabat.PeriodOneBoundaryAsymptotics
 import NLS.ZakharovShabat.ClassicalBoundaryAsymptotics
+import NLS.ZakharovShabat.AuxiliaryPhase
+import NLS.ZakharovShabat.AuxiliarySpaces
+import NLS.ZakharovShabat.AuxiliarySpectrum
+import NLS.ZakharovShabat.AuxiliaryEigenvalueAsymptotics

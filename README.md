@@ -632,8 +632,17 @@ installation is absent. No shell startup files are modified.
   and then for original period-one coefficient inputs at every finite `p>1`.
   The physical interval `L²` branches have square-summable displacements while
   retaining their unique original high-disc eigenvalue characterization.
-  The auxiliary starred boundary spectra in Corollary 6.2 remain to be
-  implemented through the separate Section 5 phase-twisted realization.
+  The Section 5 auxiliary coefficient spaces are now constructed by the
+  exact phase map `(f₋,f₊)↦(f₋,if₊)`, with closed complementary spaces at
+  every Sobolev regularity. The actual restricted pencils are conjugate to
+  ordinary boundary pencils with potential `(iφ₋,-iφ₊)`. Their spectra are
+  closed and discrete and have actual auxiliary-domain eigenvectors. The
+  source Neumann potential extension now gives both starred coefficient
+  branches full `ℓp` displacements, common quantitative tails, and unique
+  high-disc spectral identification. This completes all four coefficient
+  displacement conclusions of Corollary 6.2. Auxiliary generalized root-space
+  multiplicities and the original physical starred boundary transfer remain
+  to be proved.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

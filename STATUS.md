@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 377 modules and 2973 named public theorems. All compile on the
+The library has 381 modules and 3004 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.AuxiliaryPhase` | Exact phase and potential isometries, reflected-potential compatibility, and conjugation of the actual operator, pencil, and eigenvalue equation |
+| `NLS.ZakharovShabat.AuxiliarySpaces` | Closed complementary auxiliary base and Sobolev spaces, explicit ±i Fourier reflection conditions, domain/base isometries, and inclusion compatibility |
+| `NLS.ZakharovShabat.AuxiliarySpectrum` | Actual auxiliary restricted pencils defined by bijectivity; spectral conjugation, closure, discreteness, finite bounded clusters, and actual-domain eigenvectors |
+| `NLS.ZakharovShabat.AuxiliaryEigenvalueAsymptotics` | Source Neumann potential extension gives both starred coefficient branches global `ℓp` displacements, unique actual high-disc spectral values, and quantitative tails |
 | `NLS.ZakharovShabat.SpectralDisplacementTail` | Quantitative single-sequence power tails and global `Memℓp` membership after adding finitely many omitted signed modes |
 | `NLS.ZakharovShabat.PeriodicMidpointSummability` | Original contour midpoint displacement is in `ℓp`, with exactly half the corrected two-root tail budget |
 | `NLS.ZakharovShabat.BoundaryDisplacementSummability` | Both ordinary reflected-potential boundary branches have full `ℓp` displacements and common quantitative tails |
@@ -3508,17 +3512,60 @@ Dirichlet and Neumann branches have square-summable displacements, and their
 high-disc singleton characterization as actual original eigenvalues holds
 on the same open convex neighborhood and cutoff as the quantitative tails.
 
-**Remaining scope.** Ordinary Corollary 6.2 and the midpoint consequence are
-proved in the stated coefficient/physical realizations. The auxiliary
-starred spectra still require the distinct Section 5 phase-twisted boundary
-spaces and operator conjugation before their asymptotics can be asserted.
-The printed nonlinear-only periodic budgets and general-`p` central-height
-issue remain excluded or open as recorded in the source audit.
+The ordinary coefficient/physical realizations and midpoint consequence are
+proved above. The auxiliary coefficient realization and starred displacement
+conclusions are now proved below; physical auxiliary endpoints and generalized
+multiplicity transfer remain separate obligations.
+
+## Auxiliary coefficient spectra and starred asymptotics
+
+`AuxiliaryPhase` gives the exact linear isometry
+`G(f₋,f₊)=(f₋,if₊)` in the base and one-derivative norms. Its potential phase
+map is `(φ₋,φ₊)↦(iφ₋,-iφ₊)`, also an isometry. The actual operator identity
+is `L(φ) G = G L(iφ₋,-iφ₊)`, with corresponding identities for `z-L` and the
+eigenvalue equation. A potential is Neumann-reflected exactly when its
+phase transform is Dirichlet-reflected.
+
+`AuxiliarySpaces` defines the auxiliary base spaces and all real Sobolev
+spaces as phase images of the ordinary ones. Their raw Fourier conditions
+are `f₋(n)=-i f₊(-n)` for auxiliary D and `f₋(n)=i f₊(-n)` for auxiliary N.
+They are closed and complementary; phase transport is an isometry on the
+actual base and domain spaces, and the domain inclusion preserves the same
+condition. No physical endpoint equivalence is inferred solely from these
+coefficient formulas.
+
+`AuxiliarySpectrum` restricts the actual `z-L(φ)` pencil to those auxiliary
+spaces for Neumann-reflected potentials. The auxiliary resolvent set is
+defined by bijectivity of that pencil. A proved conjugation identifies its
+resolvent set and spectrum with the ordinary restricted problem at the
+transformed potential. Both auxiliary spectra are closed, discrete, and
+finite in bounded sets. Spectral membership is equivalent to a nonzero
+eigenvector satisfying the actual operator equation in the auxiliary domain.
+This proves the coefficient discreteness assertion of Proposition 5.2;
+its generalized multiplicity counts are not yet transported.
+
+`auxiliaryPeriodOnePotential` uses the source's completed Neumann potential
+extension, for both starred problems. The auxiliary high-index trace branch
+is the unique actual auxiliary spectral value in its disc.
+`exists_uniform_auxiliaryPeriodOneAsymptotics` gives one open convex source
+potential neighborhood and cutoff for both branches: global displacement
+`Memℓp`, unique high-disc spectral identification, and every larger convergent
+power tail bounded by the corrected budget of the phase-conjugated reflected
+potential. Both free auxiliary branches retain every signed index.
+Together with the ordinary result, all four coefficient displacement
+conclusions of Corollary 6.2 hold for every finite `p>1`.
+
+**Remaining scope.** Transport auxiliary generalized root spaces and
+algebraic multiplicities for the remaining counted conclusions of
+Proposition 5.2. Prove the original physical auxiliary endpoint realization
+in (1.10), then its starred spectral and square-summability transfers.
+The printed general-`p` central-height issue and the global nonlinear
+coordinate construction remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6027 declarations under `NLS`, including generated
+axioms. The current audit covers 6111 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4330,15 +4377,25 @@ membership and quantitative tails below two, while the free branches retain
 negative indices. The original physical test retains both square summability
 and the unique high-disc classical eigenvalue characterization.
 
+Auxiliary checks compute the exact phase of both signed free boundary modes
+at a negative resonance, and verify complementarity at negative fractional
+Sobolev regularity below exponent two. A nonzero constant Neumann-reflected
+potential `(1,-1)` has an actual auxiliary D eigenvector with eigenvalue `i`.
+The unrestricted operator conjugation is checked below two; both spectra
+are discrete above two. The starred source branches retain global `ℓp`
+displacements, actual unique high-disc spectral values, and every quantitative
+tail at `p=3/2`. Both free branches retain a negative index.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Implement the Section 5 phase-twisted auxiliary boundary realization and
-   its starred Corollary 6.2 asymptotics. The midpoint consequence and ordinary
-   Dirichlet/Neumann displacement sequences are now proved, including the
-   completed period-one coefficient and original physical `L²` transfers.
-   Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue pairs and
-   intrinsic squared gaps, with exact spectral algebraic multiplicities.
+2. Transport the auxiliary generalized multiplicities and original physical
+   endpoint realization to finish the counted Section 5 conclusions and
+   physical starred asymptotics. The coefficient auxiliary spectra and all
+   four coefficient Corollary 6.2 displacement conclusions are now proved,
+   as are the midpoint consequence and ordinary physical `L²` transfer.
+   Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue
+   pairs and intrinsic squared gaps, with exact spectral algebraic multiplicities.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
@@ -4355,5 +4412,5 @@ and the unique high-disc classical eigenvalue characterization.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the auxiliary starred boundary-spectrum consequences and Chapter 2 nonlinear
+the auxiliary physical/multiplicity transfers and Chapter 2 nonlinear
 coordinate construction remain incomplete.
