@@ -677,10 +677,11 @@ installation is absent. No shell startup files are modified.
   have exactly the periodic spectrum as their zeros (including lattice points),
   and are independent of pair labels. Their derivatives also converge locally
   uniformly on the whole plane. The extension across `πℤ` is uniquely fixed by
-  continuity and the earlier relative formula. Every finite `p>1` potential
-  supplies the required data on a common open convex neighborhood. Analytic
-  dependence on potentials, central-cutoff independence, equality of analytic
-  zero orders with spectral multiplicities, and discriminant identification
+  continuity and the earlier relative formula. Every analytic zero order now
+  equals the original spectral algebraic multiplicity, with finite order
+  explicitly proved at every parameter. Every finite `p>1` potential supplies
+  the required data on a common open convex neighborhood. Analytic dependence
+  on potentials, central-cutoff independence, and discriminant identification
   remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 

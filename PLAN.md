@@ -1305,10 +1305,15 @@ points, while every actual spectral value makes all sufficiently large
 cutoffs vanish. Thus the entire zero set is precisely the original periodic
 spectrum, and pair-label independence holds globally.
 
-Next, prove equality of analytic zero orders with spectral multiplicities,
-independence of the central cutoff, and analytic dependence on potentials.
-Complete the odd
-free-product identity, the perturbed parity subproducts, and identification
-of the correctly normalized discriminant. Then continue with the anti-discriminant
+The entire product now has the exact original spectral algebraic multiplicity
+as its analytic order at every complex parameter. Finite spectral polynomials
+have the prescribed central exponents and counted pair orders. Disjointness
+identifies the unique contributing factor, and Rouché stability on isolating
+discs passes these orders to the limit. Infinite analytic order is excluded
+explicitly, including at filled free lattice points.
+
+Next, prove independence of the central cutoff and analytic dependence on
+potentials. Complete the odd free-product identity, the perturbed parity
+subproducts, and identification of the correctly normalized discriminant. Then continue with the anti-discriminant
 and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

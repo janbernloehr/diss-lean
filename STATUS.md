@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 416 modules and 3276 named public theorems. All compile on the
+The library has 421 modules and 3295 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.FiniteProductOrders` | Extended analytic orders of normalized finite products, linear factors, and finite root polynomials with prescribed multiplicities |
+| `NLS.ComplexAnalysis.IsolatedOrderStability` | Rouché stability of isolated natural orders under uniform boundary convergence and exclusion of infinite order |
+| `NLS.ZakharovShabat.SpectralPolynomialOrders` | Actual central polynomial orders, repeated pair counts, and decomposition of complete cutoff orders |
+| `NLS.ZakharovShabat.PeriodicPolynomialMultiplicity` | Disjoint central/high spectral factors give eventual exact original algebraic multiplicities at every parameter |
+| `NLS.ZakharovShabat.EntirePeriodicProductOrders` | Isolating discs, exact natural and finite extended analytic orders of the entire product, and instantiation at every finite `p>1` potential |
 | `NLS.ComplexAnalysis.EntireLimit` | Maximum-modulus propagation of uniform Cauchy bounds from circles to discs; entire locally uniform limits across countable exceptional sets |
 | `NLS.ComplexAnalysis.LimitNonvanishing` | Reciprocal boundary bounds prevent new central zeros of holomorphic limits; small circles avoiding countable exceptional sets |
 | `NLS.ZakharovShabat.EntirePeriodicProducts` | Entire actual product, locally uniform polynomial and derivative convergence on the whole plane, agreement off the lattice, and uniqueness of continuous extension |
@@ -3781,7 +3786,7 @@ convergence over that potential neighborhood. The generic relative argument cove
 actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
 
 Analytic dependence on potentials, equality between different central-cutoff
-constructions, analytic zero orders, perturbed parity products, and discriminant
+constructions, perturbed parity products, and discriminant
 identification remain open. The entire extension is constructed below.
 
 ## Section 8: locally uniform convergence and holomorphy
@@ -3852,16 +3857,48 @@ and threshold support the construction for every larger central cutoff.
 Analyticity and locally uniform convergence are in the spectral parameter
 for each fixed potential; no joint potential analyticity is claimed.
 
-Equality of the entire product's analytic zero orders with original spectral
-algebraic multiplicities remains open, as do central-cutoff independence,
-analytic dependence on potentials, perturbed parity products, and
-identification with the discriminant. The original multiplicities are already
-retained as exponents in the finite spectral polynomials.
+Central-cutoff independence, analytic dependence on potentials, perturbed
+parity products, and identification with the discriminant remain open.
+
+## Section 8: exact analytic multiplicities
+
+`FiniteProductOrders` computes orders in the extended naturals, retaining the
+distinction between finite order and identical vanishing. Nonzero constant
+normalizations do not alter orders. Finite root polynomials have exactly
+their prescribed exponents, and products add factor orders.
+`SpectralPolynomialOrders` applies this to the actual central polynomial and
+the original normalized pair factors: two coincident entries contribute two,
+while distinct entries contribute one at each root.
+
+`PeriodicPolynomialMultiplicity` uses central/high-disc disjointness and
+pairwise disc disjointness to identify the unique factor contributing at each
+original spectral value. Central multiplicities hold at every cutoff; a high
+value has the correct multiplicity as soon as its signed index is included.
+Outside the spectrum all cutoff orders are zero. Thus, at every parameter,
+all sufficiently large cutoffs have exactly the original algebraic order.
+
+`IsolatedOrderStability` identifies the zero count of an isolating disc with
+the center's order. A positive uniform boundary lower bound and Rouché's
+theorem prove eventual equality of the limit's order and the approximants'
+orders. Isolation on a disc of positive radius also rules out infinite order.
+
+`EntirePeriodicProductOrders` obtains isolating closed discs from the actual
+closed discrete spectrum and applies this stability to the proved entire
+product and its original spectral polynomial cutoffs. Both natural analytic
+order and extended analytic order equal the original generalized-root-space
+algebraic multiplicity, at every complex parameter including all filled free
+lattice points. The extended order is explicitly finite. One common open
+convex potential neighborhood and threshold support the strengthened existence
+theorem at every finite `p>1`, for every larger central cutoff.
+
+The entire full product now retains the exact original spectrum and all its
+multiplicities. Independence of central-cutoff choice, analytic dependence on
+potentials, parity products, and discriminant identification remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6724 declarations under `NLS`, including generated
+axioms. The current audit covers 6766 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4758,12 +4795,19 @@ potential gives a product vanishing at a negative lattice point and nonzero
 at `i`. An arbitrary actual `p=3` potential whose resolvent contains zero has
 a holomorphic product nonzero at that formerly excluded free point.
 
+Multiplicity examples check a third-order finite root, coincident and distinct
+pairs at a negative mode, the exceptional zero-mode denominator, and the
+original multiplicity in an included negative spectral disc. For the actual
+zero potential the entire product has order two at both zero and a negative
+lattice point, and order zero at `i`. Arbitrary actual weighted `p=3` potentials
+supply the exact finite extended analytic order without assumed root data.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove analytic zero orders equal spectral algebraic multiplicities for
-   the entire products, then central-cutoff independence and analytic
-   dependence on the potential, and identify the discriminant.
+2. Prove central-cutoff independence and analytic dependence on the
+   potential for the entire products with exact multiplicities, and identify
+   the discriminant.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors
    `-1` and `4`, not the inconsistent displayed `-2` and `2`. Bounded source

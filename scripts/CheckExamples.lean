@@ -9839,3 +9839,82 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
 
 end
 end EntireProductChecks
+
+namespace ProductOrderChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Finite central-style polynomials retain higher multiplicities exactly.
+example : analyticOrderAt (fun z : ℂ => ∏ a ∈ ({0,Complex.I} : Finset ℂ),
+    (a-z)^(if a = 0 then 3 else 2)) 0 = 3 := by
+  rw [NLS.ComplexAnalysis.analyticOrderAt_rootPolynomial]
+  simp
+
+-- Coincident pair entries give order two at a negative signed index.
+example : analyticOrderAt (fun z => spectralPairFactor (fun _ => Complex.I) (fun _ => Complex.I) z (-7))
+    Complex.I = 2 := by
+  rw [analyticOrderAt_spectralPairFactor]
+  simp
+
+-- Distinct pair entries give order one, with the same normalization.
+example : analyticOrderAt (fun z => spectralPairFactor (fun _ => Complex.I) (fun _ => -Complex.I) z (-7))
+    Complex.I = 1 := by
+  rw [analyticOrderAt_spectralPairFactor]
+  have hne : Complex.I ≠ -Complex.I := by
+    intro h
+    have hi := congrArg Complex.im h
+    norm_num at hi
+  simp [hne]
+
+-- The exceptional zero-mode denominator does not change the double-root order.
+example : analyticOrderAt (fun z => spectralPairFactor (fun _ => (0 : ℂ)) (fun _ => 0) z 0) 0 = 2 := by
+  rw [analyticOrderAt_spectralPairFactor]
+  simp
+
+-- A cutoff includes an actual negative spectral disc and inherits its original multiplicity.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2) (ξ η : ℤ → ℂ)
+    (hc : PeriodicCountingData (by simp) (weightedBaseToPair w φ) 2)
+    (hr : ∀ n : ℤ, 2 < n.natAbs → PeriodicResonantPair (by simp) w φ n (ξ n) (η n))
+    (z : ℂ) (hz : z ∈ enclosedPeriodicSpectrum (by simp) (weightedBaseToPair w φ)
+      ((Real.pi : ℂ)*(-7 : ℤ)) (Real.pi/4)) :
+    analyticOrderAt (periodicSpectralPolynomialCutoff (by simp) (weightedBaseToPair w φ) 2 ξ η 7) z =
+      (periodicAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) z : ℕ∞) :=
+  polynomialCutoff_order_of_disk (by simp) w φ 2 ξ η hc hr (-7) (by norm_num) 7 (by norm_num) z hz
+
+-- The full entire product at the actual zero potential has double zeros at filled lattice points.
+example (w : SpectralWeight) :
+    ∃ N : ℕ, ∃ ξ η : ℤ → ℂ,
+      analyticOrderAt (entirePeriodicProduct (p := 3) (by simp) 0 N ξ η) 0 = 2 ∧
+      analyticOrderAt (entirePeriodicProduct (p := 3) (by simp) 0 N ξ η) ((Real.pi : ℂ)*(-3 : ℤ)) = 2 ∧
+      analyticOrderAt (entirePeriodicProduct (p := 3) (by simp) 0 N ξ η) Complex.I = 0 := by
+  obtain ⟨N,_,U,_,_,_,h0,h⟩ := exists_uniform_entirePeriodicProducts_with_orders (p := 3)
+    (by simp) (by norm_num) w 0
+  obtain ⟨ξ,η,hprod⟩ := h 0 h0
+  have ho := (hprod N le_rfl).2.2
+  simp only [map_zero] at ho
+  refine ⟨N,ξ,η,?_,?_,?_⟩
+  · have he := (ho ((Real.pi : ℂ)*(0 : ℤ))).1
+    rw [periodicAlgebraicMultiplicity_zero (by simp) (0 : ℤ)] at he
+    simpa using he
+  · have he := (ho ((Real.pi : ℂ)*(-3 : ℤ))).1
+    simpa only [periodicAlgebraicMultiplicity_zero, Nat.cast_ofNat] using he
+  · rw [(ho Complex.I).1,
+      (periodicAlgebraicMultiplicity_eq_zero_iff (p := 3) (by simp) 0 Complex.I).mpr
+        (mem_resolventSet_zero_of_notMem (by simp) Complex.I (notMem_freeLattice_of_im_ne_zero (by simp))), Nat.cast_zero]
+
+-- The strengthened existence theorem supplies actual multiplicities without assumed root data.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, ∃ ξ η : ℤ → ℂ, ∀ z : ℂ,
+      analyticOrderAt (entirePeriodicProduct (by simp) (weightedBaseToPair w φ) N ξ η) z =
+        (periodicAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) z : ℕ∞) ∧
+      analyticOrderAt (entirePeriodicProduct (by simp) (weightedBaseToPair w φ) N ξ η) z ≠ ⊤ := by
+  obtain ⟨N,_,U,_,_,hφ,_,h⟩ := exists_uniform_entirePeriodicProducts_with_orders (by simp) (by norm_num) w φ
+  obtain ⟨ξ,η,hprod⟩ := h φ hφ
+  refine ⟨N,ξ,η,fun z => ⟨((hprod N le_rfl).2.2 z).1,?_⟩⟩
+  rw [((hprod N le_rfl).2.2 z).1]
+  simp
+
+end
+end ProductOrderChecks

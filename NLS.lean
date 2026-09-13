@@ -364,3 +364,8 @@ import NLS.ComplexAnalysis.LimitNonvanishing
 import NLS.ZakharovShabat.EntirePeriodicProducts
 import NLS.ZakharovShabat.EntirePeriodicProductZeros
 import NLS.ZakharovShabat.EntirePeriodicProductExistence
+import NLS.ComplexAnalysis.FiniteProductOrders
+import NLS.ComplexAnalysis.IsolatedOrderStability
+import NLS.ZakharovShabat.SpectralPolynomialOrders
+import NLS.ZakharovShabat.PeriodicPolynomialMultiplicity
+import NLS.ZakharovShabat.EntirePeriodicProductOrders
