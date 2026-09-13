@@ -10517,3 +10517,82 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
 
 end
 end ActualParityChecks
+
+namespace ParityIndependenceChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The central zero-mode denominator remains one, and the empty odd center also has normalization one.
+example : centralParityNormalization 0 0 = 1 ∧ centralParityNormalization 0 1 = 1 := by
+  simp [centralParityNormalization, centralParityIndices, Finset.filter_singleton, spectralPairDenominator]
+
+-- Signed even indices retain the factors of two in the source denominator convention.
+example : centralParityNormalization 2 0 = 16*(Real.pi : ℂ)^4 := by
+  have he : centralParityIndices 2 0 = {-2,0,2} := by decide
+  rw [centralParityNormalization, he]
+  norm_num [spectralPairDenominator]
+  ring
+example : centralParityNormalization 2 1 = (Real.pi : ℂ)^4 := by
+  have he : centralParityIndices 2 1 = {-1,1} := by decide
+  rw [centralParityNormalization, he]
+  norm_num [spectralPairDenominator]
+  ring
+
+-- The literal odd cutoff keeps the positive boundary factor already at M=0.
+example (f : ℤ → ℂ) :
+    (∏ n ∈ Finset.Icc (-(0 : ℤ)) 0, f (2*n+1)) = f 1 := by
+  have h := prod_odd_centralParityIndices f 0
+  norm_num only [Nat.cast_zero] at h
+  simp only [neg_zero]
+  rw [h]
+  simp [centralParityIndices, Finset.filter_singleton]
+
+-- The M=1 odd product includes -1,1,3, preserving the asymmetric positive endpoint.
+example (f : ℤ → ℂ) :
+    (∏ n ∈ Finset.Icc (-(1 : ℤ)) 1, f (2*n+1)) = f (-1)*f 1*f 3 := by
+  have h := prod_odd_centralParityIndices f 1
+  norm_num only [Nat.cast_one] at h
+  rw [h]
+  have he : centralParityIndices (2*1) 1 = {-1,1} := by decide
+  rw [he]
+  norm_num
+
+-- Complete labels recover every larger intrinsic central polynomial, including its zeros.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N K : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (hNK : N ≤ K) (z : ℂ) :
+    (∏ n ∈ centralParityIndices K 1, (ξ n-z)*(η n-z)) =
+      centralParityPolynomial (by simp) (weightedBaseToPair w φ) K 1 z :=
+  h.central_prod_eq K hNK 1 (Or.inr rfl) z
+
+-- Different admissible cutoffs and labels give identical literal polynomials at the filled lattice point zero.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N K M : ℕ) (ξ η α β : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η)
+    (k : CompletePeriodicParityPairs (by simp) w φ K α β) (hM : max N K ≤ 2*M) :
+    evenSpectralPairCutoff ξ η 0 M = evenSpectralPairCutoff α β 0 M ∧
+    oddSpectralPairCutoff ξ η 0 M = oddSpectralPairCutoff α β 0 M := by
+  have he := h.cutoffs_eq k M (by omega) (by omega)
+  exact ⟨congrFun he.1 0, congrFun he.2 0⟩
+
+-- Choice independence holds for the entire functions and hence their derivatives.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N K : ℕ) (ξ η α β : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η)
+    (k : CompletePeriodicParityPairs (by simp) w φ K α β) :
+    deriv (evenSpectralPairProduct ξ η) = deriv (evenSpectralPairProduct α β) ∧
+    deriv (oddSpectralPairProduct ξ η) = deriv (oddSpectralPairProduct α β) :=
+  ⟨congrArg deriv (h.products_eq k).1, congrArg deriv (h.products_eq k).2⟩
+
+-- An arbitrary actual even-supported p=3 potential has one pair of functions for all admissible choices.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0) :
+    ∃ f g : ℂ → ℂ, AnalyticOnNhd ℂ f Set.univ ∧ AnalyticOnNhd ℂ g Set.univ ∧
+      ∀ N : ℕ, ∀ ξ η : ℤ → ℂ, CompletePeriodicParityPairs (by simp) w φ N ξ η →
+        evenSpectralPairProduct ξ η = f ∧ oddSpectralPairProduct ξ η = g := by
+  obtain ⟨_,_,U,_,_,hφ,_,h⟩ := exists_uniform_choiceIndependent_actualParityProducts
+    (by simp) (by norm_num) w φ
+  obtain ⟨f,g,hf,hg,_,hall⟩ := h φ hφ heven
+  exact ⟨f,g,hf,hg,hall⟩
+
+end
+end ParityIndependenceChecks

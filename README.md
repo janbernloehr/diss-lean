@@ -716,8 +716,11 @@ installation is absent. No shell startup files are modified.
   ℓp displacements and the actual parity root multisets. The completed pairs
   give entire products whose whole-plane zero sets are exactly the original
   parity eigenvalues, with locally uniform cutoff and derivative convergence.
-  Label and cutoff independence, exact analytic orders of the parity products,
-  joint potential analyticity, and discriminant compatibility remain open.
+  Exact central growth and normalization identities now show that sufficiently
+  large literal cutoffs agree for every admissible labeling and central cutoff.
+  Thus both entire parity products are independent of those choices, including
+  at roots. Exact analytic orders, joint potential analyticity, and discriminant
+  compatibility remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

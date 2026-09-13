@@ -407,3 +407,6 @@ import NLS.ZakharovShabat.CompleteParitySpectrum
 import NLS.ZakharovShabat.ParityProductsOffLattice
 import NLS.ZakharovShabat.ActualParityProductZeros
 import NLS.ZakharovShabat.ActualParityProductExistence
+import NLS.ZakharovShabat.ParityCentralCutoffGrowth
+import NLS.ZakharovShabat.ParityLiteralCutoffs
+import NLS.ZakharovShabat.ActualParityProductIndependence

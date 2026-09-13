@@ -1392,9 +1392,16 @@ when filling the free lattice. Both the literal cutoffs and their derivatives
 converge locally uniformly in the spectral parameter. Actual data supply this
 construction on common neighborhoods and central thresholds for finite p>1.
 
-Next, prove label and cutoff independence and exact analytic orders for these
-actual parity products, then joint potential analyticity and discriminant
-compatibility. The product construction alone does not imply a common
-discriminant.
+Label and cutoff independence of the actual parity products is now proved.
+Larger central polynomials absorb the counted pairs in their parity. Even
+literal cutoffs are intrinsically normalized central polynomials at `2M`;
+odd cutoffs retain one additional counted boundary factor at `2M+1`. All
+sufficiently large finite cutoffs agree exactly for arbitrary admissible
+central cutoffs and root labels, including at spectral zeros. Uniqueness of
+limits gives one pair of entire functions independent of these choices.
+
+Next, prove exact analytic orders for the actual parity products, then joint
+potential analyticity and discriminant compatibility. The product construction
+alone does not imply a common discriminant.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
