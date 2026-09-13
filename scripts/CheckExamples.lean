@@ -9183,3 +9183,93 @@ example :
     exact gd_nonzero hn
 
 end AuxiliaryJordanChecks
+
+namespace ClassicalAuxiliaryChecks
+open NLS NLS.ZakharovShabat NLS.Fourier
+open NLS.ZakharovShabat.BoundaryCondition
+open MeasureTheory Set
+
+-- The second-half extension has the exact source phase factors for both conditions.
+example : auxiliaryIntervalExtension .dirichlet (fun _ => ((1 : ℂ),2)) (3/2) = (-2*Complex.I,Complex.I) := by
+  rw [auxiliaryIntervalExtension_right _ _ _ (by norm_num)]
+  norm_num [extensionSign]
+  ring
+example : auxiliaryIntervalExtension .neumann (fun _ => ((1 : ℂ),2)) (3/2) = (2*Complex.I,-Complex.I) := by
+  rw [auxiliaryIntervalExtension_right _ _ _ (by norm_num)]
+  norm_num [extensionSign]
+  ring
+
+-- Both original endpoints are retained exactly, even without any boundary regularity assumption.
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) :
+    auxiliaryIntervalExtension b f 0 = f 0 ∧ auxiliaryIntervalExtension b f 1 = f 1 :=
+  ⟨auxiliaryIntervalExtension_left b f 0 (by norm_num), auxiliaryIntervalExtension_left b f 1 le_rfl⟩
+
+-- Domain reconstruction applies to arbitrary original H¹ functions, without periodic input assumptions.
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain b f) :
+    ∃! a : Domain 2, a ∈ b.auxiliaryDomain ∧ EqOn (classicalIntervalRestriction a) f (Icc 0 1) :=
+  existsUnique_classicalAuxiliaryRepresentative b f hf
+
+-- The stored endpoint equations are literally f₋+i f₊=0 and f₋-i f₊=0.
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain .dirichlet f) :
+    (f 0).1 + Complex.I*(f 0).2 = 0 ∧ (f 1).1 + Complex.I*(f 1).2 = 0 := by
+  constructor
+  · rw [hf.left]; simp [extensionSign]
+  · rw [hf.right]; simp [extensionSign]
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain .neumann f) :
+    (f 0).1 - Complex.I*(f 0).2 = 0 ∧ (f 1).1 - Complex.I*(f 1).2 = 0 := by
+  constructor
+  · rw [hf.left]; simp [extensionSign]
+  · rw [hf.right]; simp [extensionSign]
+
+private theorem constant_regular (c : ℂ) : HasIntervalH1Regularity (fun _ => c) := by
+  constructor
+  · exact (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => c)).contDiffOn.absolutelyContinuousOnInterval
+  · simp
+
+private theorem constant_auxiliary_D : HasClassicalAuxiliaryDomain .dirichlet (fun _ => ((1 : ℂ),Complex.I)) := by
+  refine ⟨constant_regular 1, constant_regular Complex.I, ?_, ?_⟩ <;> norm_num [extensionSign]
+private theorem constant_auxiliary_N : HasClassicalAuxiliaryDomain .neumann (fun _ => ((1 : ℂ),-Complex.I)) := by
+  refine ⟨constant_regular 1, constant_regular (-Complex.I), ?_, ?_⟩ <;> norm_num [extensionSign]
+
+-- A nonzero original physical potential gives opposite nonreal eigenvalues in the two auxiliary problems.
+private theorem physical_i : Complex.I ∈ classicalAuxiliaryEigenvalues .dirichlet (fun _ => ((1 : ℂ),-1)) := by
+  refine ⟨fun _ => (1,Complex.I),constant_auxiliary_D,?_,?_⟩
+  · intro h
+    have he := congrArg Prod.fst (h (show (0 : ℝ) ∈ Icc 0 1 by norm_num))
+    norm_num at he
+  · exact Filter.Eventually.of_forall fun x => by ext <;> simp [physicalOperator]
+example : -Complex.I ∈ classicalAuxiliaryEigenvalues .neumann (fun _ => ((1 : ℂ),-1)) := by
+  refine ⟨fun _ => (1,-Complex.I),constant_auxiliary_N,?_,?_⟩
+  · intro h
+    have he := congrArg Prod.fst (h (show (0 : ℝ) ∈ Icc 0 1 by norm_num))
+    norm_num at he
+  · exact Filter.Eventually.of_forall fun x => by ext <;> simp [physicalOperator]
+
+-- The same physical eigenvalue belongs to the actual auxiliary coefficient spectrum.
+example : Complex.I ∈ BoundaryCondition.auxiliarySpectrum .dirichlet (by simp)
+    (neumannPotentialCoefficients (fun _ => ((1 : ℂ),-1)) (memLp_const _))
+    (neumannPotentialCoefficients_mem _ _) := by
+  rw [← classicalAuxiliaryEigenvalues_eq_auxiliarySpectrum]
+  exact physical_i
+
+-- The potential construction uses genuine Fourier integrals of the Neumann extension.
+example : (neumannPotentialCoefficients (fun _ => ((1 : ℂ),-1)) (memLp_const _)).1 0 = 1 ∧
+    (neumannPotentialCoefficients (fun _ => ((1 : ℂ),-1)) (memLp_const _)).2 0 = -1 := by
+  have he : intervalExtension .neumann (fun _ => ((1 : ℂ),-1)) = fun _ => (1,-1) := by
+    funext x
+    by_cases hx : x ≤ 1
+    · rw [intervalExtension_left _ _ x hx]
+    · rw [intervalExtension_right _ _ x (lt_of_not_ge hx)]
+      norm_num [extensionSign]
+  simp [neumannPotentialCoefficients_fst, neumannPotentialCoefficients_snd, he,
+    periodTwoCoefficient, NLS.Fourier.wave_zero]
+
+-- Arbitrary physical auxiliary eigenfunctions transfer through their actual Sobolev extension.
+example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) (hf : HasClassicalAuxiliaryDomain b f) (z : ℂ)
+    (he : physicalOperator φ f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x)) :
+    operator (by simp) (neumannPotentialCoefficients φ hφ) (classicalAuxiliaryExtension b f hf) =
+      z • domainInclusion (classicalAuxiliaryExtension b f hf) :=
+  classical_auxiliary_equation_transfer b φ f hφ hf z he
+
+end ClassicalAuxiliaryChecks

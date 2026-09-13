@@ -331,3 +331,6 @@ import NLS.ZakharovShabat.AuxiliarySpectrum
 import NLS.ZakharovShabat.AuxiliaryEigenvalueAsymptotics
 import NLS.ZakharovShabat.AuxiliaryRootSpaces
 import NLS.ZakharovShabat.AuxiliaryCounting
+import NLS.ZakharovShabat.ClassicalAuxiliaryPhase
+import NLS.ZakharovShabat.ClassicalAuxiliaryExtension
+import NLS.ZakharovShabat.ClassicalAuxiliarySpectrum

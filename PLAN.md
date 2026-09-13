@@ -1207,8 +1207,20 @@ count `2N+1`, and simple high-disc eigenvalues for both auxiliary restrictions.
 These hold on one open convex neighborhood containing the given potential and
 zero, for every larger cutoff, including after source period-one extension.
 
-Next, identify the phase-transformed coefficient domains with the original
-physical endpoint conditions in (1.10). Transfer the physical starred
-boundary eigenvalues and their square-summable displacements. Then continue
-to the Chapter 2 discriminant, product, and action-coordinate prerequisites.
+The original auxiliary H¹ endpoint conditions in (1.10) are now defined
+independently of Fourier coefficients. Physical phase conjugation identifies
+them with the ordinary endpoint conditions and intertwines the actual
+differential expression. The source phased extension reconstructs the original
+function on the closed interval and gives a unique auxiliary weighted-domain
+representative. Actual Fourier integrals define the Neumann potential extension;
+its conjugation identity proves equality of original auxiliary eigenvalue sets
+with the actual coefficient spectra. Both directions of the physical/coefficient
+eigenvalue equation transfer are proved, completing this physical form of
+Lemma 5.1.
+
+Next, equip the original auxiliary domain with its physical H¹ norm, construct
+the actual physical L² operator and resolvent, and transfer generalized root
+spaces and multiplicity counts. Prove locally uniform physical starred
+square-summable displacements, then continue to the Chapter 2 discriminant,
+product, and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

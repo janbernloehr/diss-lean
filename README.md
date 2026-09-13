@@ -644,7 +644,12 @@ installation is absent. No shell startup files are modified.
   root spaces are now conjugate to ordinary boundary root spaces, including
   all Jordan chains. Both auxiliary spectra have simple high-disc eigenvalues
   and central algebraic count `2N+1`, uniformly for source period-one
-  potentials. The original physical starred boundary transfer remains open.
+  potentials. The original physical auxiliary H¹ endpoint domains now have
+  unique weighted representatives under the source phased reflection. Their
+  eigenvalue equations transfer in both directions, and the physical eigenvalue
+  sets equal the actual auxiliary coefficient spectra at the Neumann-extended
+  potential. A physical L² operator realization, generalized multiplicities,
+  and locally uniform physical starred asymptotics remain to be constructed.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 383 modules and 3026 named public theorems. All compile on the
+The library has 386 modules and 3062 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryPhase` | Original auxiliary H¹ endpoint conditions, actual differential-expression conjugation, and physical eigenvalue-set equivalence and discreteness |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryExtension` | Source phased reflection, exact Sobolev reconstruction on the original closed interval, and unique auxiliary coefficient-domain representatives |
+| `NLS.ZakharovShabat.ClassicalAuxiliarySpectrum` | Actual Neumann potential Fourier coefficients, both equation-transfer directions in Lemma 5.1, and physical eigenvalue-set equality with the auxiliary coefficient spectrum |
 | `NLS.ZakharovShabat.AuxiliaryRootSpaces` | Actual recursive auxiliary root chains, phase equivalence at every level, finite dimensionality and stabilization, and algebraic multiplicity equality |
 | `NLS.ZakharovShabat.AuxiliaryCounting` | Actual finite spectral clusters, central algebraic count `2N+1`, simple high-disc eigenvalues, and common uniform counts after source period-one extension |
 | `NLS.ZakharovShabat.AuxiliaryPhase` | Exact phase and potential isometries, reflected-potential compatibility, and conjugation of the actual operator, pencil, and eigenvalue equation |
@@ -3516,10 +3519,11 @@ on the same open convex neighborhood and cutoff as the quantitative tails.
 
 The ordinary coefficient/physical realizations and midpoint consequence are
 proved above. The auxiliary coefficient realization and starred displacement
-conclusions are now proved below; physical auxiliary endpoints and generalized
-multiplicity transfer remain separate obligations.
+conclusions, coefficient multiplicities, and physical auxiliary endpoint and
+eigenvalue-set identifications are proved below. The independent physical
+operator, generalized multiplicities, and uniform starred asymptotics remain.
 
-## Auxiliary coefficient spectra and starred asymptotics
+## Auxiliary spectra, physical endpoint realization, and starred asymptotics
 
 `AuxiliaryPhase` gives the exact linear isometry
 `G(f₋,f₊)=(f₋,if₊)` in the base and one-derivative norms. Its potential phase
@@ -3544,7 +3548,7 @@ transformed potential. Both auxiliary spectra are closed, discrete, and
 finite in bounded sets. Spectral membership is equivalent to a nonzero
 eigenvector satisfying the actual operator equation in the auxiliary domain.
 This proves the coefficient discreteness assertion of Proposition 5.2;
-its generalized multiplicity counts are not yet transported.
+its generalized multiplicity counts are transported below.
 
 `auxiliaryPeriodOnePotential` uses the source's completed Neumann potential
 extension, for both starred problems. The auxiliary high-index trace branch
@@ -3574,15 +3578,39 @@ source Neumann extension transfers the same counts to period-one coefficient
 pairs for every finite `p>1`. These use the proved safe central box, retaining
 the separate qualification on the printed general-p height.
 
-**Remaining scope.** Prove the original physical auxiliary endpoint realization
-in (1.10), then its starred spectral and square-summability transfers.
+`ClassicalAuxiliaryPhase` defines the original H¹ auxiliary domains using
+exactly `f₋+if₊=0` for D* and `f₋-if₊=0` for N* at both endpoints.
+Pointwise physical phase conjugation identifies these conditions with the
+ordinary domains and intertwines the actual differential expressions. Physical
+auxiliary eigenvalues are defined directly by nonzero original eigenfunctions;
+these sets are closed, discrete, and finite in bounded regions for L² potentials.
+
+`ClassicalAuxiliaryExtension` constructs the source reflected function with
+`(-if₊,if₋)` on the second half, with the D*/N* sign. Its Sobolev extension
+reconstructs the source function on `[0,2]` and the original function including
+both endpoints of `[0,1]`. Every auxiliary coefficient-domain vector comes
+from an original endpoint function, and that weighted representative is unique.
+This is the set-theoretic domain identification; physical norm comparisons and
+the topological domain isomorphism remain separate.
+
+`ClassicalAuxiliarySpectrum` defines the Neumann potential extension by actual
+normalized physical Fourier integrals. Its phase equals the Dirichlet extension
+of the physically transformed potential. This gives equality of the original
+auxiliary eigenvalue sets with the actual coefficient spectra and proves both
+directions of the eigenvalue equation transfer, using the actual Sobolev
+extension in Lemma 5.1. It does not yet construct an independent physical L²
+resolvent or define multiplicity by physical generalized root spaces.
+
+**Remaining scope.** Construct the normed physical auxiliary domain, original
+L² operator and resolvent, then transfer generalized multiplicities and locally
+uniform physical starred square-summability.
 The printed general-`p` central-height issue and the global nonlinear
 coordinate construction remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6178 declarations under `NLS`, including generated
+axioms. The current audit covers 6245 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4411,13 +4439,23 @@ every larger cutoff, with central count `2N+1` and simple high-disc values at
 Dirichlet Jordan chain at zero: its initial vector lies in level two but not
 level one. The check verifies both actual pencil equations and domain conditions.
 
+Physical auxiliary checks verify both reflected phase signs at `x=3/2`, exact
+retention of both original endpoints, the literal source D*/N* endpoint
+equations, and unique weighted representatives for arbitrary original H¹ input.
+For the nonzero physical potential `(1,-1)`, constant auxiliary eigenfunctions
+have eigenvalues `i` and `-i` for D* and N*, respectively. The same `i` belongs
+to the actual auxiliary coefficient spectrum. The potential's zeroth Fourier
+coefficients are checked directly from the Neumann extension integrals, and
+the original differential equation transfers through the actual Sobolev extension.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the original physical auxiliary endpoint realization and transport
-   the coefficient spectra and multiplicities to obtain the physical counted
-   Section 5 conclusions and starred asymptotics. The coefficient auxiliary
-   spectra and all four coefficient Corollary 6.2 displacement conclusions are now proved,
+2. Construct the normed physical auxiliary domain and L² operator/resolvent,
+   then transport generalized multiplicities and locally uniform starred
+   asymptotics. The original physical endpoint identification and eigenvalue-set
+   transfer are now proved. The coefficient auxiliary spectra and all four
+   coefficient Corollary 6.2 displacement conclusions are now proved,
    as are the midpoint consequence and ordinary physical `L²` transfer.
    Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue
    pairs and intrinsic squared gaps, with exact spectral algebraic multiplicities.
@@ -4437,5 +4475,5 @@ level one. The check verifies both actual pencil equations and domain conditions
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the auxiliary physical transfers and Chapter 2 nonlinear
+the auxiliary physical operator/multiplicity transfers and Chapter 2 nonlinear
 coordinate construction remain incomplete.
