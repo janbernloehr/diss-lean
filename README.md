@@ -596,8 +596,15 @@ installation is absent. No shell startup files are modified.
   coefficients, every larger cutoff, and every distant full strip. This
   follows the power sum and full pair norm in the source proof on page 43;
   the page-41 display omits the left-hand powers and uses `φ_+` in the first
-  norm. That literal display is not claimed. Lemma 6.9's root counting and
-  refined eigenvalue estimates are next.
+  norm. That literal display is not claimed.
+  Lemma 6.9 now has locally uniform bounds `|a_n|≤π/32`, `|b_n^±|≤π/16`,
+  and an actual analytic determinant identified with the reduced matrix and
+  original periodic spectrum. Any strip zero lies within `3π/32` of `nπ`,
+  and the centered square strictly dominates the determinant perturbation
+  on the radius-`π/4` circle. Cauchy's estimate gives `|a_n′|≤1/8` in that
+  disc, and any two strip zeros satisfy `|ξ-η|²≤6|b_n⁺b_n⁻|_{U_n}`.
+  The analytic zero count with multiplicity and the quantitative root
+  displacement sum remain to be proved.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

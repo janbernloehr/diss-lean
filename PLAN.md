@@ -1074,7 +1074,26 @@ The printed page-41 statement omits those left-hand powers and writes the
 positive component in the first numerator; its literal form is not asserted.
 See STATUS.md for the precise source-display qualification.
 
-Next, prove Lemma 6.9: use the analytic determinant and the proved coefficient
-estimates for a Rouché root count, then establish the refined root and gap
-bounds. Continue toward Propositions 6.1 and 6.3. The printed general-`p`
-central-height constant remains a separate open item.
+Lemma 6.9's uniform smallness, localization, and root-gap estimates are now
+proved. Norm-and-tail neighborhoods make the actual suprema arbitrarily
+small. The signed weighted leading coefficients also decay locally uniformly,
+giving the source numerical bounds on all full coefficients. The scalar
+analytic determinant equals the actual reduced determinant and has the
+original periodic spectral zero criterion; at zero potential it is exactly
+the centered square.
+
+Any zero in a distant strip lies within `3π/32` of its center. On the circle
+of radius `π/4`, the determinant perturbation is strictly smaller than the
+centered square. Analyticity and matrix agreement share the same cutoff and
+potential neighborhood. Cauchy's estimate gives the derivative bound `1/8`,
+and the actual full-strip product supremum controls any pair of zeros by
+`|ξ-η|²≤6|b_n⁺b_n⁻|_{U_n}`, without choosing square-root branches.
+
+Next, establish the scalar analytic zero count with multiplicity. The pinned
+Mathlib has no named Rouché or argument-principle theorem. Either develop
+that counting argument from the available complex-analytic tools or prove
+that the determinant zero orders equal the existing spectral algebraic
+multiplicities. The existing spectral count alone does not settle this point.
+Then prove the root displacement power sum in Lemma 6.9 and proceed to
+Propositions 6.1 and 6.3. The printed general-`p` central-height constant
+remains a separate open item.

@@ -2,11 +2,19 @@
 
 ## Implemented and checked
 
-The library has 338 modules and 2854 named public theorems. All compile on the
+The library has 346 modules and 2883 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.UniformPowerTail` | Open convex norm-and-tail neighborhoods giving uniform decay of general power-tail budgets |
+| `NLS.ZakharovShabat.ResonantSupSmallness` | Arbitrarily small actual diagonal and weighted remainder suprema, uniformly on all distant strips |
+| `NLS.ZakharovShabat.ResonantCoefficientSmallness` | Signed weighted leading-mode decay and locally uniform bounds on all three full coefficients |
+| `NLS.ZakharovShabat.ResonantDeterminantAnalytic` | Actual scalar determinant, joint analyticity, matrix agreement, original spectral zero criterion, and exact free square |
+| `NLS.ZakharovShabat.ResonantDeterminantBounds` | Strip-disc geometry, quadratic perturbation estimate, root radius 3π/32, and strict boundary comparison |
+| `NLS.ZakharovShabat.ResonantDeterminantLocalization` | Common neighborhood and cutoff for analytic determinant localization, original matrix agreement, and circle comparison |
+| `NLS.ZakharovShabat.ResonantCauchyGap` | Cauchy derivative bound 1/8, complex Lipschitz bound, and branch-free squared-residual gap estimate |
+| `NLS.ZakharovShabat.ResonantRootGap` | Actual full-strip product supremum and locally uniform factor-six bound for any two determinant zeros |
 | `NLS.SequenceSpaces.DoubleSeriesRegions` | Exact disjoint three-region decomposition of jointly absolutely convergent double series |
 | `NLS.SequenceSpaces.DominatedDoubleTesting` | Pointwise two-index domination implies joint absolute convergence and the exact Hölder bound |
 | `NLS.SequenceSpaces.HalfCutoffPower` | Full-cutoff power decay from an integer half cutoff, with loss at most three |
@@ -3203,10 +3211,64 @@ tail. It does not establish the literal page-41 display. This discrepancy
 is distinct from the earlier, explicitly disproved unconditional reality
 claim in Lemma 6.7.
 
+### Lemma 6.9: uniform localization, boundary comparison, and root gaps
+
+`UniformPowerTail` makes the scalar budgets in Lemma 6.8 uniformly small.
+A bound on the full weighted norm and one weighted Fourier tail defines an
+open convex neighborhood containing the potential and zero. The construction
+works for every positive norm exponent and decay exponent, including the
+fractional powers used below `p=2`, and controls every larger integer cutoff.
+
+`ResonantSupSmallness` uses convergence of the actual power sums to bound each
+individual supremum by an arbitrarily prescribed positive tolerance. Both
+coefficient estimates retain locally uniform neighborhoods and thresholds.
+`ResonantCoefficientSmallness` proves weighted decay of the signed leading
+Fourier modes, including cutoff boundaries. Adding those modes to the actual
+remainders gives smallness of the full `b_n⁻` and `b_n⁺`. In particular,
+`|a_n|≤π/32` and `|b_n^±|≤π/16` hold over all sufficiently distant full closed
+strips on one open convex neighborhood. This proves the opening estimates
+of Lemma 6.9 for every finite `p>1`, with arbitrary source spectral weights.
+
+`ResonantDeterminantAnalytic` defines
+`F_n(z)=(z-nπ-a_n(z))²-b_n⁺(z)b_n⁻(z)` from the actual analytic extensions.
+It equals the determinant of the reduced matrix wherever the complementary
+square is small, and is jointly analytic on the existing correction domain.
+For unit weight, its zeros are exactly the original periodic spectral points
+under the established reduction hypothesis. At zero potential it is exactly
+`(z-nπ)²`, including at the strip center and at nonreal parameters.
+
+`ResonantDeterminantBounds` gives the scalar perturbation estimate
+`|F-q²|≤2|q||a|+|a|²+|b⁺||b⁻|`. The numerical coefficient bounds imply that
+every zero has `|z-nπ|≤3π/32`, strictly inside the source disc of radius `π/4`.
+On that disc's boundary, `|F_n(z)-(z-nπ)²|<|(z-nπ)²|` holds.
+`ResonantDeterminantLocalization` establishes these conclusions for the
+actual determinant, with analyticity and original matrix agreement sharing
+one neighborhood and threshold. There are no zeros in the remainder of the
+full strip. This supplies the strict boundary comparison needed for Rouché.
+
+`ResonantCauchyGap` proves that the closed disc of radius `π/4` around each
+point of the refined disc stays in the full strip. Cauchy's estimate gives
+`|a_n′|≤1/8`, and the complex mean-value theorem yields the corresponding
+Lipschitz bound. Two squared residual estimates then give the factor six
+without selecting square-root branches.
+`ResonantRootGap` defines the actual full-strip supremum `|b_n⁺b_n⁻|_{U_n}`,
+proves it nonnegative, finite, and at most `(π/16)²`, and establishes
+`|ξ-η|²≤6|b_n⁺b_n⁻|_{U_n}` for any two actual strip zeros. All these bounds
+are locally uniform; no distinctness or reality assumption on the roots is
+needed, and the spectral weight need not satisfy `w(0)=1`.
+
+**Remaining scope.** Lemma 6.9 is not yet complete. The count of scalar
+analytic zeros with multiplicity and the quantitative power sum of their
+displacements remain unproved. The existing spectral algebraic multiplicity
+count does not by itself identify analytic zero orders of this determinant.
+The pinned Mathlib has no named Rouché theorem or argument-principle theorem;
+the required analytic counting argument must be established or connected to
+the existing spectral count with a proved multiplicity identification.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5769 declarations under `NLS`, including generated
+axioms. The current audit covers 5825 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3954,11 +4016,21 @@ uniform negative estimate is instantiated at `p=3/2` with decay `N^(-1/2)`;
 at `p=3`, both actual power tails converge and the positive estimate has decay
 `N^(-1)`, for every larger cutoff.
 
+Refined-root checks evaluate the actual free determinant at a nonreal parameter
+near a negative resonance, attain the scalar localization radius with purely
+imaginary coefficients, and test the strict boundary comparison with nonreal
+phases. A nonreal point tests the shifted Cauchy-disc inclusion. Two imaginary
+roots and a nonzero diagonal slope exercise the squared-residual gap argument.
+The full weighted coefficient bound is instantiated at `p=3/2` and `w(0)=2`;
+the actual determinant circle comparison is tested below two and its root-gap
+bound at `p=3`. A negative-resonance example checks the scalar zero criterion
+against the original periodic spectrum.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove Lemma 6.9's root counting and refined eigenvalue estimates, then
-   continue the weighted-gap estimates
+2. Prove Lemma 6.9's scalar analytic zero count with multiplicity and its
+   root displacement power sum, then continue the weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

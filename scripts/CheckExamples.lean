@@ -8390,3 +8390,107 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
   exact ⟨h.1.1, h.2.1, h.2.2⟩
 
 end OffDiagonalSummabilityChecks
+
+section ResonantLocalizationChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem localizationHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem localizationHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨localizationHalfAboveOne.le⟩
+
+private theorem norm_pi_imaginary_div (k : ℕ) :
+    ‖((Real.pi : ℂ)/k)*Complex.I‖ = Real.pi/(k : ℝ) := by
+  simp [Real.norm_eq_abs, abs_of_pos Real.pi_pos]
+
+-- The zero-potential extension is the actual centered square at a negative resonance and a nonreal parameter.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    resonantDeterminantExtension (p := 3) (by norm_num) w 0 (-4)
+      ((Real.pi : ℂ)*(-4 : ℤ)+Complex.I) = -1 := by
+  simp
+
+-- The largest allowed imaginary coefficients attain the algebraic radius 3π/32.
+example : ‖((Real.pi : ℂ)/32)*Complex.I + ((Real.pi : ℂ)/16)*Complex.I‖ ≤ 3*Real.pi/32 := by
+  apply norm_resonant_quadratic_root_le _ (((Real.pi : ℂ)/32)*Complex.I)
+    (((Real.pi : ℂ)/16)*Complex.I) (((Real.pi : ℂ)/16)*Complex.I)
+  · exact (norm_pi_imaginary_div 32).le
+  · exact (norm_pi_imaginary_div 16).le
+  · exact (norm_pi_imaginary_div 16).le
+  · ring
+
+-- The boundary comparison permits complex phases in every coefficient.
+example :
+    let q := ((Real.pi : ℂ)/4)*Complex.I
+    let a := ((Real.pi : ℂ)/32)*Complex.I
+    let b := ((Real.pi : ℂ)/16)*Complex.I
+    ‖((q-a)^2-b*b)-q^2‖ < ‖q^2‖ := by
+  exact norm_resonant_quadratic_error_lt _ _ _ _ (norm_pi_imaginary_div 4)
+    (norm_pi_imaginary_div 32).le (norm_pi_imaginary_div 16).le (norm_pi_imaginary_div 16).le
+
+-- The derivative-disc geometry is valid at nonreal points near a negative center.
+example : Metric.closedBall ((Real.pi : ℂ)*(-3 : ℤ)+((Real.pi : ℂ)/8)*Complex.I) (Real.pi/4) ⊆
+    resonantStrip (-3) := by
+  apply closedBall_refined_point_subset_strip
+  change dist _ ((Real.pi : ℂ)*(-3 : ℤ)) < Real.pi/4
+  rw [dist_eq_norm, add_sub_cancel_left]
+  have h := norm_pi_imaginary_div 8
+  norm_num only at h
+  rw [h]
+  linarith [Real.pi_pos]
+
+-- Two nonreal roots with a nonzero diagonal slope exercise the residual-square gap argument.
+example : ‖Complex.I - (-Complex.I)‖^2 ≤ 6*(49/64 : ℝ) := by
+  apply norm_gap_sq_le_of_residual_bounds 0 Complex.I (-Complex.I) (fun z => z/8) (49/64)
+  · have he : Complex.I/8 - (-Complex.I)/8 = (Complex.I - (-Complex.I))/8 := by ring
+    rw [he, norm_div]
+    norm_num
+    ring_nf
+    exact le_rfl
+  · rw [show Complex.I - 0 - Complex.I/8 = (7/8 : ℂ)*Complex.I by ring]
+    norm_num
+  · rw [show -Complex.I - 0 - (-Complex.I)/8 = (-7/8 : ℂ)*Complex.I by ring]
+    norm_num
+
+private def localizationWeight : SpectralWeight := SpectralWeight.constant 2 (by norm_num)
+
+-- Below two, one neighborhood gives full weighted coefficients, including both signed leading modes.
+example (φ : WeightedCoeffPair localizationWeight.toWeight (3/2)) :
+    let w := localizationWeight
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight (3/2)),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+        ‖weightedResonantAExtension localizationHalfFinite w ψ n z‖ < 1/100 ∧
+        2*‖weightedResonantBMinusExtension localizationHalfFinite w ψ n z‖ < 1/50 ∧
+        2*‖weightedResonantBPlusExtension localizationHalfFinite w ψ n z‖ < 1/50 := by
+  exact exists_uniform_resonantCoefficients_small localizationHalfFinite localizationHalfAboveOne
+    localizationWeight φ (by norm_num) (by norm_num)
+
+-- The actual determinant, not just a formal quadratic, obeys the circle comparison below two.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (3/2)) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs → ∀ z ∈ Metric.sphere ((Real.pi : ℂ)*n) (Real.pi/4),
+      ‖resonantDeterminantExtension localizationHalfFinite w φ n z - (z-(Real.pi : ℂ)*n)^2‖ <
+        ‖(z-(Real.pi : ℂ)*n)^2‖ := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantDeterminant_localization
+    localizationHalfFinite localizationHalfAboveOne w φ
+  exact ⟨N,hN,fun n hn => (hb φ hφ n hn).2.2.2⟩
+
+-- Above two, any pair of actual strip zeros has the source factor-six gap bound.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs → ∀ x ∈ resonantStrip n, ∀ y ∈ resonantStrip n,
+      resonantDeterminantExtension (by norm_num) w φ n x = 0 →
+      resonantDeterminantExtension (by norm_num) w φ n y = 0 →
+      ‖x-y‖^2 ≤ 6*resonantBProductSup (by norm_num) w φ n := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_resonantRoot_gap (p := 3) (by norm_num) (by norm_num) w φ
+  exact ⟨N,hN,fun n hn => (hb φ hφ n hn).2.2⟩
+
+-- Scalar zero detection is connected to the original periodic spectrum at a negative resonance.
+example (φ : PairSpace 3) (z : ℂ) (hz : z ∈ resonantStrip (-3))
+    (h : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (unitBaseEquiv.symm φ) (-3) z hz‖ < 1) :
+    z ∈ periodicSpectrum (by norm_num) φ ↔
+      resonantDeterminantExtension (by norm_num) SpectralWeight.one (unitBaseEquiv.symm φ) (-3) z = 0 :=
+  mem_periodicSpectrum_iff_resonantDeterminantExtension_zero (by norm_num) φ (-3) z hz h
+
+end ResonantLocalizationChecks

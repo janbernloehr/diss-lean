@@ -286,3 +286,11 @@ import NLS.ZakharovShabat.OffDiagonalRegions
 import NLS.ZakharovShabat.OffDiagonalSummability
 import NLS.ZakharovShabat.OffDiagonalSup
 import NLS.ZakharovShabat.OffDiagonalTailBound
+import NLS.ZakharovShabat.UniformPowerTail
+import NLS.ZakharovShabat.ResonantSupSmallness
+import NLS.ZakharovShabat.ResonantCoefficientSmallness
+import NLS.ZakharovShabat.ResonantDeterminantAnalytic
+import NLS.ZakharovShabat.ResonantDeterminantBounds
+import NLS.ZakharovShabat.ResonantDeterminantLocalization
+import NLS.ZakharovShabat.ResonantCauchyGap
+import NLS.ZakharovShabat.ResonantRootGap
