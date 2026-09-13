@@ -1357,9 +1357,16 @@ of the polynomial derivatives, and entire restrictions to every complex affine
 line. The hypotheses use actual joint balls, not a compactness assumption on
 the infinite-dimensional potential domain.
 
-Next, construct the Banach power-series bridge from this complex smoothness
-and the Schwarz estimates to the joint `AnalyticOnNhd` statement. Complete the odd free-product
-identity, the perturbed parity subproducts, and identification of the correctly
-normalized discriminant. Then continue with the anti-discriminant and
+Joint Banach-space analyticity is now proved. Schwarz estimates on equally
+spaced nested balls give geometric bounds for the factorial-normalized Fréchet
+Taylor coefficients and a positive operator-norm convergence radius. Along
+every complex affine line, the same coefficients are the ordinary Taylor
+coefficients of an entire scalar function. Cauchy's theorem identifies the
+sum with the canonical product, yielding its actual joint Fréchet power
+series. Potential and weighted pullbacks and all mixed iterated derivatives
+are analytic as well.
+
+Next, complete the odd free-product identity, the perturbed parity subproducts,
+and identification of the correctly normalized discriminant. Then continue with the anti-discriminant and
 action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

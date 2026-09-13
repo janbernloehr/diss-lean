@@ -10234,3 +10234,60 @@ example (t : ℂ × PairSpace 3) (ψ : PairSpace 3) : AnalyticOnNhd ℂ
 
 end
 end CanonicalSmoothChecks
+
+namespace CanonicalAnalyticChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal NNReal ContDiff
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Zeroth coefficients retain the value, including nonzero constants.
+example (x : Coeff 2) : NLS.ComplexAnalysis.complexTaylorSeries
+    (fun _ : Coeff 2 => (3 : ℂ)) x 0 (fun i => Fin.elim0 i) = 3 := by
+  simp [NLS.ComplexAnalysis.complexTaylorSeries]
+
+-- The factorial normalization gives the correct quadratic coefficient on an infinite-dimensional domain.
+example (L : Coeff 2 →L[ℂ] ℂ) (y : Coeff 2) :
+    NLS.ComplexAnalysis.complexTaylorSeries (fun x : Coeff 2 => (L x)^2) 0 2 (fun _ => y) = (L y)^2 := by
+  have hf : ContDiff ℂ ∞ (fun x : Coeff 2 => (L x)^2) := by fun_prop
+  rw [NLS.ComplexAnalysis.complexTaylorSeries, smul_apply, smul_eq_mul,
+    ← NLS.ComplexAnalysis.iteratedDeriv_affineLine_eq _ hf 0 y 2]
+  have he : (fun a : ℂ => (L (0+a • y))^2) = fun a : ℂ => (L y)^2*a^2 := by
+    funext a
+    simp only [zero_add, map_smul, smul_eq_mul]
+    ring
+  rw [he, iteratedDeriv_const_mul_field, iteratedDeriv_fun_pow_zero]
+  norm_num
+  ring
+
+-- A nonlinear exponential on the coefficient space gets an actual Banach power series.
+example (L : Coeff 2 →L[ℂ] ℂ) (x : Coeff 2) :
+    HasFPowerSeriesAt (fun y : Coeff 2 => Complex.exp (L y))
+      (NLS.ComplexAnalysis.complexTaylorSeries (fun y : Coeff 2 => Complex.exp (L y)) x) x :=
+  (NLS.ComplexAnalysis.hasFPowerSeriesOnBall_of_complexSmooth _ (by fun_prop) x).hasFPowerSeriesAt
+
+-- The joint analytic statement includes the free double zero.
+example : AnalyticAt ℂ (fun t : ℂ × PairSpace 3 => canonicalPeriodicProduct (by simp) t.2 t.1) (0,0) :=
+  analyticOnNhd_canonicalPeriodicProduct_joint (by simp) (by norm_num) _ (Set.mem_univ _)
+
+-- A convergent Fréchet series also exists at negative lattice points for any actual p=3 potential.
+example (φ : PairSpace 3) : HasFPowerSeriesAt
+    (fun t : ℂ × PairSpace 3 => canonicalPeriodicProduct (by simp) t.2 t.1)
+    (NLS.ComplexAnalysis.complexTaylorSeries
+      (fun t : ℂ × PairSpace 3 => canonicalPeriodicProduct (by simp) t.2 t.1)
+      (((Real.pi : ℂ)*(-3 : ℤ)),φ)) (((Real.pi : ℂ)*(-3 : ℤ)),φ) :=
+  (hasFPowerSeriesOnBall_canonicalPeriodicProduct (by simp) (by norm_num) _).2.hasFPowerSeriesAt
+
+-- Arbitrary weighted potentials retain full joint analyticity under the original base map.
+example (w : SpectralWeight) : AnalyticOnNhd ℂ
+    (fun t : ℂ × WeightedCoeffPair w.toWeight 3 =>
+      canonicalPeriodicProduct (by simp) (weightedBaseToPair w t.2) t.1) Set.univ :=
+  analyticOnNhd_canonicalPeriodicProduct_weighted (by simp) (by norm_num) w
+
+-- Mixed third-order derivatives themselves depend analytically on both variables.
+example : AnalyticOnNhd ℂ (iteratedFDeriv ℂ 3
+    (fun t : ℂ × PairSpace 3 => canonicalPeriodicProduct (by simp) t.2 t.1)) Set.univ :=
+  analyticOnNhd_iteratedFDeriv_canonicalPeriodicProduct (by simp) (by norm_num) 3
+
+end
+end CanonicalAnalyticChecks

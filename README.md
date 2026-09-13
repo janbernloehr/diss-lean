@@ -700,8 +700,11 @@ installation is absent. No shell startup files are modified.
   variables. Banach-space Schwarz estimates now also give joint complex
   Fréchet smoothness and local uniform operator-norm convergence of the
   polynomial derivatives. Every complex affine-line restriction is entire,
-  including simultaneous spectral and potential perturbations. The explicit
-  Banach power-series conclusion and discriminant identification remain open.
+  including simultaneous spectral and potential perturbations. The actual
+  factorial-normalized Fréchet series now has positive convergence radius and
+  sums to the product, proving joint Banach-space analyticity. This includes
+  weighted potential pullbacks and every mixed iterated derivative.
+  Discriminant identification and the perturbed parity subproducts remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

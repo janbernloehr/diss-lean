@@ -389,3 +389,6 @@ import NLS.ZakharovShabat.CanonicalPeriodicProductContinuity
 import NLS.ComplexAnalysis.BanachHolomorphicLimit
 import NLS.ComplexAnalysis.LocalAnalyticApproximation
 import NLS.ZakharovShabat.CanonicalPeriodicProductSmooth
+import NLS.ComplexAnalysis.BanachTaylorBounds
+import NLS.ComplexAnalysis.BanachSmoothAnalytic
+import NLS.ZakharovShabat.CanonicalPeriodicProductAnalytic

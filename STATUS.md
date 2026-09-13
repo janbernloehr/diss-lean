@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 441 modules and 3383 named public theorems. All compile on the
+The library has 444 modules and 3397 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.BanachTaylorBounds` | Schwarz estimates with fixed radial margins; geometric factorial-normalized Fréchet Taylor bounds; positive convergence radius on complex normed domains |
+| `NLS.ComplexAnalysis.BanachSmoothAnalytic` | Affine-line derivative identity, exact directional Taylor sums, and convergent Banach power series for globally complex smooth scalar-valued maps |
+| `NLS.ZakharovShabat.CanonicalPeriodicProductAnalytic` | Joint Banach-space analyticity of the canonical product, explicit positive-radius Fréchet series, potential and weighted pullbacks, and analyticity of all mixed iterated derivatives |
 | `NLS.ComplexAnalysis.BanachHolomorphicLimit` | Schwarz operator-norm estimates; uniformly Cauchy Fréchet derivatives on smaller balls; complex differentiability and uniform derivative convergence of limits |
 | `NLS.ComplexAnalysis.LocalAnalyticApproximation` | Actual-neighborhood uniform analytic approximation is preserved by Fréchet differentiation and yields continuous complex derivatives of every finite order |
 | `NLS.ZakharovShabat.CanonicalPeriodicProductSmooth` | Joint complex Fréchet smoothness of the canonical product; operator-norm convergence of polynomial derivatives on actual joint neighborhoods; entire restrictions to all complex affine lines |
@@ -3840,8 +3843,8 @@ supplies all hypotheses for every finite `p>1` potential, with one common open
 convex potential neighborhood and threshold for every larger central cutoff.
 
 These modules concern the spectral parameter at each fixed potential.
-Uniform convergence in the potential is proved in the later sections below;
-joint analyticity of the infinite product remains open.
+Uniform convergence in the potential and joint Banach-space analyticity are
+proved in the later sections below.
 
 ## Section 8: entire products and the full spectral zero set
 
@@ -3877,8 +3880,8 @@ and threshold support the construction for every larger central cutoff.
 Analyticity and locally uniform convergence are in the spectral parameter
 for each fixed potential; no joint potential analyticity is claimed.
 
-Analytic dependence on potentials, perturbed parity products, and identification
-with the discriminant remain open. Central-cutoff independence is proved below.
+Joint analytic dependence and central-cutoff independence are proved below.
+Perturbed parity products and identification with the discriminant remain open.
 
 ## Section 8: exact analytic multiplicities
 
@@ -3979,7 +3982,7 @@ canonical definition.
 
 The finite approximants are jointly analytic. The following sections prove
 uniform relative tails, full joint convergence, and joint continuity.
-Joint analyticity of the infinite product remains open.
+Joint analyticity of the infinite product is proved in the final Section 8 subsection below.
 
 ## Section 8: relative tails uniform over potential neighborhoods
 
@@ -4041,8 +4044,8 @@ potential space and proves joint locally uniform convergence in the spectral
 parameter and potential. The eventual joint analytic finite approximants then
 prove joint continuity of the canonical product, including at free lattice
 points and colliding roots. The following section proves full complex Fréchet
-smoothness; the Banach power-series statement and discriminant identification
-remain open.
+smoothness, and the final subsection establishes the Banach power-series
+statement. Discriminant identification remains open.
 
 ## Section 8: joint complex Fréchet smoothness
 
@@ -4071,15 +4074,43 @@ neighborhood of each joint point, hence locally uniformly on the full product
 domain. Restriction to every complex affine line is entire, including lines
 perturbing the spectral parameter and potential simultaneously.
 
-The explicit Banach-space `AnalyticOnNhd` power-series conclusion remains to
-be proved. Mathlib's differentiability-to-power-series theorem has domain `ℂ`;
-the result here is on the full infinite-dimensional product space, without
-assuming that missing implication. Discriminant identification is still open.
+The explicit Banach-space power-series conclusion is established next, using
+the proved complex smoothness and new coefficient estimates. Mathlib's
+one-variable Cauchy theorem is used only on complex affine-line restrictions.
+
+## Section 8: joint Banach-space power series and analyticity
+
+`BanachTaylorBounds` generalizes the Schwarz bound to arbitrary fixed margins
+between nested balls. With `‖f‖≤M` on a radius-`R` ball, equally spaced nested
+balls bound the iterated Fréchet derivatives. The exponential-series inequality
+`n^n/n!≤exp(n)` then gives
+`‖(n!)⁻¹ • Dⁿf(c)‖≤(4 exp(1)/R)^n M`.
+Continuity supplies a bound on an actual neighborhood even in an
+infinite-dimensional domain. Hence the formal Fréchet Taylor series has
+positive radius, at least `R/(4 exp(1))` for the chosen local bound.
+
+`BanachSmoothAnalytic` identifies each diagonal Fréchet coefficient with the
+ordinary derivative of the restriction `a↦f(c+a • y)`. Global complex smoothness
+makes that one-variable restriction entire. Its Cauchy power series sums to
+`f(c+y)`, with exactly the factorial-normalized full Fréchet coefficients.
+Together with the positive operator-norm convergence radius, this proves
+`HasFPowerSeriesOnBall`, hence `AnalyticOnNhd`, for globally complex smooth
+scalar-valued maps on complex normed spaces. No finite-dimensional domain or
+compactness of its balls is assumed.
+
+`CanonicalPeriodicProductAnalytic` applies this bridge to the intrinsic product.
+The full function on `ℂ × PairSpace p` is jointly Banach-space analytic for every
+finite `p>1`, including at colliding roots and all free lattice points. The
+actual Fréchet series is supplied with positive radius and its sum identity.
+Fixed-spectral potential maps and arbitrary weighted base-map pullbacks are
+analytic as well. Every mixed iterated Fréchet derivative is itself analytic.
+The normalized discriminant identification and perturbed parity subproducts
+remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6907 declarations under `NLS`, including generated
+axioms. The current audit covers 6927 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5017,12 +5048,18 @@ nonanalytic first approximant is permitted by the eventual hypotheses. Actual
 Fréchet derivatives, operator-norm convergence near a negative lattice point,
 and entire simultaneous affine perturbations.
 
+Power-series examples check the zeroth coefficient of a nonzero constant and
+the exact quadratic factorial normalization on an infinite-dimensional
+coefficient domain. A nonlinear exponential of a bounded linear functional
+gets an actual Fréchet power series. Actual `p=3` checks cover joint analyticity
+at the free double zero, a convergent series at negative lattice points,
+arbitrary weighted pullbacks, and analyticity of mixed third derivatives.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Bridge the proved complex Fréchet smoothness to a convergent Banach
-   power series for the canonical infinite product, and identify
-   the discriminant.
+2. Identify the correctly normalized discriminant and construct the perturbed
+   parity subproducts, using the proved joint analytic canonical product.
    Free full/even symmetric products and the source prefactor audit are proved;
    complete the odd free-product identity and use the necessary prefactors
    `-1` and `4`, not the inconsistent displayed `-2` and `2`. Bounded source
