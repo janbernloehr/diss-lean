@@ -452,3 +452,7 @@ import NLS.ZakharovShabat.ClassicalChainOperator
 import NLS.ZakharovShabat.ClassicalChainPerturbation
 import NLS.ZakharovShabat.ClassicalChainTaylor
 import NLS.ZakharovShabat.ClassicalMonodromyTaylor
+import NLS.ZakharovShabat.ClassicalFiniteChains
+import NLS.ZakharovShabat.OriginalFiniteChains
+import NLS.ZakharovShabat.ClassicalBoundaryJets
+import NLS.ZakharovShabat.OriginalBoundaryJets

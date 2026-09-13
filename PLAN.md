@@ -1494,10 +1494,18 @@ by its factorial. Evaluating the two columns gives the same series and derivativ
 identities for the fundamental matrix and actual monodromy. The boundary matrix
 series has constant coefficient `M(z)-σI` and signed chain endpoints thereafter.
 
-Next, identify finite original root-chain spaces with the kernels of the finite
-boundary Taylor-jet equations, then identify classical determinant orders with
-original algebraic multiplicities and prove the normalized entire-product identity,
-and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
+Finite original parity chains are now identified with the actual boundary
+Taylor equations. Their classical curves are finite convolutions of normalized
+chains and arbitrary initial values. Alternating those initial values gives
+the ordinary Taylor coefficients. The finite boundary convolution is a linear
+map on finitely many complex pairs; each kernel vector yields a unique original
+chain top vector, and each original finite parity root vector has a unique
+representing kernel jet.
+
+Next, turn this finite correspondence into a linear equivalence and prove that
+the eventual boundary-jet kernel dimension equals the determinant order. This
+will identify classical determinant orders with original algebraic multiplicities.
+Then prove the normalized entire-product identity and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);

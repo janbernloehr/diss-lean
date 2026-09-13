@@ -11395,3 +11395,170 @@ example (σ a b : ℂ) :
 
 end
 end ChainTaylorChecks
+
+namespace BoundaryJetChecks
+open Set Complex Matrix MeasureTheory NLS NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+open scoped Matrix.Norms.Elementwise
+noncomputable section
+
+-- Solve the first normalized free chain directly from its differential equation.
+private theorem free_chain_one (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalChainCurve 0 0 1 v t = (I*(t.val : ℂ)*v.1,-I*(t.val : ℂ)*v.2) := by
+  rw [classicalChainCurve_succ,classicalChainOperator_apply]
+  have hc : ContDiff ℝ 1 (fun x : ℝ => (I*(x : ℂ)*v.1,-I*(x : ℂ)*v.2)) := by
+    have hr : ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)) := Complex.ofRealCLM.contDiff
+    fun_prop
+  have h := classicalForcedSolution_unique 0 0 (classicalChainCurve 0 0 0 v) 0 _
+    hc.contDiffOn.absolutelyContinuousOnInterval (by simp) (by
+      intro s
+      have hd := (((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul I).mul_const v.1).prodMk
+        (((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul (-I)).mul_const v.2)
+      convert! hd using 1
+      simp [classicalODECoefficient_apply,classicalSource_apply,classicalSolutionCurve_apply,
+        classicalSolution_free])
+  exact (h t.property).symm
+
+private theorem free_matrix_one :
+    classicalChainMatrix 0 0 1 ⟨1,by constructor <;> norm_num⟩ = !![I,0;0,-I] := by
+  change !![(classicalChainCurve 0 0 1 (1,0) _).1,(classicalChainCurve 0 0 1 (0,1) _).1;
+    (classicalChainCurve 0 0 1 (1,0) _).2,(classicalChainCurve 0 0 1 (0,1) _).2] = _
+  simp [free_chain_one]
+
+
+private theorem free_boundary_zero (v : ℂ × ℂ) :
+    classicalMatrixAction (classicalBoundarySeries 0 0 1 0 (fun _ => 1)) v = 0 := by
+  rw [classicalBoundarySeries_zero]
+  have hf := classicalFundamentalMatrix_free 0 ⟨1,by constructor <;> norm_num⟩
+  change classicalMatrixAction (classicalFundamentalMatrix 0 0 1 - (1 : ℂ) • 1) v = _
+  rw [hf]
+  simp [classicalMatrixAction]
+
+private theorem free_boundary_one (v : ℂ × ℂ) :
+    classicalMatrixAction (classicalBoundarySeries 0 0 1 1 (fun _ => 1)) v = (-I*v.1,I*v.2) := by
+  rw [classicalBoundarySeries_succ,free_matrix_one]
+  apply Prod.ext <;> norm_num [classicalMatrixAction,Matrix.smul_apply]
+
+private theorem free_two_jet_map (w : Fin 2 → ℂ × ℂ) :
+    finiteBoundaryJetMap 0 0 1 2 w = ![0,(-I*(w 0).1,I*(w 0).2)] := by
+  have hz (v : ℂ × ℂ) : classicalMatrixAction (classicalMonodromy 0 0 - 1) v = 0 := by
+    simpa only [classicalBoundarySeries_zero,one_smul] using free_boundary_zero v
+  funext k
+  fin_cases k <;> simp [finiteBoundaryJetMap,classicalBoundaryJet,Finset.sum_range_succ,
+    initialJetExtension,hz,free_boundary_one]
+
+-- The empty jet has no equations.
+example (Φ : Curve (ℂ × ℂ)) (z σ : ℂ) (w : Fin 0 → ℂ × ℂ) :
+    w ∈ LinearMap.ker (finiteBoundaryJetMap Φ z σ 0) := by
+  rw [mem_ker_finiteBoundaryJetMap_iff]
+  intro j hj
+  omega
+
+-- A free double eigenvalue has two free top coordinates, not additional generalized directions.
+example (w : Fin 2 → ℂ × ℂ) :
+    w ∈ LinearMap.ker (finiteBoundaryJetMap 0 0 1 2) ↔ w 0 = 0 := by
+  rw [LinearMap.mem_ker,free_two_jet_map]
+  constructor
+  · intro h
+    have h₁ := congrArg (fun f : Fin 2 → ℂ × ℂ => (f 1).1) h
+    have h₂ := congrArg (fun f : Fin 2 → ℂ × ℂ => (f 1).2) h
+    apply Prod.ext
+    · simpa using (mul_eq_zero.mp h₁).resolve_left (neg_ne_zero.mpr I_ne_zero)
+    · simpa using (mul_eq_zero.mp h₂).resolve_left I_ne_zero
+  · intro h
+    simp [h]
+
+private def triangular : Curve (ℂ × ℂ) := ContinuousMap.const _ (1,0)
+
+private theorem triangular_solution (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalSolution triangular 0 v t = (v.1+I*v.2*(t.val : ℂ),v.2) := by
+  have h := classicalSolution_unique triangular 0 v
+    (fun x : ℝ => (v.1+I*v.2*(x : ℂ),v.2)) (by fun_prop) (by simp) (by
+      intro s _
+      have hd := ((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul (I*v.2)).const_add v.1
+      convert! hd.prodMk (hasDerivAt_const s.val v.2) using 1
+      simp [classicalODECoefficient_apply,triangular])
+  exact (h t.property).symm
+
+private theorem triangular_chain_one (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalChainCurve triangular 0 1 v t = (I*(t.val : ℂ)*v.1,-I*(t.val : ℂ)*v.2) := by
+  rw [classicalChainCurve_succ,classicalChainOperator_apply]
+  have hr : ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)) := Complex.ofRealCLM.contDiff
+  have hc : ContDiff ℝ 1 (fun x : ℝ => (I*(x : ℂ)*v.1,-I*(x : ℂ)*v.2)) := by fun_prop
+  have h := classicalForcedSolution_unique triangular 0 (classicalChainCurve triangular 0 0 v) 0 _
+    hc.contDiffOn.absolutelyContinuousOnInterval (by simp) (by
+      intro s
+      have hd := (((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul I).mul_const v.1).prodMk
+        (((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul (-I)).mul_const v.2)
+      convert! hd using 1
+      rw [classicalChainCurve_zero,classicalSolutionCurve_apply,triangular_solution v s]
+      simp only [classicalODECoefficient_apply,triangular,ContinuousMap.const_apply,classicalSource_apply]
+      apply Prod.ext <;> dsimp <;> ring)
+  exact (h t.property).symm
+
+private theorem triangular_monodromy : classicalMonodromy triangular 0 = !![1,I;0,1] := by
+  change classicalFundamentalMatrix triangular 0 (⟨1,by constructor <;> norm_num⟩ : Icc (0 : ℝ) 1) = _
+  have h₁ := triangular_solution (1,0) ⟨1,by constructor <;> norm_num⟩
+  have h₂ := triangular_solution (0,1) ⟨1,by constructor <;> norm_num⟩
+  simp only [classicalFundamentalMatrix,h₁,h₂]
+  norm_num
+
+private theorem triangular_matrix_one :
+    classicalChainMatrix triangular 0 1 ⟨1,by constructor <;> norm_num⟩ = !![I,0;0,-I] := by
+  change !![(classicalChainCurve triangular 0 1 (1,0) _).1,(classicalChainCurve triangular 0 1 (0,1) _).1;
+    (classicalChainCurve triangular 0 1 (1,0) _).2,(classicalChainCurve triangular 0 1 (0,1) _).2] = _
+  simp [triangular_chain_one]
+
+-- A nonzero triangular potential admits the genuine two-step jet (e₁,e₂).
+-- The alternating conversion makes its original chain initial values (e₁,-e₂).
+private theorem triangular_jet_kernel : ![((1 : ℂ),0),(0,1)] ∈ LinearMap.ker (finiteBoundaryJetMap triangular 0 1 2) := by
+  rw [LinearMap.mem_ker]
+  funext k
+  fin_cases k <;> simp [finiteBoundaryJetMap,classicalBoundaryJet,Finset.sum_range_succ,
+    initialJetExtension,classicalBoundarySeries_zero,classicalBoundarySeries_succ,
+    triangular_monodromy,triangular_matrix_one,classicalMatrixAction,Matrix.smul_apply]
+
+-- Omitting the next initial vector fails: the source term cannot be ignored.
+example : ![((1 : ℂ),0),(0,0)] ∉ LinearMap.ker (finiteBoundaryJetMap triangular 0 1 2) := by
+  intro h
+  have ht := congrArg (fun f : Fin 2 → ℂ × ℂ => (f 1).1) (LinearMap.mem_ker.mp h)
+  norm_num [finiteBoundaryJetMap,classicalBoundaryJet,Finset.sum_range_succ,
+    initialJetExtension,classicalBoundarySeries_zero,classicalBoundarySeries_succ,
+    triangular_monodromy,triangular_matrix_one,classicalMatrixAction,Matrix.smul_apply] at ht
+  change classicalBoundarySeries triangular 0 1 1 (fun _ => 1) 0 0 = 0 at ht
+  rw [classicalBoundarySeries_succ,triangular_matrix_one] at ht
+  norm_num at ht
+
+private def constantDomain (v : ℂ × ℂ) : Domain 2 := (scalarMode 0 v.1,scalarMode 0 v.2)
+private theorem physical_constant (v : ℂ × ℂ) (t : ℝ) : physicalDomain (constantDomain v) t = v := by
+  simp [physicalDomain,constantDomain,sobolevSynthesis_scalarMode]
+private theorem constant_parity (v : ℂ × ℂ) : constantDomain v ∈ domainParitySubspace 0 := by
+  intro n hn
+  have hn0 : n ≠ 0 := by omega
+  simp [constantDomain,scalarMode_apply,hn0]
+private def triangularPotential : PairSpace 2 := domainInclusion (constantDomain (1,0))
+private theorem triangular_even : triangularPotential ∈ pairParitySubspace 0 :=
+  (mem_domainParitySubspace 0 _).mp (constant_parity (1,0))
+private theorem triangular_representative :
+    physicalBase triangularPotential =ᵐ[volume.restrict (Ioc 0 1)] LinearVolterra.extend triangular := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num)) (physicalBase_domainInclusion (constantDomain (1,0)))
+  filter_upwards [h] with t ht
+  simpa only [triangularPotential,physical_constant,LinearVolterra.extend,triangular,ContinuousMap.const_apply] using ht
+
+
+-- The concrete Taylor kernel yields an original domain-valued chain, with uniqueness.
+example : ∃! a : Domain 2,
+    IsOriginalParityChain triangularPotential 0 0
+      (signedInitialJet (initialJetExtension 2 ![((1 : ℂ),0),(0,1)])) 1 a := by
+  apply (existsUnique_originalParityChain_iff_finiteKernel triangularPotential triangular_even
+    triangular triangular_representative 0 0 1 _).mpr
+  simpa only [wave_zero] using triangular_jet_kernel
+
+-- Every represented chain still belongs to the original root-space recursion at the exact length.
+example (a : Domain 2)
+    (ha : IsOriginalParityChain triangularPotential 0 0
+      (signedInitialJet (initialJetExtension 2 ![((1 : ℂ),0),(0,1)])) 1 a) :
+    domainInclusion a ∈ periodicRootSpace (by simp) triangularPotential 0 2 := ha.mem_rootSpace
+
+end
+end BoundaryJetChecks

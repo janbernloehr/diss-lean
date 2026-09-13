@@ -760,7 +760,10 @@ installation is absent. No shell startup files are modified.
   solution curves with positive radius. All spectral derivatives are the
   factorial-scaled signed chain curves. Evaluating both columns proves the
   corresponding series and derivatives for the fundamental matrix and monodromy;
-  the boundary multiplier changes only the constant coefficient.
+  the boundary multiplier changes only the constant coefficient. Finite chains
+  with arbitrary initial data are now identified with the actual boundary Taylor
+  equations. The finite linear convolution kernel uniquely parametrizes every
+  original finite parity root vector, with the alternating initial signs retained.
   Equality of algebraic multiplicities with the classical
   determinants and normalized infinite-product identification needed for
   `f+2=g−2` remain open.

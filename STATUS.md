@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 504 modules and 3735 named public theorems. All compile on the
+The library has 508 modules and 3767 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalFiniteChains` | Arbitrary initial jets, exact finite convolution of normalized chain curves, initial values, and propagation by normalized columns |
+| `NLS.ZakharovShabat.OriginalFiniteChains` | All original finite parity-domain chains, exact root-space recursion, classical representatives, endpoint solvability, and uniqueness of top vectors and finite initial data |
+| `NLS.ZakharovShabat.ClassicalBoundaryJets` | Standard matrix action in pair coordinates, actual boundary Taylor convolution, alternating initial-jet involution, and exact endpoint-defect formula |
+| `NLS.ZakharovShabat.OriginalBoundaryJets` | Finite linear boundary convolution map and its kernel; unique original chain for every kernel vector and unique kernel jet for every original finite parity root vector |
 | `NLS.ZakharovShabat.ClassicalChainOperator` | Bounded zero-initial source solver, normalized repeated forced curves, physical pencil recursion, initial values, and operator-norm bounds |
 | `NLS.ZakharovShabat.ClassicalChainPerturbation` | Signed spectral coefficient increment, exact Volterra factorization, and shifted inverse formula through the fixed chain operator |
 | `NLS.ZakharovShabat.ClassicalChainTaylor` | Explicit convergent whole-curve spectral Taylor series with positive radius and all factorial-scaled signed chain derivatives |
@@ -4628,14 +4632,45 @@ convergent fundamental-matrix series at every physical point and the monodromy
 series at the endpoint. Their derivatives are the same factorial-scaled signed
 chain matrices. For every multiplier `σ`, the boundary series has constant
 coefficient `M(z)-σI`; all positive coefficients are the signed chain endpoints.
-These formulas supply the coefficients for a future finite-jet boundary
-comparison. Equality of classical determinant orders with original algebraic
+These formulas supply the coefficients for the finite-jet boundary
+comparison below. Equality of classical determinant orders with original algebraic
 multiplicities, entire normalization, and finite-p extension remain open.
+
+## Section 8: finite boundary Taylor kernels and original chains
+
+`ClassicalFiniteChains` allows independent initial vectors at every chain
+level. Its recursive solution is the finite convolution of those vectors
+with the normalized zero-initial chains. The formula holds for whole continuous
+curves and identifies every level's initial value.
+
+`OriginalFiniteChains` defines chains using the original weighted domain,
+parity, and pencil at every level. Their physical curves equal the classical
+initial-jet curves. A chain of length `n+1` exists exactly when all its endpoint
+conditions hold. Its top vector is unique for prescribed initial data; the top
+vector also determines all the initial values through degree `n`. This chain
+recursion is equivalent to the existing original finite parity root-space
+recursion, retaining all domain requirements.
+
+`ClassicalBoundaryJets` uses the coefficients of the actual convergent boundary
+matrix series, acting by the ordinary two-by-two matrix product in pair
+coordinates. Their finite convolution on the alternating initial jet equals
+`(-1)ⁿ` times the endpoint defect at level `n`. Alternating the initial values
+is an involution, so these are precisely the ordinary boundary Taylor equations.
+
+`OriginalBoundaryJets` constructs the finite linear convolution map on `n+1`
+pairs of complex Taylor coefficients. Every vector in its kernel determines
+one and only one original parity-chain top vector. Conversely, each vector
+of the original finite parity root space has a unique representing finite
+Taylor jet in that kernel. Empty jets have no equations.
+
+The finite correspondence is now proved. Turning it into a linear equivalence,
+computing the eventual kernel dimension as the boundary determinant order,
+and comparing normalized entire products remain the next multiplicity steps.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7639 declarations under `NLS`, including generated
+axioms. The current audit covers 7713 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5677,6 +5712,12 @@ They verify the monodromy derivative signs and the second-derivative factorial,
 the different periodic and antiperiodic constant boundary coefficients, and
 the second boundary coefficient for arbitrary multiplier and spectral directions.
 
+Boundary-jet checks cover the empty kernel system and the free two-level kernel,
+where the bottom vector must vanish. For a nonzero triangular potential they
+verify the genuine jet `(e₁,e₂)`, reject omission of its second initial vector,
+and obtain a unique original chain with the alternating initial data. The top
+vector retains membership in the original root-space recursion at level two.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5704,7 +5745,10 @@ the second boundary coefficient for arbitrary multiplier and spectral directions
    initial data. The convergent spectral Taylor coefficients of the whole
    solution curves, fundamental matrix, monodromy, and boundary matrices now
    agree with the signed normalized forced-chain curves and endpoints.
-   Next connect finite original chain spaces to the boundary Taylor jets.
+   Finite original parity root vectors now correspond uniquely in both
+   directions to the kernels of the actual finite boundary Taylor equations.
+   Next formalize the linear equivalence and compute the eventual kernel
+   dimension as the boundary determinant order.
    Equality of classical and original algebraic multiplicities
    remains open. The classical boundary determinants have the required compatibility, but
    their equality with the infinite spectral products and extension to finite-p
