@@ -1532,9 +1532,17 @@ algebraic multiplicities. The shifted traces `Δ−2`, `Δ+2` and the full
 characteristic function `Δ²−4` have the exact original multiplicities,
 and hence the same vanishing orders as the intrinsic canonical products.
 
-Next, prove the normalized entire-product identity, using these equal orders
-together with growth and normalization, and use potential approximation to
-prove `f+2=g−2` for finite p>1. The classical
+Equal finite orders now give canonical filled quotients that are entire and
+nonvanishing. The actual shifted traces and full characteristic function
+factor exactly as those quotients times their canonical spectral products,
+including at common zeros. The parity quotients multiply to the full quotient.
+A bounded quotient is a nonzero constant; a prescribed finite limit at infinity
+determines that constant and, in particular, a limit of one proves normalization.
+
+Next, establish the classical and product asymptotic bounds needed to show
+that the actual filled quotients tend to one. Control across the excluded
+spectral discs is also needed for a limit on the whole complement of compact
+sets. Then use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);

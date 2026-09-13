@@ -11912,3 +11912,117 @@ example : analyticOrderAt (canonicalPeriodicProduct (by simp) (0 : PairSpace 2))
 
 end
 end ClassicalMultiplicityChecks
+
+namespace EntireQuotientChecks
+open Complex Filter Topology NLS.ComplexAnalysis
+noncomputable section
+
+private theorem power_order_finite (n : ℕ) (z : ℂ) : analyticOrderAt (fun w : ℂ => w^n) z ≠ ⊤ := by
+  by_cases hz : z = 0
+  · subst z
+    have h : analyticOrderAt (fun w : ℂ => w^n) 0 = n := by
+      simpa using! analyticOrderAt_pow (n := n) (analyticAt_id (𝕜 := ℂ) (z := 0))
+    rw [h]
+    exact ENat.natCast_ne_top _
+  · have ha : AnalyticAt ℂ (fun w : ℂ => w^n) z := by fun_prop
+    rw [ha.analyticOrderAt_eq_zero.mpr (pow_ne_zero _ hz)]
+    exact ENat.zero_ne_top
+
+private theorem exp_times_power_order (n : ℕ) (z : ℂ) :
+    analyticOrderAt (fun w : ℂ => exp w*w^n) z = analyticOrderAt (fun w : ℂ => w^n) z := by
+  have he : AnalyticAt ℂ exp z := by fun_prop
+  have hp : AnalyticAt ℂ (fun w : ℂ => w^n) z := by fun_prop
+  have ho : analyticOrderAt exp z = 0 := he.analyticOrderAt_eq_zero.mpr (exp_ne_zero z)
+  have h := analyticOrderAt_mul he hp
+  simpa only [ho,zero_add] using! h
+
+private theorem quotient_exp_power (n : ℕ) :
+    analyticQuotient (fun z : ℂ => exp z*z^n) (fun z : ℂ => z^n) = exp := by
+  apply analyticQuotient_eq_of_factorization
+    (by intro z _; fun_prop) (by intro z _; fun_prop)
+    (exp_times_power_order n) (power_order_finite n) (by intro z _; fun_prop)
+  intro z
+  rfl
+
+-- Ordinary Lean division is zero at the common zero; the filled quotient has its analytic value one.
+example : (exp (0 : ℂ)*0^3)/0^3 = 0 := by norm_num
+example : analyticQuotient (fun z : ℂ => exp z*z^3) (fun z : ℂ => z^3) 0 = 1 := by
+  rw [quotient_exp_power,exp_zero]
+
+-- Equal orders permit a nonconstant entire unit; the derivative confirms that normalization is additional work.
+example : deriv (analyticQuotient (fun z : ℂ => exp z*z^3) (fun z : ℂ => z^3)) 0 = 1 := by
+  rw [quotient_exp_power]
+  simp
+
+-- Multiplication of filled quotients remains valid at their shared zero.
+example : analyticQuotient
+    ((fun z : ℂ => exp z*z^2)*(fun z : ℂ => exp z*z^3))
+    ((fun z : ℂ => z^2)*(fun z : ℂ => z^3)) = exp*exp := by
+  rw [analyticQuotient_mul_distrib
+    (by intro z _; fun_prop) (by intro z _; fun_prop)
+    (by intro z _; fun_prop) (by intro z _; fun_prop)
+    (exp_times_power_order 2) (exp_times_power_order 3) (power_order_finite 2) (power_order_finite 3),
+    quotient_exp_power,quotient_exp_power]
+
+private theorem constant_times_power_order (z : ℂ) :
+    analyticOrderAt (fun w : ℂ => (2+I)*w^3) z = analyticOrderAt (fun w : ℂ => w^3) z := by
+  have hc : (2+I : ℂ) ≠ 0 := by intro h; have := congrArg Complex.re h; norm_num at this
+  have ha : AnalyticAt ℂ (fun _ : ℂ => 2+I) z := analyticAt_const
+  have hp : AnalyticAt ℂ (fun w : ℂ => w^3) z := by fun_prop
+  have h := analyticOrderAt_mul ha hp
+  simpa only [ha.analyticOrderAt_eq_zero.mpr hc,zero_add] using! h
+
+private theorem quotient_complex_constant :
+    analyticQuotient (fun z : ℂ => (2+I)*z^3) (fun z : ℂ => z^3) = fun _ => 2+I := by
+  apply analyticQuotient_eq_of_factorization
+    (by intro z _; fun_prop) (by intro z _; fun_prop)
+    constant_times_power_order (power_order_finite 3) analyticOnNhd_const
+  intro z
+  rfl
+
+-- A genuine complex factor is retained when the common zero is filled.
+example : analyticQuotient (fun z : ℂ => (2+I)*z^3) (fun z : ℂ => z^3) 0 = 2+I := by
+  rw [quotient_complex_constant]
+
+-- A quotient limit fixes the numerator even at an unrelated complex evaluation point.
+example (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f Set.univ)
+    (ho : ∀ z, analyticOrderAt f z = analyticOrderAt (fun w : ℂ => w^3) z)
+    (hlim : Tendsto (analyticQuotient f (fun w : ℂ => w^3)) (cocompact ℂ) (𝓝 (2+I))) :
+    f I = 1-2*I := by
+  have h := eq_const_mul_of_tendsto_analyticQuotient hf (by intro z _; fun_prop)
+    ho (power_order_finite 3) hlim I
+  rw [h]
+  norm_num [add_mul]
+  ring
+
+end
+end EntireQuotientChecks
+
+namespace ClassicalQuotientChecks
+open Set Complex MeasureTheory Filter Topology NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+noncomputable section
+
+private theorem free_representative :
+    physicalBase (0 : PairSpace 2) =ᵐ[volume.restrict (Ioc 0 1)] extend (0 : Curve (ℂ × ℂ)) := by
+  have h := ae_restrict_of_ae_restrict_of_subset
+    (Ioc_subset_Ioc_right (show (1 : ℝ) ≤ 2 by norm_num)) physicalBase_zero
+  filter_upwards [h] with t ht
+  simpa only [NLS.LinearVolterra.extend,ContinuousMap.zero_apply,Pi.zero_apply] using! ht
+
+-- The filled parity factor stays nonzero at the double free eigenvalue.
+example : classicalParityProductQuotient 0 0 0 0 ≠ 0 :=
+  classicalParityProductQuotient_ne_zero 0 (Submodule.zero_mem _) 0 free_representative 0 (Or.inl rfl) 0
+
+-- Both parity factors multiply to the full factor at every signed free Fourier point, including collisions.
+example (k : ℤ) :
+    classicalParityProductQuotient 0 0 0 ((Real.pi : ℂ)*k)*classicalParityProductQuotient 0 0 1 ((Real.pi : ℂ)*k) =
+      classicalPeriodicProductQuotient 0 0 ((Real.pi : ℂ)*k) :=
+  congrFun (classicalParityProductQuotients_mul 0 (Submodule.zero_mem _) 0 free_representative) _
+
+-- Full factorization holds at every complex point, with no exclusion around a root.
+example (z : ℂ) : classicalPeriodicProductQuotient 0 0 z*canonicalPeriodicProduct (by simp) (0 : PairSpace 2) z =
+    (classicalDiscriminant 0 z)^2-4 :=
+  classicalPeriodicProductQuotient_mul 0 (Submodule.zero_mem _) 0 free_representative z
+
+end
+end ClassicalQuotientChecks

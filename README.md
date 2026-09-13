@@ -776,7 +776,10 @@ installation is absent. No shell startup files are modified.
   determinant Taylor series, proving equality of classical analytic determinant
   orders and original multiplicities. The functions `Δ−2`, `Δ+2`, and `Δ²−4`
   have the same vanishing orders as the canonical even, odd, and full spectral
-  products. Exact entire-function normalization and the finite-p identity
+  products. Their quotients now extend to entire nonvanishing functions,
+  giving exact factorizations even at common zeros; the two parity factors
+  multiply to the full factor. A quotient limit of one would prove the exact
+  normalization by Liouville's theorem. Those limits and the finite-p identity
   `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 

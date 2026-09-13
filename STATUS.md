@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 526 modules and 3872 named public theorems. All compile on the
+The library has 529 modules and 3894 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.EqualOrderQuotient` | Filled meromorphic quotient, zero quotient order, entire nonvanishing extension, exact factorization at common zeros, and Liouville normalization criteria |
+| `NLS.ComplexAnalysis.AnalyticQuotientUniqueness` | Punctured nonvanishing of finite-order analytic germs, uniqueness of the filled factor from an entire factorization, and multiplicativity of quotient factors |
+| `NLS.ZakharovShabat.ClassicalProductQuotients` | Actual parity/full entire nonvanishing factors, exact product factorizations, ordinary division away from roots, parity factor multiplication, and normalization from quotient limits |
 | `NLS.ComplexAnalysis.ScalarTaylorAlgebra` | Exact factorial coefficient formula, additive and subtractive formal extraction, and product convolution for convergent scalar Taylor series |
 | `NLS.ComplexAnalysis.MatrixTaylorDeterminant` | Continuous entry extraction, convergent scalar determinant series, equality of formal and analytic determinant orders, and eventual analytic determinant nullity |
 | `NLS.ZakharovShabat.ClassicalBoundaryMultiplicity` | Actual formal/analytic boundary determinant compatibility, exact original parity multiplicities, finite orders, and eventual analytic boundary nullities |
@@ -4814,10 +4817,40 @@ three, its exact third Taylor coefficient, identical analytic rows and their
 unbounded nullities, signed free parity orders at negative Fourier indices,
 and the full free characteristic multiplicity at every Fourier point.
 
+## Section 8: entire normalization factors
+
+`EqualOrderQuotient` fills the meromorphic quotient of two entire functions
+at their common zeros. Equal finite analytic orders make each quotient order
+zero, so the filled function is entire and never vanishes. Away from roots
+it equals ordinary division; everywhere it multiplies the denominator to the
+numerator. Liouville's theorem makes a bounded filled quotient a nonzero
+constant. A specified finite limit at infinity fixes the exact constant.
+
+`AnalyticQuotientUniqueness` proves nonvanishing on a punctured neighborhood
+of any finite-order analytic germ. Continuity then determines the filled
+quotient uniquely from any entire factorization, including at the common
+zeros. This proves multiplicativity of filled quotient factors.
+
+`ClassicalProductQuotients` applies the construction to `Δ−2`, `Δ+2` and
+`Δ²−4` divided by the canonical even, odd and full products. Under the
+continuous-representative even Hilbert hypotheses, all factors are entire
+and nonvanishing and give exact factorizations at every spectral point.
+The two parity factors multiply to the full factor. A limit of one at
+infinity would give the exact canonical normalization. These limits and
+the needed classical/product asymptotic bounds are not yet proved; neither
+the unit factors nor equality of vanishing orders alone establishes them.
+
+Examples distinguish ordinary zero division from the filled value one in
+`exp(z) z³ / z³`, verify its nonconstant exponential derivative, check products
+at common zeros and a complex factor `2+i`, and use a quotient limit to recover
+a complex value of the numerator. Actual free examples check nonvanishing
+at a double eigenvalue, multiplication at signed Fourier points, and full
+factorization at arbitrary complex points.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7923 declarations under `NLS`, including generated
+axioms. The current audit covers 7952 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5916,8 +5949,10 @@ formal matrix representation.
    parity algebraic multiplicity. Taylor extraction now commutes with the
    analytic determinant. Classical analytic boundary determinant orders equal
    original parity multiplicities, and the shifted and full discriminants
-   have exactly the orders of their canonical spectral products. Next prove
-   their exact entire-function normalization and extension to finite-p
+   have exactly the orders of their canonical spectral products. Their
+   filled quotients are now entire and nonvanishing, give exact factorizations,
+   and satisfy parity/full multiplication. Next prove their quotient limits
+   at infinity, which give the exact normalization, and extend to finite-p
    potentials.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type

@@ -474,3 +474,6 @@ import NLS.ComplexAnalysis.ScalarTaylorAlgebra
 import NLS.ComplexAnalysis.MatrixTaylorDeterminant
 import NLS.ZakharovShabat.ClassicalBoundaryMultiplicity
 import NLS.ZakharovShabat.ClassicalDiscriminantMultiplicity
+import NLS.ComplexAnalysis.EqualOrderQuotient
+import NLS.ComplexAnalysis.AnalyticQuotientUniqueness
+import NLS.ZakharovShabat.ClassicalProductQuotients
