@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 549 modules and 3984 named public theorems. All compile on the
+The library has 555 modules and 4011 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalSolutionGrowth` | Coefficient norm bound and Gronwall exponential growth for the actual initial-value solution |
+| `NLS.ZakharovShabat.RealSpectralGauge` | Unit-modulus real phases, their product and derivative, and a potential phase rotation preserving the supremum norm |
+| `NLS.ZakharovShabat.ClassicalRealSpectralGauge` | Exact rotated differential equation and unique solution at the shifted spectral parameter, preserving the actual solution norm |
+| `NLS.ZakharovShabat.ClassicalHorizontalStripBounds` | Global solution and trace bounds depending only on imaginary height, uniform trace bounds on potential norm balls, and bounded images of horizontal strips |
+| `NLS.ZakharovShabat.EntireFreeDiscBounds` | Free sphere separation, maximum-modulus propagation of exterior bounds through all free discs, and boundedness from estimates only at exterior infinity |
+| `NLS.ZakharovShabat.ClassicalExteriorNormalization` | Exact canonical parity/full normalization from a bound on the compatible entire quotient only at large exterior parameters |
 | `NLS.ComplexAnalysis.CommonNormalizationLimits` | Eventual denominator nonvanishing, filled quotient limits from a common normalization, and determination of a bounded entire function from a path limit |
 | `NLS.ZakharovShabat.ClassicalQuotientsVerticalLimit` | Actual filled parity/full quotient limits one at both vertical ends and exact canonical identities conditional only on boundedness of the compatible entire factors |
 | `NLS.ZakharovShabat.FreeResolventExteriorLimit` | Uniform scalar resolvent bound outside free discs, exact action on single coefficients, denominator escape, and strong convergence into `ℓ¹` at every finite Banach exponent |
@@ -5011,15 +5017,52 @@ have vanishing total relative size, and full/even/odd canonical ratios tend to
 one, including at `p=3`. They also check odd rescaling, both vertical quotient
 limits, and the remaining boundedness criterion for the exact full identity.
 
-The next missing estimates are uniform classical trace bounds on horizontal
-strips and control of the entire factors across the excluded discs. Global
-quotient boundedness, exact normalization, the finite-p compatibility extension,
-and spectral-derivative asymptotics remain open.
+Uniform classical trace bounds and maximum-modulus propagation across the
+discs are now proved below. Bounding the actual entire factors at exterior
+infinity, exact normalization, the finite-p compatibility extension, and
+spectral-derivative asymptotics remain open.
+
+## Section 8: horizontal growth bounds and filling the free discs
+
+`ClassicalSolutionGrowth` bounds the pair-system coefficient by `|z|+‖Φ‖` and
+uses Gronwall to control the actual initial-value solution. `RealSpectralGauge`
+constructs unit-modulus phases and rotates the two potential coordinates by
+opposite phases at twice the real spectral frequency, preserving the potential
+supremum norm on the unit interval.
+
+`ClassicalRealSpectralGauge` proves the exact differential equation for the
+oppositely phase-rotated solution. Uniqueness identifies it with the classical
+solution for the rotated potential at `z−x`, for any real `x`. Its pair norm
+is unchanged. Taking `x=Re z` in `ClassicalHorizontalStripBounds` gives
+`‖u(t)‖≤‖u(0)‖ exp((|Im z|+‖Φ‖)t)` and the global trace bound
+`|Δ(z)|≤2 exp(|Im z|+‖Φ‖)`. One constant therefore bounds the whole strip
+`|Im z|≤H` over every potential ball `‖Φ‖≤M`. The real-axis case is included.
+
+`EntireFreeDiscBounds` proves that every sphere of radius `0<r≤π/4` centered
+at `πn` is separated by at least `r` from every other free center. An entire
+function bounded outside the open free discs has the same bound inside every
+disc, by maximum modulus. A bound assumed only when `|z|≥R` still gives global
+boundedness, since the omitted central closed ball has compact image.
+
+`ClassicalExteriorNormalization` applies this result to the compatible entire
+quotient factors. Their already proved vertical limits determine the constant
+as one. Thus exact parity/full product normalization now requires only a bound
+on the actual factor at large spectral parameters outside fixed free discs.
+That exterior bound is still a hypothesis: lower bounds for the free factors
+and the canonical exterior ratios must be combined with the classical trace
+estimate to discharge it. The exact infinite-product identity is not yet proved.
+
+Examples check real gauge shifts with nonzero potentials, norm preservation,
+a complex initial vector at half the interval, both imaginary signs, arbitrary
+real spectral parameters, and one bound for a potential norm ball and spectral
+strip. They also exercise separation of all free spheres, maximum modulus at
+the central free point, omission of a central region, and the exterior-only
+criterion for the exact full product identity.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8048 declarations under `NLS`, including generated
+axioms. The current audit covers 8086 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6130,9 +6173,12 @@ formal matrix representation.
    part. The filled quotient factors now have vertical limit one, and the
    intrinsic canonical products have free ratio one along every escaping path
    outside fixed free discs. Boundedness of compatible entire factors now
-   suffices for exact normalization. Next prove uniform classical trace bounds
-   on horizontal strips and bound the factors across the excluded discs,
-   and extend the compatibility identity to finite-p potentials.
+   suffices for exact normalization. Real phase rotation now gives global
+   classical trace growth depending only on imaginary height. Maximum modulus
+   extends exterior entire-function bounds across all free discs, so the exact
+   identity now needs only a bound on the quotient at exterior infinity. Next
+   prove that bound using the free-factor lower bounds and canonical asymptotics,
+   then extend the compatibility identity to finite-p potentials.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

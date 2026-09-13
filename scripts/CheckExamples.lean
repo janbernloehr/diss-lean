@@ -12358,3 +12358,81 @@ example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (Φ : Curve (ℂ 
 
 end
 end ExteriorProductChecks
+
+namespace HorizontalStripChecks
+open Set Complex MeasureTheory NLS NLS.LinearVolterra NLS.ZakharovShabat
+noncomputable section
+
+private def coupledPotential : Curve (ℂ × ℂ) := ContinuousMap.const _ (1,1)
+private theorem coupledPotential_norm : ‖coupledPotential‖ = 1 := by
+  simp [coupledPotential, ContinuousMap.norm_eq_iSup_norm]
+
+-- Phase rotation keeps both coordinate norms, even at a large real frequency.
+example (φ : Curve (ℂ × ℂ)) : ‖realSpectralGauge φ 1000‖ = ‖φ‖ := norm_realSpectralGauge φ 1000
+example (x t : ℝ) : realSpectralPhase x t * realSpectralPhase (-x) t = 1 := by
+  rw [realSpectralPhase_mul]
+  simp
+
+-- The exact gauge identity absorbs a real shift in the genuine nonzero-potential ODE.
+example (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalPhaseRotatedSolution coupledPotential (100+2*I) 100 v t =
+      classicalSolution (realSpectralGauge coupledPotential 100) (2*I) v t := by
+  have h := classicalPhaseRotatedSolution_eq coupledPotential (100+2*I) 100 v t
+  norm_num at h ⊢
+  exact h
+
+-- The solution bound holds halfway through the interval for a complex initial vector.
+example : ‖classicalSolution coupledPotential (100+2*I) (1,I) (1/2)‖ ≤ Real.exp (3/2) := by
+  have h := norm_classicalSolution_le_exp_im coupledPotential (100+2*I) (1,I)
+    ⟨1/2, by constructor <;> norm_num⟩
+  norm_num [coupledPotential_norm] at h ⊢
+  exact h
+
+-- Large real parts no longer appear in the trace bound, on either side of the real axis.
+example : ‖classicalDiscriminant coupledPotential (100+2*I)‖ ≤ 2*Real.exp 3 := by
+  have h := norm_classicalDiscriminant_le_exp_im coupledPotential (100+2*I)
+  norm_num [coupledPotential_norm] at h ⊢
+  exact h
+example : ‖classicalDiscriminant coupledPotential (100-2*I)‖ ≤ 2*Real.exp 3 := by
+  have h := norm_classicalDiscriminant_le_exp_im coupledPotential (100-2*I)
+  norm_num [coupledPotential_norm] at h ⊢
+  exact h
+
+-- The previously excluded zero-imaginary-height case is included for every real parameter.
+example (x : ℝ) : ‖classicalDiscriminant coupledPotential (x : ℂ)‖ ≤ 2*Real.exp 1 := by
+  simpa [coupledPotential_norm] using norm_classicalDiscriminant_le_exp_im coupledPotential (x : ℂ)
+
+-- A single constant bounds a norm ball of potentials on a whole horizontal strip.
+example (φ : Curve (ℂ × ℂ)) (hφ : ‖φ‖ ≤ 2) (z : ℂ) (hz : |z.im| ≤ 3) :
+    ‖classicalDiscriminant φ z‖ ≤ 2*Real.exp 5 := by
+  have h := norm_classicalDiscriminant_le_of_bounds φ z 2 3 hφ hz
+  norm_num at h ⊢
+  exact h
+
+-- A sphere around one integer center avoids all the other open free discs as well.
+example (n m : ℤ) (z : ℂ) (hz : z ∈ Metric.sphere ((Real.pi : ℂ)*n) (Real.pi/4)) :
+    Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*m‖ :=
+  freeSphere_separated (by positivity) le_rfl n hz m
+
+-- Maximum modulus fills all free discs, including the one centered at zero.
+example (f : ℂ → ℂ) (hf : Differentiable ℂ f) (B : ℝ)
+    (hb : ∀ z : ℂ, (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) → ‖f z‖ ≤ B) :
+    ‖f 0‖ ≤ B := norm_entire_le_of_bound_off_freeDiscs hf (by positivity) le_rfl B hb 0
+
+-- The bounded central region need not satisfy the given exterior estimate.
+example (f : ℂ → ℂ) (hf : Differentiable ℂ f)
+    (hb : ∀ z : ℂ, 10 ≤ ‖z‖ → (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) → ‖f z‖ ≤ 3) :
+    Bornology.IsBounded (range f) :=
+  isBounded_entire_of_bound_off_freeDiscs hf (by positivity) le_rfl 10 3 hb
+
+-- The exact full identity now only needs a bound on the large exterior parameters.
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (Φ : Curve (ℂ × ℂ))
+    (hΦ : physicalBase φ =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend Φ)
+    (R B : ℝ)
+    (hb : ∀ z : ℂ, R ≤ ‖z‖ → (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+      ‖classicalPeriodicProductQuotient φ Φ z‖ ≤ B) (z : ℂ) :
+    canonicalPeriodicProduct (by simp) φ z = (classicalDiscriminant Φ z)^2-4 :=
+  canonicalPeriodic_eq_classical_of_exterior_quotient_bound φ hφ Φ hΦ (by positivity) le_rfl R B hb z
+
+end
+end HorizontalStripChecks

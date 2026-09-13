@@ -795,9 +795,12 @@ installation is absent. No shell startup files are modified.
   normalization. The canonical full and parity products also have free ratio
   one along every path escaping to infinity at a fixed positive distance from
   `πℤ`, for all finite `p>1`. This includes real paths between the lattice
-  points. Classical trace bounds near the real axis, bounds across the excluded
-  discs, exact canonical normalization, and the finite-p identity `f+2=g−2`
-  remain open.
+  points. A norm-preserving real phase rotation now gives the global bound
+  `|Δ(z)|≤2 exp(|Im z|+‖Φ‖)`, including the real axis and uniformly on potential
+  norm balls. Maximum modulus extends an entire-function bound across all free
+  discs, and a bounded central region may be omitted from the hypothesis.
+  Exact normalization now only requires a bound on the actual quotient at large
+  exterior parameters. That bound and the finite-p identity `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

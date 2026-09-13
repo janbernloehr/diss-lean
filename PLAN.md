@@ -1577,11 +1577,18 @@ products, and all intrinsic canonical products for finite `p>1`, have ratio
 one to their free functions along every such escaping path, including real
 midpoints between consecutive lattice points.
 
-Next, bound the classical trace uniformly in horizontal strips and combine it
-with the exterior canonical estimates to bound the entire quotients outside
-the discs. Use the maximum-modulus principle across the excluded discs, then
-apply the proved boundedness criteria for exact normalization. Finally use
-potential approximation to prove `f+2=g−2` for finite p>1. The classical
+A real phase gauge now removes the real spectral part without changing either
+the potential supremum norm or the solution norm. Gronwall gives the global
+trace bound `|Δ(z)|≤2 exp(|Im z|+‖Φ‖)`, uniform in the real part and on potential
+norm balls. Every free sphere lies outside all open free discs. Maximum modulus
+therefore extends an exterior entire-function bound across every disc, and
+compactness handles an omitted bounded central region. Exact parity and full
+normalization now reduce to a quotient bound at large exterior parameters.
+
+Next, obtain lower bounds for the free shifted factors away from their zeros
+and combine the classical growth and canonical exterior estimates to prove that
+remaining quotient bound. Apply the proved exterior normalization criteria,
+then use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);

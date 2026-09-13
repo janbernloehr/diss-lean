@@ -497,3 +497,9 @@ import NLS.ZakharovShabat.FreeResolventExteriorLimit
 import NLS.ZakharovShabat.RelativeProductsExteriorLimit
 import NLS.ZakharovShabat.SpectralProductsExteriorLimit
 import NLS.ZakharovShabat.CanonicalProductsExteriorLimit
+import NLS.ZakharovShabat.ClassicalSolutionGrowth
+import NLS.ZakharovShabat.RealSpectralGauge
+import NLS.ZakharovShabat.ClassicalRealSpectralGauge
+import NLS.ZakharovShabat.ClassicalHorizontalStripBounds
+import NLS.ZakharovShabat.EntireFreeDiscBounds
+import NLS.ZakharovShabat.ClassicalExteriorNormalization
