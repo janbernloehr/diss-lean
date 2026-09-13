@@ -9356,3 +9356,75 @@ example (b : BoundaryCondition) (v x : IntervalPairL2) :
   mem_classicalAuxiliaryUnboundedOperator_domain_iff_original b v x
 
 end AuxiliaryOperatorChecks
+
+namespace PhysicalAuxiliaryCountsChecks
+open NLS NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition
+
+-- Phase conjugation preserves every domain-constrained physical chain, beyond ordinary eigenvectors.
+example (b : BoundaryCondition) (u x : IntervalPairL2) (z : ℂ) :
+    intervalAuxiliaryPhase x ∈ classicalAuxiliaryRootSpace b u z 3 ↔
+      x ∈ classicalRootSpace b (intervalAuxiliaryPotential u) z 3 :=
+  mem_classicalAuxiliaryRootSpace_phase b u z 3 x
+
+-- An actual nontrivial two-step physical chain lies in level two and not level one.
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ) (f g : ClassicalAuxiliaryDomain b)
+    (hfg : classicalAuxiliaryPencil b u z f = classicalAuxiliaryInclusion b g)
+    (hg : classicalAuxiliaryPencil b u z g = 0) (hg0 : g ≠ 0) :
+    classicalAuxiliaryInclusion b f ∈ classicalAuxiliaryRootSpace b u z 2 ∧
+    classicalAuxiliaryInclusion b f ∉ classicalAuxiliaryRootSpace b u z 1 := by
+  constructor
+  · apply (mem_classicalAuxiliaryRootSpace_succ b u z 1 _).mpr
+    refine ⟨f,rfl,?_⟩
+    rw [hfg]
+    exact (mem_classicalAuxiliaryRootSpace_succ b u z 0 _).mpr ⟨g,rfl,hg⟩
+  · intro h
+    obtain ⟨v,hv,hn⟩ := (mem_classicalAuxiliaryRootSpace_succ b u z 0 _).mp h
+    have he : v = f := classicalAuxiliaryInclusion_injective b hv
+    rw [he,hfg] at hn
+    exact hg0 (classicalAuxiliaryInclusion_injective b ((show classicalAuxiliaryInclusion b g = 0 from hn).trans (map_zero _).symm))
+
+-- Full physical generalized eigenspaces are finite, stabilize, and lie inside the original unbounded domain.
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ) :
+    FiniteDimensional ℂ (classicalAuxiliaryRootSpaceTop b u z) ∧
+    (∃ n, classicalAuxiliaryRootSpace b u z n = classicalAuxiliaryRootSpaceTop b u z) ∧
+    classicalAuxiliaryRootSpaceTop b u z ≤ (classicalAuxiliaryUnboundedOperator b u).domain :=
+  ⟨finiteDimensional_classicalAuxiliaryRootSpaceTop b u z, exists_classicalAuxiliaryRootSpace_eq_top b u z,
+    classicalAuxiliaryRootSpaceTop_le_domain b u z⟩
+
+-- Physical multiplicity agrees with the actual coefficient root-space dimension, not just an eigenvalue label.
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ) :
+    classicalAuxiliaryAlgebraicMultiplicity b u z = auxiliaryAlgebraicMultiplicity b (by simp)
+      (neumannPotentialCoefficients (intervalL2Representative u) (memLp_intervalL2Representative u))
+      (neumannPotentialCoefficients_mem _ _) z := classicalAuxiliaryAlgebraicMultiplicity_eq_auxiliary b u z
+
+example (b : BoundaryCondition) : classicalAuxiliaryAlgebraicMultiplicity b 0 ((Real.pi : ℂ) * (-9 : ℤ)) = 1 :=
+  classicalAuxiliaryAlgebraicMultiplicity_zero b (-9)
+
+-- One original physical neighborhood supports actual counts, analyticity, and all starred power tails.
+example (u : IntervalPairL2) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set IntervalPairL2,
+      IsOpen U ∧ Convex ℝ U ∧ u ∈ U ∧ 0 ∈ U ∧
+      (∀ v ∈ U, ∀ N : ℕ, N₀ ≤ N → ClassicalAuxiliaryCountingData v N) ∧
+      ∀ v ∈ U, ∀ b : BoundaryCondition,
+        Memℓp (fun n : ℤ => classicalAuxiliaryEigenvalue b v n - (Real.pi : ℂ) * n) 2 ∧
+        (∀ n : ℤ, N₀ ≤ n.natAbs →
+          AnalyticAt ℂ (fun w : IntervalPairL2 => classicalAuxiliaryEigenvalue b w n) v ∧
+          classicalAuxiliaryAlgebraicMultiplicity b v (classicalAuxiliaryEigenvalue b v n) = 1) ∧
+        ∀ N : ℕ, N₀ ≤ N →
+          Summable (spectralDisplacementPowerTail 2 N (classicalAuxiliaryEigenvalue b v)) ∧
+          (∑' n : ℤ, spectralDisplacementPowerTail 2 N (classicalAuxiliaryEigenvalue b v) n) ≤
+            rootDisplacementBudget SpectralWeight.one
+              (unitBaseEquiv.symm (intervalPotentialCoefficients (intervalAuxiliaryPotential v))) N := by
+  obtain ⟨N,hN,U,ho,hc,hu,h0,hcount,han,hbound⟩ := exists_uniform_classicalAuxiliaryAsymptotics u
+  refine ⟨N,hN,U,ho,hc,hu,h0,hcount,?_⟩
+  intro v hv b
+  exact ⟨(hbound v hv b).1,fun n hn => ⟨han b n hn v hv,((hbound v hv b).2.1 n hn).2⟩,
+    (hbound v hv b).2.2⟩
+
+-- Central counts are physical full-root-space dimensions, at every admissible larger cutoff.
+example (u : IntervalPairL2) : ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ b : BoundaryCondition,
+    (∑ z ∈ classicalAuxiliaryCentralSpectrum b u N, classicalAuxiliaryAlgebraicMultiplicity b u z) = 2*N+1 := by
+  obtain ⟨N,U,_,_,_,hu,_,hcount,_⟩ := exists_uniform_classicalAuxiliaryCountingData u
+  exact ⟨N,fun M hM b => (hcount u hu M hM).central_multiplicity b⟩
+
+end PhysicalAuxiliaryCountsChecks

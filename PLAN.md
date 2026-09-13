@@ -1231,8 +1231,19 @@ operator has precisely the original auxiliary endpoint domain, is densely
 defined and closed, and has spectrum equal to the original auxiliary eigenvalue
 set and the actual coefficient auxiliary spectrum.
 
-Next, construct the physical auxiliary generalized root spaces and transfer
-multiplicity counts. Prove locally uniform physical starred square-summable
-displacements, then continue to the Chapter 2 discriminant, product, and
+Actual physical auxiliary generalized root spaces now use the original
+pencil and H¹ domain at every chain step. Phase conjugation identifies every
+level and full root space, proving stabilization and finite dimension.
+Algebraic multiplicity is the actual physical full-root-space dimension and
+agrees with the auxiliary coefficient multiplicity at the Neumann extension.
+Physical clusters give central count `2N+1` and simple high-disc eigenvalues.
+One common open convex L² neighborhood supports both counting data and analytic
+high-index branches, together with full square-summable displacements and
+all larger quantitative tails. This completes the physical starred part of
+Corollary 6.2.
+
+Next, complete the auxiliary source extension's real-type compatibility and
+Proposition 5.2(iv), and verify the bounded period-one auxiliary eigenfunction
+extensions. Then continue to the Chapter 2 discriminant, product, and
 action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

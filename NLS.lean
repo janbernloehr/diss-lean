@@ -339,3 +339,7 @@ import NLS.ZakharovShabat.AuxiliaryPhysicalL2
 import NLS.ZakharovShabat.ClassicalAuxiliaryOperator
 import NLS.ZakharovShabat.ClassicalAuxiliaryResolvent
 import NLS.ZakharovShabat.ClassicalAuxiliaryClosed
+import NLS.ZakharovShabat.ClassicalAuxiliaryRootSpaces
+import NLS.ZakharovShabat.ClassicalAuxiliaryMultiplicity
+import NLS.ZakharovShabat.ClassicalAuxiliaryCounting
+import NLS.ZakharovShabat.ClassicalAuxiliaryAsymptotics

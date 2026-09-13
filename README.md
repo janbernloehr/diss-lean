@@ -651,8 +651,12 @@ installation is absent. No shell startup files are modified.
   potential. The original auxiliary domains now have their exact physical H¹
   norm and complete-space structure. The physical L² operators are densely
   defined and closed, with compact two-sided resolvents and spectra equal to
-  the original auxiliary eigenvalue sets. Physical generalized multiplicities
-  and locally uniform starred asymptotics remain to be transferred.
+  the original auxiliary eigenvalue sets. Actual physical generalized root
+  spaces now stabilize and have finite dimension, defining multiplicities
+  that agree with the coefficient problem. Both starred physical branches
+  have locally uniform algebraic counts, analytic simple high-disc values,
+  and square-summable displacements with quantitative tails. This completes
+  the physical L² starred displacement conclusions of Corollary 6.2.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

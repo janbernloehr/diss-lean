@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 391 modules and 3112 named public theorems. All compile on the
+The library has 395 modules and 3141 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryRootSpaces` | Actual physical auxiliary Jordan-chain recursion, phase equivalence, full-root-space stabilization and finite dimension, and membership in the original unbounded domain |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryMultiplicity` | Actual physical full-root-space dimension, equality with ordinary physical and auxiliary coefficient multiplicities, positivity on spectrum, and signed free simplicity |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryCounting` | Actual physical central counts `2N+1`, simple high-disc eigenvalues, and analytic starred branches on common original L² neighborhoods |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryAsymptotics` | Physical starred Corollary 6.2: square-summable displacements, actual multiplicity counts, analytic simple branches, and all larger quantitative tails on one neighborhood |
 | `NLS.ZakharovShabat.ClassicalAuxiliarySpace` | Actual auxiliary interval functions with exact physical H¹ norm; phase isometry, completeness, and bounded Fourier extension/restriction equivalence |
 | `NLS.ZakharovShabat.AuxiliaryPhysicalL2` | Function and potential phase isometries on the original component-sum L² space, with actual a.e. representative identities |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryOperator` | Dense injective physical inclusion and bounded domain-to-base operator, realizing the actual differential expression for original representatives |
@@ -3526,8 +3530,8 @@ The ordinary coefficient/physical realizations and midpoint consequence are
 proved above. The auxiliary coefficient realization and starred displacement
 conclusions, coefficient multiplicities, and physical auxiliary endpoint and
 eigenvalue-set identifications are proved below, together with the independent
-physical operator and resolvent. Physical generalized multiplicities and uniform
-starred asymptotics remain.
+physical operator and resolvent, generalized multiplicities, and uniform
+starred asymptotics.
 
 ## Auxiliary spectra, physical endpoint realization, and starred asymptotics
 
@@ -3605,7 +3609,7 @@ of the physically transformed potential. This gives equality of the original
 auxiliary eigenvalue sets with the actual coefficient spectra and proves both
 directions of the eigenvalue equation transfer, using the actual Sobolev
 extension in Lemma 5.1. The independent physical L² resolvent is constructed
-below; multiplicity from physical generalized root spaces remains separate.
+below, followed by multiplicity from actual physical generalized root spaces.
 
 `ClassicalAuxiliarySpace` stores actual functions on the original closed
 interval. Its membership criterion is exactly the auxiliary H¹ endpoint
@@ -3633,16 +3637,43 @@ L². Its potential-independent domain is exactly the L² classes of original
 auxiliary H¹ functions. Its values are the actual differential expression,
 its domain is dense, and the physical resolvent proves its graph is closed.
 
-**Remaining scope.** Construct actual physical auxiliary generalized root
-spaces, then transfer multiplicity counts and locally uniform physical starred
-square-summability.
+`ClassicalAuxiliaryRootSpaces` defines the actual physical Jordan-chain
+recursion using the auxiliary pencil and physical inclusion. Every intermediate
+vector requires the original auxiliary H¹ domain. Phase conjugation identifies
+all finite levels and full root spaces with ordinary physical root spaces. The
+full space stabilizes, has finite dimension, is closed, and is contained in
+the original unbounded auxiliary domain.
+
+`ClassicalAuxiliaryMultiplicity` defines multiplicity as this actual physical
+full-root-space dimension. It agrees with ordinary physical multiplicity at
+the transformed potential and with actual auxiliary coefficient multiplicity
+at the Neumann extension. It is positive exactly on the physical spectrum
+and zero on the resolvent set; every signed free mode has multiplicity one.
+
+`ClassicalAuxiliaryCounting` defines central clusters from the original
+physical spectrum. Both conditions have central algebraic count `2N+1`,
+one simple eigenvalue per high disc, and no spectrum outside the proved
+localization regions. One open convex physical L² neighborhood containing
+the given potential and zero supports every larger cutoff, with analytic
+high-index branches that equal the auxiliary coefficient trace branches.
+
+`ClassicalAuxiliaryAsymptotics` combines those physical counts and analytic
+branches with the physical starred displacement estimates. On one common
+neighborhood both branches have full `Memℓp` membership at `p=2`, unique
+algebraically simple high-disc values, and every larger convergent displacement
+power tail bounded by the corrected budget of the transformed reflected
+potential. This proves the original physical L² starred part of Corollary 6.2.
+
+**Remaining scope.** Complete auxiliary real-type compatibility and the
+reality clause in Proposition 5.2(iv), and the bounded source period-one
+auxiliary eigenfunction extensions.
 The printed general-`p` central-height issue and the global nonlinear
 coordinate construction remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 6371 declarations under `NLS`, including generated
+axioms. The current audit covers 6438 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4489,15 +4520,25 @@ and potentials. The checks also cover nonempty resolvent sets, compactness,
 closedness, density, and exact original-function membership in the unbounded
 domain.
 
+Physical auxiliary multiplicity checks cover finite-chain conjugation, the
+recognition of a nontrivial two-step chain from actual domain-pencil equations,
+full-root-space stabilization and finite dimension, and containment in the
+original unbounded domain. Physical and actual coefficient multiplicities agree,
+and negative free indices are simple. The public physical asymptotic API retains
+one open convex neighborhood for both conditions, actual central counts at
+every larger cutoff, analytic simple branches, full square-summability, and
+all quantitative displacement tails.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Construct physical auxiliary generalized root spaces and transport
-   multiplicity counts and locally uniform starred asymptotics. The physical
-   endpoint domains, normed isomorphisms, closed densely defined L² operator,
-   compact resolvent, and eigenvalue-set identification are now proved. The coefficient auxiliary spectra and all four
-   coefficient Corollary 6.2 displacement conclusions are now proved,
-   as are the midpoint consequence and ordinary physical `L²` transfer.
+2. Complete auxiliary source-extension real-type compatibility and
+   Proposition 5.2(iv), and verify bounded source period-one auxiliary
+   eigenfunction extension maps. The physical endpoint domains, normed
+   isomorphisms, closed densely defined L² operators, compact resolvents,
+   actual generalized multiplicities, counts, and uniform starred asymptotics
+   are now proved. All four coefficient and physical L² Corollary 6.2
+   displacement conclusions hold, together with the midpoint consequence.
    Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue
    pairs and intrinsic squared gaps, with exact spectral algebraic multiplicities.
    Lemma 6.7 is proved with `φ*=±φ` retained for
@@ -4516,5 +4557,5 @@ domain.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the auxiliary physical multiplicity/asymptotic transfers and Chapter 2 nonlinear
+the remaining auxiliary source-extension/reality results and Chapter 2 nonlinear
 coordinate construction remain incomplete.
