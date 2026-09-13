@@ -10777,3 +10777,72 @@ example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (c z : ℂ) (R : 
 
 end
 end ParityAnalyticChecks
+
+namespace ParityUniformChecks
+open NLS NLS.ZakharovShabat Filter Topology Metric
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+private theorem hp3 : (3 : ℝ≥0∞) ≠ ⊤ := by norm_num
+
+-- A finite central replacement has one norm bound, independent of its labels.
+example (a : Coeff 3) (hb : ∀ n ∈ ({-2,0,3} : Finset ℤ), ‖a n‖ ≤ 2)
+    (hs : ∀ n ∉ ({-2,0,3} : Finset ℤ), a n = 0) : ‖a‖ ≤ 6 := by
+  have h := Coeff.norm_le_of_eq_outside_finset a 0 {-2,0,3} 2 hb hs
+  norm_num at h
+  exact h
+
+-- Negative affine residues preserve the p=1 displacement norm as well.
+example (ξ : ℤ → ℂ) (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 1) :
+    ‖(⟨_,memℓp_parityRescale (by simp) ξ hξ (-3)⟩ : Coeff 1)‖ ≤ ‖(⟨_,hξ⟩ : Coeff 1)‖ :=
+  norm_parityRescale_displacement_le (by simp) ξ hξ (-3)
+
+-- Every displacement in the infinite-dimensional p=3 unit ball is allowed, with coincident pairs.
+example :
+    let X := {a : Coeff 3 // ‖a‖ ≤ 1}
+    let ξ := fun (a : X) (n : ℤ) => (Real.pi : ℂ)*n+a.val n
+    TendstoUniformlyOn (fun (M : ℕ) (t : ℂ × X) => oddSpectralPairCutoff (ξ t.2) (ξ t.2) t.1 M)
+      (fun t => oddSpectralPairProduct (ξ t.2) (ξ t.2) t.1) atTop
+      (closedBall 0 Real.pi ×ˢ Set.univ) := by
+  dsimp only
+  let X := {a : Coeff 3 // ‖a‖ ≤ 1}
+  let ξ := fun (a : X) (n : ℤ) => (Real.pi : ℂ)*n+a.val n
+  have hξ (a : X) : Memℓp (fun n => ξ a n-(Real.pi : ℂ)*n) 3 := by
+    simpa only [ξ, add_sub_cancel_left] using lp.memℓp a.val
+  have hb (a : X) : ‖(⟨_,hξ a⟩ : Coeff 3)‖ ≤ 1 := by
+    simpa only [ξ, add_sub_cancel_left] using a.property
+  exact (tendstoUniformlyOn_paritySpectralProducts_family hp3 (by norm_num) ξ ξ hξ hξ 1
+    (by norm_num) hb hb _ (isCompact_closedBall _ _)).2
+
+-- Bounded nonsummable displacements still permit simultaneous removal of the odd boundary factor.
+example :
+    let X := {a : Coeff ∞ // ‖a‖ ≤ 1}
+    let ξ := fun (a : X) (n : ℤ) => (Real.pi : ℂ)*n+a.val n
+    ∀ᶠ M : ℕ in atTop, ∀ t ∈ closedBall (0 : ℂ) 5 ×ˢ (Set.univ : Set X),
+      spectralPairFactor (ξ t.2) (ξ t.2) t.1 (2*(M : ℤ)+1) ≠ 0 := by
+  dsimp only
+  let X := {a : Coeff ∞ // ‖a‖ ≤ 1}
+  let ξ := fun (a : X) (n : ℤ) => (Real.pi : ℂ)*n+a.val n
+  have hξ (a : X) : Memℓp (fun n => ξ a n-(Real.pi : ℂ)*n) ∞ := by
+    simpa only [ξ, add_sub_cancel_left] using lp.memℓp a.val
+  have hb (a : X) : ‖(⟨_,hξ a⟩ : Coeff ∞)‖ ≤ 1 := by
+    simpa only [ξ, add_sub_cancel_left] using a.property
+  exact (NLS.ComplexAnalysis.uniform_inverse_of_tendsto_one _ _
+    (tendstoUniformlyOn_oddBoundary_family ξ ξ hξ hξ 1 hb hb _ (isCompact_closedBall _ _))).2
+
+-- Actual non-Hilbert potentials have intrinsic parity approximants uniform over a whole neighborhood, including lattice points.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ U : Set (WeightedCoeffPair w.toWeight 3), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      let V := {ψ : WeightedCoeffPair w.toWeight 3 // ψ ∈ U ∧ weightedBaseToPair w ψ ∈ pairParitySubspace 0}
+      ∃ f g : ℂ × V → ℂ,
+        TendstoUniformlyOn (fun (M : ℕ) (t : ℂ × V) =>
+          normalizedCentralParityPolynomial hp3 (weightedBaseToPair w t.2.val) (2*M) 0 t.1)
+          f atTop (closedBall 0 Real.pi ×ˢ Set.univ) ∧
+        TendstoUniformlyOn (fun (M : ℕ) (t : ℂ × V) =>
+          normalizedCentralParityPolynomial hp3 (weightedBaseToPair w t.2.val) (2*M) 1 t.1)
+          g atTop (closedBall 0 Real.pi ×ˢ Set.univ) := by
+  obtain ⟨_,_,U,ho,_,hφ,h0,ξ,η,_,h⟩ := exists_uniform_normalizedCentralParityProducts_joint hp3 (by norm_num) w φ
+  exact ⟨U,ho,hφ,h0,_,_,h _ (isCompact_closedBall _ _)⟩
+
+end
+end ParityUniformChecks

@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 471 modules and 3543 named public theorems. All compile on the
+The library has 477 modules and 3556 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.EntireSpectralPairFamilies` | Entire paired products converge uniformly over bounded displacement families on spectral compact sets, with common bounds |
+| `NLS.ZakharovShabat.ParitySpectralFamilies` | Affine parity sampling preserves displacement bounds; both literal parity cutoffs converge uniformly over bounded families |
+| `NLS.ZakharovShabat.CompleteParityDisplacementBounds` | Finite-replacement norm bound, uniform central label bounds, and uniformly bounded actual completed parity pairs |
+| `NLS.ZakharovShabat.ActualParityProductsUniform` | Common actual potential neighborhoods with simultaneous uniform convergence of both literal parity products on every spectral compact set |
+| `NLS.ZakharovShabat.ParityBoundaryUniform` | Uniform boundary-factor convergence to one, inverse convergence, and simultaneous eventual nonvanishing |
+| `NLS.ZakharovShabat.CentralParityPolynomialsUniform` | Both intrinsic central parity approximants at doubled cutoffs converge uniformly over actual potential neighborhoods on every spectral compact set |
 | `NLS.ZakharovShabat.ParityContourReduction` | Analytic parity contour projections, finite parity ranges, domain-lift invariance, and transported original operator restrictions |
 | `NLS.ZakharovShabat.ParityContourDeterminant` | Conjugate local parity reductions and jointly analytic intrinsic determinants on the actual even-supported potential subspace |
 | `NLS.ZakharovShabat.ParityContourMultiplicity` | All finite generalized chains, maximal parity root spaces, characteristic multiplicities, and exact original parity root-product determinants |
@@ -4337,13 +4343,48 @@ after restriction to the even-supported potential subspace. The intrinsic
 normalized approximants retain the corrected factors `-1` and `4`; they also
 are jointly analytic. They recover the even literal cutoff and the central
 part of the odd literal cutoff, whose extra positive boundary pair is retained.
-Joint local uniform convergence in the potential and spectral parameter, and
-joint analyticity of the infinite parity products, remain to be proved.
+The following milestone proves joint uniform convergence in the potential
+and spectral parameter. Joint analyticity of the infinite parity products
+remains to be proved.
+
+## Section 8: parity convergence uniform in the potential
+
+`EntireSpectralPairFamilies` combines the uniform relative-product estimates
+with the free product, then uses maximum modulus uniformly in the family to
+fill the free lattice. Complete paired products converge uniformly over every
+norm-bounded finite-p displacement family on each compact spectral set. Both
+fixed cutoffs and entire limits have common bounds. The family needs neither
+a topology nor continuous choices of root labels.
+
+`ParitySpectralFamilies` proves a displacement norm bound under every affine
+parity rescaling. Sampling an injective subsequence bounds finite power sums by
+the original ones. The full-family theorem therefore applies to both parity
+sequences. The odd reference normalization converges uniformly as a scalar
+sequence, retaining the literal asymmetric cutoff and prefactors.
+
+`CompleteParityDisplacementBounds` bounds finite replacement by the unchanged
+sequence norm and the finite central coordinate budget. The fixed central
+spectral box bounds every admissible central parity label. Splicing those
+labels into the already uniformly bounded distant pairs gives completed actual
+sequences with a common displacement norm bound over one open convex potential
+neighborhood. `ActualParityProductsUniform` applies the bounded-family theorem
+to all its even-supported potentials simultaneously, for every spectral compact
+set, including eigenvalue collisions and lattice points.
+
+`ParityBoundaryUniform` proves that the extra pair at `2M+1` tends uniformly to
+one on compact spectral sets over bounded displacement families. Inversion
+preserves this convergence, and the factor is eventually nonzero everywhere
+in that family. `CentralParityPolynomialsUniform` consequently removes the odd
+boundary pair and proves that both intrinsic normalized central polynomials
+at cutoff `2M` converge uniformly to the actual parity products on every compact
+spectral set over one common actual potential neighborhood. This supplies the
+joint convergence needed for the analytic-limit construction. Intrinsic
+potential-only parity limit definitions and their joint analyticity remain next.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7235 declarations under `NLS`, including generated
+axioms. The current audit covers 7261 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5330,6 +5371,14 @@ joint analyticity at a free root, a common threshold for every spectral
 parameter and parity at an arbitrary actual p=3 potential, and preservation
 of length-three original generalized chains.
 
+Uniform-parity examples check a three-coordinate replacement bound, negative
+residue sampling at p=1, uniform odd convergence over the infinite-dimensional
+p=3 unit ball with coincident pairs, simultaneous boundary nonvanishing over
+the p=∞ unit ball, and both intrinsic parity limits on a disk containing free
+lattice points over an actual p=3 potential neighborhood. The p=∞ check is only
+for the boundary factor; the infinite-product convergence theorem retains p>1
+and p<∞.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5338,9 +5387,11 @@ of length-three original generalized chains.
    exact original parity zero sets, with necessary prefactors `-1` and `4`.
    Their product equals the canonical full product exactly. The finite central
    parity polynomials and normalized approximants are now jointly analytic on
-   common actual potential neighborhoods. Prove joint locally uniform convergence
-   and pass analyticity to the infinite parity factors, then establish `f+2=g−2`
-   to identify the correctly normalized discriminant.
+   common actual potential neighborhoods. Their doubled-cutoff sequences now
+   converge uniformly over those even-supported potentials on every spectral
+   compact set. Define the intrinsic potential-only parity limits and pass
+   joint analyticity to them, then establish `f+2=g−2` to identify the correctly
+   normalized discriminant.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

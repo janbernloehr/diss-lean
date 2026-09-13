@@ -1424,10 +1424,19 @@ spaces. Its determinant is therefore the actual central parity polynomial.
 All sufficiently large normalized parity approximants are jointly analytic on
 one common neighborhood, with the corrected prefactors and odd endpoint intact.
 
-Next, establish locally uniform convergence in both potential and spectral
-parameter for these parity approximants, then pass joint analyticity to the
-individual infinite parity products and prove `f+2=g−2`. The factorization
-proves the product equality in Lemma 8.1(iv);
+Joint uniform convergence of the parity approximants is now proved. Complete
+paired products converge uniformly over every norm-bounded displacement family
+on each spectral compact set; affine parity sampling preserves a common norm
+bound. The fixed central box bounds all central root labels, so actual completed
+pairs have one displacement bound over an open convex potential neighborhood.
+Both literal parity cutoffs therefore converge uniformly over its even-supported
+potentials. The odd boundary factor and its inverse tend uniformly to one,
+with simultaneous eventual nonvanishing. Removing it proves uniform convergence
+of both intrinsic central parity approximants at `2M` to their actual products.
+
+Next, define the intrinsic parity limits as functions of the potential alone
+and pass joint analyticity to the infinite products, then prove `f+2=g−2`.
+The factorization proves the product equality in Lemma 8.1(iv);
 identification with the discriminant squared minus four remains open.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

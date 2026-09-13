@@ -726,9 +726,11 @@ installation is absent. No shell startup files are modified.
   and the odd boundary factor tending to one. The central parity polynomials
   and their normalized approximants are now jointly analytic in the spectral
   parameter and even-supported potential on common neighborhoods. Their contour
-  determinants retain the original parity generalized eigenspaces. Passing
-  joint analyticity to the infinite parity products and proving `f+2=g−2`
-  remain open.
+  determinants retain the original parity generalized eigenspaces. The literal
+  cutoffs and intrinsic approximants at `2M` now converge uniformly on each
+  compact spectral set over one actual potential neighborhood, including roots
+  and free-lattice points. Passing joint analyticity to the infinite parity
+  products and proving `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
