@@ -1566,11 +1566,22 @@ of the trace, as well as `Δ²−4`, has ratio one to its free function. These
 limits allow an arbitrary varying real spectral part for fixed continuous
 potentials.
 
-Next, combine the classical and canonical vertical limits for the entire
-quotients, and control the product ratios outside the spectral discs with
-unbounded real part and bounded imaginary part. Control across the excluded
-discs is also needed to bound or normalize the entire filled quotients. Then
-use potential approximation to prove `f+2=g−2` for finite p>1. The classical
+The classical/canonical filled factors now tend to one at both ends of every
+fixed vertical line. For compatible continuous Hilbert potentials, boundedness
+alone therefore proves each exact normalization by Liouville's theorem.
+Outside fixed discs around `πℤ`, the scalar free resolvent has a common operator
+bound into `ℓ¹`. Finite Fourier inputs tend to zero as `|z|→∞`, and density plus
+equicontinuity extends this to all finite Banach exponents. Consequently the
+absolute relative-displacement sum vanishes there. Full and parity spectral
+products, and all intrinsic canonical products for finite `p>1`, have ratio
+one to their free functions along every such escaping path, including real
+midpoints between consecutive lattice points.
+
+Next, bound the classical trace uniformly in horizontal strips and combine it
+with the exterior canonical estimates to bound the entire quotients outside
+the discs. Use the maximum-modulus principle across the excluded discs, then
+apply the proved boundedness criteria for exact normalization. Finally use
+potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);

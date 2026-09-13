@@ -12253,3 +12253,108 @@ example (φ : Curve (ℂ × ℂ)) (x : ℝ → ℝ) :
 
 end
 end ClassicalHalfPlaneChecks
+
+namespace ExteriorProductChecks
+open Set Complex Filter Topology MeasureTheory NLS NLS.LinearVolterra NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Real midpoints lie outside every free disc of radius pi/4.
+private def midpoint (k : ℕ) : ℂ := (Real.pi : ℂ)*((k : ℂ)+1/2)
+private theorem midpoint_strip (k : ℕ) : midpoint k ∈ verticalStrip (k : ℤ) (Real.pi/4) := by
+  have he : midpoint k-(Real.pi : ℂ)*(k : ℤ) = ((Real.pi/2 : ℝ) : ℂ) := by
+    simp only [midpoint, Int.cast_natCast]
+    push_cast
+    ring
+  constructor
+  · have h : (midpoint k).re-Real.pi*(k : ℤ) = Real.pi/2 := by
+      have h := congrArg Complex.re he
+      simpa using h
+    rw [h, abs_of_nonneg (by positivity)]
+  · rw [he, Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg (by positivity)]
+    linarith [Real.pi_pos]
+
+private theorem midpoint_separated (k : ℕ) (n : ℤ) :
+    Real.pi/4 ≤ ‖midpoint k-(Real.pi : ℂ)*n‖ := by
+  have h := verticalStrip_denominator_lower (m := n)
+    (by positivity : 0 < Real.pi/4) le_rfl (midpoint_strip k)
+  have ha := mul_nonneg (by positivity : 0 ≤ Real.pi/4)
+    (abs_nonneg (((n-(k : ℤ) : ℤ) : ℝ)))
+  nlinarith
+
+private theorem midpoint_escape : Tendsto (fun k => ‖midpoint k‖) atTop atTop := by
+  have hn (k : ℕ) : ‖midpoint k‖ = Real.pi*((k : ℝ)+1/2) := by
+    have he : midpoint k = ((Real.pi*((k : ℝ)+1/2) : ℝ) : ℂ) := by
+      simp only [midpoint]
+      push_cast
+      ring
+    rw [he, Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg (by positivity)]
+  have hs : Tendsto (fun k : ℕ => (k : ℝ)+1/2) atTop atTop :=
+    tendsto_natCast_atTop_atTop.atTop_add tendsto_const_nhds
+  simpa only [hn] using hs.const_mul_atTop Real.pi_pos
+
+private def harmonicShift (n : ℤ) : ℂ := (Real.pi : ℂ)*n+(Weight.sobolev 1 n : ℂ)⁻¹
+private theorem harmonicShift_mem (p : ℝ≥0∞) (hp : 1 < p) :
+    Memℓp (fun n => harmonicShift n-(Real.pi : ℂ)*n) p := by
+  simpa only [harmonicShift, add_sub_cancel_left] using Weight.inverse_sobolev_one_memlp hp
+
+-- An infinite displacement, not just a finite perturbation, tends to zero in total relative size.
+example : Tendsto (fun k => ∑' n : ℤ,
+    ‖(harmonicShift n-(Real.pi : ℂ)*n)/(midpoint k-(Real.pi : ℂ)*n)‖) atTop (𝓝 0) :=
+  tendsto_tsum_norm_relativeDisplacement_of_separated (by simp : (3 : ℝ≥0∞) ≠ ⊤)
+    harmonicShift (harmonicShift_mem 3 (by norm_num)) midpoint midpoint_escape
+    (by positivity : 0 < Real.pi/4) le_rfl midpoint_separated
+
+-- The paired product has ratio one even on this entirely real path.
+example : Tendsto (fun k => entireSpectralPairProduct harmonicShift harmonicShift (midpoint k) /
+    ((freeDiscriminant (midpoint k))^2-4)) atTop (𝓝 1) :=
+  tendsto_entireSpectralPairProduct_div_free_of_separated (by simp : (2 : ℝ≥0∞) ≠ ⊤)
+    harmonicShift harmonicShift (harmonicShift_mem 2 (by norm_num)) (harmonicShift_mem 2 (by norm_num))
+    midpoint midpoint_escape (by positivity : 0 < Real.pi/4) le_rfl midpoint_separated
+
+-- Odd affine rescaling retains separation from every rescaled integer center.
+example (k : ℕ) (n : ℤ) : Real.pi/8 ≤ ‖(midpoint k-(Real.pi : ℂ))/2-(Real.pi : ℂ)*n‖ := by
+  convert! separated_parity_rescale (midpoint k) (midpoint_separated k) 1 n using 1 <;> norm_num
+  ring
+
+-- Intrinsic canonical full/even/odd limits require no continuous representative and work at p=3.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun k => canonicalPeriodicProduct (by simp) φ (midpoint k) /
+      ((freeDiscriminant (midpoint k))^2-4)) atTop (𝓝 1) :=
+  tendsto_canonicalPeriodic_div_free_of_separated (by simp) (by norm_num) φ hφ midpoint midpoint_escape
+    (by positivity : 0 < Real.pi/4) le_rfl midpoint_separated
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun k => canonicalParityProduct (by simp) φ 0 (midpoint k) /
+      (freeDiscriminant (midpoint k)-2)) atTop (𝓝 1) :=
+  tendsto_canonicalEven_div_free_of_separated (by simp) (by norm_num) φ hφ midpoint midpoint_escape
+    (by positivity : 0 < Real.pi/4) le_rfl midpoint_separated
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun k => canonicalParityProduct (by simp) φ 1 (midpoint k) /
+      (freeDiscriminant (midpoint k)+2)) atTop (𝓝 1) :=
+  tendsto_canonicalOdd_div_free_of_separated (by simp) (by norm_num) φ hφ midpoint midpoint_escape
+    (by positivity : 0 < Real.pi/4) le_rfl midpoint_separated
+
+-- The actual filled quotients have both vertical limits, including a path passing through zero.
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (Φ : Curve (ℂ × ℂ)) :
+    Tendsto (fun y : ℝ => classicalParityProductQuotient φ Φ 0 (verticalSpectralPoint 0 y))
+      atTop (𝓝 1) :=
+  tendsto_classicalParityProductQuotient_upper tendsto_id φ hφ Φ 0 (Or.inl rfl) 0
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (Φ : Curve (ℂ × ℂ)) :
+    Tendsto (fun y : ℝ => classicalParityProductQuotient φ Φ 1 (verticalSpectralPoint (1/3) (-y)))
+      atTop (𝓝 1) :=
+  tendsto_classicalParityProductQuotient_lower tendsto_neg_atTop_atBot φ hφ Φ 1 (Or.inr rfl) (1/3)
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (Φ : Curve (ℂ × ℂ)) :
+    Tendsto (fun y : ℝ => classicalPeriodicProductQuotient φ Φ (verticalSpectralPoint 0 y))
+      atTop (𝓝 1) :=
+  tendsto_classicalPeriodicProductQuotient_upper tendsto_id φ hφ Φ 0
+
+-- Boundedness, when supplied for a compatible representative, now suffices for exact normalization.
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (Φ : Curve (ℂ × ℂ))
+    (hΦ : physicalBase φ =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend Φ)
+    (hb : Bornology.IsBounded (range (classicalPeriodicProductQuotient φ Φ))) (z : ℂ) :
+    canonicalPeriodicProduct (by simp) φ z = (classicalDiscriminant Φ z)^2-4 :=
+  canonicalPeriodic_eq_classical_of_bounded_quotient φ hφ Φ hΦ hb z
+
+end
+end ExteriorProductChecks

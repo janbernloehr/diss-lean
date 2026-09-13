@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 543 modules and 3956 named public theorems. All compile on the
+The library has 549 modules and 3984 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.CommonNormalizationLimits` | Eventual denominator nonvanishing, filled quotient limits from a common normalization, and determination of a bounded entire function from a path limit |
+| `NLS.ZakharovShabat.ClassicalQuotientsVerticalLimit` | Actual filled parity/full quotient limits one at both vertical ends and exact canonical identities conditional only on boundedness of the compatible entire factors |
+| `NLS.ZakharovShabat.FreeResolventExteriorLimit` | Uniform scalar resolvent bound outside free discs, exact action on single coefficients, denominator escape, and strong convergence into `ℓ¹` at every finite Banach exponent |
+| `NLS.ZakharovShabat.RelativeProductsExteriorLimit` | Vanishing absolute displacement sums and single/paired relative product limits one in every direction outside fixed free discs |
+| `NLS.ZakharovShabat.SpectralProductsExteriorLimit` | Full/even/odd free product ratios tend to one outside free discs; exact parity rescaling of denominator norms, separation, and escape |
+| `NLS.ZakharovShabat.CanonicalProductsExteriorLimit` | Intrinsic canonical full and parity product ratios tend to one on every escaping lattice-separated path for finite `p>1`, with no continuous representative required |
 | `NLS.ComplexAnalysis.IntegratedDecayBounds` | Inverse-rate integral bound for an exponential and integration of a bounded coefficient against a decaying term plus a uniform error |
 | `NLS.ComplexAnalysis.CoupledVolterraBounds` | Supremum-norm absorption for coupled slow/fast Volterra equations, with explicit bounds and no assumed bound on either unknown coordinate |
 | `NLS.ZakharovShabat.ClassicalHalfPlaneBounds` | Unconditional weighted coordinate bounds above the squared-potential-norm height, in both half-planes |
@@ -4852,9 +4858,10 @@ and nonvanishing and give exact factorizations at every spectral point.
 The two parity factors multiply to the full factor. A limit of one at
 infinity would give the exact canonical normalization. The first vertical
 product asymptotics and matching classical half-plane estimates are proved
-below, but the whole-plane bounds needed for these quotient limits remain
-open; neither
-the unit factors nor equality of vanishing orders alone establishes them.
+below. The quotient factors now have vertical limit one and the canonical
+products have exterior free ratio one. Global boundedness of the entire
+factors remains open; neither nonvanishing nor equality of vanishing orders
+alone proves it.
 
 Examples distinguish ordinary zero division from the filled value one in
 `exp(z) z³ / z³`, verify its nonconstant exponential derivative, check products
@@ -4890,10 +4897,10 @@ and odd ratios tend to one against `freeDiscriminant−2` and
 transfer all three limits to the intrinsic potential-only products for every
 finite `p>1` and every even-supported potential. No continuous representative
 is required. These are fixed-potential, fixed-real-part limits; uniformity over
-potential neighborhoods and full-plane estimates outside the spectral discs
-are not yet proved for these canonical products. Matching classical half-plane
-asymptotics are now proved below for continuous potentials. The entire
-classical/canonical quotient factors are not yet identified with one.
+potential neighborhoods is not proved here. The exterior limits below now
+allow both spectral coordinates to vary outside fixed free discs. Matching
+classical half-plane asymptotics are proved for continuous potentials. The
+entire classical/canonical quotient factors are not yet identified with one.
 
 Examples use an infinite inverse-Sobolev-weight displacement at `p=2,3`, a
 finite complex displacement at `p=1`, the lower half-plane, nonzero real
@@ -4963,10 +4970,56 @@ and real spectral part `100`. They check the exact trace-error bound `5/8`
 at heights `±2`, the zero-potential error, an arbitrary real-part path, a
 parabolic path, a nonreal trace shift, and both full-characteristic ratios.
 
+## Section 8: quotient limits and exterior canonical asymptotics
+
+`CommonNormalizationLimits` makes the numerator and common normalizer
+eventually nonzero whenever their ratio tends to one. Dividing two such
+normalized functions yields limit one, and filling values at denominator
+zeros preserves the limit. A bounded entire function is constant and its
+limit along any nontrivial path filter identifies that constant.
+
+`ClassicalQuotientsVerticalLimit` combines the actual classical and canonical
+free normalizations. Every filled parity and full quotient tends to one at
+both ends of each fixed vertical line. These limits do not need compatibility
+between the two potentials; compatibility is retained when invoking the
+previously proved entire factorization. In that case, boundedness of the
+factor now suffices for the exact canonical identity.
+
+`FreeResolventExteriorLimit` works on the complement of all open discs of a
+fixed radius `0<r≤π/4` around `πℤ`. The centered-strip bound controls the scalar
+resolvent into `ℓ¹` by the same constant at every exterior point. Each single
+Fourier coefficient tends to zero there as the spectral norm tends to infinity.
+The dense finite-support subspace and equicontinuity of the uniformly bounded
+linear maps extend this convergence to every input at every finite Banach
+exponent, including one.
+
+`RelativeProductsExteriorLimit` identifies the target norm with the absolute
+relative-displacement sum and proves that it vanishes. The exponential product
+estimate then gives limit one for single and paired relative products.
+`SpectralProductsExteriorLimit` transfers this to the full entire product and
+both parity products. Affine parity rescaling halves the separation radius,
+preserves norm escape, and retains the corrected free signs.
+`CanonicalProductsExteriorLimit` transfers all three ratios to intrinsic
+potential-only products for every finite `p>1` and even-supported potential.
+No continuous representative is required. The real and imaginary parts may
+both vary arbitrarily, provided the norm tends to infinity and the path remains
+at the prescribed positive distance from every integer free center.
+
+Examples verify the separation and escape of real midpoints between consecutive
+free eigenvalues. On this real path, infinite inverse-Sobolev-weight displacements
+have vanishing total relative size, and full/even/odd canonical ratios tend to
+one, including at `p=3`. They also check odd rescaling, both vertical quotient
+limits, and the remaining boundedness criterion for the exact full identity.
+
+The next missing estimates are uniform classical trace bounds on horizontal
+strips and control of the entire factors across the excluded discs. Global
+quotient boundedness, exact normalization, the finite-p compatibility extension,
+and spectral-derivative asymptotics remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8019 declarations under `NLS`, including generated
+axioms. The current audit covers 8048 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6074,8 +6127,11 @@ formal matrix representation.
    error bounds conditional on the opposite weighted coordinate. The coupled
    argument now removes that condition, yielding explicit trace errors and
    shifted/full free ratio limits at both imaginary ends, with arbitrary real
-   part. Next combine these with the canonical limits and prove whole-plane
-   quotient bounds, which give exact normalization,
+   part. The filled quotient factors now have vertical limit one, and the
+   intrinsic canonical products have free ratio one along every escaping path
+   outside fixed free discs. Boundedness of compatible entire factors now
+   suffices for exact normalization. Next prove uniform classical trace bounds
+   on horizontal strips and bound the factors across the excluded discs,
    and extend the compatibility identity to finite-p potentials.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
