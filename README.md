@@ -782,8 +782,13 @@ installation is absent. No shell startup files are modified.
   normalization by Liouville's theorem. The canonical full, even, and odd
   products now have ratio one to their free functions at both ends of every
   fixed vertical line, for all finite `p>1` and even-supported potentials.
-  The corresponding classical estimates, control outside spectral discs in
-  the full plane, and the finite-p identity `f+2=g−2` remain open.
+  The actual continuous-potential solutions now satisfy free-propagator
+  integral formulas with a common exponential weight. In both half-planes,
+  the decaying coordinate's error is at most the potential supremum norm
+  times a bound for the opposite weighted coordinate, divided by twice the
+  imaginary height. The opposite-coordinate bound, complete classical
+  asymptotics, control outside spectral discs in the full plane, and the
+  finite-p identity `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

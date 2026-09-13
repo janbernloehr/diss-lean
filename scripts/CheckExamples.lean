@@ -12104,3 +12104,77 @@ example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (x : ℝ) :
 
 end
 end VerticalProductChecks
+
+namespace ClassicalDuhamelChecks
+open Set Complex NLS.LinearVolterra NLS.ComplexAnalysis NLS.ZakharovShabat
+noncomputable section
+
+-- A nonzero scalar forcing recovers the expected relaxing solution.
+example (t : ℝ) (ht : 0 ≤ t) :
+    1 - exp (- (t : ℂ)) = ∫ s in 0..t, exp (-((t : ℂ) - s)) := by
+  have h := scalar_duhamel (-1) (fun s : ℝ => 1 - exp (-(s : ℂ))) (fun _ => 1)
+    t ht (by fun_prop) continuous_const (by
+      intro s _
+      have hd := (hasDerivAt_complex_exp_mul (-1) s).const_sub 1
+      convert! hd using 1 <;> simp only [neg_one_mul]
+      ring)
+  simpa only [Complex.ofReal_zero, neg_zero, exp_zero, sub_self, mul_zero,
+    zero_add, mul_one, neg_one_mul] using h
+
+-- The kernel formula handles both the zero-length interval and a positive interval exactly.
+example : (∫ s : ℝ in 0..0, Real.exp (-2 * (0 - s))) = 0 := by simp
+example : (∫ s : ℝ in 0..1, Real.exp (-2 * (1 - s))) = (1 - Real.exp (-2)) / 2 := by
+  simpa only [mul_one] using integral_decaying_kernel 2 1 (by norm_num) (by norm_num)
+
+-- The oscillatory coefficient has no effect on the inverse-decay estimate.
+example (f : ℝ → ℂ) (hf : ∀ s ∈ Icc (0 : ℝ) 1, ‖f s‖ ≤ 5) :
+    ‖∫ s : ℝ in 0..1, exp ((-2 + 37*I) * ((1 : ℂ) - s)) * f s‖ ≤ 5/2 :=
+  norm_integral_exp_propagator_mul_le (-2 + 37*I) 2 1 5
+    (by norm_num) (by norm_num) (by norm_num) (by simp) f hf
+
+-- A lower triangular nonzero potential leaves the upper-normalized first coordinate fixed.
+private theorem triangular_upper_fst (β z : ℂ) (t : Icc (0 : ℝ) 1) :
+    (classicalWeightedSolution (ContinuousMap.const _ (0, β)) z (I*z) (1,0) t).1 = 1 := by
+  rw [classicalWeightedSolution_upper_fst]
+  simp [NLS.LinearVolterra.extend]
+
+-- Its second coordinate is forced, with the original minus-I sign.
+example (β z : ℂ) (t : Icc (0 : ℝ) 1) :
+    (classicalWeightedSolution (ContinuousMap.const _ (0, β)) z (I*z) (1,0) t).2 =
+      ∫ s in 0..t.val, exp ((2*I*z) * (t.val-s)) *
+        ((-I) * β * (classicalWeightedSolution (ContinuousMap.const _ (0, β)) z (I*z) (1,0) s).1) := by
+  rw [classicalWeightedSolution_upper_snd]
+  simp [NLS.LinearVolterra.extend]
+
+-- At height two the actual forced coordinate is bounded by one quarter of the potential norm.
+example (β : ℂ) (t : Icc (0 : ℝ) 1) :
+    ‖(classicalWeightedSolution (ContinuousMap.const _ (0, β)) (2*I) (I*(2*I)) (1,0) t).2‖ ≤ ‖β‖/4 := by
+  have h := norm_classicalWeightedSolution_upper_snd_sub_free_le
+    (ContinuousMap.const _ (0, β)) (2*I) (by simp) (1,0) t 1 (by norm_num) (by
+      intro s
+      rw [triangular_upper_fst]
+      simp)
+  simpa [ContinuousMap.norm_eq_iSup_norm, Prod.norm_def, show (2 : ℝ)*2 = 4 by norm_num] using h
+
+-- The opposite triangular orientation tests the lower half-plane and the plus-I coupling.
+private theorem triangular_lower_snd (α z : ℂ) (t : Icc (0 : ℝ) 1) :
+    (classicalWeightedSolution (ContinuousMap.const _ (α, 0)) z (-I*z) (0,1) t).2 = 1 := by
+  rw [classicalWeightedSolution_lower_snd]
+  simp [NLS.LinearVolterra.extend]
+
+example (α : ℂ) (t : Icc (0 : ℝ) 1) :
+    ‖(classicalWeightedSolution (ContinuousMap.const _ (α, 0)) (-2*I) (-I*(-2*I)) (0,1) t).1‖ ≤ ‖α‖/4 := by
+  have h := norm_classicalWeightedSolution_lower_fst_sub_free_le
+    (ContinuousMap.const _ (α, 0)) (-2*I) (by simp) (0,1) t 1 (by norm_num) (by
+      intro s
+      rw [triangular_lower_snd]
+      simp)
+  simpa [ContinuousMap.norm_eq_iSup_norm, Prod.norm_def, show (2 : ℝ)*2 = 4 by norm_num] using h
+
+-- Zero weight recovers the actual unnormalized initial-value solution.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) :
+    classicalWeightedSolution φ z 0 v = classicalSolution φ z v :=
+  classicalWeightedSolution_zero_weight φ z v
+
+end
+end ClassicalDuhamelChecks

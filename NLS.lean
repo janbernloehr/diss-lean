@@ -482,3 +482,7 @@ import NLS.ZakharovShabat.VerticalSpectralDisplacements
 import NLS.ZakharovShabat.RelativeProductsVerticalLimit
 import NLS.ZakharovShabat.SpectralProductsVerticalLimit
 import NLS.ZakharovShabat.CanonicalProductsVerticalLimit
+import NLS.ComplexAnalysis.ScalarDuhamel
+import NLS.ComplexAnalysis.DecayingDuhamelKernel
+import NLS.ZakharovShabat.ClassicalDuhamel
+import NLS.ZakharovShabat.ClassicalDuhamelBounds

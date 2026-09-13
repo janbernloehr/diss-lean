@@ -1548,9 +1548,19 @@ then makes the relative product tend to one. Rescaling retains the even and
 odd signs, and completed actual pairs transfer this limit to all three
 canonical products for every finite `p>1` and even-supported potential.
 
-Next, prove the matching classical monodromy estimates and control the product
-ratios outside the spectral discs with unbounded real part. Control across the
-excluded discs is also needed to bound or normalize the entire filled
+The classical solution now has an exact scalar Duhamel formula in each
+coordinate after multiplication by any common exponential weight. The weights
+`exp(izt)` and `exp(-izt)` isolate the decaying coordinate in the upper and lower
+half-planes. The decaying kernel has integral at most the reciprocal decay
+rate, uniformly in the oscillatory part. Its actual coordinate error is thus
+bounded by `‖Φ‖ B/(2|Im z|)`, provided the opposite weighted coordinate is bounded
+by `B`. Nonzero triangular potentials verify both signs and the height-two
+constant `1/4`.
+
+Next, use the coupled integral equations to obtain a uniform bound for that
+opposite coordinate and hence the matching classical monodromy asymptotics.
+Also control the product ratios outside the spectral discs with unbounded real
+part. Control across the excluded discs is also needed to bound or normalize the entire filled
 quotients. Then use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.

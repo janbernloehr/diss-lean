@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 534 modules and 3920 named public theorems. All compile on the
+The library has 538 modules and 3942 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.ScalarDuhamel` | Complex integrating factor, propagator composition, and scalar variation of constants with interior derivatives |
+| `NLS.ComplexAnalysis.DecayingDuhamelKernel` | Exact exponential kernel integral, inverse-rate bound, and quantitative stable scalar Duhamel error uniform in the oscillatory coefficient |
+| `NLS.ZakharovShabat.ClassicalDuhamel` | Actual exponentially weighted solutions, their differential equation, and signed free-propagator formulas in both half-planes |
+| `NLS.ZakharovShabat.ClassicalDuhamelBounds` | Actual coordinate errors bounded by potential norm times the opposite-coordinate bound over the decay rate; upper/lower rates are twice the imaginary height |
 | `NLS.ComplexAnalysis.SmallAbsoluteProducts` | Exponential error bound for unconditional products and convergence to one from vanishing absolute perturbation sums |
 | `NLS.ZakharovShabat.VerticalSpectralDisplacements` | Vertical spectral coordinates, exact denominator norm, height-one summable domination, and vanishing total relative displacements at both vertical ends |
 | `NLS.ZakharovShabat.RelativeProductsVerticalLimit` | Quantitative relative product error, eventual avoidance of the free lattice, and single/pair product limits one at every finite exponent |
@@ -4889,10 +4893,42 @@ finite complex displacement at `p=1`, the lower half-plane, nonzero real
 parts, both free parity signs, and the actual canonical limits without any
 continuous-representative assumptions.
 
+## Section 8: classical free-propagator estimates
+
+`ScalarDuhamel` proves variation of constants for a complex scalar equation on
+any interval `[0,t]` with `t≥0`. It uses a continuous forcing and derivatives
+only in the interior. The complex integrating factor and its cancellation
+are explicit, including when the diagonal coefficient is zero.
+
+`ClassicalDuhamel` applies this to the actual Zakharov–Shabat solution after
+multiplying both coordinates by `exp(ct)`. The diagonal coefficients become
+`c−iz` and `c+iz`, while the potential couplings retain signs `iΦ₁` and
+`−iΦ₂`. The upper weight `c=iz` leaves the first coordinate without a diagonal
+term and gives the second the kernel `exp(2iz(t−s))`. The lower weight `c=−iz`
+exchanges these roles and gives the first the kernel `exp(−2iz(t−s))`.
+
+`DecayingDuhamelKernel` computes the integral of `exp(−a(t−s))` exactly as
+`(1−exp(−at))/a` for `a>0`, and bounds it by `1/a`. A complex propagator with
+real coefficient part `−a` therefore sends a forcing bounded by `M` to an
+integral bounded by `M/a`, independent of the oscillatory part.
+
+`ClassicalDuhamelBounds` makes this an estimate for the actual coordinates:
+the difference from the free coordinate is at most `‖Φ‖ B/a`, assuming the
+opposite weighted coordinate is bounded by `B` on the unit interval. The two
+half-plane specializations have `a=2|Im z|`. This is a conditional coordinate
+estimate; the uniform opposite-coordinate bound and the full classical
+monodromy asymptotics are still to be proved.
+
+Examples check a nonzero relaxing scalar forcing, zero and positive interval
+lengths, a large oscillatory coefficient, and both orientations of a nonzero
+triangular potential. In those triangular cases the opposite normalized
+coordinate is exactly one, so the actual forced coordinate has the explicit
+bound `‖Φ‖/4` at heights `2` and `−2`.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7980 declarations under `NLS`, including generated
+axioms. The current audit covers 8005 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5995,8 +6031,11 @@ formal matrix representation.
    filled quotients are now entire and nonvanishing, give exact factorizations,
    and satisfy parity/full multiplication. The canonical full and parity
    products now have ratio one to their free functions on both ends of every
-   fixed vertical line for every finite `p>1`. Next prove matching classical
-   estimates and whole-plane quotient bounds, which give exact normalization,
+   fixed vertical line for every finite `p>1`. The actual classical solutions
+   now have both half-plane Duhamel formulas and inverse-height coordinate
+   error bounds conditional on the opposite weighted coordinate. Next bound
+   that coordinate, complete the classical estimates, and prove whole-plane
+   quotient bounds, which give exact normalization,
    and extend the compatibility identity to finite-p potentials.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
