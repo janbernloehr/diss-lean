@@ -8907,3 +8907,87 @@ example (φ : WeightedCoeffPair bridgeWeight.toWeight (3/2)) :
   exact ht
 
 end PeriodicRootBridgeChecks
+
+namespace MidpointBoundaryChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem boundaryHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem boundaryHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨boundaryHalfAboveOne.le⟩
+private def midpointWeight : SpectralWeight := SpectralWeight.constant 2 (by norm_num)
+private def displacedRoot (n : ℤ) : ℂ := (Real.pi : ℂ)*n+3*Complex.I
+
+-- A nonreal displacement at the negative boundary contributes 27, and the next cutoff excludes it.
+example : spectralDisplacementPowerTail 3 4 displacedRoot (-4) = 27 ∧
+    spectralDisplacementPowerTail 3 5 displacedRoot (-4) = 0 := by
+  norm_num [spectralDisplacementPowerTail, displacedRoot]
+
+-- Arbitrary low modes do not obstruct genuine global ℓp membership.
+example (a : ℤ → ℂ) : Memℓp (fun n : ℤ =>
+    ((Real.pi : ℂ)*n + if n.natAbs < 7 then a n else 0)-(Real.pi : ℂ)*n) 3 := by
+  apply memℓp_displacement_of_summable_tail (by norm_num : 0 < (3 : ℝ≥0∞).toReal) 7
+  have hz : spectralDisplacementPowerTail 3 7
+      (fun n : ℤ => (Real.pi : ℂ)*n+if n.natAbs < 7 then a n else 0) = 0 := by
+    funext n
+    by_cases hn : 7 ≤ n.natAbs
+    · simp [spectralDisplacementPowerTail, hn, show ¬n.natAbs < 7 by omega]
+    · simp [spectralDisplacementPowerTail, hn]
+  rw [hz]
+  exact summable_zero
+
+-- Complex midpoints obey the power-mean estimate at and above the endpoint.
+example : ‖(Complex.I+3*Complex.I)/2-Complex.I‖^(3 : ℝ) ≤
+    (‖Complex.I-Complex.I‖^(3 : ℝ)+‖3*Complex.I-Complex.I‖^(3 : ℝ))/2 :=
+  norm_midpoint_displacement_rpow_le (by norm_num) _ _ _
+example (x y c : ℂ) : ‖(x+y)/2-c‖^(1 : ℝ) ≤ (‖x-c‖^(1 : ℝ)+‖y-c‖^(1 : ℝ))/2 :=
+  norm_midpoint_displacement_rpow_le le_rfl _ _ _
+
+-- The actual midpoint has the half-budget and global ℓp membership even when w(0)=2 and p<2.
+example (φ : WeightedCoeffPair midpointWeight.toWeight (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧
+      Memℓp (fun n : ℤ => periodicMidpoint boundaryHalfFinite (weightedBaseToPair midpointWeight φ) n-(Real.pi : ℂ)*n) (3/2) ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        Summable (spectralDisplacementPowerTail (3/2) N (periodicMidpoint boundaryHalfFinite (weightedBaseToPair midpointWeight φ))) ∧
+        (∑' n : ℤ, spectralDisplacementPowerTail (3/2) N (periodicMidpoint boundaryHalfFinite (weightedBaseToPair midpointWeight φ)) n) ≤
+          rootDisplacementBudget midpointWeight φ N/2 := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_periodicMidpointSummability boundaryHalfFinite boundaryHalfAboveOne midpointWeight φ
+  exact ⟨N,hN,hb φ hφ⟩
+
+-- The new period-one potential map retains the normalized even-frequency reflection formula.
+example (φ : CoeffPair 3) (n : ℤ) :
+    (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).val.2 (2*n) =
+      (φ.snd n+φ.fst (-n))/2 := by
+  change BoundaryCondition.intervalAmplitudeCLM .dirichlet (by norm_num) (by norm_num) φ.ofLp (2*n) = _
+  simpa [BoundaryCondition.extensionSign] using BoundaryCondition.intervalAmplitudeCLM_even
+    .dirichlet (p := 3) (by norm_num) (by norm_num) φ.ofLp n
+
+-- Both source period-one boundary branches have global displacements and all quantitative tails.
+example (φ : CoeffPair (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ b : BoundaryCondition,
+      Memℓp (fun n : ℤ => periodOneBoundaryEigenvalue boundaryHalfFinite boundaryHalfAboveOne b φ n-(Real.pi : ℂ)*n) (3/2) ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        Summable (spectralDisplacementPowerTail (3/2) N (periodOneBoundaryEigenvalue boundaryHalfFinite boundaryHalfAboveOne b φ)) ∧
+        (∑' n : ℤ, spectralDisplacementPowerTail (3/2) N (periodOneBoundaryEigenvalue boundaryHalfFinite boundaryHalfAboveOne b φ) n) ≤
+          rootDisplacementBudget SpectralWeight.one
+            (unitBaseEquiv.symm (periodOneBoundaryPotential boundaryHalfFinite boundaryHalfAboveOne φ).val) N := by
+  obtain ⟨N,hN,_,_,_,hφ,_,hb⟩ := exists_uniform_periodOneBoundaryAsymptotics boundaryHalfFinite boundaryHalfAboveOne φ
+  exact ⟨N,hN,hb φ hφ⟩
+
+example (b : BoundaryCondition) : periodOneBoundaryEigenvalue (p := 3) (by norm_num) (by norm_num) b 0 (-9) =
+    (Real.pi : ℂ)*(-9 : ℤ) := periodOneBoundaryEigenvalue_zero _ _ _ _
+
+-- The original physical trace branch remains the unique high-disc eigenvalue while its full displacement is ℓ².
+example (u : IntervalPairL2) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ b : BoundaryCondition,
+      Memℓp (fun n : ℤ => BoundaryCondition.classicalEigenvalue b u n-(Real.pi : ℂ)*n) 2 ∧
+      ∀ n : ℤ, N₀ ≤ n.natAbs →
+        BoundaryCondition.classicalEigenvalues b (intervalL2Representative u) ∩
+          Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) = {BoundaryCondition.classicalEigenvalue b u n} := by
+  obtain ⟨N,hN,_,_,_,hu,_,hb⟩ := exists_uniform_classicalBoundaryAsymptotics u
+  exact ⟨N,hN,fun b => ⟨(hb u hu b).1,(hb u hu b).2.1⟩⟩
+
+end MidpointBoundaryChecks

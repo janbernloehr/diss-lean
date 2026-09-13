@@ -625,6 +625,15 @@ installation is absent. No shell startup files are modified.
   also proved directly for that intrinsic squared-gap sequence, independently
   of root ordering. This gives corrected forms of Propositions 6.1 and 6.3;
   the literal nonlinear-only printed budgets are not asserted.
+  The original periodic midpoint now has a full `ℓp` displacement sequence
+  and a quantitative tail bounded by half the two-root displacement budget.
+  Both ordinary Dirichlet and Neumann branches also have full `ℓp`
+  displacements and common quantitative tails, first for reflected potentials
+  and then for original period-one coefficient inputs at every finite `p>1`.
+  The physical interval `L²` branches have square-summable displacements while
+  retaining their unique original high-disc eigenvalue characterization.
+  The auxiliary starred boundary spectra in Corollary 6.2 remain to be
+  implemented through the separate Section 5 phase-twisted realization.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

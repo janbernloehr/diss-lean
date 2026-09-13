@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 372 modules and 2965 named public theorems. All compile on the
+The library has 377 modules and 2973 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SpectralDisplacementTail` | Quantitative single-sequence power tails and global `Memℓp` membership after adding finitely many omitted signed modes |
+| `NLS.ZakharovShabat.PeriodicMidpointSummability` | Original contour midpoint displacement is in `ℓp`, with exactly half the corrected two-root tail budget |
+| `NLS.ZakharovShabat.BoundaryDisplacementSummability` | Both ordinary reflected-potential boundary branches have full `ℓp` displacements and common quantitative tails |
+| `NLS.ZakharovShabat.PeriodOneBoundaryAsymptotics` | Completed interval extension transfers ordinary Corollary 6.2 to source period-one coefficient pairs for every finite `p>1` |
+| `NLS.ZakharovShabat.ClassicalBoundaryAsymptotics` | Original physical interval `L²` boundary eigenvalues have square-summable displacements and unique high-disc identification on one neighborhood |
 | `NLS.ZakharovShabat.UnweightedResonantDeterminant` | Exact weight-forgetting compatibility and locally uniform equivalence of weighted determinant zeros with the original periodic spectrum |
 | `NLS.ZakharovShabat.SpectralRootPair` | Enclosed spectrum equals the scalar pair; algebraic count two identifies its individual spectral multiplicities with scalar analytic orders |
 | `NLS.ZakharovShabat.PeriodicRootSequence` | The same original periodic eigenvalue pair has exact multiplicities, contour invariants, localization, and both corrected power sums, independently of label exchange |
@@ -3468,15 +3473,52 @@ Thus the corrected versions of Propositions 6.1 and 6.3 now concern original
 periodic eigenvalues and the intrinsic spectral gap, with the additive
 leading-tail contributions retained.
 
-**Remaining Section 6 scope.** Prove the midpoint power-tail consequence and
-Corollary 6.2's Dirichlet/Neumann asymptotics through the established boundary
-realizations. The original nonlinear-only quantitative displays remain
-excluded; the general-`p` central-height issue is also still open.
+## Midpoint and ordinary boundary displacement sequences
+
+`SpectralDisplacementTail` bounds a single displacement power series by any
+summable majorant. A finite signed low-frequency interval contains every
+omitted term, so summability of one power tail implies global `Memℓp`
+membership for the actual displacement sequence. Low modes can be arbitrary.
+
+`norm_midpoint_displacement_rpow_le` proves the precise factor one half for
+every real exponent at least one. Applied to the original contour midpoint,
+`exists_uniform_periodicMidpointSummability` gives its global `ℓp`
+displacement sequence and every larger power tail, bounded by
+`rootDisplacementBudget / 2`. A common open convex neighborhood and cutoff
+work for every source weight and every finite `p>1`.
+
+`exists_uniform_boundaryDisplacementSummability` uses the existing simple
+boundary eigenvalue in each distant disc. Each is an original periodic root
+in the same strip, so its displacement power is bounded by the two-root sum.
+Both ordinary Dirichlet and Neumann branches share the potential neighborhood
+and cutoff; each has a full `ℓp` displacement sequence and every larger tail
+bounded by the corrected displacement budget of the reflected potential.
+
+`periodOneBoundaryPotential` composes the completed Dirichlet interval
+extension with the source pair-norm realization. Both ordinary boundary
+problems use this same potential extension. Pulling back the neighborhood
+proves `exists_uniform_periodOneBoundaryAsymptotics` for original period-one
+coefficient inputs at all finite `p>1`. The output Fourier tail is that of
+the actual reflected potential; no unproved estimate replaces it with an
+input tail. Both free branches retain the signed value `nπ`.
+
+`exists_uniform_classicalBoundaryAsymptotics` transfers the estimate to
+arbitrary original physical interval `L²` potentials. Both classical
+Dirichlet and Neumann branches have square-summable displacements, and their
+high-disc singleton characterization as actual original eigenvalues holds
+on the same open convex neighborhood and cutoff as the quantitative tails.
+
+**Remaining scope.** Ordinary Corollary 6.2 and the midpoint consequence are
+proved in the stated coefficient/physical realizations. The auxiliary
+starred spectra still require the distinct Section 5 phase-twisted boundary
+spaces and operator conjugation before their asymptotics can be asserted.
+The printed nonlinear-only periodic budgets and general-`p` central-height
+issue remain excluded or open as recorded in the source audit.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5997 declarations under `NLS`, including generated
+axioms. The current audit covers 6027 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -4278,12 +4320,24 @@ exponent two. At `p=3/2`, one neighborhood identifies analytic and spectral
 multiplicities and the intrinsic gap budget retains `N^(-1/2)`; at `p=3`, the
 actual periodic pair retains both simultaneous quantitative tails.
 
+Midpoint/boundary checks evaluate an imaginary displacement at a negative
+cutoff boundary and recover global `ℓp` membership for arbitrary finitely
+many low modes. Complex midpoint inequalities cover `P=1` and `P=3`; the
+actual midpoint half-budget is instantiated at `p=3/2` with `w(0)=2`.
+The period-one potential map preserves the normalized even-frequency
+reflection formula. Both ordinary source branches have full displacement
+membership and quantitative tails below two, while the free branches retain
+negative indices. The original physical test retains both square summability
+and the unique high-disc classical eigenvalue characterization.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the midpoint sequence consequence and Corollary 6.2's locally uniform
-   Dirichlet/Neumann asymptotics through the boundary realizations. Corrected
-   Propositions 6.1/6.3 now hold for the original periodic eigenvalue pairs and
+2. Implement the Section 5 phase-twisted auxiliary boundary realization and
+   its starred Corollary 6.2 asymptotics. The midpoint consequence and ordinary
+   Dirichlet/Neumann displacement sequences are now proved, including the
+   completed period-one coefficient and original physical `L²` transfers.
+   Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue pairs and
    intrinsic squared gaps, with exact spectral algebraic multiplicities.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
@@ -4301,5 +4355,5 @@ actual periodic pair retains both simultaneous quantitative tails.
 
 Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
-the Section 6 boundary-spectrum consequences and Chapter 2 nonlinear
+the auxiliary starred boundary-spectrum consequences and Chapter 2 nonlinear
 coordinate construction remain incomplete.

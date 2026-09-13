@@ -1162,8 +1162,27 @@ the weighted bound directly using the intrinsic contour-defined squared gap,
 via `|γ²|^(p/2)=|γ|^p`. These are corrected original spectral versions of
 Propositions 6.1 and 6.3, with the additive leading Fourier-tail terms retained.
 
-Next, prove the midpoint sequence consequence and the Dirichlet/Neumann
-asymptotics in Corollary 6.2, transferring through the already implemented
-boundary realizations and preserving local uniformity. Then continue to the
-Chapter 2 discriminant, product, and action-coordinate prerequisites. The
-printed general-`p` central-height constant remains a separate open item.
+The midpoint sequence consequence and ordinary boundary asymptotics are now
+proved. `SpectralDisplacementTail` turns a convergent signed tail into global
+`Memℓp` membership by adding only finitely many omitted modes. Convexity gives
+the original contour midpoint exactly half the two-root displacement budget.
+For reflected potentials, each ordinary Dirichlet or Neumann eigenvalue is a
+periodic root in the same disc, so the existing displacement sum bounds both
+branches on one common neighborhood and cutoff.
+
+The completed interval extension pulls this estimate back to the source
+period-one `CoeffPair p` for all finite `p>1`; both boundary displacement
+sequences belong to `ℓp` and retain every larger quantitative tail. The physical
+interval extension also gives the actual original `L²` boundary eigenvalues
+square-summable displacements, together with their unique high-disc spectral
+characterization on the same neighborhood.
+
+Next, implement the auxiliary starred boundary realization in Section 5 and
+complete its Corollary 6.2 consequences. The phase change `G(f₋,f₊)=(f₋,if₊)`
+transports ordinary boundary spaces to the auxiliary ones; conjugating the
+operator changes the potential to `(iφ₋,-iφ₊)`, which is Dirichlet-reflected
+when the original potential is Neumann-reflected. Prove these identities and
+the spectral/physical transfers rather than introducing auxiliary eigenvalues
+by an unsupported analogy. Then continue to the Chapter 2 discriminant,
+product, and action-coordinate prerequisites. The printed general-`p`
+central-height constant remains a separate open item.
