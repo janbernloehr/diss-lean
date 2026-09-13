@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 316 modules and 2758 named public theorems. All compile on the
+The library has 322 modules and 2790 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.IteratedConvolutionRows` | Nested convolution rows, inner exponent contraction, and exact outer powered-Young sequence bounds |
+| `NLS.SequenceSpaces.IteratedRowSums` | Joint convergence of the double power sum, exact row norm formula, and kernel-interchange symmetry |
+| `NLS.SequenceSpaces.IteratedRowTails` | Three-region norm bound with two reciprocal tails at N/2 and the potential tail at N |
+| `NLS.ZakharovShabat.DoubleReciprocalRows` | Source double reciprocal rows, equal far-region norms, and separate outer sequence majorants |
+| `NLS.ZakharovShabat.DoubleReciprocalSums` | Signed physical two-index sum formula and explicit reciprocal region norm decay |
+| `NLS.ZakharovShabat.DoubleReciprocalSummability` | Convergent source-conjugate far/near power sums with the exact decay exponent for all finite p>1 |
 | `NLS.SequenceSpaces.ConvolutionRows` | Powered Young sequence of convolution row norms and contractive extraction at twice the frequency |
 | `NLS.SequenceSpaces.ConvolutionRowTails` | Exact distant-frequency support split and outer norm majorant retaining both tails |
 | `NLS.SequenceSpaces.PuncturedLatticeTail` | Explicit reciprocal-tail decay and compatible full reciprocal norm bound |
@@ -3057,10 +3063,44 @@ both the given potential and zero work for every larger cutoff. The bound is
 `c_p ‖φ‖_p^p (‖φ‖_p^p/N^min(1,p-1) + ‖R_(N/2) φ‖_p^p)`.
 The source range `1<p<∞` is retained; no endpoint summability is asserted.
 
+### Lemma 6.8(ii): the double reciprocal region sums
+
+`IteratedConvolutionRows` constructs the outer row obtained by taking an
+inner convolution-row norm and multiplying by the other kernel. Its norm
+is at most `‖a‖‖b‖‖c‖`. Two powered Young estimates give an actual outer
+`ℓ^p` sequence of these norms, including sampling at `2n`. Increasing both
+inner exponents contracts the nested norm.
+
+`IteratedRowSums` proves that the associated double power sum is jointly
+summable, gives the exact norm-power identity, and justifies interchanging
+the kernels. `IteratedRowTails` proves the three-region bound: the first
+kernel tail, the second kernel tail, and the near-near contribution. Both
+near kernels are truncated strictly inside `N/2`; at a distant output `2n`,
+the remaining potential coefficient lies in `R_N a`.
+
+`DoubleReciprocalRows` specializes to the punctured reciprocal lattice.
+The two far-region norms agree exactly. Each far region has an `ℓ^p`
+majorant with norm at most `‖a‖‖R_M L_r‖‖L_r‖`; the near-region majorant
+has norm at most `‖R_N a‖‖L_r‖²`. The cutoff `M=N/2` uses integer division.
+`DoubleReciprocalSums` proves the source's signed double sum
+`Σ_l Σ_k (‖a(l+k)‖ / |n-l| / |n-k|)^q` as the full row norm to power `q`,
+with the resonant terms zero. The regional norm bounds become
+`16s² ‖a‖ M^(-1/s)` and `16s² ‖R_N a‖` for the conjugate `s` of `r`.
+
+`DoubleReciprocalSummability` chooses `r=min(p,p')` and proves convergence
+of the actual source-conjugate regional power sums. With
+`C_p=(16 max(p,p')²)^p`, each far sum is bounded by
+`C_p ‖a‖_p^p/M^min(1,p-1)` and the near sum by `C_p ‖R_N a‖_p^p`.
+All sums range over signed integer frequencies, so they also control distant
+subsets. This establishes the reciprocal estimates following (1.16) in both
+exponent ranges. The remaining factors in (1.16), their near-region tail,
+and the application to actual weighted off-diagonal suprema are still to be
+proved; Lemma 6.8(ii) as a whole remains open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5606 declarations under `NLS`, including generated
+axioms. The current audit covers 5656 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3782,10 +3822,18 @@ under `w(0)=2`. The full locally uniform source inequality is instantiated
 below two; a separate cubic-tail check establishes summability of the actual
 supremum sequence above two.
 
+Double-reciprocal checks use a complex inner mode and distinct signed kernel
+frequencies, interchange asymmetric kernels below two, and test the near
+identity at an odd negative cutoff. They instantiate the physical sum at a
+negative resonance, the far decay powers `1/2` and `1`, and vanishing of a
+near region for a potential mode below its cutoff. The explicit Hilbert
+region constant is checked to be `4096`.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Prove the off-diagonal remainder estimates in Lemma 6.8(ii), then continue
+2. Apply the proved reciprocal region sums to the weighted off-diagonal
+   remainders in Lemma 6.8(ii), then continue
    the refined eigenvalue and weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved

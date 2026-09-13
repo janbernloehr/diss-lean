@@ -1030,7 +1030,25 @@ All cutoffs beyond one threshold work uniformly on an open convex potential
 neighborhood containing the given potential and zero. The source range
 `1<p<∞` is retained for this summability result.
 
-Next, treat the second-iterate off-diagonal remainders in Lemma 6.8(ii)
-using the three index regions and B.3, then continue the refined eigenvalue
-and weighted-gap estimates toward Propositions 6.1 and 6.3.
-The printed general-`p` central-height constant remains a separate open item.
+The reciprocal region estimates following (1.16) are now proved for every
+finite `p>1`. Iterating powered Young constructs the exact nested row norm
+sequence at `2n`. Its double power sum is jointly summable, and exchanging
+the kernel indices preserves the norm. The exact support split puts the two
+kernel tails at `N/2` and the near-near potential tail at `N`.
+
+The two far regions have equal norms. Each has outer power sum at most
+`C_p ‖a‖_p^p/M^min(1,p-1)` for reciprocal cutoff `M>0`, and the near majorant
+has sum at most `C_p ‖R_N a‖_p^p`, where
+`C_p=(16 max(p,p')²)^p`. These are actual convergent sums at the source inner
+exponent `p'`, controlled through `min(p,p')`. The signed physical sum formula
+is proved, including vanishing resonant-denominator terms.
+
+Next, apply these region estimates to the actual second-iterate remainders
+in Lemma 6.8(ii). Expand the original `T_n²` coefficient into its two Fourier
+indices, transfer the weight by submultiplicativity, and prove (1.16) by
+Hölder against the shifted even vector. Retain the extra potential tail in
+the near-near factor, combine the regional sums, and bound the actual full-strip
+off-diagonal suprema uniformly on the existing potential neighborhood.
+Then continue the refined eigenvalue and weighted-gap estimates toward
+Propositions 6.1 and 6.3. The printed general-`p` central-height constant
+remains a separate open item.

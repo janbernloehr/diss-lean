@@ -264,3 +264,9 @@ import NLS.ZakharovShabat.DiagonalSummationExponent
 import NLS.ZakharovShabat.DiagonalSupSummability
 import NLS.ZakharovShabat.DiagonalTailPower
 import NLS.ZakharovShabat.DiagonalSummability
+import NLS.SequenceSpaces.IteratedConvolutionRows
+import NLS.SequenceSpaces.IteratedRowSums
+import NLS.SequenceSpaces.IteratedRowTails
+import NLS.ZakharovShabat.DoubleReciprocalRows
+import NLS.ZakharovShabat.DoubleReciprocalSums
+import NLS.ZakharovShabat.DoubleReciprocalSummability

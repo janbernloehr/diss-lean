@@ -8098,3 +8098,88 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
   simpa using (hb φ hφ N le_rfl).1
 
 end DiagonalSummabilityChecks
+
+section DoubleReciprocalChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem doubleHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem doubleHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨doubleHalfAboveOne.le⟩
+local instance {p : ℝ≥0∞} [Fact (1 ≤ p)] : Fact (1 ≤ p.conjExponent) :=
+  ⟨ENNReal.HolderConjugate.one_le p.conjExponent p⟩
+
+-- A signed inner mode loses its phase under the inner norm, while the outer mode remains at 2.
+example : Coeff.iteratedConvolutionRow (lp.single 3 (-3) Complex.I)
+    (lp.single 2 2 (3 : ℂ)) (lp.single 2 (-1) (2 : ℂ)) (-2) = lp.single 2 2 (6 : ℂ) := by
+  have he : Coeff.convolutionRow (lp.single 3 (-3) Complex.I) (lp.single 2 (-1) (2 : ℂ)) (-4) =
+      lp.single 2 (-1) (2*Complex.I) := by
+    ext k
+    by_cases hk : k = -1
+    · subst k; norm_num [Coeff.convolutionRow_apply, lp.single_apply, mul_comm]
+    · simp [Coeff.convolutionRow_apply, lp.single_apply, hk]
+  ext j
+  by_cases hj : j = 2
+  · subst j
+    norm_num [Coeff.iteratedConvolutionRow_apply, he, lp.single_apply, lp.norm_single]
+  · simp [Coeff.iteratedConvolutionRow_apply, lp.single_apply, hj]
+
+-- The two kernels may be asymmetric; their interchange preserves the complete nested norm.
+example (a : Coeff 3) :
+    ‖Coeff.iteratedConvolutionRow a (lp.single (3/2) (-2) Complex.I)
+      (lp.single (3/2) 5 (2 : ℂ)) (-6)‖ =
+    ‖Coeff.iteratedConvolutionRow a (lp.single (3/2) 5 (2 : ℂ))
+      (lp.single (3/2) (-2) Complex.I) (-6)‖ :=
+  Coeff.norm_iteratedConvolutionRow_swap (by norm_num) _ _ _ _
+
+-- At an odd signed cutoff, the near-near identity retains the potential tail at N.
+example (a : Coeff 3) (b c : Coeff 2) :
+    Coeff.iteratedConvolutionRow a (Coeff.truncate (Coeff.lowFrequencies 2) b)
+      (Coeff.truncate (Coeff.lowFrequencies 2) c) (-10) =
+    Coeff.iteratedConvolutionRow (Coeff.fourierTail 5 a) (Coeff.truncate (Coeff.lowFrequencies 2) b)
+      (Coeff.truncate (Coeff.lowFrequencies 2) c) (-10) := by
+  have h := Coeff.iteratedConvolutionRow_near_eq_tail (p := 3) (r := 2) a b c 5 (-5) (by norm_num)
+  norm_num only at h
+  exact h
+
+-- The signed source formula includes the two excluded resonant indices as zero terms.
+example (a : Coeff 3) :
+    ‖doubleReciprocalRow (q := 2) (by norm_num) a (-3)‖^(2 : ℝ) =
+      ∑' l : ℤ, ∑' k : ℤ, (‖a (l+k)‖ / |((-3-l : ℤ) : ℝ)| / |((-3-k : ℤ) : ℝ)|)^(2 : ℝ) := by
+  simpa using norm_doubleReciprocalRow_rpow (q := 2) (by norm_num) (by norm_num) a (-3)
+
+-- Below two, the far-region power sum has decay M^(-1/2).
+example (a : Coeff (3/2)) (M : ℕ) (hM : 0 < M) :
+    let hq := (ENNReal.HolderConjugate.lt_top_iff_one_lt (3/2) (3/2 : ℝ≥0∞).conjExponent).mp doubleHalfFinite.lt_top
+    Summable (fun n : ℤ => ‖doubleReciprocalFarRow hq a M n‖^(3/2 : ℝ)) ∧
+      (∑' n : ℤ, ‖doubleReciprocalFarRow hq a M n‖^(3/2 : ℝ)) ≤
+        doubleReciprocalSummationConstant (3/2) * ‖a‖^(3/2 : ℝ) / (M : ℝ)^(1/2 : ℝ) := by
+  have h := doubleReciprocalFarRow_summable_and_le doubleHalfFinite doubleHalfAboveOne a M hM
+  norm_num at h ⊢
+  exact h
+
+-- Above two, the decay is M^(-1), for the actual conjugate row norm.
+example (a : Coeff 3) (M : ℕ) (hM : 0 < M) :
+    let hq := (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3 : ℝ≥0∞).conjExponent).mp (by norm_num)
+    (∑' n : ℤ, ‖doubleReciprocalFarRow hq a M n‖^(3 : ℝ)) ≤
+      doubleReciprocalSummationConstant 3 * ‖a‖^(3 : ℝ) / M := by
+  have h := (doubleReciprocalFarRow_summable_and_le (p := 3) (by norm_num) (by norm_num) a M hM).2
+  norm_num at h ⊢
+  exact h
+
+-- The near region uses the potential tail, which vanishes for a mode strictly below the cutoff.
+example : doubleReciprocalNearRow (q := 2) (by norm_num) (lp.single 3 (-4) Complex.I) 5 0 = 0 := by
+  have he : Coeff.fourierTail 5 (lp.single 3 (-4) Complex.I) = 0 := by simp
+  have hz (m : ℤ) : Coeff.convolutionRow (0 : Coeff 3) (Coeff.puncturedLattice 2 (by norm_num)) m = 0 := by
+    ext k; simp
+  ext j
+  simp [doubleReciprocalNearRow, he, doubleReciprocalRow, Coeff.iteratedConvolutionRow_apply, hz]
+
+example : doubleReciprocalSummationConstant 2 = 4096 := by
+  have he : (2 : ℝ≥0∞).conjExponent = 2 := ENNReal.HolderConjugate.conjExponent_eq
+  norm_num [doubleReciprocalSummationConstant, he, Real.rpow_natCast]
+
+end DoubleReciprocalChecks

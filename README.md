@@ -588,7 +588,10 @@ installation is absent. No shell startup files are modified.
   suprema have a summable `p`-power tail, bounded using the unweighted pair
   norm, the `N/2` Fourier tail, and decay `N^(-min(1,p-1))`. One cutoff and
   open convex potential neighborhood work for every larger tail cutoff.
-  The off-diagonal remainder estimates in Lemma 6.8(ii) remain next.
+  For Lemma 6.8(ii), the two-index reciprocal sums now have a rigorous
+  three-region decomposition and convergent outer power sums with the same
+  decay exponent. Applying those bounds to the weighted off-diagonal
+  remainders remains next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
