@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 480 modules and 3569 named public theorems. All compile on the
+The library has 485 modules and 3605 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.FunctionalAnalysis.LinearVolterra` | Factorial Picard-iterate estimates and unique continuous solutions of arbitrary-size linear Volterra equations on the whole unit interval |
+| `NLS.FunctionalAnalysis.LinearVolterraSolution` | Differentiable solution construction, endpoint initial value, actual ODE on the closed interval, and uniqueness from interior derivatives and endpoint continuity |
+| `NLS.ZakharovShabat.ClassicalFundamentalSolution` | Classical initial-value solutions of the original physical spectral equation, normalized fundamental columns, constant Wronskian one, and unimodular monodromy |
+| `NLS.ZakharovShabat.ClassicalBoundaryDeterminants` | Propagation of every initial vector, exact endpoint multiplier criterion, periodic/antiperiodic trace criteria, and compatible classical boundary determinants |
+| `NLS.ZakharovShabat.ClassicalFreeDiscriminant` | Exact signed free solutions, diagonal free fundamental matrix, and monodromy-trace agreement with the existing free discriminant |
 | `NLS.ZakharovShabat.CanonicalParityProducts` | Intrinsic potential-only parity limits, agreement with all admissible labels, exact original zero orders, and canonical full-product factorization |
 | `NLS.ZakharovShabat.CanonicalParityProductsUniform` | Uniform convergence to the intrinsic limits on weighted and even-supported potential neighborhoods; joint locally uniform convergence |
 | `NLS.ZakharovShabat.CanonicalParityProductsAnalytic` | Joint Banach analyticity, positive-radius Fréchet series, uniform polynomial-derivative convergence, analytic mixed derivatives, and source period-one pullback |
@@ -4410,10 +4415,47 @@ the corrected parity-product analyticity assertion of Lemma 8.1(i) for finite
 p>1. It does not yet prove the common-discriminant identity `f+2=g−2`, its
 large-parameter asymptotics, or analyticity for noneven ambient potentials.
 
+## Section 8: classical monodromy and boundary determinants
+
+`LinearVolterra` constructs the Picard map on the Banach space of continuous
+curves on the closed unit interval. Constant extension beyond the endpoints
+makes every integrand continuous. A pointwise factorial estimate controls
+arbitrary iterates; consequently some iterate contracts in the supremum norm.
+The fixed-point theorem gives a unique solution for every continuous linear
+coefficient, without a smallness restriction. `LinearVolterraSolution` builds
+a differentiable extension from its integral, proves the ODE at every point
+of the closed interval, and proves uniqueness using only continuity up to the
+endpoints and the differential equation in the interior.
+
+`ClassicalFundamentalSolution` applies this construction to the signed
+Zakharov–Shabat system for arbitrary continuous complex pair potentials on
+`[0,1]`. Its solutions satisfy the existing original physical operator equation.
+The initial vectors `(1,0)` and `(0,1)` define a normalized fundamental matrix.
+The trace-zero coefficient makes its Wronskian derivative vanish. Thus the
+fundamental matrix and its endpoint monodromy both have determinant one.
+The classical discriminant is defined as the monodromy trace, and the endpoint
+characteristic determinant is `σ² - σΔ + 1`.
+
+`ClassicalBoundaryDeterminants` uses initial-value uniqueness to show that the
+fundamental columns propagate every initial vector. A characteristic determinant
+vanishes exactly when a nonzero classical solution has the prescribed endpoint
+multiplier. Periodic and antiperiodic solutions are therefore characterized by
+trace values `2` and `-2`. The normalized determinants `-det(M-1)` and `det(M+1)`
+give the same classical discriminant after adding or subtracting two.
+`ClassicalFreeDiscriminant` solves the zero-potential equation explicitly and
+identifies the trace with the existing `2 cos z` normalization for all complex z.
+
+The equality of these classical determinants with the intrinsic infinite
+spectral products remains open. It requires a bridge to the original coefficient
+spectrum and its multiplicities, together with the correct entire normalization.
+Joint parameter analyticity of this monodromy construction and its large-spectral-
+parameter asymptotics are not asserted here. The distributional-potential
+compatibility identity remains a subsequent approximation step.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7279 declarations under `NLS`, including generated
+axioms. The current audit covers 7357 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5415,6 +5457,12 @@ spectral and source-potential affine perturbations, a common neighborhood for
 both polynomial derivative limits at an arbitrary p=3 potential, and analytic
 mixed third derivatives.
 
+Classical-monodromy checks solve a nonconstant triangular potential of size
+100 explicitly, obtaining a nonidentity endpoint matrix with repeated unit
+multipliers. They check the negative odd free index, propagation of either
+boundary-determinant zero to a discriminant-square zero, and the third Picard
+iterate's factorial bound with coefficient norm 100.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5428,7 +5476,11 @@ mixed third derivatives.
    compact set. Intrinsic potential-only parity limits are now jointly analytic
    on the even-supported and source period-one potential spaces, with convergent
    Taylor series and analytic mixed derivatives. Next establish `f+2=g−2` to
-   identify the correctly normalized discriminant.
+   identify the correctly normalized discriminant. The classical monodromy is
+   now constructed for continuous potentials, with determinant one, exact
+   endpoint multiplier criteria, and the free normalization. Its boundary
+   determinants have the required compatibility, but their equality with the
+   infinite spectral products and extension to finite-p potentials remain open.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

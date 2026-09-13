@@ -428,3 +428,8 @@ import NLS.ZakharovShabat.CentralParityPolynomialsUniform
 import NLS.ZakharovShabat.CanonicalParityProducts
 import NLS.ZakharovShabat.CanonicalParityProductsUniform
 import NLS.ZakharovShabat.CanonicalParityProductsAnalytic
+import NLS.FunctionalAnalysis.LinearVolterra
+import NLS.FunctionalAnalysis.LinearVolterraSolution
+import NLS.ZakharovShabat.ClassicalFundamentalSolution
+import NLS.ZakharovShabat.ClassicalBoundaryDeterminants
+import NLS.ZakharovShabat.ClassicalFreeDiscriminant

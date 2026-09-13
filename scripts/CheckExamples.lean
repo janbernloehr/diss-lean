@@ -10906,3 +10906,70 @@ example : AnalyticOnNhd ℂ (iteratedFDeriv ℂ 3
 
 end
 end CanonicalParityChecks
+
+namespace ClassicalMonodromyChecks
+open NLS NLS.ZakharovShabat NLS.LinearVolterra Set Complex Matrix
+noncomputable section
+
+-- A nonconstant, strongly coupled triangular potential, with no smallness assumption.
+private def rampPotential : Curve (ℂ × ℂ) where
+  toFun t := (100*(t.val : ℂ),0)
+  continuous_toFun := by fun_prop
+
+private theorem ramp_solution (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalSolution rampPotential 0 v t = (v.1+50*I*(t.val : ℂ)^2*v.2,v.2) := by
+  have h := classicalSolution_unique rampPotential 0 v
+    (fun s : ℝ => (v.1+50*I*(s : ℂ)^2*v.2,v.2))
+    (by fun_prop) (by simp) (by
+      intro s _
+      have hd := ((((Complex.ofRealCLM.hasDerivAt.pow 2).const_mul (50*I)).mul_const v.2).const_add v.1).prodMk
+        (hasDerivAt_const s.val v.2)
+      convert! hd using 1
+      simp only [classicalODECoefficient_apply,rampPotential,ContinuousMap.coe_mk]
+      apply Prod.ext <;> dsimp <;> ring)
+  exact (h t.property).symm
+
+-- The endpoint matrix is genuinely nonidentity despite having both multipliers equal to one.
+example : classicalMonodromy rampPotential 0 = !![1,50*I;0,1] ∧
+    classicalMonodromy rampPotential 0 ≠ 1 := by
+  have he : classicalMonodromy rampPotential 0 = !![1,50*I;0,1] := by
+    have h₁ := ramp_solution (1,0) ⟨1,by constructor <;> norm_num⟩
+    have h₂ := ramp_solution (0,1) ⟨1,by constructor <;> norm_num⟩
+    simp only [classicalMonodromy,classicalFundamentalMatrix,h₁,h₂]
+    norm_num
+  refine ⟨he,?_⟩
+  rw [he]
+  intro h
+  have h01 := congrArg (fun M : Matrix (Fin 2) (Fin 2) ℂ => M 0 1) h
+  norm_num at h01
+
+-- The negative odd free index has antiperiodic solutions and no nonzero periodic solution.
+example : (∃ v : ℂ × ℂ, v ≠ 0 ∧ classicalSolution 0 (-(Real.pi : ℂ)) v 1 = -v) ∧
+    ¬ ∃ v : ℂ × ℂ, v ≠ 0 ∧ classicalSolution 0 (-(Real.pi : ℂ)) v 1 = v := by
+  rw [← classicalDiscriminant_eq_neg_two_iff,← classicalDiscriminant_eq_two_iff,
+    classicalDiscriminant_free]
+  norm_num [freeDiscriminant]
+
+-- A zero on either classical boundary determinant gives the expected discriminant-square zero.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ)
+    (h : (classicalMonodromy φ z - 1).det = 0 ∨ (classicalMonodromy φ z + 1).det = 0) :
+    (classicalDiscriminant φ z)^2-4 = 0 := by
+  obtain ⟨he,ho⟩ := classicalBoundaryDeterminants_compatible φ z
+  rcases h with h | h
+  · rw [h] at he
+    rw [← he]
+    norm_num
+  · rw [h] at ho
+    rw [← ho]
+    norm_num
+
+-- Factorial decay works with a coefficient bound far above the contraction threshold.
+example (A : Curve (ℝ →L[ℝ] ℝ)) (hA : ∀ t, ‖A t‖ ≤ 100) (x : ℝ) (u v : Curve ℝ) :
+    dist ((next A x)^[3] u ⟨1/2,by constructor <;> norm_num⟩)
+      ((next A x)^[3] v ⟨1/2,by constructor <;> norm_num⟩) ≤ (62500/3 : ℝ)*dist u v := by
+  have h := dist_iterate_next_apply_le A x 100 hA u v 3 ⟨1/2,by constructor <;> norm_num⟩
+  norm_num at h ⊢
+  exact h
+
+end
+end ClassicalMonodromyChecks

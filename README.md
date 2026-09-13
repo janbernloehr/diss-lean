@@ -735,7 +735,12 @@ installation is absent. No shell startup files are modified.
   potential space and on the source period-one coefficient space for finite
   p>1. Their Taylor series converge locally, their polynomial derivatives
   converge uniformly on joint neighborhoods, and all mixed derivatives are
-  analytic. The discriminant compatibility `f+2=g−2` remains open.
+  analytic. A classical fundamental matrix is now constructed for every
+  continuous potential on the unit interval, with no smallness assumption.
+  Its determinant is one, its trace has the exact free value `2 cos z`, and
+  its boundary determinants detect periodic and antiperiodic solutions at
+  trace values `2` and `-2`. Identifying these classical determinants with
+  the infinite spectral products, and thus proving `f+2=g−2`, remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

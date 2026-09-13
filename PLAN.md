@@ -1443,7 +1443,19 @@ of Fréchet derivatives, and positive-radius Taylor expansions. Both limits
 are jointly analytic, including on the source period-one coefficient space
 and at spectral collisions. Every mixed iterated derivative is analytic.
 
-Next, prove the discriminant compatibility `f+2=g−2`.
+The classical fundamental solution is now constructed for arbitrary continuous
+potentials on the full unit interval. A factorial Picard-iterate estimate
+proves existence and uniqueness without restricting the coefficient size.
+The solution satisfies the original physical spectral equation. Its normalized
+columns have Wronskian one, their matrix propagates every initial vector, and
+the monodromy trace detects periodic and antiperiodic solutions through the
+characteristic determinant. The free trace is exactly `2 cos z`.
+
+Next, connect the classical endpoint determinants to the original coefficient
+spectral products, retaining algebraic multiplicities and entire normalization,
+and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
+boundary-determinant compatibility is proved; the infinite-product identity
+is not yet proved.
 The factorization proves the product equality in Lemma 8.1(iv);
 identification with the discriminant squared minus four remains open.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
