@@ -270,3 +270,9 @@ import NLS.SequenceSpaces.IteratedRowTails
 import NLS.ZakharovShabat.DoubleReciprocalRows
 import NLS.ZakharovShabat.DoubleReciprocalSums
 import NLS.ZakharovShabat.DoubleReciprocalSummability
+import NLS.SequenceSpaces.IteratedRowTesting
+import NLS.SequenceSpaces.SpectralReflection
+import NLS.ZakharovShabat.OffDiagonalSeries
+import NLS.ZakharovShabat.WeightedDoubleRow
+import NLS.ZakharovShabat.OffDiagonalHolder
+import NLS.ZakharovShabat.OffDiagonalUniformBound

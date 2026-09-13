@@ -590,8 +590,11 @@ installation is absent. No shell startup files are modified.
   open convex potential neighborhood work for every larger tail cutoff.
   For Lemma 6.8(ii), the two-index reciprocal sums now have a rigorous
   three-region decomposition and convergent outer power sums with the same
-  decay exponent. Applying those bounds to the weighted off-diagonal
-  remainders remains next.
+  decay exponent. The actual off-diagonal double Fourier series now have
+  joint absolute convergence and weighted Hölder bounds with the exact
+  component norms. One potential neighborhood and cutoff give these bounds
+  for both coefficients and their analytic extensions on every distant strip.
+  The regional refinement and final off-diagonal tail inequality remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

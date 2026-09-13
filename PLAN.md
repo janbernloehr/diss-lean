@@ -1043,12 +1043,27 @@ has sum at most `C_p ‖R_N a‖_p^p`, where
 exponent `p'`, controlled through `min(p,p')`. The signed physical sum formula
 is proved, including vanishing resonant-denominator terms.
 
-Next, apply these region estimates to the actual second-iterate remainders
-in Lemma 6.8(ii). Expand the original `T_n²` coefficient into its two Fourier
-indices, transfer the weight by submultiplicativity, and prove (1.16) by
-Hölder against the shifted even vector. Retain the extra potential tail in
-the near-near factor, combine the regional sums, and bound the actual full-strip
-off-diagonal suprema uniformly on the existing potential neighborhood.
+The actual off-diagonal double Fourier series and their weighted Hölder
+bounds are now proved. The first physical coefficient is reflected where
+required by the source basis; both coefficient labels retain their correct
+leading Fourier modes. Spectral-weight reflection is an exact isometry and
+reverses the scalar shift. Two successive Hölder tests give joint absolute
+convergence and the full-index form of (1.16), with the exact shifted vector
+norm and double reciprocal row retained.
+
+The half-contraction vector bound yields
+`w(2n)|b_n^- - φ_-(-2n)| ≤ 2‖φ_-‖² ‖doubleRow(weight φ_+)‖`
+and the corresponding positive bound with the components exchanged and the
+first potential reflected. One open convex neighborhood and one cutoff give
+both bounds for the actual coefficients and analytic extensions throughout
+all distant closed strips, including `p=1` with conjugate infinity.
+
+Next, refine the weighted double-series estimate region by region. In the
+near-near region, retain the extra `R_(N/2)` tail in the outer potential
+factor as well as `R_N` in the inner potential. The two far regions use full
+potential norms and one reciprocal tail each. Combine the already proved
+regional power sums, define the actual full-strip remainder suprema, and
+finish the locally uniform weighted inequality in Lemma 6.8(ii) for `p>1`.
 Then continue the refined eigenvalue and weighted-gap estimates toward
 Propositions 6.1 and 6.3. The printed general-`p` central-height constant
 remains a separate open item.

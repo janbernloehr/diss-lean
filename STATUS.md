@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 322 modules and 2790 named public theorems. All compile on the
+The library has 328 modules and 2820 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.IteratedRowTesting` | Absolute two-index Hölder testing, joint convergence, and complex double-series norm bound |
+| `NLS.SequenceSpaces.SpectralReflection` | Exact Fourier reflection isometry for every spectral weight and reversal of shifted norms |
+| `NLS.ZakharovShabat.OffDiagonalSeries` | Actual second-iterate component series and both source off-diagonal remainder formulas |
+| `NLS.ZakharovShabat.WeightedDoubleRow` | Weight transfer, normalized reciprocal test coordinates, joint convergence, and exact weighted row bound |
+| `NLS.ZakharovShabat.OffDiagonalHolder` | Physical joint convergence and actual weighted off-diagonal bounds with component norms retained |
+| `NLS.ZakharovShabat.OffDiagonalUniformBound` | One locally uniform cutoff for both row bounds and analytic-extension agreement on full strips |
 | `NLS.SequenceSpaces.IteratedConvolutionRows` | Nested convolution rows, inner exponent contraction, and exact outer powered-Young sequence bounds |
 | `NLS.SequenceSpaces.IteratedRowSums` | Joint convergence of the double power sum, exact row norm formula, and kernel-interchange symmetry |
 | `NLS.SequenceSpaces.IteratedRowTails` | Three-region norm bound with two reciprocal tails at N/2 and the potential tail at N |
@@ -3093,14 +3099,53 @@ of the actual source-conjugate regional power sums. With
 `C_p ‖a‖_p^p/M^min(1,p-1)` and the near sum by `C_p ‖R_N a‖_p^p`.
 All sums range over signed integer frequencies, so they also control distant
 subsets. This establishes the reciprocal estimates following (1.16) in both
-exponent ranges. The remaining factors in (1.16), their near-region tail,
-and the application to actual weighted off-diagonal suprema are still to be
-proved; Lemma 6.8(ii) as a whole remains open.
+exponent ranges. The full-index Hölder test and application to the actual
+coefficients are now proved below. The near-region extra potential tail and
+final supremum summation remain open, so Lemma 6.8(ii) is not yet complete.
+
+### Lemma 6.8(ii): actual weighted off-diagonal Hölder bounds
+
+`IteratedRowTesting` proves the two-index Hölder estimate with constant one,
+retaining the nested row norm and both testing-sequence norms. The complete
+absolute double series is jointly summable before any change of order.
+`SpectralReflection` constructs the exact physical reflection isometry for
+all source spectral weights; scalar modulation commutes with reflection
+with its sign reversed. Thus `‖reflection f‖_(w,p;n)=‖f‖_(w,p;-n)`.
+
+`OffDiagonalSeries` expands both components of the actual `T_n²` operator,
+then proves both off-diagonal remainder identities. The negative remainder
+uses `φ_-(−(n+l)) φ_+(l+k) u_1^-(-k)`, and the positive remainder uses
+`φ_+(n+l) φ_-(−(l+k)) u_0^+(k)`, each with denominators at `l` and `k`.
+The leading terms remain `φ_-(-2n)` and `φ_+(2n)` respectively.
+
+`WeightedDoubleRow` normalizes the reciprocal indices to `j=n-l`, `k=n-m`.
+Submultiplicativity gives the exact transfer
+`w(2n) ≤ w(2n-j) w(2n-j-k) w(2n-k)`.
+The outer weighted potential has its original norm, and the weighted input
+has exactly its source shifted norm. The reciprocal strip bound and the
+two-index Hölder test give joint absolute convergence and a bound with the
+full double reciprocal row retained.
+
+`OffDiagonalHolder` identifies the physical series with this test and proves
+its joint absolute convergence. The even-vector half-contraction estimate
+gives the actual negative bound `2‖φ_-‖²` times the double row of the weighted
+positive potential. The positive bound uses `2‖φ_+‖²` and the weighted
+reflected first potential. Both include the factor `w(2n)` on the actual
+remainder norm and require no reality condition on the potential.
+
+`OffDiagonalUniformBound` defines the two parameter-independent majorants.
+One open convex potential neighborhood containing the given potential and
+zero, and one cutoff, make both bounds valid on every distant full closed
+strip. The theorem includes equality of the analytic extensions with the
+original coefficients. All finite Banach exponents are covered, including
+`p=1` with its conjugate infinity row. This is the full-index form of (1.16);
+the region-specific extra potential tail and the final weighted supremum
+sum in Lemma 6.8(ii) remain unproved.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5656 declarations under `NLS`, including generated
+axioms. The current audit covers 5707 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3829,11 +3874,20 @@ negative resonance, the far decay powers `1/2` and `1`, and vanishing of a
 near region for a potential mode below its cutoff. The explicit Hilbert
 region constant is checked to be `4096`.
 
+Off-diagonal Hölder checks use `w(0)=2`, a reflected negative shift, and a
+nonzero complex weighted series term. Two nonconstant potential modes produce
+an actual resonant second-iterate coefficient `6i/π²`, testing the physical
+frequency signs and both reciprocal denominators. The absolute Hölder test
+is instantiated at `p=1,q=∞`, and joint physical convergence is checked at a
+nonreal spectral parameter. Actual negative and positive remainder bounds
+are checked at `p=1` and `p=3`, together with a common cutoff for both
+analytic remainder bounds on all signed full strips.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Apply the proved reciprocal region sums to the weighted off-diagonal
-   remainders in Lemma 6.8(ii), then continue
+2. Refine the proved weighted off-diagonal Hölder bounds by region and
+   combine the reciprocal sums to finish Lemma 6.8(ii), then continue
    the refined eigenvalue and weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved

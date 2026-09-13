@@ -8183,3 +8183,104 @@ example : doubleReciprocalSummationConstant 2 = 4096 := by
   norm_num [doubleReciprocalSummationConstant, he, Real.rpow_natCast]
 
 end DoubleReciprocalChecks
+
+section OffDiagonalHolderChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem offDiagonalHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨offDiagonalHalfAboveOne.le⟩
+local instance {p : ℝ≥0∞} [Fact (1 ≤ p)] : Fact (1 ≤ p.conjExponent) :=
+  ⟨ENNReal.HolderConjugate.one_le p.conjExponent p⟩
+
+-- A non-unit spectral weight preserves the physical reflection and reverses a signed shift.
+example (a : WeightedCoeff (SpectralWeight.constant 2 (by norm_num)).toWeight 3) :
+    (SpectralWeight.constant 2 (by norm_num)).shiftedNorm (-4)
+      ((SpectralWeight.constant 2 (by norm_num)).reflection a) =
+    (SpectralWeight.constant 2 (by norm_num)).shiftedNorm 4 a := by
+  simpa using SpectralWeight.shiftedNorm_reflection (SpectralWeight.constant 2 (by norm_num)) (-4) a
+
+-- A nonzero weighted double term retains its complex phase and both reciprocal denominators.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    weightedOffDiagonalTerm (p := 3) w (weightedMode w.toWeight (-1) 2)
+      (weightedMode w.toWeight (-2) Complex.I) (weightedMode w.toWeight (-1) 3) 0 0 1 1 =
+      12*Complex.I / (Real.pi : ℂ)^2 := by
+  norm_num [weightedOffDiagonalTerm, weightedMode_apply, complementarySymbol]
+  ring
+
+-- The actual second iterate couples two nonconstant potential modes into the resonant coefficient.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    let φ := (WeightedCoeffPair.toMax w.toWeight 3).symm
+      (weightedMode w.toWeight 1 (2 : ℂ), weightedMode w.toWeight (-2) Complex.I)
+    let f := (WeightedCoeffPair.toMax w.toWeight 3).symm (weightedMode w.toWeight 1 (3 : ℂ), 0)
+    (weightedPotentialInverse (by norm_num) w φ 0 0 (by simpa using center_mem_resonantStrip 0)
+      (weightedPotentialInverse (by norm_num) w φ 0 0 (by simpa using center_mem_resonantStrip 0) f)).fst.val 0 =
+      6*Complex.I/(Real.pi : ℂ)^2 := by
+  dsimp only
+  rw [weightedPotentialInverse_sq_fst_apply]
+  change (∑' l : ℤ, ∑' k : ℤ,
+    (weightedMode (p := 3) (SpectralWeight.constant 2 (by norm_num)).toWeight 1 (2 : ℂ)).val (0-l) *
+    (weightedMode (p := 3) (SpectralWeight.constant 2 (by norm_num)).toWeight (-2) Complex.I).val (l-k) *
+    complementarySymbol 0 0 l * complementarySymbol 0 0 (-k) *
+    (weightedMode (p := 3) (SpectralWeight.constant 2 (by norm_num)).toWeight 1 (3 : ℂ)).val k) = _
+  rw [tsum_eq_single (-1) (by
+    intro l hl
+    have h : (0 : ℤ)-l ≠ 1 := by omega
+    simp only [weightedMode_apply, if_neg h, zero_mul, tsum_zero])]
+  rw [tsum_eq_single 1 (by intro k hk; simp [weightedMode_apply, hk])]
+  norm_num [weightedMode_apply, complementarySymbol]
+  ring
+
+-- The absolute two-index Hölder test includes p=1, q=infinity.
+example (a d f : Coeff 1) (b c : Coeff ⊤) :
+    (∑' j : ℤ, ∑' k : ℤ, ‖d j * a (-6-j-k) * c k * b j * f k‖) ≤
+      ‖d‖ * ‖f‖ * ‖Coeff.iteratedConvolutionRow a b c (-6)‖ :=
+  Coeff.tsum_norm_iteratedRowTest_le a d f b c (-6)
+
+-- Physical double-series convergence is joint, including for nonreal spectral parameters.
+example (w : SpectralWeight) (a d f : WeightedCoeff w.toWeight 3)
+    (hz : Complex.I ∈ resonantStrip 0) :
+    Summable (fun lk : ℤ × ℤ => ‖d.val lk.1 * a.val (lk.1+lk.2) *
+      complementarySymbol 0 Complex.I lk.1 * complementarySymbol 0 Complex.I lk.2 * f.val lk.2‖) := by
+  simpa using summable_norm_offDiagonal_terms offDiagonalHalfAboveOne w d a f 0 Complex.I hz
+
+-- The actual negative coefficient keeps the first component squared and the positive inner potential.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1)
+    (h : ‖weightedPotentialSquareInShift (by norm_num) w φ (-3) ((Real.pi : ℂ)*(-3 : ℤ))
+      (center_mem_resonantStrip (-3))‖ < 1)
+    (hh : ‖weightedPotentialSquareInShift (by norm_num) w φ (-3) ((Real.pi : ℂ)*(-3 : ℤ))
+      (center_mem_resonantStrip (-3))‖ ≤ 1/2) :
+    w (2*(-3 : ℤ)) * ‖weightedResonantBMinus (by norm_num) w φ (-3) ((Real.pi : ℂ)*(-3 : ℤ))
+      (center_mem_resonantStrip (-3)) h - φ.fst.val (-(2*(-3 : ℤ)))‖ ≤
+      resonantBMinusRemainderBound (by norm_num) w φ (-3) := by
+  exact weightedResonantBMinus_remainder_le (p := 1) (by norm_num) w φ (-3)
+    ((Real.pi : ℂ)*(-3 : ℤ)) (center_mem_resonantStrip (-3)) h hh
+
+-- The positive coefficient uses the second component and reflected first potential at p=3.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (z : ℂ) (hz : z ∈ resonantStrip 2)
+    (h : ‖weightedPotentialSquareInShift (by norm_num) w φ 2 z hz‖ < 1)
+    (hh : ‖weightedPotentialSquareInShift (by norm_num) w φ 2 z hz‖ ≤ 1/2) :
+    w 4 * ‖weightedResonantBPlus (by norm_num) w φ 2 z hz h - φ.snd.val 4‖ ≤
+      resonantBPlusRemainderBound (by norm_num) w φ 2 := by
+  have hb := weightedResonantBPlus_remainder_le (p := 3) (by norm_num) w φ 2 z hz h hh
+  norm_num only at hb
+  exact hb
+
+-- One threshold controls both analytic remainders on every signed full strip.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+      w (2*n) * ‖weightedResonantBMinusExtension (by norm_num) w φ n z - φ.fst.val (-(2*n))‖ ≤
+        resonantBMinusRemainderBound (by norm_num) w φ n ∧
+      w (2*n) * ‖weightedResonantBPlusExtension (by norm_num) w φ n z - φ.snd.val (2*n)‖ ≤
+        resonantBPlusRemainderBound (by norm_num) w φ n := by
+  obtain ⟨N, hN, _, _, _, hφ, _, hb⟩ := exists_uniform_offDiagonalHolder (p := 3) (by norm_num) w φ
+  refine ⟨N, hN, ?_⟩
+  intro n hn z hz
+  obtain ⟨_, _, _, hm, hp⟩ := hb φ hφ n hn z hz
+  exact ⟨hm, hp⟩
+
+end OffDiagonalHolderChecks
