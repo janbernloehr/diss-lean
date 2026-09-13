@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 304 modules and 2704 named public theorems. All compile on the
+The library has 308 modules and 2729 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -117,6 +117,10 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.WeightedPotentialAnalytic` | Weighted potential as a continuous linear operator-valued map; exact bilinear bound; jointly analytic extension of the actual `T_n` |
 | `NLS.ZakharovShabat.WeightedCorrectionAnalytic` | Open joint correction domain; analytic even and full extensions equal to the shifted Neumann inverses |
 | `NLS.ZakharovShabat.ResonantAnalytic` | Lemma 6.8's analytic assertion for all three source coefficients, with a uniform potential neighborhood and cutoff and explicit agreement on distant closed strips |
+| `NLS.ZakharovShabat.UnweightedEvenCorrection` | Unit-weight square norm identity, even inverse/source-vector compatibility, and factor-two bounds retaining unweighted potential norms |
+| `NLS.ZakharovShabat.ComplementaryRowEstimate` | Actual reciprocal rows, parameter-independent row envelopes, exact conjugate row norm, and absolute Hölder testing |
+| `NLS.ZakharovShabat.ResonantDiagonalEstimate` | Exact diagonal Fourier series and uniform Hölder bound using unweighted component norms and the source reciprocal sum |
+| `NLS.ZakharovShabat.ResonantDiagonalSup` | Actual full-strip supremum, bounded image, and uniform bounds between source coefficient values and the reciprocal majorant |
 | `NLS.SequenceSpaces.SpectralConvolution` | Weighted Young convolution `ℓᵖ_w × ℓ¹_w → ℓᵖ_w` including infinity; exact constant one; Banach-space summation; bilinear continuity; unweighted product identification and shifted estimate |
 | `NLS.SequenceSpaces.PuncturedLattice` | Punctured reciprocal lattice in every `ℓᑫ`, `q>1`, including infinity; Hilbert norm at most two; exponent-only complementary constant with exact `c₂=2` |
 | `NLS.ZakharovShabat.ComplementaryL1` | Actual reciprocal in conjugate `ℓᑫ`; weight-independent gain from weighted `ℓᵖ` to weighted `ℓ¹`; uniform bounds in every scalar shift, including `p=1` |
@@ -2977,10 +2981,48 @@ Restricting the joint result to a fixed potential gives the analytic assertion
 of Lemma 6.8. The argument works for every finite Banach exponent, including
 `p=1`; Lemma 6.8's scalar summability estimates are still unproved.
 
+### Lemma 6.8(i): diagonal row and full-strip supremum estimates
+
+`UnweightedEvenCorrection` proves uniqueness for the even equation and
+compatibility of its inverse with forgetting the spectral weight. The same
+holds for each potential-source vector and actual resonant even vector.
+Unit-weight signed modulation preserves the square's operator norm, so the
+existing simultaneous contraction theorem supplies both inverse hypotheses.
+Consequently the positive-mode even vector has unweighted norm at most
+`2‖φ_-‖_p`, retaining the unweighted component norm instead of replacing it
+by its larger weighted norm. Ordinary coefficient realization has exactly
+the same norm as forgetting to unit weight.
+
+`ComplementaryRowEstimate` constructs the actual physical-frequency row
+`a(n-k) complementarySymbol(n,z,-k)` in a reciprocal exponent `q>1`,
+and a parameter-independent punctured-lattice envelope. Pointwise domination
+throughout the closed strip gives domination of its `ℓ^q` norm. The actual
+row is absolutely summable against an `ℓ^p` input when `p,q` are conjugate,
+and Hölder bounds its sum by the input norm times the envelope norm. The
+`p=1,q=∞` endpoint is included. For finite `q`, reflection identifies that
+norm with the exact source expression
+`(Σ_m (‖a(n+m)‖ / |m-n|)^q)^(1/q)`; the resonant term is zero.
+
+`ResonantDiagonalEstimate` proves the actual diagonal's Fourier expansion,
+its absolute convergence, and the pointwise bound
+`‖a_n(z)‖ ≤ 2‖φ_-‖_p (Σ_m (‖φ_+(n+m)‖ / |m-n|)^{p'})^{1/p'}`.
+The conjugate norm formulation also covers `p=1`. One potential neighborhood
+and cutoff make this bound valid on every distant full closed strip for both
+the original proof-dependent coefficient and its analytic extension.
+
+`ResonantDiagonalSup` defines the source quantity `|a_n|_{U_n}` as the
+supremum of the actual coefficient norm over the entire unbounded closed
+strip. The uniform pointwise estimate proves that image bounded, that the
+supremum dominates every actual coefficient value, and that it is nonnegative
+and bounded by the same reciprocal expression. All these conclusions share
+one open convex potential neighborhood and one cutoff. The sum over large
+frequencies and the quantitative tail decay in Lemma 6.8(i) remain unproved,
+as do the off-diagonal summability estimates in (ii).
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5523 declarations under `NLS`, including generated
+axioms. The current audit covers 5560 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3685,6 +3727,14 @@ the actual potential at `p=1`, spectral restriction of both off-diagonal joint
 analyticity results at `p=3`, and an actual nonreal analytic diagonal at
 arbitrarily large real centers. A final `p=1` check extracts one cutoff for
 all signed distant strips together with exact source-coefficient agreement.
+
+Diagonal-estimate checks locate a single reciprocal row at the signed index
+`-6` with denominator `8`, and verify removal of the resonant contribution
+at the conjugate infinity endpoint. Under a constant weight with `w(0)=2`,
+the actual even-vector bound retains the smaller unweighted component norm.
+Checks instantiate the row bounds at `p=1` and the exact reciprocal-sum
+formula at `p=3/2`. The full-strip supremum is proved strictly positive for
+an actual complex potential at arbitrarily distant positive real centers.
 
 ## Next milestones
 

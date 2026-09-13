@@ -7936,3 +7936,92 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) :
   exact ⟨h,ha⟩
 
 end ResonantAnalyticChecks
+
+section DiagonalEstimateChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem diagonalHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem diagonalHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨diagonalHalfAboveOne.le⟩
+
+-- Signed indices place a single row entry at -6, with reciprocal denominator 8.
+example :
+    complementaryRowEnvelope (q := 3/2) diagonalHalfAboveOne (lp.single 3 4 Complex.I) (-2) =
+      lp.single (3/2) (-6) (Complex.I/8) := by
+  ext k
+  by_cases hk : k = -6
+  · subst k
+    norm_num [complementaryRowEnvelope_apply, lp.single_apply, Coeff.puncturedLattice_apply, div_eq_mul_inv]
+  · have hneq : (-2 : ℤ)-k ≠ 4 := by omega
+    simp [complementaryRowEnvelope_apply, lp.single_apply, hk, hneq]
+
+-- The exact resonant Fourier coefficient contributes no reciprocal row, including at q=infinity.
+example (n : ℤ) :
+    complementaryRowEnvelope (q := ⊤) (by simp) (lp.single 1 (2*n) (1 : ℂ)) n = 0 := by
+  ext k
+  by_cases hk : n-k = 2*n
+  · have he : -k-n = 0 := by omega
+    simp [complementaryRowEnvelope_apply, lp.single_apply, hk, Coeff.puncturedLattice_apply, he]
+  · simp [complementaryRowEnvelope_apply, lp.single_apply, hk]
+
+-- A weight with w(0)=2 does not double the unweighted potential component in the new bound.
+example
+    (hw : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) (SpectralWeight.constant 2 (by norm_num))
+      (constantSpectralPotential _ 2 Complex.I) (-2) ((Real.pi : ℂ)*(-2 : ℤ)) (center_mem_resonantStrip (-2))‖ < 1)
+    (h1 : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) SpectralWeight.one
+      ((SpectralWeight.constant 2 (by norm_num)).forgetPairWeight (constantSpectralPotential _ 2 Complex.I))
+      (-2) ((Real.pi : ℂ)*(-2 : ℤ)) (center_mem_resonantStrip (-2))‖ < 1)
+    (hh : ‖weightedPotentialSquareInShift (p := 3) (by norm_num) SpectralWeight.one
+      ((SpectralWeight.constant 2 (by norm_num)).forgetPairWeight (constantSpectralPotential _ 2 Complex.I))
+      (-2) ((Real.pi : ℂ)*(-2 : ℤ)) (center_mem_resonantStrip (-2))‖ ≤ 1/2) :
+    ‖(SpectralWeight.constant 2 (by norm_num)).forgetPairWeight
+      (weightedResonantEvenVector (by norm_num) _ (constantSpectralPotential _ 2 Complex.I) (-2)
+        ((Real.pi : ℂ)*(-2 : ℤ)) (center_mem_resonantStrip (-2)) hw 1)‖ ≤ 4 := by
+  let w := SpectralWeight.constant 2 (by norm_num)
+  have he : w.toCoeff (constantSpectralPotential (p := 3) w 2 Complex.I).fst = lp.single 3 0 (2 : ℂ) := by
+    ext k
+    by_cases hk : k = 0 <;> simp [constantSpectralPotential, lp.single_apply, hk]
+  have hn : ‖w.forgetWeight (constantSpectralPotential (p := 3) w 2 Complex.I).fst‖ = 2 := by
+    rw [← w.norm_toCoeff_eq_norm_forgetWeight, he, lp.norm_single (by norm_num : 0 < (3 : ℝ≥0∞))]
+    norm_num
+  have hb := norm_forget_evenVector_one_le_unweighted (by norm_num) w
+    (constantSpectralPotential (p := 3) w 2 Complex.I) (-2) _ _ hw h1 hh
+  simpa only [hn, show (2 * (2 : ℝ)) = 4 by norm_num] using hb
+
+-- The p=1 endpoint pairs against a genuine infinity-norm reciprocal row.
+example (a b : Coeff 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    ‖∑' k : ℤ, a (n-k) * complementarySymbol n z (-k) * b k‖ ≤
+      ‖b‖ * ‖complementaryRowEnvelope (q := ⊤) (by simp) a n‖ :=
+  norm_tsum_complementaryRow_le (by simp) a b n z hz
+
+-- The source reciprocal-sum formula also applies below the Hilbert exponent.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (3/2)) (n : ℤ) :
+    resonantDiagonalBound diagonalHalfFinite w φ n = (2 * ‖w.forgetWeight φ.fst‖) *
+      (∑' m : ℤ, (‖φ.snd.val (n+m)‖ / |((m-n : ℤ) : ℝ)|) ^ (3/2 : ℝ≥0∞).conjExponent.toReal) ^
+        (1/(3/2 : ℝ≥0∞).conjExponent.toReal) :=
+  resonantDiagonalBound_eq diagonalHalfFinite diagonalHalfAboveOne w φ n
+
+-- The supremum is nonzero for an actual complex potential at arbitrarily distant real centers.
+example (w : SpectralWeight) (M : ℕ) :
+    ∃ n : ℤ, (M : ℤ) ≤ n ∧ 0 < resonantDiagonalSup (p := 3) (by norm_num) w
+      (constantSpectralPotential w 1 Complex.I) n := by
+  obtain ⟨N, hN, U, _, _, hφ, _, hb⟩ := exists_uniform_resonantDiagonalSup (p := 3) (by norm_num) w
+    (constantSpectralPotential w 1 Complex.I)
+  let n : ℤ := (max N M : ℕ)
+  have hn : N ≤ n.natAbs := by simpa only [n, Int.natAbs_natCast] using le_max_left N M
+  have hn0 : 0 < n := by
+    dsimp [n]
+    exact_mod_cast zero_lt_one.trans_le (hN.trans (le_max_left N M))
+  have hnM : (M : ℤ) ≤ n := by dsimp [n]; exact_mod_cast le_max_right N M
+  obtain ⟨_, _, hvalues⟩ := hb _ hφ n hn
+  obtain ⟨h, hv⟩ := hvalues _ (center_mem_resonantStrip n)
+  have hi := constantResonantA_im_pos (by norm_num) w n hn0 h
+  have hne : weightedResonantA (by norm_num) w (constantSpectralPotential (p := 3) w 1 Complex.I) n
+      ((Real.pi : ℂ)*n) (center_mem_resonantStrip n) h ≠ 0 := by
+    intro he
+    rw [he, Complex.zero_im] at hi
+    exact lt_irrefl _ hi
+  exact ⟨n, hnM, (norm_pos_iff.mpr hne).trans_le hv⟩
+
+end DiagonalEstimateChecks

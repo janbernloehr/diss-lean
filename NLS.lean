@@ -252,3 +252,7 @@ import NLS.ZakharovShabat.ComplementaryAnalytic
 import NLS.ZakharovShabat.WeightedPotentialAnalytic
 import NLS.ZakharovShabat.WeightedCorrectionAnalytic
 import NLS.ZakharovShabat.ResonantAnalytic
+import NLS.ZakharovShabat.UnweightedEvenCorrection
+import NLS.ZakharovShabat.ComplementaryRowEstimate
+import NLS.ZakharovShabat.ResonantDiagonalEstimate
+import NLS.ZakharovShabat.ResonantDiagonalSup

@@ -1003,13 +1003,29 @@ witness and equality to the actual coefficients. All finite Banach exponents,
 including `p=1`, are covered; the free complementary extension also covers
 infinity in the existing `WithLp ∞` maximum pair norm.
 
-Next, prove the coefficient summability estimates in Lemma 6.8. For the
-diagonal estimate, transfer the even inverse to unit weight to retain the
-unweighted potential norm, then estimate the odd correction. The off-diagonal
-remainders use the second iterate. Split reciprocal kernels into distant
-indices and potential tails; use Young/B.3 for `p≥2` and subadditivity of
-powers for `1<p<2`. Keep the frequency sums and tails explicit. The uniform
-even-vector bounds and simultaneous weighted/unweighted contraction are
-available. Then continue the refined eigenvalue and
-weighted-gap estimates toward Propositions 6.1 and 6.3.
+The diagonal Hölder estimate on source pages 41–42 is now proved. The even
+inverse and its source vectors commute with forgetting the weight. The unit
+square has exactly the same norm in shifted and unshifted coordinates, so
+the simultaneous contraction gives a vector bound with the unweighted
+potential norm retained. The actual diagonal Fourier series is absolutely
+convergent and is bounded by that vector norm times a reciprocal row norm.
+For finite conjugate exponent this row norm equals the source's displayed
+sum after the signed reindexing. The `p=1` endpoint uses the conjugate
+infinity norm. The actual full-strip supremum is defined, bounded by this
+same expression, and dominates all original coefficient values, uniformly
+on one potential neighborhood and every distant closed strip.
+
+Next, sum the diagonal reciprocal-row bounds over `|n|≥N` to finish
+Lemma 6.8(i). Split reciprocal indices at half the frequency into distant
+indices and potential tails; retain the decay `N^(-min(1,p-1))`.
+A common route for both exponent ranges is to put `r=min(p,p')`, use
+contractive exponent inclusion to bound the conjugate row by its `ℓ^r`
+norm, then apply `PowerYoung` with exponents `(p,r,p,r)`. After reindexing,
+the row norm is a convolution-root sequence evaluated at `2n`; the existing
+`PeriodDoubling` extraction controls this subsequence. Splitting the kernel
+at a fixed half-cutoff separates a small reciprocal tail from a potential
+tail. The cases `p≥2` and `1<p<2` then identify the stated decay power.
+Then treat the second-iterate off-diagonal remainders using the three index
+regions and B.3, and continue the refined eigenvalue and weighted-gap
+estimates toward Propositions 6.1 and 6.3.
 The printed general-`p` central-height constant remains a separate open item.
