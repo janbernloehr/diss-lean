@@ -1058,12 +1058,23 @@ first potential reflected. One open convex neighborhood and one cutoff give
 both bounds for the actual coefficients and analytic extensions throughout
 all distant closed strips, including `p=1` with conjugate infinity.
 
-Next, refine the weighted double-series estimate region by region. In the
-near-near region, retain the extra `R_(N/2)` tail in the outer potential
-factor as well as `R_N` in the inner potential. The two far regions use full
-potential norms and one reciprocal tail each. Combine the already proved
-regional power sums, define the actual full-strip remainder suprema, and
-finish the locally uniform weighted inequality in Lemma 6.8(ii) for `p>1`.
-Then continue the refined eigenvalue and weighted-gap estimates toward
-Propositions 6.1 and 6.3. The printed general-`p` central-height constant
-remains a separate open item.
+The proof-consistent weighted inequality in Lemma 6.8(ii) is now proved for
+all finite `p>1`. A disjoint split avoids counting the far-far corner twice.
+The near region retains both potential tails at `N`; regional power sums
+then give an explicit exponent-only constant. Reflection preserves weighted
+tails, and integer-half-cutoff decay loses at most three.
+
+Both actual weighted full-strip remainder suprema have convergent power
+tails with bound
+`C_p ‖φ_±‖^p (‖φ‖^(2p)/N^min(1,p-1) + ‖R_(N/2)φ‖^(2p))`,
+where `C_p=3·4^p·2^(p-1)·(16 max(p,p')²)^p`. One open convex potential
+neighborhood and one threshold work for both signs and every larger cutoff.
+This uses the `p`-power sum and full pair norm in the proof on source page 43.
+The printed page-41 statement omits those left-hand powers and writes the
+positive component in the first numerator; its literal form is not asserted.
+See STATUS.md for the precise source-display qualification.
+
+Next, prove Lemma 6.9: use the analytic determinant and the proved coefficient
+estimates for a Rouché root count, then establish the refined root and gap
+bounds. Continue toward Propositions 6.1 and 6.3. The printed general-`p`
+central-height constant remains a separate open item.

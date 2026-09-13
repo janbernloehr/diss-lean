@@ -2,11 +2,21 @@
 
 ## Implemented and checked
 
-The library has 328 modules and 2820 named public theorems. All compile on the
+The library has 338 modules and 2854 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.DoubleSeriesRegions` | Exact disjoint three-region decomposition of jointly absolutely convergent double series |
+| `NLS.SequenceSpaces.DominatedDoubleTesting` | Pointwise two-index domination implies joint absolute convergence and the exact Hölder bound |
+| `NLS.SequenceSpaces.HalfCutoffPower` | Full-cutoff power decay from an integer half cutoff, with loss at most three |
+| `NLS.SequenceSpaces.SpectralReflectionTail` | Exact reflection of weighted tails, norm preservation, and cutoff antitonicity |
+| `NLS.ZakharovShabat.OffDiagonalRegions` | Two far reciprocal-tail bounds and a near bound retaining both actual potential tails |
+| `NLS.ZakharovShabat.OffDiagonalTailBound` | Refined bounds on both actual weighted remainders and their analytic extensions, locally uniformly |
+| `NLS.ZakharovShabat.OffDiagonalPower` | Convergent regional majorant power sum retaining both potential norm and tail factors |
+| `NLS.ZakharovShabat.OffDiagonalPairPower` | Explicit exponent-only constant, source pair-norm bound, and half-cutoff tail |
+| `NLS.ZakharovShabat.OffDiagonalSup` | Actual full-strip weighted remainder suprema, weight-scaling identity, and uniform bounds |
+| `NLS.ZakharovShabat.OffDiagonalSummability` | Proof-consistent Lemma 6.8(ii): convergent weighted supremum power sums and quantitative pair estimates for both coefficients |
 | `NLS.SequenceSpaces.IteratedRowTesting` | Absolute two-index Hölder testing, joint convergence, and complex double-series norm bound |
 | `NLS.SequenceSpaces.SpectralReflection` | Exact Fourier reflection isometry for every spectral weight and reversal of shifted norms |
 | `NLS.ZakharovShabat.OffDiagonalSeries` | Actual second-iterate component series and both source off-diagonal remainder formulas |
@@ -2929,7 +2939,8 @@ the actual scalar `HasSum` statements: `a_n` is the sum of the odd terms
 strictly positive even terms `T_n²(T_n²)^j Φe_n∓`. All results hold for
 arbitrary complex potentials and every finite Banach exponent under the
 existing shifted-square hypothesis. The even-vector bounds and analytic
-dependence and diagonal summability are proved below; Lemma 6.8(ii) remains open.
+dependence and both summability estimates are proved below, with the
+source-display qualification recorded for Lemma 6.8(ii).
 
 ### Lemma 6.8: uniform even-vector bounds and approximation
 
@@ -2958,8 +2969,8 @@ cutoff `N≥1`, give these bounds throughout every full closed strip with
 `|n|≥N`. Both vector errors are bounded by `2·2⁻ᵐ (‖φ‖+1)` on that entire
 parameter set. An epsilon-form theorem proves that one truncation length
 works for both vectors, every potential in this neighborhood, and all those
-strips. The off-diagonal coefficient summability estimates in Lemma 6.8(ii) remain
-open; analytic dependence is proved below.
+strips. Analytic dependence and the proof-consistent off-diagonal
+summability estimate are proved below.
 
 ### Lemma 6.8: analytic dependence of the actual resonant coefficients
 
@@ -2999,8 +3010,8 @@ cutoff `N≥1`, give joint analyticity over its product with each closed strip
 agreement with all three original source coefficients on that entire set.
 Restricting the joint result to a fixed potential gives the analytic assertion
 of Lemma 6.8. The argument works for every finite Banach exponent, including
-`p=1`; the diagonal summability estimate for `p>1` is proved below, while
-the off-diagonal estimates in (ii) remain unproved.
+`p=1`; both summability estimates for `p>1` are proved below, with the
+source-display qualification for (ii).
 
 ### Lemma 6.8(i): diagonal row and full-strip supremum estimates
 
@@ -3037,8 +3048,8 @@ strip. The uniform pointwise estimate proves that image bounded, that the
 supremum dominates every actual coefficient value, and that it is nonnegative
 and bounded by the same reciprocal expression. All these conclusions share
 one open convex potential neighborhood and one cutoff. The diagonal sum and
-quantitative tail decay are now proved below; the off-diagonal estimates
-in (ii) remain unproved.
+quantitative tail decay, and the proof-consistent off-diagonal estimates
+in (ii), are proved below.
 
 ### Lemma 6.8(i): quantitative diagonal summability
 
@@ -3100,8 +3111,8 @@ of the actual source-conjugate regional power sums. With
 All sums range over signed integer frequencies, so they also control distant
 subsets. This establishes the reciprocal estimates following (1.16) in both
 exponent ranges. The full-index Hölder test and application to the actual
-coefficients are now proved below. The near-region extra potential tail and
-final supremum summation remain open, so Lemma 6.8(ii) is not yet complete.
+coefficients, the near-region extra potential tail, and the final weighted
+supremum power sum are proved below.
 
 ### Lemma 6.8(ii): actual weighted off-diagonal Hölder bounds
 
@@ -3139,13 +3150,63 @@ zero, and one cutoff, make both bounds valid on every distant full closed
 strip. The theorem includes equality of the analytic extensions with the
 original coefficients. All finite Banach exponents are covered, including
 `p=1` with its conjugate infinity row. This is the full-index form of (1.16);
-the region-specific extra potential tail and the final weighted supremum
-sum in Lemma 6.8(ii) remain unproved.
+the regional refinement and weighted supremum power sum are proved next.
+
+### Lemma 6.8(ii): weighted supremum power sums
+
+`DoubleSeriesRegions` partitions the product lattice into disjoint first-far,
+second-far-with-first-near, and near-near regions. Joint absolute convergence
+justifies the exact sum decomposition. `DominatedDoubleTesting` transfers
+pointwise majorization to both absolute convergence and the two-index Hölder
+bound. `OffDiagonalRegions` applies this to the actual weighted series.
+At `|n|≥N`, both near potential indices have absolute value at least `N`.
+The near estimate therefore retains `‖R_N d‖` and the row of `R_N a`;
+the two far estimates use full potential norms and one reciprocal tail each.
+
+`OffDiagonalTailBound` combines these estimates with the actual even-vector
+bound. Its nonnegative majorant controls both analytic remainder extensions
+throughout distant full strips, on one open convex potential neighborhood
+containing the given potential and zero, for every larger cutoff.
+`OffDiagonalPower` proves the majorant's entire signed `p`-power series
+converges and sums it using the previously established reciprocal bounds.
+
+`SpectralReflectionTail` preserves the exact weighted tail and its norm under
+reflection. `HalfCutoffPower` proves that replacing `floor(N/2)` by `N` costs
+at most three for decay exponents in `[0,1]`, including odd cutoffs.
+`OffDiagonalPairPower` then gives the source pair-norm bound with
+`C_p = 3 · 4^p · 2^(p-1) · (16 max(p,p')²)^p`.
+The intermediate estimate retains the product of the two component norms
+and the product of their actual tails at `N`.
+
+`OffDiagonalSup` defines the actual weighted supremum over the entire
+unbounded closed strip. It is nonnegative, bounds each actual value, and
+is bounded by the regional majorant at every valid cutoff. A separate identity
+proves it equals `w(2n)` times the ordinary supremum of the remainder norm.
+`OffDiagonalSummability` proves the actual conditional power series converges
+and satisfies
+
+`Σ_{|n|≥N} (w(2n) |b_n^± - leading_n^±|_{U_n})^p`
+`≤ C_p ‖φ_±‖_(w,p)^p (‖φ‖_(w,p)^(2p)/N^min(1,p-1) + ‖R_(N/2)φ‖_(w,p)^(2p))`.
+
+The leading modes retain the physical signs `φ_-(-2n)` and `φ_+(2n)`.
+The range is every finite `p>1`; no reality assumption or normalization
+`w(0)=1` is used. Both signs and all larger cutoffs share one neighborhood
+and threshold. Together with the earlier diagonal and analytic results,
+this completes the proof-consistent version of Lemma 6.8.
+
+**Source-display qualification.** Visual inspection confirms that the
+statement of (ii) on source page 41 omits the `p`-powers on its left side
+and writes `‖φ_+‖^(2p)` in its first numerator. The concluding estimate in
+the proof on page 43 has the `p`-power sum and the full pair norm `‖φ‖^(2p)`.
+The Lean theorem follows that proof formulation, with the stated half-cutoff
+tail. It does not establish the literal page-41 display. This discrepancy
+is distinct from the earlier, explicitly disproved unconditional reality
+claim in Lemma 6.7.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 5707 declarations under `NLS`, including generated
+axioms. The current audit covers 5769 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -3883,12 +3944,21 @@ nonreal spectral parameter. Actual negative and positive remainder bounds
 are checked at `p=1` and `p=3`, together with a common cutoff for both
 analytic remainder bounds on all signed full strips.
 
+Off-diagonal summability checks exercise the shared far-region boundary without
+double counting, a nonzero complex near-region term with both potential tails,
+and vanishing of the entire near sum when only the outer potential has low
+support. They preserve a reflected cutoff-boundary coefficient under `w(0)=2`,
+check the odd cutoff `N=3`, and compute the actual supremum of a constant phase
+over an unbounded strip. The explicit Hilbert constant is `393216`. The locally
+uniform negative estimate is instantiated at `p=3/2` with decay `N^(-1/2)`;
+at `p=3`, both actual power tails converge and the positive estimate has decay
+`N^(-1)`, for every larger cutoff.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
-2. Refine the proved weighted off-diagonal Hölder bounds by region and
-   combine the reciprocal sums to finish Lemma 6.8(ii), then continue
-   the refined eigenvalue and weighted-gap estimates
+2. Prove Lemma 6.9's root counting and refined eigenvalue estimates, then
+   continue the weighted-gap estimates
    toward Propositions 6.1/6.3. Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

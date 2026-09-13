@@ -8284,3 +8284,109 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
   exact ⟨hm, hp⟩
 
 end OffDiagonalHolderChecks
+
+section OffDiagonalSummabilityChecks
+open NLS NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (3/2) :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+private theorem offSumHalfAboveOne : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.HolderConjugate.lt_top_iff_one_lt 3 (3/2)).mp (by norm_num)
+private theorem offSumHalfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨offSumHalfAboveOne.le⟩
+
+-- The corner shared by both far conditions belongs only to the first region.
+example (F : ℤ × ℤ → ℂ) :
+    Coeff.doubleFarLeft 2 F (-2,2) = F (-2,2) ∧
+      Coeff.doubleFarRight 2 F (-2,2) = 0 ∧ Coeff.doubleNear 2 F (-2,2) = 0 := by
+  norm_num [Coeff.doubleFarLeft, Coeff.doubleFarRight, Coeff.doubleNear]
+
+-- Both potential tails survive at an odd negative resonance; the term is nonzero and complex.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    let d := weightedMode (p := 3) w.toWeight (-11) (2 : ℂ)
+    let a := weightedMode (p := 3) w.toWeight (-10) Complex.I
+    let f := weightedMode (p := 3) w.toWeight (-4) (3 : ℂ)
+    Coeff.doubleNear (5/2) (fun jk => weightedOffDiagonalTerm w
+      (WeightedCoeff.fourierTail w.toWeight 5 d) (WeightedCoeff.fourierTail w.toWeight 5 a)
+      f (-5) ((Real.pi : ℂ)*(-5 : ℤ)) jk.1 jk.2) (1,-1) =
+        -12*Complex.I/(Real.pi : ℂ)^2 := by
+  norm_num [Coeff.doubleNear, weightedOffDiagonalTerm, WeightedCoeff.fourierTail_apply,
+    weightedMode_apply, complementarySymbol]
+  ring
+
+-- An outer potential below the cutoff makes the entire near region vanish, even for arbitrary inner data.
+example (w : SpectralWeight) (a f : WeightedCoeff w.toWeight 3) (z : ℂ) (hz : z ∈ resonantStrip (-5)) :
+    (∑' jk : ℤ × ℤ, Coeff.doubleNear 2 (fun jk => weightedOffDiagonalTerm w
+      (weightedMode w.toWeight 4 Complex.I) a f (-5) z jk.1 jk.2) jk) = 0 := by
+  have ht : WeightedCoeff.fourierTail w.toWeight 5 (weightedMode (p := 3) w.toWeight 4 Complex.I) = 0 := by
+    apply Subtype.ext
+    funext k
+    by_cases hk : k = 4
+    · subst k; norm_num [WeightedCoeff.fourierTail_apply]
+    · simp [WeightedCoeff.fourierTail_apply, weightedMode_apply, hk]
+  have h := norm_offDiagonal_near_le (q := 3/2) offSumHalfAboveOne w
+    (weightedMode w.toWeight 4 Complex.I) a f 5 (-5) (by norm_num) z hz
+  rw [ht, norm_zero, zero_mul, zero_mul] at h
+  norm_num only at h
+  exact norm_eq_zero.mp (le_antisymm h (norm_nonneg _))
+
+-- Reflection keeps a boundary tail coefficient and its phase under a non-unit weight.
+example :
+    let w := SpectralWeight.constant 2 (by norm_num)
+    (WeightedCoeff.fourierTail w.toWeight 5
+      (w.reflection (weightedMode (p := 3) w.toWeight (-5) Complex.I))).val 5 = Complex.I := by
+  norm_num [WeightedCoeff.fourierTail_apply, SpectralWeight.reflection_apply, weightedMode_apply]
+
+-- N=3 is the sharp integer case for replacing the half cutoff by N/3.
+example (δ : ℝ) (hδ0 : 0 ≤ δ) (hδ1 : δ ≤ 1) : 1 ≤ 3 / (3 : ℝ)^δ := by
+  simpa using one_div_halfCutoff_rpow_le hδ0 hδ1 3 (by norm_num)
+
+-- A full unbounded strip still has the exact weighted supremum of a constant phase.
+example : weightedStripSup (SpectralWeight.constant 2 (by norm_num)) (-3) (fun _ => Complex.I) = 2 := by
+  have hb := weightedStripSup_bounds (SpectralWeight.constant 2 (by norm_num)) (-3)
+    (fun _ => Complex.I) 2 (by intro z hz; norm_num)
+  have hv := hb.2.2 _ (center_mem_resonantStrip (-3))
+  norm_num at hv
+  exact le_antisymm hb.2.1 hv
+
+-- The final exponent-only Hilbert constant includes both far regions and the odd-cutoff loss.
+example : offDiagonalSummationConstant 2 = 393216 := by
+  have he : (2 : ℝ≥0∞).conjExponent = 2 := ENNReal.HolderConjugate.conjExponent_eq
+  norm_num [offDiagonalSummationConstant, offDiagonalRegionConstant,
+    doubleReciprocalSummationConstant, he, Real.rpow_natCast]
+
+-- Below two the actual negative supremum has decay N^(-1/2), with pair and tail powers 3.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (3/2)) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight (3/2)),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        (∑' n : ℤ, if N ≤ n.natAbs then (resonantBMinusRemainderSup offSumHalfFinite w ψ n)^(3/2 : ℝ) else 0) ≤
+          offDiagonalSummationConstant (3/2) * ‖ψ.fst‖^(3/2 : ℝ) *
+            (‖ψ‖^(3 : ℝ) / (N : ℝ)^(1/2 : ℝ) +
+              ‖weightedPairFourierTail w.toWeight (N/2) ψ‖^(3 : ℝ)) := by
+  obtain ⟨N₀, hN₀, U, ho, hc, hφ, h0, hb⟩ :=
+    exists_uniform_offDiagonalSummability offSumHalfFinite offSumHalfAboveOne w φ
+  refine ⟨N₀, hN₀, U, ho, hc, hφ, h0, ?_⟩
+  intro ψ hψ N hN
+  have h := (hb ψ hψ N hN).1.2
+  norm_num at h ⊢
+  exact h
+
+-- Above two both actual supremum tails converge for every larger cutoff.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      Summable (fun n : ℤ => if N ≤ n.natAbs then (resonantBMinusRemainderSup (by norm_num) w φ n)^(3 : ℝ) else 0) ∧
+      Summable (fun n : ℤ => if N ≤ n.natAbs then (resonantBPlusRemainderSup (by norm_num) w φ n)^(3 : ℝ) else 0) ∧
+      (∑' n : ℤ, if N ≤ n.natAbs then (resonantBPlusRemainderSup (by norm_num) w φ n)^(3 : ℝ) else 0) ≤
+        offDiagonalSummationConstant 3 * ‖φ.snd‖^(3 : ℝ) *
+          (‖φ‖^(6 : ℝ) / N + ‖weightedPairFourierTail w.toWeight (N/2) φ‖^(6 : ℝ)) := by
+  obtain ⟨N₀, hN₀, _, _, _, hφ, _, hb⟩ :=
+    exists_uniform_offDiagonalSummability (p := 3) (by norm_num) (by norm_num) w φ
+  refine ⟨N₀, hN₀, ?_⟩
+  intro N hN
+  have h := hb φ hφ N hN
+  norm_num at h ⊢
+  exact ⟨h.1.1, h.2.1, h.2.2⟩
+
+end OffDiagonalSummabilityChecks

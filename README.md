@@ -588,13 +588,16 @@ installation is absent. No shell startup files are modified.
   suprema have a summable `p`-power tail, bounded using the unweighted pair
   norm, the `N/2` Fourier tail, and decay `N^(-min(1,p-1))`. One cutoff and
   open convex potential neighborhood work for every larger tail cutoff.
-  For Lemma 6.8(ii), the two-index reciprocal sums now have a rigorous
-  three-region decomposition and convergent outer power sums with the same
-  decay exponent. The actual off-diagonal double Fourier series now have
-  joint absolute convergence and weighted Hölder bounds with the exact
-  component norms. One potential neighborhood and cutoff give these bounds
-  for both coefficients and their analytic extensions on every distant strip.
-  The regional refinement and final off-diagonal tail inequality remain next.
+  The proof-consistent form of Lemma 6.8(ii) is now proved: both actual
+  weighted remainder suprema have convergent `p`-power tails, with bound
+  `C_p ‖φ_±‖^p (‖φ‖^(2p)/N^min(1,p-1) + ‖R_(N/2)φ‖^(2p))`.
+  The three-region Hölder estimate retains both potential tails in the near
+  region. One open convex potential neighborhood and cutoff work for both
+  coefficients, every larger cutoff, and every distant full strip. This
+  follows the power sum and full pair norm in the source proof on page 43;
+  the page-41 display omits the left-hand powers and uses `φ_+` in the first
+  norm. That literal display is not claimed. Lemma 6.9's root counting and
+  refined eigenvalue estimates are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
