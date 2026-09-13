@@ -11305,3 +11305,93 @@ example (t : Icc (0 : ℝ) 1) :
 
 end
 end ForcedParityChecks
+
+namespace ChainTaylorChecks
+open Set Complex Matrix NLS.LinearVolterra NLS.ZakharovShabat
+open scoped Matrix.Norms.Elementwise
+noncomputable section
+
+-- Solve the first normalized free chain directly from its differential equation.
+private theorem free_chain_one (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalChainCurve 0 0 1 v t = (I*(t.val : ℂ)*v.1,-I*(t.val : ℂ)*v.2) := by
+  rw [classicalChainCurve_succ,classicalChainOperator_apply]
+  have hc : ContDiff ℝ 1 (fun x : ℝ => (I*(x : ℂ)*v.1,-I*(x : ℂ)*v.2)) := by
+    have hr : ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)) := Complex.ofRealCLM.contDiff
+    fun_prop
+  have h := classicalForcedSolution_unique 0 0 (classicalChainCurve 0 0 0 v) 0 _
+    hc.contDiffOn.absolutelyContinuousOnInterval (by simp) (by
+      intro s
+      have hd := (((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul I).mul_const v.1).prodMk
+        (((Complex.ofRealCLM.hasDerivAt (x := s.val)).const_mul (-I)).mul_const v.2)
+      convert! hd using 1
+      simp [classicalODECoefficient_apply,classicalSource_apply,classicalSolutionCurve_apply,
+        classicalSolution_free])
+  exact (h t.property).symm
+
+-- A second forced step checks the quadratic coefficient independently of spectral differentiation.
+private theorem free_chain_two (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalChainCurve 0 0 2 v t = (-(t.val : ℂ)^2/2*v.1,-(t.val : ℂ)^2/2*v.2) := by
+  rw [classicalChainCurve_succ,classicalChainOperator_apply]
+  have hc : ContDiff ℝ 1 (fun x : ℝ => (-(x : ℂ)^2/2*v.1,-(x : ℂ)^2/2*v.2)) := by
+    have hr : ContDiff ℝ 1 (fun x : ℝ => (x : ℂ)) := Complex.ofRealCLM.contDiff
+    fun_prop
+  have h := classicalForcedSolution_unique 0 0 (classicalChainCurve 0 0 1 v) 0 _
+    hc.contDiffOn.absolutelyContinuousOnInterval (by simp) (by
+      intro s
+      have hd := ((((Complex.ofRealCLM.hasDerivAt (x := s.val)).pow 2).neg.div_const 2).mul_const v.1).prodMk
+        ((((Complex.ofRealCLM.hasDerivAt (x := s.val)).pow 2).neg.div_const 2).mul_const v.2)
+      convert! hd using 1
+      simp only [classicalODECoefficient_apply,ContinuousMap.zero_apply,free_chain_one,classicalSource_apply]
+      apply Prod.ext <;> dsimp <;> ring_nf <;> simp [I_sq])
+  exact (h t.property).symm
+
+private theorem free_matrix_one :
+    classicalChainMatrix 0 0 1 ⟨1,by constructor <;> norm_num⟩ = !![I,0;0,-I] := by
+  change !![(classicalChainCurve 0 0 1 (1,0) _).1,(classicalChainCurve 0 0 1 (0,1) _).1;
+    (classicalChainCurve 0 0 1 (1,0) _).2,(classicalChainCurve 0 0 1 (0,1) _).2] = _
+  simp [free_chain_one]
+
+private theorem free_matrix_two :
+    classicalChainMatrix 0 0 2 ⟨1,by constructor <;> norm_num⟩ = !![-1/2,0;0,-1/2] := by
+  change !![(classicalChainCurve 0 0 2 (1,0) _).1,(classicalChainCurve 0 0 2 (0,1) _).1;
+    (classicalChainCurve 0 0 2 (1,0) _).2,(classicalChainCurve 0 0 2 (0,1) _).2] = _
+  simp [free_chain_two]
+
+-- The first derivative has the opposite sign to the original z-L chain step.
+example : iteratedDeriv 1 (classicalMonodromy 0) 0 = !![-I,0;0,I] := by
+  rw [iteratedDeriv_classicalMonodromy,free_matrix_one]
+  ext i j
+  fin_cases i <;> fin_cases j <;> norm_num [Matrix.smul_apply]
+
+-- The second derivative restores the factorial: it is -identity, not -identity/2.
+example : iteratedDeriv 2 (classicalMonodromy 0) 0 = -(1 : Matrix (Fin 2) (Fin 2) ℂ) := by
+  rw [iteratedDeriv_classicalMonodromy,free_matrix_two]
+  ext i j
+  fin_cases i <;> fin_cases j <;> norm_num [Matrix.smul_apply]
+
+-- Periodic and antiperiodic boundary series have different constant coefficients.
+example : classicalBoundarySeries 0 0 1 0 (fun i => Fin.elim0 i) = 0 := by
+  rw [classicalBoundarySeries_zero]
+  have hf := classicalFundamentalMatrix_free 0 ⟨1,by constructor <;> norm_num⟩
+  change classicalFundamentalMatrix 0 0 1 - (1 : ℂ) • 1 = _
+  rw [hf]
+  ext i j
+  fin_cases i <;> fin_cases j <;> norm_num
+
+example : classicalBoundarySeries 0 0 (-1) 0 (fun i => Fin.elim0 i) = (2 : ℂ) • 1 := by
+  rw [classicalBoundarySeries_zero]
+  have hf := classicalFundamentalMatrix_free 0 ⟨1,by constructor <;> norm_num⟩
+  change classicalFundamentalMatrix 0 0 1 - (-1 : ℂ) • 1 = _
+  rw [hf]
+  ext i j
+  fin_cases i <;> fin_cases j <;> norm_num
+
+-- At a positive degree the boundary multiplier disappears; arbitrary directions remain multilinear.
+example (σ a b : ℂ) :
+    classicalBoundarySeries 0 0 σ 2 ![a,b] = (a*b) • !![-1/2,0;0,-1/2] := by
+  rw [classicalBoundarySeries_succ,free_matrix_two]
+  norm_num
+  exact Fin.prod_univ_two (fun i : Fin 2 => ![a,b] i)
+
+end
+end ChainTaylorChecks

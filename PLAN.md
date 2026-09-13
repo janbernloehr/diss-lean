@@ -1487,8 +1487,16 @@ vector gives a unique original preimage. At every finite root-chain length,
 extending a prescribed original source is equivalent to a two-coordinate
 classical endpoint equation involving the zero-initial forced solution.
 
-Next, identify the classical determinant orders with original algebraic
-multiplicities and prove the normalized entire-product identity,
+The normalized zero-initial chain operator now gives the exact spectral
+factorization and a convergent whole-curve Taylor series with positive radius.
+Every spectral derivative is the corresponding signed chain curve multiplied
+by its factorial. Evaluating the two columns gives the same series and derivative
+identities for the fundamental matrix and actual monodromy. The boundary matrix
+series has constant coefficient `M(z)-σI` and signed chain endpoints thereafter.
+
+Next, identify finite original root-chain spaces with the kernels of the finite
+boundary Taylor-jet equations, then identify classical determinant orders with
+original algebraic multiplicities and prove the normalized entire-product identity,
 and use potential approximation to prove `f+2=g−2` for finite p>1. The classical
 boundary-determinant compatibility is proved; the infinite-product identity
 is not yet proved.

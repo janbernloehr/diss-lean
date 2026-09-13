@@ -755,7 +755,13 @@ installation is absent. No shell startup files are modified.
   solutions now handle the actual equation `(z-L)a=b` for domain-valued sources.
   Each original parity root-chain extension is equivalent to a two-coordinate
   classical endpoint equation, and fixing the initial vector makes the original
-  preimage unique. Equality of algebraic multiplicities with the classical
+  preimage unique. The bounded zero-initial chain operator now generates an
+  explicit spectral Taylor series, convergent in the supremum norm of whole
+  solution curves with positive radius. All spectral derivatives are the
+  factorial-scaled signed chain curves. Evaluating both columns proves the
+  corresponding series and derivatives for the fundamental matrix and monodromy;
+  the boundary multiplier changes only the constant coefficient.
+  Equality of algebraic multiplicities with the classical
   determinants and normalized infinite-product identification needed for
   `f+2=g−2` remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.

@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 500 modules and 3704 named public theorems. All compile on the
+The library has 504 modules and 3735 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalChainOperator` | Bounded zero-initial source solver, normalized repeated forced curves, physical pencil recursion, initial values, and operator-norm bounds |
+| `NLS.ZakharovShabat.ClassicalChainPerturbation` | Signed spectral coefficient increment, exact Volterra factorization, and shifted inverse formula through the fixed chain operator |
+| `NLS.ZakharovShabat.ClassicalChainTaylor` | Explicit convergent whole-curve spectral Taylor series with positive radius and all factorial-scaled signed chain derivatives |
+| `NLS.ZakharovShabat.ClassicalMonodromyTaylor` | Convergent fundamental and monodromy matrix series, all spectral derivatives, and exact constant and positive boundary-matrix coefficients |
 | `NLS.FunctionalAnalysis.ForcedVolterraSolution` | Bounded continuous primitive, inverse Volterra construction with arbitrary continuous source, physical C¹ regularity, and absolutely continuous almost-everywhere uniqueness |
 | `NLS.ZakharovShabat.ClassicalForcedSolution` | Correctly signed inhomogeneous physical pencil equation, initial-value uniqueness, affine dependence on initial data, and two-coordinate endpoint criterion |
 | `NLS.ZakharovShabat.PhysicalForcedEquation` | Original source-pencil realization, unit-interval localization in parity, and agreement of domain-valued source equations with actual classical forced solutions |
@@ -4601,10 +4605,37 @@ This supplies the inhomogeneous chain step needed for algebraic multiplicity
 comparison. Equality of classical determinant orders with the full original
 root-space dimensions, entire normalization, and finite-p extension remain open.
 
+## Section 8: spectral Taylor coefficients from classical chains
+
+`ClassicalChainOperator` realizes one zero-initial forced step as a bounded
+complex-linear operator `Q` on continuous solution curves. Its powers applied
+to a homogeneous solution give normalized chains. Every positive level has
+zero initial value and satisfies the original physical recursion `(z-L)uₙ₊₁=uₙ`.
+Operator norms bound the whole chain curves.
+
+`ClassicalChainPerturbation` proves the exact signed coefficient increment
+and factors the shifted Volterra equation through `1+hQ`. Inverting gives
+the homogeneous curve at `z+h` as `(1+hQ)⁻¹` applied to its value at `z`.
+
+`ClassicalChainTaylor` expands this inverse in the Banach space of continuous
+curves. The series has coefficients `(-1)ⁿ Qⁿ H(z)v` and guaranteed positive
+radius `‖Q‖⁻¹` (interpreted in extended nonnegative reals). It converges in the
+supremum norm throughout that ball. Every spectral derivative is exactly
+`n! (-1)ⁿ Qⁿ H(z)v`.
+
+`ClassicalMonodromyTaylor` evaluates both normalized columns to obtain the
+convergent fundamental-matrix series at every physical point and the monodromy
+series at the endpoint. Their derivatives are the same factorial-scaled signed
+chain matrices. For every multiplier `σ`, the boundary series has constant
+coefficient `M(z)-σI`; all positive coefficients are the signed chain endpoints.
+These formulas supply the coefficients for a future finite-jet boundary
+comparison. Equality of classical determinant orders with original algebraic
+multiplicities, entire normalization, and finite-p extension remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 7542 declarations under `NLS`, including generated
+axioms. The current audit covers 7639 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -5641,6 +5672,11 @@ A further preimage of that second vector is ruled out by its nonzero endpoint
 increment. A genuinely nonconstant source checks the integrated quadratic
 solution and the second-component sign.
 
+Chain-Taylor checks independently solve the first two free forced equations.
+They verify the monodromy derivative signs and the second-derivative factorial,
+the different periodic and antiperiodic constant boundary coefficients, and
+the second boundary coefficient for arbitrary multiplier and spectral directions.
+
 ## Next milestones
 
 1. Resolve the printed general-`p` central height beyond the proved Hilbert case.
@@ -5665,7 +5701,11 @@ solution and the second-component sign.
    of both parity spectral sets with the classical monodromy root sets.
    Inhomogeneous Volterra solutions now give the exact endpoint criterion for
    every original parity root-chain extension and uniqueness with fixed
-   initial data. Equality of classical and original algebraic multiplicities
+   initial data. The convergent spectral Taylor coefficients of the whole
+   solution curves, fundamental matrix, monodromy, and boundary matrices now
+   agree with the signed normalized forced-chain curves and endpoints.
+   Next connect finite original chain spaces to the boundary Taylor jets.
+   Equality of classical and original algebraic multiplicities
    remains open. The classical boundary determinants have the required compatibility, but
    their equality with the infinite spectral products and extension to finite-p
    potentials remain open.
