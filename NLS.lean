@@ -558,3 +558,8 @@ import NLS.ComplexAnalysis.ProductErrorLp
 import NLS.Fourier.AbsoluteSampledRows
 import NLS.Fourier.SampledProductEstimates
 import NLS.ZakharovShabat.FreeDiscProductLp
+import NLS.Fourier.SampledProductMajorant
+import NLS.ZakharovShabat.FreeDiscProductMajorant
+import NLS.ZakharovShabat.FreeSineQuotient
+import NLS.ZakharovShabat.LocalSpectralFactors
+import NLS.ZakharovShabat.RestoredSineProductLp

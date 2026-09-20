@@ -1681,8 +1681,15 @@ in ℓ^(2p); Hölder returns their squares to ℓᵖ. Rescaling gives the spectr
 relative product with its local factor omitted, uniformly on displacement
 norm balls and over all samples in closed half-π free discs.
 
-Next, restore the local factor and identify the sine products in D.8–D.9,
-then transfer these bounds to actual canonical parity products. Prove
+A positive lp majorant now controls the off-diagonal product throughout every
+free disc at once. Filled sine quotients have exact center values and a
+uniform disc bound. Restoring the local factor gives a filled local product
+whose sampled error from sine belongs to lp, uniformly on displacement norm
+balls. Off the lattice it agrees exactly with sine times the full relative
+product, even when spectral numerators vanish.
+
+Next, combine the local sine factors in pairs and identify the actual
+canonical parity products, including at free centers. Prove
 Lemma 8.4's locally uniform sampled trace and derivative ℓᵖ errors, using
 Cauchy estimates for the derivative. Then prove the summable critical-point
 displacements, derivative product, and real-type root continuity in Lemma 8.5.

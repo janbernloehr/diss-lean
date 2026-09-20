@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 610 modules and 4233 named public theorems. All compile on the
+The library has 615 modules and 4257 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.Fourier.SampledProductMajorant` | One positive lp sequence controls all half-unit samples simultaneously, with a uniform displacement norm-ball bound |
+| `NLS.ZakharovShabat.FreeDiscProductMajorant` | Common pointwise majorants throughout every closed half-pi free disc, and global bounds for the omitted-diagonal product |
+| `NLS.ZakharovShabat.FreeSineQuotient` | Continuous filled sine quotients, exact center signs and sine factorization, and index-independent bounds on fixed-radius discs |
+| `NLS.ZakharovShabat.LocalSpectralFactors` | Absolute convergence after omitting one relative factor and exact restoration, allowing zero spectral numerators |
+| `NLS.ZakharovShabat.RestoredSineProductLp` | Restored local sine products, exact off-lattice full-product identity and center values, sampled lp errors and common disc majorants uniformly bounded on displacement norm balls |
 | `NLS.ComplexAnalysis.QuadraticProductError` | Finite and unconditional product errors after retaining the signed linear sum, bounded quadratically by the absolute perturbation sum, allowing zero factors |
 | `NLS.ComplexAnalysis.ReciprocalPerturbation` | Half-unit denominator bounds and a square-reciprocal estimate for the difference of reciprocals |
 | `NLS.SequenceSpaces.ConvolutionMajorants` | Exact positive absolute rows of Young convolutions and the constant-one majorant norm estimate |
@@ -5520,21 +5525,57 @@ denominators are nonzero. Numerators may vanish.
 
 This supplies the free-reference off-diagonal estimate used in D.8–D.9.
 It does not yet prove D.6 with a separately perturbed reference spectrum.
-Restoring the local factor and identifying the sine products, transferring
-the estimate to actual canonical parity products, and applying Cauchy to
-obtain Lemma 8.4 remain open. Lemma 8.5's critical-point asymptotics, derivative
-product and root continuity, and later action and Birkhoff results also remain
-open.
+The local factor restoration is proved in the following milestone. Transfer
+to canonical parity products and Lemma 8.4 remain open, as do Lemma 8.5 and
+the later action and Birkhoff results.
 
 Examples exercise linear cancellation, a zero factor, the sharp half-unit
 reciprocal boundary, the correction at p=infinity, omitted negative-index
 diagonals, the reciprocal sign at an imaginary sample, free-center sampling
 at p=3/2, a common norm-ball bound at p=3, and exact zero-displacement errors.
 
+## Appendix D / Section 8: common disc majorants and restored sine factors
+
+`SampledProductMajorant` constructs one positive lp sequence from the
+magnitude of the signed Hilbert transform, the square-kernel correction
+majorant, and the quadratic remainder envelope. It depends only on the
+spectral displacements. Each coefficient bounds the relative-product error
+at every point of its half-unit disc simultaneously. Its norm has the same
+uniform input-ball bound as the previously constructed sampled errors.
+`FreeDiscProductMajorant` transfers this to the spectral pi lattice.
+
+`FreeSineQuotient` fills sin(z)/(z−πn) by cos(πn) at the center, proves
+continuity and exact sine factorization, and bounds all the filled quotients
+on fixed-radius free discs by one constant. `LocalSpectralFactors` proves
+convergence after omitting a relative factor and restores it exactly, even
+when that factor vanishes.
+
+`RestoredSineProductLp` defines the local filled product
+`F_n(z)=S_n(z)(z−πn−a(n))Q_n(z)`, where S is the filled sine quotient and Q
+the omitted-diagonal relative product. Away from the free lattice this is
+exactly sin(z) times the full unconditional relative product. At the center
+it equals `−cos(πn)a(n)Q_n(πn)`. If E is the relative-product majorant and C
+bounds S on the half-pi discs, the positive lp sequence
+`C((π/2+‖a‖)|E(n)|+|a(n)|)` bounds `|F_n(z)−sin(z)|` throughout each disc.
+Its lp norm is uniformly bounded on displacement norm balls. Arbitrary
+samples, including centers and boundary points, therefore have lp errors.
+
+These are the restored local sine-product estimates needed in D.8–D.9.
+An entire single-product construction and its global identification are not
+asserted here. Next combine the local factors in pairs, identify the
+canonical parity products including free centers, and apply Cauchy estimates
+to prove Lemma 8.4 locally uniformly in the potential. D.6 with a separately
+perturbed reference spectrum remains open.
+
+Examples check a common majorant at p=3/2, imaginary boundary samples, the
+negative odd-center sign, a nonzero restored center value from one displaced
+root, vanishing local numerators, center-sampled lp errors, and a uniform
+majorant bound on a whole displacement ball.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8421 declarations under `NLS`, including generated
+axioms. The current audit covers 8479 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6677,9 +6718,10 @@ formal matrix representation.
    and the locally uniform derivative limit now prove reality for real-type
    potentials, completing Lemma 8.3. The free-reference off-diagonal product
    estimate now has an lp bound uniform on displacement norm balls and all
-   samples in half-pi free discs. Next restore the local factor and identify
-   the sine products, transfer to the canonical parity products, and prove
-   Lemma 8.4. Then develop the critical-point asymptotics, derivative product,
+   samples in half-pi free discs. Common pointwise disc majorants and
+   restored local sine factors now give sampled lp errors, including centers.
+   Next transfer the paired estimates to canonical parity products and use
+   Cauchy estimates to prove Lemma 8.4. Then develop the critical-point asymptotics, derivative product,
    and root continuity of Lemma 8.5.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type

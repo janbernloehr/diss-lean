@@ -13196,3 +13196,67 @@ example (z : ℤ → ℂ) (hz : ∀ n : ℤ, ‖z n-(Real.pi : ℂ)*n‖ ≤ Rea
 
 end
 end SampledProductChecks
+
+namespace RestoredSineChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Complex
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- One majorant controls all half-unit samples at once, below the Hilbert exponent.
+example (a : Coeff (ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ A : Coeff (ENNReal.ofReal (3/2 : ℝ)), ∀ (n : ℤ) (t : ℂ), ‖t‖ ≤ (1 : ℝ)/2 →
+      ‖(∏' k : ℤ, if k = n then 1 else ((k : ℂ)+a k-(n+t))/((k : ℂ)-(n+t)))-1‖ ≤ ‖A n‖ :=
+  ⟨sampledProductMajorant (by norm_num) (by simp) a,
+    fun n t ht => norm_relative_product_sub_one_le_majorant (by norm_num) (by simp) a n t ht⟩
+
+-- The positive majorant is independent of which boundary point is tested.
+example (a : Coeff 3) (n : ℤ) :
+    ‖freeDiscRelativeProduct a n ((Real.pi : ℂ)*n+I*(Real.pi/2))-1‖ ≤
+      ‖freeDiscProductMajorant (by norm_num) (by simp) a n‖ := by
+  apply norm_freeDiscRelativeProduct_sub_one_le
+  simp only [add_sub_cancel_left, norm_mul, norm_I, one_mul, norm_div,
+    Complex.norm_real, Real.norm_of_nonneg Real.pi_pos.le, Complex.norm_ofNat]
+  rfl
+
+-- Negative odd centers retain the derivative sign, rather than the totalized quotient's zero.
+example : freeSineQuotient (-1) (-(Real.pi : ℂ)) = -1 := by
+  have h := freeSineQuotient_center (-1)
+  simpa using h
+
+-- At the free center the restored product can be nonzero.
+example : restoredSineProduct (p := 3) (lp.single 3 0 I) 0 0 = -I := by
+  have hQ : freeDiscRelativeProduct (lp.single 3 0 I) 0 0 = 1 := by
+    unfold freeDiscRelativeProduct
+    have hterm (k : ℤ) : (if k = 0 then (1 : ℂ) else
+        ((Real.pi : ℂ)*k+(lp.single 3 0 I : Coeff 3) k-0)/((Real.pi : ℂ)*k-0)) = 1 := by
+      by_cases hk : k = 0
+      · simp [hk]
+      · have hπ : (Real.pi : ℂ) ≠ 0 := by exact_mod_cast Real.pi_ne_zero
+        have hk' : (k : ℂ) ≠ 0 := by exact_mod_cast hk
+        simp [lp.single_apply, hk, hπ, hk']
+    simp only [hterm, tprod_one]
+  have h := restoredSineProduct_center (lp.single 3 0 I) 0
+  simpa [hQ] using h
+
+-- Restoring a zero local numerator makes the product vanish even with a displaced sample.
+example (a : Coeff 3) (n : ℤ) :
+    restoredSineProduct a n ((Real.pi : ℂ)*n+a n) = 0 := by
+  simp [restoredSineProduct]
+
+-- Center samples have lp errors at a fractional exponent.
+example (a : Coeff (ENNReal.ofReal (3/2 : ℝ))) :
+    Memℓp (fun n => restoredSineProduct a n ((Real.pi : ℂ)*n)) (ENNReal.ofReal (3/2 : ℝ)) := by
+  have h := memℓp_restoredSineProduct_sub_sin (by norm_num) (by simp) a
+    (fun n => (Real.pi : ℂ)*n) (fun _ => by simp; positivity)
+  simpa only [mul_comm (Real.pi : ℂ), Complex.sin_int_mul_pi, sub_zero] using h
+
+-- One finite bound works on an entire displacement ball and throughout every disc.
+example : ∃ K : ℝ, 0 ≤ K ∧ ∀ a : Coeff 3, ‖a‖ ≤ 5 →
+    ∃ A : Coeff 3, ‖A‖ ≤ K ∧ ∀ (n : ℤ) (z : ℂ), ‖z-(Real.pi : ℂ)*n‖ ≤ Real.pi/2 →
+      ‖restoredSineProduct a n z-Complex.sin z‖ ≤ ‖A n‖ :=
+  exists_uniform_restoredSineProduct_majorants (by norm_num) (by simp) (by norm_num)
+
+end
+end RestoredSineChecks

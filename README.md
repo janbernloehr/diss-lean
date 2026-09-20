@@ -851,9 +851,13 @@ installation is absent. No shell startup files are modified.
   error from one has an explicit bound on displacement norm balls, uniformly
   over arbitrary samples in the closed half-π free discs. The proof retains
   the signed Hilbert sum and controls the nonlinear remainder quadratically
-  using doubled-exponent Young and Hölder estimates. Restoring the local
-  factor, transferring to canonical parity products, and proving the sampled
-  trace and derivative errors in Lemma 8.4 remain next.
+  using doubled-exponent Young and Hölder estimates. A common positive ℓᵖ
+  sequence now bounds the error throughout each disc simultaneously. Filling
+  the sine quotient at its removable center and restoring the local factor
+  gives sampled sine-product errors in ℓᵖ, including center and boundary
+  samples, uniformly on displacement norm balls. Transfer to canonical
+  parity products and the sampled trace and derivative errors of Lemma 8.4
+  remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
