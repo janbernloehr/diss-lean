@@ -13334,3 +13334,71 @@ example (φ : PairSpace 3) :
 
 end
 end SampledDiscriminantChecks
+
+namespace CriticalDisplacementChecks
+open Set Complex Metric NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- One sine inverse bound covers all signed centers and all complex quarter-pi samples.
+example : ∃ C : ℝ, 0 ≤ C ∧ ∀ (n : ℤ) (z : ℂ), ‖z-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 →
+    ‖z-(Real.pi : ℂ)*n‖ ≤ C*‖sin z‖ :=
+  exists_freeDisc_sine_displacement_bound (by linarith [Real.pi_pos])
+
+-- The restriction below pi is necessary: the next sine zero lies on the radius-pi boundary.
+example : ¬∃ C : ℝ, ∀ z : ℂ, ‖z‖ ≤ Real.pi → ‖z‖ ≤ C*‖sin z‖ := by
+  rintro ⟨C, hC⟩
+  have hp : ‖(Real.pi : ℂ)‖ = Real.pi := by simp [Real.norm_of_nonneg Real.pi_pos.le]
+  have h := hC (Real.pi : ℂ) hp.le
+  rw [hp, Complex.sin_pi, norm_zero, mul_zero] at h
+  linarith [Real.pi_pos]
+
+-- Single-slot enumeration preserves repeated complex roots.
+example : ∃ ξ : ℤ → ℂ, (∑ n ∈ Finset.Icc (-1) 1, ({ξ n} : Multiset ℂ)) = {I,I,-I} := by
+  apply exists_finset_multiset_enumeration
+  norm_num [Int.card_Icc]
+  rfl
+
+-- At zero potential and cutoff zero there is exactly one central critical root.
+example : (centralCriticalRoots (p := 3) (by simp) (by norm_num) 0
+    (pairParitySubspace 0).zero_mem 0).card = 1 := by
+  rw [card_centralCriticalRoots]
+  have he : deriv (canonicalDiscriminant (p := 3) (by simp) 0) = fun z => -2*sin z :=
+    funext (discriminant_derivative_zero (by simp))
+  rw [he]
+  exact analyticZeroCount_free_derivative_central 0
+
+-- A nonconstant complex even potential has a complete lp-displaced critical sequence.
+example : ∃ N : ℕ, ∃ ξ : ℤ → ℂ,
+    CriticalPointLabeling (p := 3) (by simp) (by norm_num) (lp.single 3 2 I, 0)
+      ⟨Coeff.single_mem_paritySubspace 0 2 I (by omega), (Coeff.paritySubspace 0).zero_mem⟩ N ξ ∧
+    Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3 :=
+  exists_criticalPointLabeling_memℓp (by simp) (by norm_num) _ _
+
+-- Below p=2 the sequence exhausts all critical points with the exact analytic multiplicities.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ ξ : ℤ → ℂ, Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) (ENNReal.ofReal (3/2 : ℝ)) ∧
+      (∀ z : ℂ, deriv (canonicalDiscriminant (by simp) φ) z = 0 ↔ ∃ n, ξ n = z) ∧
+      (∀ z : ℂ, (∑ᶠ n : ℤ, if ξ n = z then (1 : ℕ) else 0) =
+        analyticOrderNatAt (deriv (canonicalDiscriminant (by simp) φ)) z) := by
+  obtain ⟨N, ξ, hξ, hlp⟩ := exists_criticalPointLabeling_memℓp (by simp) (by norm_num) φ hφ
+  exact ⟨ξ, hlp, hξ.exhaustive, hξ.multiplicity⟩
+
+-- Each far negative root occurs at exactly one index in the complete sequence.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : CriticalPointLabeling (by simp) (by norm_num) φ hφ N ξ) (m : ℤ)
+    (he : ξ m = ξ (-((N : ℤ)+1))) : m = -((N : ℤ)+1) := by
+  exact h.eq_index_of_distant _ (by omega) m he
+
+-- One open convex neighborhood controls the norms of complete actual displacement sequences.
+example (φ : PairSpace 3) :
+    ∃ N : ℕ, 0 < N ∧ ∃ U : Set (PairSpace 3), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ R : ℝ, 0 ≤ R ∧ ∀ ψ ∈ U, ∀ hψ : ψ ∈ pairParitySubspace 0,
+        ∃ ξ : ℤ → ℂ, ∃ a : Coeff 3, CriticalPointLabeling (by simp) (by norm_num) ψ hψ N ξ ∧
+          (∀ n, ξ n = (Real.pi : ℂ)*n+a n) ∧ ‖a‖ ≤ R :=
+  exists_uniform_critical_displacements (by simp) (by norm_num) φ
+
+end
+end CriticalDisplacementChecks

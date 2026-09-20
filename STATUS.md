@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 622 modules and 4281 named public theorems. All compile on the
+The library has 629 modules and 4303 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.FiniteEnumeration` | Single-slot enumeration of a finite multiset on a prescribed finite index set, retaining repetitions |
+| `NLS.ZakharovShabat.FreeSineDisplacementBound` | Filled sine quotient nonvanishing and uniform inverse bounds on fixed free discs of radius less than pi, giving displacement bounds from sine values |
+| `NLS.ZakharovShabat.CentralCriticalRoots` | Actual central critical-root multiset, exact analytic counts and multiplicities, enumeration on [-N,N], and a cutoff-only displacement bound |
+| `NLS.ZakharovShabat.CriticalPointLabeling` | Complete actual critical-point sequences from central labels and unique simple distant roots, with exhaustive root equivalence |
+| `NLS.ZakharovShabat.CriticalPointMultiplicity` | Central/distant separation, uniqueness of every distant index, and exact global analytic multiplicity of the complete sequence |
+| `NLS.ZakharovShabat.CriticalDisplacementBound` | Derivative-error majorants give critical displacement bounds; finite central replacement preserves lp with an explicit full norm bound |
+| `NLS.ZakharovShabat.UniformCriticalDisplacements` | Lemma 8.5 displacement assertion: complete actual critical roots have uniformly bounded lp displacements on one open convex potential neighborhood |
 | `NLS.ComplexAnalysis.DiscBounds` | Maximum modulus fills a boundary bound through a closed disc; Cauchy bounds derivatives on smaller concentric discs |
 | `NLS.SequenceSpaces.ParityInterleave` | Exact even/odd assembly of signed coefficient sequences, with norm bounded by the sum of the parity norms |
 | `NLS.ZakharovShabat.FreeHalfDiscGeometry` | Half-pi free circles avoid every free lattice point, leaving room for quarter-pi Cauchy estimates |
@@ -5618,16 +5625,60 @@ quarter-pi boundary samples, a nonconstant complex even potential at p=3,
 actual derivative values at free centers at p=3/2, and the common
 neighborhood and norm bounds for all nearby potentials and all samples.
 
-Next prove the locally uniform lp displacement of critical points, the
-normalized derivative product, and real-type root continuity in Lemma 8.5.
+The locally uniform lp critical displacement assertion is proved in the
+following milestone. The normalized derivative product and real-type ordered
+root continuity in Lemma 8.5 remain open.
 Gap interlacing and the subsequent refined critical-point estimates remain
 open. The general perturbed-reference D.6 and the printed general-p central
 height constant remain separate open items.
 
+## Section 8: Lemma 8.5, complete critical-point displacements
+
+`FreeSineDisplacementBound` proves that the filled quotient
+`sin(z)/(z−πn)` has no zero on any fixed free disc of radius less than pi.
+Compactness bounds its inverse uniformly in n. Consequently one constant C
+satisfies `|z−πn|≤C|sin z|` throughout the quarter-pi discs, including centers
+and complex boundary points. At a critical point, Lemma 8.4's derivative
+majorant therefore bounds the displacement by `(2C/π)|A(n)|`.
+
+`CentralCriticalRoots` constructs the actual central multiset from the analytic
+orders of Δ′. Its cardinality is the central analytic count; every root has
+exactly its analytic multiplicity. `FiniteEnumeration` places the 2N+1
+central entries into the signed indices [-N,N], allowing repetitions.
+Their displacements have the cutoff-only bound `centralCircleRadius(N)+πN`.
+`CriticalPointLabeling` splices these labels into the unique simple distant
+critical points and proves complete root exhaustion.
+
+`CriticalPointMultiplicity` shows that distant quarter-pi discs lie outside
+the central closed disc, and that no distant root occurs at another index.
+For every complex z, the finite sum of the indicator `ξ(n)=z` over all signed
+indices equals the analytic order of Δ′ at z. Thus the completed sequence
+retains the correct global multiplicities, not only the zero set.
+
+`CriticalDisplacementBound` constructs the lp tail from the derivative
+majorant and then inserts the bounded finite central group. Intersecting the
+neighborhoods from Lemmas 8.3 and 8.4 gives
+`UniformCriticalDisplacements`: one positive cutoff, one open convex
+neighborhood containing the base potential and zero, and R≥0 such that every
+nearby even potential admits a complete actual critical sequence
+`ξ(n)=πn+a(n)` with a in lp and `‖a‖≤R`. This proves the locally uniform
+displacement assertion of Lemma 8.5 for every finite p>1.
+
+Central labels are arbitrary enumerations retaining multiplicity; lexicographic
+ordering and continuity of ordered roots have not yet been proved. The
+normalized single derivative product, real-type root continuity, subsequent
+gap interlacing, and refined critical-point estimates remain open.
+
+Examples cover the uniform sine inverse bound, failure at radius pi,
+enumeration with repeated complex values, the free central count at cutoff
+zero, a nonconstant complex even potential, full lp root enumeration and
+global multiplicities at p=3/2, uniqueness at a far negative index, and a
+common potential neighborhood and displacement norm bound at p=3.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8529 declarations under `NLS`, including generated
+axioms. The current audit covers 8595 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6774,9 +6825,10 @@ formal matrix representation.
    restored local sine factors now give sampled lp errors, including centers.
    Paired estimates now transfer to the actual canonical parity products.
    Cauchy completes Lemma 8.4, with one potential neighborhood and common
-   lp norm bounds for all sample sequences. Next develop the critical-point
-   asymptotics, derivative product,
-   and root continuity of Lemma 8.5.
+   lp norm bounds for all sample sequences. Complete actual critical-point
+   labels now have locally uniformly bounded lp displacements, with exact
+   global analytic multiplicities. Next prove the normalized derivative
+   product and continuity of the ordered roots in Lemma 8.5.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

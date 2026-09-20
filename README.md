@@ -860,8 +860,12 @@ installation is absent. No shell startup files are modified.
   canonical parity products. Cauchy then proves both sampled errors in
   Lemma 8.4: `Δ(λn)−2 cos(λn)` and `Δ′(λn)+2 sin(λn)` belong to ℓᵖ, with
   one open convex potential neighborhood and uniform norm bounds for all
-  samples in the quarter-π free discs. Critical-point displacements, the
-  derivative product, and real-type root continuity in Lemma 8.5 remain next.
+  samples in the quarter-π free discs. The displacement assertion of
+  Lemma 8.5 is now proved: complete actual critical-point sequences have
+  uniformly bounded ℓᵖ displacements on one potential neighborhood. Their
+  central repetitions and global analytic multiplicities are retained.
+  The normalized derivative product and continuity of ordered real-type
+  roots remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

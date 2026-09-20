@@ -1697,7 +1697,15 @@ neighborhood supplies common lp norm bounds for every admissible sampling
 sequence. This completes both sampled error assertions and the local
 uniformity of Lemma 8.4.
 
-Next prove the summable critical-point displacements, derivative product,
-and real-type root continuity in Lemma 8.5.
+The inverse filled sine quotient now bounds a critical-point displacement
+by its sine value. Lemma 8.4 controls the distant critical roots in lp.
+The 2N+1 central analytic roots are enumerated with multiplicities and
+spliced into the unique simple distant sequence. The completed sequence
+has exact global analytic multiplicities and an lp displacement bound
+uniform on one open convex potential neighborhood. This proves the
+displacement assertion of Lemma 8.5.
+
+Next construct the normalized single derivative product and prove ordering
+and real-type continuity of the critical roots in Lemma 8.5.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

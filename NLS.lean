@@ -570,3 +570,10 @@ import NLS.ZakharovShabat.RestoredSpectralPairs
 import NLS.ZakharovShabat.EntireSpectralPairLp
 import NLS.ZakharovShabat.ParitySpectralPairLp
 import NLS.ZakharovShabat.SampledDiscriminantLp
+import NLS.SequenceSpaces.FiniteEnumeration
+import NLS.ZakharovShabat.FreeSineDisplacementBound
+import NLS.ZakharovShabat.CentralCriticalRoots
+import NLS.ZakharovShabat.CriticalPointLabeling
+import NLS.ZakharovShabat.CriticalPointMultiplicity
+import NLS.ZakharovShabat.CriticalDisplacementBound
+import NLS.ZakharovShabat.UniformCriticalDisplacements
