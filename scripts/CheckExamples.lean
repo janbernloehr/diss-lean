@@ -14000,3 +14000,80 @@ example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (z : ℂ) :
 
 end
 end CanonicalPeriodicChecks
+
+
+namespace PeriodicContinuityChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Complex Filter Topology Metric
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- A nonreal compact singleton stays outside the spectrum near the free potential.
+example : ∀ᶠ ψ : PairSpace 3 in 𝓝 0, I ∉ periodicSpectrum (by simp) ψ := by
+  have he := eventually_periodicSpectrum_avoids_compact (p := 3) (by simp) (by norm_num) 0
+    (K := {I}) isCompact_singleton (by
+      intro z hz hs
+      have hz' : z = I := hz
+      subst z
+      have hi := periodicSpectrum_im_eq_zero_of_realType (by simp) (0 : PairSpace 3) (by simp) I hs
+      norm_num at hi)
+  filter_upwards [he] with ψ hψ
+  exact hψ I (by simp)
+
+-- Original double multiplicity is retained at a negative free lattice point.
+example : analyticOrderNatAt (canonicalPeriodicProduct (p := 3) (by simp) 0)
+    ((Real.pi : ℂ)*(-3 : ℤ)) = 2 := by
+  rw [analyticOrderNatAt_canonicalPeriodicProduct (by simp) (by norm_num), periodicAlgebraicMultiplicity_zero]
+
+-- Collapsed endpoint values still occupy two distinct slots.
+example : ((centralPeriodicSlots 0).filter (fun k =>
+    periodicEndpointSlot (fun _ => 0) (fun _ => 0) k = 0)).card = 2 := by
+  simp [periodicEndpointSlot,centralPeriodicSlots]
+
+-- Root counts on central discs count occurrences, not distinct endpoint values.
+example (φ : PairSpace 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : PeriodicEndpointLabeling (by simp) φ N ξ η) :
+    analyticZeroCount (canonicalPeriodicProduct (by simp) φ) (closedBall 0 (centralCircleRadius N)) =
+      ((centralPeriodicSlots N).filter (fun k =>
+        periodicEndpointSlot ξ η k ∈ closedBall 0 (centralCircleRadius N))).card := by
+  apply h.analyticZeroCount_eq_card_filter_slots (by norm_num)
+  intro z hz
+  exact (Complex.abs_re_le_norm z).trans (by simpa using hz)
+
+-- Both endpoints remain continuous at a free double eigenvalue, including negative indices.
+example : ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+      canonicalPeriodicLeft (by simp) (by norm_num) ψ.val ψ.property (-4)) 0 ∧
+    ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+      canonicalPeriodicRight (by simp) (by norm_num) ψ.val ψ.property (-4)) 0 :=
+  ⟨continuousAt_canonicalPeriodicLeft_of_realType (by simp) (by norm_num) 0 (by simp) (-4),
+    continuousAt_canonicalPeriodicRight_of_realType (by simp) (by norm_num) 0 (by simp) (-4)⟩
+
+-- The conclusion holds below the Hilbert exponent under arbitrary even complex perturbations.
+example (φ : pairParitySubspace (p := ENNReal.ofReal (3/2 : ℝ)) 0) (hreal : IsRealType φ.val) (n : ℤ) :
+    ContinuousAt (fun ψ : pairParitySubspace (p := ENNReal.ofReal (3/2 : ℝ)) 0 =>
+      canonicalPeriodicLeft (by simp) (by norm_num) ψ.val ψ.property n) φ ∧
+    ContinuousAt (fun ψ : pairParitySubspace (p := ENNReal.ofReal (3/2 : ℝ)) 0 =>
+      canonicalPeriodicRight (by simp) (by norm_num) ψ.val ψ.property n) φ :=
+  ⟨continuousAt_canonicalPeriodicLeft_of_realType (by simp) (by norm_num) φ hreal n,
+    continuousAt_canonicalPeriodicRight_of_realType (by simp) (by norm_num) φ hreal n⟩
+
+-- Displacement continuity concerns each fixed coordinate.
+example (φ : pairParitySubspace (p := 3) 0) (hreal : IsRealType φ.val) (n : ℤ) :
+    ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+      canonicalPeriodicLeftDisplacement (by simp) (by norm_num) ψ.val ψ.property n) φ ∧
+    ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+      canonicalPeriodicRightDisplacement (by simp) (by norm_num) ψ.val ψ.property n) φ :=
+  ⟨continuousAt_canonicalPeriodicLeftDisplacement_apply_of_realType (by simp) (by norm_num) φ hreal n,
+    continuousAt_canonicalPeriodicRightDisplacement_apply_of_realType (by simp) (by norm_num) φ hreal n⟩
+
+-- A common nearby cutoff can include any prescribed block.
+example (φ : pairParitySubspace (p := 3) 0) (K : ℕ) :
+    ∃ N : ℕ, K ≤ N ∧ 2 ≤ N ∧ ∀ᶠ ψ : pairParitySubspace (p := 3) 0 in 𝓝 φ,
+      PeriodicEndpointLabeling (by simp) ψ.val N
+        (canonicalPeriodicLeft (by simp) (by norm_num) ψ.val ψ.property)
+        (canonicalPeriodicRight (by simp) (by norm_num) ψ.val ψ.property) :=
+  exists_eventually_canonicalPeriodicEndpointLabeling_above (by simp) (by norm_num) φ K
+
+end
+end PeriodicContinuityChecks

@@ -628,3 +628,10 @@ import NLS.ZakharovShabat.OrderedPeriodicUniqueness
 import NLS.ZakharovShabat.CanonicalPeriodicEndpoints
 import NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints
 import NLS.ZakharovShabat.CanonicalPeriodicFree
+import NLS.ZakharovShabat.PeriodicProductFamilyLimits
+import NLS.ZakharovShabat.PeriodicEndpointRegions
+import NLS.ZakharovShabat.PeriodicEndpointRootCounts
+import NLS.ZakharovShabat.PeriodicEndpointSlots
+import NLS.ZakharovShabat.CanonicalPeriodicStability
+import NLS.ZakharovShabat.PeriodicEndpointRealBarriers
+import NLS.ZakharovShabat.CanonicalPeriodicContinuity

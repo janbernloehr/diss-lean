@@ -1779,8 +1779,15 @@ reality, and lp displacements. One neighborhood gives common valid cutoffs
 for these fixed coordinates. At zero potential both endpoints are exactly
 `nπ`, with identically zero displacement coefficients.
 
-Next prove continuity of the canonical periodic endpoint coordinates.
-Identify their central parity by continuity
+The periodic product now has locally uniform parameter limits and stable
+circular counts on the full potential space. Within the central real-part
+bounds, these analytic counts equal counts of both endpoint slots, including
+repeated values. Compact confinement controls imaginary parts; stable
+prefix and suffix counts control real parts. Both canonical endpoint
+coordinates are now continuous at real-type potentials under arbitrary
+even complex perturbations, including spectral collisions.
+
+Next identify their central parity by continuity
 along real-type paths, then prove central-gap interlacing and the refined
 offset estimate in Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.

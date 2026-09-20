@@ -898,8 +898,10 @@ installation is absent. No shell startup files are modified.
   every sufficiently large cutoff. Ordered labels are now unique across
   cutoffs, defining canonical left and right endpoints with ℓᵖ displacements.
   The same canonical coordinates work at every large cutoff on one
-  neighborhood; both equal `nπ` at zero potential. Endpoint continuity
-  and the parity of the ordered central pairs remain next before
+  neighborhood; both equal `nπ` at zero potential. Stable periodic counts
+  now prove coordinate continuity at every real-type potential under
+  arbitrary even complex perturbations, including colliding endpoints.
+  The parity of the ordered central pairs remains next before
   central-gap interlacing and Lemma 8.6.
 - No spectral or classical Birkhoff results are introduced as axioms.
 

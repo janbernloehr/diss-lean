@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 680 modules and 4490 named public theorems. All compile on the
+The library has 687 modules and 4524 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.PeriodicProductFamilyLimits` | Locally uniform periodic-product parameter limits, compact spectral avoidance and confinement, and stable circular analytic counts on the full potential space |
+| `NLS.ZakharovShabat.PeriodicEndpointRegions` | Central indices detected by closed real-part bounds, spectral confinement to the central finite set, and compact central endpoint bounds |
+| `NLS.ZakharovShabat.PeriodicEndpointRootCounts` | Natural analytic orders equal original multiplicities; central multiset filters and paired occurrences compute analytic counts |
+| `NLS.ZakharovShabat.PeriodicEndpointSlots` | Combined signed-index/slot ordering, central slot membership, and exact analytic counts as finite slot counts |
+| `NLS.ZakharovShabat.CanonicalPeriodicStability` | Canonical slot coordinates, order, spectral membership and reality, finite-block imaginary confinement, and imaginary-part continuity at real type |
+| `NLS.ZakharovShabat.PeriodicEndpointRealBarriers` | Spectral-free real-diameter circles and stable prefix/suffix slot counts bounding nearby real parts |
+| `NLS.ZakharovShabat.CanonicalPeriodicContinuity` | Full canonical left/right coordinate and displacement-coordinate continuity at real-type potentials, including colliding endpoints |
 | `NLS.SequenceSpaces.OrderedPairedUnique` | Ordered pair and finite paired-multiset uniqueness, retaining repeated values and lexicographic slot order |
 | `NLS.ZakharovShabat.PeriodicEndpointCutoffGrowth` | Exact distant root multisets, absorption into larger central multisets, and unchanged labels at larger valid cutoffs |
 | `NLS.ZakharovShabat.OrderedPeriodicUniqueness` | Uniqueness of ordered distant pairs, central enumerations, and full endpoint sequences across cutoffs |
@@ -6083,14 +6090,57 @@ endpoints exactly `nπ`. Both lp displacement coefficients are zero.
 Eight examples check imaginary tie-breaking, double free multiplicity,
 cutoff-independent uniqueness, central enlargement without new counting
 data, negative free indices, vanishing displacement at p=3/2, a common
-nearby cutoff, and spectral exhaustion. Endpoint continuity and central
-parity identification remain the next prerequisites for central-gap
-interlacing and Lemma 8.6.
+nearby cutoff, and spectral exhaustion. Endpoint continuity is proved
+in the next milestone; central parity identification remains open.
+
+## Section 8: continuity of canonical periodic endpoints
+
+`PeriodicProductFamilyLimits` derives locally uniform parameter limits
+from joint periodic-product analyticity on the full potential space.
+Compact spectral-free sets stay spectral-free, nearby roots stay in any
+open neighborhood of the original compact root set, and every spectral-free
+circle preserves its analytic count. No even or real-type restriction is
+needed for these family statements.
+
+`PeriodicEndpointRegions` proves that any endpoint inside the closed
+central real-part bounds has a central index. Every spectral value in
+that vertical strip therefore belongs to the finite central spectrum.
+Central box bounds place all central endpoints in a common compact ball.
+`PeriodicEndpointRootCounts` identifies natural analytic orders with
+original algebraic multiplicities. On any subset of this vertical strip,
+the analytic count equals the filtered central multiset cardinality and
+the sum of the two selected occurrences at each central index.
+
+`PeriodicEndpointSlots` combines the signed index and a two-valued slot
+into one lexicographically ordered index. Analytic counts become finite
+slot counts, so a collapsed pair continues to contribute twice.
+`UniformCanonicalPeriodicEndpoints` now chooses a common nearby cutoff
+above any prescribed finite block. `CanonicalPeriodicStability` uses this
+cutoff and compact root confinement to bound every finite block's imaginary
+parts near a real-type potential and prove their continuity.
+
+`PeriodicEndpointRealBarriers` chooses real-diameter circles avoiding all
+central slot values. Exact periodic counts stay constant, so prefix and
+suffix cardinality comparisons bound the nearby ordered real parts.
+`CanonicalPeriodicContinuity` chooses these barriers arbitrarily close
+to any given slot, proving real-part and full complex continuity. Both
+canonical left and right coordinates, and each of their displacement
+coordinates, are continuous at every real-type potential under arbitrary
+even complex perturbations. Repeated roots and closed gaps are included.
+Continuity in the lp norm is not asserted.
+
+Eight examples cover compact off-axis avoidance near zero, free double
+multiplicity at a negative index, double slot counts at a collapsed pair,
+analytic counts on central discs, continuity at free double eigenvalues,
+both coordinates at p=3/2, displacement-coordinate continuity, and common
+cutoffs containing an arbitrary finite block. The next step is central
+parity identification along real-type paths, then central-gap interlacing
+and Lemma 8.6.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8989 declarations under `NLS`, including generated
+axioms. The current audit covers 9046 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7260,8 +7310,9 @@ formal matrix representation.
    enumerations with exact multiplicities, unchanged distant pair
    multisets, and lp displacements. Ordered labels are now unique across
    cutoffs, defining canonical endpoints with common nearby cutoffs and
-   exact free values. Next prove endpoint continuity and central parity
-   identification, then central-gap
+   exact free values. Stable periodic slot counts now prove endpoint
+   coordinate continuity at every real-type potential, including collisions.
+   Next prove central parity identification, then central-gap
    interlacing and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
