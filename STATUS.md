@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 560 modules and 4027 named public theorems. All compile on the
+The library has 566 modules and 4055 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ParityFiniteApproximation` | Pair Fourier truncation, original domain lifts, parity preservation, convergence in each finite-exponent parity subspace, and density of included domain potentials |
+| `NLS.ZakharovShabat.ClassicalDomainPotential` | Compatible unit-interval representative for every Hilbert domain potential and its exact classical parity identities |
+| `NLS.ZakharovShabat.HilbertParityCompatibility` | Fixed-spectral potential continuity and the shifted-product identity for all even Hilbert potentials; exact difference four and disjoint parity zeros |
+| `NLS.ZakharovShabat.CanonicalDiscriminant` | Intrinsic discriminant from the corrected even product, spectral entireness, and joint even-potential/source-period-one analyticity for every finite p>1 |
+| `NLS.ZakharovShabat.HilbertDiscriminant` | Odd and full product identities for all even Hilbert potentials, classical compatibility, free normalization, and exact original parity/full spectral level sets |
+| `NLS.ZakharovShabat.HilbertDiscriminantApproximation` | Classical traces of any convergent even domain approximation tend to the intrinsic Hilbert discriminant; in particular this holds for finite Fourier truncations |
 | `NLS.ZakharovShabat.FreeStripInverseBounds` | Nonvanishing free parity factors, even lattice translation identities, and uniform inverse bounds on every separated horizontal strip |
 | `NLS.ZakharovShabat.UniformThresholds` | Uniform real thresholds from pulled-back eventual statements, with upper and positive lower norm bounds from a limit of one |
 | `NLS.ZakharovShabat.ClassicalExteriorRatioBounds` | A global bound for either shifted classical/free ratio outside fixed free discs, combining strip bounds with both half-plane limits |
@@ -5105,13 +5111,60 @@ double root at zero. A genuinely coupled potential with classical eigenvalue
 one gives canonical parity values zero and exactly four, and full value zero.
 The shifted identity also holds for that potential at every complex parameter.
 
-The general finite-p identity, the resulting intrinsic discriminant construction,
-and locally uniform spectral-derivative asymptotics remain open.
+The following density argument now proves the shifted identity and intrinsic
+discriminant construction throughout the even Hilbert space. The compatibility
+identity beyond p=2 and locally uniform spectral-derivative asymptotics remain
+open.
+
+## Section 8: the intrinsic discriminant for all even Hilbert potentials
+
+`ParityFiniteApproximation` truncates both components on one arbitrary finite
+frequency set. The projection preserves every Fourier parity, including negative
+residues and the infinity endpoint. Finite sums of the original domain modes
+lift these truncations into the one-derivative domain. At every finite Banach
+exponent the truncations converge in the potential norm and within the fixed
+parity subspace. Included domain potentials are therefore dense there.
+
+`ClassicalDomainPotential` shows that the original physical domain curve is
+an almost-everywhere compatible representative on the unit interval. The exact
+classical parity identity therefore applies to every even Hilbert domain
+potential without a separately supplied representative. By continuity in the
+potential, `HilbertParityCompatibility` extends `f+2=g−2` to all even Hilbert
+potentials. In particular `g=f+4`, and the two parity products have no common
+zero. These assertions no longer assume a continuous physical representative.
+
+`CanonicalDiscriminant` defines the intrinsic function as the corrected even
+product plus two. Its spectral entireness and joint analyticity on the even
+potential space, and in the source period-one convention, hold for every finite
+p>1. `HilbertDiscriminant` proves the additional identities at p=2: the same
+function is the odd product minus two, and its square minus four is the full
+canonical spectral product. It agrees with the actual classical trace whenever
+there is a compatible continuous representative, and its free value is twice
+the cosine. Its levels two and minus two are exactly the original parity
+spectra, and its squared level four is the original full periodic spectrum.
+
+`HilbertDiscriminantApproximation` proves that classical traces of any even
+domain-valued approximation converge to this intrinsic function at every fixed
+spectral parameter whenever the coefficients converge in Hilbert norm. No
+convergence in the domain norm or uniform supremum bound on the representatives
+is assumed. Finite Fourier truncations give one explicit such approximation.
+
+Examples use a negative finite Fourier mode, odd parity at p=3, and parity
+preservation at infinity. An infinite inverse-weight potential has a nonzero
+coefficient at every even frequency. It satisfies the shifted and full-product
+identities, the exact opposite-parity value four at any even root, the original
+spectral criterion at 1+i, and convergence of its finite classical traces.
+Free values at zero, pi, and pi/2 and joint source analyticity at p=3 are checked.
+
+For p other than two, the intrinsic even-product function is defined and
+analytic, but compatibility with the odd and full products still needs the
+cross-exponent spectral comparison. The general-p identity and locally uniform
+spectral-derivative asymptotics remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8103 declarations under `NLS`, including generated
+axioms. The current audit covers 8142 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6229,8 +6282,12 @@ formal matrix representation.
    is now proved using periodic free inverse bounds and uniform canonical ratio
    lower bounds. The corrected parity/full infinite products equal the classical
    shifted trace and squared discriminant for compatible continuous Hilbert
-   potentials. Next extend the shifted identity to all finite-p potentials
-   and prove the spectral-derivative asymptotics.
+   potentials. Density now extends the shifted identity to all even Hilbert
+   potentials. The intrinsic discriminant has both parity and full product
+   identities and is the limit of classical traces of finite Fourier
+   approximations. Its even-product definition is jointly analytic at every
+   finite p>1. Next prove the cross-exponent spectral comparison to extend
+   compatibility beyond p=2, and prove the spectral-derivative asymptotics.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

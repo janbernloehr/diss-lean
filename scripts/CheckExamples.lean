@@ -12544,3 +12544,80 @@ example (z : ℂ) : canonicalParityProduct (by simp) coupledPotential 0 z+2 =
 
 end
 end ClassicalIdentityChecks
+
+namespace HilbertDiscriminantChecks
+open Set Complex MeasureTheory Filter Topology NLS NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- A negative Fourier mode survives its finite cutoff with its complex coefficient intact.
+example : (pairTruncate ({-2,3} : Finset ℤ)
+    ((lp.single 3 (-2) I), (lp.single 3 4 1)) : PairSpace 3) = (lp.single 3 (-2) I, 0) := by
+  apply Prod.ext <;> ext n <;>
+    by_cases h₂ : n = -2 <;> by_cases h₃ : n = 3 <;> by_cases h₄ : n = 4 <;>
+      simp [pairTruncate, Coeff.truncate_apply, lp.single_apply, h₂, h₃, h₄]
+
+-- Parity is preserved even at the infinity endpoint; convergence is claimed only for finite exponents.
+example (s : Finset ℤ) (φ : PairSpace ⊤) (hφ : φ ∈ pairParitySubspace (-3)) :
+    pairTruncateDomain s φ ∈ domainParitySubspace (-3) := pairTruncateDomain_mem_parity s φ (-3) hφ
+
+example (φ : pairParitySubspace (p := 3) (-3)) :
+    Tendsto (fun s : Finset ℤ => parityTruncate (-3) s φ) atTop (𝓝 φ) :=
+  tendsto_parityTruncate (by simp) (-3) φ
+
+-- Infinite inverse-weight coefficients require no continuous-representative hypothesis.
+private def inverseWeight : Coeff 2 :=
+  ⟨fun n => (Weight.sobolev 1 n : ℂ)⁻¹, Weight.inverse_sobolev_one_memlp (by norm_num)⟩
+private def infinitePotential : PairSpace 2 := pairParityProjection 0 (inverseWeight, I • inverseWeight)
+private theorem infinite_even : infinitePotential ∈ pairParitySubspace 0 := pairParityProjection_mem 0 _
+
+-- Every even coefficient in the first component is nonzero: this is not a finite-mode example.
+example (n : ℤ) : infinitePotential.1 (2*n) ≠ 0 := by
+  simp only [infinitePotential, pairParityProjection_apply, Coeff.parityProjection_apply]
+  have hm : (2*n) % 2 = (0 : ℤ) % 2 := by omega
+  rw [if_pos hm]
+  exact inv_ne_zero ((Weight.sobolev 1).complex_ne_zero (2*n))
+
+example (z : ℂ) : canonicalParityProduct (by simp) infinitePotential 0 z+2 =
+    canonicalParityProduct (by simp) infinitePotential 1 z-2 :=
+  canonicalParity_shifted_eq_hilbert infinitePotential infinite_even z
+
+example (z : ℂ) : canonicalPeriodicProduct (by simp) infinitePotential z =
+    (canonicalDiscriminant (by simp) infinitePotential z)^2-4 :=
+  canonicalPeriodic_eq_discriminant_sq_sub_four infinitePotential infinite_even z
+
+-- Opposite parity products cannot share a root for this infinite potential.
+example (z : ℂ) (he : canonicalParityProduct (by simp) infinitePotential 0 z = 0) :
+    canonicalParityProduct (by simp) infinitePotential 1 z = 4 := by
+  rw [canonicalOdd_eq_even_add_four_hilbert infinitePotential infinite_even, he, zero_add]
+
+-- The exact spectral criterion holds at a nonreal point without a classical curve as input.
+example : (canonicalDiscriminant (by simp) infinitePotential (1+I))^2 = 4 ↔
+    (1+I) ∈ periodicSpectrum (by simp) infinitePotential :=
+  canonicalDiscriminant_sq_eq_four_iff infinitePotential infinite_even (1+I)
+
+-- Actual classical traces of the finite approximants recover the same infinite-potential value.
+example : Tendsto (fun s : Finset ℤ =>
+    classicalDiscriminant (physicalDomainCurve (pairTruncateDomain s infinitePotential)) (1+I))
+    atTop (𝓝 (canonicalDiscriminant (by simp) infinitePotential (1+I))) :=
+  tendsto_classicalDiscriminant_pairTruncateDomain infinitePotential infinite_even (1+I)
+
+-- Free normalization retains both signs and the midpoint trace.
+example : canonicalDiscriminant (by simp) (0 : PairSpace 2) 0 = 2 ∧
+    canonicalDiscriminant (by simp) (0 : PairSpace 2) Real.pi = -2 ∧
+    canonicalDiscriminant (by simp) (0 : PairSpace 2) (Real.pi/2) = 0 := by
+  norm_num [canonicalDiscriminant_zero, freeDiscriminant]
+
+-- The intrinsic function is already jointly analytic at p=3, even though cross-exponent
+-- compatibility of the odd product remains a separate proof obligation.
+example : AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair 3 =>
+    canonicalDiscriminant (by simp) (periodOnePotential t.2) t.1) univ :=
+  analyticOnNhd_canonicalDiscriminant_periodOne (by simp) (by norm_num)
+
+-- The two level sets retain the original parity algebraic multiplicities.
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (z : ℂ) :
+    canonicalDiscriminant (by simp) φ z = -2 ↔ 0 < parityAlgebraicMultiplicity (by simp) φ 1 z :=
+  (canonicalDiscriminant_parity_levels φ hφ z).2
+
+end
+end HilbertDiscriminantChecks

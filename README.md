@@ -806,8 +806,15 @@ installation is absent. No shell startup files are modified.
   spectral threshold, proving the missing quotient bound. Consequently, for
   even Hilbert potentials with compatible continuous representatives, the
   intrinsic products are exactly `Δ−2`, `Δ+2`, and `Δ²−4`, including at their
-  roots. Extension of `f+2=g−2` to all finite `p>1` and the spectral-derivative
-  asymptotics remain open.
+  roots. Parity-preserving finite Fourier approximation now removes the
+  continuous-representative requirement from `f+2=g−2` for all even Hilbert
+  potentials. The intrinsic discriminant `f+2` is entire and jointly analytic;
+  it is also `g−2`, its square minus four is the full product, and its levels
+  `±2` give exactly the original parity spectra. Actual classical traces of
+  convergent even domain approximations tend to this function using only
+  Hilbert-norm convergence. The intrinsic even-product construction and joint
+  analyticity are available at every finite `p>1`; compatibility with the odd
+  and full products beyond `p=2` and the derivative asymptotics remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

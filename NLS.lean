@@ -508,3 +508,9 @@ import NLS.ZakharovShabat.UniformThresholds
 import NLS.ZakharovShabat.ClassicalExteriorRatioBounds
 import NLS.ZakharovShabat.CanonicalExteriorLowerBounds
 import NLS.ZakharovShabat.ClassicalCanonicalIdentity
+import NLS.ZakharovShabat.ParityFiniteApproximation
+import NLS.ZakharovShabat.ClassicalDomainPotential
+import NLS.ZakharovShabat.HilbertParityCompatibility
+import NLS.ZakharovShabat.CanonicalDiscriminant
+import NLS.ZakharovShabat.HilbertDiscriminant
+import NLS.ZakharovShabat.HilbertDiscriminantApproximation

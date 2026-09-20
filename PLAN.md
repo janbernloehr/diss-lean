@@ -1597,8 +1597,19 @@ and its vertical limit fix the entire factor to one. Thus the corrected
 identities `f=Δ−2`, `g=Δ+2`, and `fg=Δ²−4` hold for every even Hilbert potential
 with a compatible continuous representative, at every complex parameter.
 
-Next, use potential approximation and compatibility between exponents to prove
-`f+2=g−2` for all finite p>1. The general-p discriminant construction and the
-locally uniform spectral-derivative asymptotics still require proofs.
+Parity-preserving finite Fourier truncations now converge inside each parity
+subspace at every finite exponent, and lift to the original one-derivative
+domain. The exact classical identity on even Hilbert domain potentials and
+continuity of both products imply `f+2=g−2` for every even Hilbert potential,
+without any continuous-representative assumption. The intrinsic discriminant
+is now defined as `f+2`, jointly analytic for finite p>1. At p=2 it equals
+`g−2`, its square minus four is the full spectral product, and its ±2 levels
+are the original parity spectra. Classical traces of any convergent even domain
+approximation have this intrinsic limit, with only Hilbert-norm convergence.
+
+Next, prove compatibility of the spectral products across sequence exponents,
+first on finite Fourier potentials, then use the proved parity approximation
+and continuity to establish the shifted identity at every finite p>1. The
+locally uniform spectral-derivative asymptotics also remain open.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
