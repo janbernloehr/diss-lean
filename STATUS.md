@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 579 modules and 4120 named public theorems. All compile on the
+The library has 582 modules and 4137 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.FreeSineExteriorBounds` | Nonvanishing off the free lattice, strip reciprocal bounds, explicit height-one exponential lower bound, and a global normalized reciprocal bound on every separated exterior |
+| `NLS.ZakharovShabat.DiscriminantDerivativeRatio` | Conversion of additive to relative derivative errors and the free derivative ratio limit with uniform spectral thresholds at each fixed finite-p potential |
+| `NLS.ZakharovShabat.DiscriminantCriticalLocalization` | Entire nontrivial derivative, confinement of large critical points to arbitrary small free discs, finite analytic orders, punctured isolation, compact finiteness, and exact free critical lattice |
 | `NLS.ZakharovShabat.FreeCosineZeroAudit` | Arbitrarily large free cosine zeros outside all free discs; impossibility of the literal totalized exterior cosine quotient bound |
 | `NLS.ZakharovShabat.DiscriminantExteriorError` | Additive trace error divided by exp(abs(Im z)) tends to zero, with uniform spectral thresholds for each fixed finite-p potential |
 | `NLS.ZakharovShabat.ExteriorCauchyBounds` | Half-radius circle separation, imaginary-height control, and Cauchy derivative bounds from exterior exponential value bounds |
@@ -5265,14 +5268,51 @@ The examples check included cosine zeros beyond arbitrary radii, the failed
 literal quotient at zero potential, a nonreal Cauchy-circle displacement, the
 free derivative sign at π/2, and trace/derivative limits and tolerance thresholds
 at p=3. These are fixed-potential conclusions. Local uniformity over potential
-neighborhoods and the derivative ratio require further estimates; the latter
-needs a lower bound for `|sin z|/exp(|Im z|)` on the free-disc exterior.
-The derivative product, critical points, and action/Birkhoff results remain open.
+neighborhoods requires further estimates. The following milestone supplies the
+normalized sine bound, derivative ratio, and initial critical-point localization.
+The derivative product and action/Birkhoff results remain open.
+
+## Section 8: derivative ratio and initial critical-point localization
+
+`FreeSineExteriorBounds` proves that sine is nonzero off `πℤ`. Periodicity and
+compactness bound its inverse throughout every separated horizontal strip.
+The exponential formula and reverse triangle inequality give the explicit bound
+`exp(|Im z|) ≤ 4 |sin z|` when `|Im z|≥1`. Combining the two regions gives,
+for every separation radius r>0, a positive constant C bounding
+`exp(|Im z|)/|sin z|` on the whole exterior. The global C is existential; this
+does not claim the source's numerical constant four throughout the radius-π/4
+exterior.
+
+`DiscriminantDerivativeRatio` converts the additive derivative estimate into
+`Δ′(z)/(−2 sin z) → 1` for every fixed even potential at each finite p>1,
+uniformly in all sufficiently large parameters separated by `0<r≤π/4` from
+the free lattice. It includes the real cosine zeros from the previous audit.
+Each positive tolerance has one threshold covering the full spectral exterior.
+
+`DiscriminantCriticalLocalization` consequently excludes critical points from
+that large exterior: every sufficiently large zero of Δ′ lies in an open
+radius-r disc about some nπ. This holds for every positive r≤π/4, with a
+potential- and radius-dependent threshold. A nonzero value on the real
+cosine-zero sequence proves the entire derivative is nontrivial. The identity
+principle gives finite analytic orders everywhere, punctured isolation, and
+finitely many critical points in any compact set, including disconnected sets.
+At zero potential its derivative is exactly `−2 sin z` and its critical set
+is exactly `πℤ`.
+
+Examples check both imaginary directions with arbitrary real part, reciprocal
+bounds and ratio convergence at free cosine zeros, an imaginary derivative
+perturbation at π/2, tolerance 1/100, confinement to radius-π/16 discs, compact
+finiteness on two disjoint balls, finite order at 1+i, and negative free indices.
+
+Local uniformity over potential neighborhoods remains open. Lemma 8.3 still
+requires the exact count one in each distant disc and 2N+1 in the central disc,
+as well as the real-type conclusion. The derivative product and the subsequent
+summable critical-point asymptotics also remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8233 declarations under `NLS`, including generated
+axioms. The current audit covers 8252 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6400,9 +6440,11 @@ formal matrix representation.
    with uniqueness of the continuous extension from summable Hilbert potentials.
    The cosine-quotient domain is now audited, and fixed-potential additive
    trace and derivative asymptotics hold on the full free-disc exterior. Next
-   prove a normalized sine lower bound and the derivative ratio, establish
-   local uniformity over potentials, and develop the derivative product and
-   critical points.
+   establish local uniformity over potentials. The normalized sine bound and
+   fixed-potential derivative ratio are now proved. Large critical points are
+   confined to arbitrarily small free discs; all have finite orders and form
+   a set finite on compact regions. Next prove the exact distant and central
+   critical-point counts, the real-type conclusions, and the derivative product.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

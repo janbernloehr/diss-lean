@@ -1633,9 +1633,18 @@ fixed even potential at finite p>1: both `Δ−2 cos` and `Δ′+2 sin`, divided
 `exp(|Im z|)`, tend to zero uniformly in sufficiently large exterior parameters.
 The derivative proof uses Cauchy circles of half the separation radius.
 
-Next, prove a uniform lower bound for normalized sine on this exterior to
-obtain the derivative ratio, and establish local uniformity over potential
-neighborhoods. These remain distinct from the fixed-potential thresholds.
-Then develop the derivative product and critical-point prerequisites in Section 8.
+The normalized reciprocal sine is now bounded on the full exterior, using
+compact periodic reduction on a strip and an explicit constant-four bound
+above imaginary height one. Hence `Δ′/(−2 sin) → 1` at every fixed potential,
+with uniform spectral thresholds. All sufficiently large critical points lie
+inside arbitrary radius-r free discs, for 0<r≤π/4. The entire derivative is
+nontrivial, with finite orders, isolated zeros, and finitely many zeros on
+every compact set. Its zero-potential critical set is exactly πℤ.
+
+Next, establish local uniformity over potential neighborhoods and the exact
+Rouché counts in distant discs and the central disc for Lemma 8.3. Prove its
+real-type conclusion and develop the derivative product and summable
+critical-point asymptotics. These remain distinct from the fixed-potential
+ratio and confinement estimates.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

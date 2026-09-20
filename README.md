@@ -824,8 +824,13 @@ installation is absent. No shell startup files are modified.
   by `exp(|Im z|)`, tend to zero uniformly at sufficiently large parameters
   outside fixed free discs. A formal audit shows that the printed cosine
   quotient includes arbitrarily large denominator zeros in its stated domain.
-  The additive formulation remains meaningful there. Local uniformity over
-  potential neighborhoods and the exterior derivative ratio remain open.
+  The additive formulation remains meaningful there. A bound on normalized
+  reciprocal sine now gives `Δ′/(−2 sin z) → 1` uniformly at exterior infinity
+  for each fixed potential. Every sufficiently large critical point lies in
+  an arbitrarily small free disc. The derivative is nontrivial and entire;
+  its zeros are isolated, have finite orders, and are finite on compact sets.
+  The free critical set is exactly `πℤ`. Local uniformity over potential
+  neighborhoods and the exact critical-point counts remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

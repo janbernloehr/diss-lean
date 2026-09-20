@@ -12789,3 +12789,72 @@ example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
 
 end
 end TraceAsymptoticChecks
+
+namespace DerivativeRatioChecks
+open Set Complex Filter Topology Metric NLS NLS.ZakharovShabat
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- The explicit height estimate covers both half-planes and arbitrary real parts.
+example (x : ℝ) : Real.exp 2 ≤ 4*‖sin ((x : ℂ)+2*I)‖ := by
+  simpa using (exp_abs_im_le_four_norm_sin (z := (x : ℂ)+2*I) (by norm_num))
+example (x : ℝ) : Real.exp 2 ≤ 4*‖sin ((x : ℂ)-2*I)‖ := by
+  simpa using (exp_abs_im_le_four_norm_sin (z := (x : ℂ)-2*I) (by norm_num))
+
+-- The exterior bound includes the real free cosine zeros from the source audit.
+example : ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, ‖(1 : ℂ)/sin (freeCosineZero n)‖ ≤ C := by
+  obtain ⟨C, hC, hb⟩ := exists_bound_exp_im_div_sin_of_separated (by positivity : 0 < Real.pi/4)
+  refine ⟨C, hC, fun n => ?_⟩
+  simpa only [freeCosineZero_im, abs_zero, Real.exp_zero, Complex.ofReal_one] using
+    hb (freeCosineZero n) (freeCosineZero_separated n)
+
+-- An imaginary perturbation of the derivative at pi/2 checks the relative-error factor.
+example : ‖((-2 : ℂ)+I)/(-2*sin ((Real.pi : ℂ)/2))-1‖ ≤ 1 := by
+  have h := norm_div_neg_two_sin_sub_one_le (z := (Real.pi : ℂ)/2)
+    (d := -2+I) (by norm_num) (C := 1) (by norm_num) (by norm_num)
+  norm_num at h ⊢
+  exact h
+
+-- The correct derivative ratio remains meaningful along all audited cosine zeros.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun n => deriv (canonicalDiscriminant (by simp) φ) (freeCosineZero n)/
+      (-2*sin (freeCosineZero n))) atTop (𝓝 1) :=
+  tendsto_discriminant_derivative_div_free_of_separated (by simp) (by norm_num) φ hφ
+    freeCosineZero tendsto_norm_freeCosineZero (by positivity) le_rfl freeCosineZero_separated
+
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ → (∀ n : ℤ, Real.pi/8 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+      ‖deriv (canonicalDiscriminant (by simp) φ) z/(-2*sin z)-1‖ ≤ (1 : ℝ)/100 :=
+  exists_threshold_discriminant_derivative_div_free (by simp) (by norm_num) φ hφ
+    (by positivity) (by linarith [Real.pi_pos]) (by norm_num)
+
+-- All large critical points enter smaller discs, not merely the original pi/4 discs.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ → deriv (canonicalDiscriminant (by simp) φ) z = 0 →
+      ∃ n : ℤ, ‖z-(Real.pi : ℂ)*n‖ < Real.pi/16 :=
+  exists_threshold_critical_mem_freeDisc (by simp) (by norm_num) φ hφ
+    (by positivity) (by linarith [Real.pi_pos])
+
+-- Compact finiteness does not require a connected spectral region.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ((closedBall (0 : ℂ) 1 ∪ closedBall (10+I : ℂ) 1) ∩
+      {z | deriv (canonicalDiscriminant (by simp) φ) z = 0}).Finite :=
+  finite_discriminant_criticalPoints_of_isCompact (by simp) (by norm_num) φ hφ
+    ((isCompact_closedBall _ _).union (isCompact_closedBall _ _))
+
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    analyticOrderAt (deriv (canonicalDiscriminant (by simp) φ)) (1+I) ≠ ⊤ :=
+  analyticOrderAt_discriminant_derivative_ne_top (by simp) (by norm_num) φ hφ _
+
+-- The free derivative has the expected sign, and negative lattice points are critical.
+example : deriv (canonicalDiscriminant (by simp) (0 : PairSpace 3)) ((Real.pi : ℂ)/2) = -2 := by
+  rw [discriminant_derivative_zero]
+  norm_num
+example : deriv (canonicalDiscriminant (by simp) (0 : PairSpace 3)) ((Real.pi : ℂ)*(-3 : ℤ)) = 0 :=
+  (discriminant_derivative_zero_eq_zero_iff (by simp) _).mpr ⟨-3, rfl⟩
+example (n : ℕ) : deriv (canonicalDiscriminant (by simp) (0 : PairSpace 3)) (freeCosineZero n) ≠ 0 := by
+  rw [ne_eq, discriminant_derivative_zero_eq_zero_iff]
+  exact notMem_freeLattice_of_separated (by positivity : 0 < Real.pi/4) (freeCosineZero_separated n)
+
+end
+end DerivativeRatioChecks

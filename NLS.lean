@@ -527,3 +527,6 @@ import NLS.ZakharovShabat.FreeCosineZeroAudit
 import NLS.ZakharovShabat.DiscriminantExteriorError
 import NLS.ZakharovShabat.ExteriorCauchyBounds
 import NLS.ZakharovShabat.DiscriminantExteriorDerivative
+import NLS.ZakharovShabat.FreeSineExteriorBounds
+import NLS.ZakharovShabat.DiscriminantDerivativeRatio
+import NLS.ZakharovShabat.DiscriminantCriticalLocalization
