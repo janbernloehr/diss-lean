@@ -1667,7 +1667,15 @@ even potentials and every larger central cutoff. Both boundary families are
 zero-free; each distant critical point is unique and simple. The central and
 distant open discs exhaust all critical points on that same neighborhood.
 
-Next, prove Lemma 8.3's real-type conclusion. Develop the derivative product
-and summable critical-point asymptotics.
+Real-type critical points are now proved real. Gauss–Lucas excludes nonreal
+critical points of the positive-degree central spectral polynomials. The
+nontrivial canonical derivative has finite orders, so locally uniform limits
+preserve nonvanishing off the real axis. Differentiating Δ²−4 transfers this
+to Δ′. One theorem now packages every assertion of Lemma 8.3.
+
+Next, prove Lemma 8.4's locally uniform ℓᵖ errors on arbitrary sequences in
+the free discs, using the product estimates of Appendix D.9 and Cauchy
+estimates. Then prove the summable critical-point displacements, derivative
+product, and real-type root continuity in Lemma 8.5.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

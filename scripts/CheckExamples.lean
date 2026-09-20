@@ -13064,3 +13064,67 @@ example {N : ℕ} {z : ℂ} (hz : z ∈ sphere ((Real.pi : ℂ)*(-(N : ℤ))) (R
 
 end
 end UniformCriticalChecks
+
+namespace RealCriticalChecks
+open Set Complex Metric NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Repeated real roots still exclude nonreal critical points.
+example : deriv (fun w : ℂ => ∏ a ∈ ({-2,3} : Finset ℂ), (a-w)^(if a = -2 then 3 else 2)) (2*I) ≠ 0 := by
+  apply deriv_prod_real_factors_ne_zero
+  · intro a ha
+    simp only [Finset.mem_insert, Finset.mem_singleton] at ha
+    rcases ha with rfl | rfl <;> norm_num
+  · exact ⟨-2, by simp, by simp⟩
+  · norm_num
+
+-- Reality is essential: a polynomial with a nonreal repeated root has a nonreal critical point.
+example : deriv (fun w : ℂ => (w-I)^2) I = 0 := by
+  rw [deriv_fun_pow (by fun_prop)]
+  simp
+
+-- The full product result needs no even-support assumption; this potential has odd Fourier modes.
+example : deriv (canonicalPeriodicProduct (p := ENNReal.ofReal (3/2 : ℝ)) (by simp)
+    (lp.single _ 1 I, lp.single _ (-1) (-I))) (-I) ≠ 0 := by
+  apply deriv_canonicalPeriodic_ne_zero_of_realType (by simp) (by norm_num)
+  · simpa using (isRealType_single (p := ENNReal.ofReal (3/2 : ℝ)) 1 I)
+  · simp
+
+-- Nonconstant conjugate Fourier modes give a real-type even potential.
+example {z : ℂ} (hz : deriv (canonicalDiscriminant (p := 3) (by simp)
+    (lp.single 3 2 I, lp.single 3 (-2) (-I))) z = 0) : z.im = 0 := by
+  apply discriminant_critical_im_eq_zero_of_realType (by simp) (by norm_num)
+    (lp.single 3 2 I, lp.single 3 (-2) (-I)) ?_ ?_ hz
+  · exact ⟨Coeff.single_mem_paritySubspace 0 2 I (by omega),
+      Coeff.single_mem_paritySubspace 0 (-2) (-I) (by omega)⟩
+  · simpa using (isRealType_single (p := 3) 2 I)
+
+-- Both half-planes are excluded, also below the Hilbert exponent.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (he : φ ∈ pairParitySubspace 0)
+    (hr : IsRealType φ) (y : ℝ) (hy : y ≠ 0) :
+    deriv (canonicalDiscriminant (by simp) φ) ((y : ℂ)*I) ≠ 0 := by
+  apply discriminant_derivative_ne_zero_of_realType (by simp) (by norm_num) φ he hr
+  simpa using hy
+
+-- The uniform theorem supplies unique real-valued roots for every nearby real-type potential.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+    ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 → IsRealType ψ → ∀ n : ℤ, N < n.natAbs →
+      ∃! x : ℝ, (x : ℂ) ∈ closedBall ((Real.pi : ℂ)*n) (Real.pi/8) ∧
+        deriv (canonicalDiscriminant (by simp) ψ) (x : ℂ) = 0 := by
+  obtain ⟨N, _, U, ho, _, hφ, h0, hdata⟩ := exists_uniform_discriminant_critical_distribution_with_reality
+    (by simp) (by norm_num) φ (by positivity : 0 < Real.pi/8) (by linarith [Real.pi_pos])
+  refine ⟨N, U, ho, hφ, h0, ?_⟩
+  intro ψ hψ he hr n hn
+  obtain ⟨hd, _, _, hreal⟩ := hdata ψ hψ he
+  obtain ⟨x, hx, hx0, _, hu⟩ := hd n hn
+  have hxim := hreal hr x hx0
+  have hxr : (x.re : ℂ) = x := by apply Complex.ext <;> simp [hxim]
+  refine ⟨x.re, by dsimp only; rw [hxr]; exact ⟨ball_subset_closedBall hx, hx0⟩, ?_⟩
+  intro y hy
+  have hyx : (y : ℂ) = x := (hu (y : ℂ) hy.1).mp hy.2
+  simpa using congrArg Complex.re hyx
+
+end
+end RealCriticalChecks

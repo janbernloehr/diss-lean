@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 595 modules and 4177 named public theorems. All compile on the
+The library has 600 modules and 4190 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.RealRootedDerivatives` | Gauss–Lucas reality of polynomial critical points, including products with repeated real roots and positive total degree |
+| `NLS.ComplexAnalysis.NonvanishingLocallyUniformLimit` | Nonvanishing on an open set passes to a locally uniform analytic limit at each point of finite analytic order |
+| `NLS.ZakharovShabat.RealCentralDerivative` | Eventual positive central degree and exclusion of nonreal critical points from every sufficiently large normalized central polynomial of a real-type potential |
+| `NLS.ZakharovShabat.RealPeriodicProductDerivative` | Nontriviality, finite orders, and nonvanishing off the real axis for the full canonical derivative of any real-type potential at finite p>1 |
+| `NLS.ZakharovShabat.RealDiscriminantCritical` | Exact full-product derivative, reality of discriminant critical points, and all counting, exhaustion, and reality assertions of Lemma 8.3 on one common neighborhood |
 | `NLS.ZakharovShabat.FreeExteriorCutoffs` | A common integer cutoff from an exterior threshold; signed free-circle and central-circle bounds; exhaustion from exterior nonvanishing |
 | `NLS.ZakharovShabat.UniformCriticalCounts` | One open convex potential neighborhood and cutoff for strict Rouché bounds, distant count one, central count 2K+1, boundary nonvanishing, unique simple distant critical points, and exhaustion for every larger cutoff |
 | `NLS.ZakharovShabat.SmallDisplacementBudgets` | Arbitrarily small corrected displacement budgets on tolerance-dependent open convex neighborhoods, and exact lp tail bounds from paired power sums |
@@ -5434,14 +5439,48 @@ central count, boundary nonvanishing, and exhaustion at p=3/2. A geometric
 check includes the negative cutoff index itself.
 
 This proves the complex counting and exhaustion part of Lemma 8.3 with its
-locally uniform cutoff. Reality of critical points for real-type potentials,
-the derivative product, summable critical-point asymptotics, actions, and
-Birkhoff results remain open.
+locally uniform cutoff. The following milestone supplies its real-type assertion.
+
+## Section 8: reality of critical points and completion of Lemma 8.3
+
+`RealRootedDerivatives` specializes Gauss–Lucas to complex polynomials whose
+roots are real. Positive-degree finite products of real linear factors have
+no nonreal critical points, allowing arbitrary repeated roots.
+`NonvanishingLocallyUniformLimit` passes nonvanishing on an open set to a
+locally uniform analytic limit of finite order. A small isolating circle and
+the reciprocal maximum-modulus bound exclude new zeros; finite order rules
+out the identically zero limit.
+
+`RealCentralDerivative` uses the original central algebraic count 4N+2 to
+supply positive degree for every large cutoff. Original spectral reality
+then gives nonvanishing of every normalized central derivative off the real
+axis. `RealPeriodicProductDerivative` proves that the full canonical product
+has a spectral zero and is nonzero at i, so its derivative is nontrivial and
+has finite order everywhere. Locally uniform derivative convergence passes
+the finite-polynomial nonvanishing to this derivative. This full-product
+result applies to real-type potentials without an even-support assumption.
+
+For even potentials, `RealDiscriminantCritical` differentiates the exact
+identity P=Δ²−4 to obtain P′=2ΔΔ′. Nonvanishing of P′ off the real axis
+therefore forces every discriminant critical point to be real. The final
+theorem combines this with the common-neighborhood distant and central
+counts, boundary nonvanishing, unique simple distant roots, and exhaustion
+at every larger cutoff. It proves all assertions of Lemma 8.3 at finite p>1
+and any 0<r≤π/4. It does not yet locate each critical point in its spectral gap.
+
+Examples check repeated real roots, a nonreal-root counterexample, a
+nonconstant real-type potential with odd modes at p=3/2 for the full product,
+even conjugate modes at p=3 for the discriminant, nonvanishing in both
+half-planes below the Hilbert exponent, and uniform unique real-valued roots.
+
+Lemma 8.4's locally uniform ℓᵖ errors, Lemma 8.5's summable critical-point
+asymptotics, derivative product and root continuity, and the later action
+and Birkhoff results remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8322 declarations under `NLS`, including generated
+axioms. The current audit covers 8338 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6580,8 +6619,11 @@ formal matrix representation.
    neighborhoods and spectral thresholds for each tolerance, including joint
    limits with moving potentials. One neighborhood and integer cutoff now
    also give all critical-point counts, boundary nonvanishing, unique simple
-   distant points, and exhaustion at every larger central cutoff. Next prove
-   the real-type conclusions and develop the derivative product.
+   distant points, and exhaustion at every larger central cutoff. Gauss–Lucas
+   and the locally uniform derivative limit now prove reality for real-type
+   potentials, completing Lemma 8.3. Next prove the locally uniform ℓᵖ errors
+   of Lemma 8.4, then the critical-point asymptotics, derivative product, and
+   root continuity of Lemma 8.5.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

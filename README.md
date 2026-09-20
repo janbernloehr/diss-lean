@@ -834,13 +834,18 @@ installation is absent. No shell startup files are modified.
   `2N+1` roots counted with multiplicity in the central disc. These open discs
   exhaust the critical points, and their boundaries have none. The valid trace
   and derivative asymptotics and all three canonical/free ratios now hold on
-  one open convex potential
-  neighborhood beyond one spectral threshold for each tolerance. Joint limits
-  allow the potential to converge while the spectral parameter escapes.
+  one open convex potential neighborhood beyond one spectral threshold for
+  each tolerance. Joint limits allow the potential to converge while the
+  spectral parameter escapes.
   These estimates now supply one common integer cutoff and open convex
   neighborhood for all the critical-point counts, boundary nonvanishing,
   simplicity, and exhaustion, valid at every larger central cutoff.
-  Lemma 8.3's real-type conclusion remains open.
+  For real-type potentials every discriminant critical point is now proved
+  real. Gauss–Lucas gives real critical points of the finite central spectral
+  polynomials; locally uniform derivative limits preserve nonvanishing off
+  the real axis. The exact full-product identity transfers this to Δ′.
+  This completes Lemma 8.3's counts, locally uniform cutoff, exhaustion, and
+  reality assertions. The summable errors and derivative product remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -543,3 +543,8 @@ import NLS.ZakharovShabat.LocallyUniformExteriorProducts
 import NLS.ZakharovShabat.LocallyUniformDiscriminantAsymptotics
 import NLS.ZakharovShabat.FreeExteriorCutoffs
 import NLS.ZakharovShabat.UniformCriticalCounts
+import NLS.ComplexAnalysis.RealRootedDerivatives
+import NLS.ComplexAnalysis.NonvanishingLocallyUniformLimit
+import NLS.ZakharovShabat.RealCentralDerivative
+import NLS.ZakharovShabat.RealPeriodicProductDerivative
+import NLS.ZakharovShabat.RealDiscriminantCritical
