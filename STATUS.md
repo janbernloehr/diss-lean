@@ -2,11 +2,20 @@
 
 ## Implemented and checked
 
-The library has 566 modules and 4055 named public theorems. All compile on the
+The library has 575 modules and 4101 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ExponentInclusions` | Contractive coefficient and domain exponent inclusions, injectivity, composition, domain compatibility, and exact parity preservation |
+| `NLS.ZakharovShabat.ExponentOperatorCompatibility` | Scalar convolution, signed free operator, full operator, and actual spectral pencil commute with exponent inclusion |
+| `NLS.ZakharovShabat.ExponentDomainRegularity` | Exact pencil coordinates and recovery of the smaller-exponent domain from a larger-exponent equation with smaller-exponent potential and source |
+| `NLS.ZakharovShabat.ExponentRootSpaces` | Exact transport of every finite and full root space, all finite generalized dimensions, and full algebraic multiplicities |
+| `NLS.ZakharovShabat.ExponentSpectralMultiplicity` | Exact parity root-space transport and independence of both parity multiplicities and the full periodic spectrum from the ambient finite exponent |
+| `NLS.ZakharovShabat.ExponentCanonicalProducts` | Equality of central spectra, full/parity polynomials, normalized approximants, canonical products, and discriminants under exponent inclusion |
+| `NLS.ZakharovShabat.ExponentParityDensity` | Finite coefficient preimages and density of the smaller-exponent image inside every parity of a finite target space |
+| `NLS.ZakharovShabat.FiniteParityCompatibility` | Corrected shifted-product identity, odd/full discriminant formulas, and disjoint parity zeros for every finite p>1 |
+| `NLS.ZakharovShabat.FiniteDiscriminant` | Original parity/full spectral level sets, exact characteristic multiplicities, free normalization, and uniqueness of the continuous Hilbert extension at finite p>1 |
 | `NLS.ZakharovShabat.ParityFiniteApproximation` | Pair Fourier truncation, original domain lifts, parity preservation, convergence in each finite-exponent parity subspace, and density of included domain potentials |
 | `NLS.ZakharovShabat.ClassicalDomainPotential` | Compatible unit-interval representative for every Hilbert domain potential and its exact classical parity identities |
 | `NLS.ZakharovShabat.HilbertParityCompatibility` | Fixed-spectral potential continuity and the shifted-product identity for all even Hilbert potentials; exact difference four and disjoint parity zeros |
@@ -3934,7 +3943,8 @@ actual-spectrum existence theorem uses the proved strict `p>1` asymptotics.
 Later milestones prove the entire extension, central-cutoff independence,
 joint potential analyticity of the full product, and actual parity products.
 Classical discriminant identification for compatible continuous Hilbert
-potentials is proved below; the general finite-p extension remains open.
+potentials is proved below, followed by the intrinsic extension at every
+finite p>1.
 
 ## Section 8: locally uniform convergence and holomorphy
 
@@ -4005,7 +4015,8 @@ Analyticity and locally uniform convergence are in the spectral parameter
 for each fixed potential; no joint potential analyticity is claimed.
 
 Joint analytic dependence, central-cutoff independence, and actual parity
-products are proved below. Identification with the discriminant remains open.
+products are proved below, followed by identification with the intrinsic
+discriminant at every finite p>1.
 
 ## Section 8: exact analytic multiplicities
 
@@ -4171,7 +4182,8 @@ prove joint continuity of the canonical product, including at free lattice
 points and colliding roots. The following section proves full complex Fréchet
 smoothness, and the final subsection establishes the Banach power-series
 statement. Classical discriminant identification for compatible continuous Hilbert
-potentials is proved below; the general finite-p extension remains open.
+potentials is proved below, followed by the intrinsic extension at every
+finite p>1.
 
 ## Section 8: joint complex Fréchet smoothness
 
@@ -4362,8 +4374,8 @@ pair is a counted distant pair, hence independent of its label order. Uniqueness
 of locally uniform limits proves equality of both entire parity functions.
 One pair of entire functions serves every admissible central cutoff and root
 labeling on the actual potential neighborhood and retains the exact parity
-zero sets. The next milestone proves exact analytic orders; joint potential
-analyticity and discriminant compatibility remain open.
+zero sets. Subsequent milestones prove exact analytic orders, joint potential
+analyticity, and discriminant compatibility at every finite p>1.
 
 ## Section 8: exact original parity orders
 
@@ -4498,8 +4510,9 @@ mixed iterated derivatives are jointly analytic, including at spectral zeros
 and collisions. Pullback by the continuous linear period-one embedding proves
 joint analyticity in the source coefficient-potential space. This supplies
 the corrected parity-product analyticity assertion of Lemma 8.1(i) for finite
-p>1. It does not yet prove the common-discriminant identity `f+2=g−2`, its
-large-parameter asymptotics, or analyticity for noneven ambient potentials.
+p>1. The common-discriminant identity `f+2=g−2` is proved below by classical
+normalization, density, and exponent comparison. Its locally uniform spectral
+asymptotics and analyticity for noneven ambient potentials are separate items.
 
 ## Section 8: classical monodromy and boundary determinants
 
@@ -4563,10 +4576,10 @@ mixed iterated Fréchet derivative of the trace is analytic. These assertions
 hold at multiple roots as well; inversion is applied to the Volterra operator,
 whose invertibility does not require the boundary determinant to be nonzero.
 
-This gives analytic dependence on the continuous-potential space. The bridge
-to original coefficient spectral multiplicities, normalized infinite products,
-and finite-p distributional potentials remains open, as do the required
-large-spectral-parameter asymptotics.
+This gives analytic dependence on the continuous-potential space. Subsequent
+milestones prove the original multiplicity bridge, normalized infinite-product
+identities, and the intrinsic finite-p extension. The required locally uniform
+large-spectral-parameter asymptotics remain open.
 
 ## Section 8: original parity eigenvectors and classical monodromy
 
@@ -4598,9 +4611,9 @@ factors cannot vanish together. Exact intrinsic full-product factorization also
 makes every full-product zero a zero of the classical trace squared minus four.
 
 These are forward zero implications. The reverse spectral bridge is proved
-in the next milestone. Agreement of classical and original algebraic
-multiplicities, normalized entire-product identification, and extension to
-finite-p distributional potentials remain open.
+in the next milestone. Later results identify classical and original algebraic
+multiplicities, normalize the entire products, and extend the intrinsic
+discriminant identities to every finite p>1.
 
 ## Section 8: reverse parity bridge and exact spectral sets
 
@@ -4985,9 +4998,10 @@ initial columns: their normalized diagonal errors sum to at most
 `z` may vary arbitrarily. For every fixed complex shift `b`, the ratio
 `(Δ−b)/(2 cos z−b)` tends to one at each end. Multiplying the shifts `2` and
 `−2` gives the corresponding limit for `(Δ²−4)/((2 cos z)²−4)`.
-These statements concern fixed continuous potentials. Bounds near the real
-axis, the full-plane canonical quotient normalization, spectral-derivative
-asymptotics, and the finite-p compatibility extension remain open.
+These statements concern fixed continuous potentials. Subsequent milestones
+supply bounds near the real axis, full-plane canonical quotient normalization,
+and the finite-p compatibility extension. Locally uniform spectral trace and
+derivative asymptotics remain open.
 
 Examples use the coupled potential `(1,1)`, both imaginary signs,
 and real spectral part `100`. They check the exact trace-error bound `5/8`
@@ -5111,10 +5125,10 @@ double root at zero. A genuinely coupled potential with classical eigenvalue
 one gives canonical parity values zero and exactly four, and full value zero.
 The shifted identity also holds for that potential at every complex parameter.
 
-The following density argument now proves the shifted identity and intrinsic
-discriminant construction throughout the even Hilbert space. The compatibility
-identity beyond p=2 and locally uniform spectral-derivative asymptotics remain
-open.
+The following density argument proves the shifted identity and intrinsic
+discriminant construction throughout the even Hilbert space. The subsequent
+exponent comparison extends it to every finite p>1. Locally uniform spectral
+trace and derivative asymptotics remain open.
 
 ## Section 8: the intrinsic discriminant for all even Hilbert potentials
 
@@ -5156,15 +5170,71 @@ identities, the exact opposite-parity value four at any even root, the original
 spectral criterion at 1+i, and convergence of its finite classical traces.
 Free values at zero, pi, and pi/2 and joint source analyticity at p=3 are checked.
 
-For p other than two, the intrinsic even-product function is defined and
-analytic, but compatibility with the odd and full products still needs the
-cross-exponent spectral comparison. The general-p identity and locally uniform
-spectral-derivative asymptotics remain open.
+The next development supplies the cross-exponent spectral comparison and
+proves compatibility with the odd and full products for every finite p>1.
+The locally uniform spectral trace and derivative asymptotics remain open.
+
+## Section 8: exponent-independent spectral products and the finite-p discriminant
+
+`ExponentInclusions` supplies the canonical contractive maps on the original
+maximum-norm base and one-derivative domain pairs. Both maps are injective,
+preserve raw coefficients and parity, compose across intermediate exponents,
+and commute with the original domain inclusion. `ExponentOperatorCompatibility`
+identifies scalar potential multiplication, the signed free operator, the full
+operator, and the actual spectral pencil under these maps.
+
+`ExponentDomainRegularity` proves the reverse regularity needed for root chains.
+A larger-exponent domain vector has absolutely summable raw coefficients.
+Convolution with a smaller-exponent potential therefore belongs to the smaller
+base space. If its pencil source also belongs there, both signed coordinate
+equations recover smaller-exponent derivative coefficients, hence the vector
+belongs to the smaller one-derivative domain. No finite Fourier support or
+parity hypothesis is required for this comparison.
+
+`ExponentRootSpaces` applies this recovery inductively to every chain length.
+The inclusion maps the finite original root spaces onto their counterparts;
+it also maps onto the full generalized root spaces. All finite nullities and
+full algebraic multiplicities agree. `ExponentSpectralMultiplicity` preserves
+the parity intersections as well, identifying both original parity multiplicities
+and the full periodic spectrum across every increase of finite exponent.
+
+`ExponentCanonicalProducts` consequently identifies each central spectral set,
+its full and parity polynomials, and every normalized approximant. Their limits
+are exactly the same canonical full/parity products and discriminant. This
+comparison is coefficient-based and does not choose spectral labels.
+
+`ExponentParityDensity` shows that every finite truncation has a preimage in
+a smaller-exponent space, and those images are dense within each target parity.
+`FiniteParityCompatibility` transfers the Hilbert identity directly below p=2,
+and by density and continuity above p=2. For every finite p>1 and every even
+potential, the corrected products satisfy `f+2=g−2=Δ`, `g=Δ+2`, and
+`fg=Δ²−4`; the parity factors cannot share a zero.
+
+`FiniteDiscriminant` identifies the levels ±2 with the original parity spectra,
+and the squared level four with the original periodic spectrum. The full
+characteristic vanishing order is exactly the original algebraic multiplicity.
+Free normalization is twice the cosine. Agreement with the Hilbert discriminant
+on the dense absolutely summable potentials uniquely determines the extension,
+even among continuous functions at each fixed spectral parameter. Joint
+analyticity on the finite-p even space and the source period-one space was
+proved in `CanonicalDiscriminant`. This establishes the corrected product
+compatibility and full spectral characterization of Lemma 8.1(ii,iv).
+
+Regression examples compare p=1,2,3 inclusions and arbitrary generalized-chain
+lengths, retain signed complex modes, and exercise an inhomogeneous recovery
+and a negative parity residue. They verify the shifted identity below two at
+p=3/2. A p=3 potential with inverse-square-root coefficients is proved to have
+no Hilbert-space preimage; it nevertheless satisfies the shifted/full identities,
+the original spectral criterion at 1+i, and the exact characteristic multiplicity.
+
+The locally uniform trace/derivative asymptotics in Lemma 8.1(iii), the derivative
+product and critical-point development, and the later action/Birkhoff results
+remain open. The printed cosine quotient's domain also needs an explicit audit.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8142 declarations under `NLS`, including generated
+axioms. The current audit covers 8201 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6286,8 +6356,12 @@ formal matrix representation.
    potentials. The intrinsic discriminant has both parity and full product
    identities and is the limit of classical traces of finite Fourier
    approximations. Its even-product definition is jointly analytic at every
-   finite p>1. Next prove the cross-exponent spectral comparison to extend
-   compatibility beyond p=2, and prove the spectral-derivative asymptotics.
+   finite p>1. The cross-exponent comparison now proves exact transport of
+   original root spaces, spectra, multiplicities, and canonical products. Density
+   extends the shifted and full discriminant identities to every finite p>1,
+   with uniqueness of the continuous extension from summable Hilbert potentials.
+   Next audit and prove the spectral trace/derivative asymptotics and develop
+   the derivative product and critical points.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

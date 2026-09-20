@@ -12621,3 +12621,102 @@ example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (z : ℂ) :
 
 end
 end HilbertDiscriminantChecks
+
+namespace ExponentDiscriminantChecks
+open Set Complex Filter Topology NLS NLS.Fourier NLS.ZakharovShabat
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The pair and weighted domain inclusions compose through the Hilbert exponent.
+example (φ : PairSpace 1) :
+    pairExponentInclusion (by norm_num : (2 : ENNReal) ≤ 3)
+      (pairExponentInclusion (by norm_num : (1 : ENNReal) ≤ 2) φ) =
+    pairExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) φ := by
+  rw [pairExponentInclusion_trans]
+
+example (a : Domain 1) : ‖domainExponentInclusion (by simp : (1 : ENNReal) ≤ ⊤) a‖ ≤ ‖a‖ :=
+  norm_domainExponentInclusion_le _ a
+
+-- Signed nonzero Fourier modes retain their raw coefficient under the inclusion.
+example : (domainExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3)
+    ((scalarMode (-2) I), (scalarMode 2 1))).1.val (-2) = I := by
+  simp
+
+-- The full operator, not only its free part, commutes with a change of exponent.
+example (φ : PairSpace 1) (a : Domain 1) :
+    spectralPencil (by simp) (pairExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) φ) (1+I)
+      (domainExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) a) =
+    pairExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) (spectralPencil (by simp) φ (1+I) a) :=
+  spectralPencil_domainExponentInclusion (by simp) (by simp) (by norm_num) φ (1+I) a
+
+-- All finite generalized-chain dimensions agree, including the empty chain.
+example (φ : PairSpace 1) (n : ℕ) :
+    Module.finrank ℂ (periodicRootSpace (by simp) φ I n) =
+    Module.finrank ℂ (periodicRootSpace (by simp)
+      (pairExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) φ) I n) :=
+  finrank_periodicRootSpace_exponent (by simp) (by simp) (by norm_num) φ I n
+
+-- The reverse regularity argument accepts a genuine inhomogeneous source equation.
+example (φ b : PairSpace 1) (a : Domain 3)
+    (he : spectralPencil (by simp) (pairExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) φ) I a =
+      pairExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) b) :
+    ∃ c : Domain 1, domainExponentInclusion (by norm_num : (1 : ENNReal) ≤ 3) c = a :=
+  exists_domain_of_spectralPencil_exponent (by simp) (by norm_num) φ b I a he
+
+example (φ : PairSpace 2) : parityAlgebraicMultiplicity (by simp) φ (-3) 0 =
+    parityAlgebraicMultiplicity (by simp) (pairExponentInclusion (by norm_num : (2 : ENNReal) ≤ 3) φ) (-3) 0 :=
+  parityAlgebraicMultiplicity_exponent (by simp) (by simp) (by norm_num) φ 0 (-3)
+
+-- Both sides of the Hilbert threshold support the exact shifted identity.
+example (φ : PairSpace (ENNReal.ofReal (3/2))) (hφ : φ ∈ pairParitySubspace 0) (z : ℂ) :
+    canonicalParityProduct (by simp) φ 0 z+2 = canonicalParityProduct (by simp) φ 1 z-2 :=
+  canonicalParity_shifted_eq_finite (by simp) (by norm_num) φ hφ z
+
+private def slowCoefficients : Coeff 3 :=
+  ⟨fun n => (Weight.sobolev (1/2) n : ℂ)⁻¹,
+    Weight.inverse_sobolev_memlp (by norm_num) (by norm_num)⟩
+private def slowPotential : PairSpace 3 :=
+  (Coeff.periodDouble slowCoefficients, Coeff.periodDouble (I • slowCoefficients))
+private theorem slow_even : slowPotential ∈ pairParitySubspace 0 :=
+  ⟨Coeff.periodDouble_mem _, Coeff.periodDouble_mem _⟩
+
+-- This p=3 potential is provably outside the image of the Hilbert potential space.
+example : ¬ ∃ φ : PairSpace 2, pairExponentInclusion (by norm_num : (2 : ENNReal) ≤ 3) φ = slowPotential := by
+  rintro ⟨φ, hφ⟩
+  have he (n : ℤ) := congrArg (fun a : PairSpace 3 => a.1 (2*n)) hφ
+  simp only [pairExponentInclusion_apply, Coeff.exponentInclusion_apply, slowPotential,
+    Coeff.periodDouble_even] at he
+  have hm : Memℓp (fun n => (Weight.sobolev (1/2) n : ℂ)⁻¹) (2 : ENNReal) := by
+    have heq : (fun n => (Weight.sobolev (1/2) n : ℂ)⁻¹) =
+        (Coeff.periodHalve φ.1 : ℤ → ℂ) := by
+      funext n
+      exact (he n).symm
+    rw [heq]
+    exact lp.memℓp _
+  have h := (Weight.inverse_sobolev_memlp_iff (by norm_num : 0 < (2 : ENNReal).toReal) (1/2)).mp hm
+  norm_num at h
+
+example (z : ℂ) : canonicalParityProduct (by simp) slowPotential 0 z+2 =
+    canonicalParityProduct (by simp) slowPotential 1 z-2 :=
+  canonicalParity_shifted_eq_finite (by simp) (by norm_num) slowPotential slow_even z
+
+example (z : ℂ) : canonicalPeriodicProduct (by simp) slowPotential z =
+    (canonicalDiscriminant (by simp) slowPotential z)^2-4 :=
+  canonicalPeriodic_eq_discriminant_sq_sub_four_finite (by simp) (by norm_num) slowPotential slow_even z
+
+example : (canonicalDiscriminant (by simp) slowPotential (1+I))^2 = 4 ↔
+    (1+I) ∈ periodicSpectrum (by simp) slowPotential :=
+  canonicalDiscriminant_sq_eq_four_iff_finite (by simp) (by norm_num) slowPotential slow_even (1+I)
+
+-- The characteristic vanishing order retains full original algebraic multiplicity.
+example (z : ℂ) : analyticOrderAt (fun w => (canonicalDiscriminant (by simp) slowPotential w)^2-4) z =
+    (periodicAlgebraicMultiplicity (by simp) slowPotential z : ℕ∞) :=
+  analyticOrderAt_canonicalDiscriminant_sq_sub_four (by simp) (by norm_num) slowPotential slow_even z
+
+example : canonicalDiscriminant (by simp) (0 : PairSpace 3) Real.pi = -2 := by
+  rw [canonicalDiscriminant_zero_finite]
+  norm_num [freeDiscriminant]
+
+end
+end ExponentDiscriminantChecks

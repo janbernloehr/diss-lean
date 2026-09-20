@@ -514,3 +514,12 @@ import NLS.ZakharovShabat.HilbertParityCompatibility
 import NLS.ZakharovShabat.CanonicalDiscriminant
 import NLS.ZakharovShabat.HilbertDiscriminant
 import NLS.ZakharovShabat.HilbertDiscriminantApproximation
+import NLS.ZakharovShabat.ExponentInclusions
+import NLS.ZakharovShabat.ExponentOperatorCompatibility
+import NLS.ZakharovShabat.ExponentDomainRegularity
+import NLS.ZakharovShabat.ExponentRootSpaces
+import NLS.ZakharovShabat.ExponentSpectralMultiplicity
+import NLS.ZakharovShabat.ExponentCanonicalProducts
+import NLS.ZakharovShabat.ExponentParityDensity
+import NLS.ZakharovShabat.FiniteParityCompatibility
+import NLS.ZakharovShabat.FiniteDiscriminant

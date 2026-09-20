@@ -34,7 +34,8 @@
   is correct. Retain these distinctions when implementing Section 8; the
   corrected perturbed products are implemented, and their classical
   discriminant identification is proved for continuously represented even
-  Hilbert potentials. The general finite-p extension remains open.
+  Hilbert potentials. The intrinsic shifted identity and full product/spectrum
+  characterization now extend to every finite p>1.
 - Lemma 6.9's printed page-43 displacement estimate fails with its claimed
   local uniformity at zero. The actual signed single-mode family has roots
   `nπ±t` and Hilbert pair norm squared `2t²`, whereas the printed budget is
@@ -1607,9 +1608,21 @@ is now defined as `f+2`, jointly analytic for finite p>1. At p=2 it equals
 are the original parity spectra. Classical traces of any convergent even domain
 approximation have this intrinsic limit, with only Hilbert-norm convergence.
 
-Next, prove compatibility of the spectral products across sequence exponents,
-first on finite Fourier potentials, then use the proved parity approximation
-and continuity to establish the shifted identity at every finite p>1. The
-locally uniform spectral-derivative asymptotics also remain open.
+The exponent comparison is now proved for arbitrary common potentials. The canonical contractive base and domain inclusions
+commute with the actual spectral pencil. A larger-exponent domain vector has
+absolutely summable coefficients; its equation with a smaller-exponent potential
+and source recovers the derivative at that smaller exponent. Induction transports
+every finite generalized root space onto its counterpart. Full root spaces,
+spectra, and both parity multiplicities agree, hence so do all normalized central
+polynomials and all canonical products. Density of the Hilbert image above two,
+and direct comparison below two, establish `f+2=g−2` for every finite p>1.
+The squared discriminant minus four is the full product, with exactly the
+original spectral zeros and multiplicities. Its values on the dense absolutely
+summable Hilbert potentials uniquely determine the continuous extension.
+
+Next, address the locally uniform spectral trace and derivative asymptotics in
+Lemma 8.1(iii). Audit the printed quotient by cos at its free zeros before
+formalizing that uniform assertion; use the precise admissible spectral set.
+Then develop the derivative product and critical-point prerequisites in Section 8.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

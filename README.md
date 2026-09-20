@@ -813,8 +813,14 @@ installation is absent. No shell startup files are modified.
   `±2` give exactly the original parity spectra. Actual classical traces of
   convergent even domain approximations tend to this function using only
   Hilbert-norm convergence. The intrinsic even-product construction and joint
-  analyticity are available at every finite `p>1`; compatibility with the odd
-  and full products beyond `p=2` and the derivative asymptotics remain open.
+  analyticity are available at every finite `p>1`. Exponent inclusions now
+  identify every finite root-chain space, full root space, parity multiplicity,
+  and canonical product. Density of the Hilbert image above `p=2`, and direct
+  inclusion below it, prove `f+2=g−2` and `Δ²−4=fg` for every finite `p>1`.
+  The discriminant has the original full and parity spectra with their exact
+  multiplicities and is the unique continuous extension of the Hilbert values
+  on the dense absolutely summable potentials. The locally uniform spectral
+  trace and derivative asymptotics remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
