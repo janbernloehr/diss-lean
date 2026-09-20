@@ -582,3 +582,7 @@ import NLS.ZakharovShabat.SingleSpectralProductsUniform
 import NLS.ZakharovShabat.EntireSingleSpectralProducts
 import NLS.ZakharovShabat.SingleSpectralProductsExterior
 import NLS.ZakharovShabat.CriticalPointProducts
+import NLS.ZakharovShabat.SingleSpectralProductOrders
+import NLS.ZakharovShabat.CriticalPointProductOrders
+import NLS.ZakharovShabat.CriticalProductQuotient
+import NLS.ZakharovShabat.DiscriminantDerivativeProduct

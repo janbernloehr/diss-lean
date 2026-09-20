@@ -868,8 +868,11 @@ installation is absent. No shell startup files are modified.
   limit on the whole plane, with locally uniform derivative convergence.
   Its free value is exactly `−2 sin z`; for complete critical sequences it
   has exactly the critical zero set and the correct exterior normalization.
-  Matching analytic orders, identifying it with `Δ′`, and continuity of
-  ordered real-type roots remain next.
+  The product now has exactly the derivative's analytic orders, including
+  repeated central roots. Its filled quotient is bounded and identically
+  one, proving `Δ′(z)=2 ∏n (ξn−z)/πn` with locally uniform cutoff convergence
+  on the whole plane. Ordering and continuity at real-type potentials
+  remain next in Lemma 8.5.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

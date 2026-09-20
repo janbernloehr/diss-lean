@@ -13460,3 +13460,75 @@ example (ξ : ℤ → ℂ) (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3)
 
 end
 end SingleProductChecks
+
+namespace DerivativeProductChecks
+open Set Complex NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Three repeated finite roots contribute order three, rather than one distinct-root count.
+example : analyticOrderAt (fun z => singleSpectralPartialProduct (fun _ => I) z 1) I = 3 := by
+  rw [analyticOrderAt_singleSpectralPartialProduct]
+  norm_num [Int.card_Icc]
+  rfl
+
+-- The same finite product has order zero away from its repeated root.
+example : analyticOrderAt (fun z => singleSpectralPartialProduct (fun _ => I) z 1) 0 = 0 := by
+  rw [analyticOrderAt_singleSpectralPartialProduct]
+  simp [Complex.I_ne_zero]
+
+-- Every root fiber is finite even when the central enumeration has repetitions.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : CriticalPointLabeling (by simp) (by norm_num) φ hφ N ξ) (z : ℂ) :
+    {n : ℤ | ξ n = z}.Finite := h.finite_fiber z
+
+-- Filled common zeros have quotient exactly one, with no nonvanishing hypothesis.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : CriticalPointLabeling (by simp) (by norm_num) φ hφ N ξ)
+    (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3) :
+    criticalProductQuotient (by simp) φ ξ (ξ (-7)) = 1 := h.quotient_eq_one hξ _
+
+-- Below p=2, the literal symmetric product converges to the actual derivative at every point.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ ξ : ℤ → ℂ, ∀ z : ℂ,
+      Tendsto (fun M : ℕ => 2*∏ n ∈ Finset.Icc (-(M : ℤ)) (M : ℤ),
+        (ξ n-z)/(if n = 0 then 1 else (Real.pi : ℂ)*n)) atTop
+        (𝓝 (deriv (canonicalDiscriminant (by simp) φ) z)) := by
+  obtain ⟨N,ξ,_,_,ht,_⟩ := exists_discriminant_derivative_product (by simp) (by norm_num) φ hφ
+  exact ⟨ξ,fun z => ht.tendsto_at (Set.mem_univ z)⟩
+
+-- A complex one-sided potential has the product identity without a real-type assumption.
+example : ∃ ξ : ℤ → ℂ, ∀ z : ℂ,
+    deriv (canonicalDiscriminant (p := 3) (by simp) (lp.single 3 2 I, 0)) z =
+      entireSingleSpectralProduct ξ z := by
+  obtain ⟨N,ξ,_,_,_,he⟩ := exists_discriminant_derivative_product (p := 3) (by simp) (by norm_num)
+    (lp.single 3 2 I, 0)
+    ⟨Coeff.single_mem_paritySubspace 0 2 I (by omega), (Coeff.paritySubspace 0).zero_mem⟩
+  exact ⟨ξ,he⟩
+
+-- Differentiating the locally uniform product yields locally uniform convergence to the second derivative.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : CriticalPointLabeling (by simp) (by norm_num) φ hφ N ξ)
+    (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3) :
+    TendstoLocallyUniformlyOn (fun M => deriv (fun z => singleSpectralPartialProduct ξ z M))
+      (deriv (deriv (canonicalDiscriminant (by simp) φ))) atTop Set.univ :=
+  (h.tendstoLocallyUniformlyOn_derivative_product hξ).deriv
+    (Eventually.of_forall (fun M => (analyticOnNhd_singleSpectralPartialProduct ξ M).differentiableOn))
+    isOpen_univ
+
+-- One neighborhood gives a common displacement bound together with the exact products.
+example (φ : PairSpace 3) :
+    ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧ ∃ R : ℝ,
+      ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 → ∃ ξ : ℤ → ℂ, ∃ a : Coeff 3,
+        (∀ n, ξ n = (Real.pi : ℂ)*n+a n) ∧ ‖a‖ ≤ R ∧
+        ∀ z, deriv (canonicalDiscriminant (by simp) ψ) z = entireSingleSpectralProduct ξ z := by
+  obtain ⟨N,_,U,ho,_,hφ,_,R,_,h⟩ := exists_uniform_discriminant_derivative_products
+    (p := 3) (by simp) (by norm_num) φ
+  refine ⟨U,ho,hφ,R,fun ψ hψ heven => ?_⟩
+  obtain ⟨ξ,a,_,he,ha,hprod,_⟩ := h ψ hψ heven
+  exact ⟨ξ,a,he,ha,hprod⟩
+
+end
+end DerivativeProductChecks

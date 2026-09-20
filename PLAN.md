@@ -1713,9 +1713,16 @@ filled product has exactly the selected closed root set, hence exactly the
 critical zero set for a complete critical labeling. Its quotient by minus
 twice sine tends to one along every separated escaping path.
 
-Next match analytic multiplicities of this product to those of the
-discriminant derivative, then identify the two entire functions by a
-normalized quotient and Liouville. Prove ordering and real-type continuity
-of the critical roots to complete Lemma 8.5.
+Each critical-root fiber is now proved finite, and finite cutoff orders
+stabilize to the derivative's analytic multiplicities. Rouché stability
+on isolating discs transfers these orders to the entire product. The
+filled quotient is entire, tends to one on the free-disc exterior, and
+is globally bounded by maximum modulus. Liouville and an escaping
+cosine-zero sequence fix the quotient to one. This proves the derivative
+product identity and locally uniform cutoff convergence on the whole
+plane, together with the previously obtained locally uniform lp bounds.
+
+Next prove ordering and continuity of the critical roots at real-type
+potentials to complete Lemma 8.5, then gap interlacing and Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

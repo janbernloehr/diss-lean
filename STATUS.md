@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 634 modules and 4327 named public theorems. All compile on the
+The library has 638 modules and 4344 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SingleSpectralProductOrders` | Exact single-factor and cutoff analytic orders, finite critical-root fibers, and stabilization to actual derivative multiplicities |
+| `NLS.ZakharovShabat.CriticalPointProductOrders` | Critical isolating discs and Rouché stability give finite analytic orders of the entire product equal to those of the discriminant derivative |
+| `NLS.ZakharovShabat.CriticalProductQuotient` | Entire nonvanishing filled product/derivative quotient, exterior limit one, and global boundedness from free-disc maximum modulus |
+| `NLS.ZakharovShabat.DiscriminantDerivativeProduct` | Lemma 8.5 normalized derivative product identity, locally uniform cutoff convergence, and a common potential neighborhood with bounded lp critical displacements |
 | `NLS.ZakharovShabat.SingleSpectralProducts` | Literal normalized single cutoffs, exceptional denominator, exact free Euler factorization and sign, and finite relative decomposition |
 | `NLS.ZakharovShabat.SingleSpectralProductsUniform` | Locally uniform free and displaced single products off the lattice, retaining literal symmetric cutoffs |
 | `NLS.ZakharovShabat.EntireSingleSpectralProducts` | Entire extension and whole-plane locally uniform product and derivative convergence; exact free value and selected-root vanishing |
@@ -5707,9 +5711,8 @@ zero set of the entire discriminant derivative. Thus every even potential
 at finite p>1 has an entire normalized single product with exactly its
 critical zero set.
 
-Equality of analytic orders is not yet asserted for this product. Matching
-these orders and identifying the normalized entire quotient with one are
-the next steps toward the derivative product identity in Lemma 8.5.
+Equality of analytic orders and the normalized derivative product identity
+are completed in the following milestone.
 Ordered-root continuity and subsequent interlacing remain open.
 
 Eight public-API examples check the exceptional and negative denominators,
@@ -5718,10 +5721,48 @@ at a negative-index root, derivative convergence at p=3, the exact critical
 zero set at p=3/2 and for a complex one-sided potential, and exterior
 normalization along arbitrary separated escaping paths.
 
+## Section 8: Lemma 8.5, the derivative product identity
+
+`SingleSpectralProductOrders` computes each finite cutoff's extended
+analytic order as the number of root occurrences. Every critical-root
+fiber is finite: central occurrences lie in a finite index set, and any
+distant occurrence determines its index uniquely. Thus cutoff orders
+stabilize to the discriminant derivative's actual analytic multiplicity.
+
+`CriticalPointProductOrders` supplies a closed isolating disc at every
+spectral point. Rouché stability passes the finite-cutoff orders to the
+entire product. The resulting orders are finite and equal to those of
+`Δ′` everywhere, including all repeated roots and filled free centers.
+
+`CriticalProductQuotient` fills the quotient of the single product by
+`Δ′`. Equal finite orders make this quotient entire and nonvanishing.
+The separate free-normalized limits imply that the quotient tends to one
+along every separated escaping path. A common exterior bound, compactness,
+and maximum modulus across the free discs give global boundedness.
+
+`DiscriminantDerivativeProduct` applies Liouville and the escaping real
+cosine-zero sequence to fix this constant quotient to one. It proves
+`Δ′(z)=2 ∏n (ξn−z)/πn` as an identity of entire functions, with locally
+uniform convergence of the literal symmetric cutoffs on the whole plane.
+One open convex potential neighborhood supplies a common cutoff and lp
+displacement norm bound for complete critical sequences satisfying the
+identity. Product convergence here is locally uniform in the spectral
+parameter for each potential; no joint convergence of chosen labels is
+asserted.
+
+The ordering and continuity-at-real-type assertions of Lemma 8.5 remain
+open, as do subsequent gap interlacing and the refined Lemma 8.6 estimate.
+
+Eight examples check repeated finite roots of order three, order zero
+off those roots, finite fibers, quotient values at common zeros, the
+literal derivative product at p=3/2, a complex one-sided potential,
+locally uniform second-derivative convergence, and products with common
+potential-neighborhood displacement bounds.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8644 declarations under `NLS`, including generated
+axioms. The current audit covers 8672 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6872,8 +6913,10 @@ formal matrix representation.
    labels now have locally uniformly bounded lp displacements, with exact
    global analytic multiplicities. The normalized single product is now
    entire with exactly the critical zero set and the correct exterior
-   normalization. Next match its analytic orders and identify it with the
-   derivative, then prove continuity of ordered roots in Lemma 8.5.
+   normalization. Its analytic orders now agree with the derivative's,
+   and the filled quotient is identically one, proving the normalized
+   derivative product. Next prove ordering and continuity at real-type
+   potentials in Lemma 8.5, then interlacing and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient
