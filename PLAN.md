@@ -1772,8 +1772,15 @@ the center preserves these data. Real-part separation proves global
 lexicographic order on one potential neighborhood at every sufficiently
 large cutoff.
 
-Next prove uniqueness across cutoffs and continuity of the ordered
-periodic endpoint coordinates. Identify their central parity by continuity
+Ordered paired multiset uniqueness and central cutoff growth now prove
+that the complete ordered endpoint sequences are independent of cutoff.
+Canonical left and right endpoints retain spectral exhaustion, real-type
+reality, and lp displacements. One neighborhood gives common valid cutoffs
+for these fixed coordinates. At zero potential both endpoints are exactly
+`nπ`, with identically zero displacement coefficients.
+
+Next prove continuity of the canonical periodic endpoint coordinates.
+Identify their central parity by continuity
 along real-type paths, then prove central-gap interlacing and the refined
 offset estimate in Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.

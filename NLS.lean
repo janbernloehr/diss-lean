@@ -622,3 +622,9 @@ import NLS.ZakharovShabat.PeriodicEndpointLabeling
 import NLS.ZakharovShabat.PeriodicEndpointPairOrdering
 import NLS.ZakharovShabat.PeriodicEndpointOrder
 import NLS.ZakharovShabat.OrderedPeriodicEndpoints
+import NLS.SequenceSpaces.OrderedPairedUnique
+import NLS.ZakharovShabat.PeriodicEndpointCutoffGrowth
+import NLS.ZakharovShabat.OrderedPeriodicUniqueness
+import NLS.ZakharovShabat.CanonicalPeriodicEndpoints
+import NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints
+import NLS.ZakharovShabat.CanonicalPeriodicFree

@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 674 modules and 4463 named public theorems. All compile on the
+The library has 680 modules and 4490 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OrderedPairedUnique` | Ordered pair and finite paired-multiset uniqueness, retaining repeated values and lexicographic slot order |
+| `NLS.ZakharovShabat.PeriodicEndpointCutoffGrowth` | Exact distant root multisets, absorption into larger central multisets, and unchanged labels at larger valid cutoffs |
+| `NLS.ZakharovShabat.OrderedPeriodicUniqueness` | Uniqueness of ordered distant pairs, central enumerations, and full endpoint sequences across cutoffs |
+| `NLS.ZakharovShabat.CanonicalPeriodicEndpoints` | Canonical left and right endpoints, cutoff-independent identification, spectral exhaustion, lp displacements, and real-type reality |
+| `NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints` | Common neighborhood and all large cutoffs for the fixed canonical coordinates; eventual common labels in the even potential space |
+| `NLS.ZakharovShabat.CanonicalPeriodicFree` | Exact free central multiset and canonical endpoint values pi*n; both displacement coefficients vanish |
 | `NLS.SequenceSpaces.OrderedPairedEnumeration` | Ordered enumeration in two slots per finite index, preserving repeated values and order within and between pairs |
 | `NLS.ZakharovShabat.CentralPeriodicRoots` | Full central periodic multiset, exact algebraic counts, parity decomposition, spectral membership, and counted two-slot cardinality |
 | `NLS.ZakharovShabat.CentralPeriodicOrdering` | Full central endpoint labeling, conversion from parity labels, exact root and multiplicity formulas, and ordered paired existence |
@@ -6033,9 +6039,9 @@ therefore has an ordered complete endpoint sequence. At real-type
 potentials all its coordinates are real.
 
 The sorted central pairs' Fourier parity is not yet identified. This
-milestone establishes ordered existence; it does not yet establish
-uniqueness across cutoffs or endpoint-coordinate continuity. Those steps,
-then parity identification along real-type paths, are needed for indexed
+milestone establishes ordered existence. The next milestone proves
+uniqueness across cutoffs. Endpoint-coordinate continuity, then parity
+identification along real-type paths, are still needed for indexed
 central-gap interlacing. Lemma 8.6 remains open.
 
 Eight examples cover repeated complex paired enumeration, imaginary
@@ -6045,10 +6051,46 @@ lp preservation after central replacement, unchanged distant pair
 multisets under global sorting, and ordered real endpoints with lp
 displacements at p=3/2.
 
+## Section 8: canonical periodic endpoints independent of cutoff
+
+`OrderedPairedUnique` proves uniqueness of finite ordered paired
+multisets by viewing each index as two lexicographically ordered slots.
+Equal entries and equal real parts require no distinctness assumption.
+`PeriodicEndpointCutoffGrowth` identifies every distant pair with its
+original disc multiset and proves that increasing the central cutoff
+absorbs exactly the intervening pairs. The central enumeration grows
+without additional counting hypotheses; the full labeling grows whenever
+the larger cutoff has counting data.
+
+`OrderedPeriodicUniqueness` compares central enumerations at the maximum
+of two cutoffs and distant pairs outside it. Every complete globally
+ordered endpoint sequence is therefore unique, independently of cutoff.
+`CanonicalPeriodicEndpoints` defines fixed left and right coordinates,
+proves agreement with every ordered complete labeling, and retains exact
+spectral exhaustion, lp displacement coefficients, and real-type reality.
+
+`UniformCanonicalPeriodicEndpoints` identifies the common-neighborhood
+ordered constructions with these fixed coordinates at every sufficiently
+large cutoff. Nearby even potentials consequently have canonical labels
+at one common cutoff. This establishes common labeling data, not yet
+continuity of the endpoint coordinates.
+
+`CanonicalPeriodicFree` computes the free central multiset as two copies
+of every central lattice center. Enlarging the center to include any
+signed index and applying ordered uniqueness gives both canonical
+endpoints exactly `nπ`. Both lp displacement coefficients are zero.
+
+Eight examples check imaginary tie-breaking, double free multiplicity,
+cutoff-independent uniqueness, central enlargement without new counting
+data, negative free indices, vanishing displacement at p=3/2, a common
+nearby cutoff, and spectral exhaustion. Endpoint continuity and central
+parity identification remain the next prerequisites for central-gap
+interlacing and Lemma 8.6.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8935 declarations under `NLS`, including generated
+axioms. The current audit covers 8989 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7216,8 +7258,10 @@ formal matrix representation.
    Canonical coordinates interlace every sufficiently distant actual real
    gap. Complete periodic endpoints now have globally ordered paired
    enumerations with exact multiplicities, unchanged distant pair
-   multisets, and lp displacements. Next prove uniqueness across cutoffs,
-   endpoint continuity, and central parity identification, then central-gap
+   multisets, and lp displacements. Ordered labels are now unique across
+   cutoffs, defining canonical endpoints with common nearby cutoffs and
+   exact free values. Next prove endpoint continuity and central parity
+   identification, then central-gap
    interlacing and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type

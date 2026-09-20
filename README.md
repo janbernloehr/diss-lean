@@ -895,7 +895,10 @@ installation is absent. No shell startup files are modified.
   enumeration: central sorting preserves all original multiplicities,
   distant sorting preserves each pair multiset, and both displacements
   remain in ℓᵖ. One potential neighborhood supports the construction at
-  every sufficiently large cutoff. Uniqueness across cutoffs, continuity,
+  every sufficiently large cutoff. Ordered labels are now unique across
+  cutoffs, defining canonical left and right endpoints with ℓᵖ displacements.
+  The same canonical coordinates work at every large cutoff on one
+  neighborhood; both equal `nπ` at zero potential. Endpoint continuity
   and the parity of the ordered central pairs remain next before
   central-gap interlacing and Lemma 8.6.
 - No spectral or classical Birkhoff results are introduced as axioms.

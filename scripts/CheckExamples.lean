@@ -13936,3 +13936,67 @@ example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySu
 
 end
 end OrderedPeriodicChecks
+
+
+namespace CanonicalPeriodicChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Complex Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Lexicographic uniqueness distinguishes endpoints sharing the same real part.
+example (a b : ℂ) (h : ({a,b} : Multiset ℂ) = {-I,I}) (ho : complexLexLE a b) :
+    a = -I ∧ b = I :=
+  ordered_pair_unique complexLexLE a b (-I) I h ho (by norm_num [complexLexLE_iff])
+
+-- A collapsed pair retains both occurrences, including at a negative free index.
+example : (centralPeriodicRoots (p := 3) (by simp) 0 2).count (-(Real.pi : ℂ)) = 2 := by
+  have he : -(Real.pi : ℂ) = (Real.pi : ℂ)*(-1 : ℤ) := by simp
+  rw [count_centralPeriodicRoots, he, if_pos, periodicAlgebraicMultiplicity_zero]
+  rw [centralPeriodicSpectrum_zero]
+  exact Finset.mem_image.mpr ⟨-1,by norm_num,rfl⟩
+
+-- Arbitrary admissible cutoffs determine the same ordered sequence.
+example (φ : PairSpace 3) (N M : ℕ) (ξ η a b : ℤ → ℂ)
+    (h : PeriodicEndpointLabeling (by simp) φ N ξ η)
+    (h' : PeriodicEndpointLabeling (by simp) φ M a b)
+    (hw : ∀ n, complexLexLE (ξ n) (η n)) (hc : ∀ i j : ℤ, i < j → complexLexLE (η i) (ξ j))
+    (hw' : ∀ n, complexLexLE (a n) (b n)) (hc' : ∀ i j : ℤ, i < j → complexLexLE (b i) (a j)) :
+    ξ = a ∧ η = b := h.ordered_unique h' hw hc hw' hc'
+
+-- The central multiset can be enlarged without assuming new counting data.
+example (φ : PairSpace 3) (N K : ℕ) (ξ η : ℤ → ℂ)
+    (h : PeriodicEndpointLabeling (by simp) φ N ξ η) (hNK : N ≤ K) :
+    CentralPeriodicLabeling (by simp) φ K ξ η := h.central_at_larger_cutoff K hNK
+
+-- Both endpoint slots are exact at negative signed indices.
+example : canonicalPeriodicLeft (p := 3) (by simp) (by norm_num) 0
+      (pairParitySubspace 0).zero_mem (-7) = -7*(Real.pi : ℂ) ∧
+    canonicalPeriodicRight (p := 3) (by simp) (by norm_num) 0
+      (pairParitySubspace 0).zero_mem (-7) = -7*(Real.pi : ℂ) := by
+  simp [mul_comm]
+
+-- The free displacement vanishes as an lp element also below the Hilbert exponent.
+example : canonicalPeriodicLeftDisplacement (p := ENNReal.ofReal (3/2 : ℝ))
+      (by simp) (by norm_num) 0 (pairParitySubspace 0).zero_mem = 0 ∧
+    canonicalPeriodicRightDisplacement (p := ENNReal.ofReal (3/2 : ℝ))
+      (by simp) (by norm_num) 0 (pairParitySubspace 0).zero_mem = 0 := by simp
+
+-- One cutoff is valid throughout a neighborhood in the even potential space.
+example (φ : pairParitySubspace (p := 3) 0) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ᶠ ψ : pairParitySubspace (p := 3) 0 in 𝓝 φ,
+      PeriodicEndpointLabeling (by simp) ψ.val N
+        (canonicalPeriodicLeft (by simp) (by norm_num) ψ.val ψ.property)
+        (canonicalPeriodicRight (by simp) (by norm_num) ψ.val ψ.property) :=
+  exists_eventually_canonicalPeriodicEndpointLabeling (by simp) (by norm_num) φ
+
+-- Canonical labels preserve spectral exhaustion at all central and distant indices.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (z : ℂ) :
+    z ∈ periodicSpectrum (by simp) φ ↔ ∃ n : ℤ,
+      canonicalPeriodicLeft (by simp) (by norm_num) φ heven n = z ∨
+      canonicalPeriodicRight (by simp) (by norm_num) φ heven n = z :=
+  canonicalPeriodicEndpoints_exhaustive (by simp) (by norm_num) φ heven z
+
+end
+end CanonicalPeriodicChecks
