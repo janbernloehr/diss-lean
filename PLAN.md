@@ -1738,7 +1738,16 @@ coefficient are now defined, with exact multiplicities, reality at
 real-type potentials, the derivative product, common local norm bounds,
 and exact free values `nπ`.
 
-Next prove continuity of these canonical coordinates at real-type
-potentials to complete Lemma 8.5, then gap interlacing and Lemma 8.6.
+Joint continuity now gives locally uniform potential limits of the
+discriminant and its derivative. Compact root confinement and Rouché
+preserve zero-free compact sets and circular counts. Distant canonical
+coordinates are continuous at every even potential; imaginary parts of
+all canonical coordinates are continuous at real-type potentials.
+Restricting root multisets to central subsets now identifies analytic
+counts with counts of canonical indices, retaining repeated roots.
+
+Next use those counts and real-part ordering to prove central real-part
+continuity at real-type potentials and complete Lemma 8.5, then prove
+gap interlacing and Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

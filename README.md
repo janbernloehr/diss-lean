@@ -878,7 +878,12 @@ installation is absent. No shell startup files are modified.
   cutoff choices, defining canonical critical coordinates with exact
   multiplicities and the product identity. Their displacement norms have
   common local bounds; at zero potential the coordinates are exactly `nπ`.
-  Continuity at real-type potentials remains next in Lemma 8.5.
+  Locally uniform potential limits now preserve critical counts on zero-free
+  circles. Distant canonical coordinates are continuous at arbitrary even
+  potentials, and all coordinate imaginary parts are continuous at real-type
+  potentials. Analytic counts on central subsets equal counts of canonical
+  indices, including repetitions. Central real-part continuity remains
+  next in Lemma 8.5.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -597,3 +597,9 @@ import NLS.ZakharovShabat.OrderedCriticalUniqueness
 import NLS.ZakharovShabat.CanonicalCriticalPoints
 import NLS.ZakharovShabat.UniformCanonicalCriticalPoints
 import NLS.ZakharovShabat.CanonicalCriticalFree
+import NLS.ComplexAnalysis.AnalyticFamilyLimits
+import NLS.ComplexAnalysis.UniformRootStability
+import NLS.ComplexAnalysis.ZeroMultisetRestriction
+import NLS.ZakharovShabat.DiscriminantFamilyLimits
+import NLS.ZakharovShabat.CanonicalCriticalStability
+import NLS.ZakharovShabat.CriticalRootCounts

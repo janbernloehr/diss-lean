@@ -13667,3 +13667,67 @@ example (φ : PairSpace 3) : ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U �
 
 end
 end CanonicalCriticalChecks
+
+namespace CriticalStabilityChecks
+open Set Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis Filter Topology Metric
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- An entire family retains derivative convergence through a double root at a = 0.
+example : TendstoLocallyUniformlyOn (fun a : ℂ => deriv (fun z : ℂ => z^2-a))
+    (deriv (fun z : ℂ => z^2-(0 : ℂ))) (𝓝 0) univ :=
+  tendstoLocallyUniformlyOn_deriv_of_joint_continuous (fun a z : ℂ => z^2-a)
+    (by change Continuous (fun t : ℂ × ℂ => t.2^2-t.1); fun_prop)
+    (fun _ => by fun_prop) 0
+
+-- Compact confinement and uniqueness suffice for convergence of arbitrary root selections.
+example (F : ℕ → ℂ → ℂ) (g : ℂ → ℂ) (x : ℕ → ℂ) (c : ℂ)
+    (h : TendstoLocallyUniformlyOn F g atTop univ) (hg : Continuous g)
+    (hc : ∀ z ∈ closedBall 0 2, g z = 0 → z = c)
+    (hx : ∀ᶠ i in atTop, x i ∈ closedBall 0 2)
+    (hz : ∀ᶠ i in atTop, F i (x i) = 0) : Tendsto x atTop (𝓝 c) :=
+  tendsto_roots_of_unique_on_compact h (isCompact_closedBall 0 2) hg.continuousOn c hc x hx hz
+
+-- Varying even potentials controls the derivative on the whole spectral plane at p = 3/2.
+example (φ : pairParitySubspace (p := ENNReal.ofReal (3/2 : ℝ)) 0) :
+    TendstoLocallyUniformlyOn
+      (fun ψ : pairParitySubspace (p := ENNReal.ofReal (3/2 : ℝ)) 0 =>
+        deriv (canonicalDiscriminant (by simp) ψ.val))
+      (deriv (canonicalDiscriminant (by simp) φ.val)) (𝓝 φ) univ :=
+  tendstoLocallyUniformlyOn_discriminant_derivative_family (by simp) (by norm_num) φ
+
+-- A zero-free boundary preserves multiplicity counts, without a simplicity hypothesis.
+example (φ : pairParitySubspace (p := 3) 0) (c : ℂ)
+    (hne : ∀ z ∈ sphere c 1, deriv (canonicalDiscriminant (by simp) φ.val) z ≠ 0) :
+    ∀ᶠ ψ : pairParitySubspace (p := 3) 0 in 𝓝 φ,
+      analyticZeroCount (deriv (canonicalDiscriminant (by simp) ψ.val)) (closedBall c 1) =
+        analyticZeroCount (deriv (canonicalDiscriminant (by simp) φ.val)) (closedBall c 1) :=
+  eventually_discriminant_critical_count_eq (by simp) (by norm_num) φ c 1 (by norm_num) hne
+
+-- Central and negative indices have imaginary-part continuity even at root collisions.
+example (φ : pairParitySubspace (p := 3) 0) (hreal : IsRealType φ.val) :
+    ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+      (canonicalCriticalPoints (by simp) (by norm_num) ψ.val ψ.property (-7)).im) φ :=
+  continuousAt_canonicalCriticalPoints_im_of_realType (by simp) (by norm_num) φ hreal (-7)
+
+-- Full complex continuity holds in both tails at arbitrary even complex potentials.
+example (φ : pairParitySubspace (p := 3) 0) : ∃ N : ℕ, 0 < N ∧ ∀ n : ℤ, N < n.natAbs →
+    ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+      canonicalCriticalPoints (by simp) (by norm_num) ψ.val ψ.property n) φ :=
+  exists_continuousAt_distant_canonicalCriticalPoints (by simp) (by norm_num) φ
+
+-- Filtering labels by a subset counts all repeated occurrences, including singleton subsets.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ)
+    (hN : CriticalPointLabeling (by simp) (by norm_num) φ hφ N
+      (canonicalCriticalPoints (by simp) (by norm_num) φ hφ))
+    (z : ℂ) (hz : z ∈ closedBall 0 (centralCircleRadius N)) :
+    analyticZeroCount (deriv (canonicalDiscriminant (by simp) φ)) {z} =
+      ((Finset.Icc (-(N : ℤ)) N).filter
+        (fun n => canonicalCriticalPoints (by simp) (by norm_num) φ hφ n ∈ ({z} : Set ℂ))).card :=
+  canonicalCriticalPoints_count_eq_card_filter (by simp) (by norm_num) φ hφ N hN {z}
+    (singleton_subset_iff.mpr hz)
+
+end
+end CriticalStabilityChecks

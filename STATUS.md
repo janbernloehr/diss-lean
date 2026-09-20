@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 649 modules and 4382 named public theorems. All compile on the
+The library has 655 modules and 4401 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.AnalyticFamilyLimits` | Joint continuity gives locally uniform parameter limits; entire fibers give derivative limits |
+| `NLS.ComplexAnalysis.UniformRootStability` | Compact nonvanishing, Rouché count stability, confinement to open root neighborhoods, and convergence of unique compact root selections |
+| `NLS.ComplexAnalysis.ZeroMultisetRestriction` | Subset restriction of finite analytic-order support, root multisets, and analytic counts with multiplicities retained |
+| `NLS.ZakharovShabat.DiscriminantFamilyLimits` | Locally uniform discriminant and derivative limits as even potentials vary, compact nonvanishing, and circular critical-count stability |
+| `NLS.ZakharovShabat.CanonicalCriticalStability` | Common nearby label cutoffs, finite-block imaginary confinement, imaginary-part continuity at real-type potentials, and distant coordinate continuity at every even potential |
+| `NLS.ZakharovShabat.CriticalRootCounts` | Analytic critical counts on central subsets equal counts of selected canonical indices, including repeated roots |
 | `NLS.SequenceSpaces.OrderedEnumerationUnique` | Finite singleton sums identify list multisets; ordered finite enumerations with equal multiplicities agree at every index |
 | `NLS.ZakharovShabat.CriticalCutoffStability` | Exact membership and central multiset at every larger cutoff, preserving the complete critical sequence |
 | `NLS.ZakharovShabat.OrderedCriticalUniqueness` | Pointwise uniqueness of ordered critical sequences at equal or different admissible cutoffs |
@@ -5839,9 +5845,10 @@ cutoffs. The canonical symmetric products converge locally uniformly to
 zero-potential coordinates to `nπ` and proves that their full displacement
 coefficient is zero.
 
-Continuity of the canonical coordinates at real-type potentials remains
-the unfinished assertion of Lemma 8.5. No coordinate continuity or lp-norm
-continuity is inferred from the current local boundedness result.
+Full continuity of the canonical coordinates at real-type potentials
+remains the unfinished assertion of Lemma 8.5. The next milestone proves
+distant coordinate continuity and imaginary-part continuity; lp-norm
+continuity is not inferred from local boundedness.
 
 Eight examples exercise repeated finite-root uniqueness, enlargement of
 a cutoff-zero free labeling, canonical agreement at a negative index,
@@ -5849,10 +5856,47 @@ the signed free normalization, zero displacement at p=3/2, the literal
 canonical product for a complex even potential, canonical real ordering,
 and a neighborhood bound on the fixed canonical displacement function.
 
+## Section 8: potential limits and canonical root stability
+
+`AnalyticFamilyLimits` derives locally uniform spectral limits from joint
+parameter continuity. Entire fibers give locally uniform derivative
+limits. `UniformRootStability` proves compact nonvanishing, preservation
+of circular analytic counts by Rouché, confinement to arbitrary open
+neighborhoods of the limiting roots, and convergence of selected roots
+when the limiting root in a compact set is unique.
+
+`DiscriminantFamilyLimits` applies these results on the even-potential
+space at every finite p>1. Both the discriminant and its derivative vary
+locally uniformly on the whole spectral plane. Every zero-free circle
+preserves its full critical count on a potential neighborhood.
+
+`CanonicalCriticalStability` supplies one common nearby labeling cutoff.
+At real-type potentials all roots in any prescribed finite index block
+have uniformly small imaginary parts nearby. Thus every canonical
+coordinate's imaginary part is continuous there, including at collisions.
+Unique distant roots give full complex coordinate continuity in both
+tails at arbitrary even potentials.
+
+`ZeroMultisetRestriction` filters root multisets without losing analytic
+multiplicities. `CriticalRootCounts` identifies the analytic critical
+count on any subset of a valid central disc with the number of canonical
+indices in that subset. Repeated central roots contribute every occurrence.
+
+Central real-part continuity at real-type potentials is still pending;
+this milestone supplies the counts needed to combine Rouché stability
+with real-part ordering. No full central coordinate or lp-norm continuity
+is claimed yet.
+
+Seven public-API examples cover an entire family through a double root,
+compact unique-root convergence, derivative family limits at p=3/2,
+circular multiplicity counts, imaginary-part continuity at a negative
+index, complex continuity in both distant tails, and singleton-subset
+counts retaining repeated canonical labels.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8770 declarations under `NLS`, including generated
+axioms. The current audit covers 8790 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7009,8 +7053,11 @@ formal matrix representation.
    globally ordered critical sequences with the same distant labels and
    common local lp bounds. Ordered labels are now unique across
    cutoffs, defining canonical coordinates with the exact free values
-   and common local displacement bounds. Next prove continuity at
-   real-type potentials in Lemma 8.5, then interlacing and Lemma 8.6.
+   and common local displacement bounds. Distant coordinates are now
+   continuous at arbitrary even potentials, and all imaginary parts are
+   continuous at real-type potentials. Central subset counts now agree
+   with canonical index counts. Next prove central real-part continuity
+   in Lemma 8.5, then interlacing and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient
