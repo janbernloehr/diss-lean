@@ -530,3 +530,7 @@ import NLS.ZakharovShabat.DiscriminantExteriorDerivative
 import NLS.ZakharovShabat.FreeSineExteriorBounds
 import NLS.ZakharovShabat.DiscriminantDerivativeRatio
 import NLS.ZakharovShabat.DiscriminantCriticalLocalization
+import NLS.ComplexAnalysis.SimpleAnalyticZero
+import NLS.ZakharovShabat.FreeDerivativeZeroCounts
+import NLS.ZakharovShabat.DiscriminantCriticalCounts
+import NLS.ZakharovShabat.DiscriminantCriticalDistribution

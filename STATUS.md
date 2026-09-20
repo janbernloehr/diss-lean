@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 582 modules and 4137 named public theorems. All compile on the
+The library has 586 modules and 4151 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.SimpleAnalyticZero` | A count-one multiset gives a single root with exact multiplicity; finite orders give uniqueness among all zeros and analytic order one |
+| `NLS.ZakharovShabat.FreeDerivativeZeroCounts` | Free center distances and central selection, simple free critical points, count one in discs of radius less than π, and central count 2N+1 |
+| `NLS.ZakharovShabat.DiscriminantCriticalCounts` | Strict Rouché inequality beyond one cutoff, exact distant and central derivative counts, and nonvanishing on both families of boundary circles |
+| `NLS.ZakharovShabat.DiscriminantCriticalDistribution` | Unique simple critical points in distant open discs and complete exhaustion by the central and distant discs, with one fixed-potential cutoff |
 | `NLS.ZakharovShabat.FreeSineExteriorBounds` | Nonvanishing off the free lattice, strip reciprocal bounds, explicit height-one exponential lower bound, and a global normalized reciprocal bound on every separated exterior |
 | `NLS.ZakharovShabat.DiscriminantDerivativeRatio` | Conversion of additive to relative derivative errors and the free derivative ratio limit with uniform spectral thresholds at each fixed finite-p potential |
 | `NLS.ZakharovShabat.DiscriminantCriticalLocalization` | Entire nontrivial derivative, confinement of large critical points to arbitrary small free discs, finite analytic orders, punctured isolation, compact finiteness, and exact free critical lattice |
@@ -5304,15 +5308,55 @@ bounds and ratio convergence at free cosine zeros, an imaginary derivative
 perturbation at π/2, tolerance 1/100, confinement to radius-π/16 discs, compact
 finiteness on two disjoint balls, finite order at 1+i, and negative free indices.
 
-Local uniformity over potential neighborhoods remains open. Lemma 8.3 still
-requires the exact count one in each distant disc and 2N+1 in the central disc,
-as well as the real-type conclusion. The derivative product and the subsequent
-summable critical-point asymptotics also remain open.
+Local uniformity over potential neighborhoods remains open. The following
+milestone proves the fixed-potential exact counts and exhaustion in Lemma 8.3.
+Its real-type conclusion, the derivative product, and the subsequent summable
+critical-point asymptotics remain open.
+
+## Section 8: exact critical-point counts and distribution at a fixed potential
+
+`FreeDerivativeZeroCounts` proves that each free critical point nπ has analytic
+order one for `−2 sin z`. A closed disc centered at nπ with radius less than π
+contains no other free zero, so its analytic count is one. The central closed
+disc of radius `(N+1/2)π` contains exactly the indices `−N,…,N`, giving count
+`2N+1`. This includes the zero mode at N=0.
+
+`DiscriminantCriticalCounts` turns derivative ratio error at most one half into
+the strict Rouché boundary inequality. One integer cutoff works for both all
+distant free circles and all larger central circles. Rouché's theorem proves
+count one in every distant disc and count `2K+1` inside every central circle
+with K above the cutoff. Both families of boundaries have no critical points.
+
+`SimpleAnalyticZero` uses the zero multiset to turn count one into an actual
+root with its exact multiplicity function. Analyticity and finite orders rule
+out any additional roots omitted by natural-order conversion. Thus the root
+is unique and has analytic order one.
+
+`DiscriminantCriticalDistribution` applies this result to Δ′. The unique root
+lies strictly inside each distant disc because its boundary is zero-free.
+The earlier exterior localization, with a larger common cutoff, shows that
+every critical point lies either in the central open disc or in a distant open
+disc whose index has absolute value greater than the cutoff. The final theorem
+combines uniqueness, simplicity, the central counts and boundary nonvanishing,
+and exhaustion. It holds at every fixed even potential for finite p>1 and any
+radius `0<r≤π/4`.
+
+Regression examples check orders at zero and negative indices, central counts
+one and seven, inclusion of index −3 and exclusion of −4 at cutoff three, a
+nonreal shifted linear zero for the generic uniqueness theorem, unique actual
+critical points in radius-π/16 discs at p=3, the central count with its zero-free
+boundary, and complete exhaustion at radius π/4.
+
+This proves the fixed-potential complex counting and exhaustion part of
+Lemma 8.3. Uniform cutoffs on potential neighborhoods and reality of critical
+points for real-type potentials remain open, as do the derivative product and
+summable asymptotics of the critical points. The full dissertation remains
+incomplete.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8252 declarations under `NLS`, including generated
+axioms. The current audit covers 8277 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6443,8 +6487,11 @@ formal matrix representation.
    establish local uniformity over potentials. The normalized sine bound and
    fixed-potential derivative ratio are now proved. Large critical points are
    confined to arbitrarily small free discs; all have finite orders and form
-   a set finite on compact regions. Next prove the exact distant and central
-   critical-point counts, the real-type conclusions, and the derivative product.
+   a set finite on compact regions. Rouché now proves the fixed-potential
+   distant count one and central count 2N+1, with zero-free boundaries. Each
+   distant critical point is unique and simple, and the central and distant
+   open discs exhaust all critical points. Next establish locally uniform
+   cutoffs, the real-type conclusions, and the derivative product.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -829,8 +829,12 @@ installation is absent. No shell startup files are modified.
   for each fixed potential. Every sufficiently large critical point lies in
   an arbitrarily small free disc. The derivative is nontrivial and entire;
   its zeros are isolated, have finite orders, and are finite on compact sets.
-  The free critical set is exactly `πℤ`. Local uniformity over potential
-  neighborhoods and the exact critical-point counts remain open.
+  The free critical set is exactly `πℤ`. Rouché's theorem now proves one
+  simple critical point in each sufficiently distant free disc and exactly
+  `2N+1` roots counted with multiplicity in the central disc. These open discs
+  exhaust the critical points, and their boundaries have none. The cutoff is
+  proved for each fixed potential; local uniformity over potential neighborhoods
+  and the real-type conclusion remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

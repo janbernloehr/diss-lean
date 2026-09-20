@@ -1641,10 +1641,16 @@ inside arbitrary radius-r free discs, for 0<r≤π/4. The entire derivative is
 nontrivial, with finite orders, isolated zeros, and finitely many zeros on
 every compact set. Its zero-potential critical set is exactly πℤ.
 
-Next, establish local uniformity over potential neighborhoods and the exact
-Rouché counts in distant discs and the central disc for Lemma 8.3. Prove its
-real-type conclusion and develop the derivative product and summable
-critical-point asymptotics. These remain distinct from the fixed-potential
-ratio and confinement estimates.
+The free derivative now has exact order one at each lattice point, count one
+in a disc of radius less than π around it, and count 2N+1 in the central disc.
+Rouché transfers these counts to Δ′ beyond a fixed-potential cutoff, with no
+boundary zeros. The count-one multiset gives a unique simple critical point
+strictly inside each distant disc. The central and distant open discs exhaust
+all critical points, with one common cutoff and any 0<r≤π/4.
+
+Next, establish local uniformity over potential neighborhoods for the valid
+asymptotics and the counts, and prove Lemma 8.3's real-type conclusion. Develop
+the derivative product and summable critical-point asymptotics. These remain
+separate from the fixed-potential complex distribution theorem.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

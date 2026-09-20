@@ -12858,3 +12858,80 @@ example (n : ℕ) : deriv (canonicalDiscriminant (by simp) (0 : PairSpace 3)) (f
 
 end
 end DerivativeRatioChecks
+
+namespace CriticalCountChecks
+open Set Complex Metric NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- Free critical zeros have order one, including zero and negative indices.
+example : analyticOrderAt (fun z : ℂ => -2*sin z) 0 = 1 := by
+  simpa using analyticOrderAt_free_derivative 0
+example : analyticOrderAt (fun z : ℂ => -2*sin z) ((Real.pi : ℂ)*(-7 : ℤ)) = 1 :=
+  analyticOrderAt_free_derivative (-7)
+example : analyticZeroCount (fun z : ℂ => -2*sin z)
+    (closedBall ((Real.pi : ℂ)*(-7 : ℤ)) (Real.pi/8)) = 1 :=
+  analyticZeroCount_free_derivative_disc (by positivity) (by linarith [Real.pi_pos]) (-7)
+
+-- The central count includes the zero mode and both signs of every index.
+example : analyticZeroCount (fun z : ℂ => -2*sin z) (closedBall 0 (centralCircleRadius 0)) = 1 := by
+  simpa using analyticZeroCount_free_derivative_central 0
+example : analyticZeroCount (fun z : ℂ => -2*sin z) (closedBall 0 (centralCircleRadius 3)) = 7 := by
+  simpa using analyticZeroCount_free_derivative_central 3
+example : (Real.pi : ℂ)*(-4 : ℤ) ∉ closedBall 0 (centralCircleRadius 3) := by
+  rw [free_center_mem_closedCentralCircle_iff]
+  norm_num
+example : (Real.pi : ℂ)*(-3 : ℤ) ∈ closedBall 0 (centralCircleRadius 3) := by
+  rw [free_center_mem_closedCentralCircle_iff]
+  norm_num
+
+-- The generic count-one theorem also handles a zero away from the real axis.
+example : ∃ x ∈ closedBall (I : ℂ) 1, x-I = 0 ∧
+    analyticOrderAt (fun z : ℂ => z-I) x = 1 ∧
+    ∀ z ∈ closedBall (I : ℂ) 1, z-I = 0 ↔ z = x := by
+  apply exists_unique_simple_analytic_zero (by intro z hz; fun_prop)
+  · intro z hz
+    by_cases he : z = I
+    · subst z
+      simp
+    · rw [analyticOrderAt_id_sub_const_of_ne he]
+      simp
+  · apply (finite_singleton I).subset
+    intro z hz
+    exact sub_eq_zero.mp hz.2
+  · rw [analyticZeroCount_eq_order_of_isolated _ _ _ (by norm_num)
+      (fun z _ hz => sub_eq_zero.mp hz)]
+    simp [analyticOrderNatAt]
+
+-- A fixed non-Hilbert exponent has a unique actual critical point in each distant closed disc.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs → ∃! x : ℂ,
+      x ∈ closedBall ((Real.pi : ℂ)*n) (Real.pi/16) ∧
+        deriv (canonicalDiscriminant (by simp) φ) x = 0 := by
+  obtain ⟨N, _, hd, _, _⟩ := exists_discriminant_critical_distribution (by simp) (by norm_num) φ hφ
+    (by positivity : 0 < Real.pi/16) (by linarith [Real.pi_pos])
+  refine ⟨N, fun n hn => ?_⟩
+  obtain ⟨x, hx, hx0, _, hu⟩ := hd n hn
+  exact ⟨x, ⟨ball_subset_closedBall hx, hx0⟩, fun z hz => (hu z hz.1).mp hz.2⟩
+
+-- All larger central contours have the exact count and no boundary critical points.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ N : ℕ, ∀ K : ℕ, N ≤ K →
+      analyticZeroCount (deriv (canonicalDiscriminant (by simp) φ))
+        (closedBall 0 (centralCircleRadius K)) = 2*K+1 ∧
+      ∀ z ∈ sphere 0 (centralCircleRadius K), deriv (canonicalDiscriminant (by simp) φ) z ≠ 0 := by
+  obtain ⟨N, _, _, hc⟩ := exists_discriminant_critical_counts (by simp) (by norm_num) φ hφ
+    (by positivity : 0 < Real.pi/4) le_rfl
+  exact ⟨N, hc⟩
+
+-- The same cutoff separates central roots from all distant open discs.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ N : ℕ, ∀ z : ℂ, deriv (canonicalDiscriminant (by simp) φ) z = 0 →
+      z ∈ ball 0 (centralCircleRadius N) ∨
+        ∃ n : ℤ, N < n.natAbs ∧ z ∈ ball ((Real.pi : ℂ)*n) (Real.pi/4) := by
+  obtain ⟨N, _, _, _, he⟩ := exists_discriminant_critical_distribution (by simp) (by norm_num) φ hφ
+    (by positivity : 0 < Real.pi/4) le_rfl
+  exact ⟨N, he⟩
+
+end
+end CriticalCountChecks
