@@ -1722,7 +1722,16 @@ cosine-zero sequence fix the quotient to one. This proves the derivative
 product identity and locally uniform cutoff convergence on the whole
 plane, together with the previously obtained locally uniform lp bounds.
 
-Next prove ordering and continuity of the critical roots at real-type
-potentials to complete Lemma 8.5, then gap interlacing and Lemma 8.6.
+Finite multisets can now be enumerated in order on prescribed finite
+ordered index sets, retaining repetitions. A separate complex lexicographic
+relation orders the central critical multiset. Replacing the central head
+preserves complete labeling and all multiplicities. Real-part bounds order
+the two distant tails and separate them from the central cluster. Thus
+complete ordered critical sequences now exist on a common potential
+neighborhood, with lp norm bounds and the exact derivative product.
+
+Next prove uniqueness of ordered labels across sufficiently large cutoffs
+and continuity at real-type potentials to complete Lemma 8.5, then gap
+interlacing and Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

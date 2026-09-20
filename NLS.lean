@@ -586,3 +586,8 @@ import NLS.ZakharovShabat.SingleSpectralProductOrders
 import NLS.ZakharovShabat.CriticalPointProductOrders
 import NLS.ZakharovShabat.CriticalProductQuotient
 import NLS.ZakharovShabat.DiscriminantDerivativeProduct
+import NLS.SequenceSpaces.OrderedFiniteEnumeration
+import NLS.ComplexAnalysis.LexicographicOrder
+import NLS.ZakharovShabat.CentralCriticalReordering
+import NLS.ZakharovShabat.CriticalPointOrder
+import NLS.ZakharovShabat.OrderedCriticalProducts

@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 638 modules and 4344 named public theorems. All compile on the
+The library has 643 modules and 4360 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OrderedFiniteEnumeration` | Relation-based ordered enumeration of a multiset on any finite linearly ordered index set, preserving repetitions |
+| `NLS.ComplexAnalysis.LexicographicOrder` | Separate complex lexicographic key and relation, totality and antisymmetry, real-part comparison, and reduction to real order |
+| `NLS.ZakharovShabat.CentralCriticalReordering` | Central multiset re-enumeration preserves complete labeling; existence of a sorted central head |
+| `NLS.ZakharovShabat.CriticalPointOrder` | Central and distant real-part bounds, strict separation involving either tail, and global lexicographic ordering from central sorting |
+| `NLS.ZakharovShabat.OrderedCriticalProducts` | Ordered complete critical roots with common local lp displacement bounds and exact normalized derivative products; distant labels preserved |
 | `NLS.ZakharovShabat.SingleSpectralProductOrders` | Exact single-factor and cutoff analytic orders, finite critical-root fibers, and stabilization to actual derivative multiplicities |
 | `NLS.ZakharovShabat.CriticalPointProductOrders` | Critical isolating discs and Rouché stability give finite analytic orders of the entire product equal to those of the discriminant derivative |
 | `NLS.ZakharovShabat.CriticalProductQuotient` | Entire nonvanishing filled product/derivative quotient, exterior limit one, and global boundedness from free-disc maximum modulus |
@@ -5750,8 +5755,9 @@ identity. Product convergence here is locally uniform in the spectral
 parameter for each potential; no joint convergence of chosen labels is
 asserted.
 
-The ordering and continuity-at-real-type assertions of Lemma 8.5 remain
-open, as do subsequent gap interlacing and the refined Lemma 8.6 estimate.
+The ordering assertion is proved in the following milestone. Continuity
+at real-type potentials, subsequent gap interlacing, and the refined
+Lemma 8.6 estimate remain open.
 
 Eight examples check repeated finite roots of order three, order zero
 off those roots, finite fibers, quotient values at common zeros, the
@@ -5759,10 +5765,47 @@ literal derivative product at p=3/2, a complex one-sided potential,
 locally uniform second-derivative convergence, and products with common
 potential-neighborhood displacement bounds.
 
+## Section 8: ordered complete critical sequences
+
+`OrderedFiniteEnumeration` sorts a finite multiset on any prescribed finite
+linearly ordered index set. Sorting retains repeated values and supplies
+the order relation at every ordered pair of indices. The comparison is an
+explicit relation, allowing `LexicographicOrder` to implement the source's
+real-part-first complex order separately from Lean's usual complex order.
+
+`CentralCriticalReordering` proves that replacing the central head by any
+enumeration of the same multiset preserves the complete critical labeling.
+It then constructs a sorted central enumeration, with all analytic
+multiplicities and the distant labels retained.
+
+`CriticalPointOrder` bounds central real parts by the central radius and
+distant real parts within a quarter pi of their signed free centers.
+Increasing indices have strictly increasing real parts whenever at least
+one is distant. Consequently sorting the central head orders the entire
+bi-infinite critical sequence lexicographically.
+
+`OrderedCriticalProducts` proves that this finite reordering preserves lp
+membership with an explicit cutoff-only increase in the norm bound. One
+open convex potential neighborhood therefore supplies a common cutoff,
+a common displacement bound, complete ordered critical roots, and the
+exact normalized derivative product with locally uniform spectral cutoff
+convergence. Distant indices remain unchanged by the construction.
+
+This proves existence of ordered complete critical sequences as required
+in Lemma 8.5. Uniqueness across cutoff choices and coordinate continuity at
+real-type potentials have not yet been proved. No continuity of the
+arbitrary choices used in these existence statements is asserted.
+
+Eight examples cover imaginary tie-breaking, priority of real-part
+comparison, reduction to real order, sorted repeated values on signed
+indices, strict separation of the two tails, exact multiplicities and lp
+membership at p=3/2, real ordered critical sequences at real-type potentials,
+and a common neighborhood retaining bounds and the derivative product.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8672 declarations under `NLS`, including generated
+axioms. The current audit covers 8720 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6915,8 +6958,11 @@ formal matrix representation.
    entire with exactly the critical zero set and the correct exterior
    normalization. Its analytic orders now agree with the derivative's,
    and the filled quotient is identically one, proving the normalized
-   derivative product. Next prove ordering and continuity at real-type
-   potentials in Lemma 8.5, then interlacing and Lemma 8.6.
+   derivative product. Sorting the finite central multiset now gives
+   globally ordered critical sequences with the same distant labels and
+   common local lp bounds. Next prove uniqueness across cutoffs and
+   continuity at real-type potentials in Lemma 8.5, then interlacing
+   and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -13532,3 +13532,70 @@ example (φ : PairSpace 3) :
 
 end
 end DerivativeProductChecks
+
+namespace OrderedCriticalChecks
+open Set Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Imaginary parts break ties in the real part.
+example : complexLexLE (-I) I ∧ ¬complexLexLE I (-I) := by
+  norm_num [complexLexLE_iff]
+
+-- A strict real-part comparison takes priority over arbitrarily reversed imaginary parts.
+example : complexLexLE (100*I) (1-100*I) := by
+  apply complexLexLE_of_re_lt
+  norm_num
+
+-- The source's order reduces to the usual order for real numbers.
+example (a b : ℝ) : complexLexLE (a : ℂ) (b : ℂ) ↔ a ≤ b :=
+  complexLexLE_ofReal_iff a b
+
+-- Sorting on signed indices preserves repetitions and gives the required relation at every pair of indices.
+example : ∃ ξ : ℤ → ℂ, (∑ n ∈ Finset.Icc (-1) 1, ({ξ n} : Multiset ℂ)) = {I,-I,I} ∧
+    ∀ i ∈ Finset.Icc (-1) 1, ∀ j ∈ Finset.Icc (-1) 1, i ≤ j → complexLexLE (ξ i) (ξ j) := by
+  apply exists_ordered_finset_multiset_enumeration
+  norm_num [Int.card_Icc]
+  rfl
+
+-- The two tails are strictly separated in real part across the entire central cluster.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : CriticalPointLabeling (by simp) (by norm_num) φ hφ N ξ) :
+    (ξ (-((N : ℤ)+1))).re < (ξ ((N : ℤ)+1)).re :=
+  h.re_lt_of_distant _ _ (by omega) (Or.inl (by omega))
+
+-- Below p=2, sorted roots still have lp displacements and exact global multiplicities.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ ξ : ℤ → ℂ, Monotone (fun n => complexLexKey (ξ n)) ∧
+      Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) (ENNReal.ofReal (3/2 : ℝ)) ∧
+      ∀ z, (∑ᶠ n : ℤ, if ξ n = z then (1 : ℕ) else 0) =
+        analyticOrderNatAt (deriv (canonicalDiscriminant (by simp) φ)) z := by
+  obtain ⟨N,ξ,h,hs,hlp⟩ := exists_ordered_criticalPointLabeling_memℓp (by simp) (by norm_num) φ hφ
+  exact ⟨ξ,hs,hlp,h.multiplicity⟩
+
+-- At a real-type potential this gives a nondecreasing real sequence of all critical points.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) :
+    ∃ ξ : ℤ → ℂ, Monotone (fun n => (ξ n).re) ∧ (∀ n, (ξ n).im = 0) ∧
+      ∀ z, deriv (canonicalDiscriminant (by simp) φ) z = 0 ↔ ∃ n, ξ n = z := by
+  obtain ⟨N,ξ,h,hs,_⟩ := exists_ordered_criticalPointLabeling_memℓp (by simp) (by norm_num) φ hφ
+  exact ⟨ξ,fun _ _ hij => re_le_of_complexLexLE (hs hij),
+    fun n => discriminant_critical_im_eq_zero_of_realType (by simp) (by norm_num) φ hφ hreal (h.is_critical n),
+    h.exhaustive⟩
+
+-- A common neighborhood controls sorted displacements and keeps the derivative product identity.
+example (φ : PairSpace 3) :
+    ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧ ∃ R : ℝ,
+      ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 → ∃ ξ : ℤ → ℂ, ∃ a : Coeff 3,
+        Monotone (fun n => complexLexKey (ξ n)) ∧
+        (∀ n, ξ n = (Real.pi : ℂ)*n+a n) ∧ ‖a‖ ≤ R ∧
+        ∀ z, deriv (canonicalDiscriminant (by simp) ψ) z = entireSingleSpectralProduct ξ z := by
+  obtain ⟨N,_,U,ho,_,hφ,_,R,_,h⟩ := exists_uniform_ordered_critical_products
+    (p := 3) (by simp) (by norm_num) φ
+  refine ⟨U,ho,hφ,R,fun ψ hψ heven => ?_⟩
+  obtain ⟨ξ,a,_,hs,he,ha,hprod,_⟩ := h ψ hψ heven
+  exact ⟨ξ,a,hs,he,ha,hprod⟩
+
+end
+end OrderedCriticalChecks

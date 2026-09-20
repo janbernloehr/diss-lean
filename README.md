@@ -871,8 +871,11 @@ installation is absent. No shell startup files are modified.
   The product now has exactly the derivative's analytic orders, including
   repeated central roots. Its filled quotient is bounded and identically
   one, proving `Δ′(z)=2 ∏n (ξn−z)/πn` with locally uniform cutoff convergence
-  on the whole plane. Ordering and continuity at real-type potentials
-  remain next in Lemma 8.5.
+  on the whole plane. Central roots can now be sorted lexicographically
+  with repetitions retained, and free-disc separation gives a globally
+  ordered bi-infinite sequence. Sorting preserves common local lp bounds
+  and the product identity. Uniqueness across cutoff choices and continuity
+  at real-type potentials remain next in Lemma 8.5.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
