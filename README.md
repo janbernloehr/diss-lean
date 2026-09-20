@@ -833,8 +833,12 @@ installation is absent. No shell startup files are modified.
   simple critical point in each sufficiently distant free disc and exactly
   `2N+1` roots counted with multiplicity in the central disc. These open discs
   exhaust the critical points, and their boundaries have none. The cutoff is
-  proved for each fixed potential; local uniformity over potential neighborhoods
-  and the real-type conclusion remain open.
+  proved for each fixed potential. The valid trace and derivative asymptotics
+  and all three canonical/free ratios now hold on one open convex potential
+  neighborhood beyond one spectral threshold for each tolerance. Joint limits
+  allow the potential to converge while the spectral parameter escapes.
+  Transferring this uniformity to the critical-point cutoffs and proving the
+  real-type conclusion remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

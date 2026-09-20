@@ -12935,3 +12935,88 @@ example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
 
 end
 end CriticalCountChecks
+
+namespace UniformAsymptoticChecks
+open Set Complex Filter Topology NLS NLS.ZakharovShabat
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- The corrected budget retains its leading tail but is still locally arbitrarily small.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, ∃ U : Set (WeightedCoeffPair w.toWeight 3), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ M : ℕ, N ≤ M → rootDisplacementBudget w ψ M < (1 : ℝ)/100 := by
+  obtain ⟨N, _, U, ho, _, hφ, h0, hb⟩ := exists_uniform_small_rootDisplacementBudget
+    (by simp) (by norm_num) w φ (by norm_num : (0 : ℝ) < 1/100)
+  exact ⟨N, U, ho, hφ, h0, hb⟩
+
+-- Finite replacement at the omitted center has no effect on the remaining tail.
+example (a : Coeff 3) :
+    (a+lp.single 3 0 I)-Coeff.truncate {0} (a+lp.single 3 0 I) = a-Coeff.truncate {0} a := by
+  apply Coeff.sub_truncate_eq_of_eq_outside
+  intro n hn
+  have hne : n ≠ 0 := by simpa using hn
+  simp [lp.single_apply, hne]
+
+-- Finite heads are controlled uniformly over every input in a norm ball, including negative modes.
+example : ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ → ∀ hz : z ∉ freeLattice, ∀ a : Coeff 3, ‖a‖ ≤ 5 →
+    ‖scalarResolventToL1 (by simp) z hz (Coeff.truncate {-3,0,2} a)‖ ≤ (1 : ℝ)/100 :=
+  exists_threshold_scalarResolvent_truncate (by simp) {-3,0,2} 5 (by norm_num)
+
+-- Reindexing either parity cannot enlarge the absolute relative-displacement sum.
+example (ξ : ℤ → ℂ) (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3) :
+    (∑' n : ℤ, ‖(parityRescale ξ (-3) n-(Real.pi : ℂ)*n)/
+      ((I-(Real.pi : ℂ)*(-3 : ℤ))/2-(Real.pi : ℂ)*n)‖) ≤
+      ∑' n : ℤ, ‖(ξ n-(Real.pi : ℂ)*n)/(I-(Real.pi : ℂ)*n)‖ := by
+  apply tsum_norm_parity_relativeDisplacement_le (by simp) ξ hξ I
+  rintro ⟨n, hn⟩
+  have h := congrArg Complex.im hn
+  norm_num at h
+
+-- The product estimates share one neighborhood and one spectral threshold.
+example (φ : PairSpace 3) : ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+    ∃ R : ℝ, ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 → ∀ z : ℂ, R ≤ ‖z‖ →
+      (∀ n : ℤ, Real.pi/8 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+      ‖canonicalParityProduct (by simp) ψ 0 z/(freeDiscriminant z-2)-1‖ ≤ (1 : ℝ)/100 ∧
+      ‖canonicalParityProduct (by simp) ψ 1 z/(freeDiscriminant z+2)-1‖ ≤ (1 : ℝ)/100 := by
+  obtain ⟨U, ho, _, hφ, h0, R, hb⟩ := exists_uniform_exterior_canonicalProducts
+    (by simp) (by norm_num) φ (by positivity : 0 < Real.pi/8) (by linarith [Real.pi_pos]) (by norm_num : (0 : ℝ) < 1/100)
+  exact ⟨U, ho, hφ, h0, R, fun ψ hψ heven z hz hsep => (hb ψ hψ heven z hz hsep).2⟩
+
+private def decayScalar (n : ℕ) : ℂ := ((1/((n : ℝ)+1) : ℝ) : ℂ)
+private theorem decayScalar_tendsto : Tendsto decayScalar atTop (𝓝 0) := by
+  have hn : Tendsto (fun n : ℕ => (n : ℝ)+1) atTop atTop :=
+    tendsto_natCast_atTop_atTop.atTop_add tendsto_const_nhds
+  change Tendsto (fun n : ℕ => ((1/((n : ℝ)+1) : ℝ) : ℂ)) atTop (𝓝 0)
+  simpa only [Function.comp_def, Complex.ofReal_zero] using (Complex.continuous_ofReal.tendsto 0).comp (hn.const_div_atTop 1)
+
+-- Both variables move: shrinking even potentials and real spectral cosine zeros.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun n => canonicalDiscriminant (by simp) (decayScalar n • φ) (freeCosineZero n)) atTop (𝓝 0) := by
+  have hψ : Tendsto (fun n => decayScalar n • φ) atTop (𝓝 (0 : PairSpace 3)) := by
+    simpa only [zero_smul] using decayScalar_tendsto.smul_const φ
+  have h := tendsto_discriminant_error_of_potential_tendsto (by simp) (by norm_num)
+    (fun n => decayScalar n • φ) hψ (fun n => (pairParitySubspace 0).smul_mem (decayScalar n) hφ)
+    freeCosineZero tendsto_norm_freeCosineZero (by positivity) le_rfl freeCosineZero_separated
+  simpa only [freeDiscriminant_freeCosineZero, sub_zero, freeCosineZero_im, abs_zero,
+    Real.exp_zero, Complex.ofReal_one, div_one] using h
+
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun n => deriv (canonicalDiscriminant (by simp) (decayScalar n • φ)) (freeCosineZero n)/
+      (-2*sin (freeCosineZero n))) atTop (𝓝 1) := by
+  have hψ : Tendsto (fun n => decayScalar n • φ) atTop (𝓝 (0 : PairSpace 3)) := by
+    simpa only [zero_smul] using decayScalar_tendsto.smul_const φ
+  exact tendsto_discriminant_derivative_ratio_of_potential_tendsto (by simp) (by norm_num)
+    (fun n => decayScalar n • φ) hψ (fun n => (pairParitySubspace 0).smul_mem (decayScalar n) hφ)
+    freeCosineZero tendsto_norm_freeCosineZero (by positivity) le_rfl freeCosineZero_separated
+
+-- The derivative ratio tolerance is valid simultaneously for every potential in the neighborhood.
+example (φ : PairSpace 3) : ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+    ∃ R : ℝ, ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 → ∀ z : ℂ, R ≤ ‖z‖ →
+      (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+      ‖deriv (canonicalDiscriminant (by simp) ψ) z/(-2*sin z)-1‖ ≤ (1 : ℝ)/2 := by
+  obtain ⟨U, ho, _, hφ, h0, R, hb⟩ := exists_uniform_discriminant_derivative_div_free
+    (by simp) (by norm_num) φ (by positivity : 0 < Real.pi/4) le_rfl (by norm_num : (0 : ℝ) < 1/2)
+  exact ⟨U, ho, hφ, h0, R, hb⟩
+
+end
+end UniformAsymptoticChecks

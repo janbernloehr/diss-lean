@@ -1648,9 +1648,21 @@ boundary zeros. The count-one multiset gives a unique simple critical point
 strictly inside each distant disc. The central and distant open discs exhaust
 all critical points, with one common cutoff and any 0<r≤π/4.
 
-Next, establish local uniformity over potential neighborhoods for the valid
-asymptotics and the counts, and prove Lemma 8.3's real-type conclusion. Develop
-the derivative product and summable critical-point asymptotics. These remain
-separate from the fixed-potential complex distribution theorem.
+For each tolerance, the corrected displacement budget now becomes small on
+one open convex potential neighborhood. Complete actual parity pairs have
+bounded full displacement norms and small tails there. Uniform finite-head
+resolvent decay plus the common tail bound makes both absolute relative sums
+small at exterior infinity. Exponential product control and parity subsum
+comparison give simultaneous full/even/odd canonical ratio estimates.
+
+The valid additive trace and derivative asymptotics, and the derivative ratio,
+now have one potential neighborhood and one spectral threshold for each positive
+tolerance. Both may depend on the tolerance. Joint limits permit the potential
+to converge while the spectral parameter escapes. The cosine-quotient source
+audit remains in force.
+
+Next, transfer these neighborhood estimates to uniform critical-point cutoffs,
+and prove Lemma 8.3's real-type conclusion. Develop the derivative product and
+summable critical-point asymptotics.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

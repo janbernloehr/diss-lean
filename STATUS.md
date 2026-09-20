@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 586 modules and 4151 named public theorems. All compile on the
+The library has 593 modules and 4170 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SmallDisplacementBudgets` | Arbitrarily small corrected displacement budgets on tolerance-dependent open convex neighborhoods, and exact lp tail bounds from paired power sums |
+| `NLS.ZakharovShabat.SmallCompleteDisplacements` | Complete actual parity pairs with bounded full displacements and small tails at every larger cutoff, without continuous labeling assumptions |
+| `NLS.ZakharovShabat.UniformExteriorResolvent` | Uniform finite-head decay and a head/tail resolvent estimate for bounded coefficient families outside fixed free discs |
+| `NLS.ZakharovShabat.UniformExteriorDisplacements` | Absolute relative-displacement sums equal resolvent norms and are uniformly small for both actual spectral sequences near each fixed potential |
+| `NLS.ZakharovShabat.RelativeProductErrorBounds` | Paired error bounded by exp(2δ)−1, parity subsum control, and simultaneous full/even/odd normalized product bounds |
+| `NLS.ZakharovShabat.LocallyUniformExteriorProducts` | Common open convex potential neighborhoods and spectral thresholds for all three canonical/free ratios, in weighted and original pair spaces |
+| `NLS.ZakharovShabat.LocallyUniformDiscriminantAsymptotics` | Locally uniform additive trace and derivative errors, derivative ratio estimates, and joint limits under potential convergence and exterior spectral escape |
 | `NLS.ComplexAnalysis.SimpleAnalyticZero` | A count-one multiset gives a single root with exact multiplicity; finite orders give uniqueness among all zeros and analytic order one |
 | `NLS.ZakharovShabat.FreeDerivativeZeroCounts` | Free center distances and central selection, simple free critical points, count one in discs of radius less than π, and central count 2N+1 |
 | `NLS.ZakharovShabat.DiscriminantCriticalCounts` | Strict Rouché inequality beyond one cutoff, exact distant and central derivative counts, and nonvanishing on both families of boundary circles |
@@ -5353,10 +5360,64 @@ points for real-type potentials remain open, as do the derivative product and
 summable asymptotics of the critical points. The full dissertation remains
 incomplete.
 
+## Section 8: potential neighborhoods for the exterior asymptotics
+
+`SmallDisplacementBudgets` bounds the corrected displacement budget by the
+existing power-tail expression on a norm-bounded neighborhood. For each positive
+tolerance, one open convex neighborhood containing the potential and zero makes
+the budget small at every larger cutoff. Paired power sums then bound the
+actual lp norms of the two displacement tails, retaining the additive leading
+Fourier-tail term required by the earlier source audit.
+
+`SmallCompleteDisplacements` combines these bounds with the actual periodic
+root pairs and central parity labels. For each tolerance it supplies complete
+actual spectral sequences with uniformly bounded full displacement norms and
+small tails at every larger cutoff. Finite central replacement preserves those
+tails exactly. No continuous choice of eigenvalue labels is required.
+
+`UniformExteriorResolvent` bounds a finite Fourier head using the reciprocal
+free denominators and proves uniform spectral decay for all heads in a norm
+ball. The common exterior resolvent bound controls the remaining tail.
+`UniformExteriorDisplacements` applies this split to both complete actual
+spectral sequences. For each tolerance and free-disc separation radius, their
+absolute relative-displacement sums are small simultaneously on one potential
+neighborhood and beyond one spectral threshold.
+
+`RelativeProductErrorBounds` proves that two sums bounded by δ give paired
+relative-product error at most `exp(2δ)−1`. Each parity-rescaled sum is a
+nonnegative subsum of the full sum. Thus one estimate controls the full, even,
+and odd product ratios, with the corrected free normalizations.
+`LocallyUniformExteriorProducts` transfers these estimates to the intrinsic
+canonical products in both weighted and original pair spaces.
+
+`LocallyUniformDiscriminantAsymptotics` proves common potential neighborhoods
+and spectral thresholds for the additive trace error divided by `exp(|Im z|)`,
+the additive derivative error with the same normalization, and
+`Δ′/(−2 sin z)−1`. These hold for every finite p>1 and every `0<r≤π/4`.
+The precise quantifiers are: choose a positive tolerance, then choose one open
+convex neighborhood containing the fixed potential and zero and one threshold;
+the bound holds for every even potential in that neighborhood and every
+separated parameter beyond that threshold. The neighborhood and threshold may
+both depend on the tolerance. Joint limit theorems also allow the potentials
+to converge while the spectral parameters escape outside the free discs.
+The printed cosine quotient remains excluded by the denominator-zero audit.
+
+Examples exercise small weighted budgets, finite replacement at a central mode,
+uniform finite-head estimates with negative indices, a negative parity shift,
+a common estimate for both parity products, and moving potentials
+`φ/(n+1)` evaluated at the escaping free cosine zeros. The trace tends to zero
+and the derivative ratio tends to one along that simultaneous variation.
+
+The valid exterior asymptotics now have the neighborhood quantifiers needed
+for the next uniform critical-point counting step. Lemma 8.3's counts and
+exhaustion are currently packaged for fixed potentials; their common-neighborhood
+cutoff and real-type conclusion remain to be proved. The derivative product,
+summable critical-point asymptotics, actions, and Birkhoff results remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8277 declarations under `NLS`, including generated
+axioms. The current audit covers 8311 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6483,15 +6544,19 @@ formal matrix representation.
    extends the shifted and full discriminant identities to every finite p>1,
    with uniqueness of the continuous extension from summable Hilbert potentials.
    The cosine-quotient domain is now audited, and fixed-potential additive
-   trace and derivative asymptotics hold on the full free-disc exterior. Next
-   establish local uniformity over potentials. The normalized sine bound and
+   trace and derivative asymptotics hold on the full free-disc exterior.
+   The normalized sine bound and
    fixed-potential derivative ratio are now proved. Large critical points are
    confined to arbitrarily small free discs; all have finite orders and form
    a set finite on compact regions. Rouché now proves the fixed-potential
    distant count one and central count 2N+1, with zero-free boundaries. Each
    distant critical point is unique and simple, and the central and distant
-   open discs exhaust all critical points. Next establish locally uniform
-   cutoffs, the real-type conclusions, and the derivative product.
+   open discs exhaust all critical points. The corrected trace/derivative
+   asymptotics and all three canonical/free ratios now have common potential
+   neighborhoods and spectral thresholds for each tolerance, including joint
+   limits with moving potentials. Next transfer this uniformity to the
+   critical-point cutoffs, prove the real-type conclusions, and develop the
+   derivative product.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient
