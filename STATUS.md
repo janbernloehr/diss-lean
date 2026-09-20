@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 661 modules and 4415 named public theorems. All compile on the
+The library has 667 modules and 4435 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.RealAxisCalculus` | Reality of complex derivatives on a preserved real axis and real Rolle yielding a zero of the full complex derivative |
+| `NLS.ZakharovShabat.RealDiscriminantValues` | Conjugation symmetry of central parity polynomials, normalizations, canonical parity products, and discriminant; real-axis reality of the discriminant and derivative |
+| `NLS.ZakharovShabat.DiscriminantRolle` | A critical point between equal real discriminant values; every periodic root of multiplicity at least two is critical |
+| `NLS.ZakharovShabat.DistantCriticalInterlacing` | Strict enclosure of distant critical labels by equal-level real endpoints and equality at repeated periodic roots |
+| `NLS.ZakharovShabat.PeriodicPairDiscriminantValues` | Index-parity discriminant levels of completed endpoints, original periodic spectral membership, and real-type reality at all indices |
+| `NLS.ZakharovShabat.PeriodicGapCriticalInterlacing` | Actual distant-gap interlacing for arbitrary endpoint-slot order, strict inequalities for increasing distinct endpoints, collapsed-gap equality, and the fixed canonical-coordinate conclusion |
 | `NLS.SequenceSpaces.OrderedCountBounds` | Prefix and suffix cardinality bounds control individual ordered entries without assuming distinct values |
 | `NLS.ComplexAnalysis.RealDiameterDiscs` | Real-part bounds, real-axis membership and boundary endpoints, and containment for discs with real diameters |
 | `NLS.ZakharovShabat.CriticalRealBarriers` | Strict central interior bounds after cutoff enlargement and zero-free real-diameter boundaries at real-type potentials |
@@ -5928,8 +5934,8 @@ convex potential neighborhood: a common labeling cutoff, complete ordered
 canonical roots, displacements in lp with a common norm bound, the exact
 normalized derivative product and locally uniform symmetric cutoffs, and
 coordinate continuity at every real-type point. Lemma 8.5 is complete.
-Continuity in the lp norm is not asserted. Gap interlacing and Lemma 8.6
-remain next.
+Continuity in the lp norm is not asserted. The next milestone proves
+distant-gap interlacing; central-gap interlacing and Lemma 8.6 remain open.
 
 Eight examples check finite prefix and suffix bounds with non-strict
 ordering, a nonreal point in a real-diameter disc, strict enclosure of a
@@ -5938,10 +5944,55 @@ moving-potential convergence at p=3/2 and a negative index, coordinate
 displacement continuity, and the combined neighborhood-and-continuity
 conclusion of Lemma 8.5.
 
+## Section 8: reality and distant-gap critical interlacing
+
+`RealAxisCalculus` proves that a complex differentiable function preserving
+the real axis has a real complex derivative there. Rolle's theorem for its
+real restriction then gives a zero of the full complex derivative between
+two distinct real points with equal values.
+
+`RealDiscriminantValues` derives conjugation symmetry from the reality of
+the original periodic spectral roots. It preserves that symmetry through
+finite parity polynomials, their corrected real normalizations, and the
+locally uniform canonical limits. The discriminant and its derivative are
+therefore real on the real axis at real-type potentials, for every finite
+p>1.
+
+`DiscriminantRolle` applies Rolle to equal real discriminant values. It
+also uses the exact characteristic analytic multiplicity to prove that
+any periodic eigenvalue of multiplicity at least two is critical; that
+assertion requires no real-type assumption. `DistantCriticalInterlacing`
+identifies Rolle's root with the unique distant critical label and proves
+equality with a repeated periodic root in that disc.
+
+`PeriodicPairDiscriminantValues` identifies the discriminant level of
+both completed endpoints at every index: +2 at even indices, -2 at odd
+indices. They are original periodic eigenvalues and are real at real-type
+potentials, including the central labels.
+
+`PeriodicGapCriticalInterlacing` applies these facts to actual distant
+periodic pairs. For increasing distinct real endpoints the critical point
+lies strictly between them. A collapsed distant pair equals the critical
+point by multiplicity two, also at complex potentials. The closed-gap
+inclusion holds for either ordering of the pair slots. Beyond one common
+cutoff it holds for the fixed canonical critical coordinates themselves.
+
+This proves distant-gap interlacing. The completed central periodic
+endpoint labels are still arbitrary within each parity multiset, so
+indexed central-gap interlacing and global gap extrema are not asserted.
+Central endpoint ordering and interlacing, followed by Lemma 8.6, remain
+next.
+
+Eight examples check complex Rolle for a real polynomial, derivative
+reality, off-axis conjugation at p=3/2, repeated-root criticality without
+real type, the sign at a negative odd index, exact collapsed-gap equality,
+strict open-gap interlacing, and canonical-coordinate interlacing at
+p=3/2 for unordered endpoint slots.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8817 declarations under `NLS`, including generated
+axioms. The current audit covers 8843 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7104,7 +7155,11 @@ formal matrix representation.
    with canonical index counts. Stable counts on real-diameter discs now
    prove central real-part continuity, including collisions. Full canonical
    coordinate continuity at real-type potentials completes Lemma 8.5.
-   Next prove gap interlacing and Lemma 8.6.
+   Real discriminant symmetry and Rolle now prove distant-gap interlacing,
+   with strict open-gap inequalities and exact collapsed-gap equality.
+   Canonical coordinates interlace every sufficiently distant actual real
+   gap. Next prove central endpoint ordering and central-gap interlacing,
+   then Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -1754,6 +1754,16 @@ continuity at real-type potentials, including central collisions and
 complex even perturbations. A combined theorem now packages all assertions
 of Lemma 8.5 with the canonical roots and their common local lp bounds.
 
-Next prove gap interlacing and Lemma 8.6.
+Conjugation symmetry now passes from finite parity polynomials to the
+discriminant. Its values and derivatives are real on the real axis at
+real-type potentials. Real Rolle and distant critical uniqueness give
+strict interlacing between distinct actual distant gap endpoints.
+Multiplicity at least two proves the collapsed-gap equality, even for
+complex potentials. The canonical critical coordinates therefore lie
+in every sufficiently distant actual real periodic gap, regardless of
+the order of the pair slots.
+
+Next establish central periodic endpoint ordering and central-gap
+interlacing, then the refined offset estimate in Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

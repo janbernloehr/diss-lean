@@ -13798,3 +13798,69 @@ example (φ : PairSpace 3) : ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U �
 
 end
 end CriticalContinuityChecks
+
+namespace GapInterlacingChecks
+open Set Complex ComplexConjugate NLS NLS.ZakharovShabat NLS.ComplexAnalysis Filter Topology Metric
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Real Rolle detects a zero of the full complex derivative between equal polynomial values.
+example : ∃ c ∈ Ioo (-1 : ℝ) 1, deriv (fun z : ℂ => z^2) (c : ℂ) = 0 :=
+  exists_deriv_eq_zero_between_real (fun z : ℂ => z^2) (by fun_prop)
+    (fun x => by simp only [← ofReal_pow, ofReal_im]) (by norm_num) (by norm_num)
+
+-- The derivative along the real axis has no hidden imaginary component.
+example (x : ℝ) : (deriv (fun z : ℂ => z^3-z) (x : ℂ)).im = 0 :=
+  deriv_im_eq_zero_of_real_axis _ (by fun_prop) (fun y => by simp only [sub_im, ← ofReal_pow, ofReal_im, sub_self]) x
+
+-- Conjugation symmetry holds away from the real spectral axis at a non-Hilbert exponent.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) :
+    canonicalDiscriminant (by simp) φ (-I) = conj (canonicalDiscriminant (by simp) φ I) := by
+  simpa only [conj_I] using
+    (conj_canonicalDiscriminant_of_realType (by simp) (by norm_num) φ hφ hreal I).symm
+
+-- Repeated periodic roots are critical even without a real-type assumption.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (z : ℂ)
+    (hz : z ∈ periodicSpectrum (by simp) φ) (hm : periodicAlgebraicMultiplicity (by simp) φ z = 3) :
+    deriv (canonicalDiscriminant (by simp) φ) z = 0 :=
+  discriminant_derivative_eq_zero_of_multiplicity_ge_two (by simp) (by norm_num) φ hφ z hz (by omega)
+
+-- Negative odd indices have discriminant level minus two for both endpoints.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) :
+    canonicalDiscriminant (by simp) (weightedBaseToPair w φ) (ξ (-7)) = -2 ∧
+      canonicalDiscriminant (by simp) (weightedBaseToPair w φ) (η (-7)) = -2 := by
+  simpa using h.discriminant_at_roots (by norm_num) (-7)
+
+-- Collapsed distant pairs give equality with the critical label, not merely a bound.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N M : ℕ) (ξ η χ : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η)
+    (hχ : CriticalPointLabeling (by simp) (by norm_num) (weightedBaseToPair w φ) h.even_potential M χ)
+    (n : ℤ) (hn : max N M < n.natAbs) (he : ξ n = η n) : χ n = ξ n :=
+  h.critical_eq_of_collapsed_gap (by norm_num) hχ n (lt_of_le_of_lt (le_max_left _ _) hn)
+    (lt_of_le_of_lt (le_max_right _ _) hn) he
+
+-- Distinct real distant endpoints strictly enclose the critical coordinate.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N M : ℕ) (ξ η χ : ℤ → ℂ)
+    (h : CompletePeriodicParityPairs (by simp) w φ N ξ η) (hreal : IsRealType (weightedBaseToPair w φ))
+    (hχ : CriticalPointLabeling (by simp) (by norm_num) (weightedBaseToPair w φ) h.even_potential M χ)
+    (n : ℤ) (hn : max N M < n.natAbs) (hlt : (ξ n).re < (η n).re) :
+    (ξ n).re < (χ n).re ∧ (χ n).re < (η n).re :=
+  h.critical_between_of_re_lt (by norm_num) hreal hχ n (lt_of_le_of_lt (le_max_left _ _) hn)
+    (lt_of_le_of_lt (le_max_right _ _) hn) hlt
+
+-- The cutoff-independent canonical coordinates interlace both tails, even for unsorted endpoint slots.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (ENNReal.ofReal (3/2 : ℝ)))
+    (N : ℕ) (ξ η : ℤ → ℂ) (h : CompletePeriodicParityPairs (by simp) w φ N ξ η)
+    (hreal : IsRealType (weightedBaseToPair w φ)) : ∃ K : ℕ, N ≤ K ∧ ∀ n : ℤ, K < n.natAbs →
+      min (ξ n).re (η n).re ≤
+        (canonicalCriticalPoints (by simp) (by norm_num) (weightedBaseToPair w φ) h.even_potential n).re ∧
+      (canonicalCriticalPoints (by simp) (by norm_num) (weightedBaseToPair w φ) h.even_potential n).re ≤
+        max (ξ n).re (η n).re :=
+  h.exists_cutoff_canonicalCriticalPoints_mem_gap (by norm_num) hreal
+
+end
+end GapInterlacingChecks

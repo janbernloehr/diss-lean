@@ -609,3 +609,9 @@ import NLS.ZakharovShabat.CriticalRealBarriers
 import NLS.ZakharovShabat.CanonicalCriticalRealBounds
 import NLS.ZakharovShabat.CanonicalCriticalContinuity
 import NLS.ZakharovShabat.CriticalPointLemma
+import NLS.ComplexAnalysis.RealAxisCalculus
+import NLS.ZakharovShabat.RealDiscriminantValues
+import NLS.ZakharovShabat.DiscriminantRolle
+import NLS.ZakharovShabat.DistantCriticalInterlacing
+import NLS.ZakharovShabat.PeriodicPairDiscriminantValues
+import NLS.ZakharovShabat.PeriodicGapCriticalInterlacing
