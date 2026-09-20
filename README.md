@@ -819,8 +819,13 @@ installation is absent. No shell startup files are modified.
   inclusion below it, prove `f+2=g−2` and `Δ²−4=fg` for every finite `p>1`.
   The discriminant has the original full and parity spectra with their exact
   multiplicities and is the unique continuous extension of the Hilbert values
-  on the dense absolutely summable potentials. The locally uniform spectral
-  trace and derivative asymptotics remain open.
+  on the dense absolutely summable potentials. For every fixed even potential
+  at finite `p>1`, both additive errors `Δ−2 cos z` and `Δ′+2 sin z`, divided
+  by `exp(|Im z|)`, tend to zero uniformly at sufficiently large parameters
+  outside fixed free discs. A formal audit shows that the printed cosine
+  quotient includes arbitrarily large denominator zeros in its stated domain.
+  The additive formulation remains meaningful there. Local uniformity over
+  potential neighborhoods and the exterior derivative ratio remain open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

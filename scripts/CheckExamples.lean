@@ -12720,3 +12720,72 @@ example : canonicalDiscriminant (by simp) (0 : PairSpace 3) Real.pi = -2 := by
 
 end
 end ExponentDiscriminantChecks
+
+
+namespace TraceAsymptoticChecks
+open Set Complex Filter Topology NLS NLS.ZakharovShabat
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+
+-- The first audit point is the free cosine zero pi/2, outside all free spectral discs.
+example : freeCosineZero 0 = (Real.pi : ℂ)/2 := by
+  simp [freeCosineZero, div_eq_mul_inv]
+example (n : ℕ) (k : ℤ) : Real.pi/4 ≤ ‖freeCosineZero n-(Real.pi : ℂ)*k‖ :=
+  freeCosineZero_separated n k
+
+-- The printed quotient encounters a zero denominator beyond every prescribed spectral radius.
+example (R : ℝ) : ∃ z : ℂ, R ≤ ‖z‖ ∧
+    (∀ k : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*k‖) ∧ freeDiscriminant z = 0 := by
+  obtain ⟨n, hn⟩ := (tendsto_norm_freeCosineZero.eventually_ge_atTop R).exists
+  exact ⟨freeCosineZero n, hn, freeCosineZero_separated n, freeDiscriminant_freeCosineZero n⟩
+
+-- Even the exact zero-potential trace fails that literal TOTALIZED quotient bound.
+example : ¬ ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ →
+    (∀ k : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*k‖) →
+    ‖canonicalDiscriminant (by simp) (0 : PairSpace 3) z/freeDiscriminant z-1‖ ≤ (1 : ℝ)/2 :=
+  not_exists_exterior_cosine_quotient_bound _
+
+-- The additive normalization remains valid and tends to zero at exactly those points.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun n => canonicalDiscriminant (by simp) φ (freeCosineZero n)) atTop (𝓝 0) :=
+  tendsto_discriminant_freeCosineZero (by simp) (by norm_num) φ hφ
+
+-- A nonzero imaginary displacement on the Cauchy circle keeps half the free separation.
+example (n : ℕ) (k : ℤ) : Real.pi/8 ≤
+    ‖(freeCosineZero n+(Real.pi/8 : ℝ)*I)-(Real.pi : ℂ)*k‖ := by
+  have h := sphere_half_separated (freeCosineZero_separated n)
+    (w := freeCosineZero n+(Real.pi/8 : ℝ)*I) (by
+      rw [Metric.mem_sphere, dist_eq_norm, add_sub_cancel_left, norm_mul, norm_I, mul_one,
+        Complex.norm_real, Real.norm_eq_abs, abs_of_pos (by positivity)]
+      ring) k
+  convert! h using 1
+  ring
+
+-- The free derivative sign is tested at pi/2, where the free trace itself vanishes.
+example : deriv freeDiscriminant ((Real.pi : ℂ)/2) = -2 := by
+  rw [(hasDerivAt_freeDiscriminant _).deriv]
+  norm_num
+
+-- The derivative error also vanishes on the real cosine-zero sequence.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    Tendsto (fun n => deriv (canonicalDiscriminant (by simp) φ) (freeCosineZero n)+2*sin (freeCosineZero n))
+      atTop (𝓝 0) := by
+  simpa only [freeCosineZero_im, abs_zero, Real.exp_zero, Complex.ofReal_one, div_one] using
+    tendsto_discriminant_derivative_error_div_exp_of_separated (by simp) (by norm_num) φ hφ
+      freeCosineZero tendsto_norm_freeCosineZero (by positivity : 0 < Real.pi/4) le_rfl freeCosineZero_separated
+
+-- Quantitative thresholds cover all exterior points, not only a chosen vertical path.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ → (∀ n : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+    ‖deriv (canonicalDiscriminant (by simp) φ) z+2*sin z‖ ≤ (1/100)*Real.exp |z.im| :=
+  exists_threshold_discriminant_derivative_error_exp (by simp) (by norm_num) φ hφ
+    (by positivity) le_rfl (by norm_num)
+
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ → (∀ n : ℤ, Real.pi/8 ≤ ‖z-(Real.pi : ℂ)*n‖) →
+    ‖canonicalDiscriminant (by simp) φ z-freeDiscriminant z‖ ≤ (1/100)*Real.exp |z.im| :=
+  exists_threshold_discriminant_error_exp (by simp) (by norm_num) φ hφ
+    (by positivity) (by linarith [Real.pi_pos]) (by norm_num)
+
+end
+end TraceAsymptoticChecks

@@ -36,6 +36,13 @@
   discriminant identification is proved for continuously represented even
   Hilbert potentials. The intrinsic shifted identity and full product/spectrum
   characterization now extend to every finite p>1.
+- Lemma 8.1(iii)'s detailed quotient by `2 cos λ` is undefined at the
+  arbitrarily large points `λ=π(n+1/2)`, all outside the stated radius-`π/4`
+  free discs. Lean's totalized quotient has error exactly one there for every
+  numerator. The formal audit rejects that literal uniform quotient bound;
+  it does not reject an additive asymptotic or a suitably restricted quotient.
+  Fixed-potential additive trace and derivative asymptotics normalized by
+  `exp(|Im λ|)` are now proved on the full free-disc exterior.
 - Lemma 6.9's printed page-43 displacement estimate fails with its claimed
   local uniformity at zero. The actual signed single-mode family has roots
   `nπ±t` and Hilbert pair norm squared `2t²`, whereas the printed budget is
@@ -1620,9 +1627,15 @@ The squared discriminant minus four is the full product, with exactly the
 original spectral zeros and multiplicities. Its values on the dense absolutely
 summable Hilbert potentials uniquely determine the continuous extension.
 
-Next, address the locally uniform spectral trace and derivative asymptotics in
-Lemma 8.1(iii). Audit the printed quotient by cos at its free zeros before
-formalizing that uniform assertion; use the precise admissible spectral set.
+The printed cosine-quotient domain is now audited using arbitrarily large free
+cosine zeros in the exterior. A valid additive formulation is proved for each
+fixed even potential at finite p>1: both `Δ−2 cos` and `Δ′+2 sin`, divided by
+`exp(|Im z|)`, tend to zero uniformly in sufficiently large exterior parameters.
+The derivative proof uses Cauchy circles of half the separation radius.
+
+Next, prove a uniform lower bound for normalized sine on this exterior to
+obtain the derivative ratio, and establish local uniformity over potential
+neighborhoods. These remain distinct from the fixed-potential thresholds.
 Then develop the derivative product and critical-point prerequisites in Section 8.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

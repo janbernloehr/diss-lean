@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 575 modules and 4101 named public theorems. All compile on the
+The library has 579 modules and 4120 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.FreeCosineZeroAudit` | Arbitrarily large free cosine zeros outside all free discs; impossibility of the literal totalized exterior cosine quotient bound |
+| `NLS.ZakharovShabat.DiscriminantExteriorError` | Additive trace error divided by exp(abs(Im z)) tends to zero, with uniform spectral thresholds for each fixed finite-p potential |
+| `NLS.ZakharovShabat.ExteriorCauchyBounds` | Half-radius circle separation, imaginary-height control, and Cauchy derivative bounds from exterior exponential value bounds |
+| `NLS.ZakharovShabat.DiscriminantExteriorDerivative` | Exact free derivative and additive derivative-error limits and thresholds for every fixed even potential at finite p>1 |
 | `NLS.ZakharovShabat.ExponentInclusions` | Contractive coefficient and domain exponent inclusions, injectivity, composition, domain compatibility, and exact parity preservation |
 | `NLS.ZakharovShabat.ExponentOperatorCompatibility` | Scalar convolution, signed free operator, full operator, and actual spectral pencil commute with exponent inclusion |
 | `NLS.ZakharovShabat.ExponentDomainRegularity` | Exact pencil coordinates and recovery of the smaller-exponent domain from a larger-exponent equation with smaller-exponent potential and source |
@@ -5229,12 +5233,46 @@ the original spectral criterion at 1+i, and the exact characteristic multiplicit
 
 The locally uniform trace/derivative asymptotics in Lemma 8.1(iii), the derivative
 product and critical-point development, and the later action/Birkhoff results
-remain open. The printed cosine quotient's domain also needs an explicit audit.
+remain open. The following milestone audits the printed cosine quotient and
+proves fixed-potential additive asymptotics.
+
+## Section 8: cosine-quotient audit and additive exterior asymptotics
+
+`FreeCosineZeroAudit` formalizes the real sequence `π(n+1/2)`. Its norms tend
+to infinity, every point lies outside all open radius-`π/4` free discs, and
+`2 cos z` vanishes there. Thus the ordinary quotient in the detailed display
+of Lemma 8.1(iii), printed page 48, is undefined at points in its stated domain.
+With Lean's totalized division its distance from one is exactly one for any
+numerator, so the literal uniform quotient bound with tolerance one half is
+impossible. This does not refute an additive asymptotic, a quotient on a suitable
+restricted domain, or a removable extension in the free case.
+
+`DiscriminantExteriorError` instead proves, for each fixed even potential at
+every finite p>1 and each `0<r≤π/4`,
+`(Δ(z)−2 cos z)/exp(|Im z|) → 0` as `|z|→∞` outside the radius-r free discs.
+The error is bounded by four times the already proved even-product ratio error.
+For every positive tolerance there is one spectral threshold covering every
+such exterior parameter. In particular, `Δ(π(n+1/2)) → 0`.
+
+`ExteriorCauchyBounds` proves that a circle of radius r/2 around an r-separated
+point stays r/2-separated and increases imaginary height by at most r/2.
+Cauchy's derivative estimate transfers an exterior exponential value bound to
+its center. `DiscriminantExteriorDerivative` applies this to the entire trace
+error, proving `(Δ′(z)+2 sin z)/exp(|Im z|) → 0` with the same exterior scope
+and uniform spectral thresholds.
+
+The examples check included cosine zeros beyond arbitrary radii, the failed
+literal quotient at zero potential, a nonreal Cauchy-circle displacement, the
+free derivative sign at π/2, and trace/derivative limits and tolerance thresholds
+at p=3. These are fixed-potential conclusions. Local uniformity over potential
+neighborhoods and the derivative ratio require further estimates; the latter
+needs a lower bound for `|sin z|/exp(|Im z|)` on the free-disc exterior.
+The derivative product, critical points, and action/Birkhoff results remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8201 declarations under `NLS`, including generated
+axioms. The current audit covers 8233 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6360,8 +6398,11 @@ formal matrix representation.
    original root spaces, spectra, multiplicities, and canonical products. Density
    extends the shifted and full discriminant identities to every finite p>1,
    with uniqueness of the continuous extension from summable Hilbert potentials.
-   Next audit and prove the spectral trace/derivative asymptotics and develop
-   the derivative product and critical points.
+   The cosine-quotient domain is now audited, and fixed-potential additive
+   trace and derivative asymptotics hold on the full free-disc exterior. Next
+   prove a normalized sine lower bound and the derivative ratio, establish
+   local uniformity over potentials, and develop the derivative product and
+   critical points.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

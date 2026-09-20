@@ -523,3 +523,7 @@ import NLS.ZakharovShabat.ExponentCanonicalProducts
 import NLS.ZakharovShabat.ExponentParityDensity
 import NLS.ZakharovShabat.FiniteParityCompatibility
 import NLS.ZakharovShabat.FiniteDiscriminant
+import NLS.ZakharovShabat.FreeCosineZeroAudit
+import NLS.ZakharovShabat.DiscriminantExteriorError
+import NLS.ZakharovShabat.ExteriorCauchyBounds
+import NLS.ZakharovShabat.DiscriminantExteriorDerivative
