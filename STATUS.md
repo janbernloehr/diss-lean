@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 593 modules and 4170 named public theorems. All compile on the
+The library has 595 modules and 4177 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.FreeExteriorCutoffs` | A common integer cutoff from an exterior threshold; signed free-circle and central-circle bounds; exhaustion from exterior nonvanishing |
+| `NLS.ZakharovShabat.UniformCriticalCounts` | One open convex potential neighborhood and cutoff for strict Rouché bounds, distant count one, central count 2K+1, boundary nonvanishing, unique simple distant critical points, and exhaustion for every larger cutoff |
 | `NLS.ZakharovShabat.SmallDisplacementBudgets` | Arbitrarily small corrected displacement budgets on tolerance-dependent open convex neighborhoods, and exact lp tail bounds from paired power sums |
 | `NLS.ZakharovShabat.SmallCompleteDisplacements` | Complete actual parity pairs with bounded full displacements and small tails at every larger cutoff, without continuous labeling assumptions |
 | `NLS.ZakharovShabat.UniformExteriorResolvent` | Uniform finite-head decay and a head/tail resolvent estimate for bounded coefficient families outside fixed free discs |
@@ -5408,16 +5410,38 @@ a common estimate for both parity products, and moving potentials
 `φ/(n+1)` evaluated at the escaping free cosine zeros. The trace tends to zero
 and the derivative ratio tends to one along that simultaneous variation.
 
-The valid exterior asymptotics now have the neighborhood quantifiers needed
-for the next uniform critical-point counting step. Lemma 8.3's counts and
-exhaustion are currently packaged for fixed potentials; their common-neighborhood
-cutoff and real-type conclusion remain to be proved. The derivative product,
-summable critical-point asymptotics, actions, and Birkhoff results remain open.
+The valid exterior asymptotics now have the neighborhood quantifiers used by
+the following uniform critical-point counting step.
+
+## Section 8: locally uniform critical-point counts and exhaustion
+
+`FreeExteriorCutoffs` turns a common exterior threshold R into one positive
+integer N with R+r≤πN. This controls all signed free circles with |n|≥N and
+all central circles with cutoff K≥N. Exterior nonvanishing alone then confines
+all zeros to the central open disc or an open free disc with |n|>K.
+
+`UniformCriticalCounts` applies the locally uniform derivative ratio estimate
+with tolerance one half. One open convex neighborhood, containing the fixed
+potential and zero, and one integer cutoff work for every even potential in
+that neighborhood. Rouché gives distant count one and central count 2K+1, with
+nonvanishing on both families of boundaries. Each distant disc contains a
+unique simple critical point. The central and distant open discs exhaust all
+critical points, for every K above the same cutoff. These conclusions hold
+at every finite p>1 and every 0<r≤π/4.
+
+Public examples exercise the common-neighborhood uniqueness and combined
+central count, boundary nonvanishing, and exhaustion at p=3/2. A geometric
+check includes the negative cutoff index itself.
+
+This proves the complex counting and exhaustion part of Lemma 8.3 with its
+locally uniform cutoff. Reality of critical points for real-type potentials,
+the derivative product, summable critical-point asymptotics, actions, and
+Birkhoff results remain open.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8311 declarations under `NLS`, including generated
+axioms. The current audit covers 8322 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6554,9 +6578,10 @@ formal matrix representation.
    open discs exhaust all critical points. The corrected trace/derivative
    asymptotics and all three canonical/free ratios now have common potential
    neighborhoods and spectral thresholds for each tolerance, including joint
-   limits with moving potentials. Next transfer this uniformity to the
-   critical-point cutoffs, prove the real-type conclusions, and develop the
-   derivative product.
+   limits with moving potentials. One neighborhood and integer cutoff now
+   also give all critical-point counts, boundary nonvanishing, unique simple
+   distant points, and exhaustion at every larger central cutoff. Next prove
+   the real-type conclusions and develop the derivative product.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

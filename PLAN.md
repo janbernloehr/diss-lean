@@ -1661,8 +1661,13 @@ tolerance. Both may depend on the tolerance. Joint limits permit the potential
 to converge while the spectral parameter escapes. The cosine-quotient source
 audit remains in force.
 
-Next, transfer these neighborhood estimates to uniform critical-point cutoffs,
-and prove Lemma 8.3's real-type conclusion. Develop the derivative product and
-summable critical-point asymptotics.
+The neighborhood derivative estimate now gives one integer cutoff for the
+distant count one and the central count 2K+1, simultaneously for all nearby
+even potentials and every larger central cutoff. Both boundary families are
+zero-free; each distant critical point is unique and simple. The central and
+distant open discs exhaust all critical points on that same neighborhood.
+
+Next, prove Lemma 8.3's real-type conclusion. Develop the derivative product
+and summable critical-point asymptotics.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

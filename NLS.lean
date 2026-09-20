@@ -541,3 +541,5 @@ import NLS.ZakharovShabat.UniformExteriorDisplacements
 import NLS.ZakharovShabat.RelativeProductErrorBounds
 import NLS.ZakharovShabat.LocallyUniformExteriorProducts
 import NLS.ZakharovShabat.LocallyUniformDiscriminantAsymptotics
+import NLS.ZakharovShabat.FreeExteriorCutoffs
+import NLS.ZakharovShabat.UniformCriticalCounts

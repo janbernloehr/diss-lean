@@ -832,13 +832,15 @@ installation is absent. No shell startup files are modified.
   The free critical set is exactly `πℤ`. Rouché's theorem now proves one
   simple critical point in each sufficiently distant free disc and exactly
   `2N+1` roots counted with multiplicity in the central disc. These open discs
-  exhaust the critical points, and their boundaries have none. The cutoff is
-  proved for each fixed potential. The valid trace and derivative asymptotics
-  and all three canonical/free ratios now hold on one open convex potential
+  exhaust the critical points, and their boundaries have none. The valid trace
+  and derivative asymptotics and all three canonical/free ratios now hold on
+  one open convex potential
   neighborhood beyond one spectral threshold for each tolerance. Joint limits
   allow the potential to converge while the spectral parameter escapes.
-  Transferring this uniformity to the critical-point cutoffs and proving the
-  real-type conclusion remain open.
+  These estimates now supply one common integer cutoff and open convex
+  neighborhood for all the critical-point counts, boundary nonvanishing,
+  simplicity, and exhaustion, valid at every larger central cutoff.
+  Lemma 8.3's real-type conclusion remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

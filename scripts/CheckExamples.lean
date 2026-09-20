@@ -13020,3 +13020,47 @@ example (φ : PairSpace 3) : ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U �
 
 end
 end UniformAsymptoticChecks
+
+namespace UniformCriticalChecks
+open Set Complex Metric NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+noncomputable section
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- A single neighborhood controls both signed distant indices at a non-Hilbert exponent.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ N : ℕ, 0 < N ∧ ∃ U : Set (PairSpace (ENNReal.ofReal (3/2 : ℝ))),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 → ∀ n : ℤ, N < n.natAbs →
+        ∃! x : ℂ, x ∈ closedBall ((Real.pi : ℂ)*n) (Real.pi/16) ∧
+          deriv (canonicalDiscriminant (by simp) ψ) x = 0 := by
+  obtain ⟨N, hN, U, ho, hc, hφ, h0, hdata⟩ := exists_uniform_discriminant_critical_distribution
+    (by simp) (by norm_num) φ (by positivity : 0 < Real.pi/16) (by linarith [Real.pi_pos])
+  refine ⟨N, hN, U, ho, hc, hφ, h0, ?_⟩
+  intro ψ hψ heven n hn
+  obtain ⟨x, hx, hx0, _, hu⟩ := (hdata ψ hψ heven).1 n hn
+  exact ⟨x, ⟨ball_subset_closedBall hx, hx0⟩, fun z hz => (hu z hz.1).mp hz.2⟩
+
+-- The same neighborhood and cutoff give central counts and exhaustion at every larger cutoff.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ N : ℕ, ∃ U : Set (PairSpace (ENNReal.ofReal (3/2 : ℝ))),
+      IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 → ∀ K : ℕ, N ≤ K →
+        analyticZeroCount (deriv (canonicalDiscriminant (by simp) ψ))
+          (closedBall 0 (centralCircleRadius K)) = 2*K+1 ∧
+        (∀ z ∈ sphere 0 (centralCircleRadius K), deriv (canonicalDiscriminant (by simp) ψ) z ≠ 0) ∧
+        ∀ z : ℂ, deriv (canonicalDiscriminant (by simp) ψ) z = 0 →
+          z ∈ ball 0 (centralCircleRadius K) ∨
+            ∃ n : ℤ, K < n.natAbs ∧ z ∈ ball ((Real.pi : ℂ)*n) (Real.pi/4) := by
+  obtain ⟨N, _, U, ho, _, hφ, h0, hdata⟩ := exists_uniform_discriminant_critical_counts
+    (by simp) (by norm_num) φ (by positivity : 0 < Real.pi/4) le_rfl
+  exact ⟨N, U, ho, hφ, h0, fun ψ hψ heven K hK =>
+    ⟨((hdata ψ hψ heven).2.1 K hK).1, ((hdata ψ hψ heven).2.1 K hK).2,
+      (hdata ψ hψ heven).2.2 K hK⟩⟩
+
+-- Circle geometry uses absolute indices, including the negative cutoff itself.
+example {N : ℕ} {z : ℂ} (hz : z ∈ sphere ((Real.pi : ℂ)*(-(N : ℤ))) (Real.pi/8)) :
+    Real.pi*(N : ℝ)-Real.pi/8 ≤ ‖z‖ := by
+  exact norm_ge_of_mem_freeSphere (R := Real.pi*(N : ℝ)-Real.pi/8)
+    (r := Real.pi/8) (N := N) (n := -(N : ℤ)) (by linarith) (by simp) (by simpa only [Int.cast_neg] using hz)
+
+end
+end UniformCriticalChecks
