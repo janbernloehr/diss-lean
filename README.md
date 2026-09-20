@@ -874,8 +874,11 @@ installation is absent. No shell startup files are modified.
   on the whole plane. Central roots can now be sorted lexicographically
   with repetitions retained, and free-disc separation gives a globally
   ordered bi-infinite sequence. Sorting preserves common local lp bounds
-  and the product identity. Uniqueness across cutoff choices and continuity
-  at real-type potentials remain next in Lemma 8.5.
+  and the product identity. Ordered labels now agree across all admissible
+  cutoff choices, defining canonical critical coordinates with exact
+  multiplicities and the product identity. Their displacement norms have
+  common local bounds; at zero potential the coordinates are exactly `nπ`.
+  Continuity at real-type potentials remains next in Lemma 8.5.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

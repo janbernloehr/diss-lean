@@ -13599,3 +13599,71 @@ example (φ : PairSpace 3) :
 
 end
 end OrderedCriticalChecks
+
+namespace CanonicalCriticalChecks
+open Set Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis Filter Topology
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Equal sorted multisets determine each entry, even with repeated complex roots.
+example (ξ η : ℤ → ℂ)
+    (hξ : (∑ n ∈ Finset.Icc (-1) 1, ({ξ n} : Multiset ℂ)) = {I,I,-I})
+    (hη : (∑ n ∈ Finset.Icc (-1) 1, ({η n} : Multiset ℂ)) = {I,I,-I})
+    (hsξ : Monotone (fun n => complexLexKey (ξ n)))
+    (hsη : Monotone (fun n => complexLexKey (η n))) : ξ 0 = η 0 := by
+  apply ordered_finset_multiset_enumeration_unique complexLexLE (Finset.Icc (-1) 1) ξ η
+    (hξ.trans hη.symm) (fun _ _ _ _ h => hsξ h) (fun _ _ _ _ h => hsη h)
+  norm_num
+
+-- A cutoff-zero free labeling remains valid at cutoff seven without changing roots.
+example : CriticalPointLabeling (p := 3) (by simp) (by norm_num) 0
+    (pairParitySubspace 0).zero_mem 7 (fun n => (Real.pi : ℂ)*n) :=
+  (criticalPointLabeling_free (p := 3) (by simp) (by norm_num)).enlarge 7 (by omega)
+
+-- Any admissible ordered labeling agrees with the canonical coordinates, including far negative indices.
+example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : CriticalPointLabeling (by simp) (by norm_num) φ hφ N ξ)
+    (hs : Monotone (fun n => complexLexKey (ξ n))) :
+    ξ (-7) = canonicalCriticalPoints (by simp) (by norm_num) φ hφ (-7) :=
+  congrFun (h.eq_canonicalCriticalPoints hs) (-7)
+
+-- The free normalization fixes the sign of negative canonical coordinates.
+example : canonicalCriticalPoints (p := 3) (by simp) (by norm_num) 0
+    (pairParitySubspace 0).zero_mem (-7) = -7*(Real.pi : ℂ) := by
+  rw [canonicalCriticalPoints_zero]
+  push_cast
+  ring
+
+-- The entire canonical displacement coefficient is zero also below the Hilbert exponent.
+example : canonicalCriticalDisplacement (p := ENNReal.ofReal (3/2 : ℝ)) (by simp) (by norm_num)
+    0 (pairParitySubspace 0).zero_mem = 0 := by simp
+
+-- A complex even potential has the literal canonical product limit at every spectral point.
+example (z : ℂ) :
+    Tendsto (fun M : ℕ => 2*∏ n ∈ Finset.Icc (-(M : ℤ)) (M : ℤ),
+      (canonicalCriticalPoints (p := 3) (by simp) (by norm_num) (lp.single 3 2 I, 0)
+        ⟨Coeff.single_mem_paritySubspace 0 2 I (by omega), (Coeff.paritySubspace 0).zero_mem⟩ n-z)/
+          (if n = 0 then 1 else (Real.pi : ℂ)*n)) atTop
+      (𝓝 (deriv (canonicalDiscriminant (p := 3) (by simp) (lp.single 3 2 I, 0)) z)) :=
+  (tendstoLocallyUniformlyOn_canonicalCriticalProduct (by simp) (by norm_num) _ _).tendsto_at (mem_univ z)
+
+-- Canonical roots of a real-type potential form a nondecreasing real sequence.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) :
+    Monotone (fun n => (canonicalCriticalPoints (by simp) (by norm_num) φ hφ n).re) ∧
+      ∀ n, (canonicalCriticalPoints (by simp) (by norm_num) φ hφ n).im = 0 :=
+  ⟨fun _ _ hij => re_le_of_complexLexLE ((monotone_canonicalCriticalPoints (by simp) (by norm_num) φ hφ) hij),
+    canonicalCriticalPoints_im_eq_zero (by simp) (by norm_num) φ hφ hreal⟩
+
+-- One neighborhood bounds the fixed canonical displacement function, rather than a separately chosen sequence.
+example (φ : PairSpace 3) : ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧ ∃ R : ℝ,
+    ∀ ψ ∈ U, ∀ hψ : ψ ∈ pairParitySubspace 0,
+      ‖canonicalCriticalDisplacement (by simp) (by norm_num) ψ hψ‖ ≤ R := by
+  obtain ⟨N,_,U,ho,_,hφ,_,R,_,h⟩ := exists_uniform_canonicalCriticalPoints (p := 3)
+    (by simp) (by norm_num) φ
+  exact ⟨U,ho,hφ,R,fun ψ hψ heven => (h ψ hψ heven).2⟩
+
+end
+end CanonicalCriticalChecks

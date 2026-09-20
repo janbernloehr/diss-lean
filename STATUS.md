@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 643 modules and 4360 named public theorems. All compile on the
+The library has 649 modules and 4382 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OrderedEnumerationUnique` | Finite singleton sums identify list multisets; ordered finite enumerations with equal multiplicities agree at every index |
+| `NLS.ZakharovShabat.CriticalCutoffStability` | Exact membership and central multiset at every larger cutoff, preserving the complete critical sequence |
+| `NLS.ZakharovShabat.OrderedCriticalUniqueness` | Pointwise uniqueness of ordered critical sequences at equal or different admissible cutoffs |
+| `NLS.ZakharovShabat.CanonicalCriticalPoints` | Canonical ordered root coordinates and displacement coefficient, cutoff-independent identification, exhaustion, exact multiplicities, derivative product, and real-type reality |
+| `NLS.ZakharovShabat.UniformCanonicalCriticalPoints` | Common neighborhood bounds on the fixed canonical displacement coefficient, common valid cutoffs and all larger cutoffs, and locally uniform canonical product convergence |
+| `NLS.ZakharovShabat.CanonicalCriticalFree` | Free complete labeling at cutoff zero, exact canonical coordinates pi*n, and identically zero canonical displacement |
 | `NLS.SequenceSpaces.OrderedFiniteEnumeration` | Relation-based ordered enumeration of a multiset on any finite linearly ordered index set, preserving repetitions |
 | `NLS.ComplexAnalysis.LexicographicOrder` | Separate complex lexicographic key and relation, totality and antisymmetry, real-part comparison, and reduction to real order |
 | `NLS.ZakharovShabat.CentralCriticalReordering` | Central multiset re-enumeration preserves complete labeling; existence of a sorted central head |
@@ -5792,9 +5798,9 @@ exact normalized derivative product with locally uniform spectral cutoff
 convergence. Distant indices remain unchanged by the construction.
 
 This proves existence of ordered complete critical sequences as required
-in Lemma 8.5. Uniqueness across cutoff choices and coordinate continuity at
-real-type potentials have not yet been proved. No continuity of the
-arbitrary choices used in these existence statements is asserted.
+in Lemma 8.5. Cutoff-independent uniqueness and canonical coordinates
+are proved in the following milestone. Coordinate continuity at real-type
+potentials remains open.
 
 Eight examples cover imaginary tie-breaking, priority of real-part
 comparison, reduction to real order, sorted repeated values on signed
@@ -5802,10 +5808,51 @@ indices, strict separation of the two tails, exact multiplicities and lp
 membership at p=3/2, real ordered critical sequences at real-type potentials,
 and a common neighborhood retaining bounds and the derivative product.
 
+## Section 8: canonical critical coordinates and cutoff independence
+
+`OrderedEnumerationUnique` identifies finite singleton sums with list
+multisets. Equal ordered multisets give equal lists, and therefore equal
+entries at each prescribed ordered index, even when values repeat.
+
+`CriticalCutoffStability` proves that a root lies in any larger central
+disc exactly when its label lies in the corresponding central index block.
+The full sequence's multiplicities recover the exact larger central
+multiset. Consequently the complete labeling remains valid at every larger
+cutoff without changing any coordinate.
+
+`OrderedCriticalUniqueness` compares ordered central multisets entry by
+entry and uses unique distant roots in their free discs. Enlarging two
+cutoffs to a common one proves that every ordered complete critical
+sequence is the same function of the signed index.
+
+`CanonicalCriticalPoints` defines that canonical sequence and its lp
+displacement coefficient. It proves exact agreement with any admissible
+ordered labeling, exhaustion of the critical zero set, exact global
+analytic multiplicities, lexicographic order, the normalized derivative
+product, and reality at real-type potentials.
+
+`UniformCanonicalCriticalPoints` transfers the existing local norm bounds
+to the fixed canonical displacement coefficient itself. One open convex
+potential neighborhood supplies a common valid cutoff and all larger
+cutoffs. The canonical symmetric products converge locally uniformly to
+`Δ′` throughout the spectral plane. `CanonicalCriticalFree` fixes the
+zero-potential coordinates to `nπ` and proves that their full displacement
+coefficient is zero.
+
+Continuity of the canonical coordinates at real-type potentials remains
+the unfinished assertion of Lemma 8.5. No coordinate continuity or lp-norm
+continuity is inferred from the current local boundedness result.
+
+Eight examples exercise repeated finite-root uniqueness, enlargement of
+a cutoff-zero free labeling, canonical agreement at a negative index,
+the signed free normalization, zero displacement at p=3/2, the literal
+canonical product for a complex even potential, canonical real ordering,
+and a neighborhood bound on the fixed canonical displacement function.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8720 declarations under `NLS`, including generated
+axioms. The current audit covers 8770 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6960,9 +7007,10 @@ formal matrix representation.
    and the filled quotient is identically one, proving the normalized
    derivative product. Sorting the finite central multiset now gives
    globally ordered critical sequences with the same distant labels and
-   common local lp bounds. Next prove uniqueness across cutoffs and
-   continuity at real-type potentials in Lemma 8.5, then interlacing
-   and Lemma 8.6.
+   common local lp bounds. Ordered labels are now unique across
+   cutoffs, defining canonical coordinates with the exact free values
+   and common local displacement bounds. Next prove continuity at
+   real-type potentials in Lemma 8.5, then interlacing and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

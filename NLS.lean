@@ -591,3 +591,9 @@ import NLS.ComplexAnalysis.LexicographicOrder
 import NLS.ZakharovShabat.CentralCriticalReordering
 import NLS.ZakharovShabat.CriticalPointOrder
 import NLS.ZakharovShabat.OrderedCriticalProducts
+import NLS.SequenceSpaces.OrderedEnumerationUnique
+import NLS.ZakharovShabat.CriticalCutoffStability
+import NLS.ZakharovShabat.OrderedCriticalUniqueness
+import NLS.ZakharovShabat.CanonicalCriticalPoints
+import NLS.ZakharovShabat.UniformCanonicalCriticalPoints
+import NLS.ZakharovShabat.CanonicalCriticalFree

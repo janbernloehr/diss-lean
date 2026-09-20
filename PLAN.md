@@ -1730,8 +1730,15 @@ the two distant tails and separate them from the central cluster. Thus
 complete ordered critical sequences now exist on a common potential
 neighborhood, with lp norm bounds and the exact derivative product.
 
-Next prove uniqueness of ordered labels across sufficiently large cutoffs
-and continuity at real-type potentials to complete Lemma 8.5, then gap
-interlacing and Lemma 8.6.
+Ordered finite enumerations are now unique even with repetitions. A
+complete critical sequence remains a valid labeling at every larger
+central cutoff. Comparing two sequences at a common cutoff proves global
+uniqueness. Canonical critical coordinates and their lp displacement
+coefficient are now defined, with exact multiplicities, reality at
+real-type potentials, the derivative product, common local norm bounds,
+and exact free values `nπ`.
+
+Next prove continuity of these canonical coordinates at real-type
+potentials to complete Lemma 8.5, then gap interlacing and Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
