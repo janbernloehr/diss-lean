@@ -2,11 +2,21 @@
 
 ## Implemented and checked
 
-The library has 600 modules and 4190 named public theorems. All compile on the
+The library has 610 modules and 4233 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.QuadraticProductError` | Finite and unconditional product errors after retaining the signed linear sum, bounded quadratically by the absolute perturbation sum, allowing zero factors |
+| `NLS.ComplexAnalysis.ReciprocalPerturbation` | Half-unit denominator bounds and a square-reciprocal estimate for the difference of reciprocals |
+| `NLS.SequenceSpaces.ConvolutionMajorants` | Exact positive absolute rows of Young convolutions and the constant-one majorant norm estimate |
+| `NLS.Fourier.PerturbedHilbertRows` | Omitted-diagonal reciprocal terms, positive square-kernel majorants, absolute convergence, and a uniformly bounded lp correction including both Banach endpoints |
+| `NLS.Fourier.SampledHilbert` | Absolutely convergent sampled signed Hilbert rows in the original finite p>1 exponent, with one bound for all half-unit complex sample sequences |
+| `NLS.SequenceSpaces.ProductRowExponents` | Doubled-exponent Hölder relation, Young relation with the conjugate kernel exponent, and its strict summability threshold |
+| `NLS.ComplexAnalysis.ProductErrorLp` | A doubled-exponent row envelope gives an lp nonlinear product remainder with exponential-times-square norm bound |
+| `NLS.Fourier.AbsoluteSampledRows` | Positive l^(2p) majorant for absolute reciprocal rows, independent of the sample sequence and linearly bounded by the input norm |
+| `NLS.Fourier.SampledProductEstimates` | Actual omitted-diagonal relative product errors in lp, exact factor formulas, and uniform bounds on input norm balls |
+| `NLS.ZakharovShabat.FreeDiscProductLp` | Spectral pi-lattice rescaling and explicit lp bounds for relative products sampled in arbitrary closed half-pi free discs, including free centers |
 | `NLS.ComplexAnalysis.RealRootedDerivatives` | Gauss–Lucas reality of polynomial critical points, including products with repeated real roots and positive total degree |
 | `NLS.ComplexAnalysis.NonvanishingLocallyUniformLimit` | Nonvanishing on an open set passes to a locally uniform analytic limit at each point of finite analytic order |
 | `NLS.ZakharovShabat.RealCentralDerivative` | Eventual positive central degree and exclusion of nonreal critical points from every sufficiently large normalized central polynomial of a real-type potential |
@@ -5473,14 +5483,58 @@ nonconstant real-type potential with odd modes at p=3/2 for the full product,
 even conjugate modes at p=3 for the discriminant, nonvanishing in both
 half-planes below the Hilbert exponent, and uniform unique real-valued roots.
 
-Lemma 8.4's locally uniform ℓᵖ errors, Lemma 8.5's summable critical-point
-asymptotics, derivative product and root continuity, and the later action
-and Birkhoff results remain open.
+Lemma 8.4's product prerequisites begin in the following milestone.
+
+## Appendix D / Section 8: free-reference sampled product estimates
+
+`QuadraticProductError` retains the complex linear sum in a finite or
+unconditional product. Writing S=Σ|u|, it proves
+`|∏(1+u)−1−Σu|≤S² exp(S)`. No factor nonvanishing or smallness is required.
+`ReciprocalPerturbation` proves that a half-unit displacement of a denominator
+with norm at least one preserves half its norm, and the difference of its
+reciprocals is bounded by the square reciprocal of the original norm.
+
+`ConvolutionMajorants` identifies absolute scalar rows with positive Young
+convolutions. `PerturbedHilbertRows` uses the summable square kernel to
+majorize the correction from sampling at n+t(n), for arbitrary complex
+t with |t(n)|≤1/2. The correction belongs to every Banach lp space, including
+p=1 and infinity. `SampledHilbert` adds the ordinary Hilbert transform for
+finite p>1, proving absolute row convergence, the exact signed series formula,
+and a bound independent of the sampling sequence.
+
+`ProductRowExponents` proves the exact Young relation from p and (2p)' to
+2p and the Hölder relation from 2p and 2p to p. The reciprocal kernel exponent
+(2p)' is strictly above one. `AbsoluteSampledRows` constructs a positive
+l^(2p) envelope A for the absolute perturbation sums, with norm bounded by a
+constant times the displacement norm. `ProductErrorLp` turns this envelope
+into an lp remainder of norm at most `exp(‖A‖)‖A‖²`.
+
+`SampledProductEstimates` combines the signed linear term and the nonlinear
+remainder to prove an lp estimate for the actual relative product, omitting
+the local factor. `FreeDiscProductLp` rescales this to roots πk+a(k) and
+arbitrary complex samples z(n) with |z(n)−πn|≤π/2. The error
+`∏_{k≠n}(πk+a(k)−z(n))/(πk−z(n))−1` is an lp sequence with an explicit
+bound uniform over displacement norm balls and every admissible sample
+sequence. The omitted diagonal is one, including at z(n)=πn; all retained
+denominators are nonzero. Numerators may vanish.
+
+This supplies the free-reference off-diagonal estimate used in D.8–D.9.
+It does not yet prove D.6 with a separately perturbed reference spectrum.
+Restoring the local factor and identifying the sine products, transferring
+the estimate to actual canonical parity products, and applying Cauchy to
+obtain Lemma 8.4 remain open. Lemma 8.5's critical-point asymptotics, derivative
+product and root continuity, and later action and Birkhoff results also remain
+open.
+
+Examples exercise linear cancellation, a zero factor, the sharp half-unit
+reciprocal boundary, the correction at p=infinity, omitted negative-index
+diagonals, the reciprocal sign at an imaginary sample, free-center sampling
+at p=3/2, a common norm-ball bound at p=3, and exact zero-displacement errors.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8338 declarations under `NLS`, including generated
+axioms. The current audit covers 8421 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6621,9 +6675,12 @@ formal matrix representation.
    also give all critical-point counts, boundary nonvanishing, unique simple
    distant points, and exhaustion at every larger central cutoff. Gauss–Lucas
    and the locally uniform derivative limit now prove reality for real-type
-   potentials, completing Lemma 8.3. Next prove the locally uniform ℓᵖ errors
-   of Lemma 8.4, then the critical-point asymptotics, derivative product, and
-   root continuity of Lemma 8.5.
+   potentials, completing Lemma 8.3. The free-reference off-diagonal product
+   estimate now has an lp bound uniform on displacement norm balls and all
+   samples in half-pi free discs. Next restore the local factor and identify
+   the sine products, transfer to the canonical parity products, and prove
+   Lemma 8.4. Then develop the critical-point asymptotics, derivative product,
+   and root continuity of Lemma 8.5.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

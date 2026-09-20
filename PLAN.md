@@ -1673,9 +1673,18 @@ nontrivial canonical derivative has finite orders, so locally uniform limits
 preserve nonvanishing off the real axis. Differentiating Δ²−4 transfers this
 to Δ′. One theorem now packages every assertion of Lemma 8.3.
 
-Next, prove Lemma 8.4's locally uniform ℓᵖ errors on arbitrary sequences in
-the free discs, using the product estimates of Appendix D.9 and Cauchy
-estimates. Then prove the summable critical-point displacements, derivative
-product, and real-type root continuity in Lemma 8.5.
+The free-reference off-diagonal product estimate is now proved. Keeping the
+signed linear term gives a quadratic infinite-product remainder bound.
+Arbitrary half-unit sampling perturbations change the bounded Hilbert
+transform by an ℓ¹ square-kernel convolution. Young puts the absolute rows
+in ℓ^(2p); Hölder returns their squares to ℓᵖ. Rescaling gives the spectral
+relative product with its local factor omitted, uniformly on displacement
+norm balls and over all samples in closed half-π free discs.
+
+Next, restore the local factor and identify the sine products in D.8–D.9,
+then transfer these bounds to actual canonical parity products. Prove
+Lemma 8.4's locally uniform sampled trace and derivative ℓᵖ errors, using
+Cauchy estimates for the derivative. Then prove the summable critical-point
+displacements, derivative product, and real-type root continuity in Lemma 8.5.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

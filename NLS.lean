@@ -548,3 +548,13 @@ import NLS.ComplexAnalysis.NonvanishingLocallyUniformLimit
 import NLS.ZakharovShabat.RealCentralDerivative
 import NLS.ZakharovShabat.RealPeriodicProductDerivative
 import NLS.ZakharovShabat.RealDiscriminantCritical
+import NLS.ComplexAnalysis.QuadraticProductError
+import NLS.ComplexAnalysis.ReciprocalPerturbation
+import NLS.SequenceSpaces.ConvolutionMajorants
+import NLS.Fourier.PerturbedHilbertRows
+import NLS.Fourier.SampledHilbert
+import NLS.SequenceSpaces.ProductRowExponents
+import NLS.ComplexAnalysis.ProductErrorLp
+import NLS.Fourier.AbsoluteSampledRows
+import NLS.Fourier.SampledProductEstimates
+import NLS.ZakharovShabat.FreeDiscProductLp

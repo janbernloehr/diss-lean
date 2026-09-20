@@ -845,7 +845,15 @@ installation is absent. No shell startup files are modified.
   polynomials; locally uniform derivative limits preserve nonvanishing off
   the real axis. The exact full-product identity transfers this to Δ′.
   This completes Lemma 8.3's counts, locally uniform cutoff, exhaustion, and
-  reality assertions. The summable errors and derivative product remain open.
+  reality assertions.
+  The free-reference off-diagonal product estimate is now proved in ℓᵖ: for
+  roots `πk+a(k)`, omitting the local factor gives a relative product whose
+  error from one has an explicit bound on displacement norm balls, uniformly
+  over arbitrary samples in the closed half-π free discs. The proof retains
+  the signed Hilbert sum and controls the nonlinear remainder quadratically
+  using doubled-exponent Young and Hölder estimates. Restoring the local
+  factor, transferring to canonical parity products, and proving the sampled
+  trace and derivative errors in Lemma 8.4 remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

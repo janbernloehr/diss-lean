@@ -13128,3 +13128,71 @@ example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), IsOpen U �
 
 end
 end RealCriticalChecks
+
+namespace SampledProductChecks
+open Set Complex NLS NLS.Fourier NLS.ComplexAnalysis NLS.ZakharovShabat
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Exact cancellation of the linear sum leaves only a quadratic error.
+example (u : ℤ → ℂ) (hu : Summable (fun k => ‖u k‖)) (hs : ∑' k, u k = 0) :
+    ‖(∏' k, (1+u k))-1‖ ≤ (∑' k, ‖u k‖)^2*Real.exp (∑' k, ‖u k‖) := by
+  simpa only [hs, sub_zero] using norm_tprod_one_add_sub_one_sub_tsum_le u hu
+
+-- The finite estimate permits a zero factor and a cancelling linear sum.
+example : ‖(∏ i : Fin 2, (1+(if i = 0 then (-1 : ℂ) else 1)))-1-
+    ∑ i : Fin 2, (if i = 0 then (-1 : ℂ) else 1)‖ ≤ Real.exp 2-1-2 := by
+  have h := norm_prod_one_add_sub_one_sub_sum_le Finset.univ (fun i : Fin 2 => if i = 0 then (-1 : ℂ) else 1)
+  simpa [Fin.sum_univ_two, one_add_one_eq_two] using h
+
+-- The reciprocal correction estimate includes its sharp half-unit boundary case.
+example : ‖((1 : ℂ)-1/2)⁻¹-(1 : ℂ)⁻¹‖ ≤ 1 := by
+  simpa using norm_inv_sub_sub_inv_le (a := (1 : ℂ)) (t := 1/2) (by norm_num) (by norm_num)
+
+-- The correction alone also works at the endpoint where the Hilbert transform need not be bounded.
+example (a : Coeff ⊤) (t : ℤ → ℂ) (ht : ∀ n, ‖t n‖ ≤ (1 : ℝ)/2) :
+    ‖perturbedHilbertCorrection t ht a‖ ≤ ‖a‖*‖hilbertSquareCoeffs‖ :=
+  norm_perturbedHilbertCorrection_le t ht a
+
+-- Omitting the diagonal is essential even when the sample is displaced from the free center.
+example : sampledHilbert (p := 3) (by norm_num) (by simp) (fun _ => (1 : ℂ)/2)
+    (fun _ => by norm_num) (lp.single 3 (-3) I) (-3) = 0 := by
+  rw [sampledHilbert_apply]
+  have hterm (k : ℤ) : perturbedHilbertTerm (fun _ => (1 : ℂ)/2) (lp.single 3 (-3) I) (-3) k = 0 := by
+    by_cases hk : k = -3 <;> simp [perturbedHilbertTerm, lp.single_apply, hk]
+  simp only [hterm, tsum_zero]
+
+-- Negative frequencies and imaginary displacement have the original reciprocal sign.
+example : sampledHilbert (p := 3) (by norm_num) (by simp) (fun _ => I/2)
+    (fun _ => by norm_num) (lp.single 3 (-3) I) (-2) = I/(-1-I/2) := by
+  rw [sampledHilbert_apply, tsum_eq_single (-3) (by
+    intro k hk
+    simp [perturbedHilbertTerm, lp.single_apply, hk])]
+  norm_num [perturbedHilbertTerm]
+
+-- The actual relative products have lp errors even when every sample is a free center.
+example (a : Coeff (ENNReal.ofReal (3/2 : ℝ))) :
+    Memℓp (fun n : ℤ => (∏' k : ℤ, if k = n then 1 else
+      ((Real.pi : ℂ)*k+a k-(Real.pi : ℂ)*n)/((Real.pi : ℂ)*k-(Real.pi : ℂ)*n))-1)
+      (ENNReal.ofReal (3/2 : ℝ)) := by
+  exact memℓp_freeDisc_relative_product_sub_one (by norm_num) (by simp) a
+    (fun n => (Real.pi : ℂ)*n) (fun _ => by simp; positivity)
+
+-- One input-ball bound applies to every sample sequence, including all boundary samples.
+example (a : Coeff 3) (ha : ‖a‖ ≤ 5) (z : ℤ → ℂ)
+    (hz : ∀ n : ℤ, ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/2) :
+    ‖freeDiscProductError (by norm_num) (by simp) a z hz‖ ≤
+      (hilbertTransformBound (by norm_num : 1 < (3 : ENNReal)) (by simp)+‖hilbertSquareCoeffs‖)*(5/Real.pi)+
+      Real.exp (absoluteSampledRowConstant (p := 3) (by simp)*(5/Real.pi))*
+        (absoluteSampledRowConstant (p := 3) (by simp)*(5/Real.pi))^2 :=
+  norm_freeDiscProductError_le (by norm_num) (by simp) a z hz ha
+
+-- Zero spectral displacement gives exactly zero product error for arbitrary admissible samples.
+example (z : ℤ → ℂ) (hz : ∀ n : ℤ, ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/2) (n : ℤ) :
+    freeDiscProductError (p := 3) (by norm_num) (by simp) 0 z hz n = 0 := by
+  rw [freeDiscProductError, sampledProductError_apply]
+  simp [perturbedHilbertTerm]
+
+end
+end SampledProductChecks
