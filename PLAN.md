@@ -1746,8 +1746,14 @@ all canonical coordinates are continuous at real-type potentials.
 Restricting root multisets to central subsets now identifies analytic
 counts with counts of canonical indices, retaining repeated roots.
 
-Next use those counts and real-part ordering to prove central real-part
-continuity at real-type potentials and complete Lemma 8.5, then prove
-gap interlacing and Lemma 8.6.
+Real-diameter discs now separate prefixes and suffixes of the real
+critical sequence. Their zero-free boundaries preserve counts under
+perturbation, and finite ordered-count bounds trap each nearby real part
+between arbitrarily close barriers. This proves full canonical coordinate
+continuity at real-type potentials, including central collisions and
+complex even perturbations. A combined theorem now packages all assertions
+of Lemma 8.5 with the canonical roots and their common local lp bounds.
+
+Next prove gap interlacing and Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

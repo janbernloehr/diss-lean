@@ -603,3 +603,9 @@ import NLS.ComplexAnalysis.ZeroMultisetRestriction
 import NLS.ZakharovShabat.DiscriminantFamilyLimits
 import NLS.ZakharovShabat.CanonicalCriticalStability
 import NLS.ZakharovShabat.CriticalRootCounts
+import NLS.SequenceSpaces.OrderedCountBounds
+import NLS.ComplexAnalysis.RealDiameterDiscs
+import NLS.ZakharovShabat.CriticalRealBarriers
+import NLS.ZakharovShabat.CanonicalCriticalRealBounds
+import NLS.ZakharovShabat.CanonicalCriticalContinuity
+import NLS.ZakharovShabat.CriticalPointLemma

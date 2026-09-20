@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 655 modules and 4401 named public theorems. All compile on the
+The library has 661 modules and 4415 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OrderedCountBounds` | Prefix and suffix cardinality bounds control individual ordered entries without assuming distinct values |
+| `NLS.ComplexAnalysis.RealDiameterDiscs` | Real-part bounds, real-axis membership and boundary endpoints, and containment for discs with real diameters |
+| `NLS.ZakharovShabat.CriticalRealBarriers` | Strict central interior bounds after cutoff enlargement and zero-free real-diameter boundaries at real-type potentials |
+| `NLS.ZakharovShabat.CanonicalCriticalRealBounds` | Stable left and right critical counts give nearby upper and lower bounds for canonical real parts |
+| `NLS.ZakharovShabat.CanonicalCriticalContinuity` | Real-part, full complex coordinate, and coordinate displacement continuity at real-type potentials, including central collisions |
+| `NLS.ZakharovShabat.CriticalPointLemma` | Combined Lemma 8.5: complete ordered canonical roots, locally bounded lp displacements, normalized product and locally uniform cutoffs, and continuity at real-type potentials |
 | `NLS.ComplexAnalysis.AnalyticFamilyLimits` | Joint continuity gives locally uniform parameter limits; entire fibers give derivative limits |
 | `NLS.ComplexAnalysis.UniformRootStability` | Compact nonvanishing, Rouché count stability, confinement to open root neighborhoods, and convergence of unique compact root selections |
 | `NLS.ComplexAnalysis.ZeroMultisetRestriction` | Subset restriction of finite analytic-order support, root multisets, and analytic counts with multiplicities retained |
@@ -5566,8 +5572,8 @@ denominators are nonzero. Numerators may vanish.
 This supplies the free-reference off-diagonal estimate used in D.8–D.9.
 It does not yet prove D.6 with a separately perturbed reference spectrum.
 The local factor restoration and transfer to canonical parity products are
-proved in the following milestones, completing Lemma 8.4. Lemma 8.5 and the
-later action and Birkhoff results remain open.
+proved in the following milestones, completing Lemma 8.4. Later milestones
+also complete Lemma 8.5; the action and Birkhoff results remain open.
 
 Examples exercise linear cancellation, a zero factor, the sharp half-unit
 reciprocal boundary, the correction at p=infinity, omitted negative-index
@@ -5652,8 +5658,8 @@ actual derivative values at free centers at p=3/2, and the common
 neighborhood and norm bounds for all nearby potentials and all samples.
 
 The locally uniform lp critical displacement assertion is proved in the
-following milestone. The normalized derivative product and real-type ordered
-root continuity in Lemma 8.5 remain open.
+following milestone. Later milestones prove the normalized derivative
+product and real-type ordered-root continuity, completing Lemma 8.5.
 Gap interlacing and the subsequent refined critical-point estimates remain
 open. The general perturbed-reference D.6 and the printed general-p central
 height constant remain separate open items.
@@ -5690,10 +5696,10 @@ nearby even potential admits a complete actual critical sequence
 `ξ(n)=πn+a(n)` with a in lp and `‖a‖≤R`. This proves the locally uniform
 displacement assertion of Lemma 8.5 for every finite p>1.
 
-Central labels are arbitrary enumerations retaining multiplicity; lexicographic
-ordering and continuity of ordered roots have not yet been proved. The
-normalized single derivative product, real-type root continuity, subsequent
-gap interlacing, and refined critical-point estimates remain open.
+Central labels here are arbitrary enumerations retaining multiplicity.
+The later milestones prove lexicographic ordering, the normalized single
+derivative product, and real-type coordinate continuity. Subsequent gap
+interlacing and refined critical-point estimates remain open.
 
 Examples cover the uniform sine inverse bound, failure at radius pi,
 enumeration with repeated complex values, the free central count at cutoff
@@ -5730,7 +5736,7 @@ critical zero set.
 
 Equality of analytic orders and the normalized derivative product identity
 are completed in the following milestone.
-Ordered-root continuity and subsequent interlacing remain open.
+Ordered-root continuity is proved below; subsequent interlacing remains open.
 
 Eight public-API examples check the exceptional and negative denominators,
 the degree-one cutoff, free derivative normalization, eventual vanishing
@@ -5767,9 +5773,9 @@ identity. Product convergence here is locally uniform in the spectral
 parameter for each potential; no joint convergence of chosen labels is
 asserted.
 
-The ordering assertion is proved in the following milestone. Continuity
-at real-type potentials, subsequent gap interlacing, and the refined
-Lemma 8.6 estimate remain open.
+The following milestones prove ordering and continuity at real-type
+potentials. Subsequent gap interlacing and the refined Lemma 8.6 estimate
+remain open.
 
 Eight examples check repeated finite roots of order three, order zero
 off those roots, finite fibers, quotient values at common zeros, the
@@ -5805,8 +5811,8 @@ convergence. Distant indices remain unchanged by the construction.
 
 This proves existence of ordered complete critical sequences as required
 in Lemma 8.5. Cutoff-independent uniqueness and canonical coordinates
-are proved in the following milestone. Coordinate continuity at real-type
-potentials remains open.
+are proved in the following milestone. The continuity milestone below
+completes coordinate continuity at real-type potentials.
 
 Eight examples cover imaginary tie-breaking, priority of real-part
 comparison, reduction to real order, sorted repeated values on signed
@@ -5845,10 +5851,9 @@ cutoffs. The canonical symmetric products converge locally uniformly to
 zero-potential coordinates to `nπ` and proves that their full displacement
 coefficient is zero.
 
-Full continuity of the canonical coordinates at real-type potentials
-remains the unfinished assertion of Lemma 8.5. The next milestone proves
-distant coordinate continuity and imaginary-part continuity; lp-norm
-continuity is not inferred from local boundedness.
+The following milestones prove distant and imaginary-part continuity,
+then full continuity of canonical coordinates at real-type potentials.
+No lp-norm continuity is inferred from local boundedness.
 
 Eight examples exercise repeated finite-root uniqueness, enlargement of
 a cutoff-zero free labeling, canonical agreement at a negative index,
@@ -5882,10 +5887,9 @@ multiplicities. `CriticalRootCounts` identifies the analytic critical
 count on any subset of a valid central disc with the number of canonical
 indices in that subset. Repeated central roots contribute every occurrence.
 
-Central real-part continuity at real-type potentials is still pending;
-this milestone supplies the counts needed to combine Rouché stability
-with real-part ordering. No full central coordinate or lp-norm continuity
-is claimed yet.
+This milestone supplies the counts used in the next milestone to prove
+central real-part continuity by combining Rouché stability with real-part
+ordering. No lp-norm continuity is inferred.
 
 Seven public-API examples cover an entire family through a double root,
 compact unique-root convergence, derivative family limits at p=3/2,
@@ -5893,10 +5897,51 @@ circular multiplicity counts, imaginary-part continuity at a negative
 index, complex continuity in both distant tails, and singleton-subset
 counts retaining repeated canonical labels.
 
+## Section 8: Lemma 8.5, full canonical coordinate continuity
+
+`OrderedCountBounds` proves that a subset at least as large as a prefix
+bounds the corresponding ordered entry from above; the dual suffix result
+bounds it from below. Neither statement requires distinct entries.
+
+`RealDiameterDiscs` bounds real parts inside a disc by its real diameter
+endpoints, identifies real points of the disc with the diameter interval,
+and proves that only the endpoints meet the real boundary. A diameter
+inside [-R,R] gives a disc inside the centered disc of radius R.
+
+`CriticalRealBarriers` puts all central labels strictly inside every
+strictly larger cutoff disc. At a real-type potential, diameter endpoints
+that avoid central labels give zero-free circular boundaries.
+`CanonicalCriticalRealBounds` preserves the left and right counts by
+Rouché and converts them to bounds on each nearby canonical real part.
+
+`CanonicalCriticalContinuity` chooses these real barriers arbitrarily
+close to the base coordinate while avoiding a finite set of root values.
+The resulting upper and lower bounds prove real-part continuity. Combined
+with the previous imaginary-part result, every canonical critical
+coordinate is continuous at every real-type potential, for every finite
+p>1. Nearby potentials can be complex: only the base potential is assumed
+real-type. Central root collisions do not require a simplicity hypothesis.
+Each fixed displacement coordinate is continuous as well.
+
+`CriticalPointLemma` packages all assertions of Lemma 8.5 on one open
+convex potential neighborhood: a common labeling cutoff, complete ordered
+canonical roots, displacements in lp with a common norm bound, the exact
+normalized derivative product and locally uniform symmetric cutoffs, and
+coordinate continuity at every real-type point. Lemma 8.5 is complete.
+Continuity in the lp norm is not asserted. Gap interlacing and Lemma 8.6
+remain next.
+
+Eight examples check finite prefix and suffix bounds with non-strict
+ordering, a nonreal point in a real-diameter disc, strict enclosure of a
+new extreme free index, full continuity of the central free coordinate,
+moving-potential convergence at p=3/2 and a negative index, coordinate
+displacement continuity, and the combined neighborhood-and-continuity
+conclusion of Lemma 8.5.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8790 declarations under `NLS`, including generated
+axioms. The current audit covers 8817 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7056,8 +7101,10 @@ formal matrix representation.
    and common local displacement bounds. Distant coordinates are now
    continuous at arbitrary even potentials, and all imaginary parts are
    continuous at real-type potentials. Central subset counts now agree
-   with canonical index counts. Next prove central real-part continuity
-   in Lemma 8.5, then interlacing and Lemma 8.6.
+   with canonical index counts. Stable counts on real-diameter discs now
+   prove central real-part continuity, including collisions. Full canonical
+   coordinate continuity at real-type potentials completes Lemma 8.5.
+   Next prove gap interlacing and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

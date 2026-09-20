@@ -13731,3 +13731,70 @@ example (φ : PairSpace 3) (hφ : φ ∈ pairParitySubspace 0) (N : ℕ)
 
 end
 end CriticalStabilityChecks
+
+namespace CriticalContinuityChecks
+open Set Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis Filter Topology Metric
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Two bounded entries control the middle entry, without a strict-order assumption.
+example (f : Fin 3 → ℝ) (hf : Monotone f) (a : ℝ)
+    (hb : ∀ j ∈ ({0,1} : Finset (Fin 3)), f j ≤ a) : f 1 ≤ a := by
+  apply le_of_prefix_card_le Finset.univ {0,1} f (hf.monotoneOn _) 1 (by simp) a
+    (by simp) hb
+  decide
+
+-- The same argument applies to a suffix with possible repeated values.
+example (f : Fin 3 → ℝ) (hf : Monotone f) (a : ℝ)
+    (hb : ∀ j ∈ ({1,2} : Finset (Fin 3)), a ≤ f j) : a ≤ f 1 := by
+  apply le_of_suffix_card_le Finset.univ {1,2} f (hf.monotoneOn _) 1 (by simp) a
+    (by simp) hb
+  decide
+
+-- Disc bounds also control nonreal points, such as the imaginary unit.
+example : (-2 : ℝ) ≤ I.re ∧ I.re ≤ 2 := by
+  apply re_mem_Icc_of_mem_realDiameterDisc (-2) 2 I
+  norm_num [mem_closedBall, dist_eq_norm]
+
+-- Enlarging the free cutoff puts even the new extreme index strictly inside.
+example : ‖(Real.pi : ℂ)*(-1 : ℤ)‖ < centralCircleRadius 1 :=
+  (criticalPointLabeling_free (p := 3) (by simp) (by norm_num)).norm_lt_larger_centralRadius
+    1 (by omega) (-1) (by norm_num)
+
+-- The central free root has full complex continuity, with arbitrary even perturbations.
+example : ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+    canonicalCriticalPoints (by simp) (by norm_num) ψ.val ψ.property 0) 0 :=
+  continuousAt_canonicalCriticalPoints_of_realType (by simp) (by norm_num) 0 isRealType_zero 0
+
+-- At p = 3/2, moving even potentials give convergence of any fixed negative critical coordinate.
+example (φ : pairParitySubspace (p := ENNReal.ofReal (3/2 : ℝ)) 0) (hreal : IsRealType φ.val)
+    (ψ : ℕ → pairParitySubspace (p := ENNReal.ofReal (3/2 : ℝ)) 0)
+    (hψ : Tendsto ψ atTop (𝓝 φ)) :
+    Tendsto (fun k => canonicalCriticalPoints (by simp) (by norm_num) (ψ k).val (ψ k).property (-7))
+      atTop (𝓝 (canonicalCriticalPoints (by simp) (by norm_num) φ.val φ.property (-7))) :=
+  (continuousAt_canonicalCriticalPoints_of_realType (by simp) (by norm_num) φ hreal (-7)).tendsto.comp hψ
+
+-- Coordinate displacements are continuous; this does not assert continuity in the lp norm.
+example (φ : pairParitySubspace (p := 3) 0) (hreal : IsRealType φ.val) (n : ℤ) :
+    ContinuousAt (fun ψ : pairParitySubspace (p := 3) 0 =>
+      canonicalCriticalDisplacement (by simp) (by norm_num) ψ.val ψ.property n) φ :=
+  continuousAt_canonicalCriticalDisplacement_apply_of_realType (by simp) (by norm_num) φ hreal n
+
+-- The combined lemma supplies one norm-bound neighborhood together with full continuity at its real-type points.
+example (φ : PairSpace 3) : ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧ ∃ R : ℝ,
+    ∀ ψ ∈ U, ∀ hψ : ψ ∈ pairParitySubspace 0,
+      ‖canonicalCriticalDisplacement (by simp) (by norm_num) ψ hψ‖ ≤ R ∧
+      (IsRealType ψ → ∀ n : ℤ, ContinuousAt
+        (fun χ : pairParitySubspace (p := 3) 0 => canonicalCriticalPoints (by simp) (by norm_num) χ.val χ.property n)
+        (⟨ψ,hψ⟩ : pairParitySubspace (p := 3) 0)) := by
+  obtain ⟨N,_,U,ho,_,hφ,_,R,_,h⟩ := exists_uniform_canonicalCriticalPoints_lemma_8_5
+    (p := 3) (by simp) (by norm_num) φ
+  refine ⟨U,ho,hφ,R,?_⟩
+  intro ψ hψ heven
+  have hd := h ψ hψ heven
+  exact ⟨hd.2.2.2.1,hd.2.2.2.2.2.2⟩
+
+end
+end CriticalContinuityChecks

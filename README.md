@@ -882,8 +882,11 @@ installation is absent. No shell startup files are modified.
   circles. Distant canonical coordinates are continuous at arbitrary even
   potentials, and all coordinate imaginary parts are continuous at real-type
   potentials. Analytic counts on central subsets equal counts of canonical
-  indices, including repetitions. Central real-part continuity remains
-  next in Lemma 8.5.
+  indices, including repetitions. Real-diameter barriers and stable prefix
+  and suffix counts now prove central real-part continuity, including at
+  collisions. Every canonical coordinate is therefore continuous at each
+  real-type potential under arbitrary even complex perturbations. This
+  completes Lemma 8.5; gap interlacing and Lemma 8.6 remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
