@@ -1705,7 +1705,17 @@ has exact global analytic multiplicities and an lp displacement bound
 uniform on one open convex potential neighborhood. This proves the
 displacement assertion of Lemma 8.5.
 
-Next construct the normalized single derivative product and prove ordering
-and real-type continuity of the critical roots in Lemma 8.5.
+The normalized single product is now constructed from the literal cutoffs
+`2 ∏[-N,N] (ξn−z)/πn`, with exceptional denominator one at zero. Euler
+products fix the free limit as minus twice sine. Local uniform convergence
+extends through the free lattice, including derivative convergence. The
+filled product has exactly the selected closed root set, hence exactly the
+critical zero set for a complete critical labeling. Its quotient by minus
+twice sine tends to one along every separated escaping path.
+
+Next match analytic multiplicities of this product to those of the
+discriminant derivative, then identify the two entire functions by a
+normalized quotient and Liouville. Prove ordering and real-type continuity
+of the critical roots to complete Lemma 8.5.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

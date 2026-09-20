@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 629 modules and 4303 named public theorems. All compile on the
+The library has 634 modules and 4327 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SingleSpectralProducts` | Literal normalized single cutoffs, exceptional denominator, exact free Euler factorization and sign, and finite relative decomposition |
+| `NLS.ZakharovShabat.SingleSpectralProductsUniform` | Locally uniform free and displaced single products off the lattice, retaining literal symmetric cutoffs |
+| `NLS.ZakharovShabat.EntireSingleSpectralProducts` | Entire extension and whole-plane locally uniform product and derivative convergence; exact free value and selected-root vanishing |
+| `NLS.ZakharovShabat.SingleSpectralProductsExterior` | No extra off-lattice zeros, exact free-relative quotient, and normalized limit one along all separated escaping paths |
+| `NLS.ZakharovShabat.CriticalPointProducts` | No extra zeros for a closed root set, including filled free centers; actual critical products have exactly the discriminant derivative zero set |
 | `NLS.SequenceSpaces.FiniteEnumeration` | Single-slot enumeration of a finite multiset on a prescribed finite index set, retaining repetitions |
 | `NLS.ZakharovShabat.FreeSineDisplacementBound` | Filled sine quotient nonvanishing and uniform inverse bounds on fixed free discs of radius less than pi, giving displacement bounds from sine values |
 | `NLS.ZakharovShabat.CentralCriticalRoots` | Actual central critical-root multiset, exact analytic counts and multiplicities, enumeration on [-N,N], and a cutoff-only displacement bound |
@@ -5675,10 +5680,48 @@ zero, a nonconstant complex even potential, full lp root enumeration and
 global multiplicities at p=3/2, uniqueness at a far negative index, and a
 common potential neighborhood and displacement norm bound at p=3.
 
+## Section 8: entire normalized single critical products
+
+`SingleSpectralProducts` defines the literal cutoffs
+`2 ∏ n∈[-N,N], (ξn−z)/πn`, where π0=1 and πn=π*n otherwise.
+Pairing positive and negative free indices gives the unsquared Euler
+product, with limit exactly `−2 sin z`. Each cutoff factors into its free
+cutoff and the corresponding finite relative product off the free lattice.
+
+`SingleSpectralProductsUniform` proves locally uniform convergence of both
+the free and displaced cutoffs. `EntireSingleSpectralProducts` extends the
+limit through the countable free lattice, proves it is entire, and gives
+locally uniform convergence of the derivatives on the whole plane. Every
+selected root makes all sufficiently large cutoffs vanish and is a zero
+of the entire limit, including roots at free centers.
+
+`SingleSpectralProductsExterior` rules out extra off-lattice zeros and
+identifies the quotient by `−2 sin z` with the absolute relative product.
+This quotient tends to one along every escaping path separated from fixed
+free discs, without imposing a large imaginary part.
+
+`CriticalPointProducts` uses reciprocal maximum-modulus bounds to show
+that filling the free lattice adds no zeros when the selected root set is
+closed. A complete critical labeling has closed range because it is the
+zero set of the entire discriminant derivative. Thus every even potential
+at finite p>1 has an entire normalized single product with exactly its
+critical zero set.
+
+Equality of analytic orders is not yet asserted for this product. Matching
+these orders and identifying the normalized entire quotient with one are
+the next steps toward the derivative product identity in Lemma 8.5.
+Ordered-root continuity and subsequent interlacing remain open.
+
+Eight public-API examples check the exceptional and negative denominators,
+the degree-one cutoff, free derivative normalization, eventual vanishing
+at a negative-index root, derivative convergence at p=3, the exact critical
+zero set at p=3/2 and for a complex one-sided potential, and exterior
+normalization along arbitrary separated escaping paths.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8595 declarations under `NLS`, including generated
+axioms. The current audit covers 8644 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6827,8 +6870,10 @@ formal matrix representation.
    Cauchy completes Lemma 8.4, with one potential neighborhood and common
    lp norm bounds for all sample sequences. Complete actual critical-point
    labels now have locally uniformly bounded lp displacements, with exact
-   global analytic multiplicities. Next prove the normalized derivative
-   product and continuity of the ordered roots in Lemma 8.5.
+   global analytic multiplicities. The normalized single product is now
+   entire with exactly the critical zero set and the correct exterior
+   normalization. Next match its analytic orders and identify it with the
+   derivative, then prove continuity of ordered roots in Lemma 8.5.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

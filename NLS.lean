@@ -577,3 +577,8 @@ import NLS.ZakharovShabat.CriticalPointLabeling
 import NLS.ZakharovShabat.CriticalPointMultiplicity
 import NLS.ZakharovShabat.CriticalDisplacementBound
 import NLS.ZakharovShabat.UniformCriticalDisplacements
+import NLS.ZakharovShabat.SingleSpectralProducts
+import NLS.ZakharovShabat.SingleSpectralProductsUniform
+import NLS.ZakharovShabat.EntireSingleSpectralProducts
+import NLS.ZakharovShabat.SingleSpectralProductsExterior
+import NLS.ZakharovShabat.CriticalPointProducts

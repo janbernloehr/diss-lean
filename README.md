@@ -864,8 +864,12 @@ installation is absent. No shell startup files are modified.
   Lemma 8.5 is now proved: complete actual critical-point sequences have
   uniformly bounded ℓᵖ displacements on one potential neighborhood. Their
   central repetitions and global analytic multiplicities are retained.
-  The normalized derivative product and continuity of ordered real-type
-  roots remain next.
+  The normalized single product is now constructed as a locally uniform
+  limit on the whole plane, with locally uniform derivative convergence.
+  Its free value is exactly `−2 sin z`; for complete critical sequences it
+  has exactly the critical zero set and the correct exterior normalization.
+  Matching analytic orders, identifying it with `Δ′`, and continuity of
+  ordered real-type roots remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

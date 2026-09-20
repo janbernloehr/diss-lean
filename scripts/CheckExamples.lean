@@ -13402,3 +13402,61 @@ example (φ : PairSpace 3) :
 
 end
 end CriticalDisplacementChecks
+
+namespace SingleProductChecks
+open Set Complex NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The exceptional denominator fixes both the zero mode and the sign of negative modes.
+example : singleSpectralDenominator 0 = 1 ∧ singleSpectralDenominator (-1) = -(Real.pi : ℂ) := by
+  norm_num [singleSpectralDenominator]
+
+-- The degree-one cutoff retains the prefactor two, even for a nonzero central root.
+example (ξ : ℤ → ℂ) (z : ℂ) : singleSpectralPartialProduct ξ z 0 = 2*(ξ 0-z) := by
+  simp [singleSpectralPartialProduct, singleSpectralFactor, singleSpectralDenominator]
+
+-- The free entire product has the derivative's normalization at every parameter.
+example (z : ℂ) : entireSingleSpectralProduct (fun n => (Real.pi : ℂ)*n) z =
+    deriv (canonicalDiscriminant (p := 3) (by simp) 0) z := by
+  rw [entireSingleSpectralProduct_free, discriminant_derivative_zero]
+
+-- Negative indices enter all sufficiently large cutoffs, including a root at a free center.
+example (ξ : ℤ → ℂ) (hξ : ξ (-7) = 0) :
+    ∀ᶠ N : ℕ in atTop, singleSpectralPartialProduct ξ 0 N = 0 := by
+  simpa only [hξ] using eventually_singleSpectralPartialProduct_eq_zero ξ (-7)
+
+-- Derivative convergence is global also for non-Hilbert displacement sequences.
+example (ξ : ℤ → ℂ) (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3) :
+    TendstoLocallyUniformlyOn (fun N => deriv (fun z => singleSpectralPartialProduct ξ z N))
+      (deriv (entireSingleSpectralProduct ξ)) atTop Set.univ :=
+  tendstoLocallyUniformlyOn_deriv_entireSingleSpectralProduct (by simp) ξ hξ
+
+-- Critical products at p=3/2 have no spurious zeros, including at the filled lattice.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0) :
+    ∃ ξ : ℤ → ℂ, AnalyticOnNhd ℂ (entireSingleSpectralProduct ξ) Set.univ ∧
+      ∀ z, entireSingleSpectralProduct ξ z = 0 ↔ deriv (canonicalDiscriminant (by simp) φ) z = 0 := by
+  obtain ⟨N,ξ,_,_,han,hzero⟩ := exists_entire_criticalPointProduct (by simp) (by norm_num) φ hφ
+  exact ⟨ξ,han,hzero⟩
+
+-- The actual complex one-sided potential requires no real-type assumption.
+example : ∃ ξ : ℤ → ℂ, ∀ z,
+    entireSingleSpectralProduct ξ z = 0 ↔
+      deriv (canonicalDiscriminant (p := 3) (by simp) (lp.single 3 2 I, 0)) z = 0 := by
+  obtain ⟨N,ξ,_,_,_,hzero⟩ := exists_entire_criticalPointProduct (p := 3) (by simp) (by norm_num)
+    (lp.single 3 2 I, 0)
+    ⟨Coeff.single_mem_paritySubspace 0 2 I (by omega), (Coeff.paritySubspace 0).zero_mem⟩
+  exact ⟨ξ,hzero⟩
+
+-- Normalization holds along arbitrary separated paths, without a large imaginary-part condition.
+example (ξ : ℤ → ℂ) (hξ : Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) 3)
+    (z : ℕ → ℂ) (hz : Tendsto (fun k => ‖z k‖) atTop atTop)
+    (hsep : ∀ k (n : ℤ), Real.pi/4 ≤ ‖z k-(Real.pi : ℂ)*n‖) :
+    Tendsto (fun k => entireSingleSpectralProduct ξ (z k)/(-2*sin (z k))) atTop (𝓝 1) :=
+  tendsto_entireSingleSpectralProduct_div_free_of_separated (by simp) ξ hξ z hz
+    (by positivity) le_rfl hsep
+
+end
+end SingleProductChecks
