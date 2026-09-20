@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 615 modules and 4257 named public theorems. All compile on the
+The library has 622 modules and 4281 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.DiscBounds` | Maximum modulus fills a boundary bound through a closed disc; Cauchy bounds derivatives on smaller concentric discs |
+| `NLS.SequenceSpaces.ParityInterleave` | Exact even/odd assembly of signed coefficient sequences, with norm bounded by the sum of the parity norms |
+| `NLS.ZakharovShabat.FreeHalfDiscGeometry` | Half-pi free circles avoid every free lattice point, leaving room for quarter-pi Cauchy estimates |
+| `NLS.ZakharovShabat.RestoredSpectralPairs` | Exact off-lattice paired-product identity with normalization minus four, and positive lp paired error majorants |
+| `NLS.ZakharovShabat.EntireSpectralPairLp` | Paired-product errors on entire half-pi discs and derivative errors on quarter-pi discs, uniformly over displacement norm balls |
+| `NLS.ZakharovShabat.ParitySpectralPairLp` | Exact parity rescaling and common lp majorants for both signed parity-product errors on radius-pi matching discs |
+| `NLS.ZakharovShabat.SampledDiscriminantLp` | Lemma 8.4: actual sampled trace and derivative lp errors, including centers and boundaries, with one open convex potential neighborhood and uniform norm bounds |
 | `NLS.Fourier.SampledProductMajorant` | One positive lp sequence controls all half-unit samples simultaneously, with a uniform displacement norm-ball bound |
 | `NLS.ZakharovShabat.FreeDiscProductMajorant` | Common pointwise majorants throughout every closed half-pi free disc, and global bounds for the omitted-diagonal product |
 | `NLS.ZakharovShabat.FreeSineQuotient` | Continuous filled sine quotients, exact center signs and sine factorization, and index-independent bounds on fixed-radius discs |
@@ -5525,9 +5532,9 @@ denominators are nonzero. Numerators may vanish.
 
 This supplies the free-reference off-diagonal estimate used in D.8–D.9.
 It does not yet prove D.6 with a separately perturbed reference spectrum.
-The local factor restoration is proved in the following milestone. Transfer
-to canonical parity products and Lemma 8.4 remain open, as do Lemma 8.5 and
-the later action and Birkhoff results.
+The local factor restoration and transfer to canonical parity products are
+proved in the following milestones, completing Lemma 8.4. Lemma 8.5 and the
+later action and Birkhoff results remain open.
 
 Examples exercise linear cancellation, a zero factor, the sharp half-unit
 reciprocal boundary, the correction at p=infinity, omitted negative-index
@@ -5562,20 +5569,65 @@ samples, including centers and boundary points, therefore have lp errors.
 
 These are the restored local sine-product estimates needed in D.8–D.9.
 An entire single-product construction and its global identification are not
-asserted here. Next combine the local factors in pairs, identify the
-canonical parity products including free centers, and apply Cauchy estimates
-to prove Lemma 8.4 locally uniformly in the potential. D.6 with a separately
-perturbed reference spectrum remains open.
+asserted here. The following milestone combines the factors in pairs and
+transfers the bounds to the entire canonical parity products to prove
+Lemma 8.4. D.6 with a separately perturbed reference spectrum remains open.
 
 Examples check a common majorant at p=3/2, imaginary boundary samples, the
 negative odd-center sign, a nonzero restored center value from one displaced
 root, vanishing local numerators, center-sampled lp errors, and a uniform
 majorant bound on a whole displacement ball.
 
+## Section 8: Lemma 8.4, locally uniform sampled trace and derivative errors
+
+`RestoredSpectralPairs` identifies the entire paired product off the lattice
+as minus four times the two restored sine products. If A and B bound their
+errors and C bounds sine, its error from the free paired product is bounded
+by the positive lp sequence `4((C+‖B‖)|A(n)|+C|B(n)|)`.
+`FreeHalfDiscGeometry` excludes free lattice points on the half-pi boundary
+circles. `DiscBounds` applies maximum modulus and Cauchy estimates.
+`EntireSpectralPairLp` therefore extends the paired error bounds throughout
+all half-pi discs, including free centers, and bounds the derivative errors
+on quarter-pi discs. The same lp majorant works simultaneously throughout
+every disc, with a common norm bound on displacement norm balls.
+
+`ParitySpectralPairLp` rescales each parity to the standard lattice, preserving
+the exact even and odd normalization signs. Both parity errors have bounded
+lp majorants on radius-pi discs about their matching centers. Complete actual
+spectral displacement labels already have uniformly bounded norms on one
+open convex potential neighborhood. Their canonical parity identities
+identify these estimates with the actual trace error. `ParityInterleave`
+assembles the two parity majorants into one sequence, including negative
+indices.
+
+`SampledDiscriminantLp` gives one open convex neighborhood U containing the
+base potential and zero, and K≥0, such that every even-supported potential
+ψ in U has a majorant A with `‖A‖≤K` controlling `|Δψ(z)−2 cos z|`
+throughout all half-pi discs. Cauchy controls `|Δψ′(z)+2 sin z|` by
+`(4/π)|A(n)|` throughout the quarter-pi discs. Thus any complex sampling
+sequence λ(n) with `|λ(n)−πn|≤π/4` gives actual lp coefficient sequences
+for the trace and derivative errors, with norms at most K and `(4/π)K`.
+This proves both assertions and the local uniformity in Lemma 8.4 for every
+finite p>1 in the original period-one potential space, represented here by
+even-supported period-two coefficients. No real-type hypothesis or continuous
+choice of spectral labels is used.
+
+Examples check negative parity indices, half-pi boundary separation, Cauchy
+at noncentral points, paired-product samples at free centers, imaginary
+quarter-pi boundary samples, a nonconstant complex even potential at p=3,
+actual derivative values at free centers at p=3/2, and the common
+neighborhood and norm bounds for all nearby potentials and all samples.
+
+Next prove the locally uniform lp displacement of critical points, the
+normalized derivative product, and real-type root continuity in Lemma 8.5.
+Gap interlacing and the subsequent refined critical-point estimates remain
+open. The general perturbed-reference D.6 and the printed general-p central
+height constant remain separate open items.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8479 declarations under `NLS`, including generated
+axioms. The current audit covers 8529 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -6720,8 +6772,10 @@ formal matrix representation.
    estimate now has an lp bound uniform on displacement norm balls and all
    samples in half-pi free discs. Common pointwise disc majorants and
    restored local sine factors now give sampled lp errors, including centers.
-   Next transfer the paired estimates to canonical parity products and use
-   Cauchy estimates to prove Lemma 8.4. Then develop the critical-point asymptotics, derivative product,
+   Paired estimates now transfer to the actual canonical parity products.
+   Cauchy completes Lemma 8.4, with one potential neighborhood and common
+   lp norm bounds for all sample sequences. Next develop the critical-point
+   asymptotics, derivative product,
    and root continuity of Lemma 8.5.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type

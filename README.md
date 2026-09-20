@@ -855,9 +855,13 @@ installation is absent. No shell startup files are modified.
   sequence now bounds the error throughout each disc simultaneously. Filling
   the sine quotient at its removable center and restoring the local factor
   gives sampled sine-product errors in ℓᵖ, including center and boundary
-  samples, uniformly on displacement norm balls. Transfer to canonical
-  parity products and the sampled trace and derivative errors of Lemma 8.4
-  remain next.
+  samples, uniformly on displacement norm balls. Paired estimates now pass
+  through all free centers by maximum modulus and transfer to the actual
+  canonical parity products. Cauchy then proves both sampled errors in
+  Lemma 8.4: `Δ(λn)−2 cos(λn)` and `Δ′(λn)+2 sin(λn)` belong to ℓᵖ, with
+  one open convex potential neighborhood and uniform norm bounds for all
+  samples in the quarter-π free discs. Critical-point displacements, the
+  derivative product, and real-type root continuity in Lemma 8.5 remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

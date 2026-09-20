@@ -1688,10 +1688,16 @@ whose sampled error from sine belongs to lp, uniformly on displacement norm
 balls. Off the lattice it agrees exactly with sine times the full relative
 product, even when spectral numerators vanish.
 
-Next, combine the local sine factors in pairs and identify the actual
-canonical parity products, including at free centers. Prove
-Lemma 8.4's locally uniform sampled trace and derivative ℓᵖ errors, using
-Cauchy estimates for the derivative. Then prove the summable critical-point
-displacements, derivative product, and real-type root continuity in Lemma 8.5.
+The paired product is now identified off the lattice as minus four times the
+restored sine factors. Maximum modulus carries the lp majorants through all
+free centers, and Cauchy controls derivatives on smaller discs. Rescaling
+both parities and interleaving their coefficient majorants transfers the
+bounds to the actual canonical discriminant. One open convex potential
+neighborhood supplies common lp norm bounds for every admissible sampling
+sequence. This completes both sampled error assertions and the local
+uniformity of Lemma 8.4.
+
+Next prove the summable critical-point displacements, derivative product,
+and real-type root continuity in Lemma 8.5.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

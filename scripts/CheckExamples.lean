@@ -13260,3 +13260,77 @@ example : ∃ K : ℝ, 0 ≤ K ∧ ∀ a : Coeff 3, ‖a‖ ≤ 5 →
 
 end
 end RestoredSineChecks
+
+namespace SampledDiscriminantChecks
+open Set Complex Metric NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Interleaving distinguishes the adjacent negative odd and even indices.
+example (a b : Coeff 3) : Coeff.interleave a b (-3) = b (-2) ∧
+    Coeff.interleave a b (-4) = a (-2) := by
+  constructor
+  · exact Coeff.interleave_odd a b (-2)
+  · exact Coeff.interleave_even a b (-2)
+
+-- The half-pi boundary avoids every free center, including at negative indices.
+example (z : ℂ) (hz : ‖z+(Real.pi : ℂ)*3‖ = Real.pi/2) : z ∉ freeLattice := by
+  apply freeHalfSphere_notMem_freeLattice (-3)
+  simpa [mem_sphere, dist_eq_norm] using hz
+
+-- Cauchy works at any point of the smaller disc, not only its center.
+example (f : ℂ → ℂ) (hf : Differentiable ℂ f)
+    (hb : ∀ w : ℂ, ‖w‖ ≤ 2 → ‖f w‖ ≤ 7) (z : ℂ) (hz : ‖z‖ ≤ 1) : ‖deriv f z‖ ≤ 7 := by
+  simpa only [show (2 : ℝ)-1 = 1 by norm_num, div_one] using norm_deriv_le_of_closedDisc_bound hf 0 (by norm_num : (1 : ℝ) < 2) 7
+    (fun w hw => hb w (by simpa using hw)) (by simpa using hz)
+
+-- Entire paired-product errors include samples at every free center.
+example (a b : Coeff (ENNReal.ofReal (3/2 : ℝ))) :
+    Memℓp (fun n : ℤ => spectralPairError a b ((Real.pi : ℂ)*n)) (ENNReal.ofReal (3/2 : ℝ)) :=
+  memℓp_spectralPairError (by norm_num) (by simp) a b (fun n => (Real.pi : ℂ)*n)
+    (fun _ => by simp; positivity)
+
+-- The derivative bound includes imaginary boundary points of every quarter-pi disc.
+example (a b : Coeff 3) :
+    Memℓp (fun n : ℤ => deriv (spectralPairError a b) ((Real.pi : ℂ)*n+I*(Real.pi/4))) 3 := by
+  apply memℓp_deriv_spectralPairError (by norm_num) (by simp)
+  intro n
+  simp only [add_sub_cancel_left, norm_mul, norm_I, one_mul, norm_div, Complex.norm_real,
+    Real.norm_of_nonneg Real.pi_pos.le, Complex.norm_ofNat]
+  rfl
+
+-- A nonconstant complex potential with even support needs no real-type assumption.
+example :
+    Memℓp (fun n : ℤ => canonicalDiscriminant (p := 3) (by simp) (lp.single 3 2 I, 0)
+      ((Real.pi : ℂ)*n+I*(Real.pi/4))-2*cos ((Real.pi : ℂ)*n+I*(Real.pi/4))) 3 ∧
+    Memℓp (fun n : ℤ => deriv (canonicalDiscriminant (p := 3) (by simp) (lp.single 3 2 I, 0))
+      ((Real.pi : ℂ)*n+I*(Real.pi/4))+2*sin ((Real.pi : ℂ)*n+I*(Real.pi/4))) 3 := by
+  apply memℓp_sampled_discriminant_errors (by simp) (by norm_num)
+  · exact ⟨Coeff.single_mem_paritySubspace 0 2 I (by omega), (Coeff.paritySubspace 0).zero_mem⟩
+  · intro n
+    simp only [add_sub_cancel_left, norm_mul, norm_I, one_mul, norm_div, Complex.norm_real,
+      Real.norm_of_nonneg Real.pi_pos.le, Complex.norm_ofNat]
+    rfl
+
+-- At the free centers, the actual discriminant derivative itself is in lp below p=2.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0) :
+    Memℓp (fun n : ℤ => deriv (canonicalDiscriminant (by simp) φ) ((Real.pi : ℂ)*n))
+      (ENNReal.ofReal (3/2 : ℝ)) := by
+  have h := (memℓp_sampled_discriminant_errors (by simp) (by norm_num) φ hφ
+    (fun n => (Real.pi : ℂ)*n) (fun _ => by simp; positivity)).2
+  simpa only [mul_comm (Real.pi : ℂ), Complex.sin_int_mul_pi, mul_zero, add_zero] using h
+
+-- One neighborhood and one bound work for all nearby potentials and all sample sequences.
+example (φ : PairSpace 3) :
+    ∃ U : Set (PairSpace 3), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ U, ψ ∈ pairParitySubspace 0 →
+        ∀ z : ℤ → ℂ, (∀ n : ℤ, ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4) →
+          ∃ a b : Coeff 3, ‖a‖ ≤ K ∧ ‖b‖ ≤ (4/Real.pi)*K ∧
+            (∀ n, a n = canonicalDiscriminant (by simp) ψ (z n)-2*cos (z n)) ∧
+            (∀ n, b n = deriv (canonicalDiscriminant (by simp) ψ) (z n)+2*sin (z n)) :=
+  exists_uniform_sampled_discriminant_errors (by simp) (by norm_num) φ
+
+end
+end SampledDiscriminantChecks

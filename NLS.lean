@@ -563,3 +563,10 @@ import NLS.ZakharovShabat.FreeDiscProductMajorant
 import NLS.ZakharovShabat.FreeSineQuotient
 import NLS.ZakharovShabat.LocalSpectralFactors
 import NLS.ZakharovShabat.RestoredSineProductLp
+import NLS.ComplexAnalysis.DiscBounds
+import NLS.SequenceSpaces.ParityInterleave
+import NLS.ZakharovShabat.FreeHalfDiscGeometry
+import NLS.ZakharovShabat.RestoredSpectralPairs
+import NLS.ZakharovShabat.EntireSpectralPairLp
+import NLS.ZakharovShabat.ParitySpectralPairLp
+import NLS.ZakharovShabat.SampledDiscriminantLp
