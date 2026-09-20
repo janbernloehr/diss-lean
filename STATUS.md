@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 667 modules and 4435 named public theorems. All compile on the
+The library has 674 modules and 4463 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OrderedPairedEnumeration` | Ordered enumeration in two slots per finite index, preserving repeated values and order within and between pairs |
+| `NLS.ZakharovShabat.CentralPeriodicRoots` | Full central periodic multiset, exact algebraic counts, parity decomposition, spectral membership, and counted two-slot cardinality |
+| `NLS.ZakharovShabat.CentralPeriodicOrdering` | Full central endpoint labeling, conversion from parity labels, exact root and multiplicity formulas, and ordered paired existence |
+| `NLS.ZakharovShabat.PeriodicEndpointLabeling` | Intrinsic distant pair data, complete endpoint labels with lp displacements, spectral exhaustion, slot exchange, and central replacement |
+| `NLS.ZakharovShabat.PeriodicEndpointPairOrdering` | Lexicographic slot sorting preserves pair multisets, exact distant data, complete labels, and both lp displacements |
+| `NLS.ZakharovShabat.PeriodicEndpointOrder` | Strict central real-part bounds, distant quarter-pi bounds, and strict separation between indices involving a distant endpoint |
+| `NLS.ZakharovShabat.OrderedPeriodicEndpoints` | Globally ordered complete periodic endpoint labels preserving distant pair multisets, common-neighborhood existence at all large cutoffs, and reality of all coordinates at real-type potentials |
 | `NLS.ComplexAnalysis.RealAxisCalculus` | Reality of complex derivatives on a preserved real axis and real Rolle yielding a zero of the full complex derivative |
 | `NLS.ZakharovShabat.RealDiscriminantValues` | Conjugation symmetry of central parity polynomials, normalizations, canonical parity products, and discriminant; real-axis reality of the discriminant and derivative |
 | `NLS.ZakharovShabat.DiscriminantRolle` | A critical point between equal real discriminant values; every periodic root of multiplicity at least two is critical |
@@ -5980,8 +5987,9 @@ cutoff it holds for the fixed canonical critical coordinates themselves.
 This proves distant-gap interlacing. The completed central periodic
 endpoint labels are still arbitrary within each parity multiset, so
 indexed central-gap interlacing and global gap extrema are not asserted.
-Central endpoint ordering and interlacing, followed by Lemma 8.6, remain
-next.
+The next milestone constructs globally ordered endpoints. Their canonical
+identification and central parity, central-gap interlacing, and Lemma 8.6
+remain to be completed.
 
 Eight examples check complex Rolle for a real polynomial, derivative
 reality, off-axis conjugation at p=3/2, repeated-root criticality without
@@ -5989,10 +5997,58 @@ real type, the sign at a negative odd index, exact collapsed-gap equality,
 strict open-gap interlacing, and canonical-coordinate interlacing at
 p=3/2 for unordered endpoint slots.
 
+## Section 8: globally ordered complete periodic endpoints
+
+`OrderedPairedEnumeration` sorts a multiset into two slots per prescribed
+finite index, retaining repeated values. It orders both slots at each
+index and puts every earlier pair before every later pair.
+
+`CentralPeriodicRoots` defines the full central multiset using original
+periodic algebraic multiplicities. It proves the exact count at each
+value, spectral membership, decomposition into the even and odd root
+multisets, and two slots per signed central index from the counting theorem.
+`CentralPeriodicOrdering` introduces a full central paired labeling,
+converts existing parity labelings to it, preserves exact multiplicities,
+and constructs an ordered central enumeration.
+
+`PeriodicEndpointLabeling` records intrinsic distant pairs and full
+central labels, together with the existing counting data and both lp
+displacements. Its endpoints exhaust precisely the original periodic
+spectrum. Swapping the slots of a distant pair preserves its exact data;
+replacing the finite central enumeration preserves a complete labeling.
+
+`PeriodicEndpointPairOrdering` sorts each pair lexicographically while
+preserving its multiset. Each sorted displacement is bounded by the sum
+of the original two displacement norms, so both remain in lp, including
+at the endpoint exponents. `PeriodicEndpointOrder` separates central and
+distant real parts, proving strict order between different indices
+whenever either index is distant.
+
+`OrderedPeriodicEndpoints` combines the sorted center and sorted distant
+pairs into a globally ordered complete sequence. All original central
+multiplicities, every distant pair multiset, and both lp displacements
+are retained. One open convex potential neighborhood admits such labels
+at every sufficiently large cutoff. Every even potential at finite p>1
+therefore has an ordered complete endpoint sequence. At real-type
+potentials all its coordinates are real.
+
+The sorted central pairs' Fourier parity is not yet identified. This
+milestone establishes ordered existence; it does not yet establish
+uniqueness across cutoffs or endpoint-coordinate continuity. Those steps,
+then parity identification along real-type paths, are needed for indexed
+central-gap interlacing. Lemma 8.6 remains open.
+
+Eight examples cover repeated complex paired enumeration, imaginary
+tie-breaking, double occurrences after sorting, bounded displacement at
+p=infinity, exact original central multiplicity, spectral exhaustion and
+lp preservation after central replacement, unchanged distant pair
+multisets under global sorting, and ordered real endpoints with lp
+displacements at p=3/2.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 8843 declarations under `NLS`, including generated
+axioms. The current audit covers 8935 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7158,8 +7214,11 @@ formal matrix representation.
    Real discriminant symmetry and Rolle now prove distant-gap interlacing,
    with strict open-gap inequalities and exact collapsed-gap equality.
    Canonical coordinates interlace every sufficiently distant actual real
-   gap. Next prove central endpoint ordering and central-gap interlacing,
-   then Lemma 8.6.
+   gap. Complete periodic endpoints now have globally ordered paired
+   enumerations with exact multiplicities, unchanged distant pair
+   multisets, and lp displacements. Next prove uniqueness across cutoffs,
+   endpoint continuity, and central parity identification, then central-gap
+   interlacing and Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

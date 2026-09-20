@@ -13864,3 +13864,75 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (ENNReal.ofReal 
 
 end
 end GapInterlacingChecks
+
+namespace OrderedPeriodicChecks
+open Set Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal Classical
+noncomputable section
+local instance : Fact (1 ≤ (3 : ENNReal)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Sorting four repeated complex values retains two slots per index.
+example : ∃ ξ η : Fin 2 → ℂ,
+    (∑ i ∈ Finset.univ, ({ξ i,η i} : Multiset ℂ)) = {I,I,-I,-I} ∧
+    (∀ i ∈ Finset.univ, complexLexLE (ξ i) (η i)) ∧
+    ∀ i ∈ Finset.univ, ∀ j ∈ Finset.univ, i < j → complexLexLE (η i) (ξ j) := by
+  apply exists_ordered_paired_multiset_enumeration complexLexLE
+  norm_num
+
+-- Equal real parts are ordered by imaginary parts.
+example : orderedEndpointLeft I (-I) = -I ∧ orderedEndpointRight I (-I) = I := by
+  norm_num [orderedEndpointLeft,orderedEndpointRight,complexLexLE_iff]
+
+-- A coincident pair still has two occurrences after sorting.
+example : ({orderedEndpointLeft I I,orderedEndpointRight I I} : Multiset ℂ).count I = 2 := by
+  rw [orderedEndpointPair_multiset]
+  simp
+
+-- Pair sorting preserves bounded displacements also at the infinity exponent.
+example (ξ η c : ℤ → ℂ) (hξ : Memℓp (fun n => ξ n-c n) ∞) (hη : Memℓp (fun n => η n-c n) ∞) :
+    Memℓp (fun n => orderedEndpointLeft (ξ n) (η n)-c n) ∞ ∧
+      Memℓp (fun n => orderedEndpointRight (ξ n) (η n)-c n) ∞ :=
+  memℓp_orderedEndpoint_displacements ξ η c hξ hη
+
+-- Full central enumeration keeps the original algebraic multiplicity at each value.
+example (φ : PairSpace 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : CentralPeriodicLabeling (by simp) φ N ξ η) (z : ℂ)
+    (hz : z ∈ centralPeriodicSpectrum (by simp) φ N) :
+    (∑ n ∈ Finset.Icc (-(N : ℤ)) N, ({ξ n,η n} : Multiset ℂ).count z) =
+      periodicAlgebraicMultiplicity (by simp) φ z := by
+  simpa only [if_pos hz] using h.count_eq z
+
+-- Reordering the center preserves exact spectral exhaustion and both displacement classes.
+example (φ : PairSpace 3) (N : ℕ) (ξ η a b : ℤ → ℂ)
+    (h : PeriodicEndpointLabeling (by simp) φ N ξ η)
+    (hc : CentralPeriodicLabeling (by simp) φ N a b) :
+    (∀ z, z ∈ periodicSpectrum (by simp) φ ↔ ∃ n : ℤ,
+      spliceCentralRoots N a ξ n = z ∨ spliceCentralRoots N b η n = z) ∧
+    Memℓp (fun n => spliceCentralRoots N a ξ n-(Real.pi : ℂ)*n) 3 ∧
+    Memℓp (fun n => spliceCentralRoots N b η n-(Real.pi : ℂ)*n) 3 := by
+  have hh := h.relabel_central a b hc
+  exact ⟨hh.exhaustive,hh.left_displacement,hh.right_displacement⟩
+
+-- Global sorting changes neither distant pair, including at negative indices.
+example (φ : PairSpace 3) (N : ℕ) (ξ η : ℤ → ℂ)
+    (h : PeriodicEndpointLabeling (by simp) φ N ξ η) : ∃ a b : ℤ → ℂ,
+    PeriodicEndpointLabeling (by simp) φ N a b ∧
+    (∀ n, complexLexLE (a n) (b n)) ∧
+    (∀ i j : ℤ, i < j → complexLexLE (b i) (a j)) ∧
+    ∀ n : ℤ, N < n.natAbs → ({a n,b n} : Multiset ℂ) = {ξ n,η n} := h.exists_ordered
+
+-- At p = 3/2, real-type potentials have ordered real endpoints with lp displacements.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (hφ : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) : ∃ N : ℕ, ∃ ξ η : ℤ → ℂ,
+    PeriodicEndpointLabeling (by simp) φ N ξ η ∧
+    (∀ n, (ξ n).re ≤ (η n).re ∧ (ξ n).im = 0 ∧ (η n).im = 0) ∧
+    (∀ i j : ℤ, i < j → (η i).re ≤ (ξ j).re) ∧
+    Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) (ENNReal.ofReal (3/2 : ℝ)) ∧
+    Memℓp (fun n => η n-(Real.pi : ℂ)*n) (ENNReal.ofReal (3/2 : ℝ)) := by
+  obtain ⟨N,ξ,η,h,hw,hs⟩ := exists_ordered_periodicEndpointLabeling (by simp) (by norm_num) φ hφ
+  exact ⟨N,ξ,η,h,fun n => ⟨re_le_of_complexLexLE (hw n),h.roots_im_eq_zero_of_realType hreal n⟩,
+    fun i j hij => re_le_of_complexLexLE (hs i j hij),h.left_displacement,h.right_displacement⟩
+
+end
+end OrderedPeriodicChecks

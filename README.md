@@ -891,7 +891,13 @@ installation is absent. No shell startup files are modified.
   put the critical point strictly between distinct real gap endpoints;
   a collapsed pair equals the critical point by its multiplicity. Thus
   canonical critical coordinates interlace all sufficiently distant actual
-  real gaps. Central-gap interlacing and Lemma 8.6 remain next.
+  real gaps. Full periodic endpoints now admit a globally ordered paired
+  enumeration: central sorting preserves all original multiplicities,
+  distant sorting preserves each pair multiset, and both displacements
+  remain in ℓᵖ. One potential neighborhood supports the construction at
+  every sufficiently large cutoff. Uniqueness across cutoffs, continuity,
+  and the parity of the ordered central pairs remain next before
+  central-gap interlacing and Lemma 8.6.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

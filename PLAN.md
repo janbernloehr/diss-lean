@@ -1763,7 +1763,18 @@ complex potentials. The canonical critical coordinates therefore lie
 in every sufficiently distant actual real periodic gap, regardless of
 the order of the pair slots.
 
-Next establish central periodic endpoint ordering and central-gap
-interlacing, then the refined offset estimate in Lemma 8.6.
+The full central periodic multiset now retains every original algebraic
+multiplicity and is the sum of the parity multisets. An ordered paired
+enumeration sorts it without losing repeated values. Complete endpoint
+labelings record this central multiset, the exact original distant
+pairs, and both lp displacements. Sorting the distant slots and replacing
+the center preserves these data. Real-part separation proves global
+lexicographic order on one potential neighborhood at every sufficiently
+large cutoff.
+
+Next prove uniqueness across cutoffs and continuity of the ordered
+periodic endpoint coordinates. Identify their central parity by continuity
+along real-type paths, then prove central-gap interlacing and the refined
+offset estimate in Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
