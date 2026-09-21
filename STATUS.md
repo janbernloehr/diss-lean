@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 715 modules and 4631 named public theorems. All compile on the
+The library has 721 modules and 4650 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.EntireIncrementBound` | Displacement-proportional increment bounds for entire functions on fixed closed discs |
+| `NLS.SequenceSpaces.FiniteModification` | Finite changes preserve lp membership at every exponent |
+| `NLS.ZakharovShabat.FreeSquaredSineBounds` | Translation, center values, zero center derivatives, and common linear displacement bounds for squared free sine quotients |
+| `NLS.ZakharovShabat.DeletedProductCriticalValues` | Locally uniform lp tail representatives for remaining-product values minus one and derivatives at canonical critical points; full fixed-potential lp membership |
+| `NLS.ZakharovShabat.CriticalMidpointOffset` | The actual critical-to-midpoint offset as an lp coefficient sequence with locally uniform norm bounds |
+| `NLS.ZakharovShabat.CriticalOffsetCoefficient` | Exact squared-gap coefficient identity and locally uniform lp tail bounds for the coefficient minus two |
 | `NLS.SequenceSpaces.PairedTailBounds` | An indexwise choice of either member of a coefficient pair has tail norm bounded by the sum of the two original tail norms |
 | `NLS.ZakharovShabat.DeletedPairRelativeFormula` | Exact free-relative formula for the remaining entire product off the free lattice, without excluding actual endpoint zeros |
 | `NLS.ZakharovShabat.FreeSineQuotientAnalytic` | Entire differentiability and analyticity of the filled sine quotient at every signed free center |
@@ -6362,16 +6368,50 @@ pair choices, derivative-error membership at p=3/2, uniformly small actual
 canonical endpoint tails, sampled canonical error sequences, and the
 identically zero error at the free potential.
 
-To finish Lemma 8.6, the free squared quotient and its derivative still
-need estimates at the canonical critical points. These will convert the
-proved comparison errors into `Gₙ(cₙ)−1` and `Gₙ′(cₙ)` estimates. The locally
-uniform large-index nonvanishing coefficient and final squared-gap lp
-factorization also remain open.
+The next milestone below evaluates these estimates at canonical critical
+points. The locally uniform large-index nonvanishing coefficient and final
+squared-gap lp factorization remain open.
+
+## Section 8: critical-value estimates and midpoint coefficient
+
+`EntireIncrementBound` uses the filled divided difference to bound entire
+function increments on compact discs. `FreeSquaredSineBounds` proves that
+the squared free quotient is a translate of its zero-index version, with
+value one and derivative zero at every free center. Both its deviation
+from one and its derivative are bounded linearly by the displacement,
+with one constant for every signed index at a fixed disc radius.
+
+`DeletedProductCriticalValues` evaluates the remaining-product estimates
+at canonical critical points for all sufficiently large indices. A common
+open convex potential neighborhood supplies bounded lp representatives
+for both `Gₙ(cₙ)−1` and `Gₙ′(cₙ)`. The construction uses free centers for the
+finitely many central samples. `FiniteModification` then proves lp
+membership of the actual full sequences at each fixed potential, without
+assuming free-disc localization of the central critical points.
+
+`CriticalMidpointOffset` constructs the actual offset `aₙ=cₙ−τₙ` as an lp
+sequence, with locally uniform norm bounds. `CriticalOffsetCoefficient`
+defines `Bₙ=2Gₙ(cₙ)+aₙGₙ′(cₙ)` and proves the exact identity
+`Bₙaₙ=γₙ²Gₙ′(cₙ)/4`. A bounded multiplier estimate gives locally uniform lp
+tail representatives for `Bₙ−2`, and finite modification gives full lp
+membership at each potential. These statements hold for even complex
+potentials and do not require real type or nonzero gaps.
+
+Eight examples check a nonzero-center entire increment, a negative free
+center derivative, p=3/2 value and derivative membership, the common
+neighborhood coefficient bound, the actual midpoint coordinate formula,
+the collapsed-gap identity at complex potentials, arbitrary finite central
+changes, and the free coefficient value two.
+
+The uniform large-index lower bound on `Bₙ` and the final squared-gap lp
+factorization remain to be proved. Uniform smallness cannot be inferred
+from bounded lp norms alone; the endpoint small-tail estimates and
+spectral localization will supply the additional control.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9215 declarations under `NLS`, including generated
+axioms. The current audit covers 9262 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7557,9 +7597,10 @@ formal matrix representation.
    identity for Lemma 8.6 are now proved, with the free normalization checked.
    The remaining-product comparison errors now have locally uniform lp
    majorants on the source discs, and canonical endpoint displacements have
-   uniformly bounded norms and arbitrarily small local tails. Next evaluate
-   the estimates at critical points and prove the coefficient lower bound
-   to finish 8.6. Formalize the real gap characterization by `|∆| ≥ 2` as well.
+   uniformly bounded norms and arbitrarily small local tails. Evaluation at
+   critical points now gives locally uniform lp tails for `Gₙ(cₙ)−1`,
+   `Gₙ′(cₙ)`, and the midpoint coefficient minus two. Prove the uniform
+   coefficient lower bound and final squared-gap lp factorization to finish 8.6. Formalize the real gap characterization by `|∆| ≥ 2` as well.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -14426,3 +14426,66 @@ example (n : ℤ) (z : ℂ) :
 
 end
 end DeletedProductLpChecks
+
+namespace CriticalValueChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The increment estimate works on discs with a nonzero complex center.
+example : ∃ C : ℝ, 0 ≤ C ∧ ∀ z : ℂ, ‖z-I‖ ≤ 2 → ‖z^2-I^2‖ ≤ C*‖z-I‖ :=
+  exists_bound_entire_increment (fun z => z^2) (differentiable_id.pow 2) I 2
+
+-- The derivative of the squared free quotient vanishes at a negative center.
+example : deriv (fun z => (freeSineQuotient (-7) z)^2) ((Real.pi : ℂ)*(-7 : ℤ)) = 0 :=
+  deriv_freeSineQuotient_sq_center (-7)
+
+-- Value and derivative sequences are lp below the Hilbert exponent, including central indices.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (heven : φ ∈ pairParitySubspace 0) :
+    Memℓp (canonicalDeletedCriticalValueError (by simp) (by norm_num) φ heven) (ENNReal.ofReal (3/2 : ℝ)) ∧
+    Memℓp (canonicalDeletedCriticalDerivative (by simp) (by norm_num) φ heven) (ENNReal.ofReal (3/2 : ℝ)) :=
+  ⟨memℓp_canonicalDeletedCriticalValueError (by simp) (by norm_num) φ heven,
+    memℓp_canonicalDeletedCriticalDerivative (by simp) (by norm_num) φ heven⟩
+
+-- The norm bound and tail threshold work on one open neighborhood of the potential.
+example (φ : PairSpace 3) : ∃ N : ℕ, 0 < N ∧ ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧
+    ∃ K : ℝ, ∀ ψ ∈ U, ∀ heven : ψ ∈ pairParitySubspace 0,
+      ∃ a : Coeff 3, ‖a‖ ≤ K ∧ ∀ n : ℤ, N < n.natAbs →
+        a n = canonicalCriticalOffsetCoefficient (by simp) (by norm_num) ψ heven n-2 := by
+  obtain ⟨N,hN,U,ho,_,hφ,_,K,_,h⟩ := exists_uniform_criticalOffsetCoefficient_error (by simp) (by norm_num) φ
+  exact ⟨N,hN,U,ho,hφ,K,h⟩
+
+-- The named lp offset agrees with the actual spectral coordinates.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (n : ℤ) :
+    canonicalCriticalMidpointOffset (by simp) (by norm_num) φ heven n =
+      canonicalCriticalPoints (by simp) (by norm_num) φ heven n-
+        (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n+
+          canonicalPeriodicRight (by simp) (by norm_num) φ heven n)/2 := by
+  rw [canonicalCriticalMidpointOffset_apply,canonicalPeriodicMidpoint]
+
+-- The coefficient identity needs neither real type nor a nonzero gap.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (n : ℤ)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num) φ heven n = 0) :
+    canonicalCriticalOffsetCoefficient (by simp) (by norm_num) φ heven n*
+      canonicalCriticalMidpointOffset (by simp) (by norm_num) φ heven n = 0 := by
+  rw [canonicalCriticalOffsetCoefficient_identity,hgap,zero_pow (by decide : 2 ≠ 0),zero_mul]
+
+-- All-index membership permits arbitrarily large finite central changes.
+example (g : ℤ → ℂ) (hg : Memℓp g (3 : ℝ≥0∞)) (w : ℂ) :
+    Memℓp (fun n => if n = 0 then w else g n) (3 : ℝ≥0∞) := by
+  apply memℓp_of_eq_outside_finset hg {0}
+  intro n hn
+  simp only [Finset.mem_singleton] at hn
+  simp only [if_neg hn]
+
+-- The coefficient error is identically zero at the free potential.
+example (n : ℤ) : canonicalCriticalOffsetCoefficient (p := 3) (by simp) (by norm_num) 0
+    (pairParitySubspace 0).zero_mem n-2 = 0 := by
+  simp [canonicalCriticalOffsetCoefficient,canonicalCriticalMidpointOffset_apply,
+    canonicalCriticalPoints_zero,canonicalPeriodicMidpoint_zero,
+    canonicalDeletedPeriodicProduct_zero_center]
+
+end
+end CriticalValueChecks

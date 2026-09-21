@@ -1827,10 +1827,16 @@ for the canonical product. Canonical endpoint displacements now have
 bounded full norms and arbitrarily small local tails; ordering preserves
 the original pairwise tail estimates.
 
-Next estimate the free squared quotient and its derivative at the
-canonical critical points, obtaining `Gₙ(cₙ) = 1 + lp` and `Gₙ′(cₙ) = lp`.
-Then prove the locally uniform large-index lower bound on `2Gₙ+aGₙ′`
-and finish Lemma 8.6. The preceding real gap characterization by `|∆| ≥ 2`
-is also still to be formalized.
+Free squared-quotient displacement bounds now give locally uniform lp
+tail representatives for `Gₙ(cₙ)−1` and `Gₙ′(cₙ)`. Finite modification
+proves full lp membership at each fixed potential. The actual midpoint
+offset has locally bounded lp norm, and the bounded multiplier estimate
+therefore gives locally uniform lp tails for `2Gₙ+aGₙ′−2`, retaining the
+exact squared-gap identity at all even complex potentials.
+
+Next prove the locally uniform large-index lower bound on `2Gₙ+aGₙ′`
+and finish Lemma 8.6 by division. Use uniform small tails and localization;
+a bounded lp ball alone does not give uniform coordinate decay. The preceding
+real gap characterization by `|∆| ≥ 2` is also still to be formalized.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

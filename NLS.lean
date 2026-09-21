@@ -663,3 +663,9 @@ import NLS.ZakharovShabat.DeletedPairErrorMajorants
 import NLS.ZakharovShabat.DeletedPairErrorLp
 import NLS.ZakharovShabat.CanonicalPeriodicDisplacementBounds
 import NLS.ZakharovShabat.CanonicalDeletedProductLp
+import NLS.ComplexAnalysis.EntireIncrementBound
+import NLS.SequenceSpaces.FiniteModification
+import NLS.ZakharovShabat.FreeSquaredSineBounds
+import NLS.ZakharovShabat.DeletedProductCriticalValues
+import NLS.ZakharovShabat.CriticalMidpointOffset
+import NLS.ZakharovShabat.CriticalOffsetCoefficient
