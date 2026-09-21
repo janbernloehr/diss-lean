@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 755 modules and 4777 named public theorems. All compile on the
+The library has 761 modules and 4802 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.CentralBoundaryReordering` | Finite central sorting preserves actual roots, multiplicities, distant branches, and lp displacements |
+| `NLS.ZakharovShabat.BoundaryRootOrder` | Central-box and distant-disc separation give global lexicographic order and complete ordered labelings |
+| `NLS.ZakharovShabat.OrderedBoundaryUniqueness` | Exact equality of ordered complete sequences across all admissible cutoff choices |
+| `NLS.ZakharovShabat.CanonicalBoundaryRoots` | Canonical ordered roots, actual spectral exhaustion and multiplicities, lp displacement, real-type reality, and characteristic products |
+| `NLS.ZakharovShabat.CanonicalBoundaryFree` | Exact free central multisets, canonical signed lattice values, and zero full displacement |
+| `NLS.ZakharovShabat.UniformCanonicalBoundaryRoots` | Common local full lp bounds and complete canonical labelings at every sufficiently large cutoff |
 | `NLS.ZakharovShabat.UniformBoundaryDisplacementBounds` | Complete boundary displacement norms bounded by periodic pair tails and the central box; common full lp bounds for both actual spectra |
 | `NLS.ZakharovShabat.SingleSpectralProductFamilies` | Single-product convergence uniform over bounded label families on compact spectral sets, including free centers, with the source boundary normalization |
 | `NLS.ZakharovShabat.BoundaryCharacteristicUniform` | Uniform convergence of intrinsic boundary polynomials on one common potential neighborhood and every compact spectral set for both boundary conditions |
@@ -6690,14 +6696,40 @@ potential neighborhood for all spectral compacts, joint source analyticity
 at p=3/2, exact Dirichlet zeros, mixed second derivatives, operator-norm
 convergence of joint derivatives, and simultaneous spectral/potential limits.
 
-Canonical boundary coordinates and their continuity, real interlacing, and
+Continuity of canonical boundary coordinates, real interlacing, and
 the starred characteristic analogues remain. Lemma 9.1(ii–iii), its starred
 extension, and the anti-discriminant in Lemma 9.2 are still incomplete.
+
+## Canonical ordered ordinary boundary roots
+
+Both actual boundary spectra now have canonical lexicographically ordered
+root sequences. Sorting the finite central multiset preserves every original
+algebraic multiplicity and leaves each distant simple branch fixed. Central
+box and distant disc separation give global order. Enlarging two central
+blocks to a common cutoff proves uniqueness of the full ordered sequence,
+so the canonical coordinates are independent of all enumeration and cutoff
+choices.
+
+The canonical sequences exhaust the actual spectra, retain their original
+multiplicities and full lp displacements, and recover the intrinsic
+characteristics with locally uniform convergence of the literal cutoffs.
+All coordinates are real at real-type reflected potentials. At zero potential
+both sequences equal the signed free lattice and their displacements vanish.
+One open convex neighborhood, containing the base potential and zero, gives
+common full lp bounds and complete canonical labelings at every sufficiently
+large cutoff for both boundary conditions.
+
+Eight API examples check cutoff independence, negative free indices, zero
+lp displacement, exact repeated-root multiplicities, real-type roots at p=3,
+canonical characteristic normalization, locally uniform products, and common
+bounds at all larger cutoffs at p=3/2. These results prepare the continuity
+and real interlacing assertions of Lemma 9.1(ii–iii); those assertions and
+the starred products remain unproved.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9518 declarations under `NLS`, including generated
+axioms. The current audit covers 9576 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7902,7 +7934,7 @@ formal matrix representation.
    Uniform full displacement bounds and uniform convergence over potential
    neighborhoods now prove joint analyticity of the infinite ordinary
    boundary characteristics, completing Lemma 9.1(i). Continue with
-   canonical boundary coordinates, real interlacing, and starred products.
+   continuity of canonical boundary coordinates, real interlacing, and starred products.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

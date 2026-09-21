@@ -947,7 +947,11 @@ installation is absent. No shell startup files are modified.
   joint Banach-space analyticity of the infinite ordinary boundary products,
   including their source period-one realization and all characteristic zeros.
   This completes Lemma 9.1(i) for Dirichlet and Neumann spectra. Canonical
-  boundary coordinates, real interlacing, starred products, and the
+  ordered boundary coordinates now retain the exact spectra, multiplicities,
+  lp displacements, and characteristic products independently of cutoff
+  choices. They have the signed free values, are real at real-type reflected
+  potentials, and have common local full lp bounds at all large cutoffs.
+  Their continuity and real interlacing, starred products, and the
   anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 

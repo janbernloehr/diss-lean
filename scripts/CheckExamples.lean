@@ -14903,3 +14903,67 @@ example (b : BoundaryCondition) (φs : ℕ → CoeffPair 3) (zs : ℕ → ℂ) (
 
 end
 end BoundaryAnalyticChecks
+
+namespace CanonicalBoundaryChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+private theorem hp3 : (3 : ℝ≥0∞) ≠ ⊤ := by norm_num
+
+-- Changing admissible cutoffs and central enumerations cannot change ordered coordinates.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) (N M : ℕ) (ξ η : ℤ → ℂ)
+    (hξ : BoundaryRootLabeling b hp3 φ.val φ.property N ξ)
+    (hη : BoundaryRootLabeling b hp3 φ.val φ.property M η)
+    (hsξ : Monotone (fun n => complexLexKey (ξ n)))
+    (hsη : Monotone (fun n => complexLexKey (η n))) : ξ = η :=
+  hξ.ordered_unique hη hsξ hsη
+
+-- Negative as well as positive free indices have their literal signed lattice values.
+example (b : BoundaryCondition) (n : ℤ) :
+    b.canonicalRoots hp3 (by norm_num) 0 (by simp) (-n) = -(Real.pi : ℂ)*n := by
+  rw [b.canonicalRoots_zero]
+  push_cast
+  ring
+
+-- The displacement vanishes as an lp element, not just coordinatewise.
+example (b : BoundaryCondition) : b.canonicalDisplacement hp3 (by norm_num) 0 (by simp) = 0 :=
+  b.canonicalDisplacement_zero hp3 (by norm_num)
+
+-- Every occurrence, including a repeated central root, contributes its original multiplicity.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) (z : ℂ) :
+    (∑ᶠ n : ℤ, if b.canonicalRoots hp3 (by norm_num) φ.val φ.property n = z then (1 : ℕ) else 0) =
+      b.algebraicMultiplicity hp3 φ.val φ.property z :=
+  b.canonicalRoots_multiplicity hp3 (by norm_num) φ.val φ.property z
+
+-- Real-type reflection gives real roots at every index without a Hilbert-space restriction.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) (hφ : IsRealType φ.val) (n : ℤ) :
+    (b.canonicalRoots hp3 (by norm_num) φ.val φ.property n).im = 0 :=
+  b.canonicalRoots_im_eq_zero hp3 (by norm_num) φ.val φ.property hφ n
+
+-- The canonical product has the intrinsic characteristic normalization.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) :
+    b.characteristic hp3 φ.val φ.property =
+      boundaryCharacteristicProduct (b.canonicalRoots hp3 (by norm_num) φ.val φ.property) :=
+  b.characteristic_eq_canonicalProduct hp3 (by norm_num) φ.val φ.property
+
+-- Literal ordered cutoffs converge even on compact sets meeting the free lattice.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) :
+    TendstoLocallyUniformlyOn (fun N z => boundaryCharacteristicPartialProduct
+      (b.canonicalRoots hp3 (by norm_num) φ.val φ.property) z N)
+      (b.characteristic hp3 φ.val φ.property) atTop univ :=
+  b.tendstoLocallyUniformlyOn_canonicalProduct hp3 (by norm_num) φ.val φ.property
+
+-- Below exponent two, a single neighborhood controls both canonical spectra at every larger cutoff.
+example (φ : dirichletSubspace (p := ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ N : ℕ, 0 < N ∧ ∃ U : Set (dirichletSubspace (p := ENNReal.ofReal (3/2 : ℝ))),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∃ R : ℝ, 0 ≤ R ∧
+        ∀ ψ ∈ U, ∀ b : BoundaryCondition,
+          (∀ K : ℕ, N ≤ K → BoundaryRootLabeling b (by simp) ψ.val ψ.property K
+            (b.canonicalRoots (by simp) (by norm_num) ψ.val ψ.property)) ∧
+          ‖b.canonicalDisplacement (by simp) (by norm_num) ψ.val ψ.property‖ ≤ R :=
+  exists_uniform_canonicalBoundaryRoots_all_cutoffs (by simp) (by norm_num) φ
+
+end
+end CanonicalBoundaryChecks

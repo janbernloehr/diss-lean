@@ -703,3 +703,9 @@ import NLS.ZakharovShabat.UniformBoundaryDisplacementBounds
 import NLS.ZakharovShabat.SingleSpectralProductFamilies
 import NLS.ZakharovShabat.BoundaryCharacteristicUniform
 import NLS.ZakharovShabat.BoundaryCharacteristicAnalytic
+import NLS.ZakharovShabat.CentralBoundaryReordering
+import NLS.ZakharovShabat.BoundaryRootOrder
+import NLS.ZakharovShabat.OrderedBoundaryUniqueness
+import NLS.ZakharovShabat.CanonicalBoundaryRoots
+import NLS.ZakharovShabat.CanonicalBoundaryFree
+import NLS.ZakharovShabat.UniformCanonicalBoundaryRoots

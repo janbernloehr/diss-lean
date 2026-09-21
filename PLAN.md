@@ -1892,8 +1892,16 @@ Fréchet derivatives, and joint Banach-space analyticity of the intrinsic
 infinite products. Pullback proves joint analyticity and exact spectral zeros
 on the original source coefficient space, completing ordinary Lemma 9.1(i).
 
-Next construct canonical boundary coordinates and prove their continuity
-and real interlacing, and establish the starred characteristic analogues
+Canonical ordinary boundary coordinates are now constructed by sorting the
+actual central multiset while fixing distant branches. Their ordered
+labelings agree across cutoffs, retain exact original multiplicities and lp
+displacements, and recover the intrinsic characteristic products. Free values
+are the signed lattice and real-type roots are real at every index. Both
+canonical sequences have common locally bounded full lp norms and complete
+labelings at all sufficiently large cutoffs.
+
+Next prove continuity of canonical boundary coordinates and their real
+interlacing, and establish the starred characteristic analogues
 (Lemma 9.1(ii–iii) and its extension). Then implement the anti-discriminant
 (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.
