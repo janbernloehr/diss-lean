@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 751 modules and 4763 named public theorems. All compile on the
+The library has 755 modules and 4777 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.UniformBoundaryDisplacementBounds` | Complete boundary displacement norms bounded by periodic pair tails and the central box; common full lp bounds for both actual spectra |
+| `NLS.ZakharovShabat.SingleSpectralProductFamilies` | Single-product convergence uniform over bounded label families on compact spectral sets, including free centers, with the source boundary normalization |
+| `NLS.ZakharovShabat.BoundaryCharacteristicUniform` | Uniform convergence of intrinsic boundary polynomials on one common potential neighborhood and every compact spectral set for both boundary conditions |
+| `NLS.ZakharovShabat.BoundaryCharacteristicAnalytic` | Uniform analytic approximation, joint complex smoothness and Banach analyticity, uniform joint derivative limits, mixed analytic derivatives, and ordinary source Lemma 9.1(i) |
 | `NLS.FunctionalAnalysis.ProjectionDeterminant` | Intrinsic shifted determinants on varying finite projection ranges, exact transport invariance, and analytic dependence without nonvanishing assumptions |
 | `NLS.ZakharovShabat.BoundaryContourRestriction` | Original domain recursion and full generalized eigenspaces in boundary contour ranges; characteristic-root multiplicities equal original boundary algebraic multiplicities |
 | `NLS.ZakharovShabat.BoundaryContourDeterminant` | Jointly analytic actual boundary contour determinants and exact finite root products retaining every original multiplicity |
@@ -6642,16 +6646,58 @@ contours, original finite-product multiplicities, joint determinant
 analyticity, common normalized-polynomial analyticity at p=3/2, and its
 transfer to source coefficient potentials.
 
-The finite approximants are jointly analytic. To finish joint analyticity
-of the intrinsic infinite products, convergence must still be uniform over
-a potential neighborhood and compact spectral sets. Canonical boundary
-coordinates, continuity, real interlacing, and starred products also remain;
-Lemma 9.1 is incomplete. The anti-discriminant and Lemma 9.2 follow.
+## Section 9: uniform boundary products and joint analyticity
+
+`UniformBoundaryDisplacementBounds` bounds every distant boundary displacement
+by one of the two original periodic displacements in its disc. Pairwise lp
+tail bounds, followed by a finite central replacement estimate, bound the
+full norm of any complete boundary labeling. A common central box controls
+all possible central enumerations. One open convex neighborhood containing
+the potential and zero, one cutoff, and one norm bound work for both spectra.
+No continuity of the selected labels is required.
+
+`SingleSpectralProductFamilies` gives full single-product convergence uniform
+over any bounded displacement family near every nonfree spectral parameter.
+Hölder estimates give uniformly vanishing absolute relative-product tails;
+multiplication by the free sine product preserves uniform convergence.
+Maximum modulus extends the uniform Cauchy estimate across the countable
+free lattice to every compact spectral set. Pointwise entire limits identify
+the uniform limit, and the source normalization transfers the result to
+boundary characteristic products. Compactness is needed only in the spectral
+variable; the label family need not carry a topology.
+
+`BoundaryCharacteristicUniform` identifies all sufficiently large intrinsic
+polynomials with these complete products. The intrinsic Dirichlet and
+Neumann approximants consequently converge uniformly over one potential
+neighborhood and every compact spectral set simultaneously, including
+spectral zeros and free centers.
+
+`BoundaryCharacteristicAnalytic` combines uniform convergence with eventual
+joint analyticity of the finite polynomials on actual Banach neighborhoods.
+Local uniform analytic approximation proves joint complex smoothness and
+joint Banach-space analyticity of both infinite characteristics. Their full
+Fréchet derivatives are uniform operator-norm limits on a neighborhood,
+and every mixed iterated Fréchet derivative is jointly analytic. Pullback
+through the ordinary interval extension gives joint analyticity on the
+original source coefficient-potential space. Together with the already
+proved exact zero sets and source-normalized product identities, this
+completes Lemma 9.1(i) for ordinary Dirichlet and Neumann spectra for every
+finite exponent greater than one.
+
+Eight examples check common full displacement bounds, uniform products over
+an arbitrary label family on a compact set containing free centers, a common
+potential neighborhood for all spectral compacts, joint source analyticity
+at p=3/2, exact Dirichlet zeros, mixed second derivatives, operator-norm
+convergence of joint derivatives, and simultaneous spectral/potential limits.
+
+Canonical boundary coordinates and their continuity, real interlacing, and
+the starred characteristic analogues remain. Lemma 9.1(ii–iii), its starred
+extension, and the anti-discriminant in Lemma 9.2 are still incomplete.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9499 declarations under `NLS`, including generated
+axioms. The current audit covers 9518 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7853,8 +7899,10 @@ formal matrix representation.
    multiplicities, and have locally uniform value and derivative limits.
    Boundary contour determinants and both central polynomial families are
    now jointly analytic on a common neighborhood at all large cutoffs.
-   Continue with uniform convergence over potential neighborhoods, then
-   canonical boundary coordinates and starred products.
+   Uniform full displacement bounds and uniform convergence over potential
+   neighborhoods now prove joint analyticity of the infinite ordinary
+   boundary characteristics, completing Lemma 9.1(i). Continue with
+   canonical boundary coordinates, real interlacing, and starred products.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

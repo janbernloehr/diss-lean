@@ -941,8 +941,14 @@ installation is absent. No shell startup files are modified.
   and depend jointly analytically on the potential and spectral parameter.
   Both normalized central polynomials are jointly analytic for every large
   cutoff on one common neighborhood, including for source potentials.
-  Uniform convergence over potential neighborhoods is next, followed by
-  canonical boundary coordinates, starred products, and the anti-discriminant.
+  Complete boundary displacements now have common full lp bounds. These
+  give convergence uniform over one potential neighborhood and every compact
+  spectral set, including free lattice points. Analytic approximation proves
+  joint Banach-space analyticity of the infinite ordinary boundary products,
+  including their source period-one realization and all characteristic zeros.
+  This completes Lemma 9.1(i) for Dirichlet and Neumann spectra. Canonical
+  boundary coordinates, real interlacing, starred products, and the
+  anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

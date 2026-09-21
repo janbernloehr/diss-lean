@@ -14833,3 +14833,73 @@ example (φ : CoeffPair 3) : ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 3),
 
 end
 end BoundaryDeterminantChecks
+
+namespace BoundaryAnalyticChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology Metric
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+private theorem hp3 : (3 : ℝ≥0∞) ≠ ⊤ := by norm_num
+
+-- One neighborhood controls both complete spectra, including every actual central root.
+example (φ : dirichletSubspace (p := 3)) : ∃ N : ℕ, 0 < N ∧
+    ∃ U : Set (dirichletSubspace (p := 3)), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ R : ℝ, 0 ≤ R ∧ ∀ ψ ∈ U, ∀ b : BoundaryCondition, ∃ ξ : ℤ → ℂ,
+        ∃ h : BoundaryRootLabeling b hp3 ψ.val ψ.property N ξ, ‖(⟨_,h.displacement⟩ : Coeff 3)‖ ≤ R :=
+  exists_uniform_bounded_boundaryRootLabeling hp3 (by norm_num) φ
+
+-- No topology on the root-label family is required; the compact spectral set contains free centers.
+example {X : Type*} (ξ : X → ℤ → ℂ) (hξ : ∀ x, Memℓp (fun n => ξ x n-(Real.pi : ℂ)*n) 3)
+    (R : ℝ) (hR : 0 ≤ R) (hb : ∀ x, ‖(⟨_,hξ x⟩ : Coeff 3)‖ ≤ R) :
+    TendstoUniformlyOn (fun N (t : ℂ × X) => boundaryCharacteristicPartialProduct (ξ t.2) t.1 N)
+      (fun t => boundaryCharacteristicProduct (ξ t.2) t.1) atTop (closedBall 0 8 ×ˢ univ) :=
+  tendstoUniformlyOn_boundaryCharacteristicProduct_family hp3 (by norm_num) ξ hξ univ R hR
+    (fun x _ => hb x) _ (isCompact_closedBall _ _)
+
+-- A single potential neighborhood supports every compact spectral set for both boundary conditions.
+example (φ : dirichletSubspace (p := 3)) : ∃ U : Set (dirichletSubspace (p := 3)),
+    IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ b : BoundaryCondition, ∀ K : Set ℂ, IsCompact K →
+      TendstoUniformlyOn (fun N (t : ℂ × dirichletSubspace (p := 3)) =>
+        b.normalizedCentralPolynomial hp3 t.2.val t.2.property N t.1)
+        (fun t => b.characteristic hp3 t.2.val t.2.property t.1) atTop (K ×ˢ U) :=
+  exists_uniform_boundaryCharacteristic hp3 (by norm_num) φ
+
+-- Joint source analyticity holds below the Hilbert exponent and at all characteristic zeros.
+example (b : BoundaryCondition) : AnalyticOnNhd ℂ
+    (fun t : ℂ × CoeffPair (ENNReal.ofReal (3/2 : ℝ)) =>
+      periodOneBoundaryCharacteristic (by simp) (by norm_num) b t.2 t.1) univ :=
+  analyticOnNhd_periodOneBoundaryCharacteristic_joint (by simp) (by norm_num) b
+
+-- The joint analytic Dirichlet function has precisely the actual source-realized Dirichlet spectrum.
+example (φ : CoeffPair 3) (z : ℂ) : periodOneBoundaryCharacteristic hp3 (by norm_num) .dirichlet φ z = 0 ↔
+    z ∈ BoundaryCondition.spectrum .dirichlet hp3 (periodOneBoundaryPotential hp3 (by norm_num) φ).val
+      (periodOneBoundaryPotential hp3 (by norm_num) φ).property :=
+  (periodOneBoundaryCharacteristic_joint_spec hp3 (by norm_num) .dirichlet).2 φ z
+
+-- Second mixed Fréchet derivatives are analytic as multilinear-map-valued functions.
+example (b : BoundaryCondition) : AnalyticOnNhd ℂ (iteratedFDeriv ℂ 2
+    (fun t : ℂ × dirichletSubspace (p := 3) => b.characteristic hp3 t.2.val t.2.property t.1)) univ :=
+  analyticOnNhd_iteratedFDeriv_boundaryCharacteristic hp3 (by norm_num) b 2
+
+-- The full joint derivative is approximated uniformly in operator norm on a genuine neighborhood.
+example (b : BoundaryCondition) (t : ℂ × dirichletSubspace (p := 3)) : ∃ r : ℝ, 0 < r ∧
+    TendstoUniformlyOn (fun N => fderiv ℂ (fun t : ℂ × dirichletSubspace (p := 3) =>
+      b.normalizedCentralPolynomial hp3 t.2.val t.2.property N t.1))
+      (fderiv ℂ (fun t : ℂ × dirichletSubspace (p := 3) => b.characteristic hp3 t.2.val t.2.property t.1))
+      atTop (ball t r) :=
+  exists_uniform_fderiv_boundaryCharacteristic hp3 (by norm_num) b t
+
+-- Simultaneous complex potential and spectral limits preserve the source characteristic value.
+example (b : BoundaryCondition) (φs : ℕ → CoeffPair 3) (zs : ℕ → ℂ) (φ : CoeffPair 3) (z : ℂ)
+    (hφ : Tendsto φs atTop (𝓝 φ)) (hz : Tendsto zs atTop (𝓝 z)) :
+    Tendsto (fun n => periodOneBoundaryCharacteristic hp3 (by norm_num) b (φs n) (zs n)) atTop
+      (𝓝 (periodOneBoundaryCharacteristic hp3 (by norm_num) b φ z)) :=
+  Filter.Tendsto.comp
+    (g := fun t : ℂ × CoeffPair 3 => periodOneBoundaryCharacteristic hp3 (by norm_num) b t.2 t.1)
+    (f := fun n : ℕ => (zs n,φs n))
+    (analyticOnNhd_periodOneBoundaryCharacteristic_joint hp3 (by norm_num) b (z,φ) (mem_univ _)).continuousAt.tendsto
+    (hz.prodMk_nhds hφ)
+
+end
+end BoundaryAnalyticChecks

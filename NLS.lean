@@ -699,3 +699,7 @@ import NLS.FunctionalAnalysis.ProjectionDeterminant
 import NLS.ZakharovShabat.BoundaryContourRestriction
 import NLS.ZakharovShabat.BoundaryContourDeterminant
 import NLS.ZakharovShabat.CentralBoundaryPolynomialAnalytic
+import NLS.ZakharovShabat.UniformBoundaryDisplacementBounds
+import NLS.ZakharovShabat.SingleSpectralProductFamilies
+import NLS.ZakharovShabat.BoundaryCharacteristicUniform
+import NLS.ZakharovShabat.BoundaryCharacteristicAnalytic

@@ -1880,9 +1880,20 @@ boundary root products. Consequently one open convex neighborhood and
 threshold give joint analyticity of both normalized central polynomials
 at every larger cutoff, including after the source interval extension.
 
-Next establish convergence uniform over a potential neighborhood and
-compact spectral sets, and pass joint analyticity to the intrinsic infinite
-boundary products. Then prove canonical boundary coordinates and their
-continuity, real interlacing, and starred characteristic products (Lemma 9.1),
-followed by the anti-discriminant (Lemma 9.2).
+Complete ordinary boundary root displacements now have uniformly bounded
+full lp norms: distant roots belong to the corresponding periodic pair,
+and the common central box bounds every central enumeration. Hölder tails
+give single-product convergence uniform over bounded families off the free
+lattice; maximum modulus fills the free centers uniformly. Intrinsic boundary
+polynomials therefore converge uniformly over one potential neighborhood
+and every compact spectral set for both boundary conditions. Local analytic
+approximation gives joint complex smoothness, operator-norm convergence of
+Fréchet derivatives, and joint Banach-space analyticity of the intrinsic
+infinite products. Pullback proves joint analyticity and exact spectral zeros
+on the original source coefficient space, completing ordinary Lemma 9.1(i).
+
+Next construct canonical boundary coordinates and prove their continuity
+and real interlacing, and establish the starred characteristic analogues
+(Lemma 9.1(ii–iii) and its extension). Then implement the anti-discriminant
+(Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.
