@@ -14077,3 +14077,67 @@ example (φ : pairParitySubspace (p := 3) 0) (K : ℕ) :
 
 end
 end PeriodicContinuityChecks
+
+
+namespace CanonicalCentralParityChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- A continuous two-level function cannot switch levels on the real line.
+example (f : ℝ → ℂ) (hf : Continuous f) (hv : ∀ t, f t = 2 ∨ f t = -2) : f (-3) = f 5 := by
+  apply continuous_eq_of_finite_range f hf
+  apply (Set.toFinite ({(2 : ℂ),-2} : Set ℂ)).subset
+  rintro z ⟨t,rfl⟩
+  exact hv t
+
+-- The real potential path preserves real type also at negative parameters.
+example (φ : pairParitySubspace (p := 3) 0) (hφ : IsRealType φ.val) :
+    IsRealType (realPotentialPath φ (-2)).val := realPotentialPath_isRealType φ hφ (-2)
+
+-- A negative odd index has level -2 in both canonical slots, including the central region.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) :
+    canonicalDiscriminant (by simp) φ (canonicalPeriodicLeft (by simp) (by norm_num) φ heven (-3)) = -2 ∧
+    canonicalDiscriminant (by simp) φ (canonicalPeriodicRight (by simp) (by norm_num) φ heven (-3)) = -2 := by
+  simpa using canonicalPeriodicEndpoints_discriminant_of_realType (by simp) (by norm_num) φ heven hreal (-3)
+
+-- The sorted central odd roots retain their original multiplicities exactly.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) :
+    (∑ n ∈ centralParityIndices (canonicalPeriodicCutoff (by simp) (by norm_num) φ heven) 1,
+      ({canonicalPeriodicLeft (by simp) (by norm_num) φ heven n,
+        canonicalPeriodicRight (by simp) (by norm_num) φ heven n} : Multiset ℂ)) =
+      centralParityRoots (by simp) φ (canonicalPeriodicCutoff (by simp) (by norm_num) φ heven) 1 :=
+  (canonicalPeriodicEndpoints_centralParity (by simp) (by norm_num) φ heven hreal).odd
+
+-- Neighboring gaps cannot touch, even when their indices straddle zero.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) :
+    (canonicalPeriodicRight (by simp) (by norm_num) φ heven (-1)).re <
+      (canonicalPeriodicLeft (by simp) (by norm_num) φ heven 0).re := by
+  simpa using canonicalPeriodicRight_re_lt_next_left (by simp) (by norm_num) φ heven hreal (-1)
+
+-- Collapsed canonical pairs are critical without assuming real type.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (n : ℤ)
+    (h : canonicalPeriodicLeft (by simp) (by norm_num) φ heven n =
+      canonicalPeriodicRight (by simp) (by norm_num) φ heven n) :
+    deriv (canonicalDiscriminant (by simp) φ) (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n) = 0 :=
+  canonicalPeriodicLeft_critical_of_eq_right (by simp) (by norm_num) φ heven n h
+
+-- Every real gap contains a critical point also below the Hilbert exponent.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (heven : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) (n : ℤ) :
+    ∃ c ∈ Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re,
+      deriv (canonicalDiscriminant (by simp) φ) (c : ℂ) = 0 :=
+  exists_critical_mem_canonicalPeriodicGap (by simp) (by norm_num) φ heven hreal n
+
+-- At level -2, the odd sector carries the full original multiplicity at complex potentials too.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (z : ℂ)
+    (hz : canonicalDiscriminant (by simp) φ z = -2) :
+    parityAlgebraicMultiplicity (by simp) φ 1 z = periodicAlgebraicMultiplicity (by simp) φ z := by
+  simpa only [Int.one_emod_two, one_ne_zero, if_false, hz, if_true] using
+    parityAlgebraicMultiplicity_eq_ite_discriminant (by simp) (by norm_num) φ heven 1 (Or.inr rfl) z
+
+end
+end CanonicalCentralParityChecks

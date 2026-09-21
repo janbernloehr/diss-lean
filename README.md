@@ -901,8 +901,11 @@ installation is absent. No shell startup files are modified.
   neighborhood; both equal `nπ` at zero potential. Stable periodic counts
   now prove coordinate continuity at every real-type potential under
   arbitrary even complex perturbations, including colliding endpoints.
-  The parity of the ordered central pairs remains next before
-  central-gap interlacing and Lemma 8.6.
+  Continuity along real scaling now identifies the discriminant level
+  of every canonical pair and recovers the exact central parity multisets.
+  Distinct indexed real gaps are strictly separated, and every open or
+  collapsed gap contains a critical point. Identifying that point with
+  its canonical critical index remains next before Lemma 8.6.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

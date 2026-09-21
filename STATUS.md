@@ -2,11 +2,19 @@
 
 ## Implemented and checked
 
-The library has 687 modules and 4524 named public theorems. All compile on the
+The library has 695 modules and 4547 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.FiniteValueContinuity` | A continuous map with finite range is constant on a preconnected domain in a T1 codomain |
+| `NLS.ZakharovShabat.RealPotentialPaths` | Real scaling preserves real type and even support; continuous paths and canonical endpoint-slot paths from zero |
+| `NLS.ZakharovShabat.CanonicalPeriodicLevels` | Free signed parity levels and canonical endpoint discriminant levels at every real-type index, including the central cluster |
+| `NLS.ZakharovShabat.PeriodicParityFilters` | Each discriminant level carries full original multiplicity in its own parity; exact central parity multisets by filtering |
+| `NLS.ZakharovShabat.CanonicalPeriodicParity` | Level-respecting full central labels recover exact parity labels; all ordered real-type labels and canonical endpoints have the correct central parity |
+| `NLS.ZakharovShabat.CanonicalPeriodicGapOrder` | Strict separation of neighboring and arbitrary ordered real gaps; disjointness of distinct closed gaps |
+| `NLS.ZakharovShabat.PeriodicEndpointMultiplicity` | Every collapsed complete endpoint pair has original multiplicity at least two and is critical at even complex potentials |
+| `NLS.ZakharovShabat.CanonicalPeriodicGapCritical` | Critical points strictly inside every open real canonical gap, collapsed-pair criticality, and existence in every closed real gap |
 | `NLS.ZakharovShabat.PeriodicProductFamilyLimits` | Locally uniform periodic-product parameter limits, compact spectral avoidance and confinement, and stable circular analytic counts on the full potential space |
 | `NLS.ZakharovShabat.PeriodicEndpointRegions` | Central indices detected by closed real-part bounds, spectral confinement to the central finite set, and compact central endpoint bounds |
 | `NLS.ZakharovShabat.PeriodicEndpointRootCounts` | Natural analytic orders equal original multiplicities; central multiset filters and paired occurrences compute analytic counts |
@@ -6133,14 +6141,56 @@ Eight examples cover compact off-axis avoidance near zero, free double
 multiplicity at a negative index, double slot counts at a collapsed pair,
 analytic counts on central discs, continuity at free double eigenvalues,
 both coordinates at p=3/2, displacement-coordinate continuity, and common
-cutoffs containing an arbitrary finite block. The next step is central
-parity identification along real-type paths, then central-gap interlacing
-and Lemma 8.6.
+cutoffs containing an arbitrary finite block. Central parity identification
+is proved in the next milestone; full indexed interlacing and Lemma 8.6
+remain open.
+
+## Section 8: central parity and critical points in every real gap
+
+`FiniteValueContinuity` proves that a continuous function with finite
+range is constant on a preconnected domain with a T1 codomain.
+`RealPotentialPaths` supplies continuous real scaling paths in the even
+potential space. Real type is preserved for every real parameter, and
+canonical endpoint slots are continuous along these paths.
+
+`CanonicalPeriodicLevels` uses the characteristic equation to restrict
+the discriminant along each endpoint path to the values 2 and -2.
+Connectedness fixes the value to its free signed-index value. Both
+canonical endpoints at every real-type index therefore have the correct
+parity level, including indices in the central cluster.
+
+`PeriodicParityFilters` proves that a parity sector carries the full
+original algebraic multiplicity exactly at its own discriminant level.
+Filtering the full central root multiset by a level recovers the exact
+original parity multiset. `CanonicalPeriodicParity` applies this identity
+to the canonical endpoints and, by uniqueness, to every complete ordered
+real-type labeling. Central parity is now identified with multiplicities.
+
+`CanonicalPeriodicGapOrder` combines order and opposite levels at
+neighboring indices to prove strict separation of all different indexed
+real gaps. The closed gap intervals are disjoint, including collapsed
+ones. `PeriodicEndpointMultiplicity` enlarges the central cutoff to any
+chosen pair: coincident slots contribute at least two to the original
+algebraic multiplicity. Their common value is consequently a discriminant
+critical point, without requiring real type.
+
+`CanonicalPeriodicGapCritical` applies Rolle at every open real gap,
+including central gaps, and proves criticality at every collapsed gap.
+Every canonical closed real gap therefore contains a critical point.
+This does not yet identify that point with the canonical critical
+coordinate of the same index. Central count saturation is the next step
+for global indexed interlacing; Lemma 8.6 remains open.
+
+Eight examples check connected two-level constancy, real scaling at a
+negative parameter, both endpoint levels at a negative odd index, the
+exact central odd multiset, separation across index zero, collapsed-gap
+criticality at complex even potentials, critical-point existence in every
+gap at p=3/2, and full odd multiplicity at level -2.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9046 declarations under `NLS`, including generated
+axioms. The current audit covers 9081 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7312,8 +7362,11 @@ formal matrix representation.
    cutoffs, defining canonical endpoints with common nearby cutoffs and
    exact free values. Stable periodic slot counts now prove endpoint
    coordinate continuity at every real-type potential, including collisions.
-   Next prove central parity identification, then central-gap
-   interlacing and Lemma 8.6.
+   Real scaling now identifies every canonical pair's discriminant level
+   and its exact central parity. All indexed real gaps are strictly
+   separated, and every open or collapsed gap contains a critical point.
+   Next identify its canonical critical index by central counts, then
+   prove Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -635,3 +635,11 @@ import NLS.ZakharovShabat.PeriodicEndpointSlots
 import NLS.ZakharovShabat.CanonicalPeriodicStability
 import NLS.ZakharovShabat.PeriodicEndpointRealBarriers
 import NLS.ZakharovShabat.CanonicalPeriodicContinuity
+import NLS.ComplexAnalysis.FiniteValueContinuity
+import NLS.ZakharovShabat.RealPotentialPaths
+import NLS.ZakharovShabat.CanonicalPeriodicLevels
+import NLS.ZakharovShabat.PeriodicParityFilters
+import NLS.ZakharovShabat.CanonicalPeriodicParity
+import NLS.ZakharovShabat.CanonicalPeriodicGapOrder
+import NLS.ZakharovShabat.PeriodicEndpointMultiplicity
+import NLS.ZakharovShabat.CanonicalPeriodicGapCritical

@@ -1787,8 +1787,15 @@ prefix and suffix counts control real parts. Both canonical endpoint
 coordinates are now continuous at real-type potentials under arbitrary
 even complex perturbations, including spectral collisions.
 
-Next identify their central parity by continuity
-along real-type paths, then prove central-gap interlacing and the refined
-offset estimate in Lemma 8.6.
+Real scaling preserves real type and produces continuous canonical
+endpoint paths. The endpoint discriminant levels cannot change along
+these paths, so their free values identify each signed index's parity.
+Filtering by these levels recovers the exact central parity multisets.
+Neighboring real gaps are strictly separated; Rolle and repeated-root
+multiplicity give a critical point in every open or collapsed gap.
+
+Next use central count saturation to identify these points with their
+canonical critical indices, completing global indexed interlacing, then
+prove the refined offset estimate in Lemma 8.6.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
