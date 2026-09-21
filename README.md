@@ -911,7 +911,10 @@ installation is absent. No shell startup files are modified.
   simple and have nonzero second discriminant derivative. Every canonical
   critical point is now a strict real local maximum or minimum, including
   collapsed gaps. Each gap contains exactly one local extremum, and there
-  are no others. The refined estimate in Lemma 8.6 remains next.
+  are no others. The entire product with one endpoint pair removed now
+  has the corrected quadratic factorization and exact critical midpoint
+  identity used in Lemma 8.6, valid also at collapsed gaps. Its remaining
+  lp estimates and uniform coefficient lower bound are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

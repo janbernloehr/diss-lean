@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 703 modules and 4582 named public theorems. All compile on the
+The library has 708 modules and 4609 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.QuadraticCriticalIdentity` | Differentiated quadratic-factor identity, squared-gap offset rearrangement, and solved formula under a nonzero coefficient |
+| `NLS.ZakharovShabat.DeletedSpectralPairProducts` | Literal pair-deleted cutoffs, entire locally uniform limit, derivative convergence, invariance under changing the removed roots, and exact pair restoration |
+| `NLS.ZakharovShabat.PeriodicEndpointProducts` | Full central multiset polynomial identity and identification of every complete endpoint product with the intrinsic canonical periodic product |
+| `NLS.ZakharovShabat.DiscriminantPairFactorization` | Canonical midpoint, gap and remaining entire product; corrected negative quadratic factorization and exact critical offset identities at all even complex potentials |
+| `NLS.ZakharovShabat.DeletedPeriodicFree` | Free midpoint and gap values, exact squared filled-sine-quotient formula for the remaining product, and unit value at the removed double root |
 | `NLS.ComplexAnalysis.StrictDerivativeTest` | Strict punctured local minimum/maximum from the sign of the second derivative, and conversion to standard local extrema |
 | `NLS.ComplexAnalysis.RealAxisSecondDerivative` | First and second real-part derivative identities, reality of the second derivative on a preserved real axis, and strict complex-to-real critical extrema |
 | `NLS.ZakharovShabat.RealDiscriminantExtrema` | Strict local extrema at all real-type critical points, equivalence with real local extrema, exact canonical exhaustion, and one local extremum per real gap |
@@ -6262,10 +6267,56 @@ every gap, canonical exhaustion of all extrema, and the collapsed free gap
 at zero. Lemma 8.6 and the preceding real gap characterization by
 `|∆| ≥ 2` remain open.
 
+## Section 8: exact factorization for Lemma 8.6
+
+`DeletedSpectralPairProducts` removes one pair from the literal symmetric
+polynomial cutoffs while retaining its constant denominator, including
+denominator one at index zero. The remaining polynomials converge locally
+uniformly away from the selected endpoints by division of the full product.
+The entire-limit theorem then extends convergence across both endpoints,
+including collisions. Derivatives converge locally uniformly as well.
+Changing only the two removed root values leaves the remaining product
+unchanged. Restoring the pair gives the original entire product everywhere.
+
+`PeriodicEndpointProducts` identifies a full central endpoint multiset with
+its intrinsic characteristic polynomial. Every sufficiently large cutoff
+of any complete endpoint labeling is therefore the normalized central
+polynomial. Its entire product equals the canonical periodic product;
+no central parity assignment is needed for this identity.
+
+`DiscriminantPairFactorization` defines the canonical midpoint `τₙ`, gap
+`γₙ`, and remaining entire product `Gₙ`. At all even complex potentials,
+including all finite exponents greater than one, it proves
+`∆(λ)²−4 = −4((λ−τₙ)²−γₙ²/4)Gₙ(λ)` on the whole complex plane.
+The printed proof of Lemma 8.6 uses `+4` here; the established full-product
+normalization and free sine identity force `−4`. This sign correction does
+not change the zero-derivative equation at a critical point.
+
+`QuadraticCriticalIdentity` differentiates that equation and rearranges it.
+At the canonical critical point `c`, putting `a = c−τₙ`, the exact identity
+is `(2Gₙ(c)+aGₙ′(c))a = γₙ²Gₙ′(c)/4`. If the coefficient on the left is
+nonzero, the solved formula factors `a` by `γₙ²` without dividing by the
+gap length. Thus the identities also apply to collapsed gaps. These results
+do not yet assert the eventual nonvanishing or lp bounds needed for 8.6.
+
+`DeletedPeriodicFree` checks the normalization at zero potential. The
+remaining product is exactly the square of the filled sine quotient,
+including at the removed free root, where its value is one. The midpoint
+is `πn` and the gap is zero for every signed index.
+
+Eight examples check the exceptional zero-mode denominator, invariance
+under changing the removed pair to a collision, the actual factorization
+at p=3/2, the complex-potential critical identity, analyticity at a removed
+endpoint, solving a collapsed-gap equation, the remaining free product
+at a negative index, and derivative convergence across the removed roots.
+The locally uniform lp estimates for the remaining product and its
+derivative, and the uniform large-index coefficient lower bound, remain
+needed to finish Lemma 8.6.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9126 declarations under `NLS`, including generated
+axioms. The current audit covers 9171 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7446,8 +7497,11 @@ formal matrix representation.
    critical points are simple and the second discriminant derivative is
    nonzero there. Every canonical critical coordinate is now a strict real
    local extremum, including at collapsed gaps. These exhaust the real local
-   extrema, with exactly one in each gap. Next prove Lemma 8.6 and formalize
-   the real gap characterization by `|∆| ≥ 2`.
+   extrema, with exactly one in each gap. The exact entire deleted-pair
+   factorization, corrected normalization, and squared-gap critical offset
+   identity for Lemma 8.6 are now proved, with the free normalization checked.
+   Next prove its remaining locally uniform lp estimates and coefficient
+   lower bound, and formalize the real gap characterization by `|∆| ≥ 2`.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -651,3 +651,8 @@ import NLS.ZakharovShabat.RealCriticalSimplicity
 import NLS.ComplexAnalysis.StrictDerivativeTest
 import NLS.ComplexAnalysis.RealAxisSecondDerivative
 import NLS.ZakharovShabat.RealDiscriminantExtrema
+import NLS.ComplexAnalysis.QuadraticCriticalIdentity
+import NLS.ZakharovShabat.DeletedSpectralPairProducts
+import NLS.ZakharovShabat.PeriodicEndpointProducts
+import NLS.ZakharovShabat.DiscriminantPairFactorization
+import NLS.ZakharovShabat.DeletedPeriodicFree

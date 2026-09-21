@@ -14294,3 +14294,68 @@ example : IsLocalExtr (fun y : ℝ => (canonicalDiscriminant (p := 3) (by simp) 
 
 end
 end StrictExtremaChecks
+
+
+namespace DeletedPairChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The exceptional zero mode keeps denominator one even for non-free endpoints.
+example (ξ η : ℤ → ℂ) (z : ℂ) : deletedSpectralPairPartialProduct ξ η 0 0 z = 1 := by
+  simp [deletedSpectralPairPartialProduct,spectralPairDenominator]
+
+-- Changing the omitted pair does not change the remaining product, including at collisions.
+example (ξ η : ℤ → ℂ) (n : ℤ) (w : ℂ) :
+    deletedSpectralPairProduct (Function.update ξ n w) (Function.update η n w) n =
+      deletedSpectralPairProduct ξ η n := by
+  apply deletedSpectralPairProduct_congr_away
+  · intro k hk
+    exact Function.update_of_ne hk w ξ
+  · intro k hk
+    exact Function.update_of_ne hk w η
+
+-- The corrected negative normalization holds below the Hilbert exponent at every spectral point.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (heven : φ ∈ pairParitySubspace 0) (n : ℤ) (z : ℂ) :
+    (canonicalDiscriminant (by simp) φ z)^2-4 =
+      -4*((z-canonicalPeriodicMidpoint (by simp) (by norm_num) φ heven n)^2-
+        (canonicalPeriodicGap (by simp) (by norm_num) φ heven n)^2/4)*
+        canonicalDeletedPeriodicProduct (by simp) (by norm_num) φ heven n z :=
+  canonicalDiscriminant_sq_sub_four_eq_midpoint_mul (by simp) (by norm_num) φ heven n z
+
+-- The offset identity applies to complex potentials without a real-type assumption.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (n : ℤ) :
+    let c := canonicalCriticalPoints (by simp) (by norm_num) φ heven n
+    let a := c-canonicalPeriodicMidpoint (by simp) (by norm_num) φ heven n
+    let G := canonicalDeletedPeriodicProduct (by simp) (by norm_num) φ heven n
+    (2*G c+a*deriv G c)*a = (canonicalPeriodicGap (by simp) (by norm_num) φ heven n)^2*(deriv G c/4) :=
+  canonicalCriticalPoints_midpoint_offset_identity (by simp) (by norm_num) φ heven n
+
+-- Removed endpoints are ordinary analytic points of the remaining product.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (n : ℤ) :
+    AnalyticAt ℂ (canonicalDeletedPeriodicProduct (by simp) (by norm_num) φ heven n)
+      (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n) :=
+  analyticOnNhd_canonicalDeletedPeriodicProduct (by simp) (by norm_num) φ heven n _ (mem_univ _)
+
+-- Solving a collapsed-gap identity requires no division by the zero gap.
+example (a g d : ℂ) (h : 2*a*g+a^2*d = 0) (hne : 2*g+a*d ≠ 0) : a = 0 := by
+  have he := quadratic_critical_offset_eq a 0 g d (by simpa using h) hne
+  simpa only [zero_pow (by decide : 2 ≠ 0),zero_mul] using he
+
+-- A removed double root at a negative free index has unit remaining product.
+example : canonicalDeletedPeriodicProduct (p := 3) (by simp) (by norm_num) 0
+    (pairParitySubspace 0).zero_mem (-7) ((Real.pi : ℂ)*(-7 : ℤ)) = 1 :=
+  canonicalDeletedPeriodicProduct_zero_center (by simp) (by norm_num) (-7)
+
+-- Polynomial derivative approximants converge across all removed roots.
+example (ξ η : ℤ → ℂ)
+    (hξ : Memℓp (fun k => ξ k-(Real.pi : ℂ)*k) (3 : ℝ≥0∞))
+    (hη : Memℓp (fun k => η k-(Real.pi : ℂ)*k) (3 : ℝ≥0∞)) (n : ℤ) :
+    TendstoLocallyUniformlyOn (fun N => deriv (deletedSpectralPairPartialProduct ξ η n N))
+      (deriv (deletedSpectralPairProduct ξ η n)) atTop univ :=
+  tendstoLocallyUniformlyOn_deriv_deletedSpectralPairProduct (by simp) ξ η hξ hη n
+
+end
+end DeletedPairChecks

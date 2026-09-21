@@ -1809,7 +1809,18 @@ minimum, including at collapsed gaps. Fermat's theorem identifies all
 real local extrema with the canonical critical sequence; each indexed
 gap contains exactly one.
 
-Next prove the refined offset estimate in Lemma 8.6. The preceding real
-gap characterization by `|∆| ≥ 2` is also still to be formalized.
+The exact factorization behind Lemma 8.6 is now proved. Deleted-pair
+polynomial cutoffs and their derivatives converge locally uniformly on
+all of the complex plane. Their entire limit `Gₙ` gives
+`∆²−4 = −4((λ−τₙ)²−γₙ²/4)Gₙ`, correcting the printed positive sign.
+At a canonical critical point, with `a = λₙ•−τₙ`, differentiation gives
+`(2Gₙ+aGₙ′)a = γₙ²Gₙ′/4`; a nonzero coefficient yields the exact quotient
+formula without dividing by the gap. At zero potential `Gₙ` is the square
+of the filled sine quotient and has value one at the removed root.
+
+Next prove the lp estimates for `Gₙ−1` and `Gₙ′` at the critical points and
+the locally uniform large-index lower bound on `2Gₙ+aGₙ′`, completing
+Lemma 8.6. The preceding real gap characterization by `|∆| ≥ 2` is also
+still to be formalized.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
