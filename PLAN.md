@@ -1900,8 +1900,17 @@ are the signed lattice and real-type roots are real at every index. Both
 canonical sequences have common locally bounded full lp norms and complete
 labelings at all sufficiently large cutoffs.
 
-Next prove continuity of canonical boundary coordinates and their real
-interlacing, and establish the starred characteristic analogues
-(Lemma 9.1(ii–iii) and its extension). Then implement the anti-discriminant
+Local uniform characteristic families and exact analytic counts on the
+central vertical strip now give stability of prefix and suffix counts.
+Compact root confinement controls imaginary parts; arbitrarily close real
+barriers control each ordered real coordinate. Thus every canonical ordinary
+boundary coordinate is continuous at real type under complex perturbations,
+including collisions. The ordinary source interval extension preserves real
+type, so pullback proves Lemma 9.1(ii) on the original coefficient space.
+Both canonical source sequences are analytic outside a finite central block
+at arbitrary complex potentials.
+
+Next prove real interlacing and establish the starred characteristic analogues
+(Lemma 9.1(iii) and its extension). Then implement the anti-discriminant
 (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

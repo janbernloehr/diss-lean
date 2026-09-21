@@ -14967,3 +14967,79 @@ example (φ : dirichletSubspace (p := ENNReal.ofReal (3/2 : ℝ))) :
 
 end
 end CanonicalBoundaryChecks
+
+namespace BoundaryContinuityChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Filter Topology Metric
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+private theorem hp3 : (3 : ℝ≥0∞) ≠ ⊤ := by norm_num
+
+-- Varying a complex potential gives local uniform convergence in the spectral parameter.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) :
+    TendstoLocallyUniformlyOn (fun ψ : dirichletSubspace (p := 3) => b.characteristic hp3 ψ.val ψ.property)
+      (b.characteristic hp3 φ.val φ.property) (𝓝 φ) univ :=
+  tendstoLocallyUniformlyOn_boundaryCharacteristic_family hp3 (by norm_num) b φ
+
+-- Zero-free circles preserve every algebraic repetition in the boundary count.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hne : ∀ z ∈ sphere c r, b.characteristic hp3 φ.val φ.property z ≠ 0) :
+    ∀ᶠ ψ : dirichletSubspace (p := 3) in 𝓝 φ,
+      analyticZeroCount (b.characteristic hp3 ψ.val ψ.property) (closedBall c r) =
+        analyticZeroCount (b.characteristic hp3 φ.val φ.property) (closedBall c r) :=
+  eventually_boundaryCharacteristic_count_eq hp3 (by norm_num) b φ c r hr hne
+
+-- The entire vertical strip, not just the central box, has the exact central count.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b hp3 φ.val φ.property N ξ) :
+    analyticZeroCount (b.characteristic hp3 φ.val φ.property) {z | |z.re| ≤ centralCircleRadius N} = 2*N+1 := by
+  calc
+    _ = ((Finset.Icc (-(N : ℤ)) N).filter (fun n => |(ξ n).re| ≤ centralCircleRadius N)).card :=
+      h.analyticZeroCount_eq_card_filter (by norm_num) {z : ℂ | |z.re| ≤ centralCircleRadius N} (fun _ hz => hz)
+    _ = 2*N+1 := by
+      rw [Finset.filter_eq_self.mpr (by
+        intro n hn
+        exact (h.abs_re_le_iff n).mpr (by simp only [Finset.mem_Icc] at hn; omega))]
+      rw [Int.card_Icc]
+      omega
+
+-- Arbitrarily large finite blocks have uniformly small imaginary parts near real type.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) (hφ : IsRealType φ.val)
+    (K : ℕ) (ε : ℝ) (hε : 0 < ε) :
+    ∀ᶠ ψ : dirichletSubspace (p := 3) in 𝓝 φ, ∀ n : ℤ, n.natAbs ≤ K →
+      |(b.canonicalRoots hp3 (by norm_num) ψ.val ψ.property n).im| < ε :=
+  eventually_canonicalBoundaryRoots_im_lt hp3 (by norm_num) b φ hφ K hε
+
+-- Every central or distant coordinate is continuous under unrestricted complex perturbations.
+example (b : BoundaryCondition) (φ : dirichletSubspace (p := 3)) (hφ : IsRealType φ.val) (n : ℤ) :
+    ContinuousAt (fun ψ : dirichletSubspace (p := 3) => b.canonicalRoots hp3 (by norm_num) ψ.val ψ.property n) φ :=
+  continuousAt_canonicalBoundaryRoots_of_realType hp3 (by norm_num) b φ hφ n
+
+-- Source Lemma 9.1(ii) also holds below the Hilbert exponent, with the source real-type relation.
+example (b : BoundaryCondition) (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)))
+    (hφ : IsRealType (CoeffPair.toMax _ φ)) (n : ℤ) :
+    ContinuousAt (fun ψ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)) =>
+      canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b ψ n) φ :=
+  continuousAt_canonicalPeriodOneBoundaryRoots_of_realType (by simp) (by norm_num) b φ hφ n
+
+-- Complex source sequences approaching zero recover each signed free boundary root.
+example (b : BoundaryCondition) (ψ : ℕ → CoeffPair 3) (hψ : Tendsto ψ atTop (𝓝 0)) (n : ℤ) :
+    Tendsto (fun k => canonicalPeriodOneBoundaryRoots hp3 (by norm_num) b (ψ k) n) atTop
+      (𝓝 ((Real.pi : ℂ)*n)) := by
+  have hr : IsRealType (CoeffPair.toMax 3 (0 : CoeffPair 3)) := by
+    rw [map_zero]
+    exact isRealType_zero
+  have hc := (continuousAt_canonicalPeriodOneBoundaryRoots_of_realType hp3 (by norm_num) b 0 hr n).tendsto
+  have ht := Filter.Tendsto.comp
+    (g := fun φ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots hp3 (by norm_num) b φ n)
+    (f := ψ) hc hψ
+  simpa only [Function.comp_def,canonicalPeriodOneBoundaryRoots_zero] using ht
+
+-- Both source sequences are locally analytic outside one finite block, even at complex potentials.
+example (φ : CoeffPair 3) : ∃ N : ℕ, 0 < N ∧ ∀ b : BoundaryCondition, ∀ n : ℤ, N < n.natAbs →
+    AnalyticAt ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots hp3 (by norm_num) b ψ n) φ :=
+  exists_analyticAt_distant_canonicalPeriodOneBoundaryRoots hp3 (by norm_num) φ
+
+end
+end BoundaryContinuityChecks

@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 761 modules and 4802 named public theorems. All compile on the
+The library has 768 modules and 4828 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.BoundaryCharacteristicFamilyLimits` | Local uniform dependence on reflected potentials, compact nonvanishing stability, and exact circular root-count stability |
+| `NLS.ZakharovShabat.BoundaryRootRealStrip` | Strict central real bounds, exact central-strip selection, and zero-free real-diameter boundaries at real type |
+| `NLS.ZakharovShabat.BoundaryRootCounts` | Analytic zero counts on arbitrary central-strip subsets equal finite label counts with all original repetitions |
+| `NLS.ZakharovShabat.CanonicalBoundaryStability` | Common nearby cutoffs, finite-block imaginary confinement and continuity, and distant canonical analyticity |
+| `NLS.ZakharovShabat.CanonicalBoundaryRealBounds` | Stable prefix and suffix counts bound the real parts of nearby canonical roots |
+| `NLS.ZakharovShabat.CanonicalBoundaryContinuity` | Continuity of every canonical root and fixed displacement coordinate at real-type reflected potentials under complex perturbations |
+| `NLS.ZakharovShabat.CanonicalPeriodOneBoundaryRoots` | Canonical source coordinates, actual spectra and multiplicities, product and free values, source reality, distant analyticity, and ordinary Lemma 9.1(ii) |
 | `NLS.ZakharovShabat.CentralBoundaryReordering` | Finite central sorting preserves actual roots, multiplicities, distant branches, and lp displacements |
 | `NLS.ZakharovShabat.BoundaryRootOrder` | Central-box and distant-disc separation give global lexicographic order and complete ordered labelings |
 | `NLS.ZakharovShabat.OrderedBoundaryUniqueness` | Exact equality of ordered complete sequences across all admissible cutoff choices |
@@ -6696,9 +6703,9 @@ potential neighborhood for all spectral compacts, joint source analyticity
 at p=3/2, exact Dirichlet zeros, mixed second derivatives, operator-norm
 convergence of joint derivatives, and simultaneous spectral/potential limits.
 
-Continuity of canonical boundary coordinates, real interlacing, and
-the starred characteristic analogues remain. Lemma 9.1(ii–iii), its starred
-extension, and the anti-discriminant in Lemma 9.2 are still incomplete.
+Real interlacing and the starred characteristic analogues remain. Ordinary
+Lemma 9.1(ii) is now proved below; Lemma 9.1(iii), the starred extension,
+and the anti-discriminant in Lemma 9.2 are still incomplete.
 
 ## Canonical ordered ordinary boundary roots
 
@@ -6723,13 +6730,47 @@ Eight API examples check cutoff independence, negative free indices, zero
 lp displacement, exact repeated-root multiplicities, real-type roots at p=3,
 canonical characteristic normalization, locally uniform products, and common
 bounds at all larger cutoffs at p=3/2. These results prepare the continuity
-and real interlacing assertions of Lemma 9.1(ii–iii); those assertions and
-the starred products remain unproved.
+and real interlacing assertions of Lemma 9.1(ii–iii). Continuity is now proved
+below; real interlacing and the starred products remain unproved.
+
+## Continuity of ordinary boundary coordinates — Lemma 9.1(ii)
+
+Joint analyticity now gives locally uniform dependence of the intrinsic
+boundary characteristics on the reflected potential. Zero-free circles
+preserve exact analytic counts. The central vertical strip selects exactly
+the central labels, so its arbitrary subsets have analytic counts equal to
+finite index counts, retaining every algebraic repetition. This treats the
+central box correctly even when a counting disc extends beyond its height.
+
+Compact root confinement gives uniformly small imaginary parts on each
+finite block near a real-type potential. Real-diameter circles avoiding the
+finite central root set preserve prefix and suffix counts. Lexicographic
+ordering then bounds each nearby real coordinate between arbitrarily close
+barriers. Combining the real and imaginary conclusions proves continuity
+of every canonical boundary coordinate at real type, allowing unrestricted
+complex perturbations and repeated central roots. The fixed displacement
+coordinates are continuous as well. Distant canonical coordinates are
+analytic at arbitrary complex reflected potentials.
+
+The ordinary source interval extension preserves the real-type relation.
+Pullback gives canonical coordinates on the original source coefficient
+space with exact spectral exhaustion, original multiplicities, canonical
+products, free values, and real-type reality. Their coordinatewise
+continuity proves ordinary Lemma 9.1(ii) for every finite exponent greater
+than one. Both source sequences are analytic outside one finite block at
+every complex potential. No continuity of the full lp-valued displacement
+map is asserted by this coordinatewise result.
+
+Eight API examples cover locally uniform families, circular count stability,
+the full vertical-strip count, finite-block imaginary confinement, reflected
+continuity, source continuity at p=3/2, arbitrary complex source sequences
+approaching zero, and distant source analyticity. Real interlacing in
+Lemma 9.1(iii), starred characteristics, and Lemma 9.2 remain next.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9576 declarations under `NLS`, including generated
+axioms. The current audit covers 9622 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7933,8 +7974,10 @@ formal matrix representation.
    now jointly analytic on a common neighborhood at all large cutoffs.
    Uniform full displacement bounds and uniform convergence over potential
    neighborhoods now prove joint analyticity of the infinite ordinary
-   boundary characteristics, completing Lemma 9.1(i). Continue with
-   continuity of canonical boundary coordinates, real interlacing, and starred products.
+   boundary characteristics, completing Lemma 9.1(i). Canonical boundary
+   coordinate continuity under complex perturbations now proves ordinary
+   Lemma 9.1(ii), including the original source coefficient space. Continue
+   with real interlacing and starred products.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

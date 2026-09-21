@@ -951,8 +951,12 @@ installation is absent. No shell startup files are modified.
   lp displacements, and characteristic products independently of cutoff
   choices. They have the signed free values, are real at real-type reflected
   potentials, and have common local full lp bounds at all large cutoffs.
-  Their continuity and real interlacing, starred products, and the
-  anti-discriminant remain next.
+  Every coordinate is now continuous at real-type potentials under complex
+  perturbations, including repeated roots. Pullback through the real-type
+  preserving source extension proves ordinary Lemma 9.1(ii) on the original
+  coefficient space. Both sequences are analytic outside a finite central
+  block at arbitrary complex potentials. Real interlacing, starred products,
+  and the anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
