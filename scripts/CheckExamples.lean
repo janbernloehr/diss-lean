@@ -14633,3 +14633,64 @@ example (x : ℝ) : 2 ≤ ‖canonicalDiscriminant (p := 3) (by simp) 0 x‖ ↔
 
 end
 end RealGapChecks
+
+namespace BoundaryCharacteristicChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The exceptional zero-mode denominator and negative prefactor give the monic free factor.
+example (z : ℂ) : boundaryCharacteristicPartialProduct (fun n => (Real.pi : ℂ)*n) z 0 = z := by
+  simp [boundaryCharacteristicPartialProduct,singleSpectralFactor,singleSpectralDenominator]
+
+-- The entire free product has the source's sine normalization.
+example (z : ℂ) : boundaryCharacteristicProduct (fun n => (Real.pi : ℂ)*n) z = Complex.sin z :=
+  boundaryCharacteristicProduct_free z
+
+-- At p=3/2 a common cutoff labels both complete spectra on an open convex neighborhood.
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) : ∃ N : ℕ, 0 < N ∧
+    ∃ U : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ b : BoundaryCondition, ∃ ξ : ℤ → ℂ,
+        BoundaryRootLabeling b (by simp) (periodOneBoundaryPotential (by simp) (by norm_num) ψ).val
+          (periodOneBoundaryPotential (by simp) (by norm_num) ψ).property N ξ :=
+  exists_uniform_periodOneBoundaryRootLabeling (by simp) (by norm_num) φ
+
+-- Every actual eigenvalue is represented, including central ones, with its original multiplicity.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b (by simp) φ.val φ.property N ξ) (z : ℂ)
+    (hz : z ∈ b.spectrum (by simp) φ.val φ.property) :
+    (∃ n : ℤ, ξ n = z) ∧
+      (∑ᶠ n : ℤ, if ξ n = z then (1 : ℕ) else 0) = b.algebraicMultiplicity (by simp) φ.val φ.property z :=
+  ⟨(h.exhaustive z).mp hz,h.multiplicity z⟩
+
+-- A negative distant slot cannot collide with any other slot, including the central cluster.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b (by simp) φ.val φ.property N ξ) (m : ℤ)
+    (he : ξ m = ξ (-(N : ℤ)-1)) : m = -(N : ℤ)-1 := by
+  exact h.eq_index_of_distant _ (by omega) m he
+
+-- Original period-one coefficient potentials give entire functions with exactly the actual zeros.
+example (φ : CoeffPair 3) (b : BoundaryCondition) : ∃ ξ : ℤ → ℂ,
+    AnalyticOnNhd ℂ (boundaryCharacteristicProduct ξ) univ ∧
+      ∀ z, boundaryCharacteristicProduct ξ z = 0 ↔
+        z ∈ b.spectrum (by simp) (periodOneBoundaryPotential (by simp) (by norm_num) φ).val
+          (periodOneBoundaryPotential (by simp) (by norm_num) φ).property := by
+  obtain ⟨_,ξ,_,ha,hz,_⟩ := exists_entire_periodOneBoundaryCharacteristicProduct (by simp) (by norm_num) φ b
+  exact ⟨ξ,ha,hz⟩
+
+-- Product convergence gives pointwise convergence even at repeated central roots.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b (by simp) φ.val φ.property N ξ) (z : ℂ) :
+    Tendsto (fun M => boundaryCharacteristicPartialProduct ξ z M) atTop (𝓝 (boundaryCharacteristicProduct ξ z)) :=
+  (tendstoLocallyUniformlyOn_boundaryCharacteristicProduct (by simp) ξ h.displacement).tendsto_at (mem_univ z)
+
+-- Off-spectrum values cannot introduce spurious zeros into the entire limit.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b (by simp) φ.val φ.property N ξ) (z : ℂ)
+    (hz : z ∉ b.spectrum (by simp) φ.val φ.property) : boundaryCharacteristicProduct ξ z ≠ 0 :=
+  fun hzero => hz ((h.characteristic_eq_zero_iff z).mp hzero)
+
+end
+end BoundaryCharacteristicChecks

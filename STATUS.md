@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 736 modules and 4691 named public theorems. All compile on the
+The library has 741 modules and 4716 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.CentralBoundaryRoots` | Actual central boundary multisets, exact algebraic counts, central cardinality, and enumeration with repetitions |
+| `NLS.ZakharovShabat.BoundaryRootLabeling` | Complete boundary labels with lp displacements, central replacement, closed range, actual spectral exhaustion, and simple distant branches |
+| `NLS.ZakharovShabat.BoundaryRootMultiplicity` | Finite occurrence sets, distant index uniqueness, and exact original algebraic multiplicities throughout the full sequence |
+| `NLS.ZakharovShabat.UniformBoundaryRootLabeling` | Common neighborhood and cutoff for both complete boundary spectra, including pullback to original period-one coefficient potentials |
+| `NLS.ZakharovShabat.BoundaryCharacteristicProducts` | Source-normalized boundary products, entire locally uniform limits, exact actual zero sets, and free sine normalization |
 | `NLS.ComplexAnalysis.RealIntervalLevel` | Continuity selects the positive branch of a squared-level bound throughout a real interval |
 | `NLS.ZakharovShabat.RealSpectralPairSigns` | Positive real spectral denominators, real finite-product formulas, and cutoff signs outside paired intervals or inside one pair |
 | `NLS.ZakharovShabat.RealGapProductSigns` | Actual real paired cutoffs converge to the discriminant square minus four; nonnegative sign on each gap and nonpositive sign outside all gaps |
@@ -6511,15 +6516,51 @@ index sign, the strict interior inequality, the strict complement bound,
 endpoint exhaustion without distinctness, and the free superlevel set
 consisting exactly of the signed lattice points when all gaps collapse.
 
-Next construct the normalized Dirichlet, Neumann, and starred
-characteristic products of Section 9 with their actual spectral zeros,
-parameter analyticity, canonical root coordinates, and real interlacing.
-Then define the anti-discriminant and prove Lemma 9.2.
+## Section 9: complete boundary spectra and entire characteristic products
+
+`CentralBoundaryRoots` records the actual central Dirichlet and Neumann
+roots with their restricted-operator algebraic multiplicities. The central
+count supplies one slot per signed index, and finite multiset enumeration
+retains repetitions. `BoundaryRootLabeling` replaces central trace values
+with these actual roots while keeping every distant simple branch. Finite
+modification preserves lp displacement. Each resulting sequence exhausts
+the actual boundary spectrum and has closed range.
+
+`BoundaryRootMultiplicity` separates the central box from distant discs
+and different distant discs from each other. Distant roots occur only at
+their own index, every root has finitely many occurrences, and the full
+occurrence count equals its original boundary algebraic multiplicity.
+
+`UniformBoundaryRootLabeling` gives a common open convex neighborhood
+containing the potential and zero, with one cutoff for both boundary
+conditions. Every sequence has lp displacement, without asserting a
+uniform bound on the chosen central labels. Pullback through the proved
+ordinary interval extension gives the same construction for original
+period-one coefficient potentials at every finite exponent greater than one.
+
+`BoundaryCharacteristicProducts` uses the literal Section 9 prefactor
+minus one. Its finite cutoffs converge locally uniformly on the whole
+spectral plane to an entire function with precisely the actual boundary
+spectrum as its zero set. The free product is `sin λ`. The theorem applies
+to both ordinary boundary conditions and original period-one potentials.
+The sequence multiplicities are exact; equality of analytic zero orders
+with operator multiplicities has not yet been established for these products.
+
+Eight examples check the exceptional zero-mode normalization, the free
+sine identity, a common neighborhood at p=3/2, actual spectral exhaustion
+and multiplicities, negative distant index uniqueness, entire products
+for source potentials, pointwise cutoff convergence, and nonvanishing
+off the spectrum.
+
+Next prove independence from central label choices and cutoffs, parameter
+analyticity, canonical boundary coordinates and their continuity, real
+interlacing, and starred products. Lemma 9.1 remains incomplete; the
+anti-discriminant and Lemma 9.2 follow.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9332 declarations under `NLS`, including generated
+axioms. The current audit covers 9401 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7714,7 +7755,10 @@ formal matrix representation.
    signs and spectral exhaustion now prove the exact characterization of
    closed gaps by `|∆| ≥ 2`, open interiors by `|∆| > 2`, and endpoints by
    equality. Continuity gives the alternating signed gap inequalities at
-   all indices. Continue with Section 9 characteristic functions.
+   all indices. Complete ordinary boundary labelings and entire products
+   with the actual zero sets are now proved, including the original
+   period-one realization. Continue with product independence, parameter
+   analyticity, canonical boundary coordinates, and starred products.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

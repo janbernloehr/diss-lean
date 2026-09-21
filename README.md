@@ -926,8 +926,14 @@ installation is absent. No shell startup files are modified.
   collapsed gaps. The closed real gaps are now exactly the set where
   `|∆|≥2`; open interiors correspond to `|∆|>2`, and equality occurs exactly
   at endpoints. The signed inequality `(-1)^n ∆≥2` holds throughout every
-  gap and is strict in its interior, including negative indices. Section 9
-  characteristic functions and the anti-discriminant are next.
+  gap and is strict in its interior, including negative indices. Complete
+  Dirichlet and Neumann sequences now retain all actual algebraic
+  multiplicities and have lp displacements, on a common neighborhood
+  and cutoff. Their Section 9 products converge locally uniformly to
+  entire functions with exactly the boundary spectra as zeros and free
+  value `sin λ`, including for original period-one potentials. Independence
+  from central labels, parameter analyticity, canonical boundary coordinates,
+  starred products, and the anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -1852,7 +1852,18 @@ that closed gaps are exactly where `|∆|≥2`, open interiors exactly where
 known endpoint parity give `(-1)^n ∆≥2` on each closed gap, strictly inside
 an open gap, for every signed index.
 
-Next implement Section 9 Dirichlet, Neumann, and starred characteristic
-products, parameter analyticity, canonical coordinates, and real
-interlacing (Lemma 9.1), then the anti-discriminant (Lemma 9.2).
+Complete actual Dirichlet and Neumann sequences now enumerate the central
+root multisets and the distant simple branches, retaining every algebraic
+multiplicity and lp displacement. One neighborhood and cutoff work for
+both boundary conditions. The ordinary period-one interval extension
+transfers these results to source coefficient potentials. The normalized
+Section 9 cutoffs now converge locally uniformly to entire functions with
+exactly the actual boundary spectra as their zeros; the free value is
+`sin λ`. This proves the fixed-potential product construction, without
+yet claiming independence from central label choices or joint analyticity.
+
+Next prove boundary product independence across central label choices and
+cutoffs, parameter analyticity, canonical coordinates, real interlacing,
+and starred characteristic products (Lemma 9.1), then the anti-discriminant
+(Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.
