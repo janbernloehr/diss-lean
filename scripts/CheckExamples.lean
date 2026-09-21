@@ -15106,3 +15106,83 @@ example (b : BoundaryCondition) (φ : PairSpace 2) (hφ : φ ∈ pairParitySubsp
 
 end
 end ClassicalBoundaryGapChecks
+
+namespace IndexedBoundaryChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis NLS.LinearVolterra Set Complex MeasureTheory
+open scoped ENNReal ComplexConjugate Classical
+
+-- A selected branch keeps its integer index even when every starting interval is collapsed.
+example (y : ℝ → ℝ) (hy : ContinuousOn y (Icc 0 1)) (n : ℤ) (h0 : y 0 = 4*n)
+    (hmem : ∀ t ∈ Icc (0 : ℝ) 1, ∃ k : ℤ, y t ∈ Icc (4*k-t) (4*k+t)) :
+    ∀ t ∈ Icc (0 : ℝ) 1, y t ∈ Icc (4*n-t) (4*n+t) := by
+  apply mem_interval_on_Icc_of_separated (fun t k => 4*k-t) (fun t k => 4*k+t) y
+    (by norm_num : (0 : ℝ) ≤ 1) (fun _ => by fun_prop) (fun _ => by fun_prop) hy
+    (fun t ht k => by linarith [ht.1]) (fun t ht i j hij => ?_) hmem n (by simp [h0])
+  have hj : (i : ℝ)+1 ≤ (j : ℝ) := by exact_mod_cast (show i+1 ≤ j by omega)
+  linarith [ht.2]
+
+section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- Coordinate continuity along real scaling also holds above the Hilbert exponent.
+example (b : BoundaryCondition) (ψ : dirichletSubspace (p := 3)) (hψ : IsRealType ψ.val) (n : ℤ) :
+    Continuous (fun t : ℝ => b.canonicalRoots (by simp) (by norm_num)
+      (realBoundaryPotentialPath ψ t).val (realBoundaryPotentialPath ψ t).property n) :=
+  continuous_canonicalBoundaryRoots_realBoundaryPotentialPath (by simp) (by norm_num) b ψ hψ n
+end
+
+variable (φ : pairParitySubspace (p := 2) 0) (hφ : IsRealType φ.val)
+variable (ψ : dirichletSubspace (p := 2)) (hψ : IsRealType ψ.val) (Φ : Curve (ℂ × ℂ))
+variable (hΦ : physicalBase φ.val =ᵐ[volume.restrict (Ioc 0 1)] extend Φ)
+variable (hΨ : physicalBase ψ.val =ᵐ[volume.restrict (Ioc 0 1)] extend Φ)
+variable (hr : ∀ t, (Φ t).2 = conj (Φ t).1)
+
+-- The selected gap has exactly the boundary root's signed index.
+example (b : BoundaryCondition) (n : ℤ) :
+    (b.canonicalRoots (by simp) (by norm_num) ψ.val ψ.property n).re ∈
+      Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ.val φ.property n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) φ.val φ.property n).re :=
+  canonicalBoundaryRoots_mem_gap_of_continuous b φ hφ ψ hψ Φ hΦ hΨ hr n
+
+-- Both distinct separated spectra lie between the same original periodic endpoints.
+example (n : ℤ) :
+    (BoundaryCondition.canonicalRoots .dirichlet (by simp) (by norm_num) ψ.val ψ.property n).re ∈
+      Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ.val φ.property n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) φ.val φ.property n).re ∧
+    (BoundaryCondition.canonicalRoots .neumann (by simp) (by norm_num) ψ.val ψ.property n).re ∈
+      Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ.val φ.property n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) φ.val φ.property n).re :=
+  canonicalBoundaryRoots_interlacing_of_continuous φ hφ ψ hψ Φ hΦ hΨ hr n
+
+-- A collapsed gap identifies the actual complex boundary coordinate with its endpoint.
+example (b : BoundaryCondition) (n : ℤ)
+    (he : canonicalPeriodicLeft (by simp) (by norm_num) φ.val φ.property n =
+      canonicalPeriodicRight (by simp) (by norm_num) φ.val φ.property n) :
+    b.canonicalRoots (by simp) (by norm_num) ψ.val ψ.property n =
+      canonicalPeriodicLeft (by simp) (by norm_num) φ.val φ.property n :=
+  canonicalBoundaryRoots_eq_of_collapsed_gap_of_continuous b φ hφ ψ hψ Φ hΦ hΨ hr n he
+
+-- Neighboring gaps remain strictly separated on both sides of the boundary root.
+example (b : BoundaryCondition) (n : ℤ) :
+    let L := fun k => (canonicalPeriodicLeft (by simp) (by norm_num) φ.val φ.property k).re
+    let R := fun k => (canonicalPeriodicRight (by simp) (by norm_num) φ.val φ.property k).re
+    let μ := (b.canonicalRoots (by simp) (by norm_num) ψ.val ψ.property n).re
+    R (n-1) < L n ∧ L n ≤ μ ∧ μ ≤ R n ∧ R n < L (n+1) :=
+  canonicalBoundaryRoots_interlacing_chain_of_continuous b φ hφ ψ hψ Φ hΦ hΨ hr n
+
+-- A negative odd index has the negative signed trace branch, without replacing integer powers by natural powers.
+example (b : BoundaryCondition) :
+    2 ≤ -(canonicalDiscriminant (by simp) φ.val
+      (b.canonicalRoots (by simp) (by norm_num) ψ.val ψ.property (-5))).re := by
+  have hs := signed_canonicalDiscriminant_boundaryRoot_ge_two_of_continuous b φ hφ ψ hψ Φ hΦ hΨ hr (-5)
+  norm_num at hs ⊢
+  exact hs
+
+-- The signed conclusion is also a statement about the original physical monodromy trace.
+example (b : BoundaryCondition) (n : ℤ) :
+    2 ≤ (-1 : ℝ)^n * (classicalDiscriminant Φ
+      (b.canonicalRoots (by simp) (by norm_num) ψ.val ψ.property n)).re :=
+  signed_classicalDiscriminant_boundaryRoot_ge_two_of_continuous b φ hφ ψ hψ Φ hΦ hΨ hr n
+
+end
+end IndexedBoundaryChecks

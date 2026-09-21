@@ -1917,10 +1917,16 @@ eigenvalues. Unimodularity gives `Δ²−4=δ²−4χDχN`; real-type monodromy 
 then gives the trace bound at boundary roots, with strictness characterized
 by nonzero anti-discriminant. Comparing compatible physical representatives
 locates real boundary eigenvalues in some original periodic gap, while
-keeping the periodic and reflected boundary potentials distinct. The matching
-of the gap index and extension to every finite source exponent remain.
+keeping the periodic and reflected boundary potentials distinct. Real scaling
+now gives continuous boundary roots and original periodic endpoints with the
+same physical representative. A midpoint-barrier continuation theorem
+preserves the initial free gap index, proving indexed interlacing for all
+compatible continuous real-type potentials in the Hilbert realization.
+Collapsed gaps identify both boundary roots with the endpoint, and the
+literal signed trace bounds hold for every integer index.
 
-Next prove indexed real interlacing and establish the starred characteristic analogues
+Next extend indexed interlacing to every finite source exponent and establish
+the starred characteristic analogues
 (Lemma 9.1(iii) and its extension). Then implement the anti-discriminant
 (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

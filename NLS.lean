@@ -720,3 +720,6 @@ import NLS.ZakharovShabat.ClassicalSeparatedCharacteristics
 import NLS.ZakharovShabat.ClassicalRealMonodromy
 import NLS.ZakharovShabat.ClassicalBoundaryMonodromy
 import NLS.ZakharovShabat.ClassicalBoundaryGapBound
+import NLS.ComplexAnalysis.SeparatedIntervalPaths
+import NLS.ZakharovShabat.RealBoundaryPotentialPaths
+import NLS.ZakharovShabat.ClassicalBoundaryInterlacing

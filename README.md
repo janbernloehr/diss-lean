@@ -959,9 +959,11 @@ installation is absent. No shell startup files are modified.
   have the exact original physical zero sets and satisfy
   `Δ² − 4 = δ² − 4χDχN`. Real-type symmetry gives the boundary trace bound;
   a common continuous representative places boundary roots in some original
-  periodic gap. Matching gap indices and extending this comparison to all
-  finite source exponents, starred products, and the source anti-discriminant
-  remain next.
+  periodic gap. Continuation from the free potential now proves the matching
+  gap index, including collapsed gaps and the signed discriminant inequality,
+  for compatible continuous real-type potentials. Extending this comparison
+  to all finite source exponents, starred products, and the source
+  anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

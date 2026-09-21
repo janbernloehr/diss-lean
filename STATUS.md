@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 772 modules and 4856 named public theorems. All compile on the
+The library has 775 modules and 4876 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.SeparatedIntervalPaths` | Continuous selections preserve their signed index in separated moving intervals, including collapsed intervals |
+| `NLS.ZakharovShabat.RealBoundaryPotentialPaths` | Real scaling paths, continuous canonical boundary and periodic coordinates, and preserved physical representative compatibility |
+| `NLS.ZakharovShabat.ClassicalBoundaryInterlacing` | Indexed interlacing for compatible continuous real-type potentials, collapsed-gap equality, strict neighboring-gap chains, and signed original trace bounds |
 | `NLS.ZakharovShabat.ClassicalSeparatedCharacteristics` | Literal separated endpoint characteristics and anti-discriminant, joint analyticity, exact free normalization, and the unimodular trace identity |
 | `NLS.ZakharovShabat.ClassicalRealMonodromy` | Conjugate-swap solution symmetry and exact real-type monodromy, trace, anti-discriminant, and characteristic reality |
 | `NLS.ZakharovShabat.ClassicalBoundaryMonodromy` | Exact equivalence of literal characteristic zeros with original physical interval eigenvalues and compatibility with actual reflected coefficient spectra |
@@ -6799,10 +6802,10 @@ A common continuous physical representative connects the reflected boundary
 potential to the original even periodic coefficient potential. They are
 kept as distinct potentials in the comparison theorem. Consequently every
 compatible real boundary eigenvalue lies in some gap of that original
-periodic spectrum. This is a prerequisite for Lemma 9.1(iii), not yet its
-indexed conclusion: identifying the gap as `G_n` for the boundary root
-with index `n`, and extending the comparison to all finite source exponents,
-remain. The classical anti-discriminant has not yet been identified with a
+periodic spectrum. The continuation argument below now identifies that gap
+as `G_n` for the boundary root with index `n` on compatible continuous
+potentials. Extending the indexed comparison to all finite source exponents
+remains. The classical anti-discriminant has not yet been identified with a
 source-wide starred-product extension.
 
 Eight API examples check free values, joint analyticity, the global identity,
@@ -6810,10 +6813,40 @@ the original physical zero set, the real trace bound, its strict and equality
 cases, comparison of the two coefficient realizations, and membership in
 an original periodic gap.
 
+## Indexed boundary interlacing on compatible continuous potentials
+
+A continuous selection from a family of ordered, separated closed intervals
+now retains its initial integer index. The proof places a midpoint between
+each neighboring pair. A root in the union cannot equal a midpoint;
+continuity preserves its side of both neighboring midpoint barriers. This
+works even when individual intervals collapse to points.
+
+Real scaling preserves the reflected boundary space, real type, and the
+common physical representative of the periodic and boundary potentials.
+The canonical boundary roots and both original periodic endpoints vary
+continuously along the path. Every boundary root lies in the union of
+original periodic gaps at each real scale. At zero its free lattice value
+fixes the gap index, so the continuation theorem proves `λ_n^- ≤ μ_n,ν_n ≤ λ_n^+`
+for all signed indices on compatible continuous real-type potentials in the
+Hilbert coefficient realization.
+
+The full chain includes strict separation from both neighboring gaps. At a
+collapsed gap, either boundary root equals the complex endpoint itself.
+Both the intrinsic periodic discriminant and the actual physical monodromy
+trace satisfy the literal integer-power inequality `2 ≤ (-1)^n Re Δ(μ_n)`
+and its Neumann counterpart, including negative indices.
+
+Eight API examples check moving intervals initially collapsed, boundary
+path continuity at p=3, the exact indexed gap, both separated spectra,
+collapsed-gap equality, strict neighboring-gap chains, the negative odd
+index -5, and the original monodromy signed bound. The indexed continuous
+case is now proved; extension to every finite source exponent in Lemma
+9.1(iii), starred products, and the source anti-discriminant remain.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9660 declarations under `NLS`, including generated
+axioms. The current audit covers 9695 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
