@@ -908,8 +908,10 @@ installation is absent. No shell startup files are modified.
   identifies that point with its canonical critical index, proving global
   interlacing, strict open-gap inequalities, and collapsed-gap equality.
   Each gap contains exactly one critical point; all critical points are
-  simple and have nonzero second discriminant derivative. Formal strict
-  extrema and the refined estimate in Lemma 8.6 remain next.
+  simple and have nonzero second discriminant derivative. Every canonical
+  critical point is now a strict real local maximum or minimum, including
+  collapsed gaps. Each gap contains exactly one local extremum, and there
+  are no others. The refined estimate in Lemma 8.6 remains next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

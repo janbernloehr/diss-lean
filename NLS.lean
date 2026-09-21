@@ -648,3 +648,6 @@ import NLS.ZakharovShabat.RealGapCriticalPoints
 import NLS.ZakharovShabat.RealGapCriticalIdentification
 import NLS.ZakharovShabat.CanonicalCriticalInterlacing
 import NLS.ZakharovShabat.RealCriticalSimplicity
+import NLS.ComplexAnalysis.StrictDerivativeTest
+import NLS.ComplexAnalysis.RealAxisSecondDerivative
+import NLS.ZakharovShabat.RealDiscriminantExtrema

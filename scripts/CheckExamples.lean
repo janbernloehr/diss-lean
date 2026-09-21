@@ -14211,3 +14211,86 @@ example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsReal
 
 end
 end GlobalCriticalInterlacingChecks
+
+
+namespace StrictExtremaChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The positive test gives a strict punctured minimum for the quadratic.
+example : ∀ᶠ x : ℝ in 𝓝[≠] 0, (0 : ℝ) < x^2 := by
+  have hd : deriv (fun x : ℝ => x^2) = fun x => 2*x := by
+    funext x
+    simp
+  have hdd : deriv (deriv (fun x : ℝ => x^2)) 0 = 2 := by
+    rw [hd]
+    simp
+  have he := eventually_lt_of_deriv_deriv_pos (f := fun x : ℝ => x^2) (c := 0)
+    (by fun_prop) (by rw [hd]; norm_num) (by rw [hdd]; norm_num)
+  filter_upwards [he] with x hx
+  norm_num only [zero_pow, neg_zero] at hx
+  exact hx
+
+-- The negative test gives a strict punctured maximum for the negative quadratic.
+example : ∀ᶠ x : ℝ in 𝓝[≠] 0, -(x^2) < (0 : ℝ) := by
+  have hd : deriv (fun x : ℝ => -(x^2)) = fun x => -(2*x) := by
+    funext x
+    simp
+  have hdd : deriv (deriv (fun x : ℝ => -(x^2))) 0 = -2 := by
+    rw [hd]
+    simp
+  have he := eventually_lt_of_deriv_deriv_neg (f := fun x : ℝ => -(x^2)) (c := 0)
+    (by fun_prop) (by rw [hd]; norm_num) (by rw [hdd]; norm_num)
+  filter_upwards [he] with x hx
+  norm_num only [zero_pow, neg_zero] at hx
+  exact hx
+
+-- The real-axis derivative bridge also applies when the function does not preserve the real axis.
+example (x : ℝ) : deriv (fun y : ℝ => (((y : ℂ)^2+I).re)) x = (deriv (fun z : ℂ => z^2+I) x).re :=
+  deriv_real_axis_re (fun z : ℂ => z^2+I) (by fun_prop) x
+
+-- At a real-type potential, real Fermat criticality is full complex criticality.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (x : ℝ) :
+    deriv (fun y : ℝ => (canonicalDiscriminant (by simp) φ y).re) x = 0 ↔
+      deriv (canonicalDiscriminant (by simp) φ) (x : ℂ) = 0 :=
+  real_discriminant_deriv_eq_zero_iff (by simp) (by norm_num) φ heven hreal x
+
+-- Strict extrema hold below the Hilbert exponent at every signed critical index.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (heven : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) (n : ℤ) :
+    let c := (canonicalCriticalPoints (by simp) (by norm_num) φ heven n).re
+    (∀ᶠ y : ℝ in 𝓝[≠] c, (canonicalDiscriminant (by simp) φ c).re < (canonicalDiscriminant (by simp) φ y).re) ∨
+      (∀ᶠ y : ℝ in 𝓝[≠] c, (canonicalDiscriminant (by simp) φ y).re < (canonicalDiscriminant (by simp) φ c).re) :=
+  canonicalCriticalPoints_strict_local_extremum (by simp) (by norm_num) φ heven hreal n
+
+-- Every real gap contains exactly one local extremum.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (n : ℤ) :
+    ∃! x : ℝ, IsLocalExtr (fun y : ℝ => (canonicalDiscriminant (by simp) φ y).re) x ∧
+      x ∈ Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re :=
+  existsUnique_localExtremum_in_canonicalPeriodicGap (by simp) (by norm_num) φ heven hreal n
+
+-- No real local extrema occur outside the canonical critical sequence.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (x : ℝ) :
+    IsLocalExtr (fun y : ℝ => (canonicalDiscriminant (by simp) φ y).re) x ↔
+      ∃ n : ℤ, canonicalCriticalPoints (by simp) (by norm_num) φ heven n = (x : ℂ) :=
+  by
+    have h := isLocalExtr_real_discriminant_iff_canonical (p := 3) (by simp) (by norm_num) φ heven hreal x
+    exact h
+
+-- At the collapsed free gap at zero the extremum is a real-neighborhood statement.
+example : IsLocalExtr (fun y : ℝ => (canonicalDiscriminant (p := 3) (by simp) 0 y).re) 0 := by
+  have hc : canonicalCriticalPoints (p := 3) (by simp) (by norm_num) 0 (pairParitySubspace 0).zero_mem 0 = 0 := by
+    simpa using canonicalCriticalPoints_eq_of_collapsed_gap (p := 3) (by simp) (by norm_num) 0
+      (pairParitySubspace 0).zero_mem (by simp) 0 (by simp)
+  have hs := canonicalCriticalPoints_strict_local_extremum
+    (p := 3) (by simp) (by norm_num) 0 (pairParitySubspace 0).zero_mem (by simp) 0
+  dsimp only at hs
+  rw [hc,zero_re] at hs
+  exact isLocalExtr_of_strict_punctured hs
+
+end
+end StrictExtremaChecks

@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 700 modules and 4568 named public theorems. All compile on the
+The library has 703 modules and 4582 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.StrictDerivativeTest` | Strict punctured local minimum/maximum from the sign of the second derivative, and conversion to standard local extrema |
+| `NLS.ComplexAnalysis.RealAxisSecondDerivative` | First and second real-part derivative identities, reality of the second derivative on a preserved real axis, and strict complex-to-real critical extrema |
+| `NLS.ZakharovShabat.RealDiscriminantExtrema` | Strict local extrema at all real-type critical points, equivalence with real local extrema, exact canonical exhaustion, and one local extremum per real gap |
 | `NLS.SequenceSpaces.FiniteMultisetSaturation` | Finite singleton sums as mapped multisets; distinct witnesses exhaust a multiset of matching total cardinality |
 | `NLS.ZakharovShabat.RealGapCriticalPoints` | Selected critical witnesses in every real gap, strict order, injectivity, central norm bounds, and central critical multiset membership |
 | `NLS.ZakharovShabat.RealGapCriticalIdentification` | Central count saturation identifies every gap witness with its canonical critical index; global interlacing and strict critical ordering |
@@ -6219,8 +6222,8 @@ The real canonical critical sequence is strictly increasing and injective.
 multiplicity formula. Every critical root at a real-type even potential
 has natural and analytic multiplicity one, including all central roots.
 The second spectral derivative of the discriminant is nonzero at every
-critical point. The formal strict-extremum conclusion and the refined
-estimate of Lemma 8.6 remain open.
+critical point. The strict local-extremum conclusion is proved in the
+next milestone; the refined estimate of Lemma 8.6 remains open.
 
 Eight examples check finite count saturation on signed indices, global
 interlacing at p=3/2, strict inequalities in arbitrary open gaps, exact
@@ -6228,10 +6231,41 @@ free collapsed-gap identification at a negative index, uniqueness in every
 gap, distinctness of critical indices, simplicity of arbitrary critical
 roots, and their nonzero second discriminant derivative.
 
+## Section 8: strict real discriminant extrema
+
+`StrictDerivativeTest` strengthens the real second-derivative test to a
+strict punctured-neighborhood inequality. A positive second derivative
+at a critical point gives a strict local minimum; a negative one gives a
+strict local maximum. The proof uses the nearby derivative sign and strict
+monotonicity on the adjacent closed half intervals. These conclusions
+also imply the standard `IsLocalExtr` predicate.
+
+`RealAxisSecondDerivative` identifies the first two derivatives of the
+real-part restriction with the real parts of the corresponding complex
+derivatives. For a function preserving the real axis, the second complex
+derivative is real there. A nondegenerate complex critical point on the
+real axis consequently satisfies the strict real local-extremum conclusion.
+
+`RealDiscriminantExtrema` applies these results to the actual discriminant.
+Every real-type critical point, and every indexed canonical critical
+coordinate, is a strict local minimum or maximum on the real axis. This
+includes collapsed gaps: the strict inequality holds in a punctured real
+neighborhood, not just relative to the singleton gap. Fermat's theorem
+proves the converse, so real local extrema are exactly the canonical
+critical coordinates. Global interlacing gives exactly one local extremum
+in each indexed real gap and no additional real local extrema.
+
+Eight examples check strict quadratic minima and maxima, the derivative
+bridge for a complex polynomial not preserving the real axis, equivalence
+of real and complex criticality, strict extrema at p=3/2, uniqueness in
+every gap, canonical exhaustion of all extrema, and the collapsed free gap
+at zero. Lemma 8.6 and the preceding real gap characterization by
+`|∆| ≥ 2` remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9110 declarations under `NLS`, including generated
+axioms. The current audit covers 9126 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7410,7 +7444,10 @@ formal matrix representation.
    proving global interlacing with strict open-gap inequalities and
    collapsed-gap equality. Every gap has exactly one critical point; all
    critical points are simple and the second discriminant derivative is
-   nonzero there. Next formalize strict extrema and prove Lemma 8.6.
+   nonzero there. Every canonical critical coordinate is now a strict real
+   local extremum, including at collapsed gaps. These exhaust the real local
+   extrema, with exactly one in each gap. Next prove Lemma 8.6 and formalize
+   the real gap characterization by `|∆| ≥ 2`.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -1803,7 +1803,13 @@ and every critical point belongs to exactly one gap. The canonical critical
 sequence is strictly increasing, so the exact multiplicity formula makes
 every critical point simple, with nonzero second discriminant derivative.
 
-Next formalize the strict-extremum conclusion and prove the refined
-offset estimate in Lemma 8.6.
+A strict real second-derivative test and the real-axis derivative bridge
+now make every canonical critical coordinate a strict local maximum or
+minimum, including at collapsed gaps. Fermat's theorem identifies all
+real local extrema with the canonical critical sequence; each indexed
+gap contains exactly one.
+
+Next prove the refined offset estimate in Lemma 8.6. The preceding real
+gap characterization by `|∆| ≥ 2` is also still to be formalized.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
