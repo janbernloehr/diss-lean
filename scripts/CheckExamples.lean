@@ -14141,3 +14141,73 @@ example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (z : ℂ)
 
 end
 end CanonicalCentralParityChecks
+
+
+namespace GlobalCriticalInterlacingChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Five distinct signed witnesses exhaust a multiset of total multiplicity five.
+example (m : Multiset ℤ) (hm : ∀ n ∈ Finset.Icc (-2 : ℤ) 2, n ∈ m) (hc : m.card = 5) :
+    (∑ n ∈ Finset.Icc (-2 : ℤ) 2, ({n} : Multiset ℤ)) = m := by
+  apply sum_singleton_eq_of_injective_mem_card _ id m Function.injective_id hm
+  simpa using hc
+
+-- Global interlacing holds at every index below the Hilbert exponent.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (heven : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) (n : ℤ) :
+    (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re ≤
+      (canonicalCriticalPoints (by simp) (by norm_num) φ heven n).re ∧
+    (canonicalCriticalPoints (by simp) (by norm_num) φ heven n).re ≤
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re :=
+  canonicalCriticalPoints_mem_canonicalPeriodicGap (by simp) (by norm_num) φ heven hreal n
+
+-- Every open gap has strict inequalities, with no distant-index hypothesis.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (n : ℤ)
+    (hlt : (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re <
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re) :
+    (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re <
+      (canonicalCriticalPoints (by simp) (by norm_num) φ heven n).re ∧
+    (canonicalCriticalPoints (by simp) (by norm_num) φ heven n).re <
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re :=
+  canonicalCriticalPoints_between_of_open_gap (by simp) (by norm_num) φ heven hreal n hlt
+
+-- Collapsed free gaps identify the canonical critical coordinate at negative indices.
+example : canonicalCriticalPoints (p := 3) (by simp) (by norm_num) 0 (pairParitySubspace 0).zero_mem (-5) =
+    (Real.pi : ℂ)*(-5 : ℤ) := by
+  have h := canonicalCriticalPoints_eq_of_collapsed_gap (p := 3) (by simp) (by norm_num) 0
+    (pairParitySubspace 0).zero_mem (by simp) (-5) (by simp)
+  simpa using h
+
+-- A gap contains exactly one complex critical point, not merely one chosen witness.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (n : ℤ) :
+    ∃! z : ℂ, deriv (canonicalDiscriminant (by simp) φ) z = 0 ∧
+      z.re ∈ Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re :=
+  existsUnique_critical_in_canonicalPeriodicGap (by simp) (by norm_num) φ heven hreal n
+
+-- Real critical coordinates at distinct signed indices cannot coincide.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) :
+    canonicalCriticalPoints (by simp) (by norm_num) φ heven (-1) ≠
+      canonicalCriticalPoints (by simp) (by norm_num) φ heven 1 := by
+  intro h
+  have he := canonicalCriticalPoints_injective_of_realType (by simp) (by norm_num) φ heven hreal h
+  norm_num at he
+
+-- Every critical root has analytic order one, also in the central cluster.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ)
+    (z : ℂ) (hz : deriv (canonicalDiscriminant (by simp) φ) z = 0) :
+    analyticOrderAt (deriv (canonicalDiscriminant (by simp) φ)) z = 1 :=
+  analyticOrderAt_discriminant_critical_eq_one_of_realType (by simp) (by norm_num) φ heven hreal z hz
+
+-- Critical points are nondegenerate for the discriminant.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ)
+    (z : ℂ) (hz : deriv (canonicalDiscriminant (by simp) φ) z = 0) :
+    deriv (deriv (canonicalDiscriminant (by simp) φ)) z ≠ 0 :=
+  discriminant_second_derivative_ne_zero_at_critical_of_realType (by simp) (by norm_num) φ heven hreal z hz
+
+end
+end GlobalCriticalInterlacingChecks

@@ -643,3 +643,8 @@ import NLS.ZakharovShabat.CanonicalPeriodicParity
 import NLS.ZakharovShabat.CanonicalPeriodicGapOrder
 import NLS.ZakharovShabat.PeriodicEndpointMultiplicity
 import NLS.ZakharovShabat.CanonicalPeriodicGapCritical
+import NLS.SequenceSpaces.FiniteMultisetSaturation
+import NLS.ZakharovShabat.RealGapCriticalPoints
+import NLS.ZakharovShabat.RealGapCriticalIdentification
+import NLS.ZakharovShabat.CanonicalCriticalInterlacing
+import NLS.ZakharovShabat.RealCriticalSimplicity

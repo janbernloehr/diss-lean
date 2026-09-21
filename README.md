@@ -904,8 +904,12 @@ installation is absent. No shell startup files are modified.
   Continuity along real scaling now identifies the discriminant level
   of every canonical pair and recovers the exact central parity multisets.
   Distinct indexed real gaps are strictly separated, and every open or
-  collapsed gap contains a critical point. Identifying that point with
-  its canonical critical index remains next before Lemma 8.6.
+  collapsed gap contains a critical point. Central count saturation now
+  identifies that point with its canonical critical index, proving global
+  interlacing, strict open-gap inequalities, and collapsed-gap equality.
+  Each gap contains exactly one critical point; all critical points are
+  simple and have nonzero second discriminant derivative. Formal strict
+  extrema and the refined estimate in Lemma 8.6 remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

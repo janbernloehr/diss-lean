@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 695 modules and 4547 named public theorems. All compile on the
+The library has 700 modules and 4568 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.FiniteMultisetSaturation` | Finite singleton sums as mapped multisets; distinct witnesses exhaust a multiset of matching total cardinality |
+| `NLS.ZakharovShabat.RealGapCriticalPoints` | Selected critical witnesses in every real gap, strict order, injectivity, central norm bounds, and central critical multiset membership |
+| `NLS.ZakharovShabat.RealGapCriticalIdentification` | Central count saturation identifies every gap witness with its canonical critical index; global interlacing and strict critical ordering |
+| `NLS.ZakharovShabat.CanonicalCriticalInterlacing` | Unique critical point in each real gap, strict open-gap inequalities, collapsed-gap equality, and unique gap membership of every critical point |
+| `NLS.ZakharovShabat.RealCriticalSimplicity` | Natural and analytic multiplicity one for all real-type critical roots; nonvanishing second discriminant derivative at every critical point |
 | `NLS.ComplexAnalysis.FiniteValueContinuity` | A continuous map with finite range is constant on a preconnected domain in a T1 codomain |
 | `NLS.ZakharovShabat.RealPotentialPaths` | Real scaling preserves real type and even support; continuous paths and canonical endpoint-slot paths from zero |
 | `NLS.ZakharovShabat.CanonicalPeriodicLevels` | Free signed parity levels and canonical endpoint discriminant levels at every real-type index, including the central cluster |
@@ -6177,9 +6182,9 @@ critical point, without requiring real type.
 `CanonicalPeriodicGapCritical` applies Rolle at every open real gap,
 including central gaps, and proves criticality at every collapsed gap.
 Every canonical closed real gap therefore contains a critical point.
-This does not yet identify that point with the canonical critical
-coordinate of the same index. Central count saturation is the next step
-for global indexed interlacing; Lemma 8.6 remains open.
+The next milestone identifies that point with the canonical critical
+coordinate of the same index by central count saturation. Lemma 8.6
+remains open.
 
 Eight examples check connected two-level constancy, real scaling at a
 negative parameter, both endpoint levels at a negative odd index, the
@@ -6187,10 +6192,46 @@ exact central odd multiset, separation across index zero, collapsed-gap
 criticality at complex even potentials, critical-point existence in every
 gap at p=3/2, and full odd multiplicity at level -2.
 
+## Section 8: global critical interlacing and simplicity
+
+`FiniteMultisetSaturation` proves that a finite injective family of entries
+exhausts a multiset when its cardinality matches the total multiplicity.
+`RealGapCriticalPoints` selects one actual real critical point from each
+canonical gap. Strict separation of the gaps makes these witnesses strictly
+increasing and distinct. Every central block of witnesses lies strictly
+inside the corresponding critical-counting disc.
+
+`RealGapCriticalIdentification` takes a cutoff large enough for the
+periodic and critical labelings. The selected central witnesses belong to
+the full critical multiset and already account for its entire cardinality.
+The singleton sum therefore equals the central critical multiset exactly.
+Uniqueness of ordered finite enumerations identifies every selected witness
+with the canonical critical coordinate at the same signed index.
+
+`CanonicalCriticalInterlacing` proves global indexed interlacing without
+a distant-index restriction. Every real canonical gap contains exactly
+one critical point. In an open gap the inequalities are strict; in a
+collapsed gap the canonical critical coordinate equals the common endpoint.
+Conversely, every critical point belongs to exactly one indexed gap.
+The real canonical critical sequence is strictly increasing and injective.
+
+`RealCriticalSimplicity` combines this injectivity with the exact global
+multiplicity formula. Every critical root at a real-type even potential
+has natural and analytic multiplicity one, including all central roots.
+The second spectral derivative of the discriminant is nonzero at every
+critical point. The formal strict-extremum conclusion and the refined
+estimate of Lemma 8.6 remain open.
+
+Eight examples check finite count saturation on signed indices, global
+interlacing at p=3/2, strict inequalities in arbitrary open gaps, exact
+free collapsed-gap identification at a negative index, uniqueness in every
+gap, distinctness of critical indices, simplicity of arbitrary critical
+roots, and their nonzero second discriminant derivative.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9081 declarations under `NLS`, including generated
+axioms. The current audit covers 9110 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7365,8 +7406,11 @@ formal matrix representation.
    Real scaling now identifies every canonical pair's discriminant level
    and its exact central parity. All indexed real gaps are strictly
    separated, and every open or collapsed gap contains a critical point.
-   Next identify its canonical critical index by central counts, then
-   prove Lemma 8.6.
+   Central count saturation now identifies its canonical critical index,
+   proving global interlacing with strict open-gap inequalities and
+   collapsed-gap equality. Every gap has exactly one critical point; all
+   critical points are simple and the second discriminant derivative is
+   nonzero there. Next formalize strict extrema and prove Lemma 8.6.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient
