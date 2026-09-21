@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 747 modules and 4746 named public theorems. All compile on the
+The library has 751 modules and 4763 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.FunctionalAnalysis.ProjectionDeterminant` | Intrinsic shifted determinants on varying finite projection ranges, exact transport invariance, and analytic dependence without nonvanishing assumptions |
+| `NLS.ZakharovShabat.BoundaryContourRestriction` | Original domain recursion and full generalized eigenspaces in boundary contour ranges; characteristic-root multiplicities equal original boundary algebraic multiplicities |
+| `NLS.ZakharovShabat.BoundaryContourDeterminant` | Jointly analytic actual boundary contour determinants and exact finite root products retaining every original multiplicity |
+| `NLS.ZakharovShabat.CentralBoundaryPolynomialAnalytic` | Common neighborhood and threshold for joint analyticity of both intrinsic central polynomials and their normalized source period-one approximants |
 | `NLS.ZakharovShabat.BoundaryRootCutoffGrowth` | Larger central boxes detect exactly their signed index blocks; exact enlarged central multisets and preservation at every larger admissible cutoff |
 | `NLS.ZakharovShabat.CentralBoundaryPolynomials` | Intrinsic root polynomials from actual boundary multiplicities, entire normalized approximants, and exact agreement with all large full cutoffs |
 | `NLS.ZakharovShabat.CanonicalBoundaryCharacteristic` | Intrinsic characteristic functions, independence from labels and cutoffs, exact spectral zeros, and locally uniform value and derivative convergence |
@@ -6599,14 +6603,55 @@ zero-mode normalization, the free derivative, original analytic multiplicities
 at p=3/2, double-root preservation, derivative convergence, and source
 nonvanishing off the spectrum.
 
-Next prove joint parameter analyticity, canonical boundary coordinates and
-their continuity, real interlacing, and starred products. Lemma 9.1 remains
-incomplete; the anti-discriminant and Lemma 9.2 follow.
+## Section 9: analytic finite boundary determinants and central polynomials
+
+`ProjectionDeterminant` defines the shifted determinant on the actual
+projection range. Invertible projection transport preserves its full value
+and normalization. Analytic projection and commuting operator families
+therefore have analytic intrinsic determinants, using the determinant on
+a fixed local reference range. Neither individual root analyticity nor
+nonvanishing of the determinant is assumed.
+
+`BoundaryContourRestriction` applies the original operator to its actual
+finite boundary contour range. Every finite generalized eigenspace agrees
+with the original operator-domain recursion. The maximal generalized
+eigenspace is the original full root space in the boundary summand.
+Enclosed boundary root spaces lie entirely in that range, so the finite
+characteristic polynomial retains their original algebraic multiplicities.
+Its eigenvalues lie in the original enclosed periodic spectrum.
+
+`BoundaryContourDeterminant` constructs the resulting intrinsic determinant.
+It is jointly analytic in the complex spectral parameter and reflected
+potential at every admissible periodic resolvent circle. The determinant
+equals the literal finite boundary root product, with all original algebraic
+multiplicities. Removing the other boundary condition's spectral values
+only removes factors with exponent zero. Thus the actual enclosed boundary
+root polynomial itself is jointly analytic, including at collisions and zeros.
+
+`CentralBoundaryPolynomialAnalytic` identifies these determinants with the
+intrinsic central polynomials whenever the contour encloses the central
+cluster. One open convex neighborhood containing the potential and zero,
+and one positive threshold, give joint analyticity at every larger cutoff
+for both boundary conditions simultaneously. The normalized polynomials
+inherit this property. Pullback through the ordinary interval extension
+gives the same joint result on the source period-one coefficient space.
+
+Eight examples check generic determinant analyticity at a spectral root,
+exact transport invariance, length-three root chains, radius-zero empty
+contours, original finite-product multiplicities, joint determinant
+analyticity, common normalized-polynomial analyticity at p=3/2, and its
+transfer to source coefficient potentials.
+
+The finite approximants are jointly analytic. To finish joint analyticity
+of the intrinsic infinite products, convergence must still be uniform over
+a potential neighborhood and compact spectral sets. Canonical boundary
+coordinates, continuity, real interlacing, and starred products also remain;
+Lemma 9.1 is incomplete. The anti-discriminant and Lemma 9.2 follow.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9463 declarations under `NLS`, including generated
+axioms. The current audit covers 9499 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7806,8 +7851,10 @@ formal matrix representation.
    period-one realization. Intrinsic boundary characteristic functions are
    now independent of labeling and cutoff, retain the exact original analytic
    multiplicities, and have locally uniform value and derivative limits.
-   Continue with parameter analyticity, canonical boundary coordinates,
-   and starred products.
+   Boundary contour determinants and both central polynomial families are
+   now jointly analytic on a common neighborhood at all large cutoffs.
+   Continue with uniform convergence over potential neighborhoods, then
+   canonical boundary coordinates and starred products.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

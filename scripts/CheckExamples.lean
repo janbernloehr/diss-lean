@@ -14760,3 +14760,76 @@ example (φ : CoeffPair 3) (b : BoundaryCondition) (z : ℂ)
 
 end
 end IntrinsicBoundaryChecks
+
+namespace BoundaryDeterminantChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology Metric
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+private theorem hp3 : (3 : ℝ≥0∞) ≠ ⊤ := by norm_num
+
+-- The generic determinant remains analytic when the spectral shift coincides with an eigenvalue.
+example : AnalyticAt ℂ (fun z : ℂ => ProjectionDeterminant.determinant
+    (1 : ℂ →L[ℂ] ℂ) (z • (1 : ℂ →L[ℂ] ℂ)) z) 0 := by
+  apply ProjectionDeterminant.analyticAt_determinant analyticAt_const
+    (analyticAt_id.smul analyticAt_const) analyticAt_id
+  · show (1 : ℂ →L[ℂ] ℂ)*1 = 1
+    simp
+  · exact Filter.Eventually.of_forall (fun z => ⟨by show (1 : ℂ →L[ℂ] ℂ)*1 = 1; simp,by show _ * _ = _ * _; simp⟩)
+
+-- General projection transport preserves the determinant's normalization, not just its zero set.
+example (P Q A : ℂ →L[ℂ] ℂ) (hP : IsIdempotentElem P) (hQ : IsIdempotentElem Q)
+    (hu : IsUnit (ProjectionTransport.transport P Q)) (hA : Commute Q A) (z : ℂ) :
+    ProjectionDeterminant.determinant Q A z = ((ProjectionTransport.compressed P Q A).toLinearMap-z • 1).det :=
+  ProjectionDeterminant.determinant_eq_compressed P Q A hP hQ hu hA z
+
+-- Chains of length three survive restriction to the actual boundary contour range.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (c z : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet hp3 φ.val) (x : (b.contourProjection hp3 φ.val c r).range) :
+    x ∈ Module.End.genEigenspace (b.contourRestriction hp3 φ.val c r).toLinearMap z (3 : ℕ∞) ↔
+      (x : PairSpace 3) ∈ periodicRootSpace hp3 φ.val z 3 :=
+  b.contourRestriction_mem_genEigenspace_iff hp3 φ.val φ.property c z r hr hc 3 x
+
+-- A radius-zero admissible contour has the empty spectral product and determinant one.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (c z : ℂ)
+    (hc : sphere c 0 ⊆ resolventSet (by simp) φ.val) : b.contourDeterminant (by simp) φ.val c 0 z = 1 := by
+  rw [b.contourDeterminant_eq_prod (by simp) φ.val φ.property c 0 le_rfl hc z]
+  have hs : b.enclosedSpectrum (by simp) φ.val φ.property c 0 = ∅ := by
+    ext a
+    simp [b.mem_enclosedSpectrum]
+  rw [hs,Finset.prod_empty]
+
+-- Finite determinants retain all original boundary multiplicities in the literal root product.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (c z : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) φ.val) : b.contourDeterminant (by simp) φ.val c r z =
+      ∏ a ∈ b.enclosedSpectrum (by simp) φ.val φ.property c r, (a-z)^b.algebraicMultiplicity (by simp) φ.val φ.property a :=
+  b.contourDeterminant_eq_prod (by simp) φ.val φ.property c r hr hc z
+
+-- At a repeated or simple spectral root, joint analyticity needs no nonvanishing determinant assumption.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (c z : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) φ.val) :
+    AnalyticAt ℂ (fun t : ℂ × dirichletSubspace (p := 3) => b.contourDeterminant (by simp) t.2.val c r t.1) (z,φ) :=
+  b.analyticAt_contourDeterminant (by simp) φ c r hr hc z
+
+-- Both normalized central products are jointly analytic at all large cutoffs below the Hilbert exponent.
+example (φ : dirichletSubspace (p := ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ N₀ : ℕ, ∃ U : Set (dirichletSubspace (p := ENNReal.ofReal (3/2 : ℝ))),
+      0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ b : BoundaryCondition, ∀ N ≥ N₀, AnalyticOnNhd ℂ
+        (fun t : ℂ × dirichletSubspace (p := ENNReal.ofReal (3/2 : ℝ)) =>
+          b.normalizedCentralPolynomial (by simp) t.2.val t.2.property N t.1) (univ ×ˢ U) :=
+  exists_uniform_analytic_normalizedCentralBoundaryPolynomials (by simp) φ
+
+-- The common threshold and neighborhood transfer to the original source period-one coefficient space.
+example (φ : CoeffPair 3) : ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 3),
+    0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ b : BoundaryCondition, ∀ N ≥ N₀, AnalyticOnNhd ℂ
+        (fun t : ℂ × CoeffPair 3 => b.normalizedCentralPolynomial (by simp)
+          (periodOneBoundaryPotential (by simp) (by norm_num) t.2).val
+          (periodOneBoundaryPotential (by simp) (by norm_num) t.2).property N t.1) (univ ×ˢ U) :=
+  exists_uniform_analytic_periodOneBoundaryPolynomials (by simp) (by norm_num) φ
+
+end
+end BoundaryDeterminantChecks

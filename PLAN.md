@@ -1872,7 +1872,17 @@ orders with the original restricted-operator multiplicities. Both intrinsic
 functions equal sine at zero potential. All these conclusions also hold for
 the original period-one coefficient realization.
 
-Next prove joint parameter analyticity, canonical boundary coordinates and
-their continuity, real interlacing, and starred characteristic products
-(Lemma 9.1), then the anti-discriminant (Lemma 9.2).
+Projection transport now gives intrinsic shifted determinants on varying
+finite spectral ranges, jointly analytic even at determinant zeros. Boundary
+contour restrictions retain all original generalized root chains and
+algebraic multiplicities. Their determinants equal the actual finite
+boundary root products. Consequently one open convex neighborhood and
+threshold give joint analyticity of both normalized central polynomials
+at every larger cutoff, including after the source interval extension.
+
+Next establish convergence uniform over a potential neighborhood and
+compact spectral sets, and pass joint analyticity to the intrinsic infinite
+boundary products. Then prove canonical boundary coordinates and their
+continuity, real interlacing, and starred characteristic products (Lemma 9.1),
+followed by the anti-discriminant (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

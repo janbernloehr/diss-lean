@@ -936,9 +936,13 @@ installation is absent. No shell startup files are modified.
   functions, defined from the actual central spectra, retain the exact
   original algebraic multiplicities as analytic zero orders. Their finite
   approximants and first derivatives converge locally uniformly, and both
-  intrinsic functions have the exact free sine normalization. Parameter
-  analyticity, canonical boundary coordinates, starred products, and the
-  anti-discriminant remain next.
+  intrinsic functions have the exact free sine normalization. Boundary
+  contour determinants now retain every original generalized multiplicity
+  and depend jointly analytically on the potential and spectral parameter.
+  Both normalized central polynomials are jointly analytic for every large
+  cutoff on one common neighborhood, including for source potentials.
+  Uniform convergence over potential neighborhoods is next, followed by
+  canonical boundary coordinates, starred products, and the anti-discriminant.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -695,3 +695,7 @@ import NLS.ZakharovShabat.CanonicalBoundaryCharacteristic
 import NLS.ZakharovShabat.FreeBoundaryCharacteristic
 import NLS.ZakharovShabat.BoundaryCharacteristicOrders
 import NLS.ZakharovShabat.PeriodOneBoundaryCharacteristic
+import NLS.FunctionalAnalysis.ProjectionDeterminant
+import NLS.ZakharovShabat.BoundaryContourRestriction
+import NLS.ZakharovShabat.BoundaryContourDeterminant
+import NLS.ZakharovShabat.CentralBoundaryPolynomialAnalytic
