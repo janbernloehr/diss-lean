@@ -679,3 +679,8 @@ import NLS.ZakharovShabat.UniformSmallDeletedPairErrors
 import NLS.ZakharovShabat.UniformSmallCriticalValues
 import NLS.ZakharovShabat.CriticalOffsetCoefficientLowerBound
 import NLS.ZakharovShabat.CriticalMidpointGapSquared
+import NLS.ComplexAnalysis.RealIntervalLevel
+import NLS.ZakharovShabat.RealSpectralPairSigns
+import NLS.ZakharovShabat.RealGapProductSigns
+import NLS.ZakharovShabat.RealGapCharacterization
+import NLS.ZakharovShabat.RealGapDiscriminantLevels

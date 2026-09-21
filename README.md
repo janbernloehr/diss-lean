@@ -923,7 +923,11 @@ installation is absent. No shell startup files are modified.
   using uniform small tails and critical localization. Its exact quotient
   gives the squared-gap midpoint offset with locally uniformly bounded lp
   coefficients, completing Lemma 8.6 for even complex potentials, including
-  collapsed gaps. The real gap characterization by `|∆| ≥ 2` remains open.
+  collapsed gaps. The closed real gaps are now exactly the set where
+  `|∆|≥2`; open interiors correspond to `|∆|>2`, and equality occurs exactly
+  at endpoints. The signed inequality `(-1)^n ∆≥2` holds throughout every
+  gap and is strict in its interior, including negative indices. Section 9
+  characteristic functions and the anti-discriminant are next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

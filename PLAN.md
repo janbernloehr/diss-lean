@@ -1844,6 +1844,15 @@ for all finite exponents greater than one and all even complex potentials,
 including collapsed gaps. This uses genuine uniform small-tail control,
 not decay inferred from a bounded lp ball.
 
-Next formalize the preceding real gap characterization by `|∆| ≥ 2`.
-Then continue with the anti-discriminant and action-coordinate prerequisites.
+The real gap characterization is now complete. Positive real pair
+denominators and the negative full-product normalization give the correct
+cutoff signs. Passing to the limit and using spectral exhaustion proves
+that closed gaps are exactly where `|∆|≥2`, open interiors exactly where
+`|∆|>2`, and endpoints exactly where equality holds. Continuity and the
+known endpoint parity give `(-1)^n ∆≥2` on each closed gap, strictly inside
+an open gap, for every signed index.
+
+Next implement Section 9 Dirichlet, Neumann, and starred characteristic
+products, parameter analyticity, canonical coordinates, and real
+interlacing (Lemma 9.1), then the anti-discriminant (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 731 modules and 4668 named public theorems. All compile on the
+The library has 736 modules and 4691 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.RealIntervalLevel` | Continuity selects the positive branch of a squared-level bound throughout a real interval |
+| `NLS.ZakharovShabat.RealSpectralPairSigns` | Positive real spectral denominators, real finite-product formulas, and cutoff signs outside paired intervals or inside one pair |
+| `NLS.ZakharovShabat.RealGapProductSigns` | Actual real paired cutoffs converge to the discriminant square minus four; nonnegative sign on each gap and nonpositive sign outside all gaps |
+| `NLS.ZakharovShabat.RealGapCharacterization` | Closed gaps characterized by modulus at least two, open interiors by modulus greater than two, equality exactly at endpoints, and strict complement bounds |
+| `NLS.ZakharovShabat.RealGapDiscriminantLevels` | Parity-specific gap inequalities, literal integer-power signed inequalities including negative indices, strict interior versions, and exact superlevel-set union |
 | `NLS.SequenceSpaces.CoefficientDecay` | Two-sided coordinate decay for each coefficient sequence at finite Banach exponents |
 | `NLS.Fourier.UniformAbsoluteSampledRows` | Absolute reciprocal-row domination and uniform distant smallness from bounded finite blocks and small input tails |
 | `NLS.Fourier.UniformSmallRelativeProducts` | Exponential product-error bounds and uniformly small errors over all half-unit sampling families |
@@ -6289,8 +6294,8 @@ Eight examples check strict quadratic minima and maxima, the derivative
 bridge for a complex polynomial not preserving the real axis, equivalence
 of real and complex criticality, strict extrema at p=3/2, uniqueness in
 every gap, canonical exhaustion of all extrema, and the collapsed free gap
-at zero. Lemma 8.6 and the preceding real gap characterization by
-`|∆| ≥ 2` remain open.
+at zero. Lemma 8.6 and the real gap characterization by `|∆| ≥ 2` are
+completed in the later milestones below.
 
 ## Section 8: exact factorization for Lemma 8.6
 
@@ -6466,13 +6471,55 @@ critical-value thresholds, neighborhood nonvanishing, the full locally
 uniform Lemma 8.6 statement at p=3/2, collapsed complex gaps, and full
 quotient lp membership at p=3.
 
-The real gap level characterization `|∆|≥2` remains a separate Section 8
-item. Section 9 characteristic functions and the anti-discriminant follow.
+The following milestone completes the real gap level characterization
+`|∆|≥2`. Section 9 characteristic functions and the anti-discriminant follow.
+
+## Section 8: real gap levels and exact modulus characterization
+
+`RealSpectralPairSigns` proves that every normalization denominator is
+real and strictly positive, including the exceptional zero-mode value one.
+Real paired cutoffs have their literal real-product formula with prefactor
+`−4`. They are nonpositive when all paired numerators are nonnegative,
+and nonnegative when one pair is nonpositive and all others are nonnegative.
+The latter applies once the cutoff contains that pair.
+
+`RealGapProductSigns` passes these inequalities through the locally uniform
+canonical product limit. At every real-type potential and all real spectral
+parameters, `∆²≥4` on each closed indexed gap and `∆²≤4` outside their union.
+This argument includes the full central cluster and collapsed gaps.
+
+`RealGapCharacterization` uses the exact spectral equation and canonical
+endpoint exhaustion to identify `∆²=4` precisely with endpoint values.
+Consequently the outside bound is strict, and
+`|∆(x)|≥2` holds exactly on the union of closed canonical gaps.
+Moreover, `|∆(x)|=2` holds exactly at endpoints, `|∆(x)|>2` holds exactly
+on the union of open gap interiors, and `|∆(x)|<2` holds on the complement
+of all closed gaps. All statements hold for every finite exponent `p>1`.
+
+`RealIntervalLevel` proves that continuity prevents switching between the
+two branches of a positive square-level bound on an interval.
+`RealGapDiscriminantLevels` applies it with the already identified endpoint
+parity. This proves the literal source inequality `(-1)^n ∆(x)≥2` throughout
+each closed real gap, for every signed index. The inequality is strict
+inside each open gap. The final set equality records the superlevel set
+as the union of the canonical gaps, completing the gap characterization
+on printed page 50 preceding Lemma 8.3.
+
+Eight examples check the negative zero-mode normalization, continuous
+branch selection, the global characterization at p=3/2, the negative odd
+index sign, the strict interior inequality, the strict complement bound,
+endpoint exhaustion without distinctness, and the free superlevel set
+consisting exactly of the signed lattice points when all gaps collapse.
+
+Next construct the normalized Dirichlet, Neumann, and starred
+characteristic products of Section 9 with their actual spectral zeros,
+parameter analyticity, canonical root coordinates, and real interlacing.
+Then define the anti-discriminant and prove Lemma 9.2.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9299 declarations under `NLS`, including generated
+axioms. The current audit covers 9332 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7663,8 +7710,11 @@ formal matrix representation.
    `Gₙ′(cₙ)`, and the midpoint coefficient minus two. Uniform small-tail
    estimates now prove coefficient norm at least one on a common distant
    tail. The exact quotient has locally bounded lp representatives, proving
-   the squared-gap factorization and completing Lemma 8.6. Formalize the
-   real gap characterization by `|∆| ≥ 2` next.
+   the squared-gap factorization and completing Lemma 8.6. Real product
+   signs and spectral exhaustion now prove the exact characterization of
+   closed gaps by `|∆| ≥ 2`, open interiors by `|∆| > 2`, and endpoints by
+   equality. Continuity gives the alternating signed gap inequalities at
+   all indices. Continue with Section 9 characteristic functions.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

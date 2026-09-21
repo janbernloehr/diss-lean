@@ -14569,3 +14569,67 @@ example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) :
 
 end
 end GapSquaredChecks
+
+namespace RealGapChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The exceptional zero-mode cutoff retains the negative full normalization.
+example : spectralPairPartialProduct (fun _ => 0) (fun _ => 0) (1 : ℂ) 0 = -4 := by
+  norm_num [spectralPairPartialProduct,spectralPairFactor]
+
+-- Continuity cannot switch square-root branches across the forbidden middle strip.
+example (f : ℝ → ℝ) (hf : ContinuousOn f (Icc (-2) 3)) (ha : f (-2) = 2)
+    (hs : ∀ x ∈ Icc (-2) 3, 4 ≤ (f x)^2) : 2 ≤ f 1 := by
+  apply level_le_on_Icc_of_sq_ge f (by norm_num : (0 : ℝ) < 2) hf ha.ge
+  · simpa only [show (2 : ℝ)^2 = 4 by norm_num] using hs
+  · norm_num
+
+-- The global characterization holds below the Hilbert exponent, including central gaps.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) (heven : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) (x : ℝ) : 2 ≤ ‖canonicalDiscriminant (by simp) φ x‖ ↔ ∃ n : ℤ,
+      x ∈ Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re :=
+  two_le_norm_discriminant_iff_mem_canonicalGap (by simp) (by norm_num) φ heven hreal x
+
+-- Negative odd indices have discriminant at most minus two throughout their closed gaps.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (x : ℝ)
+    (hx : x ∈ Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ heven (-3)).re
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven (-3)).re) :
+    (canonicalDiscriminant (by simp) φ x).re ≤ -2 := by
+  have h := signed_discriminant_ge_two_on_canonicalGap (by simp) (by norm_num) φ heven hreal (-3) x hx
+  norm_num at h
+  linarith
+
+-- Interior points of every open gap satisfy the strict alternating inequality.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (n : ℤ) (x : ℝ)
+    (hx : x ∈ Ioo (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re) :
+    2 < (-1 : ℝ)^n*(canonicalDiscriminant (by simp) φ x).re :=
+  signed_discriminant_gt_two_on_canonicalGap_interior (by simp) (by norm_num) φ heven hreal n x hx
+
+-- Outside all closed gaps the modulus is strictly less than two.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (x : ℝ)
+    (hx : ∀ n : ℤ, x ∉ Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re) :
+    ‖canonicalDiscriminant (by simp) φ x‖ < 2 :=
+  (norm_discriminant_lt_two_iff_outside_canonicalGaps (by simp) (by norm_num) φ heven hreal x).mpr hx
+
+-- Equality is exhausted by endpoint slots, without requiring distinct endpoints.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ) (x : ℝ)
+    (hx : ‖canonicalDiscriminant (by simp) φ x‖ = 2) : ∃ n : ℤ,
+      x = (canonicalPeriodicLeft (by simp) (by norm_num) φ heven n).re ∨
+      x = (canonicalPeriodicRight (by simp) (by norm_num) φ heven n).re :=
+  (norm_discriminant_eq_two_iff_canonicalEndpoint (by simp) (by norm_num) φ heven hreal x).mp hx
+
+-- At zero potential every gap collapses, so the superlevel set is exactly the signed free lattice.
+example (x : ℝ) : 2 ≤ ‖canonicalDiscriminant (p := 3) (by simp) 0 x‖ ↔ ∃ n : ℤ, x = Real.pi*n := by
+  have h := two_le_norm_discriminant_iff_mem_canonicalGap (p := 3) (by simp) (by norm_num) 0
+    (pairParitySubspace 0).zero_mem isRealType_zero x
+  simpa [canonicalPeriodicLeft_zero,canonicalPeriodicRight_zero] using h
+
+end
+end RealGapChecks
