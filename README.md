@@ -955,8 +955,13 @@ installation is absent. No shell startup files are modified.
   perturbations, including repeated roots. Pullback through the real-type
   preserving source extension proves ordinary Lemma 9.1(ii) on the original
   coefficient space. Both sequences are analytic outside a finite central
-  block at arbitrary complex potentials. Real interlacing, starred products,
-  and the anti-discriminant remain next.
+  block at arbitrary complex potentials. The classical endpoint formulas now
+  have the exact original physical zero sets and satisfy
+  `Δ² − 4 = δ² − 4χDχN`. Real-type symmetry gives the boundary trace bound;
+  a common continuous representative places boundary roots in some original
+  periodic gap. Matching gap indices and extending this comparison to all
+  finite source exponents, starred products, and the source anti-discriminant
+  remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

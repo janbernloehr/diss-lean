@@ -1910,7 +1910,17 @@ type, so pullback proves Lemma 9.1(ii) on the original coefficient space.
 Both canonical source sequences are analytic outside a finite central block
 at arbitrary complex potentials.
 
-Next prove real interlacing and establish the starred characteristic analogues
+The classical part of the boundary gap comparison is now established. The
+literal endpoint functions have their exact free normalization and joint
+analyticity, and their zeros are exactly the original physical separated
+eigenvalues. Unimodularity gives `Δ²−4=δ²−4χDχN`; real-type monodromy symmetry
+then gives the trace bound at boundary roots, with strictness characterized
+by nonzero anti-discriminant. Comparing compatible physical representatives
+locates real boundary eigenvalues in some original periodic gap, while
+keeping the periodic and reflected boundary potentials distinct. The matching
+of the gap index and extension to every finite source exponent remain.
+
+Next prove indexed real interlacing and establish the starred characteristic analogues
 (Lemma 9.1(iii) and its extension). Then implement the anti-discriminant
 (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

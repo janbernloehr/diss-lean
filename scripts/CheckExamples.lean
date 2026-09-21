@@ -15043,3 +15043,66 @@ example (φ : CoeffPair 3) : ∃ N : ℕ, 0 < N ∧ ∀ b : BoundaryCondition, �
 
 end
 end BoundaryContinuityChecks
+
+namespace ClassicalBoundaryGapChecks
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.LinearVolterra Set Complex MeasureTheory
+open scoped ComplexConjugate Classical
+
+-- The free normalization is fixed for both separated problems and the anti-discriminant.
+example (z : ℂ) : classicalSeparatedCharacteristic .dirichlet 0 z = sin z ∧
+    classicalSeparatedCharacteristic .neumann 0 z = sin z ∧ classicalAntiDiscriminant 0 z = 0 := by
+  simp only [classicalSeparatedCharacteristic_free,classicalAntiDiscriminant_free,and_self]
+
+-- Joint analyticity includes simultaneous variations of the original continuous potential and parameter.
+example (b : BoundaryCondition) :
+    AnalyticOnNhd ℂ (fun q : ℂ × Curve (ℂ × ℂ) => classicalSeparatedCharacteristic b q.2 q.1) univ ∧
+      AnalyticOnNhd ℂ (fun q : ℂ × Curve (ℂ × ℂ) => classicalAntiDiscriminant q.2 q.1) univ :=
+  ⟨analyticOnNhd_classicalSeparatedCharacteristic_joint b,analyticOnNhd_classicalAntiDiscriminant_joint⟩
+
+-- The sign and factor in the global identity hold at arbitrary complex parameters and potentials.
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    (classicalDiscriminant Φ z)^2-4 = (classicalAntiDiscriminant Φ z)^2-
+      4*classicalSeparatedCharacteristic .dirichlet Φ z*classicalSeparatedCharacteristic .neumann Φ z :=
+  classicalDiscriminant_sq_sub_four Φ z
+
+-- Literal characteristic zeros coincide with eigenvalues defined by the physical equation and H¹ endpoints.
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ))
+    (hΦ : MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1))) (z : ℂ) :
+    classicalSeparatedCharacteristic b Φ z = 0 ↔ z ∈ b.classicalEigenvalues (extend Φ) :=
+  classicalSeparatedCharacteristic_eq_zero_iff_mem_classicalEigenvalues b Φ hΦ z
+
+-- Actual physical boundary eigenvalues obey the real trace bound for real-type continuous potentials.
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (hΦ : ∀ t, (Φ t).2 = conj (Φ t).1)
+    (hL : MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1))) (x : ℝ)
+    (hx : (x : ℂ) ∈ b.classicalEigenvalues (extend Φ)) : 2 ≤ |(classicalDiscriminant Φ x).re| :=
+  two_le_abs_classicalDiscriminant_re_of_classicalEigenvalue b Φ hΦ hL x hx
+
+-- The anti-discriminant distinguishes strict gap values from trace-level endpoints.
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (hΦ : ∀ t, (Φ t).2 = conj (Φ t).1)
+    (x : ℝ) (hx : classicalSeparatedCharacteristic b Φ x = 0) :
+    (2 < |(classicalDiscriminant Φ x).re| ↔ classicalAntiDiscriminant Φ x ≠ 0) ∧
+      (|(classicalDiscriminant Φ x).re| = 2 ↔ classicalAntiDiscriminant Φ x = 0) :=
+  ⟨two_lt_abs_classicalDiscriminant_re_iff b Φ hΦ x hx,abs_classicalDiscriminant_re_eq_two_iff b Φ hΦ x hx⟩
+
+-- Periodic and reflected boundary coefficient potentials can differ while representing the same original interval.
+example (b : BoundaryCondition) (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0)
+    (ψ : PairSpace 2) (hψ : ψ ∈ dirichletSubspace) (Φ : Curve (ℂ × ℂ))
+    (hΦ : physicalBase φ =ᵐ[volume.restrict (Ioc 0 1)] extend Φ)
+    (hΨ : physicalBase ψ =ᵐ[volume.restrict (Ioc 0 1)] extend Φ) (z : ℂ)
+    (hz : z ∈ b.spectrum (by simp) ψ hψ) :
+    (canonicalDiscriminant (by simp) φ z)^2-4 = (classicalAntiDiscriminant Φ z)^2 :=
+  canonicalDiscriminant_sq_sub_four_of_boundaryEigenvalue b φ hφ ψ hψ Φ hΦ hΨ z hz
+
+-- This comparison locates every compatible real boundary root in some original periodic gap.
+example (b : BoundaryCondition) (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (hreal : IsRealType φ)
+    (ψ : PairSpace 2) (hψ : ψ ∈ dirichletSubspace) (Φ : Curve (ℂ × ℂ))
+    (hΦ : physicalBase φ =ᵐ[volume.restrict (Ioc 0 1)] extend Φ)
+    (hΨ : physicalBase ψ =ᵐ[volume.restrict (Ioc 0 1)] extend Φ)
+    (hr : ∀ t, (Φ t).2 = conj (Φ t).1) (x : ℝ) (hx : (x : ℂ) ∈ b.spectrum (by simp) ψ hψ) :
+    ∃ n : ℤ, x ∈ Icc (canonicalPeriodicLeft (by simp) (by norm_num) φ hφ n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) φ hφ n).re :=
+  exists_canonicalGap_of_boundaryEigenvalue b φ hφ hreal ψ hψ Φ hΦ hΨ hr x hx
+
+end
+end ClassicalBoundaryGapChecks

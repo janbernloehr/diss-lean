@@ -716,3 +716,7 @@ import NLS.ZakharovShabat.CanonicalBoundaryStability
 import NLS.ZakharovShabat.CanonicalBoundaryRealBounds
 import NLS.ZakharovShabat.CanonicalBoundaryContinuity
 import NLS.ZakharovShabat.CanonicalPeriodOneBoundaryRoots
+import NLS.ZakharovShabat.ClassicalSeparatedCharacteristics
+import NLS.ZakharovShabat.ClassicalRealMonodromy
+import NLS.ZakharovShabat.ClassicalBoundaryMonodromy
+import NLS.ZakharovShabat.ClassicalBoundaryGapBound

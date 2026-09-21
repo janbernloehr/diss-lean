@@ -2,11 +2,15 @@
 
 ## Implemented and checked
 
-The library has 768 modules and 4828 named public theorems. All compile on the
+The library has 772 modules and 4856 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalSeparatedCharacteristics` | Literal separated endpoint characteristics and anti-discriminant, joint analyticity, exact free normalization, and the unimodular trace identity |
+| `NLS.ZakharovShabat.ClassicalRealMonodromy` | Conjugate-swap solution symmetry and exact real-type monodromy, trace, anti-discriminant, and characteristic reality |
+| `NLS.ZakharovShabat.ClassicalBoundaryMonodromy` | Exact equivalence of literal characteristic zeros with original physical interval eigenvalues and compatibility with actual reflected coefficient spectra |
+| `NLS.ZakharovShabat.ClassicalBoundaryGapBound` | Real boundary trace bounds, strict/equality criteria, comparison with the original periodic discriminant, and membership in some original periodic gap |
 | `NLS.ZakharovShabat.BoundaryCharacteristicFamilyLimits` | Local uniform dependence on reflected potentials, compact nonvanishing stability, and exact circular root-count stability |
 | `NLS.ZakharovShabat.BoundaryRootRealStrip` | Strict central real bounds, exact central-strip selection, and zero-free real-diameter boundaries at real type |
 | `NLS.ZakharovShabat.BoundaryRootCounts` | Analytic zero counts on arbitrary central-strip subsets equal finite label counts with all original repetitions |
@@ -6767,10 +6771,49 @@ continuity, source continuity at p=3/2, arbitrary complex source sequences
 approaching zero, and distant source analyticity. Real interlacing in
 Lemma 9.1(iii), starred characteristics, and Lemma 9.2 remain next.
 
+## Classical boundary trace and gap comparison
+
+The literal Dirichlet and Neumann endpoint formulas are now defined from the
+constructed monodromy, together with its off-diagonal anti-discriminant.
+All three are jointly analytic in continuous potential and complex spectral
+parameter; the separated free values are sine and the free anti-discriminant
+is zero. Determinant one gives the global identity
+`Δ² − 4 = δ² − 4χDχN`, hence `Δ² − 4 = δ²` at either separated zero.
+
+The zeros are exactly the eigenvalues defined by the original interval
+physical equation, H¹ regularity, and separated endpoints. The proof uses
+uniqueness of initial-value solutions, nonzero initial vectors, and the
+proved restriction and extension maps. Actual reflected coefficient boundary
+spectral values also give zeros whenever the potential has a compatible
+continuous representative on the original interval.
+
+For pointwise real-type continuous potentials, conjugation followed by
+component exchange preserves real-parameter solutions. This gives exact
+monodromy symmetries and reality of the discriminant, anti-discriminant,
+and both separated characteristics. At every real separated root,
+`|Re Δ| ≥ 2`; strict inequality is equivalent to `δ ≠ 0`, and equality is
+equivalent to `δ = 0`. These bounds apply to original physical interval
+eigenvalues, rather than just formal matrix roots.
+
+A common continuous physical representative connects the reflected boundary
+potential to the original even periodic coefficient potential. They are
+kept as distinct potentials in the comparison theorem. Consequently every
+compatible real boundary eigenvalue lies in some gap of that original
+periodic spectrum. This is a prerequisite for Lemma 9.1(iii), not yet its
+indexed conclusion: identifying the gap as `G_n` for the boundary root
+with index `n`, and extending the comparison to all finite source exponents,
+remain. The classical anti-discriminant has not yet been identified with a
+source-wide starred-product extension.
+
+Eight API examples check free values, joint analyticity, the global identity,
+the original physical zero set, the real trace bound, its strict and equality
+cases, comparison of the two coefficient realizations, and membership in
+an original periodic gap.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9622 declarations under `NLS`, including generated
+axioms. The current audit covers 9660 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
