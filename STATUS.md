@@ -2,11 +2,21 @@
 
 ## Implemented and checked
 
-The library has 721 modules and 4650 named public theorems. All compile on the
+The library has 731 modules and 4668 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.CoefficientDecay` | Two-sided coordinate decay for each coefficient sequence at finite Banach exponents |
+| `NLS.Fourier.UniformAbsoluteSampledRows` | Absolute reciprocal-row domination and uniform distant smallness from bounded finite blocks and small input tails |
+| `NLS.Fourier.UniformSmallRelativeProducts` | Exponential product-error bounds and uniformly small errors over all half-unit sampling families |
+| `NLS.ZakharovShabat.UniformSmallFreeDiscProducts` | Uniform relative-product smallness on whole distant closed half-pi spectral discs |
+| `NLS.ZakharovShabat.UniformSmallCanonicalRelativeProducts` | Both actual canonical endpoint relative products approach one on a common potential neighborhood and distant discs |
+| `NLS.ZakharovShabat.UniformSmallCriticalDisplacements` | Arbitrarily small locally uniform canonical critical displacements via counting and uniqueness |
+| `NLS.ZakharovShabat.UniformSmallDeletedPairErrors` | Maximum-modulus value estimates and Cauchy derivative estimates with arbitrary uniform tolerances |
+| `NLS.ZakharovShabat.UniformSmallCriticalValues` | Locally uniform smallness of remaining-product values minus one and derivatives at canonical critical points |
+| `NLS.ZakharovShabat.CriticalOffsetCoefficientLowerBound` | Locally uniform convergence of the midpoint coefficient to two, norm lower bound one, and exact quotient identity |
+| `NLS.ZakharovShabat.CriticalMidpointGapSquared` | Lemma 8.6: squared-gap critical midpoint offsets with locally uniformly bounded lp tail coefficients; full fixed-potential quotient membership |
 | `NLS.ComplexAnalysis.EntireIncrementBound` | Displacement-proportional increment bounds for entire functions on fixed closed discs |
 | `NLS.SequenceSpaces.FiniteModification` | Finite changes preserve lp membership at every exponent |
 | `NLS.ZakharovShabat.FreeSquaredSineBounds` | Translation, center values, zero center derivatives, and common linear displacement bounds for squared free sine quotients |
@@ -5989,7 +5999,8 @@ canonical roots, displacements in lp with a common norm bound, the exact
 normalized derivative product and locally uniform symmetric cutoffs, and
 coordinate continuity at every real-type point. Lemma 8.5 is complete.
 Continuity in the lp norm is not asserted. The next milestone proves
-distant-gap interlacing; central-gap interlacing and Lemma 8.6 remain open.
+distant-gap interlacing; later milestones below establish central-gap
+interlacing and complete Lemma 8.6.
 
 Eight examples check finite prefix and suffix bounds with non-strict
 ordering, a nonreal point in a real-diameter disc, strict enclosure of a
@@ -6083,7 +6094,8 @@ The sorted central pairs' Fourier parity is not yet identified. This
 milestone establishes ordered existence. The next milestone proves
 uniqueness across cutoffs. Endpoint-coordinate continuity, then parity
 identification along real-type paths, are still needed for indexed
-central-gap interlacing. Lemma 8.6 remains open.
+central-gap interlacing. These and Lemma 8.6 are completed in later
+milestones below.
 
 Eight examples cover repeated complex paired enumeration, imaginary
 tie-breaking, double occurrences after sorting, bounded displacement at
@@ -6241,7 +6253,7 @@ multiplicity formula. Every critical root at a real-type even potential
 has natural and analytic multiplicity one, including all central roots.
 The second spectral derivative of the discriminant is nonzero at every
 critical point. The strict local-extremum conclusion is proved in the
-next milestone; the refined estimate of Lemma 8.6 remains open.
+next milestone; the refined estimate of Lemma 8.6 is completed below.
 
 Eight examples check finite count saturation on signed indices, global
 interlacing at p=3/2, strict inequalities in arbitrary open gaps, exact
@@ -6322,9 +6334,8 @@ under changing the removed pair to a collision, the actual factorization
 at p=3/2, the complex-potential critical identity, analyticity at a removed
 endpoint, solving a collapsed-gap equation, the remaining free product
 at a negative index, and derivative convergence across the removed roots.
-The locally uniform lp estimates for the remaining product and its
-derivative, and the uniform large-index coefficient lower bound, remain
-needed to finish Lemma 8.6.
+The later milestones below supply the locally uniform lp estimates and
+coefficient lower bound, completing Lemma 8.6.
 
 ## Section 8: remaining-product disc estimates for Lemma 8.6
 
@@ -6368,9 +6379,9 @@ pair choices, derivative-error membership at p=3/2, uniformly small actual
 canonical endpoint tails, sampled canonical error sequences, and the
 identically zero error at the free potential.
 
-The next milestone below evaluates these estimates at canonical critical
-points. The locally uniform large-index nonvanishing coefficient and final
-squared-gap lp factorization remain open.
+The later milestones below evaluate these estimates at canonical critical
+points, prove the uniform nonvanishing coefficient, and complete the
+squared-gap lp factorization.
 
 ## Section 8: critical-value estimates and midpoint coefficient
 
@@ -6403,15 +6414,65 @@ neighborhood coefficient bound, the actual midpoint coordinate formula,
 the collapsed-gap identity at complex potentials, arbitrary finite central
 changes, and the free coefficient value two.
 
-The uniform large-index lower bound on `Bₙ` and the final squared-gap lp
-factorization remain to be proved. Uniform smallness cannot be inferred
-from bounded lp norms alone; the endpoint small-tail estimates and
-spectral localization will supply the additional control.
+The following milestone supplies the uniform lower bound and completes
+the squared-gap lp factorization. It uses endpoint small-tail estimates
+and spectral localization; bounded lp norms alone would not suffice.
+
+## Section 8: completion of Lemma 8.6
+
+`CoefficientDecay` derives two-sided coordinate decay from norm convergence
+of Fourier tails at finite Banach exponents. `UniformAbsoluteSampledRows`
+splits an input into a finite block and a small tail. For inputs in a norm
+ball, the finite block is dominated by one fixed sequence whose absolute
+row majorant decays. The tail contributes at most its norm times the row
+operator bound. The resulting tail tolerance is independent of the finite
+block; the distant-index threshold may depend on that block.
+
+`UniformSmallRelativeProducts` bounds the full product error by the
+exponential of the absolute row minus one. Rescaling by pi gives
+`UniformSmallFreeDiscProducts`, uniformly over each entire closed half-pi
+disc. `UniformSmallCanonicalRelativeProducts` combines a fixed neighborhood
+norm bound with the canonical endpoint small-tail theorem. For each
+tolerance one open convex neighborhood and cutoff control both actual
+endpoint relative products simultaneously.
+
+`UniformSmallCriticalDisplacements` identifies the roots in arbitrarily
+small free discs with the canonical critical coordinates by quarter-disc
+uniqueness. `UniformSmallDeletedPairErrors` uses maximum modulus at the
+free center and Cauchy's estimate on quarter-pi discs. The free squared
+quotient estimates then yield `UniformSmallCriticalValues`: both
+`Gₙ(cₙ)−1` and `Gₙ′(cₙ)` are locally uniformly arbitrarily small.
+
+`CriticalOffsetCoefficientLowerBound` combines this with the locally
+bounded midpoint offset. The coefficient `Bₙ=2Gₙ(cₙ)+(cₙ−τₙ)Gₙ′(cₙ)`
+approaches two locally uniformly and has norm at least one on a common
+distant tail. Dividing the exact identity by this coefficient is therefore
+justified, and the resulting quotient has norm at most `|Gₙ′(cₙ)|/4`.
+
+`CriticalMidpointGapSquared` completes Lemma 8.6 on printed pages 51–52.
+For every finite exponent `1<p<∞` and base potential, there are `N>0`, an
+open convex neighborhood `U` containing the potential and zero, and `K≥0`.
+For every even complex potential in `U`, an lp coefficient sequence `a`
+with norm at most `K` satisfies `cₙ−τₙ=γₙ²aₙ` for all `|n|>N`. The sequence
+agrees there with the actual quotient `Gₙ′(cₙ)/(4Bₙ)` and is set to zero
+centrally for the uniform estimate. Finite modification also proves full
+lp membership of the actual quotient at each fixed potential. No gap is
+divided by and no real-type hypothesis is required, so collapsed gaps
+are included. The corrected negative factorization sign is retained.
+
+Eight examples check bounded arbitrary finite blocks, arbitrarily small
+canonical critical localization, the closed-disc Cauchy estimate, common
+critical-value thresholds, neighborhood nonvanishing, the full locally
+uniform Lemma 8.6 statement at p=3/2, collapsed complex gaps, and full
+quotient lp membership at p=3.
+
+The real gap level characterization `|∆|≥2` remains a separate Section 8
+item. Section 9 characteristic functions and the anti-discriminant follow.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9262 declarations under `NLS`, including generated
+axioms. The current audit covers 9299 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7599,8 +7660,11 @@ formal matrix representation.
    majorants on the source discs, and canonical endpoint displacements have
    uniformly bounded norms and arbitrarily small local tails. Evaluation at
    critical points now gives locally uniform lp tails for `Gₙ(cₙ)−1`,
-   `Gₙ′(cₙ)`, and the midpoint coefficient minus two. Prove the uniform
-   coefficient lower bound and final squared-gap lp factorization to finish 8.6. Formalize the real gap characterization by `|∆| ≥ 2` as well.
+   `Gₙ′(cₙ)`, and the midpoint coefficient minus two. Uniform small-tail
+   estimates now prove coefficient norm at least one on a common distant
+   tail. The exact quotient has locally bounded lp representatives, proving
+   the squared-gap factorization and completing Lemma 8.6. Formalize the
+   real gap characterization by `|∆| ≥ 2` next.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -919,8 +919,11 @@ installation is absent. No shell startup files are modified.
   also have bounded norms and arbitrarily small local tails. Evaluation at
   canonical critical points now gives locally uniform lp tails for the
   remaining-product value minus one and its derivative. The midpoint
-  coefficient equals two plus a locally bounded lp tail; its uniform
-  large-index lower bound and the final Lemma 8.6 factorization remain next.
+  coefficient now has norm at least one on a common distant tail, proved
+  using uniform small tails and critical localization. Its exact quotient
+  gives the squared-gap midpoint offset with locally uniformly bounded lp
+  coefficients, completing Lemma 8.6 for even complex potentials, including
+  collapsed gaps. The real gap characterization by `|∆| ≥ 2` remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

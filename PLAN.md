@@ -1834,9 +1834,16 @@ offset has locally bounded lp norm, and the bounded multiplier estimate
 therefore gives locally uniform lp tails for `2Gₙ+aGₙ′−2`, retaining the
 exact squared-gap identity at all even complex potentials.
 
-Next prove the locally uniform large-index lower bound on `2Gₙ+aGₙ′`
-and finish Lemma 8.6 by division. Use uniform small tails and localization;
-a bounded lp ball alone does not give uniform coordinate decay. The preceding
-real gap characterization by `|∆| ≥ 2` is also still to be formalized.
+A finite-block and small-tail split now makes the relative products
+uniformly close to one on distant free discs. Maximum modulus, Cauchy,
+and arbitrarily small critical localization give uniform smallness of
+`Gₙ(cₙ)−1` and `Gₙ′(cₙ)`. The midpoint coefficient consequently has norm
+at least one on a common tail. Its exact quotient supplies locally
+uniformly bounded lp coefficients in `cₙ−τₙ=γₙ²aₙ`, completing Lemma 8.6
+for all finite exponents greater than one and all even complex potentials,
+including collapsed gaps. This uses genuine uniform small-tail control,
+not decay inferred from a bounded lp ball.
+
+Next formalize the preceding real gap characterization by `|∆| ≥ 2`.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.

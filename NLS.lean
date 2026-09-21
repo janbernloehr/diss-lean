@@ -669,3 +669,13 @@ import NLS.ZakharovShabat.FreeSquaredSineBounds
 import NLS.ZakharovShabat.DeletedProductCriticalValues
 import NLS.ZakharovShabat.CriticalMidpointOffset
 import NLS.ZakharovShabat.CriticalOffsetCoefficient
+import NLS.SequenceSpaces.CoefficientDecay
+import NLS.Fourier.UniformAbsoluteSampledRows
+import NLS.Fourier.UniformSmallRelativeProducts
+import NLS.ZakharovShabat.UniformSmallFreeDiscProducts
+import NLS.ZakharovShabat.UniformSmallCanonicalRelativeProducts
+import NLS.ZakharovShabat.UniformSmallCriticalDisplacements
+import NLS.ZakharovShabat.UniformSmallDeletedPairErrors
+import NLS.ZakharovShabat.UniformSmallCriticalValues
+import NLS.ZakharovShabat.CriticalOffsetCoefficientLowerBound
+import NLS.ZakharovShabat.CriticalMidpointGapSquared

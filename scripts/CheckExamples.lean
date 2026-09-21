@@ -14489,3 +14489,83 @@ example (n : ℤ) : canonicalCriticalOffsetCoefficient (p := 3) (by simp) (by no
 
 end
 end CriticalValueChecks
+
+namespace GapSquaredChecks
+noncomputable section
+open NLS NLS.Fourier NLS.ZakharovShabat Set Complex
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- A bounded but arbitrary finite block gives uniformly small relative-product errors on closed discs.
+example (s : Finset ℤ) : ∃ N : ℕ, ∀ a : Coeff 3, ‖a‖ ≤ 10 →
+    Coeff.truncate s a = a → ∀ n : ℤ, N ≤ n.natAbs → ∀ z : ℂ,
+      ‖z-(Real.pi : ℂ)*n‖ ≤ Real.pi/2 → ‖freeDiscRelativeProduct a n z-1‖ < 1/100 := by
+  obtain ⟨δ,hδ,h⟩ := exists_uniform_small_freeDiscRelativeProducts (p := 3) (by simp) (by norm_num)
+    (by norm_num : (0 : ℝ) ≤ 10) (by norm_num : (0 : ℝ) < 1/100)
+  obtain ⟨N,hN⟩ := h s
+  refine ⟨N,fun a ha hs => hN a ha ?_⟩
+  rw [hs,sub_self,norm_zero]
+  exact hδ.le
+
+-- Critical localization is uniformly arbitrarily small, not merely quarter-pi localization.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧
+    ∀ ψ ∈ U, ∀ heven : ψ ∈ pairParitySubspace 0, ∀ n : ℤ, N < n.natAbs →
+      ‖canonicalCriticalPoints (by simp) (by norm_num) ψ heven n-(Real.pi : ℂ)*n‖ < 1/1000 := by
+  obtain ⟨N,_,U,ho,_,hφ,_,h⟩ := exists_uniform_small_canonicalCriticalDisplacements
+    (by simp) (by norm_num) φ (by norm_num : (0 : ℝ) < 1/1000)
+  exact ⟨N,U,ho,hφ,fun ψ hψ heven n hn => by
+    simpa only [canonicalCriticalDisplacement_apply] using h ψ hψ heven n hn⟩
+
+-- Cauchy estimates include the quarter-pi boundary at arbitrary complex potentials.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs →
+    ∀ heven : φ ∈ pairParitySubspace 0, ∀ z : ℂ, ‖z-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 →
+      ‖deriv (canonicalDeletedPairError (by simp) (by norm_num) φ heven n) z‖ ≤ (4/Real.pi)/100 := by
+  obtain ⟨N,_,_,_,_,hφ,_,h⟩ := exists_uniform_small_canonicalDeletedPairErrors
+    (by simp) (by norm_num) φ (by norm_num : (0 : ℝ) < 1/100)
+  refine ⟨N,fun n hn heven z hz => ?_⟩
+  simpa only [div_eq_mul_inv,mul_one,one_mul] using (h φ hφ heven n hn).2 z hz
+
+-- Both critical values have one common smallness threshold.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) : ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs →
+    ‖canonicalDeletedCriticalValueError (by simp) (by norm_num) φ heven n‖ ≤ 1/10 ∧
+    ‖canonicalDeletedCriticalDerivative (by simp) (by norm_num) φ heven n‖ ≤ 1/10 := by
+  obtain ⟨N,_,_,_,_,hφ,_,h⟩ := exists_uniform_small_deletedProduct_critical_values
+    (by simp) (by norm_num) φ (by norm_num : (0 : ℝ) < 1/10)
+  exact ⟨N,h φ hφ heven⟩
+
+-- The lower bound yields a nonzero denominator on one whole neighborhood.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧
+    ∀ ψ ∈ U, ∀ heven : ψ ∈ pairParitySubspace 0, ∀ n : ℤ, N < n.natAbs →
+      canonicalCriticalOffsetCoefficient (by simp) (by norm_num) ψ heven n ≠ 0 := by
+  obtain ⟨N,_,U,ho,_,hφ,_,h⟩ := exists_uniform_criticalOffsetCoefficient_lower_bound (by simp) (by norm_num) φ
+  exact ⟨N,U,ho,hφ,fun ψ hψ heven n hn => norm_pos_iff.mp (lt_of_lt_of_le zero_lt_one (h ψ hψ heven n hn))⟩
+
+-- Lemma 8.6 has the full locally uniform quantifiers below the Hilbert exponent.
+example (φ : PairSpace (ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ N : ℕ, ∃ U : Set (PairSpace (ENNReal.ofReal (3/2 : ℝ))), IsOpen U ∧ φ ∈ U ∧
+      ∃ K : ℝ, ∀ ψ ∈ U, ∀ heven : ψ ∈ pairParitySubspace 0,
+        ∃ a : Coeff (ENNReal.ofReal (3/2 : ℝ)), ‖a‖ ≤ K ∧ ∀ n : ℤ, N < n.natAbs →
+          canonicalCriticalPoints (by simp) (by norm_num) ψ heven n-
+            canonicalPeriodicMidpoint (by simp) (by norm_num) ψ heven n =
+              (canonicalPeriodicGap (by simp) (by norm_num) ψ heven n)^2*a n := by
+  obtain ⟨N,_,U,ho,_,hφ,_,K,_,h⟩ := exists_uniform_canonicalCriticalPoints_midpoint_gap_sq (by simp) (by norm_num) φ
+  exact ⟨N,U,ho,hφ,K,h⟩
+
+-- The squared-gap theorem forces equality at every sufficiently distant collapsed complex gap.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) : ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs →
+    canonicalPeriodicGap (by simp) (by norm_num) φ heven n = 0 →
+      canonicalCriticalPoints (by simp) (by norm_num) φ heven n =
+        canonicalPeriodicMidpoint (by simp) (by norm_num) φ heven n := by
+  obtain ⟨N,_,_,_,_,hφ,_,_,_,h⟩ := exists_uniform_canonicalCriticalPoints_midpoint_gap_sq (by simp) (by norm_num) φ
+  obtain ⟨a,_,ha⟩ := h φ hφ heven
+  refine ⟨N,fun n hn hgap => sub_eq_zero.mp ?_⟩
+  simpa only [hgap,zero_pow (by decide : 2 ≠ 0),zero_mul] using ha n hn
+
+-- The actual quotient has full lp membership even though uniform bounds only concern its tail.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) :
+    Memℓp (canonicalCriticalGapQuotient (by simp) (by norm_num) φ heven) 3 :=
+  memℓp_canonicalCriticalGapQuotient (by simp) (by norm_num) φ heven
+
+end
+end GapSquaredChecks
