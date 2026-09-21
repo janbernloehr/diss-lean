@@ -1925,6 +1925,15 @@ compatible continuous real-type potentials in the Hilbert realization.
 Collapsed gaps identify both boundary roots with the endpoint, and the
 literal signed trace bounds hold for every integer index.
 
+Boundary reflection conditions and all generalized root spaces now commute
+with finite exponent inclusion. This preserves original boundary spectra,
+algebraic multiplicities, and every fixed central multiset, including at
+p=1. Comparing ordered central enumerations in a block containing any given
+signed index proves canonical boundary coordinate invariance for p>1.
+Canonical displacements and normalized characteristic functions agree too.
+The remaining extension dependencies are periodic endpoint invariance,
+source interval-extension compatibility, and real-type approximation.
+
 Next extend indexed interlacing to every finite source exponent and establish
 the starred characteristic analogues
 (Lemma 9.1(iii) and its extension). Then implement the anti-discriminant

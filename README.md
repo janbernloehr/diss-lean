@@ -961,9 +961,13 @@ installation is absent. No shell startup files are modified.
   a common continuous representative places boundary roots in some original
   periodic gap. Continuation from the free potential now proves the matching
   gap index, including collapsed gaps and the signed discriminant inequality,
-  for compatible continuous real-type potentials. Extending this comparison
-  to all finite source exponents, starred products, and the source
-  anti-discriminant remain next.
+  for compatible continuous real-type potentials. Boundary root spaces and
+  algebraic multiplicities now agree under finite exponent inclusion,
+  including at p=1. For p>1, the ordered boundary roots, lp displacements,
+  and normalized characteristics are exponent independent. Extending the
+  indexed comparison to all finite source exponents still requires periodic
+  endpoint and source-extension compatibility. Starred products and the
+  source anti-discriminant also remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

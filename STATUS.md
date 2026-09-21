@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 775 modules and 4876 named public theorems. All compile on the
+The library has 777 modules and 4887 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ExponentBoundaryMultiplicity` | Boundary and domain reflection compatibility, exact finite/full root-space transport, original multiplicity and spectrum invariance across finite exponents |
+| `NLS.ZakharovShabat.ExponentBoundaryCoordinates` | Fixed-cutoff central multiset equality, signed canonical coordinate invariance, displacement compatibility, and equality of normalized characteristics |
 | `NLS.ComplexAnalysis.SeparatedIntervalPaths` | Continuous selections preserve their signed index in separated moving intervals, including collapsed intervals |
 | `NLS.ZakharovShabat.RealBoundaryPotentialPaths` | Real scaling paths, continuous canonical boundary and periodic coordinates, and preserved physical representative compatibility |
 | `NLS.ZakharovShabat.ClassicalBoundaryInterlacing` | Indexed interlacing for compatible continuous real-type potentials, collapsed-gap equality, strict neighboring-gap chains, and signed original trace bounds |
@@ -6843,10 +6845,35 @@ index -5, and the original monodromy signed bound. The indexed continuous
 case is now proved; extension to every finite source exponent in Lemma
 9.1(iii), starred products, and the source anti-discriminant remain.
 
+## Boundary spectral data across finite exponents
+
+Coefficient inclusion preserves and reflects both boundary conditions in
+base and weighted domain spaces. Its exact transport of periodic root
+chains therefore restricts to each boundary part at every finite level and
+to the full generalized root space. Injectivity preserves their dimensions,
+so the original Dirichlet and Neumann algebraic multiplicities and spectra
+are unchanged for all finite Banach exponents p ≤ q, including p=1.
+
+Every fixed-cutoff central spectrum and its multiset agree across exponents.
+For p>1, a common block containing both chosen cutoffs and the desired index
+identifies the corresponding ordered enumerations. Thus all canonical
+signed boundary coordinates agree, with repetitions and negative indices
+retained. Coefficient inclusion carries their full displacement sequences
+to one another, and their normalized entire characteristic functions agree.
+No real-type assumption is needed for these comparisons.
+
+Nine API examples exercise reflection and domain membership at p=1, finite
+Jordan-chain transport, original multiplicities and spectra at p=1 to p=3,
+a central multiset at cutoff zero, the negative coordinate -5 at p=2 to p=3,
+full displacement inclusion, and equality of the normalized characteristic.
+This supplies the boundary exponent comparison needed for Lemma 9.1(iii).
+Periodic endpoint and source-extension compatibility, followed by real-type
+approximation, remain necessary for the general finite-exponent interlacing.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9695 declarations under `NLS`, including generated
+axioms. The current audit covers 9712 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 

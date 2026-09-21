@@ -15186,3 +15186,72 @@ example (b : BoundaryCondition) (n : ℤ) :
 
 end
 end IndexedBoundaryChecks
+
+namespace ExponentBoundaryChecks
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Reflection conditions survive coefficient inclusion, including at the p=1 endpoint.
+example (x : PairSpace 1) :
+    pairExponentInclusion (show (1 : ℝ≥0∞) ≤ 3 by norm_num) x ∈ neumannSubspace ↔
+      x ∈ neumannSubspace :=
+  pairExponentInclusion_mem_boundary_iff _ x .neumann
+
+example (x : Domain 1) (b : BoundaryCondition) :
+    domainExponentInclusion (show (1 : ℝ≥0∞) ≤ 3 by norm_num) x ∈ b.domain ↔ x ∈ b.domain :=
+  domainExponentInclusion_mem_boundary_iff _ x b
+
+-- All generalized vectors are transported, at an arbitrary finite chain length.
+example (φ : PairSpace 1) (b : BoundaryCondition) (z : ℂ) (k : ℕ) :
+    (periodicRootSpace (by simp) φ z k ⊓ b.space).map
+      (pairExponentInclusion (show (1 : ℝ≥0∞) ≤ 3 by norm_num)).toLinearMap =
+    periodicRootSpace (by simp) (pairExponentInclusion (by norm_num) φ) z k ⊓ b.space :=
+  b.periodicRootSpace_inf_map_exponent (by simp) (by simp) _ φ z k
+
+section Endpoint
+variable (φ : PairSpace 1) (hφ : φ ∈ dirichletSubspace)
+variable (hψ : pairExponentInclusion (show (1 : ℝ≥0∞) ≤ 3 by norm_num) φ ∈ dirichletSubspace)
+
+example (b : BoundaryCondition) (z : ℂ) :
+    b.algebraicMultiplicity (by simp) φ hφ z =
+      b.algebraicMultiplicity (by simp) (pairExponentInclusion (by norm_num) φ) hψ z :=
+  b.algebraicMultiplicity_exponent (by simp) (by simp) _ φ hφ hψ z
+
+example (b : BoundaryCondition) :
+    b.spectrum (by simp) φ hφ =
+      b.spectrum (by simp) (pairExponentInclusion (by norm_num) φ) hψ :=
+  b.spectrum_exponent (by simp) (by simp) _ φ hφ hψ
+
+-- No localization/counting hypothesis is needed for the central multiset comparison.
+example (b : BoundaryCondition) :
+    b.centralRoots (by simp) φ hφ 0 =
+      b.centralRoots (by simp) (pairExponentInclusion (by norm_num) φ) hψ 0 :=
+  b.centralRoots_exponent (by simp) (by simp) _ φ hφ hψ 0
+end Endpoint
+
+section Coordinates
+variable (φ : PairSpace 2) (hφ : φ ∈ dirichletSubspace)
+variable (hψ : pairExponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ ∈ dirichletSubspace)
+
+-- The actual negative signed coordinate agrees, with no real-type assumption.
+example (b : BoundaryCondition) :
+    b.canonicalRoots (by simp) (by norm_num) φ hφ (-5) =
+      b.canonicalRoots (by simp) (by norm_num) (pairExponentInclusion (by norm_num) φ) hψ (-5) :=
+  congrFun (b.canonicalRoots_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ φ hφ hψ) (-5)
+
+example (b : BoundaryCondition) :
+    Coeff.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num)
+      (b.canonicalDisplacement (by simp) (by norm_num) φ hφ) =
+      b.canonicalDisplacement (by simp) (by norm_num) (pairExponentInclusion (by norm_num) φ) hψ :=
+  b.canonicalDisplacement_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ φ hφ hψ
+
+-- Equality preserves the normalized characteristic itself, not just its zero set.
+example (b : BoundaryCondition) :
+    b.characteristic (by simp) φ hφ =
+      b.characteristic (by simp) (pairExponentInclusion (by norm_num) φ) hψ :=
+  b.characteristic_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ φ hφ hψ
+end Coordinates
+end
+end ExponentBoundaryChecks

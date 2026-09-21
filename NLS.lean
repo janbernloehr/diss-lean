@@ -723,3 +723,5 @@ import NLS.ZakharovShabat.ClassicalBoundaryGapBound
 import NLS.ComplexAnalysis.SeparatedIntervalPaths
 import NLS.ZakharovShabat.RealBoundaryPotentialPaths
 import NLS.ZakharovShabat.ClassicalBoundaryInterlacing
+import NLS.ZakharovShabat.ExponentBoundaryMultiplicity
+import NLS.ZakharovShabat.ExponentBoundaryCoordinates
