@@ -14359,3 +14359,70 @@ example (ξ η : ℤ → ℂ)
 
 end
 end DeletedPairChecks
+
+namespace DeletedProductLpChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The relative formula holds at the removed double endpoint I, away from the free lattice.
+example :
+    let a : Coeff 3 := lp.single 3 0 I
+    deletedSpectralPairProduct (displacedRoots a) (displacedRoots a) 0 I =
+      (freeSineQuotient 0 I)^2*freeDiscRelativeProduct a 0 I*freeDiscRelativeProduct a 0 I := by
+  apply deletedSpectralPairProduct_eq_relative (by simp)
+  rintro ⟨k,hk⟩
+  have him := congrArg im hk
+  norm_num at him
+
+-- Holomorphy includes the removable quotient value at a negative lattice center.
+example : AnalyticAt ℂ (freeSineQuotient (-4)) ((Real.pi : ℂ)*(-4 : ℤ)) :=
+  analyticOnNhd_freeSineQuotient (-4) _ (mem_univ _)
+
+-- A uniform majorant remains valid at the boundaries of every half-pi disc.
+example (a b : Coeff 3) (ha : ‖a‖ ≤ 2) (hb : ‖b‖ ≤ 2) :
+    ∃ A : Coeff 3, ∀ n : ℤ, ∀ z : ℂ, ‖z-(Real.pi : ℂ)*n‖ ≤ Real.pi/2 →
+      ‖deletedPairError a b n z‖ ≤ ‖A n‖ := by
+  obtain ⟨_,_,h⟩ := exists_uniform_deletedPairError_majorants (p := 3) (by norm_num) (by simp)
+    (by norm_num : (0 : ℝ) ≤ 2)
+  obtain ⟨A,_,hv,_⟩ := h a b ha hb
+  exact ⟨A,hv⟩
+
+-- Pointwise pair choices need not use the same slot at every index.
+example (a b c : Coeff 3) (hc : ∀ n, c n = a n ∨ c n = b n) : ‖c‖ ≤ ‖a‖+‖b‖ := by
+  have h := Coeff.norm_sub_truncate_le_of_mem_pair a b c ∅ (fun n _ => hc n)
+  simpa [Coeff.truncate] using h
+
+-- Sampled derivative errors are lp below the Hilbert exponent, including boundary samples.
+example (a b : Coeff (ENNReal.ofReal (3/2 : ℝ))) (z : ℤ → ℂ)
+    (hz : ∀ n, ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4) :
+    Memℓp (fun n => deriv (deletedPairError a b n) (z n)) (ENNReal.ofReal (3/2 : ℝ)) :=
+  memℓp_deriv_deletedPairError (by norm_num) (by simp) a b z hz
+
+-- Canonical endpoint tails are uniformly small on an actual open potential neighborhood.
+example (φ : PairSpace 3) : ∃ N : ℕ, ∃ U : Set (PairSpace 3), IsOpen U ∧ φ ∈ U ∧
+    ∀ ψ ∈ U, ∀ heven : ψ ∈ pairParitySubspace 0,
+      ‖canonicalPeriodicLeftDisplacement (by simp) (by norm_num) ψ heven-
+        Coeff.truncate (Finset.Icc (-(N : ℤ)) N)
+          (canonicalPeriodicLeftDisplacement (by simp) (by norm_num) ψ heven)‖ ≤ 1/10 := by
+  obtain ⟨N,_,U,ho,_,hφ,_,_,_,h⟩ := exists_uniform_small_canonicalPeriodicDisplacements
+    (p := 3) (by simp) (by norm_num) φ (by norm_num : (0 : ℝ) < 1/10)
+  exact ⟨N,U,ho,hφ,fun ψ hψ heven => ((h ψ hψ heven).2.2 N le_rfl).1⟩
+
+-- The canonical value and derivative errors are lp for every sequence of source-disc samples.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (z : ℤ → ℂ)
+    (hz : ∀ n, ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4) :
+    Memℓp (fun n => canonicalDeletedPairError (by simp) (by norm_num) φ heven n (z n)) 3 ∧
+      Memℓp (fun n => deriv (canonicalDeletedPairError (by simp) (by norm_num) φ heven n) (z n)) 3 :=
+  memℓp_sampled_canonicalDeletedPairErrors (by simp) (by norm_num) φ heven z hz
+
+-- The free remaining-product error vanishes identically, including at the filled center.
+example (n : ℤ) (z : ℂ) :
+    canonicalDeletedPairError (p := 3) (by simp) (by norm_num) 0 (pairParitySubspace 0).zero_mem n z = 0 := by
+  rw [canonicalDeletedPairError,canonicalDeletedPeriodicProduct_zero]
+  exact sub_self _
+
+end
+end DeletedProductLpChecks

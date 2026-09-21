@@ -2,11 +2,18 @@
 
 ## Implemented and checked
 
-The library has 708 modules and 4609 named public theorems. All compile on the
+The library has 715 modules and 4631 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.PairedTailBounds` | An indexwise choice of either member of a coefficient pair has tail norm bounded by the sum of the two original tail norms |
+| `NLS.ZakharovShabat.DeletedPairRelativeFormula` | Exact free-relative formula for the remaining entire product off the free lattice, without excluding actual endpoint zeros |
+| `NLS.ZakharovShabat.FreeSineQuotientAnalytic` | Entire differentiability and analyticity of the filled sine quotient at every signed free center |
+| `NLS.ZakharovShabat.DeletedPairErrorMajorants` | Positive lp majorants for errors from the squared free quotient; whole half-pi disc value bounds and quarter-pi Cauchy derivative bounds |
+| `NLS.ZakharovShabat.DeletedPairErrorLp` | Uniform majorant norm bounds on displacement balls and lp membership for arbitrary simultaneous value and derivative samples |
+| `NLS.ZakharovShabat.CanonicalPeriodicDisplacementBounds` | Uniformly bounded canonical endpoint displacement norms and arbitrarily small local tails, preserved through pair exchanges and central ordering |
+| `NLS.ZakharovShabat.CanonicalDeletedProductLp` | Locally uniform canonical remaining-product error majorants and sampled lp value/derivative bounds on actual potential neighborhoods |
 | `NLS.ComplexAnalysis.QuadraticCriticalIdentity` | Differentiated quadratic-factor identity, squared-gap offset rearrangement, and solved formula under a nonzero coefficient |
 | `NLS.ZakharovShabat.DeletedSpectralPairProducts` | Literal pair-deleted cutoffs, entire locally uniform limit, derivative convergence, invariance under changing the removed roots, and exact pair restoration |
 | `NLS.ZakharovShabat.PeriodicEndpointProducts` | Full central multiset polynomial identity and identification of every complete endpoint product with the intrinsic canonical periodic product |
@@ -6313,10 +6320,58 @@ The locally uniform lp estimates for the remaining product and its
 derivative, and the uniform large-index coefficient lower bound, remain
 needed to finish Lemma 8.6.
 
+## Section 8: remaining-product disc estimates for Lemma 8.6
+
+`DeletedPairRelativeFormula` identifies the remaining product off the
+free lattice with `qₙ² Pₙ(a) Pₙ(b)`, where `qₙ` is the filled free sine
+quotient and the two relative products omit the diagonal index. To avoid
+assuming nonvanishing of actual endpoint factors, the proof replaces only
+the removed roots by their free values. This leaves the remaining product
+unchanged and permits cancellation of the free local factor. The formula
+therefore remains valid even when the spectral parameter is a removed
+actual endpoint or a collision point outside the free lattice.
+
+`FreeSineQuotientAnalytic` proves that the filled quotient is entire.
+`DeletedPairErrorMajorants` combines the two existing relative-product
+majorants into a positive lp majorant for `Gₙ−qₙ²`. Maximum modulus
+extends the boundary estimate through the entire closed half-pi disc,
+including the free center. Cauchy's estimate gives a `4/π` derivative
+bound on the closed quarter-pi disc. `DeletedPairErrorLp` bounds the
+majorant norm uniformly on displacement norm balls and proves lp
+membership for arbitrary simultaneous disc samples.
+
+`PairedTailBounds` controls any indexwise choice from two coefficient
+sequences by the sum of their tail norms. This permits
+`CanonicalPeriodicDisplacementBounds` to transfer the original actual
+endpoint estimates to the globally ordered canonical coordinates. For
+each positive tolerance, a common open convex potential neighborhood
+and cutoff give small tails at all larger cutoffs. The central spectral
+box bounds the remaining finite coordinates and hence the full norms.
+The neighborhood and cutoff may depend on the tolerance; no tail decay
+is inferred from bounded lp norms alone.
+
+`CanonicalDeletedProductLp` applies these bounds to the actual remaining
+discriminant factors. One potential neighborhood supplies bounded lp
+majorants for values on half-pi discs and derivatives on quarter-pi discs.
+The sampled coefficient bounds are uniform over all source-disc sampling
+sequences. The derivative error equals `Gₙ′−(qₙ²)′` exactly.
+
+Eight examples check the relative formula at a removed double endpoint
+`i`, analyticity at a negative free center, closed-disc majorants, variable
+pair choices, derivative-error membership at p=3/2, uniformly small actual
+canonical endpoint tails, sampled canonical error sequences, and the
+identically zero error at the free potential.
+
+To finish Lemma 8.6, the free squared quotient and its derivative still
+need estimates at the canonical critical points. These will convert the
+proved comparison errors into `Gₙ(cₙ)−1` and `Gₙ′(cₙ)` estimates. The locally
+uniform large-index nonvanishing coefficient and final squared-gap lp
+factorization also remain open.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9171 declarations under `NLS`, including generated
+axioms. The current audit covers 9215 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7500,8 +7555,11 @@ formal matrix representation.
    extrema, with exactly one in each gap. The exact entire deleted-pair
    factorization, corrected normalization, and squared-gap critical offset
    identity for Lemma 8.6 are now proved, with the free normalization checked.
-   Next prove its remaining locally uniform lp estimates and coefficient
-   lower bound, and formalize the real gap characterization by `|∆| ≥ 2`.
+   The remaining-product comparison errors now have locally uniform lp
+   majorants on the source discs, and canonical endpoint displacements have
+   uniformly bounded norms and arbitrarily small local tails. Next evaluate
+   the estimates at critical points and prove the coefficient lower bound
+   to finish 8.6. Formalize the real gap characterization by `|∆| ≥ 2` as well.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

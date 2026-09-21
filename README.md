@@ -913,8 +913,11 @@ installation is absent. No shell startup files are modified.
   collapsed gaps. Each gap contains exactly one local extremum, and there
   are no others. The entire product with one endpoint pair removed now
   has the corrected quadratic factorization and exact critical midpoint
-  identity used in Lemma 8.6, valid also at collapsed gaps. Its remaining
-  lp estimates and uniform coefficient lower bound are next.
+  identity used in Lemma 8.6, valid also at collapsed gaps. Its error from
+  the free squared sine quotient and the derivative error now have locally
+  uniform lp bounds on the source discs. Canonical endpoint displacements
+  also have bounded norms and arbitrarily small local tails. Evaluation at
+  critical points and the uniform coefficient lower bound remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

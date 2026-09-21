@@ -656,3 +656,10 @@ import NLS.ZakharovShabat.DeletedSpectralPairProducts
 import NLS.ZakharovShabat.PeriodicEndpointProducts
 import NLS.ZakharovShabat.DiscriminantPairFactorization
 import NLS.ZakharovShabat.DeletedPeriodicFree
+import NLS.SequenceSpaces.PairedTailBounds
+import NLS.ZakharovShabat.DeletedPairRelativeFormula
+import NLS.ZakharovShabat.FreeSineQuotientAnalytic
+import NLS.ZakharovShabat.DeletedPairErrorMajorants
+import NLS.ZakharovShabat.DeletedPairErrorLp
+import NLS.ZakharovShabat.CanonicalPeriodicDisplacementBounds
+import NLS.ZakharovShabat.CanonicalDeletedProductLp

@@ -1818,9 +1818,19 @@ At a canonical critical point, with `a = λₙ•−τₙ`, differentiation give
 formula without dividing by the gap. At zero potential `Gₙ` is the square
 of the filled sine quotient and has value one at the removed root.
 
-Next prove the lp estimates for `Gₙ−1` and `Gₙ′` at the critical points and
-the locally uniform large-index lower bound on `2Gₙ+aGₙ′`, completing
-Lemma 8.6. The preceding real gap characterization by `|∆| ≥ 2` is also
-still to be formalized.
+The remaining product now equals the squared free sine quotient times
+the two omitted-diagonal relative products off the free lattice, including
+at actual endpoint zeros. Maximum modulus and Cauchy's estimate give
+bounded lp majorants for its error and derivative error on half-pi and
+quarter-pi discs. These estimates hold on a common potential neighborhood
+for the canonical product. Canonical endpoint displacements now have
+bounded full norms and arbitrarily small local tails; ordering preserves
+the original pairwise tail estimates.
+
+Next estimate the free squared quotient and its derivative at the
+canonical critical points, obtaining `Gₙ(cₙ) = 1 + lp` and `Gₙ′(cₙ) = lp`.
+Then prove the locally uniform large-index lower bound on `2Gₙ+aGₙ′`
+and finish Lemma 8.6. The preceding real gap characterization by `|∆| ≥ 2`
+is also still to be formalized.
 Then continue with the anti-discriminant and action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
