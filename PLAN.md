@@ -1862,8 +1862,17 @@ exactly the actual boundary spectra as their zeros; the free value is
 `sin λ`. This proves the fixed-potential product construction, without
 yet claiming independence from central label choices or joint analyticity.
 
-Next prove boundary product independence across central label choices and
-cutoffs, parameter analyticity, canonical coordinates, real interlacing,
-and starred characteristic products (Lemma 9.1), then the anti-discriminant
-(Lemma 9.2).
+Complete boundary labelings now retain their exact central multisets at
+every larger cutoff. The normalized intrinsic central polynomials therefore
+identify all such products, independently of labels and cutoff. Their limit
+defines the intrinsic Dirichlet and Neumann characteristic functions, with
+locally uniform convergence of values and first spectral derivatives. Finite
+root-polynomial orders and Rouché stability identify the exact analytic zero
+orders with the original restricted-operator multiplicities. Both intrinsic
+functions equal sine at zero potential. All these conclusions also hold for
+the original period-one coefficient realization.
+
+Next prove joint parameter analyticity, canonical boundary coordinates and
+their continuity, real interlacing, and starred characteristic products
+(Lemma 9.1), then the anti-discriminant (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

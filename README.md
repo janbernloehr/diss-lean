@@ -931,9 +931,14 @@ installation is absent. No shell startup files are modified.
   multiplicities and have lp displacements, on a common neighborhood
   and cutoff. Their Section 9 products converge locally uniformly to
   entire functions with exactly the boundary spectra as zeros and free
-  value `sin λ`, including for original period-one potentials. Independence
-  from central labels, parameter analyticity, canonical boundary coordinates,
-  starred products, and the anti-discriminant remain next.
+  value `sin λ`, including for original period-one potentials. The products
+  now agree across all central labelings and cutoffs. Intrinsic characteristic
+  functions, defined from the actual central spectra, retain the exact
+  original algebraic multiplicities as analytic zero orders. Their finite
+  approximants and first derivatives converge locally uniformly, and both
+  intrinsic functions have the exact free sine normalization. Parameter
+  analyticity, canonical boundary coordinates, starred products, and the
+  anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

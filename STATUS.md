@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 741 modules and 4716 named public theorems. All compile on the
+The library has 747 modules and 4746 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.BoundaryRootCutoffGrowth` | Larger central boxes detect exactly their signed index blocks; exact enlarged central multisets and preservation at every larger admissible cutoff |
+| `NLS.ZakharovShabat.CentralBoundaryPolynomials` | Intrinsic root polynomials from actual boundary multiplicities, entire normalized approximants, and exact agreement with all large full cutoffs |
+| `NLS.ZakharovShabat.CanonicalBoundaryCharacteristic` | Intrinsic characteristic functions, independence from labels and cutoffs, exact spectral zeros, and locally uniform value and derivative convergence |
+| `NLS.ZakharovShabat.FreeBoundaryCharacteristic` | Exact free central spectra, free intrinsic cutoffs, and sine normalization of both intrinsic characteristics |
+| `NLS.ZakharovShabat.BoundaryCharacteristicOrders` | Exact finite-cutoff orders, eventual original multiplicities, Rouché stability, and full finite analytic orders of the intrinsic function and every labeled product |
+| `NLS.ZakharovShabat.PeriodOneBoundaryCharacteristic` | Intrinsic characteristics on source coefficient potentials, entirety, exact zeros and orders, sine normalization, and identification with every complete source product |
 | `NLS.ZakharovShabat.CentralBoundaryRoots` | Actual central boundary multisets, exact algebraic counts, central cardinality, and enumeration with repetitions |
 | `NLS.ZakharovShabat.BoundaryRootLabeling` | Complete boundary labels with lp displacements, central replacement, closed range, actual spectral exhaustion, and simple distant branches |
 | `NLS.ZakharovShabat.BoundaryRootMultiplicity` | Finite occurrence sets, distant index uniqueness, and exact original algebraic multiplicities throughout the full sequence |
@@ -6543,8 +6549,8 @@ minus one. Its finite cutoffs converge locally uniformly on the whole
 spectral plane to an entire function with precisely the actual boundary
 spectrum as its zero set. The free product is `sin λ`. The theorem applies
 to both ordinary boundary conditions and original period-one potentials.
-The sequence multiplicities are exact; equality of analytic zero orders
-with operator multiplicities has not yet been established for these products.
+The sequence multiplicities are exact; the following intrinsic construction
+also identifies analytic zero orders with operator multiplicities.
 
 Eight examples check the exceptional zero-mode normalization, the free
 sine identity, a common neighborhood at p=3/2, actual spectral exhaustion
@@ -6552,15 +6558,55 @@ and multiplicities, negative distant index uniqueness, entire products
 for source potentials, pointwise cutoff convergence, and nonvanishing
 off the spectrum.
 
-Next prove independence from central label choices and cutoffs, parameter
-analyticity, canonical boundary coordinates and their continuity, real
-interlacing, and starred products. Lemma 9.1 remains incomplete; the
-anti-discriminant and Lemma 9.2 follow.
+## Section 9: intrinsic boundary characteristics and exact analytic orders
+
+`BoundaryRootCutoffGrowth` identifies membership in every larger central
+box with membership of the signed index in its central block. Global
+multiplicity counts recover the exact central multiset at the larger cutoff.
+The same complete sequence remains a labeling at any larger admissible cutoff.
+
+`CentralBoundaryPolynomials` constructs the finite polynomial directly from
+the actual central boundary spectrum and restricted-operator algebraic
+multiplicities. The normalized polynomial is entire at every cutoff, and
+agrees with every complete labeling's cutoff once its initial central block
+is included. `CanonicalBoundaryCharacteristic` defines the intrinsic function
+as the limit of these polynomials. Every complete labeling has exactly this
+same product, independently of central ordering and cutoff. The characteristic
+is entire, has exactly the actual boundary spectrum as its zero set, and
+is the locally uniform limit of the intrinsic approximants. Their first
+spectral derivatives converge locally uniformly as well.
+
+`FreeBoundaryCharacteristic` computes both free central spectra and every
+normalized free approximant. The intrinsic Dirichlet and Neumann functions
+are exactly `sin λ` at zero potential, with the exceptional zero-mode factor
+retained. `BoundaryCharacteristicOrders` computes the finite approximant's
+extended analytic order from the original central multiplicity. Every point
+eventually lies in the central box, so these orders stabilize to the actual
+operator multiplicity. An isolating spectral disc and Rouché stability pass
+this order to the entire limit. Isolation excludes infinite order. Thus the
+full extended analytic order is exactly the original algebraic multiplicity
+at every parameter, including repeated central roots and zero off the spectrum.
+Every complete labeled product has the same exact orders.
+
+`PeriodOneBoundaryCharacteristic` defines the intrinsic functions on the
+original source coefficient space using the proved ordinary interval extension.
+It transfers entirety, exact spectral zeros, original analytic multiplicities,
+free sine normalization, and equality with every complete source root product.
+All of these conclusions hold for every finite exponent greater than one.
+
+Eight examples check label and cutoff independence, exact cutoff enlargement,
+zero-mode normalization, the free derivative, original analytic multiplicities
+at p=3/2, double-root preservation, derivative convergence, and source
+nonvanishing off the spectrum.
+
+Next prove joint parameter analyticity, canonical boundary coordinates and
+their continuity, real interlacing, and starred products. Lemma 9.1 remains
+incomplete; the anti-discriminant and Lemma 9.2 follow.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9401 declarations under `NLS`, including generated
+axioms. The current audit covers 9463 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -7757,8 +7803,11 @@ formal matrix representation.
    equality. Continuity gives the alternating signed gap inequalities at
    all indices. Complete ordinary boundary labelings and entire products
    with the actual zero sets are now proved, including the original
-   period-one realization. Continue with product independence, parameter
-   analyticity, canonical boundary coordinates, and starred products.
+   period-one realization. Intrinsic boundary characteristic functions are
+   now independent of labeling and cutoff, retain the exact original analytic
+   multiplicities, and have locally uniform value and derivative limits.
+   Continue with parameter analyticity, canonical boundary coordinates,
+   and starred products.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -14694,3 +14694,69 @@ example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N : ℕ) (ξ 
 
 end
 end BoundaryCharacteristicChecks
+
+namespace IntrinsicBoundaryChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Different central labelings and different cutoffs give exactly the same entire function.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N M : ℕ) (ξ η : ℤ → ℂ)
+    (hξ : BoundaryRootLabeling b (by simp) φ.val φ.property N ξ)
+    (hη : BoundaryRootLabeling b (by simp) φ.val φ.property M η) :
+    boundaryCharacteristicProduct ξ = boundaryCharacteristicProduct η := hξ.product_eq hη
+
+-- Enlarging an admissible cutoff preserves every coordinate and absorbs its exact central multiset.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N K : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b (by simp) φ.val φ.property N ξ) (hNK : N ≤ K)
+    (hc : BoundaryCountingData (by simp) φ.val φ.property K) :
+    BoundaryRootLabeling b (by simp) φ.val φ.property K ξ ∧
+      (∑ n ∈ Finset.Icc (-(K : ℤ)) K, ({ξ n} : Multiset ℂ)) = b.centralRoots (by simp) φ.val φ.property K :=
+  ⟨h.enlarge K hNK hc,h.central_at_larger_cutoff K hNK⟩
+
+-- The intrinsic exceptional zero-mode approximant is the monic linear factor for either boundary.
+example (b : BoundaryCondition) (z : ℂ) :
+    b.normalizedCentralPolynomial (p := 3) (by simp) 0 (by simp) 0 z = z := by
+  rw [b.normalizedCentralPolynomial_zero]
+  simp [boundaryCharacteristicPartialProduct,singleSpectralFactor,singleSpectralDenominator]
+
+-- Zero-potential normalization also fixes the derivative at the origin.
+example (b : BoundaryCondition) : deriv (periodOneBoundaryCharacteristic (p := 3)
+    (by simp) (by norm_num) b 0) 0 = 1 := by
+  have he : periodOneBoundaryCharacteristic (p := 3) (by simp) (by norm_num) b 0 = Complex.sin :=
+    funext (periodOneBoundaryCharacteristic_zero (by simp) (by norm_num) b)
+  rw [he]
+  simp
+
+-- At p=3/2 the source characteristic has the actual operator multiplicity at every parameter.
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) (b : BoundaryCondition) (z : ℂ) :
+    analyticOrderAt (periodOneBoundaryCharacteristic (by simp) (by norm_num) b φ) z =
+      (b.algebraicMultiplicity (by simp) (periodOneBoundaryPotential (by simp) (by norm_num) φ).val
+        (periodOneBoundaryPotential (by simp) (by norm_num) φ).property z : ℕ∞) :=
+  analyticOrderAt_periodOneBoundaryCharacteristic (by simp) (by norm_num) b φ z
+
+-- Repeated central eigenvalues are retained with their full order in any complete root product.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b (by simp) φ.val φ.property N ξ) (z : ℂ)
+    (hm : b.algebraicMultiplicity (by simp) φ.val φ.property z = 2) :
+    analyticOrderAt (boundaryCharacteristicProduct ξ) z = 2 := by
+  rw [h.product_analyticOrderAt (by norm_num),hm]
+  norm_num
+
+-- Derivatives of all intrinsic approximants converge at every spectral parameter.
+example (φ : dirichletSubspace (p := 3)) (b : BoundaryCondition) (z : ℂ) :
+    Tendsto (fun N => deriv (b.normalizedCentralPolynomial (by simp) φ.val φ.property N) z) atTop
+      (𝓝 (deriv (b.characteristic (by simp) φ.val φ.property) z)) :=
+  (b.tendstoLocallyUniformlyOn_deriv_characteristic (by simp) (by norm_num) φ.val φ.property).tendsto_at (mem_univ z)
+
+-- Intrinsic source characteristics have no zeros outside the actual interval-realized spectrum.
+example (φ : CoeffPair 3) (b : BoundaryCondition) (z : ℂ)
+    (hz : z ∉ b.spectrum (by simp) (periodOneBoundaryPotential (by simp) (by norm_num) φ).val
+      (periodOneBoundaryPotential (by simp) (by norm_num) φ).property) :
+    periodOneBoundaryCharacteristic (by simp) (by norm_num) b φ z ≠ 0 :=
+  fun he => hz ((periodOneBoundaryCharacteristic_eq_zero_iff (by simp) (by norm_num) b φ z).mp he)
+
+end
+end IntrinsicBoundaryChecks
