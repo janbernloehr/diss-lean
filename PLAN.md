@@ -1931,8 +1931,16 @@ algebraic multiplicities, and every fixed central multiset, including at
 p=1. Comparing ordered central enumerations in a block containing any given
 signed index proves canonical boundary coordinate invariance for p>1.
 Canonical displacements and normalized characteristic functions agree too.
-The remaining extension dependencies are periodic endpoint invariance,
-source interval-extension compatibility, and real-type approximation.
+Both original periodic endpoints and their displacement sequences are now
+exponent independent, by the analogous ordered paired-multiset comparison.
+Finite-polynomial physical formulas and density identify the half-interval
+map across exponents. This proves compatibility of the completed ordinary
+and auxiliary reflected extensions. A continuous inclusion in the source
+pair topology commutes with all three distinct potential realizations;
+source boundary coordinates, normalized characteristics, and the original
+periodic endpoints consequently agree across finite exponents. Continue
+with real-type Fourier approximation and compatible continuous physical
+representatives to transfer the indexed interlacing inequalities.
 
 Next extend indexed interlacing to every finite source exponent and establish
 the starred characteristic analogues

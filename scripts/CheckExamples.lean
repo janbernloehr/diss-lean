@@ -15255,3 +15255,92 @@ example (b : BoundaryCondition) :
 end Coordinates
 end
 end ExponentBoundaryChecks
+
+namespace ExponentSourceChecks
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Successive inclusions retain the exact source coefficient pair.
+example (φ : CoeffPair 2) :
+    CoeffPair.exponentInclusion (show (3 : ℝ≥0∞) ≤ 4 by norm_num)
+      (CoeffPair.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ) =
+      CoeffPair.exponentInclusion (by norm_num) φ :=
+  CoeffPair.exponentInclusion_trans _ _ φ
+
+-- Central periodic multisets compare even at p=1 and cutoff zero.
+example (φ : PairSpace 1) :
+    centralPeriodicRoots (by simp) φ 0 = centralPeriodicRoots (by simp)
+      (pairExponentInclusion (show (1 : ℝ≥0∞) ≤ 3 by norm_num) φ) 0 :=
+  centralPeriodicRoots_exponent (by simp) (by simp) _ φ 0
+
+-- Both ordered slots retain a negative signed index, without real-type assumptions.
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0)
+    (hψ : pairExponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ ∈ pairParitySubspace 0) :
+    canonicalPeriodicLeft (by simp) (by norm_num) φ hφ (-5) =
+      canonicalPeriodicLeft (by simp) (by norm_num) (pairExponentInclusion (by norm_num) φ) hψ (-5) ∧
+    canonicalPeriodicRight (by simp) (by norm_num) φ hφ (-5) =
+      canonicalPeriodicRight (by simp) (by norm_num) (pairExponentInclusion (by norm_num) φ) hψ (-5) := by
+  obtain ⟨hl, hr⟩ := canonicalPeriodicEndpoints_exponent (by simp) (by simp)
+    (by norm_num) (by norm_num) _ φ hφ hψ
+  exact ⟨congrFun hl (-5), congrFun hr (-5)⟩
+
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0)
+    (hψ : pairExponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ ∈ pairParitySubspace 0) :
+    Coeff.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num)
+      (canonicalPeriodicRightDisplacement (by simp) (by norm_num) φ hφ) =
+      canonicalPeriodicRightDisplacement (by simp) (by norm_num)
+        (pairExponentInclusion (by norm_num) φ) hψ :=
+  canonicalPeriodicRightDisplacement_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ φ hφ hψ
+
+-- The completed half-interval Fourier map commutes on arbitrary infinite input.
+example (a : Coeff 2) :
+    Coeff.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num)
+      (Fourier.halfIntervalCoeffs (by norm_num) (by simp) a) =
+      Fourier.halfIntervalCoeffs (by norm_num) (by simp) (Coeff.exponentInclusion (by norm_num) a) :=
+  Fourier.halfIntervalCoeffs_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ a
+
+example (b : BoundaryCondition) (a : PairSpace 2) :
+    pairExponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num)
+      (b.intervalExtensionCLM (by norm_num) (by simp) a) =
+      b.intervalExtensionCLM (by norm_num) (by simp) (pairExponentInclusion (by norm_num) a) :=
+  b.intervalExtensionCLM_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ a
+
+-- The original periodic source realization doubles frequencies, including at p=1.
+example (φ : CoeffPair 1) :
+    pairExponentInclusion (show (1 : ℝ≥0∞) ≤ 3 by norm_num) (periodOnePotential φ) =
+      periodOnePotential (CoeffPair.exponentInclusion (by norm_num) φ) :=
+  periodOnePotential_exponent _ φ
+
+-- The starred source potential uses its own reflected extension.
+example (φ : CoeffPair 2) :
+    pairExponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num)
+      (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).val =
+      (auxiliaryPeriodOnePotential (by simp) (by norm_num)
+        (CoeffPair.exponentInclusion (by norm_num) φ)).val :=
+  auxiliaryPeriodOnePotential_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ φ
+
+example (φ : CoeffPair 2) (b : BoundaryCondition) :
+    canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ (-5) =
+      canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b
+        (CoeffPair.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ) (-5) :=
+  congrFun (canonicalPeriodOneBoundaryRoots_exponent (by simp) (by simp)
+    (by norm_num) (by norm_num) _ b φ) (-5)
+
+example (φ : CoeffPair 2) (b : BoundaryCondition) :
+    periodOneBoundaryCharacteristic (by simp) (by norm_num) b φ =
+      periodOneBoundaryCharacteristic (by simp) (by norm_num) b
+        (CoeffPair.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ) :=
+  periodOneBoundaryCharacteristic_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ b φ
+
+example (φ : CoeffPair 2) :
+    canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem φ) =
+      canonicalPeriodicLeft (by simp) (by norm_num)
+        (periodOnePotential (CoeffPair.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ))
+        (periodOnePotential_mem _) :=
+  (canonicalPeriodicEndpoints_periodOne_exponent (by simp) (by simp)
+    (by norm_num) (by norm_num) _ φ).1
+end
+end ExponentSourceChecks

@@ -2,11 +2,16 @@
 
 ## Implemented and checked
 
-The library has 777 modules and 4887 named public theorems. All compile on the
+The library has 782 modules and 4910 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.PairExponentEmbedding` | Continuous coefficient-preserving source pair inclusion, injectivity, and composition |
+| `NLS.Fourier.ExponentHalfInterval` | Exponent compatibility of finite polynomial half-interval coefficients and the completed Fourier map |
+| `NLS.ZakharovShabat.ExponentPeriodicCoordinates` | Fixed central periodic multiset equality, both canonical endpoint sequences, and full displacement compatibility across finite exponents |
+| `NLS.ZakharovShabat.ExponentIntervalExtension` | Completed boundary amplitude and reflected potential extension commute with finite exponent inclusion for both boundary conditions |
+| `NLS.ZakharovShabat.ExponentSourcePotentials` | All three source potential realizations commute with inclusion; source boundary roots, normalized characteristics, and original periodic endpoints agree across finite exponents |
 | `NLS.ZakharovShabat.ExponentBoundaryMultiplicity` | Boundary and domain reflection compatibility, exact finite/full root-space transport, original multiplicity and spectrum invariance across finite exponents |
 | `NLS.ZakharovShabat.ExponentBoundaryCoordinates` | Fixed-cutoff central multiset equality, signed canonical coordinate invariance, displacement compatibility, and equality of normalized characteristics |
 | `NLS.ComplexAnalysis.SeparatedIntervalPaths` | Continuous selections preserve their signed index in separated moving intervals, including collapsed intervals |
@@ -6867,13 +6872,49 @@ Jordan-chain transport, original multiplicities and spectra at p=1 to p=3,
 a central multiset at cutoff zero, the negative coordinate -5 at p=2 to p=3,
 full displacement inclusion, and equality of the normalized characteristic.
 This supplies the boundary exponent comparison needed for Lemma 9.1(iii).
-Periodic endpoint and source-extension compatibility, followed by real-type
-approximation, remain necessary for the general finite-exponent interlacing.
+Periodic endpoint and source-extension compatibility are proved in the next
+milestone. Real-type approximation with compatible physical representatives
+remains necessary for the general finite-exponent interlacing.
+
+## Periodic endpoints and source extensions across finite exponents
+
+Every fixed central periodic multiset agrees across finite exponents,
+retaining all original algebraic multiplicities, including at p=1. Ordered
+paired enumeration in a common block containing any prescribed signed index
+identifies both canonical periodic endpoints for p>1. Their full left and
+right displacement sequences commute with coefficient inclusion. The
+comparison applies to arbitrary complex even potentials and repeated roots.
+
+The physical half-interval formula for finite Fourier polynomials is
+independent of exponent. Continuity and finite-support density identify the
+completed half-interval maps. Their signed reflected combinations give the
+same compatibility for the boundary amplitudes and full interval extensions,
+for either boundary condition. No pointwise representative is assumed for
+these completed coefficient maps.
+
+The source pair spaces now have a continuous, injective inclusion retaining
+both coefficient sequences and composing across successive exponents. The
+original periodic source realization doubles frequencies; the ordinary
+boundary realization uses the Dirichlet-reflected extension; the auxiliary
+realization uses the Neumann-reflected extension. Each commutes with this
+inclusion. Pullback identifies all canonical ordinary source boundary roots,
+their normalized characteristic functions, and both original periodic source
+endpoints across finite exponents, without a real-type assumption.
+
+Eleven API examples check source inclusion composition, central multiplicity
+at p=1 and cutoff zero, both negative-index endpoint slots, full displacement
+inclusion, completed half-interval and reflected maps on infinite inputs,
+period doubling at p=1, the distinct auxiliary extension, a negative source
+boundary coordinate, normalized characteristics, and original source
+periodic endpoints. These complete the exponent compatibility dependencies
+for ordinary Lemma 9.1(iii). Real-type Fourier approximation and common
+continuous physical representatives still need to be supplied before the
+indexed interlacing theorem holds on every finite source coefficient space.
 
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9712 declarations under `NLS`, including generated
+axioms. The current audit covers 9740 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 

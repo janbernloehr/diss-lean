@@ -725,3 +725,8 @@ import NLS.ZakharovShabat.RealBoundaryPotentialPaths
 import NLS.ZakharovShabat.ClassicalBoundaryInterlacing
 import NLS.ZakharovShabat.ExponentBoundaryMultiplicity
 import NLS.ZakharovShabat.ExponentBoundaryCoordinates
+import NLS.SequenceSpaces.PairExponentEmbedding
+import NLS.Fourier.ExponentHalfInterval
+import NLS.ZakharovShabat.ExponentPeriodicCoordinates
+import NLS.ZakharovShabat.ExponentIntervalExtension
+import NLS.ZakharovShabat.ExponentSourcePotentials

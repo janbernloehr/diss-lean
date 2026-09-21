@@ -964,10 +964,15 @@ installation is absent. No shell startup files are modified.
   for compatible continuous real-type potentials. Boundary root spaces and
   algebraic multiplicities now agree under finite exponent inclusion,
   including at p=1. For p>1, the ordered boundary roots, lp displacements,
-  and normalized characteristics are exponent independent. Extending the
-  indexed comparison to all finite source exponents still requires periodic
-  endpoint and source-extension compatibility. Starred products and the
-  source anti-discriminant also remain next.
+  and normalized characteristics are exponent independent. Both original
+  periodic endpoints and their displacements now agree across finite
+  exponents too. The half-interval Fourier map and both reflected extensions
+  commute with inclusion, as do the distinct source potential realizations.
+  This identifies the source boundary roots, normalized characteristics,
+  and original periodic endpoints across exponents. Extending the indexed
+  comparison to all finite source exponents now requires real-type Fourier
+  approximation with compatible continuous physical representatives.
+  Starred products and the source anti-discriminant also remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
