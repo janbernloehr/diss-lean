@@ -8888,3 +8888,15 @@ Consequently each squared-gap radicand is bounded by its physical
 reciprocal-square row term, and every finite off-diagonal sum is bounded
 by the convergent full row. The midpoint-product estimate and final
 Lemma 10.8 asymptotics remain to be proved.
+
+## Latest milestone: finite midpoint and full-quotient bounds
+
+`SourceSingleRootMidpointBounds.lean` proves a uniform Hölder bound for
+the off-diagonal reciprocal row of any finite-exponent `ℓᑫ`
+root-minus-midpoint displacement. It rewrites the literal midpoint
+quotient as a product of `1 + displacement/denominator` and bounds its
+finite cutoffs uniformly on local isolating discs. Combining this with
+the squared-gap correction gives a finite bound for the literal
+quotient product when its reciprocal-square row is small. The `ℓᑫ`
+estimate across omitted indices, eventual smallness of squared-gap
+rows, and infinite-product passage remain open.

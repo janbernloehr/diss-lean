@@ -18384,3 +18384,43 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_analytic_canonicalRoot hp hp1
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.8: midpoint quotient and finite full-product bounds. -/
+noncomputable section
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] (hq : q ≠ ⊤)
+    (α : Coeff q) (n : ℤ) (s : Finset ℤ)
+    (hs : ∀ m ∈ s, m ≠ n) :
+    ∑ m ∈ s, ‖α m‖ / |((m-n : ℤ) : ℝ)| ≤
+      ‖α‖ * ‖Coeff.puncturedLattice q.conjExponent
+        ((ENNReal.HolderConjugate.lt_top_iff_one_lt q q.conjExponent).mp hq.lt_top)‖ :=
+  sum_norm_div_index_le hq α n s hs
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hq : q ≠ ⊤)
+    (φ ψ : CoeffPair p) (a : Coeff p) (α : Coeff q)
+    (hα : ∀ m : ℤ,
+      displacedRoots a m -
+        canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+          (periodOnePotential_mem ψ) m = α m)
+    (N : ℕ) (ε C : ℝ) (hC : 1 ≤ C)
+    (hsep : ∀ i j : ℤ, i ≠ j →
+      ∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε i,
+        |((i-j : ℤ) : ℝ)| ≤ C *
+          ‖canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) j-z‖)
+    (n : ℤ) (M : ℕ) (z : ℂ)
+    (hz : z ∈ sourceIsolatingDisc hp hp1 φ N ε n)
+    (hrowSmall : (C^2/4)*
+      (∑' m : ℤ, sourceSquaredGapReciprocalTerm hp hp1 ψ n m) ≤ 1/2) :
+    ‖sourceSingleRootQuotientPartialProduct hp hp1 n M (z,(a,ψ))-1‖ ≤
+      Real.exp (C*‖α‖*‖Coeff.puncturedLattice q.conjExponent
+        ((ENNReal.HolderConjugate.lt_top_iff_one_lt q q.conjExponent).mp hq.lt_top)‖ +
+        (C^2/2)*∑' m : ℤ, sourceSquaredGapReciprocalTerm hp hp1 ψ n m)-1 :=
+  norm_sourceSingleRootQuotientPartialProduct_sub_one_le_of_small_row
+    hp hp1 hq φ ψ a α hα N ε C hC hsep n M z hz hrowSmall
+
+end NLS.ZakharovShabat

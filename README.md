@@ -1366,5 +1366,12 @@ source, periodic midpoints now stay a distance proportional to the
 index separation from every other isolating disc. The squared-gap
 radicand at each such point is bounded by the matching reciprocal-square
 row term, and every finite off-diagonal radicand sum is bounded by the
-full row sum. The midpoint quotient and resulting full asymptotic
-estimate remain open.
+full row sum.
+
+For a root-minus-midpoint displacement in `ℓᑫ` with finite `q ≥ 1`,
+Hölder's inequality now bounds every finite midpoint quotient uniformly
+on those discs by an exponential in its `ℓᑫ` norm. When a squared-gap
+row is small, this combines with the gap correction to bound the
+literal finite quotient product. The remaining work is to prove the
+needed sequence decay in the omitted index and pass to the infinite
+product limit.

@@ -2420,3 +2420,11 @@ It transfers that geometry and the physical reciprocal-square row
 summability to a uniform bound for every finite off-diagonal radicand
 sum on each isolating disc. Next control the midpoint quotient, then
 combine it with the gap correction and pass to the product limit.
+
+`SourceSingleRootMidpointBounds.lean` pairs the root-minus-midpoint
+displacement with the punctured reciprocal lattice. It bounds all
+finite midpoint products uniformly over the isolating discs and joins
+this with the squared-gap row estimate into a finite full-quotient
+bound whenever that row is small. Next derive eventual row smallness
+from its `ℓ^(p/2)` membership, control the first-order midpoint term
+in `ℓᑫ` across omitted indices, and pass to the infinite product.
