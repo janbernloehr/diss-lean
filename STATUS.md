@@ -2,11 +2,17 @@
 
 ## Implemented and checked
 
-The library has 782 modules and 4910 named public theorems. All compile on the
+The library has 788 modules and 4940 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.Fourier.FinitePeriodOneRealization` | Finite polynomial Fourier reconstruction, exact even-frequency coefficients, and pointwise conjugation from reflected coefficients |
+| `NLS.SequenceSpaces.FiniteSourceCoefficients` | Finite Fourier pairs in the source norm and exact compatibility with exponent inclusion |
+| `NLS.ZakharovShabat.FiniteSourceRealization` | One continuous curve for the original periodic and ordinary reflected Hilbert potentials; real-type source compatibility |
+| `NLS.ZakharovShabat.RealTypeSourceApproximation` | Symmetric real-type Fourier truncations and convergence in every finite source pair norm |
+| `NLS.ZakharovShabat.FiniteSourceInterlacing` | Indexed interlacing for finite real-type source input at all finite p>1 |
+| `NLS.ZakharovShabat.PeriodOneBoundaryInterlacing` | Full ordinary Lemma 9.1(iii): both boundary roots in their signed periodic gaps, neighboring separation, collapsed-gap equality, signed discriminant level |
 | `NLS.SequenceSpaces.PairExponentEmbedding` | Continuous coefficient-preserving source pair inclusion, injectivity, and composition |
 | `NLS.Fourier.ExponentHalfInterval` | Exponent compatibility of finite polynomial half-interval coefficients and the completed Fourier map |
 | `NLS.ZakharovShabat.ExponentPeriodicCoordinates` | Fixed central periodic multiset equality, both canonical endpoint sequences, and full displacement compatibility across finite exponents |
@@ -6911,10 +6917,42 @@ for ordinary Lemma 9.1(iii). Real-type Fourier approximation and common
 continuous physical representatives still need to be supplied before the
 indexed interlacing theorem holds on every finite source coefficient space.
 
+## Ordinary source interlacing: Lemma 9.1(iii)
+
+Finite Fourier polynomials reconstruct the original period-one potential
+under the exact even-frequency insertion. Their ordinary boundary extension
+has the same Fourier coefficients as the physical Dirichlet-reflected
+potential. On the unit interval both Hilbert realizations agree almost
+everywhere with the same continuous polynomial curve. Conjugate-reflected
+finite coefficients make that curve pointwise real type.
+
+The indexed Hilbert interlacing theorem therefore applies to each finite
+real-type source potential. The proved exponent invariance of source boundary
+roots and original periodic endpoints carries its inequalities to finite
+input at any finite p>1, on either side of p=2.
+
+Truncating a source pair on symmetric signed blocks preserves its exact
+conjugate-reflection condition and converges in the original source norm.
+The canonical Dirichlet and Neumann roots and both original periodic
+endpoints are continuous at real-type source potentials. Passing the finite
+inequalities to the limit proves `λₙ⁻ ≤ μₙ,νₙ ≤ λₙ⁺` for every signed index
+and every real-type source potential at finite p>1. Strict separation from
+both neighboring gaps and complex equality at collapsed gaps follow. The
+original periodic discriminant satisfies `2 ≤ (−1)ⁿ Re Δ(μₙ)` and its
+Neumann counterpart, including negative odd indices. This completes the
+ordinary, unstarred Lemma 9.1(iii). Its auxiliary starred analogues and the
+source anti-discriminant remain open.
+
+Eight standalone public-API examples check actual finite Fourier
+coefficients, real-type truncation, common physical representatives,
+finite-input interlacing at p=3 and index −5, general source interlacing,
+both boundary conditions, complex equality at a collapsed gap, and the
+negative-odd signed discriminant bound.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9740 declarations under `NLS`, including generated
+axioms. The current audit covers 9789 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -8120,8 +8158,9 @@ formal matrix representation.
    neighborhoods now prove joint analyticity of the infinite ordinary
    boundary characteristics, completing Lemma 9.1(i). Canonical boundary
    coordinate continuity under complex perturbations now proves ordinary
-   Lemma 9.1(ii), including the original source coefficient space. Continue
-   with real interlacing and starred products.
+   Lemma 9.1(ii), including the original source coefficient space. Ordinary
+   indexed source interlacing now completes Lemma 9.1(iii); starred products
+   remain.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

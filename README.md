@@ -969,10 +969,13 @@ installation is absent. No shell startup files are modified.
   exponents too. The half-interval Fourier map and both reflected extensions
   commute with inclusion, as do the distinct source potential realizations.
   This identifies the source boundary roots, normalized characteristics,
-  and original periodic endpoints across exponents. Extending the indexed
-  comparison to all finite source exponents now requires real-type Fourier
-  approximation with compatible continuous physical representatives.
-  Starred products and the source anti-discriminant also remain next.
+  and original periodic endpoints across exponents. Finite Fourier input now
+  has a common continuous physical representative in both realizations.
+  Symmetric real-type truncations and coordinate continuity extend the
+  indexed interlacing theorem to every finite source exponent p>1. This
+  completes ordinary Lemma 9.1(iii), including collapsed gaps, strict
+  neighboring-gap separation, and the signed discriminant bound. Starred
+  products and the source anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

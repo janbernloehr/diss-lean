@@ -1938,12 +1938,19 @@ map across exponents. This proves compatibility of the completed ordinary
 and auxiliary reflected extensions. A continuous inclusion in the source
 pair topology commutes with all three distinct potential realizations;
 source boundary coordinates, normalized characteristics, and the original
-periodic endpoints consequently agree across finite exponents. Continue
-with real-type Fourier approximation and compatible continuous physical
-representatives to transfer the indexed interlacing inequalities.
+periodic endpoints consequently agree across finite exponents.
 
-Next extend indexed interlacing to every finite source exponent and establish
-the starred characteristic analogues
-(Lemma 9.1(iii) and its extension). Then implement the anti-discriminant
-(Lemma 9.2).
+Finite source Fourier polynomials now reconstruct their actual periodic and
+Dirichlet-reflected Hilbert potentials. Both agree with one continuous
+pointwise real-type curve on the original unit interval. The continuous-case
+interlacing proof gives the correct signed gap for each finite real-type
+polynomial. Exact exponent compatibility carries this to all finite p>1.
+Symmetric Fourier truncations preserve real type and converge in the source
+pair norm; continuity of both boundary roots and original periodic endpoints
+passes the inequalities to every real-type source potential. This completes
+the ordinary Dirichlet and Neumann Lemma 9.1(iii), including collapsed gaps,
+strict neighboring-gap separation, and the alternating discriminant level.
+
+Next establish the starred characteristic analogues to Lemma 9.1, then the
+anti-discriminant (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

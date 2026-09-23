@@ -15344,3 +15344,84 @@ example (φ : CoeffPair 2) :
     (by norm_num) (by norm_num) _ φ).1
 end
 end ExponentSourceChecks
+
+namespace SourceInterlacingChecks
+noncomputable section
+open Set Complex NLS NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal ComplexConjugate
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The finite polynomial has the literal original period-two Fourier coefficients.
+example (a : ℤ →₀ ℂ) (n : ℤ) :
+    periodTwoCoefficient (polynomial a) n = Coeff.periodDouble (Coeff.ofFinsupp (p := 3) a) n :=
+  periodTwoCoefficient_polynomial a n
+
+-- Symmetric blocks retain conjugate reflection at a non-Hilbert exponent.
+example (φ : CoeffPair 3) (hφ : IsRealType (CoeffPair.toMax 3 φ)) (N : ℕ) (n : ℤ) :
+    (sourceTruncationCoefficients φ N).2 n =
+      conj ((sourceTruncationCoefficients φ N).1 (-n)) :=
+  sourceTruncationCoefficients_realType φ hφ N n
+
+-- The periodic and ordinary boundary realizations share one physical curve.
+example (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) :
+    (physicalBase (periodOnePotential (CoeffPair.ofFinsupp (p := 2) a))
+      =ᵐ[MeasureTheory.volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend (finiteSourceCurve a)) ∧
+    (physicalBase (periodOneBoundaryPotential (by simp) (by norm_num)
+      (CoeffPair.ofFinsupp (p := 2) a)).val
+      =ᵐ[MeasureTheory.volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend (finiteSourceCurve a)) :=
+  finiteSource_physical_compatibility a
+
+-- Index preservation is available directly for finite input at p=3.
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ))
+    (ha : ∀ n, a.2 n = conj (a.1 (-n))) :
+    (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b
+      (CoeffPair.ofFinsupp (p := 3) a) (-5)).re ∈
+      Icc (canonicalPeriodicLeft (by simp) (by norm_num)
+        (periodOnePotential (CoeffPair.ofFinsupp (p := 3) a)) (periodOnePotential_mem _) (-5)).re
+        (canonicalPeriodicRight (by simp) (by norm_num)
+          (periodOnePotential (CoeffPair.ofFinsupp (p := 3) a)) (periodOnePotential_mem _) (-5)).re :=
+  canonicalPeriodOneBoundaryRoots_mem_gap_finite (by simp) (by norm_num) b a ha (-5)
+
+-- The completed theorem has no finite-support hypothesis.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ n).re ∈
+      Icc (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ)
+        (periodOnePotential_mem φ) n).re
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ)
+          (periodOnePotential_mem φ) n).re :=
+  canonicalPeriodOneBoundaryRoots_mem_gap (by simp) (by norm_num) b φ hφ n
+
+example (φ : CoeffPair 3) (hφ : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    let l := (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ)
+      (periodOnePotential_mem φ) n).re
+    let r := (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ)
+      (periodOnePotential_mem φ) n).re
+    (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ n).re ∈ Icc l r ∧
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .neumann φ n).re ∈ Icc l r :=
+  canonicalPeriodOneBoundaryRoots_interlacing (by simp) (by norm_num) φ hφ n
+
+-- A collapsed gap identifies the complex root, not only its real part.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ)
+    (he : canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ)
+      (periodOnePotential_mem φ) n =
+      canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ)
+        (periodOnePotential_mem φ) n) :
+    canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ n =
+      canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ)
+        (periodOnePotential_mem φ) n :=
+  canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap (by simp) (by norm_num) b φ hφ n he
+
+-- The original discriminant retains the literal sign for negative odd indices.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : IsRealType (CoeffPair.toMax 3 φ)) :
+    2 ≤ -(canonicalDiscriminant (by simp) (periodOnePotential φ)
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ (-5))).re := by
+  have hs := signed_discriminant_periodOneBoundaryRoot_ge_two (by simp) (by norm_num)
+    b φ hφ (-5)
+  norm_num at hs ⊢
+  exact hs
+
+end
+end SourceInterlacingChecks

@@ -730,3 +730,9 @@ import NLS.Fourier.ExponentHalfInterval
 import NLS.ZakharovShabat.ExponentPeriodicCoordinates
 import NLS.ZakharovShabat.ExponentIntervalExtension
 import NLS.ZakharovShabat.ExponentSourcePotentials
+import NLS.Fourier.FinitePeriodOneRealization
+import NLS.SequenceSpaces.FiniteSourceCoefficients
+import NLS.ZakharovShabat.FiniteSourceRealization
+import NLS.ZakharovShabat.RealTypeSourceApproximation
+import NLS.ZakharovShabat.FiniteSourceInterlacing
+import NLS.ZakharovShabat.PeriodOneBoundaryInterlacing
