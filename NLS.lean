@@ -790,3 +790,5 @@ import NLS.ZakharovShabat.SourceStandardRootAnalytic
 import NLS.ZakharovShabat.SourceStandardRootJointAnalytic
 import NLS.ZakharovShabat.SourceStandardRootNorm
 import NLS.ZakharovShabat.SourceStandardRootTailSeparation
+import NLS.ComplexAnalysis.MidpointDiscSeparation
+import NLS.ZakharovShabat.SourceStandardRootCentralSeparation

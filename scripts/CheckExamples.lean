@@ -16720,3 +16720,33 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
   exists_local_source_tail_standardRoot_bounds hp hp1 φ hφ
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (s : Finset ℤ) :
+    ∃ ε : ℝ, 0 < ε ∧ ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∀ ψ ∈ V, ∀ i ∈ s, ∀ j ∈ s, i ≠ j →
+        ∀ z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i,
+          ε/2 ≤ ‖sourceStandardRoot hp hp1 ψ j z‖ :=
+  exists_local_source_central_root_lower hp hp1 φ hφ s
+
+end NLS.ZakharovShabat
+
+namespace NLS.ComplexAnalysis
+
+example {l₁ r₁ l₂ r₂ ε₁ ε₂ δ : ℝ}
+    (h₁ : l₁ ≤ r₁) (h₂ : l₂ ≤ r₂)
+    (hδ : 0 ≤ δ) (hε₁ : 0 ≤ ε₁) (hε₂ : 0 ≤ ε₂)
+    (hgap : δ + ε₁ + ε₂ ≤ l₂-r₁)
+    {z w : ℂ}
+    (hz : z ∈ ball (((l₁+r₁)/2 : ℝ) : ℂ) ((r₁-l₁)/2+ε₁))
+    (hw : w ∈ ball (((l₂+r₂)/2 : ℝ) : ℂ) ((r₂-l₂)/2+ε₂)) :
+    δ ≤ dist z w :=
+  midpoint_discs_pointwise_separation h₁ h₂ hδ hε₁ hε₂ hgap hz hw
+
+end NLS.ComplexAnalysis

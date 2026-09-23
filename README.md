@@ -1093,7 +1093,9 @@ installation is absent. No shell startup files are modified.
   two-sided endpoint distance bounds transfer to the root norm. For any two
   distinct free tail discs this gives equation (2.10) with explicit
   constants π/2 and 3π/2, uniformly on a connected local source
-  neighborhood.
+  neighborhood. For every finite central index block, a possibly
+  smaller common source neighborhood gives a positive lower bound for
+  roots evaluated in any other central disc.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
