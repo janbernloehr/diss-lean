@@ -16562,3 +16562,30 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_uniform_small_sourcePeriodicSquaredGapPowerTail hp hp1 φ hε
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (t g z : ℂ) (hz : t ≠ z) :
+    normalizedStandardRoot t g z ^ 2 = (t-z)^2-g/4 :=
+  normalizedStandardRoot_sq t g z hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) (z : ℂ)
+    (hz : z ∉ sourcePeriodicSegment hp hp1 ψ n) :
+    sourceStandardRoot hp hp1 ψ n z ^ 2 =
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-z) *
+        (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-z) :=
+  sourceStandardRoot_sq_of_not_mem_segment hp hp1 ψ n z hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) (z : ℂ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n = 0) :
+    sourceStandardRoot hp hp1 ψ n z =
+      canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n-z :=
+  sourceStandardRoot_of_zeroGap hp hp1 ψ n z hgap
+
+end NLS.ZakharovShabat

@@ -8490,6 +8490,10 @@ formal matrix representation.
    between the squared-gap power tail sum and the unsquared gap's ℓᵖ tail
    norm to the `p` power. This completes the source-coefficient form of
    Lemma 10.2.
+   The normalized standard root of equation (2.9) is now defined. It
+   squares to the exact canonical endpoint factor off the closed gap
+   segment and becomes linear when the gap collapses. The analytic branch,
+   cross-disc estimates, and contour identity of Lemma 10.3 remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

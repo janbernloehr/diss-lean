@@ -1074,6 +1074,10 @@ installation is absent. No shell startup files are modified.
   unsquared gap's `ℓᵖ` tail norm. Those tails are uniformly small on a
   common source neighborhood, completing the source-coefficient form
   of Lemma 10.2(ii).
+  Equation (2.9)'s normalized standard root is now defined. Its square
+  equals the canonical endpoint factor outside the gap segment, and it
+  reduces to the linear midpoint expression when the gap collapses.
+  The analytic branch and contour estimates of Lemma 10.3 remain.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

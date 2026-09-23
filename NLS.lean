@@ -783,3 +783,4 @@ import NLS.ZakharovShabat.SourcePeriodicPowerSums
 import NLS.ZakharovShabat.SourcePeriodicMidpointAsymptotics
 import NLS.ZakharovShabat.SourcePeriodicGapSummability
 import NLS.ZakharovShabat.SourcePeriodicGapTails
+import NLS.ZakharovShabat.SourceStandardRootAlgebra

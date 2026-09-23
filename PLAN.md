@@ -2119,4 +2119,10 @@ completes all three assertions of Lemma 10.2 in the source-coefficient
 setting. Next formalize the standard roots and contour geometry of
 Lemma 10.3, followed by the action-coordinate prerequisites. The
 arbitrary-L² physical anti-trace identification remains a separate gap.
+For Lemma 10.3, equation (2.9)'s normalized principal standard root is
+now defined and its square is identified with the canonical endpoint
+factor at every point outside the gap segment. A collapsed gap reduces
+exactly to the linear midpoint expression. Next prove that the normalized
+radicand avoids the principal square-root cut on the segment complement,
+then establish joint analyticity and the cross-disc estimates.
 The printed general-`p` central-height constant remains a separate open item.
