@@ -2287,3 +2287,15 @@ uniform product convergence then becomes local uniform convergence on that
 domain. Analytic finite cutoffs give spectral analyticity of the infinite
 omitted-zero product for each source potential. Next prove source-uniform
 product convergence and joint analyticity, then extend the omitted index.
+
+`SourceStandardRootPairedProductJointUniform.lean` uses a fixed reciprocal
+lattice and source-uniform Hölder tails to control all finite midpoint
+correction sums. Combined with the square-root and quadratic cross-term
+majorants, this gives uniformly vanishing finite absolute tails for complete
+paired-factor errors near any source and on bounded spectral sets.
+`UniformProductTails.lean` supplies the finite-prefix product criterion, so
+the paired cutoffs converge uniformly on a joint neighborhood wherever the
+finite cutoffs are continuous. The existing connected source domain makes
+this available at every point of the noncentral-gap complement. Next prove
+joint analyticity of the limit on an open joint domain, then extend from
+omitted index zero to arbitrary omitted indices.

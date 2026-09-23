@@ -15895,6 +15895,32 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
 
 end NLS.ZakharovShabat
 
+/- Lemma 10.5 joint uniform paired-product API checks. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (R : ℝ) (hR : 0 ≤ R) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ N₀ : ℕ, ∃ D : ℕ → ℝ, Tendsto D atTop (𝓝 0) ∧
+        ∀ N : ℕ, N₀ ≤ N → ∀ ψ ∈ V, ∀ z : ℂ, ‖z‖ ≤ R →
+          ∀ s : Finset ℕ, (∀ j ∈ s, N ≤ j) →
+            (∑ j ∈ s, ‖sourceStandardRootPairedFactor hp hp1 ψ z j - 1‖) ≤ D N :=
+  exists_uniform_absolute_sourceStandardRootPairedFactor_tails hp hp1 φ R hR
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ φ ∈ W, ∀ z ∈ sourceStandardRootPairedDomain hp hp1 φ,
+        ∃ U : Set (ℂ × CoeffPair p), IsOpen U ∧ (z,φ) ∈ U ∧
+          TendstoUniformlyOn (sourceStandardRootPairedJointPartialProduct hp hp1)
+            (sourceStandardRootPairedJointProduct hp hp1) atTop U :=
+  exists_global_source_locally_uniform_pairedProduct hp hp1
+
+end NLS.ZakharovShabat
+
 /- Analytic finite cutoffs of the omitted-zero standard-root product. -/
 noncomputable section
 open scoped ENNReal

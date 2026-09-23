@@ -8705,3 +8705,16 @@ converges locally uniformly on this domain and is analytic in the spectral
 parameter there. Combined with the existing nonvanishing theorem, this
 establishes the fixed-source holomorphic nonzero product for omitted index
 zero. Joint source analyticity and arbitrary omitted indices remain open.
+
+## Latest milestone: joint local uniform convergence of the paired product
+
+`SourceStandardRootPairedProductJointUniform.lean` proves source-neighborhood
+uniform finite absolute-sum bounds and vanishing tails for the midpoint
+corrections. Together with the existing square-root and quadratic estimates,
+the complete paired-factor errors have uniformly vanishing tails on bounded
+spectral regions. `UniformProductTails.lean` turns this and a bounded finite
+prefix into uniform convergence of the natural cutoffs on a joint
+spectral/source neighborhood. On the connected almost-real source domain,
+finite-cutoff analyticity supplies the needed continuity at every point of
+the noncentral-gap complement. Joint analyticity of the infinite product
+and arbitrary omitted indices remain open.

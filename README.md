@@ -1260,3 +1260,11 @@ The paired product converges locally uniformly there and is analytic in the
 spectral parameter for every fixed source potential. Together with the
 earlier nonvanishing theorem, this establishes the omitted-zero product's
 spectral holomorphy and nonzero value on its natural domain.
+
+The paired-factor errors now have uniformly vanishing finite absolute tails
+on a source neighborhood and bounded spectral region. A finite-prefix
+bound turns these tails into uniform convergence of the natural paired
+cutoffs on a joint spectral/source neighborhood. On the common connected
+almost-real source domain, this applies at every point of the noncentral-gap
+complement. Joint analyticity of the infinite limit and arbitrary omitted
+indices remain open.
