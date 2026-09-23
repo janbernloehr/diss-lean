@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 809 modules and 5102 named public theorems. All compile on the
+The library has 811 modules and 5108 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -20,6 +20,8 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.FiniteSourceAntiDiscriminant` | Exact auxiliary source/classical characteristic equality on finite Fourier input, domain-based anti-discriminant equality at every finite exponent, density of finite source pairs, and uniqueness of the continuous extension |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantIdentity` | Full source identity `∆²−4=δ²−4χDχN` at every finite exponent by finite-input monodromy and density; Lemma 9.2(ii) at all indexed Dirichlet roots without a simplicity assumption |
 | `NLS.ZakharovShabat.BoundaryCharacteristicDiscLp` | Generic entire boundary product sine and cosine-derivative errors on all free half-/quarter-π discs, with an ℓᵖ majorant uniform on displacement-norm balls and ℓᵖ sampled errors |
+| `NLS.ZakharovShabat.UniformBoundaryCharacteristicDiscLp` | Both intrinsic boundary characteristics have free-sine and free-cosine derivative ℓᵖ majorants with a common norm bound on one potential neighborhood |
+| `NLS.ZakharovShabat.SourceAntiDiscriminantDiscLp` | Both starred source products and their difference have locally uniform disc majorants; ordinary Dirichlet-root tail samples share one ℓᵖ bound, and complete value and derivative samples belong to ℓᵖ pointwise |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7164,8 +7166,9 @@ characteristics there. The unimodular monodromy identity therefore gives
 both sides continuous in the source coefficients, so density extends the
 identity to the entire finite-exponent source space. At every indexed
 Dirichlet root `μₙ`, `χD(μₙ)=0`, hence `∆²(μₙ)−4=δ²(μₙ)` without requiring
-simplicity. This proves the algebraic content of Lemma 9.2(ii); its locally
-uniform high-index estimates in part (iii) remain open.
+simplicity. This proves the algebraic content of Lemma 9.2(ii). The high-index
+estimates of part (iii) are now proved; its full locally uniform norm bound
+awaits control of the finite central samples.
 
 For any complete ℓᵖ displacement sequence, the actual entire boundary
 product differs from the free sine by one ℓᵖ majorant throughout all closed
@@ -7173,8 +7176,13 @@ half-π free discs, including the centers. Cauchy's estimate bounds the
 derivative error by the same majorant on quarter-π discs. Its ℓᵖ norm is
 uniformly bounded on every displacement-norm ball, and arbitrary samples in
 those quarter-discs produce ℓᵖ value and derivative errors. Transfer to the
-starred source products and evaluation at the ordinary Dirichlet roots are
-still needed for Lemma 9.2(iii).
+starred source products gives one local ℓᵖ norm bound for the
+anti-discriminant and its spectral derivative on every free disc. A common
+ordinary boundary cutoff puts all distant canonical Dirichlet roots in the
+quarter-π discs, yielding a uniform ℓᵖ tail majorant for both samples.
+Finite modification proves that both full sampled sequences belong to ℓᵖ
+at every source potential. A local uniform norm bound for the finite central
+samples remains for the full Lemma 9.2(iii) statement.
 
 Eight standalone API examples check the anti-trace sign, one printed-label
 equality, the actual endpoint zero equation, joint classical and source

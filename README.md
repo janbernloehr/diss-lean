@@ -1014,7 +1014,12 @@ installation is absent. No shell startup files are modified.
   `∆²(μₙ)−4 = δ²(μₙ)`, with no simplicity assumption.
   The generic entire boundary product now has ℓᵖ sine-error and derivative-error
   majorants on all free half-/quarter-π discs, uniformly on bounded sets of
-  root displacements. The source transfer and sampling at `μₙ` remain.
+  root displacements. Both starred source products now inherit these bounds
+  on one source neighborhood. Their difference and derivative have a common
+  ℓᵖ majorant on the free discs. At all sufficiently distant ordinary
+  Dirichlet roots, the sampled values and derivatives have a uniform ℓᵖ tail
+  bound; the full sampled sequences are in ℓᵖ at every source potential. A locally uniform
+  bound for the finite central samples remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
