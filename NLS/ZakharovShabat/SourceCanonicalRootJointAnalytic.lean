@@ -46,18 +46,21 @@ theorem sourceCanonicalRootJointDomain_eq_inter_omitted
       exact hone.2 0 (by norm_num)
     · exact hzero.2 m hm
 
-set_option maxHeartbeats 800000 in
-/-- On one connected almost-real source domain, the canonical root is
-jointly analytic outside all moving periodic gap segments. -/
-theorem exists_global_source_analytic_canonicalRoot
-    (hp : p ≠ ⊤) (hp1 : 1 < p) :
-    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
-      realTypeSourceLocus p ⊆ W ∧
-      IsOpen (sourceCanonicalRootJointDomain hp hp1 W) ∧
-      AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct hp hp1)
-        (sourceCanonicalRootJointDomain hp hp1 W) := by
-  obtain ⟨W,hWopen,hWconn,hreal,hA⟩ :=
-    exists_global_source_analytic_midpoint_squaredGap hp hp1
+/-- Analytic midpoint and squared-gap coordinates on an open source set
+give joint analyticity of the full canonical root there. -/
+theorem sourceCanonicalRootJointProduct_analyticOnNhd_of_symmetric
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (W : Set (CoeffPair p)) (hWopen : IsOpen W)
+    (hA : ∀ ψ ∈ W, ∀ n : ℤ,
+      AnalyticAt ℂ (fun χ : CoeffPair p =>
+        canonicalPeriodicMidpoint hp hp1 (periodOnePotential χ)
+          (periodOnePotential_mem χ) n) ψ ∧
+      AnalyticAt ℂ (fun χ : CoeffPair p =>
+        (canonicalPeriodicGap hp hp1 (periodOnePotential χ)
+          (periodOnePotential_mem χ) n)^2) ψ) :
+    IsOpen (sourceCanonicalRootJointDomain hp hp1 W) ∧
+    AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct hp hp1)
+      (sourceCanonicalRootJointDomain hp hp1 W) := by
   obtain ⟨hDzero,hpaired⟩ :=
     sourceStandardRootOmittedJointProduct_analyticOnNhd_of_symmetric
       hp hp1 W hWopen hA 0
@@ -67,7 +70,7 @@ theorem exists_global_source_analytic_canonicalRoot
   have hDopen : IsOpen (sourceCanonicalRootJointDomain hp hp1 W) := by
     rw [sourceCanonicalRootJointDomain_eq_inter_omitted]
     exact hDzero.inter hDone
-  refine ⟨W,hWopen,hWconn,hreal,hDopen,?_⟩
+  refine ⟨hDopen,?_⟩
   intro t ht
   have htz : t ∈ sourceStandardRootOmittedJointDomain hp hp1 W 0 :=
     ⟨ht.1, fun m _ => ht.2 m⟩
@@ -84,6 +87,21 @@ theorem exists_global_source_analytic_canonicalRoot
     2*I * sourceStandardRoot hp hp1 q.2 0 q.1 *
       sourceStandardRootPairedProduct hp hp1 q.2 q.1) t
   exact (analyticAt_const.mul hroot).mul hpaired'
+
+/-- On one connected almost-real source domain, the canonical root is
+jointly analytic outside all moving periodic gap segments. -/
+theorem exists_global_source_analytic_canonicalRoot
+    (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      IsOpen (sourceCanonicalRootJointDomain hp hp1 W) ∧
+      AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct hp hp1)
+        (sourceCanonicalRootJointDomain hp hp1 W) := by
+  obtain ⟨W,hWopen,hWconn,hreal,hA⟩ :=
+    exists_global_source_analytic_midpoint_squaredGap hp hp1
+  obtain ⟨hDopen,hroot⟩ :=
+    sourceCanonicalRootJointProduct_analyticOnNhd_of_symmetric hp hp1 W hWopen hA
+  exact ⟨W,hWopen,hWconn,hreal,hDopen,hroot⟩
 
 /-- When the `n`th periodic gap collapses, its standard root becomes a
 linear factor. The canonical root therefore extends analytically through

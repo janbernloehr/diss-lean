@@ -1343,3 +1343,10 @@ is analytic in the spectral variable there, and is jointly analytic in
 the spectral variable and source potential on a connected almost-real
 source domain. A collapsed gap gives an analytic linear-factor extension.
 The boundary-sign clause of Lemma 10.7 is the next step.
+
+The boundary-sign clause is now proved on the same connected almost-real
+source domain as joint analyticity. Isolating discs keep distinct gap
+segments disjoint. On a noncollapsed gap, the upper and lower limits of
+the canonical root exist and are exact negatives; on a collapsed gap it
+extends analytically across the segment. The next target is the
+asymptotic estimate in Lemma 10.8.

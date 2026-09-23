@@ -15895,6 +15895,40 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
 
 end NLS.ZakharovShabat
 
+/- Lemma 10.7: the full canonical root has opposite gap-side limits. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ ψ ∈ W, ∀ n : ℤ, ∀ t : ℝ,
+        -1 ≤ t → t ≤ 1 →
+        canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+          (periodOnePotential_mem ψ) n ≠ 0 →
+        Tendsto (sourceCanonicalRoot hp hp1 ψ)
+          (𝓝[standardRootGapUpperSide
+            (sourceStandardRootMidpoint hp hp1 ψ n)
+            (sourceStandardRootHalfGap hp hp1 ψ n)]
+              (sourceCanonicalRootGapPoint hp hp1 ψ n t))
+          (𝓝 (sourceCanonicalRootGapUpperValue hp hp1 ψ n t)) ∧
+        Tendsto (sourceCanonicalRoot hp hp1 ψ)
+          (𝓝[standardRootGapLowerSide
+            (sourceStandardRootMidpoint hp hp1 ψ n)
+            (sourceStandardRootHalfGap hp hp1 ψ n)]
+              (sourceCanonicalRootGapPoint hp hp1 ψ n t))
+          (𝓝 (sourceCanonicalRootGapLowerValue hp hp1 ψ n t)) ∧
+        sourceCanonicalRootGapUpperValue hp hp1 ψ n t =
+          -sourceCanonicalRootGapLowerValue hp hp1 ψ n t := by
+  obtain ⟨W, hWopen, hWconn, hreal, _, _, _, hsides⟩ :=
+    exists_global_source_canonicalRoot_gapSide_theorem hp hp1
+  exact ⟨W, hWopen, hWconn, hreal, hsides⟩
+
+end NLS.ZakharovShabat
+
 /- Lemma 10.5 joint analyticity API checks. -/
 noncomputable section
 open Filter Topology Metric

@@ -8844,3 +8844,14 @@ full moving-gap complement over one connected almost-real source
 domain. When the `n`th gap collapses, the linear-factor identity extends
 the root analytically across that gap wherever the other gaps are
 avoided. The noncollapsed-gap boundary signs in Lemma 10.7 remain next.
+
+## Latest milestone: gap-side signs and completion of Lemma 10.7
+
+`SourceCanonicalRootGapSides.lean` gives explicit upper and lower
+boundary values of the full canonical root by multiplying the selected
+standard-root limit by its omitted product. These values are negatives.
+`SourceCanonicalRootGapIsolation.lean` proves that the global isolating
+discs separate distinct gap segments. On one connected almost-real
+source neighborhood, it combines joint analyticity off the gaps,
+extension through every collapsed gap, and opposite one-sided limits
+on every noncollapsed gap. Lemma 10.8's asymptotic estimate is next.

@@ -2389,3 +2389,11 @@ analyticity clauses are proved, as is analytic extension through a
 collapsed gap using the omitted product. Finish Lemma 10.7 by proving
 the opposite boundary values on the two sides of each noncollapsed gap,
 then continue to the asymptotics of Lemma 10.8.
+
+`SourceCanonicalRootGapSides.lean` multiplies the established standard-root
+side limits by the omitted product, which is continuous at points on the
+selected gap. `SourceCanonicalRootGapIsolation.lean` uses the global
+isolating discs to put every point of one gap outside all other gaps and
+combines the analytic, collapsed-gap, and opposite-side clauses on one
+connected source neighborhood. Lemma 10.7 is complete in this source
+model. Next formalize Lemma 10.8's canonical-root asymptotics.
