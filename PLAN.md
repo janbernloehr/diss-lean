@@ -2319,3 +2319,13 @@ joint moving-gap complement open. On a single connected source domain,
 all finite paired cutoffs are analytic and converge locally uniformly on
 that open complement. Next apply a Banach-space analytic-limit theorem to
 the infinite product, then extend to arbitrary omitted indices.
+
+`LocalAnalyticApproximationOn.lean` extends the Banach-space
+fixed-ball approximation criterion to an open domain. Uniform convergence
+and analytic finite approximants survive Fréchet differentiation on
+smaller balls, yielding `ContDiffOn ℂ ∞` and uniform operator-norm
+convergence of first derivatives. Applied in
+`SourceStandardRootPairedProductJointSmooth.lean`, the omitted-zero
+paired product is jointly complex smooth on the open moving-gap domain.
+Next establish a local Taylor expansion for complex-smooth maps there,
+then treat arbitrary omitted indices.

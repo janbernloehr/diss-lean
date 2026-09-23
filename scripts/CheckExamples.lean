@@ -18072,3 +18072,32 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_open_locallyUniform_pairedJointProduct hp hp1
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 joint complex smoothness API checks. -/
+noncomputable section
+open Filter Topology Metric
+open scoped ENNReal ContDiff
+
+example {E : Type} [NormedAddCommGroup E] [NormedSpace ℂ E]
+    (u : ℕ → E → ℂ) (f : E → ℂ) (S : Set E)
+    (h : NLS.ComplexAnalysis.HasLocalUniformAnalyticApproximationOn u f S) :
+    ContDiffOn ℂ ∞ f S := h.contDiffOn
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      IsOpen (sourceStandardRootPairedJointDomain hp hp1 W) ∧
+      ContDiffOn ℂ ∞ (sourceStandardRootPairedJointProduct hp hp1)
+        (sourceStandardRootPairedJointDomain hp hp1 W) ∧
+      ∀ t ∈ sourceStandardRootPairedJointDomain hp hp1 W,
+        ∃ r : ℝ, 0 < r ∧
+          Metric.ball t r ⊆ sourceStandardRootPairedJointDomain hp hp1 W ∧
+          TendstoUniformlyOn
+            (fun N => fderiv ℂ (sourceStandardRootPairedJointPartialProduct hp hp1 N))
+            (fderiv ℂ (sourceStandardRootPairedJointProduct hp hp1))
+            atTop (Metric.ball t r) :=
+  exists_global_source_smooth_pairedJointProduct hp hp1
+
+end NLS.ZakharovShabat

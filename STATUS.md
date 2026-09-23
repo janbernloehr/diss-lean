@@ -8741,3 +8741,14 @@ connected almost-real source set, every finite paired cutoff is analytic
 and the cutoffs converge locally uniformly to the infinite product on that
 same open domain. The Banach-space analytic-limit step and arbitrary
 omitted indices remain open.
+
+## Latest milestone: joint complex smoothness of the paired product
+
+`LocalAnalyticApproximationOn.lean` proves that analytic finite
+approximants converging uniformly on an actual ball around every point
+of an open Banach domain yield a `ContDiffOn ℂ ∞` limit. Their Fréchet
+derivatives converge uniformly in operator norm on smaller balls.
+`SourceStandardRootPairedProductJointSmooth.lean` applies this to the
+omitted-zero paired standard-root product on the open moving-gap domain
+over one connected almost-real source set. A local power-series theorem
+and arbitrary omitted indices remain open.

@@ -1283,3 +1283,10 @@ The moving-gap complement is therefore open jointly in spectral and source
 variables. On one connected almost-real source domain, the finite paired
 cutoffs are analytic and converge locally uniformly to the product on this
 same open joint domain. Passing joint analyticity to the limit is next.
+
+On this open domain the infinite paired product is now jointly complex
+smooth to every finite Fréchet order. The first derivatives of the finite
+cutoffs converge uniformly in operator norm on a smaller ball around each
+point. This uses the fixed-ball uniform convergence and Banach-space
+Schwarz bounds; a local Taylor-series argument remains to turn the
+smoothness theorem into an explicit joint analyticity theorem.

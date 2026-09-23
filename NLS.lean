@@ -844,3 +844,5 @@ import NLS.ZakharovShabat.SourceStandardRootPairedProductHolomorphic
 import NLS.ZakharovShabat.SourceStandardRootPairedProductJointUniform
 import NLS.ComplexAnalysis.SymmetricSegmentIncidence
 import NLS.ZakharovShabat.SourceStandardRootPairedJointDomain
+import NLS.ComplexAnalysis.LocalAnalyticApproximationOn
+import NLS.ZakharovShabat.SourceStandardRootPairedProductJointSmooth
