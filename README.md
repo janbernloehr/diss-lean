@@ -1167,7 +1167,12 @@ installation is absent. No shell startup files are modified.
   smooth perturbations of any loop avoiding its gap: compactness supplies
   a positive perturbation radius, and an affine homotopy stays gap-free.
   In particular, a known diagonal `−1` value persists on all sufficiently
-  close smooth loops. The diagonal identity for every admissible
+  close smooth loops. Local constancy and connectedness now also show
+  that a merely continuous homotopy preserves the integral when each
+  intermediate loop is twice smooth and avoids the gap; basepoints may
+  move. This yields the normalized `−δₘₙ` identity for loops connected
+  to an enclosing circle by such a family, without twice-smoothness of
+  the full homotopy square. The diagonal identity for every admissible
   counterclockwise contour remains open.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the

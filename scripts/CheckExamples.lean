@@ -17516,3 +17516,70 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     hp hp1 ψ n γ hγ havoid hvalue
 
 end NLS.ZakharovShabat
+noncomputable section
+open Set Metric Complex
+open scoped unitInterval ENNReal
+
+namespace NLS.ComplexAnalysis
+
+example (f : ℂ → ℂ) (Ω : Set ℂ)
+    (hΩopen : IsOpen Ω)
+    (hf : ∀ z ∈ Ω, DifferentiableAt ℂ f z)
+    {a b : ℂ} {γ₁ : Path a a} {γ₂ : Path b b}
+    (H : (γ₁ : C(I, ℂ)).Homotopy γ₂)
+    (hloop : ∀ s : I, H (s, 1) = H (s, 0))
+    (hsmooth : ∀ s : I,
+      ContDiffOn ℝ 2 (homotopyLoop H hloop s).extend (Icc 0 1))
+    (hinside : ∀ s u : I, H (s,u) ∈ Ω) :
+    (∫ᶜ z in γ₁, holomorphicOneForm f z) =
+      ∫ᶜ z in γ₂, holomorphicOneForm f z :=
+  curveIntegral_eq_of_continuous_smooth_loop_homotopy
+    f Ω hΩopen hf H hloop hsmooth hinside
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c r)
+    {a : ℂ} {γ : Path a a}
+    (H : (NLS.ComplexAnalysis.circlePath c r : C(I, ℂ)).Homotopy γ)
+    (hloop : ∀ s : I, H (s, 1) = H (s, 0))
+    (hsmooth : ∀ s : I,
+      ContDiffOn ℝ 2 (NLS.ComplexAnalysis.homotopyLoop H hloop s).extend (Icc 0 1))
+    (havoid : ∀ s u : I, H (s,u) ∉ sourcePeriodicSegment hp hp1 ψ n) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in γ, NLS.ComplexAnalysis.holomorphicOneForm
+        (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = -1 :=
+  normalized_sourceStandardRoot_inv_curveIntegral_of_continuous_smooth_homotopy_circle
+    hp hp1 ψ n c r hr hseg H hloop hsmooth havoid
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (m n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hsegm : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c r)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    (hdisjoint : m ≠ n → Disjoint
+      (sourceIsolatingDisc hp hp1 φ N ε m)
+      (sourceIsolatingDisc hp hp1 φ N ε n))
+    {a : ℂ} (γ : Path a a)
+    (hγ : ContDiffOn ℝ 2 γ.extend (Icc 0 1))
+    (hγinside : ∀ u : I, γ u ∈ sourceIsolatingDisc hp hp1 φ N ε m)
+    (H : (NLS.ComplexAnalysis.circlePath c r : C(I, ℂ)).Homotopy γ)
+    (hloop : ∀ s : I, H (s, 1) = H (s, 0))
+    (hsmooth : ∀ s : I,
+      ContDiffOn ℝ 2 (NLS.ComplexAnalysis.homotopyLoop H hloop s).extend (Icc 0 1))
+    (havoidm : ∀ s u : I, H (s,u) ∉ sourcePeriodicSegment hp hp1 ψ m) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in γ, NLS.ComplexAnalysis.holomorphicOneForm
+        (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) =
+      if m = n then -1 else 0 :=
+  normalized_sourceStandardRoot_inv_curveIntegral_indexed_of_continuous_smooth_homotopy
+    hp hp1 φ ψ N ε m n c r hr hsegm hcluster hdisjoint
+    γ hγ hγinside H hloop hsmooth havoidm
+
+end NLS.ZakharovShabat

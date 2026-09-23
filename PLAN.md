@@ -2207,5 +2207,9 @@ every sufficiently close smooth loop deforms affinely within the gap
 complement. Thus a known diagonal `−1` value persists under all such
 small deformations. It remains to connect every admissible
 counterclockwise contour to a known one, or prove the same value by a
-winding-number argument.
+winding-number argument. Local constancy and connectedness now carry
+the integral across any continuous family of twice-smooth gap-avoiding
+loops, including moving basepoints. The normalized `−δₘₙ` theorem uses
+only such a continuous family from an enclosing circle; it no longer
+requires the homotopy map on the full square to be twice smooth.
 The printed general-`p` central-height constant remains a separate open item.

@@ -818,4 +818,6 @@ import NLS.ComplexAnalysis.ConvexHolomorphicLoopIntegral
 import NLS.ZakharovShabat.SourceStandardRootContourConvexIndexed
 import NLS.ComplexAnalysis.LocalHolomorphicLoopStability
 import NLS.ZakharovShabat.SourceStandardRootContourLocalStability
+import NLS.ComplexAnalysis.ContinuousSmoothLoopHomotopy
+import NLS.ZakharovShabat.SourceStandardRootContourContinuousHomotopy
 import NLS.ComplexAnalysis.CircleSegmentHomotopyGeometry

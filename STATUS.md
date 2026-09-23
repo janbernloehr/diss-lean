@@ -8577,8 +8577,12 @@ formal matrix representation.
    positive uniform neighborhood of every smooth loop avoiding its gap
    on which the inverse-root integral is constant. Thus any established
    normalized diagonal value `−1` persists under sufficiently small
-   smooth perturbations. Connecting every stated admissible
-   counterclockwise contour to a known one remains.
+   smooth perturbations. The integral is now invariant along every
+   continuous homotopy with twice-smooth gap-avoiding loop slices, even
+   when its basepoint moves and the full square map is not twice smooth.
+   This gives the indexed `−δₘₙ` value when such a family starts at an
+   enclosing circle. Connecting every stated admissible counterclockwise
+   contour to a known one remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
