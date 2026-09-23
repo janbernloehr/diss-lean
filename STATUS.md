@@ -8752,3 +8752,18 @@ derivatives converge uniformly in operator norm on smaller balls.
 omitted-zero paired standard-root product on the open moving-gap domain
 over one connected almost-real source set. A local power-series theorem
 and arbitrary omitted indices remain open.
+
+## Latest milestone: joint analyticity of the paired product
+
+`BanachTaylorBoundsOn.lean` localizes the Schwarz bound to an open
+Banach-space domain, establishing a positive radius for the Fréchet
+Taylor series at each point. `BanachSmoothAnalyticOn.lean` identifies
+affine-line derivatives with diagonal Fréchet derivatives and uses
+one-variable Cauchy expansion to prove that the Taylor series sums to
+the original function on a smaller ball. Thus every scalar-valued
+`ContDiffOn ℂ ∞` map on an open domain is analytic there.
+`SourceStandardRootPairedProductJointAnalytic.lean` applies this result
+to the omitted-zero paired standard-root product, proving joint
+analyticity on the open moving-gap complement over one connected
+almost-real source domain. Arbitrary omitted indices and later
+dissertation results remain open.

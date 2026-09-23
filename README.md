@@ -1290,3 +1290,12 @@ cutoffs converge uniformly in operator norm on a smaller ball around each
 point. This uses the fixed-ball uniform convergence and Banach-space
 Schwarz bounds; a local Taylor-series argument remains to turn the
 smoothness theorem into an explicit joint analyticity theorem.
+
+The local Taylor argument is now formalized. On any open Banach-space
+domain, a scalar-valued `ContDiffOn ℂ ∞` map is analytic there: Schwarz
+bounds give a positive Fréchet-series radius, and one-variable Cauchy
+expansion along short complex lines identifies its sum. Consequently the
+infinite paired standard-root product is jointly analytic in the spectral
+parameter and source potential on the open moving-gap complement over
+one connected almost-real source domain. Arbitrary omitted indices and
+the remaining parts of the dissertation are still to be formalized.

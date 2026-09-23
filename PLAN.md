@@ -2329,3 +2329,11 @@ convergence of first derivatives. Applied in
 paired product is jointly complex smooth on the open moving-gap domain.
 Next establish a local Taylor expansion for complex-smooth maps there,
 then treat arbitrary omitted indices.
+
+`BanachTaylorBoundsOn.lean` and `BanachSmoothAnalyticOn.lean` now supply
+the local Taylor expansion for scalar-valued complex-smooth maps on open
+Banach domains. The Fréchet series has positive radius and sums along
+short complex lines by Cauchy's theorem. Applied in
+`SourceStandardRootPairedProductJointAnalytic.lean`, this proves joint
+analyticity of the omitted-zero paired product on the open moving-gap
+domain. The next product step is arbitrary omitted indices.

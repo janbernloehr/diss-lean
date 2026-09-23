@@ -391,6 +391,8 @@ import NLS.ComplexAnalysis.LocalAnalyticApproximation
 import NLS.ZakharovShabat.CanonicalPeriodicProductSmooth
 import NLS.ComplexAnalysis.BanachTaylorBounds
 import NLS.ComplexAnalysis.BanachSmoothAnalytic
+import NLS.ComplexAnalysis.BanachTaylorBoundsOn
+import NLS.ComplexAnalysis.BanachSmoothAnalyticOn
 import NLS.ZakharovShabat.CanonicalPeriodicProductAnalytic
 import NLS.ZakharovShabat.FreeParityProducts
 import NLS.ZakharovShabat.EntireSpectralPairProducts
@@ -846,3 +848,4 @@ import NLS.ComplexAnalysis.SymmetricSegmentIncidence
 import NLS.ZakharovShabat.SourceStandardRootPairedJointDomain
 import NLS.ComplexAnalysis.LocalAnalyticApproximationOn
 import NLS.ZakharovShabat.SourceStandardRootPairedProductJointSmooth
+import NLS.ZakharovShabat.SourceStandardRootPairedProductJointAnalytic
