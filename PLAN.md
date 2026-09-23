@@ -2070,4 +2070,9 @@ disjoint and satisfy explicit linear pointwise separation bounds. Next use
 continuity at real-type potentials to choose finitely many central discs
 with the same five-family containment and separation, then assemble the
 open connected neighborhood and locally common isolating-disc sequences.
+The real-type five-coordinate clusters are now proved to lie in their
+indexed gaps and to be strictly separated in real part, with a metric lower
+bound by the intervening periodic endpoint gap. Next choose central discs
+around these finite clusters with positive margins, then use coordinate
+continuity to keep all five families inside the same discs nearby.
 The printed general-`p` central-height constant remains a separate open item.

@@ -764,3 +764,4 @@ import NLS.ZakharovShabat.SourceAntiDiscriminantCentralLp
 import NLS.ZakharovShabat.SourcePeriodicTailIsolation
 import NLS.ZakharovShabat.SourceTailIsolation
 import NLS.ZakharovShabat.FreeDiscSeparation
+import NLS.ZakharovShabat.SourceSpectralClusters

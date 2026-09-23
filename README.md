@@ -1027,6 +1027,10 @@ installation is absent. No shell startup files are modified.
   roots, and the critical point lie in their common free quarter-π disc at
   every distant index. These discs are disjoint and have explicit linear
   pointwise separation. The finite central isolating discs remain.
+  At real-type source potentials, every five-coordinate cluster lies in its
+  indexed real periodic gap, and different indexed clusters have a positive
+  lower bound on their mutual distance. This supports the remaining central
+  disc construction even when coordinates within a cluster collide.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
