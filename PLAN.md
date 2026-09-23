@@ -2279,3 +2279,11 @@ on compact spectral sets and uniform convergence of the finite cutoffs
 there. Next show the gap-complement domain is open and transfer spectral
 analyticity to the limit; the source-uniform midpoint tails are available
 for the later joint-analyticity argument.
+
+`SourceStandardRootPairedProductHolomorphic.lean` bounds every periodic
+gap segment within a fixed radius of its free lattice point, proving the
+family locally finite and the noncentral-gap complement open. Compact-
+uniform product convergence then becomes local uniform convergence on that
+domain. Analytic finite cutoffs give spectral analyticity of the infinite
+omitted-zero product for each source potential. Next prove source-uniform
+product convergence and joint analyticity, then extend the omitted index.

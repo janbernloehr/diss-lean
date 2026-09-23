@@ -8694,3 +8694,14 @@ the midpoint terms supply the remaining summable majorant, proving
 uniform convergence of natural paired cutoffs on every compact subset of
 the noncentral gap complement. The infinite product's analyticity and
 joint locally uniform convergence in the source remain open.
+
+## Latest milestone: spectral holomorphy of the omitted-zero product
+
+`SourceStandardRootPairedProductHolomorphic.lean` proves that all gap
+segments stay within a uniform radius of their free lattice centers for a
+fixed source. Thus only finitely many meet a bounded spectral region, and
+the complement of the noncentral gaps is open. The paired product
+converges locally uniformly on this domain and is analytic in the spectral
+parameter there. Combined with the existing nonvanishing theorem, this
+establishes the fixed-source holomorphic nonzero product for omitted index
+zero. Joint source analyticity and arbitrary omitted indices remain open.

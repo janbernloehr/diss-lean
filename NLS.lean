@@ -840,3 +840,4 @@ import NLS.ZakharovShabat.SourceStandardRootSqrtRemainder
 import NLS.ZakharovShabat.SourceStandardRootPairedProduct
 import NLS.ZakharovShabat.SourceStandardRootPairedProductAnalytic
 import NLS.ZakharovShabat.SourceStandardRootPairedProductUniform
+import NLS.ZakharovShabat.SourceStandardRootPairedProductHolomorphic

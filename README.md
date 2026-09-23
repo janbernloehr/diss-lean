@@ -1254,3 +1254,9 @@ uniformly on every compact spectral set avoiding the noncentral gaps.
 The proof gives a shared summable majorant for the paired factor errors:
 the midpoint terms are fixed `ℓ¹` sequences, and the square-root and
 quadratic terms are uniformly `O(k⁻²)` on bounded spectral sets.
+
+The complement of the noncentral periodic gap segments is now proved open.
+The paired product converges locally uniformly there and is analytic in the
+spectral parameter for every fixed source potential. Together with the
+earlier nonvanishing theorem, this establishes the omitted-zero product's
+spectral holomorphy and nonzero value on its natural domain.

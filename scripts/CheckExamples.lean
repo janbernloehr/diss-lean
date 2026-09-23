@@ -17968,4 +17968,23 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
       (fun z => sourceStandardRootPairedProduct hp hp1 ψ z) atTop K :=
   tendstoUniformlyOn_sourceStandardRootPairedPartialProduct hp hp1 ψ K hK hdom
 
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) :
+    IsOpen (sourceStandardRootPairedDomain hp hp1 ψ) :=
+  isOpen_sourceStandardRootPairedDomain hp hp1 ψ
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) :
+    HasProdLocallyUniformlyOn
+      (fun j z => sourceStandardRootPairedFactor hp hp1 ψ z j)
+      (fun z => sourceStandardRootPairedProduct hp hp1 ψ z)
+      (sourceStandardRootPairedDomain hp hp1 ψ) :=
+  hasProdLocallyUniformlyOn_sourceStandardRootPairedFactor hp hp1 ψ
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ)
+    (hz : z ∈ sourceStandardRootPairedDomain hp hp1 ψ) :
+    AnalyticAt ℂ (sourceStandardRootPairedProduct hp hp1 ψ) z :=
+  sourceStandardRootPairedProduct_analyticAt hp hp1 ψ z hz
+
 end NLS.ZakharovShabat
