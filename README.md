@@ -1013,7 +1013,13 @@ installation is absent. No shell startup files are modified.
   as imaginary height tends to positive infinity, uniformly in real spectral
   part. The classical-to-intrinsic and actual auxiliary-to-starred-source
   quotients therefore tend to one on separated upper paths, fixing the
-  constant needed after the remaining analytic-order comparison.
+  constant needed after the remaining analytic-order comparison. The classical
+  separated characteristic now has a convergent scalar Taylor series built
+  from normalized forced-solution chains. Its formal order equals its analytic
+  order, and each finite scalar Taylor kernel is exactly the system of
+  separated endpoint conditions on a finite chain. At finite order `m`, its
+  kernel dimension is `min N m` at truncation length `N`. Identifying these
+  chain kernels with the original physical generalized eigenspaces remains.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

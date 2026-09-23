@@ -15853,3 +15853,44 @@ example {α : Type*} {l : Filter α} (b : BoundaryCondition)
       auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b
         (CoeffPair.ofFinsupp (p := 2) a) (z i)) l (𝓝 1) :=
   tendsto_classicalAuxiliary_finite_div_source_upper_of_separated b a z hz he hr hrπ hs
+noncomputable section
+open Set Complex NLS.LinearVolterra NLS.ComplexAnalysis
+namespace NLS.ZakharovShabat
+open BoundaryCondition
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalSeparatedEndpointDefect b Φ z =
+      -(2*I)*classicalSeparatedCharacteristic b Φ z :=
+  classicalSeparatedEndpointDefect_eq b Φ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    (scalarFormalTaylor (classicalSeparatedEndpointSeries b Φ z)).order =
+      analyticOrderAt (classicalSeparatedCharacteristic b Φ) z :=
+  order_classicalSeparatedEndpointSeries b Φ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (m N : ℕ)
+    (hm : analyticOrderAt (classicalSeparatedCharacteristic b Φ) z = m) :
+    Module.finrank ℂ (LinearMap.ker
+      (scalarTaylorJetMap (scalarFormalTaylor (classicalSeparatedEndpointSeries b Φ z)) N)) =
+        min N m :=
+  finrank_classicalSeparatedTaylorKernel b Φ z m N hm
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ)
+    (N : ℕ) (w : Fin N → ℂ) (k : Fin N) :
+    scalarTaylorJetMap (scalarFormalTaylor (classicalSeparatedEndpointSeries b Φ z)) N w k =
+      (-1 : ℂ)^k.val * separatedEndpointDefectCLM b
+        (classicalJetCurve Φ z (separatedSignedInitialJet b N w) k.val
+          ⟨1,by constructor <;> norm_num⟩) :=
+  scalarTaylorJetMap_classicalSeparated_eq_chainEndpoint b Φ z N w k
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
+    (w : Fin N → ℂ) :
+    w ∈ LinearMap.ker
+      (scalarTaylorJetMap (scalarFormalTaylor (classicalSeparatedEndpointSeries b Φ z)) N) ↔
+        ∀ k : Fin N,
+          separatedEndpointDefectCLM b
+            (classicalJetCurve Φ z (separatedSignedInitialJet b N w) k.val
+              ⟨1,by constructor <;> norm_num⟩) = 0 :=
+  mem_ker_classicalSeparatedTaylorJetMap_iff b Φ z N w
+
+end NLS.ZakharovShabat

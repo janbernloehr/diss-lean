@@ -2025,11 +2025,17 @@ as imaginary height tends to positive infinity, uniformly in real spectral
 part. The phase-conjugated classical auxiliary characteristics share that
 limit. Thus classical-to-intrinsic and actual auxiliary-to-starred-source
 quotients tend to one along upper separated paths, including the matched
-finite Fourier source input. The missing analytic-order comparison is needed
-to extend the quotient through the roots; the exterior bound and upper limit
-then supply the Liouville normalization argument.
+finite Fourier source input. A convergent scalar endpoint Taylor series now
+identifies every coefficient with a signed normalized forced-solution chain.
+Finite scalar Taylor kernels are exactly the separated endpoint equations for
+such chains, and their nullity is the truncated classical analytic order.
+The remaining comparison must identify these finite kernels with the actual
+physical boundary root spaces. Equal analytic orders will then extend the
+quotient through the roots; the exterior bound and upper limit supply the
+Liouville normalization argument.
 
-Next identify the analytic orders and normalization of the source
+Next identify the scalar finite-jet kernels with original physical boundary
+chain spaces, then match analytic orders and normalization of the source
 characteristics with the classical endpoint characteristics on a dense
 physical subspace, which will turn the
 candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove

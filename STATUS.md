@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 802 modules and 5026 named public theorems. All compile on the
+The library has 803 modules and 5034 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -13,6 +13,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.BoundaryCharacteristicExterior` | Exact free-sine exterior ratio one for complete products, intrinsic boundary characteristics, and ordinary and actual starred source pullbacks; uniform exterior lower bound |
 | `NLS.ZakharovShabat.ClassicalSeparatedExteriorBounds` | Sine-scale growth of classical separated monodromy characteristics, bounded classical/free ratio, and bounded classical-to-intrinsic ratio on the distant separated exterior |
 | `NLS.ZakharovShabat.ClassicalSeparatedHalfPlaneAsymptotics` | Explicit upper weighted-entry error bound, free-sine ratio-one limits for both classical separated and auxiliary characteristics, and classical-to-intrinsic and finite auxiliary-to-source quotient limits along separated upper paths |
+| `NLS.ZakharovShabat.ClassicalSeparatedJets` | Convergent scalar endpoint Taylor series from normalized solution chains; equality of formal and analytic orders; finite scalar jet nullity and exact chain endpoint equations |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7100,6 +7101,18 @@ along separated upper paths; the latter is stated explicitly at matched
 finite Fourier source input. This fixes the eventual entire quotient's
 constant but does not yet prove that the quotient extends through its common
 zeros. The analytic-order comparison remains open.
+
+The separated classical endpoint defect is now proved equal to `-2i` times
+its source-normalized characteristic. Applying the endpoint functional to
+the convergent whole-solution chain series gives a scalar Taylor series
+whose formal order is exactly the characteristic's analytic order. At
+truncation length `N`, finite scalar Taylor convolution is the signed right
+endpoint defect of a forced chain whose prescribed initial values all obey
+the left separated condition. Thus kernel membership is exactly the full
+finite list of right endpoint conditions. If the analytic order is a finite
+natural `m`, the kernel has dimension `min N m`. The still-missing step is a
+linear equivalence between these scalar chain kernels and the actual
+physical generalized eigenspaces, including their finite-level dimensions.
 
 On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,
