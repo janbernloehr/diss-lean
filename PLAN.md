@@ -2437,3 +2437,13 @@ product's small-radicand assumption on all sufficiently remote discs
 for each fixed source. Next make that row threshold uniform on a source
 neighborhood, obtain the first-order `ℓᑫ` omitted-index estimate, and
 pass to the infinite product.
+
+`UniformWeightedRows.lean` shows that a summable nonnegative kernel has
+uniformly vanishing translated rows for families with uniformly small
+tails. `SourceSquaredGapUniformRowTails.lean` applies this to the actual
+source gaps and produces a common half-unit threshold.
+`SourceSingleRootUniformAsymptoticTailBounds.lean` combines it with
+midpoint separation on a connected neighborhood, giving the finite
+full-quotient estimate with one threshold for all nearby sources.
+Next prove the first-order `ℓᑫ` omitted-index estimate and pass to the
+infinite product.

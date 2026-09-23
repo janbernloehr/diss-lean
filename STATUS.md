@@ -8913,3 +8913,17 @@ remote isolating disc, uniformly in the cutoff, spectral point, and
 numerator root sequence for each fixed source. The threshold still
 depends on the source; a neighborhood-uniform threshold, the `ℓᑫ`
 omitted-index estimate, and the infinite-product limit remain open.
+
+## Latest milestone: neighborhood-uniform squared-gap row tails
+
+`UniformWeightedRows.lean` combines summability of the
+reciprocal-square kernel with a common small input tail and a finite
+central block. `SourceSquaredGapUniformRowTails.lean` applies it to the
+canonical gaps, proving that physical row sums vanish uniformly on a
+source neighborhood, even for `1 < p < 2`. The half-unit threshold is
+therefore shared by all nearby sources. The connected-neighborhood
+theorem in `SourceSingleRootUniformAsymptoticTailBounds.lean` activates
+the finite full-quotient bound with one large-index threshold for every
+nearby source, cutoff, admissible numerator sequence, and spectral
+point on its isolating disc. The first-order `ℓᑫ` estimate across
+omitted indices and infinite-product passage remain open.

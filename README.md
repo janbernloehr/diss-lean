@@ -1381,5 +1381,12 @@ index tends to either end of the integer lattice, including when
 `p/2 < 1`. For each fixed source, its large-index threshold activates
 the finite full-quotient bound simultaneously for every cutoff,
 spectral point in the corresponding isolating disc, and admissible
-root sequence. A threshold uniform over a source neighborhood and the
-`ℓᑫ` omitted-index estimate remain to be proved.
+root sequence.
+
+The squared-gap rows now vanish uniformly on an open neighborhood of
+each source. A summable reciprocal-square kernel controls the uniformly
+small gap tail, and its translates control the finite central block.
+Combining this with midpoint-disc separation gives one connected
+neighborhood and one large-index threshold for the finite full-quotient
+bound. The first-order `ℓᑫ` estimate across omitted indices and the
+infinite-product asymptotic remain open.
