@@ -2190,7 +2190,11 @@ integral to the polar contour. Thus the normalized indexed integral is
 smooth loop with a smooth homotopy from an enclosing circle whose image
 avoids the indexed gap and stays in the assigned isolating disc. The
 homotopy image is compact, so no auxiliary neighborhood is needed in
-the theorem statement. Next construct such deformations, or an equivalent
-winding-number argument, for the full admissible contour class of
-Lemma 10.3.
+the theorem statement. An affine homotopy now supplies the deformation
+for every twice-smooth loop uniformly close to an enclosing circle.
+Explicit distance bounds keep every intermediate point outside a disc
+containing the indexed gap and inside an outer disc contained in its
+isolating disc; hence this class also satisfies `−δₘₙ`. Next extend
+the construction to the full admissible contour class of Lemma 10.3,
+or formalize an equivalent winding-number argument.
 The printed general-`p` central-height constant remains a separate open item.

@@ -8564,8 +8564,12 @@ formal matrix representation.
    noncircular class. More generally, the identity holds on every smooth
    closed loop equipped with a smooth homotopy from an enclosing circle
    whose compact image stays inside the assigned isolating disc and
-   avoids the indexed gap. The extension to every stated admissible
-   contour remains.
+   avoids the indexed gap. An affine deformation now verifies these
+   conditions for every twice-smooth closed loop uniformly close to an
+   enclosing circle, using explicit inner and outer distance bounds.
+   This yields `−δₘₙ` for the broader near-circle class without a polar
+   parametrization. The extension to every stated admissible contour
+   remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

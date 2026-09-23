@@ -1153,7 +1153,12 @@ installation is absent. No shell startup files are modified.
   homotopy for every admissible contour in the lemma remains. A geometric
   deformation lemma also shows that
   interpolating two discs containing the gap segment keeps every
-  intermediate circle disjoint from it.
+  intermediate circle disjoint from it. A new affine-homotopy theorem
+  handles any twice-smooth closed loop uniformly close to an enclosing
+  circle: explicit inner and outer distance bounds keep the deformation
+  away from the gap and inside its isolating disc. The normalized
+  `−δₘₙ` identity therefore holds for this additional class without a
+  polar parametrization or a supplied homotopy.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

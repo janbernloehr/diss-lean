@@ -17355,3 +17355,53 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     H hloop hinside havoidm hcontdiff
 
 end NLS.ZakharovShabat
+noncomputable section
+open Set Metric Complex
+open scoped unitInterval ENNReal
+
+namespace NLS.ComplexAnalysis
+
+example (c : ℂ) (R r₀ Rmax δ : ℝ)
+    (hr₀ : 0 ≤ r₀) (hδ : 0 ≤ δ)
+    (hinner : r₀+δ < R) (houter : R+δ ≤ Rmax)
+    {a : ℂ} (γ : Path a a)
+    (hclose : ∀ u : I, dist (γ u) (circlePath c R u) ≤ δ)
+    (s u : I) :
+    r₀ < dist ((ContinuousMap.Homotopy.affine
+      (circlePath c R : C(I, ℂ)) (γ : C(I, ℂ))) (s,u)) c ∧
+    dist ((ContinuousMap.Homotopy.affine
+      (circlePath c R : C(I, ℂ)) (γ : C(I, ℂ))) (s,u)) c ≤ Rmax :=
+  affineCircleHomotopy_annulus
+    c R r₀ Rmax δ hr₀ hδ hinner houter γ hclose s u
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (εiso : ℝ) (m n : ℤ)
+    (c : ℂ) (R r₀ Rmax : ℝ)
+    (hr₀ : 0 ≤ r₀) (hinner : r₀ < R) (houter : R ≤ Rmax)
+    (hsegm : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c r₀)
+    (hfilled : closedBall c Rmax ⊆ sourceIsolatingDisc hp hp1 φ N εiso m)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N εiso n)
+    (hdisjoint : m ≠ n → Disjoint
+      (sourceIsolatingDisc hp hp1 φ N εiso m)
+      (sourceIsolatingDisc hp hp1 φ N εiso n)) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in NLS.ComplexAnalysis.circlePath c R,
+        NLS.ComplexAnalysis.holomorphicOneForm
+          (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) =
+      if m = n then -1 else 0 := by
+  apply normalized_sourceStandardRoot_inv_nearCircle_indexed
+    hp hp1 φ ψ N εiso m n c R r₀ Rmax 0 hr₀ (by norm_num)
+    (by simpa using hinner) (by simpa using houter)
+    hsegm hfilled hcluster hdisjoint
+    (NLS.ComplexAnalysis.circlePath c R)
+    (NLS.ComplexAnalysis.circlePath_contDiffOn c R)
+  intro u
+  simp
+
+end NLS.ZakharovShabat
