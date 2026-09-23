@@ -15684,3 +15684,45 @@ example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
       classicalSeparatedCharacteristic .neumann (classicalSourcePhase Φ) z -
         classicalSeparatedCharacteristic .dirichlet (classicalSourcePhase Φ) z :=
   classicalAntiDiscriminant_eq_separated_phase_sub Φ z
+open Set MeasureTheory NLS NLS.Fourier NLS.LinearVolterra NLS.ZakharovShabat
+open scoped ENNReal
+
+noncomputable section
+
+example (Φ : Curve (ℂ × ℂ)) :
+    physicalAuxiliaryPotential (extend Φ) = extend (classicalSourcePhase Φ) :=
+  physicalAuxiliaryPotential_extend Φ
+
+example (Φ : Curve (ℂ × ℂ)) :
+    MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1)) :=
+  memLp_extend_classicalCurve Φ
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalAuxiliaryCharacteristic b Φ z = 0 ↔
+      z ∈ b.classicalAuxiliaryEigenvalues (extend Φ) :=
+  classicalAuxiliaryCharacteristic_eq_zero_iff_mem_classicalAuxiliaryEigenvalues b Φ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalAuxiliaryCharacteristic b Φ z = 0 ↔
+      z ∈ b.auxiliarySpectrum (by simp)
+        (BoundaryCondition.neumannPotentialCoefficients (extend Φ) (memLp_extend_classicalCurve Φ))
+        (BoundaryCondition.neumannPotentialCoefficients_mem (extend Φ) (memLp_extend_classicalCurve Φ)) :=
+  classicalAuxiliaryCharacteristic_eq_zero_iff_mem_auxiliarySpectrum b Φ z
+
+example (b : BoundaryCondition) {φ ψ : ℝ → ℂ × ℂ}
+    (h : φ =ᵐ[volume.restrict (Ioc 0 1)] ψ) :
+    b.classicalAuxiliaryEigenvalues φ = b.classicalAuxiliaryEigenvalues ψ :=
+  b.classicalAuxiliaryEigenvalues_congr_ae h
+
+example (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) :
+    (auxiliaryPeriodOnePotential (by simp) (by norm_num)
+      (CoeffPair.ofFinsupp (p := 2) a)).val =
+        BoundaryCondition.neumannPotentialCoefficients (BoundaryCondition.periodOnePair a)
+          (memLp_periodOnePair_finite a) :=
+  auxiliaryPeriodOnePotential_finite_eq a
+
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : ℂ) :
+    classicalAuxiliaryCharacteristic b (finiteSourceCurve a) z = 0 ↔
+      auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b
+        (CoeffPair.ofFinsupp (p := 2) a) z = 0 :=
+  classicalAuxiliaryCharacteristic_finite_eq_zero_iff_source b a z

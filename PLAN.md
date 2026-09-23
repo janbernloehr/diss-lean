@@ -2003,8 +2003,18 @@ characteristic of the rotated continuous potential. The classical
 anti-discriminant consequently equals the ordinary Neumann-minus-Dirichlet
 characteristic difference after phase rotation.
 
-Next identify the normalized source characteristics with the classical
-endpoint characteristics on a dense physical subspace, which will turn the
+The monodromy characteristic's zeros are now proved equivalent to the
+actual physical auxiliary eigenvalues of every continuous curve and to the
+Neumann-extended coefficient spectrum. For finite source Fourier pairs, the
+Neumann extension is exactly the source auxiliary coefficient potential;
+therefore each classical auxiliary characteristic and normalized starred
+source product have precisely the same zeros. This establishes the zero-set
+part of the dense-subspace comparison. Analytic orders and the entire
+normalization factor remain to be identified.
+
+Next identify the analytic orders and normalization of the source
+characteristics with the classical endpoint characteristics on a dense
+physical subspace, which will turn the
 candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove
 the simple-Dirichlet identity and the locally uniform high-index estimates
 of Lemma 9.2(ii–iii).

@@ -999,8 +999,13 @@ installation is absent. No shell startup files are modified.
   `i`. Thus each actual auxiliary characteristic equals the ordinary
   separated characteristic of the rotated continuous potential, and the
   classical anti-discriminant is their Neumann-minus-Dirichlet difference.
-  Identifying the source-space product difference with this classical
-  anti-discriminant on physical potentials remains open.
+  The classical auxiliary characteristic zeros now coincide with the actual
+  physical auxiliary spectrum. For finite Fourier source data, they also
+  coincide exactly with the zeros of the normalized starred source product,
+  using an equality of the physical Neumann Fourier extension and the finite
+  source coefficient extension. Identifying the two entire functions, and
+  hence the source-space product difference with the classical
+  anti-discriminant, remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

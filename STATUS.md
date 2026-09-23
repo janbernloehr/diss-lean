@@ -2,13 +2,14 @@
 
 ## Implemented and checked
 
-The library has 798 modules and 5003 named public theorems. All compile on the
+The library has 799 modules and 5011 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryCharacteristics` | Actual auxiliary monodromy characteristics, endpoint zero criteria, joint analyticity, free sine values, corrected anti-discriminant difference, and exact printed-label comparison |
 | `NLS.ZakharovShabat.ClassicalPhaseMonodromy` | Exact phase conjugation of classical solutions and monodromy, discriminant invariance, auxiliary-to-ordinary characteristic equality, and rotated Neumann-minus-Dirichlet anti-discriminant identity |
+| `NLS.ZakharovShabat.ClassicalAuxiliarySpectralBridge` | Actual physical and coefficient auxiliary spectral zero criteria for classical monodromy characteristics, a.e.-representative invariance, exact finite source Neumann Fourier realization, and equality of classical and normalized starred finite-source zero sets |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7063,6 +7064,16 @@ ordinary separated characteristic at the rotated potential. The classical
 anti-discriminant is therefore the ordinary Neumann-minus-Dirichlet
 characteristic difference after rotation.
 
+For every continuous curve, the classical auxiliary characteristic vanishes
+exactly at the original physical auxiliary eigenvalues. The same zero set
+is the actual auxiliary coefficient spectrum at its Neumann-extended Fourier
+potential, and the physical set is unchanged by a.e. choice of representative.
+For a finite source polynomial, the completed source auxiliary potential is
+proved equal to that Fourier extension. Hence each classical auxiliary
+characteristic and the corresponding normalized starred source product have
+exactly the same zeros at finite source input. This comparison does not yet
+give equality of analytic orders or of the entire functions.
+
 On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,
 jointly analytic function. It has an exact difference-of-canonical-products
@@ -7077,6 +7088,9 @@ analyticity, the free sine value, the product difference, and the free zero.
 Six additional standalone examples check solution conjugation, both
 off-diagonal monodromy factors, characteristic equality, discriminant
 invariance, and the rotated anti-discriminant identity.
+Seven further examples check physical and coefficient spectral zero criteria,
+a.e. invariance, the finite source Fourier realization, and the finite
+classical-to-source zero-set equality.
 
 ## Verification
 
