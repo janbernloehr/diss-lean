@@ -18038,3 +18038,37 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_localNonzero_pairedProduct hp hp1
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 open joint analytic-domain API checks. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+example (a b z : ℂ) :
+    z ∈ segment ℝ a b ↔
+      NLS.ComplexAnalysis.SymmetricSegmentIncidence z ((a+b)/2) ((b-a)^2) :=
+  NLS.ComplexAnalysis.mem_segment_iff_symmetricSegmentIncidence a b z
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (z : ℂ) :
+    ∃ N : ℕ, ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∀ ψ ∈ V, ∀ k : ℤ, N < k.natAbs →
+        Metric.ball z 1 ⊆ (sourcePeriodicSegment hp hp1 ψ k)ᶜ :=
+  exists_uniform_sourcePeriodicSegment_tail_avoids_ball hp hp1 φ z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      IsOpen (sourceStandardRootPairedJointDomain hp hp1 W) ∧
+      (∀ N : ℕ, AnalyticOnNhd ℂ
+        (sourceStandardRootPairedJointPartialProduct hp hp1 N)
+        (sourceStandardRootPairedJointDomain hp hp1 W)) ∧
+      TendstoLocallyUniformlyOn
+        (sourceStandardRootPairedJointPartialProduct hp hp1)
+        (sourceStandardRootPairedJointProduct hp hp1) atTop
+        (sourceStandardRootPairedJointDomain hp hp1 W) :=
+  exists_global_source_open_locallyUniform_pairedJointProduct hp hp1
+
+end NLS.ZakharovShabat

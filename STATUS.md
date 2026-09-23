@@ -8727,3 +8727,17 @@ noncentral gaps. Equivalently, it is continuous on that joint locus as a
 subspace. Its already-proved nonzero value at each such point persists on
 an open joint neighborhood. Joint analyticity, a common open analytic
 domain for every finite cutoff, and arbitrary omitted indices remain open.
+
+## Latest milestone: open joint moving-gap domain
+
+`SymmetricSegmentIncidence.lean` gives a closed polynomial incidence
+relation for complex segments using their midpoint and squared endpoint
+difference. This proves finite-gap avoidance stable under joint
+spectral/source variation even at endpoint collisions. A uniform local
+bound on periodic endpoint displacements keeps all distant moving gaps
+outside one spectral ball. `SourceStandardRootPairedJointDomain.lean`
+combines these facts to prove the natural joint domain open. On a single
+connected almost-real source set, every finite paired cutoff is analytic
+and the cutoffs converge locally uniformly to the infinite product on that
+same open domain. The Banach-space analytic-limit step and arbitrary
+omitted indices remain open.

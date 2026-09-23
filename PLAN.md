@@ -2307,3 +2307,15 @@ avoids noncentral gaps. The pointwise nonvanishing theorem strengthens
 this to nonvanishing on a joint neighborhood at each such point. Next
 establish a common open analytic domain for all finite cutoffs and pass
 Banach-space analyticity to the locally uniform limit.
+
+`SymmetricSegmentIncidence.lean` expresses membership in a complex gap
+segment through its midpoint, squared endpoint difference, and a compact
+real parameter. The incidence set is closed; continuity of the symmetric
+gap data therefore makes avoidance of each fixed moving gap locally
+stable without ordering the endpoints. `SourceStandardRootPairedJointDomain.lean`
+adds a source-uniform free-lattice bound, so all sufficiently distant gaps
+avoid one spectral ball. Finite-gap stability and this tail bound prove the
+joint moving-gap complement open. On a single connected source domain,
+all finite paired cutoffs are analytic and converge locally uniformly on
+that open complement. Next apply a Banach-space analytic-limit theorem to
+the infinite product, then extend to arbitrary omitted indices.

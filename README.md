@@ -1272,5 +1272,14 @@ indices remain open.
 The uniform joint limit is now continuous on the common almost-real
 source/gap-complement locus. At each point of this locus the omitted-zero
 product is nonzero on some open joint spectral/source neighborhood.
-Joint analyticity still requires a common open domain for analytic finite
-cutoffs and a Banach-space analytic-limit argument.
+The next domain construction places the analytic finite cutoffs and their
+uniform limit on one open joint set.
+
+That common domain is now constructed. A gap segment is determined by its
+midpoint and squared endpoint difference, so its incidence relation is
+closed even when endpoint labels collide. Uniform endpoint bounds keep all
+distant gaps away from a fixed spectral ball on one source neighborhood.
+The moving-gap complement is therefore open jointly in spectral and source
+variables. On one connected almost-real source domain, the finite paired
+cutoffs are analytic and converge locally uniformly to the product on this
+same open joint domain. Passing joint analyticity to the limit is next.
