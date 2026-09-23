@@ -16539,3 +16539,26 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   memℓp_sourcePeriodicSquaredGap hp hp1 ψ
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (M : ℕ) :
+    Summable (sourcePeriodicSquaredGapPowerTail hp hp1 ψ M) ∧
+      (∑' n : ℤ, sourcePeriodicSquaredGapPowerTail hp hp1 ψ M n) =
+        ‖sourcePeriodicGapDisplacement hp hp1 ψ -
+          Coeff.truncate (Finset.Icc (-(M : ℤ)) M)
+            (sourcePeriodicGapDisplacement hp hp1 ψ)‖^p.toReal :=
+  sourcePeriodicSquaredGapPowerTail_sum hp hp1 ψ M
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∀ ψ ∈ V, ∀ M : ℕ, N ≤ M →
+        Summable (sourcePeriodicSquaredGapPowerTail hp hp1 ψ M) ∧
+        (∑' n : ℤ, sourcePeriodicSquaredGapPowerTail hp hp1 ψ M n) ≤ ε^p.toReal :=
+  exists_uniform_small_sourcePeriodicSquaredGapPowerTail hp hp1 φ hε
+
+end NLS.ZakharovShabat

@@ -1059,7 +1059,7 @@ installation is absent. No shell startup files are modified.
   and squared gap in every assigned disc. Frozen contours make both
   functions analytic on the open connected almost-real source domain,
   including at collapsed gaps. This proves the analyticity assertion of
-  Lemma 10.2(ii); its sequence asymptotics remain.
+  Lemma 10.2(ii)'s analyticity assertion.
   The indexed endpoint product equals the quadratic expression in this
   midpoint and squared gap, and is jointly analytic in the spectral
   parameter and source coefficients. This proves Lemma 10.2(iii).
@@ -1070,7 +1070,10 @@ installation is absent. No shell startup files are modified.
   Its full norm is locally bounded, and its tails are uniformly small on
   a common source neighborhood. The canonical gap is an actual `ℓᵖ`
   sequence, and its square belongs to `ℓᵖ⁄²` for every finite `p>1`.
-  Locally uniform squared-gap tail control remains.
+  The squared-gap `p/2` power tail sum equals the `p` power of the
+  unsquared gap's `ℓᵖ` tail norm. Those tails are uniformly small on a
+  common source neighborhood, completing the source-coefficient form
+  of Lemma 10.2(ii).
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

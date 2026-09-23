@@ -2112,6 +2112,11 @@ uniform full norm bound and uniformly small ℓᵖ tails on a source
 neighborhood around every parameter. This proves the midpoint part of
 Lemma 10.2(ii). The canonical gap is now an actual ℓᵖ sequence, and its
 square belongs to ℓᵖ⁄² pointwise for every finite p>1, including p<2.
-Next transfer the common endpoint tail bounds to the squared-gap power
-tails to finish the locally uniform assertion.
+The squared-gap `p/2` power tail sum is now exactly the `p` power of the
+unsquared gap's ℓᵖ tail norm. Common endpoint tail estimates make it
+uniformly small on a source neighborhood around every parameter. This
+completes all three assertions of Lemma 10.2 in the source-coefficient
+setting. Next formalize the standard roots and contour geometry of
+Lemma 10.3, followed by the action-coordinate prerequisites. The
+arbitrary-L² physical anti-trace identification remains a separate gap.
 The printed general-`p` central-height constant remains a separate open item.
