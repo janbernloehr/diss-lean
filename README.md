@@ -1336,3 +1336,10 @@ jointly in the spectral parameter, the `ℓᵖ` root displacements, and the
 source potential on the open moving-gap complement. The proof uses a
 jointly entire deleted numerator and the nonzero omitted standard-root
 product from Lemma 10.5. Lemma 10.7 on the canonical root comes next.
+
+The full canonical-root product of equation (2.13) is now formalized.
+It squares to the source discriminant expression `Δ²−4` off the gaps,
+is analytic in the spectral variable there, and is jointly analytic in
+the spectral variable and source potential on a connected almost-real
+source domain. A collapsed gap gives an analytic linear-factor extension.
+The boundary-sign clause of Lemma 10.7 is the next step.

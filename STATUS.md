@@ -8830,3 +8830,17 @@ on the open moving-gap complement, where the quotient is analytic in
 `λ`, the displacement sequence, and the source potential. One connected
 almost-real source domain works for every `n`. The next dissertation
 result is Lemma 10.7 on the canonical root.
+
+## Latest milestone: canonical-root product and analytic clauses of Lemma 10.7
+
+`SourceCanonicalRootProduct.lean` defines the literal full standard-root
+product with the required `2i` normalization. Its symmetric cutoffs
+converge at every spectral point, and for every index `n` the limit is
+`2i wₙ` times the corresponding omitted product from Lemma 10.5. Off
+all periodic gap segments, its square equals the actual source
+`Δ²−4`, and it is spectrally analytic for every source potential.
+`SourceCanonicalRootJointAnalytic.lean` proves joint analyticity on the
+full moving-gap complement over one connected almost-real source
+domain. When the `n`th gap collapses, the linear-factor identity extends
+the root analytically across that gap wherever the other gaps are
+avoided. The noncollapsed-gap boundary signs in Lemma 10.7 remain next.

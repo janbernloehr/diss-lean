@@ -2381,3 +2381,11 @@ finite quotient factors converge to a jointly analytic function on the
 moving-gap complement over one common connected source domain. Next
 work through Lemma 10.7: assemble the full canonical-root product and
 its analytic and boundary behavior.
+
+The canonical root now has its full normalized product, pointwise
+convergence of the literal cutoffs, arbitrary-index factorization,
+and the identity `root² = Δ²−4` off the gaps. Its spectral and joint
+analyticity clauses are proved, as is analytic extension through a
+collapsed gap using the omitted product. Finish Lemma 10.7 by proving
+the opposite boundary values on the two sides of each noncollapsed gap,
+then continue to the asymptotics of Lemma 10.8.

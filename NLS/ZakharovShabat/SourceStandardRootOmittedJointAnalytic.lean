@@ -113,6 +113,42 @@ theorem exists_local_uniform_sourceStandardRootOmittedProduct
   rw [hfun] at hprod
   exact hprod
 
+/-- Joint analyticity of an omitted-root product on any open source set
+with analytic midpoint and squared-gap coordinates. This lets later
+products use the same source set for every indexed root. -/
+theorem sourceStandardRootOmittedJointProduct_analyticOnNhd_of_symmetric
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (W : Set (CoeffPair p)) (hWopen : IsOpen W)
+    (hA : ∀ ψ ∈ W, ∀ m : ℤ,
+      AnalyticAt ℂ (fun χ : CoeffPair p =>
+        canonicalPeriodicMidpoint hp hp1 (periodOnePotential χ)
+          (periodOnePotential_mem χ) m) ψ ∧
+      AnalyticAt ℂ (fun χ : CoeffPair p =>
+        (canonicalPeriodicGap hp hp1 (periodOnePotential χ)
+          (periodOnePotential_mem χ) m)^2) ψ)
+    (n : ℤ) :
+    IsOpen (sourceStandardRootOmittedJointDomain hp hp1 W n) ∧
+    AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 n)
+      (sourceStandardRootOmittedJointDomain hp hp1 W n) := by
+  let D := sourceStandardRootOmittedJointDomain hp hp1 W n
+  have hDopen : IsOpen D :=
+    isOpen_sourceStandardRootOmittedJointDomain_of_analytic hp hp1 W hWopen hA n
+  have hfinite (N : ℕ) : AnalyticOnNhd ℂ
+      (sourceStandardRootOmittedPartialProduct hp hp1 n N) D := by
+    intro t ht
+    exact sourceStandardRootOmittedPartialProduct_analyticAt_of_symmetric
+      hp hp1 W hA n N t ht
+  have huniform (t : ℂ × CoeffPair p) (ht : t ∈ D) :
+      ∃ U : Set (ℂ × CoeffPair p), IsOpen U ∧ t ∈ U ∧
+        TendstoUniformlyOn (sourceStandardRootOmittedPartialProduct hp hp1 n)
+          (sourceStandardRootOmittedJointProduct hp hp1 n) atTop U :=
+    exists_local_uniform_sourceStandardRootOmittedProduct hp hp1 n t.2 t.1
+      (fun N => (hfinite N t ht).continuousAt)
+  have happrox := NLS.ComplexAnalysis.HasLocalUniformAnalyticApproximationOn.of_open_local_uniform
+    hDopen hfinite huniform
+  exact ⟨hDopen, NLS.ComplexAnalysis.analyticOnNhd_of_complexSmoothOn
+    _ hDopen happrox.contDiffOn⟩
+
 /-- One connected almost-real source domain works for every omitted index:
 the actual infinite products are jointly analytic and nonzero on their
 open moving-gap complements, with locally uniform literal cutoffs. -/

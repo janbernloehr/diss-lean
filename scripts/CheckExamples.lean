@@ -18265,3 +18265,33 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   tendsto_sourceSingleRootQuotientPartialProduct hp hp1 n W t ht
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.7: canonical-root product and analytic API. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (ψ : CoeffPair p) (z : ℂ) :
+    sourceCanonicalRoot hp hp1 ψ z =
+      2*Complex.I * sourceStandardRoot hp hp1 ψ n z *
+        sourceStandardRootOmittedProduct hp hp1 n ψ z :=
+  sourceCanonicalRoot_eq_omitted hp hp1 n ψ z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    (sourceCanonicalRoot hp hp1 ψ z)^2 =
+      (canonicalDiscriminant hp (periodOnePotential ψ) z)^2-4 :=
+  sourceCanonicalRoot_sq_eq_discriminant_sq_sub_four hp hp1 ψ z hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      IsOpen (sourceCanonicalRootJointDomain hp hp1 W) ∧
+      AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct hp hp1)
+        (sourceCanonicalRootJointDomain hp hp1 W) :=
+  exists_global_source_analytic_canonicalRoot hp hp1
+
+end NLS.ZakharovShabat
