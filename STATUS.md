@@ -8634,3 +8634,12 @@ Classical Birkhoff prerequisites and the main dissertation theorems remain
 unimplemented. The printed general-`p` spectral height remains open, and
 the Chapter 2 spectral products, discriminant, and nonlinear coordinate
 construction remain incomplete.
+
+## Latest milestone: Lemma 10.5 paired-factor algebra
+
+`SourceStandardRootProductFactors.lean` proves the normalized standard-root
+error decomposition, cancellation of the free spectral terms for indices
+`k` and `-k`, and the exact paired-product expansion. It also proves
+`‖√w−1‖ ≤ ‖w−1‖` for the principal complex root and a resulting pointwise
+factor-error bound. Infinite-product summability, nonvanishing, and joint
+analyticity remain to be established.

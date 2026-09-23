@@ -2233,3 +2233,11 @@ endpoint gives that value as a limit; at the right gap endpoint,
 removing both singular endpoints does too. Next continue with the
 infinite standard-root product in Lemma 10.5.
 The printed general-`p` central-height constant remains a separate open item.
+
+The Lemma 10.5 factor step is in `SourceStandardRootProductFactors.lean`:
+normalized errors have an exact midpoint/spectral/square-root decomposition,
+the free spectral terms cancel for `k,-k`, and the paired factor is
+`1+a_k+a_{-k}+a_ka_{-k}`. A global norm estimate controls the principal
+square-root error by the radicand error. Next use the source midpoint and
+squared-gap sequence bounds to prove locally uniform summability of the
+paired errors and convergence of the infinite product.

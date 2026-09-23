@@ -834,3 +834,4 @@ import NLS.ZakharovShabat.SourceStandardRootGapSideIntegral
 import NLS.ZakharovShabat.SourceStandardRootGapSideSourceIntegral
 import NLS.ZakharovShabat.SourceStandardRootGapSideImproper
 import NLS.ZakharovShabat.SourceStandardRootGapSideSourceImproper
+import NLS.ZakharovShabat.SourceStandardRootProductFactors

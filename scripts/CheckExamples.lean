@@ -17821,3 +17821,30 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
   sourceStandardRoot_gapSidePathIntegral_uniform_max_bound hp hp1 ψ n hgap f hf
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 paired-factor API checks. -/
+noncomputable section
+open Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (w : ℂ) : ‖Complex.sqrt w - 1‖ ≤ ‖w - 1‖ :=
+  norm_sqrt_sub_one_le w
+
+example (t g d z : ℂ) (hd : d ≠ 0) :
+    ‖standardRootRelativeError t g d z‖ ≤
+      ‖t-d‖ / ‖d‖ + ‖z‖ / ‖d‖ +
+        (‖t-z‖ / ‖d‖) * ‖g / (4*(t-z)^2)‖ :=
+  norm_standardRootRelativeError_le t g d z hd
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (k : ℤ) (z : ℂ) :
+    (sourceStandardRoot hp hp1 ψ k z / ((Real.pi : ℂ)*k)) *
+      (sourceStandardRoot hp hp1 ψ (-k) z / (-((Real.pi : ℂ)*k))) =
+      1 + sourceStandardRootRelativeError hp hp1 ψ k z +
+        sourceStandardRootRelativeError hp hp1 ψ (-k) z +
+        sourceStandardRootRelativeError hp hp1 ψ k z *
+          sourceStandardRootRelativeError hp hp1 ψ (-k) z :=
+  sourceStandardRoot_pair_factor hp hp1 ψ k z
+
+end NLS.ZakharovShabat

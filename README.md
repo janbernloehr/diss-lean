@@ -1218,3 +1218,9 @@ installation is absent. No shell startup files are modified.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
 for the precise implemented scope.
+
+The first Lemma 10.5 product lemmas now express each normalized
+standard-root factor as midpoint displacement, free spectral term, and
+square-root error. The spectral terms cancel exactly for paired indices
+`k` and `-k`; the principal square-root error is bounded by its radicand
+error. Infinite-product convergence and joint analyticity are next.
