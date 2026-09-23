@@ -2125,4 +2125,8 @@ factor at every point outside the gap segment. A collapsed gap reduces
 exactly to the linear midpoint expression. Next prove that the normalized
 radicand avoids the principal square-root cut on the segment complement,
 then establish joint analyticity and the cross-disc estimates.
+The general preimage calculation for the principal square-root cut is
+proved: `1-w²` can leave the slit plane only when `w` is real and
+`|w.re|≥1`. Next show that this real condition for the normalized
+periodic ratio forces the spectral parameter onto the endpoint segment.
 The printed general-`p` central-height constant remains a separate open item.

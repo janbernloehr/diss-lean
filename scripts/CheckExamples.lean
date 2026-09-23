@@ -16589,3 +16589,16 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceStandardRoot_of_zeroGap hp hp1 ψ n z hgap
 
 end NLS.ZakharovShabat
+
+open Complex
+namespace NLS.ComplexAnalysis
+
+example (w : ℂ) (h : 1-w^2 ∉ Complex.slitPlane) :
+    w.im = 0 ∧ 1 ≤ |w.re| :=
+  real_abs_ge_one_of_one_sub_sq_not_mem_slitPlane w h
+
+example (w : ℂ) (h : w.im ≠ 0 ∨ |w.re| < 1) :
+    1-w^2 ∈ Complex.slitPlane :=
+  one_sub_sq_mem_slitPlane_of_not_real_large w h
+
+end NLS.ComplexAnalysis

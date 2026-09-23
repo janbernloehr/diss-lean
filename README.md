@@ -1078,6 +1078,9 @@ installation is absent. No shell startup files are modified.
   equals the canonical endpoint factor outside the gap segment, and it
   reduces to the linear midpoint expression when the gap collapses.
   The analytic branch and contour estimates of Lemma 10.3 remain.
+  A general slit-plane lemma now shows that `1-w²` meets the principal
+  square-root cut only when `w` is real with `|w|≥1`, reducing the next
+  branch proof to endpoint-segment geometry.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

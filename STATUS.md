@@ -8494,6 +8494,10 @@ formal matrix representation.
    squares to the exact canonical endpoint factor off the closed gap
    segment and becomes linear when the gap collapses. The analytic branch,
    cross-disc estimates, and contour identity of Lemma 10.3 remain.
+   The general branch-cut preimage calculation is proved: failure of
+   `1-w²` to lie in the principal slit plane forces `w` to be real with
+   absolute value at least one. Its application to periodic gap segments
+   remains next.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
