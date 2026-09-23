@@ -747,3 +747,5 @@ import NLS.ZakharovShabat.ClassicalAuxiliaryCharacteristics
 import NLS.ZakharovShabat.SourceAntiDiscriminantCandidate
 import NLS.ZakharovShabat.ClassicalPhaseMonodromy
 import NLS.ZakharovShabat.ClassicalAuxiliarySpectralBridge
+import NLS.ZakharovShabat.BoundaryCharacteristicExterior
+import NLS.ZakharovShabat.ClassicalSeparatedExteriorBounds

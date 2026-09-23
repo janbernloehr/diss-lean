@@ -15726,3 +15726,63 @@ example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : 
       auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b
         (CoeffPair.ofFinsupp (p := 2) a) z = 0 :=
   classicalAuxiliaryCharacteristic_finite_eq_zero_iff_source b a z
+open Set Filter Topology Complex NLS NLS.LinearVolterra NLS.ZakharovShabat
+open scoped ENNReal
+
+noncomputable section
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {α : Type*} {l : Filter α}
+    (hp : p ≠ ⊤) (ξ : ℤ → ℂ)
+    (hξ : Memℓp (fun n => ξ n - (Real.pi : ℂ) * n) p)
+    (z : α → ℂ) (he : Tendsto (fun i => ‖z i‖) l atTop)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4)
+    (hs : ∀ i (n : ℤ), r ≤ ‖z i - (Real.pi : ℂ) * n‖) :
+    Tendsto (fun i => boundaryCharacteristicProduct ξ (z i) / sin (z i)) l (𝓝 1) :=
+  tendsto_boundaryCharacteristicProduct_div_sin_of_separated hp ξ hξ z he hr hrπ hs
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {α : Type*} {l : Filter α}
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition)
+    (φ : PairSpace p) (hφ : φ ∈ dirichletSubspace)
+    (z : α → ℂ) (he : Tendsto (fun i => ‖z i‖) l atTop)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4)
+    (hs : ∀ i (n : ℤ), r ≤ ‖z i - (Real.pi : ℂ) * n‖) :
+    Tendsto (fun i => b.characteristic hp φ hφ (z i) / sin (z i)) l (𝓝 1) :=
+  b.tendsto_characteristic_div_sin_of_separated hp hp1 φ hφ z he hr hrπ hs
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (b : BoundaryCondition) (φ : PairSpace p) (hφ : φ ∈ dirichletSubspace)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4) :
+    ∃ R : ℝ, ∀ z : ℂ, R ≤ ‖z‖ →
+      (∀ n : ℤ, r ≤ ‖z - (Real.pi : ℂ) * n‖) →
+        (1 : ℝ) / 2 ≤ ‖b.characteristic hp φ hφ z / sin z‖ :=
+  b.exists_threshold_half_le_norm_characteristic_div_sin hp hp1 φ hφ hr hrπ
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {α : Type*} {l : Filter α}
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition) (φ : CoeffPair p)
+    (z : α → ℂ) (he : Tendsto (fun i => ‖z i‖) l atTop)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4)
+    (hs : ∀ i (n : ℤ), r ≤ ‖z i - (Real.pi : ℂ) * n‖) :
+    Tendsto (fun i => auxiliaryPeriodOneCharacteristic hp hp1 b φ (z i) / sin (z i))
+      l (𝓝 1) :=
+  tendsto_auxiliaryPeriodOneCharacteristic_div_sin_of_separated hp hp1 b φ z he hr hrπ hs
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    ‖classicalSeparatedCharacteristic b Φ z‖ ≤
+      2 * Real.exp (|z.im| + ‖Φ‖) :=
+  norm_classicalSeparatedCharacteristic_le_exp_im b Φ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ))
+    {r : ℝ} (hr : 0 < r) :
+    ∃ B : ℝ, 0 ≤ B ∧ ∀ z : ℂ,
+      (∀ n : ℤ, r ≤ ‖z - (Real.pi : ℂ) * n‖) →
+        ‖classicalSeparatedCharacteristic b Φ z / sin z‖ ≤ B :=
+  exists_bound_classicalSeparatedCharacteristic_div_sin_of_separated b Φ hr
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (b : BoundaryCondition)
+    (Φ : Curve (ℂ × ℂ)) (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : PairSpace p) (hφ : φ ∈ dirichletSubspace)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4) :
+    ∃ R B : ℝ, ∀ z : ℂ, R ≤ ‖z‖ →
+      (∀ n : ℤ, r ≤ ‖z - (Real.pi : ℂ) * n‖) →
+        ‖classicalSeparatedCharacteristic b Φ z / b.characteristic hp φ hφ z‖ ≤ B :=
+  exists_bound_classicalSeparated_div_characteristic_exterior b Φ hp hp1 φ hφ hr hrπ

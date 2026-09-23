@@ -1005,7 +1005,11 @@ installation is absent. No shell startup files are modified.
   using an equality of the physical Neumann Fourier extension and the finite
   source coefficient extension. Identifying the two entire functions, and
   hence the source-space product difference with the classical
-  anti-discriminant, remains open.
+  anti-discriminant, remains open. Ordinary and starred intrinsic boundary
+  characteristics now have exact free-sine exterior ratio one, while the
+  classical separated characteristic has sine-scale growth. These give a
+  uniform bound on the classical-to-intrinsic ratio outside distant free-root
+  discs, an input to the remaining entire-factor proof.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -2012,6 +2012,18 @@ source product have precisely the same zeros. This establishes the zero-set
 part of the dense-subspace comparison. Analytic orders and the entire
 normalization factor remain to be identified.
 
+The source-normalized complete boundary product now has ratio one to the
+free sine along every separated escaping spectral path. This passes to both
+intrinsic boundary characteristics and their ordinary and actual starred
+source pullbacks at every finite exponent. An exterior threshold bounds the
+intrinsic/free ratio below by one half. Separately, the classical monodromy
+characteristic has sine-scale growth in the imaginary spectral height, so
+its ratio to an intrinsic boundary characteristic is uniformly bounded on
+the distant separated exterior. The missing analytic-order comparison is
+needed to extend this ratio through the roots before a Liouville argument
+can identify its constant value; a classical vertical asymptotic will then
+fix that constant at one.
+
 Next identify the analytic orders and normalization of the source
 characteristics with the classical endpoint characteristics on a dense
 physical subspace, which will turn the
