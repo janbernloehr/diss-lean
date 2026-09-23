@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 807 modules and 5089 named public theorems. All compile on the
+The library has 808 modules and 5097 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -18,6 +18,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalSeparatedPhysicalReconstruction` | Converse forced ODE for actual interval-domain chains, reconstruction of scalar jets from all finite physical root vectors, surjectivity of the jet map, exact finite root-space dimension, and equality of classical characteristic order with physical algebraic multiplicity |
 | `NLS.ZakharovShabat.ClassicalSeparatedCanonicalIdentity` | Exact equality of the intrinsic boundary product and literal classical endpoint characteristic for continuous physical potentials, via equal zero orders, an entire filled quotient, exterior bounds, maximum modulus, and upper normalization |
 | `NLS.ZakharovShabat.FiniteSourceAntiDiscriminant` | Exact auxiliary source/classical characteristic equality on finite Fourier input, domain-based anti-discriminant equality at every finite exponent, density of finite source pairs, and uniqueness of the continuous extension |
+| `NLS.ZakharovShabat.SourceAntiDiscriminantIdentity` | Full source identity `∆²−4=δ²−4χDχN` at every finite exponent by finite-input monodromy and density; Lemma 9.2(ii) at all indexed Dirichlet roots without a simplicity assumption |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -6803,8 +6804,8 @@ map is asserted by this coordinatewise result.
 Eight API examples cover locally uniform families, circular count stability,
 the full vertical-strip count, finite-block imaginary confinement, reflected
 continuity, source continuity at p=3/2, arbitrary complex source sequences
-approaching zero, and distant source analyticity. Real interlacing in
-Lemma 9.1(iii), starred characteristics, and Lemma 9.2 remain next.
+approaching zero, and distant source analyticity. Later sections prove the
+real interlacing and starred characteristics; Lemma 9.2(iii) remains open.
 
 ## Classical boundary trace and gap comparison
 
@@ -7039,8 +7040,8 @@ a collapsed gap identifies either starred root with its original endpoint.
 The original discriminant at each starred root obeys the alternating signed
 lower bound `2`, including negative odd indices. This proves the starred
 interlacing part of Lemma 9.1(iii). The classical source
-anti-discriminant/product identity for arbitrary `L²` monodromy remains open;
-the dense finite-input identity is proved below.
+anti-discriminant identity on arbitrary physical `L²` monodromy remains open;
+the source product identity is proved below.
 
 Eight standalone API examples check intrinsic central multisets and ordered
 endpoints, phase invariance at a negative signed coordinate, both starred
@@ -7153,8 +7154,17 @@ function. Their domain-based Neumann-minus-Dirichlet difference is exactly
 the classical anti-discriminant, at every finite exponent. Finite source
 pairs are dense, so this jointly analytic candidate is the unique continuous
 extension of those classical values at each spectral parameter. Comparison
-with physical monodromy at arbitrary `L²` source input, and Lemma 9.2(ii–iii),
-remain open.
+with physical monodromy at arbitrary `L²` source input remains open.
+
+The source discriminant equals the classical trace on finite Fourier input,
+and both ordinary source boundary products equal their classical separated
+characteristics there. The unimodular monodromy identity therefore gives
+`∆²−4=δ²−4χDχN` on finite input at every exponent. Joint analyticity makes
+both sides continuous in the source coefficients, so density extends the
+identity to the entire finite-exponent source space. At every indexed
+Dirichlet root `μₙ`, `χD(μₙ)=0`, hence `∆²(μₙ)−4=δ²(μₙ)` without requiring
+simplicity. This proves the algebraic content of Lemma 9.2(ii); its locally
+uniform high-index estimates in part (iii) remain open.
 
 Eight standalone API examples check the anti-trace sign, one printed-label
 equality, the actual endpoint zero equation, joint classical and source
