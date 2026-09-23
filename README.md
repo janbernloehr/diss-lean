@@ -1299,3 +1299,10 @@ infinite paired standard-root product is jointly analytic in the spectral
 parameter and source potential on the open moving-gap complement over
 one connected almost-real source domain. Arbitrary omitted indices and
 the remaining parts of the dissertation are still to be formalized.
+
+For an arbitrary omitted index `n`, the literal symmetric finite cutoff
+from Lemma 10.5 is now defined using the dissertation's `π₀ = 1`,
+`πₙ = nπ` normalization. Its joint moving-gap domain is open, and every
+finite cutoff is jointly analytic and nonzero there. The zero-index
+cutoff agrees exactly with the previously proved paired cutoff. The
+locally uniform infinite-product limit for arbitrary `n` is next.

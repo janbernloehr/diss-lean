@@ -8767,3 +8767,15 @@ to the omitted-zero paired standard-root product, proving joint
 analyticity on the open moving-gap complement over one connected
 almost-real source domain. Arbitrary omitted indices and later
 dissertation results remain open.
+
+## Latest milestone: arbitrary-index finite standard-root products
+
+`SourceStandardRootOmittedFinite.lean` defines the literal symmetric
+finite cutoff of Lemma 10.5 for every omitted `n : ℤ`, using the
+established `π₀ = 1` and `πₙ = nπ` normalizer. It proves the
+arbitrary-index joint moving-gap complement open over one common
+connected almost-real source domain and every cutoff analytic and
+nonzero there. At `n = 0`, the domain and finite cutoff coincide with
+the earlier paired construction. Local uniform convergence of these
+cutoffs to an arbitrary-index infinite product, its analyticity, and
+its nonvanishing remain to be proved.

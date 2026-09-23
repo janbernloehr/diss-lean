@@ -2337,3 +2337,12 @@ short complex lines by Cauchy's theorem. Applied in
 `SourceStandardRootPairedProductJointAnalytic.lean`, this proves joint
 analyticity of the omitted-zero paired product on the open moving-gap
 domain. The next product step is arbitrary omitted indices.
+
+`SourceStandardRootOmittedFinite.lean` starts the arbitrary-index case
+of Lemma 10.5 with the literal symmetric cutoffs and the existing
+single-root free normalization. The moving-gap complement is open for
+every omitted index on one common connected almost-real source set;
+every cutoff is jointly analytic and nonzero on its domain, and the
+zero-index cutoff is definitionally related to the paired construction.
+Next prove local uniform convergence of these cutoffs and analyticity
+and nonvanishing of their infinite limit.

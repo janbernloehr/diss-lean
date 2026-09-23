@@ -18130,3 +18130,27 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_smooth_pairedJointProduct hp hp1
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 arbitrary omitted-index finite API checks. -/
+noncomputable section
+open Filter Topology Metric
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ n : ℤ, IsOpen (sourceStandardRootOmittedJointDomain hp hp1 W n) ∧
+        ∀ N : ℕ, AnalyticOnNhd ℂ
+          (sourceStandardRootOmittedPartialProduct hp hp1 n N)
+          (sourceStandardRootOmittedJointDomain hp hp1 W n) :=
+  exists_global_source_open_analytic_omittedPartialProduct hp hp1
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ) (N : ℕ) :
+    sourceStandardRootOmittedPartialProduct hp hp1 0 N (z,ψ) =
+      sourceStandardRootPairedPartialProduct hp hp1 ψ z N :=
+  sourceStandardRootOmittedPartialProduct_zero hp hp1 ψ z N
+
+end NLS.ZakharovShabat
