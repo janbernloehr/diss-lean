@@ -8865,3 +8865,14 @@ gives a finite exponential error bound for the correction product and
 therefore for the quotient relative to its midpoint product. The
 uniform disc and `ℓᵖ` sequence estimates needed for the full asymptotic
 statement remain to be proved.
+
+## Latest milestone: squared-gap reciprocal rows for Lemma 10.8
+
+`SquaredReciprocalRows.lean` establishes the powered Young estimate for
+reciprocal-square convolution at every real exponent `r > 1/2`. The
+actual positive row sums, not just their powered majorants, lie in
+`ℓʳ`. `SourceSquaredGapReciprocalRows.lean` applies this with `r=p/2`
+to the canonical squared gaps and reindexes the result into the
+dissertation's off-diagonal sum over `m ≠ n`. Each sum converges, and
+the whole sequence lies in `ℓ^(p/2)` for `1 < p < ∞`. The remaining
+geometric comparison and midpoint-product estimate are open.

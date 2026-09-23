@@ -2405,3 +2405,11 @@ half-unit ball, and bounds the correction product's error by the
 exponential of the sum of radicand norms. Next prove the uniform
 isolating-disc separation and powered Young estimate for that sum,
 then the midpoint quotient asymptotics and infinite-product limit.
+
+`SquaredReciprocalRows.lean` proves the reciprocal-square kernel belongs
+to every `ℓᵗ` above one half and applies powered Young with
+`t = min(1,p/2)`. `SourceSquaredGapReciprocalRows.lean` instantiates this
+for the canonical source gaps: every physical off-diagonal row converges
+and its row-sum sequence lies in `ℓ^(p/2)`, including `1 < p < 2`.
+Next transfer this row bound to the radicand on each isolating disc,
+then estimate the midpoint quotient and pass to infinite products.

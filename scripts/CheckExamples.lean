@@ -15895,6 +15895,20 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
 
 end NLS.ZakharovShabat
 
+/- Lemma 10.8: the physical squared-gap rows converge for all 1 < p < infinity. -/
+noncomputable section
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) :
+    Summable (sourceSquaredGapReciprocalTerm hp hp1 ψ n) := by
+  obtain ⟨S, hS, _⟩ := exists_sourceSquaredGapPhysicalRows hp hp1 ψ
+  exact (hS n).1
+
+end NLS.ZakharovShabat
+
 /- Lemma 10.8: finite quotient factorization and inverse-root bound. -/
 noncomputable section
 open scoped ENNReal

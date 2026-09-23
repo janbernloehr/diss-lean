@@ -1357,3 +1357,9 @@ radicand perturbation of norm at most one half, the correction differs
 from one by at most twice that norm. The finite correction product has
 an exponential error bound, reducing the remaining estimate to uniform
 source-disc separation and sequence summation.
+
+The reciprocal-square sum in Lemma 10.8 is now an actual convergent
+sequence of rows in `ℓ^(p/2)`. A powered Young argument covers both
+`p ≥ 2` and `1 < p < 2`; the latter does not assume a Banach norm at the
+half exponent. Uniform comparison of the spectral radicands with these
+rows on the isolating discs is the next step.

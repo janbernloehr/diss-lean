@@ -860,3 +860,5 @@ import NLS.ZakharovShabat.SourceCanonicalRootJointAnalytic
 import NLS.ZakharovShabat.SourceCanonicalRootGapSides
 import NLS.ZakharovShabat.SourceCanonicalRootGapIsolation
 import NLS.ZakharovShabat.SourceSingleRootAsymptoticFactors
+import NLS.SequenceSpaces.SquaredReciprocalRows
+import NLS.ZakharovShabat.SourceSquaredGapReciprocalRows
