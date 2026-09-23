@@ -1118,7 +1118,10 @@ installation is absent. No shell startup files are modified.
   Uniform tail isolation and finite central-disc isolation now choose
   those discs on a single connected neighborhood around each real-type
   source potential, proving the local mixed-pair estimate. The bounded
-  central radius is ready for a common all-index disc family.
+  central radius now yields one connected neighborhood and one
+  pairwise-disjoint disc family for all indices. On that family one
+  constant proves the full two-sided estimate (2.10) for every distinct
+  pair. Lemma 10.3's contour identity remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

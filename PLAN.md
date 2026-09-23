@@ -2159,6 +2159,8 @@ and finite central-disc isolation now supply a single connected source
 neighborhood and disc family for that mixed estimate. Next reconcile the
 central-block estimate with this same disc family. The central estimate
 now permits its margin to be reduced below any prescribed positive bound,
-in particular π/4. Next choose that radius in the common neighborhood,
-combine all three index regimes, then prove the contour identity.
+in particular π/4. A common connected source neighborhood and
+pairwise-disjoint all-index disc family now combine the central,
+mixed, and tail estimates into the full two-sided bound (2.10).
+Next prove the contour identity of Lemma 10.3.
 The printed general-`p` central-height constant remains a separate open item.

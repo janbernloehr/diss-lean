@@ -8531,9 +8531,11 @@ formal matrix representation.
    finite central-disc isolation now choose a single connected local
    source neighborhood on which the mixed estimate holds for all pairs.
    The central-block estimate now remains valid after shrinking its disc
-   margin below any chosen positive radius, including π/4. Choosing the
-   common family and neighborhood, combining all index regimes, and
-   proving the contour identity remain.
+   margin below any chosen positive radius, including π/4. One connected
+   source neighborhood and pairwise-disjoint isolating-disc family now
+   support a single `|m−n|` constant for all distinct signed indices,
+   completing equation (2.10). The contour identity of Lemma 10.3
+   remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
