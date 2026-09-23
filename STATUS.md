@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 804 modules and 5058 named public theorems. All compile on the
+The library has 805 modules and 5076 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -15,6 +15,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalSeparatedHalfPlaneAsymptotics` | Explicit upper weighted-entry error bound, free-sine ratio-one limits for both classical separated and auxiliary characteristics, and classical-to-intrinsic and finite auxiliary-to-source quotient limits along separated upper paths |
 | `NLS.ZakharovShabat.ClassicalSeparatedJets` | Convergent scalar endpoint Taylor series from normalized solution chains; equality of formal and analytic orders; finite scalar jet nullity and exact chain endpoint equations |
 | `NLS.ZakharovShabat.ClassicalSeparatedPhysicalChains` | Actual `C¹` and physical `L²` representatives of scalar jets, original pencil recursion, linear injection into every finite physical boundary root space, finite analytic order, and the one-sided order/multiplicity bound |
+| `NLS.ZakharovShabat.ClassicalSeparatedPhysicalReconstruction` | Converse forced ODE for actual interval-domain chains, reconstruction of scalar jets from all finite physical root vectors, surjectivity of the jet map, exact finite root-space dimension, and equality of classical characteristic order with physical algebraic multiplicity |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7100,8 +7101,9 @@ characteristics. Combined with the intrinsic product exterior limit, the
 classical-to-intrinsic and auxiliary-to-starred-source quotients tend to one
 along separated upper paths; the latter is stated explicitly at matched
 finite Fourier source input. This fixes the eventual entire quotient's
-constant but does not yet prove that the quotient extends through its common
-zeros. The analytic-order comparison remains open.
+constant. The classical and intrinsic boundary characteristics now have the
+same analytic order at every root; extension of their quotient and the global
+normalization identity remain to be proved.
 
 The separated classical endpoint defect is now proved equal to `-2i` times
 its source-normalized characteristic. Applying the endpoint functional to
@@ -7111,9 +7113,9 @@ truncation length `N`, finite scalar Taylor convolution is the signed right
 endpoint defect of a forced chain whose prescribed initial values all obey
 the left separated condition. Thus kernel membership is exactly the full
 finite list of right endpoint conditions. If the analytic order is a finite
-natural `m`, the kernel has dimension `min N m`. The still-missing step is a
-linear equivalence between these scalar chain kernels and the actual
-physical generalized eigenspaces, including their finite-level dimensions.
+natural `m`, the kernel has dimension `min N m`. These scalar chain kernels
+are now linearly bijective with the actual physical generalized eigenspaces
+at every finite level.
 
 Each scalar kernel jet now has an actual `C¹` interval representative at
 every chain level. The pointwise forced-solution recursion is carried into
@@ -7126,8 +7128,15 @@ injection of each finite Taylor kernel into the physical root space. Its
 dimension cannot exceed the full physical algebraic multiplicity, which
 also rules out infinite analytic vanishing order. At every parameter, the
 classical separated characteristic's order is therefore finite and at most
-the physical multiplicity. Surjectivity, and thus the reverse inequality
-and exact equality with the intrinsic product order, remains open.
+the physical multiplicity. The converse ODE transfers each physical
+interval-domain pencil equation to the corresponding forced solution.
+Induction reconstructs every finite physical chain from its initial vectors,
+and the left endpoint condition recovers its scalar jet. The jet map is
+therefore surjective as well as injective. Every finite physical root space
+has dimension `min N m`, where `m` is the classical characteristic's analytic
+order. Stabilization gives exact equality with the full physical algebraic
+multiplicity and hence with the intrinsic product order. The normalized
+function identity remains open.
 
 On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,

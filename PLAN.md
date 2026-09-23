@@ -2032,13 +2032,14 @@ such chains, and their nullity is the truncated classical analytic order.
 The corresponding physical forced chains now define a linear injection into
 each finite boundary root space. This proves finite classical analytic orders
 and the inequality from classical order to physical algebraic multiplicity.
-The remaining comparison must prove surjectivity onto the physical finite
-root spaces and hence the reverse inequality. Equal analytic orders will extend the
-quotient through the roots; the exterior bound and upper limit supply the
-Liouville normalization argument.
+The scalar Taylor kernel is now linearly bijective with each finite physical
+root space. Their dimensions are `min N m`, and the classical characteristic's
+analytic order equals the full physical algebraic multiplicity. The intrinsic
+boundary characteristic already has that physical order. Next extend the
+classical-to-intrinsic quotient through their common zeros; the exterior bound
+and upper limit supply the Liouville normalization argument.
 
-Next show every original physical finite boundary chain agrees on `[0,1]`
-with a classical forced-solution chain, then match analytic orders and normalization of the source
+Then match normalization of the source
 characteristics with the classical endpoint characteristics on a dense
 physical subspace, which will turn the
 candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove

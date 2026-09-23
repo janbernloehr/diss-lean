@@ -1018,12 +1018,14 @@ installation is absent. No shell startup files are modified.
   from normalized forced-solution chains. Its formal order equals its analytic
   order, and each finite scalar Taylor kernel is exactly the system of
   separated endpoint conditions on a finite chain. At finite order `m`, its
-  kernel dimension is `min N m` at truncation length `N`. Identifying these
-  chain kernels with the original physical generalized eigenspaces remains.
-  Each scalar kernel now maps linearly and injectively into the corresponding
-  finite physical interval root space. Its characteristic order is finite
-  everywhere and no larger than the physical algebraic multiplicity. The
-  reverse inequality, hence equality of orders, remains open.
+  kernel dimension is `min N m` at truncation length `N`. Every original
+  physical generalized eigenvector now reconstructs a unique finite scalar
+  jet: the classical forced ODE identifies each interval-domain chain level,
+  and its left endpoint determines the scalar coefficient. The resulting
+  linear map from the scalar Taylor kernel onto each finite physical root
+  space is bijective. Thus the finite physical root-space dimension is
+  `min N m`, and the characteristic's analytic order equals the full original
+  physical algebraic multiplicity at every spectral parameter.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
