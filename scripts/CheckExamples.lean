@@ -15894,6 +15894,25 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
   mem_ker_classicalSeparatedTaylorJetMap_iff b Φ z N w
 
 end NLS.ZakharovShabat
+
+/- Analytic finite cutoffs of the omitted-zero standard-root product. -/
+noncomputable section
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ)
+    (hz : z ∈ sourceStandardRootPairedDomain hp hp1 ψ) (N : ℕ) :
+    AnalyticAt ℂ (fun w => sourceStandardRootPairedPartialProduct hp hp1 ψ w N) z :=
+  sourceStandardRootPairedPartialProduct_analyticAt hp hp1 ψ z hz N
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (K : Set ℂ)
+    (hK : K ⊆ sourceStandardRootPairedDomain hp hp1 ψ) (j : ℕ) :
+    ContinuousOn (fun w => sourceStandardRootPairedFactor hp hp1 ψ w j) K :=
+  sourceStandardRootPairedFactor_continuousOn hp hp1 ψ K hK j
+
+end NLS.ZakharovShabat
 noncomputable section
 open Set Complex MeasureTheory NLS.LinearVolterra NLS.ComplexAnalysis
 namespace NLS.ZakharovShabat

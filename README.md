@@ -1242,3 +1242,9 @@ finite cutoffs converge at every source potential and spectral parameter.
 The limit is nonzero outside the noncentral gap segments. The proof places
 single-factor errors in `ℓ²` and their paired cross term in `ℓ¹` by Hölder.
 Analyticity and arbitrary omitted indices remain.
+
+The natural finite paired cutoffs are now analytic in the spectral parameter
+away from the noncentral gaps. On the connected almost-real source domain,
+they are jointly analytic in the spectral parameter and source coefficients.
+Each paired factor is continuous on compact subsets of the gap complement,
+providing the continuity hypothesis for the next uniform-convergence step.

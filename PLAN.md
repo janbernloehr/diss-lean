@@ -2263,3 +2263,10 @@ Off the noncentral gap segments, no factor vanishes and neither does the
 infinite product. Next prove locally uniform convergence and analyticity
 in the spectral parameter and source potential, then extend from omitted
 index zero to an arbitrary omitted index.
+
+`SourceStandardRootPairedProductAnalytic.lean` defines the natural finite
+cutoffs and proves their pointwise convergence to the existing product.
+Each factor and cutoff is spectrally analytic off the noncentral gaps; the
+cutoffs are jointly analytic on the common connected almost-real source
+domain. Factor continuity on compact subsets is available for the next step:
+prove locally uniform convergence, then pass analyticity to the limit.

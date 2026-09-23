@@ -8673,3 +8673,13 @@ finite cutoffs and is nonzero off all noncentral gap segments. This proves
 the pointwise convergence and nonvanishing parts of Lemma 10.5 for the
 omitted index zero. Locally uniform convergence, analyticity, and arbitrary
 omitted indices remain open.
+
+## Latest milestone: analytic finite paired cutoffs
+
+`SourceStandardRootPairedProductAnalytic.lean` defines the finite paired
+cutoffs and proves their pointwise convergence to the omitted-zero product.
+Each factor and cutoff is analytic in the spectral parameter off the
+noncentral gaps. On the connected almost-real source domain, every finite
+cutoff is jointly analytic in the spectral parameter and source coefficients.
+Factor continuity on compact gap-complement subsets is also proved.
+Uniform convergence and analyticity of the infinite limit remain open.
