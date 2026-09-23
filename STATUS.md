@@ -8876,3 +8876,15 @@ to the canonical squared gaps and reindexes the result into the
 dissertation's off-diagonal sum over `m ≠ n`. Each sum converges, and
 the whole sequence lies in `ℓ^(p/2)` for `1 < p < ∞`. The remaining
 geometric comparison and midpoint-product estimate are open.
+
+## Latest milestone: local radicand comparison for Lemma 10.8
+
+`SourceMidpointDiscSeparation.lean` proves that, near each real-type
+source, the midpoint at index `m` has distance at least a fixed
+multiple of `|m-n|` from every point of the other index's isolating
+disc. The proof combines half-margin separation in the finite central
+block, central-to-tail geometry, and free-disc separation in the tails.
+Consequently each squared-gap radicand is bounded by its physical
+reciprocal-square row term, and every finite off-diagonal sum is bounded
+by the convergent full row. The midpoint-product estimate and final
+Lemma 10.8 asymptotics remain to be proved.

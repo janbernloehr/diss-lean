@@ -15895,6 +15895,28 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
 
 end NLS.ZakharovShabat
 
+/- Lemma 10.8: locally uniform squared-gap radicand row bound. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧
+        ∃ C : ℝ, 1 ≤ C ∧
+          ∀ ψ ∈ V, ∀ i : ℤ,
+            ∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε i,
+              ∀ s : Finset ℤ, (∀ j ∈ s, j ≠ i) →
+                ∑ j ∈ s, ‖sourceSingleRootGapRadicand hp hp1 ψ j z‖ ≤
+                  (C^2/4) * ∑' j : ℤ,
+                    sourceSquaredGapReciprocalTerm hp hp1 ψ i j :=
+  exists_local_sourceSingleRootGapRadicand_row_bound hp hp1 φ hφ
+
+end NLS.ZakharovShabat
+
 /- Lemma 10.8: the physical squared-gap rows converge for all 1 < p < infinity. -/
 noncomputable section
 open scoped ENNReal

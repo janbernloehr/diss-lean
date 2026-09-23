@@ -1361,5 +1361,10 @@ source-disc separation and sequence summation.
 The reciprocal-square sum in Lemma 10.8 is now an actual convergent
 sequence of rows in `ℓ^(p/2)`. A powered Young argument covers both
 `p ≥ 2` and `1 < p < 2`; the latter does not assume a Banach norm at the
-half exponent. Uniform comparison of the spectral radicands with these
-rows on the isolating discs is the next step.
+half exponent. On an open connected neighborhood of every real-type
+source, periodic midpoints now stay a distance proportional to the
+index separation from every other isolating disc. The squared-gap
+radicand at each such point is bounded by the matching reciprocal-square
+row term, and every finite off-diagonal radicand sum is bounded by the
+full row sum. The midpoint quotient and resulting full asymptotic
+estimate remain open.

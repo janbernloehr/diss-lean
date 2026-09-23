@@ -2413,3 +2413,10 @@ for the canonical source gaps: every physical off-diagonal row converges
 and its row-sum sequence lies in `ℓ^(p/2)`, including `1 < p < 2`.
 Next transfer this row bound to the radicand on each isolating disc,
 then estimate the midpoint quotient and pass to infinite products.
+
+`SourceMidpointDiscSeparation.lean` now establishes a common local
+midpoint-distance constant across central, mixed, and tail indices.
+It transfers that geometry and the physical reciprocal-square row
+summability to a uniform bound for every finite off-diagonal radicand
+sum on each isolating disc. Next control the midpoint quotient, then
+combine it with the gap correction and pass to the product limit.
