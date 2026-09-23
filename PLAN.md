@@ -2212,4 +2212,9 @@ the integral across any continuous family of twice-smooth gap-avoiding
 loops, including moving basepoints. The normalized `−δₘₙ` theorem uses
 only such a continuous family from an enclosing circle; it no longer
 requires the homotopy map on the full square to be twice smooth.
+For equation (2.12), principal-square-root limits from both half-planes
+are now formalized, and the normalized standard root has the required
+opposite gap-side limits for a positive real half-gap and `0<t<1`.
+Next extend the branch calculation through the negative interior half
+and midpoint, then transfer it to canonical complex periodic gaps.
 The printed general-`p` central-height constant remains a separate open item.

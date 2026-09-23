@@ -17583,3 +17583,39 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     γ hγ hγinside H hloop hsmooth havoidm
 
 end NLS.ZakharovShabat
+
+namespace NLS.ComplexAnalysis
+
+example (r : ℝ) (hr : 0 ≤ r) :
+    Filter.Tendsto Complex.sqrt
+      (𝓝[{z : ℂ | 0 < z.im}] (-(r:ℂ)))
+      (𝓝 (Complex.I * (Real.sqrt r : ℂ))) :=
+  sqrt_tendsto_neg_real_upper r hr
+
+example (r : ℝ) (hr : 0 ≤ r) :
+    Filter.Tendsto Complex.sqrt
+      (𝓝[{z : ℂ | z.im < 0}] (-(r:ℂ)))
+      (𝓝 (-Complex.I * (Real.sqrt r : ℂ))) :=
+  sqrt_tendsto_neg_real_lower r hr
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example (τ : ℂ) (d t : ℝ) (hd : 0 < d) (ht : 0 < t) (ht1 : t < 1) :
+    Filter.Tendsto (fun ε : ℝ =>
+      normalizedStandardRoot τ ((2*(d:ℂ))^2)
+        (τ+(d:ℂ)*((t:ℂ)+(ε:ℂ)*Complex.I)))
+      (𝓝[>] (0:ℝ))
+      (𝓝 (-(d:ℂ)*Complex.I*(Real.sqrt (1-t^2):ℂ))) :=
+  normalizedStandardRoot_tendsto_gap_upper_pos τ d t hd ht ht1
+
+example (τ : ℂ) (d t : ℝ) (hd : 0 < d) (ht : 0 < t) (ht1 : t < 1) :
+    Filter.Tendsto (fun ε : ℝ =>
+      normalizedStandardRoot τ ((2*(d:ℂ))^2)
+        (τ+(d:ℂ)*((t:ℂ)-(ε:ℂ)*Complex.I)))
+      (𝓝[>] (0:ℝ))
+      (𝓝 ((d:ℂ)*Complex.I*(Real.sqrt (1-t^2):ℂ))) :=
+  normalizedStandardRoot_tendsto_gap_lower_pos τ d t hd ht ht1
+
+end NLS.ZakharovShabat

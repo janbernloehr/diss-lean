@@ -821,3 +821,5 @@ import NLS.ZakharovShabat.SourceStandardRootContourLocalStability
 import NLS.ComplexAnalysis.ContinuousSmoothLoopHomotopy
 import NLS.ZakharovShabat.SourceStandardRootContourContinuousHomotopy
 import NLS.ComplexAnalysis.CircleSegmentHomotopyGeometry
+import NLS.ComplexAnalysis.SqrtBoundaryLimits
+import NLS.ZakharovShabat.SourceStandardRootGapSidePositive

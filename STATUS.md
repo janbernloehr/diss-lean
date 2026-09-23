@@ -8582,7 +8582,13 @@ formal matrix representation.
    when its basepoint moves and the full square map is not twice smooth.
    This gives the indexed `−δₘₙ` value when such a family starts at an
    enclosing circle. Connecting every stated admissible counterclockwise
-   contour to a known one remains.
+   contour to a known one remains. As a first step toward the gap-side
+   formula (2.12), the principal square root now has proved upper and
+   lower limits at every nonpositive real number. For a normalized
+   standard root with positive real half-gap, the opposing boundary
+   values `∓i d √(1−t²)` are proved on the positive interior half
+   `0<t<1`. The negative half, midpoint, and general complex-gap
+   orientation remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
