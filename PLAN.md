@@ -2346,3 +2346,13 @@ every cutoff is jointly analytic and nonzero on its domain, and the
 zero-index cutoff is definitionally related to the paired construction.
 Next prove local uniform convergence of these cutoffs and analyticity
 and nonvanishing of their infinite limit.
+
+`SourceStandardRootOmittedProduct.lean` factors each literal symmetric
+cutoff into its zero mode and paired factors with the omitted root
+replaced by `1`. The paired deviations remain absolutely summable
+because only one pair changes. This proves pointwise convergence of
+the literal cutoffs for every omitted index and nonvanishing of the
+limit on the corresponding gap complement; at index zero the limit
+equals the previous paired product. Next upgrade convergence to local
+uniform convergence on the open joint domain and prove joint
+analyticity of the limit.

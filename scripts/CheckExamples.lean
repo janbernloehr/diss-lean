@@ -18154,3 +18154,30 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceStandardRootOmittedPartialProduct_zero hp hp1 ψ z N
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 arbitrary omitted-index infinite API checks. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (ψ : CoeffPair p) (z : ℂ) :
+    Tendsto (fun N : ℕ => sourceStandardRootOmittedPartialProduct hp hp1 n N (z,ψ))
+      atTop (𝓝 (sourceStandardRootOmittedProduct hp hp1 n ψ z)) :=
+  tendsto_sourceStandardRootOmittedPartialProduct hp hp1 n ψ z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (ψ : CoeffPair p) (z : ℂ)
+    (hz : z ∈ sourceStandardRootOmittedDomain hp hp1 ψ n) :
+    sourceStandardRootOmittedProduct hp hp1 n ψ z ≠ 0 :=
+  sourceStandardRootOmittedProduct_ne_zero hp hp1 ψ z n hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ) :
+    sourceStandardRootOmittedProduct hp hp1 0 ψ z =
+      sourceStandardRootPairedProduct hp hp1 ψ z :=
+  sourceStandardRootOmittedProduct_zero hp hp1 ψ z
+
+end NLS.ZakharovShabat

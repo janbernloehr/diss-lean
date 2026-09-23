@@ -8779,3 +8779,15 @@ nonzero there. At `n = 0`, the domain and finite cutoff coincide with
 the earlier paired construction. Local uniform convergence of these
 cutoffs to an arbitrary-index infinite product, its analyticity, and
 its nonvanishing remain to be proved.
+
+## Latest milestone: convergent products with arbitrary omission
+
+`SourceStandardRootOmittedProduct.lean` factors the literal symmetric
+cutoffs into a zero-mode prefactor and positive/negative paired factors
+with the omitted root replaced by `1`. Only one pair changes, so the
+factor deviations from `1` remain absolutely summable. The literal
+cutoffs converge pointwise for every source and spectral parameter to
+the defined arbitrary-index product. It is nonzero off every
+unomitted moving gap, and for omitted index zero it equals the earlier
+paired product. Local uniform convergence and joint analyticity of
+the arbitrary-index limits remain open.

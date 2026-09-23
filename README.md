@@ -1306,3 +1306,11 @@ from Lemma 10.5 is now defined using the dissertation's `π₀ = 1`,
 finite cutoff is jointly analytic and nonzero there. The zero-index
 cutoff agrees exactly with the previously proved paired cutoff. The
 locally uniform infinite-product limit for arbitrary `n` is next.
+
+The literal cutoffs for every omitted index now converge pointwise at
+all complex spectral parameters. Symmetric factorization reduces them
+to paired factors differing from the established omitted-zero product
+at only one pair, so absolute summability persists. The resulting
+infinite product is nonzero wherever all unomitted gap segments are
+avoided, and it agrees with the established paired product at `n = 0`.
+Joint local uniform convergence and analyticity remain next.
