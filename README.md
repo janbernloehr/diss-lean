@@ -1055,7 +1055,11 @@ installation is absent. No shell startup files are modified.
   The algebraic multiplicity in each disc equals the number of occurrences
   in its endpoint pair. Consequently every corresponding Cauchy–Riesz
   projection has complex rank two, even at a collapsed double endpoint.
-  These are the contour prerequisites for Lemma 10.2.
+  The first two contour traces recover the canonical periodic midpoint
+  and squared gap in every assigned disc. Frozen contours make both
+  functions analytic on the open connected almost-real source domain,
+  including at collapsed gaps. This proves the analyticity assertion of
+  Lemma 10.2(ii); its asymptotics and the all-powers assertion remain.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

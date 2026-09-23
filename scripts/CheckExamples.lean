@@ -16420,3 +16420,36 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceIsolatingContour_rank_two hp hp1 φ ψ N ε hε hcluster hdisjoint n
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε : ℝ) (hε : 0 < ε)
+    (hcluster : ∀ m : ℤ, sourceSpectralCluster hp hp1 ψ m ⊆
+      sourceIsolatingDisc hp hp1 φ N ε m)
+    (hdisjoint : ∀ i j : ℤ, i ≠ j →
+      Disjoint (sourceIsolatingDisc hp hp1 φ N ε i)
+        (sourceIsolatingDisc hp hp1 φ N ε j)) (n : ℤ) :
+    let a := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n
+    let b := canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n
+    contourMidpoint hp (periodOnePotential ψ)
+      (sourceIsolatingCenter hp hp1 φ N n)
+      (sourceIsolatingRadius hp hp1 φ N ε n) = (a+b)/2 ∧
+    contourSquaredGap hp (periodOnePotential ψ)
+      (sourceIsolatingCenter hp hp1 φ N n)
+      (sourceIsolatingRadius hp hp1 φ N ε n) = (a-b)^2 :=
+  sourceIsolatingContour_midpoint_squaredGap_eq_pair hp hp1 φ ψ N ε hε hcluster hdisjoint n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ ψ ∈ W, ∀ n : ℤ,
+        AnalyticAt ℂ (fun χ : CoeffPair p =>
+          canonicalPeriodicMidpoint hp hp1 (periodOnePotential χ) (periodOnePotential_mem χ) n) ψ ∧
+        AnalyticAt ℂ (fun χ : CoeffPair p =>
+          (canonicalPeriodicGap hp hp1 (periodOnePotential χ) (periodOnePotential_mem χ) n)^2) ψ :=
+  exists_global_source_analytic_midpoint_squaredGap hp hp1
+
+end NLS.ZakharovShabat

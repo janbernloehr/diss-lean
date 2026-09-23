@@ -2097,6 +2097,11 @@ spectral set is exactly that endpoint pair. The complete canonical multiset
 labeling and pairwise disc disjointness now identify each root's algebraic
 multiplicity with its occurrence count in the indexed pair. Summing those
 counts proves that every assigned Cauchy–Riesz projection has rank two,
-including when the two endpoints coincide. Next use the existing analytic
-contour trace machinery to prove Lemma 10.2's symmetric power sums.
+including when the two endpoints coincide. The first two analytic contour
+traces now agree on each common disc neighborhood with the canonical
+periodic midpoint and squared gap. These canonical functions are therefore
+analytic at every source potential in the open connected almost-real domain,
+even at double endpoints. Next prove the full family of power sums in
+Lemma 10.2(i), the locally uniform sequence asymptotics in (ii), and the
+joint spectral-parameter identity in (iii).
 The printed general-`p` central-height constant remains a separate open item.

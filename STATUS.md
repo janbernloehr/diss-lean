@@ -8472,7 +8472,12 @@ formal matrix representation.
    pair. Within each disc, the original algebraic multiplicity of a root
    equals its occurrence count in that endpoint pair. Thus every assigned
    Cauchy–Riesz projection has complex rank two, also for a collapsed
-   double endpoint. Analytic trace transfer for Lemma 10.2 remains next.
+   double endpoint. The first two contour traces identify the canonical
+   midpoint and squared gap on every local source disc neighborhood. Thus
+   both canonical expressions are analytic throughout the open connected
+   almost-real source domain, including at double endpoints. This is the
+   analyticity assertion of Lemma 10.2(ii). The all-powers assertion,
+   locally uniform asymptotics, and joint identity remain next.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
