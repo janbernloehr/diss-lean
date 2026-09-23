@@ -1087,7 +1087,10 @@ installation is absent. No shell startup files are modified.
   complement of the closed canonical gap segment. On the same
   connected almost-real source domain as Lemma 10.2, it is jointly
   analytic in source coefficients and spectral parameter off the moving
-  gap segment, including where the endpoints coincide.
+  gap segment, including where the endpoints coincide. Its norm squared
+  is exactly the product of the two endpoint distances off the segment.
+  On any different disjoint isolating disc the root is nonzero, and
+  two-sided endpoint distance bounds transfer to the root norm.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

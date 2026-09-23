@@ -16664,3 +16664,29 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_analyticOnNhd_standardRoot hp hp1
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) (z : ℂ)
+    (hz : z ∉ sourcePeriodicSegment hp hp1 ψ n) :
+    ‖sourceStandardRoot hp hp1 ψ n z‖^2 =
+      ‖canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-z‖ *
+        ‖canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-z‖ :=
+  sourceStandardRoot_norm_sq hp hp1 ψ n z hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (m n : ℤ) (z : ℂ)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    (hdisjoint : Disjoint (sourceIsolatingDisc hp hp1 φ N ε m)
+      (sourceIsolatingDisc hp hp1 φ N ε n))
+    (hz : z ∈ sourceIsolatingDisc hp hp1 φ N ε m) :
+    sourceStandardRoot hp hp1 ψ n z ≠ 0 :=
+  sourceStandardRoot_ne_zero_on_distinct_isolatingDisc
+    hp hp1 φ ψ N ε m n z hcluster hdisjoint hz
+
+end NLS.ZakharovShabat

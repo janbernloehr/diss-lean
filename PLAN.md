@@ -2134,5 +2134,8 @@ principal standard root is therefore analytic in the spectral parameter
 throughout this complement. The analytic midpoint and squared gap now
 also make it jointly analytic in source coefficients and spectral parameter
 on the same connected almost-real source domain, including collapsed gaps.
-Next prove the cross-disc estimates and contour identity.
+The root norm squared is now identified with the product of its endpoint
+distances, and roots are nonzero on distinct isolating discs. Abstract
+two-sided endpoint bounds transfer to the root. Next prove the uniform
+index-distance bounds in (2.10), then the contour identity.
 The printed general-`p` central-height constant remains a separate open item.

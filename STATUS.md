@@ -8503,8 +8503,11 @@ formal matrix representation.
    analytic in the spectral parameter throughout that complement. On the
    connected almost-real source domain from Lemma 10.2, it is jointly
    analytic in source coefficients and spectral parameter off the moving
-   gap segment, including collapsed gaps. Cross-disc bounds and the
-   contour identity remain next.
+   gap segment, including collapsed gaps. The norm squared of each root
+   equals the product of its two endpoint distances, so the root does
+   not vanish on a different disjoint isolating disc. Two-sided endpoint
+   bounds transfer directly to its norm. Uniform index-distance bounds
+   and the contour identity remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
