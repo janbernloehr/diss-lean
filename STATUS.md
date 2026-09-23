@@ -8449,6 +8449,12 @@ formal matrix representation.
    displacement conclusions hold, together with the midpoint consequence.
    Corrected Propositions 6.1/6.3 now hold for the original periodic eigenvalue
    pairs and intrinsic squared gaps, with exact spectral algebraic multiplicities.
+   The real-type five-coordinate source spectral clusters now admit explicit
+   midpoint-centered discs for every finite central index block. A single
+   strictly positive margin contains each cluster and keeps discs for
+   distinct indices disjoint, even at collapsed periodic gaps. Local
+   persistence of these fixed central discs and their assembly with the
+   free-disc tail remain open.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

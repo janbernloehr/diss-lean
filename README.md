@@ -1029,8 +1029,13 @@ installation is absent. No shell startup files are modified.
   pointwise separation. The finite central isolating discs remain.
   At real-type source potentials, every five-coordinate cluster lies in its
   indexed real periodic gap, and different indexed clusters have a positive
-  lower bound on their mutual distance. This supports the remaining central
-  disc construction even when coordinates within a cluster collide.
+  lower bound on their mutual distance, even when coordinates within a
+  cluster collide.
+  Every cluster in a finite central block now fits strictly inside an
+  explicit midpoint-centered complex disc. A single positive enlargement
+  margin can be chosen for the entire block so that these discs are pairwise
+  disjoint, including when a periodic gap collapses. Keeping the central
+  coordinates in these fixed discs on a common neighborhood remains next.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

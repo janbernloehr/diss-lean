@@ -765,3 +765,6 @@ import NLS.ZakharovShabat.SourcePeriodicTailIsolation
 import NLS.ZakharovShabat.SourceTailIsolation
 import NLS.ZakharovShabat.FreeDiscSeparation
 import NLS.ZakharovShabat.SourceSpectralClusters
+import NLS.ComplexAnalysis.RealIntervalDiscs
+import NLS.ComplexAnalysis.FinitePositiveMargins
+import NLS.ZakharovShabat.SourceClusterDiscs

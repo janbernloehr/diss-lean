@@ -2072,7 +2072,12 @@ with the same five-family containment and separation, then assemble the
 open connected neighborhood and locally common isolating-disc sequences.
 The real-type five-coordinate clusters are now proved to lie in their
 indexed gaps and to be strictly separated in real part, with a metric lower
-bound by the intervening periodic endpoint gap. Next choose central discs
-around these finite clusters with positive margins, then use coordinate
-continuity to keep all five families inside the same discs nearby.
+bound by the intervening periodic endpoint gap.
+The finite central disc construction is now proved: each midpoint disc
+contains its real-type five-coordinate cluster, and a finite minimum of
+the positive inter-cluster gaps supplies one margin making all central
+discs pairwise disjoint. Next freeze these discs at the base potential and
+use continuity of the five coordinates to preserve membership on a common
+open source neighborhood. Then combine that central neighborhood with the
+uniform tail neighborhoods for Lemma 10.1.
 The printed general-`p` central-height constant remains a separate open item.

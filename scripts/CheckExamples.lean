@@ -16229,3 +16229,31 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceSpectralCluster_dist_ge_gap hp hp1 φ hφ hij hz hw
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open NLS.ComplexAnalysis
+open scoped ENNReal
+
+example {l r ε : ℝ} (hε : 0 < ε) {z : ℂ}
+    (him : z.im = 0) (hz : z.re ∈ Icc l r) :
+    z ∈ ball (((l+r)/2 : ℝ) : ℂ) ((r-l)/2+ε) :=
+  real_mem_midpoint_disc_of_mem_Icc hε him hz
+
+example {ι : Type*} [LinearOrder ι] (s : Finset ι) (g : ι → ι → ℝ)
+    (hg : ∀ i ∈ s, ∀ j ∈ s, i < j → 0 < g i j) :
+    ∃ ε : ℝ, 0 < ε ∧ ∀ i ∈ s, ∀ j ∈ s, i < j → 2 * ε ≤ g i j :=
+  exists_positive_margin_for_finite_pairs s g hg
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (s : Finset ℤ) :
+    ∃ ε : ℝ, 0 < ε ∧
+      (∀ n ∈ s, sourceSpectralCluster hp hp1 φ n ⊆
+        sourceClusterDisc hp hp1 φ (fun _ => ε) n) ∧
+      (∀ i ∈ s, ∀ j ∈ s, i < j →
+        Disjoint (sourceClusterDisc hp hp1 φ (fun _ => ε) i)
+          (sourceClusterDisc hp hp1 φ (fun _ => ε) j)) :=
+  exists_sourceClusterDiscs_finite_block hp hp1 φ hφ s
+
+end NLS.ZakharovShabat
