@@ -2365,3 +2365,11 @@ index on its open joint moving-gap domain. The local Banach-space
 analyticity theorem gives joint analyticity, and the pointwise factor
 argument gives nonvanishing. This completes the product assertions of
 Lemma 10.5 in the current source model. Next formalize Corollary 10.6.
+
+`JointSingleSpectralProducts.lean` establishes the numerator's first
+analyticity ingredient: the entire normalized single-root product is
+jointly analytic in the spectral parameter and arbitrary `ℓᵖ`
+displacements, with literal finite cutoffs converging uniformly on
+compact spectral sets over bounded displacement families. Next delete
+one prescribed numerator factor, retain analyticity across its root,
+and divide by Lemma 10.5's nonzero omitted-root product.

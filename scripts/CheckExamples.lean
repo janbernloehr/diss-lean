@@ -18214,3 +18214,23 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceStandardRootOmittedProduct_analyticOnNhd_spectral hp hp1 n W hjoint ψ hψ
 
 end NLS.ZakharovShabat
+
+/- Corollary 10.6 precursor: joint single-root numerator API. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    AnalyticOnNhd ℂ (jointSingleSpectralProduct (p := p)) Set.univ :=
+  analyticOnNhd_jointSingleSpectralProduct hp hp1
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (K : Set ℂ) (hK : IsCompact K) (S : Set (Coeff p))
+    (R : ℝ) (hR : 0 ≤ R) (hb : ∀ a ∈ S, ‖a‖ ≤ R) :
+    TendstoUniformlyOn (jointSingleSpectralPartialProduct (p := p))
+      (jointSingleSpectralProduct (p := p)) atTop (K ×ˢ S) :=
+  tendstoUniformlyOn_jointSingleSpectralProduct hp hp1 K hK S R hR hb
+
+end NLS.ZakharovShabat

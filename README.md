@@ -1322,3 +1322,10 @@ literal symmetric cutoffs converge locally uniformly there. Restricting
 the joint result gives spectral analyticity for each fixed source.
 The next dissertation step is Corollary 10.6 on quotients of the
 entire spectral product by these standard-root products.
+
+The full normalized single-root spectral product is now jointly entire
+in the spectral parameter and its `ℓᵖ` root-displacement sequence.
+The symmetric finite cutoffs converge uniformly on compact spectral
+sets over bounded displacement families. This supplies the numerator
+analyticity needed for Corollary 10.6; deleting one root and forming
+the quotient remain the next steps.

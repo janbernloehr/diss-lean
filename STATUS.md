@@ -8804,3 +8804,14 @@ omitted index, each product is jointly analytic and nonzero; fixing a
 source yields spectral analyticity. The zero-index joint product is the
 previous paired product. The next dissertation target is Corollary
 10.6, the analytic quotient product.
+
+## Latest milestone: jointly entire single-root numerator
+
+`JointSingleSpectralProducts.lean` puts the full normalized single-root
+product in joint spectral/`ℓᵖ` displacement coordinates. Every literal
+symmetric cutoff is jointly analytic. The established family estimates
+give convergence uniform on compact spectral sets times bounded
+displacement sets, and local Banach-space analytic approximation proves
+the infinite product jointly entire. Corollary 10.6 still requires
+deleting a prescribed numerator root before dividing by the nonzero
+omitted standard-root product.
