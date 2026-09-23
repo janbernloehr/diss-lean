@@ -1158,7 +1158,13 @@ installation is absent. No shell startup files are modified.
   circle: explicit inner and outer distance bounds keep the deformation
   away from the gap and inside its isolating disc. The normalized
   `−δₘₙ` identity therefore holds for this additional class without a
-  polar parametrization or a supplied homotopy.
+  polar parametrization or a supplied homotopy. More generally, convex
+  contraction proves that every twice-smooth closed loop inside an
+  assigned isolating disc has zero off-diagonal inverse-root integral.
+  The indexed identity therefore needs a gap-avoiding circle homotopy
+  only for the diagonal case; that homotopy may leave the isolating disc.
+  The diagonal identity for every admissible counterclockwise contour
+  remains open.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

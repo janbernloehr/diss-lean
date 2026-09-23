@@ -8568,8 +8568,13 @@ formal matrix representation.
    conditions for every twice-smooth closed loop uniformly close to an
    enclosing circle, using explicit inner and outer distance bounds.
    This yields `−δₘₙ` for the broader near-circle class without a polar
-   parametrization. The extension to every stated admissible contour
-   remains.
+   parametrization. A general holomorphic one-form theorem now gives
+   zero integral on every twice-smooth closed loop in a convex set.
+   Applying it to the assigned isolating discs proves the off-diagonal
+   zero identity for every such loop inside its disc, with no circle or
+   homotopy condition. The indexed theorem now asks for a gap-avoiding
+   circle homotopy only in the diagonal case. Its extension to every
+   stated admissible counterclockwise contour remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

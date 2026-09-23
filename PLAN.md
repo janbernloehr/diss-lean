@@ -2194,7 +2194,12 @@ the theorem statement. An affine homotopy now supplies the deformation
 for every twice-smooth loop uniformly close to an enclosing circle.
 Explicit distance bounds keep every intermediate point outside a disc
 containing the indexed gap and inside an outer disc contained in its
-isolating disc; hence this class also satisfies `−δₘₙ`. Next extend
-the construction to the full admissible contour class of Lemma 10.3,
-or formalize an equivalent winding-number argument.
+isolating disc; hence this class also satisfies `−δₘₙ`. Convex
+contraction now proves off-diagonal zero for every twice-smooth closed
+loop contained in an assigned isolating disc, with no homotopy or
+circle-closeness hypothesis. The full indexed theorem therefore requires
+a gap-avoiding circle homotopy only for the diagonal case; that homotopy
+need not remain in the isolating disc. Next establish the diagonal value
+for the full admissible contour class of Lemma 10.3, perhaps through a
+winding-number argument.
 The printed general-`p` central-height constant remains a separate open item.
