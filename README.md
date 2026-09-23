@@ -1042,8 +1042,12 @@ installation is absent. No shell startup files are modified.
   central discs are also disjoint from both tails: the two outer central
   endpoints are localized and the common central margin is at most π/4.
   Shrinking to a source ball makes this common neighborhood connected.
-  Constructing the global connected neighborhood of the real-type locus
-  remains next.
+  The real-type source locus is convex, hence connected. The union of its
+  local connected neighborhoods is now an open connected `Ŵp` containing
+  that locus. Every point of `Ŵp` has a common local disc sequence for all
+  nearby source potentials, and each periodic endpoint segment is inside
+  its assigned disc. This proves the source-coefficient geometry of
+  Lemma 10.1.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

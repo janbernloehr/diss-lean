@@ -8459,8 +8459,13 @@ formal matrix representation.
    high-index discs, covering every signed index. The central margin can
    be chosen at most π/4; outer endpoint localization then separates
    every central disc from both tails. The resulting source neighborhood
-   can be chosen open and connected. The global connected neighborhood
-   of the full real-type locus remains open.
+   can be chosen open and connected. The real-type source locus is convex;
+   the union of the local connected neighborhoods is an open connected
+   source domain containing it. Every point of that domain has a local
+   common sequence of pairwise disjoint isolating discs, with free
+   quarter-π discs at high indices. Each full periodic endpoint segment
+   lies in its assigned disc. This is the source-coefficient geometric
+   form of Lemma 10.1.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

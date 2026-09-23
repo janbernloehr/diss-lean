@@ -16323,3 +16323,33 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_local_source_connected_isolating_discs hp hp1 φ hφ
 
 end NLS.ZakharovShabat
+
+open Set Metric
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε : ℝ) (n : ℤ)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n) :
+    sourcePeriodicSegment hp hp1 ψ n ⊆ sourceIsolatingDisc hp hp1 φ N ε n :=
+  sourcePeriodicSegment_subset_isolatingDisc hp hp1 φ ψ N ε n hcluster
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ ψ ∈ W, ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧
+        ψ ∈ V ∧ V ⊆ W ∧
+        ∃ φ : CoeffPair p, ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+          (∀ χ ∈ V, ∀ n : ℤ,
+            sourceSpectralCluster hp hp1 χ n ⊆
+              sourceIsolatingDisc hp hp1 φ N ε n) ∧
+          (∀ χ ∈ V, ∀ n : ℤ,
+            sourcePeriodicSegment hp hp1 χ n ⊆
+              sourceIsolatingDisc hp hp1 φ N ε n) ∧
+          (∀ i j : ℤ, i ≠ j →
+            Disjoint (sourceIsolatingDisc hp hp1 φ N ε i)
+              (sourceIsolatingDisc hp hp1 φ N ε j)) :=
+  exists_global_source_isolating_neighborhood hp hp1
+
+end NLS.ZakharovShabat

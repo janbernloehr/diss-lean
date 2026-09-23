@@ -2082,6 +2082,12 @@ all five nearby source coordinates. Central discs are mutually disjoint,
 as are the free tail discs. Bounded finite margins and localization of the
 two outer central endpoints now prove cross separation as well. A connected
 source ball supports pairwise disjoint discs for every index and all five
-coordinates. Next assemble these local balls around the entire real-type
-locus into the open connected `Ŵp` of Lemma 10.1.
+coordinates. The real-type source locus is convex and connected; the union
+of its local connected balls is an open connected `Ŵp`. Every point of
+this union inherits one local common sequence of pairwise disjoint discs,
+with free quarter-π discs at high indices. Convexity of the discs also
+contains the complete periodic endpoint segment. This completes the
+source-coefficient geometric statement of Lemma 10.1. Next use these
+isolating neighborhoods for Lemma 10.2's analytic symmetric spectral
+coordinates and the action-coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
