@@ -1052,6 +1052,9 @@ installation is absent. No shell startup files are modified.
   periodic spectrum inside each assigned disc as exactly its indexed
   endpoint pair. Each circular boundary avoids the periodic spectrum,
   and the corresponding finite enclosed spectral set is that same pair.
+  The algebraic multiplicity in each disc equals the number of occurrences
+  in its endpoint pair. Consequently every corresponding Cauchy–Riesz
+  projection has complex rank two, even at a collapsed double endpoint.
   These are the contour prerequisites for Lemma 10.2.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the

@@ -16385,3 +16385,38 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   enclosedPeriodicSpectrum_sourceIsolating_eq_pair hp hp1 φ ψ N ε hcluster hdisjoint n
 
 end NLS.ZakharovShabat
+
+open Set Metric
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε : ℝ)
+    (hcluster : ∀ m : ℤ, sourceSpectralCluster hp hp1 ψ m ⊆
+      sourceIsolatingDisc hp hp1 φ N ε m)
+    (hdisjoint : ∀ i j : ℤ, i ≠ j →
+      Disjoint (sourceIsolatingDisc hp hp1 φ N ε i)
+        (sourceIsolatingDisc hp hp1 φ N ε j))
+    (n : ℤ) {z : ℂ}
+    (hz : z ∈ sourceIsolatingDisc hp hp1 φ N ε n)
+    (hspec : z ∈ periodicSpectrum hp (periodOnePotential ψ)) :
+    periodicAlgebraicMultiplicity hp (periodOnePotential ψ) z =
+      ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n,
+        canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n} : Multiset ℂ).count z :=
+  periodicMultiplicity_eq_sourceIsolatingPair_count hp hp1 φ ψ N ε
+    hcluster hdisjoint n hz hspec
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε : ℝ) (hε : 0 < ε)
+    (hcluster : ∀ m : ℤ, sourceSpectralCluster hp hp1 ψ m ⊆
+      sourceIsolatingDisc hp hp1 φ N ε m)
+    (hdisjoint : ∀ i j : ℤ, i ≠ j →
+      Disjoint (sourceIsolatingDisc hp hp1 φ N ε i)
+        (sourceIsolatingDisc hp hp1 φ N ε j)) (n : ℤ) :
+    Module.finrank ℂ
+      (resolventCircleIntegral hp (periodOnePotential ψ)
+        (sourceIsolatingCenter hp hp1 φ N n)
+        (sourceIsolatingRadius hp hp1 φ N ε n)).range = 2 :=
+  sourceIsolatingContour_rank_two hp hp1 φ ψ N ε hε hcluster hdisjoint n
+
+end NLS.ZakharovShabat

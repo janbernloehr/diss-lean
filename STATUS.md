@@ -8469,8 +8469,10 @@ formal matrix representation.
    The actual periodic spectrum within each assigned disc is now exactly
    its canonical endpoint pair. Every assigned circular boundary lies in
    the resolvent set, and the finite enclosed spectral set equals that
-   pair. The rank-two multiplicity statement and analytic trace transfer
-   for Lemma 10.2 remain next.
+   pair. Within each disc, the original algebraic multiplicity of a root
+   equals its occurrence count in that endpoint pair. Thus every assigned
+   Cauchy–Riesz projection has complex rank two, also for a collapsed
+   double endpoint. Analytic trace transfer for Lemma 10.2 remains next.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

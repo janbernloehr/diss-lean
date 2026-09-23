@@ -2093,7 +2093,10 @@ coordinates and the action-coordinate prerequisites.
 The next contour step is now proved: every assigned disc contains exactly
 its own two canonical periodic endpoints from the actual spectrum, and
 every circular boundary lies in the resolvent set. The finite enclosed
-spectral set is exactly that endpoint pair. Next identify its total
-algebraic multiplicity as two, then use the existing analytic contour
-trace machinery to prove Lemma 10.2's symmetric power sums.
+spectral set is exactly that endpoint pair. The complete canonical multiset
+labeling and pairwise disc disjointness now identify each root's algebraic
+multiplicity with its occurrence count in the indexed pair. Summing those
+counts proves that every assigned Cauchy–Riesz projection has rank two,
+including when the two endpoints coincide. Next use the existing analytic
+contour trace machinery to prove Lemma 10.2's symmetric power sums.
 The printed general-`p` central-height constant remains a separate open item.

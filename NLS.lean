@@ -776,3 +776,4 @@ import NLS.ZakharovShabat.SourceRealTypeConvex
 import NLS.ZakharovShabat.SourceGlobalIsolation
 import NLS.ZakharovShabat.SourceIsolatingSpectrum
 import NLS.ZakharovShabat.SourceIsolatingContourGeometry
+import NLS.ZakharovShabat.SourceIsolatingMultiplicity
