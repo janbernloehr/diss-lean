@@ -739,3 +739,5 @@ import NLS.ZakharovShabat.PeriodOneBoundaryInterlacing
 import NLS.ZakharovShabat.CanonicalAuxiliaryBoundaryRoots
 import NLS.ZakharovShabat.AuxiliaryBoundaryCharacteristic
 import NLS.ZakharovShabat.ExponentAuxiliaryBoundaryCoordinates
+import NLS.ZakharovShabat.PeriodicPhaseConjugation
+import NLS.ZakharovShabat.SourcePhaseCompatibility

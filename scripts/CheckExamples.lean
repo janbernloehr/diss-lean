@@ -15484,3 +15484,49 @@ example (b : BoundaryCondition) (φ : CoeffPair 2) :
 
 end
 end StarredCharacteristicChecks
+
+noncomputable section
+open scoped ENNReal
+namespace PhaseCompatibilityChecks
+open NLS NLS.ZakharovShabat
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (hp : p ≠ ⊤) (φ : PairSpace p) (z : ℂ) (x : PairSpace p) :
+    auxiliaryPhase (Coeff p) x ∈ periodicRootSpaceTop hp φ z ↔
+      x ∈ periodicRootSpaceTop hp (auxiliaryPotential φ) z :=
+  mem_periodicRootSpaceTop_auxiliaryPhase hp φ z x
+
+example (hp : p ≠ ⊤) (φ : PairSpace p) :
+    periodicSpectrum hp (auxiliaryPotential φ) = periodicSpectrum hp φ :=
+  periodicSpectrum_auxiliaryPotential hp φ
+
+example (hp : p ≠ ⊤) (φ : PairSpace p) (z : ℂ) :
+    periodicAlgebraicMultiplicity hp (auxiliaryPotential φ) z =
+      periodicAlgebraicMultiplicity hp φ z :=
+  periodicAlgebraicMultiplicity_auxiliaryPotential hp φ z
+
+example (φ : CoeffPair p) :
+    periodOnePotential (sourcePhase φ) = auxiliaryPotential (periodOnePotential φ) :=
+  periodOnePotential_sourcePhase φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    auxiliaryPeriodOneDirichletPotential hp hp1 φ =
+      periodOneBoundaryPotential hp hp1 (sourcePhase φ) :=
+  auxiliaryPeriodOneDirichletPotential_eq_sourcePhase hp hp1 φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition) (φ : CoeffPair p) :
+    canonicalAuxiliaryPeriodOneRoots hp hp1 b φ =
+      canonicalPeriodOneBoundaryRoots hp hp1 b (sourcePhase φ) :=
+  canonicalAuxiliaryPeriodOneRoots_eq_sourcePhase hp hp1 b φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition) (φ : CoeffPair p) :
+    auxiliaryPeriodOneCharacteristic hp hp1 b φ =
+      periodOneBoundaryCharacteristic hp hp1 b (sourcePhase φ) :=
+  auxiliaryPeriodOneCharacteristic_eq_sourcePhase hp hp1 b φ
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (z : ℂ) :
+    periodicAlgebraicMultiplicity hp (periodOnePotential (sourcePhase φ)) z =
+      periodicAlgebraicMultiplicity hp (periodOnePotential φ) z :=
+  periodicAlgebraicMultiplicity_periodOne_sourcePhase hp φ z
+
+end PhaseCompatibilityChecks

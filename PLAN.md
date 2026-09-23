@@ -1959,7 +1959,16 @@ joint analyticity and coordinate continuity at real-type source potentials;
 both canonical coordinates and normalized products are exponent independent.
 This establishes the auxiliary analogues of Lemma 9.1(i–ii).
 
-Next prove starred interlacing against the original periodic gaps, then
+The source phase map now has exact coefficients `(i φ₁, -i φ₂)` and commutes
+with period doubling. It transforms the Neumann-reflected auxiliary source
+potential into the Dirichlet-reflected ordinary potential of the rotated
+source. Thus all starred signed roots and normalized characteristics are
+literally ordinary ones at that source. The unrestricted periodic pencils
+are phase-conjugate at every chain length; their spectra and original
+algebraic multiplicities agree, also on period-one source potentials.
+
+Next identify the canonically indexed periodic endpoints across the phase
+rotation, so ordinary interlacing transfers to starred interlacing; then
 identify the source anti-discriminant with the starred characteristics
 (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

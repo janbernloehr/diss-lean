@@ -978,8 +978,13 @@ installation is absent. No shell startup files are modified.
   auxiliary starred boundary problems now have canonical roots and normalized
   entire products with their actual spectra and multiplicities. Their
   characteristics are jointly analytic, their roots are continuous at
-  real-type potentials, and both agree across finite exponents. Starred
-  interlacing and the source anti-discriminant remain next.
+  real-type potentials, and both agree across finite exponents. Phase
+  conjugation now preserves the original periodic spectrum and every
+  generalized multiplicity. On the period-one source, starred roots and
+  normalized characteristics equal ordinary ones at the explicitly rotated
+  source, whose periodic spectrum is the original one. Identifying the indexed
+  periodic endpoints under this rotation is the next step toward starred
+  interlacing; the source anti-discriminant remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

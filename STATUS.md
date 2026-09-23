@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 791 modules and 4957 named public theorems. All compile on the
+The library has 793 modules and 4972 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.PeriodicPhaseConjugation` | Phase transport of every periodic root chain, full root-space equivalence, exact spectral and algebraic-multiplicity invariance |
+| `NLS.ZakharovShabat.SourcePhaseCompatibility` | Opposite source phases, period-one and reflected-extension identities, starred-to-ordinary canonical roots and characteristics, period-one periodic invariance |
 | `NLS.ZakharovShabat.CanonicalAuxiliaryBoundaryRoots` | Canonical signed roots of both actual auxiliary restrictions, original generalized multiplicity, free values, real-type reality and continuity |
 | `NLS.ZakharovShabat.AuxiliaryBoundaryCharacteristic` | Normalized entire starred products with exact auxiliary zeros and analytic orders, canonical products, free values, and joint analyticity |
 | `NLS.ZakharovShabat.ExponentAuxiliaryBoundaryCoordinates` | Phase rotation, auxiliary source potentials, canonical starred roots, and normalized characteristics commute with finite exponent inclusion |
@@ -6980,10 +6982,34 @@ multiplicity, exact characteristic zeros, the normalized product and joint
 analyticity, free signed values, a negative signed coordinate at a real-type
 potential, and equality of the full characteristic across exponents.
 
+## Periodic and source phase compatibility
+
+The auxiliary phase identifies each finite periodic generalized root chain
+with that of the phase-rotated potential. The full root spaces are linearly
+equivalent, so the original periodic spectrum and each actual algebraic
+multiplicity are unchanged. This holds for every finite exponent covered by
+the periodic pencil, without relying on simplicity or a choice of resolvent
+point.
+
+The source phase map rotates the two period-one coefficient components by
+opposite factors of `i`. It commutes with period doubling and turns the
+Neumann-reflected starred potential into the ordinary Dirichlet-reflected
+potential of the rotated source. The complete starred canonical root sequence
+and normalized entire characteristic therefore equal the corresponding
+ordinary objects at the rotated source. For this rotated source, the periodic
+spectrum and every periodic algebraic multiplicity are exactly those of the
+original source. Real type is preserved. Indexed equality of periodic
+endpoints across this rotation has not yet been proved; it is needed to
+transfer the ordinary gap inequalities to the starred roots.
+
+Eight standalone API examples check full root-space transport, spectral and
+multiplicity invariance, period-one compatibility, the reflected source
+identity, and equality of the full root sequences and characteristics.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9819 declarations under `NLS`, including generated
+axioms. The current audit covers 9843 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
