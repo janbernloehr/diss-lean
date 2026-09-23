@@ -8855,3 +8855,13 @@ discs separate distinct gap segments. On one connected almost-real
 source neighborhood, it combines joint analyticity off the gaps,
 extension through every collapsed gap, and opposite one-sided limits
 on every noncollapsed gap. Lemma 10.8's asymptotic estimate is next.
+
+## Latest milestone: factorization for Lemma 10.8
+
+`SourceSingleRootAsymptoticFactors.lean` rewrites every literal finite
+quotient product as the midpoint product times an inverse square-root
+correction product. A pointwise bound on small squared-gap radicands
+gives a finite exponential error bound for the correction product and
+therefore for the quotient relative to its midpoint product. The
+uniform disc and `ℓᵖ` sequence estimates needed for the full asymptotic
+statement remain to be proved.

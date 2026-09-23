@@ -2397,3 +2397,11 @@ isolating discs to put every point of one gap outside all other gaps and
 combines the analytic, collapsed-gap, and opposite-side clauses on one
 connected source neighborhood. Lemma 10.7 is complete in this source
 model. Next formalize Lemma 10.8's canonical-root asymptotics.
+
+`SourceSingleRootAsymptoticFactors.lean` begins Lemma 10.8. It factors
+the literal finite quotient exactly into midpoint and gap-correction
+products, proves the inverse square-root perturbation bound on the
+half-unit ball, and bounds the correction product's error by the
+exponential of the sum of radicand norms. Next prove the uniform
+isolating-disc separation and powered Young estimate for that sum,
+then the midpoint quotient asymptotics and infinite-product limit.

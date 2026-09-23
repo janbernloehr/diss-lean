@@ -15895,6 +15895,25 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
 
 end NLS.ZakharovShabat
 
+/- Lemma 10.8: finite quotient factorization and inverse-root bound. -/
+noncomputable section
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (N : ℕ) (t : ℂ × (Coeff p × CoeffPair p)) :
+    sourceSingleRootQuotientPartialProduct hp hp1 n N t =
+      sourceSingleRootMidpointPartialProduct hp hp1 n N t *
+        sourceSingleRootGapCorrectionPartialProduct hp hp1 n N t :=
+  sourceSingleRootQuotientPartialProduct_factor hp hp1 n N t
+
+example (q : ℂ) (hq : ‖q‖ ≤ 1/2) :
+    ‖(Complex.sqrt (1-q))⁻¹-1‖ ≤ 2*‖q‖ :=
+  norm_inv_sqrt_one_sub_sub_one_le q hq
+
+end NLS.ZakharovShabat
+
 /- Lemma 10.7: the full canonical root has opposite gap-side limits. -/
 noncomputable section
 open Filter Topology

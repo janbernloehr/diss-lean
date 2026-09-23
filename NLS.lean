@@ -859,3 +859,4 @@ import NLS.ZakharovShabat.SourceCanonicalRootProduct
 import NLS.ZakharovShabat.SourceCanonicalRootJointAnalytic
 import NLS.ZakharovShabat.SourceCanonicalRootGapSides
 import NLS.ZakharovShabat.SourceCanonicalRootGapIsolation
+import NLS.ZakharovShabat.SourceSingleRootAsymptoticFactors

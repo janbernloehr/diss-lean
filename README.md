@@ -1350,3 +1350,10 @@ segments disjoint. On a noncollapsed gap, the upper and lower limits of
 the canonical root exist and are exact negatives; on a collapsed gap it
 extends analytically across the segment. The next target is the
 asymptotic estimate in Lemma 10.8.
+
+The first Lemma 10.8 step now factors each literal finite quotient into
+a midpoint quotient and an inverse square-root gap correction. For a
+radicand perturbation of norm at most one half, the correction differs
+from one by at most twice that norm. The finite correction product has
+an exponential error bound, reducing the remaining estimate to uniform
+source-disc separation and sequence summation.
