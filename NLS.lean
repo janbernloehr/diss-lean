@@ -835,3 +835,4 @@ import NLS.ZakharovShabat.SourceStandardRootGapSideSourceIntegral
 import NLS.ZakharovShabat.SourceStandardRootGapSideImproper
 import NLS.ZakharovShabat.SourceStandardRootGapSideSourceImproper
 import NLS.ZakharovShabat.SourceStandardRootProductFactors
+import NLS.ZakharovShabat.SourceStandardRootMidpointProduct

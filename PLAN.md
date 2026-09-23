@@ -2241,3 +2241,10 @@ the free spectral terms cancel for `k,-k`, and the paired factor is
 square-root error by the radicand error. Next use the source midpoint and
 squared-gap sequence bounds to prove locally uniform summability of the
 paired errors and convergence of the infinite product.
+
+`SourceStandardRootMidpointProduct.lean` now constructs the source midpoint
+factor correction as an `ℓ¹` sequence. Its `k,-k` pairing is absolutely
+summable, and the correction has uniformly small `ℓ¹` tails on a source
+neighborhood. Next bound the square-root remainder by a summable tail,
+then combine it with the midpoint correction and quadratic error term
+to build the locally uniform paired product.

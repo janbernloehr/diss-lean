@@ -8643,3 +8643,12 @@ error decomposition, cancellation of the free spectral terms for indices
 `‖√w−1‖ ≤ ‖w−1‖` for the principal complex root and a resulting pointwise
 factor-error bound. Infinite-product summability, nonvanishing, and joint
 analyticity remain to be established.
+
+## Latest milestone: summable midpoint product correction
+
+`SourceStandardRootMidpointProduct.lean` constructs the midpoint factor
+correction as an `ℓ¹` sequence using Hölder multiplication by the punctured
+reciprocal lattice. It proves absolute summability of the `k,-k` midpoint
+pair and a cutoff tail bound controlled by the source midpoint's `ℓᵖ` tail.
+The latter is uniformly small on a source neighborhood. The square-root
+remainder, quadratic error term, and infinite-product convergence remain.

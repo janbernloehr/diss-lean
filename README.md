@@ -1224,3 +1224,9 @@ standard-root factor as midpoint displacement, free spectral term, and
 square-root error. The spectral terms cancel exactly for paired indices
 `k` and `-k`; the principal square-root error is bounded by its radicand
 error. Infinite-product convergence and joint analyticity are next.
+
+The midpoint contribution to the paired standard-root product now belongs
+to `ℓ¹`, and its tails are uniformly small on a neighborhood of any source
+potential. This uses the existing conjugate-exponent Hölder embedding for
+the punctured reciprocal lattice. The square-root remainder and full
+product convergence remain open.

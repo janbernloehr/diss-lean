@@ -17848,3 +17848,33 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceStandardRoot_pair_factor hp hp1 ψ k z
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 midpoint product API checks. -/
+noncomputable section
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (k : ℤ) :
+    sourceStandardRootMidpointCorrection hp hp1 ψ k =
+      if k = 0 then 0 else
+        sourcePeriodicMidpointDisplacement hp hp1 ψ k / ((Real.pi : ℂ)*k) :=
+  sourceStandardRootMidpointCorrection_apply hp hp1 ψ k
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) :
+    Summable (fun k : ℕ =>
+      ‖sourceStandardRootMidpointCorrection hp hp1 ψ (k : ℤ) +
+        sourceStandardRootMidpointCorrection hp hp1 ψ (-(k : ℤ))‖) :=
+  summable_norm_sourceStandardRootPairedMidpointCorrection hp hp1 ψ
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∀ ψ ∈ V, ∀ M : ℕ, N ≤ M →
+        ‖sourceStandardRootMidpointCorrection hp hp1 ψ -
+          Coeff.truncate (Finset.Icc (-(M : ℤ)) M)
+            (sourceStandardRootMidpointCorrection hp hp1 ψ)‖ ≤ ε :=
+  exists_uniform_small_sourceStandardRootMidpointCorrection hp hp1 φ hε
+
+end NLS.ZakharovShabat
