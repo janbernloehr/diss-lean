@@ -2107,5 +2107,9 @@ identity proves joint analyticity on the same domain, completing Lemma
 10.2(iii). A two-step symmetric recurrence now expresses every endpoint
 power sum as a polynomial in the analytic midpoint and squared gap. This
 proves the full family in Lemma 10.2(i), including coincident endpoints.
-Next prove the locally uniform sequence asymptotics in (ii).
+The canonical midpoint displacement is now an actual ℓᵖ sequence, with a
+uniform full norm bound and uniformly small ℓᵖ tails on a source
+neighborhood around every parameter. This proves the midpoint part of
+Lemma 10.2(ii). Next prove the squared-gap ℓᵖ⁄² asymptotic, including its
+locally uniform tail control.
 The printed general-`p` central-height constant remains a separate open item.

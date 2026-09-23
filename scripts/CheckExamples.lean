@@ -16496,3 +16496,27 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_analytic_periodicPowerSums hp hp1
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) :
+    sourcePeriodicMidpointDisplacement hp hp1 ψ n =
+      canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n -
+        (Real.pi : ℂ)*n :=
+  sourcePeriodicMidpointDisplacement_apply hp hp1 ψ n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ R : ℝ, 0 ≤ R ∧ ∀ ψ ∈ V,
+        ‖sourcePeriodicMidpointDisplacement hp hp1 ψ‖ ≤ R ∧
+        ∀ M : ℕ, N ≤ M →
+          ‖sourcePeriodicMidpointDisplacement hp hp1 ψ -
+            Coeff.truncate (Finset.Icc (-(M : ℤ)) M)
+              (sourcePeriodicMidpointDisplacement hp hp1 ψ)‖ ≤ ε :=
+  exists_uniform_small_sourcePeriodicMidpointDisplacement hp hp1 φ hε
+
+end NLS.ZakharovShabat

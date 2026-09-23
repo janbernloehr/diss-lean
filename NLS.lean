@@ -780,3 +780,4 @@ import NLS.ZakharovShabat.SourceIsolatingMultiplicity
 import NLS.ZakharovShabat.SourceSymmetricContour
 import NLS.ZakharovShabat.SourcePeriodicQuadratic
 import NLS.ZakharovShabat.SourcePeriodicPowerSums
+import NLS.ZakharovShabat.SourcePeriodicMidpointAsymptotics

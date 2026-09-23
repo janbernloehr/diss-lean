@@ -8482,7 +8482,10 @@ formal matrix representation.
    10.2(iii). Every indexed endpoint power sum obeys a polynomial
    recurrence in the analytic midpoint and squared gap, proving Lemma
    10.2(i), including collapsed gaps. The locally uniform asymptotics
-   of Lemma 10.2(ii) remain next.
+   of Lemma 10.2(ii) are partly established: the canonical midpoint
+   displacement belongs to source ℓᵖ at every parameter, with locally
+   bounded norm and uniformly small tails. The squared-gap ℓᵖ⁄²
+   conclusion remains open.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

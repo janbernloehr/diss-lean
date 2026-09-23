@@ -1066,6 +1066,9 @@ installation is absent. No shell startup files are modified.
   A two-root recurrence expresses every endpoint power sum as a polynomial
   in the midpoint and squared gap, proving Lemma 10.2(i), including at
   coincident endpoints.
+  The canonical midpoint minus `πn` is now an actual source `ℓᵖ` sequence.
+  Its full norm is locally bounded, and its tails are uniformly small on
+  a common source neighborhood. The squared-gap `ℓᵖ⁄²` asymptotic remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
