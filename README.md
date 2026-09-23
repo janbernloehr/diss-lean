@@ -1102,7 +1102,10 @@ installation is absent. No shell startup files are modified.
   central endpoint also gives a pointwise π/4 separation from every
   positive tail disc. Thus roots in either central–positive-tail
   orientation have norm at least π/4. The mirrored negative-tail
-  argument gives the same bound on the other side.
+  argument gives the same bound on the other side. The finite
+  central discs have uniformly bounded lattice offsets; triangle
+  inequalities give an upper bound proportional to `|m−n|` for mixed
+  central–tail roots in both orientations.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

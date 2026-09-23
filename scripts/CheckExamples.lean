@@ -16835,3 +16835,24 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     hε hεmax houter hi hj hcluster hz
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (i j : ℤ) (hij : i ≠ j) (R : ℝ) (hR : 0 ≤ R)
+    {z w : ℂ}
+    (hz : ‖z-(Real.pi:ℂ)*i‖ ≤ R)
+    (hw : w ∈ refinedResonantDisk j) :
+    dist z w ≤ (R+5*Real.pi/4)*|((i-j : ℤ) : ℝ)| :=
+  central_tail_pointwise_upper_of_lattice_offset i j hij R hR hz hw
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) :
+    ∃ R : ℝ, 0 ≤ R ∧ ∀ i : ℤ, i.natAbs ≤ N →
+      ∀ z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i,
+        ‖z-(Real.pi:ℂ)*i‖ ≤ R :=
+  exists_central_disc_lattice_offset_bound hp hp1 φ N ε
+
+end NLS.ZakharovShabat
