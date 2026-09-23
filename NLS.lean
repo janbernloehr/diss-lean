@@ -741,3 +741,5 @@ import NLS.ZakharovShabat.AuxiliaryBoundaryCharacteristic
 import NLS.ZakharovShabat.ExponentAuxiliaryBoundaryCoordinates
 import NLS.ZakharovShabat.PeriodicPhaseConjugation
 import NLS.ZakharovShabat.SourcePhaseCompatibility
+import NLS.ZakharovShabat.PeriodicSpectralDataUniqueness
+import NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing

@@ -982,9 +982,13 @@ installation is absent. No shell startup files are modified.
   conjugation now preserves the original periodic spectrum and every
   generalized multiplicity. On the period-one source, starred roots and
   normalized characteristics equal ordinary ones at the explicitly rotated
-  source, whose periodic spectrum is the original one. Identifying the indexed
-  periodic endpoints under this rotation is the next step toward starred
-  interlacing; the source anti-discriminant remains open.
+  source. The periodic spectrum and multiplicities uniquely determine the
+  ordered signed endpoint sequences, which are therefore unchanged by this
+  rotation. Both actual starred root sequences now interlace in the original
+  indexed periodic gaps at every finite source exponent p>1, with strict
+  separation between neighboring gaps, collapsed-gap equality, and the
+  signed original discriminant bound. The source anti-discriminant identity
+  remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 793 modules and 4972 named public theorems. All compile on the
+The library has 795 modules and 4981 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
+| `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
 | `NLS.ZakharovShabat.PeriodicPhaseConjugation` | Phase transport of every periodic root chain, full root-space equivalence, exact spectral and algebraic-multiplicity invariance |
 | `NLS.ZakharovShabat.SourcePhaseCompatibility` | Opposite source phases, period-one and reflected-extension identities, starred-to-ordinary canonical roots and characteristics, period-one periodic invariance |
 | `NLS.ZakharovShabat.CanonicalAuxiliaryBoundaryRoots` | Canonical signed roots of both actual auxiliary restrictions, original generalized multiplicity, free values, real-type reality and continuity |
@@ -6945,8 +6947,8 @@ and every real-type source potential at finite p>1. Strict separation from
 both neighboring gaps and complex equality at collapsed gaps follow. The
 original periodic discriminant satisfies `2 ≤ (−1)ⁿ Re Δ(μₙ)` and its
 Neumann counterpart, including negative odd indices. This completes the
-ordinary, unstarred Lemma 9.1(iii). Its auxiliary starred analogues and the
-source anti-discriminant remain open.
+ordinary, unstarred Lemma 9.1(iii). The auxiliary starred analogues are proved
+below; the source anti-discriminant remains open.
 
 Eight standalone public-API examples check actual finite Fourier
 coefficients, real-type truncation, common physical representatives,
@@ -6974,8 +6976,8 @@ and is jointly analytic in spectral parameter and source potential. Phase
 rotation, source extension, both canonical sequences, and their normalized
 characteristics agree across finite exponents. These prove the starred
 analogues of the analytic and continuity parts of Lemma 9.1. Starred
-interlacing and the identity of the classical anti-discriminant with source
-starred products remain open.
+interlacing is proved below; the identity of the classical anti-discriminant
+with source starred products remains open.
 
 Eight standalone API examples check the auxiliary spectrum and generalized
 multiplicity, exact characteristic zeros, the normalized product and joint
@@ -6999,17 +7001,43 @@ and normalized entire characteristic therefore equal the corresponding
 ordinary objects at the rotated source. For this rotated source, the periodic
 spectrum and every periodic algebraic multiplicity are exactly those of the
 original source. Real type is preserved. Indexed equality of periodic
-endpoints across this rotation has not yet been proved; it is needed to
-transfer the ordinary gap inequalities to the starred roots.
+endpoints across this rotation is established in the next section.
 
 Eight standalone API examples check full root-space transport, spectral and
 multiplicity invariance, period-one compatibility, the reflected source
 identity, and equality of the full root sequences and characteristics.
 
+## Starred source boundary interlacing
+
+The complete ordered canonical periodic endpoints are intrinsic to the
+periodic spectral set and actual algebraic multiplicities. The proof compares
+central root multisets at a common enlarged cutoff and each distant two-root
+multiset; ordered paired enumeration then fixes both signed coordinates.
+This uniqueness applies across distinct even potentials and proves that
+source phase rotation preserves the original left and right endpoint
+sequences exactly.
+
+The actual auxiliary Dirichlet and Neumann root sequences equal ordinary
+boundary sequences of the phase-rotated source. The previously proved
+ordinary indexed interlacing therefore places each starred root in the
+original periodic gap with the same signed index for every real-type source
+potential and every finite `p>1`. Both auxiliary restrictions satisfy the
+inequalities simultaneously. Neighboring gaps remain strictly separated;
+a collapsed gap identifies either starred root with its original endpoint.
+The original discriminant at each starred root obeys the alternating signed
+lower bound `2`, including negative odd indices. This proves the starred
+interlacing part of Lemma 9.1(iii). The classical source
+anti-discriminant/product identity of Lemma 9.2 remains open.
+
+Eight standalone API examples check intrinsic central multisets and ordered
+endpoints, phase invariance at a negative signed coordinate, both starred
+gap inequalities, the neighboring chain, collapsed-gap equality, and the
+negative-odd signed discriminant bound.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9843 declarations under `NLS`, including generated
+axioms. The current audit covers 9861 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
@@ -8216,8 +8244,8 @@ formal matrix representation.
    boundary characteristics, completing Lemma 9.1(i). Canonical boundary
    coordinate continuity under complex perturbations now proves ordinary
    Lemma 9.1(ii), including the original source coefficient space. Ordinary
-   indexed source interlacing now completes Lemma 9.1(iii); starred products
-   remain.
+   indexed ordinary and starred source interlacing now proves both forms of
+   Lemma 9.1(iii). The classical source anti-discriminant identity remains.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

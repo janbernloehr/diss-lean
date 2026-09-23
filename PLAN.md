@@ -1967,8 +1967,15 @@ literally ordinary ones at that source. The unrestricted periodic pencils
 are phase-conjugate at every chain length; their spectra and original
 algebraic multiplicities agree, also on period-one source potentials.
 
-Next identify the canonically indexed periodic endpoints across the phase
-rotation, so ordinary interlacing transfers to starred interlacing; then
-identify the source anti-discriminant with the starred characteristics
-(Lemma 9.2).
+The intrinsic periodic spectrum together with algebraic multiplicities now
+uniquely determines both complete ordered signed endpoint sequences, even
+when comparing different even potentials. Applying this to the source phase
+proves exact endpoint invariance. Ordinary indexed interlacing therefore
+transfers to both actual starred boundary restrictions at every finite p>1,
+including neighboring-gap separation, collapsed-gap equality, and the
+alternating original discriminant level. This completes the starred
+interlacing portion of Lemma 9.1(iii).
+
+Next identify the source anti-discriminant with the classical starred
+characteristics and their normalized products (Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

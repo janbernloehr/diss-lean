@@ -15530,3 +15530,72 @@ example (hp : p ≠ ⊤) (φ : CoeffPair p) (z : ℂ) :
   periodicAlgebraicMultiplicity_periodOne_sourcePhase hp φ z
 
 end PhaseCompatibilityChecks
+
+noncomputable section
+open Set
+open scoped ENNReal
+namespace StarredInterlacingChecks
+open NLS NLS.ZakharovShabat
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example (hp : p ≠ ⊤) (φ ψ : PairSpace p)
+    (hs : periodicSpectrum hp φ = periodicSpectrum hp ψ)
+    (hm : ∀ z, periodicAlgebraicMultiplicity hp φ z = periodicAlgebraicMultiplicity hp ψ z)
+    (K : ℕ) : centralPeriodicRoots hp φ K = centralPeriodicRoots hp ψ K :=
+  centralPeriodicRoots_eq_of_spectral_data hp φ ψ hs hm K
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : PairSpace p)
+    (hφ : φ ∈ pairParitySubspace 0) (hψ : ψ ∈ pairParitySubspace 0)
+    (hs : periodicSpectrum hp φ = periodicSpectrum hp ψ)
+    (hm : ∀ z, periodicAlgebraicMultiplicity hp φ z = periodicAlgebraicMultiplicity hp ψ z) :
+    canonicalPeriodicLeft hp hp1 φ hφ = canonicalPeriodicLeft hp hp1 ψ hψ ∧
+      canonicalPeriodicRight hp hp1 φ hφ = canonicalPeriodicRight hp hp1 ψ hψ :=
+  canonicalPeriodicEndpoints_eq_of_spectral_data hp hp1 φ ψ hφ hψ hs hm
+
+example (φ : CoeffPair 3) :
+    canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential (sourcePhase φ))
+      (periodOnePotential_mem (sourcePhase φ)) (-5) =
+      canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ)
+        (periodOnePotential_mem φ) (-5) :=
+  congrFun (canonicalPeriodicEndpoints_sourcePhase (by simp) (by norm_num) φ).1 (-5)
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (n : ℤ) :
+    (canonicalAuxiliaryPeriodOneRoots hp hp1 b φ n).re ∈
+      Icc (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n).re
+        (canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n).re :=
+  canonicalAuxiliaryPeriodOneRoots_mem_gap hp hp1 b φ hφ n
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (n : ℤ) :
+    let l := (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n).re
+    let r := (canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n).re
+    (canonicalAuxiliaryPeriodOneRoots hp hp1 .dirichlet φ n).re ∈ Icc l r ∧
+      (canonicalAuxiliaryPeriodOneRoots hp hp1 .neumann φ n).re ∈ Icc l r :=
+  canonicalAuxiliaryPeriodOneRoots_interlacing hp hp1 φ hφ n
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (n : ℤ) :
+    let L := canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ)
+    let R := canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ)
+    let μ := canonicalAuxiliaryPeriodOneRoots hp hp1 b φ n
+    (R (n-1)).re < (L n).re ∧ (L n).re ≤ μ.re ∧ μ.re ≤ (R n).re ∧ (R n).re < (L (n+1)).re :=
+  canonicalAuxiliaryPeriodOneRoots_interlacing_chain hp hp1 b φ hφ n
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (n : ℤ)
+    (he : canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n =
+      canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n) :
+    canonicalAuxiliaryPeriodOneRoots hp hp1 b φ n =
+      canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n :=
+  canonicalAuxiliaryPeriodOneRoots_eq_of_collapsed_gap hp hp1 b φ hφ n he
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : IsRealType (CoeffPair.toMax 3 φ)) :
+    2 ≤ (-1 : ℝ)^(-5 : ℤ) *
+      (canonicalDiscriminant (by simp) (periodOnePotential φ)
+        (canonicalAuxiliaryPeriodOneRoots (by simp) (by norm_num) b φ (-5))).re :=
+  signed_discriminant_auxiliaryPeriodOneRoot_ge_two (by simp) (by norm_num) b φ hφ (-5)
+
+end StarredInterlacingChecks
