@@ -1018,8 +1018,10 @@ installation is absent. No shell startup files are modified.
   on one source neighborhood. Their difference and derivative have a common
   ℓᵖ majorant on the free discs. At all sufficiently distant ordinary
   Dirichlet roots, the sampled values and derivatives have a uniform ℓᵖ tail
-  bound; the full sampled sequences are in ℓᵖ at every source potential. A locally uniform
-  bound for the finite central samples remains.
+  bound. Joint analyticity and compactness control the finitely many central
+  samples, with Cauchy's estimate covering their derivatives. Both full
+  sampled sequences therefore have locally uniform ℓᵖ norm bounds, proving
+  the source coefficient form of Lemma 9.2(iii).
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

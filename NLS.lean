@@ -759,3 +759,5 @@ import NLS.ZakharovShabat.SourceAntiDiscriminantIdentity
 import NLS.ZakharovShabat.BoundaryCharacteristicDiscLp
 import NLS.ZakharovShabat.UniformBoundaryCharacteristicDiscLp
 import NLS.ZakharovShabat.SourceAntiDiscriminantDiscLp
+import NLS.ComplexAnalysis.CompactParameterBounds
+import NLS.ZakharovShabat.SourceAntiDiscriminantCentralLp

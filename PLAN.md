@@ -2056,6 +2056,11 @@ its derivative error on every quarter-π disc, uniformly on displacement-norm
 balls. That transfer and high-index evaluation are now proved: both starred
 products, their difference, and its derivative have uniform free-disc
 majorants; all distant canonical Dirichlet samples obey one ℓᵖ tail bound.
-The complete sampled sequences lie in ℓᵖ pointwise. Next bound the finite
-central samples uniformly on a source neighborhood to finish Lemma 9.2(iii).
+The complete sampled sequences lie in ℓᵖ pointwise. A compactness bound for
+the jointly analytic candidate on a fixed spectral ball, together with
+Cauchy's estimate, now uniformly controls the finite central samples.
+Combining that finite block with the tail completes the locally uniform full
+ℓᵖ norm assertion of source Lemma 9.2(iii). Next connect the source candidate
+with physical monodromy for arbitrary `L²` input, then continue to the action
+coordinate prerequisites.
 The printed general-`p` central-height constant remains a separate open item.
