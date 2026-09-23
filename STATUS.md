@@ -8485,7 +8485,8 @@ formal matrix representation.
    of Lemma 10.2(ii) are partly established: the canonical midpoint
    displacement belongs to source ℓᵖ at every parameter, with locally
    bounded norm and uniformly small tails. The squared-gap ℓᵖ⁄²
-   conclusion remains open.
+   conclusion now holds pointwise for every finite p>1, including p<2;
+   its locally uniform tail control remains open.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

@@ -16520,3 +16520,22 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_uniform_small_sourcePeriodicMidpointDisplacement hp hp1 φ hε
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) :
+    sourcePeriodicGapDisplacement hp hp1 ψ n =
+      canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n :=
+  sourcePeriodicGapDisplacement_apply hp hp1 ψ n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) :
+    Memℓp (fun n : ℤ =>
+      (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2)
+      (p/2) :=
+  memℓp_sourcePeriodicSquaredGap hp hp1 ψ
+
+end NLS.ZakharovShabat

@@ -1068,7 +1068,9 @@ installation is absent. No shell startup files are modified.
   coincident endpoints.
   The canonical midpoint minus `πn` is now an actual source `ℓᵖ` sequence.
   Its full norm is locally bounded, and its tails are uniformly small on
-  a common source neighborhood. The squared-gap `ℓᵖ⁄²` asymptotic remains.
+  a common source neighborhood. The canonical gap is an actual `ℓᵖ`
+  sequence, and its square belongs to `ℓᵖ⁄²` for every finite `p>1`.
+  Locally uniform squared-gap tail control remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

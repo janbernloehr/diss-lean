@@ -2110,6 +2110,8 @@ proves the full family in Lemma 10.2(i), including coincident endpoints.
 The canonical midpoint displacement is now an actual ℓᵖ sequence, with a
 uniform full norm bound and uniformly small ℓᵖ tails on a source
 neighborhood around every parameter. This proves the midpoint part of
-Lemma 10.2(ii). Next prove the squared-gap ℓᵖ⁄² asymptotic, including its
-locally uniform tail control.
+Lemma 10.2(ii). The canonical gap is now an actual ℓᵖ sequence, and its
+square belongs to ℓᵖ⁄² pointwise for every finite p>1, including p<2.
+Next transfer the common endpoint tail bounds to the squared-gap power
+tails to finish the locally uniform assertion.
 The printed general-`p` central-height constant remains a separate open item.
