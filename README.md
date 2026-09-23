@@ -1011,7 +1011,11 @@ installation is absent. No shell startup files are modified.
   remains. The full source identity
   `∆²−4 = δ²−4χDχN` now follows at every finite exponent by density and
   joint analyticity. At every indexed Dirichlet root it gives
-  `∆²(μₙ)−4 = δ²(μₙ)`, with no simplicity assumption. Ordinary and starred intrinsic boundary
+  `∆²(μₙ)−4 = δ²(μₙ)`, with no simplicity assumption.
+  The generic entire boundary product now has ℓᵖ sine-error and derivative-error
+  majorants on all free half-/quarter-π discs, uniformly on bounded sets of
+  root displacements. The source transfer and sampling at `μₙ` remain.
+  Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
   uniform bound on the classical-to-intrinsic ratio outside distant free-root

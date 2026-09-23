@@ -756,3 +756,4 @@ import NLS.ZakharovShabat.ClassicalSeparatedPhysicalReconstruction
 import NLS.ZakharovShabat.ClassicalSeparatedCanonicalIdentity
 import NLS.ZakharovShabat.FiniteSourceAntiDiscriminant
 import NLS.ZakharovShabat.SourceAntiDiscriminantIdentity
+import NLS.ZakharovShabat.BoundaryCharacteristicDiscLp

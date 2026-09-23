@@ -2051,5 +2051,9 @@ extension with physical monodromy for arbitrary `L²` source data. The full
 source identity `∆²−4=δ²−4χDχN` has already been proved by finite-input
 comparison and density, so Lemma 9.2(ii) holds at every indexed Dirichlet
 root, even if it is multiple. Next prove the locally uniform high-index
-estimates of Lemma 9.2(iii).
+estimates of Lemma 9.2(iii). The generic entire boundary product now has a
+single ℓᵖ majorant for its sine error on every closed half-π free disc and
+its derivative error on every quarter-π disc, uniformly on displacement-norm
+balls. Next transfer these bounds to both source auxiliary products on a
+common source neighborhood, then evaluate at the ordinary Dirichlet roots.
 The printed general-`p` central-height constant remains a separate open item.
