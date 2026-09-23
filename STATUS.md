@@ -8550,8 +8550,12 @@ formal matrix representation.
    circle across the segment. A general holomorphic one-form theorem
    and its inverse-root specialization prove equality of curve integrals
    along smooth closed-loop homotopies whose images stay away from the
-   gap. The link between circle and curve integral conventions and the
-   construction of such homotopies for stated admissible contours remain.
+   gap. A unit-interval circle path is now shown to have exactly the
+   existing `0..2π` circle integral. Combining this bridge with homotopy
+   invariance gives normalized value `−1` for any smooth closed loop
+   with a gap-avoiding smooth homotopy from an enclosing circle. A
+   construction of that homotopy for every stated admissible contour
+   remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

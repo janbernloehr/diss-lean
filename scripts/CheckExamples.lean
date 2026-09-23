@@ -17168,3 +17168,36 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     hp hp1 ψ n φ hloop hφt havoid hcontdiff
 
 end NLS.ZakharovShabat
+
+open Set
+open scoped ENNReal unitInterval
+
+namespace NLS.ComplexAnalysis
+
+example (f : ℂ → ℂ) (c : ℂ) (r : ℝ) :
+    (∫ᶜ z in circlePath c r, holomorphicOneForm f z) =
+      ∮ z in C(c, r), f z :=
+  curveIntegral_circlePath f c r
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ Metric.ball c r)
+    {a : ℂ} {γ : Path a a}
+    (φ : (NLS.ComplexAnalysis.circlePath c r : C(I, ℂ)).Homotopy γ)
+    (hloop : ∀ s : I, φ (s, 1) = φ (s, 0)) {t : Set ℂ}
+    (hφt : ∀ s ∈ Ioo (0:I) 1, ∀ u ∈ Ioo (0:I) 1, φ (s, u) ∈ t)
+    (havoid : closure t ⊆ (sourcePeriodicSegment hp hp1 ψ n)ᶜ)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (φ.extend xy.1) xy.2) (Icc 0 1)) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in γ, NLS.ComplexAnalysis.holomorphicOneForm
+        (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = -1 :=
+  normalized_sourceStandardRoot_inv_curveIntegral_of_homotopy_circle
+    hp hp1 ψ n c r hr hseg φ hloop hφt havoid hcontdiff
+
+end NLS.ZakharovShabat

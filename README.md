@@ -1134,11 +1134,14 @@ installation is absent. No shell startup files are modified.
   circular-contour form of Lemma 10.3's identity. A holomorphic one-form
   theorem now proves that the reciprocal root's curve integral is
   invariant under any smooth closed-loop homotopy confined to a
-  neighborhood away from its gap. The path-integral and circle-integral
-  conventions still need to be connected before this yields the value
-  for arbitrary admissible noncircular contours. A geometric deformation
-  lemma also shows that interpolating two discs containing the gap
-  segment keeps every intermediate circle disjoint from it.
+  neighborhood away from its gap. The unit-interval circle path now has
+  exactly the same integral as the standard `0..2π` circle integral.
+  Hence any smooth closed loop supplied with a gap-avoiding smooth
+  homotopy from an enclosing circle has normalized integral `−1`.
+  Constructing such a homotopy for every admissible contour in the
+  lemma remains. A geometric deformation lemma also shows that
+  interpolating two discs containing the gap segment keeps every
+  intermediate circle disjoint from it.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

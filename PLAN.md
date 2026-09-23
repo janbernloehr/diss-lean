@@ -2176,7 +2176,10 @@ normalized integral is `−1` on any such circle; the off-diagonal integral
 is zero on filled circles in a different isolating disc. A general
 holomorphic one-form theorem and its source-root specialization now prove
 invariance of the path integral along smooth closed-loop homotopies that
-stay away from the gap. Next identify the circle as a path integral,
-construct the admissible contour homotopy, and extend the numerical
-identity to noncircular contours.
+stay away from the gap. Reparameterizing a circle on the unit interval
+identifies its path integral with the existing circle integral. Thus the
+normalized value is `−1` for any smooth closed loop with a gap-avoiding
+smooth homotopy from an enclosing circle. Next construct that homotopy
+for the admissible contour class in Lemma 10.3 and finish the stated
+noncircular case.
 The printed general-`p` central-height constant remains a separate open item.
