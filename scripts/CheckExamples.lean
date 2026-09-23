@@ -15651,3 +15651,36 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p) (z : ℂ) :
   sourceAntiDiscriminantCandidate_zero hp hp1 z
 
 end AntiDiscriminantChecks
+open Complex NLS.LinearVolterra NLS.ZakharovShabat
+
+noncomputable section
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) (t : Set.Icc (0 : ℝ) 1) :
+    classicalSolution Φ z (auxiliaryPhase ℂ v) t =
+      auxiliaryPhase ℂ (classicalSolution (classicalSourcePhase Φ) z v t) :=
+  classicalSolution_auxiliaryPhase Φ z v t
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalMonodromy (classicalSourcePhase Φ) z 0 1 =
+      I * classicalMonodromy Φ z 0 1 :=
+  classicalMonodromy_phase_zero_one Φ z
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalMonodromy (classicalSourcePhase Φ) z 1 0 =
+      -I * classicalMonodromy Φ z 1 0 :=
+  classicalMonodromy_phase_one_zero Φ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalAuxiliaryCharacteristic b Φ z =
+      classicalSeparatedCharacteristic b (classicalSourcePhase Φ) z :=
+  classicalAuxiliaryCharacteristic_eq_separated_phase b Φ z
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalDiscriminant (classicalSourcePhase Φ) z = classicalDiscriminant Φ z :=
+  classicalDiscriminant_phase Φ z
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalAntiDiscriminant Φ z =
+      classicalSeparatedCharacteristic .neumann (classicalSourcePhase Φ) z -
+        classicalSeparatedCharacteristic .dirichlet (classicalSourcePhase Φ) z :=
+  classicalAntiDiscriminant_eq_separated_phase_sub Φ z

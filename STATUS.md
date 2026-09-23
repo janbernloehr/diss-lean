@@ -2,12 +2,13 @@
 
 ## Implemented and checked
 
-The library has 797 modules and 4993 named public theorems. All compile on the
+The library has 798 modules and 5003 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryCharacteristics` | Actual auxiliary monodromy characteristics, endpoint zero criteria, joint analyticity, free sine values, corrected anti-discriminant difference, and exact printed-label comparison |
+| `NLS.ZakharovShabat.ClassicalPhaseMonodromy` | Exact phase conjugation of classical solutions and monodromy, discriminant invariance, auxiliary-to-ordinary characteristic equality, and rotated Neumann-minus-Dirichlet anti-discriminant identity |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7053,6 +7054,15 @@ printed formulas therefore disagree with the page-33 endpoint domains.
 The formalization keeps the actual domain labels and the resulting sign
 `δ=χN*−χD*` for domain-based classical characteristics.
 
+Classical initial-value uniqueness now shows that the phase of a solution
+for `(iφ₁,-iφ₂)` is exactly the solution for `φ` with phased initial data.
+The resulting monodromy has unchanged diagonal entries, upper-right entry
+multiplied by `i`, and lower-left entry multiplied by `-i`. Hence its trace
+is unchanged, and each actual auxiliary characteristic at `φ` equals the
+ordinary separated characteristic at the rotated potential. The classical
+anti-discriminant is therefore the ordinary Neumann-minus-Dirichlet
+characteristic difference after rotation.
+
 On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,
 jointly analytic function. It has an exact difference-of-canonical-products
@@ -7064,6 +7074,9 @@ yet been proved. Accordingly, Lemma 9.2(i–iii) is not claimed complete.
 Eight standalone API examples check the anti-trace sign, one printed-label
 equality, the actual endpoint zero equation, joint classical and source
 analyticity, the free sine value, the product difference, and the free zero.
+Six additional standalone examples check solution conjugation, both
+off-diagonal monodromy factors, characteristic equality, discriminant
+invariance, and the rotated anti-discriminant identity.
 
 ## Verification
 

@@ -1995,6 +1995,14 @@ is entire, jointly analytic, exponent independent, and zero at the free
 potential. It is currently named `sourceAntiDiscriminantCandidate` because
 its agreement with the physical monodromy anti-trace is not yet proved.
 
+Classical initial-value uniqueness now proves exact phase conjugation for
+continuous potentials. The phase fixes both diagonal monodromy entries and
+the discriminant, rotates the off-diagonal entries by `i` and `-i`, and
+identifies each actual auxiliary characteristic with the ordinary separated
+characteristic of the rotated continuous potential. The classical
+anti-discriminant consequently equals the ordinary Neumann-minus-Dirichlet
+characteristic difference after phase rotation.
+
 Next identify the normalized source characteristics with the classical
 endpoint characteristics on a dense physical subspace, which will turn the
 candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove
