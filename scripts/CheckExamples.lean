@@ -17130,3 +17130,41 @@ example
   normalized_circleIntegral_sourceStandardRoot_inv_of_gap_mem_ball hp hp1 ψ n c r hr hseg
 
 end NLS.ZakharovShabat
+
+open Set
+open scoped unitInterval ENNReal
+
+namespace NLS.ComplexAnalysis
+
+example {a b : ℂ} {γ₁ : Path a a} {γ₂ : Path b b}
+    (f : ℂ → ℂ) (φ : (γ₁ : C(I, ℂ)).Homotopy γ₂)
+    (hloop : ∀ s : I, φ (s, 1) = φ (s, 0)) {t : Set ℂ}
+    (hφt : ∀ s ∈ Ioo (0:I) 1, ∀ u ∈ Ioo (0:I) 1, φ (s, u) ∈ t)
+    (hf : ∀ z ∈ closure t, DifferentiableAt ℂ f z)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (φ.extend xy.1) xy.2) (Icc 0 1)) :
+    ∫ᶜ z in γ₁, holomorphicOneForm f z =
+      ∫ᶜ z in γ₂, holomorphicOneForm f z :=
+  curveIntegral_eq_of_holomorphic_homotopy f φ hloop hφt hf hcontdiff
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    {a b : ℂ} {γ₁ : Path a a} {γ₂ : Path b b}
+    (φ : (γ₁ : C(I, ℂ)).Homotopy γ₂)
+    (hloop : ∀ s : I, φ (s, 1) = φ (s, 0)) {t : Set ℂ}
+    (hφt : ∀ s ∈ Ioo (0:I) 1, ∀ u ∈ Ioo (0:I) 1, φ (s, u) ∈ t)
+    (havoid : closure t ⊆ (sourcePeriodicSegment hp hp1 ψ n)ᶜ)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (φ.extend xy.1) xy.2) (Icc 0 1)) :
+    ∫ᶜ z in γ₁, NLS.ComplexAnalysis.holomorphicOneForm
+      (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z =
+    ∫ᶜ z in γ₂, NLS.ComplexAnalysis.holomorphicOneForm
+      (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z :=
+  sourceStandardRoot_inv_curveIntegral_eq_of_homotopy
+    hp hp1 ψ n φ hloop hφt havoid hcontdiff
+
+end NLS.ZakharovShabat

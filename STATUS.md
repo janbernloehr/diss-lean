@@ -8547,8 +8547,11 @@ formal matrix representation.
    the closed gap segment. The normalized diagonal integral is thus `−1`
    on any such circle. A geometric lemma also shows that a linear
    deformation between two discs containing the gap never moves its
-   circle across the segment. Extension to the stated arbitrary
-   noncircular contours remains.
+   circle across the segment. A general holomorphic one-form theorem
+   and its inverse-root specialization prove equality of curve integrals
+   along smooth closed-loop homotopies whose images stay away from the
+   gap. The link between circle and curve integral conventions and the
+   construction of such homotopies for stated admissible contours remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

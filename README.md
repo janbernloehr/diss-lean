@@ -1131,10 +1131,14 @@ installation is absent. No shell startup files are modified.
   annulus theorem now give the same diagonal value for any positively
   oriented circle, with any center, whose open disc contains the closed
   gap segment. Together with the off-diagonal result this proves the
-  circular-contour form of Lemma 10.3's identity. Extension to every
-  admissible noncircular contour in the lemma remains. A geometric
-  deformation lemma also shows that interpolating two discs containing
-  the gap segment keeps every intermediate circle disjoint from it.
+  circular-contour form of Lemma 10.3's identity. A holomorphic one-form
+  theorem now proves that the reciprocal root's curve integral is
+  invariant under any smooth closed-loop homotopy confined to a
+  neighborhood away from its gap. The path-integral and circle-integral
+  conventions still need to be connected before this yields the value
+  for arbitrary admissible noncircular contours. A geometric deformation
+  lemma also shows that interpolating two discs containing the gap
+  segment keeps every intermediate circle disjoint from it.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

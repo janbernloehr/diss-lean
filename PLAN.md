@@ -2173,6 +2173,10 @@ intermediate circle. A shifted inversion computes the integral on large
 circles about any center, and annulus invariance carries its value to
 every smaller circle still enclosing the full gap. Thus the diagonal
 normalized integral is `−1` on any such circle; the off-diagonal integral
-is zero on filled circles in a different isolating disc. Next extend the
-circle identity to arbitrary admissible noncircular contours.
+is zero on filled circles in a different isolating disc. A general
+holomorphic one-form theorem and its source-root specialization now prove
+invariance of the path integral along smooth closed-loop homotopies that
+stay away from the gap. Next identify the circle as a path integral,
+construct the admissible contour homotopy, and extend the numerical
+identity to noncircular contours.
 The printed general-`p` central-height constant remains a separate open item.

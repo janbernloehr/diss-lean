@@ -804,4 +804,6 @@ import NLS.ZakharovShabat.SourceStandardRootAllIndexBounds
 import NLS.ZakharovShabat.SourceStandardRootContourBasic
 import NLS.ZakharovShabat.SourceStandardRootContourMidpoint
 import NLS.ZakharovShabat.SourceStandardRootContourAnyCircle
+import NLS.ComplexAnalysis.HolomorphicCurveHomotopy
+import NLS.ZakharovShabat.SourceStandardRootContourHomotopy
 import NLS.ComplexAnalysis.CircleSegmentHomotopyGeometry
