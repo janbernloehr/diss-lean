@@ -1000,12 +1000,15 @@ installation is absent. No shell startup files are modified.
   separated characteristic of the rotated continuous potential, and the
   classical anti-discriminant is their Neumann-minus-Dirichlet difference.
   The classical auxiliary characteristic zeros now coincide with the actual
-  physical auxiliary spectrum. For finite Fourier source data, they also
-  coincide exactly with the zeros of the normalized starred source product,
-  using an equality of the physical Neumann Fourier extension and the finite
-  source coefficient extension. Identifying the two entire functions, and
-  hence the source-space product difference with the classical
-  anti-discriminant, remains open. Ordinary and starred intrinsic boundary
+  physical auxiliary spectrum. For finite Fourier source data, each
+  normalized starred source product now equals its actual classical auxiliary
+  monodromy characteristic as an entire function. Their domain-based
+  Neumann-minus-Dirichlet difference therefore equals the classical
+  anti-discriminant on every finite source pair, at every finite exponent.
+  Finite pairs are dense, so the jointly analytic source candidate is the
+  unique continuous extension of those classical anti-discriminant values.
+  Direct comparison with physical monodromy for arbitrary `L²` source data
+  remains. Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
   uniform bound on the classical-to-intrinsic ratio outside distant free-root

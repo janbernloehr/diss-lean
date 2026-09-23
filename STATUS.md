@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 806 modules and 5083 named public theorems. All compile on the
+The library has 807 modules and 5089 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -17,6 +17,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalSeparatedPhysicalChains` | Actual `C¹` and physical `L²` representatives of scalar jets, original pencil recursion, linear injection into every finite physical boundary root space, finite analytic order, and the one-sided order/multiplicity bound |
 | `NLS.ZakharovShabat.ClassicalSeparatedPhysicalReconstruction` | Converse forced ODE for actual interval-domain chains, reconstruction of scalar jets from all finite physical root vectors, surjectivity of the jet map, exact finite root-space dimension, and equality of classical characteristic order with physical algebraic multiplicity |
 | `NLS.ZakharovShabat.ClassicalSeparatedCanonicalIdentity` | Exact equality of the intrinsic boundary product and literal classical endpoint characteristic for continuous physical potentials, via equal zero orders, an entire filled quotient, exterior bounds, maximum modulus, and upper normalization |
+| `NLS.ZakharovShabat.FiniteSourceAntiDiscriminant` | Exact auxiliary source/classical characteristic equality on finite Fourier input, domain-based anti-discriminant equality at every finite exponent, density of finite source pairs, and uniqueness of the continuous extension |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -6959,7 +6960,7 @@ both neighboring gaps and complex equality at collapsed gaps follow. The
 original periodic discriminant satisfies `2 ≤ (−1)ⁿ Re Δ(μₙ)` and its
 Neumann counterpart, including negative odd indices. This completes the
 ordinary, unstarred Lemma 9.1(iii). The auxiliary starred analogues are proved
-below; the source anti-discriminant remains open.
+below; arbitrary-`L²` physical anti-discriminant identification remains open.
 
 Eight standalone public-API examples check actual finite Fourier
 coefficients, real-type truncation, common physical representatives,
@@ -7038,7 +7039,8 @@ a collapsed gap identifies either starred root with its original endpoint.
 The original discriminant at each starred root obeys the alternating signed
 lower bound `2`, including negative odd indices. This proves the starred
 interlacing part of Lemma 9.1(iii). The classical source
-anti-discriminant/product identity of Lemma 9.2 remains open.
+anti-discriminant/product identity for arbitrary `L²` monodromy remains open;
+the dense finite-input identity is proved below.
 
 Eight standalone API examples check intrinsic central multisets and ordered
 endpoints, phase invariance at a negative signed coordinate, both starred
@@ -7078,8 +7080,8 @@ potential, and the physical set is unchanged by a.e. choice of representative.
 For a finite source polynomial, the completed source auxiliary potential is
 proved equal to that Fourier extension. Hence each classical auxiliary
 characteristic and the corresponding normalized starred source product have
-exactly the same zeros at finite source input. This comparison does not yet
-give equality of analytic orders or of the entire functions.
+exactly the same zeros at finite source input. Exact normalized equality of
+the entire functions is proved below.
 
 The normalized complete boundary product has ratio one to the free sine
 along every escaping path uniformly separated from the free lattice.
@@ -7145,9 +7147,14 @@ On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,
 jointly analytic function. It has an exact difference-of-canonical-products
 formula, equals zero at the free potential, and agrees across finite
-exponents. This is a candidate extension of the classical anti-discriminant;
-agreement with the physical monodromy function on a dense subspace has not
-yet been proved. Accordingly, Lemma 9.2(i–iii) is not claimed complete.
+exponents. On every finite Fourier source pair, each starred product equals
+the actual classical auxiliary monodromy characteristic as an entire
+function. Their domain-based Neumann-minus-Dirichlet difference is exactly
+the classical anti-discriminant, at every finite exponent. Finite source
+pairs are dense, so this jointly analytic candidate is the unique continuous
+extension of those classical values at each spectral parameter. Comparison
+with physical monodromy at arbitrary `L²` source input, and Lemma 9.2(ii–iii),
+remain open.
 
 Eight standalone API examples check the anti-trace sign, one printed-label
 equality, the actual endpoint zero equation, joint classical and source
@@ -8378,7 +8385,8 @@ formal matrix representation.
    coordinate continuity under complex perturbations now proves ordinary
    Lemma 9.1(ii), including the original source coefficient space. Ordinary
    indexed ordinary and starred source interlacing now proves both forms of
-   Lemma 9.1(iii). The classical source anti-discriminant identity remains.
+   Lemma 9.1(iii). The classical source anti-discriminant identity on dense
+   finite input is proved; arbitrary-`L²` monodromy identification remains.
    Bounded source
    period-one auxiliary eigenfunction extensions, source-extension real-type
    compatibility, and Proposition 5.2(iv) are now proved for source coefficient

@@ -754,3 +754,4 @@ import NLS.ZakharovShabat.ClassicalSeparatedJets
 import NLS.ZakharovShabat.ClassicalSeparatedPhysicalChains
 import NLS.ZakharovShabat.ClassicalSeparatedPhysicalReconstruction
 import NLS.ZakharovShabat.ClassicalSeparatedCanonicalIdentity
+import NLS.ZakharovShabat.FiniteSourceAntiDiscriminant

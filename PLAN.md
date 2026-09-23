@@ -1993,7 +1993,9 @@ proved to be swapped relative to those domains. On the full finite-exponent
 source space, the corresponding difference of normalized canonical products
 is entire, jointly analytic, exponent independent, and zero at the free
 potential. It is currently named `sourceAntiDiscriminantCandidate` because
-its agreement with the physical monodromy anti-trace is not yet proved.
+its agreement with the physical monodromy anti-trace for arbitrary `L²`
+source input is not yet proved; agreement on dense finite Fourier input and
+uniqueness of continuous extension are now proved.
 
 Classical initial-value uniqueness now proves exact phase conjugation for
 continuous potentials. The phase fixes both diagonal monodromy entries and
@@ -2040,10 +2042,12 @@ quotient is now entire and bounded; its upper limit one proves exact equality
 of the classical and intrinsic normalized characteristics for continuous
 physical potentials.
 
-Next match normalization of the source
-characteristics with the classical endpoint characteristics on a dense
-physical subspace, which will turn the
-candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove
-the simple-Dirichlet identity and the locally uniform high-index estimates
-of Lemma 9.2(ii–iii).
+The normalized starred source characteristics now equal the actual classical
+auxiliary monodromy functions on every finite Fourier source pair. Their
+Neumann-minus-Dirichlet difference equals the classical anti-discriminant
+there, for every finite exponent, and the jointly analytic candidate is the
+unique continuous extension of those dense finite values. Next connect this
+extension with physical monodromy for arbitrary `L²` source data, then prove
+the simple-Dirichlet identity and locally uniform high-index estimates of
+Lemma 9.2(ii–iii).
 The printed general-`p` central-height constant remains a separate open item.
