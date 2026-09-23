@@ -17201,3 +17201,38 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     hp hp1 ψ n c r hr hseg φ hloop hφt havoid hcontdiff
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal unitInterval
+
+namespace NLS.ComplexAnalysis
+
+example (c : ℂ) (R r₀ : ℝ) (ρ : ℝ → ℝ)
+    (hρcont : Continuous ρ) (hperiod : ρ (2*Real.pi) = ρ 0)
+    (hr₀ : 0 ≤ r₀) (hrR : r₀ < R)
+    (hρlo : ∀ θ ∈ Icc (0:ℝ) (2*Real.pi), r₀ < ρ θ)
+    (s u : unitInterval) :
+    radialHomotopy c R ρ hρcont hperiod (s, u) ∉ closedBall c r₀ :=
+  radialHomotopy_disjoint_closedBall
+    c R r₀ ρ hρcont hperiod hr₀ hrR hρlo s u
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (c : ℂ) (R r₀ ε : ℝ)
+    (hr₀ : 0 < r₀) (hε : 0 < ε) (hsize : r₀+ε < R)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c r₀) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in NLS.ComplexAnalysis.radialPath c
+        (fun θ => R+ε*Real.cos θ)
+        (by fun_prop)
+        (by simp [Real.cos_two_pi]),
+        NLS.ComplexAnalysis.holomorphicOneForm
+          (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = -1 :=
+  normalized_sourceStandardRoot_inv_cosineRadialPath
+    hp hp1 ψ n c R r₀ ε hr₀ hε hsize hseg
+
+end NLS.ZakharovShabat

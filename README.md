@@ -1138,8 +1138,11 @@ installation is absent. No shell startup files are modified.
   exactly the same integral as the standard `0..2π` circle integral.
   Hence any smooth closed loop supplied with a gap-avoiding smooth
   homotopy from an enclosing circle has normalized integral `−1`.
-  Constructing such a homotopy for every admissible contour in the
-  lemma remains. A geometric deformation lemma also shows that
+  A smooth periodic polar-radius graph now has that homotopy whenever
+  all its radii stay beyond a disc containing the gap. Thus the value
+  holds for these genuinely noncircular contours, including a positive
+  cosine modulation. Extending this result to every admissible contour
+  in the lemma remains. A geometric deformation lemma also shows that
   interpolating two discs containing the gap segment keeps every
   intermediate circle disjoint from it.
   Ordinary and starred intrinsic boundary

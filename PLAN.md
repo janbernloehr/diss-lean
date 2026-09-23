@@ -2179,7 +2179,10 @@ invariance of the path integral along smooth closed-loop homotopies that
 stay away from the gap. Reparameterizing a circle on the unit interval
 identifies its path integral with the existing circle integral. Thus the
 normalized value is `−1` for any smooth closed loop with a gap-avoiding
-smooth homotopy from an enclosing circle. Next construct that homotopy
-for the admissible contour class in Lemma 10.3 and finish the stated
-noncircular case.
+smooth homotopy from an enclosing circle. A periodic twice-smooth polar
+radius above the gap-enclosing radius now supplies such a homotopy;
+its contour therefore has value `−1`, with a cosine modulation as an
+explicit noncircular example. Next extend this construction beyond
+star-shaped polar graphs to the full admissible contour class of
+Lemma 10.3.
 The printed general-`p` central-height constant remains a separate open item.

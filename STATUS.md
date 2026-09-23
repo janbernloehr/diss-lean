@@ -8553,8 +8553,11 @@ formal matrix representation.
    gap. A unit-interval circle path is now shown to have exactly the
    existing `0..2π` circle integral. Combining this bridge with homotopy
    invariance gives normalized value `−1` for any smooth closed loop
-   with a gap-avoiding smooth homotopy from an enclosing circle. A
-   construction of that homotopy for every stated admissible contour
+   with a gap-avoiding smooth homotopy from an enclosing circle. Such a
+   homotopy is now constructed for twice-smooth periodic polar-radius
+   graphs whose radii all exceed a disc containing the gap. The integral
+   is `−1` on this noncircular class; a positive cosine modulation is an
+   explicit example. The extension to every stated admissible contour
    remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
