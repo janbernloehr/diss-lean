@@ -17878,3 +17878,30 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_uniform_small_sourceStandardRootMidpointCorrection hp hp1 φ hε
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 square-root remainder API checks. -/
+noncomputable section
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (t g d z : ℂ) (hd : d ≠ 0) (hsep : ‖d‖ ≤ 2*‖t-z‖) :
+    ‖standardRootSqrtCorrection t g d z‖ ≤ ‖g‖ / (2*‖d‖^2) :=
+  norm_standardRootSqrtCorrection_le_quadratic t g d z hd hsep
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ) :
+    Summable (fun k : ℤ => ‖sourceStandardRootSqrtCorrection hp hp1 ψ z k‖) :=
+  summable_norm_sourceStandardRootSqrtCorrection hp hp1 ψ z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (Rz : ℝ) :
+    ∃ N : ℕ, ∃ V : Set (CoeffPair p), ∃ C : ℝ,
+      IsOpen V ∧ φ ∈ V ∧ 0 ≤ C ∧
+      (∀ ψ ∈ V, ∀ z : ℂ, ‖z‖ ≤ Rz → ∀ k : ℤ, N < k.natAbs →
+        ‖sourceStandardRootSqrtCorrection hp hp1 ψ z k‖ ≤
+          C * |(k : ℝ)| ^ (-(2 : ℝ))) ∧
+      Summable (fun k : ℤ =>
+        C * (if k = 0 then (0 : ℝ) else |(k : ℝ)| ^ (-(2 : ℝ)))) :=
+  exists_uniform_sourceStandardRootSqrtCorrection_majorant hp hp1 φ Rz
+
+end NLS.ZakharovShabat

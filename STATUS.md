@@ -8652,3 +8652,13 @@ reciprocal lattice. It proves absolute summability of the `k,-k` midpoint
 pair and a cutoff tail bound controlled by the source midpoint's `ℓᵖ` tail.
 The latter is uniformly small on a source neighborhood. The square-root
 remainder, quadratic error term, and infinite-product convergence remain.
+
+## Latest milestone: summable square-root product remainder
+
+`SourceStandardRootSqrtRemainder.lean` proves a quadratic-denominator
+estimate for the principal-root correction when the midpoint is separated
+from the spectral parameter. Source midpoint and gap `ℓᵖ` bounds imply
+that this happens at every sufficiently distant index. The remainder is
+absolutely summable for fixed source and spectral parameters; nearby
+sources and bounded spectral regions share one summable `1/k²` majorant.
+The paired-error cross term and the product limit remain open.

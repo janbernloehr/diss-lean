@@ -2248,3 +2248,10 @@ summable, and the correction has uniformly small `ℓ¹` tails on a source
 neighborhood. Next bound the square-root remainder by a summable tail,
 then combine it with the midpoint correction and quadratic error term
 to build the locally uniform paired product.
+
+`SourceStandardRootSqrtRemainder.lean` proves the rationalized pointwise
+root-error bound, absolute summability of the source square-root remainder,
+and a shared summable `1/k²` majorant on source neighborhoods and bounded
+spectral regions. Next combine midpoint and square-root terms to show
+absolute summability of paired factor errors, control their quadratic
+cross term, and construct the locally uniform nonzero product.

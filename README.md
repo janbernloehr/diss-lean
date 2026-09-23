@@ -1230,3 +1230,9 @@ to `ℓ¹`, and its tails are uniformly small on a neighborhood of any source
 potential. This uses the existing conjugate-exponent Hölder embedding for
 the punctured reciprocal lattice. The square-root remainder and full
 product convergence remain open.
+
+The square-root remainder in each normalized factor is now absolutely
+summable over indices. On a neighborhood of any source potential and any
+bounded spectral region, its distant terms share one summable `1/k²`
+majorant. Combining this with the midpoint correction and the quadratic
+paired-error term is the next step toward Lemma 10.5's product.
