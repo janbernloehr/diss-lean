@@ -16602,3 +16602,27 @@ example (w : ℂ) (h : w.im ≠ 0 ∨ |w.re| < 1) :
   one_sub_sq_mem_slitPlane_of_not_real_large w h
 
 end NLS.ComplexAnalysis
+
+open Set Complex
+open scoped ENNReal
+
+namespace NLS.ComplexAnalysis
+
+example (a b z : ℂ) (hz : z ∉ segment ℝ a b) :
+    1-(b-a)^2/(4*(((a+b)/2)-z)^2) ∈ Complex.slitPlane :=
+  gap_radicand_mem_slitPlane a b z hz
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) (z : ℂ)
+    (hz : z ∉ sourcePeriodicSegment hp hp1 ψ n) :
+    1 - (canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n)^2 /
+      (4*(canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n-z)^2) ∈ Complex.slitPlane :=
+  sourceStandardRoot_radicand_mem_slitPlane hp hp1 ψ n z hz
+
+end NLS.ZakharovShabat

@@ -785,3 +785,4 @@ import NLS.ZakharovShabat.SourcePeriodicGapSummability
 import NLS.ZakharovShabat.SourcePeriodicGapTails
 import NLS.ZakharovShabat.SourceStandardRootAlgebra
 import NLS.ComplexAnalysis.SqrtSlitPreimage
+import NLS.ZakharovShabat.SourceStandardRootBranch
