@@ -1951,6 +1951,15 @@ passes the inequalities to every real-type source potential. This completes
 the ordinary Dirichlet and Neumann Lemma 9.1(iii), including collapsed gaps,
 strict neighboring-gap separation, and the alternating discriminant level.
 
-Next establish the starred characteristic analogues to Lemma 9.1, then the
-anti-discriminant (Lemma 9.2).
+The starred boundary roots are now canonical signed coordinates of the
+actual auxiliary restricted pencils through their proved phase conjugation.
+Their normalized entire characteristics have exactly the auxiliary spectra,
+with original generalized multiplicities as analytic orders. Pullback proves
+joint analyticity and coordinate continuity at real-type source potentials;
+both canonical coordinates and normalized products are exponent independent.
+This establishes the auxiliary analogues of Lemma 9.1(i–ii).
+
+Next prove starred interlacing against the original periodic gaps, then
+identify the source anti-discriminant with the starred characteristics
+(Lemma 9.2).
 The printed general-`p` central-height constant remains a separate open item.

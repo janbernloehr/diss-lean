@@ -2,11 +2,14 @@
 
 ## Implemented and checked
 
-The library has 788 modules and 4940 named public theorems. All compile on the
+The library has 791 modules and 4957 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.CanonicalAuxiliaryBoundaryRoots` | Canonical signed roots of both actual auxiliary restrictions, original generalized multiplicity, free values, real-type reality and continuity |
+| `NLS.ZakharovShabat.AuxiliaryBoundaryCharacteristic` | Normalized entire starred products with exact auxiliary zeros and analytic orders, canonical products, free values, and joint analyticity |
+| `NLS.ZakharovShabat.ExponentAuxiliaryBoundaryCoordinates` | Phase rotation, auxiliary source potentials, canonical starred roots, and normalized characteristics commute with finite exponent inclusion |
 | `NLS.Fourier.FinitePeriodOneRealization` | Finite polynomial Fourier reconstruction, exact even-frequency coefficients, and pointwise conjugation from reflected coefficients |
 | `NLS.SequenceSpaces.FiniteSourceCoefficients` | Finite Fourier pairs in the source norm and exact compatibility with exponent inclusion |
 | `NLS.ZakharovShabat.FiniteSourceRealization` | One continuous curve for the original periodic and ordinary reflected Hilbert potentials; real-type source compatibility |
@@ -6949,10 +6952,38 @@ finite-input interlacing at p=3 and index −5, general source interlacing,
 both boundary conditions, complex equality at a collapsed gap, and the
 negative-odd signed discriminant bound.
 
+## Starred characteristic functions and canonical roots
+
+The proved phase conjugation maps each actual auxiliary Dirichlet or Neumann
+restricted pencil to its ordinary counterpart at the rotated
+Neumann-reflected source potential. Its ordered canonical roots therefore
+enumerate the actual auxiliary spectrum with precisely the original
+auxiliary generalized multiplicities. Both sequences equal the signed free
+lattice at zero, are real at real-type source potentials, and each coordinate
+is continuous there under arbitrary complex perturbations, including
+collisions.
+
+Pulling back the intrinsic normalized boundary characteristic gives one
+entire starred characteristic for each actual auxiliary restriction. Its
+zeros are exactly that restriction's spectrum, and its analytic order at each
+zero is the original auxiliary algebraic multiplicity. It equals the literal
+canonical product over signed starred coordinates, has free value `sin z`,
+and is jointly analytic in spectral parameter and source potential. Phase
+rotation, source extension, both canonical sequences, and their normalized
+characteristics agree across finite exponents. These prove the starred
+analogues of the analytic and continuity parts of Lemma 9.1. Starred
+interlacing and the identity of the classical anti-discriminant with source
+starred products remain open.
+
+Eight standalone API examples check the auxiliary spectrum and generalized
+multiplicity, exact characteristic zeros, the normalized product and joint
+analyticity, free signed values, a negative signed coordinate at a real-type
+potential, and equality of the full characteristic across exponents.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9789 declarations under `NLS`, including generated
+axioms. The current audit covers 9819 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 

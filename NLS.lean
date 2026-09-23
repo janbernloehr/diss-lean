@@ -736,3 +736,6 @@ import NLS.ZakharovShabat.FiniteSourceRealization
 import NLS.ZakharovShabat.RealTypeSourceApproximation
 import NLS.ZakharovShabat.FiniteSourceInterlacing
 import NLS.ZakharovShabat.PeriodOneBoundaryInterlacing
+import NLS.ZakharovShabat.CanonicalAuxiliaryBoundaryRoots
+import NLS.ZakharovShabat.AuxiliaryBoundaryCharacteristic
+import NLS.ZakharovShabat.ExponentAuxiliaryBoundaryCoordinates

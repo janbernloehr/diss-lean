@@ -974,8 +974,12 @@ installation is absent. No shell startup files are modified.
   Symmetric real-type truncations and coordinate continuity extend the
   indexed interlacing theorem to every finite source exponent p>1. This
   completes ordinary Lemma 9.1(iii), including collapsed gaps, strict
-  neighboring-gap separation, and the signed discriminant bound. Starred
-  products and the source anti-discriminant remain next.
+  neighboring-gap separation, and the signed discriminant bound. The
+  auxiliary starred boundary problems now have canonical roots and normalized
+  entire products with their actual spectra and multiplicities. Their
+  characteristics are jointly analytic, their roots are continuous at
+  real-type potentials, and both agree across finite exponents. Starred
+  interlacing and the source anti-discriminant remain next.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

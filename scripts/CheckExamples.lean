@@ -15425,3 +15425,62 @@ example (b : BoundaryCondition) (φ : CoeffPair 3)
 
 end
 end SourceInterlacingChecks
+
+namespace StarredCharacteristicChecks
+noncomputable section
+open Set NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The signed starred coordinates enumerate the actual auxiliary restriction.
+example (b : BoundaryCondition) (φ : CoeffPair 3) (z : ℂ) :
+    z ∈ b.auxiliarySpectrum (by simp) (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).val
+      (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).property ↔
+    ∃ n : ℤ, canonicalAuxiliaryPeriodOneRoots (by simp) (by norm_num) b φ n = z :=
+  canonicalAuxiliaryPeriodOneRoots_exhaustive (by simp) (by norm_num) b φ z
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (z : ℂ) :
+    (∑ᶠ n : ℤ, if canonicalAuxiliaryPeriodOneRoots (by simp) (by norm_num) b φ n = z
+      then (1 : ℕ) else 0) =
+      b.auxiliaryAlgebraicMultiplicity (by simp)
+        (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).val
+        (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).property z :=
+  canonicalAuxiliaryPeriodOneRoots_multiplicity (by simp) (by norm_num) b φ z
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (z : ℂ) :
+    auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b φ z = 0 ↔
+      z ∈ b.auxiliarySpectrum (by simp) (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).val
+        (auxiliaryPeriodOnePotential (by simp) (by norm_num) φ).property :=
+  auxiliaryPeriodOneCharacteristic_eq_zero_iff (by simp) (by norm_num) b φ z
+
+-- The product normalization and full joint analyticity are public source claims.
+example (b : BoundaryCondition) (φ : CoeffPair 3) :
+    auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b φ =
+      boundaryCharacteristicProduct (canonicalAuxiliaryPeriodOneRoots (by simp) (by norm_num) b φ) :=
+  auxiliaryPeriodOneCharacteristic_eq_canonicalProduct (by simp) (by norm_num) b φ
+
+example (b : BoundaryCondition) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair 3 =>
+      auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b t.2 t.1) univ :=
+  analyticOnNhd_auxiliaryPeriodOneCharacteristic_joint (by simp) (by norm_num) b
+
+example (b : BoundaryCondition) (n : ℤ) :
+    canonicalAuxiliaryPeriodOneRoots (by simp) (by norm_num) b (0 : CoeffPair 3) n =
+      (Real.pi : ℂ)*n := by simp
+
+-- Starred coordinates are continuous even when real eigenvalues collide.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : IsRealType (CoeffPair.toMax 3 φ)) :
+    ContinuousAt (fun ψ : CoeffPair 3 =>
+      canonicalAuxiliaryPeriodOneRoots (by simp) (by norm_num) b ψ (-5)) φ :=
+  continuousAt_canonicalAuxiliaryPeriodOneRoots_of_realType (by simp) (by norm_num) b φ hφ (-5)
+
+-- Exponent independence includes the full normalized starred function.
+example (b : BoundaryCondition) (φ : CoeffPair 2) :
+    auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b φ =
+      auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b
+        (CoeffPair.exponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) φ) :=
+  auxiliaryPeriodOneCharacteristic_exponent (by simp) (by simp) (by norm_num) (by norm_num) _ b φ
+
+end
+end StarredCharacteristicChecks
