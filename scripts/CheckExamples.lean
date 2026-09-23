@@ -16690,3 +16690,33 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     hp hp1 φ ψ N ε m n z hcluster hdisjoint hz
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) {m n : ℤ} (hmn : m ≠ n)
+    (hm : ¬ m.natAbs ≤ N) (hn : ¬ n.natAbs ≤ N)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    {z : ℂ} (hz : z ∈ sourceIsolatingDisc hp hp1 φ N ε m) :
+    (Real.pi/2)*|((m-n : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ n z‖ ∧
+      ‖sourceStandardRoot hp hp1 ψ n z‖ ≤
+        (3*Real.pi/2)*|((m-n : ℤ) : ℝ)| :=
+  sourceStandardRoot_tail_disc_norm_bounds hp hp1 φ ψ N ε hmn hm hn hcluster hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧
+        ∀ ψ ∈ V, ∀ m n : ℤ, m ≠ n → N < m.natAbs → N < n.natAbs →
+          ∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε m,
+            (Real.pi/2)*|((m-n : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ n z‖ ∧
+              ‖sourceStandardRoot hp hp1 ψ n z‖ ≤
+                (3*Real.pi/2)*|((m-n : ℤ) : ℝ)| :=
+  exists_local_source_tail_standardRoot_bounds hp hp1 φ hφ
+
+end NLS.ZakharovShabat

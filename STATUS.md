@@ -8506,8 +8506,10 @@ formal matrix representation.
    gap segment, including collapsed gaps. The norm squared of each root
    equals the product of its two endpoint distances, so the root does
    not vanish on a different disjoint isolating disc. Two-sided endpoint
-   bounds transfer directly to its norm. Uniform index-distance bounds
-   and the contour identity remain.
+   bounds transfer directly to its norm. The free quarter-π disc
+   separation proves (2.10) for all distinct tail indices, with explicit
+   constants π/2 and 3π/2 uniformly on a common connected local source
+   neighborhood. Central-index pairs and the contour identity remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

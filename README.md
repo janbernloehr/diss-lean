@@ -1090,7 +1090,10 @@ installation is absent. No shell startup files are modified.
   gap segment, including where the endpoints coincide. Its norm squared
   is exactly the product of the two endpoint distances off the segment.
   On any different disjoint isolating disc the root is nonzero, and
-  two-sided endpoint distance bounds transfer to the root norm.
+  two-sided endpoint distance bounds transfer to the root norm. For any two
+  distinct free tail discs this gives equation (2.10) with explicit
+  constants π/2 and 3π/2, uniformly on a connected local source
+  neighborhood.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
