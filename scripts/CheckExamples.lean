@@ -16947,3 +16947,25 @@ example
   exists_source_central_tail_root_bounds hp hp1 φ hφ N ε hε hεmax houterL houterR
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+      ∃ c : ℝ, 1 ≤ c ∧
+        ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧
+          ∀ ψ ∈ V, ∀ (i j : ℤ), i.natAbs ≤ N → N < j.natAbs →
+            (∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε i,
+              c⁻¹*|((i-j : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ j z‖ ∧
+              ‖sourceStandardRoot hp hp1 ψ j z‖ ≤ c*|((i-j : ℤ) : ℝ)|) ∧
+            (∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε j,
+              c⁻¹*|((i-j : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ i z‖ ∧
+              ‖sourceStandardRoot hp hp1 ψ i z‖ ≤ c*|((i-j : ℤ) : ℝ)|) :=
+  exists_local_source_mixed_root_bounds hp hp1 φ hφ
+
+end NLS.ZakharovShabat

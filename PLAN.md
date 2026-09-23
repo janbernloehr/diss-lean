@@ -2154,7 +2154,9 @@ lower bound in both orientations, conditional on endpoint localization,
 pointwise separation, and segment exclusion. The positive and negative
 tail geometry supplies these conditions on every assigned central/tail
 disc pair when nearby clusters lie in the disc family. One constant now
-gives both sides of (2.10) for all mixed pairs. Next choose the connected
-source neighborhood and disc family to satisfy this theorem together with
-the central and tail estimates, then prove the contour identity.
+gives both sides of (2.10) for all mixed pairs. Uniform tail isolation
+and finite central-disc isolation now supply a single connected source
+neighborhood and disc family for that mixed estimate. Next reconcile the
+central-block estimate with this same disc family, combine all three index
+regimes, then prove the contour identity.
 The printed general-`p` central-height constant remains a separate open item.

@@ -1113,6 +1113,9 @@ installation is absent. No shell startup files are modified.
   positive and negative tail geometry now supplies those conditions
   whenever all nearby spectral clusters lie in their assigned discs.
   One constant then gives both sides of (2.10) for every mixed pair.
+  Uniform tail isolation and finite central-disc isolation now choose
+  those discs on a single connected neighborhood around each real-type
+  source potential, proving the local mixed-pair estimate.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

@@ -8527,9 +8527,11 @@ formal matrix representation.
    Positive and negative tail geometry now supplies the separation and
    segment exclusion from cluster containment in the assigned discs.
    With strict outer-endpoint localization, one constant gives both
-   sides of (2.10) for every mixed pair. Choosing a common disc family
-   and connected source neighborhood for all index regimes, and the
-   contour identity, remain.
+   sides of (2.10) for every mixed pair. Uniform tail isolation and
+   finite central-disc isolation now choose a single connected local
+   source neighborhood on which the mixed estimate holds for all pairs.
+   Reconciling the central estimate with this disc family, combining all
+   index regimes, and proving the contour identity remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
