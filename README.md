@@ -1178,8 +1178,10 @@ installation is absent. No shell startup files are modified.
   limits on the negative real axis. The normalized standard root and
   actual canonical source root satisfy both straight transverse limits
   in formula (2.12) for every point of a noncollapsed complex periodic
-  gap, including its midpoint and endpoints. Joint side continuity and
-  Lemma 10.4's integral bound remain.
+  gap, including its midpoint and endpoints. The same boundary values
+  now hold for arbitrary approaches within each open side of the gap,
+  allowing the longitudinal coordinate to vary. Lemma 10.4's integral
+  bound remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

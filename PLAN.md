@@ -2212,11 +2212,13 @@ the integral across any continuous family of twice-smooth gap-avoiding
 loops, including moving basepoints. The normalized `−δₘₙ` theorem uses
 only such a continuous family from an enclosing circle; it no longer
 requires the homotopy map on the full square to be twice smooth.
-The straight transverse limits in equation (2.12) now hold on both
-sides of every noncollapsed canonical complex periodic gap for all
-`−1≤t≤1`, including the midpoint and endpoints. Reflection and
-complex scaling reduce the general formula to the positive real-gap
-branch calculation. Next establish joint one-sided continuity along
-the gap and the integral estimate in Lemma 10.4, then continue with
-the infinite standard-root product in Lemma 10.5.
+The boundary values in equation (2.12) now hold on both sides of every
+noncollapsed canonical complex periodic gap for all `−1≤t≤1`, including
+the midpoint and endpoints. A connectedness argument fixes the root
+branch throughout the upper half-plane; reflection fixes the lower
+branch. Their continuity gives joint one-sided limits as the spectral
+parameter approaches each gap point through its entire open side, even
+when the longitudinal coordinate varies. Next establish the integral
+estimate in Lemma 10.4, then continue with the infinite standard-root
+product in Lemma 10.5.
 The printed general-`p` central-height constant remains a separate open item.

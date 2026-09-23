@@ -17676,3 +17676,55 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) (t : ℝ)
   sourceStandardRoot_tendsto_gap_lower hp hp1 ψ n t hgap htl htr
 
 end NLS.ZakharovShabat
+
+noncomputable section
+open Complex Filter
+open scoped Topology ENNReal
+
+namespace NLS.ZakharovShabat
+
+example (τ δ : ℂ) (t : ℝ) (hδ : δ ≠ 0)
+    (htl : -1 ≤ t) (htr : t ≤ 1) :
+    Tendsto (normalizedStandardRoot τ ((2*δ)^2))
+      (𝓝[standardRootGapUpperSide τ δ] (τ+δ*(t:ℂ)))
+      (𝓝 (-δ*Complex.I*(Real.sqrt (1-t^2):ℂ))) :=
+  normalizedStandardRoot_tendsto_gap_upper_side τ δ t hδ htl htr
+
+example (τ δ : ℂ) (t : ℝ) (hδ : δ ≠ 0)
+    (htl : -1 ≤ t) (htr : t ≤ 1) :
+    Tendsto (normalizedStandardRoot τ ((2*δ)^2))
+      (𝓝[standardRootGapLowerSide τ δ] (τ+δ*(t:ℂ)))
+      (𝓝 (δ*Complex.I*(Real.sqrt (1-t^2):ℂ))) :=
+  normalizedStandardRoot_tendsto_gap_lower_side τ δ t hδ htl htr
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) (t : ℝ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n ≠ 0)
+    (htl : -1 ≤ t) (htr : t ≤ 1) :
+    Tendsto (sourceStandardRoot hp hp1 ψ n)
+      (𝓝[standardRootGapUpperSide
+        (sourceStandardRootMidpoint hp hp1 ψ n)
+        (sourceStandardRootHalfGap hp hp1 ψ n)]
+        (sourceStandardRootMidpoint hp hp1 ψ n +
+          sourceStandardRootHalfGap hp hp1 ψ n * (t:ℂ)))
+      (𝓝 (-sourceStandardRootHalfGap hp hp1 ψ n * Complex.I *
+        (Real.sqrt (1-t^2):ℂ))) :=
+  sourceStandardRoot_tendsto_gap_upper_side hp hp1 ψ n t hgap htl htr
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) (t : ℝ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n ≠ 0)
+    (htl : -1 ≤ t) (htr : t ≤ 1) :
+    Tendsto (sourceStandardRoot hp hp1 ψ n)
+      (𝓝[standardRootGapLowerSide
+        (sourceStandardRootMidpoint hp hp1 ψ n)
+        (sourceStandardRootHalfGap hp hp1 ψ n)]
+        (sourceStandardRootMidpoint hp hp1 ψ n +
+          sourceStandardRootHalfGap hp hp1 ψ n * (t:ℂ)))
+      (𝓝 (sourceStandardRootHalfGap hp hp1 ψ n * Complex.I *
+        (Real.sqrt (1-t^2):ℂ))) :=
+  sourceStandardRoot_tendsto_gap_lower_side hp hp1 ψ n t hgap htl htr
+
+end NLS.ZakharovShabat

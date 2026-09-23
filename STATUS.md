@@ -8589,8 +8589,14 @@ formal matrix representation.
    result across the midpoint, resolves the midpoint directly, and uses
    continuity at both endpoints. Affine scaling transfers the complete
    real-gap formula to arbitrary complex gaps and to the actual source
-   standard root. A joint one-sided continuous extension along the full
-   gap and the integral estimate of Lemma 10.4 remain.
+   standard root. `SourceStandardRootGapSideJoint.lean` now identifies the
+   upper-half-plane branch by continuity, equality of squares, and a
+   midpoint anchor; reflection identifies the lower branch. Affine
+   transfer proves the same one-sided limit under arbitrary approach
+   through either open side of a noncollapsed complex gap, including at
+   the midpoint and endpoints. `SourceStandardRootGapSideSourceJoint.lean`
+   specializes these joint limits to the actual canonical source root.
+   The integral estimate of Lemma 10.4 remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

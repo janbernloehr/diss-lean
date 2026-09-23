@@ -828,3 +828,5 @@ import NLS.ZakharovShabat.SourceStandardRootGapSideMidpoint
 import NLS.ZakharovShabat.SourceStandardRootGapSideReal
 import NLS.ZakharovShabat.SourceStandardRootGapSideComplex
 import NLS.ZakharovShabat.SourceStandardRootGapSideSource
+import NLS.ZakharovShabat.SourceStandardRootGapSideJoint
+import NLS.ZakharovShabat.SourceStandardRootGapSideSourceJoint
