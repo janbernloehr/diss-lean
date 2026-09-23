@@ -2299,3 +2299,11 @@ finite cutoffs are continuous. The existing connected source domain makes
 this available at every point of the noncentral-gap complement. Next prove
 joint analyticity of the limit on an open joint domain, then extend from
 omitted index zero to arbitrary omitted indices.
+
+Joint local uniform convergence and analytic finite cutoffs now imply
+joint continuity of the infinite omitted-zero product wherever the source
+lies in the common connected almost-real domain and the spectral point
+avoids noncentral gaps. The pointwise nonvanishing theorem strengthens
+this to nonvanishing on a joint neighborhood at each such point. Next
+establish a common open analytic domain for all finite cutoffs and pass
+Banach-space analyticity to the locally uniform limit.

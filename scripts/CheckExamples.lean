@@ -18014,3 +18014,27 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceStandardRootPairedProduct_analyticAt hp hp1 ψ z hz
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 joint continuity and nonvanishing API checks. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ContinuousOn (sourceStandardRootPairedJointProduct hp hp1)
+        {t : ℂ × CoeffPair p |
+          t.2 ∈ W ∧ t.1 ∈ sourceStandardRootPairedDomain hp hp1 t.2} :=
+  exists_global_source_continuousOn_pairedProduct hp hp1
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ φ ∈ W, ∀ z ∈ sourceStandardRootPairedDomain hp hp1 φ,
+        ∃ U : Set (ℂ × CoeffPair p), IsOpen U ∧ (z,φ) ∈ U ∧
+          ∀ t ∈ U, sourceStandardRootPairedJointProduct hp hp1 t ≠ 0 :=
+  exists_global_source_localNonzero_pairedProduct hp hp1
+
+end NLS.ZakharovShabat

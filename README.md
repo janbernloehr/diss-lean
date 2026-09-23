@@ -1268,3 +1268,9 @@ cutoffs on a joint spectral/source neighborhood. On the common connected
 almost-real source domain, this applies at every point of the noncentral-gap
 complement. Joint analyticity of the infinite limit and arbitrary omitted
 indices remain open.
+
+The uniform joint limit is now continuous on the common almost-real
+source/gap-complement locus. At each point of this locus the omitted-zero
+product is nonzero on some open joint spectral/source neighborhood.
+Joint analyticity still requires a common open domain for analytic finite
+cutoffs and a Banach-space analytic-limit argument.

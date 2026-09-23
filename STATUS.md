@@ -8718,3 +8718,12 @@ spectral/source neighborhood. On the connected almost-real source domain,
 finite-cutoff analyticity supplies the needed continuity at every point of
 the noncentral-gap complement. Joint analyticity of the infinite product
 and arbitrary omitted indices remain open.
+
+## Latest milestone: joint continuity and local nonvanishing
+
+The locally uniform paired-product limit is jointly continuous at every
+point of the common connected almost-real source domain outside the
+noncentral gaps. Equivalently, it is continuous on that joint locus as a
+subspace. Its already-proved nonzero value at each such point persists on
+an open joint neighborhood. Joint analyticity, a common open analytic
+domain for every finite cutoff, and arbitrary omitted indices remain open.

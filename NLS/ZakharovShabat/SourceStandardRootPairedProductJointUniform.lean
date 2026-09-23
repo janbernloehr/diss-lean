@@ -333,6 +333,22 @@ theorem exists_local_uniform_sourceStandardRootPairedProduct
   rw [hfun] at hprod
   exact hprod
 
+/-- The jointly uniform limit is continuous at any point where all its
+finite cutoffs are jointly continuous. -/
+theorem sourceStandardRootPairedJointProduct_continuousAt_of_finite
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) (z : ℂ)
+    (hcont : ∀ N : ℕ, ContinuousAt
+      (sourceStandardRootPairedJointPartialProduct hp hp1 N) (z,φ)) :
+    ContinuousAt (sourceStandardRootPairedJointProduct hp hp1) (z,φ) := by
+  obtain ⟨U, hUopen, hxU, hconv⟩ :=
+    exists_local_uniform_sourceStandardRootPairedProduct hp hp1 φ z hcont
+  apply continuousAt_of_locally_uniform_approx_of_continuousAt
+  intro u hu
+  obtain ⟨N, hN⟩ := eventually_atTop.mp (hconv u hu)
+  exact ⟨U, hUopen.mem_nhds hxU,
+    sourceStandardRootPairedJointPartialProduct hp hp1 N, hcont N,
+    fun t ht => hN N le_rfl t ht⟩
+
 /-- On the connected source neighborhood with jointly analytic finite
 cutoffs, the paired product converges locally uniformly in both the
 spectral point and source at every point of its natural domain. -/
@@ -351,5 +367,71 @@ theorem exists_global_source_locally_uniform_pairedProduct
   apply exists_local_uniform_sourceStandardRootPairedProduct hp hp1 φ z
   intro N
   exact (hanalytic φ hφ z hz N).continuousAt
+
+/-- The omitted-zero paired product is jointly continuous at every
+point of the common analytic source domain away from the noncentral gaps. -/
+theorem exists_global_source_jointContinuous_pairedProduct
+    (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ φ ∈ W, ∀ z ∈ sourceStandardRootPairedDomain hp hp1 φ,
+        ContinuousAt (sourceStandardRootPairedJointProduct hp hp1) (z,φ) := by
+  obtain ⟨W, hWopen, hWconnected, hreal, hanalytic⟩ :=
+    exists_global_source_analytic_pairedPartialProduct hp hp1
+  refine ⟨W, hWopen, hWconnected, hreal, ?_⟩
+  intro φ hφ z hz
+  apply sourceStandardRootPairedJointProduct_continuousAt_of_finite hp hp1 φ z
+  intro N
+  exact (hanalytic φ hφ z hz N).continuousAt
+
+/-- Joint continuity of the infinite product on the full common
+source/gap-complement locus, viewed as a subspace. -/
+theorem exists_global_source_continuousOn_pairedProduct
+    (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ContinuousOn (sourceStandardRootPairedJointProduct hp hp1)
+        {t : ℂ × CoeffPair p |
+          t.2 ∈ W ∧ t.1 ∈ sourceStandardRootPairedDomain hp hp1 t.2} := by
+  obtain ⟨W, hWopen, hWconnected, hreal, hcont⟩ :=
+    exists_global_source_jointContinuous_pairedProduct hp hp1
+  refine ⟨W, hWopen, hWconnected, hreal, ?_⟩
+  intro t ht
+  exact (hcont t.2 ht.1 t.1 ht.2).continuousWithinAt
+
+/-- A nonzero paired product value persists on a joint neighborhood
+whenever the product is continuous at that spectral/source point. -/
+theorem exists_local_sourceStandardRootPairedJointProduct_ne_zero
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) (z : ℂ)
+    (hz : z ∈ sourceStandardRootPairedDomain hp hp1 φ)
+    (hcont : ContinuousAt (sourceStandardRootPairedJointProduct hp hp1) (z,φ)) :
+    ∃ U : Set (ℂ × CoeffPair p), IsOpen U ∧ (z,φ) ∈ U ∧
+      ∀ t ∈ U, sourceStandardRootPairedJointProduct hp hp1 t ≠ 0 := by
+  have hnonzero : sourceStandardRootPairedJointProduct hp hp1 (z,φ) ≠ 0 :=
+    sourceStandardRootPairedProduct_ne_zero hp hp1 φ z hz
+  have hnear : (sourceStandardRootPairedJointProduct hp hp1) ⁻¹'
+      ({0}ᶜ : Set ℂ) ∈ 𝓝 (z,φ) :=
+    hcont (isClosed_singleton.isOpen_compl.mem_nhds hnonzero)
+  obtain ⟨U, hUsub, hUopen, hbaseU⟩ := _root_.mem_nhds_iff.mp hnear
+  refine ⟨U, hUopen, hbaseU, ?_⟩
+  intro t ht
+  exact hUsub ht
+
+/-- On the common connected source domain, every point outside the
+noncentral gaps has a joint neighborhood where the infinite paired
+product remains nonzero. -/
+theorem exists_global_source_localNonzero_pairedProduct
+    (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ φ ∈ W, ∀ z ∈ sourceStandardRootPairedDomain hp hp1 φ,
+        ∃ U : Set (ℂ × CoeffPair p), IsOpen U ∧ (z,φ) ∈ U ∧
+          ∀ t ∈ U, sourceStandardRootPairedJointProduct hp hp1 t ≠ 0 := by
+  obtain ⟨W, hWopen, hWconnected, hreal, hcont⟩ :=
+    exists_global_source_jointContinuous_pairedProduct hp hp1
+  refine ⟨W, hWopen, hWconnected, hreal, ?_⟩
+  intro φ hφ z hz
+  exact exists_local_sourceStandardRootPairedJointProduct_ne_zero
+    hp hp1 φ z hz (hcont φ hφ z hz)
 
 end NLS.ZakharovShabat
