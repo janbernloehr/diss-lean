@@ -148,4 +148,39 @@ theorem radialHomotopy_disjoint_closedBall (c : ℂ) (R r₀ : ℝ)
   rw [hdist] at this
   exact (not_le.mpr hrad) this
 
+/-- The affine polar homotopy stays inside a common outer closed disc. -/
+theorem radialHomotopy_mem_closedBall (c : ℂ) (R Rmax : ℝ)
+    (ρ : ℝ → ℝ) (hρcont : Continuous ρ)
+    (hperiod : ρ (2*Real.pi) = ρ 0)
+    (hR0 : 0 ≤ R) (hRmax : R ≤ Rmax)
+    (hρbounds : ∀ θ ∈ Icc (0:ℝ) (2*Real.pi),
+      0 ≤ ρ θ ∧ ρ θ ≤ Rmax)
+    (s u : unitInterval) :
+    radialHomotopy c R ρ hρcont hperiod (s,u) ∈ closedBall c Rmax := by
+  let θ : ℝ := (2*Real.pi)*(u:ℝ)
+  have hs0 : 0 ≤ (s:ℝ) := s.property.1
+  have hs1 : (s:ℝ) ≤ 1 := s.property.2
+  have hu0 : 0 ≤ (u:ℝ) := u.property.1
+  have hu1 : (u:ℝ) ≤ 1 := u.property.2
+  have hq : 0 < 2*Real.pi := by positivity
+  have hθ : θ ∈ Icc (0:ℝ) (2*Real.pi) := by
+    dsimp [θ]
+    constructor
+    · exact mul_nonneg hq.le hu0
+    · nlinarith [mul_nonneg hq.le (sub_nonneg.mpr hu1)]
+  obtain ⟨hρ0,hρmax⟩ := hρbounds θ hθ
+  let rad : ℝ := (1-(s:ℝ))*R+(s:ℝ)*ρ θ
+  have hrad0 : 0 ≤ rad := by
+    dsimp [rad]
+    exact add_nonneg (mul_nonneg (sub_nonneg.mpr hs1) hR0)
+      (mul_nonneg hs0 hρ0)
+  have hradmax : rad ≤ Rmax := by
+    have hleft := mul_le_mul_of_nonneg_left hRmax (sub_nonneg.mpr hs1)
+    have hright := mul_le_mul_of_nonneg_left hρmax hs0
+    dsimp [rad]
+    nlinarith
+  rw [radialHomotopy_apply]
+  exact (closedBall_subset_closedBall hradmax)
+    (circleMap_mem_closedBall c hrad0 θ)
+
 end NLS.ComplexAnalysis

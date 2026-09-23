@@ -17236,3 +17236,68 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     hp hp1 ψ n c R r₀ ε hr₀ hε hsize hseg
 
 end NLS.ZakharovShabat
+noncomputable section
+open Set Metric Complex
+open scoped unitInterval ENNReal
+
+namespace NLS.ComplexAnalysis
+
+example (c : ℂ) (R Rmax : ℝ) (ρ : ℝ → ℝ)
+    (hρcont : Continuous ρ) (hperiod : ρ (2*Real.pi) = ρ 0)
+    (hR0 : 0 ≤ R) (hRmax : R ≤ Rmax)
+    (hρbounds : ∀ θ ∈ Icc (0:ℝ) (2*Real.pi),
+      0 ≤ ρ θ ∧ ρ θ ≤ Rmax) (s u : unitInterval) :
+    radialHomotopy c R ρ hρcont hperiod (s,u) ∈ closedBall c Rmax :=
+  radialHomotopy_mem_closedBall
+    c R Rmax ρ hρcont hperiod hR0 hRmax hρbounds s u
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (m n : ℤ)
+    (c : ℂ) (R Rmax : ℝ) (hR0 : 0 ≤ R) (hRmax : R ≤ Rmax)
+    (ρ : ℝ → ℝ) (hρ : ContDiff ℝ 2 ρ)
+    (hperiod : ρ (2*Real.pi) = ρ 0)
+    (hρbounds : ∀ θ ∈ Icc (0:ℝ) (2*Real.pi),
+      0 ≤ ρ θ ∧ ρ θ ≤ Rmax)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    (hdisjoint : Disjoint (sourceIsolatingDisc hp hp1 φ N ε m)
+      (sourceIsolatingDisc hp hp1 φ N ε n))
+    (hfilled : closedBall c Rmax ⊆ sourceIsolatingDisc hp hp1 φ N ε m) :
+    (∫ᶜ z in NLS.ComplexAnalysis.radialPath c ρ hρ.continuous hperiod,
+      NLS.ComplexAnalysis.holomorphicOneForm
+        (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = 0 :=
+  sourceStandardRoot_inv_radialPath_off_index_eq_zero
+    hp hp1 φ ψ N ε m n c R Rmax hR0 hRmax ρ hρ hperiod
+    hρbounds hcluster hdisjoint hfilled
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (m n : ℤ)
+    (c : ℂ) (R r₀ Rmax : ℝ)
+    (hr₀ : 0 < r₀) (hrR : r₀ < R) (hRmax : R ≤ Rmax)
+    (hseg : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c r₀)
+    (ρ : ℝ → ℝ) (hρ : ContDiff ℝ 2 ρ)
+    (hperiod : ρ (2*Real.pi) = ρ 0)
+    (hρlo : ∀ θ ∈ Icc (0:ℝ) (2*Real.pi), r₀ < ρ θ)
+    (hρmax : ∀ θ ∈ Icc (0:ℝ) (2*Real.pi), ρ θ ≤ Rmax)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    (hdisjoint : m ≠ n → Disjoint
+      (sourceIsolatingDisc hp hp1 φ N ε m)
+      (sourceIsolatingDisc hp hp1 φ N ε n))
+    (hfilled : closedBall c Rmax ⊆ sourceIsolatingDisc hp hp1 φ N ε m) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in NLS.ComplexAnalysis.radialPath c ρ hρ.continuous hperiod,
+        NLS.ComplexAnalysis.holomorphicOneForm
+          (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) =
+      if m = n then -1 else 0 :=
+  normalized_sourceStandardRoot_inv_radialPath_indexed
+    hp hp1 φ ψ N ε m n c R r₀ Rmax hr₀ hrR hRmax hseg ρ hρ
+    hperiod hρlo hρmax hcluster hdisjoint hfilled
+
+end NLS.ZakharovShabat

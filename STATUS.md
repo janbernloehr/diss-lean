@@ -8557,7 +8557,11 @@ formal matrix representation.
    homotopy is now constructed for twice-smooth periodic polar-radius
    graphs whose radii all exceed a disc containing the gap. The integral
    is `−1` on this noncircular class; a positive cosine modulation is an
-   explicit example. The extension to every stated admissible contour
+   explicit example. The same homotopy stays inside an outer closed disc,
+   so confinement to the assigned isolating disc transfers the
+   off-diagonal zero value from circles to these polar contours. Together
+   the two cases prove the normalized `−δₘₙ` identity for this
+   noncircular class. The extension to every stated admissible contour
    remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved

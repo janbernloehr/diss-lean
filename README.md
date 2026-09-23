@@ -1141,8 +1141,12 @@ installation is absent. No shell startup files are modified.
   A smooth periodic polar-radius graph now has that homotopy whenever
   all its radii stay beyond a disc containing the gap. Thus the value
   holds for these genuinely noncircular contours, including a positive
-  cosine modulation. Extending this result to every admissible contour
-  in the lemma remains. A geometric deformation lemma also shows that
+  cosine modulation. The same radial deformation stays inside an outer
+  disc containing the filled contour. When this disc lies in the
+  indexed isolating disc, all other inverse-root integrals vanish.
+  Combining both cases gives the normalized `−δₘₙ` identity for these
+  polar contours. Extending it to every admissible contour in the lemma
+  remains. A geometric deformation lemma also shows that
   interpolating two discs containing the gap segment keeps every
   intermediate circle disjoint from it.
   Ordinary and starred intrinsic boundary

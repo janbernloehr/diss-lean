@@ -2182,7 +2182,10 @@ normalized value is `−1` for any smooth closed loop with a gap-avoiding
 smooth homotopy from an enclosing circle. A periodic twice-smooth polar
 radius above the gap-enclosing radius now supplies such a homotopy;
 its contour therefore has value `−1`, with a cosine modulation as an
-explicit noncircular example. Next extend this construction beyond
-star-shaped polar graphs to the full admissible contour class of
-Lemma 10.3.
+explicit noncircular example. The affine radial homotopy also remains
+inside any outer disc that bounds both endpoint radii. Confined to an
+assigned isolating disc, it transfers the off-diagonal zero circle
+integral to the polar contour. Thus the normalized indexed integral is
+`−δₘₙ` for this noncircular class. Next extend the construction beyond
+polar graphs to the full admissible contour class of Lemma 10.3.
 The printed general-`p` central-height constant remains a separate open item.

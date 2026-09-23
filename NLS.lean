@@ -810,4 +810,5 @@ import NLS.ComplexAnalysis.CircleCurveIntegral
 import NLS.ZakharovShabat.SourceStandardRootContourPath
 import NLS.ComplexAnalysis.RadialContourHomotopy
 import NLS.ZakharovShabat.SourceStandardRootContourRadial
+import NLS.ZakharovShabat.SourceStandardRootContourRadialIndexed
 import NLS.ComplexAnalysis.CircleSegmentHomotopyGeometry
