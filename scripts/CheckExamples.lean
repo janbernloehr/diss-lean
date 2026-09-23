@@ -15599,3 +15599,55 @@ example (b : BoundaryCondition) (φ : CoeffPair 3)
   signed_discriminant_auxiliaryPeriodOneRoot_ge_two (by simp) (by norm_num) b φ hφ (-5)
 
 end StarredInterlacingChecks
+
+noncomputable section
+open Set Complex NLS.LinearVolterra
+open scoped ENNReal
+namespace AntiDiscriminantChecks
+open NLS NLS.ZakharovShabat
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalAntiDiscriminant Φ z =
+      classicalAuxiliaryCharacteristic .neumann Φ z -
+        classicalAuxiliaryCharacteristic .dirichlet Φ z :=
+  classicalAntiDiscriminant_eq_auxiliary_sub Φ z
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    ((classicalMonodromy Φ z) 1 1 + I*(classicalMonodromy Φ z) 1 0 +
+      I*(classicalMonodromy Φ z) 0 1 - (classicalMonodromy Φ z) 0 0)/(2*I) =
+        classicalAuxiliaryCharacteristic .neumann Φ z :=
+  printed_starredDirichlet_eq_actualNeumann Φ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalAuxiliaryCharacteristic b Φ z = 0 ↔
+      (classicalSolution Φ z (1,I*BoundaryCondition.extensionSign b) 1).1 =
+        -I*BoundaryCondition.extensionSign b *
+          (classicalSolution Φ z (1,I*BoundaryCondition.extensionSign b) 1).2 :=
+  classicalAuxiliaryCharacteristic_eq_zero_iff b Φ z
+
+example (b : BoundaryCondition) :
+    AnalyticOnNhd ℂ (fun q : ℂ × Curve (ℂ × ℂ) =>
+      classicalAuxiliaryCharacteristic b q.2 q.1) univ :=
+  analyticOnNhd_classicalAuxiliaryCharacteristic_joint b
+
+example (b : BoundaryCondition) (z : ℂ) :
+    classicalAuxiliaryCharacteristic b 0 z = sin z :=
+  classicalAuxiliaryCharacteristic_free b z
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    AnalyticOnNhd ℂ (fun q : ℂ × CoeffPair p =>
+      sourceAntiDiscriminantCandidate hp hp1 q.2 q.1) univ :=
+  analyticOnNhd_sourceAntiDiscriminantCandidate_joint hp hp1
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) (z : ℂ) :
+    sourceAntiDiscriminantCandidate hp hp1 φ z =
+      boundaryCharacteristicProduct (canonicalAuxiliaryPeriodOneRoots hp hp1 .neumann φ) z -
+        boundaryCharacteristicProduct (canonicalAuxiliaryPeriodOneRoots hp hp1 .dirichlet φ) z :=
+  sourceAntiDiscriminantCandidate_eq_products hp hp1 φ z
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (z : ℂ) :
+    sourceAntiDiscriminantCandidate hp hp1 (0 : CoeffPair p) z = 0 :=
+  sourceAntiDiscriminantCandidate_zero hp hp1 z
+
+end AntiDiscriminantChecks

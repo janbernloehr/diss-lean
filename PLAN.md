@@ -52,6 +52,14 @@
   not assert failure of an eventual estimate for each fixed potential with an
   unrestricted potential-dependent cutoff. Retain an additive leading-tail
   term in the corrected estimate.
+- On printed pages 33 and 53, the auxiliary Dirichlet domain is
+  `f₋+if₊=0` at both endpoints, but the displayed formula labeled
+  `χD*` has the monodromy sign of the auxiliary Neumann domain
+  `f₋−if₊=0`; the displayed `χN*` has the Dirichlet sign. This is an
+  exact algebraic mismatch with the printed `δ=χD*−χN*` when the
+  functions are labeled by their actual endpoint domains. The corrected
+  domain-based identity is `δ=χN*−χD*`. Keep the actual domain labels and
+  preserve the sine normalization in formal proofs.
 - Propositions 6.1 and 6.3 on printed pages 35–36 repeat the nonlinear-only
   budget with locally uniform cutoffs. The scalar-root formalization retains
   the additive leading-tail term required by the single-mode audit. Do not
@@ -1976,6 +1984,20 @@ including neighboring-gap separation, collapsed-gap equality, and the
 alternating original discriminant level. This completes the starred
 interlacing portion of Lemma 9.1(iii).
 
-Next identify the source anti-discriminant with the classical starred
-characteristics and their normalized products (Lemma 9.2).
+The actual classical auxiliary endpoint characteristics are now given by
+monodromy formulas with the signs dictated by the page-33 domains. Their
+zeros satisfy the normalized endpoint equations, both are jointly analytic,
+and their Neumann-minus-Dirichlet difference is the classical monodromy
+anti-discriminant. The page-53 printed starred D/N monodromy labels are
+proved to be swapped relative to those domains. On the full finite-exponent
+source space, the corresponding difference of normalized canonical products
+is entire, jointly analytic, exponent independent, and zero at the free
+potential. It is currently named `sourceAntiDiscriminantCandidate` because
+its agreement with the physical monodromy anti-trace is not yet proved.
+
+Next identify the normalized source characteristics with the classical
+endpoint characteristics on a dense physical subspace, which will turn the
+candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove
+the simple-Dirichlet identity and the locally uniform high-index estimates
+of Lemma 9.2(ii–iii).
 The printed general-`p` central-height constant remains a separate open item.

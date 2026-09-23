@@ -987,8 +987,14 @@ installation is absent. No shell startup files are modified.
   rotation. Both actual starred root sequences now interlace in the original
   indexed periodic gaps at every finite source exponent p>1, with strict
   separation between neighboring gaps, collapsed-gap equality, and the
-  signed original discriminant bound. The source anti-discriminant identity
-  remains open.
+  signed original discriminant bound. The actual classical auxiliary endpoint
+  characteristics are now defined and jointly analytic, and their Neumann
+  minus Dirichlet difference is the classical anti-discriminant. The printed
+  starred D/N monodromy labels have the opposite signs from the source's own
+  endpoint conditions; this is recorded in exact Lean identities. A jointly
+  analytic source-space difference of normalized starred products is
+  constructed. Identifying it with the classical anti-discriminant on physical
+  potentials remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

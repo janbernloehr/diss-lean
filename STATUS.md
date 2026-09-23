@@ -2,11 +2,13 @@
 
 ## Implemented and checked
 
-The library has 795 modules and 4981 named public theorems. All compile on the
+The library has 797 modules and 4993 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.ClassicalAuxiliaryCharacteristics` | Actual auxiliary monodromy characteristics, endpoint zero criteria, joint analyticity, free sine values, corrected anti-discriminant difference, and exact printed-label comparison |
+| `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
 | `NLS.ZakharovShabat.PeriodicPhaseConjugation` | Phase transport of every periodic root chain, full root-space equivalence, exact spectral and algebraic-multiplicity invariance |
@@ -7034,10 +7036,39 @@ endpoints, phase invariance at a negative signed coordinate, both starred
 gap inequalities, the neighboring chain, collapsed-gap equality, and the
 negative-odd signed discriminant bound.
 
+## Classical auxiliary signs and anti-discriminant candidate
+
+The actual auxiliary Dirichlet endpoint equation is `f₋+if₊=0` at both
+ends; the Neumann equation is `f₋−if₊=0`. The new classical monodromy
+characteristics have exactly those normalized endpoint zero criteria and
+both equal `sin z` at the free potential. They are jointly analytic for
+continuous physical curves. Their Neumann-minus-Dirichlet difference is
+the classical anti-discriminant `M₀₁+M₁₀`.
+
+The dissertation's printed page-53 monodromy formula labeled `χD*` equals
+the actual auxiliary Neumann characteristic; its formula labeled `χN*`
+equals the actual auxiliary Dirichlet characteristic. These are exact Lean
+equalities with the matrix entries, not an OCR inference. The labels in the
+printed formulas therefore disagree with the page-33 endpoint domains.
+The formalization keeps the actual domain labels and the resulting sign
+`δ=χN*−χD*` for domain-based classical characteristics.
+
+On each finite source coefficient space, the difference of the normalized
+actual auxiliary Neumann and Dirichlet characteristics defines an entire,
+jointly analytic function. It has an exact difference-of-canonical-products
+formula, equals zero at the free potential, and agrees across finite
+exponents. This is a candidate extension of the classical anti-discriminant;
+agreement with the physical monodromy function on a dense subspace has not
+yet been proved. Accordingly, Lemma 9.2(i–iii) is not claimed complete.
+
+Eight standalone API examples check the anti-trace sign, one printed-label
+equality, the actual endpoint zero equation, joint classical and source
+analyticity, the free sine value, the product difference, and the free zero.
+
 ## Verification
 
 Run `./scripts/check.sh` to build, check public-API examples, and audit transitive
-axioms. The current audit covers 9861 declarations under `NLS`, including generated
+axioms. The current audit covers 9890 declarations under `NLS`, including generated
 definitions and instances. Only `propext`, `Classical.choice`, and `Quot.sound`
 are allowed.
 
