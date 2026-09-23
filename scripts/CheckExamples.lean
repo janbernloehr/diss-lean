@@ -17467,3 +17467,52 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     γ hγ hγinside H hloop havoidm hcontdiff
 
 end NLS.ZakharovShabat
+noncomputable section
+open Set Metric Complex
+open scoped unitInterval ENNReal
+
+namespace NLS.ComplexAnalysis
+
+example (f : ℂ → ℂ) (Ω : Set ℂ)
+    (hΩopen : IsOpen Ω)
+    (hf : ∀ z ∈ Ω, DifferentiableAt ℂ f z)
+    {a : ℂ} (γ : Path a a)
+    (hγ : ContDiffOn ℝ 2 γ.extend (Icc 0 1))
+    (hγΩ : ∀ u : I, γ u ∈ Ω) :
+    ∃ δ : ℝ, 0 < δ ∧
+      ∀ {b : ℂ} (η : Path b b),
+        ContDiffOn ℝ 2 η.extend (Icc 0 1) →
+        (∀ u : I, dist (η u) (γ u) ≤ δ) →
+        (∫ᶜ z in η, holomorphicOneForm f z) =
+          ∫ᶜ z in γ, holomorphicOneForm f z :=
+  exists_curveIntegral_eq_of_uniform_perturbation
+    f Ω hΩopen hf γ hγ hγΩ
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) :
+    IsClosed (sourcePeriodicSegment hp hp1 ψ n) :=
+  isClosed_sourcePeriodicSegment hp hp1 ψ n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    {a : ℂ} (γ : Path a a)
+    (hγ : ContDiffOn ℝ 2 γ.extend (Icc 0 1))
+    (havoid : ∀ u : I, γ u ∉ sourcePeriodicSegment hp hp1 ψ n)
+    (hvalue : (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in γ, NLS.ComplexAnalysis.holomorphicOneForm
+        (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = -1) :
+    ∃ δ : ℝ, 0 < δ ∧
+      ∀ {b : ℂ} (η : Path b b),
+        ContDiffOn ℝ 2 η.extend (Icc 0 1) →
+        (∀ u : I, dist (η u) (γ u) ≤ δ) →
+        (2*Real.pi*Complex.I)⁻¹ *
+          (∫ᶜ z in η, NLS.ComplexAnalysis.holomorphicOneForm
+            (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = -1 :=
+  exists_normalized_sourceStandardRoot_inv_eq_neg_one_of_uniform_perturbation
+    hp hp1 ψ n γ hγ havoid hvalue
+
+end NLS.ZakharovShabat

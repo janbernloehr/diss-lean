@@ -1163,8 +1163,12 @@ installation is absent. No shell startup files are modified.
   assigned isolating disc has zero off-diagonal inverse-root integral.
   The indexed identity therefore needs a gap-avoiding circle homotopy
   only for the diagonal case; that homotopy may leave the isolating disc.
-  The diagonal identity for every admissible counterclockwise contour
-  remains open.
+  The inverse-root integral is now also locally constant under uniform
+  smooth perturbations of any loop avoiding its gap: compactness supplies
+  a positive perturbation radius, and an affine homotopy stays gap-free.
+  In particular, a known diagonal `−1` value persists on all sufficiently
+  close smooth loops. The diagonal identity for every admissible
+  counterclockwise contour remains open.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

@@ -8573,8 +8573,12 @@ formal matrix representation.
    Applying it to the assigned isolating discs proves the off-diagonal
    zero identity for every such loop inside its disc, with no circle or
    homotopy condition. The indexed theorem now asks for a gap-avoiding
-   circle homotopy only in the diagonal case. Its extension to every
-   stated admissible counterclockwise contour remains.
+   circle homotopy only in the diagonal case. Compactness now yields a
+   positive uniform neighborhood of every smooth loop avoiding its gap
+   on which the inverse-root integral is constant. Thus any established
+   normalized diagonal value `−1` persists under sufficiently small
+   smooth perturbations. Connecting every stated admissible
+   counterclockwise contour to a known one remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

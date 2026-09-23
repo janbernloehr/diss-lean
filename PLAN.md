@@ -2200,6 +2200,12 @@ loop contained in an assigned isolating disc, with no homotopy or
 circle-closeness hypothesis. The full indexed theorem therefore requires
 a gap-avoiding circle homotopy only for the diagonal case; that homotopy
 need not remain in the isolating disc. Next establish the diagonal value
-for the full admissible contour class of Lemma 10.3, perhaps through a
+for the full admissible contour class of Lemma 10.3. The inverse-root
+integral is now locally constant in the uniform topology on smooth loops
+avoiding the gap: compactness supplies a positive uniform buffer, and
+every sufficiently close smooth loop deforms affinely within the gap
+complement. Thus a known diagonal `−1` value persists under all such
+small deformations. It remains to connect every admissible
+counterclockwise contour to a known one, or prove the same value by a
 winding-number argument.
 The printed general-`p` central-height constant remains a separate open item.
