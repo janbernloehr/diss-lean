@@ -1373,5 +1373,13 @@ Hölder's inequality now bounds every finite midpoint quotient uniformly
 on those discs by an exponential in its `ℓᑫ` norm. When a squared-gap
 row is small, this combines with the gap correction to bound the
 literal finite quotient product. The remaining work is to prove the
-needed sequence decay in the omitted index and pass to the infinite
+uniform sequence estimate in the omitted index and pass to the infinite
 product limit.
+
+The physical squared-gap row is now proved to vanish as the omitted
+index tends to either end of the integer lattice, including when
+`p/2 < 1`. For each fixed source, its large-index threshold activates
+the finite full-quotient bound simultaneously for every cutoff,
+spectral point in the corresponding isolating disc, and admissible
+root sequence. A threshold uniform over a source neighborhood and the
+`ℓᑫ` omitted-index estimate remain to be proved.

@@ -2428,3 +2428,12 @@ this with the squared-gap row estimate into a finite full-quotient
 bound whenever that row is small. Next derive eventual row smallness
 from its `ℓ^(p/2)` membership, control the first-order midpoint term
 in `ℓᑫ` across omitted indices, and pass to the infinite product.
+
+`FiniteExponentTail.lean` extracts two-sided coordinate decay from any
+finite positive `ℓʳ` exponent. `SourceSquaredGapRowTails.lean` applies
+this to the physical reciprocal-square rows, and
+`SourceSingleRootAsymptoticTailBounds.lean` removes the finite
+product's small-radicand assumption on all sufficiently remote discs
+for each fixed source. Next make that row threshold uniform on a source
+neighborhood, obtain the first-order `ℓᑫ` omitted-index estimate, and
+pass to the infinite product.

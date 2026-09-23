@@ -8900,3 +8900,16 @@ the squared-gap correction gives a finite bound for the literal
 quotient product when its reciprocal-square row is small. The `ℓᑫ`
 estimate across omitted indices, eventual smallness of squared-gap
 rows, and infinite-product passage remain open.
+
+## Latest milestone: eventual squared-gap row smallness
+
+`FiniteExponentTail.lean` proves that coordinates of any finite positive
+exponent coefficient sequence vanish at both integer ends.
+`SourceSquaredGapRowTails.lean` applies this to the physical
+reciprocal-square row sequence for every `1 < p < ∞` and obtains an
+eventual half-unit bound. `SourceSingleRootAsymptoticTailBounds.lean`
+then activates the finite full-quotient estimate on every sufficiently
+remote isolating disc, uniformly in the cutoff, spectral point, and
+numerator root sequence for each fixed source. The threshold still
+depends on the source; a neighborhood-uniform threshold, the `ℓᑫ`
+omitted-index estimate, and the infinite-product limit remain open.

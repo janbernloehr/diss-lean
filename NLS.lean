@@ -864,3 +864,6 @@ import NLS.SequenceSpaces.SquaredReciprocalRows
 import NLS.ZakharovShabat.SourceSquaredGapReciprocalRows
 import NLS.ZakharovShabat.SourceMidpointDiscSeparation
 import NLS.ZakharovShabat.SourceSingleRootMidpointBounds
+import NLS.SequenceSpaces.FiniteExponentTail
+import NLS.ZakharovShabat.SourceSquaredGapRowTails
+import NLS.ZakharovShabat.SourceSingleRootAsymptoticTailBounds

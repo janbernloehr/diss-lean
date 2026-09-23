@@ -18424,3 +18424,42 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
     hp hp1 hq φ ψ a α hα N ε C hC hsep n M z hz hrowSmall
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.8: eventual half-unit rows and large-index cutoffs. -/
+noncomputable section
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p)
+    (C : ℝ) (hC : 1 ≤ C) :
+    ∃ K : ℕ, ∀ n : ℤ, K ≤ n.natAbs →
+      (C^2/4) *
+        (∑' m : ℤ, sourceSquaredGapReciprocalTerm hp hp1 ψ n m) ≤ 1/2 :=
+  exists_sourceSquaredGapPhysicalRows_half_unit hp hp1 ψ C hC
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hq : q ≠ ⊤)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε C : ℝ) (hC : 1 ≤ C)
+    (hsep : ∀ i j : ℤ, i ≠ j →
+      ∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε i,
+        |((i-j : ℤ) : ℝ)| ≤ C *
+          ‖canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) j-z‖) :
+    ∃ K : ℕ, ∀ n : ℤ, K ≤ n.natAbs →
+      ∀ a : Coeff p, ∀ α : Coeff q,
+        (∀ m : ℤ,
+          displacedRoots a m -
+            canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) m = α m) →
+        ∀ M : ℕ, ∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε n,
+          ‖sourceSingleRootQuotientPartialProduct hp hp1 n M (z,(a,ψ))-1‖ ≤
+            Real.exp (C*‖α‖*‖Coeff.puncturedLattice q.conjExponent
+              ((ENNReal.HolderConjugate.lt_top_iff_one_lt q q.conjExponent).mp hq.lt_top)‖ +
+              (C^2/2)*∑' m : ℤ,
+                sourceSquaredGapReciprocalTerm hp hp1 ψ n m)-1 :=
+  exists_sourceSingleRootQuotientPartialProduct_tail_bound
+    hp hp1 hq φ ψ N ε C hC hsep
+
+end NLS.ZakharovShabat
