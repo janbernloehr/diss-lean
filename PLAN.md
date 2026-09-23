@@ -2141,7 +2141,10 @@ bounds for every two distinct tail indices on a common connected source
 neighborhood. A finite central block now has both a locally uniform positive lower
 bound and a uniform upper bound. Its finite index span turns these into
 the full index-scale estimate (2.10) for all distinct central indices
-on one connected source neighborhood. Next handle central-tail pairs
-and make the disc choices compatible with the global isolating family,
-then prove the contour identity.
+on one connected source neighborhood. Sharpening the outer endpoint
+localization now gives a π/4 pointwise gap between any central disc and
+a positive tail disc, and the same lower bound for standard roots in
+both orientations. Next mirror this for the negative tail, establish
+index-scale upper bounds for mixed pairs, reconcile the disc choices
+with the global isolating family, and prove the contour identity.
 The printed general-`p` central-height constant remains a separate open item.

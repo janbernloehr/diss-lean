@@ -1098,7 +1098,10 @@ installation is absent. No shell startup files are modified.
   roots evaluated in any other central disc. Boundedness of the finite
   disc union also gives an upper bound. Together these yield the
   `|m−n|`-scaled estimate (2.10) for all distinct indices in that
-  central block on one connected source neighborhood.
+  central block on one connected source neighborhood. The outer
+  central endpoint also gives a pointwise π/4 separation from every
+  positive tail disc. Thus roots in either central–positive-tail
+  orientation have norm at least π/4.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

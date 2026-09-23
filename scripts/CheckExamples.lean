@@ -16769,3 +16769,36 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
   exists_local_source_central_root_index_bounds hp hp1 φ hφ N
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (N : ℕ) (ε : ℝ) (hε : 0 ≤ ε) (hεmax : ε ≤ Real.pi/4)
+    (houter : canonicalPeriodicRight hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) (N : ℤ) ∈ refinedResonantDisk (N : ℤ))
+    {i j : ℤ} (hi : i ≤ (N : ℤ)) (hj : (N : ℤ) < j)
+    (hcluster : sourceSpectralCluster hp hp1 ψ j ⊆ refinedResonantDisk j)
+    {z : ℂ} (hz : z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i) :
+    Real.pi/4 ≤ ‖sourceStandardRoot hp hp1 ψ j z‖ :=
+  sourceStandardRoot_central_positive_tail_lower hp hp1 φ ψ hφ N ε
+    hε hεmax houter hi hj hcluster hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (N : ℕ) (ε : ℝ) (hε : 0 ≤ ε) (hεmax : ε ≤ Real.pi/4)
+    (houter : canonicalPeriodicRight hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) (N : ℤ) ∈ refinedResonantDisk (N : ℤ))
+    {i j : ℤ} (hi : i ≤ (N : ℤ)) (hj : (N : ℤ) < j)
+    (hcluster : sourceSpectralCluster hp hp1 ψ i ⊆
+      sourceClusterDisc hp hp1 φ (fun _ => ε) i)
+    {z : ℂ} (hz : z ∈ refinedResonantDisk j) :
+    Real.pi/4 ≤ ‖sourceStandardRoot hp hp1 ψ i z‖ :=
+  sourceStandardRoot_positive_tail_central_lower hp hp1 φ ψ hφ N ε
+    hε hεmax houter hi hj hcluster hz
+
+end NLS.ZakharovShabat

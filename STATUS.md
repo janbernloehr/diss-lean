@@ -8514,8 +8514,11 @@ formal matrix representation.
    smaller endpoint margin and continuity. The finite union of central
    discs gives a uniform upper bound, and the finite index span converts
    both into the `|m−n|`-scaled estimate (2.10) on one connected source
-   neighborhood. Central-tail pairs, compatibility of the disc choices,
-   and the contour identity remain.
+   neighborhood. The strict outer-endpoint localization supplies a
+   pointwise π/4 gap between central and positive tail discs, yielding
+   the same lower bound for standard roots in either orientation. The
+   negative tail, mixed-pair index-scale upper bounds, compatibility
+   of disc choices, and the contour identity remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
