@@ -2270,3 +2270,12 @@ Each factor and cutoff is spectrally analytic off the noncentral gaps; the
 cutoffs are jointly analytic on the common connected almost-real source
 domain. Factor continuity on compact subsets is available for the next step:
 prove locally uniform convergence, then pass analyticity to the limit.
+
+`SourceStandardRootPairedProductUniform.lean` proves a uniform `1/|k|`
+bound for single-factor errors on source neighborhoods and bounded spectral
+sets, hence a shared summable `1/k²` bound for their paired cross term.
+For each fixed source potential, it then gives a summable factor majorant
+on compact spectral sets and uniform convergence of the finite cutoffs
+there. Next show the gap-complement domain is open and transfer spectral
+analyticity to the limit; the source-uniform midpoint tails are available
+for the later joint-analyticity argument.

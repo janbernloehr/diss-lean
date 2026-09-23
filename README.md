@@ -1248,3 +1248,9 @@ away from the noncentral gaps. On the connected almost-real source domain,
 they are jointly analytic in the spectral parameter and source coefficients.
 Each paired factor is continuous on compact subsets of the gap complement,
 providing the continuity hypothesis for the next uniform-convergence step.
+
+For each fixed source potential, the natural paired cutoffs now converge
+uniformly on every compact spectral set avoiding the noncentral gaps.
+The proof gives a shared summable majorant for the paired factor errors:
+the midpoint terms are fixed `ℓ¹` sequences, and the square-root and
+quadratic terms are uniformly `O(k⁻²)` on bounded spectral sets.

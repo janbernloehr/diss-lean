@@ -8683,3 +8683,14 @@ noncentral gaps. On the connected almost-real source domain, every finite
 cutoff is jointly analytic in the spectral parameter and source coefficients.
 Factor continuity on compact gap-complement subsets is also proved.
 Uniform convergence and analyticity of the infinite limit remain open.
+
+## Latest milestone: compact-uniform convergence of the paired product
+
+`SourceStandardRootPairedProductUniform.lean` bounds each large-index
+single-factor error by a shared reciprocal bound on source neighborhoods
+and bounded spectral sets. The quadratic paired term consequently has a
+shared summable reciprocal-square majorant. For a fixed source potential,
+the midpoint terms supply the remaining summable majorant, proving
+uniform convergence of natural paired cutoffs on every compact subset of
+the noncentral gap complement. The infinite product's analyticity and
+joint locally uniform convergence in the source remain open.
