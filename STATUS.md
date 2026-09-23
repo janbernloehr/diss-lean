@@ -8520,8 +8520,12 @@ formal matrix representation.
    negative-tail mirror supplies the identical bound for both reversed
    orientations. A common bound on the central discs’ offsets from
    their free lattice centers gives `|m−n|` upper bounds for roots
-   in either mixed orientation. Index-scale mixed-pair lower bounds,
-   compatibility of disc choices, and the contour identity remain.
+   in either mixed orientation. The lattice-center triangle inequality
+   plus the pointwise π/4 gap also gives an index-scale lower bound
+   for roots in either mixed orientation, conditional on endpoint
+   localization, pointwise separation, and avoiding the gap segment.
+   Supplying these conditions on a common disc family and source
+   neighborhood, and the contour identity, remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

@@ -1105,7 +1105,10 @@ installation is absent. No shell startup files are modified.
   argument gives the same bound on the other side. The finite
   central discs have uniformly bounded lattice offsets; triangle
   inequalities give an upper bound proportional to `|m−n|` for mixed
-  central–tail roots in both orientations.
+  central–tail roots in both orientations. Combining the lattice-center
+  triangle inequality with the fixed π/4 gap also gives a common
+  `|m−n|` lower bound in both orientations, assuming the relevant
+  endpoint localization, pointwise separation, and segment exclusion.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

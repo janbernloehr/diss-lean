@@ -2148,8 +2148,10 @@ both orientations. The mirrored strict negative outer-endpoint
 localization gives the same π/4 bound for central–negative-tail pairs.
 A finite bound on the central discs’ offsets from the free lattice
 centers and the quarter-π tail radius now give a common `|m−n|` upper
-bound for mixed-pair roots in both orientations. Next upgrade the
-positive mixed-pair lower bounds to the same index scale for distant
-pairs, reconcile the disc choices with the global isolating family,
-and prove the contour identity.
+bound for mixed-pair roots in both orientations. The fixed π/4 separation
+and lattice-center triangle inequality likewise yield one `|m−n|`
+lower bound in both orientations, conditional on endpoint localization,
+pointwise separation, and segment exclusion. Next supply those conditions
+from the positive and negative tail geometry, reconcile the disc choices
+with the global isolating family, and prove the contour identity.
 The printed general-`p` central-height constant remains a separate open item.

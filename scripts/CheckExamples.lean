@@ -16856,3 +16856,50 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
   exists_central_disc_lattice_offset_bound hp hp1 φ N ε
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (i j : ℤ) (R : ℝ) (hR : 0 ≤ R) {z w : ℂ}
+    (hz : ‖z-(Real.pi:ℂ)*i‖ ≤ R)
+    (hw : w ∈ refinedResonantDisk j)
+    (hsep : Real.pi/4 ≤ dist z w) :
+    |((i-j : ℤ) : ℝ)| ≤ (1+4*R+Real.pi)*dist z w :=
+  central_tail_pointwise_index_lower i j R hR hz hw hsep
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) :
+    ∃ B : ℝ, 1 ≤ B ∧
+      (∀ (ψ : CoeffPair p) (i j : ℤ), i.natAbs ≤ N → N < j.natAbs →
+        ∀ z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i,
+          ∀ _hL : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) j ∈ refinedResonantDisk j,
+          ∀ _hR : canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) j ∈ refinedResonantDisk j,
+          Real.pi/4 ≤ dist z
+            (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) j) →
+          Real.pi/4 ≤ dist z
+            (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) j) →
+          z ∉ sourcePeriodicSegment hp hp1 ψ j →
+            B⁻¹*|((i-j : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ j z‖) ∧
+      (∀ (ψ : CoeffPair p) (i j : ℤ), i.natAbs ≤ N → N < j.natAbs →
+        ∀ z ∈ refinedResonantDisk j,
+          ∀ _hL : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) i ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i,
+          ∀ _hR : canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) i ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i,
+          Real.pi/4 ≤ dist
+            (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) i) z →
+          Real.pi/4 ≤ dist
+            (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) i) z →
+          z ∉ sourcePeriodicSegment hp hp1 ψ i →
+            B⁻¹*|((i-j : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ i z‖) :=
+  exists_source_central_tail_root_index_lower hp hp1 φ N ε
+
+end NLS.ZakharovShabat
