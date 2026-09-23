@@ -2167,6 +2167,8 @@ theorem gives the off-diagonal circle integral zero. The normalized
 diagonal integral equals `−1` when the gap collapses. Circle inversion
 and the complex mean-value theorem now establish the same value for
 every midpoint-centered circle strictly enclosing the gap, even when
-the gap is noncollapsed. Next transfer this value to arbitrary
-contours around the gap inside its isolating disc.
+the gap is noncollapsed. Interpolating centers and radii of two discs
+that contain the gap now keeps the segment strictly inside every
+intermediate circle. Next transfer the integral along this deformation
+and then to arbitrary admissible contours inside the isolating disc.
 The printed general-`p` central-height constant remains a separate open item.

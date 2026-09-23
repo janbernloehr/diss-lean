@@ -1128,7 +1128,9 @@ installation is absent. No shell startup files are modified.
   the complex mean-value theorem now give the same `−1` value for
   every midpoint-centered circle with radius greater than half the
   gap norm, including noncollapsed gaps. Extension to every contour
-  specified in Lemma 10.3 remains.
+  specified in Lemma 10.3 remains. A geometric deformation lemma now
+  shows that interpolating two discs containing the gap segment keeps
+  every intermediate circle disjoint from the segment.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

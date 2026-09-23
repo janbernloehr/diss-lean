@@ -8541,7 +8541,10 @@ formal matrix representation.
    diagonal circle integral is `−1`. The same value now holds for
    every midpoint-centered circle of radius greater than half the
    gap norm, including noncollapsed gaps, by circle inversion and
-   mean value. Extension to the stated arbitrary contours remains.
+   mean value. A geometric lemma proves that a linear deformation
+   between two discs containing the gap never moves its circle across
+   the segment. Invariance of the integral under that deformation and
+   extension to the stated arbitrary contours remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

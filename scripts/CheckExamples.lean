@@ -17085,3 +17085,24 @@ example
   normalized_circleIntegral_sourceStandardRoot_inv_midpoint_radius hp hp1 ψ n t ht R hR hgapR
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+namespace NLS.ComplexAnalysis
+
+example
+    (x c₀ c₁ : ℂ) (r₀ r₁ s : ℝ)
+    (hs₀ : 0 ≤ s) (hs₁ : s ≤ 1)
+    (hx₀ : x ∈ ball c₀ r₀) (hx₁ : x ∈ ball c₁ r₁) :
+    x ∈ ball ((1-s) • c₀ + s • c₁) ((1-s)*r₀+s*r₁) :=
+  mem_ball_interpolated_center_radius x c₀ c₁ r₀ r₁ s hs₀ hs₁ hx₀ hx₁
+
+example
+    (a b c₀ c₁ : ℂ) (r₀ r₁ s : ℝ)
+    (hs : s ∈ Set.Icc (0:ℝ) 1)
+    (ha₀ : a ∈ ball c₀ r₀) (hb₀ : b ∈ ball c₀ r₀)
+    (ha₁ : a ∈ ball c₁ r₁) (hb₁ : b ∈ ball c₁ r₁) :
+    Disjoint (sphere ((1-s) • c₀+s • c₁) ((1-s)*r₀+s*r₁))
+      (segment ℝ a b) :=
+  interpolated_sphere_disjoint_segment a b c₀ c₁ r₀ r₁ s hs ha₀ hb₀ ha₁ hb₁
+
+end NLS.ComplexAnalysis
