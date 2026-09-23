@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 805 modules and 5076 named public theorems. All compile on the
+The library has 806 modules and 5083 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -16,6 +16,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalSeparatedJets` | Convergent scalar endpoint Taylor series from normalized solution chains; equality of formal and analytic orders; finite scalar jet nullity and exact chain endpoint equations |
 | `NLS.ZakharovShabat.ClassicalSeparatedPhysicalChains` | Actual `C¹` and physical `L²` representatives of scalar jets, original pencil recursion, linear injection into every finite physical boundary root space, finite analytic order, and the one-sided order/multiplicity bound |
 | `NLS.ZakharovShabat.ClassicalSeparatedPhysicalReconstruction` | Converse forced ODE for actual interval-domain chains, reconstruction of scalar jets from all finite physical root vectors, surjectivity of the jet map, exact finite root-space dimension, and equality of classical characteristic order with physical algebraic multiplicity |
+| `NLS.ZakharovShabat.ClassicalSeparatedCanonicalIdentity` | Exact equality of the intrinsic boundary product and literal classical endpoint characteristic for continuous physical potentials, via equal zero orders, an entire filled quotient, exterior bounds, maximum modulus, and upper normalization |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7101,9 +7102,11 @@ characteristics. Combined with the intrinsic product exterior limit, the
 classical-to-intrinsic and auxiliary-to-starred-source quotients tend to one
 along separated upper paths; the latter is stated explicitly at matched
 finite Fourier source input. This fixes the eventual entire quotient's
-constant. The classical and intrinsic boundary characteristics now have the
-same analytic order at every root; extension of their quotient and the global
-normalization identity remain to be proved.
+constant. The classical and intrinsic boundary characteristics have the
+same analytic order at every root. Their filled quotient extends to an entire
+function, is bounded by the exterior estimate and maximum modulus, and has
+upper limit one. This proves their exact normalized identity for continuous
+physical potentials.
 
 The separated classical endpoint defect is now proved equal to `-2i` times
 its source-normalized characteristic. Applying the endpoint functional to
@@ -7136,7 +7139,7 @@ therefore surjective as well as injective. Every finite physical root space
 has dimension `min N m`, where `m` is the classical characteristic's analytic
 order. Stabilization gives exact equality with the full physical algebraic
 multiplicity and hence with the intrinsic product order. The normalized
-function identity remains open.
+classical and intrinsic boundary functions are now proved equal.
 
 On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,

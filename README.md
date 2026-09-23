@@ -1012,8 +1012,8 @@ installation is absent. No shell startup files are modified.
   discs. The classical characteristic now also has ratio one to free sine
   as imaginary height tends to positive infinity, uniformly in real spectral
   part. The classical-to-intrinsic and actual auxiliary-to-starred-source
-  quotients therefore tend to one on separated upper paths, fixing the
-  constant needed after the remaining analytic-order comparison. The classical
+  quotients therefore tend to one on separated upper paths, fixing their
+  normalization constants. The classical
   separated characteristic now has a convergent scalar Taylor series built
   from normalized forced-solution chains. Its formal order equals its analytic
   order, and each finite scalar Taylor kernel is exactly the system of
@@ -1025,7 +1025,11 @@ installation is absent. No shell startup files are modified.
   linear map from the scalar Taylor kernel onto each finite physical root
   space is bijective. Thus the finite physical root-space dimension is
   `min N m`, and the characteristic's analytic order equals the full original
-  physical algebraic multiplicity at every spectral parameter.
+  physical algebraic multiplicity at every spectral parameter. Equal zero
+  orders fill the classical-to-intrinsic quotient across every root. An
+  exterior bound and maximum modulus make it globally bounded, while its
+  upper limit is one. Hence the intrinsic boundary product equals the literal
+  classical monodromy endpoint characteristic for continuous physical data.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

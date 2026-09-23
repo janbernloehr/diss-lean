@@ -2035,11 +2035,12 @@ and the inequality from classical order to physical algebraic multiplicity.
 The scalar Taylor kernel is now linearly bijective with each finite physical
 root space. Their dimensions are `min N m`, and the classical characteristic's
 analytic order equals the full physical algebraic multiplicity. The intrinsic
-boundary characteristic already has that physical order. Next extend the
-classical-to-intrinsic quotient through their common zeros; the exterior bound
-and upper limit supply the Liouville normalization argument.
+boundary characteristic already has that physical order. Their filled
+quotient is now entire and bounded; its upper limit one proves exact equality
+of the classical and intrinsic normalized characteristics for continuous
+physical potentials.
 
-Then match normalization of the source
+Next match normalization of the source
 characteristics with the classical endpoint characteristics on a dense
 physical subspace, which will turn the
 candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove
