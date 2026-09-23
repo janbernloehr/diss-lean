@@ -2169,6 +2169,10 @@ and the complex mean-value theorem now establish the same value for
 every midpoint-centered circle strictly enclosing the gap, even when
 the gap is noncollapsed. Interpolating centers and radii of two discs
 that contain the gap now keeps the segment strictly inside every
-intermediate circle. Next transfer the integral along this deformation
-and then to arbitrary admissible contours inside the isolating disc.
+intermediate circle. A shifted inversion computes the integral on large
+circles about any center, and annulus invariance carries its value to
+every smaller circle still enclosing the full gap. Thus the diagonal
+normalized integral is `−1` on any such circle; the off-diagonal integral
+is zero on filled circles in a different isolating disc. Next extend the
+circle identity to arbitrary admissible noncircular contours.
 The printed general-`p` central-height constant remains a separate open item.

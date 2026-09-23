@@ -52,7 +52,9 @@ private theorem circleIntegral_inverse_pulled (H : ℂ → ℂ) (t : ℂ)
     J = K * (K⁻¹ * J) := by rw [← mul_assoc, mul_inv_cancel₀ hK, one_mul]
     _ = K * Real.circleAverage H 0 R⁻¹ := by rw [← h]
 
-private theorem circleIntegral_inverse_pulled_holomorphic (H : ℂ → ℂ) (t : ℂ)
+/-- Circle inversion evaluates a reciprocal-pole integral by the value
+of its holomorphic factor at zero. -/
+theorem circleIntegral_inverse_pulled_holomorphic (H : ℂ → ℂ) (t : ℂ)
     (R : ℝ) (hR : 0 < R)
     (hH : DiffContOnCl ℂ H (Metric.ball (0:ℂ) |R⁻¹|)) :
     (∮ z in C(t, R), (z-t)⁻¹ * H ((z-t)⁻¹)) =

@@ -17106,3 +17106,27 @@ example
   interpolated_sphere_disjoint_segment a b c₀ c₁ r₀ r₁ s hs ha₀ hb₀ ha₁ hb₁
 
 end NLS.ComplexAnalysis
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c r) :
+    (∮ z in C(c, r), (sourceStandardRoot hp hp1 ψ n z)⁻¹) =
+      -(2*Real.pi*Complex.I) :=
+  circleIntegral_sourceStandardRoot_inv_of_gap_mem_ball hp hp1 ψ n c r hr hseg
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c r) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∮ z in C(c, r), (sourceStandardRoot hp hp1 ψ n z)⁻¹) = -1 :=
+  normalized_circleIntegral_sourceStandardRoot_inv_of_gap_mem_ball hp hp1 ψ n c r hr hseg
+
+end NLS.ZakharovShabat

@@ -1127,10 +1127,14 @@ installation is absent. No shell startup files are modified.
   normalized diagonal circle integral is `−1`. Circle inversion and
   the complex mean-value theorem now give the same `−1` value for
   every midpoint-centered circle with radius greater than half the
-  gap norm, including noncollapsed gaps. Extension to every contour
-  specified in Lemma 10.3 remains. A geometric deformation lemma now
-  shows that interpolating two discs containing the gap segment keeps
-  every intermediate circle disjoint from the segment.
+  gap norm, including noncollapsed gaps. A shifted inversion and the
+  annulus theorem now give the same diagonal value for any positively
+  oriented circle, with any center, whose open disc contains the closed
+  gap segment. Together with the off-diagonal result this proves the
+  circular-contour form of Lemma 10.3's identity. Extension to every
+  admissible noncircular contour in the lemma remains. A geometric
+  deformation lemma also shows that interpolating two discs containing
+  the gap segment keeps every intermediate circle disjoint from it.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
