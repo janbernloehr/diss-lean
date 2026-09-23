@@ -2151,7 +2151,10 @@ centers and the quarter-π tail radius now give a common `|m−n|` upper
 bound for mixed-pair roots in both orientations. The fixed π/4 separation
 and lattice-center triangle inequality likewise yield one `|m−n|`
 lower bound in both orientations, conditional on endpoint localization,
-pointwise separation, and segment exclusion. Next supply those conditions
-from the positive and negative tail geometry, reconcile the disc choices
-with the global isolating family, and prove the contour identity.
+pointwise separation, and segment exclusion. The positive and negative
+tail geometry supplies these conditions on every assigned central/tail
+disc pair when nearby clusters lie in the disc family. One constant now
+gives both sides of (2.10) for all mixed pairs. Next choose the connected
+source neighborhood and disc family to satisfy this theorem together with
+the central and tail estimates, then prove the contour identity.
 The printed general-`p` central-height constant remains a separate open item.

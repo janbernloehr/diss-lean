@@ -8524,8 +8524,12 @@ formal matrix representation.
    plus the pointwise π/4 gap also gives an index-scale lower bound
    for roots in either mixed orientation, conditional on endpoint
    localization, pointwise separation, and avoiding the gap segment.
-   Supplying these conditions on a common disc family and source
-   neighborhood, and the contour identity, remain.
+   Positive and negative tail geometry now supplies the separation and
+   segment exclusion from cluster containment in the assigned discs.
+   With strict outer-endpoint localization, one constant gives both
+   sides of (2.10) for every mixed pair. Choosing a common disc family
+   and connected source neighborhood for all index regimes, and the
+   contour identity, remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

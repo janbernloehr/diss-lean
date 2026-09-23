@@ -1109,6 +1109,10 @@ installation is absent. No shell startup files are modified.
   triangle inequality with the fixed π/4 gap also gives a common
   `|m−n|` lower bound in both orientations, assuming the relevant
   endpoint localization, pointwise separation, and segment exclusion.
+  Under strict localization of the two outer central endpoints, the
+  positive and negative tail geometry now supplies those conditions
+  whenever all nearby spectral clusters lie in their assigned discs.
+  One constant then gives both sides of (2.10) for every mixed pair.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

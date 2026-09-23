@@ -16903,3 +16903,47 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
   exists_source_central_tail_root_index_lower hp hp1 φ N ε
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (N : ℕ) (ε : ℝ) (hε : 0 ≤ ε) (hεmax : ε ≤ Real.pi/4)
+    (houterL : canonicalPeriodicLeft hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) (-(N : ℤ)) ∈ refinedResonantDisk (-(N : ℤ)))
+    (houterR : canonicalPeriodicRight hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) (N : ℤ) ∈ refinedResonantDisk (N : ℤ))
+    (i j : ℤ) (hi : i.natAbs ≤ N) (hj : N < j.natAbs) :
+    Disjoint (sourceClusterDisc hp hp1 φ (fun _ => ε) i)
+      (refinedResonantDisk j) ∧
+      ∀ z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i,
+        ∀ w ∈ refinedResonantDisk j, Real.pi/4 ≤ dist z w :=
+  source_central_tail_pointwise_geometry hp hp1 φ hφ N ε hε hεmax houterL houterR i j hi hj
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (N : ℕ) (ε : ℝ) (hε : 0 ≤ ε) (hεmax : ε ≤ Real.pi/4)
+    (houterL : canonicalPeriodicLeft hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) (-(N : ℤ)) ∈ refinedResonantDisk (-(N : ℤ)))
+    (houterR : canonicalPeriodicRight hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) (N : ℤ) ∈ refinedResonantDisk (N : ℤ)) :
+    ∃ c : ℝ, 1 ≤ c ∧
+      ∀ (ψ : CoeffPair p),
+        (∀ n : ℤ, sourceSpectralCluster hp hp1 ψ n ⊆
+          sourceIsolatingDisc hp hp1 φ N ε n) →
+        ∀ (i j : ℤ), i.natAbs ≤ N → N < j.natAbs →
+          (∀ z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) i,
+            c⁻¹*|((i-j : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ j z‖ ∧
+            ‖sourceStandardRoot hp hp1 ψ j z‖ ≤ c*|((i-j : ℤ) : ℝ)|) ∧
+          (∀ z ∈ refinedResonantDisk j,
+            c⁻¹*|((i-j : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ i z‖ ∧
+            ‖sourceStandardRoot hp hp1 ψ i z‖ ≤ c*|((i-j : ℤ) : ℝ)|) :=
+  exists_source_central_tail_root_bounds hp hp1 φ hφ N ε hε hεmax houterL houterR
+
+end NLS.ZakharovShabat
