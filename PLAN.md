@@ -2162,5 +2162,8 @@ now permits its margin to be reduced below any prescribed positive bound,
 in particular π/4. A common connected source neighborhood and
 pairwise-disjoint all-index disc family now combine the central,
 mixed, and tail estimates into the full two-sided bound (2.10).
-Next prove the contour identity of Lemma 10.3.
+The reciprocal root is analytic outside its gap segment, and Cauchy's
+theorem gives the off-diagonal circle integral zero. The normalized
+diagonal integral equals `−1` when the gap collapses. Next establish
+the same value for a noncollapsed gap and extend to the stated contours.
 The printed general-`p` central-height constant remains a separate open item.

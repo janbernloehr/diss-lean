@@ -1121,7 +1121,11 @@ installation is absent. No shell startup files are modified.
   central radius now yields one connected neighborhood and one
   pairwise-disjoint disc family for all indices. On that family one
   constant proves the full two-sided estimate (2.10) for every distinct
-  pair. Lemma 10.3's contour identity remains.
+  pair. The inverse root is analytic off its gap and integrates to zero
+  over a circle whose filled disc avoids that gap, including circles
+  inside another assigned isolating disc. For a collapsed gap, the
+  normalized diagonal circle integral is `−1`. The noncollapsed
+  diagonal contour identity remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

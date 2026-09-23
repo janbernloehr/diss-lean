@@ -17022,3 +17022,40 @@ example
   exists_local_source_all_index_root_bounds hp hp1 φ hφ
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) (z : ℂ)
+    (hz : z ∉ sourcePeriodicSegment hp hp1 ψ n) :
+    AnalyticAt ℂ (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z :=
+  sourceStandardRoot_inv_analyticAt hp hp1 ψ n z hz
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (m n : ℤ) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    (hdisjoint : Disjoint (sourceIsolatingDisc hp hp1 φ N ε m)
+      (sourceIsolatingDisc hp hp1 φ N ε n))
+    (hfilled : closedBall c r ⊆ sourceIsolatingDisc hp hp1 φ N ε m) :
+    (∮ z in C(c, r), (sourceStandardRoot hp hp1 ψ n z)⁻¹) = 0 :=
+  circleIntegral_sourceStandardRoot_inv_off_index_eq_zero hp hp1 φ ψ N ε m n c r hr hcluster hdisjoint hfilled
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (c : ℂ) (r : ℝ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n = 0)
+    (hmid : canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n ∈ ball c r) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∮ z in C(c, r), (sourceStandardRoot hp hp1 ψ n z)⁻¹) = -1 :=
+  normalized_circleIntegral_sourceStandardRoot_inv_zeroGap hp hp1 ψ n c r hgap hmid
+
+end NLS.ZakharovShabat

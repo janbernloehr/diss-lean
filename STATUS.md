@@ -8534,8 +8534,12 @@ formal matrix representation.
    margin below any chosen positive radius, including π/4. One connected
    source neighborhood and pairwise-disjoint isolating-disc family now
    support a single `|m−n|` constant for all distinct signed indices,
-   completing equation (2.10). The contour identity of Lemma 10.3
-   remains.
+   completing equation (2.10). The inverse standard root is analytic
+   off its own gap segment. Its integral over any filled circle avoiding
+   that segment vanishes, giving the off-diagonal identity inside a
+   different isolating disc. At a collapsed gap, the normalized
+   diagonal circle integral is `−1`. The noncollapsed diagonal case
+   and extension to the stated contours remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
