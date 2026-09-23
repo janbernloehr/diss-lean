@@ -802,3 +802,4 @@ import NLS.ZakharovShabat.SourceStandardRootMixedBounds
 import NLS.ZakharovShabat.SourceStandardRootMixedLocal
 import NLS.ZakharovShabat.SourceStandardRootAllIndexBounds
 import NLS.ZakharovShabat.SourceStandardRootContourBasic
+import NLS.ZakharovShabat.SourceStandardRootContourMidpoint

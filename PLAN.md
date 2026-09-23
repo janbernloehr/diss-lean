@@ -2164,6 +2164,9 @@ pairwise-disjoint all-index disc family now combine the central,
 mixed, and tail estimates into the full two-sided bound (2.10).
 The reciprocal root is analytic outside its gap segment, and Cauchy's
 theorem gives the off-diagonal circle integral zero. The normalized
-diagonal integral equals `−1` when the gap collapses. Next establish
-the same value for a noncollapsed gap and extend to the stated contours.
+diagonal integral equals `−1` when the gap collapses. Circle inversion
+and the complex mean-value theorem now establish the same value for
+every midpoint-centered circle strictly enclosing the gap, even when
+the gap is noncollapsed. Next transfer this value to arbitrary
+contours around the gap inside its isolating disc.
 The printed general-`p` central-height constant remains a separate open item.

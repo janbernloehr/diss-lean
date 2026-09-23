@@ -8538,8 +8538,10 @@ formal matrix representation.
    off its own gap segment. Its integral over any filled circle avoiding
    that segment vanishes, giving the off-diagonal identity inside a
    different isolating disc. At a collapsed gap, the normalized
-   diagonal circle integral is `−1`. The noncollapsed diagonal case
-   and extension to the stated contours remain.
+   diagonal circle integral is `−1`. The same value now holds for
+   every midpoint-centered circle of radius greater than half the
+   gap norm, including noncollapsed gaps, by circle inversion and
+   mean value. Extension to the stated arbitrary contours remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

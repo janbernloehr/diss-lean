@@ -1124,8 +1124,11 @@ installation is absent. No shell startup files are modified.
   pair. The inverse root is analytic off its gap and integrates to zero
   over a circle whose filled disc avoids that gap, including circles
   inside another assigned isolating disc. For a collapsed gap, the
-  normalized diagonal circle integral is `−1`. The noncollapsed
-  diagonal contour identity remains.
+  normalized diagonal circle integral is `−1`. Circle inversion and
+  the complex mean-value theorem now give the same `−1` value for
+  every midpoint-centered circle with radius greater than half the
+  gap norm, including noncollapsed gaps. Extension to every contour
+  specified in Lemma 10.3 remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

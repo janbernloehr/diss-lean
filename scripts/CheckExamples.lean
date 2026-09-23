@@ -17059,3 +17059,29 @@ example
   normalized_circleIntegral_sourceStandardRoot_inv_zeroGap hp hp1 ψ n c r hgap hmid
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (t g : ℂ)
+    (R : ℝ) (hR : 0 < R)
+    (hsmall : ‖g‖*(R⁻¹)^2 < 4) :
+    (∮ z in C(t, R), (normalizedStandardRoot t g z)⁻¹) =
+      -(2*Real.pi*Complex.I) :=
+  circleIntegral_normalizedRoot_inv_of_radius t g R hR hsmall
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (t : ℂ)
+    (ht : t = canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n)
+    (R : ℝ) (hR : 0 < R)
+    (hgapR : ‖canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n‖/2 < R) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∮ z in C(t, R), (sourceStandardRoot hp hp1 ψ n z)⁻¹) = -1 :=
+  normalized_circleIntegral_sourceStandardRoot_inv_midpoint_radius hp hp1 ψ n t ht R hR hgapR
+
+end NLS.ZakharovShabat
