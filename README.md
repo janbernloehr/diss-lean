@@ -1022,6 +1022,11 @@ installation is absent. No shell startup files are modified.
   samples, with Cauchy's estimate covering their derivatives. Both full
   sampled sequences therefore have locally uniform ℓᵖ norm bounds, proving
   the source coefficient form of Lemma 9.2(iii).
+  The first high-index step toward Lemma 10.1 is also formalized: on one
+  source neighborhood, both periodic endpoints, both ordinary boundary
+  roots, and the critical point lie in their common free quarter-π disc at
+  every distant index. These discs are disjoint and have explicit linear
+  pointwise separation. The finite central isolating discs remain.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

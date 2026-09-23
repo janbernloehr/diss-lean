@@ -2063,4 +2063,11 @@ Combining that finite block with the tail completes the locally uniform full
 ℓᵖ norm assertion of source Lemma 9.2(iii). Next connect the source candidate
 with physical monodromy for arbitrary `L²` input, then continue to the action
 coordinate prerequisites.
+For Lemma 10.1, a common source neighborhood and cutoff now localize both
+periodic endpoints, both ordinary boundary roots, and the critical point in
+their free quarter-π discs at all distant indices. Those discs are pairwise
+disjoint and satisfy explicit linear pointwise separation bounds. Next use
+continuity at real-type potentials to choose finitely many central discs
+with the same five-family containment and separation, then assemble the
+open connected neighborhood and locally common isolating-disc sequences.
 The printed general-`p` central-height constant remains a separate open item.

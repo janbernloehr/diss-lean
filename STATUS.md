@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 813 modules and 5111 named public theorems. All compile on the
+The library has 816 modules and 5115 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -24,6 +24,9 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.SourceAntiDiscriminantDiscLp` | Both starred source products and their difference have locally uniform disc majorants; ordinary Dirichlet-root tail samples share one ℓᵖ bound, and complete value and derivative samples belong to ℓᵖ pointwise |
 | `NLS.ComplexAnalysis.CompactParameterBounds` | A jointly continuous scalar family is uniformly bounded on any fixed compact spectral set over some open parameter neighborhood |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCentralLp` | Compact spectral-ball and Cauchy bounds control finite central Dirichlet samples; full anti-discriminant and derivative sampled sequences have locally uniformly bounded ℓᵖ norms, completing source Lemma 9.2(iii) |
+| `NLS.ZakharovShabat.SourcePeriodicTailIsolation` | Both canonical periodic endpoints share their free quarter-π disc on one source neighborhood at every sufficiently distant index |
+| `NLS.ZakharovShabat.SourceTailIsolation` | One source neighborhood and cutoff place the two periodic endpoints, both ordinary boundary roots, and the critical point in the same high-index free disc |
+| `NLS.ZakharovShabat.FreeDiscSeparation` | Distinct free quarter-π discs are disjoint, with pointwise distances between their points bounded above and below linearly in the index difference |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7188,6 +7191,14 @@ Cauchy's estimate bounds its derivative on the smaller ball containing all
 central Dirichlet roots. Splitting the sequences into this finite central
 block and the uniformly majorized tail gives locally uniform full ℓᵖ norm
 bounds for both samples, without requiring the central roots to be simple.
+
+For Section 10, one open source neighborhood and one cutoff now place all
+five canonical coordinates—both periodic endpoints, the ordinary Dirichlet
+and Neumann roots, and the critical point—in the same free quarter-π disc
+at every distant index. Distinct such discs are disjoint, and the distance
+between arbitrary points in them is comparable to the difference of their
+signed indices. The finite central isolating neighborhoods and the global
+connected neighborhood of Lemma 10.1 remain to be constructed.
 
 Eight standalone API examples check the anti-trace sign, one printed-label
 equality, the actual endpoint zero equation, joint classical and source
