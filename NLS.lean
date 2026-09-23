@@ -768,3 +768,4 @@ import NLS.ZakharovShabat.SourceSpectralClusters
 import NLS.ComplexAnalysis.RealIntervalDiscs
 import NLS.ComplexAnalysis.FinitePositiveMargins
 import NLS.ZakharovShabat.SourceClusterDiscs
+import NLS.ZakharovShabat.SourceClusterDiscsLocal

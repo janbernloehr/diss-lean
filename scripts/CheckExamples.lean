@@ -16257,3 +16257,26 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_sourceClusterDiscs_finite_block hp hp1 φ hφ s
 
 end NLS.ZakharovShabat
+
+open Set Metric Filter Topology
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (V : Set ℂ) (hV : IsOpen V)
+    (hbase : sourceSpectralCluster hp hp1 φ n ⊆ V) :
+    ∀ᶠ ψ : CoeffPair p in 𝓝 φ, sourceSpectralCluster hp hp1 ψ n ⊆ V :=
+  eventually_sourceSpectralCluster_subset_open hp hp1 φ hφ n V hV hbase
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (s : Finset ℤ) :
+    ∃ ε : ℝ, 0 < ε ∧ ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧
+      (∀ ψ ∈ U, ∀ n ∈ s,
+        sourceSpectralCluster hp hp1 ψ n ⊆ sourceClusterDisc hp hp1 φ (fun _ => ε) n) ∧
+      (∀ i ∈ s, ∀ j ∈ s, i < j →
+        Disjoint (sourceClusterDisc hp hp1 φ (fun _ => ε) i)
+          (sourceClusterDisc hp hp1 φ (fun _ => ε) j)) :=
+  exists_local_sourceClusterDiscs_finite_block hp hp1 φ hφ s
+
+end NLS.ZakharovShabat

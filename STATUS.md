@@ -8453,8 +8453,9 @@ formal matrix representation.
    midpoint-centered discs for every finite central index block. A single
    strictly positive margin contains each cluster and keeps discs for
    distinct indices disjoint, even at collapsed periodic gaps. Local
-   persistence of these fixed central discs and their assembly with the
-   free-disc tail remain open.
+   persistence of these fixed central discs is now proved on one open
+   source neighborhood using continuity of all five coordinates. Their
+   assembly with the free-disc tail remains open.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

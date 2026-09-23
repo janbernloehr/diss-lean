@@ -2076,8 +2076,9 @@ bound by the intervening periodic endpoint gap.
 The finite central disc construction is now proved: each midpoint disc
 contains its real-type five-coordinate cluster, and a finite minimum of
 the positive inter-cluster gaps supplies one margin making all central
-discs pairwise disjoint. Next freeze these discs at the base potential and
-use continuity of the five coordinates to preserve membership on a common
-open source neighborhood. Then combine that central neighborhood with the
-uniform tail neighborhoods for Lemma 10.1.
+discs pairwise disjoint. The discs can now be frozen at the base potential:
+continuity of the five coordinates and finite intersection yield one open
+source neighborhood where every nearby central cluster remains inside its
+assigned disc. Next combine that central neighborhood with the uniform
+tail neighborhoods for Lemma 10.1.
 The printed general-`p` central-height constant remains a separate open item.

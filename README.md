@@ -1035,7 +1035,9 @@ installation is absent. No shell startup files are modified.
   explicit midpoint-centered complex disc. A single positive enlargement
   margin can be chosen for the entire block so that these discs are pairwise
   disjoint, including when a periodic gap collapses. Keeping the central
-  coordinates in these fixed discs on a common neighborhood remains next.
+  coordinates in these fixed discs now holds on one open source
+  neighborhood by continuity of all five canonical families. Combining
+  these central discs with the uniform high-index discs remains next.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
