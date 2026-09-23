@@ -830,3 +830,5 @@ import NLS.ZakharovShabat.SourceStandardRootGapSideComplex
 import NLS.ZakharovShabat.SourceStandardRootGapSideSource
 import NLS.ZakharovShabat.SourceStandardRootGapSideJoint
 import NLS.ZakharovShabat.SourceStandardRootGapSideSourceJoint
+import NLS.ZakharovShabat.SourceStandardRootGapSideIntegral
+import NLS.ZakharovShabat.SourceStandardRootGapSideSourceIntegral

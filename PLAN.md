@@ -2218,7 +2218,14 @@ the midpoint and endpoints. A connectedness argument fixes the root
 branch throughout the upper half-plane; reflection fixes the lower
 branch. Their continuity gives joint one-sided limits as the spectral
 parameter approaches each gap point through its entire open side, even
-when the longitudinal coordinate varies. Next establish the integral
-estimate in Lemma 10.4, then continue with the infinite standard-root
-product in Lemma 10.5.
+when the longitudinal coordinate varies. The cosine parametrization of
+Lemma 10.4 now removes the endpoint singularities of the side kernel:
+its integral equals `±i` times an ordinary integral over an interval
+of length at most `π`. Compactness gives an attained maximum of `‖f‖`
+on the gap, and this one maximum bounds both normalized side integrals
+uniformly in the stopping point. The result applies to the actual
+canonical source root through its proved side limits. Next relate this
+parametrized integral to an independently defined improper side path
+integral, then continue with the infinite standard-root product in
+Lemma 10.5.
 The printed general-`p` central-height constant remains a separate open item.

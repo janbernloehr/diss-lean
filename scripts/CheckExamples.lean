@@ -17728,3 +17728,45 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) (t : ℝ)
   sourceStandardRoot_tendsto_gap_lower_side hp hp1 ψ n t hgap htl htr
 
 end NLS.ZakharovShabat
+
+noncomputable section
+open Complex Filter MeasureTheory intervalIntegral
+open scoped Topology ENNReal
+
+namespace NLS.ZakharovShabat
+
+example (τ δ : ℂ) (f : ℂ → ℂ) (t : ℝ) (hδ : δ ≠ 0) :
+    gapSideBoundaryIntegral τ δ f t true =
+      gapSidePrimitive τ δ f t true :=
+  gapSideBoundaryIntegral_eq_primitive τ δ f t hδ true
+
+example (τ δ : ℂ) (f : ℂ → ℂ) (hδ : δ ≠ 0)
+    (hf : ContinuousOn f (standardRootGapSegment τ δ)) :
+    ∃ z ∈ standardRootGapSegment τ δ,
+      (∀ w ∈ standardRootGapSegment τ δ, ‖f w‖ ≤ ‖f z‖) ∧
+      ∀ (t : ℝ) (upper : Bool),
+        ‖gapSideBoundaryIntegral τ δ f t upper / (Real.pi:ℂ)‖ ≤ ‖f z‖ :=
+  gapSideBoundaryIntegral_uniform_max_bound τ δ f hδ hf
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n ≠ 0) (f : ℂ → ℂ)
+    (hf : ContinuousOn f (standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n))) :
+    ∃ z ∈ standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n),
+      (∀ w ∈ standardRootGapSegment
+        (sourceStandardRootMidpoint hp hp1 ψ n)
+        (sourceStandardRootHalfGap hp hp1 ψ n), ‖f w‖ ≤ ‖f z‖) ∧
+      ∀ (t : ℝ) (upper : Bool),
+        ‖gapSideBoundaryIntegral
+          (sourceStandardRootMidpoint hp hp1 ψ n)
+          (sourceStandardRootHalfGap hp hp1 ψ n)
+          f t upper / (Real.pi:ℂ)‖ ≤ ‖f z‖ :=
+  sourceStandardRoot_gapSideBoundaryIntegral_uniform_max_bound hp hp1 ψ n hgap f hf
+
+end NLS.ZakharovShabat

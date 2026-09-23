@@ -1180,8 +1180,13 @@ installation is absent. No shell startup files are modified.
   in formula (2.12) for every point of a noncollapsed complex periodic
   gap, including its midpoint and endpoints. The same boundary values
   now hold for arbitrary approaches within each open side of the gap,
-  allowing the longitudinal coordinate to vary. Lemma 10.4's integral
-  bound remains.
+  allowing the longitudinal coordinate to vary. A cosine parametrization
+  now gives the normalized side-integral estimate of Lemma 10.4 for
+  continuous data on every noncollapsed canonical gap. The integrand's
+  endpoint singularities cancel almost everywhere, and one attained
+  maximum bounds both sides and every stopping point. Relating this
+  parametrized boundary integral to a separately defined improper path
+  integral remains.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

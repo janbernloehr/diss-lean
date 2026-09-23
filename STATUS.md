@@ -8596,7 +8596,16 @@ formal matrix representation.
    through either open side of a noncollapsed complex gap, including at
    the midpoint and endpoints. `SourceStandardRootGapSideSourceJoint.lean`
    specializes these joint limits to the actual canonical source root.
-   The integral estimate of Lemma 10.4 remains.
+   `SourceStandardRootGapSideIntegral.lean` now defines the cosine-pulled
+   boundary integral of Lemma 10.4. On the open parameter interval its
+   inverse-root kernel cancels the cosine Jacobian to `±i`; the endpoint
+   values do not affect the integral. Continuous data give an integrable
+   boundary integrand, and the normalized integral on either side, up
+   to any stopping point, is bounded by a single attained maximum of
+   `‖f‖` on the compact gap. `SourceStandardRootGapSideSourceIntegral.lean`
+   confirms the cosine boundary values for the actual canonical source
+   root and specializes the uniform bound. A bridge to an independently
+   defined improper complex path integral remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
