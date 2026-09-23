@@ -16626,3 +16626,20 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
   sourceStandardRoot_radicand_mem_slitPlane hp hp1 ψ n z hz
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (t g z : ℂ) (hz : t ≠ z)
+    (hslit : 1-g/(4*(t-z)^2) ∈ Complex.slitPlane) :
+    AnalyticAt ℂ (fun w => normalizedStandardRoot t g w) z :=
+  normalizedStandardRoot_analyticAt_of_slit t g z hz hslit
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ) :
+    AnalyticOnNhd ℂ (sourceStandardRoot hp hp1 ψ n)
+      (sourcePeriodicSegment hp hp1 ψ n)ᶜ :=
+  sourceStandardRoot_analyticOnNhd hp hp1 ψ n
+
+end NLS.ZakharovShabat

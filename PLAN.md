@@ -2129,7 +2129,9 @@ The general preimage calculation for the principal square-root cut is
 proved: `1-w²` can leave the slit plane only when `w` is real and
 `|w.re|≥1`. For the normalized endpoint ratio, this real condition now
 forces the spectral parameter onto the closed endpoint segment. Thus the
-canonical source radicand is in the slit plane off its gap segment. Next
-prove the standard root is jointly analytic there, then the cross-disc
-estimates and contour identity.
+canonical source radicand is in the slit plane off its gap segment. The
+principal standard root is therefore analytic in the spectral parameter
+throughout this complement. Next prove joint analyticity in the source
+coefficients and spectral variable, then the cross-disc estimates and
+contour identity.
 The printed general-`p` central-height constant remains a separate open item.

@@ -8499,7 +8499,10 @@ formal matrix representation.
    absolute value at least one. Applied to the normalized periodic
    endpoint ratio, this forces the spectral point onto the closed gap
    segment. Therefore equation (2.9)’s radicand stays in the principal
-   slit plane on the segment complement. Joint analyticity remains next.
+   slit plane on the segment complement. The principal standard root is
+   analytic in the spectral parameter throughout that complement. Joint
+   source/spectral analyticity, cross-disc bounds, and the contour identity
+   remain next.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

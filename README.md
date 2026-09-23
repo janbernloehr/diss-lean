@@ -1082,7 +1082,9 @@ installation is absent. No shell startup files are modified.
   square-root cut only when `w` is real with `|w|≥1`. The corresponding
   endpoint ratio is now proved to force the spectral parameter onto the
   closed gap segment. Hence equation (2.9)’s radicand lies in the
-  principal slit plane everywhere outside that segment.
+  principal slit plane everywhere outside that segment. The
+  standard root is now analytic in the spectral parameter on the full
+  complement of the closed canonical gap segment.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
