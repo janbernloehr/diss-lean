@@ -16453,3 +16453,27 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_analytic_midpoint_squaredGap hp hp1
 
 end NLS.ZakharovShabat
+
+open Set Complex Topology
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) (z : ℂ) :
+    (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n - z) *
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n - z) =
+        (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n - z)^2 -
+          (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2/4 :=
+  sourcePeriodicPair_factorization hp hp1 ψ n z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ (z : ℂ) (ψ : CoeffPair p), ψ ∈ W → ∀ n : ℤ,
+        AnalyticAt ℂ (fun t : ℂ × CoeffPair p =>
+          (canonicalPeriodicLeft hp hp1 (periodOnePotential t.2) (periodOnePotential_mem t.2) n - t.1) *
+            (canonicalPeriodicRight hp hp1 (periodOnePotential t.2) (periodOnePotential_mem t.2) n - t.1))
+          (z, ψ) :=
+  exists_global_source_analytic_periodicPair_factor hp hp1
+
+end NLS.ZakharovShabat

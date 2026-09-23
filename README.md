@@ -1060,6 +1060,9 @@ installation is absent. No shell startup files are modified.
   functions analytic on the open connected almost-real source domain,
   including at collapsed gaps. This proves the analyticity assertion of
   Lemma 10.2(ii); its asymptotics and the all-powers assertion remain.
+  The indexed endpoint product equals the quadratic expression in this
+  midpoint and squared gap, and is jointly analytic in the spectral
+  parameter and source coefficients. This proves Lemma 10.2(iii).
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

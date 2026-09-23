@@ -8476,8 +8476,11 @@ formal matrix representation.
    midpoint and squared gap on every local source disc neighborhood. Thus
    both canonical expressions are analytic throughout the open connected
    almost-real source domain, including at double endpoints. This is the
-   analyticity assertion of Lemma 10.2(ii). The all-powers assertion,
-   locally uniform asymptotics, and joint identity remain next.
+   analyticity assertion of Lemma 10.2(ii). The canonical endpoint product
+   equals its quadratic midpoint/squared-gap expression and is jointly
+   analytic in spectral parameter and source coefficients, proving Lemma
+   10.2(iii). The all-powers assertion and locally uniform asymptotics
+   remain next.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
