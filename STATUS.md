@@ -8517,8 +8517,9 @@ formal matrix representation.
    neighborhood. The strict outer-endpoint localization supplies a
    pointwise π/4 gap between central and positive tail discs, yielding
    the same lower bound for standard roots in either orientation. The
-   negative tail, mixed-pair index-scale upper bounds, compatibility
-   of disc choices, and the contour identity remain.
+   negative-tail mirror supplies the identical bound for both reversed
+   orientations. Mixed-pair index-scale upper bounds, compatibility of
+   disc choices, and the contour identity remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

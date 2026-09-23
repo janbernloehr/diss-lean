@@ -1101,7 +1101,8 @@ installation is absent. No shell startup files are modified.
   central block on one connected source neighborhood. The outer
   central endpoint also gives a pointwise π/4 separation from every
   positive tail disc. Thus roots in either central–positive-tail
-  orientation have norm at least π/4.
+  orientation have norm at least π/4. The mirrored negative-tail
+  argument gives the same bound on the other side.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

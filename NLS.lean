@@ -794,3 +794,4 @@ import NLS.ComplexAnalysis.MidpointDiscSeparation
 import NLS.ZakharovShabat.SourceStandardRootCentralSeparation
 import NLS.ZakharovShabat.SourceStandardRootCentralBounds
 import NLS.ZakharovShabat.SourceStandardRootPositiveTail
+import NLS.ZakharovShabat.SourceStandardRootNegativeTail
