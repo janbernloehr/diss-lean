@@ -774,3 +774,5 @@ import NLS.ZakharovShabat.SourceCentralTailSeparation
 import NLS.ZakharovShabat.SourceAllIndexDisjointIsolation
 import NLS.ZakharovShabat.SourceRealTypeConvex
 import NLS.ZakharovShabat.SourceGlobalIsolation
+import NLS.ZakharovShabat.SourceIsolatingSpectrum
+import NLS.ZakharovShabat.SourceIsolatingContourGeometry

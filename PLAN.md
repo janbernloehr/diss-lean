@@ -2090,4 +2090,10 @@ contains the complete periodic endpoint segment. This completes the
 source-coefficient geometric statement of Lemma 10.1. Next use these
 isolating neighborhoods for Lemma 10.2's analytic symmetric spectral
 coordinates and the action-coordinate prerequisites.
+The next contour step is now proved: every assigned disc contains exactly
+its own two canonical periodic endpoints from the actual spectrum, and
+every circular boundary lies in the resolvent set. The finite enclosed
+spectral set is exactly that endpoint pair. Next identify its total
+algebraic multiplicity as two, then use the existing analytic contour
+trace machinery to prove Lemma 10.2's symmetric power sums.
 The printed general-`p` central-height constant remains a separate open item.

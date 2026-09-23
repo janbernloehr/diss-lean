@@ -1048,6 +1048,11 @@ installation is absent. No shell startup files are modified.
   nearby source potentials, and each periodic endpoint segment is inside
   its assigned disc. This proves the source-coefficient geometry of
   Lemma 10.1.
+  The complete periodic endpoint labeling now identifies the actual
+  periodic spectrum inside each assigned disc as exactly its indexed
+  endpoint pair. Each circular boundary avoids the periodic spectrum,
+  and the corresponding finite enclosed spectral set is that same pair.
+  These are the contour prerequisites for Lemma 10.2.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

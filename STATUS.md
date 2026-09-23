@@ -8466,6 +8466,11 @@ formal matrix representation.
    quarter-π discs at high indices. Each full periodic endpoint segment
    lies in its assigned disc. This is the source-coefficient geometric
    form of Lemma 10.1.
+   The actual periodic spectrum within each assigned disc is now exactly
+   its canonical endpoint pair. Every assigned circular boundary lies in
+   the resolvent set, and the finite enclosed spectral set equals that
+   pair. The rank-two multiplicity statement and analytic trace transfer
+   for Lemma 10.2 remain next.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
