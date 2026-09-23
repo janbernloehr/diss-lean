@@ -2104,6 +2104,8 @@ analytic at every source potential in the open connected almost-real domain,
 even at double endpoints. The endpoint product now equals the quadratic
 expression in the midpoint, squared gap, and spectral parameter. This
 identity proves joint analyticity on the same domain, completing Lemma
-10.2(iii). Next prove the full family of power sums in Lemma 10.2(i)
-and the locally uniform sequence asymptotics in (ii).
+10.2(iii). A two-step symmetric recurrence now expresses every endpoint
+power sum as a polynomial in the analytic midpoint and squared gap. This
+proves the full family in Lemma 10.2(i), including coincident endpoints.
+Next prove the locally uniform sequence asymptotics in (ii).
 The printed general-`p` central-height constant remains a separate open item.

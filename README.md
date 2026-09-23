@@ -1059,10 +1059,13 @@ installation is absent. No shell startup files are modified.
   and squared gap in every assigned disc. Frozen contours make both
   functions analytic on the open connected almost-real source domain,
   including at collapsed gaps. This proves the analyticity assertion of
-  Lemma 10.2(ii); its asymptotics and the all-powers assertion remain.
+  Lemma 10.2(ii); its sequence asymptotics remain.
   The indexed endpoint product equals the quadratic expression in this
   midpoint and squared gap, and is jointly analytic in the spectral
   parameter and source coefficients. This proves Lemma 10.2(iii).
+  A two-root recurrence expresses every endpoint power sum as a polynomial
+  in the midpoint and squared gap, proving Lemma 10.2(i), including at
+  coincident endpoints.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

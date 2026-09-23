@@ -16477,3 +16477,22 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_global_source_analytic_periodicPair_factor hp hp1
 
 end NLS.ZakharovShabat
+
+open Set Complex Topology
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (a b : ℂ) (k : ℕ) :
+    symmetricPairPowerSum ((a+b)/2) ((a-b)^2) k = a^k+b^k :=
+  symmetricPairPowerSum_eq a b k
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ ψ ∈ W, ∀ (n : ℤ) (k : ℕ),
+        AnalyticAt ℂ (fun χ : CoeffPair p =>
+          (canonicalPeriodicLeft hp hp1 (periodOnePotential χ) (periodOnePotential_mem χ) n)^k +
+            (canonicalPeriodicRight hp hp1 (periodOnePotential χ) (periodOnePotential_mem χ) n)^k) ψ :=
+  exists_global_source_analytic_periodicPowerSums hp hp1
+
+end NLS.ZakharovShabat

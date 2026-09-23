@@ -8479,8 +8479,10 @@ formal matrix representation.
    analyticity assertion of Lemma 10.2(ii). The canonical endpoint product
    equals its quadratic midpoint/squared-gap expression and is jointly
    analytic in spectral parameter and source coefficients, proving Lemma
-   10.2(iii). The all-powers assertion and locally uniform asymptotics
-   remain next.
+   10.2(iii). Every indexed endpoint power sum obeys a polynomial
+   recurrence in the analytic midpoint and squared gap, proving Lemma
+   10.2(i), including collapsed gaps. The locally uniform asymptotics
+   of Lemma 10.2(ii) remain next.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
