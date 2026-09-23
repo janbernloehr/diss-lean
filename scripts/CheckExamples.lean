@@ -17905,3 +17905,33 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_uniform_sourceStandardRootSqrtCorrection_majorant hp hp1 φ Rz
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 paired product API checks. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ) (k : ℤ) (hk : k ≠ 0) :
+    sourceStandardRootPairExcessCoeff hp hp1 ψ z k =
+      sourceStandardRootRelativeError hp hp1 ψ k z +
+      sourceStandardRootRelativeError hp hp1 ψ (-k) z +
+      sourceStandardRootRelativeError hp hp1 ψ k z *
+        sourceStandardRootRelativeError hp hp1 ψ (-k) z :=
+  sourceStandardRootPairExcessCoeff_apply_of_ne hp hp1 ψ z k hk
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ) :
+    Tendsto (fun N : ℕ => ∏ j ∈ Finset.range N,
+      sourceStandardRootPairedFactor hp hp1 ψ z j) atTop
+      (𝓝 (sourceStandardRootPairedProduct hp hp1 ψ z)) :=
+  tendsto_sourceStandardRootPairedProduct hp hp1 ψ z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ)
+    (hz : z ∈ sourceStandardRootPairedDomain hp hp1 ψ) :
+    sourceStandardRootPairedProduct hp hp1 ψ z ≠ 0 :=
+  sourceStandardRootPairedProduct_ne_zero hp hp1 ψ z hz
+
+end NLS.ZakharovShabat

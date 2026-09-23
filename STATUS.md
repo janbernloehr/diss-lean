@@ -8662,3 +8662,14 @@ that this happens at every sufficiently distant index. The remainder is
 absolutely summable for fixed source and spectral parameters; nearby
 sources and bounded spectral regions share one summable `1/k²` majorant.
 The paired-error cross term and the product limit remain open.
+
+## Latest milestone: paired standard-root product for omitted index zero
+
+`SourceStandardRootPairedProduct.lean` bundles the normalized single-factor
+errors into `ℓ²`, including the free reciprocal term. Hölder multiplication
+then puts the `a_k a_{-k}` cross term in `ℓ¹`; the full paired excess is
+absolutely summable. The associated product converges from its natural
+finite cutoffs and is nonzero off all noncentral gap segments. This proves
+the pointwise convergence and nonvanishing parts of Lemma 10.5 for the
+omitted index zero. Locally uniform convergence, analyticity, and arbitrary
+omitted indices remain open.

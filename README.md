@@ -1236,3 +1236,9 @@ summable over indices. On a neighborhood of any source potential and any
 bounded spectral region, its distant terms share one summable `1/k²`
 majorant. Combining this with the midpoint correction and the quadratic
 paired-error term is the next step toward Lemma 10.5's product.
+
+The paired product for the omitted central index is now defined and its
+finite cutoffs converge at every source potential and spectral parameter.
+The limit is nonzero outside the noncentral gap segments. The proof places
+single-factor errors in `ℓ²` and their paired cross term in `ℓ¹` by Hölder.
+Analyticity and arbitrary omitted indices remain.

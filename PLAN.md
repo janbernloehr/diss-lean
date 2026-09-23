@@ -2255,3 +2255,11 @@ and a shared summable `1/k²` majorant on source neighborhoods and bounded
 spectral regions. Next combine midpoint and square-root terms to show
 absolute summability of paired factor errors, control their quadratic
 cross term, and construct the locally uniform nonzero product.
+
+`SourceStandardRootPairedProduct.lean` now constructs the omitted-zero
+product itself. The normalized single-factor error is an `ℓ²` sequence,
+the paired excess is `ℓ¹`, and the natural finite paired cutoffs converge.
+Off the noncentral gap segments, no factor vanishes and neither does the
+infinite product. Next prove locally uniform convergence and analyticity
+in the spectral parameter and source potential, then extend from omitted
+index zero to an arbitrary omitted index.

@@ -837,3 +837,4 @@ import NLS.ZakharovShabat.SourceStandardRootGapSideSourceImproper
 import NLS.ZakharovShabat.SourceStandardRootProductFactors
 import NLS.ZakharovShabat.SourceStandardRootMidpointProduct
 import NLS.ZakharovShabat.SourceStandardRootSqrtRemainder
+import NLS.ZakharovShabat.SourceStandardRootPairedProduct
