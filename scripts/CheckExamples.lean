@@ -16643,3 +16643,24 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
   sourceStandardRoot_analyticOnNhd hp hp1 ψ n
 
 end NLS.ZakharovShabat
+
+open Set Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+    (M G : E → ℂ) (ψ : E) (z : ℂ)
+    (hMid : AnalyticAt ℂ M ψ) (hGap : AnalyticAt ℂ G ψ)
+    (hz : M ψ ≠ z)
+    (hslit : 1-G ψ/(4*(M ψ-z)^2) ∈ Complex.slitPlane) :
+    AnalyticAt ℂ (fun t : ℂ × E => normalizedStandardRoot (M t.2) (G t.2) t.1) (z,ψ) :=
+  normalizedStandardRoot_joint_analyticAt M G ψ z hMid hGap hz hslit
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧ ∀ n : ℤ,
+        AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p => sourceStandardRoot hp hp1 t.2 n t.1)
+          {t | t.2 ∈ W ∧ t.1 ∉ sourcePeriodicSegment hp hp1 t.2 n} :=
+  exists_global_source_analyticOnNhd_standardRoot hp hp1
+
+end NLS.ZakharovShabat

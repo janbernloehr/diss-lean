@@ -1077,14 +1077,17 @@ installation is absent. No shell startup files are modified.
   Equation (2.9)'s normalized standard root is now defined. Its square
   equals the canonical endpoint factor outside the gap segment, and it
   reduces to the linear midpoint expression when the gap collapses.
-  The analytic branch and contour estimates of Lemma 10.3 remain.
+  The contour estimates and identity of Lemma 10.3 remain.
   A general slit-plane lemma shows that `1-w²` meets the principal
   square-root cut only when `w` is real with `|w|≥1`. The corresponding
   endpoint ratio is now proved to force the spectral parameter onto the
   closed gap segment. Hence equation (2.9)’s radicand lies in the
   principal slit plane everywhere outside that segment. The
   standard root is now analytic in the spectral parameter on the full
-  complement of the closed canonical gap segment.
+  complement of the closed canonical gap segment. On the same
+  connected almost-real source domain as Lemma 10.2, it is jointly
+  analytic in source coefficients and spectral parameter off the moving
+  gap segment, including where the endpoints coincide.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

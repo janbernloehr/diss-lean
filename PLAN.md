@@ -2131,7 +2131,8 @@ proved: `1-w²` can leave the slit plane only when `w` is real and
 forces the spectral parameter onto the closed endpoint segment. Thus the
 canonical source radicand is in the slit plane off its gap segment. The
 principal standard root is therefore analytic in the spectral parameter
-throughout this complement. Next prove joint analyticity in the source
-coefficients and spectral variable, then the cross-disc estimates and
-contour identity.
+throughout this complement. The analytic midpoint and squared gap now
+also make it jointly analytic in source coefficients and spectral parameter
+on the same connected almost-real source domain, including collapsed gaps.
+Next prove the cross-disc estimates and contour identity.
 The printed general-`p` central-height constant remains a separate open item.
