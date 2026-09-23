@@ -15894,3 +15894,58 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
   mem_ker_classicalSeparatedTaylorJetMap_iff b Φ z N w
 
 end NLS.ZakharovShabat
+noncomputable section
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.ComplexAnalysis
+namespace NLS.ZakharovShabat
+open BoundaryCondition
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) (v : ℕ → ℂ × ℂ) (n : ℕ)
+    (t : Icc (0 : ℝ) 1) :
+    z • classicalJetSolution Φ z v (n+1) t -
+      physicalOperator (extend Φ) (classicalJetSolution Φ z v (n+1)) t =
+        classicalJetSolution Φ z v n t :=
+  physicalPencil_classicalJetSolution_succ Φ z v n t
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ)
+    (N : ℕ) (w : Fin N → ℂ)
+    (hw : w ∈ LinearMap.ker
+      (scalarTaylorJetMap (scalarFormalTaylor (classicalSeparatedEndpointSeries b Φ z)) N))
+    (k : Fin N) :
+    HasClassicalIntervalDomain b
+      (classicalJetSolution Φ z (separatedSignedInitialJet b N w) k.val) :=
+  hasClassicalIntervalDomain_classicalSeparatedJet b Φ z N w hw k
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ))
+    (hΦ : MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1))) (z : ℂ)
+    (N : ℕ) (w : Fin N → ℂ)
+    (hw : w ∈ LinearMap.ker
+      (scalarTaylorJetMap (scalarFormalTaylor (classicalSeparatedEndpointSeries b Φ z)) N))
+    (k : Fin N) :
+    classicalJetPhysical Φ z (separatedSignedInitialJet b N w) k.val ∈
+      b.classicalRootSpace (intervalL2OfFunction (extend Φ) hΦ) z (k.val+1) :=
+  classicalJetPhysical_mem_rootSpace_of_scalarKernel b Φ hΦ z N w hw k
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ))
+    (hΦ : MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1))) (z : ℂ) (n : ℕ) :
+    Function.Injective (classicalSeparatedJetRootMap b Φ hΦ z n) :=
+  classicalSeparatedJetRootMap_injective b Φ hΦ z n
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ))
+    (hΦ : MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1))) (z : ℂ) (n : ℕ) :
+    Module.finrank ℂ (LinearMap.ker (scalarTaylorJetMap
+      (scalarFormalTaylor (classicalSeparatedEndpointSeries b Φ z)) (n+1))) ≤
+      b.classicalAlgebraicMultiplicity (intervalL2OfFunction (extend Φ) hΦ) z :=
+  finrank_classicalSeparatedTaylorKernel_le_physicalMultiplicity b Φ hΦ z n
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ))
+    (hΦ : MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1))) (z : ℂ) :
+    analyticOrderAt (classicalSeparatedCharacteristic b Φ) z ≠ ⊤ :=
+  analyticOrderAt_classicalSeparated_ne_top b Φ hΦ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ))
+    (hΦ : MemLp (extend Φ) 2 (volume.restrict (Ioc 0 1))) (z : ℂ) :
+    analyticOrderAt (classicalSeparatedCharacteristic b Φ) z ≤
+      (b.classicalAlgebraicMultiplicity (intervalL2OfFunction (extend Φ) hΦ) z : ℕ∞) :=
+  analyticOrderAt_classicalSeparated_le_physicalMultiplicity b Φ hΦ z
+
+end NLS.ZakharovShabat

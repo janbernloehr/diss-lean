@@ -1020,6 +1020,10 @@ installation is absent. No shell startup files are modified.
   separated endpoint conditions on a finite chain. At finite order `m`, its
   kernel dimension is `min N m` at truncation length `N`. Identifying these
   chain kernels with the original physical generalized eigenspaces remains.
+  Each scalar kernel now maps linearly and injectively into the corresponding
+  finite physical interval root space. Its characteristic order is finite
+  everywhere and no larger than the physical algebraic multiplicity. The
+  reverse inequality, hence equality of orders, remains open.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)

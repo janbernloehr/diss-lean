@@ -751,3 +751,4 @@ import NLS.ZakharovShabat.BoundaryCharacteristicExterior
 import NLS.ZakharovShabat.ClassicalSeparatedExteriorBounds
 import NLS.ZakharovShabat.ClassicalSeparatedHalfPlaneAsymptotics
 import NLS.ZakharovShabat.ClassicalSeparatedJets
+import NLS.ZakharovShabat.ClassicalSeparatedPhysicalChains

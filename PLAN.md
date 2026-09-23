@@ -2029,13 +2029,16 @@ finite Fourier source input. A convergent scalar endpoint Taylor series now
 identifies every coefficient with a signed normalized forced-solution chain.
 Finite scalar Taylor kernels are exactly the separated endpoint equations for
 such chains, and their nullity is the truncated classical analytic order.
-The remaining comparison must identify these finite kernels with the actual
-physical boundary root spaces. Equal analytic orders will then extend the
+The corresponding physical forced chains now define a linear injection into
+each finite boundary root space. This proves finite classical analytic orders
+and the inequality from classical order to physical algebraic multiplicity.
+The remaining comparison must prove surjectivity onto the physical finite
+root spaces and hence the reverse inequality. Equal analytic orders will extend the
 quotient through the roots; the exterior bound and upper limit supply the
 Liouville normalization argument.
 
-Next identify the scalar finite-jet kernels with original physical boundary
-chain spaces, then match analytic orders and normalization of the source
+Next show every original physical finite boundary chain agrees on `[0,1]`
+with a classical forced-solution chain, then match analytic orders and normalization of the source
 characteristics with the classical endpoint characteristics on a dense
 physical subspace, which will turn the
 candidate into the anti-discriminant extension of Lemma 9.2(i). Then prove

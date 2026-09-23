@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 803 modules and 5034 named public theorems. All compile on the
+The library has 804 modules and 5058 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -14,6 +14,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalSeparatedExteriorBounds` | Sine-scale growth of classical separated monodromy characteristics, bounded classical/free ratio, and bounded classical-to-intrinsic ratio on the distant separated exterior |
 | `NLS.ZakharovShabat.ClassicalSeparatedHalfPlaneAsymptotics` | Explicit upper weighted-entry error bound, free-sine ratio-one limits for both classical separated and auxiliary characteristics, and classical-to-intrinsic and finite auxiliary-to-source quotient limits along separated upper paths |
 | `NLS.ZakharovShabat.ClassicalSeparatedJets` | Convergent scalar endpoint Taylor series from normalized solution chains; equality of formal and analytic orders; finite scalar jet nullity and exact chain endpoint equations |
+| `NLS.ZakharovShabat.ClassicalSeparatedPhysicalChains` | Actual `C¹` and physical `L²` representatives of scalar jets, original pencil recursion, linear injection into every finite physical boundary root space, finite analytic order, and the one-sided order/multiplicity bound |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7114,6 +7115,20 @@ natural `m`, the kernel has dimension `min N m`. The still-missing step is a
 linear equivalence between these scalar chain kernels and the actual
 physical generalized eigenspaces, including their finite-level dimensions.
 
+Each scalar kernel jet now has an actual `C¹` interval representative at
+every chain level. The pointwise forced-solution recursion is carried into
+the original physical `L²` pencil, and the scalar endpoint equations put
+every representative in the correct classical boundary domain. Hence its
+top vector belongs to the corresponding finite physical root space. The
+top vector determines the whole scalar jet: equality descends through the
+pencil and recovers every initial coefficient. This gives a complex-linear
+injection of each finite Taylor kernel into the physical root space. Its
+dimension cannot exceed the full physical algebraic multiplicity, which
+also rules out infinite analytic vanishing order. At every parameter, the
+classical separated characteristic's order is therefore finite and at most
+the physical multiplicity. Surjectivity, and thus the reverse inequality
+and exact equality with the intrinsic product order, remains open.
+
 On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,
 jointly analytic function. It has an exact difference-of-canonical-products
@@ -7136,6 +7151,9 @@ bound, the starred source limit, and the classical growth and quotient
 bounds.
 Seven new examples check the upper classical error and normalization, the
 auxiliary free-sine limit, and both generic and finite-source quotient limits.
+Seven further examples check the physical forced recursion, original domain
+and root-space membership, injectivity, finite-jet dimension bound, and
+finite analytic order with its physical multiplicity bound.
 
 ## Verification
 
