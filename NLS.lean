@@ -853,3 +853,5 @@ import NLS.ZakharovShabat.SourceStandardRootOmittedFinite
 import NLS.ZakharovShabat.SourceStandardRootOmittedProduct
 import NLS.ZakharovShabat.SourceStandardRootOmittedJointAnalytic
 import NLS.ZakharovShabat.JointSingleSpectralProducts
+import NLS.ZakharovShabat.JointDeletedSingleSpectralProducts
+import NLS.ZakharovShabat.SourceSingleRootQuotientAnalytic

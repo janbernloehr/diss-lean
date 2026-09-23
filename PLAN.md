@@ -2373,3 +2373,11 @@ displacements, with literal finite cutoffs converging uniformly on
 compact spectral sets over bounded displacement families. Next delete
 one prescribed numerator factor, retain analyticity across its root,
 and divide by Lemma 10.5's nonzero omitted-root product.
+
+The deleted numerator and Corollary 10.6 quotient are now formalized.
+The numerator converges uniformly over compact spectral sets and bounded
+`ℓᵖ` families and is jointly entire across its omitted root. The literal
+finite quotient factors converge to a jointly analytic function on the
+moving-gap complement over one common connected source domain. Next
+work through Lemma 10.7: assemble the full canonical-root product and
+its analytic and boundary behavior.

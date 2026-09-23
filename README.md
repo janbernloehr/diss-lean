@@ -1329,3 +1329,10 @@ The symmetric finite cutoffs converge uniformly on compact spectral
 sets over bounded displacement families. This supplies the numerator
 analyticity needed for Corollary 10.6; deleting one root and forming
 the quotient remain the next steps.
+
+Corollary 10.6 is now represented by the literal symmetric products of
+`(σₘ−λ)/wₘ(λ)` with any index `n` omitted. Their limit is analytic
+jointly in the spectral parameter, the `ℓᵖ` root displacements, and the
+source potential on the open moving-gap complement. The proof uses a
+jointly entire deleted numerator and the nonzero omitted standard-root
+product from Lemma 10.5. Lemma 10.7 on the canonical root comes next.

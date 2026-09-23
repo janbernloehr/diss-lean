@@ -8815,3 +8815,18 @@ displacement sets, and local Banach-space analytic approximation proves
 the infinite product jointly entire. Corollary 10.6 still requires
 deleting a prescribed numerator root before dividing by the nonzero
 omitted standard-root product.
+
+## Latest milestone: Corollary 10.6 single-root quotient
+
+`JointDeletedSingleSpectralProducts.lean` proves the actual symmetric
+single-root cutoffs with any one index deleted converge uniformly on
+compact spectral sets over bounded `ℓᵖ` displacement families. The limit
+is jointly entire, even at the deleted root, and restores the full
+single-root product by its expected linear factor.
+`SourceSingleRootQuotientAnalytic.lean` identifies each literal finite
+product of `(σₘ−λ)/wₘ(λ)` for `m ≠ n` with the quotient of the matching
+normalized deleted products. These literal products converge pointwise
+on the open moving-gap complement, where the quotient is analytic in
+`λ`, the displacement sequence, and the source potential. One connected
+almost-real source domain works for every `n`. The next dissertation
+result is Lemma 10.7 on the canonical root.

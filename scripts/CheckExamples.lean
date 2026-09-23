@@ -18234,3 +18234,34 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   tendstoUniformlyOn_jointSingleSpectralProduct hp hp1 K hK S R hR hb
 
 end NLS.ZakharovShabat
+
+/- Corollary 10.6: deleted numerator and analytic quotient API. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) :
+    AnalyticOnNhd ℂ (jointDeletedSingleSpectralProduct (p := p) n) Set.univ :=
+  analyticOnNhd_jointDeletedSingleSpectralProduct hp hp1 n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ n : ℤ,
+        IsOpen (sourceSingleRootQuotientJointDomain hp hp1 W n) ∧
+        AnalyticOnNhd ℂ (sourceSingleRootQuotientJointProduct hp hp1 n)
+          (sourceSingleRootQuotientJointDomain hp hp1 W n) :=
+  exists_global_source_analytic_singleRootQuotient hp hp1
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (W : Set (CoeffPair p))
+    (t : ℂ × (Coeff p × CoeffPair p))
+    (ht : t ∈ sourceSingleRootQuotientJointDomain hp hp1 W n) :
+    Tendsto (fun N => sourceSingleRootQuotientPartialProduct hp hp1 n N t)
+      atTop (𝓝 (sourceSingleRootQuotientJointProduct hp hp1 n t)) :=
+  tendsto_sourceSingleRootQuotientPartialProduct hp hp1 n W t ht
+
+end NLS.ZakharovShabat
