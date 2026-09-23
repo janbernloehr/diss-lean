@@ -8791,3 +8791,16 @@ the defined arbitrary-index product. It is nonzero off every
 unomitted moving gap, and for omitted index zero it equals the earlier
 paired product. Local uniform convergence and joint analyticity of
 the arbitrary-index limits remain open.
+
+## Latest milestone: joint analyticity with arbitrary omission
+
+`UniformProductTails.lean` now admits a bounded finite prefix with an
+extra zero-mode prefactor. `SourceStandardRootOmittedJointAnalytic.lean`
+applies the existing source-uniform paired-factor tails beyond the one
+altered pair. The literal symmetric cutoffs converge locally uniformly
+to the actual arbitrary-index product on its open joint moving-gap
+complement. On one connected almost-real source domain common to every
+omitted index, each product is jointly analytic and nonzero; fixing a
+source yields spectral analyticity. The zero-index joint product is the
+previous paired product. The next dissertation target is Corollary
+10.6, the analytic quotient product.

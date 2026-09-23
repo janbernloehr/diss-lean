@@ -851,3 +851,4 @@ import NLS.ZakharovShabat.SourceStandardRootPairedProductJointSmooth
 import NLS.ZakharovShabat.SourceStandardRootPairedProductJointAnalytic
 import NLS.ZakharovShabat.SourceStandardRootOmittedFinite
 import NLS.ZakharovShabat.SourceStandardRootOmittedProduct
+import NLS.ZakharovShabat.SourceStandardRootOmittedJointAnalytic

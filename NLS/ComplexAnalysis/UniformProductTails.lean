@@ -192,6 +192,79 @@ theorem tendstoUniformlyOn_prod_one_add_nat_of_tail {X : Type*}
     · exact hle j i hji hj
   exact hcauchy.tendstoUniformlyOn_of_tendsto hf
 
+/-- A bounded prefactor may be included in the finite prefix. Uniformly
+vanishing tails still give uniform convergence, even when the prefactor
+vanishes somewhere. -/
+theorem tendstoUniformlyOn_prefactor_prod_one_add_nat_of_tail {X : Type*}
+    (a : X → ℂ) (u : X → ℕ → ℂ) (S : Set X) (N₀ : ℕ)
+    (P : ℝ) (hP : 0 ≤ P)
+    (hprefix : ∀ x ∈ S, ‖a x * ∏ n ∈ Finset.range N₀, (1+u x n)‖ ≤ P)
+    (D : ℕ → ℝ) (hD : Tendsto D atTop (𝓝 0))
+    (htail : ∀ N : ℕ, N₀ ≤ N → ∀ x ∈ S, ∀ s : Finset ℕ,
+      (∀ n ∈ s, N ≤ n) → (∑ n ∈ s, ‖u x n‖) ≤ D N)
+    (f : X → ℂ) (hf : ∀ x ∈ S,
+      Tendsto (fun N : ℕ => a x * ∏ n ∈ Finset.range N, (1+u x n)) atTop (𝓝 (f x))) :
+    TendstoUniformlyOn (fun N : ℕ => fun x =>
+      a x * ∏ n ∈ Finset.range N, (1+u x n)) f atTop S := by
+  have hlim : Tendsto
+      (fun N => P * Real.exp (D N₀) * (Real.exp (D N)-1)) atTop (𝓝 0) := by
+    simpa using tendsto_const_nhds.mul (((Real.continuous_exp.tendsto 0).comp hD).sub
+      (tendsto_const_nhds (x := (1 : ℝ))))
+  have hcauchy : UniformCauchySeqOn
+      (fun N : ℕ => fun x => a x * ∏ n ∈ Finset.range N, (1+u x n)) atTop S := by
+    rw [Metric.uniformCauchySeqOn_iff]
+    intro ε hε
+    obtain ⟨N, hN⟩ := eventually_atTop.mp (hlim.eventually (gt_mem_nhds hε))
+    refine ⟨max N N₀, fun i hi j hj x hx => ?_⟩
+    have hle (b c : ℕ) (hbc : b ≤ c) (hb : max N N₀ ≤ b) :
+        dist (a x * ∏ n ∈ Finset.range c, (1+u x n))
+          (a x * ∏ n ∈ Finset.range b, (1+u x n)) < ε := by
+      let s := Finset.range b \ Finset.range N₀
+      let t := Finset.range c \ Finset.range N₀
+      have hN₀b : N₀ ≤ b := (le_max_right _ _).trans hb
+      have hN₀c : N₀ ≤ c := hN₀b.trans hbc
+      have hs : Finset.range N₀ ⊆ Finset.range b := Finset.range_mono hN₀b
+      have ht : Finset.range N₀ ⊆ Finset.range c := Finset.range_mono hN₀c
+      have hst : s ⊆ t := by
+        intro k hk
+        simp only [s, t, Finset.mem_sdiff, Finset.mem_range] at hk ⊢
+        omega
+      have hfactb : (a x * ∏ n ∈ Finset.range b, (1+u x n)) =
+          (a x * ∏ n ∈ Finset.range N₀, (1+u x n)) *
+            (∏ n ∈ s, (1+u x n)) := by
+        rw [← Finset.prod_sdiff hs]
+        ring
+      have hfactc : (a x * ∏ n ∈ Finset.range c, (1+u x n)) =
+          (a x * ∏ n ∈ Finset.range N₀, (1+u x n)) *
+            (∏ n ∈ t, (1+u x n)) := by
+        rw [← Finset.prod_sdiff ht]
+        ring
+      have hsum_s : (∑ n ∈ s, ‖u x n‖) ≤ D N₀ :=
+        htail N₀ le_rfl x hx s (by
+          intro k hk
+          simp only [s, Finset.mem_sdiff, Finset.mem_range] at hk
+          omega)
+      have hsum_ts : (∑ n ∈ t \ s, ‖u x n‖) ≤ D (max N N₀) :=
+        htail (max N N₀) (le_max_right _ _) x hx (t \ s) (by
+          intro k hk
+          simp only [t, s, Finset.mem_sdiff, Finset.mem_range] at hk
+          omega)
+      have htailprod := norm_prod_one_add_sub_le (u x) hst
+        (D N₀) (D (max N N₀)) hsum_s hsum_ts
+      rw [dist_eq_norm, hfactb, hfactc, ← mul_sub, norm_mul]
+      have htotal :
+          ‖a x * ∏ n ∈ Finset.range N₀, (1+u x n)‖ *
+            ‖(∏ n ∈ t, (1+u x n)) - ∏ n ∈ s, (1+u x n)‖ ≤
+          P * (Real.exp (D N₀) * (Real.exp (D (max N N₀))-1)) := by
+        apply mul_le_mul (hprefix x hx) htailprod (norm_nonneg _) hP
+      have hNE : N ≤ max N N₀ := le_max_left _ _
+      exact htotal.trans_lt (by simpa only [mul_assoc] using hN (max N N₀) hNE)
+    rcases le_total i j with hij | hji
+    · rw [dist_comm]
+      exact hle i j hij hi
+    · exact hle j i hji hj
+  exact hcauchy.tendstoUniformlyOn_of_tendsto hf
+
 /-- Uniformly bounded uniformly Cauchy families remain uniformly Cauchy after multiplication. -/
 theorem uniformCauchySeqOn_mul_bounded {X : Type*} (F G : ℕ → X → ℂ) (S : Set X)
     (A B : ℝ) (hA : 0 ≤ A) (hB : 0 ≤ B)

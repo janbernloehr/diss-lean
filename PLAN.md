@@ -2356,3 +2356,12 @@ limit on the corresponding gap complement; at index zero the limit
 equals the previous paired product. Next upgrade convergence to local
 uniform convergence on the open joint domain and prove joint
 analyticity of the limit.
+
+`UniformProductTails.lean` now allows a bounded zero-mode prefactor in
+the natural-number product criterion. With the previous paired-factor
+tail estimate, `SourceStandardRootOmittedJointAnalytic.lean` proves
+local uniform convergence of the literal cutoffs for every omitted
+index on its open joint moving-gap domain. The local Banach-space
+analyticity theorem gives joint analyticity, and the pointwise factor
+argument gives nonvanishing. This completes the product assertions of
+Lemma 10.5 in the current source model. Next formalize Corollary 10.6.

@@ -18181,3 +18181,36 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   sourceStandardRootOmittedProduct_zero hp hp1 ψ z
 
 end NLS.ZakharovShabat
+
+/- Lemma 10.5 arbitrary omitted-index joint analyticity API checks. -/
+noncomputable section
+open Filter Topology
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsConnected W ∧
+      realTypeSourceLocus p ⊆ W ∧
+      ∀ n : ℤ,
+        IsOpen (sourceStandardRootOmittedJointDomain hp hp1 W n) ∧
+        AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 n)
+          (sourceStandardRootOmittedJointDomain hp hp1 W n) ∧
+        TendstoLocallyUniformlyOn
+          (sourceStandardRootOmittedPartialProduct hp hp1 n)
+          (sourceStandardRootOmittedJointProduct hp hp1 n) atTop
+          (sourceStandardRootOmittedJointDomain hp hp1 W n) ∧
+        ∀ t ∈ sourceStandardRootOmittedJointDomain hp hp1 W n,
+          sourceStandardRootOmittedJointProduct hp hp1 n t ≠ 0 :=
+  exists_global_source_analytic_omittedJointProduct hp hp1
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (W : Set (CoeffPair p))
+    (hjoint : AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 n)
+      (sourceStandardRootOmittedJointDomain hp hp1 W n))
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    AnalyticOnNhd ℂ (fun z => sourceStandardRootOmittedProduct hp hp1 n ψ z)
+      (sourceStandardRootOmittedDomain hp hp1 ψ n) :=
+  sourceStandardRootOmittedProduct_analyticOnNhd_spectral hp hp1 n W hjoint ψ hψ
+
+end NLS.ZakharovShabat

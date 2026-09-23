@@ -1314,3 +1314,11 @@ at only one pair, so absolute summability persists. The resulting
 infinite product is nonzero wherever all unomitted gap segments are
 avoided, and it agrees with the established paired product at `n = 0`.
 Joint local uniform convergence and analyticity remain next.
+
+The arbitrary-index case of Lemma 10.5 is now proved on a common
+connected almost-real source domain. Every omitted-index product is
+jointly analytic and nonzero on its open moving-gap complement; its
+literal symmetric cutoffs converge locally uniformly there. Restricting
+the joint result gives spectral analyticity for each fixed source.
+The next dissertation step is Corollary 10.6 on quotients of the
+entire spectral product by these standard-root products.
