@@ -8604,8 +8604,18 @@ formal matrix representation.
    to any stopping point, is bounded by a single attained maximum of
    `‖f‖` on the compact gap. `SourceStandardRootGapSideSourceIntegral.lean`
    confirms the cosine boundary values for the actual canonical source
-   root and specializes the uniform bound. A bridge to an independently
-   defined improper complex path integral remains.
+   root and specializes the uniform bound. The new
+   `SourceStandardRootGapSideImproper.lean` proves the exact cosine
+   substitution for the dissertation's weighted `r`-integral and its
+   interval integrability. It independently defines the straight side
+   path integral by the linear gap parametrization and proves it equals
+   the weighted and cosine integrals. Its left-endpoint truncations
+   converge to the full value; at `t=1`, simultaneous truncation of both
+   endpoints does too. The path integrand itself is interval integrable.
+   `SourceStandardRootGapSideSourceImproper.lean` states the uniform
+   maximum bound directly for this canonical source path integral and
+   specializes the truncation limits. Lemma 10.5's infinite product is
+   the next local step.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

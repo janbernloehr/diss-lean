@@ -2224,8 +2224,12 @@ its integral equals `±i` times an ordinary integral over an interval
 of length at most `π`. Compactness gives an attained maximum of `‖f‖`
 on the gap, and this one maximum bounds both normalized side integrals
 uniformly in the stopping point. The result applies to the actual
-canonical source root through its proved side limits. Next relate this
-parametrized integral to an independently defined improper side path
-integral, then continue with the infinite standard-root product in
-Lemma 10.5.
+canonical source root through its proved side limits. The weighted
+integral in the dissertation's `r` parameter is now proved integrable
+and equal to the cosine integral by substitution. An independently
+defined straight side path integral has the same value and satisfies
+the same canonical-source maximum bound. Removing the left singular
+endpoint gives that value as a limit; at the right gap endpoint,
+removing both singular endpoints does too. Next continue with the
+infinite standard-root product in Lemma 10.5.
 The printed general-`p` central-height constant remains a separate open item.

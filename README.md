@@ -1184,9 +1184,11 @@ installation is absent. No shell startup files are modified.
   now gives the normalized side-integral estimate of Lemma 10.4 for
   continuous data on every noncollapsed canonical gap. The integrand's
   endpoint singularities cancel almost everywhere, and one attained
-  maximum bounds both sides and every stopping point. Relating this
-  parametrized boundary integral to a separately defined improper path
-  integral remains.
+  maximum bounds both sides and every stopping point. The weighted
+  `r`-integral and an independently defined straight side path integral
+  now equal that boundary integral. Truncated path integrals converge
+  to it, with both singular endpoints removed when the stopping point
+  is the right gap endpoint.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

@@ -17770,3 +17770,54 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
   sourceStandardRoot_gapSideBoundaryIntegral_uniform_max_bound hp hp1 ψ n hgap f hf
 
 end NLS.ZakharovShabat
+
+noncomputable section
+open Complex Filter MeasureTheory intervalIntegral
+open scoped Topology ENNReal
+
+namespace NLS.ZakharovShabat
+
+example (τ δ : ℂ) (f : ℂ → ℂ) (t : ℝ)
+    (htl : -1 ≤ t) (htr : t ≤ 1) :
+    (∫ r in (-1:ℝ)..t,
+      f (τ+δ*(r:ℂ)) / (Real.sqrt (1-r^2):ℂ)) =
+    ∫ θ in Real.arccos t..Real.pi,
+      f (τ+δ*(Real.cos θ:ℂ)) :=
+  gap_weighted_integral_eq_cos τ δ f t htl htr
+
+example (τ δ : ℂ) (f : ℂ → ℂ) (t : ℝ) (hδ : δ ≠ 0)
+    (htl : -1 ≤ t) (htr : t ≤ 1) (upper : Bool) :
+    gapSidePathIntegral τ δ f (-1) t upper =
+      gapSideBoundaryIntegral τ δ f t upper :=
+  gapSidePathIntegral_eq_boundary τ δ f t hδ htl htr upper
+
+example (τ δ : ℂ) (f : ℂ → ℂ) (hδ : δ ≠ 0)
+    (hf : ContinuousOn f (standardRootGapSegment τ δ)) (upper : Bool) :
+    Tendsto (fun ε : ℝ =>
+      gapSidePathIntegral τ δ f (-1+ε) (1-ε) upper)
+      (𝓝[>] (0:ℝ))
+      (𝓝 (gapSideBoundaryIntegral τ δ f 1 upper)) :=
+  gapSidePathIntegral_double_trunc_tendsto τ δ f hδ hf upper
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n ≠ 0) (f : ℂ → ℂ)
+    (hf : ContinuousOn f (standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n))) :
+    ∃ z ∈ standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n),
+      (∀ w ∈ standardRootGapSegment
+        (sourceStandardRootMidpoint hp hp1 ψ n)
+        (sourceStandardRootHalfGap hp hp1 ψ n), ‖f w‖ ≤ ‖f z‖) ∧
+      ∀ (t : ℝ), -1 ≤ t → t ≤ 1 → ∀ (upper : Bool),
+        ‖gapSidePathIntegral
+          (sourceStandardRootMidpoint hp hp1 ψ n)
+          (sourceStandardRootHalfGap hp hp1 ψ n)
+          f (-1) t upper / (Real.pi:ℂ)‖ ≤ ‖f z‖ :=
+  sourceStandardRoot_gapSidePathIntegral_uniform_max_bound hp hp1 ψ n hgap f hf
+
+end NLS.ZakharovShabat
