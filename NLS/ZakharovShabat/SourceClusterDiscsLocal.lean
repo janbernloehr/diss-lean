@@ -71,4 +71,29 @@ theorem exists_local_sourceClusterDiscs_finite_block
   exact ⟨ε, hε, U, hUopen, hφU,
     (fun ψ hψ => hUsub hψ), hdisjoint⟩
 
+/-- The locally persistent finite central discs may use one shared margin
+below any prescribed positive bound. -/
+theorem exists_local_sourceClusterDiscs_finite_block_bounded
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (s : Finset ℤ) {B : ℝ} (hB : 0 < B) :
+    ∃ ε : ℝ, 0 < ε ∧ ε ≤ B ∧
+      ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧
+        (∀ ψ ∈ U, ∀ n ∈ s,
+          sourceSpectralCluster hp hp1 ψ n ⊆ sourceClusterDisc hp hp1 φ (fun _ => ε) n) ∧
+        (∀ i ∈ s, ∀ j ∈ s, i < j →
+          Disjoint (sourceClusterDisc hp hp1 φ (fun _ => ε) i)
+            (sourceClusterDisc hp hp1 φ (fun _ => ε) j)) := by
+  obtain ⟨ε, hε, hεB, hbase, hdisjoint⟩ :=
+    exists_sourceClusterDiscs_finite_block_bounded hp hp1 φ hφ s hB
+  have hevent : ∀ᶠ ψ : CoeffPair p in 𝓝 φ, ∀ n ∈ s,
+      sourceSpectralCluster hp hp1 ψ n ⊆ sourceClusterDisc hp hp1 φ (fun _ => ε) n := by
+    rw [Finset.eventually_all]
+    intro n hn
+    exact eventually_sourceSpectralCluster_subset_open hp hp1 φ hφ n _
+      Metric.isOpen_ball (hbase n hn)
+  obtain ⟨U, hUsub, hUopen, hφU⟩ := _root_.mem_nhds_iff.mp hevent
+  exact ⟨ε, hε, hεB, U, hUopen, hφU,
+    (fun ψ hψ => hUsub hψ), hdisjoint⟩
+
 end NLS.ZakharovShabat

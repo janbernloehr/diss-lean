@@ -43,4 +43,22 @@ theorem midpoint_discs_disjoint_of_gap
   rw [abs_of_nonpos (sub_nonpos.mpr horder)]
   linarith
 
+/-- A midpoint disc lies to the left of a point-centered disc when the
+combined margins fit between the interval and the point. -/
+theorem midpoint_disc_disjoint_right_point_disc
+    {l r c ε ρ : ℝ} (hlr : l ≤ r) (hε : 0 ≤ ε) (hρ : 0 ≤ ρ)
+    (hgap : ε + ρ ≤ c-r) :
+    Disjoint (ball (((l+r)/2 : ℝ) : ℂ) ((r-l)/2+ε))
+      (ball (c : ℂ) ρ) := by
+  simpa using midpoint_discs_disjoint_of_gap hlr le_rfl hε hρ hgap
+
+/-- A point-centered disc lies to the left of a midpoint disc when the
+combined margins fit between the point and the interval. -/
+theorem point_disc_disjoint_right_midpoint_disc
+    {l r c ε ρ : ℝ} (hlr : l ≤ r) (hε : 0 ≤ ε) (hρ : 0 ≤ ρ)
+    (hgap : ρ + ε ≤ l-c) :
+    Disjoint (ball (c : ℂ) ρ)
+      (ball (((l+r)/2 : ℝ) : ℂ) ((r-l)/2+ε)) := by
+  simpa using midpoint_discs_disjoint_of_gap le_rfl hlr hρ hε hgap
+
 end NLS.ComplexAnalysis

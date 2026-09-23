@@ -1039,7 +1039,11 @@ installation is absent. No shell startup files are modified.
   neighborhood by continuity of all five canonical families. Combining
   these central discs with the uniform high-index discs now gives one
   neighborhood and an explicit disc choice for every signed index. The
-  cross separation of a central disc from a tail disc remains to prove.
+  central discs are also disjoint from both tails: the two outer central
+  endpoints are localized and the common central margin is at most π/4.
+  Shrinking to a source ball makes this common neighborhood connected.
+  Constructing the global connected neighborhood of the real-type locus
+  remains next.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

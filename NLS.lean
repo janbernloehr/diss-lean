@@ -770,3 +770,5 @@ import NLS.ComplexAnalysis.FinitePositiveMargins
 import NLS.ZakharovShabat.SourceClusterDiscs
 import NLS.ZakharovShabat.SourceClusterDiscsLocal
 import NLS.ZakharovShabat.SourceAllIndexIsolation
+import NLS.ZakharovShabat.SourceCentralTailSeparation
+import NLS.ZakharovShabat.SourceAllIndexDisjointIsolation

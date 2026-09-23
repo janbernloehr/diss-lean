@@ -82,4 +82,32 @@ theorem exists_sourceClusterDiscs_finite_block (hp : p ≠ ⊤) (hp1 : 1 < p)
     apply sourceClusterDiscs_disjoint_of_gap hp hp1 φ (fun _ => ε) hε.le hε.le
     linarith [hgap i hi j hj hij]
 
+/-- The common central-disc margin can be kept below a prescribed positive
+bound while preserving cluster containment and pairwise disjointness. -/
+theorem exists_sourceClusterDiscs_finite_block_bounded
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (s : Finset ℤ) {B : ℝ} (hB : 0 < B) :
+    ∃ ε : ℝ, 0 < ε ∧ ε ≤ B ∧
+      (∀ n ∈ s, sourceSpectralCluster hp hp1 φ n ⊆
+        sourceClusterDisc hp hp1 φ (fun _ => ε) n) ∧
+      (∀ i ∈ s, ∀ j ∈ s, i < j →
+        Disjoint (sourceClusterDisc hp hp1 φ (fun _ => ε) i)
+          (sourceClusterDisc hp hp1 φ (fun _ => ε) j)) := by
+  obtain ⟨ε, hε, hεB, hgap⟩ := exists_bounded_positive_margin_for_finite_pairs s
+    (fun i j =>
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) j).re -
+      (canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) i).re)
+    (by
+      intro i hi j hj hij
+      exact sub_pos.mpr (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
+        (periodOnePotential φ) (periodOnePotential_mem φ)
+        (isRealType_periodOnePotential φ hφ) hij)) hB
+  refine ⟨ε, hε, hεB, ?_, ?_⟩
+  · intro n hn
+    exact sourceSpectralCluster_subset_disc hp hp1 φ hφ (fun _ => ε) n hε
+  · intro i hi j hj hij
+    apply sourceClusterDiscs_disjoint_of_gap hp hp1 φ (fun _ => ε) hε.le hε.le
+    linarith [hgap i hi j hj hij]
+
 end NLS.ZakharovShabat

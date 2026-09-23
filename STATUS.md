@@ -8456,8 +8456,11 @@ formal matrix representation.
    persistence of these fixed central discs is now proved on one open
    source neighborhood using continuity of all five coordinates. One
    common neighborhood now supports the fixed central discs and free
-   high-index discs, covering every signed index. Disjointness of a
-   central disc from a tail disc remains open.
+   high-index discs, covering every signed index. The central margin can
+   be chosen at most π/4; outer endpoint localization then separates
+   every central disc from both tails. The resulting source neighborhood
+   can be chosen open and connected. The global connected neighborhood
+   of the full real-type locus remains open.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

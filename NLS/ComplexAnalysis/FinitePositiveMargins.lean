@@ -37,4 +37,19 @@ theorem exists_positive_margin_for_finite_pairs {ι : Type*} [LinearOrder ι]
     have hp : (i, j) ∈ t := by simp [t, hi, hj, hlt]
     exact False.elim (ht ⟨(i, j), hp⟩)
 
+/-- The shared finite-pair margin can be made no larger than any prescribed
+positive bound. -/
+theorem exists_bounded_positive_margin_for_finite_pairs
+    {ι : Type*} [LinearOrder ι] (s : Finset ι) (g : ι → ι → ℝ)
+    (hg : ∀ i ∈ s, ∀ j ∈ s, i < j → 0 < g i j)
+    {B : ℝ} (hB : 0 < B) :
+    ∃ ε : ℝ, 0 < ε ∧ ε ≤ B ∧
+      ∀ i ∈ s, ∀ j ∈ s, i < j → 2 * ε ≤ g i j := by
+  obtain ⟨δ, hδ, hgap⟩ := exists_positive_margin_for_finite_pairs s g hg
+  refine ⟨min δ B, lt_min hδ hB, min_le_right δ B, ?_⟩
+  intro i hi j hj hij
+  have h := hgap i hi j hj hij
+  have hmin := min_le_left δ B
+  linarith
+
 end NLS.ComplexAnalysis

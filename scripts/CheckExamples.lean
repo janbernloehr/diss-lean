@@ -16305,3 +16305,21 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_local_source_all_index_cluster_isolation hp hp1 φ hφ
 
 end NLS.ZakharovShabat
+
+open Set Metric
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+      ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧
+        (∀ ψ ∈ U, ∀ n : ℤ,
+          sourceSpectralCluster hp hp1 ψ n ⊆
+            sourceIsolatingDisc hp hp1 φ N ε n) ∧
+        (∀ i j : ℤ, i ≠ j →
+          Disjoint (sourceIsolatingDisc hp hp1 φ N ε i)
+            (sourceIsolatingDisc hp hp1 φ N ε j)) :=
+  exists_local_source_connected_isolating_discs hp hp1 φ hφ
+
+end NLS.ZakharovShabat

@@ -2066,10 +2066,7 @@ coordinate prerequisites.
 For Lemma 10.1, a common source neighborhood and cutoff now localize both
 periodic endpoints, both ordinary boundary roots, and the critical point in
 their free quarter-π discs at all distant indices. Those discs are pairwise
-disjoint and satisfy explicit linear pointwise separation bounds. Next use
-continuity at real-type potentials to choose finitely many central discs
-with the same five-family containment and separation, then assemble the
-open connected neighborhood and locally common isolating-disc sequences.
+disjoint and satisfy explicit linear pointwise separation bounds.
 The real-type five-coordinate clusters are now proved to lie in their
 indexed gaps and to be strictly separated in real part, with a metric lower
 bound by the intervening periodic endpoint gap.
@@ -2082,7 +2079,9 @@ source neighborhood where every nearby central cluster remains inside its
 assigned disc. The central and uniform tail neighborhoods are now
 intersected: every signed index has an explicit assigned disc containing
 all five nearby source coordinates. Central discs are mutually disjoint,
-as are the free tail discs. Next prove cross separation between central
-and tail discs, then construct the connected source neighborhood for the
-full geometric form of Lemma 10.1.
+as are the free tail discs. Bounded finite margins and localization of the
+two outer central endpoints now prove cross separation as well. A connected
+source ball supports pairwise disjoint discs for every index and all five
+coordinates. Next assemble these local balls around the entire real-type
+locus into the open connected `Ŵp` of Lemma 10.1.
 The printed general-`p` central-height constant remains a separate open item.
