@@ -16280,3 +16280,28 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_local_sourceClusterDiscs_finite_block hp hp1 φ hφ s
 
 end NLS.ZakharovShabat
+
+open Set Metric
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧
+      ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧
+        (∀ ψ ∈ U, ∀ n ∈ Finset.Icc (-(N : ℤ)) (N : ℤ),
+          sourceSpectralCluster hp hp1 ψ n ⊆
+            sourceClusterDisc hp hp1 φ (fun _ => ε) n) ∧
+        (∀ ψ ∈ U, ∀ n : ℤ, N < n.natAbs →
+          sourceSpectralCluster hp hp1 ψ n ⊆ refinedResonantDisk n) ∧
+        (∀ ψ ∈ U, ∀ n : ℤ,
+          sourceSpectralCluster hp hp1 ψ n ⊆
+            if n.natAbs ≤ N then sourceClusterDisc hp hp1 φ (fun _ => ε) n
+            else refinedResonantDisk n) ∧
+        (∀ i ∈ Finset.Icc (-(N : ℤ)) (N : ℤ),
+          ∀ j ∈ Finset.Icc (-(N : ℤ)) (N : ℤ), i < j →
+            Disjoint (sourceClusterDisc hp hp1 φ (fun _ => ε) i)
+              (sourceClusterDisc hp hp1 φ (fun _ => ε) j)) :=
+  exists_local_source_all_index_cluster_isolation hp hp1 φ hφ
+
+end NLS.ZakharovShabat

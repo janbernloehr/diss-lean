@@ -1037,7 +1037,9 @@ installation is absent. No shell startup files are modified.
   disjoint, including when a periodic gap collapses. Keeping the central
   coordinates in these fixed discs now holds on one open source
   neighborhood by continuity of all five canonical families. Combining
-  these central discs with the uniform high-index discs remains next.
+  these central discs with the uniform high-index discs now gives one
+  neighborhood and an explicit disc choice for every signed index. The
+  cross separation of a central disc from a tail disc remains to prove.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

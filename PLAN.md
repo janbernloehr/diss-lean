@@ -2079,6 +2079,10 @@ the positive inter-cluster gaps supplies one margin making all central
 discs pairwise disjoint. The discs can now be frozen at the base potential:
 continuity of the five coordinates and finite intersection yield one open
 source neighborhood where every nearby central cluster remains inside its
-assigned disc. Next combine that central neighborhood with the uniform
-tail neighborhoods for Lemma 10.1.
+assigned disc. The central and uniform tail neighborhoods are now
+intersected: every signed index has an explicit assigned disc containing
+all five nearby source coordinates. Central discs are mutually disjoint,
+as are the free tail discs. Next prove cross separation between central
+and tail discs, then construct the connected source neighborhood for the
+full geometric form of Lemma 10.1.
 The printed general-`p` central-height constant remains a separate open item.
