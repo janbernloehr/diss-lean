@@ -2,7 +2,7 @@
 
 ## Implemented and checked
 
-The library has 801 modules and 5019 named public theorems. All compile on the
+The library has 802 modules and 5026 named public theorems. All compile on the
 pinned Lean/mathlib v4.33.1 toolchain.
 
 | Module | Implemented scope |
@@ -12,6 +12,7 @@ pinned Lean/mathlib v4.33.1 toolchain.
 | `NLS.ZakharovShabat.ClassicalAuxiliarySpectralBridge` | Actual physical and coefficient auxiliary spectral zero criteria for classical monodromy characteristics, a.e.-representative invariance, exact finite source Neumann Fourier realization, and equality of classical and normalized starred finite-source zero sets |
 | `NLS.ZakharovShabat.BoundaryCharacteristicExterior` | Exact free-sine exterior ratio one for complete products, intrinsic boundary characteristics, and ordinary and actual starred source pullbacks; uniform exterior lower bound |
 | `NLS.ZakharovShabat.ClassicalSeparatedExteriorBounds` | Sine-scale growth of classical separated monodromy characteristics, bounded classical/free ratio, and bounded classical-to-intrinsic ratio on the distant separated exterior |
+| `NLS.ZakharovShabat.ClassicalSeparatedHalfPlaneAsymptotics` | Explicit upper weighted-entry error bound, free-sine ratio-one limits for both classical separated and auxiliary characteristics, and classical-to-intrinsic and finite auxiliary-to-source quotient limits along separated upper paths |
 | `NLS.ZakharovShabat.SourceAntiDiscriminantCandidate` | Entire and jointly analytic source-space difference of actual starred products, free zero, finite-exponent invariance; physical anti-trace identification open |
 | `NLS.ZakharovShabat.PeriodicSpectralDataUniqueness` | Original spectrum and algebraic multiplicity determine the full ordered signed periodic endpoints, even across different potentials |
 | `NLS.ZakharovShabat.AuxiliaryPeriodOneBoundaryInterlacing` | Phase invariance of signed endpoints and starred Lemma 9.1(iii): indexed original gaps, both restrictions, neighboring separation, collapsed gaps, signed discriminant bound |
@@ -7086,7 +7087,19 @@ grows at most at the sine exponential scale, uniformly in the real spectral
 part; divided by free sine it is bounded away from free-root discs. These
 bounds yield a uniform classical-to-intrinsic quotient bound on the distant
 separated exterior. Analytic extension through the roots and determination
-of the quotient constant remain open.
+of the quotient constant remain open in general.
+
+The four upper-weighted classical monodromy entries now give an explicit
+vanishing error for the normalized separated characteristic. Both classical
+Dirichlet and Neumann characteristics have ratio one to free sine whenever
+imaginary height tends to positive infinity, with no bound on the real part.
+Phase conjugation gives the same limit for both actual auxiliary
+characteristics. Combined with the intrinsic product exterior limit, the
+classical-to-intrinsic and auxiliary-to-starred-source quotients tend to one
+along separated upper paths; the latter is stated explicitly at matched
+finite Fourier source input. This fixes the eventual entire quotient's
+constant but does not yet prove that the quotient extends through its common
+zeros. The analytic-order comparison remains open.
 
 On each finite source coefficient space, the difference of the normalized
 actual auxiliary Neumann and Dirichlet characteristics defines an entire,
@@ -7108,6 +7121,8 @@ classical-to-source zero-set equality.
 Seven further examples check both exterior limits, the intrinsic lower
 bound, the starred source limit, and the classical growth and quotient
 bounds.
+Seven new examples check the upper classical error and normalization, the
+auxiliary free-sine limit, and both generic and finite-source quotient limits.
 
 ## Verification
 

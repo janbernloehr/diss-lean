@@ -15786,3 +15786,70 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (b : BoundaryCondition)
       (∀ n : ℤ, r ≤ ‖z - (Real.pi : ℂ) * n‖) →
         ‖classicalSeparatedCharacteristic b Φ z / b.characteristic hp φ hφ z‖ ≤ B :=
   exists_bound_classicalSeparated_div_characteristic_exterior b Φ hp hp1 φ hφ hr hrπ
+open Set Complex Filter Topology NLS NLS.LinearVolterra NLS.ZakharovShabat
+open scoped ENNReal
+
+noncomputable section
+
+example {α : Type*} {l : Filter α} (b : BoundaryCondition)
+    (Φ : Curve (ℂ × ℂ)) (z : α → ℂ)
+    (hz : Tendsto (fun i => (z i).im) l atTop) :
+    Tendsto (fun i => exp (I*z i) * classicalSeparatedCharacteristic b Φ (z i) -
+      (exp (2*I*z i)-1)/(2*I)) l (𝓝 0) :=
+  tendsto_classicalSeparated_upper_sub_free b Φ z hz
+
+example {α : Type*} {l : Filter α} (b : BoundaryCondition)
+    (Φ : Curve (ℂ × ℂ)) (z : α → ℂ)
+    (hz : Tendsto (fun i => (z i).im) l atTop) :
+    Tendsto (fun i => exp (I*z i) * classicalSeparatedCharacteristic b Φ (z i))
+      l (𝓝 (-1/(2*I))) :=
+  tendsto_classicalSeparated_upper_normalized b Φ z hz
+
+example {α : Type*} {l : Filter α} (b : BoundaryCondition)
+    (Φ : Curve (ℂ × ℂ)) (z : α → ℂ)
+    (hz : Tendsto (fun i => (z i).im) l atTop) :
+    Tendsto (fun i => classicalSeparatedCharacteristic b Φ (z i) / sin (z i))
+      l (𝓝 1) :=
+  tendsto_classicalSeparated_div_sin_upper b Φ z hz
+
+example {α : Type*} {l : Filter α} (b : BoundaryCondition)
+    (Φ : Curve (ℂ × ℂ)) (z : α → ℂ)
+    (hz : Tendsto (fun i => (z i).im) l atTop) :
+    Tendsto (fun i => classicalAuxiliaryCharacteristic b Φ (z i) / sin (z i))
+      l (𝓝 1) :=
+  tendsto_classicalAuxiliary_div_sin_upper b Φ z hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {α : Type*} {l : Filter α}
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition)
+    (Φ : Curve (ℂ × ℂ)) (φ : PairSpace p) (hφ : φ ∈ dirichletSubspace)
+    (z : α → ℂ) (hz : Tendsto (fun i => (z i).im) l atTop)
+    (he : Tendsto (fun i => ‖z i‖) l atTop)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4)
+    (hs : ∀ i (n : ℤ), r ≤ ‖z i - (Real.pi : ℂ) * n‖) :
+    Tendsto (fun i => classicalSeparatedCharacteristic b Φ (z i) /
+      b.characteristic hp φ hφ (z i)) l (𝓝 1) :=
+  tendsto_classicalSeparated_div_characteristic_upper_of_separated
+    hp hp1 b Φ φ hφ z hz he hr hrπ hs
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {α : Type*} {l : Filter α}
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition)
+    (Φ : Curve (ℂ × ℂ)) (φ : CoeffPair p)
+    (z : α → ℂ) (hz : Tendsto (fun i => (z i).im) l atTop)
+    (he : Tendsto (fun i => ‖z i‖) l atTop)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4)
+    (hs : ∀ i (n : ℤ), r ≤ ‖z i - (Real.pi : ℂ) * n‖) :
+    Tendsto (fun i => classicalAuxiliaryCharacteristic b Φ (z i) /
+      auxiliaryPeriodOneCharacteristic hp hp1 b φ (z i)) l (𝓝 1) :=
+  tendsto_classicalAuxiliary_div_source_upper_of_separated
+    hp hp1 b Φ φ z hz he hr hrπ hs
+
+example {α : Type*} {l : Filter α} (b : BoundaryCondition)
+    (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : α → ℂ)
+    (hz : Tendsto (fun i => (z i).im) l atTop)
+    (he : Tendsto (fun i => ‖z i‖) l atTop)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi / 4)
+    (hs : ∀ i (n : ℤ), r ≤ ‖z i - (Real.pi : ℂ) * n‖) :
+    Tendsto (fun i => classicalAuxiliaryCharacteristic b (finiteSourceCurve a) (z i) /
+      auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) b
+        (CoeffPair.ofFinsupp (p := 2) a) (z i)) l (𝓝 1) :=
+  tendsto_classicalAuxiliary_finite_div_source_upper_of_separated b a z hz he hr hrπ hs

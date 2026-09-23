@@ -2019,10 +2019,15 @@ source pullbacks at every finite exponent. An exterior threshold bounds the
 intrinsic/free ratio below by one half. Separately, the classical monodromy
 characteristic has sine-scale growth in the imaginary spectral height, so
 its ratio to an intrinsic boundary characteristic is uniformly bounded on
-the distant separated exterior. The missing analytic-order comparison is
-needed to extend this ratio through the roots before a Liouville argument
-can identify its constant value; a classical vertical asymptotic will then
-fix that constant at one.
+the distant separated exterior. Weighted Volterra entry bounds now prove
+that both classical separated characteristics have ratio one to free sine
+as imaginary height tends to positive infinity, uniformly in real spectral
+part. The phase-conjugated classical auxiliary characteristics share that
+limit. Thus classical-to-intrinsic and actual auxiliary-to-starred-source
+quotients tend to one along upper separated paths, including the matched
+finite Fourier source input. The missing analytic-order comparison is needed
+to extend the quotient through the roots; the exterior bound and upper limit
+then supply the Liouville normalization argument.
 
 Next identify the analytic orders and normalization of the source
 characteristics with the classical endpoint characteristics on a dense

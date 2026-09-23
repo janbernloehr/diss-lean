@@ -1009,7 +1009,11 @@ installation is absent. No shell startup files are modified.
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a
   uniform bound on the classical-to-intrinsic ratio outside distant free-root
-  discs, an input to the remaining entire-factor proof.
+  discs. The classical characteristic now also has ratio one to free sine
+  as imaginary height tends to positive infinity, uniformly in real spectral
+  part. The classical-to-intrinsic and actual auxiliary-to-starred-source
+  quotients therefore tend to one on separated upper paths, fixing the
+  constant needed after the remaining analytic-order comparison.
 - No spectral or classical Birkhoff results are introduced as axioms.
 
 See [PLAN.md](PLAN.md) for the implementation sequence and [STATUS.md](STATUS.md)
