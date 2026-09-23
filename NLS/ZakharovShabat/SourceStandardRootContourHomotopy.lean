@@ -39,4 +39,28 @@ theorem sourceStandardRoot_inv_curveIntegral_eq_of_homotopy
       (havoid hz)).differentiableAt
   · exact hcontdiff
 
+/-- For a homotopy on the compact unit square, avoidance of the gap by
+its image suffices for inverse-root integral invariance. -/
+theorem sourceStandardRoot_inv_curveIntegral_eq_of_homotopy_range
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    {a b : ℂ} {γ₁ : Path a a} {γ₂ : Path b b}
+    (H : (γ₁ : C(I, ℂ)).Homotopy γ₂)
+    (hloop : ∀ s : I, H (s, 1) = H (s, 0))
+    (havoid : range H ⊆ (sourcePeriodicSegment hp hp1 ψ n)ᶜ)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (H.extend xy.1) xy.2) (Icc 0 1)) :
+    ∫ᶜ z in γ₁, NLS.ComplexAnalysis.holomorphicOneForm
+      (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z =
+    ∫ᶜ z in γ₂, NLS.ComplexAnalysis.holomorphicOneForm
+      (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z := by
+  have hclosed : IsClosed (range H) :=
+    (isCompact_range (map_continuous H)).isClosed
+  apply sourceStandardRoot_inv_curveIntegral_eq_of_homotopy
+    hp hp1 ψ n H hloop (t := range H)
+  · intro s _ u _
+    exact ⟨(s,u), rfl⟩
+  · simpa only [hclosed.closure_eq] using havoid
+  · exact hcontdiff
+
 end NLS.ZakharovShabat

@@ -73,4 +73,29 @@ theorem normalized_sourceStandardRoot_inv_curveIntegral_of_homotopy_circle
         -((2*Real.pi*Complex.I)⁻¹ * (2*Real.pi*Complex.I)) := by ring
     _ = -1 := by rw [inv_mul_cancel₀ hnonzero]
 
+/-- The compact image of a smooth homotopy can be used directly as the
+gap-avoiding set for the diagonal inverse-root integral. -/
+theorem normalized_sourceStandardRoot_inv_curveIntegral_of_homotopy_circle_range
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ Metric.ball c r)
+    {a : ℂ} {γ : Path a a}
+    (H : (NLS.ComplexAnalysis.circlePath c r : C(I, ℂ)).Homotopy γ)
+    (hloop : ∀ s : I, H (s, 1) = H (s, 0))
+    (havoid : range H ⊆ (sourcePeriodicSegment hp hp1 ψ n)ᶜ)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (H.extend xy.1) xy.2) (Icc 0 1)) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in γ, NLS.ComplexAnalysis.holomorphicOneForm
+        (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = -1 := by
+  have hclosed : IsClosed (range H) :=
+    (isCompact_range (map_continuous H)).isClosed
+  apply normalized_sourceStandardRoot_inv_curveIntegral_of_homotopy_circle
+    hp hp1 ψ n c r hr hseg H hloop (t := range H)
+  · intro s _ u _
+    exact ⟨(s,u), rfl⟩
+  · simpa only [hclosed.closure_eq] using havoid
+  · exact hcontdiff
+
 end NLS.ZakharovShabat

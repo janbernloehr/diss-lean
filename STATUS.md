@@ -8561,8 +8561,11 @@ formal matrix representation.
    so confinement to the assigned isolating disc transfers the
    off-diagonal zero value from circles to these polar contours. Together
    the two cases prove the normalized `−δₘₙ` identity for this
-   noncircular class. The extension to every stated admissible contour
-   remains.
+   noncircular class. More generally, the identity holds on every smooth
+   closed loop equipped with a smooth homotopy from an enclosing circle
+   whose compact image stays inside the assigned isolating disc and
+   avoids the indexed gap. The extension to every stated admissible
+   contour remains.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

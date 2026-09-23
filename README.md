@@ -1145,8 +1145,13 @@ installation is absent. No shell startup files are modified.
   disc containing the filled contour. When this disc lies in the
   indexed isolating disc, all other inverse-root integrals vanish.
   Combining both cases gives the normalized `−δₘₙ` identity for these
-  polar contours. Extending it to every admissible contour in the lemma
-  remains. A geometric deformation lemma also shows that
+  polar contours. More generally, the same identity now holds for any
+  smooth loop supplied with a smooth homotopy from an enclosing circle
+  whose entire image stays inside the assigned isolating disc and avoids
+  the indexed gap. Compactness lets the theorem use the homotopy image
+  directly, without an auxiliary neighborhood. Constructing that
+  homotopy for every admissible contour in the lemma remains. A geometric
+  deformation lemma also shows that
   interpolating two discs containing the gap segment keeps every
   intermediate circle disjoint from it.
   Ordinary and starred intrinsic boundary

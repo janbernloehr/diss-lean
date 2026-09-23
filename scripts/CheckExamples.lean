@@ -17301,3 +17301,57 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)]
     hperiod hρlo hρmax hcluster hdisjoint hfilled
 
 end NLS.ZakharovShabat
+noncomputable section
+open Set Metric Complex
+open scoped unitInterval ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (m n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hfilled : closedBall c r ⊆ sourceIsolatingDisc hp hp1 φ N ε m)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    (hdisjoint : Disjoint
+      (sourceIsolatingDisc hp hp1 φ N ε m)
+      (sourceIsolatingDisc hp hp1 φ N ε n))
+    {a : ℂ} {γ : Path a a}
+    (H : (NLS.ComplexAnalysis.circlePath c r : C(I, ℂ)).Homotopy γ)
+    (hloop : ∀ s : I, H (s, 1) = H (s, 0))
+    (hinside : range H ⊆ sourceIsolatingDisc hp hp1 φ N ε m)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (H.extend xy.1) xy.2) (Icc 0 1)) :
+    (∫ᶜ z in γ, NLS.ComplexAnalysis.holomorphicOneForm
+      (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) = 0 :=
+  sourceStandardRoot_inv_curveIntegral_of_homotopy_circle_off_index_eq_zero
+    hp hp1 φ ψ N ε m n c r hr hfilled hcluster hdisjoint
+    H hloop hinside hcontdiff
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (m n : ℤ)
+    (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hsegm : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c r)
+    (hfilled : closedBall c r ⊆ sourceIsolatingDisc hp hp1 φ N ε m)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n)
+    (hdisjoint : m ≠ n → Disjoint
+      (sourceIsolatingDisc hp hp1 φ N ε m)
+      (sourceIsolatingDisc hp hp1 φ N ε n))
+    {a : ℂ} {γ : Path a a}
+    (H : (NLS.ComplexAnalysis.circlePath c r : C(I, ℂ)).Homotopy γ)
+    (hloop : ∀ s : I, H (s, 1) = H (s, 0))
+    (hinside : range H ⊆ sourceIsolatingDisc hp hp1 φ N ε m)
+    (havoidm : range H ⊆ (sourcePeriodicSegment hp hp1 ψ m)ᶜ)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (H.extend xy.1) xy.2) (Icc 0 1)) :
+    (2*Real.pi*Complex.I)⁻¹ *
+      (∫ᶜ z in γ, NLS.ComplexAnalysis.holomorphicOneForm
+        (fun w => (sourceStandardRoot hp hp1 ψ n w)⁻¹) z) =
+      if m = n then -1 else 0 :=
+  normalized_sourceStandardRoot_inv_curveIntegral_indexed_of_homotopy_circle
+    hp hp1 φ ψ N ε m n c r hr hsegm hfilled hcluster hdisjoint
+    H hloop hinside havoidm hcontdiff
+
+end NLS.ZakharovShabat

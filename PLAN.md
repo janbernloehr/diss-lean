@@ -2186,6 +2186,11 @@ explicit noncircular example. The affine radial homotopy also remains
 inside any outer disc that bounds both endpoint radii. Confined to an
 assigned isolating disc, it transfers the off-diagonal zero circle
 integral to the polar contour. Thus the normalized indexed integral is
-`−δₘₙ` for this noncircular class. Next extend the construction beyond
-polar graphs to the full admissible contour class of Lemma 10.3.
+`−δₘₙ` for this noncircular class. The same identity now applies to any
+smooth loop with a smooth homotopy from an enclosing circle whose image
+avoids the indexed gap and stays in the assigned isolating disc. The
+homotopy image is compact, so no auxiliary neighborhood is needed in
+the theorem statement. Next construct such deformations, or an equivalent
+winding-number argument, for the full admissible contour class of
+Lemma 10.3.
 The printed general-`p` central-height constant remains a separate open item.
