@@ -40,6 +40,17 @@ theorem normalizedStandardRoot_sq (t g z : ℂ) (hz : t ≠ z) :
     normalizedStandardRoot t 0 z = t-z := by
   simp [normalizedStandardRoot]
 
+/-- Reflecting the spectral parameter across the midpoint reverses the
+normalized root; the radicand depends only on the squared displacement. -/
+theorem normalizedStandardRoot_reflect (t g z : ℂ) :
+    normalizedStandardRoot t g (2*t-z) =
+      -normalizedStandardRoot t g z := by
+  unfold normalizedStandardRoot
+  have hlin : t-(2*t-z) = -(t-z) := by ring
+  rw [hlin]
+  simp only [neg_sq]
+  ring
+
 /-- Equation (2.9) with the canonical source periodic midpoint and gap. -/
 def sourceStandardRoot (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (n : ℤ) (z : ℂ) : ℂ :=

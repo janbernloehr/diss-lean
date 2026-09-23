@@ -1175,10 +1175,11 @@ installation is absent. No shell startup files are modified.
   the full homotopy square. The diagonal identity for every admissible
   counterclockwise contour remains open.
   The principal square root now has proved upper and lower boundary
-  limits on the negative real axis. Applied to the normalized standard
-  root, these give the opposing formula (2.12) limits on the positive
-  interior half of a positive real gap. The negative half, midpoint,
-  and complex-gap transfer are the next branch steps.
+  limits on the negative real axis. The normalized standard root and
+  actual canonical source root satisfy both straight transverse limits
+  in formula (2.12) for every point of a noncollapsed complex periodic
+  gap, including its midpoint and endpoints. Joint side continuity and
+  Lemma 10.4's integral bound remain.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

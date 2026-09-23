@@ -8582,13 +8582,15 @@ formal matrix representation.
    when its basepoint moves and the full square map is not twice smooth.
    This gives the indexed `−δₘₙ` value when such a family starts at an
    enclosing circle. Connecting every stated admissible counterclockwise
-   contour to a known one remains. As a first step toward the gap-side
-   formula (2.12), the principal square root now has proved upper and
-   lower limits at every nonpositive real number. For a normalized
-   standard root with positive real half-gap, the opposing boundary
-   values `∓i d √(1−t²)` are proved on the positive interior half
-   `0<t<1`. The negative half, midpoint, and general complex-gap
-   orientation remain.
+   contour to a known one remains. The straight transverse gap-side
+   limits in (2.12) are now proved at every `−1≤t≤1` for each nonzero
+   complex canonical periodic gap. The proof first obtains the two
+   principal-square-root branch limits, reflects the positive real-gap
+   result across the midpoint, resolves the midpoint directly, and uses
+   continuity at both endpoints. Affine scaling transfers the complete
+   real-gap formula to arbitrary complex gaps and to the actual source
+   standard root. A joint one-sided continuous extension along the full
+   gap and the integral estimate of Lemma 10.4 remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

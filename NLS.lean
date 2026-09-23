@@ -823,3 +823,8 @@ import NLS.ZakharovShabat.SourceStandardRootContourContinuousHomotopy
 import NLS.ComplexAnalysis.CircleSegmentHomotopyGeometry
 import NLS.ComplexAnalysis.SqrtBoundaryLimits
 import NLS.ZakharovShabat.SourceStandardRootGapSidePositive
+import NLS.ZakharovShabat.SourceStandardRootGapSideNegative
+import NLS.ZakharovShabat.SourceStandardRootGapSideMidpoint
+import NLS.ZakharovShabat.SourceStandardRootGapSideReal
+import NLS.ZakharovShabat.SourceStandardRootGapSideComplex
+import NLS.ZakharovShabat.SourceStandardRootGapSideSource
