@@ -1095,7 +1095,10 @@ installation is absent. No shell startup files are modified.
   constants π/2 and 3π/2, uniformly on a connected local source
   neighborhood. For every finite central index block, a possibly
   smaller common source neighborhood gives a positive lower bound for
-  roots evaluated in any other central disc.
+  roots evaluated in any other central disc. Boundedness of the finite
+  disc union also gives an upper bound. Together these yield the
+  `|m−n|`-scaled estimate (2.10) for all distinct indices in that
+  central block on one connected source neighborhood.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

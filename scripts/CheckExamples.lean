@@ -16750,3 +16750,22 @@ example {l₁ r₁ l₂ r₂ ε₁ ε₂ δ : ℝ}
   midpoint_discs_pointwise_separation h₁ h₂ hδ hε₁ hε₂ hgap hz hw
 
 end NLS.ComplexAnalysis
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (N : ℕ) :
+    ∃ ε : ℝ, 0 < ε ∧ ∃ c : ℝ, 1 ≤ c ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧
+        ∀ ψ ∈ V, ∀ m n : ℤ, m.natAbs ≤ N → n.natAbs ≤ N → m ≠ n →
+          ∀ z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) m,
+            c⁻¹ * |((m-n : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ n z‖ ∧
+              ‖sourceStandardRoot hp hp1 ψ n z‖ ≤
+                c * |((m-n : ℤ) : ℝ)| :=
+  exists_local_source_central_root_index_bounds hp hp1 φ hφ N
+
+end NLS.ZakharovShabat

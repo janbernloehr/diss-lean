@@ -2138,8 +2138,10 @@ The root norm squared is now identified with the product of its endpoint
 distances, and roots are nonzero on distinct isolating discs. Abstract
 two-sided endpoint bounds transfer to the root. The free quarter-π disc separation now proves the explicit (2.10)
 bounds for every two distinct tail indices on a common connected source
-neighborhood. A finite central block now also has a locally uniform positive lower
-bound for roots evaluated in any other central disc. Next turn that
-finite-block bound into an index-scale two-sided estimate, handle
-central-tail pairs, then prove the contour identity.
+neighborhood. A finite central block now has both a locally uniform positive lower
+bound and a uniform upper bound. Its finite index span turns these into
+the full index-scale estimate (2.10) for all distinct central indices
+on one connected source neighborhood. Next handle central-tail pairs
+and make the disc choices compatible with the global isolating family,
+then prove the contour identity.
 The printed general-`p` central-height constant remains a separate open item.

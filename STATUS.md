@@ -8511,9 +8511,11 @@ formal matrix representation.
    constants π/2 and 3π/2 uniformly on a common connected local source
    neighborhood. A finite central block has a locally uniform positive
    lower bound for roots evaluated in any other central disc, using a
-   smaller endpoint margin and continuity. Index-scale upper/lower
-   constants for central pairs, central-tail pairs, and the contour
-   identity remain.
+   smaller endpoint margin and continuity. The finite union of central
+   discs gives a uniform upper bound, and the finite index span converts
+   both into the `|m−n|`-scaled estimate (2.10) on one connected source
+   neighborhood. Central-tail pairs, compatibility of the disc choices,
+   and the contour identity remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all
