@@ -16969,3 +16969,31 @@ example
   exists_local_source_mixed_root_bounds hp hp1 φ hφ
 
 end NLS.ZakharovShabat
+
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p)
+    (ε δ : ℝ) (hεδ : ε ≤ δ) (n : ℤ) :
+    sourceClusterDisc hp hp1 φ (fun _ => ε) n ⊆
+      sourceClusterDisc hp hp1 φ (fun _ => δ) n :=
+  sourceClusterDisc_mono_constant_margin hp hp1 φ ε δ hεδ n
+
+example
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (N : ℕ) (B : ℝ) (hB : 0 < B) :
+    ∃ ε : ℝ, 0 < ε ∧ ε ≤ B ∧ ∃ c : ℝ, 1 ≤ c ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧
+        ∀ ψ ∈ V, ∀ m n : ℤ, m.natAbs ≤ N → n.natAbs ≤ N → m ≠ n →
+          ∀ z ∈ sourceClusterDisc hp hp1 φ (fun _ => ε) m,
+            c⁻¹*|((m-n : ℤ) : ℝ)| ≤ ‖sourceStandardRoot hp hp1 ψ n z‖ ∧
+              ‖sourceStandardRoot hp hp1 ψ n z‖ ≤
+                c*|((m-n : ℤ) : ℝ)| :=
+  exists_local_source_central_root_index_bounds_bounded hp hp1 φ hφ N B hB
+
+end NLS.ZakharovShabat

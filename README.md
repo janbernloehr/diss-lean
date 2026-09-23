@@ -1098,7 +1098,9 @@ installation is absent. No shell startup files are modified.
   roots evaluated in any other central disc. Boundedness of the finite
   disc union also gives an upper bound. Together these yield the
   `|m−n|`-scaled estimate (2.10) for all distinct indices in that
-  central block on one connected source neighborhood. The outer
+  central block on one connected source neighborhood. The same estimate
+  remains valid when every central disc margin is shrunk below any
+  prescribed positive bound. The outer
   central endpoint also gives a pointwise π/4 separation from every
   positive tail disc. Thus roots in either central–positive-tail
   orientation have norm at least π/4. The mirrored negative-tail
@@ -1115,7 +1117,8 @@ installation is absent. No shell startup files are modified.
   One constant then gives both sides of (2.10) for every mixed pair.
   Uniform tail isolation and finite central-disc isolation now choose
   those discs on a single connected neighborhood around each real-type
-  source potential, proving the local mixed-pair estimate.
+  source potential, proving the local mixed-pair estimate. The bounded
+  central radius is ready for a common all-index disc family.
   Ordinary and starred intrinsic boundary
   characteristics now have exact free-sine exterior ratio one, while the
   classical separated characteristic has sine-scale growth. These give a

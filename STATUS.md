@@ -8530,8 +8530,10 @@ formal matrix representation.
    sides of (2.10) for every mixed pair. Uniform tail isolation and
    finite central-disc isolation now choose a single connected local
    source neighborhood on which the mixed estimate holds for all pairs.
-   Reconciling the central estimate with this disc family, combining all
-   index regimes, and proving the contour identity remain.
+   The central-block estimate now remains valid after shrinking its disc
+   margin below any chosen positive radius, including π/4. Choosing the
+   common family and neighborhood, combining all index regimes, and
+   proving the contour identity remain.
    Lemma 6.7 is proved with `φ*=±φ` retained for
    both conjugation conclusions. Lemma 6.6 is proved
    for the original periodic spectrum, including locally uniform thresholds. Lemmas 6.4 and 6.5 are proved for all

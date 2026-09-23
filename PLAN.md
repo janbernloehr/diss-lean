@@ -2157,6 +2157,8 @@ disc pair when nearby clusters lie in the disc family. One constant now
 gives both sides of (2.10) for all mixed pairs. Uniform tail isolation
 and finite central-disc isolation now supply a single connected source
 neighborhood and disc family for that mixed estimate. Next reconcile the
-central-block estimate with this same disc family, combine all three index
-regimes, then prove the contour identity.
+central-block estimate with this same disc family. The central estimate
+now permits its margin to be reduced below any prescribed positive bound,
+in particular π/4. Next choose that radius in the common neighborhood,
+combine all three index regimes, then prove the contour identity.
 The printed general-`p` central-height constant remains a separate open item.
