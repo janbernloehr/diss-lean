@@ -43,6 +43,46 @@ theorem circleAngleArcPath_contDiffOn
   rw [(circleAngleArcPath c R α β).extend_apply ht]
   rfl
 
+/-- Imaginary coordinate of an angle-parametrized arc about a real center. -/
+theorem circleAngleArcPath_im
+    (c : ℂ) (R α β : ℝ) (hc : c.im = 0)
+    (t : ℝ) (ht : t ∈ Icc (0:ℝ) 1) :
+    ((circleAngleArcPath c R α β).extend t).im =
+      R * Real.sin (α+(β-α)*t) := by
+  rw [(circleAngleArcPath c R α β).extend_apply ht]
+  change (circleMap c R (α+(β-α)*t)).im = _
+  have h := congrArg Complex.im (circleMap_sub_center c R (α+(β-α)*t))
+  simpa only [Complex.sub_im, hc, sub_zero, circleMap_zero_im] using h
+
+/-- A circular arc with both endpoint angles in `(0, π)` stays
+strictly above a real center. -/
+theorem circleAngleArcPath_im_pos
+    (c : ℂ) (R α β : ℝ) (hc : c.im = 0) (hR : 0 < R)
+    (hα : α ∈ Ioo (0:ℝ) Real.pi)
+    (hβ : β ∈ Ioo (0:ℝ) Real.pi)
+    (t : ℝ) (ht : t ∈ Icc (0:ℝ) 1) :
+    0 < ((circleAngleArcPath c R α β).extend t).im := by
+  have hθ : α + (β-α)*t ∈ Ioo (0:ℝ) Real.pi := by
+    simpa [smul_eq_mul, mul_comm] using
+      (convex_Ioo (0:ℝ) Real.pi).add_smul_sub_mem hα hβ ht
+  rw [circleAngleArcPath_im c R α β hc t ht]
+  exact mul_pos hR (Real.sin_pos_of_mem_Ioo hθ)
+
+/-- A circular arc with both endpoint angles in `(-π, 0)` stays
+strictly below a real center. -/
+theorem circleAngleArcPath_im_neg
+    (c : ℂ) (R α β : ℝ) (hc : c.im = 0) (hR : 0 < R)
+    (hα : α ∈ Ioo (-Real.pi) (0:ℝ))
+    (hβ : β ∈ Ioo (-Real.pi) (0:ℝ))
+    (t : ℝ) (ht : t ∈ Icc (0:ℝ) 1) :
+    ((circleAngleArcPath c R α β).extend t).im < 0 := by
+  have hθ : α + (β-α)*t ∈ Ioo (-Real.pi) (0:ℝ) := by
+    simpa [smul_eq_mul, mul_comm] using
+      (convex_Ioo (-Real.pi) (0:ℝ)).add_smul_sub_mem hα hβ ht
+  rw [circleAngleArcPath_im c R α β hc t ht]
+  exact mul_neg_of_pos_of_neg hR
+    (Real.sin_neg_of_neg_of_neg_pi_lt hθ.2 hθ.1)
+
 /-- The bundled circle arc integral is the corresponding angle
 integral for either orientation. -/
 theorem curveIntegral_circleAngleArcPath
