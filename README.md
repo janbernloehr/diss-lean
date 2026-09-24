@@ -1695,3 +1695,9 @@ integrals, and proves that four consecutive clockwise arcs making one
 full turn sum to the negative of the usual circle integral. This sets
 up a four-piece deformation whose arc endpoints can match the four
 stadium corners exactly.
+`StadiumCircleCorners.lean` selects the circle through those four
+corners and casts its four clockwise arcs to the corresponding stadium
+endpoint types. The arcs are twice smooth and their integrals sum to
+the negative of the standard circle integral. The remaining geometric
+proof must keep the four affine deformations between the stadium pieces
+and these arcs outside the periodic cuts.
