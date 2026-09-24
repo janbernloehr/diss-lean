@@ -2108,3 +2108,14 @@ sign with the positive upper-side factor. On the interior of every
 open real-type gap, the upper canonical root is exactly the positive
 arcosh square root times `(-1)^|n|`. The same identity is available in
 real spectral coordinates for the weighted action integral.
+
+## Latest milestone: positive actions on all open real gaps
+
+`SourceDiscriminantDerivativeParity.lean` makes the discriminant
+derivative's parity sign explicit. In
+`SourceActionAllGapPositive.lean`, that sign cancels the upper
+canonical-root sign in their quotient. The upper weighted boundary
+integral is the negative real arcosh area, so every sufficiently
+small midpoint circle around an open real-type gap has a strictly
+positive real action. This extends the earlier central-gap result
+to every integer gap index.
