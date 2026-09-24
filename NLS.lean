@@ -874,3 +874,5 @@ import NLS.Fourier.SeparatedReciprocalRows
 import NLS.Fourier.FreeLatticeSampledRows
 import NLS.Fourier.PhysicalMidpointHilbertRows
 import NLS.ZakharovShabat.SourceMidpointHilbertCorrection
+import NLS.SequenceSpaces.UniformSelectionSup
+import NLS.ZakharovShabat.SourceMidpointHilbertDiscSup

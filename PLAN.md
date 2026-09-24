@@ -2469,3 +2469,13 @@ source discs, uniformly over nearby potentials and every selection of
 one spectral point per disc. Next turn this selection-uniform bound into
 the `ℓᑫ` sequence of disc suprema required by Lemma 10.8, handle the
 `q=1` endpoint where needed, and pass to the infinite-product estimate.
+
+`UniformSelectionSup.lean` now upgrades any norm bound valid for every
+independent coordinate selection to an `ℓᑫ` bound for the least
+coordinatewise supremum majorant. `SourceMidpointHilbertDiscSup.lean`
+applies this to the signed midpoint sum on every distant isolating disc.
+It proves the required supremum sequence lies in `ℓᑫ` for
+`1 < q < ∞`, locally uniformly near a real-type source. For `q=1`,
+the same supremum lies in every finite `ℓʳ` with `r>1`, giving the
+`ℓ^{1+}` endpoint. Next use these first-order bounds in the
+infinite-product estimate of Lemma 10.8.

@@ -1405,3 +1405,10 @@ reciprocal-square convolution. The bound holds for any choice of one
 spectral point in each distant isolating disc, with constants shared
 on a connected neighborhood of a real-type source. Taking the
 supremum over each disc and passing to infinite products remain open.
+
+The coordinatewise supremum of the signed midpoint sum over each
+distant isolating disc now lies in `ℓᑫ` for `1 < q < ∞`. For `q=1`, it
+lies in every finite exponent above one. These are locally uniform
+bounds near a real-type source. The proof uses the fact that the
+sampled Hilbert estimate holds for every independent choice of one
+point from each disc. The infinite-product estimate remains open.

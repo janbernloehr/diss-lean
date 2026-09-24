@@ -8953,3 +8953,15 @@ every selection of one spectral point from each distant isolating
 disc. The remaining Lemma 10.8 task is to control the disc supremum
 sequence, including the endpoint formulation, and then the infinite
 product.
+
+## Latest milestone: disc-supremum first-order estimates
+
+`UniformSelectionSup.lean` proves that a common `ℓᑫ` bound for every
+independent selection from coordinate sets bounds their pointwise
+supremum sequence in the same `ℓᑫ` space. Applied to the signed
+midpoint row in `SourceMidpointHilbertDiscSup.lean`, this gives the
+actual supremum over each distant source disc, with one bound shared
+on a connected neighborhood of a real-type potential. The result holds
+in `ℓᑫ` for `1 < q < ∞`; an `ℓ¹` numerator displacement gives the
+supremum in every finite `ℓʳ`, `r>1`. The infinite-product asymptotic
+and the sine-product consequence of Lemma 10.8 remain open.
