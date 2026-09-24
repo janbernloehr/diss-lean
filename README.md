@@ -1732,3 +1732,6 @@ principle for holomorphic scalar functions on complex normed spaces.
 proves that one fixed gap-enclosing circle has zero quotient integral
 for every complex source in a neighborhood of an open real-type source.
 The admissible noncircular contour case of Lemma 10.11(ii) remains open.
+`SourceCriticalRootRatioComplexLoopZero.lean` covers smooth closed loops
+with a supplied smooth gap-avoiding homotopy to the fixed circle, for
+every source in that complex neighborhood.

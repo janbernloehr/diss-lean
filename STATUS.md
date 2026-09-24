@@ -9198,3 +9198,12 @@ circle and an open complex-source neighborhood on which the circle encloses
 the selected segment, avoids all other gaps in its filled disc, and has
 exactly zero quotient integral. The remaining contour work concerns
 admissible noncircular paths.
+
+## Latest milestone: smooth-loop transfer for nearby complex sources
+
+`SourceCriticalRootRatioComplexLoopZero.lean` transfers the fixed-circle
+zero to every twice-smooth closed loop supplied with a twice-smooth
+homotopy whose entire range avoids the periodic gaps. The transfer holds
+throughout the same complex-source neighborhood. Formalizing the
+gap-avoiding homotopy for general admissible contours, and then the
+endpoint-to-endpoint path integral, remains open.
