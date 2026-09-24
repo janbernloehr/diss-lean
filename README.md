@@ -1509,3 +1509,10 @@ its arcosh derivative has zero integral whenever the endpoint kernel
 is integrable. Establishing that integrability and identifying the
 gap-side boundary integral with the canonical-root quotient are the
 next parts of Lemma 10.11(ii).
+
+`SourceCriticalRootRatioFactorization.lean` separates the selected
+critical-over-standard-root factor from an analytic deleted quotient.
+The identity holds at every source potential off all gaps, and the
+deleted quotient is analytic across the selected gap on an open
+almost-real source domain. This is the product form needed to compare
+the open-gap boundary integral with the arcosh derivative.
