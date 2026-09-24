@@ -9393,3 +9393,24 @@ for complete singular endpoint paths with short initial vertical
 segments followed by arbitrary `C¹` curved tails and crossings in one
 half-plane. General immediately curved singular connectors still need
 a limiting or singular homotopy comparison with the vertical ones.
+
+## Latest milestone: matching primitive ray limits at gap endpoints
+
+`IntegrableDerivativeBoundary.lean` proves a one-sided fundamental
+theorem of calculus for an integrable derivative, including existence
+of the boundary value and an integral representation. The endpoint
+connector estimates then give finite upward and downward vertical-ray
+limits for every half-plane primitive of the critical-root quotient,
+at both endpoints of an open real-type gap. These limits include
+explicit vertical integral formulas.
+
+`SourceCriticalRootRatioPrimitiveCommonBoundary.lean` proves the two
+endpoint ray limits coincide within each half-plane. At positive or
+negative height, the primitive difference across the shifted gap is
+the horizontal quotient integral; the established horizontal limit is
+zero. `ConvexHolomorphicPrimitive.lean` now also evaluates an
+integrable singular-endpoint curve from primitive limits along its
+parameter, and gives a path comparison under a relative boundary
+limit. A full relative half-plane boundary limit, beyond vertical
+rays, is still needed to apply that comparison to arbitrary immediately
+curved connectors.

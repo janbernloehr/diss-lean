@@ -1886,3 +1886,19 @@ for complete paths that first leave both singular gap endpoints along
 short vertical segments, then follow arbitrary `C¹` curved tails and
 a crossing within one open half-plane. Exact zero for connectors
 curving immediately at the branch points remains open.
+
+## Latest milestone: primitive limits at open-gap endpoints
+
+`IntegrableDerivativeBoundary.lean` proves that a function with an
+integrable derivative on a punctured interval has a finite one-sided
+limit and an integral formula for its values. Applied to the quotient
+primitives, `SourceCriticalRootRatioPrimitiveVerticalLimit.lean`
+establishes finite limits along upward and downward vertical rays at
+both endpoints of every open real-type gap.
+`SourceCriticalRootRatioPrimitiveCommonBoundary.lean` proves that the
+left and right ray limits agree within each half-plane: their
+difference is the horizontal quotient integral, which tends to zero.
+`ConvexHolomorphicPrimitive.lean` also evaluates integrable singular
+endpoint paths when the primitive has the required boundary limit.
+Establishing a limit along every half-plane approach to an endpoint
+remains necessary for immediately curved connectors.

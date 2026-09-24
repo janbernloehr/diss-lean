@@ -55,6 +55,101 @@ theorem curveIntegral_eq_sub_of_primitive
   rw [curveIntegral_eq_intervalIntegral_deriv]
   convert hFTC using 1 <;> simp
 
+/-- Evaluate an integrable path with a singular starting endpoint by
+taking the one-sided limits of a primitive along the path. No
+derivative or domain condition is imposed at either endpoint. -/
+theorem curveIntegral_eq_sub_of_primitive_with_limits
+    (f F : ℂ → ℂ) (s : Set ℂ)
+    (hF : ∀ z ∈ s, HasDerivAt F (f z) z)
+    {a b : ℂ} (γ : Path a b)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hγs : ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ∈ s)
+    (hint : CurveIntegrable (holomorphicOneForm f) γ)
+    {A B : ℂ}
+    (hstart : Tendsto (F ∘ γ.extend) (𝓝[>] (0:ℝ)) (𝓝 A))
+    (hend : Tendsto (F ∘ γ.extend) (𝓝[<] (1:ℝ)) (𝓝 B)) :
+    (∫ᶜ z in γ, holomorphicOneForm f z) = B - A := by
+  have hderiv (t : ℝ) (ht : t ∈ Ioo (0:ℝ) 1) :
+      HasDerivAt (F ∘ γ.extend)
+        (f (γ.extend t) * deriv γ.extend t) t := by
+    have hγdiff : DifferentiableAt ℝ γ.extend t :=
+      (hγ.differentiableOn (by norm_num) t (Ioo_subset_Icc_self ht)).differentiableAt
+        (Filter.mem_of_superset (Ioo_mem_nhds ht.1 ht.2) Ioo_subset_Icc_self)
+    simpa only [smul_eq_mul, mul_comm] using
+      (hF (γ.extend t) (hγs t ht)).scomp t hγdiff.hasDerivAt
+  have heq : EqOn (curveIntegralFun (holomorphicOneForm f) γ)
+      (fun t : ℝ => f (γ.extend t) * deriv γ.extend t)
+      (Ioo (0:ℝ) 1) := by
+    intro t ht
+    rw [curveIntegralFun_def]
+    have htnhds : I ∈ 𝓝 t :=
+      Filter.mem_of_superset (Ioo_mem_nhds ht.1 ht.2) Ioo_subset_Icc_self
+    rw [derivWithin_of_mem_nhds htnhds]
+    rfl
+  have hint' : IntervalIntegrable
+      (fun t : ℝ => f (γ.extend t) * deriv γ.extend t)
+      volume 0 1 := hint.congr_uIoo (by simpa only [uIoo_of_le zero_le_one] using heq)
+  have hFTC := intervalIntegral.integral_eq_sub_of_hasDerivAt_of_tendsto
+    (by norm_num : (0:ℝ) < 1) hderiv hint' hstart hend
+  rw [curveIntegral_eq_intervalIntegral_deriv]
+  convert hFTC using 1; simp
+
+/-- If a primitive has a boundary limit at the singular starting
+point, its integral along every smooth integrable connector is the
+usual difference of endpoint values. -/
+theorem curveIntegral_eq_sub_of_primitive_boundary_start
+    (f F : ℂ → ℂ) (s : Set ℂ)
+    (hF : ∀ z ∈ s, HasDerivAt F (f z) z)
+    {a b : ℂ} (γ : Path a b)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hγs : ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ∈ s)
+    (hb : b ∈ s)
+    (hint : CurveIntegrable (holomorphicOneForm f) γ)
+    {A : ℂ} (hboundary : Tendsto F (𝓝[s] a) (𝓝 A)) :
+    (∫ᶜ z in γ, holomorphicOneForm f z) = F b - A := by
+  have hγstart : Tendsto γ.extend (𝓝[>] (0:ℝ)) (𝓝[s] a) := by
+    apply tendsto_nhdsWithin_iff.mpr
+    constructor
+    · have hγ0 : ContinuousAt γ.extend (0:ℝ) := γ.continuous_extend.continuousAt
+      have hγ0' : Tendsto γ.extend (𝓝[>] (0:ℝ)) (𝓝 (γ.extend 0)) :=
+        hγ0.tendsto.mono_left nhdsWithin_le_nhds
+      simpa only [Path.extend_zero] using hγ0'
+    · filter_upwards [Ioo_mem_nhdsGT (by norm_num : (0:ℝ) < 1)] with t ht
+      exact hγs t ht
+  have hstart : Tendsto (F ∘ γ.extend) (𝓝[>] (0:ℝ)) (𝓝 A) :=
+    hboundary.comp hγstart
+  have hend : Tendsto (F ∘ γ.extend) (𝓝[<] (1:ℝ)) (𝓝 (F b)) := by
+    have hγend : Tendsto γ.extend (𝓝[<] (1:ℝ)) (𝓝 b) := by
+      have hγ1 : ContinuousAt γ.extend (1:ℝ) := γ.continuous_extend.continuousAt
+      have hγ1' : Tendsto γ.extend (𝓝[<] (1:ℝ)) (𝓝 (γ.extend 1)) :=
+        hγ1.tendsto.mono_left nhdsWithin_le_nhds
+      simpa only [Path.extend_one] using hγ1'
+    exact (hF b hb).continuousAt.tendsto.comp hγend
+  exact curveIntegral_eq_sub_of_primitive_with_limits f F s hF γ hγ hγs
+    hint hstart hend
+
+/-- Two integrable connectors with the same singular start and
+regular endpoint have equal integrals when a primitive has the same
+boundary limit along their domain. -/
+theorem curveIntegral_eq_of_primitive_boundary_start
+    (f F : ℂ → ℂ) (s : Set ℂ)
+    (hF : ∀ z ∈ s, HasDerivAt F (f z) z)
+    {a b : ℂ} (γ₁ γ₂ : Path a b)
+    (hγ₁ : ContDiffOn ℝ 1 γ₁.extend (Icc 0 1))
+    (hγ₂ : ContDiffOn ℝ 1 γ₂.extend (Icc 0 1))
+    (hγ₁s : ∀ t ∈ Ioo (0:ℝ) 1, γ₁.extend t ∈ s)
+    (hγ₂s : ∀ t ∈ Ioo (0:ℝ) 1, γ₂.extend t ∈ s)
+    (hb : b ∈ s)
+    (hγ₁int : CurveIntegrable (holomorphicOneForm f) γ₁)
+    (hγ₂int : CurveIntegrable (holomorphicOneForm f) γ₂)
+    {A : ℂ} (hboundary : Tendsto F (𝓝[s] a) (𝓝 A)) :
+    (∫ᶜ z in γ₁, holomorphicOneForm f z) =
+      ∫ᶜ z in γ₂, holomorphicOneForm f z := by
+  rw [curveIntegral_eq_sub_of_primitive_boundary_start f F s hF γ₁
+      hγ₁ hγ₁s hb hγ₁int hboundary,
+    curveIntegral_eq_sub_of_primitive_boundary_start f F s hF γ₂
+      hγ₂ hγ₂s hb hγ₂int hboundary]
+
 /-- Holomorphic functions on an open convex complex domain have a
 primitive with the prescribed complex derivative. -/
 theorem exists_primitive_on_convex
