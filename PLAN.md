@@ -2447,3 +2447,14 @@ midpoint separation on a connected neighborhood, giving the finite
 full-quotient estimate with one threshold for all nearby sources.
 Next prove the first-order `ℓᑫ` omitted-index estimate and pass to the
 infinite product.
+
+`SeparatedReciprocalRows.lean` proves that changing a linearly separated
+reciprocal denominator by a bounded midpoint displacement gains a
+reciprocal-square factor. The resulting correction rows are absolutely
+summable and form an `ℓᑫ` sequence for every Banach exponent, with a
+square-kernel norm bound. `SourceMidpointHilbertCorrection.lean`
+instantiates this for the physical periodic midpoints on distant source
+discs and supplies one connected neighborhood with uniform separation
+and midpoint-displacement bounds. Next identify the free-lattice term
+with the sampled Hilbert transform to complete the signed first-order
+`ℓᑫ` estimate for `1 < q < ∞`, then pass to infinite products.

@@ -8927,3 +8927,15 @@ the finite full-quotient bound with one large-index threshold for every
 nearby source, cutoff, admissible numerator sequence, and spectral
 point on its isolating disc. The first-order `ℓᑫ` estimate across
 omitted indices and infinite-product passage remain open.
+
+## Latest milestone: physical midpoint Hilbert correction
+
+`SeparatedReciprocalRows.lean` proves that the difference between a
+physical midpoint reciprocal row and its free-lattice row has a
+reciprocal-square majorant. Its row sums define an `ℓᑫ` sequence for
+every `1 ≤ q ≤ ∞`, with norm at most the midpoint-displacement bound
+times the square-kernel convolution bound. The source specialization in
+`SourceMidpointHilbertCorrection.lean` proves this on all distant
+isolating discs and obtains a common connected neighborhood near each
+real-type potential. The free-lattice signed row still needs to be
+identified with the sampled Hilbert transform for `1 < q < ∞`.

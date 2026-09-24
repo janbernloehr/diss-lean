@@ -870,3 +870,5 @@ import NLS.ZakharovShabat.SourceSingleRootAsymptoticTailBounds
 import NLS.SequenceSpaces.UniformWeightedRows
 import NLS.ZakharovShabat.SourceSquaredGapUniformRowTails
 import NLS.ZakharovShabat.SourceSingleRootUniformAsymptoticTailBounds
+import NLS.Fourier.SeparatedReciprocalRows
+import NLS.ZakharovShabat.SourceMidpointHilbertCorrection

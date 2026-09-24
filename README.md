@@ -1390,3 +1390,10 @@ Combining this with midpoint-disc separation gives one connected
 neighborhood and one large-index threshold for the finite full-quotient
 bound. The first-order `ℓᑫ` estimate across omitted indices and the
 infinite-product asymptotic remain open.
+
+The physical first-order reciprocal row now differs from the free
+lattice row by an `ℓᑫ` correction for every Banach exponent. The proof
+uses midpoint-disc separation and the summable reciprocal-square
+kernel, with bounds uniform over nearby source potentials and spectral
+samples in all distant discs. Identifying the free row with the sampled
+Hilbert transform will give the signed `ℓᑫ` estimate for `1 < q < ∞`.

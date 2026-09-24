@@ -15895,6 +15895,39 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
 
 end NLS.ZakharovShabat
 
+/- Lemma 10.8: the physical-to-free first-order correction has an lp norm bound. -/
+noncomputable section
+open scoped ENNReal
+
+namespace NLS.ZakharovShabat
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε C R : ℝ)
+    (hC : 1 ≤ C) (hR : 0 ≤ R)
+    (hdisp : ‖sourcePeriodicMidpointDisplacement hp hp1 ψ‖ ≤ R)
+    (hsep : ∀ i j : ℤ, i ≠ j →
+      ∀ w ∈ sourceIsolatingDisc hp hp1 φ N ε i,
+        |((i-j : ℤ) : ℝ)| ≤ C *
+          ‖canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) j-w‖)
+    (z : ℤ → ℂ)
+    (hz : ∀ n : ℤ, N < n.natAbs →
+      z n ∈ sourceIsolatingDisc hp hp1 φ N ε n)
+    (α : Coeff q) :
+    ∃ b : Coeff q,
+      (∀ n : ℤ, N < n.natAbs →
+        b n = ∑' m : ℤ,
+          (if m = n then 0 else
+            α m / (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) m-z n) -
+            α m / ((Real.pi : ℂ)*m-z n))) ∧
+      ‖b‖ ≤ C*R*(‖α‖*‖Fourier.hilbertSquareCoeffs‖) :=
+  exists_sourceMidpointHilbertCorrection hp hp1 φ ψ N ε C R hC hR
+    hdisp hsep z hz α
+
+end NLS.ZakharovShabat
+
 /- Lemma 10.8: locally uniform squared-gap radicand row bound. -/
 noncomputable section
 open Filter Topology
