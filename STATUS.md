@@ -9240,3 +9240,13 @@ shifted gap endpoints with the straight horizontal segment. Its
 integral tends to zero as the shift tends to zero, independently of
 the path family's shape or length. A path with actual singular gap
 endpoints, and general complex-source admissible paths, remain open.
+
+## Latest milestone: integrable singular endpoint connectors
+
+`InverseSqrtIntegral.lean` formalizes integrability under a
+square-root weighted bound. The upper and lower connector theorems in
+`SourceCriticalRootRatioEndpointConnectorIntegrable.lean` apply this to
+the critical-root quotient at both ends of an open real-type gap.
+This supplies the local improper-integral input for paths that start
+or end at the branch points. The corresponding path-integral limit
+and general complex-source admissible contours remain open.

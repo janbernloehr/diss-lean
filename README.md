@@ -1749,3 +1749,12 @@ show that the quotient integral along any smooth family of paths
 between the vertically shifted endpoints of an open real gap tends
 to zero as the height shrinks. Actual endpoint paths still require
 an improper-integral argument.
+
+`InverseSqrtIntegral.lean` proves that a measurable function with an
+inverse-square-root endpoint bound is integrable, including after a
+positive scale change. `SourceCriticalRootRatioEndpointConnectorIntegrable.lean`
+applies the existing weighted quotient estimate to both endpoints of
+an open real-type gap. The quotient is integrable on short upward and
+downward vertical connectors, parametrized by distance from the
+endpoint. Identifying their improper integrals with actual endpoint
+path integrals remains to be done.
