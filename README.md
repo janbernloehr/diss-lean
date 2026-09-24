@@ -2236,3 +2236,11 @@ open domain is connected: each chart ball meets the connected real-type
 source locus. The action is analytic along every complex affine line
 through every point of that domain. On real-type sources it is real,
 nonnegative, and zero exactly when the selected periodic gap collapses.
+
+## Latest milestone: uniqueness of the complex action extension
+
+`SourceComplexActionUniqueness.lean` proves that the glued function is
+the unique complex Fréchet differentiable function on its domain that
+agrees with the indexed action at every real-type source. Uniqueness
+is checked on each real-centered convex chart ball and then covers
+the entire domain.
