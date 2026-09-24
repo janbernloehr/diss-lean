@@ -898,3 +898,4 @@ import NLS.ZakharovShabat.SourceDeletedPairJointAnalytic
 import NLS.ZakharovShabat.SourceCriticalGapQuotientContinuity
 import NLS.ZakharovShabat.SourceCriticalGapQuotientUniform
 import NLS.ZakharovShabat.SourceCriticalRootRatioCollapsed
+import NLS.ZakharovShabat.SourceCriticalRootRatioCollapsedContour

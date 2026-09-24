@@ -1497,3 +1497,8 @@ the linear standard-root factor, so the deleted single-root quotient
 extends the discriminant derivative divided by the canonical root
 analytically across that gap. The path-integral identity of Lemma
 10.11(ii) remains to be formalized.
+
+`SourceCriticalRootRatioCollapsedContour.lean` proves the closed-circle
+integral vanishes when the indexed gap is collapsed and the filled
+circle avoids all other gaps. The open-gap contour and admissible-path
+statements of Lemma 10.11(ii) remain.
