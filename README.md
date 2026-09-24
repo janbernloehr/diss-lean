@@ -1683,3 +1683,9 @@ for all sufficiently small positive radii. The shrinking-radius limit
 then makes each such integral exactly zero at an open real-type gap.
 Relating a stadium to an enclosing contour by a gap-avoiding homotopy
 remains open in Lemma 10.11(ii).
+`SourceCriticalRootRatioMidpointCircle.lean` constructs a convenient
+enclosing circle centered at the real gap midpoint. A sufficiently
+small positive margin beyond each endpoint gives a positive radius,
+contains the whole gap in the circle's interior, and keeps the entire
+circumference in the canonical-root domain. The remaining contour step
+is to compare its integral with the zero stadium integral.
