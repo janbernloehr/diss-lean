@@ -1643,6 +1643,13 @@ standard root on either vertically shifted endpoint has norm at least
 the square root of the real gap length times the shift magnitude.
 `SourceCriticalRootRatioConnectorBound.lean` combines this with the
 uniform regular-numerator bound to control the full quotient after
-multiplication by that square-root weight. Integrating this estimate
-will show that the short endpoint connectors vanish as the enclosing
-contour contracts.
+multiplication by that square-root weight. A contour must avoid the
+branch points themselves, so its endpoint connectors will use small
+arcs outside the gap.
+`SourceStandardRootEndpointCircleBound.lean` proves a square-root
+lower bound on circles of radius at most half the gap length around
+either endpoint. `SourceCriticalRootRatioEndpointCircleBound.lean`
+combines it with the bounded regular numerator to give a common
+weighted quotient bound for both circles, wherever their points avoid
+the periodic gaps. The next step is to choose gap-avoiding outer arcs
+and show their integrals vanish as the radius shrinks.
