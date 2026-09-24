@@ -1603,3 +1603,8 @@ nonzero vertical offset from an open real gap, the selected root's norm
 is at least the real half-gap times `sqrt(1-t²)`, uniformly for
 `-1 ≤ t ≤ 1`. This pairs with the regular-factor neighborhood bounds
 to support a dominated limit of paths approaching the slit.
+`SourceCriticalRootRatioTransverseBound.lean` combines these two
+estimates. For every open real-type gap, a fixed vertical neighborhood
+has a uniform bound on the full discriminant-derivative quotient after
+multiplication by the cosine-path Jacobian. The proof also checks that
+nonzero vertical shifts remain in the full canonical-root domain.
