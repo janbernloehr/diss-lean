@@ -1738,3 +1738,6 @@ every source in that complex neighborhood.
 `SourceCriticalRootRatioComplexNearCircle.lean` supplies the homotopy
 automatically for smooth contours uniformly close to the fixed circle,
 under explicit inner and outer gap-isolation margins.
+`SourceCriticalRootRatioCircleAllGaps.lean` also covers collapsed base
+gaps: the fixed-circle integral vanishes for every complex source in
+a neighborhood of any real-type base potential.

@@ -9217,3 +9217,13 @@ deformation outside the selected gap and away from all other gaps.
 Thus the zero-integral statement applies to a concrete class of
 noncircular contours for each nearby complex source. General
 admissible contours and endpoint-to-endpoint integrals remain open.
+
+## Latest milestone: complex-source circles at every real-type base gap
+
+`SourceCriticalRootRatioCircleAllGaps.lean` removes the open-gap
+assumption from local fixed-circle vanishing. At a nearby real-type
+source, an open gap uses the established contour calculation, while a
+collapsed gap uses analytic removability across the common endpoint.
+The real-form identity principle then extends zero to a complex-source
+neighborhood of every real-type base source. This covers collapsed
+base gaps, including the zero potential.
