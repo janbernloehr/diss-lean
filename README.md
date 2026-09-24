@@ -1625,6 +1625,10 @@ convergence in the cosine angle, where the Jacobian cancels the root's
 endpoint singularity. The upper and lower vertically displaced quotient
 integrals converge to their respective boundary integrals as the
 displacement tends to zero. The transverse bound is strengthened to the
-closed signed gap interval, including both endpoints. Identifying the
-two boundary integrals with the previously vanishing side integrals
-remains the next step.
+closed signed gap interval, including both endpoints.
+`SourceCriticalRootRatioCosineBoundaryZero.lean` identifies both boundary
+integrals with the previously vanishing straight gap-side integrals.
+Thus each vertically displaced cosine integral tends to zero on an
+open real-type gap. The remaining work for Lemma 10.11(ii) includes
+relating a surrounding contour to these displaced paths and extending
+the identity through the complex source neighborhood.
