@@ -1955,3 +1955,14 @@ an open real-type gap. The path integrand is interval integrable through
 both endpoints, doubly truncated paths converge to its full value, and
 that value is real and nonzero. Relating this boundary integral to the
 enclosing action circle and fixing its orientation remain to be proved.
+
+## Latest milestone: weighted action circle and stadium
+
+`SourceCriticalRootRatioStadiumCircleHomotopy.lean` now gives the
+stadium-to-corner-circle integral equality for any integrand
+differentiable on the cut-free root domain. The prior quotient result
+is a specialization. `SourceActionStadiumCircle.lean` applies this to
+the recentered weighted quotient and proves that the positively
+oriented action circle is the negative normalized integral over the
+clockwise stadium. The remaining boundary step is to take the
+weighted stadium integral to the two gap sides as its radius shrinks.

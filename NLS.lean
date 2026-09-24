@@ -992,3 +992,4 @@ import NLS.ZakharovShabat.SourceActionContourHomotopy
 import NLS.ZakharovShabat.RealGapWeightedArcoshIntegral
 import NLS.ZakharovShabat.RealGapCanonicalRootWeightedIntegral
 import NLS.ZakharovShabat.SourceActionGapSideIntegral
+import NLS.ZakharovShabat.SourceActionStadiumCircle

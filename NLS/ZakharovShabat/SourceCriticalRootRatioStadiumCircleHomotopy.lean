@@ -80,26 +80,25 @@ theorem exists_sourceCriticalRootRatio_stadiumCircleHomotopy_mem_domain
         sourceCanonicalRootDomain hp hp1 ψ
   exact h
 
-/-- The critical-root quotient integral over a sufficiently small
-stadium equals the integral over its four matching clockwise circle
-arcs. -/
-theorem exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral
+/-- A holomorphic integrand has equal integrals on a sufficiently small
+gap stadium and the four matching clockwise circle arcs. -/
+theorem exists_sourceGap_stadium_eq_cornerCirclePath_integral_of_differentiable
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (n : ℤ)
     (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
       (periodOnePotential_mem ψ) n).re <
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
-        (periodOnePotential_mem ψ) n).re) :
+        (periodOnePotential_mem ψ) n).re)
+    (f : ℂ → ℂ)
+    (hf : ∀ z ∈ sourceCanonicalRootDomain hp hp1 ψ,
+      DifferentiableAt ℂ f z) :
     let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
       (periodOnePotential_mem ψ) n
     let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
       (periodOnePotential_mem ψ) n
     let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
     let d : ℝ := (r.re-l.re)/2
-    let f : ℂ → ℂ := fun z =>
-      deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
-        sourceCanonicalRoot hp hp1 ψ z
     ∃ ε : ℝ, 0 < ε ∧ ∀ ρ ∈ Ioc 0 ε,
       (∫ᶜ z in sourceGapStadiumPath l r ρ,
         holomorphicOneForm f z) =
@@ -113,9 +112,6 @@ theorem exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral
     (periodOnePotential_mem ψ) n
   let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
   let d : ℝ := (r.re-l.re)/2
-  let f : ℂ → ℂ := fun z =>
-    deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
-      sourceCanonicalRoot hp hp1 ψ z
   let D := sourceCanonicalRootDomain hp hp1 ψ
   obtain ⟨ε,hε,havoid⟩ :=
     exists_sourceCriticalRootRatio_stadiumCircleHomotopy_mem_domain
@@ -181,16 +177,19 @@ theorem exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral
       (hsmooth : ContDiffOn ℝ 2 γ.extend (Icc (0:ℝ) 1))
       (hdom : range γ ⊆ D) :
       CurveIntegrable (holomorphicOneForm f) γ := by
-    exact sourceCriticalRootRatio_curveIntegrable_of_smoothPath
-      hp hp1 ψ γ (hsmooth.of_le (by norm_num)) hdom
+    have hω : ContinuousOn (holomorphicOneForm f) (range γ) := by
+      intro z hz
+      exact (((hf z (hdom hz)).continuousAt).smul
+        continuousAt_const).continuousWithinAt
+    exact hω.curveIntegrable_of_contDiffOn
+      (hsmooth.of_le (by norm_num)) (fun t => ⟨t,rfl⟩)
   change (∫ᶜ z in ((upper.trans right).trans lower).trans left,
     holomorphicOneForm f z) =
     ∫ᶜ z in ((cupper.trans cright).trans clower).trans cleft,
       holomorphicOneForm f z
   apply four_piece_curveIntegral_eq_of_affine_homotopy f (t := D)
   · exact hAI
-  · intro z hz
-    exact (sourceCriticalRootRatio_analyticOnNhd hp hp1 ψ z hz).differentiableAt
+  · exact hf
   · exact sourceSegmentPath_contDiffOn_two _ _
   · exact sourcePath_symm_contDiffOn_two _
       (sourceEndpointSemicirclePath_contDiffOn_two r ρ)
@@ -209,5 +208,37 @@ theorem exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral
   · exact hint cright hcrSmooth hcrDom
   · exact hint clower hclSmooth hclDom
   · exact hint cleft hcleftSmooth hcleftDom
+
+/-- The critical-root quotient integral over a sufficiently small
+stadium equals the integral over its four matching clockwise circle
+arcs. -/
+theorem exists_sourceCriticalRootRatio_stadium_eq_cornerCirclePath_integral
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    let f : ℂ → ℂ := fun z =>
+      deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+        sourceCanonicalRoot hp hp1 ψ z
+    ∃ ε : ℝ, 0 < ε ∧ ∀ ρ ∈ Ioc 0 ε,
+      (∫ᶜ z in sourceGapStadiumPath l r ρ,
+        holomorphicOneForm f z) =
+      ∫ᶜ z in (((stadiumCircleUpperArc c d ρ).trans
+        (stadiumCircleRightArc c d ρ)).trans
+        (stadiumCircleLowerArc c d ρ)).trans
+        (stadiumCircleLeftArc c d ρ), holomorphicOneForm f z := by
+  exact exists_sourceGap_stadium_eq_cornerCirclePath_integral_of_differentiable
+    hp hp1 ψ hreal n hopen _ (by
+      intro z hz
+      exact (sourceCriticalRootRatio_analyticOnNhd hp hp1 ψ z hz).differentiableAt)
 
 end NLS.ZakharovShabat
