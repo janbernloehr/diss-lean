@@ -994,3 +994,5 @@ import NLS.ZakharovShabat.RealGapCanonicalRootWeightedIntegral
 import NLS.ZakharovShabat.SourceActionGapSideIntegral
 import NLS.ZakharovShabat.SourceActionStadiumCircle
 import NLS.ZakharovShabat.SourceActionOuterArcLimit
+import NLS.ZakharovShabat.SourceActionCosineIntegralLimit
+import NLS.ZakharovShabat.SourceActionHorizontalLimit

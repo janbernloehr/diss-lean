@@ -1975,3 +1975,13 @@ both an explicit square-root radius bound. Thus both outward arc
 contributions tend to zero as the stadium shrinks. The weighted upper
 and lower horizontal integrals still need to be identified with their
 gap-side boundary limits before the stadium limit can be assembled.
+
+## Latest milestone: weighted horizontal boundary limits
+
+`SourceActionCosineIntegralLimit.lean` proves dominated convergence of
+the recentered weighted quotient from positive and negative vertical
+displacements to the respective upper and lower canonical-root
+boundary integrals. `SourceActionHorizontalLimit.lean` transfers both
+limits to the ordinary straight horizontal path integrals by cosine
+substitution. The boundary values still need to be matched to the
+gap-side path integrals when assembling the shrinking stadium limit.
