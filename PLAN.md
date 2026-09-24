@@ -2458,3 +2458,14 @@ discs and supplies one connected neighborhood with uniform separation
 and midpoint-displacement bounds. Next identify the free-lattice term
 with the sampled Hilbert transform to complete the signed first-order
 `ℓᑫ` estimate for `1 < q < ∞`, then pass to infinite products.
+
+`FreeLatticeSampledRows.lean` now identifies every selected free-lattice
+reciprocal row with the sampled discrete Hilbert transform. Together
+with the square-kernel correction, `PhysicalMidpointHilbertRows.lean`
+proves absolute convergence of each physical row and an `ℓᑫ` norm
+bound for the signed sums when `1 < q < ∞`.
+`SourceMidpointHilbertCorrection.lean` specializes this to all distant
+source discs, uniformly over nearby potentials and every selection of
+one spectral point per disc. Next turn this selection-uniform bound into
+the `ℓᑫ` sequence of disc suprema required by Lemma 10.8, handle the
+`q=1` endpoint where needed, and pass to the infinite-product estimate.

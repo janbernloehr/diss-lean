@@ -15926,6 +15926,34 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
   exists_sourceMidpointHilbertCorrection hp hp1 φ ψ N ε C R hC hR
     hdisp hsep z hz α
 
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+    (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε C R : ℝ)
+    (hC : 1 ≤ C) (hR : 0 ≤ R)
+    (hdisp : ‖sourcePeriodicMidpointDisplacement hp hp1 ψ‖ ≤ R)
+    (hsep : ∀ i j : ℤ, i ≠ j →
+      ∀ w ∈ sourceIsolatingDisc hp hp1 φ N ε i,
+        |((i-j : ℤ) : ℝ)| ≤ C *
+          ‖canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) j-w‖)
+    (z : ℤ → ℂ)
+    (hz : ∀ n : ℤ, N < n.natAbs →
+      z n ∈ sourceIsolatingDisc hp hp1 φ N ε n)
+    (α : Coeff q) :
+    ∃ b : Coeff q,
+      (∀ n : ℤ, N < n.natAbs →
+        b n = ∑' m : ℤ,
+          (if m = n then 0 else
+            α m / (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) m-z n))) ∧
+      ‖b‖ ≤
+        (Real.pi⁻¹*(Fourier.hilbertTransformBound hq1 hq+
+            ‖Fourier.hilbertSquareCoeffs‖)+
+          C*R*‖Fourier.hilbertSquareCoeffs‖)*‖α‖ :=
+  exists_sourceMidpointSignedHilbertRows hq1 hq hp hp1 φ ψ N ε C R
+    hC hR hdisp hsep z hz α
+
 end NLS.ZakharovShabat
 
 /- Lemma 10.8: locally uniform squared-gap radicand row bound. -/

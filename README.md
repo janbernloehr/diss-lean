@@ -1397,3 +1397,11 @@ uses midpoint-disc separation and the summable reciprocal-square
 kernel, with bounds uniform over nearby source potentials and spectral
 samples in all distant discs. Identifying the free row with the sampled
 Hilbert transform will give the signed `ℓᑫ` estimate for `1 < q < ∞`.
+
+The signed first-order midpoint sum now has an `ℓᑫ` bound for
+`1 < q < ∞`: the free lattice part is a sampled discrete Hilbert
+transform, and the physical midpoint correction is controlled by a
+reciprocal-square convolution. The bound holds for any choice of one
+spectral point in each distant isolating disc, with constants shared
+on a connected neighborhood of a real-type source. Taking the
+supremum over each disc and passing to infinite products remain open.

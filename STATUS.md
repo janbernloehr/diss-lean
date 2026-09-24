@@ -8939,3 +8939,17 @@ times the square-kernel convolution bound. The source specialization in
 isolating discs and obtains a common connected neighborhood near each
 real-type potential. The free-lattice signed row still needs to be
 identified with the sampled Hilbert transform for `1 < q < ∞`.
+
+## Latest milestone: signed midpoint Hilbert rows
+
+`FreeLatticeSampledRows.lean` normalizes every selected point in a
+free quarter-π disc and realizes its signed reciprocal row as a
+restricted sampled Hilbert transform. `PhysicalMidpointHilbertRows.lean`
+adds the square-kernel correction, proving absolute convergence of
+each physical row and an explicit `ℓᑫ` bound for the signed row sequence
+when `1 < q < ∞`. The source theorem uses a single connected
+neighborhood and constants that work for every nearby potential and
+every selection of one spectral point from each distant isolating
+disc. The remaining Lemma 10.8 task is to control the disc supremum
+sequence, including the endpoint formulation, and then the infinite
+product.

@@ -1,6 +1,6 @@
 import NLS.ZakharovShabat.SourceMidpointDiscSeparation
 import NLS.ZakharovShabat.SourcePeriodicMidpointAsymptotics
-import NLS.Fourier.SeparatedReciprocalRows
+import NLS.Fourier.PhysicalMidpointHilbertRows
 
 /-!
 # Physical midpoint correction for the first-order omitted-index sum
@@ -118,5 +118,89 @@ theorem exists_local_sourceMidpointHilbertCorrection_data
   intro ψ hψ
   have hψU : ψ ∈ Vsep ∩ Vmid := hrU hψ
   exact ⟨(hmid ψ hψU.2).1, hsep ψ hψU.1⟩
+
+/-- Spectral samples in distant assigned discs lie in the corresponding
+free quarter-π discs. -/
+theorem sourceMidpoint_freeSample_bound
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p)
+    (N : ℕ) (ε : ℝ) (z : ℤ → ℂ)
+    (hz : ∀ n : ℤ, N < n.natAbs →
+      z n ∈ sourceIsolatingDisc hp hp1 φ N ε n) :
+    ∀ n ∈ {n : ℤ | N < n.natAbs},
+      ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 := by
+  intro n hn
+  have hn' : N < n.natAbs := hn
+  have hzn : z n ∈ refinedResonantDisk n := by
+    simpa only [sourceIsolatingDisc, if_neg (not_le.mpr hn')] using hz n hn'
+  simpa only [refinedResonantDisk, mem_ball, dist_eq_norm] using
+    (show dist (z n) ((Real.pi : ℂ)*n) ≤ Real.pi/4 from
+      le_of_lt (by simpa only [refinedResonantDisk, mem_ball] using hzn))
+
+/-- The full signed first-order midpoint sum is an `ℓq` sequence for
+`1 < q < ∞`, uniformly over all spectral samples in distant discs. -/
+theorem exists_sourceMidpointSignedHilbertRows
+    {q : ℝ≥0∞} [Fact (1 ≤ q)] (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ ψ : CoeffPair p)
+    (N : ℕ) (ε C R : ℝ) (hC : 1 ≤ C) (hR : 0 ≤ R)
+    (hdisp : ‖sourcePeriodicMidpointDisplacement hp hp1 ψ‖ ≤ R)
+    (hsep : ∀ i j : ℤ, i ≠ j →
+      ∀ w ∈ sourceIsolatingDisc hp hp1 φ N ε i,
+        |((i-j : ℤ) : ℝ)| ≤ C *
+          ‖canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) j-w‖)
+    (z : ℤ → ℂ)
+    (hz : ∀ n : ℤ, N < n.natAbs →
+      z n ∈ sourceIsolatingDisc hp hp1 φ N ε n)
+    (α : Coeff q) :
+    ∃ b : Coeff q,
+      (∀ n : ℤ, N < n.natAbs →
+        b n = ∑' m : ℤ,
+          (if m = n then 0 else
+            α m / (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) m-z n))) ∧
+      ‖b‖ ≤
+        (Real.pi⁻¹*(Fourier.hilbertTransformBound hq1 hq+
+            ‖Fourier.hilbertSquareCoeffs‖)+
+          C*R*‖Fourier.hilbertSquareCoeffs‖)*‖α‖ := by
+  let τ : ℤ → ℂ := fun m => canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) m
+  have hrows : Fourier.SeparatedReciprocalRows {n : ℤ | N < n.natAbs} C R τ z :=
+    sourceMidpoint_separatedReciprocalRows hp hp1 φ ψ N ε C R hC hR hdisp hsep z hz
+  have hfree := sourceMidpoint_freeSample_bound hp hp1 φ N ε z hz
+  refine ⟨Fourier.physicalReciprocalRows hq1 hq hrows hfree α, ?_,
+    Fourier.norm_physicalReciprocalRows_le hq1 hq hrows hfree α⟩
+  intro n hn
+  exact Fourier.physicalReciprocalRows_apply hq1 hq hrows hfree α hn
+
+/-- Near a real-type base potential, one connected neighborhood and one
+constant control the full signed first-order midpoint rows on all distant
+assigned discs. -/
+theorem exists_local_sourceMidpointSignedHilbertRows
+    {q : ℝ≥0∞} [Fact (1 ≤ q)] (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧
+        ∃ C R : ℝ, 1 ≤ C ∧ 0 ≤ R ∧
+          ∀ ψ ∈ V, ∀ z : ℤ → ℂ,
+            (∀ n : ℤ, N < n.natAbs →
+              z n ∈ sourceIsolatingDisc hp hp1 φ N ε n) →
+            ∀ α : Coeff q, ∃ b : Coeff q,
+              (∀ n : ℤ, N < n.natAbs →
+                b n = ∑' m : ℤ,
+                  (if m = n then 0 else
+                    α m / (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+                      (periodOnePotential_mem ψ) m-z n))) ∧
+              ‖b‖ ≤
+                (Real.pi⁻¹*(Fourier.hilbertTransformBound hq1 hq+
+                    ‖Fourier.hilbertSquareCoeffs‖)+
+                  C*R*‖Fourier.hilbertSquareCoeffs‖)*‖α‖ := by
+  obtain ⟨N,ε,hε,hεmax,V,hVopen,hVconn,hφV,C,R,hC,hR,hdata⟩ :=
+    exists_local_sourceMidpointHilbertCorrection_data hp hp1 φ hφ
+  refine ⟨N,ε,hε,hεmax,V,hVopen,hVconn,hφV,C,R,hC,hR,?_⟩
+  intro ψ hψ z hz α
+  obtain ⟨hdisp,hsep⟩ := hdata ψ hψ
+  exact exists_sourceMidpointSignedHilbertRows hq1 hq hp hp1 φ ψ N ε C R
+    hC hR hdisp hsep z hz α
 
 end NLS.ZakharovShabat
