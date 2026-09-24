@@ -59,6 +59,30 @@ theorem sourceStandardRoot_div_denominator_re
   rw [hw,hd]
   simp
 
+/-- A normalized factor retained in the omitted product is exactly
+the complex embedding of its real part on the selected real gap. -/
+theorem sourceStandardRoot_normalized_eq_ofReal_off_selected_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmn : m ≠ n) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+      singleSpectralDenominator m =
+      (((sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+        singleSpectralDenominator m).re:ℝ):ℂ) := by
+  have hr := sourceStandardRoot_im_eq_zero_off_selected_realGap
+    hp hp1 ψ hreal hmn hx
+  have hd : (singleSpectralDenominator m).im = 0 := by
+    unfold singleSpectralDenominator
+    split_ifs <;> simp
+  apply Complex.ext
+  · rfl
+  · simp [Complex.div_im,hr,hd]
+
 /-- A negative-index factor before the selected gap is positive
 after normalization by its negative denominator. -/
 theorem sourceStandardRoot_normalized_re_pos_of_neg_before

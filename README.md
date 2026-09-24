@@ -2072,3 +2072,12 @@ that the action is real and strictly positive on every sufficiently
 small midpoint circle around an open central real-type gap. Extending
 the omitted-product orientation by index parity remains necessary
 for the corresponding theorem at every gap.
+
+## Latest milestone: symmetric omitted-pair signs
+
+`SourceStandardRootOmittedPairSigns.lean` expresses each real
+symmetric pair of normalized factors in the omitted product. It
+proves that the pair indexed by `j+1` is negative exactly when
+`j+1 < |n|`; the omitted pair and every later pair are positive.
+The remaining parity calculation must include the zero-mode
+prefactor and the finite product of those negative pairs.
