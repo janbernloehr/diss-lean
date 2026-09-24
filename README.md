@@ -1454,3 +1454,10 @@ quotient theorem to free numerator roots gives the sine-product
 consequence with `ℓᵖ + ℓ^(p/2)` disc majorants near real-type base
 sources. The dissertation's wider setting and later lemmas still
 require work.
+
+The next step toward Lemma 10.10 is in
+`SourceCriticalMidpointGapSquaredTail.lean`. It states the locally
+uniform squared-gap critical-root offset in source coordinates for
+all sufficiently distant indices and derives equality with the
+midpoint for collapsed distant gaps. The finite central indices
+remain to be handled.

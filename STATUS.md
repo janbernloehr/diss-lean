@@ -9050,3 +9050,15 @@ dominated by `ℓᵖ + ℓ^(p/2)` majorants, with a common large-index
 threshold and explicit local norm bounds. Extending the source-local
 formulation to any remaining settings of the printed lemma and
 continuing to later results remain open.
+
+## Latest milestone: distant-index source form of Lemma 10.10
+
+`SourceCriticalMidpointGapSquaredTail.lean` specializes the existing
+canonical Lemma 8.6 squared-gap estimate to coefficient-pair sources.
+Near any source potential, one common open neighborhood, index
+threshold, and coefficient norm bound control the critical-root
+midpoint offset by the squared periodic gap at every distant signed
+index. Collapsed distant gaps have critical root equal to the
+midpoint, including for complex source potentials. Lemma 10.10's
+finitely many central indices still need a uniform squared-gap
+bound.

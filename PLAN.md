@@ -2546,3 +2546,13 @@ omitted standard-root product has locally uniform
 sine-product consequence in the source setting. Next compare the
 remaining Chapter 2 statements with this local formulation and
 continue through the subsequent lemmas.
+
+For Lemma 10.10, `SourceCriticalMidpointGapSquaredTail.lean` now
+transfers the existing canonical Lemma 8.6 estimate to source
+coordinates. On a common open source neighborhood, the critical-root
+offset equals the squared periodic gap times a uniformly bounded
+`ℓᵖ` sequence at every sufficiently distant signed index. It also
+shows that a collapsed distant gap has its critical root exactly at
+its midpoint, even for complex source potentials. The remaining
+Lemma 10.10 work is the uniform squared-gap bound at the finitely
+many central indices.
