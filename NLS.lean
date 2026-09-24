@@ -919,3 +919,4 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioContourHomotopy
 import NLS.ZakharovShabat.SourceCriticalRootRatioGapSideRegularity
 import NLS.ZakharovShabat.SourceCriticalRootRatioGapSideLimits
 import NLS.ZakharovShabat.SourceCriticalRootGapNeighborhood
+import NLS.ZakharovShabat.SourceStandardRootTransverseBound

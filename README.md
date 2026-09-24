@@ -1598,3 +1598,8 @@ gaps. On that neighborhood, both the reciprocal omitted-root product
 and the regular critical-root numerator have finite bounds. The
 remaining local estimate concerns the selected standard root near its
 two branch points.
+`SourceStandardRootTransverseBound.lean` supplies that estimate: at any
+nonzero vertical offset from an open real gap, the selected root's norm
+is at least the real half-gap times `sqrt(1-t²)`, uniformly for
+`-1 ≤ t ≤ 1`. This pairs with the regular-factor neighborhood bounds
+to support a dominated limit of paths approaching the slit.
