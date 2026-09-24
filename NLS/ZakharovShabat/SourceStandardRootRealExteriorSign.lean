@@ -226,4 +226,77 @@ theorem sourceStandardRoot_re_pos_after_realGap
     (periodOnePotential ψ) (periodOnePotential_mem ψ)
     (isRealType_periodOnePotential ψ hreal) hnm)
 
+/-- A standard-root factor on either real exterior ray has zero
+imaginary part, as required to multiply its real sign with the other
+factors in the omitted product. -/
+theorem sourceStandardRoot_im_eq_zero_of_real_exterior
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (m : ℤ) (x : ℝ)
+    (hx : x < (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) m).re ∨
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) m).re < x) :
+    (sourceStandardRoot hp hp1 ψ m (x:ℂ)).im = 0 := by
+  let φ := periodOnePotential ψ
+  let l := canonicalPeriodicLeft hp hp1 φ (periodOnePotential_mem ψ) m
+  let r := canonicalPeriodicRight hp hp1 φ (periodOnePotential_mem ψ) m
+  let w := sourceStandardRoot hp hp1 ψ m (x:ℂ)
+  have hrene : w.re ≠ 0 := by
+    rcases hx with hleft | hright
+    · exact ne_of_gt (sourceStandardRoot_re_pos_of_real_lt_left
+        hp hp1 ψ hreal m x hleft)
+    · exact ne_of_lt (sourceStandardRoot_re_neg_of_real_gt_right
+        hp hp1 ψ hreal m x hright)
+  have hmid : (x:ℂ) ≠ canonicalPeriodicMidpoint hp hp1 φ
+      (periodOnePotential_mem ψ) m := by
+    intro he
+    have hw : w = 0 := by
+      change normalizedStandardRoot
+        (canonicalPeriodicMidpoint hp hp1 φ (periodOnePotential_mem ψ) m)
+        ((canonicalPeriodicGap hp hp1 φ (periodOnePotential_mem ψ) m)^2)
+        (x:ℂ) = 0
+      rw [he]
+      simp [normalizedStandardRoot]
+    exact hrene (by rw [hw]; simp)
+  have hsq := sourceStandardRoot_sq_of_ne_midpoint
+    hp hp1 ψ m (x:ℂ) hmid
+  have hends := canonicalPeriodicEndpoints_im_eq_zero_of_realType
+    hp hp1 φ (periodOnePotential_mem ψ)
+      (isRealType_periodOnePotential ψ hreal) m
+  have hImSq : (w^2).im = 0 := by
+    rw [hsq]
+    change ((l-(x:ℂ))*(r-(x:ℂ))).im = 0
+    have hl : l.im = 0 := hends.1
+    have hr : r.im = 0 := hends.2
+    simp [Complex.mul_im, Complex.sub_im,hl,hr]
+  have hmul : 2*w.re*w.im = 0 := by
+    simp only [pow_two, Complex.mul_im] at hImSq
+    nlinarith [hImSq]
+  have htwo : (2:ℝ)*w.re ≠ 0 := mul_ne_zero (by norm_num) hrene
+  exact (mul_eq_zero.mp hmul).resolve_left htwo
+
+/-- All factors retained in the omitted product are real at an
+interior point of the selected real gap. -/
+theorem sourceStandardRoot_im_eq_zero_off_selected_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmn : m ≠ n) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (sourceStandardRoot hp hp1 ψ m (x:ℂ)).im = 0 := by
+  apply sourceStandardRoot_im_eq_zero_of_real_exterior hp hp1 ψ hreal m x
+  rcases lt_or_gt_of_ne hmn with hlt | hgt
+  · right
+    exact (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
+      (periodOnePotential ψ) (periodOnePotential_mem ψ)
+      (isRealType_periodOnePotential ψ hreal) hlt).trans hx.1
+  · left
+    exact hx.2.trans (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
+      (periodOnePotential ψ) (periodOnePotential_mem ψ)
+      (isRealType_periodOnePotential ψ hreal) hgt)
+
 end NLS.ZakharovShabat

@@ -2023,3 +2023,12 @@ then determines the real-part sign of every unselected factor at a
 point inside the chosen gap. Combining these factor signs in the
 normalized omitted product is the next orientation step toward
 positivity of the action.
+
+## Latest milestone: reality of the omitted root product
+
+`SourceStandardRootOmittedRealGap.lean` proves that each finite
+symmetric omitted-root cutoff is real at an interior point of the
+selected real gap. Pointwise convergence passes this reality to the
+infinite product. Its sign now reduces to counting the negative
+normalized factors in the finite cutoffs and passing their common
+sign to the limit.
