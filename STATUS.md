@@ -9129,3 +9129,13 @@ gives zero on any midpoint circle around an open real-type gap with
 radius above the half-gap, provided its filled disc avoids the other
 gaps. The arbitrary-center contour, admissible-path, and complex-source
 forms of Lemma 10.11(ii) are still open.
+
+## Latest milestone: nearby smooth contours
+
+`SourceCriticalRootRatioNearMidpointCircle.lean` transfers the zero
+integral from an isolated midpoint circle to any twice-smooth closed
+loop uniformly close to it. Explicit inner and outer radius bounds
+keep the affine homotopy outside the selected gap and inside a filled
+disc free of other gaps. This covers a neighborhood of contour shapes;
+an explicit corollary handles nearby off-center circles. General
+enclosing contours and nearby complex sources remain open.

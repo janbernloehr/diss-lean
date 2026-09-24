@@ -1701,6 +1701,10 @@ affine deformations avoid the periodic cuts and transfers the zero
 stadium integral to its corner circle. `SourceCriticalRootRatioStadiumCircleVanishing.lean`
 extends this to all sufficiently small midpoint-centered circles and,
 by annulus invariance, to every larger midpoint-centered circle whose
-filled disc avoids the other gaps. Arbitrary-center contours and
-admissible paths, followed by extension to nearby complex sources,
-remain for the full statement of Lemma 10.11(ii).
+filled disc avoids the other gaps. `SourceCriticalRootRatioNearMidpointCircle.lean`
+uses an affine homotopy to give the same zero integral for any smooth
+closed contour uniformly close to such a circle, within an explicit
+gap-free annulus. Its circle corollary permits small changes of both
+center and radius. General enclosing contours and admissible paths,
+followed by extension to nearby complex sources, remain for the full
+statement of Lemma 10.11(ii).
