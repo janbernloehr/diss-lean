@@ -1431,3 +1431,8 @@ infinite midpoint product minus one has an `ℓᑫ` disc-supremum bound
 for `1 < q < ∞`, and the `q = 1` case has an `ℓ^{1+}` bound. The
 remaining Lemma 10.8 work connects this product to the literal
 single-root quotient and controls the squared-gap factor.
+
+The midpoint product is now identified with the limit of the literal
+symmetric cutoff factors. Its disc-supremum bound therefore applies to
+the midpoint part of the single-root quotient. A separate squared-gap
+comparison is still needed for the complete quotient estimate.

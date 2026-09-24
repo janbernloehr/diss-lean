@@ -2508,3 +2508,10 @@ when `1 < q < ∞`; an `ℓ¹` numerator gives every finite exponent above
 one, matching the `ℓ^{1+}` endpoint. Next identify this product with
 the literal midpoint cutoff limit, then compare the latter with the
 infinite single-root quotient using the squared-gap row.
+
+`SourceMidpointProductCutoffLimit.lean` now proves that each literal
+symmetric finite midpoint quotient converges to the unconditional
+midpoint product used above. The proof checks absolute summability from
+disc separation and identifies every finite factor exactly with its
+off-diagonal perturbation. Next pass the finite quotient-minus-midpoint
+estimate to the two infinite limits and extract its `ℓ^(p/2)` disc row.

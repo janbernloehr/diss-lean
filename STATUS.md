@@ -9001,3 +9001,13 @@ a locally uniform `ℓᑫ` disc-supremum bound for `1 < q < ∞`. For an
 `ℓʳ`, `r > 1`. The product still needs to be identified with the
 literal midpoint cutoff factor of the single-root quotient, followed
 by the squared-gap correction estimate.
+
+## Latest milestone: midpoint cutoff limit
+
+`SourceMidpointProductCutoffLimit.lean` proves that the literal
+symmetric midpoint factors from the quotient factorization converge to
+the unconditional midpoint product. Disc separation gives absolute
+summability of the off-diagonal perturbations, and the source
+root-minus-midpoint identity identifies each finite factor. The
+remaining comparison is between this limit and the actual infinite
+single-root quotient, with an `ℓ^(p/2)` squared-gap error.
