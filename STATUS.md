@@ -9034,5 +9034,19 @@ On one connected source neighborhood and above one common index
 threshold, its disc error is dominated by `ℓᑫ + ℓ^(p/2)` sequences
 for `1 < q < ∞`. For `q=1`, it is dominated by `ℓʳ + ℓ^(p/2)` for
 every finite `r > 1`, realizing the `ℓ^{1+}` endpoint. All coefficient
-norm bounds use common local constants. The sine-product consequence
-of Lemma 10.8 remains to be formalized.
+norm bounds use common local constants. This is the first assertion of
+Lemma 10.8 near real-type base sources; its sine-product consequence
+remained open at this milestone.
+
+## Latest milestone: sine-product consequence near real-type sources
+
+`SourceDeletedFreeSine.lean` proves that deleting one free numerator
+root gives the filled sine quotient, even at the removable center.
+`SourceFreeSineQuotientAsymptotic.lean` then specializes the analytic
+quotient estimate to free numerator roots. On one connected
+neighborhood of a real-type base source, the sine quotient divided by
+the omitted standard-root product differs from one by a disc error
+dominated by `ℓᵖ + ℓ^(p/2)` majorants, with a common large-index
+threshold and explicit local norm bounds. Extending the source-local
+formulation to any remaining settings of the printed lemma and
+continuing to later results remain open.

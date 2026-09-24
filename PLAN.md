@@ -2532,5 +2532,17 @@ combines the midpoint and gap rows for the actual analytic quotient on
 one connected source neighborhood: its distant-disc error is
 `ℓᑫ + ℓ^(p/2)` for `1 < q < ∞`, and `ℓʳ + ℓ^(p/2)` for every finite
 `r > 1` when `q=1`, with common local constants and threshold. This
-formalizes the first assertion of Lemma 10.8. Next derive its stated
-sine-product consequence from the appropriate free-product identity.
+formalizes the first assertion of Lemma 10.8 near real-type base
+sources. Next derive its stated sine-product consequence from the
+appropriate free-product identity.
+
+`SourceDeletedFreeSine.lean` now identifies the free deleted numerator
+with the filled sine quotient at every complex spectral point,
+including the removed free root. `SourceFreeSineQuotientAsymptotic.lean`
+specializes the quotient asymptotic to the free numerator: near a
+real-type base source, the filled sine quotient divided by the
+omitted standard-root product has locally uniform
+`ℓᵖ + ℓ^(p/2)` disc majorants. This proves the corresponding
+sine-product consequence in the source setting. Next compare the
+remaining Chapter 2 statements with this local formulation and
+continue through the subsequent lemmas.
