@@ -2013,3 +2013,13 @@ gap-side boundary integral divided by π. The formula shows that these
 actions are real and nonzero on every open real-type gap. Establishing
 the canonical-root orientation needed for a strictly positive sign
 remains open.
+
+## Latest milestone: real exterior signs of standard-root factors
+
+`SourceStandardRootRealExteriorSign.lean` shows that the principal
+standard-root factor is positive to the left of its real periodic
+gap and negative to the right. Strict ordering of canonical gaps
+then determines the real-part sign of every unselected factor at a
+point inside the chosen gap. Combining these factor signs in the
+normalized omitted product is the next orientation step toward
+positivity of the action.
