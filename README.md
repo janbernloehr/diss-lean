@@ -2150,3 +2150,11 @@ nonnegative, vanishing exactly for a collapsed periodic gap. The
 remaining action construction must connect this real-source value
 to a locally analytic action on nearby complex sources and arbitrary
 admissible circuits.
+
+## Latest milestone: fixed enclosing-circle representation
+
+`SourceRealActionEnclosingCircle.lean` proves that the indexed
+real-source action equals the contour integral on any enclosing
+midpoint circle whose filled disc avoids the other periodic gaps.
+This representation permits a fixed contour at a chosen real-type
+source to be used for the subsequent local analytic extension.
