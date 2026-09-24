@@ -2158,3 +2158,13 @@ real-source action equals the contour integral on any enclosing
 midpoint circle whose filled disc avoids the other periodic gaps.
 This representation permits a fixed contour at a chosen real-type
 source to be used for the subsequent local analytic extension.
+
+## Latest milestone: local holomorphic circle action through a real action
+
+`SourceRealActionLocalHolomorphic.lean` chooses a fixed midpoint circle
+representing each indexed real-source action and proves that its
+circle integral is complex Fréchet differentiable on a source
+neighborhood. Along every complex affine source line through the
+base point, this circle action is analytic. Identifying one common
+Banach-analytic action across overlapping source neighborhoods and
+all admissible circuits remains open.
