@@ -2128,3 +2128,14 @@ real gap whose filled disc avoids the other gaps. On this class of
 circles, the action is real and nonnegative, and it vanishes exactly
 when the selected periodic gap collapses. A contour-independent action
 for the full admissible circuit class remains to be formalized.
+
+## Latest milestone: existence of isolating midpoint circles
+
+`SourceActionMidpointCircleExistence.lean` uses strict separation from
+the neighboring real spectral gaps to construct a positive range of
+midpoint circles whose filled discs avoid all other gaps. On every
+circle in that range, the action is real and nonnegative, and it
+vanishes exactly when the selected gap collapses. This gives the
+real-type sign and zero criterion of Lemma 11.1 for these explicit
+circuits; extending the definition to arbitrary admissible circuits
+remains open.

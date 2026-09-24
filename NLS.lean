@@ -1014,3 +1014,4 @@ import NLS.ZakharovShabat.SourceCanonicalRootUpperParitySign
 import NLS.ZakharovShabat.SourceDiscriminantDerivativeParity
 import NLS.ZakharovShabat.SourceActionAllGapPositive
 import NLS.ZakharovShabat.SourceActionMidpointCircleCharacterization
+import NLS.ZakharovShabat.SourceActionMidpointCircleExistence
