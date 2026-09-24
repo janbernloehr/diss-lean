@@ -296,7 +296,7 @@ theorem stadiumCircleRightArc_im_sign
       (stadiumLowerRightAngle d ρ)).extend t).im = _
     rw [circleAngleArcPath_im c _ _ _ hc t ht, hLR]
     congr 1
-    ring
+    ring_nf
   rw [him]
   refine ⟨?_, ?_, ?_⟩
   · intro hhalf
@@ -363,6 +363,56 @@ theorem stadiumCircleLeftArc_im_sign
   rw [hmirror]
   exact ⟨fun h => neg_lt_zero.mpr (hpos h), fun h => by rw [hzero h, neg_zero],
     fun h => neg_pos.mpr (hneg h)⟩
+
+/-- The right arc's only real-axis crossing is the outermost point of
+the corner circle on the right. -/
+theorem stadiumCircleRightArc_midpoint
+    (c : ℂ) {d ρ : ℝ} (hd : 0 < d) (hρ : 0 < ρ) :
+    (stadiumCircleRightArc c d ρ).extend (1/2:ℝ) =
+      c + (stadiumCornerRadius d ρ : ℂ) := by
+  have ht : (1/2:ℝ) ∈ Set.Icc (0:ℝ) 1 := by norm_num
+  have hLR := stadiumLowerRightAngle_eq_neg hd hρ
+  change (circleAngleArcPath c (stadiumCornerRadius d ρ)
+    (stadiumUpperRightAngle d ρ)
+    (stadiumLowerRightAngle d ρ)).extend (1/2:ℝ) = _
+  rw [(circleAngleArcPath c (stadiumCornerRadius d ρ)
+    (stadiumUpperRightAngle d ρ)
+    (stadiumLowerRightAngle d ρ)).extend_apply ht]
+  change circleMap c (stadiumCornerRadius d ρ)
+    (stadiumUpperRightAngle d ρ +
+      (stadiumLowerRightAngle d ρ - stadiumUpperRightAngle d ρ) * (1/2:ℝ)) = _
+  have hangle : stadiumUpperRightAngle d ρ +
+      (stadiumLowerRightAngle d ρ - stadiumUpperRightAngle d ρ) * (1/2:ℝ) = 0 := by
+    rw [hLR]
+    ring
+  rw [hangle]
+  simp [circleMap]
+
+/-- The left arc's only real-axis crossing is the outermost point of
+the corner circle on the left. -/
+theorem stadiumCircleLeftArc_midpoint
+    (c : ℂ) {d ρ : ℝ} (hd : 0 < d) (hρ : 0 < ρ) :
+    (stadiumCircleLeftArc c d ρ).extend (1/2:ℝ) =
+      c - (stadiumCornerRadius d ρ : ℂ) := by
+  have ht : (1/2:ℝ) ∈ Set.Icc (0:ℝ) 1 := by norm_num
+  obtain ⟨hUL, _, hLL⟩ := stadiumCornerAngles_clockwise hd hρ
+  change (circleAngleArcPath c (stadiumCornerRadius d ρ)
+    (stadiumLowerLeftAngle d ρ)
+    (stadiumUpperLeftAngle d ρ-2*Real.pi)).extend (1/2:ℝ) = _
+  rw [(circleAngleArcPath c (stadiumCornerRadius d ρ)
+    (stadiumLowerLeftAngle d ρ)
+    (stadiumUpperLeftAngle d ρ-2*Real.pi)).extend_apply ht]
+  change circleMap c (stadiumCornerRadius d ρ)
+    (stadiumLowerLeftAngle d ρ +
+      (stadiumUpperLeftAngle d ρ - 2*Real.pi -
+        stadiumLowerLeftAngle d ρ) * (1/2:ℝ)) = _
+  have hangle : stadiumLowerLeftAngle d ρ +
+      (stadiumUpperLeftAngle d ρ - 2*Real.pi -
+        stadiumLowerLeftAngle d ρ) * (1/2:ℝ) = -Real.pi := by
+    rw [hUL, hLL]
+    ring
+  rw [hangle]
+  simp [circleMap, Complex.exp_neg_pi_mul_I, sub_eq_add_neg]
 
 /-- The four arcs through the stadium corners have the signed circle
 integral when concatenated in clockwise order. -/
