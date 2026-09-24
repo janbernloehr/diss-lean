@@ -1654,5 +1654,9 @@ weighted quotient bound for both circles, wherever their points avoid
 the periodic gaps. `SourceCriticalRootRatioOuterArcs.lean` constructs
 both outward endpoint semicircles inside the full root domain for a
 common small radius and applies the weighted quotient bound uniformly
-along them. The next step is to bound their path integrals and show
-those integrals vanish as the radius shrinks.
+along them. `SourceCriticalRootRatioOuterArcIntegral.lean` proves the
+resulting half-circle integrands are interval-integrable and bounds each
+arc integral by a constant times the square root of its radius. Both
+arc integrals therefore vanish as the contour shrinks. The next step is
+to assemble these arcs with the displaced horizontal paths into a
+closed shrinking contour.
