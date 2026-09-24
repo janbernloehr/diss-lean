@@ -1985,3 +1985,12 @@ boundary integrals. `SourceActionHorizontalLimit.lean` transfers both
 limits to the ordinary straight horizontal path integrals by cosine
 substitution. The boundary values still need to be matched to the
 gap-side path integrals when assembling the shrinking stadium limit.
+
+## Latest milestone: weighted boundary values and gap sides
+
+`SourceActionBoundaryGapSide.lean` identifies both weighted cosine
+boundary integrals with their straight gap-side path integrals. The
+upper value is real and nonzero on every open real-type gap, and the
+lower value is its negative. Together with the horizontal limits and
+vanishing endpoint arcs, these are the boundary terms needed to
+evaluate the shrinking weighted stadium.
