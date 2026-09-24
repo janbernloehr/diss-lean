@@ -1441,3 +1441,9 @@ The squared-gap comparison now reaches the actual analytic infinite
 quotient. Its difference from the midpoint product has a uniform
 `ℓ^(p/2)` disc majorant, including `1 < p < 2`. Combining it with the
 midpoint `ℓᑫ` and `ℓ^{1+}` majorants is the next Lemma 10.8 step.
+
+The first quotient asymptotic of Lemma 10.8 is now formalized for the
+actual analytic infinite quotient on distant source discs. The error
+has locally uniform `ℓᑫ + ℓ^(p/2)` majorants when `1 < q < ∞` and
+`ℓ^{1+} + ℓ^(p/2)` majorants at `q=1`. The sine-product consequence
+is the remaining part of the lemma.

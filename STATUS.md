@@ -9023,3 +9023,16 @@ spectral point in every sufficiently distant source disc and uniformly
 on a connected source neighborhood. This works in the quasi-Banach
 range `1 < p < 2`. The midpoint and gap majorants still need to be
 combined for the first assertion of Lemma 10.8.
+
+## Latest milestone: first quotient asymptotic of Lemma 10.8
+
+`SourceSquaredGapNorm.lean` gives a locally uniform bound for the
+squared-gap `ℓ^(p/2)` norm, including `1 < p < 2`.
+`SourceSingleRootQuotientAsymptoticDiscSup.lean` combines the midpoint
+and squared-gap estimates for the actual analytic infinite quotient.
+On one connected source neighborhood and above one common index
+threshold, its disc error is dominated by `ℓᑫ + ℓ^(p/2)` sequences
+for `1 < q < ∞`. For `q=1`, it is dominated by `ℓʳ + ℓ^(p/2)` for
+every finite `r > 1`, realizing the `ℓ^{1+}` endpoint. All coefficient
+norm bounds use common local constants. The sine-product consequence
+of Lemma 10.8 remains to be formalized.

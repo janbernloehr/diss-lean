@@ -2524,3 +2524,13 @@ uses the physical reciprocal-square row to give a uniform-in-disc-point
 neighborhood, also when `1 < p < 2`. Next intersect this neighborhood
 with the midpoint-product disc bound and state the full first
 asymptotic of Lemma 10.8, including the `q=1` endpoint.
+
+`SourceSquaredGapNorm.lean` now bounds the squared-gap half-exponent
+norm by the square of the unsquared-gap norm and extracts a common
+local source bound. `SourceSingleRootQuotientAsymptoticDiscSup.lean`
+combines the midpoint and gap rows for the actual analytic quotient on
+one connected source neighborhood: its distant-disc error is
+`ℓᑫ + ℓ^(p/2)` for `1 < q < ∞`, and `ℓʳ + ℓ^(p/2)` for every finite
+`r > 1` when `q=1`, with common local constants and threshold. This
+formalizes the first assertion of Lemma 10.8. Next derive its stated
+sine-product consequence from the appropriate free-product identity.

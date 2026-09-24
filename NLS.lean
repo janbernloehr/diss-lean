@@ -884,3 +884,5 @@ import NLS.ZakharovShabat.SourceMidpointProductFullDiscSup
 import NLS.ZakharovShabat.SourceMidpointProductCutoffLimit
 import NLS.ZakharovShabat.SourceSingleRootGapCorrectionLimit
 import NLS.ZakharovShabat.SourceSingleRootGapCorrectionDiscSup
+import NLS.ZakharovShabat.SourceSquaredGapNorm
+import NLS.ZakharovShabat.SourceSingleRootQuotientAsymptoticDiscSup
