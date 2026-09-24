@@ -9506,3 +9506,16 @@ circle action on a source neighborhood, and analyticity along each
 complex affine source line. Independence from the chosen contour and
 full Banach analyticity of the action remain to be proved before
 this becomes the global indexed action of Lemma 11.1.
+
+## Latest milestone: action contour invariance inside isolating discs
+
+`SourceActionContourHomotopy.lean` proves that the weighted action
+integral is invariant under a twice-smooth closed-loop homotopy whose
+image avoids all periodic cuts. For actual isolating circles, an
+explicit affine homotopy proves equality between nested circles with
+different centers. Two circles inside a common larger isolating disc
+therefore give the same action. A fixed outer circle and this
+comparison work on one complex source neighborhood of any real-type
+base potential and signed gap index. This establishes contour choice
+independence for those circles; arbitrary admissible circuits still
+require a geometric homotopy or winding argument.
