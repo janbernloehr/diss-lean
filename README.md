@@ -1520,5 +1520,7 @@ the open-gap boundary integral with the arcosh derivative.
 `RealGapArcoshRadicand.lean` identifies the arcosh denominator
 exactly as the endpoint-distance product times the deleted periodic
 pair product on the real axis, and proves the latter has positive
-real value in the open gap. Endpoint control of that factor is the
-remaining integrability issue.
+real value in the open gap. `RealDeletedPeriodicProduct.lean` shows
+that the product is real on the whole real axis and strictly positive
+on the closed gap, then obtains a uniform positive lower bound there.
+The resulting endpoint-weight integrability estimate is the next step.

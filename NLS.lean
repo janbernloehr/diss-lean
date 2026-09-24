@@ -903,3 +903,4 @@ import NLS.ComplexAnalysis.ArcoshGapIntegral
 import NLS.ZakharovShabat.RealGapArcoshIntegral
 import NLS.ZakharovShabat.SourceCriticalRootRatioFactorization
 import NLS.ZakharovShabat.RealGapArcoshRadicand
+import NLS.ZakharovShabat.RealDeletedPeriodicProduct
