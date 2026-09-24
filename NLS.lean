@@ -921,3 +921,4 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioGapSideLimits
 import NLS.ZakharovShabat.SourceCriticalRootGapNeighborhood
 import NLS.ZakharovShabat.SourceStandardRootTransverseBound
 import NLS.ZakharovShabat.SourceCriticalRootRatioTransverseBound
+import NLS.ZakharovShabat.SourceCriticalRootRatioVerticalIntegrability

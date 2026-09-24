@@ -1608,3 +1608,9 @@ estimates. For every open real-type gap, a fixed vertical neighborhood
 has a uniform bound on the full discriminant-derivative quotient after
 multiplication by the cosine-path Jacobian. The proof also checks that
 nonzero vertical shifts remain in the full canonical-root domain.
+`SourceCriticalRootRatioVerticalIntegrability.lean` proves that every
+nonzero vertical translate of a real-type gap avoids all periodic gap
+segments. The full quotient along that translate is continuous in the
+gap parameter, and its cosine-weighted pullback is interval integrable
+through both endpoints. These facts provide the integrability input
+for the forthcoming dominated slit limit.
