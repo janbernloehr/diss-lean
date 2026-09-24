@@ -2255,3 +2255,12 @@ critical-root quotient and gives the action's source derivative as
 an explicit angle integral on a complex source neighborhood. The
 spectral integration-by-parts simplification needed for Lemma 11.1's
 gradient formula remains to be proved.
+
+## Latest milestone: commuting source and spectral derivatives
+
+`MixedSpectralSourceDerivative.lean` proves that the source Fréchet
+derivative and the spectral derivative commute for a jointly analytic
+family on an open product domain. `SourceDiscriminantMixedDerivative.lean`
+applies this to the canonical discriminant. Combining this identity
+with the canonical-root derivative and contour integration by parts
+is the next step toward Lemma 11.1's gradient formula.

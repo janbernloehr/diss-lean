@@ -1028,3 +1028,4 @@ import NLS.ZakharovShabat.SourceComplexAction
 import NLS.ZakharovShabat.SourceComplexActionProperties
 import NLS.ZakharovShabat.SourceComplexActionUniqueness
 import NLS.ZakharovShabat.SourceActionCircleSourceFDeriv
+import NLS.ZakharovShabat.SourceDiscriminantMixedDerivative
