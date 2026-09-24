@@ -2042,3 +2042,13 @@ selected gap, it proves the sign of the normalized real standard-root
 factor in all four index-order cases. The finite symmetric product
 can now be grouped into positive and negative paired blocks to
 establish its parity sign.
+
+## Latest milestone: positive omitted product at index zero
+
+`SourceStandardRootOmittedZeroPositive.lean` proves that every
+normalized factor retained after omitting index zero is positive on
+the open central real gap. Its finite symmetric cutoffs are positive;
+their limit is nonnegative and, because the omitted product cannot
+vanish on that gap, strictly positive. This fixes the canonical-root
+orientation for the central gap and supplies the base case for the
+general index-parity calculation.
