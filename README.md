@@ -2119,3 +2119,12 @@ integral is the negative real arcosh area, so every sufficiently
 small midpoint circle around an open real-type gap has a strictly
 positive real action. This extends the earlier central-gap result
 to every integer gap index.
+
+## Latest milestone: action characterization on enclosing midpoint circles
+
+`SourceActionMidpointCircleCharacterization.lean` transfers small-circle
+positivity to every midpoint-centered circle enclosing the selected
+real gap whose filled disc avoids the other gaps. On this class of
+circles, the action is real and nonnegative, and it vanishes exactly
+when the selected periodic gap collapses. A contour-independent action
+for the full admissible circuit class remains to be formalized.

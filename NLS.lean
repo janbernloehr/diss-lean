@@ -1013,3 +1013,4 @@ import NLS.ZakharovShabat.SourceStandardRootOmittedParitySign
 import NLS.ZakharovShabat.SourceCanonicalRootUpperParitySign
 import NLS.ZakharovShabat.SourceDiscriminantDerivativeParity
 import NLS.ZakharovShabat.SourceActionAllGapPositive
+import NLS.ZakharovShabat.SourceActionMidpointCircleCharacterization
