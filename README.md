@@ -1529,14 +1529,12 @@ so after multiplication by a continuous numerator.
 `RealGapArcoshIntegrability.lean` applies this estimate to real-type
 source potentials. It proves the discriminant arcosh kernel is
 integrable across an open gap and its real interval integral vanishes,
-without a separate endpoint-integrability assumption. Identifying
-this real integral with the canonical-root gap-side boundary integral
-remains the next step of Lemma 10.11(ii).
+without a separate endpoint-integrability assumption. The boundary
+comparison is developed in the following files.
 `SourceCanonicalRootGapSideSquare.lean` proves that both explicit
 canonical-root boundary values square to the discriminant radicand at
-each point of the selected gap. The remaining bridge is to show that
-the real-gap sign stays fixed along the gap and to compare the resulting
-boundary integral with the arcosh derivative integral.
+each point of the selected gap. This starts the comparison with the
+arcosh derivative integral.
 `RealGapCanonicalRootValue.lean` specializes the boundary square
 identity to real-type sources: the gap parameter is real, the squared
 boundary value is four times the signed arcosh radicand, and the upper
@@ -1544,9 +1542,14 @@ boundary value is real and nonzero throughout an open gap's interior.
 `RealGapCanonicalRootSign.lean` combines continuity, endpoint-product
 positivity, and connectedness to show that the upper boundary value
 equals either plus or minus twice the positive arcosh square root on
-the entire interior. Comparing the resulting side integral with the
-real arcosh derivative integral remains to finish the open-gap step.
+the entire interior.
 `RealGapCanonicalRootRealAxis.lean` transfers this fixed-sign identity
 from the normalized gap parameter to every interior real spectral
 point between the periodic endpoints. This supplies the pointwise
 boundary quotient needed for the interval-integral comparison.
+`RealGapCanonicalRootUpperIntegral.lean` proves that the real-axis
+integral of the complex discriminant derivative divided by the upper
+canonical-root boundary value is zero on every open real source gap.
+The parity sign of the numerator and the fixed boundary-root sign both
+cancel as constants. The lower-side and enclosing-contour path
+integrals remain to be connected to this interval result.
