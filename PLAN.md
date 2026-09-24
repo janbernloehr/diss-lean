@@ -2515,3 +2515,12 @@ midpoint product used above. The proof checks absolute summability from
 disc separation and identifies every finite factor exactly with its
 off-diagonal perturbation. Next pass the finite quotient-minus-midpoint
 estimate to the two infinite limits and extract its `ℓ^(p/2)` disc row.
+
+`SourceSingleRootGapCorrectionLimit.lean` now passes the finite
+quotient-minus-midpoint estimate to the actual analytic quotient and
+the infinite midpoint product. `SourceSingleRootGapCorrectionDiscSup.lean`
+uses the physical reciprocal-square row to give a uniform-in-disc-point
+`ℓ^(p/2)` majorant for their difference on one connected source
+neighborhood, also when `1 < p < 2`. Next intersect this neighborhood
+with the midpoint-product disc bound and state the full first
+asymptotic of Lemma 10.8, including the `q=1` endpoint.

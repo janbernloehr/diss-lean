@@ -1436,3 +1436,8 @@ The midpoint product is now identified with the limit of the literal
 symmetric cutoff factors. Its disc-supremum bound therefore applies to
 the midpoint part of the single-root quotient. A separate squared-gap
 comparison is still needed for the complete quotient estimate.
+
+The squared-gap comparison now reaches the actual analytic infinite
+quotient. Its difference from the midpoint product has a uniform
+`ℓ^(p/2)` disc majorant, including `1 < p < 2`. Combining it with the
+midpoint `ℓᑫ` and `ℓ^{1+}` majorants is the next Lemma 10.8 step.

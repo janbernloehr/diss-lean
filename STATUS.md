@@ -9011,3 +9011,15 @@ summability of the off-diagonal perturbations, and the source
 root-minus-midpoint identity identifies each finite factor. The
 remaining comparison is between this limit and the actual infinite
 single-root quotient, with an `ℓ^(p/2)` squared-gap error.
+
+## Latest milestone: infinite squared-gap comparison
+
+`SourceSingleRootGapCorrectionLimit.lean` proves that the actual
+analytic quotient differs from the infinite midpoint product by at
+most a numerator-dependent exponential constant times the physical
+reciprocal-square gap row. `SourceSingleRootGapCorrectionDiscSup.lean`
+packages that row into a single `ℓ^(p/2)` majorant, valid for every
+spectral point in every sufficiently distant source disc and uniformly
+on a connected source neighborhood. This works in the quasi-Banach
+range `1 < p < 2`. The midpoint and gap majorants still need to be
+combined for the first assertion of Lemma 10.8.
