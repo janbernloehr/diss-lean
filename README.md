@@ -2139,3 +2139,14 @@ vanishes exactly when the selected gap collapses. This gives the
 real-type sign and zero criterion of Lemma 11.1 for these explicit
 circuits; extending the definition to arbitrary admissible circuits
 remains open.
+
+## Latest milestone: an indexed action at real-type sources
+
+`SourceRealAction.lean` selects a midpoint circle from the radius
+range where the action is constant and defines a complex-valued
+indexed action for each real-type source. It proves independence from
+the circle inside that range and shows that the value is real and
+nonnegative, vanishing exactly for a collapsed periodic gap. The
+remaining action construction must connect this real-source value
+to a locally analytic action on nearby complex sources and arbitrary
+admissible circuits.
