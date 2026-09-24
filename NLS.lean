@@ -906,3 +906,4 @@ import NLS.ZakharovShabat.RealGapArcoshRadicand
 import NLS.ZakharovShabat.RealDeletedPeriodicProduct
 import NLS.ComplexAnalysis.EndpointSqrtWeight
 import NLS.ZakharovShabat.RealGapArcoshIntegrability
+import NLS.ZakharovShabat.SourceCanonicalRootGapSideSquare

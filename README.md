@@ -1532,3 +1532,8 @@ integrable across an open gap and its real interval integral vanishes,
 without a separate endpoint-integrability assumption. Identifying
 this real integral with the canonical-root gap-side boundary integral
 remains the next step of Lemma 10.11(ii).
+`SourceCanonicalRootGapSideSquare.lean` proves that both explicit
+canonical-root boundary values square to the discriminant radicand at
+each point of the selected gap. The remaining bridge is to show that
+the real-gap sign stays fixed along the gap and to compare the resulting
+boundary integral with the arcosh derivative integral.
