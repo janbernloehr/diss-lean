@@ -893,3 +893,5 @@ import NLS.ZakharovShabat.CriticalOffsetCoefficientOpenGap
 import NLS.ZakharovShabat.CriticalOffsetCoefficientCollapsedGap
 import NLS.ZakharovShabat.SourceDeletedPairOmittedSquare
 import NLS.ZakharovShabat.SourceCriticalOffsetCoefficientNonzero
+import NLS.ComplexAnalysis.JointSpectralDerivative
+import NLS.ZakharovShabat.SourceDeletedPairJointAnalytic

@@ -2594,3 +2594,13 @@ squared-gap critical-offset identity holds at every signed index on
 the connected almost-real source domain. The remaining quantitative
 Lemma 10.10 task is a common local `ℓᵖ` norm bound for the quotient
 coefficients, especially at the finitely many central indices.
+
+`JointSpectralDerivative.lean` proves a general regularity lemma:
+the spectral derivative of a jointly analytic complex Banach-space
+family is jointly continuous. `SourceDeletedPairJointAnalytic.lean`
+applies the omitted-product square identity to make the deleted
+periodic-pair product jointly analytic, with jointly continuous
+spectral derivative, on the open moving-gap complement. The central
+quotient's numerator now has the needed local continuity; next
+combine this with critical-root and midpoint continuity to bound
+finitely many central coefficients on one source neighborhood.

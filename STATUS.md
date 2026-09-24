@@ -9106,3 +9106,14 @@ midpoint coefficient is nonzero both for collapsed and noncollapsed gaps.
 The exact squared-gap offset formula therefore holds at every signed
 index on the connected almost-real source domain. The local uniform
 `ℓᵖ` coefficient norm bound is still outstanding.
+
+## Latest milestone: joint regularity of the deleted periodic product
+
+`JointSpectralDerivative.lean` identifies a spectral section's
+derivative with the joint Fréchet derivative and proves its joint
+continuity for analytic complex Banach families.
+`SourceDeletedPairJointAnalytic.lean` transfers joint analyticity
+from the omitted standard-root product to its square, the deleted
+periodic-pair product. Its spectral derivative is therefore jointly
+continuous on the open omitted-root domain. The finite central
+quotient bound is the next quantitative step toward Lemma 10.10.

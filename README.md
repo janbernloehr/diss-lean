@@ -1485,3 +1485,8 @@ index of the connected almost-real complex source domain. At a
 collapsed gap, cluster separation identifies its critical root with
 the common endpoint. A common local `ℓᵖ` bound for the quotient
 coefficients remains open.
+
+The deleted periodic-pair product is jointly analytic on the omitted
+root domain, and its spectral derivative is jointly continuous there.
+These regularity facts support the remaining local bound for the
+finitely many central critical-offset coefficients.
