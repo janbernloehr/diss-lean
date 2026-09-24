@@ -1661,6 +1661,10 @@ arc integrals therefore vanish as the contour shrinks.
 `SourceCriticalRootRatioStadiumPath.lean` concatenates the upper and
 lower shifted gap segments with the two outward semicircles into an
 actual closed path. A common small-radius bound keeps its full range in
-the canonical-root domain. The next step is to identify its curve
-integral with the four parameterized pieces and take the shrinking
-limit.
+the canonical-root domain. `SourceCriticalRootRatioStadiumIntegral.lean`
+identifies the curve integral of that path with the signed sum of the
+two displaced horizontal integrals and the two outward arc integrals.
+Each piece has its established zero limit, so the actual closed
+stadium-path integral tends to zero as the radius shrinks. Relating
+this local contour to an enclosing contour by a gap-avoiding homotopy
+remains to be proved.

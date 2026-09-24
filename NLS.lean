@@ -933,3 +933,4 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioEndpointCircleBound
 import NLS.ZakharovShabat.SourceCriticalRootRatioOuterArcs
 import NLS.ZakharovShabat.SourceCriticalRootRatioOuterArcIntegral
 import NLS.ZakharovShabat.SourceCriticalRootRatioStadiumPath
+import NLS.ZakharovShabat.SourceCriticalRootRatioStadiumIntegral
