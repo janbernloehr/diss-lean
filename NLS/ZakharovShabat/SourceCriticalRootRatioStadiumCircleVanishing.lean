@@ -219,4 +219,47 @@ theorem exists_sourceCriticalRootRatio_isolatedMidpointCircleIntegral_eq_zero
     hp hp1 ψ n c (d+η) R hinner hR hseg hother
   exact heq.trans (hsmall η hη)
 
+/-- Every isolated circle centered at an open real gap's midpoint has
+zero critical-root quotient integral, regardless of its radius. -/
+theorem sourceCriticalRootRatio_midpointCircleIntegral_eq_zero_of_isolated
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    let f : ℂ → ℂ := fun z =>
+      deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+        sourceCanonicalRoot hp hp1 ψ z
+    ∀ R : ℝ, d < R →
+      closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n →
+      (∮ z in C(c, R), f z) = 0 := by
+  obtain ⟨ε,hε,hzero⟩ :=
+    exists_sourceCriticalRootRatio_isolatedMidpointCircleIntegral_eq_zero
+      hp hp1 ψ hreal n hopen
+  dsimp only at hzero ⊢
+  intro R hR hother
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let d : ℝ := (r.re-l.re)/2
+  let η : ℝ := min ε ((R-d)/2)
+  change d < R at hR
+  have hmargin : 0 < (R-d)/2 := by linarith
+  have hηpos : 0 < η := lt_min hε hmargin
+  have hηε : η ≤ ε := min_le_left _ _
+  have hηR : d+η ≤ R := by
+    have h := min_le_right ε ((R-d)/2)
+    dsimp [η] at h ⊢
+    linarith
+  exact hzero η ⟨hηpos,hηε⟩ R hηR hother
+
 end NLS.ZakharovShabat

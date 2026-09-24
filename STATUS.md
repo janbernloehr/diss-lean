@@ -9117,3 +9117,15 @@ from the omitted standard-root product to its square, the deleted
 periodic-pair product. Its spectral derivative is therefore jointly
 continuous on the open omitted-root domain. The finite central
 quotient bound is the next quantitative step toward Lemma 10.10.
+
+## Latest milestone: zero integral on isolated midpoint circles
+
+`SourceCriticalRootRatioStadiumCircleHomotopy.lean` proves that the
+four affine stadium-to-circle deformations avoid every periodic cut.
+`SourceCriticalRootRatioStadiumCircleVanishing.lean` consequently
+transfers the zero stadium integral to its corner circle, then to
+every sufficiently small midpoint circle. Annulus invariance now
+gives zero on any midpoint circle around an open real-type gap with
+radius above the half-gap, provided its filled disc avoids the other
+gaps. The arbitrary-center contour, admissible-path, and complex-source
+forms of Lemma 10.11(ii) are still open.

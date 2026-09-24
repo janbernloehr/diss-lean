@@ -1681,14 +1681,11 @@ homotopies with the corresponding pieces at interpolated radii.
 prove radius invariance of the critical-root quotient stadium integral
 for all sufficiently small positive radii. The shrinking-radius limit
 then makes each such integral exactly zero at an open real-type gap.
-Relating a stadium to an enclosing contour by a gap-avoiding homotopy
-remains open in Lemma 10.11(ii).
 `SourceCriticalRootRatioMidpointCircle.lean` constructs a convenient
 enclosing circle centered at the real gap midpoint. A sufficiently
 small positive margin beyond each endpoint gives a positive radius,
 contains the whole gap in the circle's interior, and keeps the entire
-circumference in the canonical-root domain. The remaining contour step
-is to compare its integral with the zero stadium integral.
+circumference in the canonical-root domain.
 `CircleArcCurveIntegral.lean` provides arbitrary-angle circle arcs as
 twice-smooth bundled paths, identifies their curve integrals with angle
 integrals, and proves that four consecutive clockwise arcs making one
@@ -1698,6 +1695,12 @@ stadium corners exactly.
 `StadiumCircleCorners.lean` selects the circle through those four
 corners and casts its four clockwise arcs to the corresponding stadium
 endpoint types. The arcs are twice smooth and their integrals sum to
-the negative of the standard circle integral. The remaining geometric
-proof must keep the four affine deformations between the stadium pieces
-and these arcs outside the periodic cuts.
+the negative of the standard circle integral.
+`SourceCriticalRootRatioStadiumCircleHomotopy.lean` proves that the four
+affine deformations avoid the periodic cuts and transfers the zero
+stadium integral to its corner circle. `SourceCriticalRootRatioStadiumCircleVanishing.lean`
+extends this to all sufficiently small midpoint-centered circles and,
+by annulus invariance, to every larger midpoint-centered circle whose
+filled disc avoids the other gaps. Arbitrary-center contours and
+admissible paths, followed by extension to nearby complex sources,
+remain for the full statement of Lemma 10.11(ii).
