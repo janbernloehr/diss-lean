@@ -47,4 +47,36 @@ theorem upperDoglegValue_eq_of_rectangle
   rw [← haadd, ← hbadd]
   linear_combination hrect
 
+/-- The same rectangle argument applies to signed heights. This
+version directly supports doglegs below the real axis. -/
+theorem upperDoglegValue_eq_of_rectangle_signed
+    (f : ℂ → ℂ) (a b y z : ℝ)
+    (ha_y : IntervalIntegrable (fun v : ℝ => f ((a:ℂ)+(v:ℂ)*I)) volume 0 y)
+    (ha_z : IntervalIntegrable (fun v : ℝ => f ((a:ℂ)+(v:ℂ)*I)) volume 0 z)
+    (hb_y : IntervalIntegrable (fun v : ℝ => f ((b:ℂ)+(v:ℂ)*I)) volume 0 y)
+    (hb_z : IntervalIntegrable (fun v : ℝ => f ((b:ℂ)+(v:ℂ)*I)) volume 0 z)
+    (hf : DifferentiableOn ℂ f (uIcc a b ×ℂ uIcc y z)) :
+    upperDoglegValue f a b y = upperDoglegValue f a b z := by
+  have haadd := intervalIntegral.integral_add_adjacent_intervals
+    ha_y (ha_y.symm.trans ha_z)
+  have hbadd := intervalIntegral.integral_add_adjacent_intervals
+    hb_y (hb_y.symm.trans hb_z)
+  have hrect := NLS.RectangleIntegral.eq_zero_of_differentiableOn
+    (z := (⟨a,y⟩:ℂ)) (w := (⟨b,z⟩:ℂ)) hf
+  dsimp [NLS.RectangleIntegral.integral] at hrect
+  unfold upperDoglegValue
+  rw [← haadd, ← hbadd]
+  linear_combination hrect
+
+/-- A downward-distance integrability hypothesis is equivalent to
+integrability in the signed negative vertical coordinate. -/
+theorem intervalIntegrable_signed_vertical_of_downward
+    (f : ℂ → ℂ) (a y : ℝ)
+    (hint : IntervalIntegrable
+      (fun v : ℝ => f ((a:ℂ)+((-v:ℝ):ℂ)*I)) volume 0 y) :
+    IntervalIntegrable
+      (fun v : ℝ => f ((a:ℂ)+(v:ℂ)*I)) volume 0 (-y) := by
+  have h := (IntervalIntegrable.iff_comp_neg).mp hint
+  simpa only [neg_zero, neg_neg] using h
+
 end NLS.ComplexAnalysis

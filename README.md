@@ -83,6 +83,7 @@ its bounded restrictions and the exact signed free-mode and potential-action
 formulas are proved. Identification of the weighted domains with physical
 boundary conditions and the interval-extension estimates at general exponents
 remain open.
+
 Both boundary restrictions now have full compact resolvents, jointly analytic
 on their own open domains. Their spectra are closed and discrete, with finite
 bounded portions and an eigenvector characterization. The periodic spectrum is
@@ -1784,3 +1785,12 @@ rectangular Cauchy identity. The source theorem in
 integral is height-independent and therefore exactly zero for every
 sufficiently small positive height. General admissible endpoint paths
 remain open.
+
+`SourceCriticalRootRatioLowerEndpointDogleg.lean` and
+`SourceCriticalRootRatioLowerEndpointDoglegHeight.lean` give the
+corresponding construction below an open real-type gap. The signed
+rectangle identity proves depth invariance, and the shrinking-depth
+limit makes every sufficiently shallow lower dogleg integral exactly
+zero. A common positive-height range now gives curve-integrable,
+zero-integral endpoint-to-endpoint paths on both sides of the gap.
+General admissible paths and nearby complex sources remain open.

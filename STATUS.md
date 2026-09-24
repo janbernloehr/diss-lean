@@ -9284,3 +9284,15 @@ shows every sufficiently short upper dogleg is curve-integrable and
 has exactly zero integral. This is an actual endpoint-to-endpoint path
 through the upper half-plane; extension to all admissible paths and
 nearby complex sources remains open.
+
+## Latest milestone: exact zero on both singular endpoint doglegs
+
+`EndpointDoglegHeight.lean` now includes the signed-height rectangle
+identity. `SourceCriticalRootRatioLowerEndpointDogleg.lean` constructs
+the lower endpoint-to-endpoint path and proves its integral tends to
+zero as the depth shrinks. The exact depth-invariance proof in
+`SourceCriticalRootRatioLowerEndpointDoglegHeight.lean` gives zero for
+each sufficiently shallow lower dogleg. One theorem supplies a shared
+range where both upper and lower paths are curve-integrable and have
+zero integral. General admissible paths and nearby complex sources
+remain open.
