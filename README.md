@@ -2100,3 +2100,11 @@ product is real and nonzero there, so its real part has the strict
 sign `(-1)^|n|`, including the central index. This is the orientation
 input needed to identify the upper canonical-root branch and prove
 positivity of the action for arbitrary gap indices.
+
+## Latest milestone: all-index upper canonical-root orientation
+
+`SourceCanonicalRootUpperParitySign.lean` combines the omitted-product
+sign with the positive upper-side factor. On the interior of every
+open real-type gap, the upper canonical root is exactly the positive
+arcosh square root times `(-1)^|n|`. The same identity is available in
+real spectral coordinates for the weighted action integral.

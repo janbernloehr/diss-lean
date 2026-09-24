@@ -1010,3 +1010,4 @@ import NLS.ZakharovShabat.SourceStandardRootOmittedPairSigns
 import NLS.ZakharovShabat.SourceStandardRootOmittedPrefactorSign
 import NLS.ZakharovShabat.SourceStandardRootOmittedFiniteParity
 import NLS.ZakharovShabat.SourceStandardRootOmittedParitySign
+import NLS.ZakharovShabat.SourceCanonicalRootUpperParitySign
