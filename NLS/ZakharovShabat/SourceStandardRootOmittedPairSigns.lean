@@ -53,7 +53,43 @@ theorem sourceStandardRootOmittedPairedFactor_re_eq
       (if k=n then 1 else (f k).re) *
         (if -k=n then 1 else (f (-k)).re)
   rw [hpos,hneg]
-  simp
+  split_ifs <;> simp
+
+/-- Each omitted symmetric pair itself is real on the selected real gap. -/
+theorem sourceStandardRootOmittedPairedFactor_eq_ofReal_on_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ) (j : ℕ) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    sourceStandardRootOmittedPairedFactor hp hp1 ψ (x:ℂ) n j =
+      ((sourceStandardRootOmittedPairedFactor hp hp1 ψ (x:ℂ) n j).re:ℂ) := by
+  let k : ℤ := (j:ℤ)+1
+  let f (m : ℤ) := sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+    singleSpectralDenominator m
+  have hpos : (if k=n then (1:ℂ) else f k) =
+      (((if k=n then 1 else (f k).re):ℝ):ℂ) := by
+    by_cases h : k=n
+    · simp [h]
+    · simpa [h] using
+        sourceStandardRoot_normalized_eq_ofReal_off_selected_realGap
+          hp hp1 ψ hreal h hx
+  have hneg : (if -k=n then (1:ℂ) else f (-k)) =
+      (((if -k=n then 1 else (f (-k)).re):ℝ):ℂ) := by
+    by_cases h : -k=n
+    · simp [h]
+    · simpa [h] using
+        sourceStandardRoot_normalized_eq_ofReal_off_selected_realGap
+          hp hp1 ψ hreal h hx
+  change (if k=n then (1:ℂ) else f k) *
+    (if -k=n then (1:ℂ) else f (-k)) =
+    ((((if k=n then (1:ℂ) else f k) *
+      (if -k=n then (1:ℂ) else f (-k))).re:ℝ):ℂ)
+  rw [hpos,hneg]
+  split_ifs <;> simp
 
 /-- Every paired block strictly below the selected absolute index
 contributes one negative sign to the omitted product. -/

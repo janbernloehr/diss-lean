@@ -2081,3 +2081,13 @@ proves that the pair indexed by `j+1` is negative exactly when
 `j+1 < |n|`; the omitted pair and every later pair are positive.
 The remaining parity calculation must include the zero-mode
 prefactor and the finite product of those negative pairs.
+
+## Latest milestone: finite omitted-product parity
+
+`SourceStandardRootOmittedPrefactorSign.lean` proves that the zero-mode
+prefactor is negative on every noncentral real gap. The paired factors
+are real, and `SourceStandardRootOmittedFiniteParity.lean` counts their
+signs: once the cutoff reaches a nonzero index `n`, multiplying its
+real omitted product by `(-1)^|n|` gives a strictly positive number.
+The next step is to pass this sign to the nonvanishing infinite
+product, then fix the canonical-root orientation on every gap.
