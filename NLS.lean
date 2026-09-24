@@ -902,3 +902,4 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioCollapsedContour
 import NLS.ComplexAnalysis.ArcoshGapIntegral
 import NLS.ZakharovShabat.RealGapArcoshIntegral
 import NLS.ZakharovShabat.SourceCriticalRootRatioFactorization
+import NLS.ZakharovShabat.RealGapArcoshRadicand

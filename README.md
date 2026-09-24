@@ -1516,3 +1516,9 @@ The identity holds at every source potential off all gaps, and the
 deleted quotient is analytic across the selected gap on an open
 almost-real source domain. This is the product form needed to compare
 the open-gap boundary integral with the arcosh derivative.
+
+`RealGapArcoshRadicand.lean` identifies the arcosh denominator
+exactly as the endpoint-distance product times the deleted periodic
+pair product on the real axis, and proves the latter has positive
+real value in the open gap. Endpoint control of that factor is the
+remaining integrability issue.
