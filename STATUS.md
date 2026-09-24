@@ -9343,3 +9343,13 @@ connector that stays gap-free, remains near its branch point, and
 departs at a linear rate is curve-integrable. Identifying its integral
 with the standard vertical connector, and handling nearby complex
 sources, remain open.
+
+## Latest milestone: endpoint-to-endpoint paths with curved connectors
+
+`SourceCriticalRootRatioCurvedEndpointDetour.lean` joins two smooth,
+linearly departing curved connectors to an arbitrary smooth crossing
+in the canonical-root domain. This is an actual path from one singular
+branch point to the other. Its quotient one-form is curve-integrable,
+and the integral splits into the oriented sum of its three pieces.
+The comparison of curved connector integrals with the vertical ones,
+needed to prove a general zero-integral statement, remains open.

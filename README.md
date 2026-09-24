@@ -1833,3 +1833,11 @@ smooth curved connector beginning at either open-gap branch point is
 curve-integrable when it avoids the gaps, remains in that neighborhood,
 and departs from the branch point at a linear rate. Equality of general
 endpoint-path integrals remains open.
+
+`SourceCriticalRootRatioCurvedEndpointDetour.lean` now composes two
+such curved connectors with any smooth crossing in the full root
+domain. The resulting path starts and ends at the singular gap branch
+points, is curve-integrable, and its integral is exactly the left
+connector integral plus the crossing integral minus the right
+connector integral. Showing this sum vanishes for general curved
+connectors remains open.
