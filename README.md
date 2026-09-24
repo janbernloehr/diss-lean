@@ -1425,3 +1425,9 @@ quadratic `ℓᑫ` bound. The result retains the signed first-order sum
 exactly and controls the supremum of the remainder over each distant
 isolating disc, including at `q=1`. Combining this with the signed
 sum and the squared-gap correction is the remaining product estimate.
+
+The signed and quadratic midpoint terms are now combined: the full
+infinite midpoint product minus one has an `ℓᑫ` disc-supremum bound
+for `1 < q < ∞`, and the `q = 1` case has an `ℓ^{1+}` bound. The
+remaining Lemma 10.8 work connects this product to the literal
+single-root quotient and controls the squared-gap factor.

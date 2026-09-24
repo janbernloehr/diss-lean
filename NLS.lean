@@ -880,3 +880,4 @@ import NLS.ZakharovShabat.SourceSingleRootQuotientTailLimit
 import NLS.Fourier.PhysicalMidpointProductRemainder
 import NLS.ZakharovShabat.SourceMidpointProductRemainder
 import NLS.ZakharovShabat.SourceMidpointProductDiscSup
+import NLS.ZakharovShabat.SourceMidpointProductFullDiscSup

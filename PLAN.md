@@ -2500,3 +2500,11 @@ including `q=1`, with a bound quadratic in the numerator displacement.
 Next combine this remainder with the signed disc-supremum term, identify
 the midpoint product with the quotient factor, and add the squared-gap
 correction to complete the sequence estimate.
+
+`SourceMidpointProductFullDiscSup.lean` now combines the signed row and
+quadratic remainder before taking coordinatewise disc suprema. The full
+infinite midpoint product minus one has a locally uniform `ℓᑫ` bound
+when `1 < q < ∞`; an `ℓ¹` numerator gives every finite exponent above
+one, matching the `ℓ^{1+}` endpoint. Next identify this product with
+the literal midpoint cutoff limit, then compare the latter with the
+infinite single-root quotient using the squared-gap row.

@@ -8990,3 +8990,14 @@ same bound for the supremum over every distant source disc, locally
 uniformly on a connected neighborhood. This includes the `q=1`
 endpoint. The midpoint and gap factors still need to be combined for
 the full Lemma 10.8 sequence asymptotic.
+
+## Latest milestone: full midpoint-product disc supremum
+
+`SourceMidpointProductFullDiscSup.lean` adds the signed first-order row
+to the quadratic remainder, then applies independent-selection
+supremum extraction. The full infinite midpoint product minus one has
+a locally uniform `ℓᑫ` disc-supremum bound for `1 < q < ∞`. For an
+`ℓ¹` numerator displacement its disc supremum belongs to every finite
+`ℓʳ`, `r > 1`. The product still needs to be identified with the
+literal midpoint cutoff factor of the single-root quotient, followed
+by the squared-gap correction estimate.
