@@ -1946,3 +1946,12 @@ smooth, curve-integrable singular connectors and a smooth crossing in
 one half-plane. These results do not require the earlier shortness or
 linear-departure assumptions; integrability of each singular
 connector remains an explicit hypothesis.
+
+## Latest milestone: weighted upper gap-side action integral
+
+`SourceActionGapSideIntegral.lean` identifies the recentered weighted
+upper-side path integral with the weighted canonical-root integral over
+an open real-type gap. The path integrand is interval integrable through
+both endpoints, doubly truncated paths converge to its full value, and
+that value is real and nonzero. Relating this boundary integral to the
+enclosing action circle and fixing its orientation remain to be proved.
