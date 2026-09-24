@@ -2186,3 +2186,11 @@ computes the indexed action at every nearby real-type source. The
 same circle action is complex Fréchet differentiable throughout an
 open complex source neighborhood. The proof nests a moving midpoint
 circle inside the fixed disc and applies contour invariance.
+
+## Latest milestone: line analyticity and real sign on a neighborhood
+
+`SourceRealActionLocalLineAnalytic.lean` proves that the fixed-circle
+extension is analytic along every complex affine source line through
+each point of its open neighborhood. At every real-type source there,
+its value is real and nonnegative, and it vanishes exactly when the
+selected periodic gap collapses.

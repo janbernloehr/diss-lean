@@ -1020,3 +1020,4 @@ import NLS.ZakharovShabat.SourceRealActionEnclosingCircle
 import NLS.ZakharovShabat.SourceRealActionLocalHolomorphic
 import NLS.ZakharovShabat.SourceRealActionLocalCircleStability
 import NLS.ZakharovShabat.SourceRealActionLocalAgreement
+import NLS.ZakharovShabat.SourceRealActionLocalLineAnalytic
