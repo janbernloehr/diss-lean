@@ -986,3 +986,5 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioUniformCircle
 import NLS.ZakharovShabat.SourceCriticalRootRatioJointAnalytic
 import NLS.ZakharovShabat.SourceCriticalRootRatioCircleDerivativeBound
 import NLS.ZakharovShabat.SourceCriticalRootRatioCircleSourceDifferentiable
+import NLS.ZakharovShabat.SourceActionCircle
+import NLS.ZakharovShabat.SourceActionCircleAnalytic

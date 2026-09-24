@@ -9488,3 +9488,21 @@ integral if the filled disc avoids the other gaps and the loop avoids
 all periodic cuts. The loop may wind around the collapsed point and
 need not be circular. The theorem does not assert zero for loops whose
 filled region reaches another gap.
+
+## Latest milestone: first action-variable contour construction
+
+`SourceActionCircle.lean` defines the weighted quotient circle integral
+of dissertation equation (2.16), with its choice of isolating circle
+explicit. The Lemma 10.11 zero integral proves that this action is
+unchanged when the spectral factor is recentered at any point,
+including the indexed critical point, on one complex source
+neighborhood. At a collapsed selected gap, analytic removal of the
+quotient across the filled disc makes the action exactly zero for
+every admissible isolating circle on the global almost-real domain.
+
+`SourceActionCircleAnalytic.lean` proves joint analyticity of the
+weighted integrand, complex Fréchet differentiability of the fixed
+circle action on a source neighborhood, and analyticity along each
+complex affine source line. Independence from the chosen contour and
+full Banach analyticity of the action remain to be proved before
+this becomes the global indexed action of Lemma 11.1.
