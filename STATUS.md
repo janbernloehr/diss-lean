@@ -9452,3 +9452,25 @@ integral is exactly zero. Previous piecewise-vertical and shrinking
 families are special cases or complementary estimates. Paths whose
 connectors fail the linear-departure hypothesis, cross the real axis,
 or leave the half-plane are not covered by this theorem.
+
+## Latest milestone: arbitrary integrable half-plane endpoint paths
+
+`ConvexHolomorphicPrimitive.lean` now evaluates a smooth integrable
+path with singularities at both endpoints from the two one-sided
+primitive limits. If the primitive has the same relative boundary
+value at both ends, the actual curve integral is zero.
+`SourceCriticalRootRatioSmoothEndpointPathZero.lean` applies this
+directly to every `C¹` curve-integrable path from the left to the right
+endpoint of an open real-type gap, provided its interior stays in one
+open half-plane. No local radius or departure-rate bound is needed.
+
+`SingularEndpointPrimitiveDetour.lean` handles a path with corners as
+two singular connectors and a regular crossing.
+`SourceCriticalRootRatioIntegrableDetourZero.lean` specializes it to
+the upper and lower critical-root quotient: any smooth singular
+connectors whose curve integrals exist and remain in the same open
+half-plane, joined by a smooth crossing there, produce a
+curve-integrable endpoint-to-endpoint detour with exactly zero
+integral. The linear-departure criterion is still a useful sufficient
+condition for connector integrability. Paths crossing the real axis
+or lacking integrability are outside these statements.

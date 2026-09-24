@@ -95,6 +95,45 @@ theorem curveIntegral_eq_sub_of_primitive_with_limits
   rw [curveIntegral_eq_intervalIntegral_deriv]
   convert hFTC using 1; simp
 
+/-- A smooth integrable path between two boundary points has zero
+one-form integral if the primitive approaches the same value at both
+ends from within the domain. -/
+theorem curveIntegral_eq_zero_of_primitive_boundary_ends
+    (f F : ℂ → ℂ) (s : Set ℂ)
+    (hF : ∀ z ∈ s, HasDerivAt F (f z) z)
+    {a b : ℂ} (γ : Path a b)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hγs : ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ∈ s)
+    (hint : CurveIntegrable (holomorphicOneForm f) γ)
+    {A : ℂ}
+    (ha : Tendsto F (𝓝[s] a) (𝓝 A))
+    (hb : Tendsto F (𝓝[s] b) (𝓝 A)) :
+    (∫ᶜ z in γ, holomorphicOneForm f z) = 0 := by
+  have hγstart : Tendsto γ.extend (𝓝[>] (0:ℝ)) (𝓝[s] a) := by
+    apply tendsto_nhdsWithin_iff.mpr
+    constructor
+    · have hγ0 : ContinuousAt γ.extend (0:ℝ) := γ.continuous_extend.continuousAt
+      have hγ0' : Tendsto γ.extend (𝓝[>] (0:ℝ)) (𝓝 (γ.extend 0)) :=
+        hγ0.tendsto.mono_left nhdsWithin_le_nhds
+      simpa only [Path.extend_zero] using hγ0'
+    · filter_upwards [Ioo_mem_nhdsGT (by norm_num : (0:ℝ) < 1)] with t ht
+      exact hγs t ht
+  have hγend : Tendsto γ.extend (𝓝[<] (1:ℝ)) (𝓝[s] b) := by
+    apply tendsto_nhdsWithin_iff.mpr
+    constructor
+    · have hγ1 : ContinuousAt γ.extend (1:ℝ) := γ.continuous_extend.continuousAt
+      have hγ1' : Tendsto γ.extend (𝓝[<] (1:ℝ)) (𝓝 (γ.extend 1)) :=
+        hγ1.tendsto.mono_left nhdsWithin_le_nhds
+      simpa only [Path.extend_one] using hγ1'
+    · filter_upwards [Ioo_mem_nhdsLT (by norm_num : (0:ℝ) < 1)] with t ht
+      exact hγs t ht
+  have hstart : Tendsto (F ∘ γ.extend) (𝓝[>] (0:ℝ)) (𝓝 A) :=
+    ha.comp hγstart
+  have hend : Tendsto (F ∘ γ.extend) (𝓝[<] (1:ℝ)) (𝓝 A) :=
+    hb.comp hγend
+  rw [curveIntegral_eq_sub_of_primitive_with_limits
+    f F s hF γ hγ hγs hint hstart hend,sub_self]
+
 /-- An integrable singular connector inside the primitive's domain
 determines a finite primitive limit along its parameter. Its integral
 is the regular endpoint value minus that limit. -/

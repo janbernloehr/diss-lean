@@ -1929,3 +1929,20 @@ curved endpoint connectors and a smooth crossing in that half-plane
 has exactly zero quotient integral. The upper and lower results are
 separate; arbitrary paths outside these connector assumptions remain
 to be treated.
+
+## Latest milestone: zero for arbitrary integrable half-plane paths
+
+`ConvexHolomorphicPrimitive.lean` now proves that an integrable smooth
+path between two singular boundary points has zero one-form integral
+when its primitive has the same boundary value at both ends.
+`SourceCriticalRootRatioSmoothEndpointPathZero.lean` applies this to
+any `C¹` curve-integrable path across an open real-type gap whose
+interior stays entirely above or entirely below the real axis.
+
+For paths with corners, `SingularEndpointPrimitiveDetour.lean` proves
+a three-piece cancellation theorem. Its quotient specialization in
+`SourceCriticalRootRatioIntegrableDetourZero.lean` allows arbitrary
+smooth, curve-integrable singular connectors and a smooth crossing in
+one half-plane. These results do not require the earlier shortness or
+linear-departure assumptions; integrability of each singular
+connector remains an explicit hypothesis.
