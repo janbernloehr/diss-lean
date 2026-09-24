@@ -2062,3 +2062,13 @@ strictly positive and equals twice the positive arcosh square root
 at every interior point of an open central real gap. The identity is
 also stated in real spectral coordinates for the weighted action
 integral.
+
+## Latest milestone: positive central action
+
+`SourceActionZeroGapPositive.lean` proves that the central upper
+weighted boundary integral is the strictly negative real arcosh
+area. The exact small-circle formula reverses its sign, proving
+that the action is real and strictly positive on every sufficiently
+small midpoint circle around an open central real-type gap. Extending
+the omitted-product orientation by index parity remains necessary
+for the corresponding theorem at every gap.

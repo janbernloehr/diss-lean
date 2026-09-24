@@ -1005,3 +1005,4 @@ import NLS.ZakharovShabat.SourceStandardRootOmittedRealGap
 import NLS.ZakharovShabat.SourceStandardRootNormalizedFactorSign
 import NLS.ZakharovShabat.SourceStandardRootOmittedZeroPositive
 import NLS.ZakharovShabat.SourceCanonicalRootZeroUpperSign
+import NLS.ZakharovShabat.SourceActionZeroGapPositive
