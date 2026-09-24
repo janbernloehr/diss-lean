@@ -1565,5 +1565,9 @@ deformation remain to be formalized.
 `RealGapCanonicalRootAffineIntegral.lean` pulls both vanishing
 real-axis boundary quotient integrals back to the signed interval
 `[-1,1]` with the exact affine Jacobian. This puts them in the same
-coordinate as the straight gap-side path integrals; identifying those
-integrals and deforming the enclosing contour are the next steps.
+coordinate as the straight gap-side path integrals.
+`SourceCriticalRootRatioGapSideIntegral.lean` identifies the straight
+side-path integrands with those affine pullbacks and proves that the
+upper and lower side-path integrals both vanish on every open real-type
+source gap. Relating an enclosing contour to these side paths remains
+the main open part of Lemma 10.11(ii).
