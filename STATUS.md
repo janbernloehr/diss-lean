@@ -9296,3 +9296,13 @@ each sufficiently shallow lower dogleg. One theorem supplies a shared
 range where both upper and lower paths are curve-integrable and have
 zero integral. General admissible paths and nearby complex sources
 remain open.
+
+## Latest milestone: smooth endpoint detours
+
+`SourceCriticalRootRatioEndpointDetours.lean` generalizes the exact-zero
+upper and lower doglegs. For sufficiently short endpoint connectors,
+the horizontal crossing may be replaced by any twice-smooth path that
+stays strictly in its respective half-plane. The resulting actual
+endpoint-to-endpoint curve is integrable, and its integral is zero by
+half-plane path independence. Arbitrary admissible endpoint paths and
+nearby complex sources remain open.

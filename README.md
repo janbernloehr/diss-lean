@@ -1794,3 +1794,11 @@ limit makes every sufficiently shallow lower dogleg integral exactly
 zero. A common positive-height range now gives curve-integrable,
 zero-integral endpoint-to-endpoint paths on both sides of the gap.
 General admissible paths and nearby complex sources remain open.
+
+`SourceCriticalRootRatioEndpointDetours.lean` replaces each horizontal
+crossing by any twice-smooth crossing that remains entirely in the same
+open half-plane. Keeping the short vertical endpoint connectors fixed,
+path independence shows that every such endpoint-to-endpoint detour is
+curve-integrable and has exactly zero integral. The result applies to
+both upper and lower crossings. Arbitrary admissible endpoint paths and
+nearby complex sources remain open.
