@@ -913,3 +913,4 @@ import NLS.ZakharovShabat.RealGapCanonicalRootRealAxis
 import NLS.ZakharovShabat.RealGapCanonicalRootUpperIntegral
 import NLS.ZakharovShabat.RealGapCanonicalRootLowerIntegral
 import NLS.ZakharovShabat.SourceCriticalRootRatioGapSides
+import NLS.ZakharovShabat.RealGapCanonicalRootAffineIntegral

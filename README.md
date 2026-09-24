@@ -1562,3 +1562,8 @@ standard-root side kernel multiplied by the analytic deleted critical
 factor. This gives the pointwise connection to the existing straight
 gap-side path-integral construction; its integral and contour
 deformation remain to be formalized.
+`RealGapCanonicalRootAffineIntegral.lean` pulls both vanishing
+real-axis boundary quotient integrals back to the signed interval
+`[-1,1]` with the exact affine Jacobian. This puts them in the same
+coordinate as the straight gap-side path integrals; identifying those
+integrals and deforming the enclosing contour are the next steps.
