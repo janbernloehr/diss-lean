@@ -1523,4 +1523,7 @@ pair product on the real axis, and proves the latter has positive
 real value in the open gap. `RealDeletedPeriodicProduct.lean` shows
 that the product is real on the whole real axis and strictly positive
 on the closed gap, then obtains a uniform positive lower bound there.
-The resulting endpoint-weight integrability estimate is the next step.
+`EndpointSqrtWeight.lean` proves the corresponding inverse square-root
+weight is interval-integrable for arbitrary real endpoints and remains
+so after multiplication by a continuous numerator. Applying it to
+the discriminant derivative is the next step.
