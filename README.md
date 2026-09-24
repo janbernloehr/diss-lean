@@ -1657,6 +1657,10 @@ common small radius and applies the weighted quotient bound uniformly
 along them. `SourceCriticalRootRatioOuterArcIntegral.lean` proves the
 resulting half-circle integrands are interval-integrable and bounds each
 arc integral by a constant times the square root of its radius. Both
-arc integrals therefore vanish as the contour shrinks. The next step is
-to assemble these arcs with the displaced horizontal paths into a
-closed shrinking contour.
+arc integrals therefore vanish as the contour shrinks.
+`SourceCriticalRootRatioStadiumPath.lean` concatenates the upper and
+lower shifted gap segments with the two outward semicircles into an
+actual closed path. A common small-radius bound keeps its full range in
+the canonical-root domain. The next step is to identify its curve
+integral with the four parameterized pieces and take the shrinking
+limit.
