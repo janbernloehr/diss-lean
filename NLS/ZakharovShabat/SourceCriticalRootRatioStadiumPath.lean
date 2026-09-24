@@ -51,6 +51,113 @@ def sourceGapStadiumPath (l r : ℂ) (ρ : ℝ) :
     (sourceLeftOuterArcPath l ρ).symm
   ((upper.trans right).trans lower).trans left
 
+/-- The reversed endpoint semicircle, as used in the stadium, has
+the clockwise angle `π/2-πt`. -/
+theorem sourceEndpointSemicirclePath_symm_apply
+    (c : ℂ) (R t : ℝ) (ht : t ∈ Icc (0:ℝ) 1) :
+    ((sourceEndpointSemicirclePath c R).symm).extend t =
+      circleMap c R (Real.pi/2-Real.pi*t) := by
+  rw [Path.extend_symm_apply]
+  have ht' : 1-t ∈ Icc (0:ℝ) 1 := by
+    constructor <;> linarith [ht.1,ht.2]
+  rw [(sourceEndpointSemicirclePath c R).extend_apply ht']
+  change circleMap c R (-(Real.pi/2)+Real.pi*(1-t)) = _
+  congr 1
+  ring
+
+/-- The stadium's right semicircle crosses the real axis at its
+outward midpoint. -/
+theorem sourceStadiumRightArc_midpoint (r : ℂ) (ρ : ℝ) :
+    ((sourceEndpointSemicirclePath r ρ).symm).extend (1/2:ℝ) =
+      r + (ρ:ℂ) := by
+  have ht : (1/2:ℝ) ∈ Icc (0:ℝ) 1 := by norm_num
+  rw [sourceEndpointSemicirclePath_symm_apply r ρ _ ht]
+  have hangle : Real.pi/2-Real.pi*(1/2:ℝ) = 0 := by ring
+  rw [hangle]
+  simp [circleMap]
+
+/-- The stadium's left semicircle crosses the real axis at its
+outward midpoint. -/
+theorem sourceStadiumLeftArc_midpoint (l : ℂ) (ρ : ℝ) :
+    ((sourceLeftOuterArcPath l ρ).symm).extend (1/2:ℝ) =
+      l - (ρ:ℂ) := by
+  have ht : (1/2:ℝ) ∈ Icc (0:ℝ) 1 := by norm_num
+  change ((sourceEndpointSemicirclePath l (-ρ)).symm).extend (1/2:ℝ) = _
+  rw [sourceEndpointSemicirclePath_symm_apply l (-ρ) _ ht]
+  have hangle : Real.pi/2-Real.pi*(1/2:ℝ) = 0 := by ring
+  rw [hangle]
+  simp [circleMap, sub_eq_add_neg]
+
+/-- Imaginary coordinate of a reversed endpoint semicircle about a
+real center. -/
+theorem sourceEndpointSemicirclePath_symm_im
+    (c : ℂ) (R t : ℝ) (hc : c.im = 0)
+    (ht : t ∈ Icc (0:ℝ) 1) :
+    (((sourceEndpointSemicirclePath c R).symm).extend t).im =
+      R * Real.sin (Real.pi/2-Real.pi*t) := by
+  rw [sourceEndpointSemicirclePath_symm_apply c R t ht]
+  have h := congrArg Complex.im
+    (circleMap_sub_center c R (Real.pi/2-Real.pi*t))
+  simpa only [Complex.sub_im, hc, sub_zero, circleMap_zero_im] using h
+
+/-- The stadium's right arc stays above the real axis before its
+midpoint and below it afterward. -/
+theorem sourceStadiumRightArc_im_sign
+    (r : ℂ) (ρ t : ℝ) (hr : r.im = 0) (hρ : 0 < ρ)
+    (ht : t ∈ Icc (0:ℝ) 1) :
+    (t < 1/2 → 0 < (((sourceEndpointSemicirclePath r ρ).symm).extend t).im) ∧
+    (t = 1/2 → (((sourceEndpointSemicirclePath r ρ).symm).extend t).im = 0) ∧
+    (1/2 < t → (((sourceEndpointSemicirclePath r ρ).symm).extend t).im < 0) := by
+  rw [sourceEndpointSemicirclePath_symm_im r ρ t hr ht]
+  have hπt0 : 0 ≤ Real.pi*t := mul_nonneg Real.pi_pos.le ht.1
+  have hπt1 : Real.pi*t ≤ Real.pi := by
+    nlinarith [mul_nonneg Real.pi_pos.le (sub_nonneg.mpr ht.2)]
+  refine ⟨?_, ?_, ?_⟩
+  · intro hhalf
+    have hπthalf : Real.pi*t < Real.pi/2 := by
+      nlinarith [mul_pos Real.pi_pos (sub_pos.mpr hhalf)]
+    have hθ : Real.pi/2-Real.pi*t ∈ Ioo (0:ℝ) Real.pi := by
+      constructor <;> linarith [Real.pi_pos]
+    exact mul_pos hρ (Real.sin_pos_of_mem_Ioo hθ)
+  · intro hhalf
+    subst t
+    have hangle : Real.pi/2-Real.pi*(1/2:ℝ) = 0 := by ring
+    rw [hangle, Real.sin_zero, mul_zero]
+  · intro hhalf
+    have hπthalf : Real.pi/2 < Real.pi*t := by
+      nlinarith [mul_pos Real.pi_pos (sub_pos.mpr hhalf)]
+    have hθ : -Real.pi < Real.pi/2-Real.pi*t := by
+      linarith [Real.pi_pos]
+    exact mul_neg_of_pos_of_neg hρ
+      (Real.sin_neg_of_neg_of_neg_pi_lt (by linarith) hθ)
+
+/-- The left arc has the opposite imaginary signs from the right arc. -/
+theorem sourceStadiumLeftArc_im_sign
+    (l : ℂ) (ρ t : ℝ) (hl : l.im = 0) (hρ : 0 < ρ)
+    (ht : t ∈ Icc (0:ℝ) 1) :
+    (t < 1/2 → (((sourceLeftOuterArcPath l ρ).symm).extend t).im < 0) ∧
+    (t = 1/2 → (((sourceLeftOuterArcPath l ρ).symm).extend t).im = 0) ∧
+    (1/2 < t → 0 < (((sourceLeftOuterArcPath l ρ).symm).extend t).im) := by
+  have him : (((sourceLeftOuterArcPath l ρ).symm).extend t).im =
+      -ρ * Real.sin (Real.pi/2-Real.pi*t) := by
+    change (((sourceEndpointSemicirclePath l (-ρ)).symm).extend t).im = _
+    exact sourceEndpointSemicirclePath_symm_im l (-ρ) t hl ht
+  have hright := sourceStadiumRightArc_im_sign l ρ t hl hρ ht
+  rw [him]
+  have hrightIm := sourceEndpointSemicirclePath_symm_im l ρ t hl ht
+  rw [hrightIm] at hright
+  constructor
+  · intro h
+    have hh := hright.1 h
+    nlinarith
+  constructor
+  · intro h
+    have hh := hright.2.1 h
+    nlinarith
+  · intro h
+    have hh := hright.2.2 h
+    nlinarith
+
 /-- A point with nonzero imaginary part avoids every real-type source
 periodic gap segment. -/
 theorem sourceCanonicalRootDomain_of_im_ne_zero
