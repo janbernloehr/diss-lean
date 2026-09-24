@@ -444,6 +444,57 @@ theorem stadiumCircleArc_integrals_eq_neg_circleIntegral
       (stadiumUpperLeftAngle d ρ) (stadiumUpperRightAngle d ρ)
       (stadiumLowerRightAngle d ρ) (stadiumLowerLeftAngle d ρ) hf
 
+/-- The concatenated clockwise corner-circle path has the negative
+of Mathlib's counterclockwise circle integral. -/
+theorem stadiumCircleLoop_curveIntegral_eq_neg_circleIntegral
+    (f : ℂ → ℂ) (c : ℂ) (d ρ : ℝ)
+    (hf : ∀ θ : ℝ,
+      ContinuousAt f (circleMap c (stadiumCornerRadius d ρ) θ)) :
+    (∫ᶜ z in (((stadiumCircleUpperArc c d ρ).trans
+        (stadiumCircleRightArc c d ρ)).trans
+        (stadiumCircleLowerArc c d ρ)).trans
+        (stadiumCircleLeftArc c d ρ), holomorphicOneForm f z) =
+      -(∮ z in C(c, stadiumCornerRadius d ρ), f z) := by
+  have hu : CurveIntegrable (holomorphicOneForm f)
+      (stadiumCircleUpperArc c d ρ) := by
+    change CurveIntegrable (holomorphicOneForm f)
+      ((circleAngleArcPath c (stadiumCornerRadius d ρ)
+        (stadiumUpperLeftAngle d ρ) (stadiumUpperRightAngle d ρ)).cast _ _)
+    exact (circleAngleArcPath_curveIntegrable f c _ _ _ hf).cast _ _
+  have hr : CurveIntegrable (holomorphicOneForm f)
+      (stadiumCircleRightArc c d ρ) := by
+    change CurveIntegrable (holomorphicOneForm f)
+      ((circleAngleArcPath c (stadiumCornerRadius d ρ)
+        (stadiumUpperRightAngle d ρ) (stadiumLowerRightAngle d ρ)).cast _ _)
+    exact (circleAngleArcPath_curveIntegrable f c _ _ _ hf).cast _ _
+  have hl : CurveIntegrable (holomorphicOneForm f)
+      (stadiumCircleLowerArc c d ρ) := by
+    change CurveIntegrable (holomorphicOneForm f)
+      ((circleAngleArcPath c (stadiumCornerRadius d ρ)
+        (stadiumLowerRightAngle d ρ) (stadiumLowerLeftAngle d ρ)).cast _ _)
+    exact (circleAngleArcPath_curveIntegrable f c _ _ _ hf).cast _ _
+  have hleft : CurveIntegrable (holomorphicOneForm f)
+      (stadiumCircleLeftArc c d ρ) := by
+    change CurveIntegrable (holomorphicOneForm f)
+      ((circleAngleArcPath c (stadiumCornerRadius d ρ)
+        (stadiumLowerLeftAngle d ρ)
+        (stadiumUpperLeftAngle d ρ-2*Real.pi)).cast _ _)
+    exact (circleAngleArcPath_curveIntegrable f c _ _ _ hf).cast _ _
+  calc
+    (∫ᶜ z in (((stadiumCircleUpperArc c d ρ).trans
+        (stadiumCircleRightArc c d ρ)).trans
+        (stadiumCircleLowerArc c d ρ)).trans
+        (stadiumCircleLeftArc c d ρ), holomorphicOneForm f z) =
+      ((((∫ᶜ z in stadiumCircleUpperArc c d ρ, holomorphicOneForm f z) +
+        (∫ᶜ z in stadiumCircleRightArc c d ρ, holomorphicOneForm f z)) +
+        (∫ᶜ z in stadiumCircleLowerArc c d ρ, holomorphicOneForm f z)) +
+        (∫ᶜ z in stadiumCircleLeftArc c d ρ, holomorphicOneForm f z)) := by
+      rw [curveIntegral_trans ((hu.trans hr).trans hl) hleft,
+        curveIntegral_trans (hu.trans hr) hl,
+        curveIntegral_trans hu hr]
+    _ = -(∮ z in C(c, stadiumCornerRadius d ρ), f z) :=
+      stadiumCircleArc_integrals_eq_neg_circleIntegral f c d ρ hf
+
 /-- Each of the four named circle arcs is twice smooth on the unit
 interval, as needed for a piecewise contour homotopy. -/
 theorem stadiumCircleArcs_contDiffOn (c : ℂ) (d ρ : ℝ) :

@@ -83,6 +83,24 @@ theorem circleAngleArcPath_im_neg
   exact mul_neg_of_pos_of_neg hR
     (Real.sin_neg_of_neg_of_neg_pi_lt hθ.2 hθ.1)
 
+/-- A one-form continuous at every point of a circle is integrable
+along any of its smooth angle arcs. -/
+theorem circleAngleArcPath_curveIntegrable
+    (f : ℂ → ℂ) (c : ℂ) (R α β : ℝ)
+    (hf : ∀ θ : ℝ, ContinuousAt f (circleMap c R θ)) :
+    CurveIntegrable (holomorphicOneForm f)
+      (circleAngleArcPath c R α β) := by
+  have hω : ContinuousOn (holomorphicOneForm f)
+      (range (circleAngleArcPath c R α β)) := by
+    rintro z ⟨u,rfl⟩
+    change ContinuousWithinAt (holomorphicOneForm f)
+      (range (circleAngleArcPath c R α β))
+      (circleMap c R (α+(β-α)*(u:ℝ)))
+    exact ((hf _).smul continuousAt_const).continuousWithinAt
+  exact hω.curveIntegrable_of_contDiffOn
+    ((circleAngleArcPath_contDiffOn c R α β).of_le (by norm_num))
+    (fun u => ⟨u,rfl⟩)
+
 /-- The bundled circle arc integral is the corresponding angle
 integral for either orientation. -/
 theorem curveIntegral_circleAngleArcPath
