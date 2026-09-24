@@ -1489,3 +1489,11 @@ quotient continuity and a common bound for any finite central block.
 uniform distant tail. This yields the all-index squared-gap formula
 of Lemma 10.10 and a locally uniform `ℓᵖ` coefficient bound on a complex
 source neighborhood of each real-type potential.
+
+The first part of Lemma 10.11 now has a collapsed-gap extension on an
+open almost-real source domain. In
+`SourceCriticalRootRatioCollapsed.lean`, the critical factor cancels
+the linear standard-root factor, so the deleted single-root quotient
+extends the discriminant derivative divided by the canonical root
+analytically across that gap. The path-integral identity of Lemma
+10.11(ii) remains to be formalized.

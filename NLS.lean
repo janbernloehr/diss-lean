@@ -897,3 +897,4 @@ import NLS.ComplexAnalysis.JointSpectralDerivative
 import NLS.ZakharovShabat.SourceDeletedPairJointAnalytic
 import NLS.ZakharovShabat.SourceCriticalGapQuotientContinuity
 import NLS.ZakharovShabat.SourceCriticalGapQuotientUniform
+import NLS.ZakharovShabat.SourceCriticalRootRatioCollapsed
