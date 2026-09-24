@@ -9264,3 +9264,12 @@ downward endpoint segments are curve-integrable, with integrals tending
 to zero as their lengths shrink. Combining these segments with paths
 between the shifted endpoints to obtain the complete admissible
 endpoint-to-endpoint path statement remains open.
+
+## Latest milestone: upper endpoint-to-endpoint doglegs
+
+`SourceCriticalRootRatioEndpointDogleg.lean` constructs an actual
+three-piece path from the left branch point to the right one, via a
+positive-height horizontal crossing. The path is curve-integrable for
+all sufficiently small heights, and its integral tends to zero as the
+height tends to zero. Exact vanishing for fixed positive height and
+the full admissible-path class remain to be proved.

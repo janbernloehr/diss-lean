@@ -1770,3 +1770,12 @@ The upward and downward segments starting at the branch points are
 curve-integrable, and their curve integrals tend to zero as the
 segments shrink. The full endpoint-to-endpoint admissible path theorem
 remains open.
+
+`SourceCriticalRootRatioEndpointDogleg.lean` constructs a concrete
+endpoint-to-endpoint path through the upper half-plane: up from the
+left branch point, across at positive height, and down to the right
+branch point. For all sufficiently small heights its three pieces and
+their concatenation are curve-integrable. Its integral is the signed
+sum of the three component integrals and tends to zero as the height
+shrinks. Proving height invariance would make each such integral
+exactly zero.
