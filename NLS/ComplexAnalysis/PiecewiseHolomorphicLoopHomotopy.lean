@@ -164,7 +164,7 @@ theorem four_piece_curveIntegral_eq_of_affine_homotopy
       (ContinuousMap.Homotopy.affine (γ₂₀ : C(I, ℂ)) (γ₂₁ : C(I, ℂ))) (s,u) ∈ t ∧
       (ContinuousMap.Homotopy.affine (γ₃₀ : C(I, ℂ)) (γ₃₁ : C(I, ℂ))) (s,u) ∈ t ∧
       (ContinuousMap.Homotopy.affine (γ₄₀ : C(I, ℂ)) (γ₄₁ : C(I, ℂ))) (s,u) ∈ t)
-    (hf : ∀ z ∈ closure t, DifferentiableAt ℂ f z)
+    (hf : ∀ z ∈ t, DifferentiableAt ℂ f z)
     (h₁₀smooth : ContDiffOn ℝ 2 γ₁₀.extend (Icc 0 1))
     (h₂₀smooth : ContDiffOn ℝ 2 γ₂₀.extend (Icc 0 1))
     (h₃₀smooth : ContDiffOn ℝ 2 γ₃₀.extend (Icc 0 1))
@@ -193,8 +193,29 @@ theorem four_piece_curveIntegral_eq_of_affine_homotopy
     (γ₃₀ : C(I, ℂ)) (γ₃₁ : C(I, ℂ))
   let H₄ := ContinuousMap.Homotopy.affine
     (γ₄₀ : C(I, ℂ)) (γ₄₁ : C(I, ℂ))
+  let K : Set ℂ := ((range H₁ ∪ range H₂) ∪ range H₃) ∪ range H₄
+  have hKclosed : IsClosed K := by
+    dsimp [K]
+    exact (((isCompact_range (map_continuous H₁)).isClosed.union
+      (isCompact_range (map_continuous H₂)).isClosed).union
+      (isCompact_range (map_continuous H₃)).isClosed).union
+      (isCompact_range (map_continuous H₄)).isClosed
+  have hKsubset : K ⊆ t := by
+    intro z hz
+    rcases hz with (((h₁ | h₂) | h₃) | h₄)
+    · rcases h₁ with ⟨⟨s,u⟩, rfl⟩
+      exact (havoid s u).1
+    · rcases h₂ with ⟨⟨s,u⟩, rfl⟩
+      exact (havoid s u).2.1
+    · rcases h₃ with ⟨⟨s,u⟩, rfl⟩
+      exact (havoid s u).2.2.1
+    · rcases h₄ with ⟨⟨s,u⟩, rfl⟩
+      exact (havoid s u).2.2.2
+  have hKdiff : ∀ z ∈ closure K, DifferentiableAt ℂ f z := by
+    intro z hz
+    exact hf z (hKsubset (hKclosed.closure_eq ▸ hz))
   apply four_piece_curveIntegral_eq_of_holomorphic_homotopy
-    f H₁ H₂ H₃ H₄
+    f H₁ H₂ H₃ H₄ (t := K)
   · intro s
     simp [H₁, H₂, ContinuousMap.Homotopy.affine_apply]
   · intro s
@@ -204,14 +225,14 @@ theorem four_piece_curveIntegral_eq_of_affine_homotopy
   · intro s
     simp [H₄, H₁, ContinuousMap.Homotopy.affine_apply]
   · intro s _ u _
-    exact (havoid s u).1
+    exact Or.inl (Or.inl (Or.inl ⟨(s,u), rfl⟩))
   · intro s _ u _
-    exact (havoid s u).2.1
+    exact Or.inl (Or.inl (Or.inr ⟨(s,u), rfl⟩))
   · intro s _ u _
-    exact (havoid s u).2.2.1
+    exact Or.inl (Or.inr ⟨(s,u), rfl⟩)
   · intro s _ u _
-    exact (havoid s u).2.2.2
-  · exact hf
+    exact Or.inr ⟨(s,u), rfl⟩
+  · exact hKdiff
   · exact affineHomotopy_contDiffOn h₁₀smooth h₁₁smooth
   · exact affineHomotopy_contDiffOn h₂₀smooth h₂₁smooth
   · exact affineHomotopy_contDiffOn h₃₀smooth h₃₁smooth

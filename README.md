@@ -1665,20 +1665,21 @@ the canonical-root domain. `SourceCriticalRootRatioStadiumIntegral.lean`
 identifies the curve integral of that path with the signed sum of the
 two displaced horizontal integrals and the two outward arc integrals.
 Each piece has its established zero limit, so the actual closed
-stadium-path integral tends to zero as the radius shrinks. Relating
-this local contour to an enclosing contour by a gap-avoiding homotopy
-remains to be proved.
+stadium-path integral tends to zero as the radius shrinks.
 
 `PiecewiseHolomorphicLoopHomotopy.lean` supplies the homotopy tool for
 this next step. It applies the open-path holomorphic homotopy identity
 to four smooth pieces and cancels the moving endpoint traces at their
 joins. Its affine specialization compares concatenated loops with
 corners without requiring the full loop to be twice differentiable at
-the joins. The stadium application still needs a proof that every
-intermediate radius avoids the canonical-root cuts.
+the joins.
 `SourceGapStadiumAffine.lean` now proves this range condition for any
 domain containing all stadiums in a positive radius interval. It also
 proves twice-smoothness of the four pieces and identifies their affine
-homotopies with the corresponding pieces at interpolated radii. The
-next step is to combine these facts with the piecewise homotopy theorem
-for the critical-root quotient.
+homotopies with the corresponding pieces at interpolated radii.
+`SourceCriticalRootRatioStadiumHomotopy.lean` combines these facts to
+prove radius invariance of the critical-root quotient stadium integral
+for all sufficiently small positive radii. The shrinking-radius limit
+then makes each such integral exactly zero at an open real-type gap.
+Relating a stadium to an enclosing contour by a gap-avoiding homotopy
+remains open in Lemma 10.11(ii).
