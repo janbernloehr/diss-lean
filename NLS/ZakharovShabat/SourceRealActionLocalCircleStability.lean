@@ -23,7 +23,13 @@ theorem exists_local_stable_midpointCircle_through_sourceRealAction
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p φ))
     (n : ℤ) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential φ)
+      (periodOnePotential_mem φ) n
+    let d : ℝ := (r.re-l.re)/2
     ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+      c = (((l.re+r.re)/2:ℝ):ℂ) ∧ d < R ∧
       ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
         sourceRealAction hp hp1 φ hreal n =
           sourceActionCircle hp hp1 φ c R ∧
@@ -100,7 +106,11 @@ theorem exists_local_stable_midpointCircle_through_sourceRealAction
     exact ⟨hL,hRt⟩
   obtain ⟨Vseg,hVsegSub,hVsegOpen,hφVseg⟩ := _root_.mem_nhds_iff.mp hnear
   let V := Vfill ∩ Vseg
-  refine ⟨c,R,hR,V,hVfillOpen.inter hVsegOpen,⟨hφVfill',hφVseg⟩,hvalue,?_⟩
+  refine ⟨c,R,hR,rfl,?_,V,hVfillOpen.inter hVsegOpen,
+    ⟨hφVfill',hφVseg⟩,hvalue,?_⟩
+  · change d < R
+    dsimp [R]
+    linarith [hη.1]
   intro ψ hψ
   obtain ⟨hL,hRt⟩ := hVsegSub hψ.2
   have hsegment : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R := by

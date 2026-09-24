@@ -2178,3 +2178,11 @@ The selected gap stays inside the circle, while its filled disc
 continues to avoid every other gap. This supplies the geometric
 stability needed to identify the local circle action with nearby
 real-source actions.
+
+## Latest milestone: local complex extension of the indexed real action
+
+`SourceRealActionLocalAgreement.lean` proves that one fixed circle
+computes the indexed action at every nearby real-type source. The
+same circle action is complex Fréchet differentiable throughout an
+open complex source neighborhood. The proof nests a moving midpoint
+circle inside the fixed disc and applies contour invariance.
