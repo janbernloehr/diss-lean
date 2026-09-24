@@ -1638,3 +1638,11 @@ cosine integral is exactly the straight horizontal integral in the
 signed gap parameter, so both upper and lower displaced horizontal
 integrals tend to zero. Connecting them to a closed shrinking contour,
 including its short endpoint connectors, remains to be proved.
+`SourceStandardRootVerticalEndpointBound.lean` proves that the selected
+standard root on either vertically shifted endpoint has norm at least
+the square root of the real gap length times the shift magnitude.
+`SourceCriticalRootRatioConnectorBound.lean` combines this with the
+uniform regular-numerator bound to control the full quotient after
+multiplication by that square-root weight. Integrating this estimate
+will show that the short endpoint connectors vanish as the enclosing
+contour contracts.
