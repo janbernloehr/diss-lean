@@ -9271,5 +9271,16 @@ endpoint-to-endpoint path statement remains open.
 three-piece path from the left branch point to the right one, via a
 positive-height horizontal crossing. The path is curve-integrable for
 all sufficiently small heights, and its integral tends to zero as the
-height tends to zero. Exact vanishing for fixed positive height and
-the full admissible-path class remain to be proved.
+height tends to zero. The full admissible-path class remains to be proved.
+
+## Latest milestone: exact zero on singular endpoint doglegs
+
+`HorizontalSegmentIntegral.lean` relates horizontal curve integrals to
+real-coordinate integrals. `EndpointDoglegHeight.lean` uses Cauchy's
+rectangle identity to prove height invariance of the coordinate dogleg
+value when its endpoint integrals exist. Applying this to the analytic
+critical-root quotient, `SourceCriticalRootRatioEndpointDoglegHeight.lean`
+shows every sufficiently short upper dogleg is curve-integrable and
+has exactly zero integral. This is an actual endpoint-to-endpoint path
+through the upper half-plane; extension to all admissible paths and
+nearby complex sources remains open.

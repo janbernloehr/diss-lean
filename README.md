@@ -1777,5 +1777,10 @@ left branch point, across at positive height, and down to the right
 branch point. For all sufficiently small heights its three pieces and
 their concatenation are curve-integrable. Its integral is the signed
 sum of the three component integrals and tends to zero as the height
-shrinks. Proving height invariance would make each such integral
-exactly zero.
+shrinks. `HorizontalSegmentIntegral.lean` and
+`EndpointDoglegHeight.lean` connect the curve integral to the
+rectangular Cauchy identity. The source theorem in
+`SourceCriticalRootRatioEndpointDoglegHeight.lean` proves the dogleg
+integral is height-independent and therefore exactly zero for every
+sufficiently small positive height. General admissible endpoint paths
+remain open.
