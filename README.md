@@ -1502,3 +1502,10 @@ analytically across that gap. The path-integral identity of Lemma
 integral vanishes when the indexed gap is collapsed and the filled
 circle avoids all other gaps. The open-gap contour and admissible-path
 statements of Lemma 10.11(ii) remain.
+
+`RealGapArcoshIntegral.lean` formalizes the real open-gap primitive:
+the signed discriminant has arcosh value zero at both endpoints, so
+its arcosh derivative has zero integral whenever the endpoint kernel
+is integrable. Establishing that integrability and identifying the
+gap-side boundary integral with the canonical-root quotient are the
+next parts of Lemma 10.11(ii).

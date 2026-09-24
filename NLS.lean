@@ -899,3 +899,5 @@ import NLS.ZakharovShabat.SourceCriticalGapQuotientContinuity
 import NLS.ZakharovShabat.SourceCriticalGapQuotientUniform
 import NLS.ZakharovShabat.SourceCriticalRootRatioCollapsed
 import NLS.ZakharovShabat.SourceCriticalRootRatioCollapsedContour
+import NLS.ComplexAnalysis.ArcoshGapIntegral
+import NLS.ZakharovShabat.RealGapArcoshIntegral
