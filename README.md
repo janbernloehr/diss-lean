@@ -1506,9 +1506,9 @@ statements of Lemma 10.11(ii) remain.
 `RealGapArcoshIntegral.lean` formalizes the real open-gap primitive:
 the signed discriminant has arcosh value zero at both endpoints, so
 its arcosh derivative has zero integral whenever the endpoint kernel
-is integrable. Establishing that integrability and identifying the
-gap-side boundary integral with the canonical-root quotient are the
-next parts of Lemma 10.11(ii).
+is integrable. The endpoint integrability is established below;
+identifying the gap-side boundary integral with the canonical-root
+quotient remains the next part of Lemma 10.11(ii).
 
 `SourceCriticalRootRatioFactorization.lean` separates the selected
 critical-over-standard-root factor from an analytic deleted quotient.
@@ -1525,5 +1525,10 @@ that the product is real on the whole real axis and strictly positive
 on the closed gap, then obtains a uniform positive lower bound there.
 `EndpointSqrtWeight.lean` proves the corresponding inverse square-root
 weight is interval-integrable for arbitrary real endpoints and remains
-so after multiplication by a continuous numerator. Applying it to
-the discriminant derivative is the next step.
+so after multiplication by a continuous numerator.
+`RealGapArcoshIntegrability.lean` applies this estimate to real-type
+source potentials. It proves the discriminant arcosh kernel is
+integrable across an open gap and its real interval integral vanishes,
+without a separate endpoint-integrability assumption. Identifying
+this real integral with the canonical-root gap-side boundary integral
+remains the next step of Lemma 10.11(ii).

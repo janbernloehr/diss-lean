@@ -67,4 +67,32 @@ theorem intervalIntegrable_div_sqrt_endpoint_product
   have hprod := hweight.continuousOn_mul hf'
   simpa only [div_eq_mul_inv, mul_comm] using hprod
 
+/-- If a radicand factors as the endpoint-distance product times a
+strictly positive continuous factor, its square-root quotient is
+interval-integrable for every continuous numerator. -/
+theorem intervalIntegrable_div_sqrt_factored_endpoint_product
+    {a b : ℝ} (hab : a < b) {f q G : ℝ → ℝ}
+    (hf : ContinuousOn f (Icc a b))
+    (hG : ContinuousOn G (Icc a b))
+    (hGpos : ∀ x ∈ Icc a b, 0 < G x)
+    (hfactor : ∀ x ∈ Ioo a b,
+      q x = (x-a)*(b-x)*G x) :
+    IntervalIntegrable (fun x : ℝ => f x / Real.sqrt (q x))
+      volume a b := by
+  have hnum : ContinuousOn
+      (fun x : ℝ => f x / Real.sqrt (G x)) (Icc a b) :=
+    hf.div (Real.continuous_sqrt.comp_continuousOn hG)
+      (fun x hx => ne_of_gt (Real.sqrt_pos.2 (hGpos x hx)))
+  have hbase := intervalIntegrable_div_sqrt_endpoint_product hab hnum
+  apply hbase.congr_uIoo
+  rw [uIoo_of_le hab.le]
+  intro x hx
+  have hweight : 0 ≤ (x-a)*(b-x) :=
+    (mul_pos (sub_pos.mpr hx.1) (sub_pos.mpr hx.2)).le
+  change (f x / Real.sqrt (G x)) /
+    Real.sqrt ((x-a)*(b-x)) = f x / Real.sqrt (q x)
+  rw [hfactor x hx, Real.sqrt_mul hweight]
+  simp only [div_eq_mul_inv, mul_inv_rev]
+  ring
+
 end NLS.ComplexAnalysis
