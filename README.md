@@ -2032,3 +2032,13 @@ selected real gap. Pointwise convergence passes this reality to the
 infinite product. Its sign now reduces to counting the negative
 normalized factors in the finite cutoffs and passing their common
 sign to the limit.
+
+## Latest milestone: normalized factor signs
+
+`SourceStandardRootNormalizedFactorSign.lean` identifies the signs
+introduced by the exceptional zero-mode denominator and the positive
+and negative integer denominators. For every index other than the
+selected gap, it proves the sign of the normalized real standard-root
+factor in all four index-order cases. The finite symmetric product
+can now be grouped into positive and negative paired blocks to
+establish its parity sign.
