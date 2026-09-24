@@ -1614,3 +1614,10 @@ segments. The full quotient along that translate is continuous in the
 gap parameter, and its cosine-weighted pullback is interval integrable
 through both endpoints. These facts provide the integrability input
 for the forthcoming dominated slit limit.
+`SourceCriticalRootRatioVerticalLimits.lean` identifies positive and
+negative vertical translates with the oriented upper and lower gap
+sides. Consequently, at each interior point of an open real-type gap,
+the full discriminant-derivative quotient along those translates tends
+to its corresponding canonical-root boundary quotient. Combining these
+pointwise limits with the existing weighted bound and integrability is
+the next step toward the slit integral limit.
