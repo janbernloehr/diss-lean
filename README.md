@@ -1541,5 +1541,8 @@ boundary integral with the arcosh derivative integral.
 identity to real-type sources: the gap parameter is real, the squared
 boundary value is four times the signed arcosh radicand, and the upper
 boundary value is real and nonzero throughout an open gap's interior.
-Continuity must still fix its sign along the gap before the two
-integrals can be compared.
+`RealGapCanonicalRootSign.lean` combines continuity, endpoint-product
+positivity, and connectedness to show that the upper boundary value
+equals either plus or minus twice the positive arcosh square root on
+the entire interior. Comparing the resulting side integral with the
+real arcosh derivative integral remains to finish the open-gap step.

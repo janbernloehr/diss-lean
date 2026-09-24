@@ -908,3 +908,4 @@ import NLS.ComplexAnalysis.EndpointSqrtWeight
 import NLS.ZakharovShabat.RealGapArcoshIntegrability
 import NLS.ZakharovShabat.SourceCanonicalRootGapSideSquare
 import NLS.ZakharovShabat.RealGapCanonicalRootValue
+import NLS.ZakharovShabat.RealGapCanonicalRootSign
