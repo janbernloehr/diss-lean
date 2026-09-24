@@ -1689,3 +1689,9 @@ small positive margin beyond each endpoint gives a positive radius,
 contains the whole gap in the circle's interior, and keeps the entire
 circumference in the canonical-root domain. The remaining contour step
 is to compare its integral with the zero stadium integral.
+`CircleArcCurveIntegral.lean` provides arbitrary-angle circle arcs as
+twice-smooth bundled paths, identifies their curve integrals with angle
+integrals, and proves that four consecutive clockwise arcs making one
+full turn sum to the negative of the usual circle integral. This sets
+up a four-piece deformation whose arc endpoints can match the four
+stadium corners exactly.
