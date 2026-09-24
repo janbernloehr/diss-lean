@@ -9318,3 +9318,15 @@ half-plane if it has a smooth, fixed-endpoint, gap-avoiding homotopy
 from the straight crossing. The resulting singular endpoint path is
 curve-integrable and has zero integral. The full admissible endpoint
 path class and nearby complex sources remain open.
+
+## Latest milestone: continuous families of smooth endpoint detours
+
+`SourceCriticalRootRatioContinuousOpenPathHomotopy.lean` proves local
+constancy of the critical-root quotient integral under uniform changes
+of smooth open paths in the gap complement. Connectedness extends this
+to a continuous fixed-endpoint homotopy whose individual paths are
+twice smooth; the full homotopy square need not be differentiable.
+`SourceCriticalRootRatioContinuousHomotopyDetours.lean` gives exact-zero,
+curve-integrable upper and lower singular endpoint paths for that wider
+class of crossings. General admissible connectors and nearby complex
+sources remain open.

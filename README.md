@@ -1812,3 +1812,13 @@ lengths, any smooth crossing homotopic to the straight crossing through
 that gap complement is curve-integrable and has integral zero. The
 crossing may leave its original half-plane. General admissible endpoint
 paths and nearby complex sources remain open.
+
+`SourceCriticalRootRatioContinuousOpenPathHomotopy.lean` uses compactness
+and a uniform gap-avoidance buffer to prove local constancy of the
+quotient integral on smooth open paths. A homotopy need therefore only
+be continuous as a two-parameter map, provided every slice is twice
+smooth and avoids the gaps. `SourceCriticalRootRatioContinuousHomotopyDetours.lean`
+applies this to upper and lower endpoint detours with short vertical
+connectors, again giving curve integrability and exactly zero integral.
+General admissible endpoint connectors and nearby complex sources
+remain open.
