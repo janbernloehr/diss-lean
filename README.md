@@ -1412,3 +1412,10 @@ lies in every finite exponent above one. These are locally uniform
 bounds near a real-type source. The proof uses the fact that the
 sampled Hilbert estimate holds for every independent choice of one
 point from each disc. The infinite-product estimate remains open.
+
+The finite quotient estimate now also applies to the analytic infinite
+quotient on sufficiently distant discs. Pairwise disjoint isolating
+discs put those spectral points outside every other periodic gap,
+where the literal finite cutoffs converge to the quotient. The sharper
+sequence asymptotic still requires a quadratic midpoint-product
+remainder estimate and combination with the squared-gap correction.

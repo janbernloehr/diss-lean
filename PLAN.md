@@ -2479,3 +2479,13 @@ It proves the required supremum sequence lies in `ℓᑫ` for
 the same supremum lies in every finite `ℓʳ` with `r>1`, giving the
 `ℓ^{1+}` endpoint. Next use these first-order bounds in the
 infinite-product estimate of Lemma 10.8.
+
+`SourceSingleRootQuotientTailLimit.lean` now places each sufficiently
+distant assigned disc in the moving-gap complement by comparing two
+local isolating-disc families. The literal finite quotient products
+therefore converge on those discs to the analytic quotient of
+Corollary 10.6, and their neighborhood-uniform finite bound passes to
+that infinite quotient. Next retain the signed first-order sum when
+estimating the midpoint product, control its quadratic remainder in a
+sequence space, and combine it with the squared-gap correction to get
+the full `ℓᑫ + ℓ^(p/2) + ℓ^{1+}` asymptotic of Lemma 10.8.

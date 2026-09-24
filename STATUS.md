@@ -8965,3 +8965,15 @@ on a connected neighborhood of a real-type potential. The result holds
 in `ℓᑫ` for `1 < q < ∞`; an `ℓ¹` numerator displacement gives the
 supremum in every finite `ℓʳ`, `r>1`. The infinite-product asymptotic
 and the sine-product consequence of Lemma 10.8 remain open.
+
+## Latest milestone: infinite quotient inherits the tail bound
+
+`SourceSingleRootQuotientTailLimit.lean` compares the fixed free discs
+at large indices across two local isolating families. Every point of a
+distant disc avoids all other periodic gap segments, so it lies in the
+domain of the analytic omitted-root quotient. The literal finite
+products converge there, and the previously proved finite exponential
+bound now holds for the actual infinite quotient, on one connected
+source neighborhood with a common large-index threshold. Its sequence
+asymptotic still needs the signed midpoint contribution and quadratic
+product remainder; the sine-product consequence remains open.
