@@ -2091,3 +2091,12 @@ signs: once the cutoff reaches a nonzero index `n`, multiplying its
 real omitted product by `(-1)^|n|` gives a strictly positive number.
 The next step is to pass this sign to the nonvanishing infinite
 product, then fix the canonical-root orientation on every gap.
+
+## Latest milestone: infinite omitted-product parity
+
+`SourceStandardRootOmittedParitySign.lean` passes the finite sign to
+the infinite standard-root product on every open real-type gap. The
+product is real and nonzero there, so its real part has the strict
+sign `(-1)^|n|`, including the central index. This is the orientation
+input needed to identify the upper canonical-root branch and prove
+positivity of the action for arbitrary gap indices.
