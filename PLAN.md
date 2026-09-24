@@ -2566,3 +2566,13 @@ nonzero and gives the exact squared-gap offset formula. To finish
 Lemma 10.10, establish the corresponding local bound across collapsed
 central gaps and control the finitely many coefficients uniformly on
 a source neighborhood.
+
+`CriticalOffsetCoefficientCollapsedGap.lean` now proves that a
+collapsed canonical pair at any real-type potential has exactly two
+spectral occurrences, including in the central block. Analytic
+orders then show that deleting this pair leaves a nonzero product at
+the common endpoint. Together with the open-gap result, this makes
+the midpoint coefficient nonzero and gives the exact squared-gap
+critical-root formula at every index of each real-type potential.
+The remaining Lemma 10.10 step is to extend that formula and its
+uniform `ℓᵖ` coefficient bound to a complex source neighborhood.

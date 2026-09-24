@@ -890,3 +890,4 @@ import NLS.ZakharovShabat.SourceDeletedFreeSine
 import NLS.ZakharovShabat.SourceFreeSineQuotientAsymptotic
 import NLS.ZakharovShabat.SourceCriticalMidpointGapSquaredTail
 import NLS.ZakharovShabat.CriticalOffsetCoefficientOpenGap
+import NLS.ZakharovShabat.CriticalOffsetCoefficientCollapsedGap

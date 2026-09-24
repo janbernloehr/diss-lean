@@ -9072,3 +9072,15 @@ coefficient to be nonzero and yields a squared-gap quotient formula
 at every such index, including the central ones. This does not yet
 give a common coefficient bound on a complex source neighborhood or
 cover collapsed central gaps.
+
+## Latest milestone: all-index real-type critical offset identity
+
+`CriticalOffsetCoefficientCollapsedGap.lean` proves that a collapsed
+canonical periodic pair has original algebraic multiplicity exactly
+two at every real-type potential. The deleted periodic product is
+therefore nonzero at its common endpoint. Combining this with the
+open-gap case proves that the critical midpoint coefficient never
+vanishes at a real-type potential, so the exact squared-gap offset
+formula holds at all signed indices. Extending the formula and a
+uniform `ℓᵖ` coefficient bound across a complex source neighborhood
+is still open.

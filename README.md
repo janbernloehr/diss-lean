@@ -1467,3 +1467,10 @@ For every open real periodic gap, including central gaps,
 in the critical midpoint identity is nonzero and solves the offset
 exactly as the squared gap times its quotient. Local uniform control
 at central indices, especially near collapsed gaps, is still open.
+
+At a real-type potential, the exact squared-gap critical-root formula
+now holds at every index, including collapsed central gaps.
+`CriticalOffsetCoefficientCollapsedGap.lean` proves this using the
+exact algebraic multiplicity of a collapsed periodic pair. The local
+uniform `ℓᵖ` bound on a complex source neighborhood remains to be
+established.
