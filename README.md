@@ -1537,3 +1537,9 @@ canonical-root boundary values square to the discriminant radicand at
 each point of the selected gap. The remaining bridge is to show that
 the real-gap sign stays fixed along the gap and to compare the resulting
 boundary integral with the arcosh derivative integral.
+`RealGapCanonicalRootValue.lean` specializes the boundary square
+identity to real-type sources: the gap parameter is real, the squared
+boundary value is four times the signed arcosh radicand, and the upper
+boundary value is real and nonzero throughout an open gap's interior.
+Continuity must still fix its sign along the gap before the two
+integrals can be compared.
