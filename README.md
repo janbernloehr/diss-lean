@@ -1584,3 +1584,11 @@ upper and lower straight side-path integrands are therefore interval
 integrable even at the branch-point endpoints, and their doubly
 truncated integrals tend to zero as both cutoffs vanish. These endpoint
 limits are the boundary input for a future slit-to-contour deformation.
+`SourceCriticalRootRatioGapSideLimits.lean` proves that the actual
+discriminant-derivative quotient approaches the two explicit boundary
+quotients from the corresponding open sides of every noncollapsed gap.
+The result holds on an open complex source neighborhood containing the
+real-type locus. The remaining argument must deform an enclosing
+contour to these sides, then extend the resulting zero contour identity
+through the complex source neighborhood before proving arbitrary
+admissible-path independence in Lemma 10.11(ii).
