@@ -171,4 +171,52 @@ theorem exists_sourceCriticalRootRatio_midpointCircleIntegral_eq_zero
   rw [hR] at h
   exact h
 
+/-- The zero integral persists on every larger concentric circle
+whose filled disc still excludes all other periodic gaps. -/
+theorem exists_sourceCriticalRootRatio_isolatedMidpointCircleIntegral_eq_zero
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    let f : ℂ → ℂ := fun z =>
+      deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+        sourceCanonicalRoot hp hp1 ψ z
+    ∃ ε : ℝ, 0 < ε ∧ ∀ η ∈ Ioc 0 ε, ∀ R : ℝ,
+      d+η ≤ R →
+      closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n →
+      (∮ z in C(c, R), f z) = 0 := by
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+  let d : ℝ := (r.re-l.re)/2
+  let f : ℂ → ℂ := fun z =>
+    deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+      sourceCanonicalRoot hp hp1 ψ z
+  obtain ⟨ε,hε,hsmall⟩ :=
+    exists_sourceCriticalRootRatio_midpointCircleIntegral_eq_zero
+      hp hp1 ψ hreal n hopen
+  have hd : 0 < d := by
+    change 0 < (r.re-l.re)/2
+    have hgap : l.re < r.re := hopen
+    exact div_pos (sub_pos.mpr hgap) (by norm_num)
+  refine ⟨ε,hε,?_⟩
+  intro η hη R hR hother
+  have hinner : 0 < d+η := by linarith [hη.1]
+  have hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c (d+η) :=
+    sourcePeriodicSegment_subset_midpoint_ball hp hp1 ψ hreal n η hη.1
+  have heq := circleIntegral_sourceCriticalRootRatio_eq_of_isolated_annulus
+    hp hp1 ψ n c (d+η) R hinner hR hseg hother
+  exact heq.trans (hsmall η hη)
+
 end NLS.ZakharovShabat
