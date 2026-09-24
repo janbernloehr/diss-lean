@@ -1651,5 +1651,8 @@ lower bound on circles of radius at most half the gap length around
 either endpoint. `SourceCriticalRootRatioEndpointCircleBound.lean`
 combines it with the bounded regular numerator to give a common
 weighted quotient bound for both circles, wherever their points avoid
-the periodic gaps. The next step is to choose gap-avoiding outer arcs
-and show their integrals vanish as the radius shrinks.
+the periodic gaps. `SourceCriticalRootRatioOuterArcs.lean` constructs
+both outward endpoint semicircles inside the full root domain for a
+common small radius and applies the weighted quotient bound uniformly
+along them. The next step is to bound their path integrals and show
+those integrals vanish as the radius shrinks.
