@@ -1021,3 +1021,4 @@ import NLS.ZakharovShabat.SourceRealActionLocalHolomorphic
 import NLS.ZakharovShabat.SourceRealActionLocalCircleStability
 import NLS.ZakharovShabat.SourceRealActionLocalAgreement
 import NLS.ZakharovShabat.SourceRealActionLocalLineAnalytic
+import NLS.ZakharovShabat.SourceRealActionLocalOverlap

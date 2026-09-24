@@ -2194,3 +2194,12 @@ extension is analytic along every complex affine source line through
 each point of its open neighborhood. At every real-type source there,
 its value is real and nonnegative, and it vanishes exactly when the
 selected periodic gap collapses.
+
+## Latest milestone: uniqueness of local action germs
+
+`SourceRealActionLocalOverlap.lean` applies the norm-controlled
+real-form identity principle to complex-differentiable source
+functions. Any two fixed-circle extensions representing the same
+indexed action on real-type sources agree on a complex neighborhood
+of each real-type point in their overlap. This proves compatibility
+of the locally defined action germs.
