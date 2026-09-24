@@ -2228,3 +2228,11 @@ into a single complex action at each gap index. Its open domain
 contains every real-type source, and the action is complex Fréchet
 differentiable there. It agrees with every fixed-circle chart on that
 chart's ball and restricts to the indexed real action.
+
+## Latest milestone: connected domain and real properties of the complex action
+
+`SourceComplexActionProperties.lean` proves that the glued action's
+open domain is connected: each chart ball meets the connected real-type
+source locus. The action is analytic along every complex affine line
+through every point of that domain. On real-type sources it is real,
+nonnegative, and zero exactly when the selected periodic gap collapses.
