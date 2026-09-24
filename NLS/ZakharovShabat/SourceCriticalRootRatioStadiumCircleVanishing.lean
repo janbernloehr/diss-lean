@@ -100,4 +100,75 @@ theorem exists_sourceCriticalRootRatio_cornerCircleIntegral_eq_zero
       _ = 0 := hstadZero
   exact neg_eq_zero.mp hneg
 
+/-- The vanishing holds for every sufficiently small positive margin
+above the real gap's half-width, not only for radii presented as
+corner-circle radii. -/
+theorem exists_sourceCriticalRootRatio_midpointCircleIntegral_eq_zero
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    let f : ℂ → ℂ := fun z =>
+      deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+        sourceCanonicalRoot hp hp1 ψ z
+    ∃ ε : ℝ, 0 < ε ∧ ∀ η ∈ Ioc 0 ε,
+      (∮ z in C(c, d+η), f z) = 0 := by
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+  let d : ℝ := (r.re-l.re)/2
+  let f : ℂ → ℂ := fun z =>
+    deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+      sourceCanonicalRoot hp hp1 ψ z
+  obtain ⟨ε₀,hε₀,hcorner⟩ :=
+    exists_sourceCriticalRootRatio_cornerCircleIntegral_eq_zero
+      hp hp1 ψ hreal n hopen
+  have hd : 0 < d := by
+    change 0 < (r.re-l.re)/2
+    have hgap : l.re < r.re := hopen
+    exact div_pos (sub_pos.mpr hgap) (by norm_num)
+  have hden : 0 < 2*d+1 := by linarith
+  let ε := min 1 (ε₀^2/(2*d+1))
+  have hε : 0 < ε := lt_min (by norm_num)
+    (div_pos (sq_pos_of_pos hε₀) hden)
+  refine ⟨ε,hε,?_⟩
+  intro η hη
+  have hηone : η ≤ 1 := hη.2.trans (min_le_left _ _)
+  have hηdiv : η ≤ ε₀^2/(2*d+1) :=
+    hη.2.trans (min_le_right _ _)
+  have hηbound : η*(2*d+1) ≤ ε₀^2 :=
+    (le_div_iff₀ hden).mp hηdiv
+  let ρ := Real.sqrt (2*d*η+η^2)
+  have hrad : 0 < 2*d*η+η^2 := by
+    nlinarith [mul_pos hd hη.1]
+  have hρpos : 0 < ρ := Real.sqrt_pos.2 hrad
+  have hρsqLe : ρ^2 ≤ ε₀^2 := by
+    calc
+      ρ^2 = η*(2*d+η) := by
+        dsimp [ρ]
+        rw [Real.sq_sqrt hrad.le]
+        ring
+      _ ≤ η*(2*d+1) :=
+        mul_le_mul_of_nonneg_left (by linarith) hη.1.le
+      _ ≤ ε₀^2 := hηbound
+  have hρle : ρ ≤ ε₀ := by nlinarith
+  have hρ : ρ ∈ Ioc 0 ε₀ := ⟨hρpos,hρle⟩
+  have hR : stadiumCornerRadius d ρ = d+η :=
+    stadiumCornerRadius_sqrt_margin d η hd.le hη.1.le
+  have h := hcorner ρ hρ
+  change (∮ z in C(c, stadiumCornerRadius d ρ), f z) = 0 at h
+  rw [hR] at h
+  exact h
+
 end NLS.ZakharovShabat

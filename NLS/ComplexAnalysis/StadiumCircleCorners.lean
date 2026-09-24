@@ -48,6 +48,26 @@ theorem stadiumCornerRadius_affineOffset_mem_Ioc {d ρ s : ℝ}
     mul_nonneg hs.1 (by linarith)
   constructor <;> nlinarith
 
+/-- Every radius strictly beyond a nonnegative half-width is a
+corner-circle radius, obtained from a suitable stadium height. -/
+theorem stadiumCornerRadius_sqrt_margin (d η : ℝ)
+    (hd : 0 ≤ d) (hη : 0 ≤ η) :
+    stadiumCornerRadius d (Real.sqrt (2*d*η+η^2)) = d+η := by
+  have hrad : 0 ≤ 2*d*η+η^2 := by positivity
+  have hsqrt : (Real.sqrt (2*d*η+η^2))^2 = 2*d*η+η^2 :=
+    Real.sq_sqrt hrad
+  have hsq : (stadiumCornerRadius d (Real.sqrt (2*d*η+η^2)))^2 =
+      d^2+(Real.sqrt (2*d*η+η^2))^2 := by
+    simp only [stadiumCornerRadius, Complex.norm_def, Complex.normSq_apply,
+      Complex.add_re, Complex.add_im, Complex.mul_re, Complex.mul_im,
+      Complex.ofReal_re, Complex.ofReal_im, Complex.I_re, Complex.I_im]
+    norm_num only [mul_zero, zero_mul, mul_one, zero_add, add_zero, sub_zero]
+    rw [Real.sq_sqrt (by positivity)]
+    ring
+  have hR : 0 ≤ stadiumCornerRadius d (Real.sqrt (2*d*η+η^2)) :=
+    norm_nonneg _
+  nlinarith [sq_nonneg (d+η)]
+
 /-- The four corner directions have the same norm. -/
 theorem stadiumCorner_norms (d ρ : ℝ) :
     ‖(d:ℂ)+(ρ:ℂ)*I‖ = stadiumCornerRadius d ρ ∧
