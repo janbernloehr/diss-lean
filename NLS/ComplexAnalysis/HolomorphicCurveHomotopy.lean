@@ -52,6 +52,35 @@ private theorem holomorphicOneForm_continuousOn (f : ℂ → ℂ) (t : Set ℂ)
   intro z hz
   exact ((hf z hz).continuousAt.smul continuousAt_const).continuousWithinAt
 
+/-- For a smooth homotopy of open paths, the difference between the
+two path integrals is exactly the difference between the integrals
+along its two endpoint traces. -/
+theorem curveIntegral_add_sides_eq_of_holomorphic_homotopy
+    {a b c d : ℂ} {γ₁ : Path a b} {γ₂ : Path c d}
+    (f : ℂ → ℂ)
+    (φ : (γ₁ : C(I, ℂ)).Homotopy γ₂)
+    {t : Set ℂ}
+    (hφt : ∀ s ∈ Ioo (0:I) 1, ∀ u ∈ Ioo (0:I) 1, φ (s, u) ∈ t)
+    (hf : ∀ z ∈ closure t, DifferentiableAt ℂ f z)
+    (hcontdiff : ContDiffOn ℝ 2
+      (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (φ.extend xy.1) xy.2) (Icc 0 1)) :
+    (∫ᶜ x in γ₁, holomorphicOneForm f x) +
+      ∫ᶜ x in φ.evalAt 1, holomorphicOneForm f x =
+    (∫ᶜ x in γ₂, holomorphicOneForm f x) +
+      ∫ᶜ x in φ.evalAt 0, holomorphicOneForm f x := by
+  have hω (z : ℂ) (hz : z ∈ t) :
+      HasFDerivWithinAt (holomorphicOneForm f) (holomorphicOneFormDeriv f z) t z :=
+    ((holomorphicOneForm_hasFDerivAt f z (hf z (subset_closure hz))).hasFDerivWithinAt)
+  have hc : ContinuousOn (holomorphicOneForm f) (closure t) :=
+    holomorphicOneForm_continuousOn f (closure t) hf
+  have hs (z : ℂ) (_hz : z ∈ t)
+      (u : ℂ) (_hu : u ∈ tangentConeAt ℝ t z)
+      (v : ℂ) (_hv : v ∈ tangentConeAt ℝ t z) :
+      holomorphicOneFormDeriv f z u v = holomorphicOneFormDeriv f z v u :=
+    holomorphicOneFormDeriv_symmetric f z u v
+  exact φ.curveIntegral_add_curveIntegral_eq_of_hasFDerivWithinAt
+    hφt hω hc hs hcontdiff
+
 private theorem homotopy_side_integrals_eq
     {a b : ℂ} {γ₁ : Path a a} {γ₂ : Path b b}
     (f : ℂ → ℂ) (φ : (γ₁ : C(I, ℂ)).Homotopy γ₂)
@@ -85,18 +114,8 @@ theorem curveIntegral_eq_of_holomorphic_homotopy
       (fun xy : ℝ × ℝ ↦ Set.IccExtend zero_le_one (φ.extend xy.1) xy.2) (Icc 0 1)) :
     ∫ᶜ x in γ₁, holomorphicOneForm f x =
       ∫ᶜ x in γ₂, holomorphicOneForm f x := by
-  have hω (z : ℂ) (hz : z ∈ t) :
-      HasFDerivWithinAt (holomorphicOneForm f) (holomorphicOneFormDeriv f z) t z :=
-    ((holomorphicOneForm_hasFDerivAt f z (hf z (subset_closure hz))).hasFDerivWithinAt)
-  have hc : ContinuousOn (holomorphicOneForm f) (closure t) :=
-    holomorphicOneForm_continuousOn f (closure t) hf
-  have hs (z : ℂ) (_hz : z ∈ t)
-      (u : ℂ) (_hu : u ∈ tangentConeAt ℝ t z)
-      (v : ℂ) (_hv : v ∈ tangentConeAt ℝ t z) :
-      holomorphicOneFormDeriv f z u v = holomorphicOneFormDeriv f z v u :=
-    holomorphicOneFormDeriv_symmetric f z u v
-  have h := φ.curveIntegral_add_curveIntegral_eq_of_hasFDerivWithinAt
-    hφt hω hc hs hcontdiff
+  have h := curveIntegral_add_sides_eq_of_holomorphic_homotopy
+    f φ hφt hf hcontdiff
   have hside := homotopy_side_integrals_eq f φ hloop
   rw [hside] at h
   exact add_right_cancel h

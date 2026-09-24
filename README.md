@@ -1668,3 +1668,11 @@ Each piece has its established zero limit, so the actual closed
 stadium-path integral tends to zero as the radius shrinks. Relating
 this local contour to an enclosing contour by a gap-avoiding homotopy
 remains to be proved.
+
+`PiecewiseHolomorphicLoopHomotopy.lean` supplies the homotopy tool for
+this next step. It applies the open-path holomorphic homotopy identity
+to four smooth pieces and cancels the moving endpoint traces at their
+joins. Its affine specialization compares concatenated loops with
+corners without requiring the full loop to be twice differentiable at
+the joins. The stadium application still needs a proof that every
+intermediate radius avoids the canonical-root cuts.

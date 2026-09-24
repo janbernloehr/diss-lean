@@ -15,10 +15,10 @@ open Set Metric Complex
 open scoped unitInterval ENNReal
 namespace NLS.ComplexAnalysis
 
-/-- The affine homotopy between twice-smooth closed paths is twice smooth
+/-- The affine homotopy between twice-smooth paths is twice smooth
 on the unit square. -/
 theorem affineHomotopy_contDiffOn
-    {a b : ℂ} {γ₁ : Path a a} {γ₂ : Path b b}
+    {a b c d : ℂ} {γ₁ : Path a b} {γ₂ : Path c d}
     (hγ₁ : ContDiffOn ℝ 2 γ₁.extend (Icc 0 1))
     (hγ₂ : ContDiffOn ℝ 2 γ₂.extend (Icc 0 1)) :
     ContDiffOn ℝ 2
