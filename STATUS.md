@@ -9165,3 +9165,15 @@ on every circular contour enclosing an open gap at a real-type source,
 with arbitrary center, provided its filled disc excludes other gaps.
 The remaining Lemma 10.11(ii) work concerns admissible noncircular
 paths and the complex-source extension.
+
+## Latest milestone: complex-line vanishing through real-type sources
+
+`SourceCriticalRootRatioCircleZeroRealNeighborhood.lean` gives one
+fixed circle whose integral is complex Fréchet differentiable in the
+source and zero on the nearby real-type locus, with the selected gap
+remaining open. `RealLineIdentity.lean` formalizes the local
+one-variable identity principle from a real interval.
+`SourceCriticalRootRatioCircleComplexLineZero.lean` applies it to show
+that the fixed integral vanishes near zero along every complex line
+through the base source with real-type direction. Extending this to a
+full complex-source neighborhood remains open.

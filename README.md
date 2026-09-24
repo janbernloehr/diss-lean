@@ -1716,3 +1716,10 @@ every enclosing circle around an open real-type gap whose filled disc
 excludes the other gaps, regardless of center. Admissible paths and
 extension to nearby complex sources remain for the full statement of
 Lemma 10.11(ii).
+`SourceCriticalRootRatioCircleZeroRealNeighborhood.lean` fixes one
+circle near an open real-type source and proves its integral is
+holomorphic in the source and zero at every nearby real-type source.
+`RealLineIdentity.lean` and `SourceCriticalRootRatioCircleComplexLineZero.lean`
+extend that zero to complex parameters near the base point along each
+real-type source direction. The remaining source step is a uniform
+extension to arbitrary complex directions.
