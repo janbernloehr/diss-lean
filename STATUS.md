@@ -9150,3 +9150,18 @@ real-centered circles at a real-type source. The projected circle
 still encloses the selected gap, and its filled disc avoids the other
 gaps. Moving a real center to the gap midpoint is the next step toward
 arbitrary-center contour vanishing in Lemma 10.11(ii).
+
+## Latest milestone: zero integral on arbitrary enclosing circles
+
+`NestedCircleHomotopy.lean` proves that affine interpolation of nested
+enclosing circles stays inside the outer disc and outside the selected
+gap. `SourceCriticalRootRatioNestedCircle.lean` transfers the quotient
+integral along this homotopy. A real-centered enclosing circle contains
+a smaller midpoint circle, so
+`SourceCriticalRootRatioRealCenteredCircleVanishing.lean` gives its zero
+integral. Combined with vertical projection,
+`SourceCriticalRootRatioEnclosingCircleVanishing.lean` now proves zero
+on every circular contour enclosing an open gap at a real-type source,
+with arbitrary center, provided its filled disc excludes other gaps.
+The remaining Lemma 10.11(ii) work concerns admissible noncircular
+paths and the complex-source extension.

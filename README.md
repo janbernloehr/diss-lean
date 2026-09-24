@@ -1705,10 +1705,14 @@ filled disc avoids the other gaps. `SourceCriticalRootRatioNearMidpointCircle.le
 uses an affine homotopy to give the same zero integral for any smooth
 closed contour uniformly close to such a circle, within an explicit
 gap-free annulus. Its circle corollary permits small changes of both
-center and radius. General enclosing contours and admissible paths,
-followed by extension to nearby complex sources, remain for the full
-statement of Lemma 10.11(ii). `VerticalCircleHomotopy.lean` and
-`SourceCriticalRootRatioVerticalCircle.lean` now reduce any enclosing
+center and radius. `VerticalCircleHomotopy.lean` and
+`SourceCriticalRootRatioVerticalCircle.lean` reduce any enclosing
 circle at a real-type source to a real-centered enclosing circle with
-the same integral. The next contour step is to move that real center
-to the gap midpoint.
+the same integral. `NestedCircleHomotopy.lean` and
+`SourceCriticalRootRatioRealCenteredCircleVanishing.lean` then move that
+real center to the gap midpoint. The resulting theorem in
+`SourceCriticalRootRatioEnclosingCircleVanishing.lean` proves zero for
+every enclosing circle around an open real-type gap whose filled disc
+excludes the other gaps, regardless of center. Admissible paths and
+extension to nearby complex sources remain for the full statement of
+Lemma 10.11(ii).
