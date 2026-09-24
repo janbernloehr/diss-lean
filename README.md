@@ -1726,3 +1726,9 @@ extension to arbitrary complex directions.
 `SourceRealTypeDecomposition.lean` supplies the conjugate-reflection
 involution and a norm-controlled splitting of each complex source
 perturbation into two real-type parts, preparing that extension.
+`RealFormIdentity.lean` turns this splitting into a local uniqueness
+principle for holomorphic scalar functions on complex normed spaces.
+`SourceCriticalRootRatioCircleComplexNeighborhoodZero.lean` consequently
+proves that one fixed gap-enclosing circle has zero quotient integral
+for every complex source in a neighborhood of an open real-type source.
+The admissible noncircular contour case of Lemma 10.11(ii) remains open.

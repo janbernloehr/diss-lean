@@ -9186,3 +9186,15 @@ the real-type sources. Every complex perturbation is now explicitly the sum
 of a real-type part and `I` times another real-type part. Each part has norm
 at most that of the original perturbation. These bounds are the input for a
 uniform complex-source identity argument for the fixed contour integral.
+
+## Latest milestone: fixed-circle vanishing on a complex source neighborhood
+
+`RealFormIdentity.lean` proves a local identity principle for a complex
+Banach space with norm-controlled real and imaginary parts: a holomorphic
+scalar function zero on the real form is zero in a complex neighborhood.
+`SourceCriticalRootRatioCircleComplexNeighborhoodZero.lean` applies it to
+the quotient integral. Around every open real-type gap there is one fixed
+circle and an open complex-source neighborhood on which the circle encloses
+the selected segment, avoids all other gaps in its filled disc, and has
+exactly zero quotient integral. The remaining contour work concerns
+admissible noncircular paths.
