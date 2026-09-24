@@ -1592,3 +1592,9 @@ real-type locus. The remaining argument must deform an enclosing
 contour to these sides, then extend the resulting zero contour identity
 through the complex source neighborhood before proving arbitrary
 admissible-path independence in Lemma 10.11(ii).
+`SourceCriticalRootGapNeighborhood.lean` uses compactness of the selected
+closed gap to find a uniform transverse neighborhood avoiding all other
+gaps. On that neighborhood, both the reciprocal omitted-root product
+and the regular critical-root numerator have finite bounds. The
+remaining local estimate concerns the selected standard root near its
+two branch points.
