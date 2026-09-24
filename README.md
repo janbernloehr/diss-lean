@@ -2211,3 +2211,12 @@ two complex-differentiable extensions of the indexed real action
 agree throughout any convex overlap containing a real-type source.
 The proof restricts to complex lines from that source and uses the
 one-variable analytic identity principle.
+
+## Latest milestone: compatible action charts on source balls
+
+`SourceRealActionBallOverlap.lean` puts every local action extension
+on a ball centered at a real-type source. The real-part projection
+contracts distance to such centers, so every nonempty overlap of
+these balls contains a real-type source. The corresponding fixed-circle
+action formulas therefore agree throughout the overlap. These ball
+charts provide the compatibility needed to glue a complex action.
