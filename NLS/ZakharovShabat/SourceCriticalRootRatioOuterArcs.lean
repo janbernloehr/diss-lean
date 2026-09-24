@@ -1,4 +1,5 @@
 import NLS.ZakharovShabat.SourceCriticalRootRatioEndpointCircleBound
+import NLS.ComplexAnalysis.StadiumCircleCorners
 import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
 
 /-!
@@ -153,6 +154,68 @@ theorem exists_sourceCriticalRootRatio_outerArcs_mem_domain
       exact sourcePeriodicSegment_not_mem_of_outward hp hp1 ψ hreal n _
         (Or.inr ⟨hrightRe, circleMap_ne_center hρ.1.ne'⟩)
     · exact hrightOther m hm
+
+/-- A common small real interval strictly outside each gap endpoint
+avoids every periodic cut. These are the points encountered when an
+outward contour crosses the real axis. -/
+theorem exists_sourceCriticalRootRatio_outerRealIntervals_mem_domain
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    ∃ ε : ℝ, 0 < ε ∧ ∀ η ∈ Ioc 0 ε,
+      l - (η:ℂ) ∈ sourceCanonicalRootDomain hp hp1 ψ ∧
+      r + (η:ℂ) ∈ sourceCanonicalRootDomain hp hp1 ψ := by
+  obtain ⟨ε,hε,houter⟩ :=
+    exists_sourceCriticalRootRatio_outerArcs_mem_domain hp hp1 ψ hreal n
+  have hθ : (0:ℝ) ∈ Icc (-(Real.pi/2)) (Real.pi/2) := by
+    constructor <;> linarith [Real.pi_pos]
+  refine ⟨ε,hε,?_⟩
+  intro η hη
+  have h := houter η hη 0 hθ
+  simpa [circleMap, sub_eq_add_neg] using h
+
+/-- At the real-axis crossing of the stadium-to-corner-circle homotopy,
+the outward offset interpolates between the stadium radius and the
+circle's smaller outward margin. Every such crossing avoids the cuts. -/
+theorem exists_sourceCriticalRootRatio_stadiumCircleCrossings_mem_domain
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let d := (r.re-l.re)/2
+    ∃ ε : ℝ, 0 < ε ∧ ∀ ρ ∈ Ioc 0 ε, ∀ s ∈ Icc (0:ℝ) 1,
+      let η := (1-s)*ρ+s*(stadiumCornerRadius d ρ-d)
+      l - (η:ℂ) ∈ sourceCanonicalRootDomain hp hp1 ψ ∧
+      r + (η:ℂ) ∈ sourceCanonicalRootDomain hp hp1 ψ := by
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let d := (r.re-l.re)/2
+  obtain ⟨ε,hε,hdom⟩ :=
+    exists_sourceCriticalRootRatio_outerRealIntervals_mem_domain
+      hp hp1 ψ hreal n
+  have hd : 0 < d := by
+    change 0 < (r.re-l.re)/2
+    have hgap : l.re < r.re := hopen
+    exact div_pos (sub_pos.mpr hgap) (by norm_num)
+  refine ⟨ε,hε,?_⟩
+  intro ρ hρ s hs
+  let η := (1-s)*ρ+s*(stadiumCornerRadius d ρ-d)
+  have hη := stadiumCornerRadius_affineOffset_mem_Ioc hd hρ.1 hs
+  have hηε : η ∈ Ioc 0 ε := ⟨hη.1,hη.2.trans hρ.2⟩
+  exact hdom η hηε
 
 /-- The full critical-root quotient has one common weighted bound on
 both gap-avoiding outer endpoint arcs. -/

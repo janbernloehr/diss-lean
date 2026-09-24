@@ -36,6 +36,18 @@ theorem stadiumCornerRadius_sub_halfWidth {d ρ : ℝ}
   · nlinarith [sq_pos_of_pos hρ]
   · nlinarith [mul_pos hd hρ]
 
+/-- Every convex interpolation between the stadium's outward offset
+and the corner circle's outward offset remains small and positive. -/
+theorem stadiumCornerRadius_affineOffset_mem_Ioc {d ρ s : ℝ}
+    (hd : 0 < d) (hρ : 0 < ρ) (hs : s ∈ Set.Icc (0:ℝ) 1) :
+    (1-s)*ρ+s*(stadiumCornerRadius d ρ-d) ∈ Set.Ioc 0 ρ := by
+  obtain ⟨hδpos,hδle⟩ := stadiumCornerRadius_sub_halfWidth hd hρ
+  have hlow : 0 ≤ (1-s)*(ρ-(stadiumCornerRadius d ρ-d)) :=
+    mul_nonneg (by linarith [hs.2]) (by linarith)
+  have hhigh : 0 ≤ s*(ρ-(stadiumCornerRadius d ρ-d)) :=
+    mul_nonneg hs.1 (by linarith)
+  constructor <;> nlinarith
+
 /-- The four corner directions have the same norm. -/
 theorem stadiumCorner_norms (d ρ : ℝ) :
     ‖(d:ℂ)+(ρ:ℂ)*I‖ = stadiumCornerRadius d ρ ∧
