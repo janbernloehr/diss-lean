@@ -2168,3 +2168,13 @@ neighborhood. Along every complex affine source line through the
 base point, this circle action is analytic. Identifying one common
 Banach-analytic action across overlapping source neighborhoods and
 all admissible circuits remains open.
+
+## Latest milestone: stable midpoint circle near a real action
+
+`SourceRealActionLocalCircleStability.lean` proves that the specific
+midpoint circle representing an indexed real action remains an
+isolating contour for all sources in an open complex neighborhood.
+The selected gap stays inside the circle, while its filled disc
+continues to avoid every other gap. This supplies the geometric
+stability needed to identify the local circle action with nearby
+real-source actions.
