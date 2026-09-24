@@ -916,3 +916,4 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioGapSides
 import NLS.ZakharovShabat.RealGapCanonicalRootAffineIntegral
 import NLS.ZakharovShabat.SourceCriticalRootRatioGapSideIntegral
 import NLS.ZakharovShabat.SourceCriticalRootRatioContourHomotopy
+import NLS.ZakharovShabat.SourceCriticalRootRatioGapSideRegularity

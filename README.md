@@ -1578,3 +1578,9 @@ particular when the inner circle encloses the selected gap and the
 outer disc avoids every other gap. The slit-to-circle deformation is
 still required to turn the vanishing side-path integrals into the
 enclosing-contour identity.
+`SourceCriticalRootRatioGapSideRegularity.lean` proves the deleted
+critical factor is continuous on the entire closed selected gap. The
+upper and lower straight side-path integrands are therefore interval
+integrable even at the branch-point endpoints, and their doubly
+truncated integrals tend to zero as both cutoffs vanish. These endpoint
+limits are the boundary input for a future slit-to-contour deformation.
