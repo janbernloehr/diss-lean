@@ -8977,3 +8977,16 @@ bound now holds for the actual infinite quotient, on one connected
 source neighborhood with a common large-index threshold. Its sequence
 asymptotic still needs the signed midpoint contribution and quadratic
 product remainder; the sine-product consequence remains open.
+
+## Latest milestone: quadratic midpoint-product remainder
+
+`PhysicalMidpointProductRemainder.lean` bounds the absolute first-order
+physical row by a reciprocal-kernel convolution in the doubled input
+exponent. The general quadratic product estimate then gives an `ℓᑫ`
+sequence for the infinite midpoint product minus one minus its signed
+linear sum, with norm quadratic in the numerator displacement. The
+source specialization and `SourceMidpointProductDiscSup.lean` prove the
+same bound for the supremum over every distant source disc, locally
+uniformly on a connected neighborhood. This includes the `q=1`
+endpoint. The midpoint and gap factors still need to be combined for
+the full Lemma 10.8 sequence asymptotic.

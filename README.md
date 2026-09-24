@@ -1419,3 +1419,9 @@ discs put those spectral points outside every other periodic gap,
 where the literal finite cutoffs converge to the quotient. The sharper
 sequence asymptotic still requires a quadratic midpoint-product
 remainder estimate and combination with the squared-gap correction.
+
+The nonlinear error of the infinite midpoint product now has a
+quadratic `ℓᑫ` bound. The result retains the signed first-order sum
+exactly and controls the supremum of the remainder over each distant
+isolating disc, including at `q=1`. Combining this with the signed
+sum and the squared-gap correction is the remaining product estimate.

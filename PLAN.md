@@ -2489,3 +2489,14 @@ that infinite quotient. Next retain the signed first-order sum when
 estimating the midpoint product, control its quadratic remainder in a
 sequence space, and combine it with the squared-gap correction to get
 the full `ℓᑫ + ℓ^(p/2) + ℓ^{1+}` asymptotic of Lemma 10.8.
+
+`PhysicalMidpointProductRemainder.lean` now puts the absolute physical
+midpoint row in the doubled exponent using reciprocal-kernel Young
+convolution, then applies the quadratic product theorem to return the
+nonlinear remainder to the original exponent. The source specialization
+and `SourceMidpointProductDiscSup.lean` control the supremum of the
+exact infinite midpoint product minus its signed linear sum in `ℓᑫ`,
+including `q=1`, with a bound quadratic in the numerator displacement.
+Next combine this remainder with the signed disc-supremum term, identify
+the midpoint product with the quotient factor, and add the squared-gap
+correction to complete the sequence estimate.
