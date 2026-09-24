@@ -2220,3 +2220,11 @@ contracts distance to such centers, so every nonempty overlap of
 these balls contains a real-type source. The corresponding fixed-circle
 action formulas therefore agree throughout the overlap. These ball
 charts provide the compatibility needed to glue a complex action.
+
+## Latest milestone: a glued complex action near all real-type sources
+
+`SourceComplexAction.lean` glues all valid real-centered ball charts
+into a single complex action at each gap index. Its open domain
+contains every real-type source, and the action is complex Fréchet
+differentiable there. It agrees with every fixed-circle chart on that
+chart's ball and restricts to the indexed real action.
