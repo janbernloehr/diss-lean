@@ -2556,3 +2556,13 @@ shows that a collapsed distant gap has its critical root exactly at
 its midpoint, even for complex source potentials. The remaining
 Lemma 10.10 work is the uniform squared-gap bound at the finitely
 many central indices.
+
+`CriticalOffsetCoefficientOpenGap.lean` now handles the algebraic
+nonvanishing issue at every open real gap, including central indices.
+The critical point lies in the gap interior, where the discriminant
+has modulus greater than two; hence the deleted periodic product is
+nonzero. The quadratic critical identity then makes the coefficient
+nonzero and gives the exact squared-gap offset formula. To finish
+Lemma 10.10, establish the corresponding local bound across collapsed
+central gaps and control the finitely many coefficients uniformly on
+a source neighborhood.

@@ -9062,3 +9062,13 @@ index. Collapsed distant gaps have critical root equal to the
 midpoint, including for complex source potentials. Lemma 10.10's
 finitely many central indices still need a uniform squared-gap
 bound.
+
+## Latest milestone: open-gap central critical offset
+
+`CriticalOffsetCoefficientOpenGap.lean` proves that the deleted
+periodic product is nonzero at the critical point of any open real
+gap. The exact quadratic identity then forces its midpoint
+coefficient to be nonzero and yields a squared-gap quotient formula
+at every such index, including the central ones. This does not yet
+give a common coefficient bound on a complex source neighborhood or
+cover collapsed central gaps.

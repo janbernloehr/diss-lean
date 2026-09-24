@@ -1461,3 +1461,9 @@ uniform squared-gap critical-root offset in source coordinates for
 all sufficiently distant indices and derives equality with the
 midpoint for collapsed distant gaps. The finite central indices
 remain to be handled.
+
+For every open real periodic gap, including central gaps,
+`CriticalOffsetCoefficientOpenGap.lean` proves that the coefficient
+in the critical midpoint identity is nonzero and solves the offset
+exactly as the squared gap times its quotient. Local uniform control
+at central indices, especially near collapsed gaps, is still open.
