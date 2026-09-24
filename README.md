@@ -1760,3 +1760,13 @@ endpoint. Their integrals over shrinking initial connector pieces
 also tend to zero, by continuity of the integral primitive at the
 singular endpoint. Identifying these improper integrals with actual
 endpoint path integrals remains to be done.
+
+`VerticalSegmentIntegral.lean` identifies the actual curve integral of
+a vertical `Path.segment` with its real-coordinate integral, in both
+orientations, and transfers coordinate integrability to curve
+integrability. `SourceCriticalRootRatioEndpointSegmentIntegral.lean`
+applies these results at both endpoints of an open real-type gap.
+The upward and downward segments starting at the branch points are
+curve-integrable, and their curve integrals tend to zero as the
+segments shrink. The full endpoint-to-endpoint admissible path theorem
+remains open.

@@ -9253,3 +9253,14 @@ over shrinking upper and lower connector pieces tend to zero, even
 though the quotient need not have an endpoint value. Identifying the
 improper integral with the actual endpoint path integral and handling
 general complex-source admissible contours remain open.
+
+## Latest milestone: actual singular endpoint segments
+
+`VerticalSegmentIntegral.lean` converts vertical segment curve integrals
+to real-coordinate integrals and proves curve integrability from
+coordinate integrability. `SourceCriticalRootRatioEndpointSegmentIntegral.lean`
+uses this at both branch points of an open real-type gap: upward and
+downward endpoint segments are curve-integrable, with integrals tending
+to zero as their lengths shrink. Combining these segments with paths
+between the shifted endpoints to obtain the complete admissible
+endpoint-to-endpoint path statement remains open.
