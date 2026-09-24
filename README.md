@@ -2264,3 +2264,12 @@ family on an open product domain. `SourceDiscriminantMixedDerivative.lean`
 applies this to the canonical discriminant. Combining this identity
 with the canonical-root derivative and contour integration by parts
 is the next step toward Lemma 11.1's gradient formula.
+
+## Latest milestone: source and spectral derivatives of the canonical root
+
+`SquareRootDerivative.lean` differentiates a nonvanishing square root
+from the identity `Q² = Δ² − 4`. `SourceCanonicalRootSourceFDeriv.lean`
+applies it to the canonical root away from the moving periodic gaps,
+giving both its source Fréchet derivative and spectral derivative as
+`Δ / Q` times the corresponding discriminant derivative. These formulas
+prepare the quotient simplification inside the action integral.
