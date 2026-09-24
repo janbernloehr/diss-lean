@@ -9306,3 +9306,15 @@ stays strictly in its respective half-plane. The resulting actual
 endpoint-to-endpoint curve is integrable, and its integral is zero by
 half-plane path independence. Arbitrary admissible endpoint paths and
 nearby complex sources remain open.
+
+## Latest milestone: gap-avoiding homotopy detours
+
+`SourceCriticalRootRatioOpenPathHomotopy.lean` proves fixed-endpoint
+open-path integral invariance under a smooth homotopy avoiding every
+periodic gap. `SourceCriticalRootRatioHomotopyDetours.lean` combines
+this with the exact-zero upper and lower doglegs. For sufficiently
+short vertical endpoint connectors, a smooth crossing may leave its
+half-plane if it has a smooth, fixed-endpoint, gap-avoiding homotopy
+from the straight crossing. The resulting singular endpoint path is
+curve-integrable and has zero integral. The full admissible endpoint
+path class and nearby complex sources remain open.

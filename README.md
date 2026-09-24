@@ -1802,3 +1802,13 @@ path independence shows that every such endpoint-to-endpoint detour is
 curve-integrable and has exactly zero integral. The result applies to
 both upper and lower crossings. Arbitrary admissible endpoint paths and
 nearby complex sources remain open.
+
+`SourceCriticalRootRatioOpenPathHomotopy.lean` proves that a smooth
+fixed-endpoint deformation through the complement of all periodic gaps
+preserves the critical-root quotient integral of an open path.
+`SourceCriticalRootRatioHomotopyDetours.lean` applies it to the actual
+singular endpoint paths: at sufficiently small upper or lower connector
+lengths, any smooth crossing homotopic to the straight crossing through
+that gap complement is curve-integrable and has integral zero. The
+crossing may leave its original half-plane. General admissible endpoint
+paths and nearby complex sources remain open.
