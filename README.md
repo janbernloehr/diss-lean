@@ -1822,3 +1822,14 @@ applies this to upper and lower endpoint detours with short vertical
 connectors, again giving curve integrability and exactly zero integral.
 General admissible endpoint connectors and nearby complex sources
 remain open.
+
+`SourceCriticalRootRatioEndpointPuncturedBound.lean` extends the
+inverse-square-root estimate from endpoint circles to every point of a
+small punctured endpoint neighborhood outside the spectral gaps.
+`SingularEndpointPathIntegrability.lean` gives a general criterion for
+integrating a one-form with this parameter singularity. Applying both,
+`SourceCriticalRootRatioCurvedEndpointConnector.lean` proves that a
+smooth curved connector beginning at either open-gap branch point is
+curve-integrable when it avoids the gaps, remains in that neighborhood,
+and departs from the branch point at a linear rate. Equality of general
+endpoint-path integrals remains open.

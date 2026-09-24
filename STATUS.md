@@ -9330,3 +9330,16 @@ twice smooth; the full homotopy square need not be differentiable.
 curve-integrable upper and lower singular endpoint paths for that wider
 class of crossings. General admissible connectors and nearby complex
 sources remain open.
+
+## Latest milestone: curved singular endpoint connectors
+
+`SourceCriticalRootRatioEndpointPuncturedBound.lean` gives a radial
+inverse-square-root quotient bound throughout small punctured
+neighborhoods of both endpoints of an open real-type gap.
+`SingularEndpointPathIntegrability.lean` transfers a weighted parameter
+bound to genuine curve integrability. Together they prove in
+`SourceCriticalRootRatioCurvedEndpointConnector.lean` that any smooth
+connector that stays gap-free, remains near its branch point, and
+departs at a linear rate is curve-integrable. Identifying its integral
+with the standard vertical connector, and handling nearby complex
+sources, remain open.
