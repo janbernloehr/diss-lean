@@ -2147,9 +2147,9 @@ range where the action is constant and defines a complex-valued
 indexed action for each real-type source. It proves independence from
 the circle inside that range and shows that the value is real and
 nonnegative, vanishing exactly for a collapsed periodic gap. The
-remaining action construction must connect this real-source value
-to a locally analytic action on nearby complex sources and arbitrary
-admissible circuits.
+construction below connects this real-source value to a complex-
+differentiable action on nearby complex sources. Extension to arbitrary
+admissible circuits remains open.
 
 ## Latest milestone: fixed enclosing-circle representation
 
@@ -2165,9 +2165,10 @@ source to be used for the subsequent local analytic extension.
 representing each indexed real-source action and proves that its
 circle integral is complex Fréchet differentiable on a source
 neighborhood. Along every complex affine source line through the
-base point, this circle action is analytic. Identifying one common
-Banach-analytic action across overlapping source neighborhoods and
-all admissible circuits remains open.
+base point, this circle action is analytic. A common complex-
+differentiable action across overlapping neighborhoods is constructed
+below; full Banach-space analyticity and arbitrary admissible circuits
+remain open.
 
 ## Latest milestone: stable midpoint circle near a real action
 
@@ -2244,3 +2245,13 @@ the unique complex Fréchet differentiable function on its domain that
 agrees with the indexed action at every real-type source. Uniqueness
 is checked on each real-centered convex chart ball and then covers
 the entire domain.
+
+## Latest milestone: explicit source derivative under the action circle integral
+
+`ParametricCircleIntegral.lean` now retains the Fréchet derivative
+constructed by differentiation under a fixed circle integral.
+`SourceActionCircleSourceFDeriv.lean` applies it to the weighted
+critical-root quotient and gives the action's source derivative as
+an explicit angle integral on a complex source neighborhood. The
+spectral integration-by-parts simplification needed for Lemma 11.1's
+gradient formula remains to be proved.

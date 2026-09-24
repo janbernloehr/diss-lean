@@ -16,10 +16,10 @@ namespace NLS.ComplexAnalysis
 
 variable {A : Type*} [NormedAddCommGroup A] [NormedSpace ℂ A]
 
-/-- A jointly analytic integrand with a uniform joint derivative bound
-on a fixed circle has a complex Fréchet-differentiable circle integral
-in its Banach-space parameter. -/
-theorem differentiableAt_circleIntegral_of_jointAnalytic
+/-- The Fréchet derivative of a fixed-circle integral is the angle
+integral of the parameter derivative of its jointly analytic
+integrand. -/
+theorem hasFDerivAt_circleIntegral_of_jointAnalytic
     (F : ℂ × A → ℂ) (D : Set (ℂ × A))
     (hDopen : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
     (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
@@ -28,7 +28,11 @@ theorem differentiableAt_circleIntegral_of_jointAnalytic
     (hdom : ∀ b ∈ V, ∀ θ : ℝ, (circleMap c R θ,b) ∈ D)
     (hbound : ∀ b ∈ V, ∀ θ : ℝ,
       ‖fderiv ℂ F (circleMap c R θ,b)‖ ≤ M) :
-    DifferentiableAt ℂ (fun b : A => ∮ z in C(c, R), F (z,b)) a := by
+    HasFDerivAt (fun b : A => ∮ z in C(c, R), F (z,b))
+      (∫ θ in (0:ℝ)..2*Real.pi,
+        (deriv (circleMap c R) θ) •
+          (fderiv ℂ F (circleMap c R θ,a)).comp
+            (ContinuousLinearMap.inr ℂ ℂ A)) a := by
   let J : A →L[ℂ] ℂ × A := ContinuousLinearMap.inr ℂ ℂ A
   let G : A → ℝ → ℂ := fun b θ =>
     deriv (circleMap c R) θ * F (circleMap c R θ,b)
@@ -91,7 +95,24 @@ theorem differentiableAt_circleIntegral_of_jointAnalytic
     (Filter.Eventually.of_forall fun θ _ b hb => hderiv_bound b hb θ)
     intervalIntegrable_const
     (Filter.Eventually.of_forall fun θ _ b hb => hdiff θ b hb)
-  change DifferentiableAt ℂ (fun b : A => ∫ θ in (0:ℝ)..2*Real.pi, G b θ) a
-  exact hmain.differentiableAt
+  change HasFDerivAt (fun b : A => ∫ θ in (0:ℝ)..2*Real.pi, G b θ)
+    (∫ θ in (0:ℝ)..2*Real.pi, G' a θ) a
+  exact hmain
+
+/-- A jointly analytic integrand with a uniform joint derivative bound
+on a fixed circle has a complex Fréchet-differentiable circle integral
+in its Banach-space parameter. -/
+theorem differentiableAt_circleIntegral_of_jointAnalytic
+    (F : ℂ × A → ℂ) (D : Set (ℂ × A))
+    (hDopen : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (V : Set A) (hVopen : IsOpen V) (a : A) (haV : a ∈ V)
+    (M : ℝ)
+    (hdom : ∀ b ∈ V, ∀ θ : ℝ, (circleMap c R θ,b) ∈ D)
+    (hbound : ∀ b ∈ V, ∀ θ : ℝ,
+      ‖fderiv ℂ F (circleMap c R θ,b)‖ ≤ M) :
+    DifferentiableAt ℂ (fun b : A => ∮ z in C(c, R), F (z,b)) a :=
+  (hasFDerivAt_circleIntegral_of_jointAnalytic F D hDopen hF
+    c R hR V hVopen a haV M hdom hbound).differentiableAt
 
 end NLS.ComplexAnalysis
