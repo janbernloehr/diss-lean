@@ -9381,3 +9381,15 @@ vertical connector difference minus the right difference. The proof
 uses half-plane path independence and the exact-zero dogleg. It
 reduces fixed-path vanishing to controlling the two connector
 comparisons; that endpoint equality remains open for general curves.
+
+`ConvexHolomorphicPrimitive.lean` proves primitive evaluation of
+holomorphic one-form integrals along `C¹` paths in open convex domains.
+`SourceCriticalRootRatioHalfPlanePrimitive.lean` instantiates this for
+the critical-root quotient above and below a real-type gap, including
+oriented sums of regular path pieces with corners.
+`SourceCriticalRootRatioPiecewiseCurvedDetour.lean` uses the resulting
+telescoping identity and the zero-integral doglegs to prove exact zero
+for complete singular endpoint paths with short initial vertical
+segments followed by arbitrary `C¹` curved tails and crossings in one
+half-plane. General immediately curved singular connectors still need
+a limiting or singular homotopy comparison with the vertical ones.

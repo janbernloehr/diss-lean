@@ -1873,3 +1873,16 @@ connector's integral minus its vertical reference integral, minus the
 same difference at the right connector. Thus the crossing creates no
 additional error; the comparison isolates the exact endpoint work
 needed to extend fixed-height zero-integral results to curved paths.
+
+## Latest milestone: exact-zero piecewise curved detours
+
+`ConvexHolomorphicPrimitive.lean` evaluates a holomorphic one-form
+along a `C¹` path in an open convex domain by a primitive's endpoint
+values. `SourceCriticalRootRatioHalfPlanePrimitive.lean` supplies such
+primitives above and below the real axis and proves that regular
+piecewise paths telescope across corners. Applying this,
+`SourceCriticalRootRatioPiecewiseCurvedDetour.lean` proves exact zero
+for complete paths that first leave both singular gap endpoints along
+short vertical segments, then follow arbitrary `C¹` curved tails and
+a crossing within one open half-plane. Exact zero for connectors
+curving immediately at the branch points remains open.
