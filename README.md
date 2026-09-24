@@ -1851,3 +1851,15 @@ its radial departure rate. In particular, a family of short curved
 connectors whose speed and departure both scale with its size has
 integral tending to zero. Comparing full paths with curved connectors
 to a zero-integral dogleg remains open.
+
+## Latest milestone: shrinking complete curved detours
+
+`SourceCriticalRootRatioCurvedDetourLimit.lean` proves that complete
+branch-point-to-branch-point paths have integrals tending to zero as
+positive height or depth shrinks. Both endpoint connectors may curve,
+provided their radial departure and speed have uniform bounds
+proportional to the height or depth. The middle path may be any smooth
+crossing contained in the corresponding open half-plane. The proof
+combines the curved connector estimates with the crossing integral
+limit and the exact three-piece path integral decomposition. Exact
+zero for a fixed general curved detour remains open.

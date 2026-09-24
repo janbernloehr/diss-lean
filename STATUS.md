@@ -9365,3 +9365,11 @@ at least as `k t`, its integral is bounded by a constant times
 `D / √k`. For a family with `D = O(y)` and `k` proportional to `y`,
 the actual curved-connector integrals tend to zero. Proving exact
 vanishing for general endpoint-to-endpoint paths remains open.
+
+`SourceCriticalRootRatioCurvedDetourLimit.lean` combines the connector
+limit, the exact path decomposition, and upper or lower half-plane
+crossing limits. Uniformly scaled curved endpoint connectors and an
+arbitrary smooth crossing give a complete endpoint-to-endpoint path
+whose quotient one-form integral tends to zero as its positive height
+or depth tends to zero. Exact vanishing for a fixed general curved
+path, beyond the existing homotopy and dogleg cases, remains open.
