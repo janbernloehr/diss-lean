@@ -2003,4 +2003,13 @@ tends to twice the upper gap-side boundary value. That value is real
 and nonzero on an open real-type gap. Combining the limit with the
 stadium-to-circle deformation, `SourceActionCircleNonzero.lean` proves
 that the action on all sufficiently small corner circles is nonzero.
-Identifying its exact real value and positive sign remains open.
+
+## Latest milestone: exact action on small gap circles
+
+`SourceActionMidpointCircleValue.lean` proves radial invariance of the
+weighted action on cut-avoiding annuli, then identifies the action on
+every sufficiently small midpoint circle with minus twice the upper
+gap-side boundary integral divided by π. The formula shows that these
+actions are real and nonzero on every open real-type gap. Establishing
+the canonical-root orientation needed for a strictly positive sign
+remains open.

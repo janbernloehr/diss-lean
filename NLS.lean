@@ -999,3 +999,4 @@ import NLS.ZakharovShabat.SourceActionHorizontalLimit
 import NLS.ZakharovShabat.SourceActionBoundaryGapSide
 import NLS.ZakharovShabat.SourceActionStadiumLimit
 import NLS.ZakharovShabat.SourceActionCircleNonzero
+import NLS.ZakharovShabat.SourceActionMidpointCircleValue
