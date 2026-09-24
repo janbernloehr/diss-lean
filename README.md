@@ -1556,3 +1556,9 @@ the corresponding lower-side real-axis integral vanishes because its
 canonical-root boundary value is the negative of the upper one.
 The enclosing-contour path integral still needs to be related to
 these two boundary integrals.
+`SourceCriticalRootRatioGapSides.lean` identifies each interior
+boundary value of the discriminant quotient with the selected
+standard-root side kernel multiplied by the analytic deleted critical
+factor. This gives the pointwise connection to the existing straight
+gap-side path-integral construction; its integral and contour
+deformation remain to be formalized.
