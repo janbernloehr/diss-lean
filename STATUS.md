@@ -9474,3 +9474,17 @@ curve-integrable endpoint-to-endpoint detour with exactly zero
 integral. The linear-departure criterion is still a useful sufficient
 condition for connector integrability. Paths crossing the real axis
 or lacking integrability are outside these statements.
+
+## Latest milestone: smooth loops around collapsed gaps
+
+`ConvexHolomorphicPrimitive.lean` now also gives zero integrals for
+`C¹` loops of holomorphic one-forms in open convex sets, using a
+primitive rather than a twice-smooth homotopy.
+`SourceCriticalRootRatioCollapsedLoop.lean` applies this to the
+analytic extension of the critical-root quotient at a collapsed gap
+in Lemma 10.11(ii). On the global almost-real source neighborhood,
+every `C¹` loop inside an isolating disc has zero actual quotient
+integral if the filled disc avoids the other gaps and the loop avoids
+all periodic cuts. The loop may wind around the collapsed point and
+need not be circular. The theorem does not assert zero for loops whose
+filled region reaches another gap.

@@ -268,6 +268,19 @@ theorem curveIntegral_eq_of_convex_paths_one
   rw [curveIntegral_eq_sub_of_primitive f F s hF γ₁ hγ₁ hγ₁s hγ₁int,
     curveIntegral_eq_sub_of_primitive f F s hF γ₂ hγ₂ hγ₂s hγ₂int]
 
+/-- A `C¹` loop of a holomorphic one-form inside an open convex set
+has zero integral. This needs only one derivative of the path. -/
+theorem curveIntegral_eq_zero_of_convex_loop_one
+    (f : ℂ → ℂ) (s : Set ℂ) (hconv : Convex ℝ s)
+    (hopen : IsOpen s) (hf : DifferentiableOn ℂ f s)
+    {a : ℂ} (γ : Path a a)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hγs : ∀ t ∈ Icc (0:ℝ) 1, γ.extend t ∈ s)
+    (hint : CurveIntegrable (holomorphicOneForm f) γ) :
+    (∫ᶜ z in γ, holomorphicOneForm f z) = 0 := by
+  obtain ⟨F,hF⟩ := exists_primitive_on_convex f s hconv hopen hf
+  rw [curveIntegral_eq_sub_of_primitive f F s hF γ hγ hγs hint, sub_self]
+
 /-- Primitive evaluation makes curve integrals additive across a
 corner, even though the concatenated path need not be globally `C¹`. -/
 theorem curveIntegral_add_eq_of_primitive
