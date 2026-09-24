@@ -1741,3 +1741,11 @@ under explicit inner and outer gap-isolation margins.
 `SourceCriticalRootRatioCircleAllGaps.lean` also covers collapsed base
 gaps: the fixed-circle integral vanishes for every complex source in
 a neighborhood of any real-type base potential.
+`ConvexHolomorphicPathIntegral.lean` and
+`SourceCriticalRootRatioHalfPlanePaths.lean` establish path
+independence in the upper and lower half-planes at real-type sources.
+`SourceCriticalRootRatioArbitraryHalfPlanePathLimit.lean` uses this to
+show that the quotient integral along any smooth family of paths
+between the vertically shifted endpoints of an open real gap tends
+to zero as the height shrinks. Actual endpoint paths still require
+an improper-integral argument.

@@ -9227,3 +9227,16 @@ collapsed gap uses analytic removability across the common endpoint.
 The real-form identity principle then extends zero to a complex-source
 neighborhood of every real-type base source. This covers collapsed
 base gaps, including the zero potential.
+
+## Latest milestone: arbitrary paths approaching real gap sides
+
+`ConvexHolomorphicPathIntegral.lean` proves open-path integral
+independence within convex holomorphic domains. The upper and lower
+half-planes avoid every gap of a real-type source, so
+`SourceCriticalRootRatioHalfPlanePaths.lean` applies this to the
+critical-root quotient. `SourceCriticalRootRatioArbitraryHalfPlanePathLimit.lean`
+then identifies any smooth upper or lower path between vertically
+shifted gap endpoints with the straight horizontal segment. Its
+integral tends to zero as the shift tends to zero, independently of
+the path family's shape or length. A path with actual singular gap
+endpoints, and general complex-source admissible paths, remain open.
