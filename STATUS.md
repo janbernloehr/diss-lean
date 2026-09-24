@@ -9207,3 +9207,13 @@ homotopy whose entire range avoids the periodic gaps. The transfer holds
 throughout the same complex-source neighborhood. Formalizing the
 gap-avoiding homotopy for general admissible contours, and then the
 endpoint-to-endpoint path integral, remains open.
+
+## Latest milestone: explicit nearby complex-source contours
+
+`SourceCriticalRootRatioComplexNearCircle.lean` constructs the needed
+homotopy for any twice-smooth loop uniformly close to the fixed circle.
+Explicit inner and outer radial margins keep the entire affine
+deformation outside the selected gap and away from all other gaps.
+Thus the zero-integral statement applies to a concrete class of
+noncircular contours for each nearby complex source. General
+admissible contours and endpoint-to-endpoint integrals remain open.

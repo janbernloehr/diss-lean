@@ -1735,3 +1735,6 @@ The admissible noncircular contour case of Lemma 10.11(ii) remains open.
 `SourceCriticalRootRatioComplexLoopZero.lean` covers smooth closed loops
 with a supplied smooth gap-avoiding homotopy to the fixed circle, for
 every source in that complex neighborhood.
+`SourceCriticalRootRatioComplexNearCircle.lean` supplies the homotopy
+automatically for smooth contours uniformly close to the fixed circle,
+under explicit inner and outer gap-isolation margins.
