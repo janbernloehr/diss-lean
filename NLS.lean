@@ -989,3 +989,5 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioCircleSourceDifferentiable
 import NLS.ZakharovShabat.SourceActionCircle
 import NLS.ZakharovShabat.SourceActionCircleAnalytic
 import NLS.ZakharovShabat.SourceActionContourHomotopy
+import NLS.ZakharovShabat.RealGapWeightedArcoshIntegral
+import NLS.ZakharovShabat.RealGapCanonicalRootWeightedIntegral

@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Arcosh
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 
 /-!
 # An arcosh endpoint identity for an open spectral gap
@@ -44,5 +45,77 @@ theorem integral_deriv_div_sqrt_sq_sub_one_eq_zero
   have hi := intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le hab
     hFcont hFderiv hint
   simpa only [F, ha, hb, Real.arcosh_zero, sub_self] using hi
+
+/-- Multiplication by a centered spectral coordinate turns the
+arcosh derivative into minus the area under the positive arcosh
+profile. The center may be any real number. -/
+theorem integral_sub_mul_deriv_div_sqrt_sq_sub_one_eq_neg_arcosh
+    (f f' : ℝ → ℝ) (a b q : ℝ) (hab : a < b)
+    (hcont : ContinuousOn f (Icc a b))
+    (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f (f' x) x)
+    (ha : f a = 1) (hb : f b = 1)
+    (hinterior : ∀ x ∈ Ioo a b, 1 < f x)
+    (hint : IntervalIntegrable
+      (fun x => f' x / Real.sqrt ((f x)^2 - 1)) volume a b) :
+    (∫ x in a..b, (x-q) * (f' x / Real.sqrt ((f x)^2 - 1))) =
+      -(∫ x in a..b, Real.arcosh (f x)) := by
+  let F : ℝ → ℝ := fun x => Real.arcosh (f x)
+  have hge (x : ℝ) (hx : x ∈ Icc a b) : 1 ≤ f x := by
+    by_cases hxa : x = a
+    · simpa [hxa] using ha.ge
+    by_cases hxb : x = b
+    · simpa [hxb] using hb.ge
+    exact (hinterior x ⟨lt_of_le_of_ne hx.1 (Ne.symm hxa),
+      lt_of_le_of_ne hx.2 hxb⟩).le
+  have hFcont : ContinuousOn F (uIcc a b) := by
+    rw [uIcc_of_le hab.le]
+    exact Real.continuousOn_arcosh.comp hcont (fun x hx => hge x hx)
+  have hFderiv (x : ℝ) (hx : x ∈ Ioo a b) :
+      HasDerivAt F (f' x / Real.sqrt ((f x)^2 - 1)) x := by
+    have h := (Real.hasDerivAt_arcosh (hinterior x hx)).comp x (hderiv x hx)
+    simpa only [F, Function.comp_def, div_eq_mul_inv, mul_comm] using h
+  have hFint : IntervalIntegrable F volume a b :=
+    hFcont.intervalIntegrable
+  have hu : ContinuousOn (fun x : ℝ => x-q) (uIcc a b) := by fun_prop
+  have hu' (x : ℝ) (hx : x ∈ Ioo a b) :
+      HasDerivAt (fun y : ℝ => y-q) 1 x := by
+    simpa using (hasDerivAt_id x).sub_const q
+  have hparts := intervalIntegral.integral_mul_deriv_eq_deriv_mul_of_hasDerivAt
+    hu hFcont
+    (fun x hx => hu' x (by simpa [min_eq_left hab.le, max_eq_right hab.le] using hx))
+    (fun x hx => hFderiv x (by simpa [min_eq_left hab.le, max_eq_right hab.le] using hx))
+    intervalIntegrable_const hint
+  change (∫ x in a..b,
+      (x-q) * (f' x / Real.sqrt ((f x)^2 - 1))) = _ at hparts
+  simpa only [one_mul, F, ha, hb, Real.arcosh_zero, mul_zero,
+    sub_zero, zero_sub] using hparts
+
+/-- The weighted arcosh derivative has a strictly negative integral
+across an open gap, irrespective of the chosen center. -/
+theorem integral_sub_mul_deriv_div_sqrt_sq_sub_one_neg
+    (f f' : ℝ → ℝ) (a b q : ℝ) (hab : a < b)
+    (hcont : ContinuousOn f (Icc a b))
+    (hderiv : ∀ x ∈ Ioo a b, HasDerivAt f (f' x) x)
+    (ha : f a = 1) (hb : f b = 1)
+    (hinterior : ∀ x ∈ Ioo a b, 1 < f x)
+    (hint : IntervalIntegrable
+      (fun x => f' x / Real.sqrt ((f x)^2 - 1)) volume a b) :
+    (∫ x in a..b, (x-q) * (f' x / Real.sqrt ((f x)^2 - 1))) < 0 := by
+  rw [integral_sub_mul_deriv_div_sqrt_sq_sub_one_eq_neg_arcosh
+    f f' a b q hab hcont hderiv ha hb hinterior hint]
+  have hge (x : ℝ) (hx : x ∈ Icc a b) : 1 ≤ f x := by
+    by_cases hxa : x = a
+    · simpa [hxa] using ha.ge
+    by_cases hxb : x = b
+    · simpa [hxb] using hb.ge
+    exact (hinterior x ⟨lt_of_le_of_ne hx.1 (Ne.symm hxa),
+      lt_of_le_of_ne hx.2 hxb⟩).le
+  have hFcont : ContinuousOn (fun x : ℝ => Real.arcosh (f x)) (Icc a b) :=
+    Real.continuousOn_arcosh.comp hcont (fun x hx => hge x hx)
+  have hFint : IntervalIntegrable (fun x : ℝ => Real.arcosh (f x))
+      volume a b := (hFcont.intervalIntegrable_of_Icc hab.le)
+  have hpos := intervalIntegral_pos_of_pos_on hFint
+    (fun x hx => Real.arcosh_pos (hinterior x hx)) hab
+  linarith
 
 end NLS.ComplexAnalysis

@@ -9519,3 +9519,22 @@ comparison work on one complex source neighborhood of any real-type
 base potential and signed gap index. This establishes contour choice
 independence for those circles; arbitrary admissible circuits still
 require a geometric homotopy or winding argument.
+
+## Latest milestone: weighted real-gap integral for actions
+
+`ArcoshGapIntegral.lean` now proves an integration-by-parts identity
+for the singular but integrable weighted arcosh derivative: multiplying
+by `x-q` gives minus the integral of the positive arcosh profile,
+independently of the real center `q`. The weighted integral is
+strictly negative on an open gap.
+
+`RealGapArcoshIntegral.lean` exposes the signed-discriminant gap data
+shared by its original unweighted proof and the action calculation.
+`RealGapWeightedArcoshIntegral.lean` specializes the weighted identity
+and strict sign to every open real-type periodic gap.
+`RealGapCanonicalRootWeightedIntegral.lean` transfers it to the upper
+canonical-root boundary quotient: that weighted integral is real and
+nonzero, with two possible signs according to the root branch. To
+finish the positivity clause of Lemma 11.1, the weighted enclosing
+contour must be related to this boundary integral and its canonical
+orientation/sign fixed.

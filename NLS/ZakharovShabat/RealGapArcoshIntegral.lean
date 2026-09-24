@@ -23,23 +23,19 @@ def realGapHalfDiscriminant (hp : p ≠ ⊤) (φ : PairSpace p)
   (if n % 2 = 0 then (canonicalDiscriminant hp φ x).re
     else -(canonicalDiscriminant hp φ x).re)/2
 
-/-- The real arcosh derivative integrates to zero across an open
-periodic gap. The integrability hypothesis isolates the endpoint
-square-root estimate from the fundamental-theorem step. -/
-theorem integral_realGapHalfDiscriminant_arcosh_deriv_eq_zero
+/-- The signed real half-discriminant has equal endpoint values and
+is strictly above one on the interior of each open periodic gap. -/
+theorem realGapHalfDiscriminant_arcosh_gap_data
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : PairSpace p) (heven : φ ∈ pairParitySubspace 0)
-    (hreal : IsRealType φ) (n : ℤ)
-    (hint : IntervalIntegrable
-      (fun x : ℝ =>
-        deriv (realGapHalfDiscriminant hp φ n) x /
-          Real.sqrt ((realGapHalfDiscriminant hp φ n x)^2 - 1))
-      volume (canonicalPeriodicLeft hp hp1 φ heven n).re
-        (canonicalPeriodicRight hp hp1 φ heven n).re) :
-    (∫ x in (canonicalPeriodicLeft hp hp1 φ heven n).re..
-        (canonicalPeriodicRight hp hp1 φ heven n).re,
-      deriv (realGapHalfDiscriminant hp φ n) x /
-        Real.sqrt ((realGapHalfDiscriminant hp φ n x)^2 - 1)) = 0 := by
+    (hreal : IsRealType φ) (n : ℤ) :
+    let a := (canonicalPeriodicLeft hp hp1 φ heven n).re
+    let b := (canonicalPeriodicRight hp hp1 φ heven n).re
+    let g := realGapHalfDiscriminant hp φ n
+    a ≤ b ∧ ContinuousOn g (Icc a b) ∧
+      (∀ x ∈ Ioo a b, HasDerivAt g (deriv g x) x) ∧
+      g a = 1 ∧ g b = 1 ∧
+      (∀ x ∈ Ioo a b, 1 < g x) := by
   let a := (canonicalPeriodicLeft hp hp1 φ heven n).re
   let b := (canonicalPeriodicRight hp hp1 φ heven n).re
   let g := realGapHalfDiscriminant hp φ n
@@ -108,7 +104,32 @@ theorem integral_realGapHalfDiscriminant_arcosh_deriv_eq_zero
     · simp only [Int.even_iff, hn, if_false, neg_one_mul] at h
       simp only [g,realGapHalfDiscriminant,if_neg hn]
       linarith
+  exact ⟨hab,hcont,hderiv,hleft,hright,hgt⟩
+
+/-- The real arcosh derivative integrates to zero across an open
+periodic gap. The integrability hypothesis isolates the endpoint
+square-root estimate from the fundamental-theorem step. -/
+theorem integral_realGapHalfDiscriminant_arcosh_deriv_eq_zero
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : PairSpace p) (heven : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) (n : ℤ)
+    (hint : IntervalIntegrable
+      (fun x : ℝ =>
+        deriv (realGapHalfDiscriminant hp φ n) x /
+          Real.sqrt ((realGapHalfDiscriminant hp φ n x)^2 - 1))
+      volume (canonicalPeriodicLeft hp hp1 φ heven n).re
+        (canonicalPeriodicRight hp hp1 φ heven n).re) :
+    (∫ x in (canonicalPeriodicLeft hp hp1 φ heven n).re..
+        (canonicalPeriodicRight hp hp1 φ heven n).re,
+      deriv (realGapHalfDiscriminant hp φ n) x /
+        Real.sqrt ((realGapHalfDiscriminant hp φ n x)^2 - 1)) = 0 := by
+  obtain ⟨hab,hcont,hderiv,hleft,hright,hgt⟩ :=
+    realGapHalfDiscriminant_arcosh_gap_data hp hp1 φ heven hreal n
   exact NLS.ComplexAnalysis.integral_deriv_div_sqrt_sq_sub_one_eq_zero
-    g (deriv g) a b hab hcont hderiv hleft hright hgt hint
+    (realGapHalfDiscriminant hp φ n)
+    (deriv (realGapHalfDiscriminant hp φ n))
+    (canonicalPeriodicLeft hp hp1 φ heven n).re
+    (canonicalPeriodicRight hp hp1 φ heven n).re
+    hab hcont hderiv hleft hright hgt hint
 
 end NLS.ZakharovShabat
