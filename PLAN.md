@@ -2576,3 +2576,12 @@ the midpoint coefficient nonzero and gives the exact squared-gap
 critical-root formula at every index of each real-type potential.
 The remaining Lemma 10.10 step is to extend that formula and its
 uniform `ℓᵖ` coefficient bound to a complex source neighborhood.
+
+`SourceDeletedPairOmittedSquare.lean` now identifies the deleted
+periodic-pair product with the square of the corresponding omitted
+standard-root product, first for literal cutoffs and then for their
+entire limits. On any common isolating-disc family, the deleted
+periodic product is nonzero throughout the selected disc, even along
+the selected gap and at its endpoints. This supplies the nonvanishing
+input for extending the central critical-offset argument to nearby
+complex sources.

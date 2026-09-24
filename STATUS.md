@@ -9084,3 +9084,14 @@ vanishes at a real-type potential, so the exact squared-gap offset
 formula holds at all signed indices. Extending the formula and a
 uniform `ℓᵖ` coefficient bound across a complex source neighborhood
 is still open.
+
+## Latest milestone: deleted periodic product on source discs
+
+`SourceDeletedPairOmittedSquare.lean` proves that the finite and
+infinite deleted periodic-pair products are the squares of the
+corresponding omitted standard-root products on their moving-gap
+domain. Since the omitted standard-root product is nonzero there,
+the deleted periodic product has no zeros anywhere in an assigned
+source isolating disc, including at selected-gap endpoints. This is
+the complex-source nonvanishing input for the remaining central
+critical-offset bound.

@@ -1474,3 +1474,8 @@ now holds at every index, including collapsed central gaps.
 exact algebraic multiplicity of a collapsed periodic pair. The local
 uniform `ℓᵖ` bound on a complex source neighborhood remains to be
 established.
+
+The deleted periodic-pair product is now identified with the square
+of the omitted standard-root product wherever the other gap segments
+are avoided. This proves that it is nonzero throughout each assigned
+isolating disc, including on the selected gap and its endpoints.
