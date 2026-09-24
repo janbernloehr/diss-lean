@@ -1841,3 +1841,13 @@ points, is curve-integrable, and its integral is exactly the left
 connector integral plus the crossing integral minus the right
 connector integral. Showing this sum vanishes for general curved
 connectors remains open.
+
+`SingularEndpointPathIntegrability.lean` now also bounds the norm of a
+curve integral from a square-root weighted bound on its pulled-back
+one-form. `SourceCriticalRootRatioCurvedConnectorIntegralBound.lean`
+applies this at both open-gap endpoints: the connector integral is
+bounded explicitly by its maximum speed divided by the square root of
+its radial departure rate. In particular, a family of short curved
+connectors whose speed and departure both scale with its size has
+integral tending to zero. Comparing full paths with curved connectors
+to a zero-integral dogleg remains open.

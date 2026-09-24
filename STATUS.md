@@ -9353,3 +9353,15 @@ branch point to the other. Its quotient one-form is curve-integrable,
 and the integral splits into the oriented sum of its three pieces.
 The comparison of curved connector integrals with the vertical ones,
 needed to prove a general zero-integral statement, remains open.
+
+## Latest milestone: shrinking curved connector integrals
+
+`SingularEndpointPathIntegrability.lean` now gives an explicit norm
+bound for a curve integral with inverse-square-root parameter growth.
+`SourceCriticalRootRatioCurvedConnectorIntegralBound.lean` specializes
+it to both branch points of an open real-type gap. If the connector's
+speed is bounded by `D` and its distance from the branch point grows
+at least as `k t`, its integral is bounded by a constant times
+`D / √k`. For a family with `D = O(y)` and `k` proportional to `y`,
+the actual curved-connector integrals tend to zero. Proving exact
+vanishing for general endpoint-to-endpoint paths remains open.
