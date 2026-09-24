@@ -1966,3 +1966,12 @@ the recentered weighted quotient and proves that the positively
 oriented action circle is the negative normalized integral over the
 clockwise stadium. The remaining boundary step is to take the
 weighted stadium integral to the two gap sides as its radius shrinks.
+
+## Latest milestone: weighted endpoint arcs vanish
+
+`SourceActionOuterArcLimit.lean` identifies the action's weighted
+endpoint semicircle integrals with bundled curve integrals and gives
+both an explicit square-root radius bound. Thus both outward arc
+contributions tend to zero as the stadium shrinks. The weighted upper
+and lower horizontal integrals still need to be identified with their
+gap-side boundary limits before the stadium limit can be assembled.
