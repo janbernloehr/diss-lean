@@ -895,3 +895,5 @@ import NLS.ZakharovShabat.SourceDeletedPairOmittedSquare
 import NLS.ZakharovShabat.SourceCriticalOffsetCoefficientNonzero
 import NLS.ComplexAnalysis.JointSpectralDerivative
 import NLS.ZakharovShabat.SourceDeletedPairJointAnalytic
+import NLS.ZakharovShabat.SourceCriticalGapQuotientContinuity
+import NLS.ZakharovShabat.SourceCriticalGapQuotientUniform

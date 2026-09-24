@@ -1455,25 +1455,21 @@ consequence with `ℓᵖ + ℓ^(p/2)` disc majorants near real-type base
 sources. The dissertation's wider setting and later lemmas still
 require work.
 
-The next step toward Lemma 10.10 is in
+The distant-index step toward Lemma 10.10 is in
 `SourceCriticalMidpointGapSquaredTail.lean`. It states the locally
 uniform squared-gap critical-root offset in source coordinates for
 all sufficiently distant indices and derives equality with the
-midpoint for collapsed distant gaps. The finite central indices
-remain to be handled.
+midpoint for collapsed distant gaps.
 
 For every open real periodic gap, including central gaps,
 `CriticalOffsetCoefficientOpenGap.lean` proves that the coefficient
 in the critical midpoint identity is nonzero and solves the offset
-exactly as the squared gap times its quotient. Local uniform control
-at central indices, especially near collapsed gaps, is still open.
+exactly as the squared gap times its quotient.
 
 At a real-type potential, the exact squared-gap critical-root formula
 now holds at every index, including collapsed central gaps.
 `CriticalOffsetCoefficientCollapsedGap.lean` proves this using the
-exact algebraic multiplicity of a collapsed periodic pair. The local
-uniform `ℓᵖ` bound on a complex source neighborhood remains to be
-established.
+exact algebraic multiplicity of a collapsed periodic pair.
 
 The deleted periodic-pair product is now identified with the square
 of the omitted standard-root product wherever the other gap segments
@@ -1483,10 +1479,13 @@ isolating disc, including on the selected gap and its endpoints.
 The exact squared-gap critical-root formula now extends to every
 index of the connected almost-real complex source domain. At a
 collapsed gap, cluster separation identifies its critical root with
-the common endpoint. A common local `ℓᵖ` bound for the quotient
-coefficients remains open.
+the common endpoint.
 
 The deleted periodic-pair product is jointly analytic on the omitted
 root domain, and its spectral derivative is jointly continuous there.
-These regularity facts support the remaining local bound for the
-finitely many central critical-offset coefficients.
+`SourceCriticalGapQuotientContinuity.lean` uses this to prove fixed-index
+quotient continuity and a common bound for any finite central block.
+`SourceCriticalGapQuotientUniform.lean` combines that block with the
+uniform distant tail. This yields the all-index squared-gap formula
+of Lemma 10.10 and a locally uniform `ℓᵖ` coefficient bound on a complex
+source neighborhood of each real-type potential.
