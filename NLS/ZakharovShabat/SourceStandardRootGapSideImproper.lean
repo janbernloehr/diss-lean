@@ -11,7 +11,9 @@ open scoped Topology
 
 namespace NLS.ZakharovShabat
 
-private theorem integral_cos_subst (g : ℝ → ℂ) (t : ℝ)
+/-- Substitute `r = cos θ` in a complex interval integral over the
+signed gap parameter. -/
+theorem integral_cos_subst (g : ℝ → ℂ) (t : ℝ)
     (htl : -1 ≤ t) (htr : t ≤ 1) :
     (∫ r in (-1:ℝ)..t, g r) =
       ∫ θ in Real.arccos t..Real.pi, (Real.sin θ) • g (Real.cos θ) := by

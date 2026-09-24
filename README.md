@@ -1632,3 +1632,9 @@ Thus each vertically displaced cosine integral tends to zero on an
 open real-type gap. The remaining work for Lemma 10.11(ii) includes
 relating a surrounding contour to these displaced paths and extending
 the identity through the complex source neighborhood.
+`SourceCriticalRootRatioHorizontalLimit.lean` makes the cosine
+substitution theorem public and applies it to the full quotient. The
+cosine integral is exactly the straight horizontal integral in the
+signed gap parameter, so both upper and lower displaced horizontal
+integrals tend to zero. Connecting them to a closed shrinking contour,
+including its short endpoint connectors, remains to be proved.
