@@ -2052,3 +2052,13 @@ their limit is nonnegative and, because the omitted product cannot
 vanish on that gap, strictly positive. This fixes the canonical-root
 orientation for the central gap and supplies the base case for the
 general index-parity calculation.
+
+## Latest milestone: central upper canonical-root orientation
+
+`SourceCanonicalRootZeroUpperSign.lean` combines the positive central
+omitted product with the positive upper-side standard-root factor.
+It proves that the full canonical-root upper boundary value is
+strictly positive and equals twice the positive arcosh square root
+at every interior point of an open central real gap. The identity is
+also stated in real spectral coordinates for the weighted action
+integral.
