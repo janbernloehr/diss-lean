@@ -1,4 +1,5 @@
 import NLS.ComplexAnalysis.ConvexHolomorphicPathIntegral
+import NLS.ComplexAnalysis.IntegrableDerivativeBoundary
 import Mathlib.MeasureTheory.Integral.CurveIntegral.Poincare
 
 /-!
@@ -93,6 +94,57 @@ theorem curveIntegral_eq_sub_of_primitive_with_limits
     (by norm_num : (0:ℝ) < 1) hderiv hint' hstart hend
   rw [curveIntegral_eq_intervalIntegral_deriv]
   convert hFTC using 1; simp
+
+/-- An integrable singular connector inside the primitive's domain
+determines a finite primitive limit along its parameter. Its integral
+is the regular endpoint value minus that limit. -/
+theorem exists_primitive_limit_along_integrable_path
+    (f F : ℂ → ℂ) (s : Set ℂ)
+    (hF : ∀ z ∈ s, HasDerivAt F (f z) z)
+    {a b : ℂ} (γ : Path a b)
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hγs : ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ∈ s)
+    (hb : b ∈ s)
+    (hint : CurveIntegrable (holomorphicOneForm f) γ) :
+    ∃ A : ℂ,
+      Tendsto (F ∘ γ.extend) (𝓝[>] (0:ℝ)) (𝓝 A) ∧
+      (∀ t ∈ Ioo (0:ℝ) (1/2),
+        F (γ.extend t) = A +
+          ∫ u in Ioc (0:ℝ) t,
+            curveIntegralFun (holomorphicOneForm f) γ u) ∧
+      (∫ᶜ z in γ, holomorphicOneForm f z) = F b - A := by
+  let g : ℝ → ℂ := F ∘ γ.extend
+  let q : ℝ → ℂ := curveIntegralFun (holomorphicOneForm f) γ
+  have hq : IntegrableOn q (Ioo (0:ℝ) 1) :=
+    (intervalIntegrable_iff_integrableOn_Ioo_of_le zero_le_one).mp hint
+  have hg (t : ℝ) (ht : t ∈ Ioo (0:ℝ) 1) : HasDerivAt g (q t) t := by
+    have hγdiff : DifferentiableAt ℝ γ.extend t :=
+      (hγ.differentiableOn (by norm_num) t (Ioo_subset_Icc_self ht)).differentiableAt
+        (Filter.mem_of_superset (Ioo_mem_nhds ht.1 ht.2) Ioo_subset_Icc_self)
+    have hqval : q t = f (γ.extend t) * deriv γ.extend t := by
+      dsimp only [q]
+      rw [curveIntegralFun_def]
+      have htnhds : I ∈ 𝓝 t :=
+        Filter.mem_of_superset (Ioo_mem_nhds ht.1 ht.2) Ioo_subset_Icc_self
+      rw [derivWithin_of_mem_nhds htnhds]
+      rfl
+    rw [hqval]
+    simpa only [g, Function.comp_def, smul_eq_mul, mul_comm] using
+      (hF (γ.extend t) (hγs t ht)).scomp t hγdiff.hasDerivAt
+  obtain ⟨A,hstart,hformula⟩ :=
+    exists_tendsto_zero_of_integrable_derivative g q 1 (by norm_num) hq hg
+  have hend : Tendsto (F ∘ γ.extend) (𝓝[<] (1:ℝ)) (𝓝 (F b)) := by
+    have hγend : Tendsto γ.extend (𝓝[<] (1:ℝ)) (𝓝 b) := by
+      have hγ1 : ContinuousAt γ.extend (1:ℝ) := γ.continuous_extend.continuousAt
+      have hγ1' : Tendsto γ.extend (𝓝[<] (1:ℝ)) (𝓝 (γ.extend 1)) :=
+        hγ1.tendsto.mono_left nhdsWithin_le_nhds
+      simpa only [Path.extend_one] using hγ1'
+    exact (hF b hb).continuousAt.tendsto.comp hγend
+  refine ⟨A,hstart,?_,?_⟩
+  · intro t ht
+    exact hformula t ht
+  · exact curveIntegral_eq_sub_of_primitive_with_limits
+      f F s hF γ hγ hγs hint hstart hend
 
 /-- If a primitive has a boundary limit at the singular starting
 point, its integral along every smooth integrable connector is the

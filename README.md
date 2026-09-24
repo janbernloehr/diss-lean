@@ -1902,3 +1902,15 @@ difference is the horizontal quotient integral, which tends to zero.
 endpoint paths when the primitive has the required boundary limit.
 Establishing a limit along every half-plane approach to an endpoint
 remains necessary for immediately curved connectors.
+
+## Latest milestone: pathwise limits for curved detours
+
+`ConvexHolomorphicPrimitive.lean` now proves that a primitive has a
+finite limit along any smooth, integrable path with a singular starting
+point, and evaluates the path integral as the endpoint value minus
+that limit. `SourceCriticalRootRatioCurvedConnectorPrimitiveLimit.lean`
+applies this to linearly departing curved connectors in either open
+half-plane. For a complete detour, `SourceCriticalRootRatioCurvedDetourPrimitiveDefect.lean`
+shows its integral equals the right connector's pathwise limit minus
+the left connector's. Proving that arbitrary connector limits agree
+with the previously established vertical-ray limit remains open.

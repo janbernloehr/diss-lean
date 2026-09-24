@@ -9414,3 +9414,20 @@ parameter, and gives a path comparison under a relative boundary
 limit. A full relative half-plane boundary limit, beyond vertical
 rays, is still needed to apply that comparison to arbitrary immediately
 curved connectors.
+
+## Latest milestone: primitive defect formula for curved detours
+
+`ConvexHolomorphicPrimitive.lean` now derives a finite pathwise limit
+of a primitive from integrability of its derivative along any smooth
+connector with a singular start. It gives both a local integral
+formula and the full connector evaluation `F(b) - A`.
+`SourceCriticalRootRatioCurvedConnectorPrimitiveLimit.lean` combines
+this with the inverse-square-root connector integrability theorem for
+the actual critical-root quotient above and below an open real-type
+gap. For a complete curved detour in either half-plane,
+`SourceCriticalRootRatioCurvedDetourPrimitiveDefect.lean` telescopes
+the two connector evaluations and the regular crossing: the complete
+integral is exactly `A_right - A_left`. The formula does not yet show
+that the two pathwise limits equal the common vertical-ray value; that
+boundary comparison is the next step toward exact zero for all such
+detours.
