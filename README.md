@@ -1551,5 +1551,8 @@ boundary quotient needed for the interval-integral comparison.
 integral of the complex discriminant derivative divided by the upper
 canonical-root boundary value is zero on every open real source gap.
 The parity sign of the numerator and the fixed boundary-root sign both
-cancel as constants. The lower-side and enclosing-contour path
-integrals remain to be connected to this interval result.
+cancel as constants. `RealGapCanonicalRootLowerIntegral.lean` proves
+the corresponding lower-side real-axis integral vanishes because its
+canonical-root boundary value is the negative of the upper one.
+The enclosing-contour path integral still needs to be related to
+these two boundary integrals.

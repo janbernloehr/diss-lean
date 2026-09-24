@@ -911,3 +911,4 @@ import NLS.ZakharovShabat.RealGapCanonicalRootValue
 import NLS.ZakharovShabat.RealGapCanonicalRootSign
 import NLS.ZakharovShabat.RealGapCanonicalRootRealAxis
 import NLS.ZakharovShabat.RealGapCanonicalRootUpperIntegral
+import NLS.ZakharovShabat.RealGapCanonicalRootLowerIntegral
