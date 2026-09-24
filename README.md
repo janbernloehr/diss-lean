@@ -1506,9 +1506,8 @@ statements of Lemma 10.11(ii) remain.
 `RealGapArcoshIntegral.lean` formalizes the real open-gap primitive:
 the signed discriminant has arcosh value zero at both endpoints, so
 its arcosh derivative has zero integral whenever the endpoint kernel
-is integrable. The endpoint integrability is established below;
-identifying the gap-side boundary integral with the canonical-root
-quotient remains the next part of Lemma 10.11(ii).
+is integrable. The endpoint integrability and comparison with the
+canonical-root quotient are established below.
 
 `SourceCriticalRootRatioFactorization.lean` separates the selected
 critical-over-standard-root factor from an analytic deleted quotient.
@@ -1560,8 +1559,7 @@ these two boundary integrals.
 boundary value of the discriminant quotient with the selected
 standard-root side kernel multiplied by the analytic deleted critical
 factor. This gives the pointwise connection to the existing straight
-gap-side path-integral construction; its integral and contour
-deformation remain to be formalized.
+gap-side path-integral construction; its integral form follows below.
 `RealGapCanonicalRootAffineIntegral.lean` pulls both vanishing
 real-axis boundary quotient integrals back to the signed interval
 `[-1,1]` with the exact affine Jacobian. This puts them in the same
@@ -1571,3 +1569,12 @@ side-path integrands with those affine pullbacks and proves that the
 upper and lower side-path integrals both vanish on every open real-type
 source gap. Relating an enclosing contour to these side paths remains
 the main open part of Lemma 10.11(ii).
+`SourceCriticalRootRatioContourHomotopy.lean` proves the full quotient
+is holomorphic off all periodic gaps and its curve integral is invariant
+under smooth gap-avoiding loop homotopies. For real-type sources, a
+continuous homotopy with twice-smooth loop slices suffices. Concentric
+circle integrals also agree across any annulus avoiding all gaps, in
+particular when the inner circle encloses the selected gap and the
+outer disc avoids every other gap. The slit-to-circle deformation is
+still required to turn the vanishing side-path integrals into the
+enclosing-contour identity.
