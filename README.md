@@ -1546,3 +1546,7 @@ positivity, and connectedness to show that the upper boundary value
 equals either plus or minus twice the positive arcosh square root on
 the entire interior. Comparing the resulting side integral with the
 real arcosh derivative integral remains to finish the open-gap step.
+`RealGapCanonicalRootRealAxis.lean` transfers this fixed-sign identity
+from the normalized gap parameter to every interior real spectral
+point between the periodic endpoints. This supplies the pointwise
+boundary quotient needed for the interval-integral comparison.
