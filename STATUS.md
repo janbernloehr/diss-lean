@@ -9177,3 +9177,12 @@ one-variable identity principle from a real interval.
 that the fixed integral vanishes near zero along every complex line
 through the base source with real-type direction. Extending this to a
 full complex-source neighborhood remains open.
+
+## Latest milestone: real-type decomposition of source perturbations
+
+`SourceRealTypeDecomposition.lean` defines the physical conjugate-reflection
+involution on coefficient pairs and proves that its fixed points are exactly
+the real-type sources. Every complex perturbation is now explicitly the sum
+of a real-type part and `I` times another real-type part. Each part has norm
+at most that of the original perturbation. These bounds are the input for a
+uniform complex-source identity argument for the fixed contour integral.

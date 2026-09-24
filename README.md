@@ -1723,3 +1723,6 @@ holomorphic in the source and zero at every nearby real-type source.
 extend that zero to complex parameters near the base point along each
 real-type source direction. The remaining source step is a uniform
 extension to arbitrary complex directions.
+`SourceRealTypeDecomposition.lean` supplies the conjugate-reflection
+involution and a norm-controlled splitting of each complex source
+perturbation into two real-type parts, preparing that extension.
