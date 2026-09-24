@@ -1618,6 +1618,13 @@ for the forthcoming dominated slit limit.
 negative vertical translates with the oriented upper and lower gap
 sides. Consequently, at each interior point of an open real-type gap,
 the full discriminant-derivative quotient along those translates tends
-to its corresponding canonical-root boundary quotient. Combining these
-pointwise limits with the existing weighted bound and integrability is
-the next step toward the slit integral limit.
+to its corresponding canonical-root boundary quotient. These are the
+pointwise input for the dominated slit limit.
+`SourceCriticalRootRatioCosineIntegralLimit.lean` applies dominated
+convergence in the cosine angle, where the Jacobian cancels the root's
+endpoint singularity. The upper and lower vertically displaced quotient
+integrals converge to their respective boundary integrals as the
+displacement tends to zero. The transverse bound is strengthened to the
+closed signed gap interval, including both endpoints. Identifying the
+two boundary integrals with the previously vanishing side integrals
+remains the next step.

@@ -923,3 +923,4 @@ import NLS.ZakharovShabat.SourceStandardRootTransverseBound
 import NLS.ZakharovShabat.SourceCriticalRootRatioTransverseBound
 import NLS.ZakharovShabat.SourceCriticalRootRatioVerticalIntegrability
 import NLS.ZakharovShabat.SourceCriticalRootRatioVerticalLimits
+import NLS.ZakharovShabat.SourceCriticalRootRatioCosineIntegralLimit

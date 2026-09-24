@@ -81,7 +81,7 @@ theorem norm_div_mul_real_le_of_weight_le_norm
 
 /-- The critical-root quotient, weighted by the cosine-path Jacobian,
 is uniformly bounded on short nonzero vertical approaches to the
-interior of an open real periodic gap. -/
+closed parameter interval of an open real periodic gap. -/
 theorem exists_sourceCriticalRootRatio_transverse_weighted_bound
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
@@ -95,7 +95,7 @@ theorem exists_sourceCriticalRootRatio_transverse_weighted_bound
     let b := (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
       (periodOnePotential_mem ψ) n).re
     ∃ ε M : ℝ, 0 < ε ∧ 0 < M ∧
-      ∀ t ∈ Ioo (-1 : ℝ) 1, ∀ y : ℝ, y ≠ 0 → |y| ≤ ε →
+      ∀ t ∈ Icc (-1 : ℝ) 1, ∀ y : ℝ, y ≠ 0 → |y| ≤ ε →
         let z := sourceCanonicalRootGapPoint hp hp1 ψ n t + (y:ℂ)*I
         ‖(deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
             sourceCanonicalRoot hp hp1 ψ z) *
@@ -116,7 +116,7 @@ theorem exists_sourceCriticalRootRatio_transverse_weighted_bound
   let z := q + (y:ℂ)*I
   let w : ℝ := (b-a)/2 * Real.sqrt (1-t^2)
   have hqS : q ∈ S := by
-    exact ⟨t, ⟨ht.1.le,ht.2.le⟩, rfl⟩
+    exact ⟨t, ht, rfl⟩
   have hdist : dist z q = |y| := by
     calc
       dist z q = ‖(y:ℂ)*I‖ := by
@@ -135,17 +135,13 @@ theorem exists_sourceCriticalRootRatio_transverse_weighted_bound
       hp hp1 ψ hreal n t y hy hzother
   have hF : ‖sourceCriticalRootGapNumerator hp hp1 ψ n z‖ ≤ M :=
     hFbound z hzK
-  have hsq : 0 < 1-t^2 := by
-    have hleft : 0 < t+1 := by linarith [ht.1]
-    have hright : 0 < 1-t := by linarith [ht.2]
-    nlinarith [mul_pos hleft hright]
-  have hw : 0 < w := by
+  have hw : 0 ≤ w := by
     dsimp [w]
-    exact mul_pos (by dsimp [a,b] at *; linarith)
-      (Real.sqrt_pos.2 hsq)
+    exact mul_nonneg (by dsimp [a,b] at *; linarith)
+      (Real.sqrt_nonneg _)
   have hroot : w ≤ ‖sourceStandardRoot hp hp1 ψ n z‖ :=
     sourceStandardRoot_transverse_norm_lower_bound
-      hp hp1 ψ hreal n hopen t y ⟨ht.1.le,ht.2.le⟩ hy
+      hp hp1 ψ hreal n hopen t y ht hy
   have hB : sourceStandardRoot hp hp1 ψ n z ≠ 0 :=
     sourceStandardRoot_ne_zero_off_segment hp hp1 ψ n z (hzfull n)
   have hfactor :
@@ -160,7 +156,7 @@ theorem exists_sourceCriticalRootRatio_transverse_weighted_bound
     ring
   dsimp only
   rw [hfactor]
-  exact norm_div_mul_real_le_of_weight_le_norm _ _ w M hw.le hM.le
+  exact norm_div_mul_real_le_of_weight_le_norm _ _ w M hw hM.le
     hF hroot hB
 
 end NLS.ZakharovShabat
