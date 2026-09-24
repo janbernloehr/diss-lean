@@ -9139,3 +9139,14 @@ keep the affine homotopy outside the selected gap and inside a filled
 disc free of other gaps. This covers a neighborhood of contour shapes;
 an explicit corollary handles nearby off-center circles. General
 enclosing contours and nearby complex sources remain open.
+
+## Latest milestone: vertical projection of enclosing circles
+
+`VerticalCircleHomotopy.lean` constructs a family of circles that
+moves a center vertically while preserving the circle's real-axis
+cross-section. `SourceCriticalRootRatioVerticalCircle.lean` uses this
+family to prove equal quotient integrals for the original and
+real-centered circles at a real-type source. The projected circle
+still encloses the selected gap, and its filled disc avoids the other
+gaps. Moving a real center to the gap midpoint is the next step toward
+arbitrary-center contour vanishing in Lemma 10.11(ii).
