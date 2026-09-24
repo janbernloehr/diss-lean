@@ -1756,5 +1756,7 @@ positive scale change. `SourceCriticalRootRatioEndpointConnectorIntegrable.lean`
 applies the existing weighted quotient estimate to both endpoints of
 an open real-type gap. The quotient is integrable on short upward and
 downward vertical connectors, parametrized by distance from the
-endpoint. Identifying their improper integrals with actual endpoint
-path integrals remains to be done.
+endpoint. Their integrals over shrinking initial connector pieces
+also tend to zero, by continuity of the integral primitive at the
+singular endpoint. Identifying these improper integrals with actual
+endpoint path integrals remains to be done.

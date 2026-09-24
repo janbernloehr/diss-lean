@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
 /-!
 # Integrability under a square-root endpoint bound
@@ -68,5 +69,20 @@ theorem integrableOn_Ioo_of_norm_mul_sqrt_mul_le
           abs_of_nonneg (Real.sqrt_nonneg _), mul_comm, mul_left_comm]
       _ ≤ M := hb
   exact (le_div_iff₀ hsd).2 hnorm
+
+/-- Integrability at an endpoint makes the integral over a shrinking
+initial interval vanish, with no assumption on the endpoint value. -/
+theorem tendsto_integral_Ioc_zero_of_integrableOn_Ioo
+    {f : ℝ → ℂ} {ε : ℝ} (hε : 0 < ε)
+    (hint : IntegrableOn f (Ioo (0:ℝ) ε)) :
+    Filter.Tendsto (fun y : ℝ => ∫ x in Ioc 0 y, f x)
+      (nhdsWithin 0 (Ioi 0)) (nhds 0) := by
+  have hcc : IntegrableOn f (Icc (0:ℝ) ε) :=
+    (integrableOn_Icc_iff_integrableOn_Ioo).mpr hint
+  have hcont := (intervalIntegral.continuousOn_primitive_Icc hcc).continuousWithinAt
+    (show (0:ℝ) ∈ Icc 0 ε from ⟨le_rfl, hε.le⟩)
+  have hle : nhdsWithin (0:ℝ) (Ioi 0) ≤ nhdsWithin 0 (Icc 0 ε) :=
+    nhdsWithin_le_iff.mpr (Icc_mem_nhdsGT hε)
+  simpa [integral_Icc_eq_integral_Ioc] using hcont.tendsto.mono_left hle
 
 end NLS.ComplexAnalysis

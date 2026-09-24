@@ -117,4 +117,56 @@ theorem exists_sourceCriticalRootRatio_lowerEndpointConnector_integrable
     hbound t ht (-y) (neg_ne_zero.2 (ne_of_gt hy.1))
       (by simpa [abs_of_pos hy.1] using hy.2.le)
 
+/-- The upper short connector integrals tend to zero as their length
+shrinks to the branch point. -/
+theorem exists_sourceCriticalRootRatio_upperEndpointConnector_integral_tendsto_zero
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    ∃ ε : ℝ, 0 < ε ∧
+      ∀ t ∈ ({(-1 : ℝ), 1} : Set ℝ),
+        Filter.Tendsto
+          (fun y : ℝ => ∫ v in Ioc 0 y,
+            deriv (canonicalDiscriminant hp (periodOnePotential ψ))
+                (sourceCanonicalRootGapPoint hp hp1 ψ n t + (v:ℂ)*I) /
+              sourceCanonicalRoot hp hp1 ψ
+                (sourceCanonicalRootGapPoint hp hp1 ψ n t + (v:ℂ)*I))
+          (nhdsWithin 0 (Ioi 0)) (nhds 0) := by
+  obtain ⟨ε, hε, hint⟩ :=
+    exists_sourceCriticalRootRatio_upperEndpointConnector_integrable
+      hp hp1 ψ hreal n hopen
+  exact ⟨ε, hε, fun t ht =>
+    NLS.ComplexAnalysis.tendsto_integral_Ioc_zero_of_integrableOn_Ioo
+      hε (hint t ht)⟩
+
+/-- The same shrinking-integral limit holds for downward connectors,
+with the distance from the endpoint used as parameter. -/
+theorem exists_sourceCriticalRootRatio_lowerEndpointConnector_integral_tendsto_zero
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    ∃ ε : ℝ, 0 < ε ∧
+      ∀ t ∈ ({(-1 : ℝ), 1} : Set ℝ),
+        Filter.Tendsto
+          (fun y : ℝ => ∫ v in Ioc 0 y,
+            deriv (canonicalDiscriminant hp (periodOnePotential ψ))
+                (sourceCanonicalRootGapPoint hp hp1 ψ n t + ((-v:ℝ):ℂ)*I) /
+              sourceCanonicalRoot hp hp1 ψ
+                (sourceCanonicalRootGapPoint hp hp1 ψ n t + ((-v:ℝ):ℂ)*I))
+          (nhdsWithin 0 (Ioi 0)) (nhds 0) := by
+  obtain ⟨ε, hε, hint⟩ :=
+    exists_sourceCriticalRootRatio_lowerEndpointConnector_integrable
+      hp hp1 ψ hreal n hopen
+  exact ⟨ε, hε, fun t ht =>
+    NLS.ComplexAnalysis.tendsto_integral_Ioc_zero_of_integrableOn_Ioo
+      hε (hint t ht)⟩
+
 end NLS.ZakharovShabat

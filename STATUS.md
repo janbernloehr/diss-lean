@@ -9248,5 +9248,8 @@ square-root weighted bound. The upper and lower connector theorems in
 `SourceCriticalRootRatioEndpointConnectorIntegrable.lean` apply this to
 the critical-root quotient at both ends of an open real-type gap.
 This supplies the local improper-integral input for paths that start
-or end at the branch points. The corresponding path-integral limit
-and general complex-source admissible contours remain open.
+or end at the branch points. The same file now proves that integrals
+over shrinking upper and lower connector pieces tend to zero, even
+though the quotient need not have an endpoint value. Identifying the
+improper integral with the actual endpoint path integral and handling
+general complex-source admissible contours remain open.
