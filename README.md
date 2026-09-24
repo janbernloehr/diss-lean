@@ -1912,5 +1912,20 @@ that limit. `SourceCriticalRootRatioCurvedConnectorPrimitiveLimit.lean`
 applies this to linearly departing curved connectors in either open
 half-plane. For a complete detour, `SourceCriticalRootRatioCurvedDetourPrimitiveDefect.lean`
 shows its integral equals the right connector's pathwise limit minus
-the left connector's. Proving that arbitrary connector limits agree
-with the previously established vertical-ray limit remains open.
+the left connector's. The next milestone identifies those limits.
+
+## Latest milestone: exact zero for immediately curved detours
+
+`SquareRootPrimitiveBoundary.lean` proves that a primitive with
+inverse-square-root derivative growth at a real boundary point has a
+full half-plane limit whenever it has a vertical-ray limit. It compares
+each nearby point to the ray by three short regular segments.
+`SourceCriticalRootRatioPrimitiveBoundary.lean` applies this to the
+critical-root quotient: within each half-plane, the primitive has the
+same boundary value at both endpoints of an open real-type gap.
+`SourceCriticalRootRatioCurvedDetourZero.lean` then proves that every
+sufficiently short detour with smooth, linearly departing, immediately
+curved endpoint connectors and a smooth crossing in that half-plane
+has exactly zero quotient integral. The upper and lower results are
+separate; arbitrary paths outside these connector assumptions remain
+to be treated.

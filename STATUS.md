@@ -9428,6 +9428,27 @@ gap. For a complete curved detour in either half-plane,
 `SourceCriticalRootRatioCurvedDetourPrimitiveDefect.lean` telescopes
 the two connector evaluations and the regular crossing: the complete
 integral is exactly `A_right - A_left`. The formula does not yet show
-that the two pathwise limits equal the common vertical-ray value; that
-boundary comparison is the next step toward exact zero for all such
-detours.
+that the two pathwise limits equal the common vertical-ray value; the
+next milestone supplies that boundary comparison.
+
+## Latest milestone: full boundary values and exact zero for curved detours
+
+`SquareRootPrimitiveBoundary.lean` proves a general upper-half-plane
+boundary theorem for primitives with inverse-square-root derivative
+growth, using a three-segment lifted comparison with the vertical ray.
+Its lower-half-plane counterpart follows by spectral reflection.
+`SourceCriticalRootRatioPrimitiveBoundary.lean` combines these theorems
+with the established punctured endpoint bound and common vertical-ray
+limits. Every upper primitive has one full relative boundary value at
+both endpoints of an open real-type gap; the same holds for every
+lower primitive, potentially with a different value.
+
+`SourceCriticalRootRatioCurvedDetourZero.lean` composes the full
+boundary limits with the primitive defect formula. For sufficiently
+short smooth endpoint connectors that depart linearly, stay in the
+source-root domain and one open half-plane, and are joined by a smooth
+crossing there, the actual singular endpoint-to-endpoint curve
+integral is exactly zero. Previous piecewise-vertical and shrinking
+families are special cases or complementary estimates. Paths whose
+connectors fail the linear-departure hypothesis, cross the real axis,
+or leave the half-plane are not covered by this theorem.

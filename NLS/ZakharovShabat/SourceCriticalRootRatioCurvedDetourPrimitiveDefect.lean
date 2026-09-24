@@ -48,6 +48,8 @@ theorem exists_sourceCriticalRootRatio_upperCurvedDetour_primitive_defect
           ∃ Aleft Aright : ℂ,
             Tendsto (F ∘ left.extend) (𝓝[>] (0:ℝ)) (𝓝 Aleft) ∧
             Tendsto (F ∘ right.extend) (𝓝[>] (0:ℝ)) (𝓝 Aright) ∧
+            CurveIntegrable (NLS.ComplexAnalysis.holomorphicOneForm f)
+              (sourceCurvedGapDetourPath left crossing right) ∧
             (∫ᶜ z in sourceCurvedGapDetourPath left crossing right,
               NLS.ComplexAnalysis.holomorphicOneForm f z) = Aright - Aleft := by
   dsimp only
@@ -106,8 +108,9 @@ theorem exists_sourceCriticalRootRatio_upperCurvedDetour_primitive_defect
     rintro z ⟨u,rfl⟩
     exact sourceCanonicalRootDomain_of_im_ne_zero hp hp1 ψ hreal _
       (ne_of_gt (hcrossU u))
-  have hdetourEq := (hdetour left crossing right hleft₂ hright₂
-    hcross hcrossDom).2
+  have hdetourResult := hdetour left crossing right hleft₂ hright₂
+    hcross hcrossDom
+  have hdetourEq := hdetourResult.2
   have hcrossInt : CurveIntegrable ω crossing :=
     sourceCriticalRootRatio_curveIntegrable_of_smoothPath hp hp1 ψ
       crossing hcross hcrossDom
@@ -119,7 +122,7 @@ theorem exists_sourceCriticalRootRatio_upperCurvedDetour_primitive_defect
     NLS.ComplexAnalysis.curveIntegral_eq_sub_of_primitive
       f F {z : ℂ | 0 < z.im} (fun z hz => hF z hz)
       crossing hcross hcrossWithin hcrossInt
-  refine ⟨Aleft,Aright,hAl,hAr,?_⟩
+  refine ⟨Aleft,Aright,hAl,hAr,hdetourResult.1,?_⟩
   rw [hdetourEq, hlval, hrval, hcrossVal]
   ring
 
@@ -154,6 +157,8 @@ theorem exists_sourceCriticalRootRatio_lowerCurvedDetour_primitive_defect
           ∃ Aleft Aright : ℂ,
             Tendsto (F ∘ left.extend) (𝓝[>] (0:ℝ)) (𝓝 Aleft) ∧
             Tendsto (F ∘ right.extend) (𝓝[>] (0:ℝ)) (𝓝 Aright) ∧
+            CurveIntegrable (NLS.ComplexAnalysis.holomorphicOneForm f)
+              (sourceCurvedGapDetourPath left crossing right) ∧
             (∫ᶜ z in sourceCurvedGapDetourPath left crossing right,
               NLS.ComplexAnalysis.holomorphicOneForm f z) = Aright - Aleft := by
   dsimp only
@@ -212,8 +217,9 @@ theorem exists_sourceCriticalRootRatio_lowerCurvedDetour_primitive_defect
     rintro z ⟨u,rfl⟩
     exact sourceCanonicalRootDomain_of_im_ne_zero hp hp1 ψ hreal _
       (ne_of_lt (hcrossU u))
-  have hdetourEq := (hdetour left crossing right hleft₂ hright₂
-    hcross hcrossDom).2
+  have hdetourResult := hdetour left crossing right hleft₂ hright₂
+    hcross hcrossDom
+  have hdetourEq := hdetourResult.2
   have hcrossInt : CurveIntegrable ω crossing :=
     sourceCriticalRootRatio_curveIntegrable_of_smoothPath hp hp1 ψ
       crossing hcross hcrossDom
@@ -225,7 +231,7 @@ theorem exists_sourceCriticalRootRatio_lowerCurvedDetour_primitive_defect
     NLS.ComplexAnalysis.curveIntegral_eq_sub_of_primitive
       f F {z : ℂ | z.im < 0} (fun z hz => hF z hz)
       crossing hcross hcrossWithin hcrossInt
-  refine ⟨Aleft,Aright,hAl,hAr,?_⟩
+  refine ⟨Aleft,Aright,hAl,hAr,hdetourResult.1,?_⟩
   rw [hdetourEq, hlval, hrval, hcrossVal]
   ring
 
