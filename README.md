@@ -1676,3 +1676,9 @@ joins. Its affine specialization compares concatenated loops with
 corners without requiring the full loop to be twice differentiable at
 the joins. The stadium application still needs a proof that every
 intermediate radius avoids the canonical-root cuts.
+`SourceGapStadiumAffine.lean` now proves this range condition for any
+domain containing all stadiums in a positive radius interval. It also
+proves twice-smoothness of the four pieces and identifies their affine
+homotopies with the corresponding pieces at interpolated radii. The
+next step is to combine these facts with the piecewise homotopy theorem
+for the critical-root quotient.
