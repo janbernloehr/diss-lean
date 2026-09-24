@@ -997,3 +997,5 @@ import NLS.ZakharovShabat.SourceActionOuterArcLimit
 import NLS.ZakharovShabat.SourceActionCosineIntegralLimit
 import NLS.ZakharovShabat.SourceActionHorizontalLimit
 import NLS.ZakharovShabat.SourceActionBoundaryGapSide
+import NLS.ZakharovShabat.SourceActionStadiumLimit
+import NLS.ZakharovShabat.SourceActionCircleNonzero

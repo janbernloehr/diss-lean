@@ -1994,3 +1994,13 @@ upper value is real and nonzero on every open real-type gap, and the
 lower value is its negative. Together with the horizontal limits and
 vanishing endpoint arcs, these are the boundary terms needed to
 evaluate the shrinking weighted stadium.
+
+## Latest milestone: shrinking weighted stadium and nonzero action
+
+`SourceActionStadiumLimit.lean` decomposes the recentered action
+stadium into its four oriented pieces and proves that its integral
+tends to twice the upper gap-side boundary value. That value is real
+and nonzero on an open real-type gap. Combining the limit with the
+stadium-to-circle deformation, `SourceActionCircleNonzero.lean` proves
+that the action on all sufficiently small corner circles is nonzero.
+Identifying its exact real value and positive sign remains open.
