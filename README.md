@@ -1479,3 +1479,9 @@ The deleted periodic-pair product is now identified with the square
 of the omitted standard-root product wherever the other gap segments
 are avoided. This proves that it is nonzero throughout each assigned
 isolating disc, including on the selected gap and its endpoints.
+
+The exact squared-gap critical-root formula now extends to every
+index of the connected almost-real complex source domain. At a
+collapsed gap, cluster separation identifies its critical root with
+the common endpoint. A common local `ℓᵖ` bound for the quotient
+coefficients remains open.

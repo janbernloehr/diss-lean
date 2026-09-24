@@ -9095,3 +9095,14 @@ the deleted periodic product has no zeros anywhere in an assigned
 source isolating disc, including at selected-gap endpoints. This is
 the complex-source nonvanishing input for the remaining central
 critical-offset bound.
+
+## Latest milestone: all-index complex-source critical offset identity
+
+`SourceCriticalOffsetCoefficientNonzero.lean` shows that a collapsed
+complex periodic pair has its indexed critical root at the common
+endpoint whenever the source clusters lie in disjoint discs. The
+deleted product is nonzero throughout the disc, so the critical
+midpoint coefficient is nonzero both for collapsed and noncollapsed gaps.
+The exact squared-gap offset formula therefore holds at every signed
+index on the connected almost-real source domain. The local uniform
+`ℓᵖ` coefficient norm bound is still outstanding.

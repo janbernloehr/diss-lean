@@ -2585,3 +2585,12 @@ periodic product is nonzero throughout the selected disc, even along
 the selected gap and at its endpoints. This supplies the nonvanishing
 input for extending the central critical-offset argument to nearby
 complex sources.
+
+`SourceCriticalOffsetCoefficientNonzero.lean` now combines the
+nonzero deleted product with indexed cluster separation. A collapsed
+complex periodic pair has its canonical critical root at the common
+endpoint. Thus the midpoint coefficient is nonzero and the exact
+squared-gap critical-offset identity holds at every signed index on
+the connected almost-real source domain. The remaining quantitative
+Lemma 10.10 task is a common local `ℓᵖ` norm bound for the quotient
+coefficients, especially at the finitely many central indices.

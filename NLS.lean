@@ -892,3 +892,4 @@ import NLS.ZakharovShabat.SourceCriticalMidpointGapSquaredTail
 import NLS.ZakharovShabat.CriticalOffsetCoefficientOpenGap
 import NLS.ZakharovShabat.CriticalOffsetCoefficientCollapsedGap
 import NLS.ZakharovShabat.SourceDeletedPairOmittedSquare
+import NLS.ZakharovShabat.SourceCriticalOffsetCoefficientNonzero
