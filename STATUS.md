@@ -9373,3 +9373,11 @@ arbitrary smooth crossing give a complete endpoint-to-endpoint path
 whose quotient one-form integral tends to zero as its positive height
 or depth tends to zero. Exact vanishing for a fixed general curved
 path, beyond the existing homotopy and dogleg cases, remains open.
+
+`SourceCriticalRootRatioCurvedDetourComparison.lean` proves an exact
+comparison for upper and lower curved detours at each sufficiently
+small fixed height or depth. Their integral is the left curved-versus-
+vertical connector difference minus the right difference. The proof
+uses half-plane path independence and the exact-zero dogleg. It
+reduces fixed-path vanishing to controlling the two connector
+comparisons; that endpoint equality remains open for general curves.

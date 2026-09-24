@@ -1863,3 +1863,13 @@ crossing contained in the corresponding open half-plane. The proof
 combines the curved connector estimates with the crossing integral
 limit and the exact three-piece path integral decomposition. Exact
 zero for a fixed general curved detour remains open.
+
+## Latest milestone: fixed-height curved-detour comparison
+
+`SourceCriticalRootRatioCurvedDetourComparison.lean` identifies the
+integral of a curved detour at a fixed small height or depth. For any
+smooth crossing in the corresponding half-plane, it equals the left
+connector's integral minus its vertical reference integral, minus the
+same difference at the right connector. Thus the crossing creates no
+additional error; the comparison isolates the exact endpoint work
+needed to extend fixed-height zero-integral results to curved paths.
