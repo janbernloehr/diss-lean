@@ -2203,3 +2203,11 @@ functions. Any two fixed-circle extensions representing the same
 indexed action on real-type sources agree on a complex neighborhood
 of each real-type point in their overlap. This proves compatibility
 of the locally defined action germs.
+
+## Latest milestone: compatibility across convex overlaps
+
+`SourceRealActionConvexOverlap.lean` strengthens local uniqueness:
+two complex-differentiable extensions of the indexed real action
+agree throughout any convex overlap containing a real-type source.
+The proof restricts to complex lines from that source and uses the
+one-variable analytic identity principle.
