@@ -951,6 +951,7 @@ import NLS.ZakharovShabat.SourcePsiComplexContourAnalytic
 import NLS.ZakharovShabat.SourcePsiComplexSequenceAnalytic
 import NLS.ZakharovShabat.SourcePsiGlobalContourFamily
 import NLS.ZakharovShabat.SourcePsiGlobalScalarAnalytic
+import NLS.ZakharovShabat.SourcePsiGlobalHeadDiscBound
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

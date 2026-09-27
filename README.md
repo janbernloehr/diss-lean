@@ -3082,3 +3082,9 @@ the joint analytic domain of the canonical-root integrand. It proves
 every scalar psi equation coordinate is holomorphic in the root input
 and complex source on the common contour family, for all indices and
 all root inputs.
+`SourcePsiGlobalHeadDiscBound.lean` uses joint quotient analyticity and
+compactness to bound the finitely many nonstandard contour discs near
+any root input. It patches that finite bound with the quantitative
+Lemma 10.8 tail majorant, producing one `ℓᵖ` quotient-error majorant
+on every selected contour disc with a locally uniform norm bound near
+an arbitrary real-type source.
