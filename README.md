@@ -2568,5 +2568,12 @@ of the normalized-action candidate under nested gap-enclosing circles,
 and for two circles inside a common valid outer disc. The homotopy
 stays outside the selected segment and inside the outer disc, where
 the deleted factor is analytic. This works for complex collapsed gaps
-without dividing by the squared gap. The next comparison is between
-the common free-centered circles and the fixed-index action charts.
+without dividing by the squared gap.
+
+`SourceRealActionUniformTailCircle.lean` makes that comparison on the
+real-type locus. A π/16 circle centered at a distant gap midpoint
+encloses the selected segment and fits inside the common free-centered
+π/8 circle. The existing midpoint-circle formula and contour
+invariance then show, with one source neighborhood and one cutoff,
+that each distant free-centered circle computes the indexed real
+action. The complex normalized-action identity remains to be proved.
