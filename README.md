@@ -2923,3 +2923,9 @@ sufficiently small enclosing circle integral equals the negatively
 oriented integral over the corresponding gap stadium. Passing to the
 two boundary sides as the stadium shrinks is the remaining step toward
 the general estimate.
+
+`SourceStandardRootWeightedOuterArcLimit.lean` controls the two outward
+endpoint semicircles in that stadium. For any numerator continuous at
+the endpoints of an open real gap, both arc integrals are bounded by a
+constant times the square root of the radius and converge to zero.
+The two horizontal side limits still need to be identified.
