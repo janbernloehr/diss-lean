@@ -2936,6 +2936,13 @@ Jacobian's endpoint singularity on short vertical approaches.
 `SourceStandardRootWeightedCosineLimit.lean` applies dominated convergence
 on those approaches, while `SourceStandardRootWeightedHorizontalLimit.lean`
 identifies the resulting upper and lower straight-side limits with the
-gap-side boundary integrals of Lemma 10.4. Combining the four stadium
-pieces and transferring the estimate back to the original contour
-remain to be done for the full Lemma 12.3.
+gap-side boundary integrals of Lemma 10.4.
+
+`SourceGapStadiumIntegralDecomposition.lean` gives the generic oriented
+four-piece path integral identity. In
+`SourceStandardRootWeightedStadiumLimit.lean` it combines with the side
+and arc limits: for a numerator analytic near the selected gap and
+continuous on the canonical-root domain, the shrinking stadium
+integral tends to twice the upper gap-side boundary integral.
+Transferring that limit to a fixed enclosing circle and weakening the
+domain assumption remain for the full Lemma 12.3.
