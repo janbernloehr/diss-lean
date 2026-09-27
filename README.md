@@ -2835,3 +2835,8 @@ by `bₘ / |r-m|`, for one `b ∈ ℓᵖ`, is compact on the deleted-coordinate
 space. The proof uses the translated punctured reciprocal lattice and
 Hölder duality. Deriving this entrywise estimate from the nonfree psi
 contour integral remains open.
+`DeletedDiagonal.lean` builds the diagonal operator on the omitted-coordinate
+space and its continuous linear inverse whenever the retained entries
+have a uniform positive lower bound. This is the diagonal-isomorphism
+half of Lemma 12.6; the required lower bound for the nonfree psi
+Jacobian must still be obtained from Lemma 12.5.
