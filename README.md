@@ -2990,3 +2990,12 @@ value and maximum bound, provided its filled disc lies in the midpoint
 disc. An arbitrary circuit still needs a homotopy or winding argument
 connecting it to a reference circle in that domain; the dissertation's
 weaker neighborhood-of-contour hypothesis is not yet covered.
+
+`SourceStandardRootGapSideMeanValue.lean` applies the first mean-value
+theorem to the cosine parameterization of a real gap. For a numerator
+that is real-valued on the gap, its upper boundary integral is `iπ`
+times an attained numerator value. The local contour identities then
+give the real mean-value clause of Lemma 12.3 in
+`SourceStandardRootWeightedLocalRealMeanValue.lean`: the integral on
+either a midpoint circle or a nested enclosing circle, normalized by
+`2πi`, is the negative of a numerator value at some gap point.
