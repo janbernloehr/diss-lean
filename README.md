@@ -2385,6 +2385,8 @@ by the source sequence norms. Hence the normalized-action deviation on
 all sufficiently distant open real-type gaps has a genuine two-sequence
 `ℓ^q + ℓ^{p/2}` majorant. The underlying factor majorants now have locally
 uniform sequence-norm bounds, including when `p/2 < 1`. The critical
-action term also has a locally uniform `ℓ^{p/2}` norm bound. The remaining
-work is to combine these into one locally uniform action estimate and to
-extend the quotient analytically across collapsed complex gaps.
+action term also has a locally uniform `ℓ^{p/2}` norm bound. A quantitative
+quasi-norm addition estimate combines them into one locally uniform
+`ℓ^q + ℓ^{p/2}` action majorant on distant open real-type gaps. The
+remaining work is to extend the quotient analytically across collapsed
+complex gaps and transfer the estimate to that extension.
