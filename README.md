@@ -2383,6 +2383,8 @@ disc estimate to the cosine path. The gap-squared critical term is itself
 an `ℓ^{p/2}` sequence, and the variable factor-error prefactor is bounded
 by the source sequence norms. Hence the normalized-action deviation on
 all sufficiently distant open real-type gaps has a genuine two-sequence
-`ℓ^q + ℓ^{p/2}` majorant. The remaining work is to make the sequence
-bounds locally uniform in the source and extend the quotient analytically
-across collapsed complex gaps.
+`ℓ^q + ℓ^{p/2}` majorant. The underlying factor majorants now have locally
+uniform sequence-norm bounds, including when `p/2 < 1`. The critical
+action term also has a locally uniform `ℓ^{p/2}` norm bound. The remaining
+work is to combine these into one locally uniform action estimate and to
+extend the quotient analytically across collapsed complex gaps.

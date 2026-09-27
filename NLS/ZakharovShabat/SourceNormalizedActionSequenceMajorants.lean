@@ -3,6 +3,7 @@ import NLS.ZakharovShabat.SourceSingleRootQuotientAsymptoticDiscSup
 import NLS.SequenceSpaces.Multiplier
 import NLS.SequenceSpaces.ExponentEmbedding
 import NLS.SequenceSpaces.SandwichMajorant
+import NLS.SequenceSpaces.QuasiExponentEmbedding
 
 /-!
 # Sequence majorants for the normalized action factor
@@ -45,6 +46,61 @@ def sourceCriticalMidpointOffsetAtExponent
     sourcePeriodicSquaredGapCoeff_apply]
   ring
 
+/-- The critical-to-midpoint sequence norm is controlled by the
+critical quotient and squared-gap norms, also when `p/2 < 1`. -/
+theorem norm_sourceCriticalMidpointOffsetAtExponent_le
+    [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hhalf : ENNReal.ofReal (p.toReal/2) ≤ q)
+    (ψ : CoeffPair p) :
+    ‖sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ‖ ≤
+      ‖sourceCriticalGapQuotient hp hp1 ψ‖ *
+        ‖sourcePeriodicSquaredGapCoeff hp hp1 ψ‖ := by
+  let S := sourcePeriodicSquaredGapCoeff hp hp1 ψ
+  let Sq : Coeff q :=
+    ⟨fun n => S n, (lp.memℓp S).of_exponent_ge hhalf⟩
+  let B := sourceCriticalGapQuotient hp hp1 ψ
+  let Btop := Coeff.exponentInclusion (le_top : p ≤ ⊤) B
+  have hpr : 0 < p.toReal :=
+    ENNReal.toReal_pos (ne_of_gt (zero_lt_one.trans hp1)) hp
+  have hhalfPos : 0 < ENNReal.ofReal (p.toReal/2) :=
+    ENNReal.ofReal_pos.mpr (by positivity)
+  have hSq : ‖Sq‖ ≤ ‖S‖ :=
+    Coeff.norm_quasiExponentInclusion_le hhalfPos
+      (zero_lt_one.trans hq1) hq hhalf S
+  calc
+    ‖sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ‖ =
+        ‖Coeff.multiplier Btop Sq‖ := rfl
+    _ ≤ ‖Btop‖ * ‖Sq‖ := Coeff.norm_multiplier_le Btop Sq
+    _ ≤ ‖B‖ * ‖S‖ := by
+      gcongr
+      exact Coeff.norm_exponentInclusion_le le_top B
+
+/-- The critical-to-midpoint offset has a common `ℓq` bound near
+each real-type source. -/
+theorem exists_local_sourceCriticalMidpointOffsetAtExponent_bound
+    [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hhalf : ENNReal.ofReal (p.toReal/2) ≤ q)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ A : ℝ, 0 ≤ A ∧
+        ∀ ψ ∈ V, ‖sourceCriticalMidpointOffsetAtExponent
+          hp hp1 hhalf ψ‖ ≤ A := by
+  obtain ⟨V₁,hV₁open,hφV₁,R,hR,hS⟩ :=
+    exists_local_sourcePeriodicSquaredGapCoeff_bound hp hp1 φ
+  obtain ⟨V₂,hV₂open,hφV₂,B,hB,hquot⟩ :=
+    exists_local_uniform_sourceCriticalGapQuotient hp hp1 φ hφ
+  refine ⟨V₁ ∩ V₂,hV₁open.inter hV₂open,⟨hφV₁,hφV₂⟩,
+    B*R^2,by positivity,?_⟩
+  intro ψ hψ
+  exact (norm_sourceCriticalMidpointOffsetAtExponent_le
+    hp hp1 hq1 hq hhalf ψ).trans
+    (mul_le_mul (hquot ψ hψ.2).1 (hS ψ hψ.1)
+      (lp.norm_nonneg' _) hB)
+
 /-- On the common almost-real domain, this coefficient sequence is
 the actual indexed critical-to-midpoint offset. -/
 theorem exists_global_sourceCriticalMidpointOffsetAtExponent_eq
@@ -76,13 +132,35 @@ theorem exists_local_sourceNormalizedAction_factor_sequenceMajorants
     (hhalf : ENNReal.ofReal (p.toReal/2) ≤ q)
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
     ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
-      ∃ K : ℕ, ∀ ψ ∈ V,
+      ∃ K : ℕ, ∃ C R H : ℝ,
+        1 ≤ C ∧ 0 ≤ R ∧ 0 ≤ H ∧ ∀ ψ ∈ V,
         ∃ Bq : Coeff q, ∃ Bg : Coeff (ENNReal.ofReal (p.toReal/2)),
-          ∀ n : ℤ, K ≤ n.natAbs → ∀ θ : ℝ,
+          (∀ n : ℤ, K ≤ n.natAbs → ∀ θ : ℝ,
             ‖I * sourceCriticalRootRatioExtension hp hp1 n ψ
               (sourceStandardRootMidpoint hp hp1 ψ n +
                 sourceStandardRootHalfGap hp hp1 ψ n * (Real.cos θ:ℂ)) - 1‖ ≤
-              ‖Bq n‖ + ‖Bg n‖ := by
+              ‖Bq n‖ + ‖Bg n‖) ∧
+          ‖Bq‖ ≤
+            (Real.pi⁻¹*(Fourier.hilbertTransformBound hq1 hq+
+                ‖Fourier.hilbertSquareCoeffs‖)+
+              C*R*‖Fourier.hilbertSquareCoeffs‖)*
+                ‖sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ‖ +
+              Real.exp ((C/2)*Fourier.absoluteSampledRowConstant hq*
+                ‖sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ‖)*
+                ((C/2)*Fourier.absoluteSampledRowConstant hq*
+                  ‖sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ‖)^2 ∧
+          ‖Bg‖ ≤
+            (Real.exp (C*‖sourceCriticalMidpointOffsetAtExponent
+                hp hp1 hhalf ψ‖*‖Coeff.puncturedLattice q.conjExponent
+                  ((ENNReal.HolderConjugate.lt_top_iff_one_lt q q.conjExponent).mp
+                    hq.lt_top)‖)*C^2) *
+              (H^2 *
+                ‖squaredReciprocalKernel (min 1 (p.toReal/2))
+                  (lt_min (by norm_num : (1/2:ℝ)<1)
+                    (by
+                      have hpr : 1 < p.toReal :=
+                        (ENNReal.toReal_lt_toReal (by simp) hp).mpr hp1
+                      linarith))‖) := by
   obtain ⟨N,ε,_,_,V₁,hV₁open,_,hφV₁,C,R,H,hC,hR,hH,K₁,hNK,hmajor⟩ :=
     exists_local_sourceSingleRootQuotientDiscMajorants
       hp hp1 hq1 hq φ hφ
@@ -93,7 +171,7 @@ theorem exists_local_sourceNormalizedAction_factor_sequenceMajorants
   let V := (V₁ ∩ V₂) ∩ W
   let K := max K₁ (N₂+1)
   refine ⟨V,(hV₁open.inter hV₂open).inter hWopen,
-    ⟨⟨hφV₁,hφV₂⟩,hWreal hφ⟩,K,?_⟩
+    ⟨⟨hφV₁,hφV₂⟩,hWreal hφ⟩,K,C,R,H,hC,hR,hH,?_⟩
   intro ψ hψ
   let a : Coeff p := canonicalCriticalDisplacement hp hp1
     (periodOnePotential ψ) (periodOnePotential_mem ψ)
@@ -110,9 +188,9 @@ theorem exists_local_sourceNormalizedAction_factor_sequenceMajorants
       ring
     rw [hcrit]
     exact hOffset ψ hψ.2 m
-  obtain ⟨Bq,Bg,hpoint,_,_⟩ :=
+  obtain ⟨Bq,Bg,hpoint,hBq,hBg⟩ :=
     hmajor ψ hψ.1.1 a α hα
-  refine ⟨Bq,Bg,?_⟩
+  refine ⟨Bq,Bg,?_,hBq,hBg⟩
   intro n hn θ
   have hK₁ : K₁ ≤ n.natAbs := by dsimp [K] at hn; omega
   have hN : N < n.natAbs := hNK.trans_le hK₁
@@ -148,6 +226,80 @@ theorem exists_local_sourceNormalizedAction_factor_sequenceMajorants
   rw [hfactor]
   exact hpoint n hK₁ z hzdisc
 
+/-- The factor majorants may be chosen with common sequence-norm bounds
+throughout a neighborhood of a real-type source. -/
+theorem exists_local_sourceNormalizedAction_factor_uniformMajorants
+    [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hhalf : ENNReal.ofReal (p.toReal/2) ≤ q)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ K : ℕ, ∃ Lq Lg : ℝ, ∀ ψ ∈ V,
+        ∃ Bq : Coeff q, ∃ Bg : Coeff (ENNReal.ofReal (p.toReal/2)),
+          (∀ n : ℤ, K ≤ n.natAbs → ∀ θ : ℝ,
+            ‖I * sourceCriticalRootRatioExtension hp hp1 n ψ
+              (sourceStandardRootMidpoint hp hp1 ψ n +
+                sourceStandardRootHalfGap hp hp1 ψ n * (Real.cos θ:ℂ)) - 1‖ ≤
+              ‖Bq n‖ + ‖Bg n‖) ∧
+          ‖Bq‖ ≤ Lq ∧ ‖Bg‖ ≤ Lg := by
+  obtain ⟨V₁,hV₁open,hφV₁,K,C,R,H,hC,hR,hH,hfactor⟩ :=
+    exists_local_sourceNormalizedAction_factor_sequenceMajorants
+      hp hp1 hq1 hq hhalf φ hφ
+  obtain ⟨V₂,hV₂open,hφV₂,A,hA,hα⟩ :=
+    exists_local_sourceCriticalMidpointOffsetAtExponent_bound
+      hp hp1 hq1 hq hhalf φ hφ
+  let u : ℝ := Real.pi⁻¹ *
+    (Fourier.hilbertTransformBound hq1 hq + ‖Fourier.hilbertSquareCoeffs‖) +
+      C*R*‖Fourier.hilbertSquareCoeffs‖
+  let d : ℝ := (C/2) * Fourier.absoluteSampledRowConstant hq
+  let v : ℝ := ‖Coeff.puncturedLattice q.conjExponent
+    ((ENNReal.HolderConjugate.lt_top_iff_one_lt q q.conjExponent).mp hq.lt_top)‖
+  have hpr : 1 < p.toReal :=
+    (ENNReal.toReal_lt_toReal (by simp) hp).mpr hp1
+  let w : ℝ := ‖squaredReciprocalKernel (min 1 (p.toReal/2))
+    (lt_min (by norm_num : (1/2:ℝ)<1) (by linarith))‖
+  let Lq : ℝ := u*A + Real.exp (d*A)*(d*A)^2
+  let Lg : ℝ := (Real.exp (C*A*v)*C^2)*(H^2*w)
+  have hv : 0 ≤ v := lp.norm_nonneg' _
+  have hw : 0 ≤ w := lp.norm_nonneg' _
+  have hu : 0 ≤ u := by
+    dsimp [u]
+    have := Fourier.hilbertTransformBound_nonneg hq1 hq
+    positivity
+  have hd : 0 ≤ d := by
+    dsimp [d]
+    have := Fourier.absoluteSampledRowConstant_nonneg hq
+    positivity
+  refine ⟨V₁ ∩ V₂,hV₁open.inter hV₂open,⟨hφV₁,hφV₂⟩,
+    K,Lq,Lg,?_⟩
+  intro ψ hψ
+  obtain ⟨Bq,Bg,hpoint,hBq,hBg⟩ := hfactor ψ hψ.1
+  let α := sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ
+  have hαA : ‖α‖ ≤ A := hα ψ hψ.2
+  have hdA : d*‖α‖ ≤ d*A := mul_le_mul_of_nonneg_left hαA hd
+  have hBq' : ‖Bq‖ ≤ u*‖α‖ + Real.exp (d*‖α‖)*(d*‖α‖)^2 := by
+    simpa only [u,d,α] using hBq
+  have hBg' : ‖Bg‖ ≤ (Real.exp (C*‖α‖*v)*C^2)*(H^2*w) := by
+    simpa only [v,w,α] using hBg
+  refine ⟨Bq,Bg,hpoint,?_,?_⟩
+  · apply hBq'.trans
+    dsimp [Lq]
+    apply add_le_add (mul_le_mul_of_nonneg_left hαA hu)
+    apply mul_le_mul
+      (Real.exp_le_exp.mpr hdA)
+      (pow_le_pow_left₀ (mul_nonneg hd (lp.norm_nonneg' α)) hdA 2)
+      (sq_nonneg _)
+      (Real.exp_nonneg _)
+  · apply hBg'.trans
+    dsimp [Lg]
+    apply mul_le_mul_of_nonneg_right _ (mul_nonneg (sq_nonneg _) hw)
+    apply mul_le_mul_of_nonneg_right _ (sq_nonneg _)
+    apply Real.exp_le_exp.mpr
+    exact mul_le_mul_of_nonneg_right
+      (mul_le_mul_of_nonneg_left hαA (by linarith : 0 ≤ C))
+      hv
+
 /-- The normalized action inherits the `ℓq + ℓ^(p/2)` factor
 majorants on sufficiently distant open real-type gaps. The remaining
 gap-squared critical-offset term is displayed explicitly. -/
@@ -172,12 +324,12 @@ theorem exists_local_sourceRawNormalizedAction_sequenceMajorants
               2 * (2 * ‖sourcePeriodicGapDisplacement hp hp1 ψ n‖ *
                 ‖sourceCriticalGapQuotient hp hp1 ψ n‖ + 1)^2 *
                   (‖Bq n‖ + ‖Bg n‖) := by
-  obtain ⟨V,hVopen,hφV,K,hfactor⟩ :=
+  obtain ⟨V,hVopen,hφV,K,_,_,_,_,_,_,hfactor⟩ :=
     exists_local_sourceNormalizedAction_factor_sequenceMajorants
       hp hp1 hq1 hq hhalf φ hφ
   refine ⟨V,hVopen,hφV,K,?_⟩
   intro ψ hψ
-  obtain ⟨Bq,Bg,hB⟩ := hfactor ψ hψ
+  obtain ⟨Bq,Bg,hB,_,_⟩ := hfactor ψ hψ
   refine ⟨Bq,Bg,?_⟩
   intro n hn hreal hopen
   exact norm_sourceRawNormalizedAction_sub_one_le_of_factor_bound
@@ -207,6 +359,56 @@ def sourceNormalizedActionCriticalMajorant
     Coeff.multiplier_apply, Coeff.exponentInclusion_apply,
     sourcePeriodicSquaredGapCoeff_apply, norm_mul, norm_pow]
   ring
+
+/-- The remaining critical contribution is uniformly bounded by the
+squared-gap norm times the square of the critical quotient norm. -/
+theorem norm_sourceNormalizedActionCriticalMajorant_le
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) :
+    ‖sourceNormalizedActionCriticalMajorant hp hp1 ψ‖ ≤
+      ‖sourceCriticalGapQuotient hp hp1 ψ‖^2 *
+        ‖sourcePeriodicSquaredGapCoeff hp hp1 ψ‖ := by
+  let B := sourceCriticalGapQuotient hp hp1 ψ
+  let Btop := Coeff.exponentInclusion (le_top : p ≤ ⊤) B
+  let S := sourcePeriodicSquaredGapCoeff hp hp1 ψ
+  have hpr : 0 < p.toReal :=
+    ENNReal.toReal_pos (ne_of_gt (zero_lt_one.trans hp1)) hp
+  have hhalfPos : 0 < ENNReal.ofReal (p.toReal/2) :=
+    ENNReal.ofReal_pos.mpr (by positivity)
+  calc
+    ‖sourceNormalizedActionCriticalMajorant hp hp1 ψ‖ =
+        ‖Coeff.multiplier (Coeff.multiplier Btop Btop) S‖ := rfl
+    _ ≤ ‖Coeff.multiplier Btop Btop‖ * ‖S‖ :=
+      Coeff.norm_multiplier_le_quasi hhalfPos.ne' _ _
+    _ ≤ (‖Btop‖ * ‖Btop‖) * ‖S‖ :=
+      mul_le_mul_of_nonneg_right (Coeff.norm_multiplier_le Btop Btop)
+        (lp.norm_nonneg' S)
+    _ ≤ ‖B‖^2 * ‖S‖ := by
+      have hB := Coeff.norm_exponentInclusion_le le_top B
+      have hsq : ‖Btop‖^2 ≤ ‖B‖^2 :=
+        pow_le_pow_left₀ (lp.norm_nonneg' _) hB 2
+      rw [← pow_two]
+      exact mul_le_mul_of_nonneg_right hsq (lp.norm_nonneg' S)
+
+/-- The critical contribution to the normalized-action error has a
+common `ℓ^(p/2)` norm bound near each real-type source. -/
+theorem exists_local_sourceNormalizedActionCriticalMajorant_bound
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ L : ℝ, 0 ≤ L ∧
+        ∀ ψ ∈ V, ‖sourceNormalizedActionCriticalMajorant hp hp1 ψ‖ ≤ L := by
+  obtain ⟨V₁,hV₁open,hφV₁,R,hR,hS⟩ :=
+    exists_local_sourcePeriodicSquaredGapCoeff_bound hp hp1 φ
+  obtain ⟨V₂,hV₂open,hφV₂,B,hB,hquot⟩ :=
+    exists_local_uniform_sourceCriticalGapQuotient hp hp1 φ hφ
+  refine ⟨V₁ ∩ V₂,hV₁open.inter hV₂open,⟨hφV₁,hφV₂⟩,
+    B^2*R^2,by positivity,?_⟩
+  intro ψ hψ
+  have hBsq : ‖sourceCriticalGapQuotient hp hp1 ψ‖^2 ≤ B^2 :=
+    pow_le_pow_left₀ (lp.norm_nonneg' _) (hquot ψ hψ.2).1 2
+  exact (norm_sourceNormalizedActionCriticalMajorant_le hp hp1 ψ).trans
+    (mul_le_mul hBsq (hS ψ hψ.1)
+      (lp.norm_nonneg' _) (sq_nonneg _))
 
 private theorem norm_smul_magnitude_apply {r : ℝ≥0∞}
     (a : Coeff r) (c : ℝ) (hc : 0 ≤ c) (n : ℤ) :
