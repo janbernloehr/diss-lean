@@ -24,7 +24,9 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
     (a₀ : Coeff p) :
     ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
-      ∃ N : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      ∃ N K : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, K < m.natAbs →
+          c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         (∀ t ∈ U, ∀ m : ℤ,
           0 < R m ∧
           sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
@@ -52,7 +54,7 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
   obtain ⟨L,hL⟩ := exists_uniform_shifted_disc_lattice_cutoff
     s c R hRhead
   let N : ℕ := K+L+1
-  refine ⟨U,hUopen,hbase,N,c,R,hgeom,M,hM,?_⟩
+  refine ⟨U,hUopen,hbase,N,K,c,R,hchoice,hgeom,M,hM,?_⟩
   intro n hn a ψ hpair
   obtain ⟨B,hBnorm,hB⟩ := hmajor ((a : Coeff p),ψ) hpair
   refine ⟨B,hBnorm,?_⟩

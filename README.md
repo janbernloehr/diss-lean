@@ -3108,3 +3108,9 @@ finite set of deleted/selected scalar equation coordinates has one
 common local bound on arbitrary valid fixed circles. Its proof uses
 the already established scalar holomorphy and a finite intersection
 of parameter neighborhoods.
+`SourcePsiGlobalTailCoordinateBound.lean` combines the eighth-disc
+complex-gap estimate, uniform tail geometry, and the global regular
+factor majorant. It obtains one constant that bounds every sufficiently
+distant selected psi coordinate by the root, periodic-midpoint, and
+periodic-gap displacement magnitudes, uniformly for sufficiently
+distant deleted indices near any real-type source.
