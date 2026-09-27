@@ -2481,3 +2481,14 @@ one complex neighborhood of each real-type source, including points
 with a collapsed selected gap, its Fréchet derivative is the contour
 integral of the source derivative of the rationalized integrand. This
 provides a derivative formula without dividing by the squared gap.
+
+`SourceNormalizedActionCollapsedNonzero.lean` uses simplicity of the
+discriminant's real critical points to show that deleting the selected
+critical factor leaves a nonzero product at that root. At a collapsed
+gap the normalized action is therefore nonzero. Together with the
+existing positivity result for open real gaps, this gives a
+nonvanishing normalized action at every real-type source and, for
+each fixed index, on one open complex neighborhood of the entire
+real-type locus. The exact squared-gap factorization holds there.
+Positivity of the collapsed real values and an index-uniform complex
+neighborhood remain open.
