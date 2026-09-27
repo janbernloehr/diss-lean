@@ -2390,3 +2390,12 @@ quasi-norm addition estimate combines them into one locally uniform
 `ℓ^q + ℓ^{p/2}` action majorant on distant open real-type gaps. The
 remaining work is to extend the quotient analytically across collapsed
 complex gaps and transfer the estimate to that extension.
+
+`SourceNormalizedActionPositive.lean` proves the real-type positivity
+part of Theorem 11.2 on every noncollapsed gap. The indexed action and
+gap are real there, the action is strictly positive, and division by
+the squared gap preserves positivity. Complex differentiability gives
+a neighborhood on which the quotient's real part remains above half
+its positive value at the base source. The raw quotient has value zero
+at a collapsed gap by Lean's division convention; that value is not
+the claimed analytic extension, which still needs to be constructed.
