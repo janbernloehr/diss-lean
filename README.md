@@ -3072,3 +3072,8 @@ The bundled near-free theorem
 `exists_nearFree_complex_deletedPsi_equation_formula_analytic` records
 the fixed-circle formula, local boundedness, and deleted-space
 holomorphy on one neighborhood of each root input over the free source.
+`SourcePsiGlobalContourFamily.lean` begins the extension to arbitrary
+real-type sources. It combines uniform free-centered circles for all
+sufficiently distant gaps with finitely many individual enclosing
+circles on one common complex source neighborhood. Every selected
+circle encloses its moving gap and avoids the other gaps.
