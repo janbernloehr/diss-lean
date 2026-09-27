@@ -2644,6 +2644,15 @@ one complex source ball for every sufficiently distant index.
 the common-circle `ℓq + ℓ^(p/2)` majorants to the chart-independent
 normalized action at nearby complex sources, including collapsed gaps.
 It also gives one source neighborhood on which all distant normalized
-action coordinates are differentiable. The remaining sequence-space
-step is to package these coordinatewise estimates into the full
-Theorem 11.2 target map.
+action coordinates are differentiable.
+
+`TwoExponentMajorant.lean` turns tail bounds by an `ℓq` sequence plus
+an `ℓ^(p/2)` sequence into an `ℓq` tail, including when `p/2 < 1`.
+`SourceNormalizedActionComplexSequenceSpace.lean` applies this to the
+complex normalized-action deviation and bounds its full `ℓq` norm
+locally uniformly; finitely many central coordinates are controlled by
+source continuity. `SourceNormalizedActionComplexAllCoordinates.lean`
+shrinks to one source neighborhood where every coordinate is complex
+differentiable and the entire deviation has that uniform `ℓq` bound.
+Banach-valued analyticity of this sequence map and the positive-real-part
+and square-root conclusions of Theorem 11.2 remain to be proved.
