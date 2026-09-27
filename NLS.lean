@@ -1048,6 +1048,7 @@ import NLS.ZakharovShabat.SourceNormalizedActionCircleKernel
 import NLS.ZakharovShabat.SourceNormalizedActionCircleAnalytic
 import NLS.ZakharovShabat.SourceCriticalRootRatioAnyCircleZero
 import NLS.ZakharovShabat.SourceNormalizedActionGlued
+import NLS.ZakharovShabat.SourceNormalizedActionCollapsedCircleValue
 import NLS.ZakharovShabat.SourceComplexActionZeroLocus
 import NLS.ZakharovShabat.SourceNormalizedActionModel
 import NLS.ZakharovShabat.SourceNormalizedActionEstimate

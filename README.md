@@ -2434,16 +2434,16 @@ term whose contour integral is zero. The remaining circle integral is
 defined even when `γₙ = 0`, and the action equals `γₙ²` times this
 candidate throughout a complex source neighborhood. Analyticity of the
 candidate as a function of the source and agreement with the existing
-real-type collapsed-gap value are the next steps toward Theorem 11.2.
+real-type collapsed-gap value are addressed in the following files.
 
 `SourceNormalizedActionCircleAnalytic.lean` proves joint analyticity of
 that rationalized integrand at exterior spectral points over real-type
 sources. A common neighborhood of the fixed circle then makes the
 contour candidate complex Fréchet differentiable in the source and
 analytic along every complex source line, while retaining the exact
-action factorization. The remaining work is to identify this local
-candidate with the glued indexed action and prove the stronger Banach
-analyticity and asymptotic conclusions of Theorem 11.2.
+action factorization. The following files identify this local
+candidate with the glued indexed action; stronger Banach analyticity
+and asymptotic conclusions of Theorem 11.2 still require proof.
 
 `SourceCriticalRootRatioAnyCircleZero.lean` extends the zero integral
 of the unweighted critical-root quotient to a prescribed isolating
@@ -2453,5 +2453,13 @@ indexed-action ball chart. The glued complex action therefore equals
 the squared periodic gap times the differentiable normalized contour
 candidate throughout one complex neighborhood of each real-type
 source. On noncollapsed gaps the candidate equals the raw quotient.
-Its value at a collapsed real gap and full Banach analyticity remain
-to be identified and proved.
+
+`SourceNormalizedActionCollapsedCircleValue.lean` evaluates the
+rationalized contour candidate at a zero gap by the Cauchy integral
+formula. The holomorphic constant term disappears, leaving exactly
+`I * sourceCriticalRootRatioExtension(τₙ) / 4`, the previously defined
+collapsed-gap value. Consequently the candidate agrees with the
+continuous normalized-action extension on nearby real-type sources,
+while it remains complex Fréchet differentiable on a neighborhood
+that also contains collapsed complex sources. Full Banach analyticity
+and the sequence asymptotics of Theorem 11.2 remain open.

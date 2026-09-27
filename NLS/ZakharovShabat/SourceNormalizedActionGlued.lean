@@ -27,6 +27,9 @@ theorem exists_local_sourceComplexAction_normalizedCircleCandidate
     (n : ℤ) :
     ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
       ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+        (∀ ψ ∈ V,
+          sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
+          closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n) ∧
         DifferentiableOn ℂ
           (sourceNormalizedActionCircleCandidate hp hp1 n c R) V ∧
         (∀ ψ ∈ V,
@@ -77,7 +80,9 @@ theorem exists_local_sourceComplexAction_normalizedCircleCandidate
     (((hV₁open.inter hV₂open).inter hW₁open).inter hW₂open).inter hW₃open
   have hφV : φ ∈ V :=
     ⟨⟨⟨⟨hφV₁,hφV₂⟩,hreal₁ hφ⟩,hreal₂ hφ⟩,hreal₃ hφ⟩
-  refine ⟨V,hVopen,hφV,c,R,ch.spectralRadius_pos,?_,?_,?_⟩
+  refine ⟨V,hVopen,hφV,c,R,ch.spectralRadius_pos,?_,?_,?_,?_⟩
+  · intro ψ hψ
+    exact ch.geometry ψ (hV₁sub hψ.1.1.1.1)
   · intro ψ hψ
     have hdom : ∀ b ∈ V, ∀ θ : ℝ,
         (circleMap c R θ,b) ∈ D := by
