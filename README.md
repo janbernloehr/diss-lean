@@ -2351,3 +2351,12 @@ collapsed-gap contour integral result through an action ball chart. It
 also combines this zero-locus statement with analyticity of every
 squared gap on one common neighborhood. Constructing the analytic
 quotient at those zeros remains open.
+
+`SourceNormalizedActionModel.lean` derives the open real-gap integral
+formula corresponding to (2.19): four times the raw quotient is a
+shifted cosine moment of the complementary spectral factor. It computes
+the universal moment as `1 + 2u²` and gives the exact decomposition into
+that moment and the factor-error integral. This supplies the analytic
+identity behind the leading `1` in Theorem 11.2; controlling the error
+uniformly and extending the quotient through collapsed complex gaps
+remain to be proved.
