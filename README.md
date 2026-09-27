@@ -2337,3 +2337,9 @@ action contour gradient with the quotient rule to give the
 directional derivative of this normalized action. The removable
 extension through collapsed gaps and the uniform estimates in
 Theorem 11.2 remain open.
+
+The same file now identifies an open complex domain for each indexed
+quotient: the action domain intersected with the analytic and nonzero
+locus of the squared periodic gap. Every real-type source with a
+noncollapsed selected gap belongs to this domain, and the quotient is
+complex differentiable throughout it.
