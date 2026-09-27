@@ -2667,5 +2667,18 @@ principal square-root coordinates are differentiable, nonzero, and
 square to four times the normalized action.
 `SourceNormalizedActionRootSequenceSpace.lean` puts the root deviation
 in `ℓq` with a locally uniform norm bound and norm-continuous dependence
-on the source. Full Banach-space analyticity and the exact
-`ℓ^(p/2) + ℓ^(1+)` decomposition in Theorem 11.2 remain open.
+on the source.
+
+`TwoExponentDecomposition.lean` upgrades pointwise bounds by `ℓq` and
+`ℓr` majorants to an exact sum with separate norm bounds, even for
+`r < 1`; finitely many uncontrolled coordinates can be absorbed into
+the `ℓq` term. `SourceNormalizedActionTwoExponentDecomposition.lean`
+and `SourceNormalizedActionRootTwoExponentDecomposition.lean` apply this
+to the complex normalized action and its principal square root.
+Both deviations are exactly `ℓq + ℓ^(p/2)` with locally uniform
+component norm bounds for every finite `q > 1`, considered separately.
+When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
+`ℓq` component is zero. The current source neighborhood may depend on
+`q`; a common domain for the simultaneous `ℓ^(1+)` formulation, and
+Banach-space analyticity of the quotient and root maps, remain open in
+Theorem 11.2.
