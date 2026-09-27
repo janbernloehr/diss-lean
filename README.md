@@ -2521,3 +2521,12 @@ the deleted factor at the gap midpoint; the remaining contour integral
 has an explicit factor of the squared gap and is defined at complex
 collapsed gaps. This reduces the complex-source sequence estimate to
 bounding that correction integral uniformly over distant indices.
+
+`SourceNormalizedActionCircleCorrectionBound.lean` proves that a small
+complex squared gap keeps the selected root and every denominator of
+the rationalized correction separated from zero on a contour. The
+correction admits an explicit bound in terms of the spectral distance
+and critical-gap quotient. Integrating it gives a quantitative
+complex-source estimate for the normalized action on each fixed-index
+chart. A common family of distant-index circles and uniform bounds
+for their deleted factors are still needed for Theorem 11.2.
