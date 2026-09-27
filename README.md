@@ -2707,9 +2707,13 @@ endpoint condition holds, with a locally uniform norm bound, for
 uses both facts to bound the actual deleted factor on distant complex
 discs: one neighborhood and tail cutoff work for every finite `q > 1`,
 with a source-uniform sequence bound for each `q`.
+`SourceNormalizedActionCommonExponentDomain.lean` carries this shared
+domain through the fixed-circle correction and complex-action
+identification. For `1 < p ≤ 2`, the full action deviation belongs to
+every finite `ℓq`, `q > 1`, on one complex source neighborhood, with a
+locally uniform `ℓq` norm bound for each exponent.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
-`ℓq` component is zero. The current source neighborhood may depend on
-`q` in the later action and root estimates; lifting the shared factor
-domain through those estimates to the simultaneous `ℓ^(1+)` formulation and
+`ℓq` component is zero. The corresponding common-domain statement for
+the principal-root deviation, a dedicated `ℓ^(1+)` intersection type, and
 a full multivariable Fréchet power-series theorem in Mathlib's
 `AnalyticOnNhd` sense remain open in Theorem 11.2.
