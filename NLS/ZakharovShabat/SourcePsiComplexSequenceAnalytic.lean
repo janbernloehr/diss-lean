@@ -131,4 +131,38 @@ theorem exists_nearFree_complex_deletedPsi_equation_differentiableOn
   · exact hbound
   · exact hFdiff
 
+/-- The complex near-free psi equation is holomorphic with values in
+the actual deleted-coordinate Banach space. The coordinate-deletion
+projection is the identity on its values. -/
+theorem exists_nearFree_complex_deletedPsi_equation_differentiableOn_deleted
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
+      (a₀,(0 : CoeffPair p)) ∈ U ∧
+      ∃ C : ℝ, 0 ≤ C ∧
+        (∀ t ∈ U,
+          ‖sourcePsiDeletedEquationSequence hp hp1 n t.1 t.2‖ ≤ C) ∧
+        DifferentiableOn ℂ
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiDeletedEquationSequence hp hp1 n t.1 t.2) U := by
+  obtain ⟨U,hUopen,hbase,C,hC,hbound,hambient⟩ :=
+    exists_nearFree_complex_deletedPsi_equation_differentiableOn
+      hp hp1 n a₀
+  let F : DeletedCoeff p n × CoeffPair p → DeletedCoeff p n :=
+    fun t => sourcePsiDeletedEquationSequence hp hp1 n t.1 t.2
+  have hproject (t : DeletedCoeff p n × CoeffPair p) :
+      Coeff.deleteCoordinateTo n (F t : Coeff p) = F t := by
+    apply Subtype.ext
+    exact (Coeff.deleteCoordinate_eq_self_iff n (F t : Coeff p)).2
+      (F t).property
+  have hcomposed : DifferentiableOn ℂ
+      (fun t : DeletedCoeff p n × CoeffPair p =>
+        Coeff.deleteCoordinateTo n (F t : Coeff p)) U :=
+    (Coeff.deleteCoordinateTo (p := p) n).differentiable.comp_differentiableOn
+      hambient
+  have hdeleted : DifferentiableOn ℂ F U :=
+    hcomposed.congr (fun t _ => (hproject t).symm)
+  exact ⟨U,hUopen,hbase,C,hC,hbound,hdeleted⟩
+
 end NLS.ZakharovShabat

@@ -3063,5 +3063,8 @@ whose fixed circle remains in the canonical-root domain.
 equation sequence and combines its uniform norm bound with scalar
 coordinate holomorphy to prove Fréchet holomorphy in the ambient `ℓᵖ`
 space near every deleted root input and the free complex source. The
-remaining work for the global Lemma 12.4 is extension from the free
-source neighborhood and the later inverse-function argument.
+coordinate-deletion projection then upgrades this to holomorphy with
+values in the deleted `ℓᵖ` Banach space itself. The remaining work for
+the global Lemma 12.4 is extension from the free source neighborhood
+and the real-locus statement; the later inverse-function argument is
+also open.
