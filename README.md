@@ -2853,8 +2853,9 @@ all nonselected gaps. `SourcePsiNearFreeDiscMajorant.lean` uses those
 analytic discs to patch the Lemma 10.8 tail majorant across the finite
 head. The quotient error, and hence the weighted regular psi factor
 in (2.26), now has an all-index `ℓᵖ` disc majorant near the free
-source. The selected-gap integral estimate of Lemma 12.3 is still
-needed to turn this into the nonzero-source sequence-valued equation.
+source. Applying the selected-gap integral estimate to the complete
+nonzero-source sequence-valued equation requires separate treatment
+of open and collapsed gaps.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle
@@ -3008,3 +3009,13 @@ noncircular polar graph whose radius stays between an inner disc
 containing the gap and the enclosing analytic midpoint disc, proving
 all three conclusions for those contours. General circuits without a
 specified homotopy remain outside the current formalization.
+
+`SourcePsiNearFreeRegularAnalytic.lean` proves that the weighted
+regular factor of the psi equation is analytic across each selected
+near-free gap and has a common `ℓᵖ` disc majorant. It bounds the
+factorized numerator on the gap by the root, midpoint, and half-gap
+displacements. `SourcePsiSelectedGapContourBound.lean` applies the
+local Lemma 12.3 maximum estimate on nested fixed free-centered
+circles. For real-type sources near zero, the open-gap coordinates of
+the psi equation form an `ℓᵖ` sequence. Collapsed gaps and the complex
+source neighborhood are still needed for the full Lemma 12.4 map.
