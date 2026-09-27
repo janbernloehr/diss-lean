@@ -1,4 +1,5 @@
 import NLS.ComplexAnalysis.UniformJointDerivativeCircle
+import NLS.ComplexAnalysis.MixedSpectralSourceDerivative
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 
 /-!
@@ -98,6 +99,64 @@ theorem hasFDerivAt_circleIntegral_of_jointAnalytic
   change HasFDerivAt (fun b : A => ∫ θ in (0:ℝ)..2*Real.pi, G b θ)
     (∫ θ in (0:ℝ)..2*Real.pi, G' a θ) a
   exact hmain
+
+/-- Evaluate the source Fréchet derivative of a jointly analytic
+circle integral in a direction as the circle integral of the source
+derivative of its integrand. -/
+theorem fderiv_circleIntegral_apply_of_jointAnalytic
+    (F : ℂ × A → ℂ) (D : Set (ℂ × A))
+    (hDopen : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (V : Set A) (hVopen : IsOpen V) (a : A) (haV : a ∈ V)
+    (M : ℝ)
+    (hdom : ∀ b ∈ V, ∀ θ : ℝ, (circleMap c R θ,b) ∈ D)
+    (hbound : ∀ b ∈ V, ∀ θ : ℝ,
+      ‖fderiv ℂ F (circleMap c R θ,b)‖ ≤ M)
+    (h : A) :
+    (fderiv ℂ (fun b : A => ∮ z in C(c,R), F (z,b)) a) h =
+      ∮ z in C(c,R), (fderiv ℂ (fun b : A => F (z,b)) a) h := by
+  have hmain := (hasFDerivAt_circleIntegral_of_jointAnalytic
+    F D hDopen hF c R hR V hVopen a haV M hdom hbound).fderiv
+  have hdf : ContinuousOn (fderiv ℂ F) D :=
+    (hF.contDiffOn_of_completeSpace (n := 1)).continuousOn_fderiv_of_isOpen
+      hDopen (by norm_num)
+  have hmap : Continuous (fun θ : ℝ => (circleMap c R θ,a)) :=
+    (continuous_circleMap c R).prodMk continuous_const
+  have hsection : Continuous (fun θ : ℝ => fderiv ℂ F (circleMap c R θ,a)) :=
+    hdf.comp_continuous hmap (hdom a haV)
+  have hderiv : Continuous (fun θ : ℝ => deriv (circleMap c R) θ) := by
+    simp only [deriv_circleMap]
+    fun_prop
+  have hθ : Continuous (fun θ : ℝ =>
+      (deriv (circleMap c R) θ) •
+        (fderiv ℂ F (circleMap c R θ,a)).comp
+          (ContinuousLinearMap.inr ℂ ℂ A)) :=
+    hderiv.smul (hsection.clm_comp continuous_const)
+  have hint : IntervalIntegrable (fun θ : ℝ =>
+      (deriv (circleMap c R) θ) •
+        (fderiv ℂ F (circleMap c R θ,a)).comp
+          (ContinuousLinearMap.inr ℂ ℂ A)) volume 0 (2*Real.pi) :=
+    hθ.intervalIntegrable _ _
+  calc
+    (fderiv ℂ (fun b : A => ∮ z in C(c,R), F (z,b)) a) h =
+        (∫ θ in (0:ℝ)..2*Real.pi,
+          (deriv (circleMap c R) θ) •
+            (fderiv ℂ F (circleMap c R θ,a)).comp
+              (ContinuousLinearMap.inr ℂ ℂ A)) h := congrArg (· h) hmain
+    _ = ∫ θ in (0:ℝ)..2*Real.pi,
+          ((deriv (circleMap c R) θ) •
+            (fderiv ℂ F (circleMap c R θ,a)).comp
+              (ContinuousLinearMap.inr ℂ ℂ A)) h :=
+      ContinuousLinearMap.intervalIntegral_apply hint h
+    _ = ∮ z in C(c,R),
+          (fderiv ℂ (fun b : A => F (z,b)) a) h := by
+      unfold circleIntegral
+      apply intervalIntegral.integral_congr
+      intro θ _
+      dsimp only
+      rw [fderiv_source_section_eq_joint F (circleMap c R θ) a
+        ((hF _ (hdom a haV θ)).differentiableAt)]
+      simp
 
 /-- A jointly analytic integrand with a uniform joint derivative bound
 on a fixed circle has a complex Fréchet-differentiable circle integral

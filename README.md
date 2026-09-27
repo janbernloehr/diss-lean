@@ -2294,3 +2294,14 @@ integral of the source derivative of `z Δ′ / Q` equals the negative
 circle integral of `(D_source Δ) / Q`. The remaining step is to
 identify this circle integral with the action's source Fréchet
 derivative from differentiation under the integral.
+
+## Latest milestone: the fixed-circle action gradient formula
+
+`ParametricCircleIntegral.lean` now identifies each directional source
+Fréchet derivative of a jointly analytic circle integral with the
+circle integral of the directional derivative. Combining this with
+the contour integration-by-parts result,
+`SourceActionCircleGradient.lean` proves equation (2.17)'s negative
+normalized discriminant-variation formula for any fixed circle that
+avoids the periodic cuts at a real-type source. Transferring the
+formula to the glued indexed action is the next step.
