@@ -2399,3 +2399,15 @@ a neighborhood on which the quotient's real part remains above half
 its positive value at the base source. The raw quotient has value zero
 at a collapsed gap by Lean's division convention; that value is not
 the claimed analytic extension, which still needs to be constructed.
+
+`SourceNormalizedActionCollapseEstimate.lean` isolates the limiting
+calculation in (2.19). For a constant target factor `c`, it bounds the
+distance of four times the open-gap quotient from `c` by the uniform
+cosine-path factor error and a term quadratic in the gap. The
+critical-offset term is proved to tend to zero near every collapsed
+real-type source. Thus,
+if the deleted factor converges uniformly along the shrinking path,
+the quotient tends to the explicit candidate
+`I * sourceCriticalRootRatioExtension(τₙ) / 4`. Establishing that
+uniform source continuity, then an analytic extension across the
+complex collapsed-gap locus, remains open.
