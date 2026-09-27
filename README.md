@@ -2530,3 +2530,14 @@ and critical-gap quotient. Integrating it gives a quantitative
 complex-source estimate for the normalized action on each fixed-index
 chart. A common family of distant-index circles and uniform bounds
 for their deleted factors are still needed for Theorem 11.2.
+
+`SourceNormalizedActionUniformTailCircles.lean` constructs that common
+family of circles. On one complex source neighborhood, every
+sufficiently distant signed index has an eighth-π circle around its
+free lattice point that encloses the moving periodic segment. Its
+filled disc lies in the omitted-root domain, so the deleted factor is
+analytic there; the contour also satisfies uniform midpoint
+separation and small squared-gap bounds. The remaining work is to
+transport the quotient disc majorants to these circles and identify
+the normalized-action extension with their contour quotients on a
+common source neighborhood.
