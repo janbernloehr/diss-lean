@@ -92,9 +92,9 @@ theorem sourcePsiEquationCoordinate_eq_deletedCoordinate
     apply circleIntegral.integral_congr hR
     intro z _
     exact congrArg (fun v : ℂ => v / sourceCanonicalRoot hp hp1 ψ z) (hnum z)
-  change ((n-m : ℤ) : ℂ) * ((2*Real.pi : ℂ)⁻¹ *
+  change ((n-m : ℤ) : ℂ) * (2*Real.pi : ℂ) * ((2*Real.pi : ℂ)⁻¹ *
       (∮ z in C(c,R), sourcePsiContourIntegrandJoint hp hp1 n (z,(a,ψ)))) =
-    ((n-m : ℤ) : ℂ) * ((2*Real.pi : ℂ)⁻¹ *
+    ((n-m : ℤ) : ℂ) * (2*Real.pi : ℂ) * ((2*Real.pi : ℂ)⁻¹ *
       (∮ z in C(c,R), sourcePsiContourIntegrandJoint hp hp1 n
         (z,(Coeff.deleteCoordinate n a,ψ))))
   rw [hInt]

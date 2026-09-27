@@ -150,11 +150,13 @@ theorem sourcePsiContour_zero_orthogonality
   rw [sourcePsiContour_zero hp hp1 n _ R hR.le]
   exact sourcePsiFreeContour_orthogonality hp hp1 m n R hR hRπ
 
-/-- The scalar `F_m^n` coordinate in (2.22), with its `(n-m)`
-weight. The full sequence-valued map requires a separate `ℓᵖ` bound. -/
+/-- The scalar `F_m^n` coordinate in (2.22). Unlike the orthogonality
+functional (2.21), equation (2.22) has no `1/(2π)` factor. The full
+sequence-valued map requires a separate `ℓᵖ` bound. -/
 def sourcePsiEquationCoordinate (hp : p ≠ ⊤) (hp1 : 1 < p)
     (n m : ℤ) (a : Coeff p) (ψ : CoeffPair p) (c : ℂ) (R : ℝ) : ℂ :=
-  ((n-m : ℤ) : ℂ) * sourcePsiContour hp hp1 n a ψ c R
+  ((n-m : ℤ) : ℂ) * (2*Real.pi : ℂ) *
+    sourcePsiContour hp hp1 n a ψ c R
 
 /-- Every free coordinate of the contour equation vanishes on its
 own free-centered circle. -/
@@ -189,7 +191,8 @@ theorem exists_local_sourcePsiEquationCoordinate_differentiableOn
   refine ⟨V,hVopen,hbase,hcircleV,?_⟩
   change DifferentiableOn ℂ
     (fun b : Coeff p × CoeffPair p =>
-      ((n-m : ℤ) : ℂ) * sourcePsiContour hp hp1 n b.1 b.2 c R) V
+      (((n-m : ℤ) : ℂ) * (2*Real.pi : ℂ)) *
+        sourcePsiContour hp hp1 n b.1 b.2 c R) V
   exact hdiff.const_mul _
 
 /-- Around every real-type source and every gap, one enclosing circle
