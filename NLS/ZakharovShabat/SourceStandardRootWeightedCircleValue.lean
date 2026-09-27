@@ -50,6 +50,100 @@ theorem circleIntegral_weighted_sourceStandardRoot_eq_of_annulus
   exact Complex.circleIntegral_eq_of_differentiable_on_annulus_off_countable
     hr hrR (s := ∅) Set.countable_empty hc hd
 
+/-- Radial invariance only needs analyticity of the numerator near the
+annulus, and avoidance of the one gap defining the denominator. -/
+theorem circleIntegral_weighted_sourceStandardRoot_eq_of_local_annulus
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p)
+    (n : ℤ) (g : ℂ → ℂ) (U : Set ℂ)
+    (hg : AnalyticOnNhd ℂ g U)
+    (c : ℂ) (r R : ℝ) (hr : 0 < r) (hrR : r ≤ R)
+    (havoid : closedBall c R \ ball c r ⊆
+      (sourcePeriodicSegment hp hp1 ψ n)ᶜ)
+    (hU : closedBall c R \ ball c r ⊆ U) :
+    (∮ z in C(c,R), g z / sourceStandardRoot hp hp1 ψ n z) =
+      ∮ z in C(c,r), g z / sourceStandardRoot hp hp1 ψ n z := by
+  let f : ℂ → ℂ := fun z => g z / sourceStandardRoot hp hp1 ψ n z
+  have hf : ∀ z ∈ closedBall c R \ ball c r,
+      AnalyticAt ℂ f z := by
+    intro z hz
+    exact (hg z (hU hz)).div
+      (sourceStandardRoot_analyticAt hp hp1 ψ n z (havoid hz))
+      (sourceStandardRoot_ne_zero_off_segment hp hp1 ψ n z (havoid hz))
+  have hc : ContinuousOn f (closedBall c R \ ball c r) := by
+    intro z hz
+    exact (hf z hz).continuousAt.continuousWithinAt
+  have hd : ∀ z ∈ (ball c R \ closedBall c r) \ (∅ : Set ℂ),
+      DifferentiableAt ℂ f z := by
+    intro z hz
+    have hz' : z ∈ closedBall c R \ ball c r :=
+      ⟨ball_subset_closedBall hz.1.1,
+        fun h => hz.1.2 (ball_subset_closedBall h)⟩
+    exact (hf z hz').differentiableAt
+  exact Complex.circleIntegral_eq_of_differentiable_on_annulus_off_countable
+    hr hrR (s := ∅) Set.countable_empty hc hd
+
+/-- A numerator analytic near the outer disc has the same integral on
+two concentric circles enclosing the selected gap. Other periodic gaps
+do not enter this single-root quotient. -/
+theorem circleIntegral_weighted_sourceStandardRoot_eq_of_local_isolated_annulus
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p)
+    (n : ℤ) (g : ℂ → ℂ) (U : Set ℂ)
+    (hg : AnalyticOnNhd ℂ g U)
+    (c : ℂ) (r R : ℝ) (hr : 0 < r) (hrR : r ≤ R)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c r)
+    (hU : closedBall c R ⊆ U) :
+    (∮ z in C(c,R), g z / sourceStandardRoot hp hp1 ψ n z) =
+      ∮ z in C(c,r), g z / sourceStandardRoot hp hp1 ψ n z := by
+  apply circleIntegral_weighted_sourceStandardRoot_eq_of_local_annulus
+    hp hp1 ψ n g U hg c r R hr hrR
+  · intro z hz hmem
+    exact hz.2 (hseg hmem)
+  · intro z hz
+    exact hU hz.1
+
+/-- Midpoint circles with radii beyond a real open gap have the same
+weighted integral whenever the larger disc lies in a local analytic
+domain for the numerator. -/
+theorem weighted_sourceStandardRoot_midpointCircles_eq_of_local_disc
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re)
+    (g : ℂ → ℂ) (U : Set ℂ) (hg : AnalyticOnNhd ℂ g U) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    ∀ a b : ℝ, d < a → a ≤ b → closedBall c b ⊆ U →
+      (∮ z in C(c,b), g z / sourceStandardRoot hp hp1 ψ n z) =
+        ∮ z in C(c,a), g z / sourceStandardRoot hp hp1 ψ n z := by
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+  let d : ℝ := (r.re-l.re)/2
+  dsimp only
+  intro a b ha hab hU
+  change d < a at ha
+  change closedBall c b ⊆ U at hU
+  have hd : 0 < d := by
+    change 0 < (r.re-l.re)/2
+    exact div_pos (sub_pos.mpr hopen) (by norm_num)
+  have hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c a := by
+    have hm := sourcePeriodicSegment_subset_midpoint_ball
+      hp hp1 ψ hreal n (a-d) (by linarith)
+    change sourcePeriodicSegment hp hp1 ψ n ⊆ ball c (d+(a-d)) at hm
+    rw [show d+(a-d)=a by ring] at hm
+    exact hm
+  exact circleIntegral_weighted_sourceStandardRoot_eq_of_local_isolated_annulus
+    hp hp1 ψ n g U hg c a b (by linarith) hab hseg hU
+
 /-- If the inner circle encloses the selected gap and the outer disc
 avoids every other gap, the weighted integral is radially invariant. -/
 theorem circleIntegral_weighted_sourceStandardRoot_eq_of_isolated_annulus

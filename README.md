@@ -2954,8 +2954,12 @@ integrals tend to minus twice the upper gap-side boundary integral.
 `SourceStandardRootWeightedCircleValue.lean` proves that constancy by
 holomorphic annulus deformation. It identifies the exact integral and
 establishes the Lemma 12.3 maximum bound on every isolated midpoint
-circle around an open real gap. The current theorem asks for the
-numerator to be analytic on the whole canonical-root domain as well
-as near the selected gap; the dissertation only assumes analyticity
-on a neighborhood containing its chosen contour. Extending the local
-deformation and covering non-midpoint contours remain open.
+circle around an open real gap. Its new local annulus theorem shows
+that two midpoint circles have the same weighted integral whenever
+the numerator is analytic near the intervening annulus; this uses
+avoidance of only the selected gap, with no condition on the other
+periodic gaps. The exact-value theorem still asks for analyticity on
+the whole canonical-root domain for the stadium-to-circle deformation.
+The dissertation only assumes analyticity on a neighborhood containing
+its chosen contour. Localizing that deformation and covering
+non-midpoint contours remain open.
