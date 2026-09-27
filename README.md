@@ -2975,7 +2975,12 @@ disc. `SourceGapStadiumLocalIntegralDecomposition.lean` makes the
 four-piece stadium identity depend only on continuity along a local
 domain containing its path. `SourceStandardRootWeightedLocalStadiumLimit.lean`
 then proves that the shrinking stadium still tends to twice the upper
-gap-side integral using a numerator analytic near that disc. Combining
-these two local results with the local annulus theorem and covering
-non-midpoint contours remain open before the full local Lemma 12.3
-estimate follows.
+gap-side integral using a numerator analytic near that disc.
+`SourceStandardRootWeightedLocalCircleValue.lean` combines this limit
+with the local stadium-to-circle identity and annulus invariance. It
+identifies the exact weighted integral on any midpoint circle whose
+filled disc lies in the analytic neighborhood and proves its
+Lemma 12.3 gap-maximum bound. Neither result assumes global
+analyticity or excludes other periodic gaps from the disc. The
+dissertation's arbitrary contour, which may have only a neighborhood
+of analyticity rather than a filled midpoint disc, remains open.
