@@ -2343,3 +2343,11 @@ quotient: the action domain intersected with the analytic and nonzero
 locus of the squared periodic gap. Every real-type source with a
 noncollapsed selected gap belongs to this domain, and the quotient is
 complex differentiable throughout it.
+
+`SourceComplexActionZeroLocus.lean` proves that, on a common complex
+neighborhood of the real-type sources, the glued indexed action vanishes
+whenever its selected squared gap is zero. The proof transfers the
+collapsed-gap contour integral result through an action ball chart. It
+also combines this zero-locus statement with analyticity of every
+squared gap on one common neighborhood. Constructing the analytic
+quotient at those zeros remains open.
