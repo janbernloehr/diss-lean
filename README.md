@@ -2590,8 +2590,8 @@ The cutoff and source neighborhood are common to all distant indices.
 complex differentiability of the normalized candidate on any
 prescribed valid circle near a real-type base source. Real-form
 uniqueness then extends the common-circle identity to a complex
-neighborhood for each fixed distant index. The remaining issue is to
-choose that complex neighborhood uniformly across all distant indices.
+neighborhood for each fixed distant index. The common-ball result below
+removes the index dependence from this neighborhood.
 
 `SourceDistantCriticalPointsAnalyticNeighborhood.lean` gives one complex
 source neighborhood and one cutoff on which every distant canonical
@@ -2606,7 +2606,7 @@ common critical-point neighborhood to make every distant critical
 gap quotient analytic on one complex source neighborhood. A shared
 isolating-disc family keeps the deleted product and its derivative in
 their analytic domain and makes the offset coefficient nonzero, even
-at complex collapsed gaps. The remaining step is to establish a
+at complex collapsed gaps. The subsequent circle modules establish a
 common analytic domain for the full normalized-action contour formula.
 
 `SourceDistantCriticalPointsFreeCircles.lean` puts every distant critical
@@ -2622,5 +2622,28 @@ integrand on every distant free circle, including collapsed complex
 gaps. `SourceDistantNormalizedActionCircleCandidateAnalytic.lean` then
 differentiates under the contour integral and obtains one complex
 source neighborhood where all distant circle candidates are
-differentiable. Identifying those candidates with the chart-independent
-normalized action on that whole neighborhood remains open.
+differentiable. The common-ball identity below identifies them with
+the chart-independent normalized action.
+
+`SourceDistantCriticalRootRatioCircleZero.lean` proves that the
+unweighted discriminant-derivative quotient has zero integral on all
+distant free circles throughout one complex source ball. It extends
+the existing local vanishing for each index along complex affine
+source lines using the identity principle.
+
+`SourceDistantActionFreeCircleCharts.lean` constructs action charts on
+the same source ball and free-centered circles for all distant
+indices. The glued complex indexed action therefore equals the circle
+action there. `SourceNormalizedActionUniformCircleComplexAgreement.lean`
+combines these charts, zero periods, the exact squared-gap identity,
+and the collapsed-gap Cauchy value to prove that the common-circle
+candidate equals the chart-independent normalized action throughout
+one complex source ball for every sufficiently distant index.
+
+`SourceNormalizedActionComplexUniformSequenceMajorants.lean` transfers
+the common-circle `ℓq + ℓ^(p/2)` majorants to the chart-independent
+normalized action at nearby complex sources, including collapsed gaps.
+It also gives one source neighborhood on which all distant normalized
+action coordinates are differentiable. The remaining sequence-space
+step is to package these coordinatewise estimates into the full
+Theorem 11.2 target map.
