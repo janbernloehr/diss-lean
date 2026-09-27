@@ -2537,7 +2537,14 @@ sufficiently distant signed index has an eighth-π circle around its
 free lattice point that encloses the moving periodic segment. Its
 filled disc lies in the omitted-root domain, so the deleted factor is
 analytic there; the contour also satisfies uniform midpoint
-separation and small squared-gap bounds. The remaining work is to
-transport the quotient disc majorants to these circles and identify
-the normalized-action extension with their contour quotients on a
-common source neighborhood.
+separation and small squared-gap bounds.
+
+`SourceNormalizedActionFactorDiscMajorants.lean` transfers the
+single-root quotient disc estimates to the deleted factor for nearby
+complex sources. On the same family of distant free-centered circles,
+its deviation from the free value has `ℓq + ℓ^(p/2)` pointwise
+majorants whose sequence norms are uniformly bounded on one source
+neighborhood. Consequently the deleted factor has a uniform scalar
+bound on all those circles. The next step is to identify the
+normalized-action extension with their contour quotients on a common
+source neighborhood and apply the correction bound.
