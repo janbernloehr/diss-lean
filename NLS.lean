@@ -1047,3 +1047,4 @@ import NLS.ZakharovShabat.SourceNormalizedActionPositive
 import NLS.ZakharovShabat.SourceNormalizedActionCollapseEstimate
 import NLS.ZakharovShabat.SourceCriticalDisplacementContinuity
 import NLS.ZakharovShabat.SourceNormalizedActionFactorContinuity
+import NLS.ZakharovShabat.SourceNormalizedActionExtensionTailBound
