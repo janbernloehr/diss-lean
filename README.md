@@ -2843,6 +2843,18 @@ to prove that the sequence-valued free psi equation has Fréchet
 derivative `2 · id` at zero, equal to the invertible free Jacobian
 operator. Extending the sequence-valued map and its derivative to
 nonzero source potentials remains open.
+`SourcePeriodicMidpointGapContinuity.lean` upgrades the periodic
+midpoint and gap displacements from coordinatewise continuity to
+continuity in `ℓᵖ` at every real-type source. This gives one free-source
+neighborhood on which **all** moving periodic gaps lie in disjoint
+free eighth-π discs; `SourcePsiNearFreeGapGeometry.lean` proves the
+selected circles avoid every gap and the closed quarter-π discs avoid
+all nonselected gaps. `SourcePsiNearFreeDiscMajorant.lean` uses those
+analytic discs to patch the Lemma 10.8 tail majorant across the finite
+head. The quotient error, and hence the weighted regular psi factor
+in (2.26), now has an all-index `ℓᵖ` disc majorant near the free
+source. The selected-gap integral estimate of Lemma 12.3 is still
+needed to turn this into the nonzero-source sequence-valued equation.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle

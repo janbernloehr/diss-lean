@@ -917,6 +917,9 @@ import NLS.ZakharovShabat.SourcePsiFreeEquationFactorization
 import NLS.ZakharovShabat.SourcePsiFreeQuotientTail
 import NLS.ZakharovShabat.SourcePsiFreeQuotientContinuity
 import NLS.ZakharovShabat.SourcePsiFreeSequenceDerivative
+import NLS.ZakharovShabat.SourcePeriodicMidpointGapContinuity
+import NLS.ZakharovShabat.SourcePsiNearFreeGapGeometry
+import NLS.ZakharovShabat.SourcePsiNearFreeDiscMajorant
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
