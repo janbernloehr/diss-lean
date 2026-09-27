@@ -1045,6 +1045,7 @@ import NLS.ZakharovShabat.SourceComplexActionGradient
 import NLS.ZakharovShabat.SourceActionGradientContourHomotopy
 import NLS.ZakharovShabat.SourceNormalizedActionNoncollapsed
 import NLS.ZakharovShabat.SourceNormalizedActionCircleKernel
+import NLS.ZakharovShabat.SourceNormalizedActionCircleAnalytic
 import NLS.ZakharovShabat.SourceComplexActionZeroLocus
 import NLS.ZakharovShabat.SourceNormalizedActionModel
 import NLS.ZakharovShabat.SourceNormalizedActionEstimate

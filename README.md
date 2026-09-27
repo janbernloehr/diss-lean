@@ -2435,3 +2435,12 @@ defined even when `γₙ = 0`, and the action equals `γₙ²` times this
 candidate throughout a complex source neighborhood. Analyticity of the
 candidate as a function of the source and agreement with the existing
 real-type collapsed-gap value are the next steps toward Theorem 11.2.
+
+`SourceNormalizedActionCircleAnalytic.lean` proves joint analyticity of
+that rationalized integrand at exterior spectral points over real-type
+sources. A common neighborhood of the fixed circle then makes the
+contour candidate complex Fréchet differentiable in the source and
+analytic along every complex source line, while retaining the exact
+action factorization. The remaining work is to identify this local
+candidate with the glued indexed action and prove the stronger Banach
+analyticity and asymptotic conclusions of Theorem 11.2.
