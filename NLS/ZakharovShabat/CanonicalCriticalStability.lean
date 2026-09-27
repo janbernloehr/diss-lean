@@ -60,15 +60,18 @@ theorem continuousAt_canonicalCriticalPoints_im_of_realType (hp : p ≠ ⊤) (hp
   filter_upwards [eventually_canonicalCriticalPoints_im_lt hp hp1 φ hreal n.natAbs hε] with ψ hψ
   simpa only [Real.dist_eq, sub_zero] using hψ n le_rfl
 
-/-- Every sufficiently distant canonical coordinate is continuous at the given even potential. -/
-theorem exists_continuousAt_distant_canonicalCriticalPoints (hp : p ≠ ⊤) (hp1 : 1 < p)
-    (φ : pairParitySubspace (p := p) 0) :
-    ∃ N : ℕ, 0 < N ∧ ∀ n : ℤ, N < n.natAbs →
-      ContinuousAt (fun ψ : pairParitySubspace (p := p) 0 =>
-        canonicalCriticalPoints hp hp1 ψ.val ψ.property n) φ := by
-  obtain ⟨N,hpos,hN⟩ := exists_eventually_canonicalCriticalLabeling hp hp1 φ
+/-- A common labeling near an even potential makes each distant canonical
+critical coordinate continuous there. -/
+theorem continuousAt_canonicalCriticalPoints_of_eventually_labeling
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : pairParitySubspace (p := p) 0) (N : ℕ) (n : ℤ)
+    (hn : N < n.natAbs)
+    (hN : ∀ᶠ ψ : pairParitySubspace (p := p) 0 in 𝓝 φ,
+      CriticalPointLabeling hp hp1 ψ.val ψ.property N
+        (canonicalCriticalPoints hp hp1 ψ.val ψ.property)) :
+    ContinuousAt (fun ψ : pairParitySubspace (p := p) 0 =>
+      canonicalCriticalPoints hp hp1 ψ.val ψ.property n) φ := by
   have hφ := hN.self_of_nhds
-  refine ⟨N,hpos,fun n hn => ?_⟩
   apply tendsto_roots_of_unique_on_compact
     (tendstoLocallyUniformlyOn_discriminant_derivative_family hp hp1 φ)
     (isCompact_closedBall ((Real.pi : ℂ)*n) (Real.pi/4))
@@ -78,5 +81,15 @@ theorem exists_continuousAt_distant_canonicalCriticalPoints (hp : p ≠ ⊤) (hp
   · filter_upwards [hN] with ψ hψ
     exact ball_subset_closedBall (hψ.distant n hn).1
   · exact Eventually.of_forall (fun ψ => canonicalCriticalPoints_is_critical hp hp1 ψ.val ψ.property n)
+
+/-- Every sufficiently distant canonical coordinate is continuous at the given even potential. -/
+theorem exists_continuousAt_distant_canonicalCriticalPoints (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : pairParitySubspace (p := p) 0) :
+    ∃ N : ℕ, 0 < N ∧ ∀ n : ℤ, N < n.natAbs →
+      ContinuousAt (fun ψ : pairParitySubspace (p := p) 0 =>
+        canonicalCriticalPoints hp hp1 ψ.val ψ.property n) φ := by
+  obtain ⟨N,hpos,hN⟩ := exists_eventually_canonicalCriticalLabeling hp hp1 φ
+  exact ⟨N,hpos,fun n hn =>
+    continuousAt_canonicalCriticalPoints_of_eventually_labeling hp hp1 φ N n hn hN⟩
 
 end NLS.ZakharovShabat

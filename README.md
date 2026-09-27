@@ -2592,3 +2592,11 @@ prescribed valid circle near a real-type base source. Real-form
 uniqueness then extends the common-circle identity to a complex
 neighborhood for each fixed distant index. The remaining issue is to
 choose that complex neighborhood uniformly across all distant indices.
+
+`SourceDistantCriticalPointsAnalyticNeighborhood.lean` gives one complex
+source neighborhood and one cutoff on which every distant canonical
+critical coordinate is analytic. It combines a uniform canonical
+labeling, local simplicity of all critical roots, and the analytic
+implicit-root theorem. This removes the index-dependent analyticity
+neighborhood for the critical coordinates; uniformity for the remaining
+normalized-action factors is still needed.
