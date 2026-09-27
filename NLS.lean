@@ -905,6 +905,7 @@ import NLS.ZakharovShabat.SourcePsiCandidate
 import NLS.ZakharovShabat.SourcePsiContourAnalytic
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
+import NLS.ZakharovShabat.SourcePsiSingleVariation
 import NLS.ZakharovShabat.SourceFreeSineQuotientAsymptotic
 import NLS.ZakharovShabat.SourceCriticalMidpointGapSquaredTail
 import NLS.ZakharovShabat.CriticalOffsetCoefficientOpenGap

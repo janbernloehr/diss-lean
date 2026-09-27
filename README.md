@@ -2775,3 +2775,9 @@ Its continuous projection sets only the selected coordinate to zero.
 scalar contour equation factor through this projection, remain
 holomorphic on the omitted-coordinate Banach parameter space, and
 vanish at the free data.
+`SourcePsiSingleVariation.lean` proves the exact one-root variation
+identity for the finite and entire psi products. Away from the moved
+free center, the numerator is affine in that root displacement and
+its derivative at the free sequence is the free psi-function divided
+by the corresponding linear root factor. This is the first input to
+the free Jacobian of Lemma 12.5.
