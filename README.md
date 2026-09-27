@@ -2562,3 +2562,11 @@ The common-circle candidate now has locally uniform
 collapsed gaps and the quasi-Banach range `p/2 < 1`. It remains to
 identify the candidate with the chart-independent normalized-action
 extension on one common source neighborhood.
+
+`SourceNormalizedActionCircleHomotopy.lean` proves contour invariance
+of the normalized-action candidate under nested gap-enclosing circles,
+and for two circles inside a common valid outer disc. The homotopy
+stays outside the selected segment and inside the outer disc, where
+the deleted factor is analytic. This works for complex collapsed gaps
+without dividing by the squared gap. The next comparison is between
+the common free-centered circles and the fixed-index action charts.
