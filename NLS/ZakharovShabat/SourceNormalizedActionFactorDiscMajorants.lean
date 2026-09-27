@@ -118,7 +118,7 @@ theorem exists_local_sourceNormalizedAction_factor_disc_uniformMajorants
       hp hp1 hq1 hq hhalf φ hφ
   obtain ⟨V₂,hV₂open,hφV₂,A,hA,hα⟩ :=
     exists_local_sourceCriticalMidpointOffsetAtExponent_bound
-      hp hp1 hq1 hq hhalf φ hφ
+      hp hp1 hq1.le hq hhalf φ hφ
   let u : ℝ := Real.pi⁻¹ *
     (Fourier.hilbertTransformBound hq1 hq + ‖Fourier.hilbertSquareCoeffs‖) +
       C*R*‖Fourier.hilbertSquareCoeffs‖

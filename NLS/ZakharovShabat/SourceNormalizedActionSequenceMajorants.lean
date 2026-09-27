@@ -51,7 +51,7 @@ critical quotient and squared-gap norms, also when `p/2 < 1`. -/
 theorem norm_sourceCriticalMidpointOffsetAtExponent_le
     [Fact (1 ≤ q)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
-    (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hq0 : 1 ≤ q) (hq : q ≠ ⊤)
     (hhalf : ENNReal.ofReal (p.toReal/2) ≤ q)
     (ψ : CoeffPair p) :
     ‖sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ‖ ≤
@@ -68,7 +68,7 @@ theorem norm_sourceCriticalMidpointOffsetAtExponent_le
     ENNReal.ofReal_pos.mpr (by positivity)
   have hSq : ‖Sq‖ ≤ ‖S‖ :=
     Coeff.norm_quasiExponentInclusion_le hhalfPos
-      (zero_lt_one.trans hq1) hq hhalf S
+      (zero_lt_one.trans_le hq0) hq hhalf S
   calc
     ‖sourceCriticalMidpointOffsetAtExponent hp hp1 hhalf ψ‖ =
         ‖Coeff.multiplier Btop Sq‖ := rfl
@@ -82,7 +82,7 @@ each real-type source. -/
 theorem exists_local_sourceCriticalMidpointOffsetAtExponent_bound
     [Fact (1 ≤ q)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
-    (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hq0 : 1 ≤ q) (hq : q ≠ ⊤)
     (hhalf : ENNReal.ofReal (p.toReal/2) ≤ q)
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
     ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
@@ -97,7 +97,7 @@ theorem exists_local_sourceCriticalMidpointOffsetAtExponent_bound
     B*R^2,by positivity,?_⟩
   intro ψ hψ
   exact (norm_sourceCriticalMidpointOffsetAtExponent_le
-    hp hp1 hq1 hq hhalf ψ).trans
+    hp hp1 hq0 hq hhalf ψ).trans
     (mul_le_mul (hquot ψ hψ.2).1 (hS ψ hψ.1)
       (lp.norm_nonneg' _) hB)
 
@@ -120,6 +120,46 @@ theorem exists_global_sourceCriticalMidpointOffsetAtExponent_eq
   intro ψ hψ n
   simpa only [sourceCriticalMidpointOffsetAtExponent_apply,
     sourceCriticalGapQuotient_apply] using (hdata ψ hψ n).2
+
+omit [Fact (1 ≤ p)] in
+/-- For `p ≤ 2`, the squared-gap exponent embeds into `ℓ¹`. -/
+theorem source_half_le_one (hp : p ≠ ⊤) (hp2 : p ≤ 2) :
+    ENNReal.ofReal (p.toReal / 2) ≤ (1 : ℝ≥0∞) := by
+  have hpr : p.toReal ≤ 2 :=
+    (ENNReal.toReal_le_toReal hp (by norm_num)).mpr hp2
+  calc
+    ENNReal.ofReal (p.toReal / 2) ≤ ENNReal.ofReal 1 :=
+      ENNReal.ofReal_le_ofReal (by linarith)
+    _ = 1 := by norm_num
+
+/-- For `1 < p ≤ 2`, the actual critical-to-midpoint offset is an
+`ℓ¹` sequence with a locally uniform norm bound. This endpoint
+sequence can be used for every target exponent above one. -/
+theorem exists_local_sourceCriticalMidpointOffset_one_bound
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ A : ℝ, 0 ≤ A ∧
+        ∀ ψ ∈ V,
+          ‖sourceCriticalMidpointOffsetAtExponent hp hp1
+              (q := 1) (source_half_le_one hp hp2) ψ‖ ≤ A ∧
+          ∀ n : ℤ,
+            canonicalCriticalPoints hp hp1 (periodOnePotential ψ)
+                (periodOnePotential_mem ψ) n -
+              canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+                (periodOnePotential_mem ψ) n =
+              sourceCriticalMidpointOffsetAtExponent hp hp1
+                (q := 1) (source_half_le_one hp hp2) ψ n := by
+  have hhalf := source_half_le_one hp hp2
+  obtain ⟨V₁,hV₁,hφ₁,A,hA,hbound⟩ :=
+    exists_local_sourceCriticalMidpointOffsetAtExponent_bound
+      hp hp1 le_rfl (by norm_num) hhalf φ hφ
+  obtain ⟨W,hW,hreal,heq⟩ :=
+    exists_global_sourceCriticalMidpointOffsetAtExponent_eq
+      hp hp1 hhalf
+  refine ⟨V₁ ∩ W,hV₁.inter hW,⟨hφ₁,hreal hφ⟩,A,hA,?_⟩
+  intro ψ hψ
+  exact ⟨hbound ψ hψ.1,heq ψ hψ.2⟩
 
 /-- The complementary factor on the actual cosine gap path has
 `ℓq + ℓ^(p/2)` pointwise majorants at all sufficiently distant
@@ -248,7 +288,7 @@ theorem exists_local_sourceNormalizedAction_factor_uniformMajorants
       hp hp1 hq1 hq hhalf φ hφ
   obtain ⟨V₂,hV₂open,hφV₂,A,hA,hα⟩ :=
     exists_local_sourceCriticalMidpointOffsetAtExponent_bound
-      hp hp1 hq1 hq hhalf φ hφ
+      hp hp1 hq1.le hq hhalf φ hφ
   let u : ℝ := Real.pi⁻¹ *
     (Fourier.hilbertTransformBound hq1 hq + ‖Fourier.hilbertSquareCoeffs‖) +
       C*R*‖Fourier.hilbertSquareCoeffs‖

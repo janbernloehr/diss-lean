@@ -2698,8 +2698,15 @@ and `SourceNormalizedActionRootTwoExponentDecomposition.lean` apply this
 to the complex normalized action and its principal square root.
 Both deviations are exactly `ℓq + ℓ^(p/2)` with locally uniform
 component norm bounds for every finite `q > 1`, considered separately.
+`SourceSingleRootQuotientCommonExponentDomain.lean` now obtains the
+quotient-disc majorants for every finite `q > 1` on one source
+neighborhood when the critical-to-midpoint offset is in `ℓ¹`.
+`SourceNormalizedActionSequenceMajorants.lean` establishes that this
+endpoint condition holds, with a locally uniform norm bound, for
+`1 < p ≤ 2`.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
 `ℓq` component is zero. The current source neighborhood may depend on
-`q`; a common domain for the simultaneous `ℓ^(1+)` formulation and
+`q` in the later action and root estimates; lifting the shared quotient
+domain through those estimates to the simultaneous `ℓ^(1+)` formulation and
 a full multivariable Fréchet power-series theorem in Mathlib's
 `AnalyticOnNhd` sense remain open in Theorem 11.2.
