@@ -2576,4 +2576,13 @@ encloses the selected segment and fits inside the common free-centered
 π/8 circle. The existing midpoint-circle formula and contour
 invariance then show, with one source neighborhood and one cutoff,
 that each distant free-centered circle computes the indexed real
-action. The complex normalized-action identity remains to be proved.
+action.
+
+`SourceNormalizedActionUniformCircleRealAgreement.lean` identifies
+the normalized contour candidate on those circles with the existing
+normalized-action extension at every distant real-type gap. The
+unweighted critical-root quotient integral vanishes on a valid
+circle for both open and collapsed real gaps; the action factorization
+handles open gaps, and the midpoint formula handles collapsed ones.
+The cutoff and source neighborhood are common to all distant indices.
+The equality on nearby complex sources remains to be proved.
