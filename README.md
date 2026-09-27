@@ -2822,5 +2822,10 @@ invertible and bijective. This gives a quantitative target for the
 nonfree Jacobian estimates in Lemma 12.5.
 `CompactLpMultiplier.lean` proves that every finite-`p` coefficient
 sequence has uniformly vanishing tails and therefore acts as a compact
-diagonal multiplier on `ℓᵖ`. This is the compactness input for the
-Hilbert-transform remainder in Lemma 12.6.
+diagonal multiplier on `ℓᵖ`.
+`CompactRowMajorant.lean` proves the more general compactness criterion
+needed for Lemma 12.6: if every output row of a bounded operator is
+controlled by one `ℓᵖ` sequence times the input norm, its finite output
+cutoffs converge in operator norm. The criterion also applies directly
+to the deleted-coordinate space of the psi root parameters. Establishing
+the common row bound for the nonfree Jacobian remains open.
