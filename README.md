@@ -2786,6 +2786,12 @@ to arbitrary displacement data. The cross-multiplied formula remains
 valid at spectral root collisions; away from the original moved root,
 the numerator is affine in that coordinate and its complex derivative
 is explicit. This prepares the nonfree Jacobian calculation.
+`SourcePsiCoordinateVariation.lean` carries this variation through a
+fixed contour at a real-type source. If the circle avoids the moved
+root and canonical-root cuts, the scalar equation is exactly affine
+along that retained coordinate; its derivative is the weighted
+Cauchy-kernel integral of Lemma 12.5, both in the ambient and deleted
+`ℓᵖ` parameter spaces. Bounds on these entries remain to be proved.
 `SourcePsiFreeJacobian.lean` evaluates the free two-pole contour
 integral and proves the exact scalar Jacobian entries of (2.22):
 moving retained root `k` changes coordinate `m` by `2t` if `m = k`
