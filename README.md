@@ -3017,5 +3017,14 @@ factorized numerator on the gap by the root, midpoint, and half-gap
 displacements. `SourcePsiSelectedGapContourBound.lean` applies the
 local Lemma 12.3 maximum estimate on nested fixed free-centered
 circles. For real-type sources near zero, the open-gap coordinates of
-the psi equation form an `ℓᵖ` sequence. Collapsed gaps and the complex
-source neighborhood are still needed for the full Lemma 12.4 map.
+the psi equation form an `ℓᵖ` sequence.
+
+`SourcePsiNearFreeCollapsedGap.lean` evaluates the selected-root
+integral by a Cauchy residue when the gap collapses, allowing the pole
+to move off the fixed free-circle center. The same all-index regular
+factor bound controls those coordinates. Together with the open-gap
+estimate, this proves that the complete fixed-circle psi equation is
+an element of the deleted-coordinate `ℓᵖ` space for every near-free
+real-type source and every deleted root input. Extension to a complex
+source neighborhood, local uniform bounds, and sequence-valued
+analyticity remain for the full Lemma 12.4 statement.

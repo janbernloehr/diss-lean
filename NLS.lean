@@ -939,6 +939,7 @@ import NLS.ZakharovShabat.SourcePsiNearFreeGapGeometry
 import NLS.ZakharovShabat.SourcePsiNearFreeDiscMajorant
 import NLS.ZakharovShabat.SourcePsiNearFreeRegularAnalytic
 import NLS.ZakharovShabat.SourcePsiSelectedGapContourBound
+import NLS.ZakharovShabat.SourcePsiNearFreeCollapsedGap
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
