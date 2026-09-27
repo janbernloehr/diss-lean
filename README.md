@@ -2553,7 +2553,12 @@ combines uniform midpoint separation, a local bound for the critical
 gap quotient, and the deleted-factor bound to show that the contour
 candidate differs from its midpoint term by at most a common constant
 times the squared gap, for every sufficiently distant index and every
-nearby complex source, including collapsed gaps. The next steps are
-to convert this into sequence majorants for the common-circle
-candidate and to identify that candidate with the chart-independent
-normalized-action extension on a common source neighborhood.
+nearby complex source, including collapsed gaps.
+
+`SourceNormalizedActionUniformCircleMajorants.lean` combines that
+correction with the deleted-factor estimate at the moving midpoint.
+The common-circle candidate now has locally uniform
+`ℓq + ℓ^(p/2)` majorants at nearby complex sources, including
+collapsed gaps and the quasi-Banach range `p/2 < 1`. It remains to
+identify the candidate with the chart-independent normalized-action
+extension on one common source neighborhood.
