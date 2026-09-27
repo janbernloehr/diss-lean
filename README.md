@@ -2798,3 +2798,8 @@ inverse is `(1/2) · id`, and gives the resulting continuous linear
 equivalence. This is the free linear model for the later implicit
 function theorem; identifying it as a derivative of a sequence-valued
 contour map still requires the missing uniform estimate.
+`SourcePsiFreePerturbation.lean` proves the inverse free operator has
+norm at most `1/2`. A Neumann-series argument then shows that any
+bounded operator at distance less than `2` from the free Jacobian is
+invertible and bijective. This gives a quantitative target for the
+nonfree Jacobian estimates in Lemma 12.5.
