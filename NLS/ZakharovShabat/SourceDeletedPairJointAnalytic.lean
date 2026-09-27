@@ -6,9 +6,9 @@ import NLS.ComplexAnalysis.JointSpectralDerivative
 # Joint analyticity of the deleted periodic-pair product
 
 On the omitted-root domain, the deleted pair product is the square
-of the jointly analytic omitted standard-root product. Consequently
-its spectral derivative is jointly continuous. This is the local
-regularity needed to bound the central critical-offset coefficients.
+of the jointly analytic omitted standard-root product. Its spectral
+derivative is therefore jointly analytic as well. These facts give
+the local regularity of the central critical-offset coefficients.
 -/
 
 noncomputable section
@@ -60,6 +60,39 @@ theorem continuousOn_sourceDeletedPairJointSpectralDerivative
     (sourceStandardRootOmittedJointDomain hp hp1 W n) hDopen
     (sourceDeletedPairJointProduct_analyticOnNhd_of_omitted
       hp hp1 W n hDopen hO)
+
+/-- The spectral derivative is in fact jointly analytic on the
+omitted-root domain. This stronger regularity supports analytic
+critical-gap coefficients, including when the selected gap is closed. -/
+theorem sourceDeletedPairJointSpectralDerivative_analyticOnNhd_of_omitted
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (W : Set (CoeffPair p)) (n : ℤ)
+    (hDopen : IsOpen (sourceStandardRootOmittedJointDomain hp hp1 W n))
+    (hO : AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 n)
+      (sourceStandardRootOmittedJointDomain hp hp1 W n)) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p =>
+      deriv (canonicalDeletedPeriodicProduct hp hp1
+        (periodOnePotential t.2) (periodOnePotential_mem t.2) n) t.1)
+      (sourceStandardRootOmittedJointDomain hp hp1 W n) := by
+  let P := sourceDeletedPairJointProduct hp hp1 n
+  let D := sourceStandardRootOmittedJointDomain hp hp1 W n
+  have hP : AnalyticOnNhd ℂ P D :=
+    sourceDeletedPairJointProduct_analyticOnNhd_of_omitted
+      hp hp1 W n hDopen hO
+  let ev : ((ℂ × CoeffPair p) →L[ℂ] ℂ) →L[ℂ] ℂ :=
+    ContinuousLinearMap.apply ℂ ℂ (1,0)
+  have hderiv : AnalyticOnNhd ℂ
+      (fun t : ℂ × CoeffPair p => (fderiv ℂ P t) (1,0)) D :=
+    ev.comp_analyticOnNhd hP.fderiv
+  have heq : D.EqOn
+      (fun t : ℂ × CoeffPair p => (fderiv ℂ P t) (1,0))
+      (fun t => deriv (canonicalDeletedPeriodicProduct hp hp1
+        (periodOnePotential t.2) (periodOnePotential_mem t.2) n) t.1) := by
+    intro t ht
+    symm
+    exact NLS.ComplexAnalysis.deriv_spectral_section_eq_fderiv P t.1 t.2
+      ((hP t ht).differentiableAt)
+  exact hderiv.congr hDopen heq
 
 /-- One connected almost-real source domain supports joint
 analyticity and continuous spectral derivatives for every deleted
