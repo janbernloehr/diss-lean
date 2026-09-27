@@ -2712,8 +2712,11 @@ domain through the fixed-circle correction and complex-action
 identification. For `1 < p ≤ 2`, the full action deviation belongs to
 every finite `ℓq`, `q > 1`, on one complex source neighborhood, with a
 locally uniform `ℓq` norm bound for each exponent.
+`SourceNormalizedActionRootCommonExponentDomain.lean` transfers this to
+the principal-root deviation. On one complex source neighborhood it is
+a locally bounded, Fréchet-holomorphic `ℓq`-valued map for every finite
+`q > 1`.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
-`ℓq` component is zero. The corresponding common-domain statement for
-the principal-root deviation, a dedicated `ℓ^(1+)` intersection type, and
+`ℓq` component is zero. A dedicated `ℓ^(1+)` intersection type and
 a full multivariable Fréchet power-series theorem in Mathlib's
 `AnalyticOnNhd` sense remain open in Theorem 11.2.
