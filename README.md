@@ -2513,3 +2513,11 @@ real-type gap, including collapsed gaps. Locally in the source, its
 deviation from `1/4` has `ℓq + ℓ^(p/2)` pointwise majorants with
 uniformly bounded sequence norms. The common complex neighborhood and
 the corresponding estimates for non-real-type sources remain open.
+
+`SourceNormalizedActionCircleExpansion.lean` gives an exact complex
+contour expansion of the normalized-action extension near each
+real-type source and fixed index. Its leading term is one quarter of
+the deleted factor at the gap midpoint; the remaining contour integral
+has an explicit factor of the squared gap and is defined at complex
+collapsed gaps. This reduces the complex-source sequence estimate to
+bounding that correction integral uniformly over distant indices.
