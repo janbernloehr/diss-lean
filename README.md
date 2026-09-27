@@ -2750,3 +2750,10 @@ identified with `-2i sin z`, and the normalized psi/root contour
 integral is `δₘₙ` on every free-centered circle of radius `0 < r < π`.
 Constructing the moving roots and analytic psi-functions for nonzero
 potentials remains open.
+`SourcePsiCandidate.lean` defines the entire numerator family of
+equation (2.23) for arbitrary `ℓᵖ` root displacements. It is jointly
+analytic in the spectral parameter and displacements, is the limit of
+the literal symmetric products, vanishes at every displaced root
+other than the deleted one (including root collisions), and is
+independent of the deleted coordinate. At zero displacement it is the
+free psi-function above.
