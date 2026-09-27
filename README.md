@@ -2757,3 +2757,12 @@ the literal symmetric products, vanishes at every displaced root
 other than the deleted one (including root collisions), and is
 independent of the deleted coordinate. At zero displacement it is the
 free psi-function above.
+`SourcePsiContourAnalytic.lean` forms the quotient of that numerator
+with the canonical root on the moving-gap complement. The integrand
+is jointly analytic in the spectral variable, root displacements,
+and source potential. Around any real-type source, each scalar
+coordinate of the contour map in (2.22) has an enclosing circle and
+is complex Fréchet differentiable in both Banach parameters on a
+neighborhood. All coordinates vanish at the free data. The common
+`ℓᵖ` target bound, invertible Jacobian, and implicit-function solution
+needed for Lemma 12.4 and Theorem 12.1 remain open.
