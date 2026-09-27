@@ -2444,3 +2444,14 @@ analytic along every complex source line, while retaining the exact
 action factorization. The remaining work is to identify this local
 candidate with the glued indexed action and prove the stronger Banach
 analyticity and asymptotic conclusions of Theorem 11.2.
+
+`SourceCriticalRootRatioAnyCircleZero.lean` extends the zero integral
+of the unweighted critical-root quotient to a prescribed isolating
+circle after shrinking the source neighborhood. In
+`SourceNormalizedActionGlued.lean` that circle is the one used by an
+indexed-action ball chart. The glued complex action therefore equals
+the squared periodic gap times the differentiable normalized contour
+candidate throughout one complex neighborhood of each real-type
+source. On noncollapsed gaps the candidate equals the raw quotient.
+Its value at a collapsed real gap and full Banach analyticity remain
+to be identified and proved.
