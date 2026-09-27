@@ -2682,6 +2682,14 @@ neighborhood, giving a Fréchet-holomorphic `ℓq`-valued map and an
 explicit local derivative bound. The same generic result upgrades
 the principal-root deviation to an `ℓq`-valued holomorphic map.
 
+`BanachHolomorphicAffineLineTaylor.lean` restricts a Banach-space
+holomorphic map to short complex source lines and proves convergence of
+its Banach-valued Cauchy series at the line endpoint. Its first
+coefficient is the Fréchet derivative applied to the line direction.
+`SourceNormalizedActionAffineLineTaylor.lean` applies this to both the
+normalized-action and principal-root deviations, giving convergent
+`ℓq`-valued line Taylor series at every nearby complex source.
+
 `TwoExponentDecomposition.lean` upgrades pointwise bounds by `ℓq` and
 `ℓr` majorants to an exact sum with separate norm bounds, even for
 `r < 1`; finitely many uncontrolled coordinates can be absorbed into
@@ -2693,5 +2701,5 @@ component norm bounds for every finite `q > 1`, considered separately.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
 `ℓq` component is zero. The current source neighborhood may depend on
 `q`; a common domain for the simultaneous `ℓ^(1+)` formulation and
-an explicit power-series theorem in Mathlib's `AnalyticOnNhd` sense
-remain open in Theorem 11.2.
+a full multivariable Fréchet power-series theorem in Mathlib's
+`AnalyticOnNhd` sense remain open in Theorem 11.2.
