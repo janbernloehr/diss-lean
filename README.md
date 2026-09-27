@@ -2809,6 +2809,16 @@ on free quarter-π discs by a constant times `|n-m|`, then combines it
 with that quotient majorant. Near the free source, the weighted regular
 factor in (2.27) is bounded on all distant discs by
 `(2/π)(1+|Bₘ|)` for a suitable `B ∈ ℓᵖ`, uniformly in the omitted index.
+`SourcePsiCollapsedGapCircle.lean` evaluates the selected-gap psi
+contour exactly at the free source. The regular factor is analytic
+through the selected free center for every deleted-coordinate input,
+and the contour equals `-2πi aₘ` times its weighted value there. A
+quotient majorant at that center yields
+`|Fₘⁿ| ≤ 4|aₘ|(1+|Bₘ|)`. When one `B ∈ ℓᵖ` bounds all centers, the
+whole contour sequence belongs to the deleted-coordinate `ℓᵖ` space.
+The current quotient majorant covers all sufficiently distant centers;
+a bound for the finitely many remaining centers is still needed for an
+unconditional local version of Lemma 12.4.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle
