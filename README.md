@@ -2608,3 +2608,19 @@ isolating-disc family keeps the deleted product and its derivative in
 their analytic domain and makes the offset coefficient nonzero, even
 at complex collapsed gaps. The remaining step is to establish a
 common analytic domain for the full normalized-action contour formula.
+
+`SourceDistantCriticalPointsFreeCircles.lean` puts every distant critical
+point strictly inside its free-centered π/8 circle on one complex
+source neighborhood. `SourceDistantCriticalRootRatioJointAnalyticCircles.lean`
+uses this separation to make the deleted spectral factor jointly
+analytic along all those circles on a common neighborhood.
+
+`SourceDistantNormalizedActionCircleIntegrandAnalytic.lean` combines the
+uniform critical gap quotient, symmetric periodic data, and deleted
+factor to prove joint analyticity of the rationalized normalized-action
+integrand on every distant free circle, including collapsed complex
+gaps. `SourceDistantNormalizedActionCircleCandidateAnalytic.lean` then
+differentiates under the contour integral and obtains one complex
+source neighborhood where all distant circle candidates are
+differentiable. Identifying those candidates with the chart-independent
+normalized action on that whole neighborhood remains open.
