@@ -947,6 +947,8 @@ import NLS.ZakharovShabat.SourceStandardRootInverseCorrection
 import NLS.ZakharovShabat.SourceStandardRootComplexGapCircleEstimate
 import NLS.ZakharovShabat.SourcePsiNearFreeComplexCoordinate
 import NLS.ZakharovShabat.SourcePsiNearFreeComplexUniformEquation
+import NLS.ZakharovShabat.SourcePsiComplexContourAnalytic
+import NLS.ZakharovShabat.SourcePsiComplexSequenceAnalytic
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

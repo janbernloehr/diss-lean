@@ -3056,5 +3056,12 @@ psi equation coordinate without assuming a real-type source.
 gap correction into the periodic-gap displacement sequence. It builds
 the complete deleted `ℓᵖ` psi equation on a complex source neighborhood
 of zero and proves a locally uniform norm bound independent of the
-deleted index. Sequence-valued analyticity is the next part of Lemma
-12.4.
+deleted index. `SourcePsiComplexContourAnalytic.lean` extends scalar
+contour holomorphy from real-type base points to any complex parameter
+whose fixed circle remains in the canonical-root domain.
+`SourcePsiComplexSequenceAnalytic.lean` defines the complete deleted
+equation sequence and combines its uniform norm bound with scalar
+coordinate holomorphy to prove Fréchet holomorphy in the ambient `ℓᵖ`
+space near every deleted root input and the free complex source. The
+remaining work for the global Lemma 12.4 is extension from the free
+source neighborhood and the later inverse-function argument.
