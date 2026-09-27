@@ -2282,3 +2282,15 @@ applies it to the action integrand `Δ′ / Q` and proves the pointwise
 identity `D_source(Δ′ / Q) = ∂_z((D_source Δ) / Q)` off the moving gap
 cuts. The remaining contour step is to integrate this identity by
 parts in the weighted action circle.
+
+## Latest milestone: integration by parts on the action circle
+
+`CircleIntegralIntegrationByParts.lean` proves a closed-circle identity
+for `∮ z f′(z) dz` using only analyticity near the circle; enclosed gap
+cuts cause no problem. `SourceDiscriminantVariationCircle.lean` shows
+that `(D_source Δ) / Q` meets those hypotheses, and
+`SourceActionCircleGradientIntegrand.lean` concludes that the circle
+integral of the source derivative of `z Δ′ / Q` equals the negative
+circle integral of `(D_source Δ) / Q`. The remaining step is to
+identify this circle integral with the action's source Fréchet
+derivative from differentiation under the integral.
