@@ -2832,6 +2832,17 @@ is the single-root quotient. The quotient error `Q(a)-1` itself lies
 in `ℓᵖ` and vanishes at `a=0`. The nonlinear remainder obeys
 `‖F(a)-2a‖ ≤ 2‖a‖‖Q(a)-1‖ₚ`, reducing the sequence-valued derivative
 at zero to continuity of the quotient-error map there.
+`SourcePsiFreeQuotientTail.lean` extracts a quantitative distant-index
+quotient majorant at zero source, whose `ℓᵖ` norm tends to zero with
+the root displacement. `SourcePsiFreeQuotientContinuity.lean`
+combines this uniform tail control with analytic continuity at each
+of the finitely many remaining centers to prove continuity of the
+full quotient-error map at zero. Finally,
+`SourcePsiFreeSequenceDerivative.lean` uses the exact remainder bound
+to prove that the sequence-valued free psi equation has Fréchet
+derivative `2 · id` at zero, equal to the invertible free Jacobian
+operator. Extending the sequence-valued map and its derivative to
+nonzero source potentials remains open.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle

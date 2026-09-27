@@ -914,6 +914,9 @@ import NLS.ZakharovShabat.SourcePsiFreeLatticeBound
 import NLS.ZakharovShabat.SourcePsiCollapsedGapCircle
 import NLS.ZakharovShabat.SourcePsiFreeSequence
 import NLS.ZakharovShabat.SourcePsiFreeEquationFactorization
+import NLS.ZakharovShabat.SourcePsiFreeQuotientTail
+import NLS.ZakharovShabat.SourcePsiFreeQuotientContinuity
+import NLS.ZakharovShabat.SourcePsiFreeSequenceDerivative
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
