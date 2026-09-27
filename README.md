@@ -2305,3 +2305,15 @@ the contour integration-by-parts result,
 normalized discriminant-variation formula for any fixed circle that
 avoids the periodic cuts at a real-type source. Transferring the
 formula to the glued indexed action is the next step.
+
+## Latest milestone: indexed complex-action gradient at real sources
+
+`SourceComplexActionGradient.lean` transfers the contour formula from
+each fixed-circle chart to the glued indexed complex action. At every
+real-type source and gap index, it selects one isolating circle on
+which the source Fréchet derivative is the negative normalized
+integral of the discriminant variation over the canonical root, in
+all complex source directions. This establishes the gradient formula
+of Lemma 11.1 for the action extension at real-type sources. Extending
+the formula across its complex domain and proving full Banach-space
+analyticity remain separate tasks.

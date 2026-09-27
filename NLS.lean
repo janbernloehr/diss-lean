@@ -1033,3 +1033,4 @@ import NLS.ZakharovShabat.SourceCanonicalRootSourceFDeriv
 import NLS.ZakharovShabat.SourceCriticalRootRatioSourceFDeriv
 import NLS.ZakharovShabat.SourceActionCircleGradientIntegrand
 import NLS.ZakharovShabat.SourceActionCircleGradient
+import NLS.ZakharovShabat.SourceComplexActionGradient
