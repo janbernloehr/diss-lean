@@ -2909,3 +2909,10 @@ with a uniformly invertible diagonal and the specified reciprocal
 off-diagonal matrix bound is a diagonal isomorphism plus a compact
 operator. The sequence-valued psi contour map, its Jacobian matrix
 representation, and these bounds remain to be established.
+
+`SourceStandardRootFirstMoment.lean` differentiates the standard root off
+its selected gap and proves that its centered inverse-root circle moment
+vanishes. Combined with the known inverse-root integral, this evaluates
+every affine weighted contour integral and establishes the affine case of
+the gap maximum estimate in Lemma 12.3. The contour-to-gap argument for a
+general analytic numerator remains to be formalized.
