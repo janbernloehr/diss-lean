@@ -2375,3 +2375,12 @@ from isolating discs to every cosine-parametrized point of the selected
 gap, then obtains the corresponding explicit normalized-action bound on
 open real-type gaps. The full `ℓ^{p/2} + ℓ^{1+}` asymptotic and analytic
 extension through collapsed gaps still remain open.
+
+`SourceNormalizedActionSequenceMajorants.lean` expresses the critical
+offset at every Banach exponent `q ≥ p/2` as the squared gap times its
+bounded critical quotient. It transfers the sharper deleted-product
+disc estimate to the cosine path, giving `ℓ^q + ℓ^{p/2}` factor
+majorants and the resulting action inequality for distant open real
+gaps. The remaining work is to absorb the displayed gap-squared term,
+derive the locally uniform sequence asymptotic, and extend the quotient
+analytically across collapsed complex gaps.
