@@ -900,6 +900,7 @@ import NLS.ZakharovShabat.SourceSquaredGapNorm
 import NLS.ZakharovShabat.SourceSingleRootQuotientAsymptoticDiscSup
 import NLS.ZakharovShabat.SourceSingleRootQuotientCommonExponentDomain
 import NLS.ZakharovShabat.SourceDeletedFreeSine
+import NLS.ZakharovShabat.SourcePsiFree
 import NLS.ZakharovShabat.SourceFreeSineQuotientAsymptotic
 import NLS.ZakharovShabat.SourceCriticalMidpointGapSquaredTail
 import NLS.ZakharovShabat.CriticalOffsetCoefficientOpenGap

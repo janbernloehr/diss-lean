@@ -2740,4 +2740,13 @@ on the `ℓ^(p/2)` components, and locally uniform bounds on every
 finite-`ℓq` projection of the `ℓ^(1+)` components.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
 `ℓq` component is zero. A full multivariable Fréchet power-series theorem in Mathlib's
-`AnalyticOnNhd` sense remain open in Theorem 11.2.
+`AnalyticOnNhd` sense remains open in Theorem 11.2.
+
+Theorem 12.1 (psi-functions) is now started in `SourcePsiFree.lean`.
+At zero potential the indexed psi-function is the entire filled sine
+quotient with the normalization of (2.20). Its omitted center is
+nonzero and all other free centers are zeros. The canonical root is
+identified with `-2i sin z`, and the normalized psi/root contour
+integral is `δₘₙ` on every free-centered circle of radius `0 < r < π`.
+Constructing the moving roots and analytic psi-functions for nonzero
+potentials remains open.
