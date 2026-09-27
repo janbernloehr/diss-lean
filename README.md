@@ -2840,3 +2840,9 @@ space and its continuous linear inverse whenever the retained entries
 have a uniform positive lower bound. This is the diagonal-isomorphism
 half of Lemma 12.6; the required lower bound for the nonfree psi
 Jacobian must still be obtained from Lemma 12.5.
+`DeletedJacobianDecomposition.lean` combines these two results into a
+conditional form of Lemma 12.6: a bounded deleted-coordinate Jacobian
+with a uniformly invertible diagonal and the specified reciprocal
+off-diagonal matrix bound is a diagonal isomorphism plus a compact
+operator. The sequence-valued psi contour map, its Jacobian matrix
+representation, and these bounds remain to be established.
