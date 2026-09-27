@@ -2946,3 +2946,11 @@ continuous on the canonical-root domain, the shrinking stadium
 integral tends to twice the upper gap-side boundary integral.
 Transferring that limit to a fixed enclosing circle and weakening the
 domain assumption remain for the full Lemma 12.3.
+
+`SourceStandardRootWeightedCornerCircleLimit.lean` transfers the
+shrinking-stadium limit to shrinking corner circles using their exact
+contour deformation. When the numerator is analytic on the full
+canonical-root domain and near the selected gap, these circle
+integrals tend to minus twice the upper gap-side boundary integral.
+Constancy across enclosing circles is needed to turn this limit into
+the fixed-contour estimate.
