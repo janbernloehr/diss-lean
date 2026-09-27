@@ -2490,5 +2490,19 @@ existing positivity result for open real gaps, this gives a
 nonvanishing normalized action at every real-type source and, for
 each fixed index, on one open complex neighborhood of the entire
 real-type locus. The exact squared-gap factorization holds there.
-Positivity of the collapsed real values and an index-uniform complex
-neighborhood remain open.
+The next files establish reality and positivity of the collapsed
+value; an index-uniform complex neighborhood remains open.
+
+`SourceNormalizedActionCollapsedReal.lean` proves that the deleted
+critical and standard-root products are real at a collapsed real gap,
+so the complex normalized-action extension is real on the full
+real-type locus. `SourceNormalizedActionFree.lean` matches the two
+free deleted products factor by factor and gives the value `1/4` at
+zero potential for every index. Connectedness and nonvanishing then
+force positivity everywhere on the real-type locus in
+`SourceNormalizedActionCollapsedPositive.lean`. For each fixed index,
+one complex neighborhood has positive real part and supports a
+nonvanishing, complex Fréchet-differentiable principal square-root
+coordinate; its restriction to each complex source line is analytic.
+The index-uniform neighborhood, full Banach analyticity, and sequence
+asymptotics in Theorem 11.2 remain open.
