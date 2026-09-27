@@ -912,6 +912,7 @@ import NLS.ZakharovShabat.SourcePsiGapFactorization
 import NLS.ZakharovShabat.SourcePsiQuotientDiscMajorant
 import NLS.ZakharovShabat.SourcePsiFreeLatticeBound
 import NLS.ZakharovShabat.SourcePsiCollapsedGapCircle
+import NLS.ZakharovShabat.SourcePsiFreeSequence
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

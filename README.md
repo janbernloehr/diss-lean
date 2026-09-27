@@ -2819,6 +2819,13 @@ whole contour sequence belongs to the deleted-coordinate `ℓᵖ` space.
 The current quotient majorant covers all sufficiently distant centers;
 a bound for the finitely many remaining centers is still needed for an
 unconditional local version of Lemma 12.4.
+`SourcePsiFreeSequence.lean` patches the distant-index quotient
+majorant at finitely many free centers by their exact errors. The
+resulting global `ℓᵖ` majorant proves that the entire free-source psi
+contour equation defines a map from deleted-coordinate `ℓᵖ` to itself
+for arbitrary root-displacement inputs; its value at zero is zero.
+Continuity and the Fréchet derivative of this sequence-valued map
+remain to be proved.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle
