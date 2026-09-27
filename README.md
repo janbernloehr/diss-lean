@@ -2654,5 +2654,18 @@ locally uniformly; finitely many central coordinates are controlled by
 source continuity. `SourceNormalizedActionComplexAllCoordinates.lean`
 shrinks to one source neighborhood where every coordinate is complex
 differentiable and the entire deviation has that uniform `ℓq` bound.
-Banach-valued analyticity of this sequence map and the positive-real-part
-and square-root conclusions of Theorem 11.2 remain to be proved.
+
+`BoundedCoordinateHolomorphic.lean` proves that a locally bounded `ℓq`
+map with complex-differentiable coordinates is norm-continuous, using
+Schwarz estimates on finite truncations. Applied in
+`SourceNormalizedActionComplexSequenceContinuity.lean`, this makes the
+full normalized-action deviation norm-continuous near every real-type
+source. `SourceNormalizedActionComplexUniformPositive.lean` then gives
+one complex neighborhood and one positive lower bound for the real
+parts of all normalized actions. On that same neighborhood all
+principal square-root coordinates are differentiable, nonzero, and
+square to four times the normalized action.
+`SourceNormalizedActionRootSequenceSpace.lean` puts the root deviation
+in `ℓq` with a locally uniform norm bound and norm-continuous dependence
+on the source. Full Banach-space analyticity and the exact
+`ℓ^(p/2) + ℓ^(1+)` decomposition in Theorem 11.2 remain open.
