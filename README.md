@@ -2829,3 +2829,9 @@ controlled by one `ℓᵖ` sequence times the input norm, its finite output
 cutoffs converge in operator norm. The criterion also applies directly
 to the deleted-coordinate space of the psi root parameters. Establishing
 the common row bound for the nonfree Jacobian remains open.
+`CompactPuncturedKernel.lean` turns the matrix estimate of Lemma 12.6
+into that row bound: a zero-diagonal remainder with entries controlled
+by `bₘ / |r-m|`, for one `b ∈ ℓᵖ`, is compact on the deleted-coordinate
+space. The proof uses the translated punctured reciprocal lattice and
+Hölder duality. Deriving this entrywise estimate from the nonfree psi
+contour integral remains open.

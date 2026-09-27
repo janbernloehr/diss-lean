@@ -16,6 +16,7 @@ import NLS.ZakharovShabat.Operator
 import NLS.SequenceSpaces.Compact
 import NLS.SequenceSpaces.CompactLpMultiplier
 import NLS.SequenceSpaces.CompactRowMajorant
+import NLS.SequenceSpaces.CompactPuncturedKernel
 import NLS.ZakharovShabat.FreeResolvent
 import NLS.ZakharovShabat.FreeResolventCompact
 import NLS.ZakharovShabat.ResolventEstimates
