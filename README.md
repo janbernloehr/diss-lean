@@ -2719,7 +2719,12 @@ a locally bounded, Fréchet-holomorphic `ℓq`-valued map for every finite
 establishes the same holomorphy statement for the action and provides
 one neighborhood on which both maps have these properties for all
 finite `q > 1`.
+`OnePlus.lean` defines the algebraic intersection `ℓ^(1+)` with
+complex-linear projections to each finite `ℓq`, `q > 1`.
+`SourceNormalizedActionOnePlus.lean` realizes both deviations as
+`ℓ^(1+)` sequences on the shared complex neighborhood, with locally
+bounded projections into every such `ℓq`.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
-`ℓq` component is zero. A dedicated `ℓ^(1+)` intersection type and
+`ℓq` component is zero. A projective-limit topology on `ℓ^(1+)` and
 a full multivariable Fréchet power-series theorem in Mathlib's
 `AnalyticOnNhd` sense remain open in Theorem 11.2.
