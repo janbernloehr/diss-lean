@@ -109,8 +109,8 @@ theorem sourceNormalizedActionCircleCandidate_eq_collapsedCandidate_of_gap_zero
 
 /-- On one complex neighborhood, the contour candidate fills the
 raw quotient with precisely the already prescribed collapsed value.
-Its restriction to real-type sources is the established continuous
-real normalized-action extension. -/
+It equals the piecewise normalized-action extension for all complex
+sources there, not only for real-type sources. -/
 theorem exists_local_sourceNormalizedActionCircleCandidate_eq_realExtension
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
@@ -126,9 +126,8 @@ theorem exists_local_sourceNormalizedActionCircleCandidate_eq_realExtension
           (sourcePeriodicGapDisplacement hp hp1 ψ n = 0 →
             sourceNormalizedActionCircleCandidate hp hp1 n c R ψ =
               sourceNormalizedActionCollapsedCandidate hp hp1 n ψ) ∧
-          (IsRealType (CoeffPair.toMax p ψ) →
-            sourceNormalizedActionCircleCandidate hp hp1 n c R ψ =
-              sourceNormalizedActionRealExtension hp hp1 n ψ) := by
+          (sourceNormalizedActionCircleCandidate hp hp1 n c R ψ =
+            sourceNormalizedActionRealExtension hp hp1 n ψ) := by
   obtain ⟨V,hVopen,hφV,c,R,hR,hgeom,hdiff,_,hfactor⟩ :=
     exists_local_sourceComplexAction_normalizedCircleCandidate hp hp1 φ hφ n
   obtain ⟨W,hWopen,hrealW,hEdata⟩ :=
@@ -149,7 +148,6 @@ theorem exists_local_sourceNormalizedActionCircleCandidate_eq_realExtension
     exact sourceNormalizedActionCircleCandidate_eq_collapsedCandidate_of_gap_zero
       hp hp1 ψ n c R hR hgap hseg hE
   refine ⟨(hfactor ψ hψ.1).1,hcollapsed,?_⟩
-  intro hψreal
   by_cases hgap : sourcePeriodicGapDisplacement hp hp1 ψ n = 0
   · simpa only [sourceNormalizedActionRealExtension, if_pos hgap] using
       (hcollapsed hgap)

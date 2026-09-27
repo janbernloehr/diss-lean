@@ -2463,3 +2463,14 @@ continuous normalized-action extension on nearby real-type sources,
 while it remains complex Fréchet differentiable on a neighborhood
 that also contains collapsed complex sources. Full Banach analyticity
 and the sequence asymptotics of Theorem 11.2 remain open.
+
+`SourceNormalizedActionComplexExtension.lean` gives the resulting
+chart-independent complex function a direct name. The historical
+piecewise normalized-action formula equals the differentiable contour
+candidate for all nearby complex sources, at zero and nonzero gaps.
+For each fixed index, a single open complex neighborhood of the whole
+real-type locus supports this differentiable extension and the exact
+identity `Iₙ = γₙ² · (Iₙ/γₙ²)_ext`. Its restriction to every complex
+source line is analytic. A neighborhood uniform in the index, full
+Banach-space analyticity, and Theorem 11.2's sequence asymptotics are
+still to be proved.
