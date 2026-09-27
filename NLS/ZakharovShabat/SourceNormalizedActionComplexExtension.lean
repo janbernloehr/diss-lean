@@ -36,7 +36,7 @@ theorem exists_local_sourceNormalizedActionComplexExtension_differentiableOn
         sourceComplexAction hp hp1 n ψ =
           (sourcePeriodicGapDisplacement hp hp1 ψ n)^2 *
             sourceNormalizedActionComplexExtension hp hp1 n ψ := by
-  obtain ⟨U,hUopen,hφU,c,R,_,hdiff,hdata⟩ :=
+  obtain ⟨U,hUopen,hφU,c,R,_,_,hdiff,hdata⟩ :=
     exists_local_sourceNormalizedActionCircleCandidate_eq_realExtension
       hp hp1 φ hφ n
   let A := sourceNormalizedActionCircleCandidate hp hp1 n c R

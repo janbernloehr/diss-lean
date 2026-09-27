@@ -2474,3 +2474,10 @@ identity `Iₙ = γₙ² · (Iₙ/γₙ²)_ext`. Its restriction to every comple
 source line is analytic. A neighborhood uniform in the index, full
 Banach-space analyticity, and Theorem 11.2's sequence asymptotics are
 still to be proved.
+
+`SourceNormalizedActionComplexDerivative.lean` differentiates this
+chart-independent extension through its fixed contour integral. On
+one complex neighborhood of each real-type source, including points
+with a collapsed selected gap, its Fréchet derivative is the contour
+integral of the source derivative of the rationalized integrand. This
+provides a derivative formula without dividing by the squared gap.

@@ -117,6 +117,9 @@ theorem exists_local_sourceNormalizedActionCircleCandidate_eq_realExtension
     (n : ℤ) :
     ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧
       ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+        (∀ ψ ∈ U,
+          sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
+          closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n) ∧
         DifferentiableOn ℂ
           (sourceNormalizedActionCircleCandidate hp hp1 n c R) U ∧
         ∀ ψ ∈ U,
@@ -135,7 +138,8 @@ theorem exists_local_sourceNormalizedActionCircleCandidate_eq_realExtension
   let U := V ∩ W
   have hUopen : IsOpen U := hVopen.inter hWopen
   have hφU : φ ∈ U := ⟨hφV,hrealW hφ⟩
-  refine ⟨U,hUopen,hφU,c,R,hR,hdiff.mono inter_subset_left,?_⟩
+  refine ⟨U,hUopen,hφU,c,R,hR,(fun ψ hψ => hgeom ψ hψ.1),
+    hdiff.mono inter_subset_left,?_⟩
   intro ψ hψ
   have hcollapsed (hgap : sourcePeriodicGapDisplacement hp hp1 ψ n = 0) :
       sourceNormalizedActionCircleCandidate hp hp1 n c R ψ =
