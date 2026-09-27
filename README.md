@@ -3068,3 +3068,7 @@ values in the deleted `ℓᵖ` Banach space itself. The remaining work for
 the global Lemma 12.4 is extension from the free source neighborhood
 and the real-locus statement; the later inverse-function argument is
 also open.
+The bundled near-free theorem
+`exists_nearFree_complex_deletedPsi_equation_formula_analytic` records
+the fixed-circle formula, local boundedness, and deleted-space
+holomorphy on one neighborhood of each root input over the free source.

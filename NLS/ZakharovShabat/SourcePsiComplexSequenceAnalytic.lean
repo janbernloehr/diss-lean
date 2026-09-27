@@ -165,4 +165,49 @@ theorem exists_nearFree_complex_deletedPsi_equation_differentiableOn_deleted
     hcomposed.congr (fun t _ => (hproject t).symm)
   exact ⟨U,hUopen,hbase,C,hC,hbound,hdeleted⟩
 
+/-- The near-free form of Lemma 12.4, with the original contour formula,
+local boundedness, and holomorphy into the deleted Banach space all on
+one parameter neighborhood. -/
+theorem exists_nearFree_complex_deletedPsi_equation_formula_analytic
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
+      (a₀,(0 : CoeffPair p)) ∈ U ∧
+      ∃ C : ℝ, 0 ≤ C ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          (sourcePsiDeletedEquationSequence hp hp1 n t.1 t.2 : Coeff p) m =
+            sourcePsiEquationCoordinate hp hp1 n m
+              (t.1 : Coeff p) t.2
+              ((Real.pi : ℂ)*m) (Real.pi/8)) ∧
+        (∀ t ∈ U,
+          ‖sourcePsiDeletedEquationSequence hp hp1 n t.1 t.2‖ ≤ C) ∧
+        DifferentiableOn ℂ
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiDeletedEquationSequence hp hp1 n t.1 t.2) U := by
+  obtain ⟨Uan,hUanOpen,hbaseAn,C,hC,hbound,han⟩ :=
+    exists_nearFree_complex_deletedPsi_equation_differentiableOn_deleted
+      hp hp1 n a₀
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,Ceq,hCeq,heq⟩ :=
+    exists_nearFree_complex_deletedPsi_equation_uniformNorm
+      hp hp1 (a₀ : Coeff p)
+  let H : DeletedCoeff p n × CoeffPair p → Coeff p × CoeffPair p :=
+    fun t => ((t.1 : Coeff p),t.2)
+  have hHcont : Continuous H :=
+    (continuous_subtype_val.comp continuous_fst).prodMk continuous_snd
+  let U : Set (DeletedCoeff p n × CoeffPair p) :=
+    Uan ∩ H ⁻¹' Ueq
+  have hUopen : IsOpen U :=
+    hUanOpen.inter (hUeqOpen.preimage hHcont)
+  have hbase : (a₀,(0 : CoeffPair p)) ∈ U :=
+    ⟨hbaseAn,hbaseEq⟩
+  refine ⟨U,hUopen,hbase,C,hC,?_,?_,?_⟩
+  · intro t ht m
+    obtain ⟨G,hGcoord,_⟩ := heq n t.1 t.2 ht.2
+    exact sourcePsiDeletedEquationSequence_apply_of_exists
+      hp hp1 n t.1 t.2 ⟨G,hGcoord⟩ m
+  · intro t ht
+    exact hbound t ht.1
+  · exact han.mono inter_subset_left
+
 end NLS.ZakharovShabat
