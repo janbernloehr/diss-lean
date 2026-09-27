@@ -908,6 +908,7 @@ import NLS.ZakharovShabat.SourceDeletedFreeSine
 import NLS.ZakharovShabat.SourcePsiFree
 import NLS.ZakharovShabat.SourcePsiCandidate
 import NLS.ZakharovShabat.SourcePsiContourAnalytic
+import NLS.ZakharovShabat.SourcePsiGapFactorization
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

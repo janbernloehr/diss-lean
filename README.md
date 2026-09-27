@@ -2792,6 +2792,12 @@ root and canonical-root cuts, the scalar equation is exactly affine
 along that retained coordinate; its derivative is the weighted
 Cauchy-kernel integral of Lemma 12.5, both in the ambient and deleted
 `ℓᵖ` parameter spaces. Bounds on these entries remain to be proved.
+`SourcePsiGapFactorization.lean` proves the exact change-of-deleted-index
+identity for the psi numerator and rewrites its integrand as the local
+factor `(σₘ-z)/wₘ(z)` times a regular single-root quotient. It also
+rewrites the scalar contour equation in the form (2.27), connecting it
+to the quotient estimates of Lemma 10.8 and the gap integral estimate
+of Lemma 12.3.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle
