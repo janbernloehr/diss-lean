@@ -3120,3 +3120,7 @@ selected coordinates into a deleted `ℓᵖ` sequence. Its norm bound is
 locally uniform in both Banach parameters and in every deleted index.
 The remaining global equation bound concerns the finitely many
 selected head coordinates.
+`SourcePsiGlobalHeadKernelBound.lean` establishes a common local bound
+for the inverse standard-root kernel on any finite collection of
+selected head circles. This follows from joint root analyticity and
+compactness, and prepares the remaining finite-head contour estimate.
