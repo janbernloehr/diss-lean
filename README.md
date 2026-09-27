@@ -2669,6 +2669,15 @@ square to four times the normalized action.
 in `ℓq` with a locally uniform norm bound and norm-continuous dependence
 on the source.
 
+`BoundedCoordinateDerivative.lean` shows that the derivatives of a
+locally bounded, coordinatewise holomorphic `ℓq` map assemble into a
+bounded complex-linear operator from source directions to `ℓq`. The
+operator norm has an explicit local Schwarz bound.
+`SourceNormalizedActionComplexSequenceDerivative.lean` applies this to
+the normalized-action deviation at every source in a common complex
+neighborhood. Identifying this operator as the Fréchet derivative of
+the full sequence map is the next analytic step.
+
 `TwoExponentDecomposition.lean` upgrades pointwise bounds by `ℓq` and
 `ℓr` majorants to an exact sum with separate norm bounds, even for
 `r < 1`; finitely many uncontrolled coordinates can be absorbed into
