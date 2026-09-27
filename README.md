@@ -3026,8 +3026,9 @@ factor bound controls those coordinates. Together with the open-gap
 estimate, this proves that the complete fixed-circle psi equation is
 an element of the deleted-coordinate `ℓᵖ` space for every near-free
 real-type source and every deleted root input. Extension to a complex
-source neighborhood, local uniform bounds for all coordinates, and
-sequence-valued analyticity remain for the full Lemma 12.4 statement.
+source neighborhood and local uniform bounds are addressed by the
+later complex-gap estimates; sequence-valued analyticity remains for
+the full Lemma 12.4 statement.
 `SourcePsiQuotientQuantitativeDisc.lean` retains the explicit norm
 estimates of the distant-disc quotient majorants and proves a uniform
 bound over every fixed bounded ball of root inputs and a common source
@@ -3042,7 +3043,7 @@ It constructs the complete deleted-coordinate psi sequence for every
 near-free real-type source and gives a locally uniform `ℓᵖ` norm bound
 near any root input over the free source, independent of the deleted
 index. Extending this sequence and its bound to a complex source
-neighborhood, then proving sequence-valued analyticity, remain open.
+neighborhood requires the complex-gap estimate described below.
 `SourceStandardRootInverseCorrection.lean` compares the selected
 complex standard root with its collapsed-gap inverse on the fixed
 free circle, with error proportional to the squared gap.
@@ -3050,6 +3051,10 @@ free circle, with error proportional to the squared gap.
 comparison against an analytic factor and bounds the contour by a
 Cauchy residue plus a quadratic-gap correction.
 `SourcePsiNearFreeComplexCoordinate.lean` applies the estimate to each
-psi equation coordinate without assuming a real-type source. The
-complex coordinates still need to be assembled into a uniformly
-bounded deleted `ℓᵖ` sequence.
+psi equation coordinate without assuming a real-type source.
+`SourcePsiNearFreeComplexUniformEquation.lean` absorbs its quadratic
+gap correction into the periodic-gap displacement sequence. It builds
+the complete deleted `ℓᵖ` psi equation on a complex source neighborhood
+of zero and proves a locally uniform norm bound independent of the
+deleted index. Sequence-valued analyticity is the next part of Lemma
+12.4.
