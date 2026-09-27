@@ -956,6 +956,7 @@ import NLS.ZakharovShabat.SourcePsiShiftedDiscLatticeBound
 import NLS.ZakharovShabat.SourcePsiGlobalDistantDeletedRegularFactor
 import NLS.ZakharovShabat.SourcePsiFinitePairCoordinateBound
 import NLS.ZakharovShabat.SourcePsiGlobalTailCoordinateBound
+import NLS.ZakharovShabat.SourcePsiGlobalTailSequenceBound
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

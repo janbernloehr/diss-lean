@@ -3114,3 +3114,9 @@ majorant. It obtains one constant that bounds every sufficiently
 distant selected psi coordinate by the root, periodic-midpoint, and
 periodic-gap displacement magnitudes, uniformly in every deleted
 index near any real-type source.
+`SourcePsiGlobalTailSequenceBound.lean` uses local `ℓᵖ` norm bounds for
+the periodic midpoint and gap displacements to assemble those distant
+selected coordinates into a deleted `ℓᵖ` sequence. Its norm bound is
+locally uniform in both Banach parameters and in every deleted index.
+The remaining global equation bound concerns the finitely many
+selected head coordinates.
