@@ -2999,3 +2999,12 @@ give the real mean-value clause of Lemma 12.3 in
 `SourceStandardRootWeightedLocalRealMeanValue.lean`: the integral on
 either a midpoint circle or a nested enclosing circle, normalized by
 `2πi`, is the negative of a numerator value at some gap point.
+
+`SourceStandardRootWeightedLocalSmoothContour.lean` transports the
+exact gap-side value, maximum bound, and real mean-value formula from
+a circle to any smooth enclosing loop with a gap-avoiding homotopy in
+the local analytic domain. It also constructs that homotopy for a
+noncircular polar graph whose radius stays between an inner disc
+containing the gap and the enclosing analytic midpoint disc, proving
+all three conclusions for those contours. General circuits without a
+specified homotopy remain outside the current formalization.

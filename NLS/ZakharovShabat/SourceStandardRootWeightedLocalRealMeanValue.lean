@@ -16,7 +16,9 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
-private theorem normalized_real_mean_value_of_boundary
+/-- The exact gap-side value yields a real mean value for any contour
+whose integral has been identified with that boundary value. -/
+theorem normalized_real_mean_value_of_boundary
     (τ δ : ℂ) (g : ℂ → ℂ) (J : ℂ)
     (hδ : δ ≠ 0)
     (hgcont : ContinuousOn g (standardRootGapSegment τ δ))
