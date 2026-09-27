@@ -2982,5 +2982,11 @@ identifies the exact weighted integral on any midpoint circle whose
 filled disc lies in the analytic neighborhood and proves its
 Lemma 12.3 gap-maximum bound. Neither result assumes global
 analyticity or excludes other periodic gaps from the disc. The
-dissertation's arbitrary contour, which may have only a neighborhood
-of analyticity rather than a filled midpoint disc, remains open.
+`SourceStandardRootWeightedLocalContourHomotopy.lean` now proves
+invariance under a smooth gap-avoiding loop homotopy in the numerator's
+local analytic domain. In particular, every enclosing circle with an
+arbitrary center inside an analytic midpoint disc has the same exact
+value and maximum bound, provided its filled disc lies in the midpoint
+disc. An arbitrary circuit still needs a homotopy or winding argument
+connecting it to a reference circle in that domain; the dissertation's
+weaker neighborhood-of-contour hypothesis is not yet covered.
