@@ -2820,3 +2820,7 @@ norm at most `1/2`. A Neumann-series argument then shows that any
 bounded operator at distance less than `2` from the free Jacobian is
 invertible and bijective. This gives a quantitative target for the
 nonfree Jacobian estimates in Lemma 12.5.
+`CompactLpMultiplier.lean` proves that every finite-`p` coefficient
+sequence has uniformly vanishing tails and therefore acts as a compact
+diagonal multiplier on `ℓᵖ`. This is the compactness input for the
+Hilbert-transform remainder in Lemma 12.6.

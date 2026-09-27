@@ -14,6 +14,7 @@ import NLS.ZakharovShabat.Potential
 import NLS.ZakharovShabat.Domain
 import NLS.ZakharovShabat.Operator
 import NLS.SequenceSpaces.Compact
+import NLS.SequenceSpaces.CompactLpMultiplier
 import NLS.ZakharovShabat.FreeResolvent
 import NLS.ZakharovShabat.FreeResolventCompact
 import NLS.ZakharovShabat.ResolventEstimates
