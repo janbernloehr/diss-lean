@@ -2425,3 +2425,13 @@ locus, with value `I * sourceCriticalRootRatioExtension(τₙ) / 4` at a
 collapsed gap. Extending this function analytically across collapsed
 complex gaps, and transporting the sequence estimates to that
 extension, remain open.
+
+`SourceNormalizedActionCircleKernel.lean` now gives an exact complex
+source factorization on a fixed isolating circle around each real-type
+source and selected index. Writing the critical point as `τₙ + γₙ² Bₙ`,
+it rationalizes the selected standard root and separates a holomorphic
+term whose contour integral is zero. The remaining circle integral is
+defined even when `γₙ = 0`, and the action equals `γₙ²` times this
+candidate throughout a complex source neighborhood. Analyticity of the
+candidate as a function of the source and agreement with the existing
+real-type collapsed-gap value are the next steps toward Theorem 11.2.
