@@ -2766,3 +2766,10 @@ is complex Fréchet differentiable in both Banach parameters on a
 neighborhood. All coordinates vanish at the free data. The common
 `ℓᵖ` target bound, invertible Jacobian, and implicit-function solution
 needed for Lemma 12.4 and Theorem 12.1 remain open.
+`DeletedCoordinate.lean` realizes the omitted-index root-displacement
+space as a complete closed kernel of coordinate evaluation in `ℓᵖ`.
+Its continuous projection sets only the selected coordinate to zero.
+`SourcePsiDeletedCoordinate.lean` proves that the numerator and every
+scalar contour equation factor through this projection, remain
+holomorphic on the omitted-coordinate Banach parameter space, and
+vanish at the free data.
