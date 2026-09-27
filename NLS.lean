@@ -910,6 +910,7 @@ import NLS.ZakharovShabat.SourcePsiCandidate
 import NLS.ZakharovShabat.SourcePsiContourAnalytic
 import NLS.ZakharovShabat.SourcePsiGapFactorization
 import NLS.ZakharovShabat.SourcePsiQuotientDiscMajorant
+import NLS.ZakharovShabat.SourcePsiFreeLatticeBound
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

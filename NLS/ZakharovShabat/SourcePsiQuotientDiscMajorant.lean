@@ -39,7 +39,7 @@ theorem exists_local_sourcePsiQuotient_discMajorants
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
     ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧
       ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
-        ∃ K : ℕ, ∀ ψ ∈ V, ∀ a : Coeff p,
+        ∃ K : ℕ, N < K ∧ ∀ ψ ∈ V, ∀ a : Coeff p,
           ∃ Bp : Coeff p,
           ∃ Bg : Coeff (ENNReal.ofReal (p.toReal/2)),
             ∀ m : ℤ, K ≤ m.natAbs →
@@ -48,7 +48,7 @@ theorem exists_local_sourcePsiQuotient_discMajorants
                   (z,(a,ψ))-1‖ ≤ ‖Bp m‖+‖Bg m‖ := by
   obtain ⟨N,ε,hε,_,V,hVopen,_,hφV,C,R,H,hC,hR,hH,K,hNK,hdata⟩ :=
     exists_local_sourceSingleRootQuotientAsymptotic_data hp hp1 φ hφ
-  refine ⟨N,ε,hε,V,hVopen,hφV,max (N+1) K,?_⟩
+  refine ⟨N,ε,hε,V,hVopen,hφV,max (N+1) K,by omega,?_⟩
   intro ψ hψ a
   let α : Coeff p := a - sourcePeriodicMidpointDisplacement hp hp1 ψ
   have hα (m : ℤ) :
@@ -70,15 +70,15 @@ theorem exists_local_sourcePsiQuotient_lpDiscMajorant
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
     ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧
       ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
-        ∃ K : ℕ, ∀ ψ ∈ V, ∀ a : Coeff p,
+        ∃ K : ℕ, N < K ∧ ∀ ψ ∈ V, ∀ a : Coeff p,
           ∃ B : Coeff p,
             ∀ m : ℤ, K ≤ m.natAbs →
               ∀ z ∈ sourceIsolatingDisc hp hp1 φ N ε m,
                 ‖sourceSingleRootQuotientJointProduct hp hp1 m
                   (z,(a,ψ))-1‖ ≤ ‖B m‖ := by
-  obtain ⟨N,ε,hε,V,hVopen,hφV,K,hmajor⟩ :=
+  obtain ⟨N,ε,hε,V,hVopen,hφV,K,hNK,hmajor⟩ :=
     exists_local_sourcePsiQuotient_discMajorants hp hp1 φ hφ
-  refine ⟨N,ε,hε,V,hVopen,hφV,K,?_⟩
+  refine ⟨N,ε,hε,V,hVopen,hφV,K,hNK,?_⟩
   intro ψ hψ a
   obtain ⟨Bp,Bg,hpoint⟩ := hmajor ψ hψ a
   let r := ENNReal.ofReal (p.toReal/2)

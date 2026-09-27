@@ -2804,6 +2804,11 @@ the periodic midpoints lies in `ℓᵖ`. On one source neighborhood, the
 regular quotient error on every sufficiently distant selected disc
 has an `ℓᵖ` majorant, including when the intermediate squared-gap
 exponent `p/2` is below one.
+`SourcePsiFreeLatticeBound.lean` bounds the omitted-root denominator
+on free quarter-π discs by a constant times `|n-m|`, then combines it
+with that quotient majorant. Near the free source, the weighted regular
+factor in (2.27) is bounded on all distant discs by
+`(2/π)(1+|Bₘ|)` for a suitable `B ∈ ℓᵖ`, uniformly in the omitted index.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle
