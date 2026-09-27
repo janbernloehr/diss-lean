@@ -84,5 +84,18 @@ theorem deleteCoordinateTo_surjective (n : ℤ) :
   apply Subtype.ext
   exact (deleteCoordinate_eq_self_iff n b.1).2 b.2
 
+/-- Insert one coefficient at a retained index of the
+omitted-coordinate space. -/
+def deletedSingleCLM (n k : ℤ) (hkn : k ≠ n) :
+    ℂ →L[ℂ] DeletedCoeff p n :=
+  (lp.singleContinuousLinearMap ℂ (fun _ : ℤ => ℂ) p k).codRestrict _
+    (fun t => by
+      change (lp.single p k t : Coeff p) n = 0
+      simp [lp.single_apply, Ne.symm hkn])
+
+@[simp] theorem deletedSingleCLM_coe (n k : ℤ) (hkn : k ≠ n) (t : ℂ) :
+    ((deletedSingleCLM (p := p) n k hkn t : DeletedCoeff p n) : Coeff p) =
+      lp.single p k t := rfl
+
 end Coeff
 end NLS

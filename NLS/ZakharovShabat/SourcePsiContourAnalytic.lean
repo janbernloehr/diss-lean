@@ -158,6 +158,18 @@ def sourcePsiEquationCoordinate (hp : p ≠ ⊤) (hp1 : 1 < p)
   ((n-m : ℤ) : ℂ) * (2*Real.pi : ℂ) *
     sourcePsiContour hp hp1 n a ψ c R
 
+/-- Equation (2.22) has exactly the unnormalized circle integral. -/
+theorem sourcePsiEquationCoordinate_eq_raw_circleIntegral
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n m : ℤ) (a : Coeff p) (ψ : CoeffPair p) (c : ℂ) (R : ℝ) :
+    sourcePsiEquationCoordinate hp hp1 n m a ψ c R =
+      ((n-m : ℤ) : ℂ) *
+        (∮ z in C(c,R), sourcePsiContourIntegrandJoint hp hp1 n (z,(a,ψ))) := by
+  unfold sourcePsiEquationCoordinate sourcePsiContour
+  have hπ : (2*Real.pi : ℂ) ≠ 0 := by
+    exact mul_ne_zero (by norm_num) (by exact_mod_cast Real.pi_ne_zero)
+  field_simp
+
 /-- Every free coordinate of the contour equation vanishes on its
 own free-centered circle. -/
 theorem sourcePsiEquationCoordinate_zero

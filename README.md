@@ -2781,3 +2781,9 @@ free center, the numerator is affine in that root displacement and
 its derivative at the free sequence is the free psi-function divided
 by the corresponding linear root factor. This is the first input to
 the free Jacobian of Lemma 12.5.
+`SourcePsiFreeJacobian.lean` evaluates the free two-pole contour
+integral and proves the exact scalar Jacobian entries of (2.22):
+moving retained root `k` changes coordinate `m` by `2t` if `m = k`
+and by zero otherwise. The result is also stated as a directional
+derivative on the omitted-coordinate Banach space. Uniform operator
+bounds and invertibility away from the free potential remain open.
