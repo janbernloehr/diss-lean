@@ -3026,5 +3026,10 @@ factor bound controls those coordinates. Together with the open-gap
 estimate, this proves that the complete fixed-circle psi equation is
 an element of the deleted-coordinate `ℓᵖ` space for every near-free
 real-type source and every deleted root input. Extension to a complex
-source neighborhood, local uniform bounds, and sequence-valued
-analyticity remain for the full Lemma 12.4 statement.
+source neighborhood, local uniform bounds for all coordinates, and
+sequence-valued analyticity remain for the full Lemma 12.4 statement.
+`SourcePsiQuotientQuantitativeDisc.lean` retains the explicit norm
+estimates of the distant-disc quotient majorants and proves a uniform
+bound over every fixed bounded ball of root inputs and a common source
+neighborhood. The finitely many excluded discs still need a uniform
+head estimate before this gives the full local uniform bound.
