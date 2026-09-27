@@ -3100,3 +3100,8 @@ input and real-type source, a single `ℓᵖ` majorant with locally uniform
 norm controls the weighted regular factor on every selected contour
 for all sufficiently distant deleted indices. The finitely many
 remaining deleted indices still need a separate head estimate.
+`SourcePsiFinitePairCoordinateBound.lean` supplies that head tool: any
+finite set of deleted/selected scalar equation coordinates has one
+common local bound on arbitrary valid fixed circles. Its proof uses
+the already established scalar holomorphy and a finite intersection
+of parameter neighborhoods.
