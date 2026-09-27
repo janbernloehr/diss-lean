@@ -3109,8 +3109,8 @@ common local bound on arbitrary valid fixed circles. Its proof uses
 the already established scalar holomorphy and a finite intersection
 of parameter neighborhoods.
 `SourcePsiGlobalTailCoordinateBound.lean` combines the eighth-disc
-complex-gap estimate, uniform tail geometry, and the global regular
-factor majorant. It obtains one constant that bounds every sufficiently
+complex-gap estimate, uniform tail geometry, and the global quotient
+majorant. It obtains one constant that bounds every sufficiently
 distant selected psi coordinate by the root, periodic-midpoint, and
-periodic-gap displacement magnitudes, uniformly for sufficiently
-distant deleted indices near any real-type source.
+periodic-gap displacement magnitudes, uniformly in every deleted
+index near any real-type source.

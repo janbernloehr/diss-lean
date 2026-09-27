@@ -1,4 +1,4 @@
-import NLS.ZakharovShabat.SourcePsiGlobalDistantDeletedRegularFactor
+import NLS.ZakharovShabat.SourcePsiGlobalHeadDiscBound
 import NLS.ZakharovShabat.SourcePsiNearFreeComplexUniformEquation
 
 /-!
@@ -17,18 +17,17 @@ namespace NLS.ZakharovShabat
 
 /-- On one neighborhood of an arbitrary real-type source and root
 input, every sufficiently distant selected psi coordinate is bounded
-by the three `ℓᵖ` displacement magnitudes, uniformly in the deleted
-index once that index is also sufficiently distant. -/
-theorem exists_local_sourcePsi_distantDeleted_tailCoordinateBound
+by the three `ℓᵖ` displacement magnitudes, uniformly in every deleted
+index. -/
+theorem exists_local_sourcePsi_allDeleted_tailCoordinateBound
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
     (a₀ : Coeff p) :
     ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
-      ∃ N K : ℕ, ∃ C : ℝ, 0 ≤ C ∧
-        ∀ n : ℤ, N ≤ n.natAbs →
-          ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+      ∃ K : ℕ, ∃ C : ℝ, 0 ≤ C ∧
+        ∀ n : ℤ, ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
             ((a : Coeff p),ψ) ∈ U →
               ∀ m : ℤ, K ≤ m.natAbs →
                 ‖(2*(Real.pi:ℂ))⁻¹ *
@@ -37,8 +36,8 @@ theorem exists_local_sourcePsi_distantDeleted_tailCoordinateBound
                   C*(‖(a : Coeff p) m‖+
                     ‖sourcePeriodicMidpointDisplacement hp hp1 ψ m‖+
                     ‖sourcePeriodicGapDisplacement hp hp1 ψ m‖) := by
-  obtain ⟨Ureg,hUregOpen,hbaseReg,N,Kreg,c,R,hchoice,hgeom,M,hM,hreg⟩ :=
-    exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
+  obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,hchoice,hgeom,M,hM,hmajor⟩ :=
+    exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
       hp hp1 φ hφ a₀
   obtain ⟨Ksmall,Vsmall,hVsmallOpen,hφVsmall,hsmall⟩ :=
     exists_local_sourcePeriodicMidpointGap_tiny_tail hp hp1 φ
@@ -65,10 +64,10 @@ theorem exists_local_sourcePsi_distantDeleted_tailCoordinateBound
   have hT : 0 ≤ T := by dsimp [T]; positivity
   have hJ : 0 ≤ J := by dsimp [J]; positivity
   have hC : 0 ≤ C := by dsimp [C]; positivity
-  refine ⟨U,hUopen,hbase,N,K,C,hC,?_⟩
-  intro n hn a ψ hpair m hm
+  refine ⟨U,hUopen,hbase,K,C,hC,?_⟩
+  intro n a ψ hpair m hm
   obtain ⟨hpairReg,haBall,⟨⟨hψsmall,hψgeom⟩,hψW⟩⟩ := hpair
-  obtain ⟨B,hBnorm,hB⟩ := hreg n hn a ψ hpairReg
+  obtain ⟨B,hBnorm,hB⟩ := hmajor ((a : Coeff p),ψ) hpairReg
   have hmReg : Kreg < m.natAbs := by dsimp [K] at hm; omega
   have hmSmall : Ksmall ≤ m.natAbs := by dsimp [K] at hm; omega
   have hmGeom : Kgeom ≤ m.natAbs := by dsimp [K] at hm; omega
@@ -106,7 +105,9 @@ theorem exists_local_sourcePsi_distantDeleted_tailCoordinateBound
     intro z hz
     have hz' : z ∈ closedBall (c m) (R m) := by
       simpa only [hc,hR] using hz
-    exact hB m hmn z hz'
+    exact norm_deletedPsi_gapRegularFactor_weighted_le
+      hp hp1 n m (Ne.symm hmn) a ψ B (Real.pi/8)
+        (by nlinarith [Real.pi_pos]) z hz (hB m z hz')
   have hcoord :=
     nearFree_complex_deletedPsi_normalizedCoordinate_bound_uniform
       hp hp1 ψ n m hmn a W hψW (hQ m).2
