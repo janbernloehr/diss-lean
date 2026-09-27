@@ -11,14 +11,15 @@ absolute scalar double sum used in Lemma 6.5.
 noncomputable section
 open scoped ENNReal
 namespace NLS.Coeff
-variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+variable {p : ℝ≥0∞}
 
 /-- Coefficient magnitudes, retained as complex coefficients for the existing convolution API. -/
 def magnitude (a : Coeff p) : Coeff p :=
   ⟨fun k => (‖a k‖ : ℂ), (lp.memℓp a).mono' (by intro k; simp)⟩
 
-omit [Fact (1 ≤ p)] in
 @[simp] theorem magnitude_apply (a : Coeff p) (k : ℤ) : magnitude a k = (‖a k‖ : ℂ) := rfl
+
+variable [Fact (1 ≤ p)]
 
 @[simp] theorem norm_magnitude (a : Coeff p) : ‖magnitude a‖ = ‖a‖ := by
   apply le_antisymm

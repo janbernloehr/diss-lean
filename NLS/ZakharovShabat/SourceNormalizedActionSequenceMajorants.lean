@@ -2,6 +2,7 @@ import NLS.ZakharovShabat.SourceNormalizedActionTailBound
 import NLS.ZakharovShabat.SourceSingleRootQuotientAsymptoticDiscSup
 import NLS.SequenceSpaces.Multiplier
 import NLS.SequenceSpaces.ExponentEmbedding
+import NLS.SequenceSpaces.SandwichMajorant
 
 /-!
 # Sequence majorants for the normalized action factor
@@ -182,5 +183,111 @@ theorem exists_local_sourceRawNormalizedAction_sequenceMajorants
   exact norm_sourceRawNormalizedAction_sub_one_le_of_factor_bound
     hp hp1 ψ hreal n hopen (‖Bq n‖ + ‖Bg n‖)
     (hB n hn)
+
+/-- The gap-squared critical term belongs to the squared-gap sequence
+class, with its exact pointwise magnitude. -/
+def sourceNormalizedActionCriticalMajorant
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) : Coeff (ENNReal.ofReal (p.toReal/2)) :=
+  Coeff.multiplier
+    (Coeff.multiplier
+      (Coeff.exponentInclusion (le_top : p ≤ ⊤)
+        (sourceCriticalGapQuotient hp hp1 ψ))
+      (Coeff.exponentInclusion (le_top : p ≤ ⊤)
+        (sourceCriticalGapQuotient hp hp1 ψ)))
+    (sourcePeriodicSquaredGapCoeff hp hp1 ψ)
+
+@[simp] theorem norm_sourceNormalizedActionCriticalMajorant_apply
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) :
+    ‖sourceNormalizedActionCriticalMajorant hp hp1 ψ n‖ =
+      ‖sourcePeriodicGapDisplacement hp hp1 ψ n‖^2 *
+        ‖sourceCriticalGapQuotient hp hp1 ψ n‖^2 := by
+  simp only [sourceNormalizedActionCriticalMajorant,
+    Coeff.multiplier_apply, Coeff.exponentInclusion_apply,
+    sourcePeriodicSquaredGapCoeff_apply, norm_mul, norm_pow]
+  ring
+
+private theorem norm_smul_magnitude_apply {r : ℝ≥0∞}
+    (a : Coeff r) (c : ℝ) (hc : 0 ≤ c) (n : ℤ) :
+    ‖((c : ℂ) • Coeff.magnitude a) n‖ = c * ‖a n‖ := by
+  simp only [lp.coeFn_smul, Pi.smul_apply, Coeff.magnitude_apply,
+    smul_eq_mul, ← Complex.ofReal_mul, Complex.norm_real,
+    Real.norm_of_nonneg (mul_nonneg hc (norm_nonneg _))]
+
+private theorem norm_add_smul_magnitude_apply {r : ℝ≥0∞}
+    (a b : Coeff r) (c d : ℝ) (hc : 0 ≤ c) (hd : 0 ≤ d)
+    (n : ℤ) :
+    ‖(((c : ℂ) • Coeff.magnitude a) +
+        ((d : ℂ) • Coeff.magnitude b)) n‖ =
+      c * ‖a n‖ + d * ‖b n‖ := by
+  simp only [lp.coeFn_add, Pi.add_apply, lp.coeFn_smul, Pi.smul_apply,
+    Coeff.magnitude_apply, smul_eq_mul, ← Complex.ofReal_mul,
+    ← Complex.ofReal_add, Complex.norm_real,
+    Real.norm_of_nonneg (add_nonneg
+      (mul_nonneg hc (norm_nonneg _))
+      (mul_nonneg hd (norm_nonneg _)))]
+
+/-- On distant open real-type gaps, the normalized-action deviation
+has an actual `ℓq + ℓ^(p/2)` two-sequence majorant. In particular,
+`q = p/2` is available above `p = 2`; below it one may take any
+finite `q > 1`. -/
+theorem exists_local_sourceRawNormalizedAction_twoSequenceMajorants
+    [Fact (1 ≤ q)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (hhalf : ENNReal.ofReal (p.toReal/2) ≤ q)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ K : ℕ, ∀ ψ ∈ V,
+        ∃ Cq : Coeff q, ∃ Cg : Coeff (ENNReal.ofReal (p.toReal/2)),
+          ∀ n : ℤ, K ≤ n.natAbs →
+            IsRealType (CoeffPair.toMax p ψ) →
+            (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) n).re <
+              (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+                (periodOnePotential_mem ψ) n).re →
+            ‖4 * sourceRawNormalizedAction hp hp1 n ψ - 1‖ ≤
+              ‖Cq n‖ + ‖Cg n‖ := by
+  obtain ⟨V,hVopen,hφV,K,hmajor⟩ :=
+    exists_local_sourceRawNormalizedAction_sequenceMajorants
+      hp hp1 hq1 hq hhalf φ hφ
+  refine ⟨V,hVopen,hφV,K,?_⟩
+  intro ψ hψ
+  obtain ⟨Bq,Bg,hB⟩ := hmajor ψ hψ
+  let γ := sourcePeriodicGapDisplacement hp hp1 ψ
+  let B := sourceCriticalGapQuotient hp hp1 ψ
+  let M : ℝ := 2 * (2 * ‖γ‖ * ‖B‖ + 1)^2
+  have hM : 0 ≤ M := by dsimp [M]; positivity
+  let D := sourceNormalizedActionCriticalMajorant hp hp1 ψ
+  let Cq : Coeff q := (M:ℂ) • Coeff.magnitude Bq
+  let Cg : Coeff (ENNReal.ofReal (p.toReal/2)) :=
+    (8:ℂ) • Coeff.magnitude D + (M:ℂ) • Coeff.magnitude Bg
+  refine ⟨Cq,Cg,?_⟩
+  intro n hn hreal hopen
+  have hγn : ‖γ n‖ ≤ ‖γ‖ :=
+    lp.norm_apply_le_norm (zero_lt_one.trans hp1).ne' γ n
+  have hBn : ‖B n‖ ≤ ‖B‖ :=
+    lp.norm_apply_le_norm (zero_lt_one.trans hp1).ne' B n
+  have hfactor :
+      2 * (2 * ‖γ n‖ * ‖B n‖ + 1)^2 ≤ M := by
+    dsimp [M]
+    gcongr
+  have hbound := hB n hn hreal hopen
+  change ‖4 * sourceRawNormalizedAction hp hp1 n ψ - 1‖ ≤
+    8 * ‖γ n‖^2 * ‖B n‖^2 +
+    2 * (2 * ‖γ n‖ * ‖B n‖ + 1)^2 *
+      (‖Bq n‖ + ‖Bg n‖) at hbound
+  have hCq : ‖Cq n‖ = M * ‖Bq n‖ :=
+    norm_smul_magnitude_apply Bq M hM n
+  have hCg : ‖Cg n‖ =
+      8 * ‖γ n‖^2 * ‖B n‖^2 + M * ‖Bg n‖ := by
+    rw [show ‖Cg n‖ = 8 * ‖D n‖ + M * ‖Bg n‖ from
+      norm_add_smul_magnitude_apply D Bg 8 M (by norm_num) hM n]
+    simp only [D, norm_sourceNormalizedActionCriticalMajorant_apply, γ, B]
+    ring
+  rw [hCq,hCg]
+  nlinarith [mul_le_mul_of_nonneg_right hfactor
+    (add_nonneg (norm_nonneg (Bq n)) (norm_nonneg (Bg n)))]
 
 end NLS.ZakharovShabat
