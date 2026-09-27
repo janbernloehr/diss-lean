@@ -2785,5 +2785,10 @@ the free Jacobian of Lemma 12.5.
 integral and proves the exact scalar Jacobian entries of (2.22):
 moving retained root `k` changes coordinate `m` by `2t` if `m = k`
 and by zero otherwise. The result is also stated as a directional
-derivative on the omitted-coordinate Banach space. Uniform operator
-bounds and invertibility away from the free potential remain open.
+derivative on the omitted-coordinate Banach space.
+`SourcePsiFreeFrechet.lean` lifts those directional values through
+finite `ℓᵖ` truncations: each fixed-circle scalar equation is Fréchet
+differentiable at the free sequence, and its derivative is the bounded
+functional `2 · eval_m` on the omitted-coordinate space. Constructing
+the full sequence-valued equation, its uniform `ℓᵖ` bounds, and
+invertibility away from the free potential remain open.

@@ -97,5 +97,30 @@ def deletedSingleCLM (n k : ℤ) (hkn : k ≠ n) :
     ((deletedSingleCLM (p := p) n k hkn t : DeletedCoeff p n) : Coeff p) =
       lp.single p k t := rfl
 
+/-- Deleting a distinct coordinate leaves a one-coordinate sequence
+unchanged. -/
+theorem deleteCoordinateTo_single_other (n k : ℤ) (hkn : k ≠ n) (t : ℂ) :
+    deleteCoordinateTo (p := p) n (lp.single p k t) =
+      deletedSingleCLM n k hkn t := by
+  apply Subtype.ext
+  exact (deleteCoordinate_eq_self_iff n (lp.single p k t)).2 (by
+    simp [lp.single_apply, Ne.symm hkn])
+
+/-- Deleting the only nonzero coordinate gives zero. -/
+theorem deleteCoordinateTo_single_same (n : ℤ) (t : ℂ) :
+    deleteCoordinateTo (p := p) n (lp.single p n t) = 0 := by
+  apply Subtype.ext
+  change deleteCoordinate n (lp.single p n t) = 0
+  unfold deleteCoordinate
+  have heval : (lp.evalCLM ℂ (fun _ : ℤ => ℂ) p n)
+      (lp.single p n t) = t := by
+    change (lp.single p n t : Coeff p) n = t
+    simp
+  change (lp.single p n t : Coeff p) -
+    (lp.singleContinuousLinearMap ℂ (fun _ : ℤ => ℂ) p n)
+      ((lp.evalCLM ℂ (fun _ : ℤ => ℂ) p n) (lp.single p n t)) = 0
+  rw [heval]
+  simp
+
 end Coeff
 end NLS
