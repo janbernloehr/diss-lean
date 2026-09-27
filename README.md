@@ -3036,5 +3036,10 @@ many remaining discs by joint analyticity and compactness. Patching
 these bounds yields one `ℓᵖ` quotient majorant whose norm is locally
 uniform near any root input and the free source, and gives the same
 uniform norm control for the regular factor of every deleted psi
-equation. Propagating that bound to the full contour sequence and
-extending the result to a complex source neighborhood remain open.
+equation. `SourcePsiNearFreeUniformEquation.lean` applies the open-gap
+maximum estimate and collapsed-gap residue with that same majorant.
+It constructs the complete deleted-coordinate psi sequence for every
+near-free real-type source and gives a locally uniform `ℓᵖ` norm bound
+near any root input over the free source, independent of the deleted
+index. Extending this sequence and its bound to a complex source
+neighborhood, then proving sequence-valued analyticity, remain open.
