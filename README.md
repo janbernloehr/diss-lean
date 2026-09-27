@@ -2920,18 +2920,22 @@ for a general analytic numerator remains to be formalized.
 `SourceStandardRootWeightedStadium.lean` establishes the first part of that
 argument: for a numerator analytic on the canonical-root domain, a
 sufficiently small enclosing circle integral equals the negatively
-oriented integral over the corresponding gap stadium. Passing to the
-two boundary sides as the stadium shrinks is the remaining step toward
-the general estimate.
+oriented integral over the corresponding gap stadium.
 
 `SourceStandardRootWeightedOuterArcLimit.lean` controls the two outward
 endpoint semicircles in that stadium. For any numerator continuous at
 the endpoints of an open real gap, both arc integrals are bounded by a
 constant times the square root of the radius and converge to zero.
-The two horizontal side limits still need to be identified.
 
 `SourceStandardRootWeightedTransverseBound.lean` proves the uniform
 bound needed for those limits. A numerator analytic on an open
 neighborhood of the selected real gap is bounded on a compact
 thickening, and the standard-root lower bound cancels the cosine
 Jacobian's endpoint singularity on short vertical approaches.
+
+`SourceStandardRootWeightedCosineLimit.lean` applies dominated convergence
+on those approaches, while `SourceStandardRootWeightedHorizontalLimit.lean`
+identifies the resulting upper and lower straight-side limits with the
+gap-side boundary integrals of Lemma 10.4. Combining the four stadium
+pieces and transferring the estimate back to the original contour
+remain to be done for the full Lemma 12.3.
