@@ -2600,3 +2600,11 @@ labeling, local simplicity of all critical roots, and the analytic
 implicit-root theorem. This removes the index-dependent analyticity
 neighborhood for the critical coordinates; uniformity for the remaining
 normalized-action factors is still needed.
+
+`SourceDistantCriticalGapQuotientAnalyticNeighborhood.lean` uses that
+common critical-point neighborhood to make every distant critical
+gap quotient analytic on one complex source neighborhood. A shared
+isolating-disc family keeps the deleted product and its derivative in
+their analytic domain and makes the offset coefficient nonzero, even
+at complex collapsed gaps. The remaining step is to establish a
+common analytic domain for the full normalized-action contour formula.
