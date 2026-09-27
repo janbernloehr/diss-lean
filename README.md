@@ -2792,3 +2792,9 @@ differentiable at the free sequence, and its derivative is the bounded
 functional `2 · eval_m` on the omitted-coordinate space. Constructing
 the full sequence-valued equation, its uniform `ℓᵖ` bounds, and
 invertibility away from the free potential remain open.
+`SourcePsiFreeOperator.lean` packages these rows into the bounded
+operator `2 · id` on the deleted-coordinate space, proves that its
+inverse is `(1/2) · id`, and gives the resulting continuous linear
+equivalence. This is the free linear model for the later implicit
+function theorem; identifying it as a derivative of a sequence-valued
+contour map still requires the missing uniform estimate.

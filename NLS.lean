@@ -908,6 +908,7 @@ import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet
+import NLS.ZakharovShabat.SourcePsiFreeOperator
 import NLS.ZakharovShabat.SourceFreeSineQuotientAsymptotic
 import NLS.ZakharovShabat.SourceCriticalMidpointGapSquaredTail
 import NLS.ZakharovShabat.CriticalOffsetCoefficientOpenGap
