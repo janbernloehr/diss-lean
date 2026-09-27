@@ -1,5 +1,6 @@
 import NLS.SequenceSpaces.Basic
 import NLS.SequenceSpaces.Truncation
+import NLS.SequenceSpaces.UniformTailContinuity
 import NLS.SequenceSpaces.Weighted
 import NLS.SequenceSpaces.Multiplier
 import NLS.SequenceSpaces.Translation
@@ -1044,3 +1045,5 @@ import NLS.ZakharovShabat.SourceNormalizedActionTailBound
 import NLS.ZakharovShabat.SourceNormalizedActionSequenceMajorants
 import NLS.ZakharovShabat.SourceNormalizedActionPositive
 import NLS.ZakharovShabat.SourceNormalizedActionCollapseEstimate
+import NLS.ZakharovShabat.SourceCriticalDisplacementContinuity
+import NLS.ZakharovShabat.SourceNormalizedActionFactorContinuity

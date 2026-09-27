@@ -2405,9 +2405,23 @@ calculation in (2.19). For a constant target factor `c`, it bounds the
 distance of four times the open-gap quotient from `c` by the uniform
 cosine-path factor error and a term quadratic in the gap. The
 critical-offset term is proved to tend to zero near every collapsed
-real-type source. Thus,
-if the deleted factor converges uniformly along the shrinking path,
+real-type source. Thus, if the deleted factor converges uniformly along
+the shrinking path,
 the quotient tends to the explicit candidate
-`I * sourceCriticalRootRatioExtension(τₙ) / 4`. Establishing that
-uniform source continuity, then an analytic extension across the
-complex collapsed-gap locus, remains open.
+`I * sourceCriticalRootRatioExtension(τₙ) / 4`. The next files prove
+the uniform source continuity needed for this limit.
+
+`SourceCriticalDisplacementContinuity.lean` upgrades fixed-coordinate
+critical-root continuity to continuity of the full `ℓp` displacement
+sequence. It uses the generic coordinate-plus-uniform-tail criterion in
+`UniformTailContinuity.lean`, the locally uniform periodic gap and
+midpoint tails, and the exact squared-gap critical-offset formula.
+`SourceNormalizedActionFactorContinuity.lean` then applies joint
+analyticity of the deleted quotient: its cosine-path factor converges
+uniformly to the midpoint factor as a real-type gap collapses. This
+removes the extra hypothesis from the preceding limit theorem and
+gives an explicit normalized action continuous on the real-type source
+locus, with value `I * sourceCriticalRootRatioExtension(τₙ) / 4` at a
+collapsed gap. Extending this function analytically across collapsed
+complex gaps, and transporting the sequence estimates to that
+extension, remain open.
