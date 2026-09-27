@@ -2798,6 +2798,12 @@ factor `(σₘ-z)/wₘ(z)` times a regular single-root quotient. It also
 rewrites the scalar contour equation in the form (2.27), connecting it
 to the quotient estimates of Lemma 10.8 and the gap integral estimate
 of Lemma 12.3.
+`SourcePsiQuotientDiscMajorant.lean` applies the existing Lemma 10.8
+disc estimates to any psi root-displacement sequence: its offset from
+the periodic midpoints lies in `ℓᵖ`. On one source neighborhood, the
+regular quotient error on every sufficiently distant selected disc
+has an `ℓᵖ` majorant, including when the intermediate squared-gap
+exponent `p/2` is below one.
 `SourcePsiFreeCircleVariation.lean` supplies a concrete common
 contour condition near the free root sequence: if `‖a‖ < r` and
 `‖a‖ + r < π`, every displaced root avoids the radius-`r` circle
