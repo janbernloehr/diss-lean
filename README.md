@@ -3077,3 +3077,8 @@ real-type sources. It combines uniform free-centered circles for all
 sufficiently distant gaps with finitely many individual enclosing
 circles on one common complex source neighborhood. Every selected
 circle encloses its moving gap and avoids the other gaps.
+`SourcePsiGlobalScalarAnalytic.lean` intersects that neighborhood with
+the joint analytic domain of the canonical-root integrand. It proves
+every scalar psi equation coordinate is holomorphic in the root input
+and complex source on the common contour family, for all indices and
+all root inputs.

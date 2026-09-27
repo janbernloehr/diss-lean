@@ -950,6 +950,7 @@ import NLS.ZakharovShabat.SourcePsiNearFreeComplexUniformEquation
 import NLS.ZakharovShabat.SourcePsiComplexContourAnalytic
 import NLS.ZakharovShabat.SourcePsiComplexSequenceAnalytic
 import NLS.ZakharovShabat.SourcePsiGlobalContourFamily
+import NLS.ZakharovShabat.SourcePsiGlobalScalarAnalytic
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
