@@ -2961,5 +2961,15 @@ avoidance of only the selected gap, with no condition on the other
 periodic gaps. The exact-value theorem still asks for analyticity on
 the whole canonical-root domain for the stadium-to-circle deformation.
 The dissertation only assumes analyticity on a neighborhood containing
-its chosen contour. Localizing that deformation and covering
-non-midpoint contours remain open.
+its chosen contour.
+
+`SourceGapStadiumCircleLocalGeometry.lean` proves that every point of
+the four stadium-to-circle affine homotopies stays in a filled midpoint
+disc of radius `R` when the stadium height is at most `R-d`.
+`SourceGapStadiumCircleLocalHomotopy.lean` combines this with gap-cut
+avoidance and proves the contour identity for an integrand
+differentiable only on the root domain inside that disc.
+`SourceStandardRootWeightedLocalStadiumCircle.lean` applies it to the
+weighted inverse-root quotient with a numerator analytic near the
+disc. Localizing the shrinking-stadium limit and covering non-midpoint
+contours remain open before the full local Lemma 12.3 estimate follows.
