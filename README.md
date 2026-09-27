@@ -2545,6 +2545,15 @@ complex sources. On the same family of distant free-centered circles,
 its deviation from the free value has `ℓq + ℓ^(p/2)` pointwise
 majorants whose sequence norms are uniformly bounded on one source
 neighborhood. Consequently the deleted factor has a uniform scalar
-bound on all those circles. The next step is to identify the
-normalized-action extension with their contour quotients on a common
-source neighborhood and apply the correction bound.
+bound on all those circles.
+
+`SourceNormalizedActionUniformCircleCorrection.lean` applies the
+complex contour correction estimate on those common circles. It
+combines uniform midpoint separation, a local bound for the critical
+gap quotient, and the deleted-factor bound to show that the contour
+candidate differs from its midpoint term by at most a common constant
+times the squared gap, for every sufficiently distant index and every
+nearby complex source, including collapsed gaps. The next steps are
+to convert this into sequence majorants for the common-circle
+candidate and to identify that candidate with the chart-independent
+normalized-action extension on a common source neighborhood.
