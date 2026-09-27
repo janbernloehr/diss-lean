@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourceNormalizedActionComplexUniformPositive
 import NLS.ZakharovShabat.SourceStandardRootProductFactors
+import NLS.SequenceSpaces.BoundedCoordinateDifferentiable
 
 /-!
 # Sequence-space values of the normalized-action square root
@@ -8,7 +9,7 @@ The principal square root is globally one-sided Lipschitz at one.
 The normalized-action deviation's locally uniform `ℓq` bound therefore
 transfers to the root deviation. The common complex differentiability
 domain for all root coordinates and the bounded-coordinate theorem
-give norm continuity of this `ℓq`-valued map.
+give Fréchet holomorphy of this `ℓq`-valued map.
 -/
 
 noncomputable section
@@ -25,7 +26,7 @@ def sourceNormalizedActionRootDeviation
   sourceNormalizedActionRoot hp hp1 n ψ - 1
 
 /-- Near every real-type source, the principal root deviation is a
-norm-continuous and locally bounded `ℓq`-valued map. -/
+Fréchet-holomorphic and locally bounded `ℓq`-valued map. -/
 theorem exists_local_sourceNormalizedActionRootDeviation_continuousMap
     [Fact (1 ≤ q)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -36,7 +37,8 @@ theorem exists_local_sourceNormalizedActionRootDeviation_continuousMap
       ∃ M : ℝ, ∃ F : CoeffPair p → Coeff q,
         (∀ ψ ∈ V, ∀ n : ℤ,
           F ψ n = sourceNormalizedActionRootDeviation hp hp1 ψ n) ∧
-        (∀ ψ ∈ V, ‖F ψ‖ ≤ M) ∧ ContinuousOn F V := by
+        (∀ ψ ∈ V, ‖F ψ‖ ≤ M) ∧ ContinuousOn F V ∧
+        DifferentiableOn ℂ F V := by
   classical
   obtain ⟨Vd,hVdopen,hφVd,M,_,hbound⟩ :=
     exists_local_sourceNormalizedActionComplexExtension_allCoordinates_boundedCoeff
@@ -85,7 +87,9 @@ theorem exists_local_sourceNormalizedActionRootDeviation_continuousMap
       filter_upwards [hVopen.mem_nhds hψ] with χ hχ
       exact hFapply χ hχ n
     exact (hdev.congr_of_eventuallyEq heq).differentiableWithinAt
-  refine ⟨V,hVopen,⟨hφVd,hφVr⟩,M,F,hFapply,hFbound,?_⟩
-  exact Coeff.continuousOn_of_bounded_coordinatewise hq F hVopen hcoord M hFbound
+  have hFdiff : DifferentiableOn ℂ F V :=
+    Coeff.differentiableOn_of_bounded_coordinatewise F hVopen hcoord M hFbound
+  exact ⟨V,hVopen,⟨hφVd,hφVr⟩,M,F,hFapply,hFbound,
+    hFdiff.continuousOn,hFdiff⟩
 
 end NLS.ZakharovShabat

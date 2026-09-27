@@ -2666,17 +2666,21 @@ parts of all normalized actions. On that same neighborhood all
 principal square-root coordinates are differentiable, nonzero, and
 square to four times the normalized action.
 `SourceNormalizedActionRootSequenceSpace.lean` puts the root deviation
-in `ℓq` with a locally uniform norm bound and norm-continuous dependence
-on the source.
+in `ℓq` with a locally uniform norm bound and Fréchet-holomorphic
+dependence on the source.
 
 `BoundedCoordinateDerivative.lean` shows that the derivatives of a
 locally bounded, coordinatewise holomorphic `ℓq` map assemble into a
 bounded complex-linear operator from source directions to `ℓq`. The
 operator norm has an explicit local Schwarz bound.
+`BoundedCoordinateDifferentiable.lean` proves a quadratic remainder
+estimate uniform in finite truncations, then passes it to the full
+`ℓq` norm. This identifies the operator as the Fréchet derivative.
 `SourceNormalizedActionComplexSequenceDerivative.lean` applies this to
 the normalized-action deviation at every source in a common complex
-neighborhood. Identifying this operator as the Fréchet derivative of
-the full sequence map is the next analytic step.
+neighborhood, giving a Fréchet-holomorphic `ℓq`-valued map and an
+explicit local derivative bound. The same generic result upgrades
+the principal-root deviation to an `ℓq`-valued holomorphic map.
 
 `TwoExponentDecomposition.lean` upgrades pointwise bounds by `ℓq` and
 `ℓr` majorants to an exact sum with separate norm bounds, even for
@@ -2688,6 +2692,6 @@ Both deviations are exactly `ℓq + ℓ^(p/2)` with locally uniform
 component norm bounds for every finite `q > 1`, considered separately.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
 `ℓq` component is zero. The current source neighborhood may depend on
-`q`; a common domain for the simultaneous `ℓ^(1+)` formulation, and
-Banach-space analyticity of the quotient and root maps, remain open in
-Theorem 11.2.
+`q`; a common domain for the simultaneous `ℓ^(1+)` formulation and
+an explicit power-series theorem in Mathlib's `AnalyticOnNhd` sense
+remain open in Theorem 11.2.

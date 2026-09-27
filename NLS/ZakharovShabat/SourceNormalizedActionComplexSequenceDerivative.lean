@@ -1,5 +1,5 @@
 import NLS.ZakharovShabat.SourceNormalizedActionComplexSequenceContinuity
-import NLS.SequenceSpaces.BoundedCoordinateDerivative
+import NLS.SequenceSpaces.BoundedCoordinateDifferentiable
 
 /-!
 # Bounded derivative sequences for normalized actions
@@ -7,7 +7,9 @@ import NLS.SequenceSpaces.BoundedCoordinateDerivative
 The local `ℓq` realization of the normalized-action deviation is
 coordinatewise complex differentiable and uniformly bounded. Consequently,
 the derivatives of all its coordinates in any source direction assemble
-into an `ℓq` sequence. The assembly is a bounded complex-linear map.
+into an `ℓq` sequence. A uniform quadratic remainder estimate identifies
+this bounded complex-linear map as the Fréchet derivative of the full
+sequence-valued map.
 -/
 
 noncomputable section
@@ -28,9 +30,11 @@ theorem exists_local_sourceNormalizedActionDeviation_coordinateDerivative
       ∃ F : CoeffPair p → Coeff q,
         (∀ ψ ∈ V, ∀ n : ℤ,
           F ψ n = sourceNormalizedActionDeviation hp hp1 ψ n) ∧
+        DifferentiableOn ℂ F V ∧
         ∃ M : ℝ, (∀ ψ ∈ V, ‖F ψ‖ ≤ M) ∧
           (∀ ψ ∈ V, ∃ R : ℝ, 0 < R ∧ ball ψ R ⊆ V ∧
             ∃ L : CoeffPair p →L[ℂ] Coeff q,
+              L = fderiv ℂ F ψ ∧
               (∀ h : CoeffPair p, ∀ n : ℤ,
                 L h n = (fderiv ℂ (fun χ => F χ n) ψ) h) ∧
               ‖L‖ ≤ 2*M/R) := by
@@ -60,11 +64,19 @@ theorem exists_local_sourceNormalizedActionDeviation_coordinateDerivative
       filter_upwards [hVopen.mem_nhds hψ] with χ hχ
       exact (hFapply χ hχ n).symm
     exact (hdev.congr_of_eventuallyEq heq.symm).differentiableWithinAt
-  refine ⟨V,hVopen,hφV,F,hFapply,M,hFbound,?_⟩
+  have hFdiff : DifferentiableOn ℂ F V :=
+    Coeff.differentiableOn_of_bounded_coordinatewise F hVopen hcoord M hFbound
+  refine ⟨V,hVopen,hφV,F,hFapply,hFdiff,M,hFbound,?_⟩
   intro ψ hψ
   obtain ⟨R,hR,hball,L,hL,hLbound⟩ :=
     Coeff.exists_derivative_clm_of_bounded_coordinatewise
       F hVopen hcoord M hFbound ψ hψ
-  exact ⟨R,hR,hball,L,hL,hLbound⟩
+  have hψdiff : DifferentiableAt ℂ F ψ :=
+    (hFdiff ψ hψ).differentiableAt (hVopen.mem_nhds hψ)
+  have hLeq : L = fderiv ℂ F ψ := by
+    ext h n
+    rw [hL h n]
+    exact (Coeff.fderiv_apply_of_differentiableAt F ψ h n hψdiff).symm
+  exact ⟨R,hR,hball,L,hLeq,hL,hLbound⟩
 
 end NLS.ZakharovShabat
