@@ -2724,7 +2724,13 @@ complex-linear projections to each finite `ℓq`, `q > 1`.
 `SourceNormalizedActionOnePlus.lean` realizes both deviations as
 `ℓ^(1+)` sequences on the shared complex neighborhood, with locally
 bounded projections into every such `ℓq`.
+`OnePlusTopology.lean` equips this intersection with its projective
+topology and proves that it is a Hausdorff topological complex vector
+space; continuity is equivalent to continuity of every `ℓq`
+projection. `SourceNormalizedActionOnePlusTopology.lean` then proves
+that both deviations are continuous as `ℓ^(1+)`-valued maps on one
+complex source neighborhood.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
-`ℓq` component is zero. A projective-limit topology on `ℓ^(1+)` and
-a full multivariable Fréchet power-series theorem in Mathlib's
+`ℓq` component is zero. Completeness of the projective `ℓ^(1+)`
+space and a full multivariable Fréchet power-series theorem in Mathlib's
 `AnalyticOnNhd` sense remain open in Theorem 11.2.
