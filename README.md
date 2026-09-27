@@ -2944,13 +2944,18 @@ four-piece path integral identity. In
 and arc limits: for a numerator analytic near the selected gap and
 continuous on the canonical-root domain, the shrinking stadium
 integral tends to twice the upper gap-side boundary integral.
-Transferring that limit to a fixed enclosing circle and weakening the
-domain assumption remain for the full Lemma 12.3.
 
 `SourceStandardRootWeightedCornerCircleLimit.lean` transfers the
 shrinking-stadium limit to shrinking corner circles using their exact
 contour deformation. When the numerator is analytic on the full
 canonical-root domain and near the selected gap, these circle
 integrals tend to minus twice the upper gap-side boundary integral.
-Constancy across enclosing circles is needed to turn this limit into
-the fixed-contour estimate.
+
+`SourceStandardRootWeightedCircleValue.lean` proves that constancy by
+holomorphic annulus deformation. It identifies the exact integral and
+establishes the Lemma 12.3 maximum bound on every isolated midpoint
+circle around an open real gap. The current theorem asks for the
+numerator to be analytic on the whole canonical-root domain as well
+as near the selected gap; the dissertation only assumes analyticity
+on a neighborhood containing its chosen contour. Extending the local
+deformation and covering non-midpoint contours remain open.
