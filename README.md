@@ -2792,6 +2792,12 @@ root and canonical-root cuts, the scalar equation is exactly affine
 along that retained coordinate; its derivative is the weighted
 Cauchy-kernel integral of Lemma 12.5, both in the ambient and deleted
 `ℓᵖ` parameter spaces. Bounds on these entries remain to be proved.
+`SourcePsiFreeCircleVariation.lean` supplies a concrete common
+contour condition near the free root sequence: if `‖a‖ < r` and
+`‖a‖ + r < π`, every displaced root avoids the radius-`r` circle
+around each free center. The nonfree scalar derivative formula then
+holds on all those circles, including on the deleted-coordinate
+parameter space, at zero source potential.
 `SourcePsiFreeJacobian.lean` evaluates the free two-pole contour
 integral and proves the exact scalar Jacobian entries of (2.22):
 moving retained root `k` changes coordinate `m` by `2t` if `m = k`
