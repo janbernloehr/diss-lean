@@ -87,7 +87,9 @@ theorem exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
     (a₀ : Coeff p) :
     ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
-      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      ∃ K : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, K < m.natAbs →
+          c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         (∀ t ∈ U, ∀ m : ℤ,
           0 < R m ∧
           sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
@@ -123,9 +125,12 @@ theorem exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
       (isOpen_ball.prod (hVtailOpen.inter hVgeomOpen))
   have hbase : (a₀,φ) ∈ U := by
     exact ⟨hbaseHead,mem_ball_self (by norm_num),hφVtail,hφVgeom⟩
+  have htailChoice (m : ℤ) (hm : K < m.natAbs) :
+      c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8 :=
+    hchoice m (by dsimp [K] at hm; omega)
   let M : ℝ := s.card*Mhead+Mtail
   have hM : 0 ≤ M := by dsimp [M]; positivity
-  refine ⟨U,hUopen,hbase,c,R,?_,M,hM,?_⟩
+  refine ⟨U,hUopen,hbase,K,c,R,htailChoice,?_,M,hM,?_⟩
   · intro t ht m
     exact hgeom t.2 ht.2.2.2 m
   intro t ht

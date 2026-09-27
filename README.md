@@ -3088,3 +3088,9 @@ any root input. It patches that finite bound with the quantitative
 Lemma 10.8 tail majorant, producing one `ℓᵖ` quotient-error majorant
 on every selected contour disc with a locally uniform norm bound near
 an arbitrary real-type source.
+`SourcePsiShiftedDiscLatticeBound.lean` proves that a shifted selected
+disc stays uniformly separated from sufficiently distant deleted free
+roots. It uses this to bound the weighted regular psi factor by the
+quotient majorant and gives one distance cutoff for a finite family of
+head discs. The all-disc majorant now exposes the cutoff beyond which
+its selected circles are free-centered.
