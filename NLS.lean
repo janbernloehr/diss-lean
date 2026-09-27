@@ -1030,3 +1030,4 @@ import NLS.ZakharovShabat.SourceComplexActionUniqueness
 import NLS.ZakharovShabat.SourceActionCircleSourceFDeriv
 import NLS.ZakharovShabat.SourceDiscriminantMixedDerivative
 import NLS.ZakharovShabat.SourceCanonicalRootSourceFDeriv
+import NLS.ZakharovShabat.SourceCriticalRootRatioSourceFDeriv

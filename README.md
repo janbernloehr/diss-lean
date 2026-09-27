@@ -2273,3 +2273,12 @@ applies it to the canonical root away from the moving periodic gaps,
 giving both its source Fréchet derivative and spectral derivative as
 `Δ / Q` times the corresponding discriminant derivative. These formulas
 prepare the quotient simplification inside the action integral.
+
+## Latest milestone: source derivative of the critical-root quotient
+
+`QuotientDerivative.lean` gives the directional Fréchet derivative of
+a nonvanishing scalar quotient. `SourceCriticalRootRatioSourceFDeriv.lean`
+applies it to the action integrand `Δ′ / Q` and proves the pointwise
+identity `D_source(Δ′ / Q) = ∂_z((D_source Δ) / Q)` off the moving gap
+cuts. The remaining contour step is to integrate this identity by
+parts in the weighted action circle.
