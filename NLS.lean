@@ -953,6 +953,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalContourFamily
 import NLS.ZakharovShabat.SourcePsiGlobalScalarAnalytic
 import NLS.ZakharovShabat.SourcePsiGlobalHeadDiscBound
 import NLS.ZakharovShabat.SourcePsiShiftedDiscLatticeBound
+import NLS.ZakharovShabat.SourcePsiGlobalDistantDeletedRegularFactor
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

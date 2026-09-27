@@ -3094,3 +3094,9 @@ roots. It uses this to bound the weighted regular psi factor by the
 quotient majorant and gives one distance cutoff for a finite family of
 head discs. The all-disc majorant now exposes the cutoff beyond which
 its selected circles are free-centered.
+`SourcePsiGlobalDistantDeletedRegularFactor.lean` combines that cutoff
+with the all-disc quotient majorant. On one neighborhood of any root
+input and real-type source, a single `ℓᵖ` majorant with locally uniform
+norm controls the weighted regular factor on every selected contour
+for all sufficiently distant deleted indices. The finitely many
+remaining deleted indices still need a separate head estimate.
