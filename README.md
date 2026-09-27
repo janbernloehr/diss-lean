@@ -2317,3 +2317,12 @@ all complex source directions. This establishes the gradient formula
 of Lemma 11.1 for the action extension at real-type sources. Extending
 the formula across its complex domain and proving full Banach-space
 analyticity remain separate tasks.
+
+## Latest milestone: contour invariance of the action gradient
+
+`SourceActionGradientContourHomotopy.lean` proves that the gradient
+integral of `(D_source Δ) / Q` is unchanged under smooth homotopies
+that avoid all periodic cuts. It specializes this to nested
+isolating circles and to two circles inside a common larger
+isolating circle. This removes the dependence on the chosen chart
+contour wherever the stated geometric comparison applies.
