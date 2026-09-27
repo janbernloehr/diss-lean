@@ -2585,4 +2585,10 @@ unweighted critical-root quotient integral vanishes on a valid
 circle for both open and collapsed real gaps; the action factorization
 handles open gaps, and the midpoint formula handles collapsed ones.
 The cutoff and source neighborhood are common to all distant indices.
-The equality on nearby complex sources remains to be proved.
+
+`SourceNormalizedActionUniformCircleLocalComplexAgreement.lean` proves
+complex differentiability of the normalized candidate on any
+prescribed valid circle near a real-type base source. Real-form
+uniqueness then extends the common-circle identity to a complex
+neighborhood for each fixed distant index. The remaining issue is to
+choose that complex neighborhood uniformly across all distant indices.
