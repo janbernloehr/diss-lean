@@ -3043,3 +3043,13 @@ near-free real-type source and gives a locally uniform `ℓᵖ` norm bound
 near any root input over the free source, independent of the deleted
 index. Extending this sequence and its bound to a complex source
 neighborhood, then proving sequence-valued analyticity, remain open.
+`SourceStandardRootInverseCorrection.lean` compares the selected
+complex standard root with its collapsed-gap inverse on the fixed
+free circle, with error proportional to the squared gap.
+`SourceStandardRootComplexGapCircleEstimate.lean` integrates that
+comparison against an analytic factor and bounds the contour by a
+Cauchy residue plus a quadratic-gap correction.
+`SourcePsiNearFreeComplexCoordinate.lean` applies the estimate to each
+psi equation coordinate without assuming a real-type source. The
+complex coordinates still need to be assembled into a uniformly
+bounded deleted `ℓᵖ` sequence.

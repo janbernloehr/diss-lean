@@ -943,6 +943,9 @@ import NLS.ZakharovShabat.SourcePsiNearFreeCollapsedGap
 import NLS.ZakharovShabat.SourcePsiQuotientQuantitativeDisc
 import NLS.ZakharovShabat.SourcePsiQuotientUniformHeadDisc
 import NLS.ZakharovShabat.SourcePsiNearFreeUniformEquation
+import NLS.ZakharovShabat.SourceStandardRootInverseCorrection
+import NLS.ZakharovShabat.SourceStandardRootComplexGapCircleEstimate
+import NLS.ZakharovShabat.SourcePsiNearFreeComplexCoordinate
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
