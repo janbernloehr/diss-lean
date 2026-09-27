@@ -2715,7 +2715,10 @@ locally uniform `ℓq` norm bound for each exponent.
 `SourceNormalizedActionRootCommonExponentDomain.lean` transfers this to
 the principal-root deviation. On one complex source neighborhood it is
 a locally bounded, Fréchet-holomorphic `ℓq`-valued map for every finite
-`q > 1`.
+`q > 1`. `SourceNormalizedActionHolomorphicCommonExponentDomain.lean`
+establishes the same holomorphy statement for the action and provides
+one neighborhood on which both maps have these properties for all
+finite `q > 1`.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
 `ℓq` component is zero. A dedicated `ℓ^(1+)` intersection type and
 a full multivariable Fréchet power-series theorem in Mathlib's
