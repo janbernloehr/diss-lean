@@ -2360,3 +2360,11 @@ that moment and the factor-error integral. This supplies the analytic
 identity behind the leading `1` in Theorem 11.2; controlling the error
 uniformly and extending the quotient through collapsed complex gaps
 remain to be proved.
+
+`SourceNormalizedActionEstimate.lean` turns that identity into an
+explicit bound. If the complementary factor differs from one by at most
+`ε` along the selected gap, then the deviation of `4Iₙ/γₙ²` from one
+is bounded by a term quadratic in the gap times the critical squared-gap
+quotient, plus a controlled multiple of `ε`. The normalized critical
+offset is identified exactly as twice the gap times that quotient.
+Applying uniform product-tail estimates to `ε` remains open.
