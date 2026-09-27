@@ -2781,6 +2781,11 @@ free center, the numerator is affine in that root displacement and
 its derivative at the free sequence is the free psi-function divided
 by the corresponding linear root factor. This is the first input to
 the free Jacobian of Lemma 12.5.
+`SourcePsiGeneralVariation.lean` extends the exact one-root identity
+to arbitrary displacement data. The cross-multiplied formula remains
+valid at spectral root collisions; away from the original moved root,
+the numerator is affine in that coordinate and its complex derivative
+is explicit. This prepares the nonfree Jacobian calculation.
 `SourcePsiFreeJacobian.lean` evaluates the free two-pole contour
 integral and proves the exact scalar Jacobian entries of (2.22):
 moving retained root `k` changes coordinate `m` by `2t` if `m = k`
