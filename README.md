@@ -2506,3 +2506,10 @@ nonvanishing, complex Fréchet-differentiable principal square-root
 coordinate; its restriction to each complex source line is analytic.
 The index-uniform neighborhood, full Banach analyticity, and sequence
 asymptotics in Theorem 11.2 remain open.
+
+`SourceNormalizedActionExtensionSequenceMajorants.lean` transports the
+factor estimates to the normalized-action extension at every distant
+real-type gap, including collapsed gaps. Locally in the source, its
+deviation from `1/4` has `ℓq + ℓ^(p/2)` pointwise majorants with
+uniformly bounded sequence norms. The common complex neighborhood and
+the corresponding estimates for non-real-type sources remain open.

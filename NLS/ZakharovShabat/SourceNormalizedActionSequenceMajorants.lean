@@ -410,14 +410,14 @@ theorem exists_local_sourceNormalizedActionCriticalMajorant_bound
     (mul_le_mul hBsq (hS ψ hψ.1)
       (lp.norm_nonneg' _) (sq_nonneg _))
 
-private theorem norm_smul_magnitude_apply {r : ℝ≥0∞}
+theorem norm_smul_magnitude_apply {r : ℝ≥0∞}
     (a : Coeff r) (c : ℝ) (hc : 0 ≤ c) (n : ℤ) :
     ‖((c : ℂ) • Coeff.magnitude a) n‖ = c * ‖a n‖ := by
   simp only [lp.coeFn_smul, Pi.smul_apply, Coeff.magnitude_apply,
     smul_eq_mul, ← Complex.ofReal_mul, Complex.norm_real,
     Real.norm_of_nonneg (mul_nonneg hc (norm_nonneg _))]
 
-private theorem norm_add_smul_magnitude_apply {r : ℝ≥0∞}
+theorem norm_add_smul_magnitude_apply {r : ℝ≥0∞}
     (a b : Coeff r) (c d : ℝ) (hc : 0 ≤ c) (hd : 0 ≤ d)
     (n : ℤ) :
     ‖(((c : ℂ) • Coeff.magnitude a) +
