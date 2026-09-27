@@ -2914,5 +2914,12 @@ representation, and these bounds remain to be established.
 its selected gap and proves that its centered inverse-root circle moment
 vanishes. Combined with the known inverse-root integral, this evaluates
 every affine weighted contour integral and establishes the affine case of
-the gap maximum estimate in Lemma 12.3. The contour-to-gap argument for a
-general analytic numerator remains to be formalized.
+the gap maximum estimate in Lemma 12.3. The full contour-to-gap argument
+for a general analytic numerator remains to be formalized.
+
+`SourceStandardRootWeightedStadium.lean` establishes the first part of that
+argument: for a numerator analytic on the canonical-root domain, a
+sufficiently small enclosing circle integral equals the negatively
+oriented integral over the corresponding gap stadium. Passing to the
+two boundary sides as the stadium shrinks is the remaining step toward
+the general estimate.
