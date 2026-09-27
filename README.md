@@ -2971,5 +2971,11 @@ avoidance and proves the contour identity for an integrand
 differentiable only on the root domain inside that disc.
 `SourceStandardRootWeightedLocalStadiumCircle.lean` applies it to the
 weighted inverse-root quotient with a numerator analytic near the
-disc. Localizing the shrinking-stadium limit and covering non-midpoint
-contours remain open before the full local Lemma 12.3 estimate follows.
+disc. `SourceGapStadiumLocalIntegralDecomposition.lean` makes the
+four-piece stadium identity depend only on continuity along a local
+domain containing its path. `SourceStandardRootWeightedLocalStadiumLimit.lean`
+then proves that the shrinking stadium still tends to twice the upper
+gap-side integral using a numerator analytic near that disc. Combining
+these two local results with the local annulus theorem and covering
+non-midpoint contours remain open before the full local Lemma 12.3
+estimate follows.

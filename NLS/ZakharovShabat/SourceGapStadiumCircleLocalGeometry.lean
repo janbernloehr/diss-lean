@@ -187,4 +187,64 @@ theorem sourceGapStadiumCircleAffine_mem_midpoint_closedBall
   exact sourceGapStadiumCircleAffine_mem_closedBall l r c d ρ R
     hleft hright hd hρ hR s u
 
+/-- The actual four-piece gap stadium stays inside any midpoint disc
+whose radius is at least its half-width plus its height. -/
+theorem sourceGapStadiumPath_range_subset_midpoint_closedBall
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re)
+    (ρ R : ℝ) (hρ : 0 < ρ) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    d+ρ ≤ R →
+      range (sourceGapStadiumPath l r ρ) ⊆ closedBall c R := by
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+  let d : ℝ := (r.re-l.re)/2
+  dsimp only
+  intro hR
+  change d+ρ ≤ R at hR
+  let upper : Path (l+(ρ:ℂ)*Complex.I) (r+(ρ:ℂ)*Complex.I) :=
+    Path.segment (l+(ρ:ℂ)*Complex.I) (r+(ρ:ℂ)*Complex.I)
+  let right : Path (r+(ρ:ℂ)*Complex.I) (r-(ρ:ℂ)*Complex.I) :=
+    (sourceEndpointSemicirclePath r ρ).symm
+  let lower : Path (r-(ρ:ℂ)*Complex.I) (l-(ρ:ℂ)*Complex.I) :=
+    Path.segment (r-(ρ:ℂ)*Complex.I) (l-(ρ:ℂ)*Complex.I)
+  let left : Path (l-(ρ:ℂ)*Complex.I) (l+(ρ:ℂ)*Complex.I) :=
+    (sourceLeftOuterArcPath l ρ).symm
+  let cupper := stadiumCircleUpperArc c d ρ
+  let cright := stadiumCircleRightArc c d ρ
+  let clower := stadiumCircleLowerArc c d ρ
+  let cleft := stadiumCircleLeftArc c d ρ
+  have hsource {a b c' d' : ℂ} (γ : Path a b) (η : Path c' d')
+      (h : ∀ u : I,
+        (ContinuousMap.Homotopy.affine (γ : C(I,ℂ))
+          (η : C(I,ℂ))) (0,u) ∈ closedBall c R) :
+      range γ ⊆ closedBall c R := by
+    rintro z ⟨u,rfl⟩
+    have hz := h u
+    change AffineMap.lineMap (γ u) (η u) (0:ℝ) ∈ closedBall c R at hz
+    simpa only [AffineMap.lineMap_apply_zero] using hz
+  have hball (u : I) :=
+    sourceGapStadiumCircleAffine_mem_midpoint_closedBall
+      hp hp1 ψ hreal n hopen ρ R hρ hR 0 u
+  have hu := hsource upper cupper (fun u => (hball u).1)
+  have hr := hsource right cright (fun u => (hball u).2.1)
+  have hl := hsource lower clower (fun u => (hball u).2.2.1)
+  have hleft := hsource left cleft (fun u => (hball u).2.2.2)
+  change range (((upper.trans right).trans lower).trans left) ⊆ closedBall c R
+  rw [Path.trans_range, Path.trans_range, Path.trans_range]
+  exact union_subset (union_subset (union_subset hu hr) hl) hleft
+
 end NLS.ZakharovShabat
