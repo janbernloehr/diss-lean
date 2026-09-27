@@ -913,6 +913,7 @@ import NLS.ZakharovShabat.SourcePsiQuotientDiscMajorant
 import NLS.ZakharovShabat.SourcePsiFreeLatticeBound
 import NLS.ZakharovShabat.SourcePsiCollapsedGapCircle
 import NLS.ZakharovShabat.SourcePsiFreeSequence
+import NLS.ZakharovShabat.SourcePsiFreeEquationFactorization
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
