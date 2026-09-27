@@ -3031,5 +3031,10 @@ sequence-valued analyticity remain for the full Lemma 12.4 statement.
 `SourcePsiQuotientQuantitativeDisc.lean` retains the explicit norm
 estimates of the distant-disc quotient majorants and proves a uniform
 bound over every fixed bounded ball of root inputs and a common source
-neighborhood. The finitely many excluded discs still need a uniform
-head estimate before this gives the full local uniform bound.
+neighborhood. `SourcePsiQuotientUniformHeadDisc.lean` bounds the finitely
+many remaining discs by joint analyticity and compactness. Patching
+these bounds yields one `ℓᵖ` quotient majorant whose norm is locally
+uniform near any root input and the free source, and gives the same
+uniform norm control for the regular factor of every deleted psi
+equation. Propagating that bound to the full contour sequence and
+extending the result to a complex source neighborhood remain open.
