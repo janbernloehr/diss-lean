@@ -25,7 +25,7 @@ theorem norm_nearFree_complexGap_weighted_circle_le
     (hgap : ‖sourcePeriodicGapDisplacement hp hp1 ψ m‖ ≤ Real.pi/32)
     (f : ℂ → ℂ)
     (hf : AnalyticOnNhd ℂ f
-      (closedBall ((Real.pi : ℂ)*m) (Real.pi/4)))
+      (closedBall ((Real.pi : ℂ)*m) (Real.pi/8)))
     (M : ℝ) (hM : 0 ≤ M)
     (hbound : ∀ z ∈ closedBall ((Real.pi : ℂ)*m) (Real.pi/8),
       ‖f z‖ ≤ M) :
@@ -50,9 +50,7 @@ theorem norm_nearFree_complexGap_weighted_circle_le
   have hτball : τ ∈ ball c R := by
     rw [mem_ball,dist_eq_norm]
     exact hmid.trans_lt (by dsimp [R]; nlinarith [Real.pi_pos])
-  have hfR : AnalyticOnNhd ℂ f (closedBall c R) :=
-    hf.mono (Metric.closedBall_subset_closedBall
-      (by dsimp [R]; nlinarith [Real.pi_pos]))
+  have hfR : AnalyticOnNhd ℂ f (closedBall c R) := hf
   have hfcont : ContinuousOn f (sphere c R) :=
     hfR.continuousOn.mono sphere_subset_closedBall
   have hPcont : ContinuousOn P (sphere c R) :=

@@ -24,7 +24,7 @@ theorem nearFree_complex_deletedPsi_normalizedCoordinate_bound
     (hQ : AnalyticOnNhd ℂ
       (sourceSingleRootQuotientJointProduct hp hp1 m)
       (sourceSingleRootQuotientJointDomain hp hp1 W m))
-    (hgeom : closedBall ((Real.pi : ℂ)*m) (Real.pi/4) ⊆
+    (hgeom : closedBall ((Real.pi : ℂ)*m) (Real.pi/8) ⊆
       sourceStandardRootOmittedDomain hp hp1 ψ m)
     (hcircle : sphere ((Real.pi : ℂ)*m) (Real.pi/8) ⊆
       sourceCanonicalRootDomain hp hp1 ψ)
@@ -55,10 +55,10 @@ theorem nearFree_complex_deletedPsi_normalizedCoordinate_bound
   let f : ℂ → ℂ := fun z => (((n-m : ℤ) : ℂ) *
     sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z)
   dsimp only
-  have hreg : AnalyticOnNhd ℂ f (closedBall c (Real.pi/4)) := by
+  have hreg : AnalyticOnNhd ℂ f (closedBall c (Real.pi/8)) := by
     apply analyticOnNhd_deletedPsi_gapRegularFactor_of_omitted_disc
       hp hp1 n m (Ne.symm hmn) a ψ W hψW hQ
-        (Real.pi/4) (by nlinarith [Real.pi_pos])
+        (Real.pi/8) (by nlinarith [Real.pi_pos])
     exact hgeom
   have havoid : ∀ z ∈ sphere c (Real.pi/8),
       z ≠ displacedRoots (a : Coeff p) n := by

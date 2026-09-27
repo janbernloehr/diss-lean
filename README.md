@@ -3052,6 +3052,9 @@ comparison against an analytic factor and bounds the contour by a
 Cauchy residue plus a quadratic-gap correction.
 `SourcePsiNearFreeComplexCoordinate.lean` applies the estimate to each
 psi equation coordinate without assuming a real-type source.
+The complex-gap contour estimate and coordinate bound need analyticity
+only on the closed free eighth-π disc, which matches the uniform tail
+geometry around arbitrary real-type sources.
 `SourcePsiNearFreeComplexUniformEquation.lean` absorbs its quadratic
 gap correction into the periodic-gap displacement sequence. It builds
 the complete deleted `ℓᵖ` psi equation on a complex source neighborhood

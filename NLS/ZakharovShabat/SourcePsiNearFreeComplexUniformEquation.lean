@@ -25,7 +25,7 @@ theorem nearFree_complex_deletedPsi_normalizedCoordinate_bound_uniform
     (hQ : AnalyticOnNhd ℂ
       (sourceSingleRootQuotientJointProduct hp hp1 m)
       (sourceSingleRootQuotientJointDomain hp hp1 W m))
-    (hgeom : closedBall ((Real.pi : ℂ)*m) (Real.pi/4) ⊆
+    (hgeom : closedBall ((Real.pi : ℂ)*m) (Real.pi/8) ⊆
       sourceStandardRootOmittedDomain hp hp1 ψ m)
     (hcircle : sphere ((Real.pi : ℂ)*m) (Real.pi/8) ⊆
       sourceCanonicalRootDomain hp hp1 ψ)
@@ -226,7 +226,9 @@ theorem exists_nearFree_complex_deletedPsi_equation_uniformNorm
     have hcoord :=
       nearFree_complex_deletedPsi_normalizedCoordinate_bound_uniform
         hp hp1 ψ n m hmn a W hψW (hQ m).2
-        (hgeom ψ hψgeom m) (hcircle ψ hψcircle m)
+        ((Metric.closedBall_subset_closedBall
+          (by nlinarith [Real.pi_pos])).trans (hgeom ψ hψgeom m))
+        (hcircle ψ hψcircle m)
         (hsmall ψ hψsmall m).1 (hsmall ψ hψsmall m).2
         B (hB m hmn) T hacoord
     have hBcoord : ‖B m‖ ≤ M :=
