@@ -1,6 +1,7 @@
 import NLS.SequenceSpaces.Basic
 import NLS.SequenceSpaces.OnePlus
 import NLS.SequenceSpaces.OnePlusTopology
+import NLS.SequenceSpaces.OnePlusComplete
 import NLS.SequenceSpaces.Truncation
 import NLS.SequenceSpaces.UniformTailContinuity
 import NLS.SequenceSpaces.Weighted

@@ -2730,12 +2730,14 @@ space; continuity is equivalent to continuity of every `ℓq`
 projection. `SourceNormalizedActionOnePlusTopology.lean` then proves
 that both deviations are continuous as `ℓ^(1+)`-valued maps on one
 complex source neighborhood.
+`OnePlusComplete.lean` proves that the projective space is complete by
+embedding it as the closed, coordinate-compatible subspace of the
+product of its Banach `ℓq` realizations.
 `SourceNormalizedActionOnePlusDecomposition.lean` gives the exact
 `ℓ^(p/2) + ℓ^(1+)` decomposition of both deviations for every finite
 `p > 1`, with one complex source neighborhood, locally uniform bounds
 on the `ℓ^(p/2)` components, and locally uniform bounds on every
 finite-`ℓq` projection of the `ℓ^(1+)` components.
 When `q < p/2`, the full deviation is already in `ℓ^(p/2)` and the
-`ℓq` component is zero. Completeness of the projective `ℓ^(1+)`
-space and a full multivariable Fréchet power-series theorem in Mathlib's
+`ℓq` component is zero. A full multivariable Fréchet power-series theorem in Mathlib's
 `AnalyticOnNhd` sense remain open in Theorem 11.2.

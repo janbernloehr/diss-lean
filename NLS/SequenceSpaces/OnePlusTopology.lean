@@ -19,6 +19,8 @@ namespace NLS.CoeffOnePlus
 /-- Finite sequence exponents strictly above one. -/
 abbrev Exponent := {q : ℝ≥0∞ // 1 < q ∧ q ≠ ⊤}
 
+instance (e : Exponent) : Fact (1 ≤ e.1) := ⟨e.2.1.le⟩
+
 /-- The initial topology of the projections to every finite `ℓq`
 above one. -/
 @[instance_reducible] def projectiveTopology : TopologicalSpace CoeffOnePlus :=
