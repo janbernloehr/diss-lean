@@ -2367,4 +2367,11 @@ explicit bound. If the complementary factor differs from one by at most
 is bounded by a term quadratic in the gap times the critical squared-gap
 quotient, plus a controlled multiple of `ε`. The normalized critical
 offset is identified exactly as twice the gap times that quotient.
-Applying uniform product-tail estimates to `ε` remains open.
+
+`SourceNormalizedActionTailBound.lean` supplies that factor bound for
+all sufficiently distant signed indices, locally uniformly near each
+real-type source. It transports the deleted single-root product estimate
+from isolating discs to every cosine-parametrized point of the selected
+gap, then obtains the corresponding explicit normalized-action bound on
+open real-type gaps. The full `ℓ^{p/2} + ℓ^{1+}` asymptotic and analytic
+extension through collapsed gaps still remain open.
