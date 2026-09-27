@@ -2929,3 +2929,9 @@ endpoint semicircles in that stadium. For any numerator continuous at
 the endpoints of an open real gap, both arc integrals are bounded by a
 constant times the square root of the radius and converge to zero.
 The two horizontal side limits still need to be identified.
+
+`SourceStandardRootWeightedTransverseBound.lean` proves the uniform
+bound needed for those limits. A numerator analytic on an open
+neighborhood of the selected real gap is bounded on a compact
+thickening, and the standard-root lower bound cancels the cosine
+Jacobian's endpoint singularity on short vertical approaches.
