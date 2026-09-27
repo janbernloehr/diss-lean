@@ -2326,3 +2326,14 @@ that avoid all periodic cuts. It specializes this to nested
 isolating circles and to two circles inside a common larger
 isolating circle. This removes the dependence on the chosen chart
 contour wherever the stated geometric comparison applies.
+
+## Latest milestone: normalized action on noncollapsed gaps
+
+`SourceNormalizedActionNoncollapsed.lean` defines the a priori
+quotient `Iₙ / γₙ²` and proves, at every real-type source with a
+nonzero selected gap, complex Fréchet differentiability and
+analyticity along each complex source line. It also combines the
+action contour gradient with the quotient rule to give the
+directional derivative of this normalized action. The removable
+extension through collapsed gaps and the uniform estimates in
+Theorem 11.2 remain open.
