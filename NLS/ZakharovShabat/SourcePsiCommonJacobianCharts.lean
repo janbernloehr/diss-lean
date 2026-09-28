@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
 import NLS.SequenceSpaces.DeletedCoordinateAtInfinity
 import NLS.ZakharovShabat.SourcePsiLimitScalarJacobianEntry
+import NLS.ComplexAnalysis.BanachTaylorBounds
 
 /-!
 # One contour family for escaping deleted-index Jacobians
@@ -33,9 +34,13 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
           sourceStandardRootOmittedDomain hp hp1 φ m ∧
         sphere (c m) (R m) ⊆
           sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ δ : ℝ, 0 < δ ∧ ∃ C : ℝ, 0 ≤ C ∧
       ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
         ∃ U : Set (DeletedCoeff p n × CoeffPair p),
           IsOpen U ∧ (Coeff.deleteCoordinateTo n a,φ) ∈ U ∧
+          ball (Coeff.deleteCoordinateTo n a,φ) δ ⊆ U ∧
+          (∀ t ∈ U,
+            ‖sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2‖ ≤ C) ∧
           (∀ t ∈ U, ∀ m : ℤ,
             (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
               sourcePsiEquationCoordinate hp hp1 n m
@@ -52,6 +57,8 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
   have hUambOpen : IsOpen Uamb :=
     hUeqOpen.inter (hWopen.preimage continuous_snd)
   have hbase : (a,φ) ∈ Uamb := ⟨hbaseEq,hrealW hφ⟩
+  obtain ⟨r,hr,hball⟩ := Metric.isOpen_iff.mp hUambOpen (a,φ) hbase
+  have hhalf : 0 < r / 2 := by positivity
   have hparam : Tendsto
       (fun n : ℤ => ((Coeff.deleteCoordinate n a : Coeff p),φ))
       (Filter.comap Int.natAbs Filter.atTop) (𝓝 (a,φ)) := by
@@ -59,9 +66,9 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
       (Coeff.tendsto_deleteCoordinate_at_natAbs hp a).prodMk
         (tendsto_const_nhds (x := φ))
   have hnear : ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
-      ((Coeff.deleteCoordinate n a : Coeff p),φ) ∈ Uamb :=
-    hparam.eventually (hUambOpen.mem_nhds hbase)
-  refine ⟨c,R,(fun m => hgeom (a,φ) hbaseEq m),?_⟩
+      ((Coeff.deleteCoordinate n a : Coeff p),φ) ∈ ball (a,φ) (r/2) :=
+    hparam.eventually (isOpen_ball.mem_nhds (mem_ball_self hhalf))
+  refine ⟨c,R,(fun m => hgeom (a,φ) hbaseEq m),r/2,hhalf,C,hC,?_⟩
   filter_upwards [hnear] with n hn
   let H : DeletedCoeff p n × CoeffPair p → Coeff p × CoeffPair p :=
     fun t => ((t.1 : Coeff p),t.2)
@@ -78,7 +85,20 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
   have hpair : (Coeff.deleteCoordinateTo n a,φ) ∈ U := by
     change (((Coeff.deleteCoordinateTo n a : DeletedCoeff p n) : Coeff p),φ) ∈ Uamb
     change ((Coeff.deleteCoordinate n a : Coeff p),φ) ∈ Uamb
-    exact hn
+    exact hball (ball_subset_ball (by linarith) hn)
+  have hlocal : ball (Coeff.deleteCoordinateTo n a,φ) (r/2) ⊆ U := by
+    intro t ht
+    have hdist : dist (H t) ((Coeff.deleteCoordinate n a : Coeff p),φ) =
+        dist t (Coeff.deleteCoordinateTo n a,φ) := by
+      simp [H, Prod.dist_eq, Subtype.dist_eq, Coeff.deleteCoordinateTo]
+    have ht' : dist (H t) (a,φ) < r := by
+      calc
+        dist (H t) (a,φ) ≤
+            dist (H t) ((Coeff.deleteCoordinate n a : Coeff p),φ) +
+              dist ((Coeff.deleteCoordinate n a : Coeff p),φ) (a,φ) :=
+          dist_triangle _ _ _
+        _ < r := by rw [hdist]; have h1 := (mem_ball.mp ht); have h2 := (mem_ball.mp hn); linarith
+    exact hball (mem_ball.mpr ht')
   let F : DeletedCoeff p n × CoeffPair p → DeletedCoeff p n :=
     fun t => sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2
   have hraw (t : DeletedCoeff p n × CoeffPair p) (ht : t ∈ U) :
@@ -132,7 +152,79 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
       hFdiff
   have hdeleted : DifferentiableOn ℂ F U :=
     hcomposed.congr (fun t _ => (hproject t).symm)
-  exact ⟨U,hUopen,hpair,(fun t ht m => hcoord t ht m),hdeleted⟩
+  exact ⟨U,hUopen,hpair,hlocal,hbound,
+    (fun t ht m => hcoord t ht m),hdeleted⟩
+
+/-- At fixed source data, the full-space selected Jacobians at deleted
+coefficient vectors have a common operator-norm bound for all sufficiently
+distant deleted indices. -/
+theorem exists_common_sourcePsi_fullJacobian_uniformNorm_at_natAbs
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ,
+        0 < R m ∧
+        sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
+        closedBall (c m) (R m) ⊆
+          sourceStandardRootOmittedDomain hp hp1 φ m ∧
+        sphere (c m) (R m) ⊆
+          sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ M : ℝ, 0 ≤ M ∧
+        ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+          ‖sourcePsiFullRootJacobian hp hp1 n c R
+            (Coeff.deleteCoordinateTo n a) φ‖ ≤ M := by
+  obtain ⟨c,R,hgeom,δ,hδ,C,hC,hcharts⟩ :=
+    exists_common_sourcePsi_selectedJacobianCharts_at_natAbs hp hp1 a φ hφ
+  let M : ℝ := 2*C/(δ/2) + 2
+  have hM : 0 ≤ M := by
+    dsimp [M]
+    positivity
+  refine ⟨c,R,hgeom,M,hM,?_⟩
+  filter_upwards [hcharts] with n hchart
+  obtain ⟨U,hUopen,hbase,hlocal,hbound,hcoord,hdiff⟩ := hchart
+  let b₀ : DeletedCoeff p n := Coeff.deleteCoordinateTo n a
+  let f : DeletedCoeff p n → DeletedCoeff p n :=
+    fun b => sourcePsiSelectedEquationSequence hp hp1 n c R b φ
+  have hballPair (b : DeletedCoeff p n)
+      (hb : b ∈ ball b₀ δ) : (b,φ) ∈ U := by
+    apply hlocal
+    simpa only [dist_prod_same_right, mem_ball] using hb
+  have hfdiff : DifferentiableOn ℂ f (ball b₀ δ) := by
+    intro b hb
+    have hbU := hballPair b hb
+    have hdiffAt := (hdiff (b,φ) hbU).differentiableAt
+      (hUopen.mem_nhds hbU)
+    have hpairDiff : DifferentiableAt ℂ
+        (fun b : DeletedCoeff p n => (b,φ)) b :=
+      (differentiableAt_id : DifferentiableAt ℂ
+        (fun b : DeletedCoeff p n => b) b).prodMk (differentiableAt_const φ)
+    exact (hdiffAt.comp b hpairDiff)
+      |>.differentiableWithinAt
+  have hfbound (b : DeletedCoeff p n) (hb : b ∈ ball b₀ δ) :
+      ‖f b‖ ≤ C := hbound (b,φ) (hballPair b hb)
+  have hδhalf : 0 < δ/2 := by positivity
+  have hballEq : ball b₀ (δ/2+δ/2) = ball b₀ δ := by
+    congr 1
+    ring
+  have hQ : ‖sourcePsiSelectedRootJacobian hp hp1 n c R b₀ φ‖ ≤
+      2*C/(δ/2) := by
+    change ‖fderiv ℂ f b₀‖ ≤ _
+    exact NLS.ComplexAnalysis.norm_fderiv_le_of_ball_bound f b₀ b₀
+      (δ/2) (δ/2) C hδhalf
+      (by rw [hballEq]; exact hfdiff)
+      (by rw [hballEq]; exact hfbound)
+      (mem_ball_self hδhalf)
+  have hfull := Coeff.norm_deletedOperatorExtension_le n (2:ℂ)
+    (sourcePsiSelectedRootJacobian hp hp1 n c R b₀ φ)
+  change ‖sourcePsiFullRootJacobian hp hp1 n c R b₀ φ‖ ≤ M
+  calc
+    ‖sourcePsiFullRootJacobian hp hp1 n c R b₀ φ‖ ≤
+        ‖sourcePsiSelectedRootJacobian hp hp1 n c R b₀ φ‖ + 2 := by
+      simpa only [sourcePsiFullRootJacobian,Coeff.deletedJacobianExtension,
+        norm_ofNat] using hfull
+    _ ≤ M := by dsimp [M]; exact add_le_add hQ le_rfl
 
 /-- The same contour family gives entrywise convergence of the actual
 bounded full-space selected Jacobians wherever the retained root stays
@@ -157,7 +249,7 @@ theorem exists_common_sourcePsi_fullJacobian_entryLimit
               (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m)
             (Filter.comap Int.natAbs Filter.atTop)
             (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m))) := by
-  obtain ⟨c,R,hgeom,hcharts⟩ :=
+  obtain ⟨c,R,hgeom,δ,hδ,C,hC,hcharts⟩ :=
     exists_common_sourcePsi_selectedJacobianCharts_at_natAbs hp hp1 a φ hφ
   refine ⟨c,R,hgeom,?_⟩
   intro m k hk
@@ -183,7 +275,7 @@ theorem exists_common_sourcePsi_fullJacobian_entryLimit
         Filter.comap Int.natAbs Filter.atTop]
       (fun n => sourcePsiDeletedScalarMatrixEntry hp hp1 n m k a φ (c m) (R m)) := by
     filter_upwards [hcharts,hne] with n hchart hn
-    obtain ⟨U,hUopen,hpair,hcoord,hdiff⟩ := hchart
+    obtain ⟨U,hUopen,hpair,hlocal,hbound,hcoord,hdiff⟩ := hchart
     exact sourcePsiFullRootJacobian_retained_entry_eq_scalarMatrixEntry
       hp hp1 n m k a φ c R U hUopen hcoord hdiff hpair hn.1 hn.2
   exact hscalar.congr' heq.symm

@@ -15,6 +15,20 @@ open scoped ENNReal
 namespace NLS.Coeff
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
+/-- Deleting one coordinate is contractive in every `ℓᵖ` norm. -/
+theorem norm_deleteCoordinateTo_le_one (n : ℤ) :
+    ‖deleteCoordinateTo (p := p) n‖ ≤ 1 := by
+  apply ContinuousLinearMap.opNorm_le_bound _ (by norm_num)
+  intro a
+  change ‖deleteCoordinate n a‖ ≤ 1 * ‖a‖
+  rw [one_mul]
+  apply lp.norm_mono (zero_lt_one.trans_le (Fact.out : 1 ≤ p)).ne'
+  intro m
+  by_cases hmn : m = n
+  · subst m
+    simp
+  · rw [deleteCoordinate_apply_other n m hmn]
+
 /-- Extend an operator on deleted `ℓᵖ` by the scalar `c` on the
 omitted coordinate, with zero off-block entries. -/
 def deletedOperatorExtension (n : ℤ) (c : ℂ)
@@ -30,6 +44,33 @@ theorem deletedOperatorExtension_apply (n : ℤ) (c : ℂ)
     deletedOperatorExtension n c Q a =
       (Q (deleteCoordinateTo n a) : Coeff p) + lp.single p n (c*a n) := by
   rfl
+
+/-- The norm of a full-space block extension is bounded by the
+retained-block norm plus the omitted scalar norm. -/
+theorem norm_deletedOperatorExtension_le (n : ℤ) (c : ℂ)
+    (Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n) :
+    ‖deletedOperatorExtension n c Q‖ ≤ ‖Q‖ + ‖c‖ := by
+  apply ContinuousLinearMap.opNorm_le_bound _
+    (add_nonneg (norm_nonneg Q) (norm_nonneg c))
+  intro a
+  have hproj : ‖deleteCoordinateTo n a‖ ≤ ‖a‖ := by
+    have h := (deleteCoordinateTo (p := p) n).le_of_opNorm_le
+      (norm_deleteCoordinateTo_le_one n) a
+    simpa only [one_mul] using h
+  have hQ : ‖(Q (deleteCoordinateTo n a) : Coeff p)‖ ≤ ‖Q‖ * ‖a‖ := by
+    have h := Q.le_opNorm (deleteCoordinateTo n a)
+    simpa only [Submodule.coe_norm] using
+      h.trans (mul_le_mul_of_nonneg_left hproj (norm_nonneg Q))
+  have hsingle : ‖(lp.single p n (c*a n) : Coeff p)‖ ≤
+      ‖c‖ * ‖a‖ := by
+    rw [lp.norm_single (zero_lt_one.trans_le (Fact.out : 1 ≤ p)),norm_mul]
+    exact mul_le_mul_of_nonneg_left
+      (lp.norm_apply_le_norm (zero_lt_one.trans_le (Fact.out : 1 ≤ p)).ne' a n)
+      (norm_nonneg c)
+  rw [deletedOperatorExtension_apply]
+  have hsum := norm_add_le
+    (Q (deleteCoordinateTo n a) : Coeff p) (lp.single p n (c*a n))
+  simpa only [add_mul] using hsum.trans (add_le_add hQ hsingle)
 
 /-- The omitted row is exactly the added scalar block. -/
 @[simp] theorem deletedOperatorExtension_apply_same (n : ℤ) (c : ℂ)
