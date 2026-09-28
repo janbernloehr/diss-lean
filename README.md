@@ -3584,6 +3584,10 @@ numerator variation. `SourcePsiVariationCutoffResolvent.lean` rewrites
 each cutoff derivative as the cutoff product times a finite root-resolvent
 sum whenever the spectral parameter avoids the retained roots. It also
 transfers any established limit of these sums to an exact formula for
-the entire variation. The remaining Lemma 12.7 work is to prove the
-root-resolvent sums converge and decay uniformly on the outer circles,
-then apply interpolation uniqueness.
+the entire variation. `SourcePsiRootResolventExterior.lean` proves
+absolute convergence of the actual-root resolvent series and a uniform
+small bound on the large half-integer-radius circles. For deleted
+directions it identifies the entire variation exactly as the psi
+numerator times this series. The remaining Lemma 12.7 work is to
+combine the two product normalizations into the interpolation-quotient
+circle estimate, then apply interpolation uniqueness.
