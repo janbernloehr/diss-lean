@@ -3160,8 +3160,11 @@ coordinates and a local `ℓᵖ` norm bound give uniform multilinear
 Taylor coefficient bounds for every finite sequence truncation.
 `SourcePsiGlobalEquationTaylorTruncation.lean` verifies those
 hypotheses on one selected contour chart at every real-type source.
-The next task is to construct the `ℓᵖ`-valued coefficient operators
-from these uniformly bounded finite truncations and sum their series.
+`BoundedCoordinateTaylorAssembly.lean` constructs the `ℓᵖ`-valued
+continuous multilinear Taylor coefficient at every order from these
+uniformly bounded finite truncations, retaining the same geometric
+norm bound and the scalar coordinate formula. The next task is to
+sum the assembled series and identify it with the sequence-valued map.
 The equation's real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
