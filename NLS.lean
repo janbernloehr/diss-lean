@@ -1003,6 +1003,7 @@ import NLS.ComplexAnalysis.LocalRealAxisDerivative
 import NLS.ZakharovShabat.SourcePsiGlobalRealCoordinates
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.SequenceSpaces.DeletedOperatorExtension
+import NLS.SequenceSpaces.UniformInverseBound
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
 import NLS.ZakharovShabat.SourcePsiGeneralVariation

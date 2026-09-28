@@ -1,4 +1,4 @@
-import NLS.SequenceSpaces.DeletedOperatorExtension
+import NLS.SequenceSpaces.UniformInverseBound
 import NLS.ZakharovShabat.SourcePsiGapRootDerivative
 
 /-!
@@ -94,5 +94,37 @@ theorem exists_sourcePsiFullRootJacobian_bijective_at_gapRoot
     exists_sourcePsiGapRoot_derivative_equation hp hp1 n φ
   exact ⟨c,R,(sourcePsiFullRootJacobian_bijective_iff
     hp hp1 n c R (sourcePsiGapRoot hp hp1 n φ) φ.val).2 hbij⟩
+
+/-- Quantitative inverse bound for the selected psi Jacobian. Once
+the full-space extensions are shown to approach an invertible limit,
+this bound supplies the tail-uniform inverse estimate in Lemma 12.10. -/
+theorem norm_sourcePsiSelectedRootJacobian_inverse_le_of_full_near
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ)
+    (c : ℤ → ℂ) (R : ℤ → ℝ)
+    (a : DeletedCoeff p n) (ψ : CoeffPair p)
+    (hbij : Function.Bijective
+      (sourcePsiSelectedRootJacobian hp hp1 n c R a ψ))
+    (S R₀ : Coeff p →L[ℂ] Coeff p)
+    (hR₀S : R₀.comp S = ContinuousLinearMap.id ℂ (Coeff p))
+    (hnear : ‖R₀‖ * ‖S - sourcePsiFullRootJacobian hp hp1 n c R a ψ‖ ≤
+      (1 / 2 : ℝ)) :
+    ‖(ContinuousLinearEquiv.ofBijective
+        (sourcePsiSelectedRootJacobian hp hp1 n c R a ψ)
+        (LinearMap.ker_eq_bot.mpr hbij.1)
+        (LinearMap.range_eq_top.mpr hbij.2)).symm.toContinuousLinearMap‖ ≤
+      2 * ‖R₀‖ := by
+  let Q := sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
+  let e := ContinuousLinearEquiv.ofBijective Q
+    (LinearMap.ker_eq_bot.mpr hbij.1)
+    (LinearMap.range_eq_top.mpr hbij.2)
+  have hQR : Q.comp e.symm.toContinuousLinearMap =
+      ContinuousLinearMap.id ℂ (DeletedCoeff p n) := by
+    apply ContinuousLinearMap.ext
+    intro x
+    change e (e.symm x) = x
+    exact e.apply_symm_apply x
+  exact Coeff.norm_deleted_inverse_le_two_mul_of_extension_near
+    n Q e.symm.toContinuousLinearMap S R₀ hQR hR₀S hnear
 
 end NLS.ZakharovShabat

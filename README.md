@@ -3891,3 +3891,10 @@ Jacobian, proves full-space invertibility is equivalent to deleted-space
 invertibility, and obtains an invertible full extension at every
 canonical real gap-root solution. Operator-norm convergence of these
 extensions as the deleted index escapes to infinity remains open.
+`UniformInverseBound.lean` proves the quantitative perturbation step:
+if these full extensions converge in operator norm to an invertible
+operator, their deleted-block inverses have one common norm bound for
+all sufficiently large deleted indices. The corresponding estimate is
+also specialized to the actual selected psi Jacobian. Establishing the
+operator-norm convergence and bounding the finitely many remaining
+indices are the next parts of Lemma 12.10.
