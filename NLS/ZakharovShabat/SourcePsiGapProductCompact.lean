@@ -3,6 +3,7 @@ import NLS.ZakharovShabat.SourcePsiGapRootMap
 import NLS.ZakharovShabat.SourcePsiDeletedRootFill
 import NLS.ZakharovShabat.SourceStandardRootContourLocalStability
 import NLS.SequenceSpaces.UniformTailCompactness
+import NLS.SequenceSpaces.CompactInverseBound
 import Mathlib.Topology.Sequences
 
 /-!
@@ -139,5 +140,27 @@ theorem sourcePsiGapRoot_filled_mem_periodicGapRootSet
       sourcePeriodicMidpoint_mem_segment hp hp1 φ.val n
   · rw [displacedRoots_sourcePsiFillDeletedRoot_other n m hmn]
     exact sourcePsiGapRoot_mem_periodicSegment hp hp1 n m hmn φ
+
+/-- A continuous family of invertible operators indexed by all
+gap-contained root sequences has one inverse norm bound on that
+entire product. This packages the compactness step in Lemma 12.10. -/
+theorem exists_uniform_inverse_norm_on_periodicGapRootSet
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p)
+    (Q R : Coeff p → Coeff p →L[ℂ] Coeff p)
+    (hQ : ContinuousOn Q (sourcePeriodicGapRootSet hp hp1 ψ))
+    (hQR : ∀ a ∈ sourcePeriodicGapRootSet hp hp1 ψ,
+      (Q a).comp (R a) = ContinuousLinearMap.id ℂ (Coeff p))
+    (hRQ : ∀ a ∈ sourcePeriodicGapRootSet hp hp1 ψ,
+      (R a).comp (Q a) = ContinuousLinearMap.id ℂ (Coeff p)) :
+    ∃ M : ℝ, 0 ≤ M ∧
+      ∀ a ∈ sourcePeriodicGapRootSet hp hp1 ψ, ‖R a‖ ≤ M := by
+  let K := sourcePeriodicGapRootSet hp hp1 ψ
+  have hQ' : Continuous (fun a : K => Q a.1) := hQ.domRestrict
+  obtain ⟨M,hM0,hM⟩ := NLS.exists_uniform_inverse_norm_on_compact
+    K (isCompact_sourcePeriodicGapRootSet hp hp1 ψ)
+    (fun a : K => Q a.1) (fun a : K => R a.1) hQ'
+    (fun a => hQR a.1 a.2) (fun a => hRQ a.1 a.2)
+  exact ⟨M,hM0,fun a ha => hM ⟨a,ha⟩⟩
 
 end NLS.ZakharovShabat

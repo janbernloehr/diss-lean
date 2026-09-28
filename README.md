@@ -3957,6 +3957,13 @@ vector with the periodic midpoint places it in this compact set. This
 is the compact parameter set used for uniform inverse bounds in the
 proof of Lemma 12.10; convergence of the canonical root vectors is not
 needed for that uniformity argument.
+`CompactInverseBound.lean` combines the quantitative inverse
+perturbation estimate with compactness: an operator-norm continuous
+family of pointwise invertible bounded operators has uniformly bounded
+inverses. The result is specialized to the compact periodic-gap product.
+Applying it to the dissertation's `Q*` family still requires defining
+that bounded operator family, proving its continuity, and proving its
+pointwise invertibility.
 `SourcePsiLimitScalarJacobianEntry.lean` defines the candidate entry as
 the `Q*` contour integral divided by π and proves convergence of the
 actual scalar retained-root derivatives for each fixed row and column.
