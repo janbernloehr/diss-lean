@@ -22,6 +22,7 @@ import NLS.SequenceSpaces.DeletedDiagonal
 import NLS.SequenceSpaces.DeletedJacobianDecomposition
 import NLS.SequenceSpaces.DeletedJacobianSymbol
 import NLS.SequenceSpaces.DeletedJacobianMatrixExpansion
+import NLS.SequenceSpaces.CompactTailReciprocalMatrix
 import NLS.SequenceSpaces.DeletedJacobianInvertibleDiagonal
 import NLS.ZakharovShabat.FreeResolvent
 import NLS.ZakharovShabat.FreeResolventCompact

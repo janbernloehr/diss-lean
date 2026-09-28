@@ -3431,3 +3431,9 @@ operator on finite input truncations as the finite sum of its matrix
 entries, and proves those sums converge to each output coordinate.
 This is the density step needed to turn reciprocal off-diagonal entry
 bounds into the row majorant used by compactness.
+`CompactTailReciprocalMatrix.lean` now derives that row majorant from
+zero diagonal entries and reciprocal off-diagonal matrix bounds on
+the tail. The row kernel is constructed in the conjugate `ℓᑫ` space,
+identified with the operator by the finite matrix sums, and then
+fed to the tail-only compactness theorem. Thus no separate kernel
+representation is needed to prove compactness from matrix estimates.
