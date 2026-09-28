@@ -3426,3 +3426,8 @@ only on a two-sided tail. The finitely many head rows are controlled by
 the operator norm and absorbed into a finite modification of the
 majorant. This removes a finite-head estimate from the compactness
 part of Lemma 12.6.
+`DeletedJacobianMatrixExpansion.lean` expresses a bounded deleted
+operator on finite input truncations as the finite sum of its matrix
+entries, and proves those sums converge to each output coordinate.
+This is the density step needed to turn reciprocal off-diagonal entry
+bounds into the row majorant used by compactness.
