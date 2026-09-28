@@ -3264,3 +3264,10 @@ from `2` by at most four times the `ℓᵖ` quotient error plus four times
 the gap-location error divided by the free lattice distance. The
 remaining work is to make those hypotheses locally uniform over the
 full root-localization domain and handle the finite head.
+`SourcePsiJacobianDiagonalTail.lean` converts an `ℓᵖ` quotient majorant
+and the source midpoint and gap displacement coefficients into a
+two-sided tail estimate, uniformly over every distinct deleted index.
+It also proves that any diagonal Jacobian family satisfying the
+resulting quantitative bound converges uniformly to `2` and has one
+common nonzero tail. Establishing the bound for the actual Jacobian
+family throughout `Ωp`, including collapsed gaps, remains open.
