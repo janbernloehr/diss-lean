@@ -3314,3 +3314,11 @@ bounded quotient correction, into an actual `ℓᵖ` coefficient
 sequence. The combined all-gap Jacobian theorem is restated with
 entry bound `‖majorant_m‖/|m-k|`. The local contour and majorant
 hypotheses still need to be assembled uniformly on `Ωp`.
+`SourcePsiJacobianUniformOffDiagonalTail.lean` assembles the selected
+contour family, local quotient-disc majorant, small-gap tail, and
+regular-factor analyticity on one neighborhood of any real-type base
+source. For real root inputs localized in their free quarter-π discs,
+it gives one selected-row cutoff and an `ℓᵖ` row majorant for every
+deleted index; the quotient majorant has a locally uniform norm
+bound. The finite shifted head and the operator representation remain
+to be connected to the full Lemma 12.5–12.6 statements.
