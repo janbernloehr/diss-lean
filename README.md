@@ -3643,9 +3643,11 @@ the real-analytic solution map and its global continuation remain open.
 theorem for a Banach-valued unknown and parameter, including a local
 analytic zero branch through any nondegenerate zero.
 `SourcePsiAnalyticImplicitStep.lean` identifies the bounded selected
-root Jacobian with the partial derivative of the joint equation. If
-the selected equation is jointly analytic at a zero, its bijective
-Jacobian now gives a local analytic solution branch. Establishing that
-joint Banach-space analyticity for the selected equation, then joining
-the local branches globally, remain the next steps toward the
-existence and real-analyticity clauses of Proposition 12.9.
+root Jacobian with the partial derivative of the joint equation.
+`SourcePsiLocalImplicitBranch.lean` applies the local Jacobian theorem
+and constructive implicit theorem on the same selected contour family:
+at a real solution in the open retained-root domain, joint analyticity
+of the selected Banach-valued equation gives an analytic local solution
+branch. Establishing that joint analyticity, then joining the local
+branches globally, remain the next steps toward the existence and
+real-analyticity clauses of Proposition 12.9.

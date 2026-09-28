@@ -1028,6 +1028,7 @@ import NLS.ZakharovShabat.SourcePsiEquationAllGapZero
 import NLS.ZakharovShabat.SourcePsiLocalEquationGapRoots
 import NLS.ComplexAnalysis.AnalyticImplicitBanachRoot
 import NLS.ZakharovShabat.SourcePsiAnalyticImplicitStep
+import NLS.ZakharovShabat.SourcePsiLocalImplicitBranch
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros
