@@ -14,9 +14,11 @@ open scoped ENNReal
 namespace NLS
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
-/-- Pointwise choices within pairs preserve a common small-tail bound. -/
-theorem Coeff.norm_sub_truncate_le_of_mem_pair (a b c : Coeff p) (s : Finset ℤ)
-    (hc : ∀ n ∉ s, c n = a n ∨ c n = b n) :
+/-- A pointwise sum of two coefficient magnitudes bounds the norm of
+every finite tail of a third sequence. -/
+theorem Coeff.norm_sub_truncate_le_of_pointwise_norm_le_add
+    (a b c : Coeff p) (s : Finset ℤ)
+    (hc : ∀ n ∉ s, ‖c n‖ ≤ ‖a n‖ + ‖b n‖) :
     ‖c-Coeff.truncate s c‖ ≤ ‖a-Coeff.truncate s a‖+‖b-Coeff.truncate s b‖ := by
   let A := a-Coeff.truncate s a
   let B := b-Coeff.truncate s b
@@ -30,10 +32,18 @@ theorem Coeff.norm_sub_truncate_le_of_mem_pair (a b c : Coeff p) (s : Finset ℤ
       have ha : A n = a n := by simp [A,Coeff.truncate_apply,hn]
       have hb : B n = b n := by simp [B,Coeff.truncate_apply,hn]
       rw [ha,hb]
-      rcases hc n hn with he | he
-      · rw [he]; exact le_add_of_nonneg_right (norm_nonneg _)
-      · rw [he]; exact le_add_of_nonneg_left (norm_nonneg _)
+      exact hc n hn
   exact (lp.norm_mono (zero_lt_one.trans_le (Fact.out : 1 ≤ p)).ne' hb).trans
     ((norm_add_le _ _).trans (by simp only [Coeff.norm_magnitude]; rfl))
+
+/-- Pointwise choices within pairs preserve a common small-tail bound. -/
+theorem Coeff.norm_sub_truncate_le_of_mem_pair (a b c : Coeff p) (s : Finset ℤ)
+    (hc : ∀ n ∉ s, c n = a n ∨ c n = b n) :
+    ‖c-Coeff.truncate s c‖ ≤ ‖a-Coeff.truncate s a‖+‖b-Coeff.truncate s b‖ := by
+  apply Coeff.norm_sub_truncate_le_of_pointwise_norm_le_add a b c s
+  intro n hn
+  rcases hc n hn with he | he
+  · rw [he]; exact le_add_of_nonneg_right (norm_nonneg _)
+  · rw [he]; exact le_add_of_nonneg_left (norm_nonneg _)
 
 end NLS

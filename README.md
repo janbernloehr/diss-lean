@@ -3711,3 +3711,8 @@ real zero in a retained-root placement domain, using the corresponding
 real-centered local contour family. Its nearby real-type solutions
 have real roots in their periodic gaps, providing the local form of
 the continuation step beyond the free source.
+`SourcePsiGapRootTailBound.lean` supplies the first compactness estimate
+for that continuation: all deleted-root sequences with roots in their
+assigned periodic gaps have uniformly small `ℓᵖ` tails on a common
+neighborhood of a source potential. The estimate uses endpoint and gap
+tails and is uniform over the root chosen within each gap.
