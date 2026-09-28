@@ -3685,3 +3685,8 @@ orthogonality and pairwise disjoint isolating discs give the zero
 coordinatewise. The constructive `C¹` implicit theorem therefore
 produces a local solution branch from the dissertation's free seed,
 with nearby values in the retained-root placement domain.
+`SourcePsiFreeUniqueness.lean` proves that this free solution is the
+only selected-equation zero in that domain on the same contour family.
+The proof works for complex deleted roots: the collapsed-gap Cauchy
+formula locates a numerator zero at each free lattice point, and
+isolating-disc separation identifies the corresponding root index.

@@ -119,6 +119,23 @@ theorem exists_local_sourcePsi_C1_branch_at_free_source
       ((0 : DeletedCoeff p n),(0 : CoeffPair p)) ∈ U ∧
       ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
         ∃ Niso : ℕ, ∃ εiso : ℝ,
+        (∀ i j : ℤ, i ≠ j →
+          Disjoint
+            (sourceIsolatingDisc hp hp1 (0 : CoeffPair p) Niso εiso i)
+            (sourceIsolatingDisc hp hp1 (0 : CoeffPair p) Niso εiso j)) ∧
+        (∀ m : ℤ, closedBall (c m) (R m) ⊆
+          sourceIsolatingDisc hp hp1 (0 : CoeffPair p) Niso εiso m) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
+            sourcePsiEquationCoordinate hp hp1 n m
+              (t.1 : Coeff p) t.2 (c m) (R m)) ∧
         ∃ s : CoeffPair p → DeletedCoeff p n,
           ContDiffAt ℂ 1 s 0 ∧ s 0 = 0 ∧
           ∀ᶠ ψ in 𝓝 (0 : CoeffPair p),
@@ -187,7 +204,8 @@ theorem exists_local_sourcePsi_C1_branch_at_free_source
       (show ((0 : DeletedCoeff p n),(0 : CoeffPair p)) ∈
         U ∩ sourcePsiRootPlacementDomain hp hp1
           (0 : CoeffPair p) Niso εiso n from ⟨hbase,hrootloc⟩)
-  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,s,hs,hs0,?_⟩
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
+    hdisjoint,hfilled,hgeom,hcoord,s,hs,hs0,?_⟩
   filter_upwards [hplacement,hzeros] with ψ hψ hψzero
   exact ⟨hψ,hψzero⟩
 
