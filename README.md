@@ -3400,3 +3400,8 @@ applies the scalar all-gap nonvanishing theorem directly to the bounded
 selected Jacobian at any retained row, including finite head rows and
 collapsed gaps, under explicit contour avoidance, regular-factor
 analyticity, and retained-root separation hypotheses.
+`SourcePsiSelectedJacobianDiagonalEstimate.lean` transfers the scalar
+`2 + error` diagonal tail estimate to the bounded selected Jacobian.
+Its `ℓᵖ` correction has a locally uniform norm bound, and the same
+theorem gives tail nonvanishing on the quarter-π localized real-root
+locus.
