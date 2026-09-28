@@ -3473,3 +3473,9 @@ regular-factor analyticity from the global analytic quotient domain and
 disjointness, so it is no longer a separate hypothesis. Establishing
 containment of the selected closed discs in a common isolating-disc
 family is the remaining geometric gap toward Lemma 12.6 on Ωᵖ.
+`SourceCriticalRootRatioUniformCircle.lean` now retains the stronger
+per-gap construction: after fixing one isolating-disc family, a selected
+real-centered contour can be chosen with its whole closed disc inside
+its assigned isolating disc on a smaller source neighborhood. The old
+unconstrained contour theorem follows by forgetting this containment.
+This is the head-contour ingredient for a shared isolating-disc family.
