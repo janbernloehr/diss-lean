@@ -3597,6 +3597,9 @@ with distinct original roots, the deleted direction is zero.
 `SourcePsiSelectedJacobianInjectivity.lean` makes that connection for a
 common contour family: it proves that real kernel directions vanish,
 splits a complex kernel direction into real and imaginary parts, and
-concludes injectivity of the bounded selected Jacobian. The remaining
-local step is to supply its contour and isolating-disc hypotheses from
-the existing neighborhood construction and apply the Fredholm reduction.
+concludes injectivity of the bounded selected Jacobian.
+`SourcePsiLocalJacobianInjectivity.lean` supplies those hypotheses from
+the holomorphic selected-equation construction and proves local
+injectivity at real root data in the isolating discs. The remaining
+Fredholm step must use the same selected contour family for its diagonal
+and compact decomposition.
