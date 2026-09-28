@@ -3906,3 +3906,13 @@ free equation. Consequently, at the canonical free gap root every
 extended Jacobian is exactly `2 · id` on the common `ℓᵖ` space, so the
 operator-norm convergence claim holds at the free source with zero
 error. The nonfree limit operator and convergence estimate are open.
+`FiniteBlockOperatorConvergence.lean` proves that convergence of every
+matrix entry gives operator-norm convergence on each fixed finite
+input/output block, and that uniform finite-block approximation then
+gives convergence of the full operators. The two-sided `|n| → ∞`
+filter is identified with the cutoff form used by Lemma 12.10.
+`SourcePsiJacobianFullMatrix.lean` identifies every retained full-space
+matrix entry with its scalar contour derivative and records the fixed
+deleted row and column. The remaining analytic work is to construct
+the nonfree limit operator and prove scalar entry convergence together
+with uniform finite-block approximation.
