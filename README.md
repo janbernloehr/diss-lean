@@ -3580,6 +3580,10 @@ half-integer-radius circles, which are eventually zero-free.
 `SourcePsiVariationCutoffFormula.lean` computes the root-direction
 derivative of each literal deleted product as an explicit finite
 product-rule sum and proves that those sums converge to the entire
-numerator variation. The remaining Lemma 12.7 work is to turn that
-limit into the resolvent-series circle estimate and apply interpolation
-uniqueness.
+numerator variation. `SourcePsiVariationCutoffResolvent.lean` rewrites
+each cutoff derivative as the cutoff product times a finite root-resolvent
+sum whenever the spectral parameter avoids the retained roots. It also
+transfers any established limit of these sums to an exact formula for
+the entire variation. The remaining Lemma 12.7 work is to prove the
+root-resolvent sums converge and decay uniformly on the outer circles,
+then apply interpolation uniqueness.
