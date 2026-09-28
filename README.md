@@ -3298,3 +3298,9 @@ regular factor, an open-gap off-diagonal Jacobian entry is bounded by
 times `(1+‖B_m‖)/|m-k|`. The varied-root denominator is proved
 analytic and nonzero on the disc from the same localization. Uniform
 assembly over the full domain and collapsed gaps is still needed.
+`SourcePsiJacobianOffDiagonalCollapsed.lean` evaluates a collapsed-gap
+off-diagonal entry exactly by a Cauchy residue. It has the same
+root-ratio and regular-quotient expression as the open-gap mean-value
+formula, with the periodic midpoint as the evaluation point. A
+quantitative bound for this case remains to be combined with the
+open-gap estimate.

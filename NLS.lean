@@ -990,6 +990,7 @@ import NLS.ZakharovShabat.SourcePsiJacobianCollapsedDiagonal
 import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalMeanValue
 import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalGapGeometry
 import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalEstimate
+import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalCollapsed
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet
