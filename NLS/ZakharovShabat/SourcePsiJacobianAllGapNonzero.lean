@@ -23,7 +23,6 @@ theorem sourcePsi_diagonalJacobian_ne_zero_all_real_gaps
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (n m : ℤ) (hmn : m ≠ n) (a : DeletedCoeff p n)
-    (hloc : ∀ k : ℤ, ‖(a : Coeff p) k‖ ≤ Real.pi/4)
     (hroots : ∀ k : ℤ, (displacedRoots (a : Coeff p) k).im = 0)
     (x R : ℝ) (hR : 0 < R)
     (hseg : sourcePeriodicSegment hp hp1 ψ m ⊆ ball (x:ℂ) R)
@@ -57,8 +56,8 @@ theorem sourcePsi_diagonalJacobian_ne_zero_all_real_gaps
       sourceSingleRootQuotientJointProduct hp hp1 m
         (z,((a : Coeff p),ψ)) ≠ 0 := by
     intro z hz
-    exact sourceSingleRootQuotientJointProduct_ne_zero_of_quarter_localized
-      hp hp1 m z (a : Coeff p) ψ hloc (hother z hz) (hgapdom z hz)
+    exact sourceSingleRootQuotientJointProduct_ne_zero_of_off_other
+      hp hp1 m z (a : Coeff p) ψ (hother z hz) (hgapdom z hz)
   have hsep : ∀ z ∈ standardRootGapSegment
       (sourceStandardRootMidpoint hp hp1 ψ m)
       (sourceStandardRootHalfGap hp hp1 ψ m),

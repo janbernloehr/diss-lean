@@ -141,7 +141,7 @@ theorem exists_local_sourcePsi_diagonalJacobian_uniformTail
       exact selected_quarter_ball_avoids_other_displacedRoots
         (a : Coeff p) hloc m z hzquarter k hkm
     have hnonzero := sourcePsi_diagonalJacobian_ne_zero_all_real_gaps
-      hp hp1 ψ hreal n m hmn a hloc hroots
+      hp hp1 ψ hreal n m hmn a hroots
         (Real.pi*(m:ℝ)) (Real.pi/8) (by positivity)
         (by simpa only [hcenter] using hseg)
         (by simpa only [hcenter] using hdom)
