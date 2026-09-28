@@ -3950,6 +3950,13 @@ absolute value have a strongly converging subsequence in the ambient
 `ℓᵖ` space. Every retained root of the subsequential limit lies in its
 periodic gap. Uniqueness of these limits is still needed for convergence
 of the full index-filtered family.
+`SourcePsiGapProductCompact.lean` identifies the full `ℓᵖ` product of
+periodic gaps and proves it compact using a common endpoint-and-gap
+majorant. Filling the omitted coordinate of each canonical gap-root
+vector with the periodic midpoint places it in this compact set. This
+is the compact parameter set used for uniform inverse bounds in the
+proof of Lemma 12.10; convergence of the canonical root vectors is not
+needed for that uniformity argument.
 `SourcePsiLimitScalarJacobianEntry.lean` defines the candidate entry as
 the `Q*` contour integral divided by π and proves convergence of the
 actual scalar retained-root derivatives for each fixed row and column.
