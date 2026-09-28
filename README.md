@@ -3391,4 +3391,8 @@ entries of the bounded operator on a common free-centered tail.
 `SourcePsiSelectedJacobianCombinedTail.lean` chooses one neighborhood,
 contour family, and cutoff where both conclusions hold for the same
 operator. This supplies the shared tail data needed for the eventual
-diagonal-plus-compact decomposition; the finite head remains open.
+diagonal-plus-compact decomposition. The global sequence analyticity
+and selected-Jacobian matrix theorems now retain the all-gap contour
+geometry of that same family, including its finitely many head rows.
+The finite-head spectral separation needed for nonzero diagonal
+entries remains open.

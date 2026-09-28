@@ -45,7 +45,7 @@ theorem exists_local_sourcePsi_selectedJacobian_offDiagonalUniformTail
                     ‖sourcePsiOffDiagonalRowMajorant hp hp1
                       (a : Coeff p) ψ B m‖ /
                       ‖((m-k : ℤ) : ℂ)‖ := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hchoice,hmatrix⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hchoice,hgeom,hmatrix⟩ :=
     exists_local_sourcePsi_selectedJacobian_matrixFormula
       hp hp1 φ hφ n a₀
   obtain ⟨Utail,hUtailOpen,hbaseTail,Ktail,M,hM,htail⟩ :=

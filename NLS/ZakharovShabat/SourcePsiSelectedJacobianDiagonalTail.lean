@@ -39,7 +39,7 @@ theorem exists_local_sourcePsi_selectedJacobian_uniformNonzeroDiagonalTail
             ((sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
               (Coeff.deletedSingleCLM n m hmn 1) : DeletedCoeff p n) : Coeff p) m
               ≠ 0 := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hchoice,hmatrix⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hchoice,hgeom,hmatrix⟩ :=
     exists_local_sourcePsi_selectedJacobian_matrixFormula
       hp hp1 φ hφ n a₀
   obtain ⟨Utail,hUtailOpen,hbaseTail,Ktail,htail⟩ :=

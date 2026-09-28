@@ -61,6 +61,13 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
         (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 t.2) ∧
         ∃ C : ℝ, 0 ≤ C ∧
           (∀ t ∈ U, ∀ m : ℤ,
             (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
@@ -169,7 +176,8 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
       hFdiff
   have hdeleted : DifferentiableOn ℂ F U :=
     hcomposed.congr (fun t _ => (hproject t).symm)
-  exact ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,C,hC,
+  exact ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,
+    (fun t ht m => hgeom ((t.1 : Coeff p),t.2) ht.1 m),C,hC,
     (fun t ht m => hcoord t ht m),hbound,hrealCoord,hdeleted⟩
 
 end NLS.ZakharovShabat

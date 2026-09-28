@@ -122,7 +122,7 @@ theorem exists_local_sourcePsi_realJacobian_entries
         (deriv (fun z : ℂ =>
           (sourcePsiSelectedEquationSequence hp hp1 n c R
             (a₀+Coeff.deletedSingleCLM n k hkn z) φ : Coeff p) m) 0).im = 0 := by
-  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,C,hC,hcoord,hbound,
+  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,C,hC,hcoord,hbound,
     hreal,hdiff⟩ :=
     exists_local_sourcePsi_globalEquation_formula_analytic
       hp hp1 φ hφ n a₀
