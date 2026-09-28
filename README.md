@@ -3658,3 +3658,9 @@ sequence space of the selected equation. The remaining analytic obligation
 is to establish the requisite smoothness, or an equivalent power-series
 construction, for that equation from its current local norm and coordinate
 holomorphy bounds.
+
+`BanachHolomorphicC1.lean` proves a quantitative local Lipschitz bound for
+the Fréchet derivative of a bounded complex-holomorphic Banach-space map.
+It follows that complex differentiability on an open Banach-space domain
+implies `C¹`, providing the first regularity upgrade for the selected
+equation's already established holomorphy.
