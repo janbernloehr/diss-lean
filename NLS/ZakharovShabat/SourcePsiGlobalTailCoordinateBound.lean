@@ -36,7 +36,7 @@ theorem exists_local_sourcePsi_allDeleted_tailCoordinateBound
                   C*(‖(a : Coeff p) m‖+
                     ‖sourcePeriodicMidpointDisplacement hp hp1 ψ m‖+
                     ‖sourcePeriodicGapDisplacement hp hp1 ψ m‖) := by
-  obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,_,hchoice,hgeom,M,hM,hmajor⟩ :=
+  obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,_,hchoice,hgeom,_,M,hM,hmajor⟩ :=
     exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
       hp hp1 φ hφ a₀
   obtain ⟨Ksmall,Vsmall,hVsmallOpen,hφVsmall,hsmall⟩ :=

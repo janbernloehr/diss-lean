@@ -84,7 +84,7 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
           DifferentiableOn ℂ
             (fun t : DeletedCoeff p n × CoeffPair p =>
               sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,K,c,R,hcReal,hchoice,hgeom,C,hC,heq⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,K,c,R,hcReal,hchoice,hgeom,_,C,hC,heq⟩ :=
     exists_local_sourcePsi_globalEquation_uniformNorm
       hp hp1 φ hφ (a₀ : Coeff p)
   obtain ⟨W,hWopen,_,hrealW,hdata⟩ :=

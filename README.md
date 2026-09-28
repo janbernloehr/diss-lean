@@ -3486,3 +3486,8 @@ pairwise disjoint isolating-disc family, while retaining the all-gap
 contour geometry. The remaining integration step is to carry this
 stronger choice through the global psi equation and its bounded
 selected Jacobian.
+The selected quotient majorant, distant deleted-root regular-factor
+bound, finite head coordinate bound, and global equation sequence bound
+now retain the same isolating-disc family and closed-disc containment
+through their successive neighborhood restrictions. The analytic
+global equation and selected Jacobian still need to expose this data.

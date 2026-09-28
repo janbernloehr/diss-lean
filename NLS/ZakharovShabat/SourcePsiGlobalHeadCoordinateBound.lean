@@ -121,6 +121,15 @@ theorem exists_local_sourcePsi_uniformHeadCoordinateBound
             sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
           sphere (c m) (R m) ⊆
             sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∃ Niso : ℕ, ∃ εiso : ℝ,
+          (∀ t ∈ U, ∀ m : ℤ,
+            sourceSpectralCluster hp hp1 t.2 m ⊆
+              sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+          (∀ i j : ℤ, i ≠ j →
+            Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+              (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+          ∀ m : ℤ, closedBall (c m) (R m) ⊆
+            sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
         ∃ C : ℝ, 0 ≤ C ∧
           ∀ n : ℤ, ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
             ((a : Coeff p),ψ) ∈ U →
@@ -128,7 +137,7 @@ theorem exists_local_sourcePsi_uniformHeadCoordinateBound
                 ‖sourcePsiEquationCoordinate hp hp1 n m
                   (a : Coeff p) ψ (c m) (R m)‖ ≤ C := by
   obtain ⟨Ureg,hUregOpen,hbaseReg,Nreg,Kreg,c,R,hcReal,hchoice,hgeom,
-      Mreg,hMreg,hmajor⟩ :=
+      ⟨Niso,εiso,hcluster,hdisjoint,hfilled⟩,Mreg,hMreg,hmajor⟩ :=
     exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
       hp hp1 φ hφ a₀
   let K : ℕ := max Kreg H
@@ -172,9 +181,12 @@ theorem exists_local_sourcePsi_uniformHeadCoordinateBound
   have hB : 0 ≤ B := by dsimp [B]; positivity
   have hCdist : 0 ≤ Cdist := by dsimp [Cdist]; positivity
   have hC : 0 ≤ C := le_max_of_le_left hMfin
-  refine ⟨U,hUopen,hbase,K,hHK,c,R,hcReal,hchoiceK,?_,C,hC,?_⟩
+  refine ⟨U,hUopen,hbase,K,hHK,c,R,hcReal,hchoiceK,?_,
+    ⟨Niso,εiso,?_,hdisjoint,hfilled⟩,C,hC,?_⟩
   · intro t ht m
     exact hgeom t ht.1.1 m
+  · intro t ht m
+    exact hcluster t ht.1.1 m
   intro n a ψ hpair m hmK
   have hm : m ∈ s := by
     simp only [s,Finset.mem_Icc]

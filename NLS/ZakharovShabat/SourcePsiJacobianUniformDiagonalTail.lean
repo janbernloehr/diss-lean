@@ -48,7 +48,7 @@ theorem exists_local_sourcePsi_diagonalJacobian_uniformTail
                   sourcePsiDeletedEquationCoordinate hp hp1 n m
                     (a+Coeff.deletedSingleCLM n m _hmn t) ψ
                     ((Real.pi : ℂ)*m) (Real.pi/8)) 0 ≠ 0) := by
-  obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,_,hchoice,hgeom,
+  obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,_,hchoice,hgeom,_,
     M,hM,hmajor⟩ :=
     exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
       hp hp1 φ hφ a₀

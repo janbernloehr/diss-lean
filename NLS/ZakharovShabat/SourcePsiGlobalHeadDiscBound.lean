@@ -98,13 +98,24 @@ theorem exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
             sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
           sphere (c m) (R m) ⊆
             sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∃ Niso : ℕ, ∃ εiso : ℝ,
+          (∀ t ∈ U, ∀ m : ℤ,
+            sourceSpectralCluster hp hp1 t.2 m ⊆
+              sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+          (∀ i j : ℤ, i ≠ j →
+            Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+              (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+          ∀ m : ℤ, closedBall (c m) (R m) ⊆
+            sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
         ∃ M : ℝ, 0 ≤ M ∧
           ∀ t ∈ U, ∃ B : Coeff p, ‖B‖ ≤ M ∧
             ∀ m : ℤ, ∀ z ∈ closedBall (c m) (R m),
               ‖sourceSingleRootQuotientJointProduct hp hp1 m
                 (z,t)-1‖ ≤ ‖B m‖ := by
-  obtain ⟨Kgeom,Vgeom,hVgeomOpen,hφVgeom,c,R,hcReal,hchoice,hgeom⟩ :=
-    exists_local_sourcePsi_allGap_realCenteredContourFamily hp hp1 φ hφ
+  obtain ⟨Niso,εiso,_,_,Kgeom,Vgeom,hVgeomOpen,hφVgeom,c,R,
+      hcReal,hchoice,hcluster,hdisjoint,hfilled,hgeom⟩ :=
+    exists_local_sourcePsi_allGap_realCenteredContourFamily_with_isolatingDiscs
+      hp hp1 φ hφ
   let T : ℝ := ‖a₀‖+1
   have hT : 0 ≤ T := by dsimp [T]; positivity
   obtain ⟨N,ε,hε,Vtail,hVtailOpen,hφVtail,Ktail,hNK,
@@ -131,9 +142,12 @@ theorem exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
     hchoice m (by dsimp [K] at hm; omega)
   let M : ℝ := s.card*Mhead+Mtail
   have hM : 0 ≤ M := by dsimp [M]; positivity
-  refine ⟨U,hUopen,hbase,K,c,R,hcReal,htailChoice,?_,M,hM,?_⟩
+  refine ⟨U,hUopen,hbase,K,c,R,hcReal,htailChoice,?_,
+    ⟨Niso,εiso,?_,hdisjoint,hfilled⟩,M,hM,?_⟩
   · intro t ht m
     exact hgeom t.2 ht.2.2.2 m
+  · intro t ht m
+    exact hcluster t.2 ht.2.2.2 m
   intro t ht
   obtain ⟨htHead,htBall,htTail,htGeom⟩ := ht
   have ha : ‖t.1‖ ≤ T := by

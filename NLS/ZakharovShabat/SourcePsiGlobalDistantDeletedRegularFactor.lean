@@ -35,6 +35,15 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
             sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
           sphere (c m) (R m) ⊆
             sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∃ Niso : ℕ, ∃ εiso : ℝ,
+          (∀ t ∈ U, ∀ m : ℤ,
+            sourceSpectralCluster hp hp1 t.2 m ⊆
+              sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+          (∀ i j : ℤ, i ≠ j →
+            Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+              (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+          ∀ m : ℤ, closedBall (c m) (R m) ⊆
+            sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
         ∃ M : ℝ, 0 ≤ M ∧
           ∀ n : ℤ, N ≤ n.natAbs →
             ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
@@ -46,7 +55,7 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
                         sourcePsiGapRegularFactor hp hp1 n m
                           (a : Coeff p) ψ z)‖ ≤
                         (2/Real.pi)*(1+‖B m‖) := by
-  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,M,hM,hmajor⟩ :=
+  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,hiso,M,hM,hmajor⟩ :=
     exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
       hp hp1 φ hφ a₀
   let s : Finset ℤ := Finset.Icc (-(K : ℤ)) (K : ℤ)
@@ -55,7 +64,7 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
   obtain ⟨L,hL⟩ := exists_uniform_shifted_disc_lattice_cutoff
     s c R hRhead
   let N : ℕ := K+L+1
-  refine ⟨U,hUopen,hbase,N,K,c,R,hcReal,hchoice,hgeom,M,hM,?_⟩
+  refine ⟨U,hUopen,hbase,N,K,c,R,hcReal,hchoice,hgeom,hiso,M,hM,?_⟩
   intro n hn a ψ hpair
   obtain ⟨B,hBnorm,hB⟩ := hmajor ((a : Coeff p),ψ) hpair
   refine ⟨B,hBnorm,?_⟩

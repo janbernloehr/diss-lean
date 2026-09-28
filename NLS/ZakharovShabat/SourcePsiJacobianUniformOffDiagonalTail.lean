@@ -46,7 +46,7 @@ theorem exists_local_sourcePsi_offDiagonalJacobian_uniformTail
                   ‖sourcePsiOffDiagonalRowMajorant hp hp1
                     (a : Coeff p) ψ B m‖ /
                     ‖((m-k : ℤ) : ℂ)‖ := by
-  obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,_,hchoice,hgeom,
+  obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,_,hchoice,hgeom,_,
     M,hM,hmajor⟩ :=
     exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
       hp hp1 φ hφ a₀

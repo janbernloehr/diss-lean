@@ -35,6 +35,15 @@ theorem exists_local_sourcePsi_globalEquation_uniformNorm
             sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
           sphere (c m) (R m) ⊆
             sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∃ Niso : ℕ, ∃ εiso : ℝ,
+          (∀ t ∈ U, ∀ m : ℤ,
+            sourceSpectralCluster hp hp1 t.2 m ⊆
+              sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+          (∀ i j : ℤ, i ≠ j →
+            Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+              (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+          ∀ m : ℤ, closedBall (c m) (R m) ⊆
+            sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
         ∃ C : ℝ, 0 ≤ C ∧
           ∀ n : ℤ, ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
             ((a : Coeff p),ψ) ∈ U →
@@ -46,7 +55,7 @@ theorem exists_local_sourcePsi_globalEquation_uniformNorm
   obtain ⟨Utail,hUtailOpen,hbaseTail,Ktail,Ctail,hCtail,htail⟩ :=
     exists_local_sourcePsi_tailEquation_uniformNorm hp hp1 φ hφ a₀
   obtain ⟨Uhead,hUheadOpen,hbaseHead,K,hKtail,c,R,hcReal,hchoice,hgeom,
-      Chead,hChead,hhead⟩ :=
+      ⟨Niso,εiso,hcluster,hdisjoint,hfilled⟩,Chead,hChead,hhead⟩ :=
     exists_local_sourcePsi_uniformHeadCoordinateBound
       hp hp1 φ hφ a₀ Ktail
   let s : Finset ℤ := Finset.Icc (-(K : ℤ)) (K : ℤ)
@@ -55,9 +64,12 @@ theorem exists_local_sourcePsi_globalEquation_uniformNorm
   have hbase : (a₀,φ) ∈ U := ⟨hbaseTail,hbaseHead⟩
   let C : ℝ := s.card*Chead+Ctail
   have hC : 0 ≤ C := by dsimp [C]; positivity
-  refine ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,?_,C,hC,?_⟩
+  refine ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,?_,
+    ⟨Niso,εiso,?_,hdisjoint,hfilled⟩,C,hC,?_⟩
   · intro t ht m
     exact hgeom t ht.2 m
+  · intro t ht m
+    exact hcluster t ht.2 m
   intro n a ψ hpair
   obtain ⟨Ftail,hFtail,hFtailNorm⟩ := htail n a ψ hpair.1
   let Fraw : ℤ → ℂ := fun m =>
