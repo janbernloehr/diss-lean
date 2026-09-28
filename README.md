@@ -3767,4 +3767,7 @@ selected equation in a `C¹` chart at the limiting source. The chart
 may differ from every chart used along the sequence. The limiting
 roots are real and lie in the chart's isolating discs, so its root
 Jacobian is bijective. The implicit theorem then gives a locally
-unique `C¹` solution branch through the limit.
+unique `C¹` solution branch through the limit. Conjugation symmetry
+and the all-gap zero theorem show that, for every sufficiently nearby
+real-type source, this branch has real roots in the assigned periodic
+gaps.

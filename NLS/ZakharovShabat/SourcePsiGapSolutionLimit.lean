@@ -2,6 +2,8 @@ import NLS.ZakharovShabat.SourcePsiRealContourComparison
 import NLS.ZakharovShabat.SourcePsiGapRootLimitPlacement
 import NLS.ZakharovShabat.SourcePsiLocalJacobianBijectivity
 import NLS.ZakharovShabat.SourcePsiC1ImplicitStep
+import NLS.ZakharovShabat.SourcePsiConjugateRootEquivariance
+import NLS.ZakharovShabat.SourcePsiEquationAllGapZero
 
 /-!
 # Limits of real gap-contained psi solutions
@@ -13,6 +15,8 @@ transfers the zero equation from each original, potentially different,
 valid contour family to this fixed chart. Continuity then proves that
 the limiting deleted roots solve its equation. Root placement makes the
 Jacobian invertible there, yielding a locally unique `C¹` branch.
+For nearby real-type sources, conjugation and the gap-zero theorem keep
+the branch real and gap-contained.
 -/
 
 noncomputable section
@@ -24,7 +28,8 @@ namespace NLS.ZakharovShabat
 deleted roots solving valid real-centered selected equations has a
 strongly convergent subsequence whose gap-contained limit solves a
 local selected equation in a `C¹` chart with bijective root Jacobian
-and a locally unique implicit branch. -/
+and a locally unique implicit branch whose nearby real-type values
+remain in the periodic gaps. -/
 theorem exists_limit_sourcePsi_gap_solution
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -74,7 +79,12 @@ theorem exists_limit_sourcePsi_gap_solution
               sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ b' χ = 0 →
               b' = s χ) ∧
             ∀ᶠ χ in 𝓝 φ,
-              sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ (s χ) χ = 0 := by
+              sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ (s χ) χ = 0 ∧
+              (IsRealType (CoeffPair.toMax p χ) →
+                (∀ j : ℤ, (displacedRoots (s χ : Coeff p) j).im = 0) ∧
+                ∀ m : ℤ, m ≠ n →
+                  displacedRoots (s χ : Coeff p) m ∈
+                    sourcePeriodicSegment hp hp1 χ m) := by
   obtain ⟨b,σ,hσ,hb,hbgap⟩ :=
     exists_tendsto_subseq_deletedGapRoots_mem_limit_segments
       hp hp1 φ hφ ψ hψ n a hgap
@@ -137,7 +147,79 @@ theorem exists_limit_sourcePsi_gap_solution
   obtain ⟨s,V,hVopen,hVbase,hs,hsb,hunique,hzeros⟩ :=
     exists_C1_sourcePsi_local_solution_unique
       hp hp1 n c₀ R₀ b φ hF hlimitZero hbijAt
+  have hbasePlacement : (b,φ) ∈
+      sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n := hrootloc
+  have hplacement : ∀ᶠ χ in 𝓝 φ,
+      (s χ,χ) ∈ U ∩
+        sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n := by
+    have hcontinuous : ContinuousAt
+        (fun χ : CoeffPair p => (s χ,χ)) φ :=
+      hs.continuousAt.prodMk continuousAt_id
+    apply hcontinuous.eventually
+    apply (hUopen.inter (isOpen_sourcePsiRootPlacementDomain
+      hp hp1 φ Niso εiso n)).mem_nhds
+    simpa only [hsb] using
+      (show (b,φ) ∈ U ∩
+        sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n from
+        ⟨hbase,hbasePlacement⟩)
+  have hbconj : NLS.DeletedCoeff.conj b = b := by
+    apply Subtype.ext
+    ext j
+    have hj : ((b : Coeff p) j).im = 0 := by
+      simpa [displacedRoots,Complex.mul_im] using hroots j
+    simpa [NLS.DeletedCoeff.conj_apply] using
+      (Complex.conj_eq_iff_im.mpr hj)
+  have hconjCont : ContinuousAt
+      (fun χ : CoeffPair p => (NLS.DeletedCoeff.conj (s χ),χ)) φ := by
+    have hc : ContinuousAt
+        (fun χ : CoeffPair p => NLS.DeletedCoeff.conj (s χ)) φ :=
+      (NLS.DeletedCoeff.continuous_conj.continuousAt).comp hs.continuousAt
+    exact hc.prodMk continuousAt_id
+  have hconjmem : ∀ᶠ χ in 𝓝 φ,
+      (NLS.DeletedCoeff.conj (s χ),χ) ∈ U ∩ V := by
+    apply hconjCont.eventually
+    apply (hUopen.inter hVopen).mem_nhds
+    simpa only [hsb,hbconj] using
+      (show (b,φ) ∈ U ∩ V from ⟨hbase,hVbase⟩)
+  have hrealGap : ∀ᶠ χ in 𝓝 φ,
+      sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ (s χ) χ = 0 ∧
+      (IsRealType (CoeffPair.toMax p χ) →
+        (∀ j : ℤ, (displacedRoots (s χ : Coeff p) j).im = 0) ∧
+        ∀ m : ℤ, m ≠ n →
+          displacedRoots (s χ : Coeff p) m ∈
+            sourcePeriodicSegment hp hp1 χ m) := by
+    filter_upwards [hzeros,hplacement,hconjmem] with χ hzeroχ hplace hconj
+    refine ⟨hzeroχ,?_⟩
+    intro hreal
+    have hFconj := sourcePsiSelectedEquationSequence_conj_roots
+      hp hp1 χ hreal n c₀ R₀ hcenter₀
+        (fun j => (hgeom₀ (s χ,χ) hplace.1 j).1)
+        (fun j => (hgeom₀ (s χ,χ) hplace.1 j).2.2.2)
+        (s χ)
+        (hcoord₀ (s χ,χ) hplace.1)
+        (hcoord₀ (NLS.DeletedCoeff.conj (s χ),χ) hconj.1)
+    have hzeroConj : sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀
+        (NLS.DeletedCoeff.conj (s χ)) χ = 0 := by
+      rw [hFconj,hzeroχ,NLS.DeletedCoeff.conj_zero]
+    have hfix : NLS.DeletedCoeff.conj (s χ) = s χ :=
+      hunique _ χ hconj.2 hzeroConj
+    have hrootReal (j : ℤ) : (((s χ : DeletedCoeff p n) : Coeff p) j).im = 0 := by
+      have hcoordFix := congrArg
+        (fun a : DeletedCoeff p n => (a : Coeff p) j) hfix
+      exact Complex.conj_eq_iff_im.mp (by simpa using hcoordFix)
+    have hdisplacedReal (j : ℤ) :
+        (displacedRoots (s χ : Coeff p) j).im = 0 := by
+      simp [displacedRoots,Complex.mul_im,hrootReal]
+    have hrootlocχ : ∀ k : ℤ, k ≠ n →
+        displacedRoots (s χ : Coeff p) k ∈
+          sourceIsolatingDisc hp hp1 φ Niso εiso k := hplace.2
+    have hgapRoots := retainedRoots_mem_periodicSegments_of_selectedEquation_zero
+      hp hp1 φ χ hreal Niso εiso n (s χ) hdisplacedReal
+        hrootlocχ hdisjoint c₀ R₀ hcenter₀
+        (hgeom₀ (s χ,χ) hplace.1) hfilled
+        (hcoord₀ (s χ,χ) hplace.1) hzeroχ
+    exact ⟨hdisplacedReal,hgapRoots⟩
   exact ⟨b,σ,U,c₀,R₀,hσ,hb,hbgap,hUopen,hbase,hC1,
-    hlimitZero,hbijAt,s,V,hVopen,hVbase,hs,hsb,hunique,hzeros⟩
+    hlimitZero,hbijAt,s,V,hVopen,hVbase,hs,hsb,hunique,hrealGap⟩
 
 end NLS.ZakharovShabat
