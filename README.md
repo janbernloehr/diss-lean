@@ -3779,3 +3779,9 @@ solvable; solvability persists locally among real-type sources and
 passes to limits of convergent real-type source sequences, even when
 their contour charts vary. These are the open and closed ingredients
 for continuation across the connected real-type source locus.
+`SourcePsiGapGlobalExistence.lean` carries out that open-and-closed
+argument on the real-type source subtype. For every real-type source
+and every deleted index, it proves existence of gap-contained deleted
+roots solving the selected psi equation on some valid real-centered
+contour family. Global uniqueness and real-analytic dependence of the
+root map remain open.
