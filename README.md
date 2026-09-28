@@ -3414,6 +3414,9 @@ argument of Lemma 12.6.
 `DeletedJacobianInvertibleDiagonal.lean` shows that finitely many
 nonzero retained diagonal entries and a fixed tail lower bound give a
 global positive lower bound. The extracted diagonal multiplier is then
-a Banach-space isomorphism. Applying this to the psi Jacobian still
-requires the remaining finite-head spectral conditions and a uniform
-tail separation estimate.
+a Banach-space isomorphism.
+`SourcePsiSelectedJacobianDiagonalSeparation.lean` supplies the tail
+separation for the actual selected Jacobian: after a cutoff depending
+on the parameter pair, every retained diagonal symbol entry has norm
+at least one. Consequently, nonvanishing of the finitely many earlier
+entries suffices to make its extracted diagonal multiplier bijective.
