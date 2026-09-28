@@ -3479,3 +3479,10 @@ real-centered contour can be chosen with its whole closed disc inside
 its assigned isolating disc on a smaller source neighborhood. The old
 unconstrained contour theorem follows by forgetting this containment.
 This is the head-contour ingredient for a shared isolating-disc family.
+`SourcePsiGlobalContourFamily.lean` now combines that head construction
+with the uniform free-centered tail circles. It produces one local
+contour family whose selected closed discs all lie inside one fixed,
+pairwise disjoint isolating-disc family, while retaining the all-gap
+contour geometry. The remaining integration step is to carry this
+stronger choice through the global psi equation and its bounded
+selected Jacobian.
