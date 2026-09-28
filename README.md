@@ -3236,3 +3236,9 @@ proportional to the index distance for the moved-root denominator give
 the inverse-index-distance decay of that Jacobian entry. Establishing
 the required uniform spectral bounds for the selected contour family
 is the remaining quantitative step.
+`SourcePsiJacobianGapFactorization.lean` proves the exact
+gap-factorized formula for each scalar Jacobian entry. In the diagonal
+case the moved-root ratio cancels, leaving a single regular factor
+divided by the selected standard root. The formulas are also connected
+to the deleted-coordinate derivative, preparing direct applications of
+the gap mean-value estimate in Lemma 12.3.
