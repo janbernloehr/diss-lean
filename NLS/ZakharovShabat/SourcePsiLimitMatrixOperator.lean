@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiLimitMatrixColumns
 import NLS.SequenceSpaces.BoundedMatrixLimit
+import NLS.SequenceSpaces.BoundedMatrixLimitPointwise
 
 /-!
 # The bounded limit psi Jacobian operator
@@ -36,6 +37,12 @@ theorem exists_sourcePsiLimitMatrixOperator
         (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
           ‖sourcePsiFullRootJacobian hp hp1 n c R
             (Coeff.deleteCoordinateTo n a) φ‖ ≤ M) ∧
+        (∀ x : Coeff p, ∀ m : ℤ,
+          Tendsto (fun n : ℤ =>
+            (sourcePsiFullRootJacobian hp hp1 n c R
+              (Coeff.deleteCoordinateTo n a) φ x) m)
+            (Filter.comap Int.natAbs Filter.atTop)
+            (𝓝 ((Qstar x) m))) ∧
         ∀ m k : ℤ,
           (Qstar (lp.single p k 1)) m =
             sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m) := by
@@ -58,7 +65,18 @@ theorem exists_sourcePsiLimitMatrixOperator
   obtain ⟨Qstar,hQnorm,hQcol⟩ :=
     Coeff.exists_bounded_operator_of_entrywise_basis_limit hp
       (Filter.comap Int.natAbs Filter.atTop) T M hM hbound v hentry'
-  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,?_⟩
+  have hentryQ (m k : ℤ) :
+      Tendsto (fun n : ℤ => (T n (lp.single p k 1)) m)
+        (Filter.comap Int.natAbs Filter.atTop)
+        (𝓝 ((Qstar (lp.single p k 1)) m)) := by
+    simpa only [hQcol k] using hentry' m k
+  have hpoint (x : Coeff p) (m : ℤ) :
+      Tendsto (fun n : ℤ => (T n x) m)
+        (Filter.comap Int.natAbs Filter.atTop) (𝓝 ((Qstar x) m)) :=
+    Coeff.tendsto_operator_coordinate_of_basis hp
+      (Filter.comap Int.natAbs Filter.atTop) T Qstar M hM hQnorm
+      hbound hentryQ x m
+  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,?_⟩
   intro m k
   rw [hQcol k]
   exact hvapply k m
