@@ -3611,15 +3611,20 @@ disc: filling that unused coordinate leaves the psi variation unchanged.
 injectivity theorem now require localization only at retained indices.
 `SourcePsiRootPlacementDomain.lean` proves that this retained-root
 condition is open in the deleted `ℓᵖ` parameter space and states local
-injectivity on the resulting open domain. The diagonal nonvanishing
-proof still uses placement of the artificial omitted root `nπ`; removing
-that extra condition is the remaining domain mismatch for the local
-bijectivity formulation of Corollary 12.8.
+injectivity on the resulting open domain.
 The scalar psi equation and its selected-root derivative are now shown
 in `SourcePsiDeletedRootFill.lean` to agree exactly with those computed
 from any filled full root sequence. `SourcePsiRegularFactorIsolatingDisc.lean`
 accepts such a full sequence, and `SourcePsiFilledRegularFactor.lean`
 proves that the filled root avoids other selected contours and makes the
-regular gap factor analytic there. The next step is to use this filled
-factor in the diagonal mean-value and collapsed-gap nonvanishing
-arguments, removing the artificial `nπ` placement requirement.
+regular gap factor analytic there. `SourcePsiFilledDiagonalVariation.lean`,
+`SourcePsiFilledDiagonalMeanValue.lean`, and
+`SourcePsiFilledDiagonalAllGapNonzero.lean` extend the diagonal derivative,
+open-gap mean-value, and collapsed-gap residue arguments to any chosen
+fill. The isolating-disc proof now fills the omitted coordinate with its
+real periodic midpoint. Consequently, the diagonal-plus-compact and
+Fredholm arguments need root placement only at retained indices.
+`SourcePsiRootPlacementDomain.lean` now states local bijectivity on that
+open retained-root domain, with no condition on the artificial omitted
+root `nπ`. Matching the remaining local data and equation normalization
+to the dissertation's full Ωᵖ and Corollary 12.8 remains future work.

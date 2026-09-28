@@ -2,6 +2,7 @@ import NLS.ZakharovShabat.SourcePsiSelectedJacobianEntry
 import NLS.ZakharovShabat.SourcePsiJacobianUniformDiagonalTail
 import NLS.ZakharovShabat.SourcePsiJacobianUniformOffDiagonalTail
 import NLS.ZakharovShabat.SourcePsiJacobianAllGapNonzero
+import NLS.ZakharovShabat.SourcePsiFilledDiagonalAllGapNonzero
 import NLS.SequenceSpaces.DeletedJacobianCompactRemainder
 import NLS.SequenceSpaces.DeletedJacobianInvertibleDiagonal
 
@@ -83,18 +84,21 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
             IsCompactOperator C ∧
             ((∀ m : ℤ, m ≠ n → m.natAbs < L → d m ≠ 0) →
               Function.Bijective D) ∧
-            (∀ m : ℤ, ∀ _hmn : m ≠ n,
+            (∀ m : ℤ, ∀ _hmn : m ≠ n, ∀ ξ : ℂ,
+              (∀ k : ℤ,
+                (displacedRoots (sourcePsiFillDeletedRoot n a ξ) k).im = 0) →
               (∀ z ∈ sphere (c m) (R m),
-                z ≠ displacedRoots (a : Coeff p) n) →
+                z ≠ displacedRoots (sourcePsiFillDeletedRoot n a ξ) n) →
               AnalyticOnNhd ℂ
                 (fun z => (((n-m : ℤ) : ℂ) *
-                  sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
+                  sourcePsiGapRegularFactor hp hp1 n m
+                    (sourcePsiFillDeletedRoot n a ξ) ψ z))
                 (closedBall (c m) (R m)) →
               (∀ z ∈ standardRootGapSegment
                 (sourceStandardRootMidpoint hp hp1 ψ m)
                 (sourceStandardRootHalfGap hp hp1 ψ m),
                 ∀ k : ℤ, k ≠ m →
-                  z ≠ displacedRoots (a : Coeff p) k) →
+                  z ≠ displacedRoots (sourcePsiFillDeletedRoot n a ξ) k) →
               d m ≠ 0) ∧
             Q = D + C := by
   obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hcReal,hchoice,hgeom,
@@ -161,18 +165,21 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
     IsCompactOperator C ∧
     ((∀ m : ℤ, m ≠ n → m.natAbs < L → d m ≠ 0) →
       Function.Bijective D) ∧
-    (∀ m : ℤ, ∀ _hmn : m ≠ n,
+    (∀ m : ℤ, ∀ _hmn : m ≠ n, ∀ ξ : ℂ,
+      (∀ k : ℤ,
+        (displacedRoots (sourcePsiFillDeletedRoot n a ξ) k).im = 0) →
       (∀ z ∈ sphere (c m) (R m),
-        z ≠ displacedRoots (a : Coeff p) n) →
+        z ≠ displacedRoots (sourcePsiFillDeletedRoot n a ξ) n) →
       AnalyticOnNhd ℂ
         (fun z => (((n-m : ℤ) : ℂ) *
-          sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
+          sourcePsiGapRegularFactor hp hp1 n m
+            (sourcePsiFillDeletedRoot n a ξ) ψ z))
         (closedBall (c m) (R m)) →
       (∀ z ∈ standardRootGapSegment
         (sourceStandardRootMidpoint hp hp1 ψ m)
         (sourceStandardRootHalfGap hp hp1 ψ m),
         ∀ k : ℤ, k ≠ m →
-          z ≠ displacedRoots (a : Coeff p) k) →
+          z ≠ displacedRoots (sourcePsiFillDeletedRoot n a ξ) k) →
       d m ≠ 0) ∧ Q = D + C
   have htail : ∀ m : ℤ, max K L₀ ≤ m.natAbs →
       m ≠ n → 1 ≤ ‖d m‖ := by
@@ -229,26 +236,29 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
       · exact hhead m hmn (by omega)
     exact Coeff.deletedJacobianDiagonal_bijective_of_eventually_one_le
       n Q (max K L₀) hno (fun m hmn hm => htail m hm hmn)
-  have hnonzero (m : ℤ) (hmn : m ≠ n)
+  have hnonzero (m : ℤ) (hmn : m ≠ n) (ξ : ℂ)
+      (hrootsFilled : ∀ k : ℤ,
+        (displacedRoots (sourcePsiFillDeletedRoot n a ξ) k).im = 0)
       (havoidn : ∀ z ∈ sphere (c m) (R m),
-        z ≠ displacedRoots (a : Coeff p) n)
+        z ≠ displacedRoots (sourcePsiFillDeletedRoot n a ξ) n)
       (hreg : AnalyticOnNhd ℂ
         (fun z => (((n-m : ℤ) : ℂ) *
-          sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
+          sourcePsiGapRegularFactor hp hp1 n m
+            (sourcePsiFillDeletedRoot n a ξ) ψ z))
         (closedBall (c m) (R m)))
       (hother : ∀ z ∈ standardRootGapSegment
         (sourceStandardRootMidpoint hp hp1 ψ m)
         (sourceStandardRootHalfGap hp hp1 ψ m),
         ∀ k : ℤ, k ≠ m →
-          z ≠ displacedRoots (a : Coeff p) k) : d m ≠ 0 := by
+          z ≠ displacedRoots (sourcePsiFillDeletedRoot n a ξ) k) : d m ≠ 0 := by
     let x : ℝ := (c m).re
     have hx : (x : ℂ) = c m := by
       apply Complex.ext
       · rfl
       · simpa [x] using (hcReal m).symm
     obtain ⟨hR,hseg,hdom,hcircle⟩ := hgeom (a,ψ) hpair.1 m
-    have hscalar := sourcePsi_diagonalJacobian_ne_zero_all_real_gaps
-      hp hp1 ψ hreal n m hmn a hroots x (R m) hR
+    have hscalar := sourcePsi_diagonalJacobian_ne_zero_all_real_gaps_filled
+      hp hp1 ψ hreal n m hmn a ξ hrootsFilled x (R m) hR
         (by simpa only [hx] using hseg)
         (by simpa only [hx] using hdom)
         (by simpa only [hx] using hcircle)

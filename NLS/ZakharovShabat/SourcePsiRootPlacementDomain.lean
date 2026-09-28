@@ -157,4 +157,31 @@ theorem exists_local_sourcePsi_selectedJacobian_injective_on_rootPlacement
   intro a ψ hmem hreal hroots
   exact hinj a ψ hmem.1 hreal hroots hmem.2
 
+/-- On the open retained-root domain, the selected Jacobian is
+bijective at real source and root data. No placement condition is
+imposed on the artificial zero-filled omitted coordinate. -/
+theorem exists_local_sourcePsi_selectedJacobian_bijective_on_rootPlacement
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
+      (a₀,φ) ∈ U ∧
+      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        ∃ Niso : ℕ, ∃ εiso : ℝ,
+        IsOpen (U ∩ sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n) ∧
+        ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+          (a,ψ) ∈ U ∩ sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n →
+          IsRealType (CoeffPair.toMax p ψ) →
+          (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
+          Function.Bijective
+            (sourcePsiSelectedRootJacobian hp hp1 n c R a ψ) := by
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,hbij⟩ :=
+    exists_local_sourcePsi_selectedJacobian_bijective hp hp1 φ hφ n a₀
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
+    hUopen.inter (isOpen_sourcePsiRootPlacementDomain
+      hp hp1 φ Niso εiso n),?_⟩
+  intro a ψ hmem hreal hroots
+  exact hbij a ψ hmem.1 hreal hroots hmem.2
+
 end NLS.ZakharovShabat

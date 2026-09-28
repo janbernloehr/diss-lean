@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianDiagonalCompact
 import NLS.ZakharovShabat.SourcePsiIsolatingRootSeparation
 import NLS.ZakharovShabat.SourcePsiRegularFactorIsolatingDisc
+import NLS.ZakharovShabat.SourcePsiFilledRegularFactor
 import NLS.SequenceSpaces.CompactIdentityFredholm
 
 /-!
@@ -61,7 +62,7 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
-          (∀ k : ℤ,
+          (∀ k : ℤ, k ≠ n →
             displacedRoots (a : Coeff p) k ∈
               sourceIsolatingDisc hp hp1 φ Niso εiso k) →
             let Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
@@ -96,11 +97,15 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
   have hlocTail : ∀ j : ℤ, Niso < j.natAbs →
       ‖(a : Coeff p) j‖ ≤ Real.pi/4 := by
     intro j hj
+    by_cases hjn : j = n
+    · subst j
+      rw [show (a : Coeff p) n = 0 from a.property, norm_zero]
+      positivity
     have hnot : ¬ j.natAbs ≤ Niso := not_le.mpr hj
     have hdist : dist (displacedRoots (a : Coeff p) j)
         ((Real.pi : ℂ)*j) < Real.pi/4 := by
       simpa only [sourceIsolatingDisc,if_neg hnot,refinedResonantDisk,
-        mem_ball] using hrootloc j
+        mem_ball] using hrootloc j hjn
     have heq : dist (displacedRoots (a : Coeff p) j)
         ((Real.pi : ℂ)*j) = ‖(a : Coeff p) j‖ := by
       simp [dist_eq_norm,displacedRoots]
@@ -111,25 +116,48 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
   refine ⟨hcompact,?_,hsplit⟩
   apply hbij
   intro m hmn _
-  apply hnonzero m hmn
+  let ξ : ℂ := sourceStandardRootMidpoint hp hp1 ψ n
+  have hξSeg : ξ ∈ sourcePeriodicSegment hp hp1 ψ n := by
+    simpa only [ξ, sourceStandardRootMidpoint] using
+      sourcePeriodicMidpoint_mem_segment hp hp1 ψ n
+  have hξDisc : ξ ∈ sourceIsolatingDisc hp hp1 φ Niso εiso n :=
+    sourcePeriodicSegment_subset_isolatingDisc hp hp1 φ ψ Niso εiso n
+      (hcluster (a,ψ) hpair.1 n) hξSeg
+  have hξReal : ξ.im = 0 :=
+    sourcePeriodicSegment_im_eq_zero_of_realType
+      hp hp1 ψ hreal n ξ hξSeg
+  have hrootsFilled : ∀ k : ℤ,
+      (displacedRoots (sourcePsiFillDeletedRoot n a ξ) k).im = 0 :=
+    displacedRoots_sourcePsiFillDeletedRoot_im_eq_zero n a ξ
+      (fun k _ => hroots k) hξReal
+  have hrootlocFilled : ∀ k : ℤ,
+      displacedRoots (sourcePsiFillDeletedRoot n a ξ) k ∈
+        sourceIsolatingDisc hp hp1 φ Niso εiso k := by
+    intro k
+    by_cases hkn : k = n
+    · subst k
+      simpa only [displacedRoots_sourcePsiFillDeletedRoot_same] using hξDisc
+    · rw [displacedRoots_sourcePsiFillDeletedRoot_other n k hkn]
+      exact hrootloc k hkn
+  apply hnonzero m hmn ξ hrootsFilled
   · have hcircle : ∀ j : ℤ,
         sphere (c j) (R j) ⊆
           sourceIsolatingDisc hp hp1 φ Niso εiso j := by
       intro j z hz
       exact hfilled j (sphere_subset_closedBall hz)
     exact sourcePsi_deletedRoot_avoids_otherCircle_of_isolatingDiscs
-      hp hp1 φ Niso εiso (a : Coeff p) c R hcircle hrootloc
-        hdisjoint m n hmn
-  · exact analyticOnNhd_deletedPsi_gapRegularFactor_of_isolatingDisc
-      hp hp1 φ Niso εiso n m (a : Coeff p) ψ W hpair.2 (hQdata m).2
-        (c m) (R m) (hdom m) (hfilled m) (hrootloc n)
+      hp hp1 φ Niso εiso (sourcePsiFillDeletedRoot n a ξ) c R
+        hcircle hrootlocFilled hdisjoint m n hmn
+  · exact analyticOnNhd_sourcePsiFillDeletedRoot_gapRegularFactor
+      hp hp1 φ Niso εiso n m a ξ ψ W hpair.2 (hQdata m).2
+        (c m) (R m) (hdom m) (hfilled m) hξDisc
         (hdisjoint m n hmn)
   · exact sourcePsi_otherRoots_avoid_standardGap_of_isolatingDiscs
-      hp hp1 φ ψ Niso εiso (a : Coeff p)
+      hp hp1 φ ψ Niso εiso (sourcePsiFillDeletedRoot n a ξ)
         (fun j => sourcePeriodicSegment_subset_isolatingDisc
           hp hp1 φ ψ Niso εiso j
             (hcluster (a,ψ) hpair.1 j))
-        hrootloc hdisjoint m
+        hrootlocFilled hdisjoint m
 
 /-- The local selected Jacobian is an isomorphism as soon as its
 injectivity is known. This is the Fredholm reduction in Corollary 12.8;
@@ -147,7 +175,7 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective_of_injective
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
-          (∀ k : ℤ,
+          (∀ k : ℤ, k ≠ n →
             displacedRoots (a : Coeff p) k ∈
               sourceIsolatingDisc hp hp1 φ Niso εiso k) →
             let Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
