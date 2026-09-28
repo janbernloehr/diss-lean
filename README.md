@@ -3878,3 +3878,8 @@ inside it. It also proves real analyticity into that real Banach space
 and packages existence, uniqueness, the selected equation, and local
 all-index placement. Identifying this local domain and the chart-based
 solution predicate with the dissertation's full `Ωᵖ` setup remains open.
+The local isolating-disc family, real-source neighborhood, and `ℓᵖ` tail
+cutoff can now be chosen simultaneously for every deleted index `n`.
+This supplies the real-side uniform placement and compactness needed
+toward Lemma 12.10; an index-independent *complex* solution
+neighborhood still requires uniform inverse-Jacobian estimates.

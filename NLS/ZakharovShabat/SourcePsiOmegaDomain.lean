@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourceCriticalRootRatioTransverseBound
+import NLS.ZakharovShabat.SourcePsiGapRootTailBound
 import NLS.SequenceSpaces.DeletedRealImag
 
 /-!
@@ -201,8 +202,28 @@ theorem isOpen_sourcePsiOmegaLocal
         using hu.2 m hmn
   exact mem_of_superset (hVopen.mem_nhds htV) hVsub
 
-/-- Every canonical solution belongs locally to the real psi domain,
-including the filled omitted coordinate. -/
+/-- One open real-source neighborhood places the graphs of all
+canonical deleted-index solutions in their local real psi domains,
+including each filled omitted coordinate. -/
+theorem exists_local_graph_sourcePsiOmegaLocal_allIndices
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+      ∃ U : Set (CoeffPair p), IsOpen U ∧ (φ : CoeffPair p) ∈ U ∧
+        ∀ n : ℤ, ∀ ψ : realTypeSourceSubmodule p, (ψ : CoeffPair p) ∈ U →
+          (sourcePsiGapRootReal hp hp1 n ψ,ψ) ∈
+            sourcePsiOmegaLocal hp hp1 (φ : CoeffPair p) N ε n U := by
+  obtain ⟨N,ε,hε,hεmax,U,hUopen,hφU,hplacement⟩ :=
+    exists_local_graph_filledRootPlacement_sourcePsiGapRoot_allIndices hp hp1 φ
+  refine ⟨N,ε,hε,hεmax,U,hUopen,hφU,?_⟩
+  intro n ψ hψ
+  obtain ⟨ξ,hξSeg,hξ⟩ := hplacement n ψ hψ
+  exact ⟨hψ,ξ,
+    sourcePeriodicSegment_im_eq_zero_of_realType hp hp1
+      (ψ : CoeffPair p) ψ.property n ξ hξSeg,hξ⟩
+
+/-- The simultaneous local-domain theorem for a fixed deleted index. -/
 theorem exists_local_graph_sourcePsiOmegaLocal
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ)
@@ -212,14 +233,45 @@ theorem exists_local_graph_sourcePsiOmegaLocal
         ∀ ψ : realTypeSourceSubmodule p, (ψ : CoeffPair p) ∈ U →
           (sourcePsiGapRootReal hp hp1 n ψ,ψ) ∈
             sourcePsiOmegaLocal hp hp1 (φ : CoeffPair p) N ε n U := by
-  obtain ⟨N,ε,hε,hεmax,U,hUopen,hφU,hplacement⟩ :=
-    exists_local_graph_filledRootPlacement_sourcePsiGapRoot hp hp1 n φ
-  refine ⟨N,ε,hε,hεmax,U,hUopen,hφU,?_⟩
-  intro ψ hψ
-  obtain ⟨ξ,hξSeg,hξ⟩ := hplacement ψ hψ
-  exact ⟨hψ,ξ,
-    sourcePeriodicSegment_im_eq_zero_of_realType hp hp1
-      (ψ : CoeffPair p) ψ.property n ξ hξSeg,hξ⟩
+  obtain ⟨N,ε,hε,hεmax,U,hUopen,hφU,hplace⟩ :=
+    exists_local_graph_sourcePsiOmegaLocal_allIndices hp hp1 φ
+  exact ⟨N,ε,hε,hεmax,U,hUopen,hφU,hplace n⟩
+
+/-- The all-index local placement and compactness estimates hold on
+one real-source neighborhood. Both the isolating family and the tail
+cutoff are independent of the deleted index. -/
+theorem exists_local_allIndices_sourcePsiOmega_uniformTails
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) {δ : ℝ} (hδ : 0 < δ) :
+    ∃ Niso : ℕ, ∃ εiso : ℝ,
+      0 < εiso ∧ εiso ≤ Real.pi/4 ∧
+      ∃ K : ℕ, ∃ U : Set (CoeffPair p),
+        IsOpen U ∧ (φ : CoeffPair p) ∈ U ∧
+        ∀ n : ℤ, ∀ ψ : realTypeSourceSubmodule p,
+          (ψ : CoeffPair p) ∈ U →
+          (sourcePsiGapRootReal hp hp1 n ψ,ψ) ∈
+            sourcePsiOmegaLocal hp hp1 (φ : CoeffPair p) Niso εiso n U ∧
+          ∀ M : ℕ, K ≤ M →
+            ‖(sourcePsiGapRoot hp hp1 n ψ : Coeff p) -
+              Coeff.truncate (Finset.Icc (-(M : ℤ)) M)
+                (sourcePsiGapRoot hp hp1 n ψ : Coeff p)‖ ≤ δ := by
+  obtain ⟨Niso,εiso,hεiso,hεisomax,U₀,hU₀open,hφU₀,hplace⟩ :=
+    exists_local_graph_sourcePsiOmegaLocal_allIndices hp hp1 φ
+  obtain ⟨K,V,hVopen,hφV,htail⟩ :=
+    exists_uniform_small_deletedGapRoots_tails_allIndices
+      hp hp1 (φ : CoeffPair p) hδ
+  let U := U₀ ∩ V
+  refine ⟨Niso,εiso,hεiso,hεisomax,K,U,
+    hU₀open.inter hVopen,⟨hφU₀,hφV⟩,?_⟩
+  intro n ψ hψ
+  obtain ⟨_,ξ,hξReal,hξPlace⟩ := hplace n ψ hψ.1
+  refine ⟨⟨hψ,ξ,hξReal,hξPlace⟩,?_⟩
+  intro M hM
+  exact htail (ψ : CoeffPair p) hψ.2 n
+    (sourcePsiGapRoot hp hp1 n ψ)
+    (fun m hmn => sourcePsiGapRoot_mem_periodicSegment hp hp1 n m hmn ψ)
+    M hM
 
 /-- Source analogue of Proposition 12.9: the unique real-analytic
 gap-contained solution solves the selected psi equation, and its graph

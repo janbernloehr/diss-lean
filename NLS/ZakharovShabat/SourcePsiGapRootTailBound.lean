@@ -66,14 +66,14 @@ theorem norm_deletedRoots_le_gap_displacements
     hp hp1 ψ n a hgap ∅
 
 /-- Near any source, all deleted-root sequences placed in their
-periodic gaps have uniformly small `ℓᵖ` tails. The bound is uniform
-over the choice of root within each gap. -/
-theorem exists_uniform_small_deletedGapRoots_tails
+periodic gaps have uniformly small `ℓᵖ` tails. The neighborhood and
+cutoff work for every deleted index and every choice of roots. -/
+theorem exists_uniform_small_deletedGapRoots_tails_allIndices
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
-    (φ : CoeffPair p) (n : ℤ) {ε : ℝ} (hε : 0 < ε) :
+    (φ : CoeffPair p) {ε : ℝ} (hε : 0 < ε) :
     ∃ N : ℕ, ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
-      ∀ ψ ∈ V, ∀ a : DeletedCoeff p n,
+      ∀ ψ ∈ V, ∀ n : ℤ, ∀ a : DeletedCoeff p n,
         (∀ m : ℤ, m ≠ n →
           displacedRoots (a : Coeff p) m ∈
             sourcePeriodicSegment hp hp1 ψ m) →
@@ -85,7 +85,7 @@ theorem exists_uniform_small_deletedGapRoots_tails
       hp hp1 (periodOnePotential φ) (by positivity : 0 < ε/3)
   let V : Set (CoeffPair p) := periodOnePotential ⁻¹' U
   refine ⟨N,V,hUopen.preimage (periodOnePotential (p := p)).continuous,hφU,?_⟩
-  intro ψ hψ a hgapRoots M hM
+  intro ψ hψ n a hgapRoots M hM
   let s := Finset.Icc (-(M : ℤ)) M
   let L := canonicalPeriodicLeftDisplacement hp hp1
     (periodOnePotential ψ) (periodOnePotential_mem ψ)
@@ -110,5 +110,23 @@ theorem exists_uniform_small_deletedGapRoots_tails
     hp hp1 ψ n a hgapRoots s
   dsimp only [L,G,s] at hL hG ha ⊢
   linarith
+
+/-- The simultaneous tail estimate specialized to one omitted index. -/
+theorem exists_uniform_small_deletedGapRoots_tails
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (n : ℤ) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∀ ψ ∈ V, ∀ a : DeletedCoeff p n,
+        (∀ m : ℤ, m ≠ n →
+          displacedRoots (a : Coeff p) m ∈
+            sourcePeriodicSegment hp hp1 ψ m) →
+        ∀ M : ℕ, N ≤ M →
+          ‖(a : Coeff p)-
+            Coeff.truncate (Finset.Icc (-(M : ℤ)) M) (a : Coeff p)‖ ≤ ε := by
+  obtain ⟨N,V,hVopen,hφV,hbound⟩ :=
+    exists_uniform_small_deletedGapRoots_tails_allIndices hp hp1 φ hε
+  exact ⟨N,V,hVopen,hφV,fun ψ hψ a hgap M hM =>
+    hbound ψ hψ n a hgap M hM⟩
 
 end NLS.ZakharovShabat

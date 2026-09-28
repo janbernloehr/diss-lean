@@ -59,15 +59,15 @@ theorem exists_local_graph_rootPlacement_sourcePsiGapRoot
 
 /-- The omitted coordinate can be filled with the periodic midpoint so
 that every root of the canonical solution lies in its assigned disc.
-One disc family and source neighborhood work for all nearby real-type
-potentials. -/
-theorem exists_local_graph_filledRootPlacement_sourcePsiGapRoot
+One disc family and source neighborhood work simultaneously for every
+deleted index and all nearby real-type potentials. -/
+theorem exists_local_graph_filledRootPlacement_sourcePsiGapRoot_allIndices
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
-    (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ)
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : realTypeSourceSubmodule p) :
     ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
       ∃ U : Set (CoeffPair p), IsOpen U ∧ (φ : CoeffPair p) ∈ U ∧
-        ∀ ψ : realTypeSourceSubmodule p, (ψ : CoeffPair p) ∈ U →
+        ∀ n : ℤ, ∀ ψ : realTypeSourceSubmodule p, (ψ : CoeffPair p) ∈ U →
           ∃ ξ : ℂ, ξ ∈ sourcePeriodicSegment hp hp1 (ψ : CoeffPair p) n ∧
             ∀ m : ℤ,
               displacedRoots
@@ -78,7 +78,7 @@ theorem exists_local_graph_filledRootPlacement_sourcePsiGapRoot
     exists_local_source_connected_isolating_discs hp hp1
       (φ : CoeffPair p) φ.property
   refine ⟨N,ε,hε,hεmax,U,hUopen,hφU,?_⟩
-  intro ψ hψ
+  intro n ψ hψ
   refine ⟨sourceStandardRootMidpoint hp hp1 (ψ : CoeffPair p) n,?_,?_⟩
   · simpa only [sourceStandardRootMidpoint] using
       sourcePeriodicMidpoint_mem_segment hp hp1 (ψ : CoeffPair p) n
@@ -96,5 +96,24 @@ theorem exists_local_graph_filledRootPlacement_sourcePsiGapRoot
       hp hp1 (φ : CoeffPair p) (ψ : CoeffPair p) N ε m
         (hcluster (ψ : CoeffPair p) hψ m)
         (sourcePsiGapRoot_mem_periodicSegment hp hp1 n m hmn ψ)
+
+/-- The simultaneous all-index placement theorem specialized to one
+deleted index. -/
+theorem exists_local_graph_filledRootPlacement_sourcePsiGapRoot
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ)
+    (φ : realTypeSourceSubmodule p) :
+    ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+      ∃ U : Set (CoeffPair p), IsOpen U ∧ (φ : CoeffPair p) ∈ U ∧
+        ∀ ψ : realTypeSourceSubmodule p, (ψ : CoeffPair p) ∈ U →
+          ∃ ξ : ℂ, ξ ∈ sourcePeriodicSegment hp hp1 (ψ : CoeffPair p) n ∧
+            ∀ m : ℤ,
+              displacedRoots
+                (sourcePsiFillDeletedRoot n
+                  (sourcePsiGapRoot hp hp1 n ψ) ξ) m ∈
+                sourceIsolatingDisc hp hp1 (φ : CoeffPair p) N ε m := by
+  obtain ⟨N,ε,hε,hεmax,U,hUopen,hφU,hplace⟩ :=
+    exists_local_graph_filledRootPlacement_sourcePsiGapRoot_allIndices hp hp1 φ
+  exact ⟨N,ε,hε,hεmax,U,hUopen,hφU,hplace n⟩
 
 end NLS.ZakharovShabat
