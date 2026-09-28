@@ -3163,8 +3163,12 @@ hypotheses on one selected contour chart at every real-type source.
 `BoundedCoordinateTaylorAssembly.lean` constructs the `ℓᵖ`-valued
 continuous multilinear Taylor coefficient at every order from these
 uniformly bounded finite truncations, retaining the same geometric
-norm bound and the scalar coordinate formula. The next task is to
-sum the assembled series and identify it with the sequence-valued map.
+norm bound and the scalar coordinate formula.
+`BoundedCoordinateAnalytic.lean` proves that these coefficients have a
+positive common convergence radius and sum to the original sequence
+map, yielding Banach-space analyticity from locally bounded analytic
+coordinates. The next step applies this construction to the selected
+psi equation with its explicit contour-coordinate formula.
 The equation's real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
