@@ -3870,6 +3870,11 @@ root in its periodic gap into one theorem. It uses the formalized
 `SourcePsiGapSolution` predicate. Its graph also lies locally in an open
 retained-root placement domain. Filling the omitted coordinate with the
 periodic midpoint places every root in one common family of isolating
-discs over a neighborhood of each real-type source. Identifying these
-local placement statements with the dissertation's literal `Ωᵖ` domain
-is still open.
+discs over a neighborhood of each real-type source.
+`SourcePsiOmegaDomain.lean` proves the deleted root coordinates are real,
+defines their closed real Banach subspace and a local real `Ωᵖ`-style
+placement domain, proves that domain open, and places the canonical graph
+inside it. It also proves real analyticity into that real Banach space
+and packages existence, uniqueness, the selected equation, and local
+all-index placement. Identifying this local domain and the chart-based
+solution predicate with the dissertation's full `Ωᵖ` setup remains open.

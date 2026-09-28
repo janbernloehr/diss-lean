@@ -1064,6 +1064,7 @@ import NLS.ComplexAnalysis.BanachC1ImplicitDerivative
 import NLS.ZakharovShabat.SourcePsiGapRootDerivative
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
+import NLS.ZakharovShabat.SourcePsiOmegaDomain
 import NLS.ZakharovShabat.SourceRealTypeBanachSpace
 import NLS.ZakharovShabat.SourceRealTypeQuadraticRemainder
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
