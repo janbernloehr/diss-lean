@@ -25,6 +25,7 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
     ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
       ∃ N K : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         (∀ t ∈ U, ∀ m : ℤ,
@@ -45,7 +46,7 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
                         sourcePsiGapRegularFactor hp hp1 n m
                           (a : Coeff p) ψ z)‖ ≤
                         (2/Real.pi)*(1+‖B m‖) := by
-  obtain ⟨U,hUopen,hbase,K,c,R,hchoice,hgeom,M,hM,hmajor⟩ :=
+  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,M,hM,hmajor⟩ :=
     exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
       hp hp1 φ hφ a₀
   let s : Finset ℤ := Finset.Icc (-(K : ℤ)) (K : ℤ)
@@ -54,7 +55,7 @@ theorem exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
   obtain ⟨L,hL⟩ := exists_uniform_shifted_disc_lattice_cutoff
     s c R hRhead
   let N : ℕ := K+L+1
-  refine ⟨U,hUopen,hbase,N,K,c,R,hchoice,hgeom,M,hM,?_⟩
+  refine ⟨U,hUopen,hbase,N,K,c,R,hcReal,hchoice,hgeom,M,hM,?_⟩
   intro n hn a ψ hpair
   obtain ⟨B,hBnorm,hB⟩ := hmajor ((a : Coeff p),ψ) hpair
   refine ⟨B,hBnorm,?_⟩

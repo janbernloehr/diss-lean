@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiGlobalEquationSequenceBound
 import NLS.SequenceSpaces.BoundedCoordinateDifferentiable
+import NLS.ZakharovShabat.SourcePsiContourConjugation
 
 /-!
 # Holomorphy of the global psi equation sequence
@@ -57,6 +58,7 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
     ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
       ∃ K : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         ∃ C : ℝ, 0 ≤ C ∧
@@ -66,10 +68,16 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
                 (t.1 : Coeff p) t.2 (c m) (R m)) ∧
           (∀ t ∈ U,
             ‖sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2‖ ≤ C) ∧
+          (∀ t ∈ U,
+            IsRealType (CoeffPair.toMax p t.2) →
+              (∀ k : ℤ, (displacedRoots (t.1 : Coeff p) k).im = 0) →
+                ∀ m : ℤ,
+                  ((sourcePsiSelectedEquationSequence hp hp1 n c R
+                    t.1 t.2 : Coeff p) m).im = 0) ∧
           DifferentiableOn ℂ
             (fun t : DeletedCoeff p n × CoeffPair p =>
               sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,K,c,R,hchoice,hgeom,C,hC,heq⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,K,c,R,hcReal,hchoice,hgeom,C,hC,heq⟩ :=
     exists_local_sourcePsi_globalEquation_uniformNorm
       hp hp1 φ hφ (a₀ : Coeff p)
   obtain ⟨W,hWopen,_,hrealW,hdata⟩ :=
@@ -114,6 +122,22 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
       ext m
       exact (hcoord t ht m).trans (hGcoord m).symm
     simpa only [hFG] using hGnorm
+  have hrealCoord (t : DeletedCoeff p n × CoeffPair p) (ht : t ∈ U)
+      (hreal : IsRealType (CoeffPair.toMax p t.2))
+      (hroots : ∀ k : ℤ, (displacedRoots (t.1 : Coeff p) k).im = 0)
+      (m : ℤ) : ((F t : Coeff p) m).im = 0 := by
+    rw [hcoord t ht m]
+    let x : ℝ := (c m).re
+    have hx : (x:ℂ) = c m := by
+      apply Complex.ext
+      · rfl
+      · simpa [x] using (hcReal m).symm
+    obtain ⟨hR,_,_,hcircle⟩ :=
+      hgeom ((t.1 : Coeff p),t.2) ht.1 m
+    have h := sourcePsiEquationCoordinate_im_eq_zero_of_realCenteredCircle
+      hp hp1 t.2 hreal n m (t.1 : Coeff p) hroots x (R m) hR
+        (by simpa only [hx] using hcircle)
+    simpa only [hx] using h
   have hscalar (m : ℤ) : DifferentiableOn ℂ
       (fun t : DeletedCoeff p n × CoeffPair p =>
         sourcePsiEquationCoordinate hp hp1 n m
@@ -145,7 +169,7 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
       hFdiff
   have hdeleted : DifferentiableOn ℂ F U :=
     hcomposed.congr (fun t _ => (hproject t).symm)
-  exact ⟨U,hUopen,hbase,K,c,R,hchoice,C,hC,
-    (fun t ht m => hcoord t ht m),hbound,hdeleted⟩
+  exact ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,C,hC,
+    (fun t ht m => hcoord t ht m),hbound,hrealCoord,hdeleted⟩
 
 end NLS.ZakharovShabat

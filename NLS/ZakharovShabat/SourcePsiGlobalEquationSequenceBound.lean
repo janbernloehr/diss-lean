@@ -25,6 +25,7 @@ theorem exists_local_sourcePsi_globalEquation_uniformNorm
     ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
       ∃ K : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         (∀ t ∈ U, ∀ m : ℤ,
@@ -44,7 +45,7 @@ theorem exists_local_sourcePsi_globalEquation_uniformNorm
                 ‖F‖ ≤ C := by
   obtain ⟨Utail,hUtailOpen,hbaseTail,Ktail,Ctail,hCtail,htail⟩ :=
     exists_local_sourcePsi_tailEquation_uniformNorm hp hp1 φ hφ a₀
-  obtain ⟨Uhead,hUheadOpen,hbaseHead,K,hKtail,c,R,hchoice,hgeom,
+  obtain ⟨Uhead,hUheadOpen,hbaseHead,K,hKtail,c,R,hcReal,hchoice,hgeom,
       Chead,hChead,hhead⟩ :=
     exists_local_sourcePsi_uniformHeadCoordinateBound
       hp hp1 φ hφ a₀ Ktail
@@ -54,7 +55,7 @@ theorem exists_local_sourcePsi_globalEquation_uniformNorm
   have hbase : (a₀,φ) ∈ U := ⟨hbaseTail,hbaseHead⟩
   let C : ℝ := s.card*Chead+Ctail
   have hC : 0 ≤ C := by dsimp [C]; positivity
-  refine ⟨U,hUopen,hbase,K,c,R,hchoice,?_,C,hC,?_⟩
+  refine ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,?_,C,hC,?_⟩
   · intro t ht m
     exact hgeom t ht.2 m
   intro n a ψ hpair

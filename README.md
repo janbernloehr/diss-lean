@@ -3134,13 +3134,13 @@ prescribed finite set of indices.
 the free-centered tail. On one fixed global contour family near any
 real-type source, the full psi equation is a deleted `ℓᵖ` sequence
 with a locally uniform norm bound independent of the deleted index.
-The next part of Lemma 12.4 is sequence-valued analyticity and its
-real-locus compatibility.
+The next steps in Lemma 12.4 establish sequence-valued analyticity
+and real-locus compatibility.
 `SourcePsiGlobalEquationAnalytic.lean` uses the sequence norm bound
 and scalar contour holomorphy to prove a local Fréchet-holomorphic
 realization in the deleted `ℓᵖ` space near every real-type source and
 deleted root input, with the selected-contour coordinate formula and
-a local norm bound. Real-locus compatibility remains to be proved.
+a local norm bound. Its real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
 psi quotient is real on the real spectral axis away from the other
@@ -3149,22 +3149,21 @@ its explicit imaginary unit, including on the selected real gap.
 `SourcePsiRealTailOpenGap.lean` applies the real mean-value form of
 Lemma 12.3 to an open real gap with small free-centered geometry. Under
 the explicit quarter-disc quotient domain and circle hypotheses, its
-free eighth-π psi equation coordinate is real. A uniform tail domain
-near arbitrary real-type sources and the finite head remain to be
-connected to this result.
+free eighth-π psi equation coordinate is real. The subsequent global
+steps extend this local argument.
 `SourcePsiGlobalTailQuarterDisc.lean` establishes that connection for
 open tail gaps: on one neighborhood of any real-type source, every
 sufficiently distant free quarter-π disc avoids all other periodic
 gaps, including the finite nonstandard head. Hence each distant open
 real-gap psi coordinate is real for real displaced-root inputs,
-uniformly in the deleted index. Collapsed gaps and the selected head
-are the remaining real-locus cases.
+uniformly in the deleted index. Later steps cover collapsed gaps and
+the selected head.
 `SourcePsiRealTailCollapsedGap.lean` evaluates each collapsed tail
 coordinate by its Cauchy residue and proves it real for real-type
 source data and real displaced roots. Combining this with the
 open-gap mean-value result shows that every sufficiently distant
-coordinate is real on the real locus. The finitely many selected head
-coordinates remain to complete Lemma 12.4's real-valued conclusion.
+coordinate is real on the real locus. The selected head is handled
+below by a contour-reflection argument.
 `SourceStandardRootWeightedLocalRealMeanValue.lean` now proves the
 real mean-value formula for an outer real-centered circle by nesting a
 smaller midpoint circle inside it. `SourcePsiRealCenteredOpenGap.lean`
@@ -3210,7 +3209,10 @@ integrand has a real circle integral about a real center.
 coordinate without requiring the deleted free root outside the disc.
 `SourcePsiGlobalRealCoordinates.lean` combines this with the common
 real-centered contour family: all selected coordinates are real on the
-real locus, for every deleted index and every gap. To obtain the full
-real-valued analytic map of Lemma 12.4, this real-centered family must
-also be carried through the existing global norm and analyticity
-construction.
+real locus, for every deleted index and every gap.
+`SourcePsiGlobalHeadDiscBound.lean` through
+`SourcePsiGlobalEquationSequenceBound.lean` now retain the real-center
+property through the quotient majorant and uniform sequence norm.
+`SourcePsiGlobalEquationAnalytic.lean` carries the same family into its
+locally bounded Fréchet-holomorphic deleted-sequence map and proves that
+every coordinate is real when the source and displaced roots are real.

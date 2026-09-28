@@ -111,6 +111,7 @@ theorem exists_local_sourcePsi_uniformHeadCoordinateBound
     ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
       ∃ K : ℕ, H ≤ K ∧ ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         (∀ t ∈ U, ∀ m : ℤ,
@@ -126,7 +127,7 @@ theorem exists_local_sourcePsi_uniformHeadCoordinateBound
               ∀ m : ℤ, m.natAbs ≤ K →
                 ‖sourcePsiEquationCoordinate hp hp1 n m
                   (a : Coeff p) ψ (c m) (R m)‖ ≤ C := by
-  obtain ⟨Ureg,hUregOpen,hbaseReg,Nreg,Kreg,c,R,hchoice,hgeom,
+  obtain ⟨Ureg,hUregOpen,hbaseReg,Nreg,Kreg,c,R,hcReal,hchoice,hgeom,
       Mreg,hMreg,hmajor⟩ :=
     exists_local_sourcePsi_distantDeleted_uniformRegularFactorMajorant
       hp hp1 φ hφ a₀
@@ -171,7 +172,7 @@ theorem exists_local_sourcePsi_uniformHeadCoordinateBound
   have hB : 0 ≤ B := by dsimp [B]; positivity
   have hCdist : 0 ≤ Cdist := by dsimp [Cdist]; positivity
   have hC : 0 ≤ C := le_max_of_le_left hMfin
-  refine ⟨U,hUopen,hbase,K,hHK,c,R,hchoiceK,?_,C,hC,?_⟩
+  refine ⟨U,hUopen,hbase,K,hHK,c,R,hcReal,hchoiceK,?_,C,hC,?_⟩
   · intro t ht m
     exact hgeom t ht.1.1 m
   intro n a ψ hpair m hmK

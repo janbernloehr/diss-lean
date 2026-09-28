@@ -88,6 +88,7 @@ theorem exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
     ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
       ∃ K : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         (∀ t ∈ U, ∀ m : ℤ,
@@ -102,8 +103,8 @@ theorem exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
             ∀ m : ℤ, ∀ z ∈ closedBall (c m) (R m),
               ‖sourceSingleRootQuotientJointProduct hp hp1 m
                 (z,t)-1‖ ≤ ‖B m‖ := by
-  obtain ⟨Kgeom,Vgeom,hVgeomOpen,hφVgeom,c,R,hchoice,hgeom⟩ :=
-    exists_local_sourcePsi_allGap_contourFamily hp hp1 φ hφ
+  obtain ⟨Kgeom,Vgeom,hVgeomOpen,hφVgeom,c,R,hcReal,hchoice,hgeom⟩ :=
+    exists_local_sourcePsi_allGap_realCenteredContourFamily hp hp1 φ hφ
   let T : ℝ := ‖a₀‖+1
   have hT : 0 ≤ T := by dsimp [T]; positivity
   obtain ⟨N,ε,hε,Vtail,hVtailOpen,hφVtail,Ktail,hNK,
@@ -130,7 +131,7 @@ theorem exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
     hchoice m (by dsimp [K] at hm; omega)
   let M : ℝ := s.card*Mhead+Mtail
   have hM : 0 ≤ M := by dsimp [M]; positivity
-  refine ⟨U,hUopen,hbase,K,c,R,htailChoice,?_,M,hM,?_⟩
+  refine ⟨U,hUopen,hbase,K,c,R,hcReal,htailChoice,?_,M,hM,?_⟩
   · intro t ht m
     exact hgeom t.2 ht.2.2.2 m
   intro t ht
