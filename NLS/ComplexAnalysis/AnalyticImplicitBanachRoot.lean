@@ -19,7 +19,9 @@ variable {E P : Type*}
   [NormedAddCommGroup P] [NormedSpace ℂ P] [CompleteSpace P]
 
 omit [CompleteSpace E] [CompleteSpace P] in
-private theorem bijective_banach_triangular_derivative
+/-- A bijective partial derivative makes the derivative of the joint
+equation and parameter map bijective. -/
+theorem bijective_banach_triangular_derivative
     (A : (E × P) →L[ℂ] E)
     (hQ : Function.Bijective
       (A.comp (ContinuousLinearMap.inl ℂ E P))) :

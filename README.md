@@ -3669,3 +3669,11 @@ equation's already established holomorphy.
 the same selected contour family as the real-locus Jacobian
 isomorphism and conditional analytic branch. Higher complex smoothness
 or a direct power-series proof remains necessary for joint analyticity.
+
+`BanachC1ImplicitRoot.lean` proves a constructive `C¹` implicit-zero
+theorem for Banach-valued unknowns and parameters.
+`SourcePsiC1ImplicitStep.lean` applies it to the selected psi equation:
+each real zero in the open retained-root domain extends to a local `C¹`
+zero branch, and the branch remains in that domain near its base point.
+This local existence no longer assumes joint analyticity; proving
+real-analytic dependence and global continuation remains open.
