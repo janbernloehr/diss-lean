@@ -3385,5 +3385,6 @@ uniform scalar diagonal nonvanishing theorem to this bounded operator:
 both selected contour families are free-centered beyond a common row
 cutoff, so the operator's diagonal entries are nonzero on every distant
 retained row of the real quarter-π root locus. Finite-head spectral
-separation and a common off-diagonal row majorant for the selected
-operator still require assembly.
+separation still requires assembly. `SourcePsiSelectedJacobianOffDiagonalTail.lean`
+likewise transfers the scalar `ℓᵖ` row majorant to the off-diagonal
+entries of the bounded operator on a common free-centered tail.
