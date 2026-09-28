@@ -135,4 +135,163 @@ theorem weighted_sourceStandardRoot_circle_real_mean_value_of_local_nested_midpo
     hp hp1 ψ hreal n hopen g U hUopen hgapU hg
       c₀ r₀ R hr₀ hseg₀ hR hUdisc hnest
 
+/-- The mean-value formula also applies when a midpoint circle sits
+strictly inside the chosen enclosing circle. Analyticity on the closed
+outer disc suffices; no extension beyond its boundary is needed. -/
+theorem weighted_sourceStandardRoot_outerCircle_real_mean_value_of_local_innerMidpoint
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re)
+    (g : ℂ → ℂ)
+    (hgreal : ∀ z ∈ standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n), (g z).im = 0)
+    (c₀ : ℂ) (r₀ : ℝ) (hr₀ : 0 < r₀)
+    (hseg₀ : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c₀ r₀)
+    (hgap₀ : standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n) ⊆ ball c₀ r₀)
+    (hg : AnalyticOnNhd ℂ g (closedBall c₀ r₀))
+    (R : ℝ) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    d < R → closedBall c R ⊆ ball c₀ r₀ →
+      ∃ μ ∈ standardRootGapSegment
+        (sourceStandardRootMidpoint hp hp1 ψ n)
+        (sourceStandardRootHalfGap hp hp1 ψ n),
+        (2 * (Real.pi : ℂ) * Complex.I)⁻¹ *
+          (∮ z in C(c₀,r₀), g z / sourceStandardRoot hp hp1 ψ n z) = -g μ := by
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+  let d : ℝ := (r.re-l.re)/2
+  dsimp only
+  intro hR hinner
+  have hd : 0 < d := by
+    change 0 < (r.re-l.re)/2
+    exact div_pos (sub_pos.mpr hopen) (by norm_num)
+  have hRpos : 0 < R := lt_trans hd hR
+  have hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R := by
+    have hm := sourcePeriodicSegment_subset_midpoint_ball
+      hp hp1 ψ hreal n (R-d) (sub_pos.mpr hR)
+    change sourcePeriodicSegment hp hp1 ψ n ⊆ ball c (d+(R-d)) at hm
+    rwa [show d+(R-d)=R by ring] at hm
+  have hgInner : AnalyticOnNhd ℂ g (ball c₀ r₀) :=
+    hg.mono ball_subset_closedBall
+  obtain ⟨μ,hμ,hvalue⟩ :=
+    weighted_sourceStandardRoot_midpointCircle_real_mean_value_of_local_disc
+      hp hp1 ψ hreal n hopen g (ball c₀ r₀) isOpen_ball hgap₀
+        hgInner hgreal R hR hinner
+  refine ⟨μ,hμ,?_⟩
+  rw [← hvalue]
+  congr 1
+  exact (circleIntegral_weighted_sourceStandardRoot_eq_of_local_nestedCircles
+    hp hp1 ψ n g (closedBall c₀ r₀) hg c c₀ R r₀
+      hRpos hr₀ hseg hseg₀
+      (hinner.trans ball_subset_closedBall) Subset.rfl).symm
+
+/-- An open real gap enclosed by a real-centered circle has a smaller
+midpoint circle whose closed disc lies strictly inside the outer disc. -/
+theorem exists_sourceStandardRoot_innerMidpointDisc_of_realCenteredCircle
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (_hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re)
+    (x q : ℝ)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball (x:ℂ) q) :
+    let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n
+    let c : ℂ := (((l.re+r.re)/2 : ℝ) : ℂ)
+    let d : ℝ := (r.re-l.re)/2
+    ∃ ρ : ℝ, d < ρ ∧ closedBall c ρ ⊆ ball (x:ℂ) q := by
+  let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let r := canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) n
+  let m : ℝ := (l.re+r.re)/2
+  let d : ℝ := (r.re-l.re)/2
+  let c : ℂ := (m:ℂ)
+  have him := canonicalPeriodicEndpoints_im_eq_zero_of_realType
+    hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ)
+      (isRealType_periodOnePotential ψ hreal) n
+  have hl : |l.re-x| < q := by
+    have h := hseg (show l ∈ sourcePeriodicSegment hp hp1 ψ n from
+      left_mem_segment ℝ _ _)
+    simpa only [mem_ball, sourceRealPoints_dist_eq_abs_re_sub l (x:ℂ)
+      him.1 (by simp), Complex.ofReal_re] using h
+  have hr : |r.re-x| < q := by
+    have h := hseg (show r ∈ sourcePeriodicSegment hp hp1 ψ n from
+      right_mem_segment ℝ _ _)
+    simpa only [mem_ball, sourceRealPoints_dist_eq_abs_re_sub r (x:ℂ)
+      him.2 (by simp), Complex.ofReal_re] using h
+  have hroom : d+|m-x| < q := by
+    rcases le_total x m with hxm | hmx
+    · rw [abs_of_nonneg (sub_nonneg.mpr hxm)]
+      dsimp [m,d]
+      have hright := (abs_lt.mp hr).2
+      linarith
+    · rw [abs_of_nonpos (sub_nonpos.mpr hmx)]
+      dsimp [m,d]
+      have hleft := (abs_lt.mp hl).1
+      linarith
+  let η := (q-(d+|m-x|))/2
+  have hη : 0 < η := by dsimp [η]; linarith
+  let ρ := d+η
+  have hdρ : d < ρ := by dsimp [ρ]; linarith
+  have hnestBound : ρ+dist c (x:ℂ) < q := by
+    have hcx : dist c (x:ℂ) = |m-x| := by
+      exact sourceRealPoints_dist_eq_abs_re_sub c (x:ℂ)
+        (by simp [c]) (by simp)
+    rw [hcx]
+    dsimp [ρ,η]
+    linarith
+  exact ⟨ρ,hdρ,Metric.closedBall_subset_ball' hnestBound⟩
+
+/-- A real analytic numerator on a real gap has a real normalized
+mean value on every real-centered enclosing circle within its analytic
+disc. -/
+theorem weighted_sourceStandardRoot_realCenteredCircle_real_mean_value
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ)
+    (hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re)
+    (g : ℂ → ℂ)
+    (hgreal : ∀ z ∈ standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n), (g z).im = 0)
+    (x q : ℝ) (hq : 0 < q)
+    (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball (x:ℂ) q)
+    (hgap : standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n) ⊆ ball (x:ℂ) q)
+    (hg : AnalyticOnNhd ℂ g (closedBall (x:ℂ) q)) :
+    ∃ μ ∈ standardRootGapSegment
+      (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n),
+      (2 * (Real.pi : ℂ) * Complex.I)⁻¹ *
+        (∮ z in C((x:ℂ),q), g z / sourceStandardRoot hp hp1 ψ n z) = -g μ := by
+  obtain ⟨ρ,hρ,hnest⟩ :=
+    exists_sourceStandardRoot_innerMidpointDisc_of_realCenteredCircle
+      hp hp1 ψ hreal n hopen x q hseg
+  exact weighted_sourceStandardRoot_outerCircle_real_mean_value_of_local_innerMidpoint
+    hp hp1 ψ hreal n hopen g hgreal (x:ℂ) q hq hseg hgap hg ρ hρ hnest
+
 end NLS.ZakharovShabat

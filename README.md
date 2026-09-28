@@ -3165,3 +3165,11 @@ source data and real displaced roots. Combining this with the
 open-gap mean-value result shows that every sufficiently distant
 coordinate is real on the real locus. The finitely many selected head
 coordinates remain to complete Lemma 12.4's real-valued conclusion.
+`SourceStandardRootWeightedLocalRealMeanValue.lean` now proves the
+real mean-value formula for an outer real-centered circle by nesting a
+smaller midpoint circle inside it. `SourcePsiRealCenteredOpenGap.lean`
+applies that formula to the factorized psi equation on any real-centered
+open-gap contour whose weighted regular factor is analytic across the
+filled disc. This removes the free-center geometry restriction from
+the open-gap reality argument; selecting such analytic head contours
+uniformly is the next step.
