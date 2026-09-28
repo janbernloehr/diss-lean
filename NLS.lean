@@ -1000,6 +1000,7 @@ import NLS.ZakharovShabat.SourcePsiJacobianUniformDiagonalTail
 import NLS.ZakharovShabat.SourceDisplacedRootsProper
 import NLS.ZakharovShabat.SourcePsiDeletedProductNonzero
 import NLS.ZakharovShabat.SourcePsiJacobianAllGapNonzero
+import NLS.ZakharovShabat.SourcePsiSelectedJacobianEntry
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet

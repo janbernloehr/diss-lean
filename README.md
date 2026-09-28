@@ -3375,3 +3375,13 @@ localized real-root locus, the same neighborhood and initial row
 cutoff make every distant diagonal entry nonzero uniformly in the
 deleted index and parameter pair. The earlier parameter-dependent
 cutoff remains available without root localization.
+`SourcePsiSelectedJacobianEntry.lean` defines the bounded root-direction
+Fréchet Jacobian of the locally selected sequence-valued psi equation.
+On the common open set where the selected sequence agrees with its
+scalar contour formulas, applying this operator to a retained
+coordinate vector gives exactly the corresponding scalar contour
+derivative. This supplies the entry identity needed to transfer the
+scalar estimates to the sequence-valued Jacobian once their selected
+contour families are aligned. Finite-head spectral separation and a
+common off-diagonal row majorant for the selected operator still
+require assembly.
