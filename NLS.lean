@@ -1040,6 +1040,7 @@ import NLS.ZakharovShabat.SourcePsiFreeRealBranch
 import NLS.ZakharovShabat.SourcePsiLocalRealBranch
 import NLS.ZakharovShabat.SourcePsiGapRootTailBound
 import NLS.ZakharovShabat.SourcePsiGapRootSubsequence
+import NLS.ZakharovShabat.SourcePsiGapRootLimitPlacement
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros

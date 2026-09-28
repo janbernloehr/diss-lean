@@ -3721,5 +3721,8 @@ truncation tails into a norm-convergent subsequence in the coefficient
 space. `SourcePsiGapRootSubsequence.lean` applies it when source
 potentials converge and retained roots lie in their assigned periodic
 gaps: a subsequence of the deleted-root vectors converges in `ℓᵖ`.
-The next continuation step must show that the limiting roots stay in
-their limiting gaps and satisfy the selected equation.
+`SourcePsiGapRootLimitPlacement.lean` shows that the limit remains in
+the periodic gaps of a real-type limiting source. It uses endpoint
+continuity and a closedness argument for moving line segments. The
+next continuation step must show that the limiting roots satisfy the
+selected equation.
