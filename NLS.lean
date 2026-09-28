@@ -987,6 +987,7 @@ import NLS.ZakharovShabat.SourcePsiQuotientTailNonzero
 import NLS.ZakharovShabat.SourcePsiJacobianDiagonalAsymptotic
 import NLS.ZakharovShabat.SourcePsiJacobianDiagonalTail
 import NLS.ZakharovShabat.SourcePsiJacobianCollapsedDiagonal
+import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalMeanValue
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet

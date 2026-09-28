@@ -3278,3 +3278,9 @@ open gaps, then combines both cases under a quotient majorant on the
 selected contour disc. The remaining work is to supply one locally
 uniform majorant and contour hypotheses across the actual domain
 `Ωp`, then establish the off-diagonal estimates and operator results.
+`SourcePsiJacobianOffDiagonalMeanValue.lean` proves the open-real-gap
+mean-value identity for an off-diagonal Jacobian entry. The attained
+value contains the root ratio `(σ_m-μ)/(σ_k-μ)` times the same regular
+quotient used in the diagonal estimate. Quantitative separation of
+these roots and control of the selected gap are the next steps toward
+the `ℓᵖ_m/|m-k|` bound in Lemma 12.5.
