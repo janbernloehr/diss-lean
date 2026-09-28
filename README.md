@@ -3180,3 +3180,9 @@ centers and is preserved on a shared source neighborhood. The earlier
 contour-family interface remains available for existing analytic and
 norm estimates. Head-coordinate reality still needs the regular-factor
 analyticity and finite-index cases connected to this family.
+`SourcePsiRealCenteredShiftedDisc.lean` connects lattice separation to
+the new open-gap theorem. It proves that a deleted free root outside a
+selected shifted head disc makes the weighted regular factor analytic
+throughout that disc; the corresponding open real-gap psi coordinate is
+then real. The remaining head argument must handle collapsed gaps and
+patch the finite family uniformly.
