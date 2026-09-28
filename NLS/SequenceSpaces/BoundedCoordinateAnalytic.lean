@@ -137,4 +137,27 @@ theorem exists_uniform_taylor_bound_of_bounded_coordinatewise
         (hAcoord v n).symm
   rwa [heq]
 
+/-- Coordinatewise analyticity plus norm continuity gives local norm
+bounds automatically, hence Banach-space analyticity. -/
+theorem analyticOnNhd_of_coordinatewise_of_continuousOn
+    (f : E → Coeff q) {V : Set E} (hVopen : IsOpen V)
+    (hcoord : ∀ n : ℤ, AnalyticOnNhd ℂ (fun x => f x n) V)
+    (hcont : ContinuousOn f V) : AnalyticOnNhd ℂ f V := by
+  intro c hc
+  have hcontAt : ContinuousAt f c :=
+    (hcont c hc).continuousAt (hVopen.mem_nhds hc)
+  obtain ⟨R,hR,hball⟩ := Metric.mem_nhds_iff.mp
+    (hcontAt (ball_mem_nhds (f c) (by norm_num : (0 : ℝ) < 1)))
+  let W : Set E := ball c R ∩ V
+  have hWopen : IsOpen W := isOpen_ball.inter hVopen
+  have hcW : c ∈ W := ⟨mem_ball_self hR,hc⟩
+  have hWcoord (n : ℤ) : AnalyticOnNhd ℂ (fun x => f x n) W :=
+    (hcoord n).mono (fun _ hx => hx.2)
+  have hbound (x : E) (hx : x ∈ W) : ‖f x‖ ≤ ‖f c‖+1 := by
+    have hdist : ‖f x-f c‖ < 1 := by
+      simpa only [Set.mem_preimage, mem_ball, dist_eq_norm] using hball hx.1
+    exact (norm_le_norm_sub_add (f x) (f c)).trans (by linarith)
+  exact (analyticOnNhd_of_bounded_coordinatewise f hWopen hWcoord
+    (‖f c‖+1) hbound) c hcW
+
 end NLS.Coeff

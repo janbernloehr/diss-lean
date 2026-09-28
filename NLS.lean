@@ -986,6 +986,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalEquationSequenceBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
 import NLS.ZakharovShabat.SourcePsiGlobalEquationLinePowerSeries
 import NLS.ZakharovShabat.SourcePsiGlobalEquationTaylorTruncation
+import NLS.ZakharovShabat.SourcePsiSelectedJacobianAnalytic
 import NLS.ZakharovShabat.SourcePsiGlobalRealJacobian
 import NLS.ZakharovShabat.SourcePsiRealGapQuotient
 import NLS.ZakharovShabat.SourcePsiRealTailOpenGap

@@ -3174,6 +3174,10 @@ analyticity of the selected psi equation near each real-type base.
 The assembled coefficients equal its actual Fréchet Taylor
 coefficients, so the same geometric norm bound holds for the full
 sequence-valued equation, not only its finite truncations.
+`SourcePsiSelectedJacobianAnalytic.lean` upgrades the specific selected
+contour chart used for the invertible root Jacobian to an analytic
+deleted-space equation. Its proof uses continuity to obtain a local
+norm bound and the chart's scalar contour formulas for analyticity.
 The equation's real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
