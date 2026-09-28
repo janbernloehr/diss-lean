@@ -3148,9 +3148,12 @@ a local norm bound. The new `BanachHolomorphicLineBounds.lean` applies
 Banach-valued Cauchy estimates on parameter balls. For this selected
 equation it gives one radius and norm constant that bound the Taylor
 derivatives on every complex line through a real-type base, uniformly
-over unit directions and derivative orders. A joint multilinear
-power series is still needed. Its real-locus compatibility is
-established below.
+over unit directions and derivative orders.
+`SourcePsiGlobalEquationLinePowerSeries.lean` now proves that these
+Banach-valued line restrictions actually equal power series on one
+common disc, independent of the unit direction. The next task is to
+assemble their coefficients into a joint multilinear power series.
+The equation's real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
 psi quotient is real on the real spectral axis away from the other

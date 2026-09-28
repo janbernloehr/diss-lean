@@ -983,6 +983,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalHeadKernelBound
 import NLS.ZakharovShabat.SourcePsiGlobalHeadCoordinateBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationSequenceBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
+import NLS.ZakharovShabat.SourcePsiGlobalEquationLinePowerSeries
 import NLS.ZakharovShabat.SourcePsiGlobalRealJacobian
 import NLS.ZakharovShabat.SourcePsiRealGapQuotient
 import NLS.ZakharovShabat.SourcePsiRealTailOpenGap

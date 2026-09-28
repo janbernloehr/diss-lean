@@ -10,6 +10,7 @@ The codomain may be any complex Banach space.
 
 noncomputable section
 open Set Metric Complex
+open scoped NNReal
 namespace NLS.ComplexAnalysis
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
@@ -47,5 +48,35 @@ theorem norm_iteratedDeriv_affineLine_le_of_ball_bound
     hb _ (hinside z (sphere_subset_closedBall hz))
   exact Complex.norm_iteratedDeriv_le_of_forall_mem_sphere_norm_le
     k hr hdc hbound
+
+/-- On the same radius for every unit direction, the restriction of
+a Banach-holomorphic map to a complex line is represented by a
+Banach-valued power series. -/
+theorem exists_linePowerSeriesOnBall_of_ball_differentiable
+    (f : E → F) (x : E) (r : ℝ≥0) (hr : 0 < r)
+    (hf : DifferentiableOn ℂ f (ball x (2*(r : ℝ))))
+    (v : E) (hv : ‖v‖ ≤ 1) :
+    ∃ P : FormalMultilinearSeries ℂ ℂ F,
+      HasFPowerSeriesOnBall
+        (fun z : ℂ => f (x+z • v)) P 0 r := by
+  have hinside (z : ℂ) (hz : z ∈ closedBall 0 (r : ℝ)) :
+      x+z • v ∈ ball x (2*(r : ℝ)) := by
+    have hz' : ‖z‖ ≤ (r : ℝ) := by
+      simpa only [mem_closedBall, dist_zero_right] using hz
+    have hv' : 0 ≤ ‖v‖ := norm_nonneg _
+    have hz0 : 0 ≤ ‖z‖ := norm_nonneg _
+    have hr0 : 0 < (r : ℝ) := by exact_mod_cast hr
+    have hmul : ‖z‖ * ‖v‖ ≤ (r : ℝ) := by nlinarith
+    simpa only [mem_ball, dist_eq_norm, add_sub_cancel_left, norm_smul] using
+      (show ‖z‖ * ‖v‖ < 2*(r : ℝ) by linarith)
+  have hdiff : DifferentiableOn ℂ
+      (fun z : ℂ => f (x+z • v)) (closedBall 0 (r : ℝ)) := by
+    intro z hz
+    have hzU := hinside z hz
+    have hinner : DifferentiableAt ℂ (fun w : ℂ => x+w • v) z := by
+      fun_prop
+    exact (((hf _ hzU).differentiableAt
+      (isOpen_ball.mem_nhds hzU)).comp z hinner).differentiableWithinAt
+  exact ⟨_, hdiff.hasFPowerSeriesOnBall hr⟩
 
 end NLS.ComplexAnalysis
