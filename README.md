@@ -3516,3 +3516,9 @@ Pairwise disjoint isolating discs supply the needed separation. Thus a
 deleted direction is zero if its entire-numerator variation vanishes
 at every retained root; proving that vanishing from the Jacobian kernel
 and interpolation remains the next part of Lemma 12.7.
+`SourcePsiCandidateEntireVariation.lean` defines that variation as the
+Fréchet derivative of the psi numerator in a root-sequence direction.
+It is entire in the spectral variable and equals the derivative along
+the affine root-sequence line. If it vanishes identically, the new
+root-variation and simple-root lemmas show that the deleted direction
+is zero under the local isolating-disc hypotheses.
