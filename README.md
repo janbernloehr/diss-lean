@@ -3504,3 +3504,8 @@ of a bijective diagonal through it. The local selected-Jacobian theorem
 now concludes bijectivity from injectivity under its isolating-disc
 hypotheses. This establishes the operator step of Corollary 12.8;
 the injectivity proof of Lemma 12.7 is still to be formalized.
+`SourcePsiCandidateRootVariation.lean` starts that proof at the entire
+numerator. Differentiating its zero identity along a moving retained
+root gives the exact relation between the root-sequence variation and
+the spectral derivative. At a simple retained root, vanishing of the
+variation forces the corresponding direction coefficient to vanish.
