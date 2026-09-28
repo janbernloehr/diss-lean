@@ -3822,4 +3822,10 @@ local complex branch in operator norm and proves a quadratic first-order
 remainder. `SourceRealTypeQuadraticRemainder.lean` identifies its linear
 term with the real Fréchet derivative of the canonical root map on the
 real-type Banach source space, giving a local quadratic remainder there.
-Joint Banach-space analyticity remains to be proved.
+`SourcePsiGapRootAnalyticReduction.lean` applies the Banach analytic
+implicit theorem to the anchored canonical branch and restricts it to
+the real-type source space. It reduces real analyticity of the full
+canonical root map to joint power-series analyticity of the selected
+psi equation in its contour chart. That equation analyticity remains
+to be proved; the existing chart result gives Fréchet holomorphy and
+`C¹` regularity.

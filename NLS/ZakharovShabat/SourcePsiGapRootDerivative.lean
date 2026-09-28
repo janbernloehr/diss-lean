@@ -32,6 +32,8 @@ theorem exists_sourcePsiGapRoot_derivative_equation
         Function.Bijective
           (sourcePsiSelectedRootJacobian hp hp1 n c R
             (sourcePsiGapRoot hp hp1 n φ) φ.val) ∧
+        (∀ᶠ χ in 𝓝 φ.val,
+          sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0) ∧
         ∀ h : CoeffPair p,
           (sourcePsiSelectedRootJacobian hp hp1 n c R
             (sourcePsiGapRoot hp hp1 n φ) φ.val)
@@ -101,6 +103,7 @@ theorem exists_sourcePsiGapRoot_derivative_equation
   refine ⟨c₀,R₀,s,hs,hsroot,hrootEvent,?_⟩
   have hbro : b = sourcePsiGapRoot hp hp1 n φ := hba
   rw [← hbro]
-  exact ⟨hbij,fun h => by simpa only [F] using hderiv h⟩
+  exact ⟨hbij,by simpa only [F] using hzeros,
+    fun h => by simpa only [F] using hderiv h⟩
 
 end NLS.ZakharovShabat
