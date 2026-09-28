@@ -3193,18 +3193,24 @@ On one neighborhood of an arbitrary real-type source, every coordinate
 of the selected psi equation is real for all sufficiently distant
 deleted indices and every real displaced-root input. This includes
 shifted head contours, free tail contours, open gaps, and collapsed
-gaps. The finitely many remaining deleted indices still need a separate
-real-locus argument before the global Lemma 12.4 construction can be
-declared real-valued.
-`SourceStandardRootConjugation.lean` begins the remaining finite-index
-argument: for real-type source data, every standard root commutes with
+gaps. The finite deleted-index cases are addressed by the reflection
+argument below.
+`SourceStandardRootConjugation.lean` proves that for real-type source
+data, every standard root commutes with
 complex conjugation off its gap, and the full canonical root acquires
 the expected minus sign from its `2i` normalization. This reflection
 identity applies on the gap complement without requiring the deleted
-free root to lie outside a selected head disc. The numerator and contour
-integral reflection steps remain to be formalized.
+free root to lie outside a selected head disc.
 `SourcePsiContourConjugation.lean` proves the entire deleted numerator
 commutes with conjugation for real displaced roots and the full psi
 contour integrand is anti-conjugate on the real-type gap complement.
-The remaining step is to formalize reflection of the real-centered
-circle integral itself and apply it to the finite deleted indices.
+`RealCircleIntegralReflection.lean` proves that an anti-conjugate
+integrand has a real circle integral about a real center.
+`SourcePsiContourConjugation.lean` applies it to every psi equation
+coordinate without requiring the deleted free root outside the disc.
+`SourcePsiGlobalRealCoordinates.lean` combines this with the common
+real-centered contour family: all selected coordinates are real on the
+real locus, for every deleted index and every gap. To obtain the full
+real-valued analytic map of Lemma 12.4, this real-centered family must
+also be carried through the existing global norm and analyticity
+construction.

@@ -970,6 +970,8 @@ import NLS.ZakharovShabat.SourcePsiRealCenteredShiftedDisc
 import NLS.ZakharovShabat.SourcePsiGlobalRealDistantDeleted
 import NLS.ZakharovShabat.SourceStandardRootConjugation
 import NLS.ZakharovShabat.SourcePsiContourConjugation
+import NLS.ComplexAnalysis.RealCircleIntegralReflection
+import NLS.ZakharovShabat.SourcePsiGlobalRealCoordinates
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

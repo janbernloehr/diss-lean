@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourceStandardRootConjugation
 import NLS.ZakharovShabat.SourcePsiContourAnalytic
+import NLS.ComplexAnalysis.RealCircleIntegralReflection
 
 /-!
 # Conjugation symmetry of the psi contour integrand
@@ -81,5 +82,30 @@ theorem sourcePsiContourIntegrandJoint_conj_of_real_data
     sourceCanonicalRoot_conj_of_realType hp hp1 ψ hreal z hz]
   rw [map_div₀]
   ring
+
+/-- For real-type source data and real displaced roots, the psi
+equation coordinate is real on every real-centered contour lying in
+the canonical-root domain. The deleted free root may lie inside the
+circle; only its boundary must avoid the spectral gaps. -/
+theorem sourcePsiEquationCoordinate_im_eq_zero_of_realCenteredCircle
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n m : ℤ) (a : Coeff p)
+    (hroots : ∀ k : ℤ, (displacedRoots a k).im = 0)
+    (x R : ℝ) (hR : 0 < R)
+    (hcircle : Metric.sphere (x:ℂ) R ⊆
+      sourceCanonicalRootDomain hp hp1 ψ) :
+    (sourcePsiEquationCoordinate hp hp1 n m a ψ (x:ℂ) R).im = 0 := by
+  have hJ : (∮ z in C((x:ℂ),R),
+      sourcePsiContourIntegrandJoint hp hp1 n (z,(a,ψ))).im = 0 :=
+    NLS.ComplexAnalysis.circleIntegral_im_eq_zero_of_anti_conj
+      (fun z => sourcePsiContourIntegrandJoint hp hp1 n (z,(a,ψ)))
+        x R hR (by
+          intro z hz
+          exact sourcePsiContourIntegrandJoint_conj_of_real_data
+            hp hp1 ψ hreal n a hroots z (hcircle hz))
+  rw [sourcePsiEquationCoordinate_eq_raw_circleIntegral]
+  simp [Complex.mul_im,hJ]
 
 end NLS.ZakharovShabat
