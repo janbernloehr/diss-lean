@@ -17,6 +17,8 @@ the limiting deleted roots solve its equation. Root placement makes the
 Jacobian invertible there, yielding a locally unique `C¹` branch.
 For nearby real-type sources, conjugation and the gap-zero theorem keep
 the branch real and gap-contained.
+Contour invariance also makes the branch locally unique among zeros
+written in any other valid real-centered contour family.
 -/
 
 noncomputable section
@@ -29,7 +31,8 @@ deleted roots solving valid real-centered selected equations has a
 strongly convergent subsequence whose gap-contained limit solves a
 local selected equation in a `C¹` chart with bijective root Jacobian
 and a locally unique implicit branch whose nearby real-type values
-remain in the periodic gaps. -/
+remain in the periodic gaps. Local uniqueness is independent of the
+valid real-centered contour family used to express a nearby zero. -/
 theorem exists_limit_sourcePsi_gap_solution
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -77,6 +80,21 @@ theorem exists_limit_sourcePsi_gap_solution
             (∀ b' : DeletedCoeff p n, ∀ χ : CoeffPair p,
               (b',χ) ∈ V →
               sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ b' χ = 0 →
+              b' = s χ) ∧
+            (∀ b' : DeletedCoeff p n, ∀ χ : CoeffPair p,
+              ∀ c' : ℤ → ℂ, ∀ R' : ℤ → ℝ,
+              (b',χ) ∈ U ∩ V →
+              IsRealType (CoeffPair.toMax p χ) →
+              (∀ m, (c' m).im = 0) →
+              (∀ m, 0 < R' m ∧
+                sourcePeriodicSegment hp hp1 χ m ⊆ ball (c' m) (R' m) ∧
+                closedBall (c' m) (R' m) ⊆
+                  sourceStandardRootOmittedDomain hp hp1 χ m) →
+              (∀ m,
+                (sourcePsiSelectedEquationSequence hp hp1 n c' R' b' χ : Coeff p) m =
+                  sourcePsiEquationCoordinate hp hp1 n m
+                    (b' : Coeff p) χ (c' m) (R' m)) →
+              sourcePsiSelectedEquationSequence hp hp1 n c' R' b' χ = 0 →
               b' = s χ) ∧
             ∀ᶠ χ in 𝓝 φ,
               sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ (s χ) χ = 0 ∧
@@ -219,7 +237,35 @@ theorem exists_limit_sourcePsi_gap_solution
         (hgeom₀ (s χ,χ) hplace.1) hfilled
         (hcoord₀ (s χ,χ) hplace.1) hzeroχ
     exact ⟨hdisplacedReal,hgapRoots⟩
+  have hchartUnique : ∀ b' : DeletedCoeff p n, ∀ χ : CoeffPair p,
+      ∀ c' : ℤ → ℂ, ∀ R' : ℤ → ℝ,
+      (b',χ) ∈ U ∩ V →
+      IsRealType (CoeffPair.toMax p χ) →
+      (∀ m, (c' m).im = 0) →
+      (∀ m, 0 < R' m ∧
+        sourcePeriodicSegment hp hp1 χ m ⊆ ball (c' m) (R' m) ∧
+        closedBall (c' m) (R' m) ⊆
+          sourceStandardRootOmittedDomain hp hp1 χ m) →
+      (∀ m,
+        (sourcePsiSelectedEquationSequence hp hp1 n c' R' b' χ : Coeff p) m =
+          sourcePsiEquationCoordinate hp hp1 n m
+            (b' : Coeff p) χ (c' m) (R' m)) →
+      sourcePsiSelectedEquationSequence hp hp1 n c' R' b' χ = 0 →
+      b' = s χ := by
+    intro b' χ c' R' hmem hreal hcenter' hgeom' hcoord' hzero'
+    have hEq :=
+      sourcePsiSelectedEquationSequence_eq_of_realCentered_enclosingCircles
+        hp hp1 n b' χ hreal c₀ c' R₀ R'
+        hcenter₀ hcenter'
+        (fun m => (hgeom₀ (b',χ) hmem.1 m).1)
+        (fun m => (hgeom' m).1)
+        (fun m => (hgeom₀ (b',χ) hmem.1 m).2.1)
+        (fun m => (hgeom' m).2.1)
+        (fun m => (hgeom₀ (b',χ) hmem.1 m).2.2.1)
+        (fun m => (hgeom' m).2.2)
+        (hcoord₀ (b',χ) hmem.1) hcoord'
+    exact hunique b' χ hmem.2 (hEq.trans hzero')
   exact ⟨b,σ,U,c₀,R₀,hσ,hb,hbgap,hUopen,hbase,hC1,
-    hlimitZero,hbijAt,s,V,hVopen,hVbase,hs,hsb,hunique,hrealGap⟩
+    hlimitZero,hbijAt,s,V,hVopen,hVbase,hs,hsb,hunique,hchartUnique,hrealGap⟩
 
 end NLS.ZakharovShabat

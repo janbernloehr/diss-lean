@@ -3770,4 +3770,6 @@ Jacobian is bijective. The implicit theorem then gives a locally
 unique `C¹` solution branch through the limit. Conjugation symmetry
 and the all-gap zero theorem show that, for every sufficiently nearby
 real-type source, this branch has real roots in the assigned periodic
-gaps.
+gaps. Within the local uniqueness neighborhood, any zero expressed
+using another valid real-centered contour family agrees with the same
+branch. This makes local uniqueness independent of the contour chart.
