@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.SourcePsiGlobalEquationSequenceBound
 import NLS.SequenceSpaces.BoundedCoordinateDifferentiable
 import NLS.ZakharovShabat.SourcePsiContourConjugation
+import NLS.ComplexAnalysis.BanachHolomorphicLineBounds
 
 /-!
 # Holomorphy of the global psi equation sequence
@@ -192,5 +193,43 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
       (fun t ht m => hcluster ((t.1 : Coeff p),t.2) ht.1 m),
       hdisjoint,hfilled⟩,C,hC,
     (fun t ht m => hcoord t ht m),hbound,hrealCoord,hdeleted⟩
+
+/-- The selected equation on an anchored contour chart has Cauchy
+bounds for its Banach-valued Taylor coefficients along every complex
+line through a real-type base point. The same radius and norm constant
+work for all unit directions and all derivative orders. -/
+theorem exists_local_sourcePsi_globalEquation_uniformLineTaylorBound
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, ∃ r C : ℝ,
+      0 < r ∧ 0 ≤ C ∧
+      ∀ v : DeletedCoeff p n × CoeffPair p, ‖v‖ ≤ 1 →
+        ∀ k : ℕ,
+          ‖iteratedDeriv k
+            (fun z : ℂ =>
+              sourcePsiSelectedEquationSequence hp hp1 n c R
+                (((a₀,φ) + z • v).1) (((a₀,φ) + z • v).2)) 0‖ ≤
+            k.factorial * C / r^k := by
+  obtain ⟨U,hUopen,hbase,_,c,R,_,_,_,_,C,hC,_,hbound,_,hFdiff⟩ :=
+    exists_local_sourcePsi_globalEquation_formula_analytic hp hp1 φ hφ n a₀
+  let x : DeletedCoeff p n × CoeffPair p := (a₀,φ)
+  let F : DeletedCoeff p n × CoeffPair p → DeletedCoeff p n :=
+    fun t => sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2
+  obtain ⟨δ,hδ,hball⟩ := Metric.isOpen_iff.mp hUopen x hbase
+  let r : ℝ := δ/3
+  have hr : 0 < r := by dsimp [r]; positivity
+  have hball2 : ball x (2*r) ⊆ U :=
+    (ball_subset_ball (by dsimp [r]; linarith)).trans hball
+  have hdiff : DifferentiableOn ℂ F (ball x (2*r)) :=
+    hFdiff.mono hball2
+  have hnorm (t : DeletedCoeff p n × CoeffPair p)
+      (ht : t ∈ ball x (2*r)) : ‖F t‖ ≤ C :=
+    hbound t (hball2 ht)
+  refine ⟨c,R,r,C,hr,hC,?_⟩
+  intro v hv k
+  exact NLS.ComplexAnalysis.norm_iteratedDeriv_affineLine_le_of_ball_bound
+    F x r C hr hdiff hnorm v hv k
 
 end NLS.ZakharovShabat

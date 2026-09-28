@@ -3144,7 +3144,13 @@ and real-locus compatibility.
 and scalar contour holomorphy to prove a local Fréchet-holomorphic
 realization in the deleted `ℓᵖ` space near every real-type source and
 deleted root input, with the selected-contour coordinate formula and
-a local norm bound. Its real-locus compatibility is established below.
+a local norm bound. The new `BanachHolomorphicLineBounds.lean` applies
+Banach-valued Cauchy estimates on parameter balls. For this selected
+equation it gives one radius and norm constant that bound the Taylor
+derivatives on every complex line through a real-type base, uniformly
+over unit directions and derivative orders. A joint multilinear
+power series is still needed. Its real-locus compatibility is
+established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
 psi quotient is real on the real spectral axis away from the other
