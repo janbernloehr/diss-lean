@@ -3216,3 +3216,9 @@ property through the quotient majorant and uniform sequence norm.
 `SourcePsiGlobalEquationAnalytic.lean` carries the same family into its
 locally bounded Fréchet-holomorphic deleted-sequence map and proves that
 every coordinate is real when the source and displaced roots are real.
+`SourcePsiRealJacobianEntry.lean` starts Lemma 12.5: the exact
+retained-root variation kernel is anti-conjugate on real data. Its
+integral over a real-centered contour is real, so the corresponding
+scalar Jacobian entry from the root-variation formula is real whenever
+the selected contour avoids the moved root. The diagonal and
+off-diagonal quantitative estimates remain to be proved.

@@ -977,6 +977,7 @@ import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
 import NLS.ZakharovShabat.SourcePsiGeneralVariation
 import NLS.ZakharovShabat.SourcePsiCoordinateVariation
+import NLS.ZakharovShabat.SourcePsiRealJacobianEntry
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet
