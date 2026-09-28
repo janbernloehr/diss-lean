@@ -3124,3 +3124,9 @@ selected head coordinates.
 for the inverse standard-root kernel on any finite collection of
 selected head circles. This follows from joint root analyticity and
 compactness, and prepares the remaining finite-head contour estimate.
+`SourcePsiGlobalHeadCoordinateBound.lean` combines that kernel bound
+with the distant-deleted regular-factor majorant, finite-pair scalar
+holomorphy, and shifted-disc separation. It bounds every selected
+head coordinate uniformly in the deleted index near an arbitrary
+real-type source, with a cutoff that can be enlarged to cover a
+prescribed finite set of indices.

@@ -958,6 +958,7 @@ import NLS.ZakharovShabat.SourcePsiFinitePairCoordinateBound
 import NLS.ZakharovShabat.SourcePsiGlobalTailCoordinateBound
 import NLS.ZakharovShabat.SourcePsiGlobalTailSequenceBound
 import NLS.ZakharovShabat.SourcePsiGlobalHeadKernelBound
+import NLS.ZakharovShabat.SourcePsiGlobalHeadCoordinateBound
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
