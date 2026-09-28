@@ -14,11 +14,12 @@ open Set Metric
 namespace NLS.ComplexAnalysis
 
 variable {A : Type*} [NormedAddCommGroup A] [NormedSpace ℂ A]
+variable {B : Type*} [NormedAddCommGroup B] [NormedSpace ℂ B]
 
 /-- Differentiating a joint function in the parameter direction cannot
 increase the norm of its full product derivative. -/
 theorem norm_fderiv_parameter_section_le
-    (F : ℂ × A → ℂ) (z : ℂ) (a : A)
+    (F : ℂ × A → B) (z : ℂ) (a : A)
     (hF : DifferentiableAt ℂ F (z,a)) :
     ‖fderiv ℂ (fun b : A => F (z,b)) a‖ ≤ ‖fderiv ℂ F (z,a)‖ := by
   let ι : A →L[ℂ] ℂ × A := ContinuousLinearMap.inr ℂ ℂ A
@@ -38,7 +39,8 @@ theorem norm_fderiv_parameter_section_le
 function has a common open parameter neighborhood on which the joint
 Fréchet derivative is uniformly bounded. -/
 theorem exists_uniform_joint_fderiv_bound_on_circle
-    (F : ℂ × A → ℂ) (D : Set (ℂ × A))
+    [CompleteSpace B]
+    (F : ℂ × A → B) (D : Set (ℂ × A))
     (hDopen : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
     (c : ℂ) (R : ℝ) (a : A)
     (hcircle : ∀ z ∈ sphere c R, (z,a) ∈ D) :

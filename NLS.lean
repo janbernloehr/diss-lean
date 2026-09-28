@@ -944,6 +944,7 @@ import NLS.ZakharovShabat.SourcePsiCandidateRootVariation
 import NLS.ZakharovShabat.SourcePsiCandidateSimpleRoots
 import NLS.ZakharovShabat.SourcePsiCandidateEntireVariation
 import NLS.ZakharovShabat.SourcePsiCandidateContourVariation
+import NLS.ComplexAnalysis.ParametricCircleIntegralHigher
 import NLS.ZakharovShabat.SourcePsiContourAnalytic
 import NLS.ZakharovShabat.SourcePsiGapFactorization
 import NLS.ZakharovShabat.SourcePsiQuotientDiscMajorant

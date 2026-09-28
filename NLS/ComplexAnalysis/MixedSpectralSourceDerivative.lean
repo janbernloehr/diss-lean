@@ -15,11 +15,12 @@ open scoped Topology
 namespace NLS.ComplexAnalysis
 
 variable {A : Type*} [NormedAddCommGroup A] [NormedSpace ℂ A]
+variable {B : Type*} [NormedAddCommGroup B] [NormedSpace ℂ B]
 
 /-- The source derivative of a jointly differentiable family is its
 joint Fréchet derivative in the source coordinate. -/
 theorem fderiv_source_section_eq_joint
-    (F : ℂ × A → ℂ) (z : ℂ) (a : A)
+    (F : ℂ × A → B) (z : ℂ) (a : A)
     (hF : DifferentiableAt ℂ F (z,a)) :
     fderiv ℂ (fun b : A => F (z,b)) a =
       (fderiv ℂ F (z,a)).comp (ContinuousLinearMap.inr ℂ ℂ A) := by

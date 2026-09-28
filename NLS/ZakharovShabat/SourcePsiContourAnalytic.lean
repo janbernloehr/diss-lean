@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.SourcePsiCandidate
 import NLS.ZakharovShabat.SourceCriticalRootRatioJointAnalytic
 import NLS.ComplexAnalysis.ParametricCircleIntegral
+import NLS.ComplexAnalysis.ParametricCircleIntegralHigher
 
 /-!
 # Scalar contour equations for the psi-functions
@@ -127,6 +128,48 @@ theorem exists_local_sourcePsiContour_differentiableOn
         (2*Real.pi : ℂ)⁻¹ * ∮ z in C(c,R), F (z,q)) V b
     exact (hdiff.const_mul (2*Real.pi : ℂ)⁻¹).differentiableWithinAt
 
+/-- The fixed psi contour functional has a joint Banach power series
+in the deleted numerator roots and the complex source potential near
+every real-type base source for which the circle avoids the gaps. -/
+theorem exists_local_sourcePsiContour_analyticOnNhd
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hcircle : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 φ) :
+    ∃ V : Set (Coeff p × CoeffPair p), IsOpen V ∧ (a,φ) ∈ V ∧
+      (∀ b ∈ V, sphere c R ⊆ sourceCanonicalRootDomain hp hp1 b.2) ∧
+      AnalyticOnNhd ℂ
+        (fun b : Coeff p × CoeffPair p =>
+          sourcePsiContour hp hp1 n b.1 b.2 c R) V := by
+  obtain ⟨W,_,_,hreal,hdata⟩ :=
+    exists_global_sourcePsiContourIntegrand_jointAnalytic hp hp1
+  let D := sourcePsiContourJointDomain hp hp1 W
+  let F := sourcePsiContourIntegrandJoint hp hp1 n
+  have hbase (z : ℂ) (hz : z ∈ sphere c R) : (z,(a,φ)) ∈ D :=
+    ⟨hreal hφ,hcircle hz⟩
+  obtain ⟨V,hVopen,hbaseV,M,_,hbound⟩ :=
+    NLS.ComplexAnalysis.exists_uniform_joint_fderiv_bound_on_circle
+      F D (hdata n).1 (hdata n).2 c R (a,φ) hbase
+  have hcircleV (b : Coeff p × CoeffPair p) (hb : b ∈ V) :
+      sphere c R ⊆ sourceCanonicalRootDomain hp hp1 b.2 := by
+    intro z hz
+    exact (hbound z hz b hb).1.2
+  have hanalytic :=
+    NLS.ComplexAnalysis.analyticOnNhd_circleIntegral_of_jointAnalytic
+      F (hdata n).1 (hdata n).2 c R hR hVopen
+        (fun b hb z hz => (hbound z hz b hb).1)
+  refine ⟨V,hVopen,hbaseV,hcircleV,?_⟩
+  have hfun :
+      ((2*Real.pi : ℂ)⁻¹ •
+        (fun b : Coeff p × CoeffPair p => ∮ z in C(c,R), F (z,b))) =
+      (fun b : Coeff p × CoeffPair p =>
+        sourcePsiContour hp hp1 n b.1 b.2 c R) := by
+    funext b
+    simp [sourcePsiContour,F]
+  rw [← hfun]
+  exact hanalytic.const_smul
+
 /-- At the free potential and free roots, the new contour functional
 is exactly the free contour used in the orthogonality theorem. -/
 theorem sourcePsiContour_zero
@@ -206,6 +249,35 @@ theorem exists_local_sourcePsiEquationCoordinate_differentiableOn
       (((n-m : ℤ) : ℂ) * (2*Real.pi : ℂ)) *
         sourcePsiContour hp hp1 n b.1 b.2 c R) V
   exact hdiff.const_mul _
+
+/-- Each fixed-circle scalar psi equation coordinate has a joint
+Banach power series in the root displacement sequence and source
+potential near a real-type base source. -/
+theorem exists_local_sourcePsiEquationCoordinate_analyticOnNhd
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (n m : ℤ)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hcircle : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 φ) :
+    ∃ V : Set (Coeff p × CoeffPair p), IsOpen V ∧ (a,φ) ∈ V ∧
+      (∀ b ∈ V, sphere c R ⊆ sourceCanonicalRootDomain hp hp1 b.2) ∧
+      AnalyticOnNhd ℂ
+        (fun b : Coeff p × CoeffPair p =>
+          sourcePsiEquationCoordinate hp hp1 n m b.1 b.2 c R) V := by
+  obtain ⟨V,hVopen,hbase,hcircleV,hanalytic⟩ :=
+    exists_local_sourcePsiContour_analyticOnNhd
+      hp hp1 n a φ hφ c R hR hcircle
+  refine ⟨V,hVopen,hbase,hcircleV,?_⟩
+  have hfun :
+      ((((n-m : ℤ) : ℂ) * (2*Real.pi : ℂ)) •
+        (fun b : Coeff p × CoeffPair p =>
+          sourcePsiContour hp hp1 n b.1 b.2 c R)) =
+      (fun b : Coeff p × CoeffPair p =>
+        sourcePsiEquationCoordinate hp hp1 n m b.1 b.2 c R) := by
+    funext b
+    simp [sourcePsiEquationCoordinate]
+  rw [← hfun]
+  exact hanalytic.const_smul
 
 /-- Around every real-type source and every gap, one enclosing circle
 works for nearby potentials and makes the corresponding scalar psi

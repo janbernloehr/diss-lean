@@ -2762,12 +2762,14 @@ with the canonical root on the moving-gap complement. The integrand
 is jointly analytic in the spectral variable, root displacements,
 and source potential. Around any real-type source, each scalar
 coordinate of the contour map in (2.22) has an enclosing circle and
-is complex Fréchet differentiable in both Banach parameters on a
-neighborhood. Equation (2.22) uses the unnormalized integral,
+has a joint Banach power series in both parameters on a neighborhood.
+`ParametricCircleIntegralHigher.lean` supplies the general theorem:
+fixed-circle integration preserves joint analyticity for Banach-valued
+integrands on an open parameter domain. Equation (2.22) uses the
+unnormalized integral,
 while (2.21) uses `1/(2π)`; this factor is included in the scalar
-equation. All coordinates vanish at the free data. The common
-`ℓᵖ` target bound, invertible Jacobian, and implicit-function solution
-needed for Lemma 12.4 and Theorem 12.1 remain open.
+equation. All coordinates vanish at the free data. Analyticity of the
+full selected `ℓᵖ`-valued equation remains open.
 `DeletedCoordinate.lean` realizes the omitted-index root-displacement
 space as a complete closed kernel of coordinate evaluation in `ℓᵖ`.
 Its continuous projection sets only the selected coordinate to zero.

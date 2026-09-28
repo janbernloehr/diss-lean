@@ -16,12 +16,13 @@ open scoped Interval
 namespace NLS.ComplexAnalysis
 
 variable {A : Type*} [NormedAddCommGroup A] [NormedSpace ℂ A]
+variable {B : Type*} [NormedAddCommGroup B] [NormedSpace ℂ B] [CompleteSpace B]
 
 /-- The Fréchet derivative of a fixed-circle integral is the angle
 integral of the parameter derivative of its jointly analytic
 integrand. -/
 theorem hasFDerivAt_circleIntegral_of_jointAnalytic
-    (F : ℂ × A → ℂ) (D : Set (ℂ × A))
+    (F : ℂ × A → B) (D : Set (ℂ × A))
     (hDopen : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
     (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
     (V : Set A) (hVopen : IsOpen V) (a : A) (haV : a ∈ V)
@@ -35,9 +36,9 @@ theorem hasFDerivAt_circleIntegral_of_jointAnalytic
           (fderiv ℂ F (circleMap c R θ,a)).comp
             (ContinuousLinearMap.inr ℂ ℂ A)) a := by
   let J : A →L[ℂ] ℂ × A := ContinuousLinearMap.inr ℂ ℂ A
-  let G : A → ℝ → ℂ := fun b θ =>
-    deriv (circleMap c R) θ * F (circleMap c R θ,b)
-  let G' : A → ℝ → A →L[ℂ] ℂ := fun b θ =>
+  let G : A → ℝ → B := fun b θ =>
+    deriv (circleMap c R) θ • F (circleMap c R θ,b)
+  let G' : A → ℝ → A →L[ℂ] B := fun b θ =>
     (deriv (circleMap c R) θ) •
       (fderiv ℂ F (circleMap c R θ,b)).comp J
   have hmap (b : A) : Continuous (fun θ : ℝ => (circleMap c R θ,b)) :=
@@ -48,7 +49,7 @@ theorem hasFDerivAt_circleIntegral_of_jointAnalytic
   have hGcont (b : A) (hb : b ∈ V) : Continuous (G b) := by
     have hsection : Continuous (fun θ : ℝ => F (circleMap c R θ,b)) :=
       hF.continuousOn.comp_continuous (hmap b) (hdom b hb)
-    exact hderiv.mul hsection
+    exact hderiv.smul hsection
   have hdf : ContinuousOn (fderiv ℂ F) D :=
     (hF.contDiffOn_of_completeSpace (n := 1)).continuousOn_fderiv_of_isOpen
       hDopen (by norm_num)
@@ -88,8 +89,13 @@ theorem hasFDerivAt_circleIntegral_of_jointAnalytic
     have hinc : HasFDerivAt (fun x : A => (circleMap c R θ,x)) J b :=
       hasFDerivAt_prodMk_right (circleMap c R θ) b
     have hcomp := ((hF _ (hdom b hb θ)).differentiableAt.hasFDerivAt.comp b hinc)
-    simpa only [G, G', Function.comp_def] using
-      hcomp.const_mul (deriv (circleMap c R) θ)
+    have hfun :
+        (deriv (circleMap c R) θ • fun x : A => F (circleMap c R θ,x)) =
+          (fun x : A => deriv (circleMap c R) θ • F (circleMap c R θ,x)) := by
+      funext x
+      rfl
+    simpa only [G, G', Function.comp_def, hfun] using
+      hcomp.const_smul (deriv (circleMap c R) θ)
   have hmain := intervalIntegral.hasFDerivAt_integral_of_dominated_of_fderiv_le
     (F := G) (F' := G') (s := V) (x₀ := a) (bound := fun _ : ℝ => R*M)
     (hVopen.mem_nhds haV) hmeas hint hmeas'
@@ -104,7 +110,7 @@ theorem hasFDerivAt_circleIntegral_of_jointAnalytic
 circle integral in a direction as the circle integral of the source
 derivative of its integrand. -/
 theorem fderiv_circleIntegral_apply_of_jointAnalytic
-    (F : ℂ × A → ℂ) (D : Set (ℂ × A))
+    (F : ℂ × A → B) (D : Set (ℂ × A))
     (hDopen : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
     (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
     (V : Set A) (hVopen : IsOpen V) (a : A) (haV : a ∈ V)
@@ -162,7 +168,7 @@ theorem fderiv_circleIntegral_apply_of_jointAnalytic
 on a fixed circle has a complex Fréchet-differentiable circle integral
 in its Banach-space parameter. -/
 theorem differentiableAt_circleIntegral_of_jointAnalytic
-    (F : ℂ × A → ℂ) (D : Set (ℂ × A))
+    (F : ℂ × A → B) (D : Set (ℂ × A))
     (hDopen : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
     (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
     (V : Set A) (hVopen : IsOpen V) (a : A) (haV : a ∈ V)
