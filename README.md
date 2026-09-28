@@ -3388,3 +3388,7 @@ retained row of the real quarter-π root locus. Finite-head spectral
 separation still requires assembly. `SourcePsiSelectedJacobianOffDiagonalTail.lean`
 likewise transfers the scalar `ℓᵖ` row majorant to the off-diagonal
 entries of the bounded operator on a common free-centered tail.
+`SourcePsiSelectedJacobianCombinedTail.lean` chooses one neighborhood,
+contour family, and cutoff where both conclusions hold for the same
+operator. This supplies the shared tail data needed for the eventual
+diagonal-plus-compact decomposition; the finite head remains open.
