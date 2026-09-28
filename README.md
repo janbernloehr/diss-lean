@@ -3528,3 +3528,9 @@ divided by the canonical spectral root. On each admissible fixed
 circle, the scalar psi-equation derivative is the integral of this
 quotient throughout a local source neighborhood. This is the contour
 identity used at the start of Lemma 12.7's kernel argument.
+`SourcePsiSelectedJacobianKernelContour.lean` transfers that identity
+from scalar equations to the bounded selected sequence Jacobian for
+arbitrary deleted-root directions. If such a direction lies in its
+kernel, the variation contour integral vanishes in every retained row.
+The remaining Lemma 12.7 work is to turn these zero integrals into
+zeros of the entire variation in the gaps, then apply interpolation.
