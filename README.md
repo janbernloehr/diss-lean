@@ -3141,3 +3141,8 @@ and scalar contour holomorphy to prove a local Fréchet-holomorphic
 realization in the deleted `ℓᵖ` space near every real-type source and
 deleted root input, with the selected-contour coordinate formula and
 a local norm bound. Real-locus compatibility remains to be proved.
+`SourcePsiRealGapQuotient.lean` begins that compatibility argument:
+for real-type source data and real displaced roots, the omitted-root
+psi quotient is real on the real spectral axis away from the other
+gaps. The factorized contour numerator becomes real after removing
+its explicit imaginary unit, including on the selected real gap.

@@ -961,6 +961,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalHeadKernelBound
 import NLS.ZakharovShabat.SourcePsiGlobalHeadCoordinateBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationSequenceBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
+import NLS.ZakharovShabat.SourcePsiRealGapQuotient
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
