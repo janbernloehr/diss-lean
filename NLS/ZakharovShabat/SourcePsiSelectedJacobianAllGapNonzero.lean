@@ -47,7 +47,7 @@ theorem exists_local_sourcePsi_selectedJacobian_allGapNonzero
             ((sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
               (Coeff.deletedSingleCLM n m hmn 1) :
                 DeletedCoeff p n) : Coeff p) m ≠ 0 := by
-  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,C,hC,hcoord,
+  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,_,C,hC,hcoord,
     hbound,hrealCoord,hdiff⟩ :=
     exists_local_sourcePsi_globalEquation_formula_analytic
       hp hp1 φ hφ n a₀

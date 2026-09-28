@@ -46,7 +46,7 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalUniformEstimate
                   ((sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
                     (Coeff.deletedSingleCLM n m hmn 1) :
                       DeletedCoeff p n) : Coeff p) m ≠ 0) := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,_,hchoice,hgeom,hmatrix⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,_,hchoice,hgeom,_,hmatrix⟩ :=
     exists_local_sourcePsi_selectedJacobian_matrixFormula
       hp hp1 φ hφ n a₀
   obtain ⟨Utail,hUtailOpen,hbaseTail,Ktail,M,hM,htail⟩ :=

@@ -3460,19 +3460,16 @@ spectral nonvanishing condition.
 that finite-head condition: roots assigned to pairwise disjoint spectral
 discs avoid every other periodic gap and hence every other standard
 root gap. If a selected contour lies in its assigned disc, the omitted
-root also avoids that contour. Connecting these disc conditions to the
-selected contour family remains necessary for the unrestricted
-finite-head nonvanishing theorem.
+root also avoids that contour.
 `SourcePsiSelectedJacobianIsolatingDiagonal.lean` connects those
 separation lemmas to the *same* selected contour family used by the
-diagonal-plus-compact theorem. If each selected closed disc lies in its
-assigned isolating disc, root localization in pairwise disjoint discs
-implies that the diagonal multiplier is bijective and the remainder is
-compact. `SourcePsiRegularFactorIsolatingDisc.lean` derives the needed
+diagonal-plus-compact theorem. It now chooses one local isolating-disc
+family along with the bounded selected Jacobian. If the displaced roots
+lie in their assigned discs, are real, and satisfy the quarter-π bound,
+the diagonal multiplier is bijective and the remainder is compact.
+`SourcePsiRegularFactorIsolatingDisc.lean` derives the needed
 regular-factor analyticity from the global analytic quotient domain and
-disjointness, so it is no longer a separate hypothesis. Establishing
-containment of the selected closed discs in a common isolating-disc
-family is the remaining geometric gap toward Lemma 12.6 on Ωᵖ.
+disjointness.
 `SourceCriticalRootRatioUniformCircle.lean` now retains the stronger
 per-gap construction: after fixing one isolating-disc family, a selected
 real-centered contour can be chosen with its whole closed disc inside
@@ -3483,11 +3480,12 @@ This is the head-contour ingredient for a shared isolating-disc family.
 with the uniform free-centered tail circles. It produces one local
 contour family whose selected closed discs all lie inside one fixed,
 pairwise disjoint isolating-disc family, while retaining the all-gap
-contour geometry. The remaining integration step is to carry this
-stronger choice through the global psi equation and its bounded
-selected Jacobian.
+contour geometry.
 The selected quotient majorant, distant deleted-root regular-factor
 bound, finite head coordinate bound, and global equation sequence bound
 now retain the same isolating-disc family and closed-disc containment
-through their successive neighborhood restrictions. The analytic
-global equation and selected Jacobian still need to expose this data.
+through their successive neighborhood restrictions. The analytic global
+equation and selected Jacobian carry this family to the operator result.
+Matching its remaining parameter assumptions exactly to the
+dissertation's Ωᵖ domain, especially finite-head root bounds, is the
+next step toward the full Lemma 12.6 statement.

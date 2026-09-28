@@ -33,6 +33,15 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
     ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
       ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        ∃ Niso : ℕ, ∃ εiso : ℝ,
+        (∀ t ∈ U, ∀ m : ℤ,
+          sourceSpectralCluster hp hp1 t.2 m ⊆
+            sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+        (∀ i j : ℤ, i ≠ j →
+          Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+            (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+        (∀ m : ℤ, closedBall (c m) (R m) ⊆
+          sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
         ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
@@ -66,7 +75,8 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
                   z ≠ displacedRoots (a : Coeff p) k) →
               d m ≠ 0) ∧
             Q = D + C := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hcReal,hchoice,hgeom,hmatrix⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hcReal,hchoice,hgeom,
+      ⟨Niso,εiso,hcluster,hdisjoint,hfilled⟩,hmatrix⟩ :=
     exists_local_sourcePsi_selectedJacobian_matrixFormula
       hp hp1 φ hφ n a₀
   obtain ⟨Udiag,hUdiagOpen,hbaseDiag,Kdiag,Mdiag,hMdiag,hdiag⟩ :=
@@ -86,7 +96,9 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
   have hbase : (a₀,φ) ∈ U :=
     ⟨hbaseEq,⟨hbaseDiag,hbaseOff⟩⟩
   let K : ℕ := max (Keq+1) (max Kdiag Koff)
-  refine ⟨U,hUopen,hbase,c,R,?_⟩
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_,hdisjoint,hfilled,?_⟩
+  · intro t ht m
+    exact hcluster t ht.1 m
   intro a ψ hpair hreal hroots hloc
   obtain ⟨Bdiag,hBdiagNorm,hBdiag⟩ :=
     hdiag n a ψ hpair.2.1 hreal hroots

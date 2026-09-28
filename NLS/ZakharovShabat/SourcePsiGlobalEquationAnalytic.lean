@@ -68,6 +68,15 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
             sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
           sphere (c m) (R m) ⊆
             sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∃ Niso : ℕ, ∃ εiso : ℝ,
+          (∀ t ∈ U, ∀ m : ℤ,
+            sourceSpectralCluster hp hp1 t.2 m ⊆
+              sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+          (∀ i j : ℤ, i ≠ j →
+            Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+              (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+          ∀ m : ℤ, closedBall (c m) (R m) ⊆
+            sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
         ∃ C : ℝ, 0 ≤ C ∧
           (∀ t ∈ U, ∀ m : ℤ,
             (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
@@ -84,7 +93,8 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
           DifferentiableOn ℂ
             (fun t : DeletedCoeff p n × CoeffPair p =>
               sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,K,c,R,hcReal,hchoice,hgeom,_,C,hC,heq⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,K,c,R,hcReal,hchoice,hgeom,
+      ⟨Niso,εiso,hcluster,hdisjoint,hfilled⟩,C,hC,heq⟩ :=
     exists_local_sourcePsi_globalEquation_uniformNorm
       hp hp1 φ hφ (a₀ : Coeff p)
   obtain ⟨W,hWopen,_,hrealW,hdata⟩ :=
@@ -177,7 +187,10 @@ theorem exists_local_sourcePsi_globalEquation_formula_analytic
   have hdeleted : DifferentiableOn ℂ F U :=
     hcomposed.congr (fun t _ => (hproject t).symm)
   exact ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,
-    (fun t ht m => hgeom ((t.1 : Coeff p),t.2) ht.1 m),C,hC,
+    (fun t ht m => hgeom ((t.1 : Coeff p),t.2) ht.1 m),
+    ⟨Niso,εiso,
+      (fun t ht m => hcluster ((t.1 : Coeff p),t.2) ht.1 m),
+      hdisjoint,hfilled⟩,C,hC,
     (fun t ht m => hcoord t ht m),hbound,hrealCoord,hdeleted⟩
 
 end NLS.ZakharovShabat

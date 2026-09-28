@@ -172,7 +172,7 @@ theorem exists_local_sourcePsi_selectedJacobian_entryFormula
               deriv (fun z : ℂ =>
                 sourcePsiDeletedEquationCoordinate hp hp1 n m
                   (a+Coeff.deletedSingleCLM n k hkn z) ψ (c m) (R m)) 0 := by
-  obtain ⟨U,hUopen,hbase,K,c,R,_,hchoice,_,C,_,hcoord,_,_,_⟩ :=
+  obtain ⟨U,hUopen,hbase,K,c,R,_,hchoice,_,_,C,_,hcoord,_,_,_⟩ :=
     exists_local_sourcePsi_globalEquation_formula_analytic
       hp hp1 φ hφ n a₀
   refine ⟨U,hUopen,hbase,K,c,R,hchoice,?_⟩
@@ -201,6 +201,15 @@ theorem exists_local_sourcePsi_selectedJacobian_matrixFormula
             sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
           sphere (c m) (R m) ⊆
             sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∃ Niso : ℕ, ∃ εiso : ℝ,
+          (∀ t ∈ U, ∀ m : ℤ,
+            sourceSpectralCluster hp hp1 t.2 m ⊆
+              sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+          (∀ i j : ℤ, i ≠ j →
+            Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+              (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+          ∀ m : ℤ, closedBall (c m) (R m) ⊆
+            sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
         ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
           (a,ψ) ∈ U → ∀ m k : ℤ, ∀ hkn : k ≠ n,
             ((sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
@@ -208,10 +217,10 @@ theorem exists_local_sourcePsi_selectedJacobian_matrixFormula
               deriv (fun z : ℂ =>
                 sourcePsiDeletedEquationCoordinate hp hp1 n m
                   (a+Coeff.deletedSingleCLM n k hkn z) ψ (c m) (R m)) 0 := by
-  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,C,_,hcoord,_,_,hdiff⟩ :=
+  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,hiso,C,_,hcoord,_,_,hdiff⟩ :=
     exists_local_sourcePsi_globalEquation_formula_analytic
       hp hp1 φ hφ n a₀
-  refine ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,?_⟩
+  refine ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,hiso,?_⟩
   intro a ψ hpair m k hkn
   exact sourcePsiSelectedRootJacobian_entry_eq_deletedCoordinate
     hp hp1 n c R U hUopen hcoord hdiff a ψ hpair m k hkn
