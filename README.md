@@ -3146,3 +3146,9 @@ for real-type source data and real displaced roots, the omitted-root
 psi quotient is real on the real spectral axis away from the other
 gaps. The factorized contour numerator becomes real after removing
 its explicit imaginary unit, including on the selected real gap.
+`SourcePsiRealTailOpenGap.lean` applies the real mean-value form of
+Lemma 12.3 to an open real gap with small free-centered geometry. Under
+the explicit quarter-disc quotient domain and circle hypotheses, its
+free eighth-π psi equation coordinate is real. A uniform tail domain
+near arbitrary real-type sources and the finite head remain to be
+connected to this result.
