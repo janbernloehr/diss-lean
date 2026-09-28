@@ -3943,6 +3943,11 @@ including the shifted central circles of the common contour family.
 the `Q*` contour integral divided by π and proves convergence of the
 actual scalar retained-root derivatives for each fixed row and column.
 It also identifies a retained entry of the bounded full-space Jacobian
-with that scalar derivative on a valid selected chart. Choosing compatible
-charts across deleted indices and controlling uniform operator tails
-remain open.
+with that scalar derivative on a valid selected chart.
+`SourcePsiCommonJacobianCharts.lean` obtains one contour family and
+analytic selected charts for all sufficiently distant deleted indices
+from the index-uniform equation bound. It proves entrywise convergence
+of the resulting bounded full-space Jacobians at a fixed coefficient
+sequence with its deleted coordinate removed, when the retained root
+avoids the contour. The candidate limit operator, the varying gap-root
+data, and uniform operator tails remain open.
