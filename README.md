@@ -3437,3 +3437,10 @@ the tail. The row kernel is constructed in the conjugate `ℓᑫ` space,
 identified with the operator by the finite matrix sums, and then
 fed to the tail-only compactness theorem. Thus no separate kernel
 representation is needed to prove compactness from matrix estimates.
+`SourcePsiSelectedJacobianCompactRemainder.lean` applies this criterion
+to the selected psi Jacobian. On the real quarter-π localized root
+locus, its bounded off-diagonal remainder is compact. The proof uses
+the selected scalar entry estimates only on distant rows; all finite
+head rows follow from boundedness. The remaining diagonal
+invertibility question is confined to finite-head nonvanishing for a
+contour family shared with this compact decomposition.
