@@ -3651,3 +3651,10 @@ of the selected Banach-valued equation gives an analytic local solution
 branch. Establishing that joint analyticity, then joining the local
 branches globally, remain the next steps toward the existence and
 real-analyticity clauses of Proposition 12.9.
+
+`BanachSmoothAnalyticOn.lean` now proves the local complex-smooth-to-analytic
+step for arbitrary complete complex normed codomains, including the deleted
+sequence space of the selected equation. The remaining analytic obligation
+is to establish the requisite smoothness, or an equivalent power-series
+construction, for that equation from its current local norm and coordinate
+holomorphy bounds.

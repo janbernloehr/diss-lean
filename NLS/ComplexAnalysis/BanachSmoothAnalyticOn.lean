@@ -12,24 +12,20 @@ noncomputable section
 open Filter Topology Metric
 open scoped ENNReal NNReal ContDiff
 namespace NLS.ComplexAnalysis
-variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+  [NormedAddCommGroup F] [NormedSpace ℂ F] [CompleteSpace F]
 
 /-- The Taylor series of a one-variable function smooth on a disk sums at one. -/
-theorem hasSum_local_taylor_one (f : ℂ → ℂ)
+theorem hasSum_local_taylor_one (f : ℂ → F)
     (hf : DifferentiableOn ℂ f (closedBall 0 2)) :
-    HasSum (fun n : ℕ => iteratedDeriv n f 0/(n.factorial : ℂ)) (f 1) := by
+    HasSum (fun n : ℕ => ((n.factorial : ℂ)⁻¹) • iteratedDeriv n f 0) (f 1) := by
   have hp := hf.hasFPowerSeriesOnBall (by norm_num : (0 : ℝ≥0) < 2)
-  have ha : AnalyticAt ℂ f 0 := hf.analyticAt (by
-    exact closedBall_mem_nhds 0 (by norm_num : (0 : ℝ) < 2))
-  have he := hp.hasFPowerSeriesAt.eq_formalMultilinearSeries ha.hasFPowerSeriesAt
-  rw [he] at hp
-  have hs := hp.hasSum (y := 1) (by simp)
-  simpa only [FormalMultilinearSeries.apply_eq_prod_smul_coeff,
-    FormalMultilinearSeries.coeff_ofScalars, Finset.prod_const_one, smul_eq_mul,
-    one_mul, zero_add] using hs
+  simpa only [zero_add, iteratedDeriv_eq_iteratedFDeriv] using
+    hp.hasSum_iteratedFDeriv (y := 1) (by simp)
 
+omit [CompleteSpace F] in
 /-- On an open set, affine-line jets are diagonal evaluations of the Fréchet jets. -/
-theorem iteratedDeriv_affineLine_eq_on (f : E → ℂ) {S : Set E}
+theorem iteratedDeriv_affineLine_eq_on (f : E → F) {S : Set E}
     (hS : IsOpen S) (hf : ContDiffOn ℂ ∞ f S) {c : E} (hc : c ∈ S)
     (y : E) (n : ℕ) :
     iteratedDeriv n (fun a : ℂ => f (c+a • y)) 0 =
@@ -52,7 +48,7 @@ theorem iteratedDeriv_affineLine_eq_on (f : E → ℂ) {S : Set E}
     iteratedFDeriv_comp_add_left]
 
 /-- Short affine lines stay in the smoothness domain, so the Fréchet Taylor series sums there. -/
-theorem hasSum_complexTaylorSeries_on (f : E → ℂ) {S : Set E}
+theorem hasSum_complexTaylorSeries_on (f : E → F) {S : Set E}
     (hS : IsOpen S) (hf : ContDiffOn ℂ ∞ f S) {c : E}
     (hc : c ∈ S) (R : ℝ) (hR : 0 < R) (hball : ball c R ⊆ S)
     {y : E} (hy : ‖y‖ < R/3) :
@@ -72,8 +68,8 @@ theorem hasSum_complexTaylorSeries_on (f : E → ℂ) {S : Set E}
     complexTaylorSeries, smul_apply, smul_eq_mul, div_eq_mul_inv, mul_comm,
     one_smul] using hs
 
-/-- A complex-smooth scalar map on an open Banach-space domain has a local power series. -/
-theorem hasFPowerSeriesOnBall_of_complexSmoothOn (f : E → ℂ) {S : Set E}
+/-- A complex-smooth Banach-valued map on an open Banach-space domain has a local power series. -/
+theorem hasFPowerSeriesOnBall_of_complexSmoothOn (f : E → F) {S : Set E}
     (hS : IsOpen S) (hf : ContDiffOn ℂ ∞ f S) {c : E} (hc : c ∈ S) :
     ∃ r : ℝ≥0∞, HasFPowerSeriesOnBall f (complexTaylorSeries f c) c r := by
   obtain ⟨R,hR,hball⟩ := Metric.isOpen_iff.mp hS c hc
@@ -97,7 +93,7 @@ theorem hasFPowerSeriesOnBall_of_complexSmoothOn (f : E → ℂ) {S : Set E}
   exact hasSum_complexTaylorSeries_on f hS hf hc R hR hball hy'
 
 /-- Complex smoothness on an open set implies Banach-space analyticity there. -/
-theorem analyticOnNhd_of_complexSmoothOn (f : E → ℂ) {S : Set E}
+theorem analyticOnNhd_of_complexSmoothOn (f : E → F) {S : Set E}
     (hS : IsOpen S) (hf : ContDiffOn ℂ ∞ f S) : AnalyticOnNhd ℂ f S :=
   fun _c hc => (hasFPowerSeriesOnBall_of_complexSmoothOn f hS hf hc).choose_spec.analyticAt
 
