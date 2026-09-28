@@ -994,6 +994,7 @@ import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalCollapsed
 import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalAllGaps
 import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalRowMajorant
 import NLS.ZakharovShabat.SourcePsiJacobianUniformOffDiagonalTail
+import NLS.ZakharovShabat.SourcePsiDiagonalRootCancellation
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet

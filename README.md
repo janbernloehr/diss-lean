@@ -3322,3 +3322,9 @@ it gives one selected-row cutoff and an `ℓᵖ` row majorant for every
 deleted index; the quotient majorant has a locally uniform norm
 bound. The finite shifted head and the operator representation remain
 to be connected to the full Lemma 12.5–12.6 statements.
+`SourcePsiDiagonalRootCancellation.lean` proves directly from the
+finite products that the numerator product with root `m` deleted,
+its spectral quotient, and the regular psi factor do not change
+when that root moves. The argument remains valid at root collisions
+and when the selected root lies on a contour; it prepares a diagonal
+variation formula without the current contour-avoidance premise.
