@@ -3509,3 +3509,10 @@ numerator. Differentiating its zero identity along a moving retained
 root gives the exact relation between the root-sequence variation and
 the spectral derivative. At a simple retained root, vanishing of the
 variation forces the corresponding direction coefficient to vanish.
+`SourcePsiCandidateSimpleRoots.lean` proves that the full spectral
+product has a simple zero at each root separated from the others, and
+transfers simplicity to every retained zero of the psi numerator.
+Pairwise disjoint isolating discs supply the needed separation. Thus a
+deleted direction is zero if its entire-numerator variation vanishes
+at every retained root; proving that vanishing from the Jacobian kernel
+and interpolation remains the next part of Lemma 12.7.
