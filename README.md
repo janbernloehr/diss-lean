@@ -3764,4 +3764,7 @@ real-type sources: if source potentials converge and gap-contained
 deleted roots solve valid real-centered selected equations, a
 subsequence converges strongly to gap-contained roots that solve the
 selected equation in a `C¹` chart at the limiting source. The chart
-may differ from every chart used along the sequence.
+may differ from every chart used along the sequence. The limiting
+roots are real and lie in the chart's isolating discs, so its root
+Jacobian is bijective. The implicit theorem then gives a locally
+unique `C¹` solution branch through the limit.

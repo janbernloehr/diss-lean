@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.SourcePsiRealContourComparison
 import NLS.ZakharovShabat.SourcePsiGapRootLimitPlacement
 import NLS.ZakharovShabat.SourcePsiLocalJacobianBijectivity
+import NLS.ZakharovShabat.SourcePsiC1ImplicitStep
 
 /-!
 # Limits of real gap-contained psi solutions
@@ -10,7 +11,8 @@ the real-type source potentials converge. A local selected contour
 chart centered at that limit is `C¹`. Real-centered contour invariance
 transfers the zero equation from each original, potentially different,
 valid contour family to this fixed chart. Continuity then proves that
-the limiting deleted roots solve its equation.
+the limiting deleted roots solve its equation. Root placement makes the
+Jacobian invertible there, yielding a locally unique `C¹` branch.
 -/
 
 noncomputable section
@@ -21,7 +23,8 @@ namespace NLS.ZakharovShabat
 /-- A converging sequence of real-type sources with gap-contained
 deleted roots solving valid real-centered selected equations has a
 strongly convergent subsequence whose gap-contained limit solves a
-local selected equation in a `C¹` chart. -/
+local selected equation in a `C¹` chart with bijective root Jacobian
+and a locally unique implicit branch. -/
 theorem exists_limit_sourcePsi_gap_solution
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -59,7 +62,19 @@ theorem exists_limit_sourcePsi_gap_solution
         ContDiffOn ℂ 1
           (fun t : DeletedCoeff p n × CoeffPair p =>
             sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ t.1 t.2) U ∧
-        sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ b φ = 0 := by
+        sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ b φ = 0 ∧
+        Function.Bijective
+          (sourcePsiSelectedRootJacobian hp hp1 n c₀ R₀ b φ) ∧
+        ∃ s : CoeffPair p → DeletedCoeff p n,
+          ∃ V : Set (DeletedCoeff p n × CoeffPair p),
+            IsOpen V ∧ (b,φ) ∈ V ∧
+            ContDiffAt ℂ 1 s φ ∧ s φ = b ∧
+            (∀ b' : DeletedCoeff p n, ∀ χ : CoeffPair p,
+              (b',χ) ∈ V →
+              sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ b' χ = 0 →
+              b' = s χ) ∧
+            ∀ᶠ χ in 𝓝 φ,
+              sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ (s χ) χ = 0 := by
   obtain ⟨b,σ,hσ,hb,hbgap⟩ :=
     exists_tendsto_subseq_deletedGapRoots_mem_limit_segments
       hp hp1 φ hφ ψ hψ n a hgap
@@ -97,6 +112,32 @@ theorem exists_limit_sourcePsi_gap_solution
     sourcePsiSelectedEquationSequence_zero_of_tendsto
       hp hp1 n c₀ R₀ U hUopen hC1
       (a ∘ σ) (ψ ∘ σ) b φ hb hψσ hbase hzero₀
-  exact ⟨b,σ,U,c₀,R₀,hσ,hb,hbgap,hUopen,hbase,hC1,hlimitZero⟩
+  have hroots : ∀ j : ℤ,
+      (displacedRoots (b : Coeff p) j).im = 0 := by
+    intro j
+    by_cases hj : j = n
+    · subst j
+      have hz : (b : Coeff p) n = 0 := b.property
+      simp [displacedRoots,hz]
+    · exact sourcePeriodicSegment_im_eq_zero_of_realType
+        hp hp1 φ hφ j _ (hbgap j hj)
+  have hrootloc : ∀ j : ℤ, j ≠ n →
+      displacedRoots (b : Coeff p) j ∈
+        sourceIsolatingDisc hp hp1 φ Niso εiso j := by
+    intro j hj
+    have hball := (hgeom₀ (b,φ) hbase j).2.1 (hbgap j hj)
+    exact hfilled j (ball_subset_closedBall hball)
+  have hbijAt : Function.Bijective
+      (sourcePsiSelectedRootJacobian hp hp1 n c₀ R₀ b φ) :=
+    hbij b φ hbase hφ hroots hrootloc
+  have hF : ContDiffAt ℂ 1
+      (fun t : DeletedCoeff p n × CoeffPair p =>
+        sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ t.1 t.2)
+      (b,φ) := hC1.contDiffAt (hUopen.mem_nhds hbase)
+  obtain ⟨s,V,hVopen,hVbase,hs,hsb,hunique,hzeros⟩ :=
+    exists_C1_sourcePsi_local_solution_unique
+      hp hp1 n c₀ R₀ b φ hF hlimitZero hbijAt
+  exact ⟨b,σ,U,c₀,R₀,hσ,hb,hbgap,hUopen,hbase,hC1,
+    hlimitZero,hbijAt,s,V,hVopen,hVbase,hs,hsb,hunique,hzeros⟩
 
 end NLS.ZakharovShabat
