@@ -3573,6 +3573,9 @@ components. `SourceGapInterpolationProduct.lean` turns such a selected
 sequence into an entire product with exactly its indexed roots and proves
 that they are simple under the common isolating-disc geometry. The
 variation multiplied by the deleted linear factor vanishes at every
-product zero, as required by the interpolation lemma. The remaining
-Lemma 12.7 work is to establish the product's outer-circle asymptotic
-and the corresponding circle estimate for each variation.
+product zero, as required by the interpolation lemma.
+`SourceGapInterpolationOuterCircles.lean` proves that the product divided
+by its free sine normalization tends uniformly to one on the large
+half-integer-radius circles, which are eventually zero-free. The
+remaining Lemma 12.7 work is the corresponding circle estimate for
+each variation and application of interpolation uniqueness.
