@@ -3894,7 +3894,9 @@ extensions as the deleted index escapes to infinity remains open.
 `UniformInverseBound.lean` proves the quantitative perturbation step:
 if these full extensions converge in operator norm to an invertible
 operator, their deleted-block inverses have one common norm bound for
-all sufficiently large deleted indices. The corresponding estimate is
-also specialized to the actual selected psi Jacobian. Establishing the
-operator-norm convergence and bounding the finitely many remaining
-indices are the next parts of Lemma 12.10.
+all sufficiently large deleted indices. Finite boundedness now extends
+that estimate to every integer index. The resulting theorem is
+specialized to the actual selected psi Jacobians at the canonical real
+gap roots. Constructing the limit operator, proving its invertibility,
+and establishing operator-norm convergence remain the next parts of
+Lemma 12.10.

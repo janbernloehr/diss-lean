@@ -126,4 +126,37 @@ theorem eventually_norm_deleted_inverse_le_two_mul_of_extension_converges
   exact norm_deleted_inverse_le_two_mul_of_extension_near
     n (Q n) (R n) S R₀ (hQR n) hR₀S hnear
 
+/-- The inverse norms are bounded at *every* deleted index: the
+convergence estimate handles the tail and finite boundedness handles
+the remaining indices. -/
+theorem exists_uniform_norm_deleted_inverse_of_extension_converges
+    (Q R : (n : ℤ) → DeletedCoeff p n →L[ℂ] DeletedCoeff p n)
+    (S R₀ : Coeff p →L[ℂ] Coeff p)
+    (hQR : ∀ n, (Q n).comp (R n) =
+      ContinuousLinearMap.id ℂ (DeletedCoeff p n))
+    (hR₀S : R₀.comp S = ContinuousLinearMap.id ℂ (Coeff p))
+    (hconv : ∀ ε : ℝ, 0 < ε → ∃ K : ℕ, ∀ n : ℤ,
+      K ≤ n.natAbs → ‖S - deletedJacobianExtension n (Q n)‖ < ε) :
+    ∃ M : ℝ, 0 ≤ M ∧ ∀ n : ℤ, ‖R n‖ ≤ M := by
+  obtain ⟨K,hK⟩ :=
+    eventually_norm_deleted_inverse_le_two_mul_of_extension_converges
+      Q R S R₀ hQR hR₀S hconv
+  let head : Set ℤ := {n | n.natAbs < K}
+  have hhead : head.Finite := by
+    apply (Set.finite_Icc (-(K : ℤ)) (K : ℤ)).subset
+    intro n hn
+    have hnat : (n.natAbs : ℤ) ≤ K := by
+      exact_mod_cast (Nat.le_of_lt hn)
+    have habs : |n| ≤ (K : ℤ) := by
+      simpa only [Int.natCast_natAbs] using hnat
+    exact abs_le.mp habs
+  obtain ⟨B,hB⟩ : BddAbove ((fun n : ℤ => ‖R n‖) '' head) :=
+    (hhead.image (fun n => ‖R n‖)).bddAbove
+  refine ⟨max B (2 * ‖R₀‖), le_max_of_le_right (by positivity), ?_⟩
+  intro n
+  by_cases hn : K ≤ n.natAbs
+  · exact (hK n hn).trans (le_max_right _ _)
+  · have hnhead : n ∈ head := Nat.lt_of_not_ge hn
+    exact (hB ⟨n,hnhead,rfl⟩).trans (le_max_left _ _)
+
 end NLS.Coeff

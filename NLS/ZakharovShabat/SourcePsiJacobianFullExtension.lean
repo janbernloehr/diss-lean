@@ -127,4 +127,51 @@ theorem norm_sourcePsiSelectedRootJacobian_inverse_le_of_full_near
   exact Coeff.norm_deleted_inverse_le_two_mul_of_extension_near
     n Q e.symm.toContinuousLinearMap S R₀ hQR hR₀S hnear
 
+/-- For a family of valid contour charts at the canonical real gap
+roots, operator-norm convergence of the extended Jacobians to a
+single invertible operator bounds all deleted inverse Jacobians.
+The convergence premise is the remaining analytic estimate in the
+first stage of Lemma 12.10. -/
+theorem exists_uniform_sourcePsiGapRoot_inverse_norm_of_full_converges
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceLocus p)
+    (c : ℤ → ℤ → ℂ) (r : ℤ → ℤ → ℝ)
+    (hbij : ∀ n : ℤ, Function.Bijective
+      (sourcePsiSelectedRootJacobian hp hp1 n (c n) (r n)
+        (sourcePsiGapRoot hp hp1 n φ) φ.val))
+    (S R₀ : Coeff p →L[ℂ] Coeff p)
+    (hR₀S : R₀.comp S = ContinuousLinearMap.id ℂ (Coeff p))
+    (hconv : ∀ ε : ℝ, 0 < ε → ∃ K : ℕ, ∀ n : ℤ,
+      K ≤ n.natAbs →
+        ‖S - sourcePsiFullRootJacobian hp hp1 n (c n) (r n)
+          (sourcePsiGapRoot hp hp1 n φ) φ.val‖ < ε) :
+    ∃ M : ℝ, 0 ≤ M ∧ ∀ n : ℤ,
+      ‖(ContinuousLinearEquiv.ofBijective
+        (sourcePsiSelectedRootJacobian hp hp1 n (c n) (r n)
+          (sourcePsiGapRoot hp hp1 n φ) φ.val)
+        (LinearMap.ker_eq_bot.mpr (hbij n).1)
+        (LinearMap.range_eq_top.mpr (hbij n).2)).symm.toContinuousLinearMap‖ ≤ M := by
+  let Q : (n : ℤ) → DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
+    fun n => sourcePsiSelectedRootJacobian hp hp1 n (c n) (r n)
+      (sourcePsiGapRoot hp hp1 n φ) φ.val
+  let e : (n : ℤ) → DeletedCoeff p n ≃L[ℂ] DeletedCoeff p n :=
+    fun n => ContinuousLinearEquiv.ofBijective (Q n)
+      (LinearMap.ker_eq_bot.mpr (hbij n).1)
+      (LinearMap.range_eq_top.mpr (hbij n).2)
+  let invQ : (n : ℤ) → DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
+    fun n => (e n).symm.toContinuousLinearMap
+  have hQR : ∀ n, (Q n).comp (invQ n) =
+      ContinuousLinearMap.id ℂ (DeletedCoeff p n) := by
+    intro n
+    apply ContinuousLinearMap.ext
+    intro x
+    change (e n) ((e n).symm x) = x
+    exact (e n).apply_symm_apply x
+  have hconvQ : ∀ ε : ℝ, 0 < ε → ∃ K : ℕ, ∀ n : ℤ,
+      K ≤ n.natAbs → ‖S - Coeff.deletedJacobianExtension n (Q n)‖ < ε := by
+    simpa only [Q,sourcePsiFullRootJacobian] using hconv
+  exact Coeff.exists_uniform_norm_deleted_inverse_of_extension_converges
+    Q invQ S R₀ hQR hR₀S hconvQ
+
 end NLS.ZakharovShabat
