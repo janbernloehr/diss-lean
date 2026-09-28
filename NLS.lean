@@ -963,6 +963,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalEquationSequenceBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
 import NLS.ZakharovShabat.SourcePsiRealGapQuotient
 import NLS.ZakharovShabat.SourcePsiRealTailOpenGap
+import NLS.ZakharovShabat.SourcePsiGlobalTailQuarterDisc
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

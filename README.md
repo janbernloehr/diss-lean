@@ -3152,3 +3152,10 @@ the explicit quarter-disc quotient domain and circle hypotheses, its
 free eighth-π psi equation coordinate is real. A uniform tail domain
 near arbitrary real-type sources and the finite head remain to be
 connected to this result.
+`SourcePsiGlobalTailQuarterDisc.lean` establishes that connection for
+open tail gaps: on one neighborhood of any real-type source, every
+sufficiently distant free quarter-π disc avoids all other periodic
+gaps, including the finite nonstandard head. Hence each distant open
+real-gap psi coordinate is real for real displaced-root inputs,
+uniformly in the deleted index. Collapsed gaps and the selected head
+are the remaining real-locus cases.
