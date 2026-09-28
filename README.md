@@ -3724,5 +3724,7 @@ gaps: a subsequence of the deleted-root vectors converges in `ℓᵖ`.
 `SourcePsiGapRootLimitPlacement.lean` shows that the limit remains in
 the periodic gaps of a real-type limiting source. It uses endpoint
 continuity and a closedness argument for moving line segments. The
-next continuation step must show that the limiting roots satisfy the
-selected equation.
+`SourcePsiGapRootIsolation.lean` then places all gap-contained roots
+over nearby sources, and their subsequence limit, in one fixed open
+isolating-disc placement set. The next continuation step must show
+that the limiting roots satisfy the selected equation.
