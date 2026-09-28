@@ -9,7 +9,8 @@ The contour witnesses used for the diagonal-plus-compact decomposition
 also satisfy the gap-zero interpolation hypotheses. Thus the bounded
 selected root Jacobian is injective, and the Fredholm reduction makes
 it bijective at real-type source data with isolated real roots. The
-same contour family gives a `C¹` selected equation on an open domain.
+same contour family gives a `C¹` selected equation on an open domain;
+its geometry and coordinate formula are retained for the free seed.
 -/
 
 noncomputable section
@@ -30,6 +31,22 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective
       (a₀,φ) ∈ U ∧
       ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
         ∃ Niso : ℕ, ∃ εiso : ℝ,
+        (∀ i j : ℤ, i ≠ j →
+          Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+            (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+        (∀ m : ℤ, closedBall (c m) (R m) ⊆
+          sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
+            sourcePsiEquationCoordinate hp hp1 n m
+              (t.1 : Coeff p) t.2 (c m) (R m)) ∧
         ContDiffOn ℂ 1
           (fun t : DeletedCoeff p n × CoeffPair p =>
             sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U ∧
@@ -46,6 +63,7 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective
     exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
       hp hp1 φ hφ n a₀
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
+    hdisjoint,hfilled,hgeom,hcoord,
     NLS.ComplexAnalysis.contDiffOn_one_of_differentiableOn _ hUopen hdiff,?_⟩
   intro a ψ hpair hreal hroots hrootloc
   have hcenter (m : ℤ) : ∃ x : ℝ, c m = (x : ℂ) := by

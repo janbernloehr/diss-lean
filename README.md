@@ -3677,3 +3677,11 @@ each real zero in the open retained-root domain extends to a local `C¹`
 zero branch, and the branch remains in that domain near its base point.
 This local existence no longer assumes joint analyticity; proving
 real-analytic dependence and global continuation remains open.
+
+`SourcePsiFreeInitialSolution.lean` proves that the free potential and
+zero deleted roots solve the selected Banach-valued equation on the
+very contour family used for Jacobian bijectivity. Free contour
+orthogonality and pairwise disjoint isolating discs give the zero
+coordinatewise. The constructive `C¹` implicit theorem therefore
+produces a local solution branch from the dissertation's free seed,
+with nearby values in the retained-root placement domain.
