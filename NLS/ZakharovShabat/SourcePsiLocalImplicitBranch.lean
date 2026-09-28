@@ -44,7 +44,7 @@ theorem exists_local_sourcePsi_analytic_branch_of_joint_analytic
             AnalyticAt ℂ s ψ ∧ s ψ = a ∧
             ∀ᶠ χ in 𝓝 ψ,
               sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
-  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,hC1,hbij⟩ :=
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,_,hC1,hbij⟩ :=
     exists_local_sourcePsi_selectedJacobian_bijective hp hp1 φ hφ n a₀
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,
     hUopen.inter (isOpen_sourcePsiRootPlacementDomain

@@ -124,7 +124,7 @@ theorem exists_local_sourcePsi_C1_branch_at_free_source_unique
                 (0 : CoeffPair p) Niso εiso n ∧
             sourcePsiSelectedEquationSequence hp hp1 n c R (s ψ) ψ = 0 := by
   obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,
-      hdisjoint,hfilled,hgeom,hcoord,s,hs,hs0,hsolution⟩ :=
+      hdisjoint,hfilled,_,hgeom,hcoord,s,_,_,_,hs,hs0,_,hsolution⟩ :=
     exists_local_sourcePsi_C1_branch_at_free_source hp hp1 n
   have hunique (a : DeletedCoeff p n)
       (hrootloc : a ∈ sourcePsiRootPlacementSet hp hp1

@@ -36,6 +36,7 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective
             (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
         (∀ m : ℤ, closedBall (c m) (R m) ⊆
           sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ t ∈ U, ∀ m : ℤ,
           0 < R m ∧
           sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
@@ -63,7 +64,7 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective
     exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
       hp hp1 φ hφ n a₀
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
-    hdisjoint,hfilled,hgeom,hcoord,
+    hdisjoint,hfilled,hcReal,hgeom,hcoord,
     NLS.ComplexAnalysis.contDiffOn_one_of_differentiableOn _ hUopen hdiff,?_⟩
   intro a ψ hpair hreal hroots hrootloc
   have hcenter (m : ℤ) : ∃ x : ℝ, c m = (x : ℂ) := by

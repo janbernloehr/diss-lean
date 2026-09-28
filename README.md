@@ -3700,3 +3700,9 @@ products through the selected Banach-valued equation. A two-integrand
 circle-reflection theorem handles the orientation sign. This provides
 the symmetry needed to identify locally unique branches with their
 conjugates at real-type potentials.
+`SourcePsiFreeRealBranch.lean` makes that identification near the free
+potential. On every nearby real-type potential, its `C¹` solution has
+real retained roots; the solved contour equation then places each
+retained root in its selected periodic gap. This establishes the local
+real seed for Proposition 12.9, while real analyticity and global
+continuation remain to be proved.

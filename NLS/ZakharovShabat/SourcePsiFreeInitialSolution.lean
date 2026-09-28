@@ -125,6 +125,7 @@ theorem exists_local_sourcePsi_C1_branch_at_free_source
             (sourceIsolatingDisc hp hp1 (0 : CoeffPair p) Niso εiso j)) ∧
         (∀ m : ℤ, closedBall (c m) (R m) ⊆
           sourceIsolatingDisc hp hp1 (0 : CoeffPair p) Niso εiso m) ∧
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ t ∈ U, ∀ m : ℤ,
           0 < R m ∧
           sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
@@ -137,14 +138,21 @@ theorem exists_local_sourcePsi_C1_branch_at_free_source
             sourcePsiEquationCoordinate hp hp1 n m
               (t.1 : Coeff p) t.2 (c m) (R m)) ∧
         ∃ s : CoeffPair p → DeletedCoeff p n,
+          ∃ V : Set (DeletedCoeff p n × CoeffPair p),
+          IsOpen V ∧
+          ((0 : DeletedCoeff p n),(0 : CoeffPair p)) ∈ V ∧
           ContDiffAt ℂ 1 s 0 ∧ s 0 = 0 ∧
+          (∀ b : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+            (b,ψ) ∈ V →
+            sourcePsiSelectedEquationSequence hp hp1 n c R b ψ = 0 →
+            b = s ψ) ∧
           ∀ᶠ ψ in 𝓝 (0 : CoeffPair p),
             (s ψ,ψ) ∈ U ∩
               sourcePsiRootPlacementDomain hp hp1
                 (0 : CoeffPair p) Niso εiso n ∧
             sourcePsiSelectedEquationSequence hp hp1 n c R (s ψ) ψ = 0 := by
   obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,
-      hdisjoint,hfilled,hgeom,hcoord,hC1,hbij⟩ :=
+      hdisjoint,hfilled,hcenter,hgeom,hcoord,hC1,hbij⟩ :=
     exists_local_sourcePsi_selectedJacobian_bijective
       hp hp1 (0 : CoeffPair p) (by simp) n (0 : DeletedCoeff p n)
   have hR (m : ℤ) : 0 < R m :=
@@ -183,7 +191,8 @@ theorem exists_local_sourcePsi_C1_branch_at_free_source
         sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2)
       ((0 : DeletedCoeff p n),(0 : CoeffPair p)) :=
     hC1.contDiffAt (hUopen.mem_nhds hbase)
-  obtain ⟨s,hs,hs0,hzeros⟩ := exists_C1_sourcePsi_local_solution
+  obtain ⟨s,V,hVopen,hVbase,hs,hs0,hunique,hzeros⟩ :=
+    exists_C1_sourcePsi_local_solution_unique
     hp hp1 n c R 0 0 hF hzero
       (hbij 0 0 hbase (by simp) hroots hrootloc)
   have hDopen : IsOpen (U ∩
@@ -205,7 +214,8 @@ theorem exists_local_sourcePsi_C1_branch_at_free_source
         U ∩ sourcePsiRootPlacementDomain hp hp1
           (0 : CoeffPair p) Niso εiso n from ⟨hbase,hrootloc⟩)
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
-    hdisjoint,hfilled,hgeom,hcoord,s,hs,hs0,?_⟩
+    hdisjoint,hfilled,hcenter,hgeom,hcoord,
+    s,V,hVopen,hVbase,hs,hs0,hunique,?_⟩
   filter_upwards [hplacement,hzeros] with ψ hψ hψzero
   exact ⟨hψ,hψzero⟩
 

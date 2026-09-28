@@ -105,7 +105,7 @@ theorem exists_local_sourcePsi_C1_branch_unique
               (s χ,χ) ∈ U ∩
                 sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n ∧
               sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
-  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,hC1,hbij⟩ :=
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,_,hC1,hbij⟩ :=
     exists_local_sourcePsi_selectedJacobian_bijective hp hp1 φ hφ n a₀
   have hDopen : IsOpen (U ∩
       sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n) :=

@@ -176,7 +176,7 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective_on_rootPlacement
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
           Function.Bijective
             (sourcePsiSelectedRootJacobian hp hp1 n c R a ψ) := by
-  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,_,hbij⟩ :=
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,_,_,hbij⟩ :=
     exists_local_sourcePsi_selectedJacobian_bijective hp hp1 φ hφ n a₀
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
     hUopen.inter (isOpen_sourcePsiRootPlacementDomain

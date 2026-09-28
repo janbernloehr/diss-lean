@@ -34,6 +34,11 @@ def conj (h : DeletedCoeff p n) : DeletedCoeff p n :=
   ext j
   simp
 
+/-- Pointwise conjugation is continuous on the deleted sequence space. -/
+theorem continuous_conj : Continuous (conj : DeletedCoeff p n → DeletedCoeff p n) := by
+  exact (continuous_star.comp continuous_subtype_val).subtype_mk
+    (fun h => (conj h).property)
+
 /-- The real-coordinate component of a deleted direction. -/
 def realPart (h : DeletedCoeff p n) : DeletedCoeff p n :=
   (1/2 : ℂ) • (h + conj h)
