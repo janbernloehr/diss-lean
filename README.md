@@ -3395,4 +3395,8 @@ diagonal-plus-compact decomposition. The global sequence analyticity
 and selected-Jacobian matrix theorems now retain the all-gap contour
 geometry of that same family, including its finitely many head rows.
 The finite-head spectral separation needed for nonzero diagonal
-entries remains open.
+entries remains open. `SourcePsiSelectedJacobianAllGapNonzero.lean`
+applies the scalar all-gap nonvanishing theorem directly to the bounded
+selected Jacobian at any retained row, including finite head rows and
+collapsed gaps, under explicit contour avoidance, regular-factor
+analyticity, and retained-root separation hypotheses.

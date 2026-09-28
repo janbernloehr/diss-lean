@@ -1004,6 +1004,7 @@ import NLS.ZakharovShabat.SourcePsiSelectedJacobianEntry
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianDiagonalTail
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianOffDiagonalTail
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianCombinedTail
+import NLS.ZakharovShabat.SourcePsiSelectedJacobianAllGapNonzero
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet
