@@ -34,6 +34,9 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
           sourceStandardRootOmittedDomain hp hp1 φ m ∧
         sphere (c m) (R m) ⊆
           sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ Ktail : ℕ,
+      (∀ m : ℤ, Ktail < m.natAbs →
+        c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
       ∃ δ : ℝ, 0 < δ ∧ ∃ C : ℝ, 0 ≤ C ∧
       ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
         ∃ U : Set (DeletedCoeff p n × CoeffPair p),
@@ -68,7 +71,7 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
   have hnear : ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
       ((Coeff.deleteCoordinate n a : Coeff p),φ) ∈ ball (a,φ) (r/2) :=
     hparam.eventually (isOpen_ball.mem_nhds (mem_ball_self hhalf))
-  refine ⟨c,R,(fun m => hgeom (a,φ) hbaseEq m),r/2,hhalf,C,hC,?_⟩
+  refine ⟨c,R,(fun m => hgeom (a,φ) hbaseEq m),K,hchoice,r/2,hhalf,C,hC,?_⟩
   filter_upwards [hnear] with n hn
   let H : DeletedCoeff p n × CoeffPair p → Coeff p × CoeffPair p :=
     fun t => ((t.1 : Coeff p),t.2)
@@ -181,7 +184,7 @@ theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit
                 (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m)
               (Filter.comap Int.natAbs Filter.atTop)
               (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m))) := by
-  obtain ⟨c,R,hgeom,δ,hδ,C,hC,hcharts⟩ :=
+  obtain ⟨c,R,hgeom,_,_,δ,hδ,C,hC,hcharts⟩ :=
     exists_common_sourcePsi_selectedJacobianCharts_at_natAbs hp hp1 a φ hφ
   let M : ℝ := 2*C/(δ/2) + 2
   have hM : 0 ≤ M := by
