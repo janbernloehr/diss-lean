@@ -53,15 +53,22 @@ theorem exists_common_sourcePsi_limitMatrixColumns
         (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
           ‖sourcePsiFullRootJacobian hp hp1 n c R
             (Coeff.deleteCoordinateTo n a) φ‖ ≤ M) ∧
+        (∀ m k : ℤ,
+          Tendsto (fun n : ℤ =>
+            (sourcePsiFullRootJacobian hp hp1 n c R
+              (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m)
+            (Filter.comap Int.natAbs Filter.atTop)
+            (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)))) ∧
         ∀ k : ℤ, ∃ v : Coeff p,
           (∀ m : ℤ,
             v m = sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)) ∧
           ‖v‖ ≤ M := by
   obtain ⟨c,R,hgeom,M,hM,hbound,hentry⟩ :=
     exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit hp hp1 a φ hφ
-  refine ⟨c,R,hgeom,M,hM,hbound,?_⟩
   have havoid := sourcePeriodicGapRootSet_avoids_commonContours
     hp hp1 a φ ha c R (fun m => (hgeom m).2.2.2)
+  have hentryAll (m k : ℤ) := hentry m k (havoid m k)
+  refine ⟨c,R,hgeom,M,hM,hbound,hentryAll,?_⟩
   intro k
   let e : Coeff p := lp.single p k 1
   let Q : ℤ → Coeff p →L[ℂ] Coeff p := fun n =>
@@ -81,7 +88,7 @@ theorem exists_common_sourcePsi_limitMatrixColumns
       (Filter.comap Int.natAbs Filter.atTop) (𝓝 f) := by
     rw [tendsto_pi_nhds]
     intro m
-    exact hentry m k (havoid m k)
+    exact hentryAll m k
   letI : NeBot (Filter.comap Int.natAbs Filter.atTop) :=
     (inferInstance : NeBot (Filter.atTop : Filter ℕ)).comap_of_surj
       Int.natAbs_surjective
