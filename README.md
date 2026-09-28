@@ -3555,6 +3555,11 @@ psi-Jacobian has real entries at real data, so
 `SourcePsiSelectedJacobianKernelRealImag.lean` applies this result to
 its actual bounded operator. `SourcePsiVariationComplexOpenGapZeros.lean`
 then gives separate open-gap zeros for the entire variations of both
-real components of any complex kernel direction. Proving the outer
-circle estimate and applying interpolation to each component remain
-for Lemma 12.7.
+real components of any complex kernel direction. The interpolation
+uniqueness mechanism is now proved in `EntireCircleDecay.lean`,
+`SimpleZeroQuotient.lean`, and `SimpleZeroInterpolation.lean`: shared
+simple zeros fill the quotient analytically, and uniform decay on
+expanding circles forces the numerator to vanish. The remaining
+Lemma 12.7 work is to construct the interpolating product from the
+gap zeros, establish its simple zero set and outer-circle asymptotic,
+and prove the corresponding outer-circle estimate for each variation.

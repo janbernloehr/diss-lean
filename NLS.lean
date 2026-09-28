@@ -497,6 +497,8 @@ import NLS.ComplexAnalysis.MatrixTaylorDeterminant
 import NLS.ZakharovShabat.ClassicalBoundaryMultiplicity
 import NLS.ZakharovShabat.ClassicalDiscriminantMultiplicity
 import NLS.ComplexAnalysis.EqualOrderQuotient
+import NLS.ComplexAnalysis.SimpleZeroQuotient
+import NLS.ComplexAnalysis.SimpleZeroInterpolation
 import NLS.ComplexAnalysis.AnalyticQuotientUniqueness
 import NLS.ZakharovShabat.ClassicalProductQuotients
 import NLS.ComplexAnalysis.SmallAbsoluteProducts
@@ -586,6 +588,7 @@ import NLS.ZakharovShabat.FreeSineQuotient
 import NLS.ZakharovShabat.LocalSpectralFactors
 import NLS.ZakharovShabat.RestoredSineProductLp
 import NLS.ComplexAnalysis.DiscBounds
+import NLS.ComplexAnalysis.EntireCircleDecay
 import NLS.SequenceSpaces.ParityInterleave
 import NLS.ZakharovShabat.FreeHalfDiscGeometry
 import NLS.ZakharovShabat.RestoredSpectralPairs
