@@ -78,14 +78,14 @@ theorem tendstoUniformlyOn_mul_of_isCompact
   rw [← hfi hy, ← hgi hy]
 
 /-- The two moving factors in the selected-index integrand have a
-uniform product limit on a fixed free-centered valid contour. -/
+uniform product limit on a fixed valid contour. -/
 theorem tendstoUniformlyOn_sourcePsiQuotient_mul_ratio
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (m : ℤ) (ψ : CoeffPair p)
     (hψ : IsRealType (CoeffPair.toMax p ψ))
-    (R : ℝ) (hR : 0 ≤ R)
-    (hdisc : closedBall ((Real.pi : ℂ) * m) R ⊆
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hdisc : closedBall c R ⊆
       sourceStandardRootOmittedDomain hp hp1 ψ m)
     (a : Coeff p) :
     TendstoUniformlyOn
@@ -96,14 +96,14 @@ theorem tendstoUniformlyOn_sourcePsiQuotient_mul_ratio
       (fun z : ℂ =>
         sourceSingleRootQuotientJointProduct hp hp1 m (z,(a,ψ)))
       (Filter.comap Int.natAbs Filter.atTop)
-      (sphere ((Real.pi : ℂ) * m) R) := by
+      (sphere c R) := by
   obtain ⟨W,_,_,hreal,hdata⟩ :=
     exists_global_source_analytic_singleRootQuotient hp hp1
   have hQcont (b : Coeff p) : ContinuousOn
       (fun z : ℂ => sourceSingleRootQuotientJointProduct hp hp1 m
-        (z,(b,ψ))) (sphere ((Real.pi : ℂ) * m) R) := by
+        (z,(b,ψ))) (sphere c R) := by
     intro z hz
-    have hzdisc : z ∈ closedBall ((Real.pi : ℂ) * m) R :=
+    have hzdisc : z ∈ closedBall c R :=
       sphere_subset_closedBall hz
     have ht : (z,(b,ψ)) ∈
         sourceSingleRootQuotientJointDomain hp hp1 W m :=
@@ -113,15 +113,15 @@ theorem tendstoUniformlyOn_sourcePsiQuotient_mul_ratio
     exact (hAna.continuousAt.comp
       (f := fun w : ℂ => (w,(b,ψ))) hinc).continuousWithinAt
   have hQ := (tendstoUniformlyOn_sourceSingleRootQuotient_deleteCoordinate
-    hp hp1 m ψ hψ ((Real.pi : ℂ) * m) R hdisc a).mono
+    hp hp1 m ψ hψ c R hdisc a).mono
       sphere_subset_closedBall
-  have hratio := (tendstoUniformlyOn_sourcePsiDeletedIndexRatio m R hR).mono
+  have hratio := (tendstoUniformlyOn_sourcePsiDeletedIndexRatio_anyDisc m c R hR).mono
       sphere_subset_closedBall
   have hprod := tendstoUniformlyOn_mul_of_isCompact
-    (isCompact_sphere ((Real.pi : ℂ) * m) R)
+    (isCompact_sphere c R)
     (hQcont a) continuousOn_const
     (Filter.Eventually.of_forall fun n => hQcont (Coeff.deleteCoordinate n a))
-    (eventually_continuousOn_sourcePsiDeletedIndexRatio m R)
+    (eventually_continuousOn_sourcePsiDeletedIndexRatio_anyCircle m c R)
     hQ hratio
   simpa only [mul_one] using hprod
 
@@ -149,19 +149,19 @@ theorem continuousOn_sourcePsiLimitMatrixMultiplier
         (fun z hz => sourceStandardRoot_ne_zero_off_segment
           hp hp1 ψ m z (hm z hz)))
 
-/-- On a fixed valid free-centered contour, the retained-entry
+/-- On a fixed valid contour, the retained-entry
 integrand converges uniformly to the `Q*` matrix integrand. -/
 theorem tendstoUniformlyOn_sourcePsi_fullJacobianIntegrand_deletedIndex
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (m k : ℤ) (a : Coeff p) (ψ : CoeffPair p)
     (hψ : IsRealType (CoeffPair.toMax p ψ))
-    (R : ℝ) (hR : 0 ≤ R)
-    (hdisc : closedBall ((Real.pi : ℂ) * m) R ⊆
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hdisc : closedBall c R ⊆
       sourceStandardRootOmittedDomain hp hp1 ψ m)
-    (hk : ∀ z ∈ sphere ((Real.pi : ℂ) * m) R,
+    (hk : ∀ z ∈ sphere c R,
       displacedRoots a k - z ≠ 0)
-    (hm : ∀ z ∈ sphere ((Real.pi : ℂ) * m) R,
+    (hm : ∀ z ∈ sphere c R,
       z ∉ sourcePeriodicSegment hp hp1 ψ m) :
     TendstoUniformlyOn
       (fun n : ℤ => fun z : ℂ =>
@@ -174,30 +174,30 @@ theorem tendstoUniformlyOn_sourcePsi_fullJacobianIntegrand_deletedIndex
                   sourceStandardRoot hp hp1 ψ m z)))
       (sourcePsiLimitMatrixIntegrand hp hp1 m k a ψ)
       (Filter.comap Int.natAbs Filter.atTop)
-      (sphere ((Real.pi : ℂ) * m) R) := by
+      (sphere c R) := by
   let A : ℂ → ℂ := fun z =>
     ((displacedRoots a m-z)/(displacedRoots a k-z)) *
       (I / sourceStandardRoot hp hp1 ψ m z)
-  have hA : ContinuousOn A (sphere ((Real.pi : ℂ) * m) R) :=
+  have hA : ContinuousOn A (sphere c R) :=
     continuousOn_sourcePsiLimitMatrixMultiplier hp hp1 m k a ψ
-      ((Real.pi : ℂ) * m) R hk hm
+      c R hk hm
   have hAunif : TendstoUniformlyOn
       (fun _n : ℤ => A) A
       (Filter.comap Int.natAbs Filter.atTop)
-      (sphere ((Real.pi : ℂ) * m) R) := by
+      (sphere c R) := by
     rw [Metric.tendstoUniformlyOn_iff]
     intro ε hε
     filter_upwards [] with n z hz
     simpa only [dist_self] using hε
   have hQR := tendstoUniformlyOn_sourcePsiQuotient_mul_ratio
-    hp hp1 m ψ hψ R hR hdisc a
+    hp hp1 m ψ hψ c R hR hdisc a
   obtain ⟨W,_,_,hreal,hdata⟩ :=
     exists_global_source_analytic_singleRootQuotient hp hp1
   have hQcont (b : Coeff p) : ContinuousOn
       (fun z : ℂ => sourceSingleRootQuotientJointProduct hp hp1 m
-        (z,(b,ψ))) (sphere ((Real.pi : ℂ) * m) R) := by
+        (z,(b,ψ))) (sphere c R) := by
     intro z hz
-    have hzdisc : z ∈ closedBall ((Real.pi : ℂ) * m) R :=
+    have hzdisc : z ∈ closedBall c R :=
       sphere_subset_closedBall hz
     have ht : (z,(b,ψ)) ∈
         sourceSingleRootQuotientJointDomain hp hp1 W m :=
@@ -211,12 +211,12 @@ theorem tendstoUniformlyOn_sourcePsi_fullJacobianIntegrand_deletedIndex
         sourceSingleRootQuotientJointProduct hp hp1 m
           (z,(Coeff.deleteCoordinate n a,ψ)) *
             sourcePsiDeletedIndexRatio n m z)
-          (sphere ((Real.pi : ℂ) * m) R) := by
-    filter_upwards [eventually_continuousOn_sourcePsiDeletedIndexRatio m R]
+          (sphere c R) := by
+    filter_upwards [eventually_continuousOn_sourcePsiDeletedIndexRatio_anyCircle m c R]
       with n hn
     exact (hQcont (Coeff.deleteCoordinate n a)).mul hn
   have hprod := tendstoUniformlyOn_mul_of_isCompact
-    (isCompact_sphere ((Real.pi : ℂ) * m) R)
+    (isCompact_sphere c R)
     hA (hQcont a)
     (Filter.Eventually.of_forall fun _ => hA)
     hQRcont hAunif hQR
@@ -246,7 +246,7 @@ theorem tendstoUniformlyOn_sourcePsi_fullJacobianIntegrand_deletedIndex
               sourcePsiGapRegularFactor hp hp1 n m
                 (Coeff.deleteCoordinate n a) ψ z) /
                   sourceStandardRoot hp hp1 ψ m z)))
-        (sphere ((Real.pi : ℂ) * m) R) := by
+        (sphere c R) := by
     filter_upwards [hne] with n hn z _
     have hmroot : displacedRoots (Coeff.deleteCoordinate n a) m =
         displacedRoots a m := by
@@ -309,12 +309,12 @@ theorem eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (m k : ℤ) (a : Coeff p) (ψ : CoeffPair p)
     (hψ : IsRealType (CoeffPair.toMax p ψ))
-    (R : ℝ)
-    (hdisc : closedBall ((Real.pi : ℂ) * m) R ⊆
+    (c : ℂ) (R : ℝ)
+    (hdisc : closedBall c R ⊆
       sourceStandardRootOmittedDomain hp hp1 ψ m)
-    (hk : ∀ z ∈ sphere ((Real.pi : ℂ) * m) R,
+    (hk : ∀ z ∈ sphere c R,
       displacedRoots a k - z ≠ 0)
-    (hm : ∀ z ∈ sphere ((Real.pi : ℂ) * m) R,
+    (hm : ∀ z ∈ sphere c R,
       z ∉ sourcePeriodicSegment hp hp1 ψ m) :
     ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
       ContinuousOn (fun z : ℂ =>
@@ -325,11 +325,11 @@ theorem eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
               sourcePsiGapRegularFactor hp hp1 n m
                 (Coeff.deleteCoordinate n a) ψ z) /
                   sourceStandardRoot hp hp1 ψ m z)))
-        (sphere ((Real.pi : ℂ) * m) R) := by
+        (sphere c R) := by
   obtain ⟨W,_,_,hreal,hdata⟩ :=
     exists_global_source_analytic_singleRootQuotient hp hp1
-  have hfar := (tendsto_norm_freeCenter_sub_at_natAbs
-    ((Real.pi : ℂ) * m)).eventually_ge_atTop (R + 1)
+  have hfar := (tendsto_norm_freeCenter_sub_at_natAbs c).eventually_ge_atTop
+    (R + 1)
   have hne : ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
       n ≠ k := by
     apply eventually_comap.mpr
@@ -339,16 +339,16 @@ theorem eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
     subst n
     omega
   filter_upwards [hfar,hne] with n hnfar hnk
-  have hden : ∀ z ∈ sphere ((Real.pi : ℂ) * m) R,
+  have hden : ∀ z ∈ sphere c R,
       (Real.pi : ℂ) * n - z ≠ 0 := by
     intro z hz
-    have hzR : ‖z - (Real.pi : ℂ) * m‖ ≤ R := by
+    have hzR : ‖z-c‖ ≤ R := by
       simpa only [mem_sphere, dist_eq_norm] using le_of_eq hz
-    have htri : ‖(Real.pi : ℂ) * n - (Real.pi : ℂ) * m‖ ≤
-        ‖(Real.pi : ℂ) * n - z‖ + ‖z - (Real.pi : ℂ) * m‖ := by
+    have htri : ‖(Real.pi : ℂ) * n-c‖ ≤
+        ‖(Real.pi : ℂ) * n-z‖ + ‖z-c‖ := by
       calc
-        ‖(Real.pi : ℂ) * n - (Real.pi : ℂ) * m‖ =
-            ‖((Real.pi : ℂ) * n - z) + (z - (Real.pi : ℂ) * m)‖ := by
+        ‖(Real.pi : ℂ) * n-c‖ =
+            ‖((Real.pi : ℂ) * n-z)+(z-c)‖ := by
               congr 1
               ring
         _ ≤ _ := norm_add_le _ _
@@ -357,9 +357,9 @@ theorem eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
   have hQ : ContinuousOn
       (fun z : ℂ => sourceSingleRootQuotientJointProduct hp hp1 m
         (z,(Coeff.deleteCoordinate n a,ψ)))
-      (sphere ((Real.pi : ℂ) * m) R) := by
+      (sphere c R) := by
     intro z hz
-    have hzdisc : z ∈ closedBall ((Real.pi : ℂ) * m) R :=
+    have hzdisc : z ∈ closedBall c R :=
       sphere_subset_closedBall hz
     have ht : (z,(Coeff.deleteCoordinate n a,ψ)) ∈
         sourceSingleRootQuotientJointDomain hp hp1 W m :=
@@ -375,7 +375,7 @@ theorem eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
   have hregular : ContinuousOn
       (sourcePsiGapRegularFactor hp hp1 n m
         (Coeff.deleteCoordinate n a) ψ)
-      (sphere ((Real.pi : ℂ) * m) R) := by
+      (sphere c R) := by
     change ContinuousOn (fun z : ℂ =>
       (I * sourceSingleRootQuotientJointProduct hp hp1 m
         (z,(Coeff.deleteCoordinate n a,ψ))) /
@@ -390,13 +390,13 @@ theorem eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
       (fun z : ℂ =>
         (displacedRoots (Coeff.deleteCoordinate n a) m-z) /
           (displacedRoots (Coeff.deleteCoordinate n a) k-z))
-      (sphere ((Real.pi : ℂ) * m) R) :=
+      (sphere c R) :=
     (continuousOn_const.sub continuousOn_id).div
       (continuousOn_const.sub continuousOn_id)
       (by simpa only [hkroot] using hk)
   have hstd : ContinuousOn
       (fun z : ℂ => sourceStandardRoot hp hp1 ψ m z)
-      (sphere ((Real.pi : ℂ) * m) R) := by
+      (sphere c R) := by
     intro z hz
     exact (sourceStandardRoot_analyticAt hp hp1 ψ m z
       (hm z hz)).continuousAt.continuousWithinAt
@@ -406,22 +406,22 @@ theorem eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
         hp hp1 ψ m z (hm z hz))))
 
 /-- The full retained matrix integrand, normalized by `π`, can be
-passed through a fixed valid free-centered contour integral. This is
+passed through a fixed valid contour integral. This is
 the scalar contour limit underlying the candidate `Q*` entries. -/
 theorem tendsto_circleIntegral_sourcePsi_fullJacobianIntegrand_deletedIndex
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (m k : ℤ) (a : Coeff p) (ψ : CoeffPair p)
     (hψ : IsRealType (CoeffPair.toMax p ψ))
-    (R : ℝ) (hR : 0 ≤ R)
-    (hdisc : closedBall ((Real.pi : ℂ) * m) R ⊆
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hdisc : closedBall c R ⊆
       sourceStandardRootOmittedDomain hp hp1 ψ m)
-    (hk : ∀ z ∈ sphere ((Real.pi : ℂ) * m) R,
+    (hk : ∀ z ∈ sphere c R,
       displacedRoots a k - z ≠ 0)
-    (hm : ∀ z ∈ sphere ((Real.pi : ℂ) * m) R,
+    (hm : ∀ z ∈ sphere c R,
       z ∉ sourcePeriodicSegment hp hp1 ψ m) :
     Tendsto (fun n : ℤ =>
-      ∮ z in C((Real.pi : ℂ) * m,R),
+      ∮ z in C(c,R),
         (Real.pi : ℂ) *
           (((displacedRoots (Coeff.deleteCoordinate n a) m-z) /
               (displacedRoots (Coeff.deleteCoordinate n a) k-z)) *
@@ -430,11 +430,11 @@ theorem tendsto_circleIntegral_sourcePsi_fullJacobianIntegrand_deletedIndex
                 (Coeff.deleteCoordinate n a) ψ z) /
                   sourceStandardRoot hp hp1 ψ m z)))
       (Filter.comap Int.natAbs Filter.atTop)
-      (𝓝 (∮ z in C((Real.pi : ℂ) * m,R),
+      (𝓝 (∮ z in C(c,R),
         sourcePsiLimitMatrixIntegrand hp hp1 m k a ψ z)) := by
   exact (tendstoUniformlyOn_sourcePsi_fullJacobianIntegrand_deletedIndex
-    hp hp1 m k a ψ hψ R hR hdisc hk hm).tendsto_circleIntegral_of_continuousOn
+    hp hp1 m k a ψ hψ c R hR hdisc hk hm).tendsto_circleIntegral_of_continuousOn
       hR (eventually_continuousOn_sourcePsi_fullJacobianIntegrand_deletedIndex
-        hp hp1 m k a ψ hψ R hdisc hk hm)
+        hp hp1 m k a ψ hψ c R hdisc hk hm)
 
 end NLS.ZakharovShabat

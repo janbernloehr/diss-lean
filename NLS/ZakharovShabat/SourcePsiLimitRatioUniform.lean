@@ -106,4 +106,46 @@ theorem tendsto_circleIntegral_sourcePsiDeletedIndexRatio
     sphere_subset_closedBall).tendsto_circleIntegral_of_continuousOn hR
       (eventually_continuousOn_sourcePsiDeletedIndexRatio m R)
 
+/-- The ratio also converges uniformly on a disc with an arbitrary
+fixed center, since that disc lies in a larger free-centered disc. -/
+theorem tendstoUniformlyOn_sourcePsiDeletedIndexRatio_anyDisc
+    (m : ℤ) (c : ℂ) (R : ℝ) (hR : 0 ≤ R) :
+    TendstoUniformlyOn (fun n : ℤ => sourcePsiDeletedIndexRatio n m)
+      (fun _ : ℂ => (1 : ℂ))
+      (Filter.comap Int.natAbs Filter.atTop)
+      (closedBall c R) := by
+  have hlarge : 0 ≤ R + dist c ((Real.pi : ℂ) * m) := by positivity
+  exact (tendstoUniformlyOn_sourcePsiDeletedIndexRatio m
+    (R + dist c ((Real.pi : ℂ) * m)) hlarge).mono
+      (closedBall_subset_closedBall' le_rfl)
+
+/-- On any fixed contour, sufficiently distant omitted free centers
+avoid every point of the circle. -/
+theorem eventually_continuousOn_sourcePsiDeletedIndexRatio_anyCircle
+    (m : ℤ) (c : ℂ) (R : ℝ) :
+    ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+      ContinuousOn (sourcePsiDeletedIndexRatio n m) (sphere c R) := by
+  have hfar := (tendsto_norm_freeCenter_sub_at_natAbs c).eventually_ge_atTop
+    (R + 1)
+  filter_upwards [hfar] with n hn
+  have hden : ∀ z ∈ sphere c R,
+      (Real.pi : ℂ) * n - z ≠ 0 := by
+    intro z hz
+    have hzR : ‖z-c‖ ≤ R := by
+      simpa only [mem_sphere, dist_eq_norm] using le_of_eq hz
+    have htri : ‖(Real.pi : ℂ) * n-c‖ ≤
+        ‖(Real.pi : ℂ) * n-z‖ + ‖z-c‖ := by
+      calc
+        ‖(Real.pi : ℂ) * n-c‖ =
+            ‖((Real.pi : ℂ) * n-z)+(z-c)‖ := by
+              congr 1
+              ring
+        _ ≤ _ := norm_add_le _ _
+    have hdenpos : 0 < ‖(Real.pi : ℂ) * n-z‖ := by linarith
+    exact norm_ne_zero_iff.mp (ne_of_gt hdenpos)
+  change ContinuousOn (fun z : ℂ =>
+    ((Real.pi : ℂ) * ((n-m : ℤ) : ℂ)) / ((Real.pi : ℂ) * n-z)) _
+  exact continuousOn_const.div
+    (continuousOn_const.sub continuousOn_id) hden
+
 end NLS.ZakharovShabat

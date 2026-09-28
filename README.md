@@ -3937,6 +3937,8 @@ integral.
 limits using compact-contour multiplication. When the fixed contour
 avoids the retained root and standard-root gap, the complete retained
 Jacobian integrand converges uniformly and its circle integral tends to
-the candidate `Q*` entry integral. Identifying these contour integrals
+the candidate `Q*` entry integral. The contour may have any fixed center,
+including the shifted central circles of the common contour family.
+Identifying these contour integrals
 with the actual scalar Jacobian entries and controlling uniform operator
 tails remain open.
