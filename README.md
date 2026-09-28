@@ -3664,3 +3664,8 @@ the Fréchet derivative of a bounded complex-holomorphic Banach-space map.
 It follows that complex differentiability on an open Banach-space domain
 implies `C¹`, providing the first regularity upgrade for the selected
 equation's already established holomorphy.
+`SourcePsiLocalJacobianBijectivity.lean` and
+`SourcePsiLocalImplicitBranch.lean` now expose this `C¹` regularity on
+the same selected contour family as the real-locus Jacobian
+isomorphism and conditional analytic branch. Higher complex smoothness
+or a direct power-series proof remains necessary for joint analyticity.

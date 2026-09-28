@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianIsolatingDiagonal
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianInjectivity
+import NLS.ComplexAnalysis.BanachHolomorphicC1
 
 /-!
 # Local bijectivity of the selected psi root Jacobian
@@ -7,7 +8,8 @@ import NLS.ZakharovShabat.SourcePsiSelectedJacobianInjectivity
 The contour witnesses used for the diagonal-plus-compact decomposition
 also satisfy the gap-zero interpolation hypotheses. Thus the bounded
 selected root Jacobian is injective, and the Fredholm reduction makes
-it bijective at real-type source data with isolated real roots.
+it bijective at real-type source data with isolated real roots. The
+same contour family gives a `C¹` selected equation on an open domain.
 -/
 
 noncomputable section
@@ -15,9 +17,10 @@ open Set Metric Complex
 open scoped ENNReal
 namespace NLS.ZakharovShabat
 
-/-- The selected psi root Jacobian is a bounded linear isomorphism
-throughout the real locus of a common local contour family, provided
-the displaced roots lie in their isolating discs. -/
+/-- The selected psi equation is `C¹`, and its root Jacobian is a
+bounded linear isomorphism throughout the real locus of a common
+local contour family, provided the displaced roots lie in their
+isolating discs. -/
 theorem exists_local_sourcePsi_selectedJacobian_bijective
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -27,6 +30,9 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective
       (a₀,φ) ∈ U ∧
       ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
         ∃ Niso : ℕ, ∃ εiso : ℝ,
+        ContDiffOn ℂ 1
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U ∧
         ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
@@ -39,7 +45,8 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective
       hdisjoint,hfilled,hcReal,hgeom,hcoord,hrealSeq,hdiff,hdecomp⟩ :=
     exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
       hp hp1 φ hφ n a₀
-  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_⟩
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
+    NLS.ComplexAnalysis.contDiffOn_one_of_differentiableOn _ hUopen hdiff,?_⟩
   intro a ψ hpair hreal hroots hrootloc
   have hcenter (m : ℤ) : ∃ x : ℝ, c m = (x : ℂ) := by
     refine ⟨(c m).re,?_⟩
