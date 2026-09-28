@@ -3444,3 +3444,8 @@ the selected scalar entry estimates only on distant rows; all finite
 head rows follow from boundedness. The remaining diagonal
 invertibility question is confined to finite-head nonvanishing for a
 contour family shared with this compact decomposition.
+`DeletedJacobianCompactRemainder.lean` factors out the operator step:
+tail reciprocal estimates for any bounded deleted operator imply its
+canonical off-diagonal remainder is compact. The selected psi theorem
+now applies that general result directly, which allows later diagonal
+and compact estimates to be assembled on one chosen contour family.
