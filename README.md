@@ -3576,6 +3576,10 @@ variation multiplied by the deleted linear factor vanishes at every
 product zero, as required by the interpolation lemma.
 `SourceGapInterpolationOuterCircles.lean` proves that the product divided
 by its free sine normalization tends uniformly to one on the large
-half-integer-radius circles, which are eventually zero-free. The
-remaining Lemma 12.7 work is the corresponding circle estimate for
-each variation and application of interpolation uniqueness.
+half-integer-radius circles, which are eventually zero-free.
+`SourcePsiVariationCutoffFormula.lean` computes the root-direction
+derivative of each literal deleted product as an explicit finite
+product-rule sum and proves that those sums converge to the entire
+numerator variation. The remaining Lemma 12.7 work is to turn that
+limit into the resolvent-series circle estimate and apply interpolation
+uniqueness.
