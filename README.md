@@ -3748,3 +3748,8 @@ to a strongly convergent root/source limit in a fixed `C¹` chart,
 provided the charts are eventually comparable and the limit belongs
 to that chart. The remaining geometric obligation is to verify these
 comparison and chart-membership conditions for continuation solutions.
+`SourcePsiCommonIsolatingContour.lean` verifies the contour-comparison
+condition whenever two families of filled contour discs lie inside the
+same assigned isolating-disc family. A compactness argument constructs
+one common outer circle in each disc, and disjointness from the other
+periodic gaps makes the two Banach-valued selected equations equal.

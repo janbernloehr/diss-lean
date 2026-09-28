@@ -1045,6 +1045,7 @@ import NLS.ZakharovShabat.SourcePsiGapRootIsolation
 import NLS.ZakharovShabat.SourcePsiGapRootGraphCompact
 import NLS.ZakharovShabat.SourcePsiEquationContourHomotopy
 import NLS.ZakharovShabat.SourcePsiEquationChartCompatibility
+import NLS.ZakharovShabat.SourcePsiCommonIsolatingContour
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros
