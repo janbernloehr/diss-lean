@@ -3159,3 +3159,9 @@ gaps, including the finite nonstandard head. Hence each distant open
 real-gap psi coordinate is real for real displaced-root inputs,
 uniformly in the deleted index. Collapsed gaps and the selected head
 are the remaining real-locus cases.
+`SourcePsiRealTailCollapsedGap.lean` evaluates each collapsed tail
+coordinate by its Cauchy residue and proves it real for real-type
+source data and real displaced roots. Combining this with the
+open-gap mean-value result shows that every sufficiently distant
+coordinate is real on the real locus. The finitely many selected head
+coordinates remain to complete Lemma 12.4's real-valued conclusion.
