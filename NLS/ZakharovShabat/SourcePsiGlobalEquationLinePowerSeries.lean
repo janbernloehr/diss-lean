@@ -1,4 +1,5 @@
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
+import NLS.ComplexAnalysis.BanachHolomorphicLineJets
 
 /-!
 # Power series of the selected psi equation on complex lines
@@ -61,5 +62,55 @@ theorem exists_local_sourcePsi_globalEquation_linePowerSeries
   intro k
   exact NLS.ComplexAnalysis.norm_iteratedDeriv_affineLine_le_of_ball_bound
     F x (r : ℝ) C (by exact_mod_cast hr) hdiff hnorm v hv k
+
+/-- On one selected contour chart, every line Taylor jet of the
+Banach-valued equation is homogeneous under contractions of its
+root/source direction. The contour family and disc radius are fixed
+independently of the direction and derivative order. -/
+theorem exists_local_sourcePsi_globalEquation_lineJet_smul
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, ∃ r : ℝ≥0,
+      0 < r ∧
+      ∀ v : DeletedCoeff p n × CoeffPair p, ‖v‖ ≤ 1 →
+        ∀ b : ℂ, ‖b‖ ≤ 1 →
+          ∀ k : ℕ,
+            iteratedDeriv k
+              (fun z : ℂ =>
+                sourcePsiSelectedEquationSequence hp hp1 n c R
+                  (((a₀,φ) + z • (b • v)).1)
+                  (((a₀,φ) + z • (b • v)).2)) 0 =
+              b^k • iteratedDeriv k
+                (fun z : ℂ =>
+                  sourcePsiSelectedEquationSequence hp hp1 n c R
+                    (((a₀,φ) + z • v).1)
+                    (((a₀,φ) + z • v).2)) 0 := by
+  obtain ⟨c,R,r,_,hr,_,hline⟩ :=
+    exists_local_sourcePsi_globalEquation_linePowerSeries
+      hp hp1 φ hφ n a₀
+  refine ⟨c,R,r,hr,?_⟩
+  intro v hv b hb k
+  obtain ⟨P,hP,_⟩ := hline v hv
+  let g : ℂ → DeletedCoeff p n := fun z =>
+    sourcePsiSelectedEquationSequence hp hp1 n c R
+      (((a₀,φ) + z • v).1) (((a₀,φ) + z • v).2)
+  have hgAnalytic : AnalyticOnNhd ℂ g (ball 0 (r : ℝ)) := by
+    simpa only [Metric.eball_coe] using hP.analyticOnNhd
+  have hgSmooth : ContDiffOn ℂ k g (ball 0 (r : ℝ)) :=
+    hgAnalytic.contDiffOn_of_completeSpace
+  have hfun :
+      (fun z : ℂ =>
+        sourcePsiSelectedEquationSequence hp hp1 n c R
+          (((a₀,φ) + z • (b • v)).1)
+          (((a₀,φ) + z • (b • v)).2)) =
+      (fun z : ℂ => g (b*z)) := by
+    funext z
+    simp only [g,smul_smul]
+    rw [mul_comm z b]
+  rw [hfun]
+  exact NLS.ComplexAnalysis.iteratedDeriv_comp_const_mul_of_contDiffOn_ball
+    g (r : ℝ) (by exact_mod_cast hr) k hgSmooth b hb
 
 end NLS.ZakharovShabat

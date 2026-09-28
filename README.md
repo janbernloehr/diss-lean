@@ -3151,8 +3151,12 @@ derivatives on every complex line through a real-type base, uniformly
 over unit directions and derivative orders.
 `SourcePsiGlobalEquationLinePowerSeries.lean` now proves that these
 Banach-valued line restrictions actually equal power series on one
-common disc, independent of the unit direction. The next task is to
-assemble their coefficients into a joint multilinear power series.
+common disc, independent of the unit direction.
+`BanachHolomorphicLineJets.lean` and the selected-equation application
+prove that each line Taylor jet scales by the corresponding power
+when its root/source direction is scaled by a complex contraction.
+The next task is to prove compatibility across distinct directions
+and assemble the jets into a joint multilinear power series.
 The equation's real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
