@@ -961,6 +961,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalHeadKernelBound
 import NLS.ZakharovShabat.SourcePsiGlobalHeadCoordinateBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationSequenceBound
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
+import NLS.ZakharovShabat.SourcePsiGlobalRealJacobian
 import NLS.ZakharovShabat.SourcePsiRealGapQuotient
 import NLS.ZakharovShabat.SourcePsiRealTailOpenGap
 import NLS.ZakharovShabat.SourcePsiGlobalTailQuarterDisc
@@ -971,6 +972,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalRealDistantDeleted
 import NLS.ZakharovShabat.SourceStandardRootConjugation
 import NLS.ZakharovShabat.SourcePsiContourConjugation
 import NLS.ComplexAnalysis.RealCircleIntegralReflection
+import NLS.ComplexAnalysis.LocalRealAxisDerivative
 import NLS.ZakharovShabat.SourcePsiGlobalRealCoordinates
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate

@@ -3222,3 +3222,11 @@ integral over a real-centered contour is real, so the corresponding
 scalar Jacobian entry from the root-variation formula is real whenever
 the selected contour avoids the moved root. The diagonal and
 off-diagonal quantitative estimates remain to be proved.
+`LocalRealAxisDerivative.lean` proves that a holomorphic scalar function
+with locally real values on the real axis has a real derivative there.
+`SourcePsiGlobalRealJacobian.lean` applies this to the locally selected
+analytic equation: for every real-type source and every real displaced-
+root input, all retained-root directional derivatives are real, with
+no contour-avoidance assumption. This establishes the reality assertion
+of Lemma 12.5 for the global equation; its asymptotic entry estimates
+and diagonal nonvanishing are still open.
