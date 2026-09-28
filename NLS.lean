@@ -1055,6 +1055,7 @@ import NLS.ZakharovShabat.SourcePsiGapRootMap
 import NLS.ZakharovShabat.SourcePsiGapRootLineTaylor
 import NLS.ComplexAnalysis.BanachC1ImplicitDerivative
 import NLS.ZakharovShabat.SourcePsiGapRootDerivative
+import NLS.ZakharovShabat.SourceRealTypeBanachSpace
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros

@@ -3813,3 +3813,7 @@ Jacobian. `SourcePsiGapRootDerivative.lean` applies this to the
 canonical gap roots: in a local contour chart their source derivative
 solves the linearized selected-psi equation, and the root Jacobian is
 bijective.
+`SourceRealTypeBanachSpace.lean` identifies the real-type coefficient
+locus as a closed real linear subspace, hence a complete real normed
+space. On this actual real source space the canonical gap-root map is
+globally `C¹`, using its local complex `C¹` extensions.
