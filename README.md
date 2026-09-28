@@ -3759,3 +3759,9 @@ contours whose filled discs avoid the other gaps have the same psi
 coordinate. It builds a midpoint circle inside both contours, even
 for collapsed gaps, and transfers the equality to selected
 Banach-valued equations wherever their coordinate formulas hold.
+`SourcePsiGapSolutionLimit.lean` proves the limit-of-solutions step for
+real-type sources: if source potentials converge and gap-contained
+deleted roots solve valid real-centered selected equations, a
+subsequence converges strongly to gap-contained roots that solve the
+selected equation in a `C¹` chart at the limiting source. The chart
+may differ from every chart used along the sequence.
