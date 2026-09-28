@@ -807,6 +807,7 @@ import NLS.ZakharovShabat.SourcePeriodicQuadratic
 import NLS.ZakharovShabat.SourcePeriodicPowerSums
 import NLS.ZakharovShabat.SourcePeriodicMidpointAsymptotics
 import NLS.ZakharovShabat.SourcePeriodicGapSummability
+import NLS.ZakharovShabat.SourceGapSampleSummability
 import NLS.ZakharovShabat.SourcePeriodicGapTails
 import NLS.ZakharovShabat.SourceStandardRootAlgebra
 import NLS.ComplexAnalysis.SqrtSlitPreimage
@@ -1024,6 +1025,7 @@ import NLS.ZakharovShabat.SourcePsiVariationOpenGapZero
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros
+import NLS.ZakharovShabat.SourcePsiVariationGapZeroSequence
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianDiagonalTail
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianOffDiagonalTail
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianCompactRemainder

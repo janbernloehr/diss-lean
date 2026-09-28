@@ -3559,7 +3559,12 @@ real components of any complex kernel direction. The interpolation
 uniqueness mechanism is now proved in `EntireCircleDecay.lean`,
 `SimpleZeroQuotient.lean`, and `SimpleZeroInterpolation.lean`: shared
 simple zeros fill the quotient analytically, and uniform decay on
-expanding circles forces the numerator to vanish. The remaining
-Lemma 12.7 work is to construct the interpolating product from the
-gap zeros, establish its simple zero set and outer-circle asymptotic,
-and prove the corresponding outer-circle estimate for each variation.
+expanding circles forces the numerator to vanish.
+`SourceGapSampleSummability.lean` proves that arbitrary samples from
+the periodic gaps have `ℓᵖ` displacements, even with one freely chosen
+deleted coordinate. `SourcePsiVariationGapZeroSequence.lean` uses this
+to select simultaneous zeros of a numerator variation in all retained
+gaps as a valid `ℓᵖ` spectral sequence. The remaining Lemma 12.7 work
+is to combine the rowwise kernel results into that selection, establish
+the interpolating product's simple zero set and outer-circle asymptotic,
+and prove the outer-circle estimate for each variation.
