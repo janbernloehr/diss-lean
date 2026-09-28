@@ -3290,3 +3290,11 @@ root's distance to any point of its gap by the root, midpoint, and gap
 their quarter-π neighborhoods, it bounds their ratio by those
 coefficients divided by half the free lattice separation. The
 remaining factor is the regular quotient at the attained gap point.
+`SourcePsiJacobianOffDiagonalEstimate.lean` combines the attained
+value with the existing quotient-disc bound. On a free-centered
+selected circle, with roots in their quarter-π discs and an analytic
+regular factor, an open-gap off-diagonal Jacobian entry is bounded by
+`(8/π)` times the selected root, midpoint, and gap displacements,
+times `(1+‖B_m‖)/|m-k|`. The varied-root denominator is proved
+analytic and nonzero on the disc from the same localization. Uniform
+assembly over the full domain and collapsed gaps is still needed.
