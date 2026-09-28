@@ -3628,3 +3628,14 @@ Fredholm arguments need root placement only at retained indices.
 open retained-root domain, with no condition on the artificial omitted
 root `nπ`. Matching the remaining local data and equation normalization
 to the dissertation's full Ωᵖ and Corollary 12.8 remains future work.
+`SourcePsiEquationOpenGapZero.lean` and
+`SourcePsiEquationCollapsedGapZero.lean` prove the zero-equation
+counterparts of the gap mean-value and Cauchy arguments. The deleted
+psi numerator has exactly the retained displaced roots as zeros;
+`SourcePsiEquationAllGapZero.lean` uses this and disjoint isolating
+discs to identify a zero in a selected real gap with that gap's root.
+`SourcePsiLocalEquationGapRoots.lean` applies the result to the
+Banach-valued selected equation: on the open retained-root placement
+domain, every real solution has each retained root in its periodic
+gap. This proves the root-location part of Proposition 12.9 locally;
+the real-analytic solution map and its global continuation remain open.
