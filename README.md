@@ -3939,6 +3939,10 @@ avoids the retained root and standard-root gap, the complete retained
 Jacobian integrand converges uniformly and its circle integral tends to
 the candidate `Q*` entry integral. The contour may have any fixed center,
 including the shifted central circles of the common contour family.
-Identifying these contour integrals
-with the actual scalar Jacobian entries and controlling uniform operator
-tails remain open.
+`SourcePsiLimitScalarJacobianEntry.lean` defines the candidate entry as
+the `Q*` contour integral divided by π and proves convergence of the
+actual scalar retained-root derivatives for each fixed row and column.
+It also identifies a retained entry of the bounded full-space Jacobian
+with that scalar derivative on a valid selected chart. Choosing compatible
+charts across deleted indices and controlling uniform operator tails
+remain open.
