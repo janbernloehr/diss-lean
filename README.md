@@ -3593,6 +3593,10 @@ numerator times this series. `SourcePsiInterpolationQuotientExterior.lean`
 combines the two product normalizations with the resolvent bound to show
 uniform decay of the interpolation quotient on the large circles. The
 simple-zero interpolation theorem then makes the entire variation zero;
-with distinct original roots, the deleted direction is zero. The remaining
-Lemma 12.7 work is to connect the selected Jacobian kernel's gap zeros to
-these interpolation hypotheses and complete the local injectivity proof.
+with distinct original roots, the deleted direction is zero.
+`SourcePsiSelectedJacobianInjectivity.lean` makes that connection for a
+common contour family: it proves that real kernel directions vanish,
+splits a complex kernel direction into real and imaginary parts, and
+concludes injectivity of the bounded selected Jacobian. The remaining
+local step is to supply its contour and isolating-disc hypotheses from
+the existing neighborhood construction and apply the Fredholm reduction.
