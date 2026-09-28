@@ -3301,6 +3301,10 @@ assembly over the full domain and collapsed gaps is still needed.
 `SourcePsiJacobianOffDiagonalCollapsed.lean` evaluates a collapsed-gap
 off-diagonal entry exactly by a Cauchy residue. It has the same
 root-ratio and regular-quotient expression as the open-gap mean-value
-formula, with the periodic midpoint as the evaluation point. A
-quantitative bound for this case remains to be combined with the
-open-gap estimate.
+formula, with the periodic midpoint as the evaluation point.
+`SourcePsiJacobianOffDiagonalAllGaps.lean` bounds that midpoint value
+by the same `ℓᵖ_m/|m-k|` expression as the open-gap entry and combines
+both cases for every real periodic gap on a free-centered contour.
+The bound still assumes an analytic regular factor, a quotient-disc
+majorant, and quarter-π localization; assembling these uniformly on
+the full `Ωp` domain is the next obligation.
