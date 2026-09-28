@@ -3883,3 +3883,11 @@ cutoff can now be chosen simultaneously for every deleted index `n`.
 This supplies the real-side uniform placement and compactness needed
 toward Lemma 12.10; an index-independent *complex* solution
 neighborhood still requires uniform inverse-Jacobian estimates.
+`DeletedOperatorExtension.lean` now realizes the selected Jacobian as
+a block operator on one common `ℓᵖ` space, with value `2` on the omitted
+diagonal and zero in its other omitted-row and omitted-column entries.
+`SourcePsiJacobianFullExtension.lean` applies this to the actual psi
+Jacobian, proves full-space invertibility is equivalent to deleted-space
+invertibility, and obtains an invertible full extension at every
+canonical real gap-root solution. Operator-norm convergence of these
+extensions as the deleted index escapes to infinity remains open.

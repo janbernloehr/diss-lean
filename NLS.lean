@@ -1002,6 +1002,7 @@ import NLS.ComplexAnalysis.RealCircleIntegralReflection
 import NLS.ComplexAnalysis.LocalRealAxisDerivative
 import NLS.ZakharovShabat.SourcePsiGlobalRealCoordinates
 import NLS.SequenceSpaces.DeletedCoordinate
+import NLS.SequenceSpaces.DeletedOperatorExtension
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
 import NLS.ZakharovShabat.SourcePsiGeneralVariation
@@ -1062,6 +1063,7 @@ import NLS.ZakharovShabat.SourcePsiGapRootLineTaylor
 import NLS.ZakharovShabat.SourcePsiGapRootDerivativeLipschitz
 import NLS.ComplexAnalysis.BanachC1ImplicitDerivative
 import NLS.ZakharovShabat.SourcePsiGapRootDerivative
+import NLS.ZakharovShabat.SourcePsiJacobianFullExtension
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
