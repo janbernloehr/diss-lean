@@ -206,10 +206,6 @@ theorem exists_sourceStandardRoot_innerMidpointDisc_of_realCenteredCircle
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (n : ℤ)
-    (_hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
-      (periodOnePotential_mem ψ) n).re <
-      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
-        (periodOnePotential_mem ψ) n).re)
     (x q : ℝ)
     (hseg : sourcePeriodicSegment hp hp1 ψ n ⊆ ball (x:ℂ) q) :
     let l := canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
@@ -290,7 +286,7 @@ theorem weighted_sourceStandardRoot_realCenteredCircle_real_mean_value
         (∮ z in C((x:ℂ),q), g z / sourceStandardRoot hp hp1 ψ n z) = -g μ := by
   obtain ⟨ρ,hρ,hnest⟩ :=
     exists_sourceStandardRoot_innerMidpointDisc_of_realCenteredCircle
-      hp hp1 ψ hreal n hopen x q hseg
+      hp hp1 ψ hreal n x q hseg
   exact weighted_sourceStandardRoot_outerCircle_real_mean_value_of_local_innerMidpoint
     hp hp1 ψ hreal n hopen g hgreal (x:ℂ) q hq hseg hgap hg ρ hρ hnest
 

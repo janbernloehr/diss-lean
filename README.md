@@ -3753,3 +3753,9 @@ condition whenever two families of filled contour discs lie inside the
 same assigned isolating-disc family. A compactness argument constructs
 one common outer circle in each disc, and disjointness from the other
 periodic gaps makes the two Banach-valued selected equations equal.
+`SourcePsiRealContourComparison.lean` removes the common-family
+restriction at real-type sources: any two real-centered enclosing
+contours whose filled discs avoid the other gaps have the same psi
+coordinate. It builds a midpoint circle inside both contours, even
+for collapsed gaps, and transfers the equality to selected
+Banach-valued equations wherever their coordinate formulas hold.
