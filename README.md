@@ -3522,3 +3522,9 @@ It is entire in the spectral variable and equals the derivative along
 the affine root-sequence line. If it vanishes identically, the new
 root-variation and simple-root lemmas show that the deleted direction
 is zero under the local isolating-disc hypotheses.
+`SourcePsiCandidateContourVariation.lean` identifies the root-direction
+derivative of the psi contour integrand with the entire variation
+divided by the canonical spectral root. On each admissible fixed
+circle, the scalar psi-equation derivative is the integral of this
+quotient throughout a local source neighborhood. This is the contour
+identity used at the start of Lemma 12.7's kernel argument.
