@@ -12,7 +12,7 @@ analyticity hypothesis.
 -/
 
 noncomputable section
-open Set Filter Topology Complex
+open Set Metric Filter Topology Complex
 open scoped ENNReal ContDiff
 namespace NLS.ZakharovShabat
 
@@ -84,6 +84,23 @@ theorem exists_local_sourcePsi_C1_branch_unique
       (a₀,φ) ∈ U ∧
       ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
         ∃ Niso : ℕ, ∃ εiso : ℝ,
+        (∀ i j : ℤ, i ≠ j →
+          Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+            (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+        (∀ m : ℤ, closedBall (c m) (R m) ⊆
+          sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+        (∀ m : ℤ, (c m).im = 0) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
+            sourcePsiEquationCoordinate hp hp1 n m
+              (t.1 : Coeff p) t.2 (c m) (R m)) ∧
         ContDiffOn ℂ 1
           (fun t : DeletedCoeff p n × CoeffPair p =>
             sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U ∧
@@ -105,13 +122,15 @@ theorem exists_local_sourcePsi_C1_branch_unique
               (s χ,χ) ∈ U ∩
                 sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n ∧
               sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
-  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,_,hC1,hbij⟩ :=
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,
+      hdisjoint,hfilled,hcenter,hgeom,hcoord,hC1,hbij⟩ :=
     exists_local_sourcePsi_selectedJacobian_bijective hp hp1 φ hφ n a₀
   have hDopen : IsOpen (U ∩
       sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n) :=
     hUopen.inter (isOpen_sourcePsiRootPlacementDomain
       hp hp1 φ Niso εiso n)
-  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
+    hdisjoint,hfilled,hcenter,hgeom,hcoord,hC1,
     hDopen,?_⟩
   intro a ψ hmem hψ hroots hzero
   have hF : ContDiffAt ℂ 1
@@ -161,7 +180,8 @@ theorem exists_local_sourcePsi_C1_branch
               (s χ,χ) ∈ U ∩
                 sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n ∧
               sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
-  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,hDopen,hbranch⟩ :=
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,
+      _,_,_,_,_,hC1,hDopen,hbranch⟩ :=
     exists_local_sourcePsi_C1_branch_unique hp hp1 φ hφ n a₀
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,hDopen,?_⟩
   intro a ψ hmem hψ hroots hzero

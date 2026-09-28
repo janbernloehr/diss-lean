@@ -1036,6 +1036,7 @@ import NLS.ZakharovShabat.SourcePsiFreeInitialSolution
 import NLS.ZakharovShabat.SourcePsiFreeUniqueness
 import NLS.ZakharovShabat.SourcePsiConjugateRootEquivariance
 import NLS.ZakharovShabat.SourcePsiFreeRealBranch
+import NLS.ZakharovShabat.SourcePsiLocalRealBranch
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros

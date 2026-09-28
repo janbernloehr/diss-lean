@@ -3706,3 +3706,8 @@ real retained roots; the solved contour equation then places each
 retained root in its selected periodic gap. This establishes the local
 real seed for Proposition 12.9, while real analyticity and global
 continuation remain to be proved.
+`SourcePsiLocalRealBranch.lean` extends the reality argument to every
+real zero in a retained-root placement domain, using the corresponding
+real-centered local contour family. Its nearby real-type solutions
+have real roots in their periodic gaps, providing the local form of
+the continuation step beyond the free source.
