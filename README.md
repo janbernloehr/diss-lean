@@ -3255,3 +3255,12 @@ in the two-sided index tail. For each fixed nearby source and root
 input, the quotient is therefore nonzero throughout every sufficiently
 distant selected disc. A common cutoff on parameter neighborhoods and
 the finite head still need separate arguments.
+`SourcePsiJacobianDiagonalAsymptotic.lean` proves the quantitative
+denominator algebra behind the diagonal estimate of Lemma 12.5. Every
+point of a selected gap is bounded by its midpoint and gap
+displacement coefficients. Under the explicit contour, analyticity,
+and quotient-majorant hypotheses, the diagonal derivative differs
+from `2` by at most four times the `ℓᵖ` quotient error plus four times
+the gap-location error divided by the free lattice distance. The
+remaining work is to make those hypotheses locally uniform over the
+full root-localization domain and handle the finite head.
