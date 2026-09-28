@@ -3203,3 +3203,8 @@ the expected minus sign from its `2i` normalization. This reflection
 identity applies on the gap complement without requiring the deleted
 free root to lie outside a selected head disc. The numerator and contour
 integral reflection steps remain to be formalized.
+`SourcePsiContourConjugation.lean` proves the entire deleted numerator
+commutes with conjugation for real displaced roots and the full psi
+contour integrand is anti-conjugate on the real-type gap complement.
+The remaining step is to formalize reflection of the real-centered
+circle integral itself and apply it to the finite deleted indices.
