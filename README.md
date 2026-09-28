@@ -3783,14 +3783,16 @@ for continuation across the connected real-type source locus.
 argument on the real-type source subtype. For every real-type source
 and every deleted index, it proves existence of gap-contained deleted
 roots solving the selected psi equation on some valid real-centered
-contour family. Global uniqueness and real-analytic dependence of the
-root map remain open.
+contour family. Real-analytic dependence of the root map remains open.
 The solvability predicate also has an anchored local continuation
 theorem: each specified gap solution extends to a `C¹` branch of gap
 solutions over nearby real-type sources. This supplies the branch data
 needed to compare distinct solutions while studying global uniqueness.
 `SourcePsiGapMultiplicity.lean` proves that the presence of two
 distinct gap solutions is open within the real-type source locus:
-their anchored `C¹` branches stay distinct nearby. To conclude global
-uniqueness from the free source, it remains to prove that this
-multiplicity locus is also closed.
+their anchored `C¹` branches stay distinct nearby. Compactness and
+chart-independent local uniqueness make that multiplicity locus closed
+as well. Since the free source has only zero deleted roots, connectedness
+rules out multiplicity everywhere. Thus each real-type source and
+deleted index has a unique gap-contained solution, independent of its
+valid real-centered contour chart.
