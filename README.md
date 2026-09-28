@@ -3569,6 +3569,10 @@ gaps as a valid `ℓᵖ` spectral sequence.
 collapsed-gap row results with that selection. Under a common admissible
 circle family, each real kernel direction has a simultaneous `ℓᵖ` zero
 sequence; a complex kernel direction yields one for each of its real
-components. The remaining Lemma 12.7 work is to establish the
-interpolating product's simple zero set and outer-circle asymptotic,
-then prove the outer-circle estimate for each variation.
+components. `SourceGapInterpolationProduct.lean` turns such a selected
+sequence into an entire product with exactly its indexed roots and proves
+that they are simple under the common isolating-disc geometry. The
+variation multiplied by the deleted linear factor vanishes at every
+product zero, as required by the interpolation lemma. The remaining
+Lemma 12.7 work is to establish the product's outer-circle asymptotic
+and the corresponding circle estimate for each variation.
