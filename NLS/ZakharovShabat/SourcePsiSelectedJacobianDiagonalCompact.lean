@@ -45,6 +45,8 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
             Coeff.deletedMultiplierCLM n d
           let C : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
             Coeff.deletedJacobianOffDiagonal n Q
+          (∀ m : ℤ, closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 ψ m) ∧
           ∃ L : ℕ,
             (∀ m : ℤ, L ≤ m.natAbs → m ≠ n → 1 ≤ ‖d m‖) ∧
             IsCompactOperator C ∧
@@ -99,7 +101,9 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
     Coeff.deletedMultiplierCLM n d
   let C : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
     Coeff.deletedJacobianOffDiagonal n Q
-  change ∃ L : ℕ,
+  change (∀ m : ℤ, closedBall (c m) (R m) ⊆
+      sourceStandardRootOmittedDomain hp hp1 ψ m) ∧
+    ∃ L : ℕ,
     (∀ m : ℤ, L ≤ m.natAbs → m ≠ n → 1 ≤ ‖d m‖) ∧
     IsCompactOperator C ∧
     ((∀ m : ℤ, m ≠ n → m.natAbs < L → d m ≠ 0) →
@@ -201,7 +205,10 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
       (Coeff.deletedSingleCLM n m hmn 1) : DeletedCoeff p n) : Coeff p) m ≠ 0
     rw [hmatrix a ψ hpair.1 m m hmn]
     simpa only [hx] using hscalar
-  exact ⟨max K L₀,htail,hcompact,hbij,hnonzero,
+  have hdom (m : ℤ) : closedBall (c m) (R m) ⊆
+      sourceStandardRootOmittedDomain hp hp1 ψ m :=
+    (hgeom (a,ψ) hpair.1 m).2.2.1
+  exact ⟨hdom,max K L₀,htail,hcompact,hbij,hnonzero,
     Coeff.deletedJacobian_eq_diagonal_add_offDiagonal n Q⟩
 
 end NLS.ZakharovShabat

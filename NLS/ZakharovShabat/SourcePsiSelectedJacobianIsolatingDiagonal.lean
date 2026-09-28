@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianDiagonalCompact
 import NLS.ZakharovShabat.SourcePsiIsolatingRootSeparation
+import NLS.ZakharovShabat.SourcePsiRegularFactorIsolatingDisc
 
 /-!
 # Diagonal isomorphism from isolated selected roots
@@ -7,9 +8,9 @@ import NLS.ZakharovShabat.SourcePsiIsolatingRootSeparation
 The scalar all-gap nonvanishing argument and the compact operator
 decomposition now use one selected contour family. Pairwise disjoint
 isolating discs supply the two root-separation hypotheses in every
-retained row. The remaining explicit conditions are that the selected
-contours lie inside their assigned discs and that the gap regular
-factor is analytic on the selected closed discs.
+retained row. If the selected closed discs lie inside the assigned
+isolating discs, analyticity of the regular factor follows from the
+global analytic quotient domain.
 -/
 
 noncomputable section
@@ -44,13 +45,8 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
               Disjoint (sourceIsolatingDisc hp hp1 φiso N ε m)
                 (sourceIsolatingDisc hp hp1 φiso N ε k)) →
             (∀ m : ℤ,
-              sphere (c m) (R m) ⊆
+              closedBall (c m) (R m) ⊆
                 sourceIsolatingDisc hp hp1 φiso N ε m) →
-            (∀ m : ℤ, m ≠ n →
-              AnalyticOnNhd ℂ
-                (fun z => (((n-m : ℤ) : ℂ) *
-                  sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
-                (closedBall (c m) (R m))) →
             let Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
               sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
             let d : Coeff ⊤ := Coeff.deletedJacobianDiagonalSymbol n Q
@@ -59,22 +55,37 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
             let C : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
               Coeff.deletedJacobianOffDiagonal n Q
             IsCompactOperator C ∧ Function.Bijective D ∧ Q = D + C := by
-  obtain ⟨U,hUopen,hbase,c,R,hmain⟩ :=
+  obtain ⟨Umain,hUmainOpen,hbaseMain,c,R,hmain⟩ :=
     exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
       hp hp1 φ hφ n a₀
+  obtain ⟨W,hWopen,_,hrealW,hQdata⟩ :=
+    exists_global_source_analytic_singleRootQuotient hp hp1
+  let U : Set (DeletedCoeff p n × CoeffPair p) :=
+    Umain ∩ {t | t.2 ∈ W}
+  have hUopen : IsOpen U :=
+    hUmainOpen.inter (hWopen.preimage continuous_snd)
+  have hbase : (a₀,φ) ∈ U := ⟨hbaseMain,hrealW hφ⟩
   refine ⟨U,hUopen,hbase,c,R,?_⟩
   intro a ψ hpair hreal hroots hloc φiso N ε hseg hrootloc hdisjoint
-    hcircle hreg
-  obtain ⟨L,htail,hcompact,hbij,hnonzero,hsplit⟩ :=
-    hmain a ψ hpair hreal hroots hloc
+    hclosed
+  obtain ⟨hdom,L,htail,hcompact,hbij,hnonzero,hsplit⟩ :=
+    hmain a ψ hpair.1 hreal hroots hloc
   refine ⟨hcompact,?_,hsplit⟩
   apply hbij
   intro m hmn _
   apply hnonzero m hmn
-  · exact sourcePsi_deletedRoot_avoids_otherCircle_of_isolatingDiscs
+  · have hcircle : ∀ j : ℤ,
+        sphere (c j) (R j) ⊆
+          sourceIsolatingDisc hp hp1 φiso N ε j := by
+      intro j z hz
+      exact hclosed j (sphere_subset_closedBall hz)
+    exact sourcePsi_deletedRoot_avoids_otherCircle_of_isolatingDiscs
       hp hp1 φiso N ε (a : Coeff p) c R hcircle hrootloc
         hdisjoint m n hmn
-  · exact hreg m hmn
+  · exact analyticOnNhd_deletedPsi_gapRegularFactor_of_isolatingDisc
+      hp hp1 φiso N ε n m a ψ W hpair.2 (hQdata m).2
+        (c m) (R m) (hdom m) (hclosed m) (hrootloc n)
+        (hdisjoint m n hmn)
   · exact sourcePsi_otherRoots_avoid_standardGap_of_isolatingDiscs
       hp hp1 φiso ψ N ε (a : Coeff p) hseg hrootloc hdisjoint m
 
