@@ -3944,6 +3944,12 @@ and circle-integral limits to deleted-root vectors that vary with the
 omitted index and converge strongly in `ℓᵖ`. It handles the moving
 retained-root denominator by eventual contour avoidance. Establishing
 this strong convergence for the actual gap-root vectors remains open.
+`SourcePsiGapRootVaryingIndexCompactness.lean` proves that canonical
+gap-root vectors along every sequence of omitted indices escaping in
+absolute value have a strongly converging subsequence in the ambient
+`ℓᵖ` space. Every retained root of the subsequential limit lies in its
+periodic gap. Uniqueness of these limits is still needed for convergence
+of the full index-filtered family.
 `SourcePsiLimitScalarJacobianEntry.lean` defines the candidate entry as
 the `Q*` contour integral divided by π and proves convergence of the
 actual scalar retained-root derivatives for each fixed row and column.

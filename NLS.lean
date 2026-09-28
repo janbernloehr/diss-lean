@@ -1075,6 +1075,7 @@ import NLS.ZakharovShabat.SourcePsiLimitRegularFactor
 import NLS.ZakharovShabat.SourcePsiLimitRatioUniform
 import NLS.ZakharovShabat.SourcePsiLimitIntegrandUniform
 import NLS.ZakharovShabat.SourcePsiVaryingRootIntegrandLimit
+import NLS.ZakharovShabat.SourcePsiGapRootVaryingIndexCompactness
 import NLS.ZakharovShabat.SourcePsiLimitScalarJacobianEntry
 import NLS.ZakharovShabat.SourcePsiCommonJacobianCharts
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
