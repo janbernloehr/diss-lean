@@ -67,6 +67,18 @@ theorem exists_limit_sourcePsi_gap_solution
           displacedRoots (b : Coeff p) m ∈
             sourcePeriodicSegment hp hp1 φ m) ∧
         IsOpen U ∧ (b,φ) ∈ U ∧
+        (∀ m : ℤ, (c₀ m).im = 0) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          0 < R₀ m ∧
+          sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c₀ m) (R₀ m) ∧
+          closedBall (c₀ m) (R₀ m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+          sphere (c₀ m) (R₀ m) ⊆
+            sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          (sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ t.1 t.2 : Coeff p) m =
+            sourcePsiEquationCoordinate hp hp1 n m
+              (t.1 : Coeff p) t.2 (c₀ m) (R₀ m)) ∧
         ContDiffOn ℂ 1
           (fun t : DeletedCoeff p n × CoeffPair p =>
             sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ t.1 t.2) U ∧
@@ -97,6 +109,7 @@ theorem exists_limit_sourcePsi_gap_solution
               sourcePsiSelectedEquationSequence hp hp1 n c' R' b' χ = 0 →
               b' = s χ) ∧
             ∀ᶠ χ in 𝓝 φ,
+              (s χ,χ) ∈ U ∧
               sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ (s χ) χ = 0 ∧
               (IsRealType (CoeffPair.toMax p χ) →
                 (∀ j : ℤ, (displacedRoots (s χ : Coeff p) j).im = 0) ∧
@@ -200,6 +213,7 @@ theorem exists_limit_sourcePsi_gap_solution
     simpa only [hsb,hbconj] using
       (show (b,φ) ∈ U ∩ V from ⟨hbase,hVbase⟩)
   have hrealGap : ∀ᶠ χ in 𝓝 φ,
+      (s χ,χ) ∈ U ∧
       sourcePsiSelectedEquationSequence hp hp1 n c₀ R₀ (s χ) χ = 0 ∧
       (IsRealType (CoeffPair.toMax p χ) →
         (∀ j : ℤ, (displacedRoots (s χ : Coeff p) j).im = 0) ∧
@@ -207,7 +221,7 @@ theorem exists_limit_sourcePsi_gap_solution
           displacedRoots (s χ : Coeff p) m ∈
             sourcePeriodicSegment hp hp1 χ m) := by
     filter_upwards [hzeros,hplacement,hconjmem] with χ hzeroχ hplace hconj
-    refine ⟨hzeroχ,?_⟩
+    refine ⟨hplace.1,hzeroχ,?_⟩
     intro hreal
     have hFconj := sourcePsiSelectedEquationSequence_conj_roots
       hp hp1 χ hreal n c₀ R₀ hcenter₀
@@ -265,7 +279,7 @@ theorem exists_limit_sourcePsi_gap_solution
         (fun m => (hgeom' m).2.2)
         (hcoord₀ (b',χ) hmem.1) hcoord'
     exact hunique b' χ hmem.2 (hEq.trans hzero')
-  exact ⟨b,σ,U,c₀,R₀,hσ,hb,hbgap,hUopen,hbase,hC1,
+  exact ⟨b,σ,U,c₀,R₀,hσ,hb,hbgap,hUopen,hbase,hcenter₀,hgeom₀,hcoord₀,hC1,
     hlimitZero,hbijAt,s,V,hVopen,hVbase,hs,hsb,hunique,hchartUnique,hrealGap⟩
 
 end NLS.ZakharovShabat

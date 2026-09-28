@@ -3773,3 +3773,9 @@ real-type source, this branch has real roots in the assigned periodic
 gaps. Within the local uniqueness neighborhood, any zero expressed
 using another valid real-centered contour family agrees with the same
 branch. This makes local uniqueness independent of the contour chart.
+`SourcePsiGapSolvability.lean` packages a gap-contained zero using an
+existential valid real-centered contour family. The free source is
+solvable; solvability persists locally among real-type sources and
+passes to limits of convergent real-type source sequences, even when
+their contour charts vary. These are the open and closed ingredients
+for continuation across the connected real-type source locus.
