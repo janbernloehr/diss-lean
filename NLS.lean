@@ -1005,6 +1005,7 @@ import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.SequenceSpaces.DeletedOperatorExtension
 import NLS.SequenceSpaces.UniformInverseBound
 import NLS.SequenceSpaces.FiniteBlockOperatorConvergence
+import NLS.SequenceSpaces.DeletedCoordinateAtInfinity
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation
 import NLS.ZakharovShabat.SourcePsiGeneralVariation
@@ -1068,6 +1069,8 @@ import NLS.ZakharovShabat.SourcePsiGapRootDerivative
 import NLS.ZakharovShabat.SourcePsiJacobianFullExtension
 import NLS.ZakharovShabat.SourcePsiJacobianFreeFullExtension
 import NLS.ZakharovShabat.SourcePsiJacobianFullMatrix
+import NLS.ZakharovShabat.SourcePsiLimitQuotient
+import NLS.ZakharovShabat.SourcePsiLimitRegularFactor
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

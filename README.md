@@ -3916,3 +3916,12 @@ matrix entry with its scalar contour derivative and records the fixed
 deleted row and column. The remaining analytic work is to construct
 the nonfree limit operator and prove scalar entry convergence together
 with uniform finite-block approximation.
+`DeletedCoordinateAtInfinity.lean` proves that deleting a coordinate
+with `|n| → ∞` changes a fixed `ℓᵖ` vector by a norm tending to zero.
+`SourcePsiLimitQuotient.lean` transfers this convergence through the
+analytic single-root quotient at every fixed valid spectral point.
+`SourcePsiLimitRegularFactor.lean` proves the deleted-index ratio in
+(2.28) tends to one, names the candidate nonfree `Q*` matrix
+integrand, and proves pointwise convergence of the corresponding
+selected-Jacobian integrands. Passing this limit through contour
+integrals and establishing uniform operator tails remain open.
