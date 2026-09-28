@@ -3796,3 +3796,8 @@ as well. Since the free source has only zero deleted roots, connectedness
 rules out multiplicity everywhere. Thus each real-type source and
 deleted index has a unique gap-contained solution, independent of its
 valid real-centered contour chart.
+`SourcePsiGapRootMap.lean` names this unique solution as a map on the
+real-type source subtype. It solves the selected equation, places each
+retained root in its periodic gap, equals zero at the free source, and
+is continuous. At every real-type source it agrees locally with a
+complex `C¹` implicit branch.
