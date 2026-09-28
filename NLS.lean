@@ -14,6 +14,7 @@ import NLS.ZakharovShabat.Potential
 import NLS.ZakharovShabat.Domain
 import NLS.ZakharovShabat.Operator
 import NLS.SequenceSpaces.Compact
+import NLS.SequenceSpaces.UniformTailCompactness
 import NLS.SequenceSpaces.CompactLpMultiplier
 import NLS.SequenceSpaces.CompactRowMajorant
 import NLS.SequenceSpaces.CompactTailRowMajorant
@@ -1038,6 +1039,7 @@ import NLS.ZakharovShabat.SourcePsiConjugateRootEquivariance
 import NLS.ZakharovShabat.SourcePsiFreeRealBranch
 import NLS.ZakharovShabat.SourcePsiLocalRealBranch
 import NLS.ZakharovShabat.SourcePsiGapRootTailBound
+import NLS.ZakharovShabat.SourcePsiGapRootSubsequence
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros

@@ -49,6 +49,22 @@ theorem norm_deletedRoots_sub_truncate_le_gap_tails
       hp hp1 ψ m (displacedRoots (a : Coeff p) m) (hgap m hmn)
     simpa only [displacedRoots,add_sub_cancel_left] using hbound
 
+/-- The full deleted-root norm is bounded by the left-endpoint and
+gap displacement norms when its retained roots lie in the gaps. -/
+theorem norm_deletedRoots_le_gap_displacements
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) (a : DeletedCoeff p n)
+    (hgap : ∀ m : ℤ, m ≠ n →
+      displacedRoots (a : Coeff p) m ∈
+        sourcePeriodicSegment hp hp1 ψ m) :
+    ‖(a : Coeff p)‖ ≤
+      ‖canonicalPeriodicLeftDisplacement hp hp1
+        (periodOnePotential ψ) (periodOnePotential_mem ψ)‖ +
+      ‖sourcePeriodicGapDisplacement hp hp1 ψ‖ := by
+  simpa using norm_deletedRoots_sub_truncate_le_gap_tails
+    hp hp1 ψ n a hgap ∅
+
 /-- Near any source, all deleted-root sequences placed in their
 periodic gaps have uniformly small `ℓᵖ` tails. The bound is uniform
 over the choice of root within each gap. -/

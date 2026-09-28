@@ -3716,3 +3716,10 @@ for that continuation: all deleted-root sequences with roots in their
 assigned periodic gaps have uniformly small `ℓᵖ` tails on a common
 neighborhood of a source potential. The estimate uses endpoint and gap
 tails and is uniform over the root chosen within each gap.
+`UniformTailCompactness.lean` turns boundedness and eventual uniform
+truncation tails into a norm-convergent subsequence in the coefficient
+space. `SourcePsiGapRootSubsequence.lean` applies it when source
+potentials converge and retained roots lie in their assigned periodic
+gaps: a subsequence of the deleted-root vectors converges in `ℓᵖ`.
+The next continuation step must show that the limiting roots stay in
+their limiting gaps and satisfy the selected equation.
