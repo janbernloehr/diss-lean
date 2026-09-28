@@ -3920,6 +3920,10 @@ with uniform finite-block approximation.
 with `|n| → ∞` changes a fixed `ℓᵖ` vector by a norm tending to zero.
 `SourcePsiLimitQuotient.lean` transfers this convergence through the
 analytic single-root quotient at every fixed valid spectral point.
+`SourcePsiLimitQuotientUniform.lean` uses joint analyticity and compactness
+to make that convergence uniform on each fixed closed disc contained in
+the omitted-root domain. It also passes the quotient limit through the
+corresponding circle integral.
 `SourcePsiLimitRegularFactor.lean` proves the deleted-index ratio in
 (2.28) tends to one, names the candidate nonfree `Q*` matrix
 integrand, and proves pointwise convergence of the corresponding
