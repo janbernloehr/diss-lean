@@ -3362,3 +3362,9 @@ including at its own omitted root: changing only that root leaves the
 deleted product fixed and lets the complete-product zero theorem
 apply. The regular quotient is consequently nonzero on a selected
 free quarter-π disc contained in its omitted-standard-root domain.
+`SourcePsiJacobianAllGapNonzero.lean` applies that zero-set result to
+the diagonal Jacobian. For either an open or collapsed real gap,
+quarter-π root localization and absence of every retained root from
+the selected gap make the actual diagonal derivative nonzero under
+the selected contour and regular-factor hypotheses. The selected
+root may itself lie on the contour.
