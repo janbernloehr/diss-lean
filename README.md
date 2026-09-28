@@ -3867,5 +3867,9 @@ component of Proposition 12.9 without a conditional equation premise.
 `SourcePsiGapRootAnalyticExistence.lean` packages global existence,
 pointwise uniqueness, real analyticity, and placement of every retained
 root in its periodic gap into one theorem. It uses the formalized
-`SourcePsiGapSolution` predicate; identifying that predicate with the
-dissertation's literal `Ωᵖ` domain is still open.
+`SourcePsiGapSolution` predicate. Its graph also lies locally in an open
+retained-root placement domain. Filling the omitted coordinate with the
+periodic midpoint places every root in one common family of isolating
+discs over a neighborhood of each real-type source. Identifying these
+local placement statements with the dissertation's literal `Ωᵖ` domain
+is still open.
