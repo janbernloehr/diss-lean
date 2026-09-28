@@ -22,6 +22,8 @@ import NLS.SequenceSpaces.DeletedDiagonal
 import NLS.SequenceSpaces.DeletedJacobianDecomposition
 import NLS.SequenceSpaces.DeletedJacobianSymbol
 import NLS.SequenceSpaces.DeletedJacobianMatrixExpansion
+import NLS.SequenceSpaces.DeletedRealImag
+import NLS.SequenceSpaces.DeletedRealOperator
 import NLS.SequenceSpaces.DeletedJacobianCompactRemainder
 import NLS.SequenceSpaces.CompactTailReciprocalMatrix
 import NLS.SequenceSpaces.CompactTailRowColumnReciprocalMatrix
@@ -1017,6 +1019,8 @@ import NLS.ZakharovShabat.SourcePsiSelectedJacobianEntry
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelContour
 import NLS.ZakharovShabat.SourcePsiVariationOpenGapZero
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
+import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
+import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianDiagonalTail
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianOffDiagonalTail
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianCompactRemainder

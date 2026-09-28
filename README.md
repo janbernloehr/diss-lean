@@ -3532,13 +3532,12 @@ identity used at the start of Lemma 12.7's kernel argument.
 from scalar equations to the bounded selected sequence Jacobian for
 arbitrary deleted-root directions. If such a direction lies in its
 kernel, the variation contour integral vanishes in every retained row.
-The remaining Lemma 12.7 work is to turn these zero integrals into
-zeros of the entire variation in the gaps, then apply interpolation.
+The gap-zero results below turn these zero integrals into zeros of the
+entire variation; the interpolation argument remains.
 `SourcePsiCandidateVariationRealAxis.lean` proves that the entire
 variation takes real values on the real spectral axis when the base
 displaced roots and the direction are real. This supplies the reality
-hypothesis for the real-gap mean-value lemmas; reducing a complex
-kernel direction to real directions is still needed.
+hypothesis for the real-gap mean-value lemmas.
 `SourcePsiVariationOpenGapZero.lean` combines that reality theorem with
 the weighted circle mean-value lemma. On a retained open real gap, a
 zero variation contour integral forces a zero of the entire numerator
@@ -3549,5 +3548,13 @@ and omitted-root domain satisfy the stated hypotheses.
 collapsed-gap case: Cauchy's formula forces the variation to vanish
 at the periodic midpoint when its contour integral is zero. This also
 applies directly to complex directions in the selected Jacobian kernel.
-Reducing complex directions in the open-gap case and proving the
-interpolation conclusion remain for Lemma 12.7.
+`DeletedRealImag.lean` and `DeletedRealOperator.lean` prove that a
+bounded operator with real matrix entries preserves the real and
+imaginary parts of a deleted-sequence kernel direction. The selected
+psi-Jacobian has real entries at real data, so
+`SourcePsiSelectedJacobianKernelRealImag.lean` applies this result to
+its actual bounded operator. `SourcePsiVariationComplexOpenGapZeros.lean`
+then gives separate open-gap zeros for the entire variations of both
+real components of any complex kernel direction. Proving the outer
+circle estimate and applying interpolation to each component remain
+for Lemma 12.7.
