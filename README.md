@@ -3927,10 +3927,16 @@ corresponding circle integral.
 `SourcePsiLimitRegularFactor.lean` proves the deleted-index ratio in
 (2.28) tends to one, names the candidate nonfree `Q*` matrix
 integrand, and proves pointwise convergence of the corresponding
-selected-Jacobian integrands. Passing this limit through contour
-integrals and establishing uniform operator tails remain open.
+selected-Jacobian integrands.
 `SourcePsiLimitRatioUniform.lean` strengthens the elementary ratio
 limit to uniform convergence on every fixed free-centered disc. It
 also verifies continuity on the contour for all sufficiently distant
 deleted indices and passes this ratio limit through the fixed circle
-integral. Uniform convergence of the full `Q*` integrand is still open.
+integral.
+`SourcePsiLimitIntegrandUniform.lean` combines the ratio and quotient
+limits using compact-contour multiplication. When the fixed contour
+avoids the retained root and standard-root gap, the complete retained
+Jacobian integrand converges uniformly and its circle integral tends to
+the candidate `Q*` entry integral. Identifying these contour integrals
+with the actual scalar Jacobian entries and controlling uniform operator
+tails remain open.
