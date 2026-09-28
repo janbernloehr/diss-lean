@@ -1,5 +1,5 @@
 import NLS.ZakharovShabat.SourcePsiGlobalEquationAnalytic
-import NLS.SequenceSpaces.BoundedCoordinateTaylor
+import NLS.SequenceSpaces.BoundedCoordinateAnalytic
 
 /-!
 # Uniform Taylor bounds for finite selected psi equations
@@ -16,22 +16,21 @@ open Set Metric Complex
 open scoped ENNReal
 namespace NLS.ZakharovShabat
 
-/-- All finite coordinate truncations of one selected psi equation
-have a common geometric bound on every multilinear Taylor
-coefficient at a real-type base point. -/
-theorem exists_local_sourcePsi_globalEquation_uniformTruncateTaylor
+/-- A single selected contour chart around a real-type source has
+analytic scalar equation coordinates and a common sequence-norm bound. -/
+theorem exists_local_sourcePsi_globalEquation_coordinatewiseAnalyticBounded
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
     (n : ℤ) (a₀ : DeletedCoeff p n) :
-    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, ∃ ρ M : ℝ,
-      0 < ρ ∧ 0 ≤ M ∧
-      ∀ s : Finset ℤ, ∀ k : ℕ,
-        ‖NLS.ComplexAnalysis.complexTaylorSeries
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      ∃ U : Set (DeletedCoeff p n × CoeffPair p), ∃ C : ℝ,
+        IsOpen U ∧ (a₀,φ) ∈ U ∧ 0 ≤ C ∧
+        (∀ m : ℤ, AnalyticOnNhd ℂ
           (fun t : DeletedCoeff p n × CoeffPair p =>
-            NLS.Coeff.truncate s
-              (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p))
-          (a₀,φ) k‖ ≤ (4*Real.exp 1/ρ)^k*M := by
+            (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m) U) ∧
+        (∀ t ∈ U,
+          ‖(sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p)‖ ≤ C) := by
   obtain ⟨U₀,hU₀open,hbase₀,_,c,R,_,_,hgeom,_,C,hC,hcoord,hbound,_,_⟩ :=
     exists_local_sourcePsi_globalEquation_formula_analytic
       hp hp1 φ hφ n a₀
@@ -71,9 +70,55 @@ theorem exists_local_sourcePsi_globalEquation_uniformTruncateTaylor
     apply hraw.congr hUopen
     intro t ht
     exact (hcoord t ht.1 m).symm
+  exact ⟨c,R,U,C,hUopen,hbase,hC,hscalar,hnorm⟩
+
+/-- All finite coordinate truncations of one selected psi equation
+have a common geometric bound on every multilinear Taylor
+coefficient at a real-type base point. -/
+theorem exists_local_sourcePsi_globalEquation_uniformTruncateTaylor
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, ∃ ρ M : ℝ,
+      0 < ρ ∧ 0 ≤ M ∧
+      ∀ s : Finset ℤ, ∀ k : ℕ,
+        ‖NLS.ComplexAnalysis.complexTaylorSeries
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            NLS.Coeff.truncate s
+              (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p))
+          (a₀,φ) k‖ ≤ (4*Real.exp 1/ρ)^k*M := by
+  obtain ⟨c,R,U,C,hUopen,hbase,hC,hscalar,hnorm⟩ :=
+    exists_local_sourcePsi_globalEquation_coordinatewiseAnalyticBounded
+      hp hp1 φ hφ n a₀
+  let F : DeletedCoeff p n × CoeffPair p → Coeff p :=
+    fun t => (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p)
   obtain ⟨ρ,hρ,_,hTaylor⟩ :=
     NLS.Coeff.exists_uniform_truncate_taylor_bound
       F hUopen hscalar C hnorm (a₀,φ) hbase
   exact ⟨c,R,ρ,C,hρ,hC,hTaylor⟩
+
+/-- The selected psi equation is Banach-space analytic on one contour
+chart around each real-type base point. Its analytic structure follows
+from the uniformly bounded scalar contour coordinates. -/
+theorem exists_local_sourcePsi_globalEquation_analyticOnNhd
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      ∃ U : Set (DeletedCoeff p n × CoeffPair p),
+        IsOpen U ∧ (a₀,φ) ∈ U ∧
+        AnalyticOnNhd ℂ
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p)) U := by
+  obtain ⟨c,R,U,C,hUopen,hbase,_,hscalar,hnorm⟩ :=
+    exists_local_sourcePsi_globalEquation_coordinatewiseAnalyticBounded
+      hp hp1 φ hφ n a₀
+  refine ⟨c,R,U,hUopen,hbase,?_⟩
+  exact NLS.Coeff.analyticOnNhd_of_bounded_coordinatewise
+    (fun t : DeletedCoeff p n × CoeffPair p =>
+      (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p))
+    hUopen hscalar C hnorm
 
 end NLS.ZakharovShabat

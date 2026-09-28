@@ -3167,8 +3167,10 @@ norm bound and the scalar coordinate formula.
 `BoundedCoordinateAnalytic.lean` proves that these coefficients have a
 positive common convergence radius and sum to the original sequence
 map, yielding Banach-space analyticity from locally bounded analytic
-coordinates. The next step applies this construction to the selected
-psi equation with its explicit contour-coordinate formula.
+coordinates.
+`SourcePsiGlobalEquationTaylorTruncation.lean` now also applies the
+criterion on one selected contour chart, proving Banach-space
+analyticity of the selected psi equation near each real-type base.
 The equation's real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root
