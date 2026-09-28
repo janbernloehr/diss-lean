@@ -3284,3 +3284,9 @@ value contains the root ratio `(σ_m-μ)/(σ_k-μ)` times the same regular
 quotient used in the diagonal estimate. Quantitative separation of
 these roots and control of the selected gap are the next steps toward
 the `ℓᵖ_m/|m-k|` bound in Lemma 12.5.
+`SourcePsiJacobianOffDiagonalGapGeometry.lean` bounds the selected
+root's distance to any point of its gap by the root, midpoint, and gap
+`ℓᵖ` coefficients. If the varied root and selected gap remain in
+their quarter-π neighborhoods, it bounds their ratio by those
+coefficients divided by half the free lattice separation. The
+remaining factor is the regular quotient at the attained gap point.
