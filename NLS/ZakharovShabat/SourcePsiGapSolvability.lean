@@ -122,4 +122,36 @@ theorem eventually_sourcePsiGapSolvable_of_solution
     (fun m => let h := hgeom₀ (s χ,χ) hmem m; ⟨h.1,h.2.1,h.2.2.1⟩),
     (hcoord₀ (s χ,χ) hmem),hzeroχ⟩
 
+/-- A specified real gap solution extends to a `C¹` branch of gap
+solutions along all sufficiently nearby real-type sources. -/
+theorem exists_C1_SourcePsiGapSolution_branch
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (a : DeletedCoeff p n) (hsol : SourcePsiGapSolution hp hp1 n φ a) :
+    ∃ s : CoeffPair p → DeletedCoeff p n,
+      ContDiffAt ℂ 1 s φ ∧ s φ = a ∧
+      ∀ᶠ χ in 𝓝 φ,
+        IsRealType (CoeffPair.toMax p χ) →
+          SourcePsiGapSolution hp hp1 n χ (s χ) := by
+  obtain ⟨hgap,c,R,hcenter,hgeom,hcoord,hzero⟩ := hsol
+  obtain ⟨b,σ,U,c₀,R₀,hσ,hb,hbgap,hUopen,hbase,
+      hcenter₀,hgeom₀,hcoord₀,hC1,hzero₀,hbij,s,V,hVopen,hVbase,
+      hs,hsb,hunique,hchartUnique,hbranch⟩ :=
+    exists_limit_sourcePsi_gap_solution hp hp1 φ hφ
+      (fun _ : ℕ => φ) tendsto_const_nhds
+      (fun _ => hφ) n (fun _ => a)
+      (fun _ => hgap) (fun _ => c) (fun _ => R)
+      (fun _ => hcenter) (fun _ => hgeom)
+      (fun _ => hcoord) (fun _ => hzero)
+  have hba : b = a := by
+    have hb' : Tendsto (fun _ : ℕ => a) atTop (𝓝 b) := by
+      simpa only [Function.comp_def] using hb
+    exact tendsto_nhds_unique hb' tendsto_const_nhds
+  refine ⟨s,hs,hsb.trans hba,?_⟩
+  filter_upwards [hbranch] with χ hχ hreal
+  exact ⟨(hχ.2.2 hreal).2,c₀,R₀,hcenter₀,
+    (fun m => let h := hgeom₀ (s χ,χ) hχ.1 m; ⟨h.1,h.2.1,h.2.2.1⟩),
+    (hcoord₀ (s χ,χ) hχ.1),hχ.2.1⟩
+
 end NLS.ZakharovShabat

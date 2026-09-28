@@ -3785,3 +3785,7 @@ and every deleted index, it proves existence of gap-contained deleted
 roots solving the selected psi equation on some valid real-centered
 contour family. Global uniqueness and real-analytic dependence of the
 root map remain open.
+The solvability predicate also has an anchored local continuation
+theorem: each specified gap solution extends to a `C¹` branch of gap
+solutions over nearby real-type sources. This supplies the branch data
+needed to compare distinct solutions while studying global uniqueness.
