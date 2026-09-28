@@ -3456,3 +3456,10 @@ bound on a parameter-dependent tail, and nonvanishing of the finitely
 many earlier retained entries makes the multiplier bijective. This is
 the operator conclusion of Lemma 12.6 under the remaining finite-head
 spectral nonvanishing condition.
+`SourcePsiIsolatingRootSeparation.lean` formalizes the geometric part of
+that finite-head condition: roots assigned to pairwise disjoint spectral
+discs avoid every other periodic gap and hence every other standard
+root gap. If a selected contour lies in its assigned disc, the omitted
+root also avoids that contour. Connecting these disc conditions to the
+selected contour family and regular-factor analyticity remains necessary
+for the unrestricted finite-head nonvanishing theorem.
