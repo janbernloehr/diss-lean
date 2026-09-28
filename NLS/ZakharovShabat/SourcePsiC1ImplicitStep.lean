@@ -17,7 +17,40 @@ open scoped ENNReal ContDiff
 namespace NLS.ZakharovShabat
 
 /-- A zero of the `C¹` selected psi equation with bijective root
-Jacobian extends to a local `C¹` zero branch. -/
+Jacobian extends to a locally unique `C¹` zero branch. -/
+theorem exists_C1_sourcePsi_local_solution_unique
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (c : ℤ → ℂ) (R : ℤ → ℝ)
+    (a : DeletedCoeff p n) (ψ : CoeffPair p)
+    (hF : ContDiffAt ℂ 1
+      (fun t : DeletedCoeff p n × CoeffPair p =>
+        sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2)
+      (a,ψ))
+    (hzero : sourcePsiSelectedEquationSequence hp hp1 n c R a ψ = 0)
+    (hbij : Function.Bijective
+      (sourcePsiSelectedRootJacobian hp hp1 n c R a ψ)) :
+    ∃ s : CoeffPair p → DeletedCoeff p n,
+      ∃ V : Set (DeletedCoeff p n × CoeffPair p),
+      IsOpen V ∧ (a,ψ) ∈ V ∧
+      ContDiffAt ℂ 1 s ψ ∧ s ψ = a ∧
+      (∀ b : DeletedCoeff p n, ∀ χ : CoeffPair p,
+        (b,χ) ∈ V →
+        sourcePsiSelectedEquationSequence hp hp1 n c R b χ = 0 →
+        b = s χ) ∧
+      ∀ᶠ χ in 𝓝 ψ,
+        sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
+  let F : DeletedCoeff p n × CoeffPair p → DeletedCoeff p n :=
+    fun t => sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2
+  have hpartial := sourcePsiSelectedEquation_partial_fderiv_eq_rootJacobian
+    hp hp1 n c R a ψ (hF.differentiableAt (by norm_num))
+  apply NLS.ComplexAnalysis.exists_C1_implicitBanachRoot_unique
+    F a ψ hF hzero
+  rw [hpartial]
+  exact hbij
+
+/-- The `C¹` selected psi branch, without exposing its uniqueness
+neighborhood. -/
 theorem exists_C1_sourcePsi_local_solution
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -34,18 +67,76 @@ theorem exists_C1_sourcePsi_local_solution
       ContDiffAt ℂ 1 s ψ ∧ s ψ = a ∧
       ∀ᶠ χ in 𝓝 ψ,
         sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
-  let F : DeletedCoeff p n × CoeffPair p → DeletedCoeff p n :=
-    fun t => sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2
-  have hpartial := sourcePsiSelectedEquation_partial_fderiv_eq_rootJacobian
-    hp hp1 n c R a ψ (hF.differentiableAt (by norm_num))
-  apply NLS.ComplexAnalysis.exists_C1_implicitBanachRoot
-    F a ψ hF hzero
-  rw [hpartial]
-  exact hbij
+  obtain ⟨s,_,_,_,hs,hsx,_,hzeros⟩ :=
+    exists_C1_sourcePsi_local_solution_unique
+      hp hp1 n c R a ψ hF hzero hbij
+  exact ⟨s,hs,hsx,hzeros⟩
 
 /-- Near a real-type source, one selected contour family gives a
-`C¹` equation and a `C¹` local solution branch through every real
-zero whose retained roots lie in the open placement domain. -/
+`C¹` equation and a locally unique `C¹` solution branch through every
+real zero whose retained roots lie in the open placement domain. -/
+theorem exists_local_sourcePsi_C1_branch_unique
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
+      (a₀,φ) ∈ U ∧
+      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        ∃ Niso : ℕ, ∃ εiso : ℝ,
+        ContDiffOn ℂ 1
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U ∧
+        IsOpen (U ∩ sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n) ∧
+        ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+          (a,ψ) ∈ U ∩ sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n →
+          IsRealType (CoeffPair.toMax p ψ) →
+          (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
+          sourcePsiSelectedEquationSequence hp hp1 n c R a ψ = 0 →
+          ∃ s : CoeffPair p → DeletedCoeff p n,
+            ∃ V : Set (DeletedCoeff p n × CoeffPair p),
+            IsOpen V ∧ (a,ψ) ∈ V ∧
+            ContDiffAt ℂ 1 s ψ ∧ s ψ = a ∧
+            (∀ b : DeletedCoeff p n, ∀ χ : CoeffPair p,
+              (b,χ) ∈ V →
+              sourcePsiSelectedEquationSequence hp hp1 n c R b χ = 0 →
+              b = s χ) ∧
+            ∀ᶠ χ in 𝓝 ψ,
+              (s χ,χ) ∈ U ∩
+                sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n ∧
+              sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,hC1,hbij⟩ :=
+    exists_local_sourcePsi_selectedJacobian_bijective hp hp1 φ hφ n a₀
+  have hDopen : IsOpen (U ∩
+      sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n) :=
+    hUopen.inter (isOpen_sourcePsiRootPlacementDomain
+      hp hp1 φ Niso εiso n)
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,
+    hDopen,?_⟩
+  intro a ψ hmem hψ hroots hzero
+  have hF : ContDiffAt ℂ 1
+      (fun t : DeletedCoeff p n × CoeffPair p =>
+        sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2)
+      (a,ψ) := hC1.contDiffAt (hUopen.mem_nhds hmem.1)
+  obtain ⟨s,V,hVopen,hVbase,hs,hsx,hunique,hzeros⟩ :=
+    exists_C1_sourcePsi_local_solution_unique
+    hp hp1 n c R a ψ hF hzero
+      (hbij a ψ hmem.1 hψ hroots hmem.2)
+  have hcontinuous : ContinuousAt
+      (fun χ : CoeffPair p => (s χ,χ)) ψ :=
+    hs.continuousAt.prodMk continuousAt_id
+  have hplacement : ∀ᶠ χ in 𝓝 ψ,
+      (s χ,χ) ∈ U ∩
+        sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n := by
+    apply hcontinuous.eventually
+    apply hDopen.mem_nhds
+    simpa only [hsx] using hmem
+  refine ⟨s,V,hVopen,hVbase,hs,hsx,hunique,?_⟩
+  filter_upwards [hplacement,hzeros] with χ hχ hχzero
+  exact ⟨hχ,hχzero⟩
+
+/-- The selected local `C¹` branches, without exposing their
+uniqueness neighborhoods. -/
 theorem exists_local_sourcePsi_C1_branch
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -70,33 +161,12 @@ theorem exists_local_sourcePsi_C1_branch
               (s χ,χ) ∈ U ∩
                 sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n ∧
               sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0 := by
-  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,hC1,hbij⟩ :=
-    exists_local_sourcePsi_selectedJacobian_bijective hp hp1 φ hφ n a₀
-  have hDopen : IsOpen (U ∩
-      sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n) :=
-    hUopen.inter (isOpen_sourcePsiRootPlacementDomain
-      hp hp1 φ Niso εiso n)
-  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,
-    hDopen,?_⟩
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,hDopen,hbranch⟩ :=
+    exists_local_sourcePsi_C1_branch_unique hp hp1 φ hφ n a₀
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,hC1,hDopen,?_⟩
   intro a ψ hmem hψ hroots hzero
-  have hF : ContDiffAt ℂ 1
-      (fun t : DeletedCoeff p n × CoeffPair p =>
-        sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2)
-      (a,ψ) := hC1.contDiffAt (hUopen.mem_nhds hmem.1)
-  obtain ⟨s,hs,hsx,hzeros⟩ := exists_C1_sourcePsi_local_solution
-    hp hp1 n c R a ψ hF hzero
-      (hbij a ψ hmem.1 hψ hroots hmem.2)
-  have hcontinuous : ContinuousAt
-      (fun χ : CoeffPair p => (s χ,χ)) ψ :=
-    hs.continuousAt.prodMk continuousAt_id
-  have hplacement : ∀ᶠ χ in 𝓝 ψ,
-      (s χ,χ) ∈ U ∩
-        sourcePsiRootPlacementDomain hp hp1 φ Niso εiso n := by
-    apply hcontinuous.eventually
-    apply hDopen.mem_nhds
-    simpa only [hsx] using hmem
-  refine ⟨s,hs,hsx,?_⟩
-  filter_upwards [hplacement,hzeros] with χ hχ hχzero
-  exact ⟨hχ,hχzero⟩
+  obtain ⟨s,_,_,_,hs,hsx,_,hzeros⟩ :=
+    hbranch a ψ hmem hψ hroots hzero
+  exact ⟨s,hs,hsx,hzeros⟩
 
 end NLS.ZakharovShabat

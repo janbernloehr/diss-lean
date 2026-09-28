@@ -3677,6 +3677,9 @@ each real zero in the open retained-root domain extends to a local `C¹`
 zero branch, and the branch remains in that domain near its base point.
 This local existence no longer assumes joint analyticity; proving
 real-analytic dependence and global continuation remains open.
+The strengthened implicit theorem now also gives an open neighborhood
+in which that branch is the unique zero of the selected equation.
+This local uniqueness is the gluing statement needed for continuation.
 
 `SourcePsiFreeInitialSolution.lean` proves that the free potential and
 zero deleted roots solve the selected Banach-valued equation on the

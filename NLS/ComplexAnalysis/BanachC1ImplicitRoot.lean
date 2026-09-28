@@ -18,16 +18,19 @@ variable {E P : Type*}
   [NormedAddCommGroup P] [NormedSpace ℂ P] [CompleteSpace P]
 
 /-- A zero of a jointly `C¹` Banach map with invertible partial
-derivative extends to a `C¹` local zero selection. -/
-theorem exists_C1_implicitBanachRoot
+derivative extends to a `C¹` local zero selection. The selection is
+the unique zero in one open neighborhood of the base pair. -/
+theorem exists_C1_implicitBanachRoot_unique
     (F : E × P → E) (a : E) (x : P)
     (hF : ContDiffAt ℂ 1 F (a,x))
     (hzero : F (a,x) = 0)
     (hbij : Function.Bijective
       ((fderiv ℂ F (a,x)).comp
         (ContinuousLinearMap.inl ℂ E P))) :
-    ∃ s : P → E,
+    ∃ s : P → E, ∃ V : Set (E × P),
+      IsOpen V ∧ (a,x) ∈ V ∧
       ContDiffAt ℂ 1 s x ∧ s x = a ∧
+      (∀ u : E, ∀ y : P, (u,y) ∈ V → F (u,y) = 0 → u = s y) ∧
       ∀ᶠ y in 𝓝 x, F (s y,y) = 0 := by
   let H : E × P → E × P := fun t => (F t,t.2)
   let A : (E × P) →L[ℂ] E := fderiv ℂ F (a,x)
@@ -90,6 +93,31 @@ theorem exists_C1_implicitBanachRoot
     have heq : R.symm (0,y) = (s y,y) := Prod.ext rfl hsecond
     rw [heq] at hfirst
     exact hfirst
+  have hunique (u : E) (y : P) (hu : (u,y) ∈ R.source)
+      (hzero' : F (u,y) = 0) : u = s y := by
+    have hHy : H (u,y) = (0,y) := by simp [H,hzero']
+    have hpair : R.symm (0,y) = (u,y) := by
+      calc
+        R.symm (0,y) = R.symm (H (u,y)) := by rw [hHy]
+        _ = R.symm (R (u,y)) := by rw [hReq]
+        _ = (u,y) := R.left_inv hu
+    exact (congrArg Prod.fst hpair).symm
+  exact ⟨s,R.source,R.open_source,hsource,hs,hsx,hunique,hzeros⟩
+
+/-- The local zero selection, without exposing its uniqueness
+neighborhood. -/
+theorem exists_C1_implicitBanachRoot
+    (F : E × P → E) (a : E) (x : P)
+    (hF : ContDiffAt ℂ 1 F (a,x))
+    (hzero : F (a,x) = 0)
+    (hbij : Function.Bijective
+      ((fderiv ℂ F (a,x)).comp
+        (ContinuousLinearMap.inl ℂ E P))) :
+    ∃ s : P → E,
+      ContDiffAt ℂ 1 s x ∧ s x = a ∧
+      ∀ᶠ y in 𝓝 x, F (s y,y) = 0 := by
+  obtain ⟨s,_,_,_,hs,hsx,_,hzeros⟩ :=
+    exists_C1_implicitBanachRoot_unique F a x hF hzero hbij
   exact ⟨s,hs,hsx,hzeros⟩
 
 end NLS.ComplexAnalysis
