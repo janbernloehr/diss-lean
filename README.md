@@ -3173,3 +3173,10 @@ open-gap contour whose weighted regular factor is analytic across the
 filled disc. This removes the free-center geometry restriction from
 the open-gap reality argument; selecting such analytic head contours
 uniformly is the next step.
+`SourcePsiGlobalContourFamily.lean` now exposes a real-centered version
+of its common contour family, including the finitely many selected head
+circles. The property follows from the explicit real isolating-disc
+centers and is preserved on a shared source neighborhood. The earlier
+contour-family interface remains available for existing analytic and
+norm estimates. Head-coordinate reality still needs the regular-factor
+analyticity and finite-index cases connected to this family.

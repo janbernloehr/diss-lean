@@ -24,6 +24,14 @@ def sourceIsolatingCenter (hp : p ≠ ⊤) (hp1 : 1 < p)
       (canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n).re)/2 : ℝ)
   else (Real.pi : ℂ)*n
 
+/-- Every assigned isolating disc is centered on the real axis. -/
+theorem sourceIsolatingCenter_im_eq_zero (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (N : ℕ) (n : ℤ) :
+    (sourceIsolatingCenter hp hp1 φ N n).im = 0 := by
+  by_cases hn : n.natAbs ≤ N
+  · simp [sourceIsolatingCenter, hn]
+  · simp [sourceIsolatingCenter, hn, Complex.mul_im]
+
 /-- Radius of the fixed central or free high-index assigned disc. -/
 def sourceIsolatingRadius (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (N : ℕ) (ε : ℝ) (n : ℤ) : ℝ :=

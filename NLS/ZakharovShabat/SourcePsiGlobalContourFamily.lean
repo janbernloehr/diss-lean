@@ -18,12 +18,13 @@ namespace NLS.ZakharovShabat
 periodic gap, uniformly over a common complex source neighborhood.
 Only finitely many circle centers and radii differ from the free
 eighth-π choice. -/
-theorem exists_local_sourcePsi_allGap_contourFamily
+theorem exists_local_sourcePsi_allGap_realCenteredContourFamily
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
     ∃ K : ℕ, ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
       ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         ∀ ψ ∈ V, ∀ m : ℤ,
@@ -38,15 +39,15 @@ theorem exists_local_sourcePsi_allGap_contourFamily
       hp hp1 φ hφ
   have hlocal (m : ℤ) :
       ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
-        ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+        ∃ c : ℂ, ∃ R : ℝ, c.im = 0 ∧ 0 < R ∧
           ∀ ψ ∈ V,
             sourcePeriodicSegment hp hp1 ψ m ⊆ ball c R ∧
             closedBall c R ⊆
               sourceStandardRootOmittedDomain hp hp1 ψ m ∧
             sphere c R ⊆ sourceCanonicalRootDomain hp hp1 ψ :=
-    exists_local_sourceCriticalRootRatio_uniformEnclosingCircle
+    exists_local_sourceCriticalRootRatio_uniformRealCenteredEnclosingCircle
       hp hp1 φ hφ m
-  choose Vhead hVheadOpen hφVhead chead Rhead hRhead hhead using hlocal
+  choose Vhead hVheadOpen hφVhead chead Rhead hcheadReal hRhead hhead using hlocal
   let s : Finset ℤ := Finset.Icc (-(K : ℤ)) (K : ℤ)
   let Vheads : Set (CoeffPair p) := ⋂ m ∈ s, Vhead m
   have hVheadsOpen : IsOpen Vheads :=
@@ -68,7 +69,11 @@ theorem exists_local_sourcePsi_allGap_contourFamily
       simp only [s,Finset.mem_Icc]
       omega
     simp [c,R,hms]
-  refine ⟨K,V,hVopen,hφV,c,R,htailChoice,?_⟩
+  have hcReal (m : ℤ) : (c m).im = 0 := by
+    by_cases hms : m ∈ s
+    · simpa only [c,if_pos hms] using hcheadReal m
+    · simp [c,hms,Complex.mul_im]
+  refine ⟨K,V,hVopen,hφV,c,R,hcReal,htailChoice,?_⟩
   intro ψ hψ m
   by_cases hms : m ∈ s
   · have hψhead : ψ ∈ Vhead m := by
@@ -88,5 +93,26 @@ theorem exists_local_sourcePsi_allGap_contourFamily
         hp hp1 ψ m ((Real.pi : ℂ)*m) (Real.pi/8) hseg hdom
     simpa only [c,R,if_neg hms] using
       ⟨(by positivity : 0 < Real.pi/8),hseg,hdom,hroot⟩
+
+/-- Near any real-type source, one family of circles encloses every
+periodic gap and avoids every other gap. -/
+theorem exists_local_sourcePsi_allGap_contourFamily
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ K : ℕ, ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, K < m.natAbs →
+          c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+        ∀ ψ ∈ V, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 ψ m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 ψ m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 ψ := by
+  obtain ⟨K,V,hVopen,hφV,c,R,_,htail,hdata⟩ :=
+    exists_local_sourcePsi_allGap_realCenteredContourFamily hp hp1 φ hφ
+  exact ⟨K,V,hVopen,hφV,c,R,htail,hdata⟩
 
 end NLS.ZakharovShabat

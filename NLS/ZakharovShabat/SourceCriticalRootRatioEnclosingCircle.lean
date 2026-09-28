@@ -16,15 +16,15 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
-/-- There is a smaller concentric closed disc inside an assigned
+/-- There is a smaller real-centered closed disc inside an assigned
 isolating disc that still contains the selected gap in its interior. -/
-theorem exists_sourcePeriodicSegment_enclosingCircle_within_isolatingDisc
+theorem exists_sourcePeriodicSegment_realCenteredEnclosingCircle_within_isolatingDisc
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ ψ : CoeffPair p) (N : ℕ) (ε : ℝ)
     (n : ℤ)
     (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
       sourceIsolatingDisc hp hp1 φ N ε n) :
-    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+    ∃ c : ℂ, ∃ R : ℝ, c.im = 0 ∧ 0 < R ∧
       sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
       closedBall c R ⊆ sourceIsolatingDisc hp hp1 φ N ε n := by
   let c := sourceIsolatingCenter hp hp1 φ N n
@@ -55,9 +55,26 @@ theorem exists_sourcePeriodicSegment_enclosingCircle_within_isolatingDisc
     apply (convex_ball c R).segment_subset
     · exact mem_ball.mpr (lt_of_le_of_lt (le_max_left _ _) hdR)
     · exact mem_ball.mpr (lt_of_le_of_lt (le_max_right _ _) hdR)
-  refine ⟨c, R, hRpos, hseg, ?_⟩
+  refine ⟨c, R, sourceIsolatingCenter_im_eq_zero hp hp1 φ N n,
+    hRpos, hseg, ?_⟩
   rw [sourceIsolatingDisc_eq_ball]
   exact closedBall_subset_ball hRR₀
+
+/-- A selected gap admits a smaller enclosing closed disc inside its
+assigned isolating disc. -/
+theorem exists_sourcePeriodicSegment_enclosingCircle_within_isolatingDisc
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ ψ : CoeffPair p) (N : ℕ) (ε : ℝ)
+    (n : ℤ)
+    (hcluster : sourceSpectralCluster hp hp1 ψ n ⊆
+      sourceIsolatingDisc hp hp1 φ N ε n) :
+    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+      sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
+      closedBall c R ⊆ sourceIsolatingDisc hp hp1 φ N ε n := by
+  obtain ⟨c,R,_,hR,hseg,hdisc⟩ :=
+    exists_sourcePeriodicSegment_realCenteredEnclosingCircle_within_isolatingDisc
+      hp hp1 φ ψ N ε n hcluster
+  exact ⟨c,R,hR,hseg,hdisc⟩
 
 /-- An enclosing circle avoids the selected gap by its inner-ball
 condition and all other gaps by its filled-disc condition. -/
