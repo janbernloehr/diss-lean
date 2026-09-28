@@ -1,4 +1,5 @@
 import NLS.SequenceSpaces.Truncation
+import NLS.SequenceSpaces.BoundedMatrixLimitPointwise
 import Mathlib.Analysis.Normed.Operator.Basic
 import Mathlib.Topology.Algebra.Monoid
 
@@ -135,6 +136,85 @@ theorem tendsto_operator_of_entries_and_uniform_finiteBlocks
     exact hS
   have hfirst : ‖T n - Bn‖ < ε / 3 := hT n
   have hmiddle : ‖Bn - BS‖ < ε / 3 := hn
+  linarith
+
+/-- Coordinatewise convergence and eventual finite-block approximation of
+the remainders imply operator-norm convergence. Subtracting a fixed
+operator allows this criterion to apply when the full operators contain
+a noncompact common term, such as the identity. -/
+theorem tendsto_operator_of_coordinatewise_and_eventual_remainder_finiteBlocks
+    (T : ℤ → Coeff p →L[ℂ] Coeff p)
+    (S D : Coeff p →L[ℂ] Coeff p)
+    (hpoint : ∀ x : Coeff p, ∀ m : ℤ,
+      Tendsto (fun n : ℤ => (T n x) m)
+        (Filter.comap Int.natAbs Filter.atTop) (𝓝 ((S x) m)))
+    (happrox : ∀ ε : ℝ, 0 < ε → ∃ s t : Finset ℤ,
+      ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+        ‖(T n - D) - (truncateCLM s).comp
+          ((T n - D).comp (truncateCLM t))‖ < ε) :
+    Tendsto T (Filter.comap Int.natAbs Filter.atTop) (𝓝 S) := by
+  let : NeBot (Filter.comap Int.natAbs Filter.atTop) :=
+    (inferInstance : NeBot (Filter.atTop : Filter ℕ)).comap_of_surj
+      Int.natAbs_surjective
+  let R (n : ℤ) := T n - D
+  let U := S - D
+  have hRpoint (x : Coeff p) (m : ℤ) :
+      Tendsto (fun n : ℤ => (R n x) m)
+        (Filter.comap Int.natAbs Filter.atTop) (𝓝 ((U x) m)) := by
+    simpa [R, U, sub_apply] using
+      (hpoint x m).sub_const ((D x) m)
+  apply Metric.tendsto_nhds.mpr
+  intro ε hε
+  obtain ⟨s, t, htail⟩ := happrox (ε / 4) (by positivity)
+  let P := truncateCLM (p := p) s
+  let Q := truncateCLM (p := p) t
+  let A (n : ℤ) := R n - P.comp ((R n).comp Q)
+  let B := U - P.comp (U.comp Q)
+  have hBpoint (x : Coeff p) (m : ℤ) :
+      Tendsto (fun n : ℤ => (A n x) m)
+        (Filter.comap Int.natAbs Filter.atTop) (𝓝 ((B x) m)) := by
+    have hproj : Tendsto (fun n : ℤ => (P (R n (Q x))) m)
+        (Filter.comap Int.natAbs Filter.atTop)
+        (𝓝 ((P (U (Q x))) m)) := by
+      by_cases hm : m ∈ s
+      · simpa [P, truncateCLM_apply, truncate_apply, hm] using
+          hRpoint (Q x) m
+      · simp [P, truncateCLM_apply, truncate_apply, hm]
+    simpa [A, B, sub_apply,
+      ContinuousLinearMap.comp_apply] using
+      (hRpoint x m).sub hproj
+  have hB : ‖B‖ ≤ ε / 4 := by
+    apply opNorm_le_of_coordinatewise_limit
+      (Filter.comap Int.natAbs Filter.atTop) A B (ε / 4) (by positivity)
+    · filter_upwards [htail] with n hn
+      exact le_of_lt hn
+    · exact hBpoint
+  have hblock := tendsto_finiteBlock_of_entries R U s t
+    (fun m _ k _ => hRpoint (lp.single p k 1) m)
+  have hblockevent := (Metric.tendsto_nhds.mp hblock) (ε / 4) (by positivity)
+  filter_upwards [htail, hblockevent] with n hn hbn
+  rw [dist_eq_norm] at hbn ⊢
+  have htri : ‖T n - S‖ ≤ ‖A n‖ +
+      ‖P.comp ((R n).comp Q) - P.comp (U.comp Q)‖ + ‖B‖ := by
+    have hrewrite : T n - S = R n - U := by
+      simp [R, U]
+    rw [hrewrite]
+    calc
+      ‖R n - U‖ = ‖A n +
+          (P.comp ((R n).comp Q) - P.comp (U.comp Q)) - B‖ := by
+        congr 1
+        simp [A, B]
+      _ ≤ ‖A n‖ +
+          ‖P.comp ((R n).comp Q) - P.comp (U.comp Q)‖ + ‖B‖ := by
+        calc
+          _ ≤ ‖A n + (P.comp ((R n).comp Q) - P.comp (U.comp Q))‖ +
+              ‖B‖ := norm_sub_le _ _
+          _ ≤ (‖A n‖ +
+              ‖P.comp ((R n).comp Q) - P.comp (U.comp Q)‖) + ‖B‖ := by
+                gcongr
+                exact norm_add_le _ _
+  have hfirst : ‖A n‖ < ε / 4 := hn
+  have hmiddle : ‖P.comp ((R n).comp Q) - P.comp (U.comp Q)‖ < ε / 4 := hbn
   linarith
 
 /-- The filter statement of two-sided operator convergence is exactly

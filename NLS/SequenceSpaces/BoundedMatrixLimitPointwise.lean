@@ -132,4 +132,26 @@ theorem tendsto_operator_coordinate_of_basis
     (fun u j => tendsto_operator_coordinate_of_basis_on_finsupp
       l T Q hentry u j) x m
 
+/-- The operator norm is lower semicontinuous under coordinatewise
+convergence on every input vector. -/
+theorem opNorm_le_of_coordinatewise_limit
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    {α : Type*} (l : Filter α) [NeBot l]
+    (T : α → Coeff p →L[ℂ] Coeff p)
+    (S : Coeff p →L[ℂ] Coeff p)
+    (M : ℝ) (hM : 0 ≤ M)
+    (hbound : ∀ᶠ i in l, ‖T i‖ ≤ M)
+    (hpoint : ∀ x : Coeff p, ∀ m : ℤ,
+      Tendsto (fun i => (T i x) m) l (𝓝 ((S x) m))) :
+    ‖S‖ ≤ M := by
+  apply ContinuousLinearMap.opNorm_le_bound _ hM
+  intro x
+  have hnorm : ∀ᶠ i in l, ‖T i x‖ ≤ M * ‖x‖ := by
+    filter_upwards [hbound] with i hi
+    exact (T i).le_of_opNorm_le hi x
+  have hlim : Tendsto (fun i => ((T i x : Coeff p) : ℤ → ℂ))
+      l (𝓝 (S x : ℤ → ℂ)) :=
+    tendsto_pi_nhds.mpr (hpoint x)
+  exact lp.norm_le_of_tendsto hnorm hlim
+
 end NLS.Coeff
