@@ -48,7 +48,7 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective
     · simpa using hcReal m
   have hinj := sourcePsiSelectedRootJacobian_injective_of_gapGeometry
     hp hp1 φ Niso εiso n c R U hUopen hcoord hdiff hrealSeq
-      a ψ hpair hreal hroots hrootloc hdisjoint hcenter
+      a ψ hpair hreal hroots (fun j _ => hrootloc j) hdisjoint hcenter
       (fun m => (hgeom (a,ψ) hpair m).1)
       (fun m => (hgeom (a,ψ) hpair m).2.1)
       hfilled

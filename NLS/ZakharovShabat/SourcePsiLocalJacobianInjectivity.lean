@@ -17,8 +17,8 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 
 /-- Near a real-type source, the selected psi root Jacobian is
-injective at real root data whose roots lie in the prescribed disjoint
-isolating discs. -/
+injective at real root data whose retained roots lie in the prescribed
+disjoint isolating discs. -/
 theorem exists_local_sourcePsi_selectedJacobian_injective
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -32,7 +32,7 @@ theorem exists_local_sourcePsi_selectedJacobian_injective
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
-          (∀ j : ℤ, displacedRoots (a : Coeff p) j ∈
+          (∀ j : ℤ, j ≠ n → displacedRoots (a : Coeff p) j ∈
             sourceIsolatingDisc hp hp1 φ Niso εiso j) →
           Function.Injective
             (sourcePsiSelectedRootJacobian hp hp1 n c R a ψ) := by

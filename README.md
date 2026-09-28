@@ -3604,6 +3604,14 @@ injectivity at real root data in the isolating discs. The diagonal and
 compact decomposition now retains the same selected contour data.
 `SourcePsiLocalJacobianBijectivity.lean` combines its Fredholm reduction
 with interpolation injectivity to prove local bijectivity of the bounded
-selected psi root Jacobian. Matching the local root-placement hypotheses
-to the dissertation's Ωᵖ domain remains to finish the formulation of
-Lemma 12.6 and Corollary 12.8.
+selected psi root Jacobian. `SourcePsiDeletedRootFill.lean` formalizes
+the dissertation's choice of a root inside the omitted index's assigned
+disc: filling that unused coordinate leaves the psi variation unchanged.
+`SourcePsiFilledInterpolationUniqueness.lean` and the selected-Jacobian
+injectivity theorem now require localization only at retained indices.
+`SourcePsiRootPlacementDomain.lean` proves that this retained-root
+condition is open in the deleted `ℓᵖ` parameter space and states local
+injectivity on the resulting open domain. The diagonal nonvanishing
+proof still uses placement of the artificial omitted root `nπ`; removing
+that extra condition is the remaining domain mismatch for the local
+bijectivity formulation of Corollary 12.8.

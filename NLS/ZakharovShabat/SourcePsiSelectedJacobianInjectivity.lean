@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiSelectedKernelGapZeroSequence
 import NLS.ZakharovShabat.SourcePsiInterpolationQuotientExterior
+import NLS.ZakharovShabat.SourcePsiFilledInterpolationUniqueness
 
 /-!
 # Injectivity of the selected psi root Jacobian
@@ -17,7 +18,8 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 
 /-- The gap-zero interpolation proof kills each real selected-Jacobian
-kernel direction under one common isolating-disc geometry. -/
+kernel direction under one common isolating-disc geometry for the
+retained roots. -/
 theorem sourcePsiSelectedRootJacobian_realKernel_eq_zero_of_gapGeometry
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -35,7 +37,7 @@ theorem sourcePsiSelectedRootJacobian_realKernel_eq_zero_of_gapGeometry
     (a : DeletedCoeff p n) (ψ : CoeffPair p) (hpair : (a,ψ) ∈ U)
     (hψ : IsRealType (CoeffPair.toMax p ψ))
     (hroots : ∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0)
-    (hrootloc : ∀ j : ℤ,
+    (hrootloc : ∀ j : ℤ, j ≠ n →
       displacedRoots (a : Coeff p) j ∈
         sourceIsolatingDisc hp hp1 φ N ε j)
     (hdisjoint : ∀ i j : ℤ, i ≠ j →
@@ -65,16 +67,16 @@ theorem sourcePsiSelectedRootJacobian_realKernel_eq_zero_of_gapGeometry
         sourceIsolatingDisc hp hp1 φ N ε m := by
     intro m z hz
     exact hfilled m (ball_subset_closedBall (hseg m hz))
-  have hsep : Function.Injective (displacedRoots (a : Coeff p)) :=
-    displacedRoots_injective_of_isolatingDiscs
-      hp hp1 φ N ε (a : Coeff p) hrootloc hdisjoint
-  have hvzero : (v : Coeff p) = 0 := by
-    apply sourcePsiCandidate_deleted_direction_zero_of_gapZeros
-      hp hp1 φ ψ N ε n (a : Coeff p) (v : Coeff p)
-        hsep v.property hsegIso (hrootloc n) hdisjoint
-    intro m hmn
+  have hξSeg : sourceStandardRootMidpoint hp hp1 ψ n ∈
+      sourcePeriodicSegment hp hp1 ψ n := by
+    simpa only [sourceStandardRootMidpoint] using
+      sourcePeriodicMidpoint_mem_segment hp hp1 ψ n
+  have hξDisc := hsegIso n hξSeg
+  apply sourcePsiCandidate_deleted_direction_zero_of_gapZeros_with_fill
+    hp hp1 φ ψ N ε n a v (sourceStandardRootMidpoint hp hp1 ψ n)
+      hsegIso hrootloc hξDisc hdisjoint
+  · intro m hmn
     exact ⟨ρ m,(hρ m hmn).1,(hρ m hmn).2⟩
-  exact Subtype.ext hvzero
 
 /-- Real and imaginary kernel directions both vanish, so the bounded
 selected psi root Jacobian has trivial kernel. -/
@@ -101,7 +103,7 @@ theorem sourcePsiSelectedRootJacobian_kernel_eq_zero_of_gapGeometry
     (a : DeletedCoeff p n) (ψ : CoeffPair p) (hpair : (a,ψ) ∈ U)
     (hψ : IsRealType (CoeffPair.toMax p ψ))
     (hroots : ∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0)
-    (hrootloc : ∀ j : ℤ,
+    (hrootloc : ∀ j : ℤ, j ≠ n →
       displacedRoots (a : Coeff p) j ∈
         sourceIsolatingDisc hp hp1 φ N ε j)
     (hdisjoint : ∀ i j : ℤ, i ≠ j →
@@ -161,7 +163,7 @@ theorem sourcePsiSelectedRootJacobian_injective_of_gapGeometry
     (a : DeletedCoeff p n) (ψ : CoeffPair p) (hpair : (a,ψ) ∈ U)
     (hψ : IsRealType (CoeffPair.toMax p ψ))
     (hroots : ∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0)
-    (hrootloc : ∀ j : ℤ,
+    (hrootloc : ∀ j : ℤ, j ≠ n →
       displacedRoots (a : Coeff p) j ∈
         sourceIsolatingDisc hp hp1 φ N ε j)
     (hdisjoint : ∀ i j : ℤ, i ≠ j →
