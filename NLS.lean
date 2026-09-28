@@ -1053,6 +1053,7 @@ import NLS.ZakharovShabat.SourcePsiGapGlobalExistence
 import NLS.ZakharovShabat.SourcePsiGapMultiplicity
 import NLS.ZakharovShabat.SourcePsiGapRootMap
 import NLS.ZakharovShabat.SourcePsiGapRootLineTaylor
+import NLS.ZakharovShabat.SourcePsiGapRootDerivativeLipschitz
 import NLS.ComplexAnalysis.BanachC1ImplicitDerivative
 import NLS.ZakharovShabat.SourcePsiGapRootDerivative
 import NLS.ZakharovShabat.SourceRealTypeBanachSpace
