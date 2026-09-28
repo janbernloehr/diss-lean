@@ -3184,5 +3184,7 @@ analyticity and finite-index cases connected to this family.
 the new open-gap theorem. It proves that a deleted free root outside a
 selected shifted head disc makes the weighted regular factor analytic
 throughout that disc; the corresponding open real-gap psi coordinate is
-then real. The remaining head argument must handle collapsed gaps and
-patch the finite family uniformly.
+then real. The same file now handles collapsed gaps through their
+Cauchy residues and combines both cases: every real selected gap has a
+real coordinate on a separated real-centered disc. A common cutoff
+for the finite head family remains to be connected to this result.
