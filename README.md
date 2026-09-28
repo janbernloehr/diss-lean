@@ -3405,3 +3405,9 @@ analyticity, and retained-root separation hypotheses.
 Its `ℓᵖ` correction has a locally uniform norm bound, and the same
 theorem gives tail nonvanishing on the quarter-π localized real-root
 locus.
+`DeletedJacobianSymbol.lean` extracts a bounded diagonal symbol from
+any bounded operator on the deleted coefficient space. Its norm is at
+most the operator norm. Subtracting the corresponding diagonal
+multiplier produces a zero-diagonal remainder without changing any
+off-diagonal matrix entry, preparing the operator-level compactness
+argument of Lemma 12.6.

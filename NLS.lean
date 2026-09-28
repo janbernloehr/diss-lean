@@ -19,6 +19,7 @@ import NLS.SequenceSpaces.CompactRowMajorant
 import NLS.SequenceSpaces.CompactPuncturedKernel
 import NLS.SequenceSpaces.DeletedDiagonal
 import NLS.SequenceSpaces.DeletedJacobianDecomposition
+import NLS.SequenceSpaces.DeletedJacobianSymbol
 import NLS.ZakharovShabat.FreeResolvent
 import NLS.ZakharovShabat.FreeResolventCompact
 import NLS.ZakharovShabat.ResolventEstimates
