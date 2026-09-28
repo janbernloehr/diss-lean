@@ -3230,3 +3230,9 @@ root input, all retained-root directional derivatives are real, with
 no contour-avoidance assumption. This establishes the reality assertion
 of Lemma 12.5 for the global equation; its asymptotic entry estimates
 and diagonal nonvanishing are still open.
+`SourcePsiJacobianKernelBound.lean` isolates the off-diagonal contour
+estimate: a bound on the weighted numerator and a lower bound
+proportional to the index distance for the moved-root denominator give
+the inverse-index-distance decay of that Jacobian entry. Establishing
+the required uniform spectral bounds for the selected contour family
+is the remaining quantitative step.
