@@ -3534,3 +3534,8 @@ arbitrary deleted-root directions. If such a direction lies in its
 kernel, the variation contour integral vanishes in every retained row.
 The remaining Lemma 12.7 work is to turn these zero integrals into
 zeros of the entire variation in the gaps, then apply interpolation.
+`SourcePsiCandidateVariationRealAxis.lean` proves that the entire
+variation takes real values on the real spectral axis when the base
+displaced roots and the direction are real. This supplies the reality
+hypothesis for the real-gap mean-value lemmas; reducing a complex
+kernel direction to real directions is still needed.

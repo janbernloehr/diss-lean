@@ -983,6 +983,7 @@ import NLS.ZakharovShabat.SourcePsiRealCenteredShiftedDisc
 import NLS.ZakharovShabat.SourcePsiGlobalRealDistantDeleted
 import NLS.ZakharovShabat.SourceStandardRootConjugation
 import NLS.ZakharovShabat.SourcePsiContourConjugation
+import NLS.ZakharovShabat.SourcePsiCandidateVariationRealAxis
 import NLS.ComplexAnalysis.RealCircleIntegralReflection
 import NLS.ComplexAnalysis.LocalRealAxisDerivative
 import NLS.ZakharovShabat.SourcePsiGlobalRealCoordinates
