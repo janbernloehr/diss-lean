@@ -3564,7 +3564,11 @@ expanding circles forces the numerator to vanish.
 the periodic gaps have `ℓᵖ` displacements, even with one freely chosen
 deleted coordinate. `SourcePsiVariationGapZeroSequence.lean` uses this
 to select simultaneous zeros of a numerator variation in all retained
-gaps as a valid `ℓᵖ` spectral sequence. The remaining Lemma 12.7 work
-is to combine the rowwise kernel results into that selection, establish
-the interpolating product's simple zero set and outer-circle asymptotic,
-and prove the outer-circle estimate for each variation.
+gaps as a valid `ℓᵖ` spectral sequence.
+`SourcePsiSelectedKernelGapZeroSequence.lean` now combines the open- and
+collapsed-gap row results with that selection. Under a common admissible
+circle family, each real kernel direction has a simultaneous `ℓᵖ` zero
+sequence; a complex kernel direction yields one for each of its real
+components. The remaining Lemma 12.7 work is to establish the
+interpolating product's simple zero set and outer-circle asymptotic,
+then prove the outer-circle estimate for each variation.
