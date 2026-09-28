@@ -3270,4 +3270,11 @@ two-sided tail estimate, uniformly over every distinct deleted index.
 It also proves that any diagonal Jacobian family satisfying the
 resulting quantitative bound converges uniformly to `2` and has one
 common nonzero tail. Establishing the bound for the actual Jacobian
-family throughout `Ωp`, including collapsed gaps, remains open.
+family throughout `Ωp` remains open.
+`SourcePsiJacobianCollapsedDiagonal.lean` evaluates the diagonal
+Jacobian entry at a collapsed real gap by a Cauchy residue at its
+midpoint. It proves the same quantitative `2 + error` bound as for
+open gaps, then combines both cases under a quotient majorant on the
+selected contour disc. The remaining work is to supply one locally
+uniform majorant and contour hypotheses across the actual domain
+`Ωp`, then establish the off-diagonal estimates and operator results.
