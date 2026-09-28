@@ -3368,3 +3368,9 @@ quarter-π root localization and absence of every retained root from
 the selected gap make the actual diagonal derivative nonzero under
 the selected contour and regular-factor hypotheses. The selected
 root may itself lie on the contour.
+The uniform diagonal-tail theorem now combines this zero-set result
+with its already selected free-centered contours. On the quarter-π
+localized real-root locus, the same neighborhood and initial row
+cutoff make every distant diagonal entry nonzero uniformly in the
+deleted index and parameter pair. The earlier parameter-dependent
+cutoff remains available without root localization.

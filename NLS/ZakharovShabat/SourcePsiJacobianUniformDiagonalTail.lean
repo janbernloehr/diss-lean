@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiJacobianUniformOffDiagonalTail
 import NLS.ZakharovShabat.SourcePsiJacobianDiagonalTail
+import NLS.ZakharovShabat.SourcePsiJacobianAllGapNonzero
 
 /-!
 # Locally uniform diagonal psi Jacobian tail
@@ -34,14 +35,19 @@ theorem exists_local_sourcePsi_diagonalJacobian_uniformTail
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
           ∃ B : Coeff p, ‖B‖ ≤ M ∧
             ∀ m : ℤ, K ≤ m.natAbs → ∀ _hmn : m ≠ n,
-              ‖deriv (fun t : ℂ =>
+              (‖deriv (fun t : ℂ =>
                 sourcePsiDeletedEquationCoordinate hp hp1 n m
                   (a+Coeff.deletedSingleCLM n m _hmn t) ψ
                   ((Real.pi : ℂ)*m) (Real.pi/8)) 0-2‖ ≤
                 4*‖B m‖ +
                   4*(‖sourcePeriodicMidpointDisplacement hp hp1 ψ m‖ +
                     ‖sourcePeriodicGapDisplacement hp hp1 ψ m‖/2) /
-                      ‖(Real.pi : ℂ)*((n-m : ℤ) : ℂ)‖ := by
+                      ‖(Real.pi : ℂ)*((n-m : ℤ) : ℂ)‖) ∧
+              ((∀ j : ℤ, ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
+                deriv (fun t : ℂ =>
+                  sourcePsiDeletedEquationCoordinate hp hp1 n m
+                    (a+Coeff.deletedSingleCLM n m _hmn t) ψ
+                    ((Real.pi : ℂ)*m) (Real.pi/8)) 0 ≠ 0) := by
   obtain ⟨Ureg,hUregOpen,hbaseReg,Kreg,c,R,_,hchoice,hgeom,
     M,hM,hmajor⟩ :=
     exists_local_sourcePsiQuotient_uniformAllSelectedDiscMajorant
@@ -120,7 +126,29 @@ theorem exists_local_sourcePsi_diagonalJacobian_uniformTail
       (by simpa only [hcenter] using havoidn)
       (by simpa only [hcenter] using hreg)
       B hsmallDenom (by simpa only [hcenter] using hQdisc)
-  simpa only [hcenter] using hbound
+  constructor
+  · simpa only [hcenter] using hbound
+  · intro hloc
+    have hother : ∀ z ∈ standardRootGapSegment
+        (sourceStandardRootMidpoint hp hp1 ψ m)
+        (sourceStandardRootHalfGap hp hp1 ψ m),
+        ∀ k : ℤ, k ≠ m → z ≠ displacedRoots (a : Coeff p) k := by
+      intro z hz k hkm
+      have hzquarter : z ∈ ball ((Real.pi : ℂ)*m) (Real.pi/4) :=
+        (Metric.ball_subset_ball (by nlinarith [Real.pi_pos]))
+          (hseg (sourceStandardRoot_gapSegment_subset_periodicSegment
+            hp hp1 ψ m hz))
+      exact selected_quarter_ball_avoids_other_displacedRoots
+        (a : Coeff p) hloc m z hzquarter k hkm
+    have hnonzero := sourcePsi_diagonalJacobian_ne_zero_all_real_gaps
+      hp hp1 ψ hreal n m hmn a hloc hroots
+        (Real.pi*(m:ℝ)) (Real.pi/8) (by positivity)
+        (by simpa only [hcenter] using hseg)
+        (by simpa only [hcenter] using hdom)
+        (by simpa only [hcenter] using hcircle)
+        (by simpa only [hcenter] using havoidn)
+        (by simpa only [hcenter] using hreg) hother
+    simpa only [hcenter] using hnonzero
 
 /-- For each real-root parameter pair in that neighborhood,
 one further two-sided cutoff makes every diagonal entry nonzero,
@@ -154,8 +182,37 @@ theorem exists_local_sourcePsi_diagonalJacobian_nonzeroTail
   intro m hm hmn hzero
   have hK : K ≤ m.natAbs := (le_max_left _ _).trans hm
   have hLbound : L₀ ≤ m.natAbs := (le_max_right _ _).trans hm
-  have herr := (hB m hK hmn).trans_lt ((hL₀ m hLbound).2 n hmn)
+  have herr := ((hB m hK hmn).1).trans_lt ((hL₀ m hLbound).2 n hmn)
   rw [hzero] at herr
   norm_num at herr
+
+/-- On the quarter-π localized real-root locus, the neighborhood's
+initial selected-row cutoff already makes every diagonal entry
+nonzero; no parameter-dependent `ℓᵖ` tail cutoff is needed. -/
+theorem exists_local_sourcePsi_diagonalJacobian_uniformNonzeroTail
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (a₀ : Coeff p) :
+    ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
+      (a₀,φ) ∈ U ∧ ∃ K : ℕ,
+        ∀ n : ℤ, ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+          ((a : Coeff p),ψ) ∈ U →
+          IsRealType (CoeffPair.toMax p ψ) →
+          (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
+          (∀ j : ℤ, ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
+          ∀ m : ℤ, K ≤ m.natAbs → ∀ hmn : m ≠ n,
+            deriv (fun t : ℂ =>
+              sourcePsiDeletedEquationCoordinate hp hp1 n m
+                (a+Coeff.deletedSingleCLM n m hmn t) ψ
+                ((Real.pi : ℂ)*m) (Real.pi/8)) 0 ≠ 0 := by
+  obtain ⟨U,hUopen,hbase,K,M,_,hbound⟩ :=
+    exists_local_sourcePsi_diagonalJacobian_uniformTail
+      hp hp1 φ hφ a₀
+  refine ⟨U,hUopen,hbase,K,?_⟩
+  intro n a ψ hpair hreal hroots hloc
+  obtain ⟨B,_,hB⟩ := hbound n a ψ hpair hreal hroots
+  intro m hm hmn
+  exact (hB m hm hmn).2 hloc
 
 end NLS.ZakharovShabat
