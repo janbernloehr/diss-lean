@@ -191,6 +191,7 @@ theorem exists_local_sourcePsi_selectedJacobian_matrixFormula
     ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
       (a₀,φ) ∈ U ∧
       ∃ K : ℕ, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, (c m).im = 0) ∧
         (∀ m : ℤ, K < m.natAbs →
           c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
         (∀ t ∈ U, ∀ m : ℤ,
@@ -207,10 +208,10 @@ theorem exists_local_sourcePsi_selectedJacobian_matrixFormula
               deriv (fun z : ℂ =>
                 sourcePsiDeletedEquationCoordinate hp hp1 n m
                   (a+Coeff.deletedSingleCLM n k hkn z) ψ (c m) (R m)) 0 := by
-  obtain ⟨U,hUopen,hbase,K,c,R,_,hchoice,hgeom,C,_,hcoord,_,_,hdiff⟩ :=
+  obtain ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,C,_,hcoord,_,_,hdiff⟩ :=
     exists_local_sourcePsi_globalEquation_formula_analytic
       hp hp1 φ hφ n a₀
-  refine ⟨U,hUopen,hbase,K,c,R,hchoice,hgeom,?_⟩
+  refine ⟨U,hUopen,hbase,K,c,R,hcReal,hchoice,hgeom,?_⟩
   intro a ψ hpair m k hkn
   exact sourcePsiSelectedRootJacobian_entry_eq_deletedCoordinate
     hp hp1 n c R U hUopen hcoord hdiff a ψ hpair m k hkn

@@ -3463,3 +3463,11 @@ root gap. If a selected contour lies in its assigned disc, the omitted
 root also avoids that contour. Connecting these disc conditions to the
 selected contour family and regular-factor analyticity remains necessary
 for the unrestricted finite-head nonvanishing theorem.
+`SourcePsiSelectedJacobianIsolatingDiagonal.lean` connects those
+separation lemmas to the *same* selected contour family used by the
+diagonal-plus-compact theorem. If each selected circle lies in its
+assigned isolating disc and the gap regular factor is analytic on each
+selected closed disc, root localization in pairwise disjoint discs
+implies that the diagonal multiplier is bijective and the remainder is
+compact. Establishing these two contour and analyticity conditions from
+the local construction is the next gap toward Lemma 12.6 on Ωᵖ.

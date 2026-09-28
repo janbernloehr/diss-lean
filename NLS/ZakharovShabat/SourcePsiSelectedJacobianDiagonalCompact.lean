@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianEntry
 import NLS.ZakharovShabat.SourcePsiJacobianUniformDiagonalTail
 import NLS.ZakharovShabat.SourcePsiJacobianUniformOffDiagonalTail
+import NLS.ZakharovShabat.SourcePsiJacobianAllGapNonzero
 import NLS.SequenceSpaces.DeletedJacobianCompactRemainder
 import NLS.SequenceSpaces.DeletedJacobianInvertibleDiagonal
 
@@ -49,8 +50,21 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
             IsCompactOperator C ∧
             ((∀ m : ℤ, m ≠ n → m.natAbs < L → d m ≠ 0) →
               Function.Bijective D) ∧
+            (∀ m : ℤ, ∀ _hmn : m ≠ n,
+              (∀ z ∈ sphere (c m) (R m),
+                z ≠ displacedRoots (a : Coeff p) n) →
+              AnalyticOnNhd ℂ
+                (fun z => (((n-m : ℤ) : ℂ) *
+                  sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
+                (closedBall (c m) (R m)) →
+              (∀ z ∈ standardRootGapSegment
+                (sourceStandardRootMidpoint hp hp1 ψ m)
+                (sourceStandardRootHalfGap hp hp1 ψ m),
+                ∀ k : ℤ, k ≠ m →
+                  z ≠ displacedRoots (a : Coeff p) k) →
+              d m ≠ 0) ∧
             Q = D + C := by
-  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hchoice,hgeom,hmatrix⟩ :=
+  obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hcReal,hchoice,hgeom,hmatrix⟩ :=
     exists_local_sourcePsi_selectedJacobian_matrixFormula
       hp hp1 φ hφ n a₀
   obtain ⟨Udiag,hUdiagOpen,hbaseDiag,Kdiag,Mdiag,hMdiag,hdiag⟩ :=
@@ -89,7 +103,20 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
     (∀ m : ℤ, L ≤ m.natAbs → m ≠ n → 1 ≤ ‖d m‖) ∧
     IsCompactOperator C ∧
     ((∀ m : ℤ, m ≠ n → m.natAbs < L → d m ≠ 0) →
-      Function.Bijective D) ∧ Q = D + C
+      Function.Bijective D) ∧
+    (∀ m : ℤ, ∀ _hmn : m ≠ n,
+      (∀ z ∈ sphere (c m) (R m),
+        z ≠ displacedRoots (a : Coeff p) n) →
+      AnalyticOnNhd ℂ
+        (fun z => (((n-m : ℤ) : ℂ) *
+          sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
+        (closedBall (c m) (R m)) →
+      (∀ z ∈ standardRootGapSegment
+        (sourceStandardRootMidpoint hp hp1 ψ m)
+        (sourceStandardRootHalfGap hp hp1 ψ m),
+        ∀ k : ℤ, k ≠ m →
+          z ≠ displacedRoots (a : Coeff p) k) →
+      d m ≠ 0) ∧ Q = D + C
   have htail : ∀ m : ℤ, max K L₀ ≤ m.natAbs →
       m ≠ n → 1 ≤ ‖d m‖ := by
     intro m hm hmn
@@ -144,7 +171,37 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
       · exact hhead m hmn (by omega)
     exact Coeff.deletedJacobianDiagonal_bijective_of_eventually_one_le
       n Q (max K L₀) hno (fun m hmn hm => htail m hm hmn)
-  exact ⟨max K L₀,htail,hcompact,hbij,
+  have hnonzero (m : ℤ) (hmn : m ≠ n)
+      (havoidn : ∀ z ∈ sphere (c m) (R m),
+        z ≠ displacedRoots (a : Coeff p) n)
+      (hreg : AnalyticOnNhd ℂ
+        (fun z => (((n-m : ℤ) : ℂ) *
+          sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
+        (closedBall (c m) (R m)))
+      (hother : ∀ z ∈ standardRootGapSegment
+        (sourceStandardRootMidpoint hp hp1 ψ m)
+        (sourceStandardRootHalfGap hp hp1 ψ m),
+        ∀ k : ℤ, k ≠ m →
+          z ≠ displacedRoots (a : Coeff p) k) : d m ≠ 0 := by
+    let x : ℝ := (c m).re
+    have hx : (x : ℂ) = c m := by
+      apply Complex.ext
+      · rfl
+      · simpa [x] using (hcReal m).symm
+    obtain ⟨hR,hseg,hdom,hcircle⟩ := hgeom (a,ψ) hpair.1 m
+    have hscalar := sourcePsi_diagonalJacobian_ne_zero_all_real_gaps
+      hp hp1 ψ hreal n m hmn a hroots x (R m) hR
+        (by simpa only [hx] using hseg)
+        (by simpa only [hx] using hdom)
+        (by simpa only [hx] using hcircle)
+        (by simpa only [hx] using havoidn)
+        (by simpa only [hx] using hreg) hother
+    rw [Coeff.deletedJacobianDiagonalSymbol_apply_other n m hmn Q]
+    change ((sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
+      (Coeff.deletedSingleCLM n m hmn 1) : DeletedCoeff p n) : Coeff p) m ≠ 0
+    rw [hmatrix a ψ hpair.1 m m hmn]
+    simpa only [hx] using hscalar
+  exact ⟨max K L₀,htail,hcompact,hbij,hnonzero,
     Coeff.deletedJacobian_eq_diagonal_add_offDiagonal n Q⟩
 
 end NLS.ZakharovShabat
