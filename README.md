@@ -3242,3 +3242,10 @@ case the moved-root ratio cancels, leaving a single regular factor
 divided by the selected standard root. The formulas are also connected
 to the deleted-coordinate derivative, preparing direct applications of
 the gap mean-value estimate in Lemma 12.3.
+`SourcePsiJacobianDiagonalMeanValue.lean` applies that estimate to an
+open real selected gap. Under explicit contour analyticity and root
+avoidance hypotheses, the diagonal derivative equals `2π` times the
+regular quotient at some point of the gap. It is nonzero if the
+omitted quotient and deleted root have no zeros there. The remaining
+work is to derive these hypotheses from the full root-localization
+domain and to prove the uniform asymptotic estimate.

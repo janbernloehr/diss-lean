@@ -982,6 +982,7 @@ import NLS.ZakharovShabat.SourcePsiCoordinateVariation
 import NLS.ZakharovShabat.SourcePsiRealJacobianEntry
 import NLS.ZakharovShabat.SourcePsiJacobianKernelBound
 import NLS.ZakharovShabat.SourcePsiJacobianGapFactorization
+import NLS.ZakharovShabat.SourcePsiJacobianDiagonalMeanValue
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet
