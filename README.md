@@ -3789,3 +3789,8 @@ The solvability predicate also has an anchored local continuation
 theorem: each specified gap solution extends to a `C¹` branch of gap
 solutions over nearby real-type sources. This supplies the branch data
 needed to compare distinct solutions while studying global uniqueness.
+`SourcePsiGapMultiplicity.lean` proves that the presence of two
+distinct gap solutions is open within the real-type source locus:
+their anchored `C¹` branches stay distinct nearby. To conclude global
+uniqueness from the free source, it remains to prove that this
+multiplicity locus is also closed.

@@ -1050,6 +1050,7 @@ import NLS.ZakharovShabat.SourcePsiRealContourComparison
 import NLS.ZakharovShabat.SourcePsiGapSolutionLimit
 import NLS.ZakharovShabat.SourcePsiGapSolvability
 import NLS.ZakharovShabat.SourcePsiGapGlobalExistence
+import NLS.ZakharovShabat.SourcePsiGapMultiplicity
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros
