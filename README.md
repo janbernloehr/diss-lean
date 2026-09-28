@@ -3411,3 +3411,9 @@ most the operator norm. Subtracting the corresponding diagonal
 multiplier produces a zero-diagonal remainder without changing any
 off-diagonal matrix entry, preparing the operator-level compactness
 argument of Lemma 12.6.
+`DeletedJacobianInvertibleDiagonal.lean` shows that finitely many
+nonzero retained diagonal entries and a fixed tail lower bound give a
+global positive lower bound. The extracted diagonal multiplier is then
+a Banach-space isomorphism. Applying this to the psi Jacobian still
+requires the remaining finite-head spectral conditions and a uniform
+tail separation estimate.
