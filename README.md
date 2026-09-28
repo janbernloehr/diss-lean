@@ -3249,3 +3249,9 @@ regular quotient at some point of the gap. It is nonzero if the
 omitted quotient and deleted root have no zeros there. The remaining
 work is to derive these hypotheses from the full root-localization
 domain and to prove the uniform asymptotic estimate.
+`SourcePsiQuotientTailNonzero.lean` supplies the first nonvanishing
+input: the `ℓᵖ` majorant of the regular quotient error tends to zero
+in the two-sided index tail. For each fixed nearby source and root
+input, the quotient is therefore nonzero throughout every sufficiently
+distant selected disc. A common cutoff on parameter neighborhoods and
+the finite head still need separate arguments.
