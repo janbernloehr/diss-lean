@@ -109,4 +109,80 @@ theorem analyticAt_implicitBanachRoot
     rw [← hHy,← hReq,R.left_inv hysrc]
   exact hsection.congr heq
 
+/-- A zero of a jointly analytic Banach map with invertible partial
+derivative extends to an analytic local zero selection. -/
+theorem exists_analytic_implicitBanachRoot
+    (F : E × P → E) (a : E) (x : P)
+    (hF : AnalyticAt ℂ F (a,x))
+    (hzero : F (a,x) = 0)
+    (hbij : Function.Bijective
+      ((fderiv ℂ F (a,x)).comp
+        (ContinuousLinearMap.inl ℂ E P))) :
+    ∃ s : P → E,
+      AnalyticAt ℂ s x ∧ s x = a ∧
+      ∀ᶠ y in 𝓝 x, F (s y,y) = 0 := by
+  let H : E × P → E × P := fun t => (F t,t.2)
+  let A : (E × P) →L[ℂ] E := fderiv ℂ F (a,x)
+  let T : (E × P) →L[ℂ] (E × P) :=
+    A.prod (ContinuousLinearMap.snd ℂ E P)
+  have hH : AnalyticAt ℂ H (a,x) := hF.prod analyticAt_snd
+  have hTH : HasStrictFDerivAt H T (a,x) := by
+    have hderiv : fderiv ℂ H (a,x) = T := by
+      simpa only [H,T,A,fderiv_snd] using
+        (hF.differentiableAt.fderiv_prodMk differentiableAt_snd)
+    rw [← hderiv]
+    exact hH.hasStrictFDerivAt
+  have hbijT : Function.Bijective T :=
+    bijective_banach_triangular_derivative A hbij
+  let i : (E × P) ≃L[ℂ] (E × P) :=
+    ContinuousLinearEquiv.ofBijective T
+      (LinearMap.ker_eq_bot.mpr hbijT.1)
+      (LinearMap.range_eq_top.mpr hbijT.2)
+  have hTHi : HasStrictFDerivAt H (i : (E × P) →L[ℂ] (E × P))
+      (a,x) := by
+    simpa only [i,ContinuousLinearEquiv.coe_ofBijective] using hTH
+  let R : OpenPartialHomeomorph (E × P) (E × P) :=
+    hTHi.toOpenPartialHomeomorph H
+  have hReq : (R : E × P → E × P) = H :=
+    hTHi.toOpenPartialHomeomorph_coe
+  have hHx : H (a,x) = (0,x) := by simp [H,hzero]
+  have hR : AnalyticAt ℂ R.symm (0,x) := by
+    have hR' : AnalyticAt ℂ R.symm (H (a,x)) := by
+      apply R.analyticAt_symm' (i := i)
+        (hTHi.mem_toOpenPartialHomeomorph_source)
+      · rw [hReq]
+        exact hH
+      · rw [hReq]
+        exact hTHi.hasFDerivAt.fderiv
+    simpa only [hHx] using hR'
+  let s : P → E := fun y => (R.symm (0,y)).1
+  have hmap : AnalyticAt ℂ (fun y : P => ((0:E),y)) x :=
+    analyticAt_const.prod analyticAt_id
+  have hs : AnalyticAt ℂ s x := by
+    exact ((analyticAt_fst (𝕜 := ℂ) (p := R.symm (0,x))).comp hR).comp hmap
+  have hsource : (a,x) ∈ R.source :=
+    hTHi.mem_toOpenPartialHomeomorph_source
+  have htarget : (0,x) ∈ R.target := by
+    rw [← hHx,← hReq]
+    exact R.mapsTo hsource
+  have hsx : s x = a := by
+    have heq : R.symm (0,x) = (a,x) := by
+      rw [← hHx,← hReq,R.left_inv hsource]
+    exact congrArg Prod.fst heq
+  have hmem : ∀ᶠ y : P in 𝓝 x, (0,y) ∈ R.target :=
+    (continuousAt_const.prodMk continuousAt_id).eventually
+      (R.open_target.mem_nhds htarget)
+  have hzeros : ∀ᶠ y in 𝓝 x, F (s y,y) = 0 := by
+    filter_upwards [hmem] with y hy
+    have hright := R.right_inv hy
+    have hright' : H (R.symm (0,y)) = (0,y) := by
+      rw [← hReq]
+      exact hright
+    have hsecond : (R.symm (0,y)).2 = y := (Prod.mk.inj hright').2
+    have hfirst : F (R.symm (0,y)) = 0 := (Prod.mk.inj hright').1
+    have heq : R.symm (0,y) = (s y,y) := Prod.ext rfl hsecond
+    rw [heq] at hfirst
+    exact hfirst
+  exact ⟨s,hs,hsx,hzeros⟩
+
 end NLS.ComplexAnalysis

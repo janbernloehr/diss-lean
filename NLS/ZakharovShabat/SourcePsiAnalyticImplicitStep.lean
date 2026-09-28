@@ -69,4 +69,32 @@ theorem analyticAt_sourcePsi_implicit_solution_of_analytic
   rw [hpartial]
   exact hbij
 
+/-- Joint analyticity and a bijective selected-root Jacobian produce
+an analytic local solution branch through a zero of the selected psi
+equation. -/
+theorem exists_analytic_sourcePsi_local_solution_of_analytic
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (c : ℤ → ℂ) (R : ℤ → ℝ)
+    (a : DeletedCoeff p n) (ψ : CoeffPair p)
+    (hF : AnalyticAt ℂ
+      (fun t : DeletedCoeff p n × CoeffPair p =>
+        sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2)
+      (a,ψ))
+    (hzero : sourcePsiSelectedEquationSequence hp hp1 n c R a ψ = 0)
+    (hbij : Function.Bijective
+      (sourcePsiSelectedRootJacobian hp hp1 n c R a ψ)) :
+    ∃ s : CoeffPair p → DeletedCoeff p n,
+      AnalyticAt ℂ s ψ ∧ s ψ = a ∧
+      ∀ᶠ φ in 𝓝 ψ,
+        sourcePsiSelectedEquationSequence hp hp1 n c R (s φ) φ = 0 := by
+  let F : DeletedCoeff p n × CoeffPair p → DeletedCoeff p n :=
+    fun t => sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2
+  have hpartial := sourcePsiSelectedEquation_partial_fderiv_eq_rootJacobian
+    hp hp1 n c R a ψ hF.differentiableAt
+  apply NLS.ComplexAnalysis.exists_analytic_implicitBanachRoot
+    F a ψ hF hzero
+  rw [hpartial]
+  exact hbij
+
 end NLS.ZakharovShabat
