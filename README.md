@@ -3728,3 +3728,9 @@ continuity and a closedness argument for moving line segments. The
 over nearby sources, and their subsequence limit, in one fixed open
 isolating-disc placement set. The next continuation step must show
 that the limiting roots satisfy the selected equation.
+`SourcePsiGapRootGraphCompact.lean` upgrades the subsequence argument
+to compactness of the full gap-root graph over any compact set of
+real-type sources, as well as compactness of each fixed-source fiber.
+This supplies the properness input for finite-cover continuation
+arguments; compatibility and continuity of the selected equation
+across contour charts remain to be established.
