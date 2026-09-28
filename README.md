@@ -3489,3 +3489,10 @@ equation and selected Jacobian carry this family to the operator result.
 Matching its remaining parameter assumptions exactly to the
 dissertation's Ωᵖ domain, especially finite-head root bounds, is the
 next step toward the full Lemma 12.6 statement.
+`CompactTailRowColumnReciprocalMatrix.lean` strengthens the operator
+compactness criterion: reciprocal entry estimates are needed only for
+distant rows and distant input columns. The finitely many uncontrolled
+columns factor through a finite-rank projection. The corresponding
+deleted-Jacobian theorem is now available in
+`DeletedJacobianCompactRemainder.lean`; the next step is to use it for
+the selected psi Jacobian so finite-head roots need no quarter-π bound.

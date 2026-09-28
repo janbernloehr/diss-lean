@@ -1,5 +1,6 @@
 import NLS.SequenceSpaces.DeletedJacobianSymbol
 import NLS.SequenceSpaces.CompactTailReciprocalMatrix
+import NLS.SequenceSpaces.CompactTailRowColumnReciprocalMatrix
 
 /-!
 # Compact off-diagonal remainder from retained matrix entries
@@ -57,5 +58,49 @@ theorem isCompactOperator_deletedJacobianOffDiagonal_of_tailEntryBound
     · rw [deletedOperatorMatrixEntry_apply_other n m k hkn,
         deletedJacobianOffDiagonal_entry_other n m k hkn (Ne.symm hkm) Q]
       exact hoff m hm hmn k hkn hkm
+
+/-- The canonical off-diagonal remainder is compact if its reciprocal
+entry bounds hold only for distant rows and distant retained columns.
+The finitely many uncontrolled input columns contribute a finite-rank
+operator. -/
+theorem isCompactOperator_deletedJacobianOffDiagonal_of_tailRowColumnEntryBound
+    (q : ℝ≥0∞) [Fact (1 ≤ q)] [p.HolderConjugate q]
+    (hp : p ≠ ⊤) (n : ℤ)
+    (Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n)
+    (b : Coeff p) (Krow Kcol : ℕ)
+    (hoff : ∀ m : ℤ, Krow ≤ m.natAbs → m ≠ n →
+      ∀ k : ℤ, Kcol < k.natAbs → ∀ hkn : k ≠ n, k ≠ m →
+        ‖((Q (deletedSingleCLM n k hkn 1) :
+          DeletedCoeff p n) : Coeff p) m‖ ≤
+          ‖b m‖ / |((k-m : ℤ) : ℝ)|) :
+    IsCompactOperator (deletedJacobianOffDiagonal n Q) := by
+  let T : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
+    deletedJacobianOffDiagonal n Q
+  apply isCompactOperator_deleted_of_tailRowColumnReciprocalMatrixBound
+    q hp n T b Krow Kcol
+  · intro m _
+    by_cases hmn : m = n
+    · subst m
+      exact deletedOperatorMatrixEntry_apply_deleted n n T
+    · rw [deletedOperatorMatrixEntry_apply_other n m m hmn]
+      exact deletedJacobianOffDiagonal_diagonal n m hmn Q
+  · intro m hm k hk hkm
+    by_cases hmn : m = n
+    · subst m
+      have hzero : deletedOperatorMatrixEntry n T n k = 0 :=
+        (T (deleteCoordinateTo n (lp.single p k 1))).property
+      rw [hzero]
+      simp only [norm_zero]
+      exact div_nonneg (norm_nonneg (b n))
+        (abs_nonneg (((k-n : ℤ) : ℝ)))
+    by_cases hkn : k = n
+    · subst k
+      rw [deletedOperatorMatrixEntry_apply_deleted]
+      simp only [norm_zero]
+      exact div_nonneg (norm_nonneg (b m))
+        (abs_nonneg (((n-m : ℤ) : ℝ)))
+    · rw [deletedOperatorMatrixEntry_apply_other n m k hkn,
+        deletedJacobianOffDiagonal_entry_other n m k hkn (Ne.symm hkm) Q]
+      exact hoff m hm hmn k hk hkn hkm
 
 end NLS.Coeff
