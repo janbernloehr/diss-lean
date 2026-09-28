@@ -967,6 +967,7 @@ import NLS.ZakharovShabat.SourcePsiGlobalTailQuarterDisc
 import NLS.ZakharovShabat.SourcePsiRealTailCollapsedGap
 import NLS.ZakharovShabat.SourcePsiRealCenteredOpenGap
 import NLS.ZakharovShabat.SourcePsiRealCenteredShiftedDisc
+import NLS.ZakharovShabat.SourcePsiGlobalRealDistantDeleted
 import NLS.SequenceSpaces.DeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.ZakharovShabat.SourcePsiSingleVariation

@@ -3188,3 +3188,11 @@ then real. The same file now handles collapsed gaps through their
 Cauchy residues and combines both cases: every real selected gap has a
 real coordinate on a separated real-centered disc. A common cutoff
 for the finite head family remains to be connected to this result.
+`SourcePsiGlobalRealDistantDeleted.lean` supplies that common cutoff.
+On one neighborhood of an arbitrary real-type source, every coordinate
+of the selected psi equation is real for all sufficiently distant
+deleted indices and every real displaced-root input. This includes
+shifted head contours, free tail contours, open gaps, and collapsed
+gaps. The finitely many remaining deleted indices still need a separate
+real-locus argument before the global Lemma 12.4 construction can be
+declared real-valued.
