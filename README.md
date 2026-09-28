@@ -3515,7 +3515,7 @@ transfers simplicity to every retained zero of the psi numerator.
 Pairwise disjoint isolating discs supply the needed separation. Thus a
 deleted direction is zero if its entire-numerator variation vanishes
 at every retained root; proving that vanishing from the Jacobian kernel
-and interpolation remains the next part of Lemma 12.7.
+through the gap-zero and interpolation results is the next part of Lemma 12.7.
 `SourcePsiCandidateEntireVariation.lean` defines that variation as the
 Fréchet derivative of the psi numerator in a root-sequence direction.
 It is entire in the spectral variable and equals the derivative along
@@ -3533,7 +3533,8 @@ from scalar equations to the bounded selected sequence Jacobian for
 arbitrary deleted-root directions. If such a direction lies in its
 kernel, the variation contour integral vanishes in every retained row.
 The gap-zero results below turn these zero integrals into zeros of the
-entire variation; the interpolation argument remains.
+entire variation. The interpolation result below gives uniqueness once
+these zeros are assembled into a simple gap product.
 `SourcePsiCandidateVariationRealAxis.lean` proves that the entire
 variation takes real values on the real spectral axis when the base
 displaced roots and the direction are real. This supplies the reality
@@ -3588,6 +3589,10 @@ the entire variation. `SourcePsiRootResolventExterior.lean` proves
 absolute convergence of the actual-root resolvent series and a uniform
 small bound on the large half-integer-radius circles. For deleted
 directions it identifies the entire variation exactly as the psi
-numerator times this series. The remaining Lemma 12.7 work is to
-combine the two product normalizations into the interpolation-quotient
-circle estimate, then apply interpolation uniqueness.
+numerator times this series. `SourcePsiInterpolationQuotientExterior.lean`
+combines the two product normalizations with the resolvent bound to show
+uniform decay of the interpolation quotient on the large circles. The
+simple-zero interpolation theorem then makes the entire variation zero;
+with distinct original roots, the deleted direction is zero. The remaining
+Lemma 12.7 work is to connect the selected Jacobian kernel's gap zeros to
+these interpolation hypotheses and complete the local injectivity proof.
