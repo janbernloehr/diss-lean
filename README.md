@@ -3539,3 +3539,10 @@ variation takes real values on the real spectral axis when the base
 displaced roots and the direction are real. This supplies the reality
 hypothesis for the real-gap mean-value lemmas; reducing a complex
 kernel direction to real directions is still needed.
+`SourcePsiVariationOpenGapZero.lean` combines that reality theorem with
+the weighted circle mean-value lemma. On a retained open real gap, a
+zero variation contour integral forces a zero of the entire numerator
+variation in the gap. In particular, a real direction in the bounded
+selected Jacobian kernel has such a zero wherever the prescribed circle
+and omitted-root domain satisfy the stated hypotheses. Collapsed gaps,
+complex directions, and the final interpolation argument remain.
