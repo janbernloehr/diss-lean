@@ -3676,7 +3676,7 @@ discs to identify a zero in a selected real gap with that gap's root.
 Banach-valued selected equation: on the open retained-root placement
 domain, every real solution has each retained root in its periodic
 gap. This proves the root-location part of Proposition 12.9 locally;
-the real-analytic solution map and its global continuation remain open.
+the global real-analytic solution map is constructed below.
 `AnalyticImplicitBanachRoot.lean` proves the analytic implicit-zero
 theorem for a Banach-valued unknown and parameter, including a local
 analytic zero branch through any nondegenerate zero.
@@ -3687,15 +3687,14 @@ and constructive implicit theorem on the same selected contour family:
 at a real solution in the open retained-root domain, joint analyticity
 of the selected Banach-valued equation gives an analytic local solution
 branch. Establishing that joint analyticity, then joining the local
-branches globally, remain the next steps toward the existence and
-real-analyticity clauses of Proposition 12.9.
+branches globally, were the remaining steps toward the existence and
+real-analyticity clauses of Proposition 12.9; both are proved below
+for the formalized gap-solution domain.
 
 `BanachSmoothAnalyticOn.lean` now proves the local complex-smooth-to-analytic
 step for arbitrary complete complex normed codomains, including the deleted
-sequence space of the selected equation. The remaining analytic obligation
-is to establish the requisite smoothness, or an equivalent power-series
-construction, for that equation from its current local norm and coordinate
-holomorphy bounds.
+sequence space of the selected equation. The coordinatewise Taylor
+construction below now supplies a power series for the selected equation.
 
 `BanachHolomorphicC1.lean` proves a quantitative local Lipschitz bound for
 the Fréchet derivative of a bounded complex-holomorphic Banach-space map.
@@ -3705,16 +3704,16 @@ equation's already established holomorphy.
 `SourcePsiLocalJacobianBijectivity.lean` and
 `SourcePsiLocalImplicitBranch.lean` now expose this `C¹` regularity on
 the same selected contour family as the real-locus Jacobian
-isomorphism and conditional analytic branch. Higher complex smoothness
-or a direct power-series proof remains necessary for joint analyticity.
+isomorphism and the initially conditional analytic branch. The direct
+power-series proof below establishes joint analyticity on that chart.
 
 `BanachC1ImplicitRoot.lean` proves a constructive `C¹` implicit-zero
 theorem for Banach-valued unknowns and parameters.
 `SourcePsiC1ImplicitStep.lean` applies it to the selected psi equation:
 each real zero in the open retained-root domain extends to a local `C¹`
 zero branch, and the branch remains in that domain near its base point.
-This local existence no longer assumes joint analyticity; proving
-real-analytic dependence and global continuation remains open.
+This local existence does not require joint analyticity. The later
+analytic and global solution theorems strengthen this `C¹` result.
 The strengthened implicit theorem now also gives an open neighborhood
 in which that branch is the unique zero of the selected equation.
 This local uniqueness is the gluing statement needed for continuation.
@@ -3742,8 +3741,8 @@ conjugates at real-type potentials.
 potential. On every nearby real-type potential, its `C¹` solution has
 real retained roots; the solved contour equation then places each
 retained root in its selected periodic gap. This establishes the local
-real seed for Proposition 12.9, while real analyticity and global
-continuation remain to be proved.
+real seed for Proposition 12.9; real analyticity and global continuation
+are established below for the canonical gap solution.
 `SourcePsiLocalRealBranch.lean` extends the reality argument to every
 real zero in a retained-root placement domain, using the corresponding
 real-centered local contour family. Its nearby real-type solutions
@@ -3865,3 +3864,8 @@ implicit theorem to the anchored canonical branch and restricts it to
 the real-type source space. The canonical deleted gap-root map is
 real analytic at every real-type source, proving the analyticity
 component of Proposition 12.9 without a conditional equation premise.
+`SourcePsiGapRootAnalyticExistence.lean` packages global existence,
+pointwise uniqueness, real analyticity, and placement of every retained
+root in its periodic gap into one theorem. It uses the formalized
+`SourcePsiGapSolution` predicate; identifying that predicate with the
+dissertation's literal `Ωᵖ` domain is still open.
