@@ -31,6 +31,32 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
       (a₀,φ) ∈ U ∧
       ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
         ∃ Niso : ℕ, ∃ εiso : ℝ,
+        (∀ i j : ℤ, i ≠ j →
+          Disjoint (sourceIsolatingDisc hp hp1 φ Niso εiso i)
+            (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
+        (∀ m : ℤ, closedBall (c m) (R m) ⊆
+          sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+        (∀ m : ℤ, (c m).im = 0) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
+            sourcePsiEquationCoordinate hp hp1 n m
+              (t.1 : Coeff p) t.2 (c m) (R m)) ∧
+        (∀ t ∈ U,
+          IsRealType (CoeffPair.toMax p t.2) →
+          (∀ j : ℤ, (displacedRoots (t.1 : Coeff p) j).im = 0) →
+            ∀ m : ℤ,
+              ((sourcePsiSelectedEquationSequence hp hp1 n c R
+                t.1 t.2 : Coeff p) m).im = 0) ∧
+        DifferentiableOn ℂ
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U ∧
         ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
@@ -47,7 +73,7 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
               Coeff.deletedJacobianOffDiagonal n Q
             IsCompactOperator C ∧ Function.Bijective D ∧ Q = D + C := by
   obtain ⟨Umain,hUmainOpen,hbaseMain,c,R,Niso,εiso,
-      hcluster,hdisjoint,hfilled,hmain⟩ :=
+      hcluster,hdisjoint,hfilled,hcReal,hgeom,hcoord,hrealSeq,hdiff,hmain⟩ :=
     exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
       hp hp1 φ hφ n a₀
   obtain ⟨W,hWopen,_,hrealW,hQdata⟩ :=
@@ -57,7 +83,15 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
   have hUopen : IsOpen U :=
     hUmainOpen.inter (hWopen.preimage continuous_snd)
   have hbase : (a₀,φ) ∈ U := ⟨hbaseMain,hrealW hφ⟩
-  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_⟩
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,
+    hdisjoint,hfilled,hcReal,?_,?_,?_,?_,?_⟩
+  · intro t ht m
+    exact hgeom t ht.1 m
+  · intro t ht m
+    exact hcoord t ht.1 m
+  · intro t ht hreal hroots m
+    exact hrealSeq t ht.1 hreal hroots m
+  · exact hdiff.mono (fun t ht => ht.1)
   intro a ψ hpair hreal hroots hrootloc
   have hlocTail : ∀ j : ℤ, Niso < j.natAbs →
       ‖(a : Coeff p) j‖ ≤ Real.pi/4 := by
@@ -119,7 +153,7 @@ theorem exists_local_sourcePsi_selectedJacobian_bijective_of_injective
             let Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
               sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
             Function.Injective Q → Function.Bijective Q := by
-  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,hdecomp⟩ :=
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,_,_,_,_,_,_,_,hdecomp⟩ :=
     exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
       hp hp1 φ hφ n a₀
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_⟩

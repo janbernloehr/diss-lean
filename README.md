@@ -3503,7 +3503,7 @@ root placement in the assigned isolating discs supplies that tail bound.
 of a bijective diagonal through it. The local selected-Jacobian theorem
 now concludes bijectivity from injectivity under its isolating-disc
 hypotheses. This establishes the operator step of Corollary 12.8;
-the injectivity proof of Lemma 12.7 is still to be formalized.
+the injectivity proof of Lemma 12.7 appears below.
 `SourcePsiCandidateRootVariation.lean` starts that proof at the entire
 numerator. Differentiating its zero identity along a moving retained
 root gives the exact relation between the root-sequence variation and
@@ -3514,8 +3514,8 @@ product has a simple zero at each root separated from the others, and
 transfers simplicity to every retained zero of the psi numerator.
 Pairwise disjoint isolating discs supply the needed separation. Thus a
 deleted direction is zero if its entire-numerator variation vanishes
-at every retained root; proving that vanishing from the Jacobian kernel
-through the gap-zero and interpolation results is the next part of Lemma 12.7.
+at every retained root. The gap-zero and interpolation results below
+derive that vanishing from the Jacobian kernel.
 `SourcePsiCandidateEntireVariation.lean` defines that variation as the
 Fréchet derivative of the psi numerator in a root-sequence direction.
 It is entire in the spectral variable and equals the derivative along
@@ -3600,6 +3600,10 @@ splits a complex kernel direction into real and imaginary parts, and
 concludes injectivity of the bounded selected Jacobian.
 `SourcePsiLocalJacobianInjectivity.lean` supplies those hypotheses from
 the holomorphic selected-equation construction and proves local
-injectivity at real root data in the isolating discs. The remaining
-Fredholm step must use the same selected contour family for its diagonal
-and compact decomposition.
+injectivity at real root data in the isolating discs. The diagonal and
+compact decomposition now retains the same selected contour data.
+`SourcePsiLocalJacobianBijectivity.lean` combines its Fredholm reduction
+with interpolation injectivity to prove local bijectivity of the bounded
+selected psi root Jacobian. Matching the local root-placement hypotheses
+to the dissertation's Ωᵖ domain remains to finish the formulation of
+Lemma 12.6 and Corollary 12.8.

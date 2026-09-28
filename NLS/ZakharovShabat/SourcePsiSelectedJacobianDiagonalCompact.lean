@@ -42,6 +42,27 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
             (sourceIsolatingDisc hp hp1 φ Niso εiso j)) ∧
         (∀ m : ℤ, closedBall (c m) (R m) ⊆
           sourceIsolatingDisc hp hp1 φ Niso εiso m) ∧
+        (∀ m : ℤ, (c m).im = 0) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 t.2) ∧
+        (∀ t ∈ U, ∀ m : ℤ,
+          (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
+            sourcePsiEquationCoordinate hp hp1 n m
+              (t.1 : Coeff p) t.2 (c m) (R m)) ∧
+        (∀ t ∈ U,
+          IsRealType (CoeffPair.toMax p t.2) →
+          (∀ j : ℤ, (displacedRoots (t.1 : Coeff p) j).im = 0) →
+            ∀ m : ℤ,
+              ((sourcePsiSelectedEquationSequence hp hp1 n c R
+                t.1 t.2 : Coeff p) m).im = 0) ∧
+        DifferentiableOn ℂ
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U ∧
         ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
@@ -77,9 +98,19 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
               d m ≠ 0) ∧
             Q = D + C := by
   obtain ⟨Ueq,hUeqOpen,hbaseEq,Keq,c,R,hcReal,hchoice,hgeom,
-      ⟨Niso,εiso,hcluster,hdisjoint,hfilled⟩,hmatrix⟩ :=
-    exists_local_sourcePsi_selectedJacobian_matrixFormula
+      ⟨Niso,εiso,hcluster,hdisjoint,hfilled⟩,
+      C,hC,hcoord,hbound,hrealSeq,hdiff⟩ :=
+    exists_local_sourcePsi_globalEquation_formula_analytic
       hp hp1 φ hφ n a₀
+  have hmatrix (a : DeletedCoeff p n) (ψ : CoeffPair p)
+      (hpair : (a,ψ) ∈ Ueq) (m k : ℤ) (hkn : k ≠ n) :
+      ((sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
+        (Coeff.deletedSingleCLM n k hkn 1) : DeletedCoeff p n) : Coeff p) m =
+        deriv (fun z : ℂ =>
+          sourcePsiDeletedEquationCoordinate hp hp1 n m
+            (a+Coeff.deletedSingleCLM n k hkn z) ψ (c m) (R m)) 0 :=
+    sourcePsiSelectedRootJacobian_entry_eq_deletedCoordinate
+      hp hp1 n c R Ueq hUeqOpen hcoord hdiff a ψ hpair m k hkn
   obtain ⟨Udiag,hUdiagOpen,hbaseDiag,Kdiag,Mdiag,hMdiag,hdiag⟩ :=
     exists_local_sourcePsi_diagonalJacobian_uniformTail
       hp hp1 φ hφ (a₀ : Coeff p)
@@ -97,9 +128,17 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
   have hbase : (a₀,φ) ∈ U :=
     ⟨hbaseEq,⟨hbaseDiag,hbaseOff⟩⟩
   let K : ℕ := max (Keq+1) (max Kdiag Koff)
-  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_,hdisjoint,hfilled,?_⟩
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_,hdisjoint,hfilled,
+    hcReal,?_,?_,?_,?_,?_⟩
   · intro t ht m
     exact hcluster t ht.1 m
+  · intro t ht m
+    exact hgeom t ht.1 m
+  · intro t ht m
+    exact hcoord t ht.1 m
+  · intro t ht hreal hroots m
+    exact hrealSeq t ht.1 hreal hroots m
+  · exact hdiff.mono (fun t ht => ht.1)
   intro a ψ hpair hreal hroots hloc
   obtain ⟨Bdiag,hBdiagNorm,hBdiag⟩ :=
     hdiag n a ψ hpair.2.1 hreal hroots
