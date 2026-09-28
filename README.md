@@ -3544,5 +3544,10 @@ the weighted circle mean-value lemma. On a retained open real gap, a
 zero variation contour integral forces a zero of the entire numerator
 variation in the gap. In particular, a real direction in the bounded
 selected Jacobian kernel has such a zero wherever the prescribed circle
-and omitted-root domain satisfy the stated hypotheses. Collapsed gaps,
-complex directions, and the final interpolation argument remain.
+and omitted-root domain satisfy the stated hypotheses.
+`SourcePsiVariationCollapsedGapZero.lean` handles the complementary
+collapsed-gap case: Cauchy's formula forces the variation to vanish
+at the periodic midpoint when its contour integral is zero. This also
+applies directly to complex directions in the selected Jacobian kernel.
+Reducing complex directions in the open-gap case and proving the
+interpolation conclusion remain for Lemma 12.7.
