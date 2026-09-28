@@ -3196,3 +3196,10 @@ shifted head contours, free tail contours, open gaps, and collapsed
 gaps. The finitely many remaining deleted indices still need a separate
 real-locus argument before the global Lemma 12.4 construction can be
 declared real-valued.
+`SourceStandardRootConjugation.lean` begins the remaining finite-index
+argument: for real-type source data, every standard root commutes with
+complex conjugation off its gap, and the full canonical root acquires
+the expected minus sign from its `2i` normalization. This reflection
+identity applies on the gap complement without requiring the deleted
+free root to lie outside a selected head disc. The numerator and contour
+integral reflection steps remain to be formalized.
