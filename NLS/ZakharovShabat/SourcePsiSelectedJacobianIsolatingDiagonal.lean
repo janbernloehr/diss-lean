@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianDiagonalCompact
 import NLS.ZakharovShabat.SourcePsiIsolatingRootSeparation
 import NLS.ZakharovShabat.SourcePsiRegularFactorIsolatingDisc
+import NLS.SequenceSpaces.CompactIdentityFredholm
 
 /-!
 # Diagonal isomorphism from isolated selected roots
@@ -95,5 +96,39 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
           hp hp1 φ ψ Niso εiso j
             (hcluster (a,ψ) hpair.1 j))
         hrootloc hdisjoint m
+
+/-- The local selected Jacobian is an isomorphism as soon as its
+injectivity is known. This is the Fredholm reduction in Corollary 12.8;
+the injectivity assertion itself is Lemma 12.7. -/
+theorem exists_local_sourcePsi_selectedJacobian_bijective_of_injective
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ U : Set (DeletedCoeff p n × CoeffPair p), IsOpen U ∧
+      (a₀,φ) ∈ U ∧
+      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        ∃ Niso : ℕ, ∃ εiso : ℝ,
+        ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+          (a,ψ) ∈ U →
+          IsRealType (CoeffPair.toMax p ψ) →
+          (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
+          (∀ k : ℤ,
+            displacedRoots (a : Coeff p) k ∈
+              sourceIsolatingDisc hp hp1 φ Niso εiso k) →
+            let Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
+              sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
+            Function.Injective Q → Function.Bijective Q := by
+  obtain ⟨U,hUopen,hbase,c,R,Niso,εiso,hdecomp⟩ :=
+    exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
+      hp hp1 φ hφ n a₀
+  refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_⟩
+  intro a ψ hpair hreal hroots hrootloc Q hinj
+  obtain ⟨hcompact,hbij,hsplit⟩ :=
+    hdecomp a ψ hpair hreal hroots hrootloc
+  dsimp only [Q] at hinj ⊢
+  rw [hsplit]
+  exact Coeff.bijective_add_compact_of_bijective_of_injective
+    _ _ hbij hcompact (by simpa only [← hsplit] using hinj)
 
 end NLS.ZakharovShabat

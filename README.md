@@ -3498,3 +3498,9 @@ deleted-Jacobian theorem in `DeletedJacobianCompactRemainder.lean`
 is used by the selected psi Jacobian. The scalar off-diagonal estimate
 now requires quarter-π localization only on distant input columns;
 root placement in the assigned isolating discs supplies that tail bound.
+`CompactIdentityFredholm.lean` formalizes the Fredholm alternative for
+`1 - T` with compact `T`, then factors a compact perturbation `D + K`
+of a bijective diagonal through it. The local selected-Jacobian theorem
+now concludes bijectivity from injectivity under its isolating-disc
+hypotheses. This establishes the operator step of Corollary 12.8;
+the injectivity proof of Lemma 12.7 is still to be formalized.
