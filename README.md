@@ -3639,3 +3639,12 @@ Banach-valued selected equation: on the open retained-root placement
 domain, every real solution has each retained root in its periodic
 gap. This proves the root-location part of Proposition 12.9 locally;
 the real-analytic solution map and its global continuation remain open.
+`AnalyticImplicitBanachRoot.lean` proves the analytic implicit-zero
+theorem for a Banach-valued unknown and parameter.
+`SourcePsiAnalyticImplicitStep.lean` identifies the bounded selected
+root Jacobian with the partial derivative of the joint equation and
+deduces analyticity of any continuous local zero selection once the
+selected equation is jointly analytic there. Establishing that joint
+Banach-space analyticity and constructing the selection are the next
+steps toward the existence and real-analyticity clauses of
+Proposition 12.9.
