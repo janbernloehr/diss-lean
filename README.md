@@ -3308,3 +3308,9 @@ both cases for every real periodic gap on a free-centered contour.
 The bound still assumes an analytic regular factor, a quotient-disc
 majorant, and quarter-π localization; assembling these uniformly on
 the full `Ωp` domain is the next obligation.
+`SourcePsiJacobianOffDiagonalRowMajorant.lean` packages the selected
+root, midpoint, and gap displacement terms, multiplied by the
+bounded quotient correction, into an actual `ℓᵖ` coefficient
+sequence. The combined all-gap Jacobian theorem is restated with
+entry bound `‖majorant_m‖/|m-k|`. The local contour and majorant
+hypotheses still need to be assembled uniformly on `Ωp`.
