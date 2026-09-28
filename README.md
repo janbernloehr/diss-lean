@@ -3925,3 +3925,8 @@ analytic single-root quotient at every fixed valid spectral point.
 integrand, and proves pointwise convergence of the corresponding
 selected-Jacobian integrands. Passing this limit through contour
 integrals and establishing uniform operator tails remain open.
+`SourcePsiLimitRatioUniform.lean` strengthens the elementary ratio
+limit to uniform convergence on every fixed free-centered disc. It
+also verifies continuity on the contour for all sufficiently distant
+deleted indices and passes this ratio limit through the fixed circle
+integral. Uniform convergence of the full `Q*` integrand is still open.

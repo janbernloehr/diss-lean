@@ -1071,6 +1071,7 @@ import NLS.ZakharovShabat.SourcePsiJacobianFreeFullExtension
 import NLS.ZakharovShabat.SourcePsiJacobianFullMatrix
 import NLS.ZakharovShabat.SourcePsiLimitQuotient
 import NLS.ZakharovShabat.SourcePsiLimitRegularFactor
+import NLS.ZakharovShabat.SourcePsiLimitRatioUniform
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
