@@ -3939,6 +3939,11 @@ avoids the retained root and standard-root gap, the complete retained
 Jacobian integrand converges uniformly and its circle integral tends to
 the candidate `Q*` entry integral. The contour may have any fixed center,
 including the shifted central circles of the common contour family.
+`SourcePsiVaryingRootIntegrandLimit.lean` extends the uniform integrand
+and circle-integral limits to deleted-root vectors that vary with the
+omitted index and converge strongly in `ℓᵖ`. It handles the moving
+retained-root denominator by eventual contour avoidance. Establishing
+this strong convergence for the actual gap-root vectors remains open.
 `SourcePsiLimitScalarJacobianEntry.lean` defines the candidate entry as
 the `Q*` contour integral divided by π and proves convergence of the
 actual scalar retained-root derivatives for each fixed row and column.
