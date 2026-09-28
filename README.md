@@ -3449,3 +3449,10 @@ tail reciprocal estimates for any bounded deleted operator imply its
 canonical off-diagonal remainder is compact. The selected psi theorem
 now applies that general result directly, which allows later diagonal
 and compact estimates to be assembled on one chosen contour family.
+`SourcePsiSelectedJacobianDiagonalCompact.lean` now performs that
+assembly. One selected bounded Jacobian equals its extracted diagonal
+multiplier plus a compact remainder. Its diagonal has a fixed lower
+bound on a parameter-dependent tail, and nonvanishing of the finitely
+many earlier retained entries makes the multiplier bijective. This is
+the operator conclusion of Lemma 12.6 under the remaining finite-head
+spectral nonvanishing condition.
