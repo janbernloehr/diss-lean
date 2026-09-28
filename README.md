@@ -3465,8 +3465,9 @@ root also avoids that contour.
 separation lemmas to the *same* selected contour family used by the
 diagonal-plus-compact theorem. It now chooses one local isolating-disc
 family along with the bounded selected Jacobian. If the displaced roots
-lie in their assigned discs, are real, and satisfy the quarter-π bound,
-the diagonal multiplier is bijective and the remainder is compact.
+lie in their assigned discs and are real, the diagonal multiplier is
+bijective and the remainder is compact. No quarter-π bound is imposed
+on the finitely many head roots.
 `SourcePsiRegularFactorIsolatingDisc.lean` derives the needed
 regular-factor analyticity from the global analytic quotient domain and
 disjointness.
@@ -3486,13 +3487,14 @@ bound, finite head coordinate bound, and global equation sequence bound
 now retain the same isolating-disc family and closed-disc containment
 through their successive neighborhood restrictions. The analytic global
 equation and selected Jacobian carry this family to the operator result.
-Matching its remaining parameter assumptions exactly to the
-dissertation's Ωᵖ domain, especially finite-head root bounds, is the
-next step toward the full Lemma 12.6 statement.
+Matching this local root-placement formulation exactly to the
+dissertation's Ωᵖ domain is the next step toward the full Lemma 12.6
+statement.
 `CompactTailRowColumnReciprocalMatrix.lean` strengthens the operator
 compactness criterion: reciprocal entry estimates are needed only for
 distant rows and distant input columns. The finitely many uncontrolled
 columns factor through a finite-rank projection. The corresponding
-deleted-Jacobian theorem is now available in
-`DeletedJacobianCompactRemainder.lean`; the next step is to use it for
-the selected psi Jacobian so finite-head roots need no quarter-π bound.
+deleted-Jacobian theorem in `DeletedJacobianCompactRemainder.lean`
+is used by the selected psi Jacobian. The scalar off-diagonal estimate
+now requires quarter-π localization only on distant input columns;
+root placement in the assigned isolating discs supplies that tail bound.

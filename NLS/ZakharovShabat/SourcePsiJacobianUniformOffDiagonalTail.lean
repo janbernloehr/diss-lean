@@ -8,10 +8,9 @@ import NLS.ZakharovShabat.SourcePsiNearFreeRegularAnalytic
 
 The selected contour family, quotient majorant, small source gaps,
 and regular-factor analyticity hold on a common neighborhood of an
-arbitrary real-type source. For root inputs localized in their free
-quarter-π discs, the off-diagonal Jacobian estimate therefore holds
-on every sufficiently distant selected row, uniformly in the
-deleted index.
+arbitrary real-type source. Bounds on distant input roots suffice for
+the off-diagonal Jacobian estimate on every sufficiently distant
+selected row, uniformly in the deleted index.
 -/
 
 noncomputable section
@@ -20,10 +19,9 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 
 /-- One source/root neighborhood and selected-index cutoff give the
-off-diagonal row estimate for all deleted indices on the real
-root-localized locus. The row majorant is an actual `ℓᵖ` sequence
-with a locally bounded quotient correction. -/
-theorem exists_local_sourcePsi_offDiagonalJacobian_uniformTail
+off-diagonal row estimate on distant input columns. The row majorant
+is an actual `ℓᵖ` sequence with a locally bounded quotient correction. -/
+theorem exists_local_sourcePsi_offDiagonalJacobian_uniformTail_tailColumns
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
@@ -35,10 +33,13 @@ theorem exists_local_sourcePsi_offDiagonalJacobian_uniformTail
           ((a : Coeff p),ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
-          (∀ j : ℤ, ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
+          ∀ Kcol : ℕ,
+          (∀ j : ℤ, Kcol ≤ j.natAbs →
+            ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
           ∃ B : Coeff p, ‖B‖ ≤ M ∧
             ∀ m : ℤ, K ≤ m.natAbs → ∀ _hmn : m ≠ n,
-              ∀ k : ℤ, ∀ hkn : k ≠ n, ∀ _hmk : m ≠ k,
+              ∀ k : ℤ, Kcol ≤ k.natAbs →
+                ∀ hkn : k ≠ n, ∀ _hmk : m ≠ k,
                 ‖deriv (fun t : ℂ =>
                   sourcePsiDeletedEquationCoordinate hp hp1 n m
                     (a+Coeff.deletedSingleCLM n k hkn t) ψ
@@ -62,10 +63,10 @@ theorem exists_local_sourcePsi_offDiagonalJacobian_uniformTail
     ⟨hbaseReg,Set.mem_univ _,⟨hφVsmall,hrealW hφ⟩⟩
   let K : ℕ := max (Kreg+1) Ksmall
   refine ⟨U,hUopen,hbase,K,M,hM,?_⟩
-  intro n a ψ hpair hreal hroots hlocalized
+  intro n a ψ hpair hreal hroots Kcol hlocalized
   obtain ⟨B,hBnorm,hB⟩ := hmajor ((a : Coeff p),ψ) hpair.1
   refine ⟨B,hBnorm,?_⟩
-  intro m hm hmn k hkn hmk
+  intro m hm hmn k hkcol hkn hmk
   have hmReg : Kreg < m.natAbs := by dsimp [K] at hm; omega
   have hmSmall : Ksmall ≤ m.natAbs := by dsimp [K] at hm; omega
   obtain ⟨hc,hR⟩ := hchoice m hmReg
@@ -117,7 +118,43 @@ theorem exists_local_sourcePsi_offDiagonalJacobian_uniformTail
   exact norm_sourcePsi_offDiagonalJacobian_le_rowMajorant
     hp hp1 ψ hreal n m k hmn hkn hmk a hroots
       (Real.pi/8) (by positivity) (by nlinarith [Real.pi_pos])
-      hseg hdom hcircle havoidn hreg B (hlocalized k)
+      hseg hdom hcircle havoidn hreg B (hlocalized k hkcol)
       hsmallQuarter hQdisc
+
+/-- The all-column form of the off-diagonal tail estimate follows by
+taking the column cutoff to be zero. -/
+theorem exists_local_sourcePsi_offDiagonalJacobian_uniformTail
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (a₀ : Coeff p) :
+    ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧
+      (a₀,φ) ∈ U ∧
+      ∃ K : ℕ, ∃ M : ℝ, 0 ≤ M ∧
+        ∀ n : ℤ, ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+          ((a : Coeff p),ψ) ∈ U →
+          IsRealType (CoeffPair.toMax p ψ) →
+          (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
+          (∀ j : ℤ, ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
+          ∃ B : Coeff p, ‖B‖ ≤ M ∧
+            ∀ m : ℤ, K ≤ m.natAbs → ∀ _hmn : m ≠ n,
+              ∀ k : ℤ, ∀ hkn : k ≠ n, ∀ _hmk : m ≠ k,
+                ‖deriv (fun t : ℂ =>
+                  sourcePsiDeletedEquationCoordinate hp hp1 n m
+                    (a+Coeff.deletedSingleCLM n k hkn t) ψ
+                    ((Real.pi : ℂ)*m) (Real.pi/8)) 0‖ ≤
+                  ‖sourcePsiOffDiagonalRowMajorant hp hp1
+                    (a : Coeff p) ψ B m‖ /
+                    ‖((m-k : ℤ) : ℂ)‖ := by
+  obtain ⟨U,hUopen,hbase,K,M,hM,htail⟩ :=
+    exists_local_sourcePsi_offDiagonalJacobian_uniformTail_tailColumns
+      hp hp1 φ hφ a₀
+  refine ⟨U,hUopen,hbase,K,M,hM,?_⟩
+  intro n a ψ hpair hreal hroots hloc
+  obtain ⟨B,hBnorm,hB⟩ :=
+    htail n a ψ hpair hreal hroots 0 (fun j _ => hloc j)
+  refine ⟨B,hBnorm,?_⟩
+  intro m hm hmn k hkn hmk
+  exact hB m hm hmn k (Nat.zero_le _) hkn hmk
 
 end NLS.ZakharovShabat

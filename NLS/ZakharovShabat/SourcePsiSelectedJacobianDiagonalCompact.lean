@@ -22,9 +22,9 @@ namespace NLS.ZakharovShabat
 
 /-- On one locally selected contour family, the bounded psi Jacobian
 splits into its diagonal multiplier and a compact remainder. For
-real-type, quarter-π localized root data, the diagonal is separated
-from zero on a parameter-dependent tail. Nonvanishing on the finite
-head makes that multiplier bijective. -/
+real-type root data with quarter-π bounds only on distant inputs, the
+diagonal is separated from zero on a parameter-dependent tail.
+Nonvanishing on the finite head makes that multiplier bijective. -/
 theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -46,7 +46,8 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
-          (∀ j : ℤ, ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
+          (∀ j : ℤ, Niso < j.natAbs →
+            ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
           let Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
             sourcePsiSelectedRootJacobian hp hp1 n c R a ψ
           let d : Coeff ⊤ := Coeff.deletedJacobianDiagonalSymbol n Q
@@ -83,7 +84,7 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
     exists_local_sourcePsi_diagonalJacobian_uniformTail
       hp hp1 φ hφ (a₀ : Coeff p)
   obtain ⟨Uoff,hUoffOpen,hbaseOff,Koff,Moff,hMoff,hoff⟩ :=
-    exists_local_sourcePsi_offDiagonalJacobian_uniformTail
+    exists_local_sourcePsi_offDiagonalJacobian_uniformTail_tailColumns
       hp hp1 φ hφ (a₀ : Coeff p)
   let H : DeletedCoeff p n × CoeffPair p → Coeff p × CoeffPair p :=
     fun t => ((t.1 : Coeff p),t.2)
@@ -103,7 +104,8 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
   obtain ⟨Bdiag,hBdiagNorm,hBdiag⟩ :=
     hdiag n a ψ hpair.2.1 hreal hroots
   obtain ⟨Boff,hBoffNorm,hBoff⟩ :=
-    hoff n a ψ hpair.2.2 hreal hroots hloc
+    hoff n a ψ hpair.2.2 hreal hroots (Niso+1)
+      (fun j hj => hloc j (by omega))
   obtain ⟨L₀,hL₀⟩ :=
     exists_sourcePsi_diagonal_lp_tail_bound hp hp1 ψ Bdiag
   let Q : DeletedCoeff p n →L[ℂ] DeletedCoeff p n :=
@@ -163,12 +165,13 @@ theorem exists_local_sourcePsi_selectedJacobian_diagonalPlusCompact
       sourcePsiOffDiagonalRowMajorant hp hp1 (a : Coeff p) ψ Boff
     let : Fact (1 ≤ p.conjExponent) :=
       ⟨ENNReal.HolderConjugate.one_le p.conjExponent p⟩
-    apply Coeff.isCompactOperator_deletedJacobianOffDiagonal_of_tailEntryBound
-      p.conjExponent hp n Q b K
-    intro m hm hmn k hkn hkm
+    apply Coeff.isCompactOperator_deletedJacobianOffDiagonal_of_tailRowColumnEntryBound
+      p.conjExponent hp n Q b K Niso
+    intro m hm hmn k hk hkn hkm
     have hmOff : Koff ≤ m.natAbs := by dsimp [K] at hm; omega
     obtain ⟨hc,hR⟩ := hchoice m (by dsimp [K] at hm; omega)
-    have hentry := hBoff m hmOff hmn k hkn (Ne.symm hkm)
+    have hentry := hBoff m hmOff hmn k (by omega : Niso+1 ≤ k.natAbs)
+      hkn (Ne.symm hkm)
     have hden : |(((m-k : ℤ) : ℝ))| = |(((k-m : ℤ) : ℝ))| := by
       simp only [Int.cast_sub]
       exact abs_sub_comm (m : ℝ) (k : ℝ)

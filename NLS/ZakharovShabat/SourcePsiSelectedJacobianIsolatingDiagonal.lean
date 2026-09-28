@@ -34,7 +34,6 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
           (a,ψ) ∈ U →
           IsRealType (CoeffPair.toMax p ψ) →
           (∀ j : ℤ, (displacedRoots (a : Coeff p) j).im = 0) →
-          (∀ j : ℤ, ‖(a : Coeff p) j‖ ≤ Real.pi/4) →
           (∀ k : ℤ,
             displacedRoots (a : Coeff p) k ∈
               sourceIsolatingDisc hp hp1 φ Niso εiso k) →
@@ -58,9 +57,22 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
     hUmainOpen.inter (hWopen.preimage continuous_snd)
   have hbase : (a₀,φ) ∈ U := ⟨hbaseMain,hrealW hφ⟩
   refine ⟨U,hUopen,hbase,c,R,Niso,εiso,?_⟩
-  intro a ψ hpair hreal hroots hloc hrootloc
+  intro a ψ hpair hreal hroots hrootloc
+  have hlocTail : ∀ j : ℤ, Niso < j.natAbs →
+      ‖(a : Coeff p) j‖ ≤ Real.pi/4 := by
+    intro j hj
+    have hnot : ¬ j.natAbs ≤ Niso := not_le.mpr hj
+    have hdist : dist (displacedRoots (a : Coeff p) j)
+        ((Real.pi : ℂ)*j) < Real.pi/4 := by
+      simpa only [sourceIsolatingDisc,if_neg hnot,refinedResonantDisk,
+        mem_ball] using hrootloc j
+    have heq : dist (displacedRoots (a : Coeff p) j)
+        ((Real.pi : ℂ)*j) = ‖(a : Coeff p) j‖ := by
+      simp [dist_eq_norm,displacedRoots]
+    rw [heq] at hdist
+    exact hdist.le
   obtain ⟨hdom,L,htail,hcompact,hbij,hnonzero,hsplit⟩ :=
-    hmain a ψ hpair.1 hreal hroots hloc
+    hmain a ψ hpair.1 hreal hroots hlocTail
   refine ⟨hcompact,?_,hsplit⟩
   apply hbij
   intro m hmn _
