@@ -3171,6 +3171,9 @@ coordinates.
 `SourcePsiGlobalEquationTaylorTruncation.lean` now also applies the
 criterion on one selected contour chart, proving Banach-space
 analyticity of the selected psi equation near each real-type base.
+The assembled coefficients equal its actual Fréchet Taylor
+coefficients, so the same geometric norm bound holds for the full
+sequence-valued equation, not only its finite truncations.
 The equation's real-locus compatibility is established below.
 `SourcePsiRealGapQuotient.lean` begins that compatibility argument:
 for real-type source data and real displaced roots, the omitted-root

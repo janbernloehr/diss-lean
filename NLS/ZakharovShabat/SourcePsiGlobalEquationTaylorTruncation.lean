@@ -121,4 +121,29 @@ theorem exists_local_sourcePsi_globalEquation_analyticOnNhd
       (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p))
     hUopen hscalar C hnorm
 
+/-- The full selected psi equation, beyond its finite truncations,
+has one geometric norm bound for every Fréchet Taylor coefficient at
+a real-type base point. -/
+theorem exists_local_sourcePsi_globalEquation_uniformTaylor
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (n : ℤ) (a₀ : DeletedCoeff p n) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, ∃ ρ M : ℝ,
+      0 < ρ ∧ 0 ≤ M ∧
+      ∀ k : ℕ,
+        ‖NLS.ComplexAnalysis.complexTaylorSeries
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p))
+          (a₀,φ) k‖ ≤ (4*Real.exp 1/ρ)^k*M := by
+  obtain ⟨c,R,U,C,hUopen,hbase,hC,hscalar,hnorm⟩ :=
+    exists_local_sourcePsi_globalEquation_coordinatewiseAnalyticBounded
+      hp hp1 φ hφ n a₀
+  obtain ⟨ρ,hρ,_,hTaylor⟩ :=
+    NLS.Coeff.exists_uniform_taylor_bound_of_bounded_coordinatewise
+      (fun t : DeletedCoeff p n × CoeffPair p =>
+        (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p))
+      hUopen hscalar C hnorm (a₀,φ) hbase
+  exact ⟨c,R,ρ,C,hρ,hC,hTaylor⟩
+
 end NLS.ZakharovShabat

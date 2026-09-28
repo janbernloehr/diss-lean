@@ -92,4 +92,49 @@ theorem analyticOnNhd_of_bounded_coordinatewise
     exact heq ▸ hpsum
   exact ⟨p,r,⟨hrle,hr,fun {y} hy => hsum y hy⟩⟩
 
+/-- Evaluating a Fréchet Taylor coefficient of a sequence map at one
+Fourier frequency gives the scalar Taylor coefficient there. -/
+theorem complexTaylorSeries_apply_of_contDiffAt
+    (f : E → Coeff q) (c : E) (k : ℕ) (hs : ContDiffAt ℂ k f c)
+    (v : Fin k → E) (n : ℤ) :
+    (NLS.ComplexAnalysis.complexTaylorSeries f c k v) n =
+      NLS.ComplexAnalysis.complexTaylorSeries (fun x : E => f x n) c k v := by
+  let ev : Coeff q →L[ℂ] ℂ := lp.evalCLM (𝕜 := ℂ) (fun _ : ℤ => ℂ) q n
+  have hder := ev.iteratedFDeriv_comp_left (i := k) hs (by exact_mod_cast (le_refl k))
+  have hbase : ((iteratedFDeriv ℂ k f c) v) n =
+      (iteratedFDeriv ℂ k (fun x : E => f x n) c) v := by
+    rw [show ev ∘ f = (fun x : E => f x n) by rfl] at hder
+    rw [hder]
+    rfl
+  simp only [NLS.ComplexAnalysis.complexTaylorSeries, smul_apply]
+  rw [lp.coeFn_smul, Pi.smul_apply, hbase]
+
+/-- The actual Banach-valued Fréchet Taylor coefficients inherit the
+uniform geometric bound proved first for finite Fourier truncations. -/
+theorem exists_uniform_taylor_bound_of_bounded_coordinatewise
+    (f : E → Coeff q) {V : Set E} (hVopen : IsOpen V)
+    (hcoord : ∀ n : ℤ, AnalyticOnNhd ℂ (fun x => f x n) V)
+    (M : ℝ) (hbound : ∀ x ∈ V, ‖f x‖ ≤ M)
+    (c : E) (hc : c ∈ V) :
+    ∃ R : ℝ, 0 < R ∧ ball c R ⊆ V ∧
+      ∀ k : ℕ, ‖NLS.ComplexAnalysis.complexTaylorSeries f c k‖ ≤
+        (4*Real.exp 1/R)^k*M := by
+  obtain ⟨R,hR,hball,hcoeff⟩ :=
+    exists_taylor_coefficient_of_bounded_coordinatewise
+      f hVopen hcoord M hbound c hc
+  have hanalytic : AnalyticOnNhd ℂ f V :=
+    analyticOnNhd_of_bounded_coordinatewise f hVopen hcoord M hbound
+  have hsmoothOn : ContDiffOn ℂ ∞ f V := hanalytic.contDiffOn_of_completeSpace
+  have hsmooth : ContDiffAt ℂ ∞ f c :=
+    hsmoothOn.contDiffAt (hVopen.mem_nhds hc)
+  refine ⟨R,hR,hball,?_⟩
+  intro k
+  obtain ⟨A,hAcoord,hAbound⟩ := hcoeff k
+  have heq : NLS.ComplexAnalysis.complexTaylorSeries f c k = A := by
+    ext v n
+    exact (complexTaylorSeries_apply_of_contDiffAt f c k
+      (hsmooth.of_le (by exact_mod_cast (le_top : (k : ℕ∞) ≤ ⊤))) v n).trans
+        (hAcoord v n).symm
+  rwa [heq]
+
 end NLS.Coeff
