@@ -3615,3 +3615,11 @@ injectivity on the resulting open domain. The diagonal nonvanishing
 proof still uses placement of the artificial omitted root `nπ`; removing
 that extra condition is the remaining domain mismatch for the local
 bijectivity formulation of Corollary 12.8.
+The scalar psi equation and its selected-root derivative are now shown
+in `SourcePsiDeletedRootFill.lean` to agree exactly with those computed
+from any filled full root sequence. `SourcePsiRegularFactorIsolatingDisc.lean`
+accepts such a full sequence, and `SourcePsiFilledRegularFactor.lean`
+proves that the filled root avoids other selected contours and makes the
+regular gap factor analytic there. The next step is to use this filled
+factor in the diagonal mean-value and collapsed-gap nonvanishing
+arguments, removing the artificial `nπ` placement requirement.

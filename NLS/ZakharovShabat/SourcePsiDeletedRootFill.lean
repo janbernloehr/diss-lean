@@ -1,4 +1,5 @@
 import NLS.ZakharovShabat.SourcePsiCandidateEntireVariation
+import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 import NLS.SequenceSpaces.DeletedCoordinate
 
 /-!
@@ -83,5 +84,81 @@ theorem sourcePsiCandidateVariation_fillDeletedRoot
   apply sourcePsiCandidateVariation_eq_of_off_index hp hp1
   intro m hmn
   exact sourcePsiFillDeletedRoot_apply_other n m hmn a ξ
+
+/-- Deleting the filled root recovers the original deleted parameter. -/
+@[simp] theorem deleteCoordinateTo_sourcePsiFillDeletedRoot
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (n : ℤ) (a : DeletedCoeff p n) (ξ : ℂ) :
+    Coeff.deleteCoordinateTo n (sourcePsiFillDeletedRoot n a ξ) = a := by
+  apply Subtype.ext
+  ext m
+  by_cases hmn : m = n
+  · subst m
+    change Coeff.deleteCoordinate n (sourcePsiFillDeletedRoot n a ξ) n =
+      (a : Coeff p) n
+    rw [Coeff.deleteCoordinate_apply_same]
+    exact (show (a : Coeff p) n = 0 from a.property).symm
+  · change Coeff.deleteCoordinate n (sourcePsiFillDeletedRoot n a ξ) m =
+      (a : Coeff p) m
+    rw [Coeff.deleteCoordinate_apply_other n m hmn]
+    exact sourcePsiFillDeletedRoot_apply_other n m hmn a ξ
+
+/-- The scalar psi equation is invariant under filling the omitted
+root, on every circle of nonnegative radius. -/
+theorem sourcePsiEquationCoordinate_fillDeletedRoot
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n m : ℤ) (a : DeletedCoeff p n) (ξ : ℂ)
+    (ψ : CoeffPair p) (c : ℂ) (R : ℝ) (hR : 0 ≤ R) :
+    sourcePsiEquationCoordinate hp hp1 n m
+      (sourcePsiFillDeletedRoot n a ξ) ψ c R =
+        sourcePsiDeletedEquationCoordinate hp hp1 n m a ψ c R := by
+  rw [sourcePsiEquationCoordinate_eq_deletedCoordinate hp hp1 n m
+    (sourcePsiFillDeletedRoot n a ξ) ψ c R hR]
+  simp
+
+/-- Varying a retained root commutes with the arbitrary fill at the
+omitted index. -/
+theorem sourcePsiEquationCoordinate_fillDeletedRoot_selectedLine
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n m : ℤ) (hmn : m ≠ n)
+    (a : DeletedCoeff p n) (ξ t : ℂ)
+    (ψ : CoeffPair p) (c : ℂ) (R : ℝ) (hR : 0 ≤ R) :
+    sourcePsiEquationCoordinate hp hp1 n m
+      (sourcePsiFillDeletedRoot n a ξ + lp.single p m t) ψ c R =
+        sourcePsiDeletedEquationCoordinate hp hp1 n m
+          (a + Coeff.deletedSingleCLM n m hmn t) ψ c R := by
+  have hfill : sourcePsiFillDeletedRoot n
+      (a + Coeff.deletedSingleCLM n m hmn t) ξ =
+        sourcePsiFillDeletedRoot n a ξ + lp.single p m t := by
+    simp only [sourcePsiFillDeletedRoot, Submodule.coe_add,
+      Coeff.deletedSingleCLM_coe]
+    abel
+  rw [← hfill]
+  exact sourcePsiEquationCoordinate_fillDeletedRoot hp hp1 n m
+    (a + Coeff.deletedSingleCLM n m hmn t) ξ ψ c R hR
+
+/-- The diagonal scalar derivative may be computed using any filled
+omitted root. -/
+theorem deriv_sourcePsiEquationCoordinate_fillDeletedRoot_selectedLine
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n m : ℤ) (hmn : m ≠ n)
+    (a : DeletedCoeff p n) (ξ : ℂ)
+    (ψ : CoeffPair p) (c : ℂ) (R : ℝ) (hR : 0 ≤ R) :
+    deriv (fun t : ℂ => sourcePsiEquationCoordinate hp hp1 n m
+      (sourcePsiFillDeletedRoot n a ξ + lp.single p m t) ψ c R) 0 =
+    deriv (fun t : ℂ => sourcePsiDeletedEquationCoordinate hp hp1 n m
+      (a + Coeff.deletedSingleCLM n m hmn t) ψ c R) 0 := by
+  have heq :
+      (fun t : ℂ => sourcePsiEquationCoordinate hp hp1 n m
+        (sourcePsiFillDeletedRoot n a ξ + lp.single p m t) ψ c R) =
+      (fun t : ℂ => sourcePsiDeletedEquationCoordinate hp hp1 n m
+        (a + Coeff.deletedSingleCLM n m hmn t) ψ c R) := by
+    funext t
+    exact sourcePsiEquationCoordinate_fillDeletedRoot_selectedLine
+      hp hp1 n m hmn a ξ t ψ c R hR
+  exact congrArg (fun f : ℂ → ℂ => deriv f 0) heq
 
 end NLS.ZakharovShabat

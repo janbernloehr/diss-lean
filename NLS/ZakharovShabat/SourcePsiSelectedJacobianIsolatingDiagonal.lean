@@ -121,7 +121,7 @@ theorem exists_local_sourcePsi_selectedJacobian_isolatingDiagonal
       hp hp1 φ Niso εiso (a : Coeff p) c R hcircle hrootloc
         hdisjoint m n hmn
   · exact analyticOnNhd_deletedPsi_gapRegularFactor_of_isolatingDisc
-      hp hp1 φ Niso εiso n m a ψ W hpair.2 (hQdata m).2
+      hp hp1 φ Niso εiso n m (a : Coeff p) ψ W hpair.2 (hQdata m).2
         (c m) (R m) (hdom m) (hfilled m) (hrootloc n)
         (hdisjoint m n hmn)
   · exact sourcePsi_otherRoots_avoid_standardGap_of_isolatingDiscs
