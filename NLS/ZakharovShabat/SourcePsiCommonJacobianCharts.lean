@@ -177,20 +177,31 @@ theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit
         (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
           ‖sourcePsiFullRootJacobian hp hp1 n c R
             (Coeff.deleteCoordinateTo n a) φ‖ ≤ M) ∧
-        ∀ m k : ℤ,
+        (∀ m k : ℤ,
           (∀ z ∈ sphere (c m) (R m), displacedRoots a k - z ≠ 0) →
             Tendsto (fun n : ℤ =>
               (sourcePsiFullRootJacobian hp hp1 n c R
                 (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m)
               (Filter.comap Int.natAbs Filter.atTop)
-              (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m))) := by
-  obtain ⟨c,R,hgeom,_,_,δ,hδ,C,hC,hcharts⟩ :=
+              (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)))) ∧
+        ∃ Ktail : ℕ,
+          (∀ m : ℤ, Ktail < m.natAbs →
+            c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+          ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+            ∀ m k : ℤ, ∀ _hmn : m ≠ n, ∀ hkn : k ≠ n,
+              (sourcePsiFullRootJacobian hp hp1 n c R
+                (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m =
+                deriv (fun t : ℂ =>
+                  sourcePsiDeletedEquationCoordinate hp hp1 n m
+                    (Coeff.deleteCoordinateTo n a +
+                      Coeff.deletedSingleCLM n k hkn t) φ (c m) (R m)) 0 := by
+  obtain ⟨c,R,hgeom,Kfree,hfree,δ,hδ,C,hC,hcharts⟩ :=
     exists_common_sourcePsi_selectedJacobianCharts_at_natAbs hp hp1 a φ hφ
   let M : ℝ := 2*C/(δ/2) + 2
   have hM : 0 ≤ M := by
     dsimp [M]
     positivity
-  refine ⟨c,R,hgeom,M,hM,?_,?_⟩
+  refine ⟨c,R,hgeom,M,hM,?_,?_,Kfree,hfree,?_⟩
   filter_upwards [hcharts] with n hchart
   obtain ⟨U,hUopen,hbase,hlocal,hbound,hcoord,hdiff⟩ := hchart
   let b₀ : DeletedCoeff p n := Coeff.deleteCoordinateTo n a
@@ -261,6 +272,12 @@ theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit
     exact sourcePsiFullRootJacobian_retained_entry_eq_scalarMatrixEntry
       hp hp1 n m k a φ c R U hUopen hcoord hdiff hpair hn.1 hn.2
   exact hscalar.congr' heq.symm
+  filter_upwards [hcharts] with n hchart
+  obtain ⟨U,hUopen,hpair,_,_,hcoord,hdiff⟩ := hchart
+  intro m k hmn hkn
+  exact sourcePsiFullRootJacobian_retained_entry_eq_deriv
+    hp hp1 n c R U hUopen hcoord hdiff
+      (Coeff.deleteCoordinateTo n a) φ hpair m k hmn hkn
 
 /-- At fixed source data, the escaping full-space selected Jacobians
 have a common operator-norm bound. -/
@@ -281,7 +298,7 @@ theorem exists_common_sourcePsi_fullJacobian_uniformNorm_at_natAbs
         ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
           ‖sourcePsiFullRootJacobian hp hp1 n c R
             (Coeff.deleteCoordinateTo n a) φ‖ ≤ M := by
-  obtain ⟨c,R,hgeom,M,hM,hbound,_⟩ :=
+  obtain ⟨c,R,hgeom,M,hM,hbound,_,_,_,_⟩ :=
     exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit hp hp1 a φ hφ
   exact ⟨c,R,hgeom,M,hM,hbound⟩
 
@@ -308,7 +325,7 @@ theorem exists_common_sourcePsi_fullJacobian_entryLimit
               (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m)
             (Filter.comap Int.natAbs Filter.atTop)
             (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m))) := by
-  obtain ⟨c,R,hgeom,M,hM,hbound,hentry⟩ :=
+  obtain ⟨c,R,hgeom,M,hM,hbound,hentry,_,_,_⟩ :=
     exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit hp hp1 a φ hφ
   exact ⟨c,R,hgeom,hentry⟩
 
