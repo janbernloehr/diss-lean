@@ -3130,3 +3130,9 @@ holomorphy, and shifted-disc separation. It bounds every selected
 head coordinate uniformly in the deleted index near an arbitrary
 real-type source, with a cutoff that can be enlarged to cover a
 prescribed finite set of indices.
+`SourcePsiGlobalEquationSequenceBound.lean` patches the finite head to
+the free-centered tail. On one fixed global contour family near any
+real-type source, the full psi equation is a deleted `ℓᵖ` sequence
+with a locally uniform norm bound independent of the deleted index.
+The next part of Lemma 12.4 is sequence-valued analyticity and its
+real-locus compatibility.
