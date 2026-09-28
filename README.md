@@ -3723,7 +3723,7 @@ potentials converge and retained roots lie in their assigned periodic
 gaps: a subsequence of the deleted-root vectors converges in `ℓᵖ`.
 `SourcePsiGapRootLimitPlacement.lean` shows that the limit remains in
 the periodic gaps of a real-type limiting source. It uses endpoint
-continuity and a closedness argument for moving line segments. The
+continuity and a closedness argument for moving line segments.
 `SourcePsiGapRootIsolation.lean` then places all gap-contained roots
 over nearby sources, and their subsequence limit, in one fixed open
 isolating-disc placement set. The next continuation step must show
@@ -3734,3 +3734,10 @@ real-type sources, as well as compactness of each fixed-source fiber.
 This supplies the properness input for finite-cover continuation
 arguments; compatibility and continuity of the selected equation
 across contour charts remain to be established.
+`SourcePsiEquationContourHomotopy.lean` proves that the psi integrand
+is holomorphic off the periodic cuts and that gap-avoiding loop
+homotopies preserve its contour integral. Nested isolating circles,
+and two circles within a common outer isolating circle, consequently
+give identical scalar psi equation coordinates. Establishing the
+common-circle geometry for overlapping local chart families and
+passing the Banach-valued equation to limits remain next steps.
