@@ -3420,3 +3420,9 @@ separation for the actual selected Jacobian: after a cutoff depending
 on the parameter pair, every retained diagonal symbol entry has norm
 at least one. Consequently, nonvanishing of the finitely many earlier
 entries suffices to make its extracted diagonal multiplier bijective.
+`CompactTailRowMajorant.lean` sharpens the compactness criterion for
+deleted-coordinate operators: an `ℓᵖ` output-row majorant is needed
+only on a two-sided tail. The finitely many head rows are controlled by
+the operator norm and absorbed into a finite modification of the
+majorant. This removes a finite-head estimate from the compactness
+part of Lemma 12.6.
