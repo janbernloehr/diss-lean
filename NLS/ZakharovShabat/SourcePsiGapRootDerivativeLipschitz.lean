@@ -90,6 +90,7 @@ theorem exists_local_quadratic_remainder_sourcePsiGapRoot
     (φ : realTypeSourceLocus p) :
     ∃ s : CoeffPair p → DeletedCoeff p n,
       s φ.val = sourcePsiGapRoot hp hp1 n φ ∧
+      DifferentiableAt ℂ s φ.val ∧
       ∃ R K : ℝ, 0 < R ∧ 0 ≤ K ∧
         (∀ χ ∈ ball φ.val R,
           ∀ hχ : IsRealType (CoeffPair.toMax p χ),
@@ -99,7 +100,10 @@ theorem exists_local_quadratic_remainder_sourcePsiGapRoot
             K * ‖χ - φ.val‖ ^ 2 := by
   obtain ⟨s,hsφ,R,K,hR,hK,hdiff,hreal,hLip⟩ :=
     exists_local_lipschitz_fderiv_sourcePsiGapRoot hp hp1 n φ
-  refine ⟨s,hsφ,R,K,hR,hK,hreal,?_⟩
+  have hsDiff : DifferentiableAt ℂ s φ.val :=
+    (hdiff φ.val (mem_ball_self hR)).differentiableAt
+      (isOpen_ball.mem_nhds (mem_ball_self hR))
+  refine ⟨s,hsφ,hsDiff,R,K,hR,hK,hreal,?_⟩
   intro χ hχ
   let ρ : ℝ := ‖χ - φ.val‖
   have hρR : ρ < R := by
@@ -139,7 +143,7 @@ theorem exists_local_quadratic_remainder_sourcePsiGapRoot_real
             ‖sourcePsiGapRoot hp hp1 n ⟨χ,hχ⟩ -
                 sourcePsiGapRoot hp hp1 n φ - L (χ - φ.val)‖ ≤
               K * ‖χ - φ.val‖ ^ 2 := by
-  obtain ⟨s,hsφ,R,K,hR,hK,hreal,hbound⟩ :=
+  obtain ⟨s,hsφ,_,R,K,hR,hK,hreal,hbound⟩ :=
     exists_local_quadratic_remainder_sourcePsiGapRoot hp hp1 n φ
   refine ⟨fderiv ℂ s φ.val,R,K,hR,hK,?_⟩
   intro χ hχ hχreal

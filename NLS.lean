@@ -1057,6 +1057,7 @@ import NLS.ZakharovShabat.SourcePsiGapRootDerivativeLipschitz
 import NLS.ComplexAnalysis.BanachC1ImplicitDerivative
 import NLS.ZakharovShabat.SourcePsiGapRootDerivative
 import NLS.ZakharovShabat.SourceRealTypeBanachSpace
+import NLS.ZakharovShabat.SourceRealTypeQuadraticRemainder
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros

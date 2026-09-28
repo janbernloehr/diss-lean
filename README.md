@@ -3817,3 +3817,9 @@ bijective.
 locus as a closed real linear subspace, hence a complete real normed
 space. On this actual real source space the canonical gap-root map is
 globally `C¹`, using its local complex `C¹` extensions.
+`SourcePsiGapRootDerivativeLipschitz.lean` bounds the derivative of each
+local complex branch in operator norm and proves a quadratic first-order
+remainder. `SourceRealTypeQuadraticRemainder.lean` identifies its linear
+term with the real Fréchet derivative of the canonical root map on the
+real-type Banach source space, giving a local quadratic remainder there.
+Joint Banach-space analyticity remains to be proved.
