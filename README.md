@@ -3842,15 +3842,15 @@ complex `C¹` implicit branch.
 `SourcePsiGapRootLineTaylor.lean` gives that local branch a uniform
 short-direction Cauchy–Taylor expansion, whose sum equals the canonical
 root at real-type endpoints. Its restriction to every complex affine
-line through a real-type source is analytic. A joint Banach-space
-power-series expansion is still needed to finish real analyticity in
-Proposition 12.9.
+line through a real-type source is analytic. The joint Banach-space
+power series now comes from the selected contour equation and the
+analytic implicit theorem below.
 `BanachC1ImplicitDerivative.lean` differentiates a Banach-valued
 implicit zero branch and gives its derivative through the inverse root
 Jacobian. `SourcePsiGapRootDerivative.lean` applies this to the
 canonical gap roots: in a local contour chart their source derivative
 solves the linearized selected-psi equation, and the root Jacobian is
-bijective.
+bijective. The same anchored chart is now proved Banach analytic.
 `SourceRealTypeBanachSpace.lean` identifies the real-type coefficient
 locus as a closed real linear subspace, hence a complete real normed
 space. On this actual real source space the canonical gap-root map is
@@ -3862,8 +3862,6 @@ term with the real Fréchet derivative of the canonical root map on the
 real-type Banach source space, giving a local quadratic remainder there.
 `SourcePsiGapRootAnalyticReduction.lean` applies the Banach analytic
 implicit theorem to the anchored canonical branch and restricts it to
-the real-type source space. It reduces real analyticity of the full
-canonical root map to joint power-series analyticity of the selected
-psi equation in its contour chart. That equation analyticity remains
-to be proved; the existing chart result gives Fréchet holomorphy and
-`C¹` regularity.
+the real-type source space. The canonical deleted gap-root map is
+real analytic at every real-type source, proving the analyticity
+component of Proposition 12.9 without a conditional equation premise.

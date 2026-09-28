@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourcePsiGapRootMap
 import NLS.ComplexAnalysis.BanachC1ImplicitDerivative
+import NLS.ZakharovShabat.SourcePsiGlobalEquationTaylorTruncation
 
 /-!
 # Derivative of the canonical real gap psi roots
@@ -34,6 +35,10 @@ theorem exists_sourcePsiGapRoot_derivative_equation
             (sourcePsiGapRoot hp hp1 n φ) φ.val) ∧
         (∀ᶠ χ in 𝓝 φ.val,
           sourcePsiSelectedEquationSequence hp hp1 n c R (s χ) χ = 0) ∧
+        AnalyticAt ℂ
+          (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2)
+          (sourcePsiGapRoot hp hp1 n φ,φ.val) ∧
         ∀ h : CoeffPair p,
           (sourcePsiSelectedRootJacobian hp hp1 n c R
             (sourcePsiGapRoot hp hp1 n φ) φ.val)
@@ -66,6 +71,13 @@ theorem exists_sourcePsiGapRoot_derivative_equation
     (hC1.contDiffAt (hUopen.mem_nhds hbase)).differentiableAt (by norm_num)
   have hzeros : ∀ᶠ χ in 𝓝 φ.val, F (s χ,χ) = 0 :=
     hbranch.mono (fun χ hχ => hχ.2.1)
+  have hFanalyticB : AnalyticAt ℂ F (b,φ.val) := by
+    obtain ⟨Vana,_,hbaseAna,_,hFana⟩ :=
+      exists_analytic_sourcePsi_deletedEquation_on_contourChart
+        hp hp1 φ.val φ.property n b c₀ R₀ hUopen hbase
+        (fun t ht m => ⟨(hgeom₀ t ht m).1,(hgeom₀ t ht m).2.2.2⟩)
+        hcoord₀ (hC1.differentiableOn (by norm_num))
+    exact hFana (b,φ.val) hbaseAna
   have hpartial := sourcePsiSelectedEquation_partial_fderiv_eq_rootJacobian
     hp hp1 n c₀ R₀ b φ.val hF
   have hderiv (h : CoeffPair p) :
@@ -103,7 +115,7 @@ theorem exists_sourcePsiGapRoot_derivative_equation
   refine ⟨c₀,R₀,s,hs,hsroot,hrootEvent,?_⟩
   have hbro : b = sourcePsiGapRoot hp hp1 n φ := hba
   rw [← hbro]
-  exact ⟨hbij,by simpa only [F] using hzeros,
+  exact ⟨hbij,by simpa only [F] using hzeros,hFanalyticB,
     fun h => by simpa only [F] using hderiv h⟩
 
 end NLS.ZakharovShabat
