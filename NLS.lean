@@ -997,6 +997,7 @@ import NLS.ZakharovShabat.SourcePsiJacobianUniformOffDiagonalTail
 import NLS.ZakharovShabat.SourcePsiDiagonalRootCancellation
 import NLS.ZakharovShabat.SourcePsiDiagonalVariationNoAvoid
 import NLS.ZakharovShabat.SourcePsiJacobianUniformDiagonalTail
+import NLS.ZakharovShabat.SourcePsiDeletedProductNonzero
 import NLS.ZakharovShabat.SourcePsiFreeCircleVariation
 import NLS.ZakharovShabat.SourcePsiFreeJacobian
 import NLS.ZakharovShabat.SourcePsiFreeFrechet

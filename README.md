@@ -3354,3 +3354,11 @@ bounded norm for every deleted index and real-root input. For each
 parameter pair, the `ℓᵖ` tail gives a further cutoff where every
 diagonal entry is nonzero. That final cutoff depends on the parameter
 pair; a bounded `ℓᵖ` ball alone has no uniform coordinate tail.
+`SourcePsiDeletedProductNonzero.lean` proves the zero-set fact used in
+the remaining finite diagonal rows. Quarter-π root localization
+separates the displaced roots and makes their range closed. The
+deleted numerator is nonzero wherever every retained root is absent,
+including at its own omitted root: changing only that root leaves the
+deleted product fixed and lets the complete-product zero theorem
+apply. The regular quotient is consequently nonzero on a selected
+free quarter-π disc contained in its omitted-standard-root domain.
