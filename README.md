@@ -3741,3 +3741,10 @@ and two circles within a common outer isolating circle, consequently
 give identical scalar psi equation coordinates. Establishing the
 common-circle geometry for overlapping local chart families and
 passing the Banach-valued equation to limits remain next steps.
+`SourcePsiEquationChartCompatibility.lean` lifts coordinatewise
+contour invariance to equality of the selected Banach-valued equations
+on comparable charts. It also passes zeros in varying contour charts
+to a strongly convergent root/source limit in a fixed `C¹` chart,
+provided the charts are eventually comparable and the limit belongs
+to that chart. The remaining geometric obligation is to verify these
+comparison and chart-membership conditions for continuation solutions.
