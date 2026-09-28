@@ -3693,3 +3693,10 @@ only selected-equation zero in that domain on the same contour family.
 The proof works for complex deleted roots: the collapsed-gap Cauchy
 formula locates a numerator zero at each free lattice point, and
 isolating-disc separation identifies the corresponding root index.
+
+`SourcePsiConjugateRootEquivariance.lean` proves conjugation symmetry
+for arbitrary complex deleted-root inputs, from finite numerator
+products through the selected Banach-valued equation. A two-integrand
+circle-reflection theorem handles the orientation sign. This provides
+the symmetry needed to identify locally unique branches with their
+conjugates at real-type potentials.
