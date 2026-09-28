@@ -1052,6 +1052,7 @@ import NLS.ZakharovShabat.SourcePsiGapSolvability
 import NLS.ZakharovShabat.SourcePsiGapGlobalExistence
 import NLS.ZakharovShabat.SourcePsiGapMultiplicity
 import NLS.ZakharovShabat.SourcePsiGapRootMap
+import NLS.ZakharovShabat.SourcePsiGapRootLineTaylor
 import NLS.ZakharovShabat.SourcePsiVariationCollapsedGapZero
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianKernelRealImag
 import NLS.ZakharovShabat.SourcePsiVariationComplexOpenGapZeros

@@ -3801,3 +3801,9 @@ real-type source subtype. It solves the selected equation, places each
 retained root in its periodic gap, equals zero at the free source, and
 is continuous. At every real-type source it agrees locally with a
 complex `C¹` implicit branch.
+`SourcePsiGapRootLineTaylor.lean` gives that local branch a uniform
+short-direction Cauchy–Taylor expansion, whose sum equals the canonical
+root at real-type endpoints. Its restriction to every complex affine
+line through a real-type source is analytic. A joint Banach-space
+power-series expansion is still needed to finish real analyticity in
+Proposition 12.9.
