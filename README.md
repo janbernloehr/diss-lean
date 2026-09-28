@@ -3346,3 +3346,11 @@ contour. The collapsed result needs only the zero-gap identity,
 regular-factor analyticity, and avoidance of the omitted equation
 root; real-type data are used by the combined theorem to split the
 open and collapsed cases.
+`SourcePsiJacobianUniformDiagonalTail.lean` assembles the contour
+geometry, quotient-disc majorant, small-gap tail, and regular-factor
+analyticity on one neighborhood of any real-type source. It gives a
+shared initial row cutoff and an `ℓᵖ` quotient correction with locally
+bounded norm for every deleted index and real-root input. For each
+parameter pair, the `ℓᵖ` tail gives a further cutoff where every
+diagonal entry is nonzero. That final cutoff depends on the parameter
+pair; a bounded `ℓᵖ` ball alone has no uniform coordinate tail.
