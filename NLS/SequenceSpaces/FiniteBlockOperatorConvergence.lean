@@ -1,5 +1,7 @@
 import NLS.SequenceSpaces.Truncation
 import NLS.SequenceSpaces.BoundedMatrixLimitPointwise
+import NLS.SequenceSpaces.CompactRowMajorant
+import NLS.SequenceSpaces.FiniteModification
 import Mathlib.Analysis.Normed.Operator.Basic
 import Mathlib.Topology.Algebra.Monoid
 
@@ -98,6 +100,61 @@ theorem tendsto_finiteBlock_of_entries
     intro k hk
     exact (hentry m hm k hk).smul_const _
   simpa only [finiteBlock_eq_matrixSum] using hsum
+
+/-- A common norm bound controls the finitely many head rows, while a
+fixed `ℓᵖ` majorant controls all tail rows. Consequently one output
+projection approximates every operator sufficiently far along the
+family. -/
+theorem exists_eventual_uniform_outputBlock_of_tailRowMajorant
+    (hp : p ≠ ⊤)
+    {α : Type*} (l : Filter α)
+    (T : α → Coeff p →L[ℂ] Coeff p)
+    (b : Coeff p) (K : ℕ) (M : ℝ) (hM : 0 ≤ M)
+    (hnorm : ∀ᶠ i in l, ‖T i‖ ≤ M)
+    (hrow : ∀ᶠ i in l, ∀ m : ℤ, K ≤ m.natAbs →
+      ∀ x : Coeff p, ‖T i x m‖ ≤ ‖b m‖ * ‖x‖)
+    (ε : ℝ) (hε : 0 < ε) :
+    ∃ s : Finset ℤ, ∀ᶠ i in l,
+      ‖(truncateCLM s).comp (T i) - T i‖ < ε := by
+  classical
+  let head : Finset ℤ := Finset.Icc (-(K : ℤ)) (K : ℤ)
+  let b' : Coeff p :=
+    ⟨fun m => if m ∈ head then (M : ℂ) else b m,
+      NLS.memℓp_of_eq_outside_finset (lp.memℓp b) head (by
+        intro m hm
+        simp [hm])⟩
+  obtain ⟨s,hs⟩ := Metric.tendsto_atTop.mp (tendsto_truncate hp b') ε hε
+  refine ⟨s,?_⟩
+  filter_upwards [hnorm,hrow] with i hi hr
+  have hrow' (m : ℤ) (x : Coeff p) :
+      ‖T i x m‖ ≤ ‖b' m‖ * ‖x‖ := by
+    by_cases hm : m ∈ head
+    · have heval : ‖T i x m‖ ≤ ‖T i x‖ :=
+        lp.norm_apply_le_norm
+          (ne_of_gt (zero_lt_one.trans_le Fact.out)) _ m
+      have hop : ‖T i x‖ ≤ M * ‖x‖ :=
+        (T i).le_of_opNorm_le hi x
+      have hb' : ‖b' m‖ = M := by
+        simp [b',hm,Complex.norm_real,Real.norm_eq_abs,
+          abs_of_nonneg hM]
+      rw [hb']
+      exact heval.trans hop
+    · have hmK : K ≤ m.natAbs := by
+        simp only [head,Finset.mem_Icc] at hm
+        omega
+      have hb' : b' m = b m := by simp [b',hm]
+      rw [hb']
+      exact hr m hmK x
+  have hnorm' : ‖(truncateCLM s).comp (T i) - T i‖ ≤
+      ‖truncate s b' - b'‖ := by
+    apply ContinuousLinearMap.opNorm_le_bound _ (norm_nonneg _)
+    intro x
+    change ‖truncate s (T i x) - T i x‖ ≤
+      ‖truncate s b' - b'‖ * ‖x‖
+    exact norm_truncate_operator_sub_le_rowTail (T i) b' hrow' s x
+  have hb : ‖truncate s b' - b'‖ < ε := by
+    simpa only [dist_eq_norm] using hs s le_rfl
+  exact hnorm'.trans_lt hb
 
 /-- To prove operator-norm convergence, it suffices to control the
 two-sided finite-block truncation uniformly and prove convergence of
@@ -216,6 +273,59 @@ theorem tendsto_operator_of_coordinatewise_and_eventual_remainder_finiteBlocks
   have hfirst : ‖A n‖ < ε / 4 := hn
   have hmiddle : ‖P.comp ((R n).comp Q) - P.comp (U.comp Q)‖ < ε / 4 := hbn
   linarith
+
+/-- The two-sided finite-block condition can be proved one side at a
+time: an eventual common output cutoff and an eventual common input
+cutoff for the remainders suffice. -/
+theorem tendsto_operator_of_coordinatewise_and_separate_remainder_tails
+    (T : ℤ → Coeff p →L[ℂ] Coeff p)
+    (S D : Coeff p →L[ℂ] Coeff p)
+    (hpoint : ∀ x : Coeff p, ∀ m : ℤ,
+      Tendsto (fun n : ℤ => (T n x) m)
+        (Filter.comap Int.natAbs Filter.atTop) (𝓝 ((S x) m)))
+    (houtput : ∀ ε : ℝ, 0 < ε → ∃ s : Finset ℤ,
+      ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+        ‖(truncateCLM s).comp (T n - D) - (T n - D)‖ < ε)
+    (hinput : ∀ ε : ℝ, 0 < ε → ∃ t : Finset ℤ,
+      ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+        ‖(T n - D).comp (truncateCLM t) - (T n - D)‖ < ε) :
+    Tendsto T (Filter.comap Int.natAbs Filter.atTop) (𝓝 S) := by
+  apply tendsto_operator_of_coordinatewise_and_eventual_remainder_finiteBlocks
+    T S D hpoint
+  intro ε hε
+  obtain ⟨s,hs⟩ := houtput (ε / 2) (by positivity)
+  obtain ⟨t,ht⟩ := hinput (ε / 2) (by positivity)
+  refine ⟨s,t,?_⟩
+  filter_upwards [hs,ht] with n hsn htn
+  let R := T n - D
+  let P := truncateCLM (p := p) s
+  let Q := truncateCLM (p := p) t
+  have hsplit : R - P.comp (R.comp Q) =
+      (R - P.comp R) + P.comp (R - R.comp Q) := by
+    ext x
+    simp [ContinuousLinearMap.comp_apply]
+  have hcomp : ‖P.comp (R - R.comp Q)‖ ≤ ‖R - R.comp Q‖ := by
+    calc
+      ‖P.comp (R - R.comp Q)‖ ≤ ‖P‖ * ‖R - R.comp Q‖ :=
+        ContinuousLinearMap.opNorm_comp_le _ _
+      _ ≤ ‖R - R.comp Q‖ := by
+        simpa only [one_mul] using
+          mul_le_mul_of_nonneg_right
+            (norm_truncateCLM_le_one (p := p) s) (norm_nonneg _)
+  have hfirst : ‖R - P.comp R‖ < ε / 2 := by
+    rw [norm_sub_rev]
+    exact hsn
+  have hsecond : ‖R - R.comp Q‖ < ε / 2 := by
+    rw [norm_sub_rev]
+    exact htn
+  change ‖R - P.comp (R.comp Q)‖ < ε
+  rw [hsplit]
+  calc
+    ‖(R - P.comp R) + P.comp (R - R.comp Q)‖ ≤
+        ‖R - P.comp R‖ + ‖P.comp (R - R.comp Q)‖ := norm_add_le _ _
+    _ ≤ ‖R - P.comp R‖ + ‖R - R.comp Q‖ :=
+      by gcongr
+    _ < ε := by linarith
 
 /-- The filter statement of two-sided operator convergence is exactly
 the cutoff form used for deleted integer indices in Lemma 12.10. -/

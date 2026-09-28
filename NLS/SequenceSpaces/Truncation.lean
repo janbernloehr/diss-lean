@@ -1,4 +1,5 @@
 import NLS.SequenceSpaces.Basic
+import Mathlib.Analysis.Normed.Operator.Basic
 
 /-!
 # Finite Fourier truncations
@@ -86,6 +87,14 @@ def truncateCLM [Fact (1 ≤ p)] (s : Finset ℤ) : Coeff p →L[ℂ] Coeff p :=
 @[simp]
 theorem truncateCLM_apply [Fact (1 ≤ p)] (s : Finset ℤ) (a : Coeff p) :
     truncateCLM s a = truncate s a := rfl
+
+/-- Every finite Fourier projection is an operator-norm contraction. -/
+theorem norm_truncateCLM_le_one [Fact (1 ≤ p)] (s : Finset ℤ) :
+    ‖truncateCLM (p := p) s‖ ≤ 1 := by
+  apply ContinuousLinearMap.opNorm_le_bound _ (by norm_num)
+  intro a
+  simpa only [one_mul,truncateCLM_apply] using
+    norm_truncate_le (ne_of_gt (zero_lt_one.trans_le Fact.out)) s a
 
 /-- Finite Fourier truncations converge in norm for finite Banach exponents. -/
 theorem tendsto_truncate [Fact (1 ≤ p)] (hp : p ≠ ⊤) (a : Coeff p) :
