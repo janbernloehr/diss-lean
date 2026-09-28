@@ -54,4 +54,44 @@ theorem exists_local_sourcePsi_allGap_scalarAnalytic
     hp hp1 n m a ψ (c m) (R m) hR.le
       W hψ.2 (hdata n).1 (hdata n).2 hcircle
 
+/-- One contour family works simultaneously for every scalar psi
+equation, and each coordinate has a joint Banach power series at every
+root/source parameter over the common complex source neighborhood. -/
+theorem exists_local_sourcePsi_allGap_scalarPowerSeries
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ K : ℕ, ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        (∀ m : ℤ, K < m.natAbs →
+          c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+        ∀ ψ ∈ V, ∀ m : ℤ,
+          0 < R m ∧
+          sourcePeriodicSegment hp hp1 ψ m ⊆ ball (c m) (R m) ∧
+          closedBall (c m) (R m) ⊆
+            sourceStandardRootOmittedDomain hp hp1 ψ m ∧
+          sphere (c m) (R m) ⊆
+            sourceCanonicalRootDomain hp hp1 ψ ∧
+          ∀ n : ℤ, ∀ a : Coeff p,
+            AnalyticAt ℂ
+              (fun b : Coeff p × CoeffPair p =>
+                sourcePsiEquationCoordinate hp hp1 n m
+                  b.1 b.2 (c m) (R m)) (a,ψ) := by
+  obtain ⟨K,Vcont,hVcontOpen,hφVcont,c,R,htail,hgeom⟩ :=
+    exists_local_sourcePsi_allGap_contourFamily hp hp1 φ hφ
+  obtain ⟨W,hWopen,_,hrealW,hdata⟩ :=
+    exists_global_sourcePsiContourIntegrand_jointAnalytic hp hp1
+  have hφW : φ ∈ W := hrealW hφ
+  let V : Set (CoeffPair p) := Vcont ∩ W
+  have hVopen : IsOpen V := hVcontOpen.inter hWopen
+  have hφV : φ ∈ V := ⟨hφVcont,hφW⟩
+  refine ⟨K,V,hVopen,hφV,c,R,htail,?_⟩
+  intro ψ hψ m
+  obtain ⟨hR,hseg,hdom,hcircle⟩ := hgeom ψ hψ.1 m
+  refine ⟨hR,hseg,hdom,hcircle,?_⟩
+  intro n a
+  exact analyticAt_sourcePsiEquationCoordinate_of_contour_domain
+    hp hp1 n m a ψ (c m) (R m) hR.le
+      W hψ.2 (hdata n).1 (hdata n).2 hcircle
+
 end NLS.ZakharovShabat

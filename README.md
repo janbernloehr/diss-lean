@@ -3084,9 +3084,11 @@ circles on one common complex source neighborhood. Every selected
 circle encloses its moving gap and avoids the other gaps.
 `SourcePsiGlobalScalarAnalytic.lean` intersects that neighborhood with
 the joint analytic domain of the canonical-root integrand. It proves
-every scalar psi equation coordinate is holomorphic in the root input
-and complex source on the common contour family, for all indices and
-all root inputs.
+every scalar psi equation coordinate has a joint Banach power series
+in the root input and complex source on the common contour family,
+for all indices and all root inputs. The selected sequence-valued
+equation is currently known to be Fréchet-holomorphic there; its
+joint power series remains to be established.
 `SourcePsiGlobalHeadDiscBound.lean` uses joint quotient analyticity and
 compactness to bound the finitely many nonstandard contour discs near
 any root input. It patches that finite bound with the quantitative
