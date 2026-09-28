@@ -1,4 +1,4 @@
-import NLS.ZakharovShabat.SourcePsiJacobianCollapsedDiagonal
+import NLS.ZakharovShabat.SourcePsiGapFactorization
 
 /-!
 # Independence of the omitted-root quotient from its deleted root

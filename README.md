@@ -3334,3 +3334,9 @@ the contour: its variation is exactly affine, and the derivative is
 the contour integral of the regular factor divided by the standard
 root. Only the omitted equation root must avoid the contour; the
 regular factor is assumed analytic on the enclosed disc.
+The open-gap diagonal mean-value formula, its quotient and
+nonvanishing forms, and both quantitative `2 + error` estimates now
+use this derivative. None requires the selected root to avoid its
+contour. The cancellation proof also imports only its direct spectral
+dependencies, keeping this stronger result available to the earlier
+Jacobian modules without an import cycle.

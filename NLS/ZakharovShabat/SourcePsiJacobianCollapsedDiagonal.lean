@@ -200,7 +200,7 @@ theorem norm_sourcePsi_diagonalJacobian_sub_two_le_all_real_gaps
         (periodOnePotential_mem ψ) m).re
   · exact norm_sourcePsi_diagonalJacobian_sub_two_le_of_lp_majorant
       hp hp1 ψ hreal n m hmn a hroots hopen x R hR hseg hdom
-        hcircle havoidn havoidm hreg B hsmall
+        hcircle havoidn hreg B hsmall
         (fun μ hμ => hQ μ (ball_subset_closedBall
           (hseg (sourceStandardRoot_gapSegment_subset_periodicSegment
             hp hp1 ψ m hμ))))

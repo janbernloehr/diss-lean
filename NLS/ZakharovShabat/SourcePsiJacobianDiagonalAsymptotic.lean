@@ -195,8 +195,6 @@ theorem norm_sourcePsi_diagonalJacobian_sub_two_le_of_gap_bounds
       sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere (x:ℂ) R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere (x:ℂ) R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -222,7 +220,7 @@ theorem norm_sourcePsi_diagonalJacobian_sub_two_le_of_gap_bounds
   obtain ⟨μ,hμ,hvalue⟩ :=
     exists_sourcePsi_diagonalJacobian_quotient_meanValue
       hp hp1 ψ hreal n m hmn a hroots hopen x R hR hseg hdom
-        hcircle havoidn havoidm hreg
+        hcircle havoidn hreg
   rw [hvalue]
   calc
     ‖2 * (Real.pi : ℂ) *
@@ -261,8 +259,6 @@ theorem norm_sourcePsi_diagonalJacobian_sub_two_le_of_lp_majorant
       sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere (x:ℂ) R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere (x:ℂ) R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -283,7 +279,7 @@ theorem norm_sourcePsi_diagonalJacobian_sub_two_le_of_lp_majorant
           ‖(Real.pi : ℂ)*((n-m : ℤ) : ℂ)‖ := by
   exact norm_sourcePsi_diagonalJacobian_sub_two_le_of_gap_bounds
     hp hp1 ψ hreal n m hmn a hroots hopen x R hR hseg hdom
-      hcircle havoidn havoidm hreg ‖B m‖
+      hcircle havoidn hreg ‖B m‖
         (‖sourcePeriodicMidpointDisplacement hp hp1 ψ m‖ +
           ‖sourcePeriodicGapDisplacement hp hp1 ψ m‖/2)
       (fun μ hμ => sourcePsi_gapPoint_halfDenominator_of_smallDisplacements

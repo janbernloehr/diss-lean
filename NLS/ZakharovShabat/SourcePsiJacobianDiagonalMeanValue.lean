@@ -1,4 +1,5 @@
 import NLS.ZakharovShabat.SourcePsiJacobianGapFactorization
+import NLS.ZakharovShabat.SourcePsiDiagonalVariationNoAvoid
 import NLS.ZakharovShabat.SourcePsiRealGapQuotient
 import NLS.ZakharovShabat.SourceStandardRootWeightedLocalRealMeanValue
 
@@ -36,8 +37,6 @@ theorem exists_sourcePsi_diagonalJacobian_realGap_meanValue
       sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere (x:ℂ) R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere (x:ℂ) R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -87,8 +86,8 @@ theorem exists_sourcePsi_diagonalJacobian_realGap_meanValue
       hp hp1 ψ hreal m hopen g hgreal x R hR hseg hgap hg
   have hJ : J = ∮ z in C((x:ℂ),R),
       F z / sourceStandardRoot hp hp1 ψ m z := by
-    exact deriv_sourcePsiDeletedEquationCoordinate_diagonal_eq_gap_circleIntegral
-      hp hp1 n m hmn a ψ hreal (x:ℂ) R hR.le hcircle havoidn havoidm
+    exact (hasDerivAt_sourcePsiDeletedEquationCoordinate_diagonal_no_avoid
+      hp hp1 n m hmn a ψ (x:ℂ) R hR.le hcircle havoidn hreg).deriv
   have hInt :
       (∮ z in C((x:ℂ),R),
         g z / sourceStandardRoot hp hp1 ψ m z) = (-I)*J := by
@@ -159,8 +158,6 @@ theorem exists_sourcePsi_diagonalJacobian_quotient_meanValue
       sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere (x:ℂ) R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere (x:ℂ) R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -178,7 +175,7 @@ theorem exists_sourcePsi_diagonalJacobian_quotient_meanValue
   obtain ⟨μ,hμ,hvalue⟩ :=
     exists_sourcePsi_diagonalJacobian_realGap_meanValue
       hp hp1 ψ hreal n m hmn a hroots hopen x R hR hseg hdom
-        hcircle havoidn havoidm hreg
+        hcircle havoidn hreg
   refine ⟨μ,hμ,?_⟩
   rw [hvalue,sourcePsi_diagonal_rotatedFactor_eq_quotient]
 
@@ -201,8 +198,6 @@ theorem sourcePsi_diagonalJacobian_ne_zero_of_quotient_nonvanishing
       sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere (x:ℂ) R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere (x:ℂ) R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -221,7 +216,7 @@ theorem sourcePsi_diagonalJacobian_ne_zero_of_quotient_nonvanishing
   obtain ⟨μ,hμ,hvalue⟩ :=
     exists_sourcePsi_diagonalJacobian_quotient_meanValue
       hp hp1 ψ hreal n m hmn a hroots hopen x R hR hseg hdom
-        hcircle havoidn havoidm hreg
+        hcircle havoidn hreg
   rw [hvalue]
   have hπ : (2 * (Real.pi : ℂ)) ≠ 0 :=
     mul_ne_zero (by norm_num) (by exact_mod_cast Real.pi_ne_zero)

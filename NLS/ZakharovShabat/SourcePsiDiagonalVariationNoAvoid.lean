@@ -1,4 +1,5 @@
 import NLS.ZakharovShabat.SourcePsiDiagonalRootCancellation
+import NLS.ZakharovShabat.SourcePsiDeletedCoordinate
 
 /-!
 # Diagonal psi variation with no selected-root contour avoidance
