@@ -3328,3 +3328,9 @@ its spectral quotient, and the regular psi factor do not change
 when that root moves. The argument remains valid at root collisions
 and when the selected root lies on a contour; it prepares a diagonal
 variation formula without the current contour-avoidance premise.
+`SourcePsiDiagonalVariationNoAvoid.lean` now proves that formula for
+the deleted-coordinate scalar equation. The selected root may lie on
+the contour: its variation is exactly affine, and the derivative is
+the contour integral of the regular factor divided by the standard
+root. Only the omitted equation root must avoid the contour; the
+regular factor is assumed analytic on the enclosed disc.
