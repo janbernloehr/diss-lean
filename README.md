@@ -3807,3 +3807,9 @@ root at real-type endpoints. Its restriction to every complex affine
 line through a real-type source is analytic. A joint Banach-space
 power-series expansion is still needed to finish real analyticity in
 Proposition 12.9.
+`BanachC1ImplicitDerivative.lean` differentiates a Banach-valued
+implicit zero branch and gives its derivative through the inverse root
+Jacobian. `SourcePsiGapRootDerivative.lean` applies this to the
+canonical gap roots: in a local contour chart their source derivative
+solves the linearized selected-psi equation, and the root Jacobian is
+bijective.
