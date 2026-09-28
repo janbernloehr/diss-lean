@@ -3900,3 +3900,9 @@ specialized to the actual selected psi Jacobians at the canonical real
 gap roots. Constructing the limit operator, proving its invertibility,
 and establishing operator-norm convergence remain the next parts of
 Lemma 12.10.
+`SourcePsiJacobianFreeFullExtension.lean` identifies the selected
+sequence equation on uniform free-centered contours with the existing
+free equation. Consequently, at the canonical free gap root every
+extended Jacobian is exactly `2 · id` on the common `ℓᵖ` space, so the
+operator-norm convergence claim holds at the free source with zero
+error. The nonfree limit operator and convergence estimate are open.

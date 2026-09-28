@@ -1065,6 +1065,7 @@ import NLS.ZakharovShabat.SourcePsiGapRootDerivativeLipschitz
 import NLS.ComplexAnalysis.BanachC1ImplicitDerivative
 import NLS.ZakharovShabat.SourcePsiGapRootDerivative
 import NLS.ZakharovShabat.SourcePsiJacobianFullExtension
+import NLS.ZakharovShabat.SourcePsiJacobianFreeFullExtension
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
