@@ -3340,3 +3340,9 @@ use this derivative. None requires the selected root to avoid its
 contour. The cancellation proof also imports only its direct spectral
 dependencies, keeping this stronger result available to the earlier
 Jacobian modules without an import cycle.
+The collapsed-gap residue formula and the combined all-real-gap
+diagonal `2 + error` bound now also allow the selected root on the
+contour. The collapsed result needs only the zero-gap identity,
+regular-factor analyticity, and avoidance of the omitted equation
+root; real-type data are used by the combined theorem to split the
+open and collapsed cases.

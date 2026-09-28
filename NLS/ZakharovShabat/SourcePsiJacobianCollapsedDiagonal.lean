@@ -20,7 +20,7 @@ evaluated at the moving periodic midpoint. -/
 theorem sourcePsi_diagonalJacobian_collapsedGap_eq_quotient
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
-    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (ψ : CoeffPair p)
     (n m : ℤ) (hmn : m ≠ n) (a : DeletedCoeff p n)
     (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
       (periodOnePotential_mem ψ) m = 0)
@@ -29,8 +29,6 @@ theorem sourcePsi_diagonalJacobian_collapsedGap_eq_quotient
     (hcircle : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere c R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere c R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -47,8 +45,8 @@ theorem sourcePsi_diagonalJacobian_collapsedGap_eq_quotient
   let τ := sourceStandardRootMidpoint hp hp1 ψ m
   let F : ℂ → ℂ := fun z => (((n-m : ℤ) : ℂ) *
     sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z)
-  have hJ := deriv_sourcePsiDeletedEquationCoordinate_diagonal_eq_gap_circleIntegral
-    hp hp1 n m hmn a ψ hreal c R hR.le hcircle havoidn havoidm
+  have hJ := (hasDerivAt_sourcePsiDeletedEquationCoordinate_diagonal_no_avoid
+    hp hp1 n m hmn a ψ c R hR.le hcircle havoidn hreg).deriv
   have hτsphere : ∀ z ∈ sphere c R, z ≠ τ := by
     intro z hz he
     have hlt := mem_ball.mp hmid
@@ -96,7 +94,7 @@ theorem sourcePsi_diagonalJacobian_collapsedGap_eq_quotient
 theorem norm_sourcePsi_diagonalJacobian_collapsedGap_sub_two_le
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
-    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (ψ : CoeffPair p)
     (n m : ℤ) (hmn : m ≠ n) (a : DeletedCoeff p n)
     (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential ψ)
       (periodOnePotential_mem ψ) m = 0)
@@ -105,8 +103,6 @@ theorem norm_sourcePsi_diagonalJacobian_collapsedGap_sub_two_le
     (hcircle : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere c R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere c R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -136,8 +132,7 @@ theorem norm_sourcePsi_diagonalJacobian_collapsedGap_sub_two_le
       (sourcePeriodicGapDisplacement hp hp1 ψ m)
     nlinarith
   rw [sourcePsi_diagonalJacobian_collapsedGap_eq_quotient
-    hp hp1 ψ hreal n m hmn a hgap c R hR hmid hcircle havoidn
-      havoidm hreg]
+    hp hp1 ψ n m hmn a hgap c R hR hmid hcircle havoidn hreg]
   have hpoint := norm_sourcePsi_diagonal_meanValue_sub_two_le
     hp hp1 n m hmn a ψ τ hnear
   change ‖2 * (Real.pi : ℂ) *
@@ -175,8 +170,6 @@ theorem norm_sourcePsi_diagonalJacobian_sub_two_le_all_real_gaps
       sourceCanonicalRootDomain hp hp1 ψ)
     (havoidn : ∀ z ∈ sphere (x:ℂ) R,
       z ≠ displacedRoots (a : Coeff p) n)
-    (havoidm : ∀ z ∈ sphere (x:ℂ) R,
-      z ≠ displacedRoots (a : Coeff p) m)
     (hreg : AnalyticOnNhd ℂ
       (fun z => (((n-m : ℤ) : ℂ) *
         sourcePsiGapRegularFactor hp hp1 n m (a : Coeff p) ψ z))
@@ -210,8 +203,8 @@ theorem norm_sourcePsi_diagonalJacobian_sub_two_le_all_real_gaps
         ball (x:ℂ) R := by
       exact hseg (sourcePeriodicMidpoint_mem_segment hp hp1 ψ m)
     exact norm_sourcePsi_diagonalJacobian_collapsedGap_sub_two_le
-      hp hp1 ψ hreal n m hmn a hgap (x:ℂ) R hR hmid hcircle
-        havoidn havoidm hreg B hsmall
+      hp hp1 ψ n m hmn a hgap (x:ℂ) R hR hmid hcircle
+        havoidn hreg B hsmall
         (hQ _ (ball_subset_closedBall hmid))
 
 end NLS.ZakharovShabat
