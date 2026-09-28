@@ -3136,3 +3136,8 @@ real-type source, the full psi equation is a deleted `ℓᵖ` sequence
 with a locally uniform norm bound independent of the deleted index.
 The next part of Lemma 12.4 is sequence-valued analyticity and its
 real-locus compatibility.
+`SourcePsiGlobalEquationAnalytic.lean` uses the sequence norm bound
+and scalar contour holomorphy to prove a local Fréchet-holomorphic
+realization in the deleted `ℓᵖ` space near every real-type source and
+deleted root input, with the selected-contour coordinate formula and
+a local norm bound. Real-locus compatibility remains to be proved.
