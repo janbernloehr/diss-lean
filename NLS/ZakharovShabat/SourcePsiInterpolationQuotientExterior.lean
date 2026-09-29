@@ -1,3 +1,4 @@
+import NLS.ZakharovShabat.SingleSpectralProductRatioExterior
 import NLS.ZakharovShabat.SourceGapInterpolationOuterCircles
 import NLS.ZakharovShabat.SourcePsiRootResolventExterior
 import NLS.ComplexAnalysis.SimpleZeroInterpolation
@@ -50,65 +51,18 @@ theorem exists_threshold_sourcePsi_interpolationQuotient_small
       ‖((displacedRoots a n - z) *
           sourcePsiCandidateVariation n a h z) /
           entireSingleSpectralProduct ρ z‖ ≤ ε := by
-  obtain ⟨Ra,hRa⟩ :=
-    exists_threshold_entireSingleSpectralProduct_div_free_close
-      hp (displacedRoots a) (memℓp_displacedRoots a) hr hrπ
-        (by norm_num : (0 : ℝ) < 1 / 2)
-  obtain ⟨Rρ,hRρ⟩ :=
-    exists_threshold_entireSingleSpectralProduct_div_free_close
-      hp ρ hρlp hr hrπ (by norm_num : (0 : ℝ) < 1 / 2)
-  obtain ⟨Rs,hRs⟩ :=
-    exists_threshold_sourcePsiCandidateVariation_resolvent_small
-      hp hp1 n a h hdeleted hr hrπ
-        (by positivity : 0 < ε / 4)
-  refine ⟨max Ra (max Rρ Rs),?_⟩
+  obtain ⟨Rratio,hRratio⟩ := exists_threshold_entireSingleSpectralProduct_ratio_le_four
+    hp (displacedRoots a) ρ (memℓp_displacedRoots a) hρlp hr hrπ
+  obtain ⟨Rs,hRs⟩ := exists_threshold_sourcePsiCandidateVariation_resolvent_small
+    hp hp1 n a h hdeleted hr hrπ (by positivity : 0 < ε/4)
+  refine ⟨max Rratio Rs,?_⟩
   intro z hz hsep
-  let d : ℂ := -2 * sin z
   let J : ℂ := jointSingleSpectralProduct (z,a)
   let G : ℂ := entireSingleSpectralProduct ρ z
-  let S : ℂ := ∑' m : ℤ, h m / (displacedRoots a m - z)
-  have hd : d ≠ 0 := by
-    dsimp [d]
-    exact mul_ne_zero (by norm_num)
-      (sin_ne_zero_of_notMem_freeLattice
-        (notMem_freeLattice_of_separated hr hsep))
-  have hdNorm : 0 < ‖d‖ := norm_pos_iff.mpr hd
-  have hA : ‖J / d - 1‖ ≤ (1 : ℝ) / 2 := by
-    simpa only [J,d,jointSingleSpectralProduct] using
-      hRa z ((le_max_left _ _).trans hz) hsep
-  have hB : ‖G / d - 1‖ ≤ (1 : ℝ) / 2 := by
-    simpa only [G,d] using
-      hRρ z ((le_max_left _ _).trans
-        ((le_max_right _ _).trans hz)) hsep
-  have hAnorm : ‖J / d‖ ≤ 2 := by
-    calc
-      ‖J / d‖ = ‖(J / d - 1) + 1‖ := by congr 1; ring
-      _ ≤ ‖J / d - 1‖ + ‖(1 : ℂ)‖ := norm_add_le _ _
-      _ ≤ 2 := by norm_num; linarith
-  have hBnorm : (1 : ℝ) / 2 ≤ ‖G / d‖ := by
-    have htri := norm_add_le (G / d) (1 - G / d)
-    have heq : (1 : ℂ) = G / d + (1 - G / d) := by ring
-    rw [← heq] at htri
-    rw [norm_one, norm_sub_rev] at htri
-    linarith
-  have hG : G ≠ 0 := by
-    intro he
-    rw [he, zero_div, norm_zero] at hBnorm
-    norm_num at hBnorm
-  have hGnorm : 0 < ‖G‖ := norm_pos_iff.mpr hG
-  have hJle : ‖J‖ ≤ 2 * ‖d‖ := by
-    rw [norm_div] at hAnorm
-    exact (div_le_iff₀ hdNorm).mp hAnorm
-  have hdle : ‖d‖ ≤ 2 * ‖G‖ := by
-    rw [norm_div] at hBnorm
-    have h := (le_div_iff₀ hdNorm).mp hBnorm
-    linarith
-  have hratio : ‖J / G‖ ≤ 4 := by
-    rw [norm_div]
-    apply (div_le_iff₀ hGnorm).mpr
-    linarith
-  have hsmall := hRs z
-    ((le_max_right _ _).trans ((le_max_right _ _).trans hz)) hsep
+  let S : ℂ := ∑' m : ℤ, h m / (displacedRoots a m-z)
+  obtain ⟨hG,hratio⟩ := hRratio z ((le_max_left _ _).trans hz) hsep
+  change ‖J/G‖ ≤ 4 at hratio
+  have hsmall := hRs z ((le_max_right _ _).trans hz) hsep
   have hnum := sourcePsi_interpolationNumerator_eq_neg_product_mul_resolvent
     hp hp1 n a h z hsmall.1
   have hnorm : ‖((displacedRoots a n - z) *

@@ -4047,8 +4047,9 @@ proves compactness of diagonal corrections whose symbols approach a
 constant, including coordinate limits with eventual uniform tails.
 The strengthened common-contour norm-limit theorem now proves that
 the same `Q*` differs from `2I` by a compact operator. The Fredholm
-alternative reduces its bijectivity to injectivity. Proving the nonfree
-kernel is zero, locally uniform convergence over varying roots and
+alternative reduces its bijectivity to injectivity. The full-product
+interpolation and conjugation results below now close that pointwise
+kernel argument. Locally uniform convergence over varying roots and
 potentials, uniform inverse bounds, and the common complex extension
 remain open.
 `SourcePsiFullProductVariation.lean` supplies the entire variation of
@@ -4070,6 +4071,20 @@ root data and directions. `SourcePsiLimitKernelGapZeros.lean` therefore
 obtains a zero in every periodic gap for each real direction in the
 actual limit operator's kernel. These zeros form a complete `ℓᵖ`
 displaced spectral sequence with no omitted index. Collapsed-gap
-midpoint vanishing also holds for complex directions. Undeleted
-interpolation uniqueness and the real/imaginary kernel reduction are
-the next injectivity steps.
+midpoint vanishing also holds for complex directions.
+`SourcePsiFullProductResolventExterior.lean` proves the full variation
+equals the complete root product times the complete actual-root
+resolvent. A shared exterior ratio bound for full spectral products
+also simplifies the existing deleted interpolation argument.
+`SourcePsiFullProductInterpolation.lean` combines exterior quotient
+decay, expanding-circle interpolation, and simple gap-contained zeros
+to prove full-variation uniqueness. Coefficient recovery eliminates
+every real direction in the actual `Q*` kernel.
+`RealImag.lean` and `RealOperator.lean` provide full-space conjugation
+and real/imaginary kernel decomposition from real matrix entries.
+`SourcePsiLimitBijective.lean` verifies reality of the actual contour
+entries and proves complex injectivity. The compact correction to `2I`
+then gives pointwise bijectivity for every fixed real-type potential
+and full gap-contained root vector at finite `p>1`. The entries,
+operator-norm convergence, compactness, and bijectivity all concern
+the same operator and real-centered contour family.

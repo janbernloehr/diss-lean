@@ -1,28 +1,28 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: full gap-zero sequences from the limit kernel
+## Current Lemma 12.10 milestone: pointwise bijectivity of the actual limit operator
 
-The common-contour construction now retains its real centers through
-the selected charts, column limits, bounded limit operator, fixed-root
-operator-norm limit, compact correction to `2I`, and directional
-contour formula. The original theorem interfaces remain available.
-`SourceEntireGapContourZeros.lean` supplies the open-gap mean-value and
-collapsed-gap Cauchy arguments for an arbitrary entire numerator;
-the existing deleted-variation results use these shared proofs.
-`SourcePsiFullProductGapZeros.lean` proves the full variation is real on
-the real spectral axis at real root data and a real direction. Every
-zero contour then gives a zero in its enclosed real periodic gap.
-Collapsed gaps give midpoint zeros for complex directions as well.
-`SourcePsiLimitKernelGapZeros.lean` applies these results to the actual
-norm-limit operator on the same real-centered contour family. Every
-real kernel direction has one simultaneous gap-contained zero sequence
-with an `ℓᵖ` displacement, and no index is omitted. This result retains
-the norm convergence and compact correction on that same operator.
-The next analytic step is interpolation uniqueness for the undeleted
-variation, followed by the real/imaginary kernel reduction. Pointwise
-injectivity, locally uniform convergence over varying roots and
-potentials, uniform inverse bounds, and the common complex extension
-neighborhood remain open.
+For every fixed real-type potential and full gap-contained root vector
+at finite `p>1`, the actual operator-norm limit `Q*` is now bijective on
+the full complex `ℓᵖ` space. The norm convergence, contour entries,
+real centers, and compact correction to `2I` all use the same operator
+and contour family.
+`SourcePsiFullProductResolventExterior.lean` proves the complete
+root-resolvent formula for every direction, including the restored
+coordinate. A shared bound for ratios of full root products yields
+exterior decay of the interpolation quotient.
+`SourcePsiFullProductInterpolation.lean` uses expanding circles and
+simple spectral zeros to show that a full variation with a zero in
+every real periodic gap vanishes identically. Root coefficient recovery
+then proves the direction is zero. This eliminates every real kernel
+direction of the actual limit operator.
+`SourcePsiLimitBijective.lean` proves that its contour matrix entries
+are real. Full-space conjugation and real/imaginary decomposition
+therefore give complex injectivity, and the Fredholm alternative gives
+bijectivity. This closes the pointwise limit-operator kernel argument.
+Locally uniform convergence over varying roots and potentials, uniform
+inverse bounds, and the common complex extension neighborhood remain
+open in Lemma 12.10.
 
 ## Implemented and checked
 
@@ -32,6 +32,13 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.RealImag` | Real and imaginary components of full complex `ℓᵖ` sequences and their exact reconstruction |
+| `NLS.SequenceSpaces.RealOperator` | Conjugation symmetry from real full-space matrix entries, preservation of real/imaginary kernel components, and complex injectivity from real-kernel uniqueness |
+| `NLS.ZakharovShabat.SingleSpectralProductRatioExterior` | Shared uniform exterior bound for ratios of two complete displaced spectral products |
+| `NLS.ZakharovShabat.SourcePsiFullProductResolventExterior` | Exact complete root-resolvent formula and separated exterior decay for the full product variation without a deleted-coordinate restriction |
+| `NLS.ZakharovShabat.SourcePsiFullProductInterpolation` | Full-variation quotient decay, interpolation uniqueness from simple gap zeros, and recovery of zero directions on the full real gap product |
+| `NLS.ZakharovShabat.SourcePsiLimitRealKernelUniqueness` | Vanishing of every real direction in the actual norm-limit operator's kernel, retaining the same contours, norm convergence, and compact correction |
+| `NLS.ZakharovShabat.SourcePsiLimitBijective` | Real contour matrix entries, complex injectivity, and unconditional pointwise bijectivity of the actual fixed-root norm-limit operator |
 | `NLS.ZakharovShabat.SourceEntireGapContourZeros` | Shared entire-numerator open-gap mean-value zero and collapsed-gap midpoint zero from vanishing canonical-root contours |
 | `NLS.ZakharovShabat.SourcePsiFullProductGapZeros` | Reality of the full product variation, complex-direction midpoint vanishing at collapsed gaps, and real-direction zeros in every enclosed real gap |
 | `NLS.ZakharovShabat.SourcePsiLimitKernelGapZeros` | Complete gap-contained `ℓᵖ` zero sequences from real directions in the actual limit operator's kernel, on the same real-centered contours as norm convergence and compactness |

@@ -30,6 +30,8 @@ import NLS.SequenceSpaces.DeletedJacobianSymbol
 import NLS.SequenceSpaces.DeletedJacobianMatrixExpansion
 import NLS.SequenceSpaces.DeletedRealImag
 import NLS.SequenceSpaces.DeletedRealOperator
+import NLS.SequenceSpaces.RealImag
+import NLS.SequenceSpaces.RealOperator
 import NLS.SequenceSpaces.DeletedJacobianCompactRemainder
 import NLS.SequenceSpaces.CompactTailReciprocalMatrix
 import NLS.SequenceSpaces.CompactTailRowColumnReciprocalMatrix
@@ -1107,6 +1109,8 @@ import NLS.ZakharovShabat.SourcePsiJacobianNormLimit
 import NLS.SequenceSpaces.OperatorBasisExt
 import NLS.ZakharovShabat.SourcePsiLimitOperatorContour
 import NLS.ZakharovShabat.SourcePsiLimitKernelGapZeros
+import NLS.ZakharovShabat.SourcePsiLimitRealKernelUniqueness
+import NLS.ZakharovShabat.SourcePsiLimitBijective
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
@@ -1122,6 +1126,9 @@ import NLS.ZakharovShabat.SourceGapInterpolationOuterCircles
 import NLS.ZakharovShabat.SourcePsiVariationCutoffFormula
 import NLS.ZakharovShabat.SourcePsiVariationCutoffResolvent
 import NLS.ZakharovShabat.SourcePsiRootResolventExterior
+import NLS.ZakharovShabat.SourcePsiFullProductResolventExterior
+import NLS.ZakharovShabat.SingleSpectralProductRatioExterior
+import NLS.ZakharovShabat.SourcePsiFullProductInterpolation
 import NLS.ZakharovShabat.SourcePsiInterpolationQuotientExterior
 import NLS.ZakharovShabat.SourcePsiSelectedJacobianInjectivity
 import NLS.ZakharovShabat.SourcePsiLocalJacobianInjectivity
