@@ -4022,6 +4022,15 @@ fixed finite input block.
 `SourcePsiJacobianColumnNormLimit.lean` packages these conclusions for
 the actual common-contour full psi Jacobians and the contour-limit
 operator `Q*`. This controls the high-output, finite-input mixed block.
-The finite-output, high-input mixed block still needs a uniform tail
-estimate to complete full operator-norm convergence in Lemma 12.10;
-invertibility of the nonfree limit also remains open.
+`SourcePsiJacobianFiniteRowTail.lean` obtains reciprocal decay on every
+fixed finite output set, including nonstandard selected head circles,
+from compact quotient/kernel bounds and distant input-root separation.
+`FiniteOutputReciprocalTail.lean` turns these entries into conjugate-space
+row kernels and gives one uniformly small input tail for every operator
+sharing the bound. With coordinatewise limits, the same estimate proves
+operator-norm convergence after every finite output projection.
+The common `Q*` theorem now packages both mixed-tail directions and
+finite-input/finite-output operator-norm limits on the same Jacobian
+family. Their assembly with the diagonal limit and high/high tails into
+full operator-norm convergence in Lemma 12.10 remains open, as does
+invertibility of the nonfree limit.

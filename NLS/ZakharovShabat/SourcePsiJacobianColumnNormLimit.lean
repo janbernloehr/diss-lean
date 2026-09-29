@@ -1,15 +1,18 @@
 import NLS.ZakharovShabat.SourcePsiLimitMatrixOperator
 import NLS.ZakharovShabat.SourcePsiJacobianAllColumnTail
+import NLS.ZakharovShabat.SourcePsiJacobianFiniteRowTail
 import NLS.SequenceSpaces.OperatorColumnConvergence
 
 /-!
-# Complete-column norm limits of the psi Jacobians
+# Complete-column and finite-projection norm limits of the psi Jacobians
 
 The common summable output bound upgrades the scalar contour limits
 to norm convergence of full columns. Uniform boundedness extends this
 to strong convergence on every input. Every fixed finite input block
 also converges in operator norm and has uniformly small output tails.
-This supplies the high-output, finite-input mixed block in Lemma 12.10.
+The finite-row reciprocal bound gives the complementary high-input
+cutoffs and finite-output operator-norm limits on the same contour
+family, supplying both mixed-tail directions in Lemma 12.10.
 -/
 
 noncomputable section
@@ -19,8 +22,9 @@ namespace NLS.ZakharovShabat
 
 /-- On the common contour family, the full psi Jacobians converge
 strongly to the contour-limit operator. All fixed finite input
-compressions converge in operator norm, with eventual uniform output
-cutoffs for their mixed blocks. -/
+and finite output compressions converge in operator norm. Both
+mixed-tail directions have eventual uniform cutoffs on this same
+contour family. -/
 theorem exists_sourcePsiLimitMatrixOperator_strong_and_finiteInputs
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -52,11 +56,22 @@ theorem exists_sourcePsiLimitMatrixOperator_strong_and_finiteInputs
               (Coeff.deleteCoordinateTo n a) φ).comp (Coeff.truncateCLM s))
             (Filter.comap Int.natAbs Filter.atTop)
             (𝓝 (Qstar.comp (Coeff.truncateCLM s)))) ∧
-        ∀ s : Finset ℤ, ∀ ε : ℝ, 0 < ε → ∃ t : Finset ℤ,
+        (∀ s : Finset ℤ,
+          Tendsto (fun n : ℤ => (Coeff.truncateCLM s).comp
+            (sourcePsiFullRootJacobian hp hp1 n c R (Coeff.deleteCoordinateTo n a) φ))
+            (Filter.comap Int.natAbs Filter.atTop)
+            (𝓝 ((Coeff.truncateCLM s).comp Qstar))) ∧
+        (∀ s : Finset ℤ, ∀ ε : ℝ, 0 < ε → ∃ t : Finset ℤ,
           ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
             ‖(ContinuousLinearMap.id ℂ (Coeff p) - Coeff.truncateCLM t).comp
               ((sourcePsiFullRootJacobian hp hp1 n c R
-                (Coeff.deleteCoordinateTo n a) φ).comp (Coeff.truncateCLM s))‖ < ε := by
+                (Coeff.deleteCoordinateTo n a) φ).comp (Coeff.truncateCLM s))‖ < ε) ∧
+        ∀ s : Finset ℤ, ∀ ε : ℝ, 0 < ε → ∃ t : Finset ℤ,
+          ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+            ‖(Coeff.truncateCLM s).comp
+              ((sourcePsiFullRootJacobian hp hp1 n c R
+                (Coeff.deleteCoordinateTo n a) φ).comp
+                (ContinuousLinearMap.id ℂ (Coeff p) - Coeff.truncateCLM t))‖ < ε := by
   obtain ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,hentry,
       Kfree,hfree,hmatrix,_⟩ :=
     exists_sourcePsiLimitMatrixOperator hp hp1 a φ hφ ha
@@ -76,9 +91,15 @@ theorem exists_sourcePsiLimitMatrixOperator_strong_and_finiteInputs
       intro m hm hmk
       exact hn m k hm hmk
     · exact hpoint (lp.single p k 1)
-  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,?_,?_,?_⟩
+  have hinput := sourcePsiFullRootJacobian_finiteOutput_uniformInputTail hp hp1 a φ hφ c R
+    (fun m => (hgeom m).1.le) (fun m => (hgeom m).2.2.1)
+    (fun m => (hgeom m).2.2.2) hmatrix
+  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,?_,?_,?_,?_,hinput⟩
   · exact Coeff.tendsto_operator_strong_of_columns hp l T Qstar M hM hQnorm hbound hcol
   · exact Coeff.tendsto_operator_finiteInputs_of_columns l T Qstar hcol
+  · intro s
+    exact Coeff.tendsto_finiteOutputs_of_coordinatewise_and_uniformInputTails T Qstar s
+      hpoint (hinput s)
   · exact Coeff.exists_eventual_uniform_outputTail_of_finiteInputs hp l T Qstar hcol
 
 end NLS.ZakharovShabat

@@ -1,22 +1,24 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: column norm limits and finite input blocks
+## Current Lemma 12.10 milestone: both mixed-tail directions
 
-`SourcePsiJacobianAllColumnTail.lean` derives one fixed `ℓᵖ` output
-majorant for every off-diagonal column, including the finite head input
-columns. It applies the Schwarz lemma to the refined equation bound:
-varying a distinct input coordinate preserves the output displacement.
-`OperatorColumnConvergence.lean` uses dominated convergence to obtain
-complete-column norm limits, finite sums of rank-one maps to obtain
-operator-norm limits on finite input blocks, and density plus uniform
-boundedness to extend strong convergence to every input vector.
-`SourcePsiJacobianColumnNormLimit.lean` applies these results to the
-actual common-contour psi Jacobians and `Q*`, and supplies eventual
-uniform output cutoffs for every finite input block.
-The diagonal norm limit and the off-diagonal high/high tail estimates
-were already proved. The finite-output, high-input mixed block,
-full operator-norm convergence, and invertibility of the nonfree limit
-remain open.
+`SourcePsiJacobianFiniteRowTail.lean` bounds all distant input columns
+on every fixed finite output set, eventually in the deleted index.
+Compactness controls the quotient and standard-root inverse on the
+selected circles, while shifted-disc geometry gives reciprocal input
+lattice decay. The estimate includes nonstandard head circles.
+`FiniteOutputReciprocalTail.lean` constructs conjugate-space row kernels
+from summable entry majorants and truncates those kernels to obtain one
+input cutoff for every operator sharing the finite-row bound. The
+coordinatewise limit then gives operator-norm convergence after every
+fixed finite output projection.
+`SourcePsiJacobianColumnNormLimit.lean` now packages both mixed-tail
+directions, strong convergence, and operator-norm convergence after
+either finite input or finite output projections on the same actual
+common-contour Jacobian family and `Q*`.
+The diagonal norm limit and off-diagonal high/high tail estimates were
+already proved. Assembling these pieces into full operator-norm
+convergence, and proving invertibility of the nonfree limit, remain open.
 
 ## Implemented and checked
 
@@ -26,9 +28,11 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.FiniteOutputReciprocalTail` | Conjugate-space row kernels from summable entry bounds, uniform finite-output input cutoffs from reciprocal decay, and finite-output operator-norm convergence |
+| `NLS.ZakharovShabat.SourcePsiJacobianFiniteRowTail` | Reciprocal input-column bounds on arbitrary fixed finite selected-contour sets and eventual uniform high-input blocks of the actual full psi Jacobians |
 | `NLS.SequenceSpaces.OperatorColumnConvergence` | Complete-column norm limits from summable tail domination, finite-input operator-norm convergence, strong convergence by density, and eventual uniform output cutoffs |
 | `NLS.ZakharovShabat.SourcePsiJacobianAllColumnTail` | One fixed summable output majorant for all off-diagonal psi Jacobian columns, including finite head inputs and deleted rows/columns |
-| `NLS.ZakharovShabat.SourcePsiJacobianColumnNormLimit` | Strong convergence of the actual common-contour psi Jacobians to `Q*`, finite-input operator-norm limits, and uniform high-output mixed-block tails |
+| `NLS.ZakharovShabat.SourcePsiJacobianColumnNormLimit` | Strong convergence of the actual common-contour psi Jacobians to `Q*`, finite-input and finite-output operator-norm limits, and both uniform mixed-tail directions |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryCharacteristics` | Actual auxiliary monodromy characteristics, endpoint zero criteria, joint analyticity, free sine values, corrected anti-discriminant difference, and exact printed-label comparison |
 | `NLS.ZakharovShabat.ClassicalPhaseMonodromy` | Exact phase conjugation of classical solutions and monodromy, discriminant invariance, auxiliary-to-ordinary characteristic equality, and rotated Neumann-minus-Dirichlet anti-discriminant identity |
 | `NLS.ZakharovShabat.ClassicalAuxiliarySpectralBridge` | Actual physical and coefficient auxiliary spectral zero criteria for classical monodromy characteristics, a.e.-representative invariance, exact finite source Neumann Fourier realization, and equality of classical and normalized starred finite-source zero sets |
