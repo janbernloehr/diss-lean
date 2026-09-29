@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: glued analytic equations with common inverse bounds
+## Current Lemma 12.10 milestone: uniform analytic tubes and perturbation estimates
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -80,6 +80,23 @@ contains the entire gap product at the fixed real source and projects
 into all these domains. The actual root derivatives of the glued
 equations have full and deleted two-sided inverses bounded by the same
 constant, independently of the index and point.
+The chart control now also retains the equation norm bound. A finite
+subcover of the compact gap product restricts the glued domains while
+preserving coverage and gives one equation norm bound across every
+point and deleted index.
+`SourcePsiUniformEquationTube.lean` fills each canonical solution's
+omitted coordinate with its periodic midpoint and lifts arbitrary
+nearby deleted inputs back to the full coefficient space. A common
+compact thickening then supplies one positive joint radius for all
+canonical solution centers. The actual glued equations are analytic,
+bounded by one constant, and have root derivative inverses bounded by
+one constant on these balls. Real contour comparison proves that
+every canonical real solution is an actual zero of its glued equation.
+`SourcePsiUniformEquationEstimates.lean` gives the joint derivative
+bound `2C/r`, joint and root derivative Lipschitz bound `4C/r²`, and
+source residual bound `2C/r` on the inner joint balls. It also proves
+actual root derivative bijectivity throughout the outer tube. All
+constants and the radius are independent of the deleted index.
 Construction and continuation of the complex zero branches on a common
 source domain remain open in Lemma 12.10.
 
@@ -91,10 +108,12 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SourcePsiUniformEquationTube` | One joint analytic radius, equation norm bound, and actual root inverse bound for every canonical solution center; actual contour formulas and zero values at the real solutions |
+| `NLS.ZakharovShabat.SourcePsiUniformEquationEstimates` | Uniform joint derivative bounds, joint/root derivative Lipschitz estimates, source residual bounds, and actual root derivative bijectivity on the common equation tubes |
 | `NLS.ComplexAnalysis.ConvexHolomorphicIdentity` | Banach-valued holomorphic functions with an equal germ agree throughout an open convex domain |
 | `NLS.ComplexAnalysis.GlueHolomorphicCharts` | Gluing functions that agree on overlaps, exact local chart representation, and holomorphy on the open union |
 | `NLS.ZakharovShabat.SourcePsiComplexChartCompatibility` | Banach-valued real-form identity for actual selected psi equations, equality on convex and joint-ball overlaps, and equality of actual root derivatives |
-| `NLS.ZakharovShabat.SourcePsiGluedEquation` | Analytic glued psi equations with actual contour coordinates, one convex neighborhood of the full gap product, and common bounds for the actual full/deleted root derivative inverses |
+| `NLS.ZakharovShabat.SourcePsiGluedEquation` | Analytic glued psi equations with actual contour coordinates, one convex neighborhood of the full gap product, a common equation norm bound from a finite subcover, and common bounds for the actual full/deleted root derivative inverses |
 | `NLS.SequenceSpaces.NearbyInverse` | Actual two-sided bounded inverse existence from Neumann smallness, the factor-two norm bound, and recovery of a deleted block inverse from its full extension inverse |
 | `NLS.ZakharovShabat.SourcePsiGapProductConvex` | Real convexity of the full product of displaced periodic gap segments |
 | `NLS.ZakharovShabat.SourcePsiJacobianSourceVariation` | Joint root/source Lipschitz control of actual full Jacobians from bounded holomorphic charts and a common escaping-index chart radius |

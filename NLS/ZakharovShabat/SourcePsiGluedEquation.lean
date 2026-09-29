@@ -10,7 +10,8 @@ Joint ball charts at one real source agree on overlaps, even when
 their root centers and contour families differ. They therefore define
 one equation for each deleted index. Its scalar contour formulas give
 Banach analyticity on the common canonical-root source domain. The
-actual partial derivatives retain both full and deleted inverse bounds
+equations share one norm bound, and their actual partial derivatives
+retain both full and deleted inverse bounds
 on a single convex full-space neighborhood of the entire gap product.
 -/
 
@@ -30,6 +31,7 @@ theorem exists_sourcePsi_gluedEquation_neighborhood
         (∀ t ∈ U, ∀ n, (Coeff.deleteCoordinateTo n t.1,t.2) ∈ V n) ∧
       ∃ F : (n : ℤ) → DeletedCoeff p n × CoeffPair p → DeletedCoeff p n,
         (∀ n, AnalyticOnNhd ℂ (F n) (V n)) ∧
+      ∃ C : ℝ, 0 ≤ C ∧ (∀ n, ∀ q ∈ V n, ‖F n q‖ ≤ C) ∧
       ∃ M : ℝ, 0 ≤ M ∧ ∀ n, ∀ q ∈ V n,
         (∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
           sourcePsiRealCenteredContourFamily hp hp1 q.2 c R ∧
@@ -47,6 +49,25 @@ theorem exists_sourcePsi_gluedEquation_neighborhood
   classical
   obtain ⟨M,hM,hlocal⟩ := exists_uniform_local_sourcePsi_complexJacobian_inverses hp hp1 φ hφ
   choose c R hfamily δ L hδ hL hcharts using hlocal
+  let K : Set (Coeff p × CoeffPair p) := sourcePeriodicGapRootSet hp hp1 φ ×ˢ {φ}
+  have hK : IsCompact K := (isCompact_sourcePeriodicGapRootSet hp hp1 φ).prod
+    (isCompact_singleton : IsCompact {φ})
+  have hcover : K ⊆ ⋃ a : sourcePeriodicGapRootSet hp hp1 φ, ball (a.val,φ) (δ a) := by
+    rintro ⟨a,ψ⟩ ⟨ha,hψ⟩
+    have hψφ : ψ = φ := mem_singleton_iff.mp hψ
+    subst ψ
+    exact mem_iUnion.mpr ⟨⟨a,ha⟩,mem_ball_self (hδ ⟨a,ha⟩)⟩
+  obtain ⟨s,hscover⟩ := hK.elim_finite_subcover
+    (fun a : sourcePeriodicGapRootSet hp hp1 φ => ball (a.val,φ) (δ a))
+    (fun _ => isOpen_ball) hcover
+  have hfullcover : K ⊆ ⋃ a : s, ball (a.val.val,φ) (δ a.val) := by
+    intro q hq
+    obtain ⟨a,ha⟩ := mem_iUnion.mp (hscover hq)
+    obtain ⟨has,hqa⟩ := mem_iUnion.mp ha
+    exact mem_iUnion.mpr ⟨⟨a,has⟩,hqa⟩
+  let C : ℝ := ∑ a ∈ s, L a
+  have hC : 0 ≤ C := Finset.sum_nonneg (fun a _ => hL a)
+  have hCa (a : s) : L a.val ≤ C := Finset.single_le_sum (fun b _ => hL b) a.property
   obtain ⟨W,hWopen,hWconnected,hrealW,hdata⟩ :=
     exists_global_sourcePsiContourIntegrand_jointAnalytic hp hp1
   let B : (n : ℤ) → sourcePeriodicGapRootSet hp hp1 φ → Set (DeletedCoeff p n × CoeffPair p) :=
@@ -59,23 +80,31 @@ theorem exists_sourcePsi_gluedEquation_neighborhood
     sourcePsiSelectedEquationSequence_eqOn_ball_charts hp hp1 n
       (Coeff.deleteCoordinateTo n a.val) (Coeff.deleteCoordinateTo n b.val) φ hφ (δ a) (δ b)
       (c a n) (c b n) (R a n) (R b n)
-      (hcharts a n).1.2.2.2 (hcharts b n).1.2.2.2 (hcharts a n).1.1 (hcharts b n).1.1
+      (hcharts a n).1.2.2.2.1 (hcharts b n).1.2.2.2.1 (hcharts a n).1.1 (hcharts b n).1.1
   let G : (n : ℤ) → DeletedCoeff p n × CoeffPair p → DeletedCoeff p n :=
     fun n => NLS.ComplexAnalysis.glueHolomorphicCharts (B n) (f n)
   let V : (n : ℤ) → Set (DeletedCoeff p n × CoeffPair p) :=
-    fun n => (⋃ a, B n a) ∩ {q | q.2 ∈ W}
+    fun n => (⋃ a : s, B n a.val) ∩ {q | q.2 ∈ W}
   have hVopen (n : ℤ) : IsOpen (V n) :=
     (isOpen_iUnion (fun a => isOpen_ball)).inter (hWopen.preimage continuous_snd)
   have hGlocal (n : ℤ) (a : sourcePeriodicGapRootSet hp hp1 φ) : EqOn (G n) (f n a) (B n a) :=
     NLS.ComplexAnalysis.glueHolomorphicCharts_eq_on (B n) (f n) (hcompat n) a
+  have hVsub (n : ℤ) : V n ⊆ ⋃ a, B n a := by
+    intro q hq
+    obtain ⟨a,ha⟩ := mem_iUnion.mp hq.1
+    exact mem_iUnion.mpr ⟨a.val,ha⟩
   have hGdiff (n : ℤ) : DifferentiableOn ℂ (G n) (V n) :=
     (NLS.ComplexAnalysis.differentiableOn_glueHolomorphicCharts (B n) (f n)
-      (fun a => isOpen_ball) (hcompat n) (fun a => (hcharts a n).1.1)).mono inter_subset_left
+      (fun a => isOpen_ball) (hcompat n) (fun a => (hcharts a n).1.1)).mono (hVsub n)
+  have hGbound (n : ℤ) (q : DeletedCoeff p n × CoeffPair p) (hq : q ∈ V n) : ‖G n q‖ ≤ C := by
+    obtain ⟨a,ha⟩ := mem_iUnion.mp hq.1
+    rw [hGlocal n a.val ha]
+    exact ((hcharts a.val n).1.2.2.2.2 q ha).trans (hCa a)
   have hGanalytic (n : ℤ) : AnalyticOnNhd ℂ (G n) (V n) := by
     have hscalar (m : ℤ) : AnalyticOnNhd ℂ (fun q => (G n q : Coeff p) m) (V n) := by
       intro q hq
       obtain ⟨a,ha⟩ := mem_iUnion.mp hq.1
-      have hgeom := (hcharts a n).1.2.2.2 q ha
+      have hgeom := (hcharts a n).1.2.2.2.1 q ha
       have hraw := analyticAt_sourcePsiEquationCoordinate_of_contour_domain hp hp1 n m
         (q.1 : Coeff p) q.2 (c a n m) (R a n m) (hgeom.2 m).1.le W hq.2
           (hdata n).1 (hdata n).2 (hgeom.2 m).2.2.2
@@ -102,28 +131,25 @@ theorem exists_sourcePsi_gluedEquation_neighborhood
     apply Subtype.ext
     exact (Coeff.deleteCoordinate_eq_self_iff n (G n q : Coeff p)).2 (G n q).property
   let U : Set (Coeff p × CoeffPair p) :=
-    (⋃ a : sourcePeriodicGapRootSet hp hp1 φ, ball (a.val,φ) (δ a)) ∩ {t | t.2 ∈ W}
+    (⋃ a : s, ball (a.val.val,φ) (δ a.val)) ∩ {t | t.2 ∈ W}
   have hUopen : IsOpen U :=
     (isOpen_iUnion (fun a => isOpen_ball)).inter (hWopen.preimage continuous_snd)
   have hbase : sourcePeriodicGapRootSet hp hp1 φ ×ˢ {φ} ⊆ U := by
     rintro ⟨a,ψ⟩ ⟨ha,hψ⟩
     have hψφ : ψ = φ := mem_singleton_iff.mp hψ
     subst ψ
-    exact ⟨mem_iUnion.mpr ⟨⟨a,ha⟩,mem_ball_self (hδ ⟨a,ha⟩)⟩,hrealW hφ⟩
+    exact ⟨hfullcover ⟨ha,mem_singleton φ⟩,hrealW hφ⟩
   have hprojection : ∀ t ∈ U, ∀ n, (Coeff.deleteCoordinateTo n t.1,t.2) ∈ V n := by
     intro t ht n
     obtain ⟨a,ha⟩ := mem_iUnion.mp ht.1
     refine ⟨mem_iUnion.mpr ⟨a,?_⟩,ht.2⟩
-    have hproj : ‖Coeff.deleteCoordinateTo n t.1-Coeff.deleteCoordinateTo n a.val‖ ≤ ‖t.1-a.val‖ := by
+    have hproj : ‖Coeff.deleteCoordinateTo n t.1-Coeff.deleteCoordinateTo n a.val.val‖ ≤ ‖t.1-a.val.val‖ := by
       rw [← map_sub]
       simpa only [one_mul] using (Coeff.deleteCoordinateTo (p := p) n).le_of_opNorm_le
-        (Coeff.norm_deleteCoordinateTo_le_one n) (t.1-a.val)
+        (Coeff.norm_deleteCoordinateTo_le_one n) (t.1-a.val.val)
     rw [mem_ball,Prod.dist_eq]
     rw [mem_ball,Prod.dist_eq] at ha
     exact (max_le_max (by simpa only [dist_eq_norm] using hproj) le_rfl).trans_lt ha
-  let K : Set (Coeff p × CoeffPair p) := sourcePeriodicGapRootSet hp hp1 φ ×ˢ {φ}
-  have hK : IsCompact K := (isCompact_sourcePeriodicGapRootSet hp hp1 φ).prod
-    (isCompact_singleton : IsCompact {φ})
   obtain ⟨ε,hε,htube⟩ := hK.exists_cthickening_subset_open hUopen hbase
   let U' := K + ball (0 : Coeff p × CoeffPair p) ε
   have hconvK : Convex ℝ K := (convex_sourcePeriodicGapRootSet hp hp1 φ).prod (convex_singleton φ)
@@ -138,7 +164,7 @@ theorem exists_sourcePsi_gluedEquation_neighborhood
     rw [dist_eq_norm,add_sub_cancel_left]
     exact le_of_lt (by simpa only [mem_ball,dist_zero_right] using hz)
   refine ⟨U',isOpen_ball.add_left,hconvK.add (convex_ball 0 ε),hbase',V,hVopen,
-    (fun t ht => hprojection t (hU'subset ht)),G,hGanalytic,M,hM,?_⟩
+    (fun t ht => hprojection t (hU'subset ht)),G,hGanalytic,C,hC,hGbound,M,hM,?_⟩
   intro n q hq
   obtain ⟨a,ha⟩ := mem_iUnion.mp hq.1
   have hnear : G n =ᶠ[𝓝 q] f n a :=
@@ -152,7 +178,7 @@ theorem exists_sourcePsi_gluedEquation_neighborhood
   obtain ⟨S,hQS,hSQ,hS⟩ := (hcharts a n).2 q ha
   obtain ⟨Sd,hQSd,hSdQ,hSd⟩ := Coeff.exists_deleted_inverse_of_extension_inverse n
     (sourcePsiSelectedRootJacobian hp hp1 n (c a n) (R a n) q.1 q.2) S hQS hSQ
-  refine ⟨⟨c a n,R a n,(hcharts a n).1.2.2.2 q ha,?_⟩,?_,?_⟩
+  refine ⟨⟨c a n,R a n,(hcharts a n).1.2.2.2.1 q ha,?_⟩,?_,?_⟩
   · intro m
     rw [hGlocal n a ha]
     exact (hcharts a n).1.2.1 q ha m

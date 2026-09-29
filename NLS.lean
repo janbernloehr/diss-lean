@@ -1130,6 +1130,8 @@ import NLS.ComplexAnalysis.ConvexHolomorphicIdentity
 import NLS.ComplexAnalysis.GlueHolomorphicCharts
 import NLS.ZakharovShabat.SourcePsiComplexChartCompatibility
 import NLS.ZakharovShabat.SourcePsiGluedEquation
+import NLS.ZakharovShabat.SourcePsiUniformEquationTube
+import NLS.ZakharovShabat.SourcePsiUniformEquationEstimates
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

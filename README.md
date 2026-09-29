@@ -4167,5 +4167,20 @@ formulas. One convex full-space neighborhood of the entire gap product
 at the fixed real source projects into every equation domain. The
 actual root derivatives of the glued equations retain full and deleted
 two-sided inverses with one norm bound independent of the point and
-index. The next Lemma 12.10 step constructs and continues their complex
-zero branches on a common source domain.
+index. The chart control also retains equation norm bounds. A finite
+subcover of the compact gap product gives one such bound across all
+glued domains and every deleted index.
+`SourcePsiUniformEquationTube.lean` fills the omitted coordinate of
+each canonical solution with its periodic midpoint. Lifting nearby
+deleted inputs to full root inputs allows compact thickening to give
+one joint analytic radius around all canonical solution centers.
+The glued equations have common equation and root inverse norm bounds
+throughout these balls. Real contour comparison identifies every
+canonical real solution as an actual zero of its glued equation.
+`SourcePsiUniformEquationEstimates.lean` proves the joint derivative
+bound `2C/r`, joint and root derivative Lipschitz bound `4C/r²`, and
+source residual bound `2C/r` on the inner balls. Actual root derivative
+bijectivity holds throughout the outer balls. These estimates and the
+radius are independent of the deleted index and supply the quantitative
+inputs for the next implicit-function step. Construction and continuation
+of the complex zero branches on a common source domain remain open.

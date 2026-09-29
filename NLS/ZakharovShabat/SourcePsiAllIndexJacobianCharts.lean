@@ -6,7 +6,7 @@ import NLS.ZakharovShabat.SourcePsiJacobianSourceVariation
 The common escaping-index chart controls the tail. Bounded analytic
 charts at each remaining index supply finitely many radii and constants.
 Their minimum radius and maximum bound give joint analytic charts and
-Jacobian Lipschitz estimates for every index on one neighborhood of a
+equation norm bounds and Jacobian Lipschitz estimates for every index on one neighborhood of a
 fixed full root vector and real-type potential.
 -/
 
@@ -27,18 +27,20 @@ theorem exists_local_sourcePsi_fullJacobian_jointLipschitz
     exists_local_sourcePsi_globalEquation_formula_analytic hp hp1 φ hφ n a
   obtain ⟨δ,hδ,hball⟩ := Metric.isOpen_iff.mp hUopen (a,φ) hbase
   let r := δ/4
-  let L := 4*C/r^2
+  let L := max C (4*C/r^2)
   have hr : 0 < r := by dsimp [r]; positivity
-  have hL : 0 ≤ L := by dsimp [L]; positivity
+  have hL : 0 ≤ L := le_max_of_le_left hC
   have hfour : 4*r = δ := by dsimp [r]; ring
   have hsmall : r ≤ δ := by dsimp [r]; linarith
   have hinner : ball (a,φ) r ⊆ U := (ball_subset_ball hsmall).trans hball
   refine ⟨c,R,⟨hcenter,fun m => hgeom (a,φ) hbase m⟩,r,L,hr,hL,
     hdiff.mono hinner,(fun t ht m => hcoord t (hinner ht) m),?_,
-    (fun t ht => ⟨hcenter,fun m => hgeom t (hinner ht) m⟩)⟩
+    (fun t ht => ⟨hcenter,fun m => hgeom t (hinner ht) m⟩),
+    (fun t ht => (hbound t (hinner ht)).trans (le_max_left _ _))⟩
   intro t ht u hu
-  apply norm_sourcePsiFullRootJacobian_sub_le_of_joint_ball_bound hp hp1 n c R (a,φ) r C hr
-    ?_ ?_ ht hu
+  apply (norm_sourcePsiFullRootJacobian_sub_le_of_joint_ball_bound hp hp1 n c R (a,φ) r C hr
+    ?_ ?_ ht hu).trans
+      (mul_le_mul_of_nonneg_right (le_max_right _ _) (norm_nonneg _))
   · rw [hfour]
     exact hdiff.mono hball
   · rw [hfour]

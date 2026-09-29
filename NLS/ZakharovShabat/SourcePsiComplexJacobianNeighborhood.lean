@@ -88,7 +88,7 @@ theorem exists_sourcePsi_complexJacobian_neighborhood
     (sourcePsiSelectedRootJacobian hp hp1 n (c a n) (R a n) q.1 q.2) S hQS hSQ
   exact ⟨c a n,R a n,hfamily a n,
     ⟨ball (Coeff.deleteCoordinateTo n a.val,φ) (δ a),isOpen_ball,hq,
-      hcontrol.1,hcontrol.2.1,hcontrol.2.2.2⟩,
+      hcontrol.1,hcontrol.2.1,hcontrol.2.2.2.1⟩,
     ⟨S,hQS,hSQ,hS⟩,Sd,hQSd,hSdQ,hSd.trans hS⟩
 
 /-- One positive radius works at every gap-root center and every
