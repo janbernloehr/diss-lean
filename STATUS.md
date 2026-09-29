@@ -1,28 +1,28 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: pointwise bijectivity of the actual limit operator
+## Current Lemma 12.10 milestone: a common limit inverse bound on the full gap product
 
-For every fixed real-type potential and full gap-contained root vector
-at finite `p>1`, the actual operator-norm limit `Q*` is now bijective on
-the full complex `ℓᵖ` space. The norm convergence, contour entries,
-real centers, and compact correction to `2I` all use the same operator
-and contour family.
-`SourcePsiFullProductResolventExterior.lean` proves the complete
-root-resolvent formula for every direction, including the restored
-coordinate. A shared bound for ratios of full root products yields
-exterior decay of the interpolation quotient.
-`SourcePsiFullProductInterpolation.lean` uses expanding circles and
-simple spectral zeros to show that a full variation with a zero in
-every real periodic gap vanishes identically. Root coefficient recovery
-then proves the direction is zero. This eliminates every real kernel
-direction of the actual limit operator.
-`SourcePsiLimitBijective.lean` proves that its contour matrix entries
-are real. Full-space conjugation and real/imaginary decomposition
-therefore give complex injectivity, and the Fredholm alternative gives
-bijectivity. This closes the pointwise limit-operator kernel argument.
-Locally uniform convergence over varying roots and potentials, uniform
-inverse bounds, and the common complex extension neighborhood remain
-open in Lemma 12.10.
+For every fixed real-type potential at finite `p>1`, one constant now
+bounds the actual `Q*` inverse over all full gap-contained root vectors.
+The operator is defined intrinsically on the compact full gap product:
+its contour entries agree across all valid real-centered contour
+families, density gives uniqueness, and it retains the actual fixed-root
+operator-norm limit and compact correction to `2I`.
+`SourcePsiCommonJacobianRootVariation.lean` obtains one eventual local
+Lipschitz estimate for the full Jacobians at all escaping deleted
+indices from their common bounded holomorphic equation charts. Nearby
+gap-root vectors have the actual scalar matrix-entry limits on those
+same contours.
+`MatrixLimitNormBound.lean` passes the original operator norm bound
+through basis-entry limits. Applied to operator differences, this
+proves local Lipschitz dependence and hence operator-norm continuity
+of the intrinsic `Q*` on the gap product. Its previously established
+pointwise bijectivity defines a genuine bounded inverse with both
+inverse identities. Compactness then gives the common inverse bound
+without an assumed limit-family continuity or inverse-family bound.
+Uniform operator-norm convergence of the finite-index Jacobians over
+varying roots and potentials, uniform bounds for their inverses, and
+the common complex extension neighborhood remain open in Lemma 12.10.
 
 ## Implemented and checked
 
@@ -32,6 +32,10 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.MatrixLimitNormBound` | Passing an eventual operator norm bound to an already bounded limit from convergence of scalar basis entries |
+| `NLS.ZakharovShabat.SourcePsiGapLimitOperator` | Real-centered contour independence, a unique intrinsic bijective `Q*` on the full gap product, and retention of its actual norm limit and compact correction |
+| `NLS.ZakharovShabat.SourcePsiCommonJacobianRootVariation` | Common eventual root Lipschitz bounds for the actual full Jacobians and scalar entry limits at every nearby gap-root vector on the same contours |
+| `NLS.ZakharovShabat.SourcePsiGapLimitInverseBound` | Actual operator-norm local Lipschitz dependence and continuity of `Q*`, both bounded-inverse identities, and a common inverse norm bound on the full compact gap product at each fixed real-type potential |
 | `NLS.SequenceSpaces.RealImag` | Real and imaginary components of full complex `ℓᵖ` sequences and their exact reconstruction |
 | `NLS.SequenceSpaces.RealOperator` | Conjugation symmetry from real full-space matrix entries, preservation of real/imaginary kernel components, and complex injectivity from real-kernel uniqueness |
 | `NLS.ZakharovShabat.SingleSpectralProductRatioExterior` | Shared uniform exterior bound for ratios of two complete displaced spectral products |

@@ -4049,9 +4049,10 @@ The strengthened common-contour norm-limit theorem now proves that
 the same `Q*` differs from `2I` by a compact operator. The Fredholm
 alternative reduces its bijectivity to injectivity. The full-product
 interpolation and conjugation results below now close that pointwise
-kernel argument. Locally uniform convergence over varying roots and
-potentials, uniform inverse bounds, and the common complex extension
-remain open.
+kernel argument. Uniform convergence over varying roots and potentials,
+uniform inverse bounds for the finite-index Jacobians, and the common
+complex extension remain open. The limit operator's continuity and
+common inverse bound on the gap product are established below.
 `SourcePsiFullProductVariation.lean` supplies the entire variation of
 the undeleted root product. At a simple root it recovers the direction's
 corresponding coefficient; indexed real-gap placement makes the roots
@@ -4088,3 +4089,21 @@ then gives pointwise bijectivity for every fixed real-type potential
 and full gap-contained root vector at finite `p>1`. The entries,
 operator-norm convergence, compactness, and bijectivity all concern
 the same operator and real-centered contour family.
+`SourcePsiGapLimitOperator.lean` identifies each scalar entry as twice
+the normalized psi contour and proves independence of every valid
+real-centered contour choice. Density gives one intrinsic bijective
+limit operator on the full gap product; it retains the actual fixed-root
+operator-norm limit and compact correction to `2I`.
+`SourcePsiCommonJacobianRootVariation.lean` obtains an eventual local
+root Lipschitz bound for all escaping full Jacobians from the common
+bounded holomorphic charts. The same contours give the scalar limit
+entries at every nearby gap-root vector.
+`MatrixLimitNormBound.lean` passes the original norm bound through
+scalar basis-entry limits. This transfers the Lipschitz estimate to
+the actual intrinsic `Q*` family and proves its operator-norm
+continuity. `SourcePsiGapLimitInverseBound.lean` defines its bounded
+inverse, proves both inverse identities, and uses compactness of the
+full gap product to obtain one inverse norm bound over all root vectors
+at each fixed real-type potential. Uniform control of the finite-index
+Jacobians and their inverses over varying roots and potentials is the
+next step in Lemma 12.10.
