@@ -4009,6 +4009,19 @@ Jacobians, proving `Dⁿ → D*` in operator norm at every fixed gap-contained
 root vector. The common `Q*` construction retains its free-tail contour
 choices and scalar-entry identities, so the diagonal limit and the
 off-diagonal high/high tail estimate hold on the same contour family.
-The mixed off-diagonal blocks with finitely many input or output
-frequencies still need uniform tail estimates to complete full
-operator-norm convergence in Lemma 12.10.
+`SourcePsiJacobianAllColumnTail.lean` applies the Schwarz lemma to the
+refined equation coordinate bound along distinct input-coordinate
+lines. It produces one fixed `ℓᵖ` majorant for distant output entries
+of every off-diagonal column, including the finite head input columns.
+`OperatorColumnConvergence.lean` upgrades scalar entry limits to full
+column norm limits by dominated convergence, proves operator-norm
+convergence after every finite input projection, and extends column
+limits to strong convergence on all inputs using uniform boundedness
+and density. It also gives eventual uniform output cutoffs for every
+fixed finite input block.
+`SourcePsiJacobianColumnNormLimit.lean` packages these conclusions for
+the actual common-contour full psi Jacobians and the contour-limit
+operator `Q*`. This controls the high-output, finite-input mixed block.
+The finite-output, high-input mixed block still needs a uniform tail
+estimate to complete full operator-norm convergence in Lemma 12.10;
+invertibility of the nonfree limit also remains open.

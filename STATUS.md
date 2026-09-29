@@ -1,28 +1,34 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: diagonal norm convergence
+## Current Lemma 12.10 milestone: column norm limits and finite input blocks
 
-`SourcePsiJacobianDiagonalNormLimit.lean` proves that the diagonal
-multipliers of the escaping full psi Jacobians converge to the diagonal
-of `Q*` in operator norm at every fixed gap-contained root vector.
-The key new estimate controls quotient variation uniformly over all
-selected discs using the Schwarz lemma. It yields a fixed quotient
-majorant plus a scalar deletion error tending to zero; the fixed
-spectral tails then make the diagonal corrections uniformly small.
-`OperatorDiagonalConvergence.lean` assembles the diagonal coordinate
-limits and uniform tails into norm convergence. The common `Q*`
-theorem now packages this result together with the previously proved
-uniformly small off-diagonal high/high blocks on the same contours.
-The mixed off-diagonal block estimates, full operator-norm convergence,
-and invertibility of the nonfree limit remain open.
+`SourcePsiJacobianAllColumnTail.lean` derives one fixed `ℓᵖ` output
+majorant for every off-diagonal column, including the finite head input
+columns. It applies the Schwarz lemma to the refined equation bound:
+varying a distinct input coordinate preserves the output displacement.
+`OperatorColumnConvergence.lean` uses dominated convergence to obtain
+complete-column norm limits, finite sums of rank-one maps to obtain
+operator-norm limits on finite input blocks, and density plus uniform
+boundedness to extend strong convergence to every input vector.
+`SourcePsiJacobianColumnNormLimit.lean` applies these results to the
+actual common-contour psi Jacobians and `Q*`, and supplies eventual
+uniform output cutoffs for every finite input block.
+The diagonal norm limit and the off-diagonal high/high tail estimates
+were already proved. The finite-output, high-input mixed block,
+full operator-norm convergence, and invertibility of the nonfree limit
+remain open.
 
 ## Implemented and checked
 
-The library has 817 modules and 5119 named public theorems. All compile on the
-pinned Lean/mathlib v4.33.1 toolchain.
+The full library builds on the pinned Lean/mathlib v4.33.1 toolchain.
+`scripts/check.sh` also checks the examples and audits every `NLS`
+declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OperatorColumnConvergence` | Complete-column norm limits from summable tail domination, finite-input operator-norm convergence, strong convergence by density, and eventual uniform output cutoffs |
+| `NLS.ZakharovShabat.SourcePsiJacobianAllColumnTail` | One fixed summable output majorant for all off-diagonal psi Jacobian columns, including finite head inputs and deleted rows/columns |
+| `NLS.ZakharovShabat.SourcePsiJacobianColumnNormLimit` | Strong convergence of the actual common-contour psi Jacobians to `Q*`, finite-input operator-norm limits, and uniform high-output mixed-block tails |
 | `NLS.ZakharovShabat.ClassicalAuxiliaryCharacteristics` | Actual auxiliary monodromy characteristics, endpoint zero criteria, joint analyticity, free sine values, corrected anti-discriminant difference, and exact printed-label comparison |
 | `NLS.ZakharovShabat.ClassicalPhaseMonodromy` | Exact phase conjugation of classical solutions and monodromy, discriminant invariance, auxiliary-to-ordinary characteristic equality, and rotated Neumann-minus-Dirichlet anti-discriminant identity |
 | `NLS.ZakharovShabat.ClassicalAuxiliarySpectralBridge` | Actual physical and coefficient auxiliary spectral zero criteria for classical monodromy characteristics, a.e.-representative invariance, exact finite source Neumann Fourier realization, and equality of classical and normalized starred finite-source zero sets |
