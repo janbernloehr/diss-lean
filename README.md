@@ -4052,7 +4052,8 @@ interpolation and conjugation results below now close that pointwise
 kernel argument. Uniform convergence over the full gap product and
 common inverse bounds for every finite-index Jacobian at a fixed
 real-type potential are established below. Uniform control over nearby
-complex potentials and the common complex extension remain open.
+complex potentials is established on local charts below. Their
+compatibility and the common complex zero branches remain open.
 `SourcePsiFullProductVariation.lean` supplies the entire variation of
 the undeleted root product. At a simple root it recovers the direction's
 corresponding coefficient; indexed real-gap placement makes the roots
@@ -4124,5 +4125,30 @@ inverses and proves both inverse identities. Uniform comparison to
 the finitely many remaining indices. One constant bounds the full
 inverses for every signed index and every gap-root vector at the fixed
 real-type potential. The same bound holds for genuine two-sided
-inverses of the original deleted blocks. The next Lemma 12.10 step
-extends this control to a common neighborhood of complex potentials.
+inverses of the original deleted blocks.
+`SourcePsiJacobianSourceVariation.lean` passes the joint holomorphic
+derivative estimate to the actual root Jacobians and their full
+extensions. Both restrictions contract operator differences, so one
+Lipschitz bound controls nearby complex potentials and roots on all
+escaping-index charts. `SourcePsiAllIndexJacobianCharts.lean` combines
+these with the finite remaining charts to obtain one joint radius and
+constant for every index at each full root vector and real-type source.
+`NearbyInverse.lean` proves actual two-sided inverse existence from
+Neumann smallness and bounds its norm by twice the original inverse
+norm. It also recovers the deleted block inverse from a full extension
+inverse without increasing the norm.
+`SourcePsiComplexJacobianInverseBound.lean` applies these estimates on
+joint complex chart balls near every gap-root center. One inverse norm
+bound works for all centers and indices, and the selected equations
+retain their actual scalar contour formulas throughout each holomorphic
+chart. Complex invertibility is a conclusion of the perturbation proof.
+`SourcePsiComplexJacobianNeighborhood.lean` assembles a common open
+neighborhood of the entire gap product at the fixed real-type source.
+Compactness gives one positive tube radius. Real convexity of the gap
+product, proved in `SourcePsiGapProductConvex.lean`, gives a convex
+choice of neighborhood by adding a small open ball. At every point and
+every deleted index there is a holomorphic selected contour chart with
+actual full and deleted two-sided inverses bounded by one constant.
+The contour charts can depend on the point and index. The next Lemma
+12.10 steps establish their compatibility and glue the complex zero
+branches on a common source domain.

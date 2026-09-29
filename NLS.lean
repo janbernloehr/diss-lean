@@ -1095,6 +1095,7 @@ import NLS.SequenceSpaces.BoundedMatrixLimit
 import NLS.SequenceSpaces.BoundedMatrixLimitPointwise
 import NLS.SequenceSpaces.MatrixLimitNormBound
 import NLS.SequenceSpaces.CompactEquicontinuousLimit
+import NLS.SequenceSpaces.NearbyInverse
 import NLS.ZakharovShabat.SourcePsiGapProductCompact
 import NLS.ZakharovShabat.SourcePsiLimitScalarJacobianEntry
 import NLS.ZakharovShabat.SourcePsiCommonJacobianCharts
@@ -1120,6 +1121,11 @@ import NLS.ZakharovShabat.SourcePsiJacobianContourIndependence
 import NLS.ZakharovShabat.SourcePsiJacobianGapUniformLimit
 import NLS.ZakharovShabat.SourcePsiJacobianGapOperator
 import NLS.ZakharovShabat.SourcePsiJacobianGapInverseBound
+import NLS.ZakharovShabat.SourcePsiGapProductConvex
+import NLS.ZakharovShabat.SourcePsiJacobianSourceVariation
+import NLS.ZakharovShabat.SourcePsiAllIndexJacobianCharts
+import NLS.ZakharovShabat.SourcePsiComplexJacobianInverseBound
+import NLS.ZakharovShabat.SourcePsiComplexJacobianNeighborhood
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

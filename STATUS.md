@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: uniform Jacobian limits and all-index inverse bounds
+## Current Lemma 12.10 milestone: common inverse bounds on a convex complex neighborhood
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -37,8 +37,33 @@ Jacobian inverses for every signed index and every gap-root vector.
 The same constant bounds genuine two-sided inverses of the original
 deleted blocks. All these statements hold at each fixed real-type
 potential for finite `p>1`, on every valid real-centered contour family.
-Uniform control over nearby complex potentials and the common complex
-extension neighborhood remain open in Lemma 12.10.
+`SourcePsiJacobianSourceVariation.lean` now controls joint root and
+source variation from bounded holomorphic charts. Restriction of the
+joint derivative to the root variable and extension to the full space
+do not increase the norm of operator differences. The common tail
+charts therefore give one joint Lipschitz estimate, allowing arbitrary
+nearby complex potentials as well as nearby roots.
+`SourcePsiAllIndexJacobianCharts.lean` handles the finitely many
+remaining indices and obtains one joint radius and constant for all
+indices at each full root vector and real-type source.
+`NearbyInverse.lean` proves actual existence of a two-sided inverse
+from the Neumann smallness condition, with the quantitative factor-two
+norm bound. A full extension inverse also supplies a two-sided deleted
+block inverse with no larger norm.
+`SourcePsiComplexJacobianInverseBound.lean` applies this construction
+near every gap-root center. Its bound is independent of both the center
+and the deleted index; complex invertibility is proved rather than
+assumed. The selected equations retain their actual contour coordinates
+and holomorphy on each joint chart ball.
+`SourcePsiComplexJacobianNeighborhood.lean` assembles one open
+neighborhood of the whole gap product at the fixed source. Compactness
+gives one positive tube radius, and real convexity of the gap product
+allows the neighborhood to be chosen convex. Every point and every
+index has a holomorphic selected contour chart with actual full and
+deleted two-sided Jacobian inverses sharing one norm bound.
+Contour charts may depend on the point and index. Their compatibility,
+gluing, and construction of the complex zero branches on a common
+source domain remain open in Lemma 12.10.
 
 ## Implemented and checked
 
@@ -48,6 +73,12 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.NearbyInverse` | Actual two-sided bounded inverse existence from Neumann smallness, the factor-two norm bound, and recovery of a deleted block inverse from its full extension inverse |
+| `NLS.ZakharovShabat.SourcePsiGapProductConvex` | Real convexity of the full product of displaced periodic gap segments |
+| `NLS.ZakharovShabat.SourcePsiJacobianSourceVariation` | Joint root/source Lipschitz control of actual full Jacobians from bounded holomorphic charts and a common escaping-index chart radius |
+| `NLS.ZakharovShabat.SourcePsiAllIndexJacobianCharts` | One joint holomorphic chart radius and Jacobian Lipschitz constant for every deleted index at each fixed full root vector and real-type source |
+| `NLS.ZakharovShabat.SourcePsiComplexJacobianInverseBound` | Actual full two-sided inverses on joint complex chart balls, with one norm bound independent of all gap-root centers and deleted indices |
+| `NLS.ZakharovShabat.SourcePsiComplexJacobianNeighborhood` | One open and convex complex neighborhood of the full gap product, a positive common tube radius, and actual full/deleted inverse bounds on holomorphic contour charts at every point and index |
 | `NLS.SequenceSpaces.CompactEquicontinuousLimit` | Uniform convergence on a compact metric parameter space from pointwise limits, a continuous limit, and eventual local Lipschitz estimates |
 | `NLS.ZakharovShabat.SourcePsiJacobianContourIndependence` | Contour independence of the actual selected equations and finite root Jacobians, and their pointwise norm limits on every valid real-centered family |
 | `NLS.ZakharovShabat.SourcePsiJacobianGapUniformLimit` | Uniform operator-norm convergence of the actual finite Jacobians over the full compact gap product, with a single absolute-index cutoff for each tolerance |
