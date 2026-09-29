@@ -1,22 +1,28 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: compact limit and Fredholm reduction
+## Current Lemma 12.10 milestone: full variation and directional limit contours
 
-`CompactOperatorTail.lean` proves compactness from arbitrarily small
-high/high blocks: the finite output rows and finite input columns give
-a finite-rank approximation. Reciprocal tail-entry bounds therefore
-make the off-diagonal remainder of a bounded full-space operator compact.
-Uniform diagonal tails pass through coordinate limits and make the
-limit's diagonal correction to a constant identity compact as well.
-`SourcePsiJacobianNormLimit.lean` now proves, on the same contour family
-and for the same `Q*` as its fixed-root operator-norm limit, that `Q*-2I`
-is compact. The Fredholm alternative proves that this actual limit
-operator is bijective if it is injective. The original norm-limit
-theorem remains available with its previous statement.
-The remaining analytic step for pointwise invertibility is proving the
-nonfree limit's kernel is zero. Locally uniform convergence over varying
-roots and potentials, uniform inverse bounds, and the common complex
-extension neighborhood remain open.
+`SourcePsiFullProductVariation.lean` defines the root-direction variation
+of the undeleted single-root product and proves it is entire. Restoring
+one factor relates it to the existing deleted numerator variation; at
+each root its value is the negative of that coefficient times the
+spectral derivative. A basis direction gives exactly the negative
+deleted numerator. Indexed real-gap placement makes all these roots
+distinct, so an identically zero full variation forces the direction
+to vanish, including at collapsed gaps.
+`SourcePsiFullProductContourVariation.lean` proves differentiation under
+the contour integral with the exact sign and `1/π` normalization.
+`SourcePsiLimitOperatorContour.lean` identifies each matrix entry with
+this continuous contour derivative and extends the formula by Fourier
+truncation to every `ℓᵖ` direction. The actual fixed-root norm limit and
+its compact correction to `2I` share the same operator and contours in
+the strengthened existence theorem. Its kernel is exactly the
+directions with a zero full-variation contour around every gap.
+The next analytic step is obtaining full-variation gap zeros from these
+contours and proving interpolation uniqueness for the undeleted
+variation. Pointwise injectivity, locally uniform convergence over
+varying roots and potentials, uniform inverse bounds, and the common
+complex extension neighborhood remain open.
 
 ## Implemented and checked
 
@@ -26,6 +32,10 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OperatorBasisExt` | Unit Fourier vectors determine continuous linear maps on every finite Banach `ℓᵖ` space by norm-convergent truncation |
+| `NLS.ZakharovShabat.SourcePsiFullProductVariation` | Entire undeleted product variation, affine-line derivative, restored-factor identity, root coefficient recovery, and exact basis-direction formula |
+| `NLS.ZakharovShabat.SourcePsiFullProductContourVariation` | Full root-product contour differentiation and continuous directional functional with the limit operator's exact sign and `1/π` normalization |
+| `NLS.ZakharovShabat.SourcePsiLimitOperatorContour` | Root separation on the real gap product, complete directional formula for the actual norm-limit operator on the same contour family, and exact contour characterization of its kernel |
 | `NLS.SequenceSpaces.CompactOperatorTail` | Compactness from two-sided high/high tails, compact full-space off-diagonal remainders from reciprocal tail entries, and compact diagonal corrections from eventual uniform constant tails |
 | `NLS.SequenceSpaces.OperatorNormFromProjections` | Quantitative five-term operator-difference bound and full norm convergence from finite input/output limits, diagonal convergence, and common off-diagonal high/high tails |
 | `NLS.ZakharovShabat.SourcePsiJacobianNormLimit` | Full fixed-root operator-norm convergence to the actual contour-limit operator, compactness of its correction to `2I`, and bijectivity conditional on injectivity |

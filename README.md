@@ -4051,3 +4051,16 @@ alternative reduces its bijectivity to injectivity. Proving the nonfree
 kernel is zero, locally uniform convergence over varying roots and
 potentials, uniform inverse bounds, and the common complex extension
 remain open.
+`SourcePsiFullProductVariation.lean` supplies the entire variation of
+the undeleted root product. At a simple root it recovers the direction's
+corresponding coefficient; indexed real-gap placement makes the roots
+distinct even when gaps collapse. A basis variation is exactly the
+negative deleted psi numerator. Differentiating the full product
+contour gives a continuous linear functional with the required sign
+and `1/π` factor. `SourcePsiLimitOperatorContour.lean` extends the matrix
+entry identity to all `ℓᵖ` directions by density and retains the actual
+norm-limit operator and compact correction on the same contour family.
+The kernel is therefore precisely the directions with vanishing
+full-variation contours. Obtaining gap zeros from these contours and
+proving undeleted interpolation uniqueness are the next injectivity
+steps.
