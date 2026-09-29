@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: a common limit inverse bound on the full gap product
+## Current Lemma 12.10 milestone: uniform Jacobian limits and all-index inverse bounds
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -20,9 +20,25 @@ of the intrinsic `Q*` on the gap product. Its previously established
 pointwise bijectivity defines a genuine bounded inverse with both
 inverse identities. Compactness then gives the common inverse bound
 without an assumed limit-family continuity or inverse-family bound.
-Uniform operator-norm convergence of the finite-index Jacobians over
-varying roots and potentials, uniform bounds for their inverses, and
-the common complex extension neighborhood remain open in Lemma 12.10.
+The actual finite Jacobians now agree across valid real-centered
+contour families as well. This includes the selected sequence map's
+default-zero case, so equality holds as a function of every deleted
+root vector and passes to its actual derivative.
+`CompactEquicontinuousLimit.lean` upgrades pointwise convergence to
+uniform convergence on a compact parameter space from eventual local
+Lipschitz estimates. Applied on the full gap product, it gives uniform
+operator-norm convergence of the actual finite Jacobians to `Q*` as
+the deleted index escapes in either direction.
+Each finite Jacobian is continuous in operator norm and bijective
+on this product. Uniform comparison with `Q*` controls the inverse
+norms at all sufficiently distant indices; compactness controls each
+remaining index. One constant therefore bounds the actual full
+Jacobian inverses for every signed index and every gap-root vector.
+The same constant bounds genuine two-sided inverses of the original
+deleted blocks. All these statements hold at each fixed real-type
+potential for finite `p>1`, on every valid real-centered contour family.
+Uniform control over nearby complex potentials and the common complex
+extension neighborhood remain open in Lemma 12.10.
 
 ## Implemented and checked
 
@@ -32,6 +48,11 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.CompactEquicontinuousLimit` | Uniform convergence on a compact metric parameter space from pointwise limits, a continuous limit, and eventual local Lipschitz estimates |
+| `NLS.ZakharovShabat.SourcePsiJacobianContourIndependence` | Contour independence of the actual selected equations and finite root Jacobians, and their pointwise norm limits on every valid real-centered family |
+| `NLS.ZakharovShabat.SourcePsiJacobianGapUniformLimit` | Uniform operator-norm convergence of the actual finite Jacobians over the full compact gap product, with a single absolute-index cutoff for each tolerance |
+| `NLS.ZakharovShabat.SourcePsiJacobianGapOperator` | Operator-norm continuity of each finite Jacobian and all-index actual bijectivity on the gap product |
+| `NLS.ZakharovShabat.SourcePsiJacobianGapInverseBound` | Actual full bounded inverses with both identities, one common inverse norm bound over every index and gap-root vector, and the same bound for two-sided inverses of the original deleted blocks |
 | `NLS.SequenceSpaces.MatrixLimitNormBound` | Passing an eventual operator norm bound to an already bounded limit from convergence of scalar basis entries |
 | `NLS.ZakharovShabat.SourcePsiGapLimitOperator` | Real-centered contour independence, a unique intrinsic bijective `Q*` on the full gap product, and retention of its actual norm limit and compact correction |
 | `NLS.ZakharovShabat.SourcePsiCommonJacobianRootVariation` | Common eventual root Lipschitz bounds for the actual full Jacobians and scalar entry limits at every nearby gap-root vector on the same contours |

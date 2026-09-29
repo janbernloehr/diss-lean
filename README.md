@@ -4049,10 +4049,10 @@ The strengthened common-contour norm-limit theorem now proves that
 the same `Q*` differs from `2I` by a compact operator. The Fredholm
 alternative reduces its bijectivity to injectivity. The full-product
 interpolation and conjugation results below now close that pointwise
-kernel argument. Uniform convergence over varying roots and potentials,
-uniform inverse bounds for the finite-index Jacobians, and the common
-complex extension remain open. The limit operator's continuity and
-common inverse bound on the gap product are established below.
+kernel argument. Uniform convergence over the full gap product and
+common inverse bounds for every finite-index Jacobian at a fixed
+real-type potential are established below. Uniform control over nearby
+complex potentials and the common complex extension remain open.
 `SourcePsiFullProductVariation.lean` supplies the entire variation of
 the undeleted root product. At a simple root it recovers the direction's
 corresponding coefficient; indexed real-gap placement makes the roots
@@ -4104,6 +4104,25 @@ the actual intrinsic `Q*` family and proves its operator-norm
 continuity. `SourcePsiGapLimitInverseBound.lean` defines its bounded
 inverse, proves both inverse identities, and uses compactness of the
 full gap product to obtain one inverse norm bound over all root vectors
-at each fixed real-type potential. Uniform control of the finite-index
-Jacobians and their inverses over varying roots and potentials is the
-next step in Lemma 12.10.
+at each fixed real-type potential.
+`SourcePsiJacobianContourIndependence.lean` proves equality of the
+actual selected sequence equations for every deleted root vector,
+including when their definition defaults to zero. Their root derivatives
+and full extensions therefore agree across every valid real-centered
+contour family. This transports the actual pointwise norm limits and
+eventual local Lipschitz estimates onto any one fixed family.
+`CompactEquicontinuousLimit.lean` proves a general compactness criterion
+for uniform convergence from these estimates. Applied in
+`SourcePsiJacobianGapUniformLimit.lean`, it gives operator-norm
+convergence of the actual full Jacobians uniformly over the entire
+gap product, with a single absolute-index cutoff for each tolerance.
+`SourcePsiJacobianGapOperator.lean` proves operator-norm continuity
+of every finite Jacobian and its actual bijectivity on the gap product.
+`SourcePsiJacobianGapInverseBound.lean` defines the full bounded
+inverses and proves both inverse identities. Uniform comparison to
+`Q*` bounds all distant inverse norms; compactness handles each of
+the finitely many remaining indices. One constant bounds the full
+inverses for every signed index and every gap-root vector at the fixed
+real-type potential. The same bound holds for genuine two-sided
+inverses of the original deleted blocks. The next Lemma 12.10 step
+extends this control to a common neighborhood of complex potentials.
