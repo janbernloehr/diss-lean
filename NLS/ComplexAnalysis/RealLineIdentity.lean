@@ -16,7 +16,8 @@ namespace NLS.ComplexAnalysis
 /-- Vanishing on a real interval forces local complex vanishing for
 an analytic function of one complex variable. -/
 theorem AnalyticAt.eventually_eq_zero_of_real_interval
-    {f : ℂ → ℂ} (hf : AnalyticAt ℂ f 0)
+    {F : Type*} [NormedAddCommGroup F] [NormedSpace ℂ F]
+    {f : ℂ → F} (hf : AnalyticAt ℂ f 0)
     (hreal : ∃ ε : ℝ, 0 < ε ∧
       ∀ t : ℝ, |t| < ε → f (t:ℂ) = 0) :
     ∀ᶠ z in 𝓝 (0:ℂ), f z = 0 := by

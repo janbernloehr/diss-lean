@@ -21,7 +21,8 @@ variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- An actual holomorphic selected equation near the given complex data,
 with two-sided full and deleted Jacobian inverses sharing a bound.
-Its contour family is valid at the real-type base potential. -/
+Its real-centered contour family remains valid throughout the chart
+and at the real-type base potential. -/
 def sourcePsiComplexJacobianChartInverseBound
     (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p)
     (n : ℤ) (c : ℤ → ℂ) (R : ℤ → ℝ)
@@ -31,9 +32,10 @@ def sourcePsiComplexJacobianChartInverseBound
     (Coeff.deleteCoordinateTo n a,ψ) ∈ V ∧
     DifferentiableOn ℂ (fun t : DeletedCoeff p n × CoeffPair p =>
       sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) V ∧
-    ∀ t ∈ V, ∀ m : ℤ,
+    (∀ t ∈ V, ∀ m : ℤ,
       (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
         sourcePsiEquationCoordinate hp hp1 n m (t.1 : Coeff p) t.2 (c m) (R m)) ∧
+    ∀ t ∈ V, sourcePsiRealCenteredContourFamily hp hp1 t.2 c R) ∧
   (∃ S : Coeff p →L[ℂ] Coeff p,
     (sourcePsiFullRootJacobian hp hp1 n c R (Coeff.deleteCoordinateTo n a) ψ).comp S =
       ContinuousLinearMap.id ℂ (Coeff p) ∧
@@ -85,7 +87,8 @@ theorem exists_sourcePsi_complexJacobian_neighborhood
   obtain ⟨Sd,hQSd,hSdQ,hSd⟩ := Coeff.exists_deleted_inverse_of_extension_inverse n
     (sourcePsiSelectedRootJacobian hp hp1 n (c a n) (R a n) q.1 q.2) S hQS hSQ
   exact ⟨c a n,R a n,hfamily a n,
-    ⟨ball (Coeff.deleteCoordinateTo n a.val,φ) (δ a),isOpen_ball,hq,hcontrol.1,hcontrol.2.1⟩,
+    ⟨ball (Coeff.deleteCoordinateTo n a.val,φ) (δ a),isOpen_ball,hq,
+      hcontrol.1,hcontrol.2.1,hcontrol.2.2.2⟩,
     ⟨S,hQS,hSQ,hS⟩,Sd,hQSd,hSdQ,hSd.trans hS⟩
 
 /-- One positive radius works at every gap-root center and every

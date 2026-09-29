@@ -4,7 +4,7 @@ import Mathlib.Analysis.Normed.Module.Connected
 /-!
 # Uniqueness from a norm-controlled real form
 
-An analytic scalar function on a complex normed space that vanishes on a
+An analytic Banach-valued function on a complex normed space that vanishes on a
 real form near a point vanishes on a complex neighborhood. The real and
 imaginary parts of each perturbation are assumed to have norms bounded
 by the perturbation's norm. This form is suited to Fourier potentials.
@@ -18,7 +18,8 @@ namespace NLS.ComplexAnalysis
 /-- Local uniqueness for complex-differentiable functions along a
 norm-controlled real form of a complex normed space. -/
 theorem DifferentiableOn.eventually_eq_zero_of_real_form
-    {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+    {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+    [NormedAddCommGroup F] [NormedSpace ℂ F] [CompleteSpace F]
     (R : Set E) (φ : E) (hφR : φ ∈ R)
     (hRadd : ∀ ⦃x y : E⦄, x ∈ R → y ∈ R → x + y ∈ R)
     (hRsmul : ∀ (t : ℝ) ⦃x : E⦄, x ∈ R → (t : ℂ) • x ∈ R)
@@ -28,19 +29,19 @@ theorem DifferentiableOn.eventually_eq_zero_of_real_form
     (hAnorm : ∀ v, ‖A v‖ ≤ ‖v‖)
     (hBnorm : ∀ v, ‖B v‖ ≤ ‖v‖)
     (V : Set E) (hVopen : IsOpen V) (hφV : φ ∈ V)
-    (F : E → ℂ) (hFdiff : DifferentiableOn ℂ F V)
-    (hFzero : ∀ x ∈ V, x ∈ R → F x = 0) :
-    ∀ᶠ ψ in 𝓝 φ, F ψ = 0 := by
+    (f : E → F) (hFdiff : DifferentiableOn ℂ f V)
+    (hFzero : ∀ x ∈ V, x ∈ R → f x = 0) :
+    ∀ᶠ ψ in 𝓝 φ, f ψ = 0 := by
   obtain ⟨ε,hε,hball⟩ := Metric.mem_nhds_iff.mp (hVopen.mem_nhds hφV)
   apply Metric.mem_nhds_iff.mpr
   refine ⟨ε / 4, by positivity, ?_⟩
   intro ψ hψ
-  change F ψ = 0
+  change f ψ = 0
   let v : E := ψ - φ
   let a : E := A v
   let b : E := B v
   let line : ℂ → E := fun z => φ + a + z • b
-  let g : ℂ → ℂ := fun z => F (line z)
+  let g : ℂ → F := fun z => f (line z)
   have hv : ‖v‖ < ε / 4 := by
     simpa [v, Metric.mem_ball, dist_eq_norm] using hψ
   have ha : ‖a‖ ≤ ‖v‖ := hAnorm v

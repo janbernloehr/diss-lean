@@ -30,7 +30,8 @@ def sourcePsiJointJacobianControl
       sourcePsiEquationCoordinate hp hp1 n m (t.1 : Coeff p) t.2 (c m) (R m)) ∧
   (∀ t ∈ ball (a,φ) r, ∀ u ∈ ball (a,φ) r,
     ‖sourcePsiFullRootJacobian hp hp1 n c R t.1 t.2 -
-        sourcePsiFullRootJacobian hp hp1 n c R u.1 u.2‖ ≤ L*‖t-u‖)
+        sourcePsiFullRootJacobian hp hp1 n c R u.1 u.2‖ ≤ L*‖t-u‖) ∧
+  ∀ t ∈ ball (a,φ) r, sourcePsiRealCenteredContourFamily hp hp1 t.2 c R
 
 theorem sourcePsiJointJacobianControl.mono
     (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) (c : ℤ → ℂ) (R : ℤ → ℝ)
@@ -39,9 +40,10 @@ theorem sourcePsiJointJacobianControl.mono
     (hr : r' ≤ r) (hL : L ≤ L') :
     sourcePsiJointJacobianControl hp hp1 n c R a φ r' L' := by
   have hball : ball (a,φ) r' ⊆ ball (a,φ) r := ball_subset_ball hr
-  refine ⟨h.1.mono hball,(fun t ht m => h.2.1 t (hball ht) m),?_⟩
+  refine ⟨h.1.mono hball,(fun t ht m => h.2.1 t (hball ht) m),?_,
+    (fun t ht => h.2.2.2 t (hball ht))⟩
   intro t ht u hu
-  exact (h.2.2 t (hball ht) u (hball hu)).trans
+  exact (h.2.2.1 t (hball ht) u (hball hu)).trans
     (mul_le_mul_of_nonneg_right hL (norm_nonneg _))
 
 theorem norm_sourcePsiFullRootJacobian_sub_le_of_joint_ball_bound
@@ -115,9 +117,11 @@ theorem exists_common_sourcePsi_fullJacobian_jointLipschitz
         (∀ t ∈ ball (Coeff.deleteCoordinateTo n a,φ) r,
           ∀ u ∈ ball (Coeff.deleteCoordinateTo n a,φ) r,
             ‖sourcePsiFullRootJacobian hp hp1 n c R t.1 t.2 -
-                sourcePsiFullRootJacobian hp hp1 n c R u.1 u.2‖ ≤ L*‖t-u‖) := by
+                sourcePsiFullRootJacobian hp hp1 n c R u.1 u.2‖ ≤ L*‖t-u‖) ∧
+        ∀ t ∈ ball (Coeff.deleteCoordinateTo n a,φ) r,
+          sourcePsiRealCenteredContourFamily hp hp1 t.2 c R := by
   obtain ⟨c,R,hcenter,hgeom,K,hfree,δ,hδ,C,hC,hcharts⟩ :=
-    exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered hp hp1 a φ hφ
+    exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered_with_geometry hp hp1 a φ hφ
   let r := δ/4
   let L := 4*C/r^2
   have hr : 0 < r := by dsimp [r]; positivity
@@ -126,10 +130,11 @@ theorem exists_common_sourcePsi_fullJacobian_jointLipschitz
   have hsmall : r ≤ δ := by dsimp [r]; linarith
   refine ⟨c,R,⟨hcenter,hgeom⟩,r,L,hr,hL,?_⟩
   filter_upwards [hcharts] with n hn
-  obtain ⟨U,hUopen,hbase,hlocal,hbound,hcoord,hdiff⟩ := hn
+  obtain ⟨U,hUopen,hbase,hlocal,hbound,hcoord,hdiff,hgeometry⟩ := hn
   have hball : ball (Coeff.deleteCoordinateTo n a,φ) r ⊆ U :=
     (ball_subset_ball hsmall).trans hlocal
-  refine ⟨hdiff.mono hball,(fun t ht m => hcoord t (hball ht) m),?_⟩
+  refine ⟨hdiff.mono hball,(fun t ht m => hcoord t (hball ht) m),?_,
+    (fun t ht => ⟨hcenter,fun m => hgeometry t (hball ht) m⟩)⟩
   intro t ht u hu
   apply norm_sourcePsiFullRootJacobian_sub_le_of_joint_ball_bound hp hp1 n c R
     (Coeff.deleteCoordinateTo n a,φ) r C hr ?_ ?_ ht hu

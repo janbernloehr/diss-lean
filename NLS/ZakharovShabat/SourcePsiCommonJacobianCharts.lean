@@ -21,7 +21,7 @@ namespace NLS.ZakharovShabat
 /-- Near fixed real-type source data, a single contour family works for
 all sufficiently distant deleted indices, with analytic selected
 equation charts containing the corresponding deleted sequences. -/
-theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered
+theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered_with_geometry
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (a : Coeff p) (φ : CoeffPair p)
@@ -51,7 +51,12 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered
                 (t.1 : Coeff p) t.2 (c m) (R m)) ∧
           DifferentiableOn ℂ
             (fun t : DeletedCoeff p n × CoeffPair p =>
-              sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U := by
+              sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U ∧
+          ∀ t ∈ U, ∀ m : ℤ,
+            0 < R m ∧
+            sourcePeriodicSegment hp hp1 t.2 m ⊆ ball (c m) (R m) ∧
+            closedBall (c m) (R m) ⊆ sourceStandardRootOmittedDomain hp hp1 t.2 m ∧
+            sphere (c m) (R m) ⊆ sourceCanonicalRootDomain hp hp1 t.2 := by
   obtain ⟨Ueq,hUeqOpen,hbaseEq,K,c,R,hcReal,hchoice,hgeom,
       hiso,C,hC,heq⟩ :=
     exists_local_sourcePsi_globalEquation_uniformNorm hp hp1 φ hφ a
@@ -157,7 +162,42 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered
   have hdeleted : DifferentiableOn ℂ F U :=
     hcomposed.congr (fun t _ => (hproject t).symm)
   exact ⟨U,hUopen,hpair,hlocal,hbound,
-    (fun t ht m => hcoord t ht m),hdeleted⟩
+    (fun t ht m => hcoord t ht m),hdeleted,
+    (fun t ht m => hgeom ((t.1 : Coeff p),t.2) ht.1 m)⟩
+
+/-- Compatibility form of the common charts, with their original
+statement. The stronger construction also retains moving-source geometry. -/
+theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ, (c m).im = 0) ∧
+      (∀ m : ℤ,
+        0 < R m ∧
+        sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
+        closedBall (c m) (R m) ⊆ sourceStandardRootOmittedDomain hp hp1 φ m ∧
+        sphere (c m) (R m) ⊆ sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ Ktail : ℕ,
+      (∀ m : ℤ, Ktail < m.natAbs → c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+      ∃ δ : ℝ, 0 < δ ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+        ∃ U : Set (DeletedCoeff p n × CoeffPair p),
+          IsOpen U ∧ (Coeff.deleteCoordinateTo n a,φ) ∈ U ∧
+          ball (Coeff.deleteCoordinateTo n a,φ) δ ⊆ U ∧
+          (∀ t ∈ U, ‖sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2‖ ≤ C) ∧
+          (∀ t ∈ U, ∀ m : ℤ,
+            (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
+              sourcePsiEquationCoordinate hp hp1 n m (t.1 : Coeff p) t.2 (c m) (R m)) ∧
+          DifferentiableOn ℂ (fun t : DeletedCoeff p n × CoeffPair p =>
+            sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U := by
+  obtain ⟨c,R,hcenter,hgeom,K,hfree,δ,hδ,C,hC,hcharts⟩ :=
+    exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered_with_geometry hp hp1 a φ hφ
+  refine ⟨c,R,hcenter,hgeom,K,hfree,δ,hδ,C,hC,?_⟩
+  filter_upwards [hcharts] with n hn
+  obtain ⟨U,hUopen,hbase,hball,hbound,hcoord,hdiff,hgeometry⟩ := hn
+  exact ⟨U,hUopen,hbase,hball,hbound,hcoord,hdiff⟩
 
 /-- Compatibility form of the real-centered construction, retaining
 the original statement. -/

@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: common inverse bounds on a convex complex neighborhood
+## Current Lemma 12.10 milestone: glued analytic equations with common inverse bounds
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -61,8 +61,26 @@ gives one positive tube radius, and real convexity of the gap product
 allows the neighborhood to be chosen convex. Every point and every
 index has a holomorphic selected contour chart with actual full and
 deleted two-sided Jacobian inverses sharing one norm bound.
-Contour charts may depend on the point and index. Their compatibility,
-gluing, and construction of the complex zero branches on a common
+The common charts now retain their real centers, gap enclosure, and
+canonical-root contour domains throughout their complex source balls.
+`RealLineIdentity.lean` and `RealFormIdentity.lean` support Banach-valued
+equations. `ConvexHolomorphicIdentity.lean` extends equality of one
+holomorphic germ throughout a convex overlap.
+`SourcePsiComplexChartCompatibility.lean` applies these principles to
+the actual selected psi equations: root inputs remain arbitrary complex
+sequences while the source variable supplies the real form. Joint ball
+charts centered at the same real source agree on their entire overlaps,
+and their actual root derivatives agree there as well.
+`GlueHolomorphicCharts.lean` constructs the common function on an open
+chart union and proves its exact local representation and holomorphy.
+`SourcePsiGluedEquation.lean` obtains one analytic sequence-valued psi
+equation for each deleted index, with actual scalar contour coordinates
+at every point of its open domain. One convex full-space neighborhood
+contains the entire gap product at the fixed real source and projects
+into all these domains. The actual root derivatives of the glued
+equations have full and deleted two-sided inverses bounded by the same
+constant, independently of the index and point.
+Construction and continuation of the complex zero branches on a common
 source domain remain open in Lemma 12.10.
 
 ## Implemented and checked
@@ -73,6 +91,10 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.ConvexHolomorphicIdentity` | Banach-valued holomorphic functions with an equal germ agree throughout an open convex domain |
+| `NLS.ComplexAnalysis.GlueHolomorphicCharts` | Gluing functions that agree on overlaps, exact local chart representation, and holomorphy on the open union |
+| `NLS.ZakharovShabat.SourcePsiComplexChartCompatibility` | Banach-valued real-form identity for actual selected psi equations, equality on convex and joint-ball overlaps, and equality of actual root derivatives |
+| `NLS.ZakharovShabat.SourcePsiGluedEquation` | Analytic glued psi equations with actual contour coordinates, one convex neighborhood of the full gap product, and common bounds for the actual full/deleted root derivative inverses |
 | `NLS.SequenceSpaces.NearbyInverse` | Actual two-sided bounded inverse existence from Neumann smallness, the factor-two norm bound, and recovery of a deleted block inverse from its full extension inverse |
 | `NLS.ZakharovShabat.SourcePsiGapProductConvex` | Real convexity of the full product of displaced periodic gap segments |
 | `NLS.ZakharovShabat.SourcePsiJacobianSourceVariation` | Joint root/source Lipschitz control of actual full Jacobians from bounded holomorphic charts and a common escaping-index chart radius |

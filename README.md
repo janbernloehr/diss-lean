@@ -4052,8 +4052,8 @@ interpolation and conjugation results below now close that pointwise
 kernel argument. Uniform convergence over the full gap product and
 common inverse bounds for every finite-index Jacobian at a fixed
 real-type potential are established below. Uniform control over nearby
-complex potentials is established on local charts below. Their
-compatibility and the common complex zero branches remain open.
+complex potentials and compatibility of local charts are established
+below. The common complex zero branches remain open.
 `SourcePsiFullProductVariation.lean` supplies the entire variation of
 the undeleted root product. At a simple root it recovers the direction's
 corresponding coefficient; indexed real-gap placement makes the roots
@@ -4149,6 +4149,23 @@ product, proved in `SourcePsiGapProductConvex.lean`, gives a convex
 choice of neighborhood by adding a small open ball. At every point and
 every deleted index there is a holomorphic selected contour chart with
 actual full and deleted two-sided inverses bounded by one constant.
-The contour charts can depend on the point and index. The next Lemma
-12.10 steps establish their compatibility and glue the complex zero
-branches on a common source domain.
+The chart construction now retains real centers, moving gap enclosure,
+and canonical-root contour domains throughout each complex chart ball.
+The real-line and real-form identity principles support Banach-valued
+functions. `ConvexHolomorphicIdentity.lean` extends equality of a germ
+throughout an open convex domain. Applied in
+`SourcePsiComplexChartCompatibility.lean`, these results identify the
+actual selected psi equations on every overlap of joint ball charts
+centered at the same real source. Root inputs remain arbitrary complex
+sequences in the joint real-form argument. The actual root derivatives
+agree on the overlaps as well.
+`GlueHolomorphicCharts.lean` defines the common function on the union
+and proves exact local representation and holomorphy.
+`SourcePsiGluedEquation.lean` constructs one analytic sequence-valued
+equation for each deleted index, retaining its actual scalar contour
+formulas. One convex full-space neighborhood of the entire gap product
+at the fixed real source projects into every equation domain. The
+actual root derivatives of the glued equations retain full and deleted
+two-sided inverses with one norm bound independent of the point and
+index. The next Lemma 12.10 step constructs and continues their complex
+zero branches on a common source domain.

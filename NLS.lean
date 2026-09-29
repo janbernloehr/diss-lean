@@ -1126,6 +1126,10 @@ import NLS.ZakharovShabat.SourcePsiJacobianSourceVariation
 import NLS.ZakharovShabat.SourcePsiAllIndexJacobianCharts
 import NLS.ZakharovShabat.SourcePsiComplexJacobianInverseBound
 import NLS.ZakharovShabat.SourcePsiComplexJacobianNeighborhood
+import NLS.ComplexAnalysis.ConvexHolomorphicIdentity
+import NLS.ComplexAnalysis.GlueHolomorphicCharts
+import NLS.ZakharovShabat.SourcePsiComplexChartCompatibility
+import NLS.ZakharovShabat.SourcePsiGluedEquation
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

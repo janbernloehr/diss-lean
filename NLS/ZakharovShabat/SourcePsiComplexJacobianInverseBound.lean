@@ -63,7 +63,7 @@ theorem exists_uniform_local_sourcePsi_complexJacobian_inverses
     sourcePsiFullRootJacobian_eq_of_realCentered_families hp hp1 φ hφ
       (c n) c₀ (R n) R₀ (hfamily n) hfamily₀ n (Coeff.deleteCoordinateTo n a.val)
   have hdiff : ‖Q-T‖ ≤ L*δ := by
-    have hLip := (hcharts n).2.2 t ((ball_subset_ball hδr) ht)
+    have hLip := (hcharts n).2.2.1 t ((ball_subset_ball hδr) ht)
       (Coeff.deleteCoordinateTo n a.val,φ) (mem_ball_self hr)
     rw [hbaseeq,norm_sub_rev] at hLip
     exact hLip.trans (mul_le_mul_of_nonneg_left

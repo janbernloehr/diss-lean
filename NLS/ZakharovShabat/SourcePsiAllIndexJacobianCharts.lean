@@ -34,7 +34,8 @@ theorem exists_local_sourcePsi_fullJacobian_jointLipschitz
   have hsmall : r ≤ δ := by dsimp [r]; linarith
   have hinner : ball (a,φ) r ⊆ U := (ball_subset_ball hsmall).trans hball
   refine ⟨c,R,⟨hcenter,fun m => hgeom (a,φ) hbase m⟩,r,L,hr,hL,
-    hdiff.mono hinner,(fun t ht m => hcoord t (hinner ht) m),?_⟩
+    hdiff.mono hinner,(fun t ht m => hcoord t (hinner ht) m),?_,
+    (fun t ht => ⟨hcenter,fun m => hgeom t (hinner ht) m⟩)⟩
   intro t ht u hu
   apply norm_sourcePsiFullRootJacobian_sub_le_of_joint_ball_bound hp hp1 n c R (a,φ) r C hr
     ?_ ?_ ht hu
