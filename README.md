@@ -3976,3 +3976,23 @@ of the resulting bounded full-space Jacobians at a fixed coefficient
 sequence with its deleted coordinate removed, when the retained root
 avoids the contour. The candidate limit operator, the varying gap-root
 data, and uniform operator tails remain open.
+
+`SourcePsiLimitMatrixOperator.lean` constructs the bounded contour-limit
+operator `Q*`, proves coordinatewise convergence of the common-contour
+full Jacobians on every input, and gives one reciprocal off-diagonal
+entry majorant shared by `Q*` and all sufficiently distant Jacobians.
+`OperatorDiagonal.lean` extracts the diagonal multiplier of a bounded
+full-space operator and proves that its off-diagonal remainder has zero
+diagonal and unchanged other matrix entries.
+`FullReciprocalMatrixTail.lean` derives a conjugate-space kernel from
+the actual matrix row and proves the quantitative two-sided tail bound
+`‖(id-Ps) C (id-Pt)‖ ≤ ‖b-Ps b‖ · ‖puncturedLattice‖` for reciprocal
+off-diagonal entries. The output and input cutoffs can be chosen once
+for every operator sharing the same tail-entry majorant.
+`SourcePsiJacobianOffDiagonalUniformTail.lean` applies this estimate to
+the actual common-contour Jacobians and `Q*`: one pair of finite cutoffs
+makes all their high-output, high-input off-diagonal blocks smaller than
+any prescribed positive error, eventually in the deleted index.
+The diagonal correction and the mixed blocks with finitely many input
+or output frequencies still need uniform tail estimates to complete
+operator-norm convergence in Lemma 12.10.

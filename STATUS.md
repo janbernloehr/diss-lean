@@ -1,5 +1,18 @@
 # Implementation status
 
+## Current Lemma 12.10 milestone: uniform off-diagonal high/high tails
+
+`SourcePsiJacobianOffDiagonalUniformTail.lean` strengthens the bounded
+`Q*` construction with a common pair of finite cutoffs: the off-diagonal
+high-output, high-input block of `Q*` and every sufficiently distant
+full psi Jacobian has arbitrarily small operator norm. The proof uses
+the fixed `ℓᵖ` reciprocal-entry majorant on the same contour family.
+`OperatorDiagonal.lean` supplies full-space diagonal extraction, and
+`FullReciprocalMatrixTail.lean` proves the quantitative bound using a
+conjugate-exponent matrix-row kernel and the majorant's output tail.
+The diagonal and mixed-block tail estimates, full operator-norm
+convergence, and invertibility of the nonfree limit remain open.
+
 ## Implemented and checked
 
 The library has 817 modules and 5119 named public theorems. All compile on the
