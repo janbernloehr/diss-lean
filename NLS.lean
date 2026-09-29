@@ -10,6 +10,7 @@ import NLS.SequenceSpaces.OperatorDiagonal
 import NLS.SequenceSpaces.OperatorDiagonalConvergence
 import NLS.SequenceSpaces.OperatorColumnConvergence
 import NLS.SequenceSpaces.OperatorNormFromProjections
+import NLS.SequenceSpaces.CompactOperatorTail
 import NLS.SequenceSpaces.Translation
 import NLS.SequenceSpaces.Convolution
 import NLS.SequenceSpaces.Embedding

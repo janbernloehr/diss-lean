@@ -4040,5 +4040,14 @@ common contour family, proving full operator-norm convergence of the
 actual Jacobians to `Q*` for every fixed gap-contained root vector and
 real-type potential at every finite `p>1`. The deleted index can escape
 in either direction. This establishes the fixed-root norm-limit claim
-in Lemma 12.10. Invertibility of the nonfree limit, uniform inverse
-bounds for varying roots, and the common complex extension remain open.
+in Lemma 12.10.
+`CompactOperatorTail.lean` proves compactness from small high/high tails
+by approximating with the remaining finite rows and columns. It also
+proves compactness of diagonal corrections whose symbols approach a
+constant, including coordinate limits with eventual uniform tails.
+The strengthened common-contour norm-limit theorem now proves that
+the same `Q*` differs from `2I` by a compact operator. The Fredholm
+alternative reduces its bijectivity to injectivity. Proving the nonfree
+kernel is zero, locally uniform convergence over varying roots and
+potentials, uniform inverse bounds, and the common complex extension
+remain open.

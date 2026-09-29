@@ -1,20 +1,22 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: full fixed-root operator-norm limit
+## Current Lemma 12.10 milestone: compact limit and Fredholm reduction
 
-`OperatorNormFromProjections.lean` bounds an operator difference by
-five terms: its finite output projection, finite input projection,
-diagonal difference, and the two off-diagonal high/high tails. Both
-complementary projections are contractions, so the three norm limits
-and common tail cutoffs imply convergence of the full operators.
-`SourcePsiJacobianNormLimit.lean` assembles these estimates on a single
-common contour family. For every fixed gap-contained root vector and
-real-type potential at every finite exponent `p>1`, the actual full
-psi Jacobians converge in operator norm to the bounded contour-limit
-operator `Q*` as the deleted index escapes in either direction.
-This proves the fixed-root norm-limit claim in Lemma 12.10. Invertibility
-of the nonfree limit, the uniform inverse bounds for varying roots,
-and the common complex extension neighborhood remain open.
+`CompactOperatorTail.lean` proves compactness from arbitrarily small
+high/high blocks: the finite output rows and finite input columns give
+a finite-rank approximation. Reciprocal tail-entry bounds therefore
+make the off-diagonal remainder of a bounded full-space operator compact.
+Uniform diagonal tails pass through coordinate limits and make the
+limit's diagonal correction to a constant identity compact as well.
+`SourcePsiJacobianNormLimit.lean` now proves, on the same contour family
+and for the same `Q*` as its fixed-root operator-norm limit, that `Q*-2I`
+is compact. The Fredholm alternative proves that this actual limit
+operator is bijective if it is injective. The original norm-limit
+theorem remains available with its previous statement.
+The remaining analytic step for pointwise invertibility is proving the
+nonfree limit's kernel is zero. Locally uniform convergence over varying
+roots and potentials, uniform inverse bounds, and the common complex
+extension neighborhood remain open.
 
 ## Implemented and checked
 
@@ -24,8 +26,9 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.CompactOperatorTail` | Compactness from two-sided high/high tails, compact full-space off-diagonal remainders from reciprocal tail entries, and compact diagonal corrections from eventual uniform constant tails |
 | `NLS.SequenceSpaces.OperatorNormFromProjections` | Quantitative five-term operator-difference bound and full norm convergence from finite input/output limits, diagonal convergence, and common off-diagonal high/high tails |
-| `NLS.ZakharovShabat.SourcePsiJacobianNormLimit` | Full operator-norm convergence of the actual fixed-root common-contour psi Jacobians to the bounded operator with the prescribed contour-limit matrix entries |
+| `NLS.ZakharovShabat.SourcePsiJacobianNormLimit` | Full fixed-root operator-norm convergence to the actual contour-limit operator, compactness of its correction to `2I`, and bijectivity conditional on injectivity |
 | `NLS.SequenceSpaces.FiniteOutputReciprocalTail` | Conjugate-space row kernels from summable entry bounds, uniform finite-output input cutoffs from reciprocal decay, and finite-output operator-norm convergence |
 | `NLS.ZakharovShabat.SourcePsiJacobianFiniteRowTail` | Reciprocal input-column bounds on arbitrary fixed finite selected-contour sets and eventual uniform high-input blocks of the actual full psi Jacobians |
 | `NLS.SequenceSpaces.OperatorColumnConvergence` | Complete-column norm limits from summable tail domination, finite-input operator-norm convergence, strong convergence by density, and eventual uniform output cutoffs |
