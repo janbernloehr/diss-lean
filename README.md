@@ -4031,6 +4031,14 @@ sharing the bound. With coordinatewise limits, the same estimate proves
 operator-norm convergence after every finite output projection.
 The common `Q*` theorem now packages both mixed-tail directions and
 finite-input/finite-output operator-norm limits on the same Jacobian
-family. Their assembly with the diagonal limit and high/high tails into
-full operator-norm convergence in Lemma 12.10 remains open, as does
-invertibility of the nonfree limit.
+family.
+`OperatorNormFromProjections.lean` gives a quantitative five-term bound
+for the full operator difference from the two finite projections, the
+diagonal difference, and the two off-diagonal high/high tails.
+`SourcePsiJacobianNormLimit.lean` combines all these estimates on one
+common contour family, proving full operator-norm convergence of the
+actual Jacobians to `Q*` for every fixed gap-contained root vector and
+real-type potential at every finite `p>1`. The deleted index can escape
+in either direction. This establishes the fixed-root norm-limit claim
+in Lemma 12.10. Invertibility of the nonfree limit, uniform inverse
+bounds for varying roots, and the common complex extension remain open.

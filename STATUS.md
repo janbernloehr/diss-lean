@@ -1,24 +1,20 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: both mixed-tail directions
+## Current Lemma 12.10 milestone: full fixed-root operator-norm limit
 
-`SourcePsiJacobianFiniteRowTail.lean` bounds all distant input columns
-on every fixed finite output set, eventually in the deleted index.
-Compactness controls the quotient and standard-root inverse on the
-selected circles, while shifted-disc geometry gives reciprocal input
-lattice decay. The estimate includes nonstandard head circles.
-`FiniteOutputReciprocalTail.lean` constructs conjugate-space row kernels
-from summable entry majorants and truncates those kernels to obtain one
-input cutoff for every operator sharing the finite-row bound. The
-coordinatewise limit then gives operator-norm convergence after every
-fixed finite output projection.
-`SourcePsiJacobianColumnNormLimit.lean` now packages both mixed-tail
-directions, strong convergence, and operator-norm convergence after
-either finite input or finite output projections on the same actual
-common-contour Jacobian family and `Q*`.
-The diagonal norm limit and off-diagonal high/high tail estimates were
-already proved. Assembling these pieces into full operator-norm
-convergence, and proving invertibility of the nonfree limit, remain open.
+`OperatorNormFromProjections.lean` bounds an operator difference by
+five terms: its finite output projection, finite input projection,
+diagonal difference, and the two off-diagonal high/high tails. Both
+complementary projections are contractions, so the three norm limits
+and common tail cutoffs imply convergence of the full operators.
+`SourcePsiJacobianNormLimit.lean` assembles these estimates on a single
+common contour family. For every fixed gap-contained root vector and
+real-type potential at every finite exponent `p>1`, the actual full
+psi Jacobians converge in operator norm to the bounded contour-limit
+operator `Q*` as the deleted index escapes in either direction.
+This proves the fixed-root norm-limit claim in Lemma 12.10. Invertibility
+of the nonfree limit, the uniform inverse bounds for varying roots,
+and the common complex extension neighborhood remain open.
 
 ## Implemented and checked
 
@@ -28,6 +24,8 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.OperatorNormFromProjections` | Quantitative five-term operator-difference bound and full norm convergence from finite input/output limits, diagonal convergence, and common off-diagonal high/high tails |
+| `NLS.ZakharovShabat.SourcePsiJacobianNormLimit` | Full operator-norm convergence of the actual fixed-root common-contour psi Jacobians to the bounded operator with the prescribed contour-limit matrix entries |
 | `NLS.SequenceSpaces.FiniteOutputReciprocalTail` | Conjugate-space row kernels from summable entry bounds, uniform finite-output input cutoffs from reciprocal decay, and finite-output operator-norm convergence |
 | `NLS.ZakharovShabat.SourcePsiJacobianFiniteRowTail` | Reciprocal input-column bounds on arbitrary fixed finite selected-contour sets and eventual uniform high-input blocks of the actual full psi Jacobians |
 | `NLS.SequenceSpaces.OperatorColumnConvergence` | Complete-column norm limits from summable tail domination, finite-input operator-norm convergence, strong convergence by density, and eventual uniform output cutoffs |

@@ -94,7 +94,16 @@ theorem norm_truncateCLM_le_one [Fact (1 ≤ p)] (s : Finset ℤ) :
   apply ContinuousLinearMap.opNorm_le_bound _ (by norm_num)
   intro a
   simpa only [one_mul,truncateCLM_apply] using
-    norm_truncate_le (ne_of_gt (zero_lt_one.trans_le Fact.out)) s a
+      norm_truncate_le (ne_of_gt (zero_lt_one.trans_le Fact.out)) s a
+
+/-- The complementary Fourier projection is also an operator-norm
+contraction. -/
+theorem norm_complement_truncateCLM_le_one [Fact (1 ≤ p)] (s : Finset ℤ) :
+    ‖ContinuousLinearMap.id ℂ (Coeff p) - truncateCLM s‖ ≤ 1 := by
+  apply ContinuousLinearMap.opNorm_le_bound _ (by norm_num)
+  intro a
+  simpa only [one_mul,sub_apply,ContinuousLinearMap.id_apply,truncateCLM_apply] using
+    norm_sub_truncate_le (ne_of_gt (zero_lt_one.trans_le Fact.out)) s a
 
 /-- Finite Fourier truncations converge in norm for finite Banach exponents. -/
 theorem tendsto_truncate [Fact (1 ≤ p)] (hp : p ≠ ⊤) (a : Coeff p) :
