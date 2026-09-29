@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: uniform analytic tubes and perturbation estimates
+## Current Lemma 12.10 milestone: index-independent local complex root branches
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -97,8 +97,30 @@ bound `2C/r`, joint and root derivative Lipschitz bound `4C/r²`, and
 source residual bound `2C/r` on the inner joint balls. It also proves
 actual root derivative bijectivity throughout the outer tube. All
 constants and the radius are independent of the deleted index.
-Construction and continuation of the complex zero branches on a common
-source domain remain open in Lemma 12.10.
+`QuantitativeTriangularDerivative.lean` explicitly inverts the combined
+equation-and-source derivative with inverse norm at most
+`M(1+2C/r)+1`. `QuantitativeAnalyticInverse.lean` gives an analytic inverse
+on an explicit covered image ball from derivative Lipschitz control and
+this inverse bound; it also proves uniqueness on the corresponding
+joint ball. Both radii depend only on the common bounds.
+`SourcePsiUniformComplexBranches.lean` applies this construction to every
+deleted index. At each real source, one positive complex source radius
+works for all indices. The analytic branches solve the actual glued
+equations, take the canonical root values at the base source, and have
+graphs and uniqueness in one common root ball.
+`ConvexRealAnalyticIdentity.lean` propagates a real analytic germ on an
+open convex Banach domain. Applied in
+`SourcePsiUniformComplexBranchRealAgreement.lean`, it identifies these
+branches with the canonical gap roots at every real source in the full
+common source ball. The initial germ equality follows from continuity,
+real contour comparison, and the constructed local uniqueness.
+`SourcePsiUniformComplexExistence.lean` exposes the resulting existence
+theorem without supplied equation or inverse data. The actual normalized
+psi contour integrals vanish at every retained index on valid moving
+real-centered circles throughout the complex source ball.
+Gluing branches from different real base sources, obtaining the global
+simply connected common source domain, and retaining the assigned
+isolating-root neighborhoods remain open in Lemma 12.10.
 
 ## Implemented and checked
 
@@ -108,6 +130,12 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.QuantitativeTriangularDerivative` | Explicit two-sided inverse of the equation-and-source derivative and its quantitative norm bound |
+| `NLS.ComplexAnalysis.QuantitativeAnalyticInverse` | Explicit common joint and image radii, analytic inverse on the covered image ball, and uniqueness in the joint ball |
+| `NLS.ComplexAnalysis.ConvexRealAnalyticIdentity` | Real analytic functions with an equal germ agree throughout an open convex Banach domain |
+| `NLS.ZakharovShabat.SourcePsiUniformComplexBranches` | Analytic zero branches for all indices on one complex source ball, canonical base values, actual glued-equation zeros, and common graph and uniqueness bounds |
+| `NLS.ZakharovShabat.SourcePsiUniformComplexBranchRealAgreement` | Agreement with canonical gap roots throughout the real part of the common source ball, from a uniqueness germ and real analytic continuation |
+| `NLS.ZakharovShabat.SourcePsiUniformComplexExistence` | Unconditional local complex extension at each real source, one radius for all indices, real agreement, a common root distance bound, and actual retained contour orthogonality |
 | `NLS.ZakharovShabat.SourcePsiUniformEquationTube` | One joint analytic radius, equation norm bound, and actual root inverse bound for every canonical solution center; actual contour formulas and zero values at the real solutions |
 | `NLS.ZakharovShabat.SourcePsiUniformEquationEstimates` | Uniform joint derivative bounds, joint/root derivative Lipschitz estimates, source residual bounds, and actual root derivative bijectivity on the common equation tubes |
 | `NLS.ComplexAnalysis.ConvexHolomorphicIdentity` | Banach-valued holomorphic functions with an equal germ agree throughout an open convex domain |

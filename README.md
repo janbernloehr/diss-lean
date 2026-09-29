@@ -4053,7 +4053,8 @@ kernel argument. Uniform convergence over the full gap product and
 common inverse bounds for every finite-index Jacobian at a fixed
 real-type potential are established below. Uniform control over nearby
 complex potentials and compatibility of local charts are established
-below. The common complex zero branches remain open.
+below. Gluing the complex zero branches over the entire real source
+locus remains open.
 `SourcePsiFullProductVariation.lean` supplies the entire variation of
 the undeleted root product. At a simple root it recovers the direction's
 corresponding coefficient; indexed real-gap placement makes the roots
@@ -4182,5 +4183,28 @@ bound `2C/r`, joint and root derivative Lipschitz bound `4C/r²`, and
 source residual bound `2C/r` on the inner balls. Actual root derivative
 bijectivity holds throughout the outer balls. These estimates and the
 radius are independent of the deleted index and supply the quantitative
-inputs for the next implicit-function step. Construction and continuation
-of the complex zero branches on a common source domain remain open.
+inputs for the implicit-function step.
+`QuantitativeTriangularDerivative.lean` explicitly inverts the combined
+equation-and-source derivative with inverse norm at most
+`M(1+2C/r)+1`. `QuantitativeAnalyticInverse.lean` uses this bound and the
+derivative Lipschitz constant to give explicit joint and covered image
+radii, an analytic inverse throughout the image ball, and uniqueness
+in the joint ball. These radii are independent of the index.
+`SourcePsiUniformComplexBranches.lean` therefore constructs all analytic
+psi zero branches on one complex source ball at each real base source.
+They solve the actual glued equations, have canonical base values,
+and stay in one common root ball with a local uniqueness theorem.
+`ConvexRealAnalyticIdentity.lean` propagates equality of real analytic
+germs on open convex Banach domains.
+`SourcePsiUniformComplexBranchRealAgreement.lean` first uses continuity,
+real contour comparison, and local uniqueness to identify the canonical
+roots as a germ, then extends equality to every real source in the full
+common source ball.
+`SourcePsiUniformComplexExistence.lean` states the resulting existence
+theorem without supplied equation or inverse data: one source radius
+works for every signed deleted index, the branches retain the canonical
+real roots, and their actual retained psi contour integrals vanish on
+valid moving real-centered circles. Gluing branches from different real
+base sources, obtaining the global simply connected common source
+domain, and retaining the assigned isolating-root neighborhoods remain
+open in Lemma 12.10.
