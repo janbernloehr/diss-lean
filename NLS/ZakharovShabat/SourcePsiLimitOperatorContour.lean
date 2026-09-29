@@ -162,6 +162,41 @@ theorem sourcePsiLimitMatrixOperator_kernel_iff_fullProductContours_zero
 
 /-- The actual fixed-root norm limit and compact correction admit
 the directional contour formula on the same selected circles. -/
+theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact_contour_realCentered
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (ha : a ∈ sourcePeriodicGapRootSet hp hp1 φ) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ, (c m).im = 0) ∧
+      (∀ m : ℤ,
+        0 < R m ∧ sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
+        closedBall (c m) (R m) ⊆ sourceStandardRootOmittedDomain hp hp1 φ m ∧
+        sphere (c m) (R m) ⊆ sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ Qstar : Coeff p →L[ℂ] Coeff p, ∃ M : ℝ,
+        0 ≤ M ∧ ‖Qstar‖ ≤ M ∧
+        (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+          ‖sourcePsiFullRootJacobian hp hp1 n c R
+            (Coeff.deleteCoordinateTo n a) φ‖ ≤ M) ∧
+        (∀ m k : ℤ, (Qstar (lp.single p k 1)) m =
+          sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)) ∧
+        Tendsto (fun n : ℤ => sourcePsiFullRootJacobian hp hp1 n c R
+          (Coeff.deleteCoordinateTo n a) φ)
+          (Filter.comap Int.natAbs Filter.atTop) (𝓝 Qstar) ∧
+        IsCompactOperator (Qstar - (2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff p)) ∧
+        (Function.Injective Qstar → Function.Bijective Qstar) ∧
+        (∀ h : Coeff p, ∀ m : ℤ, (Qstar h) m =
+          -(∮ z in C(c m,R m), sourcePsiFullProductVariation a h z /
+            sourceCanonicalRoot hp hp1 φ z) / (Real.pi : ℂ)) := by
+  obtain ⟨c,R,hcReal,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,hlimit,hcompact,hbij⟩ :=
+    exists_sourcePsiLimitMatrixOperator_normLimit_compact_realCentered hp hp1 a φ hφ ha
+  refine ⟨c,R,hcReal,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,hlimit,hcompact,hbij,?_⟩
+  exact sourcePsiLimitMatrixOperator_apply_eq_fullProductContour
+    hp hp1 a φ hφ ha c R (fun m => (hgeom m).1.le)
+    (fun m => (hgeom m).2.2.2) Qstar hentry
+
+/-- Compatibility form of the real-centered construction, retaining
+the original statement. -/
 theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact_contour
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (a : Coeff p) (φ : CoeffPair p)
@@ -187,11 +222,8 @@ theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact_contour
         (∀ h : Coeff p, ∀ m : ℤ, (Qstar h) m =
           -(∮ z in C(c m,R m), sourcePsiFullProductVariation a h z /
             sourceCanonicalRoot hp hp1 φ z) / (Real.pi : ℂ)) := by
-  obtain ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,hlimit,hcompact,hbij⟩ :=
-    exists_sourcePsiLimitMatrixOperator_normLimit_compact hp hp1 a φ hφ ha
-  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,hlimit,hcompact,hbij,?_⟩
-  exact sourcePsiLimitMatrixOperator_apply_eq_fullProductContour
-    hp hp1 a φ hφ ha c R (fun m => (hgeom m).1.le)
-    (fun m => (hgeom m).2.2.2) Qstar hentry
+  obtain ⟨c,R,_,hdata⟩ :=
+    exists_sourcePsiLimitMatrixOperator_normLimit_compact_contour_realCentered hp hp1 a φ hφ ha
+  exact ⟨c,R,hdata⟩
 
 end NLS.ZakharovShabat

@@ -1,28 +1,28 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: full variation and directional limit contours
+## Current Lemma 12.10 milestone: full gap-zero sequences from the limit kernel
 
-`SourcePsiFullProductVariation.lean` defines the root-direction variation
-of the undeleted single-root product and proves it is entire. Restoring
-one factor relates it to the existing deleted numerator variation; at
-each root its value is the negative of that coefficient times the
-spectral derivative. A basis direction gives exactly the negative
-deleted numerator. Indexed real-gap placement makes all these roots
-distinct, so an identically zero full variation forces the direction
-to vanish, including at collapsed gaps.
-`SourcePsiFullProductContourVariation.lean` proves differentiation under
-the contour integral with the exact sign and `1/π` normalization.
-`SourcePsiLimitOperatorContour.lean` identifies each matrix entry with
-this continuous contour derivative and extends the formula by Fourier
-truncation to every `ℓᵖ` direction. The actual fixed-root norm limit and
-its compact correction to `2I` share the same operator and contours in
-the strengthened existence theorem. Its kernel is exactly the
-directions with a zero full-variation contour around every gap.
-The next analytic step is obtaining full-variation gap zeros from these
-contours and proving interpolation uniqueness for the undeleted
-variation. Pointwise injectivity, locally uniform convergence over
-varying roots and potentials, uniform inverse bounds, and the common
-complex extension neighborhood remain open.
+The common-contour construction now retains its real centers through
+the selected charts, column limits, bounded limit operator, fixed-root
+operator-norm limit, compact correction to `2I`, and directional
+contour formula. The original theorem interfaces remain available.
+`SourceEntireGapContourZeros.lean` supplies the open-gap mean-value and
+collapsed-gap Cauchy arguments for an arbitrary entire numerator;
+the existing deleted-variation results use these shared proofs.
+`SourcePsiFullProductGapZeros.lean` proves the full variation is real on
+the real spectral axis at real root data and a real direction. Every
+zero contour then gives a zero in its enclosed real periodic gap.
+Collapsed gaps give midpoint zeros for complex directions as well.
+`SourcePsiLimitKernelGapZeros.lean` applies these results to the actual
+norm-limit operator on the same real-centered contour family. Every
+real kernel direction has one simultaneous gap-contained zero sequence
+with an `ℓᵖ` displacement, and no index is omitted. This result retains
+the norm convergence and compact correction on that same operator.
+The next analytic step is interpolation uniqueness for the undeleted
+variation, followed by the real/imaginary kernel reduction. Pointwise
+injectivity, locally uniform convergence over varying roots and
+potentials, uniform inverse bounds, and the common complex extension
+neighborhood remain open.
 
 ## Implemented and checked
 
@@ -32,6 +32,9 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SourceEntireGapContourZeros` | Shared entire-numerator open-gap mean-value zero and collapsed-gap midpoint zero from vanishing canonical-root contours |
+| `NLS.ZakharovShabat.SourcePsiFullProductGapZeros` | Reality of the full product variation, complex-direction midpoint vanishing at collapsed gaps, and real-direction zeros in every enclosed real gap |
+| `NLS.ZakharovShabat.SourcePsiLimitKernelGapZeros` | Complete gap-contained `ℓᵖ` zero sequences from real directions in the actual limit operator's kernel, on the same real-centered contours as norm convergence and compactness |
 | `NLS.SequenceSpaces.OperatorBasisExt` | Unit Fourier vectors determine continuous linear maps on every finite Banach `ℓᵖ` space by norm-convergent truncation |
 | `NLS.ZakharovShabat.SourcePsiFullProductVariation` | Entire undeleted product variation, affine-line derivative, restored-factor identity, root coefficient recovery, and exact basis-direction formula |
 | `NLS.ZakharovShabat.SourcePsiFullProductContourVariation` | Full root-product contour differentiation and continuous directional functional with the limit operator's exact sign and `1/π` normalization |

@@ -954,6 +954,8 @@ import NLS.ZakharovShabat.SourcePsiCandidateSimpleRoots
 import NLS.ZakharovShabat.SourcePsiCandidateEntireVariation
 import NLS.ZakharovShabat.SourcePsiFullProductVariation
 import NLS.ZakharovShabat.SourcePsiFullProductContourVariation
+import NLS.ZakharovShabat.SourceEntireGapContourZeros
+import NLS.ZakharovShabat.SourcePsiFullProductGapZeros
 import NLS.ZakharovShabat.SourcePsiCandidateContourVariation
 import NLS.ComplexAnalysis.ParametricCircleIntegralHigher
 import NLS.ZakharovShabat.SourcePsiContourAnalytic
@@ -1104,6 +1106,7 @@ import NLS.ZakharovShabat.SourcePsiJacobianColumnNormLimit
 import NLS.ZakharovShabat.SourcePsiJacobianNormLimit
 import NLS.SequenceSpaces.OperatorBasisExt
 import NLS.ZakharovShabat.SourcePsiLimitOperatorContour
+import NLS.ZakharovShabat.SourcePsiLimitKernelGapZeros
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

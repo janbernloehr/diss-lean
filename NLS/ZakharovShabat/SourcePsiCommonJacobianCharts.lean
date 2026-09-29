@@ -21,12 +21,13 @@ namespace NLS.ZakharovShabat
 /-- Near fixed real-type source data, a single contour family works for
 all sufficiently distant deleted indices, with analytic selected
 equation charts containing the corresponding deleted sequences. -/
-theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
+theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (a : Coeff p) (φ : CoeffPair p)
     (hφ : IsRealType (CoeffPair.toMax p φ)) :
     ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ, (c m).im = 0) ∧
       (∀ m : ℤ,
         0 < R m ∧
         sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
@@ -71,7 +72,7 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
   have hnear : ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
       ((Coeff.deleteCoordinate n a : Coeff p),φ) ∈ ball (a,φ) (r/2) :=
     hparam.eventually (isOpen_ball.mem_nhds (mem_ball_self hhalf))
-  refine ⟨c,R,(fun m => hgeom (a,φ) hbaseEq m),K,hchoice,r/2,hhalf,C,hC,?_⟩
+  refine ⟨c,R,hcReal,(fun m => hgeom (a,φ) hbaseEq m),K,hchoice,r/2,hhalf,C,hC,?_⟩
   filter_upwards [hnear] with n hn
   let H : DeletedCoeff p n × CoeffPair p → Coeff p × CoeffPair p :=
     fun t => ((t.1 : Coeff p),t.2)
@@ -158,14 +159,51 @@ theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
   exact ⟨U,hUopen,hpair,hlocal,hbound,
     (fun t ht m => hcoord t ht m),hdeleted⟩
 
-/-- On one contour family, escaping full-space Jacobians have both a
-uniform operator-norm bound and the candidate `Q*` matrix-entry limits. -/
-theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit
+/-- Compatibility form of the real-centered construction, retaining
+the original statement. -/
+theorem exists_common_sourcePsi_selectedJacobianCharts_at_natAbs
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (a : Coeff p) (φ : CoeffPair p)
     (hφ : IsRealType (CoeffPair.toMax p φ)) :
     ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ,
+        0 < R m ∧
+        sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
+        closedBall (c m) (R m) ⊆
+          sourceStandardRootOmittedDomain hp hp1 φ m ∧
+        sphere (c m) (R m) ⊆
+          sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ Ktail : ℕ,
+      (∀ m : ℤ, Ktail < m.natAbs →
+        c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+      ∃ δ : ℝ, 0 < δ ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+        ∃ U : Set (DeletedCoeff p n × CoeffPair p),
+          IsOpen U ∧ (Coeff.deleteCoordinateTo n a,φ) ∈ U ∧
+          ball (Coeff.deleteCoordinateTo n a,φ) δ ⊆ U ∧
+          (∀ t ∈ U,
+            ‖sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2‖ ≤ C) ∧
+          (∀ t ∈ U, ∀ m : ℤ,
+            (sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2 : Coeff p) m =
+              sourcePsiEquationCoordinate hp hp1 n m
+                (t.1 : Coeff p) t.2 (c m) (R m)) ∧
+          DifferentiableOn ℂ
+            (fun t : DeletedCoeff p n × CoeffPair p =>
+              sourcePsiSelectedEquationSequence hp hp1 n c R t.1 t.2) U := by
+  obtain ⟨c,R,_,hdata⟩ :=
+    exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered hp hp1 a φ hφ
+  exact ⟨c,R,hdata⟩
+
+/-- On one contour family, escaping full-space Jacobians have both a
+uniform operator-norm bound and the candidate `Q*` matrix-entry limits. -/
+theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit_realCentered
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ, (c m).im = 0) ∧
       (∀ m : ℤ,
         0 < R m ∧
         sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
@@ -195,13 +233,13 @@ theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit
                   sourcePsiDeletedEquationCoordinate hp hp1 n m
                     (Coeff.deleteCoordinateTo n a +
                       Coeff.deletedSingleCLM n k hkn t) φ (c m) (R m)) 0 := by
-  obtain ⟨c,R,hgeom,Kfree,hfree,δ,hδ,C,hC,hcharts⟩ :=
-    exists_common_sourcePsi_selectedJacobianCharts_at_natAbs hp hp1 a φ hφ
+  obtain ⟨c,R,hcReal,hgeom,Kfree,hfree,δ,hδ,C,hC,hcharts⟩ :=
+    exists_common_sourcePsi_selectedJacobianCharts_at_natAbs_realCentered hp hp1 a φ hφ
   let M : ℝ := 2*C/(δ/2) + 2
   have hM : 0 ≤ M := by
     dsimp [M]
     positivity
-  refine ⟨c,R,hgeom,M,hM,?_,?_,Kfree,hfree,?_⟩
+  refine ⟨c,R,hcReal,hgeom,M,hM,?_,?_,Kfree,hfree,?_⟩
   filter_upwards [hcharts] with n hchart
   obtain ⟨U,hUopen,hbase,hlocal,hbound,hcoord,hdiff⟩ := hchart
   let b₀ : DeletedCoeff p n := Coeff.deleteCoordinateTo n a
@@ -278,6 +316,47 @@ theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit
   exact sourcePsiFullRootJacobian_retained_entry_eq_deriv
     hp hp1 n c R U hUopen hcoord hdiff
       (Coeff.deleteCoordinateTo n a) φ hpair m k hmn hkn
+
+/-- Compatibility form of the real-centered construction, retaining
+the original statement. -/
+theorem exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ,
+        0 < R m ∧
+        sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
+        closedBall (c m) (R m) ⊆
+          sourceStandardRootOmittedDomain hp hp1 φ m ∧
+        sphere (c m) (R m) ⊆
+          sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ M : ℝ, 0 ≤ M ∧
+        (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+          ‖sourcePsiFullRootJacobian hp hp1 n c R
+            (Coeff.deleteCoordinateTo n a) φ‖ ≤ M) ∧
+        (∀ m k : ℤ,
+          (∀ z ∈ sphere (c m) (R m), displacedRoots a k - z ≠ 0) →
+            Tendsto (fun n : ℤ =>
+              (sourcePsiFullRootJacobian hp hp1 n c R
+                (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m)
+              (Filter.comap Int.natAbs Filter.atTop)
+              (𝓝 (sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)))) ∧
+        ∃ Ktail : ℕ,
+          (∀ m : ℤ, Ktail < m.natAbs →
+            c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+          ∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+            ∀ m k : ℤ, ∀ _hmn : m ≠ n, ∀ hkn : k ≠ n,
+              (sourcePsiFullRootJacobian hp hp1 n c R
+                (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m =
+                deriv (fun t : ℂ =>
+                  sourcePsiDeletedEquationCoordinate hp hp1 n m
+                    (Coeff.deleteCoordinateTo n a +
+                      Coeff.deletedSingleCLM n k hkn t) φ (c m) (R m)) 0 := by
+  obtain ⟨c,R,_,hdata⟩ :=
+    exists_common_sourcePsi_fullJacobian_uniformNorm_entryLimit_realCentered hp hp1 a φ hφ
+  exact ⟨c,R,hdata⟩
 
 /-- At fixed source data, the escaping full-space selected Jacobians
 have a common operator-norm bound. -/

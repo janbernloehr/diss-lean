@@ -4061,6 +4061,15 @@ and `1/π` factor. `SourcePsiLimitOperatorContour.lean` extends the matrix
 entry identity to all `ℓᵖ` directions by density and retains the actual
 norm-limit operator and compact correction on the same contour family.
 The kernel is therefore precisely the directions with vanishing
-full-variation contours. Obtaining gap zeros from these contours and
-proving undeleted interpolation uniqueness are the next injectivity
-steps.
+full-variation contours.
+The strengthened construction now retains real centers through these
+same limit theorems. `SourceEntireGapContourZeros.lean` provides shared
+open-gap and collapsed-gap contour arguments for entire numerators.
+The full product variation is real on the real spectral axis for real
+root data and directions. `SourcePsiLimitKernelGapZeros.lean` therefore
+obtains a zero in every periodic gap for each real direction in the
+actual limit operator's kernel. These zeros form a complete `ℓᵖ`
+displaced spectral sequence with no omitted index. Collapsed-gap
+midpoint vanishing also holds for complex directions. Undeleted
+interpolation uniqueness and the real/imaginary kernel reduction are
+the next injectivity steps.

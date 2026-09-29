@@ -24,13 +24,14 @@ namespace NLS.ZakharovShabat
 /-- The fixed-root norm limit has the prescribed contour matrix
 entries and is a compact perturbation of twice the identity. In
 particular it is bijective whenever its kernel is zero. -/
-theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact
+theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact_realCentered
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (a : Coeff p) (φ : CoeffPair p)
     (hφ : IsRealType (CoeffPair.toMax p φ))
     (ha : a ∈ sourcePeriodicGapRootSet hp hp1 φ) :
     ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ, (c m).im = 0) ∧
       (∀ m : ℤ,
         0 < R m ∧
         sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
@@ -49,9 +50,9 @@ theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact
           (Filter.comap Int.natAbs Filter.atTop) (𝓝 Qstar) ∧
         IsCompactOperator (Qstar - (2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff p)) ∧
         (Function.Injective Qstar → Function.Bijective Qstar) := by
-  obtain ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,hentry,
+  obtain ⟨c,R,hcReal,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,hentry,
       Kfree,hfree,hmatrix,Krow,Kcol,b,hoff,hQoff⟩ :=
-    exists_sourcePsiLimitMatrixOperator hp hp1 a φ hφ ha
+    exists_sourcePsiLimitMatrixOperator_realCentered hp hp1 a φ hφ ha
   let l : Filter ℤ := Filter.comap Int.natAbs Filter.atTop
   let T (n : ℤ) : Coeff p →L[ℂ] Coeff p :=
     sourcePsiFullRootJacobian hp hp1 n c R (Coeff.deleteCoordinateTo n a) φ
@@ -109,12 +110,43 @@ theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact
       abel_nf
     rw [heq]
     exact hDcompact.add hCcompact
-  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,?_,hcompact,?_⟩
+  refine ⟨c,R,hcReal,hgeom,Qstar,M,hM,hQnorm,hbound,hentry,?_,hcompact,?_⟩
   · exact Coeff.tendsto_operator_of_finiteProjections_diagonal_and_offDiagonalTails
       l T Qstar houtput hinput hdiag htail
   · intro hinj
     exact NLS.CompactSpectrum.bijective_of_injective_compact_sub_smul
       Qstar (by norm_num : (2 : ℂ) ≠ 0) hcompact hinj
+
+/-- Compatibility form of the real-centered construction, retaining
+the original statement. -/
+theorem exists_sourcePsiLimitMatrixOperator_normLimit_compact
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (a : Coeff p) (φ : CoeffPair p)
+    (hφ : IsRealType (CoeffPair.toMax p φ))
+    (ha : a ∈ sourcePeriodicGapRootSet hp hp1 φ) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      (∀ m : ℤ,
+        0 < R m ∧
+        sourcePeriodicSegment hp hp1 φ m ⊆ ball (c m) (R m) ∧
+        closedBall (c m) (R m) ⊆ sourceStandardRootOmittedDomain hp hp1 φ m ∧
+        sphere (c m) (R m) ⊆ sourceCanonicalRootDomain hp hp1 φ) ∧
+      ∃ Qstar : Coeff p →L[ℂ] Coeff p, ∃ M : ℝ,
+        0 ≤ M ∧ ‖Qstar‖ ≤ M ∧
+        (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+          ‖sourcePsiFullRootJacobian hp hp1 n c R
+            (Coeff.deleteCoordinateTo n a) φ‖ ≤ M) ∧
+        (∀ m k : ℤ,
+          (Qstar (lp.single p k 1)) m =
+            sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)) ∧
+        Tendsto (fun n : ℤ => sourcePsiFullRootJacobian hp hp1 n c R
+          (Coeff.deleteCoordinateTo n a) φ)
+          (Filter.comap Int.natAbs Filter.atTop) (𝓝 Qstar) ∧
+        IsCompactOperator (Qstar - (2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff p)) ∧
+        (Function.Injective Qstar → Function.Bijective Qstar) := by
+  obtain ⟨c,R,_,hdata⟩ :=
+    exists_sourcePsiLimitMatrixOperator_normLimit_compact_realCentered hp hp1 a φ hφ ha
+  exact ⟨c,R,hdata⟩
 
 /-- At every fixed gap-contained root vector, the full psi Jacobians
 converge in operator norm as the deleted index escapes to infinity in
