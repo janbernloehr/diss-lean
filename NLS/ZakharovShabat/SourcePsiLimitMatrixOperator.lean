@@ -47,6 +47,17 @@ theorem exists_sourcePsiLimitMatrixOperator
         (∀ m k : ℤ,
           (Qstar (lp.single p k 1)) m =
             sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)) ∧
+        ∃ Kfree : ℕ,
+          (∀ m : ℤ, Kfree < m.natAbs →
+            c m = (Real.pi : ℂ)*m ∧ R m = Real.pi/8) ∧
+          (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
+            ∀ m k : ℤ, ∀ _hmn : m ≠ n, ∀ hkn : k ≠ n,
+              (sourcePsiFullRootJacobian hp hp1 n c R
+                (Coeff.deleteCoordinateTo n a) φ (lp.single p k 1)) m =
+                deriv (fun t : ℂ =>
+                  sourcePsiDeletedEquationCoordinate hp hp1 n m
+                    (Coeff.deleteCoordinateTo n a +
+                      Coeff.deletedSingleCLM n k hkn t) φ (c m) (R m)) 0) ∧
         ∃ Krow Kcol : ℕ, ∃ b : Coeff p,
           (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
             ∀ m : ℤ, Krow ≤ m.natAbs → m ≠ n →
@@ -88,7 +99,7 @@ theorem exists_sourcePsiLimitMatrixOperator
     Coeff.tendsto_operator_coordinate_of_basis hp
       (Filter.comap Int.natAbs Filter.atTop) T Qstar M hM hQnorm
       hbound hentryQ x m
-  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,?_,?_⟩
+  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,?_,Kfree,hfree,hmatrix,?_⟩
   · intro m k
     rw [hQcol k]
     exact hvapply k m

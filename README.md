@@ -3993,6 +3993,22 @@ for every operator sharing the same tail-entry majorant.
 the actual common-contour Jacobians and `Q*`: one pair of finite cutoffs
 makes all their high-output, high-input off-diagonal blocks smaller than
 any prescribed positive error, eventually in the deleted index.
-The diagonal correction and the mixed blocks with finitely many input
-or output frequencies still need uniform tail estimates to complete
+`SourcePsiQuotientUniformRootVariation.lean` uses the Schwarz lemma to
+control root-parameter variation of the quotient on every selected disc
+with one constant. A fixed quotient majorant therefore controls the
+deleted root sequences up to a scalar error tending to zero.
+`SourcePsiJacobianEscapingDiagonalTail.lean` combines this estimate with
+the fixed midpoint and gap tails, proving that the diagonal corrections
+to two are uniformly small on distant output rows, eventually in the
+deleted index, for both open and collapsed gaps.
+`OperatorDiagonalConvergence.lean` upgrades diagonal coordinate limits
+and this uniform tail estimate to supremum-norm convergence of the
+diagonal symbols and operator-norm convergence of their multipliers.
+`SourcePsiJacobianDiagonalNormLimit.lean` applies it to the full psi
+Jacobians, proving `Dⁿ → D*` in operator norm at every fixed gap-contained
+root vector. The common `Q*` construction retains its free-tail contour
+choices and scalar-entry identities, so the diagonal limit and the
+off-diagonal high/high tail estimate hold on the same contour family.
+The mixed off-diagonal blocks with finitely many input or output
+frequencies still need uniform tail estimates to complete full
 operator-norm convergence in Lemma 12.10.

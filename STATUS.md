@@ -1,17 +1,20 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: uniform off-diagonal high/high tails
+## Current Lemma 12.10 milestone: diagonal norm convergence
 
-`SourcePsiJacobianOffDiagonalUniformTail.lean` strengthens the bounded
-`Q*` construction with a common pair of finite cutoffs: the off-diagonal
-high-output, high-input block of `Q*` and every sufficiently distant
-full psi Jacobian has arbitrarily small operator norm. The proof uses
-the fixed `ℓᵖ` reciprocal-entry majorant on the same contour family.
-`OperatorDiagonal.lean` supplies full-space diagonal extraction, and
-`FullReciprocalMatrixTail.lean` proves the quantitative bound using a
-conjugate-exponent matrix-row kernel and the majorant's output tail.
-The diagonal and mixed-block tail estimates, full operator-norm
-convergence, and invertibility of the nonfree limit remain open.
+`SourcePsiJacobianDiagonalNormLimit.lean` proves that the diagonal
+multipliers of the escaping full psi Jacobians converge to the diagonal
+of `Q*` in operator norm at every fixed gap-contained root vector.
+The key new estimate controls quotient variation uniformly over all
+selected discs using the Schwarz lemma. It yields a fixed quotient
+majorant plus a scalar deletion error tending to zero; the fixed
+spectral tails then make the diagonal corrections uniformly small.
+`OperatorDiagonalConvergence.lean` assembles the diagonal coordinate
+limits and uniform tails into norm convergence. The common `Q*`
+theorem now packages this result together with the previously proved
+uniformly small off-diagonal high/high blocks on the same contours.
+The mixed off-diagonal block estimates, full operator-norm convergence,
+and invertibility of the nonfree limit remain open.
 
 ## Implemented and checked
 

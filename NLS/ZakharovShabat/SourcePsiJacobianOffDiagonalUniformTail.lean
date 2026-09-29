@@ -1,4 +1,5 @@
 import NLS.ZakharovShabat.SourcePsiLimitMatrixOperator
+import NLS.ZakharovShabat.SourcePsiJacobianDiagonalNormLimit
 import NLS.SequenceSpaces.FullReciprocalMatrixTail
 
 /-!
@@ -7,7 +8,8 @@ import NLS.SequenceSpaces.FullReciprocalMatrixTail
 The fixed reciprocal-entry majorant for the common contour family
 controls the off-diagonal high-output, high-input blocks in operator
 norm. One pair of finite cutoffs works for the limit operator and every
-sufficiently distant deleted-index Jacobian.
+sufficiently distant deleted-index Jacobian. The same contour family
+also gives operator-norm convergence of their diagonal parts.
 -/
 
 noncomputable section
@@ -16,8 +18,9 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 
 /-- The bounded contour-limit operator and the escaping Jacobians
-have uniformly small two-sided off-diagonal tails. This supplies the
-high/high part of the finite-block approximation in Lemma 12.10. -/
+have uniformly small two-sided off-diagonal tails, and their diagonal
+parts converge in operator norm. These are the diagonal and high/high
+parts of the operator-norm argument in Lemma 12.10. -/
 theorem exists_sourcePsiLimitMatrixOperator_uniformOffDiagonalTail
     {p : ℝ≥0∞} [Fact (1 ≤ p)]
     (hp : p ≠ ⊤) (hp1 : 1 < p)
@@ -46,7 +49,7 @@ theorem exists_sourcePsiLimitMatrixOperator_uniformOffDiagonalTail
         (∀ m k : ℤ,
           (Qstar (lp.single p k 1)) m =
             sourcePsiLimitMatrixEntry hp hp1 m k a φ (c m) (R m)) ∧
-        ∀ ε : ℝ, 0 < ε → ∃ s t : Finset ℤ,
+        (∀ ε : ℝ, 0 < ε → ∃ s t : Finset ℤ,
           (∀ᶠ n : ℤ in Filter.comap Int.natAbs Filter.atTop,
             ‖(ContinuousLinearMap.id ℂ (Coeff p) - Coeff.truncateCLM s).comp
               ((Coeff.operatorOffDiagonal
@@ -55,10 +58,16 @@ theorem exists_sourcePsiLimitMatrixOperator_uniformOffDiagonalTail
                 (ContinuousLinearMap.id ℂ (Coeff p) - Coeff.truncateCLM t))‖ < ε) ∧
           ‖(ContinuousLinearMap.id ℂ (Coeff p) - Coeff.truncateCLM s).comp
             ((Coeff.operatorOffDiagonal Qstar).comp
-              (ContinuousLinearMap.id ℂ (Coeff p) - Coeff.truncateCLM t))‖ < ε := by
+              (ContinuousLinearMap.id ℂ (Coeff p) - Coeff.truncateCLM t))‖ < ε) ∧
+        Tendsto (fun n : ℤ => Coeff.multiplierCLM (p := p)
+          (Coeff.operatorDiagonalSymbol
+            (sourcePsiFullRootJacobian hp hp1 n c R
+              (Coeff.deleteCoordinateTo n a) φ)))
+          (Filter.comap Int.natAbs Filter.atTop)
+          (𝓝 (Coeff.multiplierCLM (p := p) (Coeff.operatorDiagonalSymbol Qstar))) := by
   classical
   obtain ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,hentry,
-      Krow,Kcol,b,hoff,hQoff⟩ :=
+      Kfree,hfree,hmatrix,Krow,Kcol,b,hoff,hQoff⟩ :=
     exists_sourcePsiLimitMatrixOperator hp hp1 a φ hφ ha
   let : Fact (1 ≤ p.conjExponent) :=
     ⟨ENNReal.HolderConjugate.one_le p.conjExponent p⟩
@@ -66,7 +75,10 @@ theorem exists_sourcePsiLimitMatrixOperator_uniformOffDiagonalTail
       ‖((m-k : ℤ) : ℂ)‖ = |((k-m : ℤ) : ℝ)| := by
     rw [Complex.norm_intCast]
     simp only [Int.cast_sub,abs_sub_comm]
-  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,hentry,?_⟩
+  have hdiaglim := tendsto_sourcePsiFullRootJacobian_diagonal
+    hp hp1 a φ hφ ha c R Kfree hfree hmatrix Qstar
+    (fun m => hpoint (lp.single p m 1) m)
+  refine ⟨c,R,hgeom,Qstar,M,hM,hQnorm,hbound,hpoint,hentry,?_,hdiaglim⟩
   intro ε hε
   obtain ⟨s,t,htail⟩ :=
     Coeff.exists_uniform_twoSidedTail_cutoffs_of_reciprocalEntries

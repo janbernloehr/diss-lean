@@ -7,6 +7,7 @@ import NLS.SequenceSpaces.UniformTailContinuity
 import NLS.SequenceSpaces.Weighted
 import NLS.SequenceSpaces.Multiplier
 import NLS.SequenceSpaces.OperatorDiagonal
+import NLS.SequenceSpaces.OperatorDiagonalConvergence
 import NLS.SequenceSpaces.Translation
 import NLS.SequenceSpaces.Convolution
 import NLS.SequenceSpaces.Embedding
@@ -1087,6 +1088,9 @@ import NLS.ZakharovShabat.SourcePsiLimitScalarJacobianEntry
 import NLS.ZakharovShabat.SourcePsiCommonJacobianCharts
 import NLS.ZakharovShabat.SourcePsiLimitMatrixColumns
 import NLS.ZakharovShabat.SourcePsiLimitMatrixOperator
+import NLS.ZakharovShabat.SourcePsiQuotientUniformRootVariation
+import NLS.ZakharovShabat.SourcePsiJacobianEscapingDiagonalTail
+import NLS.ZakharovShabat.SourcePsiJacobianDiagonalNormLimit
 import NLS.ZakharovShabat.SourcePsiJacobianOffDiagonalUniformTail
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
