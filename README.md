@@ -4863,5 +4863,43 @@ estimate with a constant and cutoff independent of both indices.
 All beta terms remain analytic, both boundary displacement sequences
 remain Banach analytic, all beta values retain their uniqueness, and
 the full simply connected psi extension remains on its original domain.
-The remaining quantitative part of Theorem 13.1(i) is the finite set
-of selected central gaps, with a bound uniform over all deleted indices.
+The following construction also covers the finite selected central
+gaps, with a bound uniform over all deleted indices.
+
+`SourcePsiExtensionUniformFilledStability.lean` identifies the actual
+analytic psi extension with a uniform branch family on one source ball,
+using real agreement and the Banach identity theorem. The existing
+Schwarz estimate therefore controls every midpoint-filled root graph
+near its real gap-root vector, independently of the deleted index.
+
+`SourcePsiMidpointShiftedDiscBound.lean` permits both the omitted
+midpoint and the selected disc to move from their free lattice points.
+Once the index difference dominates their shifts and the disc radius,
+the midpoint denominator retains half the lattice separation. A compact
+quotient bound then gives a uniform bound on chi on that selected disc.
+
+`SourceAngularBetaUniformSelectedBound.lean` applies compact gap-product
+quotient bounds to every actual filled root graph on a fixed selected
+chart. One chi bound and retained-root bound cover all distant deleted
+indices. A finite intersection of the actual local beta neighborhoods
+covers the remaining deleted indices; a finite maximum index distance
+restores the reciprocal-index factor. Thus a central selected gap has
+one source neighborhood and beta constant for every deleted index,
+also at collapsed gaps and endpoint terminals.
+
+`SourceAngularBetaUniformBound.lean` combines the uniform selected-gap
+tail with the finitely many central chart bounds. One source neighborhood
+and positive constant control every off-diagonal pair, with no cutoff
+in either index.
+
+`SourceAngularBetaTheorem13_1.lean` proves Theorem 13.1(i) in full.
+`exists_sourceAngularBeta_theorem13_1_i` gives one common open complex
+neighborhood of the entire real source locus on which every actual
+beta term is analytic and
+`|beta_n^m| <= C * (|gamma_m| + |mu_m - tau_m|) / |n - m|`
+locally uniformly at every complex source, with one constant for all
+indices. Unique actual beta values, both analytic scalar boundary-root
+families, both Banach-analytic boundary displacement sequences, and
+analytic midpoint and squared-gap coordinates are retained. The full
+normalized psi family remains on its original simply connected domain.
+Theorem 13.1(ii)-(iv), Corollary 13.2, and the later chapters remain.
