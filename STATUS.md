@@ -1,6 +1,20 @@
 # Implementation status
 
-## Current milestone: Lemma 12.12 quadratic root-offset estimates
+## Current milestone: Lemma 12.12 locally uniform chi tail bounds
+
+`exists_sourcePsi_normalized_complex_extension_with_tail_factor_majorants`
+now constructs one common open simply connected complex neighborhood
+with the actual analytic psi root family, exact contour normalization,
+assigned spectral isolation, and the tail form of (2.32). At every
+complex source, one neighborhood and cutoff work for all deleted
+indices: the actual midpoint-filled factor's error `χ-i` on every
+free-centered eighth-π tail disc has an ℓp majorant with a common norm
+bound. The majorant comes from the actual quotient error plus a
+translated reciprocal lattice. Moving omitted midpoints have a
+uniform lattice denominator bound, including omitted indices in the
+finite head. Gap-product bounds and the common root radius control
+the actual analytic root inputs. Restricting the atlas's source balls
+preserves its gluing, analyticity, root isolation, and exact periods.
 
 The actual midpoint-filled regular factor `χ` in (2.31) is now defined
 from the psi quotient. Its weighted standard-root period is exactly
@@ -20,11 +34,12 @@ A pointwise ℓp majorant assembles the literal quotient by `γ²` into an
 actual ℓp offset sequence, with zero at the omitted index and exact
 factorization also at every collapsed retained gap.
 
-These estimates still take the factor bounds and local contour
-geometry as explicit inputs. To finish Lemma 12.12, instantiate them
-with locally uniform majorants for the analytic psi root family,
-handle the finite head, and obtain bounds independent of the deleted
-index on the common complex neighborhood.
+The chi tail majorants are now instantiated for the actual analytic
+family on a common complex domain. The offset estimates still take
+the midpoint lower bound and local contour geometry as explicit
+inputs. To finish Lemma 12.12, prove the uniform positive midpoint
+lower bound, handle the finite head, transfer the retained zeros to
+the selected tail circles, and assemble the all-index ℓp offset bound.
 
 ## Completed: Lemma 12.11 exact complex normalization
 
@@ -338,9 +353,26 @@ derives the midpoint lower bound from small error to `i`.
 `SquaredWeightQuotient.lean` constructs the literal ℓp quotient by
 squared weights, proving exact factorization at zero weights as well
 as the majorant norm bound. The actual psi offset sequence follows
-from pointwise squared-gap estimates. Lemma 12.12's locally uniform
-all-index bounds still require the actual factor majorants, head
-estimates, and common source-domain geometry.
+from pointwise squared-gap estimates.
+
+`SourcePsiMidpointDenominator.lean` proves a common lattice separation
+bound for the moving omitted midpoint on distant selected discs,
+uniformly over every omitted index and one source neighborhood.
+`SourcePsiMidpointFilledFactorMajorant.lean` turns the actual quotient
+error into a chi-error ℓp majorant. The added reciprocal-lattice norm
+does not depend on its shift, and the midpoint fill has a uniform
+coefficient norm bound. The source quotient estimates instantiate
+this result for every bounded root input.
+`SourcePsiBranchFactorMajorant.lean` bounds the real canonical roots
+by the gap product and the complex branches by their common root
+radius, then obtains actual chi majorants near each real source.
+`SourcePsiFactorMajorantComplexRootAtlas.lean` restricts the source
+balls to these neighborhoods and carries the tail cutoff and bound
+through the glued atlas. `SourcePsiComplexFactorAsymptotics.lean`
+constructs one common normalized analytic extension with locally
+uniform chi tail majorants at every complex source. Lemma 12.12's
+uniform midpoint lower bound, finite-head estimates, and all-index
+squared-gap offset conclusion remain open.
 
 ## Implemented and checked
 
@@ -350,6 +382,11 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SourcePsiMidpointDenominator` | Locally uniform omitted-midpoint lattice separation on selected tail discs, covering every omitted index including the finite head |
+| `NLS.ZakharovShabat.SourcePsiMidpointFilledFactorMajorant` | Actual chi-error ℓp majorants from quotient errors and translated reciprocal lattices, with source- and index-uniform norm bounds for bounded root inputs |
+| `NLS.ZakharovShabat.SourcePsiBranchFactorMajorant` | Common canonical and analytic branch norm bounds and actual chi tail majorants near every real source |
+| `NLS.ZakharovShabat.SourcePsiFactorMajorantComplexRootAtlas` | Restricted source balls preserve the isolating root atlas while carrying locally uniform chi tail majorants throughout its complex domain |
+| `NLS.ZakharovShabat.SourcePsiComplexFactorAsymptotics` | Common open simply connected normalized analytic psi extension with locally uniform chi tail majorants at every complex source, independent of the deleted index |
 | `NLS.SequenceSpaces.SquaredWeightQuotient` | Literal ℓp quotient by squared weights, exact factorization at zero weights, and majorant norm control |
 | `NLS.ZakharovShabat.SourceStandardRootZeroPeriodOffset` | Centered-factor, divided-difference (2.33), and reciprocal-root-correction identities from an actual vanishing standard-root period |
 | `NLS.ZakharovShabat.SourceStandardRootQuadraticOffset` | Squared-gap midpoint offset bounds from explicit enclosing-circle separation, centered factor variation, and midpoint lower bounds |

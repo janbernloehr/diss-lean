@@ -4319,7 +4319,21 @@ automatically and yields `|σ-τ| ≤ (384/π) M |γ|²`, with a constant
 independent of both indices. `SquaredWeightQuotient.lean` packages the
 literal division by squared gaps into an ℓp sequence, including
 collapsed gaps; the corresponding psi offset sequence has zero at
-the omitted index and the majorant norm bound. Finishing Lemma 12.12
-still requires locally uniform factor majorants and finite-head
-estimates for the actual analytic root family on the common complex
-neighborhood.
+the omitted index and the majorant norm bound.
+`SourcePsiMidpointDenominator.lean` now proves the locally uniform
+lattice denominator bound for the moving omitted midpoint, including
+omitted indices in the finite head. `SourcePsiMidpointFilledFactorMajorant.lean`
+derives actual chi-error ℓp majorants from quotient errors and a shifted
+reciprocal lattice, with a norm bound independent of the deleted index
+for bounded root inputs. `SourcePsiBranchFactorMajorant.lean` supplies
+those bounds for the actual analytic branches from the full gap product
+and common root radius. `SourcePsiFactorMajorantComplexRootAtlas.lean`
+restricts each source ball to the majorant neighborhood while preserving
+its branches, equations, and root isolation.
+`SourcePsiComplexFactorAsymptotics.lean` constructs one common open
+simply connected normalized analytic psi extension with locally
+uniform chi tail majorants at every complex source. This proves the
+tail form of (2.32), with a bound independent of the deleted index.
+Lemma 12.12 still requires the uniform positive midpoint lower bound,
+finite-head offset estimates, and assembly of the all-index squared-gap
+ℓp conclusion.
