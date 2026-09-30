@@ -4601,9 +4601,10 @@ neighborhood supporting all coordinates of both boundary sequences.
 `SourceAngularBetaBoundaryDomain.lean` places the constructed beta values
 on such a neighborhood, retaining the original simply connected psi
 domain. Thus the moving Dirichlet terminals are analytic on the beta
-construction domain. Canonical periodic-endpoint primitive families and beta
-analyticity, especially at periodic terminals and collapsed gaps, remain
-to be proved.
+construction domain. The following steps construct canonical
+periodic-endpoint primitive families and prove beta source analyticity
+at every terminal of an open real gap. Collapsed-gap source analyticity
+remains to be proved.
 
 `ParametricIntervalIntegralAnalytic.lean` proves full Banach source
 analyticity of fixed interval integrals of jointly analytic families.
@@ -4654,9 +4655,9 @@ near every open real gap on a common domain retaining all pointwise
 beta values and both analytic boundary-coordinate sequences. The full
 simply connected psi extension is retained on its original domain.
 The endpoint normalization is now transferred to the Dirichlet sheet
-at regular real terminals as described below. Source regularity at
-periodic terminals and collapsed gaps remains necessary for the full
-beta analyticity statement and Theorem 13.1.
+at every terminal of an open real gap as described below. Source
+regularity at collapsed gaps remains necessary for the full beta
+analyticity statement and Theorem 13.1.
 
 `ParametricCosineTerminal.lean` constructs the analytic moving cosine
 angle of an analytic spectral terminal at a noncritical base angle.
@@ -4678,6 +4679,30 @@ analyticity of beta at every real source with a regular Dirichlet
 terminal, for every off-diagonal pair and including central indices.
 One actual common beta domain retains all pointwise values, both
 analytic boundary sequences, and the full simply connected psi
-extension. Periodic-terminal and collapsed-gap source analyticity,
-the full continuity and bounds, diagonal eta, and the angular sum
-remain unfinished.
+extension. The following step supplies periodic-terminal source
+analyticity on open real gaps. Collapsed gaps, the full continuity
+and bounds, diagonal eta, and the angular sum remain unfinished.
+
+`ParametricSineTerminal.lean` constructs an analytic moving angle from
+an analytic prescribed sine. At cosine endpoints the sine derivative
+is nonzero. The spectral square identity and continuity recover the
+cosine terminal equation with its exact sign.
+
+`SourceAngularCanonicalCosineEndpoint.lean` proves that each actual
+off-diagonal cosine primitive vanishes at both endpoint angles. Its
+even derivative and the opposite exterior root coefficients force
+the right-endpoint normalization as well as the left anchor. The
+normalized actual Dirichlet anti-discriminant is an analytic sine
+coordinate on open gap charts and satisfies the exact sine/cosine
+square identity through a periodic terminal.
+
+`SourceAngularBetaEndpointAnalytic.lean` uses this coordinate to
+construct an analytic moving angle near either periodic Dirichlet
+endpoint. Its normalized sine fixes the regular-terminal sheet
+coefficient to minus i, and both endpoint-angle values are zero.
+The same analytic expression agrees with beta through nearby regular
+and endpoint terminals. Thus beta is complex source analytic at every
+real source with an open selected gap, for every off-diagonal pair,
+including central indices and both periodic terminals. Source
+analyticity at collapsed real gaps and the remaining Theorem 13.1
+bounds and angular-sum assertions remain to be proved.
