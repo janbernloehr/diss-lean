@@ -8,7 +8,8 @@ Intersect the actual beta construction domain with the common analytic
 boundary-coordinate domain. All off-diagonal beta values remain constructed,
 and their moving Dirichlet terminals are analytic on the same open source
 neighborhood. The full simply connected psi domain is retained separately.
-Analyticity of beta itself still requires a parameter-dependent primitive.
+The later `SourceAngularBetaAnalyticCommonDomain` constructs the joint
+primitives and proves analyticity of beta on a common complex domain.
 -/
 
 noncomputable section

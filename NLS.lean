@@ -4,6 +4,7 @@ import NLS.SequenceSpaces.OnePlusTopology
 import NLS.SequenceSpaces.OnePlusComplete
 import NLS.SequenceSpaces.Truncation
 import NLS.SequenceSpaces.UniformTailContinuity
+import NLS.SequenceSpaces.LocallyUniformCoordinates
 import NLS.SequenceSpaces.Weighted
 import NLS.SequenceSpaces.Multiplier
 import NLS.SequenceSpaces.OperatorDiagonal
@@ -806,6 +807,7 @@ import NLS.ZakharovShabat.SourceSpectralClusters
 import NLS.ZakharovShabat.BoundarySimpleBranchAnalytic
 import NLS.ZakharovShabat.CanonicalPeriodOneBoundaryAnalytic
 import NLS.ZakharovShabat.SourceBoundaryRootsAnalyticNeighborhood
+import NLS.ZakharovShabat.SourceBoundaryDisplacementAnalytic
 import NLS.ComplexAnalysis.RealIntervalDiscs
 import NLS.ComplexAnalysis.FinitePositiveMargins
 import NLS.ZakharovShabat.SourceClusterDiscs
@@ -1266,6 +1268,8 @@ import NLS.ZakharovShabat.SourceAngularCauchyCandidate
 import NLS.ZakharovShabat.SourceAngularCauchyEquation
 import NLS.ZakharovShabat.SourceAngularCauchySheetPrimitive
 import NLS.ZakharovShabat.SourceAngularBetaCauchyAnalytic
+import NLS.ZakharovShabat.SourceAngularUniformAnnulusPrimitive
+import NLS.ZakharovShabat.SourceAngularBetaAnalyticCommonDomain
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

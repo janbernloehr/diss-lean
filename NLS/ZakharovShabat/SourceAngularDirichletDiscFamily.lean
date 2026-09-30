@@ -43,12 +43,13 @@ variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W : Set (CoeffPair p)}
 /-- One assigned family contains all actual Dirichlet roots and gives
 all Kronecker periods near a real source. The source ball can also be
 confined to any prescribed open neighborhood of that source. -/
-theorem exists_local_angular_dirichlet_disc_family
+theorem exists_local_angular_assigned_disc_family
     (hs : SourcePsiIsolatingComplexExtension hp hp1 W s)
     (φ : realTypeSourceLocus p) (O : Set (CoeffPair p)) (hO : IsOpen O) (hφO : φ.val ∈ O) :
     ∃ δ : ℝ, 0 < δ ∧ ball φ.val δ ⊆ O ∧
-      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
-        ∀ ψ ∈ ball φ.val δ, SourceAngularDirichletDiscFamilyData hp hp1 s ψ c R := by
+      ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧
+        ∀ ψ ∈ ball φ.val δ, SourceAngularDirichletDiscFamilyData hp hp1 s ψ
+          (sourceIsolatingCenter hp hp1 φ.val N) (sourceIsolatingRadius hp hp1 φ.val N ε) := by
   obtain ⟨δ₀,hδ₀,N,ε,hε,_,hballW,hclusters,hdisjoint,_⟩ := hs.isolation φ
   obtain ⟨U,hU,_,hreal,hjoint⟩ := exists_global_sourcePsiContourIntegrand_jointAnalytic hp hp1
   obtain ⟨η,hη,hballOU⟩ := Metric.isOpen_iff.mp (hO.inter hU) φ.val ⟨hφO,hreal φ.property⟩
@@ -63,8 +64,7 @@ theorem exists_local_angular_dirichlet_disc_family
       sourceIsolatingDisc hp hp1 φ.val N ε m :=
     sourcePeriodicSegment_subset_isolatingDisc hp hp1 φ.val ψ N ε m
       (hclusters ψ (hball₀ hψ) m)
-  refine ⟨δ,hδ,hballO,sourceIsolatingCenter hp hp1 φ.val N,
-    sourceIsolatingRadius hp hp1 φ.val N ε,?_⟩
+  refine ⟨δ,hδ,hballO,N,ε,hε,?_⟩
   intro ψ hψ
   refine ⟨sourcePsiAssignedCircleFamily hp hp1 φ.val ψ N ε hε (hgap ψ hψ) hdisjoint,?_,?_⟩
   · intro m
@@ -75,6 +75,18 @@ theorem exists_local_angular_dirichlet_disc_family
       ((hs.analytic n).mono (hball₀.trans hballW))
       (fun χ _ => hs.real_agreement n χ) hgap hdisjoint U hballU
       (hjoint n).1 (hjoint n).2 m hψ
+
+/-- The explicit assigned family may also be used just through its
+centers and radii, retaining the original interface. -/
+theorem exists_local_angular_dirichlet_disc_family
+    (hs : SourcePsiIsolatingComplexExtension hp hp1 W s)
+    (φ : realTypeSourceLocus p) (O : Set (CoeffPair p)) (hO : IsOpen O) (hφO : φ.val ∈ O) :
+    ∃ δ : ℝ, 0 < δ ∧ ball φ.val δ ⊆ O ∧
+      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        ∀ ψ ∈ ball φ.val δ, SourceAngularDirichletDiscFamilyData hp hp1 s ψ c R := by
+  obtain ⟨δ,hδ,hball,N,ε,_,hfamily⟩ := hs.exists_local_angular_assigned_disc_family φ O hO hφO
+  exact ⟨δ,hδ,hball,sourceIsolatingCenter hp hp1 φ.val N,
+    sourceIsolatingRadius hp hp1 φ.val N ε,hfamily⟩
 
 end SourcePsiIsolatingComplexExtension
 

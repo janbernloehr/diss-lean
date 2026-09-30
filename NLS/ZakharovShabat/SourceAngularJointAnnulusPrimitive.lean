@@ -69,6 +69,78 @@ namespace SourcePsiIsolatingComplexExtension
 variable {hp : p ≠ ⊤} {hp1 : 1 < p} {W₀ : Set (CoeffPair p)}
   {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
 
+/-- Fixed enclosing geometry and actual assigned periods construct a
+joint annular primitive chart on the specified source neighborhood. -/
+theorem joint_angular_annulus_chart_of_geometry
+    (hs : SourcePsiIsolatingComplexExtension hp hp1 W₀ s)
+    (W : Set (CoeffPair p)) (hW : IsOpen W) (hWW₀ : W ⊆ W₀)
+    (hA : ∀ ψ ∈ W, ∀ k : ℤ,
+      AnalyticAt ℂ (fun χ : CoeffPair p => canonicalPeriodicMidpoint hp hp1
+        (periodOnePotential χ) (periodOnePotential_mem χ) k) ψ ∧
+      AnalyticAt ℂ (fun χ : CoeffPair p => (canonicalPeriodicGap hp hp1
+        (periodOnePotential χ) (periodOnePotential_mem χ) k)^2) ψ)
+    (V : Set (CoeffPair p)) (hV : IsOpen V) (hVW : V ⊆ W)
+    (m : ℤ) (c : ℤ → ℂ) (T : ℤ → ℝ) (r R : ℝ) (z₀ : ℂ)
+    (hr : 0 < r) (hrR : r < R) (hRT : R < T m)
+    (hz₀ : z₀ ∈ ball (c m) R \ closedBall (c m) r)
+    (hdiscs : ∀ ψ ∈ V, SourceAngularDirichletDiscFamilyData hp hp1 s ψ c T)
+    (hgap : ∀ ψ ∈ V, sourcePeriodicSegment hp hp1 ψ m ⊆ ball (c m) r)
+    (hterminal : ∀ ψ ∈ V,
+      canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈ ball (c m) r) :
+    SourceAngularJointAnnulusChartData hp hp1 m s W V c T r R z₀ := by
+  obtain ⟨_,hQ⟩ := sourceCanonicalRootJointProduct_analyticOnNhd_of_symmetric hp hp1 W hW hA
+  obtain ⟨_,hP⟩ := sourceStandardRootOmittedJointProduct_analyticOnNhd_of_symmetric hp hp1 W hW hA m
+  have hjoint (ψ : CoeffPair p) (hψ : ψ ∈ V)
+      (z : ℂ) (hz : z ∈ closedBall (c m) R \ ball (c m) r) :
+      (z,ψ) ∈ sourceCanonicalRootJointDomain hp hp1 W := by
+    refine ⟨hVW hψ,?_⟩
+    intro k
+    by_cases hkm : k = m
+    · subst k
+      exact fun h => hz.2 (hgap ψ hψ h)
+    · exact ((hdiscs ψ hψ).contour_family.2 m).2.2.1
+        (closedBall_subset_closedBall hRT.le hz.1) k hkm
+  have hf (n : ℤ) : AnalyticOnNhd ℂ
+      (sourceAngularIntegrand n s (sourceCanonicalRootJointProduct hp hp1))
+      ((closedBall (c m) R \ ball (c m) r) ×ˢ V) := by
+    intro x hx
+    have hxD := hjoint x.2 hx.2 x.1 hx.1
+    exact (hs.analytic_numerator_joint n x ⟨mem_univ _,hWW₀ hxD.1⟩).div
+      (hQ x hxD) (sourceCanonicalRoot_ne_zero_off_gaps hp hp1 x.2 x.1 hxD.2)
+  have hselected : AnalyticOnNhd ℂ
+      (fun x : ℂ × CoeffPair p => sourceStandardRoot hp hp1 x.2 m x.1)
+      ((closedBall (c m) R \ ball (c m) r) ×ˢ V) := by
+    intro x hx
+    exact sourceStandardRoot_joint_analyticAt_of_symmetric hp hp1 x.2 m x.1
+      (hA x.2 (hVW hx.2) m).1 (hA x.2 (hVW hx.2) m).2 ((hjoint x.2 hx.2 x.1 hx.1).2 m)
+  have homitted : AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 m)
+      (ball (c m) (T m) ×ˢ V) := by
+    intro x hx
+    exact hP x ⟨hVW hx.2,((hdiscs x.2 hx.2).contour_family.2 m).2.2.1
+      (ball_subset_closedBall hx.1)⟩
+  have hperiod (n : ℤ) (hmn : m ≠ n) (ψ : CoeffPair p) (hψ : ψ ∈ V) :
+      (∮ z in C(c m,r), sourceAngularIntegrand n s
+        (sourceCanonicalRootJointProduct hp hp1) (z,ψ)) = 0 := by
+    have hzero : sourcePsiContour hp hp1 n (s n ψ : Coeff p) ψ (c m) r = 0 := by
+      rw [sourcePsiContour_eq_of_nested_enclosingCircles hp hp1 n m (s n ψ : Coeff p) ψ
+        (c m) (c m) r (T m) hr ((hdiscs ψ hψ).contour_family.2 m).1 (hgap ψ hψ)
+        ((hdiscs ψ hψ).contour_family.2 m).2.1
+        (closedBall_subset_closedBall (hrR.trans hRT).le)
+        ((hdiscs ψ hψ).contour_family.2 m).2.2.1]
+      simpa only [if_neg hmn] using (hdiscs ψ hψ).periods n m
+    change (2*Real.pi : ℂ)⁻¹ * (∮ z in C(c m,r), sourceAngularIntegrand n s
+      (sourceCanonicalRootJointProduct hp hp1) (z,ψ)) = 0 at hzero
+    exact (mul_eq_zero.mp hzero).resolve_left (inv_ne_zero (by simp [Real.pi_ne_zero]))
+  refine ⟨hV,hVW,hr,hrR,hRT,hz₀,hdiscs,hgap,hterminal,
+    hf,hselected,homitted,hperiod,?_,?_,?_⟩
+  · intro n
+    exact analyticOnNhd_parametricAnnularPrimitiveAtAnchor _ _ r R hr hrR V hV (hf n) z₀ hz₀
+  · intro n ψ
+    exact parametricAnnularPrimitiveAtAnchor_anchor _ _ r R z₀ ψ
+  · intro n hmn ψ hψ z hz
+    exact hasDerivAt_parametricAnnularPrimitiveAtAnchor _ _ r R hr hrR V hV (hf n) z₀ ψ hψ
+      (hperiod n hmn ψ hψ) z hz
+
 /-- The actual canonical root and assigned contour family construct one
 joint primitive chart near any real source, including a collapsed gap.
 No primitive, period, endpoint branch, or terminal containment is supplied. -/
@@ -84,8 +156,6 @@ theorem exists_local_joint_angular_annulus_primitives
     ∃ V : Set (CoeffPair p), ∃ c : ℤ → ℂ, ∃ T : ℤ → ℝ,
       ∃ r R : ℝ, ∃ z₀ : ℂ, φ ∈ V ∧
         SourceAngularJointAnnulusChartData hp hp1 m s W V c T r R z₀ := by
-  obtain ⟨_,hQ⟩ := sourceCanonicalRootJointProduct_analyticOnNhd_of_symmetric hp hp1 W hW hA
-  obtain ⟨_,hP⟩ := sourceStandardRootOmittedJointProduct_analyticOnNhd_of_symmetric hp hp1 W hW hA m
   obtain ⟨δ,hδ,hballW,c,T,hdiscs⟩ := hs.exists_local_angular_dirichlet_disc_family
     ⟨φ,hreal⟩ W hW hφ
   have hbase := hdiscs φ (mem_ball_self hδ)
@@ -114,47 +184,6 @@ theorem exists_local_joint_angular_annulus_primitives
   have hgap (ψ : CoeffPair p) (hψ : ψ ∈ V) :
       sourcePeriodicSegment hp hp1 ψ m ⊆ ball (c m) r :=
     (convex_ball (c m) r).segment_subset (hOsub hψ.2).1 (hOsub hψ.2).2.1
-  have hjoint (ψ : CoeffPair p) (hψ : ψ ∈ V)
-      (z : ℂ) (hz : z ∈ closedBall (c m) R \ ball (c m) r) :
-      (z,ψ) ∈ sourceCanonicalRootJointDomain hp hp1 W := by
-    refine ⟨hVW hψ,?_⟩
-    intro k
-    by_cases hkm : k = m
-    · subst k
-      exact fun h => hz.2 (hgap ψ hψ h)
-    · exact ((hdiscs ψ hψ.1).contour_family.2 m).2.2.1
-        (closedBall_subset_closedBall hRT.le hz.1) k hkm
-  have hf (n : ℤ) : AnalyticOnNhd ℂ
-      (sourceAngularIntegrand n s (sourceCanonicalRootJointProduct hp hp1))
-      ((closedBall (c m) R \ ball (c m) r) ×ˢ V) := by
-    intro x hx
-    have hxD := hjoint x.2 hx.2 x.1 hx.1
-    exact (hs.analytic_numerator_joint n x ⟨mem_univ _,hWW₀ hxD.1⟩).div
-      (hQ x hxD) (sourceCanonicalRoot_ne_zero_off_gaps hp hp1 x.2 x.1 hxD.2)
-  have hselected : AnalyticOnNhd ℂ
-      (fun x : ℂ × CoeffPair p => sourceStandardRoot hp hp1 x.2 m x.1)
-      ((closedBall (c m) R \ ball (c m) r) ×ˢ V) := by
-    intro x hx
-    exact sourceStandardRoot_joint_analyticAt_of_symmetric hp hp1 x.2 m x.1
-      (hA x.2 (hVW hx.2) m).1 (hA x.2 (hVW hx.2) m).2 ((hjoint x.2 hx.2 x.1 hx.1).2 m)
-  have homitted : AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 m)
-      (ball (c m) (T m) ×ˢ V) := by
-    intro x hx
-    exact hP x ⟨hVW hx.2,((hdiscs x.2 hx.2.1).contour_family.2 m).2.2.1
-      (ball_subset_closedBall hx.1)⟩
-  have hperiod (n : ℤ) (hmn : m ≠ n) (ψ : CoeffPair p) (hψ : ψ ∈ V) :
-      (∮ z in C(c m,r), sourceAngularIntegrand n s
-        (sourceCanonicalRootJointProduct hp hp1) (z,ψ)) = 0 := by
-    have hzero : sourcePsiContour hp hp1 n (s n ψ : Coeff p) ψ (c m) r = 0 := by
-      rw [sourcePsiContour_eq_of_nested_enclosingCircles hp hp1 n m (s n ψ : Coeff p) ψ
-        (c m) (c m) r (T m) hr ((hdiscs ψ hψ.1).contour_family.2 m).1 (hgap ψ hψ)
-        ((hdiscs ψ hψ.1).contour_family.2 m).2.1
-        (closedBall_subset_closedBall (hrR.trans hRT).le)
-        ((hdiscs ψ hψ.1).contour_family.2 m).2.2.1]
-      simpa only [if_neg hmn] using (hdiscs ψ hψ.1).periods n m
-    change (2*Real.pi : ℂ)⁻¹ * (∮ z in C(c m,r), sourceAngularIntegrand n s
-      (sourceCanonicalRootJointProduct hp hp1) (z,ψ)) = 0 at hzero
-    exact (mul_eq_zero.mp hzero).resolve_left (inv_ne_zero (by simp [Real.pi_ne_zero]))
   let z₀ : ℂ := c m + ((r+R)/2 : ℝ)
   have hz₀ : z₀ ∈ ball (c m) R \ closedBall (c m) r := by
     have hdist : dist z₀ (c m) = (r+R)/2 := by
@@ -162,16 +191,10 @@ theorem exists_local_joint_angular_annulus_primitives
       rw [abs_of_pos (by linarith)]
     exact ⟨mem_ball.mpr (by rw [hdist]; linarith),
       fun h => by have hle := mem_closedBall.mp h; rw [hdist] at hle; linarith⟩
-  refine ⟨V,c,T,r,R,z₀,⟨mem_ball_self hδ,hφO⟩,
-    hV,hVW,hr,hrR,hRT,hz₀,(fun ψ hψ => hdiscs ψ hψ.1),hgap,
-    (fun ψ hψ => (hOsub hψ.2).2.2),hf,hselected,homitted,hperiod,?_,?_,?_⟩
-  · intro n
-    exact analyticOnNhd_parametricAnnularPrimitiveAtAnchor _ _ r R hr hrR V hV (hf n) z₀ hz₀
-  · intro n ψ
-    exact parametricAnnularPrimitiveAtAnchor_anchor _ _ r R z₀ ψ
-  · intro n hmn ψ hψ z hz
-    exact hasDerivAt_parametricAnnularPrimitiveAtAnchor _ _ r R hr hrR V hV (hf n) z₀ ψ hψ
-      (hperiod n hmn ψ hψ) z hz
+  exact ⟨V,c,T,r,R,z₀,⟨mem_ball_self hδ,hφO⟩,
+    hs.joint_angular_annulus_chart_of_geometry W hW hWW₀ hA V hV hVW m c T r R z₀
+      hr hrR hRT hz₀ (fun ψ hψ => hdiscs ψ hψ.1) hgap
+      (fun ψ hψ => (hOsub hψ.2).2.2)⟩
 
 end SourcePsiIsolatingComplexExtension
 

@@ -4658,7 +4658,8 @@ simply connected psi extension is retained on its original domain.
 The endpoint normalization is now transferred to the Dirichlet sheet
 at every terminal of an open real gap as described below. The Cauchy
 construction supplies source analyticity at collapsed real gaps. The
-full common complex domain and Theorem 13.1 estimates remain unfinished.
+later uniform-annulus construction places every term on one common
+complex domain. Theorem 13.1's estimates remain unfinished.
 
 `ParametricCosineTerminal.lean` constructs the analytic moving cosine
 angle of an analytic spectral terminal at a noncritical base angle.
@@ -4682,8 +4683,9 @@ One actual common beta domain retains all pointwise values, both
 analytic boundary sequences, and the full simply connected psi
 extension. The following step supplies periodic-terminal source
 analyticity on open real gaps; the later Cauchy construction covers
-collapsed real gaps as well. The full common complex domain, continuity
-and bounds, diagonal eta, and the angular sum remain unfinished.
+collapsed real gaps as well. The uniform-annulus construction below
+gives a common complex analytic domain and hence continuity there.
+The uniform bounds, diagonal eta, and the angular sum remain unfinished.
 
 `ParametricSineTerminal.lean` constructs an analytic moving angle from
 an analytic prescribed sine. At cosine endpoints the sine derivative
@@ -4707,8 +4709,8 @@ and endpoint terminals. Thus beta is complex source analytic at every
 real source with an open selected gap, for every off-diagonal pair,
 including central indices and both periodic terminals. The Cauchy
 construction below also proves analyticity at collapsed real gaps.
-The common complex domain, Theorem 13.1 bounds, and angular-sum
-assertions remain to be proved.
+The uniform-annulus construction supplies the common complex domain.
+Theorem 13.1's bounds and angular-sum assertions remain to be proved.
 
 `ParametricCircleTransforms.lean` proves joint Banach source and spectral
 analyticity of fixed-circle Cauchy and exterior logarithmic transforms.
@@ -4766,7 +4768,35 @@ The common-domain theorem retains all unique beta values, both analytic
 boundary sequences, the full simply connected psi extension, and
 annular charts for every selected index. All off-diagonal terms for that
 selected index are analytic on the chart's complex source neighborhood.
-This includes central indices and collapsed real gaps. Analyticity of
-every term on one common open
-complex neighborhood, Theorem 13.1's uniform estimates, diagonal eta,
-and the angular sum remain unfinished.
+This includes central indices and collapsed real gaps. The next
+construction makes one source neighborhood support every selected index.
+
+`LocallyUniformCoordinates.lean` proves that a continuous map into a
+finite-exponent sequence space has uniformly small distant coordinates
+on one source neighborhood. `SourceBoundaryDisplacementAnalytic.lean`
+assembles the actual ordinary Dirichlet and Neumann displacement
+sequences into Banach-analytic maps wherever all scalar roots are
+analytic, using the existing local sequence-norm bounds. Consequently
+both sequences have arbitrarily small distant free-disc displacements
+on a common complex neighborhood of each real source.
+
+`SourceAngularUniformAnnulusPrimitive.lean` combines the actual
+Dirichlet tail with the uniform periodic midpoint and gap tails. Every
+distant gap and terminal lie in a free eighth-pi disc, inside the
+original quarter-pi assigned disc. Fixed inner and outer radii give
+all distant joint annular charts at once. Only the finitely many
+remaining chart neighborhoods are intersected. Thus every selected
+gap has a chart on one shared source neighborhood, including central
+indices and collapsed gaps. The geometric chart constructor and source
+restriction preserve all actual contour periods and primitives.
+
+`SourceAngularBetaAnalyticCommonDomain.lean` takes the union of these
+neighborhoods over the entire real source locus. On the resulting
+common open complex domain every off-diagonal beta term is analytic.
+The theorem retains unique actual beta values, both Banach-analytic
+boundary displacement sequences, analytic scalar boundary roots,
+analytic periodic midpoints and squared gaps, and the full simply
+connected psi extension on its original domain. This proves the
+analyticity assertion of Theorem 13.1(i) for all indices. Its uniform
+quantitative estimate, diagonal eta modulo pi, the angular sum and its
+decay, and the reality and canonical-bracket assertions remain unfinished.
