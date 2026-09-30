@@ -18645,3 +18645,48 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {m : �
   D.exp_two_I_admissible_pathIntegral_eq_phase ψ hψ ha Q γ hQ hnorm hγ hint hmodel
 
 end NLS.ZakharovShabat
+
+/- Theorem 13.1(iv): real actual corrections and angle phases at p = 3. -/
+noncomputable section
+open Set Metric Complex NLS.ComplexAnalysis
+open scoped ENNReal unitInterval
+namespace NLS.ZakharovShabat
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) :
+    ∃ s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k, ∀ n : ℤ,
+      Summable (fun m => ‖sourceAngularBetaSeriesTerm (by norm_num) (by norm_num) n s φ m‖) ∧
+      (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s φ).im = 0 ∧
+      (∀ m : ℤ, m ≠ n → (sourceAngularBeta (by norm_num) (by norm_num) n m s φ).im = 0) ∧
+      (canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0 →
+        ‖sourceAngularThetaAnalyticPhase (by norm_num) (by norm_num) n s φ‖ = 1) := by
+  obtain ⟨W₀,B,W,_,_,_,_,_,_,s,D⟩ := exists_sourceAngularTheta_theorem13_1_iv
+    (p := (3 : ℝ≥0∞)) (by norm_num) (by norm_num)
+  have hφ : φ ∈ W := D.real_subset hreal
+  exact ⟨s,fun n => ⟨D.beta_series.summable_norm φ (D.source_subset hφ) n,
+    D.correction_real φ hφ hreal n,D.beta_real φ hφ hreal n,D.theta_phase_norm_real φ hφ hreal n⟩⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {n : ℤ}
+    {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    {W₀ W V U : Set (CoeffPair p)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R : ℝ} {z₀ : ℂ} {ρ : ℝ} {δ ε : CoeffPair p → ℂ}
+    (D : SourceAngularEtaAnalyticChartData hp hp1 n s W V U c T r R z₀ ρ δ ε)
+    (hs : SourcePsiIsolatingComplexExtension hp hp1 W₀ s)
+    (ψ : CoeffPair p) (hψ : ψ ∈ U) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (hbeta : (sourceAngularBetaCorrection hp hp1 n s ψ).im = 0) {a : ℂ}
+    (ha : a ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n} : Set ℂ))
+    (Q : ℂ × CoeffPair p → ℂ)
+    (γ : Path a (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n))
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 n ψ (c n) r Q γ)
+    (hnorm : sourceAntiDiscriminantCandidate hp hp1 ψ
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n) ≠ 0 →
+      Q (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ
+          (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n))
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hint : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ)
+    (hmodel : CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 n ψ Q)) γ) :
+    (sourceAngularPathIntegral n s Q ψ γ+sourceAngularBetaCorrection hp hp1 n s ψ).im = 0 :=
+  D.admissible_angle_im_eq_zero_of_realType ψ hψ ha Q γ hQ hnorm hγ hint hmodel hs hreal hbeta
+
+end NLS.ZakharovShabat

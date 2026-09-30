@@ -1344,6 +1344,12 @@ import NLS.ZakharovShabat.SourceAngularEtaAnalyticRepresentative
 import NLS.ZakharovShabat.SourceAngularEtaAnalyticChart
 import NLS.ZakharovShabat.SourceAngularEtaAnalyticPhase
 import NLS.ZakharovShabat.SourceAngularEtaTheorem13_1Analytic
+import NLS.ComplexAnalysis.QuadraticCosinePrimitive
+import NLS.ZakharovShabat.SourceAngularRealNumerator
+import NLS.ZakharovShabat.SourceAngularCauchyReal
+import NLS.ZakharovShabat.SourceAngularThetaAnalytic
+import NLS.ZakharovShabat.SourceAngularThetaSpectral
+import NLS.ZakharovShabat.SourceAngularThetaTheorem13_1
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

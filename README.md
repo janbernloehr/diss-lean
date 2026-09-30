@@ -5312,4 +5312,44 @@ a larger domain. Literal integral comparisons retain actual and model
 integrability as explicit hypotheses, with C1 admissible paths and
 conditional normalization at regular terminals.
 
-Theorem 13.1(iv), Corollary 13.2, and the later chapters remain.
+`QuadraticCosinePrimitive.lean` pulls the quadratic Cauchy equation back
+to the cosine angle without division by the sine. The product of the
+analytic interior solution with the cosine root has derivative equal
+to the rotated numerator, even at either endpoint. If that derivative
+is real on the real angle axis, the primitive is real there because its
+value at `pi` is zero. Any cosine preimage of a noncollapsed gap point
+is real.
+
+`SourceAngularRealNumerator.lean` proves that the actual normalized psi
+family has real displaced roots at real potentials. Conjugation of its
+entire numerator and reality of the omitted standard-root product show
+that the literal angular numerator becomes real after rotation by `-i`.
+`SourceAngularCauchyReal.lean` applies the regular cosine calculation to
+both off-diagonal beta and the eta remainder. Real interlacing makes
+every terminal angle real, including arbitrary angle and half-gap
+branches. Actual beta values and full eta representatives are real,
+including periodic Dirichlet terminals.
+
+`SourceAngularThetaAnalytic.lean` defines the actual angle representative
+as eta plus the convergent beta correction. Absolute convergence makes
+the full correction real when its terms are real. Theta representatives
+are analytic, agree modulo `pi` on overlaps, and represent one nonzero
+phase `exp(2i theta)`. The phase has unit norm at real potentials.
+`SourceAngularThetaSpectral.lean` identifies this representative modulo
+`pi` with the normalized admissible eta integral plus the actual beta
+series. That literal sum is real for real potentials. These comparisons
+retain C1 regularity, actual and model integrability, and terminal root
+normalization explicitly; both periodic anchors are covered.
+
+`SourceAngularThetaTheorem13_1.lean` assembles Theorem 13.1(iv), retaining
+the full beta estimates, series convergence and decay, and eta
+analyticity from (i), (ii), and (iii) for the same normalized psi family.
+One common neighborhood of the entire real locus carries all results.
+All off-diagonal beta terms and their full corrections are real at real
+sources, including collapsed gaps. On every indexed open-gap domain,
+theta has a single analytic nonzero phase, of unit norm on the real
+locus. `exists_local_analytic_real_representative` constructs a local
+analytic theta representative at any complex open-gap source and proves
+that it is real on the real locus in its chart.
+
+Corollary 13.2 and the later chapters remain.

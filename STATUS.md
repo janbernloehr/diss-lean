@@ -10754,3 +10754,28 @@ in the literal spectral integral comparisons.
 The actual normalized psi family and the full beta results of Theorem
 13.1(i) and (iii) are retained on the same neighborhood. Theorem 13.1(iv),
 Corollary 13.2, and the Birkhoff-coordinate chapters remain.
+
+## Latest milestone: Theorem 13.1(iv), real analytic angle coordinates
+
+The actual angle coordinate is now constructed as eta plus the full
+convergent beta correction on one common complex neighborhood of the
+whole real locus. The same normalized psi family retains all results of
+Theorem 13.1(i), (ii), and (iii). Each indexed open-gap domain has a single
+analytic nonzero phase `exp(2i theta)` and constructed local analytic
+representatives agreeing modulo pi.
+
+Reality is proved from the actual psi roots and omitted product, not
+supplied as an extra assumption. The quadratic Cauchy equations give
+regular cosine primitives without dividing by the sine, so both periodic
+Dirichlet terminals are included. Every off-diagonal beta term is real
+at real potentials, including collapsed gaps where it vanishes. Absolute
+convergence makes the full beta correction real. Eta and theta
+representatives are real on the real locus for either half-gap branch,
+and the theta phase has unit norm there.
+
+The literal normalized admissible eta integral plus correction agrees
+with the theta representative modulo pi and is real at real sources.
+These spectral comparisons still retain C1 regularity, actual and model
+integrability, and conditional terminal normalization explicitly.
+Corollary 13.2's canonical bracket identities and the later chapters
+remain unfinished.
