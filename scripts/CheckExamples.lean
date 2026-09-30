@@ -18751,3 +18751,49 @@ example (hp : (3 : ℝ≥0∞) ≠ ⊤) (hp1 : 1 < (3 : ℝ≥0∞)) :
   exact ⟨W,D.source_open,D.real_subset,s,D.analyticOnNhd_thetaDifferential⟩
 
 end NLS.ZakharovShabat
+
+/- Actual action regularity and contour reductions at the non-Hilbert exponent three. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    AnalyticAt ℂ (sourceComplexAction (by norm_num) (by norm_num) n) φ :=
+  analyticAt_sourceComplexAction_of_realType (by norm_num) (by norm_num) n φ hreal
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ))
+    (hΔ : ∀ z w : ℂ, sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) z)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ = 0)
+    (n m : ℤ) :
+    sourceBracket (by norm_num) (sourceComplexAction (by norm_num) (by norm_num) n)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_actions_eq_zero_of_discriminant_commutes
+    (by norm_num) (by norm_num) (by norm_num) φ hreal hΔ n m
+
+example (hp : (3 : ℝ≥0∞) ≠ ⊤) (hp1 : 1 < (3 : ℝ≥0∞)) :
+    ∃ A : Set (CoeffPair 3), IsOpen A ∧ realTypeSourceLocus 3 ⊆ A ∧
+      ∃ s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k, ∀ n m : ℤ,
+        AnalyticOnNhd ℂ (sourceAngularThetaActionBracket hp hp1 (by norm_num) n m s)
+          ({ψ : CoeffPair 3 | ψ ∈ A ∧ canonicalPeriodicGap hp hp1
+            (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0} ∩
+            sourceComplexActionDomain hp hp1 m) := by
+  obtain ⟨W₀,B,W,_,_,_,_,_,_,s,D⟩ := exists_sourceAngularTheta_theorem13_1_iv hp hp1
+  obtain ⟨A,hAopen,hAreal,_,hbracket⟩ := D.exists_actionBracket_analytic_domain (by norm_num)
+  exact ⟨A,hAopen,hAreal,s,hbracket⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    (D : SourceAngularThetaCommonDomainData hp hp1 W₀ B W s)
+    (h2p : (2 : ℝ≥0∞) ≤ p) (n m : ℤ)
+    (hfinite : ∀ ψ ∈ W, IsRealType (CoeffPair.toMax p ψ) →
+      Coeff.HasFiniteSupport ψ.fst → Coeff.HasFiniteSupport ψ.snd →
+      canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0 →
+        sourceAngularThetaActionBracket hp hp1 h2p n m s ψ = if n = m then 1 else 0)
+    (φ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p φ))
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0) :
+    sourceAngularThetaActionBracket hp hp1 h2p n m s φ = if n = m then 1 else 0 :=
+  D.thetaActionBracket_eq_of_finite_realType h2p n m (if n = m then 1 else 0) hfinite φ hreal hgap
+
+end NLS.ZakharovShabat

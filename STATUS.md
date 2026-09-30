@@ -1,14 +1,18 @@
 # Implementation status
 
-## Current milestone: Corollary 13.2 bracket foundations
+## Current milestone: Corollary 13.2 action contour reduction
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
 with cotangent representation, absolute Fourier convergence, exponent
 restriction, and the canonical Fourier coordinate sign. The actual
 angle differential is analytic and agrees with every local chart.
-Real finite Fourier approximation supplies the continuity transfer on
-open-gap domains. Details appear in the latest milestone below.
+The actual glued actions now have full Banach analyticity near the real
+locus. Their brackets reduce to spectral contour integrals of the
+discriminant brackets, and the actual mixed angle-action bracket has a
+single-contour formula. Real finite Fourier approximation supplies all
+three continuity transfers on the appropriate indexed domains. Details
+appear in the latest milestone below.
 
 The three spectral canonical identities of Corollary 13.2 remain
 unproved, as does their compatibility for `1 < p < 2`.
@@ -10832,3 +10836,42 @@ proved here. The finite/Hilbert computations of `{I_n,I_m} = 0`,
 `{theta_n,theta_m} = 0`, and `{theta_n,I_m} = delta_nm` remain, followed
 by the spectral differential compatibility needed for `1 < p < 2`.
 Corollary 13.2 and the later chapters remain unfinished.
+
+## Latest milestone: actual action brackets and spectral contour reduction
+
+The glued indexed actions are now Banach analytic on their original
+chart domains intersected with a single open almost-real neighborhood
+of the whole real source locus. Fixed-circle integrals of jointly
+analytic weighted integrands have genuine Banach power series, and
+agreement with every chart transfers that analyticity to the actual
+actions. In particular each action is analytic at every real source,
+including sources whose selected gap is collapsed.
+
+The entire operator-valued source differential of the discriminant is
+jointly analytic in spectral parameter and potential. Dividing by the
+canonical root gives an analytic cotangent-valued spectral function off
+the periodic cuts. The existing directional action gradient formula
+now represents the full continuous action cotangent by its negative
+normalized circle integral.
+
+Continuous linear maps commute with integrable circle integrals, and
+continuous bilinear maps pass through both contours. These identities
+give the actual action-action bracket as `pi^-2` times the iterated
+contour integral of the discriminant bracket weighted by the two inverse
+canonical roots. Commutation of discriminants on the selected circles
+implies commutation of the corresponding indexed actions. This spectral
+commutation is retained as an explicit hypothesis, not assumed as an axiom.
+
+The branch-independent actual angle-action bracket is now defined for
+the glued indexed action. It equals the negative normalized single
+contour integral of the angle-discriminant bracket divided by the
+canonical root. Action-action brackets are analytic on the joint
+indexed action domains, and mixed brackets are analytic on the indexed
+open-gap domain intersected with the action domain. The finite real
+Fourier density argument transfers their prescribed values to the
+whole real locus, with the finite identities explicit.
+
+The spectral discriminant commutation and the finite canonical angle
+computations remain to be proved. Thus the contour reduction and all
+three continuity mechanisms for Corollary 13.2 at `p >= 2` are established, while
+the canonical identities and their `1 < p < 2` compatibility remain.

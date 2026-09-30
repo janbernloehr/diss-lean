@@ -1359,6 +1359,11 @@ import NLS.ZakharovShabat.SourceRealTypeFiniteApproximation
 import NLS.Poisson.SourceFiniteBracketTransfer
 import NLS.ZakharovShabat.SourceAngularThetaDifferential
 import NLS.ZakharovShabat.SourceAngularThetaPoisson
+import NLS.ComplexAnalysis.BilinearCircleIntegral
+import NLS.ZakharovShabat.SourceComplexActionAnalytic
+import NLS.ZakharovShabat.SourceDiscriminantCotangent
+import NLS.ZakharovShabat.SourceActionPoissonGradient
+import NLS.ZakharovShabat.SourceActionPoisson
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

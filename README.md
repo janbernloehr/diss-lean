@@ -5391,3 +5391,41 @@ finite identity retained as an explicit hypothesis.
 The finite/Hilbert spectral computations of `{I_n,I_m}`, `{theta_n,theta_m}`,
 and `{theta_n,I_m}` remain to be proved. Corollary 13.2 is not yet complete;
 brackets at `1 < p < 2` also require spectral differential compatibility.
+
+### Corollary 13.2: actual action brackets and spectral contour reduction
+
+`SourceComplexActionAnalytic.lean` proves full Banach analyticity of the
+glued indexed actions near the whole real source locus. A single open
+almost-real neighborhood works for every index, intersected with that
+index's original action chart domain. Joint analyticity of the weighted
+integrand passes through the fixed-circle integral as a Banach power
+series, and the chart formula identifies it with the actual action.
+
+`SourceDiscriminantCotangent.lean` constructs the entire operator-valued
+source differential of the discriminant. It is jointly analytic in
+spectral parameter and source. Its quotient by the canonical root is
+analytic off the periodic cuts and circle integrable as a cotangent.
+`SourceActionPoissonGradient.lean` identifies the full derivative of
+each actual action at a real source with the negative normalized
+cotangent circle integral. `BilinearCircleIntegral.lean` transports
+continuous bilinear pairings through both contours.
+
+The resulting action-action bracket is the double spectral contour
+integral of the discriminant bracket, weighted by the two inverse
+canonical roots and `pi^-2`. Discriminant commutation on the two
+isolating circles therefore implies commutation of the corresponding
+actual actions. This is a proved reduction; the discriminant commutation
+identity is still an explicit hypothesis awaiting its spectral proof.
+
+`SourceActionPoisson.lean` supplies the actual angle-action bracket
+and its single-contour formula: it is the negative normalized integral
+of the angle-discriminant bracket divided by the canonical root.
+Action-action brackets are analytic on the joint indexed action domain,
+and angle-action brackets are analytic on the actual open-gap domain
+intersected with the selected action domain. Their canonical values
+extend from finite real potentials by the symmetric Fourier density
+argument. Those finite canonical values remain explicit hypotheses.
+
+Corollary 13.2's spectral computations remain unfinished. The contour
+formulas now identify the discriminant commutation and mixed spectral
+brackets needed for the next proof steps.
