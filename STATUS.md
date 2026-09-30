@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: jointly analytic angular primitive families
+## Current milestone: canonical cosine charts near open real gaps
+
+`AnalyticFromSquare.lean` recovers analyticity of a continuous nonzero
+scalar root from analyticity of its square. The prescribed square root
+and continuity fix the local sign. `SourceOpenGapEndpointAnalytic.lean`
+applies this to the actual canonical gap: its midpoint and squared gap
+are already analytic, and the labeled endpoints are continuous at real
+sources. Both individual endpoints, the midpoint, and the gap are
+therefore source analytic near every open real gap, including central
+indices. The neighborhood can be confined to any given open domain.
+
+`ParametricCosineChart.lean` constructs an open convex angle chart
+containing the entire interval from zero to pi and one source
+neighborhood on which its cosine images stay in a prescribed joint
+domain. Compactness and the tube lemma prove the required geometry
+and supply the common neighborhood.
+
+`SourceAngularCanonicalCosinePrimitive.lean` uses the actual midpoint
+and half-gap and retains the original assigned isolating discs. Those
+discs contain the moving gaps and Dirichlet terminals and retain their
+exact contour periods. One local chart supports jointly analytic
+numerators and cosine primitives for every numerator index. The
+primitives vanish at angle pi and have the exact angular derivative.
+At each source they agree with every endpoint-normalized canonical
+spectral primitive, with the exact selected-root coefficient, on an
+open convex chart containing the whole real angle interval. The actual
+periods also construct the sheet primitives used in this comparison.
+
+`SourceAngularCanonicalCosineCommonDomain.lean` puts these constructed
+charts near every open real gap on one common beta neighborhood. Both
+analytic boundary-coordinate sequences and all pointwise beta values
+are retained, together with the full simply connected psi extension
+on its original larger domain. No midpoint, gap, chart, or primitive
+is assumed as additional input to this existence theorem.
+
+To deduce beta analyticity, transfer the periodic-endpoint
+normalization to the Dirichlet sheet and evaluate at its analytic
+moving angle. Periodic terminals and collapsed gaps also need source
+regularity. Beta analyticity and continuity, Theorem 13.1 estimates,
+diagonal eta, the convergent angular sum, and Corollary 13.2 remain
+unfinished.
+
+## Completed step: jointly analytic angular primitive families
 
 `ParametricIntervalIntegralAnalytic.lean` proves full Banach analyticity
 of fixed real-interval integrals of jointly analytic families on an
@@ -36,12 +78,10 @@ One actual common beta neighborhood supports all these numerator
 domains together with both analytic boundary-coordinate sequences;
 the full simply connected psi domain and estimates are retained.
 
-To deduce beta analyticity, construct common cosine charts for the
-canonical midpoint and half-gap, transfer the periodic-endpoint
-normalization to the chosen Dirichlet sheet, and include periodic
-terminals and collapsed gaps. No beta source analyticity is asserted
-yet. Beta continuity, Theorem 13.1 estimates, diagonal eta, the convergent
-angular sum, and Corollary 13.2 also remain unfinished.
+The canonical cosine charts are now constructed near open real gaps
+as described above. Transferring the periodic-endpoint normalization
+to the chosen Dirichlet sheet and including periodic terminals and
+collapsed gaps remain necessary for beta analyticity.
 
 ## Completed step: analytic moving Dirichlet terminals for Section 13
 

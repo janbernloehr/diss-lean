@@ -1244,6 +1244,11 @@ import NLS.ComplexAnalysis.ParametricIntervalIntegralAnalytic
 import NLS.ComplexAnalysis.ParametricConvexPrimitive
 import NLS.ComplexAnalysis.ParametricCosinePrimitive
 import NLS.ZakharovShabat.SourceAngularJointPrimitive
+import NLS.ComplexAnalysis.AnalyticFromSquare
+import NLS.ZakharovShabat.SourceOpenGapEndpointAnalytic
+import NLS.ComplexAnalysis.ParametricCosineChart
+import NLS.ZakharovShabat.SourceAngularCanonicalCosinePrimitive
+import NLS.ZakharovShabat.SourceAngularCanonicalCosineCommonDomain
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

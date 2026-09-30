@@ -4624,8 +4624,35 @@ exact selected-root sheet coefficient on their common angle chart.
 angular integrands and gap numerators, including analytic evaluation
 at a moving regular Dirichlet root. One common beta neighborhood supports
 all jointly analytic gap numerators and both analytic boundary sequences.
-The regular sheet primitives use a fixed regular anchor. The cosine
-construction still needs analytic midpoint/half-gap functions and a
-common angle chart. Constructing these from the canonical roots and
-proving beta analyticity through periodic terminals and collapsed gaps
-remain unfinished.
+The regular sheet primitives use a fixed regular anchor. The generic
+cosine construction accepts analytic midpoint/half-gap functions and a
+common angle chart. The following step constructs these from the
+canonical roots near open real gaps. Beta analyticity through periodic
+terminals and collapsed gaps remains unfinished.
+
+`AnalyticFromSquare.lean` recovers analyticity of a continuous nonzero
+root from its analytic square. `SourceOpenGapEndpointAnalytic.lean`
+therefore proves source analyticity of the actual canonical gap and
+both labeled periodic endpoints near every open real gap, including
+central indices.
+
+`ParametricCosineChart.lean` constructs one open convex chart containing
+the full real angle interval and one source neighborhood whose cosine
+images remain in the joint spectral domain. Compactness supplies this
+geometry. `SourceAngularCanonicalCosinePrimitive.lean` uses the actual
+canonical midpoint and half-gap to construct jointly analytic cosine
+primitives for every numerator index on the same local chart. The
+original assigned discs still contain the moving Dirichlet terminals
+and have the exact contour periods. At each source, these primitives
+match the actual endpoint-normalized canonical spectral primitives
+with the exact selected-root coefficient on a chart containing the
+whole angle interval. The preserved periods construct the off-diagonal
+sheet primitives used in this matching.
+
+`SourceAngularCanonicalCosineCommonDomain.lean` places these local charts
+near every open real gap on a common domain retaining all pointwise
+beta values and both analytic boundary-coordinate sequences. The full
+simply connected psi extension is retained on its original domain.
+Transferring the endpoint normalization to the Dirichlet sheet and
+proving source regularity at periodic terminals and collapsed gaps
+remain necessary for beta analyticity and Theorem 13.1.
