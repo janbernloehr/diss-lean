@@ -5203,7 +5203,49 @@ half-gap choices. All existing beta results and real eta charts are
 retained on a larger domain. This angle-chart theorem does not yet
 identify the integrated eta representatives at general complex sources.
 
-Theorem 13.1(ii) still requires analytic eta primitives on these complex
-charts and their identification with literal admissible-path values
-modulo `pi`, including the shift when the endpoint anchor changes.
+`SourceAngularBranchCosinePrimitive.lean` constructs the actual joint
+cosine primitive at every complex open gap with local assigned discs.
+The analytic half-gap replaces ordered endpoint analyticity. A constructed
+convex angle chart contains the full interval from zero to `pi`, its
+spectral images stay in the assigned disc, and every numerator has the
+exact primitive derivative and zero normalization at `pi`.
+
+`SourceAngularBranchCosineLift.lean` proves joint analyticity of the
+lifted full root, including its endpoint zeros, and its literal
+discriminant square identity. Away from sine zeros the actual psi/root
+pullback equals `-i` times the regular cosine numerator.
+
+`SourceAngularBranchEtaRepresentative.lean` gives a joint analytic
+diagonal representative on these complex branch charts. Every C1 angle
+path from `pi` with interior sine nonzero has an automatically integrable
+literal pullback whose integral is that representative. An actual
+Dirichlet base angle in the chart gives a constructed analytic source
+value, with its lifted root exactly normalized to the anti-discriminant.
+
+`SourceAngularBranchEtaTerminal.lean` constructs those source values at
+either complex periodic Dirichlet terminal of an open gap. Both base
+angles belong to the chart, and the circle identity fixes their zero
+sine coordinate. No real-source or nonzero anti-discriminant hypothesis
+is required.
+
+`HolomorphicPathPullback.lean` transports integrability and the exact
+holomorphic curve integral along a mapped path using only the chain rule
+on its open parameter interval. `SourceAngularBranchEtaSpectralPath.lean`
+uses this to identify the actual spectral psi/root integral with the
+analytic branch representative when the continued root matches the
+cosine lift along the interior. The actual and model differentials are
+automatically integrable on these mapped C1 paths. The model integral is
+exactly the terminal angle minus `pi`, also at a periodic terminal.
+
+`SourceAngularBranchEtaCommonDomain.lean` constructs joint primitive
+charts at every complex open gap on one common neighborhood of the
+whole real locus, retaining the normalized psi family and all beta
+results. Every complex periodic terminal there has a constructed analytic
+eta source representative. Regular terminals are covered by the local
+representative theorem when their base angle lies in its angle chart.
+
+Theorem 13.1(ii) still requires coverage of every regular complex
+Dirichlet terminal and assembly of these representatives with all
+admissible-path values modulo `pi`, including the shift when the
+endpoint anchor changes.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
