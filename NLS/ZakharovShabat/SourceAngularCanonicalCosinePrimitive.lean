@@ -50,6 +50,8 @@ structure SourceAngularCanonicalCosineChartData (hp : p ≠ ⊤) (hp1 : 1 < p) (
     (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠ 0
   disc_family : ∀ ψ ∈ V, SourceAngularDirichletDiscFamilyData hp hp1 s ψ c R
   endpoint_data : ∀ ψ ∈ V, SourceAngularEndpointSpectralData hp hp1 ψ m
+  omitted_analytic : AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 m)
+    (ball (c m) (R m) ×ˢ V)
   cosine_enclosed : ∀ ψ ∈ V, ∀ θ ∈ Ω, sourceCanonicalCosinePoint hp hp1 m (θ,ψ) ∈ ball (c m) (R m)
   numerator_analytic : ∀ n : ℤ, AnalyticOnNhd ℂ (fun x : ℂ × CoeffPair p =>
     sourceAngularGapNumerator hp hp1 n m s x.2 (sourceCanonicalCosinePoint hp hp1 m x)) (Ω ×ˢ V)
@@ -133,6 +135,8 @@ theorem exists_local_canonical_cosine_angular_primitives
   have hπΩ : (Real.pi:ℂ) ∈ Ω := hangle (right_mem_segment ℝ _ _)
   refine ⟨V,Ω,c,R,hφV,⟨hV,hVW,hΩ,hconv,hangle,hτV,hγ.mono hVO,
     (fun ψ hψ => hγne ψ (hVO hψ)),(fun ψ hψ => hdiscs ψ (hVball hψ)),hendpoint,
+    hP.mono (fun t ht => ⟨hVW ht.2,
+      ((hdiscs t.2 (hVball ht.2)).contour_family.2 m).2.2.1 (ball_subset_closedBall ht.1)⟩),
     (fun ψ hψ θ hθ => (hchart ψ hψ θ hθ).1.1),?_,?_,?_⟩⟩
   · intro n
     exact analyticOnNhd_parametricCosineNumerator _ τ δ _ Ω V (hg n) hτV hδV hmap

@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: canonical cosine charts near open real gaps
+## Current milestone: beta analyticity at regular real terminals
+
+`ParametricCosineTerminal.lean` constructs an analytic moving cosine
+angle for an analytic moving spectral terminal at a noncritical base
+angle. The analytic implicit function theorem supplies the angle and
+its exact terminal equation on a source neighborhood; no moving angle
+or continuity assumption for it is supplied by callers.
+
+`SourceAngularCanonicalCosineSheetMatching.lean` extends the canonical
+exterior matching formula throughout both halves of the original convex
+angle chart by the analytic identity theorem. Density of nonreal
+angles then proves the prescribed-sheet matching at every regular
+point of this chart, including real angles and cut-interior points.
+The matching keeps the literal full-root and omitted-product factors.
+The canonical chart data now also retain joint analyticity of the
+omitted product throughout the assigned disc and source neighborhood.
+
+`SourceAngularBetaRegularAnalytic.lean` proves the actual off-diagonal
+beta value equals this joint cosine primitive at the terminal angle
+times an explicit coefficient. Its denominator is the actual
+anti-discriminant at the moving Dirichlet root. The moving boundary
+root, gap, omitted product, and anti-discriminant make that coefficient
+analytic near every real source with a regular terminal. Real
+interlacing supplies the noncritical base angle, and the implicit
+construction supplies its analytic source dependence. Consequently
+beta itself is complex source analytic at every such real source,
+for every off-diagonal pair, including central indices.
+
+One actual common beta domain supports these analyticity statements
+while retaining all pointwise beta values, both analytic boundary
+sequences, and the full simply connected psi extension on its
+original domain. Nonzero terminal anti-discriminant implies an open
+real gap; this is proved in the common-domain theorem.
+
+Source analyticity at periodic Dirichlet terminals and collapsed
+real gaps remains unfinished. These cases, full beta continuity,
+Theorem 13.1 estimates, diagonal eta, the convergent angular sum, and
+Corollary 13.2 are the remaining Section 13 work.
+
+## Completed step: canonical cosine charts near open real gaps
 
 `AnalyticFromSquare.lean` recovers analyticity of a continuous nonzero
 scalar root from analyticity of its square. The prescribed square root
@@ -35,12 +74,11 @@ are retained, together with the full simply connected psi extension
 on its original larger domain. No midpoint, gap, chart, or primitive
 is assumed as additional input to this existence theorem.
 
-To deduce beta analyticity, transfer the periodic-endpoint
-normalization to the Dirichlet sheet and evaluate at its analytic
-moving angle. Periodic terminals and collapsed gaps also need source
-regularity. Beta analyticity and continuity, Theorem 13.1 estimates,
-diagonal eta, the convergent angular sum, and Corollary 13.2 remain
-unfinished.
+The normalization transfer and analytic moving-angle evaluation are
+now proved at regular real Dirichlet terminals as described above.
+Periodic terminals and collapsed real gaps still need source
+regularity. Full beta continuity, Theorem 13.1 estimates, diagonal
+eta, the convergent angular sum, and Corollary 13.2 remain unfinished.
 
 ## Completed step: jointly analytic angular primitive families
 
@@ -78,10 +116,10 @@ One actual common beta neighborhood supports all these numerator
 domains together with both analytic boundary-coordinate sequences;
 the full simply connected psi domain and estimates are retained.
 
-The canonical cosine charts are now constructed near open real gaps
-as described above. Transferring the periodic-endpoint normalization
-to the chosen Dirichlet sheet and including periodic terminals and
-collapsed gaps remain necessary for beta analyticity.
+The canonical cosine charts and the normalization transfer to the
+Dirichlet sheet are now constructed near regular real terminals as
+described above. Periodic terminals and collapsed gaps still need
+source regularity for the full beta analyticity statement.
 
 ## Completed step: analytic moving Dirichlet terminals for Section 13
 

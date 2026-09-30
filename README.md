@@ -4653,6 +4653,31 @@ sheet primitives used in this matching.
 near every open real gap on a common domain retaining all pointwise
 beta values and both analytic boundary-coordinate sequences. The full
 simply connected psi extension is retained on its original domain.
-Transferring the endpoint normalization to the Dirichlet sheet and
-proving source regularity at periodic terminals and collapsed gaps
-remain necessary for beta analyticity and Theorem 13.1.
+The endpoint normalization is now transferred to the Dirichlet sheet
+at regular real terminals as described below. Source regularity at
+periodic terminals and collapsed gaps remains necessary for the full
+beta analyticity statement and Theorem 13.1.
+
+`ParametricCosineTerminal.lean` constructs the analytic moving cosine
+angle of an analytic spectral terminal at a noncritical base angle.
+The implicit function theorem supplies both the angle and its exact
+terminal equation near the base source.
+
+`SourceAngularCanonicalCosineSheetMatching.lean` extends canonical
+exterior matching throughout the convex angle chart's two halves.
+Continuity and density then give the prescribed-sheet formula at
+every regular chart point, including real angles on the cut. The
+canonical chart data also retain the jointly analytic omitted product
+on the original assigned disc and source neighborhood.
+
+`SourceAngularBetaRegularAnalytic.lean` identifies the actual beta
+value with this joint cosine primitive evaluated at the moving angle,
+multiplied by an explicit analytic coefficient normalized by the
+actual Dirichlet anti-discriminant. It proves complex source
+analyticity of beta at every real source with a regular Dirichlet
+terminal, for every off-diagonal pair and including central indices.
+One actual common beta domain retains all pointwise values, both
+analytic boundary sequences, and the full simply connected psi
+extension. Periodic-terminal and collapsed-gap source analyticity,
+the full continuity and bounds, diagonal eta, and the angular sum
+remain unfinished.
