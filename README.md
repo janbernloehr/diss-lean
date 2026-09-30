@@ -5004,7 +5004,29 @@ both analytic sheet representatives and their overlap compatibility.
 The same common-domain theorem preserves every previously proved
 beta assertion and the full normalized psi extension.
 
-Theorem 13.1(ii) still requires identification and gluing of general
-admissible spectral-path eta values modulo pi and coverage of every
-complex open-gap point. Theorem 13.1(iv), Corollary 13.2, and the later
-chapters also remain.
+`SourceAngularEtaRemainder.lean` separates the actual diagonal eta
+differential into the explicit model `i / standardRoot` and a remainder
+with regular numerator `gapNumerator - i`. The model has exact contour
+period `2*pi`, so the actual normalized psi contour makes the remainder
+period zero, for any complex source and also for collapsed gaps.
+
+`SourceAngularEtaRemainderPrimitive.lean` constructs single-valued
+remainder primitives on an all-gap family of entire isolating discs
+minus their cuts. Every regular C1 spectral path in these domains has
+an actual diagonal integral equal to its explicit model integral plus
+the remainder primitive's endpoint difference. Arbitrary winding only
+affects the explicit model term.
+
+`SourceAngularEtaRemainderBoundary.lean` proves a weighted endpoint
+bound from the actual remainder numerator. Both limits of any remainder
+primitive exist for every approach in the cut complement, and the cosine
+comparison makes them equal. At every complex source with the actual
+endpoint spectral data, each open-gap remainder therefore has a primitive
+normalized to zero at both endpoints. The integral splitting also holds
+for paths with singular endpoints when the actual and model integrals
+are integrable and the primitive's endpoint limits are specified.
+
+Theorem 13.1(ii) still requires classification of the explicit model's
+general admissible-path periods, gluing onto the terminal-prescribed
+root sheets, and analytic coverage of every complex open-gap point.
+Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
