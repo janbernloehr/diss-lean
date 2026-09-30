@@ -4980,6 +4980,30 @@ The theorem retains every beta value, analytic boundary and symmetric
 coordinate, uniform all-index beta bound, and analytic correction
 series with its decay.
 
+`SourceAngularCosinePeriod.lean` derives the exact full-gap cosine
+periods from the original normalized psi contours. The contour is
+twice the upper gap-side integral, and the fundamental theorem of
+calculus identifies this with the angle primitive at zero. Its value
+is zero off the diagonal and `-i*pi` on the diagonal. Real-form analytic
+continuation gives all these exact values on one complex source ball,
+simultaneously for every numerator index.
+
+`SourceAngularEtaSheetReflection.lean` proves the primitive reflection
+identity and constructs the eta representative on the reflected angle
+chart, normalized at minus pi. Both charts are jointly analytic and
+have the same angular differential. Their normalizations differ on
+the overlap by `2*kappa*pi`, so they agree modulo two pi and modulo pi
+for either allowed sheet sign. Reflecting the angle and reversing the
+sign preserves the actual spectral terminal and lifted root, and gives
+exactly the same eta terminal value on the reflected chart. At the
+right endpoint the original representative is `-kappa*pi`.
+
+`SourceAngularEtaPeriodCommonDomain.lean` retains these exact periods
+on each moving terminal's own source neighborhood, together with
+both analytic sheet representatives and their overlap compatibility.
+The same common-domain theorem preserves every previously proved
+beta assertion and the full normalized psi extension.
+
 Theorem 13.1(ii) still requires identification and gluing of general
 admissible spectral-path eta values modulo pi and coverage of every
 complex open-gap point. Theorem 13.1(iv), Corollary 13.2, and the later

@@ -1294,6 +1294,9 @@ import NLS.SequenceSpaces.ShiftedHolderDecay
 import NLS.ZakharovShabat.SourceAngularBetaDecay
 import NLS.ZakharovShabat.SourceAngularBetaTheorem13_1Series
 import NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomain
+import NLS.ZakharovShabat.SourceAngularCosinePeriod
+import NLS.ZakharovShabat.SourceAngularEtaSheetReflection
+import NLS.ZakharovShabat.SourceAngularEtaPeriodCommonDomain
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
