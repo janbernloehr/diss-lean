@@ -5141,8 +5141,38 @@ differing by `2*pi*integer`. This includes regular cut-interior terminals
 and periodic endpoints, with arbitrary intermediate root charts. The
 model's initial logarithmic coordinate is independent of the root sign.
 
-Theorem 13.1(ii) still requires transport of the normalized remainder
-along these general continued paths, followed by the actual eta period
-comparison, and analytic coverage of every complex open-gap source point,
-including endpoint terminals.
+`SourceAngularAdmissiblePathTerminalSheet.lean` proves that a continued
+root agrees near its regular terminal with any analytic root chart having
+the same terminal value. The square identity automatically extends outside
+the unit interval by clamping. Only the final part of the path is required
+to enter the terminal chart.
+
+`SourceAngularEtaAdmissibleRemainder.lean` transports the remainder along
+the whole admissible path by its fixed canonical sign. The initial limit
+is zero and the final limit is exactly the value of the glued primitive
+on the normalized terminal sheet, including at a cut-interior terminal.
+The literal eta integral equals its continued-root model integral plus
+this terminal remainder. A version stated using a final path limit also
+covers singular periodic terminals.
+
+`SourceAngularEtaAdmissiblePathPeriod.lean` combines the remainder with
+the continued-root model periods to prove actual eta path independence
+modulo `2*pi`. At regular terminals the prescribed chart is used only
+locally. At either periodic endpoint the remainder is zero and every
+continued full root vanishes, so either root sign gives the same eta value
+modulo `2*pi`. A zero Dirichlet anti-discriminant in the isolating domain
+is proved to force a periodic endpoint.
+
+`SourceAngularEtaAdmissibleCommonDomain.lean` constructs all remainder
+data from the original normalized psi family on one all-gap family of
+discs. At each open gap, any two integrable C1 admissible paths to the
+actual Dirichlet terminal have eta values differing by `2*pi*integer`,
+provided the terminal is in that disc and the continued roots match its
+anti-discriminant when it is nonzero. At a periodic terminal no sign
+normalization is required. Neither path must stay on a single root chart;
+actual and model integrability are retained explicitly.
+
+Theorem 13.1(ii) still requires analytic coverage of every complex
+open-gap source point, including endpoint terminals, and assembly of that
+analyticity with the literal admissible-path values modulo `pi`.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.

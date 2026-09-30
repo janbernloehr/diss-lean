@@ -26,6 +26,8 @@ structure SourceAngularEtaRemainderSheetPrimitiveData
     HasDerivAt F (sourceAngularEtaRemainderIntegrand hp hp1 n s ψ z) z
   tendsto_left_exterior : Tendsto F (𝓝[ball c R \ sourcePeriodicSegment hp hp1 ψ n]
     (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)) (𝓝 0)
+  tendsto_right_exterior : Tendsto F (𝓝[ball c R \ sourcePeriodicSegment hp hp1 ψ n]
+    (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)) (𝓝 0)
   analytic_sheet : AnalyticOnNhd ℂ E (sourceAngularRegularSheetDisc hp ψ c R w)
   hasDerivAt_sheet : ∀ z ∈ sourceAngularRegularSheetDisc hp ψ c R w,
     HasDerivAt E (sourceAngularEtaRemainderSheetIntegrand hp hp1 n s ψ w z) z
@@ -140,7 +142,7 @@ theorem exists_eta_remainder_sheet_primitive_data
   obtain ⟨E,hEa,hEd,hEl,hEr,hmatch,_⟩ := exists_sourceAngularEta_glued_remainder_sheet_primitive
     hp hp1 n s ψ (c n) (R n) ((hgeom n).2.2.1.trans (ball_subset_ball (hgeom n).2.1.le))
     (hgeom n).2.2.2 (hdata n) hgap F hF hleft hright w hw
-  exact ⟨E,⟨hF,hleft,hEa,hEd,hEl,hEr,hmatch⟩⟩
+  exact ⟨E,⟨hF,hleft,hright,hEa,hEd,hEl,hEr,hmatch⟩⟩
 
 end SourcePsiSquaredGapComplexExtension
 end NLS.ZakharovShabat
