@@ -5172,7 +5172,38 @@ anti-discriminant when it is nonzero. At a periodic terminal no sign
 normalization is required. Neither path must stay on a single root chart;
 actual and model integrability are retained explicitly.
 
-Theorem 13.1(ii) still requires analytic coverage of every complex
-open-gap source point, including endpoint terminals, and assembly of that
-analyticity with the literal admissible-path values modulo `pi`.
+`LocalAnalyticSquareRoot.lean` constructs an analytic square root near
+any analytic radicand with a prescribed nonzero base root, without a
+continuous root labeling or a principal-cut restriction on that value.
+`ComplexCircleTerminal.lean` constructs a base angle for any complex
+sine/cosine pair satisfying the circle identity and analytically continues
+both coordinates. Reversing both coordinates changes the angle only by
+an integer multiple of `pi`.
+
+`SourceAnalyticHalfGap.lean` applies this to the actual analytic squared
+gap at every open complex source gap. The local branch agrees with the
+canonical half-gap at its base point. Its two endpoints and their segment
+equal the actual unordered periodic pair and cut, even if the canonical
+labels exchange places nearby.
+
+`SourceAngularComplexDirichletAngle.lean` normalizes the actual Dirichlet
+anti-discriminant by this half-gap and the omitted product. The exact
+circle identity gives a constructed analytic moving terminal angle at
+arbitrary complex sources, including either periodic endpoint with zero
+anti-discriminant. Its lifted root squares to the literal discriminant
+radicand throughout its omitted-root domain and equals the actual
+anti-discriminant at the terminal.
+
+`SourceAngularComplexAngleCommonDomain.lean` places these constructions
+on one open complex neighborhood of the whole real locus. Every open
+gap at every complex source there has an analytic half-gap and terminal
+angle chart; assigned discs prove the required omitted-domain membership.
+Overlapping terminal-angle charts agree modulo `pi`, including opposite
+half-gap choices. All existing beta results and real eta charts are
+retained on a larger domain. This angle-chart theorem does not yet
+identify the integrated eta representatives at general complex sources.
+
+Theorem 13.1(ii) still requires analytic eta primitives on these complex
+charts and their identification with literal admissible-path values
+modulo `pi`, including the shift when the endpoint anchor changes.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
