@@ -4225,6 +4225,31 @@ connected and contains the entire real-type source locus. The global
 existence theorem supplies the domain, analytic branches, canonical
 real agreement, and actual retained contour zeros without assumptions
 about a preexisting branch family or domain.
-Retaining the assigned isolating-root neighborhoods and explicitly
-placing this domain inside the dissertation's spectral neighborhood
-remain open in Lemma 12.10.
+`SourcePsiFullRootPlacement.lean` proves that the full assigned-root
+placement set is open by combining one coordinate with the open
+deleted-root projection. The compact full gap product therefore has
+one positive perturbation margin inside its assigned isolating discs.
+`SourcePsiUniformEquationTubeRestriction.lean` restricts the tube radius
+while preserving the actual equations, contour formulas, zeros, bounds,
+and root derivative inverses.
+`SourcePsiIsolatingLocalBranches.lean` chooses the common tube radius
+below both the root-placement margin and a prescribed source radius.
+All complex branches retain their assigned discs on one source ball
+independent of the deleted index. That ball stays inside the prescribed
+open neighborhood, and its moving spectral clusters lie in the same
+pairwise disjoint disc family.
+`SourcePsiIsolatingComplexRootAtlas.lean` glues these families inside any
+prescribed open neighborhood of the real locus. Local assigned-disc
+placement survives gluing; filling the omitted root with the moving
+periodic midpoint places the entire root vector in the same discs.
+`SourcePsiLemma12_10.lean` proves the source-space version of Lemma 12.10.
+The theorem `exists_sourcePsi_lemma12_10` supplies one open simply
+connected complex domain contained in the actual almost-real spectral
+neighborhood of Lemma 10.1. Every signed-index root map is analytic on
+that domain and agrees with the canonical real gap roots. At each real
+potential one source ball and one isolating-disc family work for all
+indices. The actual retained contour integrals vanish throughout the
+domain. The resulting psi numerators are jointly analytic in the
+spectral parameter and potential, and entire in the spectral variable.
+The next open statements are Lemma 12.11's omitted-index contour
+normalization to `2π` and Lemma 12.12's uniform root asymptotics.

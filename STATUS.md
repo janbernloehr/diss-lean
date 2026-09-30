@@ -1,6 +1,20 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: one simply connected complex root domain
+## Current milestone: source-space Lemma 12.10
+
+`exists_sourcePsi_lemma12_10` now supplies one open simply connected
+complex neighborhood of the full real-type source locus, contained in
+the actual almost-real spectral neighborhood of Lemma 10.1. Every
+signed-index root map is analytic on that same domain and agrees with
+its canonical real gap roots. At each real source, one source ball
+and one pairwise disjoint isolating-disc family work for every deleted
+index: all retained roots and moving spectral clusters stay in their
+assigned discs. The omitted root may be filled with the moving periodic
+midpoint in its assigned disc. The actual retained contour integrals
+vanish throughout the complex domain. The resulting entire psi
+numerators are jointly analytic in the spectral parameter and potential.
+The next step is Lemma 12.11: the omitted-index contour integral equals
+`2π`. Its normalization is not yet proved for the constructed family.
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -140,9 +154,31 @@ the real locus. Thus the common domain is contractible and simply
 connected, and contains the entire real-type source locus. Its global
 existence theorem requires no supplied equations, inverse bounds,
 branch compatibility, or domain assumptions.
-Retaining the assigned isolating-root neighborhoods, and explicitly
-placing the resulting domain inside the dissertation's spectral
-neighborhood, remain open in Lemma 12.10.
+`SourcePsiFullRootPlacement.lean` proves that the full assigned-root
+placement set is open, using one coordinate and the already open
+deleted projection. Compactness of the full gap product then gives
+one positive root perturbation margin across every gap-contained vector.
+`SourcePsiUniformEquationTubeRestriction.lean` shrinks the actual
+equation tube while preserving its equations, contour coordinates,
+norm bounds, zeros, and actual two-sided root derivative inverses.
+`SourcePsiIsolatingLocalBranches.lean` chooses a common tube radius
+below the root margin and a prescribed source-neighborhood radius.
+The resulting complex branches retain the assigned isolating discs
+for all indices, and their common source ball stays in that prescribed
+neighborhood. Moving spectral clusters lie in the same disjoint discs.
+`SourcePsiIsolatingComplexRootAtlas.lean` chooses these families at all
+real sources. Their glued atlas retains local root placement, is
+contained in any prescribed open neighborhood of the real locus,
+and places the full root vector after filling the omitted coordinate
+with the moving periodic midpoint.
+`SourcePsiLemma12_10.lean` packages the source-space lemma, using the
+actual almost-real spectral neighborhood supplied by Lemma 10.1.
+Its `SourcePsiIsolatingComplexExtension` predicate records analyticity,
+canonical real agreement, actual retained contour zeros, and one local
+isolating-disc family and source ball for every signed deleted index.
+The actual psi numerators are jointly analytic and entire in the
+spectral variable. Lemma 12.11's omitted-index normalization and
+Lemma 12.12's uniform root asymptotics remain open.
 
 ## Implemented and checked
 
@@ -152,6 +188,11 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SourcePsiFullRootPlacement` | Openness of full assigned-root placement and one common positive margin about the compact full gap product |
+| `NLS.ZakharovShabat.SourcePsiUniformEquationTubeRestriction` | Restriction of the common tube radius while preserving actual equations, contour formulas, zeros, norm bounds, and two-sided root inverses |
+| `NLS.ZakharovShabat.SourcePsiIsolatingLocalBranches` | One complex source ball and isolating-disc family for all indices, inside a prescribed source neighborhood, with retained root placement and moving spectral enclosure |
+| `NLS.ZakharovShabat.SourcePsiIsolatingComplexRootAtlas` | Glued root atlas inside a prescribed open neighborhood, retained root placement, and full placement after filling the omitted root with the moving periodic midpoint |
+| `NLS.ZakharovShabat.SourcePsiLemma12_10` | Source-space Lemma 12.10: one open simply connected domain inside the actual spectral neighborhood, all-index analytic extension, real agreement, assigned root placement, actual retained contour zeros, and jointly analytic entire psi numerators |
 | `NLS.ZakharovShabat.SourceHolomorphicRealCenteredBalls` | Banach-valued maps agreeing on the real locus agree on the full overlap of real-centered source balls |
 | `NLS.ZakharovShabat.SourcePsiComplexBranchCompatibility` | Compatibility of actual uniform psi root branches centered at arbitrary real potentials, independently of the chosen equation tubes |
 | `NLS.ZakharovShabat.SourcePsiComplexRootAtlas` | Analytic gluing of all signed-index root maps on one open neighborhood of the full real locus, exact local representation, canonical real agreement, and actual retained contour zeros |
