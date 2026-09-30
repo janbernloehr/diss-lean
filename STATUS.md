@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: Section 13 common complex endpoint limits
+## Current milestone: Section 13 equal periodic endpoint values
+
+`CosineSegmentGeometry.lean` proves that `τ + δ cos θ` maps real
+angles into the complex gap and every nonreal angle outside it, for
+a noncollapsed gap. Its endpoint polynomial is exactly
+`-δ² sin² θ`, so the coordinate derivative cancels the selected root.
+
+`CosineRootCoefficient.lean` proves that the resulting differential
+coefficient squares to `-1`. Continuity fixes it on each connected
+nonreal angle chart. Opposite angles have the same cosine image and
+opposite coefficients, independently of the chosen root sign.
+
+`CosinePrimitiveEndpointAgreement.lean` constructs a convex analytic
+angle neighborhood of the whole real angle interval. Its numerator
+has a holomorphic primitive there. The original spectral primitive,
+pulled back to either half-chart, differs from the corresponding
+constant multiple of this primitive by a constant. The two common
+spectral endpoint limits give equal and opposite endpoint differences,
+so the periodic endpoint values coincide. This proof treats complex
+segments and requires no real source, ordering, or assumed side integral.
+
+`SourceAngularPrimitiveCommonBoundary.lean` uses the exact selected-root
+decomposition and actual omitted-root analyticity to apply this result
+to the angular integrand. The normalized psi family supplies one
+all-gap disc family of off-diagonal primitives with a single relative
+value at both periodic endpoints. Every integrable C¹ path from the
+left periodic endpoint to either periodic endpoint has zero actual
+integral on both canonical sheet signs, including loops with a singular
+base point. The all-index zero theorem derives the primitive from the
+actual family; callers do not supply one or assume a vanishing period.
+
+The next step is to continue these normalized primitives to Dirichlet
+terminals on the interior of the cut and impose their prescribed sheets
+to construct the actual `β_m^n`. The diagonal `η_n`, joint angular
+analyticity, uniform Theorem 13.1 bounds, and the convergent angular
+sum remain to be proved. Integrability for arbitrary C¹ paths is still
+explicit; controlled endpoint connectors already have proved integrability.
+
+## Completed step: common complex endpoint limits
 
 `SlitPrimitiveBoundary.lean` proves that a primitive with a local
 inverse-square-root derivative bound has one finite limit at a slit
@@ -20,8 +58,8 @@ the actual angular endpoint bound and full isolating-disc primitives.
 One all-gap disc family works simultaneously for every off-diagonal
 pair at each complex source with the proved endpoint spectral data.
 Each noncollapsed gap has a common primitive value at each periodic
-endpoint, independently of the direction of approach. The two endpoint
-values are not yet asserted to equal each other.
+endpoint, independently of the direction of approach. The comparison
+in the current milestone above now identifies the two endpoint values.
 
 `PrimitiveBoundaryPathIntegral.lean` evaluates integrable C¹ paths
 between two relative primitive boundary values. Either or both ends
@@ -34,12 +72,9 @@ than requiring it from callers of the all-gap theorem. Integrability
 for arbitrary C¹ paths remains explicit; the controlled short endpoint
 connectors already have a proved integrability theorem.
 
-The next step is to compare the two periodic endpoint values using
-the off-diagonal normalization and handle Dirichlet terminals on the
-interior of the cut with their prescribed sheets. This will complete
-the construction of the actual `β_m^n`. The diagonal `η_n`, joint
-angular analyticity, uniform Theorem 13.1 bounds, and the convergent
-angular sum remain to be proved.
+The comparison above now proves equality of the periodic endpoint
+values. Dirichlet terminals on the interior of the cut with their
+prescribed sheets remain the next part of the actual `β_m^n` construction.
 
 ## Completed step: full isolating cut-complement primitives
 

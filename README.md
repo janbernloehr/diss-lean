@@ -4464,7 +4464,18 @@ common limits at each noncollapsed complex periodic endpoint on one
 all-gap disc family. `PrimitiveBoundaryPathIntegral.lean` and
 `SourceAngularEndpointPathIndependence.lean` prove path independence
 for integrable C¹ paths with regular or periodic endpoints, including
-singular ends and arbitrary winding in the cut complement. Equality
-of the two periodic endpoint values, Dirichlet terminals on the interior
-of the cut, the actual angular coordinates, and their Theorem 13.1
-estimates remain to be proved.
+singular ends and arbitrary winding in the cut complement.
+`CosineSegmentGeometry.lean` and `CosineRootCoefficient.lean` cancel
+the endpoint square root in a cosine coordinate and prove that its
+differential coefficient is constant on each connected angle chart,
+with opposite signs on opposite charts.
+`CosinePrimitiveEndpointAgreement.lean` compares the pulled-back
+primitive with an analytic numerator primitive across the real angle
+interval. Its endpoint differences are both equal and opposite, so
+the two spectral boundary values coincide for any complex gap.
+`SourceAngularPrimitiveCommonBoundary.lean` applies this to the actual
+angular quotient and supplies a common all-gap family. Every integrable
+C¹ path from the left periodic endpoint to either periodic endpoint
+has zero off-diagonal integral on both canonical sheet signs. Dirichlet
+terminals on the interior of the cut, the actual angular coordinates,
+and their Theorem 13.1 estimates remain to be proved.
