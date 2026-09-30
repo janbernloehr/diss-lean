@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Section 13 full isolating cut-complement primitives
+## Current milestone: Section 13 common complex endpoint limits
+
+`SlitPrimitiveBoundary.lean` proves that a primitive with a local
+inverse-square-root derivative bound has one finite limit at a slit
+endpoint. The change of coordinate `z = -w²` bounds the derivative
+on a convex right half-disc. A mean-value comparison with the negative
+real ray proves convergence for every approach in the slit complement,
+including approaches from both sides. Continuity and derivative
+hypotheses are required only near the endpoint.
+
+`SegmentPrimitiveBoundary.lean` translates and rescales this result
+to either endpoint of any nondegenerate complex segment inside an open
+domain. It also proves the affine cut geometry that transfers the
+full relative boundary limit. No reality or endpoint ordering is used.
+
+`SourceAngularPrimitiveBoundary.lean` instantiates these limits with
+the actual angular endpoint bound and full isolating-disc primitives.
+One all-gap disc family works simultaneously for every off-diagonal
+pair at each complex source with the proved endpoint spectral data.
+Each noncollapsed gap has a common primitive value at each periodic
+endpoint, independently of the direction of approach. The two endpoint
+values are not yet asserted to equal each other.
+
+`PrimitiveBoundaryPathIntegral.lean` evaluates integrable C¹ paths
+between two relative primitive boundary values. Either or both ends
+may be singular. `SourceAngularEndpointPathIndependence.lean` applies
+it to actual off-diagonal integrals throughout the full isolating cut
+complement. Any two such integrable paths with the same endpoints have
+equal integrals, when each endpoint is either regular or a periodic
+endpoint. The normalized psi family supplies the primitive, rather
+than requiring it from callers of the all-gap theorem. Integrability
+for arbitrary C¹ paths remains explicit; the controlled short endpoint
+connectors already have a proved integrability theorem.
+
+The next step is to compare the two periodic endpoint values using
+the off-diagonal normalization and handle Dirichlet terminals on the
+interior of the cut with their prescribed sheets. This will complete
+the construction of the actual `β_m^n`. The diagonal `η_n`, joint
+angular analyticity, uniform Theorem 13.1 bounds, and the convergent
+angular sum remain to be proved.
+
+## Completed step: full isolating cut-complement primitives
 
 `RadialSegmentGeometry.lean` proves that outward rays from a point
 of a star-convex cut cannot re-enter the cut. Every noncentral point
@@ -32,12 +73,10 @@ including paths entering the inner-circle region and winding around
 the cut. No path homotopy or extra period assumption is supplied.
 The construction includes noncollapsed and collapsed complex gaps.
 
-The next step is to prove common boundary limits of these primitives
-at the singular periodic endpoints and use them in the admissible
-endpoint integrals defining `β_m^n`. The diagonal `η_n`, Theorem 13.1's
-uniform bounds, joint angular analyticity, and convergent sum remain
-to be proved. The current full-domain path formula requires the path,
-including its endpoints, to avoid the selected gap.
+The boundary-limit and path-independence results above now allow
+singular periodic endpoints for integrable C¹ paths. This earlier
+regular-path formula requires the entire path to avoid the selected
+gap.
 
 ## Completed step: annular angular primitives
 

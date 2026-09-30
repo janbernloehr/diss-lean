@@ -1211,6 +1211,11 @@ import NLS.ComplexAnalysis.RadialSegmentGeometry
 import NLS.ComplexAnalysis.PrimitiveRadialContinuation
 import NLS.ComplexAnalysis.PrimitiveOnDiscComplement
 import NLS.ZakharovShabat.SourceAngularDiscComplementPrimitive
+import NLS.ComplexAnalysis.SlitPrimitiveBoundary
+import NLS.ComplexAnalysis.SegmentPrimitiveBoundary
+import NLS.ComplexAnalysis.PrimitiveBoundaryPathIntegral
+import NLS.ZakharovShabat.SourceAngularPrimitiveBoundary
+import NLS.ZakharovShabat.SourceAngularEndpointPathIndependence
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

@@ -4453,5 +4453,18 @@ entire enclosing disc minus its cut, retaining its annular values.
 actual moving gap at every complex source, simultaneously for all
 off-diagonal indices. Every regular C¹ integral on the full cut
 complement is a primitive endpoint difference, with arbitrary winding
-and no homotopy assumption. Common singular endpoint limits and the
-angular coordinates and their Theorem 13.1 estimates remain next.
+and no homotopy assumption.
+`SlitPrimitiveBoundary.lean` removes inverse-square-root derivative
+growth by the coordinate `z = -w²` and proves one common boundary
+limit for all approaches in the local slit complement.
+`SegmentPrimitiveBoundary.lean` transfers it to both endpoints of any
+complex segment. `SourceAngularPrimitiveBoundary.lean` applies the
+proved actual bound to the full-domain off-diagonal primitives, giving
+common limits at each noncollapsed complex periodic endpoint on one
+all-gap disc family. `PrimitiveBoundaryPathIntegral.lean` and
+`SourceAngularEndpointPathIndependence.lean` prove path independence
+for integrable C¹ paths with regular or periodic endpoints, including
+singular ends and arbitrary winding in the cut complement. Equality
+of the two periodic endpoint values, Dirichlet terminals on the interior
+of the cut, the actual angular coordinates, and their Theorem 13.1
+estimates remain to be proved.
