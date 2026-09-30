@@ -10,9 +10,10 @@ disc and independent of the primitive's additive constant. Evaluation at
 the actual moving Dirichlet terminal, with the actual anti-discriminant
 coefficient, is source analytic even at a collapsed real gap.
 
-The candidate agrees with beta at endpoint terminals. Agreement at regular
-terminals still requires extending the normalized spectral quotient through
-the selected cut; the results here do not assert collapsed-gap beta analyticity.
+The candidate agrees with beta at endpoint terminals in this module.
+`SourceAngularBetaCauchyAnalytic` identifies it at regular terminals as
+well, by constructing normalized sheet primitives from its differential
+equation, and proves actual beta analyticity through collapsed real gaps.
 -/
 
 noncomputable section
@@ -178,9 +179,9 @@ theorem betaCauchyCandidate_eq_beta_of_endpoint
   rw [D.betaCauchyCandidate_eq_zero_of_endpoint ψ hψ n ρ hend,
     sourceAngularBeta_eq_zero_of_endpoint hp hp1 n m s ψ hend]
 
-/-- At a collapsed real gap the analytic candidate already has the exact
-actual beta value. Extending this equality to regular nearby terminals is
-the remaining identification needed for collapsed-gap source analyticity. -/
+/-- At a collapsed real gap the analytic candidate has the exact actual
+beta value. `SourceAngularBetaCauchyAnalytic` extends this identification
+to every nearby source in the chart. -/
 theorem betaCauchyCandidate_eq_beta_of_real_collapsed_gap
     (D : SourceAngularJointAnnulusChartData hp hp1 m s W V c T r R z₀)
     (φ : CoeffPair p) (hφ : φ ∈ V) (hreal : IsRealType (CoeffPair.toMax p φ))

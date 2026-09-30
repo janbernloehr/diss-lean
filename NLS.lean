@@ -1208,6 +1208,9 @@ import NLS.ZakharovShabat.SourceAngularCollapsedIntegrand
 import NLS.ZakharovShabat.SourceAngularCollapsedPathIntegral
 import NLS.ZakharovShabat.SourceAngularCollapsedGapGeometry
 import NLS.ComplexAnalysis.CircleLogarithmicPrimitive
+import NLS.ComplexAnalysis.CircleCauchyTransformDerivative
+import NLS.ComplexAnalysis.QuadraticCauchyEquation
+import NLS.ComplexAnalysis.QuadraticRootPrimitive
 import NLS.ComplexAnalysis.AnnularHolomorphicPrimitive
 import NLS.ZakharovShabat.SourceAngularAnnulusPrimitive
 import NLS.ComplexAnalysis.RadialSegmentGeometry
@@ -1260,6 +1263,9 @@ import NLS.ComplexAnalysis.ParametricAnnularPrimitive
 import NLS.ZakharovShabat.SourceAngularJointAnnulusPrimitive
 import NLS.ZakharovShabat.SourceStandardRootCauchyZero
 import NLS.ZakharovShabat.SourceAngularCauchyCandidate
+import NLS.ZakharovShabat.SourceAngularCauchyEquation
+import NLS.ZakharovShabat.SourceAngularCauchySheetPrimitive
+import NLS.ZakharovShabat.SourceAngularBetaCauchyAnalytic
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

@@ -4628,8 +4628,9 @@ all jointly analytic gap numerators and both analytic boundary sequences.
 The regular sheet primitives use a fixed regular anchor. The generic
 cosine construction accepts analytic midpoint/half-gap functions and a
 common angle chart. The following step constructs these from the
-canonical roots near open real gaps. Beta analyticity through periodic
-terminals and collapsed gaps remains unfinished.
+canonical roots near open real gaps. The later cosine and Cauchy
+constructions prove beta analyticity through periodic terminals and
+collapsed real gaps, as described below.
 
 `AnalyticFromSquare.lean` recovers analyticity of a continuous nonzero
 root from its analytic square. `SourceOpenGapEndpointAnalytic.lean`
@@ -4655,9 +4656,9 @@ near every open real gap on a common domain retaining all pointwise
 beta values and both analytic boundary-coordinate sequences. The full
 simply connected psi extension is retained on its original domain.
 The endpoint normalization is now transferred to the Dirichlet sheet
-at every terminal of an open real gap as described below. Source
-regularity at collapsed gaps remains necessary for the full beta
-analyticity statement and Theorem 13.1.
+at every terminal of an open real gap as described below. The Cauchy
+construction supplies source analyticity at collapsed real gaps. The
+full common complex domain and Theorem 13.1 estimates remain unfinished.
 
 `ParametricCosineTerminal.lean` constructs the analytic moving cosine
 angle of an analytic spectral terminal at a noncritical base angle.
@@ -4680,7 +4681,8 @@ terminal, for every off-diagonal pair and including central indices.
 One actual common beta domain retains all pointwise values, both
 analytic boundary sequences, and the full simply connected psi
 extension. The following step supplies periodic-terminal source
-analyticity on open real gaps. Collapsed gaps, the full continuity
+analyticity on open real gaps; the later Cauchy construction covers
+collapsed real gaps as well. The full common complex domain, continuity
 and bounds, diagonal eta, and the angular sum remain unfinished.
 
 `ParametricSineTerminal.lean` constructs an analytic moving angle from
@@ -4703,9 +4705,10 @@ coefficient to minus i, and both endpoint-angle values are zero.
 The same analytic expression agrees with beta through nearby regular
 and endpoint terminals. Thus beta is complex source analytic at every
 real source with an open selected gap, for every off-diagonal pair,
-including central indices and both periodic terminals. Source
-analyticity at collapsed real gaps and the remaining Theorem 13.1
-bounds and angular-sum assertions remain to be proved.
+including central indices and both periodic terminals. The Cauchy
+construction below also proves analyticity at collapsed real gaps.
+The common complex domain, Theorem 13.1 bounds, and angular-sum
+assertions remain to be proved.
 
 `ParametricCircleTransforms.lean` proves joint Banach source and spectral
 analyticity of fixed-circle Cauchy and exterior logarithmic transforms.
@@ -4734,7 +4737,36 @@ Multiplication by the actual Dirichlet anti-discriminant coefficient and
 evaluation at the moving terminal give a source-analytic angular
 candidate at every real source, including collapsed gaps. The candidate
 agrees with actual beta at endpoint terminals and collapsed real base
-points. An analytic extension of the normalized spectral quotient would
-identify it throughout the disc; that extension and agreement at nearby
-regular terminals are still required before claiming collapsed-gap beta
-analyticity or the full Theorem 13.1.
+points. The following differential-equation argument identifies it at
+nearby regular terminals as well.
+
+`CircleCauchyTransformDerivative.lean` differentiates the Cauchy kernel
+for a density analytic near the integrating circle.
+`QuadraticCauchyEquation.lean` proves that interior Cauchy projection
+preserves the equation `D H' + (z - tau) H = g`, where
+`D = (z - tau)^2 - gap^2 / 4`: the difference of the kernels integrates
+to zero as a full derivative around the circle.
+`QuadraticRootPrimitive.lean` turns any analytic solution into a
+primitive on every regular square-root sheet. Its limit at either
+quadratic endpoint is zero, including a collapsed pair, because the
+root square tends to zero and the solution stays analytic.
+
+`SourceAngularCauchyEquation.lean` proves this equation for the actual
+angular quotient candidate. `SourceAngularCauchySheetPrimitive.lean`
+constructs actual normalized canonical and prescribed-sheet primitives
+on the enclosing disc, with exact derivatives, zero endpoint limits,
+and the required exterior matching coefficient.
+
+`SourceAngularBetaCauchyAnalytic.lean` identifies the candidate with
+actual beta throughout each local source chart, including nearby
+complex sources, regular Dirichlet terminals, and both endpoint
+conventions. Consequently every off-diagonal beta term is complex
+source analytic at every real source, without a nonzero-gap condition.
+The common-domain theorem retains all unique beta values, both analytic
+boundary sequences, the full simply connected psi extension, and
+annular charts for every selected index. All off-diagonal terms for that
+selected index are analytic on the chart's complex source neighborhood.
+This includes central indices and collapsed real gaps. Analyticity of
+every term on one common open
+complex neighborhood, Theorem 13.1's uniform estimates, diagonal eta,
+and the angular sum remain unfinished.

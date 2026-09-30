@@ -46,7 +46,9 @@ theorem hasDerivAt_circleLogKernel (c w z : ℂ) (r : ℝ) (hr : 0 ≤ r)
   field_simp [hargne,hzc,hzw]
   ring
 
-private theorem hasDerivAt_circleIntegral_parameter
+/-- Joint analyticity and the derivatives of the spectral slices give the
+derivative of a scalar fixed-circle integral. -/
+theorem hasDerivAt_circleIntegral_parameter
     (F : ℂ × ℂ → ℂ) (D : Set (ℂ × ℂ)) (hD : IsOpen D) (hF : AnalyticOnNhd ℂ F D)
     (c : ℂ) (r : ℝ) (hr : 0 ≤ r) (V : Set ℂ) (hV : IsOpen V)
     (hcircle : ∀ z ∈ V, ∀ w ∈ sphere c r, (w,z) ∈ D)
