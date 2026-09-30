@@ -4334,6 +4334,19 @@ its branches, equations, and root isolation.
 simply connected normalized analytic psi extension with locally
 uniform chi tail majorants at every complex source. This proves the
 tail form of (2.32), with a bound independent of the deleted index.
-Lemma 12.12 still requires the uniform positive midpoint lower bound,
-finite-head offset estimates, and assembly of the all-index squared-gap
-ℓp conclusion.
+`CompactNonzeroLowerBound.lean` now turns nonvanishing and continuity
+on a compact scalar family into a common positive bound on a closed
+metric neighborhood. `SourcePsiUniformFilledBranchStability.lean`
+uses the Schwarz lemma and midpoint sequence continuity to place all
+actual filled analytic root graphs uniformly near their real gap
+vectors, independently of the omitted index.
+`SourcePsiMidpointQuotientFiniteHeadLowerBound.lean` proves a positive
+regular-quotient midpoint bound near the entire compact real gap
+product for every fixed finite selected head.
+`SourcePsiFiniteHeadMidpointLowerBound.lean` controls the index ratio
+from below and obtains the corresponding actual chi midpoint lower
+bound near each real source, uniformly in the omitted index and also
+at collapsed selected gaps. Lemma 12.12 still requires the uniform
+tail midpoint lower bound, finite-head root-offset estimates, and
+assembly of the all-index squared-gap ℓp conclusion on a common
+complex neighborhood.

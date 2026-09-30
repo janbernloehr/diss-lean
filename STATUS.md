@@ -1,6 +1,19 @@
 # Implementation status
 
-## Current milestone: Lemma 12.12 locally uniform chi tail bounds
+## Current milestone: Lemma 12.12 finite-head midpoint lower bounds
+
+The actual chi factors now have a positive midpoint lower bound on
+any fixed finite selected head, near every real source and uniformly
+over all omitted indices. The regular quotient is nonzero at each
+selected midpoint for every vector in the compact full real gap
+product. Continuity gives one positive bound near that entire product
+and reference source. The Schwarz lemma gives an index-independent
+branch displacement estimate from the common root and source radii.
+Combined with sequence-norm continuity of the moving midpoints, it
+puts all actual filled complex root graphs in the same compact
+neighborhood. The factor `π(n-m)/(τn-τm)` has a positive lower bound
+from the common midpoint displacement norm; assigned isolation keeps
+the two midpoints distinct. This also handles collapsed selected gaps.
 
 `exists_sourcePsi_normalized_complex_extension_with_tail_factor_majorants`
 now constructs one common open simply connected complex neighborhood
@@ -37,9 +50,11 @@ factorization also at every collapsed retained gap.
 The chi tail majorants are now instantiated for the actual analytic
 family on a common complex domain. The offset estimates still take
 the midpoint lower bound and local contour geometry as explicit
-inputs. To finish Lemma 12.12, prove the uniform positive midpoint
-lower bound, handle the finite head, transfer the retained zeros to
-the selected tail circles, and assemble the all-index ℓp offset bound.
+inputs. The finite-head midpoint lower bound is proved on a smaller
+complex neighborhood of each real base source. To finish Lemma 12.12,
+prove the uniform tail midpoint lower bound, obtain the finite-head
+root-offset estimates, transfer the retained zeros to the selected
+tail circles, and assemble the all-index ℓp offset bound.
 
 ## Completed: Lemma 12.11 exact complex normalization
 
@@ -370,9 +385,25 @@ radius, then obtains actual chi majorants near each real source.
 balls to these neighborhoods and carries the tail cutoff and bound
 through the glued atlas. `SourcePsiComplexFactorAsymptotics.lean`
 constructs one common normalized analytic extension with locally
-uniform chi tail majorants at every complex source. Lemma 12.12's
-uniform midpoint lower bound, finite-head estimates, and all-index
-squared-gap offset conclusion remain open.
+uniform chi tail majorants at every complex source.
+
+`CompactNonzeroLowerBound.lean` proves a common positive lower bound
+on a closed metric neighborhood of a compact nonzero family, including
+a finite family of scalar functions. `SourcePsiUniformFilledBranchStability.lean`
+uses the Schwarz lemma to control every analytic branch displacement
+by the same source displacement constant, then places all filled
+complex root graphs uniformly near their full real gap vectors.
+`SourcePsiMidpointQuotientFiniteHeadLowerBound.lean` proves the actual
+regular quotient is nonzero and continuous at each selected midpoint
+over the compact real gap product, obtaining a uniform finite-head
+lower bound near that entire product and source.
+`SourcePsiFiniteHeadMidpointLowerBound.lean` converts it to a positive
+chi midpoint bound using the common midpoint displacement norm and
+applies it to every actual analytic branch on one source neighborhood,
+uniformly in the omitted index and including collapsed selected gaps.
+Lemma 12.12 still requires uniform tail midpoint lower bounds,
+finite-head root-offset estimates, and the all-index squared-gap
+offset conclusion on a common complex neighborhood.
 
 ## Implemented and checked
 
@@ -382,6 +413,10 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.CompactNonzeroLowerBound` | Common positive lower bounds on closed metric neighborhoods of compact nonzero scalar families, also uniformly for a finite family |
+| `NLS.ZakharovShabat.SourcePsiUniformFilledBranchStability` | Index-independent Schwarz branch displacement bound and uniform stability of actual midpoint-filled root/source graphs near the full real gap product |
+| `NLS.ZakharovShabat.SourcePsiMidpointQuotientFiniteHeadLowerBound` | Actual regular quotient midpoint nonvanishing on the compact real gap product and a positive finite-head bound on one common metric neighborhood |
+| `NLS.ZakharovShabat.SourcePsiFiniteHeadMidpointLowerBound` | Positive index-ratio bound and actual chi finite-head midpoint lower bounds near each real source, uniform in the omitted index and including collapsed gaps |
 | `NLS.ZakharovShabat.SourcePsiMidpointDenominator` | Locally uniform omitted-midpoint lattice separation on selected tail discs, covering every omitted index including the finite head |
 | `NLS.ZakharovShabat.SourcePsiMidpointFilledFactorMajorant` | Actual chi-error ℓp majorants from quotient errors and translated reciprocal lattices, with source- and index-uniform norm bounds for bounded root inputs |
 | `NLS.ZakharovShabat.SourcePsiBranchFactorMajorant` | Common canonical and analytic branch norm bounds and actual chi tail majorants near every real source |
