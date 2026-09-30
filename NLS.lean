@@ -1286,6 +1286,9 @@ import NLS.ZakharovShabat.SourceAngularBetaTheorem13_1
 import NLS.SequenceSpaces.UniformHolderSums
 import NLS.ZakharovShabat.SourceAngularBetaSeries
 import NLS.ZakharovShabat.SourceAngularBetaSeriesAnalytic
+import NLS.SequenceSpaces.ShiftedHolderDecay
+import NLS.ZakharovShabat.SourceAngularBetaDecay
+import NLS.ZakharovShabat.SourceAngularBetaTheorem13_1Series
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

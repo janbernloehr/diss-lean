@@ -4902,6 +4902,7 @@ indices. Unique actual beta values, both analytic scalar boundary-root
 families, both Banach-analytic boundary displacement sequences, and
 analytic midpoint and squared-gap coordinates are retained. The full
 normalized psi family remains on its original simply connected domain.
+
 `UniformHolderSums.lean` proves absolute summability under the sum of
 two actual coefficient-space majorants. A fixed finite-exponent
 conjugate multiplier has vanishing norm tails, so the same estimate
@@ -4925,5 +4926,27 @@ all data from Theorem 13.1(i) and adds absolute summability, local
 uniform convergence, and analyticity of the actual beta correction
 series, including collapsed gaps and endpoint terminals.
 
-The decay assertion `beta^n = o(1)` in Theorem 13.1(iii), parts (ii) and
-(iv), Corollary 13.2, and the later chapters remain.
+`ShiftedHolderDecay.lean` proves that absolute Holder pairings with
+translated finite-exponent coefficient sequences vanish as the absolute
+index tends to infinity. A finite truncation of the first sequence has
+a vanishing finite head; Holder bounds the remainder uniformly by its
+small coefficient-space norm. The result also applies to arbitrary
+double-indexed series dominated by two such majorants.
+
+`SourceAngularBetaDecay.lean` applies this result to the actual gap and
+Dirichlet-minus-midpoint displacement sequences and the translated
+punctured reciprocal lattice. The complete absolute beta sum tends to
+zero at every complex source, which proves `beta^n = o(1)` in both
+integer-index directions, including collapsed gaps and endpoint terminals.
+
+`SourceAngularBetaTheorem13_1Series.lean` proves Theorem 13.1(i) and
+(iii) in full. `exists_sourceAngularBeta_theorem13_1_i_iii` retains
+the original normalized psi extension, both analytic scalar boundary
+root families, both Banach-analytic boundary displacement sequences,
+analytic midpoint and squared-gap coordinates, unique actual beta
+values, and the locally uniform all-index reciprocal bound. On that
+same common complex domain, `SourceAngularBetaSeriesData` records
+absolute and local uniform convergence of the actual correction series,
+its analyticity, and the decay of both its absolute sum and its value.
+
+Theorem 13.1(ii) and (iv), Corollary 13.2, and the later chapters remain.
