@@ -97,21 +97,18 @@ end SourceAngularAdmissiblePathRootData
 
 namespace SourceAngularAdmissiblePathRootData
 variable {hp : p ≠ ⊤} {hp1 : 1 < p} {n : ℤ} {ψ : CoeffPair p}
-  {c : ℂ} {R : ℝ} {Q : ℂ × CoeffPair p → ℂ} {b : ℂ}
-  {γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) b}
+  {c : ℂ} {R : ℝ} {Q : ℂ × CoeffPair p → ℂ} {a b : ℂ} {γ : Path a b}
 
-/-- A final path limit of the fixed-sign canonical remainder evaluates
-its contribution to the literal eta integral. This form also permits
-singular periodic terminals where the limit is zero. -/
-theorem pathIntegral_decomposition_of_remainder_limit
+/-- A primitive with its initial and final path limits gives the exact
+remainder decomposition, for an arbitrary starting anchor. -/
+theorem pathIntegral_decomposition_of_remainder_limits
     (hQ : SourceAngularAdmissiblePathRootData hp hp1 n ψ c R Q γ)
     (s : (k : ℤ) → CoeffPair p → DeletedCoeff p k)
     (hother : closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n)
     (F : ℂ → ℂ)
     (hFcan : ∀ z ∈ ball c R \ sourcePeriodicSegment hp hp1 ψ n,
       HasDerivAt F (sourceAngularEtaRemainderIntegrand hp hp1 n s ψ z) z)
-    (hleft : Tendsto F (𝓝[ball c R \ sourcePeriodicSegment hp hp1 ψ n]
-      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)) (𝓝 0))
+    (hstartF : Tendsto F (𝓝[ball c R \ sourcePeriodicSegment hp hp1 ψ n] a) (𝓝 0))
     (κ : ℂ) (hκ : κ = 1 ∨ κ = -1)
     (hfixed : ∀ t ∈ Ioo (0:ℝ) 1, Q (γ.extend t,ψ) = κ*sourceCanonicalRoot hp hp1 ψ (γ.extend t))
     (B : ℂ) (hend : Tendsto ((fun z => κ*F z) ∘ γ.extend) (𝓝[<] (1:ℝ)) (𝓝 B))
@@ -144,8 +141,7 @@ theorem pathIntegral_decomposition_of_remainder_limit
     (curveIntegrable_holomorphicOneForm_congr_interior ρ q γ hpoint).mp hIntρ
   have hstart : Tendsto ((fun z => κ*F z) ∘ γ.extend) (𝓝[>] (0:ℝ)) (𝓝 0) := by
     have hγstart : Tendsto γ.extend (𝓝[>] (0:ℝ))
-        (𝓝[ball c R \ sourcePeriodicSegment hp hp1 ψ n]
-          (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)) := by
+        (𝓝[ball c R \ sourcePeriodicSegment hp hp1 ψ n] a) := by
       apply tendsto_nhdsWithin_iff.mpr
       constructor
       · simpa only [Path.extend_zero] using
@@ -153,7 +149,7 @@ theorem pathIntegral_decomposition_of_remainder_limit
       · filter_upwards [Ioo_mem_nhdsGT (by norm_num : (0:ℝ) < 1)] with t ht
         exact hQ.interior t ht
     simpa only [Function.comp_def,mul_zero] using
-      (hleft.comp hγstart).const_mul κ
+      (hstartF.comp hγstart).const_mul κ
   have hFκ : ∀ z ∈ ball c R \ sourcePeriodicSegment hp hp1 ψ n,
       HasDerivAt (fun z => κ*F z) (q z) z := fun z hz => (hFcan z hz).const_mul κ
   have hval := curveIntegral_eq_sub_of_primitive_with_limits q (fun z => κ*F z) _ hFκ
@@ -162,6 +158,37 @@ theorem pathIntegral_decomposition_of_remainder_limit
     hω,curveIntegral_sub hint hmodel,sub_zero] at hval
   change (∫ᶜ z in γ, holomorphicOneForm f z) = (∫ᶜ z in γ, holomorphicOneForm M z)+B
   exact sub_eq_iff_eq_add.mp hval |>.trans (add_comm _ _)
+
+
+end SourceAngularAdmissiblePathRootData
+
+namespace SourceAngularAdmissiblePathRootData
+variable {hp : p ≠ ⊤} {hp1 : 1 < p} {n : ℤ} {ψ : CoeffPair p}
+  {c : ℂ} {R : ℝ} {Q : ℂ × CoeffPair p → ℂ} {b : ℂ}
+  {γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) b}
+
+/-- A final path limit of the fixed-sign canonical remainder evaluates
+its contribution to the literal eta integral. This form also permits
+singular periodic terminals where the limit is zero. -/
+theorem pathIntegral_decomposition_of_remainder_limit
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 n ψ c R Q γ)
+    (s : (k : ℤ) → CoeffPair p → DeletedCoeff p k)
+    (hother : closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n)
+    (F : ℂ → ℂ)
+    (hFcan : ∀ z ∈ ball c R \ sourcePeriodicSegment hp hp1 ψ n,
+      HasDerivAt F (sourceAngularEtaRemainderIntegrand hp hp1 n s ψ z) z)
+    (hleft : Tendsto F (𝓝[ball c R \ sourcePeriodicSegment hp hp1 ψ n]
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)) (𝓝 0))
+    (κ : ℂ) (hκ : κ = 1 ∨ κ = -1)
+    (hfixed : ∀ t ∈ Ioo (0:ℝ) 1, Q (γ.extend t,ψ) = κ*sourceCanonicalRoot hp hp1 ψ (γ.extend t))
+    (B : ℂ) (hend : Tendsto ((fun z => κ*F z) ∘ γ.extend) (𝓝[<] (1:ℝ)) (𝓝 B))
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hint : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand n s Q (z,ψ))) γ)
+    (hmodel : CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 n ψ Q)) γ) :
+    sourceAngularPathIntegral n s Q ψ γ =
+      (∫ᶜ z in γ, holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 n ψ Q) z)+B := by
+  exact hQ.pathIntegral_decomposition_of_remainder_limits s hother F hFcan hleft
+    κ hκ hfixed B hend hγ hint hmodel
 
 end SourceAngularAdmissiblePathRootData
 

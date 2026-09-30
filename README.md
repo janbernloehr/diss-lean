@@ -5275,8 +5275,41 @@ condition or restriction to a convex terminal-angle chart is required.
 The established beta results and real eta charts are retained on a
 larger domain for the same normalized psi family.
 
-Theorem 13.1(ii) still requires combining these remainder formulas with
-the analytic complex terminal angles and proving agreement of the full
-eta representatives with all admissible-path values modulo `pi`,
-including the shift when the endpoint anchor changes.
-Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
+`SourceAngularEtaModelTerminalAngle.lean` identifies every integrable
+continued-root model integral with the actual complex terminal angle
+modulo `pi`. Squaring its exponential endpoint identity removes the
+half-gap sign and periodic anchor choice. Conditional anti-discriminant
+normalization also fixes the continued root at a periodic terminal,
+where both values vanish.
+
+`SourceAngularEtaPeriodicAnchor.lean` extends the exact Cauchy remainder
+decomposition to paths starting at either periodic endpoint. The same
+terminal remainder is used because both initial endpoint limits vanish.
+`SourceAngularEtaAnalyticRepresentative.lean` combines the terminal
+angle minus `pi` with this remainder. The full representative agrees
+with every normalized integrable C1 admissible spectral integral modulo
+`pi`. Overlapping representatives differ by an integer multiple of `pi`,
+including opposite half-gap branches, different annuli, and angle choices.
+
+`SourceAngularEtaAnalyticChart.lean` constructs full eta charts at every
+complex open-gap source from the actual annulus and analytic spectral
+coordinates. It supplies all endpoint spectral data and source
+analyticity, without requiring the terminal angle to lie in a convex
+angle chart.
+
+`SourceAngularEtaAnalyticPhase.lean` defines the unique chart-independent
+phase `exp(2i eta)`. It is analytic and nonzero on each source chart and
+equals the phase of the literal admissible spectral integral. The choice
+of either periodic starting endpoint does not change this phase.
+
+`SourceAngularEtaTheorem13_1Analytic.lean` assembles Theorem 13.1(ii) on
+one common complex neighborhood of the whole real locus for the actual
+normalized psi family. For each index the open-gap source domain is
+open, the single eta phase is analytic and nonzero there, and every
+complex open-gap source has a constructed local analytic eta
+representative. The full beta results of (i) and (iii) are retained on
+a larger domain. Literal integral comparisons retain actual and model
+integrability as explicit hypotheses, with C1 admissible paths and
+conditional normalization at regular terminals.
+
+Theorem 13.1(iv), Corollary 13.2, and the later chapters remain.

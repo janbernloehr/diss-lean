@@ -10737,3 +10737,20 @@ nonzero, with two possible signs according to the root branch. To
 finish the positivity clause of Lemma 11.1, the weighted enclosing
 contour must be related to this boundary integral and its canonical
 orientation/sign fixed.
+
+
+## Latest milestone: Theorem 13.1(ii), analytic eta modulo pi
+
+Full eta source charts are now constructed at every complex open gap on
+one common neighborhood of the whole real locus. The terminal angle
+minus pi plus the Cauchy remainder agrees modulo pi with normalized
+integrable C1 admissible spectral integrals from either periodic endpoint.
+Different half-gap branches, annuli, and angle choices agree modulo pi.
+The single chart-independent phase `exp(2i eta)` is analytic and nonzero
+on every indexed open-gap source domain. Periodic Dirichlet terminals
+are included. Actual and model integrability remain explicit hypotheses
+in the literal spectral integral comparisons.
+
+The actual normalized psi family and the full beta results of Theorem
+13.1(i) and (iii) are retained on the same neighborhood. Theorem 13.1(iv),
+Corollary 13.2, and the Birkhoff-coordinate chapters remain.

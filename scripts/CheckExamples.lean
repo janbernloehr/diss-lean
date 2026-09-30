@@ -18601,3 +18601,47 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {m : �
   D.etaRemainderCauchyCandidate_eq_normalized_terminal ψ hψ ρ hrρ hρR hE hseg hw hb hroot
 
 end NLS.ZakharovShabat
+
+/- Theorem 13.1(ii): one analytic eta phase and literal integral recovery. -/
+noncomputable section
+open Set Metric Complex NLS.ComplexAnalysis
+open scoped ENNReal unitInterval
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∃ s : (k : ℤ) → CoeffPair p → DeletedCoeff p k, ∀ m : ℤ,
+        AnalyticOnNhd ℂ (sourceAngularEtaAnalyticPhase hp hp1 m s)
+          {ψ : CoeffPair p | ψ ∈ W ∧ canonicalPeriodicGap hp hp1
+            (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠ 0} ∧
+        ∀ ψ ∈ W, canonicalPeriodicGap hp hp1
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠ 0 →
+            sourceAngularEtaAnalyticPhase hp hp1 m s ψ ≠ 0 := by
+  obtain ⟨W₀,B,W,_,_,_,_,_,_,hW,hWreal,_,s,_,hphase⟩ :=
+    exists_sourceAngularEta_theorem13_1_ii hp hp1
+  exact ⟨W,hW,hWreal,s,fun m => ⟨(hphase m).2.1,(hphase m).2.2.1⟩⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {m : ℤ}
+    {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    {W V U : Set (CoeffPair p)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R : ℝ} {z₀ : ℂ} {ρ : ℝ} {δ ε : CoeffPair p → ℂ}
+    (D : SourceAngularEtaAnalyticChartData hp hp1 m s W V U c T r R z₀ ρ δ ε)
+    (ψ : CoeffPair p) (hψ : ψ ∈ U) {a : ℂ}
+    (ha : a ∈ ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m,
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m} : Set ℂ))
+    (Q : ℂ × CoeffPair p → ℂ)
+    (γ : Path a (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hQ : SourceAngularAdmissiblePathRootData hp hp1 m ψ (c m) r Q γ)
+    (hnorm : sourceAntiDiscriminantCandidate hp hp1 ψ
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) ≠ 0 →
+      Q (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+        sourceAntiDiscriminantCandidate hp hp1 ψ
+          (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m))
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hint : CurveIntegrable (holomorphicOneForm (fun z => sourceAngularIntegrand m s Q (z,ψ))) γ)
+    (hmodel : CurveIntegrable (holomorphicOneForm (sourceAngularEtaPathModelIntegrand hp hp1 m ψ Q)) γ) :
+    Complex.exp (2*Complex.I*sourceAngularPathIntegral m s Q ψ γ) =
+      sourceAngularEtaAnalyticPhase hp hp1 m s ψ :=
+  D.exp_two_I_admissible_pathIntegral_eq_phase ψ hψ ha Q γ hQ hnorm hγ hint hmodel
+
+end NLS.ZakharovShabat
