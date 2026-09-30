@@ -4782,8 +4782,9 @@ on a common complex neighborhood of each real source.
 
 `SourceAngularUniformAnnulusPrimitive.lean` combines the actual
 Dirichlet tail with the uniform periodic midpoint and gap tails. Every
-distant gap and terminal lie in a free eighth-pi disc, inside the
-original quarter-pi assigned disc. Fixed inner and outer radii give
+distant gap and terminal lie in a free sixteenth-pi disc, inside a
+free eighth-pi annulus and the original quarter-pi assigned disc.
+Fixed inner and outer radii give
 all distant joint annular charts at once. Only the finitely many
 remaining chart neighborhoods are intersected. Thus every selected
 gap has a chart on one shared source neighborhood, including central
@@ -4831,3 +4832,36 @@ therefore gives an explicit beta estimate with the required
 of Theorem 13.1(i) is to assemble local bounds on chi and retained
 roots, and chart radii, that are uniform in both indices. The fixed-pair
 local estimates alone do not prove that uniform assertion.
+
+`SourcePsiUniformRetainedRootBounds.lean` uses Lemma 12.12's actual
+squared-gap offset sequences and the midpoint and gap norm bounds to
+bound every retained psi root displacement from its free lattice point.
+The bound is locally uniform at every complex source of the psi domain
+and independent of both integer indices. The chi sequence majorants
+also give one scalar bound on all sufficiently distant selected
+eighth-pi discs, independent of the deleted index.
+
+`SourceAngularUniformAnnulusPrimitive.lean` now exposes the quantitative
+tail geometry: inner radius `pi/16`, outer radius `pi/8`, and circle
+radius `3*pi/32`. All distant gaps and actual Dirichlet terminals lie
+inside the inner disc. The whole circle lies inside the free disc of
+the chi estimate, and the original quarter-pi assigned discs preserve
+all exact periods and separation. The previous all-index chart theorem
+uses this smaller tail family and a finite intersection for the head.
+
+`SourceAngularBetaUniformTailBound.lean` combines these fixed charts
+with the actual retained-root and chi bounds. One positive constant
+and one selected-index cutoff work for every deleted index and every
+selected index beyond the cutoff, on one complex source neighborhood:
+`|beta_n^m| <= C * (|gamma_m| + |mu_m - tau_m|) / |n - m|`.
+This includes collapsed gaps and endpoint terminals.
+
+`SourceAngularBetaUniformTailCommonDomain.lean` takes the union of
+these quantitative source neighborhoods over the entire real locus.
+Every complex source in the resulting common open domain has a local
+estimate with a constant and cutoff independent of both indices.
+All beta terms remain analytic, both boundary displacement sequences
+remain Banach analytic, all beta values retain their uniqueness, and
+the full simply connected psi extension remains on its original domain.
+The remaining quantitative part of Theorem 13.1(i) is the finite set
+of selected central gaps, with a bound uniform over all deleted indices.
