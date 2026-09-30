@@ -5026,7 +5026,36 @@ normalized to zero at both endpoints. The integral splitting also holds
 for paths with singular endpoints when the actual and model integrals
 are integrable and the primitive's endpoint limits are specified.
 
-Theorem 13.1(ii) still requires classification of the explicit model's
-general admissible-path periods, gluing onto the terminal-prescribed
-root sheets, and analytic coverage of every complex open-gap point.
+`LogarithmicPathIntegral.lean` proves the scalar integrating-factor
+identity for an integrable coefficient continuous on the open interval.
+No endpoint derivatives are required. It evaluates exponentiated
+logarithmic curve integrals from continuous endpoint data, and proves
+that two such integrals differ by an integer multiple of `2*pi*i`.
+
+`SourceAngularEtaModelCoordinate.lean` applies this to the spectral
+coordinate `z - midpoint - standardRoot z`. The coordinate is nonzero
+off the gap even when the gap collapses, and its logarithmic derivative
+is `i` times the eta model differential. At both endpoints of an open
+complex gap, the standard root and coordinate are continuous, and the
+coordinate is nonzero.
+
+`SourceAngularEtaModelPathPeriod.lean` proves that arbitrary model
+path integrals with common endpoints differ by an integer multiple of
+`2*pi`. Regular C1 paths require no supplied integrability and cover
+collapsed gaps. For an open complex gap, integrable paths may start
+or end at either periodic endpoint. Their interiors avoid the cut;
+no homotopy or restriction on winding is required.
+
+`SourceAngularEtaCanonicalPathPeriod.lean` combines these periods
+with the single-valued remainder. At every complex source in the
+actual normalized psi domain, one all-gap family has regular diagonal
+canonical-sheet path independence modulo `2*pi`. The actual endpoint
+spectral data also give this result for singular-start open-gap paths
+with terminal outside the cut or at either periodic endpoint, assuming
+integrability of both the actual and model differentials. The primitive
+and its endpoint limits are constructed from the original normalization.
+
+Theorem 13.1(ii) still requires gluing onto the terminal-prescribed
+root sheets (including terminals in the interior of the gap) and
+analytic coverage of every complex open-gap point.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
