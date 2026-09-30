@@ -4476,6 +4476,26 @@ the two spectral boundary values coincide for any complex gap.
 `SourceAngularPrimitiveCommonBoundary.lean` applies this to the actual
 angular quotient and supplies a common all-gap family. Every integrable
 C¹ path from the left periodic endpoint to either periodic endpoint
-has zero off-diagonal integral on both canonical sheet signs. Dirichlet
-terminals on the interior of the cut, the actual angular coordinates,
-and their Theorem 13.1 estimates remain to be proved.
+has zero off-diagonal integral on both canonical sheet signs.
+
+The normalized cosine pullback is now exposed by
+`CosinePrimitiveEndpointAgreement.lean`, using only the left endpoint
+limit. `CosineRootCoefficient.lean` extends coefficient constancy to
+connected charts crossing real regular angles, and
+`CosineSegmentGeometry.lean` supplies those angles at every interior
+point of a complex gap. `CosinePrimitiveSheetContinuation.lean` uses
+the analytic cosine inverse to continue the normalized primitive onto
+any regular prescribed sheet near that point. It proves both the exact
+derivative and the exterior matching formula with the ratio of root sheets.
+
+`SourceAngularCutInteriorPrimitive.lean` transfers the construction
+to the actual angular integrand, including the literal `2i` factor.
+The normalized psi family provides local analytic primitives at every
+interior Dirichlet terminal, on a sheet whose terminal value is the
+actual anti-discriminant. Endpoint exclusions and gap isolation prove
+that this value is nonzero. The theorem applies at fixed complex
+sources and requires the Dirichlet terminal to lie in its selected
+gap interior; it does not assert that all complex Dirichlet terminals
+do so. Gluing the normalized values with exterior and collapsed cases,
+constructing the angular coordinates, and proving joint source
+analyticity and the uniform Theorem 13.1 estimates remain unfinished.

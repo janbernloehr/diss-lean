@@ -1220,6 +1220,8 @@ import NLS.ComplexAnalysis.CosineSegmentGeometry
 import NLS.ComplexAnalysis.CosineRootCoefficient
 import NLS.ComplexAnalysis.CosinePrimitiveEndpointAgreement
 import NLS.ZakharovShabat.SourceAngularPrimitiveCommonBoundary
+import NLS.ComplexAnalysis.CosinePrimitiveSheetContinuation
+import NLS.ZakharovShabat.SourceAngularCutInteriorPrimitive
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

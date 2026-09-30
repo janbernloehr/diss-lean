@@ -2,11 +2,12 @@ import NLS.ComplexAnalysis.CosineRootCoefficient
 import NLS.ComplexAnalysis.PrimitiveRadialContinuation
 
 /-!
-# Equal endpoint values of a single-valued gap primitive
+# Normalized cosine charts and equal endpoint values of a gap primitive
 
 In a cosine coordinate the selected square root cancels, leaving a
 constant sheet coefficient times an analytic numerator. An analytic
-primitive of that numerator exists across the real angle interval.
+primitive of that numerator exists across the real angle interval. The
+normalized pullback formula is exposed for continuation onto local sheets.
 The upper and lower angle charts have opposite coefficients. Their
 endpoint differences must therefore be both equal and opposite.
 -/
@@ -34,11 +35,11 @@ private theorem tendsto_signed_angle_ray
   rw [add_zero,← mul_assoc,← pow_two,hσ,one_mul]
   exact hp
 
-/-- A single-valued primitive of an analytic numerator divided by a
-continuous square root of the endpoint polynomial has equal relative
-values at the two endpoints of a noncollapsed complex gap. -/
-theorem primitive_cosine_gap_boundary_values_eq
-    (g Q F : ℂ → ℂ) (Ω : Set ℂ) (τ δ A B : ℂ)
+/-- A normalized spectral primitive pulls back to one analytic angle
+primitive, multiplied by the corresponding constant sheet coefficient.
+Only the boundary value at the left endpoint is needed. -/
+theorem exists_cosine_gap_primitive_chart
+    (g Q F : ℂ → ℂ) (Ω : Set ℂ) (τ δ A : ℂ)
     (hΩ : IsOpen Ω) (hδ : δ ≠ 0)
     (hgap : segment ℝ (τ-δ) (τ+δ) ⊆ Ω)
     (hg : AnalyticOnNhd ℂ g Ω)
@@ -46,8 +47,13 @@ theorem primitive_cosine_gap_boundary_values_eq
     (hsq : ∀ z ∈ Ω \ segment ℝ (τ-δ) (τ+δ),
       Q z^2 = (τ-δ-z)*(τ+δ-z))
     (hF : ∀ z ∈ Ω \ segment ℝ (τ-δ) (τ+δ), HasDerivAt F (g z/Q z) z)
-    (hA : Tendsto F (𝓝[Ω \ segment ℝ (τ-δ) (τ+δ)] (τ-δ)) (𝓝 A))
-    (hB : Tendsto F (𝓝[Ω \ segment ℝ (τ-δ) (τ+δ)] (τ+δ)) (𝓝 B)) : A = B := by
+    (hA : Tendsto F (𝓝[Ω \ segment ℝ (τ-δ) (τ+δ)] (τ-δ)) (𝓝 A)) :
+    ∃ U : Set ℂ, ∃ H : ℂ → ℂ,
+      IsOpen U ∧ Convex ℝ U ∧ segment ℝ (0:ℂ) (Real.pi:ℂ) ⊆ U ∧
+      U ⊆ (cosineGapPoint τ δ) ⁻¹' Ω ∧
+      (∀ θ ∈ U, HasDerivAt H (g (cosineGapPoint τ δ θ)) θ) ∧
+      ∀ θ ∈ U, θ.im ≠ 0 → F (cosineGapPoint τ δ θ)-A =
+        cosineRootCoefficient Q τ δ θ*(H θ-H (Real.pi:ℂ)) := by
   let T := cosineGapPoint τ δ
   let D := Ω \ segment ℝ (τ-δ) (τ+δ)
   have hTcont : Continuous T := by
@@ -69,22 +75,9 @@ theorem primitive_cosine_gap_boundary_values_eq
     exact (hg (T θ) (hUT hθ)).comp (x := θ)
       (analyticAt_const.add (analyticAt_const.mul Complex.analyticAt_cos))
   obtain ⟨H,hH⟩ := exists_primitive_on_convex (fun θ => g (T θ)) U hconv hU hh.differentiableOn
-  obtain ⟨η,hη,hball⟩ := Metric.isOpen_iff.mp hU 0 h0U
-  let y := η/2
-  have hy : 0 < y := by dsimp [y]; linarith
-  let p : ℂ := (y:ℂ)*I
-  have hp : p ∈ U := hball (by
-    simp only [mem_ball,dist_eq_norm,sub_zero,p,norm_mul,Complex.norm_real,
-      Real.norm_eq_abs,norm_I,mul_one,abs_of_pos hy]
-    dsimp [y]; linarith)
-  have hnp : -p ∈ U := hball (by
-    simp only [mem_ball,dist_eq_norm,sub_zero,norm_neg,p,norm_mul,Complex.norm_real,
-      Real.norm_eq_abs,norm_I,mul_one,abs_of_pos hy]
-    dsimp [y]; linarith)
   have hside (σ : ℝ) (hσ : σ^2 = 1) (a : ℂ)
       (ha : a ∈ U ∩ {θ : ℂ | 0 < σ*θ.im}) :
-      A-cosineRootCoefficient Q τ δ a*H (Real.pi:ℂ) =
-        B-cosineRootCoefficient Q τ δ a*H 0 := by
+      F (T a)-A = cosineRootCoefficient Q τ δ a*(H a-H (Real.pi:ℂ)) := by
     let S := U ∩ {θ : ℂ | 0 < σ*θ.im}
     let C := cosineRootCoefficient Q τ δ a
     have hSconv : Convex ℝ S := hconv.inter (convex_halfSpace_gt
@@ -136,12 +129,89 @@ theorem primitive_cosine_gap_boundary_values_eq
       exact tendsto_nhds_unique hJlim hJconst
     have hleft := hlimit (Real.pi:ℂ) A hπU (by simp) (by
       simpa [D,T,cosineGapPoint,sub_eq_add_neg] using hA)
-    have hright := hlimit 0 B h0U (by simp) (by
-      simpa [D,T,cosineGapPoint] using hB)
-    exact hleft.trans hright.symm
+    dsimp only [J,C] at hleft
+    linear_combination -hleft
+  refine ⟨U,H,hU,hconv,hsegU,hUT,hH,?_⟩
+  intro θ hθ hi
+  rcases lt_or_gt_of_ne hi with hn | hp
+  · exact hside (-1) (by norm_num) θ ⟨hθ,by simpa using neg_pos.mpr hn⟩
+  · exact hside 1 (by norm_num) θ ⟨hθ,by simpa using hp⟩
+
+/-- A single-valued primitive of an analytic numerator divided by a
+continuous square root of the endpoint polynomial has equal relative
+values at the two endpoints of a noncollapsed complex gap. -/
+theorem primitive_cosine_gap_boundary_values_eq
+    (g Q F : ℂ → ℂ) (Ω : Set ℂ) (τ δ A B : ℂ)
+    (hΩ : IsOpen Ω) (hδ : δ ≠ 0)
+    (hgap : segment ℝ (τ-δ) (τ+δ) ⊆ Ω)
+    (hg : AnalyticOnNhd ℂ g Ω)
+    (hQ : ContinuousOn Q (Ω \ segment ℝ (τ-δ) (τ+δ)))
+    (hsq : ∀ z ∈ Ω \ segment ℝ (τ-δ) (τ+δ),
+      Q z^2 = (τ-δ-z)*(τ+δ-z))
+    (hF : ∀ z ∈ Ω \ segment ℝ (τ-δ) (τ+δ), HasDerivAt F (g z/Q z) z)
+    (hA : Tendsto F (𝓝[Ω \ segment ℝ (τ-δ) (τ+δ)] (τ-δ)) (𝓝 A))
+    (hB : Tendsto F (𝓝[Ω \ segment ℝ (τ-δ) (τ+δ)] (τ+δ)) (𝓝 B)) : A = B := by
+  obtain ⟨U,H,hU,hconv,hsegU,hUT,hH,hchart⟩ := exists_cosine_gap_primitive_chart
+    g Q F Ω τ δ A hΩ hδ hgap hg hQ hsq hF hA
+  let T := cosineGapPoint τ δ
+  let D := Ω \ segment ℝ (τ-δ) (τ+δ)
+  have hTcont : Continuous T := by
+    change Continuous (fun θ : ℂ => τ+δ*Complex.cos θ)
+    fun_prop
+  have h0U : (0:ℂ) ∈ U := hsegU (left_mem_segment ℝ _ _)
+  obtain ⟨η,hη,hball⟩ := Metric.isOpen_iff.mp hU 0 h0U
+  let y := η/2
+  have hy : 0 < y := by dsimp [y]; linarith
+  let p : ℂ := (y:ℂ)*I
+  have hp : p ∈ U := hball (by
+    simp only [mem_ball,dist_eq_norm,sub_zero,p,norm_mul,Complex.norm_real,
+      Real.norm_eq_abs,norm_I,mul_one,abs_of_pos hy]
+    dsimp [y]; linarith)
+  have hnp : -p ∈ U := hball (by
+    simp only [mem_ball,dist_eq_norm,sub_zero,norm_neg,p,norm_mul,Complex.norm_real,
+      Real.norm_eq_abs,norm_I,mul_one,abs_of_pos hy]
+    dsimp [y]; linarith)
+  have hside (σ : ℝ) (hσ : σ^2 = 1) (a : ℂ)
+      (ha : a ∈ U ∩ {θ : ℂ | 0 < σ*θ.im}) :
+      B-A = cosineRootCoefficient Q τ δ a*(H 0-H (Real.pi:ℂ)) := by
+    let S := U ∩ {θ : ℂ | 0 < σ*θ.im}
+    have hSconv : Convex ℝ S := hconv.inter (convex_halfSpace_gt
+      (show IsLinearMap ℝ (fun θ : ℂ => σ*θ.im) from ⟨by
+        intro x z; simp [Complex.add_im,mul_add],by
+        intro t θ; simp [smul_eq_mul]; ring⟩) 0)
+    have hθne (θ : ℂ) (hθ : θ ∈ S) : θ.im ≠ 0 := by
+      intro h
+      have hpos := hθ.2
+      change 0 < σ*θ.im at hpos
+      rw [h,mul_zero] at hpos
+      exact (lt_irrefl 0 hpos).elim
+    have hTD (θ : ℂ) (hθ : θ ∈ S) : T θ ∈ D :=
+      ⟨hUT hθ.1,cosineGapPoint_not_mem_segment τ δ θ hδ (hθne θ hθ)⟩
+    have hcoef := cosineRootCoefficient_eq_on_connected Q τ δ S hδ hSconv.isPreconnected hθne
+      (hQ.comp hTcont.continuousOn hTD) (fun θ hθ => hsq _ (hTD θ hθ)) a ha
+    let : NeBot (𝓝[S] (0:ℂ)) :=
+      (tendsto_signed_angle_ray U hU 0 h0U (by simp) σ hσ).neBot
+    have hmap : Tendsto T (𝓝[S] (0:ℂ)) (𝓝[D] (τ+δ)) := by
+      have ht : T 0 = τ+δ := by simp [T,cosineGapPoint]
+      rw [← ht]
+      apply tendsto_nhdsWithin_iff.mpr
+      refine ⟨hTcont.continuousAt.tendsto.mono_left nhdsWithin_le_nhds,?_⟩
+      filter_upwards [self_mem_nhdsWithin] with θ hθ
+      exact hTD θ hθ
+    have hleft : Tendsto (fun θ => F (T θ)-A) (𝓝[S] (0:ℂ)) (𝓝 (B-A)) :=
+      (hB.comp hmap).sub tendsto_const_nhds
+    have hright : Tendsto (fun θ => cosineRootCoefficient Q τ δ a*(H θ-H (Real.pi:ℂ)))
+        (𝓝[S] (0:ℂ)) (𝓝 (cosineRootCoefficient Q τ δ a*(H 0-H (Real.pi:ℂ)))) :=
+      tendsto_const_nhds.mul
+        (((hH 0 h0U).continuousAt.tendsto.mono_left nhdsWithin_le_nhds).sub tendsto_const_nhds)
+    apply tendsto_nhds_unique hleft
+    apply hright.congr'
+    filter_upwards [self_mem_nhdsWithin] with θ hθ
+    rw [hchart θ hθ.1 (hθne θ hθ),hcoef θ hθ]
   have hup := hside 1 (by norm_num) p ⟨hp,by simpa [p] using hy⟩
   have hdown := hside (-1) (by norm_num) (-p) ⟨hnp,by simpa [p] using hy⟩
   rw [cosineRootCoefficient_neg] at hdown
-  linear_combination (hup+hdown)/2
+  have hzero : B-A = 0 := by linear_combination (hup+hdown)/2
+  exact (sub_eq_zero.mp hzero).symm
 
 end NLS.ComplexAnalysis

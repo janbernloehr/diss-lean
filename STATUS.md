@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: Section 13 equal periodic endpoint values
+## Current milestone: Section 13 interior Dirichlet sheet primitives
+
+`CosinePrimitiveEndpointAgreement.lean` now exposes the normalized
+pullback formula previously internal to the endpoint comparison. On
+one convex angle neighborhood of the whole interval from zero to pi,
+the exterior primitive minus its left endpoint value is the sheet
+coefficient times the analytic numerator primitive minus its value at pi.
+Only the left endpoint limit is needed for this chart construction.
+
+`CosineRootCoefficient.lean` proves constancy on connected angle
+charts avoiding the sine zeros, including charts crossing the real
+axis. `CosineSegmentGeometry.lean` supplies a regular real cosine
+coordinate for every interior point of a complex gap segment.
+
+`CosinePrimitiveSheetContinuation.lean` applies the analytic inverse
+function theorem at that coordinate. For any prescribed analytic root
+of the endpoint polynomial, it constructs an analytic spectral primitive
+on an open neighborhood of the interior point. Its derivative is the
+numerator divided by the prescribed root. Off the cut it matches the
+normalized exterior primitive multiplied by the exact original-root to
+prescribed-root ratio. This fixes the additive constant as well as the
+sheet sign.
+
+`SourceAngularCutInteriorPrimitive.lean` divides the prescribed full
+root by the literal `2i` times the actual omitted-root product. The
+deleted-product factorization proves the resulting root-square identity
+also on the selected cut. The actual normalized psi family then supplies
+one all-gap disc family and, for every off-diagonal pair whose Dirichlet
+terminal lies in the selected gap interior, an analytic terminal
+primitive on the anti-discriminant-normalized sheet. Nonvanishing of
+the anti-discriminant follows from the endpoint exclusions and spectral
+isolation; callers supply no primitive, root sheet, or cosine coordinate.
+
+These are local spectral primitives at fixed complex sources. The next
+step is to glue their normalized values with the exterior and collapsed
+cases and construct the actual `β_m^n`. Joint source analyticity,
+uniform Theorem 13.1 bounds, the diagonal `η_n`, and the convergent
+angular sum remain to be proved. Arbitrary C¹ path integrability remains
+explicit in the existing path theorems.
+
+## Completed step: Section 13 equal periodic endpoint values
 
 `CosineSegmentGeometry.lean` proves that `τ + δ cos θ` maps real
 angles into the complex gap and every nonreal angle outside it, for
@@ -31,12 +71,11 @@ integral on both canonical sheet signs, including loops with a singular
 base point. The all-index zero theorem derives the primitive from the
 actual family; callers do not supply one or assume a vanishing period.
 
-The next step is to continue these normalized primitives to Dirichlet
-terminals on the interior of the cut and impose their prescribed sheets
-to construct the actual `β_m^n`. The diagonal `η_n`, joint angular
-analyticity, uniform Theorem 13.1 bounds, and the convergent angular
-sum remain to be proved. Integrability for arbitrary C¹ paths is still
-explicit; controlled endpoint connectors already have proved integrability.
+The current milestone above continues these normalized primitives to
+interior Dirichlet terminals on their prescribed sheets. Construction
+of the actual `β_m^n` and the rest of Theorem 13.1 remains unfinished.
+Integrability for arbitrary C¹ paths is still explicit; controlled
+endpoint connectors already have proved integrability.
 
 ## Completed step: common complex endpoint limits
 

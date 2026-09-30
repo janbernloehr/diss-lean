@@ -66,4 +66,37 @@ theorem hasDerivAt_cosineGapPoint (τ δ θ : ℂ) :
   convert ((Complex.hasDerivAt_cos θ).const_mul δ).const_add τ using 1 <;>
     first | rfl | ring
 
+/-- Every interior spectral point of a complex gap has a regular real
+cosine coordinate in the angle interval from zero to pi. -/
+theorem exists_cosineGapPoint_regular_angle (τ δ z : ℂ)
+    (hz : z ∈ segment ℝ (τ-δ) (τ+δ))
+    (hl : z ≠ τ-δ) (hr : z ≠ τ+δ) :
+    ∃ e : ℂ, e ∈ segment ℝ (0:ℂ) (Real.pi:ℂ) ∧
+      Complex.sin e ≠ 0 ∧ cosineGapPoint τ δ e = z := by
+  obtain ⟨t,ht,heq⟩ := by rw [segment_eq_image_lineMap] at hz; exact hz
+  let a := Real.arccos (2*t-1)
+  have ha : a/Real.pi ∈ Icc (0:ℝ) 1 :=
+    ⟨div_nonneg (Real.arccos_nonneg _) Real.pi_pos.le,
+      (div_le_one Real.pi_pos).mpr (Real.arccos_le_pi _)⟩
+  have hangle : (a:ℂ) ∈ segment ℝ (0:ℂ) (Real.pi:ℂ) := by
+    convert lineMap_mem_segment ℝ (0:ℂ) (Real.pi:ℂ) ha using 1
+    simp only [AffineMap.lineMap_apply_module,Complex.real_smul,mul_zero,zero_add,
+      Complex.ofReal_div]
+    field_simp
+  have hpoint : cosineGapPoint τ δ (a:ℂ) = z := by
+    calc
+      _ = AffineMap.lineMap (τ-δ) (τ+δ) t := by
+        dsimp only [cosineGapPoint,a]
+        rw [← Complex.ofReal_cos,Real.cos_arccos (by linarith [ht.1] : -1 ≤ 2*t-1)
+          (by linarith [ht.2] : 2*t-1 ≤ 1)]
+        simp only [AffineMap.lineMap_apply_module,Complex.real_smul,
+          Complex.ofReal_sub,Complex.ofReal_mul,Complex.ofReal_ofNat,Complex.ofReal_one]
+        ring
+      _ = z := heq
+  refine ⟨(a:ℂ),hangle,?_,hpoint⟩
+  intro hs
+  have hf := cosineGapPoint_endpoint_factor τ δ (a:ℂ)
+  rw [hpoint,hs,zero_pow (by norm_num : 2 ≠ 0),mul_zero,neg_zero] at hf
+  exact (mul_ne_zero (sub_ne_zero.mpr hl.symm) (sub_ne_zero.mpr hr.symm)) hf
+
 end NLS.ComplexAnalysis
