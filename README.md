@@ -4397,4 +4397,16 @@ and locally uniform at every complex source. Filling the omitted
 root with its moving midpoint gives the factorization at every index;
 the offset there is zero. Its power-sum corollary proves explicit
 summability and the literal locally uniform bound on `∑ |α_m^n|^p`.
-The next step is Section 13's angular integrals and Theorem 13.1.
+Section 13 now has the actual terminal square-root sheets and regular
+angular integrals. `SourceAngularRootSheet.lean` constructs jointly
+analytic sheets normalized to the actual anti-discriminant at moving
+Dirichlet roots, including terminal points on the canonical branch cut.
+`SourceAngularDirichletRegularity.lean` identifies nonzero terminal
+values with the exclusion of the two assigned periodic endpoints,
+using actual spectral exhaustion and disjoint cluster isolation.
+`SourceAngularIntegrand.lean` defines integrands and curve integrals
+from the proved Lemma 12.12 psi family, proves joint analyticity on
+regular sheets, and proves integrability and path independence for C¹
+paths within convex regular charts. Integration from the singular
+periodic endpoint, global admissible-path independence, the actual
+angular coordinates and their Theorem 13.1 estimates remain next.

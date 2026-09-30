@@ -1,6 +1,39 @@
 # Implementation status
 
-## Current milestone: Lemma 12.12 completed; Section 13 next
+## Current milestone: Section 13 terminal sheets and regular angular integrals
+
+`SourceAngularRootSheet.lean` constructs a joint spectral/source square
+root of the actual `Δ²-4` with a prescribed nonzero terminal value.
+Normalizing the radicand by that value squared permits analytic charts
+even when the original radicand lies on the principal square-root cut.
+At a real reference source, continuity of the canonical Dirichlet root
+and the actual anti-discriminant proves that one chart satisfies
+`Q(μ_m(ψ),ψ) = δ(μ_m(ψ),ψ)` throughout a complex source neighborhood.
+The neighborhood can be confined to the common psi source domain.
+
+`SourceAngularDirichletRegularity.lean` proves, using actual spectral
+exhaustion and disjoint assigned cluster discs, that `δ(μ_m)=0` exactly
+when `μ_m=λ_m^-` or `μ_m=λ_m^+`. This holds for complex sources with
+the assigned isolation data. The existing psi extension supplies the
+data near each real source, so the terminal sheet construction applies
+under Section 13's stated endpoint exclusion.
+
+`SourceAngularIntegrand.lean` uses the actual family from Lemma 12.12
+to define angular integrands and curve integrals on specified sheets.
+Every integrand is jointly analytic on a nonzero analytic sheet over
+the common source domain. Regular C¹ paths in such a chart are curve
+integrable; paths with the same endpoints in a convex regular chart
+have equal integrals. The canonical-sheet specialization is the exact
+psi contour integrand from Section 12, and changing the sheet sign
+negates the integrand.
+
+The next step is integration from singular periodic endpoints and
+global admissible-path independence. The actual off-diagonal `β_m^n`,
+diagonal `η_n`, their bounds, the convergent sum, and Theorem 13.1
+remain to be proved; the current regular-chart results do not assert
+these conclusions.
+
+## Completed milestone: Lemma 12.12
 
 `exists_sourcePsi_lemma12_12` now proves the full source-space
 conclusion of Lemma 12.12. One common open simply connected complex
@@ -30,7 +63,8 @@ to this estimate while retaining all earlier root, contour, and
 factor properties. Their union gives local bounds at every complex
 point of the common domain used in `SourcePsiLemma12_12.lean`.
 
-The next step is Section 13: the angular integrals and Theorem 13.1.
+The normalized psi family is now used by the Section 13 sheet and
+regular-integral construction above.
 
 `SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound`
 now proves the actual quadratic-gap root-offset estimate on any fixed

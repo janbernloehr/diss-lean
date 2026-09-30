@@ -1191,6 +1191,10 @@ import NLS.ZakharovShabat.SourcePsiActualTailRootOffset
 import NLS.ZakharovShabat.SourcePsiUniformSquaredGapOffsets
 import NLS.ZakharovShabat.SourcePsiSquaredGapComplexRootAtlas
 import NLS.ZakharovShabat.SourcePsiLemma12_12
+import NLS.ComplexAnalysis.PrescribedAnalyticSquareRoot
+import NLS.ZakharovShabat.SourceAngularRootSheet
+import NLS.ZakharovShabat.SourceAngularDirichletRegularity
+import NLS.ZakharovShabat.SourceAngularIntegrand
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
