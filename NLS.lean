@@ -1204,6 +1204,9 @@ import NLS.ComplexAnalysis.CurveIntegralInteriorCongruence
 import NLS.ZakharovShabat.SourceAngularCollapsedIntegrand
 import NLS.ZakharovShabat.SourceAngularCollapsedPathIntegral
 import NLS.ZakharovShabat.SourceAngularCollapsedGapGeometry
+import NLS.ComplexAnalysis.CircleLogarithmicPrimitive
+import NLS.ComplexAnalysis.AnnularHolomorphicPrimitive
+import NLS.ZakharovShabat.SourceAngularAnnulusPrimitive
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

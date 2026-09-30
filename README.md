@@ -4432,5 +4432,16 @@ in convex omitted-root charts. Negating the sheet negates the integral.
 the full assigned isolating disc. Real interlacing identifies the
 Dirichlet terminal with the collapsed endpoint, so its off-diagonal
 angular integral is zero on both canonical sheet signs.
-Global admissible-path independence for noncollapsed gaps, the actual
-angular coordinates and their Theorem 13.1 estimates remain next.
+`CircleLogarithmicPrimitive.lean` constructs a single-valued exterior
+Cauchy-transform primitive by integrating a normalized logarithmic
+kernel; a zero contour period cancels its reciprocal correction term.
+`AnnularHolomorphicPrimitive.lean` combines it with annular Cauchy
+decomposition to prove existence of a primitive on a whole zero-period
+annulus and path independence for arbitrary C¹ paths there, regardless
+of winding. `SourceAngularAnnulusPrimitive.lean` supplies the periods
+from actual Lemma 12.12 normalization and constructs one all-gap
+annulus family at every complex source, simultaneously for all
+off-diagonal indices. Their actual angular integrals are primitive
+endpoint differences. Extending these primitives through the full
+gap complement, handling singular endpoint limits, and constructing
+the angular coordinates and their Theorem 13.1 estimates remain next.

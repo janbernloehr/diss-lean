@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: Section 13 collapsed-gap angular integrals
+## Current milestone: Section 13 annular angular primitives
+
+`CircleLogarithmicPrimitive.lean` constructs a single-valued exterior
+primitive using the normalized kernel `log(1-(w-c)/(z-c))`. Outside
+the density circle, its logarithm argument stays in the analytic slit
+plane. Differentiation under the contour integral gives the negative
+Cauchy transform when the density period is zero; the otherwise
+remaining reciprocal term is canceled by that actual zero period.
+
+`AnnularHolomorphicPrimitive.lean` combines this exterior primitive
+with the outer-disc analytic term in annular Cauchy decomposition.
+Every function analytic on a closed annulus with zero inner period
+has a primitive on its entire open annulus. All C¹ paths there with
+the same endpoints have equal integrals, without a supplied homotopy
+or a restriction on their winding around the hole.
+
+`SourceAngularAnnulusPrimitive.lean` applies this to the literal
+canonical angular integrand. The exact all-index contour normalization
+from Lemma 12.12 supplies the vanishing periods; the caller does not
+assume them. Shrinking each enclosing circle and transferring its
+period by the proved nested-circle invariance produces one family of
+nonempty annuli at every complex source in the common psi domain.
+The same annuli work for every deleted index. Every off-diagonal
+integrand has a primitive there, and every C¹ path integral is its
+endpoint difference. Thus arbitrary winding contributes no integral.
+The construction also includes collapsed selected gaps.
+
+The next step is to extend these primitives from the annuli through
+the full isolating gap complement and handle their singular endpoint
+limits. Construction of the actual `β_m^n` and `η_n`, Theorem 13.1's
+uniform bounds, joint angular analyticity, and the convergent sum
+remain to be proved. The current annular theorem does not yet cover
+paths entering the region between the inner circle and the gap.
+
+## Completed step: collapsed-gap angular integrals
 
 `SourceAngularCollapsedIntegrand.lean` uses the actual squared-gap
 root offsets from Lemma 12.12 to prove that every off-diagonal psi
