@@ -4279,8 +4279,17 @@ and proves that the outer integral equals the sum of the inner ones.
 actual psi quotient under explicit gap enclosures and disjoint
 isolating-circle geometry. Retained contour zeros reduce this sum to
 the omitted-gap contour.
-The next step is to construct the required circle families for the
-analytic extension and identify their retained periods with its known
-zeros, then combine the decomposition with the large-circle limit.
-Lemma 12.11's exact omitted-index value and Lemma 12.12's uniform root
-asymptotics remain open.
+`SegmentIsolatingCircles.lean` and `SourcePsiIsolatingCircles.lean`
+construct all-index enclosing circles with disjoint closed collars
+inside the actual assigned spectral discs, also at complex sources.
+`SourcePsiIsolatingFiniteGeometry.lean` proves that the same fixed
+circles give the finite decomposition at every sufficiently large
+half-integer cutoff, enclosing exactly the signed indices `[-k,k]`.
+`SourcePsiRealNormalization.lean` uses retained contour zeros and the
+large-circle limit to prove exact omitted normalization for every
+real gap solution: `1` for the normalized contour and `2π` for the raw
+integral. The canonical real psi roots have full orthogonality on every
+valid real-centered gap-circle family. The next step is to identify
+the analytic complex extension's retained zeros on the constructed
+circles and extend this exact orthogonality throughout its domain.
+Lemma 12.12's uniform root asymptotics also remain open.

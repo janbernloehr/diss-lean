@@ -1,6 +1,20 @@
 # Implementation status
 
-## Current milestone: Lemma 12.11 finite contour decomposition
+## Current milestone: Lemma 12.11 exact real-type normalization
+
+`sourcePsiGapRoot_contour_orthogonality` now proves exact orthogonality
+for the canonical real-type psi roots on every valid real-centered
+gap-circle family: the omitted normalized contour is `1` and every
+retained contour is `0`. More generally, every real gap solution has
+the omitted raw integral `2π`. All-index nested circles are constructed
+inside the actual assigned isolating discs. Their closed collars are
+disjoint, and the same circles give the finite decomposition at every
+sufficiently large half-integer cutoff. Real contour comparison
+transfers the solution's retained zeros to this family. The large-circle
+limit then fixes the omitted period exactly. These geometric circle
+constructions also work at complex sources; identifying the analytic
+extension's retained zeros on them and extending exact orthogonality
+throughout its complex neighborhood remain to be proved.
 
 `circleIntegral_eq_sum_of_finite_holes` now proves Cauchy's theorem
 for a closed outer disc with finitely many circular holes: its outer
@@ -11,9 +25,10 @@ that disjoint hole periods are unchanged.
 `SourcePsiFiniteGapCircleGeometry.decomposition` applies this theorem
 to the actual psi quotient from explicit spectral enclosures and
 disjoint isolating circles. Retained contour zeros reduce the sum to
-the omitted-gap contour. The remaining step is to construct these
-circle families for the analytic extension and identify their
-retained periods with the known zeros, then use the large-circle limit.
+the omitted-gap contour. The circles are now constructed from actual
+isolating discs, and this reduction proves exact normalization at
+real-type sources. The analytic extension's retained periods still
+need to be identified on the constructed circles at complex sources.
 
 `tendsto_centralCircle_sourcePsi_raw_integral` now proves that the actual
 psi quotient's raw integral on the half-integer large circles tends to
@@ -26,7 +41,8 @@ midpoint single product and principal-square-root gap corrections;
 the absolute correction sum tends to zero by free-resolvent decay.
 The circles eventually avoid every closed periodic gap. The finite
 contour decomposition is proved under explicit spectral-circle
-geometry; instantiating it for the constructed analytic family remains.
+geometry; that geometry is now instantiated by the actual isolating
+discs, with fixed gap circles at every sufficiently large cutoff.
 
 `exists_sourcePsi_lemma12_10` now supplies one open simply connected
 complex neighborhood of the full real-type source locus, contained in
@@ -39,8 +55,9 @@ assigned discs. The omitted root may be filled with the moving periodic
 midpoint in its assigned disc. The actual retained contour integrals
 vanish throughout the complex domain. The resulting entire psi
 numerators are jointly analytic in the spectral parameter and potential.
-Lemma 12.11's exact omitted-index contour integral `2π` is not yet
-proved for the constructed family; its large-circle limit is proved.
+Lemma 12.11's exact omitted-index contour integral `2π` is proved at
+real-type sources; its extension to the constructed complex analytic
+family remains open. The large-circle limit holds on the whole domain.
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -239,10 +256,26 @@ equals the sum of inner integrals.
 `SourcePsiFiniteContourDecomposition.lean` derives this formula for the
 actual psi quotient from actual gap enclosures, exterior gap exclusion,
 and disjoint isolating discs. When the retained inner contours vanish,
-the outer contour equals the omitted one. Lemma 12.11's actual circle
-family construction and contour-zero identification remain open,
-along with its resulting exact omitted-index value and Lemma 12.12's
-uniform root asymptotics.
+the outer contour equals the omitted one.
+
+`SegmentIsolatingCircles.lean` constructs an enclosing circle and a
+larger collar circle for any closed segment inside an open disc.
+`SourcePsiIsolatingCircles.lean` applies this to every actual spectral
+gap inside its assigned disc. Strict shrinking gives disjoint closed
+collars and a valid all-index contour family even at complex sources.
+`SourcePsiIsolatingFiniteGeometry.lean` proves that these fixed circles
+instantiate the finite-hole geometry at every sufficiently large
+half-integer cutoff: the enclosed signed indices are exactly `[-k,k]`,
+and every remaining closed gap is outside the outer closed disc.
+`SourcePsiRealNormalization.lean` combines this geometry with retained
+zeros and the actual large-circle limit to force the omitted period
+to equal `1`. Real contour comparison supplies those zeros for every
+real gap solution and transfers the exact normalization to every valid
+real-centered enclosing circle. The canonical real psi roots therefore
+have full contour orthogonality, and the omitted raw integral is
+exactly `2π`. Identifying the analytic complex family's retained zeros
+on the constructed circles, extending exact orthogonality throughout
+its domain, and Lemma 12.12's uniform root asymptotics remain open.
 
 ## Implemented and checked
 
@@ -252,6 +285,10 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.SegmentIsolatingCircles` | Nested enclosing and collar circles for a closed segment inside an open disc |
+| `NLS.ZakharovShabat.SourcePsiIsolatingCircles` | Actual all-index nested gap circles, disjoint closed collars, and valid real-centered contour families at real and complex sources |
+| `NLS.ZakharovShabat.SourcePsiIsolatingFiniteGeometry` | Fixed isolating circles instantiate the finite-hole geometry and contour decomposition at every sufficiently large half-integer cutoff |
+| `NLS.ZakharovShabat.SourcePsiRealNormalization` | Exact omitted normalized/raw values `1`/`2π` for every real gap solution and full canonical real psi contour orthogonality on every valid family |
 | `NLS.ComplexAnalysis.CircleCauchyTransform` | Cauchy-transform analyticity off the density circle and correctly oriented annular Cauchy decomposition |
 | `NLS.ComplexAnalysis.CircleCauchyTransformPeriods` | Contour Fubini computes the negative density period on enclosing circles and zero period on exterior discs |
 | `NLS.ComplexAnalysis.CircleHoleRemoval` | Analytic filling across one hole, subtraction of its enclosing-contour period, and preservation of disjoint hole periods |

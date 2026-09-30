@@ -1157,6 +1157,10 @@ import NLS.ComplexAnalysis.CircleCauchyTransformPeriods
 import NLS.ComplexAnalysis.CircleHoleRemoval
 import NLS.ComplexAnalysis.FiniteCircleHoleDecomposition
 import NLS.ZakharovShabat.SourcePsiFiniteContourDecomposition
+import NLS.ComplexAnalysis.SegmentIsolatingCircles
+import NLS.ZakharovShabat.SourcePsiIsolatingCircles
+import NLS.ZakharovShabat.SourcePsiIsolatingFiniteGeometry
+import NLS.ZakharovShabat.SourcePsiRealNormalization
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
