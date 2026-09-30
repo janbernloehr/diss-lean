@@ -156,12 +156,10 @@ theorem SourceAngularDirichletPrimitiveData.terminal_eq
     {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k} {ψ : CoeffPair p}
     {c d : ℂ} {R S : ℝ} {F G E J : ℂ → ℂ} {A B : ℂ}
     (hE : SourceAngularDirichletPrimitiveData hp hp1 n m s ψ c R F A E)
-    (hJ : SourceAngularDirichletPrimitiveData hp hp1 n m s ψ d S G B J)
-    (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠
-      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) :
+    (hJ : SourceAngularDirichletPrimitiveData hp hp1 n m s ψ d S G B J) :
     E (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) =
       J (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) :=
-  hE.primitive.dirichlet_terminal_eq hJ.primitive hE.gap_enclosed hJ.gap_enclosed hgap
+  hE.primitive.dirichlet_terminal_eq hJ.primitive hE.gap_enclosed hJ.gap_enclosed
     hE.root_ne_zero hJ.root_ne_zero hE.terminal_mem hJ.terminal_mem
     hE.terminal_sheet_value hJ.terminal_sheet_value
 

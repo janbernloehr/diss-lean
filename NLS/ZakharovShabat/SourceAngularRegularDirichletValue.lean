@@ -65,7 +65,7 @@ theorem SourceAngularDirichletDiscFamilyData.exists_unique_dirichlet_value
     ⟨c m,R m,F,A,E,hE,rfl⟩,?_⟩
   intro b hb
   obtain ⟨d,S,G,B,J,hJ,hb⟩ := hb
-  exact hb.symm.trans (hJ.terminal_eq hE hgap)
+  exact hb.symm.trans (hJ.terminal_eq hE)
 
 /-- The actual psi family supplies a unique regular Dirichlet angular
 value on one common open neighborhood of the whole real locus, for

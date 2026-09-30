@@ -16,7 +16,7 @@ namespace NLS.ComplexAnalysis
 
 theorem normalized_segment_primitives_eq_on_convex_complement
     (f F G : ℂ → ℂ) (Ω : Set ℂ) (l r A B : ℂ)
-    (hΩ : IsOpen Ω) (hconv : Convex ℝ Ω) (hl : l ∈ Ω) (hlr : l ≠ r)
+    (hΩ : IsOpen Ω) (hconv : Convex ℝ Ω) (hl : l ∈ Ω)
     (hF : ∀ z ∈ Ω \ segment ℝ l r, HasDerivAt F (f z) z)
     (hG : ∀ z ∈ Ω \ segment ℝ l r, HasDerivAt G (f z) z)
     (hA : Tendsto F (𝓝[Ω \ segment ℝ l r] l) (𝓝 A))
@@ -27,7 +27,7 @@ theorem normalized_segment_primitives_eq_on_convex_complement
     rw [segment_eq_image_lineMap]
     exact isCompact_Icc.image AffineMap.lineMap_continuous
   have hD := hΩ.sdiff hclosed
-  have hconn := (isPathConnected_convex_complex_segment_complement Ω l r hΩ hconv hl hlr).isConnected.isPreconnected
+  have hconn := (isPathConnected_convex_complex_segment_complement_including_singleton Ω l r hΩ hconv hl).isConnected.isPreconnected
   obtain ⟨C,hFC⟩ := hD.exists_eq_add_of_deriv_eq hconn
     (show DifferentiableOn ℂ F (Ω \ segment ℝ l r) from fun z hz =>
       (hF z hz).differentiableAt.differentiableWithinAt)
@@ -48,18 +48,19 @@ theorem normalized_segment_primitives_eq_on_convex_complement
   ring
 
 /-- The enclosing domains may have different centers and shapes.
-Only open convexity and a shared regular starting endpoint are needed. -/
+Only open convexity and a shared starting endpoint are needed, including
+a collapsed cut. -/
 theorem normalized_segment_primitives_eq_on_convex_overlap
     (f F G : ℂ → ℂ) (Ω V : Set ℂ) (l r A B : ℂ)
     (hΩ : IsOpen Ω) (hV : IsOpen V) (hcΩ : Convex ℝ Ω) (hcV : Convex ℝ V)
-    (hlΩ : l ∈ Ω) (hlV : l ∈ V) (hlr : l ≠ r)
+    (hlΩ : l ∈ Ω) (hlV : l ∈ V)
     (hF : ∀ z ∈ Ω \ segment ℝ l r, HasDerivAt F (f z) z)
     (hG : ∀ z ∈ V \ segment ℝ l r, HasDerivAt G (f z) z)
     (hA : Tendsto F (𝓝[Ω \ segment ℝ l r] l) (𝓝 A))
     (hB : Tendsto G (𝓝[V \ segment ℝ l r] l) (𝓝 B)) :
     EqOn (fun z => F z-A) (fun z => G z-B) ((Ω ∩ V) \ segment ℝ l r) := by
   apply normalized_segment_primitives_eq_on_convex_complement f F G (Ω ∩ V) l r A B
-    (hΩ.inter hV) (hcΩ.inter hcV) ⟨hlΩ,hlV⟩ hlr
+    (hΩ.inter hV) (hcΩ.inter hcV) ⟨hlΩ,hlV⟩
     (fun z hz => hF z ⟨hz.1.1,hz.2⟩) (fun z hz => hG z ⟨hz.1.2,hz.2⟩)
   · exact hA.mono_left (nhdsWithin_mono _ (fun z hz => ⟨hz.1.1,hz.2⟩))
   · exact hB.mono_left (nhdsWithin_mono _ (fun z hz => ⟨hz.1.2,hz.2⟩))
@@ -70,7 +71,7 @@ theorem normalized_root_extensions_eq_on_convex_overlap
     (f Q R F G E J : ℂ → ℂ) (Ω V Λ : Set ℂ) (l r A B : ℂ)
     (hΩ : IsOpen Ω) (hV : IsOpen V) (hΛ : IsOpen Λ)
     (hcΩ : Convex ℝ Ω) (hcV : Convex ℝ V)
-    (hlΩ : l ∈ Ω) (hlV : l ∈ V) (hlr : l ≠ r)
+    (hlΩ : l ∈ Ω) (hlV : l ∈ V)
     (hF : ∀ z ∈ Ω \ segment ℝ l r, HasDerivAt F (f z) z)
     (hG : ∀ z ∈ V \ segment ℝ l r, HasDerivAt G (f z) z)
     (hA : Tendsto F (𝓝[Ω \ segment ℝ l r] l) (𝓝 A))
@@ -80,7 +81,7 @@ theorem normalized_root_extensions_eq_on_convex_overlap
     (hJmatch : EqOn J (rootRatioPrimitive Q R G B) ((V ∩ Λ) \ segment ℝ l r)) :
     EqOn E J ((Ω ∩ V) ∩ Λ) := by
   have hnorm := normalized_segment_primitives_eq_on_convex_overlap f F G Ω V l r A B
-    hΩ hV hcΩ hcV hlΩ hlV hlr hF hG hA hB
+    hΩ hV hcΩ hcV hlΩ hlV hF hG hA hB
   apply continuous_eqOn_of_dense_on_open (segment ℝ l r)ᶜ ((Ω ∩ V) ∩ Λ)
     (dense_complex_segment_complement l r) ((hΩ.inter hV).inter hΛ) E J
     (hE.mono (fun z hz => ⟨hz.1.1,hz.2⟩)) (hJ.mono (fun z hz => ⟨hz.1.2,hz.2⟩))
@@ -96,7 +97,7 @@ theorem normalized_root_extensions_terminal_eq
     (f Q R S F G E J : ℂ → ℂ) (Ω V Λ Ξ : Set ℂ) (l r A B b : ℂ)
     (hΩ : IsOpen Ω) (hV : IsOpen V) (hΛ : IsOpen Λ) (hΞ : IsOpen Ξ)
     (hcΩ : Convex ℝ Ω) (hcV : Convex ℝ V)
-    (hlΩ : l ∈ Ω) (hlV : l ∈ V) (hlr : l ≠ r)
+    (hlΩ : l ∈ Ω) (hlV : l ∈ V)
     (hF : ∀ z ∈ Ω \ segment ℝ l r, HasDerivAt F (f z) z)
     (hG : ∀ z ∈ V \ segment ℝ l r, HasDerivAt G (f z) z)
     (hA : Tendsto F (𝓝[Ω \ segment ℝ l r] l) (𝓝 A))
@@ -106,7 +107,7 @@ theorem normalized_root_extensions_terminal_eq
     (hJmatch : EqOn J (rootRatioPrimitive Q S G B) ((V ∩ Ξ) \ segment ℝ l r))
     (hb : b ∈ Ω ∩ Λ) (hb' : b ∈ V ∩ Ξ) (hroots : R =ᶠ[𝓝 b] S) : E b = J b := by
   have hnorm := normalized_segment_primitives_eq_on_convex_overlap f F G Ω V l r A B
-    hΩ hV hcΩ hcV hlΩ hlV hlr hF hG hA hB
+    hΩ hV hcΩ hcV hlΩ hlV hF hG hA hB
   obtain ⟨U,hUsub,hU,hbU⟩ := _root_.mem_nhds_iff.mp hroots
   let D := ((Ω ∩ V) ∩ (Λ ∩ Ξ)) ∩ U
   have hD : IsOpen D := ((hΩ.inter hV).inter (hΛ.inter hΞ)).inter hU

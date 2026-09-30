@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Section 13 enclosed regular Dirichlet values
+## Current milestone: Section 13 off-diagonal beta values
+
+`ComplexSegmentComplementConnected.lean` now also proves path
+connectedness of a punctured open convex complex domain. Two opposite
+cuts have connected overlapping complements whose union removes only
+their common endpoint. The normalized primitive comparisons in
+`NormalizedSegmentPrimitiveUnique.lean` and
+`SourceAngularPrimitiveChoiceIndependence.lean` consequently include
+collapsed cuts. Their uniqueness statements no longer require
+noncollapse, including comparisons of different discs and root charts.
+
+`SourceAngularCollapsedSheetPrimitive.lean` constructs the actual
+prescribed-sheet primitive for a collapsed gap. The removable canonical
+integrand has a primitive on the full enclosing disc, with its finite
+value at the collapsed endpoint. Transport by the exact full-root ratio
+gives the regular prescribed-sheet primitive, retaining zero normalized
+boundary values at both endpoints. The assigned disc family then
+supplies a unique regular Dirichlet value without a noncollapse
+assumption. A complex collapsed Dirichlet terminal is not assumed to
+equal the collapsed endpoint.
+
+`SourceAngularBeta.lean` defines the actual off-diagonal `β_m^n` values.
+At a regular terminal they are the unique normalized primitive values;
+at either periodic endpoint they are zero. One common open neighborhood
+of all real sources supplies existence and uniqueness for every
+off-diagonal pair, including every collapsed gap and every periodic
+Dirichlet terminal. The original simply connected Lemma 12.12 domain
+and its estimates are retained separately. Real collapsed gaps have
+zero beta value by actual Dirichlet interlacing.
+
+Integrable C¹ endpoint paths on the normalized regular prescribed sheet
+evaluate to beta. At a periodic terminal the integral is zero on every
+regular prescribed sheet, using the two normalized boundary limits.
+These formulas require path interiors to stay in the regular sheet
+part of the enclosing disc; singular-start integrability is explicit.
+
+The pointwise off-diagonal values are now constructed. Joint source
+analyticity, continuity at changing terminal types, the uniform bounds
+in Theorem 13.1, the diagonal `η_n`, and the convergent angular sum
+remain to be proved. Theorem 13.1 and Corollary 13.2 are unfinished.
+
+## Completed step: Section 13 enclosed regular Dirichlet values
 
 `SourceAngularDirichletDiscFamily.lean` constructs actual contour families
 whose enclosing discs contain every moving spectral cluster, including
@@ -30,9 +71,9 @@ endpoint paths on the prescribed sheet evaluate to the constructed
 terminal value, including paths crossing the canonical cut.
 
 These are spectral primitives at fixed complex sources. Singular-start
-path integrability is still explicit. The next step is to include the
-collapsed-gap and periodic-terminal cases and assemble the global
-`β_m^n`. Joint source analyticity, uniform Theorem 13.1 bounds, the
+path integrability is still explicit. The construction above now includes
+collapsed gaps and periodic terminals in the pointwise off-diagonal
+`β_m^n` values. Joint source analyticity, uniform Theorem 13.1 bounds, the
 diagonal `η_n`, and the convergent angular sum remain to be proved.
 
 ## Completed step: Section 13 independence of primitive and sheet choices
@@ -64,8 +105,8 @@ contain the selected gap and the terminal to belong to both regular
 sheet domains; singular-start integrability remains explicit.
 
 The assigned-disc construction above now supplies enclosing domains
-containing all actual Dirichlet terminals. Collapsed gaps and periodic
-terminals in the global `β_m^n` construction remain. Joint source
+containing all actual Dirichlet terminals. The pointwise `β_m^n`
+construction above now includes collapsed gaps and periodic terminals. Joint source
 analyticity, uniform Theorem 13.1 bounds, the diagonal `η_n`, and the
 convergent angular sum remain to be proved.
 
@@ -111,8 +152,8 @@ Integrability for singular-start paths remains explicit.
 Independence from the chosen exterior primitive and enclosing geometry
 is now proved on overlapping regular domains, as described above.
 Containment of all actual Dirichlet terminals is now supplied by the
-assigned-disc construction. The collapsed and periodic terminal cases
-in the global `β_m^n` construction remain. Joint source analyticity,
+assigned-disc construction. The pointwise `β_m^n` construction above
+now includes the collapsed and periodic terminal cases. Joint source analyticity,
 uniform Theorem 13.1 bounds, the diagonal `η_n`, and the convergent
 angular sum remain to be proved.
 

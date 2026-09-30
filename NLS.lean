@@ -1234,6 +1234,8 @@ import NLS.ZakharovShabat.SourceAngularPrimitiveChoiceIndependence
 import NLS.ZakharovShabat.SourceAngularDirichletDiscFamily
 import NLS.ZakharovShabat.SourceAngularDirichletDiscPrimitive
 import NLS.ZakharovShabat.SourceAngularRegularDirichletValue
+import NLS.ZakharovShabat.SourceAngularCollapsedSheetPrimitive
+import NLS.ZakharovShabat.SourceAngularBeta
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

@@ -4557,6 +4557,32 @@ sheet evaluates to the constructed terminal value. Singular-start
 integrability remains explicit, and source joint analyticity of the
 primitive values has not yet been proved.
 
-The collapsed and periodic terminal cases and the global angular
-coordinates remain unfinished, as do joint source analyticity and
-the uniform Theorem 13.1 estimates.
+The normalized primitive comparisons now also include a collapsed
+singleton cut. `ComplexSegmentComplementConnected.lean` proves path
+connectedness of punctured open convex complex domains, so uniqueness
+in `NormalizedSegmentPrimitiveUnique.lean` and
+`SourceAngularPrimitiveChoiceIndependence.lean` requires no noncollapse
+assumption.
+
+`SourceAngularCollapsedSheetPrimitive.lean` uses the removable canonical
+integrand to construct a primitive throughout the whole collapsed-gap
+disc, including its endpoint. The exact root ratio transports its
+normalized value to each regular prescribed sheet. Actual assigned
+discs then supply unique regular Dirichlet values also at complex
+collapsed gaps, without assuming that their Dirichlet roots equal the
+collapsed endpoints.
+
+`SourceAngularBeta.lean` defines the actual off-diagonal beta values:
+the unique normalized primitive value at a regular Dirichlet terminal,
+and zero at either periodic endpoint. One common open neighborhood of
+all real sources supplies existence and uniqueness for all off-diagonal
+pairs, including collapsed gaps and periodic terminals. Integrable C¹
+endpoint paths on the normalized regular prescribed sheet evaluate to
+beta; at periodic terminals the integral is zero on every regular
+prescribed sheet. Real collapsed gaps have zero beta value by interlacing.
+
+The pointwise beta values are now constructed. Joint source analyticity,
+continuity across changing terminal types, uniform Theorem 13.1 bounds,
+the diagonal eta values, and the convergent angular sum remain unfinished.
+The path formulas retain explicit singular-start integrability and
+require interiors in the regular sheet part of an enclosing disc.

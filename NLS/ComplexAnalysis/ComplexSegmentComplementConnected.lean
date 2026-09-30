@@ -115,4 +115,81 @@ theorem isPathConnected_convex_complex_segment_complement
     exact (JoinedIn.of_segment_subset hca).symm.trans
       ((JoinedIn.of_segment_subset hcb).trans (JoinedIn.of_segment_subset hzb).symm)
 
+/-- Two opposite short cuts cover the puncture: their complements
+overlap near the common endpoint and their union removes only it. -/
+theorem isPathConnected_convex_complex_punctured_domain
+    (Ω : Set ℂ) (l : ℂ) (hΩ : IsOpen Ω) (hconv : Convex ℝ Ω) (hl : l ∈ Ω) :
+    IsPathConnected (Ω \ {l}) := by
+  have hp : l ≠ l+1 := by simp
+  have hm : l ≠ l-1 := by
+    intro he
+    apply hp
+    calc
+      l = (l-1)+1 := (sub_add_cancel l 1).symm
+      _ = l+1 := congrArg (fun z : ℂ => z+1) he.symm
+  have hplus := isPathConnected_convex_complex_segment_complement Ω l (l+1) hΩ hconv hl hp
+  have hminus := isPathConnected_convex_complex_segment_complement Ω l (l-1) hΩ hconv hl hm
+  have hboth (z : ℂ) (hz : z ∈ segment ℝ l (l+1)) (hz' : z ∈ segment ℝ l (l-1)) : z = l := by
+    obtain ⟨s,hs,rfl⟩ := by rw [segment_eq_image_lineMap] at hz; exact hz
+    obtain ⟨t,ht,he⟩ := by rw [segment_eq_image_lineMap] at hz'; exact hz'
+    have hre := congrArg Complex.re he
+    simp only [AffineMap.lineMap_apply_module,Complex.real_smul,Complex.add_re,Complex.mul_re,
+      Complex.sub_re,Complex.ofReal_re,Complex.one_re,Complex.sub_im,Complex.ofReal_im,
+      Complex.one_im,sub_zero,zero_mul,sub_zero] at hre
+    have hs0 : s = 0 := by nlinarith [hs.1,ht.1]
+    simp [hs0]
+  obtain ⟨ε,hε,hball⟩ := Metric.isOpen_iff.mp hΩ l hl
+  let η := ε/2
+  have hη : 0 < η := by dsimp [η]; linarith
+  let a := l+(η:ℂ)*I
+  have haΩ : a ∈ Ω := hball (by
+    simp only [a,mem_ball,dist_eq_norm,add_sub_cancel_left,norm_mul,Complex.norm_real,
+      Real.norm_eq_abs,norm_I,mul_one,abs_of_pos hη]
+    dsimp [η]; linarith)
+  have hip : (complexSegmentCoordinate l (l+1) a).im = η := by
+    simp [complexSegmentCoordinate,a]
+  have him : (complexSegmentCoordinate l (l-1) a).im = -η := by
+    have he : l-1-l = (-1:ℂ) := by ring
+    simp [complexSegmentCoordinate,a,he,div_neg]
+  have hap : a ∉ segment ℝ l (l+1) := by
+    intro ha
+    have hi := complexSegmentCoordinate_im_eq_zero l (l+1) a hp ha
+    rw [hip] at hi
+    exact (ne_of_gt hη) hi
+  have ham : a ∉ segment ℝ l (l-1) := by
+    intro ha
+    have hi := complexSegmentCoordinate_im_eq_zero l (l-1) a hm ha
+    rw [him] at hi
+    exact (ne_of_lt (neg_neg_of_pos hη)) hi
+  have hconn := hplus.union hminus ⟨a,⟨haΩ,hap⟩,⟨haΩ,ham⟩⟩
+  have heq : Ω \ {l} = (Ω \ segment ℝ l (l+1)) ∪ (Ω \ segment ℝ l (l-1)) := by
+    ext z
+    constructor
+    · intro hz
+      by_cases hzplus : z ∈ segment ℝ l (l+1)
+      · exact Or.inr ⟨hz.1,fun hzminus => hz.2 (hboth z hzplus hzminus)⟩
+      · exact Or.inl ⟨hz.1,hzplus⟩
+    · rintro (hz | hz)
+      · refine ⟨hz.1,?_⟩
+        intro he
+        have he' : z = l := he
+        subst z
+        exact hz.2 (left_mem_segment ℝ _ _)
+      · refine ⟨hz.1,?_⟩
+        intro he
+        have he' : z = l := he
+        subst z
+        exact hz.2 (left_mem_segment ℝ _ _)
+  rw [heq]
+  exact hconn
+
+/-- The same connectivity statement also includes a collapsed cut. -/
+theorem isPathConnected_convex_complex_segment_complement_including_singleton
+    (Ω : Set ℂ) (l r : ℂ) (hΩ : IsOpen Ω) (hconv : Convex ℝ Ω) (hl : l ∈ Ω) :
+    IsPathConnected (Ω \ segment ℝ l r) := by
+  by_cases hlr : l = r
+  · subst r
+    simpa only [segment_same] using isPathConnected_convex_complex_punctured_domain Ω l hΩ hconv hl
+  · exact isPathConnected_convex_complex_segment_complement Ω l r hΩ hconv hl hlr
+
 end NLS.ComplexAnalysis

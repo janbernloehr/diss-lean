@@ -81,9 +81,7 @@ theorem eq_on_overlap
     (hE : SourceAngularSheetPrimitiveData hp hp1 n m s ψ c R w F A E)
     (hJ : SourceAngularSheetPrimitiveData hp hp1 n m s ψ d S w G B J)
     (hseg : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c R)
-    (hseg' : sourcePeriodicSegment hp hp1 ψ m ⊆ ball d S)
-    (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠
-      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) :
+    (hseg' : sourcePeriodicSegment hp hp1 ψ m ⊆ ball d S) :
     EqOn E J (sourceAngularRegularSheetDisc hp ψ c R w ∩
       sourceAngularRegularSheetDisc hp ψ d S w) := by
   have hΛ := (isOpen_sourceAngularRootSheetDomain hp hp1 w).preimage
@@ -93,7 +91,7 @@ theorem eq_on_overlap
     (sourceCanonicalRoot hp hp1 ψ) (fun z => sourceAngularRootSheet hp w (z,ψ)) F G E J
     (ball c R) (ball d S) ((fun z : ℂ => (z,ψ)) ⁻¹' sourceAngularRootSheetDomain hp w)
     _ _ A B isOpen_ball isOpen_ball hΛ (convex_ball c R) (convex_ball d S)
-    (hseg (left_mem_segment ℝ _ _)) (hseg' (left_mem_segment ℝ _ _)) hgap
+    (hseg (left_mem_segment ℝ _ _)) (hseg' (left_mem_segment ℝ _ _))
     hE.hasDerivAt_exterior hJ.hasDerivAt_exterior hE.tendsto_left_exterior hJ.tendsto_left_exterior
     hE.analytic_sheet.continuousOn hJ.analytic_sheet.continuousOn hE.eqOn_exterior hJ.eqOn_exterior
   intro z hz
@@ -106,8 +104,6 @@ theorem terminal_eq_of_sheet_eq
     (hJ : SourceAngularSheetPrimitiveData hp hp1 n m s ψ d S v G B J)
     (hseg : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c R)
     (hseg' : sourcePeriodicSegment hp hp1 ψ m ⊆ ball d S)
-    (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠
-      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
     (hw : w ≠ 0) (hv : v ≠ 0) (b : ℂ)
     (hb : b ∈ sourceAngularRegularSheetDisc hp ψ c R w)
     (hb' : b ∈ sourceAngularRegularSheetDisc hp ψ d S v)
@@ -124,7 +120,7 @@ theorem terminal_eq_of_sheet_eq
     (ball c R) (ball d S) ((fun z : ℂ => (z,ψ)) ⁻¹' sourceAngularRootSheetDomain hp w)
     ((fun z : ℂ => (z,ψ)) ⁻¹' sourceAngularRootSheetDomain hp v)
     _ _ A B b isOpen_ball isOpen_ball hΛ hΞ (convex_ball c R) (convex_ball d S)
-    (hseg (left_mem_segment ℝ _ _)) (hseg' (left_mem_segment ℝ _ _)) hgap
+    (hseg (left_mem_segment ℝ _ _)) (hseg' (left_mem_segment ℝ _ _))
     hE.hasDerivAt_exterior hJ.hasDerivAt_exterior hE.tendsto_left_exterior hJ.tendsto_left_exterior
     hE.analytic_sheet.continuousOn hJ.analytic_sheet.continuousOn hE.eqOn_exterior hJ.eqOn_exterior
     hb hb' (sourceAngularRootSheet_eventuallyEq_at_fixedSource hp hp1 ψ w v b hw hv hb.2 hb'.2 heq)
@@ -136,8 +132,6 @@ theorem dirichlet_terminal_eq
     (hJ : SourceAngularSheetPrimitiveData hp hp1 n m s ψ d S v G B J)
     (hseg : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c R)
     (hseg' : sourcePeriodicSegment hp hp1 ψ m ⊆ ball d S)
-    (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠
-      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
     (hw : w ≠ 0) (hv : v ≠ 0)
     (hb : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈
       sourceAngularRegularSheetDisc hp ψ c R w)
@@ -149,7 +143,7 @@ theorem dirichlet_terminal_eq
       sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m)) :
     E (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) =
       J (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) :=
-  hE.terminal_eq_of_sheet_eq hJ hseg hseg' hgap hw hv _ hb hb' (heq.trans heq'.symm)
+  hE.terminal_eq_of_sheet_eq hJ hseg hseg' hw hv _ hb hb' (heq.trans heq'.symm)
 
 /-- Endpoint paths computed in different discs and different root charts
 have equal actual integrals when the terminal root values agree. -/
@@ -158,8 +152,6 @@ theorem endpoint_pathIntegral_eq_of_sheet_eq
     (hJ : SourceAngularSheetPrimitiveData hp hp1 n m s ψ d S v G B J)
     (hseg : sourcePeriodicSegment hp hp1 ψ m ⊆ ball c R)
     (hseg' : sourcePeriodicSegment hp hp1 ψ m ⊆ ball d S)
-    (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠
-      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m)
     (hw : w ≠ 0) (hv : v ≠ 0) {b : ℂ}
     (hb : b ∈ sourceAngularRegularSheetDisc hp ψ c R w)
     (hb' : b ∈ sourceAngularRegularSheetDisc hp ψ d S v)
@@ -177,7 +169,7 @@ theorem endpoint_pathIntegral_eq_of_sheet_eq
       sourceAngularPathIntegral n s (sourceAngularRootSheet hp v) ψ κ := by
   rw [hE.endpoint_pathIntegral_eq_value hb γ hγ hγD hIntγ,
     hJ.endpoint_pathIntegral_eq_value hb' κ hκ hκD hIntκ]
-  exact hE.terminal_eq_of_sheet_eq hJ hseg hseg' hgap hw hv b hb hb' heq
+  exact hE.terminal_eq_of_sheet_eq hJ hseg hseg' hw hv b hb hb' heq
 
 end SourceAngularSheetPrimitiveData
 
