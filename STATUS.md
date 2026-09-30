@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: Section 13 interior Dirichlet sheet primitives
+## Current milestone: Section 13 glued normalized sheet values
+
+`DenseSegmentComplement.lean` proves that the complement of every
+complex segment is dense, including a collapsed singleton. Continuous
+functions agreeing off the segment in an open set agree throughout
+that set. This identifies compatible local continuations at cut points.
+
+`RootRatioPrimitive.lean` proves that the ratio of two continuous
+nonzero roots of the same radicand is locally constant. Multiplying
+the exterior primitive minus its endpoint value by that ratio changes
+its derivative to the prescribed-sheet angular quotient, with the
+normalization and either sheet sign retained exactly.
+
+`DensePrimitiveGluing.lean` glues local analytic primitives from their
+common dense exterior values. The resulting function has the prescribed
+derivative throughout its domain and agrees with every compatible
+continuous local continuation. Uniqueness here is relative to the fixed
+normalized exterior primitive. `DensePrimitiveBoundary.lean` transfers
+its zero boundary value through the cut: exterior norm bounds extend
+by density, so approaches along the cut are covered as well.
+
+`SourceAngularGluedSheetPrimitive.lean` supplies one actual normalized
+analytic angular primitive throughout the regular prescribed-sheet
+part of the enclosing disc. It includes cut-interior points, matches
+the exact exterior full-root ratio, has zero relative value at both
+periodic endpoints, and agrees with every compatible continuous local
+chart. The actual normalized psi family supplies one all-gap disc
+family for every noncollapsed off-diagonal pair and prescribed nonzero
+sheet normalization at each fixed complex source.
+
+`SourceAngularGluedSheetPathIntegral.lean` proves integrability and the
+primitive difference formula for regular C¹ paths, including paths
+crossing the canonical cut. An integrable C¹ path from the singular
+left periodic endpoint to a regular terminal has actual prescribed-sheet
+integral equal to the glued terminal value. One all-index theorem
+derives these terminal-value functions from the actual psi family;
+callers supply paths rather than primitives or local continuations.
+Integrability for singular-start paths remains explicit.
+
+The next step is to prove independence from the chosen exterior
+primitive and enclosing geometry, ensure the enclosing domains contain
+the actual Dirichlet terminals, and include the collapsed and periodic
+terminal cases in the global `β_m^n` construction. Joint source
+analyticity, uniform Theorem 13.1 bounds, the diagonal `η_n`, and the
+convergent angular sum remain to be proved.
+
+## Completed step: Section 13 interior Dirichlet sheet primitives
 
 `CosinePrimitiveEndpointAgreement.lean` now exposes the normalized
 pullback formula previously internal to the endpoint comparison. On
@@ -33,12 +79,11 @@ primitive on the anti-discriminant-normalized sheet. Nonvanishing of
 the anti-discriminant follows from the endpoint exclusions and spectral
 isolation; callers supply no primitive, root sheet, or cosine coordinate.
 
-These are local spectral primitives at fixed complex sources. The next
-step is to glue their normalized values with the exterior and collapsed
-cases and construct the actual `β_m^n`. Joint source analyticity,
-uniform Theorem 13.1 bounds, the diagonal `η_n`, and the convergent
-angular sum remain to be proved. Arbitrary C¹ path integrability remains
-explicit in the existing path theorems.
+These local spectral primitives at fixed complex sources are now glued
+with the exterior values in the current milestone above. The global
+`β_m^n` construction, joint source analyticity, uniform Theorem 13.1
+bounds, the diagonal `η_n`, and the convergent angular sum remain to
+be proved. Arbitrary singular-start C¹ path integrability remains explicit.
 
 ## Completed step: Section 13 equal periodic endpoint values
 

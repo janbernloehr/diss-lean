@@ -4496,6 +4496,27 @@ actual anti-discriminant. Endpoint exclusions and gap isolation prove
 that this value is nonzero. The theorem applies at fixed complex
 sources and requires the Dirichlet terminal to lie in its selected
 gap interior; it does not assert that all complex Dirichlet terminals
-do so. Gluing the normalized values with exterior and collapsed cases,
-constructing the angular coordinates, and proving joint source
-analyticity and the uniform Theorem 13.1 estimates remain unfinished.
+do so.
+
+`DenseSegmentComplement.lean` identifies continuous local continuations
+from their values off a complex gap. `RootRatioPrimitive.lean` transports
+the normalized exterior primitive to any regular prescribed sheet using
+the locally constant full-root ratio. `DensePrimitiveGluing.lean` glues
+these exterior values with the cut-interior charts into one analytic
+primitive. The extension is unique among compatible continuous charts
+for the fixed exterior normalization. `DensePrimitiveBoundary.lean`
+retains its zero endpoint limit also for approaches through the cut.
+
+`SourceAngularGluedSheetPrimitive.lean` gives the actual normalized
+primitive on the entire regular prescribed-sheet part of each enclosing
+disc, including the cut interior, with zero relative value at both
+periodic endpoints. `SourceAngularGluedSheetPathIntegral.lean` evaluates
+regular C¹ paths crossing the canonical cut by primitive differences,
+and integrable singular-start paths by the normalized terminal value.
+The actual psi family supplies these functions simultaneously for all
+noncollapsed off-diagonal pairs. Singular-start integrability is explicit.
+
+Independence from exterior-primitive and enclosing-geometry choices,
+Dirichlet terminal containment, the collapsed and periodic terminal
+cases, and the global angular coordinates remain unfinished, as do
+joint source analyticity and the uniform Theorem 13.1 estimates.
