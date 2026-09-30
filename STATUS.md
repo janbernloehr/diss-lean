@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: Section 13 independence of primitive and sheet choices
+## Current milestone: Section 13 enclosed regular Dirichlet values
+
+`SourceAngularDirichletDiscFamily.lean` constructs actual contour families
+whose enclosing discs contain every moving spectral cluster, including
+the Dirichlet terminals. Analytic contour normalization gives exact
+Kronecker periods on the original assigned boundaries near each real
+source. A union of these source balls gives one open neighborhood of
+the entire real locus with both the endpoint data and terminal-containing
+families. The original simply connected Lemma 12.12 domain and its full
+estimates are retained separately; the smaller union is asserted open.
+
+`SourceAngularDirichletDiscPrimitive.lean` constructs exterior primitives
+on those original discs, retaining their full radii. The period on the
+assigned boundary transfers to a smaller enclosing circle, whose
+annular primitive continues radially through the whole cut complement.
+The glued prescribed-sheet primitive therefore has the actual Dirichlet
+terminal in its domain. Avoidance of other gaps proves that the two
+own endpoint exclusions make the terminal anti-discriminant nonzero.
+No primitive, period, terminal containment, or root regularity is an
+input to the common-domain construction.
+
+`SourceAngularRegularDirichletValue.lean` proves existence of a unique
+regular Dirichlet angular value among constructions on every enclosing
+disc. The actual psi family supplies these unique values simultaneously
+for all noncollapsed off-diagonal pairs on one common source neighborhood,
+under Section 13's two terminal endpoint exclusions. Integrable C¹
+endpoint paths on the prescribed sheet evaluate to the constructed
+terminal value, including paths crossing the canonical cut.
+
+These are spectral primitives at fixed complex sources. Singular-start
+path integrability is still explicit. The next step is to include the
+collapsed-gap and periodic-terminal cases and assemble the global
+`β_m^n`. Joint source analyticity, uniform Theorem 13.1 bounds, the
+diagonal `η_n`, and the convergent angular sum remain to be proved.
+
+## Completed step: Section 13 independence of primitive and sheet choices
 
 `ComplexSegmentComplementConnected.lean` proves that removing a
 noncollapsed complex segment from an open convex domain containing
@@ -28,11 +63,11 @@ cross the canonical cut. The comparison still requires each disc to
 contain the selected gap and the terminal to belong to both regular
 sheet domains; singular-start integrability remains explicit.
 
-The next step is to ensure the enclosing domains contain the actual
-Dirichlet terminals, then include collapsed gaps and periodic terminals
-in the global `β_m^n` construction. Joint source analyticity, uniform
-Theorem 13.1 bounds, the diagonal `η_n`, and the convergent angular sum
-remain to be proved.
+The assigned-disc construction above now supplies enclosing domains
+containing all actual Dirichlet terminals. Collapsed gaps and periodic
+terminals in the global `β_m^n` construction remain. Joint source
+analyticity, uniform Theorem 13.1 bounds, the diagonal `η_n`, and the
+convergent angular sum remain to be proved.
 
 ## Completed step: Section 13 glued normalized sheet values
 
@@ -75,10 +110,11 @@ Integrability for singular-start paths remains explicit.
 
 Independence from the chosen exterior primitive and enclosing geometry
 is now proved on overlapping regular domains, as described above.
-Containment of all actual Dirichlet terminals and the collapsed and
-periodic terminal cases in the global `β_m^n` construction remain.
-Joint source analyticity, uniform Theorem 13.1 bounds, the diagonal `η_n`, and the
-convergent angular sum remain to be proved.
+Containment of all actual Dirichlet terminals is now supplied by the
+assigned-disc construction. The collapsed and periodic terminal cases
+in the global `β_m^n` construction remain. Joint source analyticity,
+uniform Theorem 13.1 bounds, the diagonal `η_n`, and the convergent
+angular sum remain to be proved.
 
 ## Completed step: Section 13 interior Dirichlet sheet primitives
 

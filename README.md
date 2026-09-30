@@ -4534,6 +4534,29 @@ The actual psi family supplies all primitive data used by these
 comparisons. Integrable C¹ endpoint paths in different discs and root
 charts have equal actual integrals when their terminal roots agree.
 
-Dirichlet terminal containment, the collapsed and periodic terminal
-cases, and the global angular coordinates remain unfinished, as do
-joint source analyticity and the uniform Theorem 13.1 estimates.
+`SourceAngularDirichletDiscFamily.lean` now constructs contour families
+whose original assigned discs contain all actual Dirichlet terminals
+and have exact Kronecker periods. One open neighborhood of all real
+sources supports these families and the endpoint data, while retaining
+the original simply connected Lemma 12.12 domain separately.
+
+`SourceAngularDirichletDiscPrimitive.lean` constructs the angular
+primitives on those original discs, retaining their full radii. The
+actual Dirichlet terminal belongs to the regular prescribed-sheet
+primitive domain. Avoidance of the other gaps proves nonzero terminal
+anti-discriminant from Section 13's own endpoint exclusions; callers
+do not supply terminal containment, root regularity, periods, or primitives
+to the common-domain construction.
+
+`SourceAngularRegularDirichletValue.lean` proves existence of a unique
+regular Dirichlet angular value among constructions on every enclosing
+disc, for all noncollapsed off-diagonal pairs on this common source
+neighborhood under the two terminal endpoint exclusions. Every
+integrable C¹ endpoint path on its prescribed
+sheet evaluates to the constructed terminal value. Singular-start
+integrability remains explicit, and source joint analyticity of the
+primitive values has not yet been proved.
+
+The collapsed and periodic terminal cases and the global angular
+coordinates remain unfinished, as do joint source analyticity and
+the uniform Theorem 13.1 estimates.
