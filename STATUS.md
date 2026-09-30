@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Section 13 terminal sheets and regular angular integrals
+## Current milestone: Section 13 integrable complex endpoint connectors
+
+`SourceStandardRootComplexEndpointBound.lean` proves a radial
+square-root lower bound at either complex periodic endpoint, using
+the exact product of endpoint distances. It requires no real-type
+or real endpoint ordering hypothesis.
+
+`SourceAngularEndpointBound.lean` separates the selected standard root
+from the angular integrand with the literal `2i` normalization. The
+remaining actual psi numerator is analytic on the omitted-root domain
+and bounded on a compact thickening of the selected gap. At either
+endpoint of a noncollapsed complex gap, multiplying the angular
+integrand by `sqrt((|γ_m|/2)*|λ_m^±-z|)` gives one positive bound.
+The bound holds for either spectral square-root sheet.
+
+`SourceAngularEndpointConnector.lean` proves curve integrability for
+C¹ connectors leaving such an endpoint at a linear radial rate. It
+also bounds the actual angular integral in terms of the path speed
+and departure rate. The starting point may be singular; analytic
+sheet and gap-complement membership are required only in the path
+interior. `SourceAngularEndpointCommonDomain.lean` derives the
+omitted-root analyticity and gap isolation hypotheses from the actual
+Lemma 12.12 family and existing spectral results, on one open complex
+neighborhood containing the entire real source locus. The original
+simply connected psi domain and its estimates are retained.
+
+`SourceAngularImproperEndpointIntegral.lean` proves that the initial
+parameter integral tends to zero and that regular parameter
+truncations converge to the actual angular curve integral. Thus the
+new endpoint integrals are genuine improper integrals.
+
+The next step is global admissible-path independence, the treatment
+of collapsed selected gaps, and construction of the actual `β_m^n`
+and `η_n`. Theorem 13.1's uniform bounds, analytic angular coordinates,
+and convergent sum remain to be proved. The current estimates are for
+noncollapsed gaps and the stated class of short endpoint connectors.
+
+## Completed step: terminal sheets and regular angular integrals
 
 `SourceAngularRootSheet.lean` constructs a joint spectral/source square
 root of the actual `Δ²-4` with a prescribed nonzero terminal value.
@@ -27,11 +64,8 @@ have equal integrals. The canonical-sheet specialization is the exact
 psi contour integrand from Section 12, and changing the sheet sign
 negates the integrand.
 
-The next step is integration from singular periodic endpoints and
-global admissible-path independence. The actual off-diagonal `β_m^n`,
-diagonal `η_n`, their bounds, the convergent sum, and Theorem 13.1
-remain to be proved; the current regular-chart results do not assert
-these conclusions.
+The endpoint construction above now supplies integrable singular
+connectors to complement these regular chart integrals.
 
 ## Completed milestone: Lemma 12.12
 

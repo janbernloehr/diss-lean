@@ -4407,6 +4407,18 @@ using actual spectral exhaustion and disjoint cluster isolation.
 `SourceAngularIntegrand.lean` defines integrands and curve integrals
 from the proved Lemma 12.12 psi family, proves joint analyticity on
 regular sheets, and proves integrability and path independence for C¹
-paths within convex regular charts. Integration from the singular
-periodic endpoint, global admissible-path independence, the actual
-angular coordinates and their Theorem 13.1 estimates remain next.
+paths within convex regular charts.
+
+`SourceStandardRootComplexEndpointBound.lean` and
+`SourceAngularEndpointBound.lean` now prove inverse-square-root
+control of the actual angular integrand at either endpoint of a
+noncollapsed complex gap, for either spectral sheet.
+`SourceAngularEndpointConnector.lean` proves integrability and a
+quantitative integral bound for C¹ curved connectors leaving the
+endpoint at a linear radial rate. `SourceAngularEndpointCommonDomain.lean`
+derives their spectral hypotheses from the actual psi family and
+isolation data on one open complex neighborhood of the entire real
+locus. `SourceAngularImproperEndpointIntegral.lean` identifies these
+curve integrals with limits of regular parameter truncations.
+Global admissible-path independence, collapsed selected gaps, the
+actual angular coordinates and their Theorem 13.1 estimates remain next.
