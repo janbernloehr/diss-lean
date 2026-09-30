@@ -4420,5 +4420,17 @@ derives their spectral hypotheses from the actual psi family and
 isolation data on one open complex neighborhood of the entire real
 locus. `SourceAngularImproperEndpointIntegral.lean` identifies these
 curve integrals with limits of regular parameter truncations.
-Global admissible-path independence, collapsed selected gaps, the
-actual angular coordinates and their Theorem 13.1 estimates remain next.
+`SourceAngularCollapsedIntegrand.lean` proves that the actual
+off-diagonal psi numerator vanishes at a collapsed complex gap's
+midpoint and constructs its analytic removable extension by a filled
+divided difference. `CurveIntegralInteriorCongruence.lean` and
+`SourceAngularCollapsedPathIntegral.lean` identify the raw canonical
+curve integral with this extension, including paths with the midpoint
+as an endpoint, and prove path independence and zero loop integrals
+in convex omitted-root charts. Negating the sheet negates the integral.
+`SourceAngularCollapsedGapGeometry.lean` instantiates these results on
+the full assigned isolating disc. Real interlacing identifies the
+Dirichlet terminal with the collapsed endpoint, so its off-diagonal
+angular integral is zero on both canonical sheet signs.
+Global admissible-path independence for noncollapsed gaps, the actual
+angular coordinates and their Theorem 13.1 estimates remain next.

@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: Section 13 integrable complex endpoint connectors
+## Current milestone: Section 13 collapsed-gap angular integrals
+
+`SourceAngularCollapsedIntegrand.lean` uses the actual squared-gap
+root offsets from Lemma 12.12 to prove that every off-diagonal psi
+numerator vanishes at a collapsed selected midpoint, also for complex
+sources. Its filled divided difference cancels the selected linear
+standard root with the literal `2i` normalization. The resulting
+integrand is analytic in the spectral variable throughout the
+omitted-root domain, including the midpoint, and equals the canonical
+quotient away from the cuts. Its midpoint value is the numerator
+derivative divided by the nonzero omitted product.
+
+`CurveIntegralInteriorCongruence.lean` proves that changing endpoint
+values preserves curve integrability and the integral.
+`SourceAngularCollapsedPathIntegral.lean` applies this to the raw
+canonical quotient and its removable extension. C¹ admissible paths
+are integrable, have equal integrals in any convex omitted-root chart,
+and give zero integrals on loops. Negating the spectral sheet negates
+the actual angular integral, including at singular endpoints.
+
+`SourceAngularCollapsedGapGeometry.lean` identifies a collapsed cut
+with its midpoint singleton and derives path independence and zero
+loop integrals on the entire assigned isolating disc. Interior paths
+need only avoid the selected midpoint; disjoint cluster isolation
+excludes all other gaps. Real interlacing puts the Dirichlet terminal
+at the collapsed endpoint. Its off-diagonal integral is therefore
+zero on both choices of the canonical sheet. Complex Dirichlet roots
+are not asserted to equal the midpoint.
+
+The next step is global admissible-path independence for noncollapsed
+gaps and construction of the actual `β_m^n` and `η_n`. Theorem 13.1's
+uniform bounds, joint analyticity of the angular coordinates, and
+convergent sum remain to be proved. The removable extension here is
+proved analytic in the spectral variable at each fixed source.
+
+## Completed step: integrable complex endpoint connectors
 
 `SourceStandardRootComplexEndpointBound.lean` proves a radial
 square-root lower bound at either complex periodic endpoint, using
@@ -31,11 +66,9 @@ parameter integral tends to zero and that regular parameter
 truncations converge to the actual angular curve integral. Thus the
 new endpoint integrals are genuine improper integrals.
 
-The next step is global admissible-path independence, the treatment
-of collapsed selected gaps, and construction of the actual `β_m^n`
-and `η_n`. Theorem 13.1's uniform bounds, analytic angular coordinates,
-and convergent sum remain to be proved. The current estimates are for
-noncollapsed gaps and the stated class of short endpoint connectors.
+The collapsed-gap results above complement these endpoint connectors.
+The current estimates are for noncollapsed gaps and the stated class
+of short endpoint connectors.
 
 ## Completed step: terminal sheets and regular angular integrals
 
