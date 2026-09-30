@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Section 13 off-diagonal beta values
+## Current milestone: analytic moving Dirichlet terminals for Section 13
+
+`CanonicalPeriodOneBoundaryAnalytic.lean` proves that every indexed
+ordinary Dirichlet and Neumann root is algebraically simple at every
+real-type source. Real interlacing places different indices in strictly
+separated periodic gaps, so each boundary sequence is injective. Its
+complete multiplicity formula then gives exactly one occurrence and
+actual algebraic multiplicity one. This includes all finite central
+indices and all collapsed periodic gaps.
+
+`BoundarySimpleBranchAnalytic.lean` proves local rank stability for
+boundary contour projections on the reflected potential subspace.
+Around a simple boundary root, a small circle excludes every other
+periodic spectral value. Its boundary projection has rank one, and a
+continuous spectral branch agrees locally with the analytic contour
+trace. Pullback through the ordinary interval extension proves complex
+source analyticity of every actual boundary coordinate at real type.
+
+`SourceBoundaryRootsAnalyticNeighborhood.lean` combines the analytic
+finite central blocks with the uniform distant canonical labeling and
+contour traces. One complex neighborhood of each real source supports
+all indices of both boundary sequences simultaneously. These local
+neighborhoods supply an open common domain containing every real source.
+
+`SourceAngularBetaBoundaryDomain.lean` intersects this domain with the
+proved pointwise beta construction domain. All off-diagonal beta values
+and both analytic boundary-coordinate sequences coexist there, while
+the full simply connected Lemma 12.12 psi domain is retained separately.
+
+Analyticity of the moving terminals is now established. The normalized
+primitive must still be made analytic in the source, including across
+periodic-terminal and collapsed-gap cases, to prove beta analyticity.
+Beta continuity, the uniform Theorem 13.1 estimates, diagonal eta, and
+the convergent angular sum also remain. Theorem 13.1 and Corollary 13.2
+are unfinished.
+
+## Completed step: Section 13 off-diagonal beta values
 
 `ComplexSegmentComplementConnected.lean` now also proves path
 connectedness of a punctured open convex complex domain. Two opposite

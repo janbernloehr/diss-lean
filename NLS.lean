@@ -803,6 +803,9 @@ import NLS.ZakharovShabat.SourcePeriodicTailIsolation
 import NLS.ZakharovShabat.SourceTailIsolation
 import NLS.ZakharovShabat.FreeDiscSeparation
 import NLS.ZakharovShabat.SourceSpectralClusters
+import NLS.ZakharovShabat.BoundarySimpleBranchAnalytic
+import NLS.ZakharovShabat.CanonicalPeriodOneBoundaryAnalytic
+import NLS.ZakharovShabat.SourceBoundaryRootsAnalyticNeighborhood
 import NLS.ComplexAnalysis.RealIntervalDiscs
 import NLS.ComplexAnalysis.FinitePositiveMargins
 import NLS.ZakharovShabat.SourceClusterDiscs
@@ -1236,6 +1239,7 @@ import NLS.ZakharovShabat.SourceAngularDirichletDiscPrimitive
 import NLS.ZakharovShabat.SourceAngularRegularDirichletValue
 import NLS.ZakharovShabat.SourceAngularCollapsedSheetPrimitive
 import NLS.ZakharovShabat.SourceAngularBeta
+import NLS.ZakharovShabat.SourceAngularBetaBoundaryDomain
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

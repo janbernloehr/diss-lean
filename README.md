@@ -4586,3 +4586,21 @@ continuity across changing terminal types, uniform Theorem 13.1 bounds,
 the diagonal eta values, and the convergent angular sum remain unfinished.
 The path formulas retain explicit singular-start integrability and
 require interiors in the regular sheet part of an enclosing disc.
+
+`CanonicalPeriodOneBoundaryAnalytic.lean` now proves algebraic simplicity
+and complex source analyticity of every Dirichlet and Neumann coordinate
+at every real source, including central indices and collapsed periodic
+gaps. Strict real interlacing separates the indexed roots, and their
+complete canonical multiplicity formula gives multiplicity one.
+`BoundarySimpleBranchAnalytic.lean` then identifies a continuous simple
+branch locally with its analytic rank-one contour trace.
+
+`SourceBoundaryRootsAnalyticNeighborhood.lean` combines the finite central
+blocks with the uniform tail contour formulas to produce one open
+neighborhood supporting all coordinates of both boundary sequences.
+`SourceAngularBetaBoundaryDomain.lean` places the constructed beta values
+on such a neighborhood, retaining the original simply connected psi
+domain. Thus the moving Dirichlet terminals are analytic on the beta
+construction domain. Parameter-dependent normalized primitives and beta
+analyticity, especially at periodic terminals and collapsed gaps, remain
+to be proved.
