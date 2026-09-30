@@ -4346,7 +4346,25 @@ product for every fixed finite selected head.
 `SourcePsiFiniteHeadMidpointLowerBound.lean` controls the index ratio
 from below and obtains the corresponding actual chi midpoint lower
 bound near each real source, uniformly in the omitted index and also
-at collapsed selected gaps. Lemma 12.12 still requires the uniform
-tail midpoint lower bound, finite-head root-offset estimates, and
-assembly of the all-index squared-gap ℓp conclusion on a common
-complex neighborhood.
+at collapsed selected gaps.
+`SourcePsiQuotientUniformJointVariation.lean` applies the Schwarz
+lemma to simultaneous variation of the root sequence and source,
+using one fixed reference ℓp majorant and one variation constant on
+every selected disc. This gives arbitrarily small quotient errors
+on the free-centered tail discs throughout one joint neighborhood.
+`SourcePsiQuotientUniformGapProductTail.lean` uses compactness to give
+one tail cutoff and closed neighborhood for the entire real gap
+product and reference source. Combining this tail estimate with
+finite-head nonvanishing gives a positive midpoint quotient bound
+for every selected index. `SourcePsiUniformMidpointLowerBound.lean`
+puts all actual filled branches in that neighborhood and proves the
+chi midpoint lower bound uniformly over both indices, including
+collapsed gaps. `SourcePsiMidpointBoundComplexRootAtlas.lean`
+restricts the atlas source balls while retaining their chi majorants.
+`SourcePsiComplexMidpointBounds.lean` constructs one common open
+simply connected normalized analytic psi extension with positive
+midpoint bounds and chi tail majorants locally at every complex
+source, independently of both indices. Lemma 12.12 still requires
+finite-head root-offset estimates, transfer of retained zeros to the
+selected tail circles, and assembly of the all-index squared-gap
+ℓp conclusion.

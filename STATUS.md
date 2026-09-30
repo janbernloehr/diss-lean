@@ -1,19 +1,31 @@
 # Implementation status
 
-## Current milestone: Lemma 12.12 finite-head midpoint lower bounds
+## Current milestone: Lemma 12.12 uniform midpoint lower bounds
 
-The actual chi factors now have a positive midpoint lower bound on
-any fixed finite selected head, near every real source and uniformly
-over all omitted indices. The regular quotient is nonzero at each
-selected midpoint for every vector in the compact full real gap
-product. Continuity gives one positive bound near that entire product
-and reference source. The Schwarz lemma gives an index-independent
-branch displacement estimate from the common root and source radii.
-Combined with sequence-norm continuity of the moving midpoints, it
-puts all actual filled complex root graphs in the same compact
-neighborhood. The factor `π(n-m)/(τn-τm)` has a positive lower bound
-from the common midpoint displacement norm; assigned isolation keeps
-the two midpoints distinct. This also handles collapsed selected gaps.
+`exists_sourcePsi_normalized_complex_extension_with_uniform_midpoint_bounds`
+constructs one common open simply connected complex neighborhood
+with the actual analytic psi roots, exact contour normalization,
+assigned spectral isolation, chi tail majorants, and a positive chi
+midpoint lower bound. Both bounds are locally uniform at every
+complex source and independent of the omitted index; the midpoint
+bound also works simultaneously for every retained index, including
+collapsed gaps.
+
+Joint quotient analyticity and the Schwarz lemma control variation
+in both the full root sequence and source on every selected disc.
+A fixed reference ℓp majorant has coordinates tending to zero, so
+one joint neighborhood has an arbitrarily small quotient error on
+all sufficiently distant free-centered eighth-π discs. Compactness
+of the full real gap product selects finitely many neighborhoods and
+one common tail cutoff on a closed neighborhood of that whole product
+and reference source. The moving tail gaps lie inside those discs.
+Combining the tail error below one half with compact nonvanishing
+on the finite head gives a positive quotient midpoint bound for all
+indices. Uniform filled-branch stability and the lower bound on
+`π(n-m)/(τn-τm)` give the actual chi bound uniformly over both indices.
+Restricting each atlas source ball preserves the branches, equations,
+isolation, and tail majorants, and gives this bound locally at every
+point of the resulting common complex domain.
 
 `exists_sourcePsi_normalized_complex_extension_with_tail_factor_majorants`
 now constructs one common open simply connected complex neighborhood
@@ -47,14 +59,11 @@ A pointwise ℓp majorant assembles the literal quotient by `γ²` into an
 actual ℓp offset sequence, with zero at the omitted index and exact
 factorization also at every collapsed retained gap.
 
-The chi tail majorants are now instantiated for the actual analytic
-family on a common complex domain. The offset estimates still take
-the midpoint lower bound and local contour geometry as explicit
-inputs. The finite-head midpoint lower bound is proved on a smaller
-complex neighborhood of each real base source. To finish Lemma 12.12,
-prove the uniform tail midpoint lower bound, obtain the finite-head
-root-offset estimates, transfer the retained zeros to the selected
-tail circles, and assemble the all-index ℓp offset bound.
+The chi tail majorants and all-index midpoint lower bounds are now
+instantiated for the actual analytic family on a common complex
+domain. To finish Lemma 12.12, obtain the finite-head root-offset
+estimates, transfer the retained zeros to the selected tail circles,
+and assemble the all-index ℓp offset bound.
 
 ## Completed: Lemma 12.11 exact complex normalization
 
