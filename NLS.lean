@@ -1164,6 +1164,10 @@ import NLS.ZakharovShabat.SourcePsiRealNormalization
 import NLS.ZakharovShabat.SourcePsiAssignedCircleFamily
 import NLS.ZakharovShabat.SourcePsiIsolatingComplexNormalization
 import NLS.ZakharovShabat.SourcePsiLemma12_11
+import NLS.SequenceSpaces.SquaredWeightQuotient
+import NLS.ZakharovShabat.SourceStandardRootZeroPeriodOffset
+import NLS.ZakharovShabat.SourceStandardRootQuadraticOffset
+import NLS.ZakharovShabat.SourcePsiQuadraticRootOffset
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

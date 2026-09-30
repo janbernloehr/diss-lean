@@ -1,6 +1,32 @@
 # Implementation status
 
-## Current milestone: Lemma 12.11 exact complex normalization
+## Current milestone: Lemma 12.12 quadratic root-offset estimates
+
+The actual midpoint-filled regular factor `χ` in (2.31) is now defined
+from the psi quotient. Its weighted standard-root period is exactly
+`π` times the actual retained equation, so contour orthogonality gives
+the vanishing period (2.30). The midpoint expansion gives the exact
+divided-difference identity (2.33), also at complex sources and
+collapsed gaps. Subtracting `χ(τ)` and its collapsed-gap Cauchy period
+expresses the offset as a reciprocal-root correction, which is
+quadratic in the actual gap.
+
+Explicit circle separation, a centered factor majorant, and a positive
+midpoint lower bound now imply a squared-gap offset estimate. On the
+free-centered tail circles, an error bound `|χ-i| ≤ M ≤ 1/2` gives the
+midpoint lower bound automatically and proves
+`|σ-τ| ≤ (384/π) M |γ|²`, with a constant independent of both indices.
+A pointwise ℓp majorant assembles the literal quotient by `γ²` into an
+actual ℓp offset sequence, with zero at the omitted index and exact
+factorization also at every collapsed retained gap.
+
+These estimates still take the factor bounds and local contour
+geometry as explicit inputs. To finish Lemma 12.12, instantiate them
+with locally uniform majorants for the analytic psi root family,
+handle the finite head, and obtain bounds independent of the deleted
+index on the common complex neighborhood.
+
+## Completed: Lemma 12.11 exact complex normalization
 
 `exists_sourcePsi_lemma12_11` now constructs the analytic psi root
 family on one open simply connected complex neighborhood of the full
@@ -297,8 +323,24 @@ of the actual spectral isolation domain and joint quotient analytic
 domain. It preserves Lemma 12.10's common open simply connected
 neighborhood and all root-placement data, while obtaining simultaneous
 exact orthogonality for all numerators on one circle family at each
-source. Every literal omitted raw period is exactly `2π`. Lemma 12.12's
-uniform root asymptotics remain open.
+source. Every literal omitted raw period is exactly `2π`.
+
+`SourceStandardRootZeroPeriodOffset.lean` proves the centered-factor,
+divided-difference (2.33), and reciprocal-root-correction identities
+for any analytic factor with a vanishing actual standard-root period.
+`SourceStandardRootQuadraticOffset.lean` bounds the correction by the
+squared actual gap, with explicit separation and midpoint lower bounds.
+`SourcePsiQuadraticRootOffset.lean` defines the actual midpoint-filled
+factor (2.31), identifies its period with the retained psi equation,
+and specializes these identities and bounds to the psi roots. Its
+free-centered tail estimate has an index-independent constant and
+derives the midpoint lower bound from small error to `i`.
+`SquaredWeightQuotient.lean` constructs the literal ℓp quotient by
+squared weights, proving exact factorization at zero weights as well
+as the majorant norm bound. The actual psi offset sequence follows
+from pointwise squared-gap estimates. Lemma 12.12's locally uniform
+all-index bounds still require the actual factor majorants, head
+estimates, and common source-domain geometry.
 
 ## Implemented and checked
 
@@ -308,6 +350,10 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.SequenceSpaces.SquaredWeightQuotient` | Literal ℓp quotient by squared weights, exact factorization at zero weights, and majorant norm control |
+| `NLS.ZakharovShabat.SourceStandardRootZeroPeriodOffset` | Centered-factor, divided-difference (2.33), and reciprocal-root-correction identities from an actual vanishing standard-root period |
+| `NLS.ZakharovShabat.SourceStandardRootQuadraticOffset` | Squared-gap midpoint offset bounds from explicit enclosing-circle separation, centered factor variation, and midpoint lower bounds |
+| `NLS.ZakharovShabat.SourcePsiQuadraticRootOffset` | Actual midpoint-filled chi (2.31), retained-period identity, exact (2.33), uniform tail constants under factor bounds, and ℓp squared-gap offset assembly including collapsed gaps |
 | `NLS.ZakharovShabat.SourcePsiComplexContourAnalytic` | Joint Banach analyticity of normalized psi contours, including the omitted index, at complex parameters with a gap-avoiding fixed circle; analytic weighted equation coordinates |
 | `NLS.ZakharovShabat.SourcePsiAssignedCircleFamily` | Original assigned boundaries form valid all-index gap contours despite touching disc closures; nested inner-circle periods equal their assigned periods at complex sources |
 | `NLS.ZakharovShabat.SourcePsiIsolatingComplexNormalization` | Holomorphic fixed-contour periods and real-form continuation give simultaneous exact Kronecker periods on every source ball and the glued complex atlas |

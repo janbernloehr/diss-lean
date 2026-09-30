@@ -4303,5 +4303,23 @@ complex source neighborhood retaining all of Lemma 12.10's analytic
 branches and assigned root placement. One assigned circle family at
 each source gives exact Kronecker periods simultaneously for every
 numerator; the literal omitted raw integral is exactly `2π` everywhere
-on this domain. The next step is Lemma 12.12's locally uniform root
-asymptotics with bounds independent of the deleted index.
+on this domain.
+`SourceStandardRootZeroPeriodOffset.lean` now proves the exact
+midpoint expansion (2.33) from a vanishing actual standard-root
+period. Subtracting the midpoint factor and its collapsed-gap Cauchy
+period leaves precisely the quadratic reciprocal-root correction.
+`SourceStandardRootQuadraticOffset.lean` turns this identity into a
+squared-gap root-offset bound from explicit circle geometry, factor
+variation, and a midpoint lower bound.
+`SourcePsiQuadraticRootOffset.lean` defines the actual midpoint-filled
+regular factor `χ` in (2.31), identifies its period with the retained
+psi equation, and proves (2.33) for the actual psi roots. On the
+free-centered tail circles, `|χ-i| ≤ M ≤ 1/2` gives the lower bound
+automatically and yields `|σ-τ| ≤ (384/π) M |γ|²`, with a constant
+independent of both indices. `SquaredWeightQuotient.lean` packages the
+literal division by squared gaps into an ℓp sequence, including
+collapsed gaps; the corresponding psi offset sequence has zero at
+the omitted index and the majorant norm bound. Finishing Lemma 12.12
+still requires locally uniform factor majorants and finite-head
+estimates for the actual analytic root family on the common complex
+neighborhood.
