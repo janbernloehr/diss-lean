@@ -1263,7 +1263,11 @@ import NLS.ComplexAnalysis.ParametricCosineTerminal
 import NLS.ZakharovShabat.SourceAngularCanonicalCosineSheetMatching
 import NLS.ZakharovShabat.SourceAngularBetaRegularAnalytic
 import NLS.ComplexAnalysis.ParametricSineTerminal
+import NLS.ComplexAnalysis.ParametricTrigonometricTerminal
 import NLS.ZakharovShabat.SourceAngularCanonicalCosineEndpoint
+import NLS.ZakharovShabat.SourceAngularDirichletAngle
+import NLS.ZakharovShabat.SourceAngularCosineLift
+import NLS.ZakharovShabat.SourceAngularEtaCosineRepresentative
 import NLS.ZakharovShabat.SourceAngularBetaEndpointAnalytic
 import NLS.ComplexAnalysis.ParametricCircleTransforms
 import NLS.ComplexAnalysis.ParametricAnnularPrimitive
@@ -1289,6 +1293,7 @@ import NLS.ZakharovShabat.SourceAngularBetaSeriesAnalytic
 import NLS.SequenceSpaces.ShiftedHolderDecay
 import NLS.ZakharovShabat.SourceAngularBetaDecay
 import NLS.ZakharovShabat.SourceAngularBetaTheorem13_1Series
+import NLS.ZakharovShabat.SourceAngularEtaLocalCommonDomain
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

@@ -4949,4 +4949,38 @@ same common complex domain, `SourceAngularBetaSeriesData` records
 absolute and local uniform convergence of the actual correction series,
 its analyticity, and the decay of both its absolute sum and its value.
 
-Theorem 13.1(ii) and (iv), Corollary 13.2, and the later chapters remain.
+`ParametricTrigonometricTerminal.lean` constructs an analytic moving
+angle with both prescribed sine and cosine coordinates, including
+either cosine endpoint. Compatible angles differ by an integer
+multiple of two pi. `SourceAngularDirichletAngle.lean` applies this
+to the actual Dirichlet root and its normalized anti-discriminant:
+every open real gap has an analytic terminal angle on a complex source
+neighborhood and one fixed sheet sign.
+
+`SourceAngularCosineLift.lean` constructs the literal discriminant
+root on that cosine cover. Its square is the original radicand, it
+is nonzero away from sine zeros, and its terminal value equals the
+actual Dirichlet anti-discriminant, including at either endpoint.
+Pulling back the original psi/root differential gives the regular
+cosine numerator with the exact sheet coefficient; the numerator
+index may equal the selected gap index.
+
+`SourceAngularEtaCosineRepresentative.lean` defines the actual
+diagonal eta representative, normalized to zero at angle pi. It is
+jointly analytic in angle and source, and equals the integral of the
+literal lifted differential along C1 angle paths whose interiors
+avoid sine zeros. Singular terminal endpoints are allowed. Composing
+with the constructed moving Dirichlet angle proves source analyticity
+near every open real gap, including both endpoint terminal cases.
+
+`SourceAngularEtaLocalCommonDomain.lean` constructs these local eta
+charts on a common complex neighborhood of the entire real locus,
+for the same normalized psi extension as Theorem 13.1(i) and (iii).
+The theorem retains every beta value, analytic boundary and symmetric
+coordinate, uniform all-index beta bound, and analytic correction
+series with its decay.
+
+Theorem 13.1(ii) still requires identification and gluing of general
+admissible spectral-path eta values modulo pi and coverage of every
+complex open-gap point. Theorem 13.1(iv), Corollary 13.2, and the later
+chapters also remain.
