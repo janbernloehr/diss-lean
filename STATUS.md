@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current Lemma 12.10 milestone: index-independent local complex root branches
+## Current Lemma 12.10 milestone: one simply connected complex root domain
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -118,9 +118,31 @@ real contour comparison, and the constructed local uniqueness.
 theorem without supplied equation or inverse data. The actual normalized
 psi contour integrals vanish at every retained index on valid moving
 real-centered circles throughout the complex source ball.
-Gluing branches from different real base sources, obtaining the global
-simply connected common source domain, and retaining the assigned
-isolating-root neighborhoods remain open in Lemma 12.10.
+`SourceHolomorphicRealCenteredBalls.lean` proves a Banach-valued identity
+principle for source balls centered at different real potentials.
+The real-type projection contracts distances from both centers, so
+every nonempty overlap contains a real potential. Agreement on the
+real locus gives a complex germ, and convex continuation identifies
+the maps on the entire overlap.
+`SourcePsiComplexBranchCompatibility.lean` applies this to the actual
+root branches, whose real values are already canonical throughout
+their source balls. No compatibility of the separately chosen tubes
+is assumed.
+`SourcePsiComplexRootAtlas.lean` chooses one uniform branch family at
+each real potential and glues every signed-index root map on the same
+open union. The glued maps are analytic, agree exactly with each local
+branch, retain the canonical real roots, and satisfy their actual
+retained contour orthogonality equations everywhere in the union.
+The real-type projection is now proved Lipschitz and continuous.
+`SourcePsiComplexRootDomain.lean` contracts the union first to this
+projection along segments in the covering balls, then to zero along
+the real locus. Thus the common domain is contractible and simply
+connected, and contains the entire real-type source locus. Its global
+existence theorem requires no supplied equations, inverse bounds,
+branch compatibility, or domain assumptions.
+Retaining the assigned isolating-root neighborhoods, and explicitly
+placing the resulting domain inside the dissertation's spectral
+neighborhood, remain open in Lemma 12.10.
 
 ## Implemented and checked
 
@@ -130,6 +152,10 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.SourceHolomorphicRealCenteredBalls` | Banach-valued maps agreeing on the real locus agree on the full overlap of real-centered source balls |
+| `NLS.ZakharovShabat.SourcePsiComplexBranchCompatibility` | Compatibility of actual uniform psi root branches centered at arbitrary real potentials, independently of the chosen equation tubes |
+| `NLS.ZakharovShabat.SourcePsiComplexRootAtlas` | Analytic gluing of all signed-index root maps on one open neighborhood of the full real locus, exact local representation, canonical real agreement, and actual retained contour zeros |
+| `NLS.ZakharovShabat.SourcePsiComplexRootDomain` | Explicit contraction of the common domain to zero, simple connectedness, and unconditional global analytic root-extension existence |
 | `NLS.ComplexAnalysis.QuantitativeTriangularDerivative` | Explicit two-sided inverse of the equation-and-source derivative and its quantitative norm bound |
 | `NLS.ComplexAnalysis.QuantitativeAnalyticInverse` | Explicit common joint and image radii, analytic inverse on the covered image ball, and uniqueness in the joint ball |
 | `NLS.ComplexAnalysis.ConvexRealAnalyticIdentity` | Real analytic functions with an equal germ agree throughout an open convex Banach domain |

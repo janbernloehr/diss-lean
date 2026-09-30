@@ -144,4 +144,21 @@ theorem norm_sourceImagPart_le (hp : p ≠ ⊤) (u : CoeffPair p) :
       exact norm_sub_le _ _
     _ = ‖u‖ := by rw [norm_sourceConjugation hp]; ring
 
+theorem sourceRealPart_sub (u v : CoeffPair p) :
+    sourceRealPart (u-v) = sourceRealPart u-sourceRealPart v := by
+  simp only [sourceRealPart,sourceConjugation_sub]
+  module
+
+/-- The real-type projection contracts all source distances. -/
+theorem lipschitzWith_sourceRealPart (hp : p ≠ ⊤) :
+    LipschitzWith 1 (sourceRealPart (p := p)) := by
+  apply LipschitzWith.of_dist_le_mul
+  intro u v
+  simp only [NNReal.coe_one,one_mul,dist_eq_norm,← sourceRealPart_sub]
+  exact norm_sourceRealPart_le hp (u-v)
+
+theorem continuous_sourceRealPart (hp : p ≠ ⊤) :
+    Continuous (sourceRealPart (p := p)) :=
+  (lipschitzWith_sourceRealPart hp).continuous
+
 end NLS.ZakharovShabat

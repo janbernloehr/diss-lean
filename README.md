@@ -3881,8 +3881,8 @@ solution predicate with the dissertation's full `Ωᵖ` setup remains open.
 The local isolating-disc family, real-source neighborhood, and `ℓᵖ` tail
 cutoff can now be chosen simultaneously for every deleted index `n`.
 This supplies the real-side uniform placement and compactness needed
-toward Lemma 12.10; an index-independent *complex* solution
-neighborhood still requires uniform inverse-Jacobian estimates.
+toward Lemma 12.10; the uniform inverse-Jacobian estimates and the
+index-independent complex solution neighborhood are established below.
 `DeletedOperatorExtension.lean` now realizes the selected Jacobian as
 a block operator on one common `ℓᵖ` space, with value `2` on the omitted
 diagonal and zero in its other omitted-row and omitted-column entries.
@@ -3890,22 +3890,21 @@ diagonal and zero in its other omitted-row and omitted-column entries.
 Jacobian, proves full-space invertibility is equivalent to deleted-space
 invertibility, and obtains an invertible full extension at every
 canonical real gap-root solution. Operator-norm convergence of these
-extensions as the deleted index escapes to infinity remains open.
+extensions as the deleted index escapes to infinity is established below.
 `UniformInverseBound.lean` proves the quantitative perturbation step:
 if these full extensions converge in operator norm to an invertible
 operator, their deleted-block inverses have one common norm bound for
 all sufficiently large deleted indices. Finite boundedness now extends
 that estimate to every integer index. The resulting theorem is
 specialized to the actual selected psi Jacobians at the canonical real
-gap roots. Constructing the limit operator, proving its invertibility,
-and establishing operator-norm convergence remain the next parts of
-Lemma 12.10.
+gap roots. The construction of the limit operator, its invertibility,
+and operator-norm convergence are established below for Lemma 12.10.
 `SourcePsiJacobianFreeFullExtension.lean` identifies the selected
 sequence equation on uniform free-centered contours with the existing
 free equation. Consequently, at the canonical free gap root every
 extended Jacobian is exactly `2 · id` on the common `ℓᵖ` space, so the
 operator-norm convergence claim holds at the free source with zero
-error. The nonfree limit operator and convergence estimate are open.
+error. The nonfree limit operator and convergence estimate are established below.
 `FiniteBlockOperatorConvergence.lean` proves that convergence of every
 matrix entry gives operator-norm convergence on each fixed finite
 input/output block, and that uniform finite-block approximation then
@@ -4053,8 +4052,8 @@ kernel argument. Uniform convergence over the full gap product and
 common inverse bounds for every finite-index Jacobian at a fixed
 real-type potential are established below. Uniform control over nearby
 complex potentials and compatibility of local charts are established
-below. Gluing the complex zero branches over the entire real source
-locus remains open.
+below. The complex zero branches are also glued over the entire real
+source locus below.
 `SourcePsiFullProductVariation.lean` supplies the entire variation of
 the undeleted root product. At a simple root it recovers the direction's
 corresponding coefficient; indexed real-gap placement makes the roots
@@ -4204,7 +4203,28 @@ common source ball.
 theorem without supplied equation or inverse data: one source radius
 works for every signed deleted index, the branches retain the canonical
 real roots, and their actual retained psi contour integrals vanish on
-valid moving real-centered circles. Gluing branches from different real
-base sources, obtaining the global simply connected common source
-domain, and retaining the assigned isolating-root neighborhoods remain
-open in Lemma 12.10.
+valid moving real-centered circles.
+`SourceHolomorphicRealCenteredBalls.lean` proves that Banach-valued maps
+on balls centered at different real-type potentials agree throughout
+their overlap whenever they agree on its real locus. Projection to the
+real part supplies a real point in every nonempty overlap; the complex
+real-form identity gives a germ, and convex continuation propagates it.
+`SourcePsiComplexBranchCompatibility.lean` identifies the actual root
+branches from any two real base sources, independently of the chosen
+equation tubes.
+`SourcePsiComplexRootAtlas.lean` chooses uniform local branches at all
+real sources and glues every signed-index root map on one open union.
+The maps are analytic on that same domain, have exact local branch
+representations, agree with all canonical real roots, and retain their
+actual contour orthogonality at every nondeleted index.
+The real-type projection is Lipschitz and continuous.
+`SourcePsiComplexRootDomain.lean` contracts this union to the real
+projection along segments in its covering balls, then to zero along
+the real locus. The common domain is therefore contractible and simply
+connected and contains the entire real-type source locus. The global
+existence theorem supplies the domain, analytic branches, canonical
+real agreement, and actual retained contour zeros without assumptions
+about a preexisting branch family or domain.
+Retaining the assigned isolating-root neighborhoods and explicitly
+placing this domain inside the dissertation's spectral neighborhood
+remain open in Lemma 12.10.
