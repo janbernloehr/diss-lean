@@ -1152,6 +1152,11 @@ import NLS.ZakharovShabat.CentralCircleThresholds
 import NLS.ZakharovShabat.SourceCanonicalRootExterior
 import NLS.ComplexAnalysis.CircleIntegralExteriorNormalization
 import NLS.ZakharovShabat.SourcePsiExteriorNormalization
+import NLS.ComplexAnalysis.CircleCauchyTransform
+import NLS.ComplexAnalysis.CircleCauchyTransformPeriods
+import NLS.ComplexAnalysis.CircleHoleRemoval
+import NLS.ComplexAnalysis.FiniteCircleHoleDecomposition
+import NLS.ZakharovShabat.SourcePsiFiniteContourDecomposition
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

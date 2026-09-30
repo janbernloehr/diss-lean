@@ -1,6 +1,19 @@
 # Implementation status
 
-## Current milestone: Lemma 12.11 exterior normalization
+## Current milestone: Lemma 12.11 finite contour decomposition
+
+`circleIntegral_eq_sum_of_finite_holes` now proves Cauchy's theorem
+for a closed outer disc with finitely many circular holes: its outer
+integral is the sum of the counterclockwise inner integrals. The proof
+fills each hole analytically using the annular Cauchy formula. Fubini
+computes the filling's contribution to an enclosing contour and shows
+that disjoint hole periods are unchanged.
+`SourcePsiFiniteGapCircleGeometry.decomposition` applies this theorem
+to the actual psi quotient from explicit spectral enclosures and
+disjoint isolating circles. Retained contour zeros reduce the sum to
+the omitted-gap contour. The remaining step is to construct these
+circle families for the analytic extension and identify their
+retained periods with the known zeros, then use the large-circle limit.
 
 `tendsto_centralCircle_sourcePsi_raw_integral` now proves that the actual
 psi quotient's raw integral on the half-integer large circles tends to
@@ -11,10 +24,9 @@ The actual canonical root divided by `-2i sin λ` tends uniformly to
 one on those circles. Its literal finite products factor into the
 midpoint single product and principal-square-root gap corrections;
 the absolute correction sum tends to zero by free-resolvent decay.
-The circles eventually avoid every closed periodic gap. The remaining
-step in Lemma 12.11 is the finite contour decomposition identifying
-the omitted-gap integral with the large-circle integral after the
-retained contour integrals vanish.
+The circles eventually avoid every closed periodic gap. The finite
+contour decomposition is proved under explicit spectral-circle
+geometry; instantiating it for the constructed analytic family remains.
 
 `exists_sourcePsi_lemma12_10` now supplies one open simply connected
 complex neighborhood of the full real-type source locus, contained in
@@ -210,9 +222,27 @@ limit `2π` from uniform relative error to the oriented pole `i/(w-λ)`.
 pole identity for the actual psi quotient. The free-normalized product
 ratio tends uniformly to one, so its raw large-circle integral tends
 to `2π` and the normalized contour functional tends to `1`, without
-supplied asymptotic hypotheses. Lemma 12.11's finite contour
-decomposition and exact omitted-index value, and Lemma 12.12's uniform
-root asymptotics, remain open.
+supplied asymptotic hypotheses.
+`CircleCauchyTransform.lean` proves analyticity off the density circle
+and the annular Cauchy formula with the correctly oriented inner and
+outer terms. No behavior inside the inner hole is assumed.
+`CircleCauchyTransformPeriods.lean` uses contour Fubini to compute the
+transform's period: minus the density's original period on an enclosing
+circle, and zero on a disc disjoint from the density circle.
+`CircleHoleRemoval.lean` glues the outer transform inside an isolating
+circle to the original function plus the inner transform outside it.
+The filling is analytic across the removed hole, subtracts its period
+from enclosing contours, and preserves periods on disjoint discs.
+`FiniteCircleHoleDecomposition.lean` repeats this operation over a
+finite family of disjoint isolating discs and proves the outer integral
+equals the sum of inner integrals.
+`SourcePsiFiniteContourDecomposition.lean` derives this formula for the
+actual psi quotient from actual gap enclosures, exterior gap exclusion,
+and disjoint isolating discs. When the retained inner contours vanish,
+the outer contour equals the omitted one. Lemma 12.11's actual circle
+family construction and contour-zero identification remain open,
+along with its resulting exact omitted-index value and Lemma 12.12's
+uniform root asymptotics.
 
 ## Implemented and checked
 
@@ -222,6 +252,11 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ComplexAnalysis.CircleCauchyTransform` | Cauchy-transform analyticity off the density circle and correctly oriented annular Cauchy decomposition |
+| `NLS.ComplexAnalysis.CircleCauchyTransformPeriods` | Contour Fubini computes the negative density period on enclosing circles and zero period on exterior discs |
+| `NLS.ComplexAnalysis.CircleHoleRemoval` | Analytic filling across one hole, subtraction of its enclosing-contour period, and preservation of disjoint hole periods |
+| `NLS.ComplexAnalysis.FiniteCircleHoleDecomposition` | Outer integral equals the sum of inner integrals for a finite circular hole family with disjoint analytic collars |
+| `NLS.ZakharovShabat.SourcePsiFiniteContourDecomposition` | Actual psi contour decomposition from explicit spectral-circle geometry and reduction to the omitted contour using retained zeros |
 | `NLS.ZakharovShabat.StandardRootGapCorrectionExterior` | Absolute squared-gap radicand bound and actual principal-square-root correction-product limit one along all separated escaping paths |
 | `NLS.ZakharovShabat.CentralCircleThresholds` | Escape of the half-integer radii and transfer of separated exterior thresholds to uniform large-circle assertions |
 | `NLS.ZakharovShabat.SourceCanonicalRootExterior` | Actual midpoint/correction product factorization, canonical-root/free-sine exterior limit one, and eventual large-circle gap avoidance and nonvanishing |

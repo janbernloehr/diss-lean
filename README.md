@@ -4268,7 +4268,19 @@ numerator root and proves that the actual psi quotient's raw
 large-circle integral tends to `2π`; its normalized contour functional
 tends to `1`. This holds for every root displacement vector and every
 complex source at finite `p>1`, including Lemma 12.10's analytic family.
-The next step is Lemma 12.11's finite contour decomposition, which
-identifies the omitted-gap integral with the large-circle integral
-using the retained contour zeros. The exact omitted-index value and
-Lemma 12.12's uniform root asymptotics remain open.
+`CircleCauchyTransform.lean` proves the annular Cauchy decomposition and
+analyticity of each circle transform on the circle complement.
+`CircleCauchyTransformPeriods.lean` computes their contour contributions
+by Fubini. `CircleHoleRemoval.lean` fills one hole analytically, subtracts
+its period from enclosing contours, and preserves disjoint periods.
+`FiniteCircleHoleDecomposition.lean` repeats this over a finite family
+and proves that the outer integral equals the sum of the inner ones.
+`SourcePsiFiniteContourDecomposition.lean` applies the theorem to the
+actual psi quotient under explicit gap enclosures and disjoint
+isolating-circle geometry. Retained contour zeros reduce this sum to
+the omitted-gap contour.
+The next step is to construct the required circle families for the
+analytic extension and identify their retained periods with its known
+zeros, then combine the decomposition with the large-circle limit.
+Lemma 12.11's exact omitted-index value and Lemma 12.12's uniform root
+asymptotics remain open.
