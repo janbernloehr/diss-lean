@@ -5093,7 +5093,31 @@ interior; it supplies the remainder data and proves the terminal root
 normalization. Integrability of the actual and model differentials is
 retained explicitly.
 
-Theorem 13.1(ii) still requires comparison between different prescribed
-root charts and paths traversing several charts, and analytic coverage
-of every complex open-gap source point, including endpoint terminals.
+`SourceAngularEtaRemainderChoiceIndependence.lean` constructs the
+endpoint-normalized remainder data from the actual psi family and proves
+that its values agree across different exterior primitives and isolating
+discs. Different regular root charts give the same terminal remainder
+whenever their full roots agree there, including on the canonical cut.
+In particular, charts matching the actual Dirichlet anti-discriminant
+give one remainder value.
+
+`SourceAngularEtaSheetChoicePathPeriod.lean` evaluates the exponential
+of the prescribed model integral using its logarithmic coordinate. Its
+periodic-start value is independent of the root chart, and equality of
+the terminal full roots fixes its terminal value. This gives model
+periods in `2*pi*integer` across different charts and discs. Combining
+this with exact remainder agreement proves the same statement for the
+literal diagonal eta integrals, assuming actual and model integrability.
+
+`SourceAngularEtaSheetChoiceCommonDomain.lean` constructs all required
+remainder data at each complex source from the original normalized psi
+family. On a common all-gap family of discs, integrable paths to the
+actual Dirichlet terminal in different regular charts normalized by its
+anti-discriminant have eta values differing by `2*pi*integer`. The
+terminal may lie on the cut interior. Each path is contained in its
+own regular prescribed chart.
+
+Theorem 13.1(ii) still requires paths traversing several root charts
+and analytic coverage of every complex open-gap source point, including
+endpoint terminals.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
