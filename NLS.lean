@@ -1283,6 +1283,9 @@ import NLS.ZakharovShabat.SourceAngularBetaUniformTailCommonDomain
 import NLS.ZakharovShabat.SourceAngularBetaUniformSelectedBound
 import NLS.ZakharovShabat.SourceAngularBetaUniformBound
 import NLS.ZakharovShabat.SourceAngularBetaTheorem13_1
+import NLS.SequenceSpaces.UniformHolderSums
+import NLS.ZakharovShabat.SourceAngularBetaSeries
+import NLS.ZakharovShabat.SourceAngularBetaSeriesAnalytic
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

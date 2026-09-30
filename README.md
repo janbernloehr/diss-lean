@@ -4902,4 +4902,28 @@ indices. Unique actual beta values, both analytic scalar boundary-root
 families, both Banach-analytic boundary displacement sequences, and
 analytic midpoint and squared-gap coordinates are retained. The full
 normalized psi family remains on its original simply connected domain.
-Theorem 13.1(ii)-(iv), Corollary 13.2, and the later chapters remain.
+`UniformHolderSums.lean` proves absolute summability under the sum of
+two actual coefficient-space majorants. A fixed finite-exponent
+conjugate multiplier has vanishing norm tails, so the same estimate
+makes symmetric sums uniformly Cauchy on any norm-bounded family.
+
+`SourceAngularBetaSeries.lean` defines the actual correction
+`sourceAngularBetaCorrection` with its diagonal omitted explicitly.
+The actual gap sequence and the Dirichlet-minus-midpoint displacement
+sequence are in `l^p`; the translated punctured reciprocal lattice is
+in the finite conjugate space. Holder therefore proves absolute
+convergence, with a bound independent of the deleted index. Local
+sequence-norm bounds give uniform convergence of the symmetric partial
+sums on one smaller open source neighborhood, for every deleted index.
+
+`SourceAngularBetaSeriesAnalytic.lean` proves that the correction is
+Banach analytic on the same common angular domain. The finite partial
+sums are analytic, and the existing Banach holomorphic-limit theorem
+and complex-smooth-to-analytic theorem apply to their local uniform
+limit. `exists_sourceAngularBetaSeries_analytic_common_domain` retains
+all data from Theorem 13.1(i) and adds absolute summability, local
+uniform convergence, and analyticity of the actual beta correction
+series, including collapsed gaps and endpoint terminals.
+
+The decay assertion `beta^n = o(1)` in Theorem 13.1(iii), parts (ii) and
+(iv), Corollary 13.2, and the later chapters remain.
