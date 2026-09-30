@@ -1,6 +1,19 @@
 # Implementation status
 
-## Current milestone: beta analyticity at every terminal of an open real gap
+## Current milestone: Corollary 13.2 bracket foundations
+
+Theorem 13.1 now supplies actual analytic angle phases and real local
+representatives. The physical source bracket is constructed for `p >= 2`,
+with cotangent representation, absolute Fourier convergence, exponent
+restriction, and the canonical Fourier coordinate sign. The actual
+angle differential is analytic and agrees with every local chart.
+Real finite Fourier approximation supplies the continuity transfer on
+open-gap domains. Details appear in the latest milestone below.
+
+The three spectral canonical identities of Corollary 13.2 remain
+unproved, as does their compatibility for `1 < p < 2`.
+
+## Completed step: beta analyticity at every terminal of an open real gap
 
 `ParametricSineTerminal.lean` constructs an analytic angle by prescribing
 its sine near a point with nonzero cosine. The local inverse sends every
@@ -10779,3 +10792,43 @@ These spectral comparisons still retain C1 regularity, actual and model
 integrability, and conditional terminal normalization explicitly.
 Corollary 13.2's canonical bracket identities and the later chapters
 remain unfinished.
+
+## Latest milestone: Corollary 13.2 bracket foundations
+
+Continuous source cotangents at `p >= 2` now have square-summable
+coefficient representatives on Hilbert directions. The construction
+uses the conjugated Riesz representative and represents the original
+functional by unconjugated bilinear duality. Both component injections
+preserve the actual source norm, and the coefficient map is bounded
+by the original cotangent norm.
+
+The source bivector is a continuous bilinear map with the dissertation's
+physical sign `-i` and reversed frequency in its second factor. Its
+literal Fourier sum is absolutely convergent. It is antisymmetric,
+vanishes on equal cotangents, and satisfies the bound `2 ||L|| ||M||`.
+The bracket of Frechet derivatives is analytic for analytic functionals,
+obeys the product rule, and is unchanged by restriction to a smaller
+source exponent at least two. Actual coordinate functionals verify
+the opposite-frequency bracket `-i` and the zero same-component brackets.
+
+The logarithmic differential of the actual nonzero theta phase defines
+one analytic cotangent on each indexed open-gap source domain. It equals
+the derivative of every local analytic theta representative, including
+charts with different angle and half-gap choices. Actual theta-theta
+and theta-functional brackets are now defined without an angle branch.
+The former is analytic on the joint open-gap domain; both reduce to
+brackets of the single-valued theta phases.
+
+Symmetric Fourier truncation preserves real type, has finite support
+in both components, and converges in every finite source exponent.
+It eventually stays in any open neighborhood of its limit. This proves
+the continuity extension of scalar identities from finite real sources,
+including domains that remove gap loci. The analytic bracket transfer
+and the actual theta-theta zero transfer retain the finite identity
+as an explicit hypothesis.
+
+No spectral canonical identity is assumed as an axiom or claimed as
+proved here. The finite/Hilbert computations of `{I_n,I_m} = 0`,
+`{theta_n,theta_m} = 0`, and `{theta_n,I_m} = delta_nm` remain, followed
+by the spectral differential compatibility needed for `1 < p < 2`.
+Corollary 13.2 and the later chapters remain unfinished.

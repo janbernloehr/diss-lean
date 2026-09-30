@@ -5353,3 +5353,41 @@ analytic theta representative at any complex open-gap source and proves
 that it is real on the real locus in its chart.
 
 Corollary 13.2 and the later chapters remain.
+
+### Corollary 13.2: bracket and angle differential foundations
+
+`HilbertCotangent.lean` and `SourceCotangent.lean` construct the
+square-summable Fourier coefficients of every continuous source
+cotangent at `p >= 2`. Bilinear duality recovers its value on every
+Hilbert direction, with a bound by the original operator norm.
+`SourceBivector.lean` uses these coefficients to construct the physical
+`-i` cross-component bracket. Its literal Fourier sum is absolutely
+convergent and reverses the frequency in the second factor.
+
+`SourceBracket.lean` applies this continuous bivector to Frechet
+derivatives. The bracket is analytic for analytic functionals,
+antisymmetric, obeys the product rule, and is preserved by restriction
+along source exponent inclusions. `SourceCoordinateBrackets.lean`
+checks the physical convention: opposite-component Fourier coordinates
+at frequencies `n` and `-n` have bracket `-i`; same-component brackets
+vanish.
+
+`SourceAngularThetaDifferential.lean` defines one analytic angle
+cotangent on each actual open-gap domain from the logarithmic
+differential of `exp(2i theta)`. It equals the derivative of every local
+analytic theta representative. `SourceAngularThetaPoisson.lean` defines
+the actual angle brackets without selecting a branch, identifies them
+with chart brackets, and reduces their prescribed values to identities
+for the single-valued phases.
+
+`SourceRealTypeFiniteApproximation.lean` proves that symmetric Fourier
+truncations preserve real type and converge in every finite source
+exponent. They eventually remain in any prescribed open neighborhood,
+including a domain with one or several gap loci removed. Continuous
+identities extend from finite real potentials. This gives the generic
+bracket transfer and the actual angle-angle zero transfer, with the
+finite identity retained as an explicit hypothesis.
+
+The finite/Hilbert spectral computations of `{I_n,I_m}`, `{theta_n,theta_m}`,
+and `{theta_n,I_m}` remain to be proved. Corollary 13.2 is not yet complete;
+brackets at `1 < p < 2` also require spectral differential compatibility.

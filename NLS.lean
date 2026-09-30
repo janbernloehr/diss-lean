@@ -1350,6 +1350,15 @@ import NLS.ZakharovShabat.SourceAngularCauchyReal
 import NLS.ZakharovShabat.SourceAngularThetaAnalytic
 import NLS.ZakharovShabat.SourceAngularThetaSpectral
 import NLS.ZakharovShabat.SourceAngularThetaTheorem13_1
+import NLS.SequenceSpaces.HilbertCotangent
+import NLS.SequenceSpaces.SourceCotangent
+import NLS.Poisson.SourceBivector
+import NLS.Poisson.SourceBracket
+import NLS.Poisson.SourceCoordinateBrackets
+import NLS.ZakharovShabat.SourceRealTypeFiniteApproximation
+import NLS.Poisson.SourceFiniteBracketTransfer
+import NLS.ZakharovShabat.SourceAngularThetaDifferential
+import NLS.ZakharovShabat.SourceAngularThetaPoisson
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

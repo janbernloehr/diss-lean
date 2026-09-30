@@ -18690,3 +18690,64 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {n : �
   D.admissible_angle_im_eq_zero_of_realType ψ hψ ha Q γ hQ hnorm hγ hint hmodel hs hreal hbeta
 
 end NLS.ZakharovShabat
+
+/- Corollary 13.2 foundations: physical signs, Hilbert representation,
+exponent restriction, real finite approximation, and actual angle cotangents. -/
+noncomputable section
+open Set Filter Topology
+open scoped ENNReal
+namespace NLS.Poisson
+
+example (ψ : CoeffPair (3 : ℝ≥0∞)) :
+    sourceBracket (by norm_num) (sourceCoordinateLeft 5) (sourceCoordinateRight (-5)) ψ =
+      -Complex.I := by
+  rw [sourceBracket_coordinateLeft_coordinateRight]
+  norm_num
+
+example (ψ : CoeffPair (3 : ℝ≥0∞)) :
+    sourceBracket (by norm_num) (sourceCoordinateLeft 5) (sourceCoordinateRight 6) ψ = 0 := by
+  rw [sourceBracket_coordinateLeft_coordinateRight]
+  norm_num
+
+example (ψ : CoeffPair (3 : ℝ≥0∞)) :
+    sourceBracket (by norm_num) (sourceCoordinateRight 5) (sourceCoordinateRight (-5)) ψ = 0 := by
+  simp
+
+example (L : CoeffPair (3 : ℝ≥0∞) →L[ℂ] ℂ) (h : CoeffPair 2) :
+    Coeff.dualPairing (CoeffPair.cotangentCoefficients (by norm_num) L).1 h.fst +
+      Coeff.dualPairing (CoeffPair.cotangentCoefficients (by norm_num) L).2 h.snd =
+        L (CoeffPair.exponentInclusion (by norm_num) h) :=
+  CoeffPair.dualPairing_cotangentCoefficients (by norm_num) L h
+
+example (F G : CoeffPair (3 : ℝ≥0∞) → ℂ) (ψ : CoeffPair 2)
+    (hF : DifferentiableAt ℂ F (CoeffPair.exponentInclusion (by norm_num) ψ))
+    (hG : DifferentiableAt ℂ G (CoeffPair.exponentInclusion (by norm_num) ψ)) :
+    sourceBracket (by norm_num) (F ∘ CoeffPair.exponentInclusion (by norm_num))
+        (G ∘ CoeffPair.exponentInclusion (by norm_num)) ψ =
+      sourceBracket (by norm_num) F G (CoeffPair.exponentInclusion (by norm_num) ψ) :=
+  sourceBracket_restrict_exponent (by norm_num) (by norm_num) F G ψ hF hG
+
+end NLS.Poisson
+
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {U : Set (CoeffPair p)} (hU : IsOpen U) (φ : CoeffPair p) (hφ : φ ∈ U)
+    (hreal : IsRealType (CoeffPair.toMax p φ)) :
+    ∀ᶠ N : ℕ in atTop, sourceSymmetricTruncate N φ ∈ U ∧
+      IsRealType (CoeffPair.toMax p (sourceSymmetricTruncate N φ)) ∧
+      Coeff.HasFiniteSupport (sourceSymmetricTruncate N φ).fst ∧
+      Coeff.HasFiniteSupport (sourceSymmetricTruncate N φ).snd := by
+  filter_upwards [(tendsto_sourceSymmetricTruncate hp φ).eventually (hU.mem_nhds hφ)] with N hN
+  exact ⟨hN,sourceSymmetricTruncate_realType N φ hreal,sourceSymmetricTruncate_finite N φ⟩
+
+example (hp : (3 : ℝ≥0∞) ≠ ⊤) (hp1 : 1 < (3 : ℝ≥0∞)) :
+    ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+      ∃ s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k, ∀ n : ℤ,
+        AnalyticOnNhd ℂ (sourceAngularThetaDifferential hp hp1 n s)
+          {ψ : CoeffPair 3 | ψ ∈ W ∧ canonicalPeriodicGap hp hp1
+            (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0} := by
+  obtain ⟨W₀,B,W,_,_,_,_,_,_,s,D⟩ := exists_sourceAngularTheta_theorem13_1_iv hp hp1
+  exact ⟨W,D.source_open,D.real_subset,s,D.analyticOnNhd_thetaDifferential⟩
+
+end NLS.ZakharovShabat
