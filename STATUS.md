@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: Lemma 12.12 uniform midpoint lower bounds
+## Current milestone: Lemma 12.12 finite-head squared-gap offsets
+
+`SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound`
+now proves the actual quadratic-gap root-offset estimate on any fixed
+finite selected head. Near each real reference source, one complex
+source neighborhood and one constant work for all omitted indices,
+including collapsed selected gaps. Noncollapsed reference gaps stay
+bounded away from zero, so assigned root placement bounds their
+squared-gap quotient. A collapsed reference gap has a fixed small
+circle whose doubled radius remains inside its assigned disc. Every
+other moving midpoint stays outside that doubled circle. Endpoint
+continuity makes the selected midpoint shift and gap small relative
+to the circle. Uniform filled-branch stability puts all actual root
+inputs in the compact-product neighborhood with common quotient
+upper and positive midpoint lower bounds.
+
+Rescaling chi by its midpoint denominator gives a regular factor
+whose midpoint value is exactly the regular quotient. The rescaling
+preserves the weighted contour zero, and separation controls the
+factor on the circle independently of the omitted index. The actual
+assigned-circle contour zeros hold on one smaller source ball for
+all index pairs, by analytic continuation of real normalization.
+Nested-circle homotopy transfers those zeros to the fixed inner
+circle. The quadratic reciprocal-root correction then proves the
+offset estimate without dividing by the selected gap. A finite
+intersection assembles both reference-gap cases into one head bound.
 
 `exists_sourcePsi_normalized_complex_extension_with_uniform_midpoint_bounds`
 constructs one common open simply connected complex neighborhood
@@ -61,9 +86,11 @@ factorization also at every collapsed retained gap.
 
 The chi tail majorants and all-index midpoint lower bounds are now
 instantiated for the actual analytic family on a common complex
-domain. To finish Lemma 12.12, obtain the finite-head root-offset
-estimates, transfer the retained zeros to the selected tail circles,
-and assemble the all-index ℓp offset bound.
+domain. The finite-head squared-gap offsets are proved on one smaller
+complex neighborhood of each real base source. To finish Lemma 12.12,
+transfer the retained zeros to the selected tail circles, combine the
+head and tail estimates, and assemble the all-index ℓp offset bound
+on a common complex domain.
 
 ## Completed: Lemma 12.11 exact complex normalization
 

@@ -4364,7 +4364,23 @@ restricts the atlas source balls while retaining their chi majorants.
 `SourcePsiComplexMidpointBounds.lean` constructs one common open
 simply connected normalized analytic psi extension with positive
 midpoint bounds and chi tail majorants locally at every complex
-source, independently of both indices. Lemma 12.12 still requires
-finite-head root-offset estimates, transfer of retained zeros to the
-selected tail circles, and assembly of the all-index squared-gap
-ℓp conclusion.
+source, independently of both indices.
+`SourcePsiGapProductDiscBound.lean` gives one quotient bound on a fixed
+compact disc near the entire real gap product and reference source.
+`SourcePsiLocalAssignedContourZero.lean` gives actual retained contour
+zeros simultaneously on the fixed assigned boundaries near each real
+source. `SourcePsiMidpointNormalizedOffset.lean` rescales chi to make
+its midpoint value exactly the regular quotient and proves a quadratic
+offset estimate with constants independent of the omitted index.
+`SourcePsiCollapsedGapOffsetGeometry.lean` constructs a fixed inner
+circle near a collapsed reference gap whose doubled disc stays inside
+the assigned disc, separating every other moving midpoint.
+`SourcePsiFiniteHeadRootOffset.lean` instantiates the rescaled contour
+estimate for all actual analytic branches near a collapsed reference
+gap, including complex sources with zero selected gap. Noncollapsed
+reference gaps use continuity and assigned root placement. A finite
+intersection gives one actual squared-gap offset bound for any fixed
+finite head, uniformly over omitted indices near each real source.
+Lemma 12.12 still requires transfer of retained zeros to the selected
+tail circles, combining head and tail bounds, and assembly of the
+all-index squared-gap ℓp conclusion on a common complex domain.
