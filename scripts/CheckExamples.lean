@@ -18562,3 +18562,42 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
     hp hp1 hq φ hφ
 
 end NLS.ZakharovShabat
+
+/- Section 13: analytic eta remainder and normalized sheet recovery. -/
+noncomputable section
+open Set Metric Complex
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {m : ℤ}
+    {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    {W V : Set (CoeffPair p)} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData hp hp1 m s W V c T r R z₀)
+    (hμ : AnalyticOnNhd ℂ (fun ψ : CoeffPair p =>
+      canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) V) :
+    ∃ ρ : ℝ, r < ρ ∧ ρ < R ∧
+      AnalyticOnNhd ℂ (sourceAngularEtaRemainderCauchyCandidate hp hp1 m s (c m) r R z₀ ρ) V := by
+  let ρ := (r+R)/2
+  have hrρ : r < ρ := by dsimp only [ρ]; linarith [D.inner_lt_outer]
+  have hρR : ρ < R := by dsimp only [ρ]; linarith [D.inner_lt_outer]
+  exact ⟨ρ,hrρ,hρR,D.analyticOnNhd_etaRemainderCauchyCandidate ρ hrρ hρR hμ⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {m : ℤ}
+    {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    {W V : Set (CoeffPair p)} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData hp hp1 m s W V c T r R z₀)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (ρ : ℝ) (hrρ : r < ρ) (hρR : ρ < R)
+    {d : ℂ} {S : ℝ} {w : ℂ} {F E : ℂ → ℂ}
+    (hE : SourceAngularEtaRemainderSheetPrimitiveData hp hp1 m s ψ d S w F E)
+    (hseg : sourcePeriodicSegment hp hp1 ψ m ⊆ ball d S) (hw : w ≠ 0)
+    (hb : canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m ∈
+      sourceAngularRegularSheetDisc hp ψ d S w)
+    (hroot : sourceAngularRootSheet hp w
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m,ψ) =
+      sourceAntiDiscriminantCandidate hp hp1 ψ
+        (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m)) :
+    sourceAngularEtaRemainderCauchyCandidate hp hp1 m s (c m) r R z₀ ρ ψ =
+      E (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ m) :=
+  D.etaRemainderCauchyCandidate_eq_normalized_terminal ψ hψ ρ hrρ hρR hE hseg hw hb hroot
+
+end NLS.ZakharovShabat

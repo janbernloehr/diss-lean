@@ -5244,8 +5244,39 @@ results. Every complex periodic terminal there has a constructed analytic
 eta source representative. Regular terminals are covered by the local
 representative theorem when their base angle lies in its angle chart.
 
-Theorem 13.1(ii) still requires coverage of every regular complex
-Dirichlet terminal and assembly of these representatives with all
-admissible-path values modulo `pi`, including the shift when the
-endpoint anchor changes.
+`SourceAngularEtaJointAnnulus.lean` subtracts the exact diagonal model
+period and constructs a jointly analytic annular remainder primitive.
+`SourceAngularEtaCauchyCandidate.lean` takes its quotient by the selected
+root and projects it into the whole enclosing disc. The result is joint
+analytic through the cut, either periodic endpoint, and collapsed gaps.
+Its moving Dirichlet evaluation is analytic wherever the actual terminal
+is analytic, and vanishes at both periodic terminal conventions.
+
+`SourceAngularEtaCauchyEquation.lean` proves the projected quadratic
+root equation with the actual diagonal gap numerator minus `i` as its
+right-hand side. `SourceAngularEtaCauchySheetPrimitive.lean` constructs
+canonical and prescribed-sheet remainder primitives from this equation.
+Both endpoint limits are zero, and the exact exterior root ratio matches
+the sheet primitive, also for collapsed gaps.
+
+`SourceAngularEtaCauchyTerminal.lean` identifies the explicit terminal
+formula with every normalized remainder primitive matching the actual
+anti-discriminant. The formula is independent of the annular chart,
+anchor, and enclosing Cauchy circle. The literal eta integral along any
+integrable C1 admissible continued root is its model integral plus this
+analytic remainder. Actual and model integrability remain hypotheses;
+regular terminals require anti-discriminant normalization, while either
+root sign is permitted at a periodic terminal.
+
+`SourceAngularEtaCauchyCommonDomain.lean` constructs one open complex
+neighborhood of the entire real locus on which every complex source and
+every gap index has such an analytic remainder chart. No nonzero-gap
+condition or restriction to a convex terminal-angle chart is required.
+The established beta results and real eta charts are retained on a
+larger domain for the same normalized psi family.
+
+Theorem 13.1(ii) still requires combining these remainder formulas with
+the analytic complex terminal angles and proving agreement of the full
+eta representatives with all admissible-path values modulo `pi`,
+including the shift when the endpoint anchor changes.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
