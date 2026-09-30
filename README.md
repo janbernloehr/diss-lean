@@ -4706,3 +4706,35 @@ real source with an open selected gap, for every off-diagonal pair,
 including central indices and both periodic terminals. Source
 analyticity at collapsed real gaps and the remaining Theorem 13.1
 bounds and angular-sum assertions remain to be proved.
+
+`ParametricCircleTransforms.lean` proves joint Banach source and spectral
+analyticity of fixed-circle Cauchy and exterior logarithmic transforms.
+`ParametricAnnularPrimitive.lean` combines them into an explicit primitive
+on the whole zero-period annulus, normalized at a fixed regular anchor.
+The construction permits arbitrary winding and has an exact derivative.
+
+`SourceAngularJointAnnulusPrimitive.lean` constructs such charts from the
+actual canonical root, symmetric periodic coordinates, and assigned
+contour periods near every real source. One chart supports every
+off-diagonal numerator around the selected gap, including a collapsed
+gap, and its inner disc contains the moving Dirichlet terminal. A common
+domain retains both analytic boundary sequences, all actual beta values,
+open-gap beta analyticity, and the full simply connected psi extension.
+
+`SourceStandardRootCauchyZero.lean` proves that the reciprocal selected
+standard root has zero interior Cauchy transform on every enclosing
+circle. Inversion proves the result on large circles and annular Cauchy's
+theorem transfers it to any assigned circle. Thus every additive
+primitive constant cancels from the interior projection after division
+by the selected root.
+
+`SourceAngularCauchyCandidate.lean` uses this projection to construct a
+jointly analytic quotient candidate on the whole enclosing disc.
+Multiplication by the actual Dirichlet anti-discriminant coefficient and
+evaluation at the moving terminal give a source-analytic angular
+candidate at every real source, including collapsed gaps. The candidate
+agrees with actual beta at endpoint terminals and collapsed real base
+points. An analytic extension of the normalized spectral quotient would
+identify it throughout the disc; that extension and agreement at nearby
+regular terminals are still required before claiming collapsed-gap beta
+analyticity or the full Theorem 13.1.
