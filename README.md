@@ -4601,6 +4601,31 @@ neighborhood supporting all coordinates of both boundary sequences.
 `SourceAngularBetaBoundaryDomain.lean` places the constructed beta values
 on such a neighborhood, retaining the original simply connected psi
 domain. Thus the moving Dirichlet terminals are analytic on the beta
-construction domain. Parameter-dependent normalized primitives and beta
+construction domain. Canonical periodic-endpoint primitive families and beta
 analyticity, especially at periodic terminals and collapsed gaps, remain
 to be proved.
+
+`ParametricIntervalIntegralAnalytic.lean` proves full Banach source
+analyticity of fixed interval integrals of jointly analytic families.
+Compactness supplies the derivative bounds needed for differentiation
+under the integral; callers need not assume them. Iterating the
+operator-valued derivative gives complex smoothness and a power series.
+
+`ParametricConvexPrimitive.lean` constructs an explicit jointly analytic
+primitive by integrating along the affine segment from a fixed anchor.
+Its anchor value is zero, its spectral derivative is the original
+integrand, and it equals the endpoint difference of every primitive.
+Evaluation at an analytic moving terminal is analytic.
+
+`ParametricCosinePrimitive.lean` normalizes such a family at the fixed
+angle pi. It matches an endpoint-normalized spectral primitive with the
+exact selected-root sheet coefficient on their common angle chart.
+`SourceAngularJointPrimitive.lean` applies this to the actual regular
+angular integrands and gap numerators, including analytic evaluation
+at a moving regular Dirichlet root. One common beta neighborhood supports
+all jointly analytic gap numerators and both analytic boundary sequences.
+The regular sheet primitives use a fixed regular anchor. The cosine
+construction still needs analytic midpoint/half-gap functions and a
+common angle chart. Constructing these from the canonical roots and
+proving beta analyticity through periodic terminals and collapsed gaps
+remain unfinished.

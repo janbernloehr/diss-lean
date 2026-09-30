@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: analytic moving Dirichlet terminals for Section 13
+## Current milestone: jointly analytic angular primitive families
+
+`ParametricIntervalIntegralAnalytic.lean` proves full Banach analyticity
+of fixed real-interval integrals of jointly analytic families on an
+open parameter domain. A compact spectral set has one local source
+neighborhood with bounded full derivative. This proves differentiation
+under the integral without an assumed uniform bound. Iteration for
+operator-valued derivatives yields every complex differentiability
+order, hence an actual Banach power series.
+
+`ParametricConvexPrimitive.lean` constructs the affine-segment integral
+from a fixed anchor. The resulting family is jointly analytic on a
+fixed open convex spectral chart and an open source domain. Its spectral
+derivative is exactly the integrand, its anchor value is zero, and at
+each source it equals the endpoint difference of any other primitive.
+Evaluation at an analytic moving spectral terminal is source analytic.
+
+`ParametricCosinePrimitive.lean` pulls a jointly analytic numerator back
+through an analytic cosine coordinate family and integrates from the
+fixed angle pi. It proves joint analyticity, zero endpoint-angle
+normalization, and the exact derivative. At each source it matches
+every endpoint-normalized canonical spectral primitive, with the exact
+root-sheet coefficient, on their common convex angle chart. The matching
+does not assume source regularity of that canonical spectral primitive.
+
+`SourceAngularJointPrimitive.lean` supplies actual jointly analytic
+regular-sheet primitives near every regular spectral/source point.
+At a real source with nonzero Dirichlet anti-discriminant, their
+evaluation at the moving canonical Dirichlet root is analytic. These
+local regular primitives are normalized at a fixed regular base terminal.
+The file also proves joint analyticity of the literal regular gap
+numerators and constructs their normalized cosine primitive families.
+One actual common beta neighborhood supports all these numerator
+domains together with both analytic boundary-coordinate sequences;
+the full simply connected psi domain and estimates are retained.
+
+To deduce beta analyticity, construct common cosine charts for the
+canonical midpoint and half-gap, transfer the periodic-endpoint
+normalization to the chosen Dirichlet sheet, and include periodic
+terminals and collapsed gaps. No beta source analyticity is asserted
+yet. Beta continuity, Theorem 13.1 estimates, diagonal eta, the convergent
+angular sum, and Corollary 13.2 also remain unfinished.
+
+## Completed step: analytic moving Dirichlet terminals for Section 13
 
 `CanonicalPeriodOneBoundaryAnalytic.lean` proves that every indexed
 ordinary Dirichlet and Neumann root is algebraically simple at every
@@ -29,9 +72,10 @@ proved pointwise beta construction domain. All off-diagonal beta values
 and both analytic boundary-coordinate sequences coexist there, while
 the full simply connected Lemma 12.12 psi domain is retained separately.
 
-Analyticity of the moving terminals is now established. The normalized
-primitive must still be made analytic in the source, including across
-periodic-terminal and collapsed-gap cases, to prove beta analyticity.
+Analyticity of the moving terminals is now established. The construction
+above supplies joint regular and cosine primitive families. The canonical
+periodic-endpoint normalization must still be made source analytic,
+including periodic-terminal and collapsed-gap cases, to prove beta analyticity.
 Beta continuity, the uniform Theorem 13.1 estimates, diagonal eta, and
 the convergent angular sum also remain. Theorem 13.1 and Corollary 13.2
 are unfinished.
