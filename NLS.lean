@@ -1161,6 +1161,9 @@ import NLS.ComplexAnalysis.SegmentIsolatingCircles
 import NLS.ZakharovShabat.SourcePsiIsolatingCircles
 import NLS.ZakharovShabat.SourcePsiIsolatingFiniteGeometry
 import NLS.ZakharovShabat.SourcePsiRealNormalization
+import NLS.ZakharovShabat.SourcePsiAssignedCircleFamily
+import NLS.ZakharovShabat.SourcePsiIsolatingComplexNormalization
+import NLS.ZakharovShabat.SourcePsiLemma12_11
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

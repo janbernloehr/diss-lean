@@ -4289,7 +4289,19 @@ half-integer cutoff, enclosing exactly the signed indices `[-k,k]`.
 large-circle limit to prove exact omitted normalization for every
 real gap solution: `1` for the normalized contour and `2π` for the raw
 integral. The canonical real psi roots have full orthogonality on every
-valid real-centered gap-circle family. The next step is to identify
-the analytic complex extension's retained zeros on the constructed
-circles and extend this exact orthogonality throughout its domain.
-Lemma 12.12's uniform root asymptotics also remain open.
+valid real-centered gap-circle family.
+`SourcePsiAssignedCircleFamily.lean` proves that the original assigned
+boundaries remain valid throughout their complex source ball, and
+nested homotopy identifies the smaller circles' periods with theirs.
+`SourcePsiComplexContourAnalytic.lean` now proves joint analyticity of
+the normalized contour also at complex parameters, including the
+omitted index. `SourcePsiIsolatingComplexNormalization.lean` composes
+these periods with the root branches and uses the real-form identity
+to extend exact orthogonality to every complex source ball.
+`SourcePsiLemma12_11.lean` constructs one common open simply connected
+complex source neighborhood retaining all of Lemma 12.10's analytic
+branches and assigned root placement. One assigned circle family at
+each source gives exact Kronecker periods simultaneously for every
+numerator; the literal omitted raw integral is exactly `2π` everywhere
+on this domain. The next step is Lemma 12.12's locally uniform root
+asymptotics with bounds independent of the deleted index.

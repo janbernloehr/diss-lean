@@ -14,6 +14,35 @@ open Set Metric Complex
 open scoped ENNReal
 namespace NLS.ZakharovShabat
 
+/-- The normalized contour, including its omitted-index coordinate,
+is jointly analytic at every complex parameter whose fixed circle
+stays in the actual moving-gap complement. -/
+theorem analyticAt_sourcePsiContour_of_contour_domain
+    {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ)
+    (a : Coeff p) (ψ : CoeffPair p) (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (W : Set (CoeffPair p)) (hψW : ψ ∈ W)
+    (hD : IsOpen (sourcePsiContourJointDomain hp hp1 W))
+    (hF : AnalyticOnNhd ℂ (sourcePsiContourIntegrandJoint hp hp1 n)
+      (sourcePsiContourJointDomain hp hp1 W))
+    (hcircle : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 ψ) :
+    AnalyticAt ℂ (fun b : Coeff p × CoeffPair p =>
+      sourcePsiContour hp hp1 n b.1 b.2 c R) (a,ψ) := by
+  let D := sourcePsiContourJointDomain hp hp1 W
+  let F := sourcePsiContourIntegrandJoint hp hp1 n
+  have hbase (z : ℂ) (hz : z ∈ sphere c R) : (z,(a,ψ)) ∈ D :=
+    ⟨hψW,hcircle hz⟩
+  obtain ⟨V,hVopen,hbaseV,_,_,hbound⟩ :=
+    NLS.ComplexAnalysis.exists_uniform_joint_fderiv_bound_on_circle
+      F D hD hF c R (a,ψ) hbase
+  have hIntegral : AnalyticAt ℂ
+      (fun b : Coeff p × CoeffPair p => ∮ z in C(c,R), F (z,b)) (a,ψ) :=
+    (NLS.ComplexAnalysis.analyticOnNhd_circleIntegral_of_jointAnalytic
+      F hD hF c R hR hVopen (fun b hb z hz => (hbound z hz b hb).1)) (a,ψ) hbaseV
+  change AnalyticAt ℂ (fun b : Coeff p × CoeffPair p =>
+    (2*Real.pi : ℂ)⁻¹ * ∮ z in C(c,R), F (z,b)) (a,ψ)
+  exact analyticAt_const.mul hIntegral
+
 /-- A fixed psi equation coordinate is Fréchet-holomorphic at any
 complex parameter point whose contour lies in the common domain of
 the jointly analytic integrand. -/
