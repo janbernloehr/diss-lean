@@ -4800,3 +4800,34 @@ connected psi extension on its original domain. This proves the
 analyticity assertion of Theorem 13.1(i) for all indices. Its uniform
 quantitative estimate, diagonal eta modulo pi, the angular sum and its
 decay, and the reality and canonical-bracket assertions remain unfinished.
+
+`CirclePrimitiveBounds.lean` bounds a primitive's variation on an
+entire enclosing circle by the half-circle length times its derivative
+bound. The normalized Cauchy transform then has an explicit bound on
+any smaller concentric disc. `QuadraticRootBounds.lean` supplies bounds
+that depend only on the root square, allowing either sheet and zero gaps.
+
+`SourceAngularBetaBound.lean` proves that the actual normalized Dirichlet
+coefficient squares to the selected quadratic polynomial. Its norm is
+at most `|mu_m - tau_m| + |gamma_m|/2`, with no nonzero-gap or
+regular-terminal assumption. On a chart circle of radius `rho`, the
+selected root is bounded below by `rho - r`. Removing the primitive's
+constant in the Cauchy projection gives the explicit quotient bound
+`pi * rho^2 * M / (rho - r)^3` whenever the actual gap numerator is
+bounded by `M` on that circle. Multiplying the two estimates bounds the
+actual beta throughout the complex chart, including collapsed gaps
+and endpoint terminals.
+
+`SourceAngularBetaLocalBound.lean` proves joint analyticity of the actual
+gap numerator on the annulus. Compactness then supplies a local circle
+bound at every complex source in the chart, hence a local beta bound
+by `|gamma_m| + |mu_m - tau_m|`. This constant can depend on both indices.
+
+`SourceAngularBetaRegularFactorBound.lean` identifies the actual gap
+numerator with the retained psi root factor times the midpoint-filled
+regular factor chi, divided by `pi * (n - m)`. A circle bound on chi
+therefore gives an explicit beta estimate with the required
+`1/|n - m|` factor. The remaining work for the quantitative assertion
+of Theorem 13.1(i) is to assemble local bounds on chi and retained
+roots, and chart radii, that are uniform in both indices. The fixed-pair
+local estimates alone do not prove that uniform assertion.

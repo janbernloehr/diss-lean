@@ -1159,6 +1159,7 @@ import NLS.ComplexAnalysis.CircleIntegralExteriorNormalization
 import NLS.ZakharovShabat.SourcePsiExteriorNormalization
 import NLS.ComplexAnalysis.CircleCauchyTransform
 import NLS.ComplexAnalysis.CircleCauchyTransformPeriods
+import NLS.ComplexAnalysis.CirclePrimitiveBounds
 import NLS.ComplexAnalysis.CircleHoleRemoval
 import NLS.ComplexAnalysis.FiniteCircleHoleDecomposition
 import NLS.ZakharovShabat.SourcePsiFiniteContourDecomposition
@@ -1213,6 +1214,7 @@ import NLS.ComplexAnalysis.CircleLogarithmicPrimitive
 import NLS.ComplexAnalysis.CircleCauchyTransformDerivative
 import NLS.ComplexAnalysis.QuadraticCauchyEquation
 import NLS.ComplexAnalysis.QuadraticRootPrimitive
+import NLS.ComplexAnalysis.QuadraticRootBounds
 import NLS.ComplexAnalysis.AnnularHolomorphicPrimitive
 import NLS.ZakharovShabat.SourceAngularAnnulusPrimitive
 import NLS.ComplexAnalysis.RadialSegmentGeometry
@@ -1270,6 +1272,9 @@ import NLS.ZakharovShabat.SourceAngularCauchySheetPrimitive
 import NLS.ZakharovShabat.SourceAngularBetaCauchyAnalytic
 import NLS.ZakharovShabat.SourceAngularUniformAnnulusPrimitive
 import NLS.ZakharovShabat.SourceAngularBetaAnalyticCommonDomain
+import NLS.ZakharovShabat.SourceAngularBetaBound
+import NLS.ZakharovShabat.SourceAngularBetaLocalBound
+import NLS.ZakharovShabat.SourceAngularBetaRegularFactorBound
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
