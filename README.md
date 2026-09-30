@@ -5117,7 +5117,32 @@ anti-discriminant have eta values differing by `2*pi*integer`. The
 terminal may lie on the cut interior. Each path is contained in its
 own regular prescribed chart.
 
-Theorem 13.1(ii) still requires paths traversing several root charts
-and analytic coverage of every complex open-gap source point, including
-endpoint terminals.
+`ContinuousSquareRootPath.lean` proves that continuous roots of the same
+nonvanishing square have one fixed relative sign on a connected parameter
+set. It also recovers the real-parameter derivative of a continuous
+nonzero root from the derivative of its square, using its local prescribed
+root. `ContinuousQuadraticRootPathIntegral.lean` applies this to a root
+given only along a spectral path and evaluates the exponential of its
+logarithmic model integral from the two endpoint values.
+
+`SourceAngularAdmissiblePathRoot.lean` records continuous root continuation
+on the paper's admissible paths. Continuity on the closed unit interval
+suffices; extension outside it is automatic. The interior avoids the
+selected cut and lies in its isolating disc. The continued full root has
+one fixed sign relative to the canonical root there, and the literal
+angular integral is transported by that sign for every numerator index.
+No single prescribed root chart is required to contain the path.
+
+`SourceAngularEtaAdmissiblePathModel.lean` divides the continued full root
+by the actual omitted product and evaluates the exponentiated eta model
+integral. Two integrable C1 admissible paths from a common periodic
+endpoint, with equal terminal full-root values, have model integrals
+differing by `2*pi*integer`. This includes regular cut-interior terminals
+and periodic endpoints, with arbitrary intermediate root charts. The
+model's initial logarithmic coordinate is independent of the root sign.
+
+Theorem 13.1(ii) still requires transport of the normalized remainder
+along these general continued paths, followed by the actual eta period
+comparison, and analytic coverage of every complex open-gap source point,
+including endpoint terminals.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
