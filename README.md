@@ -4442,6 +4442,16 @@ of winding. `SourceAngularAnnulusPrimitive.lean` supplies the periods
 from actual Lemma 12.12 normalization and constructs one all-gap
 annulus family at every complex source, simultaneously for all
 off-diagonal indices. Their actual angular integrals are primitive
-endpoint differences. Extending these primitives through the full
-gap complement, handling singular endpoint limits, and constructing
-the angular coordinates and their Theorem 13.1 estimates remain next.
+endpoint differences. `RadialSegmentGeometry.lean` proves outward
+connector and annular-anchor geometry for star-convex cuts, also
+when the radial and circle centers differ.
+`PrimitiveRadialContinuation.lean` proves anchor independence and
+local holomorphy by comparing convex-neighborhood primitives.
+`PrimitiveOnDiscComplement.lean` extends an annular primitive to the
+entire enclosing disc minus its cut, retaining its annular values.
+`SourceAngularDiscComplementPrimitive.lean` applies this to each
+actual moving gap at every complex source, simultaneously for all
+off-diagonal indices. Every regular C¹ integral on the full cut
+complement is a primitive endpoint difference, with arbitrary winding
+and no homotopy assumption. Common singular endpoint limits and the
+angular coordinates and their Theorem 13.1 estimates remain next.

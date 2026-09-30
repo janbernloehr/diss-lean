@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: Section 13 annular angular primitives
+## Current milestone: Section 13 full isolating cut-complement primitives
+
+`RadialSegmentGeometry.lean` proves that outward rays from a point
+of a star-convex cut cannot re-enter the cut. Every noncentral point
+in an enclosing disc can reach its outer annulus on such a ray, and
+two annular anchors on that ray are joined inside the annulus. The
+radial center may differ from the center of the enclosing circles.
+
+`PrimitiveRadialContinuation.lean` extends an annular primitive
+inward by subtracting the integral along an outward connector.
+Convex open neighborhoods of the compact connectors supply local
+holomorphic primitives. Comparing these primitives proves that the
+value is independent of the chosen radial anchor. The same comparison
+makes the extension holomorphic locally, without differentiating its
+chosen anchor. Its values on the original annulus are retained.
+
+`PrimitiveOnDiscComplement.lean` instantiates this continuation for
+an enclosed closed star-convex cut. An annular primitive extends to
+the entire enclosing disc minus the cut. Its zero-period corollary
+also constructs this full primitive directly from the annular Cauchy
+and logarithmic primitive theorems.
+
+`SourceAngularDiscComplementPrimitive.lean` applies the continuation
+to each actual moving gap, using its midpoint as radial center. The
+normalized psi family's annuli and contour zeros give one common
+all-gap family at every complex source. Every off-diagonal integrand
+has a primitive on the entire isolating disc minus its selected gap.
+All regular C¹ path integrals there are primitive endpoint differences,
+including paths entering the inner-circle region and winding around
+the cut. No path homotopy or extra period assumption is supplied.
+The construction includes noncollapsed and collapsed complex gaps.
+
+The next step is to prove common boundary limits of these primitives
+at the singular periodic endpoints and use them in the admissible
+endpoint integrals defining `β_m^n`. The diagonal `η_n`, Theorem 13.1's
+uniform bounds, joint angular analyticity, and convergent sum remain
+to be proved. The current full-domain path formula requires the path,
+including its endpoints, to avoid the selected gap.
+
+## Completed step: annular angular primitives
 
 `CircleLogarithmicPrimitive.lean` constructs a single-valued exterior
 primitive using the normalized kernel `log(1-(w-c)/(z-c))`. Outside
@@ -27,12 +66,9 @@ integrand has a primitive there, and every C¹ path integral is its
 endpoint difference. Thus arbitrary winding contributes no integral.
 The construction also includes collapsed selected gaps.
 
-The next step is to extend these primitives from the annuli through
-the full isolating gap complement and handle their singular endpoint
-limits. Construction of the actual `β_m^n` and `η_n`, Theorem 13.1's
-uniform bounds, joint angular analyticity, and the convergent sum
-remain to be proved. The current annular theorem does not yet cover
-paths entering the region between the inner circle and the gap.
+The continuation above now extends these primitives through the full
+isolating gap complement. Singular endpoint limits and the actual
+angular coordinates remain to be constructed.
 
 ## Completed step: collapsed-gap angular integrals
 

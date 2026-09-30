@@ -1207,6 +1207,10 @@ import NLS.ZakharovShabat.SourceAngularCollapsedGapGeometry
 import NLS.ComplexAnalysis.CircleLogarithmicPrimitive
 import NLS.ComplexAnalysis.AnnularHolomorphicPrimitive
 import NLS.ZakharovShabat.SourceAngularAnnulusPrimitive
+import NLS.ComplexAnalysis.RadialSegmentGeometry
+import NLS.ComplexAnalysis.PrimitiveRadialContinuation
+import NLS.ComplexAnalysis.PrimitiveOnDiscComplement
+import NLS.ZakharovShabat.SourceAngularDiscComplementPrimitive
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
