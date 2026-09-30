@@ -5055,7 +5055,45 @@ with terminal outside the cut or at either periodic endpoint, assuming
 integrability of both the actual and model differentials. The primitive
 and its endpoint limits are constructed from the original normalization.
 
-Theorem 13.1(ii) still requires gluing onto the terminal-prescribed
-root sheets (including terminals in the interior of the gap) and
-analytic coverage of every complex open-gap point.
+`GapRootPrimitiveGluing.lean` glues an endpoint-normalized exterior
+primitive onto the whole regular domain of any analytic root of the
+same gap endpoint polynomial. Cosine continuation supplies all interior
+cut charts, and agreement on the dense cut complement fixes their
+overlaps and the continuous extension uniquely.
+
+`SourceAngularEtaPrescribedSheet.lean` splits the actual diagonal
+differential on a prescribed full-root sheet. Dividing that root by
+`2*i*omittedProduct` gives a root of the selected endpoint polynomial,
+including at points on the canonical cut. The explicit model is
+`-2*omittedProduct/fullRoot`; the remainder has numerator
+`psiCandidate + 2*omittedProduct` over that same full root.
+
+`SourceAngularEtaRemainderSheetPrimitive.lean` constructs an analytic
+remainder primitive on the whole regular prescribed-sheet part of each
+open-gap isolating disc. It has the exact full-root ratio matching the
+normalized canonical exterior primitive, and both periodic endpoint
+limits remain zero, including approaches through the cut. These data
+are constructed at every complex source from the actual normalized psi
+family and endpoint spectral data, on every regular prescribed sheet.
+
+`SourceAngularEtaModelSheetCoordinate.lean` proves the corresponding
+logarithmic model identity on the prescribed sheet. The coordinate
+`z - midpoint - selectedSheetRoot` is analytic and nonzero throughout
+the regular sheet of an open gap, also at cut-interior points. The
+selected root tends to zero at either periodic endpoint, so the
+coordinate has the sheet-independent limit `endpoint - midpoint` there.
+
+`SourceAngularEtaPrescribedSheetPathPeriod.lean` combines this model
+with the glued remainder. Integrable C1 paths from a periodic endpoint
+to a regular terminal in the same prescribed sheet have actual diagonal
+integrals differing by `2*pi*integer`. Their interiors may cross the
+canonical cut. The actual Dirichlet theorem constructs the prescribed
+sheet from the anti-discriminant whenever its terminal is in the gap
+interior; it supplies the remainder data and proves the terminal root
+normalization. Integrability of the actual and model differentials is
+retained explicitly.
+
+Theorem 13.1(ii) still requires comparison between different prescribed
+root charts and paths traversing several charts, and analytic coverage
+of every complex open-gap source point, including endpoint terminals.
 Theorem 13.1(iv), Corollary 13.2, and the later chapters also remain.
