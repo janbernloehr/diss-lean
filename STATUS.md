@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: Lemma 12.12 finite-head squared-gap offsets
+## Current milestone: Lemma 12.12 completed; Section 13 next
+
+`exists_sourcePsi_lemma12_12` now proves the full source-space
+conclusion of Lemma 12.12. One common open simply connected complex
+neighborhood of the entire real source locus carries the actual
+analytic psi root family, exact contour normalization, assigned
+root isolation, chi tail majorants, positive midpoint bounds, and
+squared-gap ℓp offset sequences. The offset norm bound is uniform
+over all omitted indices and locally uniform at every complex source.
+The retained roots satisfy `σ_m^n = τ_m + γ_m² α_m^n`, also at zero
+gaps. Filling the omitted root with its moving midpoint and taking
+`α_n^n = 0` gives the factorization at every index. The corollary
+`locally_uniform_filled_offsets_power_sum` proves explicit summability
+and the dissertation's literal bound on `∑ |α_m^n|^p`, with one
+positive constant for all omitted indices on each local neighborhood.
+
+`SourcePsiActualTailRootOffset.lean` transfers the actual retained
+zeros from the assigned quarter-π tail boundaries to the free-centered
+eighth-π circles. Assigned root placement, tiny midpoint and gap tails,
+joint analyticity, chi majorants, and the positive midpoint bound
+instantiate the quadratic offset estimate there. Scaling the chi
+majorant gives an actual ℓp squared-gap offset majorant with an
+index-independent norm bound. `SourcePsiUniformSquaredGapOffsets.lean`
+patches its finite head with the proved uniform finite-head bound and
+assembles the literal quotient by squared gaps, including zero gaps.
+`SourcePsiSquaredGapComplexRootAtlas.lean` restricts each source ball
+to this estimate while retaining all earlier root, contour, and
+factor properties. Their union gives local bounds at every complex
+point of the common domain used in `SourcePsiLemma12_12.lean`.
+
+The next step is Section 13: the angular integrals and Theorem 13.1.
 
 `SourcePsiIsolatingComplexRootAtlas.exists_local_finiteHead_squared_offset_bound`
 now proves the actual quadratic-gap root-offset estimate on any fixed
@@ -84,13 +114,9 @@ A pointwise ℓp majorant assembles the literal quotient by `γ²` into an
 actual ℓp offset sequence, with zero at the omitted index and exact
 factorization also at every collapsed retained gap.
 
-The chi tail majorants and all-index midpoint lower bounds are now
-instantiated for the actual analytic family on a common complex
-domain. The finite-head squared-gap offsets are proved on one smaller
-complex neighborhood of each real base source. To finish Lemma 12.12,
-transfer the retained zeros to the selected tail circles, combine the
-head and tail estimates, and assemble the all-index ℓp offset bound
-on a common complex domain.
+The actual tail contour transfer and the finite-head bounds now
+combine into the all-index ℓp offset bound on the common complex
+domain of `exists_sourcePsi_lemma12_12`.
 
 ## Completed: Lemma 12.11 exact complex normalization
 
@@ -108,8 +134,9 @@ the proved real normalization to the whole complex ball. The atlas
 is constructed inside both the actual spectral isolation domain and
 the joint quotient analytic domain. Nested contour homotopy identifies
 the inner finite-decomposition circles with the original assigned
-boundaries, also at complex sources. Lemma 12.12's locally uniform,
-deleted-index-independent root asymptotics are the next step.
+boundaries, also at complex sources. The Lemma 12.12 extension above
+retains these properties and adds the locally uniform, all-index
+squared-gap root asymptotics.
 
 `circleIntegral_eq_sum_of_finite_holes` now proves Cauchy's theorem
 for a closed outer disc with finitely many circular holes: its outer
@@ -437,9 +464,9 @@ lower bound near that entire product and source.
 chi midpoint bound using the common midpoint displacement norm and
 applies it to every actual analytic branch on one source neighborhood,
 uniformly in the omitted index and including collapsed selected gaps.
-Lemma 12.12 still requires uniform tail midpoint lower bounds,
-finite-head root-offset estimates, and the all-index squared-gap
-offset conclusion on a common complex neighborhood.
+The subsequent actual tail and finite-head offset modules complete
+the all-index squared-gap conclusion on the common complex
+neighborhood constructed in `SourcePsiLemma12_12.lean`.
 
 ## Implemented and checked
 

@@ -8,8 +8,8 @@ The actual normalized analytic psi family can be constructed on a
 common open simply connected neighborhood carrying both chi tail
 majorants and positive chi midpoint lower bounds, locally uniformly
 at every complex source and independently of both indices. The
-finite-head offset estimates, tail contour transfer, and lp offset
-assembly remain to finish Lemma 12.12.
+subsequent actual tail and finite-head offset modules use these
+bounds in the lp assembly of SourcePsiLemma12_12.
 -/
 
 noncomputable section

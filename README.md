@@ -4381,6 +4381,20 @@ gap, including complex sources with zero selected gap. Noncollapsed
 reference gaps use continuity and assigned root placement. A finite
 intersection gives one actual squared-gap offset bound for any fixed
 finite head, uniformly over omitted indices near each real source.
-Lemma 12.12 still requires transfer of retained zeros to the selected
-tail circles, combining head and tail bounds, and assembly of the
-all-index squared-gap ℓp conclusion on a common complex domain.
+`SourcePsiActualTailRootOffset.lean` transfers the actual retained
+contour zeros to the free-centered tail circles and instantiates the
+quadratic estimate with an ℓp majorant whose norm bound is independent
+of the omitted index. `SourcePsiUniformSquaredGapOffsets.lean` patches
+its finite head with the uniform head estimate and constructs the
+actual ℓp quotient by squared gaps, including collapsed gaps.
+`SourcePsiSquaredGapComplexRootAtlas.lean` restricts the source balls
+to the offset bounds while preserving the analytic branches, assigned
+root placement, chi majorants, and midpoint lower bounds.
+`SourcePsiLemma12_12.lean` proves the full source-space Lemma 12.12 on
+one common open simply connected normalized analytic psi domain.
+The actual squared-gap offset norm is uniform over omitted indices
+and locally uniform at every complex source. Filling the omitted
+root with its moving midpoint gives the factorization at every index;
+the offset there is zero. Its power-sum corollary proves explicit
+summability and the literal locally uniform bound on `∑ |α_m^n|^p`.
+The next step is Section 13's angular integrals and Theorem 13.1.

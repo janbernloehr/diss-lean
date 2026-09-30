@@ -8,9 +8,9 @@ Construct the actual normalized analytic psi root family from the
 atlas carrying chi majorants. The common open simply connected
 neighborhood retains Lemmas 12.10 and 12.11, and at every complex
 source its chi tail error has locally uniform lp majorants independent
-of the deleted index. This supplies the tail form of (2.32); the
-uniform midpoint lower bound and finite-head offset estimates of
-Lemma 12.12 remain to be proved.
+of the deleted index. This supplies the tail form of (2.32).
+The subsequent midpoint-bound and squared-gap offset modules
+assemble these estimates into the conclusion of Lemma 12.12.
 -/
 
 noncomputable section
