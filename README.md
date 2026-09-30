@@ -4516,7 +4516,24 @@ and integrable singular-start paths by the normalized terminal value.
 The actual psi family supplies these functions simultaneously for all
 noncollapsed off-diagonal pairs. Singular-start integrability is explicit.
 
-Independence from exterior-primitive and enclosing-geometry choices,
+`ComplexSegmentComplementConnected.lean` proves path connectedness
+of the cut complement inside any open convex domain containing the
+left endpoint. `NormalizedSegmentPrimitiveUnique.lean` identifies the
+additive constant of two exterior primitives using their endpoint
+limits, then extends equality of normalized regular-sheet values
+through the cut by density.
+
+`SourceAngularPrimitiveChoiceIndependence.lean` applies this comparison
+to the actual angular primitives. Different exterior primitives,
+constants, and enclosing discs give the same values on overlapping
+regular sheet domains. Different root charts also agree at a terminal
+where their root values agree. Charts matching the actual Dirichlet
+anti-discriminant therefore give one Dirichlet terminal value, including
+on the cut, provided that the terminal is in both enclosing discs.
+The actual psi family supplies all primitive data used by these
+comparisons. Integrable C¹ endpoint paths in different discs and root
+charts have equal actual integrals when their terminal roots agree.
+
 Dirichlet terminal containment, the collapsed and periodic terminal
 cases, and the global angular coordinates remain unfinished, as do
 joint source analyticity and the uniform Theorem 13.1 estimates.

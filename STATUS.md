@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: Section 13 glued normalized sheet values
+## Current milestone: Section 13 independence of primitive and sheet choices
+
+`ComplexSegmentComplementConnected.lean` proves that removing a
+noncollapsed complex segment from an open convex domain containing
+its left endpoint leaves a path-connected set. Explicit segments join
+the two sides around that endpoint. `NormalizedSegmentPrimitiveUnique.lean`
+then compares primitives with the same derivative: their left endpoint
+limits determine the additive constant, so normalized values agree.
+The comparison applies to different convex enclosing domains, and
+density extends it through the cut for continuous regular-sheet values.
+
+`SourceAngularPrimitiveChoiceIndependence.lean` packages the properties
+already proved for the actual angular primitives. The normalized psi
+family supplies all these properties for every noncollapsed
+off-diagonal gap; no exterior primitive is an input to that construction.
+Different primitives, constants, and enclosing discs give the same
+value on overlapping regular sheet domains. Different root charts
+also give the same terminal value when their root values agree there.
+In particular, charts matching the actual Dirichlet anti-discriminant
+agree at the Dirichlet terminal, including cut-interior terminals.
+
+Integrable C¹ paths from the left periodic endpoint, computed in
+different enclosing discs and root charts, have equal actual angular
+integrals when the terminal root values agree. Their interiors may
+cross the canonical cut. The comparison still requires each disc to
+contain the selected gap and the terminal to belong to both regular
+sheet domains; singular-start integrability remains explicit.
+
+The next step is to ensure the enclosing domains contain the actual
+Dirichlet terminals, then include collapsed gaps and periodic terminals
+in the global `β_m^n` construction. Joint source analyticity, uniform
+Theorem 13.1 bounds, the diagonal `η_n`, and the convergent angular sum
+remain to be proved.
+
+## Completed step: Section 13 glued normalized sheet values
 
 `DenseSegmentComplement.lean` proves that the complement of every
 complex segment is dense, including a collapsed singleton. Continuous
@@ -39,11 +73,11 @@ derives these terminal-value functions from the actual psi family;
 callers supply paths rather than primitives or local continuations.
 Integrability for singular-start paths remains explicit.
 
-The next step is to prove independence from the chosen exterior
-primitive and enclosing geometry, ensure the enclosing domains contain
-the actual Dirichlet terminals, and include the collapsed and periodic
-terminal cases in the global `β_m^n` construction. Joint source
-analyticity, uniform Theorem 13.1 bounds, the diagonal `η_n`, and the
+Independence from the chosen exterior primitive and enclosing geometry
+is now proved on overlapping regular domains, as described above.
+Containment of all actual Dirichlet terminals and the collapsed and
+periodic terminal cases in the global `β_m^n` construction remain.
+Joint source analyticity, uniform Theorem 13.1 bounds, the diagonal `η_n`, and the
 convergent angular sum remain to be proved.
 
 ## Completed step: Section 13 interior Dirichlet sheet primitives
