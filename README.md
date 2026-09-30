@@ -4251,5 +4251,24 @@ potential one source ball and one isolating-disc family work for all
 indices. The actual retained contour integrals vanish throughout the
 domain. The resulting psi numerators are jointly analytic in the
 spectral parameter and potential, and entire in the spectral variable.
-The next open statements are Lemma 12.11's omitted-index contour
-normalization to `2π` and Lemma 12.12's uniform root asymptotics.
+`StandardRootGapCorrectionExterior.lean` proves that the actual
+principal-square-root gap correction product tends to one outside
+fixed free spectral discs. The absolute squared-gap radicand sum is
+bounded by the square of the ℓ¹ free gap-resolvent sum once the midpoint
+displacement is uniformly small.
+`SourceCanonicalRootExterior.lean` identifies the actual canonical root
+with its midpoint product times these corrections, retaining the
+literal symmetric cutoffs and their normalization. Its ratio to
+`-2i sin λ` tends uniformly to one on the half-integer large circles,
+which eventually avoid every closed periodic gap.
+`CircleIntegralExteriorNormalization.lean` proves the oriented-pole
+integral limit `2π` from uniform relative error.
+`SourcePsiExteriorNormalization.lean` then restores the omitted
+numerator root and proves that the actual psi quotient's raw
+large-circle integral tends to `2π`; its normalized contour functional
+tends to `1`. This holds for every root displacement vector and every
+complex source at finite `p>1`, including Lemma 12.10's analytic family.
+The next step is Lemma 12.11's finite contour decomposition, which
+identifies the omitted-gap integral with the large-circle integral
+using the retained contour zeros. The exact omitted-index value and
+Lemma 12.12's uniform root asymptotics remain open.

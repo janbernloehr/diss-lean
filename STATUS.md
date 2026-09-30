@@ -1,6 +1,20 @@
 # Implementation status
 
-## Current milestone: source-space Lemma 12.10
+## Current milestone: Lemma 12.11 exterior normalization
+
+`tendsto_centralCircle_sourcePsi_raw_integral` now proves that the actual
+psi quotient's raw integral on the half-integer large circles tends to
+`2π`; the normalized `sourcePsiContour` tends to `1`. This holds for
+every source potential and every ℓp numerator root vector at finite
+`p>1`, including the analytic family constructed in Lemma 12.10.
+The actual canonical root divided by `-2i sin λ` tends uniformly to
+one on those circles. Its literal finite products factor into the
+midpoint single product and principal-square-root gap corrections;
+the absolute correction sum tends to zero by free-resolvent decay.
+The circles eventually avoid every closed periodic gap. The remaining
+step in Lemma 12.11 is the finite contour decomposition identifying
+the omitted-gap integral with the large-circle integral after the
+retained contour integrals vanish.
 
 `exists_sourcePsi_lemma12_10` now supplies one open simply connected
 complex neighborhood of the full real-type source locus, contained in
@@ -13,8 +27,8 @@ assigned discs. The omitted root may be filled with the moving periodic
 midpoint in its assigned disc. The actual retained contour integrals
 vanish throughout the complex domain. The resulting entire psi
 numerators are jointly analytic in the spectral parameter and potential.
-The next step is Lemma 12.11: the omitted-index contour integral equals
-`2π`. Its normalization is not yet proved for the constructed family.
+Lemma 12.11's exact omitted-index contour integral `2π` is not yet
+proved for the constructed family; its large-circle limit is proved.
 
 For every fixed real-type potential at finite `p>1`, one constant now
 bounds the actual `Q*` inverse over all full gap-contained root vectors.
@@ -177,8 +191,28 @@ Its `SourcePsiIsolatingComplexExtension` predicate records analyticity,
 canonical real agreement, actual retained contour zeros, and one local
 isolating-disc family and source ball for every signed deleted index.
 The actual psi numerators are jointly analytic and entire in the
-spectral variable. Lemma 12.11's omitted-index normalization and
-Lemma 12.12's uniform root asymptotics remain open.
+spectral variable.
+`StandardRootGapCorrectionExterior.lean` bounds the absolute squared-gap
+radicand sum by the square of the ℓ¹ free gap-resolvent sum, once the
+relative midpoint displacement is at most one half. Strong resolvent
+decay therefore gives absolute convergence and a correction-product
+limit of one in every separated escaping direction.
+`CentralCircleThresholds.lean` transfers separated exterior assertions
+to uniform assertions on the half-integer large circles.
+`SourceCanonicalRootExterior.lean` factors the literal finite and
+limiting canonical-root products through the actual midpoint product
+and gap corrections. The canonical root has the free normalization
+`-2i sin λ` at exterior infinity. All sufficiently large half-integer
+circles avoid every closed periodic gap and are zero-free for the root.
+`CircleIntegralExteriorNormalization.lean` proves the raw integral
+limit `2π` from uniform relative error to the oriented pole `i/(w-λ)`.
+`SourcePsiExteriorNormalization.lean` proves the exact restored-root
+pole identity for the actual psi quotient. The free-normalized product
+ratio tends uniformly to one, so its raw large-circle integral tends
+to `2π` and the normalized contour functional tends to `1`, without
+supplied asymptotic hypotheses. Lemma 12.11's finite contour
+decomposition and exact omitted-index value, and Lemma 12.12's uniform
+root asymptotics, remain open.
 
 ## Implemented and checked
 
@@ -188,6 +222,11 @@ declaration for admitted proofs and project axioms.
 
 | Module | Implemented scope |
 | --- | --- |
+| `NLS.ZakharovShabat.StandardRootGapCorrectionExterior` | Absolute squared-gap radicand bound and actual principal-square-root correction-product limit one along all separated escaping paths |
+| `NLS.ZakharovShabat.CentralCircleThresholds` | Escape of the half-integer radii and transfer of separated exterior thresholds to uniform large-circle assertions |
+| `NLS.ZakharovShabat.SourceCanonicalRootExterior` | Actual midpoint/correction product factorization, canonical-root/free-sine exterior limit one, and eventual large-circle gap avoidance and nonvanishing |
+| `NLS.ComplexAnalysis.CircleIntegralExteriorNormalization` | Raw large-circle integral limit `2π` from uniform relative error to the oriented simple pole |
+| `NLS.ZakharovShabat.SourcePsiExteriorNormalization` | Exact restored-root pole identity, actual product-ratio exterior limit, and raw/normalized psi large-circle limits `2π`/`1` for every root vector and source potential |
 | `NLS.ZakharovShabat.SourcePsiFullRootPlacement` | Openness of full assigned-root placement and one common positive margin about the compact full gap product |
 | `NLS.ZakharovShabat.SourcePsiUniformEquationTubeRestriction` | Restriction of the common tube radius while preserving actual equations, contour formulas, zeros, norm bounds, and two-sided root inverses |
 | `NLS.ZakharovShabat.SourcePsiIsolatingLocalBranches` | One complex source ball and isolating-disc family for all indices, inside a prescribed source neighborhood, with retained root placement and moving spectral enclosure |
