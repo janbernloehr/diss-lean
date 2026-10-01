@@ -1,6 +1,24 @@
 # Implementation status
 
-## Current milestone: the exact actual theta/discriminant identity
+## Current milestone: actual theta/theta discriminant stationarity
+
+The actual theta/theta bracket now commutes with every actual
+discriminant, at every real source for finite `p >= 2` with both selected
+angle gaps open. Its Hamiltonian direction is therefore isospectral.
+The theorem constructs the full gap-zero sequence and proves the
+required quotient decay; neither is a hypothesis of the final result.
+Every spectral parameter is included, and all other gaps may be collapsed.
+
+Jacobi expresses the entire spectral variation as a difference of
+actual normalized psi source variations. Real cotangents make it real
+on the real axis, and the already proved action stationarity gives
+zero weighted periods. The open-gap mean-value argument and the
+collapsed-gap Cauchy formula supply a zero in every gap. Interpolation
+with the full simple-zero product then forces the variation to vanish.
+
+The theta/theta bracket's zero value still needs a basepoint calculation
+and isospectral transport. Bracket compatibility for `1 < p < 2` also
+remains unfinished. Corollary 13.2 and the later chapters are not complete.
 
 The full actual angle cotangent now satisfies `{Delta(w),theta_n} =
 psi_n(w)/2` at every real source for finite `p >= 2`, with only the
@@ -11962,3 +11980,45 @@ the complex identity and its differential, and the generic finite
 `p > 1` eta kernel without a Poisson exponent premise. The theta/theta
 zero value and bracket compatibility for `1 < p < 2` remain unfinished.
 Corollary 13.2 and the later chapters are not complete.
+
+
+## Latest milestone: actual theta/theta discriminant stationarity
+
+`SourceAngularThetaThetaDiscriminantVariation.lean` applies Jacobi to
+the actual local angle primitives and the proved theta/discriminant
+germ. It expresses the entire spectral variation of the theta/theta
+bracket as a difference of actual normalized psi source variations.
+`SourcePsiSourceVariation.lean` identifies each source derivative with
+the entire deleted-root variation by the chain rule. Pairing any
+actual scalar cotangent with the action contour gives zero weighted
+periods for the spectral variation.
+
+`SourceRealCotangent.lean` proves that real cotangents give real
+Hamiltonian directions and real brackets with the actual Fourier
+signs. Constructed real angle representatives supply that property
+for the theta cotangents and for the theta/theta bracket's derivative.
+`SourceAngularThetaThetaDiscriminantGapZeros.lean` constructs a zero in
+every periodic gap: real mean value handles open gaps, and Cauchy's
+formula handles collapsed gaps. The full zero sequence has its
+spectral displacement in the actual source exponent `ell^p`.
+
+`SourcePsiVariationCombinationInterpolation.lean` proves uniform
+quotient decay for differences of deleted-root variations with different
+omitted indices. The full comparison product has simple zeros by actual
+gap separation. Filling the quotient at those zeros and applying the
+maximum-modulus argument forces the variation to vanish.
+
+`SourceAngularThetaThetaDiscriminantStationarity.lean` consequently
+proves that the actual theta/theta bracket commutes with every actual
+discriminant at every real source for finite `p >= 2`, with both selected
+angle gaps open. It includes every spectral parameter and permits all
+other gaps to collapse. The final theorem assumes neither a gap-zero
+sequence nor a growth estimate. The actual Hamiltonian direction of
+the theta/theta bracket is isospectral.
+
+API checks cover both bracket orientations at `p = 2` and `p = 3`,
+the actual isospectral direction, the full gap-zero sequence, and
+source-variation and real-cotangent APIs without a `p >= 2` premise.
+The theta/theta bracket's zero value still needs a basepoint calculation
+and isospectral transport; bracket compatibility for `1 < p < 2` also
+remains unfinished. Corollary 13.2 and the later chapters are not complete.

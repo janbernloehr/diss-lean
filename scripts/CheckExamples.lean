@@ -20325,3 +20325,98 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {n : �
   C.etaDifferential_isospectral_eq_kernel hs φ hφ hφ₀ h hiso v hroot hanti
 
 end NLS.ZakharovShabat
+
+
+/- The actual theta/theta spectral variation vanishes by full gap
+interpolation, with no supplied gap-zero sequence or growth estimate. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) (w : ℂ) :
+    sourceAngularThetaThetaDiscriminantBracket (by norm_num) (by norm_num) (by norm_num)
+      n m s φ.val w = 0 :=
+  D.thetaThetaDiscriminant_eq_zero (by norm_num) n m φ hn hm w
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m k : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num)
+      (periodOnePotential ψ)
+      (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val k))
+      (sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s) φ.val = 0 :=
+  D.sourceBracket_discriminant_thetaTheta_eq_zero (by norm_num) n m φ hn hm _
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    SourceIsospectralDirection (by norm_num) φ.val
+      (sourceHamiltonianVector (by norm_num)
+        (sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s) φ.val) :=
+  D.sourceHamiltonianVector_thetaTheta_isospectral (by norm_num) n m φ hn hm
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    ∃ ρ : ℤ → ℂ, Memℓp (fun k => ρ k-(Real.pi:ℂ)*k) 3 ∧
+      ∀ k : ℤ, ρ k ∈ sourcePeriodicSegment (by norm_num) (by norm_num) φ.val k ∧
+        sourceAngularThetaThetaDiscriminantBracket (by norm_num) (by norm_num) (by norm_num)
+          n m s φ.val (ρ k) = 0 :=
+  D.exists_thetaThetaDiscriminant_gapZero_sequence (by norm_num) n m φ hn hm
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} {s : (j : ℤ) → CoeffPair p → DeletedCoeff p j}
+    (hs : SourcePsiIsolatingComplexExtension hp hp1 W s)
+    (n : ℤ) (φ h : CoeffPair p) (hφ : φ ∈ W) (w : ℂ) :
+    (fderiv ℂ (fun ψ : CoeffPair p => sourcePsiCandidate n (w,(s n ψ : Coeff p))) φ) h =
+      sourcePsiCandidateVariation n (s n φ : Coeff p) ((fderiv ℂ (s n) φ) h : Coeff p) w ∧
+    AnalyticOnNhd ℂ (fun z =>
+      (fderiv ℂ (fun ψ : CoeffPair p => sourcePsiCandidate n (z,(s n ψ : Coeff p))) φ) h) univ :=
+  ⟨hs.fderiv_numerator_eq_root_variation n φ h hφ w,
+    hs.analyticOnNhd_numerator_source_variation n φ h hφ⟩
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) j}
+    (D : SourceAngularThetaCommonDomainData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus (ENNReal.ofReal (3/2)))
+    (hn : canonicalPeriodicGap ENNReal.ofReal_ne_top (by rw [ENNReal.one_lt_ofReal]; norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    IsSourceRealCotangent (sourceAngularThetaDifferential ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) n s φ.val) :=
+  D.isSourceRealCotangent_thetaDifferential n φ hn
+
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (ρ : ℤ → ℂ)
+    (hρlp : Memℓp (fun k => ρ k-(Real.pi:ℂ)*k) (ENNReal.ofReal (3/2)))
+    (hρ : ∀ k : ℤ, ρ k ∈ sourcePeriodicSegment ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) φ.val k)
+    (n m : ℤ) (a h b v : Coeff (ENNReal.ofReal (3/2))) (hn : h n = 0) (hm : v m = 0)
+    (hzero : ∀ k : ℤ,
+      sourcePsiCandidateVariation n a h (ρ k)-sourcePsiCandidateVariation m b v (ρ k) = 0) :
+    (fun z => sourcePsiCandidateVariation n a h z-sourcePsiCandidateVariation m b v z) = 0 :=
+  sourcePsiCandidateVariation_sub_eq_zero_of_gapZero_sequence ENNReal.ofReal_ne_top
+    (by rw [ENNReal.one_lt_ofReal]; norm_num) φ ρ hρlp hρ n m a h b v hn hm hzero
+
+end NLS.ZakharovShabat
