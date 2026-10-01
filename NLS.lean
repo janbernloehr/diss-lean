@@ -1409,6 +1409,8 @@ import NLS.ZakharovShabat.SourceOmittedRootIsospectral
 import NLS.ZakharovShabat.SourceAngularIntegrandIsospectral
 import NLS.ComplexAnalysis.QuadraticCauchyUniqueness
 import NLS.ZakharovShabat.SourceAngularCauchyIsospectral
+import NLS.ComplexAnalysis.QuadraticSheetTerminalVariation
+import NLS.ZakharovShabat.SourceAngularBetaIsospectral
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

@@ -19505,3 +19505,72 @@ example {m : ℤ}
   D.fderiv_quotientCauchyCandidate_isospectral_eq_zero hs n hmn ρ hrρ hρR φ hφ hφ₀ h hiso z hz
 
 end NLS.ZakharovShabat
+
+
+/- The actual moving off-diagonal beta variation retains the terminal
+square root as a factor, including at branch terminals. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {m : ℤ} {s : (j : ℤ) → CoeffPair (3 : ℝ≥0∞) → DeletedCoeff 3 j}
+    {W V W₀ : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData (by norm_num) (by norm_num) m s W V c T r R z₀)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (n k : ℤ) (hmn : m ≠ n) (φ : realTypeSourceLocus 3)
+    (hφ : φ.val ∈ V) (hφ₀ : φ.val ∈ W₀) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val m
+    sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m φ.val *
+      sourceBracket (by norm_num) (sourceAngularBeta (by norm_num) (by norm_num) n m s)
+        (sourceComplexAction (by norm_num) (by norm_num) k) φ.val =
+      sourcePsiCandidate n (μ,(s n φ.val : Coeff 3)) *
+        sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+          canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ m)
+          (sourceComplexAction (by norm_num) (by norm_num) k) φ.val :=
+  D.sourceBracket_beta_action_cleared hs (by norm_num) n k hmn φ hφ hφ₀
+
+example {m : ℤ} {s : (j : ℤ) → CoeffPair (3 : ℝ≥0∞) → DeletedCoeff 3 j}
+    {W V W₀ : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData (by norm_num) (by norm_num) m s W V c T r R z₀)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (n k : ℤ) (hmn : m ≠ n) (φ : realTypeSourceLocus 3)
+    (hφ : φ.val ∈ V) (hφ₀ : φ.val ∈ W₀)
+    (hδ : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m φ.val ≠ 0) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val m
+    sourceBracket (by norm_num) (sourceAngularBeta (by norm_num) (by norm_num) n m s)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val =
+      sourcePsiCandidate n (μ,(s n φ.val : Coeff 3)) /
+        sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m φ.val *
+          sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+            canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ m)
+            (sourceComplexAction (by norm_num) (by norm_num) k) φ.val :=
+  D.sourceBracket_beta_action_eq_root_weight hs (by norm_num) n k hmn φ hφ hφ₀ hδ
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example {m : ℤ}
+    {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) j}
+    {W V W₀ : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) m s W V c T r R z₀)
+    (hs : SourcePsiIsolatingComplexExtension ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W₀ s)
+    (n : ℤ) (hmn : m ≠ n) (φ : realTypeSourceLocus (ENNReal.ofReal (3/2)))
+    (hφ : φ.val ∈ V) (hφ₀ : φ.val ∈ W₀) (h : CoeffPair (ENNReal.ofReal (3/2)))
+    (hiso : SourceIsospectralDirection ENNReal.ofReal_ne_top φ.val h) :
+    let μ := canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet φ.val m
+    sourceBoundaryTerminalAntiDiscriminant ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet m φ.val *
+        (fderiv ℂ (sourceAngularBeta ENNReal.ofReal_ne_top
+          (by rw [ENNReal.one_lt_ofReal]; norm_num) n m s) φ.val) h =
+      sourcePsiCandidate n (μ,(s n φ.val : Coeff (ENNReal.ofReal (3/2)))) *
+        (fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2)) =>
+          canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top
+            (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet ψ m) φ.val) h :=
+  D.fderiv_beta_isospectral_cleared hs n hmn φ hφ hφ₀ h hiso
+
+end NLS.ZakharovShabat

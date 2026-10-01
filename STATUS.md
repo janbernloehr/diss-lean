@@ -1,13 +1,15 @@
 # Implementation status
 
-## Current milestone: the interior angular Cauchy primitive is isospectral
+## Current milestone: the actual moving off-diagonal beta variation
 
-The actual off-diagonal angular Cauchy candidate now has proved zero source
-variation in every isospectral direction, throughout its enclosing disc.
-The proof applies for finite `p > 1`, including the selected periodic
-endpoints and collapsed gaps. For finite `p >= 2`, the candidate commutes
-with every actual action. Moving-terminal variation and the normalized
-period sum remain.
+The actual off-diagonal beta now satisfies the cleared moving-terminal
+identity `delta(mu) d beta_nm = psi_n(mu) d mu_m` in every isospectral
+direction for finite `p > 1`. It includes periodic Dirichlet terminals
+and collapsed selected gaps. For finite `p >= 2`, every actual action
+gives the corresponding bracket equation. At a regular terminal the
+beta/action bracket is the normalized sheet differential times the
+root/action bracket. The diagonal eta variation and normalized period
+sum remain before the angle-action value.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11523,3 +11525,34 @@ The moving-terminal angular derivative and exact normalized period sum still
 remain before the angle-action value. The angle-angle identity and bracket
 compatibility for `1 < p < 2` also remain unfinished. Corollary 13.2 is not
 yet complete.
+
+
+## Latest milestone: actual moving beta variation and action brackets
+
+`QuadraticSheetTerminalVariation.lean` proves the exact cancellation for a
+moving value `delta H / K`. The quadratic-sheet identity, its derivative,
+and the interior quadratic differential equation give
+`delta d beta = K g d mu`. Only the omitted coefficient `K` must be nonzero;
+no division by the terminal sheet coordinate or the gap is needed.
+
+`SourceAngularBetaIsospectral.lean` identifies this calculation with the
+actual off-diagonal beta on each actual annular chart. Its interior Cauchy
+candidate is stationary in isospectral directions. The full moving-terminal
+chain rule supplies its spectral derivative times the actual Dirichlet root
+variation. The actual moving sheet square identity is differentiated using
+the stationary midpoint and squared gap. The full omitted-product derivative
+cancels against the quotient derivative; it is neither omitted nor assumed
+zero in this calculation. The exact Cauchy equation then leaves the actual
+normalized psi numerator, with its original normalization.
+
+The cleared source derivative applies for finite `p > 1` at every real base,
+including branch terminals and collapsed gaps. Evaluating it on the actual
+action Hamiltonian gives the cleared beta/root bracket equation for finite
+`p >= 2`. At a nonzero terminal sheet coordinate this gives the quotient
+formula with weight `psi_n(mu_m)/delta(mu_m)`. API checks cover both actual
+bracket forms and the cleared source derivative below the Hilbert exponent.
+
+The diagonal eta variation and exact normalized period sum still remain
+before the angle-action canonical value. The angle-angle identity and
+bracket compatibility for `1 < p < 2` also remain unfinished. Corollary 13.2
+is not yet complete.

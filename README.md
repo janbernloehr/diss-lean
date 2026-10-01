@@ -5805,3 +5805,17 @@ The result includes periodic endpoints and collapsed gaps for finite `p > 1`;
 the candidate commutes with every actual action for finite `p >= 2`.
 Moving-terminal variation, the normalized period sum, the angle-angle identity,
 and lower-exponent bracket compatibility remain unfinished.
+
+`SourceAngularBetaIsospectral.lean` now derives the actual off-diagonal
+moving-terminal identity `delta(mu_m) d beta_nm = psi_n(mu_m) d mu_m` in
+every isospectral direction for finite `p > 1`. The proof differentiates
+the actual moving sheet identity and the actual Cauchy terminal formula.
+`QuadraticSheetTerminalVariation.lean` supplies the algebraic cancellation:
+the full omitted-product derivative cancels, and the stationary midpoint,
+squared gap, and interior primitive leave the normalized numerator times
+the actual root variation. The cleared equation includes periodic terminals
+and collapsed gaps. Every actual action satisfies its bracket version for
+finite `p >= 2`; at a regular terminal, the beta/action bracket equals
+`psi_n(mu_m)/delta(mu_m)` times the root/action bracket. The diagonal eta
+variation, normalized period sum, angle-angle identity, and lower-exponent
+bracket compatibility remain unfinished.
