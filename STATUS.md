@@ -1,6 +1,20 @@
 # Implementation status
 
-## Current milestone: the exact actual beta/discriminant bracket
+## Current milestone: the exact actual theta/discriminant identity
+
+The full actual angle cotangent now satisfies `{Delta(w),theta_n} =
+psi_n(w)/2` at every real source for finite `p >= 2`, with only the
+selected angle gap required to be open. Coincident spectral parameters
+and periodic Dirichlet terminals are included. The actual diagonal eta
+kernel cancels the diagonal omitted by the full beta correction.
+The single-valued angle phase has the corresponding discriminant flow
+`-i phase_n psi_n(w)`. The theta/discriminant orientation holds as a
+complex germ near each real open-gap source. Its source derivative is
+minus half the actual normalized numerator's cotangent, with the
+spectral parameter held fixed.
+
+The theta/theta zero value and bracket compatibility for `1 < p < 2`
+remain unfinished. Corollary 13.2 and the later chapters are not complete.
 
 The actual full beta correction now has a proved discriminant bracket
 at every spectral parameter for finite `p >= 2`, including coincident
@@ -11,10 +25,6 @@ At its own base-source Dirichlet root, the full beta-correction bracket
 is zero. The actual divided-difference kernel is entire and has value
 `-1/2` at its own root. The filled symmetric interpolation limit holds
 at every parameter for every finite `p > 1`.
-
-The diagonal eta/discriminant contribution remains before the full
-theta/discriminant identity. The theta/theta zero value and bracket
-compatibility for `1 < p < 2` also remain unfinished.
 
 The actual source bracket now satisfies Jacobi for analytic functionals
 at exponents `p >= 2`. The proof differentiates its constant bivector
@@ -11909,3 +11919,46 @@ The diagonal eta contribution still remains before the full
 theta/discriminant identity. The theta/theta zero value and bracket
 compatibility for `1 < p < 2` remain unfinished. Corollary 13.2 and
 the later chapters are not complete.
+
+
+## Latest milestone: the exact actual theta/discriminant identity
+
+`SourceAngularEtaIsospectralKernel.lean` derives the actual remainder
+and model-angle velocities in any actual isospectral direction with the
+stated root and full moving anti-discriminant velocities. Both terminal
+coordinate equations are differentiated, so periodic terminals are
+included without dividing by the terminal sine. The omitted-product
+model term cancels its counterpart in the actual Cauchy remainder.
+The resulting eta cotangent is the normalized terminal psi numerator
+times the sheet-flow coefficient, for every finite `p > 1`.
+
+`SourceAngularEtaDiscriminantKernel.lean` applies this calculation to
+the actual discriminant Hamiltonian vector, using its proved
+isospectrality and actual filled terminal velocities. Its public
+common-domain version constructs the angular chart. The kernel is
+valid at every spectral parameter, including its own Dirichlet root
+and periodic terminals, for finite `p >= 2` and an open selected gap.
+
+`SourceAngularThetaDiscriminant.lean` combines this diagonal eta
+contribution with the exact full beta-correction bracket. The omitted
+diagonal cancels, proving `{theta_n,Delta(w)} = -psi_n(w)/2`, and
+antisymmetry gives the original normalization
+`{Delta(w),theta_n} = psi_n(w)/2`. The actual single-valued phase has
+discriminant Hamiltonian velocity `-i phase_n psi_n(w)`. These are
+actual cotangent and phase identities; no angle representative or
+additional regular-terminal premise is supplied.
+
+`SourceAngularThetaDiscriminantLocal.lean` proves this identity as a
+complex germ near every real open-gap source. The actual theta and
+discriminant cotangents and joint normalized numerator are analytic.
+Their agreement on nearby real sources extends by the real-form
+identity principle. Its derivative is minus half the normalized
+numerator's source cotangent at any fixed spectral parameter.
+
+API checks cover the negative theta/discriminant orientation at `p = 2`,
+the positive discriminant/theta orientation at `p = 3`, a coincident
+periodic terminal with zero root velocity, the actual phase flow,
+the complex identity and its differential, and the generic finite
+`p > 1` eta kernel without a Poisson exponent premise. The theta/theta
+zero value and bracket compatibility for `1 < p < 2` remain unfinished.
+Corollary 13.2 and the later chapters are not complete.

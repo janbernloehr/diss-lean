@@ -6028,3 +6028,36 @@ the full correction formula, and filled interpolation at `p = 3/2`.
 The diagonal eta contribution remains before the full theta/discriminant
 identity. The theta/theta zero value and bracket compatibility for
 `1 < p < 2` also remain unfinished.
+
+
+### Corollary 13.2: the exact actual theta/discriminant identity
+
+`SourceAngularEtaIsospectralKernel.lean` proves the diagonal eta kernel
+in any actual isospectral sheet flow with the stated root and full moving
+terminal velocities, for every finite `p > 1`. The two differentiated
+terminal equations determine the model-angle velocity even at periodic
+terminals. Its omitted-product term cancels the actual Cauchy remainder,
+leaving the normalized psi numerator times the sheet-flow coefficient.
+
+`SourceAngularEtaDiscriminantKernel.lean` supplies the actual discriminant
+Hamiltonian direction and its proved terminal velocities. The actual
+common-domain angle data construct the charts needed for the diagonal
+kernel. No terminal square root or spectral difference is divided out.
+`SourceAngularThetaDiscriminant.lean` adds the proved full beta correction
+and cancels the omitted diagonal. Thus `{Delta(w),theta_n} = psi_n(w)/2`
+for every spectral parameter at every real source for finite `p >= 2`.
+Only the selected angle gap must be open; its terminal may be periodic.
+The actual single-valued angle phase has velocity `-i phase_n psi_n(w)`
+under the discriminant Hamiltonian flow.
+
+`SourceAngularThetaDiscriminantLocal.lean` uses actual joint numerator
+analyticity and the real-form identity principle to extend the bracket
+identity to a complex neighborhood of every real open-gap source.
+Differentiating that germ gives minus half the actual normalized
+numerator's source cotangent, with the spectral parameter held fixed.
+
+API checks cover both bracket orientations, the coincident periodic
+terminal, the actual phase flow, the complex germ and its differential,
+and the general eta kernel without a `p >= 2` premise. The theta/theta
+zero value and bracket compatibility for `1 < p < 2` remain unfinished.
+Corollary 13.2 and the later chapters are not complete.

@@ -20232,3 +20232,96 @@ example (n : ℤ) (a : Coeff (ENNReal.ofReal (3/2)))
     (by rw [ENNReal.one_lt_ofReal]; norm_num) n a φ w
 
 end NLS.ZakharovShabat
+
+
+/- The full actual theta/discriminant identity includes coincident
+periodic terminals and holds as a differentiable complex germ. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 2)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) (w : ℂ) :
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+      n s (fun ψ : CoeffPair 2 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ.val =
+      -sourcePsiCandidate n (w,(s n φ.val : Coeff 2))/2 :=
+  D.thetaDiscriminant_eq (by norm_num) n φ hgap w
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) (w : ℂ) :
+    sourceBivector (by norm_num) (sourceDiscriminantCotangent (by norm_num) w φ.val)
+      (sourceAngularThetaDifferential (by norm_num) (by norm_num) n s φ.val) =
+      sourcePsiCandidate n (w,(s n φ.val : Coeff 3))/2 :=
+  D.sourceBivector_discriminant_theta_eq (by norm_num) n φ hgap w
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hterminal : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n φ.val = 0) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n)) φ.val = 0 ∧
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+      n s (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n)) φ.val =
+      -sourcePsiCandidate n
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n,(s n φ.val : Coeff 3))/2 := by
+  constructor
+  · rw [sourceBracket_dirichletRoot_discriminant_eq_kernel (by norm_num) (by norm_num)
+      (by norm_num) n φ.val φ.property,hterminal,zero_mul]
+  · exact D.thetaDiscriminant_eq (by norm_num) n φ hgap _
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) (w : ℂ) :
+    sourceBracket (by norm_num) (sourceAngularThetaAnalyticPhase (by norm_num) (by norm_num) n s)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ.val =
+      -Complex.I*sourceAngularThetaAnalyticPhase (by norm_num) (by norm_num) n s φ.val*
+        sourcePsiCandidate n (w,(s n φ.val : Coeff 3)) :=
+  D.sourceBracket_thetaPhase_discriminant_eq (by norm_num) n φ hgap w
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) (w : ℂ) :
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num) n s
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) =ᶠ[𝓝 φ.val]
+      (fun ψ => -sourcePsiCandidate n (w,(s n ψ : Coeff 3))/2) ∧
+    fderiv ℂ (sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num) n s
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w)) φ.val =
+      -(1/2 : ℂ) • fderiv ℂ (fun ψ : CoeffPair 3 => sourcePsiCandidate n (w,(s n ψ : Coeff 3))) φ.val :=
+  ⟨D.eventually_thetaDiscriminant_eq (by norm_num) n φ hgap w,
+    D.fderiv_thetaDiscriminant_eq_numerator (by norm_num) n φ hgap w⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {n : ℤ}
+    {s : (j : ℤ) → CoeffPair p → DeletedCoeff p j}
+    {W₀ W V U : Set (CoeffPair p)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R ρ : ℝ} {z₀ : ℂ} {δ ε : CoeffPair p → ℂ}
+    (C : SourceAngularEtaAnalyticChartData hp hp1 n s W V U c T r R z₀ ρ δ ε)
+    (hs : SourcePsiIsolatingComplexExtension hp hp1 W₀ s)
+    (φ : realTypeSourceLocus p) (hφ : φ.val ∈ U) (hφ₀ : φ.val ∈ W₀)
+    (h : CoeffPair p) (hiso : SourceIsospectralDirection hp φ.val h) (v : ℂ)
+    (hroot : (fderiv ℂ (fun ψ : CoeffPair p => canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n) φ.val) h =
+      sourceBoundaryTerminalAntiDiscriminant hp hp1 .dirichlet n φ.val*v)
+    (hanti : (fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant hp hp1 .dirichlet n) φ.val) h =
+      let μ := canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ.val n
+      canonicalDiscriminant hp (periodOnePotential φ.val) μ*
+        deriv (canonicalDiscriminant hp (periodOnePotential φ.val)) μ*v) :
+    (sourceAngularEtaDifferential hp hp1 n s φ.val) h =
+      sourcePsiCandidate n (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ.val n,(s n φ.val : Coeff p))*v :=
+  C.etaDifferential_isospectral_eq_kernel hs φ hφ hφ₀ h hiso v hroot hanti
+
+end NLS.ZakharovShabat
