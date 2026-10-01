@@ -6352,3 +6352,51 @@ Constructing one compatible solution for all real times remains, followed
 by periodic-terminal reachability and the general theta/theta transport
 argument. Bracket compatibility for `1 < p < 2` and later chapters also
 remain unfinished; Corollary 13.2 is not complete.
+
+## Latest milestone: the complete actual Hilbert spectral flow
+
+`IntegralCurveUniqueness.lean` proves uniqueness on any connected open
+time domain from continuous differentiability of the field along the
+first solution. Local Lipschitz uniqueness makes the equality locus
+open, continuity makes it closed, and connectedness propagates a common
+initial value throughout the domain. No uniform Lipschitz constant is
+supplied. `SourceDirichletSpectralUniqueness.lean` applies this to the
+actual indexed field at every finite `p >= 2`, using its proved
+analyticity near real sources. Only the first solution must be real.
+
+`SourceDirichletSpectralTrajectory.lean` takes the union of all actual
+real Hilbert trajectory intervals through the initial source. Their
+values agree on overlaps, so choosing a representative defines one
+compatible actual curve. The domain is an open interval containing zero,
+and the curve solves the actual equation throughout that domain.
+
+`SourceDirichletSpectralGlobalExistence.lean` rules out finite endpoints
+of this domain: continuation past its supremum or infimum would create
+another actual trajectory with a time outside the purported bound.
+The domain is therefore all real times. A public existence theorem
+constructs an actual global real solution through every real Hilbert
+source, preserving the original norm and every discriminant value.
+
+`SourceDirichletSpectralFlow.lean` proves uniqueness, defines the named
+flow on the original real source form, and proves its time-addition and
+inverse-time laws by time translation and actual ODE uniqueness. It
+solves the original coefficient-space ODE at every real time and agrees
+with every actual local solution through its initial source on the
+whole original interval. Norm, discriminants, and every periodic gap
+are fixed at all times, including for zero sources and collapsed gaps.
+
+`SourceAngularThetaThetaGlobalTransport.lean` proves all-time transport
+of the full actual angle/angle bracket along every indexed Hilbert flow.
+Only the two angle gaps must initially be open; their conservation keeps
+the curve in the actual common angle domain. The selected flow gap may
+be collapsed. The theorem uses the constructed global source flow,
+without a supplied trajectory or global-continuation assumption.
+
+API checks cover overlap uniqueness at `p = 3`, global existence,
+actual derivatives at arbitrary real times, time addition, negative-time
+inversion, conservation, zero-source stationarity, agreement with
+complex local solutions, and full all-time angle/angle transport.
+Periodic-terminal reachability and transport to the proved zero
+basepoints remain before the general theta/theta zero identity.
+Bracket compatibility for `1 < p < 2` and later chapters also remain
+unfinished; Corollary 13.2 is not complete.

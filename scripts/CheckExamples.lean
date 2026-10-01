@@ -20878,4 +20878,86 @@ example (k : ℤ) (φ : realTypeSourceLocus 2) :
   intro t ht
   simpa only [hγ0] using hdata 0 h0 t ht
 
+
+-- Local uniqueness at a non-Hilbert exponent uses the actual field's
+-- analyticity along the first curve; the second need not be assumed real.
+example (k : ℤ) (γ η : ℝ → CoeffPair 3) (a b c d u : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 3 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t)
+    (hη : ∀ t ∈ Ioo c d, HasDerivAt η
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (η t)) t)
+    (hu : u ∈ Ioo a b ∩ Ioo c d) (h0 : γ u = η u) :
+    EqOn γ η (Ioo a b ∩ Ioo c d) :=
+  sourceDirichletSpectral_integralCurves_eqOn_overlap
+    (by simp) (by norm_num) (by norm_num) k γ η a b c d hreal hγ hη u hu h0
+
+-- The actual global solution is constructed, and its equation and
+-- conserved data hold at every real time without any open-gap premise.
+example (k : ℤ) (φ : realTypeSourceLocus 2) :
+    ∃ γ : ℝ → CoeffPair 2, γ 0 = φ.val ∧
+      (∀ t : ℝ, IsRealType (CoeffPair.toMax 2 (γ t))) ∧
+      (∀ t : ℝ, HasDerivAt γ
+        (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t) ∧
+      ∀ t : ℝ, ‖γ t‖ = ‖φ.val‖ ∧ ∀ w : ℂ,
+        canonicalDiscriminant (by simp) (periodOnePotential (γ t)) w =
+          canonicalDiscriminant (by simp) (periodOnePotential φ.val) w :=
+  exists_sourceDirichletSpectral_global_integralCurve k φ
+
+example (k : ℤ) (φ : realTypeSourceLocus 2) (s t : ℝ) :
+    sourceDirichletSpectralFlow k (sourceDirichletSpectralFlow k φ s) t =
+      sourceDirichletSpectralFlow k φ (s+t) ∧
+    sourceDirichletSpectralFlow k (sourceDirichletSpectralFlow k φ t) (-t) = φ :=
+  ⟨sourceDirichletSpectralFlow_add k φ s t,sourceDirichletSpectralFlow_neg k φ t⟩
+
+example (k : ℤ) (φ : realTypeSourceLocus 2) (t : ℝ) :
+    HasDerivAt (fun τ => (sourceDirichletSpectralFlow k φ τ).val)
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k
+        (sourceDirichletSpectralFlow k φ t).val) t ∧
+    ‖(sourceDirichletSpectralFlow k φ t).val‖ = ‖φ.val‖ ∧ ∀ w : ℂ,
+      canonicalDiscriminant (by simp) (periodOnePotential (sourceDirichletSpectralFlow k φ t).val) w =
+        canonicalDiscriminant (by simp) (periodOnePotential φ.val) w :=
+  ⟨hasDerivAt_sourceDirichletSpectralFlow_val k φ t,sourceDirichletSpectralFlow_conserved k φ t⟩
+
+-- Zero source stationarity follows from the original norm conservation,
+-- without excluding the collapsed-gap configuration.
+example (k : ℤ) (φ : realTypeSourceLocus 2) (hφ : φ.val = 0) (t : ℝ) :
+    sourceDirichletSpectralFlow k φ t = φ := by
+  have hn := (sourceDirichletSpectralFlow_conserved k φ t).1
+  rw [hφ,norm_zero] at hn
+  apply Subtype.ext
+  exact (norm_eq_zero.mp hn).trans hφ.symm
+
+-- The complete flow retains every value of any supplied actual local
+-- solution, even if that second solution was allowed complex sources.
+example (k : ℤ) (φ : realTypeSourceLocus 2) (η : ℝ → CoeffPair 2) (a b : ℝ)
+    (h0 : (0 : ℝ) ∈ Ioo a b) (hη0 : η 0 = φ.val)
+    (hη : ∀ t ∈ Ioo a b, HasDerivAt η
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (η t)) t) :
+    EqOn (fun t => (sourceDirichletSpectralFlow k φ t).val) η (Ioo a b) :=
+  sourceDirichletSpectralFlow_eqOn_integralCurve k φ η a b h0 hη0 hη
+
+example (k j : ℤ) (φ : realTypeSourceLocus 2) (t : ℝ)
+    (hj : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) j = 0) :
+    canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (sourceDirichletSpectralFlow k φ t).val)
+      (periodOnePotential_mem (sourceDirichletSpectralFlow k φ t).val) j = 0 :=
+  (canonicalPeriodicGap_sourceDirichletSpectralFlow k j φ t).trans hj
+
+-- The full angle/angle bracket is transported for all real times by
+-- a constructed source flow, assuming only the two initially open gaps.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s)
+    (k n m : ℤ) (φ : realTypeSourceLocus 2) (t : ℝ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s
+      (sourceDirichletSpectralFlow k φ t).val =
+    sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val :=
+  D.thetaTheta_sourceDirichletSpectralFlow k n m φ t hn hm
+
 end NLS.ZakharovShabat
