@@ -1,6 +1,37 @@
 # Implementation status
 
-## Current milestone: analytic spectral centers and a closing criterion
+## Current milestone: the analytic sequence map of spectral closing equations
+
+The actual moving-center closing equations now form a Banach analytic
+map into the component-sum `ℓᵖ` pair space, at every finite `p > 1` and
+for arbitrary spectral weights. Its high coordinates are exactly
+`w(2n) b⁻_n(ζ_n)` in the first component and `w(2n) b⁺_n(ζ_n)` in the
+second; the block below the cutoff is zero. Vanishing of both coordinates
+closes the original periodic spectrum in that strip to the single
+actual center, with determinant order exactly two.
+
+Subtracting the signed leading coefficients `φ₁(−2n)` and `φ₂(2n)`
+constructs the actual sequence remainder. The full-strip supremum
+estimates prove sequence membership and a quantitative joint norm
+budget using the original source pair norm and its Fourier tail.
+Coordinate analyticity and the joint bound then prove analyticity in
+the sequence norm. No assumed sequence membership or supplied analytic
+model replaces the actual coefficients.
+
+The signed weighted leading tail is a continuous linear map, bounded
+by the original Fourier tail at cutoff `2N` with constant one. For
+every positive tolerance, one open convex neighborhood containing the
+source and zero makes the full closing map analytic and bounds its
+difference from this leading map by that tolerance, for every larger
+cutoff. The neighborhood may depend on the tolerance. This does not
+yet give a small derivative on a fixed ball or an inverse map.
+
+Fixed-ball derivative control and solving the simultaneous tail
+equations remain before finite-gap density. General angle/angle
+involution, bracket compatibility for `1 < p < 2`, and later chapters
+remain unfinished; Corollary 13.2 is not complete.
+
+## Previous milestone: analytic spectral centers and a closing criterion
 
 Every distant resonant strip now has a named center solving the actual
 diagonal equation `z = nπ + a_n(z)`. A contraction constructs it, proves

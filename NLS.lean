@@ -1,4 +1,5 @@
 import NLS.SequenceSpaces.Basic
+import NLS.SequenceSpaces.FunctionOrZero
 import NLS.SequenceSpaces.OnePlus
 import NLS.SequenceSpaces.OnePlusTopology
 import NLS.SequenceSpaces.OnePlusComplete
@@ -338,6 +339,11 @@ import NLS.ZakharovShabat.ResonantDiagonalCenter
 import NLS.ZakharovShabat.ResonantCenterCollapse
 import NLS.ZakharovShabat.WeightedResonantDiagonalCenter
 import NLS.ZakharovShabat.WeightedResonantDiagonalCenterAnalytic
+import NLS.ZakharovShabat.WeightedResonantCenterRemainder
+import NLS.ZakharovShabat.WeightedResonantCenterRemainderSmall
+import NLS.ZakharovShabat.WeightedResonantCenterRemainderAnalytic
+import NLS.ZakharovShabat.WeightedResonantLeadingTail
+import NLS.ZakharovShabat.WeightedResonantCenterClosingTail
 import NLS.ZakharovShabat.SingleResonantPotential
 import NLS.ZakharovShabat.RootDisplacementSourceAudit
 import NLS.ZakharovShabat.RootDisplacementPower

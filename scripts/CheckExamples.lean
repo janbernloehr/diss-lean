@@ -21183,4 +21183,86 @@ example (w : SpectralWeight)
           (weightedResonantDiagonalCenter (by norm_num) w ψ n)) U :=
   exists_uniform_analytic_weightedResonantCenterEquations (by norm_num) (by norm_num) w φ
 
+
+-- The leading map retains the two different frequency signs and the
+-- exact tail norm comparison at a non-Hilbert exponent.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (N : ℕ) (n : ℤ)
+    (hn : N ≤ n.natAbs) :
+    (weightedResonantLeadingTailCLM (by simp) w N φ).fst n = (w (2*n) : ℂ)*φ.fst.val (-(2*n)) ∧
+    (weightedResonantLeadingTailCLM (by simp) w N φ).snd n = (w (2*n) : ℂ)*φ.snd.val (2*n) ∧
+    ‖weightedResonantLeadingTailCLM (by simp) w N φ‖ ≤ ‖weightedPairFourierTail w.toWeight (2*N) φ‖ := by
+  refine ⟨?_,?_,norm_weightedResonantLeadingTail_le (by simp) w φ N⟩
+  · simpa only [weightedResonantLeadingTailCLM_apply,if_pos hn] using
+      weightedResonantLeadingTail_fst (by simp) w φ N n
+  · simpa only [weightedResonantLeadingTailCLM_apply,if_pos hn] using
+      weightedResonantLeadingTail_snd (by simp) w φ N n
+
+-- The full actual closing map is analytic for every larger cutoff.
+-- Its zero lower block and its original-spectrum closing implication
+-- come from constructed membership, rather than a supplied premise.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        AnalyticOnNhd ℂ (fun ψ => weightedResonantCenterClosingTail (by simp) w ψ N) U ∧
+        ∀ ψ ∈ U,
+          ‖weightedResonantCenterClosingTail (by simp) w ψ N-weightedResonantLeadingTailCLM (by simp) w N ψ‖ < ε ∧
+          (∀ n : ℤ, n.natAbs < N →
+            (weightedResonantCenterClosingTail (by simp) w ψ N).fst n = 0 ∧
+            (weightedResonantCenterClosingTail (by simp) w ψ N).snd n = 0) ∧
+          ∀ n : ℤ, N ≤ n.natAbs →
+            (weightedResonantCenterClosingTail (by simp) w ψ N).fst n = 0 →
+            (weightedResonantCenterClosingTail (by simp) w ψ N).snd n = 0 →
+            (∀ z ∈ resonantStrip n,
+              z ∈ periodicSpectrum (by simp) (weightedBaseToPair w ψ) ↔
+                z = weightedResonantDiagonalCenter (by simp) w ψ n) ∧
+            ∀ z ∈ resonantStrip n,
+              analyticOrderNatAt (resonantDeterminantExtension (by simp) w ψ n) z =
+                if z = weightedResonantDiagonalCenter (by simp) w ψ n then 2 else 0 := by
+  obtain ⟨N₀,hN₀,U,ho,hc,hφ,h0,hmap⟩ :=
+    exists_uniform_analytic_weightedResonantCenterClosingTail (by simp) (by norm_num) w φ ε hε
+  refine ⟨N₀,hN₀,U,ho,hc,hφ,h0,?_⟩
+  intro N hN
+  have h := hmap N hN
+  refine ⟨h.1,?_⟩
+  intro ψ hψ
+  have hdata := h.2 ψ hψ
+  refine ⟨hdata.1,?_,hdata.2.2⟩
+  intro n hn
+  exact ⟨by simpa [not_le.mpr hn] using hdata.2.1.1 n,
+    by simpa [not_le.mpr hn] using hdata.2.1.2 n⟩
+
+-- Both components contribute to the actual Hilbert power budget,
+-- which also bounds the full closing map minus its leading tail.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 2),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        ‖weightedResonantCenterClosingTail (by simp) w ψ N-weightedResonantLeadingTailCLM (by simp) w N ψ‖^2 ≤
+          offDiagonalSummationConstant 2 * ‖ψ‖^2 *
+            (‖ψ‖^4/(N : ℝ)+‖weightedPairFourierTail w.toWeight (N/2) ψ‖^4) := by
+  obtain ⟨N₀,hN₀,U,ho,hc,hφ,h0,hbound⟩ :=
+    exists_uniform_weightedResonantCenterRemainder_bound (by simp) (by norm_num) w φ
+  refine ⟨N₀,hN₀,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ N hN
+  rw [weightedResonantCenterClosingTail_sub_leading]
+  have hb := (hbound ψ hψ N hN).2
+  norm_num at hb
+  exact hb
+
+-- The sequence norm analyticity and arbitrary tolerance hold below
+-- the Hilbert exponent as well, with arbitrary spectral weights.
+example (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight (ENNReal.ofReal (3/2 : ℝ))) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight (ENNReal.ofReal (3/2 : ℝ))),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        AnalyticOnNhd ℂ (fun ψ => weightedResonantCenterClosingTail (by norm_num) w ψ N) U ∧
+        ∀ ψ ∈ U,
+          ‖weightedResonantCenterClosingTail (by norm_num) w ψ N-
+            weightedResonantLeadingTailCLM (by norm_num) w N ψ‖ < ε := by
+  obtain ⟨N₀,hN₀,U,ho,hc,hφ,h0,hmap⟩ :=
+    exists_uniform_analytic_weightedResonantCenterClosingTail (by norm_num) (by norm_num) w φ ε hε
+  exact ⟨N₀,hN₀,U,ho,hc,hφ,h0,fun N hN => ⟨(hmap N hN).1,fun ψ hψ => ((hmap N hN).2 ψ hψ).1⟩⟩
+
 end NLS.ZakharovShabat

@@ -6532,3 +6532,44 @@ The sequence-space map of these equations and a construction solving
 their simultaneous tails are still needed for finite-gap density.
 General angle/angle involution, bracket compatibility below two, and
 later chapters remain unfinished; Corollary 13.2 is not complete.
+
+## Latest milestone: the analytic sequence map of spectral closing equations
+
+`WeightedResonantCenterRemainder.lean` assembles the actual off-diagonal
+coefficients at the named spectral centers into an `ℓᵖ` pair remainder,
+after subtracting the signed leading Fourier coefficients and multiplying
+by `w(2n)`. The full-strip supremum estimates prove membership and a
+quantitative joint norm budget using the original component-sum source
+norm and its Fourier tail. `FunctionOrZero.lean` supplies the total
+sequence constructor; proved membership retains every actual coefficient.
+
+`WeightedResonantCenterRemainderSmall.lean` makes the joint remainder norm
+arbitrarily small on one open convex source neighborhood for every larger
+cutoff. `WeightedResonantCenterRemainderAnalytic.lean` combines scalar
+moving-center analyticity with this sequence bound to prove Banach
+analyticity of the actual pair map.
+
+`WeightedResonantLeadingTail.lean` constructs the signed weighted leading
+Fourier tail as a continuous linear map. Its norm is bounded by the source
+Fourier tail at `2N` with constant one. The negative component samples
+`φ₁(−2n)` and the positive component samples `φ₂(2n)`.
+
+`WeightedResonantCenterClosingTail.lean` adds these two maps. Its high
+coordinates are exactly `w(2n) b⁻_n(ζ_n)` and `w(2n) b⁺_n(ζ_n)`, and
+its lower block is zero. On one neighborhood, it is analytic for every
+larger cutoff and differs from the leading Fourier map by less than any
+chosen positive tolerance. Its zero coordinates imply that the original
+periodic spectrum in that strip consists of the actual center, with
+determinant order exactly two. All results hold for arbitrary spectral
+weights and every finite `p > 1`.
+
+API checks cover the exact signed leading coefficients and tail norm
+at `p = 3`, the constructed zero lower block and original-spectrum
+closing implication, the combined Hilbert norm budget, and sequence
+norm analyticity with arbitrary tolerance at `p = 3/2`.
+
+The neighborhood can depend on the tolerance. Fixed-ball derivative
+control, an inverse construction, and solving the simultaneous tail
+equations remain before finite-gap density. General angle/angle
+involution, bracket compatibility below two, and later chapters remain
+unfinished; Corollary 13.2 is not complete.
