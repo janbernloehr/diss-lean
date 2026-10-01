@@ -1377,6 +1377,9 @@ import NLS.ZakharovShabat.FiniteSourceDiscriminantGradient
 import NLS.ZakharovShabat.SourceDiscriminantPoisson
 import NLS.ZakharovShabat.SourceBoundaryPoissonGradient
 import NLS.ZakharovShabat.SourceBoundaryDiscriminantPoisson
+import NLS.ZakharovShabat.SourceBoundaryRootDifferential
+import NLS.ZakharovShabat.SourceBoundaryRootPoisson
+import NLS.ZakharovShabat.SourceBoundaryRootActionPoisson
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

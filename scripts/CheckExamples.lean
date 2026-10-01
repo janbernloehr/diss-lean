@@ -18904,3 +18904,54 @@ example (φ : CoeffPair (3 : ℝ≥0∞)) (n : ℤ) (w : ℂ) :
       (by norm_num) .neumann φ n w
 
 end NLS.ZakharovShabat
+
+
+/- Actual moving boundary-root differentials, literal opposite boundary
+signs at coincidence, and all-index collapsed-gap action commutation. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+-- The differential already exists throughout the full finite p > 1 range.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (b : BoundaryCondition) (φ : CoeffPair p)
+    (hreal : IsRealType (CoeffPair.toMax p φ)) (n : ℤ) (h : CoeffPair p) :
+    (fderiv ℂ (fun ψ : CoeffPair p => canonicalPeriodOneBoundaryRoots hp hp1 b ψ n) φ) h =
+      -sourceBoundaryCharacteristicCotangent hp hp1 b (canonicalPeriodOneBoundaryRoots hp hp1 b φ n) φ h /
+        deriv (periodOneBoundaryCharacteristic hp hp1 b φ) (canonicalPeriodOneBoundaryRoots hp hp1 b φ n) :=
+  fderiv_canonicalPeriodOneBoundaryRoot_apply hp hp1 b φ hreal n h
+
+-- The second parameter is held fixed at the base-source Dirichlet root.
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) μ) φ =
+        -sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ μ/2 := by
+  simpa only [sourceBoundaryRootDiscriminantBracket,BoundaryCondition.extensionSign,
+    neg_mul,one_mul] using sourceBoundaryRootDiscriminantBracket_at_root
+      (by norm_num) (by norm_num) (by norm_num) .dirichlet φ hreal n
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    let ν := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann φ n
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann ψ n)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) ν) φ =
+        sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ ν/2 := by
+  simpa only [sourceBoundaryRootDiscriminantBracket,BoundaryCondition.extensionSign,
+    neg_neg,one_mul] using sourceBoundaryRootDiscriminantBracket_at_root
+      (by norm_num) (by norm_num) (by norm_num) .neumann φ hreal n
+
+-- The action index can differ, and its gap does not need to be open.
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) n = 0) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_boundaryRoot_action_eq_zero_of_collapsed_gap
+    (by norm_num) (by norm_num) (by norm_num) b φ hreal n m hgap
+
+end NLS.ZakharovShabat

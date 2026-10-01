@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual separated-characteristic/discriminant source flow
+## Current milestone: actual moving boundary-root differentials and Poisson motion
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -31,9 +31,15 @@ normalization. Their physical endpoint gradients and source Fourier
 cotangents identify these variations with the actual source Poisson bracket.
 The resulting characteristic/discriminant formula holds at every complex
 source for finite `p >= 2`, including at every canonical boundary root.
-The root is held fixed in the differentiated characteristic. Differentiating
-the moving root coordinates and completing the canonical angle computations
-remain the next steps.
+The root is held fixed in that differentiated characteristic. The actual
+moving boundary-coordinate derivative is now derived from its zero equation
+at every real-type source for finite `p > 1`. Simplicity makes it the negative
+characteristic cotangent divided by the spectral characteristic derivative.
+For finite `p >= 2`, this gives the actual root/discriminant bracket, including
+its coincident-parameter value, and the actual root/action contour kernel.
+At a collapsed indexed periodic gap, either boundary root commutes with every
+discriminant and every action. Completing the canonical angle computations
+and the lower-exponent bracket compatibility remain the next steps.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11005,3 +11011,50 @@ the characteristic; it is not yet the derivative of the moving root.
 The canonical angle-angle and mixed angle-action identities, the moving
 boundary-root differential calculation, and spectral bracket compatibility
 for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual moving boundary-root differentials and action kernels
+
+Every actual canonical Dirichlet and Neumann root satisfies its original
+characteristic zero equation at every complex source. At real type its
+original algebraic multiplicity is one, including central indices and
+collapsed periodic gaps. The exact characteristic vanishing order therefore
+proves that its spectral derivative is nonzero. The existing analyticity
+of the actual coordinate and the differentiated zero equation give its
+full source cotangent: `dmu_n = -dchi_b(mu_n) / chi_b'(mu_n)` for every finite
+`p > 1`. This is a derived equality of continuous linear maps, not a supplied
+root-gradient assumption.
+
+Continuous bilinearity converts this cotangent identity to a bracket identity
+against any source functional. The previous actual characteristic/discriminant
+flow then gives, for finite `p >= 2` at every real source,
+`{mu_n, Delta(w)} = r delta(mu_n) chi_b(w) /
+(2 (mu_n-w) chi_b'(mu_n))` when the two parameters differ. The first functional
+is the actual moving root coordinate. The discriminant parameter is held
+fixed at its base value when its source differential is taken.
+
+The bracket is entire as a function of that fixed spectral parameter, by
+joint analyticity of the actual operator-valued discriminant differential.
+Differentiating the denominator-cleared flow at coincidence determines the
+removable value exactly: `{mu_n, Delta(mu_n)} = -r delta(mu_n)/2`. This proof
+does not divide by a zero spectral difference or assume a limiting value.
+
+The actual action cotangent circle formula now represents every indexed
+boundary-root/action bracket by a single contour integral of this entire
+root/discriminant bracket divided by the canonical periodic root. Real-source
+interlacing puts every boundary root on its own periodic segment, so all
+admissible action circles avoid it. Substitution gives the literal signed
+characteristic kernel on each actual action chart. An actual centered chart
+exists for every real source and every pair of indices; no open-gap condition
+or finite-source bracket identity is needed.
+
+The anti-discriminant square identity is also proved at both families of
+actual boundary roots. At a collapsed periodic gap the boundary root equals
+its endpoint, and the periodic pair factorization makes its anti-discriminant
+zero. Both the distinct and coincident bracket formulas therefore vanish.
+Either actual boundary root in such a gap commutes with every discriminant
+and every actual indexed action, including actions in other gaps.
+
+The boundary-root mutual commutation calculation, canonical angle-angle and
+mixed angle-action identities, and spectral bracket compatibility for
+`1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.

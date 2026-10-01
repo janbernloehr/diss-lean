@@ -5517,3 +5517,39 @@ These are proved flow identities without supplied gradient or finite-identity
 hypotheses. The moving boundary-root differential and the canonical
 angle-angle and mixed angle-action calculations remain, along with spectral
 bracket compatibility for `1 < p < 2`.
+
+
+### Corollary 13.2: moving boundary-root differentials and action kernels
+
+`SourceBoundaryRootDifferential.lean` differentiates the actual canonical
+Dirichlet and Neumann characteristic zero equations. Their proved original
+multiplicity one makes the spectral characteristic derivative nonzero at
+every real-type source, including collapsed gaps and central indices.
+The actual full coordinate cotangent is
+`dmu_n = -dchi_b(mu_n) / chi_b'(mu_n)` for every finite `p > 1`.
+
+`SourceBoundaryRootPoisson.lean` applies the actual continuous source
+bivector to this equality. For finite `p >= 2`, the proved characteristic
+flow yields the literal quotient
+`{mu_n, Delta(w)} = r delta(mu_n) chi_b(w) /
+(2 (mu_n-w) chi_b'(mu_n))`, where `r = 1` for Dirichlet and `r = -1` for
+Neumann. Joint discriminant cotangent analyticity makes this bracket entire
+in its fixed spectral parameter. Differentiating the cleared identity gives
+its coincident value `-r delta(mu_n)/2` without a singular division.
+
+`SourceBoundaryRootActionPoisson.lean` combines the actual root motion with
+the action cotangent contour formula. Every boundary-root/action bracket
+has a single-circle representation with the literal characteristic quotient
+and canonical periodic root. Real interlacing ensures every boundary root
+is avoided by an admissible action circle. Actual centered action charts
+supply the formula for every real source and pair of indices.
+
+The anti-discriminant square identity holds at both root families. At a
+collapsed periodic gap the boundary root is its periodic endpoint and the
+anti-discriminant vanishes. The actual root then commutes with every fixed
+spectral discriminant and every indexed action. No root-gradient, finite-source
+bracket, or nonzero-gap hypothesis is assumed in these conclusions.
+
+Mutual boundary-root commutation and the canonical angle-angle and mixed
+angle-action calculations remain, along with spectral bracket compatibility
+for `1 < p < 2`.
