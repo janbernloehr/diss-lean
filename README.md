@@ -6224,3 +6224,44 @@ yet establish continuation of the original source-space curve. Global
 source continuation, endpoint reachability, and bracket compatibility
 for `1 < p < 2` remain before completing Corollary 13.2. Later chapters
 are also unfinished.
+
+
+### Corollary 13.2: conservation of the original Hilbert source norm
+
+`ClassicalDiscriminantPhaseStationarity.lean` proves infinitesimal
+opposite-phase invariance of the actual physical discriminant. The
+transported-monodromy diagonal has matching endpoint values, and its
+proved derivative is twice the phase-gradient pairing. The fundamental
+theorem of calculus gives exact cancellation for every continuous
+complex potential and every spectral parameter.
+
+`SourceHilbertMass.lean` defines the actual holomorphic Hilbert mass by
+the reflected coefficient pairing. Both original components occur in
+its full cotangent. Its actual Hamiltonian direction is `-sourcePhase`,
+with first component `-i phi_1` and second component `i phi_2`. On the
+real source form the mass is exactly half the square of the original
+source-pair norm, including at zero.
+
+`SourceHilbertMassDiscriminant.lean` transfers the physical phase
+identity through exact finite Fourier realization, then uses joint
+cotangent continuity and finite Fourier density. The actual Hilbert
+mass commutes with every actual source discriminant at every complex
+source; phase or norm invariance is not supplied as an assumption.
+
+`SourceDirichletSpectralMassConservation.lean` proves that every actual
+indexed Hilbert spectral direction fixes mass. The mass is constant
+throughout every complex integral-curve interval, and the original
+source norm is constant throughout every real integral-curve interval.
+Its public existence theorem constructs a real local isospectral curve
+through every real Hilbert source whose norm remains exactly the initial
+norm on the whole ODE interval, without positive-norm or open-gap
+hypotheses.
+
+API checks cover the original mass pairing and phase signs, its actual
+norm identity, complex mass/discriminant commutation, constructed
+norm-conserved curves, and stationarity of a curve through zero.
+This supplies the source norm bound needed for Hilbert continuation.
+Uniform source vector-field estimates and a continuation construction
+remain, followed by endpoint reachability and the remaining transport
+argument. Bracket compatibility for `1 < p < 2` and later chapters also
+remain unfinished; Corollary 13.2 is not complete.

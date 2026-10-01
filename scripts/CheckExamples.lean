@@ -20698,3 +20698,67 @@ example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → Delete
     (by norm_num) k n m γ a b hreal hγ u v hu hv hn hm
 
 end NLS.ZakharovShabat
+
+
+/- The original Hilbert source mass has the physical phase generator
+and supplies an actual norm bound on every real indexed curve. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson NLS.LinearVolterra
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (n : ℤ) (a b : ℂ) :
+    sourceHilbertMass (CoeffPair.ofFinsupp (p := 2)
+      (Finsupp.single n a,Finsupp.single (-n) b)) = a*b := by
+  simp [sourceHilbertMass,reflectedHilbertPairing_apply,Finsupp.single_apply]
+
+example (φ : CoeffPair 2) :
+    sourceHamiltonianVector (by norm_num) sourceHilbertMass φ = -sourcePhase φ :=
+  sourceHamiltonianVector_sourceHilbertMass_eq_neg_sourcePhase φ
+
+example (φ : realTypeSourceLocus 2) :
+    sourceHilbertMass φ.val = ((‖φ.val‖^2/2 : ℝ):ℂ) :=
+  sourceHilbertMass_eq_half_norm_sq_of_realType φ.val φ.property
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalDiscriminant Ψ z) Φ)
+      (classicalMassHamiltonianDirection Φ) = 0 :=
+  fderiv_classicalDiscriminant_massHamiltonianDirection_eq_zero Φ z
+
+example (φ : CoeffPair 2) (z : ℂ) (k : ℤ) :
+    sourceBracket (by norm_num) sourceHilbertMass
+      (fun ψ : CoeffPair 2 => canonicalDiscriminant (by simp) (periodOnePotential ψ) z) φ = 0 ∧
+    (fderiv ℂ sourceHilbertMass φ)
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k φ) = 0 :=
+  ⟨sourceBracket_mass_discriminant_eq_zero φ z,
+    fderiv_sourceHilbertMass_sourceDirichletSpectralVector_eq_zero k φ⟩
+
+example (k : ℤ) (γ : ℝ → CoeffPair 2) (a b u v : ℝ)
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t)
+    (hu : u ∈ Ioo a b) (hv : v ∈ Ioo a b) :
+    sourceHilbertMass (γ u) = sourceHilbertMass (γ v) :=
+  sourceHilbertMass_eq_on_sourceDirichletSpectral_integralCurve k γ a b hγ u v hu hv
+
+example (k : ℤ) (φ : realTypeSourceLocus 2) :
+    ∃ γ : ℝ → CoeffPair 2, γ 0 = φ.val ∧
+      (∀ t : ℝ, IsRealType (CoeffPair.toMax 2 (γ t))) ∧
+      ∃ ε : ℝ, 0 < ε ∧
+        (∀ t ∈ Ioo (-ε) ε, HasDerivAt γ
+          (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t) ∧
+        (∀ t ∈ Ioo (-ε) ε, ‖γ t‖ = ‖φ.val‖) ∧
+        ∀ t ∈ Ioo (-ε) ε, ∀ w : ℂ,
+          canonicalDiscriminant (by simp) (periodOnePotential (γ t)) w =
+            canonicalDiscriminant (by simp) (periodOnePotential φ.val) w :=
+  exists_sourceDirichletSpectral_norm_conserved_integralCurve k φ
+
+example (k : ℤ) (γ : ℝ → CoeffPair 2) (a b u v : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 2 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t)
+    (hu : u ∈ Ioo a b) (hv : v ∈ Ioo a b) (hzero : γ u = 0) : γ v = 0 := by
+  have hn := norm_eq_on_sourceDirichletSpectral_integralCurve k γ a b hreal hγ v u hv hu
+  rw [hzero,norm_zero] at hn
+  exact norm_eq_zero.mp hn
+
+end NLS.ZakharovShabat

@@ -1,28 +1,35 @@
 # Implementation status
 
-## Current milestone: conserved spectral data and compact terminal sheets
+## Current milestone: conservation of the original Hilbert source norm
 
-Every actual real indexed Dirichlet spectral integral curve now keeps
-all periodic endpoints and gaps fixed on its entire time interval,
-including collapsed gaps. Every other Dirichlet root and terminal
-anti-discriminant is fixed as well. The selected terminal solves the
-sheet ODE of the original fixed discriminant, with no endpoint excluded.
+The actual indexed Dirichlet spectral curves now conserve the original
+source-pair norm at `p = 2`. A holomorphic mass functional is constructed
+from the reflected coefficient pairing. Its full actual Hamiltonian
+direction is opposite component phase rotation, with the original
+Poisson sign. On the real source form, mass is exactly half the square
+of the source norm.
 
-Its fixed sheet over the original periodic segment is compact, proved
-without a supplied bound. The selected root and anti-discriminant remain
-on that sheet and have one finite bound throughout the whole interval.
+The actual physical discriminant cotangent annihilates this phase
+direction by cancellation of the transported-monodromy diagonal at the
+two endpoints. Exact finite Fourier realization, joint cotangent
+continuity, and density transfer the identity to every complex Hilbert
+source. Thus mass commutes with every actual discriminant. Its source
+variation is zero along every indexed field, and the whole actual real
+integral-curve interval stays on the initial norm sphere, including a
+zero initial source. A norm-conserved local curve is constructed through
+every real Hilbert source without any norm-invariance assumption.
 
-Open angle gaps at one reference source are therefore preserved on the
-whole curve. Actual angle/angle bracket transport now requires only
-initial open gaps. The constructed local curve preserves its full
-bracket on its original ODE interval without further shrinking.
+Every periodic endpoint and gap, and every other Dirichlet terminal,
+is already fixed along these curves. The selected terminal stays on
+its compact fixed initial sheet. Initially open angle gaps are preserved,
+and the full angle/angle bracket is constant throughout the curve.
+Its zero value is proved at periodic-terminal endpoint configurations.
 
-The zero value is already proved at real sources whose Dirichlet
-terminals are all periodic endpoints, for finite `p >= 2` with both
-selected angle gaps open. Compactness of the terminal sheet alone does
-not yet give global continuation of the source-space curve or transport
-reaching these basepoints. Those steps, bracket compatibility for
-`1 < p < 2`, and the later chapters remain unfinished.
+The Hilbert source norm bound is now available. Uniform source
+vector-field estimates, global source continuation and endpoint
+reachability remain before the general angle/angle zero identity.
+Bracket compatibility for `1 < p < 2` and the later chapters also remain
+unfinished. Corollary 13.2 is not complete.
 
 The full actual angle cotangent now satisfies `{Delta(w),theta_n} =
 psi_n(w)/2` at every real source for finite `p >= 2`, with only the
@@ -12147,3 +12154,44 @@ yet establish continuation of the original source-space curve. Global
 source continuation, endpoint reachability, and bracket compatibility
 for `1 < p < 2` remain before completing Corollary 13.2. Later chapters
 are also unfinished.
+
+
+## Latest milestone: conservation of the original Hilbert source norm
+
+`ClassicalDiscriminantPhaseStationarity.lean` proves infinitesimal
+opposite-phase invariance of the actual physical discriminant. The
+transported-monodromy diagonal has matching endpoint values, and its
+proved derivative is twice the phase-gradient pairing. The fundamental
+theorem of calculus gives exact cancellation for every continuous
+complex potential and every spectral parameter.
+
+`SourceHilbertMass.lean` defines the actual holomorphic Hilbert mass by
+the reflected coefficient pairing. Both original components occur in
+its full cotangent. Its actual Hamiltonian direction is `-sourcePhase`,
+with first component `-i phi_1` and second component `i phi_2`. On the
+real source form the mass is exactly half the square of the original
+source-pair norm, including at zero.
+
+`SourceHilbertMassDiscriminant.lean` transfers the physical phase
+identity through exact finite Fourier realization, then uses joint
+cotangent continuity and finite Fourier density. The actual Hilbert
+mass commutes with every actual source discriminant at every complex
+source; phase or norm invariance is not supplied as an assumption.
+
+`SourceDirichletSpectralMassConservation.lean` proves that every actual
+indexed Hilbert spectral direction fixes mass. The mass is constant
+throughout every complex integral-curve interval, and the original
+source norm is constant throughout every real integral-curve interval.
+Its public existence theorem constructs a real local isospectral curve
+through every real Hilbert source whose norm remains exactly the initial
+norm on the whole ODE interval, without positive-norm or open-gap
+hypotheses.
+
+API checks cover the original mass pairing and phase signs, its actual
+norm identity, complex mass/discriminant commutation, constructed
+norm-conserved curves, and stationarity of a curve through zero.
+This supplies the source norm bound needed for Hilbert continuation.
+Uniform source vector-field estimates and a continuation construction
+remain, followed by endpoint reachability and the remaining transport
+argument. Bracket compatibility for `1 < p < 2` and later chapters also
+remain unfinished; Corollary 13.2 is not complete.
