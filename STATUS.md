@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual anti-discriminant spectral brackets and mixed root/Floquet separation
+## Current milestone: actual canonical separation bracket relations
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -66,9 +66,8 @@ value constructs an actual analytic local logarithm at every real source.
 For finite `p >= 2`, its actual discriminant bracket is the characteristic
 kernel `Delta'(mu)chi_b(w)/(2(mu-w)chi_b'(mu))`, with coincidence value
 `-Delta'(mu)/2`. Its action bracket is the corresponding single contour
-formula on every action chart, including collapsed gaps. The mutual
-Floquet-logarithm commutation, canonical angle computations, and compatibility
-for `1 < p < 2` remain unfinished.
+formula on every action chart, including collapsed gaps. The canonical
+angle computations and compatibility for `1 < p < 2` remain unfinished.
 
 The actual characteristic/anti-discriminant flow now satisfies
 `2(z-w){chi_b(z),delta(w)} = r_b(chi_b(z)Delta(w)-Delta(z)chi_b(w))`
@@ -79,6 +78,17 @@ density prove these identities without spectral-bracket assumptions.
 The actual mixed root/local Floquet logarithm bracket is `-1/2` at matching
 indices and zero at distinct indices, separately in both boundary families,
 at every real-type source, including collapsed periodic gaps.
+
+All actual moving Floquet multipliers and their analytic local logarithms
+now commute within each ordinary boundary family. The fixed-parameter
+signed expressions commute at every complex source; the mixed separation
+relations remove the two moving-root terms at distinct real roots.
+The local normalization `kappa_n=-2 log(rho_n/rho_n(base))` gives the actual
+canonical separation relations `{mu_n,mu_m}=0`, `{kappa_n,kappa_m}=0`, and
+`{mu_n,kappa_m}=delta_nm` for every real source at finite `p >= 2`, including
+collapsed gaps. Local momentum analyticity holds at every finite `p > 1`.
+Connecting these separation functionals to the actual canonical angles,
+and compatibility for `1 < p < 2`, remain unfinished.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11276,3 +11286,44 @@ separation is not asserted.
 Mutual Floquet-logarithm commutation, canonical angle-angle and mixed
 angle-action values, and compatibility for `1 < p < 2` remain unfinished.
 Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual Floquet involution and canonical separation relations
+
+The signed fixed-parameter expression `(Delta(z)+r_b delta(z))/2` has its
+actual source cotangent and is jointly entire. The actual anti-discriminant/
+discriminant bracket is symmetric under exchange of the spectral parameters,
+as follows from its cleared characteristic determinant identity. Together
+with discriminant and anti-discriminant involution, this symmetry cancels
+both cross terms and proves commutation of each signed fixed-parameter
+family at every complex source for finite `p >= 2`.
+
+The actual moving boundary multiplier cotangent is its fixed-parameter
+cotangent plus the spectral derivative times the actual root cotangent.
+The mixed separation relation identifies each root/fixed-expression bracket
+at a base-source root with the corresponding root/moving-multiplier bracket.
+At distinct real indexed roots both mixed terms vanish, so neither moving
+terminal contributes to the multiplier/multiplier bracket. Equal indices
+are covered by source antisymmetry. Thus all actual moving multipliers
+mutually commute within each boundary family at every real-type source,
+including collapsed periodic gaps.
+
+Both actual local-logarithm cotangents are the multiplier cotangent divided
+by the multiplier. Applying this normalization in both bracket arguments
+proves mutual commutation of the actual analytic local Floquet logarithms.
+The multiplier nonvanishing and local logarithm construction are proved
+rather than supplied as hypotheses.
+
+The explicit local momentum `kappa_n=-2 log(rho_n/rho_n(base))` has its
+actual full cotangent and is analytic at every real source for finite
+`p > 1`. Its value at the base is zero. At finite `p >= 2`, its momentum/
+momentum bracket is zero and its root/momentum bracket is the literal
+Kronecker delta. The combined theorem states all three actual canonical
+separation relations `{mu_n,mu_m}=0`, `{kappa_n,kappa_m}=0`, and
+`{mu_n,kappa_m}=delta_nm` simultaneously. Both ordinary boundary families,
+all central indices, and collapsed periodic gaps are included.
+
+Connecting these separation functionals to the actual normalized angular
+integrals, proving the canonical angle-angle and mixed angle-action values,
+and compatibility for `1 < p < 2` remain unfinished. Corollary 13.2 is not
+yet complete. No cross-family separation or local inverse theorem is asserted.

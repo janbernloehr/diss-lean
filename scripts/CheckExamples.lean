@@ -19191,3 +19191,66 @@ example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3
     (by norm_num) (by norm_num) (by norm_num) .neumann φ hreal n n
 
 end NLS.ZakharovShabat
+
+
+/- Actual fixed-expression, moving-multiplier, and logarithm involution;
+all three canonically normalized separation relations. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    sourceBracket (by norm_num) (sourceBoundaryFloquetExpression (by norm_num) (by norm_num) b z)
+      (sourceBoundaryFloquetExpression (by norm_num) (by norm_num) b w) φ = 0 :=
+  sourceBracket_boundaryFloquetExpressions_eq_zero (by norm_num) (by norm_num) (by norm_num) b φ z w
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num) (sourceBoundaryFloquetMultiplier (by norm_num) (by norm_num) b n)
+      (sourceBoundaryFloquetMultiplier (by norm_num) (by norm_num) b m) φ = 0 :=
+  sourceBracket_boundaryFloquetMultipliers_eq_zero (by norm_num) (by norm_num) (by norm_num) b φ hreal n m
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num) (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b n φ)
+      (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b m φ) φ = 0 :=
+  sourceBracket_boundaryFloquetLogs_eq_zero (by norm_num) (by norm_num) (by norm_num) b φ hreal n m
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ m) φ = 0 ∧
+    sourceBracket (by norm_num) (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) b n φ)
+      (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) b m φ) φ = 0 ∧
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n)
+      (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) b m φ) φ = if n = m then 1 else 0 :=
+  sourceBoundaryCanonicalSeparation_relations (by norm_num) (by norm_num) (by norm_num) b φ hreal n m
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) .dirichlet n φ) φ = 1 := by
+  simpa using! sourceBracket_boundaryRoot_canonicalMomentum_eq
+    (by norm_num) (by norm_num) (by norm_num) .dirichlet φ hreal n n
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann ψ n)
+      (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) .neumann n φ) φ = 1 := by
+  simpa using! sourceBracket_boundaryRoot_canonicalMomentum_eq
+    (by norm_num) (by norm_num) (by norm_num) .neumann φ hreal n n
+
+-- The analytic local momentum also exists below the Hilbert exponent.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+example (b : BoundaryCondition) (φ : CoeffPair (ENNReal.ofReal (3/2)))
+    (hreal : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2)) φ)) (n : ℤ) :
+    AnalyticAt ℂ (sourceBoundaryCanonicalMomentumAt ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ) φ :=
+  analyticAt_sourceBoundaryCanonicalMomentumAt_of_realType ENNReal.ofReal_ne_top
+    (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ hreal
+
+end NLS.ZakharovShabat

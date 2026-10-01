@@ -5678,3 +5678,32 @@ central indices and collapsed periodic gaps.
 Mutual Floquet-logarithm commutation, the canonical angle-angle and mixed
 angle-action identities, and compatibility for `1 < p < 2` remain.
 Corollary 13.2 is not yet complete.
+
+
+### Corollary 13.2: actual Floquet involution and canonical separation brackets
+
+`SourceBoundaryFloquetCommutation.lean` proves that each signed
+fixed-parameter discriminant/anti-discriminant family commutes at every
+complex source for finite `p >= 2`. The spectral symmetry of the actual
+anti-discriminant/discriminant bracket cancels both cross terms. The
+actual moving multiplier cotangent retains the spectral derivative times
+the root cotangent. At distinct real roots, the mixed separation relations
+make both moving-root contributions zero. Consequently all actual moving
+multipliers and their analytic local logarithms mutually commute within
+either ordinary boundary family, including collapsed gaps.
+
+`SourceBoundaryCanonicalSeparation.lean` defines the actual local momentum
+`kappa_n=-2 log(rho_n/rho_n(base))`. This normalization converts the original
+period-one mixed bracket `-delta_nm/2` into `delta_nm`. Its actual cotangent
+and local analyticity follow from those of the actual local logarithm.
+For every real source at finite `p >= 2`, all three canonical separation
+relations hold simultaneously:
+`{mu_n,mu_m}=0`, `{kappa_n,kappa_m}=0`, and `{mu_n,kappa_m}=delta_nm`.
+The statements are independent for the Dirichlet and Neumann families,
+with no open-gap or logarithm-branch assumption. Momentum analyticity
+also holds at each finite `p > 1`.
+
+The canonical angle-angle and mixed angle-action identities require
+connecting these separation functionals to the actual normalized angular
+integrals. That connection and compatibility for `1 < p < 2` remain before
+Corollary 13.2 is complete.

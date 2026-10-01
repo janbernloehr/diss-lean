@@ -1394,6 +1394,8 @@ import NLS.ZakharovShabat.SourceBoundaryTerminalPoisson
 import NLS.ZakharovShabat.SourceBoundaryFloquetLogActionPoisson
 import NLS.ZakharovShabat.SourceAntiSpectralPoisson
 import NLS.ZakharovShabat.SourceBoundaryRootFloquetPoisson
+import NLS.ZakharovShabat.SourceBoundaryFloquetCommutation
+import NLS.ZakharovShabat.SourceBoundaryCanonicalSeparation
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
