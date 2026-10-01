@@ -5792,3 +5792,16 @@ endpoints. Both therefore commute with every actual action in the bracket
 range. Moving-terminal variation and the exact normalized period sum remain
 before the angle-action value; the angle-angle identity and lower-exponent
 bracket compatibility also remain unfinished.
+
+`QuadraticCauchyUniqueness.lean` proves that an analytic solution of the
+homogeneous quadratic root equation vanishes on an open connected domain
+containing a root, including a double root. `SourceAngularCauchyIsospectral.lean`
+uses this to prove zero source variation of the actual off-diagonal interior
+angular Cauchy primitive throughout its enclosing disc. Differentiating its
+actual equation leaves only the homogeneous equation, since the actual
+midpoint, squared gap, and normalized gap numerator are already stationary.
+Joint analyticity justifies commuting the source and spectral derivatives.
+The result includes periodic endpoints and collapsed gaps for finite `p > 1`;
+the candidate commutes with every actual action for finite `p >= 2`.
+Moving-terminal variation, the normalized period sum, the angle-angle identity,
+and lower-exponent bracket compatibility remain unfinished.

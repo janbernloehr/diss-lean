@@ -1,13 +1,13 @@
 # Implementation status
 
-## Current milestone: actual periodic data and angular integrands are isospectral
+## Current milestone: the interior angular Cauchy primitive is isospectral
 
-The actual periodic midpoint, squared gap, standard-root factors, infinite
-omitted-root products, and angular integrands now have proved zero variation
-in isospectral directions. For finite `p >= 2`, they commute with every actual
-action. The symmetric-coordinate and omitted-product statements include
-collapsed gaps, and the regular angular gap numerator includes selected
-endpoints. Moving-terminal variation and the normalized period sum remain.
+The actual off-diagonal angular Cauchy candidate now has proved zero source
+variation in every isospectral direction, throughout its enclosing disc.
+The proof applies for finite `p > 1`, including the selected periodic
+endpoints and collapsed gaps. For finite `p >= 2`, the candidate commutes
+with every actual action. Moving-terminal variation and the normalized
+period sum remain.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11496,3 +11496,30 @@ The moving-terminal angular variation and exact normalized period sum are
 still needed for the angle-action canonical value. The angle-angle identity
 and bracket compatibility for `1 < p < 2` remain unfinished. Corollary 13.2
 is not yet complete.
+
+
+## Latest milestone: stationarity of the actual interior angular primitive
+
+`QuadraticCauchyUniqueness.lean` proves analytic uniqueness for the homogeneous
+quadratic root equation on an open connected domain containing a root.
+Multiplying the square of a solution by the quadratic polynomial gives a
+function with zero derivative. The contained root makes its constant value
+zero. Finite analytic order of the polynomial then forces the solution to
+vanish, including when both roots coincide.
+
+`SourceAngularCauchyIsospectral.lean` differentiates the actual quadratic
+equation of the off-diagonal interior Cauchy candidate. The proved stationarity
+of the actual midpoint, squared gap, and regular normalized numerator removes
+their source terms. Analyticity of the joint Fréchet derivative and equality
+of the spectral and source mixed derivatives give the homogeneous equation
+for the actual source variation. The enclosing disc contains the selected
+periodic endpoints, so analytic uniqueness proves zero variation on the
+whole disc. No nonzero gap or regular-terminal premise is needed.
+
+The general statement holds for finite `p > 1`; its actual action brackets
+vanish for finite `p >= 2`. Public API examples check a double-root equation,
+the actual action bracket, and general stationarity below the Hilbert exponent.
+The moving-terminal angular derivative and exact normalized period sum still
+remain before the angle-action value. The angle-angle identity and bracket
+compatibility for `1 < p < 2` also remain unfinished. Corollary 13.2 is not
+yet complete.

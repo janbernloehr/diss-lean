@@ -15895,6 +15895,7 @@ example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (N : ℕ)
 
 end NLS.ZakharovShabat
 
+
 /- Lemma 10.8: the physical-to-free first-order correction has an lp norm bound. -/
 noncomputable section
 open scoped ENNReal
@@ -19450,5 +19451,57 @@ example (φ h : CoeffPair (ENNReal.ofReal (3/2)))
       (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2) φ) h = 0 :=
   fderiv_canonicalPeriodicMidpoint_squaredGap_isospectral_eq_zero
     ENNReal.ofReal_ne_top (by rw [ENNReal.one_lt_ofReal]; norm_num) φ hreal h hiso n
+
+end NLS.ZakharovShabat
+
+
+/- The actual interior Cauchy primitive is stationary even through its
+selected periodic endpoints, with no open-gap premise. -/
+noncomputable section
+open Set Metric Complex NLS.Poisson NLS.ComplexAnalysis
+open scoped ENNReal
+
+example (H : ℂ → ℂ) (hH : AnalyticOnNhd ℂ H (ball 0 1))
+    (heq : ∀ z ∈ ball (0 : ℂ) 1, z^2*deriv H z+z*H z = 0)
+    (z : ℂ) (hz : z ∈ ball (0 : ℂ) 1) : H z = 0 := by
+  apply quadratic_equation_homogeneous_eq_zero 0 0 H (ball 0 1)
+    isOpen_ball (convex_ball (0 : ℂ) 1).isPreconnected (mem_ball_self (by norm_num)) hH
+    _ z hz
+  simpa only [quadraticRootPolynomial,zero_add,zero_sub,zero_div,zero_pow two_ne_zero,
+    sub_zero] using heq
+
+namespace NLS.ZakharovShabat
+
+example {m : ℤ} {s : (k : ℤ) → CoeffPair (3 : ℝ≥0∞) → DeletedCoeff 3 k}
+    {W V W₀ : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData (by norm_num) (by norm_num) m s W V c T r R z₀)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (n k : ℤ) (hmn : m ≠ n) (ρ : ℝ) (hrρ : r < ρ) (hρR : ρ < R)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ V) (hφ₀ : φ.val ∈ W₀)
+    (z : ℂ) (hz : z ∈ ball (c m) ρ) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => sourceAngularQuotientCauchyCandidate
+      (by norm_num) (by norm_num) n m s (c m) r R z₀ ρ (z,ψ))
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val = 0 :=
+  D.sourceBracket_quotientCauchyCandidate_action_eq_zero hs (by norm_num)
+    n k hmn ρ hrρ hρR φ hφ hφ₀ z hz
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example {m : ℤ}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    {W V W₀ : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) m s W V c T r R z₀)
+    (hs : SourcePsiIsolatingComplexExtension ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W₀ s)
+    (n : ℤ) (hmn : m ≠ n) (ρ : ℝ) (hrρ : r < ρ) (hρR : ρ < R)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ V) (hφ₀ : φ.val ∈ W₀)
+    (h : CoeffPair (ENNReal.ofReal (3/2))) (hiso : SourceIsospectralDirection ENNReal.ofReal_ne_top φ.val h)
+    (z : ℂ) (hz : z ∈ ball (c m) ρ) :
+    (fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2)) => sourceAngularQuotientCauchyCandidate
+      ENNReal.ofReal_ne_top (by rw [ENNReal.one_lt_ofReal]; norm_num) n m s (c m) r R z₀ ρ (z,ψ)) φ.val) h = 0 :=
+  D.fderiv_quotientCauchyCandidate_isospectral_eq_zero hs n hmn ρ hrρ hρR φ hφ hφ₀ h hiso z hz
 
 end NLS.ZakharovShabat
