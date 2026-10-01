@@ -21120,4 +21120,67 @@ example {W₀ B W : Set (CoeffPair 2)}
     simpa only [Finset.mem_coe,Finset.mem_Icc] using abs_le.mp habs
   exact D.thetaThetaBracket_eq_zero_of_mem_sourceFiniteGapLocus n m φ hn hm hfinite
 
+
+-- The constructed diagonal center follows a constant displacement,
+-- rather than being forced to coincide with the free lattice center.
+example (n : ℤ) (δ : ℂ) (hδ : ‖δ‖ ≤ Real.pi/32) :
+    ∃ z ∈ refinedResonantDisk n,
+      z = (Real.pi : ℂ)*n+δ ∧
+      ∀ x ∈ resonantStrip n, x = (Real.pi : ℂ)*n+δ → x = z := by
+  obtain ⟨z,hz,_,hfix,hunique⟩ := exists_unique_resonantDiagonalCenter n (fun _ => δ)
+    (fun _ _ => analyticAt_const) (fun _ _ => hδ)
+  exact ⟨z,hz,hfix,hunique⟩
+
+-- Stability uses the difference of two diagonals at one held spectral
+-- parameter; neither source-dependent center is assumed continuous.
+example (n : ℤ) (a b : ℂ → ℂ)
+    (ha : AnalyticOnNhd ℂ a (resonantStrip n))
+    (hbound : ∀ z ∈ resonantStrip n, ‖a z‖ ≤ Real.pi/32)
+    (x y : ℂ) (hx : x ∈ refinedResonantDisk n) (hy : y ∈ refinedResonantDisk n)
+    (hfixx : x = (Real.pi : ℂ)*n+a x) (hfixy : y = (Real.pi : ℂ)*n+b y) :
+    ‖x-y‖ ≤ (8/7 : ℝ)*‖a y-b y‖ :=
+  norm_resonantDiagonalCenters_sub_le n a b ha hbound x y hx hy hfixx hfixy
+
+-- The actual weighted closing criterion identifies the original
+-- periodic spectrum and its double determinant root at p = 3. The
+-- center, its sharp bound, and its reality are constructed uniformly.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 3),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs →
+        let z := weightedResonantDiagonalCenter (by simp) w ψ n;
+        ‖z-(Real.pi : ℂ)*n‖ ≤ Real.pi/32 ∧
+        (HasRealitySign w 1 ψ → z.im = 0) ∧
+        (weightedResonantBPlusExtension (by simp) w ψ n z = 0 →
+          weightedResonantBMinusExtension (by simp) w ψ n z = 0 →
+          (∀ x ∈ resonantStrip n, x ∈ periodicSpectrum (by simp) (weightedBaseToPair w ψ) ↔ x = z) ∧
+          analyticOrderNatAt (resonantDeterminantExtension (by simp) w ψ n) z = 2) := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,hcenters⟩ :=
+    exists_uniform_weightedResonantDiagonalCenters (by simp) (by norm_num) w φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ n hn
+  have h := hcenters ψ hψ n hn
+  refine ⟨h.1.2.1,fun hreal => h.2.2.1 1 (by norm_num) hreal,?_⟩
+  intro hpzero hmzero
+  have hclosed := h.2.2.2 hpzero hmzero
+  refine ⟨hclosed.1,?_⟩
+  have horder := hclosed.2 _ (refinedResonantDisk_subset_strip n h.1.1)
+  simpa using horder
+
+-- The analytic tail equations are available below the Hilbert exponent,
+-- with arbitrary weights and one neighborhood for all distant indices.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+example (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight (ENNReal.ofReal (3/2 : ℝ))) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight (ENNReal.ofReal (3/2 : ℝ))),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ n : ℤ, N ≤ n.natAbs →
+        AnalyticOnNhd ℂ (fun ψ => weightedResonantDiagonalCenter (by norm_num) w ψ n) U ∧
+        AnalyticOnNhd ℂ (fun ψ => weightedResonantBPlusExtension (by norm_num) w ψ n
+          (weightedResonantDiagonalCenter (by norm_num) w ψ n)) U ∧
+        AnalyticOnNhd ℂ (fun ψ => weightedResonantBMinusExtension (by norm_num) w ψ n
+          (weightedResonantDiagonalCenter (by norm_num) w ψ n)) U :=
+  exists_uniform_analytic_weightedResonantCenterEquations (by norm_num) (by norm_num) w φ
+
 end NLS.ZakharovShabat

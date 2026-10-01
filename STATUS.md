@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: actual angle/angle involution on finite-gap Hilbert sources
+## Current milestone: analytic spectral centers and a closing criterion
+
+Every distant resonant strip now has a named center solving the actual
+diagonal equation `z = nπ + a_n(z)`. A contraction constructs it, proves
+uniqueness throughout the full strip, and bounds its displacement by
+`π/32`. The residual derivative is nonzero even when the periodic gap
+collapses. Conjugation symmetry makes the center real for either source
+reality sign.
+
+If both actual off-diagonal coefficients vanish at this center, the
+original periodic spectrum in the entire strip consists of that one
+point. Its determinant zero has order exactly two. Cauchy estimates
+prove the closing implication; neither root coincidence nor a spectral
+multiplicity is assumed. All centers and this closing criterion share
+one open convex neighborhood for all distant signed indices at every
+finite exponent above one, with arbitrary spectral weights.
+
+A comparison of two center equations controls the moving center by the
+change of the diagonal at one fixed spectral parameter. This proves
+source continuity. The analytic implicit-root theorem then proves
+analytic dependence of the named centers, and both off-diagonal
+coefficients evaluated at these centers are analytic on one common
+source neighborhood.
+
+This supplies analytic scalar equations whose vanishing closes a
+spectral pair. Constructing their sequence-space map and solving the
+simultaneous tail equations remain before finite-gap density. General
+angle/angle involution, bracket compatibility for `1 < p < 2`, and later
+chapters remain unfinished; Corollary 13.2 is not complete.
+
+## Previous milestone: actual angle/angle involution on finite-gap Hilbert sources
 
 The full actual angle/angle bracket now vanishes at every real finite-gap
 Hilbert source whenever its two angle gaps are open. Finite-gap is defined

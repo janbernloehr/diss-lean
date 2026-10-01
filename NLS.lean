@@ -334,6 +334,10 @@ import NLS.ComplexAnalysis.ZeroCountComparison
 import NLS.ComplexAnalysis.ZeroMultiset
 import NLS.ZakharovShabat.ResonantZeroCount
 import NLS.ZakharovShabat.ResonantRoots
+import NLS.ZakharovShabat.ResonantDiagonalCenter
+import NLS.ZakharovShabat.ResonantCenterCollapse
+import NLS.ZakharovShabat.WeightedResonantDiagonalCenter
+import NLS.ZakharovShabat.WeightedResonantDiagonalCenterAnalytic
 import NLS.ZakharovShabat.SingleResonantPotential
 import NLS.ZakharovShabat.RootDisplacementSourceAudit
 import NLS.ZakharovShabat.RootDisplacementPower

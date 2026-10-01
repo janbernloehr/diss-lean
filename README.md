@@ -6494,3 +6494,41 @@ This proves the actual finite-gap Hilbert angle/angle identity. Density
 and exponent extension remain before the general theta/theta zero
 identity. Bracket compatibility for `1 < p < 2` and later chapters also
 remain unfinished; Corollary 13.2 is not complete.
+
+## Latest milestone: analytic spectral centers and a closing criterion
+
+`ResonantDiagonalCenter.lean` constructs the unique solution of
+`z = nπ + a_n(z)` in every full resonant strip with the proved distant
+bounds. A contraction on a closed disc gives existence; the center
+lies within `π/32` of the free lattice and has a nonzero residual
+derivative. The center is real for a conjugation-symmetric diagonal.
+Comparing two center equations gives the source stability factor `8/7`,
+with the diagonal difference evaluated at one fixed spectral parameter.
+
+`ResonantCenterCollapse.lean` proves that vanishing of both off-diagonal
+entries at this center makes it the only determinant zero in the full
+strip. Cauchy bounds give Lipschitz constants `1/8` for the diagonal
+and `1/4` for each off-diagonal. These estimates force every determinant
+zero to coincide with the center, including for complex sources.
+
+`WeightedResonantDiagonalCenter.lean` names the actual centers and
+constructs one open convex source neighborhood for every distant signed
+index. The closing criterion identifies the original periodic spectrum
+in the strip with the single center and proves determinant order two
+there, using the earlier exact two-root count. The center is real for
+either potential reality sign. These results hold for arbitrary spectral
+weights and every finite `p > 1`.
+
+`WeightedResonantDiagonalCenterAnalytic.lean` proves source continuity
+from the center comparison, then applies the analytic implicit-root
+theorem to the nonzero residual derivative. The centers and both actual
+off-diagonal entries evaluated at them are analytic on one common
+neighborhood for every distant index.
+
+API checks cover a displaced center, stability at a fixed spectral
+parameter, weighted original-spectrum closing with exact multiplicity
+at `p = 3`, and a common analytic tail-equation neighborhood at `p = 3/2`.
+The sequence-space map of these equations and a construction solving
+their simultaneous tails are still needed for finite-gap density.
+General angle/angle involution, bracket compatibility below two, and
+later chapters remain unfinished; Corollary 13.2 is not complete.
