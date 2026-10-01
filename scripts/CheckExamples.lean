@@ -21046,4 +21046,78 @@ example {W₀ B W : Set (CoeffPair 2)}
   intro j hj
   exact other_dirichletTerminals_sourceDirichletSpectralGlobalCurve k j hj φ t
 
+-- Move lists act in their written order, including repeated indices.
+example (φ : realTypeSourceLocus 2) (k l : ℤ) (t u : ℝ) :
+    sourceDirichletSpectralFlowSequence φ [(k,t),(l,u)] =
+      sourceDirichletSpectralFlow l (sourceDirichletSpectralFlow k φ t) u := rfl
+
+-- An actual finite move list is constructed through any real source;
+-- all selected terminals become periodic, every outside terminal is
+-- retained, and the original norm and discriminants are conserved.
+example (φ : realTypeSourceLocus 2) (A : Finset ℤ) :
+    ∃ moves : List (ℤ × ℝ),
+      let ψ := sourceDirichletSpectralFlowSequence φ moves;
+      (∀ j ∈ A, sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j ψ.val = 0) ∧
+      (∀ j ∉ A, canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ.val j =
+        canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ.val j ∧
+        sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j ψ.val =
+          sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j φ.val) ∧
+      ‖ψ.val‖ = ‖φ.val‖ ∧ ∀ w : ℂ,
+        canonicalDiscriminant (by simp) (periodOnePotential ψ.val) w =
+          canonicalDiscriminant (by simp) (periodOnePotential φ.val) w := by
+  obtain ⟨moves,hplaced,houtside⟩ := exists_sourceDirichletSpectralFlowSequence_periodicTerminals φ A
+  have hc := sourceDirichletSpectralFlowSequence_conserved φ moves
+  exact ⟨moves,fun j hj => (hplaced j hj).1,houtside,hc.1,hc.2⟩
+
+example (φ : realTypeSourceLocus 3)
+    (hφ : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    {j : ℤ | sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j φ.val ≠ 0}.Finite :=
+  finite_nonperiodic_terminals_of_mem_sourceFiniteGapLocus (by simp) (by norm_num) φ hφ
+
+-- The all-terminal periodic basepoint and its move list are constructed
+-- from the actual spectral finite-gap condition. The full angle bracket
+-- is retained, and its original value is zero.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ moves : List (ℤ × ℝ),
+      let ψ := sourceDirichletSpectralFlowSequence φ moves;
+      (∀ j : ℤ, sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j ψ.val = 0) ∧
+      (∀ j : ℤ, sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j φ.val = 0 →
+        canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ.val j =
+          canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ.val j) ∧
+      sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s ψ.val =
+        sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val ∧
+      sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val = 0 := by
+  obtain ⟨moves,hperiodic,hretained⟩ := exists_sourceDirichletSpectralFlowSequence_all_terminals_periodic φ
+    (finite_nonperiodic_terminals_of_mem_sourceFiniteGapLocus (by simp) (by norm_num) φ hfinite)
+  exact ⟨moves,hperiodic,hretained,D.thetaTheta_sourceDirichletSpectralFlowSequence n m φ moves hn hm,
+    D.thetaThetaBracket_eq_zero_of_mem_sourceFiniteGapLocus n m φ hn hm hfinite⟩
+
+-- A closed-gap spectral tail supplies the finite-gap condition; finite
+-- Fourier support is not substituted for this spectral hypothesis.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 2) (N : ℕ)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0)
+    (htail : ∀ j : ℤ, (N:ℤ) < |j| → canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) j = 0) :
+    sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val = 0 := by
+  have hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) := by
+    apply (Finset.Icc (-(N:ℤ)) (N:ℤ)).finite_toSet.subset
+    intro j hj
+    have habs : |j| ≤ (N:ℤ) := le_of_not_gt (fun h => hj (htail j h))
+    simpa only [Finset.mem_coe,Finset.mem_Icc] using abs_le.mp habs
+  exact D.thetaThetaBracket_eq_zero_of_mem_sourceFiniteGapLocus n m φ hn hm hfinite
+
 end NLS.ZakharovShabat

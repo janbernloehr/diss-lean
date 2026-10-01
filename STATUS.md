@@ -1,6 +1,35 @@
 # Implementation status
 
-## Current milestone: actual periodic-terminal reachability
+## Current milestone: actual angle/angle involution on finite-gap Hilbert sources
+
+The full actual angle/angle bracket now vanishes at every real finite-gap
+Hilbert source whenever its two angle gaps are open. Finite-gap is defined
+by finitely many nonzero actual periodic gaps. No Fourier-support,
+basepoint, trajectory, or transport assumption replaces that spectral
+condition.
+
+A finite list of actual indexed real-time flows preserves the original
+source norm, every discriminant value, every periodic gap, and both
+periodic endpoints. For any finite set of indices, the proof constructs
+such a list putting all selected Dirichlet terminals at their original
+periodic endpoints. Terminals outside the set retain their original
+roots and full anti-discriminants, so each previously placed terminal
+stays placed.
+
+Finitely many nonperiodic terminals can therefore all be made periodic,
+while every initially periodic terminal retains its root. The full
+actual angle/angle bracket is unchanged by the complete finite
+composition. Its proved zero value at the constructed periodic-terminal
+basepoint gives zero at the original source. Collapsed gaps force their
+anti-discriminants to vanish, so every actual finite-gap source satisfies
+the finite-nonperiodic-terminal condition.
+
+This finishes the finite-gap Hilbert transport argument. Density and
+extension to the remaining exponents are still needed for arbitrary
+sources. Bracket compatibility for `1 < p < 2` and later chapters also
+remain unfinished; Corollary 13.2 is not complete.
+
+## Previous milestone: actual periodic-terminal reachability
 
 For every real Hilbert source and every indexed actual spectral flow,
 some finite real time now reaches one of the original periodic
@@ -12493,3 +12522,44 @@ Finite compositions of these actual moves, transport to the all-terminal
 zero basepoints, and density remain before the general theta/theta
 zero identity. Bracket compatibility for `1 < p < 2` and later chapters
 also remain unfinished; Corollary 13.2 is not complete.
+
+## Latest milestone: actual finite-gap Hilbert angle/angle involution
+
+`SourceDirichletSpectralFiniteTransport.lean` defines a finite sequence
+of actual indexed source flows by folding a list of index/time pairs in
+list order. Every such sequence preserves the original Hilbert source
+norm, all discriminant values, all periodic gaps, and both periodic
+endpoints. A finite-set induction constructs a move list placing every
+selected terminal at one of its original periodic endpoints, with zero
+full terminal anti-discriminant. Every other Dirichlet root and terminal
+anti-discriminant is retained. A further theorem constructs a list
+making all terminals periodic whenever only finitely many are initially
+nonperiodic; every initially periodic terminal retains its original root.
+
+`SourceFiniteGap.lean` defines the actual real finite-gap locus at every
+finite `p > 1` by finiteness of the open indexed periodic gaps. This is a
+spectral condition, distinct from finite Fourier support. The proved
+collapsed-gap identity makes each corresponding terminal
+anti-discriminant zero. Thus every finite-gap source has only finitely
+many nonperiodic Dirichlet terminals.
+
+`SourceAngularThetaThetaFiniteGap.lean` proves that every finite sequence
+of actual Hilbert flows preserves the full actual angle/angle bracket
+when its two angle gaps are initially open. Periodic gap conservation
+keeps both open throughout the composition. The constructed all-terminal
+periodic basepoint has the proved zero bracket, so the original source
+has zero bracket whenever only finitely many terminals are nonperiodic.
+The public finite-gap theorem derives that condition from the actual
+finite-gap locus, without a supplied trajectory, move list, basepoint,
+or angle-transport premise.
+
+API checks verify flow-list order, simultaneous placement over an
+arbitrary finite set with all outside terminals retained, preserved
+source norm and discriminants, construction of an all-terminal periodic
+basepoint with unchanged full angle bracket, and bracket vanishing from
+a spectral closed-gap tail condition. The finite-gap implication for
+nonperiodic terminals is also checked at `p = 3`.
+This proves the actual finite-gap Hilbert angle/angle identity. Density
+and exponent extension remain before the general theta/theta zero
+identity. Bracket compatibility for `1 < p < 2` and later chapters also
+remain unfinished; Corollary 13.2 is not complete.
