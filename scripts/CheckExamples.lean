@@ -19655,3 +19655,109 @@ example {m : ℤ}
   D.etaDifferential_isospectral_cleared hs φ hφ hφ₀ h hiso
 
 end NLS.ZakharovShabat
+
+
+/- Full beta-series derivatives and brackets use the actual symmetric
+cutoffs and actual common source data, also at complex sources. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+section BetaSeriesLimits
+variable {s : (j : ℤ) → CoeffPair (3 : ℝ≥0∞) → DeletedCoeff 3 j}
+  {W₀ B W : Set (CoeffPair 3)}
+  (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+include D
+
+example (n : ℤ) (φ : CoeffPair 3) (hφ : φ ∈ W) :
+    ∃ r : ℝ, 0 < r ∧ ball φ r ⊆ W ∧
+      TendstoUniformlyOn (fun N => fderiv ℂ
+        (sourceAngularBetaPartialSum (by norm_num) (by norm_num) n s N))
+        (fderiv ℂ (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s))
+        atTop (ball φ r) :=
+  D.local_uniform_betaCorrection_fderiv n φ hφ
+
+example (n : ℤ) (φ : CoeffPair 3) (hφ : φ ∈ W) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      fderiv ℂ (fun ψ : CoeffPair 3 =>
+        sourceAngularBetaSeriesTerm (by norm_num) (by norm_num) n s ψ m) φ) atTop
+      (𝓝 (fderiv ℂ (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s) φ)) :=
+  D.tendsto_betaSeriesCotangents n φ hφ
+
+example (n k : ℤ) (φ : CoeffPair 3) (hφ : φ ∈ W) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+        sourceAngularBetaSeriesTerm (by norm_num) (by norm_num) n s ψ m)
+        (sourceComplexAction (by norm_num) (by norm_num) k) φ) atTop
+      (𝓝 (sourceBracket (by norm_num)
+        (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s)
+        (sourceComplexAction (by norm_num) (by norm_num) k) φ)) :=
+  D.tendsto_betaSeriesBrackets (by norm_num) n
+    (sourceComplexAction (by norm_num) (by norm_num) k) φ hφ
+
+section ThetaSeriesLimits
+variable {n : ℤ} {V U : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+  {r R ρ : ℝ} {z₀ : ℂ} {δ ε : CoeffPair 3 → ℂ}
+  (C : SourceAngularEtaAnalyticChartData (by norm_num) (by norm_num) n s B V U c T r R z₀ ρ δ ε)
+  (hUW : U ⊆ W)
+include C hUW
+
+example (φ : CoeffPair 3) (hφ : φ ∈ U) :
+    Tendsto (fun N : ℕ => sourceAngularEtaDifferential (by norm_num) (by norm_num) n s φ +
+      ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+        fderiv ℂ (fun ψ : CoeffPair 3 =>
+          sourceAngularBetaSeriesTerm (by norm_num) (by norm_num) n s ψ m) φ) atTop
+      (𝓝 (sourceAngularThetaDifferential (by norm_num) (by norm_num) n s φ)) :=
+  D.tendsto_thetaSeriesCotangents n C hUW φ hφ
+
+example (k : ℤ) (φ : CoeffPair 3) (hφ : φ ∈ U) :
+    Tendsto (fun N : ℕ => sourceBivector (by norm_num)
+      (sourceAngularEtaDifferential (by norm_num) (by norm_num) n s φ)
+      (fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) k) φ) +
+      ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+        sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+          sourceAngularBetaSeriesTerm (by norm_num) (by norm_num) n s ψ m)
+          (sourceComplexAction (by norm_num) (by norm_num) k) φ) atTop
+      (𝓝 (sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num)
+        (by norm_num) n s (sourceComplexAction (by norm_num) (by norm_num) k) φ)) :=
+  D.tendsto_thetaSeriesBrackets (by norm_num) n
+    (sourceComplexAction (by norm_num) (by norm_num) k) C hUW φ hφ
+
+example {m : ℤ} {Vm Um : Set (CoeffPair 3)} {cm : ℤ → ℂ} {Tm : ℤ → ℝ}
+    {rm Rm ρm : ℝ} {zm : ℂ} {δm εm : CoeffPair 3 → ℂ}
+    (Cm : SourceAngularEtaAnalyticChartData (by norm_num) (by norm_num)
+      m s B Vm Um cm Tm rm Rm zm ρm δm εm)
+    (hmW : Um ⊆ W) (φ : CoeffPair 3) (hφn : φ ∈ U) (hφm : φ ∈ Um) :
+    Tendsto (fun N : ℕ => sourceBivector (by norm_num)
+      (sourceAngularEtaDifferential (by norm_num) (by norm_num) n s φ +
+        ∑ j ∈ Finset.Icc (-(N : ℤ)) N,
+          fderiv ℂ (fun ψ : CoeffPair 3 =>
+            sourceAngularBetaSeriesTerm (by norm_num) (by norm_num) n s ψ j) φ)
+      (sourceAngularEtaDifferential (by norm_num) (by norm_num) m s φ +
+        ∑ j ∈ Finset.Icc (-(N : ℤ)) N,
+          fderiv ℂ (fun ψ : CoeffPair 3 =>
+            sourceAngularBetaSeriesTerm (by norm_num) (by norm_num) m s ψ j) φ)) atTop
+      (𝓝 (sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s φ)) :=
+  D.tendsto_thetaThetaSeriesBrackets (by norm_num) n m C Cm hUW hmW φ hφn hφm
+
+end ThetaSeriesLimits
+end BetaSeriesLimits
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) j}
+    {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (D : SourceAngularThetaCommonDomainData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W₀ B W s)
+    (n : ℤ) (φ : CoeffPair (ENNReal.ofReal (3/2))) (hφ : φ ∈ W)
+    (h : CoeffPair (ENNReal.ofReal (3/2))) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      (fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2)) =>
+        sourceAngularBetaSeriesTerm ENNReal.ofReal_ne_top
+          (by rw [ENNReal.one_lt_ofReal]; norm_num) n s ψ m) φ) h) atTop
+      (𝓝 ((fderiv ℂ (sourceAngularBetaCorrection ENNReal.ofReal_ne_top
+        (by rw [ENNReal.one_lt_ofReal]; norm_num) n s) φ) h)) :=
+  D.tendsto_betaSeriesVariations n φ hφ h
+
+end NLS.ZakharovShabat

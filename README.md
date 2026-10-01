@@ -5840,3 +5840,25 @@ weight formula for finite `p >= 2`. The theta/action bracket reduces to this
 diagonal contribution plus the full beta-correction derivative. The exact
 normalized period sum, angle-angle identity, and lower-exponent bracket
 compatibility remain unfinished.
+
+
+### Corollary 13.2: derivatives and brackets of the full beta series
+
+`SourceAngularBetaSeriesDifferential.lean` now justifies differentiation of
+the actual infinite beta correction. The actual common-domain analyticity
+and local uniform convergence imply locally uniform convergence of the full
+Fréchet derivatives in operator norm on smaller source balls. The finite
+symmetric sums of actual beta cotangents therefore converge to the cotangent
+of the actual correction for every finite `p > 1`. Evaluation gives the
+corresponding directional limits, also for `1 < p < 2`, and the actual
+Hamiltonian bracket limits for finite `p >= 2`.
+
+Adding the single eta cotangent gives the actual theta cotangent and its
+functional bracket as limits of eta plus the finite beta sums. Continuous
+bilinearity also gives the actual angle-angle bracket as the limit with both
+cotangents approximated by the same symmetric cutoff. The API checks include
+these full source limits and a directional limit below the Hilbert exponent.
+The results concern symmetric cutoffs, without an assertion of absolute
+cotangent-norm summability. The exact normalized spectral period sum and the
+canonical angle-action and angle-angle values still remain, as does bracket
+compatibility for `1 < p < 2`.

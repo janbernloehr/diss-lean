@@ -1,16 +1,17 @@
 # Implementation status
 
-## Current milestone: the actual diagonal eta differential and variation
+## Current milestone: derivatives and brackets of the full beta series
 
-The single actual eta phase now supplies an analytic cotangent agreeing
-with every local eta representative. Its isospectral variation satisfies
-`delta(mu_n) d eta_n = psi_n(mu_n) d mu_n` for finite `p > 1` on the indexed
-open-gap charts, including periodic Dirichlet terminals. The actual interior
-and terminal remainder statements also include collapsed gaps. Every actual
-action gives the corresponding eta/root bracket equation for finite `p >= 2`.
-The actual theta cotangent splits into this eta cotangent and the derivative
-of the full analytic beta correction. The normalized period sum remains
-before the angle-action canonical value.
+The actual symmetric beta cutoffs now converge in full Fréchet derivative,
+locally uniformly in operator norm on smaller source balls. Their finite
+cotangent sums converge to the cotangent of the actual full correction for
+every finite `p > 1`, including below the Hilbert exponent. For finite `p >= 2`,
+the corresponding finite Hamiltonian bracket sums converge to the actual
+correction bracket. Adding the single eta cotangent gives the actual theta
+cotangent and theta/functional bracket as limits of the same cutoffs. Both
+angle cotangents can be approximated simultaneously in their actual bracket.
+The exact normalized period sum is still needed to compute the angle-action
+canonical value; the angle-angle identity also remains unproved.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11598,4 +11599,35 @@ API checks cover the collapsed-gap remainder, the actual eta/action bracket,
 the theta cotangent decomposition, and the eta variation below the Hilbert
 exponent. The exact normalized period sum is still needed to obtain the
 angle-action canonical value. The angle-angle identity and bracket compatibility
+for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: full beta-series cotangents and angle bracket limits
+
+`SourceAngularBetaSeriesDifferential.lean` defines the literal symmetric
+cutoffs of the actual beta correction, with the diagonal omitted by the
+existing actual series term. The actual common-domain beta analyticity
+and local uniform convergence satisfy the Banach holomorphic approximation
+criterion. The full Fréchet derivatives therefore converge uniformly in
+operator norm on smaller source balls, without an additional convergence
+hypothesis. The derivative of each finite cutoff is exactly the finite sum
+of its actual term cotangents. Those sums converge in operator norm to the
+full actual correction cotangent for every finite `p > 1` and at every
+complex common-domain source.
+
+Continuous evaluation gives convergence of the corresponding directional
+variations, also for `1 < p < 2`. Evaluating on the actual Hamiltonian direction
+gives convergence of every finite beta/functional bracket sum to the actual
+correction bracket for finite `p >= 2`. The eta-plus-correction identity then
+gives the actual theta cotangent, every directional variation, and its
+functional bracket as limits of the symmetric cutoffs in every compatible
+actual eta chart. Continuous bilinearity also allows both angle cotangents
+to be approximated simultaneously in the actual theta/theta bracket.
+
+API checks cover uniform derivative convergence, the operator-norm cotangent
+limit, the actual action bracket limit, both angle cotangent and bracket limits,
+the simultaneous angle-angle limit, and directional convergence at `p = 3/2`.
+These are limits of symmetric cutoffs; absolute summability of the cotangent
+norms is not asserted. The exact normalized spectral period sum, the
+angle-action and angle-angle canonical values, and bracket compatibility
 for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
