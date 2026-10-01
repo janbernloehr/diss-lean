@@ -1,6 +1,32 @@
 # Implementation status
 
-## Current milestone: uniform Hilbert spectral speeds and finite endpoint limits
+## Current milestone: actual continuation through both finite endpoints
+
+Every actual real indexed Hilbert spectral curve on a nonempty finite
+open interval now extends past either endpoint. A new real local solution
+is constructed through the proved source-space endpoint limit. Boundary
+differentiability shows that the joined curve solves the actual ODE at
+the joining time itself, without assuming the old curve's assigned
+endpoint value or supplying a replacement trajectory.
+
+The public two-sided continuation theorem extends the original interval
+on both sides. It agrees with the entire old curve on its original open
+interval, is real throughout the larger interval, and solves the actual
+indexed source equation everywhere there. The original source norm and
+every discriminant value remain fixed across both joins. The result
+includes zero sources, collapsed selected gaps, and periodic terminals.
+
+Local Hilbert spectral curves can also now start at any real time. API
+checks explicitly cover the ODE at both old endpoints, conserved data
+on the extended interval, and extension of a constructed local curve
+through an arbitrary real initial source.
+
+Constructing one compatible solution for all real times remains, followed
+by endpoint reachability and the general angle/angle zero identity.
+Bracket compatibility for `1 < p < 2` and later chapters are also
+unfinished; Corollary 13.2 is not complete.
+
+## Previous milestone: uniform Hilbert spectral speeds and finite endpoint limits
 
 The actual discriminant and its full source cotangent now have explicit
 bounds on every complex Hilbert source norm ball with bounded spectral
@@ -12271,3 +12297,41 @@ source continuation remain, followed by endpoint reachability and the
 general theta/theta transport argument. Bracket compatibility for
 `1 < p < 2` and later chapters also remain unfinished; Corollary 13.2 is
 not complete.
+
+
+## Latest milestone: actual continuation through both finite endpoints
+
+`IntegralCurveJoin.lean` constructs a joined autonomous integral curve
+from two actual curves with a common finite endpoint limit. The value
+at the joining time is that common limit, independently of the old
+functions' assigned endpoint values. Continuity of the actual field at
+the limit makes the two one-sided derivatives converge to the same
+vector. Differentiability at the interval boundary then proves the ODE
+at the joining time, as well as on both original open intervals.
+
+`SourceDirichletSpectralContinuation.lean` constructs a real local
+Hilbert spectral curve through an arbitrary real source at any real
+time. Every real actual indexed curve on a nonempty finite interval
+extends past its right endpoint and past its left endpoint, using the
+proved source-space endpoint limit and a newly constructed local
+solution. The actual field is continuous at every such real limit,
+including periodic terminals and collapsed selected gaps.
+
+The public two-sided continuation theorem combines the two extensions.
+The resulting curve agrees with the original at every time in its old
+open interval, is real throughout the strictly larger interval, and
+solves the actual indexed source equation at every time there, including
+both joins. Source norm conservation and actual discriminant
+stationarity preserve the original norm and every discriminant value
+throughout the larger interval. No limit, replacement trajectory,
+positive source norm, or open selected gap is supplied by the caller.
+
+API checks construct local curves at arbitrary starting times, explicitly
+verify the actual ODE at both old endpoint times, and check conserved
+data across both joins. They also extend a constructed local curve
+through an arbitrary real initial Hilbert source without a supplied
+curve or continuation.
+Constructing one compatible solution for all real times remains, followed
+by periodic-terminal reachability and the general theta/theta transport
+argument. Bracket compatibility for `1 < p < 2` and later chapters also
+remain unfinished; Corollary 13.2 is not complete.

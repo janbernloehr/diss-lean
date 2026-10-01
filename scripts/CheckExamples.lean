@@ -20829,4 +20829,53 @@ example (k : ℤ) (γ : ℝ → CoeffPair 2) (a b u : ℝ)
     exists_sourceDirichletSpectral_limit_of_mem_closedInterval k γ a b hreal hγ u b hu
     ⟨(hu.1.trans hu.2).le,le_rfl⟩⟩
 
+-- A constructed real local curve may start at any real time.
+example (k : ℤ) (φ : realTypeSourceLocus 2) (c : ℝ) :
+    ∃ η : ℝ → CoeffPair 2, η c = φ.val ∧
+      (∀ t : ℝ, IsRealType (CoeffPair.toMax 2 (η t))) ∧
+      ∃ ε : ℝ, 0 < ε ∧ ∀ t ∈ Ioo (c-ε) (c+ε), HasDerivAt η
+        (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (η t)) t :=
+  exists_sourceDirichletSpectral_integralCurve_at_time k φ c
+
+-- Continuation solves the actual equation at both old endpoint times;
+-- the assigned values γ a and γ b are not assumptions of this check.
+example (k : ℤ) (γ : ℝ → CoeffPair 2) (a b : ℝ) (hab : a < b)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 2 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t) :
+    ∃ δ : ℝ, 0 < δ ∧ ∃ ε : ℝ, 0 < ε ∧ ∃ Γ : ℝ → CoeffPair 2,
+      EqOn Γ γ (Ioo a b) ∧
+      (∀ t ∈ Ioo (a-δ) (b+ε), IsRealType (CoeffPair.toMax 2 (Γ t))) ∧
+      HasDerivAt Γ (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (Γ a)) a ∧
+      HasDerivAt Γ (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (Γ b)) b ∧
+      ∀ u ∈ Ioo a b, ∀ t ∈ Ioo (a-δ) (b+ε), ‖Γ t‖ = ‖γ u‖ ∧
+        ∀ w : ℂ, canonicalDiscriminant (by simp) (periodOnePotential (Γ t)) w =
+          canonicalDiscriminant (by simp) (periodOnePotential (γ u)) w := by
+  obtain ⟨δ,hδ,ε,hε,Γ,hEq,hrealΓ,hderΓ,hdata⟩ :=
+    exists_sourceDirichletSpectral_twoSidedContinuation k γ a b hab hreal hγ
+  exact ⟨δ,hδ,ε,hε,Γ,hEq,hrealΓ,
+    hderΓ a ⟨by linarith,by linarith⟩,
+    hderΓ b ⟨by linarith,by linarith⟩,hdata⟩
+
+-- Picard-Lindelof supplies the initial curve too; no supplied curve,
+-- endpoint limit, or continuation is required from the caller.
+example (k : ℤ) (φ : realTypeSourceLocus 2) :
+    ∃ ε : ℝ, 0 < ε ∧ ∃ δ : ℝ, 0 < δ ∧ ∃ ζ : ℝ, 0 < ζ ∧
+      ∃ Γ : ℝ → CoeffPair 2, Γ 0 = φ.val ∧
+      (∀ t ∈ Ioo (-ε-δ) (ε+ζ), IsRealType (CoeffPair.toMax 2 (Γ t))) ∧
+      (∀ t ∈ Ioo (-ε-δ) (ε+ζ), HasDerivAt Γ
+        (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (Γ t)) t) ∧
+      ∀ t ∈ Ioo (-ε-δ) (ε+ζ), ‖Γ t‖ = ‖φ.val‖ ∧
+        ∀ w : ℂ, canonicalDiscriminant (by simp) (periodOnePotential (Γ t)) w =
+          canonicalDiscriminant (by simp) (periodOnePotential φ.val) w := by
+  obtain ⟨γ,hγ0,hreal,ε,hε,hder,_,_⟩ :=
+    exists_sourceDirichletSpectral_norm_conserved_integralCurve k φ
+  obtain ⟨δ,hδ,ζ,hζ,Γ,hEq,hrealΓ,hderΓ,hdata⟩ :=
+    exists_sourceDirichletSpectral_twoSidedContinuation k γ (-ε) ε
+      (by linarith) (fun t _ => hreal t) hder
+  have h0 : (0 : ℝ) ∈ Ioo (-ε) ε := ⟨by linarith,hε⟩
+  refine ⟨ε,hε,δ,hδ,ζ,hζ,Γ,(hEq h0).trans hγ0,hrealΓ,hderΓ,?_⟩
+  intro t ht
+  simpa only [hγ0] using hdata 0 h0 t ht
+
 end NLS.ZakharovShabat
