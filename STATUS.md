@@ -1,18 +1,19 @@
 # Implementation status
 
-## Current milestone: diagonal eta/action kernel and the full theta sum
+## Current milestone: actual uniform Dirichlet interpolation
 
-The actual single eta cotangent now has the same normalized action kernel
-as the off-diagonal beta terms for finite `p >= 2`. The model angle's
-velocity follows from both its cosine and terminal sine equations, including
-periodic Dirichlet endpoints. Its model numerator cancels the actual eta
-remainder numerator. Only the selected angle's open gap is required; no
-nonzero terminal square root or sine is assumed. The eta remainder formula
-also covers collapsed selected gaps. The actual theta/action bracket is
-the limit of one full symmetric sum over all Dirichlet terminals, including
-the diagonal. The common-domain data construct the needed local eta chart,
-so the public sum theorem has no additional angular-chart hypothesis. The
-exact normalized period sum still remains before the canonical value.
+Every finite-exponent psi numerator divided by the actual Dirichlet
+characteristic is now the uniform limit of its symmetric interpolation
+sums on bounded evaluation sets where that characteristic is nonzero,
+at every real source and for finite `p > 1`. The actual characteristic
+derivative supplies each residue. The proof identifies the finite error
+with an outer Cauchy integral and derives its uniform decay from the
+existing full-product estimates. Large circles enclose exactly the
+symmetric root cutoffs. The characteristic-weighted sum has the precise
+negative-psi limit used by the action contour kernels. No open-gap or
+additional convergence premise is needed. Passing this limit through the
+actual action contour and evaluating its normalized period remain before
+the canonical angle-action value.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11715,3 +11716,45 @@ stationarity at `p = 3/2`. The exact normalized spectral period sum still
 remains before the canonical angle-action value. The angle-angle identity
 and bracket compatibility for `1 < p < 2` also remain unfinished.
 Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual uniform Dirichlet interpolation
+
+`SimplePoleQuotient.lean` derives the local residue of an analytic quotient
+at a simple denominator zero as the numerator value divided by the
+denominator derivative. Analytic divided differences supply its analytic
+remainder. Removing a finite collection of these actual principal parts
+produces an analytic filled remainder on a set containing no other zeros.
+
+`SimplePoleCauchyInterpolation.lean` proves that each principal part has
+zero outer Cauchy-kernel integral when its pole and the evaluation point
+are distinct and enclosed. Cauchy's formula for the filled remainder
+therefore identifies the exact finite interpolation error with the outer
+circle integral, with its original `2 pi i` normalization.
+
+`SourceDirichletRootCircleSelection.lean` uses vanishing finite-exponent
+displacement tails and a bound for the central block to prove that every
+sufficiently large half-integer-radius circle encloses exactly the symmetric
+index cutoff. This geometric statement holds at every complex source.
+`SourcePsiDirichletInterpolationExterior.lean` restores the omitted psi
+root and applies the proved full-product ratio bound. The actual psi
+numerator divided by the actual Dirichlet characteristic is bounded by
+`16 / norm(z)` on the separated exterior. Its outer Cauchy integrals tend
+uniformly to zero for every bounded family of evaluation parameters.
+
+`SourcePsiDirichletInterpolation.lean` combines these results with actual
+real-source Dirichlet simplicity and exhaustivity. The symmetric sums
+`sum_m psi_n(mu_m) / chi_D'(mu_m) / (w - mu_m)` converge uniformly to
+`psi_n(w) / chi_D(w)` on bounded sets where `chi_D(w)` is nonzero.
+The characteristic-weighted sums with denominator
+`(mu_m - w) chi_D'(mu_m)` have the exact limit `-psi_n(w)`.
+These statements hold for every finite `p > 1`, every numerator coefficient
+sequence, and every real source, including collapsed periodic gaps.
+Neither an interpolation identity nor extra summability is assumed.
+
+API checks cover the derived simple-pole coefficient, the two-enclosed-pole
+integral, exact complex-source root selection, the uniform actual interpolation,
+and the weighted actual limit at `p = 3/2`. Passing to the actual action
+contour and evaluating the normalized period remain before the canonical
+angle-action value. The angle-angle identity and bracket compatibility for
+`1 < p < 2` also remain unfinished. Corollary 13.2 is not yet complete.

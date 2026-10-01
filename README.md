@@ -5912,3 +5912,31 @@ eta and remainder kernels, the full sum without a chart hypothesis, and
 half-gap stationarity below the Hilbert exponent. Evaluating the normalized
 spectral period sum, the canonical angle-action and angle-angle values,
 and bracket compatibility for `1 < p < 2` remain unfinished.
+
+
+### Corollary 13.2: actual uniform Dirichlet interpolation
+
+`SimplePoleQuotient.lean` derives the principal coefficient
+`f(mu) / g'(mu)` at a simple denominator zero. Subtracting the finite
+principal parts gives an analytic filled remainder.
+`SimplePoleCauchyInterpolation.lean` applies Cauchy's formula to identify
+the exact finite interpolation error with an outer-circle integral.
+
+`SourceDirichletRootCircleSelection.lean` proves that sufficiently large
+half-integer circles enclose exactly the symmetric cutoff of the actual
+Dirichlet roots, including at complex sources.
+`SourcePsiDirichletInterpolationExterior.lean` derives inverse-radius
+decay of the actual psi/Dirichlet quotient from the existing full-product
+bounds. Its outer Cauchy integrals vanish uniformly on bounded evaluation sets.
+
+`SourcePsiDirichletInterpolation.lean` now proves the actual interpolation
+identity as a uniform limit of symmetric cutoffs:
+`sum_m psi_n(mu_m) / chi_D'(mu_m) / (w - mu_m) -> psi_n(w) / chi_D(w)`.
+It holds at every real source for finite `p > 1`, on bounded sets where
+`chi_D(w)` is nonzero, with no open-gap or extra convergence premise.
+Multiplying by the characteristic and reversing the spectral difference
+gives the exact `-psi_n(w)` limit required by the action kernels.
+API examples include this weighted limit below the Hilbert exponent.
+Contour-limit transport and the normalized period value still remain
+before the canonical angle-action identity; the angle-angle identity
+and lower-exponent bracket compatibility also remain unfinished.

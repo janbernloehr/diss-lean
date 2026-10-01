@@ -19938,3 +19938,59 @@ example {W V U : Set (CoeffPair (ENNReal.ofReal (3/2)))}
   C.fderiv_halfGap_isospectral_eq_zero φ hφ h hiso
 
 end NLS.ZakharovShabat
+
+
+/- Actual Dirichlet interpolation derives its residue normalization and
+its infinite limit, including below the Hilbert exponent. -/
+noncomputable section
+open Set Metric Complex Filter Topology
+
+example (f : ℂ → ℂ) (a : ℂ) (hf : AnalyticAt ℂ f a) :
+    ∃ q : ℂ → ℂ, AnalyticAt ℂ q a ∧
+      (fun z => f z/(z-a)) =ᶠ[𝓝[≠] a] (fun z => f a/(z-a)+q z) := by
+  have hd : deriv (fun z : ℂ => z-a) a = 1 := ((hasDerivAt_id a).sub_const a).deriv
+  simpa only [hd,div_one] using NLS.ComplexAnalysis.exists_analytic_simpleQuotient_remainder
+    (g := fun z : ℂ => z-a) hf (analyticAt_id.sub analyticAt_const) (sub_self a) (by rw [hd]; norm_num)
+
+example : (∮ z in C((0 : ℂ),2), (3 : ℂ)/z/(z-1)) = 0 := by
+  simpa only [sub_zero] using NLS.ComplexAnalysis.circleIntegral_two_enclosed_poles
+    (c := (0 : ℂ)) (a := (0 : ℂ)) (w := (1 : ℂ)) (b := (3 : ℂ))
+    (by norm_num : (0 : ℝ) < 2) (by norm_num [mem_ball])
+    (by norm_num [mem_ball,dist_eq_norm]) (by norm_num)
+
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (φ : CoeffPair 3) :
+    ∃ K : ℕ, ∀ N : ℕ, K ≤ N → ∀ m : ℤ,
+      ‖canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ m‖ <
+        centralCircleRadius N ↔ m.natAbs ≤ N :=
+  eventually_canonicalDirichletRoots_mem_centralBall_iff (by norm_num) (by norm_num) φ
+
+example (n : ℤ) (a : Coeff 3) (φ : realTypeSourceLocus 3) (L : ℝ) (hL : 0 ≤ L) :
+    TendstoUniformlyOn (fun N : ℕ => fun w : ℂ =>
+      ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+        sourcePsiDirichletInterpolationTerm (by norm_num) (by norm_num) n a φ.val m w)
+      (fun w => sourcePsiCandidate n (w,a)/
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ.val w)
+      atTop {w | ‖w‖ ≤ L ∧
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ.val w ≠ 0} :=
+  tendstoUniformlyOn_sourcePsiDirichletInterpolation (by norm_num) (by norm_num) n a φ L hL
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example (n : ℤ) (a : Coeff (ENNReal.ofReal (3/2)))
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (w : ℂ)
+    (hw : periodOneBoundaryCharacteristic ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet φ.val w ≠ 0) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      let hp1 : 1 < ENNReal.ofReal (3/2) := by rw [ENNReal.one_lt_ofReal]; norm_num
+      let μ := canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top hp1 .dirichlet φ.val m
+      sourcePsiCandidate n (μ,a)*periodOneBoundaryCharacteristic ENNReal.ofReal_ne_top hp1 .dirichlet φ.val w/
+        ((μ-w)*deriv (periodOneBoundaryCharacteristic ENNReal.ofReal_ne_top hp1 .dirichlet φ.val) μ))
+      atTop (𝓝 (-sourcePsiCandidate n (w,a))) :=
+  tendsto_sourcePsiDirichlet_weightedInterpolation ENNReal.ofReal_ne_top
+    (by rw [ENNReal.one_lt_ofReal]; norm_num) n a φ w hw
+
+end NLS.ZakharovShabat
