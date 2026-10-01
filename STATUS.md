@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual separated-family and boundary-root commutation
+## Current milestone: actual anti-discriminant/discriminant flow and action kernels
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -46,6 +46,17 @@ indices and collapsed periodic gaps. The physical cancellation is proved
 by a forward/dual cross-Wronskian product with zero endpoint values.
 Completing the canonical angle computations and the lower-exponent bracket
 compatibility remain the next steps.
+
+The actual anti-discriminant now has a derived physical gradient and full
+jointly analytic source cotangent. Its actual source bracket satisfies
+`(z-w){delta(z),Delta(w)} = chi_D(z)chi_N(w)-chi_N(z)chi_D(w)` for every complex
+source at finite `p >= 2`. At coincidence the bracket is the characteristic
+Wronskian `chi_N(z)chi_D'(z)-chi_D(z)chi_N'(z)`. The actual anti-discriminant/
+action bracket has a single contour formula, with opposite signed kernels
+at canonical Dirichlet and Neumann roots held fixed at the base source.
+The remaining characteristic/anti-discriminant and anti-discriminant self
+brackets, moving terminal combinations, and canonical angle computations
+remain unfinished.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11104,3 +11115,48 @@ boundary families.
 The canonical angle-angle and mixed angle-action computations, their
 remaining anti-discriminant spectral brackets, and spectral compatibility
 for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual anti-discriminant/discriminant flow and action kernels
+
+The actual off-diagonal monodromy sum is the sum of two original solution
+endpoint functionals. Their proved potential-gradient integrals give the
+anti-discriminant's actual physical gradient, including the original sum
+and component signs. Differentiating its exact finite source identity along
+finite complex affine lines identifies the genuine source derivative.
+The two normalized Fourier directions recover the actual cotangent
+coefficient sequences from the physical gradient at reversed frequencies.
+The full continuous source cotangent is jointly analytic in parameter and
+potential throughout the finite `p > 1` source spaces.
+
+Bilinear Parseval identifies the finite Hilbert anti-discriminant/discriminant
+bracket with the already proved physical monodromy Hamiltonian variation.
+The original Dirichlet/Neumann characteristic determinant is therefore its
+spectral numerator. Exponent restriction, actual characteristic compatibility,
+analytic bracket continuity, and finite Fourier density extend the identity
+`(z-w){delta(z),Delta(w)} = chi_D(z)chi_N(w)-chi_N(z)chi_D(w)` to every complex
+source at finite `p >= 2`. There is no finite identity, gradient, or Hamiltonian
+flow hypothesis in the resulting theorem.
+
+For distinct parameters this gives the literal determinant quotient. The
+bracket is entire in its discriminant spectral parameter, by the actual
+operator-valued discriminant differential. Differentiating the cleared
+identity at coincidence gives the removable value exactly:
+`{delta(z),Delta(z)} = chi_N(z)chi_D'(z)-chi_D(z)chi_N'(z)`. This is the original
+characteristic Wronskian; no division by a zero spectral difference occurs.
+
+The actual action cotangent contour representation now gives a single-circle
+formula for `{delta(z),I_m}` at every real-type source on each actual action
+chart. When the fixed parameter avoids the circle, substitution gives the
+literal characteristic determinant quotient divided by the canonical periodic
+root. At every actual canonical boundary root, real interlacing supplies
+that avoidance automatically. The Dirichlet kernel has the positive
+`chi_N(mu_n)/pi` prefactor and the Neumann kernel the negative
+`chi_D(nu_n)/pi` prefactor. The base-source root is held fixed in the
+anti-discriminant functional; these statements do not differentiate a
+moving terminal anti-discriminant. No selected or action gap needs to be open.
+
+The characteristic/anti-discriminant and anti-discriminant self brackets,
+moving terminal combinations, canonical angle-angle and mixed angle-action
+identities, and spectral compatibility for `1 < p < 2` remain unfinished.
+Corollary 13.2 is not yet complete.

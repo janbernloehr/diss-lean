@@ -19000,3 +19000,67 @@ example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3
   sourceBracket_boundaryRoots_eq_zero (by norm_num) (by norm_num) (by norm_num) .neumann φ hreal n m
 
 end NLS.ZakharovShabat
+
+
+/- Actual anti-discriminant gradient, source spectral flow, coincident
+Wronskian, and opposite canonical-boundary action kernels. -/
+noncomputable section
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalAntiDiscriminant Ψ z) Φ)
+      (ContinuousMap.const _ (1,0)) =
+        ∫ s in (0 : ℝ)..1, (classicalAntiDiscriminantGradient Φ z s).1 := by
+  rw [fderiv_classicalAntiDiscriminant_eq_gradient_integral]
+  simp [NLS.LinearVolterra.extend]
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    (z-w)*sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ z)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ =
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ z*
+          periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann φ w-
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann φ z*
+          periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ w :=
+  sourceBracket_anti_discriminant (by norm_num) (by norm_num) (by norm_num) φ z w
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (z : ℂ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ z)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) z) φ =
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann φ z*
+          deriv (periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ) z-
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ z*
+          deriv (periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann φ) z :=
+  sourceBracket_anti_discriminant_diagonal (by norm_num) (by norm_num) (by norm_num) φ z
+
+-- The base-source root is fixed in the first functional, with no open-gap condition.
+example (n m : ℤ) (ch : SourceRealActionBallChart (p := (3 : ℝ≥0∞)) (by norm_num) (by norm_num) m)
+    (φ : CoeffPair 3) (hreal : IsRealType (CoeffPair.toMax 3 φ))
+    (hφ : φ ∈ Metric.ball ch.center ch.radius) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ μ)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ =
+        (Real.pi : ℂ)⁻¹*periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann φ μ*
+          (∮ w in C(ch.spectralCenter,ch.spectralRadius),
+            (sourceCanonicalRoot (by norm_num) (by norm_num) φ w)⁻¹*
+              periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ w/(μ-w)) :=
+  sourceBracket_anti_action_at_canonicalDirichletRoot (by norm_num) (by norm_num) (by norm_num) n m ch φ hreal hφ
+
+example (n m : ℤ) (ch : SourceRealActionBallChart (p := (3 : ℝ≥0∞)) (by norm_num) (by norm_num) m)
+    (φ : CoeffPair 3) (hreal : IsRealType (CoeffPair.toMax 3 φ))
+    (hφ : φ ∈ Metric.ball ch.center ch.radius) :
+    let ν := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann φ n
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ ν)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ =
+        -(Real.pi : ℂ)⁻¹*periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ ν*
+          (∮ w in C(ch.spectralCenter,ch.spectralRadius),
+            (sourceCanonicalRoot (by norm_num) (by norm_num) φ w)⁻¹*
+              periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann φ w/(ν-w)) :=
+  sourceBracket_anti_action_at_canonicalNeumannRoot (by norm_num) (by norm_num) (by norm_num) n m ch φ hreal hφ
+
+end NLS.ZakharovShabat

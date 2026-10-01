@@ -5581,3 +5581,34 @@ Cross-family commutation is not asserted.
 The remaining anti-discriminant spectral brackets, canonical angle-angle
 and mixed angle-action computations, and spectral compatibility for
 `1 < p < 2` remain before Corollary 13.2 is complete.
+
+
+### Corollary 13.2: anti-discriminant/discriminant flow and action kernels
+
+`ClassicalAntiDiscriminantGradient.lean` obtains the actual potential-gradient
+integral by adding the original two off-diagonal solution endpoint gradients.
+`SourceAntiDiscriminantPoissonGradient.lean` differentiates the exact finite
+realization identity and recovers both actual source cotangent coefficient
+sequences with the required frequency reversal. Its full operator-valued
+cotangent is jointly analytic for every finite `p > 1`.
+
+`SourceAntiDiscriminantPoisson.lean` uses bilinear Parseval and the proved
+physical Hamiltonian variation to obtain
+`(z-w){delta(z),Delta(w)} = chi_D(z)chi_N(w)-chi_N(z)chi_D(w)`.
+Exponent restriction and density make this an actual identity for every
+complex source at finite `p >= 2`. Entire dependence on the second spectral
+parameter determines the coincident value
+`chi_N(z)chi_D'(z)-chi_D(z)chi_N'(z)` without a singular division.
+
+`SourceAntiDiscriminantActionPoisson.lean` passes the actual action cotangent
+circle integral through the source bivector. The resulting single-circle
+kernel is the original characteristic determinant quotient divided by the
+canonical periodic root. At actual canonical boundary roots, interlacing
+ensures the circle avoids the fixed spectral parameter. The literal
+Dirichlet and Neumann kernels retain their opposite prefactor signs, and
+include collapsed gaps. The base-source root stays fixed in the differentiated
+anti-discriminant functional.
+
+The characteristic/anti-discriminant and anti-discriminant self brackets,
+moving terminal combinations, canonical angle-angle and mixed angle-action
+computations, and spectral compatibility for `1 < p < 2` remain.
