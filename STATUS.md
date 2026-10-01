@@ -1,6 +1,13 @@
 # Implementation status
 
-## Current milestone: actual normalized psi stationarity under action Hamiltonians
+## Current milestone: actual periodic data and angular integrands are isospectral
+
+The actual periodic midpoint, squared gap, standard-root factors, infinite
+omitted-root products, and angular integrands now have proved zero variation
+in isospectral directions. For finite `p >= 2`, they commute with every actual
+action. The symmetric-coordinate and omitted-product statements include
+collapsed gaps, and the regular angular gap numerator includes selected
+endpoints. Moving-terminal variation and the normalized period sum remain.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11446,3 +11453,46 @@ The remaining angular variation must handle its moving integration
 terminals and exact normalized periods. The angle-action canonical value,
 angle-angle zero identity, and compatibility for `1 < p < 2` remain
 unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual periodic symmetric data and angular integrands
+
+`QuadraticFactorStationarity.lean` proves that the linearized quadratic-factor
+identity forces both symmetric coefficient variations to vanish when its
+remainder is nonzero at the two roots. For a double root, the value determines
+the squared-gap variation and the spectral derivative determines the midpoint
+variation. The argument never divides by the root difference.
+
+`SourcePeriodicIsospectral.lean` differentiates the actual discriminant
+factorization. The square of the actual omitted standard-root product provides
+an analytic remainder through the selected gap. Actual gap isolation makes
+that remainder nonzero at both endpoints. Analyticity of its joint Fréchet
+derivative justifies the spectral differentiation at a collapsed gap. The
+actual periodic midpoint and squared gap are therefore stationary in every
+isospectral direction for finite `p > 1`, at every real source and index.
+Every actual action Hamiltonian fixes both coordinates for finite `p >= 2`.
+
+`SourceStandardRootIsospectral.lean` uses analytic dependence of the normalized
+principal root on the actual midpoint and squared gap. Each actual fixed-
+parameter standard root is stationary off its selected closed gap segment.
+
+`SourceOmittedRootIsospectral.lean` proves zero variation of every retained
+factor and hence every literal finite omitted-root product. The actual local
+uniform analytic approximation supplies convergence of their full joint
+Fréchet derivatives. Evaluating the derivative limit in the source direction
+proves zero variation of the actual infinite product on the complete omitted-
+root domain. This includes the selected gap, both endpoints, and collapsed
+gaps; no interchange of a derivative and an infinite product is assumed.
+
+`SourceAngularIntegrandIsospectral.lean` combines the actual psi numerator
+stationarity with the actual canonical-root and omitted-product stationarity.
+The actual canonical angular integrand has zero variation off the cuts, and
+the actual regular gap numerator has zero variation throughout the omitted-
+root domain, including the selected endpoints. Their action brackets vanish
+for finite `p >= 2`. API examples check these actual brackets and the general
+periodic symmetric-coordinate stationarity below the Hilbert exponent.
+
+The moving-terminal angular variation and exact normalized period sum are
+still needed for the angle-action canonical value. The angle-angle identity
+and bracket compatibility for `1 < p < 2` remain unfinished. Corollary 13.2
+is not yet complete.

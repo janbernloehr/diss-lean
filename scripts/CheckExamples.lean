@@ -19388,3 +19388,67 @@ example (W : Set (CoeffPair (ENNReal.ofReal (3/2))))
   hs.fderiv_isospectral_eq_zero n φ hφ h hiso
 
 end NLS.ZakharovShabat
+
+
+/- Actual symmetric periodic data, infinite omitted-root products,
+and angular integrands are stationary under every actual action. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => canonicalPeriodicMidpoint
+      (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 ∧
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => (canonicalPeriodicGap
+      (by norm_num) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_canonicalPeriodicMidpoint_squaredGap_action_eq_zero
+    (by norm_num) (by norm_num) (by norm_num) φ hreal n m
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ))
+    (n m : ℤ) (z : ℂ) (hz : z ∉ sourcePeriodicSegment (by norm_num) (by norm_num) φ n) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => sourceStandardRoot
+      (by norm_num) (by norm_num) ψ n z) (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_standardRoot_action_eq_zero (by norm_num) (by norm_num) (by norm_num) φ hreal n m z hz
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ))
+    (n m : ℤ) (z : ℂ) (hz : z ∈ sourceStandardRootOmittedDomain (by norm_num) (by norm_num) φ n) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => sourceStandardRootOmittedProduct
+      (by norm_num) (by norm_num) n ψ z) (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_omittedRootProduct_action_eq_zero (by norm_num) (by norm_num) (by norm_num) φ hreal n m z hz
+
+example (W : Set (CoeffPair (3 : ℝ≥0∞))) (s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ W) (z : ℂ)
+    (hz : z ∈ sourceCanonicalRootDomain (by norm_num) (by norm_num) φ.val) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => sourceAngularIntegrand n s
+      (sourceCanonicalRootJointProduct (by norm_num) (by norm_num)) (z,ψ))
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ.val = 0 :=
+  hs.sourceBracket_angularIntegrand_action_eq_zero (by norm_num) n m φ hφ z hz
+
+example (W : Set (CoeffPair (3 : ℝ≥0∞))) (s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W s)
+    (n k m : ℤ) (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ W) (z : ℂ)
+    (hz : z ∈ sourceStandardRootOmittedDomain (by norm_num) (by norm_num) φ.val k) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => sourceAngularGapNumerator
+      (by norm_num) (by norm_num) n k s ψ z)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ.val = 0 :=
+  hs.sourceBracket_angularGapNumerator_action_eq_zero (by norm_num) n k m φ hφ z hz
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+example (φ h : CoeffPair (ENNReal.ofReal (3/2)))
+    (hreal : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2)) φ))
+    (hiso : SourceIsospectralDirection ENNReal.ofReal_ne_top φ h) (n : ℤ) :
+    (fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2)) => canonicalPeriodicMidpoint
+      ENNReal.ofReal_ne_top (by rw [ENNReal.one_lt_ofReal]; norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ) h = 0 ∧
+    (fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2)) => (canonicalPeriodicGap
+      ENNReal.ofReal_ne_top (by rw [ENNReal.one_lt_ofReal]; norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2) φ) h = 0 :=
+  fderiv_canonicalPeriodicMidpoint_squaredGap_isospectral_eq_zero
+    ENNReal.ofReal_ne_top (by rw [ENNReal.one_lt_ofReal]; norm_num) φ hreal h hiso n
+
+end NLS.ZakharovShabat

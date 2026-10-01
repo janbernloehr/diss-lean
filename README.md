@@ -5766,3 +5766,29 @@ action at every spectral parameter, including collapsed periodic gaps.
 The moving angular integration terminals and normalized period computation
 remain before the angle-action canonical value is proved. The angle-angle
 identity and lower-exponent bracket compatibility also remain unfinished.
+
+`SourcePeriodicIsospectral.lean` proves that the actual periodic midpoint
+and squared gap are stationary in every isospectral direction for finite
+`p > 1`. It differentiates the actual discriminant factorization with the
+analytic nonzero omitted product. At a double root, spectral differentiation
+of the linearized identity supplies the midpoint equation. This includes
+every central index and collapsed gap, with no gap division or assumed
+endpoint derivative. Both symmetric coordinates commute with every actual
+action for finite `p >= 2`.
+
+`SourceStandardRootIsospectral.lean` composes the actual stationary symmetric
+coordinates with the normalized principal-root formula. Each actual standard
+root is stationary off its selected segment. `SourceOmittedRootIsospectral.lean`
+proves stationarity first for the literal finite products, then passes to the
+actual infinite product using locally uniform convergence of full Fréchet
+derivatives. The omitted product is stationary on its entire domain, including
+the selected gap and either endpoint.
+
+`SourceAngularIntegrandIsospectral.lean` combines these results with the
+proved actual normalized psi stationarity. The actual canonical angular
+integrand is stationary off the periodic cuts. Its actual regular gap
+numerator is stationary on the full omitted-root domain, including selected
+endpoints. Both therefore commute with every actual action in the bracket
+range. Moving-terminal variation and the exact normalized period sum remain
+before the angle-action value; the angle-angle identity and lower-exponent
+bracket compatibility also remain unfinished.

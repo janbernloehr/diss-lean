@@ -1402,6 +1402,11 @@ import NLS.ZakharovShabat.SourceBoundaryIsospectralAction
 import NLS.ZakharovShabat.SourceIsospectralDirection
 import NLS.ZakharovShabat.SourcePsiIsospectralContour
 import NLS.ZakharovShabat.SourcePsiIsospectralRoots
+import NLS.ComplexAnalysis.QuadraticFactorStationarity
+import NLS.ZakharovShabat.SourcePeriodicIsospectral
+import NLS.ZakharovShabat.SourceStandardRootIsospectral
+import NLS.ZakharovShabat.SourceOmittedRootIsospectral
+import NLS.ZakharovShabat.SourceAngularIntegrandIsospectral
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
