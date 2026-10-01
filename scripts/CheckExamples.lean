@@ -21265,4 +21265,70 @@ example (w : SpectralWeight)
     exists_uniform_analytic_weightedResonantCenterClosingTail (by norm_num) (by norm_num) w φ ε hε
   exact ⟨N₀,hN₀,U,ho,hc,hφ,h0,fun N hN => ⟨(hmap N hN).1,fun ψ hψ => ((hmap N hN).2 ψ hψ).1⟩⟩
 
+
+-- The radius is chosen before the cutoff, and the entire infinite
+-- dimensional source ball satisfies the power-tail budget.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) (M r : ℝ) (hr : 0 < r) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      ∀ ψ ∈ Metric.ball φ (4*r),
+        M^2/(N : ℝ)+‖weightedPairFourierTail w.toWeight (N/2) ψ‖^2 ≤ 26*r^2 := by
+  obtain ⟨N₀,hN₀,hbudget⟩ := exists_fixedBall_powerTail_budget (by simp) w φ M r 2 1 hr
+    (by norm_num) (by norm_num)
+  refine ⟨N₀,hN₀,?_⟩
+  intro N hN ψ hψ
+  have hb := hbudget N hN ψ hψ
+  norm_num at hb
+  exact hb
+
+-- The actual Hilbert remainder is a contraction on a complete
+-- closed ball, with a constructed radius and one cutoff for all
+-- larger cutoffs. No derivative or contraction premise is supplied.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2) :
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      LipschitzOnWith (1/2) (fun ψ => weightedResonantCenterRemainder (by simp) w ψ N)
+        (Metric.closedBall φ r) ∧
+      ∀ ψ ∈ Metric.closedBall φ r,
+        ‖fderiv ℂ (fun χ => weightedResonantCenterRemainder (by simp) w χ N) ψ‖ < 1/2 := by
+  obtain ⟨r,hr,N₀,hN₀,hR⟩ := exists_fixedBall_weightedResonantCenterRemainder_derivative
+    (by simp) (by norm_num) w φ (1/2) (by norm_num)
+  refine ⟨r,hr,N₀,hN₀,?_⟩
+  intro N hN
+  have h := hR N hN
+  have hclosed : Metric.closedBall φ r ⊆ Metric.ball φ (3*r) :=
+    Metric.closedBall_subset_ball (by linarith)
+  refine ⟨?_,fun ψ hψ => h.2.2.1 ψ (hclosed hψ)⟩
+  rw [lipschitzOnWith_iff_norm_sub_le]
+  intro x hx y hy
+  simpa using h.2.2.2.1 y (hclosed hy) x (hclosed hx)
+
+-- At a non-Hilbert exponent the full actual closing derivative is
+-- close to the signed Fourier operator on one fixed ball, and its
+-- Lipschitz constant depends on the source norm rather than the radius.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 3) :
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      AnalyticOnNhd ℂ (fun ψ => weightedResonantCenterClosingTail (by simp) w ψ N) (Metric.ball φ (4*r)) ∧
+      (∀ ψ ∈ Metric.ball φ (3*r),
+        ‖fderiv ℂ (fun χ => weightedResonantCenterClosingTail (by simp) w χ N) ψ-
+          weightedResonantLeadingTailCLM (by simp) w N‖ < 1/4) ∧
+      ∀ x ∈ Metric.ball φ r, ∀ y ∈ Metric.ball φ r,
+        ‖fderiv ℂ (fun χ => weightedResonantCenterClosingTail (by simp) w χ N) y-
+          fderiv ℂ (fun χ => weightedResonantCenterClosingTail (by simp) w χ N) x‖ ≤
+            4*resonantCenterRemainderBallConstant 3 (‖φ‖+1)*‖y-x‖ := by
+  obtain ⟨r,hr,N₀,hN₀,hC⟩ := exists_fixedBall_weightedResonantCenterClosingTail_derivative
+    (by simp) (by norm_num) w φ (1/4) (by norm_num)
+  exact ⟨r,hr,N₀,hN₀,fun N hN => ⟨(hC N hN).1,(hC N hN).2.2.1,(hC N hN).2.2.2⟩⟩
+
+-- Full operator-norm smallness on a fixed ball also holds below
+-- the Hilbert exponent, with an arbitrary positive tolerance.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (ENNReal.ofReal (3/2 : ℝ)))
+    (η : ℝ) (hη : 0 < η) :
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      AnalyticOnNhd ℂ (fun ψ => weightedResonantCenterClosingTail (by norm_num) w ψ N) (Metric.ball φ (4*r)) ∧
+      ∀ ψ ∈ Metric.ball φ (3*r),
+        ‖fderiv ℂ (fun χ => weightedResonantCenterClosingTail (by norm_num) w χ N) ψ-
+          weightedResonantLeadingTailCLM (by norm_num) w N‖ < η := by
+  obtain ⟨r,hr,N₀,hN₀,hC⟩ := exists_fixedBall_weightedResonantCenterClosingTail_derivative
+    (by norm_num) (by norm_num) w φ η hη
+  exact ⟨r,hr,N₀,hN₀,fun N hN => ⟨(hC N hN).1,(hC N hN).2.2.1⟩⟩
+
 end NLS.ZakharovShabat

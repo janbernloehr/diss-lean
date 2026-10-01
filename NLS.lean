@@ -344,6 +344,9 @@ import NLS.ZakharovShabat.WeightedResonantCenterRemainderSmall
 import NLS.ZakharovShabat.WeightedResonantCenterRemainderAnalytic
 import NLS.ZakharovShabat.WeightedResonantLeadingTail
 import NLS.ZakharovShabat.WeightedResonantCenterClosingTail
+import NLS.ZakharovShabat.PowerTailBallBudget
+import NLS.ZakharovShabat.WeightedResonantCenterRemainderDerivative
+import NLS.ZakharovShabat.WeightedResonantCenterClosingTailDerivative
 import NLS.ZakharovShabat.SingleResonantPotential
 import NLS.ZakharovShabat.RootDisplacementSourceAudit
 import NLS.ZakharovShabat.RootDisplacementPower

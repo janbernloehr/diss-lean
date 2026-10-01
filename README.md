@@ -6573,3 +6573,41 @@ control, an inverse construction, and solving the simultaneous tail
 equations remain before finite-gap density. General angle/angle
 involution, bracket compatibility below two, and later chapters remain
 unfinished; Corollary 13.2 is not complete.
+
+## Latest milestone: fixed-ball derivative estimates for the actual closing map
+
+`PowerTailBallBudget.lean` first fixes a positive source radius, then
+chooses one cutoff valid for every larger cutoff. The center's Fourier
+tail is small, and the contractive tail operator bounds every perturbation
+throughout the fourfold source ball. This controls the power-tail budget
+by the appropriate power of the radius without compactness of the ball.
+
+`WeightedResonantCenterRemainderDerivative.lean` uses that estimate in the
+actual component-sum remainder budget. With an explicit constant `K`
+depending on the exponent and source norm bound, the remainder norm is
+at most `K r²` on the fourfold ball. Schwarz estimates make its full
+Fréchet derivative smaller than any positive tolerance on the threefold
+ball. The remainder is Lipschitz there with that tolerance, and its
+derivative is Lipschitz on the inner ball with constant `4K`. The latter
+constant is independent of the chosen radius and cutoff. Membership and
+the actual coefficients are proved throughout the outer ball.
+
+`WeightedResonantCenterClosingTailDerivative.lean` identifies the full
+closing-map derivative with the signed weighted leading Fourier operator
+plus the actual remainder derivative. It constructs one fixed ball where
+the derivative difference is arbitrarily small, for every larger cutoff,
+and proves the full derivative's Lipschitz bound. The actual weighted
+moving-center closing equations and the zero block below the cutoff are
+retained. All results hold for arbitrary spectral weights and every
+finite `p > 1`.
+
+The radius may depend on the requested derivative tolerance. An adapted
+source map, its local inverse, and solving the simultaneous tail equations
+remain before finite-gap density. General angle/angle involution, bracket
+compatibility below two, and later chapters remain unfinished; Corollary
+13.2 is not complete.
+
+API checks cover the fixed-ball squared tail budget at `p = 3`, an
+actual Hilbert remainder contraction on a closed ball, the full closing
+derivative's `1/4` approximation and Lipschitz bound at `p = 3`, and
+arbitrary derivative tolerance on a fixed ball at `p = 3/2`.

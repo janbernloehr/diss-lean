@@ -1,6 +1,39 @@
 # Implementation status
 
-## Current milestone: the analytic sequence map of spectral closing equations
+## Current milestone: fixed-ball derivative estimates for the actual closing map
+
+At every source, a positive fixed radius now makes the actual sequence
+remainder derivative arbitrarily small, uniformly for every larger
+cutoff. A bound proportional to the square of the radius holds on the
+fourfold ball. Schwarz estimates give the full operator-norm derivative
+bound on the threefold ball; the convex mean-value inequality also
+gives a small Lipschitz constant for the remainder there.
+
+The full remainder derivative is Lipschitz on the inner ball with
+constant `4K`, where `K` is explicit in the exponent and the source
+norm bound. This constant is independent of the chosen radius and the
+cutoff. All actual remainder coefficients and their sequence membership
+are retained throughout the outer ball.
+
+The derivative of the full spectral closing map equals the signed
+weighted leading Fourier operator plus the actual remainder derivative.
+It is therefore uniformly close to that operator on the fixed ball,
+and satisfies the same derivative Lipschitz estimate. Its coordinates
+are the actual weighted off-diagonal equations at the moving centers.
+These results hold for arbitrary spectral weights and every finite
+`p > 1`.
+
+The proof chooses the radius first and the cutoff afterward. The tail
+operator bounds perturbations over the entire source ball; no compactness
+of that ball or uniform convergence on a fixed ball is assumed. The
+radius may depend on the requested derivative tolerance.
+
+An adapted source map, a local inverse, and sources solving the
+simultaneous tail equations remain before finite-gap density. General
+angle/angle involution, bracket compatibility for `1 < p < 2`, and later
+chapters remain unfinished; Corollary 13.2 is not complete.
+
+## Previous milestone: the analytic sequence map of spectral closing equations
 
 The actual moving-center closing equations now form a Banach analytic
 map into the component-sum `ℓᵖ` pair space, at every finite `p > 1` and
