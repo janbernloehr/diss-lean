@@ -5707,3 +5707,29 @@ The canonical angle-angle and mixed angle-action identities require
 connecting these separation functionals to the actual normalized angular
 integrals. That connection and compatibility for `1 < p < 2` remain before
 Corollary 13.2 is complete.
+
+
+### Corollary 13.2: actual spectral-curve cotangents and isospectral actions
+
+`SourceBoundarySpectralCurveDifferential.lean` differentiates the original
+monodromy characteristic polynomial. It proves the full actual cotangent
+equation `r_b delta(mu) d log(rho) = d_source Delta(mu) + Delta'(mu) d mu`
+at every real source for finite `p > 1`. The local logarithm is the actual
+normalized Floquet logarithm, and the right side retains both fixed-source
+variation and root motion. The equation uses no division by `delta(mu)`.
+At a branch terminal, the full moving discriminant cotangent is zero.
+The canonical momentum has the same equation with normalization `-2`.
+
+`SourceBoundaryIsospectralAction.lean` proves that every actual indexed
+action commutes with every fixed-parameter discriminant for finite
+`p >= 2`. Its proof passes the actual contour cotangent through the source
+bivector and uses the proved discriminant commutation. Every actual action
+therefore satisfies the tangent equation
+`r_b delta(mu){kappa_n,I_m} + 2 Delta'(mu){mu_n,I_m} = 0`
+on the separation spectral curve. The cleared equation includes branch
+terminals and collapsed gaps; its quotient form is proved whenever the
+terminal anti-discriminant is nonzero. Both boundary families are covered.
+
+These actual differential and bracket equations prepare the connection
+to the normalized angular integrals. The angle-angle and angle-action
+canonical values, and compatibility for `1 < p < 2`, remain unfinished.

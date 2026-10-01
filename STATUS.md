@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual canonical separation bracket relations
+## Current milestone: actual spectral-curve cotangents and isospectral action brackets
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -89,6 +89,18 @@ canonical separation relations `{mu_n,mu_m}=0`, `{kappa_n,kappa_m}=0`, and
 collapsed gaps. Local momentum analyticity holds at every finite `p > 1`.
 Connecting these separation functionals to the actual canonical angles,
 and compatibility for `1 < p < 2`, remain unfinished.
+
+Differentiating the actual monodromy characteristic polynomial now proves
+the full spectral-curve cotangent equation
+`r_b delta(mu) d log(rho) = d_source Delta(mu) + Delta'(mu) d mu`
+at every real source for finite `p > 1`. At a branch terminal the full
+moving discriminant cotangent vanishes. Every actual action commutes with
+every fixed-parameter discriminant for finite `p >= 2`. Applying the
+source bivector therefore gives the cleared tangent equation
+`r_b delta(mu){kappa_n,I_m} + 2 Delta'(mu){mu_n,I_m} = 0`, including
+branch terminals and collapsed gaps. The quotient version is proved when
+the terminal anti-discriminant is nonzero. The normalized angular integral
+computations remain unfinished.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11327,3 +11339,44 @@ Connecting these separation functionals to the actual normalized angular
 integrals, proving the canonical angle-angle and mixed angle-action values,
 and compatibility for `1 < p < 2` remain unfinished. Corollary 13.2 is not
 yet complete. No cross-family separation or local inverse theorem is asserted.
+
+
+## Latest milestone: actual spectral-curve cotangents and isospectral action brackets
+
+`SourceBoundarySpectralCurveDifferential.lean` proves the full spectral-curve
+cotangent equation directly from the actual moving monodromy characteristic
+polynomial. The multiplier and terminal discriminant are analytic at every
+real source for finite `p > 1`. Differentiating the polynomial and dividing
+only by the globally nonzero multiplier identifies the moving discriminant
+cotangent with `r_b delta(mu)` times the actual normalized local-logarithm
+cotangent. The moving discriminant chain rule then retains the fixed-source
+cotangent and `Delta'(mu)` times the actual moving-root cotangent.
+
+The equation is kept cleared at the terminal anti-discriminant, so branch
+terminals and collapsed periodic gaps require no division. At a terminal
+with zero anti-discriminant, the full moving discriminant cotangent is zero.
+The canonical momentum equation follows with its actual normalization `-2`.
+Applying the source bivector gives the spectral-curve bracket equation with
+an arbitrary functional, retaining its fixed-discriminant bracket as well
+as its root bracket.
+
+`SourceBoundaryIsospectralAction.lean` proves that every actual glued indexed
+action commutes with every fixed-parameter discriminant at every real source
+for finite `p >= 2`. Its actual contour cotangent, circle integrability, and
+the proved global discriminant commutation supply this identity. Centered
+action chart existence removes the chart from the final theorem; finite
+support, spectral avoidance, and open-gap assumptions are unnecessary.
+
+For any Hamiltonian commuting with every fixed-parameter discriminant, the
+actual canonical separation bracket satisfies the cleared tangent equation
+`r_b delta(mu){kappa_n,G} + 2 Delta'(mu){mu_n,G} = 0`.
+In particular this holds for every actual indexed action, in either ordinary
+boundary family, including branch terminals and collapsed gaps. A quotient
+formula identifies the momentum/action bracket with the root/action bracket
+times `-2 Delta'(mu)/(r_b delta(mu))` whenever the terminal anti-discriminant
+is nonzero.
+
+The connection to the actual normalized angular integrals still needs its
+variation and period computations. The angle-angle and mixed angle-action
+canonical values, and lower-exponent bracket compatibility, remain unfinished.
+Corollary 13.2 is not yet complete.

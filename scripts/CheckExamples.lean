@@ -19254,3 +19254,81 @@ example (b : BoundaryCondition) (φ : CoeffPair (ENNReal.ofReal (3/2)))
     (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ hreal
 
 end NLS.ZakharovShabat
+
+
+/- Actual full spectral-curve cotangents and the isospectral action
+tangent equation, including the cleared equation at branch terminals. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    (b.extensionSign*sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ) •
+      fderiv ℂ (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b n φ) φ =
+        fderiv ℂ (sourceBoundaryTerminalDiscriminant (by norm_num) (by norm_num) b n) φ :=
+  fderiv_sourceBoundaryTerminalDiscriminant_eq_floquetLog (by norm_num) (by norm_num) b n φ hreal
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n
+    (b.extensionSign*sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ) •
+      fderiv ℂ (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) b n φ) φ =
+        (-2 : ℂ) • (sourceDiscriminantCotangent (by norm_num) μ φ+
+          deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ)) μ •
+            fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n) φ) :=
+  sourceBoundaryCanonicalMomentum_spectralCurve_cotangent (by norm_num) (by norm_num) b n φ hreal
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ)
+    (hδ : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ = 0) :
+    fderiv ℂ (sourceBoundaryTerminalDiscriminant (by norm_num) (by norm_num) b n) φ = 0 :=
+  fderiv_sourceBoundaryTerminalDiscriminant_eq_zero_at_branch (by norm_num) (by norm_num) b n φ hreal hδ
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (z : ℂ) (m : ℤ) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) z)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_discriminant_action_eq_zero (by norm_num) (by norm_num) (by norm_num) φ hreal z m
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n
+    (b.extensionSign*sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ)*
+      sourceBracket (by norm_num) (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) b n φ)
+        (sourceComplexAction (by norm_num) (by norm_num) m) φ+
+      2*deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ)) μ*
+        sourceBracket (by norm_num)
+          (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n)
+          (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_boundaryCanonicalMomentum_action_spectralCurve (by norm_num) (by norm_num) (by norm_num) b n m φ hreal
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ)
+    (hδ : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ ≠ 0) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n
+    sourceBracket (by norm_num) (sourceBoundaryCanonicalMomentumAt (by norm_num) (by norm_num) b n φ)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ =
+      (-2*deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ)) μ*
+        sourceBracket (by norm_num)
+          (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n)
+          (sourceComplexAction (by norm_num) (by norm_num) m) φ)/
+        (b.extensionSign*sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ) :=
+  sourceBracket_boundaryCanonicalMomentum_action_eq_root_weight
+    (by norm_num) (by norm_num) (by norm_num) b n m φ hreal hδ
+
+-- The full cotangent identity, unlike the source bivector here, also applies below p=2.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+example (b : BoundaryCondition) (φ : CoeffPair (ENNReal.ofReal (3/2)))
+    (hreal : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2)) φ)) (n : ℤ) :
+    (b.extensionSign*sourceBoundaryTerminalAntiDiscriminant ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ) •
+      fderiv ℂ (sourceBoundaryFloquetLogAt ENNReal.ofReal_ne_top
+        (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ) φ =
+      fderiv ℂ (sourceBoundaryTerminalDiscriminant ENNReal.ofReal_ne_top
+        (by rw [ENNReal.one_lt_ofReal]; norm_num) b n) φ :=
+  fderiv_sourceBoundaryTerminalDiscriminant_eq_floquetLog ENNReal.ofReal_ne_top
+    (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ hreal
+
+end NLS.ZakharovShabat
