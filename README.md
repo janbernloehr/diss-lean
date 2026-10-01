@@ -5733,3 +5733,36 @@ terminal anti-discriminant is nonzero. Both boundary families are covered.
 These actual differential and bracket equations prepare the connection
 to the normalized angular integrals. The angle-angle and angle-action
 canonical values, and compatibility for `1 < p < 2`, remain unfinished.
+
+
+### Corollary 13.2: actual Hamiltonian directions and normalized psi stationarity
+
+`SourceHamiltonianDirection.lean` represents the actual source bivector
+by a bounded linear Hamiltonian direction in the actual source space.
+Frequency reflection and the original cross-component sign give a
+Hilbert direction, and exponent inclusion places it in each source space
+with `p >= 2`. Every source cotangent evaluates on this direction to its
+actual bivector pairing. This representation commutes with exponent
+restriction.
+
+`SourceIsospectralDirection.lean` proves that every actual action direction
+fixes the discriminant and its canonical square root off the spectral
+cuts. `SourcePsiIsospectralContour.lean` differentiates the actual psi
+contour equations with their numerator-root input fixed. The canonical
+root denominator has zero variation in an isospectral direction, so both
+the scalar equations and their full selected Banach-valued realization
+have zero source variation.
+
+`SourcePsiIsospectralRoots.lean` differentiates an actual canonical local
+psi branch in its fixed contour equation. The proved bijective root
+derivative forces the entire root-vector variation to vanish. Real-form
+uniqueness identifies this derivative with every actual common-domain
+analytic psi extension. The result holds in every isospectral direction
+for finite `p > 1`. In particular, every actual normalized psi root vector
+is stationary under every actual action Hamiltonian for finite `p >= 2`.
+Every actual entire normalized psi numerator therefore commutes with every
+action at every spectral parameter, including collapsed periodic gaps.
+
+The moving angular integration terminals and normalized period computation
+remain before the angle-action canonical value is proved. The angle-angle
+identity and lower-exponent bracket compatibility also remain unfinished.

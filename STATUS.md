@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual spectral-curve cotangents and isospectral action brackets
+## Current milestone: actual normalized psi stationarity under action Hamiltonians
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -101,6 +101,20 @@ source bivector therefore gives the cleared tangent equation
 branch terminals and collapsed gaps. The quotient version is proved when
 the terminal anti-discriminant is nonzero. The normalized angular integral
 computations remain unfinished.
+
+The source bivector now has an actual bounded linear Hamiltonian-direction
+representation in the source space for `p >= 2`, compatible with exponent
+restriction. Every action direction fixes the actual discriminant and its
+canonical square root off the spectral cuts. Holding the numerator-root
+input fixed, the actual psi contour equations have zero source variation
+in every isospectral direction. Their actual bijective root derivative
+then proves that every canonical normalized psi root vector is stationary.
+Real-form uniqueness identifies the derivative with each common-domain
+analytic psi extension. Consequently every actual entire normalized psi
+numerator commutes with every action at every spectral parameter for finite
+`p >= 2`, including collapsed gaps. Stationarity in an arbitrary isospectral
+direction holds for every finite `p > 1`. The remaining angle computations
+must now account for moving integration terminals and normalized periods.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11380,3 +11394,55 @@ The connection to the actual normalized angular integrals still needs its
 variation and period computations. The angle-angle and mixed angle-action
 canonical values, and lower-exponent bracket compatibility, remain unfinished.
 Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual Hamiltonian directions and normalized psi stationarity
+
+`SourceHamiltonianDirection.lean` constructs a bounded linear map from
+source cotangents to directions in the actual source coefficient-pair
+space for `p >= 2`. The original `-i` cross-component Poisson sign and
+frequency reflection are retained. Hilbert cotangent representation
+proves that evaluating any source cotangent on this direction equals
+its actual source bivector pairing. Brackets of actual scalar functionals
+are therefore actual directional derivatives. The construction commutes
+with restricting the Hamiltonian cotangent along exponent inclusion.
+No existence theorem for time-integrated Hamiltonian flows is asserted.
+
+`SourceIsospectralDirection.lean` defines infinitesimal isospectrality
+using the actual full discriminant cotangents at all spectral parameters.
+Differentiating the actual square identity proves zero canonical-root
+variation off the periodic cuts. The proved discriminant/action identity
+makes every actual indexed action Hamiltonian direction isospectral.
+
+`SourcePsiIsospectralContour.lean` proves zero source variation of the
+actual fixed-input psi contour integrand in an isospectral direction.
+The actual numerator-root input is held fixed, and the actual canonical
+spectral root is stationary. Uniform joint derivative bounds on a fixed
+circle justify differentiating under its integral. Every scalar contour
+equation therefore has zero source variation. Continuous coordinate
+evaluation and the actual contour-chart coordinate formula give the same
+zero source partial derivative for the full selected Banach-valued equation.
+
+`SourcePsiIsospectralRoots.lean` obtains an actual local analytic canonical
+psi branch in a fixed selected contour chart. Its actual implicit equation
+has a proved bijective selected-root Jacobian. The full differentiated
+equation, including its zero source partial derivative in an isospectral
+direction, forces zero variation of the entire deleted-root vector.
+The Banach-valued real-form identity identifies this branch derivative
+with that of every actual common-domain analytic psi extension agreeing
+with the canonical real solutions. No invertibility, spectral bracket,
+finite-support, or open-gap condition is supplied as an extra premise.
+
+Thus actual normalized psi root stationarity holds in any isospectral
+direction for finite `p > 1`. Every actual action Hamiltonian direction
+fixes every actual normalized psi root vector for finite `p >= 2`.
+The actual entire normalized psi numerators have zero variation at every
+spectral parameter, and consequently commute with every actual action.
+All indices and collapsed periodic gaps are included. An API example
+below the Hilbert exponent checks the general isospectral stationarity
+without asserting a source bracket in that range.
+
+The remaining angular variation must handle its moving integration
+terminals and exact normalized periods. The angle-action canonical value,
+angle-angle zero identity, and compatibility for `1 < p < 2` remain
+unfinished. Corollary 13.2 is not yet complete.

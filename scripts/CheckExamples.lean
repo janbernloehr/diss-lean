@@ -19332,3 +19332,59 @@ example (b : BoundaryCondition) (φ : CoeffPair (ENNReal.ofReal (3/2)))
     (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ hreal
 
 end NLS.ZakharovShabat
+
+
+/- Actual Hamiltonian directions and stationarity of the normalized
+psi roots and entire numerators under every actual action. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (L M : CoeffPair (3 : ℝ≥0∞) →L[ℂ] ℂ) :
+    L (sourceHamiltonianDirection (by norm_num) M) = sourceBivector (by norm_num) L M :=
+  apply_sourceHamiltonianDirection (by norm_num) L M
+
+example (F G : CoeffPair (3 : ℝ≥0∞) → ℂ) (φ : CoeffPair 3) :
+    (fderiv ℂ F φ) (sourceHamiltonianVector (by norm_num) G φ) = sourceBracket (by norm_num) F G φ :=
+  fderiv_apply_sourceHamiltonianVector (by norm_num) F G φ
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (m : ℤ) :
+    SourceIsospectralDirection (by norm_num) φ
+      (sourceHamiltonianVector (by norm_num) (sourceComplexAction (by norm_num) (by norm_num) m) φ) :=
+  sourceHamiltonianVector_action_isospectral (by norm_num) (by norm_num) (by norm_num) φ hreal m
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (m : ℤ) (z : ℂ)
+    (hz : z ∈ sourceCanonicalRootDomain (by norm_num) (by norm_num) φ) :
+    (fderiv ℂ (fun ψ : CoeffPair 3 => sourceCanonicalRoot (by norm_num) (by norm_num) ψ z) φ)
+      (sourceHamiltonianVector (by norm_num) (sourceComplexAction (by norm_num) (by norm_num) m) φ) = 0 :=
+  fderiv_sourceCanonicalRoot_sourceHamiltonianVector_action_eq_zero
+    (by norm_num) (by norm_num) (by norm_num) φ hreal m z hz
+
+example (W : Set (CoeffPair (3 : ℝ≥0∞))) (s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ W) :
+    (fderiv ℂ (s n) φ.val)
+      (sourceHamiltonianVector (by norm_num) (sourceComplexAction (by norm_num) (by norm_num) m) φ.val) = 0 :=
+  hs.fderiv_sourceHamiltonianVector_action_eq_zero (by norm_num) n m φ hφ
+
+example (W : Set (CoeffPair (3 : ℝ≥0∞))) (s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ W) (z : ℂ) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 => sourcePsiCandidate n (z,(s n ψ : Coeff 3)))
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ.val = 0 :=
+  hs.sourceBracket_numerator_action_eq_zero (by norm_num) n m φ hφ z
+
+-- Isospectral stationarity of the actual normalized roots itself applies below p=2.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+example (W : Set (CoeffPair (ENNReal.ofReal (3/2))))
+    (s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n)
+    (hs : SourcePsiIsolatingComplexExtension ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W s)
+    (n : ℤ) (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ W)
+    (h : CoeffPair (ENNReal.ofReal (3/2))) (hiso : SourceIsospectralDirection ENNReal.ofReal_ne_top φ.val h) :
+    (fderiv ℂ (s n) φ.val) h = 0 :=
+  hs.fderiv_isospectral_eq_zero n φ hφ h hiso
+
+end NLS.ZakharovShabat

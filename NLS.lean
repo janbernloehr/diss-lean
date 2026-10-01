@@ -1366,6 +1366,7 @@ import NLS.SequenceSpaces.HilbertCotangent
 import NLS.SequenceSpaces.SourceCotangent
 import NLS.Poisson.SourceBivector
 import NLS.Poisson.SourceBracket
+import NLS.Poisson.SourceHamiltonianDirection
 import NLS.Poisson.SourceCoordinateBrackets
 import NLS.ZakharovShabat.SourceRealTypeFiniteApproximation
 import NLS.Poisson.SourceFiniteBracketTransfer
@@ -1398,6 +1399,9 @@ import NLS.ZakharovShabat.SourceBoundaryFloquetCommutation
 import NLS.ZakharovShabat.SourceBoundaryCanonicalSeparation
 import NLS.ZakharovShabat.SourceBoundarySpectralCurveDifferential
 import NLS.ZakharovShabat.SourceBoundaryIsospectralAction
+import NLS.ZakharovShabat.SourceIsospectralDirection
+import NLS.ZakharovShabat.SourcePsiIsospectralContour
+import NLS.ZakharovShabat.SourcePsiIsospectralRoots
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
