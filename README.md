@@ -5452,3 +5452,33 @@ formula and endpoint identity are proved from the ODE construction.
 They provide the gradient and boundary data for the pending spectral
 commutation proof; the coefficient-space canonical bracket identities
 of Corollary 13.2 remain unfinished.
+
+
+### Corollary 13.2: discriminant commutation and actual action involution
+
+`ClassicalDiscriminantCommutation.lean` proves the first-order system
+for the actual gradient and transported monodromy diagonal difference.
+Their quadratic pairing has derivative `2i(z-w)` times the antisymmetric
+physical gradient pairing. Matching endpoint values give a zero integral,
+including coincident spectral parameters by antisymmetry. The actual
+discriminant derivative vanishes along the Hamiltonian direction of every
+other discriminant, with the original physical sign.
+
+`IntervalBilinearParseval.lean` proves the unconjugated unit-interval
+Fourier pairing with the required frequency reversal.
+`FiniteSourceDiscriminantGradient.lean` differentiates the exact
+finite-source/classical discriminant identity and recovers both actual
+source cotangent coefficient sequences from the physical gradient.
+
+`SourceDiscriminantPoisson.lean` identifies the actual finite Hilbert
+source bracket with the zero physical pairing, transfers it by exponent
+restriction, and uses finite Fourier density and analytic continuity to
+prove discriminant commutation for every complex source at every finite
+`p >= 2`. The previous contour reduction then gives `{I_n,I_m} = 0` for
+the actual glued indexed actions at all real sources in that range,
+including collapsed gaps. These results have no remaining commutation
+or finite-identity hypothesis.
+
+The angle-angle and mixed angle-action canonical identities, and the
+spectral bracket compatibility required for `1 < p < 2`, remain to be
+proved before Corollary 13.2 is complete.

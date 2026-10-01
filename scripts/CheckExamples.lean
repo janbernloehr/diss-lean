@@ -18831,3 +18831,28 @@ example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
   simp
 
 end NLS.ZakharovShabat
+
+/- Proved physical and source discriminant commutation and the actual
+Corollary 13.2 action-action identity at exponent three. -/
+noncomputable section
+open NLS.LinearVolterra NLS.Poisson
+namespace NLS.ZakharovShabat
+
+example (Φ : Curve (ℂ × ℂ)) (z w : ℂ) :
+    (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalDiscriminant Ψ z) Φ)
+      (classicalDiscriminantHamiltonianDirection Φ w) = 0 :=
+  fderiv_classicalDiscriminant_hamiltonian_eq_zero Φ z w
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) z)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ = 0 :=
+  sourceBracket_discriminants_eq_zero (by norm_num) (by norm_num) (by norm_num) φ z w
+
+-- No open-gap condition is needed: this also covers collapsed indexed gaps.
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num) (sourceComplexAction (by norm_num) (by norm_num) n)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ = 0 :=
+  sourceBracket_actions_eq_zero (by norm_num) (by norm_num) (by norm_num) φ hreal n m
+
+end NLS.ZakharovShabat

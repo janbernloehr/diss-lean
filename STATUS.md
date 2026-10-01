@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual classical discriminant potential gradient
+## Current milestone: discriminant commutation and Corollary 13.2 action involution
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -17,8 +17,11 @@ with matching endpoint values, obtained by differentiating the Volterra
 solution and proving its variation-of-constants kernel. Details appear
 in the latest milestone below.
 
-The three spectral canonical identities of Corollary 13.2 remain
-unproved, as does their compatibility for `1 < p < 2`.
+The actual discriminants now commute on the whole complex source space
+for every finite `p >= 2`. Consequently `{I_n,I_m} = 0` is proved for the
+actual glued indexed actions at every real source in that range, including
+collapsed gaps. The angle-angle and angle-action identities remain
+unproved, as does the spectral bracket compatibility for `1 < p < 2`.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -10909,3 +10912,39 @@ The next step is the spectral boundary cancellation proving commutation
 of these physical gradients, and its identification with the coefficient
 source bracket. The canonical identities of Corollary 13.2 and their
 `1 < p < 2` compatibility remain unproved.
+
+
+## Latest milestone: discriminant commutation and actual action involution
+
+The actual classical potential gradient satisfies a closed first-order
+system together with the diagonal difference of the transported
+monodromy. A quadratic pairing of the two systems has derivative equal
+to `2i(z-w)` times the unconjugated antisymmetric gradient pairing.
+The gradient and diagonal term have matching endpoint values. The
+fundamental theorem of calculus therefore proves that the physical
+pairing integral vanishes for distinct spectral parameters; antisymmetry
+handles coincident parameters. Equivalently, the actual discriminant
+Frechet derivative vanishes along the continuous Hamiltonian direction
+of every other discriminant, with the physical Poisson sign `-i`.
+
+Unit-interval bilinear Parseval now identifies the physical integral
+with the convergent Fourier sum, reversing the first factor's frequency.
+The exact finite-source discriminant identity is differentiated along
+finite complex affine lines. This identifies the actual source cotangent
+on finite directions with the classical derivative. The two normalized
+Fourier coordinate directions recover both physical gradient coefficient
+sequences at reversed frequencies, including their original signs.
+
+The actual Hilbert source discriminant bracket at finite potentials
+therefore equals the vanishing physical pairing. Exponent restriction
+transfers this identity to finite potentials at every finite `p >= 2`.
+Analytic bracket continuity and finite Fourier density extend it to every
+complex source in that range. No finite identity, gradient identity, or
+spectral commutation assumption remains in the resulting theorem.
+
+The existing double-contour reduction now proves `{I_n,I_m} = 0` for the
+actual glued indexed actions at every real source and every pair of
+indices for finite `p >= 2`, including collapsed gaps. This completes
+Corollary 13.2's action-action computation in that range. The canonical
+angle-angle and mixed angle-action computations, spectral bracket
+compatibility for `1 < p < 2`, and the later chapters remain unfinished.
