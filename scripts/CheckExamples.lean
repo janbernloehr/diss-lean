@@ -19574,3 +19574,84 @@ example {m : ℤ}
   D.fderiv_beta_isospectral_cleared hs n hmn φ hφ hφ₀ h hiso
 
 end NLS.ZakharovShabat
+
+
+/- The actual diagonal eta variation uses the single phase cotangent.
+Its remainder formula still includes collapsed gaps. -/
+noncomputable section
+open Set Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {m : ℤ} {s : (j : ℤ) → CoeffPair (3 : ℝ≥0∞) → DeletedCoeff 3 j}
+    {W V W₀ : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData (by norm_num) (by norm_num) m s W V c T r R z₀)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (k : ℤ) (ρ : ℝ) (hrρ : r < ρ) (hρR : ρ < R)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ V) (hφ₀ : φ.val ∈ W₀) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val m
+    sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m φ.val *
+      sourceBracket (by norm_num)
+        (sourceAngularEtaRemainderCauchyCandidate (by norm_num) (by norm_num) m s (c m) r R z₀ ρ)
+        (sourceComplexAction (by norm_num) (by norm_num) k) φ.val =
+      (sourcePsiCandidate m (μ,(s m φ.val : Coeff 3))-
+        Complex.I*(2*Complex.I*sourceStandardRootOmittedProduct (by norm_num) (by norm_num) m φ.val μ)) *
+          sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+            canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ m)
+            (sourceComplexAction (by norm_num) (by norm_num) k) φ.val :=
+  D.sourceBracket_etaRemainder_action_cleared hs (by norm_num) k ρ hrρ hρR φ hφ hφ₀
+
+example {m : ℤ} {s : (j : ℤ) → CoeffPair (3 : ℝ≥0∞) → DeletedCoeff 3 j}
+    {W V U W₀ : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R ρ : ℝ} {z₀ : ℂ} {δ ε : CoeffPair 3 → ℂ}
+    (D : SourceAngularEtaAnalyticChartData (by norm_num) (by norm_num) m s W V U c T r R z₀ ρ δ ε)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (k : ℤ) (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ U) (hφ₀ : φ.val ∈ W₀) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val m
+    sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m φ.val *
+      sourceBivector (by norm_num) (sourceAngularEtaDifferential (by norm_num) (by norm_num) m s φ.val)
+        (fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) k) φ.val) =
+      sourcePsiCandidate m (μ,(s m φ.val : Coeff 3)) *
+        sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+          canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ m)
+          (sourceComplexAction (by norm_num) (by norm_num) k) φ.val :=
+  D.sourceBivector_etaDifferential_action_cleared hs (by norm_num) k φ hφ hφ₀
+
+example {m : ℤ} {s : (j : ℤ) → CoeffPair (3 : ℝ≥0∞) → DeletedCoeff 3 j}
+    {W V U : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R ρ : ℝ} {z₀ : ℂ} {δ ε : CoeffPair 3 → ℂ}
+    (D : SourceAngularEtaAnalyticChartData (by norm_num) (by norm_num) m s W V U c T r R z₀ ρ δ ε)
+    (hbeta : AnalyticOnNhd ℂ (sourceAngularBetaCorrection (by norm_num) (by norm_num) m s) U)
+    (φ : CoeffPair 3) (hφ : φ ∈ U) :
+    sourceAngularThetaDifferential (by norm_num) (by norm_num) m s φ =
+      sourceAngularEtaDifferential (by norm_num) (by norm_num) m s φ+
+        fderiv ℂ (sourceAngularBetaCorrection (by norm_num) (by norm_num) m s) φ :=
+  D.thetaDifferential_eq_eta_add_betaCorrection hbeta φ hφ
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example {m : ℤ}
+    {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) j}
+    {W V U W₀ : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {c : ℤ → ℂ} {T : ℤ → ℝ} {r R ρ : ℝ} {z₀ : ℂ}
+    {δ ε : CoeffPair (ENNReal.ofReal (3/2)) → ℂ}
+    (D : SourceAngularEtaAnalyticChartData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) m s W V U c T r R z₀ ρ δ ε)
+    (hs : SourcePsiIsolatingComplexExtension ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W₀ s)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ U) (hφ₀ : φ.val ∈ W₀)
+    (h : CoeffPair (ENNReal.ofReal (3/2))) (hiso : SourceIsospectralDirection ENNReal.ofReal_ne_top φ.val h) :
+    let μ := canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet φ.val m
+    sourceBoundaryTerminalAntiDiscriminant ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet m φ.val *
+        sourceAngularEtaDifferential ENNReal.ofReal_ne_top
+          (by rw [ENNReal.one_lt_ofReal]; norm_num) m s φ.val h =
+      sourcePsiCandidate m (μ,(s m φ.val : Coeff (ENNReal.ofReal (3/2)))) *
+        (fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2)) =>
+          canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top
+            (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet ψ m) φ.val) h :=
+  D.etaDifferential_isospectral_cleared hs φ hφ hφ₀ h hiso
+
+end NLS.ZakharovShabat

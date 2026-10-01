@@ -1,15 +1,16 @@
 # Implementation status
 
-## Current milestone: the actual moving off-diagonal beta variation
+## Current milestone: the actual diagonal eta differential and variation
 
-The actual off-diagonal beta now satisfies the cleared moving-terminal
-identity `delta(mu) d beta_nm = psi_n(mu) d mu_m` in every isospectral
-direction for finite `p > 1`. It includes periodic Dirichlet terminals
-and collapsed selected gaps. For finite `p >= 2`, every actual action
-gives the corresponding bracket equation. At a regular terminal the
-beta/action bracket is the normalized sheet differential times the
-root/action bracket. The diagonal eta variation and normalized period
-sum remain before the angle-action value.
+The single actual eta phase now supplies an analytic cotangent agreeing
+with every local eta representative. Its isospectral variation satisfies
+`delta(mu_n) d eta_n = psi_n(mu_n) d mu_n` for finite `p > 1` on the indexed
+open-gap charts, including periodic Dirichlet terminals. The actual interior
+and terminal remainder statements also include collapsed gaps. Every actual
+action gives the corresponding eta/root bracket equation for finite `p >= 2`.
+The actual theta cotangent splits into this eta cotangent and the derivative
+of the full analytic beta correction. The normalized period sum remains
+before the angle-action canonical value.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11556,3 +11557,45 @@ The diagonal eta variation and exact normalized period sum still remain
 before the angle-action canonical value. The angle-angle identity and
 bracket compatibility for `1 < p < 2` also remain unfinished. Corollary 13.2
 is not yet complete.
+
+
+## Latest milestone: the actual eta cotangent and diagonal variation
+
+`QuadraticCauchyStationarity.lean` packages the differentiated quadratic
+solution argument. Joint analyticity justifies the mixed derivatives, and
+stationarity of the two symmetric coefficients and right-hand side gives a
+homogeneous equation for the source variation. A contained root and analytic
+uniqueness force that variation to vanish. The existing off-diagonal Cauchy
+stationarity theorem now uses this shared proof with its public API preserved.
+
+`SourceAngularEtaCauchyIsospectral.lean` applies it to the actual diagonal
+remainder equation, whose right-hand side is the actual gap numerator minus
+`i`. The entire interior candidate is stationary in every isospectral direction,
+including selected endpoints and collapsed gaps. `SourceAngularEtaRemainderIsospectral.lean`
+differentiates its actual moving terminal formula. Its cleared variation has
+numerator `psi_n(mu_n) - i (2i P_n(mu_n))`, with the model term retained exactly.
+This includes every real source and collapsed selected gap for finite `p > 1`.
+
+`SourceAngularEtaDifferential.lean` defines the logarithmic cotangent of the
+single actual eta phase. It is analytic on every actual open-gap chart and
+agrees with the derivative of every local eta representative. The actual theta
+cotangent is proved equal to this eta cotangent plus the derivative of the
+actual full beta correction.
+
+`SourceAngularEtaIsospectral.lean` differentiates the actual half-gap square
+and moving cosine-point equations. The analytic half-gap is stationary in an
+isospectral direction because its square is stationary and the chart's gap
+is open. The terminal normalization gives the model-angle variation without
+dividing by its sine or the terminal anti-discriminant. Adding the actual
+remainder cancels the model numerator and gives
+`delta(mu_n) d eta_n = psi_n(mu_n) d mu_n`. The single eta cotangent satisfies
+the same equation independently of chart choices, also at periodic terminals.
+Its actual action bracket has the cleared equation and the regular-terminal
+weight formula for finite `p >= 2`. The actual theta/action bracket is reduced
+to this diagonal contribution plus the derivative of the full beta correction.
+
+API checks cover the collapsed-gap remainder, the actual eta/action bracket,
+the theta cotangent decomposition, and the eta variation below the Hilbert
+exponent. The exact normalized period sum is still needed to obtain the
+angle-action canonical value. The angle-angle identity and bracket compatibility
+for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.

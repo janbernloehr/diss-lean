@@ -5819,3 +5819,24 @@ finite `p >= 2`; at a regular terminal, the beta/action bracket equals
 `psi_n(mu_m)/delta(mu_m)` times the root/action bracket. The diagonal eta
 variation, normalized period sum, angle-angle identity, and lower-exponent
 bracket compatibility remain unfinished.
+
+`QuadraticCauchyStationarity.lean` now supplies the common differentiated
+quadratic-equation argument for both beta and eta. The existing beta Cauchy
+stationarity API is preserved. `SourceAngularEtaCauchyIsospectral.lean` proves
+that the actual diagonal interior remainder is stationary, including endpoints
+and collapsed gaps. `SourceAngularEtaRemainderIsospectral.lean` computes its
+actual moving-terminal variation, retaining the diagonal model term.
+
+`SourceAngularEtaDifferential.lean` defines the analytic cotangent of the single
+actual eta phase and identifies it with every local eta representative's
+derivative. It also proves that the actual theta cotangent is the eta cotangent
+plus the derivative of the full beta correction. `SourceAngularEtaIsospectral.lean`
+differentiates the actual half-gap and cosine-point equations and combines the
+model-angle and remainder variations. Their model terms cancel to give
+`delta(mu_n) d eta_n = psi_n(mu_n) d mu_n` in every isospectral direction for
+finite `p > 1` on the actual open-gap charts, including periodic terminals.
+The actual eta/action bracket has this cleared equation and its regular-terminal
+weight formula for finite `p >= 2`. The theta/action bracket reduces to this
+diagonal contribution plus the full beta-correction derivative. The exact
+normalized period sum, angle-angle identity, and lower-exponent bracket
+compatibility remain unfinished.
