@@ -481,10 +481,14 @@ import NLS.ZakharovShabat.PhysicalBaseParity
 import NLS.ZakharovShabat.ClassicalParityEigenvectors
 import NLS.ZakharovShabat.CanonicalParityClassicalSpectrum
 import NLS.FunctionalAnalysis.ForcedVolterraSolution
+import NLS.FunctionalAnalysis.ComplexVolterraVariation
 import NLS.ZakharovShabat.ClassicalForcedSolution
 import NLS.ZakharovShabat.PhysicalForcedEquation
 import NLS.ZakharovShabat.ClassicalForcedParity
 import NLS.ZakharovShabat.ClassicalChainOperator
+import NLS.ZakharovShabat.ClassicalPotentialVariation
+import NLS.ZakharovShabat.ClassicalForcedKernel
+import NLS.ZakharovShabat.ClassicalDiscriminantGradient
 import NLS.ZakharovShabat.ClassicalChainPerturbation
 import NLS.ZakharovShabat.ClassicalChainTaylor
 import NLS.ZakharovShabat.ClassicalMonodromyTaylor

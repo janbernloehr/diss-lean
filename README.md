@@ -5429,3 +5429,26 @@ argument. Those finite canonical values remain explicit hypotheses.
 Corollary 13.2's spectral computations remain unfinished. The contour
 formulas now identify the discriminant commutation and mixed spectral
 brackets needed for the next proof steps.
+
+### Corollary 13.2: actual classical discriminant potential gradient
+
+`ComplexVolterraVariation.lean` differentiates the globally invertible
+Volterra equation in an arbitrary continuous operator coefficient.
+The whole-curve derivative is the zero-initial forced solution, with
+forcing given by the coefficient perturbation applied to the original
+solution. No coefficient smallness is required.
+
+`ClassicalPotentialVariation.lean` specializes this to the original
+signed Zakharov--Shabat equation and identifies the actual potential
+derivative at every point with a constructed C1 physical variation.
+`ClassicalForcedKernel.lean` proves the variation-of-constants kernel
+using the actual fundamental columns and their determinant-one identity.
+
+`ClassicalDiscriminantGradient.lean` derives the actual monodromy-trace
+derivative as an unconjugated physical integral against an explicit
+continuous two-component gradient. Its values at zero and one are both
+`(i T_10, -i T_01)`, where `T` is the actual monodromy. The derivative
+formula and endpoint identity are proved from the ODE construction.
+They provide the gradient and boundary data for the pending spectral
+commutation proof; the coefficient-space canonical bracket identities
+of Corollary 13.2 remain unfinished.

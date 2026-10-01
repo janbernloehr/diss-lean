@@ -18797,3 +18797,37 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
   D.thetaActionBracket_eq_of_finite_realType h2p n m (if n = m then 1 else 0) hfinite φ hreal hgap
 
 end NLS.ZakharovShabat
+
+/- Actual continuous-potential derivatives, physical component pairing,
+and matching boundary values for the discriminant gradient. -/
+noncomputable section
+open Set Complex MeasureTheory NLS.LinearVolterra
+namespace NLS.ZakharovShabat
+
+example (Φ H : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalSolution Ψ z v t) Φ) H =
+      classicalPotentialVariation Φ H z v t :=
+  fderiv_classicalSolution_potential Φ H z v t
+
+-- The two constant potential directions select the corresponding physical gradient components.
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalDiscriminant Ψ z) Φ)
+      (ContinuousMap.const _ (1,0)) =
+        ∫ s in (0 : ℝ)..1, (classicalDiscriminantGradient Φ z s).1 := by
+  rw [fderiv_classicalDiscriminant_eq_gradient_integral]
+  simp [NLS.LinearVolterra.extend]
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalDiscriminant Ψ z) Φ)
+      (ContinuousMap.const _ (0,1)) =
+        ∫ s in (0 : ℝ)..1, (classicalDiscriminantGradient Φ z s).2 := by
+  rw [fderiv_classicalDiscriminant_eq_gradient_integral]
+  simp [NLS.LinearVolterra.extend]
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalDiscriminantGradient Φ z 1 = classicalDiscriminantGradient Φ z 0 ∧
+      (classicalDiscriminantGradient Φ z 0).1 = Complex.I*classicalMonodromy Φ z 1 0 ∧
+      (classicalDiscriminantGradient Φ z 1).2 = -Complex.I*classicalMonodromy Φ z 0 1 := by
+  simp
+
+end NLS.ZakharovShabat

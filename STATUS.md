@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: Corollary 13.2 action contour reduction
+## Current milestone: actual classical discriminant potential gradient
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11,8 +11,11 @@ The actual glued actions now have full Banach analyticity near the real
 locus. Their brackets reduce to spectral contour integrals of the
 discriminant brackets, and the actual mixed angle-action bracket has a
 single-contour formula. Real finite Fourier approximation supplies all
-three continuity transfers on the appropriate indexed domains. Details
-appear in the latest milestone below.
+three continuity transfers on the appropriate indexed domains. The actual
+classical discriminant now has a derived physical potential gradient,
+with matching endpoint values, obtained by differentiating the Volterra
+solution and proving its variation-of-constants kernel. Details appear
+in the latest milestone below.
 
 The three spectral canonical identities of Corollary 13.2 remain
 unproved, as does their compatibility for `1 < p < 2`.
@@ -10875,3 +10878,34 @@ The spectral discriminant commutation and the finite canonical angle
 computations remain to be proved. Thus the contour reduction and all
 three continuity mechanisms for Corollary 13.2 at `p >= 2` are established, while
 the canonical identities and their `1 < p < 2` compatibility remain.
+
+## Latest milestone: actual classical discriminant potential gradient
+
+The globally invertible Volterra equation now yields the Frechet
+coefficient derivative of the whole solution curve in the supremum norm.
+It is exactly the zero-initial forced solution with source equal to the
+coefficient perturbation applied to the original solution. This result
+holds for arbitrary continuous operator coefficients, with no smallness
+assumption.
+
+For the original signed Zakharov--Shabat equation, the actual derivative
+in every continuous potential direction is constructed as a C1 solution
+of the linearized equation. It vanishes initially, and evaluating the
+whole-curve derivative at any point, including either endpoint, gives
+that physical solution. The adjugate of the actual normalized fundamental
+matrix gives a proved variation-of-constants integral kernel for arbitrary
+continuous forcing.
+
+The derivative of the actual monodromy trace is now the unconjugated
+bilinear integral of an explicit two-component gradient against the
+potential direction. Its polynomial formula uses the actual normalized
+columns and endpoint monodromy, retaining the original complex signs.
+The gradient is continuous and its endpoint values agree exactly:
+`(i T_10, -i T_01)`. The second endpoint identity follows from determinant
+one, without an endpoint condition on the potential. No gradient formula
+or spectral commutation identity is supplied as a hypothesis.
+
+The next step is the spectral boundary cancellation proving commutation
+of these physical gradients, and its identification with the coefficient
+source bracket. The canonical identities of Corollary 13.2 and their
+`1 < p < 2` compatibility remain unproved.
