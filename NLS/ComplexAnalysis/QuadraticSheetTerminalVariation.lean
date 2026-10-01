@@ -36,4 +36,28 @@ theorem quadratic_sheet_terminal_variation_of_flow
   linear_combination hβ+K*H*hδ-δ*H*hKflow+
     K*H'*v*hsq-K'*H*v*hsq+K^3*v*heq
 
+/-- The differentiated cosine and terminal sine equations determine
+an angle velocity even at either endpoint. -/
+theorem quadratic_cosine_angle_variation_of_flow
+    (d K K' σ κ e v S dS dK : ℂ) (hd : d ≠ 0) (hK : K ≠ 0)
+    (htrig : σ^2+κ^2 = 1)
+    (hS : S = -Complex.I*d*K*σ)
+    (hroot : -d*σ*e = S*v)
+    (hflow : dS = (K*K'*(-d^2*σ^2)+K^2*d*κ)*v)
+    (hKflow : dK = K'*S*v)
+    (hSderiv : dS = -Complex.I*d*(dK*σ+K*κ*e)) :
+    e = Complex.I*K*v := by
+  have hsin : σ*(e-Complex.I*K*v) = 0 := by
+    apply mul_left_cancel₀ hd
+    rw [mul_zero]
+    linear_combination -hroot-v*hS
+  have hcos : κ*(e-Complex.I*K*v) = 0 := by
+    apply mul_left_cancel₀ (mul_ne_zero hd hK)
+    rw [mul_zero]
+    linear_combination -Complex.I*hSderiv+Complex.I*hflow-d*σ*hKflow-d*σ*K'*v*hS+
+      d*(σ*dK+K*κ*e)*Complex.I_sq
+  have he : e-Complex.I*K*v = 0 := by
+    linear_combination σ*hsin+κ*hcos-(e-Complex.I*K*v)*htrig
+  exact sub_eq_zero.mp he
+
 end NLS.ComplexAnalysis

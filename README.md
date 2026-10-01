@@ -5885,3 +5885,30 @@ normalized kernel cutoffs. The theta/action bracket is the limit of its
 actual eta contribution plus those cutoffs. The diagonal eta kernel and exact
 normalized period sum still remain before the canonical angle-action value;
 the angle-angle identity and lower-exponent bracket compatibility also remain.
+
+
+### Corollary 13.2: the diagonal eta kernel and full theta/action sum
+
+`SourceAngularTerminalActionFlow.lean` now supplies the shared actual
+moving-root, terminal anti-discriminant, and omitted-product flow equations
+for both beta and eta. Their earlier public formulas are preserved.
+`QuadraticSheetTerminalVariation.lean` adds the cosine-angle calculation
+using both differentiated terminal equations. The sine and cosine
+constraints together determine the angle velocity even at periodic endpoints.
+
+`SourceAngularEtaActionKernel.lean` derives the actual model-angle and
+remainder action kernels. Their model terms cancel exactly, giving the
+single eta cotangent the normalized kernel `psi_n(mu_n) K_nk` for finite
+`p >= 2`. The selected eta chart has an open gap, but its Dirichlet
+terminal can be either periodic endpoint. The remainder formula itself
+also includes collapsed selected gaps.
+
+The actual theta/action bracket is therefore the limit of one full
+symmetric normalized kernel sum, with its diagonal included. The actual
+common-domain data construct the needed eta chart at every real source
+with an open selected gap; no extra angular chart is supplied to the
+public theorem. API examples check the endpoint model flow, the actual
+eta and remainder kernels, the full sum without a chart hypothesis, and
+half-gap stationarity below the Hilbert exponent. Evaluating the normalized
+spectral period sum, the canonical angle-action and angle-angle values,
+and bracket compatibility for `1 < p < 2` remain unfinished.

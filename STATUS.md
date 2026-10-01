@@ -1,17 +1,18 @@
 # Implementation status
 
-## Current milestone: actual beta/action kernels through branch terminals
+## Current milestone: diagonal eta/action kernel and the full theta sum
 
-Every actual off-diagonal beta/action bracket now equals its normalized
-numerator times one actual Dirichlet action contour kernel for finite
-`p >= 2`. The formula includes periodic Dirichlet terminals and collapsed
-selected gaps, with no terminal square root in a denominator. Local actual
-annuli are constructed from the existing psi extension, so no angular
-chart is an additional hypothesis in the public formula. The full beta
-correction/action bracket is the limit of the symmetric normalized kernel
-cutoffs. The theta/action bracket is the limit of its diagonal eta
-contribution plus these cutoffs. The diagonal kernel and the exact
-normalized period sum still remain before the canonical angle-action value.
+The actual single eta cotangent now has the same normalized action kernel
+as the off-diagonal beta terms for finite `p >= 2`. The model angle's
+velocity follows from both its cosine and terminal sine equations, including
+periodic Dirichlet endpoints. Its model numerator cancels the actual eta
+remainder numerator. Only the selected angle's open gap is required; no
+nonzero terminal square root or sine is assumed. The eta remainder formula
+also covers collapsed selected gaps. The actual theta/action bracket is
+the limit of one full symmetric sum over all Dirichlet terminals, including
+the diagonal. The common-domain data construct the needed local eta chart,
+so the public sum theorem has no additional angular-chart hypothesis. The
+exact normalized period sum still remains before the canonical value.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11670,4 +11671,47 @@ limits, and the spectral derivative identity at `p = 3/2`.
 The diagonal eta kernel at all terminals and the exact normalized spectral
 period sum remain before the angle-action canonical value. The angle-angle
 identity and bracket compatibility for `1 < p < 2` also remain unfinished.
+Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: diagonal eta/action kernel and full theta sum
+
+`SourceAngularTerminalActionFlow.lean` extracts the actual root, terminal
+anti-discriminant, and moving omitted-product flow into one shared theorem.
+It retains the exact discriminant factorization and square identity at
+branch terminals and collapsed gaps. The beta kernel now uses this shared
+flow, with its public API preserved.
+
+`QuadraticSheetTerminalVariation.lean` adds an angle-velocity calculation
+from the differentiated cosine and terminal sine equations. Their sine
+and cosine constraints determine the velocity using their square-sum
+identity, including at either periodic endpoint. Neither the sine nor
+the terminal anti-discriminant is divided out.
+
+`SourceAngularEtaRemainderIsospectral.lean` exposes the actual terminal
+quotient derivative as a shared theorem. `SourceAngularEtaIsospectral.lean`
+likewise exposes the chart's analytic half-gap stationarity in arbitrary
+isospectral directions for finite `p > 1`. Their earlier cleared
+variation theorems retain their public API.
+
+`SourceAngularEtaActionKernel.lean` combines the shared flow and actual
+remainder equation to prove its action kernel at every real terminal,
+including collapsed selected gaps. On the actual open-gap eta charts,
+differentiating both terminal equations gives the model-angle kernel
+`i (2i P_n(mu_n)) K_nk`, also at periodic endpoints. The remainder's
+opposite model term cancels, leaving the single actual eta cotangent
+with kernel `psi_n(mu_n) K_nk` for finite `p >= 2`.
+
+Adding this diagonal identity to the existing full beta-series bracket
+limit gives the actual theta/action bracket as the limit of one full
+symmetric normalized kernel sum over all Dirichlet terminals. The common
+domain's actual local eta charts give a public theorem at every open
+selected real gap without a supplied angular chart. These are symmetric
+cutoff limits; absolute kernel-norm summability is not asserted.
+
+API checks cover the branch-terminal model flow, both eta kernels, the
+full sum without an additional chart hypothesis, and general half-gap
+stationarity at `p = 3/2`. The exact normalized spectral period sum still
+remains before the canonical angle-action value. The angle-angle identity
+and bracket compatibility for `1 < p < 2` also remain unfinished.
 Corollary 13.2 is not yet complete.

@@ -21,6 +21,40 @@ variable {hp : p ≠ ⊤} {hp1 : 1 < p} {m : ℤ}
   {W V U : Set (CoeffPair p)} {c : ℤ → ℂ} {T : ℤ → ℝ}
   {r R : ℝ} {z₀ : ℂ} {ρ : ℝ} {δ ε : CoeffPair p → ℂ}
 
+/-- The chart's analytic half-gap is stationary in every isospectral
+direction; its square is the actual squared gap divided by four. -/
+theorem fderiv_halfGap_isospectral_eq_zero
+    (D : SourceAngularEtaAnalyticChartData hp hp1 m s W V U c T r R z₀ ρ δ ε)
+    (φ : realTypeSourceLocus p) (hφ : φ.val ∈ U)
+    (h : CoeffPair p) (hiso : SourceIsospectralDirection hp φ.val h) :
+    (fderiv ℂ δ φ.val) h = 0 := by
+  let M : CoeffPair p → ℂ := fun ψ => sourceStandardRootMidpoint hp hp1 ψ m
+  let G : CoeffPair p → ℂ := fun ψ => (canonicalPeriodicGap hp hp1
+    (periodOnePotential ψ) (periodOnePotential_mem ψ) m)^2
+  obtain ⟨A,_,_,hAreal,hMG⟩ := exists_global_source_analytic_midpoint_squaredGap hp hp1
+  have hM : DifferentiableAt ℂ M φ.val := (hMG φ.val (hAreal φ.property) m).1.differentiableAt
+  have hG : DifferentiableAt ℂ G φ.val := (hMG φ.val (hAreal φ.property) m).2.differentiableAt
+  have hMGzero : (fderiv ℂ M φ.val) h = 0 ∧ (fderiv ℂ G φ.val) h = 0 :=
+    fderiv_canonicalPeriodicMidpoint_squaredGap_isospectral_eq_zero hp hp1 φ.val φ.property h hiso m
+  have hδ : DifferentiableAt ℂ δ φ.val := (D.angle.halfGap_analytic φ.val hφ).differentiableAt
+  have hδnear : (fun ψ : CoeffPair p => δ ψ^2) =ᶠ[𝓝 φ.val] (fun ψ => G ψ/4) := by
+    filter_upwards [D.angle.source_open.mem_nhds hφ] with ψ hψ
+    rw [D.angle.halfGap_sq ψ hψ]
+    dsimp only [G]
+    ring
+  have hδzero : (fderiv ℂ δ φ.val) h = 0 := by
+    have he := congrArg (fun L : CoeffPair p →L[ℂ] ℂ => L h) hδnear.fderiv_eq
+    have hl := (hδ.hasFDerivAt.pow 2).fderiv
+    have hr := (hG.hasFDerivAt.mul_const (4 : ℂ)⁻¹).fderiv
+    change fderiv ℂ (fun ψ : CoeffPair p => δ ψ^2) φ.val = _ at hl
+    change fderiv ℂ (fun ψ : CoeffPair p => G ψ/4) φ.val = _ at hr
+    rw [hl,hr] at he
+    simp only [smul_apply,smul_eq_mul,hMGzero.2,mul_zero] at he
+    apply mul_left_cancel₀ (D.angle.halfGap_ne_zero φ.val hφ)
+    rw [mul_zero]
+    linear_combination he/2
+  exact hδzero
+
 /-- The actual model angle variation holds at either periodic terminal.
 Only the chart's open selected gap is needed; the terminal may be a branch. -/
 theorem fderiv_modelAngle_isospectral_cleared
@@ -44,22 +78,7 @@ theorem fderiv_modelAngle_isospectral_cleared
     fderiv_canonicalPeriodicMidpoint_squaredGap_isospectral_eq_zero hp hp1 φ.val φ.property h hiso m
   have hδ : DifferentiableAt ℂ δ φ.val := (D.angle.halfGap_analytic φ.val hφ).differentiableAt
   have hε : DifferentiableAt ℂ ε φ.val := (D.angle.angle_analytic φ.val hφ).differentiableAt
-  have hδnear : (fun ψ : CoeffPair p => δ ψ^2) =ᶠ[𝓝 φ.val] (fun ψ => G ψ/4) := by
-    filter_upwards [D.angle.source_open.mem_nhds hφ] with ψ hψ
-    rw [D.angle.halfGap_sq ψ hψ]
-    dsimp only [G]
-    ring
-  have hδzero : (fderiv ℂ δ φ.val) h = 0 := by
-    have he := congrArg (fun L : CoeffPair p →L[ℂ] ℂ => L h) hδnear.fderiv_eq
-    have hl := (hδ.hasFDerivAt.pow 2).fderiv
-    have hr := (hG.hasFDerivAt.mul_const (4 : ℂ)⁻¹).fderiv
-    change fderiv ℂ (fun ψ : CoeffPair p => δ ψ^2) φ.val = _ at hl
-    change fderiv ℂ (fun ψ : CoeffPair p => G ψ/4) φ.val = _ at hr
-    rw [hl,hr] at he
-    simp only [smul_apply,smul_eq_mul,hMGzero.2,mul_zero] at he
-    apply mul_left_cancel₀ (D.angle.halfGap_ne_zero φ.val hφ)
-    rw [mul_zero]
-    linear_combination he/2
+  have hδzero := D.fderiv_halfGap_isospectral_eq_zero φ hφ h hiso
   have hμnear : (fun ψ : CoeffPair p => M ψ+δ ψ*Complex.cos (ε ψ)) =ᶠ[𝓝 φ.val] μ := by
     filter_upwards [D.angle.source_open.mem_nhds hφ] with ψ hψ
     exact (D.angle.terminal_coordinates ψ hψ).1

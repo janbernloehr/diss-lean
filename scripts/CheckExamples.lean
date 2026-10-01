@@ -19847,3 +19847,94 @@ example (φ : CoeffPair (ENNReal.ofReal (3/2))) (n : ℤ) :
     (by rw [ENNReal.one_lt_ofReal]; norm_num) φ n
 
 end NLS.ZakharovShabat
+
+
+/- The actual diagonal eta kernel uses the full terminal flow, including
+periodic endpoints. Its diagonal completes the full theta/action sum. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+section EtaActionKernels
+variable {W₀ B V U : Set (CoeffPair 3)}
+  {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j} {n : ℤ}
+  {c : ℤ → ℂ} {T : ℤ → ℝ} {r R ρ : ℝ} {z₀ : ℂ} {δ ε : CoeffPair 3 → ℂ}
+  (C : SourceAngularEtaAnalyticChartData (by norm_num) (by norm_num) n s B V U c T r R z₀ ρ δ ε)
+include C
+
+example (k : ℤ) (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ U) (hφch : φ.val ∈ ball ch.center ch.radius)
+    (hterminal : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n φ.val = 0) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val = 0 ∧
+    (fderiv ℂ ε φ.val) (sourceHamiltonianVector (by norm_num)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val) =
+      let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n
+      Complex.I*(2*Complex.I*sourceStandardRootOmittedProduct (by norm_num) (by norm_num) n φ.val μ)*
+        sourceDirichletActionKernel (by norm_num) (by norm_num) n k ch φ.val := by
+  constructor
+  · rw [sourceBracket_dirichletRoot_action_eq_kernel (by norm_num) (by norm_num)
+      (by norm_num) n k ch φ.val φ.property hφch,hterminal,zero_mul]
+  · exact C.fderiv_modelAngle_action_eq_kernel (by norm_num) k ch φ hφ hφch
+
+example (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (k : ℤ) (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ U) (hφ₀ : φ.val ∈ W₀)
+    (hφch : φ.val ∈ ball ch.center ch.radius) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n
+    sourceBivector (by norm_num) (sourceAngularEtaDifferential (by norm_num) (by norm_num) n s φ.val)
+      (fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) k) φ.val) =
+      sourcePsiCandidate n (μ,(s n φ.val : Coeff 3))*
+        sourceDirichletActionKernel (by norm_num) (by norm_num) n k ch φ.val :=
+  C.sourceBivector_etaDifferential_action_eq_kernel hs (by norm_num) k ch φ hφ hφ₀ hφch
+
+end EtaActionKernels
+
+example {W₀ B V : Set (CoeffPair 3)}
+    {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j} {n : ℤ}
+    {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData (by norm_num) (by norm_num) n s B V c T r R z₀)
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (k : ℤ) (ρ : ℝ) (hrρ : r < ρ) (hρR : ρ < R)
+    (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ V) (hφ₀ : φ.val ∈ W₀)
+    (hφch : φ.val ∈ ball ch.center ch.radius) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n
+    sourceBracket (by norm_num)
+      (sourceAngularEtaRemainderCauchyCandidate (by norm_num) (by norm_num) n s (c n) r R z₀ ρ)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val =
+      (sourcePsiCandidate n (μ,(s n φ.val : Coeff 3))-
+        Complex.I*(2*Complex.I*sourceStandardRootOmittedProduct (by norm_num) (by norm_num) n φ.val μ))*
+          sourceDirichletActionKernel (by norm_num) (by norm_num) n k ch φ.val :=
+  D.sourceBracket_etaRemainder_action_eq_kernel hs (by norm_num) k ρ hrρ hρR ch φ hφ hφ₀ hφch
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n k : ℤ) (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hφch : φ.val ∈ ball ch.center ch.radius) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      sourceAngularActionKernelTerm (by norm_num) (by norm_num) n k ch s φ.val m) atTop
+      (𝓝 (sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+        n s (sourceComplexAction (by norm_num) (by norm_num) k) φ.val)) :=
+  D.tendsto_thetaActionKernelSum (by norm_num) n k ch φ hgap hφch
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example {W V U : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) j}
+    {n : ℤ} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R ρ : ℝ} {z₀ : ℂ}
+    {δ ε : CoeffPair (ENNReal.ofReal (3/2)) → ℂ}
+    (C : SourceAngularEtaAnalyticChartData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) n s W V U c T r R z₀ ρ δ ε)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ U)
+    (h : CoeffPair (ENNReal.ofReal (3/2))) (hiso : SourceIsospectralDirection ENNReal.ofReal_ne_top φ.val h) :
+    (fderiv ℂ δ φ.val) h = 0 :=
+  C.fderiv_halfGap_isospectral_eq_zero φ hφ h hiso
+
+end NLS.ZakharovShabat
