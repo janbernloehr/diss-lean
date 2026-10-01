@@ -548,6 +548,8 @@ import NLS.ZakharovShabat.RelativeProductsExteriorLimit
 import NLS.ZakharovShabat.SpectralProductsExteriorLimit
 import NLS.ZakharovShabat.CanonicalProductsExteriorLimit
 import NLS.ZakharovShabat.ClassicalSolutionGrowth
+import NLS.FunctionalAnalysis.VariableGronwall
+import NLS.ZakharovShabat.ClassicalSolutionEnergyBound
 import NLS.ZakharovShabat.RealSpectralGauge
 import NLS.ZakharovShabat.ClassicalRealSpectralGauge
 import NLS.ZakharovShabat.ClassicalHorizontalStripBounds
@@ -1464,6 +1466,9 @@ import NLS.ZakharovShabat.ClassicalDiscriminantPhaseStationarity
 import NLS.ZakharovShabat.SourceHilbertMass
 import NLS.ZakharovShabat.SourceHilbertMassDiscriminant
 import NLS.ZakharovShabat.SourceDirichletSpectralMassConservation
+import NLS.ZakharovShabat.SourceDiscriminantEnergyBound
+import NLS.ZakharovShabat.SourceDirichletSpectralVectorBound
+import NLS.ZakharovShabat.SourceDirichletSpectralEndpointLimit
 import NLS.ZakharovShabat.SourceAngularThetaThetaLocalTransport
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence

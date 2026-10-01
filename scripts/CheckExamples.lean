@@ -20761,4 +20761,72 @@ example (k : ℤ) (γ : ℝ → CoeffPair 2) (a b u v : ℝ)
   rw [hzero,norm_zero] at hn
   exact norm_eq_zero.mp hn
 
+-- Integrated physical energy counts both original source components, even
+-- at different frequencies; the maximum component norm would give 16.
+example : classicalPotentialEnergy (finiteSourceCurve
+    (Finsupp.single (0 : ℤ) (3 : ℂ), Finsupp.single (7 : ℤ) (4 : ℂ))) = 25 := by
+  rw [classicalPotentialEnergy_finiteSourceCurve,WithLp.prod_norm_sq_eq_of_L2]
+  change ‖Coeff.ofFinsupp (p := 2) (Finsupp.single 0 (3 : ℂ))‖^2 +
+    ‖Coeff.ofFinsupp (p := 2) (Finsupp.single 7 (4 : ℂ))‖^2 = 25
+  rw [Coeff.norm_ofFinsupp_sq,Coeff.norm_ofFinsupp_sq]
+  norm_num
+
+-- The actual physical solution is bounded by the original Fourier norm;
+-- no physical supremum bound or real-type assumption is supplied.
+example (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : ℂ) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    ‖classicalSolution (finiteSourceCurve a) z v t‖ ≤
+      ‖v‖ * Real.exp (‖z‖+1+‖CoeffPair.ofFinsupp (p := 2) a‖^2) := by
+  simpa only [classicalPotentialEnergy_finiteSourceCurve] using
+    norm_classicalSolution_le_exp_energy (finiteSourceCurve a) z v t
+
+-- The full actual differential is bounded at arbitrary complex sources.
+example (φ : CoeffPair 2) (z : ℂ) :
+    ‖canonicalDiscriminant (by simp) (periodOnePotential φ) z‖ ≤
+      2 * Real.exp (‖z‖+1+‖φ‖^2) ∧
+    ‖sourceDiscriminantCotangent (by simp) z φ‖ ≤
+      4 * Real.exp (‖z‖+1+(‖φ‖+1)^2) :=
+  ⟨norm_sourceDiscriminant_le_exp_energy φ z,
+    norm_sourceDiscriminantCotangent_le_exp_energy φ z⟩
+
+example (k : ℤ) (φ : CoeffPair 2) (M R : ℝ) (hφ : ‖φ‖ ≤ M)
+    (hμ : ‖canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ k‖ ≤ R) :
+    ‖sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k φ‖ ≤
+      8 * Real.exp (R+1+(M+1)^2) :=
+  norm_sourceDirichletSpectralVector_le_of_bounds k φ M R hφ hμ
+
+-- A constructed local curve has the Lipschitz bound on its entire original
+-- ODE interval; the bound and the curve are not hypotheses of this check.
+example (k : ℤ) (φ : realTypeSourceLocus 2) :
+    ∃ γ : ℝ → CoeffPair 2, γ 0 = φ.val ∧
+      ∃ ε : ℝ, 0 < ε ∧
+        (∀ t : ℝ, IsRealType (CoeffPair.toMax 2 (γ t))) ∧
+        (∀ t ∈ Ioo (-ε) ε, HasDerivAt γ
+          (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t) ∧
+        ∃ C : NNReal, 0 < C ∧ LipschitzOnWith C γ (Ioo (-ε) ε) := by
+  obtain ⟨γ,h0,hreal,ε,hε,hder,_,_⟩ :=
+    exists_sourceDirichletSpectral_norm_conserved_integralCurve k φ
+  refine ⟨γ,h0,ε,hε,hreal,hder,?_⟩
+  exact exists_lipschitzOnWith_sourceDirichletSpectral_integralCurve k γ (-ε) ε
+    (fun t _ => hreal t) hder 0 ⟨by linarith,hε⟩
+
+-- Both finite endpoints have genuine source-space limits even if the
+-- function's assigned endpoint values are unrelated to those limits.
+example (k : ℤ) (γ : ℝ → CoeffPair 2) (a b u : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 2 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by simp) (by norm_num) (by norm_num) k (γ t)) t)
+    (hu : u ∈ Ioo a b) :
+    (∃ ψ : CoeffPair 2, Tendsto γ (𝓝[Ioo a b] a) (𝓝 ψ) ∧
+      IsRealType (CoeffPair.toMax 2 ψ) ∧ ‖ψ‖ = ‖γ u‖ ∧
+      ∀ w : ℂ, canonicalDiscriminant (by simp) (periodOnePotential ψ) w =
+        canonicalDiscriminant (by simp) (periodOnePotential (γ u)) w) ∧
+    (∃ ψ : CoeffPair 2, Tendsto γ (𝓝[Ioo a b] b) (𝓝 ψ) ∧
+      IsRealType (CoeffPair.toMax 2 ψ) ∧ ‖ψ‖ = ‖γ u‖ ∧
+      ∀ w : ℂ, canonicalDiscriminant (by simp) (periodOnePotential ψ) w =
+        canonicalDiscriminant (by simp) (periodOnePotential (γ u)) w) := by
+  exact ⟨exists_sourceDirichletSpectral_limit_of_mem_closedInterval k γ a b hreal hγ u a hu
+    ⟨le_rfl,(hu.1.trans hu.2).le⟩,
+    exists_sourceDirichletSpectral_limit_of_mem_closedInterval k γ a b hreal hγ u b hu
+    ⟨(hu.1.trans hu.2).le,le_rfl⟩⟩
+
 end NLS.ZakharovShabat

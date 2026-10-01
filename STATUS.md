@@ -1,6 +1,34 @@
 # Implementation status
 
-## Current milestone: conservation of the original Hilbert source norm
+## Current milestone: uniform Hilbert spectral speeds and finite endpoint limits
+
+The actual discriminant and its full source cotangent now have explicit
+bounds on every complex Hilbert source norm ball with bounded spectral
+parameter. Variable-coefficient Gronwall bounds the physical fundamental
+columns using integrated component energy. Parseval identifies that
+energy with the square of the original source-pair norm on finite input;
+exact physical realization and density give the trace bound at every
+complex Hilbert source. The Banach-space Schwarz lemma bounds the full
+actual cotangent, without a bound on the physical supremum norm.
+
+The actual indexed field satisfies `norm X_k <= 8 exp(R+1+(M+1)^2)`
+whenever the original Hilbert source norm is at most `M` and the selected
+Dirichlet coordinate has norm at most `R`. Conserved source norm and the
+compact fixed spectral sheet supply those bounds on the entire interval
+of any actual real indexed curve. Consequently the original source
+curve is Lipschitz and has genuine source-space limits at both finite
+endpoints. Both limits are real, have the original norm, and preserve
+every discriminant value. No positive-norm or open-gap assumption is
+needed, and the assigned endpoint values of the original curve need not
+already be continuous.
+
+Joining a new local ODE solution to these endpoint limits and constructing
+global source continuation remain, followed by endpoint reachability
+and the general angle/angle zero identity. Bracket compatibility for
+`1 < p < 2` and later chapters are also unfinished; Corollary 13.2 is not
+complete.
+
+## Previous milestone: conservation of the original Hilbert source norm
 
 The actual indexed Dirichlet spectral curves now conserve the original
 source-pair norm at `p = 2`. A holomorphic mass functional is constructed
@@ -25,9 +53,8 @@ its compact fixed initial sheet. Initially open angle gaps are preserved,
 and the full angle/angle bracket is constant throughout the curve.
 Its zero value is proved at periodic-terminal endpoint configurations.
 
-The Hilbert source norm bound is now available. Uniform source
-vector-field estimates, global source continuation and endpoint
-reachability remain before the general angle/angle zero identity.
+The Hilbert source norm bound is now available. Global source continuation
+and endpoint reachability remain before the general angle/angle zero identity.
 Bracket compatibility for `1 < p < 2` and the later chapters also remain
 unfinished. Corollary 13.2 is not complete.
 
@@ -12195,3 +12222,52 @@ Uniform source vector-field estimates and a continuation construction
 remain, followed by endpoint reachability and the remaining transport
 argument. Bracket compatibility for `1 < p < 2` and later chapters also
 remain unfinished; Corollary 13.2 is not complete.
+
+
+## Latest milestone: uniform Hilbert spectral speeds and finite endpoint limits
+
+`VariableGronwall.lean` proves a norm comparison using the integral of a
+continuous variable coefficient. A positive strict comparison followed
+by a zero-perturbation limit includes a vanishing initial vector and
+requires no sign assumption on the coefficient.
+
+`ClassicalSolutionEnergyBound.lean` defines the sum of the two component
+square integrals on the unit interval. It bounds the actual fundamental
+columns by the initial vector norm times `exp(norm z + 1 + energy)`,
+and the actual monodromy trace by twice that exponential. The estimate
+does not depend on the physical potential's supremum norm.
+
+`SourceDiscriminantEnergyBound.lean` identifies finite physical energy
+with the square of the original Hilbert source-pair norm by Parseval.
+Exact physical realization and finite Fourier density prove the actual
+discriminant bound at every complex Hilbert source. The Banach-space
+Schwarz lemma bounds the full actual source cotangent by
+`4 exp(norm z + 1 + (norm phi + 1)^2)`. It also supplies one bound on a
+source norm ball and bounded spectral set, without real-type assumptions.
+
+`SourceDirichletSpectralVectorBound.lean` bounds the actual Hilbert
+Poisson direction by twice the cotangent norm. The actual indexed field
+therefore satisfies `norm X_k <= 8 exp(R + 1 + (M + 1)^2)` whenever the
+original source norm is at most `M` and the selected Dirichlet coordinate
+has norm at most `R`. Along an actual real indexed curve, conserved
+source norm and compact fixed-sheet confinement supply those bounds
+throughout its entire interval. The original source curve is Lipschitz;
+no uniform speed bound is required from the caller.
+
+`SourceDirichletSpectralEndpointLimit.lean` uses that Lipschitz estimate
+and completeness of the original Hilbert source space to construct its
+limits at both finite endpoints. Both limits are real, retain the
+original source norm, and preserve every discriminant value. The proof
+does not identify them with arbitrary assigned endpoint values of the
+original function, and includes zero sources and collapsed gaps.
+
+API checks distinguish the two-component physical energy from the
+maximum component norm, verify actual Fourier-source solution bounds,
+cover complex source trace and full cotangent bounds, and construct
+Lipschitz local curves without a supplied curve or speed bound. Both
+finite endpoint limits are checked with their conserved data.
+Joining new local ODE solutions at these limits and constructing global
+source continuation remain, followed by endpoint reachability and the
+general theta/theta transport argument. Bracket compatibility for
+`1 < p < 2` and later chapters also remain unfinished; Corollary 13.2 is
+not complete.
