@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual moving boundary-root differentials and Poisson motion
+## Current milestone: actual separated-family and boundary-root commutation
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -38,8 +38,14 @@ characteristic cotangent divided by the spectral characteristic derivative.
 For finite `p >= 2`, this gives the actual root/discriminant bracket, including
 its coincident-parameter value, and the actual root/action contour kernel.
 At a collapsed indexed periodic gap, either boundary root commutes with every
-discriminant and every action. Completing the canonical angle computations
-and the lower-exponent bracket compatibility remain the next steps.
+discriminant and every action. The actual Dirichlet characteristics mutually
+commute on the whole complex source space for finite `p >= 2`, as do the
+Neumann characteristics. Their actual moving canonical roots mutually
+commute within each family at every real-type source, including central
+indices and collapsed periodic gaps. The physical cancellation is proved
+by a forward/dual cross-Wronskian product with zero endpoint values.
+Completing the canonical angle computations and the lower-exponent bracket
+compatibility remain the next steps.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11058,3 +11064,43 @@ and every actual indexed action, including actions in other gaps.
 The boundary-root mutual commutation calculation, canonical angle-angle and
 mixed angle-action identities, and spectral bracket compatibility for
 `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual separated-family and boundary-root commutation
+
+The actual separated endpoint gradient now factors into the original
+forward homogeneous solution and a dual homogeneous solution. The latter
+is the actual adjugate kernel combination of the normalized columns.
+Determinant one fixes its endpoint to `(-r/(2i), -1/(2i))`, independently
+of the potential and spectral parameter, with the original boundary sign.
+
+For two spectral parameters the forward solutions have the same initial
+vector, so their cross-Wronskian vanishes at zero. The two dual solutions
+have the same fixed endpoint, so their cross-Wronskian vanishes at one.
+The product of these Wronskians has derivative equal to `2i(w-z)` times
+the actual antisymmetric separated-gradient pairing. The fundamental theorem
+of calculus proves zero integral for distinct parameters; pointwise
+antisymmetry handles coincidence. This is the actual physical cancellation
+for each Dirichlet or Neumann family at every continuous complex potential.
+No gradient or commutation formula is supplied as a hypothesis.
+
+The proved characteristic source cotangent coefficients and unit-interval
+bilinear Parseval identify the finite Hilbert source bracket with this zero
+physical integral. Actual characteristic exponent compatibility restricts
+the bracket to finite Hilbert sources, and analytic bracket continuity plus
+finite Fourier density extend the identity to every complex source for each
+finite `p >= 2`. Thus `{chi_D(z),chi_D(w)} = 0` and
+`{chi_N(z),chi_N(w)} = 0` hold for every pair of complex spectral parameters.
+
+The actual moving canonical root cotangents are the negative normalized
+characteristic cotangents. Applying that equality to both arguments of the
+source bivector now gives `{mu_n,mu_m} = 0` for the actual Dirichlet root
+coordinates, and the corresponding zero identity for every pair of actual
+Neumann coordinates. These identities hold at every real-type source for
+finite `p >= 2`, including central indices, equal indices, and collapsed
+periodic gaps. They do not assert commutation across the two different
+boundary families.
+
+The canonical angle-angle and mixed angle-action computations, their
+remaining anti-discriminant spectral brackets, and spectral compatibility
+for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.

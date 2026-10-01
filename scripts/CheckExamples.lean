@@ -18955,3 +18955,48 @@ example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
     (by norm_num) (by norm_num) (by norm_num) b φ hreal n m hgap
 
 end NLS.ZakharovShabat
+
+
+/- Actual separated-family commutation and moving canonical-root involution.
+The two boundary families are checked separately at exponent three. -/
+noncomputable section
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    classicalSolution Φ z (classicalSeparatedDualInitial b Φ z) 1 =
+      (-BoundaryCondition.extensionSign b/(2*Complex.I),-1/(2*Complex.I)) :=
+  classicalSeparatedDualSolution_one b Φ z
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z w : ℂ) :
+    (∫ s in (0 : ℝ)..1, classicalSeparatedPairing b Φ z w s) = 0 :=
+  integral_classicalSeparatedPairing_eq_zero b Φ z w
+
+-- The characteristic brackets hold on the whole complex source space.
+example (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet ψ z)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet ψ w) φ = 0 :=
+  sourceBracket_separated_eq_zero (by norm_num) (by norm_num) (by norm_num) .dirichlet φ z w
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann ψ z)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann ψ w) φ = 0 :=
+  sourceBracket_separated_eq_zero (by norm_num) (by norm_num) (by norm_num) .neumann φ z w
+
+-- Actual moving roots commute within each family, with no nonzero-gap condition.
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ m) φ = 0 :=
+  sourceBracket_boundaryRoots_eq_zero (by norm_num) (by norm_num) (by norm_num) .dirichlet φ hreal n m
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann ψ n)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann ψ m) φ = 0 :=
+  sourceBracket_boundaryRoots_eq_zero (by norm_num) (by norm_num) (by norm_num) .neumann φ hreal n m
+
+end NLS.ZakharovShabat

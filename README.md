@@ -5553,3 +5553,31 @@ bracket, or nonzero-gap hypothesis is assumed in these conclusions.
 Mutual boundary-root commutation and the canonical angle-angle and mixed
 angle-action calculations remain, along with spectral bracket compatibility
 for `1 < p < 2`.
+
+
+### Corollary 13.2: separated-family and canonical boundary-root commutation
+
+`ClassicalSeparatedCommutation.lean` factors the actual separated potential
+gradient into forward and dual homogeneous solutions. Determinant one gives
+the dual solution a fixed endpoint, with the original sign and normalization.
+The forward cross-Wronskian vanishes initially and the dual cross-Wronskian
+finally. Their product differentiates to `2i(w-z)` times the antisymmetric
+physical gradient pairing. The fundamental theorem of calculus proves that
+the pairing integral is zero; antisymmetry includes coincident parameters.
+
+`SourceSeparatedPoisson.lean` identifies the finite Hilbert source bracket
+with this physical cancellation using the actual characteristic cotangents
+and bilinear Parseval. Exponent restriction and finite Fourier density extend
+it to every complex source for finite `p >= 2`: each Dirichlet characteristic
+family commutes with itself, as does the Neumann family.
+
+The actual moving canonical root cotangent formula then proves mutual
+commutation within the Dirichlet root coordinates and within the Neumann
+root coordinates at every real-type source in that exponent range. Central
+indices and collapsed periodic gaps are included. No finite identity,
+physical cancellation, or root-gradient hypothesis remains in these results.
+Cross-family commutation is not asserted.
+
+The remaining anti-discriminant spectral brackets, canonical angle-angle
+and mixed angle-action computations, and spectral compatibility for
+`1 < p < 2` remain before Corollary 13.2 is complete.
