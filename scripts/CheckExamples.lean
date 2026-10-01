@@ -19994,3 +19994,82 @@ example (n : ℤ) (a : Coeff (ENNReal.ofReal (3/2)))
     (by rw [ENNReal.one_lt_ofReal]; norm_num) n a φ w hw
 
 end NLS.ZakharovShabat
+
+
+/- The actual full action kernel sum equals the normalized psi period.
+Its canonical value needs only the selected angle gap to be open. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (k : ℤ) (φ : realTypeSourceLocus 3) :
+    ∃ ch : SourceRealActionBallChart (by norm_num) (by norm_num) k,
+      ch.center = φ.val ∧ ch.spectralCenter.im = 0 :=
+  exists_sourceRealActionBallChart_realCentered (by norm_num) (by norm_num) k φ
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n k : ℤ) (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (hc : ch.spectralCenter.im = 0) (φ : realTypeSourceLocus 3)
+    (hφ : φ.val ∈ ball ch.center ch.radius) :
+    (2*Real.pi : ℂ)⁻¹*(∮ w in C(ch.spectralCenter,ch.spectralRadius),
+      sourcePsiContourIntegrandJoint (by norm_num) (by norm_num) n
+        (w,((s n φ.val : Coeff 3),φ.val))) = if n = k then 1 else 0 :=
+  D.psi_period_on_realCentered_action_chart n k ch hc φ hφ
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 2)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+      n s (sourceComplexAction (by norm_num) (by norm_num) n) φ.val = 1 := by
+  simpa only [ite_true] using D.thetaAction_eq_kronecker (by norm_num) n n φ hgap
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n k : ℤ) (hnk : n ≠ k) (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+      n s (sourceComplexAction (by norm_num) (by norm_num) k) φ.val = 0 := by
+  simpa only [if_neg hnk] using D.thetaAction_eq_kronecker (by norm_num) n k φ hgap
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hterminal : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num)
+      .dirichlet n φ.val = 0) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (sourceComplexAction (by norm_num) (by norm_num) n) φ.val = 0 ∧
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+      n s (sourceComplexAction (by norm_num) (by norm_num) n) φ.val = 1 := by
+  obtain ⟨ch,hcenter,_⟩ := exists_sourceRealActionBallChart_realCentered (by norm_num) (by norm_num) n φ
+  have hφ : φ.val ∈ ball ch.center ch.radius := by rw [hcenter]; exact mem_ball_self ch.radius_pos
+  constructor
+  · rw [sourceBracket_dirichletRoot_action_eq_kernel (by norm_num) (by norm_num)
+      (by norm_num) n n ch φ.val φ.property hφ,hterminal,zero_mul]
+  · simpa only [ite_true] using D.thetaAction_eq_kronecker (by norm_num) n n φ hgap
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example (n k : ℤ) (a : Coeff (ENNReal.ofReal (3/2)))
+    (ch : SourceRealActionBallChart ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) k)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ ball ch.center ch.radius) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      let hp1 : 1 < ENNReal.ofReal (3/2) := by rw [ENNReal.one_lt_ofReal]; norm_num
+      sourcePsiCandidate n (canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top hp1 .dirichlet φ.val m,a)*
+        sourceDirichletActionKernel ENNReal.ofReal_ne_top hp1 m k ch φ.val) atTop
+      (𝓝 ((2*Real.pi : ℂ)⁻¹*(∮ w in C(ch.spectralCenter,ch.spectralRadius),
+        sourcePsiContourIntegrandJoint ENNReal.ofReal_ne_top
+          (by rw [ENNReal.one_lt_ofReal]; norm_num) n (w,(a,φ.val))))) :=
+  tendsto_sourcePsiDirichlet_actionKernelSums ENNReal.ofReal_ne_top
+    (by rw [ENNReal.one_lt_ofReal]; norm_num) n k a ch φ hφ
+
+end NLS.ZakharovShabat

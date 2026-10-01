@@ -18,11 +18,11 @@ variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- Near a real-type source, one fixed contour represents the indexed
 real action at every real-type source in the neighborhood. -/
-theorem exists_local_circle_agrees_with_sourceRealAction
+theorem exists_local_circle_agrees_with_sourceRealAction_real_center
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p φ))
     (n : ℤ) :
-    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧ c.im = 0 ∧
       ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
         (∀ ψ ∈ V,
           sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
@@ -41,6 +41,7 @@ theorem exists_local_circle_agrees_with_sourceRealAction
   obtain ⟨c,R,hR,hc,hdR,V₀,hV₀open,hφV₀,_,hgeom⟩ :=
     exists_local_stable_midpointCircle_through_sourceRealAction
       hp hp1 φ hreal n
+  have hcim : c.im = 0 := by rw [hc]; rfl
   have hmidφ : mid φ = c := hc.symm
   have hdR' : half φ < R := hdR
   let q : ℝ := (R-half φ)/2
@@ -72,7 +73,7 @@ theorem exists_local_circle_agrees_with_sourceRealAction
     hmargincont.eventually (isOpen_Iio.mem_nhds hmarginφ)
   obtain ⟨V₁,hV₁sub,hV₁open,hφV₁⟩ := _root_.mem_nhds_iff.mp hnear
   let V := V₀ ∩ V₁
-  refine ⟨c,R,hR,V,hV₀open.inter hV₁open,⟨hφV₀,hφV₁⟩,?_,?_⟩
+  refine ⟨c,R,hR,hcim,V,hV₀open.inter hV₁open,⟨hφV₀,hφV₁⟩,?_,?_⟩
   · intro ψ hψ
     exact hgeom ψ hψ.1
   intro ψ hψ hψreal
@@ -101,13 +102,28 @@ theorem exists_local_circle_agrees_with_sourceRealAction
       hp hp1 ψ n (mid ψ) c r R hr hR hinnerSeg
       (hgeom ψ hψ.1).1 hnest (hgeom ψ hψ.1).2)
 
+/-- The original local agreement API is obtained by forgetting only
+the now-explicit real-center property of the actual midpoint circle. -/
+theorem exists_local_circle_agrees_with_sourceRealAction
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p φ)) (n : ℤ) :
+    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+        (∀ ψ ∈ V, sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
+          closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n) ∧
+        ∀ ψ ∈ V, ∀ hψ : IsRealType (CoeffPair.toMax p ψ),
+          sourceRealAction hp hp1 ψ hψ n = sourceActionCircle hp hp1 ψ c R := by
+  obtain ⟨c,R,hR,_,V,hV,hφ,hgeom,hagree⟩ :=
+    exists_local_circle_agrees_with_sourceRealAction_real_center hp hp1 φ hreal n
+  exact ⟨c,R,hR,V,hV,hφ,hgeom,hagree⟩
+
 /-- The indexed action on nearby real-type sources is the restriction
 of one complex-differentiable fixed-circle action. -/
-theorem exists_local_differentiable_extension_of_sourceRealAction
+theorem exists_local_differentiable_extension_of_sourceRealAction_real_center
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (φ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p φ))
     (n : ℤ) :
-    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧ c.im = 0 ∧
       ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
         (∀ ψ ∈ V,
           sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
@@ -117,8 +133,8 @@ theorem exists_local_differentiable_extension_of_sourceRealAction
         ∀ ψ ∈ V, ∀ hψ : IsRealType (CoeffPair.toMax p ψ),
           sourceRealAction hp hp1 ψ hψ n =
             sourceActionCircle hp hp1 ψ c R := by
-  obtain ⟨c,R,hR,V₀,hV₀open,hφV₀,hgeom,hagree⟩ :=
-    exists_local_circle_agrees_with_sourceRealAction hp hp1 φ hreal n
+  obtain ⟨c,R,hR,hc,V₀,hV₀open,hφV₀,hgeom,hagree⟩ :=
+    exists_local_circle_agrees_with_sourceRealAction_real_center hp hp1 φ hreal n
   obtain ⟨W,_,_,hWreal,hDopen,hweighted⟩ :=
     exists_global_sourceActionIntegrand_jointAnalytic hp hp1
   have hcircle : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 φ :=
@@ -134,7 +150,7 @@ theorem exists_local_differentiable_extension_of_sourceRealAction
       hDopen hweighted c R φ hbase
   let V := V₀ ∩ V₁
   have hVopen : IsOpen V := hV₀open.inter hV₁open
-  refine ⟨c,R,hR,V,hVopen,⟨hφV₀,hφV₁⟩,?_,?_,?_⟩
+  refine ⟨c,R,hR,hc,V,hVopen,⟨hφV₀,hφV₁⟩,?_,?_,?_⟩
   · intro ψ hψ
     exact hgeom ψ hψ.1
   · intro ψ hψ
@@ -153,5 +169,21 @@ theorem exists_local_differentiable_extension_of_sourceRealAction
     exact (hdiff.const_mul (Real.pi : ℂ)⁻¹).differentiableWithinAt
   · intro ψ hψ hψreal
     exact hagree ψ hψ.1 hψreal
+
+/-- Preserve the original differentiable-extension API while exposing
+the stronger real-centered construction separately. -/
+theorem exists_local_differentiable_extension_of_sourceRealAction
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p φ)) (n : ℤ) :
+    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧
+        (∀ ψ ∈ V, sourcePeriodicSegment hp hp1 ψ n ⊆ ball c R ∧
+          closedBall c R ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n) ∧
+        DifferentiableOn ℂ (fun ψ : CoeffPair p => sourceActionCircle hp hp1 ψ c R) V ∧
+        ∀ ψ ∈ V, ∀ hψ : IsRealType (CoeffPair.toMax p ψ),
+          sourceRealAction hp hp1 ψ hψ n = sourceActionCircle hp hp1 ψ c R := by
+  obtain ⟨c,R,hR,_,V,hV,hφ,hgeom,hdiff,hagree⟩ :=
+    exists_local_differentiable_extension_of_sourceRealAction_real_center hp hp1 φ hreal n
+  exact ⟨c,R,hR,V,hV,hφ,hgeom,hdiff,hagree⟩
 
 end NLS.ZakharovShabat

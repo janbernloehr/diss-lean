@@ -5940,3 +5940,32 @@ API examples include this weighted limit below the Hilbert exponent.
 Contour-limit transport and the normalized period value still remain
 before the canonical angle-action identity; the angle-angle identity
 and lower-exponent bracket compatibility also remain unfinished.
+
+
+### Corollary 13.2: actual canonical angle-action brackets
+
+`SourceAngularActionKernelPeriod.lean` passes the uniform actual
+Dirichlet interpolation limit through every action chart's contour.
+Multiplication by its bounded characteristic/root factor preserves
+uniform convergence on the circle. The literal kernel constants and
+reversed spectral differences give the normalized actual psi period
+as the limit of the full symmetric terminal kernel sums. This spectral
+transport holds for every finite `p > 1`, including branch terminals.
+
+The original action-chart construction now exposes its real spectral
+center, while preserving the previous local agreement APIs.
+`SourceRealActionRealCenteredChart.lean` constructs such an actual chart
+at every real source. Actual contour comparison transfers the proved
+psi-period normalization to the chart's circle.
+
+`SourceAngularThetaActionCanonical.lean` combines the two proved limits
+to establish `{theta_n,I_k} = delta_nk` for finite `p >= 2`, at every
+real source with an open selected angle gap. The public theorem supplies
+its own action and angular charts. The terminal may be a periodic
+endpoint, and the action gap may be collapsed. API checks cover the
+matching-index value at `p = 2`, the distinct-index value, a periodic
+terminal whose root/action bracket is zero but whose angle/action bracket
+is one, and the contour limit at `p = 3/2`.
+
+The angle-angle identity and bracket compatibility for `1 < p < 2`
+remain unfinished. Corollary 13.2 and the later chapters are not complete.

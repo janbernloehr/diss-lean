@@ -1,19 +1,23 @@
 # Implementation status
 
-## Current milestone: actual uniform Dirichlet interpolation
+## Current milestone: actual canonical angle-action brackets
 
-Every finite-exponent psi numerator divided by the actual Dirichlet
-characteristic is now the uniform limit of its symmetric interpolation
-sums on bounded evaluation sets where that characteristic is nonzero,
-at every real source and for finite `p > 1`. The actual characteristic
-derivative supplies each residue. The proof identifies the finite error
-with an outer Cauchy integral and derives its uniform decay from the
-existing full-product estimates. Large circles enclose exactly the
-symmetric root cutoffs. The characteristic-weighted sum has the precise
-negative-psi limit used by the action contour kernels. No open-gap or
-additional convergence premise is needed. Passing this limit through the
-actual action contour and evaluating its normalized period remain before
-the canonical angle-action value.
+The actual angle-action identity `{theta_n,I_k} = delta_nk` is now proved
+at every real source for finite `p >= 2`, with only the selected angle gap
+required to be open. Its Dirichlet terminal may be a periodic endpoint,
+and the action gap may be collapsed. The existing common-domain angle
+data construct the angular charts, and an actual action chart with a
+real spectral center is constructed at the source. Neither chart nor an
+extra canonical bracket value is supplied to the public theorem.
+
+Uniform actual Dirichlet interpolation passes through the action contour
+to give the normalized psi period as the limit of the full symmetric
+kernel sums. This analytic transport holds for every finite `p > 1`.
+Actual real-centered contour comparison supplies the Kronecker period
+value from the proved psi normalization. Uniqueness of limits identifies
+it with the actual theta/action bracket. The angle-angle identity and
+bracket compatibility for `1 < p < 2` remain unfinished; Corollary 13.2
+is not yet complete.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -33,8 +37,9 @@ in the latest milestone below.
 The actual discriminants now commute on the whole complex source space
 for every finite `p >= 2`. Consequently `{I_n,I_m} = 0` is proved for the
 actual glued indexed actions at every real source in that range, including
-collapsed gaps. The angle-angle and angle-action identities remain
-unproved, as does the spectral bracket compatibility for `1 < p < 2`.
+collapsed gaps. The angle-action identity is now proved as described
+above. The angle-angle identity and spectral bracket compatibility for
+`1 < p < 2` remain unproved.
 
 The actual monodromy derivative along a discriminant Hamiltonian is now
 the matrix commutator divided by the spectral difference, stated with the
@@ -11758,3 +11763,41 @@ and the weighted actual limit at `p = 3/2`. Passing to the actual action
 contour and evaluating the normalized period remain before the canonical
 angle-action value. The angle-angle identity and bracket compatibility for
 `1 < p < 2` also remain unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual canonical angle-action brackets
+
+`BoundedUniformMultiplier.lean` proves uniform convergence under a
+bounded fixed scalar multiplier, with no boundedness hypothesis on the
+approximated function. `SourceAngularActionKernelPeriod.lean` applies it
+to the actual characteristic/root factor on the action circle. The
+previous actual interpolation limit and continuity of every finite
+integrand justify passing the full symmetric sum through the contour.
+The original kernel constants, Dirichlet derivative residues, and
+reversed spectral differences give the normalized actual psi period
+with the exact sign. This transport holds for every finite `p > 1`.
+
+`SourceRealActionLocalAgreement.lean` retains the real-center property
+of its constructed midpoint circle in two stronger existence theorems.
+The original agreement and differentiable-extension APIs are preserved
+by forgetting that property. `SourceRealActionRealCenteredChart.lean`
+constructs an actual real-centered action chart at every real source.
+
+`SourceAngularThetaActionCanonical.lean` uses actual real-centered
+contour comparison and the proved psi normalization to evaluate that
+period as the Kronecker delta. The full kernel sums already converge
+to the actual theta/action bracket; uniqueness of limits therefore
+proves `{theta_n,I_k} = delta_nk` for every finite `p >= 2`. The public
+theorem requires only the existing common-domain angle data and an open
+selected angle gap. It constructs its charts rather than taking them
+as additional premises. Periodic terminals and collapsed action gaps
+are included.
+
+API checks cover existence of the real-centered chart, normalized
+period comparison, the matching-index bracket at `p = 2`, the
+distinct-index bracket at `p = 3`, a periodic terminal with zero
+root/action velocity and canonical angle/action value one, and
+spectral contour-limit transport at `p = 3/2`. No absolute kernel-norm
+summability is asserted. The angle-angle identity and compatibility
+of brackets for `1 < p < 2` remain unfinished. Corollary 13.2 is not
+yet complete.
