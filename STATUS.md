@@ -1,35 +1,28 @@
 # Implementation status
 
-## Current milestone: constructed local real isospectral angle transport
+## Current milestone: conserved spectral data and compact terminal sheets
 
-The actual indexed Dirichlet spectral fields now have constructed local
-real flows and integral curves through every real source for finite
-`p >= 2`. Picard-Lindelof applies to the complete closed real-type source
-Banach space. Embedding its curves back into the actual coefficient
-space preserves the vector-field derivative, and every actual
-discriminant is constant throughout the open time interval.
+Every actual real indexed Dirichlet spectral integral curve now keeps
+all periodic endpoints and gaps fixed on its entire time interval,
+including collapsed gaps. Every other Dirichlet root and terminal
+anti-discriminant is fixed as well. The selected terminal solves the
+sheet ODE of the original fixed discriminant, with no endpoint excluded.
 
-The field evaluates the fixed-parameter discriminant cotangent at its
-own moving Dirichlet root. Only that indexed root and terminal
-anti-discriminant move: their velocities are minus half the terminal
-anti-discriminant and minus half `Delta(mu) Delta'(mu)`, respectively.
-All other indexed terminal velocities are zero. The fields preserve
-reality and are analytic near every real source. Their actual
-normalized numerator is nonzero at the own terminal; an open selected
-gap consequently makes the corresponding field nonzero.
+Its fixed sheet over the original periodic segment is compact, proved
+without a supplied bound. The selected root and anti-discriminant remain
+on that sheet and have one finite bound throughout the whole interval.
 
-The full actual theta/theta bracket is constant along these real
-integral curves whenever both selected angle gaps stay open. Through
-every such source, the public theorem constructs a curve and shrinks
-its time interval into the actual common angle domain, preserving
-both the bracket and every discriminant.
+Open angle gaps at one reference source are therefore preserved on the
+whole curve. Actual angle/angle bracket transport now requires only
+initial open gaps. The constructed local curve preserves its full
+bracket on its original ODE interval without further shrinking.
 
-The zero value is already proved at every real source whose Dirichlet
-terminals are all periodic endpoints, including the all-left-endpoint
-basepoint, for finite `p >= 2` with both selected gaps open. The general
-zero identity still needs global continuation and transport reaching
-those basepoints. Bracket compatibility for `1 < p < 2` also remains
-unfinished. Corollary 13.2 and the later chapters are not complete.
+The zero value is already proved at real sources whose Dirichlet
+terminals are all periodic endpoints, for finite `p >= 2` with both
+selected angle gaps open. Compactness of the terminal sheet alone does
+not yet give global continuation of the source-space curve or transport
+reaching these basepoints. Those steps, bracket compatibility for
+`1 < p < 2`, and the later chapters remain unfinished.
 
 The full actual angle cotangent now satisfies `{Delta(w),theta_n} =
 psi_n(w)/2` at every real source for finite `p >= 2`, with only the
@@ -12118,3 +12111,39 @@ and transport reaching periodic-terminal basepoints remain before the
 general theta/theta zero identity. Bracket compatibility for `1 < p < 2`
 also remains unfinished. Corollary 13.2 and the later chapters are not
 complete.
+
+
+## Latest milestone: conserved spectral data and compact terminal sheets
+
+`SourceDirichletSpectralConservation.lean` proves conservation on the
+whole time interval of every actual real indexed spectral integral
+curve. All periodic midpoints, squared gaps, oriented real gaps and
+periodic endpoints are fixed, including collapsed gaps. Every other
+Dirichlet root and its full terminal anti-discriminant are fixed too.
+The selected root and anti-discriminant solve their actual two-coordinate
+ODE using the original fixed discriminant and its spectral derivative,
+including at either periodic endpoint.
+
+`SourceDirichletSpectralSheet.lean` defines the actual fixed-discriminant
+sheet above the original periodic segment. Its compactness is proved
+for every finite `p > 1`, including a collapsed segment, from the entire
+discriminant and its bound on that compact segment. Along every actual
+real indexed curve for finite `p >= 2`, the selected terminal remains
+on this fixed sheet. Both terminal coordinates consequently have one
+finite bound throughout the whole curve interval.
+
+`SourceAngularThetaThetaLocalTransport.lean` now derives open-gap
+preservation from these conservation laws. Its new interval transport
+theorem requires both angle gaps to be open at just one reference time.
+The constructed local angle-transport curve preserves its bracket on
+the original ODE interval, without a further shrink into the angle
+domain.
+
+API checks cover conserved collapsed gaps, other fixed Dirichlet
+terminals, the fixed initial sheet ODE, compact sheet confinement of a
+constructed curve, and angle/angle transport with initial open gaps.
+The compact terminal sheet bounds the scalar spectral data; it does not
+yet establish continuation of the original source-space curve. Global
+source continuation, endpoint reachability, and bracket compatibility
+for `1 < p < 2` remain before completing Corollary 13.2. Later chapters
+are also unfinished.

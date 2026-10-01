@@ -20593,3 +20593,108 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
   hs.numerator_at_own_dirichletRoot_ne_zero n φ
 
 end NLS.ZakharovShabat
+
+
+/- Actual indexed curves conserve the periodic data and stay on the
+compact fixed initial sheet. Angle transport needs only initial gaps. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (φ : CoeffPair p) : IsCompact (sourceDirichletSpectralSheet hp hp1 n φ) :=
+  isCompact_sourceDirichletSpectralSheet hp hp1 n φ
+
+example (k n : ℤ) (γ : ℝ → CoeffPair 2) (a b u v : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 2 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) k (γ t)) t)
+    (hu : u ∈ Ioo a b) (hv : v ∈ Ioo a b)
+    (hzero : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential (γ u)) (periodOnePotential_mem (γ u)) n = 0) :
+    canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential (γ v)) (periodOnePotential_mem (γ v)) n = 0 := by
+  rw [canonicalPeriodicGap_eq_on_sourceDirichletSpectral_integralCurve
+    (by norm_num) (by norm_num) (by norm_num) k n γ a b hreal hγ v u hv hu]
+  exact hzero
+
+example (k n : ℤ) (γ : ℝ → CoeffPair 3) (a b u v : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 3 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) k (γ t)) t)
+    (hu : u ∈ Ioo a b) (hv : v ∈ Ioo a b) :
+    canonicalPeriodicLeft (by norm_num) (by norm_num)
+      (periodOnePotential (γ u)) (periodOnePotential_mem (γ u)) n =
+      canonicalPeriodicLeft (by norm_num) (by norm_num)
+        (periodOnePotential (γ v)) (periodOnePotential_mem (γ v)) n ∧
+    canonicalPeriodicRight (by norm_num) (by norm_num)
+      (periodOnePotential (γ u)) (periodOnePotential_mem (γ u)) n =
+      canonicalPeriodicRight (by norm_num) (by norm_num)
+        (periodOnePotential (γ v)) (periodOnePotential_mem (γ v)) n :=
+  canonicalPeriodicEndpoints_eq_on_sourceDirichletSpectral_integralCurve
+    (by norm_num) (by norm_num) (by norm_num) k n γ a b hreal hγ u v hu hv
+
+example (k m : ℤ) (hmk : m ≠ k) (γ : ℝ → CoeffPair 2) (a b u v : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 2 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) k (γ t)) t)
+    (hu : u ∈ Ioo a b) (hv : v ∈ Ioo a b) :
+    canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet (γ u) m =
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet (γ v) m ∧
+    sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m (γ u) =
+      sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m (γ v) :=
+  other_dirichletTerminals_eq_on_sourceDirichletSpectral_integralCurve
+    (by norm_num) (by norm_num) (by norm_num) k m hmk γ a b hreal hγ u v hu hv
+
+example (k : ℤ) (γ : ℝ → CoeffPair 3) (a b u t : ℝ)
+    (hreal : ∀ τ ∈ Ioo a b, IsRealType (CoeffPair.toMax 3 (γ τ)))
+    (hγ : ∀ τ ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) k (γ τ)) τ)
+    (hu : u ∈ Ioo a b) (ht : t ∈ Ioo a b) :
+    let μ := fun τ => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet (γ τ) k;
+    let S := fun τ => sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet k (γ τ);
+    let Δ := canonicalDiscriminant (by norm_num) (periodOnePotential (γ u));
+    HasDerivAt μ (-S t/2) t ∧ HasDerivAt S (-Δ (μ t)*deriv Δ (μ t)/2) t :=
+  hasDerivAt_dirichletTerminal_fixedDiscriminant_on_sourceDirichletSpectral_integralCurve
+    (by norm_num) (by norm_num) (by norm_num) k γ a b hreal hγ u t hu ht
+
+example (k : ℤ) (φ : realTypeSourceLocus 2) :
+    ∃ γ : ℝ → CoeffPair 2, γ 0 = φ.val ∧
+      ∃ ε : ℝ, 0 < ε ∧
+        (∀ t ∈ Ioo (-ε) ε, HasDerivAt γ
+          (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) k (γ t)) t) ∧
+        (∀ t ∈ Ioo (-ε) ε,
+          (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet (γ t) k,
+            sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet k (γ t)) ∈
+              sourceDirichletSpectralSheet (by norm_num) (by norm_num) k φ.val) ∧
+        ∃ R : ℝ, 0 < R ∧ ∀ t ∈ Ioo (-ε) ε,
+          ‖canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet (γ t) k‖ ≤ R ∧
+          ‖sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet k (γ t)‖ ≤ R := by
+  obtain ⟨γ,hγ₀,hreal,ε,hε,hder,_⟩ :=
+    exists_sourceDirichletSpectral_isospectral_integralCurve (by norm_num) (by norm_num) (by norm_num) k φ
+  have h0 : (0:ℝ) ∈ Ioo (-ε) ε := ⟨by linarith,hε⟩
+  refine ⟨γ,hγ₀,ε,hε,hder,?_,?_⟩
+  · intro t ht
+    simpa only [hγ₀] using dirichletTerminal_mem_fixedSheet_on_sourceDirichletSpectral_integralCurve
+      (by norm_num) (by norm_num) (by norm_num) k γ (-ε) ε (fun t _ => hreal t) hder 0 t h0 ht
+  · exact exists_bound_dirichletTerminal_on_sourceDirichletSpectral_integralCurve
+      (by norm_num) (by norm_num) (by norm_num) k γ (-ε) ε (fun t _ => hreal t) hder 0 h0
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (k n m : ℤ) (γ : ℝ → CoeffPair 3) (a b u v : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax 3 (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) k (γ t)) t)
+    (hu : u ∈ Ioo a b) (hv : v ∈ Ioo a b)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential (γ u)) (periodOnePotential_mem (γ u)) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential (γ u)) (periodOnePotential_mem (γ u)) m ≠ 0) :
+    sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s (γ u) =
+      sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s (γ v) :=
+  D.thetaTheta_eq_on_sourceDirichletSpectral_integralCurve_of_initial_open
+    (by norm_num) k n m γ a b hreal hγ u v hu hv hn hm
+
+end NLS.ZakharovShabat

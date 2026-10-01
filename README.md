@@ -6177,8 +6177,8 @@ open time interval.
 `SourceAngularThetaThetaLocalTransport.lean` proves that the actual
 theta/theta bracket is constant along real integral curves with the
 two selected gaps open. Its public existence theorem constructs such
-a curve through every real open-gap source and a time interval within
-the actual common angle domain. Both the full bracket and every
+a curve through every real open-gap source whose original ODE interval
+stays in the actual common angle domain. Both the full bracket and every
 discriminant are preserved.
 
 API checks cover the real-space projection, the actual field velocities,
@@ -6188,3 +6188,39 @@ and transport reaching periodic-terminal basepoints remain before the
 general theta/theta zero identity. Bracket compatibility for `1 < p < 2`
 also remains unfinished. Corollary 13.2 and the later chapters are not
 complete.
+
+
+### Corollary 13.2: conserved spectral data and compact terminal sheets
+
+`SourceDirichletSpectralConservation.lean` proves conservation on the
+whole time interval of every actual real indexed spectral integral
+curve. All periodic midpoints, squared gaps, oriented real gaps and
+periodic endpoints are fixed, including collapsed gaps. Every other
+Dirichlet root and its full terminal anti-discriminant are fixed too.
+The selected root and anti-discriminant solve their actual two-coordinate
+ODE using the original fixed discriminant and its spectral derivative,
+including at either periodic endpoint.
+
+`SourceDirichletSpectralSheet.lean` defines the actual fixed-discriminant
+sheet above the original periodic segment. Its compactness is proved
+for every finite `p > 1`, including a collapsed segment, from the entire
+discriminant and its bound on that compact segment. Along every actual
+real indexed curve for finite `p >= 2`, the selected terminal remains
+on this fixed sheet. Both terminal coordinates consequently have one
+finite bound throughout the whole curve interval.
+
+`SourceAngularThetaThetaLocalTransport.lean` now derives open-gap
+preservation from these conservation laws. Its new interval transport
+theorem requires both angle gaps to be open at just one reference time.
+The constructed local angle-transport curve preserves its bracket on
+the original ODE interval, without a further shrink into the angle
+domain.
+
+API checks cover conserved collapsed gaps, other fixed Dirichlet
+terminals, the fixed initial sheet ODE, compact sheet confinement of a
+constructed curve, and angle/angle transport with initial open gaps.
+The compact terminal sheet bounds the scalar spectral data; it does not
+yet establish continuation of the original source-space curve. Global
+source continuation, endpoint reachability, and bracket compatibility
+for `1 < p < 2` remain before completing Corollary 13.2. Later chapters
+are also unfinished.

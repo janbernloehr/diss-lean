@@ -1,14 +1,15 @@
-import NLS.ZakharovShabat.SourceDirichletSpectralLocalFlow
+import NLS.ZakharovShabat.SourceDirichletSpectralConservation
 
 /-! # Actual local isospectral transport of the angle/angle bracket
 
 The proved zero source derivative gives constancy along actual indexed
 spectral integral curves while the two angle gaps stay open. The local
 ODE theorem constructs such a real curve through every real open-gap
-source. Continuity shrinks its time interval into the actual common
-angle domain. The resulting curve preserves both every discriminant
-and the full actual angle/angle bracket, with no supplied trajectory,
-chart or stationarity premise. Global transport remains separate.
+source. Conservation of the actual periodic gaps keeps the whole ODE
+interval in the actual common angle domain. The resulting curve preserves
+both every discriminant and the full actual angle/angle bracket, with
+no supplied trajectory, chart or stationarity premise. Global source
+continuation remains separate.
 -/
 
 noncomputable section
@@ -49,9 +50,31 @@ theorem thetaTheta_eq_on_sourceDirichletSpectral_integralCurve
     (fun t ht => (hd t ht).differentiableAt.differentiableWithinAt)
     (fun t ht => (hd t ht).deriv) hu hv
 
+/-- Open gaps at one reference time stay open on the whole real
+indexed integral-curve interval, so the actual angle/angle bracket is
+transported with no additional gap-preservation assumption. -/
+theorem thetaTheta_eq_on_sourceDirichletSpectral_integralCurve_of_initial_open
+    (D : SourceAngularThetaCommonDomainData hp hp1 W₀ B W s)
+    (h2p : (2 : ℝ≥0∞) ≤ p) (k n m : ℤ) (γ : ℝ → CoeffPair p) (a b : ℝ)
+    (hreal : ∀ t ∈ Ioo a b, IsRealType (CoeffPair.toMax p (γ t)))
+    (hγ : ∀ t ∈ Ioo a b, HasDerivAt γ (sourceDirichletSpectralVector hp hp1 h2p k (γ t)) t)
+    (u v : ℝ) (hu : u ∈ Ioo a b) (hv : v ∈ Ioo a b)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential (γ u)) (periodOnePotential_mem (γ u)) n ≠ 0)
+    (hm : canonicalPeriodicGap hp hp1 (periodOnePotential (γ u)) (periodOnePotential_mem (γ u)) m ≠ 0) :
+    sourceAngularThetaThetaBracket hp hp1 h2p n m s (γ u) =
+      sourceAngularThetaThetaBracket hp hp1 h2p n m s (γ v) := by
+  apply D.thetaTheta_eq_on_sourceDirichletSpectral_integralCurve h2p k n m γ a b hreal hγ _ _ u v hu hv
+  · intro t ht
+    rw [canonicalPeriodicGap_eq_on_sourceDirichletSpectral_integralCurve hp hp1 h2p k n γ a b hreal hγ t u ht hu]
+    exact hn
+  · intro t ht
+    rw [canonicalPeriodicGap_eq_on_sourceDirichletSpectral_integralCurve hp hp1 h2p k m γ a b hreal hγ t u ht hu]
+    exact hm
+
 /-- A constructed local real indexed spectral curve through every
 actual open-gap source preserves every discriminant and the full
-angle/angle bracket. The open-gap time interval is constructed too. -/
+angle/angle bracket throughout its original ODE interval. The open
+gaps are conserved, so no further shrinking of that interval is needed. -/
 theorem exists_sourceDirichletSpectral_integralCurve_thetaTheta_stationary
     (D : SourceAngularThetaCommonDomainData hp hp1 W₀ B W s)
     (h2p : (2 : ℝ≥0∞) ≤ p) (k n m : ℤ) (φ : realTypeSourceLocus p)
@@ -72,34 +95,20 @@ theorem exists_sourceDirichletSpectral_integralCurve_thetaTheta_stationary
             sourceAngularThetaThetaBracket hp hp1 h2p n m s φ.val := by
   obtain ⟨γ,hγ₀,hreal,ε,hε,hder,hDis⟩ :=
     exists_sourceDirichletSpectral_isospectral_integralCurve hp hp1 h2p k φ
-  let V : Set (CoeffPair p) :=
-    {ψ | ψ ∈ W ∧ canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0} ∩
-    {ψ | ψ ∈ W ∧ canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠ 0}
-  have hV : IsOpen V := (D.open_gap n).inter (D.open_gap m)
-  have hφV : φ.val ∈ V := ⟨⟨D.real_subset φ.property,hn⟩,⟨D.real_subset φ.property,hm⟩⟩
   have h0 : (0:ℝ) ∈ Ioo (-ε) ε := ⟨by linarith,hε⟩
-  have hcont : Tendsto γ (𝓝 0) (𝓝 φ.val) := by
-    simpa only [hγ₀] using (hder 0 h0).continuousAt.tendsto
-  have ht : {t : ℝ | γ t ∈ V} ∈ 𝓝 0 := hcont.eventually (hV.mem_nhds hφV)
-  obtain ⟨r,hr,hball⟩ := Metric.mem_nhds_iff.mp ht
-  let δ := min ε r
-  have hδ : 0 < δ := lt_min hε hr
-  have hsub (t : ℝ) (ht : t ∈ Ioo (-δ) δ) : t ∈ Ioo (-ε) ε := by
-    have hle : δ ≤ ε := min_le_left _ _
-    exact ⟨by linarith [ht.1],by linarith [ht.2]⟩
-  have hmem (t : ℝ) (ht : t ∈ Ioo (-δ) δ) : γ t ∈ V := by
-    apply hball
-    have hle : δ ≤ r := min_le_right _ _
-    rw [Real.ball_eq_Ioo]
-    exact ⟨by linarith [ht.1],by linarith [ht.2]⟩
-  refine ⟨γ,hγ₀,hreal,δ,hδ,fun t ht => hder t (hsub t ht),
-    fun t ht => ⟨(hmem t ht).1.2,(hmem t ht).2.2⟩,
-    fun t ht => hDis t (hsub t ht),?_⟩
-  intro t ht
-  have h0δ : (0:ℝ) ∈ Ioo (-δ) δ := ⟨by linarith,hδ⟩
-  simpa only [hγ₀] using D.thetaTheta_eq_on_sourceDirichletSpectral_integralCurve h2p k n m γ (-δ) δ
-    (fun t _ => hreal t) (fun t ht => hder t (hsub t ht))
-    (fun t ht => (hmem t ht).1.2) (fun t ht => (hmem t ht).2.2) t 0 ht h0δ
+  have hgap (j : ℤ) (t : ℝ) (ht : t ∈ Ioo (-ε) ε) :
+      canonicalPeriodicGap hp hp1 (periodOnePotential (γ t)) (periodOnePotential_mem (γ t)) j =
+        canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) j := by
+    simpa only [hγ₀] using canonicalPeriodicGap_eq_on_sourceDirichletSpectral_integralCurve
+      hp hp1 h2p k j γ (-ε) ε (fun t _ => hreal t) hder t 0 ht h0
+  refine ⟨γ,hγ₀,hreal,ε,hε,hder,?_,hDis,?_⟩
+  · intro t ht
+    rw [hgap n t ht,hgap m t ht]
+    exact ⟨hn,hm⟩
+  · intro t ht
+    simpa only [hγ₀] using D.thetaTheta_eq_on_sourceDirichletSpectral_integralCurve_of_initial_open
+      h2p k n m γ (-ε) ε (fun t _ => hreal t) hder 0 t h0 ht
+      (by simpa only [hγ₀] using hn) (by simpa only [hγ₀] using hm) |>.symm
 
 end SourceAngularThetaCommonDomainData
 end NLS.ZakharovShabat
