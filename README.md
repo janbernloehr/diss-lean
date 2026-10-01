@@ -5612,3 +5612,35 @@ anti-discriminant functional.
 The characteristic/anti-discriminant and anti-discriminant self brackets,
 moving terminal combinations, canonical angle-angle and mixed angle-action
 computations, and spectral compatibility for `1 < p < 2` remain.
+
+
+### Corollary 13.2: moving terminal data and actual local Floquet logarithms
+
+`MovingSpectralParameter.lean` proves the full cotangent chain rule for an
+actual spectral family evaluated at a moving source coordinate.
+`SourceBoundaryTerminalDifferential.lean` applies it to the actual
+discriminant and anti-discriminant at every canonical boundary root.
+Their cotangents include the spectral derivative times the root cotangent.
+These results hold at every real source for each finite `p > 1`.
+
+The signed multiplier `rho_b=(Delta(mu_b)+r_b delta(mu_b))/2` uses `r_D=1`
+and `r_N=-1`. Its algebraic reciprocal and original characteristic polynomial
+are proved at every complex source. In particular, it never vanishes,
+including at collapsed gaps. `SourceBoundaryTerminalPoisson.lean`
+differentiates the actual unimodular identity to cancel the extra
+characteristic in the moving anti-discriminant bracket. The resulting
+actual normalized multiplier bracket at finite `p >= 2` is
+`{rho_b,Delta(w)}/rho_b = Delta'(mu_b)chi_b(w)/(2(mu_b-w)chi_b'(mu_b))`.
+Entire spectral dependence gives the coincidence value `-Delta'(mu_b)/2`.
+
+`SourceBoundaryFloquetLogActionPoisson.lean` constructs the actual local
+function `log(rho_b(psi)/rho_b(phi))`, analytic and zero at the base source
+`phi`. Its full differential is the multiplier cotangent divided by its
+value. Thus the normalized kernel is the bracket of an actual local
+logarithm. Passing the actual action cotangent through the source bivector
+gives its single action contour kernel; interlacing supplies avoidance
+automatically, without an open-gap or logarithm-branch hypothesis.
+
+The characteristic/anti-discriminant and anti-discriminant self brackets,
+canonical angle-angle and mixed angle-action identities, and compatibility
+for `1 < p < 2` remain before Corollary 13.2 is complete.

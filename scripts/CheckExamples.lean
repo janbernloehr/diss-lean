@@ -19064,3 +19064,64 @@ example (n m : ℤ) (ch : SourceRealActionBallChart (p := (3 : ℝ≥0∞)) (by 
   sourceBracket_anti_action_at_canonicalNeumannRoot (by norm_num) (by norm_num) (by norm_num) n m ch φ hreal hφ
 
 end NLS.ZakharovShabat
+
+
+/- Actual moving-terminal cotangents, signed nonzero Floquet multipliers,
+local logarithms, and their discriminant/action kernels. -/
+noncomputable section
+open Set Metric Complex NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (b : BoundaryCondition) (n : ℤ) (φ : CoeffPair (3 : ℝ≥0∞)) :
+    sourceBoundaryFloquetMultiplier (by norm_num) (by norm_num) b n φ ≠ 0 :=
+  sourceBoundaryFloquetMultiplier_ne_zero (by norm_num) (by norm_num) b n φ
+
+example (n : ℤ) (φ : CoeffPair (3 : ℝ≥0∞)) :
+    sourceBoundaryFloquetMultiplier (by norm_num) (by norm_num) .neumann n φ =
+      (sourceBoundaryTerminalDiscriminant (by norm_num) (by norm_num) .neumann n φ-
+        sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .neumann n φ)/2 := by
+  simp [sourceBoundaryFloquetMultiplier,BoundaryCondition.extensionSign,sub_eq_add_neg]
+
+example (b : BoundaryCondition) (n : ℤ) (φ h : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n
+    (fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n) φ) h =
+      sourceAntiDiscriminantCotangent (by norm_num) (by norm_num) μ φ h+
+        deriv (sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ) μ*
+          ((fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n) φ) h) := by
+  have hc := fderiv_sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ hreal
+  dsimp only at hc ⊢
+  rw [hc]
+  simp only [add_apply,smul_apply,smul_eq_mul]
+
+example (b : BoundaryCondition) (n : ℤ) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) :
+    AnalyticAt ℂ (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b n φ) φ :=
+  analyticAt_sourceBoundaryFloquetLogAt_of_realType (by norm_num) (by norm_num) b n φ hreal
+
+example (b : BoundaryCondition) (n : ℤ) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n
+    sourceBracket (by norm_num) (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b n φ)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) μ) φ =
+        -deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ)) μ/2 :=
+  sourceBracket_boundaryFloquetLogAt_discriminant_at_root (by norm_num) (by norm_num) (by norm_num) b n φ hreal
+
+-- No selected or action gap needs to be open in this literal kernel.
+example (b : BoundaryCondition) (n m : ℤ)
+    (ch : SourceRealActionBallChart (p := (3 : ℝ≥0∞)) (by norm_num) (by norm_num) m)
+    (φ : CoeffPair 3) (hreal : IsRealType (CoeffPair.toMax 3 φ))
+    (hφ : φ ∈ ball ch.center ch.radius) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n
+    sourceBracket (by norm_num) (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b n φ)
+      (sourceComplexAction (by norm_num) (by norm_num) m) φ =
+      -(Real.pi : ℂ)⁻¹*(∮ w in C(ch.spectralCenter,ch.spectralRadius),
+        (sourceCanonicalRoot (by norm_num) (by norm_num) φ w)⁻¹*
+          (deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ)) μ*
+            periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b φ w)/
+            (2*(μ-w)*deriv (periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b φ) μ)) :=
+  sourceBracket_boundaryFloquetLogAt_action_eq_characteristic_circle
+    (by norm_num) (by norm_num) (by norm_num) b n m ch φ hreal hφ
+
+end NLS.ZakharovShabat

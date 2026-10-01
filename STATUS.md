@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: actual anti-discriminant/discriminant flow and action kernels
+## Current milestone: moving boundary-terminal and actual local Floquet logarithm brackets
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -55,8 +55,21 @@ Wronskian `chi_N(z)chi_D'(z)-chi_D(z)chi_N'(z)`. The actual anti-discriminant/
 action bracket has a single contour formula, with opposite signed kernels
 at canonical Dirichlet and Neumann roots held fixed at the base source.
 The remaining characteristic/anti-discriminant and anti-discriminant self
-brackets, moving terminal combinations, and canonical angle computations
+brackets and canonical angle computations
 remain unfinished.
+
+Both actual terminal discriminants now have their full moving-root
+cotangents at every real source for finite `p > 1`. The signed boundary
+Floquet multiplier is `(Delta+delta)/2` for Dirichlet and `(Delta-delta)/2`
+for Neumann. Its reciprocal and characteristic polynomial identities hold
+at every complex source, so it never vanishes. Normalizing by its base-source
+value constructs an actual analytic local logarithm at every real source.
+For finite `p >= 2`, its actual discriminant bracket is the characteristic
+kernel `Delta'(mu)chi_b(w)/(2(mu-w)chi_b'(mu))`, with coincidence value
+`-Delta'(mu)/2`. Its action bracket is the corresponding single contour
+formula on every action chart, including collapsed gaps. The characteristic/
+anti-discriminant and anti-discriminant self brackets, the canonical angle
+computations, and compatibility for `1 < p < 2` remain unfinished.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11160,3 +11173,50 @@ The characteristic/anti-discriminant and anti-discriminant self brackets,
 moving terminal combinations, canonical angle-angle and mixed angle-action
 identities, and spectral compatibility for `1 < p < 2` remain unfinished.
 Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: moving terminal data and actual local Floquet logarithm kernels
+
+`MovingSpectralParameter.lean` proves the equality of full continuous
+cotangents for a spectral family evaluated at a moving source coordinate.
+The source derivative at the fixed base coordinate is supplemented by the
+spectral derivative times the coordinate cotangent. Applying it to the
+actual jointly analytic discriminant and anti-discriminant gives both
+actual moving boundary-terminal cotangents at every real-type source for
+finite `p > 1`, including every central index and collapsed periodic gap.
+
+The signed multiplier `rho_b=(Delta(mu_b)+r_b delta(mu_b))/2` has `r_D=1`
+and `r_N=-1`. At every complex source, the actual terminal square identity
+proves its algebraic reciprocal and its original characteristic polynomial.
+Consequently it never vanishes; neither simplicity nor real type is needed
+for this conclusion. It is analytic near each real source.
+
+Differentiating the original spectral unimodular identity gives the actual
+relation between `Delta Delta'`, `delta delta'`, and both characteristic
+products. For finite `p >= 2`, the proved root motion combines with the
+actual fixed-parameter anti-discriminant flow to cancel the other
+characteristic. Thus the moving terminal brackets have numerators
+`r_b delta(mu_b)Delta'(mu_b)chi_b(w)` and
+`r_b Delta(mu_b)Delta'(mu_b)chi_b(w)`, respectively, with the common cleared
+factor `2(mu_b-w)chi_b'(mu_b)`.
+
+Combining them in the signed multiplier cancels the boundary sign. Its
+actual normalized bracket is
+`{rho_b,Delta(w)}/rho_b = Delta'(mu_b)chi_b(w)/(2(mu_b-w)chi_b'(mu_b))`.
+The bracket is entire in `w`; differentiating the cleared identity at the
+terminal proves the actual coincident value `-Delta'(mu_b)/2`. No division
+by the possibly vanishing anti-discriminant occurs anywhere in the argument.
+
+The explicit function `log(rho_b(psi)/rho_b(phi))` is zero and analytic
+locally at each real base source `phi`, since its logarithm argument equals
+one there. Its actual full differential is the multiplier cotangent divided
+by the multiplier. The normalized kernel is therefore the actual source
+bracket of this local function, without a supplied logarithm branch or
+logarithmic-derivative hypothesis. The actual action cotangent then gives
+the single circle kernel divided by the canonical periodic root. Real
+interlacing supplies spectral avoidance on every action chart automatically.
+Neither the selected gap nor the action gap needs to be open.
+
+The characteristic/anti-discriminant and anti-discriminant self brackets,
+canonical angle-angle and mixed angle-action values, and compatibility for
+`1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
