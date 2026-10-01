@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: discriminant commutation and Corollary 13.2 action involution
+## Current milestone: actual separated-characteristic/discriminant source flow
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -22,6 +22,18 @@ for every finite `p >= 2`. Consequently `{I_n,I_m} = 0` is proved for the
 actual glued indexed actions at every real source in that range, including
 collapsed gaps. The angle-angle and angle-action identities remain
 unproved, as does the spectral bracket compatibility for `1 < p < 2`.
+
+The actual monodromy derivative along a discriminant Hamiltonian is now
+the matrix commutator divided by the spectral difference, stated with the
+denominator cleared so coincident parameters are included. The original
+Dirichlet and Neumann characteristic variations follow with their exact
+normalization. Their physical endpoint gradients and source Fourier
+cotangents identify these variations with the actual source Poisson bracket.
+The resulting characteristic/discriminant formula holds at every complex
+source for finite `p >= 2`, including at every canonical boundary root.
+The root is held fixed in the differentiated characteristic. Differentiating
+the moving root coordinates and completing the canonical angle computations
+remain the next steps.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -10948,3 +10960,48 @@ indices for finite `p >= 2`, including collapsed gaps. This completes
 Corollary 13.2's action-action computation in that range. The canonical
 angle-angle and mixed angle-action computations, spectral bracket
 compatibility for `1 < p < 2`, and the later chapters remain unfinished.
+
+
+## Latest milestone: actual monodromy and boundary characteristic Poisson flow
+
+The traceless transported monodromy acting on an original fundamental
+solution produces a constructed variation numerator. Its initial value
+is zero, and its derivative is the original linearized potential forcing
+multiplied by the spectral difference. Initial-value uniqueness identifies
+it with the genuine potential variation. Matching endpoint values then
+prove `2(z-w) dT_z[X_Delta(w)] = T_z T_w - T_w T_z` for every continuous
+complex potential and every pair of spectral parameters. The formula is
+valid without a distinct-parameter assumption.
+
+Taking the original signed entry combinations proves both separated
+characteristic variations and the classical anti-discriminant variation.
+For boundary sign `r = 1` (Dirichlet) or `r = -1` (Neumann), the characteristic
+formula is `2(z-w) dchi_b(z)[X_Delta(w)] =
+r (chi_b(z) delta(w) - delta(z) chi_b(w))`. The anti-discriminant formula is
+`(z-w) ddelta(z)[X_Delta(w)] =
+chi_D(z) chi_N(w) - chi_N(z) chi_D(w)`. The sine normalization is unchanged.
+
+The actual derivative of every linear solution endpoint functional is now
+an unconjugated integral against its constructed physical potential
+gradient. The original signed initial vectors and normalized endpoint
+functionals specialize this to both actual separated characteristics.
+The exact finite realization identity is differentiated along complex
+affine lines, using a shared derivative comparison also applied to the
+previous discriminant result. Both actual characteristic source cotangent
+coefficient sequences equal the physical gradient Fourier coefficients at
+reversed frequencies.
+
+Bilinear Parseval consequently identifies the finite Hilbert source
+characteristic/discriminant bracket with that physical derivative, retaining
+the Poisson sign `-i`. Exponent restriction, analytic bracket continuity,
+and finite Fourier density extend the signed characteristic flow formula
+to every complex source at every finite `p >= 2`. No finite identity,
+gradient, or flow formula remains as an assumption of this theorem.
+Specialization at actual canonical Dirichlet and Neumann roots is proved
+from their spectral exhaustion and characteristic zero identities. This
+holds the spectral parameter at its base-source root while differentiating
+the characteristic; it is not yet the derivative of the moving root.
+
+The canonical angle-angle and mixed angle-action identities, the moving
+boundary-root differential calculation, and spectral bracket compatibility
+for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.

@@ -5482,3 +5482,38 @@ or finite-identity hypothesis.
 The angle-angle and mixed angle-action canonical identities, and the
 spectral bracket compatibility required for `1 < p < 2`, remain to be
 proved before Corollary 13.2 is complete.
+
+
+### Corollary 13.2: actual monodromy and boundary characteristic Poisson flow
+
+`ClassicalDiscriminantMonodromyFlow.lean` constructs the actual monodromy
+variation along a discriminant Hamiltonian from the traceless transported
+monodromy. The constructed numerator solves the original forced equation;
+initial-value uniqueness identifies it with the genuine potential variation.
+The endpoint identity gives
+`2(z-w) dT_z[X_Delta(w)] = T_z T_w - T_w T_z`, including coincident parameters.
+
+`ClassicalDiscriminantBoundaryFlow.lean` takes the original signed entry
+combinations to prove the Dirichlet and Neumann characteristic variations
+and the classical anti-discriminant variation. The characteristic formula
+is `2(z-w) dchi_b(z)[X_Delta(w)] =
+r (chi_b(z) delta(w) - delta(z) chi_b(w))`, with `r = 1` for Dirichlet and
+`r = -1` for Neumann. Both signs and the original sine normalization are
+retained. The zero-characteristic specialization supplies the boundary-root
+spectral formula with the denominator cleared.
+
+`ClassicalSeparatedGradient.lean` proves the physical potential gradient
+integral for actual endpoint functionals and both separated characteristics.
+`SourceBoundaryPoissonGradient.lean` differentiates their exact finite source
+identities and recovers both source cotangent sequences with the necessary
+Fourier frequency reversal. `SourceBoundaryDiscriminantPoisson.lean` uses
+bilinear Parseval to identify the actual finite source bracket with the
+physical characteristic variation. Exponent restriction and density extend
+the formula to every complex source for finite `p >= 2`. It applies at every
+actual canonical Dirichlet or Neumann root, holding that base-source spectral
+parameter fixed under differentiation.
+
+These are proved flow identities without supplied gradient or finite-identity
+hypotheses. The moving boundary-root differential and the canonical
+angle-angle and mixed angle-action calculations remain, along with spectral
+bracket compatibility for `1 < p < 2`.

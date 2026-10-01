@@ -40,37 +40,30 @@ def finiteSourceCurveLinear : ((ℤ →₀ ℂ) × (ℤ →₀ ℂ)) →ₗ[ℂ]
 @[simp] theorem finiteSourceCurveLinear_apply (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) :
     finiteSourceCurveLinear a = finiteSourceCurve a := rfl
 
-/-- Differentiating the actual finite-source identity in an arbitrary
-finite direction identifies the two genuine Frechet derivatives. -/
-theorem sourceDiscriminantCotangent_finite_direction
-    (a b : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : ℂ) :
-    sourceDiscriminantCotangent (by simp) z (CoeffPair.ofFinsupp (p := 2) a)
-      (CoeffPair.ofFinsupp (p := 2) b) =
-        (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalDiscriminant Ψ z) (finiteSourceCurve a))
-          (finiteSourceCurve b) := by
+/-- Differentiating an exact finite realization identity along affine
+complex lines compares the two genuine Frechet derivatives. -/
+theorem fderiv_finiteSource_comparison
+    (F : CoeffPair 2 → ℂ) (G : Curve (ℂ × ℂ) → ℂ)
+    (a b : (ℤ →₀ ℂ) × (ℤ →₀ ℂ))
+    (hF : DifferentiableAt ℂ F (CoeffPair.ofFinsupp (p := 2) a))
+    (hG : DifferentiableAt ℂ G (finiteSourceCurve a))
+    (hfinite : ∀ c : (ℤ →₀ ℂ) × (ℤ →₀ ℂ), F (CoeffPair.ofFinsupp (p := 2) c) = G (finiteSourceCurve c)) :
+    (fderiv ℂ F (CoeffPair.ofFinsupp (p := 2) a)) (CoeffPair.ofFinsupp (p := 2) b) =
+      (fderiv ℂ G (finiteSourceCurve a)) (finiteSourceCurve b) := by
   let φ := CoeffPair.ofFinsupp (p := 2) a
   let h := CoeffPair.ofFinsupp (p := 2) b
   let Φ := finiteSourceCurve a
   let H := finiteSourceCurve b
-  let F : CoeffPair 2 → ℂ := fun ψ => canonicalDiscriminant (by simp) (periodOnePotential ψ) z
-  let G : Curve (ℂ × ℂ) → ℂ := fun Ψ => classicalDiscriminant Ψ z
-  have hF : DifferentiableAt ℂ F φ :=
-    ((analyticOnNhd_canonicalDiscriminant_periodOne (by simp) (by norm_num)
-      (z,φ) (mem_univ _)).comp (f := fun ψ : CoeffPair 2 => (z,ψ))
-      (analyticAt_const.prod analyticAt_id)).differentiableAt
-  have hG : DifferentiableAt ℂ G Φ :=
-    ((analyticOnNhd_classicalDiscriminant_joint (z,Φ) (mem_univ _)).comp
-      (f := fun Ψ : Curve (ℂ × ℂ) => (z,Ψ)) (analyticAt_const.prod analyticAt_id)).differentiableAt
   have hφ : HasDerivAt (fun c : ℂ => φ+c • h) h 0 := by
     simpa only [one_smul] using! ((hasDerivAt_id (0 : ℂ)).smul_const h).const_add φ
   have hΦ : HasDerivAt (fun c : ℂ => Φ+c • H) H 0 := by
     simpa only [one_smul] using! ((hasDerivAt_id (0 : ℂ)).smul_const H).const_add Φ
   have h₁ : HasDerivAt (F ∘ fun c : ℂ => φ+c • h) ((fderiv ℂ F φ) h) 0 :=
     HasFDerivAt.comp_hasDerivAt_of_eq (𝕜 := ℂ) (E := ℂ) (F := CoeffPair 2)
-      (0 : ℂ) hF.hasFDerivAt hφ (by simp only [zero_smul,add_zero])
+      (0 : ℂ) hF.hasFDerivAt hφ (by simp only [zero_smul,add_zero]; rfl)
   have h₂ : HasDerivAt (G ∘ fun c : ℂ => Φ+c • H) ((fderiv ℂ G Φ) H) 0 :=
     HasFDerivAt.comp_hasDerivAt_of_eq (𝕜 := ℂ) (E := ℂ) (F := Curve (ℂ × ℂ))
-      (0 : ℂ) hG.hasFDerivAt hΦ (by ext t <;> simp)
+      (0 : ℂ) hG.hasFDerivAt hΦ (by ext t <;> simp [Φ])
   have heq : (fun c : ℂ => F (φ+c • h)) = (fun c => G (Φ+c • H)) := by
     funext c
     have hsrc : CoeffPair.ofFinsupp (p := 2) (a+c • b) = φ+c • h := by
@@ -79,13 +72,29 @@ theorem sourceDiscriminantCotangent_finite_direction
       change finiteSourceCurveLinear (a+c • b) = Φ+c • H
       rw [map_add,map_smul]
       rfl
-    have hfinite := canonicalDiscriminant_finite_eq_classical (a+c • b) z
-    rw [hsrc,hcurve] at hfinite
-    exact hfinite
+    have hc := hfinite (a+c • b)
+    rw [hsrc,hcurve] at hc
+    exact hc
   change HasDerivAt (fun c : ℂ => F (φ+c • h)) ((fderiv ℂ F φ) h) 0 at h₁
   change HasDerivAt (fun c : ℂ => G (Φ+c • H)) ((fderiv ℂ G Φ) H) 0 at h₂
   rw [heq] at h₁
   exact h₁.unique h₂
+
+/-- Differentiating the actual finite-source identity in an arbitrary
+finite direction identifies the two genuine Frechet derivatives. -/
+theorem sourceDiscriminantCotangent_finite_direction
+    (a b : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : ℂ) :
+    sourceDiscriminantCotangent (by simp) z (CoeffPair.ofFinsupp (p := 2) a)
+      (CoeffPair.ofFinsupp (p := 2) b) =
+        (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalDiscriminant Ψ z) (finiteSourceCurve a))
+          (finiteSourceCurve b) := by
+  apply fderiv_finiteSource_comparison
+  · exact ((analyticOnNhd_canonicalDiscriminant_periodOne (by simp) (by norm_num)
+      (z,CoeffPair.ofFinsupp (p := 2) a) (mem_univ _)).comp
+      (f := fun ψ : CoeffPair 2 => (z,ψ)) (analyticAt_const.prod analyticAt_id)).differentiableAt
+  · exact ((analyticOnNhd_classicalDiscriminant_joint (z,finiteSourceCurve a) (mem_univ _)).comp
+      (f := fun Ψ : Curve (ℂ × ℂ) => (z,Ψ)) (analyticAt_const.prod analyticAt_id)).differentiableAt
+  · exact fun c => canonicalDiscriminant_finite_eq_classical c z
 
 /-- The first actual source cotangent coefficient is the physical first
 gradient coefficient at the reversed frequency. -/

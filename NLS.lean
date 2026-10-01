@@ -490,6 +490,9 @@ import NLS.ZakharovShabat.ClassicalPotentialVariation
 import NLS.ZakharovShabat.ClassicalForcedKernel
 import NLS.ZakharovShabat.ClassicalDiscriminantGradient
 import NLS.ZakharovShabat.ClassicalDiscriminantCommutation
+import NLS.ZakharovShabat.ClassicalDiscriminantMonodromyFlow
+import NLS.ZakharovShabat.ClassicalDiscriminantBoundaryFlow
+import NLS.ZakharovShabat.ClassicalSeparatedGradient
 import NLS.ZakharovShabat.ClassicalChainPerturbation
 import NLS.ZakharovShabat.ClassicalChainTaylor
 import NLS.ZakharovShabat.ClassicalMonodromyTaylor
@@ -1372,6 +1375,8 @@ import NLS.ZakharovShabat.SourceActionPoisson
 import NLS.Fourier.IntervalBilinearParseval
 import NLS.ZakharovShabat.FiniteSourceDiscriminantGradient
 import NLS.ZakharovShabat.SourceDiscriminantPoisson
+import NLS.ZakharovShabat.SourceBoundaryPoissonGradient
+import NLS.ZakharovShabat.SourceBoundaryDiscriminantPoisson
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

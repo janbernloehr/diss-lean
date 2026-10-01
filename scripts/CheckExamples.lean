@@ -18856,3 +18856,51 @@ example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3
   sourceBracket_actions_eq_zero (by norm_num) (by norm_num) (by norm_num) φ hreal n m
 
 end NLS.ZakharovShabat
+
+
+/- Actual monodromy and characteristic/discriminant flows, including the
+original opposite Dirichlet and Neumann signs at non-Hilbert exponent three. -/
+noncomputable section
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.Poisson
+open scoped ENNReal Matrix.Norms.Elementwise
+namespace NLS.ZakharovShabat
+
+example (Φ : Curve (ℂ × ℂ)) (z w : ℂ) :
+    (2*(z-w)) • ((fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalMonodromy Ψ z) Φ)
+      (classicalDiscriminantHamiltonianDirection Φ w)) =
+        classicalMonodromy Φ z*classicalMonodromy Φ w-
+          classicalMonodromy Φ w*classicalMonodromy Φ z :=
+  fderiv_classicalMonodromy_hamiltonian_commutator Φ z w
+
+-- Both original endpoint characteristics have the actual physical component gradient.
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalSeparatedCharacteristic b Ψ z) Φ)
+      (ContinuousMap.const _ (1,0)) =
+        ∫ s in (0 : ℝ)..1, (classicalSeparatedGradient b Φ z s).1 := by
+  rw [fderiv_classicalSeparatedCharacteristic_eq_gradient_integral]
+  simp [NLS.LinearVolterra.extend]
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    2*(z-w)*sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet ψ z)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ =
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ z*
+          sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ w-
+        sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ z*
+          periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ w := by
+  simpa only [BoundaryCondition.extensionSign,one_mul] using
+    sourceBracket_boundary_discriminant (by norm_num) (by norm_num) (by norm_num) .dirichlet φ z w
+
+-- The Neumann sign is opposite. The actual indexed root stays fixed in the first functional.
+example (φ : CoeffPair (3 : ℝ≥0∞)) (n : ℤ) (w : ℂ) :
+    let ν := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann φ n
+    2*(ν-w)*sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann ψ ν)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ =
+        sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ ν*
+          periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .neumann φ w := by
+  simpa only [BoundaryCondition.extensionSign,neg_neg,one_mul] using
+    sourceBracket_boundary_discriminant_at_canonicalRoot (by norm_num) (by norm_num)
+      (by norm_num) .neumann φ n w
+
+end NLS.ZakharovShabat
