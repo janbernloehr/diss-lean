@@ -5862,3 +5862,26 @@ The results concern symmetric cutoffs, without an assertion of absolute
 cotangent-norm summability. The exact normalized spectral period sum and the
 canonical angle-action and angle-angle values still remain, as does bracket
 compatibility for `1 < p < 2`.
+
+
+### Corollary 13.2: actual beta/action kernels through branch terminals
+
+`SourceDirichletActionKernel.lean` expresses the actual root/action and full
+moving terminal anti-discriminant/action velocities using one actual contour
+kernel. Its only terminal denominator is the simple Dirichlet characteristic
+derivative. The latter velocity retains both the fixed-source variation and
+the spectral derivative times the moving-root variation. Differentiating the
+original spectral identity gives its coefficient `Delta(mu_m) Delta'(mu_m)`,
+including at periodic and collapsed terminals.
+
+`SourceAngularBetaActionKernel.lean` uses this full flow, stationarity of the
+interior Cauchy primitive and omitted product, and the differentiated actual
+terminal quotient to prove `{beta_nm,I_k} = psi_n(mu_m) K_mk` for finite
+`p >= 2`. The formula requires no nonzero terminal square root or open selected
+gap. Actual local annuli are constructed from the existing normalized psi
+extension, so the public theorem also requires no supplied angular chart.
+The full beta correction/action bracket is the limit of the symmetric
+normalized kernel cutoffs. The theta/action bracket is the limit of its
+actual eta contribution plus those cutoffs. The diagonal eta kernel and exact
+normalized period sum still remain before the canonical angle-action value;
+the angle-angle identity and lower-exponent bracket compatibility also remain.

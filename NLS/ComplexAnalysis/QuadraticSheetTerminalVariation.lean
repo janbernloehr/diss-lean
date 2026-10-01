@@ -22,4 +22,18 @@ theorem quadratic_sheet_terminal_variation
   apply mul_left_cancel₀ (pow_ne_zero 2 hK)
   linear_combination δ*hβ+K*H*hsheet-H*dK*hsq+K*H'*u*hsq+K^3*u*heq
 
+/-- When the moving root has velocity `delta * v`, its sheet flow
+determines the terminal variation even where `delta` vanishes. -/
+theorem quadratic_sheet_terminal_variation_of_flow
+    (δ K Q A H H' g v K' dδ dK dβ : ℂ) (hK : K ≠ 0)
+    (hsq : δ^2 = K^2*Q)
+    (hδ : dδ = (K*K'*Q+K^2*A)*v)
+    (hKflow : dK = K'*δ*v)
+    (heq : Q*H'+A*H = g)
+    (hβ : K^2*dβ = (dδ*K-δ*dK)*H+δ*K*H'*(δ*v)) :
+    dβ = K*g*v := by
+  apply mul_left_cancel₀ (pow_ne_zero 2 hK)
+  linear_combination hβ+K*H*hδ-δ*H*hKflow+
+    K*H'*v*hsq-K'*H*v*hsq+K^3*v*heq
+
 end NLS.ComplexAnalysis

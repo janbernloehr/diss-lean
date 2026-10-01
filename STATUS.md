@@ -1,17 +1,17 @@
 # Implementation status
 
-## Current milestone: derivatives and brackets of the full beta series
+## Current milestone: actual beta/action kernels through branch terminals
 
-The actual symmetric beta cutoffs now converge in full Fréchet derivative,
-locally uniformly in operator norm on smaller source balls. Their finite
-cotangent sums converge to the cotangent of the actual full correction for
-every finite `p > 1`, including below the Hilbert exponent. For finite `p >= 2`,
-the corresponding finite Hamiltonian bracket sums converge to the actual
-correction bracket. Adding the single eta cotangent gives the actual theta
-cotangent and theta/functional bracket as limits of the same cutoffs. Both
-angle cotangents can be approximated simultaneously in their actual bracket.
-The exact normalized period sum is still needed to compute the angle-action
-canonical value; the angle-angle identity also remains unproved.
+Every actual off-diagonal beta/action bracket now equals its normalized
+numerator times one actual Dirichlet action contour kernel for finite
+`p >= 2`. The formula includes periodic Dirichlet terminals and collapsed
+selected gaps, with no terminal square root in a denominator. Local actual
+annuli are constructed from the existing psi extension, so no angular
+chart is an additional hypothesis in the public formula. The full beta
+correction/action bracket is the limit of the symmetric normalized kernel
+cutoffs. The theta/action bracket is the limit of its diagonal eta
+contribution plus these cutoffs. The diagonal kernel and the exact
+normalized period sum still remain before the canonical angle-action value.
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -11631,3 +11631,43 @@ These are limits of symmetric cutoffs; absolute summability of the cotangent
 norms is not asserted. The exact normalized spectral period sum, the
 angle-action and angle-angle canonical values, and bracket compatibility
 for `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual beta/action kernels at all terminals
+
+`SourceDirichletActionKernel.lean` defines one normalized actual action
+contour kernel with the simple Dirichlet characteristic derivative as
+its terminal denominator. The actual moving Dirichlet root/action velocity
+is the terminal anti-discriminant times this kernel. Differentiating the
+original discriminant/anti-discriminant identity in the spectral parameter
+and combining the proved fixed anti/action formula with the moving-root
+term gives the full terminal anti-discriminant/action velocity:
+`{delta(mu_m),I_k} = Delta(mu_m) Delta'(mu_m) K_mk`. These identities include
+branch terminals and collapsed gaps; the root velocity alone can vanish
+while the full terminal anti-discriminant velocity remains nonzero.
+
+`QuadraticSheetTerminalVariation.lean` adds the quotient variation for this
+specific sheet flow, without dividing by the sheet coordinate. The existing
+beta isospectral module now exposes its actual terminal quotient derivative
+as a shared theorem, and its earlier cleared equation retains its public API.
+
+`SourceAngularBetaActionKernel.lean` differentiates the actual omitted-product
+factorization inside the assigned disc. The full moving omitted-product
+velocity follows from its fixed-source stationarity and the root velocity.
+Together with the interior Cauchy equation, the exact terminal quotient
+derivative gives `{beta_nm,I_k} = psi_n(mu_m) K_mk` at every real terminal for
+finite `p >= 2`, including periodic endpoints and collapsed selected gaps.
+The actual psi isolation and analytic symmetric data construct the local
+annuli, removing them from the final public theorem's hypotheses.
+
+The actual beta-series derivative limit then identifies the full correction
+bracket with the limit of the symmetric normalized kernel sums. Adding the
+single eta cotangent gives the theta/action bracket as the limit of its
+actual eta contribution plus these same kernel cutoffs. API checks cover a
+branch-terminal flow, the chart-free actual beta kernel, both infinite-sum
+limits, and the spectral derivative identity at `p = 3/2`.
+
+The diagonal eta kernel at all terminals and the exact normalized spectral
+period sum remain before the angle-action canonical value. The angle-angle
+identity and bracket compatibility for `1 < p < 2` also remain unfinished.
+Corollary 13.2 is not yet complete.

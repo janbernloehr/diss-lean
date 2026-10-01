@@ -19761,3 +19761,89 @@ example {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (EN
   D.tendsto_betaSeriesVariations n φ hφ h
 
 end NLS.ZakharovShabat
+
+
+/- The actual Dirichlet action flow and beta kernels retain branch
+terminals. The full correction uses the same symmetric normalized sums. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (n k : ℤ) (ch : SourceRealActionBallChart (by norm_num) (by norm_num) (p := 3) k)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ ball ch.center ch.radius)
+    (hδ : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n φ.val = 0) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val = 0 ∧
+    sourceBracket (by norm_num)
+      (sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val =
+      let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n
+      canonicalDiscriminant (by norm_num) (periodOnePotential φ.val) μ*
+        deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ.val)) μ*
+          sourceDirichletActionKernel (by norm_num) (by norm_num) n k ch φ.val := by
+  constructor
+  · rw [sourceBracket_dirichletRoot_action_eq_kernel (by norm_num) (by norm_num)
+      (by norm_num) n k ch φ.val φ.property hφ,hδ,zero_mul]
+  · exact sourceBracket_dirichletTerminalAnti_action_eq_kernel (by norm_num) (by norm_num)
+      (by norm_num) n k ch φ.val φ.property hφ
+
+example {W₀ : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (n m k : ℤ) (hmn : m ≠ n)
+    (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ ball ch.center ch.radius) :
+    let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val m
+    sourceBracket (by norm_num) (sourceAngularBeta (by norm_num) (by norm_num) n m s)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val =
+      sourcePsiCandidate n (μ,(s n φ.val : Coeff 3))*
+        sourceDirichletActionKernel (by norm_num) (by norm_num) m k ch φ.val :=
+  hs.sourceBracket_beta_action_eq_kernel (by norm_num) n m k hmn ch φ hφ
+
+section BetaActionKernelLimits
+variable {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+  (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+include D
+
+example (n k : ℤ) (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ ball ch.center ch.radius) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      sourceAngularBetaActionKernelTerm (by norm_num) (by norm_num) n k ch s φ.val m) atTop
+      (𝓝 (sourceBracket (by norm_num)
+        (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s)
+        (sourceComplexAction (by norm_num) (by norm_num) k) φ.val)) :=
+  D.tendsto_betaActionKernels (by norm_num) n k ch φ hφ
+
+example {V U : Set (CoeffPair 3)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R ρ : ℝ} {z₀ : ℂ} {δ ε : CoeffPair 3 → ℂ} (n k : ℤ)
+    (C : SourceAngularEtaAnalyticChartData (by norm_num) (by norm_num) n s B V U c T r R z₀ ρ δ ε)
+    (hUW : U ⊆ W) (ch : SourceRealActionBallChart (by norm_num) (by norm_num) k)
+    (φ : realTypeSourceLocus 3) (hφ : φ.val ∈ U) (hφch : φ.val ∈ ball ch.center ch.radius) :
+    Tendsto (fun N : ℕ => sourceBivector (by norm_num)
+      (sourceAngularEtaDifferential (by norm_num) (by norm_num) n s φ.val)
+      (fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) k) φ.val)+
+      ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+        sourceAngularBetaActionKernelTerm (by norm_num) (by norm_num) n k ch s φ.val m) atTop
+      (𝓝 (sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+        n s (sourceComplexAction (by norm_num) (by norm_num) k) φ.val)) :=
+  D.tendsto_thetaActionKernels (by norm_num) n k C hUW ch φ hφ hφch
+
+end BetaActionKernelLimits
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example (φ : CoeffPair (ENNReal.ofReal (3/2))) (n : ℤ) :
+    let hp1 : 1 < ENNReal.ofReal (3/2) := by rw [ENNReal.one_lt_ofReal]; norm_num
+    let μ := canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top hp1 .dirichlet φ n
+    canonicalDiscriminant ENNReal.ofReal_ne_top (periodOnePotential φ) μ*
+      deriv (canonicalDiscriminant ENNReal.ofReal_ne_top (periodOnePotential φ)) μ =
+      sourceAntiDiscriminantCandidate ENNReal.ofReal_ne_top hp1 φ μ*
+        deriv (sourceAntiDiscriminantCandidate ENNReal.ofReal_ne_top hp1 φ) μ-
+      2*deriv (periodOneBoundaryCharacteristic ENNReal.ofReal_ne_top hp1 .dirichlet φ) μ*
+        periodOneBoundaryCharacteristic ENNReal.ofReal_ne_top hp1 .neumann φ μ :=
+  sourceDiscriminant_mul_deriv_at_canonicalDirichletRoot ENNReal.ofReal_ne_top
+    (by rw [ENNReal.one_lt_ofReal]; norm_num) φ n
+
+end NLS.ZakharovShabat

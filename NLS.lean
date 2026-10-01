@@ -1417,6 +1417,8 @@ import NLS.ZakharovShabat.SourceAngularEtaRemainderIsospectral
 import NLS.ZakharovShabat.SourceAngularEtaDifferential
 import NLS.ZakharovShabat.SourceAngularEtaIsospectral
 import NLS.ZakharovShabat.SourceAngularBetaSeriesDifferential
+import NLS.ZakharovShabat.SourceDirichletActionKernel
+import NLS.ZakharovShabat.SourceAngularBetaActionKernel
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain
