@@ -1,6 +1,6 @@
 # Implementation status
 
-## Current milestone: moving boundary-terminal and actual local Floquet logarithm brackets
+## Current milestone: actual anti-discriminant spectral brackets and mixed root/Floquet separation
 
 Theorem 13.1 now supplies actual analytic angle phases and real local
 representatives. The physical source bracket is constructed for `p >= 2`,
@@ -54,9 +54,8 @@ source at finite `p >= 2`. At coincidence the bracket is the characteristic
 Wronskian `chi_N(z)chi_D'(z)-chi_D(z)chi_N'(z)`. The actual anti-discriminant/
 action bracket has a single contour formula, with opposite signed kernels
 at canonical Dirichlet and Neumann roots held fixed at the base source.
-The remaining characteristic/anti-discriminant and anti-discriminant self
-brackets and canonical angle computations
-remain unfinished.
+The actual characteristic/anti-discriminant and anti-discriminant self
+brackets are now proved as described in the latest milestone below.
 
 Both actual terminal discriminants now have their full moving-root
 cotangents at every real source for finite `p > 1`. The signed boundary
@@ -67,9 +66,19 @@ value constructs an actual analytic local logarithm at every real source.
 For finite `p >= 2`, its actual discriminant bracket is the characteristic
 kernel `Delta'(mu)chi_b(w)/(2(mu-w)chi_b'(mu))`, with coincidence value
 `-Delta'(mu)/2`. Its action bracket is the corresponding single contour
-formula on every action chart, including collapsed gaps. The characteristic/
-anti-discriminant and anti-discriminant self brackets, the canonical angle
-computations, and compatibility for `1 < p < 2` remain unfinished.
+formula on every action chart, including collapsed gaps. The mutual
+Floquet-logarithm commutation, canonical angle computations, and compatibility
+for `1 < p < 2` remain unfinished.
+
+The actual characteristic/anti-discriminant flow now satisfies
+`2(z-w){chi_b(z),delta(w)} = r_b(chi_b(z)Delta(w)-Delta(z)chi_b(w))`
+at every complex source for finite `p >= 2`. The actual anti-discriminants
+mutually commute. The generalized physical endpoint Wronskian argument,
+actual Fourier cotangents, bilinear Parseval, exponent restriction, and
+density prove these identities without spectral-bracket assumptions.
+The actual mixed root/local Floquet logarithm bracket is `-1/2` at matching
+indices and zero at distinct indices, separately in both boundary families,
+at every real-type source, including collapsed periodic gaps.
 
 ## Completed step: beta analyticity at every terminal of an open real gap
 
@@ -11220,3 +11229,50 @@ Neither the selected gap nor the action gap needs to be open.
 The characteristic/anti-discriminant and anti-discriminant self brackets,
 canonical angle-angle and mixed angle-action values, and compatibility for
 `1 < p < 2` remain unfinished. Corollary 13.2 is not yet complete.
+
+
+## Latest milestone: actual anti spectral brackets and mixed separation relation
+
+The actual endpoint potential gradient factors through the forward solution
+and an actual dual homogeneous solution. For an arbitrary endpoint CLM `ell`,
+its dual endpoint is `(-ell(e2),ell(e1))`, as follows from the original
+monodromy determinant one. The product of forward and dual cross-parameter
+Wronskians has derivative `2i(w-z)` times the actual antisymmetric gradient
+pairing. Its exact endpoint values therefore give the bracket of any two
+actual linear endpoint functionals, with no zero endpoint or spectral
+variation hypothesis.
+
+Adding the two original off-diagonal endpoint gradients gives the actual
+physical characteristic/anti-discriminant formula. Adding all four pairings
+gives actual anti-discriminant commutation. Fourier cotangent coefficient
+identities and bilinear Parseval identify these physical integrals with
+the genuine finite Hilbert source brackets. Analytic bracket continuity,
+actual exponent compatibility, and finite Fourier density extend both
+results to every complex source at finite `p >= 2`:
+`2(z-w){chi_b(z),delta(w)} = r_b(chi_b(z)Delta(w)-Delta(z)chi_b(w))`,
+and `{delta(z),delta(w)}=0`.
+
+The full anti-discriminant cotangent is jointly analytic, so the actual
+characteristic/anti-discriminant bracket is entire in its second parameter.
+Differentiating its cleared identity at coincidence proves the signed
+Wronskian `r_b(Delta chi_b'-chi_b Delta')/2`. This yields the actual moving
+root/anti-discriminant bracket with coincidence value `-r_b Delta(mu_b)/2`.
+
+The actual moving multiplier has both moving discriminant and
+anti-discriminant terminal terms. In a mixed root/multiplier bracket, root
+involution removes the terminal-motion contribution. Combining the two
+fixed-parameter root brackets gives `-rho_n/2` at the same index. At distinct
+indices, real root injectivity makes the denominators nonzero and the second
+root's characteristic value makes the bracket vanish. Dividing by the
+proved nonzero multiplier via the actual local-logarithm cotangent gives
+`{mu_n,log(rho_m/rho_m(base))} = -delta_nm/2`.
+
+All mixed separation statements hold independently in the Dirichlet and
+Neumann families, at every real-type source for finite `p >= 2`. There is
+no open-gap, logarithm-branch, finite-source, or spectral-identity hypothesis;
+central indices and collapsed periodic gaps are included. Cross-family
+separation is not asserted.
+
+Mutual Floquet-logarithm commutation, canonical angle-angle and mixed
+angle-action values, and compatibility for `1 < p < 2` remain unfinished.
+Corollary 13.2 is not yet complete.

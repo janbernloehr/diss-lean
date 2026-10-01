@@ -19125,3 +19125,69 @@ example (b : BoundaryCondition) (n m : ℤ)
     (by norm_num) (by norm_num) (by norm_num) b n m ch φ hreal hφ
 
 end NLS.ZakharovShabat
+
+
+/- Actual anti spectral brackets and mixed root/Floquet logarithm separation,
+with the original period-one signs and no open-gap condition. -/
+noncomputable section
+open Set Complex NLS.Poisson NLS.LinearVolterra
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z w : ℂ) :
+    2*(z-w)*classicalGradientPoissonBracket
+      (classicalSeparatedGradient b Φ z) (classicalAntiDiscriminantGradient Φ w) =
+        BoundaryCondition.extensionSign b*(classicalSeparatedCharacteristic b Φ z*classicalDiscriminant Φ w-
+          classicalDiscriminant Φ z*classicalSeparatedCharacteristic b Φ w) :=
+  classicalGradientPoissonBracket_separated_anti_mul b Φ z w
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ z)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ w) φ = 0 :=
+  sourceBracket_anti_anti_eq_zero (by norm_num) (by norm_num) (by norm_num) φ z w
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞)) (z w : ℂ) :
+    2*(z-w)*sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b ψ z)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ w) φ =
+      BoundaryCondition.extensionSign b*(periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b φ z*
+        canonicalDiscriminant (by norm_num) (periodOnePotential φ) w-
+        canonicalDiscriminant (by norm_num) (periodOnePotential φ) z*
+          periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b φ w) :=
+  sourceBracket_boundary_anti (by norm_num) (by norm_num) (by norm_num) b φ z w
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞)) (z : ℂ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b ψ z)
+      (fun ψ : CoeffPair 3 => sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) ψ z) φ =
+      BoundaryCondition.extensionSign b*(canonicalDiscriminant (by norm_num) (periodOnePotential φ) z*
+        deriv (periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b φ) z-
+        periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b φ z*
+          deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ)) z)/2 :=
+  sourceBracket_boundary_anti_diagonal (by norm_num) (by norm_num) (by norm_num) b φ z
+
+example (b : BoundaryCondition) (φ : CoeffPair (3 : ℝ≥0∞))
+    (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n m : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n)
+      (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b m φ) φ =
+        if n = m then -(1 : ℂ)/2 else 0 :=
+  sourceBracket_boundaryRoot_floquetLog_eq (by norm_num) (by norm_num) (by norm_num) b φ hreal n m
+
+-- The concrete diagonal normalization is the same in the two families.
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) .dirichlet n φ) φ = -(1 : ℂ)/2 := by
+  simpa using! sourceBracket_boundaryRoot_floquetLog_eq
+    (by norm_num) (by norm_num) (by norm_num) .dirichlet φ hreal n n
+
+example (φ : CoeffPair (3 : ℝ≥0∞)) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ) :
+    sourceBracket (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .neumann ψ n)
+      (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) .neumann n φ) φ = -(1 : ℂ)/2 := by
+  simpa using! sourceBracket_boundaryRoot_floquetLog_eq
+    (by norm_num) (by norm_num) (by norm_num) .neumann φ hreal n n
+
+end NLS.ZakharovShabat

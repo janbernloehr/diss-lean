@@ -5644,3 +5644,37 @@ automatically, without an open-gap or logarithm-branch hypothesis.
 The characteristic/anti-discriminant and anti-discriminant self brackets,
 canonical angle-angle and mixed angle-action identities, and compatibility
 for `1 < p < 2` remain before Corollary 13.2 is complete.
+
+
+### Corollary 13.2: anti spectral brackets and mixed root/Floquet separation
+
+`ClassicalEndpointPoisson.lean` generalizes the physical cross-Wronskian
+argument to every pair of continuous linear endpoint functionals. The
+actual dual endpoint follows from determinant one. The two endpoint
+values of the forward/dual Wronskian product determine the physical
+bracket, including coincident parameters with the difference cleared.
+`ClassicalAntiSpectralPoisson.lean` adds the original off-diagonal endpoint
+gradients to obtain the actual characteristic/anti-discriminant flow and
+anti-discriminant cancellation, with their original normalization.
+
+`SourceAntiSpectralPoisson.lean` uses the actual cotangent coefficient
+identities and bilinear Parseval to prove these brackets on finite Hilbert
+sources. Exponent restriction and density extend them to every complex
+source at finite `p >= 2`:
+`2(z-w){chi_b(z),delta(w)} = r_b(chi_b(z)Delta(w)-Delta(z)chi_b(w))` and
+`{delta(z),delta(w)}=0`. Entire dependence on the second parameter gives
+the literal coincident characteristic/discriminant Wronskian.
+
+`SourceBoundaryRootFloquetPoisson.lean` obtains the actual moving
+root/anti-discriminant kernel, with coincident value `-r_b Delta(mu_b)/2`.
+Root involution eliminates the second root's motion in a mixed
+root/multiplier bracket. Real simplicity and distinctness of the indexed
+roots give the actual separation relation
+`{mu_n,log(rho_m/rho_m(base))} = -delta_nm/2`, with the sign and factor
+fixed by the original period-one source bracket. This holds separately
+in both ordinary boundary families at every real source, including
+central indices and collapsed periodic gaps.
+
+Mutual Floquet-logarithm commutation, the canonical angle-angle and mixed
+angle-action identities, and compatibility for `1 < p < 2` remain.
+Corollary 13.2 is not yet complete.
