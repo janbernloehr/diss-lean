@@ -5969,3 +5969,30 @@ is one, and the contour limit at `p = 3/2`.
 
 The angle-angle identity and bracket compatibility for `1 < p < 2`
 remain unfinished. Corollary 13.2 and the later chapters are not complete.
+
+
+### Corollary 13.2: Jacobi and actual angle-bracket action stationarity
+
+`SourceBracketJacobi.lean` now proves Jacobi for the literal source
+bracket of analytic functionals at exponents `p >= 2`. Differentiating
+the constant bivector produces Hessian terms; their symmetry cancels
+the full cyclic sum using the actual Hamiltonian directions.
+
+`SourceAngularThetaLocalExactness.lean` constructs a local analytic
+primitive of the single actual theta cotangent and proves that its
+derivative is symmetric for every finite `p > 1`.
+`SourceAngularThetaActionLocalCanonical.lean` extends the real
+Kronecker identity to a complex germ near each real open-gap source,
+so the canonical mixed bracket has zero cotangent there.
+
+`SourceAngularThetaThetaActionStationarity.lean` combines these
+results to prove that the actual theta/theta bracket is stationary
+along every actual action Hamiltonian direction, for finite `p >= 2`
+with both selected angle gaps open. It commutes with every actual
+action, including those with collapsed gaps. API checks include
+the complex germ, Jacobi, action stationarity at `p = 2` and `p = 3`,
+and cotangent closedness at `p = 3/2`.
+
+The theta/theta bracket's canonical zero value still requires its
+spectral calculation. Bracket compatibility for `1 < p < 2` also
+remains unfinished; Corollary 13.2 is not complete.

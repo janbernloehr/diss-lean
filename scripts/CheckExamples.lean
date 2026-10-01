@@ -20073,3 +20073,84 @@ example (n k : ℤ) (a : Coeff (ENNReal.ofReal (3/2)))
     (by rw [ENNReal.one_lt_ofReal]; norm_num) n k a ch φ hφ
 
 end NLS.ZakharovShabat
+
+
+/- Jacobi, local canonical germs, and closed actual theta cotangents
+give actual theta/theta stationarity along every action direction. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+
+example (F G H : NLS.CoeffPair 3 → ℂ) (φ : NLS.CoeffPair 3)
+    (hF : AnalyticAt ℂ F φ) (hG : AnalyticAt ℂ G φ) (hH : AnalyticAt ℂ H φ) :
+    sourceBracket (by norm_num) (sourceBracket (by norm_num) F G) H φ+
+      sourceBracket (by norm_num) (sourceBracket (by norm_num) G H) F φ+
+      sourceBracket (by norm_num) (sourceBracket (by norm_num) H F) G φ = 0 :=
+  sourceBracket_jacobi (by norm_num) F G H φ hF hG hH
+
+namespace NLS.ZakharovShabat
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : CoeffPair 3) (hφ : φ ∈ W)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0) :
+    ∃ θ : CoeffPair 3 → ℂ, AnalyticAt ℂ θ φ ∧
+      sourceAngularThetaDifferential (by norm_num) (by norm_num) n s =ᶠ[𝓝 φ]
+        (fun ψ => fderiv ℂ θ ψ) :=
+  D.exists_local_thetaDifferential_fderiv n φ hφ hgap
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n k : ℤ) (φ : realTypeSourceLocus 3)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+      n s (sourceComplexAction (by norm_num) (by norm_num) k) =ᶠ[𝓝 φ.val]
+        (fun _ => if n = k then 1 else 0) ∧
+    fderiv ℂ (sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num)
+      n s (sourceComplexAction (by norm_num) (by norm_num) k)) φ.val = 0 :=
+  ⟨D.eventually_thetaAction_eq_kronecker (by norm_num) n k φ hgap,
+    D.fderiv_thetaAction_eq_zero (by norm_num) n k φ hgap⟩
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m k : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    (fderiv ℂ (sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s) φ.val)
+      (sourceHamiltonianVector (by norm_num) (sourceComplexAction (by norm_num) (by norm_num) k) φ.val) = 0 :=
+  D.fderiv_thetaTheta_action_eq_zero (by norm_num) n m k φ hn hm
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m k : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    sourceBracket (by norm_num)
+      (sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s)
+      (sourceComplexAction (by norm_num) (by norm_num) k) φ.val = 0 :=
+  D.sourceBracket_thetaTheta_action_eq_zero (by norm_num) n m k φ hn hm
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) j}
+    (D : SourceAngularThetaCommonDomainData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W₀ B W s)
+    (n : ℤ) (φ : CoeffPair (ENNReal.ofReal (3/2))) (hφ : φ ∈ W)
+    (hgap : canonicalPeriodicGap ENNReal.ofReal_ne_top (by rw [ENNReal.one_lt_ofReal]; norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0)
+    (v w : CoeffPair (ENNReal.ofReal (3/2))) :
+    (fderiv ℂ (sourceAngularThetaDifferential ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) n s) φ) v w =
+    (fderiv ℂ (sourceAngularThetaDifferential ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) n s) φ) w v :=
+  D.fderiv_thetaDifferential_symmetric n φ hφ hgap v w
+
+end NLS.ZakharovShabat

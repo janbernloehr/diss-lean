@@ -1,6 +1,21 @@
 # Implementation status
 
-## Current milestone: actual canonical angle-action brackets
+## Current milestone: Jacobi and actual angle-bracket action stationarity
+
+The actual source bracket now satisfies Jacobi for analytic functionals
+at exponents `p >= 2`. The proof differentiates its constant bivector
+and cancels the analytic Hessian terms using the actual Hamiltonian
+direction and Hessian symmetry. The actual theta cotangent has a
+constructed local analytic primitive, and its derivative is symmetric
+in the two source directions for every finite `p > 1`.
+
+The canonical theta/action relation now holds as a complex germ near
+every real open-angle-gap source. Its derivative is therefore zero.
+Jacobi proves that the actual theta/theta bracket is stationary along
+every actual action direction at every real source with both angle
+gaps open, for finite `p >= 2`, including collapsed action gaps. This
+stationarity does not yet determine the bracket's zero value; that
+spectral calculation and bracket compatibility for `1 < p < 2` remain.
 
 The actual angle-action identity `{theta_n,I_k} = delta_nk` is now proved
 at every real source for finite `p >= 2`, with only the selected angle gap
@@ -11801,3 +11816,38 @@ spectral contour-limit transport at `p = 3/2`. No absolute kernel-norm
 summability is asserted. The angle-angle identity and compatibility
 of brackets for `1 < p < 2` remain unfinished. Corollary 13.2 is not
 yet complete.
+
+## Latest milestone: Jacobi and actual theta/theta action stationarity
+
+`SourceBracketJacobi.lean` differentiates the literal source bivector
+pairing of two analytic functionals. The derivative is the difference
+of their Hessians applied to the actual Hamiltonian directions.
+Analytic Hessian symmetry cancels the six terms of the cyclic Jacobi
+identity. No Jacobi or finite-dimensional Poisson identity is assumed.
+
+`SourceAngularThetaLocalExactness.lean` constructs a local analytic
+primitive of the actual theta cotangent from the common-domain angular
+charts. Its Hessian proves that the derivative of that cotangent is
+symmetric in both directions, on the complex open-gap domain, for
+every finite `p > 1`.
+
+`SourceAngularThetaActionLocalCanonical.lean` extends the proved real
+Kronecker identity to a complex neighborhood of each real open-gap
+source. The actual analytic bracket and real-form identity principle
+give this equality as a germ, permitting differentiation of the actual
+canonical relation rather than merely its real pointwise values.
+
+`SourceAngularThetaThetaActionStationarity.lean` applies Jacobi to the
+constructed local angle primitives and each actual action. Both
+canonical mixed brackets have zero cotangent. The remaining cyclic
+term is therefore zero, and the local primitive identities identify
+it with the action-direction derivative of the actual theta/theta
+bracket. Thus that bracket, treated as a scalar functional, commutes
+with every actual action for finite `p >= 2`. Only the two selected
+angle gaps must be open; the action gap may be collapsed.
+
+API checks cover Jacobi at complex sources, local cotangent exactness,
+the complex canonical germ and its zero derivative, actual action
+stationarity at `p = 2` and `p = 3`, and cotangent closedness at
+`p = 3/2`. The theta/theta bracket's zero value and bracket compatibility
+for `1 < p < 2` remain unfinished. Corollary 13.2 is not complete.
