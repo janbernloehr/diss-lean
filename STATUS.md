@@ -1,6 +1,20 @@
 # Implementation status
 
-## Current milestone: Jacobi and actual angle-bracket action stationarity
+## Current milestone: the exact actual beta/discriminant bracket
+
+The actual full beta correction now has a proved discriminant bracket
+at every spectral parameter for finite `p >= 2`, including coincident
+Dirichlet roots and branch terminals. It equals minus half the actual
+psi numerator minus the omitted diagonal terminal contribution.
+Neither an open selected gap nor a supplied angular chart is required.
+At its own base-source Dirichlet root, the full beta-correction bracket
+is zero. The actual divided-difference kernel is entire and has value
+`-1/2` at its own root. The filled symmetric interpolation limit holds
+at every parameter for every finite `p > 1`.
+
+The diagonal eta/discriminant contribution remains before the full
+theta/discriminant identity. The theta/theta zero value and bracket
+compatibility for `1 < p < 2` also remain unfinished.
 
 The actual source bracket now satisfies Jacobi for analytic functionals
 at exponents `p >= 2`. The proof differentiates its constant bivector
@@ -11851,3 +11865,47 @@ the complex canonical germ and its zero derivative, actual action
 stationarity at `p = 2` and `p = 3`, and cotangent closedness at
 `p = 3/2`. The theta/theta bracket's zero value and bracket compatibility
 for `1 < p < 2` remain unfinished. Corollary 13.2 is not complete.
+
+
+## Latest milestone: the exact actual beta/discriminant bracket
+
+`SourceDirichletDiscriminantKernel.lean` fills the apparent root-motion
+pole using the actual Dirichlet characteristic's divided difference.
+Its kernel is entire in the discriminant spectral parameter and equals
+`-1/2` at its own real Dirichlet root. The actual moving root velocity
+is the terminal anti-discriminant times this kernel. The full moving
+terminal anti-discriminant velocity is `Delta(mu) Delta'(mu)` times
+the same kernel. Continuity fills the coincident-parameter identity;
+the actual cleared terminal flow supplies all other parameters.
+Every actual discriminant Hamiltonian direction is proved isospectral
+at every complex source for finite `p >= 2`.
+
+`SourceAngularTerminalIsospectralFlow.lean` derives the full omitted
+product and sheet equations in any actual isospectral direction with
+the stated root and moving anti-discriminant velocities, for finite
+`p > 1`. `SourceAngularBetaDiscriminantKernel.lean` uses these equations
+and the actual Cauchy primitive to compute each beta/discriminant
+kernel. No terminal square root is divided out. Actual local annuli
+are constructed at every real source, including collapsed gaps.
+The full beta correction bracket is the proved limit of these actual
+off-diagonal symmetric kernel sums.
+
+`SourcePsiDirichletDiscriminantInterpolation.lean` evaluates the full
+filled kernel sum as minus half the actual psi numerator. Away from
+characteristic zeros, this is the proved weighted interpolation limit.
+At a characteristic zero, only its own kernel survives, and sufficiently
+large finite cutoffs already have the exact limiting value. This
+statement holds for every finite `p > 1` at every spectral parameter.
+
+`SourceAngularBetaDiscriminantValue.lean` subtracts the omitted diagonal
+term and identifies the actual full beta-correction/discriminant
+bracket by uniqueness of limits. It vanishes at the correction's own
+base-source Dirichlet root. API checks cover actual discriminant
+isospectrality, the coincident branch-terminal flow, coincident beta
+kernels, the full correction formula and its own-root zero, and the
+filled interpolation limit at `p = 3/2`.
+
+The diagonal eta contribution still remains before the full
+theta/discriminant identity. The theta/theta zero value and bracket
+compatibility for `1 < p < 2` remain unfinished. Corollary 13.2 and
+the later chapters are not complete.

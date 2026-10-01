@@ -20154,3 +20154,81 @@ example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
   D.fderiv_thetaDifferential_symmetric n φ hφ hgap v w
 
 end NLS.ZakharovShabat
+
+
+/- The filled actual discriminant kernel and beta correction formula
+cover coincident parameters, branch terminals and collapsed gaps. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example (φ : CoeffPair 3) (w : ℂ) :
+    SourceIsospectralDirection (by norm_num) φ (sourceHamiltonianVector (by norm_num)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ) :=
+  sourceHamiltonianVector_discriminant_isospectral (by norm_num) (by norm_num) (by norm_num) φ w
+
+example (n : ℤ) (φ : realTypeSourceLocus 3)
+    (hterminal : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n φ.val = 0) :
+    sourceBracket (by norm_num) (fun ψ : CoeffPair 3 =>
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n)) φ.val = 0 ∧
+    sourceBracket (by norm_num) (sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n)) φ.val =
+      let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n;
+      -(canonicalDiscriminant (by norm_num) (periodOnePotential φ.val) μ*
+        deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ.val)) μ)/2 := by
+  constructor
+  · rw [sourceBracket_dirichletRoot_discriminant_eq_kernel (by norm_num) (by norm_num)
+      (by norm_num) n φ.val φ.property,hterminal,zero_mul]
+  · rw [sourceBracket_dirichletTerminalAnti_discriminant_eq_kernel (by norm_num) (by norm_num)
+      (by norm_num) n φ.val φ.property,
+      sourceDirichletDiscriminantKernel_at_root (by norm_num) (by norm_num) n φ.val φ.property]
+    ring
+
+example {W₀ : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (hs : SourcePsiIsolatingComplexExtension (by norm_num) (by norm_num) W₀ s)
+    (n m : ℤ) (hmn : m ≠ n) (φ : realTypeSourceLocus 3) :
+    sourceBracket (by norm_num) (sourceAngularBeta (by norm_num) (by norm_num) n m s)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val m)) φ.val =
+      -sourcePsiCandidate n
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val m,(s n φ.val : Coeff 3))/2 := by
+  rw [hs.sourceBracket_beta_discriminant_eq_kernel (by norm_num) n m hmn φ,
+    sourceDirichletDiscriminantKernel_at_root (by norm_num) (by norm_num) m φ.val φ.property]
+  ring
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 3) (w : ℂ) :
+    sourceBracket (by norm_num) (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s)
+      (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) w) φ.val =
+      -sourcePsiCandidate n (w,(s n φ.val : Coeff 3))/2-
+        sourcePsiCandidate n (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n,
+          (s n φ.val : Coeff 3))*sourceDirichletDiscriminantKernel (by norm_num) (by norm_num) n φ.val w :=
+  D.sourceBracket_betaCorrection_discriminant_eq (by norm_num) n φ w
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 2) :
+    sourceBracket (by norm_num) (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s)
+      (fun ψ : CoeffPair 2 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n)) φ.val = 0 :=
+  D.sourceBracket_betaCorrection_discriminant_at_root_eq_zero (by norm_num) n φ
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example (n : ℤ) (a : Coeff (ENNReal.ofReal (3/2)))
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (w : ℂ) :
+    Tendsto (fun N : ℕ => ∑ m ∈ Finset.Icc (-(N : ℤ)) N,
+      let hp1 : 1 < ENNReal.ofReal (3/2) := by rw [ENNReal.one_lt_ofReal]; norm_num
+      sourcePsiCandidate n (canonicalPeriodOneBoundaryRoots ENNReal.ofReal_ne_top hp1 .dirichlet φ.val m,a)*
+        sourceDirichletDiscriminantKernel ENNReal.ofReal_ne_top hp1 m φ.val w) atTop
+      (𝓝 (-sourcePsiCandidate n (w,a)/2)) :=
+  tendsto_sourcePsiDirichlet_discriminantKernelSums ENNReal.ofReal_ne_top
+    (by rw [ENNReal.one_lt_ofReal]; norm_num) n a φ w
+
+end NLS.ZakharovShabat

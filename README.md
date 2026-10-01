@@ -5996,3 +5996,35 @@ and cotangent closedness at `p = 3/2`.
 The theta/theta bracket's canonical zero value still requires its
 spectral calculation. Bracket compatibility for `1 < p < 2` also
 remains unfinished; Corollary 13.2 is not complete.
+
+
+### Corollary 13.2: the exact actual beta/discriminant bracket
+
+`SourceDirichletDiscriminantKernel.lean` uses a divided difference to
+fill the apparent pole in the actual root-motion kernel. It is entire
+and has value `-1/2` at its own real Dirichlet root. The actual moving
+root and full terminal anti-discriminant share this kernel, including
+coincident parameters and periodic terminals. Actual discriminant
+Hamiltonian directions are isospectral at every complex source.
+
+`SourceAngularTerminalIsospectralFlow.lean` supplies the general
+terminal sheet equations in any isospectral direction with the stated
+actual root and anti-discriminant velocities.
+`SourceAngularBetaDiscriminantKernel.lean` applies them to every
+off-diagonal beta, without dividing by the terminal square root.
+The public actual beta/discriminant formula constructs its angular
+chart and includes collapsed gaps at every real source for finite
+`p >= 2`. The full correction is the limit of these actual kernels.
+
+`SourcePsiDirichletDiscriminantInterpolation.lean` evaluates the full
+symmetric filled kernel sum as `-psi_n(w)/2`, for every parameter and
+every finite `p > 1`. At a Dirichlet zero, only its own kernel survives.
+`SourceAngularBetaDiscriminantValue.lean` subtracts the omitted
+diagonal to prove the exact full beta-correction/discriminant bracket
+for finite `p >= 2`. At its own base-source Dirichlet root, that
+bracket is zero. API checks cover coincidence, branch terminals,
+the full correction formula, and filled interpolation at `p = 3/2`.
+
+The diagonal eta contribution remains before the full theta/discriminant
+identity. The theta/theta zero value and bracket compatibility for
+`1 < p < 2` also remain unfinished.
