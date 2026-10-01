@@ -20960,4 +20960,90 @@ example {W₀ B W : Set (CoeffPair 2)}
     sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val :=
   D.thetaTheta_sourceDirichletSpectralFlow k n m φ t hn hm
 
+-- The real analysis lemma uses an actual derivative and a bound on the
+-- original curve, with no sign assumption on the proposed limit.
+example (f g : ℝ → ℝ) (hf : ∀ t, HasDerivAt f (g t) t)
+    (M : ℝ) (hbound : ∀ t, ‖f t‖ ≤ M) (L : ℝ)
+    (hlim : Tendsto g atTop (𝓝 L)) : L = 0 :=
+  NLS.FunctionalAnalysis.derivative_limit_eq_zero_of_bounded f g hf M hbound L hlim
+
+-- Every open real gap has noncritical endpoints at a non-Hilbert exponent,
+-- including central indices; simplicity is proved rather than assumed.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType φ) (k : ℤ)
+    (hopen : (canonicalPeriodicLeft (by simp) (by norm_num) φ heven k).re <
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven k).re) :
+    deriv (canonicalDiscriminant (by simp) φ)
+      (canonicalPeriodicLeft (by simp) (by norm_num) φ heven k) ≠ 0 ∧
+    deriv (canonicalDiscriminant (by simp) φ)
+      (canonicalPeriodicRight (by simp) (by norm_num) φ heven k) ≠ 0 :=
+  deriv_discriminant_ne_zero_at_open_gap_endpoints (by simp) (by norm_num) φ heven hreal k hopen
+
+example (k : ℤ) (φ : realTypeSourceLocus 2) (t : ℝ) :
+    let μ := fun τ => canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet
+      (sourceDirichletSpectralGlobalCurve k φ τ) k;
+    let S := fun τ => sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet k
+      (sourceDirichletSpectralGlobalCurve k φ τ);
+    let Δ := canonicalDiscriminant (by simp) (periodOnePotential φ.val);
+    (HasDerivAt μ (-S t/2) t ∧ HasDerivAt S (-Δ (μ t)*deriv Δ (μ t)/2) t) ∧
+    (μ t,S t) ∈ sourceDirichletSpectralSheet (by simp) (by norm_num) k φ.val :=
+  ⟨hasDerivAt_dirichletTerminal_sourceDirichletSpectralGlobalCurve k φ t,
+    dirichletTerminal_mem_sourceDirichletSpectralGlobalCurve_fixedSheet k φ t⟩
+
+-- A collapsed selected gap is already periodic at every real time,
+-- with the root fixed at its original endpoint.
+example (k : ℤ) (φ : realTypeSourceLocus 2) (t : ℝ)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) k = 0) :
+    sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet k
+      (sourceDirichletSpectralFlow k φ t).val = 0 ∧
+    canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet
+      (sourceDirichletSpectralFlow k φ t).val k =
+      canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) k := by
+  let ψ := sourceDirichletSpectralFlow k φ t
+  have hψgap : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) k = 0 :=
+    (canonicalPeriodicGap_sourceDirichletSpectralFlow k k φ t).trans hgap
+  constructor
+  · exact sourceAntiDiscriminant_at_canonicalBoundaryRoot_eq_zero_of_collapsed_gap
+      (by simp) (by norm_num) .dirichlet ψ.val ψ.property k hψgap
+  · have hend := canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap (by simp) (by norm_num)
+      .dirichlet ψ.val ψ.property k (sub_eq_zero.mp hψgap).symm
+    exact hend.trans (canonicalPeriodicEndpoints_sourceDirichletSpectralGlobalCurve k k φ t).1
+
+-- The periodic-terminal time and source are constructed. Every other
+-- terminal, the original norm, all discriminants and the full actual
+-- angle/angle bracket are retained. Only the two angle gaps start open.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s)
+    (k n m : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    ∃ ψ : realTypeSourceLocus 2,
+      sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet k ψ.val = 0 ∧
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ.val k =
+        canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) k ∨
+      canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ.val k =
+        canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) k) ∧
+      (∀ j : ℤ, j ≠ k →
+        canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ.val j =
+          canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ.val j ∧
+        sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j ψ.val =
+          sourceBoundaryTerminalAntiDiscriminant (by simp) (by norm_num) .dirichlet j φ.val) ∧
+      ‖ψ.val‖ = ‖φ.val‖ ∧
+      (∀ w : ℂ, canonicalDiscriminant (by simp) (periodOnePotential ψ.val) w =
+        canonicalDiscriminant (by simp) (periodOnePotential φ.val) w) ∧
+      sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s ψ.val =
+        sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val := by
+  obtain ⟨t,ht,hend⟩ := exists_sourceDirichletSpectralFlow_periodicTerminal k φ
+  refine ⟨sourceDirichletSpectralFlow k φ t,ht,hend,?_,
+    (sourceDirichletSpectralFlow_conserved k φ t).1,
+    (sourceDirichletSpectralFlow_conserved k φ t).2,
+    D.thetaTheta_sourceDirichletSpectralFlow k n m φ t hn hm⟩
+  intro j hj
+  exact other_dirichletTerminals_sourceDirichletSpectralGlobalCurve k j hj φ t
+
 end NLS.ZakharovShabat

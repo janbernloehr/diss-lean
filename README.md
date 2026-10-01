@@ -6400,3 +6400,56 @@ Periodic-terminal reachability and transport to the proved zero
 basepoints remain before the general theta/theta zero identity.
 Bracket compatibility for `1 < p < 2` and later chapters also remain
 unfinished; Corollary 13.2 is not complete.
+
+## Latest milestone: actual periodic-terminal reachability
+
+`BoundedDerivativeLimit.lean` proves that any finite limiting derivative
+of a bounded real differentiable curve is zero. A nonzero limit gives
+an eventual positive slope bound, and the mean value theorem forces
+growth exceeding the original bound. Negating the curve handles a
+negative limit.
+
+`RealSheetEndpoint.lean` proves that a complete bounded real trajectory
+with `x' = v`, `v' = F(x)` and `v^2 = G(x)` reaches zero velocity whenever
+`F` is nonzero at every sheet zero in its interval. If velocity never
+vanished, continuity would fix its sign. Bounded monotone position
+would converge, and the sheet identity would give a velocity limit.
+The derivative-limit theorem forces that limit to be zero and also
+forces the limiting acceleration to be zero, contradicting the sheet
+zero condition. The proof does not assume a reachable endpoint.
+
+`RealOpenGapEndpointSimple.lean` derives nonzero actual discriminant
+derivatives at both endpoints of every open real periodic gap for all
+finite `p > 1`, including central indices. The unique critical point is
+strictly inside that gap, so an endpoint cannot be critical. No endpoint
+simplicity premise is supplied by the caller.
+
+`SourceDirichletSpectralGlobalSheet.lean` exports the actual all-time
+terminal equations and fixed initial compact sheet of the complete
+Hilbert source curve. Every periodic endpoint and every other indexed
+Dirichlet root and full terminal anti-discriminant is fixed for all real
+times, including at collapsed gaps and periodic terminals.
+
+`SourceDirichletSpectralReachability.lean` applies the bounded-sheet
+theorem to the actual global source flow. The real selected Dirichlet
+coordinate has velocity minus half the terminal anti-discriminant.
+Its reality also proves reality of that terminal value directly from
+the actual ODE. The spectral identity gives the scalar sheet equation;
+the actual gap characterization identifies its zeros with the original
+two endpoints. At either open-gap endpoint the acceleration is nonzero.
+The constructed flow therefore reaches one of its original periodic
+endpoints at some finite real time, with zero full terminal
+anti-discriminant. Collapsed gaps are handled at time zero. The public
+theorem includes every real Hilbert source without open-gap, positive
+norm, trajectory, or reachability assumptions.
+
+API checks cover endpoint derivative nonvanishing at `p = 3`, the
+actual global fixed-sheet equations, unchanged other terminals, and
+a constructed periodic-terminal source preserving the original norm,
+every discriminant value, and the full angle/angle bracket. Only the
+two angle gaps must initially be open for the bracket transport check;
+the selected flow gap may collapse.
+Finite compositions of these actual moves, transport to the all-terminal
+zero basepoints, and density remain before the general theta/theta
+zero identity. Bracket compatibility for `1 < p < 2` and later chapters
+also remain unfinished; Corollary 13.2 is not complete.
