@@ -6103,3 +6103,43 @@ source-variation and real-cotangent APIs without a `p >= 2` premise.
 The theta/theta bracket's zero value still needs a basepoint calculation
 and isospectral transport; bracket compatibility for `1 < p < 2` also
 remains unfinished. Corollary 13.2 and the later chapters are not complete.
+
+
+### Corollary 13.2: actual theta/theta zero at periodic-terminal basepoints
+
+`SourceBoundaryEndpointCotangents.lean` differentiates the actual
+moving spectral-curve identity at a zero of the terminal
+anti-discriminant. The full moving terminal discriminant cotangent is
+zero there, and the anti-discriminant cotangent is twice the signed
+moving Floquet cotangent. The proved Floquet involution consequently
+gives terminal anti-discriminant involution within either boundary
+family, including collapsed gaps. This reduction holds for every
+finite `p > 1`; the actual source brackets use `p >= 2`.
+
+`SourceAngularEndpointCauchyCotangent.lean` differentiates the actual
+beta and eta remainder product formulas. At a periodic terminal the
+anti-discriminant factor is zero, so the full cotangent is a scalar
+multiple of its derivative. Both source and spectral terminal arguments
+move. `SourceAngularEtaEndpointCotangent.lean` differentiates the
+constructed terminal sine equation, whose cosine is nonzero at the
+endpoint, and adds the Cauchy remainder. The single actual eta cotangent
+has the same terminal-span reduction. Neither reduction assumes an
+isospectral direction or divides by the zero terminal value.
+
+`SourceAngularThetaThetaEndpoint.lean` constructs the beta charts from
+the actual normalized psi extension and the eta charts from the common
+angle data. Every term of each finite symmetric angle cotangent sum
+lies in a commuting terminal span. The already proved operator-norm
+convergence of these sums then gives `{theta_n,theta_m} = 0` whenever
+all actual Dirichlet terminals are periodic, for finite `p >= 2` with
+both selected angle gaps open. The theorem permits either own endpoint
+in every gap, and all other gaps may be collapsed. It requires no
+supplied angular chart, finite-gap condition, or convergence estimate.
+
+API checks cover the actual full zero value at `p = 2` and `p = 3`,
+the all-left-endpoint condition, both boundary families' terminal
+involution, and the full endpoint cotangent reduction at `p = 3/2`.
+The general theta/theta zero identity still requires isospectral
+transport from these basepoints; bracket compatibility for `1 < p < 2`
+also remains unfinished. Corollary 13.2 and the later chapters are not
+complete.

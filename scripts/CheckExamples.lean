@@ -20420,3 +20420,87 @@ example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (ρ : ℤ → ℂ)
     (by rw [ENNReal.one_lt_ofReal]; norm_num) φ ρ hρlp hρ n m a h b v hn hm hzero
 
 end NLS.ZakharovShabat
+
+
+/- The actual full theta/theta bracket is zero at periodic-terminal
+basepoints, using constructed charts and the proved cotangent series. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {W₀ B W : Set (CoeffPair 2)} {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0)
+    (hterminal : ∀ j : ℤ,
+      sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet j φ.val = 0) :
+    sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s φ.val = 0 :=
+  D.thetaThetaBracket_eq_zero_of_all_terminals_periodic (by norm_num) n m φ hn hm hterminal
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0)
+    (hleft : ∀ j : ℤ, canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val j =
+      canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) j) :
+    sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s φ.val = 0 :=
+  D.thetaThetaBracket_eq_zero_of_all_dirichlet_endpoints (by norm_num) n m φ hn hm
+    (fun j => Or.inl (hleft j))
+
+example (b : BoundaryCondition) (n m : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n φ.val = 0)
+    (hm : sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b m φ.val = 0) :
+    sourceBracket (by norm_num) (sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b n)
+      (sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) b m) φ.val = 0 :=
+  sourceBracket_boundaryTerminalAntiDiscriminants_eq_zero_of_eq_zero (by norm_num) (by norm_num)
+    (by norm_num) b n m φ hn hm
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) :=
+  ⟨by rw [ENNReal.one_le_ofReal]; norm_num⟩
+
+example (b : BoundaryCondition) (n : ℤ) (φ : realTypeSourceLocus (ENNReal.ofReal (3/2)))
+    (hzero : sourceBoundaryTerminalAntiDiscriminant ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ.val = 0) :
+    fderiv ℂ (sourceBoundaryTerminalDiscriminant ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) b n) φ.val = 0 ∧
+    fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) b n) φ.val =
+      (2*BoundaryCondition.extensionSign b) • fderiv ℂ (sourceBoundaryFloquetMultiplier ENNReal.ofReal_ne_top
+        (by rw [ENNReal.one_lt_ofReal]; norm_num) b n) φ.val :=
+  ⟨fderiv_sourceBoundaryTerminalDiscriminant_eq_zero_of_anti_eq_zero ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ hzero,
+    fderiv_sourceBoundaryTerminalAntiDiscriminant_eq_floquet_of_eq_zero ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) b n φ hzero⟩
+
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (j : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) j}
+    (D : SourceAngularThetaCommonDomainData ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus (ENNReal.ofReal (3/2)))
+    (hzero : sourceBoundaryTerminalAntiDiscriminant ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet m φ.val = 0) :
+    ∃ a : ℂ, fderiv ℂ (fun ψ => sourceAngularBetaSeriesTerm ENNReal.ofReal_ne_top
+      (by rw [ENNReal.one_lt_ofReal]; norm_num) n s ψ m) φ.val =
+      a • fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant ENNReal.ofReal_ne_top
+        (by rw [ENNReal.one_lt_ofReal]; norm_num) .dirichlet m) φ.val :=
+  D.exists_fderiv_betaSeriesTerm_eq_anti_smul_of_eq_zero n m φ hzero
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {n : ℤ}
+    {s : (j : ℤ) → CoeffPair p → DeletedCoeff p j}
+    {W V U : Set (CoeffPair p)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R ρ : ℝ} {z₀ : ℂ} {δ ε : CoeffPair p → ℂ}
+    (C : SourceAngularEtaAnalyticChartData hp hp1 n s W V U c T r R z₀ ρ δ ε)
+    (φ : realTypeSourceLocus p) (hφ : φ.val ∈ U)
+    (hzero : sourceBoundaryTerminalAntiDiscriminant hp hp1 .dirichlet n φ.val = 0) :
+    ∃ a : ℂ, sourceAngularEtaDifferential hp hp1 n s φ.val =
+      a • fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant hp hp1 .dirichlet n) φ.val :=
+  C.exists_etaDifferential_eq_anti_smul_of_eq_zero φ hφ hzero
+
+end NLS.ZakharovShabat

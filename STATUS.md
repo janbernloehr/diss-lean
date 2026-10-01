@@ -1,24 +1,31 @@
 # Implementation status
 
-## Current milestone: actual theta/theta discriminant stationarity
+## Current milestone: actual theta/theta zero at periodic-terminal basepoints
 
-The actual theta/theta bracket now commutes with every actual
-discriminant, at every real source for finite `p >= 2` with both selected
-angle gaps open. Its Hamiltonian direction is therefore isospectral.
-The theorem constructs the full gap-zero sequence and proves the
-required quotient decay; neither is a hypothesis of the final result.
-Every spectral parameter is included, and all other gaps may be collapsed.
+The full actual theta/theta bracket is now zero at every real source
+whose Dirichlet terminals are all periodic, for finite `p >= 2` with
+both selected angle gaps open. Either endpoint may be chosen in each
+gap, including the all-left-endpoint basepoint. All other gaps may be
+collapsed. The public theorem constructs its charts and passes through
+the full proved beta cotangent series; no chart, finite-gap, or
+convergence hypothesis is supplied.
 
-Jacobi expresses the entire spectral variation as a difference of
-actual normalized psi source variations. Real cotangents make it real
-on the real axis, and the already proved action stationarity gives
-zero weighted periods. The open-gap mean-value argument and the
-collapsed-gap Cauchy formula supply a zero in every gap. Interpolation
-with the full simple-zero product then forces the variation to vanish.
+At a periodic terminal, the full moving discriminant cotangent is zero
+and the anti-discriminant cotangent is twice the signed moving Floquet
+cotangent. Floquet involution gives terminal cotangent commutation.
+Each actual beta cotangent and each selected eta cotangent reduces to
+a scalar multiple of its moving terminal anti-discriminant cotangent.
+The finite angle cotangent sums therefore commute, and their proved
+operator-norm limits give the full actual zero value.
 
-The theta/theta bracket's zero value still needs a basepoint calculation
-and isospectral transport. Bracket compatibility for `1 < p < 2` also
-remains unfinished. Corollary 13.2 and the later chapters are not complete.
+The actual theta/theta bracket also commutes with every discriminant,
+at every real source for finite `p >= 2` with both selected angle gaps
+open. The full gap-zero sequence and quotient decay are derived in
+that proof, and its Hamiltonian direction is isospectral.
+
+The general theta/theta zero identity still needs isospectral transport
+from these basepoints. Bracket compatibility for `1 < p < 2` also remains
+unfinished. Corollary 13.2 and the later chapters are not complete.
 
 The full actual angle cotangent now satisfies `{Delta(w),theta_n} =
 psi_n(w)/2` at every real source for finite `p >= 2`, with only the
@@ -12022,3 +12029,43 @@ source-variation and real-cotangent APIs without a `p >= 2` premise.
 The theta/theta bracket's zero value still needs a basepoint calculation
 and isospectral transport; bracket compatibility for `1 < p < 2` also
 remains unfinished. Corollary 13.2 and the later chapters are not complete.
+
+
+## Latest milestone: actual theta/theta zero at periodic-terminal basepoints
+
+`SourceBoundaryEndpointCotangents.lean` differentiates the actual
+moving spectral-curve identity at a zero of the terminal
+anti-discriminant. The full moving terminal discriminant cotangent is
+zero there, and the anti-discriminant cotangent is twice the signed
+moving Floquet cotangent. The proved Floquet involution consequently
+gives terminal anti-discriminant involution within either boundary
+family, including collapsed gaps. This reduction holds for every
+finite `p > 1`; the actual source brackets use `p >= 2`.
+
+`SourceAngularEndpointCauchyCotangent.lean` differentiates the actual
+beta and eta remainder product formulas. At a periodic terminal the
+anti-discriminant factor is zero, so the full cotangent is a scalar
+multiple of its derivative. Both source and spectral terminal arguments
+move. `SourceAngularEtaEndpointCotangent.lean` differentiates the
+constructed terminal sine equation, whose cosine is nonzero at the
+endpoint, and adds the Cauchy remainder. The single actual eta cotangent
+has the same terminal-span reduction. Neither reduction assumes an
+isospectral direction or divides by the zero terminal value.
+
+`SourceAngularThetaThetaEndpoint.lean` constructs the beta charts from
+the actual normalized psi extension and the eta charts from the common
+angle data. Every term of each finite symmetric angle cotangent sum
+lies in a commuting terminal span. The already proved operator-norm
+convergence of these sums then gives `{theta_n,theta_m} = 0` whenever
+all actual Dirichlet terminals are periodic, for finite `p >= 2` with
+both selected angle gaps open. The theorem permits either own endpoint
+in every gap, and all other gaps may be collapsed. It requires no
+supplied angular chart, finite-gap condition, or convergence estimate.
+
+API checks cover the actual full zero value at `p = 2` and `p = 3`,
+the all-left-endpoint condition, both boundary families' terminal
+involution, and the full endpoint cotangent reduction at `p = 3/2`.
+The general theta/theta zero identity still requires isospectral
+transport from these basepoints; bracket compatibility for `1 < p < 2`
+also remains unfinished. Corollary 13.2 and the later chapters are not
+complete.
