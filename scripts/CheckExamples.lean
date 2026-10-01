@@ -20504,3 +20504,92 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {n : �
   C.exists_etaDifferential_eq_anti_smul_of_eq_zero φ hφ hzero
 
 end NLS.ZakharovShabat
+
+
+/- Actual indexed spectral fields have constructed local real curves
+preserving the discriminant and the full angle/angle bracket. -/
+noncomputable section
+open Set Metric Complex Filter Topology NLS.Poisson
+open scoped ENNReal
+namespace NLS.ZakharovShabat
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : realTypeSourceSubmodule p) :
+    sourceRealTypeProjection hp (φ : CoeffPair p) = φ :=
+  sourceRealTypeProjection_subtype hp φ
+
+example (n m : ℤ) (hmn : m ≠ n) (φ : realTypeSourceLocus 2) :
+    (fderiv ℂ (fun ψ : CoeffPair 2 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ m) φ.val)
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) n φ.val) = 0 ∧
+    (fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet m) φ.val)
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) n φ.val) = 0 := by
+  constructor
+  · simpa only [if_neg hmn] using fderiv_dirichletRoot_sourceDirichletSpectralVector
+      (by norm_num) (by norm_num) (by norm_num) n m φ
+  · simpa only [if_neg hmn] using fderiv_dirichletTerminalAnti_sourceDirichletSpectralVector
+      (by norm_num) (by norm_num) (by norm_num) n m φ
+
+example (n : ℤ) (φ : realTypeSourceLocus 3) :
+    (fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n) φ.val)
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) n φ.val) =
+      -sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n φ.val/2 ∧
+    (fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant (by norm_num) (by norm_num) .dirichlet n) φ.val)
+      (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) n φ.val) =
+      let μ := canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ.val n;
+      -canonicalDiscriminant (by norm_num) (periodOnePotential φ.val) μ*
+        deriv (canonicalDiscriminant (by norm_num) (periodOnePotential φ.val)) μ/2 := by
+  constructor
+  · simpa using fderiv_dirichletRoot_sourceDirichletSpectralVector
+      (by norm_num) (by norm_num) (by norm_num) n n φ
+  · simpa using fderiv_dirichletTerminalAnti_sourceDirichletSpectralVector
+      (by norm_num) (by norm_num) (by norm_num) n n φ
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) n φ.val ≠ 0 :=
+  D.sourceDirichletSpectralVector_ne_zero_of_open_gap (by norm_num) n φ hn
+
+example (n : ℤ) (φ : realTypeSourceLocus 2) :
+    ∃ γ : ℝ → CoeffPair 2, γ 0 = φ.val ∧
+      (∀ t : ℝ, IsRealType (CoeffPair.toMax 2 (γ t))) ∧
+      ∃ ε : ℝ, 0 < ε ∧
+        (∀ t ∈ Ioo (-ε) ε, HasDerivAt γ
+          (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) n (γ t)) t) ∧
+        ∀ t ∈ Ioo (-ε) ε, ∀ w : ℂ,
+          canonicalDiscriminant (by norm_num) (periodOnePotential (γ t)) w =
+            canonicalDiscriminant (by norm_num) (periodOnePotential φ.val) w :=
+  exists_sourceDirichletSpectral_isospectral_integralCurve (by norm_num) (by norm_num) (by norm_num) n φ
+
+example {W₀ B W : Set (CoeffPair 3)} {s : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (k n m : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    ∃ γ : ℝ → CoeffPair 3, γ 0 = φ.val ∧
+      (∀ t : ℝ, IsRealType (CoeffPair.toMax 3 (γ t))) ∧
+      ∃ ε : ℝ, 0 < ε ∧
+        (∀ t ∈ Ioo (-ε) ε, HasDerivAt γ
+          (sourceDirichletSpectralVector (by norm_num) (by norm_num) (by norm_num) k (γ t)) t) ∧
+        (∀ t ∈ Ioo (-ε) ε,
+          canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential (γ t)) (periodOnePotential_mem (γ t)) n ≠ 0 ∧
+          canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential (γ t)) (periodOnePotential_mem (γ t)) m ≠ 0) ∧
+        (∀ t ∈ Ioo (-ε) ε, ∀ w : ℂ,
+          canonicalDiscriminant (by norm_num) (periodOnePotential (γ t)) w =
+            canonicalDiscriminant (by norm_num) (periodOnePotential φ.val) w) ∧
+        ∀ t ∈ Ioo (-ε) ε,
+          sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s (γ t) =
+            sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s φ.val :=
+  D.exists_sourceDirichletSpectral_integralCurve_thetaTheta_stationary (by norm_num) k n m φ hn hm
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ : Set (CoeffPair p)} {s : (j : ℤ) → CoeffPair p → DeletedCoeff p j}
+    (hs : SourcePsiIsolatingComplexExtension hp hp1 W₀ s) (n : ℤ) (φ : realTypeSourceLocus p) :
+    sourcePsiCandidate n (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ.val n,
+      (s n φ.val : Coeff p)) ≠ 0 :=
+  hs.numerator_at_own_dirichletRoot_ne_zero n φ
+
+end NLS.ZakharovShabat

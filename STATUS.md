@@ -1,30 +1,34 @@
 # Implementation status
 
-## Current milestone: actual theta/theta zero at periodic-terminal basepoints
+## Current milestone: constructed local real isospectral angle transport
 
-The full actual theta/theta bracket is now zero at every real source
-whose Dirichlet terminals are all periodic, for finite `p >= 2` with
-both selected angle gaps open. Either endpoint may be chosen in each
-gap, including the all-left-endpoint basepoint. All other gaps may be
-collapsed. The public theorem constructs its charts and passes through
-the full proved beta cotangent series; no chart, finite-gap, or
-convergence hypothesis is supplied.
+The actual indexed Dirichlet spectral fields now have constructed local
+real flows and integral curves through every real source for finite
+`p >= 2`. Picard-Lindelof applies to the complete closed real-type source
+Banach space. Embedding its curves back into the actual coefficient
+space preserves the vector-field derivative, and every actual
+discriminant is constant throughout the open time interval.
 
-At a periodic terminal, the full moving discriminant cotangent is zero
-and the anti-discriminant cotangent is twice the signed moving Floquet
-cotangent. Floquet involution gives terminal cotangent commutation.
-Each actual beta cotangent and each selected eta cotangent reduces to
-a scalar multiple of its moving terminal anti-discriminant cotangent.
-The finite angle cotangent sums therefore commute, and their proved
-operator-norm limits give the full actual zero value.
+The field evaluates the fixed-parameter discriminant cotangent at its
+own moving Dirichlet root. Only that indexed root and terminal
+anti-discriminant move: their velocities are minus half the terminal
+anti-discriminant and minus half `Delta(mu) Delta'(mu)`, respectively.
+All other indexed terminal velocities are zero. The fields preserve
+reality and are analytic near every real source. Their actual
+normalized numerator is nonzero at the own terminal; an open selected
+gap consequently makes the corresponding field nonzero.
 
-The actual theta/theta bracket also commutes with every discriminant,
-at every real source for finite `p >= 2` with both selected angle gaps
-open. The full gap-zero sequence and quotient decay are derived in
-that proof, and its Hamiltonian direction is isospectral.
+The full actual theta/theta bracket is constant along these real
+integral curves whenever both selected angle gaps stay open. Through
+every such source, the public theorem constructs a curve and shrinks
+its time interval into the actual common angle domain, preserving
+both the bracket and every discriminant.
 
-The general theta/theta zero identity still needs isospectral transport
-from these basepoints. Bracket compatibility for `1 < p < 2` also remains
+The zero value is already proved at every real source whose Dirichlet
+terminals are all periodic endpoints, including the all-left-endpoint
+basepoint, for finite `p >= 2` with both selected gaps open. The general
+zero identity still needs global continuation and transport reaching
+those basepoints. Bracket compatibility for `1 < p < 2` also remains
 unfinished. Corollary 13.2 and the later chapters are not complete.
 
 The full actual angle cotangent now satisfies `{Delta(w),theta_n} =
@@ -12067,5 +12071,50 @@ the all-left-endpoint condition, both boundary families' terminal
 involution, and the full endpoint cotangent reduction at `p = 3/2`.
 The general theta/theta zero identity still requires isospectral
 transport from these basepoints; bracket compatibility for `1 < p < 2`
+also remains unfinished. Corollary 13.2 and the later chapters are not
+complete.
+
+
+## Latest milestone: constructed local real isospectral angle transport
+
+`SourceRealTypeProjection.lean` turns the previously proved real-part
+operation into a bounded real linear projection onto the complete closed
+real-type source subspace. It fixes the original source values on that
+subspace.
+
+`SourceDirichletSpectralVectorField.lean` evaluates the actual
+fixed-parameter discriminant cotangent at the actual moving indexed
+Dirichlet root, then applies the actual source Poisson operator.
+The resulting field is isospectral at every complex source, analytic
+near every real source, and real on the real source form. The filled
+kernel proves that only its own Dirichlet terminal data move. Its root
+velocity is `-anti(mu)/2` and its full terminal anti-discriminant velocity
+is `-Delta(mu) Delta'(mu)/2`, including periodic terminals. The normalized
+actual psi numerator never vanishes at its own Dirichlet terminal, so
+the indexed field is nonzero when its selected angle gap is open.
+Every actual angle cotangent has its proved normalized numerator
+velocity, and the actual theta/theta bracket has zero derivative along
+every indexed field.
+
+`SourceDirichletSpectralLocalFlow.lean` applies Picard-Lindelof to the
+actual continuously differentiable field on the real source Banach
+space. It constructs a local flow for nearby initial sources, and an
+actual real integral curve through every real source for finite
+`p >= 2`. The embedded curve solves the actual coefficient-space ODE
+and preserves every discriminant at every spectral parameter on its
+open time interval.
+
+`SourceAngularThetaThetaLocalTransport.lean` proves that the actual
+theta/theta bracket is constant along real integral curves with the
+two selected gaps open. Its public existence theorem constructs such
+a curve through every real open-gap source and a time interval within
+the actual common angle domain. Both the full bracket and every
+discriminant are preserved.
+
+API checks cover the real-space projection, the actual field velocities,
+nonvanishing on an open gap, constructed local curves at `p = 2`,
+and constructed angle/angle transport at `p = 3`. Global continuation
+and transport reaching periodic-terminal basepoints remain before the
+general theta/theta zero identity. Bracket compatibility for `1 < p < 2`
 also remains unfinished. Corollary 13.2 and the later chapters are not
 complete.

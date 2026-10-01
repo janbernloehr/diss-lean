@@ -6143,3 +6143,48 @@ The general theta/theta zero identity still requires isospectral
 transport from these basepoints; bracket compatibility for `1 < p < 2`
 also remains unfinished. Corollary 13.2 and the later chapters are not
 complete.
+
+
+### Corollary 13.2: constructed local real isospectral angle transport
+
+`SourceRealTypeProjection.lean` turns the previously proved real-part
+operation into a bounded real linear projection onto the complete closed
+real-type source subspace. It fixes the original source values on that
+subspace.
+
+`SourceDirichletSpectralVectorField.lean` evaluates the actual
+fixed-parameter discriminant cotangent at the actual moving indexed
+Dirichlet root, then applies the actual source Poisson operator.
+The resulting field is isospectral at every complex source, analytic
+near every real source, and real on the real source form. The filled
+kernel proves that only its own Dirichlet terminal data move. Its root
+velocity is `-anti(mu)/2` and its full terminal anti-discriminant velocity
+is `-Delta(mu) Delta'(mu)/2`, including periodic terminals. The normalized
+actual psi numerator never vanishes at its own Dirichlet terminal, so
+the indexed field is nonzero when its selected angle gap is open.
+Every actual angle cotangent has its proved normalized numerator
+velocity, and the actual theta/theta bracket has zero derivative along
+every indexed field.
+
+`SourceDirichletSpectralLocalFlow.lean` applies Picard-Lindelof to the
+actual continuously differentiable field on the real source Banach
+space. It constructs a local flow for nearby initial sources, and an
+actual real integral curve through every real source for finite
+`p >= 2`. The embedded curve solves the actual coefficient-space ODE
+and preserves every discriminant at every spectral parameter on its
+open time interval.
+
+`SourceAngularThetaThetaLocalTransport.lean` proves that the actual
+theta/theta bracket is constant along real integral curves with the
+two selected gaps open. Its public existence theorem constructs such
+a curve through every real open-gap source and a time interval within
+the actual common angle domain. Both the full bracket and every
+discriminant are preserved.
+
+API checks cover the real-space projection, the actual field velocities,
+nonvanishing on an open gap, constructed local curves at `p = 2`,
+and constructed angle/angle transport at `p = 3`. Global continuation
+and transport reaching periodic-terminal basepoints remain before the
+general theta/theta zero identity. Bracket compatibility for `1 < p < 2`
+also remains unfinished. Corollary 13.2 and the later chapters are not
+complete.
