@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: fixed-ball derivative estimates for the actual closing map
+## Current milestone: the adapted source map and its uniform analytic inverses
+
+The original source space now has an actual adapted spectral map. It
+equals the identity plus the moving-center remainder, after isometric
+period doubling, unit weighting, and reflection of the first output
+component. Its low Fourier block retains the original coefficients.
+Its high first coefficient at `n` is the negative closing equation at
+resonance `−n`; its high second coefficient is the positive equation
+at resonance `n`. Both source transport and output reflection preserve
+the component-sum norm exactly.
+
+On a fixed source ball the map is analytic, differs from the identity
+by at most `K r²`, and has derivative arbitrarily close to the identity.
+Its derivative is Lipschitz with constant `4K`. All actual remainder
+coefficients and their sequence membership are retained. These estimates
+hold uniformly for every larger cutoff at every finite `p > 1`.
+
+The small derivative difference now constructs derivative inverses by
+the Neumann criterion, with inverse norm at most two. One positive
+source radius and cutoff give analytic inverse branches for every
+larger cutoff on common quantitative image and source balls. Each
+branch fixes the original source at its image, is unique on the stated
+source ball, and moves the source by at most twice the target displacement.
+
+The inverse source solves the actual high spectral equations with the
+specified target coefficients. Zero high target coordinates therefore
+close the original period-one periodic spectrum in that strip to the
+actual center, with determinant order exactly two. This conclusion
+uses the original periodic operator and the constructed centers.
+
+Constructing truncated targets in these common image balls and
+preserving the real-type locus remain before finite-gap density.
+General angle/angle involution, bracket compatibility for `1 < p < 2`,
+and later chapters remain unfinished; Corollary 13.2 is not complete.
+
+Public-API checks cover exact isometric transport and the original operator,
+the low/high frequency formulas and derivative bound at `p = 3`, the
+actual analytic inverse and original-spectrum closing conclusion at
+`p = 2`, and analytic right inversion with uniqueness at `p = 3/2`.
+
+## Previous milestone: fixed-ball derivative estimates for the actual closing map
 
 At every source, a positive fixed radius now makes the actual sequence
 remainder derivative arbitrarily small, uniformly for every larger

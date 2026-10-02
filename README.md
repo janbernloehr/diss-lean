@@ -6611,3 +6611,51 @@ API checks cover the fixed-ball squared tail budget at `p = 3`, an
 actual Hilbert remainder contraction on a closed ball, the full closing
 derivative's `1/4` approximation and Lipschitz bound at `p = 3`, and
 arbitrary derivative tolerance on a fixed ball at `p = 3/2`.
+
+## Latest milestone: the adapted source map and its uniform analytic inverses
+
+`SourceWeightedPeriodOne.lean` embeds the original source pair into the
+unit-weighted physical pair by an exact isometry. The original periodic
+operator receives precisely `periodOnePotential`. A second isometry
+reflects only the first output component, restoring the original index
+of the negative leading coefficient.
+
+`SourceAdaptedClosingMap.lean` adds the transported actual remainder to
+the identity. The low Fourier block keeps the original coefficients;
+the high first component at `n` is the negative equation at resonance
+`−n`, and the second is the positive equation at resonance `n`.
+`SourceAdaptedClosingMapDerivative.lean` transfers the quadratic remainder
+bound, analyticity, arbitrarily small derivative difference from the
+identity, and derivative Lipschitz bound to the original source norm.
+One fixed ball works for every larger cutoff at every finite `p > 1`.
+
+`NearIdentityAnalyticInverse.lean` constructs the required derivative
+equivalences from the Neumann criterion and bounds their inverses by
+two. The quantitative analytic inverse theorem then supplies actual
+analytic inverse branches on common positive balls. A lower distance
+bound shows that inverse displacement is at most twice target displacement.
+
+`SourceResonantCenterClosing.lean` transports the common closing
+neighborhood to the original period-one source, preserving the actual
+original periodic operator and exact determinant order.
+
+`SourceAdaptedClosingInverse.lean` applies this to the actual adapted
+source map. One source radius and cutoff work for every larger cutoff,
+with image and source radii expressed by the earlier quantitative
+inverse formulas. Each branch fixes the original source at its image
+and is unique in the stated source ball. Its high target coordinates
+are exactly the actual moving-center spectral equations at the recovered
+source. Zero high target coordinates imply a singleton original periodic
+spectrum in that strip and determinant order exactly two there.
+
+Constructing truncated targets inside the common image balls and
+preserving the real-type locus remain before finite-gap density.
+General angle/angle involution, bracket compatibility below two, and
+later chapters remain unfinished; Corollary 13.2 is not complete.
+
+Public-API examples verify the exact source norm, even physical coefficients,
+and original operator identity at `p = 3`; unchanged low coefficients,
+the derivative's `1/4` proximity, and the signed high equations on the
+constructed source ball; the actual Hilbert analytic inverse and its
+original-spectrum closing implication; and analytic right inversion with
+uniqueness at `p = 3/2`.

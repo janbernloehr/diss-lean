@@ -347,6 +347,11 @@ import NLS.ZakharovShabat.WeightedResonantCenterClosingTail
 import NLS.ZakharovShabat.PowerTailBallBudget
 import NLS.ZakharovShabat.WeightedResonantCenterRemainderDerivative
 import NLS.ZakharovShabat.WeightedResonantCenterClosingTailDerivative
+import NLS.ZakharovShabat.SourceWeightedPeriodOne
+import NLS.ZakharovShabat.SourceAdaptedClosingMap
+import NLS.ZakharovShabat.SourceAdaptedClosingMapDerivative
+import NLS.ZakharovShabat.SourceResonantCenterClosing
+import NLS.ZakharovShabat.SourceAdaptedClosingInverse
 import NLS.ZakharovShabat.SingleResonantPotential
 import NLS.ZakharovShabat.RootDisplacementSourceAudit
 import NLS.ZakharovShabat.RootDisplacementPower
@@ -1166,6 +1171,7 @@ import NLS.ZakharovShabat.SourcePsiUniformEquationTube
 import NLS.ZakharovShabat.SourcePsiUniformEquationEstimates
 import NLS.ComplexAnalysis.QuantitativeTriangularDerivative
 import NLS.ComplexAnalysis.QuantitativeAnalyticInverse
+import NLS.ComplexAnalysis.NearIdentityAnalyticInverse
 import NLS.ComplexAnalysis.ConvexRealAnalyticIdentity
 import NLS.ZakharovShabat.SourcePsiUniformComplexBranches
 import NLS.ZakharovShabat.SourcePsiUniformComplexBranchRealAgreement

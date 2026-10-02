@@ -21331,4 +21331,100 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight (ENNReal.ofReal 
     (by norm_num) (by norm_num) w φ η hη
   exact ⟨r,hr,N₀,hN₀,fun N hN => ⟨(hC N hN).1,(hC N hN).2.2.1⟩⟩
 
+-- The original source norm is preserved, and the physical operator
+-- receives exactly the original period-one potential.
+example (φ : CoeffPair 3) (n : ℤ) :
+    ‖sourceWeightedPeriodOne φ‖ = ‖φ‖ ∧
+    (sourceWeightedPeriodOne φ).fst.val (2*n) = φ.fst n ∧
+    (sourceWeightedPeriodOne φ).snd.val (2*n) = φ.snd n ∧
+    weightedBaseToPair SpectralWeight.one (sourceWeightedPeriodOne φ) = periodOnePotential φ := by
+  exact ⟨norm_sourceWeightedPeriodOne φ,sourceWeightedPeriodOne_fst_even φ n,
+    sourceWeightedPeriodOne_snd_even φ n,weightedBaseToPair_sourceWeightedPeriodOne φ⟩
+
+-- The source map keeps the original low Fourier coefficients and
+-- is uniformly close to the identity in full derivative norm.
+example (φ : CoeffPair 3) :
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      AnalyticOnNhd ℂ (fun ψ => sourceAdaptedClosingMap (by simp) ψ N) (Metric.ball φ (4*r)) ∧
+      (∀ ψ ∈ Metric.ball φ (4*r), ∀ n : ℤ, n.natAbs < N →
+        (sourceAdaptedClosingMap (by simp) ψ N).fst n = ψ.fst n ∧
+        (sourceAdaptedClosingMap (by simp) ψ N).snd n = ψ.snd n) ∧
+      ∀ ψ ∈ Metric.ball φ (3*r),
+        ‖fderiv ℂ (fun χ => sourceAdaptedClosingMap (by simp) χ N) ψ-
+          ContinuousLinearMap.id ℂ (CoeffPair 3)‖ < 1/4 := by
+  obtain ⟨r,hr,N₀,hN₀,hF⟩ := exists_fixedBall_sourceAdaptedClosingMap_derivative
+    (by simp) (by norm_num) φ (1/4) (by norm_num)
+  refine ⟨r,hr,N₀,hN₀,?_⟩
+  intro N hN
+  have h := hF N hN
+  refine ⟨h.1,?_,h.2.2.1⟩
+  intro ψ hψ n hn
+  have hc := sourceAdaptedClosingMap_apply_of_mem (by simp) ψ N (h.2.1 ψ hψ).1 n
+  exact ⟨by simpa [not_le.mpr hn] using hc.1,by simpa [not_le.mpr hn] using hc.2⟩
+
+-- The negative high equation is at resonance -n, and the positive
+-- one is at n; membership is constructed on the actual source ball.
+example (φ : CoeffPair 3) :
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      ∀ ψ ∈ Metric.ball φ (4*r), ∀ n : ℤ, N ≤ n.natAbs →
+        (sourceAdaptedClosingMap (by simp) ψ N).fst n =
+          weightedResonantBMinusExtension (by simp) SpectralWeight.one (sourceWeightedPeriodOne ψ) (-n)
+            (weightedResonantDiagonalCenter (by simp) SpectralWeight.one (sourceWeightedPeriodOne ψ) (-n)) ∧
+        (sourceAdaptedClosingMap (by simp) ψ N).snd n =
+          weightedResonantBPlusExtension (by simp) SpectralWeight.one (sourceWeightedPeriodOne ψ) n
+            (weightedResonantDiagonalCenter (by simp) SpectralWeight.one (sourceWeightedPeriodOne ψ) n) := by
+  obtain ⟨r,hr,N₀,hN₀,hF⟩ := exists_fixedBall_sourceAdaptedClosingMap_derivative
+    (by simp) (by norm_num) φ 1 (by norm_num)
+  refine ⟨r,hr,N₀,hN₀,?_⟩
+  intro N hN ψ hψ n hn
+  have hc := sourceAdaptedClosingMap_apply_of_mem (by simp) ψ N ((hF N hN).2.1 ψ hψ).1 n
+  simpa only [if_pos hn] using hc
+
+-- The inverse branch is constructed with common quantitative radii.
+-- Zero high target coordinates close the original periodic spectrum
+-- at the recovered source, with exact determinant order two.
+example (φ : CoeffPair 2) :
+    let K := resonantCenterRemainderBallConstant 2 (‖φ‖+1);
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      ∃ g : CoeffPair 2 → CoeffPair 2,
+        AnalyticOnNhd ℂ g (Metric.ball (sourceAdaptedClosingMap (by simp) φ N)
+          (NLS.ComplexAnalysis.quantitativeInverseImageRadius r 2 (4*K))) ∧
+        g (sourceAdaptedClosingMap (by simp) φ N) = φ ∧
+        ∀ y ∈ Metric.ball (sourceAdaptedClosingMap (by simp) φ N)
+            (NLS.ComplexAnalysis.quantitativeInverseImageRadius r 2 (4*K)),
+          ‖g y-φ‖ ≤ 2*‖y-sourceAdaptedClosingMap (by simp) φ N‖ ∧
+          ∀ n : ℤ, N ≤ n.natAbs → y.fst (-n) = 0 → y.snd n = 0 →
+            (∀ z ∈ resonantStrip n, z ∈ periodicSpectrum (by simp) (periodOnePotential (g y)) ↔
+              z = weightedResonantDiagonalCenter (by simp) SpectralWeight.one (sourceWeightedPeriodOne (g y)) n) ∧
+            ∀ z ∈ resonantStrip n,
+              analyticOrderNatAt (resonantDeterminantExtension (by simp) SpectralWeight.one
+                (sourceWeightedPeriodOne (g y)) n) z =
+                  if z = weightedResonantDiagonalCenter (by simp) SpectralWeight.one (sourceWeightedPeriodOne (g y)) n
+                    then 2 else 0 := by
+  obtain ⟨r,hr,N₀,hN₀,hG⟩ := exists_uniform_sourceAdaptedClosingInverse (by simp) (by norm_num) φ
+  refine ⟨r,hr,N₀,hN₀,?_⟩
+  intro N hN
+  obtain ⟨g,hg,hga,hdata⟩ := hG N hN
+  exact ⟨g,hg,hga,fun y hy => ⟨(hdata y hy).2.2.1,
+    fun n hn => ((hdata y hy).2.2.2.2 n hn).2⟩⟩
+
+-- Analytic right inversion and uniqueness hold below the Hilbert
+-- exponent too, on the same source and image balls for all large N.
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) :
+    let K := resonantCenterRemainderBallConstant (ENNReal.ofReal (3/2 : ℝ)) (‖φ‖+1);
+    ∃ r : ℝ, 0 < r ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      ∃ g : CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)),
+        AnalyticOnNhd ℂ g (Metric.ball (sourceAdaptedClosingMap (by norm_num) φ N)
+          (NLS.ComplexAnalysis.quantitativeInverseImageRadius r 2 (4*K))) ∧
+        ∀ y ∈ Metric.ball (sourceAdaptedClosingMap (by norm_num) φ N)
+            (NLS.ComplexAnalysis.quantitativeInverseImageRadius r 2 (4*K)),
+          sourceAdaptedClosingMap (by norm_num) (g y) N = y ∧
+          ∀ x ∈ Metric.ball φ (NLS.ComplexAnalysis.quantitativeInverseJointRadius r 2 (4*K)),
+            sourceAdaptedClosingMap (by norm_num) x N = y → x = g y := by
+  obtain ⟨r,hr,N₀,hN₀,hG⟩ := exists_uniform_sourceAdaptedClosingInverse (by norm_num) (by norm_num) φ
+  refine ⟨r,hr,N₀,hN₀,?_⟩
+  intro N hN
+  obtain ⟨g,hg,_,hdata⟩ := hG N hN
+  exact ⟨g,hg,fun y hy => ⟨(hdata y hy).2.1,(hdata y hy).2.2.2.1⟩⟩
+
 end NLS.ZakharovShabat
