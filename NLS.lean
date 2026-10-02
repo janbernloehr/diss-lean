@@ -1890,3 +1890,8 @@ import NLS.ZakharovShabat.ClassicalRemainderDerivativeBound
 import NLS.Fourier.SobolevUnitCurve
 import NLS.ZakharovShabat.ClassicalSobolevPotential
 import NLS.ZakharovShabat.ClassicalSobolevRemainderBound
+
+import NLS.Fourier.UnitIntervalEnergyBound
+import NLS.ZakharovShabat.ClassicalRemainderTimeRegularity
+import NLS.ZakharovShabat.ClassicalSobolevRemainderTimeBounds
+import NLS.ZakharovShabat.ClassicalSobolevRemainderSequenceBounds

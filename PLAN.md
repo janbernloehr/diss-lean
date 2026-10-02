@@ -1,23 +1,22 @@
 # Implementation plan
 
-## Latest progress: Appendix G bounds uniform on Sobolev balls
+## Latest progress: the L² and H¹ endpoints of Appendix G.3
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
 finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. The actual fundamental-solution remainder and its
-time derivative now have `O(1/|z|)` and `O(1)` bounds, respectively,
-uniformly on physical period-two `H¹` coefficient balls and horizontal
-spectral strips. Fourier synthesis supplies the absolute continuity,
-actual derivative integrability, and explicit variation-budget bound;
-no extra regularity premise is assumed for these potentials.
+`H¹`) are complete. The actual remainder now has a Fourier `ℓ²` norm
+bound `O(1/|n|)` and a classical `H¹[0,1]` time norm bound `O(1)` along
+sequences `νₙ=nπ+O(1)`. The constants and cutoff are uniform on physical
+period-two `H¹` coefficient balls and under a common displacement bound.
+Actual unit-interval coefficients are used; no endpoint matching or
+additional derivative regularity is assumed.
 
-Next establish time-norm bounds and Fourier–Lebesgue interpolation in
-G.3, then the gradient estimates G.4–G.7 and their connection to the
-finite-gap sources in Lemma 16.1. The sharper integral estimate in G.1,
-remaining Appendix G estimates, Lemma 16.1, remaining assertions of
-Theorem 14.1, and later chapters are unfinished. The present constants
-follow the project's weighted Fourier normalization rather than the
-exact numerical constants printed in G.2.
+Next prove the Fourier–Lebesgue endpoint estimate and interpolation
+for general `q>1` in G.3, then the shifted-free comparison and gradient
+estimates G.4–G.7 and their connection to finite-gap sources in Lemma
+16.1. The sharper integral estimate in G.1, remaining Appendix G
+estimates, Lemma 16.1, remaining assertions of Theorem 14.1, and later
+chapters are unfinished.
 
 ## Milestones
 

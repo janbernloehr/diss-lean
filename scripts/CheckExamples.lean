@@ -22629,4 +22629,42 @@ example (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ 1)
 
 end AppendixGSobolevBounds
 
+section AppendixGTimeNorms
+open Set Complex MeasureTheory NLS.Fourier
+
+-- Unit-interval normalization preserves the constant Fourier coefficient.
+example (c : ℂ) : unitIntervalL2Coefficients (fun _ => c) continuous_const 0 = c := by
+  simp [intervalFourierCoefficient,wave]
+
+-- Parseval applies to a function whose two endpoint values do not match.
+example : ‖unitIntervalL2Coefficients (fun t : ℝ => (t : ℂ)) Complex.continuous_ofReal‖ ≤ 1 := by
+  apply norm_unitIntervalL2Coefficients_le _ _ 1 (by norm_num)
+  intro t ht
+  simpa only [Complex.norm_real,Real.norm_eq_abs,abs_of_nonneg ht.1] using ht.2
+
+-- A matrix entry has the actual H¹ time norm bound, not just an assumed derivative estimate.
+example (M H : ℝ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ H) (hz1 : 1 ≤ ‖z‖) :
+    Real.sqrt (intervalH1Energy
+      (fun t => (classicalSolutionRemainder (classicalSobolevPotential a) z (0,1) t).2) 0 1) ≤
+      classicalSobolevErrorConstant M H+classicalSobolevDerivativeConstant M H := by
+  simpa using sqrt_intervalH1Energy_classicalSobolevRemainder_le M H a ha z hz hH (0,1)
+    (ContinuousLinearMap.snd ℝ ℂ ℂ) (ContinuousLinearMap.norm_snd_le ..) hz1
+
+-- A complex shifted free lattice is covered by a single cutoff for the whole potential ball.
+example (M : ℝ) : ∃ N : ℕ, 0 < N ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ, N ≤ n.natAbs →
+      ‖classicalSobolevRemainderL2Coefficients a ((Real.pi : ℂ)*(n : ℂ)+Complex.I) (1,0)
+        (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤
+        (2*classicalSobolevErrorConstant M 1/Real.pi)/(n.natAbs : ℝ) := by
+  obtain ⟨N,hN,h⟩ := exists_classicalSobolevRemainder_sequence_time_bounds M 1 (by norm_num) 0
+  refine ⟨N,hN,fun a ha n hn => ?_⟩
+  have hν : ∀ n : ℤ, 0 ≤ n.natAbs → ‖((Real.pi : ℂ)*(n : ℂ)+Complex.I)-(Real.pi : ℂ)*(n : ℂ)‖ ≤ (1 : ℝ) := by
+    intro n _
+    simp
+  simpa using (h (fun n => (Real.pi : ℂ)*(n : ℂ)+Complex.I) hν a ha (1,0)
+    (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..) n hn).1
+
+end AppendixGTimeNorms
+
 end NLS.ZakharovShabat

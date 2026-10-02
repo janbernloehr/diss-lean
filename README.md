@@ -7601,3 +7601,41 @@ of G.3 and connect the resulting gradient estimates to finite-gap sources.
 The sharper integral estimate in G.1, the remaining G.3–G.7 estimates,
 Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters
 remain unfinished.
+
+## Appendix G.3 time norms along near-free spectral sequences
+
+The two time-norm bounds used before interpolation in Appendix G.3
+are now proved for the actual remainder. For physical period-two `H¹`
+coefficient potentials, `‖a‖ ≤ M`, and spectral sequences satisfying
+`‖νₙ − nπ‖ ≤ B` outside an initial finite set, one positive cutoff gives
+
+`‖Fourier₍[0,1]₎(L R(νₙ)v)‖ℓ² ≤ (2 C(M,B) ‖v‖ / π) / |n|`,
+
+`‖L R(νₙ)v‖H¹[0,1] ≤ (C(M,B) + D(M,B)) ‖v‖`,
+
+where `C(M,B) = (4+π) M exp(4M+B)` and
+`D(M,B) = (8+π) M exp(4M+B)`. Here `L` is any contractive
+real-linear scalar observation of a column. Coordinate projections
+therefore give all fundamental matrix entries. The cutoff is uniform
+over the potential ball and every sequence with the given displacement
+bound. The Fourier norm is the norm of the whole actual coefficient
+sequence, with unit-interval frequencies `2πn` and no endpoint-matching
+assumption. The physical `L²` square energy also has an explicit
+inverse-frequency-squared bound.
+
+`UnitIntervalEnergyBound.lean` proves the physical square-energy and
+classical `H¹` bounds and applies Parseval after interval dilation.
+`ClassicalRemainderTimeRegularity.lean` proves continuous time
+differentiability and differentiation of bounded linear observations.
+`ClassicalSobolevRemainderTimeBounds.lean` constructs the coefficient
+sequences and bounds their norms. `ClassicalSobolevRemainderSequenceBounds.lean`
+turns bounded displacement from `nπ` into a common strip, frequency
+lower bound, and sequence cutoff.
+
+Public checks cover the constant Fourier coefficient, Parseval for
+nonmatching endpoints, the `H¹` norm of a matrix entry, and inverse-index
+decay along the complex shifted lattice `nπ+i`. Next prove the
+Fourier–Lebesgue endpoint bound and interpolation for general `q>1`,
+then the shifted-free and gradient estimates in G.3–G.7. Those steps,
+the sharper integral estimate in G.1, Lemma 16.1, remaining assertions
+of Theorem 14.1, and later chapters remain unfinished.
