@@ -21606,4 +21606,57 @@ example (L M : CoeffPair 3 →L[ℂ] ℂ) :
         NLS.Poisson.sourceBivector (by norm_num) L M := rfl
 end RegularDiscriminantsBelowTwo
 
+
+section RegularActionsBelowTwo
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Actual derivatives are regular and commute below two, without
+-- supplying a chart, finite-gap condition, or open action gaps.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n m : ℤ) :
+    let L := sourceActionRegularCotangent (by norm_num) (by norm_num) n φ
+    let M := sourceActionRegularCotangent (by norm_num) (by norm_num) m φ
+    L.toCotangent = fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) n) φ.val ∧
+    M.toCotangent = fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) m) φ.val ∧
+    L.bivector M = 0 := by
+  exact ⟨sourceActionRegularCotangent_toCotangent _ _ _ _,
+    sourceActionRegularCotangent_toCotangent _ _ _ _,
+    sourceActionRegularCotangent_bivector_eq_zero (by norm_num) (by norm_num) n m φ⟩
+
+-- The literal Fourier pairing is absolutely convergent and zero.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n m : ℤ) :
+    let L := fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) n) φ.val
+    let M := fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) m) φ.val
+    let K := fun k : ℤ =>
+      L (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1)) -
+      L (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1))
+    Summable (fun k => ‖K k‖) ∧ -Complex.I * (∑' k, K k) = 0 := by
+  exact ⟨sourceAction_pairing_summable_norm (by norm_num) (by norm_num) n m φ,
+    sourceAction_fourier_bracket_eq_zero (by norm_num) (by norm_num) n m φ⟩
+end RegularActionsBelowTwo
+
+-- Above two the new pairing agrees with the established bracket.
+section RegularActionsAboveTwo
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+example (φ : realTypeSourceLocus 3) (n m : ℤ) :
+    (sourceActionRegularCotangent (by norm_num) (by norm_num) n φ).bivector
+      (sourceActionRegularCotangent (by norm_num) (by norm_num) m φ) =
+      NLS.Poisson.sourceBracket (by norm_num)
+        (sourceComplexAction (by norm_num) (by norm_num) n)
+        (sourceComplexAction (by norm_num) (by norm_num) m) φ.val :=
+  sourceActionRegularCotangent_bivector_eq_sourceBracket
+    (by norm_num) (by norm_num) (by norm_num) n m φ
+end RegularActionsAboveTwo
+
+-- Different admissible charts give the same coefficient pair.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (φ : realTypeSourceLocus p)
+    (c d : SourceRealActionBallChart hp hp1 n)
+    (hc : φ.val ∈ Metric.ball c.center c.radius) (hd : φ.val ∈ Metric.ball d.center d.radius) :
+    (sourceActionRegularCotangentOnChart hp hp1 n c φ.val hc).coefficients =
+      (sourceActionRegularCotangentOnChart hp hp1 n d φ.val hd).coefficients :=
+  (sourceActionRegularCotangent_coefficients_eq_on_chart hp hp1 n φ c hc).symm.trans
+    (sourceActionRegularCotangent_coefficients_eq_on_chart hp hp1 n φ d hd)
+
 end NLS.ZakharovShabat

@@ -6755,3 +6755,33 @@ below two. Regularity and the canonical identities for the actual
 action and angle cotangents below two are still pending, as is
 angle/angle involution above two. Corollary 13.2 is complete at `p = 2`
 only; its full exponent range and later chapters remain unfinished.
+
+## Latest milestone: action commutation for every finite exponent
+
+The action/action identity in Corollary 13.2 now holds for the full
+range `1 < p < ∞`. `SourceActionRegularCotangent.lean` constructs
+square-summable coefficient pairs for the actual indexed action
+Fréchet derivatives at every real source. No finite-gap or open-gap
+hypothesis is required, so collapsed action gaps are included.
+
+The construction integrates the discriminant variation divided by the
+canonical root around an existing action chart's isolating circle.
+Both the original source cotangent and its Hilbert coefficient pair
+are integrable. `RegularSourceCotangentIntegral.lean` proves that
+integrating them preserves their coordinate identities and commutes
+with the physical bilinear pairing. Any admissible chart produces the
+same coefficient pair because its underlying cotangent is the actual
+action derivative.
+
+`SourceActionRegularPoisson.lean` applies discriminant commutation to
+the resulting double contour integral. It proves vanishing of the
+regular action bracket and of the literal Fourier formula, with
+absolute convergence in the original derivatives. At exponents at
+least two, this pairing agrees with the existing source bracket.
+Public examples check these conclusions at `p = 3/2`, agreement with
+the old bracket at `p = 3`, and independence of the chosen chart.
+
+The action/action part of Corollary 13.2 is now complete for all finite
+`p > 1`. The angle/action identity below two and angle/angle identity
+away from two remain unfinished, along with later chapters. All three
+canonical relations are currently complete together only at `p = 2`.
