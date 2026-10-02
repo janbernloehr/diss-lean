@@ -84,7 +84,17 @@ axioms. Main-result completion also requires an audit of transitive axioms.
 Dependencies and source-page references should be recorded as each theorem is
 introduced. Definition-only stubs do not count as proved results.
 
-## Immediate next proof targets
+## Current next proof target
+
+Corollary 13.2 is now proved throughout `1 < p < ∞`, including absolute
+convergence of the actual Fourier brackets below two. Continue with
+Chapter 3, Sections 14–15: construct rectangular Birkhoff coordinates
+and prove their analytic extension across collapsed gaps, then assemble
+the sequence-valued map and the remaining assertions of Theorem 14.1.
+See `STATUS.md` for the current theorem coverage; the entries below
+record the historical sequence of proof targets.
+
+## Earlier proof targets
 
 The Fourier-side convolution multiplication estimate
 `FL^p × FL^{1,p} → FL^p` is now proved for every finite `p≥1`, with a constant

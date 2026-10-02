@@ -6892,7 +6892,7 @@ identity away from two remain unfinished. Corollary 13.2 is complete in all
 three relations together only at `p = 2`; its action/action identity is
 complete for every finite `p > 1`. Later chapters remain unfinished.
 
-## Latest milestone: full angle phase and differential compatibility across exponents
+## Previous milestone: full angle phase and differential compatibility across exponents
 
 The actual eta phase, full theta phase, and full logarithmic angle
 differential now agree under coefficient-preserving source inclusion
@@ -6930,3 +6930,44 @@ relations. The angle/action identity below two and angle/angle identity
 away from two remain unfinished. Corollary 13.2 is complete in all
 three relations together only at `p = 2`; its action/action identity is
 complete for every finite `p > 1`. Later chapters remain unfinished.
+
+## Latest milestone: Corollary 13.2 for every finite exponent above one
+
+Corollary 13.2 (printed page 72) is now proved for every finite `p > 1`:
+actual actions commute; actual angles commute where both selected gaps
+are open; and the angle/action bracket is the Kronecker delta wherever
+the angle's own gap is open. The action gap need not be open.
+
+`SourceAngularThetaRegularCotangent.lean` constructs square-summable
+Fourier coefficients for the full actual angle differential. Below two,
+this uses the proved restriction of a constructed Hilbert angle; above
+two, continuity suffices. Coefficient uniqueness makes the choice
+irrelevant and proves exponent compatibility of the entire pair.
+
+`SourceAngularThetaThetaExponent.lean` transfers Hilbert angle commutation
+to finite Fourier sources above two, then uses real Fourier truncation
+and continuity on the joint open-gap domain. Below two, the actual
+regular cotangents restrict from Hilbert space. This argument keeps
+finite Fourier support distinct from the spectral finite-gap locus.
+
+`SourceActionExponentDifferential.lean` compares real actions using one
+common small midpoint circle, then proves equality of the complex germs,
+full derivatives, and regular coefficient pairs under exponent inclusion.
+`SourceCorollary13_2Regular.lean` uses this with the angle compatibility
+to prove the remaining mixed relation below two and assembles all three
+canonical relations for one actually constructed common-domain family.
+
+`SourceAngularRegularFourier.lean` gives the literal Fourier angle/angle
+and angle/action sums, with frequency reversal and the physical sign
+`-i`. Their absolute convergence is proved for all finite `p > 1`.
+Together with the previously proved action/action sum, these identify
+the regular pairings with the original derivative formulas. On `p ≥ 2`
+they agree with the existing source brackets.
+
+Public examples verify angle commutation at `p = 3`, action coefficient
+compatibility across two, and the full three-relation package and
+absolutely convergent literal angle brackets at `p = 3/2`.
+
+The next dissertation step is Chapter 3: rectangular Birkhoff coordinates
+and their analytic extension through collapsed gaps (Sections 14–15),
+leading to Theorem 14.1. Later chapters remain unfinished.

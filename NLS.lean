@@ -1796,3 +1796,9 @@ import NLS.ZakharovShabat.SourceAngularBetaExponentDifferential
 import NLS.ZakharovShabat.SourceAngularEtaRemainderExponent
 import NLS.ZakharovShabat.SourceAngularEtaPhaseExponent
 import NLS.ZakharovShabat.SourceAngularThetaExponent
+
+import NLS.ZakharovShabat.SourceAngularThetaRegularCotangent
+import NLS.ZakharovShabat.SourceAngularThetaThetaExponent
+import NLS.ZakharovShabat.SourceActionExponentDifferential
+import NLS.ZakharovShabat.SourceCorollary13_2Regular
+import NLS.ZakharovShabat.SourceAngularRegularFourier

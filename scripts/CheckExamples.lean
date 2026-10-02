@@ -21865,4 +21865,79 @@ example : sourceAngularThetaDifferential (by norm_num) (by norm_num) n s φ.val 
   D.thetaDifferential_exponent E (by norm_num) n φ hgap
 end ThetaExponentCompatibility
 
+section Corollary13_2AllExponents
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Actual angle/angle commutation above the Hilbert exponent.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 3) (n m : ℤ)
+    (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    sourceAngularThetaThetaBracket (by norm_num) (by norm_num) (by norm_num) n m s φ.val = 0 :=
+  D.thetaThetaBracket_eq_zero_of_two_le (by norm_num) n m φ hn hm
+
+-- Moving action derivatives also preserve the complete Hilbert
+-- coefficient pair across two, without any open-gap assumption.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n : ℤ) :
+    (sourceActionRegularCotangent (by norm_num) (by norm_num) n φ).coefficients =
+      (sourceActionRegularCotangent (p := 3) (by norm_num) (by norm_num) n
+        (realTypeSourceExponentInclusion (by norm_num) φ)).coefficients :=
+  sourceActionRegularCotangent_coefficients_exponent (by norm_num) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num) n φ
+
+variable {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))}
+  {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n}
+  (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+  (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n m : ℤ)
+  (hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+    (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+  (hm : canonicalPeriodicGap (by norm_num) (by norm_num)
+    (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0)
+
+-- Square summability below two is proved for the actual angle cotangent.
+example : (D.thetaRegularCotangent n φ hn).toCotangent =
+    sourceAngularThetaDifferential (by norm_num) (by norm_num) n s φ.val :=
+  D.thetaRegularCotangent_toCotangent n φ hn
+
+-- All three canonical relations use the same constructed family.
+example :
+    (sourceActionRegularCotangent (by norm_num) (by norm_num) n φ).bivector
+      (sourceActionRegularCotangent (by norm_num) (by norm_num) m φ) = 0 ∧
+    (D.thetaRegularCotangent n φ hn).bivector (D.thetaRegularCotangent m φ hm) = 0 ∧
+    (D.thetaRegularCotangent n φ hn).bivector
+      (sourceActionRegularCotangent (by norm_num) (by norm_num) m φ) = if n = m then 1 else 0 := by
+  obtain ⟨haa,htt,hta⟩ := D.corollary13_2_regular n m φ
+  exact ⟨haa,htt hn hm,hta hn⟩
+
+-- The original Fourier angle/action pairing converges absolutely
+-- and has the Kronecker value; the action gap need not be open.
+example :
+    let L := sourceAngularThetaDifferential (by norm_num) (by norm_num) n s φ.val
+    let M := fderiv ℂ (sourceComplexAction (by norm_num) (by norm_num) m) φ.val
+    let K := fun k : ℤ =>
+      L (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1)) -
+      L (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1))
+    Summable (fun k => ‖K k‖) ∧ -Complex.I * (∑' k, K k) = if n = m then 1 else 0 :=
+  ⟨D.thetaAction_pairing_summable_norm n m φ hn,D.thetaAction_fourier_bracket_eq_kronecker n m φ hn⟩
+
+-- The literal angle/angle Fourier sum likewise converges absolutely and vanishes.
+example :
+    let L := sourceAngularThetaDifferential (by norm_num) (by norm_num) n s φ.val
+    let M := sourceAngularThetaDifferential (by norm_num) (by norm_num) m s φ.val
+    let K := fun k : ℤ =>
+      L (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1)) -
+      L (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1))
+    Summable (fun k => ‖K k‖) ∧ -Complex.I * (∑' k, K k) = 0 :=
+  ⟨D.thetaTheta_pairing_summable_norm n m φ hn hm,D.thetaTheta_fourier_bracket_eq_zero n m φ hn hm⟩
+end Corollary13_2AllExponents
+
 end NLS.ZakharovShabat
