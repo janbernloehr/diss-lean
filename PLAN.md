@@ -1,19 +1,20 @@
 # Implementation plan
 
-## Latest progress: closed-gap rectangular brackets for exponents at least two
+## Latest progress: Theorem 15.2 and Lemma 15.3 complete
 
-Theorem 15.2 is complete. All three rectangular Poisson identities now
-hold at every real source for finite `p ≥ 2`, including closed gaps,
-for the family of the action-angle theorem. The proof establishes
-scalar analyticity for that same family and extends by continuity from
-the dense open locus with the selected gaps open. Density of sources
-opening any prescribed finite set of gaps is proved for every finite
-`p > 1`, using the nontrivial actual Floquet opening function.
+The actual real analytic Birkhoff map now has all three canonical
+Poisson identities at every real source and every finite `1 < p < ∞`,
+including closed gaps. The proof compares rectangular values, complex
+germs, and full derivatives across exponents and normalized root
+families. Restricting Hilbert regular cotangents supplies the extra
+Fourier regularity below two. The final result concerns derivatives of
+the exact sequence-map coordinates, with the absolutely convergent
+mixed Fourier bracket and the physical negative sign.
 
-Next establish closed-gap regular Fourier cotangents and canonical
-brackets for `1 < p < 2`, and identify the identities for the sequence
-map's normalized root family. Lemma 15.3, the remaining conclusions of
-Theorem 14.1, and later chapters remain unfinished.
+Next work through Section 16: identify the Jacobian at zero with the
+specified Fourier transform and establish the finite-gap gradient
+estimates of Lemma 16.1 and their consequences. The remaining assertions
+of Theorem 14.1 and later chapters are unfinished.
 
 ## Milestones
 

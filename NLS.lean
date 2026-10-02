@@ -1844,3 +1844,8 @@ import NLS.ZakharovShabat.SourceFloquetGapOpeningWitness
 import NLS.ZakharovShabat.SourceOpenGapDensity
 import NLS.ZakharovShabat.SourceBirkhoffFixedFamilyAnalytic
 import NLS.ZakharovShabat.SourceBirkhoffClosedGapPoisson
+
+import NLS.ZakharovShabat.SourceNormalizedActionExponent
+import NLS.ZakharovShabat.SourceBirkhoffCoordinateExponent
+import NLS.ZakharovShabat.SourceBirkhoffCanonicalAllExponents
+import NLS.ZakharovShabat.SourceBirkhoffLemma15_3

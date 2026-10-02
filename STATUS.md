@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: canonical rectangular brackets across closed gaps
+## Current milestone: Lemma 15.3 for the actual Birkhoff map
+
+Lemma 15.3 is now proved for the actual sequence-valued Birkhoff map
+of Theorem 15.2 at every finite `1 < p < ∞`, on the entire real source
+space, including closed gaps. Its coordinate derivatives satisfy
+`{xₙ,xₘ} = 0`, `{xₙ,yₘ} = −δₙₘ`, and `{yₙ,yₘ} = 0` with the physical
+Poisson sign. The normalized root family is the map's own family.
+
+`SourceNormalizedActionExponent.lean` identifies normalized action
+factors across source exponents. The exact action factorization proves
+agreement on open gaps; the new real open-gap density and continuity
+extend it through closed gaps. The principal action roots therefore
+agree as well.
+
+`SourceBirkhoffCoordinateExponent.lean` constructs annular charts for
+any existing angular family at real sources, with no open-gap condition.
+The normalized remainder comparison identifies the chart-independent
+eta values across exponents and root families. Together with the
+spectral, action-root, and beta identities this identifies both actual
+rectangular coordinates. Real-form uniqueness then proves agreement
+of their complex germs and their complete complex derivatives.
+
+`SourceBirkhoffCanonicalAllExponents.lean` restricts regular cotangents
+from a constructed family at an exponent at least two. The derivative
+comparison proves that their underlying functionals are precisely the
+original rectangular derivatives, even below two and at closed gaps.
+Restriction preserves the Hilbert Fourier coefficients and their
+physical pairings, so all three canonical identities hold.
+
+`SourceBirkhoffLemma15_3.lean` identifies the derivatives of the exact
+sequence-coordinate evaluations on a neighborhood and transfers the
+result to the map of Theorem 15.2. It also exports the absolutely
+convergent literal mixed Fourier bracket, with frequency reversal and
+factor `−i`, and the usual source-bracket identities for `p ≥ 2`.
+An existence theorem constructs one real analytic map with all these
+canonical regular cotangents at every real source.
+
+Public checks construct such a map at `p = 3/2`, verify the absolutely
+convergent diagonal mixed Fourier sum `−1` at the zero source below two,
+and apply the existing source-bracket API to the exact map at `p = 3`.
+Theorem 15.2 and Lemma 15.3 are complete. Next is Section 16: the
+Jacobian, its value at zero, and the finite-gap gradient estimates.
+The remaining assertions of Theorem 14.1 and later chapters are unfinished.
+
+## Previous milestone: canonical rectangular brackets across closed gaps
 
 For every finite `2 ≤ p < ∞`, the actual rectangular coordinates now
 satisfy all three canonical source-bracket identities at every real

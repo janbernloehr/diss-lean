@@ -22268,4 +22268,52 @@ example : ∃ W₀ B W : Set (CoeffPair 2),
   simpa only [ite_true] using (D.birkhoff_sourceBracket_canonical (by norm_num) n n ⟨0, by simp⟩).2.1
 end RectangularClosedGapPoisson
 
+section BirkhoffLemma15_3
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Construct one real analytic map with all three canonical identities
+-- at every real source below exponent two, including closed gaps.
+example : ∃ W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    ∃ s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) k,
+    ∃ _D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s,
+      AnalyticOnNhd ℝ (sourceRealBirkhoffMap (by norm_num) (by norm_num) s) Set.univ ∧
+      ∀ φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2 : ℝ)),
+        ∃ X Y : ℤ → Poisson.RegularSourceCotangent (ENNReal.ofReal (3/2 : ℝ)),
+          (∀ n, (X n).toCotangent = fderiv ℂ (fun ψ => (sourceBirkhoffMap (by norm_num) (by norm_num) s ψ).1 n) φ.val ∧
+            (Y n).toCotangent = fderiv ℂ (fun ψ => (sourceBirkhoffMap (by norm_num) (by norm_num) s ψ).2 n) φ.val) ∧
+          ∀ n m, (X n).bivector (X m) = 0 ∧
+            (X n).bivector (Y m) = -(if n = m then 1 else 0) ∧ (Y n).bivector (Y m) = 0 := by
+  obtain ⟨W₀,B,W,s,D,hA,hC⟩ := exists_sourceBirkhoffMap_theorem15_2_lemma15_3
+    (p := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) (by norm_num)
+  exact ⟨W₀,B,W,s,D,hA,hC⟩
+
+-- The actual sequence-coordinate derivatives have the absolutely
+-- convergent mixed Fourier sum -1 at zero, even below exponent two.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s) (n : ℤ) :
+    let L := fderiv ℂ (fun ψ => (sourceBirkhoffMap (by norm_num) (by norm_num) s ψ).1 n) 0
+    let M := fderiv ℂ (fun ψ => (sourceBirkhoffMap (by norm_num) (by norm_num) s ψ).2 n) 0
+    Summable (fun j : ℤ => ‖L (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) j 1)) *
+      M (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-j) 1)) -
+      L (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) j 1)) *
+      M (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-j) 1))‖) ∧
+    -Complex.I * ∑' j : ℤ, (L (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) j 1)) *
+      M (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-j) 1)) -
+      L (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) j 1)) *
+      M (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-j) 1))) = -1 := by
+  simpa only [ite_true] using D.mixed_fourier_canonical n n ⟨0,by simp⟩
+
+-- The existing source-bracket API applies to the exact sequence map
+-- without any gap conditions at a non-Hilbert exponent above two.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceSubmodule 3) :
+    Poisson.sourceBracket (by norm_num) (fun ψ => (sourceBirkhoffMap (by simp) (by norm_num) s ψ).1 n)
+      (fun ψ => (sourceBirkhoffMap (by simp) (by norm_num) s ψ).2 m) φ.val = -(if n = m then 1 else 0) :=
+  (D.sourceBracket_canonical (by norm_num) n m φ).2.1
+end BirkhoffLemma15_3
+
 end NLS.ZakharovShabat
