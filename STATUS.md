@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: complex analytic sequence-valued Birkhoff map
+## Current milestone: Theorem 15.2, the real analytic Birkhoff map
+
+Theorem 15.2 is now proved for every finite `1 < p < ∞`. The actual
+rectangular sequence map restricts to a real analytic map from the
+complete real source space to `RealCoeff p × RealCoeff p`, where
+`RealCoeff p` is the space of real `ℓᵖ` sequences. Its continuous complex
+inclusion equals the previously constructed complex analytic map on
+every real source. The complex domain contains the entire real locus.
+
+`SourceAngularRealCharts.lean` constructs actual eta charts for the
+existing normalized root family inside any open part of its angular
+domain. It proves reality of every off-diagonal beta and its convergent
+correction. This avoids changing the root family when relating the
+Birkhoff map to real angle representatives.
+
+`SourceBirkhoffMapReal.lean` proves that the principal action root is real
+and uses the exact cosine/sine formulas at open real gaps. At closed
+gaps it uses the already proved vanishing theorem. Consequently both
+actual complex sequence coordinates have zero imaginary part at every
+real source, without any open-gap assumption.
+
+`RealCoeff.lean` supplies bounded real linear maps for taking real
+parts and including real sequences into complex sequences.
+`SourceBirkhoffTheorem15_2.lean` defines `sourceRealBirkhoffMap`, proves
+its full Banach-valued real analyticity by restricting scalars, and
+identifies its complex inclusion with `sourceBirkhoffMap`. It also
+proves the real action-radius identity. The existence theorem constructs
+all data without supplied reality or analytic-extension hypotheses.
+
+Public examples exercise Theorem 15.2 at `p = 3/2`, the real action-radius
+identity at `p = 3`, and the actual real coordinates at closed Hilbert
+gaps. Next prove Lemma 15.3's rectangular Poisson identities with the
+stated sign `{xₙ,yₘ} = −δₙₘ`. The remaining assertions of Theorem 14.1
+and later chapters remain unfinished.
+
+## Previous milestone: complex analytic sequence-valued Birkhoff map
 
 The rectangular coordinates now assemble into the actual Banach-valued
 map `sourceBirkhoffMap : CoeffPair p → Coeff p × Coeff p` for every

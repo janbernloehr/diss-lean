@@ -1,15 +1,14 @@
 # Implementation plan
 
-## Latest progress: complex analytic Birkhoff sequence map
+## Latest progress: Theorem 15.2 is complete
 
-Lemma 15.1 and the scalar rectangular construction are complete.
-The actual coordinates now form a locally bounded, Banach-analytic
-`ℓᵖ × ℓᵖ` map on one common complex neighborhood of every real source,
-for every finite `p > 1`. Exact scalar evaluations, action radii, and
-real closed-gap zeros are retained. Next prove real-valuedness and the
-real analytic restriction to complete Theorem 15.2. Canonicality and
-the remaining conclusions of Theorem 14.1 follow afterward; later
-chapters remain unfinished.
+The actual rectangular sequence map is real analytic into two real
+`ℓᵖ` spaces for every finite `1 < p < ∞`. Its complex inclusion agrees
+with the constructed Banach-analytic map on a common complex neighborhood
+of the real source locus. Exact coordinates, local sequence bounds,
+action radii, and real closed-gap zeros are retained. Next prove
+Lemma 15.3's rectangular Poisson identities. The remaining conclusions
+of Theorem 14.1 and later chapters remain unfinished.
 
 ## Milestones
 
@@ -97,14 +96,14 @@ introduced. Definition-only stubs do not count as proved results.
 
 ## Current next proof target
 
-Corollary 13.2 is proved throughout `1 < p < ∞`. Section 15's
-`γₙ exp(±iηₙ)` coordinates now extend analytically through collapsed
-gaps on an actual common source neighborhood. Next prove Lemma 15.1's
-locally uniform bound, uniformly in the signed index, then construct
-the rectangular coordinates and sequence-valued Birkhoff map of
-Theorem 15.2. The remaining assertions of Theorem 14.1 follow later.
-See `STATUS.md` for current coverage; the entries below record the
-historical sequence of proof targets.
+Corollary 13.2, Lemma 15.1, the rectangular construction, and Theorem 15.2
+are proved throughout `1 < p < ∞`. Next prove Lemma 15.3:
+`{xₙ,xₘ} = 0`, `{xₙ,yₘ} = −δₙₘ`, and `{yₙ,yₘ} = 0` on the whole real
+source space, including closed gaps. Preserve the physical bracket sign
+`−i` and derive the identities for the actual rectangular coordinates.
+The remaining assertions of Theorem 14.1 follow later. See `STATUS.md`
+for current coverage; the entries below record the historical sequence
+of proof targets.
 
 ## Earlier proof targets
 

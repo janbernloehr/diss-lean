@@ -22139,4 +22139,46 @@ example {W₀ B W : Set (CoeffPair 2)}
   D.real_closed_gap_zero φ.val (D.real_subset φ.property) φ.property n hgap
 end ComplexBirkhoffSequenceMap
 
+section RealBirkhoffTheorem15_2
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Full real sequence analyticity below the Hilbert exponent, with the
+-- exact holomorphic extension on a neighborhood of every real source.
+example : ∃ W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n,
+      SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s ∧
+      AnalyticOnNhd ℝ (sourceRealBirkhoffMap (by norm_num) (by norm_num) s) Set.univ ∧
+      ∀ φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2 : ℝ)),
+        ((RealCoeff.complexCLM (ENNReal.ofReal (3/2 : ℝ))).prodMap
+          (RealCoeff.complexCLM (ENNReal.ofReal (3/2 : ℝ))))
+            (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ) =
+              sourceBirkhoffMap (by norm_num) (by norm_num) s φ.val :=
+  exists_sourceBirkhoffMap_theorem15_2 (by norm_num) (by norm_num)
+
+-- At p = 3 the real rectangular radius equals the original action,
+-- including at collapsed gaps, without an open-gap hypothesis.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    ((sourceRealBirkhoffMap (by simp) (by norm_num) s φ).1 n)^2 +
+      ((sourceRealBirkhoffMap (by simp) (by norm_num) s φ).2 n)^2 =
+        2 * (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re :=
+  D.real_map_action_radius φ n
+
+-- The actual real target coordinates vanish at every closed gap.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (n : ℤ)
+    (hgap : sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val n = 0) :
+    (sourceRealBirkhoffMap (by simp) (by norm_num) s φ).1 n = 0 ∧
+      (sourceRealBirkhoffMap (by simp) (by norm_num) s φ).2 n = 0 := by
+  obtain ⟨hx,hy⟩ := D.real_closed_gap_zero φ.val (D.real_subset φ.property) φ.property n hgap
+  change ((sourceBirkhoffMap (by simp) (by norm_num) s φ.val).1 n).re = 0 ∧
+    ((sourceBirkhoffMap (by simp) (by norm_num) s φ.val).2 n).re = 0
+  rw [hx,hy]
+  exact ⟨rfl,rfl⟩
+end RealBirkhoffTheorem15_2
+
 end NLS.ZakharovShabat

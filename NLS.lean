@@ -1826,3 +1826,8 @@ import NLS.ZakharovShabat.SourceBirkhoffCoordinateBound
 import NLS.ZakharovShabat.SourceBirkhoffSequence
 import NLS.ZakharovShabat.SourceBirkhoffSequenceLocal
 import NLS.ZakharovShabat.SourceBirkhoffMapAnalytic
+
+import NLS.SequenceSpaces.RealCoeff
+import NLS.ZakharovShabat.SourceAngularRealCharts
+import NLS.ZakharovShabat.SourceBirkhoffMapReal
+import NLS.ZakharovShabat.SourceBirkhoffTheorem15_2
