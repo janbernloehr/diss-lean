@@ -1849,3 +1849,7 @@ import NLS.ZakharovShabat.SourceNormalizedActionExponent
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateExponent
 import NLS.ZakharovShabat.SourceBirkhoffCanonicalAllExponents
 import NLS.ZakharovShabat.SourceBirkhoffLemma15_3
+
+import NLS.ZakharovShabat.SourceBirkhoffJacobian
+import NLS.ZakharovShabat.SourceGapWeightedEtaClosedDifferential
+import NLS.ZakharovShabat.SourceGapWeightedEtaFiniteGapDifferential

@@ -22316,4 +22316,43 @@ example {W₀ B W : Set (CoeffPair 3)}
   (D.sourceBracket_canonical (by norm_num) n m φ).2.1
 end BirkhoffLemma15_3
 
+section BirkhoffJacobianClosedTail
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Both coordinates of the bounded sequence Jacobian agree with the
+-- actual rectangular differentials, for arbitrary complex directions.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : CoeffPair 3) (hφ : φ ∈ W) (h : CoeffPair 3) (n : ℤ) :
+    (sourceBirkhoffJacobian (by simp) (by norm_num) s φ h).1 n =
+      (fderiv ℂ (sourceBirkhoffX (by simp) (by norm_num) n s) φ) h ∧
+    (sourceBirkhoffJacobian (by simp) (by norm_num) s φ h).2 n =
+      (fderiv ℂ (sourceBirkhoffY (by simp) (by norm_num) n s) φ) h :=
+  D.jacobian_coordinates φ hφ h n
+
+-- At zero every gap is closed: the formula applies at every signed
+-- index and both signs, even below the Hilbert exponent.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s) (n : ℤ) (sign : ℂ) :
+    fderiv ℂ (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s sign) 0 =
+      sourceGapWeightedEtaClosedCotangent (by norm_num) (by norm_num) n sign 0 := by
+  have hz : IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2 : ℝ)) 0) := by simp
+  apply D.angular.gapWeightedEta_fderiv_closed W D.source_open D.source_subset ⟨0,hz⟩ (D.real_subset hz) n
+  simpa only [map_zero] using canonicalPeriodicGap_zero (p := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) (by norm_num) n
+
+-- Finite-gap is the actual spectral condition. No finite Fourier
+-- support or local chart is supplied to obtain the tail formula.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 3) (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ S : Finset ℤ, ∀ n ∉ S, ∀ sign : ℂ,
+      fderiv ℂ (sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s sign) φ.val =
+        sourceGapWeightedEtaClosedCotangent (by simp) (by norm_num) n sign φ.val :=
+  D.angular.gapWeightedEta_fderiv_finiteGap_tail W D.source_open D.source_subset φ (D.real_subset φ.property) hfinite
+end BirkhoffJacobianClosedTail
+
 end NLS.ZakharovShabat

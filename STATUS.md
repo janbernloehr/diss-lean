@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Lemma 15.3 for the actual Birkhoff map
+## Current milestone: analytic Jacobian and closed-gap spectral derivatives
+
+Section 16 now has the actual bounded Jacobian of the sequence-valued
+Birkhoff map, its complex analyticity on the map's domain, and exact
+coordinate evaluations in terms of the rectangular differentials.
+At every real source those evaluations admit regular Fourier cotangents
+with all three canonical pairings from Lemma 15.3.
+
+`SourceBirkhoffJacobian.lean` defines `sourceBirkhoffJacobian` as the
+full derivative of `sourceBirkhoffMap`. Its analyticity is Banach-valued
+analyticity into the space of bounded linear operators. Bounded sequence
+evaluation and neighborhood agreement identify each coordinate with
+its scalar derivative; this applies to arbitrary complex directions.
+
+`SourceGapWeightedEtaClosedDifferential.lean` proves the exact formula
+at each real collapsed gap:
+
+`d zₙ^sign = −2 (dμₙ − dτₙ + sign i/(2Pₙ(μₙ)) d[δ(μₙ)])`.
+
+Here `Pₙ` is the omitted standard-root product, and the last derivative
+is the full moving terminal anti-discriminant. The normalized eta
+remainder and the amplitude vanish at the collapsed gap, while their
+derivatives are treated by the product rule. Only the nonzero omitted
+product is divided by; no closed-gap angle is defined.
+
+`SourceGapWeightedEtaFiniteGapDifferential.lean` constructs every needed
+annular chart for the existing angular family and removes chart premises
+from the result. It expands the moving terminal derivative into the
+fixed-source anti-discriminant cotangent plus its spectral derivative
+times `dμₙ`. For every real finite-gap source it proves the formula at
+all indices outside a finite set, simultaneously for both signs. The
+finite-gap assumption is spectral, not finite Fourier support.
+
+Public checks cover Jacobian evaluations at `p = 3`, the closed-gap
+formula at zero for every signed index at `p = 3/2`, and the actual
+finite-gap tail formula for the sequence map's own angular family.
+Theorem 15.2 and Lemma 15.3 remain complete. The explicit Fourier
+identification of the Jacobian at zero and the quantitative gradient
+estimates of Lemma 16.1 are still unfinished, as are the remaining
+assertions of Theorem 14.1 and later chapters.
+
+## Previous milestone: Lemma 15.3 for the actual Birkhoff map
 
 Lemma 15.3 is now proved for the actual sequence-valued Birkhoff map
 of Theorem 15.2 at every finite `1 < p < ∞`, on the entire real source

@@ -1,20 +1,20 @@
 # Implementation plan
 
-## Latest progress: Theorem 15.2 and Lemma 15.3 complete
+## Latest progress: Section 16 Jacobian and closed-gap derivative formula
 
-The actual real analytic Birkhoff map now has all three canonical
-Poisson identities at every real source and every finite `1 < p < ∞`,
-including closed gaps. The proof compares rectangular values, complex
-germs, and full derivatives across exponents and normalized root
-families. Restricting Hilbert regular cotangents supplies the extra
-Fourier regularity below two. The final result concerns derivatives of
-the exact sequence-map coordinates, with the absolutely convergent
-mixed Fourier bracket and the physical negative sign.
+Theorem 15.2 and Lemma 15.3 are complete. Section 16 now has the
+analytic bounded Jacobian of the exact sequence map, its scalar
+coordinate evaluations, and their canonical regular cotangents.
+The gap-weighted eta derivative at a real closed gap is expressed
+exactly using midpoint, Dirichlet-root, and moving anti-discriminant
+derivatives. Constructed charts give this formula outside a finite
+set at every real finite-gap source, for both signs.
 
-Next work through Section 16: identify the Jacobian at zero with the
-specified Fourier transform and establish the finite-gap gradient
-estimates of Lemma 16.1 and their consequences. The remaining assertions
-of Theorem 14.1 and later chapters are unfinished.
+Next evaluate the free spectral cotangents and identify the Jacobian
+at zero with the specified Fourier transform. Then establish the
+quantitative finite-gap gradient estimates of Lemma 16.1 and their
+consequences. Those estimates, the remaining assertions of Theorem
+14.1, and later chapters are unfinished.
 
 ## Milestones
 
