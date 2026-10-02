@@ -6818,3 +6818,42 @@ claim them. Corollary 13.2's action/action identity is complete for all
 finite `p > 1`, while all three angle/action canonical relations are
 currently complete together only at `p = 2`. Later chapters remain
 unfinished.
+
+## Latest milestone: actual psi root and contour compatibility across exponents
+
+The canonical real gap-contained psi root sequence is now proved
+independent of the source exponent under coefficient-preserving
+inclusion. Its entire normalized psi numerator is therefore the same
+function at every larger finite exponent. The actual common-domain
+complex psi families used in the angle construction inherit this
+agreement at real sources from their proved real-root agreement.
+
+`SourceCanonicalRootExponent.lean` identifies the periodic gap segments,
+standard roots, canonical root product, and their omitted and full
+gap-complement domains across exponents. The equality keeps the
+original normalization and includes spectral zeros.
+`DeletedExponentEmbedding.lean` supplies the contractive inclusion
+on the genuine deleted-coordinate sequence spaces.
+
+`SourcePsiContourExponent.lean` proves equality of the normalized
+contour functionals and equation coordinates on the same circles,
+with both source potentials and numerator root data included.
+`SourcePsiGapRootExponent.lean` carries actual gap-contained solutions
+across exponents. It explicitly proves that every scalar equation is
+zero and constructs the corresponding zero sequence in the target
+space, so the selected equation map's out-of-domain default is not
+used. The established real solution uniqueness then identifies the
+actual selected roots.
+
+Public examples cross exponent two from `p = 3/2` to `p = 3`, compare
+entire numerators from `p = 2` to `p = 3`, preserve the literal contour
+normalization, compare the canonical root at arbitrary spectral
+parameters, and use the normalized common-domain psi families.
+
+This proves compatibility of the actual spectral input to the angles.
+Compatibility of the full angle phases and their differentials remains
+to be established. The angle/action identity below two and angle/angle
+identity away from two remain unfinished; Corollary 13.2 is still
+complete in all three relations together only at `p = 2`. Its
+action/action identity is complete for every finite `p > 1`, and later
+chapters remain unfinished.

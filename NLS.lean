@@ -1782,3 +1782,8 @@ import NLS.ZakharovShabat.SourceNormalizedActionOnePlusDecomposition
 import NLS.SequenceSpaces.TwoExponentDecomposition
 import NLS.ZakharovShabat.SourceNormalizedActionTwoExponentDecomposition
 import NLS.ZakharovShabat.SourceNormalizedActionRootTwoExponentDecomposition
+
+import NLS.SequenceSpaces.DeletedExponentEmbedding
+import NLS.ZakharovShabat.SourceCanonicalRootExponent
+import NLS.ZakharovShabat.SourcePsiContourExponent
+import NLS.ZakharovShabat.SourcePsiGapRootExponent

@@ -21712,4 +21712,54 @@ example (b : BoundaryCondition) (n : ℤ)
     (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) b n φ
 end RegularBoundaryBelowTwo
 
+
+section PsiExponentCompatibility
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The actual selected real psi roots preserve every coefficient
+-- across exponent two, without a supplied compatibility assumption.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n : ℤ) :
+    Coeff.deletedExponentInclusion (show ENNReal.ofReal (3/2 : ℝ) ≤ 3 by norm_num) n
+      (sourcePsiGapRoot (by norm_num) (by norm_num) n φ) =
+      sourcePsiGapRoot (p := 3) (by norm_num) (by norm_num) n
+        (realTypeSourceExponentInclusion (by norm_num) φ) :=
+  sourcePsiGapRoot_exponent (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) n φ
+
+-- The entire normalized numerators agree at every spectral parameter.
+example (φ : realTypeSourceLocus 2) (n : ℤ) (z : ℂ) :
+    sourcePsiCandidate n (z,(sourcePsiGapRoot (by simp) (by norm_num) n φ : Coeff 2)) =
+      sourcePsiCandidate n (z,(sourcePsiGapRoot (p := 3) (by norm_num) (by norm_num) n
+        (realTypeSourceExponentInclusion (by norm_num) φ) : Coeff 3)) :=
+  sourcePsiCandidate_gapRoot_exponent (by simp) (by norm_num) (by norm_num) (by norm_num) (by norm_num) n φ z
+
+-- The normalized contour equation is preserved on the very same
+-- circle, with both the source and the root-displacement sequence moved.
+example (φ : CoeffPair 2) (a : DeletedCoeff 2 0) (c : ℂ) (R : ℝ) :
+    sourcePsiDeletedContour (by simp) (by norm_num) 0 a φ c R =
+      sourcePsiDeletedContour (p := 3) (by norm_num) (by norm_num) 0
+        (Coeff.deletedExponentInclusion (by norm_num) 0 a)
+        (CoeffPair.exponentInclusion (by norm_num) φ) c R :=
+  sourcePsiDeletedContour_exponent (by simp) (by norm_num) (by norm_num) (by norm_num) (by norm_num) 0 a φ c R
+
+-- The normalization denominator agrees even at spectral zeros.
+example (φ : CoeffPair 2) (z : ℂ) :
+    sourceCanonicalRoot (by simp) (by norm_num) φ z =
+      sourceCanonicalRoot (p := 3) (by norm_num) (by norm_num)
+        (CoeffPair.exponentInclusion (by norm_num) φ) z :=
+  sourceCanonicalRoot_exponent (by simp) (by norm_num) (by norm_num) (by norm_num) (by norm_num) φ z
+
+-- Actual normalized common-domain families inherit the real agreement.
+example {W : Set (CoeffPair 2)} {V : Set (CoeffPair 3)}
+    {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {t : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (D : SourcePsiNormalizedComplexExtension (by simp) (by norm_num) W s)
+    (E : SourcePsiNormalizedComplexExtension (by norm_num) (by norm_num) V t)
+    (n : ℤ) (φ : realTypeSourceLocus 2) :
+    Coeff.deletedExponentInclusion (show (2 : ℝ≥0∞) ≤ 3 by norm_num) n (s n φ.val) =
+      t n (CoeffPair.exponentInclusion (by norm_num) φ.val) :=
+  D.toSourcePsiIsolatingComplexExtension.real_exponent_agreement
+    E.toSourcePsiIsolatingComplexExtension (by norm_num) n φ
+end PsiExponentCompatibility
+
 end NLS.ZakharovShabat
