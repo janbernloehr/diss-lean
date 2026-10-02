@@ -21992,4 +21992,59 @@ example {n : ℤ} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
   D.gapWeightedEtaCoordinate_eq_gap_exp ψ hψ (-1) (Or.inr rfl) hδ
 end GapWeightedEtaCoordinates
 
+section GapWeightedEtaLemma15_1
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The complete lemma constructs analytic coordinates with one local
+-- constant for both signs and every index, also below the Hilbert exponent.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    IsOpen W ∧ realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n,
+      (∀ n : ℤ, ∀ sign : ℂ, AnalyticOnNhd ℂ
+        (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s sign) W) ∧
+      (∀ φ ∈ W, ∃ U : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+        IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧ ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ U, ∀ n : ℤ, ∀ sign : ℂ,
+          sign = 1 ∨ sign = -1 →
+          ‖sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s sign ψ‖ ≤ C *
+            (‖sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n‖ +
+              ‖canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n-
+                sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ n‖)) := by
+  obtain ⟨W₀,B,W,hW,hreal,_,s,_,hA,hbound,_,_⟩ :=
+    exists_sourceGapWeightedEta_lemma15_1 (p := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) (by norm_num)
+  refine ⟨W,hW,hreal,s,hA,?_⟩
+  intro φ hφ
+  obtain ⟨U,hU,hφU,hUW,C,hC,hboundU⟩ := hbound φ hφ
+  refine ⟨U,hU,hφU,hUW,C,hC,?_⟩
+  intro ψ hψ n sign hsign
+  apply hboundU ψ hψ n sign
+  rcases hsign with rfl | rfl <;> norm_num
+
+-- At a complex collapsed gap the displacement term remains: no real-type
+-- premise or assertion that each coordinate vanishes is smuggled in.
+example (ψ : CoeffPair 2) (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k)
+    (hμ : canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n ∈
+      sourceStandardRootOmittedDomain (by simp) (by norm_num) ψ n)
+    (hgap : sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ n = 0)
+    (B : ℝ) (hB : ‖sourceAngularEtaRemainder (by simp) (by norm_num) n s ψ‖ ≤ B) :
+    ‖sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s (-1) ψ‖ ≤
+      (4*Real.exp B) * ‖canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n-
+        sourceStandardRootMidpoint (by simp) (by norm_num) ψ n‖ := by
+  simpa only [hgap,norm_zero,zero_add] using
+    norm_sourceGapWeightedEtaCoordinate_le_of_remainder_bound (by simp) (by norm_num) n s ψ hμ
+      (-1) (by norm_num) B hB
+
+-- The Cauchy quotient estimate allows the terminal to lie anywhere
+-- inside the enclosing disc, including on the moving gap or its endpoints.
+example {n : ℤ} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    {W V : Set (CoeffPair 2)} {c : ℤ → ℂ} {T : ℤ → ℝ} {r R : ℝ} {z₀ : ℂ}
+    (D : SourceAngularJointAnnulusChartData (by simp) (by norm_num) n s W V c T r R z₀)
+    (ψ : CoeffPair 2) (hψ : ψ ∈ V) (ρ M : ℝ) (hrρ : r < ρ) (hρR : ρ < R) (hM : 0 ≤ M)
+    (hnum : ∀ w ∈ Metric.sphere (c n) ρ,
+      ‖sourceAngularGapNumerator (by simp) (by norm_num) n n s ψ w-Complex.I‖ ≤ M)
+    (z : ℂ) (hz : z ∈ Metric.closedBall (c n) r) :
+    ‖sourceAngularEtaQuotientCauchyCandidate (by simp) (by norm_num) n s (c n) r R z₀ ρ (z,ψ)‖ ≤
+      Real.pi*ρ^2*M/(ρ-r)^3 :=
+  D.norm_etaQuotientCauchyCandidate_le ψ hψ ρ M hrρ hρR hM hnum z hz
+end GapWeightedEtaLemma15_1
+
 end NLS.ZakharovShabat

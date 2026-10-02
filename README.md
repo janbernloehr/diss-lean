@@ -7010,3 +7010,45 @@ Next prove the locally uniform, index-uniform estimate in Lemma 15.1,
 then combine these coordinates with the normalized action factors and
 beta correction to build the rectangular Birkhoff map of Theorem 15.2.
 The remaining assertions of Theorem 14.1 and later chapters are unfinished.
+
+## Latest milestone: complete analytic and uniform estimate of Lemma 15.1
+
+Lemma 15.1 (printed page 75) is now proved for every finite `p > 1`.
+The actual gap-weighted eta coordinates extend analytically to a common
+complex neighborhood of the whole real source locus, and
+`‖zₙ±‖ ≤ C (‖γₙ‖ + ‖μₙ−τₙ‖)` holds locally uniformly there with one
+constant for every integer index and both signs. Closed gaps and
+periodic endpoint terminals are included.
+
+`SourceAngularEtaRemainderBound.lean` controls the normalized interior
+Cauchy quotient by `π ρ² M / (ρ−r)³`, where `M` bounds the actual diagonal
+numerator minus `i` on the enclosing circle. Multiplying by the actual
+Dirichlet coefficient gives a remainder bound; the chart geometry bounds
+that coefficient by three inner radii. No inverse gap width occurs.
+
+`SourcePsiUniformRootNormBound.lean` derives a uniform full `ℓᵖ` norm
+bound for every deleted root vector from its squared-gap offsets.
+`SourceAngularEtaDiagonalBound.lean` identifies the diagonal numerator
+with `i` times the actual deleted quotient and applies the bounded-input
+quotient majorant to all sufficiently distant free-centered discs.
+
+`SourceGapWeightedEtaBound.lean` proves the terminal sine-numerator
+estimate and the coordinate bound with constant `4 exp(B)` whenever the
+remainder has norm at most `B`. Analyticity supplies a local estimate
+for each fixed chart. `SourceGapWeightedEtaUniformBound.lean` combines
+the fixed-radius tail charts with a finite intersection of these head
+neighborhoods, giving one constant for every index near each real source.
+`SourceGapWeightedEtaLemma15_1.lean` takes the union of these neighborhoods
+and proves local uniformity at every complex point of the common domain.
+The exact product `zₙ⁺ zₙ⁻ = γₙ²` and real collapsed-gap vanishing persist.
+
+Public examples check the complete common-domain result at `p = 3/2`,
+the estimate at a complex collapsed gap with its displacement term
+retained, and the interior Cauchy quotient bound without a regular-terminal
+hypothesis. All new statements use the actual previously constructed
+psi family and coordinates.
+
+Next combine these coordinates with the normalized action factors and
+beta correction to construct the rectangular coordinates in (3.2) and
+the analytic sequence-valued Birkhoff map of Theorem 15.2. Lemma 15.3,
+the remaining assertions of Theorem 14.1, and later chapters are unfinished.

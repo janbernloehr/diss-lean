@@ -5,7 +5,7 @@ import NLS.ZakharovShabat.SourceGapWeightedEtaAngle
 The actual normalized psi family and annular charts supply one complex
 neighborhood of the whole real source locus on which every signed
 coordinate is analytic, including at collapsed gaps. The index-uniform
-estimate of Lemma 15.1 is a separate remaining assertion.
+estimate of Lemma 15.1 is proved separately in `SourceGapWeightedEtaLemma15_1`.
 -/
 
 noncomputable section

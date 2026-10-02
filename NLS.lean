@@ -1807,3 +1807,10 @@ import NLS.ZakharovShabat.SourceAngularEtaRemainderGlobal
 import NLS.ZakharovShabat.SourceGapWeightedEta
 import NLS.ZakharovShabat.SourceGapWeightedEtaAngle
 import NLS.ZakharovShabat.SourceGapWeightedEtaCommonDomain
+
+import NLS.ZakharovShabat.SourceAngularEtaRemainderBound
+import NLS.ZakharovShabat.SourceGapWeightedEtaBound
+import NLS.ZakharovShabat.SourcePsiUniformRootNormBound
+import NLS.ZakharovShabat.SourceAngularEtaDiagonalBound
+import NLS.ZakharovShabat.SourceGapWeightedEtaUniformBound
+import NLS.ZakharovShabat.SourceGapWeightedEtaLemma15_1

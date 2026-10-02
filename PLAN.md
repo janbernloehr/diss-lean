@@ -1,5 +1,15 @@
 # Implementation plan
 
+## Latest progress: Lemma 15.1 complete
+
+The gap-weighted eta coordinates are analytic through collapsed gaps
+and obey the required locally uniform bound, uniformly over all indices,
+on one constructed complex neighborhood for every finite `p > 1`.
+The next step is (3.2): construct the rectangular coordinates and assemble
+the analytic `ℓᵖ` Birkhoff map of Theorem 15.2, retaining the minus sign
+between the two terms in `yₙ`. Canonicality and the remaining conclusions
+of Theorem 14.1 follow afterward; later chapters remain unfinished.
+
 ## Milestones
 
 1. **Sequence spaces:** finite truncations, density, weighted coefficients,
