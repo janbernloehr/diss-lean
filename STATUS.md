@@ -1,6 +1,32 @@
 # Implementation status
 
-## Current milestone: Corollary 1.6, density of actual real finite-gap sources
+## Current milestone: the Hilbert case of Corollary 13.2
+
+The full actual angle/angle bracket now vanishes at every real Hilbert
+source where the two selected angle gaps are open. Its analytic dependence
+on the joint open-gap domain gives continuity on the corresponding real
+source set. Corollary 1.6 supplies actual finite-gap approximants in that
+same open set, and the proved finite-gap spectral-flow identity passes
+to the limit.
+
+The resulting theorem is combined with the existing action/action and
+angle/action results on the same normalized psi family. All three
+Hilbert canonical relations now hold on their specified domains:
+action/action commutation at every real source, angle/angle commutation
+with both angle gaps open, and the mixed Kronecker identity with only
+the selected angle gap open. A public existence theorem constructs the
+common analytic source domain and family carrying these identities.
+
+Public-API checks use arbitrary real Hilbert sources, both diagonal and
+off-diagonal mixed normalizations, and the actual single-valued analytic
+phases. They also obtain the common open domain and all identities from
+the constructed existence theorem.
+
+Extension of angle/angle involution to `p > 2`, the actual bracket pairing
+for `1 < p < 2`, and later chapters remain unfinished. Corollary 13.2 is
+complete at `p = 2`; its full exponent range is not yet complete.
+
+## Previous milestone: Corollary 1.6, density of actual real finite-gap sources
 
 Actual real finite-gap sources are now proved dense in the original
 component-sum source norm for every finite exponent `p > 1`. The theorem

@@ -1512,6 +1512,8 @@ import NLS.ZakharovShabat.SourceFiniteGap
 import NLS.ZakharovShabat.SourceAngularThetaThetaLocalTransport
 import NLS.ZakharovShabat.SourceAngularThetaThetaGlobalTransport
 import NLS.ZakharovShabat.SourceAngularThetaThetaFiniteGap
+import NLS.ZakharovShabat.SourceAngularThetaThetaHilbert
+import NLS.ZakharovShabat.SourceCorollary13_2Hilbert
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticReduction
 import NLS.ZakharovShabat.SourcePsiGapRootAnalyticExistence
 import NLS.ZakharovShabat.SourcePsiOmegaDomain

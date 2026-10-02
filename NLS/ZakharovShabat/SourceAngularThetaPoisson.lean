@@ -10,9 +10,9 @@ canonical identities to phase brackets. The actual angle-angle bracket
 is analytic, and its zero identity extends from finite real potentials
 to the full real source locus in the joint open-gap domain.
 
-This is the analytic and density part of Corollary 13.2. The finite
-spectral canonical identities are still explicit hypotheses and remain
-to be proved.
+These analytic transfer interfaces form part of Corollary 13.2. The
+actual Hilbert canonical identities are proved in
+`SourceCorollary13_2Hilbert`; other exponents require further compatibility.
 -/
 
 noncomputable section

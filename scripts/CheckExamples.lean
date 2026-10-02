@@ -21497,4 +21497,63 @@ example (U : Set (realTypeSourceLocus 2)) (ho : IsOpen U)
     (φ : realTypeSourceLocus 2) (hφ : φ ∈ U) : H φ = 0 :=
   eq_of_continuousOn_of_sourceFiniteGap (by simp) (by norm_num) ho hH 0 hfinite φ hφ
 
+-- Actual angle differentials commute for arbitrary real Hilbert
+-- sources; no finite-gap or terminal endpoint premise is supplied.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val = 0 :=
+  D.thetaThetaBracket_eq_zero_of_realType n m φ hn hm
+
+-- One family simultaneously gives action commutation and the exact
+-- mixed normalization. The action gap m is allowed to be collapsed.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (hnm : n ≠ m) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    NLS.Poisson.sourceBracket (by norm_num) (sourceComplexAction (by simp) (by norm_num) n)
+      (sourceComplexAction (by simp) (by norm_num) m) φ.val = 0 ∧
+    sourceAngularThetaFunctionalBracket (by simp) (by norm_num) (by norm_num) n s
+      (sourceComplexAction (by simp) (by norm_num) n) φ.val = 1 ∧
+    sourceAngularThetaFunctionalBracket (by simp) (by norm_num) (by norm_num) n s
+      (sourceComplexAction (by simp) (by norm_num) m) φ.val = 0 := by
+  have h := D.corollary13_2_hilbert n m φ
+  have hself := D.corollary13_2_hilbert n n φ
+  exact ⟨h.1,by simpa using hself.2.2 hn,by simpa only [if_neg hnm] using h.2.2 hn⟩
+
+-- Involution also holds for the actual single-valued analytic phases.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j}
+    (D : SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    NLS.Poisson.sourceBracket (by norm_num) (sourceAngularThetaAnalyticPhase (by simp) (by norm_num) n s)
+      (sourceAngularThetaAnalyticPhase (by simp) (by norm_num) m s) φ.val = 0 :=
+  (sourceAngularThetaThetaBracket_eq_zero_iff (by simp) (by norm_num) (by norm_num) n m s φ.val
+    (D.theta_phase_ne_zero φ.val (D.real_subset φ.property) n hn)
+    (D.theta_phase_ne_zero φ.val (D.real_subset φ.property) m hm)).mp
+      (D.thetaThetaBracket_eq_zero_of_realType n m φ hn hm)
+
+-- The common analytic source domain and normalized family are
+-- constructed, then used for both angle and mixed identities.
+example : ∃ W₀ B W : Set (CoeffPair 2),
+    ∃ s : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j,
+      SourceAngularThetaCommonDomainData (p := 2) (by simp) (by norm_num) W₀ B W s ∧
+      IsOpen W ∧ realTypeSourceLocus 2 ⊆ W ∧
+      ∀ n m : ℤ, ∀ φ : realTypeSourceLocus 2,
+        canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0 →
+        canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0 →
+        sourceAngularThetaThetaBracket (by simp) (by norm_num) (by norm_num) n m s φ.val = 0 ∧
+        sourceAngularThetaFunctionalBracket (by simp) (by norm_num) (by norm_num) n s
+          (sourceComplexAction (by simp) (by norm_num) m) φ.val = if n = m then 1 else 0 := by
+  obtain ⟨W₀,B,W,s,D,hcanonical⟩ := exists_sourceCorollary13_2_hilbert
+  refine ⟨W₀,B,W,s,D,D.source_open,D.real_subset,?_⟩
+  intro n m φ hn hm
+  exact ⟨(hcanonical n m φ).2.1 hn hm,(hcanonical n m φ).2.2 hn⟩
+
 end NLS.ZakharovShabat

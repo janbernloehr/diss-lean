@@ -6700,3 +6700,29 @@ to extend a continuous identity within an open real source set.
 General Hilbert angle/angle involution is the next application. Bracket
 compatibility below two and later chapters remain unfinished;
 Corollary 13.2 is not complete.
+
+## Latest milestone: the Hilbert case of Corollary 13.2
+
+`SourceAngularThetaThetaHilbert.lean` transfers the actual finite-gap
+angle/angle identity to every real Hilbert source with both selected
+gaps open. The bracket is analytic on the joint open-gap domain, and
+actual finite-gap density retains that open condition. The file also
+exposes this density transfer at other exponents when the corresponding
+finite-gap identity is available.
+
+`SourceCorollary13_2Hilbert.lean` combines the result with actual
+action/action commutation and the mixed Kronecker identity. One
+constructed common analytic source domain and normalized psi family
+now carry all three Hilbert canonical relations. Action/action
+commutation holds on the whole real source locus; angle/angle requires
+both angle gaps open, while angle/action requires only the angle gap.
+The physical Poisson sign and the original indexed actions are retained.
+
+Public-API examples use arbitrary real Hilbert sources, verify mixed
+normalization `1` on the diagonal and `0` off it, transfer involution to
+the actual analytic phases, and construct the common source domain and
+family carrying the canonical relations.
+
+Angle/angle involution for `p > 2`, the bracket pairing for `1 < p < 2`,
+and later chapters remain unfinished. This completes Corollary 13.2 at
+`p = 2`, with its full exponent range still pending.
