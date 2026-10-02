@@ -1819,3 +1819,10 @@ import NLS.ZakharovShabat.SourceNormalizedActionRootAnalytic
 import NLS.ZakharovShabat.SourceBirkhoffCoordinates
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateAngle
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateCommonDomain
+
+import NLS.SequenceSpaces.TwoSequenceBound
+import NLS.ZakharovShabat.SourceAngularBetaCorrectionBound
+import NLS.ZakharovShabat.SourceBirkhoffCoordinateBound
+import NLS.ZakharovShabat.SourceBirkhoffSequence
+import NLS.ZakharovShabat.SourceBirkhoffSequenceLocal
+import NLS.ZakharovShabat.SourceBirkhoffMapAnalytic

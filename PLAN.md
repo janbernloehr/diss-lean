@@ -1,16 +1,15 @@
 # Implementation plan
 
-## Latest progress: scalar rectangular coordinates constructed
+## Latest progress: complex analytic Birkhoff sequence map
 
-Lemma 15.1 is complete. Formula (3.2) now defines analytic rectangular
-coordinates on one common complex neighborhood for every finite `p > 1`.
-They agree with (3.1), vanish at real collapsed gaps, and satisfy
-`xₙ² + yₙ² = 2 Iₙ` throughout that neighborhood. The normalized-action
-roots now have full Banach power-series analyticity on common domains.
-Next prove locally bounded `ℓᵖ` values, assemble the analytic sequence
-map, and prove real-valuedness on real sources to finish Theorem 15.2.
-Canonicality and the remaining conclusions of Theorem 14.1 follow
-afterward; later chapters remain unfinished.
+Lemma 15.1 and the scalar rectangular construction are complete.
+The actual coordinates now form a locally bounded, Banach-analytic
+`ℓᵖ × ℓᵖ` map on one common complex neighborhood of every real source,
+for every finite `p > 1`. Exact scalar evaluations, action radii, and
+real closed-gap zeros are retained. Next prove real-valuedness and the
+real analytic restriction to complete Theorem 15.2. Canonicality and
+the remaining conclusions of Theorem 14.1 follow afterward; later
+chapters remain unfinished.
 
 ## Milestones
 

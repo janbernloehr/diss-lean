@@ -22095,4 +22095,48 @@ example (φ : CoeffPair 3) (hreal : IsRealType (CoeffPair.toMax 3 φ)) :
   exists_local_sourceNormalizedActionRoot_allIndices_analytic (by simp) (by norm_num) φ hreal
 end RectangularBirkhoffCoordinates
 
+section ComplexBirkhoffSequenceMap
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- This is Banach-valued analyticity of the complete sequence map,
+-- with exact scalar coordinates on one common complex neighborhood.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    IsOpen W ∧ realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n,
+      AnalyticOnNhd ℂ (sourceBirkhoffMap (by norm_num) (by norm_num) s) W ∧
+      ∀ ψ ∈ W, ∀ n : ℤ,
+        (sourceBirkhoffMap (by norm_num) (by norm_num) s ψ).1 n =
+          sourceBirkhoffX (by norm_num) (by norm_num) n s ψ ∧
+        (sourceBirkhoffMap (by norm_num) (by norm_num) s ψ).2 n =
+          sourceBirkhoffY (by norm_num) (by norm_num) n s ψ := by
+  obtain ⟨W₀,B,W,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic
+    (p := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) (by norm_num)
+  exact ⟨W,D.source_open,D.real_subset,s,D.analytic,D.coordinates⟩
+
+-- At p = 3, the sequence norm has a single local bound and every
+-- indexed action is still exactly half the squared rectangular radius.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : CoeffPair 3) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧ ∃ M : ℝ, 0 ≤ M ∧
+      ∀ ψ ∈ U, ‖sourceBirkhoffMap (by simp) (by norm_num) s ψ‖ ≤ M ∧ ∀ n : ℤ,
+        ((sourceBirkhoffMap (by simp) (by norm_num) s ψ).1 n)^2 +
+          ((sourceBirkhoffMap (by simp) (by norm_num) s ψ).2 n)^2 =
+            2*sourceComplexAction (by simp) (by norm_num) n ψ := by
+  obtain ⟨U,hU,hφU,hUW,M,hM,hbound⟩ := D.locally_bounded φ hφ
+  exact ⟨U,hU,hφU,hUW,M,hM,fun ψ hψ => ⟨hbound ψ hψ,D.action_radius ψ (hUW hψ)⟩⟩
+
+-- At a real closed gap the actual sequence entries vanish; the
+-- membership-based constructor has not replaced the map by a zero fallback.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceLocus 2) (n : ℤ)
+    (hgap : sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val n = 0) :
+    (sourceBirkhoffMap (by simp) (by norm_num) s φ.val).1 n = 0 ∧
+      (sourceBirkhoffMap (by simp) (by norm_num) s φ.val).2 n = 0 :=
+  D.real_closed_gap_zero φ.val (D.real_subset φ.property) φ.property n hgap
+end ComplexBirkhoffSequenceMap
+
 end NLS.ZakharovShabat

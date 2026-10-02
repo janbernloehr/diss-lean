@@ -7089,3 +7089,42 @@ to prove its locally bounded `ℓᵖ` realization, assemble the analytic
 sequence-valued map, and prove that real sources give real coordinate
 sequences. Theorem 15.2 is not yet complete. Lemma 15.3, the remaining
 assertions of Theorem 14.1, and later chapters remain unfinished.
+
+## Latest milestone: complex analytic sequence-valued Birkhoff map
+
+The rectangular coordinates now assemble into the actual Banach-valued
+map `sourceBirkhoffMap : CoeffPair p → Coeff p × Coeff p` for every
+finite `p > 1`. One constructed complex neighborhood contains the whole
+real source locus and supports full power-series analyticity of this
+map, locally uniform sequence-norm bounds, and exact evaluation at every
+index. Its coordinates retain `xₙ² + yₙ² = 2 Iₙ` and vanish at real
+collapsed gaps. This proves the complex sequence-map part of Theorem 15.2.
+
+`SourceAngularBetaCorrectionBound.lean` combines the actual reciprocal
+beta estimate with Hölder summation, producing one scalar bound for all
+corrections and local bounds on the gap and Dirichlet-minus-midpoint
+sequence norms. `SourceBirkhoffCoordinateBound.lean` bounds all action
+roots by their actual `ℓᵖ` deviations and transfers these estimates to
+both rectangular coordinates without a nonzero-gap assumption.
+
+`TwoSequenceBound.lean` proves membership and a norm bound for any
+sequence dominated by a constant times two coefficient magnitudes.
+`SourceBirkhoffSequence.lean` defines the actual rectangular sequences,
+proves exact evaluations wherever this majorant holds, and assembles
+the coordinate power series using the bounded-coordinate analytic theorem.
+Thus the total constructor's fallback is excluded throughout the domain.
+
+`SourceBirkhoffSequenceLocal.lean` instantiates every bound near each
+real source from the existing spectral and angular theorems.
+`SourceBirkhoffMapAnalytic.lean` takes the union of these neighborhoods
+and packages the analytic map, local bounds, scalar evaluations, and
+action radii in `SourceBirkhoffMapComplexData`. The construction has no
+unproved summability, local-bound, or analyticity premises.
+
+Public examples check Banach-valued analyticity and exact sequence
+coordinates at `p = 3/2`, local sequence-norm bounds and action radii at
+`p = 3`, and the actual sequence entries at real closed gaps.
+
+Next prove that real sources give real coordinate sequences and package
+the real analytic restriction to complete Theorem 15.2. Lemma 15.3,
+the remaining assertions of Theorem 14.1, and later chapters are unfinished.
