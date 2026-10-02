@@ -22181,4 +22181,49 @@ example {W₀ B W : Set (CoeffPair 2)}
   exact ⟨rfl,rfl⟩
 end RealBirkhoffTheorem15_2
 
+section RectangularOpenGapPoisson
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The constructed family has the diagonal mixed sign below exponent two.
+example : ∃ W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n,
+    ∃ D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s,
+      ∀ n : ℤ, ∀ φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)),
+      ∀ hn : canonicalPeriodicGap (by norm_num) (by norm_num)
+        (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0,
+        (D.birkhoffXRegularCotangent n φ hn).bivector (D.birkhoffYRegularCotangent n φ hn) = -1 := by
+  obtain ⟨W₀,B,W,_,_,_,_,_,_,s,D⟩ := exists_sourceAngularTheta_theorem13_1_iv
+    (p := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) (by norm_num)
+  refine ⟨W₀,B,W,s,D,?_⟩
+  intro n φ hn
+  simpa only [ite_true] using (D.birkhoff_regular_canonical_of_open_gaps n n φ hn hn).2.1
+
+-- Above exponent two all three identities are the ordinary source brackets
+-- of the actual extended rectangular functions, for arbitrary signed indices.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceAngularThetaCommonDomainData (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceLocus 3)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    NLS.Poisson.sourceBracket (by norm_num) (sourceBirkhoffX (by simp) (by norm_num) n s)
+      (sourceBirkhoffX (by simp) (by norm_num) m s) φ.val = 0 ∧
+    NLS.Poisson.sourceBracket (by norm_num) (sourceBirkhoffX (by simp) (by norm_num) n s)
+      (sourceBirkhoffY (by simp) (by norm_num) m s) φ.val = -(if n = m then 1 else 0) ∧
+    NLS.Poisson.sourceBracket (by norm_num) (sourceBirkhoffY (by simp) (by norm_num) n s)
+      (sourceBirkhoffY (by simp) (by norm_num) m s) φ.val = 0 :=
+  D.birkhoff_sourceBracket_canonical_of_open_gaps (by norm_num) n m φ hn hm
+
+-- The regular cotangent is exactly the full derivative, not just a
+-- coefficient witness for a formal action-angle change of variables.
+example {W₀ B W : Set (CoeffPair 2)}
+    {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceAngularThetaCommonDomainData (by simp) (by norm_num) W₀ B W s)
+    (n : ℤ) (φ : realTypeSourceLocus 2)
+    (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    (D.birkhoffXRegularCotangent n φ hn).toCotangent =
+      fderiv ℂ (sourceBirkhoffX (by simp) (by norm_num) n s) φ.val :=
+  D.birkhoffXRegularCotangent_toCotangent n φ hn
+end RectangularOpenGapPoisson
+
 end NLS.ZakharovShabat

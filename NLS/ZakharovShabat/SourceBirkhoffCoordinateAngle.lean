@@ -21,6 +21,17 @@ variable {hp : p ≠ ⊤} {hp1 : 1 < p} {n : ℤ}
   {r R : ℝ} {z₀ : ℂ} {ρ : ℝ} {δ ε : CoeffPair p → ℂ}
 
 /-- The full signed phase is the original eta-plus-beta angle. -/
+theorem birkhoffWeightedCoordinate_eq_halfGap_exp
+    (D : SourceAngularEtaAnalyticChartData hp hp1 n s W V U c T r R z₀ ρ δ ε)
+    (ψ : CoeffPair p) (hψ : ψ ∈ U) (sign : ℂ) (hsign : sign = 1 ∨ sign = -1) :
+    sourceBirkhoffWeightedCoordinate hp hp1 n s sign ψ =
+      sourceNormalizedActionRoot hp hp1 n ψ * (2*δ ψ) *
+        Complex.exp (sign*I*sourceAngularThetaCauchyRepresentative hp hp1 n s (c n) r R z₀ ρ ε ψ) := by
+  rw [sourceBirkhoffWeightedCoordinate,D.gapWeightedEtaCoordinate_eq_halfGap_exp ψ hψ sign hsign,
+    sourceAngularThetaCauchyRepresentative,mul_add,Complex.exp_add]
+  ring
+
+/-- The full signed phase is the original eta-plus-beta angle. -/
 theorem birkhoffWeightedCoordinate_eq_gap_exp
     (D : SourceAngularEtaAnalyticChartData hp hp1 n s W V U c T r R z₀ ρ δ ε)
     (ψ : CoeffPair p) (hψ : ψ ∈ U) (sign : ℂ) (hsign : sign = 1 ∨ sign = -1)
@@ -28,18 +39,16 @@ theorem birkhoffWeightedCoordinate_eq_gap_exp
     sourceBirkhoffWeightedCoordinate hp hp1 n s sign ψ =
       sourceNormalizedActionRoot hp hp1 n ψ * sourcePeriodicGapDisplacement hp hp1 ψ n *
         Complex.exp (sign*I*sourceAngularThetaCauchyRepresentative hp hp1 n s (c n) r R z₀ ρ ε ψ) := by
-  rw [sourceBirkhoffWeightedCoordinate,D.gapWeightedEtaCoordinate_eq_gap_exp ψ hψ sign hsign hδ,
-    sourceAngularThetaCauchyRepresentative,mul_add,Complex.exp_add,sourcePeriodicGapDisplacement_apply]
+  rw [D.birkhoffWeightedCoordinate_eq_halfGap_exp ψ hψ sign hsign,hδ,sourcePeriodicGapDisplacement_apply]
   ring
 
-/-- Formula (3.1), with the actual full theta representative and
-canonical periodic gap, follows from the extended coordinates. -/
-theorem birkhoffXY_eq_gap_cos_sin
+/-- The rectangular cosine/sine formula holds throughout the analytic
+half-gap chart, even when its branch differs from the canonical ordering. -/
+theorem birkhoffXY_eq_halfGap_cos_sin
     (D : SourceAngularEtaAnalyticChartData hp hp1 n s W V U c T r R z₀ ρ δ ε)
-    (ψ : CoeffPair p) (hψ : ψ ∈ U)
-    (hδ : δ ψ = canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n/2) :
+    (ψ : CoeffPair p) (hψ : ψ ∈ U) :
     let θ := sourceAngularThetaCauchyRepresentative hp hp1 n s (c n) r R z₀ ρ ε ψ
-    let a := sourceNormalizedActionRoot hp hp1 n ψ * sourcePeriodicGapDisplacement hp hp1 ψ n / (Real.sqrt 2 : ℂ)
+    let a := sourceNormalizedActionRoot hp hp1 n ψ * (2*δ ψ) / (Real.sqrt 2 : ℂ)
     sourceBirkhoffX hp hp1 n s ψ = a*Complex.cos θ ∧
       sourceBirkhoffY hp hp1 n s ψ = a*Complex.sin θ := by
   dsimp only
@@ -54,8 +63,8 @@ theorem birkhoffXY_eq_gap_cos_sin
   have hminus : Complex.exp (-1*I*θ) = Complex.cos θ-Complex.sin θ*I := by
     rw [show -1*I*θ = -θ*I by ring,← Complex.cos_sub_sin_I]
   rw [sourceBirkhoffX,sourceBirkhoffY,
-    D.birkhoffWeightedCoordinate_eq_gap_exp ψ hψ 1 (Or.inl rfl) hδ,
-    D.birkhoffWeightedCoordinate_eq_gap_exp ψ hψ (-1) (Or.inr rfl) hδ]
+    D.birkhoffWeightedCoordinate_eq_halfGap_exp ψ hψ 1 (Or.inl rfl),
+    D.birkhoffWeightedCoordinate_eq_halfGap_exp ψ hψ (-1) (Or.inr rfl)]
   simp only [one_mul]
   change (_*Complex.exp (I*θ)+_*Complex.exp (-1*I*θ))/(Real.sqrt 8 : ℂ) = _ ∧
     (_*Complex.exp (I*θ)-_*Complex.exp (-1*I*θ))/((Real.sqrt 8 : ℂ)*I) = _
@@ -64,9 +73,25 @@ theorem birkhoffXY_eq_gap_cos_sin
   · ring
   · simp only [div_eq_mul_inv,mul_inv_rev,inv_I]
     calc
-      _ = (sourceNormalizedActionRoot hp hp1 n ψ * sourcePeriodicGapDisplacement hp hp1 ψ n /
+      _ = (sourceNormalizedActionRoot hp hp1 n ψ * (2*δ ψ) /
         (Real.sqrt 2 : ℂ))*Complex.sin θ*(-I^2) := by ring
       _ = _ := by rw [I_sq]; ring
+
+/-- Formula (3.1), with the actual full theta representative and
+canonical periodic gap, follows from the extended coordinates. -/
+theorem birkhoffXY_eq_gap_cos_sin
+    (D : SourceAngularEtaAnalyticChartData hp hp1 n s W V U c T r R z₀ ρ δ ε)
+    (ψ : CoeffPair p) (hψ : ψ ∈ U)
+    (hδ : δ ψ = canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n/2) :
+    let θ := sourceAngularThetaCauchyRepresentative hp hp1 n s (c n) r R z₀ ρ ε ψ
+    let a := sourceNormalizedActionRoot hp hp1 n ψ * sourcePeriodicGapDisplacement hp hp1 ψ n / (Real.sqrt 2 : ℂ)
+    sourceBirkhoffX hp hp1 n s ψ = a*Complex.cos θ ∧
+      sourceBirkhoffY hp hp1 n s ψ = a*Complex.sin θ := by
+  have h := D.birkhoffXY_eq_halfGap_cos_sin ψ hψ
+  have hgap : 2*δ ψ = sourcePeriodicGapDisplacement hp hp1 ψ n := by
+    rw [hδ,sourcePeriodicGapDisplacement_apply]
+    ring
+  simpa only [hgap] using h
 
 end SourceAngularEtaAnalyticChartData
 end NLS.ZakharovShabat

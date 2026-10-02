@@ -1,14 +1,15 @@
 # Implementation plan
 
-## Latest progress: Theorem 15.2 is complete
+## Latest progress: the open-gap part of Lemma 15.3
 
-The actual rectangular sequence map is real analytic into two real
-`ℓᵖ` spaces for every finite `1 < p < ∞`. Its complex inclusion agrees
-with the constructed Banach-analytic map on a common complex neighborhood
-of the real source locus. Exact coordinates, local sequence bounds,
-action radii, and real closed-gap zeros are retained. Next prove
-Lemma 15.3's rectangular Poisson identities. The remaining conclusions
-of Theorem 14.1 and later chapters remain unfinished.
+Theorem 15.2 is complete. For every finite `1 < p < ∞`, the actual
+rectangular coordinate derivatives now have regular Fourier witnesses
+and all three canonical Poisson identities at real sources with the
+selected gaps open. The mixed sign is `−δₙₘ`, including below two via
+the absolutely convergent physical Fourier sum. Next extend across
+closed gaps and identify the result for the sequence map's normalized
+root family. The remaining conclusions of Theorem 14.1 and later
+chapters remain unfinished.
 
 ## Milestones
 
@@ -97,10 +98,11 @@ introduced. Definition-only stubs do not count as proved results.
 ## Current next proof target
 
 Corollary 13.2, Lemma 15.1, the rectangular construction, and Theorem 15.2
-are proved throughout `1 < p < ∞`. Next prove Lemma 15.3:
-`{xₙ,xₘ} = 0`, `{xₙ,yₘ} = −δₙₘ`, and `{yₙ,yₘ} = 0` on the whole real
-source space, including closed gaps. Preserve the physical bracket sign
-`−i` and derive the identities for the actual rectangular coordinates.
+are proved throughout `1 < p < ∞`. Lemma 15.3 is proved on the real
+open-gap locus using the actual rectangular derivatives and regular
+cotangent pairings. Next extend its three identities across closed gaps
+and retain the root family of the sequence-valued Birkhoff map. Preserve
+the physical bracket sign `−i` and the mixed value `−δₙₘ`.
 The remaining assertions of Theorem 14.1 follow later. See `STATUS.md`
 for current coverage; the entries below record the historical sequence
 of proof targets.

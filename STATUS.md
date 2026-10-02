@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: Theorem 15.2, the real analytic Birkhoff map
+## Current milestone: rectangular Poisson identities at open real gaps
+
+For every finite `1 < p < ∞`, the actual rectangular coordinates now
+satisfy all three identities of Lemma 15.3 whenever their two selected
+real periodic gaps are open: `{xₙ,xₘ} = 0`, `{xₙ,yₘ} = −δₙₘ`, and
+`{yₙ,yₘ} = 0`. The diagonal mixed bracket has the required negative sign.
+The identities concern the coordinates built from the same normalized
+root family as the proved action-angle theorem.
+
+`SourceBirkhoffCoordinateAngle.lean` now proves the cosine/sine formulas
+throughout each analytic half-gap chart, retaining the earlier formulas
+at a canonically normalized half-gap. `RectangularDifferential.lean`
+differentiates a local amplitude whose square is twice the action.
+`SourceBirkhoffCoordinateDifferential.lean` instantiates that calculation
+with the actual action root, analytic half-gap, and full theta
+representative. In particular, it proves the complete source derivative
+formulas `dx = x/(2I) dI − y dθ` and `dy = y/(2I) dI + x dθ`.
+
+`RegularSourceCotangentAlgebra.lean` preserves Hilbert coefficient
+witnesses under addition and proves the bilinear determinant rule.
+`SourceBirkhoffRegularCotangent.lean` uses it to construct regular
+cotangents whose underlying functionals are exactly the actual
+rectangular derivatives. This verifies the extra Fourier regularity
+needed below exponent two.
+
+`SourceBirkhoffOpenGapPoisson.lean` applies Corollary 13.2 and the exact
+action radius to prove all three canonical identities. It also gives
+the absolutely convergent literal mixed Fourier sum with physical
+factor `−i`, and identifies the results with the existing source brackets
+at exponents at least two. Public examples check the constructed mixed
+sign at `p = 3/2`, the three source brackets at `p = 3`, and exact
+derivative identification in the Hilbert case.
+
+Theorem 15.2 remains complete. Lemma 15.3 still requires extending the
+rectangular identities across closed gaps and applying them to the
+family used for the sequence-valued Birkhoff map. The remaining
+assertions of Theorem 14.1 and later chapters are unfinished.
+
+## Previous milestone: Theorem 15.2, the real analytic Birkhoff map
 
 Theorem 15.2 is now proved for every finite `1 < p < ∞`. The actual
 rectangular sequence map restricts to a real analytic map from the

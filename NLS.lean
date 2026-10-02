@@ -1831,3 +1831,9 @@ import NLS.SequenceSpaces.RealCoeff
 import NLS.ZakharovShabat.SourceAngularRealCharts
 import NLS.ZakharovShabat.SourceBirkhoffMapReal
 import NLS.ZakharovShabat.SourceBirkhoffTheorem15_2
+
+import NLS.ComplexAnalysis.RectangularDifferential
+import NLS.Poisson.RegularSourceCotangentAlgebra
+import NLS.ZakharovShabat.SourceBirkhoffCoordinateDifferential
+import NLS.ZakharovShabat.SourceBirkhoffRegularCotangent
+import NLS.ZakharovShabat.SourceBirkhoffOpenGapPoisson
