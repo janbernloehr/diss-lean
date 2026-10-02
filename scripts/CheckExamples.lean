@@ -22715,4 +22715,71 @@ example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (v : ℂ × ℂ) (n : �
 
 end AppendixGFourierEndpoint
 
+section AppendixGInterpolation
+open Set Complex NLS.Fourier
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (5/4 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (2 : ℝ)) := ⟨by norm_num⟩
+
+-- The general interpolation argument includes the zero sequence and zero bound.
+example : ‖(0 : Coeff 2)‖ ≤ 0/(2 : ℝ)^(1/2 : ℝ) := by
+  exact NLS.Coeff.norm_interpolate_decay (p := 1) (q := 3) (r := 2)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    0 0 0 (fun _ => rfl) (fun _ => rfl) (1/2) (by norm_num) (by norm_num)
+    (by norm_num) 0 2 (by norm_num) (by norm_num) (by simp) (by simp)
+
+-- ε = 1/4 and q = 3/2 give the displayed inverse-cube-root decay power.
+example (M H : ℝ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ H) (hz1 : 1 ≤ ‖z‖) :
+    ‖classicalSobolevRemainderFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ))
+      (by norm_num) a z (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤
+      classicalSobolevInterpolationConstant (1/4) (by norm_num) M H/‖z‖^(1/3 : ℝ) := by
+  have h := norm_classicalSobolevRemainderFourierCoefficients_interpolate (1/4) (3/2)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    M H a ha z hz hH hz1 (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..)
+  norm_num [fundamentalFourierDecayExponent] at h ⊢
+  exact h
+
+-- The lower endpoint has decay power zero and needs no nonzero norm premise.
+example (M H : ℝ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ H) (hz1 : 1 ≤ ‖z‖) :
+    ‖classicalSobolevRemainderFourierCoefficients (q := ENNReal.ofReal (5/4 : ℝ))
+      (by norm_num) a z (0,1) (ContinuousLinearMap.snd ℝ ℂ ℂ)‖ ≤
+      classicalSobolevInterpolationConstant (1/4) (by norm_num) M H := by
+  have h := norm_classicalSobolevRemainderFourierCoefficients_interpolate (1/4) (5/4)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    M H a ha z hz hH hz1 (0,1) (ContinuousLinearMap.snd ℝ ℂ ℂ) (ContinuousLinearMap.norm_snd_le ..)
+  norm_num [fundamentalFourierDecayExponent] at h ⊢
+  exact h
+
+-- The upper endpoint retains inverse-frequency decay.
+example (M H : ℝ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ H) (hz1 : 1 ≤ ‖z‖) :
+    ‖classicalSobolevRemainderFourierCoefficients (q := ENNReal.ofReal (2 : ℝ))
+      (by norm_num) a z (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤
+      classicalSobolevInterpolationConstant (1/4) (by norm_num) M H/‖z‖ := by
+  have h := norm_classicalSobolevRemainderFourierCoefficients_interpolate (1/4) 2
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    M H a ha z hz hH hz1 (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..)
+  norm_num [fundamentalFourierDecayExponent] at h ⊢
+  exact h
+
+-- The full sequence theorem applies uniformly along a complex shifted free lattice.
+example (M : ℝ) : ∃ N : ℕ, 0 < N ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ, N ≤ n.natAbs →
+      ‖classicalSobolevRemainderFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ))
+        (by norm_num) a ((Real.pi : ℂ)*(n : ℂ)+Complex.I) (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤
+        classicalSobolevInterpolationConstant (1/4) (by norm_num) M 1/(n.natAbs : ℝ)^(1/3 : ℝ) := by
+  obtain ⟨N,hN,h⟩ := exists_classicalSobolevRemainder_sequence_fourier_decay (1/4) (3/2)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) M 1 (by norm_num) 0
+  refine ⟨N,hN,fun a ha n hn => ?_⟩
+  have hν : ∀ n : ℤ, 0 ≤ n.natAbs →
+      ‖((Real.pi : ℂ)*(n : ℂ)+Complex.I)-(Real.pi : ℂ)*(n : ℂ)‖ ≤ (1 : ℝ) := by intro n _; simp
+  have hh := h (fun n => (Real.pi : ℂ)*(n : ℂ)+Complex.I) hν a ha (1,0)
+    (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..) n hn
+  norm_num [fundamentalFourierDecayExponent] at hh ⊢
+  exact hh
+
+end AppendixGInterpolation
+
 end NLS.ZakharovShabat

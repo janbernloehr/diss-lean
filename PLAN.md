@@ -1,21 +1,21 @@
 # Implementation plan
 
-## Latest progress: the uniform Fourier–Lebesgue endpoint in G.3
+## Latest progress: Appendix G.3 remainder interpolation
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
 finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. Along `νₙ=nπ+O(1)`, the actual remainder has
-Fourier `ℓ²` decay `O(1/|n|)`, a uniform classical `H¹[0,1]` bound,
-and now a uniform Fourier `ℓq` bound for every `q>1`, including infinity.
-These estimates use the same actual unit-interval coefficients and
-are uniform on physical period-two `H¹` coefficient balls. Integration
-by parts retains endpoint jumps and handles the zero Fourier mode.
+`H¹`) are complete. The actual remainder now satisfies G.3's classical
+`H¹[0,1]` bound and Fourier–Lebesgue decay
+`O(|n|^(-(q−1−ε)/(1−ε)))` for `0<ε<1` and `1+ε≤q≤2` along
+`νₙ=nπ+O(1)`. The estimates use the same actual unit-interval Fourier
+coefficients, include both exponent endpoints, and have constants and
+cutoffs uniform on physical period-two `H¹` coefficient balls and
+under a common spectral displacement bound.
 
-Next interpolate the uniform bound near exponent one with the decaying
-`ℓ²` bound to obtain the general finite-q decay in G.3. Then prove the
-shifted-free comparison and gradient estimates G.4–G.7 and connect
-them to finite-gap sources in Lemma 16.1. The sharper integral estimate
-in G.1, remaining Appendix G estimates, Lemma 16.1, remaining assertions
+Next prove G.3's shifted-free comparison when `νₙ=nπ+O(1/|n|)`, then
+the summability and gradient estimates G.4–G.7 and their application
+to finite-gap sources in Lemma 16.1. The sharper integral estimate in
+G.1, remaining Appendix G estimates, Lemma 16.1, remaining assertions
 of Theorem 14.1, and later chapters are unfinished.
 
 ## Milestones

@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: the Fourier–Lebesgue endpoint for G.3 interpolation
+## Current milestone: G.3 Fourier–Lebesgue decay by interpolation
+
+The Fourier–Lebesgue decay for the actual remainder in Appendix G.3
+is now proved with the displayed exponent. For `0 < ε < 1` and
+`1+ε ≤ q ≤ 2`, potentials in a fixed physical period-two `H¹`
+coefficient ball, and sequences `νₙ=nπ+O(1)`, Lean proves
+
+`‖Fourier₍[0,1]₎(L R(νₙ)v)‖ℓq ≤ K(ε,M,B) ‖v‖ / |n|^((q−1−ε)/(1−ε))`
+
+beyond one common cutoff. Here `B` bounds the spectral displacement,
+`M` bounds the potential coefficient norm, and `L` is any contractive
+scalar observation of a fundamental column. The constant is independent
+of the target exponent within `[1+ε,2]` and uniform on the whole
+Sobolev ball. The finite initial part of the sequence is unrestricted.
+Both exponent endpoints and zero input vectors are included.
+
+`NormInterpolation.lean` proves the quantitative sequence-norm
+interpolation inequality by Hölder on powers of the same coefficients,
+then transfers an inverse-scale endpoint bound into fractional decay.
+`ClassicalSobolevRemainderInterpolation.lean` combines the actual
+uniform `ℓ^(1+ε)` and decaying `ℓ²` estimates. Its common constant is
+`K = (2C+D) K_(1+ε) + C`, using the preceding error, derivative, and
+inverse-bracket constants. `ClassicalSobolevRemainderFourierDecay.lean`
+uses the near-free frequency cutoff to replace spectral frequency
+by the absolute integer index.
+
+Public checks cover zero-bound interpolation, both target-exponent
+endpoints, the explicit `ε=1/4, q=3/2` inverse-cube-root bound, and
+that bound along `nπ+i`. Together with the earlier time-norm result,
+this proves G.3's remainder estimates for the constructed Sobolev
+potentials. The shifted-free comparison in the final part of G.3,
+G.4–G.7, the sharper integral estimate in G.1, Lemma 16.1, remaining
+assertions of Theorem 14.1, and later chapters remain unfinished.
+Next prove the comparison with the free solution at `nπ` when the
+spectral displacement is `O(1/|n|)`.
+
+## Previous milestone: the Fourier–Lebesgue endpoint for G.3 interpolation
 
 The actual fundamental-solution remainder now has a uniform
 Fourier–Lebesgue bound at every exponent `q > 1`, including infinity.

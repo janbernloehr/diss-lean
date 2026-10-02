@@ -1899,3 +1899,7 @@ import NLS.ZakharovShabat.ClassicalSobolevRemainderSequenceBounds
 import NLS.Fourier.UnitIntervalCoefficientDecay
 import NLS.Fourier.UnitIntervalC1FourierLebesgue
 import NLS.ZakharovShabat.ClassicalSobolevRemainderFourierBound
+
+import NLS.SequenceSpaces.NormInterpolation
+import NLS.ZakharovShabat.ClassicalSobolevRemainderInterpolation
+import NLS.ZakharovShabat.ClassicalSobolevRemainderFourierDecay
