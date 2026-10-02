@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: full remainder decay and time-derivative bound
+## Current milestone: fundamental-solution bounds on Sobolev balls
+
+The Appendix G error estimates now apply directly to potentials
+constructed from physical period-two `H¹` Fourier coefficient pairs.
+Absolute continuity and integrability of the actual component derivatives
+are proved from the coefficients; they are no longer extra premises.
+
+For the maximum weighted Hilbert norm `‖a‖ ≤ M`, Lean proves the
+supremum bound `‖φ‖∞ ≤ 4M` and the variation-budget bound
+`B ≤ (8 + 2π)M`. Consequently, for `z ≠ 0`, `|Im z| ≤ H`, and
+`t ∈ [0,1]`, the actual solution error satisfies
+
+`‖R(t,z)v‖ ≤ (4 + π) M ‖v‖ exp(4M + H) / ‖z‖`,
+
+`‖∂ₜR(t,z)v‖ ≤ (8 + π) M ‖v‖ exp(4M + H)`.
+
+These constants are uniform on each coefficient `H¹` ball and each
+horizontal spectral strip. They use the project's period-two Fourier
+normalization and are not a claim of the exact numerical constants
+printed in G.2.
+
+`SobolevUnitCurve.lean` restricts the continuous Fourier representative
+to the ODE interval, identifies its extended derivative almost
+everywhere, and bounds its derivative integral using the physical
+Fourier derivative. `ClassicalSobolevPotential.lean` constructs both
+potential components and controls the first Born budget.
+`ClassicalSobolevRemainderBound.lean` discharges the regularity premises
+and proves normalized, ball-uniform, and unweighted strip estimates.
+Public checks cover constant modes, derivative integrability, and
+both fundamental columns on a fixed Sobolev ball and strip.
+
+Next establish the time-norm and Fourier–Lebesgue interpolation estimates
+of G.3 and connect the resulting gradient estimates to finite-gap sources.
+The sharper integral estimate in G.1, the remaining G.3–G.7 estimates,
+Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters
+remain unfinished.
+
+## Previous milestone: full remainder decay and time-derivative bound
 
 The full classical fundamental-solution error now inherits the first
 Born vector's inverse-frequency decay. For an absolutely continuous

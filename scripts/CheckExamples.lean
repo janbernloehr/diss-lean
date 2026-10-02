@@ -22598,4 +22598,35 @@ example (φ : Curve (ℂ × ℂ))
 
 end AppendixGFullRemainder
 
+section AppendixGSobolevBounds
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.Fourier
+
+-- Constant physical Fourier modes preserve both potential components.
+example (c d : ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalSobolevPotential (scalarMode 0 c,scalarMode 0 d) t = (c,d) := by
+  simp [classicalSobolevPotential,sobolevUnitCurve,sobolevSynthesis_scalarMode,wave]
+
+-- The actual derivative integrability is proved from H¹ coefficients.
+example (a : ScalarDomain 2) :
+    IntervalIntegrable (deriv (extend (sobolevUnitCurve a))) volume 0 1 :=
+  intervalIntegrable_deriv_extend_sobolevUnitCurve a
+
+-- A whole H¹ unit ball and strip share one inverse-frequency constant.
+example (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ 1)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ 1) (t : Icc (0 : ℝ) 1) :
+    ‖classicalSolutionRemainder (classicalSobolevPotential a) z (0,1) t‖ ≤
+      (4+Real.pi)/‖z‖*Real.exp 5 := by
+  convert norm_classicalSolutionRemainder_sobolev_strip_le 1 1 a ha z hz hH (0,1) t using 1
+  norm_num
+
+-- The matching derivative bound is independent of the real frequency.
+example (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ 1)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ 1) (t : Icc (0 : ℝ) 1) :
+    ‖deriv (classicalSolutionRemainder (classicalSobolevPotential a) z (1,0)) t‖ ≤
+      (8+Real.pi)*Real.exp 5 := by
+  convert norm_deriv_classicalSolutionRemainder_sobolev_strip_le 1 1 a ha z hz hH (1,0) t using 1
+  norm_num
+
+end AppendixGSobolevBounds
+
 end NLS.ZakharovShabat

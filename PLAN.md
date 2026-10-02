@@ -1,22 +1,23 @@
 # Implementation plan
 
-## Latest progress: Appendix G full remainder and time derivative
+## Latest progress: Appendix G bounds uniform on Sobolev balls
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
 finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. Appendix G now has the first Born vector and its
-integration-by-parts estimate, the actual remainder Duhamel equations,
-and integral Gronwall bounds for the full remainder. For absolutely
-continuous potentials with integrable derivatives, exponential
-normalization gives `O(1/|z|)` for the full error and `O(1)` for its time
-derivative, uniformly on `[0,1]`, with explicit endpoint/derivative
-budgets and no smallness restriction.
+`H¹`) are complete. The actual fundamental-solution remainder and its
+time derivative now have `O(1/|z|)` and `O(1)` bounds, respectively,
+uniformly on physical period-two `H¹` coefficient balls and horizontal
+spectral strips. Fourier synthesis supplies the absolute continuity,
+actual derivative integrability, and explicit variation-budget bound;
+no extra regularity premise is assumed for these potentials.
 
-Next translate these budgets to Sobolev norms and obtain the
-Fourier–Lebesgue interpolation and gradient estimates in G.3–G.7.
-The sharper integral estimate in G.1, the remaining Appendix G
-estimates, Lemma 16.1, remaining assertions of Theorem 14.1, and later
-chapters are unfinished.
+Next establish time-norm bounds and Fourier–Lebesgue interpolation in
+G.3, then the gradient estimates G.4–G.7 and their connection to the
+finite-gap sources in Lemma 16.1. The sharper integral estimate in G.1,
+remaining Appendix G estimates, Lemma 16.1, remaining assertions of
+Theorem 14.1, and later chapters are unfinished. The present constants
+follow the project's weighted Fourier normalization rather than the
+exact numerical constants printed in G.2.
 
 ## Milestones
 

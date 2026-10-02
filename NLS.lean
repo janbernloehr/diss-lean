@@ -1886,3 +1886,7 @@ import NLS.FunctionalAnalysis.IntegralGronwall
 import NLS.ComplexAnalysis.NormalizedDuhamelBound
 import NLS.ZakharovShabat.ClassicalRemainderBound
 import NLS.ZakharovShabat.ClassicalRemainderDerivativeBound
+
+import NLS.Fourier.SobolevUnitCurve
+import NLS.ZakharovShabat.ClassicalSobolevPotential
+import NLS.ZakharovShabat.ClassicalSobolevRemainderBound
