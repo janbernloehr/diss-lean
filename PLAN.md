@@ -1,22 +1,22 @@
 # Implementation plan
 
-## Latest progress: the L² and H¹ endpoints of Appendix G.3
+## Latest progress: the uniform Fourier–Lebesgue endpoint in G.3
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
 finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. The actual remainder now has a Fourier `ℓ²` norm
-bound `O(1/|n|)` and a classical `H¹[0,1]` time norm bound `O(1)` along
-sequences `νₙ=nπ+O(1)`. The constants and cutoff are uniform on physical
-period-two `H¹` coefficient balls and under a common displacement bound.
-Actual unit-interval coefficients are used; no endpoint matching or
-additional derivative regularity is assumed.
+`H¹`) are complete. Along `νₙ=nπ+O(1)`, the actual remainder has
+Fourier `ℓ²` decay `O(1/|n|)`, a uniform classical `H¹[0,1]` bound,
+and now a uniform Fourier `ℓq` bound for every `q>1`, including infinity.
+These estimates use the same actual unit-interval coefficients and
+are uniform on physical period-two `H¹` coefficient balls. Integration
+by parts retains endpoint jumps and handles the zero Fourier mode.
 
-Next prove the Fourier–Lebesgue endpoint estimate and interpolation
-for general `q>1` in G.3, then the shifted-free comparison and gradient
-estimates G.4–G.7 and their connection to finite-gap sources in Lemma
-16.1. The sharper integral estimate in G.1, remaining Appendix G
-estimates, Lemma 16.1, remaining assertions of Theorem 14.1, and later
-chapters are unfinished.
+Next interpolate the uniform bound near exponent one with the decaying
+`ℓ²` bound to obtain the general finite-q decay in G.3. Then prove the
+shifted-free comparison and gradient estimates G.4–G.7 and connect
+them to finite-gap sources in Lemma 16.1. The sharper integral estimate
+in G.1, remaining Appendix G estimates, Lemma 16.1, remaining assertions
+of Theorem 14.1, and later chapters are unfinished.
 
 ## Milestones
 

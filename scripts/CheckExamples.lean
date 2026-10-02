@@ -22667,4 +22667,52 @@ example (M : ℝ) : ∃ N : ℕ, 0 < N ∧
 
 end AppendixGTimeNorms
 
+section AppendixGFourierEndpoint
+open Set Complex NLS.Fourier
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Nonmatching endpoints still give Fourier–Lebesgue membership below exponent two.
+example : Memℓp (intervalFourierCoefficient 1 (fun t : ℝ => (t : ℂ)))
+    (ENNReal.ofReal (3/2 : ℝ)) :=
+  memlp_unitIntervalFourierCoefficient_of_contDiff (by norm_num) _ Complex.ofRealCLM.contDiff
+
+-- The inverse-bracket bound includes the zero mode of a nonperiodic function.
+example (n : ℤ) : ‖intervalFourierCoefficient 1 (fun t : ℝ => (t : ℂ)) n‖ ≤
+    3/(1+|(n : ℝ)|) := by
+  have hd : ∀ t : ℝ, deriv (fun s : ℝ => (s : ℂ)) t = 1 := by
+    intro t
+    exact (Complex.ofRealCLM.hasDerivAt (x := t)).deriv
+  convert norm_unitIntervalFourierCoefficient_le_bracket (fun t : ℝ => (t : ℂ)) Complex.ofRealCLM.contDiff
+    1 1 (by norm_num) (by norm_num) (fun t ht => by
+      simpa only [Complex.norm_real,Real.norm_eq_abs,abs_of_nonneg ht.1] using ht.2)
+    (fun t _ => by rw [hd]; norm_num) n using 1
+  norm_num
+
+-- The q = 3/2 endpoint is uniform on the entire H¹ ball and strip.
+example (M H : ℝ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ H) (hz1 : 1 ≤ ‖z‖) :
+    ‖classicalSobolevRemainderFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ))
+      (by norm_num) a z (0,1) (ContinuousLinearMap.snd ℝ ℂ ℂ)‖ ≤
+      (2*classicalSobolevErrorConstant M H+classicalSobolevDerivativeConstant M H)*
+        unitIntervalC1FourierConstant (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) := by
+  simpa using norm_classicalSobolevRemainderFourierCoefficients_le
+    (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M H a ha z hz hH hz1 (0,1)
+    (ContinuousLinearMap.snd ℝ ℂ ℂ) (ContinuousLinearMap.norm_snd_le ..)
+
+-- Both interpolation endpoints are formed from exactly the same Fourier integrals.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (v : ℂ × ℂ) :
+    classicalSobolevRemainderFourierCoefficients (q := 2) (by norm_num) a z v
+      (ContinuousLinearMap.fst ℝ ℂ ℂ) =
+    classicalSobolevRemainderL2Coefficients a z v (ContinuousLinearMap.fst ℝ ℂ ℂ) :=
+  classicalSobolevRemainderFourierCoefficients_two a z v _
+
+-- The construction also covers the infinity exponent.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (v : ℂ × ℂ) (n : ℤ) :
+    classicalSobolevRemainderFourierCoefficients (q := ⊤) (by simp) a z v
+      (ContinuousLinearMap.fst ℝ ℂ ℂ) n =
+      intervalFourierCoefficient 1
+        (fun t => (classicalSolutionRemainder (classicalSobolevPotential a) z v t).1) n := rfl
+
+end AppendixGFourierEndpoint
+
 end NLS.ZakharovShabat

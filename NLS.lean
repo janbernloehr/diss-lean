@@ -1895,3 +1895,7 @@ import NLS.Fourier.UnitIntervalEnergyBound
 import NLS.ZakharovShabat.ClassicalRemainderTimeRegularity
 import NLS.ZakharovShabat.ClassicalSobolevRemainderTimeBounds
 import NLS.ZakharovShabat.ClassicalSobolevRemainderSequenceBounds
+
+import NLS.Fourier.UnitIntervalCoefficientDecay
+import NLS.Fourier.UnitIntervalC1FourierLebesgue
+import NLS.ZakharovShabat.ClassicalSobolevRemainderFourierBound

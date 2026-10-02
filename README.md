@@ -7639,3 +7639,41 @@ Fourier–Lebesgue endpoint bound and interpolation for general `q>1`,
 then the shifted-free and gradient estimates in G.3–G.7. Those steps,
 the sharper integral estimate in G.1, Lemma 16.1, remaining assertions
 of Theorem 14.1, and later chapters remain unfinished.
+
+## Appendix G.3 uniform Fourier–Lebesgue endpoint
+
+The actual fundamental-solution remainder now has a uniform
+Fourier–Lebesgue bound at every exponent `q > 1`, including infinity.
+For physical period-two `H¹` coefficient potentials with `‖a‖ ≤ M`,
+`|Im z| ≤ H`, and `|z| ≥ 1`, Lean proves
+
+`‖Fourier₍[0,1]₎(L R(z)v)‖ℓq ≤ (2 C(M,H) + D(M,H)) ‖v‖ Kq`,
+
+where `C` and `D` are the previously proved error and derivative
+constants, and `Kq = ‖((1+|k|)⁻¹)ₖ‖ℓq`. The bound is uniform in the real spectral
+frequency and over the entire Sobolev ball. Bounded displacement
+`νₙ=nπ+O(1)` gives a common cutoff for the whole family of sequences.
+At `q=2`, the new sequence is proved equal to the existing Parseval
+sequence with `O(1/|n|)` decay.
+
+`UnitIntervalCoefficientDecay.lean` identifies the actual unit Fourier
+integral with the oscillatory integral, removes its constant phase,
+and proves integration-by-parts decay with both endpoint terms.
+For a `C¹` function with value bound `A` and derivative bound `D`, it
+proves `|f̂(k)| ≤ (2A+D)/(1+|k|)`, including the zero frequency and
+without endpoint matching. `UnitIntervalC1FourierLebesgue.lean`
+uses the inverse bracket's `ℓq` membership to construct the actual
+coefficient sequence and bound its full norm. The constant depends
+only on the target exponent.
+`ClassicalSobolevRemainderFourierBound.lean` applies this estimate to
+all contractive scalar observations of fundamental columns.
+
+Public checks cover nonperiodic data below exponent two, the zero-safe
+coefficient bound, uniform control at `q=3/2`, equality with Parseval
+at `q=2`, and the infinity exponent. This proves the uniform endpoint
+needed before G.3 interpolation; decay at general finite `q` is still
+to be proved. Next interpolate the uniform bound near exponent one
+with the decaying `ℓ²` bound, then prove the shifted-free comparison
+and gradient estimates. Those remaining G.3–G.7 steps, the sharper
+integral estimate in G.1, Lemma 16.1, remaining assertions of Theorem
+14.1, and later chapters remain unfinished.
