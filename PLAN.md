@@ -1,15 +1,19 @@
 # Implementation plan
 
-## Latest progress: the open-gap part of Lemma 15.3
+## Latest progress: closed-gap rectangular brackets for exponents at least two
 
-Theorem 15.2 is complete. For every finite `1 < p < ∞`, the actual
-rectangular coordinate derivatives now have regular Fourier witnesses
-and all three canonical Poisson identities at real sources with the
-selected gaps open. The mixed sign is `−δₙₘ`, including below two via
-the absolutely convergent physical Fourier sum. Next extend across
-closed gaps and identify the result for the sequence map's normalized
-root family. The remaining conclusions of Theorem 14.1 and later
-chapters remain unfinished.
+Theorem 15.2 is complete. All three rectangular Poisson identities now
+hold at every real source for finite `p ≥ 2`, including closed gaps,
+for the family of the action-angle theorem. The proof establishes
+scalar analyticity for that same family and extends by continuity from
+the dense open locus with the selected gaps open. Density of sources
+opening any prescribed finite set of gaps is proved for every finite
+`p > 1`, using the nontrivial actual Floquet opening function.
+
+Next establish closed-gap regular Fourier cotangents and canonical
+brackets for `1 < p < 2`, and identify the identities for the sequence
+map's normalized root family. Lemma 15.3, the remaining conclusions of
+Theorem 14.1, and later chapters remain unfinished.
 
 ## Milestones
 

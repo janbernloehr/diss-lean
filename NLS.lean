@@ -1837,3 +1837,10 @@ import NLS.Poisson.RegularSourceCotangentAlgebra
 import NLS.ZakharovShabat.SourceBirkhoffCoordinateDifferential
 import NLS.ZakharovShabat.SourceBirkhoffRegularCotangent
 import NLS.ZakharovShabat.SourceBirkhoffOpenGapPoisson
+
+import NLS.ComplexAnalysis.RealAnalyticDenseNonzero
+import NLS.ZakharovShabat.SourceFloquetGapOpening
+import NLS.ZakharovShabat.SourceFloquetGapOpeningWitness
+import NLS.ZakharovShabat.SourceOpenGapDensity
+import NLS.ZakharovShabat.SourceBirkhoffFixedFamilyAnalytic
+import NLS.ZakharovShabat.SourceBirkhoffClosedGapPoisson

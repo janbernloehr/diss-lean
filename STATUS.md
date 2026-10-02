@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: rectangular Poisson identities at open real gaps
+## Current milestone: canonical rectangular brackets across closed gaps
+
+For every finite `2 ≤ p < ∞`, the actual rectangular coordinates now
+satisfy all three canonical source-bracket identities at every real
+source, including closed gaps: `{xₙ,xₘ} = 0`, `{xₙ,yₘ} = −δₙₘ`, and
+`{yₙ,yₘ} = 0`. The coordinates retain the normalized root family of
+the proved action-angle theorem. No angle at a closed gap is assumed.
+
+`SourceFloquetGapOpening.lean` defines the analytic opening function
+`ρₙ² − 1` using the actual Dirichlet Floquet multiplier. It vanishes
+at a real closed gap and has root bracket `−ρₙ²`, which is nonzero.
+`SourceFloquetGapOpeningWitness.lean` uses that bracket and real-form
+uniqueness to produce a finite real Fourier source where the opening
+function is nonzero. Spectral compatibility transfers this witness to
+every finite exponent above one.
+
+`RealAnalyticDenseNonzero.lean` applies the real analytic identity
+principle to obtain density of the nonzero locus.
+`SourceOpenGapDensity.lean` consequently proves that sources with any
+prescribed finite set of gaps open form a dense open subset of the real
+source space, for every finite `p > 1`. Arbitrarily small perturbations
+can open those gaps while retaining any given open source condition.
+This is different from the earlier density of finite-gap sources.
+
+`SourceBirkhoffFixedFamilyAnalytic.lean` proves scalar rectangular
+analyticity through closed gaps for the same angular family, using
+local annular primitives. `SourceBirkhoffClosedGapPoisson.lean` combines
+this with continuity of the physical source bivector for `p ≥ 2` and
+the new density theorem to extend all three open-gap identities.
+Public examples check simultaneous gap opening at `p = 3/2`, all three
+brackets at arbitrary real sources for `p = 3`, and the diagonal mixed
+sign at the zero Hilbert source using a constructed family.
+
+Theorem 15.2 remains complete. Lemma 15.3 still requires closed-gap
+regularity and canonical brackets for `1 < p < 2`, plus identification
+for the family used by the sequence-valued Birkhoff map. The remaining
+assertions of Theorem 14.1 and later chapters are unfinished.
+
+## Previous milestone: rectangular Poisson identities at open real gaps
 
 For every finite `1 < p < ∞`, the actual rectangular coordinates now
 satisfy all three identities of Lemma 15.3 whenever their two selected

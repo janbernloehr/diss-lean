@@ -22226,4 +22226,46 @@ example {W₀ B W : Set (CoeffPair 2)}
   D.birkhoffXRegularCotangent_toCotangent n φ hn
 end RectangularOpenGapPoisson
 
+section RectangularClosedGapPoisson
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Any prescribed finite collection can be opened arbitrarily close to
+-- any real source, including below the Hilbert exponent.
+example (S : Finset ℤ) (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2 : ℝ)))
+    (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ ∈ sourceFiniteOpenGapRealLocus (by norm_num) (by norm_num) S,
+      ‖ψ.val - φ.val‖ < ε := by
+  obtain ⟨ψ,hψ,_,hclose⟩ := exists_mem_sourceFiniteOpenGapRealLocus_mem_open
+    (by norm_num) (by norm_num) S Set.univ isOpen_univ φ (Set.mem_univ _) ε hε
+  exact ⟨ψ,hψ,hclose⟩
+
+-- All three actual source brackets hold with no selected-gap conditions.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceAngularThetaCommonDomainData (by simp) (by norm_num) W₀ B W s)
+    (n m : ℤ) (φ : realTypeSourceSubmodule 3) :
+    NLS.Poisson.sourceBracket (by norm_num) (sourceBirkhoffX (by simp) (by norm_num) n s)
+      (sourceBirkhoffX (by simp) (by norm_num) m s) φ.val = 0 ∧
+    NLS.Poisson.sourceBracket (by norm_num) (sourceBirkhoffX (by simp) (by norm_num) n s)
+      (sourceBirkhoffY (by simp) (by norm_num) m s) φ.val = -(if n = m then 1 else 0) ∧
+    NLS.Poisson.sourceBracket (by norm_num) (sourceBirkhoffY (by simp) (by norm_num) n s)
+      (sourceBirkhoffY (by simp) (by norm_num) m s) φ.val = 0 :=
+  D.birkhoff_sourceBracket_canonical (by norm_num) n m φ
+
+-- The constructed family has the mixed sign even at zero, where all
+-- periodic gaps collapse; no angle at zero is assumed.
+example : ∃ W₀ B W : Set (CoeffPair 2),
+    ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+    ∃ _D : SourceAngularThetaCommonDomainData (by simp) (by norm_num) W₀ B W s,
+      ∀ n : ℤ, NLS.Poisson.sourceBracket (by norm_num)
+        (sourceBirkhoffX (by simp) (by norm_num) n s)
+        (sourceBirkhoffY (by simp) (by norm_num) n s) 0 = -1 := by
+  obtain ⟨W₀,B,W,_,_,_,_,_,_,s,D⟩ := exists_sourceAngularTheta_theorem13_1_iv
+    (p := 2) (by simp) (by norm_num)
+  refine ⟨W₀,B,W,s,D,?_⟩
+  intro n
+  simpa only [ite_true] using (D.birkhoff_sourceBracket_canonical (by norm_num) n n ⟨0, by simp⟩).2.1
+end RectangularClosedGapPoisson
+
 end NLS.ZakharovShabat
