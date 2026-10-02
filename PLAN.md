@@ -1,14 +1,16 @@
 # Implementation plan
 
-## Latest progress: Lemma 15.1 complete
+## Latest progress: scalar rectangular coordinates constructed
 
-The gap-weighted eta coordinates are analytic through collapsed gaps
-and obey the required locally uniform bound, uniformly over all indices,
-on one constructed complex neighborhood for every finite `p > 1`.
-The next step is (3.2): construct the rectangular coordinates and assemble
-the analytic `ℓᵖ` Birkhoff map of Theorem 15.2, retaining the minus sign
-between the two terms in `yₙ`. Canonicality and the remaining conclusions
-of Theorem 14.1 follow afterward; later chapters remain unfinished.
+Lemma 15.1 is complete. Formula (3.2) now defines analytic rectangular
+coordinates on one common complex neighborhood for every finite `p > 1`.
+They agree with (3.1), vanish at real collapsed gaps, and satisfy
+`xₙ² + yₙ² = 2 Iₙ` throughout that neighborhood. The normalized-action
+roots now have full Banach power-series analyticity on common domains.
+Next prove locally bounded `ℓᵖ` values, assemble the analytic sequence
+map, and prove real-valuedness on real sources to finish Theorem 15.2.
+Canonicality and the remaining conclusions of Theorem 14.1 follow
+afterward; later chapters remain unfinished.
 
 ## Milestones
 

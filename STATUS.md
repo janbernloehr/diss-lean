@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: complete analytic and uniform estimate of Lemma 15.1
+## Current milestone: analytic rectangular coordinates and exact action radii
+
+Formula (3.2) now defines the actual rectangular coordinates `xₙ` and
+`yₙ` for every finite `p > 1`. One constructed complex neighborhood of
+the whole real source locus supports every coordinate analytically,
+including at collapsed gaps. On that domain the exact identity
+`xₙ² + yₙ² = 2 Iₙ` holds for the original glued indexed action.
+Both rectangular coordinates vanish at real collapsed gaps.
+
+`SourceNormalizedActionRootAnalytic.lean` upgrades the normalized-action
+factors from complex differentiability to full Banach power-series
+analyticity. Joint analyticity of the rationalized contour integrand
+passes through its enclosing circle. Fixed tail circles and a finite
+head intersection yield a single domain for all indices, preserving
+the squared-gap action factorization. The principal square-root factors
+are analytic on a smaller common positive-real-part neighborhood.
+
+`SourceBirkhoffCoordinates.lean` multiplies the constructed signed eta
+coordinates by the actual action root and beta exponential. The sum
+divided by `√8` defines `x`; the difference divided by `√8 i` defines
+`y`. Cancellation of the opposite beta phases and Lemma 15.1's product
+identity prove the exact squared-radius formula without a nonzero-gap
+assumption. `SourceBirkhoffCoordinateAngle.lean` proves agreement with
+(3.1), including its positive sine orientation and `√2` normalization,
+on every actual eta chart with the canonical half-gap.
+
+`SourceBirkhoffCoordinateCommonDomain.lean` assembles the analytic domain
+and its all-index action identities for the same psi family. Public
+examples check the common rectangular domain at `p = 3/2`, the original
+sine formula, and common-domain action-root analyticity at `p = 3`.
+
+This establishes the scalar rectangular construction. The next step is
+to prove its locally bounded `ℓᵖ` realization, assemble the analytic
+sequence-valued map, and prove that real sources give real coordinate
+sequences. Theorem 15.2 is not yet complete. Lemma 15.3, the remaining
+assertions of Theorem 14.1, and later chapters remain unfinished.
+
+## Previous milestone: complete analytic and uniform estimate of Lemma 15.1
 
 Lemma 15.1 (printed page 75) is now proved for every finite `p > 1`.
 The actual gap-weighted eta coordinates extend analytically to a common

@@ -1814,3 +1814,8 @@ import NLS.ZakharovShabat.SourcePsiUniformRootNormBound
 import NLS.ZakharovShabat.SourceAngularEtaDiagonalBound
 import NLS.ZakharovShabat.SourceGapWeightedEtaUniformBound
 import NLS.ZakharovShabat.SourceGapWeightedEtaLemma15_1
+
+import NLS.ZakharovShabat.SourceNormalizedActionRootAnalytic
+import NLS.ZakharovShabat.SourceBirkhoffCoordinates
+import NLS.ZakharovShabat.SourceBirkhoffCoordinateAngle
+import NLS.ZakharovShabat.SourceBirkhoffCoordinateCommonDomain

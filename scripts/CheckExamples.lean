@@ -22047,4 +22047,52 @@ example {n : ℤ} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
   D.norm_etaQuotientCauchyCandidate_le ψ hψ ρ M hrρ hρR hM hnum z hz
 end GapWeightedEtaLemma15_1
 
+section RectangularBirkhoffCoordinates
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Actual rectangular coordinates on one common complex domain, including
+-- zero gaps, with the exact normalization of their squared radius.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    IsOpen W ∧ realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n,
+      (∀ n : ℤ, AnalyticOnNhd ℂ (sourceBirkhoffX (by norm_num) (by norm_num) n s) W ∧
+        AnalyticOnNhd ℂ (sourceBirkhoffY (by norm_num) (by norm_num) n s) W) ∧
+      (∀ ψ ∈ W, ∀ n : ℤ,
+        (sourceBirkhoffX (by norm_num) (by norm_num) n s ψ)^2 +
+          (sourceBirkhoffY (by norm_num) (by norm_num) n s ψ)^2 =
+            2*sourceComplexAction (by norm_num) (by norm_num) n ψ) ∧
+      (∀ ψ ∈ W, IsRealType (CoeffPair.toMax (ENNReal.ofReal (3/2 : ℝ)) ψ) → ∀ n : ℤ,
+        sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n = 0 →
+        sourceBirkhoffX (by norm_num) (by norm_num) n s ψ = 0 ∧
+          sourceBirkhoffY (by norm_num) (by norm_num) n s ψ = 0) :=
+  exists_sourceBirkhoffCoordinates_analytic_common_domain (by norm_num) (by norm_num)
+
+-- The sign and sqrt(2) normalization recover the original sine coordinate.
+example {n : ℤ} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    {W V U : Set (CoeffPair 2)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R : ℝ} {z₀ : ℂ} {ρ : ℝ} {δ ε : CoeffPair 2 → ℂ}
+    (D : SourceAngularEtaAnalyticChartData (by simp) (by norm_num) n s W V U c T r R z₀ ρ δ ε)
+    (ψ : CoeffPair 2) (hψ : ψ ∈ U)
+    (hδ : δ ψ = canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n/2) :
+    sourceBirkhoffY (by simp) (by norm_num) n s ψ =
+      (sourceNormalizedActionRoot (by simp) (by norm_num) n ψ *
+        sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ n / (Real.sqrt 2 : ℂ)) *
+          Complex.sin (sourceAngularThetaCauchyRepresentative (by simp) (by norm_num) n s (c n) r R z₀ ρ ε ψ) :=
+  (D.birkhoffXY_eq_gap_cos_sin ψ hψ hδ).2
+
+-- Power-series analyticity of all action square roots holds on one domain
+-- at p = 3 as well, with no open-gap assumption.
+example (φ : CoeffPair 3) (hreal : IsRealType (CoeffPair.toMax 3 φ)) :
+    ∃ V : Set (CoeffPair 3), IsOpen V ∧ φ ∈ V ∧
+      (∀ n : ℤ, AnalyticOnNhd ℂ (sourceNormalizedActionRoot (by simp) (by norm_num) n) V) ∧
+      ∀ ψ ∈ V, ∀ n : ℤ,
+        (sourceNormalizedActionRoot (by simp) (by norm_num) n ψ)^2 =
+          4*sourceNormalizedActionComplexExtension (by simp) (by norm_num) n ψ ∧
+        sourceComplexAction (by simp) (by norm_num) n ψ =
+          (sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ n)^2 *
+            sourceNormalizedActionComplexExtension (by simp) (by norm_num) n ψ :=
+  exists_local_sourceNormalizedActionRoot_allIndices_analytic (by simp) (by norm_num) φ hreal
+end RectangularBirkhoffCoordinates
+
 end NLS.ZakharovShabat
