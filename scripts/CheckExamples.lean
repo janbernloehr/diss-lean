@@ -21659,4 +21659,57 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   (sourceActionRegularCotangent_coefficients_eq_on_chart hp hp1 n φ c hc).symm.trans
     (sourceActionRegularCotangent_coefficients_eq_on_chart hp hp1 n φ d hd)
 
+
+section RegularBoundaryBelowTwo
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Both ordinary boundary families satisfy all three separation
+-- relations below two, at arbitrary real sources and signed indices.
+example (b : BoundaryCondition) (n m : ℤ)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) :
+    (sourceBoundaryRootRegularCotangent (by norm_num) (by norm_num) b n φ).bivector
+      (sourceBoundaryRootRegularCotangent (by norm_num) (by norm_num) b m φ) = 0 ∧
+    (sourceBoundaryFloquetLogRegularCotangent (by norm_num) (by norm_num) b n φ).bivector
+      (sourceBoundaryFloquetLogRegularCotangent (by norm_num) (by norm_num) b m φ) = 0 ∧
+    (sourceBoundaryRootRegularCotangent (by norm_num) (by norm_num) b n φ).bivector
+      (sourceBoundaryFloquetLogRegularCotangent (by norm_num) (by norm_num) b m φ) =
+        if n = m then -(1 : ℂ)/2 else 0 :=
+  sourceBoundaryRegular_separation_relations (by norm_num) (by norm_num) b n m φ
+
+-- The regular logarithm cotangent is the full moving derivative.
+example (b : BoundaryCondition) (n : ℤ)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) :
+    (sourceBoundaryFloquetLogRegularCotangent (by norm_num) (by norm_num) b n φ).toCotangent =
+      fderiv ℂ (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b n φ.val) φ.val :=
+  sourceBoundaryFloquetLogRegularCotangent_toCotangent (by norm_num) (by norm_num) b n φ
+
+-- The actual Fourier expression converges absolutely and has the
+-- exact diagonal/off-diagonal normalization; no open gap is assumed.
+example (b : BoundaryCondition) (n m : ℤ)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) :
+    let L := fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)) =>
+      canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n) φ.val
+    let M := fderiv ℂ (sourceBoundaryFloquetLogAt (by norm_num) (by norm_num) b m φ.val) φ.val
+    let K := fun k : ℤ =>
+      L (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1)) -
+      L (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) k 1)) *
+        M (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-k) 1))
+    Summable (fun k => ‖K k‖) ∧
+      -Complex.I * (∑' k, K k) = if n = m then -(1 : ℂ)/2 else 0 := by
+  exact ⟨sourceBoundaryRootFloquetLog_pairing_summable_norm (by norm_num) (by norm_num) b n m φ,
+    sourceBoundaryRootFloquetLog_fourier_bracket_eq (by norm_num) (by norm_num) b n m φ⟩
+
+-- Changing the source exponent across two preserves the whole
+-- moving multiplier coefficient pair, not just one bracket value.
+example (b : BoundaryCondition) (n : ℤ)
+    (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) :
+    (sourceBoundaryFloquetRegularCotangent (by norm_num) (by norm_num) b n φ).coefficients =
+      (sourceBoundaryFloquetRegularCotangent (p := 3) (by norm_num) (by norm_num) b n
+        (realTypeSourceExponentInclusion (by norm_num) φ)).coefficients :=
+  sourceBoundaryFloquetRegularCotangent_coefficients_exponent
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) (by norm_num) b n φ
+end RegularBoundaryBelowTwo
+
 end NLS.ZakharovShabat

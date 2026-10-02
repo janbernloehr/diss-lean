@@ -1,6 +1,39 @@
 # Implementation status
 
-## Current milestone: action commutation for every finite exponent
+## Current milestone: boundary separation relations for every finite exponent
+
+The actual signed Dirichlet and Neumann roots, moving Floquet
+multipliers, and normalized local Floquet logarithms now have proved
+square-summable cotangent coefficients for every finite `p > 1`.
+`SourceBoundaryExponentDifferential.lean` proves exponent compatibility
+of the full moving root and multiplier differentials. Below two the
+regular cotangents are restrictions of their actual Hilbert derivatives;
+above two they use the existing continuous cotangent construction.
+The root and multiplier Hilbert coefficient pairs themselves are
+independent of the source exponent.
+
+`SourceBoundaryRegularPoisson.lean` proves all three separation
+relations within either ordinary boundary family: roots commute,
+Floquet logarithms commute, and the mixed bracket is `-δnm/2`.
+The local logarithm is the actual analytic logarithm normalized at the
+source, with its derivative verified against the regular cotangent.
+No supplied branch, finite-gap assumption, or open-gap assumption is
+needed. The original mixed Fourier formula is absolutely convergent
+and has the same exact normalization, including at collapsed gaps.
+
+Public examples use `p = 3/2`, both boundary conditions, arbitrary
+signed indices, the literal actual-derivative Fourier pairing, and
+coefficient compatibility across exponent two to `p = 3`.
+
+These are the spectral separation relations used in the angle
+construction. The angle/action identity below two and angle/angle
+identity away from two still require extension; this step does not
+claim them. Corollary 13.2's action/action identity is complete for all
+finite `p > 1`, while all three angle/action canonical relations are
+currently complete together only at `p = 2`. Later chapters remain
+unfinished.
+
+## Previous milestone: action commutation for every finite exponent
 
 The action/action identity in Corollary 13.2 now holds for the full
 range `1 < p < ∞`. `SourceActionRegularCotangent.lean` constructs
