@@ -51,7 +51,8 @@ theorem sourceFiniteGap_mem_sobolev
       (WithLp.norm_snd_le (Coeff p) (sourceFourierTail (4^k*M) φ.val)) hp0.le).trans (hb k)
 
 /-- A positive regularity exponent is constructed at every finite
-Banach exponent above one. Further bootstrapping is needed for `H¹`. -/
+Banach exponent above one. `SourceFiniteGapSobolev` iterates this gain
+to obtain `H¹` and every nonnegative Sobolev weight. -/
 theorem exists_sourceFiniteGap_positive_regularity
     (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : realTypeSourceLocus p)
     (hfinite : φ ∈ sourceFiniteGapLocus hp hp1) :

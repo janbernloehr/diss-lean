@@ -22489,4 +22489,42 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
 
 end FiniteGapPositiveRegularity
 
+section FiniteGapSobolevRegularity
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The original exponent need not be Hilbertian for the H¹ conclusion.
+example (φ : realTypeSourceLocus 3)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Memℓp (fun n => (Weight.sobolev 1 n : ℂ)*φ.val.fst n) 2 ∧
+    Memℓp (fun n => (Weight.sobolev 1 n : ℂ)*φ.val.snd n) 2 :=
+  sourceFiniteGap_mem_H1 (by simp) (by norm_num) φ hfinite
+
+-- The iteration reaches a weight far beyond the initial gain.
+example (φ : realTypeSourceLocus 3)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Memℓp (fun n => (Weight.sobolev 5 n : ℂ)*φ.val.fst n) 3 ∧
+    Memℓp (fun n => (Weight.sobolev 5 n : ℂ)*φ.val.snd n) 3 :=
+  sourceFiniteGap_mem_all_sobolev (by simp) (by norm_num) φ hfinite 5 (by norm_num)
+
+-- The same H¹ conclusion holds below exponent two.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)))
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    Memℓp (fun n => (Weight.sobolev 1 n : ℂ)*φ.val.fst n) 2 ∧
+    Memℓp (fun n => (Weight.sobolev 1 n : ℂ)*φ.val.snd n) 2 :=
+  sourceFiniteGap_mem_H1 (by norm_num) (by norm_num) φ hfinite
+
+-- The weighted recurrence retains the physical/source cutoff factor.
+example (φ : realTypeSourceLocus 3)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (w : SpectralWeight) (ψ : WeightedCoeffPair w.toWeight 3)
+    (hψ : w.forgetPairWeight ψ = sourceWeightedPeriodOne φ.val) :
+    ∃ M : ℕ, 0 < M ∧ ∃ C : ℝ, 0 ≤ C ∧ ∀ k : ℕ,
+      ‖weightedPairFourierTail w.toWeight (2*(4^k*M)) ψ‖^(3 : ℝ) ≤ C*(1/2 : ℝ)^k := by
+  simpa only [ENNReal.toReal_ofNat] using sourceFiniteGap_weighted_fourierTail_geometric
+    (by simp) (by norm_num) φ hfinite w ψ hψ (1/2)
+    (by norm_num [Real.rpow_neg_one]) (by norm_num)
+
+end FiniteGapSobolevRegularity
+
 end NLS.ZakharovShabat

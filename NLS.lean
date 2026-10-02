@@ -1870,3 +1870,10 @@ import NLS.SequenceSpaces.GeometricTailRegularity
 import NLS.ZakharovShabat.SourceFourierTail
 import NLS.ZakharovShabat.SourceFiniteGapTailRecurrence
 import NLS.ZakharovShabat.SourceFiniteGapRegularity
+
+import NLS.ZakharovShabat.WeightedResonantCenterForget
+import NLS.ZakharovShabat.WeightedEvenLeadingTail
+import NLS.ZakharovShabat.SourceFiniteGapWeightedClosing
+import NLS.ZakharovShabat.SourceFiniteGapWeightedTail
+import NLS.ZakharovShabat.SourceFiniteGapWeightedRegularity
+import NLS.ZakharovShabat.SourceFiniteGapSobolev

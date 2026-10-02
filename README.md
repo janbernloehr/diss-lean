@@ -7460,3 +7460,38 @@ exponent above one. Next establish and iterate the weighted spectral
 bootstrap to reach `H¹`. That conclusion, the gradient estimates of
 Appendix G.6–G.7, Lemma 16.1, remaining assertions of Theorem 14.1,
 and later chapters are unfinished.
+
+## All Sobolev weights and H¹ for finite-gap sources
+
+Every real spectral finite-gap source at every finite exponent
+`1 < p < ∞` now has every nonnegative Sobolev weight at its original
+exponent. In particular, both one-derivative source coefficient
+sequences are in `ℓ²`: the `H¹` regularity prerequisite for Lemma 16.1
+is proved, without a finite Fourier support or initial regularity
+hypothesis.
+
+`WeightedResonantCenterForget.lean` identifies the actual distant
+moving centers and both closing equations after forgetting a spectral
+weight. `SourceFiniteGapWeightedClosing.lean` uses this to identify the
+weighted remainder with the negative leading Fourier tail.
+`WeightedEvenLeadingTail.lean` proves equality of the leading-tail and
+physical Fourier-tail norms for even physical support, with physical
+cutoff `2N` for resonance cutoff `N`.
+
+`SourceFiniteGapWeightedTail.lean` obtains the same quadratic recurrence
+and geometric decay in every available spectral weight.
+`SourceFiniteGapWeightedRegularity.lean` adds any nonnegative Sobolev
+gain `t` satisfying `t*p < min(1,p−1)`. The gain range is independent
+of the existing weight. `SourceFiniteGapSobolev.lean` iterates the fixed
+positive gain `min(1,p−1)/(2p)`, preserves the original coefficients at
+each step, and uses monotonicity to reach every nonnegative real weight.
+Sampling the even physical frequencies recovers the original source.
+The one-derivative embedding then converts the weight-two `ℓp` result
+into weight-one `ℓ¹`, hence weight-one `ℓ²` and `H¹`.
+
+Public checks cover `H¹` at `p = 3` and `p = 3/2`, weight five at
+`p = 3`, and the geometric bound with its exact doubled physical cutoff
+in an arbitrary available spectral weight. Next prove the quantitative
+spectral gradient estimates of Appendix G.6–G.7 and use them in Lemma
+16.1. Those estimates, Lemma 16.1 itself, remaining assertions of
+Theorem 14.1, and later chapters are unfinished.

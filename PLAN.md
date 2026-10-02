@@ -1,18 +1,18 @@
 # Implementation plan
 
-## Latest progress: positive weighted regularity of finite-gap sources
+## Latest progress: finite-gap sources have all Sobolev weights and H¹ regularity
 
 Theorem 15.2, Lemma 15.3, and the full free Fourier Jacobian identity
-are complete. The actual finite-gap closing equations yield a quadratic
-Fourier-tail recurrence and geometric decay. The conversion to positive
-weighted regularity is now proved: both original components are in
-weighted `ℓp` for every `s ≥ 0` with `s*p < min(1,p−1)`.
+are complete. The finite-gap tail bootstrap now repeats in every
+available spectral weight. Center invariance, the exact even-support
+tail norm, and a fixed positive gain prove all nonnegative Sobolev
+weights at the original exponent, and then `H¹` membership for every
+real finite-gap source at every finite exponent above one.
 
-Next establish the corresponding weighted spectral bootstrap and iterate
-the gain toward `H¹`; the unweighted first gain alone does not prove
-that conclusion. Then prove the spectral gradient estimates of Appendix
-G.6–G.7 needed for Lemma 16.1. These steps, the remaining assertions
-of Theorem 14.1, and later chapters are unfinished.
+Next prove the quantitative spectral gradient estimates of Appendix
+G.6–G.7 and combine them with this regularity result to establish Lemma
+16.1. Those estimates, Lemma 16.1 itself, remaining assertions of
+Theorem 14.1, and later chapters are unfinished.
 
 ## Milestones
 
