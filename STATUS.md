@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: Corollary 13.2 for every finite exponent above one
+## Current milestone: analytic gap-weighted eta coordinates through collapsed gaps
+
+Section 15's gap-weighted eta coordinates now have constructed analytic
+extensions through collapsed gaps on one complex neighborhood of the
+whole real source locus, for every finite `p > 1`. Their open-gap values
+are proved to be the actual `γₙ exp(±iηₙ)` expressions. This establishes
+the analyticity part of Lemma 15.1; its index-uniform bound remains open.
+
+`SourceAngularEtaRemainderGlobal.lean` glues the normalized Cauchy remainder
+values by their proved overlap uniqueness. The resulting single remainder
+is analytic on every actual annular chart with analytic Dirichlet roots,
+including at closed gaps. It vanishes at endpoint terminals.
+
+`SourceGapWeightedEta.lean` uses the Dirichlet displacement from the
+periodic midpoint, the anti-discriminant divided by twice the omitted
+root product, and the exponential of that remainder. No division by
+the gap width appears. Both signed coordinates are analytic on the full
+chart, and their product is exactly the squared periodic gap, even at
+complex collapsed gaps.
+
+`SourceGapWeightedEtaAngle.lean` identifies the formula with twice the
+chosen half-gap times the exponential of the actual eta representative.
+For the canonical half-gap, this is precisely Section 15's original
+coordinate. `SourceGapWeightedEtaCommonDomain.lean` constructs one open
+neighborhood carrying every indexed coordinate for the same actual psi
+family. Both coordinates vanish at real collapsed gaps. At complex
+collapsed gaps, the theorem asserts only their zero product, allowing
+one coordinate to be nonzero as described in the dissertation.
+
+Public examples construct the common analytic domain at `p = 3/2`,
+verify the product identity without an open-gap assumption, check real
+collapsed-gap vanishing, and identify an actual negative-sign coordinate
+with its open-gap eta exponential.
+
+Next prove the locally uniform, index-uniform estimate in Lemma 15.1,
+then combine these coordinates with the normalized action factors and
+beta correction to build the rectangular Birkhoff map of Theorem 15.2.
+The remaining assertions of Theorem 14.1 and later chapters are unfinished.
+
+## Previous milestone: Corollary 13.2 for every finite exponent above one
 
 Corollary 13.2 (printed page 72) is now proved for every finite `p > 1`:
 actual actions commute; actual angles commute where both selected gaps

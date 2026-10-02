@@ -21940,4 +21940,56 @@ example :
   ⟨D.thetaTheta_pairing_summable_norm n m φ hn hm,D.thetaTheta_fourier_bracket_eq_zero n m φ hn hm⟩
 end Corollary13_2AllExponents
 
+section GapWeightedEtaCoordinates
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- An actual common neighborhood supports all coordinates, including
+-- at closed gaps, below the Hilbert exponent.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    IsOpen W ∧ realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n,
+      ∀ n : ℤ,
+        AnalyticOnNhd ℂ (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s 1) W ∧
+        AnalyticOnNhd ℂ (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s (-1)) W := by
+  obtain ⟨W₀,B,W,hW,hreal,_,s,_,hA,_,_⟩ :=
+    exists_sourceGapWeightedEta_analytic_common_domain (p := ENNReal.ofReal (3/2 : ℝ))
+      (by norm_num) (by norm_num)
+  exact ⟨W,hW,hreal,s,fun n => ⟨hA n 1,hA n (-1)⟩⟩
+
+-- The exact product is the squared gap, without an open-gap condition.
+example (ψ : CoeffPair 2) (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k)
+    (hμ : canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n ∈
+      sourceStandardRootOmittedDomain (by simp) (by norm_num) ψ n) :
+    sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s 1 ψ *
+      sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s (-1) ψ =
+        (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2 :=
+  sourceGapWeightedEtaCoordinate_mul (by simp) (by norm_num) n s ψ hμ
+
+-- Both coordinates vanish at real closed gaps, without selecting an eta angle.
+example (φ : realTypeSourceLocus 2) (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k)
+    (hμ : canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ.val n ∈
+      sourceStandardRootOmittedDomain (by simp) (by norm_num) φ.val n)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n = 0) :
+    sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s 1 φ.val = 0 ∧
+      sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s (-1) φ.val = 0 :=
+  ⟨sourceGapWeightedEtaCoordinate_eq_zero_of_real_collapsed_gap (by simp) (by norm_num) n s φ.val φ.property hμ hgap 1,
+    sourceGapWeightedEtaCoordinate_eq_zero_of_real_collapsed_gap (by simp) (by norm_num) n s φ.val φ.property hμ hgap (-1)⟩
+
+-- On actual open-gap charts this is the original gap-weighted eta
+-- exponential, with its full Cauchy representative and canonical half-gap.
+example {n : ℤ} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    {W V U : Set (CoeffPair 2)} {c : ℤ → ℂ} {T : ℤ → ℝ}
+    {r R : ℝ} {z₀ : ℂ} {ρ : ℝ} {δ ε : CoeffPair 2 → ℂ}
+    (D : SourceAngularEtaAnalyticChartData (by simp) (by norm_num) n s W V U c T r R z₀ ρ δ ε)
+    (ψ : CoeffPair 2) (hψ : ψ ∈ U)
+    (hδ : δ ψ = canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n/2) :
+    sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s (-1) ψ =
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n *
+        Complex.exp (-1*Complex.I*sourceAngularEtaCauchyRepresentative
+          (by simp) (by norm_num) n s (c n) r R z₀ ρ ε ψ) :=
+  D.gapWeightedEtaCoordinate_eq_gap_exp ψ hψ (-1) (Or.inr rfl) hδ
+end GapWeightedEtaCoordinates
+
 end NLS.ZakharovShabat

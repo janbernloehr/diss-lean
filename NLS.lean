@@ -1802,3 +1802,8 @@ import NLS.ZakharovShabat.SourceAngularThetaThetaExponent
 import NLS.ZakharovShabat.SourceActionExponentDifferential
 import NLS.ZakharovShabat.SourceCorollary13_2Regular
 import NLS.ZakharovShabat.SourceAngularRegularFourier
+
+import NLS.ZakharovShabat.SourceAngularEtaRemainderGlobal
+import NLS.ZakharovShabat.SourceGapWeightedEta
+import NLS.ZakharovShabat.SourceGapWeightedEtaAngle
+import NLS.ZakharovShabat.SourceGapWeightedEtaCommonDomain

@@ -86,13 +86,14 @@ introduced. Definition-only stubs do not count as proved results.
 
 ## Current next proof target
 
-Corollary 13.2 is now proved throughout `1 < p < ∞`, including absolute
-convergence of the actual Fourier brackets below two. Continue with
-Chapter 3, Sections 14–15: construct rectangular Birkhoff coordinates
-and prove their analytic extension across collapsed gaps, then assemble
-the sequence-valued map and the remaining assertions of Theorem 14.1.
-See `STATUS.md` for the current theorem coverage; the entries below
-record the historical sequence of proof targets.
+Corollary 13.2 is proved throughout `1 < p < ∞`. Section 15's
+`γₙ exp(±iηₙ)` coordinates now extend analytically through collapsed
+gaps on an actual common source neighborhood. Next prove Lemma 15.1's
+locally uniform bound, uniformly in the signed index, then construct
+the rectangular coordinates and sequence-valued Birkhoff map of
+Theorem 15.2. The remaining assertions of Theorem 14.1 follow later.
+See `STATUS.md` for current coverage; the entries below record the
+historical sequence of proof targets.
 
 ## Earlier proof targets
 
