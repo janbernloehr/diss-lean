@@ -352,6 +352,12 @@ import NLS.ZakharovShabat.SourceAdaptedClosingMap
 import NLS.ZakharovShabat.SourceAdaptedClosingMapDerivative
 import NLS.ZakharovShabat.SourceResonantCenterClosing
 import NLS.ZakharovShabat.SourceAdaptedClosingInverse
+import NLS.ZakharovShabat.SourceClosingTargets
+import NLS.ZakharovShabat.SourceAdaptedClosingMapReality
+import NLS.ZakharovShabat.SourceAdaptedClosingInverseReality
+import NLS.ZakharovShabat.SourceClosingApproximation
+import NLS.ZakharovShabat.SourceFiniteGapClosingCriterion
+import NLS.ZakharovShabat.SourceFiniteGapDensity
 import NLS.ZakharovShabat.SingleResonantPotential
 import NLS.ZakharovShabat.RootDisplacementSourceAudit
 import NLS.ZakharovShabat.RootDisplacementPower
@@ -1172,6 +1178,7 @@ import NLS.ZakharovShabat.SourcePsiUniformEquationEstimates
 import NLS.ComplexAnalysis.QuantitativeTriangularDerivative
 import NLS.ComplexAnalysis.QuantitativeAnalyticInverse
 import NLS.ComplexAnalysis.NearIdentityAnalyticInverse
+import NLS.ComplexAnalysis.NearIdentityClosedSubspaceInverse
 import NLS.ComplexAnalysis.ConvexRealAnalyticIdentity
 import NLS.ZakharovShabat.SourcePsiUniformComplexBranches
 import NLS.ZakharovShabat.SourcePsiUniformComplexBranchRealAgreement

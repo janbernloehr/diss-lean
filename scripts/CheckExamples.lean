@@ -21427,4 +21427,74 @@ example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) :
   obtain ⟨g,hg,_,hdata⟩ := hG N hN
   exact ⟨g,hg,fun y hy => ⟨(hdata y hy).2.1,(hdata y hy).2.2.2.1⟩⟩
 
+-- The closed retained Fourier block has zero target coordinates at
+-- the first omitted resonance, and truncation preserves real type.
+example (φ : CoeffPair 3) (hreal : IsRealType (CoeffPair.toMax 3 φ)) (N : ℕ) :
+    IsRealType (CoeffPair.toMax 3 (sourceSymmetricTruncate N φ)) ∧
+    (sourceSymmetricTruncate N φ).fst (-(N+1 : ℤ)) = 0 ∧
+    (sourceSymmetricTruncate N φ).snd (N+1 : ℤ) = 0 := by
+  refine ⟨sourceSymmetricTruncate_realType N φ hreal,?_⟩
+  exact sourceSymmetricTruncate_high N φ (N+1) (by omega)
+
+-- Truncated targets enter a fixed positive image radius although
+-- the center is the actual cutoff-dependent spectral map.
+example (φ : CoeffPair 3) (δ : ℝ) (hδ : 0 < δ) :
+    ∀ᶠ N : ℕ in Filter.atTop,
+      sourceSymmetricTruncate N φ ∈ Metric.ball (sourceAdaptedClosingMap (by simp) φ (N+1)) δ :=
+  eventually_sourceClosingTarget_mem_ball (by simp) (by norm_num) φ δ hδ
+
+-- The actual inverse recovers real sources below the Hilbert exponent,
+-- with a common image radius and displacement bound for all cutoffs.
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)))
+    (hφ : IsRealType (CoeffPair.toMax _ φ)) :
+    ∃ δ : ℝ, 0 < δ ∧ ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+      ∀ y ∈ Metric.ball (sourceAdaptedClosingMap (by norm_num) φ N) δ,
+        IsRealType (CoeffPair.toMax _ y) →
+        ∃ ψ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)),
+          IsRealType (CoeffPair.toMax _ ψ) ∧ sourceAdaptedClosingMap (by norm_num) ψ N = y ∧
+          ‖ψ-φ‖ ≤ 2*‖y-sourceAdaptedClosingMap (by norm_num) φ N‖ := by
+  obtain ⟨δ,hδ,N₀,hN₀,hG⟩ := exists_uniform_real_sourceAdaptedClosingInverse
+    (by norm_num) (by norm_num) φ hφ
+  refine ⟨δ,hδ,N₀,hN₀,?_⟩
+  intro N hN y hy hreal
+  obtain ⟨g,_,_,hdata⟩ := hG N hN
+  have hi := hdata y hy
+  exact ⟨g y,hi.2.2.1 hreal,hi.1,hi.2.1⟩
+
+-- Nearby real sources close the original periodic spectrum, with
+-- both actual equations zero and determinant order exactly two.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ ψ : CoeffPair 2,
+      IsRealType (CoeffPair.toMax 2 ψ) ∧ ‖ψ-φ‖ < ε ∧
+      ∀ n : ℤ, N ≤ n.natAbs →
+        let ζ := weightedResonantDiagonalCenter (by simp) SpectralWeight.one (sourceWeightedPeriodOne ψ) n;
+        weightedResonantBMinusExtension (by simp) SpectralWeight.one (sourceWeightedPeriodOne ψ) n ζ = 0 ∧
+        weightedResonantBPlusExtension (by simp) SpectralWeight.one (sourceWeightedPeriodOne ψ) n ζ = 0 ∧
+        (∀ z ∈ resonantStrip n, z ∈ periodicSpectrum (by simp) (periodOnePotential ψ) ↔ z = ζ) ∧
+        ∀ z ∈ resonantStrip n,
+          analyticOrderNatAt (resonantDeterminantExtension (by simp) SpectralWeight.one
+            (sourceWeightedPeriodOne ψ) n) z = if z = ζ then 2 else 0 := by
+  obtain ⟨N,hN,ψ,hr,he,_,hc⟩ := exists_real_sourceClosingApproximation (by simp) (by norm_num) φ hφ ε hε
+  exact ⟨N,hN,ψ,hr,he,hc⟩
+
+-- The approximants have finitely many actual nonzero canonical gaps.
+example (φ : realTypeSourceLocus 3) (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ : realTypeSourceLocus 3, ‖ψ.val-φ.val‖ < ε ∧
+      {n : ℤ | canonicalPeriodicGap (by simp) (by norm_num)
+        (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) n ≠ 0}.Finite := by
+  obtain ⟨ψ,hψ,hclose⟩ := exists_mem_sourceFiniteGapLocus_norm_sub_lt (by simp) (by norm_num) φ ε hε
+  exact ⟨ψ,hclose,hψ⟩
+
+example : Dense (sourceFiniteGapLocus (p := 2) (by simp) (by norm_num)) ∧
+    Dense (sourceFiniteGapLocus (p := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) (by norm_num)) :=
+  ⟨dense_sourceFiniteGapLocus (by simp) (by norm_num),dense_sourceFiniteGapLocus (by norm_num) (by norm_num)⟩
+
+-- Density extends continuous identities within the same prescribed
+-- open real source set, retaining any open spectral conditions.
+example (U : Set (realTypeSourceLocus 2)) (ho : IsOpen U)
+    (H : realTypeSourceLocus 2 → ℂ) (hH : ContinuousOn H U)
+    (hfinite : ∀ ψ ∈ U, ψ ∈ sourceFiniteGapLocus (by simp) (by norm_num) → H ψ = 0)
+    (φ : realTypeSourceLocus 2) (hφ : φ ∈ U) : H φ = 0 :=
+  eq_of_continuousOn_of_sourceFiniteGap (by simp) (by norm_num) ho hH 0 hfinite φ hφ
+
 end NLS.ZakharovShabat

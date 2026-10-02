@@ -7,7 +7,8 @@ Symmetric frequency truncation preserves real type and converges in
 every finite source exponent. A continuous scalar identity on an open
 source set therefore follows from its values at finite real potentials.
 The open set may impose nonzero gaps: the truncations eventually stay
-in it. This supplies the density step used in Corollary 13.2.
+in it. Actual finite-gap density is proved separately from the spectral
+closing map in `SourceFiniteGapDensity`.
 -/
 
 noncomputable section

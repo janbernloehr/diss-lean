@@ -6659,3 +6659,44 @@ the derivative's `1/4` proximity, and the signed high equations on the
 constructed source ball; the actual Hilbert analytic inverse and its
 original-spectrum closing implication; and analytic right inversion with
 uniqueness at `p = 3/2`.
+
+## Latest milestone: Corollary 1.6, actual real finite-gap density
+
+`SourceClosingTargets.lean` proves that symmetric truncations eventually
+lie in every fixed positive image ball centered at the actual adapted
+spectral map. Both the truncation error and the actual source remainder
+tend to zero in the original pair norm. The first omitted index is
+`N+1` for the retained closed Fourier block `[-N,N]`.
+
+`SourceAdaptedClosingMapReality.lean` transports real type to the weighted
+physical source and proves conjugacy of the actual off-diagonal equations
+at the real moving centers. Thus every sufficiently large adapted map
+preserves real type on one common source neighborhood.
+`NearIdentityClosedSubspaceInverse.lean` constructs a fixed point inside
+a preserved closed real subspace and identifies it with the ambient
+inverse image. `SourceAdaptedClosingInverseReality.lean` applies this to
+obtain actual analytic inverse branches that preserve real type on
+smaller common image balls, uniformly in all larger cutoffs.
+
+`SourceClosingApproximation.lean` inverts the actual truncated targets.
+The recovered sources are real, arbitrarily close in source norm, and
+solve both closing equations at every sufficiently distant resonance.
+The original periodic spectrum there is the single actual center and
+its determinant has order two.
+
+`SourceFiniteGapClosingCriterion.lean` connects this spectral statement
+to the canonical indexed gaps: both distant endpoints lie in the strip
+and coincide. `SourceFiniteGapDensity.lean` proves density of the existing
+actual real finite-gap locus at every finite `p > 1`, establishing
+Corollary 1.6. Approximation can retain any open real source condition,
+and continuous identities on that open set extend from finite-gap sources.
+
+Public-API examples check the exact truncation boundary, reality,
+common inverse target balls, real inverse images below two, actual
+closing equations and original determinant order, finite canonical gaps,
+and density at Hilbert and non-Hilbert exponents. They also use density
+to extend a continuous identity within an open real source set.
+
+General Hilbert angle/angle involution is the next application. Bracket
+compatibility below two and later chapters remain unfinished;
+Corollary 13.2 is not complete.

@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: the adapted source map and its uniform analytic inverses
+## Current milestone: Corollary 1.6, density of actual real finite-gap sources
+
+Actual real finite-gap sources are now proved dense in the original
+component-sum source norm for every finite exponent `p > 1`. The theorem
+uses the existing spectral definition: only finitely many canonical
+indexed periodic gaps are nonzero.
+
+Symmetric Fourier truncations converge to the original source, while
+the actual adapted spectral map at that source converges to the identity.
+Their difference tends to zero. The truncated targets therefore eventually
+lie in the common positive inverse image balls, and the inverse sources
+approach the original source with the proved displacement bound.
+
+The physical embedding preserves real type. The actual moving centers
+are real at real sources, and the off-diagonal equations there are
+conjugates. The adapted map consequently preserves the closed real
+source subspace on one common neighborhood. An identity-based contraction
+inside that subspace constructs the same inverse image, proving that
+the analytic inverse branches preserve real type on smaller common balls.
+
+Every omitted target coordinate is zero, so both actual distant closing
+equations vanish at the recovered source. Its original periodic spectrum
+in each such strip closes to the moving center, with determinant order
+two. The canonical endpoint labeling places both distant endpoints in
+that strip, forcing their gap to vanish. This establishes Corollary 1.6
+through the actual spectral closing construction.
+
+Finite-gap approximation also retains any prescribed open real source
+condition. Continuous identities on such an open set now extend from
+its actual finite-gap sources. The next application is general Hilbert
+angle/angle involution. Bracket compatibility for `1 < p < 2` and later
+chapters remain unfinished; Corollary 13.2 is not complete.
+
+Public-API checks cover the truncation boundary and reality relation,
+target membership at `p = 3`, real inverse images at `p = 3/2`, actual
+closing equations and original determinant order at `p = 2`, finite
+canonical gaps at `p = 3`, density at `p = 2` and `p = 3/2`, and extension
+of continuous identities on an open real source set.
+
+## Previous milestone: the adapted source map and its uniform analytic inverses
 
 The original source space now has an actual adapted spectral map. It
 equals the identity plus the moving-center remainder, after isometric
