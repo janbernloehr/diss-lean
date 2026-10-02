@@ -1,17 +1,19 @@
 # Implementation plan
 
-## Latest progress: Section 16 free Fourier Jacobian
+## Latest progress: finite-gap characterization in adapted coordinates
 
-Theorem 15.2 and Lemma 15.3 are complete. Section 16 now has the
-analytic bounded Jacobian, the exact closed-gap and finite-gap tail
-differential formulas, and the full identity `d₀Ω = sourceBirkhoffFourier`
-at every finite exponent above one. The free spectral cotangents and
-normalizations are derived from the actual classical solutions, and
-the operator identity applies to arbitrary complex directions.
+Theorem 15.2, Lemma 15.3, and the full free Fourier Jacobian identity
+are complete. Toward Lemma 16.1, real finite-gap sources are now
+characterized by eventual vanishing of both actual center closing
+equations. The adapted source map equals its finite low-frequency
+truncation for every sufficiently large cutoff. The proof uses actual
+double spectral zeros, reality, and Cauchy derivative estimates.
 
-Next establish the quantitative finite-gap gradient estimates of
-Lemma 16.1 and their consequences. Those estimates, the remaining
-assertions of Theorem 14.1, and later chapters are unfinished.
+Next recover `H¹` regularity of the original finite-gap source through
+weighted adapted inverse estimates. Then establish the spectral gradient
+estimates (Appendix G.6–G.7) needed for Lemma 16.1 and finish its quantitative
+argument. These steps, the remaining assertions of Theorem 14.1, and
+later chapters are unfinished.
 
 ## Milestones
 

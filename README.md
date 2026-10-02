@@ -7360,3 +7360,38 @@ the signed moving-terminal derivative. Theorem 15.2 and Lemma 15.3
 remain complete. Next are the quantitative finite-gap gradient estimates
 of Lemma 16.1. Those estimates, the remaining assertions of Theorem 14.1,
 and later chapters are unfinished.
+
+## Section 16 progress: finite-gap sources and adapted closing coordinates
+
+The spectral prerequisite for the regularity step in Lemma 16.1 is now
+proved: a real source is finite-gap if and only if both actual
+resonant off-diagonal coefficients vanish at the moving diagonal centers
+outside a finite set. This holds at every finite exponent above one.
+
+`ResonantDoubleRootClosing.lean` proves the double-root criterion from
+Cauchy derivative bounds. The diagonal derivative has norm at most
+`1/8`, and each off-diagonal derivative at most `1/4`. Equal norms of
+the two off-diagonal values, together with a double determinant zero,
+force both values and the diagonal residual to vanish.
+
+`SourceClosedGapCenter.lean` instantiates this criterion using the
+actual resonant coefficients. Canonical endpoint labeling and the
+original spectral equivalence give determinant order two at a distant
+collapsed gap. Real type supplies the conjugation identity, hence equal
+off-diagonal norms. Uniqueness of the diagonal equation identifies the
+collapsed endpoint with the named moving center.
+
+`SourceFiniteGapAdaptedCoordinates.lean` combines this converse with
+the existing closing implication to characterize the spectral finite-gap
+locus. It further proves that, for every sufficiently large cutoff `M`,
+`sourceAdaptedClosingMap hp φ M` is exactly the Fourier truncation of `φ`
+to indices `−M < n < M`. Only the adapted image is finitely supported;
+no finite Fourier support assumption is imposed on the original source.
+
+Public checks cover the characterization at `p = 3`, the exact adapted
+truncation identity at `p = 3/2`, and the double-root derivative criterion.
+The next step is to recover `H¹` regularity through weighted adapted
+inverse estimates, then prove the spectral gradient estimates needed
+for Lemma 16.1. That regularity statement and the quantitative estimates
+are not yet complete. The remaining assertions of Theorem 14.1 and later
+chapters are also unfinished.

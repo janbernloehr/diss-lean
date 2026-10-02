@@ -1860,3 +1860,7 @@ import NLS.ZakharovShabat.SourceFreePotentialCotangents
 import NLS.ZakharovShabat.SourceFreeSpectralDifferentials
 import NLS.ZakharovShabat.SourceBirkhoffFreeDifferential
 import NLS.ZakharovShabat.SourceBirkhoffFourier
+
+import NLS.ZakharovShabat.ResonantDoubleRootClosing
+import NLS.ZakharovShabat.SourceClosedGapCenter
+import NLS.ZakharovShabat.SourceFiniteGapAdaptedCoordinates

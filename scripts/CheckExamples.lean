@@ -22395,4 +22395,40 @@ example (n : ℤ) (h : CoeffPair 2) :
   fderiv_sourceBoundaryTerminalAntiDiscriminant_zero n h
 end BirkhoffFreeFourier
 
+section FiniteGapAdaptedCoordinates
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The converse closing criterion uses the actual canonical gaps and
+-- the actual moving centers, at a non-Hilbert exponent above two.
+example (φ : realTypeSourceLocus 3) :
+    φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ↔
+      ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+        let ζ := weightedResonantDiagonalCenter (by simp) SpectralWeight.one (sourceWeightedPeriodOne φ.val) n
+        weightedResonantBPlusExtension (by simp) SpectralWeight.one (sourceWeightedPeriodOne φ.val) n ζ = 0 ∧
+        weightedResonantBMinusExtension (by simp) SpectralWeight.one (sourceWeightedPeriodOne φ.val) n ζ = 0 :=
+  sourceFiniteGapLocus_iff_eventually_center_closed (by simp) (by norm_num) φ
+
+-- Below two, actual finite-gap sources still give the exact adapted
+-- truncation identity, with no finite Fourier assumption on the source.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)))
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ M : ℕ, N ≤ M →
+      sourceAdaptedClosingMap (by norm_num) φ.val M = (CoeffPair.toMax (ENNReal.ofReal (3/2 : ℝ))).symm
+        (Coeff.truncate (Finset.Ioo (-(M : ℤ)) M) φ.val.fst,
+         Coeff.truncate (Finset.Ioo (-(M : ℤ)) M) φ.val.snd) :=
+  sourceAdaptedClosingMap_eq_truncate_of_finiteGap (by norm_num) (by norm_num) φ hfinite
+
+-- The derivative criterion forces both coefficients to vanish,
+-- even without choosing a square-root branch of their product.
+example (c z : ℂ) (a b d : ℂ → ℂ)
+    (ha : DifferentiableAt ℂ a z) (hb : DifferentiableAt ℂ b z) (hd : DifferentiableAt ℂ d z)
+    (ha' : ‖deriv a z‖ ≤ 1/8) (hb' : ‖deriv b z‖ ≤ 1/4) (hd' : ‖deriv d z‖ ≤ 1/4)
+    (hnorm : ‖b z‖ = ‖d z‖)
+    (hzero : (z-c-a z)^2-b z*d z = 0)
+    (hderiv : deriv (fun x => (x-c-a x)^2-b x*d x) z = 0) :
+    z = c+a z ∧ b z = 0 ∧ d z = 0 :=
+  resonant_double_zero_closing c z a b d ha hb hd ha' hb' hd' hnorm hzero hderiv
+end FiniteGapAdaptedCoordinates
+
 end NLS.ZakharovShabat
