@@ -1,6 +1,33 @@
 # Implementation status
 
-## Current milestone: quantitative Fourier-tail decay at finite-gap sources
+## Current milestone: positive weighted regularity of finite-gap sources
+
+Every real spectral finite-gap source at every finite exponent
+`1 < p < ∞` now has positive Sobolev-weighted Fourier regularity.
+More precisely, for every `s ≥ 0` satisfying
+
+`s*p < min(1, p−1)`,
+
+both original source components belong to the coefficient space with
+weight `(1 + |n|)^s`. The theorem constructs a positive admissible
+exponent, `s = min(1, p−1)/(2p)`, without an initial regularity or finite
+Fourier support assumption.
+
+`GeometricTailRegularity.lean` proves the general summability step:
+a bound `‖tail(4^k M) a‖^p ≤ C q^k` implies weighted membership whenever
+`4^(s*p) q < 1`. The proof sums nonnegative tails over geometric cutoffs;
+it does not lose a power by estimating coefficients individually.
+`SourceFiniteGapRegularity.lean` selects a compatible decay rate and
+applies this result to both components of the actual finite-gap source.
+
+Public checks cover the concrete weight `s = 1/4` at `p = 3` and
+`p = 3/2`, together with existence of a positive weight at every finite
+exponent above one. Next establish and iterate the weighted spectral
+bootstrap to reach `H¹`. That conclusion, the gradient estimates of
+Appendix G.6–G.7, Lemma 16.1, remaining assertions of Theorem 14.1,
+and later chapters are unfinished.
+
+## Previous milestone: quantitative Fourier-tail decay at finite-gap sources
 
 Every real finite-gap source at every finite exponent `1 < p < ∞`
 now has a proved geometric bound along quadrupled Fourier cutoffs.

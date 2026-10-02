@@ -1,18 +1,17 @@
 # Implementation plan
 
-## Latest progress: quantitative finite-gap Fourier-tail decay
+## Latest progress: positive weighted regularity of finite-gap sources
 
 Theorem 15.2, Lemma 15.3, and the full free Fourier Jacobian identity
-are complete. Real finite-gap sources are characterized by the actual
-center closing equations, and their adapted images are finite Fourier
-truncations. The original source tails now satisfy an explicit quadratic
-recurrence and a proved bound `T(4^k M)^p ≤ C q^k` with `q < 1`.
+are complete. The actual finite-gap closing equations yield a quadratic
+Fourier-tail recurrence and geometric decay. The conversion to positive
+weighted regularity is now proved: both original components are in
+weighted `ℓp` for every `s ≥ 0` with `s*p < min(1,p−1)`.
 
-The remainder estimate provides a direct regularity bootstrap: convert
-the geometric cutoff bounds into positive weighted Fourier regularity,
-then iterate the weighted argument to reach `H¹`. That conclusion is
-not yet proved. Next come the spectral gradient estimates (Appendix
-G.6–G.7) needed for Lemma 16.1. These steps, the remaining assertions
+Next establish the corresponding weighted spectral bootstrap and iterate
+the gain toward `H¹`; the unweighted first gain alone does not prove
+that conclusion. Then prove the spectral gradient estimates of Appendix
+G.6–G.7 needed for Lemma 16.1. These steps, the remaining assertions
 of Theorem 14.1, and later chapters are unfinished.
 
 ## Milestones

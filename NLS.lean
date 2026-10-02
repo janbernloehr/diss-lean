@@ -1866,5 +1866,7 @@ import NLS.ZakharovShabat.SourceClosedGapCenter
 import NLS.ZakharovShabat.SourceFiniteGapAdaptedCoordinates
 
 import NLS.SequenceSpaces.QuadraticTailBootstrap
+import NLS.SequenceSpaces.GeometricTailRegularity
 import NLS.ZakharovShabat.SourceFourierTail
 import NLS.ZakharovShabat.SourceFiniteGapTailRecurrence
+import NLS.ZakharovShabat.SourceFiniteGapRegularity

@@ -22459,4 +22459,34 @@ example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)))
   exists_sourceFiniteGap_fourierTail_decay (by norm_num) (by norm_num) φ hfinite
 end FiniteGapTailDecay
 
+section FiniteGapPositiveRegularity
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The gain applies above two, directly to both original source components.
+example (φ : realTypeSourceLocus 3)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Memℓp (fun n => (Weight.sobolev (1/4) n : ℂ)*φ.val.fst n) 3 ∧
+    Memℓp (fun n => (Weight.sobolev (1/4) n : ℂ)*φ.val.snd n) 3 :=
+  sourceFiniteGap_mem_sobolev (by simp) (by norm_num) φ hfinite (1/4)
+    (by norm_num) (by norm_num)
+
+-- The same concrete weight is available below two.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)))
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    Memℓp (fun n => (Weight.sobolev (1/4) n : ℂ)*φ.val.fst n) (ENNReal.ofReal (3/2 : ℝ)) ∧
+    Memℓp (fun n => (Weight.sobolev (1/4) n : ℂ)*φ.val.snd n) (ENNReal.ofReal (3/2 : ℝ)) :=
+  sourceFiniteGap_mem_sobolev (by norm_num) (by norm_num) φ hfinite (1/4)
+    (by norm_num) (by norm_num)
+
+-- No positive regularity premise is required at any finite exponent above one.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceLocus p) (hfinite : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ s : ℝ, 0 < s ∧
+      Memℓp (fun n => (Weight.sobolev s n : ℂ)*φ.val.fst n) p ∧
+      Memℓp (fun n => (Weight.sobolev s n : ℂ)*φ.val.snd n) p :=
+  exists_sourceFiniteGap_positive_regularity hp hp1 φ hfinite
+
+end FiniteGapPositiveRegularity
+
 end NLS.ZakharovShabat
