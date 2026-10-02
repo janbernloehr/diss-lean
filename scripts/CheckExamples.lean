@@ -21815,4 +21815,54 @@ example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n : ℤ) :
   D.fderiv_betaCorrection_exponent E (by norm_num) n φ
 end BetaExponentCompatibility
 
+section ThetaExponentCompatibility
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The omitted product preserves its normalization at all complex
+-- sources and spectral parameters, including its zeros.
+example (ψ : CoeffPair 2) (n : ℤ) (z : ℂ) :
+    sourceStandardRootOmittedProduct (by simp) (by norm_num) n ψ z =
+      sourceStandardRootOmittedProduct (p := 3) (by norm_num) (by norm_num) n
+        (CoeffPair.exponentInclusion (by norm_num) ψ) z :=
+  sourceStandardRootOmittedProduct_exponent (by simp) (by norm_num)
+    (by norm_num) (by norm_num) (by norm_num) n ψ z
+
+variable {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))}
+  {V₀ C V : Set (CoeffPair 3)}
+  {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n}
+  {t : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+  (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+  (E : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) V₀ C V t)
+  (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n : ℤ)
+  (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+    (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+
+-- Actual eta phases agree across two with independently constructed charts.
+example : sourceAngularEtaAnalyticPhase (by norm_num) (by norm_num) n s φ.val =
+    sourceAngularEtaAnalyticPhase (by norm_num) (by norm_num) n t
+      (CoeffPair.exponentInclusion (by norm_num) φ.val) :=
+  D.etaPhase_real_exponent_agreement E (by norm_num) n φ hgap
+
+-- The full phase includes both eta and the infinite beta correction.
+example : sourceAngularThetaAnalyticPhase (by norm_num) (by norm_num) n s φ.val =
+    sourceAngularThetaAnalyticPhase (by norm_num) (by norm_num) n t
+      (CoeffPair.exponentInclusion (by norm_num) φ.val) :=
+  D.thetaPhase_real_exponent_agreement E (by norm_num) n φ hgap
+
+-- Real agreement extends to an actual complex neighborhood.
+example : sourceAngularThetaAnalyticPhase (by norm_num) (by norm_num) n s =ᶠ[𝓝 φ.val]
+    (sourceAngularThetaAnalyticPhase (by norm_num) (by norm_num) n t ∘
+      CoeffPair.exponentInclusion (show ENNReal.ofReal (3/2 : ℝ) ≤ 3 by norm_num)) :=
+  D.eventually_thetaPhase_exponent E (by norm_num) n φ hgap
+
+-- The entire angle cotangent is the restriction of the one at the
+-- larger exponent; no derivative compatibility is assumed.
+example : sourceAngularThetaDifferential (by norm_num) (by norm_num) n s φ.val =
+    (sourceAngularThetaDifferential (by norm_num) (by norm_num) n t
+      (CoeffPair.exponentInclusion (by norm_num) φ.val)).comp
+        (CoeffPair.exponentInclusion (show ENNReal.ofReal (3/2 : ℝ) ≤ 3 by norm_num)) :=
+  D.thetaDifferential_exponent E (by norm_num) n φ hgap
+end ThetaExponentCompatibility
+
 end NLS.ZakharovShabat

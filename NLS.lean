@@ -1792,3 +1792,7 @@ import NLS.ZakharovShabat.SourceAngularPrimitiveExponent
 import NLS.ZakharovShabat.SourceAngularBetaExponent
 import NLS.ZakharovShabat.SourceHolomorphicRealGerm
 import NLS.ZakharovShabat.SourceAngularBetaExponentDifferential
+
+import NLS.ZakharovShabat.SourceAngularEtaRemainderExponent
+import NLS.ZakharovShabat.SourceAngularEtaPhaseExponent
+import NLS.ZakharovShabat.SourceAngularThetaExponent

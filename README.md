@@ -6858,7 +6858,7 @@ complete in all three relations together only at `p = 2`. Its
 action/action identity is complete for every finite `p > 1`, and later
 chapters remain unfinished.
 
-## Latest milestone: beta correction and derivative compatibility across exponents
+## Previous milestone: beta correction and derivative compatibility across exponents
 
 The actual beta values, their full off-diagonal correction series, and
 that correction's complex derivative now agree under source exponent
@@ -6889,5 +6889,44 @@ across exponent two, from `p = 3/2` to `p = 3`.
 The eta contribution, full theta phase, and theta differential still need
 exponent compatibility. The angle/action identity below two and angle/angle
 identity away from two remain unfinished. Corollary 13.2 is complete in all
+three relations together only at `p = 2`; its action/action identity is
+complete for every finite `p > 1`. Later chapters remain unfinished.
+
+## Latest milestone: full angle phase and differential compatibility across exponents
+
+The actual eta phase, full theta phase, and full logarithmic angle
+differential now agree under coefficient-preserving source inclusion
+for every finite `1 < p ≤ q`, at every real source with the selected
+gap open. Compatibility is proved for independently constructed
+common-domain families, without supplied phase or derivative agreement.
+
+`SourceAngularEtaRemainderExponent.lean` identifies the normalized
+omitted root products and both remainder differentials. It transports
+normalized sheet primitive witnesses and compares the actual Cauchy
+remainder values across different annuli, anchors, and circles. The
+comparison includes endpoint Dirichlet terminals and collapsed gaps
+where the annular charts are defined.
+
+`SourceAngularEtaPhaseExponent.lean` compares the terminal sine and
+cosine coordinates, allowing either half-gap sign. Actual eta
+representatives therefore differ by an integer multiple of pi across
+exponents, and their phases agree. The constructed common-domain
+charts and previously proved psi agreement instantiate this at every
+real open gap.
+
+`SourceAngularThetaExponent.lean` combines eta and beta agreement.
+Real-form uniqueness extends the full phase equality to a complex
+neighborhood of each real open-gap source. Differentiation gives
+compatibility of the complete angle cotangent, including the moving
+spectral data and infinite correction series.
+
+Public examples compare omitted products at complex sources and the
+actual eta phase, theta phase, complex germ, and angle differential
+across exponent two, from `p = 3/2` to `p = 3`.
+
+Next use this cotangent compatibility to establish square-summable
+angle coefficients below two and transfer the remaining canonical
+relations. The angle/action identity below two and angle/angle identity
+away from two remain unfinished. Corollary 13.2 is complete in all
 three relations together only at `p = 2`; its action/action identity is
 complete for every finite `p > 1`. Later chapters remain unfinished.
