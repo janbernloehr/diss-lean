@@ -1,19 +1,19 @@
 # Implementation plan
 
-## Latest progress: finite-gap characterization in adapted coordinates
+## Latest progress: quantitative finite-gap Fourier-tail decay
 
 Theorem 15.2, Lemma 15.3, and the full free Fourier Jacobian identity
-are complete. Toward Lemma 16.1, real finite-gap sources are now
-characterized by eventual vanishing of both actual center closing
-equations. The adapted source map equals its finite low-frequency
-truncation for every sufficiently large cutoff. The proof uses actual
-double spectral zeros, reality, and Cauchy derivative estimates.
+are complete. Real finite-gap sources are characterized by the actual
+center closing equations, and their adapted images are finite Fourier
+truncations. The original source tails now satisfy an explicit quadratic
+recurrence and a proved bound `T(4^k M)^p ≤ C q^k` with `q < 1`.
 
-Next recover `H¹` regularity of the original finite-gap source through
-weighted adapted inverse estimates. Then establish the spectral gradient
-estimates (Appendix G.6–G.7) needed for Lemma 16.1 and finish its quantitative
-argument. These steps, the remaining assertions of Theorem 14.1, and
-later chapters are unfinished.
+The remainder estimate provides a direct regularity bootstrap: convert
+the geometric cutoff bounds into positive weighted Fourier regularity,
+then iterate the weighted argument to reach `H¹`. That conclusion is
+not yet proved. Next come the spectral gradient estimates (Appendix
+G.6–G.7) needed for Lemma 16.1. These steps, the remaining assertions
+of Theorem 14.1, and later chapters are unfinished.
 
 ## Milestones
 

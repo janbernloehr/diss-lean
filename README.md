@@ -7395,3 +7395,41 @@ inverse estimates, then prove the spectral gradient estimates needed
 for Lemma 16.1. That regularity statement and the quantitative estimates
 are not yet complete. The remaining assertions of Theorem 14.1 and later
 chapters are also unfinished.
+
+## Section 16 progress: quantitative Fourier-tail decay at finite-gap sources
+
+Every real finite-gap source at every finite exponent `1 < p < ∞`
+now has a proved geometric bound along quadrupled Fourier cutoffs.
+Writing `α = min(1, p−1)`, for every rate `4^(−α) < q < 1` there are
+`M > 0` and `C ≥ 0` such that
+
+`‖sourceFourierTail (4^k M) φ‖^p ≤ C q^k` for every natural `k`.
+
+The geometric variable is the cutoff level `k`, not the individual
+Fourier frequency. This result is a quantitative decay step toward
+Sobolev regularity; it does not yet assert `H¹` membership.
+
+`SourceFourierTail.lean` constructs the tail in the original source
+norm, proves convergence to zero and norm monotonicity, and establishes
+that physical cutoff `2N` corresponds isometrically to source cutoff `N`.
+`SourceFiniteGapTailRecurrence.lean` identifies the actual spectral-center
+remainder with the negative source tail at all sufficiently large
+cutoffs. It then specializes the established off-diagonal estimate to
+obtain the exact recurrence
+
+`T(4N)^p ≤ K ‖φ‖^p (‖φ‖^(2p)/(4N)^α + T(N)^(2p))`,
+
+where `T(N) = ‖sourceFourierTail N φ‖` and
+`K = offDiagonalSummationConstant p`. All source and physical cutoff
+factors are retained. `QuadraticTailBootstrap.lean` proves that a
+vanishing nonnegative tail satisfying this recurrence has the stated
+decay, without an initial quantitative rate. The source theorem
+constructs a strictly contracting rate as well as the constants.
+
+Public checks cover the exact cutoff norm identity at `p = 3`, the
+concrete rate `q = 1/2` at `p = 3`, and a constructed rate below two
+at `p = 3/2`. Next convert these bounds to positive weighted Fourier
+regularity and iterate the weighted argument to reach `H¹`. The
+regularity conclusion, the spectral gradient estimates of Appendix
+G.6–G.7, Lemma 16.1, remaining assertions of Theorem 14.1, and later
+chapters are unfinished.

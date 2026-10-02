@@ -22431,4 +22431,32 @@ example (c z : ℂ) (a b d : ℂ → ℂ)
   resonant_double_zero_closing c z a b d ha hb hd ha' hb' hd' hnorm hzero hderiv
 end FiniteGapAdaptedCoordinates
 
+section FiniteGapTailDecay
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- The source/physical cutoff conversion preserves the exact norm.
+example (φ : CoeffPair 3) (N : ℕ) :
+    ‖weightedPairFourierTail SpectralWeight.one.toWeight (2*N) (sourceWeightedPeriodOne φ)‖ =
+      ‖sourceFourierTail N φ‖ :=
+  norm_weightedPairFourierTail_sourceWeightedPeriodOne N φ
+
+-- A concrete contracting rate is available above exponent two.
+example (φ : realTypeSourceLocus 3)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ M : ℕ, 0 < M ∧ ∃ C : ℝ, 0 ≤ C ∧ ∀ k : ℕ,
+      ‖sourceFourierTail (4^k*M) φ.val‖^(3 : ℝ) ≤ C*(1/2 : ℝ)^k := by
+  simpa only [ENNReal.toReal_ofNat] using sourceFiniteGap_fourierTail_geometric
+    (by simp) (by norm_num) φ hfinite (1/2)
+    (by norm_num [Real.rpow_neg_one]) (by norm_num)
+
+-- Below two the rate and the starting cutoff are constructed from
+-- the actual spectral finite-gap condition, without a Sobolev premise.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)))
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    ∃ q : ℝ, 0 < q ∧ q < 1 ∧ ∃ M : ℕ, 0 < M ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ k : ℕ, ‖sourceFourierTail (4^k*M) φ.val‖^(ENNReal.ofReal (3/2 : ℝ)).toReal ≤ C*q^k :=
+  exists_sourceFiniteGap_fourierTail_decay (by norm_num) (by norm_num) φ hfinite
+end FiniteGapTailDecay
+
 end NLS.ZakharovShabat
