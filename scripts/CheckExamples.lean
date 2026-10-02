@@ -22527,4 +22527,38 @@ example (φ : realTypeSourceLocus 3)
 
 end FiniteGapSobolevRegularity
 
+section AppendixGFirstBorn
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.ComplexAnalysis NLS.ZakharovShabat
+
+-- A constant amplitude checks both endpoint signs and the factor two.
+example (c a : ℂ) (hc : c ≠ 0) :
+    oscillatoryIntegral c 1 (fun _ => a) = (exp c-exp (-c))*a/(2*c) := by
+  have hf : AbsolutelyContinuousOnInterval (fun _ : ℝ => a) 0 1 :=
+    (contDiff_const : ContDiff ℝ 1 (fun _ : ℝ => a)).contDiffOn.absolutelyContinuousOnInterval
+  have hfi : IntervalIntegrable (deriv (fun _ : ℝ => a)) volume 0 1 := by simp
+  have h := oscillatoryIntegral_parts c 1 (fun _ => a) hf hfi
+  have hzero : oscillatoryIntegral c 1 (deriv (fun _ : ℝ => a)) = 0 := by
+    simp [oscillatoryIntegral]
+  rw [hzero] at h
+  simp only [Complex.ofReal_one,mul_one,add_zero] at h
+  apply (eq_div_iff (mul_ne_zero (by norm_num) hc)).mpr
+  linear_combination h
+
+-- The remainder is the error of the constructed solution itself.
+example (z : ℂ) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalSolutionRemainder 0 z v t = 0 := classicalSolutionRemainder_free z v t
+
+-- Uniformity includes the interval endpoints and complex spectral parameters.
+example (φ : Curve (ℂ × ℂ))
+    (hf : AbsolutelyContinuousOnInterval (fun s => (extend φ s).1) 0 1)
+    (hg : AbsolutelyContinuousOnInterval (fun s => (extend φ s).2) 0 1)
+    (hfi : IntervalIntegrable (deriv (fun s => (extend φ s).1)) volume 0 1)
+    (hgi : IntervalIntegrable (deriv (fun s => (extend φ s).2)) volume 0 1)
+    (z : ℂ) (hz : z ≠ 0) (t : Icc (0 : ℝ) 1) :
+    Real.exp (-(|z.im| * t.val))*‖classicalFirstBornVector φ z (0,1) t‖ ≤
+      classicalFirstBornUniformBudget φ/(2*‖z‖) := by
+  simpa using norm_classicalFirstBornVector_weighted_uniform_le φ hf hg hfi hgi z hz (0,1) t
+
+end AppendixGFirstBorn
+
 end NLS.ZakharovShabat

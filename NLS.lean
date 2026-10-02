@@ -1877,3 +1877,7 @@ import NLS.ZakharovShabat.SourceFiniteGapWeightedClosing
 import NLS.ZakharovShabat.SourceFiniteGapWeightedTail
 import NLS.ZakharovShabat.SourceFiniteGapWeightedRegularity
 import NLS.ZakharovShabat.SourceFiniteGapSobolev
+
+import NLS.ComplexAnalysis.OscillatoryIntegralParts
+import NLS.ZakharovShabat.ClassicalFirstBorn
+import NLS.ZakharovShabat.ClassicalFirstBornBound

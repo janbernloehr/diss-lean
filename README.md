@@ -7495,3 +7495,39 @@ in an arbitrary available spectral weight. Next prove the quantitative
 spectral gradient estimates of Appendix G.6–G.7 and use them in Lemma
 16.1. Those estimates, Lemma 16.1 itself, remaining assertions of
 Theorem 14.1, and later chapters are unfinished.
+
+## Appendix G first-iterate identity and decay
+
+The next Appendix G step now identifies and bounds the first
+oscillatory correction in the actual classical fundamental solution.
+For an absolutely continuous potential with integrable component
+derivatives, the first Born vector satisfies
+
+`exp(-|Im z| t) ‖F(t,z)v‖ ≤ B(t) ‖v‖ / (2‖z‖)` for `z ≠ 0` and `t ≥ 0`,
+
+where `B(t)` is the maximum of the two component budgets
+`|f(0)| + |f(t)| + ∫₀ᵗ |f′(s)| ds`. On the unit interval it is bounded
+by the spectral-parameter-independent budget
+`2‖φ‖∞ + max(∫₀¹ |φ₁′|, ∫₀¹ |φ₂′|)`.
+
+`OscillatoryIntegralParts.lean` proves complex integration by parts
+for the kernel `exp(c(t−2s))`, retaining both endpoint terms and the
+factor two. It proves the kernel norm bound, the inverse-frequency
+estimate, and its exponential normalization without assuming a smooth
+potential. `ClassicalFirstBorn.lean` defines the free vector and the
+remainder of the constructed classical solution, and derives the two
+actual Duhamel equations for that remainder. Each consists of the
+first Born vector plus the free propagator acting on the opposite
+remainder component, with the original potential signs.
+`ClassicalFirstBornBound.lean` applies the scalar estimate and proves
+the bound uniform in time on `[0,1]`.
+
+Public checks cover a constant amplitude's exact integral, including
+both signs and `2c` in the denominator; the actual free remainder;
+and the uniform normalized bound for a fundamental column. Next
+control the full remainder by this first-iterate forcing and translate
+the budgets into Sobolev bounds. This is the integration-by-parts part
+of G.2; the full G.1–G.3 estimates, G.4–G.7, Lemma 16.1, remaining
+assertions of Theorem 14.1, and later chapters are unfinished. The
+previously proved finite-gap `H¹` and all-weight regularity remain
+available for the spectral-gradient argument.
