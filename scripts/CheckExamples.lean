@@ -22355,4 +22355,44 @@ example {W₀ B W : Set (CoeffPair 3)}
   D.angular.gapWeightedEta_fderiv_finiteGap_tail W D.source_open D.source_subset φ (D.real_subset φ.property) hfinite
 end BirkhoffJacobianClosedTail
 
+section BirkhoffFreeFourier
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+-- Operator equality below two uses restriction from the Hilbert result.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s) :
+    sourceBirkhoffJacobian (by norm_num) (by norm_num) s 0 = sourceBirkhoffFourier :=
+  D.jacobian_zero
+
+-- Above two the equality holds on all directions by finite Fourier density.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (h : CoeffPair 3) (n : ℤ) :
+    (sourceBirkhoffJacobian (by simp) (by norm_num) s 0 h).1 n =
+      -(h.fst (-n)+h.snd n)/(Real.sqrt 2 : ℂ) ∧
+    (sourceBirkhoffJacobian (by simp) (by norm_num) s 0 h).2 n =
+      (h.fst (-n)-h.snd n)/((Real.sqrt 2 : ℂ)*Complex.I) := by
+  rw [D.jacobian_zero]
+  exact ⟨sourceBirkhoffFourier_fst h n, sourceBirkhoffFourier_snd h n⟩
+
+-- A single first-component mode is reflected, with the expected signs.
+example {W₀ B W : Set (CoeffPair 3)}
+    {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (n : ℤ) (a : ℂ) :
+    let h := CoeffPair.ofFinsupp (p := 3) (Finsupp.single (-n) a, 0)
+    (sourceBirkhoffJacobian (by simp) (by norm_num) s 0 h).1 n = -a/(Real.sqrt 2 : ℂ) ∧
+    (sourceBirkhoffJacobian (by simp) (by norm_num) s 0 h).2 n = a/((Real.sqrt 2 : ℂ)*Complex.I) := by
+  simp [D.jacobian_zero]
+
+-- The moving-terminal derivative retains the anti-discriminant's sign.
+example (n : ℤ) (h : CoeffPair 2) :
+    (fderiv ℂ (sourceBoundaryTerminalAntiDiscriminant (p := 2) (by simp) (by norm_num) .dirichlet n) 0) h =
+      Complex.I*Complex.cos ((Real.pi : ℂ)*n)*(h.fst (-n)-h.snd n) :=
+  fderiv_sourceBoundaryTerminalAntiDiscriminant_zero n h
+end BirkhoffFreeFourier
+
 end NLS.ZakharovShabat

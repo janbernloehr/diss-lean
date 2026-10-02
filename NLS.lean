@@ -1853,3 +1853,10 @@ import NLS.ZakharovShabat.SourceBirkhoffLemma15_3
 import NLS.ZakharovShabat.SourceBirkhoffJacobian
 import NLS.ZakharovShabat.SourceGapWeightedEtaClosedDifferential
 import NLS.ZakharovShabat.SourceGapWeightedEtaFiniteGapDifferential
+
+import NLS.SequenceSpaces.FiniteSourceDensity
+import NLS.ZakharovShabat.ClassicalFreePotentialGradients
+import NLS.ZakharovShabat.SourceFreePotentialCotangents
+import NLS.ZakharovShabat.SourceFreeSpectralDifferentials
+import NLS.ZakharovShabat.SourceBirkhoffFreeDifferential
+import NLS.ZakharovShabat.SourceBirkhoffFourier

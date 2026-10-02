@@ -7324,3 +7324,39 @@ Theorem 15.2 and Lemma 15.3 remain complete. The explicit Fourier
 identification of the Jacobian at zero and the quantitative gradient
 estimates of Lemma 16.1 are still unfinished, as are the remaining
 assertions of Theorem 14.1 and later chapters.
+
+## Section 16 progress: the free Jacobian is the Fourier transform
+
+Section 16's identity at zero is proved for the actual sequence-valued
+Birkhoff map at every finite exponent `1 < p < ∞`. The theorem
+`SourceBirkhoffMapComplexData.jacobian_zero` identifies its full bounded
+complex derivative with the explicit operator `sourceBirkhoffFourier`.
+For arbitrary complex source directions `h`, its coordinates are
+
+`dxₙ(0)h = −(h.fst(−n) + h.snd(n))/√2`,
+`dyₙ(0)h = (h.fst(−n) − h.snd(n))/(√2 i)`.
+
+The frequency reflection comes from the signed source convention.
+`ClassicalFreePotentialGradients.lean` computes the actual free
+characteristic, anti-discriminant, and discriminant gradients.
+`SourceFreePotentialCotangents.lean` integrates against finite Fourier
+inputs and uses density to identify the full Hilbert cotangents.
+`SourceFreeSpectralDifferentials.lean` obtains the boundary-root,
+periodic-midpoint, and moving-terminal derivatives; in particular the
+free discriminant and periodic midpoints have zero first derivative.
+
+`SourceBirkhoffFreeDifferential.lean` combines these results with the
+closed-gap differential. At zero the normalized action root is one,
+the beta correction is zero, and the gap-weighted coordinate vanishes.
+The product rule therefore leaves just the gap-weighted differential.
+`SourceBirkhoffFourier.lean` constructs the bounded Fourier operator and
+transfers the Hilbert identity to smaller exponents by restriction and
+to larger exponents by finite Fourier density. The result uses each
+map's own angular family and applies to all complex directions.
+
+Public checks cover bounded-operator equality at `p = 3/2`, both
+coordinate formulas at `p = 3`, a single reflected Fourier mode, and
+the signed moving-terminal derivative. Theorem 15.2 and Lemma 15.3
+remain complete. Next are the quantitative finite-gap gradient estimates
+of Lemma 16.1. Those estimates, the remaining assertions of Theorem 14.1,
+and later chapters are unfinished.

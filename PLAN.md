@@ -1,20 +1,17 @@
 # Implementation plan
 
-## Latest progress: Section 16 Jacobian and closed-gap derivative formula
+## Latest progress: Section 16 free Fourier Jacobian
 
 Theorem 15.2 and Lemma 15.3 are complete. Section 16 now has the
-analytic bounded Jacobian of the exact sequence map, its scalar
-coordinate evaluations, and their canonical regular cotangents.
-The gap-weighted eta derivative at a real closed gap is expressed
-exactly using midpoint, Dirichlet-root, and moving anti-discriminant
-derivatives. Constructed charts give this formula outside a finite
-set at every real finite-gap source, for both signs.
+analytic bounded Jacobian, the exact closed-gap and finite-gap tail
+differential formulas, and the full identity `d₀Ω = sourceBirkhoffFourier`
+at every finite exponent above one. The free spectral cotangents and
+normalizations are derived from the actual classical solutions, and
+the operator identity applies to arbitrary complex directions.
 
-Next evaluate the free spectral cotangents and identify the Jacobian
-at zero with the specified Fourier transform. Then establish the
-quantitative finite-gap gradient estimates of Lemma 16.1 and their
-consequences. Those estimates, the remaining assertions of Theorem
-14.1, and later chapters are unfinished.
+Next establish the quantitative finite-gap gradient estimates of
+Lemma 16.1 and their consequences. Those estimates, the remaining
+assertions of Theorem 14.1, and later chapters are unfinished.
 
 ## Milestones
 
