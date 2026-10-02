@@ -21556,4 +21556,54 @@ example : ∃ W₀ B W : Set (CoeffPair 2),
   intro n m φ hn hm
   exact ⟨(hcanonical n m φ).2.1 hn hm,(hcanonical n m φ).2.2 hn⟩
 
+
+-- Below two the actual derivative, not an assumed regular gradient,
+-- supplies a cotangent with Hilbert coefficients and commuting bracket.
+section RegularDiscriminantsBelowTwo
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) (z w : ℂ) :
+    let L := sourceDiscriminantRegularCotangent (by norm_num) z φ
+    let M := sourceDiscriminantRegularCotangent (by norm_num) w φ
+    L.toCotangent = sourceDiscriminantCotangent (by norm_num) z φ ∧
+    M.toCotangent = sourceDiscriminantCotangent (by norm_num) w φ ∧ L.bivector M = 0 := by
+  exact ⟨sourceDiscriminantRegularCotangent_toCotangent _ _ _,
+    sourceDiscriminantRegularCotangent_toCotangent _ _ _,
+    sourceDiscriminantRegularCotangent_bivector_eq_zero (by norm_num) (by norm_num) φ z w⟩
+
+-- The Hilbert coefficient pair has analytic dependence in its own norm.
+example : AnalyticOnNhd ℂ
+    (fun t : ℂ × CoeffPair (ENNReal.ofReal (3/2 : ℝ)) =>
+      (sourceDiscriminantRegularCotangent (by norm_num) t.1 t.2).coefficients) Set.univ :=
+  analyticOnNhd_sourceDiscriminantRegularCoefficients_joint (by norm_num) (by norm_num)
+
+-- The original Fourier bracket really converges absolutely below two.
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) (z w : ℂ) :
+    Summable (fun n : ℤ => ‖
+      sourceDiscriminantCotangent (by norm_num) z φ
+        (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) n 1)) *
+      sourceDiscriminantCotangent (by norm_num) w φ
+        (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-n) 1)) -
+      sourceDiscriminantCotangent (by norm_num) z φ
+        (CoeffPair.inrCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) n 1)) *
+      sourceDiscriminantCotangent (by norm_num) w φ
+        (CoeffPair.inlCLM (lp.single (ENNReal.ofReal (3/2 : ℝ)) (-n) 1))‖) :=
+  sourceDiscriminantCotangent_pairing_summable_norm (by norm_num) φ z w
+
+-- Restriction across two preserves the full coefficient pair.
+example (φ : CoeffPair (ENNReal.ofReal (3/2 : ℝ))) (z : ℂ) :
+    (sourceDiscriminantRegularCotangent (by norm_num) z φ).coefficients =
+      (sourceDiscriminantRegularCotangent (p := 3) (by norm_num) z
+        (CoeffPair.exponentInclusion (by norm_num) φ)).coefficients :=
+  sourceDiscriminantRegularCotangent_coefficients_exponent
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) φ z
+
+-- On the old domain, the regular pairing is exactly the original one.
+example (L M : CoeffPair 3 →L[ℂ] ℂ) :
+    (NLS.Poisson.RegularSourceCotangent.ofCotangent (by norm_num) L).bivector
+      (NLS.Poisson.RegularSourceCotangent.ofCotangent (by norm_num) M) =
+        NLS.Poisson.sourceBivector (by norm_num) L M := rfl
+end RegularDiscriminantsBelowTwo
+
 end NLS.ZakharovShabat

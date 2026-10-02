@@ -1393,6 +1393,7 @@ import NLS.ZakharovShabat.SourceAngularThetaTheorem13_1
 import NLS.SequenceSpaces.HilbertCotangent
 import NLS.SequenceSpaces.SourceCotangent
 import NLS.Poisson.SourceBivector
+import NLS.Poisson.RegularSourceCotangent
 import NLS.Poisson.SourceBracket
 import NLS.Poisson.SourceHamiltonianDirection
 import NLS.Poisson.SourceCoordinateBrackets
@@ -1408,6 +1409,7 @@ import NLS.ZakharovShabat.SourceActionPoisson
 import NLS.Fourier.IntervalBilinearParseval
 import NLS.ZakharovShabat.FiniteSourceDiscriminantGradient
 import NLS.ZakharovShabat.SourceDiscriminantPoisson
+import NLS.ZakharovShabat.SourceDiscriminantRegularPoisson
 import NLS.ZakharovShabat.SourceBoundaryPoissonGradient
 import NLS.ZakharovShabat.SourceBoundaryDiscriminantPoisson
 import NLS.ZakharovShabat.SourceBoundaryRootDifferential

@@ -6726,3 +6726,32 @@ family carrying the canonical relations.
 Angle/angle involution for `p > 2`, the bracket pairing for `1 < p < 2`,
 and later chapters remain unfinished. This completes Corollary 13.2 at
 `p = 2`, with its full exponent range still pending.
+
+## Latest milestone: actual discriminant brackets for all finite exponents
+
+`RegularSourceCotangent.lean` records a continuous source cotangent
+with proved square-summable Fourier coefficients. Its physical pairing
+uses the same frequency reversal and sign `-i`, has an absolutely
+convergent Fourier formula, and is independent of the coefficient
+witness. Restriction along every source exponent inclusion preserves
+it, including below two. At exponents at least two it agrees exactly
+with the existing source bivector.
+
+`SourceDiscriminantRegularPoisson.lean` proves exponent compatibility
+of the actual discriminant differential. Below two this constructs its
+Hilbert coefficient pair by restriction of the Hilbert derivative.
+The resulting coefficients depend analytically in the Hilbert norm
+on both the source and spectral parameter, and are independent of the
+source exponent. The actual discriminant bracket now vanishes for
+every complex source at every finite `p > 1`, with absolute convergence
+proved for the original Fourier expression.
+
+Public examples exercise `p = 3/2`, analytic Hilbert coefficient
+regularity, absolute convergence, compatibility across exponent two,
+and agreement with the established bivector at `p = 3`.
+
+This supplies the regular pairing and discriminant commutation needed
+below two. Regularity and the canonical identities for the actual
+action and angle cotangents below two are still pending, as is
+angle/angle involution above two. Corollary 13.2 is complete at `p = 2`
+only; its full exponent range and later chapters remain unfinished.
