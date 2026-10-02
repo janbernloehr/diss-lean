@@ -1787,3 +1787,8 @@ import NLS.SequenceSpaces.DeletedExponentEmbedding
 import NLS.ZakharovShabat.SourceCanonicalRootExponent
 import NLS.ZakharovShabat.SourcePsiContourExponent
 import NLS.ZakharovShabat.SourcePsiGapRootExponent
+
+import NLS.ZakharovShabat.SourceAngularPrimitiveExponent
+import NLS.ZakharovShabat.SourceAngularBetaExponent
+import NLS.ZakharovShabat.SourceHolomorphicRealGerm
+import NLS.ZakharovShabat.SourceAngularBetaExponentDifferential

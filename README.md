@@ -6819,7 +6819,7 @@ finite `p > 1`, while all three angle/action canonical relations are
 currently complete together only at `p = 2`. Later chapters remain
 unfinished.
 
-## Latest milestone: actual psi root and contour compatibility across exponents
+## Previous milestone: actual psi root and contour compatibility across exponents
 
 The canonical real gap-contained psi root sequence is now proved
 independent of the source exponent under coefficient-preserving
@@ -6857,3 +6857,37 @@ identity away from two remain unfinished; Corollary 13.2 is still
 complete in all three relations together only at `p = 2`. Its
 action/action identity is complete for every finite `p > 1`, and later
 chapters remain unfinished.
+
+## Latest milestone: beta correction and derivative compatibility across exponents
+
+The actual beta values, their full off-diagonal correction series, and
+that correction's complex derivative now agree under source exponent
+inclusion for every finite `1 < p ≤ q`. This includes collapsed gaps
+and endpoint Dirichlet terminals.
+
+`SourceAngularPrimitiveExponent.lean` preserves the prescribed square-root
+sheets, their spectral domains, and the normalized primitive conditions.
+It transports the same witnesses in both directions and identifies the
+complete sets of regular Dirichlet terminal values whenever the fixed-source
+psi numerators agree. `SourceAngularBetaExponent.lean` then preserves the
+endpoint zero convention, the chosen beta values, and the full series.
+For actual common-domain psi families, the preceding gap-root uniqueness
+result supplies numerator agreement at every real source.
+
+`SourceHolomorphicRealGerm.lean` packages the real-form identity principle
+for analytic Banach-valued source maps. Using the already proved
+analyticity of the beta series, `SourceAngularBetaExponentDifferential.lean`
+extends the actual real agreement to a complex neighborhood and identifies
+the full correction derivative after restriction by exponent inclusion.
+No open-gap hypothesis or supplied exponent-compatibility assumption is
+needed for the actual-family results.
+
+Public examples compare prescribed-sheet domains at complex sources and
+actual beta values, correction sums, complex germs, and full derivatives
+across exponent two, from `p = 3/2` to `p = 3`.
+
+The eta contribution, full theta phase, and theta differential still need
+exponent compatibility. The angle/action identity below two and angle/angle
+identity away from two remain unfinished. Corollary 13.2 is complete in all
+three relations together only at `p = 2`; its action/action identity is
+complete for every finite `p > 1`. Later chapters remain unfinished.

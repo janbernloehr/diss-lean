@@ -21762,4 +21762,57 @@ example {W : Set (CoeffPair 2)} {V : Set (CoeffPair 3)}
     E.toSourcePsiIsolatingComplexExtension (by norm_num) n φ
 end PsiExponentCompatibility
 
+section BetaExponentCompatibility
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Prescribed root sheets preserve their exact spectral domains at
+-- complex sources, without a gap or terminal regularity hypothesis.
+example (ψ : CoeffPair 2) (c w : ℂ) (R : ℝ) :
+    sourceAngularRegularSheetDisc (by simp) ψ c R w =
+      sourceAngularRegularSheetDisc (p := 3) (by norm_num)
+        (CoeffPair.exponentInclusion (by norm_num) ψ) c R w :=
+  sourceAngularRegularSheetDisc_exponent (by simp) (by norm_num) (by norm_num) ψ c R w
+
+variable {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ)))}
+  {V₀ C V : Set (CoeffPair 3)}
+  {s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2 : ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2 : ℝ)) n}
+  {t : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+  (D : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B W s)
+  (E : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) V₀ C V t)
+
+-- Actual beta values agree across two, including collapsed gaps
+-- and endpoint terminals. No compatibility premise is supplied.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n m : ℤ) :
+    sourceAngularBeta (by norm_num) (by norm_num) n m s φ.val =
+      sourceAngularBeta (by norm_num) (by norm_num) n m t
+        (CoeffPair.exponentInclusion (by norm_num) φ.val) :=
+  D.psi.toSourcePsiIsolatingComplexExtension.beta_real_exponent_agreement
+    E.psi.toSourcePsiIsolatingComplexExtension (by norm_num) n m φ
+
+-- The complete correction series is preserved, not just finite sums.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n : ℤ) :
+    sourceAngularBetaCorrection (by norm_num) (by norm_num) n s φ.val =
+      sourceAngularBetaCorrection (by norm_num) (by norm_num) n t
+        (CoeffPair.exponentInclusion (by norm_num) φ.val) :=
+  D.psi.toSourcePsiIsolatingComplexExtension.betaCorrection_real_exponent_agreement
+    E.psi.toSourcePsiIsolatingComplexExtension (by norm_num) n φ
+
+-- The actual correction has the same complex germ after inclusion.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n : ℤ) :
+    sourceAngularBetaCorrection (by norm_num) (by norm_num) n s =ᶠ[𝓝 φ.val]
+      (sourceAngularBetaCorrection (by norm_num) (by norm_num) n t ∘
+        CoeffPair.exponentInclusion (show ENNReal.ofReal (3/2 : ℝ) ≤ 3 by norm_num)) :=
+  D.eventually_betaCorrection_exponent E (by norm_num) n φ
+
+-- Full complex cotangents agree after restriction to the smaller
+-- source space, with no open-gap hypothesis.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ))) (n : ℤ) :
+    fderiv ℂ (sourceAngularBetaCorrection (by norm_num) (by norm_num) n s) φ.val =
+      (fderiv ℂ (sourceAngularBetaCorrection (by norm_num) (by norm_num) n t)
+        (CoeffPair.exponentInclusion (by norm_num) φ.val)).comp
+          (CoeffPair.exponentInclusion (show ENNReal.ofReal (3/2 : ℝ) ≤ 3 by norm_num)) :=
+  D.fderiv_betaCorrection_exponent E (by norm_num) n φ
+end BetaExponentCompatibility
+
 end NLS.ZakharovShabat
