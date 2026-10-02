@@ -1,19 +1,22 @@
 # Implementation plan
 
-## Latest progress: Appendix G first-iterate identity and decay
+## Latest progress: Appendix G full remainder and time derivative
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
 finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. Appendix G now has the actual first Born vector,
-the two exact remainder Duhamel equations, and the exponentially
-normalized `1/(2|z|)` bound from complex integration by parts. The bound
-allows absolutely continuous potentials and is uniform in time on the
-unit interval with an explicit endpoint/derivative budget.
+`H¹`) are complete. Appendix G now has the first Born vector and its
+integration-by-parts estimate, the actual remainder Duhamel equations,
+and integral Gronwall bounds for the full remainder. For absolutely
+continuous potentials with integrable derivatives, exponential
+normalization gives `O(1/|z|)` for the full error and `O(1)` for its time
+derivative, uniformly on `[0,1]`, with explicit endpoint/derivative
+budgets and no smallness restriction.
 
-Next control the full fundamental-solution remainder by this forcing,
-translate its budget to Sobolev norms, and obtain the Fourier–Lebesgue
-estimates in G.3–G.7. These estimates and Lemma 16.1 remain unfinished,
-as do the remaining assertions of Theorem 14.1 and later chapters.
+Next translate these budgets to Sobolev norms and obtain the
+Fourier–Lebesgue interpolation and gradient estimates in G.3–G.7.
+The sharper integral estimate in G.1, the remaining Appendix G
+estimates, Lemma 16.1, remaining assertions of Theorem 14.1, and later
+chapters are unfinished.
 
 ## Milestones
 

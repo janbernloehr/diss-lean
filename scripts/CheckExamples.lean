@@ -22561,4 +22561,41 @@ example (φ : Curve (ℂ × ℂ))
 
 end AppendixGFirstBorn
 
+section AppendixGFullRemainder
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.ComplexAnalysis
+
+-- Zero forcing closes the integral inequality even for nonzero coupling.
+example (f : ℝ → ℝ) (hf : Continuous f) (M : ℝ) (hM : 0 ≤ M)
+    (hpos : ∀ t ∈ Icc (0 : ℝ) 1, 0 ≤ f t)
+    (hb : ∀ t ∈ Icc (0 : ℝ) 1, f t ≤ M*(∫ s in (0 : ℝ)..t, f s))
+    (t : Icc (0 : ℝ) 1) : f t = 0 := by
+  have h := NLS.FunctionalAnalysis.le_exp_of_le_const_add_integral
+    f hf 1 0 M (by norm_num) hM hpos (by simpa using hb) t.val t.property
+  exact le_antisymm (by simpa using h) (hpos t.val t.property)
+
+-- The actual fundamental column, rather than just its first iterate, decays.
+example (φ : Curve (ℂ × ℂ))
+    (hf : AbsolutelyContinuousOnInterval (fun s => (extend φ s).1) 0 1)
+    (hg : AbsolutelyContinuousOnInterval (fun s => (extend φ s).2) 0 1)
+    (hfi : IntervalIntegrable (deriv (fun s => (extend φ s).1)) volume 0 1)
+    (hgi : IntervalIntegrable (deriv (fun s => (extend φ s).2)) volume 0 1)
+    (z : ℂ) (hz : z ≠ 0) (t : Icc (0 : ℝ) 1) :
+    Real.exp (-(|z.im| * t.val))*‖classicalSolutionRemainder φ z (0,1) t‖ ≤
+      classicalFirstBornUniformBudget φ/(2*‖z‖)*Real.exp ‖φ‖ := by
+  simpa [classicalNormalizedRemainder] using
+    classicalNormalizedRemainder_le_inverse_frequency φ hf hg hfi hgi z hz (0,1) t
+
+-- Time differentiation consumes the inverse-frequency gain but stays bounded.
+example (φ : Curve (ℂ × ℂ))
+    (hf : AbsolutelyContinuousOnInterval (fun s => (extend φ s).1) 0 1)
+    (hg : AbsolutelyContinuousOnInterval (fun s => (extend φ s).2) 0 1)
+    (hfi : IntervalIntegrable (deriv (fun s => (extend φ s).1)) volume 0 1)
+    (hgi : IntervalIntegrable (deriv (fun s => (extend φ s).2)) volume 0 1)
+    (z : ℂ) (hz : z ≠ 0) (t : Icc (0 : ℝ) 1) :
+    Real.exp (-(|z.im| * t.val))*‖deriv (classicalSolutionRemainder φ z (1,0)) t‖ ≤
+      (classicalFirstBornUniformBudget φ/2+‖φ‖)*Real.exp ‖φ‖ := by
+  simpa using norm_deriv_classicalSolutionRemainder_weighted_le φ hf hg hfi hgi z hz (1,0) t
+
+end AppendixGFullRemainder
+
 end NLS.ZakharovShabat

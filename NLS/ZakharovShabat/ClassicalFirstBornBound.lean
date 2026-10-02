@@ -78,6 +78,13 @@ def classicalFirstBornUniformBudget (φ : Curve (ℂ × ℂ)) : ℝ :=
   2*‖φ‖+max (∫ s in (0 : ℝ)..1, ‖deriv (fun x => (extend φ x).1) s‖)
     (∫ s in (0 : ℝ)..1, ‖deriv (fun x => (extend φ x).2) s‖)
 
+/-- The uniform budget is nonnegative, including for zero potential. -/
+theorem classicalFirstBornUniformBudget_nonneg (φ : Curve (ℂ × ℂ)) :
+    0 ≤ classicalFirstBornUniformBudget φ := by
+  apply add_nonneg (by positivity)
+  exact (intervalIntegral.integral_nonneg (by norm_num : (0 : ℝ) ≤ 1)
+    (fun s _ => norm_nonneg (deriv (fun x => (extend φ x).1) s))).trans (le_max_left _ _)
+
 /-- Endpoint evaluation and interval monotonicity turn the local
 variation budget into a uniform bound on the full physical interval. -/
 theorem classicalFirstBornBudget_le_uniform (φ : Curve (ℂ × ℂ))

@@ -1881,3 +1881,8 @@ import NLS.ZakharovShabat.SourceFiniteGapSobolev
 import NLS.ComplexAnalysis.OscillatoryIntegralParts
 import NLS.ZakharovShabat.ClassicalFirstBorn
 import NLS.ZakharovShabat.ClassicalFirstBornBound
+
+import NLS.FunctionalAnalysis.IntegralGronwall
+import NLS.ComplexAnalysis.NormalizedDuhamelBound
+import NLS.ZakharovShabat.ClassicalRemainderBound
+import NLS.ZakharovShabat.ClassicalRemainderDerivativeBound

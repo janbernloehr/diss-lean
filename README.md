@@ -7531,3 +7531,36 @@ of G.2; the full G.1–G.3 estimates, G.4–G.7, Lemma 16.1, remaining
 assertions of Theorem 14.1, and later chapters are unfinished. The
 previously proved finite-gap `H¹` and all-weight regularity remain
 available for the spectral-gradient argument.
+
+## Appendix G full remainder decay and time-derivative bound
+
+The full classical fundamental-solution error now inherits the first
+Born vector's inverse-frequency decay. For an absolutely continuous
+potential with integrable component derivatives, every initial vector
+`v`, every nonzero complex `z`, and every `t ∈ [0,1]`, Lean proves
+
+`exp(-|Im z| t) ‖R(t,z)v‖ ≤ B ‖v‖ exp(‖φ‖∞) / (2‖z‖)`,
+
+`exp(-|Im z| t) ‖∂ₜR(t,z)v‖ ≤ (B/2 + ‖φ‖∞) ‖v‖ exp(‖φ‖∞)`,
+
+where `R` is the constructed solution minus its free solution and
+`B = 2‖φ‖∞ + max(∫₀¹ |φ₁′|, ∫₀¹ |φ₂′|)`. In particular, these
+bounds apply to both fundamental matrix columns without any smallness
+assumption on the potential.
+
+`NormalizedDuhamelBound.lean` transfers the exponential normalization
+through the free propagator. `IntegralGronwall.lean` closes the resulting
+integral inequality, including zero forcing and zero coupling.
+`ClassicalRemainderBound.lean` applies these results to the actual two
+remainder equations. `ClassicalRemainderDerivativeBound.lean` subtracts
+the free ODE and cancels the spectral factor against the remainder's
+decay to obtain the uniform time-derivative bound.
+
+Public checks cover zero forcing with arbitrary nonnegative coupling,
+the full error of one fundamental column, and the time derivative of
+the other. These are the pointwise bounds needed before Appendix G.3
+interpolation. The precise Sobolev budget comparison, the sharper G.1
+integral estimate, the Fourier–Lebesgue estimates G.3–G.7, Lemma 16.1,
+remaining assertions of Theorem 14.1, and later chapters remain
+unfinished. Next connect these bounds to the proved finite-gap Sobolev
+regularity and establish the Fourier–Lebesgue interpolation estimates.
