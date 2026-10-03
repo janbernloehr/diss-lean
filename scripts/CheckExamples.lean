@@ -24386,3 +24386,76 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
   D.real_map_injective_of_hilbert_finiteGap E hi
 
 end NLS.ZakharovShabatInjectivityReductionChecks
+
+namespace NLS.ZakharovShabatHilbertActionSequenceChecks
+open NLS.ZakharovShabat Set
+
+-- Quadratic actions are genuinely holomorphic with values in ℓ¹.
+example : AnalyticOnNhd ℂ quadraticActions univ := analyticOnNhd_quadraticActions
+
+-- The total uses both Hilbert components, not their maximum product norm.
+example (z : RealCoeff 2 × RealCoeff 2) :
+    ‖realQuadraticActions z‖ = (‖z.1‖^2 + ‖z.2‖^2)/2 := by
+  rw [norm_realQuadraticActions, realQuadraticActionTotal_eq]
+
+-- Every coordinate is the actual spectral action on the complex domain.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : CoeffPair 2) (hφ : φ ∈ W) :
+    AnalyticOnNhd ℂ (sourceHilbertActionSequence s) W ∧
+      Summable (fun n : ℤ => ‖sourceComplexAction (by simp) (by norm_num) n φ‖) :=
+  ⟨D.hilbert_actionSequence_analytic, D.summable_norm_hilbert_actions φ hφ⟩
+
+-- Differentiating the total is justified by absolute convergence in every direction.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : CoeffPair 2) (hφ : φ ∈ W) (h : CoeffPair 2) :
+    Summable (fun n : ℤ => ‖(fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) φ) h‖) ∧
+      (fderiv ℂ (sourceHilbertComplexTotalAction s) φ) h =
+        ∑' n : ℤ, (fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) φ) h :=
+  ⟨D.summable_norm_hilbert_action_derivatives φ hφ h,
+    D.hilbert_complexTotalAction_fderiv_apply φ hφ h⟩
+
+-- The actual real action sequence is analytic and its norm equals the spectral sum.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) :
+    AnalyticOnNhd ℝ (sourceHilbertRealActionSequence s) univ ∧
+      ‖sourceHilbertRealActionSequence s φ‖ =
+        ∑' n : ℤ, (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re :=
+  ⟨D.hilbert_realActionSequence_analytic, D.hilbert_realActionSequence_norm_eq_sum φ⟩
+
+-- A closed spectral tail reduces the total to a finite sum, including an empty head.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (S : Finset ℤ)
+    (hc : ∀ n ∉ S, sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val n = 0) :
+    sourceHilbertTotalAction s φ =
+      ∑ n ∈ S, (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re :=
+  D.hilbert_totalAction_eq_sum_of_closed_tail φ S hc
+
+-- The source-mass identity is reduced to finite-gap sources; it is not assumed proved.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    (∀ φ : realTypeSourceSubmodule 2, sourceHilbertTotalAction s φ = (sourceHilbertMass φ.val).re) ↔
+      (∀ φ : realTypeSourceSubmodule 2, φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+        sourceHilbertTotalAction s φ = (sourceHilbertMass φ.val).re) :=
+  D.hilbert_traceFormula_iff_finiteGap
+
+-- Properness transfers from the actual action map to the actual Birkhoff map.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (hp : IsProperMap (sourceHilbertRealActionSequence s)) :
+    IsProperMap (sourceRealBirkhoffMap (by simp) (by norm_num) s) :=
+  D.hilbert_real_map_proper_of_actionSequence_proper hp
+
+-- The constructed-family theorem supplies the map without any summability assumption.
+example : ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+    SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s ∧
+    AnalyticOnNhd ℝ (sourceHilbertRealActionSequence s) univ ∧
+    ∀ φ : realTypeSourceSubmodule 2, ∀ n : ℤ,
+      sourceHilbertRealActionSequence s φ n =
+        (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re :=
+  exists_sourceHilbertActionSequence_analytic
+
+end NLS.ZakharovShabatHilbertActionSequenceChecks

@@ -2038,3 +2038,7 @@ import NLS.ZakharovShabat.SourceBirkhoffFiniteSupport
 import NLS.ZakharovShabat.SourceBirkhoffFiniteGapFibers
 import NLS.ZakharovShabat.SourceBirkhoffMapExponent
 import NLS.ZakharovShabat.SourceBirkhoffInjectivityReduction
+
+import NLS.SequenceSpaces.QuadraticActions
+import NLS.ZakharovShabat.SourceHilbertActionSequence
+import NLS.ZakharovShabat.SourceHilbertActionTraceReduction

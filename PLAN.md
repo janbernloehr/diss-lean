@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Latest progress: global injectivity reduced to Hilbert finite-gap sources
+## Latest progress: analytic ℓ¹ Hilbert action map
+
+The actual action sequence is now holomorphic into complex ℓ¹ on its
+constructed domain and real analytic into real ℓ¹ on all real Hilbert
+sources. Both sums converge absolutely; directional derivative sums
+converge absolutely and equal the derivative of the total. The real
+total equals half the sum of the two Birkhoff output norm squares.
+The source-mass identity is reduced, by actual finite-gap density, to
+its finite-gap case. Properness of the actual action map transfers to
+the actual Birkhoff map. The missing trace and properness premises
+remain explicit.
+
+Next prove the finite-gap action/mass identity. Consolidate the finitely
+many action contours into an exterior contour, integrate the canonical
+discriminant-ratio primitive, and identify its inverse-frequency
+coefficient with the physical mass. The required mass correction is
+stronger than the existing leading half-plane asymptotic. Then obtain
+weak continuity of the spectral action coordinates and use the trace
+formula to prove action-map properness. Do not replace these actual
+spectral assertions with assumed properness or a norm identity.
+
+
+## Previous progress: global injectivity reduced to Hilbert finite-gap sources
 
 The full exponent-extension step of Proposition 17.2 is proved. Nonlinear
 output support equals the open-gap set. Any collision is approximated,

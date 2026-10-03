@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: finite-gap and Hilbert reductions for Proposition 17.2
+## Current milestone: analytic Hilbert action sequence and total
+
+The actual Hilbert spectral actions now form a holomorphic ℓ¹-valued
+map on the constructed complex domain and a real analytic ℓ¹-valued
+map on the whole real source space. Both literal action series are
+absolutely convergent. The derivative series is absolutely convergent
+in every source direction and equals the derivative of the total action.
+These are proved for the actual spectral actions, with no summability
+or termwise-differentiation premise.
+
+`QuadraticActions.lean` constructs `(xₙ²+yₙ²)/2` as an entire map from
+two complex ℓ² spaces into ℓ¹, using bounded bilinear multiplication.
+On real sequences the actions are nonnegative. Their ℓ¹ norm and total
+are exactly `(‖x‖²+‖y‖²)/2`; the ordinary product's maximum norm is not
+mistaken for the Hilbert sum of squares.
+
+`SourceHilbertActionSequence.lean` composes this map with the actual
+Birkhoff family and identifies every coordinate with its original
+spectral action by the action-radius identity. Bounded ℓ¹ summation
+gives complex and real analytic total-action functionals. Evaluation
+of the sequence derivative gives the actual scalar action derivatives,
+so their absolute convergence and termwise summation follow in norm.
+A constructed-family theorem supplies the actual real analytic action
+map and its spectral coordinate identities.
+
+`SourceHilbertActionTraceReduction.lean` reduces the total to a finite
+sum whenever the spectral gap tail is closed. Finite-gap density and
+continuity prove that the source-mass trace formula for all real Hilbert
+sources is equivalent to its finite-gap case. The proved source-mass
+normalization then yields `sum Iₙ = ‖φ‖²/2` conditional on that finite-gap
+identity. Properness of the actual action map implies properness of the
+actual Birkhoff map through the quadratic factorization.
+
+Public checks cover complex ℓ¹ analyticity, exact output normalization,
+absolute convergence of actual actions and derivative series, termwise
+differentiation, real ℓ¹ analyticity and norm, finite closed tails,
+the explicit finite-gap trace obligation, properness transfer, and
+constructed-family existence without a summability hypothesis.
+
+Next prove the finite-gap source-mass trace identity, using contour
+consolidation and the first nontrivial high-energy mass coefficient of
+the discriminant primitive. Weak continuity of the spectral action
+coordinates is also needed for Hilbert properness. The source-mass
+identity and action-map properness have not been asserted unconditionally.
+Proposition 17.2 and the other previously recorded unfinished results
+remain open.
+
+## Previous milestone: finite-gap and Hilbert reductions for Proposition 17.2
 
 The exponent-extension part of global injectivity is now proved. Every
 actual Birkhoff collision at any finite `p>1` induces a collision for
