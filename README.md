@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: every real spectral band between adjacent gaps now
-has its canonical root orientation and an explicit arcsine primitive.
-The actual two-endpoint improper quotient integral is exactly `-i pi`,
-including negative indices and neighboring collapsed gaps. Transferring
-these increments to the global normalization constants is next.
+Latest milestone: the real-source abelian primitives now satisfy
+`F_n = F_0 + i n pi` on both complete half-planes, with exact endpoint
+limits `F_0(lambda_m^±) = -i m pi` for every signed index. Corrected
+local charts based at different gaps agree on all overlaps. Gluing
+these into the global primitive is next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -9968,3 +9968,37 @@ constants, summing the increments to obtain `-i n pi`, and completing
 global continuation remain next. Joint source analyticity and the other
 remaining assertions of Lemma 19.1, the frequency results, and the full
 dissertation remain unfinished.
+
+## Exact signed-index abelian normalization
+
+`ContinuousBoundaryTransfer.lean` transfers a relative boundary limit to
+closure points of a domain wherever a continuous extension is available.
+`SourceAbelianBandTransfer.lean` extends each half-plane primitive across
+an adjacent real-band strip and compares it with the actual arcsine
+primitive. This fixes the boundary increment across every band at
+exactly `-i pi`, on both sides of the real axis.
+
+`SourceAbelianHalfPlaneNormalization.lean` proves the exact formulas
+`F_n = F_0 + i n pi` and `F_n - F_m = i (n-m) pi` on both complete
+half-planes, for arbitrary signed indices. At either endpoint of gap
+`m`, the half-plane boundary limit of `F_n` is `i (n-m) pi`.
+In particular, the zero-index primitive has value `-i m pi` there,
+including when the gap is collapsed.
+
+`SourceAbelianNormalizedCharts.lean` subtracts `i n pi` from each local
+gap-normalized chart. The corrected charts retain the actual quotient
+derivative and analyticity and agree with `F_0` on both half-planes.
+Charts selected at different gap indices agree everywhere on their
+common domain, including real overlap points. Their full chart-relative
+endpoint limits have the prescribed value `-i n pi`.
+
+Public checks exercise opposite signed indices at exponent 3/2,
+negative-index lower-half-plane endpoint values, boundary limits for
+both half-planes, and agreement of charts at different indices on the
+real axis.
+
+This establishes Lemma 19.1(ii)'s indexed half-plane constants for real
+sources. Gluing across the entire real axis and filling collapsed
+points remain next. Joint source analyticity, the remaining assertions
+of Lemma 19.1, the frequency results, and the full dissertation remain
+unfinished.

@@ -26130,3 +26130,66 @@ example : Tendsto (fun ε : ℝ => sourceRealBandIntegral (p := 3) (by simp) (by
     (p := 3) (by simp) (by norm_num) 0 (by simp) (-3)
 
 end NLS.RealBandChecks
+
+
+noncomputable section
+namespace NLS.AbelianNormalizationChecks
+open Set Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- This exact difference is for an arbitrary real source at exponent
+-- 3/2, not merely the free source or an exponential modulo 2*pi*i.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property (-4) true Complex.I =
+      sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property 7 true Complex.I -
+        11*Complex.I*(Real.pi : ℂ) := by
+  have h := sourceAbelianHalfPlanePrimitive_index_difference (by simp) (by norm_num) φ.val φ.property
+    (-4) 7 true (by simp [sourceAbelianHalfPlane] : Complex.I ∈ sourceAbelianHalfPlane true)
+  norm_num at h
+  linear_combination h
+
+-- The zero-index primitive has a positive imaginary boundary value at
+-- the right endpoint of gap -5 when approached from the lower half-plane.
+example (φ : realTypeSourceSubmodule 3) :
+    Tendsto (sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property 0 false)
+      (𝓝[sourceAbelianHalfPlane false]
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) (-5))) (𝓝 (5*Complex.I*(Real.pi : ℂ))) := by
+  have h := sourceAbelianHalfPlanePrimitive_zeroIndex_endpoint_limit (by simp) (by norm_num) φ.val
+    φ.property (-5) false
+    (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-5))
+    (by simp)
+  convert! h using 1
+  norm_num
+  ring
+
+-- Opposite signed normalization and target indices give -11*i*pi at
+-- either target endpoint, uniformly for both choices of half-plane.
+example (φ : realTypeSourceSubmodule 3) (upper : Bool) :
+    Tendsto (sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property (-4) upper)
+      (𝓝[sourceAbelianHalfPlane upper]
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) 7)) (𝓝 (-11*Complex.I*(Real.pi : ℂ))) := by
+  have h := sourceAbelianHalfPlanePrimitive_endpoint_limit (by simp) (by norm_num) φ.val φ.property
+    (-4) 7 upper
+    (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) 7)
+    (by simp)
+  convert! h using 1
+  norm_num
+  ring
+
+-- Charts based at two different gaps have compatible corrected real
+-- values, without a relation between their centers or radii.
+example (φ : realTypeSourceSubmodule 3)
+    (D : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property (-3))
+    (E : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property 4)
+    (x : ℝ) (hxD : (x : ℂ) ∈ D.extensionDomain) (hxE : (x : ℂ) ∈ E.extensionDomain) :
+    D.extension x = E.extension x-7*Complex.I*(Real.pi : ℂ) := by
+  have h := D.zeroNormalizedExtension_eqOn_overlap E ⟨hxD,hxE⟩
+  dsimp only [SourceAbelianDiscPrimitive.zeroNormalizedExtension] at h
+  norm_num at h
+  linear_combination h
+
+end NLS.AbelianNormalizationChecks

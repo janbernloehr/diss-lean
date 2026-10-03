@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Latest progress: exact adjacent-band improper integrals
+## Latest progress: exact signed-index abelian normalization
+
+`ContinuousBoundaryTransfer.lean` transfers a relative boundary limit to
+closure points of a domain wherever a continuous extension is available.
+`SourceAbelianBandTransfer.lean` extends each half-plane primitive across
+an adjacent real-band strip and compares it with the actual arcsine
+primitive. This fixes the boundary increment across every band at
+exactly `-i pi`, on both sides of the real axis.
+
+`SourceAbelianHalfPlaneNormalization.lean` proves the exact formulas
+`F_n = F_0 + i n pi` and `F_n - F_m = i (n-m) pi` on both complete
+half-planes, for arbitrary signed indices. At either endpoint of gap
+`m`, the half-plane boundary limit of `F_n` is `i (n-m) pi`.
+In particular, the zero-index primitive has value `-i m pi` there,
+including when the gap is collapsed.
+
+`SourceAbelianNormalizedCharts.lean` subtracts `i n pi` from each local
+gap-normalized chart. The corrected charts retain the actual quotient
+derivative and analyticity and agree with `F_0` on both half-planes.
+Charts selected at different gap indices agree everywhere on their
+common domain, including real overlap points. Their full chart-relative
+endpoint limits have the prescribed value `-i n pi`.
+
+Public checks exercise opposite signed indices at exponent 3/2,
+negative-index lower-half-plane endpoint values, boundary limits for
+both half-planes, and agreement of charts at different indices on the
+real axis.
+
+This establishes Lemma 19.1(ii)'s indexed half-plane constants for real
+sources. Gluing across the entire real axis and filling collapsed
+points remain next. Joint source analyticity, the remaining assertions
+of Lemma 19.1, the frequency results, and the full dissertation remain
+unfinished.
+
+## Previous progress: exact adjacent-band improper integrals
 
 `SourceRealBandGeometry.lean` identifies the nonempty real band between
 consecutive canonical gaps and proves that it avoids every spectral cut.
