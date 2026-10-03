@@ -2145,3 +2145,7 @@ import NLS.ZakharovShabat.SourceBirkhoffProposition17_3
 
 import NLS.ZakharovShabat.SourceBirkhoffGlobalInverse
 import NLS.ZakharovShabat.SourceBirkhoffDenseRange
+
+import NLS.SequenceSpaces.DominatedCompactness
+import NLS.SequenceSpaces.RealActionTorus
+import NLS.ZakharovShabat.SourceActionTorus

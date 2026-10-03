@@ -25688,3 +25688,61 @@ example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
     congrArg (fun φ : CoeffPair 2 => φ.snd n) h⟩
 
 end NLS.GlobalBirkhoffChecks
+
+namespace NLS.ActionTorusChecks
+open NLS.ZakharovShabat Set Filter
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Compactness includes the summable endpoint and arbitrary action
+-- sequences; no finite-support or nonemptiness premise is required.
+example (actions : ℤ → ℝ) : IsCompact (RealCoeff.actionTorus 1 actions) :=
+  RealCoeff.isCompact_actionTorus (by simp) actions
+
+example (actions : ℤ → ℝ) : IsCompact (RealCoeff.actionTorus 3 actions) :=
+  RealCoeff.isCompact_actionTorus (by simp) actions
+
+-- Fully collapsed actions give exactly the zero target, rather than
+-- an unconstrained collection of directions at the collapsed coordinates.
+example : RealCoeff.actionTorus 3 (fun _ => 0) = {0} := by
+  ext z
+  constructor
+  · intro hz
+    apply mem_singleton_iff.mpr
+    apply Prod.ext <;> ext n
+    · exact (RealCoeff.coordinates_zero_of_mem_actionTorus hz n rfl).1
+    · exact (RealCoeff.coordinates_zero_of_mem_actionTorus hz n rfl).2
+  · intro hz
+    rcases mem_singleton_iff.mp hz with rfl
+    intro n
+    simp [RealCoeff.pairAction]
+
+-- Equal original actions give a source-norm convergent subsequence
+-- at exponent 3/2, with the limit retaining every original action.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (a : ℕ → realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (ha : ∀ j n, (sourceRealAction (by simp) (by norm_num) (a j).val (a j).property n).re =
+      (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re) :
+    ∃ ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) φ,
+      ∃ subseq : ℕ → ℕ, StrictMono subseq ∧ Tendsto (a ∘ subseq) atTop (𝓝 ψ) :=
+  (D.isCompact_actionLevelSet (by norm_num) φ).tendsto_subseq ha
+
+-- Every coordinate point with the prescribed actions has exactly one
+-- source in the original action level set, including infinitely many open gaps.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (z : RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2)))
+    (hz : z ∈ RealCoeff.actionTorus (ENNReal.ofReal (3/2))
+      (fun n => (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re)) :
+    ∃! ψ, ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) φ ∧
+      sourceRealBirkhoffMap (by simp) (by norm_num) s ψ = z := by
+  rw [← D.image_actionLevelSet_eq_actionTorus (by norm_num) φ] at hz
+  obtain ⟨ψ,hψ,hmap⟩ := hz
+  exact ⟨ψ,⟨hψ,hmap⟩,fun χ hχ => D.proposition17_2 (hχ.2.trans hmap.symm)⟩
+
+end NLS.ActionTorusChecks

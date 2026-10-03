@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Latest progress: global analytic inverse and open dense range
+## Latest progress: compact action tori and source action level sets
+
+`DominatedCompactness.lean` proves that a closed family of complex
+coefficient sequences dominated coordinatewise by one finite-exponent
+sequence is compact in the full norm topology. The existing uniform-tail
+subsequence theorem supplies norm convergence. Continuous complex
+inclusion and real projection give the corresponding real-sequence
+criterion.
+
+`RealActionTorus.lean` defines the torus with prescribed quadratic
+actions `(x_n² + y_n²)/2 = I_n`. Coordinate evaluation proves closedness.
+For any nonempty torus, one reference element bounds both components of
+every other element by the sum of its own component magnitudes. This is
+a summable majorant, so the torus is norm compact at every finite Banach
+exponent, including `p = 1`. Empty tori and infinitely many nonzero actions
+are covered. A zero action forces both corresponding coordinates to vanish.
+
+`SourceActionTorus.lean` defines level sets of the original spectral
+actions and identifies them exactly with preimages of the coordinate
+action tori. These level sets are closed at every finite `p > 1` and
+their images lie in the prescribed tori. For `1 < p ≤ 2`, surjectivity
+gives equality of those images with the whole tori, and the global
+homeomorphism makes the level sets compact in the original source norm.
+No finite-gap or finite-support hypothesis is imposed.
+
+Public checks cover compactness at exponents 1 and 3 for arbitrary action
+sequences, the fully collapsed torus being exactly the zero target,
+source-norm convergent subsequences with all actions retained at `p = 3/2`,
+and a unique original source in the action level set for every point of
+its coordinate torus.
+
+This proves the compact-torus foundation for Lemma 17.5. The remaining
+step is to identify these original action level sets with the actual
+isospectral sets, including both directions of the Hilbert assertion
+and its exponent transfer. Lemma 17.5 is not yet complete.
+
+## Previous progress: global analytic inverse and open dense range
 
 `SourceBirkhoffGlobalInverse.lean` bundles the actual real Birkhoff map
 as a global homeomorphism for every `1 < p ≤ 2`. Its inverse agrees near

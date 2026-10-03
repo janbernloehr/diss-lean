@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the global real Birkhoff inverse is analytic for every
-`1 < p ≤ 2`, with its exact derivative and compatibility across exponents.
-The actual map has open dense range for every `1 < p < ∞`, including
-above two. This establishes the global inverse of Theorem 14.1(v) and
-the range assertion of part (iv). Next is Lemma 17.5; see `STATUS.md`.
+Latest milestone: action tori are compact in every finite sequence
+exponent. For `1 < p ≤ 2`, the original spectral action level sets map
+onto these tori and are compact in the full source norm. Identifying
+them with the actual isospectral sets remains before Lemma 17.5 is
+complete. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -9670,3 +9670,39 @@ Next continue with Lemma 17.5: define the action tori, prove their
 compactness, and identify the images of actual isospectral sets.
 That identification and the remaining dissertation results are still
 unfinished. Surjectivity for `p > 2` is not claimed.
+
+## Compact action tori and source action level sets
+
+`DominatedCompactness.lean` proves that a closed family of complex
+coefficient sequences dominated coordinatewise by one finite-exponent
+sequence is compact in the full norm topology. The existing uniform-tail
+subsequence theorem supplies norm convergence. Continuous complex
+inclusion and real projection give the corresponding real-sequence
+criterion.
+
+`RealActionTorus.lean` defines the torus with prescribed quadratic
+actions `(x_n² + y_n²)/2 = I_n`. Coordinate evaluation proves closedness.
+For any nonempty torus, one reference element bounds both components of
+every other element by the sum of its own component magnitudes. This is
+a summable majorant, so the torus is norm compact at every finite Banach
+exponent, including `p = 1`. Empty tori and infinitely many nonzero actions
+are covered. A zero action forces both corresponding coordinates to vanish.
+
+`SourceActionTorus.lean` defines level sets of the original spectral
+actions and identifies them exactly with preimages of the coordinate
+action tori. These level sets are closed at every finite `p > 1` and
+their images lie in the prescribed tori. For `1 < p ≤ 2`, surjectivity
+gives equality of those images with the whole tori, and the global
+homeomorphism makes the level sets compact in the original source norm.
+No finite-gap or finite-support hypothesis is imposed.
+
+Public checks cover compactness at exponents 1 and 3 for arbitrary action
+sequences, the fully collapsed torus being exactly the zero target,
+source-norm convergent subsequences with all actions retained at `p = 3/2`,
+and a unique original source in the action level set for every point of
+its coordinate torus.
+
+This proves the compact-torus foundation for Lemma 17.5. The remaining
+step is to identify these original action level sets with the actual
+isospectral sets, including both directions of the Hilbert assertion
+and its exponent transfer. Lemma 17.5 is not yet complete.
