@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: one real-source abelian primitive is now complex
-analytic on the entire spectral cut complement, with derivative
-`Delta'/canonicalRoot`, full endpoint limits `-i n pi`, and the exact
-Floquet exponential identity. Every smooth path in this domain
-integrates to the endpoint difference. Filling collapsed points is next.
+Latest milestone: the real-source abelian primitive now extends
+analytically through every collapsed gap. Only noncollapsed cuts
+remain excluded. Its derivative is the regular Floquet logarithmic
+derivative, and smooth paths may pass through collapsed points.
+At the free source the primitive is exactly `-i lambda` on the whole plane.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -10040,3 +10040,43 @@ Analytically filling collapsed points is next; they are currently
 excluded from this primitive's analytic domain. Joint source
 analyticity, the remaining assertions of Lemma 19.1, the frequency
 results, and the full dissertation remain unfinished.
+
+## Analytic extension through collapsed gaps
+
+`SourceCollapsedGapNeighborhood.lean` proves that a collapsed gap is
+an isolated missing point of the canonical cut complement. Its whole
+isolating neighborhood belongs to the complement of the noncollapsed
+cuts. This enlarged domain is open for every real source, without a
+finite-gap assumption.
+
+`SourceAbelianPrimitive.lean` inserts the limits of the global primitive
+at the missing points. It agrees with the original function off all
+cuts and has value `-i n pi` at either endpoint of gap `n`. Riemann's
+removable singularity theorem proves complex analyticity through every
+collapsed gap. The resulting primitive is analytic throughout the
+plane with only the noncollapsed cuts removed.
+
+`SourceAbelianPrimitiveProperties.lean` extends the exact Floquet
+identity to this enlarged domain and identifies the derivative as
+`sourceFloquetLogDerivative`, the regular multiplier logarithmic
+derivative. It agrees with the literal `Delta'/canonicalRoot` away
+from all cuts. Endpoint limits hold along all approaches in the
+enlarged domain, and every smooth path there integrates the regular
+one-form to the difference of primitive values. Such paths may pass
+directly through collapsed endpoints.
+
+At the free source, the enlarged domain is the whole plane and the
+filled primitive is exactly the entire function `-i lambda`. Its
+regular derivative is `-i` even at periodic lattice points, where the
+literal quotient has zero denominator.
+
+Public checks cover a collapsed negative-index gap at exponent 3/2,
+the distinction between the regular derivative and literal quotient at
+the free origin, a real path passing through three collapsed periodic
+points, and endpoint limits without any gap-width assumptions.
+
+This completes the collapsed-point extension for real sources. The
+complex-source and joint-analyticity assertions of Lemma 19.1, its
+potential gradient, gap-side formulas and estimates, and square
+continuation remain to be proved. Subsequent frequency results and
+the full dissertation remain unfinished.

@@ -2186,3 +2186,7 @@ import NLS.ZakharovShabat.SourceAbelianBandGluing
 import NLS.ZakharovShabat.SourceRealBandCoverage
 import NLS.ZakharovShabat.SourceAbelianGlobalPrimitive
 import NLS.ZakharovShabat.SourceAbelianGlobalProperties
+
+import NLS.ZakharovShabat.SourceCollapsedGapNeighborhood
+import NLS.ZakharovShabat.SourceAbelianPrimitive
+import NLS.ZakharovShabat.SourceAbelianPrimitiveProperties

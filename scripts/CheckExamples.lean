@@ -26262,3 +26262,72 @@ example : sourceAbelianGlobalPrimitive (p := 3) (by simp) (by norm_num) 0 (by si
   convert! h using 1 <;> push_cast <;> ring
 
 end NLS.GlobalAbelianChecks
+
+
+noncomputable section
+namespace NLS.FilledAbelianChecks
+open Set Filter Topology Complex ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- For an arbitrary source at exponent 3/2, collapse of one selected
+-- gap suffices for a genuine complex derivative at its endpoint.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (hc : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) (-4) = 0) :
+    let a := canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) (-4)
+    HasDerivAt (sourceAbelianPrimitive (by simp) (by norm_num) φ.val φ.property)
+      (sourceFloquetLogDerivative (by simp) (by norm_num) φ.val a) a ∧
+      sourceAbelianPrimitive (by simp) (by norm_num) φ.val φ.property a = 4*Complex.I*(Real.pi : ℂ) := by
+  dsimp only
+  constructor
+  · exact sourceAbelianPrimitive_hasDerivAt (by simp) (by norm_num) φ.val φ.property _
+      (sourcePeriodicSegment_subset_openGapComplement_of_zeroGap (by simp) (by norm_num) φ.val
+        φ.property (-4) hc (left_mem_segment ℝ _ _))
+  · have h := sourceAbelianPrimitive_periodicEndpoint (by simp) (by norm_num) φ.val φ.property (-4)
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) (-4)) (by simp)
+    convert! h using 1
+    norm_num
+    ring
+
+-- The regular derivative cannot be replaced by the literal quotient
+-- at a collapsed point: at the free origin they are -i and 0 respectively.
+example : sourceFloquetLogDerivative (p := 3) (by simp) (by norm_num) 0 0 = -Complex.I ∧
+    deriv (canonicalDiscriminant (p := 3) (by simp) (periodOnePotential 0)) 0 /
+      sourceCanonicalRoot (p := 3) (by simp) (by norm_num) 0 0 = 0 := by
+  constructor
+  · simp
+  · rw [sourceCanonicalRoot_zero_source_eq_free_sine (by simp) (by norm_num) 0]
+    simp
+
+-- This path starts at -pi, passes through 0, and ends at pi. All three
+-- are collapsed periodic points, and no detour or improper limit is needed.
+example :
+    (∫ᶜ z in Path.segment (-(Real.pi : ℂ)) (Real.pi : ℂ),
+      holomorphicOneForm (sourceFloquetLogDerivative (p := 3) (by simp) (by norm_num) 0) z) =
+      -2*Complex.I*(Real.pi : ℂ) := by
+  have h := (sourceAbelianPrimitive_pathIntegral_eq_sub (p := 3) (by simp) (by norm_num)
+    0 (by simp) (Path.segment (-(Real.pi : ℂ)) (Real.pi : ℂ))
+    (contDiffOn_segment_extend _ _) (by simp)).2
+  rw [sourceAbelianPrimitive_zero] at h
+  dsimp only at h
+  linear_combination h
+
+-- The full enlarged-domain endpoint limit remains valid even at
+-- noncollapsed gaps; no assumption about any gap width is supplied.
+example (φ : realTypeSourceSubmodule 3) :
+    Tendsto (sourceAbelianPrimitive (by simp) (by norm_num) φ.val φ.property)
+      (𝓝[sourceOpenGapComplement (by simp) (by norm_num) φ.val]
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) 7)) (𝓝 (-7*Complex.I*(Real.pi : ℂ))) := by
+  have h := sourceAbelianPrimitive_endpoint_limit (by simp) (by norm_num) φ.val φ.property 7
+    (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) 7) (by simp)
+  convert! h using 1
+  norm_num
+  ring
+
+end NLS.FilledAbelianChecks

@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Latest progress: global real-source abelian primitive off the cuts
+## Latest progress: analytic extension through collapsed gaps
+
+`SourceCollapsedGapNeighborhood.lean` proves that a collapsed gap is
+an isolated missing point of the canonical cut complement. Its whole
+isolating neighborhood belongs to the complement of the noncollapsed
+cuts. This enlarged domain is open for every real source, without a
+finite-gap assumption.
+
+`SourceAbelianPrimitive.lean` inserts the limits of the global primitive
+at the missing points. It agrees with the original function off all
+cuts and has value `-i n pi` at either endpoint of gap `n`. Riemann's
+removable singularity theorem proves complex analyticity through every
+collapsed gap. The resulting primitive is analytic throughout the
+plane with only the noncollapsed cuts removed.
+
+`SourceAbelianPrimitiveProperties.lean` extends the exact Floquet
+identity to this enlarged domain and identifies the derivative as
+`sourceFloquetLogDerivative`, the regular multiplier logarithmic
+derivative. It agrees with the literal `Delta'/canonicalRoot` away
+from all cuts. Endpoint limits hold along all approaches in the
+enlarged domain, and every smooth path there integrates the regular
+one-form to the difference of primitive values. Such paths may pass
+directly through collapsed endpoints.
+
+At the free source, the enlarged domain is the whole plane and the
+filled primitive is exactly the entire function `-i lambda`. Its
+regular derivative is `-i` even at periodic lattice points, where the
+literal quotient has zero denominator.
+
+Public checks cover a collapsed negative-index gap at exponent 3/2,
+the distinction between the regular derivative and literal quotient at
+the free origin, a real path passing through three collapsed periodic
+points, and endpoint limits without any gap-width assumptions.
+
+This completes the collapsed-point extension for real sources. The
+complex-source and joint-analyticity assertions of Lemma 19.1, its
+potential gradient, gap-side formulas and estimates, and square
+continuation remain to be proved. Subsequent frequency results and
+the full dissertation remain unfinished.
+
+## Previous progress: global real-source abelian primitive off the cuts
 
 `SourceAbelianBandGluing.lean` constructs a quotient primitive on each
 full vertical real-band strip which matches the zero-index primitive
