@@ -25858,3 +25858,67 @@ example (z : RealCoeff 3 × RealCoeff 3) (k n : ℤ) (t u : ℝ) :
   rw [RealCoeff.pairAction_actionRotation,RealCoeff.pairAction_actionRotation]
 
 end NLS.ActionRotationChecks
+
+namespace NLS.Lemma17_5Checks
+open NLS.ZakharovShabat Set Filter
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Even at the summable endpoint, finite rotations approximate any
+-- equal-action target in the full norm, without a finite-support premise.
+example (z w : RealCoeff 1 × RealCoeff 1)
+    (h : ∀ n, RealCoeff.pairAction z n = RealCoeff.pairAction w n)
+    {ε : ℝ} (hε : 0 < ε) :
+    ∃ moves : List (ℤ × ℝ), dist w (RealCoeff.actionRotationSequence z moves) < ε := by
+  have hw : w ∈ closure (range (RealCoeff.actionRotationSequence z)) := by
+    rw [RealCoeff.closure_actionRotationSequence_range (by simp)]
+    exact fun n => (h n).symm
+  obtain ⟨_,⟨moves,rfl⟩,hm⟩ := Metric.mem_closure_iff.mp hw ε hε
+  exact ⟨moves,hm⟩
+
+-- A prescribed block with both frequency signs is matched exactly at
+-- exponent three, while both original zero-mode coordinates are retained.
+example (z w : RealCoeff 3 × RealCoeff 3)
+    (h : ∀ n, RealCoeff.pairAction z n = RealCoeff.pairAction w n) :
+    ∃ moves : List (ℤ × ℝ),
+      let v := RealCoeff.actionRotationSequence z moves
+      v.1 (-2) = w.1 (-2) ∧ v.2 (-2) = w.2 (-2) ∧
+      v.1 7 = w.1 7 ∧ v.2 7 = w.2 7 ∧ v.1 0 = z.1 0 ∧ v.2 0 = z.2 0 := by
+  obtain ⟨moves,hm⟩ := RealCoeff.exists_actionRotationSequence_eqOn z w h {-2,7}
+  refine ⟨moves,?_⟩
+  have hneg := hm (-2)
+  have hpos := hm 7
+  have hzero := hm 0
+  norm_num at hneg hpos hzero
+  exact ⟨hneg.1,hneg.2,hpos.1,hpos.2,hzero⟩
+
+-- Construct the normalized family at 3/2, then recover a unique actual
+-- isospectral source for every point of each prescribed coordinate torus.
+example : ∃ s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k,
+    ∀ (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+      (z : RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))),
+      z ∈ RealCoeff.actionTorus (ENNReal.ofReal (3/2))
+        (fun n => (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re) →
+      ∃! ψ, ψ ∈ sourceIsospectralSet (by simp) φ ∧
+        sourceRealBirkhoffMap (by simp) (by norm_num) s ψ = z := by
+  obtain ⟨_,_,_,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨s,?_⟩
+  intro φ z hz
+  rw [← D.image_isospectralSet_eq_actionTorus (by norm_num) φ] at hz
+  obtain ⟨ψ,hψ,hmap⟩ := hz
+  exact ⟨ψ,⟨hψ,hmap⟩,fun χ hχ => D.proposition17_2 (hχ.2.trans hmap.symm)⟩
+
+-- Original actions alone determine the entire discriminant and every
+-- algebraic multiplicity below two, with no assumed Birkhoff family.
+example (φ ψ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (ha : ∀ n, (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property n).re =
+      (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re) (z : ℂ) :
+    canonicalDiscriminant (by simp) (periodOnePotential ψ.val) z =
+      canonicalDiscriminant (by simp) (periodOnePotential φ.val) z ∧
+    periodicAlgebraicMultiplicity (by simp) (periodOnePotential ψ.val) z =
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ.val) z := by
+  have h := sourceRealActionLevelSet_subset_isospectralSet (by simp) (by norm_num) (by norm_num) φ ha
+  exact ⟨congrFun ((mem_sourceIsospectralSet_iff_discriminant_eq (by simp) (by norm_num) φ ψ).mp h) z,h.2 z⟩
+
+end NLS.Lemma17_5Checks

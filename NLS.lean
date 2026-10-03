@@ -2156,3 +2156,6 @@ import NLS.ZakharovShabat.SourceIsospectralSet
 import NLS.SequenceSpaces.RealActionRotation
 import NLS.ZakharovShabat.SourceBirkhoffActionHamiltonian
 import NLS.ZakharovShabat.SourceHilbertActionRotation
+
+import NLS.SequenceSpaces.RealActionRotationOrbit
+import NLS.ZakharovShabat.SourceBirkhoffLemma17_5

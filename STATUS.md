@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: complete isospectral Hilbert action flows
+## Current milestone: Lemma 17.5 completed
+
+`RealActionRotationOrbit.lean` proves that finite coordinate rotations
+are dense in every prescribed action torus at every finite Banach
+exponent, including `p = 1`. Equal-radius pairs differ by the difference
+of their complex arguments, a formula that also handles radius zero.
+Finite lists of these rotations match any finite target block exactly
+while retaining the original tail. The resulting block replacements
+converge in the full sequence norm, so the orbit closure is exactly the
+action torus.
+
+`SourceBirkhoffLemma17_5.lean` pulls the closed actual isospectral set
+back through the global Hilbert inverse. It contains every finite
+rotation orbit point, hence the entire coordinate torus by density.
+Consequently, equal original Hilbert actions imply equality of the
+original periodic spectrum and all algebraic multiplicities, without
+a finite-gap hypothesis.
+
+Inclusion into Hilbert space preserves the original actions and normalized
+discriminant. This transfers the implication to every `1 < p ≤ 2`, with
+a Hilbert normalized family constructed internally. Actual isospectral
+sets are therefore exactly the original action level sets in this range.
+Their Birkhoff images equal the whole prescribed action tori, and they
+are compact in the original source norm. Together with the previously
+proved inclusion for `p > 2`, this completes Lemma 17.5(i) and (ii).
+
+Public checks cover full-norm finite-rotation approximation at `p = 1`,
+exact matching of signed finite coordinate blocks at `p = 3`, construction
+of a normalized family with a unique actual isospectral preimage for every
+torus point at `p = 3/2`, and recovery of the entire discriminant and
+algebraic multiplicities from the original actions below two.
+
+Next continue into Chapter 4: the abelian integral `F` and its estimates
+in Section 19, followed by the frequency analysis in Section 20 supporting
+Theorem 18.1. Those results and the subsequent convexity and wellposedness
+results remain unfinished. The full dissertation is not complete.
+
+## Previous milestone: complete isospectral Hilbert action flows
 
 `RealActionRotation.lean` constructs a one-mode coordinate rotation at
 every sequence exponent. Its selected velocity is `(-y_k,x_k)`, every
