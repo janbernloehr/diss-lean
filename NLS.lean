@@ -1903,3 +1903,8 @@ import NLS.ZakharovShabat.ClassicalSobolevRemainderFourierBound
 import NLS.SequenceSpaces.NormInterpolation
 import NLS.ZakharovShabat.ClassicalSobolevRemainderInterpolation
 import NLS.ZakharovShabat.ClassicalSobolevRemainderFourierDecay
+
+import NLS.Fourier.UnitIntervalC1Interpolation
+import NLS.ZakharovShabat.ClassicalFreeFrequencyDifference
+import NLS.ZakharovShabat.ClassicalShiftedFreeRemainder
+import NLS.ZakharovShabat.ClassicalShiftedFreeFourierDecay

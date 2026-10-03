@@ -83,4 +83,40 @@ theorem norm_interpolate_decay
     _ ≤ K/d^t := div_le_div_of_nonneg_left hK (Real.rpow_pos_of_pos hd0 _)
       (Real.rpow_le_rpow_of_exponent_le hd htb)
 
+/-- A common coefficient family interpolates across the closed interval `[p,2]`.
+Using one real-indexed family avoids changing its realization at either endpoint. -/
+theorem norm_interpolate_decay_family
+    (a : (s : ℝ) → (1 < s) → Coeff (ENNReal.ofReal s))
+    (p r : ℝ) (hp : 1 < p) (hp2 : p < 2) (hrp : p ≤ r) (hr2 : r ≤ 2)
+    (heq : ∀ s hs n, a s hs n = a r (lt_of_lt_of_le hp hrp) n)
+    (K d : ℝ) (hK : 0 ≤ K) (hd : 1 ≤ d)
+    (hA : ‖a p hp‖ ≤ K) (hB : ‖a 2 (by norm_num)‖ ≤ K/d) :
+    ‖a r (lt_of_lt_of_le hp hrp)‖ ≤ K/d^((r-p)/(2-p)) := by
+  by_cases hr0 : r = p
+  · subst r
+    simpa only [sub_self,zero_div,Real.rpow_zero,div_one] using hA
+  by_cases hr1 : r = 2
+  · subst r
+    simpa only [div_self (sub_ne_zero.mpr hp2.ne'),Real.rpow_one] using hB
+  have hrp' : p < r := lt_of_le_of_ne hrp (Ne.symm hr0)
+  have hr2' : r < 2 := lt_of_le_of_ne hr2 hr1
+  have hr : 1 < r := lt_of_lt_of_le hp hrp
+  let : Fact (1 ≤ ENNReal.ofReal p) := ⟨ENNReal.one_le_ofReal.mpr hp.le⟩
+  let : Fact (1 ≤ ENNReal.ofReal r) := ⟨ENNReal.one_le_ofReal.mpr hr.le⟩
+  let : Fact (1 ≤ ENNReal.ofReal (2 : ℝ)) := ⟨by norm_num⟩
+  have ht : 0 < (r-p)/(2-p) := div_pos (sub_pos.mpr hrp') (sub_pos.mpr hp2)
+  have ht1 : (r-p)/(2-p) < 1 := (div_lt_one (sub_pos.mpr hp2)).mpr (by linarith)
+  apply norm_interpolate_decay
+    (p := ENNReal.ofReal p) (q := ENNReal.ofReal (2 : ℝ)) (r := ENNReal.ofReal r)
+    (by simpa only [ENNReal.toReal_ofReal (by linarith : 0 ≤ p)] using (show 0 < p by linarith))
+    (by norm_num)
+    (by simpa only [ENNReal.toReal_ofReal (by linarith : 0 ≤ r)] using (show 0 < r by linarith))
+    (by simpa only [ENNReal.toReal_ofReal (by linarith : 0 ≤ r),ENNReal.toReal_ofReal (by norm_num : (0 : ℝ) ≤ 2)] using hr2)
+    (a p hp) (a 2 (by norm_num)) (a r hr) (heq p hp) (heq 2 (by norm_num))
+    ((r-p)/(2-p)) ht ht1 _ K d hK hd hA hB
+  rw [ENNReal.toReal_ofReal (by linarith : 0 ≤ p),
+    ENNReal.toReal_ofReal (by linarith : 0 ≤ r),ENNReal.toReal_ofReal (by norm_num : (0 : ℝ) ≤ 2)]
+  field_simp [sub_ne_zero.mpr hp2.ne']
+  ring
+
 end NLS.Coeff

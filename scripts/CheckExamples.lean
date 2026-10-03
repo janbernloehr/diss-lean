@@ -22782,4 +22782,64 @@ example (M : ℝ) : ∃ N : ℕ, 0 < N ∧
 
 end AppendixGInterpolation
 
+section AppendixGShiftedFree
+open Set NLS.Fourier
+
+-- The reference comparison uses the actual solution and actual Fourier integrals.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (n k : ℤ) :
+    classicalShiftedFreeFourierCoefficients (q := 2) (by norm_num)
+      (classicalSobolevPotential a) z (Real.pi*(n : ℝ)) (1,0)
+      (ContinuousLinearMap.fst ℝ ℂ ℂ) k =
+    intervalFourierCoefficient 1
+      (fun t => (classicalSolution (classicalSobolevPotential a) z (1,0) t-
+        classicalFreeVector ((Real.pi*(n : ℝ) : ℝ) : ℂ) (1,0) t).1) k := rfl
+
+-- Equal frequencies recover the earlier remainder, with no additional error.
+example (φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (x t : ℝ) (v : ℂ × ℂ) :
+    classicalShiftedFreeRemainder φ (x : ℂ) x v t =
+      classicalSolutionRemainder φ x v t := rfl
+
+example (x t : ℝ) (v : ℂ × ℂ) :
+    classicalFreeFrequencyDifference (x : ℂ) x v t = 0 := by
+  simp [classicalFreeFrequencyDifference]
+
+-- The one-index estimate has the explicit inverse-cube-root exponent.
+example (M B : ℝ) (hB : 0 ≤ B) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M)
+    (n : ℤ) (hn : 1 ≤ (n.natAbs : ℝ)) (hBn : B ≤ (n.natAbs : ℝ)) (z : ℂ)
+    (hz : ‖z-((Real.pi*(n : ℝ) : ℝ) : ℂ)‖ ≤ B/(n.natAbs : ℝ)) :
+    ‖classicalShiftedFreeFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ))
+      (by norm_num) (classicalSobolevPotential a) z (Real.pi*(n : ℝ)) (1,0)
+      (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤
+      classicalShiftedFreeInterpolationConstant (1/4) (by norm_num) M B/
+        (n.natAbs : ℝ)^(1/3 : ℝ) := by
+  have h := norm_classicalShiftedFreeFourierCoefficients_le (1/4) (3/2)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) M B hB a ha n hn hBn z hz
+    (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..)
+  norm_num [fundamentalFourierDecayExponent] at h ⊢
+  exact h
+
+-- One common cutoff works for the nonreal sequence nπ+i/|n| and the whole ball.
+example (M : ℝ) : ∃ N : ℕ, 0 < N ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ, N ≤ n.natAbs →
+      ‖classicalShiftedFreeFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ))
+        (by norm_num) (classicalSobolevPotential a)
+        ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ)) (Real.pi*(n : ℝ)) (1,0)
+        (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤
+        classicalShiftedFreeInterpolationConstant (1/4) (by norm_num) M 1/
+          (n.natAbs : ℝ)^(1/3 : ℝ) := by
+  obtain ⟨N,hN,h⟩ := exists_classicalShiftedFree_sequence_fourier_decay (1/4) (3/2)
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) M 1 (by norm_num) 0
+  refine ⟨N,hN,fun a ha n hn => ?_⟩
+  have hν : ∀ n : ℤ, 0 ≤ n.natAbs →
+      ‖((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ))-(Real.pi : ℂ)*(n : ℂ)‖ ≤
+        (1 : ℝ)/(n.natAbs : ℝ) := by
+    intro n _
+    simp
+  have hh := h (fun n => (Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ)) hν a ha (1,0)
+    (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..) n hn
+  norm_num [fundamentalFourierDecayExponent] at hh ⊢
+  exact hh
+
+end AppendixGShiftedFree
+
 end NLS.ZakharovShabat

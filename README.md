@@ -7713,3 +7713,38 @@ G.4–G.7, the sharper integral estimate in G.1, Lemma 16.1, remaining
 assertions of Theorem 14.1, and later chapters remain unfinished.
 Next prove the comparison with the free solution at `nπ` when the
 spectral displacement is `O(1/|n|)`.
+
+## Appendix G.3 shifted-free comparison
+
+The final shifted-free comparison in Appendix G.3 is now proved for
+physical period-two `H¹` coefficient potentials. For `0 < ε < 1`,
+`1+ε ≤ q ≤ 2`, and `νₙ=nπ+O(1/|n|)`, Lean proves
+
+`‖Fourier₍[0,1]₎(L (S(νₙ)v − E(nπ)v))‖ℓq ≤ K(ε,M,B) ‖v‖ / |n|^((q−1−ε)/(1−ε))`.
+
+The actual Fourier integrals compare the constructed solution at `νₙ`
+with the free solution at `nπ`. The constant and cutoff are uniform on
+`H¹` coefficient balls and under a common inverse-index displacement
+bound. Both exponent endpoints are included; the finite initial part
+of each spectral sequence is unrestricted.
+
+`ClassicalFreeFrequencyDifference.lean` bounds the free difference by
+`2|z−x|‖v‖` and its derivative by `(2|z|+1)|z−x|‖v‖` for real `x`
+and `|z−x|≤1`. `ClassicalShiftedFreeRemainder.lean` adds this to the
+actual remainder, giving `O(1/|n|)` values and uniformly bounded time
+derivatives. `UnitIntervalC1Interpolation.lean` provides reusable
+Fourier interpolation for any `C¹` interval function with those bounds.
+`ClassicalShiftedFreeFourierDecay.lean` applies it to the combined error
+and proves the common sequence cutoff.
+
+Public checks verify the actual Fourier-integral identity, recovery of
+the earlier remainder at equal frequencies, the zero free difference,
+the explicit inverse-cube-root bound at `ε=1/4, q=3/2`, and a uniform
+cutoff along the nonreal sequence `nπ+i/|n|`.
+
+Together with the preceding remainder bounds, this completes the G.3
+estimates for the constructed Sobolev potentials. Next prove the
+outer-index summability in G.4, then G.5–G.7's gradient estimates and
+their application to finite-gap sources in Lemma 16.1. The sharper
+integral estimate in G.1, remaining Appendix G estimates, Lemma 16.1,
+remaining assertions of Theorem 14.1, and later chapters remain unfinished.
