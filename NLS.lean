@@ -2221,3 +2221,11 @@ import NLS.ZakharovShabat.SourceAbelianJointExtension
 import NLS.ZakharovShabat.SourceAbelianJointChart
 import NLS.ZakharovShabat.SourceAbelianJointPrimitive
 import NLS.ZakharovShabat.SourceAbelianJointProperties
+
+import NLS.ComplexAnalysis.ParametricSourceLogarithm
+import NLS.ComplexAnalysis.ParametricSourceLogDomain
+import NLS.ComplexAnalysis.ContinuousLogarithmUnique
+import NLS.ZakharovShabat.SourceRealTypeLogarithmUnique
+import NLS.ZakharovShabat.SourceAbelianRadialPrimitive
+import NLS.ZakharovShabat.SourceAbelianRadialCompatibility
+import NLS.ZakharovShabat.SourceAbelianExteriorProduct

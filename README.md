@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: all local abelian charts now glue into one jointly
-complex-analytic primitive, retaining exact real-source values and
-spectral and potential derivative formulas. One potential neighborhood
-works over each compact spectral set off the cuts. Uniformity over the
-full unbounded spectral exterior remains next. See `STATUS.md`.
+Latest milestone: one potential neighborhood now supports normalized
+abelian continuation over the full unbounded spectral exterior, including
+its boundary and every signed index. The exact potential gradient and
+agreement with the existing joint primitive on overlaps are proved.
+Combining these continuations into one enlarged open joint domain remains
+next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -10340,3 +10341,54 @@ exterior of an isolating-disc family; compact-set uniformity alone does
 not prove it. Complex-source endpoint and square continuation, locally
 source-uniform and index-uniform estimates in (iii), subsequent frequency
 results, and the full dissertation remain unfinished.
+
+
+## Uniform continuation over the full spectral exterior
+
+`SourceAbelianExteriorProduct.lean` proves uniform exterior continuation
+around every real source. One positive potential radius and one fixed
+family of pairwise disjoint isolating discs work for every signed index
+and the full unbounded spectral exterior, including its boundary.
+The continued abelian integral is jointly complex analytic there, has
+full differential `d Delta / canonicalRoot`, and retains the actual
+normalization at every nearby real source. Every nearby spectral
+cluster stays inside its assigned disc.
+
+`SourceAbelianRadialPrimitive.lean` constructs this continuation by
+integrating the Floquet logarithmic derivative along a straight source
+segment, starting at the actual real-source primitive. Exponentiation
+recovers the multiplier exactly; differentiating that identity gives
+the full joint differential and the potential gradient. Continuous
+logarithm uniqueness fixes the normalization throughout a convex
+neighborhood of real sources.
+
+`ParametricSourceLogarithm.lean` and `ParametricSourceLogDomain.lean`
+supply the reusable Banach-parameter construction. The set of points
+whose entire straight source segment stays inside an open analytic
+domain is open, by compactness of the path parameter. This proves
+analyticity at exterior boundary points without assuming that the
+spectral exterior itself is open or bounded. All-index isolation keeps
+the source paths away from every canonical cut at once.
+
+`SourceAbelianRadialCompatibility.lean` identifies the continuation
+with the previously glued joint primitive at every common complex-source
+point in the exterior product. The proof uses
+`ContinuousLogarithmUnique.lean` and
+`SourceRealTypeLogarithmUnique.lean`: projection to real sources stays
+inside both source balls, and the common exponential and real-source
+normalization determine the logarithm throughout their overlap.
+
+Public checks cover unrestricted exponential source transport, a common
+radius over the unbounded exterior at exponent 3/2, the exact potential
+gradient for arbitrary nearby complex sources and all indices,
+compatibility with the glued primitive, nearby real-source values at
+an odd negative index, and the complete free base-source formula.
+
+This establishes the uniform exterior-domain continuation and gradient
+around every real anchor in Lemma 19.1(i). The next step is to place these
+extensions in one enlarged open joint domain over an almost-real source
+neighborhood; the previously defined `sourceAbelianJointDomain` has not
+yet been proved to contain these entire exterior products. Complex-source
+endpoint and square continuation, locally source-uniform and index-uniform
+estimates in (iii), subsequent frequency results, and the full dissertation
+remain unfinished.

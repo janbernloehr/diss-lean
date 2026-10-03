@@ -26757,3 +26757,73 @@ example : sourceAbelianJointPrimitive (p := 3) (by simp) (by norm_num) (-3) (Com
   ring
 
 end NLS.AbelianJointGluingChecks
+
+
+noncomputable section
+namespace NLS.AbelianExteriorChecks
+open Set Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Straight-source logarithm transport works on the whole unbounded
+-- spectral plane and source plane for a nonvanishing exponential family.
+example (z a : ℂ) :
+    exp (parametricSourceLogIncrement (fun t : ℂ × ℂ => exp (t.1+t.2)) 0 (z,a)) = exp a := by
+  have h := exp_parametricSourceLogIncrement_mul (fun t : ℂ × ℂ => exp (t.1+t.2)) univ univ 0
+    convex_univ
+    (mem_univ _) (by intro t ht; exact (analyticAt_fst.add analyticAt_snd).cexp) (fun t ht => exp_ne_zero _) (z,a) (by simp)
+  have he : exp a*exp z = exp (z+a) := by rw [← exp_add,add_comm]
+  apply mul_right_cancel₀ (exp_ne_zero z)
+  simpa only [add_zero] using h.trans he.symm
+
+-- No compact spectral set is assumed. One positive radius handles
+-- every signed index and every exterior spectral point at exponent 3/2.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    ∃ (N : ℕ) (ε r : ℝ), 0 < ε ∧ ε ≤ Real.pi/4 ∧ 0 < r ∧ ∀ n : ℤ,
+      AnalyticOnNhd ℂ (sourceAbelianRadialPrimitive (by simp) (by norm_num) φ n)
+        ((⋃ m : ℤ, sourceIsolatingDisc (by simp) (by norm_num) φ.val N ε m)ᶜ ×ˢ Metric.ball φ.val r) ∧
+      ∀ (z : ℂ) (ψ h : CoeffPair (ENNReal.ofReal (3/2))),
+        z ∈ (⋃ m : ℤ, sourceIsolatingDisc (by simp) (by norm_num) φ.val N ε m)ᶜ → ψ ∈ Metric.ball φ.val r →
+          (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+            sourceAbelianRadialPrimitive (by simp) (by norm_num) φ n (z,χ)) ψ) h =
+            (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+              canonicalDiscriminant (by simp) (periodOnePotential χ) z) ψ) h /
+              sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  obtain ⟨N,ε,r,hε,hεmax,hr,_,_,hF⟩ := exists_sourceAbelianRadial_uniform_exterior (by simp) (by norm_num) φ
+  refine ⟨N,ε,r,hε,hεmax,hr,fun n => ⟨(hF n).1,?_⟩⟩
+  intro z ψ h hz hψ
+  simpa only using! sourceAbelianRadialPrimitive_source_fderiv (by simp) (by norm_num) φ n z ψ h
+    (by simpa only using! (hF n).2.1 (z,ψ) ⟨hz,hψ⟩)
+
+-- Exterior continuation extends the previously glued function on
+-- all common complex-source points and matches actual real sources.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ (N : ℕ) (ε r : ℝ), 0 < r ∧
+      (∀ n : ℤ, ∀ (z : ℂ) (ψ : CoeffPair 3),
+        z ∈ (⋃ m : ℤ, sourceIsolatingDisc (by simp) (by norm_num) φ.val N ε m)ᶜ → ψ ∈ Metric.ball φ.val r →
+        (z,ψ) ∈ sourceAbelianJointDomain (by simp) (by norm_num) →
+          sourceAbelianRadialPrimitive (by simp) (by norm_num) φ n (z,ψ) =
+            sourceAbelianJointPrimitive (by simp) (by norm_num) n (z,ψ)) ∧
+      ∀ (ψ : realTypeSourceSubmodule 3), ψ.val ∈ Metric.ball φ.val r →
+        ∀ z ∈ (⋃ m : ℤ, sourceIsolatingDisc (by simp) (by norm_num) φ.val N ε m)ᶜ,
+          sourceAbelianRadialPrimitive (by simp) (by norm_num) φ (-3) (z,ψ.val) =
+            sourceAbelianPrimitive (by simp) (by norm_num) ψ.val ψ.property z-3*Complex.I*(Real.pi : ℂ) := by
+  obtain ⟨N,ε,r,_,_,hr,_,_,hF⟩ := exists_sourceAbelianRadial_uniform_exterior (by simp) (by norm_num) φ
+  refine ⟨N,ε,r,hr,?_,?_⟩
+  · intro n z ψ hz hψ ht
+    exact (hF n).2.2.1 (z,ψ) ⟨hz,hψ⟩ ht
+  · intro ψ hψ z hz
+    have h := (hF (-3)).2.2.2 ψ hψ z hz
+    convert! h using 1
+    norm_num
+    ring
+
+-- The base-source formula retains the complete free normalization.
+example (n : ℤ) (z : ℂ) :
+    sourceAbelianRadialPrimitive (p := 3) (by simp) (by norm_num) 0 n (z,0) =
+      -Complex.I*z+Complex.I*(Real.pi : ℂ)*n := by
+  have h := sourceAbelianRadialPrimitive_base (p := 3) (by simp) (by norm_num) 0 n z
+  simpa only [ZeroMemClass.coe_zero,sourceAbelianPrimitive_zero] using! h
+
+end NLS.AbelianExteriorChecks
