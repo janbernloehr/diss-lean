@@ -2167,3 +2167,7 @@ import NLS.ZakharovShabat.SourceAbelianHalfPlaneProperties
 import NLS.ZakharovShabat.SourceAbelianDiscPrimitive
 import NLS.ZakharovShabat.SourceAbelianDiscGluing
 import NLS.ZakharovShabat.SourceAbelianLocalExtension
+
+import NLS.ComplexAnalysis.NormalizedLogarithmicPrimitive
+import NLS.ZakharovShabat.SourceFloquetEndpointLimit
+import NLS.ZakharovShabat.SourceAbelianFloquetIdentity

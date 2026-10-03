@@ -26026,3 +26026,56 @@ example (D : SourceAbelianDiscPrimitive (p := 3) (by simp) (by norm_num) 0 (by s
   ring
 
 end NLS.AbelianLocalExtensionChecks
+
+
+noncomputable section
+namespace NLS.AbelianFloquetChecks
+open Set Metric Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The endpoint normalization selects a principal logarithm locally,
+-- without any assumption that the gap is open or the multiplier is in
+-- the logarithm's slit plane supplied by the caller.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (n : ℤ) :
+    ∃ D : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n,
+      ∀ a ∈ ({canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n,
+        canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n} : Set ℂ),
+        D.extension =ᶠ[𝓝[D.extensionDomain] a]
+          (fun z => log (sourceAbelianGapSign n*sourceFloquetMultiplier (by simp) (by norm_num) φ.val z)) := by
+  obtain ⟨D⟩ := nonempty_sourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n
+  exact ⟨D,D.extension_eventually_eq_log_at_endpoint⟩
+
+-- Both recovered spectral quantities carry the odd negative index's
+-- sign, including at real-axis points admitted by the continuation.
+example (φ : realTypeSourceSubmodule 3)
+    (D : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property (-3))
+    (x : ℝ) (hx : (x : ℂ) ∈ D.extensionDomain) :
+    cosh (D.extension x) = -canonicalDiscriminant (by simp) (periodOnePotential φ.val) x / 2 ∧
+    sinh (D.extension x) = -sourceCanonicalRoot (by simp) (by norm_num) φ.val x / 2 := by
+  constructor
+  · simpa [sourceAbelianGapSign] using D.extension_cosh x hx
+  · simpa [sourceAbelianGapSign] using D.extension_sinh x hx
+
+-- Independent index normalizations and disc choices give exactly the
+-- same real part at a common point of their continued domains.
+example (φ : realTypeSourceSubmodule 3) (n m : ℤ)
+    (D : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n)
+    (E : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property m)
+    (z : ℂ) (hzD : z ∈ D.extensionDomain) (hzE : z ∈ E.extensionDomain) :
+    (D.extension z).re = (E.extension z).re := by
+  rw [D.extension_re_eq_log_norm_multiplier z hzD,E.extension_re_eq_log_norm_multiplier z hzE]
+
+-- The exact exponential identity applies far beyond a local principal
+-- logarithm chart, including at a free (collapsed) negative indexed gap.
+example : exp (sourceAbelianHalfPlanePrimitive (p := 3) (by simp) (by norm_num) 0 (by simp)
+    (-3) true (100+Complex.I)) =
+    -sourceFloquetMultiplier (p := 3) (by simp) (by norm_num) 0 (100+Complex.I) := by
+  simpa [sourceAbelianGapSign] using sourceAbelianHalfPlanePrimitive_exp (p := 3)
+    (by simp) (by norm_num) 0 (by simp) (-3) true (100+Complex.I)
+    (by simp [sourceAbelianHalfPlane])
+
+end NLS.AbelianFloquetChecks

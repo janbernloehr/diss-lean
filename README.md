@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 19's normalized abelian primitives now join
-across an isolating neighborhood of any selected gap, including collapsed
-gaps. The joined function is analytic, agrees with both half-plane
-constructions, and evaluates paths crossing the real axis. Global
-continuation and the remaining assertions of Lemma 19.1 are next.
+Latest milestone: Section 19's continued normalized primitive now has
+its exact exponential, hyperbolic cosine, and hyperbolic sine identities
+with the canonical Floquet multiplier, discriminant, and root. Its
+principal logarithm near either endpoint is proved, including collapsed
+gaps. Global continuation and the remaining parts of Lemma 19.1 are next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -9888,3 +9888,44 @@ This completes the local gluing step around the selected gap in Section
 constants, joint source analyticity, and the remaining assertions of
 Lemma 19.1 are still required. The globally normalized abelian integral,
 frequency results, and full dissertation remain unfinished.
+
+## Exact abelian logarithm and Floquet identities
+
+`NormalizedLogarithmicPrimitive.lean` proves that an actual primitive
+of a multiplier's logarithmic derivative exponentiates to that multiplier,
+with its multiplicative constant determined by a boundary limit. No
+principal-logarithm domain assumption is imposed.
+
+`SourceFloquetEndpointLimit.lean` proves that the canonical root tends to
+zero at either periodic endpoint along every approach off the cuts,
+including at collapsed gaps. The actual Floquet multiplier consequently
+tends to the signed index value `(-1)^n`.
+
+`SourceAbelianFloquetIdentity.lean` identifies the exact exponential of
+the normalized primitive on both complete half-planes and their joined
+isolating-disc domain:
+
+`exp(F_n) = (-1)^n (Delta + canonicalRoot) / 2`.
+
+The opposite exponential equals the signed companion multiplier. Thus
+`cosh(F_n) = (-1)^n Delta / 2` and
+`sinh(F_n) = (-1)^n canonicalRoot / 2`, preserving the canonical sheet
+orientation. The real part is exactly the logarithm of the multiplier's
+modulus, independent of the chosen normalization index on common domains.
+Near either endpoint the full continued primitive equals the principal
+logarithm of the signed multiplier, because its zero boundary limit
+selects the principal imaginary strip.
+
+Public checks construct the local logarithm representation at exponent
+3/2 without an open-gap assumption, verify both spectral signs at a
+negative odd index on the real axis, compare real parts across different
+normalization indices, and check the exact exponential at a free spectral
+point far outside the local principal-logarithm chart.
+
+This supplies the logarithm identity used in the proof of Lemma 19.1.
+It does not yet construct the continuation across the rest of the real
+axis or determine the full indexed `-i n pi` additive constants. Joint
+source analyticity, the gap-side arcosh formula and estimates, and the
+remaining assertions of Lemma 19.1 still require proof. The global
+abelian integral, subsequent frequency results, and the full dissertation
+remain unfinished.

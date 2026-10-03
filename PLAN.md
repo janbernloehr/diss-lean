@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Latest progress: local gluing of normalized abelian primitives
+## Latest progress: exact abelian logarithm and Floquet identities
+
+`NormalizedLogarithmicPrimitive.lean` proves that an actual primitive
+of a multiplier's logarithmic derivative exponentiates to that multiplier,
+with its multiplicative constant determined by a boundary limit. No
+principal-logarithm domain assumption is imposed.
+
+`SourceFloquetEndpointLimit.lean` proves that the canonical root tends to
+zero at either periodic endpoint along every approach off the cuts,
+including at collapsed gaps. The actual Floquet multiplier consequently
+tends to the signed index value `(-1)^n`.
+
+`SourceAbelianFloquetIdentity.lean` identifies the exact exponential of
+the normalized primitive on both complete half-planes and their joined
+isolating-disc domain:
+
+`exp(F_n) = (-1)^n (Delta + canonicalRoot) / 2`.
+
+The opposite exponential equals the signed companion multiplier. Thus
+`cosh(F_n) = (-1)^n Delta / 2` and
+`sinh(F_n) = (-1)^n canonicalRoot / 2`, preserving the canonical sheet
+orientation. The real part is exactly the logarithm of the multiplier's
+modulus, independent of the chosen normalization index on common domains.
+Near either endpoint the full continued primitive equals the principal
+logarithm of the signed multiplier, because its zero boundary limit
+selects the principal imaginary strip.
+
+Public checks construct the local logarithm representation at exponent
+3/2 without an open-gap assumption, verify both spectral signs at a
+negative odd index on the real axis, compare real parts across different
+normalization indices, and check the exact exponential at a free spectral
+point far outside the local principal-logarithm chart.
+
+This supplies the logarithm identity used in the proof of Lemma 19.1.
+It does not yet construct the continuation across the rest of the real
+axis or determine the full indexed `-i n pi` additive constants. Joint
+source analyticity, the gap-side arcosh formula and estimates, and the
+remaining assertions of Lemma 19.1 still require proof. The global
+abelian integral, subsequent frequency results, and the full dissertation
+remain unfinished.
+
+## Previous progress: local gluing of normalized abelian primitives
 
 `SourceAbelianDiscPrimitive.lean` uses the proved zero enclosing-circle
 period to construct an actual quotient primitive throughout an isolating
