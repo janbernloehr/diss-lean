@@ -26627,3 +26627,67 @@ example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (m : ℤ) (a : ℝ
     (by simpa only using! (hcharts n).2.1 (z,ψ) ⟨hz,hψ⟩)
 
 end NLS.AbelianBandChartChecks
+
+
+noncomputable section
+namespace NLS.AbelianJointExtensionChecks
+open Set Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The full domain is connected even at the free potential, where
+-- every periodic gap has collapsed to a point.
+example : IsConnected (sourceCanonicalRootDomain (p := 3) (by simp) (by norm_num) 0) :=
+  isConnected_sourceCanonicalRootDomain_of_realType (by simp) (by norm_num) 0 (by simp)
+
+-- A genuinely nonreal anchor needs no band-membership hypothesis.
+-- Both its complex spectral coordinate and its real potential vary.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (a : ℂ) (ha : a.im ≠ 0) :
+    ContinuousAt (fun t : ℂ × realTypeSourceSubmodule (ENNReal.ofReal (3/2)) =>
+      sourceAbelianPrimitive (by simp) (by norm_num) t.2.val t.2.property t.1) (a,φ) := by
+  simpa only using! continuousAt_sourceAbelianPrimitive_joint_real_source (by simp) (by norm_num) φ a
+    (sourceCanonicalRootDomain_of_im_ne_zero (by simp) (by norm_num) φ.val φ.property a ha)
+
+-- At an arbitrary off-cut anchor, one product neighborhood handles
+-- all indices, exact values at nearby real sources, and the source
+-- derivative at nearby complex sources.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (a : ℂ)
+    (ha : a ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val) :
+    ∃ r : ℝ, 0 < r ∧ ∀ n : ℤ,
+      AnalyticOnNhd ℂ (sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a n)
+        (Metric.ball a r ×ˢ Metric.ball φ.val r) ∧
+      (∀ ψ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)), ψ.val ∈ Metric.ball φ.val r →
+        ∀ z ∈ Metric.ball a r,
+          sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a n (z,ψ.val) =
+            sourceAbelianPrimitive (by simp) (by norm_num) ψ.val ψ.property z+Complex.I*(Real.pi : ℂ)*n) ∧
+      ∀ (ψ : CoeffPair (ENNReal.ofReal (3/2))), ψ ∈ Metric.ball φ.val r →
+        ∀ z ∈ Metric.ball a r, ∀ h : CoeffPair (ENNReal.ofReal (3/2)),
+          (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+            sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a n (z,χ)) ψ) h =
+          (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+            canonicalDiscriminant (by simp) (periodOnePotential χ) z) ψ) h /
+            sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  obtain ⟨r,hr,_,hcharts⟩ := exists_sourceAbelianLogChart_product (by simp) (by norm_num) φ a ha
+  refine ⟨r,hr,fun n => ⟨(hcharts n).1,(hcharts n).2.2,?_⟩⟩
+  intro ψ hψ z hz h
+  simpa only using! sourceAbelianLogChart_source_fderiv (by simp) (by norm_num) φ.val φ.property a n z ψ h
+    (by simpa only using! (hcharts n).2.1 (z,ψ) ⟨hz,hψ⟩)
+
+-- Independently normalized charts at different spectral and real-source
+-- anchors agree on every common nearby real-source slice.
+example (φ χ : realTypeSourceSubmodule 3) (a b : ℂ)
+    (ha : a ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val)
+    (hb : b ∈ sourceCanonicalRootDomain (by simp) (by norm_num) χ.val) :
+    ∃ r s : ℝ, 0 < r ∧ 0 < s ∧ ∀ (ψ : realTypeSourceSubmodule 3),
+      ψ.val ∈ Metric.ball φ.val r → ψ.val ∈ Metric.ball χ.val s →
+      ∀ z ∈ Metric.ball a r ∩ Metric.ball b s, ∀ n : ℤ,
+        sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a n (z,ψ.val) =
+          sourceAbelianLogChart (by simp) (by norm_num) χ.val χ.property b n (z,ψ.val) := by
+  obtain ⟨r,hr,_,hφ⟩ := exists_sourceAbelianLogChart_product (by simp) (by norm_num) φ a ha
+  obtain ⟨s,hs,_,hχ⟩ := exists_sourceAbelianLogChart_product (by simp) (by norm_num) χ b hb
+  refine ⟨r,s,hr,hs,?_⟩
+  intro ψ hψφ hψχ z hz n
+  exact ((hφ n).2.2 ψ hψφ z hz.1).trans ((hχ n).2.2 ψ hψχ z hz.2).symm
+
+end NLS.AbelianJointExtensionChecks

@@ -2212,3 +2212,8 @@ import NLS.ZakharovShabat.SourceAbelianLogChart
 import NLS.ZakharovShabat.SourceAbelianRealBandValue
 import NLS.ZakharovShabat.SourceAbelianBandSourceContinuity
 import NLS.ZakharovShabat.SourceAbelianBandChart
+
+import NLS.ComplexAnalysis.ParameterContinuityPropagation
+import NLS.ZakharovShabat.SourceRootDomainConnected
+import NLS.ZakharovShabat.SourceAbelianSourceContinuity
+import NLS.ZakharovShabat.SourceAbelianJointExtension

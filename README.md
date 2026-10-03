@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: near a real spectral band anchor, a joint analytic
-chart now agrees with the actual abelian integral for every nearby real
-potential throughout a complex spectral ball. One product neighborhood
-supports every signed index and the exact potential derivative at
-complex sources. Extension to arbitrary spectral anchors and the global
-complex-source construction remain next. See `STATUS.md`.
+Latest milestone: at every spectral point off the cuts, joint analytic
+charts now agree with the actual abelian integral for all nearby real
+potentials. Each product neighborhood supports every signed index and
+the exact potential derivative at complex sources. Gluing these charts
+on complex-source overlaps and constructing the full product-domain
+primitive remain next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -10257,3 +10257,45 @@ complex-source product-domain primitive remain next. Complex-source
 endpoint and square continuation, locally source-uniform and
 index-uniform estimates in (iii), subsequent frequency results, and
 the full dissertation remain unfinished.
+
+
+## Actual joint charts at every off-cut anchor
+
+`SourceAbelianJointExtension.lean` removes the band-anchor restriction:
+at every spectral point off the cuts of a real potential, one positive
+product neighborhood supports jointly complex-analytic logarithm charts
+for all signed indices. On every nearby real-source slice, each chart
+equals the actual `F_0 + i n pi` throughout the complex spectral ball.
+The full differential remains `d Delta / canonicalRoot`, including the
+potential derivative at nearby complex sources. The actual primitive is
+jointly continuous in complex spectral coordinate and real source at
+every such point.
+
+`SourceRootDomainConnected.lean` proves connectedness of the entire
+real-source cut complement. Each nonempty vertical band strip joins the
+two half-planes, and these regions cover the domain even when gaps have
+collapsed. `ParameterContinuityPropagation.lean` gives a reusable
+connected-set argument: continuity in a parameter at one anchor
+propagates if differences at nearby spectral points are continuous.
+
+`SourceAbelianSourceContinuity.lean` verifies that hypothesis for the
+actual primitive. On a small spectral ball, actual increments equal
+increments of a joint analytic chart because the additive constants
+cancel. Starting from the exact band normalization, this proves source
+continuity at arbitrary off-cut points. Normalized-log uniqueness then
+fixes each chart at its anchor, and equality of spectral derivatives
+extends the agreement over the whole ball. The previous band-chart
+results are now specializations of the general theorems.
+
+Public checks cover connectedness with all gaps collapsed, nonreal
+anchors at exponent 3/2, a common product neighborhood for all indices,
+exact potential derivatives at nearby complex sources, and agreement
+of independently anchored charts on common real-source slices.
+
+This advances Lemma 19.1(i) from band anchors to every off-cut spectral
+anchor. Gluing the charts on complex-source overlaps and constructing
+the stated product domain with one source neighborhood over the full
+spectral exterior remain next. Complex-source endpoint and square
+continuation, locally source-uniform and index-uniform estimates in
+(iii), subsequent frequency results, and the full dissertation remain
+unfinished.
