@@ -24233,3 +24233,76 @@ example : ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 �
   exists_sourceBirkhoffFamily_localInverse_of_two_le (by simp) (by norm_num) le_rfl
 
 end NLS.ZakharovShabatLocalInverseChecks
+
+namespace NLS.ZakharovShabatProposition17_1Checks
+open NLS.ZakharovShabat Set Filter Topology
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Compatibility is for arbitrary constructed families, including different root choices.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+    {hp : p ≠ ⊤} {hp1 : 1 < p} {hq : q ≠ ⊤} {hq1 : 1 < q}
+    {W₀ B W : Set (CoeffPair p)} {V₀ C V : Set (CoeffPair q)}
+    {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    {t : (k : ℤ) → CoeffPair q → DeletedCoeff q k}
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (E : SourceBirkhoffMapComplexData hq hq1 V₀ C V t)
+    (hpq : p ≤ q) (φ : realTypeSourceSubmodule p) (h : CoeffPair p) :
+    ((Coeff.exponentInclusion hpq).prodMap (Coeff.exponentInclusion hpq))
+      (sourceBirkhoffJacobian hp hp1 s φ.val h) =
+    sourceBirkhoffJacobian hq hq1 t (CoeffPair.exponentInclusion hpq φ.val)
+      (CoeffPair.exponentInclusion hpq h) := D.jacobian_exponent E hpq φ h
+
+-- Hilbert injectivity eliminates the full complex kernel below two.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    Function.Injective (sourceBirkhoffJacobian (by simp) (by norm_num) s φ.val) :=
+  D.jacobian_injective_of_le_two (by norm_num) φ
+
+-- Both complex and real Jacobians are bijective throughout the full range.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (φ : realTypeSourceSubmodule p) :
+    Function.Bijective (sourceBirkhoffJacobian hp hp1 s φ.val) ∧
+      Function.Bijective (fderiv ℝ (sourceRealBirkhoffMap hp hp1 s) φ) :=
+  ⟨D.jacobian_bijective_all_exponents φ, D.real_jacobian_bijective_all_exponents φ⟩
+
+-- The actual real inverse derivative is checked strictly below two.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ h : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    (D.realJacobianEquivAll φ).symm
+      (fderiv ℝ (sourceRealBirkhoffMap (by simp) (by norm_num) s) φ h) = h :=
+  (D.realJacobianEquivAll φ).symm_apply_apply h
+
+-- Proposition 17.1 includes the analytic inverse and its exact derivative below two.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    ∃ g : (RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))) →
+        realTypeSourceSubmodule (ENNReal.ofReal (3/2)),
+      AnalyticAt ℝ g (sourceRealBirkhoffMap (by simp) (by norm_num) s φ) ∧
+      g (sourceRealBirkhoffMap (by simp) (by norm_num) s φ) = φ ∧
+      (∀ᶠ ψ in 𝓝 φ, g (sourceRealBirkhoffMap (by simp) (by norm_num) s ψ) = ψ) ∧
+      (∀ᶠ z in 𝓝 (sourceRealBirkhoffMap (by simp) (by norm_num) s φ),
+        sourceRealBirkhoffMap (by simp) (by norm_num) s (g z) = z) ∧
+      HasStrictFDerivAt g (D.realJacobianEquivAll φ).symm.toContinuousLinearMap
+        (sourceRealBirkhoffMap (by simp) (by norm_num) s φ) := D.proposition17_1 φ
+
+-- Family existence does not require a supplied map, inverse, or kernel hypothesis.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W₀ B W : Set (CoeffPair p), ∃ s : (k : ℤ) → CoeffPair p → DeletedCoeff p k,
+      SourceBirkhoffMapComplexData hp hp1 W₀ B W s ∧
+      ∀ φ : realTypeSourceSubmodule p,
+        ∃ g : (RealCoeff p × RealCoeff p) → realTypeSourceSubmodule p,
+          AnalyticAt ℝ g (sourceRealBirkhoffMap hp hp1 s φ) ∧
+          g (sourceRealBirkhoffMap hp hp1 s φ) = φ ∧
+          (∀ᶠ ψ in 𝓝 φ, g (sourceRealBirkhoffMap hp hp1 s ψ) = ψ) ∧
+          (∀ᶠ z in 𝓝 (sourceRealBirkhoffMap hp hp1 s φ), sourceRealBirkhoffMap hp hp1 s (g z) = z) :=
+  exists_sourceBirkhoffFamily_proposition17_1 hp hp1
+
+end NLS.ZakharovShabatProposition17_1Checks

@@ -1,6 +1,24 @@
 # Implementation plan
 
-## Latest progress: Proposition 17.1 for 2 ≤ p < ∞
+## Latest progress: Proposition 17.1 for every 1 < p < ∞
+
+Proposition 17.1 is complete for the constructed actual Birkhoff family.
+The full sequence Jacobian commutes with exponent inclusion, for any two
+constructed families. Below two, Hilbert injectivity and injectivity of
+the source inclusion give a trivial kernel. Compact normalization and
+the Fredholm alternative give bijectivity. Real/complex derivative
+compatibility transfers this to the actual real spaces. Both complex
+and real analytic local inverses now exist at every real source for
+all finite `p>1`, with both inverse identities and the exact derivative.
+
+Next address Proposition 17.2, global injectivity. First identify or
+formalize the Hilbert global injectivity result used by the dissertation,
+then transport injectivity across exponents using the established local
+inverses and compatibility. Do not assume that external theorem as an
+axiom or conclude global injectivity from local invertibility alone.
+
+
+## Previous progress: Proposition 17.1 for 2 ≤ p < ∞
 
 The actual complex and real Jacobians are now bounded isomorphisms at
 every real source for `2≤p<∞`. Canonical Hamiltonian directions supply

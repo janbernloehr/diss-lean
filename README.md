@@ -8703,3 +8703,46 @@ Proposition 17.1. The Hamiltonian-direction argument above uses `2≤p`;
 square summability alone does not put these directions in a smaller
 source space. The sharper G.1 integral bound, remaining assertions of
 Theorem 14.1, and later chapters also remain unfinished.
+
+## Latest progress: Proposition 17.1 for every 1 < p < ∞
+
+The actual real Birkhoff map is now a local analytic diffeomorphism at
+every real source for every `1<p<∞`. Both its real derivative and the
+complex extension's derivative are bounded linear isomorphisms. The
+local inverses satisfy both inverse identities on neighborhoods and
+have derivative equal to the inverse of the actual Jacobian. A final
+existence theorem supplies the constructed Birkhoff family and all its
+real local inverses, without an invertibility or finite-gap premise.
+
+`SourceBirkhoffJacobianAllExponents.lean` proves that the full sequence
+Jacobian commutes with source and output exponent inclusion. This holds
+for any two constructed families, without assuming identical normalized
+root choices. The existing rectangular cotangent compatibility supplies
+each coordinate of the operator identity.
+
+For `1<p≤2`, a kernel vector maps into the Hilbert source space and is
+annihilated by the Hilbert Jacobian. Its already proved injectivity and
+injectivity of the source inclusion force the original vector to vanish.
+The normalized derivative is a compact perturbation of identity by
+Lemma 16.3, so the Fredholm alternative gives bijectivity. Together with
+the upper-exponent argument, this proves complex invertibility and
+analytic complex local inversion for the whole finite range above one.
+
+`SourceBirkhoffRealJacobian.lean` now isolates the general transfer of
+complex bijectivity to real bijectivity; the earlier upper-exponent API
+is retained. `SourceBirkhoffProposition17_1.lean` applies that transfer
+throughout the full range, packages the bounded real Jacobian inverse,
+and proves the complete analytic local-inverse assertion with its exact
+strict derivative. The constructed-family theorem includes every real
+source and both local inverse identities.
+
+Public checks cover arbitrary-family exponent compatibility, kernel
+vanishing at `p=3/2`, complex and real bijectivity at arbitrary finite
+`p>1`, the real inverse derivative and analytic local inverse at `p=3/2`,
+and constructed-family existence throughout the full range.
+
+Next address Proposition 17.2, global injectivity. Its dissertation proof
+uses a previously established Hilbert-space global injectivity theorem;
+that prerequisite must be formalized or obtained from proved results.
+The sharper G.1 integral bound, remaining assertions of Theorem 14.1,
+and later chapters remain unfinished.

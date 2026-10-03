@@ -2028,3 +2028,6 @@ import NLS.ZakharovShabat.SourceBirkhoffJacobianRange
 import NLS.ZakharovShabat.SourceBirkhoffJacobianInvertible
 import NLS.ZakharovShabat.SourceBirkhoffRealJacobian
 import NLS.ZakharovShabat.SourceBirkhoffLocalInverse
+
+import NLS.ZakharovShabat.SourceBirkhoffJacobianAllExponents
+import NLS.ZakharovShabat.SourceBirkhoffProposition17_1

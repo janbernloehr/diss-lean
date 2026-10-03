@@ -38,9 +38,10 @@ theorem real_jacobian_complex_inclusion
 
 /-- Bijectivity on the real source and real sequence spaces follows from
 complex bijectivity, by splitting any complex preimage into real parts. -/
-theorem real_jacobian_bijective
+theorem real_jacobian_bijective_of_complex
     (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
-    (h2p : (2 : ℝ≥0∞) ≤ p) (φ : realTypeSourceSubmodule p) :
+    (φ : realTypeSourceSubmodule p)
+    (hbij : Function.Bijective (sourceBirkhoffJacobian hp hp1 s φ.val)) :
     Function.Bijective (fderiv ℝ (sourceRealBirkhoffMap hp hp1 s) φ) := by
   let inc := (RealCoeff.complexCLM p).prodMap (RealCoeff.complexCLM p)
   let J := sourceBirkhoffJacobian hp hp1 s φ.val
@@ -50,10 +51,10 @@ theorem real_jacobian_bijective
   constructor
   · intro u v huv
     apply Subtype.ext
-    apply (D.jacobian_bijective h2p φ).1
+    apply hbij.1
     rw [← hinc, ← hinc, huv]
   · intro z
-    obtain ⟨h, hh⟩ := (D.jacobian_bijective h2p φ).2 (inc z)
+    obtain ⟨h, hh⟩ := hbij.2 (inc z)
     let u : realTypeSourceSubmodule p := ⟨sourceRealPart h, sourceRealPart_realType h⟩
     let v : realTypeSourceSubmodule p := ⟨sourceImagPart h, sourceImagPart_realType h⟩
     refine ⟨u, ?_⟩
@@ -67,6 +68,13 @@ theorem real_jacobian_bijective
     · have hn := congrArg (fun w : Coeff p × Coeff p => (w.2 n).re) hdec
       change (((R u).2 n : ℂ) + I * ((R v).2 n : ℂ)).re = z.2 n at hn
       simpa using hn
+
+/-- Real bijectivity at every exponent at least two. -/
+theorem real_jacobian_bijective
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (h2p : (2 : ℝ≥0∞) ≤ p) (φ : realTypeSourceSubmodule p) :
+    Function.Bijective (fderiv ℝ (sourceRealBirkhoffMap hp hp1 s) φ) :=
+  D.real_jacobian_bijective_of_complex φ (D.jacobian_bijective h2p φ)
 
 /-- The derivative of the real map as an actual bounded real equivalence. -/
 def realJacobianEquiv
