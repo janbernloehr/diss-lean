@@ -8915,7 +8915,7 @@ contours. The finite-gap action/mass trace identity, Hilbert action-map
 properness, and Proposition 17.2 remain unfinished.
 
 
-## Latest progress: a mass-normalized upper-half-plane primitive
+## Previous progress: a mass-normalized upper-half-plane primitive
 
 The actual canonical Floquet multiplier `(Δ + root)/2` is now constructed.
 Its companion multiplies with it to one off the periodic gap cuts, so it
@@ -8954,3 +8954,33 @@ consolidate the finite action contours and extract the corresponding contour
 coefficient. A limit on one vertical ray alone does not establish that
 contour identity. The action/mass trace formula and Proposition 17.2 remain
 unfinished.
+
+## Latest progress: analytic continuation through all collapsed gaps
+
+`SourceOpenGapComplement.lean` removes only the noncollapsed periodic
+segments. At every real source and finite exponent `p>1`, the actual
+canonical root is analytic on this enlarged domain, including its defined
+values at collapsed endpoints. Its square identity still holds there.
+The Floquet multiplier remains analytic and has a reciprocal companion,
+so it never vanishes, even at those endpoints.
+
+The filled quotient is defined as the multiplier's logarithmic derivative.
+It is analytic throughout the enlarged domain and agrees with `Δ'/root`
+off all original cuts. Equality with that literal quotient is deliberately
+restricted: division at a collapsed point does not give the analytic limit.
+
+`SourceFiniteGapExterior.lean` proves that the union of the finitely many
+noncollapsed segments is compact. Its complement is open and contains
+an entire exterior region. Thus a positive radius exists beyond which the
+actual root, multiplier, and filled quotient are analytic, and the multiplier
+is nonzero. This holds at every finite exponent greater than one, with no
+Fourier-support, auxiliary-domain, or continuation hypothesis.
+
+Public examples check regularity at an actual collapsed endpoint, the
+reciprocal identity on a collapsed segment, agreement with the original
+quotient, and the complete exterior conclusion at `p=3`.
+
+Next prove the exterior quotient's zero period and construct an exterior
+primitive matching the mass-normalized upper primitive. Its expansion at
+infinity still needs growth or removable-singularity control. The exterior
+primitive, action/mass trace identity, and Proposition 17.2 are not yet proved.

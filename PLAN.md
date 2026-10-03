@@ -1,6 +1,21 @@
 # Implementation plan
 
-## Latest progress: the mass-normalized upper primitive
+## Latest progress: the finite-gap exterior spectral functions
+
+The canonical root and Floquet multiplier now extend analytically through
+all collapsed gaps at every real source and finite exponent `p>1`. The
+multiplier stays nonzero, and its logarithmic derivative is the analytic
+extension of `Δ'/root`. For finite-gap sources, compactness of the finite
+union of open-gap segments gives a full exterior region of analyticity.
+
+Next establish zero exterior period for the filled quotient, construct its
+exterior primitive, and match it to the mass-normalized upper primitive.
+Then control the expansion at infinity and consolidate the action contours
+to prove the finite-gap action/mass trace identity. A vertical-ray limit
+alone still does not suffice. Density, spectral-action weak continuity,
+and properness remain later steps toward global injectivity.
+
+## Previous progress: the mass-normalized upper primitive
 
 The canonical Floquet multiplier is analytic and nonzero off the gap cuts;
 its local logarithmic derivative is the actual quotient `Δ'/root`. The root's

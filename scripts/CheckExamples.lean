@@ -24604,3 +24604,47 @@ example (φ : realTypeSourceSubmodule 2)
   exists_sourceUpperPrimitive_norm_normalized_finiteGap φ hf
 
 end NLS.FloquetMassPrimitiveChecks
+
+namespace NLS.FiniteGapExteriorChecks
+open NLS.ZakharovShabat Set
+open scoped ENNReal
+
+-- Analyticity includes the actual common endpoint of a collapsed gap.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p φ)) (n : ℤ)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = 0) :
+    AnalyticAt ℂ (sourceFloquetLogDerivative hp hp1 φ)
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n) := by
+  apply sourceFloquetLogDerivative_analyticOnNhd hp hp1 φ hr
+  apply sourcePeriodicSegment_subset_openGapComplement_of_zeroGap hp hp1 φ hr n hn
+  exact left_mem_segment ℝ _ _
+
+-- Even where the root is zero, the multiplier still has its reciprocal companion.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p φ)) (n : ℤ)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = 0)
+    (z : ℂ) (hz : z ∈ sourcePeriodicSegment hp hp1 φ n) :
+    sourceFloquetMultiplier hp hp1 φ z *
+      ((canonicalDiscriminant hp (periodOnePotential φ) z - sourceCanonicalRoot hp hp1 φ z)/2) = 1 :=
+  sourceFloquetMultiplier_mul_companion_openGapComplement hp hp1 φ hr z
+    (sourcePeriodicSegment_subset_openGapComplement_of_zeroGap hp hp1 φ hr n hn hz)
+
+-- The extension agrees with the action integrand's quotient wherever the original root is nonzero.
+example (φ : CoeffPair 2) (hr : IsRealType (CoeffPair.toMax 2 φ))
+    (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ) :
+    sourceFloquetLogDerivative (by simp) (by norm_num) φ z =
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential φ)) z /
+        sourceCanonicalRoot (by simp) (by norm_num) φ z :=
+  sourceFloquetLogDerivative_eq_criticalRootRatio (by simp) (by norm_num) φ hr z hz
+
+-- Finite-gap alone supplies a full analytic exterior, also beyond the Hilbert exponent.
+example (φ : realTypeSourceLocus 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ R : ℝ, 0 < R ∧
+      AnalyticOnNhd ℂ (sourceCanonicalRoot (by simp) (by norm_num) φ.val) {z : ℂ | R < ‖z‖} ∧
+      AnalyticOnNhd ℂ (sourceFloquetMultiplier (by simp) (by norm_num) φ.val) {z : ℂ | R < ‖z‖} ∧
+      (∀ z : ℂ, R < ‖z‖ → sourceFloquetMultiplier (by simp) (by norm_num) φ.val z ≠ 0) ∧
+      AnalyticOnNhd ℂ (sourceFloquetLogDerivative (by simp) (by norm_num) φ.val) {z : ℂ | R < ‖z‖} :=
+  exists_sourceFiniteGap_analytic_exterior (by simp) (by norm_num) φ hf
+
+end NLS.FiniteGapExteriorChecks

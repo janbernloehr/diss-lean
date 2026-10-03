@@ -2057,3 +2057,6 @@ import NLS.ZakharovShabat.SourceFloquetMultiplier
 import NLS.ZakharovShabat.SourceCanonicalRootVerticalAsymptotics
 import NLS.ZakharovShabat.SourceFloquetMassCoefficient
 import NLS.ZakharovShabat.SourceMassNormalizedPrimitive
+
+import NLS.ZakharovShabat.SourceOpenGapComplement
+import NLS.ZakharovShabat.SourceFiniteGapExterior
