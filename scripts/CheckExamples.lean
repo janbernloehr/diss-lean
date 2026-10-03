@@ -25567,3 +25567,61 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → Delete
   exact ⟨d ⟨-1,lt_trans (by norm_num) ha⟩,hd ⟨-1,lt_trans (by norm_num) ha⟩⟩
 
 end NLS.AngleDisplacementChecks
+
+namespace NLS.SurjectivityChecks
+open NLS.ZakharovShabat Set
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- At exponent 3/2 every target has a unique source, with the normalized
+-- family itself constructed and no range-membership premise.
+example : ∃ s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k,
+    ∀ z : RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2)),
+      ∃! φ, sourceRealBirkhoffMap (by simp) (by norm_num) s φ = z := by
+  obtain ⟨_,_,_,s,_,hinj,hsurj⟩ := exists_sourceBirkhoffFamily_bijective
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num) (by norm_num)
+  refine ⟨s,fun z => ?_⟩
+  obtain ⟨φ,hφ⟩ := hsurj z
+  exact ⟨φ,hφ,fun ψ hψ => hinj (hψ.trans hφ.symm)⟩
+
+-- Two signed modes receive different strict action bounds. The unrelated
+-- zero mode retains both full coordinates; initially closed selected gaps
+-- need no openness assumption.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) :
+    ∃ moves : List (ℤ × ℝ), D.AdmissibleActionReductions φ moves ∧
+      let ψ := D.hilbertActionReductionSequence φ moves
+      (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property (-2)).re < 1 ∧
+      (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property 7).re < 1/4 ∧
+      (D.hilbertRealHomeomorph ψ).1 0 = (D.hilbertRealHomeomorph φ).1 0 ∧
+      (D.hilbertRealHomeomorph ψ).2 0 = (D.hilbertRealHomeomorph φ).2 0 := by
+  obtain ⟨moves,hm,_,hsmall,hout,_⟩ := D.exists_hilbertActionReductionSequence_small_actions
+    φ {-2,7} (fun n => if n = -2 then 1 else 1/4)
+    (fun n _ => by split_ifs <;> norm_num)
+  refine ⟨moves,hm,?_,?_,hout 0 (by norm_num)⟩
+  · simpa using hsmall (-2) (by simp)
+  · simpa using hsmall 7 (by simp)
+
+-- A source outside exponent 3/2 remains outside it after any admissible
+-- finite list, which is the contradiction step in the surjectivity proof.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (moves : List (ℤ × ℝ))
+    (hm : D.AdmissibleActionReductions φ moves)
+    (hφ : ∀ χ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)),
+      CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 2) χ.val ≠ φ.val) :
+    ∀ χ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)),
+      CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 2) χ.val ≠
+        (D.hilbertActionReductionSequence φ moves).val := by
+  intro χ hχ
+  obtain ⟨ψ,hψ⟩ := (D.hilbertActionReductionSequence_mem_exponent_iff
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num) (by norm_num) φ moves hm).mp ⟨χ,hχ⟩
+  exact hφ ψ hψ
+
+-- The inclusive endpoint p=2 is covered by the same public proposition.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    Function.Surjective (sourceRealBirkhoffMap (by simp) (by norm_num) s) :=
+  D.proposition17_3 (le_refl 2)
+
+end NLS.SurjectivityChecks

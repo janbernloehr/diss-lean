@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: complete Lemma 17.4
+## Current milestone: Proposition 17.3
+
+`SourceHilbertFiniteActionReduction.lean` composes the actual Hilbert
+angle flows in list order. Admissibility checks each nonnegative time
+against the current selected action, so every move stops before collapse.
+All actions are nonincreasing, and every unselected rectangular coordinate
+is retained. The displacements sum to an element of every finite source
+exponent above one. For `p ≤ 2`, this gives literal equality after inclusion
+into Hilbert space and proves that an admissible finite sequence preserves
+whether its source belongs to exponent `p`.
+
+Finite-set induction constructs such a list making every selected action
+smaller than any prescribed positive bound. Already small actions,
+including closed gaps, are skipped. The resulting theorem also retains
+every outside coordinate and supplies the displacement at all exponents.
+
+`RealActionTail.lean` transfers finite coordinate blocks between arbitrary
+real sequence exponents. A bound on their quadratic actions bounds the
+block norm. Finite truncations of any target in a finite exponent converge,
+so small enough actions on a suitable finite block, with the original
+outside coordinates, yield a target of arbitrarily small norm in that
+same exponent. The candidate can initially be given only in Hilbert space.
+
+`SourceBirkhoffProposition17_3.lean` takes the Hilbert preimage of an
+arbitrary exponent-`p` target. The constructed finite reductions put its
+output inside the neighborhood of zero already in the range of the
+exponent-`p` map. Exponent compatibility and Hilbert injectivity identify
+the reduced source with this exponent-`p` preimage. The total displacement
+then recovers the original source in exponent `p`. This proves Proposition
+17.3 for every `1 < p ≤ 2`, without a supplied preimage or range premise.
+Together with Proposition 17.2, a normalized family with bijective actual
+real map is constructed throughout this range.
+
+Public checks construct a family with a unique source for every target at
+`p = 3/2`, apply different strict bounds to two signed modes while retaining
+an unrelated mode, verify preservation of nonmembership in the stronger
+source space, and exercise the inclusive endpoint `p = 2`.
+
+Proposition 17.3 is complete. Next package the global analytic inverse
+for `1 < p ≤ 2` and continue to the isospectral-torus statements of
+Lemma 17.5. Surjectivity for `p > 2` is not claimed.
+
+## Previous milestone: complete Lemma 17.4
 
 `ConjugateCotangentLinear.lean` makes conjugate-exponent cotangent
 recovery a bounded complex-linear map. For source pairs it reconstructs

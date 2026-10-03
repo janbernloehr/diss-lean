@@ -2138,3 +2138,7 @@ import NLS.SequenceSpaces.ConjugateCotangentLinear
 import NLS.FunctionalAnalysis.IntegralDisplacement
 import NLS.ZakharovShabat.SourceHilbertAngleStrongRegularity
 import NLS.ZakharovShabat.SourceHilbertAngleDisplacement
+
+import NLS.SequenceSpaces.RealActionTail
+import NLS.ZakharovShabat.SourceHilbertFiniteActionReduction
+import NLS.ZakharovShabat.SourceBirkhoffProposition17_3
