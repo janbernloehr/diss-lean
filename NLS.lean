@@ -2193,3 +2193,9 @@ import NLS.ZakharovShabat.SourceAbelianPrimitiveProperties
 
 import NLS.ZakharovShabat.SourceRealGapArcoshPrimitive
 import NLS.ZakharovShabat.SourceRealGapArcoshBound
+
+import NLS.ZakharovShabat.SourceCriticalRootRatioRealGapBound
+import NLS.ZakharovShabat.SourceAbelianPartialGapLimit
+import NLS.ZakharovShabat.SourceAbelianGapVerticalLimit
+import NLS.ZakharovShabat.SourceCriticalRootRatioGapInteriorBound
+import NLS.ZakharovShabat.SourceAbelianGapBoundary

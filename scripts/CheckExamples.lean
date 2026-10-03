@@ -26408,3 +26408,59 @@ example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
     (sourceRealGapArcoshProfile_spec (by simp) (by norm_num) φ.val φ.property n).2.2.1,ofReal_zero]
 
 end NLS.RealGapArcoshChecks
+
+
+noncomputable section
+namespace NLS.AbelianGapBoundaryChecks
+open Set Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- A negative odd index at exponent 3/2, with the actual arcosh
+-- argument and arbitrary upper-half-plane approach spelled out.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (x : ℝ)
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-3)).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-3)).re) :
+    Tendsto (sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property (-3) true)
+      (𝓝[{z : ℂ | 0 < z.im}] (x : ℂ))
+      (𝓝 (Real.arcosh (-(canonicalDiscriminant (by simp) (periodOnePotential φ.val) x).re/2) : ℂ)) := by
+  simpa only [sourceAbelianHalfPlane,sourceRealGapArcoshProfile,realGapHalfDiscriminant,ite_true,
+    show (-3 : ℤ)%2 = 1 by norm_num,show (1 : ℤ) ≠ 0 by norm_num,if_false] using!
+    sourceAbelianHalfPlanePrimitive_gap_boundary_limit (by simp) (by norm_num) φ.val φ.property (-3) true x hx
+
+-- The filled global primitive has the negative lower-side value,
+-- with its nonzero index correction retained explicitly.
+example (φ : realTypeSourceSubmodule 3) (x : ℝ)
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) 2).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) 2).re) :
+    Tendsto (fun z : ℂ => sourceAbelianPrimitive (by simp) (by norm_num) φ.val φ.property z+
+      Complex.I*(Real.pi : ℂ)*2)
+      (𝓝[{z : ℂ | z.im < 0}] (x : ℂ))
+      (𝓝 (-(Real.arcosh ((canonicalDiscriminant (by simp) (periodOnePotential φ.val) x).re/2) : ℂ))) := by
+  simpa only [sourceAbelianHalfPlane,sourceRealGapArcoshProfile,realGapHalfDiscriminant,
+    Bool.false_eq_true,ite_false,show (2 : ℤ)%2 = 0 by norm_num,ite_true,Int.cast_ofNat] using!
+    sourceAbelianPrimitive_gap_boundary_limit (by simp) (by norm_num) φ.val φ.property 2 false x hx
+
+-- No open-gap hypothesis is hidden in the formula: at a collapsed
+-- gap the result specializes to zero from either half-plane.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) (upper : Bool)
+    (hn : canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n = canonicalPeriodicRight (by simp) (by norm_num)
+        (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n) :
+    Tendsto (sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property n upper)
+      (𝓝[sourceAbelianHalfPlane upper]
+        ((canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n).re : ℂ)) (𝓝 0) := by
+  have hx : (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n).re ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re :=
+    ⟨le_rfl, (congrArg Complex.re hn).le⟩
+  simpa only [(sourceRealGapArcoshProfile_spec (by simp) (by norm_num) φ.val φ.property n).2.1,
+    ofReal_zero,neg_zero,ite_self] using!
+    sourceAbelianHalfPlanePrimitive_gap_boundary_limit (by simp) (by norm_num) φ.val φ.property n upper _ hx
+
+end NLS.AbelianGapBoundaryChecks

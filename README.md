@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual upper and lower gap-side quotient
-integrals now evaluate exactly to opposite arcosh profiles, including
-endpoint and collapsed-gap cases. An explicit deleted-product bound
-gives a bound proportional to gap length. Identifying these integrals
-with the boundary limits of the global primitive remains next.
+Latest milestone: the normalized primitive now has exactly the
+positive arcosh boundary value from the upper half-plane and its
+negative from the lower half-plane. The proof covers arbitrary
+half-plane approaches, all signed indices, endpoints, and collapsed
+gaps for real sources. Continuation of its square across a gap is next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -10116,3 +10116,33 @@ source and uniformity in the index remain to be established. The
 complex-source and joint-analyticity assertions, potential gradient,
 square continuation, subsequent frequency results, and the full
 dissertation remain unfinished.
+
+
+## Exact half-plane gap boundary values
+
+`SourceAbelianGapBoundary.lean` proves the exact boundary formula
+`F_n(x + i0) = arcosh((-1)^n Delta(x)/2)` and
+`F_n(x - i0) = -arcosh((-1)^n Delta(x)/2)` for real sources.
+The limits allow arbitrary approaches within the corresponding
+half-plane. They hold on the entire closed gap, at every signed index
+and every finite exponent `1 < p`, including collapsed gaps.
+
+The proof first converts the transverse quotient estimate into an
+integrable real endpoint weight. Dominated convergence then passes
+partial displaced horizontal integrals to their exact arcosh values.
+The fundamental theorem identifies these integrals with differences
+of actual half-plane primitive values; endpoint normalization fixes
+the additive constant. A local quotient bound at each interior gap
+point upgrades the vertical limits to full half-plane limits.
+
+The same formula is proved for the filled global primitive after
+adding `i n pi`. Public checks exercise an odd negative index at
+exponent 3/2, the negative lower-side value with the global index
+correction, and the collapsed-gap limit from either half-plane.
+
+This completes the real-source boundary assertion of Lemma 19.1(v).
+The next step is continuation of the squared normalized primitive
+across the selected gap, as in (iv). The complex-source construction,
+joint analyticity and potential gradient in (i), locally source-uniform
+and index-uniform gap estimates in (iii), subsequent frequency results,
+and the full dissertation remain unfinished.
