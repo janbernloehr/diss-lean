@@ -2076,3 +2076,7 @@ import NLS.ZakharovShabat.SourceFiniteGapExteriorCoefficients
 
 import NLS.ComplexAnalysis.ExteriorPrimitiveCoefficient
 import NLS.ZakharovShabat.SourceFiniteGapExteriorMass
+
+import NLS.ZakharovShabat.SourceRealActionRealCenteredCircle
+import NLS.ZakharovShabat.SourceFiniteGapActionTrace
+import NLS.ZakharovShabat.SourceHilbertActionTrace

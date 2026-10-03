@@ -3,11 +3,11 @@ import NLS.ZakharovShabat.SourceHilbertMass
 import NLS.ZakharovShabat.SourceFiniteGapDensity
 import Mathlib.Topology.Maps.Proper.Basic
 
-/-! # The remaining finite-gap trace identity and action-map properness
+/-! # Reduction of the trace identity and action-map properness
 
 The analytic ℓ¹ action map makes the total continuous. Density therefore
 reduces the mass trace formula to actual finite-gap sources. This file
-does not assume or assert the missing finite-gap contour identity.
+isolates the finite-gap contour identity, discharged in `SourceHilbertActionTrace`.
 Properness of the action map, once established, implies properness of
 the Birkhoff map by its exact factorization through quadratic actions.
 -/
@@ -50,7 +50,7 @@ theorem hilbert_totalAction_eq_finite_sum
   simpa only [sourcePeriodicGapDisplacement_apply] using hgap
 
 /-- The source-mass trace identity for all real Hilbert sources is equivalent
-to its finite-gap case. The latter remains an explicit mathematical obligation. -/
+to its finite-gap case. `SourceHilbertActionTrace` discharges that case. -/
 theorem hilbert_traceFormula_iff_finiteGap
     (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
     (∀ φ : realTypeSourceSubmodule 2,

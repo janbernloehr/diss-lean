@@ -1,6 +1,37 @@
 # Implementation status
 
-## Current milestone: source mass equals the exterior contour coefficient
+## Current milestone: the full Hilbert action–mass trace formula
+
+`SourceRealActionRealCenteredCircle.lean` proves that every real-centered
+isolating circle computes its indexed real action, including collapsed gaps,
+at every finite exponent `p>1`.
+
+`SourceFiniteGapActionTrace.lean` applies finite-hole contour decomposition
+to the weighted, regularized logarithmic derivative around the finitely many
+open gaps. The individual circles compute the actions, and the exterior
+circle computes source mass. Thus the finite action sum equals source mass;
+analyticity through collapsed gaps handles all other spectral points.
+
+`SourceHilbertActionTrace.lean` extends this equality by continuity and
+actual finite-gap density to every real Hilbert source. In the repository's
+pair normalization, the resulting formula is
+
+`∑ₙ Iₙ(φ) = ‖φ‖²/2`.
+
+The public theorem `sourceHilbert_sum_actions_eq_half_norm_sq` needs neither
+a finite-gap assumption nor a chosen Birkhoff family. For every constructed
+Hilbert Birkhoff family, the squared norms of its two real output components
+sum to the squared source norm. Consequently its zero fiber is exactly `{0}`.
+
+Public examples cover a real-centered circle at exponent 3, the vanishing
+of a finite-gap source with no open gaps, the unconditional infinite trace,
+the zero-fiber consequence, and the two-component norm identity.
+
+The action/mass trace identity is now proved. Weak continuity of the spectral
+actions and properness of the action map remain next steps toward Proposition
+17.2 and global injectivity; the norm identity alone does not prove properness.
+
+## Previous milestone: source mass equals the exterior contour coefficient
 
 `ExteriorPrimitiveCoefficient.lean` constructs an exterior primitive from
 an analytic quadratic remainder and computes its upper-ray coefficient as

@@ -24796,3 +24796,48 @@ example (φ : realTypeSourceSubmodule 2)
   exists_sourceFiniteGap_weighted_contour_eq_norm φ hf
 
 end NLS.ExteriorMassContourChecks
+
+namespace NLS.ActionMassTraceChecks
+open NLS.ZakharovShabat Set Metric
+
+-- Isolating circles can have any real center, at a non-Hilbert exponent too.
+example (φ : CoeffPair 3) (hφ : IsRealType (CoeffPair.toMax 3 φ)) (n : ℤ)
+    (c : ℂ) (R : ℝ) (hc : c.im = 0) (hR : 0 < R)
+    (hseg : sourcePeriodicSegment (by simp) (by norm_num) φ n ⊆ ball c R)
+    (hother : closedBall c R ⊆ sourceStandardRootOmittedDomain (by simp) (by norm_num) φ n) :
+    sourceRealAction (by simp) (by norm_num) φ hφ n =
+      sourceActionCircle (by simp) (by norm_num) φ c R :=
+  sourceRealAction_eq_realCentered_enclosingCircle (by simp) (by norm_num) φ hφ n c R hc hR hseg hother
+
+-- A source with no open gaps must vanish, using the finite trace and source mass normalization.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (hempty : hf.toFinset = ∅) : φ = 0 := by
+  have he := sourceFiniteGap_sum_actions_eq_mass φ hf
+  rw [hempty, Finset.sum_empty, sourceHilbertMass_eq_half_norm_sq_of_realType φ.val φ.property] at he
+  have hr := congrArg Complex.re he
+  simp only [Complex.zero_re, Complex.ofReal_re] at hr
+  apply Subtype.ext
+  apply norm_eq_zero.mp
+  nlinarith [norm_nonneg φ.val]
+
+-- The full spectral identity has no finite-gap or chosen-family premise.
+example (φ : realTypeSourceSubmodule 2) :
+    (∑' n : ℤ, (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re) = ‖φ.val‖^2/2 :=
+  sourceHilbert_sum_actions_eq_half_norm_sq φ
+
+-- A vanishing Birkhoff image forces the source to vanish.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2)
+    (hz : sourceRealBirkhoffMap (by simp) (by norm_num) s φ = 0) : φ = 0 :=
+  (D.hilbert_real_map_eq_zero_iff φ).mp hz
+
+-- Both output components enter the norm identity with the same coefficient.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) :
+    ‖(sourceRealBirkhoffMap (by simp) (by norm_num) s φ).1‖^2 +
+      ‖(sourceRealBirkhoffMap (by simp) (by norm_num) s φ).2‖^2 = ‖φ.val‖^2 :=
+  D.hilbert_real_map_norm_sq φ
+
+end NLS.ActionMassTraceChecks
