@@ -2104,3 +2104,7 @@ import NLS.ZakharovShabat.SourceSegmentResolventPersistence
 import NLS.ZakharovShabat.SourceSpectralSelectionCoefficientContinuity
 import NLS.ZakharovShabat.SourceCanonicalCoefficientContinuity
 import NLS.ZakharovShabat.SourceActionCoefficientCircle
+
+import NLS.SequenceSpaces.DominatedTails
+import NLS.ZakharovShabat.ClassicalDiscriminantGradientEnergy
+import NLS.ZakharovShabat.SourceDiscriminantCotangentDecay

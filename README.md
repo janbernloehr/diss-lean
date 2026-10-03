@@ -9331,3 +9331,35 @@ common action circles. `SourceHilbertActionsContinuousOnBoundedCoefficients`
 remains unproved; unconditional properness and Proposition 17.2 remain
 unfinished. The previously planned global indexed-pair continuity step is
 now complete for bounded coefficient limits of real sources.
+
+## Uniform Hilbert discriminant cotangent tails
+
+`ClassicalDiscriminantGradientEnergy.lean` bounds the actual physical
+discriminant gradient and its transported diagonal term by cubic solution
+growth controlled by integrated potential energy. The time derivative has
+an integrable potential factor. Its integral norm, and hence every Fourier
+coefficient of either gradient component, is bounded by the same energy-only
+constant. The estimate includes frequency zero and imposes no physical
+supremum bound. The generic Fourier estimate now accepts an integrated
+derivative bound; its previous supremum-bound API is retained.
+
+`SourceDiscriminantCotangentDecay.lean` transfers that estimate through exact
+finite-source realization and density to every complex Hilbert source.
+Both actual cotangent coefficient sequences satisfy an explicit bound of
+the form `C(M,R)/(1+|n|)` on simultaneous source-norm and spectral balls.
+One square-summable majorant controls the entire family. The reusable
+`DominatedTails.lean` theorem then gives uniformly small Fourier tails:
+the finite cutoff is chosen before the potential and spectral parameter,
+and every larger cutoff works for both components.
+
+Public checks cover the tail criterion at exponent 3, the zero-frequency
+cotangent direction, the physical Fourier normalization, and a common
+cutoff for arbitrary bounded complex source families with moving spectral
+parameters. No real-type condition or coefficient convergence is needed
+for these uniform estimates.
+
+Next use the uniform cotangent tails along bounded interpolation segments
+to prove discriminant continuity under coefficient limits, then control its
+spectral derivative and the canonical-root branch on common action circles.
+`SourceHilbertActionsContinuousOnBoundedCoefficients` remains unproved;
+unconditional properness and Proposition 17.2 remain unfinished.

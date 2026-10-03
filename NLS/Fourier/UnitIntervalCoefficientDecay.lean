@@ -41,11 +41,12 @@ theorem norm_unitIntervalFourierCoefficient_le_variation
   simpa [Complex.norm_exp,Complex.mul_re,Complex.mul_im,norm_mul,
     Complex.norm_real,Real.norm_eq_abs,abs_of_pos Real.pi_pos,mul_assoc] using h
 
-/-- The zero-frequency-safe inverse-bracket estimate from separate C¹ bounds. -/
-theorem norm_unitIntervalFourierCoefficient_le_bracket
+/-- An integrated derivative bound suffices for inverse-bracket decay.
+This applies uniformly when derivative suprema need not stay bounded. -/
+theorem norm_unitIntervalFourierCoefficient_le_bracket_of_integral
     (f : ℝ → ℂ) (hf : ContDiff ℝ 1 f) (A D : ℝ) (hA : 0 ≤ A) (hD : 0 ≤ D)
     (hb : ∀ t ∈ Icc (0 : ℝ) 1, ‖f t‖ ≤ A)
-    (hd : ∀ t ∈ Icc (0 : ℝ) 1, ‖deriv f t‖ ≤ D) (n : ℤ) :
+    (hd : (∫ t in (0 : ℝ)..1, ‖deriv f t‖) ≤ D) (n : ℤ) :
     ‖intervalFourierCoefficient 1 f n‖ ≤ (2*A+D)/(1+|(n : ℝ)|) := by
   have hder := (contDiff_one_iff_deriv.mp hf).2
   by_cases hn : n = 0
@@ -60,11 +61,7 @@ theorem norm_unitIntervalFourierCoefficient_le_bracket
           exact ⟨ht'.1.le,ht'.2⟩))
       simpa using hi
     linarith
-  · have hi : (∫ t in (0 : ℝ)..1, ‖deriv f t‖) ≤ D := by
-      have h := intervalIntegral.integral_mono_on (μ := volume) (by norm_num : (0 : ℝ) ≤ 1)
-        (hder.norm.intervalIntegrable 0 1) (continuous_const.intervalIntegrable 0 1) hd
-      simpa using h
-    have hvar : ‖f 0‖+‖f 1‖+(∫ t in (0 : ℝ)..1, ‖deriv f t‖) ≤ 2*A+D := by
+  · have hvar : ‖f 0‖+‖f 1‖+(∫ t in (0 : ℝ)..1, ‖deriv f t‖) ≤ 2*A+D := by
       linarith [hb 0 (by simp),hb 1 (by simp)]
     have hn1 : 1 ≤ |(n : ℝ)| := by exact_mod_cast Int.one_le_abs hn
     calc
@@ -74,5 +71,17 @@ theorem norm_unitIntervalFourierCoefficient_le_bracket
       _ ≤ (2*A+D)/(2*Real.pi*|(n : ℝ)|) := div_le_div_of_nonneg_right hvar (by positivity)
       _ ≤ (2*A+D)/(1+|(n : ℝ)|) :=
         div_le_div_of_nonneg_left (by positivity) (by positivity) (by nlinarith [Real.two_le_pi])
+
+/-- The zero-frequency-safe inverse-bracket estimate from separate C¹ bounds. -/
+theorem norm_unitIntervalFourierCoefficient_le_bracket
+    (f : ℝ → ℂ) (hf : ContDiff ℝ 1 f) (A D : ℝ) (hA : 0 ≤ A) (hD : 0 ≤ D)
+    (hb : ∀ t ∈ Icc (0 : ℝ) 1, ‖f t‖ ≤ A)
+    (hd : ∀ t ∈ Icc (0 : ℝ) 1, ‖deriv f t‖ ≤ D) (n : ℤ) :
+    ‖intervalFourierCoefficient 1 f n‖ ≤ (2*A+D)/(1+|(n : ℝ)|) := by
+  apply norm_unitIntervalFourierCoefficient_le_bracket_of_integral f hf A D hA hD hb
+  have hder := (contDiff_one_iff_deriv.mp hf).2
+  have h := intervalIntegral.integral_mono_on (μ := volume) (by norm_num : (0 : ℝ) ≤ 1)
+    (hder.norm.intervalIntegrable 0 1) (continuous_const.intervalIntegrable 0 1) hd
+  simpa using h
 
 end NLS.Fourier

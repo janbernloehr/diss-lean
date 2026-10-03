@@ -25155,3 +25155,54 @@ example (n : ℤ) : (∀ k, 1 ≤ ‖movingReal k‖) ∧
   · simpa only [map_zero, canonicalPeriodicLeft_zero, canonicalPeriodicRight_zero] using h
 
 end NLS.CanonicalCoefficientChecks
+
+namespace NLS.CotangentDecayChecks
+open NLS.ZakharovShabat Set Filter Topology Complex
+
+-- The generic tail criterion also applies beyond the Hilbert exponent.
+example (b : Coeff 3) (ε : ℝ) (hε : 0 < ε) :
+    ∃ s : Finset ℤ, ∀ a : Coeff 3, (∀ n : ℤ, ‖a n‖ ≤ ‖b n‖) →
+      ‖a-Coeff.truncate s a‖ < ε :=
+  (Coeff.eventually_small_tails_of_majorant (by simp) b ε hε).exists
+
+-- Frequency zero needs no division by a nonzero frequency.
+example (φ : CoeffPair 2) (z : ℂ) :
+    ‖sourceDiscriminantCotangent (by simp) z φ
+      (CoeffPair.inlCLM (lp.single 2 0 1))‖ ≤
+        8*(Real.exp (‖z‖+1+‖φ‖^2))^3*(‖z‖+2+‖φ‖^2) := by
+  simpa only [CoeffPair.cotangentCoefficients_fst,Int.cast_zero,abs_zero,add_zero,div_one] using
+    (norm_sourceDiscriminantCotangent_coefficient_le_energy φ z 0).1
+
+-- The physical bound only asks for integrated energy, not a supremum norm bound.
+example (Φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z : ℂ) (n : ℤ) :
+    ‖NLS.Fourier.unitFourierCoefficient
+      (fun s => (classicalDiscriminantGradient Φ z s).2) n‖ ≤
+      (8*(Real.exp (‖z‖+1+classicalPotentialEnergy Φ))^3*
+        (‖z‖+2+classicalPotentialEnergy Φ))/(1+|(n : ℝ)|) := by
+  have heq : NLS.Fourier.unitFourierCoefficient
+      (fun s => (classicalDiscriminantGradient Φ z s).2) n =
+      NLS.Fourier.intervalFourierCoefficient 1
+        (fun s => (classicalDiscriminantGradient Φ z s).2) n := by
+    simp only [NLS.Fourier.unitFourierCoefficient,NLS.Fourier.intervalFourierCoefficient,
+      div_one,Complex.ofReal_one,one_mul]
+    apply intervalIntegral.integral_congr
+    intro s _
+    apply congrArg (fun w : ℂ => (classicalDiscriminantGradient Φ z s).2 * Complex.exp w)
+    push_cast
+    ring
+  rw [heq]
+  exact (norm_fourier_classicalDiscriminantGradient_le_energy Φ z n).2
+
+-- A single cutoff controls both components for an arbitrary bounded family,
+-- even when the spectral parameter varies and the sources are complex.
+example {α : Type*} (φ : α → CoeffPair 2) (z : α → ℂ)
+    (hφ : ∀ k, ‖φ k‖ ≤ 2) (hz : ∀ k, ‖z k‖ ≤ 3) (ε : ℝ) (hε : 0 < ε) :
+    ∃ s : Finset ℤ, ∀ k : α,
+      let g := CoeffPair.cotangentCoefficients (by norm_num)
+        (sourceDiscriminantCotangent (by simp) (z k) (φ k))
+      ‖g.1-Coeff.truncate s g.1‖ < ε ∧ ‖g.2-Coeff.truncate s g.2‖ < ε := by
+  obtain ⟨s,hs⟩ := (eventually_small_sourceDiscriminantCotangent_tails
+    2 3 (by norm_num) ε hε).exists
+  exact ⟨s,fun k => hs (φ k) (hφ k) (z k) (hz k)⟩
+
+end NLS.CotangentDecayChecks
