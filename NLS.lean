@@ -1943,3 +1943,8 @@ import NLS.ZakharovShabat.ClassicalCharacteristicGradientSummability
 import NLS.ZakharovShabat.ClassicalGradientFourierPowerBound
 import NLS.ZakharovShabat.ClassicalGradientSpectralDiscBounds
 import NLS.ZakharovShabat.ClassicalDiscriminantGradientDiscSup
+
+import NLS.ZakharovShabat.FreeCircleSeparation
+import NLS.ZakharovShabat.ClassicalSobolevDiscriminantError
+import NLS.ZakharovShabat.ClassicalSobolevContourQuotient
+import NLS.ZakharovShabat.ClassicalContourGradientIntegrandBound

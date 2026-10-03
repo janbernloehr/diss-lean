@@ -32,4 +32,12 @@ theorem intervalFourierCoefficient_add (T : ℝ) (f g : ℝ → ℂ)
   simp only [add_mul]
   rw [intervalIntegral.integral_add hiF hiG,mul_add]
 
+/-- Spectral constants commute with the actual Fourier integral. -/
+theorem intervalFourierCoefficient_const_mul (T : ℝ) (c : ℂ) (f : ℝ → ℂ) (n : ℤ) :
+    intervalFourierCoefficient T (fun t => c*f t) n = c*intervalFourierCoefficient T f n := by
+  unfold intervalFourierCoefficient
+  simp only [mul_assoc]
+  rw [intervalIntegral.integral_const_mul]
+  ring
+
 end NLS.Fourier

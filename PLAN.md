@@ -1,25 +1,26 @@
 # Implementation plan
 
-## Latest progress: spectral-uniform gradient bounds for G.7
+## Latest progress: G.7 contour quotient and integrand estimates
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
 Appendix G.3–G.4, finite-p G.5, and both G.6 assertions are proved for
-constructed physical H¹ potentials. The printed infinite endpoint of G.5
-is refuted by the formal constant-potential counterexample and stays excluded.
+constructed physical H¹ potentials. G.5's printed infinite endpoint is
+refuted and stays excluded.
 
-G.7's spectral-uniform input is now proved: a single outer ℓp majorant
-controls the actual discriminant-gradient Fourier norm at every point
-in every fixed-radius disc around `nπ`, uniformly over the physical H¹
-ball and all contractive observations. The actual disc-supremum sequence
-is summable for every finite `p>1` and `q>1+1/p`, including the conjugate
-exponent. This controls the entire radius-`π/4` contour at each index.
+The actual discriminant-gradient disc suprema have common outer ℓp bounds
+on H¹ balls. The contour quotient is now controlled as well: for every
+`0<r≤π/2`, one cutoff gives a positive lower bound on `|Δ²−4|` and a
+uniform bound on `|Δ/(Δ²−4)|` at every point of every distant circle.
+The literal quotient-weighted gradient Fourier integrand has a common
+summable majorant for finite `p>1`, `q>1+1/p`, including the conjugate
+exponent. No pole-avoidance or denominator lower-bound premise is supplied.
 
-Next establish the midpoint gradient contour representation and the
-uniform discriminant quotient bound on those circles. Then prove G.7's
-Dirichlet-eigenvalue gradient normalization estimate and connect both
-estimates to the actual indexed source coordinates. Apply the completed
-Appendix G estimates to finite-gap sources in Lemma 16.1.
+Next establish the actual midpoint gradient contour representation and
+pass these bounds through the integral. Then prove G.7's Dirichlet
+eigenvalue gradient normalization estimate and connect the results to
+the actual indexed source coordinates. Apply the completed Appendix G
+estimates to finite-gap sources in Lemma 16.1.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
 Theorem 14.1, and later chapters remain unfinished.
 

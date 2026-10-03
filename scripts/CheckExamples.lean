@@ -23199,3 +23199,51 @@ example (M : ℝ) (hM : 0 ≤ M) : ∃ b : ℤ → ℝ, Memℓp b (ENNReal.ofRea
     (ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M hM (Real.pi/4) (by positivity)
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set Metric NLS.Fourier NLS.LinearVolterra
+
+-- Every point of a quarter-pi circle stays that far from every free lattice center.
+example (n m : ℤ) (z : ℂ) (hz : z ∈ sphere ((Real.pi : ℂ)*(n : ℂ)) (Real.pi/4)) :
+    Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*(m : ℂ)‖ :=
+  freeCircle_separated (Real.pi/4) (by linarith [Real.pi_pos]) n z hz m
+
+-- The actual discriminant trace error inherits the inverse-frequency H¹ estimate.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ 1) :
+    ‖classicalDiscriminant (classicalSobolevPotential a) z-freeDiscriminant z‖ ≤
+      2*classicalSobolevErrorConstant ‖a‖ 1/‖z‖ :=
+  norm_classicalDiscriminant_sub_free_sobolev_strip_le ‖a‖ 1 a le_rfl z hz hH
+
+-- G.7's quotient bound includes an independently proved positive denominator bound.
+example (M : ℝ) (hM : 0 ≤ M) :
+    ∃ N : ℕ, 0 < N ∧ ∃ δ Q : ℝ, 0 < δ ∧ 0 ≤ Q ∧
+      ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ, N ≤ n.natAbs →
+      ∀ z : ℂ, z ∈ sphere ((Real.pi : ℂ)*(n : ℂ)) (Real.pi/4) →
+      δ ≤ ‖(classicalDiscriminant (classicalSobolevPotential a) z)^2-4‖ ∧
+      ‖classicalDiscriminant (classicalSobolevPotential a) z/
+        ((classicalDiscriminant (classicalSobolevPotential a) z)^2-4)‖ ≤ Q :=
+  exists_classicalSobolev_contour_discriminant_quotient_bound M hM (Real.pi/4)
+    (by positivity) (by linarith [Real.pi_pos])
+
+-- The Fourier multiplier represents the literal quotient-weighted physical gradient.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) (k : ℤ) :
+    classicalDiscriminantQuotientGradientFourierCoefficients (q := 2) (by norm_num) φ z
+      (ContinuousLinearMap.fst ℝ ℂ ℂ) k =
+      intervalFourierCoefficient 1 (fun t => classicalDiscriminant φ z/((classicalDiscriminant φ z)^2-4)*
+        (classicalDiscriminantGradient φ z t).1) k :=
+  classicalDiscriminantQuotientGradientFourierCoefficients_apply _ φ z _ k
+
+-- One outer ℓ³ bound controls the full integrand at every point on every distant circle.
+example (M : ℝ) (hM : 0 ≤ M) : ∃ N : ℕ, 0 < N ∧ ∃ b : ℤ → ℝ,
+    Memℓp b (ENNReal.ofReal (3 : ℝ)) ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ, N ≤ n.natAbs →
+      ∀ z : ℂ, z ∈ sphere ((Real.pi : ℂ)*(n : ℂ)) (Real.pi/4) →
+      (classicalDiscriminant (classicalSobolevPotential a) z)^2-4 ≠ 0 ∧
+      ‖classicalDiscriminantQuotientGradientFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ))
+        (by norm_num) (classicalSobolevPotential a) z (ContinuousLinearMap.snd ℝ ℂ ℂ)‖ ≤ b n := by
+  obtain ⟨N,hN,b,hb,h⟩ := exists_classicalContourGradientIntegrand_uniform_memlp 3 (by norm_num)
+    (ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M hM (Real.pi/4)
+    (by positivity) (by linarith [Real.pi_pos])
+  exact ⟨N,hN,b,hb,fun a ha n hn z hz => h a ha _ (ContinuousLinearMap.norm_snd_le ..) n hn z hz⟩
+
+end NLS.ZakharovShabat

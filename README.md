@@ -8014,3 +8014,46 @@ representation, its discriminant quotient bound, and the Dirichlet
 normalization estimate must still be connected to the actual indexed
 coordinates. Lemma 16.1, the sharper G.1 integral bound, remaining assertions
 of Theorem 14.1, and later chapters also remain unfinished.
+
+## Appendix G.7 preparation: contour quotient and integrand bounds
+
+The quotient needed for G.7's midpoint contour estimate is now bounded
+uniformly over physical H¹ balls and every sufficiently distant contour.
+For any fixed radius `0<r≤π/2`, one cutoff and positive constant δ give
+`δ≤|Δ(z)²−4|` on every circle `|z−nπ|=r`. The same construction supplies
+one bound on `|Δ(z)/(Δ(z)²−4)|`. In particular, the actual denominator
+has no zeros on G.7's distant radius-`π/4` circles; this is proved rather
+than assumed.
+
+`FreeCircleSeparation.lean` proves separation from every free lattice
+center and the horizontal-strip bound on these circles.
+`ClassicalSobolevDiscriminantError.lean` identifies the trace error with
+the two diagonal solution errors and proves the uniform bound
+`|Δ(z)−2cos(z)|≤2 C(M,r)/|z|`. `ClassicalSobolevContourQuotient.lean`
+combines that decay with the existing uniform inverse bounds for the
+free factors `2cos(z)−2` and `2cos(z)+2`. After one common cutoff, both
+perturbed factors retain positive lower bounds. Their product bounds
+`Δ²−4` away from zero, and the strip growth bound controls the numerator.
+
+`ClassicalContourGradientIntegrandBound.lean` multiplies the actual
+discriminant-gradient Fourier coefficients by the spectral quotient.
+A coefficient identity verifies the literal physical Fourier integral
+of `Δ/(Δ²−4)` times the gradient observation. Combining the quotient
+bound with the previously proved spectral-disc majorant gives one outer
+ℓp majorant for the full integrand, simultaneously at every point of
+every distant contour, throughout the H¹ ball, and for every contractive
+scalar observation. This holds for finite `p>1` and `q>1+1/p`, covering
+the conjugate exponent. Only distant contours are asserted here; no
+pole exclusion is claimed for arbitrary finite spectral heads.
+
+Public checks cover quarter-pi separation from all lattice centers,
+the quantitative trace error, a positive denominator bound and bounded
+quotient on the whole ball, the actual weighted Fourier integral, and
+a common outer ℓ³ integrand bound over all distant contour points.
+
+Next establish the actual midpoint gradient contour representation and
+pass the verified integrand bound through its integral. G.7's Dirichlet
+normalization estimate and the identification with the indexed source
+coordinate gradients also remain. G.7, Lemma 16.1, the sharper G.1
+integral bound, remaining assertions of Theorem 14.1, and later chapters
+remain unfinished.
