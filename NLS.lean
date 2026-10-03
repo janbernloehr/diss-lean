@@ -2073,3 +2073,6 @@ import NLS.ZakharovShabat.SourceFiniteGapAtInfinity
 
 import NLS.ComplexAnalysis.InversionCircleCoefficients
 import NLS.ZakharovShabat.SourceFiniteGapExteriorCoefficients
+
+import NLS.ComplexAnalysis.ExteriorPrimitiveCoefficient
+import NLS.ZakharovShabat.SourceFiniteGapExteriorMass

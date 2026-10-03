@@ -24758,3 +24758,41 @@ example (φ : realTypeSourceLocus 3)
   exists_sourceFiniteGap_exterior_quadratic_remainder (by simp) (by norm_num) φ hf
 
 end NLS.ExteriorCoefficientChecks
+
+namespace NLS.ExteriorMassContourChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis Set Filter Topology Metric
+open scoped ENNReal
+
+-- A constant quadratic remainder fixes the primitive coefficient's factor and sign.
+example (a : ℂ) : ∃ P : ℂ → ℂ,
+    (∀ z : ℂ, 1 < ‖z‖ → HasDerivAt P (-Complex.I + z⁻¹^2*a) z) ∧
+    Tendsto (fun y : ℝ => (2*y : ℂ)*(P ((y : ℂ)*Complex.I)-y)) atTop
+      (𝓝 (2*Complex.I*a)) := by
+  simpa only [inv_one] using exists_exterior_primitive_of_quadratic_remainder
+    (fun _ : ℂ => a) 1 (by norm_num) (fun _ _ => analyticAt_const)
+
+-- Finite normalized coefficients remove the otherwise arbitrary additive primitive constant.
+example (F G q : ℂ → ℂ) (R : ℝ) (hR : 0 < R)
+    (hF : ∀ z : ℂ, R < ‖z‖ → HasDerivAt F (q z) z)
+    (hG : ∀ z : ℂ, R < ‖z‖ → HasDerivAt G (q z) z) (M N : ℂ)
+    (hM : Tendsto (fun y : ℝ => (2*y : ℂ)*(F ((y : ℂ)*Complex.I)-y)) atTop (𝓝 M))
+    (hN : Tendsto (fun y : ℝ => (2*y : ℂ)*(G ((y : ℂ)*Complex.I)-y)) atTop (𝓝 N)) :
+    M = N := exterior_primitive_coefficient_unique F G q R hR hF hG M N hM hN
+
+-- The actual spectral remainder has its mass value with no supplied coefficient assumption.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (h : ℂ → ℂ) (r : ℝ) (hr : 0 < r) (hh : AnalyticOnNhd ℂ h (ball 0 r))
+    (he : ∀ z : ℂ, r⁻¹ < ‖z‖ → sourceFloquetLogDerivative (by simp) (by norm_num) φ.val z =
+      -Complex.I + z⁻¹^2*h z⁻¹) : sourceHilbertMass φ.val = 2*Complex.I*h 0 :=
+  sourceFiniteGap_quadratic_remainder_mass φ hf h r hr hh he
+
+-- Every sufficiently large weighted contour recovers the original source norm.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+      (∮ z in C(0,R), z * sourceFloquetLogDerivative (by simp) (by norm_num) φ.val z) =
+        (Real.pi : ℂ)*((‖φ.val‖^2/2 : ℝ) : ℂ) :=
+  exists_sourceFiniteGap_weighted_contour_eq_norm φ hf
+
+end NLS.ExteriorMassContourChecks

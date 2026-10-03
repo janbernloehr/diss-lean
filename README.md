@@ -9051,7 +9051,7 @@ primitive's ray limit, then evaluate the consolidated action contour. The
 higher coefficients, action/mass trace formula, and Proposition 17.2 remain
 unfinished.
 
-## Latest progress: exact exterior coefficients and weighted contour
+## Previous progress: exact exterior coefficients and weighted contour
 
 `InversionCircleCoefficients.lean` proves two coefficient formulas for an
 analytic function evaluated at inverse frequency. Its unweighted exterior
@@ -9080,3 +9080,37 @@ of the analytic remainder with the mass-normalized exterior primitive.
 Then consolidate the action contours to establish the finite-gap trace
 formula. The mass identification, action/mass trace identity, and
 Proposition 17.2 remain unfinished.
+
+## Latest progress: source mass equals the exterior contour coefficient
+
+`ExteriorPrimitiveCoefficient.lean` constructs an exterior primitive from
+an analytic quadratic remainder and computes its upper-ray coefficient as
+`2i h(0)`. A second theorem proves uniqueness of finite normalized primitive
+coefficients. Equal derivatives make two primitives differ by a constant
+along a terminal imaginary ray; their finite coefficient limits force that
+constant to vanish. The additive normalization is therefore handled explicitly.
+
+`SourceFiniteGapExteriorMass.lean` compares this constructed primitive with
+the already mass-normalized actual finite-gap primitive. The analytic
+remainder now has its proved value
+
+`h(0) = -i sourceHilbertMass φ / 2`.
+
+Consequently every sufficiently large positively oriented circle satisfies
+
+`∮ z sourceFloquetLogDerivative φ z dz = π sourceHilbertMass φ`.
+
+The equivalent norm formula has right side `π ‖φ‖²/2`. These conclusions
+require only real Hilbert finite-gap membership; the expansion, period,
+regularity, normalization, and coefficient are all constructed or proved.
+The integral uses the regularized quotient, so collapsed points on the
+circle cause no undefined analytic behavior.
+
+Public examples check the primitive coefficient for a constant remainder,
+uniqueness of normalized coefficients, mass identification for the actual
+spectral remainder, and the complete large-contour norm identity.
+
+Next consolidate the finitely many individual action contours into this
+exterior contour and prove the finite-gap action/mass trace identity. The
+existing density reduction then extends it to all real Hilbert sources.
+The action-sum identity and Proposition 17.2 remain unfinished.

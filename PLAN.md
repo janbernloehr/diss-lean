@@ -1,6 +1,23 @@
 # Implementation plan
 
-## Latest progress: exact exterior remainder and contour coefficient
+## Latest progress: mass identification and the evaluated exterior contour
+
+The analytic remainder's local primitive now gives an exterior primitive
+with coefficient `2i h(0)`. Comparing it with the mass-normalized actual
+primitive proves `h(0) = -i sourceHilbertMass/2`. Thus every sufficiently
+large weighted contour of the regularized quotient equals `π` times source
+mass, or equivalently `π ‖φ‖²/2`, for real Hilbert finite-gap sources.
+All auxiliary regularity, normalization, and coefficient premises are
+fully discharged.
+
+Next identify the finite collection of isolating-circle integrals with the
+indexed real actions and apply finite-hole decomposition to their weighted
+regularized quotient. This will give the finite-gap action/mass trace
+identity; the existing continuity-and-density theorem extends it to every
+real Hilbert source. Spectral-action weak continuity and properness remain
+later steps toward global injectivity.
+
+## Previous progress: exact exterior remainder and contour coefficient
 
 The analytic inversion germ now has zero linear coefficient, proved from
 the actual zero exterior period. Two divided differences produce an exact
