@@ -25798,3 +25798,63 @@ example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
   (D.isCompact_isospectralSet (by norm_num) φ).tendsto_subseq ha
 
 end NLS.IsospectralSetChecks
+
+namespace NLS.ActionRotationChecks
+open NLS.ZakharovShabat Set Filter
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A quarter-turn of a negative mode has the actual canonical signs;
+-- both coordinates of an unrelated positive mode remain unchanged.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) :
+    let z := D.hilbertRealHomeomorph φ
+    let w := D.hilbertRealHomeomorph (D.hilbertActionRotation φ (-2) (Real.pi/2))
+    w.1 (-2) = -z.2 (-2) ∧ w.2 (-2) = z.1 (-2) ∧ w.1 7 = z.1 7 ∧ w.2 7 = z.2 7 := by
+  dsimp only
+  rw [D.hilbertRealHomeomorph_actionRotation]
+  have hs := RealCoeff.actionRotation_apply_same (D.hilbertRealHomeomorph φ) (-2) (Real.pi/2)
+  have hn := RealCoeff.actionRotation_apply_ne (D.hilbertRealHomeomorph φ) (-2) 7 (by norm_num) (Real.pi/2)
+  simpa only [Real.cos_pi_div_two,Real.sin_pi_div_two,zero_mul,one_mul,zero_sub,add_zero]
+    using And.intro hs.1 (And.intro hs.2 hn)
+
+-- Negative time reverses the flow in the full source space, even when
+-- selected or unselected gaps are closed.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (k : ℤ) (t : ℝ) :
+    D.hilbertActionRotation (D.hilbertActionRotation φ k t) k (-t) = φ := by
+  rw [D.hilbertActionRotation_add,add_neg_cancel,D.hilbertActionRotation_zero]
+
+-- A zero original spectral action gives a stationary original potential,
+-- not merely a zero selected coordinate derivative.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (k : ℤ) (t : ℝ)
+    (hk : sourceRealAction (by simp) (by norm_num) φ.val φ.property k = 0) :
+    D.hilbertActionRotation φ k t = φ := by
+  apply D.hilbertRealHomeomorph.injective
+  rw [D.hilbertRealHomeomorph_actionRotation]
+  apply RealCoeff.actionRotation_eq_self_of_action_zero
+  rw [D.hilbert_pairAction_eq,hk,Complex.zero_re]
+
+-- Norm limits of arbitrary finite action-rotation compositions retain
+-- the actual spectrum and multiplicities; no isospectral premise is assumed.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ ψ : realTypeSourceSubmodule 2) (moves : ℕ → List (ℤ × ℝ))
+    (hlim : Tendsto (fun j => D.hilbertActionRotationSequence φ (moves j)) atTop (𝓝 ψ)) :
+    periodicSpectrum (by simp) (periodOnePotential ψ.val) =
+      periodicSpectrum (by simp) (periodOnePotential φ.val) ∧
+    ∀ z, periodicAlgebraicMultiplicity (by simp) (periodOnePotential ψ.val) z =
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ.val) z :=
+  (isClosed_sourceIsospectralSet (by simp) (by norm_num) φ).mem_of_tendsto hlim
+    (Eventually.of_forall (fun j => D.hilbertActionRotationSequence_mem_isospectralSet φ (moves j)))
+
+-- Coordinate action preservation also holds at the non-Hilbert exponent three.
+example (z : RealCoeff 3 × RealCoeff 3) (k n : ℤ) (t u : ℝ) :
+    RealCoeff.pairAction (RealCoeff.actionRotation (RealCoeff.actionRotation z k t) n u) k =
+      RealCoeff.pairAction z k := by
+  rw [RealCoeff.pairAction_actionRotation,RealCoeff.pairAction_actionRotation]
+
+end NLS.ActionRotationChecks

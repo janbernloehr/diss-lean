@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Latest progress: actual isospectral invariants and compactness
+## Latest progress: complete isospectral Hilbert action flows
+
+`RealActionRotation.lean` constructs a one-mode coordinate rotation at
+every sequence exponent. Its selected velocity is `(-y_k,x_k)`, every
+unselected coordinate is fixed, and every quadratic action is preserved.
+The derivative exists in the full sequence norm for every real time.
+Rotation times add, negative time reverses the motion, and a collapsed
+selected action gives the constant curve.
+
+`SourceBirkhoffActionHamiltonian.lean` differentiates the analytic
+coordinate action-radius identity to obtain `dI_k = x_k dx_k + y_k dy_k`
+at every point of the complex map domain, including closed gaps. The
+proved canonical Poisson identities identify the original action
+Hamiltonian's coordinate velocity with precisely this one-mode rotation
+for every finite `p ≥ 2`.
+
+`SourceHilbertActionRotation.lean` lifts the coordinate rotation through
+the actual global Hilbert Birkhoff inverse. The inverse Jacobian proves
+that its source-norm derivative is the original action Hamiltonian at
+every time, with no open-gap hypothesis. Infinitesimal isospectrality
+makes every fixed-parameter discriminant derivative zero, so the whole
+normalized discriminant is constant along the complete curve. Therefore
+the original periodic spectrum and all algebraic multiplicities are
+preserved. Finite lists of rotations retain their exact coordinate
+meaning and are isospectral, without restrictions on indices or times.
+
+Public checks verify a quarter-turn at a negative index with the canonical
+signs and an unchanged positive index, reversal by negative time, a
+stationary source at zero original action, preservation of full spectral
+data under norm limits of finite rotation sequences, and coordinate
+action preservation at exponent 3.
+
+Next prove that finite coordinate rotations approximate every point of
+the prescribed Hilbert action torus. Continuity of the global inverse
+and closedness of actual isospectral sets then give the converse torus
+inclusion. Transfer to `1 < p < 2` remains after that. Lemma 17.5(i) and
+the full dissertation are not yet complete.
+
+## Previous progress: actual isospectral invariants and compactness
 
 `PeriodicDiscriminantSpectralData.lean` proves that the original periodic
 spectrum together with its algebraic multiplicities determines the
