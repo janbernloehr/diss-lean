@@ -2065,3 +2065,8 @@ import NLS.ComplexAnalysis.ExteriorHolomorphicPrimitive
 import NLS.ZakharovShabat.SourceFiniteGapExteriorPeriod
 import NLS.ZakharovShabat.SourceFiniteGapExteriorPrimitive
 import NLS.ZakharovShabat.SourceFiniteGapExteriorMassNormalization
+
+import NLS.ComplexAnalysis.ExteriorCircleBounds
+import NLS.ComplexAnalysis.ExteriorRemovableSingularity
+import NLS.ZakharovShabat.SourceFloquetExteriorCircleBound
+import NLS.ZakharovShabat.SourceFiniteGapAtInfinity

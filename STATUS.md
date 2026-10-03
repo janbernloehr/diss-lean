@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: a mass-normalized primitive on the full exterior
+## Current milestone: analytic extension of the quotient at infinity
+
+`SourceFloquetExteriorCircleBound.lean` combines the existing canonical-root
+and discriminant-derivative asymptotics to bound the actual logarithmic
+derivative by four on every sufficiently large half-integer circle. It also
+proves convergence to `-i` on any escaping path uniformly separated from the
+free lattice. These results hold for every real source at finite `p>1`.
+
+`ExteriorCircleBounds.lean` proves maximum-modulus propagation on an annulus
+and uses it to turn eventual bounds on escaping circles into a bound on an
+entire exterior region. `ExteriorRemovableSingularity.lean` then proves that
+a bounded analytic exterior function has an analytic inversion extension:
+after setting `z = 1/w`, its singularity at `w=0` is removable.
+
+`SourceFiniteGapAtInfinity.lean` applies these results to the actual
+finite-gap logarithmic derivative, including every collapsed point in its
+exterior. It constructs an analytic function on a disc about zero agreeing
+with the inverted quotient at every nonzero point. The free asymptotic along
+half-integer real spectral points proves that its value at zero is exactly
+`-i`. No bound, continuation, or removability premise remains for finite-gap
+sources at any finite exponent greater than one.
+
+Public examples check propagation from escaping circles, removable
+inversion, the leading sign on separated paths, and the complete normalized
+analytic extension at `p=3`.
+
+Next use the analytic extension and zero exterior period to extract the
+higher expansion coefficients. Match them to the mass-normalized exterior
+primitive's ray limit, then evaluate the consolidated action contour. The
+higher coefficients, action/mass trace formula, and Proposition 17.2 remain
+unfinished.
+
+## Previous milestone: a mass-normalized primitive on the full exterior
 
 `SourceFiniteGapExteriorPeriod.lean` proves that the regularized logarithmic
 derivative has zero integral around every sufficiently large circle at an

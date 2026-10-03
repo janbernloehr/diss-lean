@@ -1,6 +1,22 @@
 # Implementation plan
 
-## Latest progress: the mass-normalized exterior primitive
+## Latest progress: removability and the leading value at infinity
+
+The logarithmic derivative is now uniformly bounded on sufficiently large
+half-integer circles by the free derivative and root asymptotics. Maximum
+modulus extends that bound over a full exterior region. At finite-gap sources,
+inversion and the removable-singularity theorem construct an analytic germ
+at infinity, with the exact leading value `-i`. These conclusions hold for
+every finite exponent `p>1`, without extra analytic or quantitative premises.
+
+Next extract the higher coefficients of this analytic germ. The established
+zero exterior period should remove the inverse-frequency term; compare the
+next coefficient with the mass-normalized exterior primitive's ray limit.
+Then evaluate the weighted contour to prove the finite-gap action/mass trace
+identity. Density extension, spectral-action weak continuity, and properness
+remain subsequent steps toward global injectivity.
+
+## Previous progress: the mass-normalized exterior primitive
 
 The finite-hole contour theorem and actual disjoint isolating circles now
 prove zero period for the regularized quotient on every sufficiently large

@@ -24685,3 +24685,41 @@ example (φ : realTypeSourceSubmodule 2)
   exists_sourceFiniteGap_exterior_primitive_norm_normalized φ hf
 
 end NLS.FiniteGapExteriorPrimitiveChecks
+
+namespace NLS.FiniteGapInfinityChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis Set Filter Topology Metric
+open scoped ENNReal
+
+-- Escaping-circle bounds control all exterior points, rather than a single ray.
+example (f : ℂ → ℂ) (A : ℝ) (ha : AnalyticOnNhd ℂ f {z : ℂ | A < ‖z‖})
+    (ρ : ℕ → ℝ) (hρ : Tendsto ρ atTop atTop) (M : ℝ)
+    (hb : ∀ᶠ k : ℕ in atTop, ∀ z ∈ sphere (0 : ℂ) (ρ k), ‖f z‖ ≤ M) :
+    ∃ R B : ℝ, 0 < R ∧ ∀ z : ℂ, R < ‖z‖ → ‖f z‖ ≤ B :=
+  exists_exterior_bound_of_escaping_circle_bounds f A ha ρ hρ M hb
+
+-- A bounded exterior function acquires an analytic value at infinity.
+example (f : ℂ → ℂ) (R M : ℝ) (hR : 0 < R)
+    (ha : AnalyticOnNhd ℂ f {z : ℂ | R < ‖z‖})
+    (hb : ∀ z : ℂ, R < ‖z‖ → ‖f z‖ ≤ M) :
+    ∃ g : ℂ → ℂ, AnalyticOnNhd ℂ g (ball 0 R⁻¹) ∧
+      ∀ z ∈ ball (0 : ℂ) R⁻¹, z ≠ 0 → g z = f z⁻¹ :=
+  exists_analytic_inversion_extension_of_exterior_bound f R M hR ha hb
+
+-- The canonical leading sign is fixed on every uniformly separated escaping path.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p φ))
+    (z : ℕ → ℂ) (hz : Tendsto (fun k => ‖z k‖) atTop atTop)
+    (hs : ∀ k (n : ℤ), Real.pi/4 ≤ ‖z k-(Real.pi : ℂ)*n‖) :
+    Tendsto (fun k => sourceFloquetLogDerivative hp hp1 φ (z k)) atTop (𝓝 (-Complex.I)) :=
+  tendsto_sourceFloquetLogDerivative_of_separated hp hp1 φ hr z hz (by positivity) le_rfl hs
+
+-- At p=3 the spectral finite-gap condition alone supplies the analytic germ and its leading value.
+example (φ : realTypeSourceLocus 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ r : ℝ, 0 < r ∧ ∃ g : ℂ → ℂ,
+      AnalyticOnNhd ℂ g (ball 0 r) ∧ g 0 = -Complex.I ∧
+      ∀ z ∈ ball (0 : ℂ) r, z ≠ 0 →
+        g z = sourceFloquetLogDerivative (by simp) (by norm_num) φ.val z⁻¹ :=
+  exists_sourceFiniteGap_logDerivative_normalized_at_infinity (by simp) (by norm_num) φ hf
+
+end NLS.FiniteGapInfinityChecks
