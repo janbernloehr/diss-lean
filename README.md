@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: one potential neighborhood now supports normalized
-abelian continuation over the full unbounded spectral exterior, including
-its boundary and every signed index. The exact potential gradient and
-agreement with the existing joint primitive on overlaps are proved.
-Combining these continuations into one enlarged open joint domain remains
-next. See `STATUS.md`.
+Latest milestone: a single enlarged open joint domain now carries the
+normalized abelian integral and contains uniform unbounded spectral
+exteriors around every complex potential in an open connected
+neighborhood of all real potentials. Exact derivatives, normalization,
+and all previously constructed values are preserved. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -10392,3 +10391,50 @@ yet been proved to contain these entire exterior products. Complex-source
 endpoint and square continuation, locally source-uniform and index-uniform
 estimates in (iii), subsequent frequency results, and the full dissertation
 remain unfinished.
+
+## One enlarged domain over an almost-real source neighborhood
+
+`SourceAbelianEnlargedExterior.lean` places all exterior continuations
+in one open joint domain. There is an open connected neighborhood `V`
+of the entire real-source locus such that every complex source in `V`
+has a positive source radius and a fixed family of pairwise disjoint
+isolating discs. The full unbounded exterior, including its boundary,
+times that source ball lies in the same enlarged domain. The radius
+works for every signed index, and all nearby spectral clusters stay
+inside their assigned discs.
+
+`SourceAbelianProjectedPrimitive.lean` normalizes each complex source
+at its contractive real projection, then integrates the Floquet
+logarithmic derivative along the straight source segment. The domain
+where that entire segment avoids the canonical cuts is open.
+`MovingSourceLogarithm.lean` proves joint analytic dependence of the
+logarithmic integral on its moving anchor, spectral point, and terminal
+source. Combined with real-source continuity, this gives a continuous
+logarithm; local logarithm uniqueness then proves complex analyticity
+even though the defining projection is only real linear.
+
+`SourceAbelianProjectedCompatibility.lean` proves agreement with every
+previous chart on its entire overlap, by following the projection path.
+`SourceAbelianEnlargedPrimitive.lean` therefore unites the projected and
+previously glued domains into one analytic function. It preserves all
+previous complex-source values, the actual real-source normalization,
+the signed index shifts, and the exact Floquet exponential identity.
+Its full differential is `d Delta / canonicalRoot`; both the potential
+gradient and the spectral derivative are proved explicitly. Every real
+slice still contains exactly its full canonical-cut complement.
+
+Public checks cover one common function over a connected source
+neighborhood at exponent 3/2, uniform exterior analyticity and the
+potential gradient at arbitrary complex base sources, preservation of
+the entire old domain and function, the exact exponential and spectral
+derivative, complete real-source slices, and free normalization at a
+nonreal spectral point with an odd negative index.
+
+This establishes the joint exterior-domain and gradient part of
+Lemma 19.1(i) on one almost-real source neighborhood. The next step is
+complex-source spectral continuation inside the isolating discs,
+including removal at collapsed gaps and endpoint normalization.
+The full complex-source spectral clause of (i), complex-source endpoint
+and square continuation, the locally source-uniform and index-uniform
+estimates in (iii), subsequent frequency results, and the full
+dissertation remain unfinished.

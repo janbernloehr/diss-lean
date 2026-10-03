@@ -26827,3 +26827,90 @@ example (n : ℤ) (z : ℂ) :
   simpa only [ZeroMemClass.coe_zero,sourceAbelianPrimitive_zero] using! h
 
 end NLS.AbelianExteriorChecks
+
+
+noncomputable section
+namespace NLS.AbelianEnlargedChecks
+open Set Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- One function and one connected source neighborhood work for every
+-- complex base potential, with a uniform unbounded spectral exterior.
+-- The same radius works for all signed indices and potential directions.
+example : ∃ W V : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    IsOpen V ∧ IsConnected V ∧ realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ V ∧
+    ∀ ψ ∈ V, ∃ (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (N : ℕ) (ε r : ℝ),
+      0 < ε ∧ ε ≤ Real.pi/4 ∧ 0 < r ∧ Metric.ball ψ r ⊆ V ∧ ∀ n : ℤ,
+        AnalyticOnNhd ℂ (sourceAbelianEnlargedPrimitive (by simp) (by norm_num) W n)
+          ((⋃ m : ℤ, sourceIsolatingDisc (by simp) (by norm_num) φ.val N ε m)ᶜ ×ˢ Metric.ball ψ r) ∧
+        ∀ (z : ℂ) (χ h : CoeffPair (ENNReal.ofReal (3/2))),
+          z ∈ (⋃ m : ℤ, sourceIsolatingDisc (by simp) (by norm_num) φ.val N ε m)ᶜ → χ ∈ Metric.ball ψ r →
+            (fderiv ℂ (fun θ : CoeffPair (ENNReal.ofReal (3/2)) =>
+              sourceAbelianEnlargedPrimitive (by simp) (by norm_num) W n (z,θ)) χ) h =
+              (fderiv ℂ (fun θ : CoeffPair (ENNReal.ofReal (3/2)) =>
+                canonicalDiscriminant (by simp) (periodOnePotential θ) z) χ) h /
+                sourceCanonicalRoot (by simp) (by norm_num) χ z := by
+  obtain ⟨W,V,hV,hVc,hreal,_,hD,hroot,hext⟩ :=
+    exists_sourceAbelianEnlarged_almostReal_exterior (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  have hM := sourceFloquetJointMultiplier_analyticOnNhd (by simp) (by norm_num) W hroot
+  refine ⟨W,V,hV,hVc,hreal,?_⟩
+  intro ψ hψ
+  obtain ⟨φ,N,ε,r,hε,hεmax,hr,hball,_,_,hsub⟩ := hext ψ hψ
+  refine ⟨φ,N,ε,r,hε,hεmax,hr,hball,fun n => ⟨?_,?_⟩⟩
+  · exact (sourceAbelianEnlargedPrimitive_analytic (by simp) (by norm_num) W hD hM n).mono hsub
+  · intro z χ h hz hχ
+    simpa only using! sourceAbelianEnlargedPrimitive_source_fderiv (by simp) (by norm_num) W hD
+      (by simpa only using! hroot) n z χ h (hsub ⟨hz,hχ⟩)
+
+-- Enlargement preserves the old function on its complete original domain,
+-- including complex-source points, for every normalization index.
+example (W : Set (CoeffPair 3))
+    (hD : IsOpen (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (hM : AnalyticOnNhd ℂ (sourceFloquetJointMultiplier (by simp) (by norm_num))
+      (sourceCanonicalRootJointDomain (by simp) (by norm_num) W)) (n : ℤ) :
+    sourceAbelianJointDomain (p := 3) (by simp) (by norm_num) ⊆
+      sourceAbelianEnlargedDomain (by simp) (by norm_num) W ∧
+    EqOn (sourceAbelianEnlargedPrimitive (by simp) (by norm_num) W n)
+      (sourceAbelianJointPrimitive (by simp) (by norm_num) n)
+      (sourceAbelianJointDomain (by simp) (by norm_num)) :=
+  ⟨fun _ ht => Or.inl ht,sourceAbelianEnlargedPrimitive_eq_joint (by simp) (by norm_num) W hD hM n⟩
+
+-- The exact multiplier and spectral derivative remain available on the
+-- enlarged domain, without assuming that the potential is real.
+example (W : Set (CoeffPair 3))
+    (hD : IsOpen (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (hroot : AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct (by simp) (by norm_num))
+      (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (z : ℂ) (ψ : CoeffPair 3) (ht : (z,ψ) ∈ sourceAbelianEnlargedDomain (by simp) (by norm_num) W) :
+    exp (sourceAbelianEnlargedPrimitive (by simp) (by norm_num) W 0 (z,ψ)) =
+      sourceFloquetMultiplier (by simp) (by norm_num) ψ z ∧
+    deriv (fun w : ℂ => sourceAbelianEnlargedPrimitive (by simp) (by norm_num) W (-3) (w,ψ)) z =
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential ψ)) z /
+        sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  constructor
+  · simpa only [Int.cast_zero,mul_zero,exp_zero,one_mul,sourceFloquetJointMultiplier] using
+      sourceAbelianEnlargedPrimitive_exp (by simp) (by norm_num) W
+        (sourceFloquetJointMultiplier_analyticOnNhd (by simp) (by norm_num) W hroot) 0 (z,ψ) ht
+  · simpa only using! sourceAbelianEnlargedPrimitive_spectral_deriv (by simp) (by norm_num) W hD
+      (by simpa only using! hroot) (-3) z ψ ht
+
+-- Every real-source slice is exactly the full cut complement, even
+-- outside the auxiliary source neighborhood used for projection.
+example (W : Set (CoeffPair 3)) (φ : realTypeSourceSubmodule 3) (z : ℂ) :
+    (z,φ.val) ∈ sourceAbelianEnlargedDomain (by simp) (by norm_num) W ↔
+      z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val :=
+  mem_sourceAbelianEnlargedDomain_real_iff (by simp) (by norm_num) W φ z
+
+-- Projection-based normalization retains the exact free value at a
+-- nonreal spectral point and an odd negative index.
+example : sourceAbelianProjectedPrimitive (p := 3) (by simp) (by norm_num) (-3) (Complex.I,0) =
+    1-3*Complex.I*(Real.pi : ℂ) := by
+  have h := sourceAbelianProjectedPrimitive_eq_real (p := 3) (by simp) (by norm_num) (-3) 0 Complex.I
+  simp only [ZeroMemClass.coe_zero,sourceAbelianPrimitive_zero] at h
+  convert! h using 1
+  norm_num
+  ring
+
+end NLS.AbelianEnlargedChecks

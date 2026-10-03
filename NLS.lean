@@ -2229,3 +2229,9 @@ import NLS.ZakharovShabat.SourceRealTypeLogarithmUnique
 import NLS.ZakharovShabat.SourceAbelianRadialPrimitive
 import NLS.ZakharovShabat.SourceAbelianRadialCompatibility
 import NLS.ZakharovShabat.SourceAbelianExteriorProduct
+
+import NLS.ComplexAnalysis.MovingSourceLogarithm
+import NLS.ZakharovShabat.SourceAbelianProjectedPrimitive
+import NLS.ZakharovShabat.SourceAbelianProjectedCompatibility
+import NLS.ZakharovShabat.SourceAbelianEnlargedPrimitive
+import NLS.ZakharovShabat.SourceAbelianEnlargedExterior
