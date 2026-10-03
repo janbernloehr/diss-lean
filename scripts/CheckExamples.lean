@@ -25502,10 +25502,68 @@ example : ∃ u : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j,
             (sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (le_refl 2) k u (g t)) t) →
           EqOn g (fun t => (f t).val) (Iio a)) ∧
         Tendsto (fun t => (sourceRealAction (by simp) (by norm_num) (f t).val (f t).property k).re)
-          (𝓝[<] a) (𝓝 0) := by
+          (𝓝[<] a) (𝓝 0) ∧
+        ∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r →
+          ∃ d : Iio a → realTypeSourceSubmodule r, Continuous d ∧ ∀ t : Iio a, ∀ n : ℤ,
+            (d t).val.fst n = (f t.val).val.fst n-φ.val.fst n ∧
+            (d t).val.snd n = (f t.val).val.snd n-φ.val.snd n := by
   obtain ⟨W₀,B,W,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic (p := 2) (by simp) (by norm_num)
   obtain ⟨V₀,C,V,_,_,_,_,_,_,u,E⟩ :=
     exists_sourceAngularTheta_theorem13_1_iv (p := 2) (by simp) (by norm_num)
-  exact ⟨u,fun φ k hk => D.hilbert_angleFlow_exists_unique_and_action_limit E k φ hk⟩
+  exact ⟨u,fun φ k hk => D.lemma17_4 E k φ hk⟩
 
 end NLS.ThetaFlowChecks
+
+namespace NLS.AngleDisplacementChecks
+open NLS.ZakharovShabat NLS.Poisson Set
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem one_lt_three_halves : (1 : ℝ≥0∞) < 3 / 2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+local instance : Fact (1 ≤ (3 / 2 : ℝ≥0∞)) := ⟨one_lt_three_halves.le⟩
+local instance : (3 / 2 : ℝ≥0∞).HolderConjugate 3 :=
+  ENNReal.HolderConjugate.of_toReal (by constructor <;> norm_num)
+
+private theorem three_halves_ne_top : (3 / 2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+
+-- An imaginary cotangent at frequency 5 gives velocity -1 at -5 in
+-- the second source component. Conjugating or omitting reflection fails.
+private def imaginaryMode : CoeffPair 3 →L[ℂ] ℂ :=
+  Complex.I • ((lp.evalCLM ℂ (fun _ : ℤ => ℂ) 3 5).comp
+    ((ContinuousLinearMap.fst ℂ (Coeff 3) (Coeff 3)).comp
+      (CoeffPair.toMax 3).toContinuousLinearMap))
+
+example : (conjugateHamiltonianDirection (p := 3 / 2) (by norm_num)
+      three_halves_ne_top imaginaryMode).snd (-5) = -1 ∧
+    (conjugateHamiltonianDirection (p := 3 / 2) (by norm_num)
+      three_halves_ne_top imaginaryMode).snd 5 = 0 := by
+  simp only [conjugateHamiltonianDirection_snd]
+  change Complex.I * (Complex.I * (lp.single (E := fun _ : ℤ => ℂ) 3 (5 : ℤ) (1 : ℂ) 5)) = -1 ∧
+    Complex.I * (Complex.I * (lp.single (E := fun _ : ℤ => ℂ) 3 (-5 : ℤ) (1 : ℂ) 5)) = 0
+  norm_num [lp.single_apply]
+
+-- Integration must recover the displacement also before the initial time.
+example : ∃ d : ℝ → ℝ, d 0 = 0 ∧ ContinuousOn d (Iio 2) ∧ d (-3) = 9 := by
+  obtain ⟨d,hzero,hcont,_,hd⟩ :=
+    NLS.FunctionalAnalysis.exists_continuous_displacement_of_hasDerivAt
+      (ContinuousLinearMap.id ℝ ℝ) (fun t : ℝ => t^2+7) (fun t => 2*t)
+      (a := 2) (by norm_num) ((continuous_const.mul continuous_id).continuousOn)
+      (fun t _ => by convert ((hasDerivAt_id t).pow 2).add_const 7 using 1 <;> simp)
+  refine ⟨d,hzero,hcont,?_⟩
+  convert hd (-3) (by norm_num) using 1 <;> norm_num
+
+-- A general Hilbert source need not itself belong to exponent 3/2.
+-- Its negative-time displacement still has both original Fourier sequences there.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (k : ℤ)
+    (ha : 0 < (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re) :
+    ∃ ψ : realTypeSourceSubmodule (3 / 2), ∀ n : ℤ,
+      ψ.val.fst n = (D.hilbertActionReduction φ k (-1)).val.fst n-φ.val.fst n ∧
+      ψ.val.snd n = (D.hilbertActionReduction φ k (-1)).val.snd n-φ.val.snd n := by
+  obtain ⟨d,_,_,hd⟩ := D.hilbert_angleFlow_continuous_real_displacement
+    three_halves_ne_top one_lt_three_halves k φ ha
+  exact ⟨d ⟨-1,lt_trans (by norm_num) ha⟩,hd ⟨-1,lt_trans (by norm_num) ha⟩⟩
+
+end NLS.AngleDisplacementChecks

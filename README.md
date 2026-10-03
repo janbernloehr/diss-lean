@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the constructed Hilbert action-reduction curve is proved
-to follow the actual angle Hamiltonian and to be its unique solution before
-collapse. Lemma 17.4's initial-value statement and part (i) are proved.
-Part (ii), the stronger-exponent displacement regularity needed for
-Proposition 17.3, remains in progress; see `STATUS.md`.
+Latest milestone: Lemma 17.4 is complete. The Hilbert angle Hamiltonian
+has a unique solution before collapse, its selected action tends to zero,
+and its displacement is continuous in every finite exponent `p > 1`.
+Next are finite successive action reductions for Proposition 17.3;
+surjectivity outside the Hilbert case remains in progress. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -9556,4 +9556,43 @@ Lemma 17.4(ii) remains: the source displacement must be continuous in
 every finite exponent above one. Next obtain the stronger-exponent
 regularity of the angle Hamiltonian from its compatible cotangents and
 integrate the vector field in that exponent. Proposition 17.3 and
+surjectivity outside the Hilbert case are not yet complete.
+
+## Complete Lemma 17.4
+
+`ConjugateCotangentLinear.lean` makes conjugate-exponent cotangent
+recovery a bounded complex-linear map. For source pairs it reconstructs
+the Hamiltonian direction with the original Fourier reflection and Poisson
+signs; its inclusion into Hilbert space is the original Hamiltonian.
+
+`SourceHilbertAngleStrongRegularity.lean` applies this to the actual angle
+cotangent. For conjugate exponents `p ≤ 2 ≤ q`, the Hilbert angle vector
+has an exponent-`p` representative that depends analytically on the source
+near every real source with its selected gap open. The identification
+allows independently constructed normalized families at the two exponents.
+
+`IntegralDisplacement.lean` proves a Banach-space integration result:
+a continuous stronger-space representative of a curve's derivative
+integrates to its displacement through a bounded linear inclusion. The
+result holds on the entire interval before a positive terminal time,
+including negative times.
+
+`SourceHilbertAngleDisplacement.lean` uses that result for `1 < p < 2`
+and continuous Hilbert inclusion for `p ≥ 2`. It constructs a continuous
+curve in the actual real source space of every finite exponent above one,
+with precisely the Fourier coefficients of the original flow displacement.
+No membership of the initial Hilbert source in the stronger space is
+assumed. The public theorem `lemma17_4` combines this with the initial
+value, continuous differentiability, actual Hamiltonian equation,
+uniqueness, and vanishing-action limit. Lemma 17.4 is now complete.
+
+Public checks cover the sign and reflected frequency of an imaginary
+cotangent at conjugate exponents 3 and 3/2, recovery of a negative-time
+displacement by integration, and the exponent-3/2 realization of a
+general Hilbert source's displacement. The constructed-family check now
+includes every exponent's continuous displacement in the same theorem
+as existence, uniqueness, and the action limit.
+
+Next use finite successive action reductions and a small action tail
+to prove Proposition 17.3 for `1 < p < 2`. That proposition and
 surjectivity outside the Hilbert case are not yet complete.

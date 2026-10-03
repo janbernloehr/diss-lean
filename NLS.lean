@@ -2133,3 +2133,8 @@ import NLS.ZakharovShabat.SourceAngularThetaRectangularDifferential
 import NLS.ZakharovShabat.SourceAngularThetaHamiltonian
 import NLS.ZakharovShabat.SourceHilbertAngleHamiltonian
 import NLS.ZakharovShabat.SourceHilbertAngleFlowUnique
+
+import NLS.SequenceSpaces.ConjugateCotangentLinear
+import NLS.FunctionalAnalysis.IntegralDisplacement
+import NLS.ZakharovShabat.SourceHilbertAngleStrongRegularity
+import NLS.ZakharovShabat.SourceHilbertAngleDisplacement
