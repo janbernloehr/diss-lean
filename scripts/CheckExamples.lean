@@ -23487,3 +23487,45 @@ example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W �
   exists_global_source_dirichlet_sobolev_normalized_gradient (by norm_num) (by norm_num) (by norm_num)
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set Complex NLS.LinearVolterra
+
+-- Both sine-normalized boundary characteristics have the actual inverse-frequency error.
+example (M H : ℝ) (a : Domain 2) (ha : ‖a‖ ≤ M) (b : BoundaryCondition)
+    (z : ℂ) (hz : z ≠ 0) (him : |z.im| ≤ H) :
+    ‖classicalSeparatedCharacteristic b (classicalSobolevPotential a) z-sin z‖ ≤
+      classicalSobolevErrorConstant M H/‖z‖ :=
+  norm_classicalSeparatedCharacteristic_sub_sin_sobolev_le M H a ha b z hz him
+
+-- Original canonical displacements are derived for both boundary conditions at exponent three.
+example (ψ₀ : CoeffPair 3) (M : ℝ) (hM : 0 ≤ M) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ ψ₀ ∈ U ∧ ∃ N : ℕ, 0 < N ∧ ∃ B : ℝ, 0 ≤ B ∧
+      ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ U →
+      ∀ (a : Domain 2), ‖a‖ ≤ M → periodOnePotential φ = domainInclusion a →
+      ∀ b : BoundaryCondition, ∀ n : ℤ, N ≤ n.natAbs →
+        ‖canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b
+          (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n-(Real.pi : ℂ)*n‖ ≤ B/(n.natAbs : ℝ) :=
+  exists_local_source_boundary_sobolev_inverse_index_bound (by norm_num) (by norm_num) (by norm_num) ψ₀ M hM
+
+-- Nearness to two proves a denominator bound and the correctly normalized inverse error.
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) (hQ : ‖classicalDirichletNormalization Φ z-2‖ ≤ 1) :
+    1 ≤ ‖classicalDirichletNormalization Φ z‖ ∧
+    ‖(classicalDirichletNormalization Φ z)⁻¹‖ ≤ 1 ∧
+    ‖(classicalDirichletNormalization Φ z)⁻¹-(2 : ℂ)⁻¹‖ ≤ ‖classicalDirichletNormalization Φ z-2‖/2 :=
+  classicalDirichletNormalization_inverse_bounds Φ z hQ
+
+-- The exact two free waves, including their one-half factors, have a uniform actual-root error.
+example (ψ₀ : CoeffPair 3) (M : ℝ) (hM : 0 ≤ M) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ ψ₀ ∈ U ∧ ∃ N : ℕ, 0 < N ∧ ∃ D : ℝ, 0 ≤ D ∧
+      ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ U →
+      ∀ (a : Domain 2), ‖a‖ ≤ M → periodOnePotential φ = domainInclusion a →
+      ∀ n : ℤ, N ≤ n.natAbs → ∀ t : Icc (0 : ℝ) 1,
+        ‖classicalDirichletNormalizedGradient (classicalSobolevPotential a)
+            (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet
+              (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n) t-
+          (exp (2*Complex.I*((Real.pi : ℂ)*n)*t.val)/2,exp (-2*Complex.I*((Real.pi : ℂ)*n)*t.val)/2)‖ ≤
+          D/(n.natAbs : ℝ) :=
+  exists_local_source_dirichlet_gradient_value_bound (by norm_num) (by norm_num) (by norm_num) ψ₀ M hM
+
+end NLS.ZakharovShabat

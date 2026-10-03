@@ -8272,3 +8272,43 @@ Dirichlet gradient coefficients on the common `p=3` neighborhood. The
 uniform shifted-free remainder estimate is still needed for G.7's Dirichlet
 summability assertion. G.7 as a whole and Lemma 16.1 remain unfinished;
 no infinite-exponent assertion is added.
+
+## Appendix G.7: uniform Dirichlet root and gradient value estimates
+
+The normalized physical Dirichlet gradient at the actual canonical root
+now differs from the exact free pair
+`(exp(2iπnt)/2, exp(-2iπnt)/2)` by `D/|n|` pointwise on the entire unit
+interval. One source neighborhood and cutoff work for the whole physical
+H¹ ball, including complex sources, at every finite source exponent `p≥2`.
+The canonical-root displacement and normalization estimates used in this
+bound are derived from the physical source data.
+
+`ClassicalSobolevBoundaryRootDisplacement.lean` expresses each ordinary
+characteristic error as the contractive endpoint functional of the actual
+solution remainder. Its sine error is uniformly `O(1/|z|)`. The nonzero
+filled sine quotient on quarter-π discs then gives inverse-index root
+displacement. `SourceBoundarySobolevDisplacement.lean` supplies these discs
+and the actual zero equations from canonical source tail isolation and
+physical compatibility. Both Dirichlet and Neumann sequences are covered;
+no inverse-index displacement premise is supplied.
+
+`ClassicalDirichletNormalizationBounds.lean` estimates the bilinear product
+of the actual solution components against the free solution. Integration
+gives `Q−2=O(1/|z|)`, hence `O(1/|n|)` near the free lattice. Beyond one
+cutoff, `|Q|≥1`, `|Q⁻¹|≤1`, and `Q⁻¹−1/2=O(1/|n|)`.
+`SourceDirichletSobolevNormalization.lean` instantiates these bounds at the
+actual signed roots, uniformly on the source neighborhood and H¹ ball.
+
+`ClassicalDirichletGradientValueBounds.lean` combines the squared-solution
+error and inverse-normalization error. `SourceDirichletGradientValueBound.lean`
+uses the proved canonical-root estimates to give the uniform pointwise
+free-wave error. Together with the previous common-domain identification,
+this controls the values of the physical representative of the actual
+Dirichlet cotangent. The needed time-derivative bound and Fourier
+interpolation/summability step are not yet proved for this normalized error.
+
+Public checks cover both actual sine errors, both canonical boundary
+displacements at `p=3`, the quantitative inverse normalization, and the
+uniform actual-root error with the two exact free waves and one-half
+factors. G.7 as a whole and Lemma 16.1 remain unfinished. No
+infinite-exponent assertion is added.

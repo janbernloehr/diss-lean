@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: Dirichlet gradients on a common complex domain
+## Latest progress: uniform Dirichlet root and gradient value estimates
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -46,8 +46,17 @@ continuity in the finite central block. The actual H¹ Dirichlet cotangent
 has both normalized physical Fourier coefficients throughout the constructed
 domain; reality, simplicity, and normalization are not additional premises.
 
-Next prove the uniform shifted-free Dirichlet remainder estimate, then apply
-the gradient estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
+The actual canonical Dirichlet and Neumann roots now have locally uniform
+`O(1/|n|)` displacement on physical H¹ balls. The Dirichlet normalization
+satisfies `Q−2=O(1/|n|)`, `|Q|≥1`, and an inverse error of the same order.
+Combining these with the actual solution bounds gives a uniform pointwise
+`O(1/|n|)` error for the normalized gradient against the two exact free waves.
+These estimates apply at nearby complex sources and derive all root and
+denominator bounds from the source data.
+
+Next bound the normalized gradient error's time derivative and apply the
+Fourier interpolation estimates to finish the Dirichlet part of G.7, then
+apply the gradient estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
 exported in actual source operator norm; coefficient-form applications should preserve the
 proved reversed-frequency convention.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
