@@ -23928,3 +23928,84 @@ example (L K : ℤ → CoeffPair 3 →L[ℂ] ℂ) (hL : Memℓp L 3)
   memlp_vector_of_eq_outside_finset hL S h
 
 end NLS.ZakharovShabatEtaSummabilityChecks
+
+namespace NLS.ZakharovShabatLemma16_1Checks
+open NLS.ZakharovShabat Set
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (ENNReal.ofReal (3/2)) := by
+  have h := (Real.HolderConjugate.conjExponent (by norm_num : 1 < (3 : ℝ))).ennrealOfReal
+  convert h using 1 <;> norm_num [Real.conjExponent]
+
+-- Inner Hilbert norm and outer exponent 3/2 are independent.
+example (φ : CoeffPair 2) (hφ : φ ∈ realTypeSourceLocus 2) (a : Domain 2)
+    (ha : periodOnePotential φ = domainInclusion a) :
+    Memℓp (fun n : ℤ => fderiv ℂ (fun ψ : CoeffPair 2 =>
+      canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n) φ-
+      sourceFreeDirichletCotangent 2 n) (ENNReal.ofReal (3/2)) :=
+  memlp_hilbert_dirichlet_fderiv_error_outer (3/2) (by norm_num) φ hφ a ha
+
+-- The smaller source derivative is controlled without a finite-gap hypothesis if H¹ is supplied.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (a : Domain 2)
+    (ha : periodOnePotential (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 2) φ.val) =
+      domainInclusion a) :
+    Memℓp (fun n : ℤ => fderiv ℂ (fun ψ : CoeffPair (ENNReal.ofReal (3/2)) => canonicalPeriodicMidpoint
+      (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ.val)
+      (ENNReal.ofReal (3/2)) :=
+  memlp_source_midpoint_fderiv_below_two (by simp) (by norm_num) (by norm_num) φ a ha
+
+-- Both boundary sequences retain the actual anti-discriminant error below two.
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2))) (a : Domain 2)
+    (ha : periodOnePotential (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 2) φ.val) =
+      domainInclusion a) (b : BoundaryCondition) :
+    Memℓp (fun n : ℤ => sourceAntiDiscriminantCotangent (by simp) (by norm_num)
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ.val n) φ.val-
+      sourceAntiDiscriminantCotangent (by simp) (by norm_num) ((Real.pi : ℂ)*n) 0)
+      (ENNReal.ofReal (3/2)) :=
+  memlp_source_antiDiscriminantCotangent_error_below_two (by simp) (by norm_num) (by norm_num) φ a ha b
+
+-- The exact physical gradient puts the + sign in the second component at -n.
+example (n : ℤ) :
+    CoeffPair.conjugateGradient (p := ENNReal.ofReal (3/2)) (q := 3) (by simp) (by norm_num)
+      (sourceGapWeightedEtaFreeCotangent (by simp) (by norm_num) n 1) =
+      (-2 : ℂ) • CoeffPair.inrCLM (lp.single 3 (-n) 1) := by
+  rw [conjugateGradient_sourceGapWeightedEtaFreeCotangent (by simp) (by norm_num) (by norm_num)]
+  simp [show (1 : ℂ)+1 = 2 by norm_num]
+
+-- The opposite sign uses the first component at n, for positive and negative n alike.
+example (n : ℤ) :
+    CoeffPair.conjugateGradient (p := ENNReal.ofReal (3/2)) (q := 3) (by simp) (by norm_num)
+      (sourceGapWeightedEtaFreeCotangent (by simp) (by norm_num) n (-1)) =
+      (-2 : ℂ) • CoeffPair.inlCLM (lp.single 3 n 1) := by
+  rw [conjugateGradient_sourceGapWeightedEtaFreeCotangent (by simp) (by norm_num) (by norm_num)]
+  simp [show (-1 : ℂ)-1 = -2 by norm_num]
+
+-- Full Lemma 16.1 for the actual family, with inner exponent 3 and outer exponent 3/2.
+example {W₀ B : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceAngularEtaLocalCommonDomainData (by simp) (by norm_num) W₀ B s)
+    (W : Set (CoeffPair (ENNReal.ofReal (3/2)))) (hW : IsOpen W) (hWB : W ⊆ B)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ W)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := 3) (by simp) (by norm_num)
+      (fderiv ℂ (sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s 1) φ.val)+
+      (2 : ℂ) • CoeffPair.inrCLM (lp.single 3 (-n) 1)‖) (ENNReal.ofReal (3/2)) ∧
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := 3) (by simp) (by norm_num)
+      (fderiv ℂ (sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s (-1)) φ.val)+
+      (2 : ℂ) • CoeffPair.inlCLM (lp.single 3 n 1)‖) (ENNReal.ofReal (3/2)) :=
+  D.gapWeightedEta_lemma16_1 (by norm_num) W hW hWB φ hφ hfinite
+
+-- Existence supplies the Birkhoff family and its domain; callers need no chart data.
+example : ∃ W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    ∃ s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k,
+      SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s ∧
+      ∀ φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)),
+        φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+        Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := 3) (by simp) (by norm_num)
+          (fderiv ℂ (sourceGapWeightedEtaCoordinate (by simp) (by norm_num) n s 1) φ.val)+
+          (2 : ℂ) • CoeffPair.inrCLM (lp.single 3 (-n) 1)‖) (ENNReal.ofReal (3/2)) := by
+  obtain ⟨W₀,B,W,s,D,h⟩ := exists_sourceBirkhoffFamily_lemma16_1
+    (p := ENNReal.ofReal (3/2)) (q := 3) (by simp) (by norm_num) (by norm_num)
+  exact ⟨W₀,B,W,s,D,fun φ hfinite => (h φ hfinite).1⟩
+
+end NLS.ZakharovShabatLemma16_1Checks

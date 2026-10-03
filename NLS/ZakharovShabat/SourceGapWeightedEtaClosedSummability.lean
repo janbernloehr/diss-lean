@@ -38,16 +38,20 @@ theorem sourceGapWeightedEtaClosedCotangent_sub_free
     sub_apply,add_apply,smul_apply,smul_eq_mul,div_eq_mul_inv,mul_inv_rev]
   ring
 
-/-- On every real H¹ source, the closed-gap expression differs from its
-signed free Fourier functional by an outer ℓp sequence of actual operators. -/
-theorem memlp_sourceGapWeightedEtaClosedCotangent_sub_free
-    (hp : p ≠ ⊤) (hp1 : 1 < p) (h2p : (2 : ℝ≥0∞) ≤ p)
-    (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
-    (a : Domain 2) (ha : periodOnePotential φ = domainInclusion a) (sign : ℂ) :
-    Memℓp (fun n : ℤ => sourceGapWeightedEtaClosedCotangent hp hp1 n sign
-      (CoeffPair.exponentInclusion h2p φ)-sourceGapWeightedEtaFreeCotangent hp hp1 n sign) p := by
-  let ψ := CoeffPair.exponentInclusion h2p φ
-  have hψ : IsRealType (CoeffPair.toMax p ψ) := fun n => hφ n
+/-- G.6 and both G.7 estimates imply the closed-gap coordinate estimate at
+any finite source exponent strictly above one. -/
+theorem memlp_sourceGapWeightedEtaClosedCotangent_of_gradient_estimates
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p)
+    (hψ : IsRealType (CoeffPair.toMax p ψ))
+    (hmid : Memℓp (fun n : ℤ => fderiv ℂ (fun χ : CoeffPair p => canonicalPeriodicMidpoint hp hp1
+      (periodOnePotential χ) (periodOnePotential_mem χ) n) ψ) p)
+    (hdir : Memℓp (fun n : ℤ => fderiv ℂ (fun χ : CoeffPair p =>
+      canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet χ n) ψ-sourceFreeDirichletCotangent p n) p)
+    (hanti : Memℓp (fun n : ℤ => sourceAntiDiscriminantCotangent hp hp1
+      (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n) ψ-
+      sourceAntiDiscriminantCotangent hp hp1 ((Real.pi : ℂ)*n) 0) p) (sign : ℂ) :
+    Memℓp (fun n : ℤ => sourceGapWeightedEtaClosedCotangent hp hp1 n sign ψ-
+      sourceGapWeightedEtaFreeCotangent hp hp1 n sign) p := by
   let μ (n : ℤ) := canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n
   let dμ (n : ℤ) := fderiv ℂ (fun χ : CoeffPair p => canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet χ n) ψ
   let dτ (n : ℤ) := fderiv ℂ (fun χ : CoeffPair p => canonicalPeriodicMidpoint hp hp1
@@ -56,12 +60,9 @@ theorem memlp_sourceGapWeightedEtaClosedCotangent_sub_free
   let A₀ (n : ℤ) := sourceAntiDiscriminantCotangent hp hp1 ((Real.pi : ℂ)*n) 0
   let B (n : ℤ) := (sourceStandardRootOmittedProduct hp hp1 n ψ (μ n))⁻¹
   let δ (n : ℤ) := deriv (sourceAntiDiscriminantCandidate hp hp1 ψ) (μ n)
-  obtain ⟨W,_,hreal,hgrad⟩ := exists_global_source_spectral_gradients_sobolev_memlp hp hp1 h2p
-  have hg := hgrad φ (hreal hψ) a ha
-  have hmid : Memℓp dτ p := hg.1
-  have hdir : Memℓp (fun n => dμ n-sourceFreeDirichletCotangent p n) p := hg.2
-  have hanti : Memℓp (fun n => A n-A₀ n) p :=
-    memlp_source_antiDiscriminantCotangent_boundary_error hp hp1 h2p φ a ha .dirichlet
+  change Memℓp dτ p at hmid
+  change Memℓp (fun n => dμ n-sourceFreeDirichletCotangent p n) p at hdir
+  change Memℓp (fun n => A n-A₀ n) p at hanti
   have hinv : Memℓp (fun n => B n-cos ((Real.pi : ℂ)*n)) p :=
     memlp_sourceStandardRootOmittedProduct_boundary_inv_sub_free hp hp1 .dirichlet ψ hψ
   have hδ : Memℓp δ p := (memℓp_sourceAntiDiscriminant_at_dirichletRoots hp hp1 ψ).2
@@ -81,5 +82,19 @@ theorem memlp_sourceGapWeightedEtaClosedCotangent_sub_free
   convert hsum using 1
   funext n
   exact sourceGapWeightedEtaClosedCotangent_sub_free hp hp1 ψ n sign
+
+/-- On every real H¹ source, the closed-gap expression differs from its
+signed free Fourier functional by an outer ℓp sequence of actual operators. -/
+theorem memlp_sourceGapWeightedEtaClosedCotangent_sub_free
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (h2p : (2 : ℝ≥0∞) ≤ p)
+    (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (a : Domain 2) (ha : periodOnePotential φ = domainInclusion a) (sign : ℂ) :
+    Memℓp (fun n : ℤ => sourceGapWeightedEtaClosedCotangent hp hp1 n sign
+      (CoeffPair.exponentInclusion h2p φ)-sourceGapWeightedEtaFreeCotangent hp hp1 n sign) p := by
+  obtain ⟨W,_,hreal,hgrad⟩ := exists_global_source_spectral_gradients_sobolev_memlp hp hp1 h2p
+  have hr : IsRealType (CoeffPair.toMax p (CoeffPair.exponentInclusion h2p φ)) := fun n => hφ n
+  have hg := hgrad φ (hreal hr) a ha
+  exact memlp_sourceGapWeightedEtaClosedCotangent_of_gradient_estimates hp hp1 _ hr hg.1 hg.2
+    (memlp_source_antiDiscriminantCotangent_boundary_error hp hp1 h2p φ a ha .dirichlet) sign
 
 end NLS.ZakharovShabat

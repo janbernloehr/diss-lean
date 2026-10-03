@@ -8529,3 +8529,47 @@ finite changes of operator sequences.
 The `1<p<2` source-gradient range remains before the full Lemma 16.1.
 The sharper G.1 integral bound, remaining assertions of Theorem 14.1,
 and later chapters also remain unfinished.
+
+## Latest progress: Lemma 16.1 for every finite p > 1
+
+The full finite-gap eta gradient estimate now holds for `1<p<∞` in the
+physical conjugate Fourier pair norm. Both signs and every signed index
+are included. In the library's period-one coefficient convention, the
+free gradient is `−2` times the second component at `−n` for sign `+1`,
+and `−2` times the first component at `n` for sign `−1`.
+The corresponding actual gradient plus twice that mode has an ℓp
+sequence of conjugate-pair norms, as in Lemma 16.1.
+
+`SourceHilbertGradientOuterSummability.lean` separates inner and outer
+exponents. The actual Hilbert midpoint derivatives, Dirichlet derivative
+errors, and anti-discriminant cotangent errors have every outer exponent
+strictly above one. The physical Fourier threshold allows inner exponent
+two throughout this range; neither finite gaps nor a gradient-bound
+premise is needed for these H¹ estimates.
+
+`SourceGradientExponentRestriction.lean` differentiates exponent
+compatibility of the actual midpoint and restricts the free Dirichlet
+functional exactly. Existing boundary-root and anti-discriminant
+compatibility restrict the remaining actual cotangents. Bounded
+composition preserves the independently chosen outer exponent, proving
+the real H¹ G.6–G.7 estimates below two.
+
+`SourceGapWeightedEtaAllExponentSummability.lean` constructs the physical
+H¹ representative from finite-gap regularity below two and combines the
+two exponent ranges. The closed-gap algebra now has a shared theorem
+accepting the three gradient estimates at any finite source exponent.
+Finite modification includes every open gap in the actual derivative
+estimate. Existing APIs for `p≥2` remain available.
+
+`SourceGapWeightedEtaLemma16_1.lean` identifies the free conjugate gradient
+with the literal signed Fourier modes. Its final existence theorem supplies
+one constructed Birkhoff family and domain satisfying both estimates at
+every real finite-gap source, so no chart data or H¹ witness is assumed.
+Public checks include independent inner/outer exponents, both boundary
+conditions below two, both free Fourier signs, and the full estimate and
+constructed-family existence at source exponent `3/2`, conjugate exponent `3`.
+
+Next prove Lemma 16.2 for the rectangular Birkhoff-coordinate gradients,
+then the compact-perturbation argument for the Jacobian. The sharper G.1
+integral bound, remaining assertions of Theorem 14.1, and later chapters
+also remain unfinished.

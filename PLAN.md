@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: finite-gap coordinate gradient errors for finite p ≥ 2
+## Latest progress: Lemma 16.1 for every finite p > 1
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -106,10 +106,22 @@ remaining index. Both source operator norm and the conjugate Fourier pair
 norm give outer ℓp sequences, with the local common-domain construction as
 the coordinate hypothesis.
 
-Next extend actual source-gradient summability to `1<p<2`, using exponent
-compatibility and physical estimates with independent inner and outer
-exponents. This range remains before full Lemma 16.1. The sharper G.1
-integral bound, remaining assertions of Theorem 14.1, and later chapters
+Lemma 16.1 is now proved in the full range `1<p<∞`. The Hilbert source
+cotangents have every outer exponent above one, by the physical estimates
+with inner exponent two. Restriction along coefficient inclusion then
+proves the actual real H¹ midpoint, Dirichlet, and anti-discriminant
+estimates below two. Finite-gap regularity supplies the physical H¹
+representative; the shared closed-gap decomposition and finite modification
+complete the full source-operator estimate. Conjugate-gradient recovery
+identifies both literal signed Fourier modes and gives exactly the two
+ℓp norm sequences. A final existence theorem supplies a constructed
+Birkhoff family satisfying the estimates at every real finite-gap source.
+
+Next prove Lemma 16.2: differentiate the action-normalized, beta-corrected
+coordinates, use closed-gap vanishing on the finite-gap tail, and combine
+Lemma 16.1 with the scalar normalization and phase estimates. Then establish
+the Jacobian's compact perturbation of the Fourier transform. The sharper
+G.1 integral bound, remaining assertions of Theorem 14.1, and later chapters
 remain unfinished.
 
 ## Milestones
