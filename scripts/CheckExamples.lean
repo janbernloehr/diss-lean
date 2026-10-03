@@ -25625,3 +25625,66 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → Delete
   D.proposition17_3 (le_refl 2)
 
 end NLS.SurjectivityChecks
+
+namespace NLS.GlobalBirkhoffChecks
+open NLS.ZakharovShabat Set
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A global analytic diffeomorphism and its inverse are constructed at 3/2.
+example : ∃ e : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) ≃ₜ
+      (RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))),
+    AnalyticOnNhd ℝ (fun φ => e φ) univ ∧ AnalyticOnNhd ℝ (fun y => e.symm y) univ := by
+  obtain ⟨_,_,_,_,_,e,_,he,hi⟩ := exists_sourceBirkhoffFamily_globalInverse
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num) (by norm_num)
+  exact ⟨e,he,hi⟩
+
+-- The inverse derivative really inverts the original Jacobian at every
+-- target, not only at the origin or within one chosen local neighborhood.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (y h : RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))) :
+    (D.realJacobianEquivAll ((D.realHomeomorph (by norm_num)).symm y))
+      (fderiv ℝ (D.realHomeomorph (by norm_num)).symm y h) = h := by
+  rw [(D.realHomeomorph_symm_hasStrictFDerivAt (by norm_num) y).hasFDerivAt.fderiv]
+  exact (D.realJacobianEquivAll _).apply_symm_apply h
+
+-- Even above two, arbitrary targets are approximated in the full norm
+-- by actual Birkhoff images, with no finite-support assumption on the target.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (z : RealCoeff 3 × RealCoeff 3) {ε : ℝ} (hε : 0 < ε) :
+    ∃ φ, dist z (sourceRealBirkhoffMap (by simp) (by norm_num) s φ) < ε :=
+  D.real_map_denseRange.exists_dist_lt z hε
+
+-- Finite output truncations at exponent 3 have actual finite-gap
+-- preimages, not just approximate preimages or finite Fourier sources.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (A : Finset ℤ) (z : RealCoeff 3 × RealCoeff 3) :
+    ∃ φ : realTypeSourceSubmodule 3, φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+      sourceRealBirkhoffMap (by simp) (by norm_num) s φ = RealCoeff.truncatePair A z := by
+  obtain ⟨φ,hφ⟩ := D.truncatePair_mem_real_map_range A z
+  exact ⟨φ,D.finiteGap_of_real_map_eq_truncatePair φ A z hφ,hφ⟩
+
+-- Independent exponent-3/2 and Hilbert constructions recover identical
+-- original source Fourier coefficients from the same included target.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    {V₀ C V : Set (CoeffPair 2)} {u : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (E : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₀ C V u)
+    (y : RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))) (n : ℤ) :
+    let inc := (RealCoeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 2)).prodMap
+      (RealCoeff.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 2))
+    ((D.realHomeomorph (by norm_num)).symm y).val.fst n =
+      ((E.realHomeomorph (le_refl 2)).symm (inc y)).val.fst n ∧
+    ((D.realHomeomorph (by norm_num)).symm y).val.snd n =
+      ((E.realHomeomorph (le_refl 2)).symm (inc y)).val.snd n := by
+  have h := congrArg Subtype.val
+    (D.realHomeomorph_symm_exponent E (by norm_num) (le_refl 2) (by norm_num) y)
+  exact ⟨congrArg (fun φ : CoeffPair 2 => φ.fst n) h,
+    congrArg (fun φ : CoeffPair 2 => φ.snd n) h⟩
+
+end NLS.GlobalBirkhoffChecks

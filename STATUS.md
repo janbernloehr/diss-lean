@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: Proposition 17.3
+## Current milestone: global analytic inverse and open dense range
+
+`SourceBirkhoffGlobalInverse.lean` bundles the actual real Birkhoff map
+as a global homeomorphism for every `1 < p ≤ 2`. Its inverse agrees near
+each target with the analytic local inverse of Proposition 17.1, hence
+is analytic everywhere. Its strict derivative is exactly the inverse of
+the original real Birkhoff Jacobian at the recovered source. Global
+inverses commute with increasing the exponent within this range, even
+for independently constructed normalized families. A family realizing
+the bi-real-analytic diffeomorphism of Theorem 14.1(v) is constructed.
+
+`SourceBirkhoffDenseRange.lean` proves that every finite output truncation
+belongs to the actual real map's range at every finite exponent above
+one. Below two this follows from Proposition 17.3. Above two the finite
+block is realized in Hilbert space and the actual source is included
+into the larger exponent; map compatibility gives exactly the desired
+truncation. Norm convergence of finite truncations proves dense range.
+Together with the existing open embedding, the image is open and dense
+for every `1 < p < ∞`, as asserted in Theorem 14.1(iv).
+
+Public checks construct the global analytic homeomorphism at `p = 3/2`,
+verify that its inverse derivative inverts the original Jacobian at any
+target, and compare its source Fourier coefficients with those of an
+independently constructed Hilbert inverse. At `p = 3`, arbitrary targets
+can be approximated in the full target norm by actual images, and every
+finite truncation has an actual finite-gap preimage.
+
+Next continue with Lemma 17.5: define the action tori, prove their
+compactness, and identify the images of actual isospectral sets.
+That identification and the remaining dissertation results are still
+unfinished. Surjectivity for `p > 2` is not claimed.
+
+## Previous milestone: Proposition 17.3
 
 `SourceHilbertFiniteActionReduction.lean` composes the actual Hilbert
 angle flows in list order. Admissibility checks each nonnegative time

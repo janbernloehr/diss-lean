@@ -2142,3 +2142,6 @@ import NLS.ZakharovShabat.SourceHilbertAngleDisplacement
 import NLS.SequenceSpaces.RealActionTail
 import NLS.ZakharovShabat.SourceHilbertFiniteActionReduction
 import NLS.ZakharovShabat.SourceBirkhoffProposition17_3
+
+import NLS.ZakharovShabat.SourceBirkhoffGlobalInverse
+import NLS.ZakharovShabat.SourceBirkhoffDenseRange
