@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Latest progress: analytic square across the selected gap
+## Latest progress: local joint logarithm charts and exact differential
+
+`SourceAbelianLogChart.lean` constructs local logarithm charts anchored
+at the exact value of the real-source normalized abelian primitive.
+For every spectral point off the cuts, an open neighborhood in the
+joint spectral/complex-source space supports all signed indices at
+once. Each chart is jointly complex analytic there, and its full
+Fréchet differential is `d Delta / canonicalRoot`.
+
+Restricting this differential gives both the spectral quotient and the
+potential derivative `partial Delta / canonicalRoot` at every complex
+source in the neighborhood. The chart agrees exactly with the existing
+normalized primitive on the anchor real source's spectral germ.
+Changing the index adds precisely `i n pi`, and exponentiation recovers
+the Floquet multiplier with the exact corresponding exponential factor.
+
+`NormalizedLogChart.lean` supplies a reusable local logarithm
+`A + log(M/M(anchor))`, fixing the additive value even when the original
+multiplier lies outside the principal slit plane. `SourceFloquetJointLog.lean`
+proves joint analyticity of the actual multiplier and derives the
+logarithmic differential from the canonical root's square identity.
+The derivative formula applies throughout the complex-source analytic
+domain whenever the normalized logarithm is on its slit plane.
+
+Public checks use exponent 3/2, one neighborhood for all signed indices,
+arbitrary nearby complex potentials in the potential and spectral
+derivative formulas, an exact negative-index free-source germ, and
+recovery of the multiplier by exponentiation.
+
+This supplies local charts and the differential needed for Lemma 19.1(i).
+It does not yet identify charts anchored at different sources with one
+globally normalized complex-source primitive. That compatibility and
+the full product-domain joint-analyticity assertion remain next.
+Complex-source endpoint and square continuation, locally source-uniform
+and index-uniform estimates in (iii), subsequent frequency results,
+and the full dissertation remain unfinished.
+
+## Previous milestone: analytic square across the selected gap
 
 `SourceAbelianSquare.lean` constructs a chart-independent continuation
 of `(F_0 + i n pi)^2`. It agrees with the actual normalized square on

@@ -26508,3 +26508,68 @@ example (n : ℤ) (z : ℂ) :
   rw [sourceAbelianSquare_zero,add_sub_cancel_right]
 
 end NLS.AbelianSquareChecks
+
+
+noncomputable section
+namespace NLS.AbelianLogChartChecks
+open Set Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- One open product-space neighborhood works for every signed index.
+-- The tested potential is arbitrary complex; only the anchor is real.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (a : ℂ)
+    (ha : a ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val) :
+    ∃ V : Set (ℂ × CoeffPair (ENNReal.ofReal (3/2))), IsOpen V ∧ (a,φ.val) ∈ V ∧
+      ∀ n : ℤ, AnalyticOnNhd ℂ (sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a n) V ∧
+        ∀ (z : ℂ) (ψ : CoeffPair (ENNReal.ofReal (3/2))), (z,ψ) ∈ V → ∀ h : CoeffPair (ENNReal.ofReal (3/2)),
+          (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) => sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a n (z,χ)) ψ) h =
+            (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) => canonicalDiscriminant (by simp) (periodOnePotential χ) z) ψ) h /
+              sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  obtain ⟨V,hV,hbase,_,hcharts⟩ := exists_sourceAbelianLogChart_joint_neighborhood (by simp) (by norm_num)
+    φ.val φ.property a ha
+  refine ⟨V,hV,hbase,?_⟩
+  intro n
+  refine ⟨(hcharts n).1,?_⟩
+  intro z ψ ht h
+  simpa only using! sourceAbelianLogChart_source_fderiv (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num) φ.val φ.property a n z ψ h (by simpa only using! (hcharts n).2 (z,ψ) ht)
+
+-- The spectral derivative is the literal quotient at nearby complex
+-- potentials, without requiring those potentials to be of real type.
+example (φ : realTypeSourceSubmodule 3) (a : ℂ)
+    (ha : a ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val) :
+    ∃ V : Set (ℂ × CoeffPair 3), IsOpen V ∧ (a,φ.val) ∈ V ∧
+      ∀ (z : ℂ) (ψ : CoeffPair 3), (z,ψ) ∈ V →
+        deriv (fun w => sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a (-3) (w,ψ)) z =
+          deriv (canonicalDiscriminant (by simp) (periodOnePotential ψ)) z /
+            sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  obtain ⟨V,hV,hbase,_,hcharts⟩ := exists_sourceAbelianLogChart_joint_neighborhood (by simp) (by norm_num)
+    φ.val φ.property a ha
+  refine ⟨V,hV,hbase,?_⟩
+  intro z ψ ht
+  simpa only using! sourceAbelianLogChart_spectral_deriv (p := 3) (by simp) (by norm_num) φ.val φ.property a (-3) z ψ
+    (by simpa only using! (hcharts (-3)).2 (z,ψ) ht)
+
+-- Exact free-source germ at an odd negative index: no integer-logarithm
+-- ambiguity remains after matching the anchor value.
+example (a : ℂ) (ha : a ∈ sourceCanonicalRootDomain (p := 3) (by simp) (by norm_num) 0) :
+    (fun z : ℂ => sourceAbelianLogChart (p := 3) (by simp) (by norm_num) 0 (by simp) a (-3) (z,0)) =ᶠ[𝓝 a]
+      (fun z => -Complex.I*z-3*Complex.I*(Real.pi : ℂ)) := by
+  have h := sourceAbelianLogChart_eventually_eq_anchor_primitive (by simp) (by norm_num) 0 (by simp) a (-3) ha
+  filter_upwards [h] with z hz
+  rw [hz,sourceAbelianPrimitive_zero]
+  norm_num
+  ring
+
+-- Exponentiating the zero-index chart recovers the multiplier even
+-- at a complex source, with no extra normalization factor.
+example (φ : realTypeSourceSubmodule 3) (a z : ℂ) (ψ : CoeffPair 3)
+    (ha : a ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val)
+    (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) ψ) :
+    exp (sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property a 0 (z,ψ)) =
+      sourceFloquetMultiplier (by simp) (by norm_num) ψ z := by
+  simpa only [Int.cast_zero,mul_zero,exp_zero,one_mul,sourceFloquetJointMultiplier] using
+    sourceAbelianLogChart_exp (by simp) (by norm_num) φ.val φ.property a 0 (z,ψ) ha hz
+
+end NLS.AbelianLogChartChecks

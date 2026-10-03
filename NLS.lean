@@ -2204,3 +2204,7 @@ import NLS.ComplexAnalysis.DenseAnalyticExtension
 import NLS.ComplexAnalysis.GapPrimitiveSquare
 import NLS.ZakharovShabat.SourceAbelianDiscSquare
 import NLS.ZakharovShabat.SourceAbelianSquare
+
+import NLS.ComplexAnalysis.NormalizedLogChart
+import NLS.ZakharovShabat.SourceFloquetJointLog
+import NLS.ZakharovShabat.SourceAbelianLogChart
