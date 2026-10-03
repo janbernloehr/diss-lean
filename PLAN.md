@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: actual Dirichlet gradient summability
+## Latest progress: both G.7 estimates in the conjugate Fourier norm
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -69,12 +69,20 @@ the entire real source locus. Exponent compatibility and density identify
 the free functional at every such source exponent. The actual source
 operator error is summable too, including every signed central index.
 
-One shared complex domain now supports both the midpoint and Dirichlet
-source operator estimates. Next export the midpoint estimate in the literal
-conjugate Fourier pair norm, preserving the reversed-frequency convention,
-then apply these gradient estimates to finite-gap sources in Lemma 16.1.
-The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
-Theorem 14.1, and later chapters remain unfinished.
+Both actual derivative estimates now hold on one shared complex domain in
+the literal conjugate Fourier pair norm. A bounded scalar functional has a
+conjugate coefficient representative with equal norm, proved by finite dual
+tests and bounded pointwise limits. Component recovery and frequency
+reversal form a bounded complex-linear map from source operators to physical
+Fourier gradients. It gives the midpoint estimate and the Dirichlet error
+estimate, their full-direction duality formulas, and their outer ℓp
+summability, for every finite `p≥2`.
+
+Next apply the spectral gradient estimates to finite-gap sources in Lemma
+16.1, including its full `1<p<∞` exponent range. G.7 is proved here for finite
+`p≥2`; no other exponent range is claimed. The sharper G.1 integral bound,
+Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters remain
+unfinished.
 
 ## Milestones
 

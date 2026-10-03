@@ -1990,3 +1990,7 @@ import NLS.ZakharovShabat.SourceDirichletGradientErrorCotangent
 import NLS.ZakharovShabat.SourceFreeDirichletCotangent
 import NLS.ZakharovShabat.SourceDirichletSobolevSummability
 import NLS.ZakharovShabat.SourceSpectralGradientSobolevSummability
+
+import NLS.SequenceSpaces.ConjugateCotangent
+import NLS.SequenceSpaces.SourceConjugateGradient
+import NLS.ZakharovShabat.SourceSpectralConjugateGradients

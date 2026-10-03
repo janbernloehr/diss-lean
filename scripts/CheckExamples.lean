@@ -23656,3 +23656,73 @@ example (φ : CoeffPair 2) (hφ : φ ∈ realTypeSourceLocus 2) (a : Domain 2)
   memlp_real_source_dirichlet_fderiv_sobolev (by norm_num) (by norm_num) (by norm_num) φ hφ a ha
 
 end NLS.ZakharovShabat
+
+namespace NLS
+open Set
+
+-- Scalar dual recovery is exact and preserves operator norm at a non-Hilbert exponent.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : (ENNReal.ofReal (3/2)).HolderConjugate 3 := by
+  have h := (Real.HolderConjugate.conjExponent (by norm_num : 1 < (3 : ℝ))).symm.ennrealOfReal
+  convert h using 1 <;> norm_num [Real.conjExponent]
+
+example (L : Coeff 3 →L[ℂ] ℂ) :
+    ‖Coeff.conjugateCotangent (q := ENNReal.ofReal (3/2)) (by norm_num) (by simp) L‖ = ‖L‖ :=
+  Coeff.norm_conjugateCotangent (by norm_num) (by simp) L
+
+-- The recovered Fourier pair tests physical frequency -k, without conjugation.
+example (L : CoeffPair 3 →L[ℂ] ℂ) (k : ℤ) :
+    (CoeffPair.conjugateGradient (q := ENNReal.ofReal (3/2)) (by norm_num) (by simp) L).fst k =
+      L (CoeffPair.inlCLM (lp.single 3 (-k) 1)) ∧
+    (CoeffPair.conjugateGradient (q := ENNReal.ofReal (3/2)) (by norm_num) (by simp) L).snd k =
+      L (CoeffPair.inrCLM (lp.single 3 (-k) 1)) := by
+  simp
+
+namespace ZakharovShabat
+
+-- Both G.7 estimates now hold in the literal inner ℓ^(3/2) pair norm,
+-- with outer ℓ³ norms, on one common complex neighborhood.
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ W →
+    ∀ (a : Domain 2), periodOnePotential φ = domainInclusion a →
+    Memℓp (fun n : ℤ => ‖sourceMidpointConjugateGradient (q := ENNReal.ofReal (3/2))
+      (by norm_num) (by norm_num) (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n‖) 3 ∧
+    Memℓp (fun n : ℤ => ‖sourceDirichletConjugateGradientError (q := ENNReal.ofReal (3/2))
+      (by norm_num) (by norm_num) (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n‖) 3 := by
+  obtain ⟨W,hW,hreal,h⟩ := exists_global_source_spectral_gradients_conjugate_memlp
+    (p := 3) (q := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) (by norm_num)
+  refine ⟨W,hW,hreal,?_⟩
+  intro φ hφ a ha
+  exact ⟨(h φ hφ a ha).1.norm,(h φ hφ a ha).2.norm⟩
+
+-- The physical midpoint gradient represents the actual derivative in every direction.
+example (φ h : CoeffPair 3) (n : ℤ) :
+    Coeff.dualPairing (Coeff.reflection (sourceMidpointConjugateGradient (q := ENNReal.ofReal (3/2))
+      (by norm_num) (by norm_num) φ n).fst) h.fst+
+    Coeff.dualPairing (Coeff.reflection (sourceMidpointConjugateGradient (q := ENNReal.ofReal (3/2))
+      (by norm_num) (by norm_num) φ n).snd) h.snd =
+      (fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ) h :=
+  sourceMidpointConjugateGradient_dualPairing (by norm_num) (by norm_num) φ h n
+
+-- The Dirichlet representation subtracts exactly the signed free half-wave functional.
+example (φ h : CoeffPair 3) (n : ℤ) :
+    Coeff.dualPairing (Coeff.reflection (sourceDirichletConjugateGradientError (q := ENNReal.ofReal (3/2))
+      (by norm_num) (by norm_num) φ n).fst) h.fst+
+    Coeff.dualPairing (Coeff.reflection (sourceDirichletConjugateGradientError (q := ENNReal.ofReal (3/2))
+      (by norm_num) (by norm_num) φ n).snd) h.snd =
+      (fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n) φ) h-
+        (1/2 : ℂ)*(h.fst (-n)+h.snd n) :=
+  sourceDirichletConjugateGradientError_dualPairing (by norm_num) (by norm_num) φ h n
+
+-- The Hilbert endpoint p=q=2 also has both full signed sequences, with no extra hypotheses.
+example (φ : CoeffPair 2) (hφ : φ ∈ realTypeSourceLocus 2) (a : Domain 2)
+    (ha : periodOnePotential φ = domainInclusion a) :
+    Memℓp (fun n : ℤ => sourceMidpointConjugateGradient (q := 2) (by simp) (by norm_num)
+      (CoeffPair.exponentInclusion (le_refl (2 : ℝ≥0∞)) φ) n) 2 ∧
+    Memℓp (fun n : ℤ => sourceDirichletConjugateGradientError (q := 2) (by simp) (by norm_num)
+      (CoeffPair.exponentInclusion (le_refl (2 : ℝ≥0∞)) φ) n) 2 :=
+  memlp_real_source_spectral_gradients_conjugate (by simp) (by norm_num) le_rfl φ hφ a ha
+
+end ZakharovShabat
+end NLS

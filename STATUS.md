@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: actual Dirichlet gradient summability on a common domain
+## Current milestone: both G.7 estimates in the conjugate Fourier norm
+
+For every finite source exponent `p≥2`, both the actual midpoint gradient
+and the actual Dirichlet gradient error now have outer ℓp summability in
+the conjugate Fourier pair norm. One open complex neighborhood contains
+the entire real source locus and works for both sequences, including the
+finite central block and collapsed periodic gaps. The Dirichlet correction
+is the exact functional `h ↦ (h₁(-n)+h₂(n))/2`.
+
+`ConjugateCotangent.lean` recovers the conjugate coefficient representative
+of a bounded scalar ℓp functional. Finite dual tests uniformly control every
+truncation; the bounded pointwise limit gives membership in ℓq. Finite-mode
+density proves that the representative recovers the entire functional,
+and its norm equals the original operator norm.
+
+`SourceConjugateGradient.lean` combines the two component representatives
+and reverses their Fourier indices to obtain the physical gradient. This
+recovery is a bounded complex-linear map into the component-sum coefficient
+space, with norm bounded by twice the source operator norm. Its bilinear
+duality formula holds for every source direction. It transfers summable
+operator sequences to summable conjugate Fourier gradients.
+
+`SourceSpectralConjugateGradients.lean` applies this recovery to the genuine
+canonical midpoint derivative and Dirichlet derivative error. It defines
+their physical coefficient pairs, proves both component identities and
+full-direction duality formulas, and exports both G.7 estimates on the
+same complex domain. The result is now in the literal Fourier pair norm,
+not only the source operator norm. Public checks cover `p=3`, conjugate
+exponent `3/2`, the Hilbert endpoint, the index signs, the exact free
+correction, and the common complex domain.
+
+Next apply the spectral gradient estimates to finite-gap sources in Lemma
+16.1, including the work needed for its full `1<p<∞` range. This checkpoint
+proves G.7 for finite `p≥2`; no other exponent range is claimed. The sharper
+G.1 integral bound, remaining assertions of Theorem 14.1, and later chapters
+remain unfinished.
+
+## Previous milestone: actual Dirichlet gradient summability on a common domain
 
 G.7's Dirichlet derivative error now has a proved conjugate Fourier
 coefficient pair whose norms form an outer ℓp sequence, for every finite
