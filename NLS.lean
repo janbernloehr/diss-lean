@@ -1948,3 +1948,6 @@ import NLS.ZakharovShabat.FreeCircleSeparation
 import NLS.ZakharovShabat.ClassicalSobolevDiscriminantError
 import NLS.ZakharovShabat.ClassicalSobolevContourQuotient
 import NLS.ZakharovShabat.ClassicalContourGradientIntegrandBound
+
+import NLS.ComplexAnalysis.QuadraticFactorVariationContour
+import NLS.ZakharovShabat.SourceMidpointGradientContour

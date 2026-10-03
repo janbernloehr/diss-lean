@@ -23247,3 +23247,35 @@ example (M : ℝ) (hM : 0 ≤ M) : ∃ N : ℕ, 0 < N ∧ ∃ b : ℤ → ℝ,
   exact ⟨N,hN,b,hb,fun a ha n hn z hz => h a ha _ (ContinuousLinearMap.norm_snd_le ..) n hn z hz⟩
 
 end NLS.ZakharovShabat
+
+namespace NLS.ComplexAnalysis
+open Set Metric Complex
+
+-- The double-root calculation removes the squared-gap variation without a simplicity premise.
+example (c a u v : ℂ) (r : ℝ) (hr : 0 < r) (ha : a ∈ ball c r) :
+    (∮ z in C(c,r), (-2*(z-a)*u-v/4)/(z-a)^2) = -(4*Real.pi*Complex.I)*u := by
+  simpa using circleIntegral_quadratic_factor_variation c a a u v r hr ha ha
+
+end NLS.ComplexAnalysis
+
+namespace NLS.ZakharovShabat
+open Set Metric Complex
+
+-- The contour computes the derivative of the actual indexed coordinate at a non-Hilbert exponent.
+example (φ : CoeffPair 3) (hφ : φ ∈ realTypeSourceLocus 3)
+    (n : ℤ) (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (ha : canonicalPeriodicLeft (by norm_num : (3 : ℝ≥0∞) ≠ ⊤) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) n ∈ ball c r)
+    (hb : canonicalPeriodicRight (by norm_num : (3 : ℝ≥0∞) ≠ ⊤) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) n ∈ ball c r)
+    (hisolate : closedBall c r ⊆ sourceStandardRootOmittedDomain (by norm_num) (by norm_num) φ n)
+    (h : CoeffPair 3) :
+    (fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ) h =
+    -(2*Real.pi*Complex.I : ℂ)⁻¹ * (∮ z in C(c,r),
+      canonicalDiscriminant (by norm_num) (periodOnePotential φ) z*
+        ((fderiv ℂ (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num) (periodOnePotential ψ) z) φ) h)/
+        ((canonicalDiscriminant (by norm_num) (periodOnePotential φ) z)^2-4)) :=
+  real_source_midpoint_gradient_contour (by norm_num) (by norm_num) φ hφ n c r hr ha hb hisolate h
+
+end NLS.ZakharovShabat

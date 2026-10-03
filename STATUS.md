@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: G.7 contour quotient and integrand bounds
+## Current milestone: actual midpoint gradient contour formula
+
+The actual canonical midpoint now satisfies the discriminant contour identity
+`dτₙ[h] = −(2πi)⁻¹ ∮ Δ(z) dΔ(z)[h] / (Δ(z)²−4) dz`.
+This is proved for every finite source exponent `p>1` on one common open
+neighborhood of all real sources. The circular disc must contain both
+selected indexed periodic endpoints and avoid every other periodic cut.
+The selected endpoints may coincide; no simple-root or open-gap premise
+is required. The result also specializes directly to every real source.
+
+`QuadraticFactorVariationContour.lean` proves the underlying residue
+calculation for a quadratic factor. The two enclosed poles give the
+midpoint variation, while the squared-gap variation integrates to zero,
+including at a double root. A nonvanishing analytic factor contributes
+zero by Cauchy's theorem.
+
+`SourceMidpointGradientContour.lean` applies this calculation to the
+actual canonical discriminant factorization. Joint analyticity of the
+omitted standard-root product makes the deleted product and its source
+derivative analytic on the disc. Its proved nonvanishing permits division.
+Differentiating the exact factorization supplies the linearized identity;
+the midpoint derivative is not introduced by defining a contour integral.
+Public checks cover the double-root calculation and the actual real-source
+coordinate formula at `p=3`.
+
+Next combine the contour formula with uniform isolation of the distant
+indexed pairs and transfer the physical Fourier-gradient integrand bounds
+through the integral to the source coordinate gradient. The Dirichlet
+eigenvalue normalization estimate is still needed for G.7. G.7, Lemma 16.1,
+the sharper G.1 integral bound, remaining assertions of Theorem 14.1, and
+later chapters remain unfinished.
+
+## Previous milestone: G.7 contour quotient and integrand bounds
 
 The quotient needed for G.7's midpoint contour estimate is now bounded
 uniformly over physical H¹ balls and every sufficiently distant contour.

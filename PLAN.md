@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: G.7 contour quotient and integrand estimates
+## Latest progress: actual midpoint gradient contour formula
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -16,11 +16,17 @@ The literal quotient-weighted gradient Fourier integrand has a common
 summable majorant for finite `p>1`, `q>1+1/p`, including the conjugate
 exponent. No pole-avoidance or denominator lower-bound premise is supplied.
 
-Next establish the actual midpoint gradient contour representation and
-pass these bounds through the integral. Then prove G.7's Dirichlet
-eigenvalue gradient normalization estimate and connect the results to
-the actual indexed source coordinates. Apply the completed Appendix G
-estimates to finite-gap sources in Lemma 16.1.
+The actual midpoint derivative now equals the normalized discriminant
+contour integral on a common open neighborhood of all real sources at
+finite `p>1`. The proof differentiates the canonical quadratic factorization
+and handles collapsed gaps directly. Its remaining geometric premise is an
+isolating disc enclosing the selected pair and avoiding the other cuts.
+
+Next supply uniform distant-pair isolation and transfer the physical
+Fourier-gradient bounds through the contour integral to the actual source
+coordinate gradient. Then prove G.7's Dirichlet eigenvalue normalization
+estimate. Apply the completed Appendix G estimates to finite-gap sources
+in Lemma 16.1.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
 Theorem 14.1, and later chapters remain unfinished.
 
