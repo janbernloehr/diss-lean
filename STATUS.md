@@ -1,6 +1,55 @@
 # Implementation status
 
-## Current milestone: G.5 Hilbert gradient summability
+## Current milestone: G.5 finite-exponent gradient summability
+
+Both assertions of G.5 are now proved throughout the finite exponent
+range for the constructed physical period-two `H¹` potentials. The
+actual gradient-error Fourier norms belong to outer `ℓp` whenever
+`1<p<∞` and `q>1+1/p`. Since `p′=p/(p−1)>1+1/p`, this includes
+the dissertation's conjugate Fourier exponent for every finite `p≥2`,
+and also extends that conclusion to finite `1<p<2`.
+
+The two errors compare the actual potential gradient with its free
+reference at `νₙ` under `νₙ=nπ+O(1)`, or at `nπ` under
+`νₙ=nπ+O(1/|n|)`. For each fixed spectral sequence, one summable
+majorant controls the whole Sobolev ball, all unit initial vectors,
+all contractive endpoint functionals, and all contractive scalar
+observations of the gradient pair. Arbitrary finite spectral heads,
+including zero frequencies, remain included. The coefficient sequences
+are the actual unit-interval Fourier integrals and agree with the
+previous Hilbert construction at `q=2`.
+
+`ClassicalEndpointGradientDerivative.lean` proves the exact time
+equation. Its spectral term multiplies the small gradient error; the
+other terms involve the reference-frequency difference and a mixed
+solution/dual-solution product. `ClassicalEndpointGradientDerivativeBound.lean`
+bounds that mixed product uniformly. `ClassicalSobolevGradientDerivativeBounds.lean`
+cancels spectral growth against inverse-frequency value decay to obtain
+uniform time-derivative bounds for both reference choices, plus coarse
+all-frequency bounds for finite heads.
+
+`ClassicalEndpointGradientFourierInterpolation.lean` applies the
+existing C¹ Fourier interpolation to these actual error functions.
+`ClassicalGradientFourierSummability.lean` constructs common
+whole-sequence majorants, and `ClassicalEndpointGradientFiniteSummability.lean`
+proves both uniform estimates, their sequence-membership conclusions,
+and the explicit conjugate-exponent corollaries.
+
+Public checks cover agreement at exponent two, the strip-uniform
+derivative bound, the strict conjugate-exponent threshold, G.5 at
+`p=3` and `p=4`, a uniform ball bound with an arbitrary exceptional
+frequency, and the broader theorem's infinity Fourier exponent `q`.
+This last case still has finite outer exponent `p`.
+
+The printed outer endpoint `p=∞` has `p′=1` and is not proved here.
+Its printed auxiliary-exponent argument does not apply at that endpoint;
+a separate audit remains. Next resolve that endpoint question, then
+prove G.6–G.7 and their finite-gap application in Lemma 16.1. The
+sharper G.1 integral bound, G.5's infinite outer endpoint, G.6–G.7,
+Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters
+remain unfinished.
+
+## Previous milestone: G.5 Hilbert gradient summability
 
 Both assertions of G.5 are now proved at the Hilbert exponent `p=2`
 for the constructed physical period-two `H¹` potentials. The actual

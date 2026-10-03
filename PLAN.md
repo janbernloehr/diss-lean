@@ -1,22 +1,20 @@
 # Implementation plan
 
-## Latest progress: Appendix G.5 Hilbert gradient summability
+## Latest progress: Appendix G.5 finite-exponent gradient summability
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
 finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. Appendix G.3 and G.4 are proved for the constructed
+`H¹`) are complete. Appendix G.3 and G.4 are proved for constructed
 physical period-two `H¹` potentials. Both assertions of G.5 now hold
-at `p=2`: the actual gradient-error Fourier `ℓ²` norms form an outer
-`ℓ²` sequence, with one whole-sequence majorant on each Sobolev ball.
-Both free-reference choices and arbitrary finite spectral heads are
-included. The error integrates to the actual difference of potential
-derivatives, and its free-reference signs are checked.
+for every finite `p≥2`, with actual Fourier norms at the conjugate
+exponent `p′=p/(p−1)`. The stronger threshold theorem covers all finite
+`p>1` and `q>1+1/p`, with one whole-sequence majorant on each Sobolev
+ball, both reference choices, and arbitrary finite spectral heads.
 
-Next extend G.5 to the conjugate Fourier exponents for finite `p>2`;
-audit the separate `p=∞` endpoint, where the printed proof's auxiliary
-exponent choice is unavailable. Then prove G.6–G.7 and apply these
-estimates to finite-gap sources in Lemma 16.1. G.5 beyond its Hilbert
-case, the sharper G.1 integral bound, remaining Appendix G estimates,
+Next audit G.5's separate outer endpoint `p=∞`, where the printed
+auxiliary-exponent argument is unavailable because `p′=1`. Then prove
+G.6–G.7 and their application to finite-gap sources in Lemma 16.1.
+The sharper G.1 integral bound, G.5's infinite outer endpoint, G.6–G.7,
 Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters
 remain unfinished.
 

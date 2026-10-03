@@ -65,28 +65,7 @@ theorem norm_classicalEndpointGradientRemainderL2Coefficients_all_frequencies_le
     (P : (ℂ × ℂ) →L[ℝ] ℂ) (hP : ‖P‖ ≤ 1) :
     ‖classicalEndpointGradientRemainderL2Coefficients (classicalSobolevPotential a) z w v L P‖ ≤
       12*(Real.exp (4*M+‖z‖+‖w‖))^3 := by
-  have hM : 0 ≤ M := (norm_nonneg a).trans ha
-  have hφ : ‖classicalSobolevPotential a‖ ≤ 4*M :=
-    (norm_classicalSobolevPotential_le a).trans (by linarith)
-  let E := Real.exp (4*M+‖z‖+‖w‖)
-  have hE : 0 ≤ E := Real.exp_nonneg _
-  apply norm_classicalEndpointGradientRemainderL2Coefficients_of_bound _ _ _ _ _ P hP _ (by positivity)
-  intro t
-  have h := norm_classicalEndpointGradientRemainder_of_bounds (classicalSobolevPotential a) z w v hv L hL
-    E (2*E) hE (by positivity) ?_ t
-  · exact h.trans_eq (by dsimp [E]; ring)
-  intro u hu s
-  have hS : ‖classicalSolution (classicalSobolevPotential a) z u s‖ ≤ E :=
-    (norm_classicalSolution_unit_strip_le (4*M) ‖z‖ _ hφ z (Complex.abs_im_le_norm z) u hu s).trans
-      (Real.exp_le_exp.mpr (by linarith [norm_nonneg w]))
-  have hF : ‖classicalFreeVector w u s‖ ≤ E := by
-    have he : classicalFreeVector w u s = classicalSolution 0 w u s := by
-      simp [classicalSolution_free,classicalFreeVector]
-    rw [he]
-    apply (norm_classicalSolution_unit_strip_le (4*M) ‖w‖ 0
-      (by simpa using (show 0 ≤ 4*M by positivity)) w (Complex.abs_im_le_norm w) u hu s).trans
-    apply Real.exp_le_exp.mpr
-    linarith [norm_nonneg z]
-  exact ⟨hS,hF,(norm_sub_le _ _).trans ((add_le_add hS hF).trans_eq (by ring))⟩
+  exact norm_classicalEndpointGradientRemainderL2Coefficients_of_bound _ _ _ _ _ P hP _ (by positivity)
+    (norm_classicalEndpointGradientRemainder_all_frequencies_le M a ha z w v hv L hL)
 
 end NLS.ZakharovShabat

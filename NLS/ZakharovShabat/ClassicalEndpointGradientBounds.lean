@@ -110,4 +110,33 @@ theorem norm_classicalEndpointGradientRemainder_shifted_le
       (mul_le_mul_of_nonneg_left hu (by positivity : 0 ≤ classicalSobolevErrorConstant M B+2*B))
       (by positivity : 0 ≤ (n.natAbs : ℝ))
 
+/-- A coarse bound at every pair of frequencies controls arbitrary finite spectral heads. -/
+theorem norm_classicalEndpointGradientRemainder_all_frequencies_le
+    (M : ℝ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M) (z w : ℂ)
+    (v : ℂ × ℂ) (hv : ‖v‖ ≤ 1) (L : (ℂ × ℂ) →L[ℂ] ℂ) (hL : ‖L‖ ≤ 1)
+    (t : Icc (0 : ℝ) 1) :
+    ‖classicalEndpointGradientRemainder (classicalSobolevPotential a) z w v L t‖ ≤
+      12*(Real.exp (4*M+‖z‖+‖w‖))^3 := by
+  have hM : 0 ≤ M := (norm_nonneg a).trans ha
+  have hφ : ‖classicalSobolevPotential a‖ ≤ 4*M :=
+    (norm_classicalSobolevPotential_le a).trans (by linarith)
+  let E := Real.exp (4*M+‖z‖+‖w‖)
+  have hE : 0 ≤ E := Real.exp_nonneg _
+  have h := norm_classicalEndpointGradientRemainder_of_bounds (classicalSobolevPotential a) z w v hv L hL
+    E (2*E) hE (by positivity) ?_ t
+  · exact h.trans_eq (by dsimp [E]; ring)
+  intro u hu s
+  have hS : ‖classicalSolution (classicalSobolevPotential a) z u s‖ ≤ E :=
+    (norm_classicalSolution_unit_strip_le (4*M) ‖z‖ _ hφ z (Complex.abs_im_le_norm z) u hu s).trans
+      (Real.exp_le_exp.mpr (by linarith [norm_nonneg w]))
+  have hF : ‖classicalFreeVector w u s‖ ≤ E := by
+    have he : classicalFreeVector w u s = classicalSolution 0 w u s := by
+      simp [classicalSolution_free,classicalFreeVector]
+    rw [he]
+    apply (norm_classicalSolution_unit_strip_le (4*M) ‖w‖ 0
+      (by simpa using (show 0 ≤ 4*M by positivity)) w (Complex.abs_im_le_norm w) u hu s).trans
+    apply Real.exp_le_exp.mpr
+    linarith [norm_nonneg z]
+  exact ⟨hS,hF,(norm_sub_le _ _).trans ((add_le_add hS hF).trans_eq (by ring))⟩
+
 end NLS.ZakharovShabat

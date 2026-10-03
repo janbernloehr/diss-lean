@@ -22967,4 +22967,86 @@ example (M : ℝ) (w : ℂ) : ∃ b : ℤ → ℝ, Memℓp b 2 ∧
 
 end AppendixGGradientHilbert
 
+section AppendixGGradientFinite
+open Set NLS.Fourier
+open scoped ENNReal
+
+-- The generalized Fourier coefficients preserve the previous Hilbert realization.
+example (φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z w : ℂ) (v : ℂ × ℂ)
+    (L : (ℂ × ℂ) →L[ℂ] ℂ) (P : (ℂ × ℂ) →L[ℝ] ℂ) :
+    classicalEndpointGradientFourierCoefficients (q := 2) (by norm_num) φ z w v L P =
+      classicalEndpointGradientRemainderL2Coefficients φ z w v L P :=
+  classicalEndpointGradientFourierCoefficients_two φ z w v L P
+
+-- The derivative bound is uniform in the real part of the spectral parameter.
+example (M H : ℝ) (a : ScalarDomain 2 × ScalarDomain 2) (ha : ‖a‖ ≤ M)
+    (z : ℂ) (hz : z ≠ 0) (hH : |z.im| ≤ H) (t : Icc (0 : ℝ) 1) :
+    ‖deriv (classicalEndpointGradientRemainder (classicalSobolevPotential a) z z (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ)) t‖ ≤ classicalGradientDerivativeConstant M H :=
+  norm_deriv_classicalEndpointGradientRemainder_sobolev_strip_le M H a ha z hz hH (0,1) (by simp)
+    _ (ContinuousLinearMap.norm_fst_le ..) t
+
+-- The exact conjugate exponent lies strictly above the threshold at every finite p>1.
+example (p : ℝ) (hp : 1 < p) : 1+1/p < p/(p-1) :=
+  conjugate_exponent_gt_gradient_threshold p hp
+
+-- G.5 at p=3: the actual Fourier ℓ^(3/2) gradient-error norms form an outer ℓ³ sequence.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalEndpointGradientFourierCoefficients
+      (q := ENNReal.ofReal (3/(3-1) : ℝ)) (by norm_num) (classicalSobolevPotential a)
+      ((Real.pi : ℂ)*(n : ℂ)+Complex.I) ((Real.pi : ℂ)*(n : ℂ)+Complex.I) (1,0)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.snd ℝ ℂ ℂ)‖) (ENNReal.ofReal (3 : ℝ)) := by
+  have h := memlp_classicalEndpointGradient_conjugate_fourier_norms 3 (by norm_num)
+    1 (by norm_num) 0 (fun n => (Real.pi : ℂ)*(n : ℂ)+Complex.I)
+    (by intro n _; simp) a (1,0) (by simp)
+    (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..)
+    (ContinuousLinearMap.snd ℝ ℂ ℂ) (ContinuousLinearMap.norm_snd_le ..)
+  exact h
+
+-- The shifted-free assertion at p=4 uses the target Fourier exponent 4/3.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalEndpointGradientFourierCoefficients
+      (q := ENNReal.ofReal (4/(4-1) : ℝ)) (by norm_num) (classicalSobolevPotential a)
+      ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ)) ((Real.pi*(n : ℝ) : ℝ) : ℂ) (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖) (ENNReal.ofReal (4 : ℝ)) := by
+  have h := memlp_classicalEndpointGradient_shifted_conjugate_fourier_norms 4 (by norm_num)
+    1 (by norm_num) 0 (fun n => (Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ))
+    (by intro n _; simp) a (0,1) (by simp)
+    (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..)
+    (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..)
+  exact h
+
+-- The majorant is shared by every potential in the ball, including a freely chosen spectral head.
+example (M : ℝ) (hM : 0 ≤ M) (w : ℂ) : ∃ b : ℤ → ℝ, Memℓp b (ENNReal.ofReal (3 : ℝ)) ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ,
+    ‖classicalEndpointGradientFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num)
+      (classicalSobolevPotential a)
+      (if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I)
+      (if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I) (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤ b n := by
+  have hν : ∀ n : ℤ, 1 ≤ n.natAbs →
+      ‖(if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I)-(Real.pi : ℂ)*(n : ℂ)‖ ≤ (1 : ℝ) := by
+    intro n hn
+    have hn0 : n ≠ 0 := by intro he; subst n; norm_num at hn
+    simp [hn0]
+  obtain ⟨b,hb,h⟩ := exists_classicalEndpointGradient_fourier_uniform_memlp 3 (by norm_num)
+    (ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M hM 1 (by norm_num) 1
+    (fun n => if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I) hν
+  exact ⟨b,hb,fun a ha n => h a ha (0,1) (by simp) _ (ContinuousLinearMap.norm_fst_le ..)
+    _ (ContinuousLinearMap.norm_fst_le ..) n⟩
+
+-- The broader threshold theorem also permits the infinity Fourier exponent.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalEndpointGradientFourierCoefficients (q := ⊤) (by simp)
+      (classicalSobolevPotential a) ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ))
+      ((Real.pi*(n : ℝ) : ℝ) : ℂ) (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖) (ENNReal.ofReal (3/2 : ℝ)) := by
+  apply memlp_classicalEndpointGradient_shifted_fourier_norms (3/2) (by norm_num) ⊤ (by simp)
+    1 (by norm_num) 0 _ _ a (0,1) (by simp)
+    _ (ContinuousLinearMap.norm_fst_le ..) _ (ContinuousLinearMap.norm_fst_le ..)
+  intro n _
+  simp
+
+end AppendixGGradientFinite
+
 end NLS.ZakharovShabat
