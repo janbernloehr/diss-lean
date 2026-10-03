@@ -23322,3 +23322,52 @@ example (φ : CoeffPair 3) (hφ : φ ∈ realTypeSourceLocus 3)
     φ hφ 3 (by norm_num) b hb N₀ hbound).norm
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set Metric Complex MeasureTheory NLS.LinearVolterra NLS.Fourier
+
+-- The source/physical derivative identity no longer requires finite Fourier support at the base point.
+example (φ h : CoeffPair 2) (Φ H : Curve (ℂ × ℂ))
+    (hΦ : physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend Φ)
+    (hH : physicalBase (periodOnePotential h) =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend H) (z : ℂ) :
+    sourceDiscriminantCotangent (by simp) z φ h =
+      (fderiv ℂ (fun Ψ : Curve (ℂ × ℂ) => classicalDiscriminant Ψ z) Φ) H :=
+  sourceDiscriminantCotangent_continuous_direction φ h Φ H hΦ hH z
+
+-- The actual source ℓ³ operator integrand is bounded by the physical ℓ^(3/2) coefficients.
+example (φ : CoeffPair 2) (Φ : Curve (ℂ × ℂ))
+    (hΦ : physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend Φ) (z : ℂ) :
+    ‖sourceMidpointContourIntegrand (p := 3) (by norm_num)
+      (CoeffPair.exponentInclusion (by norm_num) φ) z‖ ≤
+      ‖classicalDiscriminantQuotientGradientFourierCoefficients
+        (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) Φ z (ContinuousLinearMap.fst ℝ ℂ ℂ)‖+
+      ‖classicalDiscriminantQuotientGradientFourierCoefficients
+        (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) Φ z (ContinuousLinearMap.snd ℝ ℂ ℂ)‖ := by
+  let : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+  let : (ENNReal.ofReal (3/2 : ℝ)).HolderConjugate 3 := by
+    have hc : Real.HolderConjugate (3 : ℝ) (3/2) :=
+      (Real.holderConjugate_iff_eq_conjExponent (by norm_num)).mpr (by norm_num)
+    simpa using hc.symm.ennrealOfReal
+  exact norm_sourceMidpointContourIntegrand_le_physical_fourier
+    (by norm_num) (by norm_num) (by norm_num) (by norm_num) φ Φ hΦ z
+
+-- H¹ membership alone supplies the majorant; there are no contour, gradient, or open-gap premises.
+example (φ : CoeffPair 2) (hφ : φ ∈ realTypeSourceLocus 2) (a : Domain 2)
+    (ha : periodOnePotential φ = domainInclusion a) :
+    Memℓp (fun n : ℤ => ‖fderiv ℂ (fun ψ : CoeffPair 3 =>
+      canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (CoeffPair.exponentInclusion (by norm_num) φ)‖) 3 :=
+  (memlp_real_source_midpoint_fderiv_sobolev (by norm_num) (by norm_num) (by norm_num) φ hφ a ha).norm
+
+-- The estimate holds at nearby complex H¹ sources on one open neighborhood of the real locus.
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ φ : CoeffPair 2, CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ W →
+    ∀ a : Domain 2, periodOnePotential φ = domainInclusion a →
+    Memℓp (fun n : ℤ => fderiv ℂ (fun ψ : CoeffPair 3 =>
+      canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (CoeffPair.exponentInclusion (by norm_num) φ)) 3 :=
+  exists_global_source_midpoint_fderiv_sobolev_memlp (by norm_num) (by norm_num) (by norm_num)
+
+end NLS.ZakharovShabat

@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: uniform midpoint operator contours
+## Current milestone: midpoint derivative summability at H¹ sources
+
+The physical Fourier-gradient bounds now control the actual source midpoint
+derivatives. For every finite source exponent `p≥2`, one open neighborhood
+of the entire real source locus has the following property: at each H¹
+potential in that neighborhood, the operator norms of the actual indexed
+midpoint derivatives form an outer ℓp sequence. This includes nearby complex
+potentials and collapsed gaps. The H¹ premise is equality of the source's
+physical coefficients with the inclusion of a Sobolev-domain pair; no
+contour geometry, derivative formula, or summable majorant is assumed.
+
+`ContinuousSourceDiscriminantGradient.lean` extends the finite-input
+comparison to every compatible continuous physical representative. Physical
+compatibility is preserved along complex affine source lines, so differentiating
+the exact discriminant identity identifies the genuine source and physical
+derivatives. Testing the two unit Fourier directions recovers both physical
+gradient coefficients at reversed frequency. Exponent compatibility preserves
+these identities at every finite source exponent at least two.
+
+`SourceCotangentNormBound.lean` proves that unit Fourier values determine an
+actual continuous functional at a finite exponent. Hölder duality then bounds
+the source pair operator norm by the sum of its two conjugate coefficient
+norms. `SourceMidpointPhysicalFourierBound.lean` applies this to the literal
+quotient-weighted discriminant derivative. Frequency reversal is isometric,
+and the unit-interval Fourier conventions are identified exactly. The existing
+physical H¹-ball estimate therefore supplies a common summable bound for the
+actual source operator integrand at every distant contour point.
+
+`SourceMidpointSobolevSummability.lean` supplies the continuous representative
+from the physical Sobolev coefficients and combines the operator majorant with
+the proved midpoint contours. The choice of conjugate exponent is derived for
+every finite `p≥2`. A union of local contour neighborhoods gives the common
+open neighborhood of all real sources. The finite central block is unrestricted.
+The output is summability of the actual Fréchet derivatives in source operator
+norm; no assumed gradient is substituted for the indexed coordinate derivative.
+
+Public checks cover general compatible continuous directions, the physical
+ℓ^(3/2) bound for the actual ℓ³ source operator, the real H¹ midpoint derivative
+estimate without gradient premises, and its common open complex neighborhood.
+
+Next prove G.7's Dirichlet gradient normalization and shifted-free estimate,
+then use the gradient estimates in Lemma 16.1. G.7 as a whole, Lemma 16.1,
+the sharper G.1 integral bound, remaining assertions of Theorem 14.1, and
+later chapters remain unfinished. No infinite-exponent assertion is added.
+
+## Previous milestone: uniform midpoint operator contours
 
 The midpoint contour formula now applies on one open neighborhood of each
 real source at every sufficiently distant signed index. The contours are
