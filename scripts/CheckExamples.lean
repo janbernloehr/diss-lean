@@ -22902,4 +22902,69 @@ example (a : ScalarDomain 2 × ScalarDomain 2) :
 
 end AppendixGFourierSummability
 
+section AppendixGGradientHilbert
+open Set Complex NLS.LinearVolterra NLS.Fourier MeasureTheory
+
+-- The free upper off-diagonal gradient has the original potential-component sign.
+example (z : ℂ) (t : ℝ) :
+    classicalFreeEndpointGradient z (0,1) (ContinuousLinearMap.fst ℂ ℂ ℂ) t =
+      (Complex.I*Complex.exp (-Complex.I*z)*(Complex.exp (Complex.I*z*t))^2,0) :=
+  classicalFreeEndpointGradient_fst_second z t
+
+-- The constructed error represents the difference of actual potential derivatives.
+example (φ H : Curve (ℂ × ℂ)) (z w : ℂ) :
+    (fderiv ℂ (fun ψ : Curve (ℂ × ℂ) => (classicalSolution ψ z (0,1) 1).1) φ) H-
+      (fderiv ℂ (fun ψ : Curve (ℂ × ℂ) => (classicalSolution ψ w (0,1) 1).1) 0) H =
+      ∫ t in (0 : ℝ)..1,
+        (classicalEndpointGradientRemainder φ z w (0,1) (ContinuousLinearMap.fst ℂ ℂ ℂ) t).1*(extend H t).1+
+        (classicalEndpointGradientRemainder φ z w (0,1) (ContinuousLinearMap.fst ℂ ℂ ℂ) t).2*(extend H t).2 :=
+  fderiv_classicalEndpoint_sub_free_eq_gradient_error_integral φ H z w (0,1) (ContinuousLinearMap.fst ℂ ℂ ℂ)
+
+-- Fourier coefficients are the actual unit-interval integrals of the gradient error.
+example (φ : Curve (ℂ × ℂ)) (z w : ℂ) (k : ℤ) :
+    classicalEndpointGradientRemainderL2Coefficients φ z w (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.fst ℝ ℂ ℂ) k =
+      intervalFourierCoefficient 1 (fun t =>
+        (classicalEndpointGradient φ z (0,1) (ContinuousLinearMap.fst ℂ ℂ ℂ) t-
+         classicalFreeEndpointGradient w (0,1) (ContinuousLinearMap.fst ℂ ℂ ℂ) t).1) k := rfl
+
+-- G.5's first assertion at the Hilbert exponent along a nonreal shifted lattice.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalEndpointGradientRemainderL2Coefficients (classicalSobolevPotential a)
+      ((Real.pi : ℂ)*(n : ℂ)+Complex.I) ((Real.pi : ℂ)*(n : ℂ)+Complex.I) (1,0)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.snd ℝ ℂ ℂ)‖) 2 := by
+  apply memlp_classicalEndpointGradient_fourier_norms_two 1 (by norm_num) 0 _ _ a (1,0) (by simp)
+    _ (ContinuousLinearMap.norm_fst_le ..) _ (ContinuousLinearMap.norm_snd_le ..)
+  intro n _
+  simp
+
+-- G.5's second assertion uses the free reference at nπ, including n=0.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalEndpointGradientRemainderL2Coefficients (classicalSobolevPotential a)
+      ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ)) ((Real.pi*(n : ℝ) : ℝ) : ℂ) (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖) 2 := by
+  apply memlp_classicalEndpointGradient_shifted_fourier_norms_two 1 (by norm_num) 0 _ _ a (0,1) (by simp)
+    _ (ContinuousLinearMap.norm_fst_le ..) _ (ContinuousLinearMap.norm_fst_le ..)
+  intro n _
+  simp
+
+-- A completely arbitrary exceptional frequency at zero preserves uniformity over the ball.
+example (M : ℝ) (w : ℂ) : ∃ b : ℤ → ℝ, Memℓp b 2 ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ,
+    ‖classicalEndpointGradientRemainderL2Coefficients (classicalSobolevPotential a)
+      (if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I)
+      (if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I) (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤ b n := by
+  have hν : ∀ n : ℤ, 1 ≤ n.natAbs →
+      ‖(if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I)-(Real.pi : ℂ)*(n : ℂ)‖ ≤ (1 : ℝ) := by
+    intro n hn
+    have hn0 : n ≠ 0 := by intro he; subst n; norm_num at hn
+    simp [hn0]
+  obtain ⟨b,hb,h⟩ := exists_classicalEndpointGradient_fourier_uniform_memlp_two M 1 (by norm_num) 1
+    (fun n => if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I) hν
+  exact ⟨b,hb,fun a ha n => h a ha (0,1) (by simp) _ (ContinuousLinearMap.norm_fst_le ..)
+    _ (ContinuousLinearMap.norm_fst_le ..) n⟩
+
+end AppendixGGradientHilbert
+
 end NLS.ZakharovShabat

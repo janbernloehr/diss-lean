@@ -1,6 +1,54 @@
 # Implementation status
 
-## Current milestone: G.4 Fourier-norm summability
+## Current milestone: G.5 Hilbert gradient summability
+
+Both assertions of G.5 are now proved at the Hilbert exponent `p=2`
+for the constructed physical period-two `H¹` potentials. The actual
+endpoint-gradient error has an `ℓ²` sequence of unit-interval Fourier
+`ℓ²` norms, comparing with the free gradient at `νₙ` under bounded
+spectral displacement, or at `nπ` under `O(1/|n|)` displacement.
+For each fixed spectral sequence, a single square-summable majorant
+controls every potential in a fixed coefficient ball, every unit initial
+vector, every contractive complex endpoint functional, and every
+contractive scalar observation of the potential-gradient pair.
+All indices are included, with arbitrary finite spectral heads and zero
+frequencies allowed. Matrix entries are obtained from the basis vectors
+and coordinate projections.
+
+`EndpointGradientPolynomial.lean` isolates the actual cubic gradient
+expression in five solution values, including the terminal columns.
+When both sets of values have norm at most `E` and differ by at most
+`D`, their gradient expressions differ by at most `6 E² D`.
+`ClassicalEndpointGradientRemainder.lean` identifies this polynomial
+with the existing actual gradient, constructs its free reference, proves
+agreement at zero potential, and proves time `C¹` regularity.
+`ClassicalEndpointGradientBounds.lean` gives inverse-frequency and
+inverse-index pointwise bounds for both reference choices, uniformly
+on Sobolev balls and spectral strips.
+
+`ClassicalEndpointGradientL2.lean` constructs the actual Fourier
+coefficients and transfers the pointwise bound by Parseval, also proving
+a coarse all-frequency bound for finite heads.
+`ClassicalEndpointGradientHilbertSummability.lean` constructs the
+whole-sequence square-summable majorants and proves membership.
+`ClassicalEndpointGradientErrorIntegral.lean` proves that integrating
+the error gives the actual difference of endpoint potential derivatives;
+it also verifies the free upper off-diagonal gradient and its sign.
+
+Public checks cover the derivative identity, actual Fourier-integral
+identity, free-reference sign, square summability along `nπ+i` and
+`nπ+i/|n|`, and a uniform ball bound with an arbitrary exceptional
+spectral value at zero.
+
+Next extend the Fourier estimate to the conjugate exponents needed
+for finite `p>2`. The printed `p=∞` endpoint needs a separate argument:
+the proof chooses an exponent below `p′`, which is unavailable at
+`p′=1`. This is a proof-gap observation, not a formal counterexample.
+G.5 beyond its Hilbert case, G.6–G.7, the sharper integral estimate in
+G.1, Lemma 16.1, remaining assertions of Theorem 14.1, and later
+chapters remain unfinished.
+
+## Previous milestone: G.4 Fourier-norm summability
 
 Corollary G.4 is now proved for the constructed physical period-two
 `H¹` potentials. For every finite real `p>1` and Fourier exponent
