@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Latest progress: actual joint charts at every off-cut anchor
+## Latest progress: a single joint analytic abelian primitive
+
+`SourceAbelianJointPrimitive.lean` constructs one chart-independent,
+jointly complex-analytic normalized abelian primitive on an open union
+of product neighborhoods. Its intersection with every real-source slice
+is exactly that source's full spectral cut complement, and its values
+there are the actual `F_0 + i n pi`. At every complex-source point of the
+joint domain, its full differential is `d Delta / canonicalRoot`.
+Changing the signed index adds exactly `i n pi`, and exponentiation
+recovers the Floquet multiplier with its prescribed index factor.
+
+`SourceAbelianJointChart.lean` proves compatibility for charts with both
+different spectral anchors and different real-source anchors, on their
+entire complex-source overlap. The real-part projection contracts
+distances and fixes real sources, so projecting an overlap point stays
+inside both chart balls. The actual real-source values agree there;
+equality of joint derivatives extends this equality over the convex
+overlap. The existing holomorphic-chart gluing construction then gives
+the single primitive, independent of every local chart choice.
+
+`SourceAbelianJointProperties.lean` proves the spectral derivative and
+the potential derivative `partial Delta / canonicalRoot` for this glued
+function. Every compact spectral subset off the cuts has an open
+spectral neighborhood and one common complex-source ball contained in
+the joint domain. This is uniform over the entire compact set and all
+signed indices. The exact free-source formula is also retained.
+
+Public checks cover complex-source overlaps between independently
+anchored charts, inclusion and exact values on all real-source slices,
+common product neighborhoods over arbitrary compact sets at exponent
+3/2, complex-source derivatives and exponentiation, and an odd negative
+free normalization at a nonreal spectral point.
+
+This resolves complex-source chart compatibility and constructs the
+joint primitive needed for Lemma 19.1(i). The remaining domain assertion
+is a single source neighborhood over the full unbounded spectral
+exterior of an isolating-disc family; compact-set uniformity alone does
+not prove it. Complex-source endpoint and square continuation, locally
+source-uniform and index-uniform estimates in (iii), subsequent frequency
+results, and the full dissertation remain unfinished.
+
+## Previous milestone: actual joint charts at every off-cut anchor
 
 `SourceAbelianJointExtension.lean` removes the band-anchor restriction:
 at every spectral point off the cuts of a real potential, one positive

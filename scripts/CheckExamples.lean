@@ -26691,3 +26691,69 @@ example (φ χ : realTypeSourceSubmodule 3) (a b : ℂ)
   exact ((hφ n).2.2 ψ hψφ z hz.1).trans ((hχ n).2.2 ψ hψχ z hz.2).symm
 
 end NLS.AbelianJointExtensionChecks
+
+
+noncomputable section
+namespace NLS.AbelianJointGluingChecks
+open Set Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Distinct spectral and real-source anchors are allowed; the point
+-- on their overlap has an arbitrary complex potential.
+example (D E : SourceAbelianJointChart (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num))
+    (z : ℂ) (ψ : CoeffPair (ENNReal.ofReal (3/2)))
+    (hD : (z,ψ) ∈ D.domain) (hE : (z,ψ) ∈ E.domain) :
+    D.toFun (-3) (z,ψ) = E.toFun (-3) (z,ψ) :=
+  D.eqOn_overlap E (-3) ⟨hD,hE⟩
+
+-- Every actual real-source value off the cuts belongs to the same
+-- global joint domain and keeps its exact zero-index normalization.
+example (φ : realTypeSourceSubmodule 3) (z : ℂ)
+    (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val) :
+    (z,φ.val) ∈ sourceAbelianJointDomain (by simp) (by norm_num) ∧
+      sourceAbelianJointPrimitive (by simp) (by norm_num) 0 (z,φ.val) =
+        sourceAbelianPrimitive (by simp) (by norm_num) φ.val φ.property z := by
+  refine ⟨(mem_sourceAbelianJointDomain_real_iff (by simp) (by norm_num) φ z).mpr hz,?_⟩
+  simpa only [Int.cast_zero,mul_zero,add_zero] using
+    sourceAbelianJointPrimitive_eq_real (by simp) (by norm_num) 0 φ z hz
+
+-- A single potential radius works over an arbitrary compact spectral
+-- set, not just finitely many points. Every index is analytic on the
+-- resulting open product and has the exact complex-source derivative.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (K : Set ℂ)
+    (hK : IsCompact K) (hroot : K ⊆ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val) :
+    ∃ (U : Set ℂ) (r : ℝ), IsOpen U ∧ K ⊆ U ∧ 0 < r ∧ ∀ n : ℤ,
+      AnalyticOnNhd ℂ (sourceAbelianJointPrimitive (by simp) (by norm_num) n)
+        (U ×ˢ Metric.ball φ.val r) ∧
+      ∀ (z : ℂ) (ψ h : CoeffPair (ENNReal.ofReal (3/2))), z ∈ U → ψ ∈ Metric.ball φ.val r →
+        (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+          sourceAbelianJointPrimitive (by simp) (by norm_num) n (z,χ)) ψ) h =
+          (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+            canonicalDiscriminant (by simp) (periodOnePotential χ) z) ψ) h /
+            sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  obtain ⟨U,r,hU,hKU,hr,hsub⟩ := exists_sourceAbelianJointDomain_compact_product (by simp) (by norm_num) φ K hK hroot
+  refine ⟨U,r,hU,hKU,hr,fun n => ⟨(sourceAbelianJointPrimitive_analytic (by simp) (by norm_num) n).mono hsub,?_⟩⟩
+  intro z ψ h hz hψ
+  simpa only using! sourceAbelianJointPrimitive_source_fderiv (by simp) (by norm_num) n z ψ h (hsub ⟨hz,hψ⟩)
+
+-- The glued zero-index function exponentiates to the multiplier at
+-- complex potentials, so no extra multiplicative constant is present.
+example (t : ℂ × CoeffPair 3) (ht : t ∈ sourceAbelianJointDomain (by simp) (by norm_num)) :
+    exp (sourceAbelianJointPrimitive (by simp) (by norm_num) 0 t) =
+      sourceFloquetMultiplier (by simp) (by norm_num) t.2 t.1 := by
+  simpa only [Int.cast_zero,mul_zero,exp_zero,one_mul,sourceFloquetJointMultiplier] using
+    sourceAbelianJointPrimitive_exp (by simp) (by norm_num) 0 t ht
+
+-- A negative odd normalization index keeps the exact free value at
+-- a genuinely nonreal spectral parameter.
+example : sourceAbelianJointPrimitive (p := 3) (by simp) (by norm_num) (-3) (Complex.I,0) =
+    1-3*Complex.I*(Real.pi : ℂ) := by
+  have hz : Complex.I ∈ sourceCanonicalRootDomain (p := 3) (by simp) (by norm_num) 0 :=
+    sourceCanonicalRootDomain_of_im_ne_zero (by simp) (by norm_num) 0 (by simp) Complex.I (by simp)
+  rw [sourceAbelianJointPrimitive_zero (by simp) (by norm_num) (-3) Complex.I hz]
+  norm_num
+  ring
+
+end NLS.AbelianJointGluingChecks

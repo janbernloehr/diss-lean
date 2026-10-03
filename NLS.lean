@@ -2217,3 +2217,7 @@ import NLS.ComplexAnalysis.ParameterContinuityPropagation
 import NLS.ZakharovShabat.SourceRootDomainConnected
 import NLS.ZakharovShabat.SourceAbelianSourceContinuity
 import NLS.ZakharovShabat.SourceAbelianJointExtension
+
+import NLS.ZakharovShabat.SourceAbelianJointChart
+import NLS.ZakharovShabat.SourceAbelianJointPrimitive
+import NLS.ZakharovShabat.SourceAbelianJointProperties
