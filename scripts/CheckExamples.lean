@@ -25011,3 +25011,71 @@ example (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
   simp [lp.single_apply, Ne.symm hne]
 
 end NLS.CompactSpectralCoefficientChecks
+
+namespace NLS.SpectralTraceCoefficientChecks
+open NLS.ZakharovShabat Set Filter Topology Metric Complex
+
+-- The first weighted moment identity includes the endpoint exponent p=1.
+example (φ : PairSpace 1) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) φ) :
+    contourOperator (by simp) φ c r =
+      (2*Real.pi*Complex.I : ℂ)⁻¹ • ∮ z in C(c,r), z • resolvent (by simp) φ z :=
+  contourOperator_eq_weighted_resolvent_integral (by simp) φ c r hr hc
+
+-- Higher scalar weights are covered, not just the projection and first moment.
+example (a : ℕ → PairSpace 3) (b : PairSpace 3) (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).1 n) atTop (𝓝 (b.1 n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).2 n) atTop (𝓝 (b.2 n)))
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r) (hc : sphere c r ⊆ resolventSet (by simp) b) :
+    Tendsto (fun k => (2*Real.pi*Complex.I : ℂ)⁻¹ • ∮ z in C(c,r), z^3 • resolvent (by simp) (a k) z) atTop
+      (𝓝 ((2*Real.pi*Complex.I : ℂ)⁻¹ • ∮ z in C(c,r), z^3 • resolvent (by simp) b z)) :=
+  tendsto_weighted_resolvent_integral_of_bounded_coefficientwise (by simp) (by norm_num)
+    a b hb ht₁ ht₂ c r hr hc (fun z => z^3) (continuousOn_id.pow 3)
+
+-- All powers of the intrinsic spectral restriction converge in actual source coordinates.
+example (a : ℕ → CoeffPair 3) (b : CoeffPair 3) (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).snd n) atTop (𝓝 (b.snd n)))
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) (periodOnePotential b)) (m : ℕ) :
+    Tendsto (fun k => contourTracePower (by simp) (periodOnePotential (a k)) c r m) atTop
+      (𝓝 (contourTracePower (by simp) (periodOnePotential b) c r m)) :=
+  tendsto_source_contourTracePower_of_bounded_coefficientwise (by simp) (by norm_num)
+    a b hb ht₁ ht₂ c r hr hc m
+
+-- Both ordered endpoints converge at a double eigenvalue; no open-gap premise appears.
+example (φ : ℕ → CoeffPair 2) (ψ : CoeffPair 2) (hb : Bornology.IsBounded (range φ))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (φ k).fst n) atTop (𝓝 (ψ.fst n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (φ k).snd n) atTop (𝓝 (ψ.snd n)))
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) (periodOnePotential ψ))
+    (hdim : Module.finrank ℂ (resolventCircleIntegral (by simp) (periodOnePotential ψ) c r).range = 2)
+    (a b : ℕ → ℝ) (x : ℝ)
+    (hψ : enclosedPeriodicSpectrum (by simp) (periodOnePotential ψ) c r = {(x : ℂ)})
+    (hab : ∀ᶠ k in atTop, a k ≤ b k ∧
+      enclosedPeriodicSpectrum (by simp) (periodOnePotential (φ k)) c r = {(a k : ℂ), (b k : ℂ)}) :
+    Tendsto a atTop (𝓝 x) ∧ Tendsto b atTop (𝓝 x) :=
+  tendsto_source_real_spectral_pair_of_bounded_coefficientwise (by simp) (by norm_num)
+    φ ψ hb ht₁ ht₂ c r hr hc hdim a b x x le_rfl (by simpa using hψ) hab
+
+-- Fixed spectral disks converge to their free midpoint and zero gap although these potential norms stay one.
+example (n : ℤ) :
+    Tendsto (fun k : ℕ => periodicMidpoint (p := 2) (by simp)
+      (lp.single 2 (k : ℤ) (1 : ℂ), 0) n) atTop (𝓝 ((Real.pi : ℂ)*n)) ∧
+    Tendsto (fun k : ℕ => periodicSquaredGap (p := 2) (by simp)
+      (lp.single 2 (k : ℤ) (1 : ℂ), 0) n) atTop (𝓝 0) := by
+  have hb : Bornology.IsBounded (range (fun k : ℕ =>
+      ((lp.single 2 (k : ℤ) (1 : ℂ), 0) : PairSpace 2))) := by
+    apply isBounded_iff_forall_norm_le.mpr
+    refine ⟨1, ?_⟩
+    rintro _ ⟨k, rfl⟩
+    simp [Prod.norm_def, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 2)]
+  apply tendsto_periodicMidpoint_and_squaredGap_zero_of_bounded_coefficientwise
+    (by simp) (by norm_num) _ hb ?_ (fun _ => tendsto_const_nhds) n
+  intro j
+  apply tendsto_const_nhds.congr'
+  filter_upwards [eventually_ge_atTop (j.natAbs+1)] with k hk
+  have hne : (k : ℤ) ≠ j := by have hbound : j ≤ (j.natAbs : ℤ) := Int.le_natAbs; omega
+  simp [lp.single_apply, Ne.symm hne]
+
+end NLS.SpectralTraceCoefficientChecks

@@ -2093,3 +2093,8 @@ import NLS.ZakharovShabat.ResolventReferenceChange
 import NLS.ZakharovShabat.ResolventCompactConvergence
 import NLS.ZakharovShabat.SpectralClusterCoefficientStability
 import NLS.ZakharovShabat.SourceSpectralCoefficientConvergence
+
+import NLS.ZakharovShabat.ContourOperatorCoefficientConvergence
+import NLS.ZakharovShabat.ContourTraceCoefficientConvergence
+import NLS.ZakharovShabat.RealSpectralPairCoefficientConvergence
+import NLS.ZakharovShabat.SourceSpectralTraceCoefficientConvergence

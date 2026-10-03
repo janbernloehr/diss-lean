@@ -9253,3 +9253,40 @@ Next identify the limiting indexed spectral data and prove continuity of
 individual actions under bounded coefficient limits.
 `SourceHilbertActionsContinuousOnBoundedCoefficients` remains unproved;
 unconditional properness and Proposition 17.2 remain unfinished.
+
+## Latest progress: spectral trace and ordered eigenvalue limits
+
+`ContourOperatorCoefficientConvergence.lean` identifies the bounded spectral
+restriction `L P` with the first weighted resolvent integral. Every continuous
+scalar weight on a spectral-free limit circle preserves operator-norm
+convergence of the integrals under bounded coefficient limits. In particular,
+the bounded spectral restrictions converge, without assuming norm convergence
+of the original potentials or their unbounded operators.
+
+`ContourTraceCoefficientConvergence.lean` transports each varying contour
+range to the fixed finite-dimensional limit range. The transport tends to the
+identity, the reduced operators converge in norm, and continuity of trace on
+this fixed space proves convergence of every intrinsic power trace. The
+contour midpoint and squared-gap expressions consequently converge as well.
+
+`RealSpectralPairCoefficientConvergence.lean` reconstructs an ordered real
+rank-two eigenvalue pair from the midpoint and the nonnegative square root of
+the squared gap. Both endpoints converge, including when they coincide at the
+limit. This theorem explicitly assumes that the specified pair eventually
+exhausts the chosen circle; it derives eventual rank two from the limit rank.
+A separate unconditional corollary at a zero coefficient limit proves
+midpoint limit `π n` and squared-gap limit zero in every fixed free disk.
+`SourceSpectralTraceCoefficientConvergence.lean` exports the restriction,
+power-trace, symmetric-expression, and ordered-pair limits in period-one
+source coordinates. The convergence theorems cover finite `p>1` and countably
+generated filters; the weighted restriction identity also covers `p=1`.
+
+Public checks cover a cubic resolvent weight at exponent 3, arbitrary source
+power traces, ordered endpoints converging to a double eigenvalue, and moving
+unit Fourier modes whose norms stay one but whose fixed-disk midpoint and
+squared gap converge to the free values.
+
+The global indexed pair identification and continuity of the critical-root
+quotient and individual actions under bounded coefficient limits remain.
+`SourceHilbertActionsContinuousOnBoundedCoefficients` is still unproved;
+unconditional properness and Proposition 17.2 remain unfinished.
