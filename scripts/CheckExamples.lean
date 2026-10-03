@@ -24459,3 +24459,41 @@ example : ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 �
   exists_sourceHilbertActionSequence_analytic
 
 end NLS.ZakharovShabatHilbertActionSequenceChecks
+
+namespace NLS.ClassicalDiscriminantMassChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis NLS.LinearVolterra Set Filter Topology
+
+-- Recovery holds at positive times, including forcing with no derivative.
+example {f : ℝ → ℂ} (hf : Continuous f) (t : ℝ) (ht : 0 < t) :
+    Tendsto (fun a : ℝ => (a : ℂ) * exponentialVolterra (-a) f t)
+      atTop (𝓝 (f t)) := tendsto_scaled_exponentialVolterra hf t ht
+
+-- The bound is uniform in the real spectral part and uses the actual solution.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) (hz : 0 < z.im) (hlarge : ‖φ‖^2 ≤ z.im) :
+    ‖Complex.exp (Complex.I*z) * classicalDiscriminant φ z -
+      (1 + Complex.exp (2*Complex.I*z)) - classicalUpperMassCorrection φ z 1‖ ≤
+      (2*‖φ‖^4 + 2*‖φ‖^2)/(2*z.im)^2 :=
+  norm_classicalDiscriminant_upper_sub_massCorrection_le φ z hz hlarge
+
+-- The physical mass is the first actual coefficient, without a real-type hypothesis.
+example (φ : Curve (ℂ × ℂ)) :
+    Tendsto (fun y : ℝ => (2*y : ℂ) *
+      (Complex.exp (-(y : ℂ)) * classicalDiscriminant φ ((y : ℂ)*Complex.I) - 1))
+      atTop (𝓝 (∫ s in (0 : ℝ)..1,
+        (NLS.LinearVolterra.extend φ s).1 * (NLS.LinearVolterra.extend φ s).2)) :=
+  tendsto_classicalDiscriminant_mass_coefficient φ
+
+-- Constant complex potentials check the sign and period-one normalization.
+example (a b : ℂ) :
+    Tendsto (fun y : ℝ => (2*y : ℂ) * (Complex.exp (-(y : ℂ)) *
+      classicalDiscriminant (ContinuousMap.const _ (a,b)) ((y : ℂ)*Complex.I) - 1))
+      atTop (𝓝 (a*b)) := by
+  simpa only [classicalPhysicalMass_const] using
+    tendsto_classicalDiscriminant_mass_coefficient (ContinuousMap.const _ (a,b))
+
+-- Isospectral equality of traces recovers equality of physical masses.
+example (φ ψ : Curve (ℂ × ℂ)) (h : classicalDiscriminant φ = classicalDiscriminant ψ) :
+    classicalPhysicalMass φ = classicalPhysicalMass ψ :=
+  classicalPhysicalMass_eq_of_discriminant_eq φ ψ h
+
+end NLS.ClassicalDiscriminantMassChecks

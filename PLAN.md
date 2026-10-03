@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Latest progress: analytic ℓ¹ Hilbert action map
+## Latest progress: the first high-energy mass coefficient
+
+For every continuous complex potential, the actual classical discriminant
+now satisfies `2y (exp(-y) Δ(iy) - 1) → ∫₀¹ φ₁ φ₂`. The proof isolates an
+explicit quadratic Volterra term with an inverse-square remainder, then
+uses an exponential approximate identity and dominated convergence. The
+remainder estimate is uniform in the real spectral part. Equal classical
+discriminants therefore have equal physical masses.
+
+Next use the existing H¹ realization of finite-gap sources and the
+classical/canonical discriminant identification to transport this limit.
+Prove the Fourier/physical mass identification with the original source
+normalization. Then identify the inverse-frequency coefficient of the
+canonical discriminant-ratio primitive and combine finite action contours
+into an exterior contour to establish the finite-gap trace formula.
+The analytic action-sum density reduction is already available. After the
+trace identity, prove weak continuity of spectral actions and action-map
+properness to finish the remaining Hilbert global injectivity argument.
+
+## Previous progress: analytic ℓ¹ Hilbert action map
 
 The actual action sequence is now holomorphic into complex ℓ¹ on its
 constructed domain and real analytic into real ℓ¹ on all real Hilbert

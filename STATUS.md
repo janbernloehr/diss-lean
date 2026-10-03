@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: analytic Hilbert action sequence and total
+## Current milestone: the physical mass coefficient of the discriminant
+
+For every continuous complex potential on one period, Lean now proves
+
+`2y (exp(-y) Δ(iy) - 1) → ∫₀¹ φ₁(s) φ₂(s) ds` as `y → +∞`.
+
+This identifies the first correction, including its sign and factor two;
+it strengthens the earlier leading limit `exp(-y) Δ(iy) → 1`. No real-type,
+finite-gap, or differentiability assumption on the potential is needed.
+
+`ExponentialVolterra.lean` supplies the actual causal convolution, its
+continuity and linearity, and the inverse decay-rate bound.
+`ExponentialVolterraApproximation.lean` proves that the normalized kernel
+recovers every continuous forcing at positive times. Dominated convergence
+also proves recovery after integration against another continuous factor.
+The endpoint zero is excluded from the pointwise recovery theorem.
+
+`ClassicalMassCorrection.lean` isolates the explicit quadratic Volterra
+iterate in the upper normalized trace. With `M = ‖φ‖` and `a = 2 Im z`,
+the remainder is at most `(2 M⁴ + 2 M²)/a²` whenever `Im z > 0` and
+`M² ≤ Im z`. The estimate is uniform in `Re z` and has no assumed solution
+bound. `ClassicalDiscriminantMassAsymptotics.lean` combines this estimate
+with kernel recovery to identify the physical mass coefficient. Equal
+classical discriminants consequently have equal physical masses.
+
+Public checks cover continuous forcing, the quantitative trace remainder,
+the actual coefficient limit, arbitrary constant complex potentials, and
+mass recovery from equality of discriminants.
+
+Next transfer this coefficient to finite-gap source representatives, identify
+their physical mass with `sourceHilbertMass`, and extract the corresponding
+coefficient of the canonical discriminant-ratio primitive. Exterior contour
+consolidation must still relate that coefficient to the finite action sum.
+The action/mass trace identity, action-map properness, and Proposition 17.2
+remain unfinished; none is assumed in these new results.
+
+## Previous milestone: analytic Hilbert action sequence and total
 
 The actual Hilbert spectral actions now form a holomorphic ℓ¹-valued
 map on the constructed complex domain and a real analytic ℓ¹-valued
