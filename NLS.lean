@@ -1951,3 +1951,6 @@ import NLS.ZakharovShabat.ClassicalContourGradientIntegrandBound
 
 import NLS.ComplexAnalysis.QuadraticFactorVariationContour
 import NLS.ZakharovShabat.SourceMidpointGradientContour
+
+import NLS.ZakharovShabat.SourceMidpointGradientTail
+import NLS.ZakharovShabat.SourceMidpointGradientOperatorContour

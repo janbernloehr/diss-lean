@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: actual midpoint gradient contour formula
+## Latest progress: uniform midpoint operator contours
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -16,17 +16,20 @@ The literal quotient-weighted gradient Fourier integrand has a common
 summable majorant for finite `p>1`, `q>1+1/p`, including the conjugate
 exponent. No pole-avoidance or denominator lower-bound premise is supplied.
 
-The actual midpoint derivative now equals the normalized discriminant
-contour integral on a common open neighborhood of all real sources at
-finite `p>1`. The proof differentiates the canonical quadratic factorization
-and handles collapsed gaps directly. Its remaining geometric premise is an
-isolating disc enclosing the selected pair and avoiding the other cuts.
+The actual midpoint derivative now equals an operator-valued discriminant
+contour integral on one neighborhood of each real source at all sufficiently
+distant indices. The fixed quarter-pi circles are proved zero-free, with
+both selected endpoints enclosed and all other cuts excluded, including
+when the selected gap collapses. The normalized contour estimate bounds
+the operator norm by radius times an integrand bound. An outer ℓs operator
+majorant transfers to the complete derivative sequence, with arbitrary
+finite central heads.
 
-Next supply uniform distant-pair isolation and transfer the physical
-Fourier-gradient bounds through the contour integral to the actual source
-coordinate gradient. Then prove G.7's Dirichlet eigenvalue normalization
-estimate. Apply the completed Appendix G estimates to finite-gap sources
-in Lemma 16.1.
+Next identify the physical Fourier-gradient bounds with bounds for the
+actual source operator integrand; the new summability transfer still
+requires that identification. Then prove G.7's Dirichlet eigenvalue
+normalization estimate and apply the completed Appendix G estimates to
+finite-gap sources in Lemma 16.1.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
 Theorem 14.1, and later chapters remain unfinished.
 

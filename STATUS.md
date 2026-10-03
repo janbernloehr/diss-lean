@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: actual midpoint gradient contour formula
+## Current milestone: uniform midpoint operator contours
+
+The midpoint contour formula now applies on one open neighborhood of each
+real source at every sufficiently distant signed index. The contours are
+the fixed circles `|z−nπ|=π/4`. Both selected endpoints lie inside, and the
+actual characteristic function `Δ²−4` is nonzero everywhere on the circle.
+These facts are derived from the existing isolating-disc construction;
+no isolation or nonvanishing premise is supplied by the caller. Nearby
+complex sources and collapsed selected gaps are included.
+
+`SourceMidpointGradientTail.lean` proves that the closure of each isolating
+disc avoids all other periodic segments. Disjointness from the other open
+discs persists on taking this closure. Intersecting the local isolation
+neighborhood with the analytic midpoint neighborhood yields one cutoff
+and neighborhood for every distant directional formula.
+
+`SourceMidpointGradientOperatorContour.lean` proves that the source
+Fréchet derivative of the discriminant is entire in the spectral parameter
+in operator norm. Its quotient-weighted operator integrand is integrable
+on every zero-free circle. Evaluation commutes with the contour integral,
+so the directional identities recover the entire midpoint derivative as
+an operator-valued contour integral. The normalized integral estimate gives
+`‖dτₙ‖ ≤ (π/4) B` whenever the operator integrand has norm at most `B`
+on that circle, uniformly on the constructed source neighborhood.
+
+At every real source, an outer ℓs majorant for this operator integrand
+transfers to an ℓs sequence of actual midpoint derivatives for every
+finite `s>0`. The finite central block is unrestricted. This transfer is
+conditional on the operator integrand majorant: identification of the
+previously proved physical Fourier majorant with a source operator norm
+bound remains to be proved. Public checks cover literal operator evaluation,
+the common zero-free neighborhood and contour norm bound at `p=3`, and
+whole-sequence ℓ³ transfer with arbitrary central indices.
+
+Next identify the physical Fourier-gradient bounds with the actual source
+derivative bounds to complete the midpoint estimate, then prove G.7's
+Dirichlet normalization estimate. G.7, Lemma 16.1, the sharper G.1 integral
+bound, remaining assertions of Theorem 14.1, and later chapters remain
+unfinished.
+
+## Previous milestone: actual midpoint gradient contour formula
 
 The actual canonical midpoint now satisfies the discriminant contour identity
 `dτₙ[h] = −(2πi)⁻¹ ∮ Δ(z) dΔ(z)[h] / (Δ(z)²−4) dz`.

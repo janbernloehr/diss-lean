@@ -23279,3 +23279,46 @@ example (φ : CoeffPair 3) (hφ : φ ∈ realTypeSourceLocus 3)
   real_source_midpoint_gradient_contour (by norm_num) (by norm_num) φ hφ n c r hr ha hb hisolate h
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set Metric Complex
+
+-- Operator evaluation agrees with the literal discriminant directional integrand.
+example (φ h : CoeffPair 3) (z : ℂ) :
+    sourceMidpointContourIntegrand (by norm_num) φ z h =
+      canonicalDiscriminant (by norm_num) (periodOnePotential φ) z*
+        ((fderiv ℂ (fun ψ : CoeffPair 3 => canonicalDiscriminant (by norm_num)
+          (periodOnePotential ψ) z) φ) h)/
+        ((canonicalDiscriminant (by norm_num) (periodOnePotential φ) z)^2-4) :=
+  sourceMidpointContourIntegrand_apply (by norm_num) φ h z
+
+-- A real source has one complex neighborhood for every distant, zero-free operator contour.
+example (φ : CoeffPair 3) (hφ : φ ∈ realTypeSourceLocus 3) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ φ ∈ U ∧ ∃ N : ℕ,
+      ∀ ψ ∈ U, ∀ n : ℤ, N < n.natAbs →
+      (∀ z ∈ sphere ((Real.pi : ℂ)*n) (Real.pi/4),
+        (canonicalDiscriminant (by norm_num) (periodOnePotential ψ) z)^2-4 ≠ 0) ∧
+      (fderiv ℂ (fun χ : CoeffPair 3 => canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+        (periodOnePotential χ) (periodOnePotential_mem χ) n) ψ =
+        -(2*Real.pi*Complex.I : ℂ)⁻¹ • (∮ z in C((Real.pi : ℂ)*n,Real.pi/4),
+          sourceMidpointContourIntegrand (by norm_num) ψ z)) ∧
+      ∀ B : ℝ, (∀ z ∈ sphere ((Real.pi : ℂ)*n) (Real.pi/4),
+        ‖sourceMidpointContourIntegrand (by norm_num) ψ z‖ ≤ B) →
+        ‖fderiv ℂ (fun χ : CoeffPair 3 => canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+          (periodOnePotential χ) (periodOnePotential_mem χ) n) ψ‖ ≤ (Real.pi/4)*B :=
+  exists_local_source_midpoint_fderiv_tail_contour_bound (by norm_num) (by norm_num) φ hφ
+
+-- A summable majorant for the actual operator integrand transfers across the contour;
+-- no restrictions on the finite central spectral block are imposed.
+example (φ : CoeffPair 3) (hφ : φ ∈ realTypeSourceLocus 3)
+    (b : ℤ → ℝ) (hb : Memℓp b (ENNReal.ofReal (3 : ℝ))) (N₀ : ℕ)
+    (hbound : ∀ n : ℤ, N₀ ≤ n.natAbs →
+      ∀ z ∈ sphere ((Real.pi : ℂ)*n) (Real.pi/4),
+        ‖sourceMidpointContourIntegrand (by norm_num) φ z‖ ≤ b n) :
+    Memℓp (fun n : ℤ => ‖fderiv ℂ (fun ψ : CoeffPair 3 =>
+      canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ‖) (ENNReal.ofReal (3 : ℝ)) :=
+  (memlp_real_source_midpoint_fderiv_of_contour_majorant (by norm_num) (by norm_num)
+    φ hφ 3 (by norm_num) b hb N₀ hbound).norm
+
+end NLS.ZakharovShabat
