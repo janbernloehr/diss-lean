@@ -23726,3 +23726,88 @@ example (φ : CoeffPair 2) (hφ : φ ∈ realTypeSourceLocus 2) (a : Domain 2)
 
 end ZakharovShabat
 end NLS
+
+namespace NLS.ZakharovShabat
+open Set MeasureTheory NLS.LinearVolterra NLS.Fourier
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : (ENNReal.ofReal (3/2)).HolderConjugate 3 := by
+  have h := (Real.HolderConjugate.conjExponent (by norm_num : 1 < (3 : ℝ))).symm.ennrealOfReal
+  convert h using 1 <;> norm_num [Real.conjExponent]
+
+-- The full source cotangent restricts correctly even across the Hilbert exponent.
+example (φ : CoeffPair (ENNReal.ofReal (3/2))) (z : ℂ) :
+    sourceAntiDiscriminantCotangent (by simp) (by norm_num) z φ =
+      (sourceAntiDiscriminantCotangent (by norm_num) (by norm_num) z
+        (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 3) φ)).comp
+        (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 3)) :=
+  sourceAntiDiscriminantCotangent_exponent (by simp) (by norm_num) (by norm_num) (by norm_num) (by norm_num) φ z
+
+-- The reference formula also covers 1<p<2, and is bilinear in the source direction.
+example (n : ℤ) (h : CoeffPair (ENNReal.ofReal (3/2))) :
+    sourceAntiDiscriminantCotangent (by simp) (by norm_num) ((Real.pi : ℂ)*n) 0 h =
+      Complex.I*Complex.cos ((Real.pi : ℂ)*n)*(h.fst (-n)-h.snd n) :=
+  sourceAntiDiscriminantCotangent_zero_of_exponent (by simp) (by norm_num) n h
+
+-- At a nonzero even index the two signed modes give opposite imaginary values.
+example :
+    sourceAntiDiscriminantCotangent (p := 3) (by norm_num) (by norm_num) ((Real.pi : ℂ)*2) 0
+      (CoeffPair.inlCLM (lp.single 3 (-2) 1)) = Complex.I ∧
+    sourceAntiDiscriminantCotangent (p := 3) (by norm_num) (by norm_num) ((Real.pi : ℂ)*2) 0
+      (CoeffPair.inrCLM (lp.single 3 2 1)) = -Complex.I := by
+  have hc : Complex.cos ((Real.pi : ℂ)*2) = 1 := by rw [mul_comm,Complex.cos_two_pi]
+  constructor
+  · have h := sourceAntiDiscriminantCotangent_zero_of_exponent (p := 3) (by norm_num) (by norm_num) 2
+      (CoeffPair.inlCLM (lp.single 3 (-2) 1))
+    norm_num [lp.single_apply,Pi.single_apply,hc] at h
+    exact h
+  · have h := sourceAntiDiscriminantCotangent_zero_of_exponent (p := 3) (by norm_num) (by norm_num) 2
+      (CoeffPair.inrCLM (lp.single 3 2 1))
+    norm_num [lp.single_apply,Pi.single_apply,hc] at h
+    exact h
+
+-- An arbitrary continuous physical representative identifies both actual source components.
+example (φ : CoeffPair 2) (Φ : Curve (ℂ × ℂ))
+    (hΦ : physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)] extend Φ) (z : ℂ) (k : ℤ) :
+    sourceAntiDiscriminantCotangent (p := 3) (by norm_num) (by norm_num) z
+      (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)
+      (CoeffPair.inlCLM (lp.single 3 k 1)) =
+        unitFourierCoefficient (fun t => (classicalAntiDiscriminantGradient Φ z t).1) (-k) ∧
+    sourceAntiDiscriminantCotangent (p := 3) (by norm_num) (by norm_num) z
+      (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)
+      (CoeffPair.inrCLM (lp.single 3 k 1)) =
+        unitFourierCoefficient (fun t => (classicalAntiDiscriminantGradient Φ z t).2) (-k) :=
+  ⟨sourceAntiDiscriminantCotangent_continuous_single_fst (by norm_num) (by norm_num) (by norm_num) φ Φ hΦ z k,
+    sourceAntiDiscriminantCotangent_continuous_single_snd (by norm_num) (by norm_num) (by norm_num) φ Φ hΦ z k⟩
+
+-- Spectral differentiation retains the same classical normalization at an H¹ source.
+example (φ : CoeffPair 2) (a : Domain 2) (ha : periodOnePotential φ = domainInclusion a) (z : ℂ) :
+    deriv (sourceAntiDiscriminantCandidate (p := 3) (by norm_num) (by norm_num)
+      (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)) z =
+      deriv (classicalAntiDiscriminant (classicalSobolevPotential a)) z :=
+  deriv_sourceAntiDiscriminantCandidate_eq_classical_of_continuous (by norm_num) (by norm_num)
+    (by norm_num) φ _ (physicalBase_source_sobolev_compatibility φ a ha) z
+
+-- G.6 holds at either actual boundary sequence in inner ℓ^(3/2), outer ℓ³.
+-- No reality, simplicity, asymptotic bound, or omitted finite block is assumed.
+example (φ : CoeffPair 2) (a : Domain 2) (ha : periodOnePotential φ = domainInclusion a)
+    (b : BoundaryCondition) :
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := ENNReal.ofReal (3/2)) (by norm_num) (by simp)
+      (sourceAntiDiscriminantCotangent (p := 3) (by norm_num) (by norm_num)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b
+          (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n)
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)-
+        sourceAntiDiscriminantCotangent (by norm_num) (by norm_num) ((Real.pi : ℂ)*n) 0)‖) 3 :=
+  (memlp_source_antiDiscriminant_conjugate_boundary_error (by norm_num) (by norm_num)
+    (by norm_num) φ a ha b).norm
+
+-- The Hilbert endpoint and all central indices are covered too.
+example (φ : CoeffPair 2) (a : Domain 2) (ha : periodOnePotential φ = domainInclusion a) :
+    Memℓp (fun n : ℤ => sourceAntiDiscriminantCotangent (by simp) (by norm_num)
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet
+        (CoeffPair.exponentInclusion (le_refl (2 : ℝ≥0∞)) φ) n)
+      (CoeffPair.exponentInclusion (le_refl (2 : ℝ≥0∞)) φ)-
+      sourceAntiDiscriminantCotangent (by simp) (by norm_num) ((Real.pi : ℂ)*n) 0) 2 :=
+  memlp_source_antiDiscriminantCotangent_boundary_error (by simp) (by norm_num) le_rfl φ a ha .dirichlet
+
+end NLS.ZakharovShabat

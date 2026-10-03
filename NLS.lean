@@ -1994,3 +1994,7 @@ import NLS.ZakharovShabat.SourceSpectralGradientSobolevSummability
 import NLS.SequenceSpaces.ConjugateCotangent
 import NLS.SequenceSpaces.SourceConjugateGradient
 import NLS.ZakharovShabat.SourceSpectralConjugateGradients
+
+import NLS.ZakharovShabat.ContinuousSourceAntiDiscriminantGradient
+import NLS.ZakharovShabat.SourceAntiDiscriminantGradientError
+import NLS.ZakharovShabat.SourceAntiDiscriminantSobolevSummability

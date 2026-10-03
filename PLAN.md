@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: both G.7 estimates in the conjugate Fourier norm
+## Latest progress: actual anti-discriminant gradient summability
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -78,11 +78,20 @@ Fourier gradients. It gives the midpoint estimate and the Dirichlet error
 estimate, their full-direction duality formulas, and their outer ℓp
 summability, for every finite `p≥2`.
 
-Next apply the spectral gradient estimates to finite-gap sources in Lemma
-16.1, including its full `1<p<∞` exponent range. G.7 is proved here for finite
-`p≥2`; no other exponent range is claimed. The sharper G.1 integral bound,
-Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters remain
-unfinished.
+The actual anti-discriminant derivative error now satisfies G.6 at both
+canonical boundary sequences of every complex H¹ source, for finite `p≥2`.
+Continuous physical realization identifies its full cotangent and Fourier
+coefficients. The actual boundary displacement supplies the asymptotic
+hypothesis; the resulting operator and conjugate Fourier pair norms are
+outer ℓp sequences, including the finite head. The reference is exactly
+`i cos(πn) (h₁(-n)−h₂(n))`, proved at every finite `p>1` by exponent
+compatibility and density.
+
+Next combine these estimates with the omitted-root-product normalization
+in the finite-gap differential formula for Lemma 16.1, and complete its
+full `1<p<∞` gradient range. The actual source summability estimates here
+cover finite `p≥2`. The sharper G.1 integral bound, Lemma 16.1, remaining
+assertions of Theorem 14.1, and later chapters remain unfinished.
 
 ## Milestones
 

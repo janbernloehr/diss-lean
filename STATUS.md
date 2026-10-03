@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: both G.7 estimates in the conjugate Fourier norm
+## Current milestone: actual anti-discriminant gradient summability at boundary roots
+
+G.6's anti-discriminant estimate now applies to the genuine source derivative
+at every canonical Dirichlet or Neumann root of a complex H¹ source. For
+finite `p≥2`, subtracting the actual zero-source reference gives an outer
+ℓp sequence both in source operator norm and in the conjugate Fourier pair
+norm. The entire signed sequence is included, with no reality, root
+simplicity, displacement-bound, or finite-head premise supplied by callers.
+
+`ContinuousSourceAntiDiscriminantGradient.lean` identifies the normalized
+source anti-discriminant with the classical monodromy anti-trace at every
+compatible continuous Hilbert potential. Opposite component phases preserve
+physical synthesis. Differentiating along compatible affine directions
+identifies the full source cotangent and both reversed-frequency Fourier
+coefficients. The cotangent restricts correctly between any finite exponents
+strictly above one; physical comparison also extends by Hilbert inclusion
+to finite `p≥2`. Spectral derivatives retain the same normalization.
+
+`SourceAntiDiscriminantGradientError.lean` identifies the actual cotangent
+error with G.6's physical Fourier remainder and bounds its operator norm
+by the two conjugate Fourier norms. Its free reference is proved exactly as
+`h ↦ i cos(πn) (h₁(-n)−h₂(n))` for every finite `p>1`, including `1<p<2`.
+
+`SourceAntiDiscriminantSobolevSummability.lean` derives the required spectral
+displacement from the actual canonical boundary roots, applies the physical
+H¹ summability theorem, and transfers the result to the genuine source
+operator and its recovered conjugate gradient. Public checks cover exponent
+restriction across two, both component signs, spectral differentiation,
+non-Hilbert conjugate norms, and the Hilbert endpoint.
+
+Next combine this estimate with the G.7 results and the omitted-root-product
+normalization in the finite-gap differential formula for Lemma 16.1. That
+lemma, the full `1<p<∞` gradient range, the sharper G.1 integral bound,
+remaining assertions of Theorem 14.1, and later chapters remain unfinished.
+
+## Previous milestone: both G.7 estimates in the conjugate Fourier norm
 
 For every finite source exponent `p≥2`, both the actual midpoint gradient
 and the actual Dirichlet gradient error now have outer ℓp summability in
