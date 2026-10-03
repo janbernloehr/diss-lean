@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: G.5 finite-exponent gradient summability
+## Current milestone: G.5 infinite-endpoint counterexample
+
+The printed outer endpoint `p=∞` of G.5 is false for actual unit-interval
+Fourier coefficients. Lean now proves a counterexample to both assertions,
+including on every tail. This does not affect the proved finite-exponent
+range `1<p<∞`, `q>1+1/p`, or its conjugate-exponent corollaries.
+
+`AbsoluteSummabilityEndpoints.lean` proves that a continuous function with
+absolutely summable Fourier coefficients on a positive interval must have
+matching endpoint values. The proof uses uniform continuous synthesis and
+L² Fourier uniqueness, then continuity at both endpoints.
+
+`ClassicalTriangularPotential.lean` constructs the constant potential
+`φ=(1,0)` from its explicit zero-mode physical H¹ coefficient pair. ODE
+uniqueness identifies its second solution column as
+`((exp(izt)−exp(−izt))/(2z), exp(izt))` for `z≠0`. Its upper monodromy
+coupling is nonzero whenever `Im z≠0`, because the two exponentials have
+different norms.
+
+`ClassicalEndpointGradientEndpointObstruction.lean` proves that the second
+component of the gradient of the upper diagonal monodromy entry has values
+`−i M₀₁(z)` at zero and `0` at one. The corresponding free gradient is zero
+at every reference frequency. A nonzero upper coupling therefore prevents
+the actual gradient error from belonging to Fourier ℓ¹.
+
+`ClassicalGradientInfinityCounterexample.lean` takes
+`νₙ=nπ+i/(2(|n|+1))`. Its displacement is at most `π/4` at every index and
+at most `1/(2|n|)` away from zero, so both printed frequency hypotheses
+hold. Every frequency is nonreal. The actual H¹ gradient error fails
+Fourier ℓ¹ membership at every index, for any free reference sequence;
+in particular, both references `νₙ` and `nπ` fail on every tail. Thus the
+printed `p=∞`, `p′=1` endpoint cannot be added to the finite-p result.
+
+Public checks cover arbitrary positive interval lengths, a linear function
+with a boundary jump, both frequency bounds, and failure on every tail for
+each of G.5's two free references. No endpoint-matching assumption or
+unproved regularity is supplied for the counterexample.
+
+Next prove G.6–G.7 in their valid ranges and apply them to finite-gap
+sources in Lemma 16.1. The sharper G.1 integral bound, G.6–G.7, Lemma 16.1,
+remaining assertions of Theorem 14.1, and later chapters remain unfinished.
+
+## Previous milestone: G.5 finite-exponent gradient summability
 
 Both assertions of G.5 are now proved throughout the finite exponent
 range for the constructed physical period-two `H¹` potentials. The

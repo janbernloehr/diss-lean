@@ -1,22 +1,25 @@
 # Implementation plan
 
-## Latest progress: Appendix G.5 finite-exponent gradient summability
+## Latest progress: Appendix G.5 endpoint audit
 
-Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
-finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. Appendix G.3 and G.4 are proved for constructed
-physical period-two `H¹` potentials. Both assertions of G.5 now hold
-for every finite `p≥2`, with actual Fourier norms at the conjugate
-exponent `p′=p/(p−1)`. The stronger threshold theorem covers all finite
-`p>1` and `q>1+1/p`, with one whole-sequence majorant on each Sobolev
-ball, both reference choices, and arbitrary finite spectral heads.
+Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
+regularity in all nonnegative Sobolev weights (including H¹) are complete.
+Appendix G.3–G.4 and both G.5 assertions for finite `p≥2` are proved for
+constructed physical H¹ potentials. The stronger gradient theorem covers
+all finite `p>1` and `q>1+1/p`, uniformly on each Sobolev ball.
 
-Next audit G.5's separate outer endpoint `p=∞`, where the printed
-auxiliary-exponent argument is unavailable because `p′=1`. Then prove
-G.6–G.7 and their application to finite-gap sources in Lemma 16.1.
-The sharper G.1 integral bound, G.5's infinite outer endpoint, G.6–G.7,
-Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters
-remain unfinished.
+G.5's printed outer endpoint `p=∞`, with Fourier exponent `p′=1`, is now
+refuted by a formal counterexample: the zero-mode potential `(1,0)` and
+`νₙ=nπ+i/(2(|n|+1))` meet both frequency hypotheses, but a diagonal gradient
+component has unequal boundary values and fails Fourier ℓ¹ at every index.
+Both free references fail on every tail. Retain the proved finite-p range;
+do not use the printed infinite endpoint in downstream arguments.
+
+Next prove G.6–G.7 in their valid ranges and their finite-gap application
+in Lemma 16.1. G.6 already explicitly restricts to finite `p`; the endpoint
+counterexample does not obstruct that stated range.
+The sharper G.1 integral bound, G.6–G.7, Lemma 16.1, remaining assertions
+of Theorem 14.1, and later chapters remain unfinished.
 
 ## Milestones
 

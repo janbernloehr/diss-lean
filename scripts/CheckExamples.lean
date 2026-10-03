@@ -23050,3 +23050,44 @@ example (a : ScalarDomain 2 × ScalarDomain 2) :
 end AppendixGGradientFinite
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open NLS.Fourier
+
+-- Endpoint agreement is forced by actual Fourier ℓ¹ integrals on any positive interval.
+example (T : ℝ) (hT : 0 < T) (f : ℝ → ℂ) (hf : Continuous f)
+    (hm : Memℓp (intervalFourierCoefficient T f) 1) : f 0 = f T :=
+  interval_endpoints_eq_of_memlp_one T hT f hf hm
+
+-- A simple boundary jump is excluded before any ODE-specific argument.
+example : ¬Memℓp (intervalFourierCoefficient 1 (fun t : ℝ => (t : ℂ))) 1 := by
+  apply not_memlp_intervalFourierCoefficient_one_of_endpoints_ne 1 (by norm_num)
+    _ Complex.continuous_ofReal
+  norm_num
+
+-- The counterexample satisfies both printed frequency hypotheses, including all finite heads.
+example (n : ℤ) :
+    ‖gradientCounterexampleFrequency n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ Real.pi/4 :=
+  gradientCounterexampleFrequency_close n
+
+example (n : ℤ) (hn : n ≠ 0) :
+    ‖gradientCounterexampleFrequency n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ (1/2 : ℝ)/(n.natAbs : ℝ) :=
+  gradientCounterexampleFrequency_decay n hn
+
+-- The first G.5 reference fails to have Fourier ℓ¹ coefficients on every possible tail.
+example : ¬∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+    Memℓp (intervalFourierCoefficient 1 (fun t =>
+      (classicalEndpointGradientRemainder (classicalSobolevPotential triangularSobolevCoefficients)
+        (gradientCounterexampleFrequency n) (gradientCounterexampleFrequency n) (1,0)
+        (ContinuousLinearMap.fst ℂ ℂ ℂ) t).2)) 1 :=
+  not_eventually_memlp_gradientCounterexampleFrequency_one gradientCounterexampleFrequency
+
+-- The second reference, at the unperturbed free lattice, has the same obstruction.
+example : ¬∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+    Memℓp (intervalFourierCoefficient 1 (fun t =>
+      (classicalEndpointGradientRemainder (classicalSobolevPotential triangularSobolevCoefficients)
+        (gradientCounterexampleFrequency n) ((Real.pi : ℂ)*(n : ℂ)) (1,0)
+        (ContinuousLinearMap.fst ℂ ℂ ℂ) t).2)) 1 :=
+  not_eventually_memlp_gradientCounterexampleFrequency_one (fun n => (Real.pi : ℂ)*(n : ℂ))
+
+end NLS.ZakharovShabat
