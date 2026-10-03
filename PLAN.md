@@ -1,25 +1,26 @@
 # Implementation plan
 
-## Latest progress: Appendix G.5 endpoint audit
+## Latest progress: Appendix G.6 characteristic-gradient estimates
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
 Appendix G.3–G.4 and both G.5 assertions for finite `p≥2` are proved for
-constructed physical H¹ potentials. The stronger gradient theorem covers
-all finite `p>1` and `q>1+1/p`, uniformly on each Sobolev ball.
+constructed physical H¹ potentials. Both assertions of G.6 now follow for
+the actual discriminant and anti-discriminant gradients, with the signed
+free-wave subtraction and whole-sequence bounds uniform on each H¹ ball.
+The stronger threshold covers every finite `p>1` and `q>1+1/p`, including
+the conjugate exponent. Both physical component norms are summed explicitly.
 
-G.5's printed outer endpoint `p=∞`, with Fourier exponent `p′=1`, is now
-refuted by a formal counterexample: the zero-mode potential `(1,0)` and
-`νₙ=nπ+i/(2(|n|+1))` meet both frequency hypotheses, but a diagonal gradient
-component has unequal boundary values and fails Fourier ℓ¹ at every index.
-Both free references fail on every tail. Retain the proved finite-p range;
-do not use the printed infinite endpoint in downstream arguments.
+G.5's printed outer endpoint `p=∞`, with Fourier exponent `p′=1`, was
+refuted by the formal constant-potential counterexample `(1,0)` at
+`νₙ=nπ+i/(2(|n|+1))`. Keep that endpoint excluded. G.6 already states
+finite p and does not rely on the refuted endpoint.
 
-Next prove G.6–G.7 in their valid ranges and their finite-gap application
-in Lemma 16.1. G.6 already explicitly restricts to finite `p`; the endpoint
-counterexample does not obstruct that stated range.
-The sharper G.1 integral bound, G.6–G.7, Lemma 16.1, remaining assertions
-of Theorem 14.1, and later chapters remain unfinished.
+Next prove G.7's midpoint and Dirichlet-eigenvalue gradient estimates,
+including the required contour and normalization bounds, then use these
+Appendix G estimates for finite-gap sources in Lemma 16.1.
+The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
+Theorem 14.1, and later chapters remain unfinished.
 
 ## Milestones
 

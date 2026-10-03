@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: G.5 infinite-endpoint counterexample
+## Current milestone: G.6 characteristic-gradient summability
+
+Both assertions of G.6 are now proved for constructed physical H¹
+potentials throughout the printed finite range `2≤p<∞`. The actual
+discriminant-gradient Fourier norms form an outer ℓp sequence for
+`νₙ=nπ+O(1)`. The anti-discriminant gradient minus its free lattice
+reference has the same summability when `νₙ=nπ+O(1/|n|)`.
+
+The results use the stronger G.5 threshold `q>1+1/p` for every finite
+`p>1`, and hence include `q=p′=p/(p−1)`. Each estimate has a common
+whole-sequence majorant on every physical H¹ ball, simultaneously for
+all contractive scalar observations. Explicit corollaries sum the norms
+of both physical components, so the conclusion is not restricted to
+one component. Arbitrary finite spectral heads are retained.
+
+`ClassicalCharacteristicGradientRemainders.lean` identifies the actual
+monodromy-trace gradient with the sum of its two diagonal endpoint
+gradients. Both free diagonal terms vanish identically. The actual
+anti-discriminant is the original off-diagonal monodromy sum, and its
+gradient error is the sum of the two off-diagonal endpoint errors.
+The lattice reference is proved to be
+`(i(−1)^n wave(2n), −i(−1)^n wave(−2n))`. A separate identity checks
+multiplication by i against the dissertation's exact component signs.
+
+`IntervalCoefficientLinearity.lean` supplies additivity and interval-local
+dependence of actual Fourier integrals. `ClassicalCharacteristicGradientFourier.lean`
+uses these facts to identify the coefficient-space sums with the actual
+discriminant gradient and anti-discriminant gradient error, including
+explicit signed wave subtraction at the free lattice.
+`ClassicalCharacteristicGradientSummability.lean` transfers the common
+G.5 majorants, proves membership for all exponents above the threshold,
+and specializes to the conjugate exponent and both-component norm sum.
+These gradients already represent the actual potential derivatives by
+the previously proved physical integral formulas.
+
+Public checks cover an actual discriminant Fourier integral, the exact
+factor i and lattice signs, both-component summability at `p=3` and
+`p=4`, and a whole-ball bound with an arbitrary central frequency.
+G.5's refuted infinite endpoint is not used; G.6 itself states finite p.
+
+Next prove G.7's midpoint and Dirichlet-eigenvalue gradient estimates,
+then apply the Appendix G bounds in Lemma 16.1. The sharper G.1 integral
+bound, G.7, Lemma 16.1, remaining assertions of Theorem 14.1, and later
+chapters remain unfinished.
+
+## Previous milestone: G.5 infinite-endpoint counterexample
 
 The printed outer endpoint `p=∞` of G.5 is false for actual unit-interval
 Fourier coefficients. Lean now proves a counterexample to both assertions,

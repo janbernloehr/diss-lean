@@ -1934,3 +1934,8 @@ import NLS.Fourier.AbsoluteSummabilityEndpoints
 import NLS.ZakharovShabat.ClassicalTriangularPotential
 import NLS.ZakharovShabat.ClassicalEndpointGradientEndpointObstruction
 import NLS.ZakharovShabat.ClassicalGradientInfinityCounterexample
+
+import NLS.Fourier.IntervalCoefficientLinearity
+import NLS.ZakharovShabat.ClassicalCharacteristicGradientRemainders
+import NLS.ZakharovShabat.ClassicalCharacteristicGradientFourier
+import NLS.ZakharovShabat.ClassicalCharacteristicGradientSummability

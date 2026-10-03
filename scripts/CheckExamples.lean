@@ -23091,3 +23091,67 @@ example : ¬∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
   not_eventually_memlp_gradientCounterexampleFrequency_one (fun n => (Real.pi : ℂ)*(n : ℂ))
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set NLS.Fourier NLS.LinearVolterra
+
+-- The discriminant coefficient is the actual physical Fourier integral.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) (k : ℤ) :
+    classicalDiscriminantGradientFourierCoefficients (q := 2) (by norm_num) φ z
+      (ContinuousLinearMap.fst ℝ ℂ ℂ) k =
+    intervalFourierCoefficient 1 (fun t => (classicalDiscriminantGradient φ z t).1) k :=
+  classicalDiscriminantGradientFourierCoefficients_apply _ φ z _ k
+
+-- G.6's factor i, lattice parity, and both component signs are checked explicitly.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) (n : ℤ) (t : Icc (0 : ℝ) 1) :
+    Complex.I • classicalAntiDiscriminantGradientRemainder φ z ((Real.pi : ℂ)*(n : ℂ)) t =
+      Complex.I • classicalAntiDiscriminantGradient φ z t-
+        (-1 : ℂ)^n • (-wave (2*n) t,wave (-(2*n)) t) :=
+  classicalAntiDiscriminantGradientRemainder_lattice_mul_I φ z n t
+
+-- Both discriminant components belong to outer ℓ³ with inner Fourier exponent 3/2.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ =>
+      ‖classicalDiscriminantGradientFourierCoefficients (q := ENNReal.ofReal (3/(3-1) : ℝ))
+        (by norm_num) (classicalSobolevPotential a) ((Real.pi : ℂ)*(n : ℂ)+Complex.I)
+        (ContinuousLinearMap.fst ℝ ℂ ℂ)‖+
+      ‖classicalDiscriminantGradientFourierCoefficients (q := ENNReal.ofReal (3/(3-1) : ℝ))
+        (by norm_num) (classicalSobolevPotential a) ((Real.pi : ℂ)*(n : ℂ)+Complex.I)
+        (ContinuousLinearMap.snd ℝ ℂ ℂ)‖) (ENNReal.ofReal (3 : ℝ)) := by
+  exact memlp_classicalDiscriminantGradient_conjugate_component_sum 3 (by norm_num)
+    1 (by norm_num) 0 (fun n => (Real.pi : ℂ)*(n : ℂ)+Complex.I) (by intro n _; simp) a
+
+-- Both anti-discriminant error components are outer ℓ⁴, with inner exponent 4/3.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ =>
+      ‖classicalAntiDiscriminantGradientFourierCoefficients (q := ENNReal.ofReal (4/(4-1) : ℝ))
+        (by norm_num) (classicalSobolevPotential a)
+        ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ)) ((Real.pi*(n : ℝ) : ℝ) : ℂ)
+        (ContinuousLinearMap.fst ℝ ℂ ℂ)‖+
+      ‖classicalAntiDiscriminantGradientFourierCoefficients (q := ENNReal.ofReal (4/(4-1) : ℝ))
+        (by norm_num) (classicalSobolevPotential a)
+        ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ)) ((Real.pi*(n : ℝ) : ℝ) : ℂ)
+        (ContinuousLinearMap.snd ℝ ℂ ℂ)‖) (ENNReal.ofReal (4 : ℝ)) := by
+  exact memlp_classicalAntiDiscriminantGradient_conjugate_component_sum 4 (by norm_num)
+    1 (by norm_num) 0 (fun n => (Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ))
+    (by intro n _; simp) a
+
+-- The exact printed displacement bound is enough, uniformly over a whole H¹ ball.
+-- A central frequency is arbitrary, so this also checks retention of finite heads.
+example (M : ℝ) (hM : 0 ≤ M) (w : ℂ) : ∃ b : ℤ → ℝ, Memℓp b (ENNReal.ofReal (3 : ℝ)) ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ,
+      ‖classicalDiscriminantGradientFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num)
+        (classicalSobolevPotential a) (if n = 0 then w else (Real.pi : ℂ)*(n : ℂ))
+        (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤ b n := by
+  have hν : ∀ n : ℤ, 1 ≤ n.natAbs →
+      ‖(if n = 0 then w else (Real.pi : ℂ)*(n : ℂ))-(Real.pi : ℂ)*(n : ℂ)‖ ≤ Real.pi/4 := by
+    intro n hn
+    have hn0 : n ≠ 0 := by intro h; subst n; norm_num at hn
+    simp only [if_neg hn0,sub_self,norm_zero]
+    positivity
+  obtain ⟨b,hb,h⟩ := exists_classicalDiscriminantGradient_fourier_uniform_memlp 3 (by norm_num)
+    (ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M hM (Real.pi/4) (by positivity) 1
+    (fun n => if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)) hν
+  exact ⟨b,hb,fun a ha n => h a ha _ (ContinuousLinearMap.norm_fst_le ..) n⟩
+
+end NLS.ZakharovShabat
