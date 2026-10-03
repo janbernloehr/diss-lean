@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Lemma 16.1 for every finite p > 1
+## Current milestone: Lemma 16.2 for every finite p > 1
+
+Both actual rectangular Birkhoff-coordinate gradients now differ from
+their explicit free Fourier gradients by sequences whose conjugate-pair
+norms belong to ℓp, at every real finite-gap source and every `1<p<∞`.
+The result includes all open gaps, collapsed gaps, and both signed tails.
+A final existence theorem supplies the constructed Birkhoff family and
+its domain, without an assumed normalization estimate or H¹ witness.
+
+`SourceBirkhoffFiniteGapFactors.lean` proves that the beta correction is
+an ℓp sequence at finite-gap sources. The sum over gap indices reduces
+to the finite open-gap set; each summand is bounded by a shifted punctured
+reciprocal lattice. The normalized-action root is summably close to one
+at every real source. Exponentiation preserves summable deviations, so
+the complete action-root and beta-phase multiplier differs from one by
+an ℓp sequence, for every sign.
+
+`SourceBirkhoffWeightedGradientSummability.lean` proves the exact
+closed-gap product-rule formula. Vanishing of the eta coordinate removes
+the derivatives of the action root and beta phase. Lemma 16.1, the scalar
+multiplier estimates, and a uniform free-functional bound control the
+remaining derivative error. Finite modification includes all open gaps.
+
+`SourceBirkhoffRectangularGradientSummability.lean` forms the actual x/y
+derivatives by the normalized signed sum and difference. Both errors
+are ℓp sequences in source operator norm. The free functionals evaluate
+as `−(h₁(-n)+h₂(n))/√2` and `(h₁(-n)−h₂(n))/(√2 i)`.
+`SourceBirkhoffLemma16_2.lean` identifies their physical Fourier gradients
+and proves both literal conjugate-norm estimates. Its existence theorem
+retains the actual constructed complex analytic Birkhoff map.
+
+Public checks cover exponentiation without a smallness premise, normalized
+action roots at arbitrary real sources, finite-gap beta and multiplier
+summability below two, both exact free functionals and gradients, the
+full rectangular estimate at source exponent `3/2` / conjugate exponent
+`3`, and constructed-family existence at the Hilbert endpoint.
+
+Next establish the Jacobian's compact perturbation of the Fourier
+transform and continue Section 16. The sharper G.1 integral bound,
+remaining assertions of Theorem 14.1, and later chapters remain unfinished.
+
+## Previous milestone: Lemma 16.1 for every finite p > 1
 
 The full finite-gap eta gradient estimate now holds for `1<p<∞` in the
 physical conjugate Fourier pair norm. Both signs and every signed index

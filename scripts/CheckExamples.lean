@@ -24009,3 +24009,74 @@ example : ∃ W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2))),
   exact ⟨W₀,B,W,s,D,fun φ hfinite => (h φ hfinite).1⟩
 
 end NLS.ZakharovShabatLemma16_1Checks
+
+namespace NLS.ZakharovShabatLemma16_2Checks
+open NLS.ZakharovShabat Set
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : (3 : ℝ≥0∞).HolderConjugate (ENNReal.ofReal (3/2)) := by
+  have h := (Real.HolderConjugate.conjExponent (by norm_num : 1 < (3 : ℝ))).ennrealOfReal
+  convert h using 1 <;> norm_num [Real.conjExponent]
+
+-- Exponentiation preserves summable deviations, with no smallness hypothesis.
+example (a : Coeff (ENNReal.ofReal (3/2))) :
+    Memℓp (fun n : ℤ => Complex.exp (a n)-1) (ENNReal.ofReal (3/2)) :=
+  memlp_exp_sub_one (lp.memℓp a)
+
+-- Normalized-action roots are summably close to one even without finite gaps.
+example (φ : CoeffPair 3) (hφ : IsRealType (CoeffPair.toMax 3 φ)) :
+    Memℓp (fun n => sourceNormalizedActionRoot (by norm_num) (by norm_num) n φ-1) 3 :=
+  memlp_sourceNormalizedActionRoot_sub_one (by norm_num) (by norm_num) φ hφ
+
+-- Finite-gap beta corrections and complete normalization factors include the finite head.
+example {W₀ B : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceAngularEtaLocalCommonDomainData (by simp) (by norm_num) W₀ B s)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ B)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (sign : ℂ) :
+    Memℓp (fun n => sourceAngularBetaCorrection (by simp) (by norm_num) n s φ.val) (ENNReal.ofReal (3/2)) ∧
+    Memℓp (fun n => sourceNormalizedActionRoot (by simp) (by norm_num) n φ.val*
+      Complex.exp (sign*Complex.I*sourceAngularBetaCorrection (by simp) (by norm_num) n s φ.val)-1)
+      (ENNReal.ofReal (3/2)) :=
+  ⟨D.memlp_betaCorrection_finiteGap φ hφ hfinite,D.memlp_birkhoffFactor_sub_one_finiteGap φ hφ hfinite sign⟩
+
+-- The exact free Fourier functionals retain the square-root and imaginary factors below two.
+example (n : ℤ) (h : CoeffPair (ENNReal.ofReal (3/2))) :
+    sourceBirkhoffFreeXCotangent (by simp) (by norm_num) n h = -(h.fst (-n)+h.snd n)/(Real.sqrt 2 : ℂ) ∧
+    sourceBirkhoffFreeYCotangent (by simp) (by norm_num) n h = (h.fst (-n)-h.snd n)/((Real.sqrt 2 : ℂ)*Complex.I) :=
+  sourceBirkhoffFreeCotangents_apply (by simp) (by norm_num) n h
+
+-- Both physical free gradients agree with their full source functionals.
+example (n : ℤ) :
+    CoeffPair.conjugateGradient (p := ENNReal.ofReal (3/2)) (q := 3) (by simp) (by norm_num)
+      (sourceBirkhoffFreeXCotangent (by simp) (by norm_num) n) = sourceBirkhoffFreeXGradient 3 n ∧
+    CoeffPair.conjugateGradient (p := ENNReal.ofReal (3/2)) (q := 3) (by simp) (by norm_num)
+      (sourceBirkhoffFreeYCotangent (by simp) (by norm_num) n) = sourceBirkhoffFreeYGradient 3 n :=
+  conjugateGradient_sourceBirkhoffFreeCotangents (by simp) (by norm_num) (by norm_num) n
+
+-- Lemma 16.2 holds below two with the literal inner ℓ³, outer ℓ^(3/2) norms.
+example {W₀ B : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceAngularEtaLocalCommonDomainData (by simp) (by norm_num) W₀ B s)
+    (W : Set (CoeffPair (ENNReal.ofReal (3/2)))) (hW : IsOpen W) (hWB : W ⊆ B)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (hφ : φ.val ∈ W)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := 3) (by simp) (by norm_num)
+      (fderiv ℂ (sourceBirkhoffX (by simp) (by norm_num) n s) φ.val)-sourceBirkhoffFreeXGradient 3 n‖)
+      (ENNReal.ofReal (3/2)) ∧
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := 3) (by simp) (by norm_num)
+      (fderiv ℂ (sourceBirkhoffY (by simp) (by norm_num) n s) φ.val)-sourceBirkhoffFreeYGradient 3 n‖)
+      (ENNReal.ofReal (3/2)) :=
+  D.birkhoff_lemma16_2 (by norm_num) W hW hWB φ hφ hfinite
+
+-- A constructed family supplies the domain and all data, at the Hilbert endpoint too.
+example : ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+    SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s ∧
+    ∀ φ : realTypeSourceSubmodule 2, φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+      Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := 2) (by simp) (by simp)
+        (fderiv ℂ (sourceBirkhoffX (by simp) (by norm_num) n s) φ.val)-sourceBirkhoffFreeXGradient 2 n‖) 2 ∧
+      Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := 2) (by simp) (by simp)
+        (fderiv ℂ (sourceBirkhoffY (by simp) (by norm_num) n s) φ.val)-sourceBirkhoffFreeYGradient 2 n‖) 2 :=
+  exists_sourceBirkhoffFamily_lemma16_2 (by simp) (by norm_num) (by simp)
+
+end NLS.ZakharovShabatLemma16_2Checks

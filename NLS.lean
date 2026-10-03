@@ -2012,3 +2012,9 @@ import NLS.ZakharovShabat.SourceHilbertGradientOuterSummability
 import NLS.ZakharovShabat.SourceGradientExponentRestriction
 import NLS.ZakharovShabat.SourceGapWeightedEtaAllExponentSummability
 import NLS.ZakharovShabat.SourceGapWeightedEtaLemma16_1
+
+import NLS.SequenceSpaces.ExponentialSummability
+import NLS.ZakharovShabat.SourceBirkhoffFiniteGapFactors
+import NLS.ZakharovShabat.SourceBirkhoffWeightedGradientSummability
+import NLS.ZakharovShabat.SourceBirkhoffRectangularGradientSummability
+import NLS.ZakharovShabat.SourceBirkhoffLemma16_2

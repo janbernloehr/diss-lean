@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: Lemma 16.1 for every finite p > 1
+## Latest progress: Lemma 16.2 for every finite p > 1
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -117,12 +117,22 @@ identifies both literal signed Fourier modes and gives exactly the two
 ℓp norm sequences. A final existence theorem supplies a constructed
 Birkhoff family satisfying the estimates at every real finite-gap source.
 
-Next prove Lemma 16.2: differentiate the action-normalized, beta-corrected
-coordinates, use closed-gap vanishing on the finite-gap tail, and combine
-Lemma 16.1 with the scalar normalization and phase estimates. Then establish
-the Jacobian's compact perturbation of the Fourier transform. The sharper
-G.1 integral bound, remaining assertions of Theorem 14.1, and later chapters
-remain unfinished.
+Lemma 16.2 is now proved for the full range `1<p<∞`. At finite-gap sources,
+the beta correction is a finite sum over the open gaps, with each summand
+controlled in ℓp by a shifted reciprocal lattice. The normalized-action
+root and complete exponential phase multiplier are summably close to one.
+Closed-gap vanishing removes their derivatives in the exact product rule;
+Lemma 16.1 and bounded scalar multiplication control the signed derivative
+errors, and finite modification includes the open gaps. The normalized sum
+and difference give both actual rectangular derivative errors in operator
+norm. Exact free Fourier functionals and conjugate-gradient recovery then
+prove both literal conjugate-pair norm sequences. A constructed Birkhoff
+family supplies the domain and all data for the final existence theorem.
+
+Next establish the Jacobian's compact perturbation of the Fourier transform,
+using the actual derivative row estimates, then continue Section 16. The
+sharper G.1 integral bound, remaining assertions of Theorem 14.1, and later
+chapters remain unfinished.
 
 ## Milestones
 
