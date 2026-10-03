@@ -5,6 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
+Latest milestone: the actual Hilbert Birkhoff map is a global real analytic
+homeomorphism with analytic inverse. Proposition 17.2 (injectivity for every
+finite exponent above one) is proved. Surjectivity at other exponents remains
+in progress; see `STATUS.md` for the current boundary.
+
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
 canonical periodic-distribution product (Appendices B.2, B.3, and A.7). It also
@@ -9439,3 +9444,36 @@ Global injectivity and surjectivity, the global inverse, and the remaining
 claims of Proposition 17.2 and subsequent chapters are not yet complete.
 Next combine Hilbert properness with the proved local inverse and zero fiber,
 then use exponent compatibility for the global Birkhoff conclusions.
+
+## Global Hilbert inverse and Proposition 17.2
+
+`ClosedLocalHomeomorph.lean` proves that a closed local homeomorphism
+from a Hausdorff space to a preconnected target is bijective whenever it
+has one singleton fiber. The locus of fibers with at most one point is
+both open and closed; the range is also open and closed. The proof applies
+to infinite-dimensional spaces without local compactness assumptions.
+
+`SourceBirkhoffLocalHomeomorph.lean` packages Proposition 17.1 as a local
+homeomorphism for the actual real Birkhoff map at every finite exponent
+above one. `SourceHilbertGlobalInverse.lean` combines this with Hilbert
+properness and the singleton zero fiber to prove global Hilbert
+bijectivity. It bundles the original spectral map as a homeomorphism and
+proves its global inverse analytic at every target point by agreement
+with the existing analytic local inverses. A normalized family realizing
+this global real analytic homeomorphism is constructed.
+
+`SourceBirkhoffProposition17_2.lean` discharges the Hilbert injectivity
+premise in the existing exponent-extension argument. Proposition 17.2
+is now proved for every `1 < p < ∞`. Each actual real Birkhoff map is an
+open embedding. The proof above two uses finite-gap collision reduction;
+below two it uses coefficient-preserving exponent inclusion.
+
+Public checks give a unique source for every Hilbert target, verify
+analyticity of the global inverse at arbitrary targets, eliminate
+collisions at exponent 3, construct an injective family at exponent 3/2,
+and verify openness of images of arbitrary open source sets.
+
+The global Hilbert inverse and Proposition 17.2 are complete. Surjectivity
+at other exponents is not claimed. Next is Proposition 17.3 for `1 < p < 2`,
+including the action-angle flow and regularity argument of Lemma 17.4.
+The remaining dissertation results are still in progress.

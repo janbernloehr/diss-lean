@@ -2119,3 +2119,8 @@ import NLS.ZakharovShabat.SourceActionSegmentCircle
 import NLS.ZakharovShabat.SourceCanonicalRootCoefficientContinuity
 import NLS.ZakharovShabat.SourceActionCoefficientContinuity
 import NLS.ZakharovShabat.SourceHilbertProperness
+
+import NLS.FunctionalAnalysis.ClosedLocalHomeomorph
+import NLS.ZakharovShabat.SourceBirkhoffLocalHomeomorph
+import NLS.ZakharovShabat.SourceHilbertGlobalInverse
+import NLS.ZakharovShabat.SourceBirkhoffProposition17_2

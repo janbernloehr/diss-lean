@@ -1,6 +1,39 @@
 # Implementation status
 
-## Current milestone: bounded action continuity and Hilbert properness
+## Current milestone: global Hilbert inverse and Proposition 17.2
+
+`ClosedLocalHomeomorph.lean` proves that a closed local homeomorphism
+from a Hausdorff space to a preconnected target is bijective whenever it
+has one singleton fiber. The locus of fibers with at most one point is
+both open and closed; the range is also open and closed. The proof applies
+to infinite-dimensional spaces without local compactness assumptions.
+
+`SourceBirkhoffLocalHomeomorph.lean` packages Proposition 17.1 as a local
+homeomorphism for the actual real Birkhoff map at every finite exponent
+above one. `SourceHilbertGlobalInverse.lean` combines this with Hilbert
+properness and the singleton zero fiber to prove global Hilbert
+bijectivity. It bundles the original spectral map as a homeomorphism and
+proves its global inverse analytic at every target point by agreement
+with the existing analytic local inverses. A normalized family realizing
+this global real analytic homeomorphism is constructed.
+
+`SourceBirkhoffProposition17_2.lean` discharges the Hilbert injectivity
+premise in the existing exponent-extension argument. Proposition 17.2
+is now proved for every `1 < p < ∞`. Each actual real Birkhoff map is an
+open embedding. The proof above two uses finite-gap collision reduction;
+below two it uses coefficient-preserving exponent inclusion.
+
+Public checks give a unique source for every Hilbert target, verify
+analyticity of the global inverse at arbitrary targets, eliminate
+collisions at exponent 3, construct an injective family at exponent 3/2,
+and verify openness of images of arbitrary open source sets.
+
+The global Hilbert inverse and Proposition 17.2 are complete. Surjectivity
+at other exponents is not claimed. Next is Proposition 17.3 for `1 < p < 2`,
+including the action-angle flow and regularity argument of Lemma 17.4.
+The remaining dissertation results are still in progress.
+
+## Previous milestone: bounded action continuity and Hilbert properness
 
 `SourceActionSegmentCircle.lean` strengthens the common action contour:
 one constructed circle stays outside every periodic cut along every point

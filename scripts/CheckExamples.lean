@@ -25335,3 +25335,63 @@ example : ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
   exact ⟨s,hI,hB⟩
 
 end NLS.HilbertPropernessChecks
+
+namespace NLS.GlobalInverseChecks
+open NLS.ZakharovShabat Set Topology
+
+-- Every Hilbert target, without a range-membership hypothesis, has exactly
+-- one source. Both inverse identities use the original spectral map.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (y : RealCoeff 2 × RealCoeff 2) :
+    ∃! φ, sourceRealBirkhoffMap (by simp) (by norm_num) s φ = y := by
+  refine ⟨D.hilbertRealHomeomorph.symm y, D.hilbertRealHomeomorph.apply_symm_apply y, ?_⟩
+  intro ψ hψ
+  exact D.hilbert_real_map_bijective.1 (hψ.trans (D.hilbertRealHomeomorph.apply_symm_apply y).symm)
+
+-- The global inverse retains the local analytic regularity at every target.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (y : RealCoeff 2 × RealCoeff 2) :
+    AnalyticAt ℝ D.hilbertRealHomeomorph.symm y :=
+  D.hilbertRealHomeomorph_symm_analytic y (mem_univ y)
+
+-- Above the Hilbert exponent, arbitrary sources with equal coordinates agree.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ ψ : realTypeSourceSubmodule 3)
+    (h : sourceRealBirkhoffMap (by simp) (by norm_num) s φ =
+      sourceRealBirkhoffMap (by simp) (by norm_num) s ψ) : φ = ψ := D.proposition17_2 h
+
+private theorem one_lt_three_halves : (1 : ℝ≥0∞) < 3 / 2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+  norm_num
+
+private theorem three_halves_ne_top : (3 / 2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+
+local instance : Fact (1 ≤ (3 / 2 : ℝ≥0∞)) := ⟨one_lt_three_halves.le⟩
+
+-- Below the Hilbert exponent, the constructed family has the same global
+-- uniqueness, with no separate Hilbert-injectivity premise.
+example : ∃ s : (k : ℤ) → CoeffPair (3 / 2) → DeletedCoeff (3 / 2) k,
+    Function.Injective (sourceRealBirkhoffMap three_halves_ne_top one_lt_three_halves s) := by
+  obtain ⟨_,_,_,s,_,hi⟩ := exists_sourceBirkhoffFamily_injective
+    (p := 3 / 2) three_halves_ne_top one_lt_three_halves
+  exact ⟨s,hi⟩
+
+-- The image of any open set is open in the full target, at any finite p > 1.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (U : Set (realTypeSourceSubmodule p)) (hU : IsOpen U) :
+    IsOpen (sourceRealBirkhoffMap hp hp1 s '' U) :=
+  D.real_map_isOpenEmbedding.isOpenMap U hU
+
+-- No external normalized family or global-inverse premise is assumed.
+example : ∃ e : realTypeSourceSubmodule 2 ≃ₜ (RealCoeff 2 × RealCoeff 2),
+    AnalyticOnNhd ℝ (fun φ => e φ) univ ∧ AnalyticOnNhd ℝ (fun y => e.symm y) univ := by
+  obtain ⟨_,_,_,_,_,e,_,he,hi⟩ := exists_sourceBirkhoffFamily_hilbert_globalInverse
+  exact ⟨e,he,hi⟩
+
+end NLS.GlobalInverseChecks
