@@ -26573,3 +26573,57 @@ example (φ : realTypeSourceSubmodule 3) (a z : ℂ) (ψ : CoeffPair 3)
     sourceAbelianLogChart_exp (by simp) (by norm_num) φ.val φ.property a 0 (z,ψ) ha hz
 
 end NLS.AbelianLogChartChecks
+
+
+noncomputable section
+namespace NLS.AbelianBandChartChecks
+open Set Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- An odd negative band index fixes the actual additive constant.
+example (φ : realTypeSourceSubmodule 3) (x : ℝ)
+    (hx : x ∈ sourceRealBand (by simp) (by norm_num) φ.val (-3)) :
+    sourceAbelianPrimitive (by simp) (by norm_num) φ.val φ.property (x : ℂ) =
+      sourceRealBandArcsinPrimitive (by simp) φ.val (-3) x+
+        5*Complex.I*(Real.pi : ℂ)/2 := by
+  have h := sourceAbelianPrimitive_eq_arcsin_on_band (by simp) (by norm_num) φ.val φ.property (-3) x hx
+  convert! h using 1
+  norm_num
+  ring
+
+-- Real-source continuity allows the spectral coordinate to move in
+-- the complex plane, rather than restricting it to the real band.
+example (φ : realTypeSourceSubmodule 3) (m : ℤ) (a : ℝ)
+    (ha : a ∈ sourceRealBand (by simp) (by norm_num) φ.val m) :
+    ContinuousAt (fun t : ℂ × realTypeSourceSubmodule 3 =>
+      sourceAbelianPrimitive (by simp) (by norm_num) t.2.val t.2.property t.1) ((a : ℂ),φ) := by
+  simpa only using! continuousAt_sourceAbelianPrimitive_complex_real_band (by simp) (by norm_num) φ m a ha
+
+-- One product neighborhood handles all indices at a fractional
+-- exponent. It matches every nearby real source and has the exact
+-- potential derivative at arbitrary nearby complex sources.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (m : ℤ) (a : ℝ)
+    (ha : a ∈ sourceRealBand (by simp) (by norm_num) φ.val m) :
+    ∃ r : ℝ, 0 < r ∧ ∀ n : ℤ,
+      AnalyticOnNhd ℂ (sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property (a : ℂ) n)
+        (Metric.ball (a : ℂ) r ×ˢ Metric.ball φ.val r) ∧
+      (∀ ψ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)), ψ.val ∈ Metric.ball φ.val r →
+        ∀ z ∈ Metric.ball (a : ℂ) r,
+          sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property (a : ℂ) n (z,ψ.val) =
+            sourceAbelianPrimitive (by simp) (by norm_num) ψ.val ψ.property z+Complex.I*(Real.pi : ℂ)*n) ∧
+      ∀ (ψ : CoeffPair (ENNReal.ofReal (3/2))), ψ ∈ Metric.ball φ.val r →
+        ∀ z ∈ Metric.ball (a : ℂ) r, ∀ h : CoeffPair (ENNReal.ofReal (3/2)),
+          (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+            sourceAbelianLogChart (by simp) (by norm_num) φ.val φ.property (a : ℂ) n (z,χ)) ψ) h =
+          (fderiv ℂ (fun χ : CoeffPair (ENNReal.ofReal (3/2)) =>
+            canonicalDiscriminant (by simp) (periodOnePotential χ) z) ψ) h /
+            sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  obtain ⟨r,hr,_,hcharts⟩ := exists_sourceAbelianLogChart_band_product (by simp) (by norm_num) φ m a ha
+  refine ⟨r,hr,fun n => ⟨(hcharts n).1,(hcharts n).2.2,?_⟩⟩
+  intro ψ hψ z hz h
+  simpa only using! sourceAbelianLogChart_source_fderiv (by simp) (by norm_num) φ.val φ.property (a : ℂ) n z ψ h
+    (by simpa only using! (hcharts n).2.1 (z,ψ) ⟨hz,hψ⟩)
+
+end NLS.AbelianBandChartChecks

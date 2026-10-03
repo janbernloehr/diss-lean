@@ -2208,3 +2208,7 @@ import NLS.ZakharovShabat.SourceAbelianSquare
 import NLS.ComplexAnalysis.NormalizedLogChart
 import NLS.ZakharovShabat.SourceFloquetJointLog
 import NLS.ZakharovShabat.SourceAbelianLogChart
+
+import NLS.ZakharovShabat.SourceAbelianRealBandValue
+import NLS.ZakharovShabat.SourceAbelianBandSourceContinuity
+import NLS.ZakharovShabat.SourceAbelianBandChart

@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Latest progress: local joint logarithm charts and exact differential
+## Latest progress: normalized band charts for nearby real sources
+
+`SourceAbelianBandChart.lean` proves that a local joint logarithm chart
+is an actual extension of the normalized abelian integral for every
+nearby real potential. At any real spectral band anchor there is a
+positive-radius product of spectral and complex-source balls on which
+all signed-index charts are analytic and have differential
+`d Delta / canonicalRoot`. On every real-source slice they equal
+`F_0 + i n pi` throughout the complex spectral ball.
+
+`SourceAbelianRealBandValue.lean` fixes the exact band formula
+`F_0(x) = P_n(x) - i pi/2 - i n pi`, where `P_n` is the existing
+arcsine primitive. Its constant is determined by the actual endpoint
+limit. `SourceAbelianBandSourceContinuity.lean` uses continuity of the
+periodic endpoints to keep nearby points in the same band and proves
+joint continuity of these actual values as real sources vary.
+Normalized-log uniqueness fixes the chart at the real anchor for all
+nearby real sources; equality of spectral derivatives then extends
+this agreement across the spectral ball. The actual primitive is
+therefore jointly continuous in complex spectral coordinate and real
+source at every real band anchor.
+
+Public checks cover an odd negative band index, joint continuity with
+complex spectral coordinates, and a common product neighborhood at
+exponent 3/2. The latter checks agreement for every nearby real source
+and every index, together with the exact potential derivative at
+arbitrary nearby complex sources.
+
+This advances Lemma 19.1(i) by establishing normalization compatibility
+as real sources vary near band anchors. Continuing these compatible
+charts to arbitrary spectral anchors and assembling the full
+complex-source product-domain primitive remain next. Complex-source
+endpoint and square continuation, locally source-uniform and
+index-uniform estimates in (iii), subsequent frequency results, and
+the full dissertation remain unfinished.
+
+## Previous milestone: local joint logarithm charts and exact differential
 
 `SourceAbelianLogChart.lean` constructs local logarithm charts anchored
 at the exact value of the real-source normalized abelian primitive.
