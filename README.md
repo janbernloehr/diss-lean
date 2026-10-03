@@ -8882,7 +8882,7 @@ The action/mass trace identity, action-map properness, and Proposition 17.2
 remain unfinished; none is assumed in these new results.
 
 
-## Latest progress: finite-gap source mass recovered from the discriminant
+## Previous progress: finite-gap source mass recovered from the discriminant
 
 The physical mass coefficient is now transported to the actual canonical
 source discriminant. For every complex Hilbert source with absolutely
@@ -8913,3 +8913,44 @@ Next pass from the discriminant coefficient to the canonical-root/Floquet
 multiplier and its logarithmic primitive, then consolidate the finite action
 contours. The finite-gap action/mass trace identity, Hilbert action-map
 properness, and Proposition 17.2 remain unfinished.
+
+
+## Latest progress: a mass-normalized upper-half-plane primitive
+
+The actual canonical Floquet multiplier `(Δ + root)/2` is now constructed.
+Its companion multiplies with it to one off the periodic gap cuts, so it
+never vanishes there. It is analytic on that domain, and on the principal
+logarithm's slit plane its logarithmic derivative is exactly `Δ'/root`.
+The branch condition is explicit; no global principal-log branch is assumed.
+
+`SourceCanonicalRootVerticalAsymptotics.lean` specializes the exterior
+product normalization to prove `exp(-y) root(iy) → 1` at every finite
+exponent `p>1`. This fixes the upper sign. The root square identity then
+transfers the proved source mass coefficient to the root and multiplier.
+`LogarithmicCoefficient.lean` passes a scaled first-order limit at one to
+the logarithm, including arguments that equal one infinitely often.
+
+For absolutely summable real Hilbert sources,
+`2y (log multiplier(iy) - y) → sourceHilbertMass φ`. The normalized multiplier
+converges to one, which proves that its unnormalized value eventually lies
+in the slit plane on the upper imaginary ray. The exponential normalization
+subtracts exactly the real height from the logarithm.
+
+`SourceMassNormalizedPrimitive.lean` matches any existing upper-half-plane
+primitive of `Δ'/root` to that logarithm up to one constant on a terminal
+imaginary ray. Subtracting the constant supplies an actual primitive on the
+whole upper half-plane with `2y (F(iy)-y) → sourceHilbertMass φ`. For real
+finite-gap Hilbert sources the limit is exactly `‖φ‖²/2`, with all absolute
+summability assumptions discharged by the proved Sobolev bootstrap.
+
+Public examples check logarithmic coefficient transfer without a punctured
+limit, multiplier nonvanishing, the upper root sign, the precise local log
+derivative, eventual branch validity, subtraction of the height, and the
+global upper primitive with its finite-gap norm coefficient.
+
+Next extend the normalized primitive across closed gaps to the exterior of
+the finitely many open gaps and control its expansion at infinity. Then
+consolidate the finite action contours and extract the corresponding contour
+coefficient. A limit on one vertical ray alone does not establish that
+contour identity. The action/mass trace formula and Proposition 17.2 remain
+unfinished.

@@ -2050,3 +2050,10 @@ import NLS.ZakharovShabat.ClassicalDiscriminantMassAsymptotics
 
 import NLS.ZakharovShabat.SourceAbsoluteMassAsymptotics
 import NLS.ZakharovShabat.SourceFiniteGapMassAsymptotics
+
+import NLS.ComplexAnalysis.LogarithmicCoefficient
+import NLS.ComplexAnalysis.QuadraticRootCoefficient
+import NLS.ZakharovShabat.SourceFloquetMultiplier
+import NLS.ZakharovShabat.SourceCanonicalRootVerticalAsymptotics
+import NLS.ZakharovShabat.SourceFloquetMassCoefficient
+import NLS.ZakharovShabat.SourceMassNormalizedPrimitive

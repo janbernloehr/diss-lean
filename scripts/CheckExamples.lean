@@ -24546,3 +24546,61 @@ example (φ ψ : realTypeSourceSubmodule 2)
     ‖φ.val‖ = ‖ψ.val‖ := norm_eq_of_sourceDiscriminant_eq_finiteGap φ ψ hφ hψ he
 
 end NLS.SourceMassCoefficientChecks
+
+namespace NLS.FloquetMassPrimitiveChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis Set Filter Topology
+open scoped ENNReal
+
+-- A logarithmic coefficient does not require the argument to avoid one.
+example {α : Type*} {l : Filter α} (u a : α → ℂ) (M : ℂ)
+    (hu : Tendsto u l (𝓝 1)) (hM : Tendsto (fun i => a i * (u i - 1)) l (𝓝 M)) :
+    Tendsto (fun i => a i * Complex.log (u i)) l (𝓝 M) :=
+  tendsto_scaled_log_of_tendsto_scaled_sub_one u a M hu hM
+
+-- The reciprocal identity proves nonvanishing at every exponent, even for complex sources.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 φ) :
+    sourceFloquetMultiplier hp hp1 φ z ≠ 0 := sourceFloquetMultiplier_ne_zero hp hp1 φ z hz
+
+-- The chosen root has positive upper free normalization at every finite exponent greater than one.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    Tendsto (fun y : ℝ => Complex.exp (-(y : ℂ))*
+      sourceCanonicalRoot hp hp1 φ ((y : ℂ)*Complex.I)) atTop (𝓝 1) :=
+  tendsto_sourceCanonicalRoot_upper_normalized hp hp1 φ
+
+-- The principal logarithm is a local primitive only where its branch is analytic.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 φ)
+    (hl : sourceFloquetMultiplier hp hp1 φ z ∈ Complex.slitPlane) :
+    HasDerivAt (fun w => Complex.log (sourceFloquetMultiplier hp hp1 φ w))
+      (deriv (canonicalDiscriminant hp (periodOnePotential φ)) z / sourceCanonicalRoot hp hp1 φ z) z :=
+  hasDerivAt_log_sourceFloquetMultiplier hp hp1 φ hφ z hz hl
+
+-- The branch condition is proved eventually on the upper ray, rather than assumed.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (ha : Memℓp (fun n : ℤ => φ.fst n) 1) (hb : Memℓp (fun n : ℤ => φ.snd n) 1) :
+    ∀ᶠ y : ℝ in atTop,
+      sourceFloquetMultiplier (by simp) (by norm_num) φ ((y : ℂ)*Complex.I) ∈ Complex.slitPlane :=
+  eventually_sourceFloquetMultiplier_mem_slitPlane_of_absolute φ hφ ha hb
+
+-- The actual logarithm minus height has the source mass coefficient, including the additive normalization.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ))
+    (ha : Memℓp (fun n : ℤ => φ.fst n) 1) (hb : Memℓp (fun n : ℤ => φ.snd n) 1) :
+    Tendsto (fun y : ℝ => (2*y : ℂ)*
+      (Complex.log (sourceFloquetMultiplier (by simp) (by norm_num) φ ((y : ℂ)*Complex.I)) - y))
+      atTop (𝓝 (sourceHilbertMass φ)) :=
+  tendsto_sourceFloquetMultiplier_log_sub_height_of_absolute φ hφ ha hb
+
+-- Finite-gap sources have a genuine primitive on the whole upper half-plane with the exact mass coefficient.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ F : ℂ → ℂ,
+      (∀ z : ℂ, 0 < z.im → HasDerivAt F
+        (deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) z /
+          sourceCanonicalRoot (by simp) (by norm_num) φ.val z) z) ∧
+      Tendsto (fun y : ℝ => (2*y : ℂ)*(F ((y : ℂ)*Complex.I) - y)) atTop
+        (𝓝 ((‖φ.val‖^2/2 : ℝ) : ℂ)) :=
+  exists_sourceUpperPrimitive_norm_normalized_finiteGap φ hf
+
+end NLS.FloquetMassPrimitiveChecks

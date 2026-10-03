@@ -1,6 +1,28 @@
 # Implementation plan
 
-## Latest progress: the canonical finite-gap source mass coefficient
+## Latest progress: the mass-normalized upper primitive
+
+The canonical Floquet multiplier is analytic and nonzero off the gap cuts;
+its local logarithmic derivative is the actual quotient `Δ'/root`. The root's
+upper normalization fixes its sign, and its square identity transfers the
+source mass coefficient to the root and multiplier. The eventual principal
+logarithm satisfies `2y (log multiplier(iy)-y) → sourceHilbertMass φ` for
+absolutely summable real Hilbert sources. Matching any global upper-half-plane
+primitive to the logarithm up to a constant constructs a mass-normalized
+primitive on the entire upper half-plane. At real finite-gap sources its
+coefficient is exactly `‖φ‖²/2`, with no remaining regularity assumption.
+
+Next continue this primitive across the closed gaps to an exterior domain
+containing only finitely many open cuts. Prove the required expansion at
+infinity, using global growth or removable-singularity control; the vertical
+coefficient limit alone is not a contour asymptotic. The library has annular
+zero-period primitives and the root derivative identity available. Consolidate
+the finite action contours and identify the contour coefficient to establish
+the finite-gap action/mass trace formula. The existing density reduction then
+extends it to every real Hilbert source. Spectral-action weak continuity and
+properness remain subsequent obligations for global injectivity.
+
+## Previous progress: the canonical finite-gap source mass coefficient
 
 Absolute period-one Fourier synthesis now gives the actual continuous
 representative and exact physical/source mass equality by bilinear
