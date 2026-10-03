@@ -1,6 +1,25 @@
 # Implementation plan
 
-## Latest progress: the finite-gap exterior spectral functions
+## Latest progress: the mass-normalized exterior primitive
+
+The finite-hole contour theorem and actual disjoint isolating circles now
+prove zero period for the regularized quotient on every sufficiently large
+circle. A general circular-hole filling argument constructs a primitive on
+the whole exterior. This supplies the actual finite-gap exterior primitive
+at every finite `p>1`, without period or contour-geometry assumptions.
+At the Hilbert exponent, one additive correction gives this same primitive
+the exact coefficient `2y (F(iy)-y) → ‖φ‖²/2` on the upper imaginary ray.
+
+Next combine the existing exterior discriminant-derivative and canonical-root
+asymptotics on large circles separated from the free lattice. Use those
+bounds to establish removable-singularity control for the exterior quotient
+at infinity, so that the ray coefficient determines a Laurent coefficient.
+Then consolidate and
+evaluate the weighted action contours to prove the finite-gap action/mass
+trace formula. Its density extension, spectral-action weak continuity,
+and properness remain later steps toward global injectivity.
+
+## Previous progress: the finite-gap exterior spectral functions
 
 The canonical root and Floquet multiplier now extend analytically through
 all collapsed gaps at every real source and finite exponent `p>1`. The

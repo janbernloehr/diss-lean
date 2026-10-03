@@ -24648,3 +24648,40 @@ example (φ : realTypeSourceLocus 3)
   exists_sourceFiniteGap_analytic_exterior (by simp) (by norm_num) φ hf
 
 end NLS.FiniteGapExteriorChecks
+
+namespace NLS.FiniteGapExteriorPrimitiveChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex Filter Topology Metric
+open scoped ENNReal
+
+-- The exterior primitive theorem has no outer radius or logarithm-branch premise.
+example (f : ℂ → ℂ) (c : ℂ) (r : ℝ) (hr : 0 < r)
+    (hf : AnalyticOnNhd ℂ f (ball c r)ᶜ)
+    (hp : (∮ z in C(c,r), f z) = 0) :
+    ∃ F : ℂ → ℂ, ∀ z ∉ closedBall c r, HasDerivAt F (f z) z :=
+  exists_primitive_on_exterior_of_zero_period f c r hr hf hp
+
+-- Vanishing is proved for every sufficiently large circle at a finite-gap source.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceLocus p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ T : ℝ, 0 < T ∧ ∀ S : ℝ, T ≤ S →
+      (∮ z in C(0,S), sourceFloquetLogDerivative hp hp1 φ.val z) = 0 :=
+  exists_sourceFiniteGap_exterior_period_zero hp hp1 φ hf
+
+-- The primitive is on the full exterior, including its collapsed spectral points.
+example (φ : realTypeSourceLocus 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ R : ℝ, 0 < R ∧ ∃ F : ℂ → ℂ, ∀ z : ℂ, R < ‖z‖ →
+      HasDerivAt F (sourceFloquetLogDerivative (by simp) (by norm_num) φ.val z) z :=
+  exists_sourceFiniteGap_exterior_primitive (by simp) (by norm_num) φ hf
+
+-- One exterior primitive has both the spectral derivative and the exact original norm coefficient.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ R : ℝ, 0 < R ∧ ∃ F : ℂ → ℂ,
+      (∀ z : ℂ, R < ‖z‖ → HasDerivAt F
+        (sourceFloquetLogDerivative (by simp) (by norm_num) φ.val z) z) ∧
+      Tendsto (fun y : ℝ => (2*y : ℂ)*(F ((y : ℂ)*Complex.I) - y)) atTop
+        (𝓝 ((‖φ.val‖^2/2 : ℝ) : ℂ)) :=
+  exists_sourceFiniteGap_exterior_primitive_norm_normalized φ hf
+
+end NLS.FiniteGapExteriorPrimitiveChecks

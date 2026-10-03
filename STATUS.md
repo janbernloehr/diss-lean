@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: analytic continuation through all collapsed gaps
+## Current milestone: a mass-normalized primitive on the full exterior
+
+`SourceFiniteGapExteriorPeriod.lean` proves that the regularized logarithmic
+derivative has zero integral around every sufficiently large circle at an
+actual real finite-gap source, for each finite exponent `p>1`. The proof
+constructs disjoint gap circles, applies finite-hole Cauchy decomposition
+only to the finitely many open gaps, and uses the established vanishing of
+each individual gap period. All collapsed points remain inside the analytic
+domain, so no tail gaps need to be excluded from the outer disc.
+
+`ExteriorHolomorphicPrimitive.lean` supplies a general primitive on the
+entire exterior of a disc from analyticity up to its boundary and one zero
+circle period. Circular-hole filling gives an entire function; its entire
+primitive plus the logarithmic Cauchy correction has the original derivative
+on the full exterior. No global principal-log branch or finite outer radius
+is assumed.
+
+`SourceFiniteGapExteriorPrimitive.lean` combines these results to construct
+the actual exterior primitive at every real finite-gap source. The radius
+and zero period are supplied by proved spectral geometry.
+`SourceFiniteGapExteriorMassNormalization.lean` fixes its additive constant
+by comparing derivatives with the normalized upper primitive along the
+upper imaginary ray. At the Hilbert exponent, the same exterior function
+satisfies `2y (F(iy)-y) → ‖φ‖²/2`.
+
+Public examples check the whole-exterior primitive theorem, all sufficiently
+large zero periods, construction at `p=3`, and the combined derivative and
+exact norm coefficient at `p=2`.
+
+Next control this exterior primitive at infinity, derive its Laurent
+coefficient from the established ray limit, and evaluate the consolidated
+action contour. The ray limit alone does not prove a Laurent expansion.
+The action/mass trace formula and Proposition 17.2 remain unfinished.
+
+## Previous milestone: analytic continuation through all collapsed gaps
 
 `SourceOpenGapComplement.lean` removes only the noncollapsed periodic
 segments. At every real source and finite exponent `p>1`, the actual

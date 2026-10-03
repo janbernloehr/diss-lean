@@ -2060,3 +2060,8 @@ import NLS.ZakharovShabat.SourceMassNormalizedPrimitive
 
 import NLS.ZakharovShabat.SourceOpenGapComplement
 import NLS.ZakharovShabat.SourceFiniteGapExterior
+
+import NLS.ComplexAnalysis.ExteriorHolomorphicPrimitive
+import NLS.ZakharovShabat.SourceFiniteGapExteriorPeriod
+import NLS.ZakharovShabat.SourceFiniteGapExteriorPrimitive
+import NLS.ZakharovShabat.SourceFiniteGapExteriorMassNormalization
