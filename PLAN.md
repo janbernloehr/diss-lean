@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: Dirichlet normalization and local root derivatives
+## Latest progress: canonical source Dirichlet gradients
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -32,8 +32,15 @@ Spectral differentiation of the Volterra solution supplies the denominator
 identity. The free normalization is exactly two, with the two opposite
 exponential waves and factor one half verified explicitly.
 
-Next instantiate this formula at the canonical indexed source roots and
-prove the uniform shifted-free remainder estimate, then apply the gradient
+The formula is now instantiated at all canonical signed Dirichlet roots of
+real continuously represented sources, including the H¹ sources. Completed
+source and physical boundary characteristics agree by bounded physical
+restriction and density. Both actual root-cotangent Fourier components are
+identified at reversed frequency for every finite source exponent `p≥2`.
+No simplicity or candidate-gradient premise is added at these real sources.
+
+Next extend this root-gradient application to a common complex neighborhood
+and prove the uniform shifted-free remainder estimate, then apply the gradient
 estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
 exported in actual source operator norm; coefficient-form applications should preserve the
 proved reversed-frequency convention.

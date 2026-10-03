@@ -8202,3 +8202,36 @@ Public checks cover `Q(0,z)=2` for every complex `z`, the free gradient
 local branch derivative. G.7 as a whole, Lemma 16.1, the sharper G.1 integral
 bound, remaining assertions of Theorem 14.1, and later chapters remain
 unfinished. No infinite-exponent assertion is added.
+
+## Appendix G.7: canonical source Dirichlet gradients
+
+The normalized squared-eigenfunction formula now describes the actual
+canonical source Dirichlet root derivative at every real source with a
+compatible continuous physical representative. Every signed index is
+included, with no exclusion of the central block or collapsed periodic gaps.
+The existing simplicity theorem supplies nonzero normalization; neither
+simplicity nor a candidate gradient is an extra assumption in this result.
+
+`ContinuousSourceBoundaryRealization.lean` constructs bounded restriction
+of physical Hilbert synthesis to the original unit-interval L² space.
+Density identifies the completed source boundary extension with the actual
+reflected physical potential. This proves equality of the source and classical
+Dirichlet and Neumann characteristics at every compatible continuous
+potential, including complex and non-polynomial inputs.
+
+`ContinuousSourceBoundaryGradient.lean` differentiates this equality along
+compatible affine directions. Both actual characteristic cotangent coefficients
+are the corresponding physical Fourier coefficients at reversed frequency.
+`SourceDirichletNormalizedGradient.lean` combines the characteristic identity,
+the genuine canonical root differential, and the proved normalization formula.
+Inclusion into every finite source exponent `p≥2` preserves the directional
+formula and the unit Fourier values of the root derivative. The physical H¹
+specialization constructs its representative from the Sobolev coefficients
+and identifies both components, without a supplied gradient formula.
+
+Public checks cover the general continuous characteristic identity, nonzero
+normalization at real H¹ canonical roots, both actual Fourier-direction values
+at `p=3`, and the normalized integral in arbitrary compatible directions.
+The root-gradient application in this checkpoint is at real sources. A common
+complex neighborhood for this application and the uniform shifted-free
+remainder estimate remain next. G.7 as a whole and Lemma 16.1 remain unfinished.

@@ -1963,3 +1963,7 @@ import NLS.ZakharovShabat.SourceMidpointSobolevSummability
 import NLS.ZakharovShabat.ClassicalSpectralVariation
 import NLS.ZakharovShabat.ClassicalDirichletGradientNormalization
 import NLS.ZakharovShabat.ClassicalDirichletRootGradient
+
+import NLS.ZakharovShabat.ContinuousSourceBoundaryRealization
+import NLS.ZakharovShabat.ContinuousSourceBoundaryGradient
+import NLS.ZakharovShabat.SourceDirichletNormalizedGradient

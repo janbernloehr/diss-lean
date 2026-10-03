@@ -23402,3 +23402,46 @@ example (μ : Curve (ℂ × ℂ) → ℂ) (Φ H : Curve (ℂ × ℂ)) (hμ : Con
   fderiv_classicalDirichletRoot_eq_normalized_integral μ Φ hμ hroot hsimple H
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set MeasureTheory NLS.LinearVolterra NLS.Fourier
+
+-- Completed source and physical characteristics agree beyond finite Fourier support.
+example (b : BoundaryCondition) (φ : CoeffPair 2) (Φ : Curve (ℂ × ℂ))
+    (hΦ : physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend Φ) (z : ℂ) :
+    periodOneBoundaryCharacteristic (by simp) (by norm_num) b φ z = classicalSeparatedCharacteristic b Φ z :=
+  periodOneBoundaryCharacteristic_eq_classical_of_continuous b φ Φ hΦ z
+
+-- Every real canonical root has nonzero normalization, including central indices and closed gaps.
+example (φ : CoeffPair 2) (hreal : IsRealType (CoeffPair.toMax 2 φ)) (a : Domain 2)
+    (ha : periodOnePotential φ = domainInclusion a) (n : ℤ) :
+    classicalDirichletNormalization (classicalSobolevPotential a)
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ n) ≠ 0 :=
+  classicalDirichletNormalization_canonicalRoot_ne_zero φ hreal _
+    (physicalBase_source_sobolev_compatibility φ a ha) n
+
+-- The actual derivative at exponent three has both normalized physical Fourier coefficients.
+example (φ : CoeffPair 2) (hreal : IsRealType (CoeffPair.toMax 2 φ)) (a : Domain 2)
+    (ha : periodOnePotential φ = domainInclusion a) (n k : ℤ) :
+    let z := canonicalPeriodOneBoundaryRoots (p := 3) (by norm_num) (by norm_num) .dirichlet
+      (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n
+    let L := fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+      (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)
+    L (CoeffPair.inlCLM (lp.single 3 k 1)) =
+      unitFourierCoefficient (fun t => (classicalDirichletNormalizedGradient (classicalSobolevPotential a) z t).1) (-k) ∧
+    L (CoeffPair.inrCLM (lp.single 3 k 1)) =
+      unitFourierCoefficient (fun t => (classicalDirichletNormalizedGradient (classicalSobolevPotential a) z t).2) (-k) := by
+  exact (canonicalDirichletRoot_sobolev_normalized_gradient (p := 3)
+    (by norm_num) (by norm_num) (by norm_num) φ hreal a ha n).2 k
+
+-- The formula also compares actual source and physical derivatives in arbitrary compatible directions.
+example (φ h : CoeffPair 2) (hreal : IsRealType (CoeffPair.toMax 2 φ)) (Φ H : Curve (ℂ × ℂ))
+    (hΦ : physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend Φ)
+    (hH : physicalBase (periodOnePotential h) =ᵐ[volume.restrict (Ioc 0 1)] NLS.LinearVolterra.extend H) (n : ℤ) :
+    (fderiv ℂ (fun ψ : CoeffPair 2 => canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n) φ) h =
+      ∫ t in (0 : ℝ)..1,
+        (classicalDirichletNormalizedGradient Φ (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ n) t).1*(NLS.LinearVolterra.extend H t).1+
+        (classicalDirichletNormalizedGradient Φ (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ n) t).2*(NLS.LinearVolterra.extend H t).2 :=
+  fderiv_canonicalDirichletRoot_eq_normalized_integral φ h hreal Φ H hΦ hH n
+
+end NLS.ZakharovShabat
