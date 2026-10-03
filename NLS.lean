@@ -2124,3 +2124,6 @@ import NLS.FunctionalAnalysis.ClosedLocalHomeomorph
 import NLS.ZakharovShabat.SourceBirkhoffLocalHomeomorph
 import NLS.ZakharovShabat.SourceHilbertGlobalInverse
 import NLS.ZakharovShabat.SourceBirkhoffProposition17_2
+
+import NLS.SequenceSpaces.RealActionReduction
+import NLS.ZakharovShabat.SourceHilbertActionReduction

@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual Hilbert Birkhoff map is a global real analytic
-homeomorphism with analytic inverse. Proposition 17.2 (injectivity for every
-finite exponent above one) is proved. Surjectivity at other exponents remains
-in progress; see `STATUS.md` for the current boundary.
+Latest milestone: one-mode action-reduction curves are constructed in the
+original Hilbert source space, with their differential equation, exact spectral
+action laws, and a source-norm limit at a closed gap. The global Hilbert inverse
+and Proposition 17.2 are proved. The stronger-exponent flow regularity needed
+for Proposition 17.3 remains in progress; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -9477,3 +9478,40 @@ The global Hilbert inverse and Proposition 17.2 are complete. Surjectivity
 at other exponents is not claimed. Next is Proposition 17.3 for `1 < p < 2`,
 including the action-angle flow and regularity argument of Lemma 17.4.
 The remaining dissertation results are still in progress.
+
+## Hilbert action-reduction curves
+
+`RealActionReduction.lean` constructs the explicit one-mode radial curve
+in every real sequence space. For positive initial action `a`, the selected
+coordinate pair is multiplied by `sqrt(1-t/a)`. Its action is exactly `a-t`
+for `t ≤ a`; every other coordinate and action is unchanged. The curve is
+continuous through collapse and smooth for all `t < a`, including negative
+times. Its derivative solves the autonomous radial equation with velocity
+`-(x_k,y_k)/(2 I_k)` in the selected mode.
+
+`SourceHilbertActionReduction.lean` lifts that curve through the proved
+global Hilbert Birkhoff inverse. The original spectral actions satisfy the
+same exact reduction and conservation laws. The lifted curve starts at
+the given source, is smooth before collapse, and solves the differential
+equation whose vector field is the radial vector pulled back by the actual
+inverse Jacobian. The derivative of the global inverse is explicitly
+identified with that inverse Jacobian.
+
+At the collapse time the curve converges in the source norm to an actual
+source whose selected periodic gap is closed. Every other action remains
+fixed. A further theorem chooses a finite nonnegative time strictly before
+collapse at which the selected action is positive and below any prescribed
+positive threshold.
+
+Public checks cover the exact negative velocity of a 3-4 coordinate pair,
+an unrelated nonzero mode, action growth at negative time, the source-space
+differential equation, and the source-norm limit with its closed gap and
+conserved other actions.
+
+This completes the radial-curve construction needed for Lemma 17.4. The
+identification of its pulled-back vector with the actual angle Hamiltonian,
+uniqueness for that Hamiltonian equation, and continuity of the displacement
+in every stronger exponent remain to be proved. Proposition 17.3 and
+surjectivity outside the Hilbert case are not yet complete. Next establish
+the Hamiltonian identification and stronger-exponent displacement estimate,
+then use finite successive action reductions for Proposition 17.3.

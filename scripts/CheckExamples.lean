@@ -25395,3 +25395,60 @@ example : ∃ e : realTypeSourceSubmodule 2 ≃ₜ (RealCoeff 2 × RealCoeff 2),
   exact ⟨e,he,hi⟩
 
 end NLS.GlobalInverseChecks
+
+namespace NLS.ActionReductionChecks
+open NLS.ZakharovShabat RealCoeff Set Filter Topology
+
+private def twoMode : RealCoeff 3 × RealCoeff 3 :=
+  (lp.single 3 (-2) (3 : ℝ)+lp.single 3 7 (1 : ℝ),lp.single 3 (-2) (4 : ℝ))
+
+-- A 3-4 coordinate pair has action 25/2. Both velocity components are
+-- negative, with the denominator 25; the unrelated nonzero mode is fixed.
+example : (actionReductionVector twoMode (-2)).1 (-2) = -3/25 ∧
+    (actionReductionVector twoMode (-2)).2 (-2) = -4/25 ∧
+    ∀ t : ℝ, (actionReduction twoMode (-2) t).1 7 = 1 := by
+  constructor
+  · change -(1/(2*pairAction twoMode (-2)))*twoMode.1 (-2) = -3/25
+    norm_num [pairAction,twoMode,lp.coeFn_add,lp.single_apply]
+  constructor
+  · change -(1/(2*pairAction twoMode (-2)))*twoMode.2 (-2) = -4/25
+    norm_num [pairAction,twoMode,lp.coeFn_add,lp.single_apply]
+  · intro t
+    rw [(actionReduction_apply_ne twoMode (-2) 7 (by norm_num) t).1]
+    norm_num [twoMode,lp.coeFn_add,lp.single_apply]
+
+-- Negative times lie in the smooth solution interval and increase the action.
+example : pairAction (actionReduction twoMode (-2) (-1)) (-2) = 27/2 := by
+  have ha : pairAction twoMode (-2) = 25/2 := by
+    norm_num [pairAction,twoMode,lp.coeFn_add,lp.single_apply]
+  rw [pairAction_actionReduction_same _ _ (by rw [ha]; norm_num) _ (by rw [ha]; norm_num),ha]
+  norm_num
+
+-- A source-norm endpoint exists, has the selected gap closed, and retains
+-- every other original spectral action.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (k : ℤ)
+    (ha : 0 < (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re) :
+    let a := (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re
+    ∃ ψ : realTypeSourceSubmodule 2,
+      Tendsto (D.hilbertActionReduction φ k) (𝓝[<] a) (𝓝 ψ) ∧
+      sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ.val k = 0 ∧
+      ∀ n : ℤ, n ≠ k → (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property n).re =
+        (sourceRealAction (by simp) (by norm_num) φ.val φ.property n).re := by
+  dsimp only
+  refine ⟨D.hilbertActionReduction φ k _,D.tendsto_hilbertActionReduction_at_collapse φ k,
+    D.hilbertActionReduction_gap_zero_at_collapse φ k ha,?_⟩
+  intro n hn
+  exact D.hilbertActionReduction_action_ne φ k n hn _
+
+-- The differential equation holds for a negative time in the original source.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (k : ℤ)
+    (ha : 0 < (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re) :
+    HasDerivAt (D.hilbertActionReduction φ k)
+      (D.hilbertActionReductionVector (D.hilbertActionReduction φ k (-1)) k) (-1) :=
+  D.hasDerivAt_hilbertActionReduction φ k ha (by linarith)
+
+end NLS.ActionReductionChecks
