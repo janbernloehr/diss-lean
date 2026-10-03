@@ -1939,3 +1939,7 @@ import NLS.Fourier.IntervalCoefficientLinearity
 import NLS.ZakharovShabat.ClassicalCharacteristicGradientRemainders
 import NLS.ZakharovShabat.ClassicalCharacteristicGradientFourier
 import NLS.ZakharovShabat.ClassicalCharacteristicGradientSummability
+
+import NLS.ZakharovShabat.ClassicalGradientFourierPowerBound
+import NLS.ZakharovShabat.ClassicalGradientSpectralDiscBounds
+import NLS.ZakharovShabat.ClassicalDiscriminantGradientDiscSup

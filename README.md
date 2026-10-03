@@ -7975,3 +7975,42 @@ Next prove G.7's midpoint and Dirichlet-eigenvalue gradient estimates,
 then apply the Appendix G bounds in Lemma 16.1. The sharper G.1 integral
 bound, G.7, Lemma 16.1, remaining assertions of Theorem 14.1, and later
 chapters remain unfinished.
+
+## Appendix G.7 preparation: summable spectral-disc suprema
+
+The spectral supremum required in G.7 now has a formal summability
+proof. For any fixed radius `B≥0`, one outer ℓp majorant bounds the actual
+discriminant-gradient Fourier norm at every point of every closed disc
+`|z−nπ|≤B`, simultaneously over the whole physical H¹ ball and every
+contractive scalar observation. The bound is chosen before all spectral
+points. In particular it controls every point on G.7's circles of radius
+`π/4`, not just one selected point per index.
+
+`ClassicalGradientFourierPowerBound.lean` extracts one nonnegative
+constant K and exponent α with `αp>1` from the time-value and derivative
+bounds. The estimate `K d^(−α)` applies to every actual endpoint gradient
+error satisfying those bounds, independently of the spectral frequencies.
+`ClassicalGradientSpectralDiscBounds.lean` applies it uniformly over each
+disc. One cutoff gives the required strip and inverse-frequency estimates;
+an explicit bound using `|z|≤π|n|+B` controls all remaining finite indices.
+The resulting whole-sequence majorant covers every potential, unit initial
+vector, contractive endpoint functional, and contractive observation.
+
+`ClassicalDiscriminantGradientDiscSup.lean` transfers that majorant to
+the actual trace gradient and defines the real supremum of its Fourier
+norm over the closed disc. The supremum set is proved nonempty and bounded
+above. Its actual supremum is nonnegative, shares the common bound over
+each H¹ ball, and forms an outer ℓp sequence whenever `1<p<∞` and
+`q>1+1/p`, including the conjugate Fourier exponent `q=p/(p−1)`.
+No assumed coefficient-space continuity or supplied supremum bound is used.
+
+Public checks verify simultaneous control of every point on every
+radius-`π/4` circle, actual disc-supremum summability at `p=3`, zero-radius
+discs at `p=4`, and the whole-ball supremum bound for all observations.
+
+This completes the spectral-uniform estimate needed before G.7's contour
+argument. G.7 itself remains unfinished: the midpoint gradient contour
+representation, its discriminant quotient bound, and the Dirichlet
+normalization estimate must still be connected to the actual indexed
+coordinates. Lemma 16.1, the sharper G.1 integral bound, remaining assertions
+of Theorem 14.1, and later chapters also remain unfinished.

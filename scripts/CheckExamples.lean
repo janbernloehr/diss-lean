@@ -23155,3 +23155,47 @@ example (M : ℝ) (hM : 0 ≤ M) (w : ℂ) : ∃ b : ℤ → ℝ, Memℓp b (ENN
   exact ⟨b,hb,fun a ha n => h a ha _ (ContinuousLinearMap.norm_fst_le ..) n⟩
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set Metric NLS.Fourier
+
+-- G.7 needs one bound for every point on every circle, simultaneously over the potential ball.
+example (M : ℝ) (hM : 0 ≤ M) : ∃ b : ℤ → ℝ, Memℓp b (ENNReal.ofReal (3 : ℝ)) ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ (n : ℤ) (z : ℂ),
+      z ∈ sphere ((Real.pi : ℂ)*(n : ℂ)) (Real.pi/4) →
+      ‖classicalDiscriminantGradientFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num)
+        (classicalSobolevPotential a) z (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤ b n := by
+  obtain ⟨b,hb,h⟩ := exists_classicalDiscriminantGradient_disc_uniform_memlp 3 (by norm_num)
+    (ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M hM (Real.pi/4) (by positivity)
+  refine ⟨b,hb,?_⟩
+  intro a ha n z hz
+  have hz' : ‖z-(Real.pi : ℂ)*(n : ℂ)‖ ≤ Real.pi/4 := by
+    exact le_of_eq (by simpa only [mem_sphere,dist_eq_norm] using hz)
+  exact h a ha _ (ContinuousLinearMap.norm_fst_le ..) n z hz'
+
+-- The spectral supremum is taken inside each index before outer ℓ³ summability.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (classicalDiscriminantGradientFourierDiscSup (q := ENNReal.ofReal (3/(3-1) : ℝ))
+      (by norm_num) a (Real.pi/4) (ContinuousLinearMap.snd ℝ ℂ ℂ)) (ENNReal.ofReal (3 : ℝ)) :=
+  memlp_classicalDiscriminantGradient_conjugate_fourier_discSup 3 (by norm_num) a
+    (Real.pi/4) (by positivity) _ (ContinuousLinearMap.norm_snd_le ..)
+
+-- Radius zero is allowed: finite heads, including the central frequency, are retained.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (classicalDiscriminantGradientFourierDiscSup (q := ENNReal.ofReal (4/(4-1) : ℝ))
+      (by norm_num) a 0 (ContinuousLinearMap.fst ℝ ℂ ℂ)) (ENNReal.ofReal (4 : ℝ)) :=
+  memlp_classicalDiscriminantGradient_conjugate_fourier_discSup 4 (by norm_num) a
+    0 (by norm_num) _ (ContinuousLinearMap.norm_fst_le ..)
+
+-- The supremum bounds are uniform over all potentials and contractive observations.
+example (M : ℝ) (hM : 0 ≤ M) : ∃ b : ℤ → ℝ, Memℓp b (ENNReal.ofReal (3 : ℝ)) ∧
+    ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M →
+      ∀ (P : (ℂ × ℂ) →L[ℝ] ℂ), ‖P‖ ≤ 1 → ∀ n : ℤ,
+      0 ≤ classicalDiscriminantGradientFourierDiscSup (q := ENNReal.ofReal (3/2 : ℝ))
+        (by norm_num) a (Real.pi/4) P n ∧
+      classicalDiscriminantGradientFourierDiscSup (q := ENNReal.ofReal (3/2 : ℝ))
+        (by norm_num) a (Real.pi/4) P n ≤ b n :=
+  exists_classicalDiscriminantGradient_discSup_uniform_memlp 3 (by norm_num)
+    (ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M hM (Real.pi/4) (by positivity)
+
+end NLS.ZakharovShabat
