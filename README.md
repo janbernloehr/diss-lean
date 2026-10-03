@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the normalized primitive now has exactly the
-positive arcosh boundary value from the upper half-plane and its
-negative from the lower half-plane. The proof covers arbitrary
-half-plane approaches, all signed indices, endpoints, and collapsed
-gaps for real sources. Continuation of its square across a gap is next.
+Latest milestone: the square of the normalized abelian primitive now
+extends analytically across the entire selected gap and its isolating
+disc for real sources. The extension is independent of the chart,
+includes endpoints and collapsed gaps, and equals the squared arcosh
+profile on the real gap. Complex-source joint analyticity remains next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -10146,3 +10146,39 @@ across the selected gap, as in (iv). The complex-source construction,
 joint analyticity and potential gradient in (i), locally source-uniform
 and index-uniform gap estimates in (iii), subsequent frequency results,
 and the full dissertation remain unfinished.
+
+
+## Analytic square across the selected gap
+
+`SourceAbelianSquare.lean` constructs a chart-independent continuation
+of `(F_0 + i n pi)^2`. It agrees with the actual normalized square on
+the plane with only noncollapsed cuts removed, and is analytic after
+adjoining the entire selected isolating disc. In particular, every
+point of the selected closed gap is an analytic point, with no
+open-gap or finite-gap assumption.
+
+The generic `GapPrimitiveSquare.lean` theorem continues local
+endpoint-normalized primitives onto regular square-root sheets.
+Squaring cancels their root-ratio signs, so the local squares agree
+on a dense subset and hence on overlaps. Zero endpoint limits and
+the removable-singularity theorem fill the two remaining points.
+`DenseAnalyticExtension.lean` supplies the reusable dense-limit and
+finite-boundary extension results. The argument includes a collapsed
+segment without dividing by its length.
+
+`SourceAbelianDiscSquare.lean` applies this to the actual discriminant
+quotient and its analytic regular numerator. The resulting global
+square has zero values at both selected endpoints and equals the
+squared real arcosh profile on the whole closed gap. At zero potential,
+it is exactly the entire quadratic `-(lambda - n pi)^2`.
+
+Public checks cover analyticity on the cut at exponent 3/2 and index
+-3, positivity of the continued square in a real gap interior,
+agreement of distinct isolating charts even on the cut, and the
+shifted free quadratic at arbitrary complex spectral parameters.
+
+This proves the real-source continuation assertion of Lemma 19.1(iv).
+Extending the construction to the complex-source neighborhoods and
+proving joint analyticity and the potential gradient in (i) remain
+next. The locally source-uniform and index-uniform estimates in (iii),
+subsequent frequency results, and the full dissertation are unfinished.

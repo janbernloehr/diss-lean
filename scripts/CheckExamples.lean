@@ -26464,3 +26464,47 @@ example (φ : realTypeSourceSubmodule 3) (n : ℤ) (upper : Bool)
     sourceAbelianHalfPlanePrimitive_gap_boundary_limit (by simp) (by norm_num) φ.val φ.property n upper _ hx
 
 end NLS.AbelianGapBoundaryChecks
+
+
+noncomputable section
+namespace NLS.AbelianSquareChecks
+open Set Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Analyticity includes every point of the selected cut at a negative
+-- odd index and a non-Hilbert exponent; no open-gap assumption is used.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (z : ℂ)
+    (hz : z ∈ sourcePeriodicSegment (by simp) (by norm_num) φ.val (-3)) :
+    AnalyticAt ℂ (sourceAbelianSquare (by simp) (by norm_num) φ.val φ.property (-3)) z :=
+  sourceAbelianSquare_analyticAt_of_mem_segment (by simp) (by norm_num) φ.val φ.property (-3) z hz
+
+-- The continuation has a strictly positive real value in the interior
+-- of a real gap, regardless of the original upper/lower sheet sign.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) (x : ℝ)
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re) :
+    0 < (sourceAbelianSquare (by simp) (by norm_num) φ.val φ.property n (x : ℂ)).re := by
+  rw [sourceAbelianSquare_eq_arcosh_sq (by simp) (by norm_num) φ.val φ.property n x ⟨hx.1.le,hx.2.le⟩,
+    ← Complex.ofReal_pow,Complex.ofReal_re]
+  exact sq_pos_of_pos ((sourceRealGapArcoshProfile_spec (by simp) (by norm_num) φ.val φ.property n).2.2.2 x hx)
+
+-- Distinct isolating charts determine identical analytic squares on
+-- their overlap, including points on the cut.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ)
+    (D E : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n) (z : ℂ)
+    (hzD : z ∈ Metric.ball D.center D.radius) (hzE : z ∈ Metric.ball E.center E.radius) :
+    D.squareExtension z = E.squareExtension z :=
+  (sourceAbelianSquare_eq_disc (by simp) (by norm_num) φ.val φ.property n D hzD).symm.trans
+    (sourceAbelianSquare_eq_disc (by simp) (by norm_num) φ.val φ.property n E hzE)
+
+-- The free entire quadratic has a double zero at each corresponding
+-- collapsed periodic point and the correct shifted value off the lattice.
+example (n : ℤ) (z : ℂ) :
+    sourceAbelianSquare (p := 3) (by simp) (by norm_num) 0 (by simp) n
+      (z+(Real.pi : ℂ)*n) = -z^2 := by
+  rw [sourceAbelianSquare_zero,add_sub_cancel_right]
+
+end NLS.AbelianSquareChecks

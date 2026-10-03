@@ -2199,3 +2199,8 @@ import NLS.ZakharovShabat.SourceAbelianPartialGapLimit
 import NLS.ZakharovShabat.SourceAbelianGapVerticalLimit
 import NLS.ZakharovShabat.SourceCriticalRootRatioGapInteriorBound
 import NLS.ZakharovShabat.SourceAbelianGapBoundary
+
+import NLS.ComplexAnalysis.DenseAnalyticExtension
+import NLS.ComplexAnalysis.GapPrimitiveSquare
+import NLS.ZakharovShabat.SourceAbelianDiscSquare
+import NLS.ZakharovShabat.SourceAbelianSquare
