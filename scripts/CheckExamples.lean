@@ -26193,3 +26193,72 @@ example (φ : realTypeSourceSubmodule 3)
   linear_combination h
 
 end NLS.AbelianNormalizationChecks
+
+
+noncomputable section
+namespace NLS.GlobalAbelianChecks
+open Set Filter Topology Complex ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Real points in bands have the actual complex derivative, not merely
+-- derivatives within a half-plane or along the real axis.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (n : ℤ) (x : ℝ)
+    (hx : x ∈ sourceRealBand (by simp) (by norm_num) φ.val n) :
+    HasDerivAt (sourceAbelianGlobalPrimitive (by simp) (by norm_num) φ.val φ.property)
+      (deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) x /
+        sourceCanonicalRoot (by simp) (by norm_num) φ.val x) x :=
+  sourceAbelianGlobalPrimitive_hasDerivAt (by simp) (by norm_num) φ.val φ.property x
+    (sourceRealBand_subset_rootDomain (by simp) (by norm_num) φ.val φ.property n x hx)
+
+-- A concrete connector crosses the real axis from the lower half-plane
+-- to the upper one, with no homotopy or integrability assumption.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) (x : ℝ)
+    (hx : x ∈ sourceRealBand (by simp) (by norm_num) φ.val n) :
+    (∫ᶜ z in Path.segment ((x : ℂ)-Complex.I) ((x : ℂ)+Complex.I), holomorphicOneForm (fun w =>
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) w /
+        sourceCanonicalRoot (by simp) (by norm_num) φ.val w) z) =
+      sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property 0 true ((x : ℂ)+Complex.I) -
+        sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property 0 false ((x : ℂ)-Complex.I) := by
+  have ha : (x : ℂ)-Complex.I ∈ sourceRealBandStrip (by simp) (by norm_num) φ.val n := by
+    simpa [sourceRealBandStrip] using hx
+  have hb : (x : ℂ)+Complex.I ∈ sourceRealBandStrip (by simp) (by norm_num) φ.val n := by
+    simpa [sourceRealBandStrip] using hx
+  have h := (sourceAbelianGlobalPrimitive_pathIntegral_eq_sub (by simp) (by norm_num) φ.val φ.property
+    (Path.segment ((x : ℂ)-Complex.I) ((x : ℂ)+Complex.I)) (contDiffOn_segment_extend _ _)
+    (fun t => sourceRealBandStrip_subset_rootDomain (by simp) (by norm_num) φ.val φ.property n
+      ((convex_sourceRealBandStrip (by simp) (by norm_num) φ.val n).segment_subset ha hb
+        (lineMap_mem_segment ℝ _ _ t.property)))).2
+  rw [sourceAbelianGlobalPrimitive_eq_halfPlane (by simp) (by norm_num) φ.val φ.property true
+      (by simp [sourceAbelianHalfPlane]),
+    sourceAbelianGlobalPrimitive_eq_halfPlane (by simp) (by norm_num) φ.val φ.property false
+      (by simp [sourceAbelianHalfPlane])] at h
+  exact h
+
+-- The negative-index endpoint limit holds along all off-cut approaches.
+example (φ : realTypeSourceSubmodule 3) :
+    Tendsto (sourceAbelianGlobalPrimitive (by simp) (by norm_num) φ.val φ.property)
+      (𝓝[sourceCanonicalRootDomain (by simp) (by norm_num) φ.val]
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) (-3))) (𝓝 (3*Complex.I*(Real.pi : ℂ))) := by
+  have h := sourceAbelianGlobalPrimitive_endpoint_limit (by simp) (by norm_num) φ.val φ.property (-3)
+    (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-3))
+    (by simp)
+  convert! h using 1
+  norm_num
+  ring
+
+-- Free real band points also have the global value -i*z, even though
+-- the primitive was initially defined only on the two half-planes.
+example : sourceAbelianGlobalPrimitive (p := 3) (by simp) (by norm_num) 0 (by simp)
+    ((Real.pi : ℂ)/2) = -Complex.I*(Real.pi : ℂ)/2 := by
+  have hx : Real.pi/2 ∈ sourceRealBand (p := 3) (by simp) (by norm_num) 0 0 := by
+    simp only [sourceRealBand,periodOnePotential,map_zero,canonicalPeriodicRight_zero,
+      canonicalPeriodicLeft_zero,Int.cast_zero,mul_zero,zero_re,zero_add,Int.cast_one,mul_one,ofReal_re,mem_Ioo]
+    exact ⟨half_pos Real.pi_pos,half_lt_self Real.pi_pos⟩
+  have h := sourceAbelianGlobalPrimitive_zero (p := 3) (by simp) (by norm_num)
+    (sourceRealBand_subset_rootDomain (p := 3) (by simp) (by norm_num) 0 (by simp) 0 (Real.pi/2) hx)
+  convert! h using 1 <;> push_cast <;> ring
+
+end NLS.GlobalAbelianChecks

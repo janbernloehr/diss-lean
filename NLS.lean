@@ -2181,3 +2181,8 @@ import NLS.ComplexAnalysis.ContinuousBoundaryTransfer
 import NLS.ZakharovShabat.SourceAbelianBandTransfer
 import NLS.ZakharovShabat.SourceAbelianHalfPlaneNormalization
 import NLS.ZakharovShabat.SourceAbelianNormalizedCharts
+
+import NLS.ZakharovShabat.SourceAbelianBandGluing
+import NLS.ZakharovShabat.SourceRealBandCoverage
+import NLS.ZakharovShabat.SourceAbelianGlobalPrimitive
+import NLS.ZakharovShabat.SourceAbelianGlobalProperties

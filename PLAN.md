@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Latest progress: exact signed-index abelian normalization
+## Latest progress: global real-source abelian primitive off the cuts
+
+`SourceAbelianBandGluing.lean` constructs a quotient primitive on each
+full vertical real-band strip which matches the zero-index primitive
+on both half-planes. An existing corrected disc chart fixes the common
+real value and hence removes the lower-half-plane constant ambiguity.
+
+`SourceRealBandCoverage.lean` uses the bounded endpoint displacements
+from `pi n` to find the greatest gap to the left of every real point
+off the cuts. Thus the half-planes and band strips cover the entire
+canonical cut complement, including both infinite spectral tails.
+
+`SourceAbelianGlobalPrimitive.lean` glues these pieces into one function
+for every real source at every finite exponent `1 < p`. It has the
+actual derivative `Delta'/canonicalRoot` and is complex analytic on
+the full cut complement. It agrees with every corrected isolating-disc
+chart, independently of all local primitive and band choices.
+
+`SourceAbelianGlobalProperties.lean` proves the full-domain endpoint
+limits `F(lambda_n^±) = -i n pi` for all signed indices, including
+collapsed gaps as boundary points. Every smooth path off the cuts
+integrates the actual quotient to `F(b)-F(a)`; in particular, every
+smooth closed path has zero period without a supplied homotopy.
+The exact identity `exp(F) = (Delta + canonicalRoot)/2` holds everywhere
+on this domain. At the free source the global function is `-i lambda`,
+including its real band values.
+
+Public checks cover the complex derivative at real band points for
+exponent 3/2, an actual vertical path crossing from the lower to the
+upper half-plane, a negative-index full-domain endpoint limit, and a
+free real band value between collapsed gaps.
+
+This constructs the global real-source abelian primitive off all cuts.
+Analytically filling collapsed points is next; they are currently
+excluded from this primitive's analytic domain. Joint source
+analyticity, the remaining assertions of Lemma 19.1, the frequency
+results, and the full dissertation remain unfinished.
+
+## Previous progress: exact signed-index abelian normalization
 
 `ContinuousBoundaryTransfer.lean` transfers a relative boundary limit to
 closure points of a domain wherever a continuous extension is available.
