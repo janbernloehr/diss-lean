@@ -1,22 +1,21 @@
 # Implementation plan
 
-## Latest progress: Appendix G.3 shifted-free comparison
+## Latest progress: Appendix G.4 Fourier-norm summability
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and
 finite-gap regularity in all nonnegative Sobolev weights (including
-`H¹`) are complete. Appendix G.3's remainder bounds and final comparison
-with the free solution at `nπ` are now proved for constructed physical
-period-two `H¹` potentials. The latter assumes `νₙ=nπ+O(1/|n|)` and
-has Fourier–Lebesgue decay `O(|n|^(-(q−1−ε)/(1−ε)))` for
-`0<ε<1` and `1+ε≤q≤2`, with both exponent endpoints included.
-Constants and cutoffs are uniform on coefficient balls and under a
-common inverse-index displacement bound.
+`H¹`) are complete. Appendix G.3's remainder and shifted-free bounds
+now imply G.4: the actual Fourier norms belong to outer `ℓp` for every
+finite `p>1` and `q>1+1/p`, including the infinity Fourier exponent.
+For each fixed near-free spectral sequence, one summable majorant
+controls the whole `H¹` coefficient ball, including its arbitrary finite
+spectral head. Common displacement bounds also give uniform tail
+majorants across families of spectral sequences.
 
-Next prove G.4's outer-index summability for `q>1+1/p`, then the
-gradient estimates G.5–G.7 and their application to finite-gap sources
-in Lemma 16.1. The sharper integral estimate in G.1, remaining Appendix G
-estimates, Lemma 16.1, remaining assertions of Theorem 14.1, and later
-chapters are unfinished.
+Next prove G.5's fundamental-solution gradient estimate, then G.6–G.7
+and their application to finite-gap sources in Lemma 16.1. The sharper
+integral estimate in G.1, remaining Appendix G estimates, Lemma 16.1,
+remaining assertions of Theorem 14.1, and later chapters are unfinished.
 
 ## Milestones
 

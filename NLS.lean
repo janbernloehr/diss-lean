@@ -1908,3 +1908,10 @@ import NLS.Fourier.UnitIntervalC1Interpolation
 import NLS.ZakharovShabat.ClassicalFreeFrequencyDifference
 import NLS.ZakharovShabat.ClassicalShiftedFreeRemainder
 import NLS.ZakharovShabat.ClassicalShiftedFreeFourierDecay
+
+import NLS.SequenceSpaces.PowerDecaySummability
+import NLS.Fourier.UnitIntervalFourierExponentEmbedding
+import NLS.ZakharovShabat.FundamentalFourierSummabilityExponents
+import NLS.ZakharovShabat.ClassicalFourierTailSummability
+import NLS.ZakharovShabat.ClassicalFourierBoundAllFrequencies
+import NLS.ZakharovShabat.ClassicalFourierSequenceSummability

@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: G.3 shifted-free comparison
+## Current milestone: G.4 Fourier-norm summability
+
+Corollary G.4 is now proved for the constructed physical period-two
+`H¹` potentials. For every finite real `p>1` and Fourier exponent
+`q>1+1/p`, including `q=∞`, the norms of the actual unit-interval
+Fourier coefficient sequences belong to outer `ℓp`:
+
+- the solution remainder along `νₙ=nπ+O(1)`;
+- the solution minus the free evolution at `nπ` when
+  `νₙ=nπ+O(1/|n|)`.
+
+The first assertion allows any common bounded displacement, hence
+includes the dissertation's eventual `π/4` condition. For each fixed
+spectral sequence, one `ℓp` majorant controls all indices, all potentials
+in a fixed `H¹` coefficient ball, and all contractive scalar observations
+of fundamental columns, with linear dependence on the initial vector
+norm. The finite spectral head is arbitrary and may include zero.
+A common tail majorant and cutoff also work across all spectral
+sequences with the same eventual displacement bound and starting index.
+
+`PowerDecaySummability.lean` proves two-sided power summability and
+allows finite exceptions. `FundamentalFourierSummabilityExponents.lean`
+chooses a positive interpolation parameter with decay exponent `α`
+satisfying `αp>1`. `UnitIntervalFourierExponentEmbedding.lean` extends
+the actual-coefficient norm bound to larger Fourier exponents, including
+infinity. `ClassicalFourierTailSummability.lean` applies these results
+to both G.3 errors. `ClassicalFourierBoundAllFrequencies.lean` supplies
+coarse value and derivative bounds at every spectral frequency;
+`ClassicalFourierSequenceSummability.lean` joins the finite head with
+the summable tail and proves whole-sequence membership and uniformity.
+
+Public checks cover inverse-index powers at zero and negative indices,
+outer `ℓ³` membership of `ℓ^(3/2)` remainder norms, an arbitrary
+exceptional spectral value at zero with a uniform ball bound, outer
+exponents below two with Fourier exponents above two, and the infinity
+Fourier exponent for the shifted-free error.
+
+Next prove the fundamental-solution gradient estimate G.5, followed by
+G.6–G.7 and their application to finite-gap sources in Lemma 16.1.
+The sharper integral estimate in G.1, remaining Appendix G estimates,
+Lemma 16.1, remaining assertions of Theorem 14.1, and later chapters
+remain unfinished.
+
+## Previous milestone: G.3 shifted-free comparison
 
 The final shifted-free comparison in Appendix G.3 is now proved for
 physical period-two `H¹` coefficient potentials. For `0 < ε < 1`,

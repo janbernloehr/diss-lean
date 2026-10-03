@@ -22842,4 +22842,64 @@ example (M : ℝ) : ∃ N : ℕ, 0 < N ∧
 
 end AppendixGShiftedFree
 
+section AppendixGFourierSummability
+open NLS.Fourier
+
+-- Summability includes negative indices and the totalized value at zero.
+example : Memℓp (fun n : ℤ => (n.natAbs : ℝ)^(-(2/3 : ℝ))) (ENNReal.ofReal (2 : ℝ)) :=
+  memlp_inverse_natAbs_rpow 2 (by norm_num) (2/3) (by norm_num)
+
+-- The actual remainder's ℓ^(3/2) Fourier norms form an ℓ³ sequence.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalSobolevRemainderFourierCoefficients
+      (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num) a
+      ((Real.pi : ℂ)*(n : ℂ)+Complex.I) (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖)
+      (ENNReal.ofReal (3 : ℝ)) := by
+  apply memlp_classicalSobolevRemainder_fourier_norms 3 (by norm_num) _ (by norm_num)
+    1 (by norm_num) 0 _ _ a (1,0) _ (ContinuousLinearMap.norm_fst_le ..)
+  intro n _
+  simp
+
+-- An arbitrary exceptional spectral value at zero still gives a bound uniform on the ball.
+example (M : ℝ) (w : ℂ) :
+    ∃ b : ℤ → ℝ, Memℓp b (ENNReal.ofReal (3 : ℝ)) ∧
+      ∀ (a : ScalarDomain 2 × ScalarDomain 2), ‖a‖ ≤ M → ∀ n : ℤ,
+      ‖classicalSobolevRemainderFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ))
+        (by norm_num) a (if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I)
+        (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖ ≤ b n := by
+  have hν : ∀ n : ℤ, 1 ≤ n.natAbs →
+      ‖(if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I)-(Real.pi : ℂ)*(n : ℂ)‖ ≤ (1 : ℝ) := by
+    intro n hn
+    have hn0 : n ≠ 0 := by intro he; subst n; norm_num at hn
+    simp [hn0]
+  obtain ⟨b,hb,h⟩ := exists_classicalSobolevRemainder_fourier_uniform_memlp
+    3 (by norm_num) (ENNReal.ofReal (3/2 : ℝ)) (by norm_num) M 1 (by norm_num) 1
+    (fun n => if n = 0 then w else (Real.pi : ℂ)*(n : ℂ)+Complex.I) hν
+  refine ⟨b,hb,fun a ha n => ?_⟩
+  simpa using h a ha (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..) n
+
+-- Fourier exponents above two and outer exponents below two are both supported.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalShiftedFreeFourierCoefficients (q := 3) (by norm_num)
+      (classicalSobolevPotential a) ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ))
+      (Real.pi*(n : ℝ)) (0,1) (ContinuousLinearMap.snd ℝ ℂ ℂ)‖)
+      (ENNReal.ofReal (3/2 : ℝ)) := by
+  apply memlp_classicalShiftedFree_fourier_norms (3/2) (by norm_num) 3 (by norm_num)
+    1 (by norm_num) 0 _ _ a (0,1) _ (ContinuousLinearMap.norm_snd_le ..)
+  intro n _
+  simp
+
+-- The infinity Fourier exponent has the same outer ℓp summability.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalShiftedFreeFourierCoefficients (q := ⊤) (by simp)
+      (classicalSobolevPotential a) ((Real.pi : ℂ)*(n : ℂ)+Complex.I/(n.natAbs : ℂ))
+      (Real.pi*(n : ℝ)) (1,0) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖)
+      (ENNReal.ofReal (3/2 : ℝ)) := by
+  apply memlp_classicalShiftedFree_fourier_norms (3/2) (by norm_num) ⊤ (by simp)
+    1 (by norm_num) 0 _ _ a (1,0) _ (ContinuousLinearMap.norm_fst_le ..)
+  intro n _
+  simp
+
+end AppendixGFourierSummability
+
 end NLS.ZakharovShabat
