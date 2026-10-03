@@ -1,6 +1,56 @@
 # Implementation status
 
-## Current milestone: Proposition 17.1 for every 1 < p < ∞
+## Current milestone: finite-gap and Hilbert reductions for Proposition 17.2
+
+The exponent-extension part of global injectivity is now proved. Every
+actual Birkhoff collision at any finite `p>1` induces a collision for
+any constructed Hilbert Birkhoff family. Thus Hilbert global injectivity
+implies global injectivity at every finite exponent above one. The
+Hilbert premise remains explicit: Proposition 17.2 is not yet complete.
+
+`RealCoeffTruncation.lean` constructs finite real output truncations and
+proves their norm convergence for finite exponents. `SourceBirkhoffFiniteSupport.lean`
+identifies the nonlinear output support exactly with the open periodic
+gaps, using the real action-radius and zero-action characterizations.
+Finite Birkhoff support is therefore equivalent to the actual spectral
+finite-gap condition; it does not mean finite Fourier support of the source.
+
+`SourceBirkhoffFiniteGapFibers.lean` proves that any pair of distinct
+sources with the same output can be approximated in independently
+prescribed open neighborhoods by distinct finite-gap sources with the
+same finite output truncation. The analytic local inverses from
+Proposition 17.1 lift the common truncation on both branches. Continuity
+retains the neighborhoods and distinctness. Consequently global
+injectivity is equivalent to injectivity on the finite-gap locus,
+at every finite exponent above one, including the Hilbert exponent.
+
+`RealCoeffExponent.lean` constructs coefficient-preserving real exponent
+inclusions. `SourceBirkhoffMapExponent.lean` proves compatibility of the
+full real Birkhoff maps across exponents and independently constructed
+families. Injectivity at a larger exponent implies it at a smaller one.
+
+`SourceBirkhoffInjectivityReduction.lean` lifts a finite-gap collision
+above two to distinct coefficient-preserving real Hilbert sources, using
+the previously proved finite-gap Hilbert realizations. Map compatibility
+and injectivity of the output inclusion give equal Hilbert outputs.
+Below two, direct inclusion transports any collision. The final results
+reduce all global injectivity assertions to the Hilbert assertion; even
+injectivity only on Hilbert finite-gap sources is enough. Above two,
+the original and Hilbert global injectivity assertions are equivalent.
+
+Public checks cover real truncation convergence below two, exact
+finite-gap/support equivalence, simultaneous collision approximation in
+arbitrary neighborhoods, the Hilbert finite-gap reduction, collision
+transport below two, equivalence at `p=3`, and the explicit remaining
+Hilbert finite-gap injectivity premise for arbitrary finite `p>1`.
+
+Next prove Hilbert injectivity on finite-gap sources, or formalize the
+Hilbert global theorem cited as [23, Theorem 19.3] in the dissertation.
+No such theorem has been assumed as an axiom. Proposition 17.2, the
+sharper G.1 integral bound, remaining assertions of Theorem 14.1, and
+later chapters remain unfinished.
+
+## Previous milestone: Proposition 17.1 for every 1 < p < ∞
 
 The actual real Birkhoff map is now a local analytic diffeomorphism at
 every real source for every `1<p<∞`. Both its real derivative and the

@@ -24306,3 +24306,83 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   exists_sourceBirkhoffFamily_proposition17_1 hp hp1
 
 end NLS.ZakharovShabatProposition17_1Checks
+
+namespace NLS.ZakharovShabatInjectivityReductionChecks
+open NLS.ZakharovShabat Set Filter Topology
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Real output truncations converge strictly below two and have finite support.
+example (z : RealCoeff (ENNReal.ofReal (3/2)) × RealCoeff (ENNReal.ofReal (3/2))) :
+    Tendsto (fun S : Finset ℤ => RealCoeff.truncatePair S z) atTop (𝓝 z) ∧
+      ∀ S, (RealCoeff.pairSupport (RealCoeff.truncatePair S z)).Finite :=
+  ⟨RealCoeff.tendsto_truncatePair (by simp) z, fun S => RealCoeff.finite_pairSupport_truncatePair S z⟩
+
+-- Finite nonlinear output support characterizes spectral finite-gap sources.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (φ : realTypeSourceSubmodule p) :
+    φ ∈ sourceFiniteGapLocus hp hp1 ↔
+      (RealCoeff.pairSupport (sourceRealBirkhoffMap hp hp1 s φ)).Finite :=
+  D.finiteGap_iff_finite_pairSupport φ
+
+-- Collisions are approximated in independently prescribed neighborhoods.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ ψ : realTypeSourceSubmodule 3) (hne : φ ≠ ψ)
+    (heq : sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ =
+      sourceRealBirkhoffMap (by norm_num) (by norm_num) s ψ)
+    (U V : Set (realTypeSourceSubmodule 3)) (hU : IsOpen U) (hV : IsOpen V)
+    (hφ : φ ∈ U) (hψ : ψ ∈ V) :
+    ∃ S : Finset ℤ, ∃ φ' ψ' : realTypeSourceSubmodule 3,
+      φ' ∈ U ∧ ψ' ∈ V ∧ φ' ≠ ψ' ∧
+      φ' ∈ sourceFiniteGapLocus (by norm_num) (by norm_num) ∧
+      ψ' ∈ sourceFiniteGapLocus (by norm_num) (by norm_num) ∧
+      sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ' =
+        RealCoeff.truncatePair S (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ) ∧
+      sourceRealBirkhoffMap (by norm_num) (by norm_num) s ψ' =
+        RealCoeff.truncatePair S (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ) :=
+  D.exists_finiteGap_collision_mem_open φ ψ hne heq U V hU hV hφ hψ
+
+-- The finite-gap reduction also holds for the Hilbert family itself.
+example {V₀ C V : Set (CoeffPair 2)} {t : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (E : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₀ C V t) :
+    Function.Injective (sourceRealBirkhoffMap (by simp) (by norm_num) t) ↔
+      Set.InjOn (sourceRealBirkhoffMap (by simp) (by norm_num) t)
+        (sourceFiniteGapLocus (by simp) (by norm_num)) := E.real_map_injective_iff_injOn_finiteGap
+
+-- Actual collisions transfer to Hilbert space even when the original exponent is below two.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    {V₀ C V : Set (CoeffPair 2)} {t : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (E : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₀ C V t)
+    (φ ψ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (hne : φ ≠ ψ)
+    (heq : sourceRealBirkhoffMap (by simp) (by norm_num) s φ =
+      sourceRealBirkhoffMap (by simp) (by norm_num) s ψ) :
+    ∃ u v : realTypeSourceSubmodule 2, u ≠ v ∧
+      sourceRealBirkhoffMap (by simp) (by norm_num) t u =
+        sourceRealBirkhoffMap (by simp) (by norm_num) t v :=
+  D.exists_hilbert_collision_of_collision E φ ψ hne heq
+
+-- At p = 3, global injectivity is equivalent to the actual Hilbert assertion.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    {V₀ C V : Set (CoeffPair 2)} {t : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (E : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₀ C V t) :
+    Function.Injective (sourceRealBirkhoffMap (by norm_num) (by norm_num) s) ↔
+      Function.Injective (sourceRealBirkhoffMap (by simp) (by norm_num) t) :=
+  D.real_map_injective_iff_hilbert_of_two_le E (by norm_num)
+
+-- The missing Hilbert premise is explicit; it is enough on finite-gap sources.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ B W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+    {V₀ C V : Set (CoeffPair 2)} {t : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B W s)
+    (E : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₀ C V t)
+    (hi : Set.InjOn (sourceRealBirkhoffMap (by simp) (by norm_num) t)
+      (sourceFiniteGapLocus (by simp) (by norm_num))) :
+    Function.Injective (sourceRealBirkhoffMap hp hp1 s) :=
+  D.real_map_injective_of_hilbert_finiteGap E hi
+
+end NLS.ZakharovShabatInjectivityReductionChecks

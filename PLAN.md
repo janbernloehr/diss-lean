@@ -1,6 +1,38 @@
 # Implementation plan
 
-## Latest progress: Proposition 17.1 for every 1 < p < ∞
+## Latest progress: global injectivity reduced to Hilbert finite-gap sources
+
+The full exponent-extension step of Proposition 17.2 is proved. Nonlinear
+output support equals the open-gap set. Any collision is approximated,
+in arbitrary neighborhoods of its two distinct sources, by a finite-gap
+collision over one finite output truncation. Above two, finite-gap
+Hilbert realizations and full map compatibility lift this collision to
+Hilbert space; below two, direct inclusion transports it. Thus global
+injectivity for every finite `p>1` follows from injectivity on Hilbert
+finite-gap sources. All premises on that missing Hilbert result remain
+explicit. The reduction does not assert Proposition 17.2 itself.
+
+Next establish the missing Hilbert finite-gap injectivity result, or
+formalize the cited global Hilbert theorem [23, Theorem 19.3]. Reuse the
+proved finite-gap reduction to avoid redoing exponent extension. Neither
+local invertibility nor density by itself proves this remaining global
+uniqueness assertion. Continue with Proposition 17.3 only once this
+prerequisite has been addressed or its dependencies made explicit.
+
+
+
+A primary reference for the missing Hilbert argument is Grébert–Kappeler–Pöschel,
+[Normal Form Theory for the NLS Equation, Global Diffeomorphism section](https://arxiv.org/html/0907.3938#Ch2.S7).
+It proves properness of the action map from the action-sum/norm identity,
+weak continuity of spectral data, and weak convergence plus convergence
+of Hilbert norms. Properness, local invertibility, and the singleton zero
+fiber then give global bijectivity by connectedness. This is a concrete
+alternative to finite-gap inverse spectral reconstruction. The actual
+action-sum identity and weak-continuity prerequisites have not yet been
+located in the current library; establish them with the repository's
+period and pair-norm normalization before applying this route.
+
+## Previous progress: Proposition 17.1 for every 1 < p < ∞
 
 Proposition 17.1 is complete for the constructed actual Birkhoff family.
 The full sequence Jacobian commutes with exponent inclusion, for any two

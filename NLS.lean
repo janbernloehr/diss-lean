@@ -2031,3 +2031,10 @@ import NLS.ZakharovShabat.SourceBirkhoffLocalInverse
 
 import NLS.ZakharovShabat.SourceBirkhoffJacobianAllExponents
 import NLS.ZakharovShabat.SourceBirkhoffProposition17_1
+
+import NLS.SequenceSpaces.RealCoeffTruncation
+import NLS.SequenceSpaces.RealCoeffExponent
+import NLS.ZakharovShabat.SourceBirkhoffFiniteSupport
+import NLS.ZakharovShabat.SourceBirkhoffFiniteGapFibers
+import NLS.ZakharovShabat.SourceBirkhoffMapExponent
+import NLS.ZakharovShabat.SourceBirkhoffInjectivityReduction
