@@ -8614,3 +8614,46 @@ full rectangular estimate at source exponent `3/2` / conjugate exponent
 Next establish the Jacobian's compact perturbation of the Fourier
 transform and continue Section 16. The sharper G.1 integral bound,
 remaining assertions of Theorem 14.1, and later chapters remain unfinished.
+
+## Latest progress: Lemma 16.3 at every real source
+
+The actual Birkhoff Jacobian is now a compact perturbation of its free
+Fourier transform at every real source and every `1<p<∞`, without a
+finite-gap hypothesis. Its normalization `Aφ = F⁻¹ dφΩ` is identity plus
+a compact operator and depends real analytically on the whole real
+source space. Bounded invertibility of `dφΩ` is equivalent to bounded
+invertibility of `Aφ`, with explicit transport of both isomorphisms.
+A final existence theorem supplies the actual constructed Birkhoff family.
+
+`SourceBirkhoffFourierEquivalence.lean` constructs the bounded inverse
+of the free Fourier transform, retaining the first component's frequency
+reflection and both square-root and imaginary factors. Both inverse
+identities are proved for whole coefficient sequences, giving a complex
+Banach-space equivalence. This linear result also holds at infinity;
+the nonlinear Jacobian assertions remain restricted to finite `p>1`.
+
+`SourceBirkhoffJacobianCompact.lean` identifies the actual Jacobian rows
+with the rectangular derivatives from Lemma 16.2 and produces two ℓp
+row majorants at finite-gap sources. Finite output truncations converge
+in operator norm, and both remainder components are compact. The actual
+Jacobian is continuous on the full real source space. Density of real
+finite-gap sources in the original source norm and closedness of the
+compact operators therefore extend compactness to every real source.
+
+`SourceBirkhoffLemma16_3.lean` normalizes by the explicit Fourier inverse,
+proves the exact identity `Aφ−Id = F⁻¹(dφΩ−F)`, and proves complex
+analyticity on the constructed domain and real analyticity on the
+entire real source space. The free normalized Jacobian is exactly
+identity. Both bijectivity and bounded-isomorphism assertions are
+preserved by normalization, and the full constructed-family theorem
+combines these conclusions with compactness.
+
+Public checks cover both inverse identities below two, signed inverse
+coordinates, the linear bounded-sequence endpoint, finite-gap truncation
+convergence, all-source compactness above and below two, analyticity and
+normalization at zero, isomorphism transport, and family existence.
+
+Next prove Proposition 17.1, the local diffeomorphism property, using
+the compact perturbation and the canonical gradient identities. The
+sharper G.1 integral bound, remaining assertions of Theorem 14.1, and
+later chapters remain unfinished.

@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: Lemma 16.2 for every finite p > 1
+## Latest progress: Lemma 16.3 at every real source
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -129,10 +129,22 @@ norm. Exact free Fourier functionals and conjugate-gradient recovery then
 prove both literal conjugate-pair norm sequences. A constructed Birkhoff
 family supplies the domain and all data for the final existence theorem.
 
-Next establish the Jacobian's compact perturbation of the Fourier transform,
-using the actual derivative row estimates, then continue Section 16. The
-sharper G.1 integral bound, remaining assertions of Theorem 14.1, and later
-chapters remain unfinished.
+Lemma 16.3 is now proved at every real source for `1<p<∞`. The actual
+finite-gap Jacobian remainder has two ℓp row majorants, hence its finite
+output truncations converge in operator norm and the remainder is compact.
+The existing density of real finite-gap sources and continuity of the
+Jacobian extend compactness to all real sources. An explicit bounded
+Fourier inverse gives `Aφ = F⁻¹ dφΩ`; the exact identity for `Aφ−Id`
+transfers compactness. The normalized Jacobian is complex analytic on the
+constructed domain and real analytic on the complete real source space,
+and normalization preserves bounded isomorphisms in both directions.
+A constructed-family existence theorem supplies the full Lemma 16.3.
+
+Next prove Proposition 17.1: use the compact perturbation and canonical
+gradient identities to establish invertibility of the Jacobian, then apply
+the inverse function theorem to the actual real Birkhoff map. The sharper
+G.1 integral bound, remaining assertions of Theorem 14.1, and later chapters
+remain unfinished.
 
 ## Milestones
 

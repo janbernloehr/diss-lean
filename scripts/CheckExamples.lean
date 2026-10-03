@@ -24080,3 +24080,75 @@ example : ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 �
   exists_sourceBirkhoffFamily_lemma16_2 (by simp) (by norm_num) (by simp)
 
 end NLS.ZakharovShabatLemma16_2Checks
+
+namespace NLS.ZakharovShabatLemma16_3Checks
+open NLS.ZakharovShabat Set Filter Topology
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Both inverse identities are full sequence identities below the Hilbert exponent.
+example (h : CoeffPair (ENNReal.ofReal (3/2)))
+    (v : Coeff (ENNReal.ofReal (3/2)) × Coeff (ENNReal.ofReal (3/2))) :
+    sourceBirkhoffFourierInverse (sourceBirkhoffFourier h) = h ∧
+      sourceBirkhoffFourier (sourceBirkhoffFourierInverse v) = v :=
+  ⟨sourceBirkhoffFourierInverse_fourier h,sourceBirkhoffFourier_fourierInverse v⟩
+
+-- The inverse retains the reflection and imaginary factor at all signed indices.
+example (v : Coeff 3 × Coeff 3) (n : ℤ) :
+    (sourceBirkhoffFourierInverse v).fst n = -(v.1 (-n)-Complex.I*v.2 (-n))/(Real.sqrt 2 : ℂ) ∧
+    (sourceBirkhoffFourierInverse v).snd n = -(v.1 n+Complex.I*v.2 n)/(Real.sqrt 2 : ℂ) :=
+  ⟨sourceBirkhoffFourierInverse_fst v n,sourceBirkhoffFourierInverse_snd v n⟩
+
+-- The free Fourier equivalence itself also exists at the bounded-sequence endpoint.
+example (h : CoeffPair ⊤) : sourceBirkhoffFourierEquiv.symm (sourceBirkhoffFourierEquiv h) = h :=
+  sourceBirkhoffFourierEquiv.symm_apply_apply h
+
+-- Finite output cutoffs of the actual finite-gap remainder converge in operator norm.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    let T := sourceBirkhoffJacobianRemainder (by simp) (by norm_num) s φ.val
+    let T₁ := (ContinuousLinearMap.fst ℂ (Coeff 2) (Coeff 2)).comp T
+    let T₂ := (ContinuousLinearMap.snd ℂ (Coeff 2) (Coeff 2)).comp T
+    Tendsto (fun S : Finset ℤ => (Coeff.truncateCLM S).comp T₁) atTop (𝓝 T₁) ∧
+      Tendsto (fun S : Finset ℤ => (Coeff.truncateCLM S).comp T₂) atTop (𝓝 T₂) :=
+  D.tendsto_truncate_jacobianRemainder_finiteGap φ hfinite
+
+-- Density removes the finite-gap premise from actual remainder compactness.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 3) :
+    IsCompactOperator (sourceBirkhoffJacobianRemainder (by norm_num) (by norm_num) s φ.val) :=
+  D.isCompactOperator_jacobianRemainder_real φ
+
+-- The normalized operator is analytic, compact modulo identity, and exactly identity at zero.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    AnalyticOnNhd ℝ (fun ψ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)) =>
+      sourceBirkhoffNormalizedJacobian (by simp) (by norm_num) s ψ.val) univ ∧
+    IsCompactOperator (sourceBirkhoffNormalizedJacobian (by simp) (by norm_num) s φ.val-
+      ContinuousLinearMap.id ℂ (CoeffPair (ENNReal.ofReal (3/2)))) ∧
+    sourceBirkhoffNormalizedJacobian (by simp) (by norm_num) s 0 =
+      ContinuousLinearMap.id ℂ (CoeffPair (ENNReal.ofReal (3/2))) :=
+  ⟨D.normalizedJacobian_real_analytic,D.isCompactOperator_normalizedJacobian_sub_id φ,D.normalizedJacobian_zero⟩
+
+-- Normalization preserves actual bounded-isomorphism assertions in both directions.
+example (s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k) (φ : CoeffPair 3) :
+    (∃ e : CoeffPair 3 ≃L[ℂ] (Coeff 3 × Coeff 3),
+      e.toContinuousLinearMap = sourceBirkhoffJacobian (by norm_num) (by norm_num) s φ) ↔
+    (∃ e : CoeffPair 3 ≃L[ℂ] CoeffPair 3,
+      e.toContinuousLinearMap = sourceBirkhoffNormalizedJacobian (by norm_num) (by norm_num) s φ) :=
+  sourceBirkhoffJacobian_isomorphism_iff_normalized (by norm_num) (by norm_num) s φ
+
+-- The existence theorem supplies the actual family, without a density or compactness premise.
+example : ∃ W₀ B W : Set (CoeffPair 3), ∃ s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k,
+    SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s ∧
+    ∀ φ : realTypeSourceSubmodule 3,
+      IsCompactOperator (sourceBirkhoffNormalizedJacobian (by norm_num) (by norm_num) s φ.val-
+        ContinuousLinearMap.id ℂ (CoeffPair 3)) := by
+  obtain ⟨W₀,B,W,s,D,_,h⟩ := exists_sourceBirkhoffFamily_lemma16_3 (p := 3) (by norm_num) (by norm_num)
+  exact ⟨W₀,B,W,s,D,fun φ => (h φ).1⟩
+
+end NLS.ZakharovShabatLemma16_3Checks

@@ -2018,3 +2018,7 @@ import NLS.ZakharovShabat.SourceBirkhoffFiniteGapFactors
 import NLS.ZakharovShabat.SourceBirkhoffWeightedGradientSummability
 import NLS.ZakharovShabat.SourceBirkhoffRectangularGradientSummability
 import NLS.ZakharovShabat.SourceBirkhoffLemma16_2
+
+import NLS.ZakharovShabat.SourceBirkhoffFourierEquivalence
+import NLS.ZakharovShabat.SourceBirkhoffJacobianCompact
+import NLS.ZakharovShabat.SourceBirkhoffLemma16_3
