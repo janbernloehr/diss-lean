@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: spectral trace and ordered eigenvalue limits
+## Current milestone: canonical coefficient continuity and common action circles
+
+`BoundedSegmentLimits.lean` proves that interpolation from a fixed vector to
+a bounded family stays bounded and that every converging linear coordinate
+converges uniformly along those segments. `SourceSegmentResolventPersistence.lean`
+then proves eventual common resolvent membership on any compact spectral set
+for every point of every segment, with one eventual index for all parameters.
+
+`SourceSpectralSelectionCoefficientContinuity.lean` upgrades strong continuity
+of any periodic eigenvalue selection on real sources to continuity under
+bounded coefficient limits. Spectral discreteness supplies arbitrarily small
+circles around the limit value. Along each real interpolation segment the
+selection is continuous and cannot cross the common spectral-free circle.
+This retains its original label without assuming a common cluster assignment.
+
+`SourceCanonicalCoefficientContinuity.lean` applies that argument to both
+actual canonical periodic endpoints. Every fixed original indexed endpoint,
+midpoint, and gap converges at every finite `p>1`, including closed gaps.
+The real-type Fourier relation makes first-component coefficient convergence
+sufficient. These theorems allow arbitrary filters and do not assume strong
+convergence, an externally chosen contour, or a positive gap.
+
+`SourceActionCoefficientCircle.lean` constructs one real-centered circle for
+each selected action, valid at the limit and eventually for the family. The
+selected segment stays inside, and convergence of adjacent endpoints plus
+global real spectral ordering keeps every other gap outside the closed disc.
+The actual indexed actions therefore use this same circle, including at
+collapsed gaps. Convergence of their integrands is not yet proved.
+
+Public checks cover uniform segment persistence for complex sources, actual
+indexed gap convergence at exponent 3, construction of a common Hilbert action
+circle, and real sources formed from moving reflected unit Fourier modes.
+Those sources have norms bounded away from zero while both actual canonical
+endpoints at every fixed index converge to the corresponding free value.
+
+Next prove convergence of the critical-root quotient on the constructed
+common action circles. `SourceHilbertActionsContinuousOnBoundedCoefficients`
+remains unproved; unconditional properness and Proposition 17.2 remain
+unfinished. The previously planned global indexed-pair continuity step is
+now complete for bounded coefficient limits of real sources.
+
+## Previous milestone: spectral trace and ordered eigenvalue limits
 
 `ContourOperatorCoefficientConvergence.lean` identifies the bounded spectral
 restriction `L P` with the first weighted resolvent integral. Every continuous

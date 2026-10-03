@@ -25079,3 +25079,79 @@ example (n : ℤ) :
   simp [lp.single_apply, Ne.symm hne]
 
 end NLS.SpectralTraceCoefficientChecks
+
+namespace NLS.CanonicalCoefficientChecks
+open NLS.ZakharovShabat Set Filter Topology Metric Complex
+open scoped ComplexConjugate
+
+-- One eventual index controls every point of every interpolation segment.
+example (a : ℕ → CoeffPair 3) (b : CoeffPair 3) (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).snd n) atTop (𝓝 (b.snd n)))
+    (K : Set ℂ) (hK : IsCompact K) (hKs : K ⊆ resolventSet (by simp) (periodOnePotential b)) :
+    ∀ᶠ k in atTop, ∀ t ∈ Icc (0 : ℝ) 1,
+      K ⊆ resolventSet (by simp) (periodOnePotential (b + (t : ℂ) • (a k-b))) :=
+  eventually_compact_subset_source_segment_resolventSet (by simp) (by norm_num) a b hb ht₁ ht₂ K hK hKs
+
+-- Actual indexed gaps converge at a non-Hilbert exponent, with only first-component limits supplied.
+example (a : ℕ → CoeffPair 3) (b : CoeffPair 3) (hb : Bornology.IsBounded (range a))
+    (ha : ∀ k, IsRealType (CoeffPair.toMax 3 (a k))) (hreal : IsRealType (CoeffPair.toMax 3 b))
+    (ht : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n))) (n : ℤ) :
+    Tendsto (fun k => canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential (a k)) (periodOnePotential_mem (a k)) n) atTop
+      (𝓝 (canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential b) (periodOnePotential_mem b) n)) :=
+  (tendsto_source_canonicalPeriodicMidpoint_and_gap_of_bounded_coefficientwise
+    (by simp) (by norm_num) a b hb ha hreal ht n).2
+
+-- The action circle is constructed and eventually represents the same original index.
+example (a : ℕ → CoeffPair 2) (b : CoeffPair 2) (hb : Bornology.IsBounded (range a))
+    (ha : ∀ k, IsRealType (CoeffPair.toMax 2 (a k))) (hreal : IsRealType (CoeffPair.toMax 2 b))
+    (ht : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n))) (n : ℤ) :
+    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧ c.im = 0 ∧
+      sourceRealAction (by simp) (by norm_num) b hreal n = sourceActionCircle (by simp) (by norm_num) b c R ∧
+      ∀ᶠ k in atTop, sourceRealAction (by simp) (by norm_num) (a k) (ha k) n =
+        sourceActionCircle (by simp) (by norm_num) (a k) c R := by
+  obtain ⟨c,R,hR,hc,hb',he⟩ := exists_source_actionCircle_of_bounded_coefficientwise
+    (by simp) (by norm_num) a b hb ha hreal ht n
+  exact ⟨c,R,hR,hc,hb'.2.2,he.mono fun _ hk => hk.2.2⟩
+
+private def movingReal (k : ℕ) : CoeffPair 2 :=
+  (CoeffPair.toMax 2).symm (lp.single 2 (k : ℤ) (1 : ℂ), lp.single 2 (-(k : ℤ)) (1 : ℂ))
+
+private theorem movingReal_real (k : ℕ) : IsRealType (CoeffPair.toMax 2 (movingReal k)) := by
+  intro j
+  change (lp.single 2 (-(k : ℤ)) (1 : ℂ) : Coeff 2) j =
+    conj ((lp.single 2 (k : ℤ) (1 : ℂ) : Coeff 2) (-j))
+  by_cases hj : j = -(k : ℤ)
+  · subst j
+    simp [lp.single_apply]
+  · have hj' : -j ≠ (k : ℤ) := by omega
+    simp [lp.single_apply, Ne.symm hj, Ne.symm hj']
+
+-- The two actual canonical labels retain the free index despite a nonvanishing source norm.
+example (n : ℤ) : (∀ k, 1 ≤ ‖movingReal k‖) ∧
+    Tendsto (fun k => canonicalPeriodicLeft (by simp) (by norm_num)
+      (periodOnePotential (movingReal k)) (periodOnePotential_mem (movingReal k)) n) atTop (𝓝 ((Real.pi : ℂ)*n)) ∧
+    Tendsto (fun k => canonicalPeriodicRight (by simp) (by norm_num)
+      (periodOnePotential (movingReal k)) (periodOnePotential_mem (movingReal k)) n) atTop (𝓝 ((Real.pi : ℂ)*n)) := by
+  have hb : Bornology.IsBounded (range movingReal) := by
+    apply isBounded_iff_forall_norm_le.mpr
+    refine ⟨(2 : ℝ)^(1/(2 : ℝ)), ?_⟩
+    rintro _ ⟨k,rfl⟩
+    have h := CoeffPair.norm_toMax_symm_le (p := 2) (by simp)
+      (lp.single 2 (k : ℤ) (1 : ℂ), lp.single 2 (-(k : ℤ)) (1 : ℂ))
+    simpa [movingReal, Prod.norm_def, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 2)] using h
+  have ht (j : ℤ) : Tendsto (fun k => (movingReal k).fst j) atTop (𝓝 ((0 : CoeffPair 2).fst j)) := by
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ge_atTop (j.natAbs+1)] with k hk
+    have hne : (k : ℤ) ≠ j := by have hbound : j ≤ (j.natAbs : ℤ) := Int.le_natAbs; omega
+    simp [movingReal, lp.single_apply, Ne.symm hne, WithLp.fst]
+  have h := tendsto_source_canonicalPeriodicEndpoints_of_bounded_coefficientwise
+    (by simp) (by norm_num) movingReal 0 hb movingReal_real (by simp [IsRealType]) ht n
+  refine ⟨?_, ?_⟩
+  · intro k
+    have hle := (norm_fst_le (CoeffPair.toMax 2 (movingReal k))).trans (CoeffPair.norm_toMax_le (movingReal k))
+    simpa [movingReal, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 2)] using hle
+  · simpa only [map_zero, canonicalPeriodicLeft_zero, canonicalPeriodicRight_zero] using h
+
+end NLS.CanonicalCoefficientChecks
