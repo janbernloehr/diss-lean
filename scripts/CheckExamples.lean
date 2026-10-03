@@ -24497,3 +24497,52 @@ example (φ ψ : Curve (ℂ × ℂ)) (h : classicalDiscriminant φ = classicalDi
   classicalPhysicalMass_eq_of_discriminant_eq φ ψ h
 
 end NLS.ClassicalDiscriminantMassChecks
+
+namespace NLS.SourceMassCoefficientChecks
+open NLS.ZakharovShabat NLS.LinearVolterra Set Filter Topology MeasureTheory
+open scoped ENNReal
+
+-- The constructed physical representative matches the original source, with no PDE premise.
+example (φ : CoeffPair 2) (a b : Coeff 1)
+    (ha : ∀ n : ℤ, a n = φ.fst n) (hb : ∀ n : ℤ, b n = φ.snd n) :
+    physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)]
+      NLS.LinearVolterra.extend (absoluteSourceCurve a b) :=
+  physicalBase_absoluteSourceCurve φ a b ha hb
+
+-- Bilinear Parseval retains complex values and the original mass normalization.
+example (φ : CoeffPair 2) (a b : Coeff 1)
+    (ha : ∀ n : ℤ, a n = φ.fst n) (hb : ∀ n : ℤ, b n = φ.snd n) :
+    classicalPhysicalMass (absoluteSourceCurve a b) = sourceHilbertMass φ :=
+  classicalPhysicalMass_absoluteSourceCurve φ a b ha hb
+
+-- The canonical limit holds for arbitrary complex, absolutely summable sources.
+example (φ : CoeffPair 2)
+    (ha : Memℓp (fun n : ℤ => φ.fst n) 1) (hb : Memℓp (fun n : ℤ => φ.snd n) 1) :
+    Tendsto (fun y : ℝ => (2*y : ℂ) * (Complex.exp (-(y : ℂ)) *
+      canonicalDiscriminant (by simp) (periodOnePotential φ) ((y : ℂ)*Complex.I) - 1))
+      atTop (𝓝 (sourceHilbertMass φ)) :=
+  tendsto_sourceDiscriminant_mass_coefficient_of_absolute φ ha hb
+
+-- Finite spectral support discharges absolute Fourier summability at every exponent.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceLocus p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    Memℓp (fun n : ℤ => φ.val.fst n) 1 ∧ Memℓp (fun n : ℤ => φ.val.snd n) 1 :=
+  sourceFiniteGap_memlp_one hp hp1 φ hf
+
+-- No physical realization or summability hypothesis remains in the finite-gap coefficient.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Tendsto (fun y : ℝ => (2*y : ℂ) * (Complex.exp (-(y : ℂ)) *
+      canonicalDiscriminant (by simp) (periodOnePotential φ.val) ((y : ℂ)*Complex.I) - 1))
+      atTop (𝓝 ((‖φ.val‖^2/2 : ℝ) : ℂ)) :=
+  tendsto_sourceDiscriminant_norm_coefficient_finiteGap φ hf
+
+-- Equality of canonical traces determines the source norm on finite-gap sources.
+example (φ ψ : realTypeSourceSubmodule 2)
+    (hφ : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (hψ : ψ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (he : canonicalDiscriminant (by simp) (periodOnePotential φ.val) =
+      canonicalDiscriminant (by simp) (periodOnePotential ψ.val)) :
+    ‖φ.val‖ = ‖ψ.val‖ := norm_eq_of_sourceDiscriminant_eq_finiteGap φ ψ hφ hψ he
+
+end NLS.SourceMassCoefficientChecks

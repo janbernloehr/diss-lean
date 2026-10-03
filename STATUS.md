@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: the physical mass coefficient of the discriminant
+## Current milestone: finite-gap source mass recovered from the discriminant
+
+The physical mass coefficient is now transported to the actual canonical
+source discriminant. For every complex Hilbert source with absolutely
+summable component coefficients,
+
+`2y (exp(-y) Δφ(iy) - 1) → sourceHilbertMass φ` as `y → +∞`.
+
+`SourceAbsoluteMassAsymptotics.lean` constructs the continuous period-one
+representative by absolute Fourier synthesis and proves almost-everywhere
+compatibility with the original source potential. Bilinear Parseval gives
+exact equality of its physical mass and the reflected source pairing.
+The existing classical/canonical trace identity then transfers the limit.
+Equal canonical discriminants have equal mass on this source class.
+
+`SourceFiniteGapMassAsymptotics.lean` uses the proved Sobolev bootstrap to
+show absolute Fourier summability for all real finite-gap sources at every
+finite exponent `p>1`. At the Hilbert exponent, the coefficient limit thus
+requires only finite-gap membership and is exactly `‖φ‖²/2`. It leaves no
+physical realization or summability premise. Two finite-gap Hilbert sources
+with equal canonical discriminants have equal original source norms.
+
+Public examples check the actual physical representative, the bilinear mass
+identity for complex sources, the canonical coefficient limit, all-exponent
+finite-gap absolute summability, the exact Hilbert normalization, and norm
+recovery from equality of discriminants.
+
+Next pass from the discriminant coefficient to the canonical-root/Floquet
+multiplier and its logarithmic primitive, then consolidate the finite action
+contours. The finite-gap action/mass trace identity, Hilbert action-map
+properness, and Proposition 17.2 remain unfinished.
+
+## Previous milestone: the physical mass coefficient of the discriminant
 
 For every continuous complex potential on one period, Lean now proves
 

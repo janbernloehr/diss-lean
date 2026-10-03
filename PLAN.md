@@ -1,6 +1,27 @@
 # Implementation plan
 
-## Latest progress: the first high-energy mass coefficient
+## Latest progress: the canonical finite-gap source mass coefficient
+
+Absolute period-one Fourier synthesis now gives the actual continuous
+representative and exact physical/source mass equality by bilinear
+Parseval. The canonical discriminant of every absolutely summable complex
+Hilbert source recovers `sourceHilbertMass` as its first upper coefficient.
+The finite-gap Sobolev bootstrap discharges summability, giving the exact
+limit `2y (exp(-y) Δφ(iy)-1) → ‖φ‖²/2` for real Hilbert finite-gap sources.
+Equal canonical discriminants consequently give equal source norms there.
+
+Next recover the same first coefficient for the canonical root and the
+Floquet multiplier `(Δ + root)/2`. The existing root/free asymptotic uses
+`-2i sin(z)`, positive along the upper imaginary ray, and the square identity
+`root² = Δ²-4` fixes the difference from the discriminant at this order.
+Establish the logarithmic multiplier's derivative `Δ'/root` and match it
+to the existing half-plane primitive, retaining its additive constant.
+Then consolidate the finitely many action contours into an exterior contour
+to prove the finite-gap action/mass trace identity. The established density
+reduction extends that identity to all real Hilbert sources. Weak continuity
+of spectral actions and properness remain subsequent obligations.
+
+## Previous progress: the first high-energy mass coefficient
 
 For every continuous complex potential, the actual classical discriminant
 now satisfies `2y (exp(-y) Δ(iy) - 1) → ∫₀¹ φ₁ φ₂`. The proof isolates an

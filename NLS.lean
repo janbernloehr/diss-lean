@@ -2047,3 +2047,6 @@ import NLS.ComplexAnalysis.ExponentialVolterra
 import NLS.ComplexAnalysis.ExponentialVolterraApproximation
 import NLS.ZakharovShabat.ClassicalMassCorrection
 import NLS.ZakharovShabat.ClassicalDiscriminantMassAsymptotics
+
+import NLS.ZakharovShabat.SourceAbsoluteMassAsymptotics
+import NLS.ZakharovShabat.SourceFiniteGapMassAsymptotics
