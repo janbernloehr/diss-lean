@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 17.5 is complete. For `1 < p ≤ 2`, actual
-isospectral sets equal the original action level sets, map onto their
-entire coordinate action tori, and are compact in the source norm. For
-`p > 2`, the image lies in the prescribed torus. Chapter 4 is next.
+Latest milestone: Section 19's endpoint-normalized abelian primitives
+are constructed on both complete half-planes, including collapsed gaps.
+Their free formula, exponent compatibility, and isospectral invariance
+are proved. Gluing and the remaining assertions of Lemma 19.1 are next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -9817,3 +9817,39 @@ Next continue into Chapter 4: the abelian integral `F` and its estimates
 in Section 19, followed by the frequency analysis in Section 20 supporting
 Theorem 18.1. Those results and the subsequent convexity and wellposedness
 results remain unfinished. The full dissertation is not complete.
+
+## Normalized half-plane abelian primitives
+
+`PrimitiveRemovableBoundary.lean` proves that a holomorphic extension
+of a primitive's derivative through a boundary point gives a full relative
+boundary limit. A prescribed common boundary value fixes the primitive
+uniquely on a connected open domain.
+
+`SourceAbelianHalfPlane.lean` constructs the endpoint-normalized abelian
+primitive on each complete open half-plane for every real source, signed
+gap index, and finite `p > 1`. Existing square-root estimates handle open
+gaps. At a collapsed gap, the actual quotient's removable extension gives
+a finite boundary value at the common endpoint. Subtracting that value
+makes both endpoint limits zero. Uniqueness makes the values independent
+of the primitive chosen during construction; no open-gap assumption is
+required.
+
+`SourceAbelianHalfPlaneProperties.lean` proves spectral analyticity and
+identifies the primitive with the actual integral along every smooth
+integrable connector from either selected endpoint into its half-plane.
+The full normalized value commutes with exponent inclusion and is an
+invariant of the original periodic spectrum with algebraic multiplicities.
+At the zero source it is exactly `-i λ + i n π` on both half-planes for
+every signed index, establishing Lemma 19.1(vi) on these domains.
+
+Public checks verify the free normalization at a negative index above
+the real axis and a positive index below it, compare independently chosen
+primitives at exponents 3/2 and 3, and prove invariance under the actual
+source phase rotation without an assumed isospectrality premise.
+
+This begins Section 19. Gluing the half-plane constructions across the
+real axis outside the open gaps, establishing the indexed `-i n π`
+endpoint constants, joint source analyticity, and the remaining estimates
+of Lemma 19.1 are still required. The complete globally normalized abelian
+integral, subsequent frequency results, and the full dissertation remain
+unfinished.

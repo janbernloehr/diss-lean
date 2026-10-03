@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Lemma 17.5 completed
+## Current milestone: normalized half-plane abelian primitives
+
+`PrimitiveRemovableBoundary.lean` proves that a holomorphic extension
+of a primitive's derivative through a boundary point gives a full relative
+boundary limit. A prescribed common boundary value fixes the primitive
+uniquely on a connected open domain.
+
+`SourceAbelianHalfPlane.lean` constructs the endpoint-normalized abelian
+primitive on each complete open half-plane for every real source, signed
+gap index, and finite `p > 1`. Existing square-root estimates handle open
+gaps. At a collapsed gap, the actual quotient's removable extension gives
+a finite boundary value at the common endpoint. Subtracting that value
+makes both endpoint limits zero. Uniqueness makes the values independent
+of the primitive chosen during construction; no open-gap assumption is
+required.
+
+`SourceAbelianHalfPlaneProperties.lean` proves spectral analyticity and
+identifies the primitive with the actual integral along every smooth
+integrable connector from either selected endpoint into its half-plane.
+The full normalized value commutes with exponent inclusion and is an
+invariant of the original periodic spectrum with algebraic multiplicities.
+At the zero source it is exactly `-i λ + i n π` on both half-planes for
+every signed index, establishing Lemma 19.1(vi) on these domains.
+
+Public checks verify the free normalization at a negative index above
+the real axis and a positive index below it, compare independently chosen
+primitives at exponents 3/2 and 3, and prove invariance under the actual
+source phase rotation without an assumed isospectrality premise.
+
+This begins Section 19. Gluing the half-plane constructions across the
+real axis outside the open gaps, establishing the indexed `-i n π`
+endpoint constants, joint source analyticity, and the remaining estimates
+of Lemma 19.1 are still required. The complete globally normalized abelian
+integral, subsequent frequency results, and the full dissertation remain
+unfinished.
+
+## Previous milestone: Lemma 17.5 completed
 
 `RealActionRotationOrbit.lean` proves that finite coordinate rotations
 are dense in every prescribed action torus at every finite Banach

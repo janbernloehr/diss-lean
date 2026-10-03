@@ -25922,3 +25922,50 @@ example (φ ψ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
   exact ⟨congrFun ((mem_sourceIsospectralSet_iff_discriminant_eq (by simp) (by norm_num) φ ψ).mp h) z,h.2 z⟩
 
 end NLS.Lemma17_5Checks
+
+namespace NLS.AbelianHalfPlaneChecks
+open NLS.ZakharovShabat Set Filter
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The negative indexed free primitive has the correct additive normalization
+-- and upper-half-plane root sign, although every free gap is collapsed.
+example : sourceAbelianHalfPlanePrimitive (p := 3) (by simp) (by norm_num) 0 (by simp)
+    (-2) true Complex.I = 1-2*Complex.I*(Real.pi : ℂ) := by
+  rw [sourceAbelianHalfPlanePrimitive_zero (by simp) (by norm_num) (-2) true
+    (by simp [sourceAbelianHalfPlane] : Complex.I ∈ sourceAbelianHalfPlane true)]
+  norm_num
+  ring
+
+-- The lower-half-plane construction has the same canonical free formula,
+-- tested at a positive signed index and a different spectral height.
+example : sourceAbelianHalfPlanePrimitive (p := 3) (by simp) (by norm_num) 0 (by simp)
+    7 false (-2*Complex.I) = -2+7*Complex.I*(Real.pi : ℂ) := by
+  rw [sourceAbelianHalfPlanePrimitive_zero (by simp) (by norm_num) 7 false
+    (by simp [sourceAbelianHalfPlane] : -2*Complex.I ∈ sourceAbelianHalfPlane false)]
+  norm_num
+  linear_combination 2*Complex.I_mul_I
+
+-- Independently chosen primitives agree after changing from exponent 3/2
+-- to exponent 3, including their endpoint normalization constants.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (n : ℤ) :
+    sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property n true Complex.I =
+    sourceAbelianHalfPlanePrimitive (p := 3) (by simp) (by norm_num)
+      (CoeffPair.exponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 3) φ.val)
+      (realTypeSourceExponentInclusion (by norm_num : ENNReal.ofReal (3/2) ≤ 3) φ).property n true Complex.I :=
+  sourceAbelianHalfPlanePrimitive_exponent (by simp) (by simp) (by norm_num) (by norm_num)
+    (by norm_num) φ n true (by simp [sourceAbelianHalfPlane])
+
+-- An actual source phase rotation leaves the lower normalized primitive
+-- unchanged; no spectral-invariance assumption is supplied by the caller.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) (sourcePhase φ.val)
+      (isRealType_sourcePhase φ.val φ.property) n false (-Complex.I) =
+    sourceAbelianHalfPlanePrimitive (by simp) (by norm_num) φ.val φ.property n false (-Complex.I) :=
+  sourceAbelianHalfPlanePrimitive_eq_of_isospectral (by simp) (by norm_num) φ
+    ⟨sourcePhase φ.val,isRealType_sourcePhase φ.val φ.property⟩
+    ⟨periodicSpectrum_periodOne_sourcePhase (by simp) φ.val,
+      periodicAlgebraicMultiplicity_periodOne_sourcePhase (by simp) φ.val⟩ n false
+    (by simp [sourceAbelianHalfPlane])
+
+end NLS.AbelianHalfPlaneChecks
