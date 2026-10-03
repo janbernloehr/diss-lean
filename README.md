@@ -9363,3 +9363,37 @@ to prove discriminant continuity under coefficient limits, then control its
 spectral derivative and the canonical-root branch on common action circles.
 `SourceHilbertActionsContinuousOnBoundedCoefficients` remains unproved;
 unconditional properness and Proposition 17.2 remain unfinished.
+
+## Discriminant and spectral derivative coefficient limits
+
+`UniformDualCoefficientLimits.lean` moves finite Fourier truncation across
+the bilinear coefficient pairing and proves an explicit head/tail bound.
+A bounded coefficient-null family pairs to zero uniformly against every
+sequence dominated by one fixed finite-exponent majorant. This is a general
+conjugate-exponent result; it does not require norm convergence of the input.
+
+`SourceDiscriminantCoefficientContinuity.lean` applies that argument to the
+actual two Hilbert cotangent coefficient sequences. Cotangent values on
+bounded coefficient-null directions tend uniformly to zero over simultaneous
+bounded source and spectral balls. Differentiating the actual discriminant
+along straight real-parameter source segments and applying the mean value
+bound gives uniform discriminant convergence on every bounded spectral set.
+The theorem permits arbitrary filters and complex sources, with no real-type
+condition or strong source-norm convergence. Pointwise and locally uniform
+versions are exported.
+
+`SourceDiscriminantDerivativeCoefficientContinuity.lean` applies the Cauchy
+integral convergence theorem to obtain the same locally uniform and bounded-set
+uniform convergence for the actual spectral derivative. Thus the numerator
+of the action integrand now converges on every fixed common action circle.
+
+Public checks cover both functions on arbitrary fixed circles, the real-source
+specialization using only first-component coefficient limits, and reflected
+unit Fourier modes whose source norms stay bounded away from zero while their
+entire discriminants and spectral derivatives converge to the free functions.
+
+Next prove convergence of the correctly normalized canonical square-root
+branch on the common action circles, then pass to the quotient and action
+integral. Convergence of the discriminant square alone does not choose a
+square-root sign. `SourceHilbertActionsContinuousOnBoundedCoefficients`,
+unconditional properness, and Proposition 17.2 remain unfinished.

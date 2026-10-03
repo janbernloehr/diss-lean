@@ -25206,3 +25206,77 @@ example {α : Type*} (φ : α → CoeffPair 2) (z : α → ℂ)
   exact ⟨s,fun k => hs (φ k) (hφ k) (z k) (hz k)⟩
 
 end NLS.CotangentDecayChecks
+
+namespace NLS.DiscriminantCoefficientChecks
+open NLS.ZakharovShabat Set Filter Topology Metric Complex
+
+-- Both entire functions converge on the actual fixed contour; sources may be complex.
+example {α : Type*} {l : Filter α} (a : α → CoeffPair 2) (b : CoeffPair 2)
+    (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) l (𝓝 (b.fst n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).snd n) l (𝓝 (b.snd n)))
+    (c : ℂ) (R : ℝ) :
+    TendstoUniformlyOn (fun k => canonicalDiscriminant (by simp) (periodOnePotential (a k)))
+      (canonicalDiscriminant (by simp) (periodOnePotential b)) l (sphere c R) ∧
+    TendstoUniformlyOn (fun k => deriv (canonicalDiscriminant (by simp) (periodOnePotential (a k))))
+      (deriv (canonicalDiscriminant (by simp) (periodOnePotential b))) l (sphere c R) :=
+  ⟨tendstoUniformlyOn_sourceDiscriminant_of_bounded_coefficientwise a b hb ht₁ ht₂ _
+      (isCompact_sphere c R).isBounded,
+    tendstoUniformlyOn_sourceDiscriminant_deriv_of_bounded_coefficientwise a b hb ht₁ ht₂ _
+      (isCompact_sphere c R).isBounded⟩
+
+-- The real-source application needs only the original first-component limits.
+example (a : ℕ → CoeffPair 2) (b : CoeffPair 2) (hb : Bornology.IsBounded (range a))
+    (ha : ∀ k, IsRealType (CoeffPair.toMax 2 (a k))) (hreal : IsRealType (CoeffPair.toMax 2 b))
+    (ht : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n))) (z : ℂ) :
+    Tendsto (fun k => canonicalDiscriminant (by simp) (periodOnePotential (a k)) z) atTop
+      (𝓝 (canonicalDiscriminant (by simp) (periodOnePotential b) z)) ∧
+    Tendsto (fun k => deriv (canonicalDiscriminant (by simp) (periodOnePotential (a k))) z) atTop
+      (𝓝 (deriv (canonicalDiscriminant (by simp) (periodOnePotential b)) z)) := by
+  have ht₂ := tendsto_source_snd_of_realType_coefficientwise a b ha hreal ht
+  exact ⟨tendsto_sourceDiscriminant_of_bounded_coefficientwise a b hb ht ht₂ z,
+    tendsto_sourceDiscriminant_deriv_of_bounded_coefficientwise a b hb ht ht₂ z⟩
+
+private def reflectedModes (k : ℕ) : CoeffPair 2 :=
+  (CoeffPair.toMax 2).symm (lp.single 2 (k : ℤ) (1 : ℂ),lp.single 2 (-(k : ℤ)) (1 : ℂ))
+
+-- Both components move to high frequencies. The norm stays away from zero,
+-- but the entire discriminant and its derivative have the free limits.
+example : (∀ k, 1 ≤ ‖reflectedModes k‖) ∧
+    TendstoLocallyUniformly (fun k => canonicalDiscriminant (by simp) (periodOnePotential (reflectedModes k)))
+      freeDiscriminant atTop ∧
+    TendstoLocallyUniformly (fun k => deriv (canonicalDiscriminant (by simp) (periodOnePotential (reflectedModes k))))
+      (deriv freeDiscriminant) atTop := by
+  have hb : Bornology.IsBounded (range reflectedModes) := by
+    apply isBounded_iff_forall_norm_le.mpr
+    refine ⟨(2 : ℝ)^(1/(2 : ℝ)),?_⟩
+    rintro _ ⟨k,rfl⟩
+    have h := CoeffPair.norm_toMax_symm_le (p := 2) (by simp)
+      (lp.single 2 (k : ℤ) (1 : ℂ),lp.single 2 (-(k : ℤ)) (1 : ℂ))
+    simpa [reflectedModes,Prod.norm_def,lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 2)] using h
+  have ht₁ (n : ℤ) : Tendsto (fun k => (reflectedModes k).fst n) atTop (𝓝 ((0 : CoeffPair 2).fst n)) := by
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ge_atTop (n.natAbs+1)] with k hk
+    have hne : (k : ℤ) ≠ n := by have hbound : n ≤ (n.natAbs : ℤ) := Int.le_natAbs; omega
+    simp [reflectedModes,lp.single_apply,Ne.symm hne,WithLp.fst]
+  have ht₂ (n : ℤ) : Tendsto (fun k => (reflectedModes k).snd n) atTop (𝓝 ((0 : CoeffPair 2).snd n)) := by
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ge_atTop (n.natAbs+1)] with k hk
+    have hbound : -n ≤ ((-n).natAbs : ℤ) := Int.le_natAbs
+    simp only [Int.natAbs_neg] at hbound
+    have hne : -(k : ℤ) ≠ n := by omega
+    simp [reflectedModes,lp.single_apply,Ne.symm hne,WithLp.snd]
+  have he : canonicalDiscriminant (by simp) (periodOnePotential (0 : CoeffPair 2)) = freeDiscriminant := by
+    funext z
+    rw [map_zero]
+    exact canonicalDiscriminant_zero z
+  refine ⟨?_,?_,?_⟩
+  · intro k
+    have h := WithLp.norm_fst_le _ (reflectedModes k)
+    simpa [reflectedModes,WithLp.fst,lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 2)] using h
+  · rw [← he]
+    exact tendstoLocallyUniformly_sourceDiscriminant_of_bounded_coefficientwise reflectedModes 0 hb ht₁ ht₂
+  · rw [← he]
+    exact tendstoLocallyUniformly_sourceDiscriminant_deriv_of_bounded_coefficientwise reflectedModes 0 hb ht₁ ht₂
+
+end NLS.DiscriminantCoefficientChecks

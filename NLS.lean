@@ -2108,3 +2108,7 @@ import NLS.ZakharovShabat.SourceActionCoefficientCircle
 import NLS.SequenceSpaces.DominatedTails
 import NLS.ZakharovShabat.ClassicalDiscriminantGradientEnergy
 import NLS.ZakharovShabat.SourceDiscriminantCotangentDecay
+
+import NLS.SequenceSpaces.UniformDualCoefficientLimits
+import NLS.ZakharovShabat.SourceDiscriminantCoefficientContinuity
+import NLS.ZakharovShabat.SourceDiscriminantDerivativeCoefficientContinuity
