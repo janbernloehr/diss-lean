@@ -1959,3 +1959,7 @@ import NLS.SequenceSpaces.SourceCotangentNormBound
 import NLS.ZakharovShabat.ContinuousSourceDiscriminantGradient
 import NLS.ZakharovShabat.SourceMidpointPhysicalFourierBound
 import NLS.ZakharovShabat.SourceMidpointSobolevSummability
+
+import NLS.ZakharovShabat.ClassicalSpectralVariation
+import NLS.ZakharovShabat.ClassicalDirichletGradientNormalization
+import NLS.ZakharovShabat.ClassicalDirichletRootGradient

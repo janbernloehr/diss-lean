@@ -23371,3 +23371,34 @@ example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W �
   exists_global_source_midpoint_fderiv_sobolev_memlp (by norm_num) (by norm_num) (by norm_num)
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set Complex MeasureTheory Filter Topology NLS.LinearVolterra
+
+-- The bilinear normalization is exactly two, including nonreal free spectral parameters.
+example (z : ℂ) : classicalDirichletNormalization 0 z = 2 :=
+  classicalDirichletNormalization_free z
+
+-- Both component signs, frequencies, and the factor one half are fixed by the actual free solution.
+example (z : ℂ) (t : Icc (0 : ℝ) 1) :
+    classicalDirichletNormalizedGradient 0 z t =
+      (exp (2*Complex.I*z*t.val)/2,exp (-2*Complex.I*z*t.val)/2) :=
+  classicalDirichletNormalizedGradient_free z t
+
+-- Simplicity proves nonzero normalization; no separate integral nonvanishing is assumed.
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ)
+    (hz : classicalSeparatedCharacteristic .dirichlet Φ z = 0)
+    (hsimple : deriv (classicalSeparatedCharacteristic .dirichlet Φ) z ≠ 0) :
+    classicalDirichletNormalization Φ z ≠ 0 :=
+  classicalDirichletNormalization_ne_zero_of_simple Φ z hz hsimple
+
+-- A genuine continuous simple-zero branch has the normalized squared-eigenfunction derivative.
+example (μ : Curve (ℂ × ℂ) → ℂ) (Φ H : Curve (ℂ × ℂ)) (hμ : ContinuousAt μ Φ)
+    (hroot : ∀ᶠ Ψ in 𝓝 Φ, classicalSeparatedCharacteristic .dirichlet Ψ (μ Ψ) = 0)
+    (hsimple : deriv (classicalSeparatedCharacteristic .dirichlet Φ) (μ Φ) ≠ 0) :
+    (fderiv ℂ μ Φ) H = ∫ t in (0 : ℝ)..1,
+      (classicalDirichletNormalizedGradient Φ (μ Φ) t).1*(NLS.LinearVolterra.extend H t).1+
+      (classicalDirichletNormalizedGradient Φ (μ Φ) t).2*(NLS.LinearVolterra.extend H t).2 :=
+  fderiv_classicalDirichletRoot_eq_normalized_integral μ Φ hμ hroot hsimple H
+
+end NLS.ZakharovShabat

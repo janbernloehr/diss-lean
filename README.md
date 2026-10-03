@@ -8174,3 +8174,31 @@ Next prove G.7's Dirichlet gradient normalization and shifted-free estimate,
 then use the gradient estimates in Lemma 16.1. G.7 as a whole, Lemma 16.1,
 the sharper G.1 integral bound, remaining assertions of Theorem 14.1, and
 later chapters remain unfinished. No infinite-exponent assertion is added.
+
+## Appendix G.7: Dirichlet normalization and local root derivatives
+
+The exact classical Dirichlet normalization and local eigenvalue derivative
+are now proved. With `g=M(·,z)(1,1)` and the bilinear normalization
+`Q=2∫₀¹g₁g₂`, every simple Dirichlet zero has `Q≠0`. The actual Fréchet
+derivative of a continuous local branch of simple zeros is the integral
+against `(g₂²,g₁²)/Q`; differentiability and the gradient formula are derived.
+
+`ClassicalSpectralVariation.lean` differentiates the actual Volterra solution
+in the spectral parameter. Its forced source is `(-i u₁,i u₂)`, and the
+endpoint derivative is an exact forward/dual solution integral.
+`ClassicalDirichletGradientNormalization.lean` identifies the dual solution
+at a root as a nonzero multiple of `g`. The spectral and potential derivatives
+share this factor, so their implicit-root quotient gives the normalized
+squared-eigenfunction expression. Simplicity proves nonzero normalization.
+
+`ClassicalDirichletRootGradient.lean` applies the analytic implicit-root
+theorem to a genuine continuous local root selection and then differentiates
+the root identity. Its hypotheses explicitly retain local root selection
+and simplicity. The canonical indexed source-root instance and the uniform
+shifted-free remainder estimate are still to be proved.
+
+Public checks cover `Q(0,z)=2` for every complex `z`, the free gradient
+`(exp(2izt)/2,exp(-2izt)/2)`, nonvanishing from simplicity, and the actual
+local branch derivative. G.7 as a whole, Lemma 16.1, the sharper G.1 integral
+bound, remaining assertions of Theorem 14.1, and later chapters remain
+unfinished. No infinite-exponent assertion is added.

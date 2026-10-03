@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: midpoint derivative summability at H¹ sources
+## Latest progress: Dirichlet normalization and local root derivatives
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -25,10 +25,17 @@ operator by the two conjugate physical Fourier norms. The existing H¹-ball
 majorants and zero-free contours supply the full estimate; no gradient or
 majorant premise is left. Collapsed gaps and finite central heads are included.
 
-Next prove G.7's Dirichlet eigenvalue gradient normalization and its
-shifted-free estimate, then apply the gradient estimates to finite-gap
-sources in Lemma 16.1. The midpoint result is currently exported in actual
-source operator norm; coefficient-form applications should preserve the
+G.7's exact classical Dirichlet normalization is now proved: at a simple
+root, the bilinear quantity `Q=2∫g₁g₂` is nonzero, and the actual derivative
+of any continuous local root branch is the integral against `(g₂²,g₁²)/Q`.
+Spectral differentiation of the Volterra solution supplies the denominator
+identity. The free normalization is exactly two, with the two opposite
+exponential waves and factor one half verified explicitly.
+
+Next instantiate this formula at the canonical indexed source roots and
+prove the uniform shifted-free remainder estimate, then apply the gradient
+estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
+exported in actual source operator norm; coefficient-form applications should preserve the
 proved reversed-frequency convention.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
 Theorem 14.1, and later chapters remain unfinished.
