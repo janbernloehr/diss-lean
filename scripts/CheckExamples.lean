@@ -23529,3 +23529,73 @@ example (ψ₀ : CoeffPair 3) (M : ℝ) (hM : 0 ≤ M) :
   exists_local_source_dirichlet_gradient_value_bound (by norm_num) (by norm_num) (by norm_num) ψ₀ M hM
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set NLS.LinearVolterra NLS.Fourier
+
+-- The exact error ODE retains both signed components and the root-shift term.
+example (Φ : Curve (ℂ × ℂ)) (z w : ℂ) (t : Icc (0 : ℝ) 1) :
+    deriv (classicalDirichletGradientError Φ z w) t =
+      (2*Complex.I*z) • ((classicalDirichletGradientError Φ z w t).1,-(classicalDirichletGradientError Φ z w t).2)+
+      (2*Complex.I*(z-w)) • ((classicalDirichletNormalizedGradient 0 w t).1,-(classicalDirichletNormalizedGradient 0 w t).2)+
+      (2*Complex.I*((classicalDirichletEigenfunction Φ z t).1*(classicalDirichletEigenfunction Φ z t).2/
+        classicalDirichletNormalization Φ z)) • (-(Φ t).2,(Φ t).1) :=
+  deriv_classicalDirichletGradientError Φ z w t
+
+-- The actual signed roots supply both time bounds on one common source neighborhood.
+example (ψ₀ : CoeffPair 3) (M : ℝ) (hM : 0 ≤ M) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ ψ₀ ∈ U ∧ ∃ N : ℕ, 0 < N ∧
+      ∃ A D : ℝ, 0 ≤ A ∧ 0 ≤ D ∧
+      ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ U →
+      ∀ (a : Domain 2), ‖a‖ ≤ M → periodOnePotential φ = domainInclusion a →
+      ∀ n : ℤ, N ≤ n.natAbs → ∀ t : Icc (0 : ℝ) 1,
+        let R := classicalDirichletGradientError (classicalSobolevPotential a)
+          (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet
+            (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n) ((Real.pi : ℂ)*n)
+        ‖R t‖ ≤ A/(n.natAbs : ℝ) ∧ ‖deriv R t‖ ≤ D :=
+  exists_local_source_dirichlet_gradient_time_bounds (by norm_num) (by norm_num) (by norm_num) ψ₀ M hM
+
+-- Both conjugate Fourier component norms are summable over every signed root,
+-- including the finite head and without reality assumptions on the source.
+example (φ : CoeffPair 2) (a : Domain 2) (ha : periodOnePotential φ = domainInclusion a) :
+    Memℓp (fun n : ℤ => ‖classicalDirichletGradientFourierCoefficients
+      (q := ENNReal.ofReal (3/2)) (by norm_num)
+      (classicalSobolevPotential a)
+      (canonicalPeriodOneBoundaryRoots (p := 3) (by norm_num) (by norm_num) .dirichlet
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n)
+      ((Real.pi : ℂ)*n) (ContinuousLinearMap.fst ℝ ℂ ℂ)‖) 3 ∧
+    Memℓp (fun n : ℤ => ‖classicalDirichletGradientFourierCoefficients
+      (q := ENNReal.ofReal (3/2)) (by norm_num)
+      (classicalSobolevPotential a)
+      (canonicalPeriodOneBoundaryRoots (p := 3) (by norm_num) (by norm_num) .dirichlet
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n)
+      ((Real.pi : ℂ)*n) (ContinuousLinearMap.snd ℝ ℂ ℂ)‖) 3 := by
+  constructor
+  · have h := memlp_source_dirichlet_gradient_fourier_norms
+      (p := 3) (by norm_num) (by norm_num) (by norm_num) 3 (by norm_num)
+      (ENNReal.ofReal (3/2)) (by norm_num) φ a ha
+      (ContinuousLinearMap.fst ℝ ℂ ℂ) (ContinuousLinearMap.norm_fst_le ..)
+    simpa only [show ENNReal.ofReal 3 = 3 by norm_num] using h
+  · have h := memlp_source_dirichlet_gradient_fourier_norms
+      (p := 3) (by norm_num) (by norm_num) (by norm_num) 3 (by norm_num)
+      (ENNReal.ofReal (3/2)) (by norm_num) φ a ha
+      (ContinuousLinearMap.snd ℝ ℂ ℂ) (ContinuousLinearMap.norm_snd_le ..)
+    simpa only [show ENNReal.ofReal 3 = 3 by norm_num] using h
+
+-- A single summable majorant works for every contractive observation and
+-- every nearby source in the H¹ ball, at outer exponent two and inner two.
+example (ψ₀ : CoeffPair 3) (M : ℝ) (hM : 0 ≤ M) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ ψ₀ ∈ U ∧ ∃ N : ℕ, 0 < N ∧
+      ∃ b : ℤ → ℝ, Memℓp b 2 ∧
+      ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ U →
+      ∀ (a : Domain 2), ‖a‖ ≤ M → periodOnePotential φ = domainInclusion a →
+      ∀ (P : (ℂ × ℂ) →L[ℝ] ℂ), ‖P‖ ≤ 1 → ∀ n : ℤ, N ≤ n.natAbs →
+        ‖classicalDirichletGradientFourierCoefficients (q := 2) (by norm_num)
+          (classicalSobolevPotential a)
+          (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet
+            (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n)
+          ((Real.pi : ℂ)*n) P‖ ≤ b n := by
+  simpa using exists_local_source_dirichlet_gradient_fourier_tail_majorant
+    (p := 3) (by norm_num) (by norm_num) (by norm_num) 2 (by norm_num) 2 (by norm_num) ψ₀ M hM
+
+end NLS.ZakharovShabat

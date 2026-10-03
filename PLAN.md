@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: uniform Dirichlet root and gradient value estimates
+## Latest progress: Dirichlet gradient time bounds and Fourier summability
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -54,9 +54,17 @@ Combining these with the actual solution bounds gives a uniform pointwise
 These estimates apply at nearby complex sources and derive all root and
 denominator bounds from the source data.
 
-Next bound the normalized gradient error's time derivative and apply the
-Fourier interpolation estimates to finish the Dirichlet part of G.7, then
-apply the gradient estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
+The normalized gradient error now satisfies its exact signed time ODE and a
+uniform derivative bound. Its actual unit-interval Fourier coefficients
+have a common summable tail majorant on source neighborhoods and H¹ balls
+for outer exponent `s>1` and inner exponent `q>1+1/s`. At each fixed source,
+the full sequence, including the finite head, is summable; in particular
+the conjugate Fourier norms form an outer ℓp sequence for finite `p≥2`.
+
+Next combine these physical Fourier error estimates with the common-domain
+cotangent identification to export summability of the actual Dirichlet
+root derivative minus its free half-wave functional. Then apply the
+gradient estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
 exported in actual source operator norm; coefficient-form applications should preserve the
 proved reversed-frequency convention.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of

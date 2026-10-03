@@ -8312,3 +8312,37 @@ displacements at `p=3`, the quantitative inverse normalization, and the
 uniform actual-root error with the two exact free waves and one-half
 factors. G.7 as a whole and Lemma 16.1 remain unfinished. No
 infinite-exponent assertion is added.
+
+## Appendix G.7: Dirichlet gradient time bounds and Fourier summability
+
+The normalized Dirichlet gradient error now has a uniformly bounded time
+derivative at the actual canonical roots. Together with the proved
+`A/|n|` value bound, this gives a summable sequence of physical Fourier
+norms. For every finite source exponent `p≥2`, the inner conjugate-exponent
+Fourier norms belong to outer ℓp, including the finite central head.
+
+`ClassicalDirichletGradientTimeRegularity.lean` proves C¹ regularity and the
+exact signed ODE for the normalized gradient and its free-wave error.
+`ClassicalDirichletGradientDerivativeBound.lean` uses the cancellation to
+bound the derivative by `2(π+B)A+2B+8M exp(4M+B)²`. The spectral shift,
+normalization inverse, and physical potential bounds all come from the
+previous estimates. `SourceDirichletGradientTimeBounds.lean` supplies both
+time bounds on one neighborhood of any complex source and one H¹ ball.
+
+`ClassicalDirichletGradientFourier.lean` constructs the actual unit-interval
+Fourier coefficients and proves interpolation and summable power bounds.
+`SourceDirichletGradientFourierSummability.lean` gives one outer ℓˢ majorant
+for the tails, uniformly over the neighborhood, H¹ ball, and contractive
+scalar observations, whenever `s>1` and `q>1+1/s`. It also proves full-sequence
+summability at each fixed source and the conjugate-exponent specialization.
+These results concern the total normalized physical expression; identifying
+it with the genuine cotangent at every index uses the previously constructed
+common simple-root domain.
+
+Public checks cover the exact signed ODE, the uniform time bounds at source
+exponent three, both Fourier components at inner exponent 3/2 and outer
+exponent three, and a common outer ℓ² tail majorant. Next combine the
+Fourier error bounds with the common-domain cotangent identification to
+export summability for the actual Dirichlet derivative minus its free
+half-wave functional. G.7 as a whole and Lemma 16.1 remain unfinished;
+no infinite-source-exponent assertion is added.
