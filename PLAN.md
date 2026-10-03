@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: signed omitted-product normalization
+## Latest progress: finite-gap coordinate gradient errors for finite p ≥ 2
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -94,11 +94,23 @@ and parity select the signed square root, including collapsed gaps. Generic
 reciprocal differ from `cos(πn)` by ℓp sequences, with bounded reciprocals
 across all signed indices. The existing open-gap sign APIs remain available.
 
-Next combine this normalization with the actual G.6 and G.7 estimates in
-the finite-gap differential formula for Lemma 16.1, and complete its full
-`1<p<∞` gradient range. The actual source gradient summability estimates
-currently cover finite `p≥2`. The sharper G.1 integral bound, Lemma 16.1,
-remaining assertions of Theorem 14.1, and later chapters remain unfinished.
+The finite-gap coordinate derivative estimate is now proved for finite
+`p≥2`. The exact free functional selects the signed component with factor
+minus two. The closed-gap error splits into the two G.7 errors and three
+anti-discriminant corrections controlled by G.6, scalar spectral-derivative
+summability, and inverse omitted-product normalization. Finite-gap regularity
+constructs a compatible real Hilbert source and physical H¹ representative.
+The actual coordinate derivative agrees with the closed-gap expression
+outside the finite set of open gaps; finite modification includes every
+remaining index. Both source operator norm and the conjugate Fourier pair
+norm give outer ℓp sequences, with the local common-domain construction as
+the coordinate hypothesis.
+
+Next extend actual source-gradient summability to `1<p<2`, using exponent
+compatibility and physical estimates with independent inner and outer
+exponents. This range remains before full Lemma 16.1. The sharper G.1
+integral bound, remaining assertions of Theorem 14.1, and later chapters
+remain unfinished.
 
 ## Milestones
 

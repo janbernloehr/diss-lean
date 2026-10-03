@@ -8491,3 +8491,41 @@ Next combine this normalization with the actual G.6 and G.7 estimates in
 the finite-gap differential formula for Lemma 16.1. The full lemma and its
 `1<p<∞` gradient range, the sharper G.1 integral bound, remaining assertions
 of Theorem 14.1, and later chapters remain unfinished.
+
+## Latest progress: finite-gap coordinate gradient errors for finite p ≥ 2
+
+At every real finite-gap source with finite `p≥2`, the derivative of the
+actual gap-weighted eta coordinate differs from its signed free Fourier
+functional by an outer ℓp sequence. The estimate holds both in source
+operator norm and in the full conjugate Fourier pair norm. It includes
+both infinite tails and all finitely many open gaps, for every sign.
+The theorem uses the existing local common-domain coordinate construction.
+
+`SourceGapWeightedEtaFreeCotangent.lean` identifies the reference exactly
+as `h ↦ (sign−1)h₁(-n)−(sign+1)h₂(n)`. Thus the two signs select one
+component with factor minus two. The free Dirichlet and anti-discriminant
+cotangents have uniform operator bounds.
+
+`SourceGapWeightedEtaClosedSummability.lean` decomposes the closed-gap
+error into the midpoint and Dirichlet errors and three anti-discriminant
+corrections. G.6, G.7, scalar spectral-derivative summability, and the
+signed inverse omitted-product normalization prove summability of every
+term at real H¹ sources. Bounded scalar multiplication and bounded-vector
+multiplication are formalized for vector-valued sequences.
+
+`SourceFiniteGapHilbertRealization.lean` constructs the real Hilbert
+preimage and compatible physical H¹ domain representative directly from
+finite-gap Sobolev regularity. No H¹ witness is supplied by callers.
+`SourceGapWeightedEtaFiniteGapSummability.lean` then applies the exact
+closed-gap derivative formula outside the finite open-gap set. A
+vector-valued finite-modification theorem includes the remaining indices;
+bounded conjugate-gradient recovery gives the physical Fourier norm.
+
+Public checks cover both free signs below two, the Hilbert endpoint,
+construction of the physical H¹ representative at `p=3`, the actual
+operator error, inner `ℓ^(3/2)` / outer `ℓ³` gradient errors, and arbitrary
+finite changes of operator sequences.
+
+The `1<p<2` source-gradient range remains before the full Lemma 16.1.
+The sharper G.1 integral bound, remaining assertions of Theorem 14.1,
+and later chapters also remain unfinished.

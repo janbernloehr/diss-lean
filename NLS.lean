@@ -2001,3 +2001,9 @@ import NLS.ZakharovShabat.SourceAntiDiscriminantSobolevSummability
 
 import NLS.ZakharovShabat.DeletedProductSampledValues
 import NLS.ZakharovShabat.SourceOmittedProductBoundaryNormalization
+
+import NLS.SequenceSpaces.BoundedScalarProducts
+import NLS.ZakharovShabat.SourceGapWeightedEtaFreeCotangent
+import NLS.ZakharovShabat.SourceGapWeightedEtaClosedSummability
+import NLS.ZakharovShabat.SourceFiniteGapHilbertRealization
+import NLS.ZakharovShabat.SourceGapWeightedEtaFiniteGapSummability

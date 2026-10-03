@@ -23872,3 +23872,59 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (n : ℤ) :
     (canonicalPeriodOneBoundaryRoot_mem_omittedDomain (by simp) (by norm_num) .neumann φ hφ n)
 
 end NLS.ZakharovShabatNormalizationChecks
+
+namespace NLS.ZakharovShabatEtaSummabilityChecks
+open NLS.ZakharovShabat Set
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : (ENNReal.ofReal (3/2)).HolderConjugate 3 := by
+  have h := (Real.HolderConjugate.conjExponent (by norm_num : 1 < (3 : ℝ))).symm.ennrealOfReal
+  convert h using 1 <;> norm_num [Real.conjExponent]
+
+-- Both free signs select the correct component at every signed index, also below two.
+example (h : CoeffPair (ENNReal.ofReal (3/2))) (n : ℤ) :
+    sourceGapWeightedEtaFreeCotangent (by simp) (by norm_num) n 1 h = -2*h.snd n ∧
+    sourceGapWeightedEtaFreeCotangent (by simp) (by norm_num) n (-1) h = -2*h.fst (-n) := by
+  constructor <;> simp only [sourceGapWeightedEtaFreeCotangent_apply] <;> ring
+
+-- Finite-gap regularity constructs the Hilbert source and physical H¹ witness.
+example (φ : realTypeSourceLocus 3)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    ∃ ψ : CoeffPair 2, CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) ψ = φ.val ∧
+      IsRealType (CoeffPair.toMax 2 ψ) ∧ ∃ a : Domain 2, periodOnePotential ψ = domainInclusion a :=
+  sourceFiniteGap_exists_hilbert_realization (by norm_num) (by norm_num) (by norm_num) φ hfinite
+
+-- The Hilbert endpoint requires only the spectral finite-gap condition.
+example (φ : realTypeSourceLocus 2)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (sign : ℂ) :
+    Memℓp (fun n : ℤ => sourceGapWeightedEtaClosedCotangent (by simp) (by norm_num) n sign φ.val-
+      sourceGapWeightedEtaFreeCotangent (by simp) (by norm_num) n sign) 2 :=
+  memlp_sourceGapWeightedEtaClosedCotangent_finiteGap (by simp) (by norm_num) le_rfl φ hfinite sign
+
+-- The actual derivative estimate includes the open finite head and both infinite tails.
+example {W₀ B : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceAngularEtaLocalCommonDomainData (by norm_num) (by norm_num) W₀ B s)
+    (W : Set (CoeffPair 3)) (hW : IsOpen W) (hWB : W ⊆ B)
+    (φ : realTypeSourceSubmodule 3) (hφ : φ.val ∈ W)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) (sign : ℂ) :
+    Memℓp (fun n : ℤ => ‖fderiv ℂ (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s sign) φ.val-
+      sourceGapWeightedEtaFreeCotangent (by norm_num) (by norm_num) n sign‖) 3 :=
+  (D.memlp_gapWeightedEta_fderiv_sub_free_finiteGap (by norm_num) W hW hWB φ hφ hfinite sign).norm
+
+-- The full physical pair error has inner exponent 3/2 and outer exponent 3.
+example {W₀ B : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceAngularEtaLocalCommonDomainData (by norm_num) (by norm_num) W₀ B s)
+    (W : Set (CoeffPair 3)) (hW : IsOpen W) (hWB : W ⊆ B)
+    (φ : realTypeSourceSubmodule 3) (hφ : φ.val ∈ W)
+    (hfinite : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) (sign : ℂ) :
+    Memℓp (fun n : ℤ => ‖CoeffPair.conjugateGradient (q := ENNReal.ofReal (3/2)) (by norm_num) (by simp)
+      (fderiv ℂ (sourceGapWeightedEtaCoordinate (by norm_num) (by norm_num) n s sign) φ.val-
+        sourceGapWeightedEtaFreeCotangent (by norm_num) (by norm_num) n sign)‖) 3 :=
+  (D.memlp_gapWeightedEta_conjugateGradient_sub_free_finiteGap (by norm_num) W hW hWB φ hφ hfinite sign).norm
+
+-- Finite replacement works for genuine operators and arbitrary values on the replaced set.
+example (L K : ℤ → CoeffPair 3 →L[ℂ] ℂ) (hL : Memℓp L 3)
+    (S : Finset ℤ) (h : ∀ n ∉ S, K n = L n) : Memℓp K 3 :=
+  memlp_vector_of_eq_outside_finset hL S h
+
+end NLS.ZakharovShabatEtaSummabilityChecks
