@@ -25969,3 +25969,60 @@ example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
     (by simp [sourceAbelianHalfPlane])
 
 end NLS.AbelianHalfPlaneChecks
+
+
+noncomputable section
+namespace NLS.AbelianLocalExtensionChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Construction at a nonintegral exponent needs no open-gap assumption.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (n : ℤ) :
+    ∃ D : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n,
+      AnalyticOnNhd ℂ D.extension D.extensionDomain ∧
+      ∀ a ∈ ({canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n,
+        canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n} : Set ℂ),
+        Tendsto D.extension (𝓝[D.extensionDomain] a) (𝓝 0) := by
+  obtain ⟨D⟩ := nonempty_sourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n
+  exact ⟨D,D.extension_analytic,D.extension_endpoint_limit⟩
+
+-- The joined function has its actual complex derivative on the real
+-- axis outside the selected cut, without imposing a half-plane condition.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ)
+    (D : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n)
+    (x : ℝ) (hx : (x : ℂ) ∈ ball D.center D.radius \ sourcePeriodicSegment (by simp) (by norm_num) φ.val n) :
+    HasDerivAt D.extension (deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) x /
+      sourceCanonicalRoot (by simp) (by norm_num) φ.val x) x :=
+  D.extension_hasDerivAt x (Or.inr hx)
+
+-- Different isolating discs give exactly the same continuation at a
+-- shared real point, not just at points off the real axis.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ)
+    (D E : SourceAbelianDiscPrimitive (by simp) (by norm_num) φ.val φ.property n)
+    (x : ℝ)
+    (hxD : (x : ℂ) ∈ ball D.center D.radius \ sourcePeriodicSegment (by simp) (by norm_num) φ.val n)
+    (hxE : (x : ℂ) ∈ ball E.center E.radius \ sourcePeriodicSegment (by simp) (by norm_num) φ.val n) :
+    D.extension x = E.extension x :=
+  D.extension_eqOn_overlap E ⟨Or.inr hxD,Or.inr hxE⟩
+
+-- At the free source all gaps collapse. A smooth connector from the
+-- upper to the lower half-plane still has its full quotient integral;
+-- the signed-index normalization constants cancel exactly.
+example (D : SourceAbelianDiscPrimitive (p := 3) (by simp) (by norm_num) 0 (by simp) (-4))
+    {a b : ℂ} (ha : 0 < a.im) (hb : b.im < 0)
+    (γ : Path a b) (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hγD : ∀ t : unitInterval, γ t ∈ D.extensionDomain) :
+    (∫ᶜ z in γ, holomorphicOneForm (fun w =>
+      deriv (canonicalDiscriminant (p := 3) (by simp) (periodOnePotential 0)) w /
+        sourceCanonicalRoot (p := 3) (by simp) (by norm_num) 0 w) z) = -Complex.I*(b-a) := by
+  rw [(D.extension_pathIntegral_eq_sub γ hγ hγD).2,
+    D.extension_eq_halfPlane false hb,D.extension_eq_halfPlane true ha,
+    sourceAbelianHalfPlanePrimitive_zero (by simp) (by norm_num) (-4) false hb,
+    sourceAbelianHalfPlanePrimitive_zero (by simp) (by norm_num) (-4) true ha]
+  ring
+
+end NLS.AbelianLocalExtensionChecks

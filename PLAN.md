@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Latest progress: normalized half-plane abelian primitives
+## Latest progress: local gluing of normalized abelian primitives
+
+`SourceAbelianDiscPrimitive.lean` uses the proved zero enclosing-circle
+period to construct an actual quotient primitive throughout an isolating
+disc minus the selected gap. Inverse-square-root endpoint estimates give
+finite limits along every approach in this cut complement at open gaps.
+
+`SourceAbelianDiscGluing.lean` fixes the left endpoint value to zero and
+compares the resulting primitive with both independently normalized
+half-plane primitives. The right endpoint value is consequently zero as
+well. Collapsed gaps use the analytic removable extension of the actual
+quotient. Every real source, signed index, and finite `p > 1` admits such
+a normalized disc chart, and any two charts agree on their overlap.
+
+`SourceAbelianLocalExtension.lean` joins both complete half-planes and
+the isolating cut disc into one open domain and one analytic function.
+It has the actual quotient derivative even at the newly included real
+points, retains both zero endpoint limits on the whole joined domain,
+and is independent of the chosen chart on overlaps. Every smooth path
+inside this domain integrates the actual quotient to the function's
+endpoint difference, including paths crossing the real axis.
+
+Public checks construct the continuation at exponent 3/2, verify its
+actual derivative and chart independence at real points, and evaluate
+cross-half-plane path integrals at a collapsed free gap with negative
+index. No open-gap or assumed primitive existence premise is needed for
+the chart construction.
+
+This completes the local gluing step around the selected gap in Section
+19. Continuation across the rest of the real axis, the indexed `-i n π`
+constants, joint source analyticity, and the remaining assertions of
+Lemma 19.1 are still required. The globally normalized abelian integral,
+frequency results, and full dissertation remain unfinished.
+
+## Previous progress: normalized half-plane abelian primitives
 
 `PrimitiveRemovableBoundary.lean` proves that a holomorphic extension
 of a primitive's derivative through a boundary point gives a full relative

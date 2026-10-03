@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 19's endpoint-normalized abelian primitives
-are constructed on both complete half-planes, including collapsed gaps.
-Their free formula, exponent compatibility, and isospectral invariance
-are proved. Gluing and the remaining assertions of Lemma 19.1 are next.
+Latest milestone: Section 19's normalized abelian primitives now join
+across an isolating neighborhood of any selected gap, including collapsed
+gaps. The joined function is analytic, agrees with both half-plane
+constructions, and evaluates paths crossing the real axis. Global
+continuation and the remaining assertions of Lemma 19.1 are next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -9853,3 +9854,37 @@ endpoint constants, joint source analyticity, and the remaining estimates
 of Lemma 19.1 are still required. The complete globally normalized abelian
 integral, subsequent frequency results, and the full dissertation remain
 unfinished.
+
+## Local gluing of normalized abelian primitives
+
+`SourceAbelianDiscPrimitive.lean` uses the proved zero enclosing-circle
+period to construct an actual quotient primitive throughout an isolating
+disc minus the selected gap. Inverse-square-root endpoint estimates give
+finite limits along every approach in this cut complement at open gaps.
+
+`SourceAbelianDiscGluing.lean` fixes the left endpoint value to zero and
+compares the resulting primitive with both independently normalized
+half-plane primitives. The right endpoint value is consequently zero as
+well. Collapsed gaps use the analytic removable extension of the actual
+quotient. Every real source, signed index, and finite `p > 1` admits such
+a normalized disc chart, and any two charts agree on their overlap.
+
+`SourceAbelianLocalExtension.lean` joins both complete half-planes and
+the isolating cut disc into one open domain and one analytic function.
+It has the actual quotient derivative even at the newly included real
+points, retains both zero endpoint limits on the whole joined domain,
+and is independent of the chosen chart on overlaps. Every smooth path
+inside this domain integrates the actual quotient to the function's
+endpoint difference, including paths crossing the real axis.
+
+Public checks construct the continuation at exponent 3/2, verify its
+actual derivative and chart independence at real points, and evaluate
+cross-half-plane path integrals at a collapsed free gap with negative
+index. No open-gap or assumed primitive existence premise is needed for
+the chart construction.
+
+This completes the local gluing step around the selected gap in Section
+19. Continuation across the rest of the real axis, the indexed `-i n π`
+constants, joint source analyticity, and the remaining assertions of
+Lemma 19.1 are still required. The globally normalized abelian integral,
+frequency results, and full dissertation remain unfinished.
