@@ -26079,3 +26079,54 @@ example : exp (sourceAbelianHalfPlanePrimitive (p := 3) (by simp) (by norm_num) 
     (by simp [sourceAbelianHalfPlane])
 
 end NLS.AbelianFloquetChecks
+
+
+noncomputable section
+namespace NLS.RealBandChecks
+open Set Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The actual improper quotient integral at a fractional exponent needs
+-- neither an open-gap assumption nor a supplied integrability premise.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (n : ℤ) :
+    let a := (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n).re
+    let b := (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) (n+1)).re
+    Tendsto (fun ε : ℝ => sourceRealBandIntegral (by simp) (by norm_num) φ.val (a+ε) (b-ε))
+      (𝓝[>] 0) (𝓝 (-Complex.I*(Real.pi : ℂ))) :=
+  sourceRealBandIntegral_symmetric_cutoff_tendsto (by simp) (by norm_num) φ.val φ.property n
+
+-- The canonical root has positive imaginary part in the band following
+-- the odd negative gap -3; its discriminant remains strictly inside ±2.
+example (φ : realTypeSourceSubmodule 3) (x : ℝ)
+    (hx : x ∈ sourceRealBand (by simp) (by norm_num) φ.val (-3)) :
+    0 < (sourceCanonicalRoot (by simp) (by norm_num) φ.val x).im ∧
+    (canonicalDiscriminant (by simp) (periodOnePotential φ.val) x).re^2 < 4 := by
+  constructor
+  · have h := (sourceCanonicalRoot_realBand_sign (by simp) (by norm_num) φ.val φ.property (-3) x hx).2
+    norm_num at h
+    linarith
+  · exact sourceDiscriminant_realBand_sq_lt_four (by simp) (by norm_num) φ.val φ.property (-3) x hx
+
+-- Reversing the direction cancels the actual integral, even when the
+-- caller supplies the endpoints in either numerical order.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) (u v : ℝ)
+    (hu : u ∈ sourceRealBand (by simp) (by norm_num) φ.val n)
+    (hv : v ∈ sourceRealBand (by simp) (by norm_num) φ.val n) :
+    sourceRealBandIntegral (by simp) (by norm_num) φ.val u v +
+      sourceRealBandIntegral (by simp) (by norm_num) φ.val v u = 0 := by
+  rw [sourceRealBandIntegral_eq_sub (by simp) (by norm_num) φ.val φ.property n u v hu hv,
+    sourceRealBandIntegral_eq_sub (by simp) (by norm_num) φ.val φ.property n v u hv hu]
+  ring
+
+-- At the free source both neighboring gaps are collapsed. The negative
+-- indexed band still contributes -i*pi with its actual endpoint locations.
+example : Tendsto (fun ε : ℝ => sourceRealBandIntegral (p := 3) (by simp) (by norm_num) 0
+    (-3*Real.pi+ε) (-2*Real.pi-ε)) (𝓝[>] 0) (𝓝 (-Complex.I*(Real.pi : ℂ))) := by
+  simpa [periodOnePotential,mul_comm] using sourceRealBandIntegral_symmetric_cutoff_tendsto
+    (p := 3) (by simp) (by norm_num) 0 (by simp) (-3)
+
+end NLS.RealBandChecks

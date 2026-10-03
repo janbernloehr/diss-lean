@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 19's continued normalized primitive now has
-its exact exponential, hyperbolic cosine, and hyperbolic sine identities
-with the canonical Floquet multiplier, discriminant, and root. Its
-principal logarithm near either endpoint is proved, including collapsed
-gaps. Global continuation and the remaining parts of Lemma 19.1 are next.
+Latest milestone: every real spectral band between adjacent gaps now
+has its canonical root orientation and an explicit arcsine primitive.
+The actual two-endpoint improper quotient integral is exactly `-i pi`,
+including negative indices and neighboring collapsed gaps. Transferring
+these increments to the global normalization constants is next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -9929,3 +9929,42 @@ source analyticity, the gap-side arcosh formula and estimates, and the
 remaining assertions of Lemma 19.1 still require proof. The global
 abelian integral, subsequent frequency results, and the full dissertation
 remain unfinished.
+
+## Exact adjacent-band improper integrals
+
+`SourceRealBandGeometry.lean` identifies the nonempty real band between
+consecutive canonical gaps and proves that it avoids every spectral cut.
+The interval including its left endpoint still avoids all other gaps,
+which permits continuation of the selected omitted root product.
+
+`SourceCanonicalRootRealBand.lean` proves reality of the omitted product
+at every real point of its domain. Continuity and nonvanishing carry its
+known gap parity sign into the adjacent band. Thus the canonical root
+is purely imaginary there, with sign `-(-1)^n`, and is exactly the
+correspondingly signed positive square root of `4 - Delta^2`. The
+actual real discriminant lies strictly between `-2` and `2` on the band.
+These assertions include bands adjacent to collapsed gaps.
+
+`SourceRealBandArcsin.lean` constructs the continuous arcsine expression
+`i (-1)^n arcsin(Delta(x)/2)` and proves that its interior derivative
+is the actual canonical quotient. Its left and right endpoint values
+are `i pi/2` and `-i pi/2` for every signed index.
+
+`SourceRealBandIntegral.lean` evaluates the actual quotient integral on
+any compact subinterval, in either direction, with integrability derived
+from continuity. Taking both endpoints independently to their adjacent
+periodic endpoints gives the improper integral exactly `-i pi`.
+An explicit positive cutoff realizes the same limit. No open-gap or
+endpoint integrability hypothesis is imposed on the caller.
+
+Public checks cover the actual improper integral at exponent 3/2, the
+root orientation at an odd negative gap index, cancellation under
+reversal of the integration direction, and the explicit free band
+between `-3 pi` and `-2 pi`, where both neighboring gaps are collapsed.
+
+This proves the real adjacent-band improper integral calculation used
+in Lemma 19.1(ii). Transferring it to the half-plane primitives' boundary
+constants, summing the increments to obtain `-i n pi`, and completing
+global continuation remain next. Joint source analyticity and the other
+remaining assertions of Lemma 19.1, the frequency results, and the full
+dissertation remain unfinished.

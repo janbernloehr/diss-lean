@@ -2171,3 +2171,8 @@ import NLS.ZakharovShabat.SourceAbelianLocalExtension
 import NLS.ComplexAnalysis.NormalizedLogarithmicPrimitive
 import NLS.ZakharovShabat.SourceFloquetEndpointLimit
 import NLS.ZakharovShabat.SourceAbelianFloquetIdentity
+
+import NLS.ZakharovShabat.SourceRealBandGeometry
+import NLS.ZakharovShabat.SourceCanonicalRootRealBand
+import NLS.ZakharovShabat.SourceRealBandArcsin
+import NLS.ZakharovShabat.SourceRealBandIntegral
