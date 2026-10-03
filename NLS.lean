@@ -2080,3 +2080,7 @@ import NLS.ZakharovShabat.SourceFiniteGapExteriorMass
 import NLS.ZakharovShabat.SourceRealActionRealCenteredCircle
 import NLS.ZakharovShabat.SourceFiniteGapActionTrace
 import NLS.ZakharovShabat.SourceHilbertActionTrace
+
+import NLS.SequenceSpaces.CoefficientCompactness
+import NLS.ZakharovShabat.SourceHilbertCoefficientCompactness
+import NLS.ZakharovShabat.SourceHilbertActionPropernessCriterion

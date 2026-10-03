@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Latest progress: the full Hilbert action–mass trace formula
+## Latest progress: coefficient compactness and the properness criterion
+
+`CoefficientCompactness.lean` proves that every bounded sequence of Fourier
+coefficients has a coefficientwise convergent subsequence with a limit in the
+same `ℓᵖ` space, including `p=∞`. The proof combines compact coordinate balls
+with the sequence-space bound on pointwise limits. For `ℓ²`, an exact Fourier
+truncation energy identity upgrades coefficientwise convergence to norm
+convergence whenever the squared norms converge to the limit's squared norm.
+
+`SourceHilbertCoefficientCompactness.lean` carries this construction to real
+sources, preserving the conjugate-reflection relation. The first component
+determines the second, and the original Hilbert pair norm has exactly twice
+the first component's squared norm.
+
+`SourceHilbertActionPropernessCriterion.lean` uses the proved trace identity
+to show that bounded action sequences have bounded source preimages and that
+convergence of actions rules out energy loss at a coefficientwise source
+limit. It then proves compactness of preimages of compact action sets, and
+hence properness of both the action map and the real Birkhoff map, conditional
+on `SourceHilbertActionsContinuousOnBoundedCoefficients`.
+
+That named proposition is an explicit, still unproved spectral obligation:
+each individual real action must converge along bounded, coefficientwise
+convergent real Hilbert source sequences. The compactness, boundedness, and
+strong-convergence parts are proved; unconditional properness and Proposition
+17.2 are not yet claimed.
+
+Public examples include moving unit Fourier modes: their coefficients tend
+to zero while their norms stay one. This checks the essential distinction
+between coefficient compactness and norm compactness. Further examples cover
+real-source extraction at exponent 3, the exact action norm, the strong-limit
+upgrade, and the conditional properness theorems.
+
+Next prove the named spectral continuity obligation from continuity of the
+spectral data under bounded coefficient limits, then apply the properness
+criterion and the singleton zero fiber toward global invertibility.
+
+## Previous milestone: the full Hilbert action–mass trace formula
 
 `SourceRealActionRealCenteredCircle.lean` proves that every real-centered
 isolating circle computes its indexed real action, including collapsed gaps,

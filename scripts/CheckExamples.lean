@@ -24841,3 +24841,54 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → Delete
   D.hilbert_real_map_norm_sq φ
 
 end NLS.ActionMassTraceChecks
+
+namespace NLS.CoefficientPropernessChecks
+open NLS.ZakharovShabat Set Filter Topology
+
+-- Moving unit modes converge coefficientwise to zero but retain norm one.
+-- This checks why the energy-convergence hypothesis must not be dropped.
+example : (∀ n : ℤ, Tendsto
+      (fun k : ℕ => (lp.single 2 (k : ℤ) (1 : ℂ) : Coeff 2) n) atTop (𝓝 0)) ∧
+    (∀ k : ℕ, ‖(lp.single 2 (k : ℤ) (1 : ℂ) : Coeff 2)‖ = 1) := by
+  constructor
+  · intro n
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ge_atTop (n.natAbs+1)] with k hk
+    have hne : (k : ℤ) ≠ n := by have hbound : n ≤ (n.natAbs : ℤ) := Int.le_natAbs; omega
+    simp [lp.single_apply, Ne.symm hne]
+  · intro k
+    rw [lp.norm_single (by norm_num), norm_one]
+
+-- Bounded coefficient extraction preserves the real-type condition at exponent 3.
+example (a : ℕ → realTypeSourceSubmodule 3) (hb : Bornology.IsBounded (range a)) :
+    ∃ b : realTypeSourceSubmodule 3, ∃ subseq : ℕ → ℕ, StrictMono subseq ∧
+      (∀ n : ℤ, Tendsto (fun k => (a (subseq k)).val.fst n) atTop (𝓝 (b.val.fst n))) ∧
+      (∀ n : ℤ, Tendsto (fun k => (a (subseq k)).val.snd n) atTop (𝓝 (b.val.snd n))) :=
+  exists_realTypeSource_coefficientwise_subseq a hb
+
+-- The actual action norm is the source energy, with the original pair normalization.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) :
+    ‖sourceHilbertRealActionSequence s φ‖ = ‖φ‖^2/2 :=
+  D.hilbert_realActionSequence_norm_eq_half_norm_sq φ
+
+-- Convergent action sequences rule out loss of source energy at a coefficient limit.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : ℕ → realTypeSourceSubmodule 2) (b : realTypeSourceSubmodule 2)
+    (ht : ∀ n : ℤ, Tendsto (fun k => (a k).val.fst n) atTop (𝓝 (b.val.fst n)))
+    (hI : Tendsto (fun k => sourceHilbertRealActionSequence s (a k)) atTop
+      (𝓝 (sourceHilbertRealActionSequence s b))) : Tendsto a atTop (𝓝 b) :=
+  D.hilbert_tendsto_of_coefficientwise_of_actions a b ht hI
+
+-- Properness remains conditional on the explicitly named spectral continuity obligation.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (hcont : SourceHilbertActionsContinuousOnBoundedCoefficients) :
+    IsProperMap (sourceHilbertRealActionSequence s) ∧
+      IsProperMap (sourceRealBirkhoffMap (by simp) (by norm_num) s) :=
+  ⟨D.hilbert_realActionSequence_proper_of_bounded_coefficient_continuity hcont,
+    D.hilbert_real_map_proper_of_bounded_coefficient_continuity hcont⟩
+
+end NLS.CoefficientPropernessChecks
