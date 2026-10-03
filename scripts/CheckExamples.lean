@@ -24152,3 +24152,84 @@ example : ∃ W₀ B W : Set (CoeffPair 3), ∃ s : (k : ℤ) → CoeffPair 3 �
   exact ⟨W₀,B,W,s,D,fun φ => (h φ).1⟩
 
 end NLS.ZakharovShabatLemma16_3Checks
+
+namespace NLS.ZakharovShabatLocalInverseChecks
+open NLS.ZakharovShabat Set Filter Topology
+
+-- The dense-range Fredholm step applies to arbitrary complex Banach spaces.
+example {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
+    (A : E →L[ℂ] E) (hA : IsCompactOperator (A - 1 : E →L[ℂ] E))
+    (hd : DenseRange A) : Function.Bijective A :=
+  CompactSpectrum.bijective_of_denseRange_compact_sub_id A hA hd
+
+-- Both signs of the canonical preimages are checked at the Hilbert endpoint.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (m : ℤ) :
+    ∃ u v : CoeffPair 2,
+      sourceBirkhoffJacobian (by simp) (by norm_num) s φ.val u = (lp.single 2 m 1, 0) ∧
+      sourceBirkhoffJacobian (by simp) (by norm_num) s φ.val v = (0, lp.single 2 m 1) :=
+  D.jacobian_single_preimages le_rfl φ m
+
+-- Arbitrary finite output sequences have preimages at p = 3.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 3) (S : Finset ℤ) (z : Coeff 3 × Coeff 3) :
+    (Coeff.truncate S z.1, Coeff.truncate S z.2) ∈
+      (sourceBirkhoffJacobian (by norm_num) (by norm_num) s φ.val).range :=
+  D.jacobian_truncate_mem_range (by norm_num) φ S z
+
+-- The inverse is for the actual complex derivative, at every real source.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 3) (h : CoeffPair 3) :
+    (D.jacobianEquiv (by norm_num) φ).symm
+      (sourceBirkhoffJacobian (by norm_num) (by norm_num) s φ.val h) = h :=
+  (D.jacobianEquiv (by norm_num) φ).symm_apply_apply h
+
+-- The derivative comparison between real and complex maps also holds below two.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ h : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    ((RealCoeff.complexCLM _).prodMap (RealCoeff.complexCLM _))
+      (fderiv ℝ (sourceRealBirkhoffMap (by simp) (by norm_num) s) φ h) =
+        sourceBirkhoffJacobian (by simp) (by norm_num) s φ.val h.val :=
+  D.real_jacobian_complex_inclusion φ h
+
+-- The real inverse derivative is an actual bounded real equivalence.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (z : RealCoeff 2 × RealCoeff 2) :
+    fderiv ℝ (sourceRealBirkhoffMap (by simp) (by norm_num) s) φ
+      ((D.realJacobianEquiv le_rfl φ).symm z) = z :=
+  (D.realJacobianEquiv le_rfl φ).apply_symm_apply z
+
+-- The inverse is analytic, two-sided locally, and has the expected derivative.
+example {W₀ B W : Set (CoeffPair 3)} {s : (k : ℤ) → CoeffPair 3 → DeletedCoeff 3 k}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 3) :
+    ∃ g : (RealCoeff 3 × RealCoeff 3) → realTypeSourceSubmodule 3,
+      AnalyticAt ℝ g (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ) ∧
+      g (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ) = φ ∧
+      (∀ᶠ ψ in 𝓝 φ, g (sourceRealBirkhoffMap (by norm_num) (by norm_num) s ψ) = ψ) ∧
+      (∀ᶠ z in 𝓝 (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ),
+        sourceRealBirkhoffMap (by norm_num) (by norm_num) s (g z) = z) ∧
+      HasStrictFDerivAt g (D.realJacobianEquiv (by norm_num) φ).symm.toContinuousLinearMap
+        (sourceRealBirkhoffMap (by norm_num) (by norm_num) s φ) :=
+  D.exists_real_localInverse (by norm_num) φ
+
+-- No assumed invertibility or finite-gap premise is required for family existence.
+example : ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+    SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s ∧
+    ∀ φ : realTypeSourceSubmodule 2,
+      ∃ g : (RealCoeff 2 × RealCoeff 2) → realTypeSourceSubmodule 2,
+        AnalyticAt ℝ g (sourceRealBirkhoffMap (by simp) (by norm_num) s φ) ∧
+        g (sourceRealBirkhoffMap (by simp) (by norm_num) s φ) = φ ∧
+        (∀ᶠ ψ in 𝓝 φ, g (sourceRealBirkhoffMap (by simp) (by norm_num) s ψ) = ψ) ∧
+        (∀ᶠ z in 𝓝 (sourceRealBirkhoffMap (by simp) (by norm_num) s φ),
+          sourceRealBirkhoffMap (by simp) (by norm_num) s (g z) = z) :=
+  exists_sourceBirkhoffFamily_localInverse_of_two_le (by simp) (by norm_num) le_rfl
+
+end NLS.ZakharovShabatLocalInverseChecks

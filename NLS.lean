@@ -2022,3 +2022,9 @@ import NLS.ZakharovShabat.SourceBirkhoffLemma16_2
 import NLS.ZakharovShabat.SourceBirkhoffFourierEquivalence
 import NLS.ZakharovShabat.SourceBirkhoffJacobianCompact
 import NLS.ZakharovShabat.SourceBirkhoffLemma16_3
+
+import NLS.FunctionalAnalysis.CompactDenseRange
+import NLS.ZakharovShabat.SourceBirkhoffJacobianRange
+import NLS.ZakharovShabat.SourceBirkhoffJacobianInvertible
+import NLS.ZakharovShabat.SourceBirkhoffRealJacobian
+import NLS.ZakharovShabat.SourceBirkhoffLocalInverse

@@ -1,6 +1,24 @@
 # Implementation plan
 
-## Latest progress: Lemma 16.3 at every real source
+## Latest progress: Proposition 17.1 for 2 ≤ p < ∞
+
+The actual complex and real Jacobians are now bounded isomorphisms at
+every real source for `2≤p<∞`. Canonical Hamiltonian directions supply
+preimages of all finite output modes; truncation gives dense range, and
+the compact perturbation gives bijectivity. Differentiation of the real
+inclusion and the source real/imaginary decomposition give real
+bijectivity. The inverse function theorem supplies analytic complex and
+real local inverses, including both local identities and inverse derivatives.
+A constructed-family theorem supplies the actual real local inverses.
+
+Next extend Jacobian injectivity to `1<p<2`, using compatibility with
+the Hilbert exponent and its established invertibility, then apply the
+compact Fredholm alternative. The real derivative inclusion is already
+available at every finite exponent above one. Finish Proposition 17.1
+across the full exponent range before continuing with global injectivity.
+
+
+## Previous progress: Lemma 16.3 at every real source
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.

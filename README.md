@@ -8657,3 +8657,49 @@ Next prove Proposition 17.1, the local diffeomorphism property, using
 the compact perturbation and the canonical gradient identities. The
 sharper G.1 integral bound, remaining assertions of Theorem 14.1, and
 later chapters remain unfinished.
+
+## Latest progress: real analytic local inversion for 2 ≤ p < ∞
+
+The upper-exponent part of Proposition 17.1 is now proved at every real
+source. The actual complex and real Birkhoff derivatives are bounded
+linear isomorphisms for `2≤p<∞`. Both maps have analytic local inverses,
+with both local inverse identities and derivative equal to the inverse
+of the actual Jacobian. No finite-gap or invertibility premise is supplied.
+
+`CompactDenseRange.lean` proves the general Banach-space step: a compact
+perturbation of identity with dense range is bijective. The existing
+compact spectral decomposition gives a closed range for a stabilized
+power. Density of all powers forces that range to be the whole space,
+so its complementary generalized eigenspace vanishes. The Fredholm
+alternative then gives invertibility, without requiring an adjoint.
+
+`SourceBirkhoffJacobianRange.lean` uses the actual regular cotangents and
+canonical relations to construct preimages of each pure output mode.
+The negative Hamiltonian direction of the y coordinate gives the x mode;
+the Hamiltonian direction of the x coordinate gives the y mode. All
+finite output truncations lie in the derivative's range, and convergence
+of truncations proves dense range for finite exponents at least two.
+
+`SourceBirkhoffJacobianInvertible.lean` combines this with Lemma 16.3,
+packages the actual Jacobian as a bounded complex equivalence, and proves
+existence of an analytic complex local inverse at every real source.
+`SourceBirkhoffRealJacobian.lean` differentiates the actual inclusion of
+the real map into the complex map. This comparison holds for every
+`1<p<∞`. Complex bijectivity transfers to real bijectivity by decomposing
+a complex preimage into real and imaginary source parts.
+
+`SourceBirkhoffLocalInverse.lean` supplies the analytic inverse on the
+actual real source and real coefficient spaces for `2≤p<∞`. Its strict
+derivative is the inverse real Jacobian. A constructed-family theorem
+supplies the map, domain, and local inverses at every real source.
+
+Public checks cover the general dense-range theorem, canonical mode
+preimages at `p=2`, finite output truncations at `p=3`, complex and real
+inverse identities, derivative inclusion below two, analytic real local
+inversion, and constructed-family existence without extra premises.
+
+Next extend invertibility and local inversion to `1<p<2` to finish
+Proposition 17.1. The Hamiltonian-direction argument above uses `2≤p`;
+square summability alone does not put these directions in a smaller
+source space. The sharper G.1 integral bound, remaining assertions of
+Theorem 14.1, and later chapters also remain unfinished.
