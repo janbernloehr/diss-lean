@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: action tori are compact in every finite sequence
-exponent. For `1 < p ≤ 2`, the original spectral action level sets map
-onto these tori and are compact in the full source norm. Identifying
-them with the actual isospectral sets remains before Lemma 17.5 is
-complete. See `STATUS.md`.
+Latest milestone: actual isospectral sets preserve every original action,
+map into their coordinate action tori, and are compact in the source norm
+for `1 < p ≤ 2`. This proves Lemma 17.5(ii) and the compactness assertion
+of (i); the converse torus inclusion remains. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -9706,3 +9705,39 @@ This proves the compact-torus foundation for Lemma 17.5. The remaining
 step is to identify these original action level sets with the actual
 isospectral sets, including both directions of the Hilbert assertion
 and its exponent transfer. Lemma 17.5 is not yet complete.
+
+## Actual isospectral invariants and compactness
+
+`PeriodicDiscriminantSpectralData.lean` proves that the original periodic
+spectrum together with its algebraic multiplicities determines the
+normalized discriminant at real-type even potentials. The canonical
+endpoint product determines its square; the known endpoint value fixes
+the sign, and analytic uniqueness gives equality everywhere. Conversely,
+equality of discriminants recovers the original spectrum and every
+algebraic multiplicity, without a reality assumption.
+
+`SourceIsospectralSet.lean` defines actual isospectral sets using the
+original operator spectrum and algebraic multiplicities. Equality of
+discriminants characterizes membership and proves closedness in the
+source norm at every finite `p > 1`. Common spectral data give identical
+canonical roots and action-circle integrals. Comparing both definitions
+on a common admissible circle proves equality of every full complex
+indexed action, including closed gaps and the finite central block.
+
+Consequently, the Birkhoff image of an actual isospectral set lies in its
+prescribed action torus for every finite `p > 1`. This proves Lemma
+17.5(ii). For `1 < p ≤ 2`, closedness inside the compact original action
+level set proves compactness of the actual isospectral set, as asserted
+in Lemma 17.5(i), with no finite-gap hypothesis.
+
+Public checks cover invariance of full actions under the actual source
+phase rotation at exponent 3, recovery of algebraic multiplicities from
+discriminants at complex potentials, preservation of spectral data under
+source-norm limits at exponent 3, and norm-convergent subsequences of
+actual isospectral sequences at exponent 3/2.
+
+The converse torus inclusion in Lemma 17.5(i) remains: lift Hilbert
+coordinate rotations to the action Hamiltonian flows, prove they preserve
+the discriminant, pass to limits of finite rotations, and transfer the
+result to `1 < p < 2`. Equality of action level sets and actual isospectral
+sets has not yet been proved. The full dissertation remains unfinished.

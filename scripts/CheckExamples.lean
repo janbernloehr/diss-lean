@@ -25746,3 +25746,55 @@ example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
   exact ⟨ψ,⟨hψ,hmap⟩,fun χ hχ => D.proposition17_2 (hχ.2.trans hmap.symm)⟩
 
 end NLS.ActionTorusChecks
+
+namespace NLS.IsospectralSetChecks
+open NLS.ZakharovShabat Set Filter
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- An actual phase rotation preserves the full complex indexed actions,
+-- with no isospectrality or open-gap premise supplied by the caller.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    sourceRealAction (by simp) (by norm_num) (sourcePhase φ.val)
+      (isRealType_sourcePhase φ.val φ.property) n =
+    sourceRealAction (by simp) (by norm_num) φ.val φ.property n := by
+  exact sourceRealAction_eq_of_isospectral (by simp) (by norm_num) φ
+    ⟨sourcePhase φ.val,isRealType_sourcePhase φ.val φ.property⟩
+    ⟨periodicSpectrum_periodOne_sourcePhase (by simp) φ.val,
+      periodicAlgebraicMultiplicity_periodOne_sourcePhase (by simp) φ.val⟩ n
+
+-- Discriminant equality recovers the original algebraic multiplicity
+-- even for complex even potentials, without a reality assumption.
+example (φ ψ : CoeffPair 3)
+    (h : canonicalDiscriminant (by simp) (periodOnePotential φ) =
+      canonicalDiscriminant (by simp) (periodOnePotential ψ)) (z : ℂ) :
+    periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ) z =
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential ψ) z :=
+  (periodic_spectral_data_eq_of_discriminant_eq (by simp) (by norm_num)
+    _ _ (periodOnePotential_mem _) (periodOnePotential_mem _) h).2 z
+
+-- A source-norm limit retains the actual spectrum and all multiplicities
+-- at exponent three, where global surjectivity is not available.
+example (φ ψ : realTypeSourceSubmodule 3) (a : ℕ → realTypeSourceSubmodule 3)
+    (ha : ∀ j, a j ∈ sourceIsospectralSet (by simp) φ)
+    (hlim : Tendsto a atTop (𝓝 ψ)) :
+    periodicSpectrum (by simp) (periodOnePotential ψ.val) =
+      periodicSpectrum (by simp) (periodOnePotential φ.val) ∧
+    ∀ z, periodicAlgebraicMultiplicity (by simp) (periodOnePotential ψ.val) z =
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ.val) z :=
+  (isClosed_sourceIsospectralSet (by simp) (by norm_num) φ).mem_of_tendsto hlim
+    (Eventually.of_forall ha)
+
+-- Every actual isospectral sequence at exponent 3/2 has a norm-convergent
+-- subsequence whose limit retains the original spectral data.
+example {W₀ B W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    {s : (k : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (a : ℕ → realTypeSourceSubmodule (ENNReal.ofReal (3/2)))
+    (ha : ∀ j, a j ∈ sourceIsospectralSet (by simp) φ) :
+    ∃ ψ ∈ sourceIsospectralSet (by simp) φ,
+      ∃ subseq : ℕ → ℕ, StrictMono subseq ∧ Tendsto (a ∘ subseq) atTop (𝓝 ψ) :=
+  (D.isCompact_isospectralSet (by norm_num) φ).tendsto_subseq ha
+
+end NLS.IsospectralSetChecks

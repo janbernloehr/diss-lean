@@ -2149,3 +2149,6 @@ import NLS.ZakharovShabat.SourceBirkhoffDenseRange
 import NLS.SequenceSpaces.DominatedCompactness
 import NLS.SequenceSpaces.RealActionTorus
 import NLS.ZakharovShabat.SourceActionTorus
+
+import NLS.ZakharovShabat.PeriodicDiscriminantSpectralData
+import NLS.ZakharovShabat.SourceIsospectralSet
