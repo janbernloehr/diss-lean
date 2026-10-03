@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Latest progress: coefficient compactness and the properness criterion
+## Latest progress: norm-resolvent limits from bounded coefficient limits
+
+`ConvolutionSandwichCoefficientContinuity.lean` views two-sided convolution
+as a linear map from potentials into bounded operators. Cutting off both
+multiplier symbols leaves dependence on only finitely many potential
+coefficients. The cutoffs converge in operator norm, proving compactness of
+the potential-to-operator map and its continuity along bounded coefficientwise
+limits whenever the conjugate symbol exponent is finite.
+
+`DoubleResolventCoefficientContinuity.lean` identifies the existing double
+free resolvent with a pair of these convolution sandwiches. Consequently
+`R₀ Φ R₀ : FLᵖ → FL¹` converges in operator norm under bounded coefficientwise
+convergence of potentials, at each fixed parameter off the free lattice.
+The theorem is also provided in the actual period-one source coordinates.
+
+`NeumannResolventCoefficientContinuity.lean` retains summable output for the
+full Neumann resolvent. Its fixed-point equation bounds the difference of
+two full resolvents by the difference of their double free resolvents, with
+a common positive Neumann margin. The existing height-decay estimate then
+constructs this margin uniformly on every bounded family. For every bounded
+coefficientwise convergent family, a positive height is constructed above
+which every full resolvent exists and converges in operator norm. The theorem
+covers all finite exponents `p>1`, complex potentials, and period-one source
+pairs; no externally supplied spectral-membership or smallness premise is
+needed in the final common-height statement.
+
+Public examples verify compact potential dependence, convergence for moving
+unit Fourier modes whose source norms stay one, the double-resolvent result
+at exponent 3, the explicit full-resolvent difference estimate, and the
+constructed common-height result for actual Hilbert source pairs.
+
+Next propagate this norm-resolvent limit from the common high region to
+spectral contours and prove continuity of the spectral data and individual
+actions. `SourceHilbertActionsContinuousOnBoundedCoefficients` is still an
+unproved obligation; unconditional properness and Proposition 17.2 remain
+unfinished.
+
+## Previous milestone: coefficient compactness and the properness criterion
 
 `CoefficientCompactness.lean` proves that every bounded sequence of Fourier
 coefficients has a coefficientwise convergent subsequence with a limit in the

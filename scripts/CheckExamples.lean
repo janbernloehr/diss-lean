@@ -24892,3 +24892,60 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → Delete
     D.hilbert_real_map_proper_of_bounded_coefficient_continuity hcont⟩
 
 end NLS.CoefficientPropernessChecks
+
+namespace NLS.ResolventCoefficientChecks
+open NLS.ZakharovShabat Set Filter Topology
+
+-- Two square-summable multiplier symbols make potential dependence compact in operator norm.
+example (a b : Coeff 2) : IsCompactOperator (Coeff.convolutionSandwichPotentialCLM (p := 2) a b) :=
+  Coeff.isCompactOperator_convolutionSandwichPotentialCLM (by norm_num) a b
+
+-- Moving unit modes do not converge strongly as potentials, but their sandwiches do.
+example (a b : Coeff 2) :
+    Tendsto (fun k : ℕ => Coeff.convolutionSandwich a (lp.single 2 (k : ℤ) (1 : ℂ)) b)
+      atTop (𝓝 0) := by
+  have hb : Bornology.IsBounded (range (fun k : ℕ => (lp.single 2 (k : ℤ) (1 : ℂ) : Coeff 2))) := by
+    apply isBounded_iff_forall_norm_le.mpr
+    refine ⟨1, ?_⟩
+    rintro _ ⟨k, rfl⟩
+    simp [lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 2)]
+  have ht (n : ℤ) : Tendsto (fun k : ℕ => (lp.single 2 (k : ℤ) (1 : ℂ) : Coeff 2) n) atTop (𝓝 ((0 : Coeff 2) n)) := by
+    apply tendsto_const_nhds.congr'
+    filter_upwards [eventually_ge_atTop (n.natAbs+1)] with k hk
+    have hne : (k : ℤ) ≠ n := by have hbound : n ≤ (n.natAbs : ℤ) := Int.le_natAbs; omega
+    simp [lp.single_apply, Ne.symm hne]
+  have H := Coeff.tendsto_convolutionSandwich_of_bounded_coefficientwise (by norm_num) a b
+    (fun k : ℕ => (lp.single 2 (k : ℤ) (1 : ℂ) : Coeff 2)) 0 hb ht
+  simpa only [← Coeff.convolutionSandwichPotentialCLM_apply, map_zero] using H
+
+-- The two-resolvent regularization works at a non-Hilbert exponent.
+example (a : ℕ → PairSpace 3) (b : PairSpace 3) (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).1 n) atTop (𝓝 (b.1 n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).2 n) atTop (𝓝 (b.2 n)))
+    (z : ℂ) (hz : z ∉ freeLattice) :
+    Tendsto (fun k => doubleResolvent (by simp) (a k) z hz) atTop
+      (𝓝 (doubleResolvent (by simp) b z hz)) :=
+  tendsto_doubleResolvent_of_bounded_coefficientwise (by simp) (by norm_num) a b hb ht₁ ht₂ z hz
+
+-- The full-resolvent estimate exposes the positive Neumann margin explicitly.
+example (a b : PairSpace 2) (z : ℂ) (hz : z ∉ freeLattice)
+    (ha : NeumannCondition (by simp) a z hz) (hb : NeumannCondition (by simp) b z hz)
+    (hsmall : freeL1Bound 2 (by simp) z hz * ‖a‖ ≤ 1/2) :
+    ‖neumannResolventToL1 (by simp) a z hz ha-neumannResolventToL1 (by simp) b z hz hb‖ ≤
+      (‖neumannCorrection (by simp) b z hz hb‖/(1-(1/2:ℝ))) *
+        ‖doubleResolvent (by simp) a z hz-doubleResolvent (by simp) b z hz‖ :=
+  norm_neumannResolventToL1_sub_le (by simp) a b z hz ha hb (1/2) (by norm_num) hsmall
+
+-- A common resolvent region and convergence are constructed from bounded source coefficients.
+example (a : ℕ → CoeffPair 2) (b : CoeffPair 2) (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).snd n) atTop (𝓝 (b.snd n))) :
+    ∃ H : ℝ, 0 < H ∧ ∀ z : ℂ, H ≤ |z.im| →
+      z ∈ resolventSet (by simp) (periodOnePotential b) ∧
+      (∀ k, z ∈ resolventSet (by simp) (periodOnePotential (a k))) ∧
+      Tendsto (fun k => resolvent (by simp) (periodOnePotential (a k)) z) atTop
+        (𝓝 (resolvent (by simp) (periodOnePotential b) z)) :=
+  exists_height_source_resolvent_tendsto_of_bounded_coefficientwise
+    (by simp) (by norm_num) a b hb ht₁ ht₂
+
+end NLS.ResolventCoefficientChecks

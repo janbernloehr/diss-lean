@@ -2084,3 +2084,7 @@ import NLS.ZakharovShabat.SourceHilbertActionTrace
 import NLS.SequenceSpaces.CoefficientCompactness
 import NLS.ZakharovShabat.SourceHilbertCoefficientCompactness
 import NLS.ZakharovShabat.SourceHilbertActionPropernessCriterion
+
+import NLS.SequenceSpaces.ConvolutionSandwichCoefficientContinuity
+import NLS.ZakharovShabat.DoubleResolventCoefficientContinuity
+import NLS.ZakharovShabat.NeumannResolventCoefficientContinuity
