@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: norm-resolvent limits from bounded coefficient limits
+## Current milestone: compact spectral convergence and cluster stability
+
+`ResolventReferenceChange.lean` factors the spectral pencil through a full
+resolvent at any common reference point. Invertibility of the bounded transition
+operator characterizes the entire resolvent set. Operator-norm convergence at
+the reference point therefore gives eventual spectral membership and resolvent
+convergence at every limit resolvent parameter, including moving parameters.
+This reference-change result also covers the endpoint exponent `p=1`.
+
+`ResolventCompactConvergence.lean` upgrades this to locally uniform convergence
+on the limit resolvent set and eventual common spectral membership on each
+compact subset. The previously constructed high reference point supplies these
+conclusions for every bounded coefficientwise convergent family at finite
+`p>1`. On every spectral-free limit circle, the normalized contour projections
+converge in operator norm. The contour limit theorem uses a countably generated
+filter, including ordinary sequences.
+
+`SpectralClusterCoefficientStability.lean` proves eventual equality of the
+finite projection ranks and hence of the total enclosed algebraic
+multiplicities. Eigenvalues may split or coalesce inside the circle.
+`SourceSpectralCoefficientConvergence.lean` supplies the corresponding
+compact-set, contour, rank, and multiplicity theorems in period-one source
+coordinates, without an assumption of strong convergence of the potentials.
+
+Public checks cover reference transport at `p=1`, uniform convergence on
+arbitrary compact sets at source exponent 3, preservation of a cluster with
+multiplicity two, and convergence of contour projections for moving unit
+Fourier modes whose potential norms do not tend to zero.
+
+Next identify the limiting indexed spectral data and prove continuity of
+individual actions under bounded coefficient limits.
+`SourceHilbertActionsContinuousOnBoundedCoefficients` remains unproved;
+unconditional properness and Proposition 17.2 remain unfinished.
+
+## Previous milestone: norm-resolvent limits from bounded coefficient limits
 
 `ConvolutionSandwichCoefficientContinuity.lean` views two-sided convolution
 as a linear map from potentials into bounded operators. Cutting off both

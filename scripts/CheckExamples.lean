@@ -24949,3 +24949,65 @@ example (a : ℕ → CoeffPair 2) (b : CoeffPair 2) (hb : Bornology.IsBounded (r
     (by simp) (by norm_num) a b hb ht₁ ht₂
 
 end NLS.ResolventCoefficientChecks
+
+namespace NLS.CompactSpectralCoefficientChecks
+open NLS.ZakharovShabat Set Filter Topology Metric
+
+-- Reference transport works at p=1 and with a moving spectral parameter.
+example (a : ℕ → PairSpace 1) (b : PairSpace 1) (z w : ℂ) (u : ℕ → ℂ)
+    (ha : ∀ k, z ∈ resolventSet (by simp) (a k)) (hb : z ∈ resolventSet (by simp) b)
+    (ht : Tendsto (fun k => resolvent (by simp) (a k) z) atTop (𝓝 (resolvent (by simp) b z)))
+    (hu : Tendsto u atTop (𝓝 w)) (hw : w ∈ resolventSet (by simp) b) :
+    (∀ᶠ k in atTop, u k ∈ resolventSet (by simp) (a k)) ∧
+      Tendsto (fun k => resolvent (by simp) (a k) (u k)) atTop (𝓝 (resolvent (by simp) b w)) :=
+  eventually_mem_and_tendsto_resolvent_of_reference_and_parameter (by simp) a b z ha hb ht u w hu hw
+
+-- The source theorem gives uniform convergence on an arbitrary compact set at p=3.
+example (a : ℕ → CoeffPair 3) (b : CoeffPair 3) (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).snd n) atTop (𝓝 (b.snd n)))
+    (K : Set ℂ) (hK : IsCompact K) (hKs : K ⊆ resolventSet (by simp) (periodOnePotential b)) :
+    (∀ᶠ k in atTop, K ⊆ resolventSet (by simp) (periodOnePotential (a k))) ∧
+      TendstoUniformlyOn (fun k z => resolvent (by simp) (periodOnePotential (a k)) z)
+        (resolvent (by simp) (periodOnePotential b)) atTop K := by
+  refine ⟨eventually_compact_subset_source_resolventSet_of_bounded_coefficientwise
+    (by simp) (by norm_num) a b hb ht₁ ht₂ K hK hKs, ?_⟩
+  exact (tendstoLocallyUniformlyOn_iff_tendstoUniformlyOn_of_compact hK).mp
+    ((tendstoLocallyUniformlyOn_source_resolvent_of_bounded_coefficientwise
+      (by simp) (by norm_num) a b hb ht₁ ht₂).mono hKs)
+
+-- Source multiplicity stability also covers a collapsed eigenvalue cluster.
+example (a : ℕ → CoeffPair 2) (b : CoeffPair 2) (hb : Bornology.IsBounded (range a))
+    (ht₁ : ∀ n : ℤ, Tendsto (fun k => (a k).fst n) atTop (𝓝 (b.fst n)))
+    (ht₂ : ∀ n : ℤ, Tendsto (fun k => (a k).snd n) atTop (𝓝 (b.snd n)))
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (by simp) (periodOnePotential b))
+    (hcount : ∑ z ∈ enclosedPeriodicSpectrum (by simp) (periodOnePotential b) c r,
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential b) z = 2) :
+    ∀ᶠ k in atTop, ∑ z ∈ enclosedPeriodicSpectrum (by simp) (periodOnePotential (a k)) c r,
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential (a k)) z = 2 := by
+  filter_upwards [eventually_sum_source_enclosed_multiplicity_eq_of_bounded_coefficientwise
+    (by simp) (by norm_num) a b hb ht₁ ht₂ c r hr hc] with k hk
+  exact hk.trans hcount
+
+-- Unit Fourier modes have no norm decay, but their contour projections converge.
+example (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : sphere c r ⊆ resolventSet (p := 2) (by simp) 0) :
+    Tendsto (fun k : ℕ => resolventCircleIntegral (p := 2) (by simp)
+      (lp.single 2 (k : ℤ) (1 : ℂ), 0) c r) atTop
+      (𝓝 (resolventCircleIntegral (p := 2) (by simp) 0 c r)) := by
+  have hb : Bornology.IsBounded (range (fun k : ℕ =>
+      ((lp.single 2 (k : ℤ) (1 : ℂ), 0) : PairSpace 2))) := by
+    apply isBounded_iff_forall_norm_le.mpr
+    refine ⟨1, ?_⟩
+    rintro _ ⟨k, rfl⟩
+    simp [Prod.norm_def, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 2)]
+  apply tendsto_resolventCircleIntegral_of_bounded_coefficientwise (by simp) (by norm_num)
+    _ 0 hb ?_ (fun _ => tendsto_const_nhds) c r hr hc
+  intro n
+  apply tendsto_const_nhds.congr'
+  filter_upwards [eventually_ge_atTop (n.natAbs+1)] with k hk
+  have hne : (k : ℤ) ≠ n := by have hbound : n ≤ (n.natAbs : ℤ) := Int.le_natAbs; omega
+  simp [lp.single_apply, Ne.symm hne]
+
+end NLS.CompactSpectralCoefficientChecks

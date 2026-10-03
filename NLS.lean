@@ -2088,3 +2088,8 @@ import NLS.ZakharovShabat.SourceHilbertActionPropernessCriterion
 import NLS.SequenceSpaces.ConvolutionSandwichCoefficientContinuity
 import NLS.ZakharovShabat.DoubleResolventCoefficientContinuity
 import NLS.ZakharovShabat.NeumannResolventCoefficientContinuity
+
+import NLS.ZakharovShabat.ResolventReferenceChange
+import NLS.ZakharovShabat.ResolventCompactConvergence
+import NLS.ZakharovShabat.SpectralClusterCoefficientStability
+import NLS.ZakharovShabat.SourceSpectralCoefficientConvergence
