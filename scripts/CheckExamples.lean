@@ -23811,3 +23811,64 @@ example (φ : CoeffPair 2) (a : Domain 2) (ha : periodOnePotential φ = domainIn
   memlp_source_antiDiscriminantCotangent_boundary_error (by simp) (by norm_num) le_rfl φ a ha .dirichlet
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabatNormalizationChecks
+open NLS.ZakharovShabat Set
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Arbitrary ℓ³-displaced samples are allowed, even outside free discs in the finite head.
+example (φ : PairSpace 3) (heven : φ ∈ pairParitySubspace 0) (d : Coeff 3) :
+    Memℓp (fun n => canonicalDeletedPeriodicProduct (by norm_num) (by norm_num) φ heven n
+      ((Real.pi : ℂ)*n+d n)-1) 3 :=
+  memlp_sampled_canonicalDeletedPeriodicProduct_sub_one (by norm_num) (by norm_num) φ heven _
+    (by simpa using lp.memℓp d)
+
+-- The selected closed gap may be a singleton, so this tests every free collapsed gap.
+example (n : ℤ) :
+    0 < (-1 : ℝ)^n.natAbs*(sourceStandardRootOmittedProduct (p := 3)
+      (by norm_num) (by norm_num) n 0 ((Real.pi : ℂ)*n)).re := by
+  have h := (sourceStandardRootOmittedProduct_boundary_sign (p := 3) (by norm_num) (by norm_num)
+    .dirichlet 0 (by intro k; simp) n).2
+  simpa only [canonicalPeriodOneBoundaryRoots_zero] using h
+
+-- Signed negative indices have the same parity normalization as positive ones.
+example : Complex.cos ((Real.pi : ℂ)*(-3 : ℤ)) = -1 := by
+  rw [cos_freeCenter_eq_natAbs_sign]
+  norm_num
+
+-- The exact free inverse correction vanishes at every signed lattice index.
+example (n : ℤ) :
+    (sourceStandardRootOmittedProduct (p := 3) (by norm_num) (by norm_num) n 0 ((Real.pi : ℂ)*n))⁻¹-
+      Complex.cos ((Real.pi : ℂ)*n) = 0 := by
+  rw [sourceStandardRootOmittedProduct_zero_center,cos_freeCenter_eq_natAbs_sign]
+  simp [← inv_pow]
+
+-- Both product and inverse errors are summable below the Hilbert exponent.
+-- The source need not have finite gaps or an H¹ representative.
+example (φ : CoeffPair (ENNReal.ofReal (3/2))) (hφ : IsRealType (CoeffPair.toMax _ φ))
+    (b : BoundaryCondition) :
+    Memℓp (fun n => sourceStandardRootOmittedProduct (by simp) (by norm_num) n φ
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ n)-Complex.cos ((Real.pi : ℂ)*n))
+      (ENNReal.ofReal (3/2)) ∧
+    Memℓp (fun n => (sourceStandardRootOmittedProduct (by simp) (by norm_num) n φ
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ n))⁻¹-Complex.cos ((Real.pi : ℂ)*n))
+      (ENNReal.ofReal (3/2)) :=
+  ⟨memlp_sourceStandardRootOmittedProduct_boundary_sub_free (by simp) (by norm_num) b φ hφ,
+    memlp_sourceStandardRootOmittedProduct_boundary_inv_sub_free (by simp) (by norm_num) b φ hφ⟩
+
+-- One bound includes both tails and all central inverse products at p=3.
+example (φ : CoeffPair 3) (hφ : IsRealType (CoeffPair.toMax 3 φ)) (b : BoundaryCondition) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℤ,
+      ‖(sourceStandardRootOmittedProduct (by norm_num) (by norm_num) n φ
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n))⁻¹‖ ≤ C :=
+  exists_bound_sourceStandardRootOmittedProduct_boundary_inv (by norm_num) (by norm_num) b φ hφ
+
+-- Boundary roots never hit an unselected gap, including at a collapsed selected gap.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) (n : ℤ) :
+    sourceStandardRootOmittedProduct (by simp) (by norm_num) n φ
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .neumann φ n) ≠ 0 :=
+  sourceStandardRootOmittedProduct_ne_zero (by simp) (by norm_num) φ _ n
+    (canonicalPeriodOneBoundaryRoot_mem_omittedDomain (by simp) (by norm_num) .neumann φ hφ n)
+
+end NLS.ZakharovShabatNormalizationChecks

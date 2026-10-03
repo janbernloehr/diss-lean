@@ -1998,3 +1998,6 @@ import NLS.ZakharovShabat.SourceSpectralConjugateGradients
 import NLS.ZakharovShabat.ContinuousSourceAntiDiscriminantGradient
 import NLS.ZakharovShabat.SourceAntiDiscriminantGradientError
 import NLS.ZakharovShabat.SourceAntiDiscriminantSobolevSummability
+
+import NLS.ZakharovShabat.DeletedProductSampledValues
+import NLS.ZakharovShabat.SourceOmittedProductBoundaryNormalization

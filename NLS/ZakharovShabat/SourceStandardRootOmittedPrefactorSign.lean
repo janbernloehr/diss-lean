@@ -16,11 +16,11 @@ variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- At a noncentral real gap, the zero-mode prefactor of the omitted
 standard-root product is strictly negative. -/
-theorem sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap
+theorem sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     {n : ℤ} (hn : n ≠ 0) {x : ℝ}
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -28,7 +28,7 @@ theorem sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap
     (((if n = 0 then 1 else sourceStandardRoot hp hp1 ψ 0 (x:ℂ)) /
       singleSpectralDenominator n)).re < 0 := by
   have hroot : (sourceStandardRoot hp hp1 ψ 0 (x:ℂ)).im = 0 :=
-    sourceStandardRoot_im_eq_zero_off_selected_realGap
+    sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
       hp hp1 ψ hreal (Ne.symm hn) hx
   have hden : (singleSpectralDenominator n).im = 0 := by
     unfold singleSpectralDenominator
@@ -54,10 +54,26 @@ theorem sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap
   rw [hquot]
   rcases lt_or_gt_of_ne hn with hnneg | hnpos
   · exact div_neg_of_pos_of_neg
-      (sourceStandardRoot_re_pos_after_realGap hp hp1 ψ hreal hnneg hx)
+      (sourceStandardRoot_re_pos_after_realGap_closedGap hp hp1 ψ hreal hnneg hx)
       (singleSpectralDenominator_re_neg_of_neg n hnneg)
   · exact div_neg_of_neg_of_pos
-      (sourceStandardRoot_re_neg_before_realGap hp hp1 ψ hreal hnpos hx)
+      (sourceStandardRoot_re_neg_before_realGap_closedGap hp hp1 ψ hreal hnpos hx)
       (singleSpectralDenominator_re_pos_of_nonneg n hnpos.le)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {n : ℤ} (hn : n ≠ 0) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (((if n = 0 then 1 else sourceStandardRoot hp hp1 ψ 0 (x:ℂ)) /
+      singleSpectralDenominator n)).re < 0 :=
+  sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (n := n) (hn := hn) (x := x) (hx := Ioo_subset_Icc_self hx)
 
 end NLS.ZakharovShabat

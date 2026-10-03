@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: actual anti-discriminant gradient summability at boundary roots
+## Current milestone: signed omitted-product normalization at actual boundary roots
+
+At every real source and every finite `p>1`, the omitted standard-root
+product evaluated at either canonical boundary sequence differs from
+`cos(πn)` by an ℓp sequence. Its reciprocal has the same signed ℓp
+normalization, and all reciprocal norms have one finite bound. These
+results include endpoints, collapsed gaps, and the entire finite central
+block; no finite-gap or H¹ premise is required.
+
+The standard-root sign proofs now hold on the closed selected real gap.
+Strict separation from every other indexed gap keeps all retained roots
+strictly on an exterior ray, even when the selected gap is a singleton.
+The finite-product parity count, reality, limit, and nonvanishing arguments
+therefore select the same signed square root throughout the closed gap.
+The existing open-gap APIs remain as specializations.
+
+`DeletedProductSampledValues.lean` proves that arbitrary ℓp displacements
+of the sampling lattice give an ℓp deviation from one for the actual
+deleted periodic product. Its proof combines the existing product-error
+majorants with the free squared-sine increment bound; only tail samples
+need lie in the free discs.
+
+`SourceOmittedProductBoundaryNormalization.lean` applies this result at the
+actual boundary roots. The exact square identity and closed-gap sign imply
+`|Pₙ−cos(πn)|≤|Pₙ²−1|`. Reciprocal perturbation on the tail gives the inverse
+estimate; finite-exponent coefficient bounds include all remaining indices.
+Public checks cover negative-index parity, all free collapsed gaps, exact
+free inverse cancellation, both boundary sequences, and exponents on either
+side of two.
+
+Next combine this normalization with the actual G.6 and G.7 estimates in
+the finite-gap differential formula for Lemma 16.1. The full lemma and its
+`1<p<∞` gradient range, the sharper G.1 integral bound, remaining assertions
+of Theorem 14.1, and later chapters remain unfinished.
+
+## Previous milestone: actual anti-discriminant gradient summability at boundary roots
 
 G.6's anti-discriminant estimate now applies to the genuine source derivative
 at every canonical Dirichlet or Neumann root of a complex H¹ source. For

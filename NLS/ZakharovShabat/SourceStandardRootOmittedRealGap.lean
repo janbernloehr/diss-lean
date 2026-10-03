@@ -5,7 +5,7 @@ import NLS.ZakharovShabat.SourceStandardRootOmittedProduct
 # Reality of the omitted standard-root product on a real gap
 
 Every factor retained when the selected root is omitted is real at
-an interior point of that gap. The finite symmetric products are
+a point, including an endpoint, of that gap. The finite symmetric products are
 therefore real, and pointwise convergence carries reality to the
 canonical omitted product.
 -/
@@ -17,12 +17,12 @@ namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- Every symmetric finite cutoff of the omitted standard-root
-product is real at an interior point of a real-type gap. -/
-theorem sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap
+product is real at a point, including an endpoint, of a real-type gap. -/
+theorem sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (n : ℤ) (N : ℕ) (x : ℝ)
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -40,7 +40,7 @@ theorem sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap
           singleSpectralDenominator m := by
     rw [map_div₀, hden]
     rw [Complex.conj_eq_iff_im.mpr
-      (sourceStandardRoot_im_eq_zero_off_selected_realGap
+      (sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
         hp hp1 ψ hreal hm hx)]
   unfold sourceStandardRootOmittedPartialProduct
   rw [map_div₀, map_prod, hden]
@@ -50,12 +50,12 @@ theorem sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap
   exact hfactor m (Finset.mem_erase.mp hm).1
 
 /-- The infinite omitted standard-root product is real throughout
-the interior of the selected real-type gap. -/
-theorem sourceStandardRootOmittedProduct_im_eq_zero_on_realGap
+the closed selected real-type gap. -/
+theorem sourceStandardRootOmittedProduct_im_eq_zero_on_realGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (n : ℤ) (x : ℝ)
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -68,10 +68,40 @@ theorem sourceStandardRootOmittedProduct_im_eq_zero_on_realGap
       conj (sourceStandardRootOmittedPartialProduct hp hp1 n N ((x:ℂ),ψ)) =
         sourceStandardRootOmittedPartialProduct hp hp1 n N ((x:ℂ),ψ) :=
     Complex.conj_eq_iff_im.mpr
-      (sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap
+      (sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap_closedGap
         hp hp1 ψ hreal n N x hx)
   simp only [Function.comp_def] at hc
   simp_rw [heq] at hc
   exact Complex.conj_eq_iff_im.mp (tendsto_nhds_unique hc ht)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ) (N : ℕ) (x : ℝ)
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (sourceStandardRootOmittedPartialProduct hp hp1 n N ((x:ℂ),ψ)).im = 0 :=
+  sourceStandardRootOmittedPartialProduct_im_eq_zero_on_realGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (n := n) (N := N) (x := x) (hx := Ioo_subset_Icc_self hx)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRootOmittedProduct_im_eq_zero_on_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ) (x : ℝ)
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (sourceStandardRootOmittedProduct hp hp1 n ψ (x:ℂ)).im = 0 :=
+  sourceStandardRootOmittedProduct_im_eq_zero_on_realGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (n := n) (x := x) (hx := Ioo_subset_Icc_self hx)
 
 end NLS.ZakharovShabat

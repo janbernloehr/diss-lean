@@ -6,7 +6,7 @@ import NLS.ZakharovShabat.SourceStandardRootOmittedZeroPositive
 
 The finite symmetric cutoffs have a common sign once they include
 the omitted index. Their limit has the same weak sign; nonvanishing
-on the open selected gap makes the sign strict.
+on the closed selected gap makes the sign strict.
 -/
 
 noncomputable section
@@ -15,13 +15,13 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
-/-- At every open real-type gap, the real omitted standard-root
+/-- At every closed real-type gap, the real omitted standard-root
 product has the sign determined by the absolute index parity. -/
-theorem sourceStandardRootOmittedProduct_signed_re_pos_on_realGap
+theorem sourceStandardRootOmittedProduct_signed_re_pos_on_realGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (n : ℤ) (x : ℝ)
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -30,7 +30,7 @@ theorem sourceStandardRootOmittedProduct_signed_re_pos_on_realGap
       (sourceStandardRootOmittedProduct hp hp1 n ψ (x:ℂ)).re := by
   by_cases hn : n = 0
   · subst n
-    simpa using sourceStandardRootOmittedProduct_re_pos_on_zeroGap
+    simpa using sourceStandardRootOmittedProduct_re_pos_on_zeroGap_closedGap
       hp hp1 ψ hreal x hx
   let P := sourceStandardRootOmittedProduct hp hp1 n ψ (x:ℂ)
   have ht := tendsto_sourceStandardRootOmittedPartialProduct
@@ -48,17 +48,17 @@ theorem sourceStandardRootOmittedProduct_signed_re_pos_on_realGap
   have hnonneg : 0 ≤ (-1:ℝ)^n.natAbs * P.re :=
     le_of_tendsto_of_tendsto tendsto_const_nhds htsigned (by
       filter_upwards [eventually_ge_atTop n.natAbs] with N hN
-      exact (sourceStandardRootOmittedPartialProduct_signed_re_pos
+      exact (sourceStandardRootOmittedPartialProduct_signed_re_pos_closedGap
         hp hp1 ψ hreal hn N hN hx).le)
   have hIm : P.im = 0 :=
-    sourceStandardRootOmittedProduct_im_eq_zero_on_realGap
+    sourceStandardRootOmittedProduct_im_eq_zero_on_realGap_closedGap
       hp hp1 ψ hreal n x hx
   obtain ⟨W,_,_,hWreal,hdisjoint⟩ :=
     exists_global_source_disjoint_periodicSegments hp hp1
   have hψW : ψ ∈ W := hWreal hreal
   have hxseg : (x:ℂ) ∈ sourcePeriodicSegment hp hp1 ψ n :=
     sourcePeriodicSegment_mem_of_realIcc hp hp1 ψ hreal n x
-      ⟨hx.1.le,hx.2.le⟩
+      hx
   have hdomain : (x:ℂ) ∈ sourceStandardRootOmittedDomain hp hp1 ψ n := by
     intro m hm hmem
     exact Set.disjoint_left.mp (hdisjoint ψ hψW n m (Ne.symm hm)) hxseg hmem
@@ -73,5 +73,21 @@ theorem sourceStandardRootOmittedProduct_signed_re_pos_on_realGap
   have hsignedne : (-1:ℝ)^n.natAbs * P.re ≠ 0 :=
     mul_ne_zero (pow_ne_zero _ (by norm_num)) hrealne
   exact lt_of_le_of_ne hnonneg (Ne.symm hsignedne)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRootOmittedProduct_signed_re_pos_on_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ) (x : ℝ)
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    0 < (-1:ℝ)^n.natAbs *
+      (sourceStandardRootOmittedProduct hp hp1 n ψ (x:ℂ)).re :=
+  sourceStandardRootOmittedProduct_signed_re_pos_on_realGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (n := n) (x := x) (hx := Ioo_subset_Icc_self hx)
 
 end NLS.ZakharovShabat

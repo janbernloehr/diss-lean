@@ -17,12 +17,12 @@ namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 /-- Every normalized factor retained after omitting index zero is
-strictly positive and real on an open central real gap. -/
-theorem sourceStandardRoot_normalized_re_pos_on_zeroGap
+strictly positive and real on a closed central real gap. -/
+theorem sourceStandardRoot_normalized_re_pos_on_zeroGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     {m : ℤ} (hm : m ≠ 0) {x : ℝ}
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) 0).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -30,18 +30,18 @@ theorem sourceStandardRoot_normalized_re_pos_on_zeroGap
     0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
       singleSpectralDenominator m).re := by
   rcases lt_or_gt_of_ne hm with hneg | hpos
-  · exact sourceStandardRoot_normalized_re_pos_of_neg_before
+  · exact sourceStandardRoot_normalized_re_pos_of_neg_before_closedGap
       hp hp1 ψ hreal hneg hneg hx
-  · exact sourceStandardRoot_normalized_re_pos_of_nonneg_after
+  · exact sourceStandardRoot_normalized_re_pos_of_nonneg_after_closedGap
       hp hp1 ψ hreal hpos.le hpos hx
 
 /-- Every finite symmetric cutoff of the central omitted product is
-strictly positive on the open real central gap. -/
-theorem sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap
+strictly positive on the closed real central gap. -/
+theorem sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (N : ℕ) (x : ℝ)
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) 0).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -54,7 +54,7 @@ theorem sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap
   have hrealFactor (m : ℤ) (hm : m ∈ s) : f m = ((f m).re:ℂ) := by
     have hm0 : m ≠ 0 := (Finset.mem_erase.mp hm).1
     have him : (f m).im = 0 := by
-      have hr := sourceStandardRoot_im_eq_zero_off_selected_realGap
+      have hr := sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
         hp hp1 ψ hreal hm0 hx
       have hd : (singleSpectralDenominator m).im = 0 := by
         unfold singleSpectralDenominator
@@ -71,20 +71,20 @@ theorem sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap
   have hpos : 0 < ∏ m ∈ s, (f m).re := by
     apply Finset.prod_pos
     intro m hm
-    exact sourceStandardRoot_normalized_re_pos_on_zeroGap
+    exact sourceStandardRoot_normalized_re_pos_on_zeroGap_closedGap
       hp hp1 ψ hreal (Finset.mem_erase.mp hm).1 hx
   change 0 < ((∏ m ∈ s, f m) / singleSpectralDenominator 0).re
   simp only [singleSpectralDenominator, if_pos, div_one]
   rw [hprod]
   exact_mod_cast hpos
 
-/-- On the open central real gap, the infinite omitted standard-root
+/-- On the closed central real gap, the infinite omitted standard-root
 product has strictly positive real value. -/
-theorem sourceStandardRootOmittedProduct_re_pos_on_zeroGap
+theorem sourceStandardRootOmittedProduct_re_pos_on_zeroGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     (x : ℝ)
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) 0).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -99,17 +99,17 @@ theorem sourceStandardRootOmittedProduct_re_pos_on_zeroGap
     continuous_re.continuousAt.tendsto.comp ht
   have hnonneg : 0 ≤ P.re :=
     le_of_tendsto_of_tendsto' tendsto_const_nhds htre
-      (fun N => (sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap
+      (fun N => (sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap_closedGap
         hp hp1 ψ hreal N x hx).le)
   have hIm : P.im = 0 :=
-    sourceStandardRootOmittedProduct_im_eq_zero_on_realGap
+    sourceStandardRootOmittedProduct_im_eq_zero_on_realGap_closedGap
       hp hp1 ψ hreal 0 x hx
   obtain ⟨W,_,_,hWreal,hdisjoint⟩ :=
     exists_global_source_disjoint_periodicSegments hp hp1
   have hψW : ψ ∈ W := hWreal hreal
   have hxseg : (x:ℂ) ∈ sourcePeriodicSegment hp hp1 ψ 0 :=
     sourcePeriodicSegment_mem_of_realIcc hp hp1 ψ hreal 0 x
-      ⟨hx.1.le,hx.2.le⟩
+      hx
   have hdomain : (x:ℂ) ∈ sourceStandardRootOmittedDomain hp hp1 ψ 0 := by
     intro m hm hmem
     exact Set.disjoint_left.mp (hdisjoint ψ hψW 0 m (Ne.symm hm)) hxseg hmem
@@ -121,5 +121,52 @@ theorem sourceStandardRootOmittedProduct_re_pos_on_zeroGap
   apply Complex.ext
   · exact hzero
   · exact hIm
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRoot_normalized_re_pos_on_zeroGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m : ℤ} (hm : m ≠ 0) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) 0).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) 0).re) :
+    0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+      singleSpectralDenominator m).re :=
+  sourceStandardRoot_normalized_re_pos_on_zeroGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (hm := hm) (x := x) (hx := Ioo_subset_Icc_self hx)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (N : ℕ) (x : ℝ)
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) 0).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) 0).re) :
+    0 < (sourceStandardRootOmittedPartialProduct
+      hp hp1 0 N ((x:ℂ),ψ)).re :=
+  sourceStandardRootOmittedPartialProduct_re_pos_on_zeroGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (N := N) (x := x) (hx := Ioo_subset_Icc_self hx)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRootOmittedProduct_re_pos_on_zeroGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (x : ℝ)
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) 0).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) 0).re) :
+    0 < (sourceStandardRootOmittedProduct hp hp1 0 ψ (x:ℂ)).re :=
+  sourceStandardRootOmittedProduct_re_pos_on_zeroGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (x := x) (hx := Ioo_subset_Icc_self hx)
 
 end NLS.ZakharovShabat

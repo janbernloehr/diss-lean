@@ -61,6 +61,109 @@ theorem sourceStandardRoot_div_denominator_re
 
 /-- A normalized factor retained in the omitted product is exactly
 the complex embedding of its real part on the selected real gap. -/
+theorem sourceStandardRoot_normalized_eq_ofReal_off_selected_realGap_closedGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmn : m ≠ n) {x : ℝ}
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+      singleSpectralDenominator m =
+      (((sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+        singleSpectralDenominator m).re:ℝ):ℂ) := by
+  have hr := sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
+    hp hp1 ψ hreal hmn hx
+  have hd : (singleSpectralDenominator m).im = 0 := by
+    unfold singleSpectralDenominator
+    split_ifs <;> simp
+  apply Complex.ext
+  · rfl
+  · simp [Complex.div_im,hr,hd]
+
+/-- A negative-index factor before the selected gap is positive
+after normalization by its negative denominator. -/
+theorem sourceStandardRoot_normalized_re_pos_of_neg_before_closedGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmneg : m < 0) (hmn : m < n) {x : ℝ}
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+      singleSpectralDenominator m).re := by
+  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
+    (sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
+      hp hp1 ψ hreal (ne_of_lt hmn) hx)]
+  exact div_pos_of_neg_of_neg
+    (sourceStandardRoot_re_neg_before_realGap_closedGap hp hp1 ψ hreal hmn hx)
+    (singleSpectralDenominator_re_neg_of_neg m hmneg)
+
+/-- A nonnegative-index factor before the selected gap is negative
+after normalization by its positive denominator. -/
+theorem sourceStandardRoot_normalized_re_neg_of_nonneg_before_closedGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmnonneg : 0 ≤ m) (hmn : m < n) {x : ℝ}
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+      singleSpectralDenominator m).re < 0 := by
+  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
+    (sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
+      hp hp1 ψ hreal (ne_of_lt hmn) hx)]
+  exact div_neg_of_neg_of_pos
+    (sourceStandardRoot_re_neg_before_realGap_closedGap hp hp1 ψ hreal hmn hx)
+    (singleSpectralDenominator_re_pos_of_nonneg m hmnonneg)
+
+/-- A negative-index factor after the selected gap is negative
+after normalization by its negative denominator. -/
+theorem sourceStandardRoot_normalized_re_neg_of_neg_after_closedGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmneg : m < 0) (hnm : n < m) {x : ℝ}
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+      singleSpectralDenominator m).re < 0 := by
+  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
+    (sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
+      hp hp1 ψ hreal (Ne.symm (ne_of_lt hnm)) hx)]
+  exact div_neg_of_pos_of_neg
+    (sourceStandardRoot_re_pos_after_realGap_closedGap hp hp1 ψ hreal hnm hx)
+    (singleSpectralDenominator_re_neg_of_neg m hmneg)
+
+/-- A nonnegative-index factor after the selected gap is positive
+after normalization by its positive denominator. -/
+theorem sourceStandardRoot_normalized_re_pos_of_nonneg_after_closedGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmnonneg : 0 ≤ m) (hnm : n < m) {x : ℝ}
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
+      singleSpectralDenominator m).re := by
+  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
+    (sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
+      hp hp1 ψ hreal (Ne.symm (ne_of_lt hnm)) hx)]
+  exact div_pos
+    (sourceStandardRoot_re_pos_after_realGap_closedGap hp hp1 ψ hreal hnm hx)
+    (singleSpectralDenominator_re_pos_of_nonneg m hmnonneg)
+
+/-- The open-gap specialization of the closed-gap result. -/
 theorem sourceStandardRoot_normalized_eq_ofReal_off_selected_realGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
@@ -73,18 +176,12 @@ theorem sourceStandardRoot_normalized_eq_ofReal_off_selected_realGap
     sourceStandardRoot hp hp1 ψ m (x:ℂ) /
       singleSpectralDenominator m =
       (((sourceStandardRoot hp hp1 ψ m (x:ℂ) /
-        singleSpectralDenominator m).re:ℝ):ℂ) := by
-  have hr := sourceStandardRoot_im_eq_zero_off_selected_realGap
-    hp hp1 ψ hreal hmn hx
-  have hd : (singleSpectralDenominator m).im = 0 := by
-    unfold singleSpectralDenominator
-    split_ifs <;> simp
-  apply Complex.ext
-  · rfl
-  · simp [Complex.div_im,hr,hd]
+        singleSpectralDenominator m).re:ℝ):ℂ) :=
+  sourceStandardRoot_normalized_eq_ofReal_off_selected_realGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hmn := hmn) (x := x) (hx := Ioo_subset_Icc_self hx)
 
-/-- A negative-index factor before the selected gap is positive
-after normalization by its negative denominator. -/
+/-- The open-gap specialization of the closed-gap result. -/
 theorem sourceStandardRoot_normalized_re_pos_of_neg_before
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
@@ -95,16 +192,12 @@ theorem sourceStandardRoot_normalized_re_pos_of_neg_before
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re) :
     0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
-      singleSpectralDenominator m).re := by
-  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
-    (sourceStandardRoot_im_eq_zero_off_selected_realGap
-      hp hp1 ψ hreal (ne_of_lt hmn) hx)]
-  exact div_pos_of_neg_of_neg
-    (sourceStandardRoot_re_neg_before_realGap hp hp1 ψ hreal hmn hx)
-    (singleSpectralDenominator_re_neg_of_neg m hmneg)
+      singleSpectralDenominator m).re :=
+  sourceStandardRoot_normalized_re_pos_of_neg_before_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hmneg := hmneg) (hmn := hmn) (x := x) (hx := Ioo_subset_Icc_self hx)
 
-/-- A nonnegative-index factor before the selected gap is negative
-after normalization by its positive denominator. -/
+/-- The open-gap specialization of the closed-gap result. -/
 theorem sourceStandardRoot_normalized_re_neg_of_nonneg_before
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
@@ -115,16 +208,12 @@ theorem sourceStandardRoot_normalized_re_neg_of_nonneg_before
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re) :
     (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
-      singleSpectralDenominator m).re < 0 := by
-  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
-    (sourceStandardRoot_im_eq_zero_off_selected_realGap
-      hp hp1 ψ hreal (ne_of_lt hmn) hx)]
-  exact div_neg_of_neg_of_pos
-    (sourceStandardRoot_re_neg_before_realGap hp hp1 ψ hreal hmn hx)
-    (singleSpectralDenominator_re_pos_of_nonneg m hmnonneg)
+      singleSpectralDenominator m).re < 0 :=
+  sourceStandardRoot_normalized_re_neg_of_nonneg_before_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hmnonneg := hmnonneg) (hmn := hmn) (x := x) (hx := Ioo_subset_Icc_self hx)
 
-/-- A negative-index factor after the selected gap is negative
-after normalization by its negative denominator. -/
+/-- The open-gap specialization of the closed-gap result. -/
 theorem sourceStandardRoot_normalized_re_neg_of_neg_after
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
@@ -135,16 +224,12 @@ theorem sourceStandardRoot_normalized_re_neg_of_neg_after
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re) :
     (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
-      singleSpectralDenominator m).re < 0 := by
-  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
-    (sourceStandardRoot_im_eq_zero_off_selected_realGap
-      hp hp1 ψ hreal (Ne.symm (ne_of_lt hnm)) hx)]
-  exact div_neg_of_pos_of_neg
-    (sourceStandardRoot_re_pos_after_realGap hp hp1 ψ hreal hnm hx)
-    (singleSpectralDenominator_re_neg_of_neg m hmneg)
+      singleSpectralDenominator m).re < 0 :=
+  sourceStandardRoot_normalized_re_neg_of_neg_after_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hmneg := hmneg) (hnm := hnm) (x := x) (hx := Ioo_subset_Icc_self hx)
 
-/-- A nonnegative-index factor after the selected gap is positive
-after normalization by its positive denominator. -/
+/-- The open-gap specialization of the closed-gap result. -/
 theorem sourceStandardRoot_normalized_re_pos_of_nonneg_after
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
@@ -155,12 +240,9 @@ theorem sourceStandardRoot_normalized_re_pos_of_nonneg_after
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re) :
     0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ) /
-      singleSpectralDenominator m).re := by
-  rw [sourceStandardRoot_div_denominator_re hp hp1 ψ m x
-    (sourceStandardRoot_im_eq_zero_off_selected_realGap
-      hp hp1 ψ hreal (Ne.symm (ne_of_lt hnm)) hx)]
-  exact div_pos
-    (sourceStandardRoot_re_pos_after_realGap hp hp1 ψ hreal hnm hx)
-    (singleSpectralDenominator_re_pos_of_nonneg m hmnonneg)
+      singleSpectralDenominator m).re :=
+  sourceStandardRoot_normalized_re_pos_of_nonneg_after_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hmnonneg := hmnonneg) (hnm := hnm) (x := x) (hx := Ioo_subset_Icc_self hx)
 
 end NLS.ZakharovShabat

@@ -43,11 +43,11 @@ private theorem signed_prod_range_pos (f : ℕ → ℝ) (r N : ℕ)
 
 /-- For a nonzero selected index and any cutoff reaching it, the real
 part of the finite omitted product has sign `(-1)^|n|`. -/
-theorem sourceStandardRootOmittedPartialProduct_signed_re_pos
+theorem sourceStandardRootOmittedPartialProduct_signed_re_pos_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     {n : ℤ} (hn : n ≠ 0) (N : ℕ) (hN : n.natAbs ≤ N) {x : ℝ}
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -59,7 +59,7 @@ theorem sourceStandardRootOmittedPartialProduct_signed_re_pos
   let f (j : ℕ) : ℂ := sourceStandardRootOmittedPairedFactor
     hp hp1 ψ (x:ℂ) n j
   have ha : a = (a.re:ℂ) := by
-    have hr := sourceStandardRoot_im_eq_zero_off_selected_realGap
+    have hr := sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
       hp hp1 ψ hreal (Ne.symm hn) hx
     have hd : (singleSpectralDenominator n).im = 0 := by
       unfold singleSpectralDenominator
@@ -68,7 +68,7 @@ theorem sourceStandardRootOmittedPartialProduct_signed_re_pos
     · rfl
     · simp [a, Complex.div_im, hr, hd]
   have hf (j : ℕ) : f j = ((f j).re:ℂ) :=
-    sourceStandardRootOmittedPairedFactor_eq_ofReal_on_realGap
+    sourceStandardRootOmittedPairedFactor_eq_ofReal_on_realGap_closedGap
       hp hp1 ψ hreal n j hx
   have hprod : (∏ j ∈ Finset.range N, f j) =
       ((∏ j ∈ Finset.range N, (f j).re):ℂ) := by
@@ -88,19 +88,35 @@ theorem sourceStandardRootOmittedPartialProduct_signed_re_pos
     have hq : n.natAbs ≠ 0 := by simpa using hn
     exact ⟨n.natAbs - 1, by omega⟩
   have haNeg : a.re < 0 := by
-    simpa [a,hn] using sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap
+    simpa [a,hn] using sourceStandardRootOmittedPrefactor_re_neg_on_nonzeroGap_closedGap
       hp hp1 ψ hreal hn hx
   have hpair : 0 < (-1:ℝ)^r * ∏ j ∈ Finset.range N, (f j).re := by
     apply signed_prod_range_pos (fun j => (f j).re) r N (by omega)
     · intro j hj
-      exact sourceStandardRootOmittedPairedFactor_re_neg_of_lt_natAbs
+      exact sourceStandardRootOmittedPairedFactor_re_neg_of_lt_natAbs_closedGap
         hp hp1 ψ hreal n j (by omega) hx
     · intro j hj
-      exact sourceStandardRootOmittedPairedFactor_re_pos_of_natAbs_le
+      exact sourceStandardRootOmittedPairedFactor_re_pos_of_natAbs_le_closedGap
         hp hp1 ψ hreal n j (by omega) hx
   rw [hrewrite, hr, pow_succ]
   have hmul : 0 < ((-1:ℝ)^r * ∏ j ∈ Finset.range N, (f j).re) * (-a.re) :=
     mul_pos hpair (neg_pos.mpr haNeg)
   convert hmul using 1; ring
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRootOmittedPartialProduct_signed_re_pos
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {n : ℤ} (hn : n ≠ 0) (N : ℕ) (hN : n.natAbs ≤ N) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    0 < (-1:ℝ)^n.natAbs *
+      (sourceStandardRootOmittedPartialProduct hp hp1 n N ((x:ℂ),ψ)).re :=
+  sourceStandardRootOmittedPartialProduct_signed_re_pos_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (n := n) (hn := hn) (N := N) (hN := hN) (x := x) (hx := Ioo_subset_Icc_self hx)
 
 end NLS.ZakharovShabat

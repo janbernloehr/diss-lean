@@ -194,11 +194,11 @@ theorem sourceStandardRoot_re_neg_of_real_gt_right
 
 /-- At a point inside the selected real gap, every earlier indexed
 standard root has negative real value. -/
-theorem sourceStandardRoot_re_neg_before_realGap
+theorem sourceStandardRoot_re_neg_before_realGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     {m n : ℤ} (hmn : m < n) {x : ℝ}
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -207,22 +207,22 @@ theorem sourceStandardRoot_re_neg_before_realGap
   apply sourceStandardRoot_re_neg_of_real_gt_right hp hp1 ψ hreal m x
   exact (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
     (periodOnePotential ψ) (periodOnePotential_mem ψ)
-    (isRealType_periodOnePotential ψ hreal) hmn).trans hx.1
+    (isRealType_periodOnePotential ψ hreal) hmn).trans_le hx.1
 
 /-- At a point inside the selected real gap, every later indexed
 standard root has positive real value. -/
-theorem sourceStandardRoot_re_pos_after_realGap
+theorem sourceStandardRoot_re_pos_after_realGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     {m n : ℤ} (hnm : n < m) {x : ℝ}
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re) :
     0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ)).re := by
   apply sourceStandardRoot_re_pos_of_real_lt_left hp hp1 ψ hreal m x
-  exact hx.2.trans (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
+  exact hx.2.trans_lt (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
     (periodOnePotential ψ) (periodOnePotential_mem ψ)
     (isRealType_periodOnePotential ψ hreal) hnm)
 
@@ -277,12 +277,12 @@ theorem sourceStandardRoot_im_eq_zero_of_real_exterior
   exact (mul_eq_zero.mp hmul).resolve_left htwo
 
 /-- All factors retained in the omitted product are real at an
-interior point of the selected real gap. -/
-theorem sourceStandardRoot_im_eq_zero_off_selected_realGap
+point, including an endpoint, of the selected real gap. -/
+theorem sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
     (hp : p ≠ ⊤) (hp1 : 1 < p)
     (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
     {m n : ℤ} (hmn : m ≠ n) {x : ℝ}
-    (hx : x ∈ Ioo
+    (hx : x ∈ Icc
       (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
         (periodOnePotential_mem ψ) n).re
       (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
@@ -293,10 +293,55 @@ theorem sourceStandardRoot_im_eq_zero_off_selected_realGap
   · right
     exact (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
       (periodOnePotential ψ) (periodOnePotential_mem ψ)
-      (isRealType_periodOnePotential ψ hreal) hlt).trans hx.1
+      (isRealType_periodOnePotential ψ hreal) hlt).trans_le hx.1
   · left
-    exact hx.2.trans (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
+    exact hx.2.trans_lt (canonicalPeriodicRight_re_lt_left_of_lt hp hp1
       (periodOnePotential ψ) (periodOnePotential_mem ψ)
       (isRealType_periodOnePotential ψ hreal) hgt)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRoot_re_neg_before_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmn : m < n) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (sourceStandardRoot hp hp1 ψ m (x:ℂ)).re < 0 :=
+  sourceStandardRoot_re_neg_before_realGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hmn := hmn) (x := x) (hx := Ioo_subset_Icc_self hx)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRoot_re_pos_after_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hnm : n < m) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    0 < (sourceStandardRoot hp hp1 ψ m (x:ℂ)).re :=
+  sourceStandardRoot_re_pos_after_realGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hnm := hnm) (x := x) (hx := Ioo_subset_Icc_self hx)
+
+/-- The open-gap specialization of the closed-gap result. -/
+theorem sourceStandardRoot_im_eq_zero_off_selected_realGap
+    (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    {m n : ℤ} (hmn : m ≠ n) {x : ℝ}
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n).re) :
+    (sourceStandardRoot hp hp1 ψ m (x:ℂ)).im = 0 :=
+  sourceStandardRoot_im_eq_zero_off_selected_realGap_closedGap
+    (hp := hp) (hp1 := hp1) (ψ := ψ) (hreal := hreal)
+    (m := m) (n := n) (hmn := hmn) (x := x) (hx := Ioo_subset_Icc_self hx)
 
 end NLS.ZakharovShabat

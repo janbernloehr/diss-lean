@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: actual anti-discriminant gradient summability
+## Latest progress: signed omitted-product normalization
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -87,11 +87,18 @@ outer ℓp sequences, including the finite head. The reference is exactly
 `i cos(πn) (h₁(-n)−h₂(n))`, proved at every finite `p>1` by exponent
 compatibility and density.
 
-Next combine these estimates with the omitted-root-product normalization
-in the finite-gap differential formula for Lemma 16.1, and complete its
-full `1<p<∞` gradient range. The actual source summability estimates here
-cover finite `p≥2`. The sharper G.1 integral bound, Lemma 16.1, remaining
-assertions of Theorem 14.1, and later chapters remain unfinished.
+The omitted-root-product normalization is now proved at both actual boundary
+sequences for every real source and every finite `p>1`. Closed-gap reality
+and parity select the signed square root, including collapsed gaps. Generic
+ℓp-displaced sampling controls the squared error; both the product and its
+reciprocal differ from `cos(πn)` by ℓp sequences, with bounded reciprocals
+across all signed indices. The existing open-gap sign APIs remain available.
+
+Next combine this normalization with the actual G.6 and G.7 estimates in
+the finite-gap differential formula for Lemma 16.1, and complete its full
+`1<p<∞` gradient range. The actual source gradient summability estimates
+currently cover finite `p≥2`. The sharper G.1 integral bound, Lemma 16.1,
+remaining assertions of Theorem 14.1, and later chapters remain unfinished.
 
 ## Milestones
 
