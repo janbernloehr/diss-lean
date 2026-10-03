@@ -24723,3 +24723,38 @@ example (φ : realTypeSourceLocus 3)
   exists_sourceFiniteGap_logDerivative_normalized_at_infinity (by simp) (by norm_num) φ hf
 
 end NLS.FiniteGapInfinityChecks
+
+namespace NLS.ExteriorCoefficientChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis Set Complex Metric
+open scoped ENNReal
+
+-- A linear analytic germ fixes the sign and normalization of the exterior residue.
+example (a b : ℂ) : (∮ z in C(0,1), a + b*z⁻¹) = (2*Real.pi*Complex.I : ℂ)*b := by
+  have hd : HasDerivAt (fun w : ℂ => a+b*w) b 0 := by
+    simpa only [mul_one] using! ((hasDerivAt_id (0 : ℂ)).const_mul b).const_add a
+  have ha : AnalyticOnNhd ℂ (fun w : ℂ => a+b*w) (ball 0 2) := by
+    intro z _
+    fun_prop
+  have he := circleIntegral_comp_inv_eq (fun w : ℂ => a+b*w) 2 1 (by norm_num)
+    (by norm_num) (by norm_num) ha
+  simpa only [hd.deriv] using he
+
+-- Weighting an inverted analytic germ extracts its quadratic coefficient exactly.
+example (g : ℂ → ℂ) (r R : ℝ) (hr : 0 < r) (hR : 0 < R)
+    (hRr : R⁻¹ < r) (hg : AnalyticOnNhd ℂ g (ball 0 r)) :
+    (∮ z in C(0,R), z * g z⁻¹) = (2*Real.pi*Complex.I : ℂ)*deriv (dslope g 0) 0 :=
+  circleIntegral_mul_comp_inv_eq g r R hr hR hRr hg
+
+-- The actual finite-gap expansion has no inverse-frequency term, with an analytic remainder.
+example (φ : realTypeSourceLocus 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ r : ℝ, 0 < r ∧ ∃ h : ℂ → ℂ,
+      AnalyticOnNhd ℂ h (ball 0 r) ∧
+      (∀ z : ℂ, r⁻¹ < ‖z‖ → sourceFloquetLogDerivative (by simp) (by norm_num) φ.val z =
+        -Complex.I + z⁻¹^2 * h z⁻¹) ∧
+      ∀ R : ℝ, 0 < R → R⁻¹ < r →
+        (∮ z in C(0,R), z * sourceFloquetLogDerivative (by simp) (by norm_num) φ.val z) =
+          (2*Real.pi*Complex.I : ℂ)*h 0 :=
+  exists_sourceFiniteGap_exterior_quadratic_remainder (by simp) (by norm_num) φ hf
+
+end NLS.ExteriorCoefficientChecks

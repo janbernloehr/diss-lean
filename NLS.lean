@@ -2070,3 +2070,6 @@ import NLS.ComplexAnalysis.ExteriorCircleBounds
 import NLS.ComplexAnalysis.ExteriorRemovableSingularity
 import NLS.ZakharovShabat.SourceFloquetExteriorCircleBound
 import NLS.ZakharovShabat.SourceFiniteGapAtInfinity
+
+import NLS.ComplexAnalysis.InversionCircleCoefficients
+import NLS.ZakharovShabat.SourceFiniteGapExteriorCoefficients

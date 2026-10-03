@@ -1,6 +1,21 @@
 # Implementation plan
 
-## Latest progress: removability and the leading value at infinity
+## Latest progress: exact exterior remainder and contour coefficient
+
+The analytic inversion germ now has zero linear coefficient, proved from
+the actual zero exterior period. Two divided differences produce an exact
+analytic remainder: `q(z) = -i + z⁻² h(1/z)`. The weighted exterior circle
+integral is exactly `2πi h(0)`, at all finite exponents `p>1` for actual
+finite-gap sources, without any assumed residue or expansion coefficient.
+
+Next take a primitive `H` of `h` near zero with `H(0)=0`. Then
+`-iz-H(1/z)` has derivative `q(z)` on the exterior. Compare it along the
+upper imaginary ray with the already mass-normalized exterior primitive;
+the ray limit should give `h(0) = -i sourceHilbertMass/2`. Finally consolidate
+the individual action contours. Density extension, spectral-action weak
+continuity, and properness remain later steps toward global injectivity.
+
+## Previous progress: removability and the leading value at infinity
 
 The logarithmic derivative is now uniformly bounded on sufficiently large
 half-integer circles by the free derivative and root asymptotics. Maximum

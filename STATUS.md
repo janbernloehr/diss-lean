@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: analytic extension of the quotient at infinity
+## Current milestone: exact exterior coefficients and weighted contour
+
+`InversionCircleCoefficients.lean` proves two coefficient formulas for an
+analytic function evaluated at inverse frequency. Its unweighted exterior
+circle integral is `2πi g'(0)`, and weighting by the spectral parameter gives
+`2πi (dslope g 0)'(0)`, the quadratic Taylor coefficient. The proof uses two
+analytic divided differences and a primitive of their remainder; it does
+not assume a Laurent contour formula or interchange an infinite series.
+
+`SourceFiniteGapExteriorCoefficients.lean` applies these formulas to the
+actual finite-gap logarithmic derivative. The established zero exterior
+period forces `g'(0)=0`. At every finite exponent `p>1`, it constructs an
+analytic remainder `h` near zero with the exact exterior identity
+
+`sourceFloquetLogDerivative φ z = -i + z⁻² h(1/z)`.
+
+For every sufficiently large circle, the weighted integral is exactly
+`2πi h(0)`. The remainder and contour formula are constructed from actual
+finite-gap membership, without an assumed expansion or vanishing residue.
+
+Public examples check the residue sign and normalization for a linear germ,
+the general weighted coefficient formula, and the combined exact remainder
+and actual contour identity at `p=3`.
+
+Next identify `h(0)` with `-i sourceHilbertMass φ/2` by comparing a primitive
+of the analytic remainder with the mass-normalized exterior primitive.
+Then consolidate the action contours to establish the finite-gap trace
+formula. The mass identification, action/mass trace identity, and
+Proposition 17.2 remain unfinished.
+
+## Previous milestone: analytic extension of the quotient at infinity
 
 `SourceFloquetExteriorCircleBound.lean` combines the existing canonical-root
 and discriminant-derivative asymptotics to bound the actual logarithmic
