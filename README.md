@@ -8235,3 +8235,40 @@ at `p=3`, and the normalized integral in arbitrary compatible directions.
 The root-gradient application in this checkpoint is at real sources. A common
 complex neighborhood for this application and the uniform shifted-free
 remainder estimate remain next. G.7 as a whole and Lemma 16.1 remain unfinished.
+
+## Appendix G.7: Dirichlet gradients on a common complex domain
+
+The actual canonical Dirichlet gradient formula now holds on one open
+complex neighborhood of the entire real source locus, for every finite
+source exponent `p≥2`. At each H¹ source in this domain, every signed root
+has nonzero bilinear normalization and both actual source cotangent
+coefficients equal the normalized physical Fourier coefficients at reversed
+frequency. No real-type, simple-root, gradient, or normalization premise is
+required at the evaluation point; membership in the constructed domain is
+the only neighborhood condition.
+
+`SourceBoundarySimpleNeighborhood.lean` proves a stronger boundary fact for
+every finite `p>1`: one open domain containing all real sources supports
+analytic and simple canonical Dirichlet and Neumann roots at every index.
+Uniform tail labeling and original algebraic multiplicity one handle distant
+indices. Joint continuity of the moving characteristic derivative preserves
+simplicity in the finite central block. Intersecting these neighborhoods
+and taking their union gives a common domain, including collapsed periodic
+gaps without any open-gap assumption.
+
+`SourceBoundarySimpleDifferential.lean` differentiates the genuine canonical
+zero equation at complex simple sources. `SourceDirichletComplexGradient.lean`
+transfers the fixed-parameter source characteristic derivative to its physical
+representative across exponent inclusion. It combines the actual root
+cotangent with the proved squared-eigenfunction quotient, giving the exact
+normalized integral in every compatible continuous source direction.
+`SourceDirichletComplexFourierGradient.lean` constructs the H¹ representative
+and tests both unit Fourier directions, retaining the reversed-frequency
+convention in the actual source cotangent.
+
+Public checks cover the common simple analytic domain for both boundary
+conditions, the actual complex-root characteristic quotient, and both H¹
+Dirichlet gradient coefficients on the common `p=3` neighborhood. The
+uniform shifted-free remainder estimate is still needed for G.7's Dirichlet
+summability assertion. G.7 as a whole and Lemma 16.1 remain unfinished;
+no infinite-exponent assertion is added.

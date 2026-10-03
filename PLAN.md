@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: canonical source Dirichlet gradients
+## Latest progress: Dirichlet gradients on a common complex domain
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -39,9 +39,15 @@ restriction and density. Both actual root-cotangent Fourier components are
 identified at reversed frequency for every finite source exponent `p≥2`.
 No simplicity or candidate-gradient premise is added at these real sources.
 
-Next extend this root-gradient application to a common complex neighborhood
-and prove the uniform shifted-free remainder estimate, then apply the gradient
-estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
+One common open complex neighborhood now supports this formula at every
+index for finite `p≥2`. Both ordinary boundary sequences are analytic and
+simple on a common domain for every finite `p>1`, by uniform tail counts and
+continuity in the finite central block. The actual H¹ Dirichlet cotangent
+has both normalized physical Fourier coefficients throughout the constructed
+domain; reality, simplicity, and normalization are not additional premises.
+
+Next prove the uniform shifted-free Dirichlet remainder estimate, then apply
+the gradient estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
 exported in actual source operator norm; coefficient-form applications should preserve the
 proved reversed-frequency convention.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of

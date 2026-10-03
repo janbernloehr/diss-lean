@@ -1967,3 +1967,8 @@ import NLS.ZakharovShabat.ClassicalDirichletRootGradient
 import NLS.ZakharovShabat.ContinuousSourceBoundaryRealization
 import NLS.ZakharovShabat.ContinuousSourceBoundaryGradient
 import NLS.ZakharovShabat.SourceDirichletNormalizedGradient
+
+import NLS.ZakharovShabat.SourceBoundarySimpleNeighborhood
+import NLS.ZakharovShabat.SourceBoundarySimpleDifferential
+import NLS.ZakharovShabat.SourceDirichletComplexGradient
+import NLS.ZakharovShabat.SourceDirichletComplexFourierGradient

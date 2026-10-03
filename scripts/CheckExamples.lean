@@ -23445,3 +23445,45 @@ example (φ h : CoeffPair 2) (hreal : IsRealType (CoeffPair.toMax 2 φ)) (Φ H :
   fderiv_canonicalDirichletRoot_eq_normalized_integral φ h hreal Φ H hΦ hH n
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set MeasureTheory NLS.LinearVolterra NLS.Fourier
+
+-- One domain works for both boundary conditions and every signed index.
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ φ ∈ W, ∀ b : BoundaryCondition, ∀ n : ℤ,
+      AnalyticAt ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n) φ ∧
+      deriv (periodOneBoundaryCharacteristic (by norm_num) (by norm_num) b φ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b φ n) ≠ 0 :=
+  exists_sourceBoundaryRoots_simple_common_domain (by norm_num) (by norm_num)
+
+-- The actual characteristic quotient needs no real-type hypothesis at a complex simple root.
+example (φ : CoeffPair 3) (n : ℤ)
+    (hμ : DifferentiableAt ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n) φ)
+    (hs : deriv (periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ)
+      (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n) ≠ 0) :
+    fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n) φ =
+      -(deriv (periodOneBoundaryCharacteristic (by norm_num) (by norm_num) .dirichlet φ)
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n))⁻¹ •
+      sourceBoundaryCharacteristicCotangent (by norm_num) (by norm_num) .dirichlet
+        (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n) φ :=
+  fderiv_canonicalPeriodOneBoundaryRoot_eq_cotangent_of_simple (by norm_num) (by norm_num) .dirichlet φ n hμ hs
+
+-- Nearby complex H¹ sources have both actual normalized Fourier coefficients;
+-- analyticity, simplicity, normalization, and the common domain are proved.
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ W →
+    ∀ (a : Domain 2), periodOnePotential φ = domainInclusion a → ∀ n : ℤ,
+      let z := canonicalPeriodOneBoundaryRoots (p := 3) (by norm_num) (by norm_num) .dirichlet
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ) n
+      let L := fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)
+      classicalDirichletNormalization (classicalSobolevPotential a) z ≠ 0 ∧
+        ∀ k : ℤ,
+          L (CoeffPair.inlCLM (lp.single 3 k 1)) =
+            unitFourierCoefficient (fun t => (classicalDirichletNormalizedGradient (classicalSobolevPotential a) z t).1) (-k) ∧
+          L (CoeffPair.inrCLM (lp.single 3 k 1)) =
+            unitFourierCoefficient (fun t => (classicalDirichletNormalizedGradient (classicalSobolevPotential a) z t).2) (-k) :=
+  exists_global_source_dirichlet_sobolev_normalized_gradient (by norm_num) (by norm_num) (by norm_num)
+
+end NLS.ZakharovShabat
