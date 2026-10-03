@@ -9397,3 +9397,45 @@ branch on the common action circles, then pass to the quotient and action
 integral. Convergence of the discriminant square alone does not choose a
 square-root sign. `SourceHilbertActionsContinuousOnBoundedCoefficients`,
 unconditional properness, and Proposition 17.2 remain unfinished.
+
+## Bounded action continuity and Hilbert properness
+
+`SourceActionSegmentCircle.lean` strengthens the common action contour:
+one constructed circle stays outside every periodic cut along every point
+of every eventual real interpolation segment. The construction works at
+all finite exponents above one, including collapsed selected gaps.
+
+`SquareRootPathStability.lean` proves a quantitative branch-preservation
+lemma. A continuous root path anchored at its initial value cannot cross
+the separating circle while its square stays close. Applied to the actual
+jointly analytic canonical root and the proved discriminant limits,
+`SourceCanonicalRootCoefficientContinuity.lean` gives uniform convergence
+of the correctly normalized root on compact sets valid along the segments.
+No replacement by a principal square root or unproved sign choice occurs.
+
+`UniformInverseCompact.lean` supplies uniform inversion near compact nonzero
+limits. `SourceActionCoefficientContinuity.lean` combines the canonical-root
+and spectral-derivative limits to prove uniform convergence of the actual
+critical-root quotient, then convergence of its weighted circle integral.
+Every original indexed real Hilbert action converges under bounded
+coefficient limits. The public theorem constructs its contour, requires
+only first-component coefficient limits, permits countably generated
+filters, and includes open and collapsed gaps.
+
+`SourceHilbertProperness.lean` discharges
+`SourceHilbertActionsContinuousOnBoundedCoefficients`. The action-mass
+trace identity and coefficient compactness now prove properness of the
+actual Hilbert action sequence map and the real Hilbert Birkhoff map,
+without a separate spectral-continuity premise. An existence theorem
+constructs a normalized family with both proper maps.
+
+Public checks retain a negative root branch, construct segment-wide circles
+at exponent 3, take action limits at collapsed gaps, verify the discharged
+continuity obligation, and obtain compact preimages of arbitrary compact
+Birkhoff target sets in the original source norm.
+
+Hilbert properness and bounded-coefficient action continuity are complete.
+Global injectivity and surjectivity, the global inverse, and the remaining
+claims of Proposition 17.2 and subsequent chapters are not yet complete.
+Next combine Hilbert properness with the proved local inverse and zero fiber,
+then use exponent compatibility for the global Birkhoff conclusions.

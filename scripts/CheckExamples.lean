@@ -25280,3 +25280,58 @@ example : (∀ k, 1 ≤ ‖reflectedModes k‖) ∧
     exact tendstoLocallyUniformly_sourceDiscriminant_deriv_of_bounded_coefficientwise reflectedModes 0 hb ht₁ ht₂
 
 end NLS.DiscriminantCoefficientChecks
+
+namespace NLS.HilbertPropernessChecks
+open NLS.ZakharovShabat Set Filter Topology Metric Complex
+
+-- The path estimate retains a negative initial root, rather than selecting
+-- the principal square root of the limiting square.
+example (q : ℝ → ℂ) (ε : ℝ) (hε : 0 < ε)
+    (hq : ContinuousOn q (Icc (0 : ℝ) 1)) (hzero : q 0 = -1)
+    (hsq : ∀ t ∈ Icc (0 : ℝ) 1, ‖q t^2-1‖ < min 1 ε) :
+    ‖q 1+1‖ < ε := by
+  have h := NLS.ComplexAnalysis.norm_sub_lt_of_square_path q (-1) 1 ε
+    (by norm_num) hε (by simp) hq hzero (by simpa using hsq)
+  simpa using h
+
+-- The circle is constructed for all interpolation parameters at exponent 3.
+example (φ : ℕ → CoeffPair 3) (ψ : CoeffPair 3) (hb : Bornology.IsBounded (range φ))
+    (hφ : ∀ k, IsRealType (CoeffPair.toMax 3 (φ k))) (hψ : IsRealType (CoeffPair.toMax 3 ψ))
+    (ht : ∀ n : ℤ, Tendsto (fun k => (φ k).fst n) atTop (𝓝 (ψ.fst n))) (n : ℤ) :
+    ∃ c : ℂ, ∃ R : ℝ, 0 < R ∧
+      ∀ᶠ k in atTop, ∀ t ∈ Icc (0 : ℝ) 1, sphere c R ⊆
+        sourceCanonicalRootDomain (by simp) (by norm_num) (ψ+(t : ℂ) • (φ k-ψ)) := by
+  obtain ⟨c,R,hR,_,_,he⟩ := exists_source_actionCircle_along_segments_of_bounded_coefficientwise
+    (by simp) (by norm_num) φ ψ hb hφ hψ ht n
+  exact ⟨c,R,hR,he.mono fun _ hk => hk.1⟩
+
+-- A collapsed limit gap has action zero, even with no norm convergence,
+-- no eventually closed approximating gaps, and no supplied action circle.
+example (φ : ℕ → CoeffPair 2) (ψ : CoeffPair 2) (hb : Bornology.IsBounded (range φ))
+    (hφ : ∀ k, IsRealType (CoeffPair.toMax 2 (φ k))) (hψ : IsRealType (CoeffPair.toMax 2 ψ))
+    (ht : ∀ n : ℤ, Tendsto (fun k => (φ k).fst n) atTop (𝓝 (ψ.fst n)))
+    (n : ℤ) (hgap : sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ n = 0) :
+    Tendsto (fun k => sourceRealAction (by simp) (by norm_num) (φ k) (hφ k) n) atTop (𝓝 0) := by
+  have hz := (sourceRealAction_nonneg_and_eq_zero_iff_gap_zero (by simp) (by norm_num) ψ hψ n).2.2.mpr hgap
+  simpa only [hz] using tendsto_sourceRealAction_of_bounded_coefficientwise φ ψ hb hφ hψ ht n
+
+-- The named continuity obligation is now proved without additional premises.
+example : SourceHilbertActionsContinuousOnBoundedCoefficients :=
+  sourceHilbertActionsContinuousOnBoundedCoefficients
+
+-- Properness gives compactness in the full source norm for arbitrary
+-- compact Birkhoff target sets, with no spectral-continuity hypothesis.
+example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (K : Set (RealCoeff 2 × RealCoeff 2)) (hK : IsCompact K) :
+    IsCompact ((sourceRealBirkhoffMap (by simp) (by norm_num) s) ⁻¹' K) :=
+  D.hilbert_real_map_proper.isCompact_preimage hK
+
+-- The normalized family itself is constructed by the existing spectral theory.
+example : ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+    IsProperMap (sourceHilbertRealActionSequence s) ∧
+    IsProperMap (sourceRealBirkhoffMap (by simp) (by norm_num) s) := by
+  obtain ⟨_,_,_,s,_,hI,hB⟩ := exists_sourceBirkhoffFamily_hilbert_proper
+  exact ⟨s,hI,hB⟩
+
+end NLS.HilbertPropernessChecks

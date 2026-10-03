@@ -2112,3 +2112,10 @@ import NLS.ZakharovShabat.SourceDiscriminantCotangentDecay
 import NLS.SequenceSpaces.UniformDualCoefficientLimits
 import NLS.ZakharovShabat.SourceDiscriminantCoefficientContinuity
 import NLS.ZakharovShabat.SourceDiscriminantDerivativeCoefficientContinuity
+
+import NLS.ComplexAnalysis.SquareRootPathStability
+import NLS.ComplexAnalysis.UniformInverseCompact
+import NLS.ZakharovShabat.SourceActionSegmentCircle
+import NLS.ZakharovShabat.SourceCanonicalRootCoefficientContinuity
+import NLS.ZakharovShabat.SourceActionCoefficientContinuity
+import NLS.ZakharovShabat.SourceHilbertProperness
