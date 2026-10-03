@@ -8346,3 +8346,41 @@ Fourier error bounds with the common-domain cotangent identification to
 export summability for the actual Dirichlet derivative minus its free
 half-wave functional. G.7 as a whole and Lemma 16.1 remain unfinished;
 no infinite-source-exponent assertion is added.
+
+## Appendix G.7: actual Dirichlet gradient summability on a common domain
+
+G.7's Dirichlet derivative error now has a proved conjugate Fourier
+coefficient pair whose norms form an outer ℓp sequence, for every finite
+source exponent `p≥2`. This is the genuine canonical-root derivative minus
+the explicit free functional `h ↦ (h₁(-n)+h₂(n))/2`, on one open complex
+neighborhood of the entire real source locus. Both component identities
+retain the reversed Fourier index. The finite central block is included.
+
+`SourceFreeDirichletCotangent.lean` extends the exact zero-source derivative
+from the Hilbert space to every finite source exponent at least two by
+exponent compatibility and finite-source density. It defines the free
+functional as a continuous linear map with the two signed half-wave terms.
+`SourceDirichletGradientErrorCotangent.lean` subtracts the actual zero-source
+Fourier identities on the common simple-root domain, identifies the error
+coefficients, and bounds the genuine source operator by its two conjugate
+physical Fourier norms.
+
+`SourceDirichletSobolevSummability.lean` combines these identities with the
+proved Fourier summability estimates. It constructs the physical Fourier
+pair of the actual derivative error, proves its outer sequence membership
+in the correct component-sum norm, and specializes to the conjugate exponent.
+It also proves source operator summability and the real H¹ corollary.
+No root-simplicity, normalization, candidate-gradient, or majorant premise
+is supplied by the caller.
+
+`SourceSpectralGradientSobolevSummability.lean` puts both the actual midpoint
+operator estimate and the Dirichlet operator error estimate on one shared
+complex domain. Public checks cover the free half-factors and index signs,
+the actual Fourier pair at inner exponent 3/2 and outer exponent three,
+the shared domain, and the real H¹ case.
+
+The next step is to export the midpoint estimate in the literal conjugate
+Fourier pair norm as well, then apply the gradient estimates in Lemma 16.1.
+The midpoint result is currently exported in source operator norm. The
+infinite-source-exponent case, the sharper G.1 integral bound, and later
+unfinished results remain outside this milestone.

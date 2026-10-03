@@ -40,4 +40,15 @@ theorem intervalFourierCoefficient_const_mul (T : ℝ) (c : ℂ) (f : ℝ → �
   rw [intervalIntegral.integral_const_mul]
   ring
 
+/-- Continuous interval data have subtractive actual Fourier coefficients. -/
+theorem intervalFourierCoefficient_sub (T : ℝ) (f g : ℝ → ℂ)
+    (hf : Continuous f) (hg : Continuous g) (n : ℤ) :
+    intervalFourierCoefficient T (fun t => f t-g t) n =
+      intervalFourierCoefficient T f n-intervalFourierCoefficient T g n := by
+  have he : (fun t => f t-g t) = (fun t => f t+(-1)*g t) := by
+    funext t; ring
+  rw [he,intervalFourierCoefficient_add T f _ hf (hg.const_mul (-1)),
+    intervalFourierCoefficient_const_mul]
+  ring
+
 end NLS.Fourier

@@ -23599,3 +23599,60 @@ example (ψ₀ : CoeffPair 3) (M : ℝ) (hM : 0 ≤ M) :
     (p := 3) (by norm_num) (by norm_num) (by norm_num) 2 (by norm_num) 2 (by norm_num) ψ₀ M hM
 
 end NLS.ZakharovShabat
+
+namespace NLS.ZakharovShabat
+open Set
+
+-- The actual free derivative has the one-half factor and opposite component indices at p=3.
+example (n : ℤ) (h : CoeffPair 3) :
+    (fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots
+      (by norm_num) (by norm_num) .dirichlet ψ n) 0) h = (h.fst (-n)+h.snd n)/2 := by
+  rw [fderiv_canonicalDirichletRoot_zero_eq_free (by norm_num) (by norm_num) (by norm_num),
+    sourceFreeDirichletCotangent_apply]
+  ring
+
+-- The signed first and second unit modes each give exactly one half.
+example : sourceFreeDirichletCotangent 3 2 (CoeffPair.inlCLM (lp.single 3 (-2) 1)) = 1/2 ∧
+    sourceFreeDirichletCotangent 3 2 (CoeffPair.inrCLM (lp.single 3 2 1)) = 1/2 ∧
+    sourceFreeDirichletCotangent 3 2 (CoeffPair.inlCLM (lp.single 3 2 1)) = 0 := by
+  norm_num [sourceFreeDirichletCotangent_apply,lp.single_apply,Pi.single_apply]
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- The actual derivative error has a physical Fourier pair in inner ℓ^(3/2),
+-- whose pair norms form an outer ℓ³ sequence. Both reversed indices are explicit.
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ W →
+    ∀ (a : Domain 2), periodOnePotential φ = domainInclusion a →
+    ∃ G : ℤ → CoeffPair (ENNReal.ofReal (3/2)), Memℓp G 3 ∧ ∀ n k : ℤ,
+      let μ := fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n
+      let L := fderiv ℂ μ (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)-sourceFreeDirichletCotangent 3 n
+      L (CoeffPair.inlCLM (lp.single 3 k 1)) = (G n).fst (-k) ∧
+      L (CoeffPair.inrCLM (lp.single 3 k 1)) = (G n).snd (-k) := by
+  have h := exists_global_source_dirichlet_gradient_error_memlp
+    (p := 3) (by norm_num) (by norm_num) (by norm_num) 3 (by norm_num)
+    (ENNReal.ofReal (3/2)) (by norm_num)
+  simpa only [show ENNReal.ofReal 3 = 3 by norm_num] using h
+
+-- Both actual derivative estimates hold on one common complex neighborhood,
+-- including the finite central block and collapsed periodic gaps.
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ (φ : CoeffPair 2), CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ ∈ W →
+    ∀ (a : Domain 2), periodOnePotential φ = domainInclusion a →
+    Memℓp (fun n : ℤ => fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodicMidpoint (by norm_num) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)) 3 ∧
+    Memℓp (fun n : ℤ =>
+      fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)-sourceFreeDirichletCotangent 3 n) 3 :=
+  exists_global_source_spectral_gradients_sobolev_memlp (by norm_num) (by norm_num) (by norm_num)
+
+-- Real H¹ sources need no extra neighborhood or gradient assumptions.
+example (φ : CoeffPair 2) (hφ : φ ∈ realTypeSourceLocus 2) (a : Domain 2)
+    (ha : periodOnePotential φ = domainInclusion a) :
+    Memℓp (fun n : ℤ =>
+      fderiv ℂ (fun ψ : CoeffPair 3 => canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet ψ n)
+        (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) φ)-sourceFreeDirichletCotangent 3 n) 3 :=
+  memlp_real_source_dirichlet_fderiv_sobolev (by norm_num) (by norm_num) (by norm_num) φ hφ a ha
+
+end NLS.ZakharovShabat

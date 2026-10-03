@@ -1,6 +1,6 @@
 # Implementation plan
 
-## Latest progress: Dirichlet gradient time bounds and Fourier summability
+## Latest progress: actual Dirichlet gradient summability
 
 Theorem 15.2, Lemma 15.3, the free Fourier Jacobian identity, and finite-gap
 regularity in all nonnegative Sobolev weights (including H¹) are complete.
@@ -61,12 +61,18 @@ for outer exponent `s>1` and inner exponent `q>1+1/s`. At each fixed source,
 the full sequence, including the finite head, is summable; in particular
 the conjugate Fourier norms form an outer ℓp sequence for finite `p≥2`.
 
-Next combine these physical Fourier error estimates with the common-domain
-cotangent identification to export summability of the actual Dirichlet
-root derivative minus its free half-wave functional. Then apply the
-gradient estimates to finite-gap sources in Lemma 16.1. The midpoint result is currently
-exported in actual source operator norm; coefficient-form applications should preserve the
-proved reversed-frequency convention.
+The actual Dirichlet root derivative minus the explicit free functional
+`h ↦ (h₁(-n)+h₂(n))/2` now has a physical Fourier coefficient pair with outer
+ℓp summability in the conjugate component-sum norm, for every finite `p≥2`.
+Both component identities are proved on a common complex neighborhood of
+the entire real source locus. Exponent compatibility and density identify
+the free functional at every such source exponent. The actual source
+operator error is summable too, including every signed central index.
+
+One shared complex domain now supports both the midpoint and Dirichlet
+source operator estimates. Next export the midpoint estimate in the literal
+conjugate Fourier pair norm, preserving the reversed-frequency convention,
+then apply these gradient estimates to finite-gap sources in Lemma 16.1.
 The sharper G.1 integral bound, G.7, Lemma 16.1, remaining assertions of
 Theorem 14.1, and later chapters remain unfinished.
 
