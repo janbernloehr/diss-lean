@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: Hilbert action-reduction curves
+## Current milestone: actual angle Hamiltonian flow and uniqueness
+
+`SourceAngularThetaRectangularDifferential.lean` identifies the actual
+branch-independent angle cotangent with `(-y_k dx_k + x_k dy_k)/(2 I_k)`.
+The identity holds for every finite exponent above one and transfers
+between independently constructed normalized families. Canonical Poisson
+relations then give both rectangular velocities along the actual angle
+Hamiltonian, including unselected closed gaps.
+
+`SourceAngularThetaHamiltonian.lean` defines that Hamiltonian vector with
+the original source Fourier reflection and Poisson signs. It proves
+analyticity on the selected open-gap domain and preservation of the real
+source form for exponents at least two.
+
+`SourceHilbertAngleHamiltonian.lean` proves that the complex Birkhoff
+Jacobian sends this vector to the explicit radial vector. Jacobian
+injectivity identifies it with the previously constructed inverse-Jacobian
+vector. The lifted action-reduction curve therefore solves the original
+angle-Hamiltonian equation for all times before collapse; its selected
+gap remains open throughout that interval.
+
+`AutonomousODEUniqueness.lean` propagates local ODE uniqueness across a
+preconnected open time domain. Smoothness only near the reference
+trajectory is needed, without a global Lipschitz constant.
+`SourceHilbertAngleFlowUnique.lean` applies this to prove uniqueness of
+the actual Hamiltonian solution on the whole interval `(-∞, I_k(φ₀))`.
+It packages the initial value, continuous differentiability, differential
+equation, uniqueness, and vanishing-action limit for every real source
+whose selected gap is open. Thus Lemma 17.4's initial-value statement
+and part (i) are proved.
+
+Public checks cover uniqueness for the nonglobally-Lipschitz scalar field
+`x²`, the zero velocity of every nonselected mode at exponent 3, and the
+construction of a normalized family with the full Hilbert existence,
+uniqueness, and action-limit conclusions without supplied flow premises.
+
+Lemma 17.4(ii) remains: the source displacement must be continuous in
+every finite exponent above one. Next obtain the stronger-exponent
+regularity of the angle Hamiltonian from its compatible cotangents and
+integrate the vector field in that exponent. Proposition 17.3 and
+surjectivity outside the Hilbert case are not yet complete.
+
+## Previous milestone: Hilbert action-reduction curves
 
 `RealActionReduction.lean` constructs the explicit one-mode radial curve
 in every real sequence space. For positive initial action `a`, the selected

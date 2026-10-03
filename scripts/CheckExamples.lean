@@ -25452,3 +25452,60 @@ example {W₀ B W : Set (CoeffPair 2)} {s : (k : ℤ) → CoeffPair 2 → Delete
   D.hasDerivAt_hilbertActionReduction φ k ha (by linarith)
 
 end NLS.ActionReductionChecks
+
+namespace NLS.ThetaFlowChecks
+open NLS.ZakharovShabat NLS.Poisson Set Filter Topology
+
+-- Local smoothness is enough: x² is not globally Lipschitz on ℝ.
+example (g : ℝ → ℝ) (hzero : g 0 = 0)
+    (hg : ∀ t ∈ Ioo (-2 : ℝ) 3, HasDerivAt g ((g t)^2) t) :
+    EqOn g (fun _ => 0) (Ioo (-2 : ℝ) 3) := by
+  apply EqOn.symm
+  apply NLS.FunctionalAnalysis.eqOn_of_autonomous_hasDerivAt isOpen_Ioo isPreconnected_Ioo
+    (v := fun x : ℝ => x^2) (t₀ := 0)
+  · intro t _
+    exact contDiffAt_id.pow 2
+  · intro t _
+    simpa using hasDerivAt_const t (0 : ℝ)
+  · exact hg
+  · norm_num
+  · exact hzero.symm
+
+-- At exponent 3, every nonselected rectangular coordinate has zero
+-- velocity, without needing its gap to be open.
+example {W₀ B W V₀ C V : Set (CoeffPair 3)}
+    {s u : (j : ℤ) → CoeffPair 3 → DeletedCoeff 3 j}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (E : SourceAngularThetaCommonDomainData (by simp) (by norm_num) V₀ C V u)
+    (k n : ℤ) (hn : n ≠ k) (φ : realTypeSourceSubmodule 3)
+    (hk : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) k ≠ 0) :
+    let v := sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (by norm_num) k u φ.val
+    (fderiv ℂ (fun ψ => (sourceBirkhoffMap (by simp) (by norm_num) s ψ).1 n) φ.val) v = 0 ∧
+    (fderiv ℂ (fun ψ => (sourceBirkhoffMap (by simp) (by norm_num) s ψ).2 n) φ.val) v = 0 := by
+  simpa only [sourceAngularThetaHamiltonianVector,hn,ite_false,mul_zero] using
+    D.map_coordinates_thetaHamiltonian E (by norm_num) k n φ hk
+
+-- The normalized angle family and the full Hilbert solution are constructed;
+-- no flow, derivative, or injectivity premise is supplied by the caller.
+example : ∃ u : (j : ℤ) → CoeffPair 2 → DeletedCoeff 2 j,
+    ∀ (φ : realTypeSourceSubmodule 2) (k : ℤ),
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) k ≠ 0 →
+      let a := (sourceRealAction (by simp) (by norm_num) φ.val φ.property k).re
+      ∃ f : ℝ → realTypeSourceSubmodule 2,
+        f 0 = φ ∧ ContDiffOn ℝ 1 f (Iio a) ∧
+        (∀ t < a, HasDerivAt (fun t => (f t).val)
+          (sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (le_refl 2) k u (f t).val) t) ∧
+        (∀ g : ℝ → CoeffPair 2, g 0 = φ.val →
+          (∀ t < a, HasDerivAt g
+            (sourceAngularThetaHamiltonianVector (by simp) (by norm_num) (le_refl 2) k u (g t)) t) →
+          EqOn g (fun t => (f t).val) (Iio a)) ∧
+        Tendsto (fun t => (sourceRealAction (by simp) (by norm_num) (f t).val (f t).property k).re)
+          (𝓝[<] a) (𝓝 0) := by
+  obtain ⟨W₀,B,W,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic (p := 2) (by simp) (by norm_num)
+  obtain ⟨V₀,C,V,_,_,_,_,_,_,u,E⟩ :=
+    exists_sourceAngularTheta_theorem13_1_iv (p := 2) (by simp) (by norm_num)
+  exact ⟨u,fun φ k hk => D.hilbert_angleFlow_exists_unique_and_action_limit E k φ hk⟩
+
+end NLS.ThetaFlowChecks
