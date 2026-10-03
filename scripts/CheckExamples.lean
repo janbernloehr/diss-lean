@@ -26331,3 +26331,80 @@ example (φ : realTypeSourceSubmodule 3) :
   ring
 
 end NLS.FilledAbelianChecks
+
+
+noncomputable section
+namespace NLS.RealGapArcoshChecks
+open Set Complex MeasureTheory ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- Odd negative indices use minus the discriminant inside arcosh,
+-- while the upper quotient still gives the positive profile.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (x : ℝ)
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-3)).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-3)).re) :
+    (∫ t in (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) (-3)).re..x,
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) t /
+        realGapCanonicalRootUpperValue (by simp) (by norm_num) φ.val (-3) t) =
+      (Real.arcosh (-(canonicalDiscriminant (by simp) (periodOnePotential φ.val) x).re/2) : ℂ) := by
+  simpa only [sourceRealGapArcoshProfile,realGapHalfDiscriminant,
+    show (-3 : ℤ)%2 = 1 by norm_num,show (1 : ℤ) ≠ 0 by norm_num,if_false] using
+    sourceRealGap_upperIntegral_eq_arcosh (by simp) (by norm_num) φ.val φ.property (-3) x hx
+
+-- For arbitrary signed indices the lower partial integral is strictly
+-- negative at every interior gap point.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) (x : ℝ)
+    (hx : x ∈ Ioo
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re) :
+    (∫ t in (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n).re..x,
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) t /
+        sourceCanonicalRootGapLowerValue (by simp) (by norm_num) φ.val n
+          (realGapInverseCoordinate (by simp) (by norm_num) φ.val n t)).re < 0 := by
+  rw [sourceRealGap_lowerIntegral_eq_neg_arcosh (by simp) (by norm_num) φ.val φ.property n x
+    ⟨hx.1.le,hx.2.le⟩,Complex.neg_re,Complex.ofReal_re]
+  exact neg_neg_of_pos ((sourceRealGapArcoshProfile_spec (by simp) (by norm_num) φ.val φ.property n).2.2.2 x hx)
+
+-- A numerical deleted-product bound K=4 gives an actual norm bound
+-- by one full gap length, uniformly over the chosen closed gap point.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) (x : ℝ)
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re)
+    (hbound : (canonicalDeletedPeriodicProduct (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n x).re ≤ 4) :
+    ‖(∫ t in (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n).re..x,
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) t /
+        realGapCanonicalRootUpperValue (by simp) (by norm_num) φ.val n t)‖ ≤
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re -
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re := by
+  rw [sourceRealGap_upperIntegral_eq_arcosh (by simp) (by norm_num) φ.val φ.property n x hx,
+    Complex.norm_real,Real.norm_eq_abs,
+    abs_of_nonneg (sourceRealGapArcoshProfile_le_sqrt (by simp) (by norm_num) φ.val φ.property n x hx).1]
+  have h := sourceRealGapArcoshProfile_le_halfGap_mul_sqrt (by simp) (by norm_num) φ.val φ.property n x 4
+    (by norm_num) hx hbound
+  have hs : Real.sqrt 4 = 2 := by
+    convert Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 2) using 1
+    norm_num
+  simpa only [hs,div_mul_cancel₀ _ (by norm_num : (2 : ℝ) ≠ 0)] using h
+
+-- Both endpoint values are zero without an open-gap assumption; this
+-- also supplies the collapsed-gap case excluded by the old zero-integral API.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    (∫ t in (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n).re..
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re,
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential φ.val)) t /
+        realGapCanonicalRootUpperValue (by simp) (by norm_num) φ.val n t) = 0 := by
+  have hab := (realGapHalfDiscriminant_arcosh_gap_data (by simp) (by norm_num) (periodOnePotential φ.val)
+    (periodOnePotential_mem φ.val) (isRealType_periodOnePotential φ.val φ.property) n).1
+  rw [sourceRealGap_upperIntegral_eq_arcosh (by simp) (by norm_num) φ.val φ.property n _ ⟨hab,le_rfl⟩,
+    (sourceRealGapArcoshProfile_spec (by simp) (by norm_num) φ.val φ.property n).2.2.1,ofReal_zero]
+
+end NLS.RealGapArcoshChecks

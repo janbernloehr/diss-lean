@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Latest progress: analytic extension through collapsed gaps
+## Latest progress: exact partial gap-side arcosh integrals
+
+`SourceRealGapArcoshPrimitive.lean` defines the real arcosh profile
+`arcosh((-1)^n Delta(x)/2)` on each canonical gap. It proves that the
+actual upper canonical-root quotient is its derivative, with the
+parity signs canceled exactly for every signed index. The profile is
+continuous on the closed gap, zero at both endpoints, and strictly
+positive in the interior.
+
+Both actual side quotients are integrable across the endpoints.
+Integrating from the left endpoint to any point of the closed gap gives
+exactly the arcosh profile on the upper side and its negative on the
+lower side. No integrability or open-gap hypothesis is required from
+the caller; collapsed gaps are included.
+
+`SourceRealGapArcoshBound.lean` proves that the profile is nonnegative
+and bounded by `sqrt(g^2-1)`, where `g` is the signed half-discriminant.
+The exact deleted-product factorization gives the quantitative bound
+`profile(x) <= (gap length)/2 * sqrt(K)` whenever the real deleted
+periodic product at `x` is bounded by `K >= 0`. Compactness supplies
+one such finite `K` on every fixed closed gap.
+
+Public checks cover an odd negative index at exponent 3/2, the strict
+negative sign of the lower partial integral, a numerical deleted-product
+bound yielding a full-gap-length norm bound, and the zero full-gap
+integral without an open-gap assumption.
+
+This proves the exact real side integrals used in Lemma 19.1(v) and a
+quantitative ingredient for (iii). Identifying these side integrals
+with the half-plane boundary limits of `F_n` remains next. The bound
+proved here is for a fixed source and gap; local uniformity in the
+source and uniformity in the index remain to be established. The
+complex-source and joint-analyticity assertions, potential gradient,
+square continuation, subsequent frequency results, and the full
+dissertation remain unfinished.
+
+## Previous progress: analytic extension through collapsed gaps
 
 `SourceCollapsedGapNeighborhood.lean` proves that a collapsed gap is
 an isolated missing point of the canonical cut complement. Its whole

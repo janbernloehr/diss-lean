@@ -2190,3 +2190,6 @@ import NLS.ZakharovShabat.SourceAbelianGlobalProperties
 import NLS.ZakharovShabat.SourceCollapsedGapNeighborhood
 import NLS.ZakharovShabat.SourceAbelianPrimitive
 import NLS.ZakharovShabat.SourceAbelianPrimitiveProperties
+
+import NLS.ZakharovShabat.SourceRealGapArcoshPrimitive
+import NLS.ZakharovShabat.SourceRealGapArcoshBound
