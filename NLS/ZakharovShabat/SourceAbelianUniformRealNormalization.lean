@@ -12,7 +12,8 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat.SourceAbelianUniformDiscFamily
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p} {W : Set (CoeffPair p)}
 
-theorem exterior_nonempty (D : SourceAbelianUniformDiscFamily hp hp1 W) : D.exterior.Nonempty := by
+theorem exists_real_mem_exterior (D : SourceAbelianUniformDiscFamily hp hp1 W) :
+    ∃ z ∈ D.exterior, z.im = 0 := by
   let z : ℂ := D.center 0+(D.outer 0:ℂ)
   have hpos : 0 < D.outer 0 := (D.inner_pos 0).trans (D.inner_lt 0)
   have hdist : dist z (D.center 0) = D.outer 0 := by
@@ -20,7 +21,7 @@ theorem exterior_nonempty (D : SourceAbelianUniformDiscFamily hp hp1 W) : D.exte
   have hzcl : z ∈ closure (ball (D.center 0) (D.outer 0)) := by
     rw [closure_ball _ (ne_of_gt hpos)]
     exact mem_closedBall.mpr hdist.le
-  refine ⟨z,?_⟩
+  refine ⟨z,?_,by simp only [z,add_im,D.center_real,ofReal_im,add_zero]⟩
   intro hz
   obtain ⟨j,hj⟩ := mem_iUnion.mp hz
   by_cases he : j = 0
@@ -30,6 +31,10 @@ theorem exterior_nonempty (D : SourceAbelianUniformDiscFamily hp hp1 W) : D.exte
     exact (not_le_of_gt (D.inner_lt 0)) hle
   · exact Set.disjoint_left.mp ((D.disjoint 0 j (fun h => he h.symm)).closure_left isOpen_ball)
       hzcl (closedBall_subset_ball (D.inner_lt j) hj)
+
+theorem exterior_nonempty (D : SourceAbelianUniformDiscFamily hp hp1 W) : D.exterior.Nonempty := by
+  obtain ⟨z,hz,_⟩ := D.exists_real_mem_exterior
+  exact ⟨z,hz⟩
 
 /-- Agreement with the prescribed exterior fixes the real-source
 primitive on its whole filled spectral domain. -/

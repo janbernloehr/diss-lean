@@ -23,6 +23,8 @@ structure SourceAbelianUniformDiscFamily (hp : p ≠ ⊤) (hp1 : 1 < p) (W : Set
   center : ℤ → ℂ
   inner : ℤ → ℝ
   outer : ℤ → ℝ
+  center_real : ∀ j, (center j).im = 0
+  outer_bounded : ∃ B : ℝ, ∀ j, outer j ≤ B
   inner_pos : ∀ j, 0 < inner j
   inner_lt : ∀ j, inner j < outer j
   disjoint : ∀ i j, i ≠ j → Disjoint (ball (center i) (outer i)) (ball (center j) (outer j))
@@ -52,6 +54,15 @@ theorem exists_sourceAbelianUniformDiscFamily (hp : p ≠ ⊤) (hp1 : 1 < p)
     intro j hj
     simp only [C,T,sourceIsolatingCenter,sourceIsolatingRadius,if_neg (not_le.mpr hj)]
     exact ⟨trivial,le_rfl⟩
+  have hbounded : ∃ B : ℝ, ∀ j, T j ≤ B := by
+    obtain ⟨B,hB⟩ := ((Set.finite_Icc (-(N:ℤ)) (N:ℤ)).image T).bddAbove
+    refine ⟨max B (Real.pi/4),?_⟩
+    intro j
+    by_cases hj : j.natAbs ≤ N
+    · have hm : j ∈ Icc (-(N:ℤ)) (N:ℤ) := by constructor <;> omega
+      exact (hB ⟨j,hm,rfl⟩).trans (le_max_left _ _)
+    · simp only [T,sourceIsolatingRadius,if_neg hj]
+      exact le_max_right _ _
   refine ⟨{
     source := φ
     sourceRadius := δ
@@ -60,6 +71,8 @@ theorem exists_sourceAbelianUniformDiscFamily (hp : p ≠ ⊤) (hp1 : 1 < p)
     center := C
     inner := r
     outer := T
+    center_real := sourceIsolatingCenter_im_eq_zero hp hp1 φ.val N
+    outer_bounded := hbounded
     inner_pos := hr
     inner_lt := hrT
     disjoint := ?_

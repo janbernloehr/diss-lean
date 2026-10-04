@@ -27227,3 +27227,78 @@ example (W : Set (CoeffPair 3)) (D : SourceAbelianUniformDiscFamily (by simp) (b
   simpa only [mem_union,mem_iUnion,Set.mem_sdiff] using hz
 
 end NLS.AbelianUniformSpectralChecks
+
+
+noncomputable section
+namespace NLS.FullAbelianChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The same defined function is analytic on every full spectral slice
+-- and jointly analytic on a uniform exterior product, at exponent 3/2.
+example : ∃ W V : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    IsOpen V ∧ IsConnected V ∧ realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ V ∧
+    ∀ ψ ∈ V, ∃ D : SourceAbelianUniformDiscFamily (by simp) (by norm_num) W,
+      ψ ∈ ball D.source.val D.sourceRadius ∧
+      (∀ χ ∈ ball D.source.val D.sourceRadius, ∀ n : ℤ,
+        AnalyticOnNhd ℂ (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,χ))
+          (sourceOpenGapComplement (by simp) (by norm_num) χ)) ∧
+      (∀ n : ℤ, AnalyticOnNhd ℂ (sourceFullAbelianPrimitive (by simp) (by norm_num) W n)
+        (D.exterior ×ˢ ball D.source.val D.sourceRadius)) ∧
+      (∀ n : ℤ, ∀ t ∈ D.exterior ×ˢ ball D.source.val D.sourceRadius,
+        HasFDerivAt (sourceFullAbelianPrimitive (by simp) (by norm_num) W n)
+          ((sourceCanonicalRoot (by simp) (by norm_num) t.2 t.1)⁻¹ •
+            fderiv ℂ (fun u : ℂ × CoeffPair (ENNReal.ofReal (3/2)) =>
+              canonicalDiscriminant (by simp) (periodOnePotential u.2) u.1) t) t) := by
+  obtain ⟨W,V,_,hV,hconn,hreal,_,hglobal⟩ := exists_sourceFullAbelian_almostReal
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,V,hV,hconn,hreal,?_⟩
+  intro ψ hψ
+  obtain ⟨D,hψD,_,hspec,hjoint,hderiv⟩ := hglobal ψ hψ
+  exact ⟨D,hψD,hspec,hjoint,hderiv⟩
+
+-- Independence includes distinct ambient neighborhoods, arbitrary
+-- complex potentials and filled points; it is exact equality, not
+-- equality modulo a logarithmic period.
+example (W V : Set (CoeffPair 3)) (ψ : CoeffPair 3)
+    (D : SourceAbelianSpectralChart (by simp) (by norm_num) W ψ)
+    (E : SourceAbelianSpectralChart (by simp) (by norm_num) V ψ)
+    (z : ℂ) (hz : z ∈ sourceOpenGapComplement (by simp) (by norm_num) ψ) :
+    sourceFullAbelianPrimitive (by simp) (by norm_num) W (-3) (z,ψ) =
+      sourceFullAbelianPrimitive (by simp) (by norm_num) V 0 (z,ψ)-3*Complex.I*(Real.pi : ℂ) := by
+  rw [sourceFullAbelianPrimitive_independent_neighborhood D E (-3) z hz,
+    sourceFullAbelianPrimitive_index_shift E (-3) z hz]
+  push_cast
+  ring
+
+-- At zero the actual canonical function is entire, including all
+-- collapsed lattice gaps, with the exact free normalization.
+example : ∃ W : Set (CoeffPair 3), ∀ (n : ℤ) (z : ℂ),
+    AnalyticAt ℂ (fun w => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (w,0)) z ∧
+    sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,0) =
+      -Complex.I*z+Complex.I*(Real.pi : ℂ)*n := by
+  obtain ⟨W,V,_,_,_,hreal,_,hglobal⟩ := exists_sourceFullAbelian_almostReal
+    (p := 3) (by simp) (by norm_num)
+  have hzero : (0 : CoeffPair 3) ∈ realTypeSourceLocus 3 := by simp [realTypeSourceLocus]
+  obtain ⟨D,h0,hcharts,hspec,_,_⟩ := hglobal 0 (hreal hzero)
+  obtain ⟨E⟩ := hcharts 0 h0
+  refine ⟨W,?_⟩
+  intro n z
+  have hz : z ∈ sourceOpenGapComplement (p := 3) (by simp) (by norm_num) 0 := by
+    rw [sourceOpenGapComplement_zero]
+    exact mem_univ z
+  exact ⟨hspec 0 h0 n z hz,sourceFullAbelianPrimitive_zero E n z⟩
+
+-- Spectral differentiation on the interior uses that same canonical
+-- function, including points lying inside any assigned cut disc.
+example (W : Set (CoeffPair 3)) (ψ : CoeffPair 3)
+    (D : SourceAbelianSpectralChart (by simp) (by norm_num) W ψ)
+    (n : ℤ) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) ψ) :
+    deriv (fun w => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (w,ψ)) z =
+      deriv (canonicalDiscriminant (by simp) (periodOnePotential ψ)) z /
+        sourceCanonicalRoot (by simp) (by norm_num) ψ z :=
+  (sourceFullAbelianPrimitive_hasDerivAt D n z hz).deriv
+
+end NLS.FullAbelianChecks

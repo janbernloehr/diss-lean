@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: common-neighborhood full spectral continuation
+## Current milestone: one compatible full spectral primitive
+
+`SourceFullAbelianPrimitive.lean` now defines one spectral abelian
+primitive whose values are independent of the supporting source ball,
+selected spectral chart, and ambient root neighborhood. The equality
+holds on the whole complement of noncollapsed gaps, including every
+filled collapsed gap. The function retains the exact spectral
+derivative, all signed-index shifts, the actual real-source values,
+and the free formula at every spectral point.
+
+`RealCenteredDiscExterior.lean` proves path connectedness of the exterior
+of uniformly bounded discs with real centers and a real exterior point.
+`SourceAbelianComplexDomainConnected.lean` applies this geometry to the
+common disc family and proves connectedness of the full cut complement
+at complex potentials. Any two constructions have a nonempty open
+exterior intersection. The identity theorem identifies their primitives
+off the cuts; density and continuity identify their collapsed fillings.
+`SourceAbelianSpectralChart.lean` packages these compatible constructions.
+
+`SourceFullAbelianExterior.lean` proves that this same defined function
+agrees with the projected primitive on every supported exterior product.
+It is jointly analytic there, with full differential
+`canonicalRoot⁻¹ • d Delta`. One open connected neighborhood of the whole
+real-source locus supports both full spectral analyticity and uniform
+joint exterior regularity for this function.
+
+Public checks use exponent 3/2 to verify both forms of analyticity and
+the exact differential simultaneously. They also check independence
+between different ambient neighborhoods with a negative index shift,
+the canonical free formula including collapsed lattice gaps, and the
+spectral derivative throughout the cut complement.
+
+This closes the choice-compatibility gap left by the previous milestone
+and combines the spectral and exterior regularity toward Lemma 19.1(i).
+Joint regularity in the interior and agreement there with the earlier
+normalized Cauchy charts remain to be established for this full function.
+That agreement should propagate the exact complex endpoint constants
+uniformly. The estimates in (iii), later frequency results, and the full
+dissertation remain unfinished.
+
+## Previous milestone: common-neighborhood full spectral continuation
 
 `SourceAbelianAlmostRealSpectralContinuation.lean` now constructs an
 open connected neighborhood of the real-source locus covered by source
