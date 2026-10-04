@@ -2519,3 +2519,6 @@ import NLS.ZakharovShabat.SourceRealActionLifting
 import NLS.ZakharovShabat.SourceFrequencyRealActionBalls
 import NLS.ZakharovShabat.SourceFrequencyActionSpaceMaps
 import NLS.ZakharovShabat.SourceFrequencyActionSpaceCorrection
+
+import NLS.ZakharovShabat.SourceFrequencyActionExponentCompatibility
+import NLS.ZakharovShabat.SourceFrequencyActionExtensions

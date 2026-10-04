@@ -31262,3 +31262,72 @@ example :
 
 end
 end GlobalActionSpaceChecks
+
+
+namespace ActionExtensionCompatibilityChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+private theorem one_lt_five_fourths : (1 : ℝ≥0∞) < 5/4 := by
+  apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+  norm_num
+local instance : Fact (1 ≤ (5/4 : ℝ≥0∞)) := ⟨one_lt_five_fourths.le⟩
+local instance : (3 : ℝ≥0∞).HolderTriple 3 (3/2) := Coeff.holderTriple_half 3
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The fixed frequency has values in the genuine intersection of every
+-- finite target above one, throughout its complex l1 action domain.
+example : ∃ V : Set (Coeff 1), ∃ ωstar : Coeff 1 → ℤ → ℂ,
+    IsOpen V ∧
+    (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → RealCoeff.complexCLM 1 b ∈ V) ∧
+    ∀ b ∈ V, ∃ w : CoeffOnePlus, ∀ n, w.1 n = ωstar b n := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V,ωstar,hV,hpos,_,hfamily,_⟩ :=
+    exists_sourceFrequency_actionExtensions
+  refine ⟨V,ωstar,hV,hpos,?_⟩
+  intro b hb
+  have hmem (r : ℝ≥0∞) (hr1 : 1 < r) (hr : r ≠ ⊤) : Memℓp (ωstar b) r := by
+    let : Fact (1 ≤ r) := ⟨hr1.le⟩
+    obtain ⟨F,_,_,he⟩ := hfamily r hr hr1
+    have heq : (fun n => F b n) = ωstar b := funext (he b hb)
+    rw [← heq]
+    exact lp.memℓp (F b)
+  exact ⟨⟨ωstar b,hmem⟩,fun _ => rfl⟩
+
+-- Fractional half-exponent and integer half-exponent extensions agree on
+-- the full positive l1 cone. Each has its own analytic refined correction
+-- throughout its complex action domain, with the exact identity there.
+example :
+    ∃ V₃ : Set (Coeff (3/2)), ∃ V₆ : Set (Coeff 3),
+    ∃ F₃ : Coeff (3/2) → Coeff (3/2), ∃ H₃ : Coeff (3/2) → Coeff (5/4),
+    ∃ F₆ : Coeff 3 → Coeff 3, ∃ H₆ : Coeff 3 → Coeff 2,
+      IsOpen V₃ ∧ IsOpen V₆ ∧
+      (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) →
+        Coeff.exponentInclusion (Fact.out : (1 : ℝ≥0∞) ≤ 3/2) (RealCoeff.complexCLM 1 b) ∈ V₃ ∧
+        Coeff.exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 3) (RealCoeff.complexCLM 1 b) ∈ V₆) ∧
+      AnalyticOnNhd ℂ F₃ V₃ ∧ AnalyticOnNhd ℂ H₃ V₃ ∧
+      AnalyticOnNhd ℂ F₆ V₆ ∧ AnalyticOnNhd ℂ H₆ V₆ ∧
+      (∀ b ∈ V₃, ∀ n, H₃ b n = F₃ b n+2*b n) ∧
+      (∀ b ∈ V₆, ∀ n, H₆ b n = F₆ b n+2*b n) ∧
+      ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → ∀ n,
+        F₃ (Coeff.exponentInclusion (Fact.out : (1 : ℝ≥0∞) ≤ 3/2) (RealCoeff.complexCLM 1 b)) n =
+        F₆ (Coeff.exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 3) (RealCoeff.complexCLM 1 b)) n := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V,ωstar,_,_,_,_,hext⟩ := exists_sourceFrequency_actionExtensions
+  obtain ⟨V₃,hV₃,hpos₃,_,F₃,hF₃,_,hc₃,hcorr₃⟩ := hext 3 (3/2) (by simp) (by norm_num)
+  obtain ⟨V₆,hV₆,hpos₆,_,F₆,hF₆,_,hc₆,hcorr₆⟩ := hext 6 3 (by simp) (by norm_num)
+  obtain ⟨H₃,hH₃,_,hid₃⟩ := hcorr₃ (5/4) (by finiteness) one_lt_five_fourths
+    (by simpa using one_lt_five_fourths.le)
+  obtain ⟨H₆,hH₆,_,hid₆⟩ := hcorr₆ 2 (by simp) (by norm_num) (by norm_num)
+  exact ⟨V₃,V₆,F₃,H₃,F₆,H₆,hV₃,hV₆,fun b hb => ⟨hpos₃ b hb,hpos₆ b hb⟩,
+    hF₃,hH₃,hF₆,hH₆,hid₃,hid₆,fun b hb n => (hc₃ b hb n).trans (hc₆ b hb n).symm⟩
+
+end
+end ActionExtensionCompatibilityChecks

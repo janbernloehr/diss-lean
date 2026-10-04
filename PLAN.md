@@ -1,6 +1,55 @@
 # Implementation plan
 
-## Latest progress: Global analytic frequency maps on action space
+## Latest progress: One fixed action frequency with compatible exponent extensions
+
+There is now one fixed actual Hilbert action-frequency map, chosen before
+all larger source exponents. On a common open l1 action neighborhood it
+has complex and real analytic realizations in every finite target `r > 1`.
+For every finite source exponent `p > 2`, its analytic half-exponent action
+map agrees with that same fixed frequency on the entire nonnegative l1
+cone. All refined correction targets for that extension share its domain
+and satisfy the exact complex correction identity there.
+
+`SourceFrequencyActionExponentCompatibility.lean` realizes a nonnegative
+summable action sequence by one real Hilbert source, then includes that
+source at two arbitrary exponents at least two. The actual action
+sequences remain unchanged under coordinate-preserving inclusion. The
+normalized moment-frequency compatibility theorem then identifies the
+action maps, even when they use independently chosen atlases, Birkhoff
+families, action spaces, and target realizations.
+
+`SourceFrequencyActionExtensions.lean` fixes a Hilbert frequency once and
+proves that every finite Hilbert target realization has the same scalar
+coordinates throughout the complex l1 domain. It constructs the compatible
+half-exponent extensions for all finite `p > 2`, deriving the admissibility
+of the target `p/2` from the Holder relation. Each extension domain is an
+actual spectral-action image of an open source neighborhood containing
+all real sources. Analytic refined corrections share that domain and the
+literal identity `H(b)_n = F(b)_n + 2*b_n`.
+
+Public checks construct a genuine `CoeffOnePlus` value for the fixed
+frequency at every point of its complex l1 domain. They also compare the
+`p = 3` and `p = 6` extensions, with action exponents `3/2` and `3`, and
+correction targets `5/4` and `2`. The checks cover the whole nonnegative
+summable cone, complex-domain correction identities, and fractional
+exponent instances.
+
+Validation: the full build passes (5946 jobs), all public examples pass,
+and the transitive axiom audit passes for 21948 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: transfer the existing locally uniform source correction bounds to
+action space, preserving one neighborhood chosen before every auxiliary
+target exponent. Retain the common source bound neighborhood through the
+local descent construction, shrink each action ball into its action image,
+and use exact local recovery to bound all correction targets on that same
+ball. Then apply `Coeff.exists_onePlus_decomposition_of_refined` to obtain
+the fixed `l(p/3) + l(1+)` remainder required by Theorem 18.1, including the
+range `2 < p <= 3`. The analytic extensions and their exponent compatibility
+are proved; these uniform mixed bounds, Corollary 18.2, and the later
+dissertation remain unfinished.
+
+## Previous progress: Global analytic frequency maps on action space
 
 The actual local frequency and refined correction maps now glue on one
 open complex action domain. It contains every real source action and the
