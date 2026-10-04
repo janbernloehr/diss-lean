@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the descended frequency and refined correction are
-analytic along every line changing finitely many coordinates, in their
-full sequence norms. Both components and multiple zero tail entries may
-vary together. Arbitrary directions, joint Banach-space analyticity, and
-the action-variable descent in Theorem 18.1 remain next; see `STATUS.md`.
+Latest milestone: the descended frequency and refined correction now have
+analytic slices in every complex sequence direction, in their full target
+norms. The finite-support restriction has been removed. Joint Fréchet
+analyticity and the action-variable descent in Theorem 18.1 remain next;
+see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12448,3 +12448,43 @@ from individual coordinate squares to quadratic actions and glue the
 local maps. Finite-support line analyticity is not yet the analytic
 action-space frequency map of Theorem 18.1; Corollary 18.2 and the later
 dissertation also remain unfinished.
+
+
+## Analytic slices in arbitrary sequence directions
+
+The actual descended frequency and refined correction now have analytic
+slices in every complex sequence direction, in their full target norms.
+Directions need not have finite support. The result holds on the entire
+open preimage of the common mixed-coordinate domain and keeps the same
+inverse charts, admissible target exponents, and exact source formulas.
+
+`AnalyticLineLimit.lean` proves that analyticity along convergent directions
+passes to the limiting direction for a norm-continuous map on an open set
+with a complete complex normed target. A common small scalar disc stays
+inside the domain for nearby directions. Joint continuity gives uniform
+convergence on its compact closure, and the holomorphic-limit theorem
+proves analyticity. Only eventual analyticity of the approximations is
+needed. Translating the center gives the result on the full line domain.
+
+`TailSquareDescentAnalyticLine.lean` applies this result to finite
+truncations of arbitrary coefficient-pair directions. It also proves that
+the mixed half exponent is finite whenever the source exponent is finite;
+no additional exponent-finiteness assumption is imposed on the descent.
+`SourceFrequencyAnalyticLineDescent.lean` upgrades the actual frequency
+and correction maps on their common domain to analytic slices in every
+direction, in the full target sequence norm.
+
+Public checks cover limits with only eventual analyticity, exponent
+finiteness, arbitrary directions with an `l∞` target for the general
+sequence theorem, the invariant quadratic sequence map at zero, and the
+actual `p = 6` frequency and correction in `l3` and `l2` norms.
+
+Validation: the full check script passes (5,898 build jobs, all public
+examples, and an axiom audit of 21,635 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove joint Fréchet analyticity from the analytic line restrictions
+and local norm bounds. Then descend from individual coordinate squares
+to quadratic actions and glue the local maps. Analyticity along every
+line has not yet been upgraded to the joint analytic map required by
+Theorem 18.1. Corollary 18.2 and the later dissertation remain unfinished.

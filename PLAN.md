@@ -1,6 +1,58 @@
 # Implementation plan
 
-## Latest progress: Analytic slices in finite-support directions
+## Latest progress: Analytic slices in arbitrary sequence directions
+
+The actual descended frequency and refined correction now have analytic
+slices in every complex sequence direction, in their full target norms.
+Directions need not have finite support. The result holds on the entire
+open preimage of the common mixed-coordinate domain and keeps the same
+inverse charts, admissible target exponents, and exact source formulas.
+
+`AnalyticLineLimit.lean` proves that analyticity along convergent directions
+passes to the limiting direction for a norm-continuous map on an open set
+with a complete complex normed target. A common small scalar disc stays
+inside the domain for nearby directions. Joint continuity gives uniform
+convergence on its compact closure, and the holomorphic-limit theorem
+proves analyticity. Only eventual analyticity of the approximations is
+needed. Translating the center gives the result on the full line domain.
+
+`TailSquareDescentAnalyticLine.lean` applies this result to finite
+truncations of arbitrary coefficient-pair directions. It also proves that
+the mixed half exponent is finite whenever the source exponent is finite;
+no additional exponent-finiteness assumption is imposed on the descent.
+`SourceFrequencyAnalyticLineDescent.lean` upgrades the actual frequency
+and correction maps on their common domain to analytic slices in every
+direction, in the full target sequence norm.
+
+Public checks cover limits with only eventual analyticity, exponent
+finiteness, arbitrary directions with an `l∞` target for the general
+sequence theorem, the invariant quadratic sequence map at zero, and the
+actual `p = 6` frequency and correction in `l3` and `l2` norms.
+
+Validation: the full check script passes (5,898 build jobs, all public
+examples, and an axiom audit of 21,635 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove joint Fréchet analyticity from the analytic line restrictions
+and local norm bounds. Then descend from individual coordinate squares
+to quadratic actions and glue the local maps. Analyticity along every
+line has not yet been upgraded to the joint analytic map required by
+Theorem 18.1. Corollary 18.2 and the later dissertation remain unfinished.
+
+A concrete next target is the directional derivative
+`D(a,v) = deriv (fun t => G(a+t*v)) 0`. A common Cauchy circle and local
+norm bounds should give continuity of `D` in the center and direction,
+a linear norm bound in `v`, and a uniform quadratic remainder for small
+increments. Additivity in `v` must be proved, not assumed: it can be
+compared using two successive increments and continuity as their centers
+approach `a`. Together with complex homogeneity, these properties would
+produce a bounded complex-linear Fréchet derivative. Full joint
+analyticity still needs a proved upgrade after that. Existing references
+include `TendstoUniformlyOn.tendsto_circleIntegral_of_continuousOn`,
+`Complex.cderiv`, and `BanachHolomorphicC1.lean`; the latter already
+proves continuous Fréchet derivatives once differentiability is known.
+
+## Previous milestone: Analytic slices in finite-support directions
 
 The descended frequency and refined correction now have analytic slices
 in every finite-support direction, in their full target sequence norms.
