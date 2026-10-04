@@ -28507,3 +28507,59 @@ example : ∃ W U : Set (CoeffPair (3/2)), IsOpen U ∧ realTypeSourceLocus (3/2
   simp only [smul_apply,smul_eq_mul,div_eq_inv_mul]
 
 end NLS.CubicContourPoissonChecks
+
+
+namespace FilledMomentContourChecks
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal Topology
+noncomputable section
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The filled value need not be the literal quotient's zero at a root.
+example : NLS.ComplexAnalysis.filledSimpleQuotient (fun z => z) (fun z => z) 0 = 1 := by
+  simp [NLS.ComplexAnalysis.filledSimpleQuotient]
+
+-- Analytic removal is available below the Hilbert exponent too.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    {W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (hs : SourcePsiNormalizedComplexExtension hp hp1 W s)
+    (φ : realTypeSourceLocus p) (n : ℤ)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (m : ℤ)
+    (hm : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m = 0) :
+    AnalyticAt ℂ (sourcePsiFilledQuotient hp hp1 n (s n φ.val) φ.val)
+      (sourceStandardRootMidpoint hp hp1 φ.val m) := by
+  apply hs.analytic_filledQuotient φ n hn
+  apply sourcePeriodicSegment_subset_openGapComplement_of_zeroGap hp hp1 φ.val φ.property m hm
+  simpa only [sourceStandardRootMidpoint] using sourcePeriodicMidpoint_mem_segment hp hp1 φ.val m
+
+-- The large-circle identity uses the actual globally glued moment family.
+example {W V : Set (CoeffPair 3)} {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiNormalizedComplexExtension (by simp) (by norm_num) V s)
+    (φ : realTypeSourceLocus 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+      sphere (0 : ℂ) R ⊆ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val →
+      ∀ n : ℤ, canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n ≠ 0 →
+      -(4/(2*Real.pi) : ℂ)*sourceAbelianMomentCircle (by simp) (by norm_num) W n 0 2 (s n φ.val) φ.val 0 R -
+        (2*(n : ℂ)*Real.pi)^2 = -(4/(2*Real.pi) : ℂ)*(∑' k : ℤ, A.moment n k 2 φ.val) :=
+  A.exists_finiteGap_quadratic_contour_formula hs φ hf
+
+-- Combine actual angle differentiation with the finite-gap contour sum.
+example {W₀ B V W U : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (E : SourceAngularThetaCommonDomainData (by simp) (by norm_num) W₀ B V s)
+    (D : SourceFullAbelianDifferentialData (by simp) (by norm_num) W U)
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (φ : realTypeSourceLocus 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+      sphere (0 : ℂ) R ⊆ sourceCanonicalRootDomain (by simp) (by norm_num) φ.val →
+      ∀ n : ℤ, canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n ≠ 0 →
+      sourceAngularThetaFunctionalBracket (by simp) (by norm_num) le_rfl n s
+        (sourceFullAbelianCubicContour (by simp) (by norm_num) W 0 R) φ.val - (2*(n : ℂ)*Real.pi)^2 =
+          -(4/(2*Real.pi) : ℂ)*(∑' k : ℤ, A.moment n k 2 φ.val) :=
+  E.exists_finiteGap_cubicContour_moment_formula D A le_rfl φ hf
+
+end
+end FilledMomentContourChecks

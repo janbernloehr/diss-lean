@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: Angle derivative of the cubic contour
+## Current milestone: Finite-gap moment contour decomposition
+
+`FilledSimpleQuotient.lean` fills a quotient at simple denominator zeros
+with the ratio of derivatives and proves analyticity when the numerator
+also vanishes. The filled value is not the literal quotient's default
+zero at a denominator zero.
+
+`SourcePsiOpenGapQuotient.lean` proves that the actual canonical root has
+a simple zero at every collapsed real gap, and that the normalized psi
+numerator vanishes there whenever the gap differs from its deleted index.
+For an open selected gap, the filled psi quotient is analytic on the
+complement of all open gaps. This holds at every finite exponent `p>1`,
+without a finite-gap hypothesis.
+
+`SourceAbelianMomentFiniteGapContour.lean` applies Cauchy's theorem on a
+disc with finitely many holes. At a real finite-gap source, every
+sufficiently large circle avoiding the gaps decomposes into the atlas
+circles around precisely the open gaps. One threshold works for all open
+selected indices, primitive normalization indices and moment orders.
+The existing quadratic shift then yields
+`-4/(2*pi)*integral F_0^2*psi_n/root - (2*n*pi)^2 = -4/(2*pi)*sum_k Omega_nk^2`.
+Combining this with the actual angle derivative gives the same moment
+sum for the cubic contour's angle bracket, using compatible primitive,
+angle and moment data for `p>=2`.
+
+Public checks cover a nonzero filled value at a common zero, analyticity
+at collapsed gaps for arbitrary finite `p>1`, the large-circle formula at
+`p=3`, and the actual angle-bracket formula at `p=2`.
+
+Lemma 20.2 remains unfinished: the contour bracket must still be
+identified with the physical NLS frequency, and the selected closed-gap
+case needs the finite-gap approximation and frequency-continuity
+argument. The dissertation as a whole remains unfinished.
+
+## Previous milestone: Angle derivative of the cubic contour
 
 `SourceFullAbelianDifferentialData.lean` constructs an open joint domain
 for the actual full primitive and its exact differential near every real
