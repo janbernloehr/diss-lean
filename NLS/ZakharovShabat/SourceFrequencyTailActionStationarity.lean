@@ -1,4 +1,5 @@
 import NLS.SequenceSpaces.TailActionInvariance
+import NLS.SequenceSpaces.NonzeroFiniteCenter
 import NLS.ZakharovShabat.SourceFrequencyComplexSignInvariance
 
 /-! # Infinitesimal action invariance of the actual descended frequency
@@ -15,8 +16,9 @@ namespace NLS.ZakharovShabat
 variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p q]
 
 /-- The actual frequency and correction have analytic descents whose
-full derivatives annihilate every action-preserving tail redistribution. -/
-theorem exists_sourceFrequency_tailActionStationaryDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
+full derivatives annihilate every action-preserving tail redistribution.
+The retained head contains no zero coordinate pairs. -/
+theorem exists_sourceFrequency_nonzeroHeadTailActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
     ∃ W : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
     ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
     ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
@@ -29,6 +31,8 @@ theorem exists_sourceFrequency_tailActionStationaryDescent (hp : p ≠ ⊤) (hp1
         let Q := Coeff.pairMixedSquare (q := q) S
         0 < R ∧ sourceBirkhoffMap hp hp1 t φ.val ∈ V ∧ V ⊆ C.target ∧
         IsOpen (Q '' V) ∧ Q (sourceBirkhoffMap hp hp1 t φ.val) ∈ Q '' V ∧
+        (∀ k ∈ S, (sourceBirkhoffMap hp hp1 t φ.val).1 k ≠ 0 ∨
+          (sourceBirkhoffMap hp hp1 t φ.val).2 k ≠ 0) ∧
         (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/2) ≤ r →
           let G := Coeff.tailSquareDescent (q := q) S (A.frequencySequence r ∘ C.inverse) V
           AnalyticOnNhd ℂ (A.frequencySequence r ∘ C.inverse) V ∧
@@ -57,13 +61,13 @@ theorem exists_sourceFrequency_tailActionStationaryDescent (hp : p ≠ ⊤) (hp1
   refine ⟨W,s,A,W₀,B,X,t,D,U,hU,hreal,?_⟩
   intro φ
   obtain ⟨C,hfreq,hcorr,_⟩ := hcharts φ
-  obtain ⟨S,R,hR,hbase,hball⟩ := Coeff.exists_finiteCenter_ball hp C.target C.target_open _ C.center_mem
+  obtain ⟨S,R,hR,hbase,hball,hhead⟩ := Coeff.exists_nonzeroFiniteCenter_ball hp C.target C.target_open _ C.center_mem
   let c := Coeff.truncatePair S (sourceBirkhoffMap hp hp1 t φ.val)
   have hc : c ∈ Coeff.realPairLocus p :=
     Coeff.truncatePair_mem_realPairLocus S _ ((Coeff.mem_realPairLocus_iff _).mpr
       ⟨sourceRealBirkhoffMap hp hp1 t φ,D.real_map_complex_inclusion φ⟩)
   have hopen := Coeff.isOpenMap_pairMixedSquare (q := q) hp S (ball c R) isOpen_ball
-  refine ⟨C,S,R,hR,hbase,hball,hopen,⟨_,hbase,rfl⟩,?_,?_⟩
+  refine ⟨C,S,R,hR,hbase,hball,hopen,⟨_,hbase,rfl⟩,hhead,?_,?_⟩
   · intro r inst hr hr1 hpr
     obtain ⟨ha,he⟩ := hfreq r hr hr1 hpr
     have hrealInv := fun a b hab => A.frequencySequence_real_eq_of_actions A hs hs a b hab r
@@ -122,5 +126,51 @@ theorem exists_sourceFrequency_tailActionStationaryDescent (hp : p ≠ ⊤) (hp1
       intro n
       rw [hrec]
       exact he z (hball hz) n
+
+/-- Compatibility form of the stationary descent theorem, omitting the
+additional nonzero-head guarantee. -/
+theorem exists_sourceFrequency_tailActionStationaryDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
+    ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    ∃ D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t,
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ realTypeSourceLocus p ⊆ U ∧
+      ∀ φ : realTypeSourceSubmodule p, ∃ C : SourceBirkhoffInverseChart D φ U,
+        ∃ S : Finset ℤ, ∃ R : ℝ,
+        let c := Coeff.truncatePair S (sourceBirkhoffMap hp hp1 t φ.val)
+        let V := ball c R
+        let Q := Coeff.pairMixedSquare (q := q) S
+        0 < R ∧ sourceBirkhoffMap hp hp1 t φ.val ∈ V ∧ V ⊆ C.target ∧
+        IsOpen (Q '' V) ∧ Q (sourceBirkhoffMap hp hp1 t φ.val) ∈ Q '' V ∧
+        (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/2) ≤ r →
+          let G := Coeff.tailSquareDescent (q := q) S (A.frequencySequence r ∘ C.inverse) V
+          AnalyticOnNhd ℂ (A.frequencySequence r ∘ C.inverse) V ∧
+          (∀ z ∈ V, ∀ k, fderiv ℂ (A.frequencySequence r ∘ C.inverse) z
+            (Coeff.actionRotationVectorCLM p k z) = 0) ∧
+          AnalyticOnNhd ℂ G (Q '' V) ∧
+          (∀ b ∈ Q '' V, ∀ k ∉ S,
+            fderiv ℂ G b (Coeff.actionSplitDirection q k) = 0) ∧
+          (∀ b ∈ Q '' V, ∀ v : Coeff q, (∀ k ∈ S, v k = 0) →
+            fderiv ℂ G b (-v,v) = 0) ∧
+          ∀ z ∈ V, G (Q z) = A.frequencySequence r (C.inverse z) ∧
+            ∀ n, G (Q z) n = A.renormalizedFrequency n (C.inverse z)) ∧
+        (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/3) ≤ r →
+          let G := Coeff.tailSquareDescent (q := q) S (A.actionFrequencyCorrectionSequence r ∘ C.inverse) V
+          AnalyticOnNhd ℂ (A.actionFrequencyCorrectionSequence r ∘ C.inverse) V ∧
+          (∀ z ∈ V, ∀ k, fderiv ℂ (A.actionFrequencyCorrectionSequence r ∘ C.inverse) z
+            (Coeff.actionRotationVectorCLM p k z) = 0) ∧
+          AnalyticOnNhd ℂ G (Q '' V) ∧
+          (∀ b ∈ Q '' V, ∀ k ∉ S,
+            fderiv ℂ G b (Coeff.actionSplitDirection q k) = 0) ∧
+          (∀ b ∈ Q '' V, ∀ v : Coeff q, (∀ k ∈ S, v k = 0) →
+            fderiv ℂ G b (-v,v) = 0) ∧
+          ∀ z ∈ V, G (Q z) = A.actionFrequencyCorrectionSequence r (C.inverse z) ∧
+            ∀ n, G (Q z) n = A.renormalizedFrequency n (C.inverse z)+z.1 n^2+z.2 n^2) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,hU,hreal,hcharts⟩ :=
+    exists_sourceFrequency_nonzeroHeadTailActionDescent (q := q) hp hp1
+  refine ⟨W,s,A,W₀,B,X,t,D,U,hU,hreal,?_⟩
+  intro φ
+  obtain ⟨C,S,R,hR,hbase,hball,hopen,himage,_,hfreq,hcorr⟩ := hcharts φ
+  exact ⟨C,S,R,hR,hbase,hball,hopen,himage,hfreq,hcorr⟩
 
 end NLS.ZakharovShabat

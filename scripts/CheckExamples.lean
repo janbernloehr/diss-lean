@@ -30894,3 +30894,83 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end LocalTailSumDescentChecks
+
+
+namespace HeadActionSectionChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- A negative first coordinate keeps its prescribed sign.
+example :
+    let a : Coeff.TailSumSpace 2 {0} := (fun _ => -1,0)
+    AnalyticAt ℂ (Coeff.headActionSection {0} a) (Coeff.headActions {0} a) ∧
+      Coeff.headActionSection {0} a (Coeff.headActions {0} a) = a := by
+  intro a
+  have ha : Coeff.HeadNonzero {0} a := fun _ => Or.inl (by norm_num [a])
+  exact ⟨Coeff.analyticAt_headActionSection {0} a ha,Coeff.headActionSection_base {0} a ha⟩
+
+-- With a zero first coordinate and a nonzero imaginary second coordinate,
+-- the normalized branch still recovers the specified value and all actions.
+example :
+    let a : Coeff.TailSumSpace 2 {0} := (fun _ => 0,lp.single 2 0 Complex.I)
+    AnalyticAt ℂ (Coeff.headActionSection {0} a) (Coeff.headActions {0} a) ∧
+      Coeff.headActionSection {0} a (Coeff.headActions {0} a) = a ∧
+      ∀ b : Coeff 2, Coeff.headActions {0} (Coeff.headActionSection {0} a b) = b := by
+  intro a
+  have ha : Coeff.HeadNonzero {0} a := by
+    intro k
+    have hk : k.val = 0 := Finset.mem_singleton.mp k.property
+    right
+    simp [a,hk,lp.single_apply]
+  exact ⟨Coeff.analyticAt_headActionSection {0} a ha,Coeff.headActionSection_base {0} a ha,
+    Coeff.headActions_section {0} a ha⟩
+
+-- At the all-zero base the head can be empty, with arbitrary l3 tails.
+example (b : Coeff 3) :
+    Coeff.headActions ∅ (Coeff.headActionSection ∅ (0 : Coeff.TailSumSpace 3 ∅) b) = b := by
+  apply Coeff.headActions_section
+  intro k
+  exact False.elim (Finset.notMem_empty k.val k.property)
+
+-- The actual p = 6 common chart admits an analytic section on an open
+-- action neighborhood. Both sequence maps pull back analytically along it.
+-- This checks base recovery, not yet constancy along all head-action fibers.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ S : Finset ℤ, ∃ a : Coeff.TailSumSpace 3 S, ∃ T : Set (Coeff 3),
+    ∃ G : Coeff.TailSumSpace 3 S → Coeff 3, ∃ H : Coeff.TailSumSpace 3 S → Coeff 2,
+      IsOpen T ∧ Coeff.headActions S a ∈ T ∧
+      AnalyticOnNhd ℂ (Coeff.headActionSection S a) T ∧
+      AnalyticOnNhd ℂ (G ∘ Coeff.headActionSection S a) T ∧
+      AnalyticOnNhd ℂ (H ∘ Coeff.headActionSection S a) T ∧
+      (∀ b : Coeff 3, Coeff.headActions S (Coeff.headActionSection S a b) = b) ∧
+      G (Coeff.headActionSection S a (Coeff.headActions S a)) = A.frequencySequence 3 φ.val ∧
+      H (Coeff.headActionSection S a (Coeff.headActions S a)) = A.actionFrequencyCorrectionSequence 2 φ.val := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_nonzeroHeadLocalTailSumDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,L,_,_,_,hbase,hhead,hmap,hfreq,hcorr⟩ := hcharts φ
+  let z₀ := sourceBirkhoffMap (by simp) (by norm_num) t φ.val
+  let a := Coeff.tailSumCLM S (Coeff.pairMixedSquare (q := 3) S z₀)
+  have ha : Coeff.HeadNonzero S a := Coeff.headNonzero_tailSum_mixedSquare S z₀ hhead
+  obtain ⟨T,hT,hTa,hJ,hinto⟩ := Coeff.exists_headActionSection_neighborhood S a ha L.target
+    L.target_open (hmap z₀ hbase)
+  obtain ⟨_,_,hG,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨_,_,hH,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,S,a,T,_,_,hT,hTa,hJ,hG.comp hJ hinto,hH.comp hJ hinto,
+    Coeff.headActions_section S a ha,?_,?_⟩
+  · rw [Coeff.headActionSection_base S a ha]
+    exact (he z₀ hbase).1.trans (congrArg (A.frequencySequence 3) C.base_eq)
+  · rw [Coeff.headActionSection_base S a ha]
+    exact (hj z₀ hbase).1.trans (congrArg (A.actionFrequencyCorrectionSequence 2) C.base_eq)
+
+end
+end HeadActionSectionChecks

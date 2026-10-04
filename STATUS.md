@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: Local analytic tail-sum factors
+## Current milestone: Analytic sections for head actions
+
+The finite-head/tail-sum coordinates now admit an explicit analytic
+section from the full quadratic action space near each base with no zero
+retained pair. The actual frequency charts can be chosen with exactly this
+nonzero-head property, on the same common domains and for every admissible
+target exponent as before.
+
+`NonzeroFiniteCenter.lean` removes indices where both base coordinates
+vanish from any finite truncation without changing its center. Consequently,
+the centered ball used for sign-invariant descent can retain only pairs
+with a nonzero coordinate. This works for complex as well as real bases.
+
+`HeadActionSection.lean` defines the remaining action map on the finite
+head and tail sums, with the normalization factor one half. It proves that
+composition with mixed squaring and tail summation is precisely the
+original `quadraticActionsExponent` map. At each retained index the section
+solves for a nonzero coordinate using a prescribed analytic square root
+and keeps the other coordinate fixed. All infinitely many tail coordinates
+are linear. The section recovers its base exactly and is a right inverse
+to the action map, with analyticity in the full sequence norm near the base.
+It can be restricted to any prescribed open neighborhood of that base.
+
+The source stationary-descent and local tail-sum-descent theorems now have
+stronger versions exposing a nonzero retained head. Their previous APIs
+remain available as corollaries. Both frequency and correction can thus be
+composed analytically with these action sections on a common neighborhood.
+
+Public checks cover a negative prescribed first coordinate, a zero first
+coordinate with a nonzero imaginary second coordinate, the empty head at
+the zero base with arbitrary sequence tails, and the actual `p = 6` maps
+in `l3` and `l2`. The latter checks simultaneous analyticity after section
+composition and exact frequency/correction recovery at the base point.
+
+Validation: the full build passes (5923 jobs), all public examples pass,
+and the transitive axiom audit passes for 21820 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+An initial verification process was terminated with exit code 143; the
+complete rerun passed.
+
+Next: prove local constancy along the remaining head-action fibers so that
+the section compositions recover the frequency at every nearby point,
+then glue the local action maps. Base recovery and an analytic right inverse
+alone do not prove this factorization. Theorem 18.1, Corollary 18.2, and the
+later dissertation remain unfinished.
+
+## Previous milestone: Local analytic tail-sum factors
 
 The actual frequency and refined correction now factor analytically through
 one sequence of tail sums together with the retained finite head. The same

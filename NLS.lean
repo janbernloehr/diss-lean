@@ -2491,3 +2491,6 @@ import NLS.ZakharovShabat.SourceFrequencyTailActionStationarity
 import NLS.SequenceSpaces.TailSumCoordinates
 import NLS.SequenceSpaces.LocalTailSumDescent
 import NLS.ZakharovShabat.SourceFrequencyLocalTailSumDescent
+
+import NLS.SequenceSpaces.NonzeroFiniteCenter
+import NLS.SequenceSpaces.HeadActionSection
