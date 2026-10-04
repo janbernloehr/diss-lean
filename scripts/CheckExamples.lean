@@ -29316,3 +29316,83 @@ end General
 
 end
 end OffDiagonalLemma20_3Checks
+
+
+namespace FullLemma20_3Checks
+open Set Metric Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+section Four
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (2:ℝ≥0∞)) := ⟨by norm_num⟩
+variable {hp : (4:ℝ≥0∞) ≠ ⊤} {hp1 : 1 < (4:ℝ≥0∞)}
+
+-- A single reciprocal majorant remains valid when the test row changes
+-- with the output index; each chosen single-coordinate row has norm one.
+example (g : Coeff 2) : ∃ D : Coeff 2, ∀ n : ℤ,
+    (∑' j : ℤ, if j = n then (0:ℝ) else
+      ‖g j‖*‖(lp.single (E := fun _ : ℤ => ℂ) 4 (n+1) (1:ℂ)) j‖/|((n-j:ℤ):ℝ)|) ≤ ‖D n‖ := by
+  obtain ⟨D,_,hrows⟩ := Coeff.exists_uniform_reciprocal_majorant hp hp1
+    (by norm_num : (2:ℝ≥0∞) ≠ ⊤) (by norm_num) g
+  refine ⟨D,?_⟩
+  intro n
+  have hb := (hrows (lp.single (E := fun _ : ℤ => ℂ) 4 (n+1) 1) n).2
+  simpa only [lp.norm_single (by norm_num : (0:ℝ≥0∞) < 4),norm_one,one_mul] using hb
+
+-- The full theorem gives square-summable diagonal errors as one sequence,
+-- alongside every off-diagonal row on the same source neighborhood.
+example {W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (hV : IsOpen V) (hrealV : realTypeSourceLocus 4 ⊆ V) :
+    ∃ U : Set (CoeffPair 4), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 4 ⊆ U ∧
+      U ⊆ A.domain ∩ V ∧ ∀ φ ∈ U, ∃ ρ : ℝ, 0 < ρ ∧ ball φ ρ ⊆ U ∧
+        ∀ ψ ∈ ball φ ρ,
+          Summable (fun k : ℤ => ‖sourceSecondMomentDiagonalCoefficient A ψ k‖^2) ∧
+          ∀ n : ℤ, Summable (fun k : ℤ => ‖sourceSecondMomentCubicCoefficient A n ψ k‖^2) := by
+  obtain ⟨U,hU,hUc,hreal,hUV,hlocal⟩ := A.exists_lemma20_3_refined hs hV hrealV
+  refine ⟨U,hU,hUc,hreal,hUV,?_⟩
+  intro φ hφ
+  obtain ⟨ρ,hρ,hball,hrows⟩ := hlocal φ hφ
+  obtain ⟨_,_,hb⟩ := hrows 2 (by norm_num) (by norm_num) (by norm_num)
+  refine ⟨ρ,hρ,hball,?_⟩
+  intro ψ hψ
+  obtain ⟨d,hd,_,_,hoff⟩ := hb ψ hψ
+  constructor
+  · have h := (lp.memℓp d).summable (by norm_num : 0 < (2:ℝ≥0∞).toReal)
+    simpa only [ENNReal.toReal_ofNat,Real.rpow_two,hd] using h
+  · intro n
+    obtain ⟨a,ha,_,_,_⟩ := hoff n
+    have h := (lp.memℓp a).summable (by norm_num : 0 < (2:ℝ≥0∞).toReal)
+    simpa only [ENNReal.toReal_ofNat,Real.rpow_two,ha] using h
+end Four
+
+section General
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+
+-- The diagonal coefficient has a filled zero value when the gap collapses.
+example (ψ : CoeffPair p) (k : ℤ) (hγ : sourcePeriodicGapDisplacement hp hp1 ψ k = 0) :
+    sourceSecondMomentDiagonalCoefficient A ψ k = 0 := by
+  simp only [sourceSecondMomentDiagonalCoefficient,hγ,zero_pow (by norm_num : (2:ℕ) ≠ 0),div_zero]
+
+-- Zero square and quotient errors recover the exact pi/4 leading term.
+example (D : SourceAbelianMomentErrorDomain A) (ψ : CoeffPair p) (hψ : ψ ∈ D.domain) (k : ℤ)
+    (hS : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+      sourceFullAbelianSquare hp hp1 W k (z,ψ) = -sourceAngularSelectedPolynomial hp hp1 ψ k z)
+    (hQ : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+      sourceSingleRootQuotientJointProduct hp hp1 k
+        (z,(sourcePsiFillDeletedRoot k (s k ψ) (sourceStandardRootMidpoint hp hp1 ψ k),ψ)) = 1) :
+    A.moment k k 2 ψ = (sourcePeriodicGapDisplacement hp hp1 ψ k)^2/4*(Real.pi:ℂ) := by
+  obtain ⟨hb,hfactor⟩ := D.diagonal_coefficient_bound ψ hψ k 0 0 le_rfl le_rfl
+    (fun z hz => by rw [hS z hz]; simp)
+    (fun z hz => by rw [hQ z hz]; simp)
+  simp only [zero_mul,mul_zero,zero_div,zero_add] at hb
+  have hz := norm_eq_zero.mp (le_antisymm hb (norm_nonneg _))
+  simpa only [hz,add_zero] using hfactor
+end General
+
+end
+end FullLemma20_3Checks

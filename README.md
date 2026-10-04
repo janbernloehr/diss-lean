@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the off-diagonal assertion of Lemma 20.3 is proved for
-the actual normalized second moments, including the cubic-gap formula,
-mixed sequence exponents, and uniform coefficient power sums. The bounds
-hold locally throughout a connected complex neighborhood of the real
-source locus, including collapsed gaps. The diagonal assertion remains
-next; see `STATUS.md`.
+Latest milestone: both parts of Lemma 20.3 are proved for the actual
+normalized second moments on one connected complex neighborhood of the
+real source locus. The diagonal and off-diagonal formulas have the stated
+mixed sequence bounds, locally uniform in the source and uniform in the
+deleted index, including collapsed gaps. Next is the analytic frequency
+extension of Theorem 20.4; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11899,3 +11899,47 @@ majorant across diagonal indices. Uniform norms for separate off-diagonal
 rows do not establish that diagonal estimate. The full Lemma 20.3,
 general infinite-gap frequencies, and the remaining dissertation are
 still unfinished.
+
+
+## Full Lemma 20.3 on one complex neighborhood
+
+`SourceAbelianMomentLemma20_3.lean` proves both assertions of Lemma 20.3
+for the actual normalized second moments, on one connected open complex
+neighborhood of the real source locus. The off-diagonal formula is
+`Omega_nk^(2) = gamma_k^3/(n-k)*(a_k+b_k)` for `k != n`; the diagonal
+formula is `Omega_kk^(2) = gamma_k^2/4*(pi+d_k+e_k)`. For every finite
+`q > 1`, `a,d` belong to `lq` and `b,e` to `l(p/2)`, with one positive
+locally uniform norm bound, uniform in the deleted index. The local
+source ball is chosen before `q`. Collapsed gaps are included.
+
+The refined theorem constructs the actual diagonal correction and every
+actual off-diagonal coefficient row in each finite `lr`, `r > 1` and
+`r >= p/2`. These coefficients are independent of the exponent. The
+previous off-diagonal power-sum theorem remains available.
+
+The new diagonal proof uses a shared sequence rather than unrelated
+row bounds. `UniformHolderConvolution.lean` and
+`UniformReciprocalMajorant.lean` use powered Young and Holder to bound
+all varying lp rows by one sequence built from the fixed weights.
+`SourceMidpointProductSharedMajorant.lean` retains this common sequence
+through the infinite-product remainder. `SourcePsiSharedQuotientTail.lean`
+uses squared gaps as the fixed weights and adds the shared reciprocal-square
+gap correction. `SourcePsiSharedActualGapMajorant.lean` patches the
+central indices and restricts to actual moving segments. Its sequence
+is chosen before **both** the deleted and selected indices.
+
+`SourceAbelianMomentDiagonalCoefficients.lean` combines that quotient
+bound with the square-error estimate and verifies the normalization
+constant `pi/4`, including zero gaps. The diagonal neighborhood theorem
+and the off-diagonal result are then placed on one common connected
+domain in `SourceAbelianMomentLemma20_3.lean`.
+
+Public checks cover a varying test row under one reciprocal majorant,
+square-summability of the actual diagonal and off-diagonal coefficients
+on the same source domain, the filled value at a collapsed gap, and the
+exact diagonal leading term when the two approximation errors vanish.
+
+Next: Theorem 20.4, proving absolute and locally uniform convergence of
+the moment sum, its analytic frequency extension, and agreement with
+the physical finite-gap frequencies. Theorem 20.5 and the remaining
+dissertation are still unfinished.
