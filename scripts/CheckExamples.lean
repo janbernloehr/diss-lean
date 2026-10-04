@@ -27955,3 +27955,51 @@ example (a b : ℝ → ℂ) (z : ℂ) : nlsHamiltonianPhase a b 0 z = -Complex.I
   simp [nlsHamiltonianCorrection]
 
 end NLS.HamiltonianCoefficientChecks
+
+
+noncomputable section
+namespace NLS.SmoothHamiltonianLaurentChecks
+open Set Filter Topology NLS.Fourier ZakharovShabat
+open scoped ENNReal ContDiff
+
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem oneLtHalf : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨oneLtHalf.le⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A source below the Hilbert exponent has a smooth periodic representative
+-- preserving each original Fourier coefficient, without extra regularity data.
+example (φ : realTypeSourceSubmodule (3/2))
+    (hf : φ ∈ sourceFiniteGapLocus halfFinite oneLtHalf) (n : ℤ) :
+    let q := sourceFiniteGapPhysicalPair halfFinite oneLtHalf φ hf
+    ContDiff ℝ ∞ q.1 ∧ Function.Periodic q.1 1 ∧ periodOneCoefficient q.1 n = φ.val.fst n := by
+  exact ⟨(contDiff_sourceFiniteGapPhysicalPair halfFinite oneLtHalf φ hf).1,
+    (periodic_sourceFiniteGapPhysicalPair halfFinite oneLtHalf φ hf).1,
+    (periodOneCoefficient_sourceFiniteGapPhysicalPair halfFinite oneLtHalf φ hf n).1⟩
+
+-- At p=3 the mass keeps the original reflected-frequency pairing.
+example (φ : realTypeSourceSubmodule 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    Complex.I*sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf 1/2 =
+      Complex.I*(∑' n : ℤ, φ.val.fst n*φ.val.snd (-n))/2 := by
+  rw [sourceFiniteGapNLSHamiltonian_one]
+
+-- The normalized zero-index primitive has its complete convergent physical
+-- Hamiltonian series at all large complex frequencies, with no model premise.
+example {W : Set (CoeffPair 3)}
+    (C : SourceFullAbelianUniformCauchyFamily (by norm_num) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 3)
+    (hφ : φ.val ∈ Metric.ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    ∃ R : ℝ, 0 < R ∧ ∀ z : ℂ, R < ‖z‖ →
+      HasSum (fun k : ℕ => Complex.I*sourceFiniteGapNLSHamiltonian
+        (by norm_num) (by norm_num) φ hf (k+1)/(2*z)^(k+1))
+        (sourceFullAbelianPrimitive (by norm_num) (by norm_num) W 0 (z,φ.val)+Complex.I*z) := by
+  obtain ⟨R,hR,_,hs⟩ := exists_sourceFullAbelian_finiteGap_hamiltonian_laurent C φ hφ hf
+  refine ⟨R,hR,?_⟩
+  intro z hz
+  simpa only [Int.cast_zero,mul_zero,sub_zero] using hs 0 z hz
+
+end NLS.SmoothHamiltonianLaurentChecks

@@ -2312,3 +2312,7 @@ import NLS.ComplexAnalysis.SampledAnalyticOrder
 import NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial
 import NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients
 import NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction
+import NLS.Fourier.PeriodOneSmoothSynthesis
+import NLS.ZakharovShabat.SourceFiniteGapSmoothRealization
+import NLS.ZakharovShabat.SourceFiniteGapNLSHamiltonians
+import NLS.ZakharovShabat.SourceFullAbelianHamiltonianLaurent

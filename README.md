@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the discriminant asymptotics now identify every
-Hamiltonian Laurent coefficient and prove convergence. The actual
-finite-gap primitive is reduced to this result whenever a smooth
-periodic classical realization with the same discriminant is supplied.
-Constructing that realization is the remaining step. See `STATUS.md`.
+Latest milestone: Lemma 19.2 is proved with the actual physical NLS
+Hamiltonians. Finite-gap Sobolev regularity now supplies a smooth periodic
+Fourier representative and its exact discriminant identity, completing
+the convergent Hamiltonian Laurent expansion at every finite exponent
+greater than one. Corollary 19.3 is next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11070,3 +11070,42 @@ realization from finite-gap Sobolev regularity and prove its discriminant
 agreement. This will discharge the remaining realization hypothesis;
 Lemma 19.2 in its full source formulation and the dissertation remain
 unfinished.
+
+## Lemma 19.2 with the actual physical Hamiltonians
+
+`PeriodOneSmoothSynthesis.lean` proves that all Sobolev weights at any
+finite Banach exponent give a smooth period-one Fourier representative.
+It constructs the absolutely summable derivative series and differentiates
+at every real point, including period endpoints.
+
+`SourceFiniteGapSmoothRealization.lean` applies the existing finite-gap
+Sobolev bootstrap to the original source coefficients. The resulting
+pair is smooth and periodic, its Fourier integrals recover every original
+coefficient, and its classical discriminant equals the canonical source
+discriminant. Exponent compatibility and the coefficient-preserving
+Hilbert realization establish this identity for every `1 < p < infinity`.
+No smooth representative or trace identity remains as a premise.
+
+`SourceFiniteGapNLSHamiltonians.lean` evaluates the Appendix H differential
+hierarchy on this actual Fourier representative. Its first Hamiltonian
+is proved equal to the original reflected source pairing
+`sum_k phi_-(k)*phi_+(-k)`.
+
+`SourceFullAbelianHamiltonianLaurent.lean` completes Lemma 19.2: every real
+finite-gap source has an exterior analytic primitive and the convergent
+Laurent expansion with these physical Hamiltonians. The zero-index
+formula is `F_0(z) = -i*z + sum_{k>=1} i*H_k/(2*z)^k`; all other indices
+have exactly the prescribed additive constant `i*pi*n`. The series holds
+in every complex direction outside one sufficiently large disc. A single
+open neighborhood of the real source locus supplies the statement for
+all real finite-gap sources, with no caller-supplied chart, regularity,
+classical realization, asymptotic estimate, or coefficient identification.
+
+Public checks cover the smooth coefficient-preserving realization at
+`p=3/2`, the original mass normalization at `p=3`, and the complete
+zero-index Hamiltonian series at arbitrary large complex frequencies.
+
+Lemma 19.2 is now proved with its physical Hamiltonian coefficients.
+The next step is Corollary 19.3, the expansion of `F_0^3` through its
+inverse-frequency term with a quadratic remainder. The dissertation as
+a whole remains unfinished.

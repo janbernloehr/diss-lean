@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: Hamiltonian coefficient identification from the discriminant
+## Latest progress: Lemma 19.2 with the actual physical Hamiltonians
+
+`PeriodOneSmoothSynthesis.lean` proves that all Sobolev weights at any
+finite Banach exponent give a smooth period-one Fourier representative.
+It constructs the absolutely summable derivative series and differentiates
+at every real point, including period endpoints.
+
+`SourceFiniteGapSmoothRealization.lean` applies the existing finite-gap
+Sobolev bootstrap to the original source coefficients. The resulting
+pair is smooth and periodic, its Fourier integrals recover every original
+coefficient, and its classical discriminant equals the canonical source
+discriminant. Exponent compatibility and the coefficient-preserving
+Hilbert realization establish this identity for every `1 < p < infinity`.
+No smooth representative or trace identity remains as a premise.
+
+`SourceFiniteGapNLSHamiltonians.lean` evaluates the Appendix H differential
+hierarchy on this actual Fourier representative. Its first Hamiltonian
+is proved equal to the original reflected source pairing
+`sum_k phi_-(k)*phi_+(-k)`.
+
+`SourceFullAbelianHamiltonianLaurent.lean` completes Lemma 19.2: every real
+finite-gap source has an exterior analytic primitive and the convergent
+Laurent expansion with these physical Hamiltonians. The zero-index
+formula is `F_0(z) = -i*z + sum_{k>=1} i*H_k/(2*z)^k`; all other indices
+have exactly the prescribed additive constant `i*pi*n`. The series holds
+in every complex direction outside one sufficiently large disc. A single
+open neighborhood of the real source locus supplies the statement for
+all real finite-gap sources, with no caller-supplied chart, regularity,
+classical realization, asymptotic estimate, or coefficient identification.
+
+Public checks cover the smooth coefficient-preserving realization at
+`p=3/2`, the original mass normalization at `p=3`, and the complete
+zero-index Hamiltonian series at arbitrary large complex frequencies.
+
+Lemma 19.2 is now proved with its physical Hamiltonian coefficients.
+The next step is Corollary 19.3, the expansion of `F_0^3` through its
+inverse-frequency term with a quadratic remainder. The dissertation as
+a whole remains unfinished.
+
+For Corollary 19.3, the printed formula on PDF page 91 is
+`F_0(z)^3 = i*z^3 - (3*i/2)*H_1*z - (3*i/4)*H_2
+- (3*i/8)*(H_3 - 2*H_1^2)/z + O(z^-2)`.
+The factor `3/8` multiplies the entire parenthesis. Here the printed
+energy `H` is the third Appendix H Hamiltonian. This placement was
+checked directly in the PDF and agrees with cubing the Laurent series.
+
+## Previous milestone: Hamiltonian coefficient identification from the discriminant
 
 `LocalSinhComparison.lean` proves a quantitative local inverse estimate
 for complex hyperbolic sine. At real zeros of cosine, the discriminant
