@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Latest progress: Lemma 19.2 with the actual physical Hamiltonians
+## Latest progress: Corollary 19.3 with a uniform cubic remainder
+
+`CubicInversionRemainder.lean` proves the exact algebraic cubic expansion
+of a normalized analytic inversion phase. Its error is `z^-2 * B(1/z)`
+with `B` analytic at zero, giving a positive constant and an exterior
+radius on which the error is at most `K/|z|^2` in every complex direction.
+
+`SourceFullAbelianHamiltonianInversion.lean` records the actual normalized
+finite-gap inversion phase together with all its physical Hamiltonian
+Taylor derivatives. The phase and coefficients are derived from the
+existing source construction and the smooth Fourier realization.
+
+`SourceFullAbelianCubeAsymptotics.lean` proves Corollary 19.3:
+`F_0(z)^3 = i*z^3 - (3*i/2)*H_1*z - (3*i/4)*H_2
+- (3*i/8)*(H_3 - 2*H_1^2)/z + O(z^-2)`.
+Here each `H_k` is the physical Appendix H Hamiltonian of the original
+finite-gap source. The factor `3/8` multiplies the whole parenthesis,
+as checked directly on PDF page 91.
+
+The result includes analyticity outside a disc, an explicit uniform
+quadratic error bound, and the literal `IsBigO` statement at complex
+infinity. The same bound works for every normalization index after
+subtracting `i*pi*n`. A common open neighborhood of the real source
+locus supplies the zero-index corollary at every real finite-gap source
+for every `1 < p < infinity`, without additional asymptotic hypotheses.
+
+Public checks verify the positive mass-squared cross term using the
+exact model `F(z) = -i*z + i/z`, test the placement of the `3/8` factor,
+and specialize the printed big-O expansion to an actual `p=3` source.
+
+Corollary 19.3 is now proved. The next step is Lemma 19.4, the refined
+comparison between the gap boundary primitive and `i*w_n`, including
+its locally uniform sequence-space error. The dissertation as a whole
+remains unfinished.
+
+## Previous milestone: Lemma 19.2 with the actual physical Hamiltonians
 
 `PeriodOneSmoothSynthesis.lean` proves that all Sobolev weights at any
 finite Banach exponent give a smooth period-one Fourier representative.

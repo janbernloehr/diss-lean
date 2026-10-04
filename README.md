@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 19.2 is proved with the actual physical NLS
-Hamiltonians. Finite-gap Sobolev regularity now supplies a smooth periodic
-Fourier representative and its exact discriminant identity, completing
-the convergent Hamiltonian Laurent expansion at every finite exponent
-greater than one. Corollary 19.3 is next. See `STATUS.md`.
+Latest milestone: Corollary 19.3 is proved for the actual finite-gap
+primitive. Cubing the physical Hamiltonian Laurent expansion gives the
+printed coefficients, exterior analyticity, and a uniform quadratic
+error bound in every complex direction. The refined gap-boundary
+comparison in Lemma 19.4 is next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11109,3 +11109,38 @@ Lemma 19.2 is now proved with its physical Hamiltonian coefficients.
 The next step is Corollary 19.3, the expansion of `F_0^3` through its
 inverse-frequency term with a quadratic remainder. The dissertation as
 a whole remains unfinished.
+
+## Corollary 19.3 with a uniform cubic remainder
+
+`CubicInversionRemainder.lean` proves the exact algebraic cubic expansion
+of a normalized analytic inversion phase. Its error is `z^-2 * B(1/z)`
+with `B` analytic at zero, giving a positive constant and an exterior
+radius on which the error is at most `K/|z|^2` in every complex direction.
+
+`SourceFullAbelianHamiltonianInversion.lean` records the actual normalized
+finite-gap inversion phase together with all its physical Hamiltonian
+Taylor derivatives. The phase and coefficients are derived from the
+existing source construction and the smooth Fourier realization.
+
+`SourceFullAbelianCubeAsymptotics.lean` proves Corollary 19.3:
+`F_0(z)^3 = i*z^3 - (3*i/2)*H_1*z - (3*i/4)*H_2
+- (3*i/8)*(H_3 - 2*H_1^2)/z + O(z^-2)`.
+Here each `H_k` is the physical Appendix H Hamiltonian of the original
+finite-gap source. The factor `3/8` multiplies the whole parenthesis,
+as checked directly on PDF page 91.
+
+The result includes analyticity outside a disc, an explicit uniform
+quadratic error bound, and the literal `IsBigO` statement at complex
+infinity. The same bound works for every normalization index after
+subtracting `i*pi*n`. A common open neighborhood of the real source
+locus supplies the zero-index corollary at every real finite-gap source
+for every `1 < p < infinity`, without additional asymptotic hypotheses.
+
+Public checks verify the positive mass-squared cross term using the
+exact model `F(z) = -i*z + i/z`, test the placement of the `3/8` factor,
+and specialize the printed big-O expansion to an actual `p=3` source.
+
+Corollary 19.3 is now proved. The next step is Lemma 19.4, the refined
+comparison between the gap boundary primitive and `i*w_n`, including
+its locally uniform sequence-space error. The dissertation as a whole
+remains unfinished.

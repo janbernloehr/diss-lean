@@ -2316,3 +2316,6 @@ import NLS.Fourier.PeriodOneSmoothSynthesis
 import NLS.ZakharovShabat.SourceFiniteGapSmoothRealization
 import NLS.ZakharovShabat.SourceFiniteGapNLSHamiltonians
 import NLS.ZakharovShabat.SourceFullAbelianHamiltonianLaurent
+import NLS.ComplexAnalysis.CubicInversionRemainder
+import NLS.ZakharovShabat.SourceFullAbelianHamiltonianInversion
+import NLS.ZakharovShabat.SourceFullAbelianCubeAsymptotics

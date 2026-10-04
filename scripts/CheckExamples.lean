@@ -28003,3 +28003,42 @@ example {W : Set (CoeffPair 3)}
   simpa only [Int.cast_zero,mul_zero,sub_zero] using hs 0 z hz
 
 end NLS.SmoothHamiltonianLaurentChecks
+
+
+noncomputable section
+namespace NLS.CubicPrimitiveChecks
+open Set Filter Topology ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A nonzero first Hamiltonian contributes the positive 3*i/z cross term.
+-- The exact error in this simple analytic model is -i/z^3.
+example (z : ℂ) (hz : z ≠ 0) :
+    (-Complex.I*z+Complex.I/z)^3-phaseCubeLaurentPart 2 0 0 z = -Complex.I/z^3 := by
+  unfold phaseCubeLaurentPart
+  field_simp
+  ring_nf
+  simp only [Complex.I_sq]
+  ring
+
+-- The factor 3/8 multiplies the entire energy-minus-mass-square term.
+example (z : ℂ) : phaseCubeLaurentPart 2 3 5 z =
+    Complex.I*z^3-3*Complex.I*z-9*Complex.I/4+9*Complex.I/(8*z) := by
+  unfold phaseCubeLaurentPart
+  ring
+
+-- The actual p=3 source has precisely the printed cubic expansion,
+-- in all directions at infinity, with no supplied asymptotic data.
+example {W : Set (CoeffPair 3)}
+    (C : SourceFullAbelianUniformCauchyFamily (by norm_num) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 3)
+    (hφ : φ.val ∈ Metric.ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    let H := sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf
+    (fun z : ℂ => (sourceFullAbelianPrimitive (by norm_num) (by norm_num) W 0 (z,φ.val))^3-
+      (Complex.I*z^3-(3*Complex.I/2)*H 1*z-(3*Complex.I/4)*H 2-
+        (3*Complex.I/8)*(H 3-2*(H 1)^2)/z))
+      =O[Bornology.cobounded ℂ] (fun z : ℂ => z⁻¹^2) := by
+  exact sourceFullAbelian_finiteGap_cube_isBigO C φ hφ hf
+
+end NLS.CubicPrimitiveChecks
