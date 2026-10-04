@@ -30190,3 +30190,97 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end CoordinateAnalyticDescentChecks
+
+
+namespace AnalyticSequenceSliceChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := by
+  have he : (4 : ℝ≥0∞)/2 = 2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 4
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The upgrade works even for an l-infinity target and does not require
+-- the affine base point to lie inside the open parameter domain.
+example (f : ℂ → Coeff ⊤) (U : Set ℂ) (hU : IsOpen U) (hf : ContinuousOn f U)
+    (ha : ∀ b ∈ U, ∀ n : ℤ, AnalyticAt ℂ (fun t : ℂ => f (b+t) n) 0) (a : ℂ) :
+    AnalyticOnNhd ℂ (fun t : ℂ => f (a+t)) ((fun t : ℂ => a+t) ⁻¹' U) :=
+  Coeff.analyticOnNhd_sequenceSlice f U hU hf (ContinuousLinearMap.id ℂ ℂ) ha a
+
+-- Squaring and adding the two l4 components gives an l2-valued invariant
+-- polynomial. Its descent is analytic in norm at the all-zero sequence,
+-- along either input component and any signed coordinate.
+example (second : Bool) (k : ℤ) :
+    AnalyticAt ℂ (fun t : ℂ => Coeff.tailSquareDescent (p := 4) (q := 2) ∅
+      (fun z : Coeff 4 × Coeff 4 => Coeff.square (q := 2) z.1+Coeff.square z.2) univ
+      (Coeff.pairSingleCLM 2 second k t)) 0 := by
+  let f : (Coeff 4 × Coeff 4) → Coeff 2 := fun z => Coeff.square z.1+Coeff.square z.2
+  have hf : AnalyticOnNhd ℂ f univ := by
+    intro z _
+    exact ((Coeff.analyticOnNhd_square z.1 (mem_univ _)).comp analyticAt_fst).add
+      ((Coeff.analyticOnNhd_square z.2 (mem_univ _)).comp analyticAt_snd)
+  have hi : ∀ e d : ℤ → Bool, (∀ n ∈ (∅ : Finset ℤ), e n = false) →
+      (∀ n ∈ (∅ : Finset ℤ), d n = false) → ∀ z ∈ (univ : Set (Coeff 4 × Coeff 4)),
+      f (Coeff.pairSignChange e d z) = f z := by
+    intro e d _ _ z _
+    ext n
+    simp [f,Coeff.pairSignChange]
+  have hz : (0 : Coeff 2 × Coeff 2) ∈ Coeff.pairMixedSquare (p := 4) ∅ '' univ := by
+    refine ⟨0,mem_univ _,?_⟩
+    apply Prod.ext <;> ext n <;> simp [Coeff.pairMixedSquare]
+  simpa only [zero_add] using Coeff.analyticAt_tailSquareDescent_coordinateSlice
+    (p := 4) (q := 2) (by simp) ∅ f univ isOpen_univ hf hi 0 hz second k
+
+-- The whole open intersection with the coordinate line is analytic,
+-- not only a neighborhood of the chosen lifted center.
+example (S : Finset ℤ) (f : (Coeff 4 × Coeff 4) → Coeff 3) (V : Set (Coeff 4 × Coeff 4))
+    (hV : IsOpen V) (hf : AnalyticOnNhd ℂ f V)
+    (hi : ∀ e d : ℤ → Bool, (∀ n ∈ S, e n = false) → (∀ n ∈ S, d n = false) →
+      ∀ z ∈ V, f (Coeff.pairSignChange e d z) = f z)
+    (b : Coeff 2 × Coeff 2) (second : Bool) (k : ℤ) :
+    AnalyticOnNhd ℂ (fun t : ℂ => Coeff.tailSquareDescent S f V (b+Coeff.pairSingleCLM 2 second k t))
+      ((fun t : ℂ => b+Coeff.pairSingleCLM 2 second k t) ⁻¹' (Coeff.pairMixedSquare S '' V)) :=
+  Coeff.analyticOnNhd_tailSquareDescent_coordinateSlice (by simp) S f V hV hf hi b second k
+
+-- The actual p = 6 frequency and correction have coordinate slices
+-- analytic in l3 and l2 norms, on one common open l3-pair domain.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6,
+    ∃ S : Finset ℤ, ∃ c z₀ : Coeff 6 × Coeff 6, ∃ R : ℝ,
+    ∃ V : Set (Coeff 3 × Coeff 3),
+    ∃ F : (Coeff 3 × Coeff 3) → Coeff 3, ∃ H : (Coeff 3 × Coeff 3) → Coeff 2,
+      0 < R ∧ z₀ ∈ ball c R ∧ g z₀ = φ.val ∧ IsOpen V ∧
+      ContinuousOn F V ∧ ContinuousOn H V ∧
+      (∀ (b : Coeff 3 × Coeff 3) (second : Bool) (k : ℤ),
+        AnalyticOnNhd ℂ (fun v : ℂ => F (b+Coeff.pairSingleCLM 3 second k v))
+          ((fun v : ℂ => b+Coeff.pairSingleCLM 3 second k v) ⁻¹' V) ∧
+        AnalyticOnNhd ℂ (fun v : ℂ => H (b+Coeff.pairSingleCLM 3 second k v))
+          ((fun v : ℂ => b+Coeff.pairSingleCLM 3 second k v) ⁻¹' V)) ∧
+      ∀ z ∈ ball c R, Coeff.pairMixedSquare S z ∈ V ∧
+        F (Coeff.pairMixedSquare S z) = A.frequencySequence 3 (g z) ∧
+        H (Coeff.pairMixedSquare S z) = A.actionFrequencyCorrectionSequence 2 (g z) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_analyticSliceTailSquareDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,hR,hbase,_,hV,_,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨_,hf,_,hfa,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨_,hg,_,hga,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,S,Coeff.truncatePair S (sourceBirkhoffMap (by simp) (by norm_num) t φ.val),
+    sourceBirkhoffMap (by simp) (by norm_num) t φ.val,R,_,_,_,hR,hbase,C.base_eq,hV,hf,hg,
+    fun b second k => ⟨hfa b second k,hga b second k⟩,?_⟩
+  intro z hz
+  exact ⟨⟨z,hz,rfl⟩,(he z hz).1,(hj z hz).1⟩
+
+end
+end AnalyticSequenceSliceChecks

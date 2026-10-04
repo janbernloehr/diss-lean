@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: Analyticity in individual squared tail coordinates
+## Current milestone: Analytic coordinate slices in the full sequence norm
+
+The actual descended frequency and refined correction are now analytic
+in their full target sequence norms along every individual coordinate line.
+The result holds on the entire open preimage of the common mixed-coordinate
+domain, including zero tail squares and retained head coordinates. It keeps
+the same charts, domain, admissible target exponents, exact recovery, and
+literal coordinate formulas as the preceding construction.
+
+`AnalyticSequenceSlice.lean` upgrades scalar output analyticity and norm
+continuity to analytic sequence-valued affine slices. It translates the
+analytic germ at each line point and applies the existing locally bounded
+coordinate realization theorem. The affine base need not belong to the
+domain; analyticity is asserted only on its open preimage. The general
+lemma also supports an `l∞` target and a zero linear direction.
+
+`TailSquareDescentAnalyticSlice.lean` applies this result to invariant
+analytic sequence maps, supplying analyticity on the full slice domain
+and at every image point. `SourceFrequencyAnalyticSliceDescent.lean`
+constructs the actual frequency and correction maps with these properties
+on one common domain, before choosing their target exponents. Frequency
+targets remain finite `r > 1` with `r >= p/2`; correction targets remain
+finite `r > 1` with `r >= p/3`.
+
+Public checks cover an `l∞` target with an arbitrary affine base, the
+sequence-valued quadratic polynomial at the all-zero source in both
+components, full slice domains, and actual `p = 6` frequency and correction
+slices analytic in `l3` and `l2` norms, respectively.
+
+Validation: the full check script passes (5,891 build jobs, all public
+examples, and an axiom audit of 21,606 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: handle simultaneous coordinate variations and establish joint
+Banach-space analyticity, then descend from individual squares to quadratic
+actions and glue the local maps. Analyticity along individual coordinate
+lines alone is not being treated as a proof of joint analyticity. Theorem
+18.1, Corollary 18.2, and the later dissertation remain unfinished.
+
+## Previous milestone: Analyticity in individual squared tail coordinates
 
 The actual frequency and refined correction now have scalar components
 analytic in every individual coordinate of the mixed half-exponent domain,

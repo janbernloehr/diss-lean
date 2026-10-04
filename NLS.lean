@@ -2458,3 +2458,6 @@ import NLS.ZakharovShabat.SourceFrequencyTailSquareDescent
 import NLS.ComplexAnalysis.AnalyticSquareDescent
 import NLS.SequenceSpaces.TailSquareDescentCoordinateAnalytic
 import NLS.ZakharovShabat.SourceFrequencyCoordinateAnalyticDescent
+import NLS.SequenceSpaces.AnalyticSequenceSlice
+import NLS.SequenceSpaces.TailSquareDescentAnalyticSlice
+import NLS.ZakharovShabat.SourceFrequencyAnalyticSliceDescent
