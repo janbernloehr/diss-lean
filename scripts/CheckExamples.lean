@@ -29188,3 +29188,68 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
 
 end
 end RefinedPsiExponentChecks
+
+
+namespace AllGapPsiMajorantChecks
+open Set Metric Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- Central and tail indices now belong to the same square-summable row.
+section Four
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+variable {hp : (4:ℝ≥0∞) ≠ ⊤} {hp1 : 1 < (4:ℝ≥0∞)}
+example {V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (φ : realTypeSourceSubmodule 4) (hφ : φ.val ∈ V) :
+    ∃ T : Set (CoeffPair 4), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ V ∧
+      ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ T, ∀ n : ℤ, ∃ B : Coeff 2, ‖B‖ ≤ M ∧
+        ∀ k : ℤ, k ≠ n → ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+          ‖sourcePsiMidpointFilledRegularFactor hp hp1 n k (s n ψ) ψ z-Complex.I‖ ≤ ‖B k‖ := by
+  obtain ⟨T,hT,hφT,hTV,hb⟩ := hs.exists_local_refined_actualGap_majorants φ hφ
+  obtain ⟨M,hM,hmajor⟩ := hb 2 (by norm_num) (by norm_num) (by norm_num)
+  refine ⟨T,hT,hφT,hTV,M,hM,?_⟩
+  intro ψ hψ n
+  obtain ⟨B,hB,_,hc⟩ := hmajor ψ hψ n
+  exact ⟨B,hB,hc⟩
+end Four
+
+-- At p = 2 one neighborhood works for every finite exponent above one.
+-- The quotient includes the selected index equal to the deleted index.
+section Two
+local instance : Fact (1 ≤ (2:ℝ≥0∞)) := ⟨by norm_num⟩
+variable {hp : (2:ℝ≥0∞) ≠ ⊤} {hp1 : 1 < (2:ℝ≥0∞)}
+example {V : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (φ : realTypeSourceSubmodule 2) (hφ : φ.val ∈ V) :
+    ∃ T : Set (CoeffPair 2), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ V ∧
+      ∀ r : ℝ≥0∞, r ≠ ⊤ → 1 < r →
+        ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ T, ∀ n : ℤ, ∃ B : Coeff r, ‖B‖ ≤ M ∧
+          ∀ z ∈ sourcePeriodicSegment hp hp1 ψ n,
+            ‖sourceSingleRootQuotientJointProduct hp hp1 n
+              (z,(sourcePsiFillDeletedRoot n (s n ψ) (sourceStandardRootMidpoint hp hp1 ψ n),ψ))-1‖ ≤ ‖B n‖ := by
+  obtain ⟨T,hT,hφT,hTV,hb⟩ := hs.exists_local_refined_actualGap_majorants φ hφ
+  refine ⟨T,hT,hφT,hTV,?_⟩
+  intro r hr hr1
+  have hpr : ENNReal.ofReal ((2:ℝ≥0∞).toReal/2) ≤ r := by simpa using hr1.le
+  obtain ⟨M,hM,hmajor⟩ := hb r hr hr1 hpr
+  refine ⟨M,hM,?_⟩
+  intro ψ hψ n
+  obtain ⟨B,hB,hq,_⟩ := hmajor ψ hψ n
+  exact ⟨B,hB,hq n⟩
+end Two
+
+-- A fixed central gap needs neither a tail cutoff nor an open-gap assumption.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (hs : SourcePsiIsolatingComplexExtension hp hp1 V s)
+    (φ : realTypeSourceSubmodule p) :
+    ∃ T : Set (CoeffPair p), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ V ∧
+      ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ T, ∀ n : ℤ, (0:ℤ) ≠ n →
+        ∀ z ∈ sourcePeriodicSegment hp hp1 ψ 0,
+          ‖sourcePsiMidpointFilledRegularFactor hp hp1 n 0 (s n ψ) ψ z-Complex.I‖ ≤ M := by
+  obtain ⟨T,hT,hφT,hTV,M,hM,hb⟩ := hs.exists_local_selectedGap_bounds φ 0
+  exact ⟨T,hT,hφT,hTV,M,hM,fun ψ hψ n hn z hz => (hb ψ hψ n z hz).2 hn⟩
+
+end
+end AllGapPsiMajorantChecks

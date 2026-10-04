@@ -6,10 +6,11 @@ Fourier Transform for the dNLS Equation* (2016).
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
 Latest milestone: the actual normalized psi quotient and chi errors now
-have refined tail sequence bounds on moving complex gaps, for every
-finite exponent above one and at least `p/2`. The neighborhood and cutoff
-are independent of the exponent and deleted index. Central-index and
-diagonal estimates for Lemma 20.3 remain next; see `STATUS.md`.
+have refined sequence bounds on every moving complex gap, including the
+finite central gaps. One source neighborhood works before every finite
+exponent above one and at least `p/2`, with row norms uniform in the deleted
+index. Lemma 20.3's moment and diagonal sequence estimates remain next;
+see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11828,3 +11829,34 @@ quantitative moment inequalities. The diagonal still needs a single
 sequence estimate; a uniform bound on separate row majorants does not
 by itself prove that. Lemma 20.3's final moment sequence bounds, general
 infinite-gap frequencies, and the remaining dissertation are unfinished.
+
+
+## Refined psi row bounds on all complex gaps
+
+`SourcePsiCentralGapBound.lean` bounds the actual filled-root quotient
+near the compact real gap-root product. Uniform branch stability makes
+this bound independent of the deleted index. The positive collar between
+the selected inner and outer spectral discs separates every other moving
+midpoint. Together with the bounded midpoint displacement, it controls
+the lattice-scaled denominator for all deleted indices, including nearby
+ones. A finite intersection gives one bound for any finite selected family.
+The estimates include collapsed gaps and require no supplied chi bound.
+
+`SourcePsiRefinedActualGapMajorants.lean` patches these central estimates
+to the refined tail bounds with a finite-support correction. On one open
+source neighborhood, the actual quotient and off-diagonal chi errors on
+**every** moving gap are dominated by a common row in every finite `ℓr`
+with `r > 1` and `r >= p/2`. The neighborhood precedes the exponent and
+deleted index; row norms are uniform in that index. The quotient bound
+also includes the selected index equal to the deleted index.
+
+Public checks cover square-summable rows at source exponent four, one
+neighborhood for all finite exponents above one at source exponent two,
+and the central selected gap zero with arbitrary deleted index.
+
+Next: combine these all-index row bounds with the square estimates and
+quantitative moment inequalities. The diagonal still requires a shared
+sequence estimate: uniform norms for separate rows do not establish the
+sequence of their diagonal entries. Lemma 20.3's final moment sequence
+bounds, general infinite-gap frequencies, and the rest of the dissertation
+remain unfinished.

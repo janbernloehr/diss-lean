@@ -2392,3 +2392,5 @@ import NLS.ZakharovShabat.SourcePsiRefinedOffsetExponent
 import NLS.ZakharovShabat.SourcePsiRefinedQuotientTail
 import NLS.ZakharovShabat.SourcePsiRefinedChiTail
 import NLS.ZakharovShabat.SourcePsiRefinedActualGapTail
+import NLS.ZakharovShabat.SourcePsiCentralGapBound
+import NLS.ZakharovShabat.SourcePsiRefinedActualGapMajorants
