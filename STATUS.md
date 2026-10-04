@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: full interior regularity and Cauchy normalization
+## Current milestone: uniform endpoint normalization for all gaps
+
+`SourceFullAbelianUniformEndpoints.lean` now gives one open connected
+almost-real neighborhood on which the canonical full primitive has the
+exact endpoint limits `i pi (n-j)` for every gap `j` and normalization
+index `n`. Around each complex base potential there is one positive
+source radius working for all gaps simultaneously. The limits are taken
+relative to the whole complement of noncollapsed gaps, not merely a
+selected cut disc. At a collapsed endpoint the filled function itself
+has the prescribed value. The same function is jointly analytic off all
+moving cuts on this neighborhood.
+
+`SourceFullAbelianCauchyPrimitive.lean` applies the quadratic Cauchy
+construction directly to the full canonical function. Its quotient is
+analytic in the whole interior disc and the source; multiplying by the
+selected standard root recovers the exact spectral derivative and zero
+endpoint limits. `SourceFullAbelianUniformCauchyFamily.lean` supplies all
+these constructions on the common source ball, using the uniform disc
+family and the global standard-root and numerator-extension results.
+
+`SourceFullAbelianUniformNormalization.lean` identifies each analytic
+source-dependent offset. The actual real normalization fixes the offset
+near the real anchor. The identity theorem then fixes it throughout the
+original connected source ball. Applying this separately to each index
+does not shrink the ball, so the resulting endpoint normalization is
+simultaneous for the whole infinite family.
+
+Public checks verify one common radius at exponent 3/2, both endpoint
+limits for every signed gap and normalization index, filled-slice
+analyticity, and joint analyticity of the same function. A collapsed
+complex gap at index -2 has the exact filled value `5 i pi` for primitive
+index 3, with no reality assumption on the perturbed source.
+
+This supplies the common-neighborhood endpoint normalization in Lemma
+19.1(ii), together with the previously proved index-shift identity. The
+uniform gap-size bounds in (iii) are next. Further square-continuation
+results, later frequency results, and the full dissertation remain
+unfinished. Joint analyticity at filled collapsed endpoints is not
+asserted by these off-cut joint-domain theorems.
+
+## Previous milestone: full interior regularity and Cauchy normalization
 
 `SourceFullAbelianJointAnalytic.lean` proves joint analyticity of the
 canonical full primitive throughout the complex cut complement on one

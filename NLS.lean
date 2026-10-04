@@ -2271,3 +2271,8 @@ import NLS.ComplexAnalysis.ParametricPrimitivePropagation
 import NLS.ZakharovShabat.SourceFullAbelianJointAnalytic
 import NLS.ZakharovShabat.SourceFullAbelianDifferential
 import NLS.ZakharovShabat.SourceFullAbelianCauchyCompatibility
+
+import NLS.ZakharovShabat.SourceFullAbelianCauchyPrimitive
+import NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily
+import NLS.ZakharovShabat.SourceFullAbelianUniformNormalization
+import NLS.ZakharovShabat.SourceFullAbelianUniformEndpoints

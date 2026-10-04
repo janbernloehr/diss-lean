@@ -27371,3 +27371,63 @@ example (W : Set (CoeffPair 3))
   D.fullPrimitive_source_fderiv hall hD hroot n z ψ h ⟨hψ,hz⟩
 
 end NLS.FullAbelianInteriorChecks
+
+
+noncomputable section
+namespace NLS.FullAbelianUniformEndpointChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- One radius at exponent 3/2 works for ALL gaps and normalization
+-- indices, retains filled-slice analyticity and controls both endpoints
+-- relative to the complete spectral domain.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    ∃ (W : Set (CoeffPair (ENNReal.ofReal (3/2)))) (r : ℝ), 0 < r ∧
+      ∀ ψ ∈ ball φ.val r, ∀ n : ℤ,
+        AnalyticOnNhd ℂ (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,ψ))
+          (sourceOpenGapComplement (by simp) (by norm_num) ψ) ∧
+        ∀ j : ℤ,
+          Tendsto (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,ψ))
+            (𝓝[sourceOpenGapComplement (by simp) (by norm_num) ψ]
+              (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j))
+            (𝓝 (Complex.I*(Real.pi : ℂ)*(n-j))) ∧
+          Tendsto (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,ψ))
+            (𝓝[sourceOpenGapComplement (by simp) (by norm_num) ψ]
+              (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j))
+            (𝓝 (Complex.I*(Real.pi : ℂ)*(n-j))) := by
+  obtain ⟨W,V,_,_,hreal,_,_,hglobal⟩ := exists_sourceFullAbelian_almostReal_uniformEndpoints
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  obtain ⟨r,hr,_,hall⟩ := hglobal φ.val (hreal φ.property)
+  refine ⟨W,r,hr,?_⟩
+  intro ψ hψ n
+  obtain ⟨hE,hend⟩ := hall ψ hψ
+  obtain ⟨E⟩ := hE
+  refine ⟨sourceFullAbelianPrimitive_spectral_analytic E n,?_⟩
+  intro j
+  exact ⟨hend j n _ (by simp),hend j n _ (by simp)⟩
+
+-- At a collapsed complex gap the filled value itself is prescribed.
+-- There is no assumption that the perturbed potential is real.
+example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-2) = 0) :
+    sourceFullAbelianPrimitive (by simp) (by norm_num) W 3
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-2),ψ) =
+        5*Complex.I*(Real.pi : ℂ) := by
+  have h := C.fullPrimitive_collapsed_endpoint_value (-2) 3 ψ hψ hgap
+    (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-2)) (by simp)
+  have he : Complex.I*(Real.pi : ℂ)*((3:ℂ)-(-2)) = 5*Complex.I*(Real.pi : ℂ) := by ring
+  simpa only [Int.cast_neg,Int.cast_ofNat,he] using h
+
+-- The endpoint neighborhood also carries joint analyticity of the same
+-- function throughout its cut complement, not a separate family.
+example : ∃ W V : Set (CoeffPair 3), IsOpen V ∧ IsConnected V ∧ realTypeSourceLocus 3 ⊆ V ∧
+    ∀ n : ℤ, AnalyticOnNhd ℂ (sourceFullAbelianPrimitive (by simp) (by norm_num) W n)
+      (sourceCanonicalRootJointDomain (by simp) (by norm_num) V) := by
+  obtain ⟨W,V,hV,hconn,hreal,_,hjoint,_⟩ := exists_sourceFullAbelian_almostReal_uniformEndpoints
+    (p := 3) (by simp) (by norm_num)
+  exact ⟨W,V,hV,hconn,hreal,hjoint⟩
+
+end NLS.FullAbelianUniformEndpointChecks
