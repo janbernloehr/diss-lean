@@ -2461,3 +2461,7 @@ import NLS.ZakharovShabat.SourceFrequencyCoordinateAnalyticDescent
 import NLS.SequenceSpaces.AnalyticSequenceSlice
 import NLS.SequenceSpaces.TailSquareDescentAnalyticSlice
 import NLS.ZakharovShabat.SourceFrequencyAnalyticSliceDescent
+import NLS.ComplexAnalysis.QuadraticLineRoot
+import NLS.SequenceSpaces.FiniteMixedSquareLineLift
+import NLS.SequenceSpaces.TailSquareDescentFiniteLine
+import NLS.ZakharovShabat.SourceFrequencyFiniteLineDescent

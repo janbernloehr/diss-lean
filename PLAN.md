@@ -1,6 +1,61 @@
 # Implementation plan
 
-## Latest progress: Analytic coordinate slices in the full sequence norm
+## Latest progress: Analytic slices in finite-support directions
+
+The descended frequency and refined correction now have analytic slices
+in every finite-support direction, in their full target sequence norms.
+A single direction may change both components, retained head entries, and
+multiple zero tail entries simultaneously. The theorem holds on the full
+open preimage of the common mixed-coordinate domain and preserves all
+admissible target exponents and exact source recovery formulas.
+
+`QuadraticLineRoot.lean` constructs a root of `a² + u²*d` that equals `a`
+at zero and is analytic there, including when `a = 0`. In that case it is
+`u*sqrt(d)`; otherwise it uses the normalized prescribed root. The square
+identity holds globally, while analyticity is asserted locally at zero.
+
+`FiniteMixedSquareLineLift.lean` assembles these roots into an analytic
+finite-coordinate perturbation of a coefficient pair. Its mixed-square
+image is exactly `Q(z) + u²*truncatePair(T,d)`. Retained head entries use
+the quadratic parameter directly, and unchanged coordinates stay fixed.
+No nonvanishing condition on the tail is required.
+
+`TailSquareDescentFiniteLine.lean` combines this lift with input-square
+analytic descent to prove scalar analyticity along each finite-support
+line. Norm continuity then upgrades the entire sequence-valued slice.
+`SourceFrequencyFiniteLineDescent.lean` applies the construction to the
+actual frequency and correction on their common open domain.
+
+Public checks cover collapsed and noncollapsed roots, a squared center
+on the principal branch cut, head and zero tail entries moving together,
+an empty direction block, simultaneous changes in both components,
+sequence-valued quadratic descent at zero, and the actual `p = 6`
+frequency and correction in `l3` and `l2` norms.
+
+Validation: the full check script passes (5,895 build jobs, all public
+examples, and an axiom audit of 21,625 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: extend the line result from finite-support directions to arbitrary
+sequence directions, and prove joint Fréchet analyticity. Then descend
+from individual coordinate squares to quadratic actions and glue the
+local maps. Finite-support line analyticity is not yet the analytic
+action-space frequency map of Theorem 18.1; Corollary 18.2 and the later
+dissertation also remain unfinished.
+
+For the next extension, a useful Mathlib lemma is
+`IsCompact.mem_uniformity_of_prod` in `Topology/UniformSpace/HeineCantor`.
+It gives uniform convergence on a compact scalar disc for a jointly
+continuous family as its direction parameter converges, without assuming
+local compactness of the sequence space. Around a fixed domain point,
+choose a small scalar disc and a bounded neighborhood of the desired
+direction so all affine points remain in the domain. Apply this lemma to
+`(v,t) ↦ G(b+t*v)` and the finite truncations of `v`. The existing
+`TendstoLocallyUniformlyOn.differentiableOn` theorem then provides a route
+to analyticity along arbitrary directions. This limit argument and the
+subsequent joint Fréchet-analytic conclusion are not yet formalized.
+
+## Previous milestone: Analytic coordinate slices in the full sequence norm
 
 The actual descended frequency and refined correction are now analytic
 in their full target sequence norms along every individual coordinate line.
