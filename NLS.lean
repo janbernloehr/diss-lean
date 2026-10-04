@@ -2475,3 +2475,9 @@ import NLS.ComplexAnalysis.AnalyticLineRemainder
 import NLS.ComplexAnalysis.AnalyticLineFrechet
 import NLS.SequenceSpaces.TailSquareDescentFrechet
 import NLS.ZakharovShabat.SourceFrequencyFrechetDescent
+import NLS.ComplexAnalysis.HolomorphicCircleIntegral
+import NLS.ComplexAnalysis.FDerivCauchyFormula
+import NLS.ComplexAnalysis.FDerivAnalyticLine
+import NLS.ComplexAnalysis.BanachHolomorphicAnalytic
+import NLS.SequenceSpaces.TailSquareDescentAnalytic
+import NLS.ZakharovShabat.SourceFrequencyAnalyticDescent

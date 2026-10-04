@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the descended frequency and refined correction are complex
-Fréchet differentiable with continuous derivatives on their common mixed
-sequence domain. A uniform quadratic error bound underpins the proof.
-Joint analyticity and the action-variable descent in Theorem 18.1 remain
-next; see `STATUS.md`.
+Latest milestone: the descended frequency and refined correction are jointly
+analytic on their common mixed sequence domain, with genuine local Banach
+power series. Descent to quadratic actions and gluing the local maps in
+Theorem 18.1 remain next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12533,3 +12532,51 @@ then descend from individual coordinate squares to quadratic actions and
 glue the local maps. The joint analytic action map required by Theorem 18.1
 has not yet been formalized. Corollary 18.2 and the later dissertation
 remain unfinished.
+
+## Joint analyticity of the frequency descent
+
+The actual descended frequency and refined correction are now jointly
+analytic on their common open mixed-coordinate domain, in every
+admissible target sequence norm. The result supplies genuine local Banach
+power series, including at zero tail entries. The source charts, common
+domain, and exact frequency and correction formulas are preserved.
+
+`HolomorphicCircleIntegral.lean` differentiates parameter-dependent circle
+integrals assuming only complex Fréchet differentiability on an open joint
+domain. Automatic `C¹` regularity supplies derivative continuity; compactness
+of the circle gives a common parameter neighborhood and a uniform bound.
+`FDerivCauchyFormula.lean` differentiates the affine-line Cauchy identity in
+the base point, obtaining an identity valued in the full operator space.
+
+`FDerivAnalyticLine.lean` turns this identity into an operator-norm power
+series along each affine line. Derivative continuity and the earlier
+line-to-Fréchet theorem show that differentiating preserves holomorphicity.
+`BanachHolomorphicAnalytic.lean` iterates this result to obtain complex
+smoothness and applies the existing Banach Taylor theorem. It proves that
+complex Fréchet differentiability on an open domain implies joint
+analyticity, with a positive-radius expansion using the normalized
+Fréchet Taylor coefficients. It also gives the direct criterion from
+norm continuity and analytic complex line restrictions.
+
+`TailSquareDescentAnalytic.lean` proves joint analyticity of the general
+sign-invariant sequence descent, allowing an `l∞` target.
+`SourceFrequencyAnalyticDescent.lean` applies the result to the actual
+frequency and refined correction with all admissible exponents and exact
+source recovery formulas.
+
+Public checks cover operator-valued analytic lines, normalized Taylor
+series with positive radius, the line-to-joint criterion, an `l∞` target,
+the all-zero quadratic example, and the actual `p = 6` frequency and
+correction as jointly analytic maps into `l3` and `l2`.
+
+Validation: the full check script passes (5,912 build jobs, all public
+examples, and an axiom audit of 21,699 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: descend the mixed coordinates (retained head entries and individual
+tail squares) to the quadratic actions `I_n = (z₁,n² + z₂,n²)/2`, and glue
+the local maps. `QuadraticActionLifting.lean` already proves openness of
+the action map, and real action invariance is available. Constancy on
+complex action fibers and the analytic action descent still need proofs.
+The analytic action map required by Theorem 18.1 is not yet formalized.
+Corollary 18.2 and the later dissertation remain unfinished.
