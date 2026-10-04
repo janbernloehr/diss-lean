@@ -2499,3 +2499,9 @@ import NLS.SequenceSpaces.HeadRotationStationarity
 import NLS.SequenceSpaces.HeadRotationDescent
 import NLS.SequenceSpaces.HeadActionTangent
 import NLS.SequenceSpaces.HeadActionCurveInvariance
+
+import NLS.SequenceSpaces.HeadActionPath
+import NLS.SequenceSpaces.HeadActionPathAnalytic
+import NLS.SequenceSpaces.HeadActionPathNeighborhood
+import NLS.SequenceSpaces.LocalHeadActionDescent
+import NLS.ZakharovShabat.SourceFrequencyLocalActionDescent

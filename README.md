@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual frequency and correction factors are stationary
-under retained-head rotations and constant along admissible differentiable
-head-action curves. Constructing local curves to the analytic section and
-gluing remain next in Theorem 18.1; see `STATUS.md`.
+Latest milestone: the actual frequency and refined correction now have
+local analytic factors through the full quadratic action sequence, with
+exact recovery throughout a common Birkhoff neighborhood and an open action
+domain equal to its image. Gluing these local maps remains next in
+Theorem 18.1; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12771,3 +12772,55 @@ the explicit analytic action section and apply the proved curve invariance.
 This is needed for recovery throughout an action neighborhood; the current
 curve theorem alone does not supply the joining curves. Gluing then remains.
 Theorem 18.1, Corollary 18.2, and the later dissertation are unfinished.
+
+
+## Local analytic frequency maps on action space
+
+The actual frequency and refined correction now factor analytically through
+the full quadratic action sequence on one common open action neighborhood
+of each real base. Exact recovery holds at every point of an open original
+Birkhoff neighborhood, simultaneously in all admissible target norms. The
+action neighborhood is exactly the image of that original neighborhood.
+
+`HeadActionPath.lean` constructs explicit paths to the analytic action
+section. Each free head coordinate moves linearly to its base value; a
+normalized square root supplies its partner while preserving the action.
+The infinite tail remains fixed. All actions are preserved for every
+complex time, the base path is constant, and time one reaches the section.
+
+`HeadActionPathAnalytic.lean` proves joint analyticity near every point
+of the base path. Uniqueness of continuous square-root branches gives the
+correct initial point throughout a neighborhood of the base.
+`HeadActionPathNeighborhood.lean` uses the compact unit interval and the
+generalized tube lemma to choose one neighborhood where every complete
+path remains in the prescribed domain, analytic, and free of zero retained
+pairs.
+
+`LocalHeadActionDescent.lean` packages the neighborhoods into an action
+chart. Rotation stationarity and the proved curve invariance yield exact
+local recovery through the full action map, with no joining-curve
+assumptions left to the caller. The explicit factor is analytic and unique
+on the chosen action neighborhood.
+
+`SourceFrequencyLocalActionDescent.lean` combines the head and tail
+constructions for the actual maps. One source chart and one action domain
+serve the frequency targets `r > 1`, `r >= p/2`, and the correction targets
+`r > 1`, `r >= p/3`. It preserves the exact coordinate formulas and proves
+that every point of the action domain has an original lift in the chosen
+Birkhoff neighborhood.
+
+Public checks include a nonzero complex pair with zero quadratic action,
+local recovery at the zero base with an empty head and an `l∞` target,
+and the actual `p = 6` maps from one `l3` action domain into `l3` and `l2`.
+The latter also proves the correction identity `H(b)_n = F(b)_n + 2*b_n`
+throughout the action neighborhood, using the proved image equality.
+
+Validation: the full build passes (5932 jobs), all public examples pass,
+and the transitive axiom audit passes for 21905 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: establish agreement of the local action maps on overlaps and glue
+them into the action-space map required by Theorem 18.1, including its
+common domain around the real nonnegative action locus. Local action
+factorization is now proved; the global gluing, Corollary 18.2, and the
+later dissertation remain unfinished.

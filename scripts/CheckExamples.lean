@@ -31040,3 +31040,79 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end HeadActionCurveChecks
+
+
+namespace LocalActionDescentChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- Nonzero complex head pairs can have zero action. The path construction
+-- still preserves actions for every complex time and reaches the section.
+example (w : Coeff.TailSumSpace 2 {0}) (t : ℂ) :
+    let a : Coeff.TailSumSpace 2 {0} := (fun _ => 1,lp.single 2 0 Complex.I)
+    Coeff.headActions {0} a = 0 ∧
+      Coeff.headActions {0} (Coeff.headActionPath {0} a (w,t)) = Coeff.headActions {0} w ∧
+      Coeff.headActionPath {0} a (w,1) = Coeff.headActionSection {0} a (Coeff.headActions {0} w) := by
+  intro a
+  have ha : Coeff.HeadNonzero {0} a := fun _ => Or.inl (by norm_num [a])
+  refine ⟨?_,Coeff.headActions_path {0} a ha w t,Coeff.headActionPath_one {0} a w⟩
+  ext n
+  by_cases hn : n = 0
+  · subst n
+    simp [a,lp.single_apply]
+  · simp [a,hn,lp.single_apply]
+
+-- At zero, with an empty head, every analytic l-infinity-valued function
+-- has exact local action recovery, without any rotation hypotheses.
+example (U : Set (Coeff.TailSumSpace 2 ∅)) (hU : IsOpen U) (hzero : 0 ∈ U)
+    (G : Coeff.TailSumSpace 2 ∅ → Coeff ⊤) (hG : AnalyticOnNhd ℂ G U) :
+    ∃ C : Coeff.HeadActionChart ∅ U (0 : Coeff.TailSumSpace 2 ∅),
+      AnalyticOnNhd ℂ (C.factor G) C.target ∧
+      ∀ w ∈ C.source, C.factor G (Coeff.headActions ∅ w) = G w := by
+  have hn : Coeff.HeadNonzero ∅ (0 : Coeff.TailSumSpace 2 ∅) := by
+    intro k
+    exact False.elim (Finset.notMem_empty k.val k.property)
+  obtain ⟨C⟩ := Coeff.exists_headActionChart ∅ 0 hn U hU hzero
+  refine ⟨C,C.analyticOnNhd_factor G hG,?_⟩
+  intro w hw
+  exact C.factor_apply hU G hG.differentiableOn
+    (fun _ _ k => False.elim (Finset.notMem_empty k.val k.property)) w hw
+
+-- Actual p = 6 frequency and correction depend analytically on one l3
+-- action variable on a common open domain. Recovery holds at every nearby
+-- original point, and the correction identity holds throughout that domain.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6,
+    ∃ z₀ : Coeff 6 × Coeff 6, ∃ Z : Set (Coeff 6 × Coeff 6), ∃ T : Set (Coeff 3),
+    ∃ F : Coeff 3 → Coeff 3, ∃ H : Coeff 3 → Coeff 2,
+      IsOpen Z ∧ z₀ ∈ Z ∧ g z₀ = φ.val ∧ IsOpen T ∧
+      quadraticActionsExponent (q := 3) '' Z = T ∧
+      AnalyticOnNhd ℂ F T ∧ AnalyticOnNhd ℂ H T ∧
+      (∀ z ∈ Z, F (quadraticActionsExponent z) = A.frequencySequence 3 (g z) ∧
+        H (quadraticActionsExponent z) = A.actionFrequencyCorrectionSequence 2 (g z)) ∧
+      ∀ b ∈ T, ∀ n, H b n = F b n+2*b n := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_localActionDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,L,K,_,_,hZ,hbase,himage,_,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨hF,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨hH,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,sourceBirkhoffMap (by simp) (by norm_num) t φ.val,
+    _,K.target,_,_,hZ,hbase,C.base_eq,K.target_open,himage,hF,hH,
+    fun z hz => ⟨(he z hz).1,(hj z hz).1⟩,?_⟩
+  intro b hb n
+  obtain ⟨z,hz,rfl⟩ := himage.symm ▸ hb
+  rw [(hj z hz).2 n,(he z hz).2 n,quadraticActionsExponent_apply]
+  ring
+
+end
+end LocalActionDescentChecks
