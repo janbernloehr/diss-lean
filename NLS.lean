@@ -2342,3 +2342,7 @@ import NLS.ZakharovShabat.SourceAbelianMomentLocalChart
 import NLS.ZakharovShabat.SourceAbelianMomentAtlas
 import NLS.ZakharovShabat.SourceAbelianMomentDomain
 import NLS.ZakharovShabat.SourceAbelianMomentLemma20_1
+import NLS.ComplexAnalysis.CubicInversionContour
+import NLS.ZakharovShabat.SourceFullAbelianCubicHamiltonianContour
+import NLS.ZakharovShabat.SourceAbelianMomentFiniteSums
+import NLS.ZakharovShabat.SourceAbelianMomentQuadraticShift

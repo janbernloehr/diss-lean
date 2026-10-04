@@ -28359,3 +28359,84 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
     c₀ c₁ r₀ r₁ hr₀ hr₁ hseg₀ hseg₁ hnest hother
 
 end NLS.GlobalMomentChecks
+
+
+noncomputable section
+namespace NLS.FrequencyContourChecks
+open Set Metric Filter Topology ZakharovShabat
+open scoped ENNReal
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem oneLtHalf : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num))
+    (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨oneLtHalf.le⟩
+
+-- The contour recovers the actual physical Hamiltonian at p=3/2,
+-- without assuming a chart, a Laurent expansion, or extra regularity.
+example : ∃ W : Set (CoeffPair (3/2)), ∀ (φ : realTypeSourceSubmodule (3/2))
+    (hf : φ ∈ sourceFiniteGapLocus halfFinite oneLtHalf), ∃ T : ℝ, 0 < T ∧
+      ∀ R : ℝ, T ≤ R →
+        (8/(6*Real.pi) : ℂ)*(∮ z in C(0,R), (sourceFullAbelianPrimitive halfFinite oneLtHalf W 0 (z,φ.val))^3) =
+          sourceFiniteGapNLSHamiltonian halfFinite oneLtHalf φ hf 3-
+            2*(sourceFiniteGapNLSHamiltonian halfFinite oneLtHalf φ hf 1)^2 := by
+  obtain ⟨W,_,_,hcontour⟩ := exists_sourceFullAbelian_hamiltonian_cube_contour_neighborhood halfFinite oneLtHalf
+  refine ⟨W,?_⟩
+  intro φ hf
+  obtain ⟨T,hT,hc⟩ := hcontour φ hf
+  exact ⟨T,hT,fun R hR => (hc R hR).symm⟩
+
+-- One finite support gives both genuine summability and the finite-sum
+-- value for every quadratic moment row.
+example {W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (A : SourceAbelianMomentAtlas halfFinite oneLtHalf W s)
+    (φ : realTypeSourceLocus (3/2)) (hf : φ ∈ sourceFiniteGapLocus halfFinite oneLtHalf) :
+    ∃ S : Finset ℤ, ∀ n : ℤ, Summable (fun k => A.moment n k 2 φ.val) ∧
+      (∑' k : ℤ, A.moment n k 2 φ.val) = ∑ k ∈ S, A.moment n k 2 φ.val := by
+  obtain ⟨S,_,hsum⟩ := A.exists_finiteGap_moment_sums φ hf
+  exact ⟨S,fun n => ⟨(hsum n 1).summable,(hsum n 1).tsum_eq⟩⟩
+
+-- The limit step permits the selected gap to close: no nonzero-gap
+-- assumption is imposed on the limit, and S can include an extra index.
+example {W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (A : SourceAbelianMomentAtlas halfFinite oneLtHalf W s)
+    (ψ : ℕ → CoeffPair (3/2)) (φ : CoeffPair (3/2)) (hφ : φ ∈ A.domain)
+    (hlim : Tendsto ψ atTop (𝓝 φ)) (S : Finset ℤ) (n : ℤ)
+    (hS : ∀ j, ψ j ∈ A.domain ∧ ∀ k ∉ insert n S,
+      canonicalPeriodicGap halfFinite oneLtHalf (periodOnePotential (ψ j)) (periodOnePotential_mem (ψ j)) k = 0) :
+    Tendsto (fun j => ∑' k : ℤ, A.moment n k 2 (ψ j)) atTop
+      (𝓝 (∑' k : ℤ, A.moment n k 2 φ)) :=
+  A.positive_moment_sum_tendsto_of_eventually_fixed_gap_support ψ φ hφ hlim (insert n S)
+    (Filter.Eventually.of_forall hS) n 1
+
+-- At the zero lattice index the free-frequency correction vanishes,
+-- leaving precisely the sum of the quadratic normalized moments.
+example {W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (A : SourceAbelianMomentAtlas halfFinite oneLtHalf W s)
+    (φ : realTypeSourceLocus (3/2)) (ψ : CoeffPair (3/2)) (hψ : ψ ∈ A.sourceBall φ)
+    (S : Finset ℤ) (h0 : (0 : ℤ) ∈ S)
+    (hS : ∀ k ∉ S, canonicalPeriodicGap halfFinite oneLtHalf (periodOnePotential ψ) (periodOnePotential_mem ψ) k = 0) :
+    -(4/(2*Real.pi) : ℂ)*(∑ k ∈ S, sourceAbelianMomentCircle halfFinite oneLtHalf W 0 0 2
+      (s 0 ψ : Coeff (3/2)) ψ ((A.localChart φ).center k) ((A.localChart φ).contourRadius k)) =
+      -(4/(2*Real.pi) : ℂ)*(∑' k : ℤ, A.moment 0 k 2 ψ) := by
+  simpa only [Int.cast_zero,mul_zero,zero_mul,zero_pow (by decide : 2 ≠ 0),sub_zero] using
+    A.quadratic_contour_sum_renormalization φ ψ hψ S hS 0 h0
+
+-- The cubic formula also uses the very same ambient primitive as an
+-- existing moment atlas; no new neighborhood needs to be substituted.
+example {W : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (A : SourceAbelianMomentAtlas halfFinite oneLtHalf W s)
+    (φ : realTypeSourceSubmodule (3/2)) (hf : φ ∈ sourceFiniteGapLocus halfFinite oneLtHalf) :
+    ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+      sourceFiniteGapNLSHamiltonian halfFinite oneLtHalf φ hf 3-
+        2*(sourceFiniteGapNLSHamiltonian halfFinite oneLtHalf φ hf 1)^2 =
+          (8/(6*Real.pi) : ℂ)*(∮ z in C(0,R), (sourceFullAbelianPrimitive halfFinite oneLtHalf W 0 (z,φ.val))^3) := by
+  obtain ⟨D⟩ := (A.localChart ⟨φ.val,φ.property⟩).charts φ.val
+    (mem_ball_self (A.localChart ⟨φ.val,φ.property⟩).radius_pos)
+  exact exists_sourceFullAbelian_hamiltonian_cube_contour_of_chart φ hf D
+
+end NLS.FrequencyContourChecks

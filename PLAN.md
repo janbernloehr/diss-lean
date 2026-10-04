@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Latest progress: Lemma 20.1 on a common source neighborhood
+## Latest progress: Contour and finite-sum steps toward Lemma 20.2
+
+`CubicInversionContour.lean` extracts the exact contour coefficient
+from the analytic inverse-frequency cubic expansion. The analytic
+quadratic remainder has zero period, leaving
+`integral F^3 = (3*pi/4)*(H3-2*H1^2)` on every sufficiently large circle.
+
+`SourceFullAbelianCubicHamiltonianContour.lean` applies this to the actual
+full primitive and physical finite-gap Hamiltonians, proving the first
+identity used in Lemma 20.2:
+`H3-2*H1^2 = (8/(6*pi))*integral F_0^3`.
+It holds at every finite `p>1` and every real finite-gap source. The
+formula is also transported to any existing spectral chart, so it can
+use the same ambient primitive as the normalized moment atlas.
+
+`SourceAbelianMomentFiniteSums.lean` proves that one finite set of actual
+open gaps supports all positive-order moment rows at a finite-gap source.
+The sums have genuine `HasSum` witnesses and equal the corresponding
+finite sums. If a convergent family has its open gaps eventually confined
+to one finite set, its total positive-order moment sums converge. The
+limiting gaps may collapse; no fixed nonvanishing-gap hypothesis is needed.
+
+`SourceAbelianMomentQuadraticShift.lean` expands `F_0 = F_k-i*k*pi` inside
+the actual contour integral. The first moment vanishes and the zero-order
+period supplies the Kronecker correction. On any finite gap support
+containing the selected index, multiplying the summed unshifted contours
+by `-4/(2*pi)` and subtracting `(2*n*pi)^2` gives exactly
+`-4/(2*pi)` times the full quadratic-moment sum.
+
+Public checks at `p=3/2` recover the physical cubic contour formula with
+and without an existing moment atlas, prove quadratic-moment summability,
+pass to a source limit with gaps supported in `S union {n}`, and specialize
+the quadratic contour correction to the zero lattice index.
+
+Lemma 20.2 remains unfinished. The remaining work is to identify the
+actual Hamiltonian frequency with the unshifted quadratic contour via
+the angle/discriminant Poisson identity, justify the large-circle
+finite-gap decomposition for that integrand, and supply the finite-gap
+approximation and frequency continuity for a collapsed selected gap.
+The contour algebra and moment-sum limit proved here do not assume or
+define the frequency formula. The dissertation as a whole remains unfinished.
+
+## Previous milestone: Lemma 20.1 on a common source neighborhood
 
 `SourceAbelianMomentContourHomotopy.lean` proves invariance under smooth
 gap-avoiding contour deformations, with concrete comparisons for nested
