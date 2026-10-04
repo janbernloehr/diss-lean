@@ -30820,3 +30820,77 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end TailActionDescentChecks
+
+
+namespace LocalTailSumDescentChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- Arbitrary infinite tails are identified; the retained head is fixed.
+example (S : Finset ℤ) (a : Coeff 2 × Coeff 2) (v : Coeff 2)
+    (hv : ∀ k ∈ S, v k = 0) :
+    Coeff.tailSumCLM S (a+(-v,v)) = Coeff.tailSumCLM S a := by
+  apply ((Coeff.tailSumCLM_eq_iff S a (a+(-v,v))).mpr ?_).symm
+  constructor
+  · intro k hk
+    change a.2 k+v k = a.2 k
+    rw [hv k hk,add_zero]
+  · change a.1+a.2 = (a.1+-v)+(a.2+v)
+    abel
+
+-- A chart at the zero point of an arbitrary open domain gives analytic
+-- recovery into l-infinity, with no nonzero-coordinate assumptions.
+example (U : Set (Coeff 2 × Coeff 2)) (hU : IsOpen U) (hzero : 0 ∈ U)
+    (G : (Coeff 2 × Coeff 2) → Coeff ⊤) (hG : AnalyticOnNhd ℂ G U)
+    (hD : ∀ b ∈ U, ∀ k : ℤ, fderiv ℂ G b (Coeff.actionSplitDirection 2 k) = 0) :
+    ∃ C : Coeff.TailSumChart ∅ U (0 : Coeff 2 × Coeff 2),
+      AnalyticOnNhd ℂ (C.factor G) C.target ∧
+      ∀ b ∈ C.source, C.factor G (Coeff.tailSumCLM ∅ b) = G b := by
+  obtain ⟨C⟩ := Coeff.exists_tailSumChart ∅ U hU 0 hzero
+  exact ⟨C,C.analyticOnNhd_factor G hG,
+    fun b hb => C.factor_apply (by simp) hU G hG.differentiableOn (fun b hb k _ => hD b hb k) b hb⟩
+
+-- With no retained head, the sum model descends to precisely the sole
+-- sequence coordinate, including at a zero base point.
+example (U : Set (Coeff 2 × Coeff 2)) (C : Coeff.TailSumChart ∅ U (0 : Coeff 2 × Coeff 2))
+    (w : Coeff.TailSumSpace 2 ∅) (hw : w ∈ C.target) :
+    C.factor (fun z => z.1+z.2) w = w.2 := by
+  have he := C.factor_unique (fun z => z.1+z.2) (fun w => w.2) (by
+    intro b _
+    simp [Coeff.tailSumCLM_apply,add_comm])
+  exact (he hw).symm
+
+-- One finite-head/tail-sum domain supports the actual p = 6 frequency in
+-- l3 and correction in l2, with simultaneous exact source recovery.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6, ∃ S : Finset ℤ,
+    ∃ z₀ : Coeff 6 × Coeff 6, ∃ Z : Set (Coeff 6 × Coeff 6),
+    ∃ T : Set (Coeff.TailSumSpace 3 S),
+    ∃ F : Coeff.TailSumSpace 3 S → Coeff 3, ∃ H : Coeff.TailSumSpace 3 S → Coeff 2,
+      IsOpen Z ∧ z₀ ∈ Z ∧ g z₀ = φ.val ∧ IsOpen T ∧
+      AnalyticOnNhd ℂ F T ∧ AnalyticOnNhd ℂ H T ∧
+      ∀ z ∈ Z, Coeff.tailSumCLM S (Coeff.pairMixedSquare S z) ∈ T ∧
+        F (Coeff.tailSumCLM S (Coeff.pairMixedSquare S z)) = A.frequencySequence 3 (g z) ∧
+        H (Coeff.tailSumCLM S (Coeff.pairMixedSquare S z)) = A.actionFrequencyCorrectionSequence 2 (g z) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_localTailSumDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,L,_,_,hZ,hbase,hmap,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨_,_,hF,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨_,_,hH,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,S,sourceBirkhoffMap (by simp) (by norm_num) t φ.val,
+    _,L.target,_,_,hZ,hbase,C.base_eq,L.target_open,hF,hH,?_⟩
+  intro z hz
+  exact ⟨hmap z hz,(he z hz).1,(hj z hz).1⟩
+
+end
+end LocalTailSumDescentChecks

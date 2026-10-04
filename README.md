@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual frequency and correction descents are stationary
-under arbitrary complex tail redistributions, including infinite-support
-directions and zero modes. They agree on same-action tail segments inside
-their common domain. Local action factors and gluing remain next in
+Latest milestone: the actual frequency and correction now have local analytic
+factors through a single sequence of tail sums and the retained finite head,
+with one common domain and exact recovery in all admissible target norms.
+Replacing the retained head by quadratic actions and gluing remain next in
 Theorem 18.1; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -12632,3 +12632,49 @@ replace retained head pairs by their quadratic actions and glue the
 local action maps. Openness of the full action map is already available.
 The analytic action map required by Theorem 18.1 is still incomplete;
 Corollary 18.2 and the later dissertation remain unfinished.
+
+
+## Local analytic tail-sum factors
+
+The actual frequency and refined correction now factor analytically through
+one sequence of tail sums together with the retained finite head. The same
+local chart and open neighborhood work for every admissible target exponent,
+with exact recovery of the original sequence maps.
+
+`TailSumCoordinates.lean` defines the coordinate space
+`(S → Complex) × Coeff q`: its finite component is the first head, while its
+sequence component is the second head and the sum of the two tail entries.
+The coordinate map is bounded linear and has an explicit bounded linear
+right inverse. Its fibers are exactly the tail redistributions already
+proved to preserve the descended maps. After mixed squaring, each tail
+sum is twice the corresponding quadratic action.
+
+`LocalTailSumDescent.lean` constructs an affine section through any base
+point of any open mixed-coordinate domain. It chooses common open source
+and target neighborhoods so that every source point is joined to its
+section representative by a segment inside the original domain. Evaluation
+on this section gives an analytic factor, exact recovery follows from tail
+stationarity, and any other factor satisfying recovery agrees on the target.
+The target is exactly the image of the chosen source neighborhood. No
+nonvanishing condition on the tail or global fiber-connectivity assumption
+is needed.
+
+`SourceFrequencyLocalTailSumDescent.lean` applies this construction to the
+actual frequency and refined correction simultaneously, preserving the
+complex rotation identities of their lifts for the subsequent finite-head
+step. It supplies a common open Birkhoff neighborhood of each real source
+and exact sequence and coordinate recovery formulas.
+
+Public checks include arbitrary infinite-support tail redistributions,
+analytic recovery at the all-zero base point into `l∞`, the sum model with
+empty head, and simultaneous actual `p = 6` frequency/correction factors
+in `l3` and `l2` on one finite-head/tail-sum domain.
+
+Validation: the full build passes (5921 jobs), all public examples pass,
+and the transitive axiom audit passes for 21791 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: replace the retained head coordinates by their quadratic actions,
+then glue the local action maps. The analytic action map required by
+Theorem 18.1 is still incomplete; Corollary 18.2 and the later dissertation
+remain unfinished.
