@@ -29458,3 +29458,72 @@ example {W₀ B W X V : Set (CoeffPair 2)}
 
 end
 end SecondMomentFrequencyChecks
+
+
+namespace AllExponentFrequencyChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+
+-- The atlas and compatible squared-gap branch are constructed, not
+-- supplied as assumptions, even at an exponent strictly below two.
+example : ∃ frequency : ℤ → CoeffPair (ENNReal.ofReal (3/2:ℝ)) → ℂ, ∃ U : Set (CoeffPair (ENNReal.ofReal (3/2:ℝ))),
+    IsOpen U ∧ realTypeSourceLocus (ENNReal.ofReal (3/2:ℝ)) ⊆ U ∧
+      ∀ n : ℤ, AnalyticOnNhd ℂ (frequency n) U := by
+  obtain ⟨W,s,A,U,hU,_,hr,_,_,ha,_,_,_⟩ :=
+    exists_sourceSecondMoment_theorem20_4 (p := ENNReal.ofReal (3/2:ℝ)) (by norm_num) (by norm_num)
+  exact ⟨A.renormalizedFrequency,U,hU,hr,fun n => (ha n).1⟩
+
+-- At p = 3 the constructed analytic family agrees with an arbitrary
+-- physical Birkhoff realization, with the original source's mass.
+example {W₀ B X : Set (CoeffPair 2)} {t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t) :
+    ∃ frequency : ℤ → CoeffPair 3 → ℂ, ∃ U : Set (CoeffPair 3), realTypeSourceLocus 3 ⊆ U ∧
+      (∀ n : ℤ, AnalyticOnNhd ℂ (frequency n) U) ∧
+      ∀ (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℤ),
+        frequency n φ.val = D.finiteGapFrequencyAtExponent (by simp) (by norm_num) φ hf n -
+          4*sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1 - (2*(n:ℂ)*Real.pi)^2 := by
+  obtain ⟨W,s,A,U,_,_,hr,_,_,ha,_,hphysical,_⟩ :=
+    exists_sourceSecondMoment_theorem20_4 (p := 3) (by simp) (by norm_num)
+  exact ⟨A.renormalizedFrequency,U,hr,fun n => (ha n).1,hphysical W₀ B X t D⟩
+
+-- Both sides of the Hilbert exponent represent exactly the same
+-- physical frequency when their Fourier coefficients coincide.
+example {W₀ B X : Set (CoeffPair 2)} {t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2:ℝ))) (ψ : realTypeSourceSubmodule 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num))
+    (hg : ψ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (hcoeff : ∀ j : ℤ, ψ.val.fst j = φ.val.fst j ∧ ψ.val.snd j = φ.val.snd j) (n : ℤ) :
+    D.finiteGapFrequencyAtExponent (by norm_num) (by norm_num) φ hf n =
+      D.finiteGapFrequencyAtExponent (by simp) (by norm_num) ψ hg n :=
+  D.finiteGapFrequencyAtExponent_eq_of_coefficients (by norm_num) (by simp)
+    (by norm_num) (by norm_num) φ ψ hf hg hcoeff n
+
+-- Transport includes the all-closed zero potential and keeps its
+-- physical free dispersion at every signed selected index.
+example {W₀ B X : Set (CoeffPair 2)} {t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t)
+    (hf : (0 : realTypeSourceSubmodule (ENNReal.ofReal (3/2:ℝ))) ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) (n : ℤ) :
+    D.finiteGapFrequencyAtExponent (by norm_num) (by norm_num) 0 hf n = (2*(n:ℂ)*Real.pi)^2 := by
+  have he : sourceFiniteGapHilbertModel (by norm_num) (by norm_num) 0 hf = 0 :=
+    sourceFiniteGapHilbertModel_eq_of_coefficients (by norm_num) (by norm_num) 0 hf 0 (by simp)
+  have hzero := sourceFiniteGapHilbertModel_mem (by norm_num) (by norm_num) 0 hf
+  rw [he] at hzero
+  simpa only [SourceBirkhoffMapComplexData.finiteGapFrequencyAtExponent,he] using
+    D.finiteGapFrequency_zero hzero n
+
+-- The representative retains the physical NLS Hamiltonian itself,
+-- in addition to the first Hamiltonian used for renormalization.
+example (φ : realTypeSourceSubmodule 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    sourceFiniteGapNLSHamiltonian (by simp) (by norm_num)
+      (sourceFiniteGapHilbertModel (by simp) (by norm_num) φ hf)
+      (sourceFiniteGapHilbertModel_mem (by simp) (by norm_num) φ hf) 3 =
+        sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 3 :=
+  sourceFiniteGapHilbertModel_hamiltonian (by simp) (by norm_num) φ hf 3
+
+end
+end AllExponentFrequencyChecks

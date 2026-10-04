@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: Analytic moment sums and Hilbert Theorem 20.4
+## Current milestone: Theorem 20.4 at all finite source exponents
+
+`SourceSecondMomentFrequencyTheorem20_4.lean` completes the physical
+finite-gap identification and analytic uniqueness for every finite
+`p > 1`. The renormalized frequency is the actual absolutely and locally
+uniformly convergent sum `-4/(2*pi) * sum_k Omega_nk^(2)`. On one connected
+open neighborhood of the real source locus it is complex analytic and
+real analytic, agrees with the physical finite-gap frequency after
+subtracting `4*H_1 + (2*n*pi)^2`, and is uniquely determined by those
+finite-gap values. Local uniform convergence is for each fixed index.
+
+`SourceAbelianPrimitiveExponent.lean` preserves the endpoint-normalized
+primitive across source exponents, first on the half-planes and then on
+the real bands. `SourceAbelianMomentExponent.lean` compares the literal
+integrands on a common circle and uses contour homotopy to compare
+independent atlases. It proves compatibility of every moment order and
+both indices, including collapsed gaps, whenever Fourier coefficients
+coincide.
+
+`SourceFiniteGapFrequencyExponent.lean` constructs the unique Hilbert
+representative of each actual finite-gap source. It preserves the smooth
+physical potential pointwise and every physical Hamiltonian. The physical
+frequency is transported from the previously defined Hamiltonian
+derivative, independently of the moment sum. It is independent of the
+Birkhoff realization and source exponent, and recovers the original
+frequency at `p = 2`.
+
+`SourceAbelianMomentLocalChart.lean` now constructs charts for any
+specified normalized psi extension while preserving its previous public
+existence theorem. `SourceAbelianMomentSquaredGapAtlas.lean` uses this to
+construct the atlas and squared-gap estimates with the same branch.
+`SourceSecondMomentFrequencyExistence.lean` then gives an unconditional
+Theorem 20.4 construction from only `p < infinity` and `p > 1`, with
+physical agreement for every Birkhoff realization.
+
+Public checks exercise the constructed analytic family at `p = 3/2`,
+physical agreement at `p = 3`, equality of transported frequencies across
+those exponents, the all-closed zero potential with its free dispersion,
+and preservation of the physical NLS Hamiltonian.
+
+Next: Theorem 20.5, sequence-valued analyticity of the frequency map and
+the locally uniform asymptotic `omega*_n + gamma_n^2/2` in
+`l(p/3) + l(1+)`. For `p = 2` the target is every `lr`, `r > 1`; for
+`p > 2` it is `l(p/2)`. This theorem and the later dissertation remain
+unfinished.
+
+## Previous milestone: Analytic moment sums and Hilbert Theorem 20.4
 
 `SourceAbelianMomentSeries.lean` proves absolute and locally uniform
 convergence of the actual second-moment series for every finite `p > 1`.

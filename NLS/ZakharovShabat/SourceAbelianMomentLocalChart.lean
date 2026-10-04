@@ -37,21 +37,22 @@ structure SourceAbelianMomentLocalChart (hp : p ≠ ⊤) (hp1 : 1 < p)
     ∀ m : ℕ, sourceAbelianMomentCircle hp hp1 W n k (m+1)
       (s n ψ : Coeff p) ψ (center k) (contourRadius k) = 0
 
-/-- Actual primitives and the normalized psi branch admit compatible
-local moment data near every real potential, at every finite `p>1`. -/
-theorem exists_sourceAbelianMoment_localCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
-    ∃ W V : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧
-      IsOpen V ∧ realTypeSourceLocus p ⊆ V ∧
-      ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
-        SourcePsiNormalizedComplexExtension hp hp1 V s ∧
-        ∀ φ : realTypeSourceLocus p, ∃ L : SourceAbelianMomentLocalChart hp hp1 W s φ,
-          ball φ.val L.radius ⊆ V := by
+/-- Construct simultaneous moment charts for a specified normalized
+psi extension. This also permits retaining the stronger squared-gap
+extension used in Lemma 20.3 and Theorem 20.4. -/
+theorem SourcePsiNormalizedComplexExtension.exists_moment_localCharts
+    {hp : p ≠ ⊤} {hp1 : 1 < p} {V : Set (CoeffPair p)}
+    {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (hs : SourcePsiNormalizedComplexExtension hp hp1 V s)
+    (hV : IsOpen V) (hrealV : realTypeSourceLocus p ⊆ V) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∀ φ : realTypeSourceLocus p, ∃ L : SourceAbelianMomentLocalChart hp hp1 W s φ,
+        ball φ.val L.radius ⊆ V := by
   classical
   obtain ⟨W,hW,hrealW,hC⟩ := exists_sourceFullAbelianUniformCauchyFamilies hp hp1
-  obtain ⟨_,V,_,hV,_,hrealV,_,s,hs⟩ := exists_sourcePsi_lemma12_11 hp hp1
   obtain ⟨P,hP,_,hrealP,hPdata⟩ := exists_global_sourcePsiContourIntegrand_jointAnalytic hp hp1
   obtain ⟨O,hO,_,hrealO,hOdata⟩ := exists_global_source_analytic_omittedJointProduct hp hp1
-  refine ⟨W,V,hW,hrealW,hV,hrealV,s,hs,?_⟩
+  refine ⟨W,hW,hrealW,?_⟩
   intro φ
   obtain ⟨C,hCφ⟩ := hC ⟨φ.val,φ.property⟩
   have hφC : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius := by
@@ -127,5 +128,18 @@ theorem exists_sourceAbelianMoment_localCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
     exact C.momentCircle_succ_eq_zero_of_collapsed n k m (s n ψ : Coeff p) ψ (hUC hψ)
       (sourceStandardRootOmittedProduct_analyticOnNhd_spectral hp hp1 k O (hOdata k).2.1 ψ (hUO hψ))
       hgap (R k) (hinner k) (houter k)
+
+/-- Actual primitives and the normalized psi branch admit compatible
+local moment data near every real potential, at every finite `p>1`. -/
+theorem exists_sourceAbelianMoment_localCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W V : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧
+      IsOpen V ∧ realTypeSourceLocus p ⊆ V ∧
+      ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+        SourcePsiNormalizedComplexExtension hp hp1 V s ∧
+        ∀ φ : realTypeSourceLocus p, ∃ L : SourceAbelianMomentLocalChart hp hp1 W s φ,
+          ball φ.val L.radius ⊆ V := by
+  obtain ⟨_,V,_,hV,_,hrealV,_,s,hs⟩ := exists_sourcePsi_lemma12_11 hp hp1
+  obtain ⟨W,hW,hrealW,hlocal⟩ := hs.exists_moment_localCharts hV hrealV
+  exact ⟨W,V,hW,hrealW,hV,hrealV,s,hs,hlocal⟩
 
 end NLS.ZakharovShabat
