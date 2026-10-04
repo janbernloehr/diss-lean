@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: Corollary 19.3 with a uniform cubic remainder
+## Current milestone: Quantitative gap comparison for Lemma 19.4
+
+`QuadraticPrimitiveGapComparison.lean` subtracts a constant from the
+analytic Cauchy quotient and bounds the resulting boundary error by the
+linear-numerator defect. The proof uses the cosine-parametrized quadratic
+equation and never divides by the gap length.
+
+`SourceFullAbelianGapComparison.lean` applies this estimate to the actual
+primitive and the standard root. It constructs both root boundary values,
+proves both side limits of `F_n-i*w_n`, and bounds the error by
+`pi * (D*E + |critical_n-midpoint_n|)`, where `D` bounds the critical-point
+distance on the gap and `E` bounds the deleted factor's error from `-i`.
+That factor error has exactly the norm of `chi_n-1` from Lemma 10.8.
+The filled error is zero at every collapsed gap. The zero-potential clause
+of Lemma 19.4 is proved exactly at every complex spectral parameter.
+
+`SourceFullAbelianUniformGapComparison.lean` supplies one neighborhood
+of each real source and one positive constant `A` such that, on both
+sides of every closed complex gap,
+`|F_n-i*w_n| <= pi*|gamma_n|*(A*E_n + |gamma_n|*|q_n|)`.
+Here `q_n` is the actual squared-gap critical quotient from Lemma 10.10,
+whose full `lp` norm is bounded uniformly on that same neighborhood.
+The estimate applies to every compatible Cauchy chart, every gap index,
+and both endpoints, including collapsed gaps.
+
+Public checks cover the free identity at arbitrary complex frequencies,
+the actual filled error at collapsed complex gaps, and exact agreement
+on both sides when the deleted-factor error and critical offset vanish.
+
+Lemma 19.4 is not yet complete. The next step is to specialize the
+Lemma 10.8 majorants to the critical sequence and place the normalized
+boundary error in `l^(p/2) + l^(1+)`, locally uniformly on an almost-real
+neighborhood. The dissertation as a whole remains unfinished.
+
+## Previous milestone: Corollary 19.3 with a uniform cubic remainder
 
 `CubicInversionRemainder.lean` proves the exact algebraic cubic expansion
 of a normalized analytic inversion phase. Its error is `z^-2 * B(1/z)`

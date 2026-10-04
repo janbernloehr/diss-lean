@@ -2319,3 +2319,6 @@ import NLS.ZakharovShabat.SourceFullAbelianHamiltonianLaurent
 import NLS.ComplexAnalysis.CubicInversionRemainder
 import NLS.ZakharovShabat.SourceFullAbelianHamiltonianInversion
 import NLS.ZakharovShabat.SourceFullAbelianCubeAsymptotics
+import NLS.ComplexAnalysis.QuadraticPrimitiveGapComparison
+import NLS.ZakharovShabat.SourceFullAbelianGapComparison
+import NLS.ZakharovShabat.SourceFullAbelianUniformGapComparison

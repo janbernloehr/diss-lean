@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Corollary 19.3 is proved for the actual finite-gap
-primitive. Cubing the physical Hamiltonian Laurent expansion gives the
-printed coefficients, exterior analyticity, and a uniform quadratic
-error bound in every complex direction. The refined gap-boundary
-comparison in Lemma 19.4 is next. See `STATUS.md`.
+Latest milestone: the quantitative comparison underlying Lemma 19.4
+is proved for the actual primitive, including both gap sides, collapsed
+gaps, and the exact zero-potential formula. A locally uniform estimate
+reduces the remaining proof to sequence-space bounds for the deleted
+critical factor. Corollary 19.3 remains complete. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11144,3 +11144,37 @@ Corollary 19.3 is now proved. The next step is Lemma 19.4, the refined
 comparison between the gap boundary primitive and `i*w_n`, including
 its locally uniform sequence-space error. The dissertation as a whole
 remains unfinished.
+
+## Quantitative gap comparison for Lemma 19.4
+
+`QuadraticPrimitiveGapComparison.lean` subtracts a constant from the
+analytic Cauchy quotient and bounds the resulting boundary error by the
+linear-numerator defect. The proof uses the cosine-parametrized quadratic
+equation and never divides by the gap length.
+
+`SourceFullAbelianGapComparison.lean` applies this estimate to the actual
+primitive and the standard root. It constructs both root boundary values,
+proves both side limits of `F_n-i*w_n`, and bounds the error by
+`pi * (D*E + |critical_n-midpoint_n|)`, where `D` bounds the critical-point
+distance on the gap and `E` bounds the deleted factor's error from `-i`.
+That factor error has exactly the norm of `chi_n-1` from Lemma 10.8.
+The filled error is zero at every collapsed gap. The zero-potential clause
+of Lemma 19.4 is proved exactly at every complex spectral parameter.
+
+`SourceFullAbelianUniformGapComparison.lean` supplies one neighborhood
+of each real source and one positive constant `A` such that, on both
+sides of every closed complex gap,
+`|F_n-i*w_n| <= pi*|gamma_n|*(A*E_n + |gamma_n|*|q_n|)`.
+Here `q_n` is the actual squared-gap critical quotient from Lemma 10.10,
+whose full `lp` norm is bounded uniformly on that same neighborhood.
+The estimate applies to every compatible Cauchy chart, every gap index,
+and both endpoints, including collapsed gaps.
+
+Public checks cover the free identity at arbitrary complex frequencies,
+the actual filled error at collapsed complex gaps, and exact agreement
+on both sides when the deleted-factor error and critical offset vanish.
+
+Lemma 19.4 is not yet complete. The next step is to specialize the
+Lemma 10.8 majorants to the critical sequence and place the normalized
+boundary error in `l^(p/2) + l^(1+)`, locally uniformly on an almost-real
+neighborhood. The dissertation as a whole remains unfinished.

@@ -28042,3 +28042,57 @@ example {W : Set (CoeffPair 3)}
   exact sourceFullAbelian_finiteGap_cube_isBigO C φ hφ hf
 
 end NLS.CubicPrimitiveChecks
+
+
+noncomputable section
+namespace NLS.GapComparisonChecks
+open Set Metric Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The free identity holds at every complex frequency, including a
+-- collapsed endpoint, rather than just along an exterior ray.
+example {W : Set (CoeffPair 3)}
+    (D : SourceAbelianSpectralChart (by norm_num) (by norm_num) W 0)
+    (j : ℤ) (z : ℂ) :
+    sourceFullAbelianPrimitive (by norm_num) (by norm_num) W j (z,0)-
+      Complex.I*sourceStandardRoot (by norm_num) (by norm_num) (0 : CoeffPair 3) j z = 0 := by
+  rw [sourceFullAbelianPrimitive_zero_eq_I_mul_standardRoot D,sub_self]
+
+-- The actual filled error vanishes on a collapsed gap for a complex source.
+example {W : Set (CoeffPair 3)}
+    (C : SourceFullAbelianUniformCauchyFamily (by norm_num) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (j : ℤ)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) j = 0) :
+    sourceFullAbelianPrimitive (by norm_num) (by norm_num) W j
+      (sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ j,ψ)-
+      Complex.I*sourceStandardRoot (by norm_num) (by norm_num) ψ j
+        (sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ j) = 0 := by
+  simpa only [sourceStandardRootHalfGap,hgap,zero_div,zero_mul,add_zero] using
+    C.fullPrimitive_sub_root_eq_zero_of_collapsed j ψ hψ hgap 0
+
+-- If the deleted factor is exactly -i and the critical point is the
+-- midpoint, both boundary values agree exactly with i times the root.
+example {W : Set (CoeffPair 3)}
+    (C : SourceFullAbelianUniformCauchyFamily (by norm_num) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (j : ℤ)
+    (hoff : canonicalCriticalPoints (by norm_num) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) j =
+      sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ j)
+    (he : ∀ z ∈ sourcePeriodicSegment (by norm_num) (by norm_num) ψ j,
+      sourceCriticalRootRatioExtension (by norm_num) (by norm_num) j ψ z = -Complex.I)
+    (θ : ℝ) (hθ : θ ∈ Icc 0 Real.pi) (upper : Bool) :
+    C.gapBoundary j ψ θ upper =
+      Complex.I*sourceStandardRootGapBoundary (by norm_num) (by norm_num) ψ j θ upper := by
+  have hb := C.gapBoundary_sub_root_norm_le j ψ hψ 0 le_rfl (by
+    intro z hz
+    rw [sourceCriticalRootGapNumerator_sub_linear,he z hz,hoff]
+    simp only [neg_add_cancel,mul_zero,sub_self,norm_zero]
+    exact le_rfl) θ hθ upper
+  rw [zero_mul] at hb
+  exact sub_eq_zero.mp (norm_eq_zero.mp (le_antisymm hb (norm_nonneg _)))
+
+end NLS.GapComparisonChecks
