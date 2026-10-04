@@ -27078,3 +27078,86 @@ example (j : ℤ) (D E : SourceAbelianCauchyChart (p := 3) (by simp) (by norm_nu
     D.square (z,ψ) = E.square (z,ψ) := D.square_eqOn_overlap E ψ hD hE hz
 
 end NLS.AbelianCauchyChecks
+
+
+noncomputable section
+namespace NLS.AbelianContinuedChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At a nonintegral Banach exponent, one root neighborhood supports
+-- actual interior charts at every real source and every selected gap.
+-- Every cut-disc point has the exact potential derivative of the same
+-- continued function, with arbitrary complex source directions.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+    ∀ (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (j : ℤ),
+      ∃ D : SourceAbelianDiscJointChart (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num) W,
+        D.source = φ ∧ D.gap = j ∧
+        ∀ ψ ∈ ball D.source.val D.sourceRadius, ∀ z ∈ ball D.cauchy.center D.cauchy.radius \
+            sourcePeriodicSegment (by simp) (by norm_num) ψ D.gap,
+          (z,ψ) ∈ sourceAbelianContinuedDomain (by simp) (by norm_num) W ∧
+          ∀ (n : ℤ) (h : CoeffPair (ENNReal.ofReal (3/2))),
+            (fderiv ℂ (fun χ => sourceAbelianContinuedPrimitive (by simp) (by norm_num) W n (z,χ)) ψ) h =
+              (fderiv ℂ (fun χ => canonicalDiscriminant (by simp) (periodOnePotential χ) z) ψ) h /
+                sourceCanonicalRoot (by simp) (by norm_num) ψ z := by
+  obtain ⟨W,hW,_,hreal,hD,hroot⟩ := exists_global_source_analytic_canonicalRoot
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,hW,hreal,?_⟩
+  intro φ j
+  obtain ⟨D,hφ,hj⟩ := exists_sourceAbelianDiscJointChart (by simp) (by norm_num) W hW φ (hreal φ.property) j
+  refine ⟨D,hφ,hj,?_⟩
+  intro ψ hψ z hz
+  have ht := sourceAbelianDisc_subset_continued (by simp) (by norm_num) W D ψ hψ z hz
+  exact ⟨ht,fun n h => sourceAbelianContinuedPrimitive_source_fderiv (by simp) (by norm_num) W hD hroot n z ψ h ht⟩
+
+-- The index -3 keeps its exact endpoint value at gap 2 after gluing,
+-- for complex perturbations and without a noncollapsed-gap assumption.
+example (W : Set (CoeffPair 3))
+    (hD : IsOpen (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (hroot : AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct (by simp) (by norm_num))
+      (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (D : SourceAbelianDiscJointChart (by simp) (by norm_num) W) (hj : D.gap = 2)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball D.source.val D.sourceRadius) :
+    Tendsto (fun z => sourceAbelianContinuedPrimitive (by simp) (by norm_num) W (-3) (z,ψ))
+      (𝓝[ball D.cauchy.center D.cauchy.radius \ sourcePeriodicSegment (by simp) (by norm_num) ψ D.gap]
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) D.gap))
+      (𝓝 (-5*Complex.I*(Real.pi : ℂ))) := by
+  have h := sourceAbelianContinuedPrimitive_endpoint_limit (by simp) (by norm_num) W hD hroot D (-3) ψ hψ
+    (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) D.gap) (by simp)
+  have he : Complex.I*(Real.pi : ℂ)*((-3:ℂ)-2) = -5*Complex.I*(Real.pi : ℂ) := by ring
+  simpa only [hj,Int.cast_neg,Int.cast_ofNat,he] using h
+
+-- The constructed function retains the free normalization on the
+-- complete free cut complement, irrespective of the chosen root domain.
+example (W : Set (CoeffPair 3))
+    (hD : IsOpen (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (hroot : AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct (by simp) (by norm_num))
+      (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (n : ℤ) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) (0 : CoeffPair 3)) :
+    sourceAbelianContinuedPrimitive (by simp) (by norm_num) W n (z,0) = -Complex.I*z+Complex.I*(Real.pi : ℂ)*n := by
+  have ht : (z,(0 : CoeffPair 3)) ∈ sourceAbelianJointDomain (by simp) (by norm_num) :=
+    (mem_sourceAbelianJointDomain_real_iff (by simp) (by norm_num) 0 z).mpr hz
+  calc
+    _ = sourceAbelianEnlargedPrimitive (by simp) (by norm_num) W n (z,0) :=
+      sourceAbelianContinuedPrimitive_eq_enlarged (by simp) (by norm_num) W hD hroot n (Or.inl ht)
+    _ = sourceAbelianJointPrimitive (by simp) (by norm_num) n (z,0) :=
+      sourceAbelianEnlargedPrimitive_eq_joint (by simp) (by norm_num) W hD
+        (sourceFloquetJointMultiplier_analyticOnNhd (by simp) (by norm_num) W hroot) n ht
+    _ = -Complex.I*z+Complex.I*(Real.pi : ℂ)*n :=
+      sourceAbelianJointPrimitive_zero (by simp) (by norm_num) n z hz
+
+
+-- Even different gap charts and different real-source centers give
+-- precisely the same complex values at a shared point.
+example (W : Set (CoeffPair 3))
+    (hD : IsOpen (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (hroot : AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct (by simp) (by norm_num))
+      (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (D E : SourceAbelianDiscJointChart (by simp) (by norm_num) W) (n : ℤ)
+    (t : ℂ × CoeffPair 3) (htD : t ∈ D.domain) (htE : t ∈ E.domain) : D.toFun n t = E.toFun n t :=
+  D.eqOn_overlap E hD hroot n ⟨htD,htE⟩
+
+end NLS.AbelianContinuedChecks

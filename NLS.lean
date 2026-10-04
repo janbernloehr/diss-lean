@@ -2245,3 +2245,10 @@ import NLS.ZakharovShabat.SourceAbelianCauchyChart
 import NLS.ZakharovShabat.SourceAbelianCauchyNormalization
 import NLS.ZakharovShabat.SourceAbelianCauchyContinuation
 import NLS.ZakharovShabat.SourceAbelianCauchySquare
+
+import NLS.ZakharovShabat.SourceFloquetJointDerivative
+import NLS.ZakharovShabat.SourceAbelianCauchyDifferential
+import NLS.ZakharovShabat.SourceAbelianDiscJointChart
+import NLS.ZakharovShabat.SourceAbelianDiscCompatibility
+import NLS.ZakharovShabat.SourceAbelianContinuedPrimitive
+import NLS.ZakharovShabat.SourceAbelianContinuedProperties

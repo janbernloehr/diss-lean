@@ -1,6 +1,55 @@
 # Implementation plan
 
-## Latest progress: exact complex endpoint normalization and filled squares
+## Latest progress: gluing interior discs and the exact potential gradient
+
+The new `SourceAbelianContinuedPrimitive` joins the existing enlarged
+exterior function to every normalized interior disc chart on one open
+joint domain. Agreement holds on complete overlaps, including charts
+for different selected gaps and different real-source centers. Every
+previous exterior value and every established exterior product
+neighborhood are retained.
+
+`SourceFloquetJointDerivative.lean` derives the exact multiplier
+differential at complex sources from the canonical-root identity.
+`SourceAbelianCauchyDifferential.lean` propagates the Floquet exponential
+identity from the normalized collar over the connected cut disc. The
+zero-index continuation is then locally the exact normalized Floquet
+logarithm. This proves its full joint differential `d Delta / canonicalRoot`,
+including the potential gradient on the new interior domain.
+
+`SourceAbelianDiscJointChart.lean` supplies normalized interior charts
+on real-centered source balls inside one fixed analytic root neighborhood.
+Such a chart exists for every selected gap at every real source in that
+neighborhood, including collapsed gaps. Within each isolating disc its
+only excluded spectral set is its own moving selected cut.
+`SourceAbelianDiscCompatibility.lean` proves agreement with other disc
+charts, old product charts, and the projected exterior function. For
+distinct gaps, the two isolating discs jointly exclude all cuts along
+the source projection path; continuous logarithm uniqueness fixes the
+common value from the real-source normalization.
+
+`SourceAbelianContinuedPrimitive.lean` glues this compatible family.
+`SourceAbelianContinuedProperties.lean` proves joint analyticity, both
+coordinate derivative formulas, the Floquet exponential identity,
+signed-index shifts, the complete real-source normalization, and exact
+endpoint limits `i (n-j) pi`. The selected-index square agrees with the
+previous analytic filling across each entire local complex gap.
+
+Public checks construct local coverage and the potential derivative
+at exponent 3/2 for every real source and selected gap. They also check
+negative-index endpoint normalization after gluing, free normalization,
+and agreement between arbitrary overlapping disc charts.
+
+This closes the local interior potential-gradient and chart-gluing
+steps toward Lemma 19.1(i). The union is proved open, and the whole cut
+disc is covered at every source in each chart's source ball. A single
+almost-real source neighborhood giving full spectral coverage for all
+gaps simultaneously still requires uniform tail and finite-core
+arguments. The locally source-uniform and index-uniform estimates in
+(iii), subsequent frequency results, and the full dissertation remain
+unfinished.
+
+## Previous milestone: exact complex endpoint normalization and filled squares
 
 `SourceAbelianCauchyContinuation.lean` identifies the exact endpoint
 values of the complex-source continuation: the normalized primitive
