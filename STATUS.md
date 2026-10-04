@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: Full Lemma 20.3 on one complex neighborhood
+## Current milestone: Analytic moment sums and Hilbert Theorem 20.4
+
+`SourceAbelianMomentSeries.lean` proves absolute and locally uniform
+convergence of the actual second-moment series for every finite `p > 1`.
+It uses Lemma 20.3 at exponent `p`, the locally bounded gap sequence,
+and a fixed reciprocal kernel in the conjugate exponent. The source
+neighborhood is common to every selected index; convergence is uniform
+in the source for each fixed index, with no assertion of uniform
+convergence over all selected indices.
+
+`ReciprocalSeriesConvergence.lean` supplies the general Holder argument,
+including a separately bounded diagonal. Bounded coefficient rows need
+not have uniform tails: the tails come from the fixed reciprocal kernel.
+`SourceSecondMomentFrequencyAnalytic.lean` defines the renormalized sum
+with the exact factor `-4/(2*pi)` and proves complex analyticity in the
+full Banach source variable using locally uniform analytic approximation.
+Real analyticity follows by restricting scalars.
+
+`SourceFiniteGapAnalyticUniqueness.lean` proves that actual spectral
+finite-gap values determine an analytic function on a connected almost-real
+domain, for every finite `p > 1`. It combines finite-gap density, the
+real-form identity principle, and analytic continuation.
+`SourceSecondMomentFrequencyFiniteGap.lean` packages the Hilbert version
+of Theorem 20.4: absolute and locally uniform convergence, complex and
+real analyticity, agreement with physical finite-gap frequencies after
+subtracting mass and free dispersion, and uniqueness. The physical
+frequency remains defined independently through Hamiltonian derivatives.
+The renormalized frequency vanishes at the zero source.
+
+Public checks cover a bounded coefficient family with no assumed uniform
+tails and a nonzero diagonal, the non-Hilbert exponent `p = 3`, uniqueness
+from spectral finite-gap data, the zero potential at a nonzero selected
+index, and the exact physical mass renormalization.
+
+Next: transport the physical finite-gap frequency identification across
+source exponents to finish the all-exponent form of Theorem 20.4. The
+analytic series construction and finite-gap uniqueness already hold for
+all finite `p > 1`; the packaged physical agreement currently has `p = 2`.
+Theorem 20.5 and the rest of the dissertation remain unfinished.
+
+## Previous milestone: Full Lemma 20.3 on one complex neighborhood
 
 `SourceAbelianMomentLemma20_3.lean` proves both assertions of Lemma 20.3
 for the actual normalized second moments, on one connected open complex

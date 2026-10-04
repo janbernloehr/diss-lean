@@ -29396,3 +29396,65 @@ end General
 
 end
 end FullLemma20_3Checks
+
+
+namespace SecondMomentFrequencyChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The lp family may move its mass arbitrarily far out. A nonzero diagonal
+-- is retained while the fixed reciprocal multiplier gives uniform convergence.
+example : TendstoUniformlyOn
+    (fun (N : ℕ) (a : Coeff 2) => ∑ k ∈ Finset.Icc (-(N:ℤ)) N,
+      if k = 0 then (7:ℂ) else a k/(k:ℂ))
+    (fun a => ∑' k : ℤ, if k = 0 then (7:ℂ) else a k/(k:ℂ)) atTop {a | ‖a‖ ≤ 1} := by
+  have h := Coeff.summable_uniform_of_reciprocal_bound (p := 2) (by simp) (by norm_num)
+    0 {a : Coeff 2 | ‖a‖ ≤ 1}
+    (fun a k => if k = 0 then (7:ℂ) else a k/(k:ℂ)) id 1 1 7 (by norm_num)
+    (fun _ ha => ha) (by intro a _; norm_num) (by
+      intro a _ k hk
+      simp only [if_neg hk, norm_div, Complex.norm_intCast, one_mul, id_eq, zero_sub,
+        Int.cast_neg, abs_neg, le_refl])
+  exact h.2
+
+-- The construction also works outside the Hilbert exponent, and its
+-- complex analyticity gives real analyticity without changing the sum.
+example {W V : Set (CoeffPair 3)} {s : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiSquaredGapComplexExtension (by simp) (by norm_num) V s)
+    (hV : IsOpen V) (hreal : realTypeSourceLocus 3 ⊆ V) :
+    ∃ U : Set (CoeffPair 3), realTypeSourceLocus 3 ⊆ U ∧
+      ∀ n : ℤ, AnalyticOnNhd ℝ (A.renormalizedFrequency n) U := by
+  obtain ⟨U,_,_,hr,_,_,ha,_⟩ := A.exists_analytic_renormalizedFrequency hs hV hreal
+  exact ⟨U,hr,fun n => (ha n).restrictScalars⟩
+
+-- Spectral finite-gap data, not finite Fourier support, determine an
+-- analytic function on the entire connected complex domain.
+example {U : Set (CoeffPair 3)} (hU : IsOpen U) (hc : IsConnected U)
+    (hr : realTypeSourceLocus 3 ⊆ U) (F : CoeffPair 3 → ℂ)
+    (hF : AnalyticOnNhd ℂ F U)
+    (hz : ∀ φ : realTypeSourceLocus 3,
+      φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) → F φ.val = 0) :
+    EqOn F 0 U :=
+  eqOn_of_analytic_of_sourceFiniteGap (by simp) (by norm_num) hU hc hr hF
+    analyticOnNhd_const hz
+
+example {W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s) :
+    A.renormalizedFrequency 1 0 = 0 := A.renormalizedFrequency_zero 1
+
+example {W₀ B W X V : Set (CoeffPair 2)}
+    {s u : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) X u)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (hs : SourcePsiNormalizedComplexExtension (by simp) (by norm_num) V u)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℤ) :
+    A.renormalizedFrequency n φ.val = D.finiteGapFrequency φ hf n -
+      4*sourceHilbertMass φ.val - (2*(n:ℂ)*Real.pi)^2 := by
+  simpa only [sourceFiniteGapNLSHamiltonian_one_eq_mass] using
+    A.renormalizedFrequency_eq_physical_finiteGap D hs φ hf n
+
+end
+end SecondMomentFrequencyChecks
