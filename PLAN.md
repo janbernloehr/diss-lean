@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Latest progress: uniform gap bounds for the full primitive
+## Latest progress: analytic square continuation across complex gaps
+
+`SourceFullAbelianUniformSquare.lean` proves Lemma 19.1(iv) for the
+canonical full primitive on one open connected almost-real source
+neighborhood. For every source and every signed index, its continued
+square is analytic on the plane with only the other noncollapsed gaps
+removed. The selected complex gap, both of its endpoints, and every
+collapsed gap are included. Both selected endpoints have value zero.
+
+`SourceFullAbelianCauchySquare.lean` uses the exact factorization of the
+normalized primitive into its selected standard root and the analytic
+Cauchy quotient. Its square is the endpoint polynomial times the square
+of that quotient, which is analytic on the entire assigned disc. On the
+closed gap this equals the square of either boundary profile.
+
+`SourceFullAbelianSquare.lean` defines the global square by relative
+limits from the dense canonical root domain. It agrees with every local
+Cauchy square and preserves the original full primitive's square on the
+complement of noncollapsed gaps. The construction is independent of the
+ambient source neighborhood and agrees exactly with the earlier
+real-source square. At zero potential it is the entire quadratic
+`-(z-pi*n)^2`, including all collapsed free spectral points.
+
+Public checks cover exponent 3/2, the common neighborhood for all signed
+indices, analyticity at every point of a complex gap of index -2, equality
+of the two boundary squares, the real arcosh-square formula, and the free
+quadratic at index -3. No noncollapse or real-source assumption is used
+for the complex-gap analyticity checks.
+
+The next step is to transfer the real boundary formula in Lemma 19.1(v)
+to the full canonical primitive. Later frequency results and the full
+dissertation remain unfinished. This milestone proves spectral
+analyticity of the square, not joint analyticity on its filled cuts.
+
+## Previous milestone: uniform gap bounds for the full primitive
 
 `SourceFullAbelianUniformGapBound.lean` proves the gap-size estimate of
 Lemma 19.1(iii) for the canonical full primitive. On one open connected

@@ -2282,3 +2282,7 @@ import NLS.ZakharovShabat.SourceCriticalRootRatioUniformTailBound
 import NLS.ZakharovShabat.SourceCriticalRootGapUniformBound
 import NLS.ZakharovShabat.SourceFullAbelianGapBoundary
 import NLS.ZakharovShabat.SourceFullAbelianUniformGapBound
+
+import NLS.ZakharovShabat.SourceFullAbelianCauchySquare
+import NLS.ZakharovShabat.SourceFullAbelianSquare
+import NLS.ZakharovShabat.SourceFullAbelianUniformSquare

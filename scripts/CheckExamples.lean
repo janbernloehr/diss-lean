@@ -27497,3 +27497,69 @@ example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by si
     C.gapBoundary_eq_zero_of_collapsed (-2) ψ hgap θ upper]
 
 end NLS.FullAbelianUniformGapChecks
+
+
+noncomputable section
+namespace NLS.FullAbelianSquareChecks
+open Set Metric Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A common almost-real neighborhood works at exponent 3/2 for every
+-- signed index; the entire own gap is filled and original values persist.
+example : ∃ W V : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    IsOpen V ∧ IsConnected V ∧ realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ V ∧
+    ∀ ψ ∈ V, ∀ n : ℤ,
+      AnalyticOnNhd ℂ (fun z => sourceFullAbelianSquare (by simp) (by norm_num) W n (z,ψ))
+        (sourceFullAbelianSquareDomain (by simp) (by norm_num) ψ n) ∧
+      (∀ z ∈ sourceOpenGapComplement (by simp) (by norm_num) ψ,
+        sourceFullAbelianSquare (by simp) (by norm_num) W n (z,ψ) =
+          (sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,ψ))^2) ∧
+      sourceFullAbelianSquare (by simp) (by norm_num) W n
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n,ψ) = 0 ∧
+      sourceFullAbelianSquare (by simp) (by norm_num) W n
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n,ψ) = 0 := by
+  obtain ⟨W,V,hV,hconn,hreal,_,hall⟩ := exists_sourceFullAbelian_almostReal_uniformSquare
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,V,hV,hconn,hreal,?_⟩
+  intro ψ hψ n
+  obtain ⟨ha,he,hend⟩ := hall ψ hψ n
+  exact ⟨ha,he,hend _ (by simp),hend _ (by simp)⟩
+
+-- The analytic extension exists at every point of a complex negative gap,
+-- including its endpoints and without any noncollapse hypothesis.
+example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (z : ℂ) (hz : z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ (-2)) :
+    AnalyticAt ℂ (fun w => sourceFullAbelianSquare (by simp) (by norm_num) W (-2) (w,ψ)) z :=
+  C.fullSquare_analyticAt_of_mem_segment (-2) ψ hψ z hz
+
+-- Both boundary squares agree with the same filled analytic value.
+example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius) (θ : ℝ) :
+    C.gapBoundary (-2) ψ θ true ^ 2 = C.gapBoundary (-2) ψ θ false ^ 2 :=
+  (C.fullSquare_eq_gapBoundary_sq (-2) ψ hψ θ true).symm.trans
+    (C.fullSquare_eq_gapBoundary_sq (-2) ψ hψ θ false)
+
+-- Compatibility with the established real arcosh formula is exact.
+example (W : Set (CoeffPair 3)) (φ : realTypeSourceSubmodule 3)
+    (E : SourceAbelianSpectralChart (by simp) (by norm_num) W φ.val) (n : ℤ) (x : ℝ)
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re) :
+    sourceFullAbelianSquare (by simp) (by norm_num) W n ((x:ℂ),φ.val) =
+      (sourceRealGapArcoshProfile (by simp) φ.val n x : ℂ)^2 :=
+  (sourceFullAbelianSquare_eq_real φ E n x).trans
+    (sourceAbelianSquare_eq_arcosh_sq (by simp) (by norm_num) φ.val φ.property n x hx)
+
+-- At zero potential the continuation is the whole quadratic, even at
+-- the selected collapsed point -3*pi and all other free spectral points.
+example (W : Set (CoeffPair 3)) (E : SourceAbelianSpectralChart (by simp) (by norm_num) W 0) (z : ℂ) :
+    sourceFullAbelianSquare (by simp) (by norm_num) W (-3) (z,0) = -(z+3*(Real.pi : ℂ))^2 := by
+  have h := sourceFullAbelianSquare_zero E (-3) z
+  convert h using 1
+  push_cast
+  ring
+
+end NLS.FullAbelianSquareChecks
