@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual frequency and refined correction are now
-proved invariant under arbitrary complex tail sign changes on one
-analytic coordinate ball around each real source. Finite-support centers
-allow infinitely many sign choices while keeping a finite head fixed.
-Analytic descent to action space in Theorem 18.1 remains next; see
-`STATUS.md`.
+Latest milestone: the frequency and refined correction now descend
+continuously to an open domain with a finite unsquared head and squared
+tail coordinates. The descended maps recover the literal source values
+and are analytic in finite-head directions. Tail analyticity and the
+passage to action variables in Theorem 18.1 remain next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12277,3 +12276,46 @@ then pass to quadratic actions and glue the local action-space maps.
 Sign invariance and root-choice independence do not yet prove invariance
 on every complex quadratic action fiber or analytic descent. Theorem 18.1,
 Corollary 18.2, and the later dissertation remain unfinished.
+
+
+## Continuous descent to squared tail coordinates
+
+`SourceFrequencyTailSquareDescent.lean` constructs continuous descended
+frequency and correction maps on one open mixed-coordinate domain around
+every real source. The finite head remains unsquared, while both tail
+components are squared into the Banach half-exponent space. The theorem
+retains analyticity of the lifted maps, exact sequence recovery, and the
+literal moment-sum frequency and correction coordinate formulas.
+
+The common domain and chart precede all admissible target exponents:
+finite `r > 1` with `r >= p/2` for the frequency and `r >= p/3` for the
+refined correction. The source half exponent is Banach here. The descended
+maps are also analytic in all retained finite-head perturbations, in the
+full target norm. Analyticity in the squared tail is not yet proved.
+
+`MixedSquare.lean` constructs the analytic mixed-coordinate map and proves
+it is an open surjection. A nearby lift has distance at most
+`sqrt(norm(delta)) + K*norm(delta)`, where the finite-head transfer operator
+determines `K`. Its fibers are precisely equal finite heads and equal
+coordinate squares. `OpenMapDescent.lean` supplies continuous descent
+along a continuous open map on an open domain. `TailSquareDescent.lean`
+uses the proved complex tail sign invariance to obtain exact recovery,
+uniqueness on the image, and transfer of bounds.
+`TailSquareDescentHeadAnalytic.lean` supplies the explicit linear lift for
+finite-head perturbations and proves their analyticity.
+
+Public checks cover the empty head, zero coordinates, openness and
+surjectivity, a nonlinear polynomial whose descended formula is linear,
+transfer of sequence norm bounds, finite-head analyticity, and the actual
+`p = 6` frequency and correction on one open `l3`-pair domain.
+
+Validation: the full check script passes (5,885 build jobs, all public
+examples, and an axiom audit of 21,587 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove analyticity in squared tail coordinates through their zeros,
+then establish joint Banach-space analyticity, pass from the individual
+coordinate squares to quadratic actions, and glue the local maps. These
+mixed-coordinate maps are not yet the analytic action-space frequency
+map of Theorem 18.1. Corollary 18.2 and the later dissertation remain
+unfinished as well.

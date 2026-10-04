@@ -30003,3 +30003,103 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end ComplexSignInvarianceChecks
+
+
+namespace TailSquareDescentChecks
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 6) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := by
+  have he : (4 : ℝ≥0∞)/2 = 2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 4
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The retained coordinate is linear, while the tail coordinate is squared.
+example (a : Coeff 4) :
+    Coeff.mixedSquare (q := 2) {0} a 0 = a 0 ∧
+      Coeff.mixedSquare (q := 2) {0} a 1 = a 1^2 := by simp
+
+-- The empty head includes the all-zero point and reduces to squaring.
+example (a : Coeff 4) : Coeff.mixedSquare (q := 2) ∅ a = Coeff.square a := by
+  ext n
+  simp
+
+-- Mixed coordinates are analytic and open with the exact Banach target.
+example (S : Finset ℤ) :
+    AnalyticOnNhd ℂ (Coeff.mixedSquare (p := 4) (q := 2) S) univ ∧
+    IsOpenMap (Coeff.mixedSquare (p := 4) (q := 2) S) ∧
+    Function.Surjective (Coeff.mixedSquare (p := 4) (q := 2) S) :=
+  ⟨Coeff.analyticOnNhd_mixedSquare S,Coeff.isOpenMap_mixedSquare (by simp) S,
+    Coeff.mixedSquare_surjective (by simp) S⟩
+
+-- A nonlinear source polynomial descends to the expected linear formula,
+-- on every mixed-coordinate value, including values with zero tail entries.
+example (b : Coeff 2 × Coeff 2) :
+    Coeff.tailSquareDescent (p := 4) {0}
+      (fun z : Coeff 4 × Coeff 4 => z.1 0+z.2 1^2) univ b = b.1 0+b.2 1 := by
+  classical
+  have hi : ∀ e d : ℤ → Bool, (∀ n ∈ ({0} : Finset ℤ), e n = false) →
+      (∀ n ∈ ({0} : Finset ℤ), d n = false) → ∀ z ∈ (univ : Set (Coeff 4 × Coeff 4)),
+      (Coeff.pairSignChange e d z).1 0+(Coeff.pairSignChange e d z).2 1^2 = z.1 0+z.2 1^2 := by
+    intro e d he _ z _
+    change Coeff.signChange e z.1 0+Coeff.signChange d z.2 1^2 = _
+    simp [he 0 (by simp)]
+  obtain ⟨a,ha⟩ := Coeff.mixedSquare_surjective (p := 4) (by simp) {0} b.1
+  obtain ⟨c,hc⟩ := Coeff.mixedSquare_surjective (p := 4) (by simp) {0} b.2
+  have hb : Coeff.pairMixedSquare {0} (a,c) = b := Prod.ext ha hc
+  rw [← hb,Coeff.tailSquareDescent_apply _ _ _ hi _ (mem_univ _)]
+  simp [Coeff.pairMixedSquare]
+
+-- Uniform target norm bounds survive descent on the complete image.
+example (S : Finset ℤ) (f : (Coeff 4 × Coeff 4) → Coeff 2) (V : Set (Coeff 4 × Coeff 4))
+    (hi : ∀ e d : ℤ → Bool, (∀ n ∈ S, e n = false) → (∀ n ∈ S, d n = false) →
+      ∀ z ∈ V, f (Coeff.pairSignChange e d z) = f z)
+    (M : ℝ) (hM : ∀ z ∈ V, ‖f z‖ ≤ M) :
+    ∀ b ∈ Coeff.pairMixedSquare (q := 2) S '' V, ‖Coeff.tailSquareDescent S f V b‖ ≤ M :=
+  Coeff.tailSquareDescent_property S f V hi (fun v => ‖v‖ ≤ M) hM
+
+-- Analyticity in the retained head holds in the full sequence target norm.
+example (S : Finset ℤ) (f : (Coeff 4 × Coeff 4) → Coeff 2) (V : Set (Coeff 4 × Coeff 4))
+    (hV : IsOpen V) (hf : AnalyticOnNhd ℂ f V)
+    (hi : ∀ e d : ℤ → Bool, (∀ n ∈ S, e n = false) → (∀ n ∈ S, d n = false) →
+      ∀ z ∈ V, f (Coeff.pairSignChange e d z) = f z)
+    (z : Coeff 4 × Coeff 4) (hz : z ∈ V) :
+    AnalyticAt ℂ (fun b : Coeff 2 × Coeff 2 =>
+      Coeff.tailSquareDescent S f V (Coeff.pairMixedSquare S z+Coeff.truncatePair S b)) 0 :=
+  Coeff.analyticAt_tailSquareDescent_finiteHead S f V hV hf hi z hz
+
+-- Actual p = 6 frequencies and corrections descend continuously to one
+-- open l3-pair domain, with exact recovery of both sequences.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6,
+    ∃ S : Finset ℤ, ∃ c z₀ : Coeff 6 × Coeff 6, ∃ R : ℝ,
+    ∃ V : Set (Coeff 3 × Coeff 3),
+    ∃ F : (Coeff 3 × Coeff 3) → Coeff 3, ∃ H : (Coeff 3 × Coeff 3) → Coeff 2,
+      0 < R ∧ z₀ ∈ ball c R ∧ g z₀ = φ.val ∧ IsOpen V ∧
+      ContinuousOn F V ∧ ContinuousOn H V ∧
+      ∀ z ∈ ball c R, Coeff.pairMixedSquare S z ∈ V ∧
+        F (Coeff.pairMixedSquare S z) = A.frequencySequence 3 (g z) ∧
+        H (Coeff.pairMixedSquare S z) = A.actionFrequencyCorrectionSequence 2 (g z) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_continuousTailSquareDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,hR,hbase,_,hV,_,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨_,hf,_,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨_,hg,_,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,S,Coeff.truncatePair S (sourceBirkhoffMap (by simp) (by norm_num) t φ.val),
+    sourceBirkhoffMap (by simp) (by norm_num) t φ.val,R,_,_,_,hR,hbase,C.base_eq,hV,hf,hg,?_⟩
+  intro z hz
+  exact ⟨⟨z,hz,rfl⟩,(he z hz).1,(hj z hz).1⟩
+
+end
+end TailSquareDescentChecks

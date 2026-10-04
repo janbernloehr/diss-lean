@@ -2450,3 +2450,8 @@ import NLS.SequenceSpaces.SignChange
 import NLS.SequenceSpaces.ComplexSignInvariance
 import NLS.SequenceSpaces.FiniteCenterBall
 import NLS.ZakharovShabat.SourceFrequencyComplexSignInvariance
+import NLS.ComplexAnalysis.OpenMapDescent
+import NLS.SequenceSpaces.MixedSquare
+import NLS.SequenceSpaces.TailSquareDescent
+import NLS.SequenceSpaces.TailSquareDescentHeadAnalytic
+import NLS.ZakharovShabat.SourceFrequencyTailSquareDescent
