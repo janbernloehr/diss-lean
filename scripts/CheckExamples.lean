@@ -27161,3 +27161,69 @@ example (W : Set (CoeffPair 3))
   D.eqOn_overlap E hD hroot n ⟨htD,htE⟩
 
 end NLS.AbelianContinuedChecks
+
+
+noncomputable section
+namespace NLS.AbelianUniformSpectralChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A single positive radius at exponent 3/2 works for every complex
+-- source, every signed index and the whole spectral cut complement.
+-- Collapsed gaps are included in the analytic domain.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    ∃ r : ℝ, 0 < r ∧ ∀ ψ ∈ ball φ.val r, ∃ F : ℤ → ℂ → ℂ, ∀ n : ℤ,
+      AnalyticOnNhd ℂ (F n) (sourceOpenGapComplement (by simp) (by norm_num) ψ) ∧
+      (∀ z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) ψ,
+        HasDerivAt (F n) (deriv (canonicalDiscriminant (by simp) (periodOnePotential ψ)) z /
+          sourceCanonicalRoot (by simp) (by norm_num) ψ z) z) ∧
+      ∀ z : ℂ, F n z = F 0 z+Complex.I*(Real.pi : ℂ)*n := by
+  obtain ⟨W,V,_,_,_,hreal,_,_,_,hglobal⟩ := exists_sourceAbelian_almostReal_spectral_continuation
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  obtain ⟨D,hφ,hall⟩ := hglobal φ.val (hreal φ.property)
+  obtain ⟨r,hr,hsub⟩ := Metric.mem_nhds_iff.mp (isOpen_ball.mem_nhds hφ)
+  refine ⟨r,hr,?_⟩
+  intro ψ hψ
+  obtain ⟨F,hF⟩ := hall ψ (hsub hψ)
+  exact ⟨F,fun n => (hF n).2⟩
+
+-- Density holds even when the countably many cuts are genuinely complex.
+example (ψ : CoeffPair 3) (z : ℂ) (r : ℝ) (hr : 0 < r) :
+    ∃ w ∈ sourceCanonicalRootDomain (by simp) (by norm_num) ψ, dist z w < r := by
+  obtain ⟨w,hw,hroot⟩ := (Metric.dense_iff.mp (dense_sourceCanonicalRootDomain_complex (by simp) (by norm_num) ψ)) z r hr
+  exact ⟨w,hroot,by simpa only [dist_comm] using mem_ball.mp hw⟩
+
+-- A neighborhood constructed around zero has full spectral primitives
+-- that recover the free formula at every point, including all the
+-- collapsed lattice gaps previously excluded from the root domain.
+example : ∃ F : ℤ → ℂ → ℂ, ∀ (n : ℤ) (z : ℂ),
+    AnalyticAt ℂ (F n) z ∧ F n z = -Complex.I*z+Complex.I*(Real.pi : ℂ)*n := by
+  obtain ⟨W,V,_,_,_,hreal,_,_,_,hglobal⟩ := exists_sourceAbelian_almostReal_spectral_continuation
+    (p := 3) (by simp) (by norm_num)
+  have hzero : (0 : CoeffPair 3) ∈ realTypeSourceLocus 3 := by simp [realTypeSourceLocus]
+  obtain ⟨D,h0,hall⟩ := hglobal 0 (hreal hzero)
+  obtain ⟨F,hF⟩ := hall 0 h0
+  refine ⟨F,?_⟩
+  intro n z
+  have hz : z ∈ sourceOpenGapComplement (p := 3) (by simp) (by norm_num) 0 := by
+    rw [sourceOpenGapComplement_zero]
+    exact mem_univ z
+  refine ⟨(hF n).2.1 z hz,?_⟩
+  have he := D.eq_real_of_exterior (0 : realTypeSourceSubmodule 3) h0 n (F n) (hF n).2.1 (hF n).1 hz
+  change F n z = sourceAbelianPrimitive (by simp) (by norm_num) (0 : CoeffPair 3) (by simp) z+Complex.I*(Real.pi : ℂ)*n at he
+  rw [sourceAbelianPrimitive_zero] at he
+  exact he
+
+-- The infinite family gives literal coverage of every off-cut point,
+-- including points inside the formerly missing distant discs.
+example (W : Set (CoeffPair 3)) (D : SourceAbelianUniformDiscFamily (by simp) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball D.source.val D.sourceRadius) (z : ℂ)
+    (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) ψ) :
+    z ∈ D.exterior ∨ ∃ j : ℤ, z ∈ ball (D.center j) (D.outer j) ∧
+      z ∉ sourcePeriodicSegment (by simp) (by norm_num) ψ j := by
+  rw [D.rootDomain_eq_union ψ hψ] at hz
+  simpa only [mem_union,mem_iUnion,Set.mem_sdiff] using hz
+
+end NLS.AbelianUniformSpectralChecks

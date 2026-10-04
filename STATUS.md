@@ -1,6 +1,58 @@
 # Implementation status
 
-## Current milestone: gluing interior discs and the exact potential gradient
+## Current milestone: common-neighborhood full spectral continuation
+
+`SourceAbelianAlmostRealSpectralContinuation.lean` now constructs an
+open connected neighborhood of the real-source locus covered by source
+balls that control every gap simultaneously. For every complex source
+in each ball, the actual projected exterior primitive has a spectral
+continuation to the whole complement of noncollapsed gaps, with its
+exact spectral derivative off the cuts and all signed-index shifts.
+Collapsed gaps are included in the analytic domain.
+
+`SourceAbelianUniformDiscFamily.lean` builds the common source ball
+from the existing uniform tail and finite central contour family. Each
+assigned disc has a smaller concentric radius enclosing its moving
+segment uniformly on that ball. The larger discs are pairwise disjoint
+and their closures avoid every unselected cut. Only finitely many
+assigned discs differ from the free lattice discs; the new generic
+`LocallyFiniteLatticeDiscs.lean` proves local finiteness and provides a
+compact-set radius lemma. Thus the complement of all smaller closed
+discs is one open exterior, and its product with the entire source ball
+lies in the projected joint domain.
+
+`SourceAbelianUniformSpectralContinuation.lean` extends that exterior
+function into every cut disc at once and glues the spectral extensions.
+The exterior and the cut discs are proved to cover the entire canonical
+cut complement. This replaces per-gap source neighborhoods with one
+source ball for the full infinite family.
+
+`SourceAbelianUniformCollapsedFilling.lean` proves density of the cut
+complement for arbitrary complex sources and uses dense limits to join
+all analytic collapsed-gap fillings. The construction retains every
+value off the cuts and the prescribed exterior values.
+`SourceAbelianUniformRealNormalization.lean` proves that the exterior
+is nonempty and that its real-source normalization determines the
+filled primitive on the whole real spectral domain.
+
+Public checks construct a single positive source radius at exponent
+3/2 with full spectral analyticity, the actual derivative, and all index
+shifts. They check arbitrary complex-source density, literal all-disc
+coverage, and the complete free formula at every spectral point,
+including all collapsed lattice gaps.
+
+This supplies full spectral continuation on common almost-real source
+neighborhoods, including collapsed-gap removal, toward Lemma 19.1(i).
+The current theorem constructs spectral functions separately for each
+complex source and supporting source ball, with fixed exterior values.
+It does not yet identify all choices between different source balls or
+with the earlier jointly analytic continued function throughout their
+interior overlaps. Those compatibility and parameter-regularity steps
+are next, together with uniform propagation of the exact complex
+endpoint constants. The estimates in (iii), later frequency results,
+and the full dissertation remain unfinished.
+
+## Previous milestone: gluing interior discs and the exact potential gradient
 
 The new `SourceAbelianContinuedPrimitive` joins the existing enlarged
 exterior function to every normalized interior disc chart on one open
