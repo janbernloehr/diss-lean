@@ -27004,3 +27004,77 @@ example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W �
   exact ⟨H,hH,heq,hd⟩
 
 end NLS.AbelianComplexDiscChecks
+
+
+noncomputable section
+namespace NLS.AbelianCauchyChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- At exponent 3/2, actual collar agreement and exact endpoint values
+-- are constructed simultaneously for every nearby complex potential
+-- and every signed normalization index, even at a collapsed base gap.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (j : ℤ) :
+    ∃ D : SourceAbelianCauchyChart (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num) j, φ.val ∈ D.sources ∧
+      ∀ ψ ∈ D.sources,
+        (∀ n : ℤ, EqOn (fun z => D.primitive n (z,ψ))
+          (fun z => sourceAbelianJointPrimitive (by simp) (by norm_num) n (z,ψ))
+          (ball D.center D.radius \ closedBall D.center D.inner)) ∧
+        (∀ (n : ℤ) (a : ℂ),
+          a ∈ ({canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j,
+            canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j} : Set ℂ) →
+          Tendsto (fun z => D.primitive n (z,ψ))
+            (𝓝[ball D.center D.radius \ sourcePeriodicSegment (by simp) (by norm_num) ψ j] a)
+            (𝓝 (Complex.I*(Real.pi : ℂ)*(n-j)))) ∧
+        AnalyticOnNhd ℂ (fun z => D.square (z,ψ)) (ball D.center D.radius) := by
+  obtain ⟨D,hφ,hnorm⟩ := exists_sourceAbelianCauchyChart_normalized (by simp) (by norm_num) φ j
+  exact ⟨D,hφ,fun ψ hψ => ⟨fun n => D.primitive_eq_joint_on_collar ψ hψ (hnorm ψ hψ) n,
+    fun n a ha => D.primitive_endpoint_limit n ψ hψ a ha,D.square_analytic ψ hψ⟩⟩
+
+-- Joint complex analyticity extends inside the disc; it is not just
+-- spectral analyticity at a fixed real potential.
+example (j n : ℤ) (D : SourceAbelianCauchyChart (p := 3) (by simp) (by norm_num) j)
+    (z : ℂ) (ψ : CoeffPair 3) (hz : z ∈ ball D.center D.radius) (hψ : ψ ∈ D.sources)
+    (hcut : z ∉ sourcePeriodicSegment (by simp) (by norm_num) ψ j) :
+    AnalyticAt ℂ (D.primitive n) (z,ψ) := D.primitive_analytic n (z,ψ) ⟨hz,hψ,hcut⟩
+
+-- The two independent indices have the required relative sign:
+-- normalization -3 at gap 2 gives the endpoint value -5 i pi.
+example (D : SourceAbelianCauchyChart (p := 3) (by simp) (by norm_num) 2)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ D.sources) :
+    Tendsto (fun z => D.primitive (-3) (z,ψ))
+      (𝓝[ball D.center D.radius \ sourcePeriodicSegment (by simp) (by norm_num) ψ 2]
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 2))
+      (𝓝 (-5*Complex.I*(Real.pi : ℂ))) := by
+  have h := D.primitive_endpoint_limit (-3) ψ hψ
+    (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 2) (by simp)
+  have he : Complex.I*(Real.pi : ℂ)*((-3:ℂ)-2) = -5*Complex.I*(Real.pi : ℂ) := by ring
+  simpa only [Int.cast_neg,Int.cast_ofNat,he] using h
+
+-- The analytically filled square retains the complete free quadratic
+-- formula on the whole disc, including the collapsed gap itself.
+example (j : ℤ) (D : SourceAbelianCauchyChart (p := 3) (by simp) (by norm_num) j)
+    (h0 : (0 : CoeffPair 3) ∈ D.sources) :
+    EqOn (fun z => D.square (z,0)) (fun z : ℂ => -(z-(Real.pi : ℂ)*j)^2) (ball D.center D.radius) := by
+  apply continuous_eqOn_of_dense_on_open (sourcePeriodicSegment (p := 3) (by simp) (by norm_num) 0 j)ᶜ _
+    (dense_complex_segment_complement _ _) isOpen_ball _ _ (D.square_analytic 0 h0).continuousOn (by fun_prop)
+  intro z hz
+  change D.square (z,0) = -(z-(Real.pi : ℂ)*j)^2
+  rw [D.square_eq_primitive_sq 0 z hz.2]
+  have h := D.primitive_eq_real 0 h0 j ⟨hz.1,hz.2⟩
+  simp only [ZeroMemClass.coe_zero,sourceAbelianPrimitive_zero] at h
+  rw [h]
+  calc
+    (-Complex.I*z+Complex.I*(Real.pi : ℂ)*j)^2 = (-Complex.I*(z-(Real.pi : ℂ)*j))^2 := by congr 1; ring
+    _ = -(z-(Real.pi : ℂ)*j)^2 := by rw [mul_pow,neg_sq,Complex.I_sq]; ring
+
+-- Filling a cut is independent of the Cauchy contour and anchor, even
+-- at a point of the cut where the unsquared primitive is not analytic.
+example (j : ℤ) (D E : SourceAbelianCauchyChart (p := 3) (by simp) (by norm_num) j)
+    (ψ : CoeffPair 3) (hD : ψ ∈ D.sources) (hE : ψ ∈ E.sources)
+    (z : ℂ) (hz : z ∈ ball D.center D.radius ∩ ball E.center E.radius) :
+    D.square (z,ψ) = E.square (z,ψ) := D.square_eqOn_overlap E ψ hD hE hz
+
+end NLS.AbelianCauchyChecks

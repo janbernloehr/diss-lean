@@ -1,6 +1,57 @@
 # Implementation status
 
-## Current milestone: complex cut-disc continuation and endpoint limits
+## Current milestone: exact complex endpoint normalization and filled squares
+
+`SourceAbelianCauchyContinuation.lean` identifies the exact endpoint
+values of the complex-source continuation: the normalized primitive
+`F_n` tends to `i (n-j) pi` at both endpoints of the selected gap `j`.
+The result includes collapsed gaps. Around every real source and
+selected gap, one open complex-source neighborhood and one fixed
+spectral collar work for every normalization index. The explicit
+continued function agrees with the actual old joint primitive, and
+with the enlarged primitive, on that entire collar.
+
+`SourceAbelianCauchyPrimitive.lean` constructs the interior Cauchy
+transform of the actual zero-index collar primitive divided by the
+selected standard root. Its quadratic differential equation holds
+throughout the disc. Multiplication by the root gives the exact
+spectral derivative `Delta' / canonicalRoot` and zero limits at both
+endpoints, even when they coincide.
+
+`SourceAbelianCauchyChart.lean` supplies uniform charts at every real
+source, including collapsed real gaps. The Cauchy quotient is jointly
+analytic on the full disc times the source neighborhood. The additive
+offset from the old collar function is therefore analytic in the source.
+`SourceAbelianCauchyNormalization.lean` identifies its actual real-source
+value as `-i j pi`; uniqueness from the real-source locus propagates that
+value to complex potentials. This determines the constant without
+assuming continuity or analyticity of the ordered complex endpoints.
+
+The continued primitive is jointly analytic off the moving selected
+cut, retains the exact spectral derivative and signed-index shift, and
+agrees with the actual real-source primitive throughout each real slice.
+`SourceAbelianCauchySquare.lean` proves that different charts for the same
+gap agree on their complete cut-disc overlaps. It also constructs the
+selected-index square explicitly as the endpoint polynomial times the
+square of the Cauchy quotient. This square is spectrally analytic across
+the entire complex gap, vanishes at both endpoints, and is independent
+of the chart even at points on the filled cut.
+
+Public checks cover constructed complex-source normalization at exponent
+3/2, joint analyticity inside the disc, the relative sign for index -3
+at gap 2, the full free quadratic formula through a collapsed gap, and
+chart independence of the filled square.
+
+This proves the exact local complex endpoint normalization and local
+square continuation required in Lemma 19.1(ii) and (vi). The next step
+is to glue the normalized local charts with the existing exterior
+function across all isolating discs and obtain a common almost-real
+source neighborhood. The full global complex-source spectral clause
+of (i), the potential gradient on the new interior domain, locally
+source-uniform and index-uniform estimates in (iii), subsequent
+frequency results, and the full dissertation remain unfinished.
+
+## Previous milestone: complex cut-disc continuation and endpoint limits
 
 `SourceAbelianComplexDiscContinuation.lean` continues the actual
 normalized joint primitive into a whole isolating disc minus its moving

@@ -2239,3 +2239,9 @@ import NLS.ZakharovShabat.SourceAbelianEnlargedExterior
 import NLS.ZakharovShabat.SourceAbelianComplexDiscContinuation
 import NLS.ZakharovShabat.SourceAbelianComplexEndpointLimits
 import NLS.ZakharovShabat.SourceAbelianComplexCollapsedExtension
+
+import NLS.ZakharovShabat.SourceAbelianCauchyPrimitive
+import NLS.ZakharovShabat.SourceAbelianCauchyChart
+import NLS.ZakharovShabat.SourceAbelianCauchyNormalization
+import NLS.ZakharovShabat.SourceAbelianCauchyContinuation
+import NLS.ZakharovShabat.SourceAbelianCauchySquare
