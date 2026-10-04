@@ -2286,3 +2286,6 @@ import NLS.ZakharovShabat.SourceFullAbelianUniformGapBound
 import NLS.ZakharovShabat.SourceFullAbelianCauchySquare
 import NLS.ZakharovShabat.SourceFullAbelianSquare
 import NLS.ZakharovShabat.SourceFullAbelianUniformSquare
+
+import NLS.ZakharovShabat.SourceFullAbelianRealBoundary
+import NLS.ZakharovShabat.SourceFullAbelianFiniteGapExterior

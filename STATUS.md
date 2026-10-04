@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: analytic square continuation across complex gaps
+## Current milestone: real boundary formula and finite-gap exterior
+
+`SourceFullAbelianRealBoundary.lean` transfers Lemma 19.1(v) to the full
+canonical primitive. At every point of every closed real gap, arbitrary
+upper-half-plane approaches give the positive real arcosh profile and
+lower-half-plane approaches give its negative. Endpoints and collapsed
+gaps are included. For primitive index `m` on gap `n`, the exact added
+constant is `i*pi*(m-n)`. One ambient neighborhood supports these formulas
+for every real source and the exact free formula of Lemma 19.1(vi).
+
+The same module proves that the full primitive has the regular Floquet
+logarithmic derivative throughout the real-source spectral domain,
+including collapsed spectral points. This transfers the derivative
+without restricting it to the complement of all closed cuts.
+
+`SourceFullAbelianFiniteGapExterior.lean` supplies the exterior analyticity
+assertion at the start of Lemma 19.2 for the actual full primitive. At
+each real finite-gap source, one radius works for every normalization
+index. Beyond it the primitive is analytic and its derivative is exactly
+`-i + z^(-2)*h(1/z)`, where one function `h` is analytic near zero. The
+construction uses the earlier finite-gap quotient estimates and imposes
+no extra cut-avoidance condition at exterior periodic endpoints.
+
+Public checks cover both arcosh limits at exponent 3/2, the exact
+`5*i*pi` shift for gap -2 and primitive index 3, the free value at index
+-2, derivatives at exterior periodic endpoints, and the common analytic
+inverse-frequency remainder at a non-Hilbert exponent.
+
+The full Laurent expansion of `F_0` in Lemma 19.2 is not yet proved:
+the derivative expansion must be integrated, its additive constant
+fixed, and its coefficients identified with the NLS Hamiltonians. That
+is the next step. Later frequency results and the full dissertation
+remain unfinished.
+
+## Previous milestone: analytic square continuation across complex gaps
 
 `SourceFullAbelianUniformSquare.lean` proves Lemma 19.1(iv) for the
 canonical full primitive on one open connected almost-real source

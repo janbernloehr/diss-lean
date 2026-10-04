@@ -27563,3 +27563,81 @@ example (W : Set (CoeffPair 3)) (E : SourceAbelianSpectralChart (by simp) (by no
   ring
 
 end NLS.FullAbelianSquareChecks
+
+
+noncomputable section
+namespace NLS.FullAbelianRealBoundaryChecks
+open Set Metric Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- One ambient function has both real arcosh limits at exponent 3/2,
+-- for all signed indices and all closed-gap points, and the exact free value.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    (∀ φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)), ∀ n : ℤ, ∀ x ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re,
+      Tendsto (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,φ.val))
+        (𝓝[sourceAbelianHalfPlane true] (x:ℂ))
+        (𝓝 (Real.arcosh (realGapHalfDiscriminant (by simp) (periodOnePotential φ.val) n x) : ℂ)) ∧
+      Tendsto (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,φ.val))
+        (𝓝[sourceAbelianHalfPlane false] (x:ℂ))
+        (𝓝 (-(Real.arcosh (realGapHalfDiscriminant (by simp) (periodOnePotential φ.val) n x) : ℂ)))) ∧
+    ∀ z : ℂ, sourceFullAbelianPrimitive (by simp) (by norm_num) W (-2) (z,0) = -Complex.I*z-2*Complex.I*(Real.pi : ℂ) := by
+  obtain ⟨W,_,_,hb,hzero⟩ := exists_sourceFullAbelian_real_boundary_and_zero
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,?_,?_⟩
+  · intro φ n x hx
+    constructor
+    · simpa only [sourceRealGapArcoshProfile,ite_true] using hb φ n true x hx
+    · simpa only [sourceRealGapArcoshProfile,Bool.false_eq_true,↓reduceIte] using hb φ n false x hx
+  · intro z
+    rw [hzero]
+    push_cast
+    ring
+
+-- Gap index -2 and normalization index 3 have the exact shift 5*i*pi.
+example (W : Set (CoeffPair 3)) (φ : realTypeSourceSubmodule 3)
+    (E : SourceAbelianSpectralChart (by simp) (by norm_num) W φ.val) (x : ℝ)
+    (hx : x ∈ Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-2)).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) (-2)).re) :
+    Tendsto (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W 3 (z,φ.val))
+      (𝓝[sourceAbelianHalfPlane false] (x:ℂ))
+      (𝓝 (-(sourceRealGapArcoshProfile (by simp) φ.val (-2) x : ℂ)+5*Complex.I*(Real.pi : ℂ))) := by
+  have h := sourceFullAbelianPrimitive_real_gap_boundary_limit_index φ E (-2) 3 false x hx
+  have he : Complex.I*(Real.pi : ℂ)*((3:ℂ)-(-2)) = 5*Complex.I*(Real.pi : ℂ) := by ring
+  simpa only [Bool.false_eq_true,↓reduceIte,Int.cast_neg,Int.cast_ofNat,he] using h
+
+-- A finite-gap exterior has no cut-avoidance hypothesis, even at a
+-- periodic endpoint. The same radius controls every primitive index.
+example (W : Set (CoeffPair 3)) (φ : realTypeSourceSubmodule 3)
+    (E : SourceAbelianSpectralChart (by simp) (by norm_num) W φ.val)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ R : ℝ, 0 < R ∧ ∀ n j : ℤ,
+      R < ‖canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) j‖ →
+      HasDerivAt (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,φ.val))
+        (sourceFloquetLogDerivative (by simp) (by norm_num) φ.val
+          (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) j))
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) j) := by
+  obtain ⟨R,hR,hall⟩ := exists_sourceFullAbelianPrimitive_finiteGap_exterior φ E hf
+  exact ⟨R,hR,fun n j hj => (hall n).2 _ hj⟩
+
+-- The actual finite-gap derivative, at a non-Hilbert exponent, has one
+-- analytic inverse-frequency remainder for all normalizations.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    ∀ φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)),
+      φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+      ∃ R r : ℝ, 0 < R ∧ 0 < r ∧ ∃ h : ℂ → ℂ, AnalyticAt ℂ h 0 ∧
+        ∀ (n : ℤ) (z : ℂ), R < ‖z‖ →
+          deriv (fun w => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (w,φ.val)) z =
+            -Complex.I+z⁻¹^2*h z⁻¹ := by
+  obtain ⟨W,_,_,hall⟩ := exists_sourceFullAbelian_finiteGap_exterior_data
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,?_⟩
+  intro φ hf
+  obtain ⟨R,hR,r,hr,_,h,hh,hF⟩ := hall φ hf
+  exact ⟨R,r,hR,hr,h,hh 0 (mem_ball_self hr),fun n z hz => ((hF n).2 z hz).deriv⟩
+
+end NLS.FullAbelianRealBoundaryChecks
