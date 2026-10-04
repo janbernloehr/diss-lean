@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 19.4 is proved on one open connected almost-real
-neighborhood, with locally uniform mixed sequence bounds for both sides
-of every gap. The neighborhood works for all auxiliary exponents above
-one, and the theorem includes collapsed gaps and the exact free formula.
-Section 20's moment identities are next. See `STATUS.md`.
+Latest milestone: Section 20 moments are defined on isolating circles,
+with exact zero-order normalization, fixed-contour analyticity, and
+vanishing of all odd moments and positive-order collapsed-gap moments.
+The vanishing identities hold uniformly near every real source.
+Contour independence and the global assembly of Lemma 20.1 remain next.
+See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11255,3 +11256,40 @@ Lemma 19.4 is complete. The next step is Section 20: define the moments
 spectral differential, then prove their normalization, analyticity,
 odd-moment vanishing, and collapsed-gap vanishing in Lemma 20.1.
 The dissertation as a whole remains unfinished.
+
+
+## Section 20: moments on isolating circles
+
+`SourceAbelianMomentCircle.lean` defines the Section 20 moments as raw
+circle integrals of `F_k^m * psi_n / canonicalRoot`. The primitive uses
+the integration-gap index, independently of the numerator index. For
+the actual normalized psi branch, one isolating circle family has
+zero-order moments exactly `2*pi*delta_nk`, including the omitted index.
+
+`SourceAbelianMomentCircleAnalytic.lean` proves joint analyticity in
+numerator-root coefficients and the source on a fixed admissible circle.
+Compactness supplies a parameter neighborhood from admissibility at a
+single source. Composition with the normalized psi branch gives source
+analyticity for every moment order.
+
+`SourceAbelianMomentCancellation.lean` cancels one selected standard
+root using the actual primitive's Cauchy representation. Its analytic
+square handles the remaining even powers. At a collapsed gap the
+standard root is linear, so every positive-order integrand extends
+across the filled disc. `SourceAbelianMomentCircleVanishing.lean` applies
+Cauchy's theorem to prove odd-order vanishing and collapsed-gap
+positive-order vanishing on all intermediate isolating circles. The
+argument includes both diagonal and off-diagonal numerator indices.
+
+`SourceAbelianMomentLocalVanishing.lean` supplies the omitted-product
+analyticity from its established joint extension. Near every real
+source, one open neighborhood supports these vanishing identities for
+all indices, numerator coefficients, orders, and intermediate radii.
+Public checks at `p=3/2` recover the actual diagonal and off-diagonal
+zero-order periods, choose concrete positive radii for all vanishing
+identities, and differentiate an even moment on the omitted-index circle.
+
+This is the fixed-circle foundation for Lemma 20.1. Still to do:
+prove independence of admissible isolating contours, define the global
+normalized moments, and assemble all four clauses on a common almost-real
+source neighborhood. Lemma 20.1 and the dissertation remain unfinished.

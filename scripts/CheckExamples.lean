@@ -28218,3 +28218,80 @@ example : ∃ W : Set (CoeffPair (3/2)), ∀ j : ℤ,
     rw [(hfree j z).1,sub_self]
 
 end NLS.RefinedGapChecks
+
+
+noncomputable section
+namespace NLS.MomentCircleChecks
+open Set Metric ZakharovShabat
+open scoped ENNReal
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem oneLtHalf : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num))
+    (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨oneLtHalf.le⟩
+
+-- The actual normalized branch has diagonal raw periods 2*pi and
+-- off-diagonal periods zero on a single all-index family of circles.
+example {V : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (hs : SourcePsiNormalizedComplexExtension halfFinite oneLtHalf V s)
+    (W : Set (CoeffPair (3/2))) (ψ : CoeffPair (3/2)) (hψ : ψ ∈ V) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      sourcePsiRealCenteredContourFamily halfFinite oneLtHalf ψ c R ∧
+      (∀ n, sourceAbelianMomentCircle halfFinite oneLtHalf W n n 0
+        (s n ψ : Coeff (3/2)) ψ (c n) (R n) = (2*Real.pi : ℂ)) ∧
+      (∀ n k, k ≠ n → sourceAbelianMomentCircle halfFinite oneLtHalf W n k 0
+        (s n ψ : Coeff (3/2)) ψ (c k) (R k) = 0) := by
+  obtain ⟨c,R,hfamily,hperiod⟩ := hs.exists_momentCircle_zero_periods W ψ hψ
+  refine ⟨c,R,hfamily,?_,?_⟩
+  · intro n
+    simpa only [ite_true,mul_one] using hperiod n n
+  · intro n k hne
+    simpa only [if_neg hne,mul_zero] using hperiod n k
+
+-- At p=3/2 one neighborhood supplies concrete, positive radii for
+-- all indices and orders. No omitted-product or chart premise remains.
+example : ∃ W : Set (CoeffPair (3/2)), ∀ φ : realTypeSourceSubmodule (3/2),
+    ∃ V : Set (CoeffPair (3/2)), IsOpen V ∧ φ.val ∈ V ∧
+      ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, (∀ k, 0 < R k) ∧
+        ∀ ψ ∈ V, ∀ (n k : ℤ) (a : Coeff (3/2)),
+          (∀ l : ℕ, sourceAbelianMomentCircle halfFinite oneLtHalf W n k (2*l+1)
+            a ψ (c k) (R k) = 0) ∧
+          (canonicalPeriodicGap halfFinite oneLtHalf (periodOnePotential ψ)
+            (periodOnePotential_mem ψ) k = 0 →
+            ∀ m : ℕ, sourceAbelianMomentCircle halfFinite oneLtHalf W n k (m+1)
+              a ψ (c k) (R k) = 0) := by
+  obtain ⟨W,_,_,hlocal⟩ := exists_sourceAbelianMoment_local_vanishing halfFinite oneLtHalf
+  refine ⟨W,?_⟩
+  intro φ
+  obtain ⟨C,_,V,hV,hφV,_,hvanish⟩ := hlocal φ
+  let R : ℤ → ℝ := fun k => (C.discs.inner k+C.discs.outer k)/2
+  have hinner (k : ℤ) : C.discs.inner k ≤ R k := by
+    dsimp [R]
+    linarith [C.discs.inner_lt k]
+  have houter (k : ℤ) : R k < C.discs.outer k := by
+    dsimp [R]
+    linarith [C.discs.inner_lt k]
+  refine ⟨V,hV,hφV,C.discs.center,R,fun k => (C.discs.inner_pos k).trans_le (hinner k),?_⟩
+  exact fun ψ hψ n k a => hvanish ψ hψ n k a (R k) (hinner k) (houter k)
+
+-- Analyticity also covers an even moment on the omitted-index circle,
+-- after composing with the actual normalized root branch.
+example {V : Set (CoeffPair (3/2))}
+    {s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n}
+    (hs : SourcePsiNormalizedComplexExtension halfFinite oneLtHalf V s)
+    (W U : Set (CoeffPair (3/2))) (n : ℤ)
+    (hD : IsOpen (sourcePsiContourJointDomain halfFinite oneLtHalf U))
+    (hF : AnalyticOnNhd ℂ (sourceFullAbelianPrimitive halfFinite oneLtHalf W n)
+      (sourceCanonicalRootJointDomain halfFinite oneLtHalf U))
+    (hP : AnalyticOnNhd ℂ (sourcePsiContourIntegrandJoint halfFinite oneLtHalf n)
+      (sourcePsiContourJointDomain halfFinite oneLtHalf U))
+    (ψ : CoeffPair (3/2)) (hψV : ψ ∈ V) (hψU : ψ ∈ U)
+    (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hcircle : sphere c R ⊆ sourceCanonicalRootDomain halfFinite oneLtHalf ψ) :
+    DifferentiableAt ℂ (fun χ => sourceAbelianMomentCircle halfFinite oneLtHalf W n n 2
+      (s n χ : Coeff (3/2)) χ c R) ψ :=
+  (hs.analyticAt_momentCircle W U n n 2 hD hF hP ψ hψV hψU c R hR hcircle).differentiableAt
+
+end NLS.MomentCircleChecks
