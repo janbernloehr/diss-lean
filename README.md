@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual normalized psi quotient and chi errors now
-have refined sequence bounds on every moving complex gap, including the
-finite central gaps. One source neighborhood works before every finite
-exponent above one and at least `p/2`, with row norms uniform in the deleted
-index. Lemma 20.3's moment and diagonal sequence estimates remain next;
-see `STATUS.md`.
+Latest milestone: the off-diagonal assertion of Lemma 20.3 is proved for
+the actual normalized second moments, including the cubic-gap formula,
+mixed sequence exponents, and uniform coefficient power sums. The bounds
+hold locally throughout a connected complex neighborhood of the real
+source locus, including collapsed gaps. The diagonal assertion remains
+next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11860,3 +11860,42 @@ sequence estimate: uniform norms for separate rows do not establish the
 sequence of their diagonal entries. Lemma 20.3's final moment sequence
 bounds, general infinite-gap frequencies, and the rest of the dissertation
 remain unfinished.
+
+
+## Off-diagonal Lemma 20.3 and uniform power sums
+
+`SourceAbelianMomentLemma20_3OffDiagonal.lean` proves the off-diagonal
+assertion of Lemma 20.3 for the actual normalized moments. On one connected
+open neighborhood of the real source locus, the exact formula is
+`Omega_nk^(2) = gamma_k^3 / (n-k) * (a_k + b_k)` for `k != n`, where
+`a` belongs to every requested finite `lq`, `q > 1`, and `b` belongs to
+`l(p/2)`. Their row norms are uniform in the deleted index and locally
+uniform at every complex source. The local ball is chosen before `q`.
+
+The explicit power-sum version is also proved: the actual coefficient
+`(n-k)*Omega_nk^(2)/gamma_k^3`, set to zero at the deleted index and at
+closed gaps, is in every finite `lr` with `r > 1` and `r >= p/2`.
+Its `r`-power sum has a positive bound uniform in the deleted index and
+locally uniform in the source. The coefficient itself is independent of
+`r`. The cubic estimate forces the actual moment to vanish at a collapsed
+gap, so the exact formula remains valid there.
+
+`RefinedProductMajorant.lean` combines quasi-Banach Holder multiplication
+with contractive exponent inclusion, preserving the product norm bound
+also when `p/2 < 1`. `SourceAbelianMomentSquareMajorants.lean` transfers
+the filled-square estimates to the moment atlas's own ambient domain.
+`SourceAbelianMomentOffDiagonalMajorants.lean` combines these with the
+actual root offsets and all-gap chi errors to give the uniform cubic
+majorant. `SourceAbelianMomentCubicCoefficients.lean` constructs the exact
+coefficient sequence, and `SourceAbelianMomentOffDiagonalNeighborhood.lean`
+puts it on a common connected almost-real domain.
+
+Public checks cover the half-exponent `3/4` product gain, the actual
+square-summable coefficient power sum at source exponent four, vanishing
+at collapsed selected gaps, and zero at the deleted index.
+
+Next: prove the diagonal assertion of Lemma 20.3 with a single sequence
+majorant across diagonal indices. Uniform norms for separate off-diagonal
+rows do not establish that diagonal estimate. The full Lemma 20.3,
+general infinite-gap frequencies, and the remaining dissertation are
+still unfinished.

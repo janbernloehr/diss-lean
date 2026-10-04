@@ -29253,3 +29253,66 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
 
 end
 end AllGapPsiMajorantChecks
+
+
+namespace OffDiagonalLemma20_3Checks
+open Set Metric Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- The product gain also works through a half exponent below one.
+private noncomputable abbrev threeHalves : ℝ≥0∞ := ENNReal.ofReal (3/2:ℝ)
+example (a b : Coeff threeHalves) :
+    ∃ H : Coeff (ENNReal.ofReal (5/4:ℝ)),
+      (∀ k, ‖a k‖*‖b k‖ ≤ ‖H k‖) ∧ ‖H‖ ≤ ‖a‖*‖b‖ := by
+  exact Coeff.exists_refined_product_majorant ENNReal.ofReal_ne_top
+    (by norm_num [threeHalves]) ENNReal.ofReal_ne_top (by norm_num)
+    (by norm_num [threeHalves]) a b
+
+section Four
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+variable {hp : (4:ℝ≥0∞) ≠ ⊤} {hp1 : 1 < (4:ℝ≥0∞)}
+variable {W V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+
+-- One connected almost-real domain has square-summable actual moment
+-- coefficients, locally uniformly at complex sources and uniformly in n.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (hV : IsOpen V) (hrealV : realTypeSourceLocus 4 ⊆ V) :
+    ∃ U : Set (CoeffPair 4), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 4 ⊆ U ∧
+      U ⊆ A.domain ∩ V ∧ ∀ φ ∈ U, ∃ ρ : ℝ, 0 < ρ ∧ ball φ ρ ⊆ U ∧
+        ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ ball φ ρ, ∀ n : ℤ,
+          Summable (fun k : ℤ => ‖sourceSecondMomentCubicCoefficient A n ψ k‖^2) ∧
+          (∑' k : ℤ, ‖sourceSecondMomentCubicCoefficient A n ψ k‖^2) ≤ C := by
+  obtain ⟨U,hU,hUc,hreal,hUV,hlocal⟩ := A.exists_lemma20_3_offDiagonal_power_sum hs hV hrealV
+  refine ⟨U,hU,hUc,hreal,hUV,?_⟩
+  intro φ hφ
+  obtain ⟨ρ,hρ,hball,hb⟩ := hlocal φ hφ
+  obtain ⟨C,hC,hrows⟩ := hb 2 (by norm_num) (by norm_num) (by norm_num)
+  refine ⟨ρ,hρ,hball,C,hC,?_⟩
+  intro ψ hψ n
+  obtain ⟨hS,hB,_⟩ := hrows ψ hψ n
+  simpa only [ENNReal.toReal_ofNat,Real.rpow_two] using And.intro hS hB
+end Four
+
+section General
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+
+-- A collapsed selected gap has zero actual moment, recovered from the
+-- cubic estimate itself, without assuming a separate vanishing theorem.
+example (ψ : CoeffPair p) (n k : ℤ) (hkn : k ≠ n) {r : ℝ≥0∞} (hr : r ≠ 0) (B : Coeff r)
+    (hbound : ∀ j : ℤ, j ≠ n → ‖((n-j:ℤ):ℂ)*A.moment n j 2 ψ‖ ≤
+      ‖sourcePeriodicGapDisplacement hp hp1 ψ j‖^3*‖B j‖)
+    (hγ : sourcePeriodicGapDisplacement hp hp1 ψ k = 0) : A.moment n k 2 ψ = 0 := by
+  obtain ⟨a,_,_,_,hfactor⟩ := exists_secondMoment_cubic_coeff_of_majorant ψ n hr B hbound
+  simpa only [hγ,zero_pow (by norm_num : (3:ℕ) ≠ 0),zero_div,zero_mul] using hfactor k hkn
+
+-- The coefficient at the deleted index is exactly zero at every source.
+example (ψ : CoeffPair p) (n : ℤ) : sourceSecondMomentCubicCoefficient A n ψ n = 0 := by
+  simp only [sourceSecondMomentCubicCoefficient,ite_true]
+end General
+
+end
+end OffDiagonalLemma20_3Checks
