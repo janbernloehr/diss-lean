@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Latest progress: Contour and finite-sum steps toward Lemma 20.2
+## Latest progress: Angle derivative of the cubic contour
+
+`SourceFullAbelianDifferentialData.lean` constructs an open joint domain
+for the actual full primitive and its exact differential near every real
+source. It supplies the source cotangent as the discriminant cotangent
+divided by the canonical root, at every finite exponent `p>1`.
+
+`SourceFullAbelianAnglePoisson.lean` combines this differential with the
+established angle/discriminant identity. At a real source with an open
+selected angle gap, `{theta_n,F_j}` is exactly `-psi_n/(2*canonicalRoot)`
+for every primitive normalization index. The power chain rule gives
+`{theta_n,F_j^(m+1)} = -(m+1)/2 * F_j^m * psi_n/canonicalRoot`.
+These Poisson identities use the existing source bivector for `p>=2`.
+
+`SourceBracketCircleIntegral.lean` proves that pairing a fixed source
+cotangent with the derivative of a jointly analytic contour integral
+commutes with the integral. Compactness provides the local uniform
+derivative bound; the Hamiltonian-direction evaluation fixes the sign.
+
+`SourceFullAbelianCubicContourPoisson.lean` defines the scaled cubic
+contour functional `(8/(6*pi))*integral F_0^3`, proves its local source
+analyticity, and obtains the exact identity
+`{theta_n,cubicContour} = -4/(2*pi)*integral F_0^2*psi_n/canonicalRoot`.
+It also retains the physical value `H3-2*H1^2` on sufficiently large
+circles at real finite-gap sources, using the same ambient primitive.
+An existence theorem constructs the normalized psi, angle and primitive
+data internally for every finite exponent `p>=2`; no supplied chart or
+differential formula is required.
+
+Public checks extract both the actual bracket and physical contour value
+in the Hilbert case, compare brackets for different primitive normalization
+indices, and recover the source cotangent below the Hilbert exponent at
+`p=3/2` without imposing an unavailable Poisson pairing there.
+
+Lemma 20.2 remains unfinished. A pointwise physical value of the cubic
+contour at finite-gap sources is not yet an identification of its angle
+bracket with the NLS frequency. Remaining work includes that frequency
+identification, the large-circle finite-gap decomposition of the quadratic
+integrand, and the approximation/continuity argument when the selected
+gap collapses. The dissertation as a whole remains unfinished.
+
+## Previous milestone: Contour and finite-sum steps toward Lemma 20.2
 
 `CubicInversionContour.lean` extracts the exact contour coefficient
 from the analytic inverse-frequency cubic expansion. The analytic

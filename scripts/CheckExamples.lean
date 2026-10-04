@@ -28440,3 +28440,70 @@ example {W : Set (CoeffPair (3/2))}
   exact exists_sourceFullAbelian_hamiltonian_cube_contour_of_chart φ hf D
 
 end NLS.FrequencyContourChecks
+
+
+noncomputable section
+namespace NLS.CubicContourPoissonChecks
+open Set Metric ZakharovShabat
+open scoped ENNReal
+
+-- The Hilbert case supplies actual normalized psi data, analyticity,
+-- the signed quadratic-contour bracket, and the physical cubic value.
+example : ∃ W V : Set (CoeffPair 2),
+    ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+      SourcePsiNormalizedComplexExtension (by norm_num) (by norm_num) V s ∧
+      (∀ (φ : realTypeSourceLocus 2) (n : ℤ),
+        canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0 →
+        ∀ (R : ℝ), 0 < R → sphere (0:ℂ) R ⊆ sourceCanonicalRootDomain (by norm_num) (by norm_num) φ.val →
+          AnalyticAt ℂ (sourceFullAbelianCubicContour (by norm_num) (by norm_num) W 0 R) φ.val ∧
+          sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num) n s
+            (sourceFullAbelianCubicContour (by norm_num) (by norm_num) W 0 R) φ.val =
+            -(4/(2*Real.pi) : ℂ)*sourceAbelianMomentCircle (by norm_num) (by norm_num) W n 0 2
+              (s n φ.val : Coeff 2) φ.val 0 R) ∧
+      (∀ (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)),
+        ∃ T : ℝ, 0 < T ∧ ∀ R : ℝ, T ≤ R →
+          sourceFullAbelianCubicContour (by norm_num) (by norm_num) W 0 R φ.val =
+            sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf 3-
+              2*(sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf 1)^2) := by
+  obtain ⟨W,_,V,_,_,_,_,_,_,s,hs,hbracket,hphysical⟩ :=
+    exists_sourceFullAbelian_cubicContour_angle_formula (by norm_num : (2:ℝ≥0∞) ≠ ⊤)
+      (by norm_num) (by norm_num)
+  exact ⟨W,V,s,hs,fun φ n hg R hR hc => hbracket φ n hg 0 R hR.le hc,hphysical⟩
+
+-- Changing the primitive normalization index adds a constant and does
+-- not change its angle bracket, even on an interior off-gap point.
+example {W₀ B V W U : Set (CoeffPair 2)}
+    {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (E : SourceAngularThetaCommonDomainData (by norm_num) (by norm_num) W₀ B V s)
+    (D : SourceFullAbelianDifferentialData (by norm_num) (by norm_num) W U)
+    (n j : ℤ) (φ : realTypeSourceLocus 2) (hφ : φ.val ∈ U)
+    (hg : canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain (by norm_num) (by norm_num) φ.val) :
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num) n s
+      (fun ψ => sourceFullAbelianPrimitive (by norm_num) (by norm_num) W j (z,ψ)) φ.val =
+    sourceAngularThetaFunctionalBracket (by norm_num) (by norm_num) (by norm_num) n s
+      (fun ψ => sourceFullAbelianPrimitive (by norm_num) (by norm_num) W 0 (z,ψ)) φ.val := by
+  rw [E.thetaFullPrimitive_eq D (by norm_num) n j φ hφ hg z hz,
+    E.thetaFullPrimitive_eq D (by norm_num) n 0 φ hφ hg z hz]
+
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem oneLtHalf : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num))
+    (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨oneLtHalf.le⟩
+
+-- The underlying source cotangent exists also below the Hilbert
+-- exponent; only the Poisson pairing requires p>=2.
+example : ∃ W U : Set (CoeffPair (3/2)), IsOpen U ∧ realTypeSourceLocus (3/2) ⊆ U ∧
+    ∀ (φ : realTypeSourceLocus (3/2)) (j : ℤ) (z : ℂ),
+      z ∈ sourceCanonicalRootDomain halfFinite oneLtHalf φ.val → ∀ h : CoeffPair (3/2),
+        (fderiv ℂ (fun ψ => sourceFullAbelianPrimitive halfFinite oneLtHalf W j (z,ψ)) φ.val) h =
+          (sourceDiscriminantCotangent halfFinite z φ.val) h/sourceCanonicalRoot halfFinite oneLtHalf φ.val z := by
+  obtain ⟨W,U,_,D⟩ := exists_sourceFullAbelianDifferentialData halfFinite oneLtHalf
+  refine ⟨W,U,D.source_open,D.real_subset,?_⟩
+  intro φ j z hz h
+  rw [D.source_fderiv j z φ.val (D.real_subset φ.property) hz]
+  simp only [smul_apply,smul_eq_mul,div_eq_inv_mul]
+
+end NLS.CubicContourPoissonChecks

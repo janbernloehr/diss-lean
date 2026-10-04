@@ -2346,3 +2346,7 @@ import NLS.ComplexAnalysis.CubicInversionContour
 import NLS.ZakharovShabat.SourceFullAbelianCubicHamiltonianContour
 import NLS.ZakharovShabat.SourceAbelianMomentFiniteSums
 import NLS.ZakharovShabat.SourceAbelianMomentQuadraticShift
+import NLS.ZakharovShabat.SourceFullAbelianDifferentialData
+import NLS.Poisson.SourceBracketCircleIntegral
+import NLS.ZakharovShabat.SourceFullAbelianAnglePoisson
+import NLS.ZakharovShabat.SourceFullAbelianCubicContourPoisson
