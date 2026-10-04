@@ -1,6 +1,57 @@
 # Implementation status
 
-## Current milestone: Joint analyticity of the frequency descent
+## Current milestone: Complex tail-action invariance
+
+The actual analytic frequency and refined correction descents now have
+zero derivative in every tail redistribution direction `(-v,v)` with
+`v` vanishing on the retained head. Directions may have infinite support,
+and the identity includes zero tail entries. Their original lifts also
+have zero derivative along every complex coordinate rotation, including
+rotations of retained head coordinates.
+
+`ComplexActionStationarity.lean` constructs the bounded complex rotation
+vector field `(-y_k e_k, x_k e_k)`. Real action invariance makes the
+frequency constant along small real rotations; differentiation gives the
+identity on the real form. Holomorphic uniqueness extends it throughout
+an open convex complex domain, in the full target norm.
+
+`ActionSplitDirection.lean` computes the mixed-square image of a rotation
+line, including its quadratic error. The chain rule transfers rotation
+stationarity to a weighted tail-splitting identity.
+`PairCoordinateDensity.lean` removes the two nonvanishing-coordinate
+restrictions by continuity along a punctured scalar perturbation.
+`TailActionStationarity.lean` therefore proves that the descended
+derivative annihilates each tail-splitting direction even at zero modes.
+
+`TailActionInvariance.lean` uses finite truncations and bounded linearity
+to extend the identity to arbitrary tail directions. The mean-value
+theorem proves constancy along any redistribution segment contained in
+the domain. Thus two mixed-coordinate points with the same retained head
+and the same pairwise sums have equal images whenever their joining
+segment stays inside the domain. No global convexity of the mixed image
+or connectedness of an entire action fiber is asserted.
+
+`SourceFrequencyTailActionStationarity.lean` proves these derivative
+identities for the actual frequency and refined correction on one common
+open mixed-coordinate domain, retaining joint analyticity, all admissible
+target exponents, and exact source recovery formulas.
+
+Public checks cover complex rotation stationarity with an `l∞` target,
+continuity at zero entries, infinite tail directions at the all-zero
+quadratic example, and the actual `p = 6` maps in `l3` and `l2`, including
+their rotation identities and equality on same-action tail segments.
+
+Validation: the full build passes (5918 jobs), all public examples pass,
+and the transitive axiom audit passes for 21726 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: construct local analytic factors through the tail sums, then
+replace retained head pairs by their quadratic actions and glue the
+local action maps. Openness of the full action map is already available.
+The analytic action map required by Theorem 18.1 is still incomplete;
+Corollary 18.2 and the later dissertation remain unfinished.
+
+## Previous milestone: Joint analyticity of the frequency descent
 
 The actual descended frequency and refined correction are now jointly
 analytic on their common open mixed-coordinate domain, in every

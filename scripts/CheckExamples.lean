@@ -30712,3 +30712,111 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end JointAnalyticDescentChecks
+
+
+namespace TailActionDescentChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal Topology
+open Filter
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := by
+  have he : (4 : ℝ≥0∞)/2 = 2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 4
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- Real action invariance yields a complex rotation identity in the full target norm.
+example (f : (Coeff 4 × Coeff 4) → Coeff ⊤) (U : Set (Coeff 4 × Coeff 4))
+    (hU : IsOpen U) (hconv : Convex ℝ U) (c : Coeff 4 × Coeff 4) (hc : c ∈ U)
+    (hcr : c ∈ Coeff.realPairLocus 4) (hf : AnalyticOnNhd ℂ f U)
+    (hi : ∀ z ∈ U, ∀ w ∈ U, z ∈ Coeff.realPairLocus 4 → w ∈ Coeff.realPairLocus 4 →
+      (∀ n, w.1 n^2+w.2 n^2 = z.1 n^2+z.2 n^2) → f w = f z)
+    (z : Coeff 4 × Coeff 4) (hz : z ∈ U) (k : ℤ) :
+    fderiv ℂ f z (Coeff.actionRotationVectorCLM 4 k z) = 0 :=
+  Coeff.fderiv_actionRotationVector_eq_zero_of_real_action_invariance f U hU hconv c hc hcr hf hi z hz k
+
+-- A continuous identity extends to zero entries; analyticity is not assumed here.
+example (g : (Coeff 2 × Coeff 2) → Coeff 2) (hg : Continuous g)
+    (he : ∀ b : Coeff 2 × Coeff 2, b.1 7 ≠ 0 → b.2 7 ≠ 0 → g b = 0) : g 0 = 0 :=
+  Coeff.eq_const_of_pair_coordinate_ne g univ isOpen_univ hg.continuousOn 7 0
+    (fun b _ => he b) 0 (mem_univ _)
+
+-- The derivative identity at the all-zero source covers arbitrary infinite tail directions.
+example (v : Coeff 2) :
+    fderiv ℂ (Coeff.tailSquareDescent (p := 4) (q := 2) ∅
+      (fun z : Coeff 4 × Coeff 4 => Coeff.square (q := 2) z.1+Coeff.square z.2) univ)
+      0 (-v,v) = 0 := by
+  let f : (Coeff 4 × Coeff 4) → Coeff 2 := fun z => Coeff.square z.1+Coeff.square z.2
+  have hf : AnalyticOnNhd ℂ f univ := by
+    intro z _
+    exact ((Coeff.analyticOnNhd_square z.1 (mem_univ _)).comp analyticAt_fst).add
+      ((Coeff.analyticOnNhd_square z.2 (mem_univ _)).comp analyticAt_snd)
+  have hi : ∀ e d : ℤ → Bool, (∀ n ∈ (∅ : Finset ℤ), e n = false) →
+      (∀ n ∈ (∅ : Finset ℤ), d n = false) → ∀ z ∈ (univ : Set (Coeff 4 × Coeff 4)),
+      f (Coeff.pairSignChange e d z) = f z := by
+    intro e d _ _ z _
+    ext n
+    simp [f,Coeff.pairSignChange]
+  have hr : ∀ z ∈ (univ : Set (Coeff 4 × Coeff 4)), ∀ k,
+      fderiv ℂ f z (Coeff.actionRotationVectorCLM 4 k z) = 0 := by
+    intro z hz k
+    apply Coeff.fderiv_actionRotationVector_eq_zero_of_real_action_invariance f univ isOpen_univ
+      convex_univ 0 (mem_univ _) _ hf _ z hz k
+    · constructor <;> intro n <;> simp
+    · intro a _ b _ _ _ he
+      ext n
+      simpa [f] using he n
+  have hz : (0 : Coeff 2 × Coeff 2) ∈ Coeff.pairMixedSquare (p := 4) ∅ '' univ := by
+    refine ⟨0,mem_univ _,?_⟩
+    apply Prod.ext <;> ext n <;> simp [Coeff.pairMixedSquare]
+  apply Coeff.clm_tailSplit_eq_zero (by simp) _ ∅ _ v (by simp)
+  intro k hk
+  exact Coeff.fderiv_tailSquareDescent_actionSplit_eq_zero (p := 4) (q := 2)
+    (by simp) ∅ f univ isOpen_univ hf hi hr 0 hz k hk
+
+-- Actual p = 6 maps have zero derivatives in every tail redistribution
+-- direction and agree on same-action tail segments in the common domain.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6,
+    ∃ S : Finset ℤ, ∃ c z₀ : Coeff 6 × Coeff 6, ∃ R : ℝ,
+    ∃ V : Set (Coeff 3 × Coeff 3),
+    ∃ F : (Coeff 3 × Coeff 3) → Coeff 3, ∃ H : (Coeff 3 × Coeff 3) → Coeff 2,
+      0 < R ∧ z₀ ∈ ball c R ∧ g z₀ = φ.val ∧ IsOpen V ∧
+      AnalyticOnNhd ℂ F V ∧ AnalyticOnNhd ℂ H V ∧
+      (∀ z ∈ ball c R, ∀ k,
+        fderiv ℂ (A.frequencySequence 3 ∘ g) z (Coeff.actionRotationVectorCLM 6 k z) = 0 ∧
+        fderiv ℂ (A.actionFrequencyCorrectionSequence 2 ∘ g) z (Coeff.actionRotationVectorCLM 6 k z) = 0) ∧
+      (∀ b ∈ V, ∀ v : Coeff 3, (∀ k ∈ S, v k = 0) →
+        fderiv ℂ F b (-v,v) = 0 ∧ fderiv ℂ H b (-v,v) = 0) ∧
+      (∀ a b : Coeff 3 × Coeff 3, (∀ k ∈ S, b.2 k = a.2 k) →
+        a.1+a.2 = b.1+b.2 → segment ℝ a b ⊆ V → F b = F a ∧ H b = H a) ∧
+      ∀ z ∈ ball c R, Coeff.pairMixedSquare S z ∈ V ∧
+        F (Coeff.pairMixedSquare S z) = A.frequencySequence 3 (g z) ∧
+        H (Coeff.pairMixedSquare S z) = A.actionFrequencyCorrectionSequence 2 (g z) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_tailActionStationaryDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,hR,hbase,_,hV,_,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨_,hRf,hf,hDf,hAf,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨_,hRg,hg,hDg,hAg,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,S,Coeff.truncatePair S (sourceBirkhoffMap (by simp) (by norm_num) t φ.val),
+    sourceBirkhoffMap (by simp) (by norm_num) t φ.val,R,_,_,_,hR,hbase,C.base_eq,hV,hf,hg,
+    fun z hz k => ⟨hRf z hz k,hRg z hz k⟩,
+    fun b hb v hv => ⟨hAf b hb v hv,hAg b hb v hv⟩,?_,?_⟩
+  · intro a b hhead hsum hseg
+    exact ⟨Coeff.eq_of_same_tailActions_of_segment (by simp) _ _ hV hf.differentiableOn S hDf a b hhead hsum hseg,
+      Coeff.eq_of_same_tailActions_of_segment (by simp) _ _ hV hg.differentiableOn S hDg a b hhead hsum hseg⟩
+  · intro z hz
+    exact ⟨⟨z,hz,rfl⟩,(he z hz).1,(hj z hz).1⟩
+
+end
+end TailActionDescentChecks

@@ -2481,3 +2481,9 @@ import NLS.ComplexAnalysis.FDerivAnalyticLine
 import NLS.ComplexAnalysis.BanachHolomorphicAnalytic
 import NLS.SequenceSpaces.TailSquareDescentAnalytic
 import NLS.ZakharovShabat.SourceFrequencyAnalyticDescent
+import NLS.SequenceSpaces.ComplexActionStationarity
+import NLS.SequenceSpaces.ActionSplitDirection
+import NLS.SequenceSpaces.PairCoordinateDensity
+import NLS.SequenceSpaces.TailActionStationarity
+import NLS.SequenceSpaces.TailActionInvariance
+import NLS.ZakharovShabat.SourceFrequencyTailActionStationarity
