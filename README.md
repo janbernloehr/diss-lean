@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: a single enlarged open joint domain now carries the
-normalized abelian integral and contains uniform unbounded spectral
-exteriors around every complex potential in an open connected
-neighborhood of all real potentials. Exact derivatives, normalization,
-and all previously constructed values are preserved. See `STATUS.md`.
+Latest milestone: the normalized abelian integral now continues from
+its existing joint values into whole complex cut discs near real sources.
+Full endpoint limits and analytic removal of collapsed gaps are proved,
+with exact spectral derivatives and preserved normalization. Identifying
+the complex endpoint constants and gluing all discs remain next.
+See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -10438,3 +10439,48 @@ The full complex-source spectral clause of (i), complex-source endpoint
 and square continuation, the locally source-uniform and index-uniform
 estimates in (iii), subsequent frequency results, and the full
 dissertation remain unfinished.
+
+## Complex cut-disc continuation and endpoint limits
+
+`SourceAbelianComplexDiscContinuation.lean` continues the actual
+normalized joint primitive into a whole isolating disc minus its moving
+complex spectral segment. Around each real source and selected gap,
+one fixed annular collar, disc, and open complex-source neighborhood
+work for every normalization index. A compact collar lies in the
+existing joint domain; radial continuation preserves every value on
+that collar and has the exact spectral derivative `Delta' / canonicalRoot`
+throughout the cut disc. No open-gap assumption is required at the base
+source or at its complex perturbations.
+
+The continuation is uniquely determined by its derivative and one value.
+Consequently it retains the signed index relation and the actual
+real-source values throughout its cut disc. On the collar it also agrees
+with the enlarged primitive from the preceding milestone.
+
+`SourceAbelianComplexEndpointLimits.lean` proves a common weighted bound
+at both endpoints of a nondegenerate complex gap. Its weight uses the
+norm of the complex gap displacement, so tilted and vertical gaps are
+included. Boundedness of the regular numerator and the standard-root
+lower bound give finite limits along every approach in the full cut
+disc, without a real-source or real-ordering hypothesis.
+
+`SourceAbelianComplexCollapsedExtension.lean` fills a collapsed cut
+analytically while preserving every previously defined cut-disc value.
+The filled derivative is the regular deleted quotient. A single open
+neighborhood of all real sources supports this removability and full
+finite endpoint limits for all gaps. The combined local theorem gives
+continued primitives with endpoint limits and collapsed-gap removal on
+the same source neighborhood, simultaneously for all normalization indices.
+
+Public checks cover the combined continuation at exponent 3/2, nonreal
+gap displacements, the full free formula at an odd negative index, and
+analytic filling of arbitrary complex-source collapsed-gap primitives.
+
+The source neighborhood for the continuation still depends on the
+selected gap. The next steps are to identify the complex endpoint
+constants as the prescribed `i (n-j) pi`, and glue the local spectral
+continuations consistently across all isolating discs. This does not
+yet establish the full complex-source spectral clause of Lemma 19.1(i),
+complex-source square continuation, the locally source-uniform and
+index-uniform estimates in (iii), later frequency results, or the full
+dissertation.

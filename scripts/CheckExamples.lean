@@ -26914,3 +26914,93 @@ example : sourceAbelianProjectedPrimitive (p := 3) (by simp) (by norm_num) (-3) 
   ring
 
 end NLS.AbelianEnlargedChecks
+
+
+noncomputable section
+namespace NLS.AbelianComplexDiscChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+
+-- At exponent 3/2, one neighborhood and collar work for every index.
+-- The potential inside the neighborhood is arbitrary and may be complex.
+-- The new primitive retains actual joint values and full endpoint limits.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) (j : ℤ) :
+    ∃ V : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen V ∧ φ.val ∈ V ∧
+      ∃ (c : ℂ) (r R : ℝ), 0 < r ∧ r < R ∧ ∀ ψ ∈ V, ∀ n : ℤ,
+        ∃ F : ℂ → ℂ,
+          EqOn F (fun z => sourceAbelianJointPrimitive (by simp) (by norm_num) n (z,ψ)) (ball c R \ closedBall c r) ∧
+          AnalyticOnNhd ℂ F (ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j) ∧
+          (∀ z ∈ ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j,
+            HasDerivAt F (deriv (canonicalDiscriminant (by simp) (periodOnePotential ψ)) z /
+              sourceCanonicalRoot (by simp) (by norm_num) ψ z) z) ∧
+          (∃ A B : ℂ,
+            Tendsto F (𝓝[ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j]
+              (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j)) (𝓝 A) ∧
+            Tendsto F (𝓝[ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j]
+              (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j)) (𝓝 B)) ∧
+          (sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ j = 0 →
+            ∃ H : ℂ → ℂ, AnalyticOnNhd ℂ H (ball c R) ∧
+              EqOn H F (ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j)) := by
+  obtain ⟨V,hV,hφV,c,r,R,hr,hrR,hcont⟩ :=
+    exists_local_sourceAbelian_complexDisc_continuation_with_limits (by simp) (by norm_num) φ j
+  exact ⟨V,hV,hφV,c,r,R,hr,hrR,fun ψ hψ => (hcont ψ hψ).2.2⟩
+
+-- Nonreal gap displacement is enough: no ordering of real parts or
+-- real-type condition on the potential is required for endpoint limits.
+example (ψ : CoeffPair 3) (j : ℤ) (c : ℂ) (R : ℝ)
+    (hseg : sourcePeriodicSegment (by simp) (by norm_num) ψ j ⊆ ball c R)
+    (hother : closedBall c R ⊆ sourceStandardRootOmittedDomain (by simp) (by norm_num) ψ j)
+    (hE : AnalyticOnNhd ℂ (sourceCriticalRootRatioExtension (by simp) (by norm_num) j ψ)
+      (sourceStandardRootOmittedDomain (by simp) (by norm_num) ψ j))
+    (hgap : (sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ j).im ≠ 0)
+    (F : ℂ → ℂ) (hF : ∀ z ∈ ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j,
+      HasDerivAt F (deriv (canonicalDiscriminant (by simp) (periodOnePotential ψ)) z /
+        sourceCanonicalRoot (by simp) (by norm_num) ψ z) z) :
+    ∃ A B : ℂ,
+      Tendsto F (𝓝[ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j]
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j)) (𝓝 A) ∧
+      Tendsto F (𝓝[ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j]
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j)) (𝓝 B) := by
+  apply exists_sourceAbelian_complexDisc_endpoint_limits (by simp) (by norm_num) ψ j c R hseg hother hE _ F hF
+  intro he
+  exact hgap (by rw [he]; rfl)
+
+-- Any continuation from an actual free collar value has the full free
+-- normalization throughout the selected cut disc, including negative indices.
+example (j : ℤ) (c : ℂ) (R : ℝ)
+    (hseg : sourcePeriodicSegment (p := 3) (by simp) (by norm_num) 0 j ⊆ ball c R)
+    (hother : closedBall c R ⊆ sourceStandardRootOmittedDomain (p := 3) (by simp) (by norm_num) 0 j)
+    (F : ℂ → ℂ) (hF : ∀ z ∈ ball c R \ sourcePeriodicSegment (p := 3) (by simp) (by norm_num) 0 j,
+      HasDerivAt F (deriv (canonicalDiscriminant (p := 3) (by simp) (periodOnePotential 0)) z /
+        sourceCanonicalRoot (p := 3) (by simp) (by norm_num) 0 z) z)
+    (a : ℂ) (ha : a ∈ ball c R \ sourcePeriodicSegment (p := 3) (by simp) (by norm_num) 0 j)
+    (he : F a = sourceAbelianJointPrimitive (p := 3) (by simp) (by norm_num) (-3) (a,0)) :
+    ∀ z ∈ ball c R \ sourcePeriodicSegment (p := 3) (by simp) (by norm_num) 0 j,
+      F z = -Complex.I*z-3*Complex.I*(Real.pi : ℂ) := by
+  have h := sourceAbelian_complexDisc_eq_real (p := 3) (by simp) (by norm_num) 0 j (-3) c R hseg hother F hF a ha he
+  intro z hz
+  have hzval := h hz
+  simp only [ZeroMemClass.coe_zero,sourceAbelianPrimitive_zero,Int.cast_neg,Int.cast_ofNat] at hzval
+  exact hzval.trans (by ring)
+
+-- Every existing cut-disc primitive at a complex collapsed gap extends
+-- without changing its values, with the regular quotient as its derivative.
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ ψ ∈ W, ∀ j : ℤ, sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ j = 0 →
+      ∀ (c : ℂ) (R : ℝ), sourcePeriodicSegment (by simp) (by norm_num) ψ j ⊆ ball c R →
+        closedBall c R ⊆ sourceStandardRootOmittedDomain (by simp) (by norm_num) ψ j →
+        ∀ F : ℂ → ℂ, (∀ z ∈ ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j,
+          HasDerivAt F (deriv (canonicalDiscriminant (by simp) (periodOnePotential ψ)) z /
+            sourceCanonicalRoot (by simp) (by norm_num) ψ z) z) →
+        ∃ H : ℂ → ℂ, AnalyticOnNhd ℂ H (ball c R) ∧
+          EqOn H F (ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ j) ∧
+          ∀ z ∈ ball c R, HasDerivAt H (sourceCriticalRootRatioExtension (by simp) (by norm_num) j ψ z) z := by
+  obtain ⟨W,hW,hreal,hfill⟩ := exists_global_sourceAbelian_complexDisc_collapsed_extension (p := 3) (by simp) (by norm_num)
+  refine ⟨W,hW,hreal,?_⟩
+  intro ψ hψ j hgap c R hseg hother F hF
+  obtain ⟨H,hH,heq,hd,_⟩ := hfill ψ hψ j hgap c R hseg hother F hF
+  exact ⟨H,hH,heq,hd⟩
+
+end NLS.AbelianComplexDiscChecks

@@ -2235,3 +2235,7 @@ import NLS.ZakharovShabat.SourceAbelianProjectedPrimitive
 import NLS.ZakharovShabat.SourceAbelianProjectedCompatibility
 import NLS.ZakharovShabat.SourceAbelianEnlargedPrimitive
 import NLS.ZakharovShabat.SourceAbelianEnlargedExterior
+
+import NLS.ZakharovShabat.SourceAbelianComplexDiscContinuation
+import NLS.ZakharovShabat.SourceAbelianComplexEndpointLimits
+import NLS.ZakharovShabat.SourceAbelianComplexCollapsedExtension
