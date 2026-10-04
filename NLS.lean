@@ -2289,3 +2289,8 @@ import NLS.ZakharovShabat.SourceFullAbelianUniformSquare
 
 import NLS.ZakharovShabat.SourceFullAbelianRealBoundary
 import NLS.ZakharovShabat.SourceFullAbelianFiniteGapExterior
+
+import NLS.ComplexAnalysis.ExteriorInversionRemainder
+import NLS.ZakharovShabat.SourcePeriodicEndpointAtInfinity
+import NLS.ZakharovShabat.SourceFullAbelianFiniteGapInversion
+import NLS.ZakharovShabat.SourceFullAbelianFiniteGapLaurent

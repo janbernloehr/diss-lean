@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Latest progress: real boundary formula and finite-gap exterior
+## Latest progress: normalized convergent finite-gap Laurent expansion
+
+`SourceFullAbelianFiniteGapLaurent.lean` proves a convergent Laurent
+series for the actual full primitive at every real finite-gap source:
+`F_n(z) = -i*z + i*pi*n + sum (a_k / z^(k+1))` outside one positive
+radius. The same coefficients and radius work for every signed index.
+The theorem provides `HasSum`, not merely a formal series or a bound.
+The normalized remainder tends to zero in every direction at infinity.
+
+`ExteriorInversionRemainder.lean` integrates an analytic quadratic
+inverse-frequency derivative remainder on the whole connected exterior.
+It obtains `F(z) = -i*z + A(1/z) + c`, with `A` analytic near zero and
+`A(0) = 0`, and proves the positive-power series for `A`.
+
+`SourcePeriodicEndpointAtInfinity.lean` proves that the actual left
+periodic endpoints escape to infinity and their displacements from
+`pi*n` tend to zero at every finite exponent. In
+`SourceFullAbelianFiniteGapInversion.lean`, all sufficiently distant
+finite-gap endpoints are collapsed and have their already-proved exact
+primitive values. These values force the integration constant `c` to
+vanish. No asymptotic normalization is supplied as an extra hypothesis.
+The signed index shift then gives one common analytic remainder for
+all `F_n`.
+
+Public checks express the actual primitive as its convergent sum at
+exponent 3/2, verify the analytic remainder's zero constant term for
+index -3, and check the all-direction remainder limit for index -2.
+
+The analytic expansion and its normalization in Lemma 19.2 are now
+proved. Identification of the coefficients with the NLS Hamiltonians
+is still required before the full lemma is complete, starting with the
+mass coefficient. Later frequency results and the full dissertation
+remain unfinished.
+
+## Previous milestone: real boundary formula and finite-gap exterior
 
 `SourceFullAbelianRealBoundary.lean` transfers Lemma 19.1(v) to the full
 canonical primitive. At every point of every closed real gap, arbitrary

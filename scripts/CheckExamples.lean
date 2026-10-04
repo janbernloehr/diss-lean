@@ -27641,3 +27641,62 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))),
   exact ⟨R,r,hR,hr,h,hh 0 (mem_ball_self hr),fun n z hz => ((hF n).2 z hz).deriv⟩
 
 end NLS.FullAbelianRealBoundaryChecks
+
+
+noncomputable section
+namespace NLS.FullAbelianFiniteGapLaurentChecks
+open Set Metric Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The non-Hilbert finite-gap expansion is a convergent series for the
+-- actual function; the same coefficients and radius work for all indices.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    ∀ φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)),
+      φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+      ∃ R : ℝ, 0 < R ∧ ∃ a : ℕ → ℂ, ∀ (n : ℤ) (z : ℂ), R < ‖z‖ →
+        Summable (fun k : ℕ => a k/z^(k+1)) ∧
+        sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,φ.val) =
+          -Complex.I*z+Complex.I*(Real.pi : ℂ)*n+∑' k : ℕ, a k/z^(k+1) := by
+  obtain ⟨W,_,_,hall⟩ := exists_sourceFullAbelian_finiteGap_laurent_neighborhood
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,?_⟩
+  intro φ hf
+  obtain ⟨R,hR,a,hs⟩ := hall φ hf
+  refine ⟨R,hR,a,?_⟩
+  intro n z hz
+  have h := hs n z hz
+  refine ⟨h.summable,?_⟩
+  rw [h.tsum_eq]
+  ring
+
+-- The inversion remainder is analytic at zero and has exactly zero
+-- constant term, including for the negative normalization index -3.
+example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 3) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ R : ℝ, 0 < R ∧ ∃ A : ℂ → ℂ, AnalyticAt ℂ A 0 ∧ A 0 = 0 ∧
+      ∀ z : ℂ, R < ‖z‖ → sourceFullAbelianPrimitive (by simp) (by norm_num) W (-3) (z,φ.val) =
+        -Complex.I*z-3*Complex.I*(Real.pi : ℂ)+A z⁻¹ := by
+  obtain ⟨R,hR,r,hr,_,A,hA,hA0,he⟩ := exists_sourceFullAbelian_finiteGap_inversion_remainder_all_indices C φ hφ hf
+  refine ⟨R,hR,A,hA 0 (mem_ball_self hr),hA0,?_⟩
+  intro z hz
+  rw [he (-3) z hz]
+  push_cast
+  ring
+
+-- The remainder tends to zero along arbitrary directions at infinity,
+-- not just along the real endpoint sequence used to fix its constant.
+example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 3) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Tendsto (fun z : ℂ => sourceFullAbelianPrimitive (by simp) (by norm_num) W (-2) (z,φ.val)+
+      Complex.I*z+2*Complex.I*(Real.pi : ℂ)) (Bornology.cobounded ℂ) (𝓝 0) := by
+  have h := sourceFullAbelian_finiteGap_remainder_tendsto_zero C φ hφ hf (-2)
+  convert h using 1
+  ext z
+  push_cast
+  ring
+
+end NLS.FullAbelianFiniteGapLaurentChecks
