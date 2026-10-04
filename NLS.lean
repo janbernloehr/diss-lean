@@ -2433,3 +2433,8 @@ import NLS.ZakharovShabat.SourceActionSequenceExponent
 import NLS.ZakharovShabat.SourceActionGapCorrection
 import NLS.ZakharovShabat.SourceActionFrequencyCorrection
 import NLS.ZakharovShabat.SourceActionFrequencyAsymptotic
+import NLS.ZakharovShabat.SourcePsiGapRootIsospectral
+import NLS.ZakharovShabat.SourceAbelianPrimitiveIsospectral
+import NLS.ZakharovShabat.SourceAbelianMomentIsospectral
+import NLS.ZakharovShabat.SourceActionIsospectralAllExponents
+import NLS.ZakharovShabat.SourceFrequencyActionInvariance

@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Latest progress: Action-frequency asymptotics before descent
+## Latest progress: Frequency invariance on action level sets
+
+`SourceFrequencyActionInvariance.lean` proves that the actual moment-sum
+frequency depends only on the original spectral actions for every finite
+`p > 1`. It compares independent contour atlases and compatible normalized
+psi extensions. The entire frequency sequence and its refined action
+correction have the same invariance. Each scalar frequency factors through
+the action values; no analyticity on action space is claimed yet.
+
+`SourceActionIsospectralAllExponents.lean` extends the equality of action
+level sets and actual isospectral sets to every finite `p > 1`. First,
+equal-action finite-gap sources have equal spectra through their physical
+Hilbert representatives. Then independent local Birkhoff inverses lift
+matching finite output truncations of two arbitrary equal-action sources.
+Continuity of the discriminant passes equality to the limits, preserving
+the original spectrum and every algebraic multiplicity. This argument
+does not require global Birkhoff surjectivity above exponent two.
+
+`SourcePsiGapRootIsospectral.lean` transports signed gap geometry and the
+literal normalized contour equations. Uniqueness identifies the actual
+psi root vectors. `SourceAbelianPrimitiveIsospectral.lean` uses the proved
+endpoint normalization on the half-planes and continuity on real bands
+to preserve the primitive without an additive constant.
+`SourceAbelianMomentIsospectral.lean` compares literal integrands on a
+common circle and then uses contour homotopy. All moment orders, both
+signed indices, and collapsed gaps are included.
+
+An unconditional construction combines the analytic source frequency
+map from Theorem 20.5 with its action invariance. The caller supplies
+only a finite exponent above one. Public checks cover the `p = 4`
+spectrum and multiplicities, the sub-Hilbert range, all moment orders
+across independent atlases, an analytic `l2` frequency map constant on
+action level sets, the refined correction, and the zero-action case.
+
+Validation: the full check script passes (5,868 build jobs, all public
+examples, and an axiom audit of 21,443 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove analytic descent of the frequency map to action space,
+including the complex action neighborhood in Theorem 18.1. The present
+factorization proves well-definedness only. Corollary 18.2 and the later
+dissertation remain unfinished.
+
+## Previous milestone: Action-frequency asymptotics before descent
 
 `SourceActionFrequencyAsymptotic.lean` constructs the actual correction
 `omega*_n + 2*I_n` on one connected complex neighborhood of the real

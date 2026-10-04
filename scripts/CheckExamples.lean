@@ -29689,3 +29689,75 @@ example {W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 
 
 end
 end ActionFrequencyAsymptoticChecks
+
+
+namespace FrequencyActionInvarianceChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+
+-- Above the Hilbert exponent, equal actions preserve the original
+-- periodic spectrum and every algebraic multiplicity.
+example (φ ψ : realTypeSourceSubmodule 4)
+    (ha : ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) φ) :
+    periodicSpectrum (by simp) (periodOnePotential ψ.val) =
+        periodicSpectrum (by simp) (periodOnePotential φ.val) ∧
+      ∀ z : ℂ, periodicAlgebraicMultiplicity (by simp) (periodOnePotential ψ.val) z =
+        periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ.val) z := by
+  change ψ ∈ sourceIsospectralSet (by simp) φ
+  rwa [sourceIsospectralSet_eq_actionLevelSet_all_exponents (by simp) (by norm_num) φ]
+
+-- The strengthened theorem also retains the sub-Hilbert range.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2:ℝ))) :
+    sourceIsospectralSet (by norm_num) φ =
+      sourceRealActionLevelSet (by norm_num) (by norm_num) φ :=
+  sourceIsospectralSet_eq_actionLevelSet_all_exponents (by norm_num) (by norm_num) φ
+
+-- Any moment order agrees across independently chosen contour atlases
+-- and normalized branches on a p = 4 action level set.
+example {W P V Q : Set (CoeffPair 4)} {s t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (B : SourceAbelianMomentAtlas (by simp) (by norm_num) V t)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (ht : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) Q t)
+    (φ ψ : realTypeSourceSubmodule 4)
+    (ha : ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) φ) (m : ℕ) :
+    A.moment (-2) 3 m ψ.val = B.moment (-2) 3 m φ.val :=
+  A.moment_real_eq_of_actions B hs ht φ ψ ha (-2) 3 m
+
+-- An analytic l2-valued p = 4 frequency map is constructed and proved
+-- constant on action level sets, with no supplied atlas or branch.
+example : ∃ F : CoeffPair 4 → Coeff 2, ∃ U : Set (CoeffPair 4),
+    IsOpen U ∧ realTypeSourceLocus 4 ⊆ U ∧ AnalyticOnNhd ℂ F U ∧
+      ∀ φ ψ : realTypeSourceSubmodule 4,
+        ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) φ → F ψ.val = F φ.val := by
+  obtain ⟨W,s,A,U,hU,_,hreal,_,ha,hi,_⟩ :=
+    exists_sourceFrequency_analytic_actionInvariant (p := 4) (by simp) (by norm_num)
+  obtain ⟨_,hA,_⟩ := ha 2 (by simp) (by norm_num) (by norm_num)
+  exact ⟨A.frequencySequence 2,U,hU,hreal,hA,fun φ ψ h => hi φ ψ h 2⟩
+
+-- The refined action correction respects the same level sets, across
+-- independent atlases and at any chosen sequence target.
+example {W P V Q : Set (CoeffPair 4)} {s t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (B : SourceAbelianMomentAtlas (by simp) (by norm_num) V t)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (ht : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) Q t)
+    (φ ψ : realTypeSourceSubmodule 4)
+    (ha : ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) φ) :
+    A.actionFrequencyCorrectionSequence 2 ψ.val = B.actionFrequencyCorrectionSequence 2 φ.val :=
+  A.actionFrequencyCorrectionSequence_real_eq_of_actions B hs ht φ ψ ha 2
+
+-- The all-closed zero-action case gives the zero renormalized frequency.
+example {W P : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (ψ : realTypeSourceSubmodule 2)
+    (ha : ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) 0) (n : ℤ) :
+    A.renormalizedFrequency n ψ.val = 0 :=
+  (A.renormalizedFrequency_real_eq_of_actions A hs hs 0 ψ ha n).trans (A.renormalizedFrequency_zero n)
+
+end
+end FrequencyActionInvarianceChecks
