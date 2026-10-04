@@ -1,6 +1,61 @@
 # Implementation plan
 
-## Latest progress: Analytic uniqueness and gluing from nonnegative actions
+## Latest progress: Global analytic frequency maps on action space
+
+The actual local frequency and refined correction maps now glue on one
+open complex action domain. It contains every real source action and the
+entire nonnegative summable action cone. It is exactly the action image
+of an open source neighborhood containing all real sources. One domain
+serves all admissible finite target exponents, and the literal identity
+`H(b)_n = F(b)_n + 2*b_n` holds throughout that complex domain.
+
+`RealActionPairLifting.lean` constructs nearby real representatives of a
+nonnegative scalar action by radial rescaling, with a separate choice at
+the zero pair. `RealActionLifting.lean` assembles these into full sequence
+lifts and proves `norm(w-z)^2 <= 2*norm(b-I(z))`. The estimate includes
+arbitrary infinite zero sets. A nonnegative action ball of radius `R^2/2`
+therefore has real lifts in the original coordinate ball of radius `R`.
+
+`SourceRealActionLifting.lean` transfers the real lifts to actual source
+charts. It identifies equal Banach action sequences with equal original
+real actions, and proves that a local factor recovers an action invariant
+function at every real source with a locally represented action.
+
+The tail, tail-sum, and full-action descent constructions now retain their
+normalized psi extension witness in stronger interfaces. Existing public
+interfaces remain available as wrappers. `SourceFrequencyRealActionBalls.lean`
+uses that witness to prove compatibility with every real source, for both
+the frequency and correction, on one family of action balls independent
+of the target exponent. Every point of a ball has a complex source lift;
+every nonnegative point has a real source lift.
+
+`RealActionBallGluing.lean` supplies gluing and uniqueness from those real
+representatives. `SourceFrequencyActionSpaceMaps.lean` applies it to the
+actual maps, proves inclusion of the full nonnegative l1 cone, and realizes
+the resulting domain as the exact image of an open source neighborhood.
+`ActionCorrectionIdentity.lean` and `SourceFrequencyActionSpaceCorrection.lean`
+then extend the exact correction identity from real representatives to
+all complex actions, even when the frequency and correction target norms
+differ. Normalization witnesses remain available for later comparisons.
+
+Public checks cover a decreasing action that forces the second coordinate
+to change, the full non-Hilbert real-lifting estimate, the Hilbert `l1`
+action domain with every finite target `r > 1`, and the actual `p = 6`
+frequency and correction on a common `l3` domain with `l3` and `l2` targets.
+They verify the global correction identity, positive-cone coverage, exact
+source-image equality, and actual frequency recovery at every real source.
+
+Validation: the full build passes (5944 jobs), all public examples pass,
+and the transitive axiom audit passes for 21945 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: package the locally uniform mixed-remainder bounds and exponent
+compatibility directly on action space in the statement of Theorem 18.1.
+The global analytic gluing and literal complex correction identity are
+now proved. The derivative at zero needed for Corollary 18.2, its subsequent
+compactness/Fredholm conclusions, and the later dissertation remain unfinished.
+
+## Previous progress: Analytic uniqueness and gluing from nonnegative actions
 
 Local analytic maps on balls with nonnegative action centers now agree
 throughout their complex overlaps whenever they agree on the nonnegative

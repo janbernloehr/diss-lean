@@ -2510,3 +2510,12 @@ import NLS.SequenceSpaces.NonnegativeActions
 import NLS.SequenceSpaces.NonnegativeActionIdentity
 import NLS.SequenceSpaces.NonnegativeActionOverlap
 import NLS.SequenceSpaces.NonnegativeActionGluing
+
+import NLS.SequenceSpaces.RealActionPairLifting
+import NLS.SequenceSpaces.RealActionLifting
+import NLS.SequenceSpaces.RealActionBallGluing
+import NLS.SequenceSpaces.ActionCorrectionIdentity
+import NLS.ZakharovShabat.SourceRealActionLifting
+import NLS.ZakharovShabat.SourceFrequencyRealActionBalls
+import NLS.ZakharovShabat.SourceFrequencyActionSpaceMaps
+import NLS.ZakharovShabat.SourceFrequencyActionSpaceCorrection

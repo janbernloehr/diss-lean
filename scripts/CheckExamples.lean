@@ -31180,3 +31180,85 @@ example {ι : Type*} (a : ι → Coeff 3) (r : ι → ℝ)
 
 end
 end NonnegativeActionChecks
+
+
+namespace GlobalActionSpaceChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- Decreasing an action can require changing the second coordinate.
+-- A real lift still exists, even when the first base coordinate is zero.
+example : ∃ u v : ℂ, u.im = 0 ∧ v.im = 0 ∧ (u^2+v^2)/2 = 1/2 ∧ v ≠ 2 := by
+  obtain ⟨u,v,hu,hv,he,_,_⟩ := Coeff.exists_nearby_real_action_pair 0 2 (1/2)
+    (by simp) (by simp) (by norm_num)
+  refine ⟨u,v,hu,hv,he,?_⟩
+  intro hv2
+  have h := congrArg Complex.re he
+  simp [hv2,pow_two,hu] at h
+  nlinarith [sq_nonneg u.re]
+
+-- The same square-root estimate holds in the non-Hilbert sequence norm,
+-- including arbitrary infinite sets of zero actions.
+example (z : Coeff 6 × Coeff 6) (hz : z ∈ Coeff.realPairLocus 6)
+    (b : Coeff 3) (hb : b ∈ Coeff.nonnegativeLocus 3) :
+    ∃ w : Coeff 6 × Coeff 6, w ∈ Coeff.realPairLocus 6 ∧ quadraticActionsExponent w = b ∧
+      ‖w-z‖^2 ≤ 2*‖b-quadraticActionsExponent z‖ :=
+  Coeff.exists_nearby_real_quadraticActions (by simp) z hz b hb
+
+-- At the Hilbert source exponent there is one l1 action domain containing
+-- the entire nonnegative summable cone, supporting every finite r > 1.
+example : ∃ V : Set (Coeff 1), IsOpen V ∧
+    (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → RealCoeff.complexCLM 1 b ∈ V) ∧
+    ∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r →
+      ∃ F H : Coeff 1 → Coeff r, AnalyticOnNhd ℂ F V ∧ AnalyticOnNhd ℂ H V ∧
+        ∀ b ∈ V, ∀ n, H b n = F b n+2*b n := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V,hV,_,hpos,_,hpair⟩ :=
+    exists_sourceFrequency_actionSpace_correction (p := 2) (q := 1) (by simp) (by norm_num) le_rfl
+  refine ⟨V,hV,?_,?_⟩
+  · intro b hb
+    have he : Coeff.exponentInclusion (le_refl (1 : ℝ≥0∞)) (RealCoeff.complexCLM 1 b) =
+        RealCoeff.complexCLM 1 b := by ext n; rfl
+    simpa only [he] using hpos b hb
+  · intro r inst hr hr1
+    obtain ⟨F,H,hF,hH,he,_⟩ := hpair r r hr hr1 (by simpa using hr1.le)
+      hr hr1 (by norm_num; exact le_trans (by norm_num) hr1.le)
+    exact ⟨F,H,hF,hH,he⟩
+
+-- The actual p = 6 frequency extends to a common open l3 action domain;
+-- its correction is l2-valued throughout that complex domain. The domain
+-- is exactly the action image of an open source neighborhood and contains
+-- the whole positive l1 cone, not just a neighborhood of one real source.
+example :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ t : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ V : Set (Coeff 3), ∃ Y : Set (CoeffPair 6),
+    ∃ F : Coeff 3 → Coeff 3, ∃ H : Coeff 3 → Coeff 2,
+      IsOpen V ∧ IsOpen Y ∧ realTypeSourceLocus 6 ⊆ Y ∧
+      sourceActionSequence (q := 3) (by simp) (by norm_num) t '' Y = V ∧
+      (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) →
+        Coeff.exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 3) (RealCoeff.complexCLM 1 b) ∈ V) ∧
+      AnalyticOnNhd ℂ F V ∧ AnalyticOnNhd ℂ H V ∧
+      (∀ b ∈ V, ∀ n, H b n = F b n+2*b n) ∧
+      ∀ ψ : realTypeSourceSubmodule 6,
+        sourceActionSequence (q := 3) (by simp) (by norm_num) t ψ.val ∈ V ∧
+        ∀ n, F (sourceActionSequence (q := 3) (by simp) (by norm_num) t ψ.val) n =
+          A.renormalizedFrequency n ψ.val := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V,hV,hcenter,hpos,⟨Y,hY,hreal,_,himage⟩,hpair⟩ :=
+    exists_sourceFrequency_actionSpace_correction (p := 6) (q := 3)
+      (by simp) (by norm_num) (by norm_num)
+  obtain ⟨F,H,hF,hH,he,hrec⟩ := hpair 3 2 (by simp) (by norm_num) (by norm_num)
+    (by simp) (by norm_num) (by norm_num)
+  exact ⟨W,s,A,t,V,Y,F,H,hV,hY,hreal,himage,hpos,hF,hH,he,
+    fun ψ => ⟨hcenter ψ,(hrec ψ).2.2⟩⟩
+
+end
+end GlobalActionSpaceChecks
