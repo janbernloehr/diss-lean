@@ -2455,3 +2455,6 @@ import NLS.SequenceSpaces.MixedSquare
 import NLS.SequenceSpaces.TailSquareDescent
 import NLS.SequenceSpaces.TailSquareDescentHeadAnalytic
 import NLS.ZakharovShabat.SourceFrequencyTailSquareDescent
+import NLS.ComplexAnalysis.AnalyticSquareDescent
+import NLS.SequenceSpaces.TailSquareDescentCoordinateAnalytic
+import NLS.ZakharovShabat.SourceFrequencyCoordinateAnalyticDescent

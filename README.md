@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the frequency and refined correction now descend
-continuously to an open domain with a finite unsquared head and squared
-tail coordinates. The descended maps recover the literal source values
-and are analytic in finite-head directions. Tail analyticity and the
-passage to action variables in Theorem 18.1 remain next; see `STATUS.md`.
+Latest milestone: every scalar component of the descended frequency and
+refined correction is analytic in each individual retained or squared tail
+coordinate, including at zero. The maps remain continuous on one common
+open domain. Joint Banach-space analyticity and the passage to action
+variables in Theorem 18.1 remain next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12319,3 +12319,48 @@ coordinate squares to quadratic actions, and glue the local maps. These
 mixed-coordinate maps are not yet the analytic action-space frequency
 map of Theorem 18.1. Corollary 18.2 and the later dissertation remain
 unfinished as well.
+
+
+## Analyticity in individual squared tail coordinates
+
+The actual frequency and refined correction now have scalar components
+analytic in every individual coordinate of the mixed half-exponent domain,
+including at zero tail coordinates. This uses the same continuous descended
+maps, common open domain, inverse chart, and admissible target exponents as
+the previous milestone. Exact sequence recovery and the literal moment-sum
+frequency and correction formulas remain part of the theorem.
+
+`AnalyticSquareDescent.lean` proves that analyticity of `w ↦ g(w²)` at
+any complex `w` implies analyticity of `g` at `w²`, without assuming
+continuity of `g`. At zero, an even Cauchy transform gives the analytic
+descent; away from zero, a prescribed local analytic square root suffices.
+The proof also handles squared base points on the principal square-root
+branch cut.
+
+`TailSquareDescentCoordinateAnalytic.lean` constructs an analytic lift for
+a single tail coordinate and proves its exact mixed-square identity.
+Every continuous linear scalar observation of a descended analytic map is
+analytic along each coordinate of either component. Combining this with
+the retained-head result covers all signed indices. The recovery-based
+lemma is also available independently of the chosen descent construction.
+
+`SourceFrequencyCoordinateAnalyticDescent.lean` applies these results to
+the actual frequency and correction sequences. Their scalar components
+are separately analytic in every mixed coordinate; the retained finite
+head still has analyticity in the full target norm.
+
+Public checks cover the double root without a continuity hypothesis,
+a squared base point on the branch cut, an invariant nonlinear polynomial at the
+all-zero sequence in both components, arbitrary scalar linear observations,
+and the actual `p = 6` frequency in `l3` and correction in `l2` on one
+open `l3`-pair domain.
+
+Validation: the full check script passes (5,888 build jobs, all public
+examples, and an axiom audit of 21,600 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: establish joint Banach-space analyticity, descend from the individual
+coordinate squares to quadratic actions, and glue the local maps. Separate
+coordinate analyticity alone is not being identified with joint analyticity.
+The analytic action-space map of Theorem 18.1, Corollary 18.2, and the later
+dissertation remain unfinished.

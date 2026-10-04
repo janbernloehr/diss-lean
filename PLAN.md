@@ -1,6 +1,61 @@
 # Implementation plan
 
-## Latest progress: Continuous descent to squared tail coordinates
+## Latest progress: Analyticity in individual squared tail coordinates
+
+The actual frequency and refined correction now have scalar components
+analytic in every individual coordinate of the mixed half-exponent domain,
+including at zero tail coordinates. This uses the same continuous descended
+maps, common open domain, inverse chart, and admissible target exponents as
+the previous milestone. Exact sequence recovery and the literal moment-sum
+frequency and correction formulas remain part of the theorem.
+
+`AnalyticSquareDescent.lean` proves that analyticity of `w ↦ g(w²)` at
+any complex `w` implies analyticity of `g` at `w²`, without assuming
+continuity of `g`. At zero, an even Cauchy transform gives the analytic
+descent; away from zero, a prescribed local analytic square root suffices.
+The proof also handles squared base points on the principal square-root
+branch cut.
+
+`TailSquareDescentCoordinateAnalytic.lean` constructs an analytic lift for
+a single tail coordinate and proves its exact mixed-square identity.
+Every continuous linear scalar observation of a descended analytic map is
+analytic along each coordinate of either component. Combining this with
+the retained-head result covers all signed indices. The recovery-based
+lemma is also available independently of the chosen descent construction.
+
+`SourceFrequencyCoordinateAnalyticDescent.lean` applies these results to
+the actual frequency and correction sequences. Their scalar components
+are separately analytic in every mixed coordinate; the retained finite
+head still has analyticity in the full target norm.
+
+Public checks cover the double root without a continuity hypothesis,
+a squared base point on the branch cut, an invariant nonlinear polynomial at the
+all-zero sequence in both components, arbitrary scalar linear observations,
+and the actual `p = 6` frequency in `l3` and correction in `l2` on one
+open `l3`-pair domain.
+
+Validation: the full check script passes (5,888 build jobs, all public
+examples, and an axiom audit of 21,600 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: establish joint Banach-space analyticity, descend from the individual
+coordinate squares to quadratic actions, and glue the local maps. Separate
+coordinate analyticity alone is not being identified with joint analyticity.
+The analytic action-space map of Theorem 18.1, Corollary 18.2, and the later
+dissertation remain unfinished.
+
+A concrete next bridge is the theorem
+`Coeff.analyticOnNhd_of_coordinatewise_of_continuousOn` in
+`BoundedCoordinateAnalytic.lean`:
+restrict the descended sequence map to the open preimage of its domain
+under `t ↦ b + pairSingleCLM q second k t`. The new coordinate theorem,
+translated at each parameter value, gives analytic scalar output components
+on that preimage; existing norm continuity then gives analyticity of the
+entire sequence-valued slice. This still concerns one input coordinate at
+a time. A further argument is needed for finite-dimensional slices and
+joint analyticity in the infinite-dimensional source norm.
+
+## Previous milestone: Continuous descent to squared tail coordinates
 
 `SourceFrequencyTailSquareDescent.lean` constructs continuous descended
 frequency and correction maps on one open mixed-coordinate domain around
