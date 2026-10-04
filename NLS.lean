@@ -2298,3 +2298,7 @@ import NLS.ZakharovShabat.SourceFiniteGapMassExponent
 import NLS.ZakharovShabat.SourceFullAbelianMassCoefficient
 import NLS.ZakharovShabat.NLSRiccatiHierarchy
 import NLS.ZakharovShabat.ClassicalNLSHamiltonians
+import NLS.ComplexAnalysis.PolynomialFunctionBounds
+import NLS.ZakharovShabat.NLSRiccatiTruncation
+import NLS.ZakharovShabat.NLSRiccatiResidualBounds
+import NLS.ZakharovShabat.NLSWKBApproximation

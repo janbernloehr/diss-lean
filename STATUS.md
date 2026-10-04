@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: physical Riccati hierarchy and Hamiltonian normalization
+## Current milestone: all-order Riccati and spectral-system residual bounds
+
+`NLSRiccatiTruncation.lean` proves exact cancellation at every order:
+the residual polynomial of the first `N` Riccati terms is divisible
+by `X^N`. No smoothness hypothesis is needed for this algebraic result,
+and the empty truncation is included.
+
+`PolynomialFunctionBounds.lean` turns that divisibility into a uniform
+power bound for polynomials with continuous spatial coefficients.
+`NLSRiccatiResidualBounds.lean` applies it to actual finite Riccati
+approximations. For smooth potentials and every `N`, a positive constant
+bounds the differential residual by `C/(2*|z|)^N`, uniformly over one
+spatial period and every complex direction with `|z| ≥ 1`. The constant
+may depend on the potentials and `N`. The approximation itself is
+uniformly first order in inverse frequency.
+
+`NLSWKBApproximation.lean` constructs a nonvanishing exponential carrier
+and a two-component approximate solution of the original Zakharov–Shabat
+system. Its exact forcing term is the evaluated residual polynomial.
+The norm of the spectral-system residual is bounded by
+`C/(2*|z|)^N` times the carrier's norm. For periodic potentials, the
+approximation has an exact endpoint multiplier with exponent
+`-i*z + sum_{k=1}^N i*H_k/(2*z)^k`.
+
+Public checks cover the empty truncation, the nonzero quadratic residual
+for constant potentials, the factors 2, 4, and 8 in the first three
+Hamiltonian terms, and the fourth-order spectral-system estimate.
+
+The next step is to compare this approximation with the actual
+fundamental solution and monodromy, then use the resulting asymptotics
+to identify the higher Laurent coefficients in Lemma 19.2. The residual
+bounds do not yet establish that identification. The full lemma and
+dissertation remain unfinished.
+
+## Previous milestone: physical Riccati hierarchy and Hamiltonian normalization
 
 `NLSRiccatiHierarchy.lean` implements Appendix H's full recursive
 density sequence, beginning with `u₁ = -φ₊` and

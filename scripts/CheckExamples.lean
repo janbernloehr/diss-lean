@@ -27808,3 +27808,56 @@ example (a b : ℝ → ℂ) (z : ℂ) :
   ring
 
 end NLS.RiccatiHierarchyChecks
+
+
+
+noncomputable section
+namespace NLS.WKBApproximationChecks
+open Set Complex ZakharovShabat
+open scoped ContDiff
+
+-- The empty truncation is covered: its residual is the original lower
+-- potential, so order zero requires no spurious positive-order premise.
+example (a b : ℝ → ℂ) : nlsRiccatiResidualPolynomial a b 0 = Polynomial.C b := by
+  simp [nlsRiccatiResidualPolynomial,nlsRiccatiTruncation,nlsRiccatiDerivativeTruncation]
+
+-- A nonzero constant potential gives the predicted quadratic residual
+-- after retaining just the first Riccati term.
+example (c d w : ℂ) (hw : w ≠ 0) (x : ℝ) :
+    deriv (nlsRiccatiApproximation (fun _ => c) (fun _ => d) 1 w) x -
+      w⁻¹*nlsRiccatiApproximation (fun _ => c) (fun _ => d) 1 w x - d +
+      c*(nlsRiccatiApproximation (fun _ => c) (fun _ => d) 1 w x)^2 = c*d^2*w^2 := by
+  have he : nlsRiccatiApproximation (fun _ => c) (fun _ => d) 1 w = fun _ => -d*w := by
+    funext t
+    simp [nlsRiccatiApproximation]
+  simp only [he,deriv_const]
+  field_simp
+  ring
+
+-- The endpoint exponential displays the first three Hamiltonians with
+-- their distinct factors 2, 4, and 8.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) (z : ℂ) :
+    nlsWKBCarrier a b 3 z 1 = exp (-Complex.I*z+
+      Complex.I*classicalNLSHamiltonian a b 1/(2*z)+
+      Complex.I*classicalNLSHamiltonian a b 2/(4*z^2)+
+      Complex.I*classicalNLSHamiltonian a b 3/(8*z^3)) := by
+  rw [nlsWKBCarrier_one a b ha hb]
+  congr 1
+  simp only [Finset.sum_range_succ,Finset.sum_range_zero,zero_add,pow_one]
+  ring
+
+-- The actual two-component spectral residual is uniformly fourth-order,
+-- relative to its nonvanishing carrier, over the whole spatial period.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) :
+    ∃ C : ℝ, 0 < C ∧ ∀ x ∈ Icc (0 : ℝ) 1, ∀ z : ℂ, 1 ≤ ‖z‖ →
+      nlsWKBCarrier a b 4 z x ≠ 0 ∧
+      ‖deriv (nlsWKBVector a b 4 z) x - classicalODECoefficient (a x,b x) z (nlsWKBVector a b 4 z x)‖ ≤
+        (C/(16*‖z‖^4))*‖nlsWKBCarrier a b 4 z x‖ := by
+  obtain ⟨C,hC,hbound⟩ := exists_nlsWKBVector_residual_bound a b ha hb 4
+  refine ⟨C,hC,?_⟩
+  intro x hx z hz
+  refine ⟨nlsWKBCarrier_ne_zero a b 4 z x,?_⟩
+  convert hbound x hx z hz using 1
+  ring
+
+end NLS.WKBApproximationChecks
