@@ -29527,3 +29527,85 @@ example (φ : realTypeSourceSubmodule 3)
 
 end
 end AllExponentFrequencyChecks
+
+
+namespace FrequencySequence20_5Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 6) := ⟨by norm_num⟩
+
+-- The Hilbert endpoint has one domain for every target strictly above one.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ realTypeSourceLocus 2 ⊆ U ∧
+    ∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r →
+      ∃ F : CoeffPair 2 → Coeff r, AnalyticOnNhd ℝ F U := by
+  obtain ⟨W,s,A,U,hU,_,hreal,_,ha,_,_⟩ :=
+    exists_sourceFrequency_theorem20_5 (p := 2) (by simp) (by norm_num)
+  refine ⟨U,hU,hreal,?_⟩
+  intro r inst hr hr1
+  have hpr : ENNReal.ofReal ((2 : ℝ≥0∞).toReal/2) ≤ r := by simpa using hr1.le
+  exact ⟨A.frequencySequence r,(ha r hr hr1 hpr).2.2⟩
+
+-- At p = 4 the exact target p/2 = 2 is analytic and its coordinates
+-- agree with the independently defined physical finite-gap frequencies.
+example {W₀ B X : Set (CoeffPair 2)} {t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t) :
+    ∃ F : CoeffPair 4 → Coeff 2, ∃ U : Set (CoeffPair 4),
+      IsOpen U ∧ realTypeSourceLocus 4 ⊆ U ∧ AnalyticOnNhd ℂ F U ∧
+      ∀ (φ : realTypeSourceSubmodule 4) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℤ),
+        F φ.val n = D.finiteGapFrequencyAtExponent (by simp) (by norm_num) φ hf n -
+          4*sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1 - (2*(n:ℂ)*Real.pi)^2 := by
+  obtain ⟨W,s,A,U,hU,_,hreal,_,ha,hphysical,_⟩ :=
+    exists_sourceFrequency_theorem20_5 (p := 4) (by simp) (by norm_num)
+  obtain ⟨he,hcomplex,_⟩ := ha 2 (by simp) (by norm_num) (by norm_num)
+  exact ⟨A.frequencySequence 2,U,hU,hreal,hcomplex,fun φ hf n =>
+    (he φ.val (hreal φ.property) n).trans (hphysical W₀ B X t D φ hf n)⟩
+
+-- A p = 2 correction retains a quasi-normed l(2/3) + lq decomposition;
+-- the source neighborhood is selected before q.
+example : ∃ correction : CoeffPair 2 → ℤ → ℂ, ∃ U : Set (CoeffPair 2),
+    realTypeSourceLocus 2 ⊆ U ∧ ∀ φ ∈ U, ∃ T : Set (CoeffPair 2),
+      IsOpen T ∧ φ ∈ T ∧ ∀ q : ℝ≥0∞, q ≠ ⊤ → 1 < q →
+        ∃ C : ℝ, ∀ ψ ∈ T, ∃ a : Coeff (ENNReal.ofReal ((2:ℝ≥0∞).toReal/3)), ∃ b : Coeff q,
+          (∀ n, correction ψ n = a n + b n) ∧ ‖a‖ + ‖b‖ ≤ C := by
+  obtain ⟨W,s,A,U,_,_,hreal,_,_,_,hlocal⟩ :=
+    exists_sourceFrequency_theorem20_5 (p := 2) (by simp) (by norm_num)
+  refine ⟨A.frequencyCorrection,U,hreal,?_⟩
+  intro φ hφ
+  obtain ⟨T,hT,hφT,_,_,hmixed⟩ := hlocal φ hφ
+  refine ⟨T,hT,hφT,?_⟩
+  intro q hq hq1
+  obtain ⟨C,_,hb⟩ := hmixed q hq hq1
+  exact ⟨C,hb⟩
+
+-- At p = 6 the sharp cubic threshold r = p/3 = 2 is included.
+example : ∃ correction : CoeffPair 6 → ℤ → ℂ, ∃ U : Set (CoeffPair 6),
+    realTypeSourceLocus 6 ⊆ U ∧ ∀ φ ∈ U, ∃ T : Set (CoeffPair 6),
+      IsOpen T ∧ φ ∈ T ∧ ∃ C : ℝ, ∀ ψ ∈ T, ∃ b : Coeff 2,
+        (∀ n, b n = correction ψ n) ∧ ‖b‖ ≤ C := by
+  obtain ⟨W,s,A,U,_,_,hreal,_,_,_,hlocal⟩ :=
+    exists_sourceFrequency_theorem20_5 (p := 6) (by simp) (by norm_num)
+  refine ⟨A.frequencyCorrection,U,hreal,?_⟩
+  intro φ hφ
+  obtain ⟨T,hT,hφT,_,hbound,_⟩ := hlocal φ hφ
+  obtain ⟨C,_,hb⟩ := hbound 2 (by simp) (by norm_num) (by norm_num)
+  exact ⟨T,hT,hφT,C,hb⟩
+
+-- The total sequence constructor gives the actual zero sequence at
+-- the free potential, for every target exponent.
+example {W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s) (r : ℝ≥0∞) :
+    A.frequencySequence r 0 = 0 := by
+  simp only [SourceAbelianMomentAtlas.frequencySequence,A.renormalizedFrequency_zero]
+  unfold Coeff.ofFunctionOrZero
+  split <;> ext n <;> rfl
+
+-- Cubic multiplication works at a target below the Banach range.
+example (a b c : Coeff 2) : ∃ H : Coeff (ENNReal.ofReal (2/3:ℝ)),
+    (∀ n, H n = a n*b n*c n) ∧ ‖H‖ ≤ ‖a‖*‖b‖*‖c‖ :=
+  Coeff.exists_refined_triple_product (by simp) (by norm_num) (by simp)
+    (by norm_num) (by norm_num) a b c
+
+end
+end FrequencySequence20_5Checks

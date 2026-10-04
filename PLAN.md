@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Latest progress: Theorem 20.4 at all finite source exponents
+## Latest progress: Theorem 20.5 frequency maps and asymptotics
+
+`SourceFrequencyTheorem20_5.lean` constructs the frequency map on one
+connected open neighborhood of the real source locus for every finite
+`p > 1`. Its coordinates are the actual moment-sum frequencies from
+Theorem 20.4. The sequence map is complex and real analytic in every
+finite `lr` with `r > 1` and `r >= p/2`. This includes every finite
+`r > 1` at `p = 2` and the exact target `l(p/2)` at `p > 2`.
+
+The correction `omega*_n + gamma_n^2/2` is locally bounded in every
+finite `lr` with `r > 1` and `r >= p/3`. It also has the stated
+`l(p/3) + lq` decomposition for every finite `q > 1`, including the
+quasi-normed range `p/3 < 1`. The local source neighborhood is selected
+before the target exponent; its bound may depend on that exponent.
+
+`RefinedTripleProduct.lean` proves cubic product estimates without a
+Banach assumption on the intermediate exponents.
+`ReciprocalRowSumCoefficients.lean` sums varying coefficient rows using
+a shared reciprocal majorant, proving absolute convergence and the
+norm bound for the actual summed sequence. The frequency correction
+then follows from the exact diagonal/off-diagonal moment decomposition.
+Local norm bounds and scalar analyticity yield sequence-valued
+analyticity through the bounded-coordinate theorem.
+
+The construction includes the physical finite-gap frequency identity.
+A separate compatibility theorem identifies sequence maps at different
+source exponents whenever the real potentials have the same Fourier
+coefficients. Public checks cover the Hilbert target range, the exact
+`p = 4` physical frequency map into `l2`, the quasi-normed mixed remainder,
+the sharp `p = 6` cubic threshold, and the zero potential.
+
+Validation: the full check script passes (5,856 build jobs, all public
+examples, and an axiom audit of 21,382 declarations). There are no
+admitted proofs or new axioms and no new warnings; the 21 existing
+warnings remain.
+
+Next: the deduction of Theorem 18.1 and Corollary 18.2 following Theorem
+20.5: descent to action variables, the action-frequency asymptotic, and
+the differential and local invertibility statements. These and the later
+dissertation remain unfinished.
+
+## Previous milestone: Theorem 20.4 at all finite source exponents
 
 `SourceSecondMomentFrequencyTheorem20_4.lean` completes the physical
 finite-gap identification and analytic uniqueness for every finite
