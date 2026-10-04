@@ -2322,3 +2322,7 @@ import NLS.ZakharovShabat.SourceFullAbelianCubeAsymptotics
 import NLS.ComplexAnalysis.QuadraticPrimitiveGapComparison
 import NLS.ZakharovShabat.SourceFullAbelianGapComparison
 import NLS.ZakharovShabat.SourceFullAbelianUniformGapComparison
+import NLS.SequenceSpaces.QuasiHolderProduct
+import NLS.ZakharovShabat.SourceCriticalHalfExponentOffsets
+import NLS.ZakharovShabat.SourceCriticalFactorDiscMajorants
+import NLS.ZakharovShabat.SourceFullAbelianGapTailMajorants

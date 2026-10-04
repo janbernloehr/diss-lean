@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Quantitative gap comparison for Lemma 19.4
+## Current milestone: Mixed sequence majorants for the gap error
+
+`QuasiHolderProduct.lean` constructs scalar coefficient products for
+any Holder triple and proves the norm bound at all positive finite
+exponents, including targets below one.
+
+`SourceCriticalHalfExponentOffsets.lean` places both the actual
+critical-midpoint offset `gamma_n^2*q_n` and its normalized form
+`gamma_n*q_n` in `l^(p/2)`. Their norms are bounded on a common source
+neighborhood. The critical-point identities are exact at every signed
+index and remain meaningful when a gap collapses.
+
+`SourceCriticalFactorDiscMajorants.lean` specializes Lemma 10.8 to the
+actual canonical critical sequence. On distant free discs, the error
+`chi_n-1` is bounded by `|Bq_n|+|Bg_n|`, with `Bq` in any finite `l^q`,
+`q>1`, and `Bg` in `l^(p/2)`. One constant bounds both sequence norms
+for every source in the same neighborhood. When `p/2<=1`, contractive
+inclusion into `l^1` uses the endpoint version of Lemma 10.8. When
+`p/2>1`, the two half-exponent majorants combine directly.
+
+`SourceFullAbelianGapTailMajorants.lean` transfers these estimates to
+the actual primitive. Near every real source, one neighborhood, index
+threshold, and sequence-norm bound give
+`|F_n-i*w_n| <= |gamma_n|*(|Bq_n|+|Bg_n|)`
+on both sides of every sufficiently distant closed complex gap.
+The same majorants cover every angle and every compatible Cauchy chart.
+No primitive or deleted-factor asymptotic estimate is assumed.
+
+Public checks exercise multiplication below exponent one at `p=3/2`,
+the exact critical-offset factorization there, and the normalized
+primitive error at `p=4` with the smaller auxiliary exponent `q=3/2`.
+
+Lemma 19.4 is not yet complete. The remaining work is to control
+the finitely many central gaps and assemble the result on an open
+almost-real neighborhood, using the already proved side limits and
+collapsed-gap identities. The dissertation as a whole remains unfinished.
+
+## Previous milestone: Quantitative gap comparison for Lemma 19.4
 
 `QuadraticPrimitiveGapComparison.lean` subtracts a constant from the
 analytic Cauchy quotient and bounds the resulting boundary error by the

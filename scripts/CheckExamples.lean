@@ -28096,3 +28096,65 @@ example {W : Set (CoeffPair 3)}
   exact sub_eq_zero.mp (norm_eq_zero.mp (le_antisymm hb (norm_nonneg _)))
 
 end NLS.GapComparisonChecks
+
+
+noncomputable section
+namespace NLS.GapTailMajorantChecks
+open Set Metric Complex ZakharovShabat
+open scoped ENNReal
+
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem oneLtHalf : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num))
+    (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨oneLtHalf.le⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Multiplication of two l^(3/2) sequences lands below exponent one,
+-- with the genuine Holder norm bound, not only coefficientwise bounds.
+example (a b : Coeff (3/2)) :
+    ∃ d : Coeff ((3/2 : ℝ≥0∞)/2),
+      (∀ n : ℤ, d n = a n*b n) ∧ ‖d‖ ≤ ‖a‖*‖b‖ := by
+  let : (3/2 : ℝ≥0∞).HolderTriple (3/2) ((3/2)/2) := Coeff.holderTriple_half _
+  have hp0 : 0 < (3/2 : ℝ≥0∞).toReal :=
+    ENNReal.toReal_pos (ne_of_gt (zero_lt_one.trans oneLtHalf)) halfFinite
+  exact ⟨Coeff.quasiHolderProduct a b,fun _ => rfl,Coeff.norm_quasiHolderProduct_le hp0 hp0 a b⟩
+
+-- At p=3/2 the normalized critical offset remains a sequence at the
+-- half exponent, and its multiplication by the gap recovers the offset.
+example (φ : CoeffPair (3/2)) (hφ : IsRealType (CoeffPair.toMax (3/2) φ)) :
+    ∃ V : Set (CoeffPair (3/2)), IsOpen V ∧ φ ∈ V ∧ ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ V,
+      ‖sourceCriticalGapLinearOffset halfFinite oneLtHalf ψ‖ ≤ M ∧ ∀ n : ℤ,
+        canonicalCriticalPoints halfFinite oneLtHalf (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+          canonicalPeriodicMidpoint halfFinite oneLtHalf (periodOnePotential ψ) (periodOnePotential_mem ψ) n =
+          sourcePeriodicGapDisplacement halfFinite oneLtHalf ψ n*sourceCriticalGapLinearOffset halfFinite oneLtHalf ψ n := by
+  obtain ⟨V,hV,hφV,M,hM,hb⟩ := exists_local_uniform_sourceCriticalHalfOffsets halfFinite oneLtHalf φ hφ
+  exact ⟨V,hV,hφV,M,hM,fun ψ hψ => ⟨(hb ψ hψ).2.1,fun n =>
+    ((hb ψ hψ).2.2 n).1.trans ((hb ψ hψ).2.2 n).2⟩⟩
+
+-- At p=4 one may still choose q=3/2 < p/2. The mixed estimate is
+-- not restricted to auxiliary exponents at least p/2.
+example (φ : CoeffPair 4) (hφ : IsRealType (CoeffPair.toMax 4 φ)) :
+    ∃ V : Set (CoeffPair 4), IsOpen V ∧ φ ∈ V ∧ ∃ K : ℕ, ∃ M : ℝ, 0 ≤ M ∧
+      ∀ ψ ∈ V, ∃ Bq : Coeff (3/2), ∃ Bg : Coeff (ENNReal.ofReal ((4 : ℝ≥0∞).toReal/2)),
+        ‖Bq‖ ≤ M ∧ ‖Bg‖ ≤ M ∧
+        ∀ (W : Set (CoeffPair 4)) (C : SourceFullAbelianUniformCauchyFamily (by norm_num) (by norm_num) W),
+          ψ ∈ ball C.discs.source.val C.discs.sourceRadius →
+          ∀ n : ℤ, K ≤ n.natAbs → ∀ θ ∈ Icc (0:ℝ) Real.pi, ∀ upper : Bool,
+            ‖C.gapBoundary n ψ θ upper-Complex.I*sourceStandardRootGapBoundary (by norm_num) (by norm_num) ψ n θ upper‖ /
+              ‖sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n‖ ≤ ‖Bq n‖+‖Bg n‖ := by
+  obtain ⟨V,hV,hφV,K,M,hM,hb⟩ := exists_local_sourceFullAbelian_gap_tail_majorants
+    (by norm_num) (by norm_num) halfFinite oneLtHalf φ hφ
+  refine ⟨V,hV,hφV,K,M,hM,?_⟩
+  intro ψ hψ
+  obtain ⟨Bq,Bg,hBq,hBg,hpoint⟩ := hb ψ hψ
+  refine ⟨Bq,Bg,hBq,hBg,?_⟩
+  intro W C hψC n hn θ hθ upper
+  by_cases hg : sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n = 0
+  · simp only [hg,norm_zero,div_zero]
+    positivity
+  · apply (div_le_iff₀ (norm_pos_iff.mpr hg)).mpr
+    simpa only [mul_comm] using hpoint W C hψC n hn θ hθ upper
+
+end NLS.GapTailMajorantChecks

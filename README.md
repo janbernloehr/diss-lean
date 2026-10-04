@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the quantitative comparison underlying Lemma 19.4
-is proved for the actual primitive, including both gap sides, collapsed
-gaps, and the exact zero-potential formula. A locally uniform estimate
-reduces the remaining proof to sequence-space bounds for the deleted
-critical factor. Corollary 19.3 remains complete. See `STATUS.md`.
+Latest milestone: the mixed sequence estimate in Lemma 19.4 is proved
+for the actual primitive on distant complex gaps, locally uniformly near
+every real source. The proof covers all finite `p>1`, including the
+half-exponent range below one. Central gaps and the common almost-real
+neighborhood remain to be assembled. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11178,3 +11178,40 @@ Lemma 19.4 is not yet complete. The next step is to specialize the
 Lemma 10.8 majorants to the critical sequence and place the normalized
 boundary error in `l^(p/2) + l^(1+)`, locally uniformly on an almost-real
 neighborhood. The dissertation as a whole remains unfinished.
+
+## Mixed sequence majorants for the gap error
+
+`QuasiHolderProduct.lean` constructs scalar coefficient products for
+any Holder triple and proves the norm bound at all positive finite
+exponents, including targets below one.
+
+`SourceCriticalHalfExponentOffsets.lean` places both the actual
+critical-midpoint offset `gamma_n^2*q_n` and its normalized form
+`gamma_n*q_n` in `l^(p/2)`. Their norms are bounded on a common source
+neighborhood. The critical-point identities are exact at every signed
+index and remain meaningful when a gap collapses.
+
+`SourceCriticalFactorDiscMajorants.lean` specializes Lemma 10.8 to the
+actual canonical critical sequence. On distant free discs, the error
+`chi_n-1` is bounded by `|Bq_n|+|Bg_n|`, with `Bq` in any finite `l^q`,
+`q>1`, and `Bg` in `l^(p/2)`. One constant bounds both sequence norms
+for every source in the same neighborhood. When `p/2<=1`, contractive
+inclusion into `l^1` uses the endpoint version of Lemma 10.8. When
+`p/2>1`, the two half-exponent majorants combine directly.
+
+`SourceFullAbelianGapTailMajorants.lean` transfers these estimates to
+the actual primitive. Near every real source, one neighborhood, index
+threshold, and sequence-norm bound give
+`|F_n-i*w_n| <= |gamma_n|*(|Bq_n|+|Bg_n|)`
+on both sides of every sufficiently distant closed complex gap.
+The same majorants cover every angle and every compatible Cauchy chart.
+No primitive or deleted-factor asymptotic estimate is assumed.
+
+Public checks exercise multiplication below exponent one at `p=3/2`,
+the exact critical-offset factorization there, and the normalized
+primitive error at `p=4` with the smaller auxiliary exponent `q=3/2`.
+
+Lemma 19.4 is not yet complete. The remaining work is to control
+the finitely many central gaps and assemble the result on an open
+almost-real neighborhood, using the already proved side limits and
+collapsed-gap identities. The dissertation as a whole remains unfinished.
