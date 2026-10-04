@@ -28883,3 +28883,66 @@ example (hs : SourcePsiNormalizedComplexExtension hp hp1 V s)
 
 end
 end CosineSquareDescentChecks
+
+namespace ComplexMomentCosineChecks
+open Set Metric Filter Topology Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+noncomputable section
+
+-- A genuinely complex half-gap gives the expected quadratic average.
+example : (∫ θ in (0:ℝ)..Real.pi,
+    ((2:ℂ)+(1+Complex.I)*(Real.cos θ:ℂ)-2)^2-(1+Complex.I)^2) =
+      -(Real.pi:ℂ)*Complex.I := by
+  rw [cosineIntegral_quadratic]
+  ring_nf
+  simp only [Complex.I_sq]
+  ring
+
+-- The centered linear correction cancels, also for a complex gap.
+example (τ δ : ℂ) : (∫ θ in (0:ℝ)..Real.pi,
+    (τ-(τ+δ*(Real.cos θ:ℂ)))*((τ+δ*(Real.cos θ:ℂ)-τ)^2-δ^2)) = 0 := by
+  simpa using cosineIntegral_shifted_quadratic τ δ τ
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- The normalized estimate applies at every complex source, even at zero gap.
+example (ψ : CoeffPair p) (k : ℤ) :
+    ‖(2*Real.pi:ℂ)⁻¹ * (-(2*Complex.I) *
+      sourceGapCosineMean hp hp1 k (fun _ => (1:ℂ)) ψ)‖ ≤ 1 := by
+  exact norm_normalized_sourceGapCosineMean_le hp hp1 k _ ψ 1 (by intros; simp)
+
+-- A fourth-order numerator vanishes at a collapsed real gap.
+example (A : SourceAbelianMomentAtlas hp hp1 W s) (φ : realTypeSourceSubmodule p)
+    (n k : ℤ)
+    (hgap : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) k = 0) :
+    sourceAbelianMomentEvenNumerator hp hp1 W n k 2 (s n φ.val : Coeff p) φ.val
+      (sourceStandardRootMidpoint hp hp1 φ.val k) = 0 :=
+  A.real_evenNumerator_midpoint_of_collapsed φ n k 1 hgap
+
+-- Complex continuation of the fourth moment needs no open-gap premise.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (hs : SourcePsiNormalizedComplexExtension hp hp1 V s) (hV : IsOpen V)
+    (φ : realTypeSourceSubmodule p) (hφ : φ.val ∈ V) (n k : ℤ) :
+    A.moment n k 4 =ᶠ[𝓝 φ.val] fun ψ => -(2*Complex.I) *
+      sourceGapCosineMean hp hp1 k (fun t : ℂ × CoeffPair p =>
+        sourceAbelianMomentEvenNumerator hp hp1 W n k 2 (s n t.2 : Coeff p) t.2 t.1) ψ :=
+  A.eventually_positive_even_moment_eq_cosineMean hs hV φ hφ n k 1
+
+-- The source ball is chosen before the pointwise square and psi bounds.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (hs : SourcePsiNormalizedComplexExtension hp hp1 V s) (hV : IsOpen V)
+    (φ : realTypeSourceSubmodule p) (hφ : φ.val ∈ V) (n k : ℤ) :
+    ∃ r : ℝ, 0 < r ∧ ∀ ψ ∈ ball φ.val r,
+      (∀ z ∈ sourcePeriodicSegment hp hp1 ψ k, ‖sourceFullAbelianSquare hp hp1 W k (z,ψ)‖ ≤ 2) →
+      (∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+        ‖sourceMomentRegularNumerator hp hp1 n k (s n ψ : Coeff p) ψ z‖ ≤ 3) →
+      ‖(2*Real.pi:ℂ)⁻¹ * A.moment n k 2 ψ‖ ≤ 6 := by
+  obtain ⟨r,hr,_,hb⟩ := A.exists_ball_second_moment_norm_le hs hV φ hφ n k
+  refine ⟨r,hr,?_⟩
+  intro ψ hψ hS hP
+  convert hb ψ hψ 2 3 (by norm_num) (by norm_num) hS hP using 1
+  norm_num
+
+end
+end ComplexMomentCosineChecks

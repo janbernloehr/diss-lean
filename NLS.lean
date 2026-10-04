@@ -2374,3 +2374,7 @@ import NLS.ComplexAnalysis.ParametricEvenSquareDescent
 import NLS.ComplexAnalysis.ParametricCosineMean
 import NLS.ComplexAnalysis.ParametricCosineMeanLocal
 import NLS.ZakharovShabat.SourceGapCosineMeanAnalytic
+import NLS.ZakharovShabat.SourceAbelianMomentRealCosine
+import NLS.ZakharovShabat.SourceAbelianMomentComplexCosine
+import NLS.ZakharovShabat.SourceGapCosineMeanBound
+import NLS.ZakharovShabat.SourceGapCosinePolynomial

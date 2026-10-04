@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual even-moment cosine means are analytic through
-closed gaps. A Cauchy-integral construction uses the analytic squared gap
-and removes the need to choose analytic individual endpoints. Identifying
-these means with complex-source moments and completing Lemma 20.3's
-uniform decay estimates remain next; see `STATUS.md`.
+Latest milestone: positive even moments now have exact cosine formulas
+near real sources for complex as well as real gaps, including closed gaps.
+The formulas give bounds on the actual gap and the exact polynomial
+leading terms. A source neighborhood uniform in all indices and Lemma
+20.3's final sequence estimates remain next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11665,3 +11665,40 @@ complex-source moments with the cosine integral, then combine the square
 and psi-factor estimates to finish Lemma 20.3. Its uniform moment decay
 claims, general infinite-gap frequencies, and the rest of the
 dissertation remain unfinished.
+
+
+## Complex-source cosine moment identities and gap bounds
+
+`SourceAbelianMomentRealCosine.lean` extends the real cosine formula to
+all positive even orders at closed gaps. The filled square vanishes at
+the coincident endpoint, so both the positive moment and its regular
+cosine integral vanish. No division by the gap length is used.
+
+`SourceAbelianMomentComplexCosine.lean` constructs all joint regularity
+needed by the actual cosine mean from local canonical Cauchy families,
+midpoint and squared-gap analyticity, and omitted-product analyticity.
+Independence of the primitive's ambient neighborhood transfers the result
+to any given moment atlas. The real-form identity theorem then proves the
+exact cosine representation of every positive even moment on a complex
+neighborhood of every real source in the normalized psi domain. Closed
+gaps are included, and no extra spectral regularity premises or analytic
+endpoint choices are required.
+
+`SourceGapCosineMeanBound.lean` proves the normalized supremum bound on
+the actual complex gap. It gives a source ball on which bounds for the
+filled square and regular psi factor multiply to bound the second moment.
+The radius is selected before the pointwise bounds, but it may still
+depend on the two indices. `SourceGapCosinePolynomial.lean` computes the
+exact complex polynomial models: the diagonal term is `pi * gamma_k^2/4`,
+and the shifted model retains only the displacement from the midpoint.
+Both identities include collapsed gaps.
+
+Public checks cover a nonreal half-gap, cancellation of the centered
+linear correction, the normalized constant-numerator estimate, a fourth-
+order numerator at a closed gap, complex continuation of the fourth
+moment, and the second-moment bound with independently supplied factors.
+
+Next: obtain one source neighborhood for all moment indices, then combine
+the exact cosine identities and polynomial models with the square and
+psi-factor sequence estimates. Lemma 20.3's uniform decay claims, general
+infinite-gap frequencies, and the remaining dissertation are unfinished.
