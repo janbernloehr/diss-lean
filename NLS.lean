@@ -2266,3 +2266,8 @@ import NLS.ZakharovShabat.SourceAbelianSpectralCompatibility
 import NLS.ZakharovShabat.SourceAbelianSpectralChart
 import NLS.ZakharovShabat.SourceFullAbelianPrimitive
 import NLS.ZakharovShabat.SourceFullAbelianExterior
+
+import NLS.ComplexAnalysis.ParametricPrimitivePropagation
+import NLS.ZakharovShabat.SourceFullAbelianJointAnalytic
+import NLS.ZakharovShabat.SourceFullAbelianDifferential
+import NLS.ZakharovShabat.SourceFullAbelianCauchyCompatibility

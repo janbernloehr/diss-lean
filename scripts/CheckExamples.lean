@@ -27302,3 +27302,72 @@ example (W : Set (CoeffPair 3)) (ψ : CoeffPair 3)
   (sourceFullAbelianPrimitive_hasDerivAt D n z hz).deriv
 
 end NLS.FullAbelianChecks
+
+
+noncomputable section
+namespace NLS.FullAbelianInteriorChecks
+open Set Metric Filter Topology Complex ZakharovShabat ComplexAnalysis
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At exponent 3/2 the same function is jointly analytic everywhere off
+-- the cuts, retains all filled spectral slices, and has the full joint
+-- differential. No exterior or individual-disc restriction remains.
+example : ∃ W V : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    IsOpen V ∧ IsConnected V ∧ realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ V ∧
+    ∀ n : ℤ,
+      (∀ ψ ∈ V, AnalyticOnNhd ℂ (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,ψ))
+        (sourceOpenGapComplement (by simp) (by norm_num) ψ)) ∧
+      AnalyticOnNhd ℂ (sourceFullAbelianPrimitive (by simp) (by norm_num) W n)
+        (sourceCanonicalRootJointDomain (by simp) (by norm_num) V) ∧
+      ∀ t ∈ sourceCanonicalRootJointDomain (by simp) (by norm_num) V,
+        HasFDerivAt (sourceFullAbelianPrimitive (by simp) (by norm_num) W n)
+          ((sourceCanonicalRoot (by simp) (by norm_num) t.2 t.1)⁻¹ •
+            fderiv ℂ (fun u : ℂ × CoeffPair (ENNReal.ofReal (3/2)) =>
+              canonicalDiscriminant (by simp) (periodOnePotential u.2) u.1) t) t := by
+  obtain ⟨W,V,_,hV,hconn,hreal,_,hcharts,hall⟩ := exists_sourceFullAbelian_almostReal_differential
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,V,hV,hconn,hreal,?_⟩
+  intro n
+  refine ⟨?_,hall n⟩
+  intro ψ hψ
+  obtain ⟨E⟩ := hcharts ψ hψ
+  exact sourceFullAbelianPrimitive_spectral_analytic E n
+
+-- Every real source has a complex neighborhood on which the full
+-- canonical function of index -3 tends to -5 i pi at gap 2. This
+-- construction imposes no noncollapsed-gap hypothesis.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ (W : Set (CoeffPair 3)) (c : ℂ) (R r : ℝ), 0 < R ∧ 0 < r ∧
+      ∀ ψ ∈ ball φ.val r,
+        Tendsto (fun z => sourceFullAbelianPrimitive (by simp) (by norm_num) W (-3) (z,ψ))
+          (𝓝[ball c R \ sourcePeriodicSegment (by simp) (by norm_num) ψ 2]
+            (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 2))
+          (𝓝 (-5*Complex.I*(Real.pi : ℂ))) := by
+  obtain ⟨W,C,r,_,_,hr,_,hall⟩ := exists_sourceFullAbelian_endpoint_neighborhood
+    (by simp) (by norm_num) φ 2
+  refine ⟨W,C.cauchy.center,C.cauchy.radius,r,C.cauchy.inner_pos.trans C.cauchy.inner_lt,hr,?_⟩
+  intro ψ hψ
+  have h := (hall ψ hψ).2 (-3)
+    (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 2) (by simp)
+  have he : Complex.I*(Real.pi : ℂ)*((-3:ℂ)-2) = -5*Complex.I*(Real.pi : ℂ) := by ring
+  simpa only [Int.cast_neg,Int.cast_ofNat,he] using h
+
+-- The full source derivative acts on arbitrary complex directions
+-- at interior points, with the exact canonical-root denominator.
+example (W : Set (CoeffPair 3))
+    (D : SourceAbelianUniformDiscFamily (by simp) (by norm_num) W)
+    (hall : ∀ χ ∈ ball D.source.val D.sourceRadius,
+      ∃ E : SourceAbelianSpectralChart (by simp) (by norm_num) W χ, E.discs = D)
+    (hD : IsOpen (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (hroot : AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct (by simp) (by norm_num))
+      (sourceCanonicalRootJointDomain (by simp) (by norm_num) W))
+    (n : ℤ) (ψ h : CoeffPair 3) (hψ : ψ ∈ ball D.source.val D.sourceRadius)
+    (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain (by simp) (by norm_num) ψ) :
+    (fderiv ℂ (fun χ => sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,χ)) ψ) h =
+      (fderiv ℂ (fun χ => canonicalDiscriminant (by simp) (periodOnePotential χ) z) ψ) h /
+        sourceCanonicalRoot (by simp) (by norm_num) ψ z :=
+  D.fullPrimitive_source_fderiv hall hD hroot n z ψ h ⟨hψ,hz⟩
+
+end NLS.FullAbelianInteriorChecks

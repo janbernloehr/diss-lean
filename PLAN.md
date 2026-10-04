@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Latest progress: one compatible full spectral primitive
+## Latest progress: full interior regularity and Cauchy normalization
+
+`SourceFullAbelianJointAnalytic.lean` proves joint analyticity of the
+canonical full primitive throughout the complex cut complement on one
+open connected neighborhood of the real-source locus. The same function
+retains spectral analyticity on the larger domain with collapsed gaps
+filled. Joint analyticity here is asserted off all moving cuts; no joint
+regularity at a filled collapsed endpoint is claimed.
+
+The generic `ParametricPrimitivePropagation.lean` supplies the missing
+parameter argument. On a convex product chart, a spectral primitive is
+the sum of its anchor value and the explicit parametric integral of its
+derivative. An analytic anchor value therefore propagates across the
+chart without assuming source continuity of the primitive. An open-and-
+closed argument propagates this regularity along any connected spectral
+slice. The common exterior supplies the initial anchor.
+
+`SourceFullAbelianDifferential.lean` propagates the exact Floquet
+exponential identity to the full spectral cut complement. Joint
+analyticity identifies the normalized logarithm germ and proves the full
+differential `canonicalRoot⁻¹ • d Delta` everywhere off the cuts,
+including the potential gradient in arbitrary complex directions.
+
+`SourceFullAbelianCauchyCompatibility.lean` identifies the full function
+with every overlapping normalized Cauchy disc chart. The real projection
+path fixes the value at a common collar anchor; uniqueness on the
+connected cut disc identifies all remaining values. The canonical full
+primitive consequently inherits the exact limit `i pi (n-j)` at both
+endpoints of gap `j`, including a collapsed selected gap. An existence
+theorem supplies such a complex source neighborhood around every real
+source and every selected gap.
+
+Public checks verify full joint and filled-slice analyticity together
+with the exact differential at exponent 3/2, the full interior potential
+gradient, and the exact endpoint limit `-5 i pi` for index -3 at gap 2.
+
+This removes the interior parameter-regularity gap and transfers the
+previous local endpoint normalization to the canonical function. The
+endpoint-neighborhood radius may still depend on the selected gap;
+uniform endpoint control across all gaps on a common almost-real
+neighborhood remains next. The estimates in Lemma 19.1(iii), later
+frequency results, and the full dissertation remain unfinished.
+
+## Previous milestone: one compatible full spectral primitive
 
 `SourceFullAbelianPrimitive.lean` now defines one spectral abelian
 primitive whose values are independent of the supporting source ball,
