@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the physical Hamiltonian's action derivative now satisfies
-Lemma 20.2's moment formula for real finite-gap Hilbert sources with an
-open selected gap. A fixed contour along the actual action-reduction curve
-justifies the derivative, and the frequency is independent of Birkhoff
-data. The selected closed-gap case remains unfinished. See `STATUS.md`.
+Latest milestone: Lemma 20.2's physical finite-gap Hilbert frequency
+formula now holds at every index, including closed gaps. An explicit
+Birkhoff opening curve identifies the closed frequency with a physical
+second derivative and the limit of open frequencies. The zero potential
+recovers `(2*n*pi)^2`. Next are Lemma 20.3's moment decay estimates;
+general infinite-gap frequencies remain unfinished. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11495,3 +11496,51 @@ physical frequency extension/continuity theorem and a finite-gap opening
 approximation in the required topology. The present physical frequency
 interface is for open actions in the Hilbert source space. The
 dissertation as a whole remains unfinished.
+
+
+## Lemma 20.2 including closed finite-gap actions
+
+`RealActionOpening.lean` opens one zero Birkhoff coordinate with amplitude
+`t`, giving exactly the action `t^2/2`. It also identifies action reduction
+on that ray with its scalar square-root change of amplitude.
+`SourceHilbertGapOpening.lean` pulls this line back through the actual
+global analytic Birkhoff inverse. The source curve is analytic, preserves
+all unselected actions and closed-gap status, and stays in the original
+finite gap support together with the selected index. Every nonzero
+amplitude opens an initially collapsed selected gap.
+
+`SourceFiniteGapOpeningHamiltonian.lean` proves that physical `H3` is
+analytic along any analytic real source curve with fixed finite gap
+support. The proof uses one locally valid physical contour and the
+original source mass. Along the opening line it obtains the exact
+identity `H3'(t)=t*omega_n(t)` for nonzero amplitudes, by comparing with
+the actual action-reduction curve.
+
+`AmplitudeDerivativeLimit.lean` proves the scalar calculus step: an
+analytic physical energy with `H'(a_k)=a_k*omega_k`, where nonzero `a_k`
+tend to zero and `omega_k` converges, has `H'(0)=0` and `H''(0)` equal
+to that frequency limit. `SourceFiniteGapClosedFrequency.lean` applies
+this to the explicit amplitudes `1/(k+1)`. The corresponding sources
+converge in the Hilbert source norm and have fixed finite gap support.
+Continuity of the moment sum and physical mass identifies the limit
+with the physical second amplitude derivative. The closed frequency
+is defined by that derivative, without a moment input.
+
+`SourceFiniteGapLemma20_2.lean` combines the physical first action
+derivative at open gaps and second amplitude derivative at closed gaps.
+For every real finite-gap Hilbert source and every integer index it proves
+`omega_n - 4*H1 - (2*n*pi)^2 = -4/(2*pi)*sum_k Omega_nk^2`.
+The resulting frequency is independent of the chosen Birkhoff data.
+At the all-closed zero source it recovers exactly `(2*n*pi)^2`.
+Thus the physical finite-gap Hilbert version of Lemma 20.2 now covers
+all selected indices. The closed-gap proof uses analyticity of the
+physical energy on the explicit finite-support curve; it does not assume
+a general Sobolev frequency-continuity theorem.
+
+Public checks cover the all-index identity, the physical second-derivative
+definition, convergence of the actual open frequencies to the closed
+frequency, and the nonzero free frequency `4*pi^2` in mode one.
+
+Next: Lemma 20.3's locally uniform second-moment decay estimates on the
+common complex source neighborhood. Frequencies on general infinite-gap
+sources and the rest of the dissertation remain unfinished.

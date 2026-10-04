@@ -28611,3 +28611,60 @@ example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
 
 end
 end PhysicalOpenFrequencyChecks
+
+
+namespace ClosedFrequencyChecks
+open NLS NLS.ZakharovShabat Set Metric Filter Topology Complex
+noncomputable section
+variable {W₀ B W V X : Set (CoeffPair 2)}
+  {s u : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+-- All selected indices are covered, without an open-gap premise.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) X u)
+    (hs : SourcePsiNormalizedComplexExtension (by simp) (by norm_num) V u)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℤ) :
+    D.finiteGapFrequency φ hf n -
+      4*sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1 - (2*(n : ℂ)*Real.pi)^2 =
+        -(4/(2*Real.pi) : ℂ)*(∑' k : ℤ, A.moment n k 2 φ.val) :=
+  D.finiteGap_lemma20_2 A hs φ hf n
+
+-- A closed frequency is a physical second derivative, with no moment input.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n = 0) :
+    D.finiteGapClosedFrequency φ hf n hn = deriv (deriv (fun t : ℝ =>
+      sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) (D.hilbertGapOpening φ n t)
+        (D.hilbertGapOpening_mem_finiteGap φ hf n t) 3)) 0 := rfl
+
+-- The constructed opening sequence has the actual frequency limit at its closed endpoint.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) X u)
+    (hs : SourcePsiNormalizedComplexExtension (by simp) (by norm_num) V u)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n = 0) :
+    Tendsto (fun k : ℕ => D.finiteGapOpenFrequency (D.hilbertGapOpening φ n (1/((k : ℝ)+1)))
+      (D.hilbertGapOpening_mem_finiteGap φ hf n _) n
+      (D.hilbertGapOpening_gap_ne_zero φ n hn _ (by positivity))) atTop
+        (𝓝 (D.finiteGapClosedFrequency φ hf n hn)) :=
+  (D.finiteGapClosedFrequency_eq_limit_and_moments A hs φ hf n hn).2.2
+
+private theorem zeroFiniteGap : (0 : realTypeSourceSubmodule 2) ∈
+    sourceFiniteGapLocus (by simp) (by norm_num) := by
+  change {j : ℤ | canonicalPeriodicGap (by simp) (by norm_num)
+    (periodOnePotential (0 : CoeffPair 2)) (periodOnePotential_mem 0) j ≠ 0}.Finite
+  apply (Set.finite_empty (α := ℤ)).subset
+  intro j hj
+  exact (hj (by simpa only [map_zero] using canonicalPeriodicGap_zero (p := 2) (by simp) (by norm_num) j)).elim
+
+-- The all-closed vacuum still has the correct nonzero frequency in mode one.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    D.finiteGapFrequency 0 zeroFiniteGap 1 = 4*(Real.pi : ℂ)^2 := by
+  rw [D.finiteGapFrequency_zero]
+  norm_num
+  ring
+
+end
+end ClosedFrequencyChecks

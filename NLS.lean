@@ -2356,3 +2356,9 @@ import NLS.ZakharovShabat.SourceAbelianMomentFiniteGapContour
 import NLS.ZakharovShabat.SourceFullAbelianPhysicalContourLocal
 import NLS.ZakharovShabat.SourceHilbertActionReductionFiniteGap
 import NLS.ZakharovShabat.SourceFiniteGapOpenFrequency
+import NLS.SequenceSpaces.RealActionOpening
+import NLS.ZakharovShabat.SourceHilbertGapOpening
+import NLS.ZakharovShabat.SourceFiniteGapOpeningHamiltonian
+import NLS.ComplexAnalysis.AmplitudeDerivativeLimit
+import NLS.ZakharovShabat.SourceFiniteGapClosedFrequency
+import NLS.ZakharovShabat.SourceFiniteGapLemma20_2
