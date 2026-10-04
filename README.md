@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the mixed sequence estimate in Lemma 19.4 is proved
-for the actual primitive on distant complex gaps, locally uniformly near
-every real source. The proof covers all finite `p>1`, including the
-half-exponent range below one. Central gaps and the common almost-real
-neighborhood remain to be assembled. See `STATUS.md`.
+Latest milestone: Lemma 19.4 is proved on one open connected almost-real
+neighborhood, with locally uniform mixed sequence bounds for both sides
+of every gap. The neighborhood works for all auxiliary exponents above
+one, and the theorem includes collapsed gaps and the exact free formula.
+Section 20's moment identities are next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11215,3 +11215,43 @@ Lemma 19.4 is not yet complete. The remaining work is to control
 the finitely many central gaps and assemble the result on an open
 almost-real neighborhood, using the already proved side limits and
 collapsed-gap identities. The dissertation as a whole remains unfinished.
+
+## Lemma 19.4 on one almost-real neighborhood
+
+`SourceFullAbelianCentralGapBound.lean` bounds the Cauchy-quotient
+error on compact inner discs, using joint analyticity and one local
+source restriction. A finite collection of central gaps therefore has
+one bound proportional to each gap length, including collapsed gaps.
+
+`SourceCriticalFactorAllExponents.lean` strengthens the deleted-factor
+estimate by choosing the neighborhood and index threshold before the
+auxiliary exponent. `SourceFullAbelianGapAllExponentTails.lean` preserves
+that quantifier order for the actual primitive error. Only the majorant
+sequences and their common norm bound may depend on `q>1`. The earlier
+fixed-exponent tail theorem is now a corollary of this stronger result.
+
+`SourceFullAbelianAllGapMajorants.lean` absorbs the central gaps into a
+finitely supported nonnegative correction to the auxiliary `l^q`
+majorant. It proves the mixed estimate at every signed index, with no
+remaining tail cutoff, on both sides of every closed complex gap.
+
+`SourceFullAbelianRefinedGapBound.lean` completes Lemma 19.4. One open
+connected almost-real neighborhood supports joint analyticity and,
+locally uniformly at every complex source in that neighborhood,
+`|F_n-i*w_n| <= |gamma_n|*(|Bq_n|+|Bg_n|)`.
+Here `Bq` belongs to any finite `l^q`, `q>1`, and `Bg` belongs to
+`l^(p/2)`; both sequence norms have a common local bound. The ambient
+neighborhood and local source radius are independent of `q`. The theorem
+uses actual limits on both sides of noncollapsed gaps, covers endpoints,
+and uses the actual filled error at collapsed gaps. It also includes
+`F_n(z,0)=i*w_n(z,0)=-i*z+i*pi*n` at every complex frequency.
+
+Public checks specialize the all-index midpoint limits to `p=3/2`,
+retaining a common ball for all auxiliary exponents, and recover the
+free endpoint values without a caller-supplied chart.
+
+Lemma 19.4 is complete. The next step is Section 20: define the moments
+`Omega_nk^(m)` using the actual normalized primitive and normalized
+spectral differential, then prove their normalization, analyticity,
+odd-moment vanishing, and collapsed-gap vanishing in Lemma 20.1.
+The dissertation as a whole remains unfinished.

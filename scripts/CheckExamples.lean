@@ -28158,3 +28158,63 @@ example (φ : CoeffPair 4) (hφ : IsRealType (CoeffPair.toMax 4 φ)) :
     simpa only [mul_comm] using hpoint W C hψC n hn θ hθ upper
 
 end NLS.GapTailMajorantChecks
+
+
+noncomputable section
+namespace NLS.RefinedGapChecks
+open Set Metric Filter Topology ZakharovShabat
+open scoped ENNReal
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem oneLtHalf : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num))
+    (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨oneLtHalf.le⟩
+
+-- All auxiliary exponents use the same local ball at p=3/2. This
+-- checks an actual midpoint limit at every index, including central gaps.
+example : ∃ W U : Set (CoeffPair (3/2)), IsOpen U ∧ realTypeSourceLocus (3/2) ⊆ U ∧
+    ∀ φ ∈ U, ∃ r : ℝ, 0 < r ∧ ball φ r ⊆ U ∧
+      ∀ q : ℝ≥0∞, q ≠ ⊤ → 1 < q → ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ ball φ r,
+        ∃ Bq : Coeff q, ∃ Bg : Coeff (ENNReal.ofReal ((3/2 : ℝ≥0∞).toReal/2)),
+          ‖Bq‖ ≤ M ∧ ‖Bg‖ ≤ M ∧ ∀ j : ℤ, ∀ upper : Bool,
+            ∃ b : ℂ, ‖b‖ ≤ ‖sourcePeriodicGapDisplacement halfFinite oneLtHalf ψ j‖*(‖Bq j‖+‖Bg j‖) ∧
+              (canonicalPeriodicGap halfFinite oneLtHalf (periodOnePotential ψ) (periodOnePotential_mem ψ) j ≠ 0 →
+                Tendsto (fun z => sourceFullAbelianPrimitive halfFinite oneLtHalf W j (z,ψ)-
+                  Complex.I*sourceStandardRoot halfFinite oneLtHalf ψ j z)
+                  (𝓝[sourceAbelianGapSide halfFinite oneLtHalf ψ j upper]
+                    (sourceStandardRootMidpoint halfFinite oneLtHalf ψ j)) (𝓝 b)) := by
+  obtain ⟨W,U,hU,_,hreal,_,_,_,hlocal⟩ :=
+    exists_sourceFullAbelian_almostReal_refinedGapBound halfFinite oneLtHalf
+  refine ⟨W,U,hU,hreal,?_⟩
+  intro φ hφ
+  obtain ⟨r,hr,hsub,hq⟩ := hlocal φ hφ
+  refine ⟨r,hr,hsub,?_⟩
+  intro q hqf hq1
+  obtain ⟨M,hM,hb⟩ := hq q hqf hq1
+  refine ⟨M,hM,?_⟩
+  intro ψ hψ
+  obtain ⟨Bq,Bg,hBq,hBg,hpoint⟩ := hb ψ hψ
+  refine ⟨Bq,Bg,hBq,hBg,?_⟩
+  intro j upper
+  obtain ⟨b,hb,hlim,_⟩ := hpoint j (sourceStandardRootMidpoint halfFinite oneLtHalf ψ j)
+    (sourcePeriodicMidpoint_mem_segment halfFinite oneLtHalf ψ j) upper
+  exact ⟨b,hb,hlim⟩
+
+-- The same assembled theorem supplies the exact free formula without
+-- requiring the caller to construct a chart, even at the free endpoints.
+example : ∃ W : Set (CoeffPair (3/2)), ∀ j : ℤ,
+    sourceFullAbelianPrimitive halfFinite oneLtHalf W j ((Real.pi:ℂ)*j,0) = 0 ∧
+    ∀ z : ℂ, sourceFullAbelianPrimitive halfFinite oneLtHalf W j (z,0)-
+      Complex.I*sourceStandardRoot halfFinite oneLtHalf (0 : CoeffPair (3/2)) j z = 0 := by
+  obtain ⟨W,_,_,_,_,_,_,hfree,_⟩ :=
+    exists_sourceFullAbelian_almostReal_refinedGapBound halfFinite oneLtHalf
+  refine ⟨W,?_⟩
+  intro j
+  constructor
+  · rw [(hfree j _).2]
+    ring
+  · intro z
+    rw [(hfree j z).1,sub_self]
+
+end NLS.RefinedGapChecks

@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: Mixed sequence majorants for the gap error
+## Current milestone: Lemma 19.4 on one almost-real neighborhood
+
+`SourceFullAbelianCentralGapBound.lean` bounds the Cauchy-quotient
+error on compact inner discs, using joint analyticity and one local
+source restriction. A finite collection of central gaps therefore has
+one bound proportional to each gap length, including collapsed gaps.
+
+`SourceCriticalFactorAllExponents.lean` strengthens the deleted-factor
+estimate by choosing the neighborhood and index threshold before the
+auxiliary exponent. `SourceFullAbelianGapAllExponentTails.lean` preserves
+that quantifier order for the actual primitive error. Only the majorant
+sequences and their common norm bound may depend on `q>1`. The earlier
+fixed-exponent tail theorem is now a corollary of this stronger result.
+
+`SourceFullAbelianAllGapMajorants.lean` absorbs the central gaps into a
+finitely supported nonnegative correction to the auxiliary `l^q`
+majorant. It proves the mixed estimate at every signed index, with no
+remaining tail cutoff, on both sides of every closed complex gap.
+
+`SourceFullAbelianRefinedGapBound.lean` completes Lemma 19.4. One open
+connected almost-real neighborhood supports joint analyticity and,
+locally uniformly at every complex source in that neighborhood,
+`|F_n-i*w_n| <= |gamma_n|*(|Bq_n|+|Bg_n|)`.
+Here `Bq` belongs to any finite `l^q`, `q>1`, and `Bg` belongs to
+`l^(p/2)`; both sequence norms have a common local bound. The ambient
+neighborhood and local source radius are independent of `q`. The theorem
+uses actual limits on both sides of noncollapsed gaps, covers endpoints,
+and uses the actual filled error at collapsed gaps. It also includes
+`F_n(z,0)=i*w_n(z,0)=-i*z+i*pi*n` at every complex frequency.
+
+Public checks specialize the all-index midpoint limits to `p=3/2`,
+retaining a common ball for all auxiliary exponents, and recover the
+free endpoint values without a caller-supplied chart.
+
+Lemma 19.4 is complete. The next step is Section 20: define the moments
+`Omega_nk^(m)` using the actual normalized primitive and normalized
+spectral differential, then prove their normalization, analyticity,
+odd-moment vanishing, and collapsed-gap vanishing in Lemma 20.1.
+The dissertation as a whole remains unfinished.
+
+## Previous milestone: Mixed sequence majorants for the gap error
 
 `QuasiHolderProduct.lean` constructs scalar coefficient products for
 any Holder triple and proves the norm bound at all positive finite

@@ -2326,3 +2326,8 @@ import NLS.SequenceSpaces.QuasiHolderProduct
 import NLS.ZakharovShabat.SourceCriticalHalfExponentOffsets
 import NLS.ZakharovShabat.SourceCriticalFactorDiscMajorants
 import NLS.ZakharovShabat.SourceFullAbelianGapTailMajorants
+import NLS.ZakharovShabat.SourceFullAbelianCentralGapBound
+import NLS.ZakharovShabat.SourceCriticalFactorAllExponents
+import NLS.ZakharovShabat.SourceFullAbelianGapAllExponentTails
+import NLS.ZakharovShabat.SourceFullAbelianAllGapMajorants
+import NLS.ZakharovShabat.SourceFullAbelianRefinedGapBound
