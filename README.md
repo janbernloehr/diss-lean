@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual frequency and its refined correction now have
-complex analytic Birkhoff coordinate charts that preserve real sources,
-identify the original actions with quadratic coordinates, and retain
-invariance on real action fibers. One chart works for every admissible
-target exponent. Analytic descent to action space in Theorem 18.1 remains
-next; see `STATUS.md`.
+Latest milestone: quantitative square-root lifts prove that quadratic
+actions are open in the Banach half-exponent norm, including at zero.
+For finite `p >= 2`, the original spectral actions now realize an open
+complex neighborhood containing the entire nonnegative `l1` cone. Analytic descent of the
+frequency in Theorem 18.1 remains next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12195,3 +12194,44 @@ zero coordinates, and construct the complex action neighborhood in
 Theorem 18.1. These charts supply the required coordinate preparation;
 they do not yet prove analytic descent. Corollary 18.2 and the later
 dissertation remain unfinished.
+
+
+## Open action neighborhoods and quantitative square-root lifts
+
+`SourceActionNeighborhood.lean` constructs an open complex neighborhood
+in the Banach half-exponent action space, containing every real spectral
+action value. For finite `p >= 2`, it contains the entire nonnegative
+`l1` cone under its natural inclusion. Every point of the neighborhood
+is realized by the original spectral actions of a source inside any
+prescribed open neighborhood of the real source locus.
+
+The geometric input is quantitative. `NearbySquareRoot.lean` selects a
+root close to any prescribed complex value.
+`SquareRootLifting.lean` lifts this coordinatewise to prove
+`norm(w-a)^2 <= norm(b-a^2)` in the `lp` and `l(p/2)` norms.
+`QuadraticActionLifting.lean` keeps the second coordinate fixed and proves
+`norm(w-z)^2 <= 2*norm(b-Q(z))` for the actual quadratic action map.
+Consequently, an action ball of radius `r^2/2` lifts into a coordinate
+ball of radius `r`. Both squaring and quadratic actions are open
+surjections and topological quotient maps, including at zero.
+
+`SourcePositiveActionRealization.lean` realizes every nonnegative `l1`
+sequence through real square roots and the global Hilbert Birkhoff
+inverse. Exponent compatibility preserves the original actions for
+larger finite source exponents. This does not require global Birkhoff
+surjectivity above exponent two. The inverse charts from the preceding
+milestone transfer the open quadratic images to actual spectral actions.
+
+Public checks cover the sharp square-root bound, arbitrary complex
+coordinate pairs, the all-zero case, Hilbert actions, quotient topology,
+positive-cone realization, and a complex `l2` action neighborhood at `p = 4`.
+
+Validation: the full check script passes (5,875 build jobs, all public
+examples, and an axiom audit of 21,519 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove complex action-fiber invariance and analytic descent of the
+frequency through the quadratic map, including zero coordinates, then
+glue the local descended maps. The geometric action neighborhood is now
+constructed; Theorem 18.1's analytic frequency map on it remains unfinished.
+Corollary 18.2 and the later dissertation also remain unfinished.

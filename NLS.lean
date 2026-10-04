@@ -2440,3 +2440,8 @@ import NLS.ZakharovShabat.SourceActionIsospectralAllExponents
 import NLS.ZakharovShabat.SourceFrequencyActionInvariance
 import NLS.ZakharovShabat.SourceBirkhoffInverseChart
 import NLS.ZakharovShabat.SourceFrequencyBirkhoffChart
+import NLS.ComplexAnalysis.NearbySquareRoot
+import NLS.SequenceSpaces.SquareRootLifting
+import NLS.SequenceSpaces.QuadraticActionLifting
+import NLS.ZakharovShabat.SourcePositiveActionRealization
+import NLS.ZakharovShabat.SourceActionNeighborhood

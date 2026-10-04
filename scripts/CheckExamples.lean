@@ -29859,3 +29859,71 @@ example {W₀ B X W P U : Set (CoeffPair 4)} {s t : (n : ℤ) → CoeffPair 4 �
 
 end
 end FrequencyBirkhoffChartChecks
+
+
+namespace ActionNeighborhoodChecks
+open NLS NLS.ZakharovShabat Set Metric Topology
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := by
+  have he : (4 : ℝ≥0∞)/2 = 2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 4
+
+-- The scalar estimate includes the double root at zero.
+example (b : ℂ) : ∃ w : ℂ, w^2 = b ∧ ‖w‖^2 ≤ ‖b‖ := by
+  simpa using ComplexAnalysis.exists_nearby_squareRoot 0 b
+
+-- Nearby l2 squares have nearby l4 roots, with no lower bound on coordinates.
+example (a : Coeff 4) (b : Coeff 2) :
+    ∃ w : Coeff 4, Coeff.square w = b ∧ ‖w-a‖^2 ≤ ‖b-Coeff.square a‖ :=
+  Coeff.exists_nearby_squareRoot (by simp) a b
+
+-- The l1 Hilbert action case keeps the second coordinate sequence fixed.
+example (z : Coeff 2 × Coeff 2) (b : Coeff 1) :
+    ∃ w : Coeff 2 × Coeff 2, quadraticActions w = b ∧ w.2 = z.2 ∧
+      ‖w-z‖^2 ≤ 2*‖b-quadraticActions z‖ :=
+  exists_nearby_quadraticActions (by simp) z b
+
+-- Openness holds at every complex coordinate pair, not only on the real locus.
+example : IsOpenMap (quadraticActionsExponent (p := 4) (q := 2)) :=
+  isOpenMap_quadraticActionsExponent (by simp)
+
+-- The natural Banach action topology agrees with the quotient topology.
+example (f : Coeff 2 → ℂ) :
+    Continuous f ↔ Continuous (f ∘ Coeff.square (p := 4)) :=
+  Coeff.continuous_iff_comp_square (by simp) f
+
+-- Quantitative openness also covers the all-zero coordinate pair.
+example {r : ℝ} (hr : 0 < r) :
+    ball (quadraticActionsExponent (q := 2) (0 : Coeff 4 × Coeff 4)) (r^2/2) ⊆
+      quadraticActionsExponent '' ball (0 : Coeff 4 × Coeff 4) r :=
+  ball_subset_quadraticActionsExponent_image (by simp) 0 hr
+
+-- A summable nonnegative action sequence has an actual real source at p = 4.
+example (b : RealCoeff 1) (hb : ∀ n, 0 ≤ b n) :
+    ∃ φ : realTypeSourceSubmodule 4,
+      ∀ n, sourceComplexAction (by simp) (by norm_num) n φ.val = (b n : ℂ) :=
+  exists_source_of_nonnegative_actions (by simp) (by norm_num) (by norm_num) b hb
+
+-- Every prescribed open neighborhood of the real p = 4 sources realizes
+-- an open complex l2 action neighborhood of the complete positive l1 cone.
+example (U : Set (CoeffPair 4)) (hU : IsOpen U) (hreal : realTypeSourceLocus 4 ⊆ U) :
+    ∃ V : Set (Coeff 2), IsOpen V ∧
+      (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) →
+        Coeff.exponentInclusion (by norm_num : (1 : ℝ≥0∞) ≤ 2) (RealCoeff.complexCLM 1 b) ∈ V) ∧
+      ∀ a ∈ V, ∃ ψ ∈ U, ∀ n, sourceComplexAction (by simp) (by norm_num) n ψ = a n :=
+  exists_sourceAction_neighborhood_positiveCone (by simp) (by norm_num) (by norm_num) U hU hreal
+
+-- One inverse chart gives an open action image containing its original center.
+example {W₀ B W U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s}
+    {φ : realTypeSourceSubmodule 4} (C : SourceBirkhoffInverseChart D φ U) :
+    IsOpen (C.actionTarget (q := 2)) ∧
+      sourceActionSequence (q := 2) (by simp) (by norm_num) s φ.val ∈ C.actionTarget :=
+  ⟨C.actionTarget_open,C.action_center_mem⟩
+
+end
+end ActionNeighborhoodChecks
