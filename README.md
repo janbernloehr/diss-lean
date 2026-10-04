@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: one source radius now controls the exact endpoint
-normalization for every gap and every primitive index simultaneously.
-The limits hold on the full spectral domain, and filled collapsed
-endpoints have the exact prescribed values. Uniform gap-size estimates
-are next.
+Latest milestone: Lemma 19.1(iii)'s uniform gap-size bound now holds for
+both actual boundary limits of the canonical full primitive, throughout
+an open connected almost-real neighborhood. One local constant controls
+all sufficiently large signed gaps; collapsed values are zero.
+The square continuation in Lemma 19.1(iv) is next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -10761,3 +10761,39 @@ uniform gap-size bounds in (iii) are next. Further square-continuation
 results, later frequency results, and the full dissertation remain
 unfinished. Joint analyticity at filled collapsed endpoints is not
 asserted by these off-cut joint-domain theorems.
+
+## Uniform gap bounds for the full primitive
+
+`SourceFullAbelianUniformGapBound.lean` proves the gap-size estimate of
+Lemma 19.1(iii) for the canonical full primitive. On one open connected
+neighborhood of the real-source locus, every complex base source has a
+positive source radius, one tail cutoff, and one positive constant.
+These control both boundary values at every point of every sufficiently
+large signed gap by that gap's length. Noncollapsed values are limits
+from the actual oriented half-planes; collapsed values are values of the
+filled function and equal zero. The same primitive remains jointly
+analytic off the moving cuts on this neighborhood.
+
+`SourceCriticalRootRatioUniformTailBound.lean` bounds the regular deleted
+factor using the uniform product estimate, critical displacement norms,
+and squared-gap row estimates. `SourceCriticalRootGapUniformBound.lean`
+combines it with the squared-gap critical offset to bound the regular
+numerator linearly in the gap length. The constants are derived from
+existing source estimates, not assumed as new hypotheses.
+
+`QuadraticPrimitiveGapBound.lean` proves a general cosine-coordinate
+estimate for a quadratic-root primitive. Its sine-weighted Cauchy
+quotient has derivative equal to the regular numerator, so the mean
+value estimate gives a factor of pi. `SourceFullAbelianGapBoundary.lean`
+identifies the resulting profiles with the two limits of the actual
+canonical primitive, proves that the profiles are opposites, and covers
+the entire closed gap, including both endpoints and collapsed gaps.
+
+Public checks specialize the result to exponent 3/2 and all sufficiently
+large negative gap indices, obtain both opposite side limits, verify the
+uniform estimate around arbitrary complex base sources, and check the
+zero filled value at a collapsed complex gap of index -2.
+
+The next step is the square continuation in Lemma 19.1(iv). The later
+frequency results and the full dissertation remain unfinished. Joint
+analyticity at filled collapsed endpoints is not asserted here.

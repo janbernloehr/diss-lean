@@ -2276,3 +2276,9 @@ import NLS.ZakharovShabat.SourceFullAbelianCauchyPrimitive
 import NLS.ZakharovShabat.SourceFullAbelianUniformCauchyFamily
 import NLS.ZakharovShabat.SourceFullAbelianUniformNormalization
 import NLS.ZakharovShabat.SourceFullAbelianUniformEndpoints
+
+import NLS.ComplexAnalysis.QuadraticPrimitiveGapBound
+import NLS.ZakharovShabat.SourceCriticalRootRatioUniformTailBound
+import NLS.ZakharovShabat.SourceCriticalRootGapUniformBound
+import NLS.ZakharovShabat.SourceFullAbelianGapBoundary
+import NLS.ZakharovShabat.SourceFullAbelianUniformGapBound

@@ -27431,3 +27431,69 @@ example : ∃ W V : Set (CoeffPair 3), IsOpen V ∧ IsConnected V ∧ realTypeSo
   exact ⟨W,V,hV,hconn,hreal,hjoint⟩
 
 end NLS.FullAbelianUniformEndpointChecks
+
+
+noncomputable section
+namespace NLS.FullAbelianUniformGapChecks
+open Set Metric Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- One bound controls both actual side limits on every distant negative
+-- gap, at every point of the segment, for nearby complex sources.
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2))) :
+    ∃ (W V : Set (CoeffPair (ENNReal.ofReal (3/2)))) (K : ℕ) (B : ℝ),
+      IsOpen V ∧ φ.val ∈ V ∧ 0 < B ∧
+      ∀ ψ ∈ V, ∀ k : ℕ, K ≤ k →
+        canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-(k:ℤ)) ≠ 0 →
+        ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ (-(k:ℤ)),
+          ∃ b : ℂ, ‖b‖ ≤ B*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ (-(k:ℤ))‖ ∧
+            Tendsto (fun w => sourceFullAbelianPrimitive (by simp) (by norm_num) W (-(k:ℤ)) (w,ψ))
+              (𝓝[sourceAbelianGapSide (by simp) (by norm_num) ψ (-(k:ℤ)) true] z) (𝓝 b) ∧
+            Tendsto (fun w => sourceFullAbelianPrimitive (by simp) (by norm_num) W (-(k:ℤ)) (w,ψ))
+              (𝓝[sourceAbelianGapSide (by simp) (by norm_num) ψ (-(k:ℤ)) false] z) (𝓝 (-b)) := by
+  obtain ⟨W,_,_,hall⟩ := exists_sourceFullAbelian_local_uniform_gap_bound
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  obtain ⟨C,V,hV,hφ,hsub,K,B,hB,hb⟩ := hall φ
+  refine ⟨W,V,K,B,hV,hφ,hB,?_⟩
+  intro ψ hψ k hk hgap z hz
+  obtain ⟨θ,hθ,rfl⟩ := exists_sourcePeriodicSegment_cosine_parameter (by simp) (by norm_num) ψ (-(k:ℤ)) z hz
+  have hj : K ≤ (-(k:ℤ)).natAbs := by simpa using hk
+  have hu := hb ψ hψ (-(k:ℤ)) hj θ hθ true
+  have hl := C.fullPrimitive_tendsto_gapBoundary (-(k:ℤ)) ψ (hsub hψ) hgap θ hθ false
+  rw [C.gapBoundary_lower_eq_neg_upper] at hl
+  exact ⟨C.gapBoundary (-(k:ℤ)) ψ θ true,hu.1,hu.2 hgap,hl⟩
+
+-- The global estimate applies at complex base points, uniformly for
+-- every point of every distant signed gap and either side.
+example : ∃ W U : Set (CoeffPair 3), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 3 ⊆ U ∧
+    ∀ φ ∈ U, ∃ r : ℝ, 0 < r ∧ ∃ K : ℕ, ∃ B : ℝ, 0 < B ∧
+      ∀ ψ ∈ ball φ r, ∀ j : ℤ, K ≤ j.natAbs →
+        ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ j, ∀ upper : Bool,
+          canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) j ≠ 0 →
+          ∃ b : ℂ, ‖b‖ ≤ B*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ j‖ ∧
+            Tendsto (fun w => sourceFullAbelianPrimitive (by simp) (by norm_num) W j (w,ψ))
+              (𝓝[sourceAbelianGapSide (by simp) (by norm_num) ψ j upper] z) (𝓝 b) := by
+  obtain ⟨W,U,hU,hconn,hreal,_,_,hall⟩ := exists_sourceFullAbelian_almostReal_uniformGapBound
+    (p := 3) (by simp) (by norm_num)
+  refine ⟨W,U,hU,hconn,hreal,?_⟩
+  intro φ hφ
+  obtain ⟨r,hr,_,K,B,hB,hb⟩ := hall φ hφ
+  refine ⟨r,hr,K,B,hB,?_⟩
+  intro ψ hψ j hj z hz upper hgap
+  obtain ⟨b,hbound,hlim,_⟩ := hb ψ hψ j hj z hz upper
+  exact ⟨b,hbound,hlim hgap⟩
+
+-- A collapsed complex gap has zero filled value and zero profile.
+example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-2) = 0)
+    (θ : ℝ) (upper : Bool) :
+    sourceFullAbelianPrimitive (by simp) (by norm_num) W (-2)
+      (sourceStandardRootMidpoint (by simp) (by norm_num) ψ (-2)+
+        sourceStandardRootHalfGap (by simp) (by norm_num) ψ (-2)*(Real.cos θ:ℂ),ψ) = 0 := by
+  rw [C.fullPrimitive_eq_gapBoundary_of_collapsed (-2) ψ hψ hgap θ upper,
+    C.gapBoundary_eq_zero_of_collapsed (-2) ψ hgap θ upper]
+
+end NLS.FullAbelianUniformGapChecks
