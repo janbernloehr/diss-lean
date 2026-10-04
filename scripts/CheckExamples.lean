@@ -27917,3 +27917,41 @@ example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
   simpa only [he] using hbound r hr
 
 end NLS.HamiltonianDiscriminantChecks
+
+
+noncomputable section
+namespace NLS.HamiltonianCoefficientChecks
+open Set Complex Filter Topology ZakharovShabat NLS.ComplexAnalysis
+open scoped ContDiff
+
+-- A cubic bound on sparse samples determines the first three Taylor
+-- derivatives without a bound in all complex directions.
+example (f : ℂ → ℂ) (hf : AnalyticAt ℂ f 0) (w : ℕ → ℂ)
+    (hw : Tendsto w atTop (𝓝 0)) (hw0 : ∀ᶠ j in atTop, w j ≠ 0)
+    (C : ℝ) (hb : ∀ᶠ j in atTop, ‖f (w j)‖ ≤ C*‖w j‖^3) :
+    f 0 = 0 ∧ deriv f 0 = 0 ∧ iteratedDeriv 2 f 0 = 0 := by
+  have h := iteratedDeriv_eq_zero_of_sampled_bound f hf w hw hw0 3 C hb
+  exact ⟨by simpa using h 0 (by norm_num),by simpa using h 1 (by norm_num),h 2 (by norm_num)⟩
+
+-- The third recovered coefficient has the physical energy density and
+-- the correct factorial and factor of eight.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1)
+    (A : ℂ → ℂ) (hA : AnalyticAt ℂ A 0) (hA0 : A 0 = 0)
+    (he : ∀ᶠ r : ℝ in atTop,
+      2*cosh (-Complex.I*(r : ℂ)+A (r : ℂ)⁻¹) =
+        classicalDiscriminant (classicalPotentialOfFunctions a b ha.continuous hb.continuous) r) :
+    iteratedDeriv 3 A 0 = (3*Complex.I/4)*
+      (∫ x in (0 : ℝ)..1, deriv a x*deriv b x+(a x)^2*(b x)^2) := by
+  have h := iteratedDeriv_nlsHamiltonian_of_discriminant a b ha hb hpa hpb A hA hA0 he 2
+  norm_num only [Nat.reduceAdd,Nat.factorial] at h
+  rw [classicalNLSHamiltonian_three a b ha hb hpa hpb] at h
+  convert h using 1
+  ring
+
+-- The empty phase correction is zero, independently of potential regularity.
+example (a b : ℝ → ℂ) (z : ℂ) : nlsHamiltonianPhase a b 0 z = -Complex.I*z := by
+  rw [nlsHamiltonianPhase_eq_correction]
+  simp [nlsHamiltonianCorrection]
+
+end NLS.HamiltonianCoefficientChecks

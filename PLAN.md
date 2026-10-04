@@ -1,6 +1,45 @@
 # Implementation plan
 
-## Latest progress: actual monodromy and Hamiltonian discriminant asymptotics
+## Latest progress: Hamiltonian coefficient identification from the discriminant
+
+`LocalSinhComparison.lean` proves a quantitative local inverse estimate
+for complex hyperbolic sine. At real zeros of cosine, the discriminant
+error therefore controls the small phase error with no inverse-branch
+choice. `SampledAnalyticOrder.lean` proves that a bound along any nonzero
+sequence tending to zero forces the corresponding analytic vanishing
+order and vanishing Taylor derivatives.
+
+`NLSHamiltonianPhasePolynomial.lean` expresses the finite Hamiltonian
+phase as a polynomial in inverse frequency and computes every Taylor
+coefficient. `NLSHamiltonianPrimitiveCoefficients.lean` combines the
+actual classical discriminant estimate with the sequence
+`pi*(j+1/2)`. For a normalized analytic inversion phase `A` satisfying
+the exact discriminant identity, it proves
+`A^(k+1)(0) = (k+1)! * i*H_(k+1)/2^(k+1)` for every `k`.
+The resulting Hamiltonian series converges near zero, and the Laurent
+series converges in every complex direction outside a sufficiently
+large disc. No higher coefficient or asymptotic estimate for the
+primitive is assumed.
+
+`SourceFullAbelianHamiltonianReduction.lean` proves the exact identity
+`2*cosh(F_0) = Delta` for the actual real-source primitive throughout
+the open-gap complement, including filled collapsed endpoints. It then
+uses the established finite-gap inversion remainder to obtain the
+Hamiltonian Laurent series for every normalization index whenever a
+smooth periodic classical potential with the same discriminant is
+supplied. This last realization hypothesis is explicit.
+
+Public checks cover Taylor derivatives detected from sparse samples,
+the third coefficient expressed through the physical energy integral,
+and the empty phase correction.
+
+The next step is to construct the required smooth periodic physical
+realization from finite-gap Sobolev regularity and prove its discriminant
+agreement. This will discharge the remaining realization hypothesis;
+Lemma 19.2 in its full source formulation and the dissertation remain
+unfinished.
+
+## Previous milestone: actual monodromy and Hamiltonian discriminant asymptotics
 
 `NLSWKBComparison.lean` compares the finite Hamiltonian approximation
 with the actual initial-value solution having the same initial vector.

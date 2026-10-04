@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual classical discriminant now has all-order
-real-axis asymptotics with the physical NLS Hamiltonians. This follows
-from uniform comparison with the true fundamental solution and the
-monodromy's determinant-one identity. Transferring the result to
-finite-gap sources and identifying the primitive's higher Laurent
-coefficients remains next. See `STATUS.md`.
+Latest milestone: the discriminant asymptotics now identify every
+Hamiltonian Laurent coefficient and prove convergence. The actual
+finite-gap primitive is reduced to this result whenever a smooth
+periodic classical realization with the same discriminant is supplied.
+Constructing that realization is the remaining step. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11032,3 +11031,42 @@ now proved. The next steps are to connect smooth physical representatives
 to the finite-gap source and extract the normalized primitive's Laurent
 coefficients from these asymptotics. The full lemma and dissertation
 remain unfinished.
+
+## Hamiltonian coefficient identification from the discriminant
+
+`LocalSinhComparison.lean` proves a quantitative local inverse estimate
+for complex hyperbolic sine. At real zeros of cosine, the discriminant
+error therefore controls the small phase error with no inverse-branch
+choice. `SampledAnalyticOrder.lean` proves that a bound along any nonzero
+sequence tending to zero forces the corresponding analytic vanishing
+order and vanishing Taylor derivatives.
+
+`NLSHamiltonianPhasePolynomial.lean` expresses the finite Hamiltonian
+phase as a polynomial in inverse frequency and computes every Taylor
+coefficient. `NLSHamiltonianPrimitiveCoefficients.lean` combines the
+actual classical discriminant estimate with the sequence
+`pi*(j+1/2)`. For a normalized analytic inversion phase `A` satisfying
+the exact discriminant identity, it proves
+`A^(k+1)(0) = (k+1)! * i*H_(k+1)/2^(k+1)` for every `k`.
+The resulting Hamiltonian series converges near zero, and the Laurent
+series converges in every complex direction outside a sufficiently
+large disc. No higher coefficient or asymptotic estimate for the
+primitive is assumed.
+
+`SourceFullAbelianHamiltonianReduction.lean` proves the exact identity
+`2*cosh(F_0) = Delta` for the actual real-source primitive throughout
+the open-gap complement, including filled collapsed endpoints. It then
+uses the established finite-gap inversion remainder to obtain the
+Hamiltonian Laurent series for every normalization index whenever a
+smooth periodic classical potential with the same discriminant is
+supplied. This last realization hypothesis is explicit.
+
+Public checks cover Taylor derivatives detected from sparse samples,
+the third coefficient expressed through the physical energy integral,
+and the empty phase correction.
+
+The next step is to construct the required smooth periodic physical
+realization from finite-gap Sobolev regularity and prove its discriminant
+agreement. This will discharge the remaining realization hypothesis;
+Lemma 19.2 in its full source formulation and the dissertation remain
+unfinished.

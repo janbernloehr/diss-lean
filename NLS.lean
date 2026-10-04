@@ -2307,3 +2307,8 @@ import NLS.ZakharovShabat.NLSWKBCarrierBounds
 import NLS.ZakharovShabat.NLSWKBComparison
 import NLS.ComplexAnalysis.UnimodularTraceError
 import NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics
+import NLS.ComplexAnalysis.LocalSinhComparison
+import NLS.ComplexAnalysis.SampledAnalyticOrder
+import NLS.ZakharovShabat.NLSHamiltonianPhasePolynomial
+import NLS.ZakharovShabat.NLSHamiltonianPrimitiveCoefficients
+import NLS.ZakharovShabat.SourceFullAbelianHamiltonianReduction
