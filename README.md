@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: one fixed Hilbert action-frequency map now has compatible
-analytic extensions at every finite source exponent above two. The maps
-agree on the whole nonnegative l1 cone and retain analytic refined
-corrections on their common domains. The locally uniform mixed-remainder
-statement of Theorem 18.1 remains next; see `STATUS.md`.
+Latest milestone: Theorem 18.1's compatible analytic extensions and
+locally uniform mixed remainder are now assembled. A single neighborhood
+and decomposition serve all auxiliary exponents, including when `p/3 < 1`.
+Corollary 18.2 is next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12976,3 +12975,51 @@ the fixed `l(p/3) + l(1+)` remainder required by Theorem 18.1, including the
 range `2 < p <= 3`. The analytic extensions and their exponent compatibility
 are proved; these uniform mixed bounds, Corollary 18.2, and the later
 dissertation remain unfinished.
+
+## Theorem 18.1 locally uniform action remainder
+
+The analytic extension and locally uniform mixed asymptotic assertions of
+Theorem 18.1 are now assembled in `exists_sourceFrequency_theorem18_1`.
+One fixed Hilbert action frequency has compatible analytic extensions for
+every finite `p > 2`. At every complex point of the extension domain,
+`F(b)_n + 2*b_n` has one `l(p/3) + l(1+)` decomposition on one open
+neighborhood. Both components and the neighborhood are chosen before all
+auxiliary projection exponents. This includes the quasi-normed range
+`2 < p < 3`.
+
+`SourceActionCorrectionBounds.lean` records the common source neighborhood
+for all refined target bounds. Stronger Birkhoff-chart, tail-action,
+tail-sum, and full-action descent interfaces retain this property; the
+previous interfaces remain available as wrappers. The action balls are
+shrunk into the image of the bounded source neighborhood, so every complex
+action on a ball has a source lift satisfying the same family of bounds.
+
+`BoundedRealActionBallGluing.lean` preserves those bounds through analytic
+gluing. `SourceFrequencyBoundedActionSpaceMaps.lean` constructs one action
+ball cover before all target exponents. `SourceFrequencyActionSpaceAsymptotic.lean`
+then applies the refined sequence decomposition on each ball, obtaining
+fixed components with all their uniform bounds. The domain remains the
+actual action image of an open source neighborhood containing all real
+sources and contains the entire nonnegative summable action cone.
+
+`SourceFrequencyTheorem18_1.lean` combines the mixed remainder with the
+previous fixed Hilbert frequency and cross-exponent compatibility. The
+maps have complex coefficients and are analytic over both complex and
+real scalars. This does not assert a separately constructed RealCoeff-valued
+frequency map, nor a Frechet-analytic structure on `CoeffOnePlus`.
+
+Public examples specialize the assembled theorem at `p = 5/2` and `p = 6`,
+with action exponents `5/4` and `3` and remainder exponents `5/6` and `2`.
+They retain one neighborhood and both components before every finite
+projection exponent above one.
+
+Validation: the full build passes (5951 jobs), all public examples pass,
+and the transitive axiom audit passes for 21960 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: Corollary 18.2, starting with the derivative at zero and the local
+inverse theorem. The compactness argument will use the refined derivative
+target and Pitt's theorem, as in the dissertation. Compactness of the
+corrected derivative, Fredholm index zero, generic local invertibility,
+and the later dissertation remain unfinished. A separate real-coordinate
+range assertion for the frequency also remains to be exposed.

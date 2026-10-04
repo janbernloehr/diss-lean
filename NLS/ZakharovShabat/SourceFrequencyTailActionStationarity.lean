@@ -18,10 +18,11 @@ variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p 
 /-- The actual frequency and correction have analytic descents whose
 full derivatives annihilate every action-preserving tail redistribution.
 The retained head contains no zero coordinate pairs. -/
-theorem exists_sourceFrequency_normalizedTailActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
+theorem exists_sourceFrequency_boundedTailActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
     ∃ W : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
     ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
     ∃ P : Set (CoeffPair p), SourcePsiIsolatingComplexExtension hp hp1 P s ∧
+    A.HasLocallyUniformActionCorrectionBounds ∧
     ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
     ∃ D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t,
     ∃ U : Set (CoeffPair p), IsOpen U ∧ realTypeSourceLocus p ⊆ U ∧
@@ -58,8 +59,8 @@ theorem exists_sourceFrequency_normalizedTailActionDescent (hp : p ≠ ⊤) (hp1
             fderiv ℂ G b (-v,v) = 0) ∧
           ∀ z ∈ V, G (Q z) = A.actionFrequencyCorrectionSequence r (C.inverse z) ∧
             ∀ n, G (Q z) n = A.renormalizedFrequency n (C.inverse z)+z.1 n^2+z.2 n^2) := by
-  obtain ⟨W,P,s,A,hs,W₀,B,X,t,D,U,hU,hreal,_,hcharts⟩ := exists_sourceFrequency_birkhoffCharts hp hp1
-  refine ⟨W,s,A,P,hs,W₀,B,X,t,D,U,hU,hreal,?_⟩
+  obtain ⟨W,P,s,A,hs,hbounds,W₀,B,X,t,D,U,hU,hreal,_,hcharts⟩ := exists_sourceFrequency_boundedBirkhoffCharts hp hp1
+  refine ⟨W,s,A,P,hs,hbounds,W₀,B,X,t,D,U,hU,hreal,?_⟩
   intro φ
   obtain ⟨C,hfreq,hcorr,_⟩ := hcharts φ
   obtain ⟨S,R,hR,hbase,hball,hhead⟩ := Coeff.exists_nonzeroFiniteCenter_ball hp C.target C.target_open _ C.center_mem
@@ -127,6 +128,50 @@ theorem exists_sourceFrequency_normalizedTailActionDescent (hp : p ≠ ⊤) (hp1
       intro n
       rw [hrec]
       exact he z (hball hz) n
+
+/-- The normalized descent interface, omitting the retained uniform source bounds. -/
+theorem exists_sourceFrequency_normalizedTailActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
+    ∃ P : Set (CoeffPair p), SourcePsiIsolatingComplexExtension hp hp1 P s ∧
+    ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    ∃ D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t,
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ realTypeSourceLocus p ⊆ U ∧
+      ∀ φ : realTypeSourceSubmodule p, ∃ C : SourceBirkhoffInverseChart D φ U,
+        ∃ S : Finset ℤ, ∃ R : ℝ,
+        let c := Coeff.truncatePair S (sourceBirkhoffMap hp hp1 t φ.val)
+        let V := ball c R
+        let Q := Coeff.pairMixedSquare (q := q) S
+        0 < R ∧ sourceBirkhoffMap hp hp1 t φ.val ∈ V ∧ V ⊆ C.target ∧
+        IsOpen (Q '' V) ∧ Q (sourceBirkhoffMap hp hp1 t φ.val) ∈ Q '' V ∧
+        (∀ k ∈ S, (sourceBirkhoffMap hp hp1 t φ.val).1 k ≠ 0 ∨
+          (sourceBirkhoffMap hp hp1 t φ.val).2 k ≠ 0) ∧
+        (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/2) ≤ r →
+          let G := Coeff.tailSquareDescent (q := q) S (A.frequencySequence r ∘ C.inverse) V
+          AnalyticOnNhd ℂ (A.frequencySequence r ∘ C.inverse) V ∧
+          (∀ z ∈ V, ∀ k, fderiv ℂ (A.frequencySequence r ∘ C.inverse) z
+            (Coeff.actionRotationVectorCLM p k z) = 0) ∧
+          AnalyticOnNhd ℂ G (Q '' V) ∧
+          (∀ b ∈ Q '' V, ∀ k ∉ S,
+            fderiv ℂ G b (Coeff.actionSplitDirection q k) = 0) ∧
+          (∀ b ∈ Q '' V, ∀ v : Coeff q, (∀ k ∈ S, v k = 0) →
+            fderiv ℂ G b (-v,v) = 0) ∧
+          ∀ z ∈ V, G (Q z) = A.frequencySequence r (C.inverse z) ∧
+            ∀ n, G (Q z) n = A.renormalizedFrequency n (C.inverse z)) ∧
+        (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/3) ≤ r →
+          let G := Coeff.tailSquareDescent (q := q) S (A.actionFrequencyCorrectionSequence r ∘ C.inverse) V
+          AnalyticOnNhd ℂ (A.actionFrequencyCorrectionSequence r ∘ C.inverse) V ∧
+          (∀ z ∈ V, ∀ k, fderiv ℂ (A.actionFrequencyCorrectionSequence r ∘ C.inverse) z
+            (Coeff.actionRotationVectorCLM p k z) = 0) ∧
+          AnalyticOnNhd ℂ G (Q '' V) ∧
+          (∀ b ∈ Q '' V, ∀ k ∉ S,
+            fderiv ℂ G b (Coeff.actionSplitDirection q k) = 0) ∧
+          (∀ b ∈ Q '' V, ∀ v : Coeff q, (∀ k ∈ S, v k = 0) →
+            fderiv ℂ G b (-v,v) = 0) ∧
+          ∀ z ∈ V, G (Q z) = A.actionFrequencyCorrectionSequence r (C.inverse z) ∧
+            ∀ n, G (Q z) n = A.renormalizedFrequency n (C.inverse z)+z.1 n^2+z.2 n^2) := by
+  obtain ⟨W,s,A,P,hs,hbounds,hrest⟩ := exists_sourceFrequency_boundedTailActionDescent (q := q) hp hp1
+  exact ⟨W,s,A,P,hs,hrest⟩
 
 /-- The original local descent interface, with the normalization witness omitted. -/
 theorem exists_sourceFrequency_nonzeroHeadTailActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :

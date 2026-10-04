@@ -17,10 +17,11 @@ variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderTriple p 
 set_option maxHeartbeats 800000 in
 /-- The actual frequency and refined correction have local analytic
 factors through the full quadratic action sequence, with exact recovery. -/
-theorem exists_sourceFrequency_normalizedLocalActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
+theorem exists_sourceFrequency_boundedLocalActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
     ∃ W : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
     ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
     ∃ P : Set (CoeffPair p), SourcePsiIsolatingComplexExtension hp hp1 P s ∧
+    A.HasLocallyUniformActionCorrectionBounds ∧
     ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
     ∃ D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t,
     ∃ U : Set (CoeffPair p), IsOpen U ∧ realTypeSourceLocus p ⊆ U ∧
@@ -46,9 +47,9 @@ theorem exists_sourceFrequency_normalizedLocalActionDescent (hp : p ≠ ⊤) (hp
           ∀ z ∈ Z, K.factor G (quadraticActionsExponent z) = A.actionFrequencyCorrectionSequence r (C.inverse z) ∧
             ∀ n, K.factor G (quadraticActionsExponent z) n =
               A.renormalizedFrequency n (C.inverse z)+z.1 n^2+z.2 n^2) := by
-  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,U,hU,hreal,hcharts⟩ :=
-    exists_sourceFrequency_normalizedLocalTailSumDescent (q := q) hp hp1
-  refine ⟨W,s,A,P,hs,W₀,B,X,t,D,U,hU,hreal,?_⟩
+  obtain ⟨W,s,A,P,hs,hbounds,W₀,B,X,t,D,U,hU,hreal,hcharts⟩ :=
+    exists_sourceFrequency_boundedLocalTailSumDescent (q := q) hp hp1
+  refine ⟨W,s,A,P,hs,hbounds,W₀,B,X,t,D,U,hU,hreal,?_⟩
   intro φ
   obtain ⟨C,S,R,L,hR,hball,hZ,hbase,hhead,hmap,hfreq,hcorr⟩ := hcharts φ
   let z₀ := sourceBirkhoffMap hp hp1 t φ.val
@@ -94,6 +95,39 @@ theorem exists_sourceFrequency_normalizedLocalActionDescent (hp : p ≠ ⊤) (hp
     rw [Coeff.headActions_tailSum_mixedSquare] at hrec
     obtain ⟨hs,hn⟩ := he z hz.1
     exact ⟨hrec.trans hs,fun n => (congrArg (fun b : Coeff r => b n) hrec).trans (hn n)⟩
+
+/-- The normalized descent interface, omitting the retained uniform source bounds. -/
+theorem exists_sourceFrequency_normalizedLocalActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
+    ∃ P : Set (CoeffPair p), SourcePsiIsolatingComplexExtension hp hp1 P s ∧
+    ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+    ∃ D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t,
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ realTypeSourceLocus p ⊆ U ∧
+      ∀ φ : realTypeSourceSubmodule p, ∃ C : SourceBirkhoffInverseChart D φ U,
+        ∃ S : Finset ℤ, ∃ R : ℝ,
+        let z₀ := sourceBirkhoffMap hp hp1 t φ.val
+        let V := ball (Coeff.truncatePair S z₀) R
+        let Q := Coeff.pairMixedSquare (p := p) (q := q) S
+        ∃ L : Coeff.TailSumChart S (Q '' V) (Q z₀),
+        ∃ K : Coeff.HeadActionChart S L.target (Coeff.tailSumCLM S (Q z₀)),
+        let Z := (V ∩ Q ⁻¹' L.source) ∩ (fun z => Coeff.tailSumCLM S (Q z)) ⁻¹' K.source
+        0 < R ∧ V ⊆ C.target ∧ IsOpen Z ∧ z₀ ∈ Z ∧
+        quadraticActionsExponent (q := q) '' Z = K.target ∧
+        (∀ z ∈ Z, quadraticActionsExponent (q := q) z ∈ K.target) ∧
+        (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/2) ≤ r →
+          let G := L.factor (Coeff.tailSquareDescent (q := q) S (A.frequencySequence r ∘ C.inverse) V)
+          AnalyticOnNhd ℂ (K.factor G) K.target ∧
+          ∀ z ∈ Z, K.factor G (quadraticActionsExponent z) = A.frequencySequence r (C.inverse z) ∧
+            ∀ n, K.factor G (quadraticActionsExponent z) n = A.renormalizedFrequency n (C.inverse z)) ∧
+        (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/3) ≤ r →
+          let G := L.factor (Coeff.tailSquareDescent (q := q) S (A.actionFrequencyCorrectionSequence r ∘ C.inverse) V)
+          AnalyticOnNhd ℂ (K.factor G) K.target ∧
+          ∀ z ∈ Z, K.factor G (quadraticActionsExponent z) = A.actionFrequencyCorrectionSequence r (C.inverse z) ∧
+            ∀ n, K.factor G (quadraticActionsExponent z) n =
+              A.renormalizedFrequency n (C.inverse z)+z.1 n^2+z.2 n^2) := by
+  obtain ⟨W,s,A,P,hs,hbounds,hrest⟩ := exists_sourceFrequency_boundedLocalActionDescent (q := q) hp hp1
+  exact ⟨W,s,A,P,hs,hrest⟩
 
 /-- The original local descent interface, with the normalization witness omitted. -/
 theorem exists_sourceFrequency_localActionDescent (hp : p ≠ ⊤) (hp1 : 1 < p) :

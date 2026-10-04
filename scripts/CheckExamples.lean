@@ -31331,3 +31331,78 @@ example :
 
 end
 end ActionExtensionCompatibilityChecks
+
+
+
+namespace Theorem18_1Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (5/2 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : Fact (1 ≤ (5/4 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : (5/2 : ℝ≥0∞).HolderTriple (5/2) (5/4) := by
+  have he : (5/2 : ℝ≥0∞)/2 = 5/4 := by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half (5/2)
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The quasi-normed remainder exponent is below one.
+-- One neighborhood and both components precede all projection exponents.
+example : ∃ V : Set (Coeff (5/4)), ∃ F : Coeff (5/4) → Coeff (5/4),
+    IsOpen V ∧
+    (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) →
+      Coeff.exponentInclusion (Fact.out : (1 : ℝ≥0∞) ≤ 5/4) (RealCoeff.complexCLM 1 b) ∈ V) ∧
+    AnalyticOnNhd ℂ F V ∧
+    ∀ b ∈ V, ∃ T : Set (Coeff (5/4)), IsOpen T ∧ b ∈ T ∧ T ⊆ V ∧
+      ∃ g : Coeff (5/4) → Coeff (5/6), ∃ h : Coeff (5/4) → CoeffOnePlus,
+        (∀ c ∈ T, ∀ n, F c n+2*c n = g c n+(h c).1 n) ∧
+        (∃ M : ℝ, 0 ≤ M ∧ ∀ c ∈ T, ‖g c‖ ≤ M) ∧
+        ∀ (u : ℝ≥0∞) (hu1 : 1 < u) (hu : u ≠ ⊤),
+          ∃ M : ℝ, 0 ≤ M ∧ ∀ c ∈ T, ‖CoeffOnePlus.toCoeff u hu1 hu (h c)‖ ≤ M := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V₁,ωstar,_,_,_,_,hext⟩ := exists_sourceFrequency_theorem18_1
+  have hp : (2 : ℝ≥0∞) < 5/2 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨V,hV,hpos,_,F,hF,_,_,_,hlocal⟩ := hext (5/2) (5/4) (by finiteness) hp
+  refine ⟨V,F,hV,hpos,hF,?_⟩
+  have he : ENNReal.ofReal ((5/2 : ℝ≥0∞).toReal/3) = (5/6 : ℝ≥0∞) := by
+    apply (ENNReal.toReal_eq_toReal_iff' ENNReal.ofReal_ne_top (by finiteness)).mp
+    norm_num
+  rw [he] at hlocal
+  exact hlocal
+
+-- The Banach remainder exponent is above one.
+-- One neighborhood and both components precede all projection exponents.
+example : ∃ V : Set (Coeff (3)), ∃ F : Coeff (3) → Coeff (3),
+    IsOpen V ∧
+    (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) →
+      Coeff.exponentInclusion (Fact.out : (1 : ℝ≥0∞) ≤ 3) (RealCoeff.complexCLM 1 b) ∈ V) ∧
+    AnalyticOnNhd ℂ F V ∧
+    ∀ b ∈ V, ∃ T : Set (Coeff (3)), IsOpen T ∧ b ∈ T ∧ T ⊆ V ∧
+      ∃ g : Coeff (3) → Coeff (2), ∃ h : Coeff (3) → CoeffOnePlus,
+        (∀ c ∈ T, ∀ n, F c n+2*c n = g c n+(h c).1 n) ∧
+        (∃ M : ℝ, 0 ≤ M ∧ ∀ c ∈ T, ‖g c‖ ≤ M) ∧
+        ∀ (u : ℝ≥0∞) (hu1 : 1 < u) (hu : u ≠ ⊤),
+          ∃ M : ℝ, 0 ≤ M ∧ ∀ c ∈ T, ‖CoeffOnePlus.toCoeff u hu1 hu (h c)‖ ≤ M := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V₁,ωstar,_,_,_,_,hext⟩ := exists_sourceFrequency_theorem18_1
+  have hp : (2 : ℝ≥0∞) < 6 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨V,hV,hpos,_,F,hF,_,_,_,hlocal⟩ := hext (6) (3) (by finiteness) hp
+  refine ⟨V,F,hV,hpos,hF,?_⟩
+  rw [show ENNReal.ofReal ((6 : ℝ≥0∞).toReal/3) = (2 : ℝ≥0∞) by norm_num] at hlocal
+  exact hlocal
+
+end
+end Theorem18_1Checks

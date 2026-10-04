@@ -1,5 +1,6 @@
 import NLS.ZakharovShabat.SourceBirkhoffInverseChart
 import NLS.ZakharovShabat.SourceFrequencyActionInvariance
+import NLS.ZakharovShabat.SourceActionCorrectionBounds
 
 /-! # Frequency maps in real-compatible complex Birkhoff charts
 
@@ -51,10 +52,11 @@ end SourceBirkhoffInverseChart
 /-- Construct the actual atlas and Birkhoff family together with a common
 chart for all analytic targets at each real source. The refined correction
 coordinates are frequency plus twice the quadratic actions. -/
-theorem exists_sourceFrequency_birkhoffCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
+theorem exists_sourceFrequency_boundedBirkhoffCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
     ∃ W P : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
       ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
         SourcePsiIsolatingComplexExtension hp hp1 P s ∧
+        A.HasLocallyUniformActionCorrectionBounds ∧
         ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
           ∃ D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t,
           ∃ U : Set (CoeffPair p), IsOpen U ∧ realTypeSourceLocus p ⊆ U ∧ U ⊆ A.domain ∧
@@ -83,8 +85,12 @@ theorem exists_sourceFrequency_birkhoffCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
   obtain ⟨V,hV,_,hrealV,hVP,hfreq,_⟩ := A.exists_analytic_frequencySequence hs hP hrealP
   obtain ⟨T,hT,_,hrealT,_,hcorr,hlocal⟩ :=
     A.exists_actionFrequencyCorrection_neighborhood hs hP hrealP
+  have hbounds : A.HasLocallyUniformActionCorrectionBounds := by
+    intro φ
+    obtain ⟨S,hS,hφS,_,hb⟩ := hlocal φ.val (hrealT φ.property)
+    exact ⟨S,hS,hφS,hb⟩
   obtain ⟨W₀,B,X,t,D⟩ := exists_sourceBirkhoffMap_complex_analytic hp hp1
-  refine ⟨W,P,s,A,hs.toSourcePsiIsolatingComplexExtension,W₀,B,X,t,D,V ∩ T,
+  refine ⟨W,P,s,A,hs.toSourcePsiIsolatingComplexExtension,hbounds,W₀,B,X,t,D,V ∩ T,
     hV.inter hT,fun ψ hψ => ⟨hrealV hψ,hrealT hψ⟩,fun ψ hψ => (hVP hψ.1).1,?_⟩
   intro φ
   obtain ⟨C⟩ := D.exists_inverseChart φ (V ∩ T) (hV.inter hT) ⟨hrealV φ.property,hrealT φ.property⟩
@@ -109,5 +115,37 @@ theorem exists_sourceFrequency_birkhoffCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
   · intro z w hz hw he r
     exact ⟨C.frequency_eq_of_pairAction A hs.toSourcePsiIsolatingComplexExtension z w hz hw he r,
       C.actionCorrection_eq_of_pairAction A hs.toSourcePsiIsolatingComplexExtension z w hz hw he r⟩
+
+/-- The original chart interface, omitting the retained uniform source bounds. -/
+theorem exists_sourceFrequency_birkhoffCharts (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W P : Set (CoeffPair p), ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+      ∃ A : SourceAbelianMomentAtlas hp hp1 W s,
+        SourcePsiIsolatingComplexExtension hp hp1 P s ∧
+        ∃ W₀ B X : Set (CoeffPair p), ∃ t : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+          ∃ D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t,
+          ∃ U : Set (CoeffPair p), IsOpen U ∧ realTypeSourceLocus p ⊆ U ∧ U ⊆ A.domain ∧
+            ∀ φ : realTypeSourceSubmodule p, ∃ C : SourceBirkhoffInverseChart D φ U,
+              (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r →
+                ENNReal.ofReal (p.toReal/2) ≤ r →
+                AnalyticOnNhd ℂ (A.frequencySequence r ∘ C.inverse) C.target ∧
+                ∀ z ∈ C.target, ∀ n,
+                  A.frequencySequence r (C.inverse z) n = A.renormalizedFrequency n (C.inverse z)) ∧
+              (∀ (r : ℝ≥0∞) [Fact (1 ≤ r)], r ≠ ⊤ → 1 < r →
+                ENNReal.ofReal (p.toReal/3) ≤ r →
+                AnalyticOnNhd ℂ (A.actionFrequencyCorrectionSequence r ∘ C.inverse) C.target ∧
+                ∀ z ∈ C.target, ∀ n,
+                  A.actionFrequencyCorrectionSequence r (C.inverse z) n =
+                    A.renormalizedFrequency n (C.inverse z) + z.1 n ^ 2 + z.2 n ^ 2) ∧
+              ∀ (z w : RealCoeff p × RealCoeff p)
+                (hz : ((RealCoeff.complexCLM p).prodMap (RealCoeff.complexCLM p)) z ∈ C.target)
+                (hw : ((RealCoeff.complexCLM p).prodMap (RealCoeff.complexCLM p)) w ∈ C.target),
+                (∀ n, RealCoeff.pairAction w n = RealCoeff.pairAction z n) →
+                ∀ r : ℝ≥0∞,
+                  A.frequencySequence r (C.realInverse w hw).val =
+                    A.frequencySequence r (C.realInverse z hz).val ∧
+                  A.actionFrequencyCorrectionSequence r (C.realInverse w hw).val =
+                    A.actionFrequencyCorrectionSequence r (C.realInverse z hz).val := by
+  obtain ⟨W,P,s,A,hs,hbounds,hrest⟩ := exists_sourceFrequency_boundedBirkhoffCharts hp hp1
+  exact ⟨W,P,s,A,hs,hrest⟩
 
 end NLS.ZakharovShabat

@@ -2522,3 +2522,9 @@ import NLS.ZakharovShabat.SourceFrequencyActionSpaceCorrection
 
 import NLS.ZakharovShabat.SourceFrequencyActionExponentCompatibility
 import NLS.ZakharovShabat.SourceFrequencyActionExtensions
+
+import NLS.SequenceSpaces.BoundedRealActionBallGluing
+import NLS.ZakharovShabat.SourceActionCorrectionBounds
+import NLS.ZakharovShabat.SourceFrequencyBoundedActionSpaceMaps
+import NLS.ZakharovShabat.SourceFrequencyActionSpaceAsymptotic
+import NLS.ZakharovShabat.SourceFrequencyTheorem18_1
