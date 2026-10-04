@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: One complex source neighborhood for every cosine moment
+## Current milestone: Quantitative second-moment errors and actual root offsets
+
+`SourceMomentRegularFactorization.lean` identifies the diagonal regular
+numerator with `i` times the single-root quotient. Its cross-multiplied
+identity remains valid at numerator-root collisions. Filling the omitted
+root leaves the numerator unchanged, and the off-diagonal numerator,
+scaled by `pi*(n-k)`, factors into the selected root displacement times
+the actual midpoint-filled chi factor from Section 12.
+
+`SourceGapCosineError.lean` justifies subtracting continuous model
+numerators before integration and proves the normalized supremum error
+bound on the actual complex gap. It also proves the quadratic bound
+`|P_k| <= |gamma_k|^2/4` and the product estimate with error coefficient
+`E*(F+1)+F/4`. `SourceAbelianMomentGapRegularity.lean` supplies all-index
+spectral regularity on a common almost-real domain.
+
+`SourceAbelianMomentErrorDomain.lean` combines the actual cosine formulas,
+numerator continuity, and gap separation on one connected neighborhood
+of the entire real source locus. Its model-error theorem allows arbitrary
+constant scaling and continuous comparison numerators. The neighborhood
+is chosen before indices and error bounds; these regularity assumptions
+are constructed from the normalized psi extension and moment atlas.
+
+`SourceAbelianMomentSecondError.lean` proves the quantitative diagonal
+error around `pi*gamma_k^2/4`, retaining two gap factors. Off the diagonal,
+the exact leading term of `(n-k)*Omega_nk^(2)` is
+`gamma_k^2*(sigma_k^n-tau_k)/4`; the remainder retains three gap factors.
+The constants follow from the proved cosine polynomial integrals.
+
+`SourceAbelianMomentSquaredOffsetError.lean` substitutes the actual
+squared-gap root offsets from Lemma 12.12, eliminating a separate
+root-to-gap-distance assumption. The resulting cubic-gap bound uses the
+actual normalized branch's offset coefficients, whose lp norms are
+uniform in the deleted index and locally uniform in the source. All
+estimates include collapsed gaps and avoid division by gap lengths.
+
+Public checks cover the cross identity at a deleted numerator root,
+construction of the common error domain, the exact diagonal coefficient
+when errors vanish, off-diagonal cancellation for a midpoint root, and
+locally uniform bounds for the actual offset coefficients.
+
+Next: supply mixed `ell^(p/2) + ell^q` majorants for the actual diagonal
+quotient and midpoint-filled chi errors and combine them with the proved
+square majorants and these quantitative moment inequalities. Lemma
+20.3's final sequence estimates, general infinite-gap frequencies, and
+the remaining dissertation are unfinished.
+
+## Previous milestone: One complex source neighborhood for every cosine moment
 
 `ParametricCosineMeanSegment.lean` proves analyticity from regularity
 along the actual cosine segment, without an enclosing midpoint disc.

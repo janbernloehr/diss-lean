@@ -2382,3 +2382,9 @@ import NLS.ComplexAnalysis.ParametricCosineMeanSegment
 import NLS.ZakharovShabat.SourceGapCosineMeanDomain
 import NLS.ZakharovShabat.SourceAbelianMomentUniformCosine
 import NLS.ZakharovShabat.SourceAbelianMomentCosineNeighborhood
+import NLS.ZakharovShabat.SourceMomentRegularFactorization
+import NLS.ZakharovShabat.SourceGapCosineError
+import NLS.ZakharovShabat.SourceAbelianMomentGapRegularity
+import NLS.ZakharovShabat.SourceAbelianMomentErrorDomain
+import NLS.ZakharovShabat.SourceAbelianMomentSecondError
+import NLS.ZakharovShabat.SourceAbelianMomentSquaredOffsetError

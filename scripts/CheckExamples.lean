@@ -29029,3 +29029,78 @@ example (A : SourceAbelianMomentAtlas hp hp1 W s)
 
 end
 end UniformMomentCosineChecks
+
+namespace SecondMomentErrorChecks
+open Set Metric Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- The cross-multiplied identity remains valid at the deleted numerator root.
+example (n k : ℤ) (a : Coeff p) (ψ : CoeffPair p) :
+    (displacedRoots a k-displacedRoots a n)*
+      sourceMomentRegularNumerator hp hp1 k k a ψ (displacedRoots a n) = 0 := by
+  simpa only [sub_self,zero_mul] using
+    (sourceMomentRegularNumerator_change_index hp hp1 n k a ψ (displacedRoots a n)).symm
+
+-- The normalized psi family supplies a common error domain without
+-- extra continuity or gap-separation hypotheses from the caller.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (hs : SourcePsiNormalizedComplexExtension hp hp1 V s) (hV : IsOpen V)
+    (hrealV : realTypeSourceLocus p ⊆ V) :
+    ∃ D : SourceAbelianMomentErrorDomain A, D.domain ⊆ V :=
+  A.exists_errorDomain hs hV hrealV
+
+variable {A : SourceAbelianMomentAtlas hp hp1 W s}
+
+-- Zero errors recover the exact diagonal coefficient, including collapse.
+example (D : SourceAbelianMomentErrorDomain A) (ψ : CoeffPair p) (hψ : ψ ∈ D.domain) (k : ℤ)
+    (hS : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+      sourceFullAbelianSquare hp hp1 W k (z,ψ) = -sourceAngularSelectedPolynomial hp hp1 ψ k z)
+    (hR : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+      sourceMomentRegularNumerator hp hp1 k k (s k ψ : Coeff p) ψ z = Complex.I) :
+    A.moment k k 2 ψ = (Real.pi:ℂ)*
+      (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) k)^2/4 := by
+  have hb := D.diagonal_error_bound ψ hψ k 0 0 le_rfl
+    (fun z hz => by rw [hS z hz]; simp)
+    (fun z hz => by rw [hR z hz]; simp)
+  simp only [zero_mul,mul_zero,zero_div,zero_add,add_zero] at hb
+  have hz := norm_eq_zero.mp (le_antisymm hb (norm_nonneg _))
+  have hne : (2*Real.pi:ℂ)⁻¹ ≠ 0 :=
+    inv_ne_zero (mul_ne_zero (by norm_num) (ofReal_ne_zero.mpr Real.pi_ne_zero))
+  exact sub_eq_zero.mp ((mul_eq_zero.mp hz).resolve_left hne)
+
+-- With the retained root at its midpoint, the leading off-diagonal
+-- polynomial cancels exactly when both approximation errors vanish.
+example (D : SourceAbelianMomentErrorDomain A) (ψ : CoeffPair p) (hψ : ψ ∈ D.domain)
+    (n k : ℤ) (hkn : k ≠ n)
+    (hmid : displacedRoots (s n ψ : Coeff p) k = sourceStandardRootMidpoint hp hp1 ψ k)
+    (hS : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+      sourceFullAbelianSquare hp hp1 W k (z,ψ) = -sourceAngularSelectedPolynomial hp hp1 ψ k z)
+    (hR : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+      sourcePsiMidpointFilledRegularFactor hp hp1 n k (s n ψ) ψ z = Complex.I) :
+    A.moment n k 2 ψ = 0 := by
+  have hb := D.offDiagonal_squaredOffset_bound ψ hψ n k hkn 0
+    (by simpa only [mul_zero,add_zero] using hmid) 0 0 le_rfl
+    (fun z hz => by rw [hS z hz]; simp)
+    (fun z hz => by rw [hR z hz]; simp)
+  simp only [norm_zero,mul_zero,zero_mul,zero_div,zero_add,add_zero] at hb
+  have hz := norm_eq_zero.mp (le_antisymm hb (norm_nonneg _))
+  have hne : ((n-k:ℤ):ℂ) ≠ 0 := by exact_mod_cast sub_ne_zero.mpr hkn.symm
+  exact (mul_eq_zero.mp hz).resolve_left hne
+
+-- The local offset estimate comes from the actual Section 12 extension.
+example (D : SourceAbelianMomentErrorDomain A)
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (φ : CoeffPair p) (hφD : φ ∈ D.domain) (hφV : φ ∈ V) :
+    ∃ T : Set (CoeffPair p), IsOpen T ∧ φ ∈ T ∧ T ⊆ D.domain ∩ V ∧
+      ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ T, ∀ n : ℤ, ∃ α : Coeff p, α n = 0 ∧ ‖α‖ ≤ C := by
+  obtain ⟨T,hT,hφT,hsub,C,hC,hb⟩ := D.locally_uniform_offDiagonal_squaredOffset_bound hs φ hφD hφV
+  refine ⟨T,hT,hφT,hsub,C,hC,?_⟩
+  intro ψ hψ n
+  obtain ⟨α,hαn,hαnorm,_⟩ := hb ψ hψ n
+  exact ⟨α,hαn,hαnorm⟩
+
+end
+end SecondMomentErrorChecks
