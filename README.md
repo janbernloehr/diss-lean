@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: quantitative square-root lifts prove that quadratic
-actions are open in the Banach half-exponent norm, including at zero.
-For finite `p >= 2`, the original spectral actions now realize an open
-complex neighborhood containing the entire nonnegative `l1` cone. Analytic descent of the
-frequency in Theorem 18.1 remains next; see `STATUS.md`.
+Latest milestone: the actual frequency and refined correction are now
+proved invariant under arbitrary complex tail sign changes on one
+analytic coordinate ball around each real source. Finite-support centers
+allow infinitely many sign choices while keeping a finite head fixed.
+Analytic descent to action space in Theorem 18.1 remains next; see
+`STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12235,3 +12236,44 @@ frequency through the quadratic map, including zero coordinates, then
 glue the local descended maps. The geometric action neighborhood is now
 constructed; Theorem 18.1's analytic frequency map on it remains unfinished.
 Corollary 18.2 and the later dissertation also remain unfinished.
+
+
+## Complex tail sign invariance for frequency charts
+
+`SourceFrequencyComplexSignInvariance.lean` constructs a complex ball
+around every real source's Birkhoff coordinates whose center has finite
+support. The ball contains the original point and lies inside its actual
+inverse chart. One finite block, chart, and radius work for every
+admissible sequence target: `r > 1`, finite, and `r >= p/2` for the
+frequency or `r >= p/3` for its refined action correction.
+
+Both actual sequences are analytic and invariant under arbitrary
+independent complex coordinate sign changes outside that finite block.
+The signs may change infinitely many coordinates. Real action invariance
+and holomorphic uniqueness prove this symmetry; it is not supplied as a
+complex invariance assumption. The construction retains the coordinate
+identities for the literal moment-sum frequency and correction.
+
+`SequenceSpaces/RealFormIdentity.lean` proves Banach-valued holomorphic
+uniqueness from real coefficient pairs on open convex domains, using
+contractive real and imaginary projections. `SignChange.lean` constructs
+the bounded complex linear sign maps and proves their isometry, reality,
+and square-preservation properties. `FiniteCenterBall.lean` uses norm
+convergence of finite truncations to obtain the required center and ball.
+`ComplexSignInvariance.lean` extends real sign symmetries to complex
+balls and proves independence from coordinatewise square-root choices
+when the finite head is fixed, including zero coordinates.
+
+Public checks cover infinite sign selections, Banach-valued uniqueness,
+finite centers below the Hilbert exponent, tail root-choice independence,
+and a common actual `p = 6` chart with `l3` frequency and `l2` correction.
+
+Validation: the full check script passes (5,880 build jobs, all public
+examples, and an axiom audit of 21,553 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: construct analytic descent through the squared tail coordinates,
+then pass to quadratic actions and glue the local action-space maps.
+Sign invariance and root-choice independence do not yet prove invariance
+on every complex quadratic action fiber or analytic descent. Theorem 18.1,
+Corollary 18.2, and the later dissertation remain unfinished.

@@ -2445,3 +2445,8 @@ import NLS.SequenceSpaces.SquareRootLifting
 import NLS.SequenceSpaces.QuadraticActionLifting
 import NLS.ZakharovShabat.SourcePositiveActionRealization
 import NLS.ZakharovShabat.SourceActionNeighborhood
+import NLS.SequenceSpaces.RealFormIdentity
+import NLS.SequenceSpaces.SignChange
+import NLS.SequenceSpaces.ComplexSignInvariance
+import NLS.SequenceSpaces.FiniteCenterBall
+import NLS.ZakharovShabat.SourceFrequencyComplexSignInvariance

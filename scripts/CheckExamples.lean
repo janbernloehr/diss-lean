@@ -29927,3 +29927,79 @@ example {W₀ B W U : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → Dele
 
 end
 end ActionNeighborhoodChecks
+
+
+namespace ComplexSignInvarianceChecks
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 6) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+
+-- Arbitrary infinite sign selections preserve the full sequence norm.
+example (e d : ℤ → Bool) (z : Coeff 4 × Coeff 4) :
+    ‖Coeff.pairSignChange e d z‖ = ‖z‖ := Coeff.norm_pairSignChange e d z
+
+-- Real-pair uniqueness applies to Banach-valued, not only scalar, maps.
+example (f g : (Coeff 4 × Coeff 4) → Coeff 2) {R : ℝ} (hR : 0 < R)
+    (hf : AnalyticOnNhd ℂ f (ball 0 R)) (hg : AnalyticOnNhd ℂ g (ball 0 R))
+    (he : ∀ z ∈ ball 0 R, z ∈ Coeff.realPairLocus 4 → f z = g z) :
+    EqOn f g (ball 0 R) :=
+  Coeff.eqOn_of_realPair_agreement f g _ isOpen_ball (convex_ball 0 R) 0
+    (mem_ball_self hR) (by constructor <;> intro n <;> simp)
+    hf.differentiableOn hg.differentiableOn he
+
+-- A finite center can be chosen below the Hilbert exponent as well.
+example (U : Set (Coeff (ENNReal.ofReal (3/2:ℝ)) × Coeff (ENNReal.ofReal (3/2:ℝ))))
+    (hU : IsOpen U) (z : Coeff (ENNReal.ofReal (3/2:ℝ)) × Coeff (ENNReal.ofReal (3/2:ℝ)))
+    (hz : z ∈ U) : ∃ S : Finset ℤ, ∃ R : ℝ, 0 < R ∧
+      z ∈ ball (Coeff.truncatePair S z) R ∧ ball (Coeff.truncatePair S z) R ⊆ U :=
+  Coeff.exists_finiteCenter_ball (by norm_num) U hU z hz
+
+-- The finite head is fixed pointwise, while all tail roots may change sign.
+example (S : Finset ℤ) (a b : Coeff 4) (he : ∀ n, a n^2 = b n^2)
+    (hh : ∀ n ∈ S, a n = b n) :
+    ∃ e : ℤ → Bool, (∀ n ∈ S, e n = false) ∧ Coeff.signChange e a = b :=
+  Coeff.exists_signChange_of_sq_eq_on_complement S a b he hh
+
+-- For an empty head this removes every root choice, including zero coordinates.
+example (f : (Coeff 4 × Coeff 4) → Coeff 2) (V : Set (Coeff 4 × Coeff 4))
+    (hi : ∀ e d : ℤ → Bool, ∀ z ∈ V, f (Coeff.pairSignChange e d z) = f z)
+    (z w : Coeff 4 × Coeff 4) (hz : z ∈ V)
+    (hsq : ∀ n, z.1 n^2 = w.1 n^2 ∧ z.2 n^2 = w.2 n^2) : f w = f z :=
+  Coeff.eq_of_coordinate_squares_of_eq_head f ∅ V
+    (fun e d _ _ => hi e d) z w hz (by simp) hsq
+
+-- The actual p = 6 frequency and refined correction share one finite
+-- center and ball, with l3 and l2 analyticity and all complex tail signs.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6,
+    ∃ S : Finset ℤ, ∃ c z₀ : Coeff 6 × Coeff 6, ∃ R : ℝ,
+      0 < R ∧ z₀ ∈ ball c R ∧ g z₀ = φ.val ∧
+      (∀ n ∉ S, c.1 n = 0 ∧ c.2 n = 0) ∧
+      AnalyticOnNhd ℂ (A.frequencySequence 3 ∘ g) (ball c R) ∧
+      AnalyticOnNhd ℂ (A.actionFrequencyCorrectionSequence 2 ∘ g) (ball c R) ∧
+      (∀ z ∈ ball c R, ∀ n, A.frequencySequence 3 (g z) n = A.renormalizedFrequency n (g z)) ∧
+      ∀ e d : ℤ → Bool, (∀ n ∈ S, e n = false) → (∀ n ∈ S, d n = false) →
+        ∀ z ∈ ball c R,
+          A.frequencySequence 3 (g (Coeff.pairSignChange e d z)) = A.frequencySequence 3 (g z) ∧
+          A.actionFrequencyCorrectionSequence 2 (g (Coeff.pairSignChange e d z)) =
+            A.actionFrequencyCorrectionSequence 2 (g z) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_complexTailSignInvariant (p := 6) (by simp) (by norm_num)
+  obtain ⟨C,S,R,hR,hbase,_,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨hf,he,hi⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨hg,_,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,S,Coeff.truncatePair S (sourceBirkhoffMap (by simp) (by norm_num) t φ.val),
+    sourceBirkhoffMap (by simp) (by norm_num) t φ.val,R,hR,hbase,C.base_eq,?_,hf,hg,he,?_⟩
+  · intro n hn
+    simp [Coeff.truncatePair,hn]
+  · intro e d he hd z hz
+    exact ⟨hi e d he hd z hz,hj e d he hd z hz⟩
+
+end
+end ComplexSignInvarianceChecks
