@@ -2505,3 +2505,8 @@ import NLS.SequenceSpaces.HeadActionPathAnalytic
 import NLS.SequenceSpaces.HeadActionPathNeighborhood
 import NLS.SequenceSpaces.LocalHeadActionDescent
 import NLS.ZakharovShabat.SourceFrequencyLocalActionDescent
+
+import NLS.SequenceSpaces.NonnegativeActions
+import NLS.SequenceSpaces.NonnegativeActionIdentity
+import NLS.SequenceSpaces.NonnegativeActionOverlap
+import NLS.SequenceSpaces.NonnegativeActionGluing

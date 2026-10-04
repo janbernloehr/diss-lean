@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual frequency and refined correction now have
-local analytic factors through the full quadratic action sequence, with
-exact recovery throughout a common Birkhoff neighborhood and an open action
-domain equal to its image. Gluing these local maps remains next in
-Theorem 18.1; see `STATUS.md`.
+Latest milestone: analytic maps on balls centered at nonnegative actions
+now glue uniquely from agreement on their nonnegative overlaps, with full
+Banach-valued analyticity even at zero actions. Applying this criterion to
+the actual local frequency maps remains next in Theorem 18.1; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12823,4 +12822,52 @@ Next: establish agreement of the local action maps on overlaps and glue
 them into the action-space map required by Theorem 18.1, including its
 common domain around the real nonnegative action locus. Local action
 factorization is now proved; the global gluing, Corollary 18.2, and the
+later dissertation remain unfinished.
+
+## Analytic uniqueness and gluing from nonnegative actions
+
+Local analytic maps on balls with nonnegative action centers now agree
+throughout their complex overlaps whenever they agree on the nonnegative
+parts. An arbitrary compatible family therefore glues uniquely on the
+union of its balls, in any complete complex Banach target. This is a
+general gluing criterion; the actual frequency maps still need to be
+shown to satisfy its real-action agreement hypotheses.
+
+`NonnegativeActions.lean` defines the nonnegative real action locus,
+proves its convexity, and identifies it exactly with the quadratic-action
+image of the real Birkhoff form. Every such sequence has a real lift with
+second component zero, including sequences with infinitely many zero
+coordinates.
+
+`NonnegativeActionIdentity.lean` proves complex germ uniqueness at any
+nonnegative base, including zero. It pulls the maps back through quadratic
+actions, applies the existing real-form identity theorem, then transfers
+the germ equality back using openness of the action map. On an open convex
+domain meeting the nonnegative locus, agreement on that locus determines
+the analytic map everywhere. No interior of the nonnegative cone is assumed.
+
+`NonnegativeActionOverlap.lean` proves that two intersecting balls with
+nonnegative centers contain a nonnegative point on the segment joining
+the centers. The identity theorem then gives agreement on the full convex
+intersection. Empty intersections and arbitrary real radii are allowed.
+
+`NonnegativeActionGluing.lean` constructs the glued map, proves full
+Banach-valued analyticity, exact recovery of each local map, and uniqueness
+on the union. The domain depends only on the balls, independently of the
+target norm. Compatibility is required only on nonnegative actions.
+
+Public checks cover sparse actions with infinitely many zeros, germ
+uniqueness at zero with an `l∞` target, overlap uniqueness for maps from
+`l3` to `l2`, and gluing an arbitrary family of `l∞`-valued maps recovering
+one common real-action function.
+
+Validation: the full build passes (5936 jobs), all public examples pass,
+and the transitive axiom audit passes for 21919 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove nearby real lifting of nonnegative actions around arbitrary
+real Birkhoff pairs, and use real action invariance to verify compatibility
+of the actual local frequency and correction maps on suitably restricted
+action balls. The general gluing criterion is proved; its application to
+the actual maps, the global domain of Theorem 18.1, Corollary 18.2, and the
 later dissertation remain unfinished.

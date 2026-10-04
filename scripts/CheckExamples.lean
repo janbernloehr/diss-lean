@@ -31116,3 +31116,67 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end LocalActionDescentChecks
+
+
+namespace NonnegativeActionChecks
+noncomputable section
+open NLS Set Metric Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- Sparse actions, with infinitely many zero coordinates, admit real lifts.
+example (k : ℤ) :
+    ∃ z : Coeff 6 × Coeff 6, z ∈ Coeff.realPairLocus 6 ∧
+      quadraticActionsExponent z = lp.single 3 k (2 : ℂ) ∧ z.2 = 0 := by
+  apply Coeff.exists_real_quadraticActions_lift (by simp)
+  intro n
+  by_cases hn : k = n <;> simp [lp.single_apply, hn]
+
+-- Uniqueness at the completely degenerate zero action works in the full
+-- l-infinity target norm, not merely one scalar coordinate at a time.
+example (f g : Coeff 3 → Coeff ⊤) (U : Set (Coeff 3))
+    (hU : IsOpen U) (hzero : 0 ∈ U)
+    (hf : AnalyticOnNhd ℂ f U) (hg : AnalyticOnNhd ℂ g U)
+    (he : ∀ b ∈ U, b ∈ Coeff.nonnegativeLocus 3 → f b = g b) :
+    f =ᶠ[𝓝 (0 : Coeff 3)] g :=
+  Coeff.eventuallyEq_of_nonnegativeActions_agreement (p := 6) (by simp) f g U hU
+    0 hzero (Coeff.zero_mem_nonnegativeLocus 3) hf.differentiableOn hg.differentiableOn he
+
+-- The overlap need not contain either center. Its nonnegative part still
+-- determines the analytic maps everywhere, including for the refined l2 target.
+example (f g : Coeff 3 → Coeff 2) (a b : Coeff 3) (r s : ℝ)
+    (ha : a ∈ Coeff.nonnegativeLocus 3) (hb : b ∈ Coeff.nonnegativeLocus 3)
+    (hf : AnalyticOnNhd ℂ f (ball a r)) (hg : AnalyticOnNhd ℂ g (ball b s))
+    (he : ∀ c ∈ ball a r ∩ ball b s, c ∈ Coeff.nonnegativeLocus 3 → f c = g c) :
+    EqOn f g (ball a r ∩ ball b s) :=
+  Coeff.eqOn_ball_inter_of_nonnegativeActions_agreement (p := 6) (by simp)
+    f g a b r s ha hb hf.differentiableOn hg.differentiableOn he
+
+-- An arbitrary family recovering one real action function glues on the
+-- exact union of its balls, with full norm analyticity and real recovery.
+example {ι : Type*} (a : ι → Coeff 3) (r : ι → ℝ)
+    (f : ι → Coeff 3 → Coeff ⊤) (h : Coeff 3 → Coeff ⊤)
+    (ha : ∀ i, a i ∈ Coeff.nonnegativeLocus 3)
+    (hf : ∀ i, AnalyticOnNhd ℂ (f i) (ball (a i) (r i)))
+    (he : ∀ i c, c ∈ ball (a i) (r i) → c ∈ Coeff.nonnegativeLocus 3 → f i c = h c) :
+    ∃ G : Coeff 3 → Coeff ⊤,
+      IsOpen (⋃ i, ball (a i) (r i)) ∧
+      AnalyticOnNhd ℂ G (⋃ i, ball (a i) (r i)) ∧
+      (∀ i, EqOn G (f i) (ball (a i) (r i))) ∧
+      EqOn G h ((⋃ i, ball (a i) (r i)) ∩ Coeff.nonnegativeLocus 3) := by
+  obtain ⟨G, hG, hrecover, _⟩ :=
+    Coeff.exists_analyticOnNhd_gluing_nonnegativeActions (p := 6) (by simp) a r f ha hf
+      (fun i j c hc hpos => (he i c hc.1 hpos).trans (he j c hc.2 hpos).symm)
+  refine ⟨G, isOpen_iUnion (fun _ => isOpen_ball), hG, hrecover, ?_⟩
+  intro c hc
+  obtain ⟨i, hi⟩ := mem_iUnion.mp hc.1
+  exact (hrecover i hi).trans (he i c hi hc.2)
+
+end
+end NonnegativeActionChecks
