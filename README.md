@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 20 moments are defined on isolating circles,
-with exact zero-order normalization, fixed-contour analyticity, and
-vanishing of all odd moments and positive-order collapsed-gap moments.
-The vanishing identities hold uniformly near every real source.
-Contour independence and the global assembly of Lemma 20.1 remain next.
+Latest milestone: Lemma 20.1 is complete. The normalized moments are
+analytic on one open simply connected neighborhood of all real sources,
+with exact normalization and both vanishing identities. Compatible local
+contours define the same moments, independently of the chosen atlas and
+primitive neighborhood. Lemma 20.2's frequency identity is next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
@@ -11293,3 +11293,46 @@ This is the fixed-circle foundation for Lemma 20.1. Still to do:
 prove independence of admissible isolating contours, define the global
 normalized moments, and assemble all four clauses on a common almost-real
 source neighborhood. Lemma 20.1 and the dissertation remain unfinished.
+
+
+## Lemma 20.1: global normalized moments
+
+`SourceAbelianMomentContourHomotopy.lean` proves invariance under smooth
+gap-avoiding contour deformations, with concrete comparisons for nested
+circles and circles inside a common outer isolating disc. Moments also
+remain unchanged when the primitive's ambient neighborhood is changed.
+`SourceAbelianMomentRealContourComparison.lean` compares arbitrary valid
+real-centered circles at real sources, even from different disc families.
+
+`SourceAbelianMomentLocalChart.lean` constructs actual normalized moment
+charts near every real potential. Each chart has one positive source
+radius and one fixed all-index circle family supporting every moment
+order. Analytic continuation of the real normalization proves the exact
+zero-order periods throughout the complex source ball. All odd moments
+and all positive-order moments at collapsed gaps vanish on that same ball.
+
+`SourceAbelianMomentAtlas.lean` uses the real-form identity theorem to
+prove agreement on full complex source-ball overlaps and glues the local
+integrals. The resulting moments are analytic and have one simultaneous
+contour representation for every numerator, gap index, and order.
+Their values are independent of the local atlas and of the ambient
+primitive neighborhood on common source domains.
+
+`SourceAbelianMomentDomain.lean` contracts the union of the source balls
+to the real locus and then to zero, proving the moment domain simply
+connected. `SourceAbelianMomentLemma20_1.lean` assembles all four clauses:
+`Omega_nk^0 = 2*pi*delta_nk`, analyticity, odd-order vanishing, and
+positive-order vanishing when `gamma_k=0`. The common open neighborhood
+contains every real source and works for all indices and orders at
+every finite exponent `p>1`. The numerator is the actual normalized psi
+branch and the primitive is the actual full Abelian primitive.
+
+Public checks at `p=3/2` extract the simultaneous contour representation,
+diagonal/off-diagonal normalization, cubic vanishing, and collapsed-gap
+quadratic vanishing. Additional checks compare distinct atlases and
+primitive neighborhoods and deform an even moment between nested circles
+at a complex potential.
+
+Lemma 20.1 is complete. Next is Lemma 20.2: express the renormalized NLS
+frequency at a finite-gap real potential as `-4/(2*pi)` times the sum of
+its quadratic moments. The dissertation as a whole remains unfinished.

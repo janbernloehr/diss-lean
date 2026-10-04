@@ -28295,3 +28295,67 @@ example {V : Set (CoeffPair (3/2))}
   (hs.analyticAt_momentCircle W U n n 2 hD hF hP ψ hψV hψU c R hR hcircle).differentiableAt
 
 end NLS.MomentCircleChecks
+
+
+noncomputable section
+namespace NLS.GlobalMomentChecks
+open Set Metric ZakharovShabat
+open scoped ENNReal
+private theorem halfFinite : (3/2 : ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem oneLtHalf : (1 : ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num))
+    (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact (1 ≤ (3/2 : ℝ≥0∞)) := ⟨oneLtHalf.le⟩
+
+-- All four clauses are supplied at p=3/2, on one source domain,
+-- together with actual contour representation and exact normalization.
+example : ∃ W U : Set (CoeffPair (3/2)), IsOpen U ∧ IsSimplyConnected U ∧
+    realTypeSourceLocus (3/2) ⊆ U ∧
+    ∃ s : (n : ℤ) → CoeffPair (3/2) → DeletedCoeff (3/2) n,
+    ∃ Ω : ℤ → ℤ → ℕ → CoeffPair (3/2) → ℂ,
+      (∀ n k m, AnalyticOnNhd ℂ (Ω n k m) U) ∧
+      (∀ ψ ∈ U, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+        sourcePsiRealCenteredContourFamily halfFinite oneLtHalf ψ c R ∧
+        ∀ n k m, Ω n k m ψ = sourceAbelianMomentCircle halfFinite oneLtHalf W n k m
+          (s n ψ : Coeff (3/2)) ψ (c k) (R k)) ∧
+      (∀ ψ ∈ U, ∀ n : ℤ, Ω n n 0 ψ = (2*Real.pi : ℂ)) ∧
+      (∀ ψ ∈ U, ∀ n k : ℤ, k ≠ n → Ω n k 0 ψ = 0) ∧
+      (∀ ψ ∈ U, ∀ n k : ℤ, Ω n k 3 ψ = 0) ∧
+      (∀ ψ ∈ U, ∀ n k : ℤ,
+        canonicalPeriodicGap halfFinite oneLtHalf (periodOnePotential ψ) (periodOnePotential_mem ψ) k = 0 →
+        Ω n k 2 ψ = 0) := by
+  obtain ⟨W,_,U,_,_,_,_,hU,hUconn,hreal,_,s,_,Ω,han,hrep,hzero,hodd,hcollapsed⟩ :=
+    exists_sourceAbelianMoment_lemma20_1 halfFinite oneLtHalf
+  refine ⟨W,U,hU,hUconn,hreal,s,Ω,han,hrep,?_,?_,?_,?_⟩
+  · intro ψ hψ n
+    simpa only [ite_true,mul_one] using hzero ψ hψ n n
+  · intro ψ hψ n k hne
+    simpa only [if_neg hne,mul_zero] using hzero ψ hψ n k
+  · exact fun ψ hψ n k => hodd ψ hψ n k 1
+  · exact fun ψ hψ n k hgap => hcollapsed ψ hψ n k hgap 2 (by omega)
+
+-- Distinct local circle atlases and distinct primitive neighborhoods
+-- still give the same second moment at every source in their overlap.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (A : SourceAbelianMomentAtlas hp hp1 W s) (B : SourceAbelianMomentAtlas hp hp1 V s)
+    (ψ : CoeffPair p) (hA : ψ ∈ A.domain) (hB : ψ ∈ B.domain) (n k : ℤ) :
+    A.moment n k 2 ψ = B.moment n k 2 ψ := A.moment_eqOn B n k 2 ⟨hA,hB⟩
+
+-- Nested circles need not share a center or come from the same chart.
+-- This checks deformation for an even moment at a complex potential.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (W : Set (CoeffPair p)) (n k : ℤ) (a : Coeff p) (ψ : CoeffPair p)
+    (D : SourceAbelianSpectralChart hp hp1 W ψ) (c₀ c₁ : ℂ) (r₀ r₁ : ℝ)
+    (hr₀ : 0 < r₀) (hr₁ : 0 < r₁)
+    (hseg₀ : sourcePeriodicSegment hp hp1 ψ k ⊆ ball c₀ r₀)
+    (hseg₁ : sourcePeriodicSegment hp hp1 ψ k ⊆ ball c₁ r₁)
+    (hnest : closedBall c₀ r₀ ⊆ closedBall c₁ r₁)
+    (hother : closedBall c₁ r₁ ⊆ sourceStandardRootOmittedDomain hp hp1 ψ k) :
+    sourceAbelianMomentCircle hp hp1 W n k 2 a ψ c₀ r₀ =
+      sourceAbelianMomentCircle hp hp1 W n k 2 a ψ c₁ r₁ :=
+  sourceAbelianMomentCircle_eq_of_nested_enclosingCircles hp hp1 W k 2 n k a ψ D
+    c₀ c₁ r₀ r₁ hr₀ hr₁ hseg₀ hseg₁ hnest hother
+
+end NLS.GlobalMomentChecks

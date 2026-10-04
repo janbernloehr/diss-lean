@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: Section 20 moments on isolating circles
+## Current milestone: Lemma 20.1 on a common source neighborhood
+
+`SourceAbelianMomentContourHomotopy.lean` proves invariance under smooth
+gap-avoiding contour deformations, with concrete comparisons for nested
+circles and circles inside a common outer isolating disc. Moments also
+remain unchanged when the primitive's ambient neighborhood is changed.
+`SourceAbelianMomentRealContourComparison.lean` compares arbitrary valid
+real-centered circles at real sources, even from different disc families.
+
+`SourceAbelianMomentLocalChart.lean` constructs actual normalized moment
+charts near every real potential. Each chart has one positive source
+radius and one fixed all-index circle family supporting every moment
+order. Analytic continuation of the real normalization proves the exact
+zero-order periods throughout the complex source ball. All odd moments
+and all positive-order moments at collapsed gaps vanish on that same ball.
+
+`SourceAbelianMomentAtlas.lean` uses the real-form identity theorem to
+prove agreement on full complex source-ball overlaps and glues the local
+integrals. The resulting moments are analytic and have one simultaneous
+contour representation for every numerator, gap index, and order.
+Their values are independent of the local atlas and of the ambient
+primitive neighborhood on common source domains.
+
+`SourceAbelianMomentDomain.lean` contracts the union of the source balls
+to the real locus and then to zero, proving the moment domain simply
+connected. `SourceAbelianMomentLemma20_1.lean` assembles all four clauses:
+`Omega_nk^0 = 2*pi*delta_nk`, analyticity, odd-order vanishing, and
+positive-order vanishing when `gamma_k=0`. The common open neighborhood
+contains every real source and works for all indices and orders at
+every finite exponent `p>1`. The numerator is the actual normalized psi
+branch and the primitive is the actual full Abelian primitive.
+
+Public checks at `p=3/2` extract the simultaneous contour representation,
+diagonal/off-diagonal normalization, cubic vanishing, and collapsed-gap
+quadratic vanishing. Additional checks compare distinct atlases and
+primitive neighborhoods and deform an even moment between nested circles
+at a complex potential.
+
+Lemma 20.1 is complete. Next is Lemma 20.2: express the renormalized NLS
+frequency at a finite-gap real potential as `-4/(2*pi)` times the sum of
+its quadratic moments. The dissertation as a whole remains unfinished.
+
+## Previous milestone: Section 20 moments on isolating circles
 
 `SourceAbelianMomentCircle.lean` defines the Section 20 moments as raw
 circle integrals of `F_k^m * psi_n / canonicalRoot`. The primitive uses
