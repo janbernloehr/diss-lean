@@ -28823,3 +28823,63 @@ example : ∃ W U : Set (CoeffPair threeHalves), IsOpen U ∧
 
 end SubBanachExponent
 end SquareGapMajorantChecks
+
+namespace CosineSquareDescentChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex
+open scoped ENNReal
+noncomputable section
+
+-- At a double root the Cauchy construction still gives the exact value.
+example (F : ℂ × ℂ → ℂ) (a : ℂ)
+    (hF : AnalyticOnNhd ℂ (fun z => F (z,a)) (closedBall 0 1)) :
+    parametricEvenSquareDescent F 1 (0,a) = F (0,a) := by
+  simpa using parametricEvenSquareDescent_sq F 1 (by norm_num) a hF 0 (by norm_num)
+
+-- An even polynomial descends to its squared argument with its parameter intact.
+example (a d : ℂ) (hd : ‖d‖ < 2) :
+    parametricEvenSquareDescent (fun x : ℂ × ℂ => x.1^2+x.2) 2 (d^2,a) = d^2+a := by
+  exact parametricEvenSquareDescent_sq_of_even _ 2 (by norm_num) a
+    (fun z _ => (analyticAt_id.pow 2).add analyticAt_const)
+    (fun z _ => by simp) d hd
+
+-- Swapping endpoints leaves the mean unchanged, without regularity assumptions.
+example (g : ℂ × ℂ → ℂ) (t : ℂ → ℂ) (a d : ℂ) :
+    parametricCosineMean g t (-d,a) = parametricCosineMean g t (d,a) :=
+  parametricCosineMean_neg g t d a
+
+-- The square-root coordinate is not analytic at zero, but its cosine mean is.
+example : AnalyticAt ℂ (fun a : ℂ =>
+    ∫ θ in (0:ℝ)..Real.pi, (Complex.sqrt a*(Real.cos θ:ℂ))^2+a) 0 := by
+  have he (a : ℂ) : (Complex.sqrt a)^2 = a := by
+    have h := Complex.cpow_nat_inv_pow a (Nat.succ_ne_zero 1)
+    norm_num at h
+    simpa only [Complex.sqrt,one_div] using h
+  have hsq : AnalyticAt ℂ (fun a : ℂ => (Complex.sqrt a)^2) 0 := by
+    simp only [he]
+    exact analyticAt_id
+  have hg : AnalyticOnNhd ℂ (fun x : ℂ × ℂ => x.1^2+x.2) univ :=
+    fun _ _ => (analyticAt_fst.pow 2).add analyticAt_snd
+  have h := analyticAt_parametricCosineMean_of_analytic_square
+    (fun x : ℂ × ℂ => x.1^2+x.2) (fun _ => 0) Complex.sqrt univ isOpen_univ hg 0
+    analyticAt_const hsq 1 (by simp) (fun _ _ => mem_univ _)
+  unfold parametricCosineMean at h
+  simpa only [zero_add] using h
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- The actual second-moment mean is analytic even at a collapsed selected source gap.
+example (hs : SourcePsiNormalizedComplexExtension hp hp1 V s)
+    (A : SourceAbelianMomentAtlas hp hp1 W s) (U : Set (CoeffPair p)) (hUV : U ⊆ V)
+    (φ : realTypeSourceSubmodule p) (hφ : φ.val ∈ U) (n k : ℤ)
+    (hD : IsOpen (sourceStandardRootOmittedJointDomain hp hp1 U k))
+    (hO : AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 k)
+      (sourceStandardRootOmittedJointDomain hp hp1 U k))
+    (hS : AnalyticOnNhd ℂ (sourceFullAbelianSquare hp hp1 W k)
+      (sourceStandardRootOmittedJointDomain hp hp1 U k)) :
+    AnalyticAt ℂ (sourceGapCosineMean hp hp1 k (fun t : ℂ × CoeffPair p =>
+      sourceAbelianMomentEvenNumerator hp hp1 W n k 1 (s n t.2 : Coeff p) t.2 t.1)) φ.val :=
+  hs.analyticAt_evenMomentCosineMean A U hUV φ hφ n k 1 hD hO hS
+
+end
+end CosineSquareDescentChecks

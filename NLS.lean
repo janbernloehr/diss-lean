@@ -2370,3 +2370,7 @@ import NLS.ZakharovShabat.SourceFullAbelianSquareGapBound
 import NLS.ZakharovShabat.SourceFullAbelianSquareGapMajorants
 import NLS.ZakharovShabat.SourceFullAbelianSquareJointAnalytic
 import NLS.ZakharovShabat.SourceAbelianMomentEvenNumeratorJoint
+import NLS.ComplexAnalysis.ParametricEvenSquareDescent
+import NLS.ComplexAnalysis.ParametricCosineMean
+import NLS.ComplexAnalysis.ParametricCosineMeanLocal
+import NLS.ZakharovShabat.SourceGapCosineMeanAnalytic

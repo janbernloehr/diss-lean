@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the filled primitive square is jointly analytic through
-complex gap collisions and has the locally uniform `ell^q + ell^(p/2)`
-error bound used in Lemma 20.3. The moment numerators also have joint
-regularity. The complex-gap moment formula and final sequence estimates
-remain next; see `STATUS.md`.
+Latest milestone: the actual even-moment cosine means are analytic through
+closed gaps. A Cauchy-integral construction uses the analytic squared gap
+and removes the need to choose analytic individual endpoints. Identifying
+these means with complex-source moments and completing Lemma 20.3's
+uniform decay estimates remain next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11627,3 +11627,41 @@ square expansion with the psi factor asymptotics to obtain Lemma 20.3's
 off-diagonal cubic-gap decay and diagonal leading term. Lemma 20.3,
 general infinite-gap frequencies, and the rest of the dissertation
 remain unfinished.
+
+
+## Analytic cosine means through closed gaps
+
+`ParametricEvenSquareDescent.lean` constructs a fixed Cauchy integral
+whose kernel depends on a squared coordinate. It is jointly analytic
+inside the squared contour radius. At `d^2` its exact value is the average
+of the original family at `d` and `-d`, including `d=0`. For an even family
+this recovers its original value. Consequently an arbitrary square-root
+selection may be substituted into an even analytic family whenever its
+square is analytic; no continuity of the selected root is required.
+
+`ParametricCosineMean.lean` proves that cosine integration is even in the
+half-gap and jointly analytic in an independent half-gap and source
+parameter. Square descent then gives analyticity when only the squared
+half-gap is analytic. `ParametricCosineMeanLocal.lean` uses a compact
+spectral disc to supply the needed common parameter neighborhood. This
+local theorem handles endpoint collision without assuming analytic
+individual endpoints.
+
+`SourceGapCosineMeanAnalytic.lean` applies the construction to the actual
+canonical midpoint and half-gap. A real-centered isolating contour
+provides the required midpoint disc. For the normalized psi branch and
+canonical filled even-moment numerator, the resulting cosine mean is
+analytic at every real source, whether the selected gap is open or closed.
+The regular numerator and filled square retain their established joint
+analytic domains; the theorem does not introduce endpoint-branch inputs.
+
+Public checks cover exact reconstruction at a double root, an even
+polynomial with a parameter, invariance under endpoint exchange, a cosine
+mean involving `Complex.sqrt` that is analytic at zero, and the actual
+normalized second-moment mean without a nonzero-gap premise.
+
+Next: use this analyticity and the real-gap identities to identify the
+complex-source moments with the cosine integral, then combine the square
+and psi-factor estimates to finish Lemma 20.3. Its uniform moment decay
+claims, general infinite-gap frequencies, and the rest of the
+dissertation remain unfinished.
