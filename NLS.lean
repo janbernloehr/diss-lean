@@ -2426,3 +2426,10 @@ import NLS.ZakharovShabat.SourceFrequencyCorrectionNeighborhood
 import NLS.ZakharovShabat.SourceFrequencySequenceBounds
 import NLS.ZakharovShabat.SourceFrequencySequenceAnalytic
 import NLS.ZakharovShabat.SourceFrequencyTheorem20_5
+import NLS.SequenceSpaces.QuadraticActionsExponent
+import NLS.SequenceSpaces.RefinedOnePlusDecomposition
+import NLS.SequenceSpaces.LocallyBoundedRealization
+import NLS.ZakharovShabat.SourceActionSequenceExponent
+import NLS.ZakharovShabat.SourceActionGapCorrection
+import NLS.ZakharovShabat.SourceActionFrequencyCorrection
+import NLS.ZakharovShabat.SourceActionFrequencyAsymptotic

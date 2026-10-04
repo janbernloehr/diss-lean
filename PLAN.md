@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Latest progress: Theorem 20.5 frequency maps and asymptotics
+## Latest progress: Action-frequency asymptotics before descent
+
+`SourceActionFrequencyAsymptotic.lean` constructs the actual correction
+`omega*_n + 2*I_n` on one connected complex neighborhood of the real
+source locus, for every finite `p > 1`. It is complex and real analytic
+in every finite `lr` with `r > 1` and `r >= p/3`, and retains the physical
+finite-gap frequency identity.
+
+The mixed remainder is a single pair of maps into `l(p/3)` and the
+actual intersection space `CoeffOnePlus`. The components are chosen
+before the projection exponent. Their norms are locally uniformly
+bounded, separately for each finite projection of the `l(1+)` component.
+This establishes the source-space input to equation (4.12), including
+quasi-normed third exponents and complex closed gaps.
+
+`SourceActionGapCorrection.lean` uses the normalized-action factorization
+to bound `I_n - gamma_n^2/4` by a cubic sequence product. It provides one
+common domain and local neighborhoods independent of the target exponent.
+`SourceActionFrequencyCorrection.lean` combines this with Theorem 20.5
+through an exact replacement identity. `LocallyBoundedRealization.lean`
+upgrades the scalar analytic coordinates to the actual Banach sequence
+map; `RefinedOnePlusDecomposition.lean` supplies the fixed mixed pair.
+
+`QuadraticActionsExponent.lean` extends the entire quadratic action map
+to every Banach half exponent, with a squared-norm bound.
+`SourceActionSequenceExponent.lean` identifies it with the original
+spectral actions, proves sequence-valued analyticity and the coordinate
+formula for its derivative, and recovers the existing Hilbert action map.
+The analytic action sequence is constructed without assuming a Birkhoff
+family.
+
+Public checks cover the `p = 4` action map and its derivative into `l2`,
+a signed one-mode action radius, the sharp `p = 6` frequency correction
+into `l2`, a fixed mixed pair with quasi-normed first component, and the
+closed-gap replacement identity.
+
+Validation: the full check script passes (5,863 build jobs, all public
+examples, and an axiom audit of 21,416 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: complete Theorem 18.1 by proving that the frequency depends only
+on the actions and descends analytically to action space. The source-space
+asymptotic above does not yet prove this descent. Corollary 18.2 and the
+later dissertation also remain unfinished.
+
+## Previous milestone: Theorem 20.5 frequency maps and asymptotics
 
 `SourceFrequencyTheorem20_5.lean` constructs the frequency map on one
 connected open neighborhood of the real source locus for every finite

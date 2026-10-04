@@ -29609,3 +29609,83 @@ example (a b c : Coeff 2) : ∃ H : Coeff (ENNReal.ofReal (2/3:ℝ)),
 
 end
 end FrequencySequence20_5Checks
+
+
+namespace ActionFrequencyAsymptoticChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 6) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := by
+  have he : (4 : ℝ≥0∞)/2 = 2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 4
+
+-- The non-Hilbert quadratic map retains the literal action radius
+-- and the exact half-exponent target, including signed mode indices.
+example : quadraticActionsExponent (q := 2)
+    (lp.single 4 (-3) (3:ℂ),lp.single 4 (-3) (4:ℂ)) (-3) = 25/2 := by
+  norm_num [quadraticActionsExponent_apply,lp.single_apply]
+
+-- The constructed p = 4 action map is analytic into l2 and realizes
+-- the original spectral actions on one almost-real domain.
+example : ∃ F : CoeffPair 4 → Coeff 2, ∃ U : Set (CoeffPair 4),
+    IsOpen U ∧ realTypeSourceLocus 4 ⊆ U ∧ AnalyticOnNhd ℂ F U ∧
+      ∀ ψ ∈ U, ∀ n, F ψ n = sourceComplexAction (by simp) (by norm_num) n ψ := by
+  obtain ⟨F,U,hU,hreal,ha,_,he⟩ :=
+    exists_sourceActionSequence_analytic (p := 4) (q := 2) (by simp) (by norm_num)
+  exact ⟨F,U,hU,hreal,ha,he⟩
+
+-- Its Banach derivative is the actual scalar spectral-action derivative.
+example {W₀ B W : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : CoeffPair 4) (hφ : φ ∈ W) (h : CoeffPair 4) (n : ℤ) :
+    (fderiv ℂ (sourceActionSequence (q := 2) (by simp) (by norm_num) s) φ h) n =
+      (fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) φ) h :=
+  D.actionSequence_fderiv_apply φ hφ h n
+
+-- The p = 6 correction attains the sharp cubic target l2, with
+-- coordinates equal to frequency plus twice the actual action.
+example : ∃ frequency : ℤ → CoeffPair 6 → ℂ, ∃ F : CoeffPair 6 → Coeff 2,
+    ∃ U : Set (CoeffPair 6), IsOpen U ∧ realTypeSourceLocus 6 ⊆ U ∧
+      AnalyticOnNhd ℂ F U ∧ ∀ ψ ∈ U, ∀ n,
+        F ψ n = frequency n ψ + 2*sourceComplexAction (by simp) (by norm_num) n ψ := by
+  obtain ⟨W,s,A,U,hU,_,hreal,_,ha,_,_⟩ :=
+    exists_sourceActionFrequency_asymptotic (p := 6) (by simp) (by norm_num)
+  obtain ⟨he,hA,_⟩ := ha 2 (by simp) (by norm_num) (by norm_num)
+  exact ⟨A.renormalizedFrequency,A.actionFrequencyCorrectionSequence 2,U,hU,hreal,hA,he⟩
+
+-- At p = 2 a single mixed pair works for all q > 1, rather than a
+-- fresh decomposition for each q. Its first exponent is below one.
+example : ∃ correction : CoeffPair 2 → ℤ → ℂ, ∃ U : Set (CoeffPair 2),
+    realTypeSourceLocus 2 ⊆ U ∧ ∀ φ ∈ U, ∃ T : Set (CoeffPair 2),
+      IsOpen T ∧ φ ∈ T ∧
+      ∃ a : CoeffPair 2 → Coeff (ENNReal.ofReal ((2:ℝ≥0∞).toReal/3)),
+      ∃ b : CoeffPair 2 → CoeffOnePlus,
+        (∀ ψ ∈ T, ∀ n, correction ψ n = a ψ n + (b ψ).1 n) ∧
+        ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤),
+          ∃ C : ℝ, ∀ ψ ∈ T, ‖CoeffOnePlus.toCoeff q hq1 hq (b ψ)‖ ≤ C := by
+  obtain ⟨W,s,A,U,_,_,hreal,_,_,_,hlocal⟩ :=
+    exists_sourceActionFrequency_asymptotic (p := 2) (by simp) (by norm_num)
+  refine ⟨A.actionFrequencyCorrection,U,hreal,?_⟩
+  intro φ hφ
+  obtain ⟨T,hT,hφT,_,_,a,b,he,_,hb⟩ := hlocal φ hφ
+  refine ⟨T,hT,hφT,a,b,he,?_⟩
+  intro q hq1 hq
+  obtain ⟨C,_,hc⟩ := hb q hq1 hq
+  exact ⟨C,hc⟩
+
+-- Closed gaps cause no division by the gap in the replacement identity.
+example {W : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (φ : realTypeSourceSubmodule 2) (n : ℤ)
+    (hn : sourcePeriodicGapDisplacement (by simp) (by norm_num) φ.val n = 0) :
+    A.actionFrequencyCorrection φ.val n = A.renormalizedFrequency n φ.val := by
+  have hz := (sourceComplexAction_nonneg_and_eq_zero_iff_gap_zero
+    (by simp) (by norm_num) n φ.val φ.property).2.2.mpr hn
+  simp [SourceAbelianMomentAtlas.actionFrequencyCorrection,hz]
+
+end
+end ActionFrequencyAsymptoticChecks
