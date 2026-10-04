@@ -2362,3 +2362,7 @@ import NLS.ZakharovShabat.SourceFiniteGapOpeningHamiltonian
 import NLS.ComplexAnalysis.AmplitudeDerivativeLimit
 import NLS.ZakharovShabat.SourceFiniteGapClosedFrequency
 import NLS.ZakharovShabat.SourceFiniteGapLemma20_2
+import NLS.ZakharovShabat.SourceStandardRootWeightedRealCircleBoundary
+import NLS.ZakharovShabat.SourceAbelianMomentEvenNumerator
+import NLS.ZakharovShabat.SourceAbelianMomentRealGapIntegral
+import NLS.ZakharovShabat.SourceStandardRootGapSidePolynomial

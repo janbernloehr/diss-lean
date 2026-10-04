@@ -28668,3 +28668,75 @@ example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
 
 end
 end ClosedFrequencyChecks
+
+
+namespace MomentGapIntegralChecks
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- The weighted-circle identity also applies off the real source locus.
+example (ψ : CoeffPair p) (D : SourceAbelianSpectralChart hp hp1 W ψ)
+    (n k : ℤ) (a : Coeff p) (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hc : sphere c R ⊆ sourceCanonicalRootDomain hp hp1 ψ) :
+    sourceAbelianMomentCircle hp hp1 W n k 4 a ψ c R =
+      ∮ z in C(c,R), sourceAbelianMomentEvenNumerator hp hp1 W n k 2 a ψ z /
+        sourceStandardRoot hp hp1 ψ k z :=
+  sourceAbelianMomentCircle_even_eq_weighted hp hp1 W n k 2 a ψ D c R hR hc
+
+-- The second moment has the actual gap-side value even when its gap collapses.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (φ : realTypeSourceSubmodule p) (n k : ℤ) :
+    A.moment n k 2 φ.val = -(2 * gapSideBoundaryIntegral
+      (sourceStandardRootMidpoint hp hp1 φ.val k) (sourceStandardRootHalfGap hp hp1 φ.val k)
+      (fun z => sourceFullAbelianSquare hp hp1 W k (z,φ.val) *
+        sourceMomentRegularNumerator hp hp1 n k (s n φ.val : Coeff p) φ.val z) 1 true) := by
+  have h := A.real_second_moment_eq_gapSide φ n k
+  unfold sourceAbelianMomentEvenNumerator at h
+  simpa only [pow_one] using h
+
+-- No finite-gap restriction is needed, and cosine coordinates remove endpoint singularities.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (φ : realTypeSourceSubmodule p) (n k : ℤ)
+    (hk : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) k ≠ 0) :
+    A.moment n k 2 φ.val = -(2*Complex.I) *
+      ∫ θ in (0:ℝ)..Real.pi, sourceAbelianMomentEvenNumerator hp hp1 W n k 1
+        (s n φ.val : Coeff p) φ.val (sourceStandardRootMidpoint hp hp1 φ.val k +
+          sourceStandardRootHalfGap hp hp1 φ.val k * (Real.cos θ:ℂ)) :=
+  A.real_even_moment_eq_cosineIntegral φ n k 1 hk
+
+-- Pointwise gap bounds immediately bound the normalized second moment, including zero gaps.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (φ : realTypeSourceSubmodule p) (n k : ℤ) (M B : ℝ) (hM : 0 ≤ M) (hB : 0 ≤ B)
+    (hF : ∀ z ∈ sourcePeriodicSegment hp hp1 φ.val k,
+      ‖sourceFullAbelianSquare hp hp1 W k (z,φ.val)‖ ≤ M)
+    (hψ : ∀ z ∈ sourcePeriodicSegment hp hp1 φ.val k,
+      ‖sourceMomentRegularNumerator hp hp1 n k (s n φ.val : Coeff p) φ.val z‖ ≤ B) :
+    ‖(2*Real.pi:ℂ)⁻¹ * A.moment n k 2 φ.val‖ ≤ M*B :=
+  A.real_second_moment_norm_le φ n k M B hM hB hF hψ
+
+-- The lower-side leading integral has exactly the paper's factor i*pi*gamma^2/8.
+example (τ γ : ℂ) :
+    gapSideBoundaryIntegral τ (γ/2) (fun z => (z-τ)^2-(γ/2)^2) 1 false =
+      Complex.I * Real.pi * γ^2 / 8 := by
+  rw [gapSideBoundaryIntegral_quadratic]
+  simp only [Bool.false_eq_true,ite_false,neg_neg]
+  ring
+
+-- The odd centered contribution vanishes for every complex gap, including gamma=0.
+example (τ γ : ℂ) :
+    gapSideBoundaryIntegral τ (γ/2) (fun z => (τ-z)*((z-τ)^2-(γ/2)^2)) 1 false = 0 :=
+  gapSideBoundaryIntegral_centered_quadratic τ (γ/2) false
+
+-- An off-diagonal shifted leading term retains only the psi-zero's midpoint displacement.
+example (τ γ sigma : ℂ) :
+    gapSideBoundaryIntegral τ (γ/2) (fun z => (sigma-z)*((z-τ)^2-(γ/2)^2)) 1 false =
+      Complex.I * Real.pi * γ^2 * (sigma-τ) / 8 := by
+  rw [gapSideBoundaryIntegral_shifted_quadratic]
+  simp only [Bool.false_eq_true,ite_false,neg_neg]
+  ring
+
+end
+end MomentGapIntegralChecks

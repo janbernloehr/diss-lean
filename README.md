@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 20.2's physical finite-gap Hilbert frequency
-formula now holds at every index, including closed gaps. An explicit
-Birkhoff opening curve identifies the closed frequency with a physical
-second derivative and the limit of open frequencies. The zero potential
-recovers `(2*n*pi)^2`. Next are Lemma 20.3's moment decay estimates;
-general infinite-gap frequencies remain unfinished. See `STATUS.md`.
+Latest milestone: exact gap-side formulas now express the normalized
+second moments at real sources, including collapsed gaps. Open gaps also
+have nonsingular cosine formulas. The gap maximum bound and the leading
+polynomial terms needed for
+Lemma 20.3 are proved. The lemma's uniform estimates on a complex source
+neighborhood remain next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11544,3 +11544,45 @@ frequency, and the nonzero free frequency `4*pi^2` in mode one.
 Next: Lemma 20.3's locally uniform second-moment decay estimates on the
 common complex source neighborhood. Frequencies on general infinite-gap
 sources and the rest of the dissertation remain unfinished.
+
+
+## Real gap integrals and leading terms for Lemma 20.3
+
+`SourceAbelianMomentEvenNumerator.lean` factors every even-order raw
+moment into the canonical filled square power times the regular psi
+numerator, divided by the selected standard root. The identity holds for
+complex sources on the root domain and on every admissible circle. Its
+numerator is analytic through the selected gap and both endpoints. At
+real sources this regularity requires no supplied Cauchy family or
+omitted-product analyticity assumption.
+
+`SourceStandardRootWeightedRealCircleBoundary.lean` shrinks any
+real-centered enclosing circle to its selected open real gap. The
+numerator may be complex valued. The orientation gives minus twice the
+upper-side integral, and the normalized contour is bounded by the
+attained maximum of the numerator on the gap.
+
+`SourceAbelianMomentRealGapIntegral.lean` applies this to the actual
+glued normalized moments at every real source, without a finite-gap
+restriction. All even orders have exact gap-side and nonsingular cosine
+integral formulas at open gaps. The second-moment gap-side formula also
+holds at collapsed gaps, where both sides vanish. Separate gap bounds
+`M` for the filled square and `B` for the regular psi factor give
+`norm(Omega_nk^2/(2*pi)) <= M*B`, including collapsed gaps.
+
+`SourceStandardRootGapSidePolynomial.lean` evaluates the leading
+polynomial side integrals for arbitrary complex midpoint and gap. On the
+lower side, the quadratic root polynomial has integral
+`i*pi*gamma^2/8`; multiplying by the centered factor `tau-lambda`
+gives zero; multiplying by `sigma-lambda` leaves exactly
+`i*pi*gamma^2*(sigma-tau)/8`. These identities include zero gaps.
+
+Public checks cover the complex-source weighted representation, the
+real second-moment formula without an open-gap premise, the cosine
+representation, the product bound, and the three leading constants.
+
+Next: extend the moment contour-shrinking estimates to the common
+complex source neighborhood and combine the established primitive and
+psi asymptotics to prove Lemma 20.3's locally uniform sequence bounds.
+Lemma 20.3 is not yet complete; general infinite-gap frequencies and
+the rest of the dissertation remain unfinished.

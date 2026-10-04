@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Lemma 20.2 including closed finite-gap actions
+## Current milestone: Real gap integrals and leading terms for Lemma 20.3
+
+`SourceAbelianMomentEvenNumerator.lean` factors every even-order raw
+moment into the canonical filled square power times the regular psi
+numerator, divided by the selected standard root. The identity holds for
+complex sources on the root domain and on every admissible circle. Its
+numerator is analytic through the selected gap and both endpoints. At
+real sources this regularity requires no supplied Cauchy family or
+omitted-product analyticity assumption.
+
+`SourceStandardRootWeightedRealCircleBoundary.lean` shrinks any
+real-centered enclosing circle to its selected open real gap. The
+numerator may be complex valued. The orientation gives minus twice the
+upper-side integral, and the normalized contour is bounded by the
+attained maximum of the numerator on the gap.
+
+`SourceAbelianMomentRealGapIntegral.lean` applies this to the actual
+glued normalized moments at every real source, without a finite-gap
+restriction. All even orders have exact gap-side and nonsingular cosine
+integral formulas at open gaps. The second-moment gap-side formula also
+holds at collapsed gaps, where both sides vanish. Separate gap bounds
+`M` for the filled square and `B` for the regular psi factor give
+`norm(Omega_nk^2/(2*pi)) <= M*B`, including collapsed gaps.
+
+`SourceStandardRootGapSidePolynomial.lean` evaluates the leading
+polynomial side integrals for arbitrary complex midpoint and gap. On the
+lower side, the quadratic root polynomial has integral
+`i*pi*gamma^2/8`; multiplying by the centered factor `tau-lambda`
+gives zero; multiplying by `sigma-lambda` leaves exactly
+`i*pi*gamma^2*(sigma-tau)/8`. These identities include zero gaps.
+
+Public checks cover the complex-source weighted representation, the
+real second-moment formula without an open-gap premise, the cosine
+representation, the product bound, and the three leading constants.
+
+Next: extend the moment contour-shrinking estimates to the common
+complex source neighborhood and combine the established primitive and
+psi asymptotics to prove Lemma 20.3's locally uniform sequence bounds.
+Lemma 20.3 is not yet complete; general infinite-gap frequencies and
+the rest of the dissertation remain unfinished.
+
+## Previous milestone: Lemma 20.2 including closed finite-gap actions
 
 `RealActionOpening.lean` opens one zero Birkhoff coordinate with amplitude
 `t`, giving exactly the action `t^2/2`. It also identifies action reduction
