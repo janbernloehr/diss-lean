@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Real gap integrals and leading terms for Lemma 20.3
+## Current milestone: Joint filled squares and complex-gap sequence estimates
+
+`SourceFullAbelianSquareGapBound.lean` identifies the square of either
+complex gap-side root with the selected quadratic polynomial, and proves
+the sharp root bound `norm(w) <= norm(gamma)/2`. Factoring the filled-square
+error gives `norm(F^2 + w^2) <= norm(gamma)^2 * E * (E+1)` whenever the
+primitive error is bounded by `norm(gamma)*E`. The result includes both
+endpoints and collapsed gaps.
+
+`SourceFullAbelianSquareGapMajorants.lean` converts Lemma 19.4's primitive
+majorants into the square expansion used in Lemma 20.3. On every point of
+every complex gap, the error is bounded by `norm(gamma_k)^2` times the sum
+of an `ell^q` and an `ell^(p/2)` majorant. Their norms are locally uniformly
+bounded. The same source ball works for all indices and is chosen before
+any finite auxiliary exponent `q>1`. Scalar rescaling preserves the
+half-exponent space even when `p/2<1`.
+
+`SourceFullAbelianSquareJointAnalytic.lean` proves that the canonical
+filled square is jointly analytic in spectral point and source, through
+the entire selected moving gap. The Cauchy construction uses only the
+analytic midpoint and squared gap, so it needs no analytic choice of
+individual endpoints at a collision. A single connected almost-real
+source neighborhood carries this joint regularity and the mixed square
+error estimates simultaneously.
+
+`SourceAbelianMomentEvenNumeratorJoint.lean` proves joint analyticity of
+the regular psi factor and all filled even-moment numerators, including
+the actual normalized psi branch. Only the other gaps remain excluded.
+These are the analytic integrands needed to extend the real-gap formulas.
+
+Public checks cover side independence, the sharp half-gap constant,
+exact square cancellation when the primitive error vanishes, normalized
+numerator regularity, and the concrete exponent `p=3/2`, where the second
+majorant lies in `ell^(3/4)` without a Banach-space assumption.
+
+Next: finish the complex-gap moment integral formula and combine the
+square expansion with the psi factor asymptotics to obtain Lemma 20.3's
+off-diagonal cubic-gap decay and diagonal leading term. Lemma 20.3,
+general infinite-gap frequencies, and the rest of the dissertation
+remain unfinished.
+
+## Previous milestone: Real gap integrals and leading terms for Lemma 20.3
 
 `SourceAbelianMomentEvenNumerator.lean` factors every even-order raw
 moment into the canonical filled square power times the regular psi

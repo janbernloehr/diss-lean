@@ -28740,3 +28740,86 @@ example (τ γ sigma : ℂ) :
 
 end
 end MomentGapIntegralChecks
+
+
+namespace SquareGapMajorantChecks
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- The square agrees with the polynomial on either side of arbitrary complex gaps.
+example (ψ : CoeffPair p) (j : ℤ) (θ : ℝ) :
+    (sourceStandardRootGapBoundary hp hp1 ψ j θ false)^2 =
+      (sourceStandardRootGapBoundary hp hp1 ψ j θ true)^2 := by
+  rw [sourceStandardRootGapBoundary_sq,sourceStandardRootGapBoundary_sq]
+
+-- The sharp half-gap bound is independent of the source being real.
+example (ψ : CoeffPair p) (j : ℤ) (θ : ℝ) :
+    2*‖sourceStandardRootGapBoundary hp hp1 ψ j θ true‖ ≤
+      ‖sourcePeriodicGapDisplacement hp hp1 ψ j‖ := by
+  have h := norm_sourceStandardRootGapBoundary_le_halfGap hp hp1 ψ j θ true
+  linarith
+
+-- A zero primitive error yields the exact filled-square identity, even at collision.
+example (C : SourceFullAbelianUniformCauchyFamily hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (j : ℤ) (θ : ℝ)
+    (hF : C.gapBoundary j ψ θ true = Complex.I*sourceStandardRootGapBoundary hp hp1 ψ j θ true) :
+    let z := sourceStandardRootMidpoint hp hp1 ψ j +
+      sourceStandardRootHalfGap hp hp1 ψ j*(Real.cos θ:ℂ)
+    sourceFullAbelianSquare hp hp1 W j (z,ψ) = -sourceAngularSelectedPolynomial hp hp1 ψ j z := by
+  have h := C.fullSquare_add_polynomial_norm_le ψ hψ j θ true 0 (by norm_num)
+    (by rw [hF]; simp)
+  dsimp only at h ⊢
+  have hz := norm_eq_zero.mp (le_antisymm (by simpa only [mul_zero,zero_mul] using h) (norm_nonneg _))
+  exact eq_neg_of_add_eq_zero_left hz
+
+-- The actual normalized branch inherits joint analyticity through the selected gap.
+example (hs : SourcePsiNormalizedComplexExtension hp hp1 V s)
+    (U : Set (CoeffPair p)) (hUV : U ⊆ V) (n k : ℤ)
+    (hO : AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 k)
+      (sourceStandardRootOmittedJointDomain hp hp1 U k))
+    (hS : AnalyticOnNhd ℂ (sourceFullAbelianSquare hp hp1 W k)
+      (sourceStandardRootOmittedJointDomain hp hp1 U k)) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p =>
+      sourceAbelianMomentEvenNumerator hp hp1 W n k 1 (s n t.2 : Coeff p) t.2 t.1)
+      (sourceStandardRootOmittedJointDomain hp hp1 U k) :=
+  hs.evenNumerator_joint_analytic W U hUV n k 1 hO hS
+
+end
+
+section SubBanachExponent
+private noncomputable abbrev threeHalves : ℝ≥0∞ := ENNReal.ofReal (3/2)
+private theorem threeHalves_finite : threeHalves ≠ ⊤ := ENNReal.ofReal_ne_top
+private theorem threeHalves_gt_one : 1 < threeHalves := by
+  norm_num [threeHalves,ENNReal.one_lt_ofReal]
+local instance : Fact (1 ≤ threeHalves) := ⟨threeHalves_gt_one.le⟩
+
+-- At p=3/2 the error sequence genuinely lies in exponent 3/4, below one.
+-- No Banach-space instance for that smaller exponent is needed.
+example : ∃ W U : Set (CoeffPair threeHalves), IsOpen U ∧
+    realTypeSourceLocus threeHalves ⊆ U ∧
+    (∀ j : ℤ, AnalyticOnNhd ℂ (sourceFullAbelianSquare threeHalves_finite threeHalves_gt_one W j)
+      (sourceStandardRootOmittedJointDomain threeHalves_finite threeHalves_gt_one U j)) ∧
+    ∀ φ ∈ U, ∃ r : ℝ, 0 < r ∧ ball φ r ⊆ U ∧ ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ ball φ r,
+      ∃ Bq : Coeff 2, ∃ Bg : Coeff (ENNReal.ofReal (3/4)), ‖Bq‖ ≤ M ∧ ‖Bg‖ ≤ M ∧
+        ∀ j : ℤ, ∀ z ∈ sourcePeriodicSegment threeHalves_finite threeHalves_gt_one ψ j,
+          ‖sourceFullAbelianSquare threeHalves_finite threeHalves_gt_one W j (z,ψ) +
+            sourceAngularSelectedPolynomial threeHalves_finite threeHalves_gt_one ψ j z‖ ≤
+              ‖sourcePeriodicGapDisplacement threeHalves_finite threeHalves_gt_one ψ j‖^2*(‖Bq j‖+‖Bg j‖) := by
+  obtain ⟨W,U,hU,_,hreal,_,hjoint,hbound⟩ :=
+    exists_sourceFullAbelian_almostReal_jointSquare_gap_majorants (p := threeHalves) threeHalves_finite threeHalves_gt_one
+  refine ⟨W,U,hU,hreal,hjoint,?_⟩
+  intro φ hφ
+  obtain ⟨r,hr,hsub,hb⟩ := hbound φ hφ
+  refine ⟨r,hr,hsub,?_⟩
+  have hhalf : ENNReal.ofReal (threeHalves.toReal/2) = ENNReal.ofReal (3/4) := by
+    norm_num [threeHalves]
+  have hb2 := hb 2 (by norm_num) (by norm_num)
+  rw [hhalf] at hb2
+  exact hb2
+
+end SubBanachExponent
+end SquareGapMajorantChecks
