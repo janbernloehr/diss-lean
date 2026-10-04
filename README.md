@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual finite-gap primitive now has a convergent
-Laurent series with leading term `-i*z`, no extra constant, and one
-coefficient sequence for every normalization index. Its remainder tends
-to zero in every direction at infinity. Identifying the coefficients
-with the NLS Hamiltonians is the remaining part of Lemma 19.2.
-See `STATUS.md`.
+Latest milestone: the first Laurent coefficient of the actual finite-gap
+primitive is now proved to equal `i*H₁/2`, with `H₁` the original source
+mass, at every finite exponent above one. It is `i*‖φ‖²/4` in the Hilbert
+pair norm. The scaled remainder recovers this coefficient in every
+direction at infinity. Higher Hamiltonian coefficients in Lemma 19.2
+remain to be identified. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -10899,3 +10899,36 @@ proved. Identification of the coefficients with the NLS Hamiltonians
 is still required before the full lemma is complete, starting with the
 mass coefficient. Later frequency results and the full dissertation
 remain unfinished.
+
+## First Laurent coefficient equals the source mass
+
+`SourceFullAbelianMassCoefficient.lean` identifies the first coefficient
+in the actual finite-gap Laurent expansion with `i*H₁/2`, where `H₁` is
+the original Fourier mass pairing `sum φ₁(k)*φ₂(-k)`. The result holds
+at every finite exponent above one, with one coefficient sequence and
+one exterior radius for all signed primitive indices. At exponent two,
+this coefficient is exactly `i*‖φ‖²/4` in the Hilbert pair norm.
+
+The same module proves the all-direction limit
+`z*(F_n(z)+i*z-i*pi*n) → i*H₁/2`. It constructs an analytic inversion
+remainder with derivative `i*H₁/2` at zero, using the existing normalized
+remainder limit to fix the integration constant. One ambient source
+neighborhood supports the mass-calibrated convergent series at every
+real finite-gap source.
+
+`SourceFiniteGapMassExponent.lean` proves that exponent inclusion
+preserves both the finite-gap property and the filled Floquet logarithmic
+derivative. Every real finite-gap source has a coefficient-preserving
+finite-gap Hilbert model. This establishes absolute convergence of its
+original mass pairing and transfers the previously proved Hilbert
+exterior mass formula to all finite exponents above one.
+
+`ExteriorInversionRemainder.lean` now retains the first Taylor coefficient
+in its positive-power series theorem and recovers it through the scaled
+inversion limit. Public checks cover exponents 3/2, 2, and 3, the negative
+primitive index -2, and the exact real and imaginary parts of the Hilbert
+mass coefficient.
+
+The mass term in Lemma 19.2 is now identified. Identification of the
+higher Laurent coefficients with the remaining NLS Hamiltonians is the
+next step; the full lemma and dissertation remain unfinished.

@@ -2294,3 +2294,5 @@ import NLS.ComplexAnalysis.ExteriorInversionRemainder
 import NLS.ZakharovShabat.SourcePeriodicEndpointAtInfinity
 import NLS.ZakharovShabat.SourceFullAbelianFiniteGapInversion
 import NLS.ZakharovShabat.SourceFullAbelianFiniteGapLaurent
+import NLS.ZakharovShabat.SourceFiniteGapMassExponent
+import NLS.ZakharovShabat.SourceFullAbelianMassCoefficient

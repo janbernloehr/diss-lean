@@ -1,6 +1,39 @@
 # Implementation plan
 
-## Latest progress: normalized convergent finite-gap Laurent expansion
+## Latest progress: first Laurent coefficient equals the source mass
+
+`SourceFullAbelianMassCoefficient.lean` identifies the first coefficient
+in the actual finite-gap Laurent expansion with `i*H₁/2`, where `H₁` is
+the original Fourier mass pairing `sum φ₁(k)*φ₂(-k)`. The result holds
+at every finite exponent above one, with one coefficient sequence and
+one exterior radius for all signed primitive indices. At exponent two,
+this coefficient is exactly `i*‖φ‖²/4` in the Hilbert pair norm.
+
+The same module proves the all-direction limit
+`z*(F_n(z)+i*z-i*pi*n) → i*H₁/2`. It constructs an analytic inversion
+remainder with derivative `i*H₁/2` at zero, using the existing normalized
+remainder limit to fix the integration constant. One ambient source
+neighborhood supports the mass-calibrated convergent series at every
+real finite-gap source.
+
+`SourceFiniteGapMassExponent.lean` proves that exponent inclusion
+preserves both the finite-gap property and the filled Floquet logarithmic
+derivative. Every real finite-gap source has a coefficient-preserving
+finite-gap Hilbert model. This establishes absolute convergence of its
+original mass pairing and transfers the previously proved Hilbert
+exterior mass formula to all finite exponents above one.
+
+`ExteriorInversionRemainder.lean` now retains the first Taylor coefficient
+in its positive-power series theorem and recovers it through the scaled
+inversion limit. Public checks cover exponents 3/2, 2, and 3, the negative
+primitive index -2, and the exact real and imaginary parts of the Hilbert
+mass coefficient.
+
+The mass term in Lemma 19.2 is now identified. Identification of the
+higher Laurent coefficients with the remaining NLS Hamiltonians is the
+next step; the full lemma and dissertation remain unfinished.
+
+## Previous milestone: normalized convergent finite-gap Laurent expansion
 
 `SourceFullAbelianFiniteGapLaurent.lean` proves a convergent Laurent
 series for the actual full primitive at every real finite-gap source:

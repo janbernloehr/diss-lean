@@ -27700,3 +27700,67 @@ example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by si
   ring
 
 end NLS.FullAbelianFiniteGapLaurentChecks
+
+
+
+noncomputable section
+namespace NLS.FullAbelianMassCoefficientChecks
+open Set Metric Filter Topology Complex ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Below the Hilbert exponent, a common neighborhood supports an actual
+-- convergent series with its first coefficient fixed by the original source.
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))),
+    ∀ φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2)),
+      φ ∈ sourceFiniteGapLocus (by simp) (by norm_num) →
+      ∃ R : ℝ, 0 < R ∧ ∃ a : ℕ → ℂ,
+        a 0 = Complex.I*(∑' k : ℤ, φ.val.fst k*φ.val.snd (-k))/2 ∧
+        ∀ (n : ℤ) (z : ℂ), R < ‖z‖ →
+          Summable (fun k : ℕ => a k/z^(k+1)) ∧
+          sourceFullAbelianPrimitive (by simp) (by norm_num) W n (z,φ.val) =
+            -Complex.I*z+Complex.I*(Real.pi : ℂ)*n+∑' k : ℕ, a k/z^(k+1) := by
+  obtain ⟨W,_,_,hall⟩ := exists_sourceFullAbelian_finiteGap_mass_laurent_neighborhood
+    (p := ENNReal.ofReal (3/2)) (by simp) (by norm_num)
+  refine ⟨W,?_⟩
+  intro φ hf
+  obtain ⟨R,hR,a,ha,hs⟩ := hall φ hf
+  refine ⟨R,hR,a,ha,?_⟩
+  intro n z hz
+  have h := hs n z hz
+  refine ⟨h.summable,?_⟩
+  rw [h.tsum_eq]
+  ring
+
+-- Above the Hilbert exponent, the mass pairing is absolutely convergent,
+-- and the scaled remainder recovers it in every direction for index -2.
+example (W : Set (CoeffPair 3)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 3) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    Summable (fun k : ℤ => ‖φ.val.fst k*φ.val.snd (-k)‖) ∧
+    Tendsto (fun z : ℂ => z*(sourceFullAbelianPrimitive (by simp) (by norm_num) W (-2) (z,φ.val)+
+      Complex.I*z+2*Complex.I*(Real.pi : ℂ))) (Bornology.cobounded ℂ)
+      (𝓝 (Complex.I*(∑' k : ℤ, φ.val.fst k*φ.val.snd (-k))/2)) := by
+  refine ⟨summable_norm_sourceFiniteGap_mass (by simp) (by norm_num) φ hf,?_⟩
+  have h := sourceFullAbelian_finiteGap_mass_tendsto C φ hφ hf (-2)
+  convert h using 1
+  ext z
+  push_cast
+  ring
+
+-- The Hilbert pair normalization gives a purely imaginary first coefficient
+-- whose imaginary part is exactly one quarter of the square of the pair norm.
+example (W : Set (CoeffPair 2)) (C : SourceFullAbelianUniformCauchyFamily (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 2) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ R : ℝ, 0 < R ∧ ∃ a : ℕ → ℂ, (a 0).re = 0 ∧ (a 0).im = ‖φ.val‖^2/4 ∧
+      ∀ z : ℂ, R < ‖z‖ → HasSum (fun k : ℕ => a k/z^(k+1))
+        (sourceFullAbelianPrimitive (by simp) (by norm_num) W 0 (z,φ.val)+Complex.I*z) := by
+  obtain ⟨R,hR,a,ha,hs⟩ := exists_sourceFullAbelian_finiteGap_norm_laurent C φ hφ hf
+  refine ⟨R,hR,a,?_,?_,?_⟩
+  · simp [ha,pow_two,mul_re,mul_im]
+  · simp [ha,pow_two,mul_re,mul_im]
+  · simpa only [Int.cast_zero,mul_zero,sub_zero] using hs 0
+
+end NLS.FullAbelianMassCoefficientChecks

@@ -56,19 +56,42 @@ theorem exists_exterior_inversion_remainder (F h : ℂ → ℂ) (R r : ℝ)
 
 /-- A holomorphic remainder vanishing at zero has a convergent scalar
 power series starting with the first power, with no constant term. -/
-theorem exists_hasSum_positive_powers (A : ℂ → ℂ) (r : ℝ) (hr : 0 < r)
+theorem exists_hasSum_positive_powers_with_first (A : ℂ → ℂ) (r : ℝ) (hr : 0 < r)
     (hA : AnalyticOnNhd ℂ A (ball 0 r)) (hA0 : A 0 = 0) :
-    ∃ a : ℕ → ℂ, ∃ ε : ℝ, 0 < ε ∧ ∀ w : ℂ, ‖w‖ < ε →
+    ∃ a : ℕ → ℂ, a 0 = deriv A 0 ∧ ∃ ε : ℝ, 0 < ε ∧ ∀ w : ℂ, ‖w‖ < ε →
       HasSum (fun k : ℕ => a k*w^(k+1)) (A w) := by
   have hJ := analyticOnNhd_dslope_zero A r hr hA
   obtain ⟨q,hq⟩ := hJ 0 (mem_ball_self hr)
   have hs := hasFPowerSeriesAt_iff.mp hq
   obtain ⟨ε,hε,hsub⟩ := Metric.mem_nhds_iff.mp hs
-  refine ⟨q.coeff,ε,hε,?_⟩
+  refine ⟨q.coeff,?_,ε,hε,?_⟩
+  · simpa only [FormalMultilinearSeries.coeff,dslope_same] using hq.coeff_zero 1
   intro w hw
   have ht := (hsub (show w ∈ ball (0:ℂ) ε by simpa only [mem_ball,dist_zero_right] using hw)).mul_left w
   have he : w*dslope A 0 w = A w := by
     simpa only [sub_zero,smul_eq_mul,hA0] using sub_smul_dslope A 0 w
   simpa only [zero_add,smul_eq_mul,he,pow_succ,mul_assoc,mul_comm,mul_left_comm] using ht
+
+theorem exists_hasSum_positive_powers (A : ℂ → ℂ) (r : ℝ) (hr : 0 < r)
+    (hA : AnalyticOnNhd ℂ A (ball 0 r)) (hA0 : A 0 = 0) :
+    ∃ a : ℕ → ℂ, ∃ ε : ℝ, 0 < ε ∧ ∀ w : ℂ, ‖w‖ < ε →
+      HasSum (fun k : ℕ => a k*w^(k+1)) (A w) := by
+  obtain ⟨a,_,h⟩ := exists_hasSum_positive_powers_with_first A r hr hA hA0
+  exact ⟨a,h⟩
+
+/-- The leading inverse-frequency coefficient is recovered by a limit in
+all directions at infinity. -/
+theorem tendsto_mul_inversion_remainder (A : ℂ → ℂ) (r : ℝ) (hr : 0 < r)
+    (hA : AnalyticOnNhd ℂ A (ball 0 r)) (hA0 : A 0 = 0) :
+    Tendsto (fun z : ℂ => z*A z⁻¹) (Bornology.cobounded ℂ) (𝓝 (deriv A 0)) := by
+  have ht := ((analyticOnNhd_dslope_zero A r hr hA) 0 (mem_ball_self hr)).continuousAt.tendsto.comp
+    tendsto_inv₀_cobounded
+  simp only [dslope_same] at ht
+  apply ht.congr'
+  filter_upwards [tendsto_norm_cobounded_atTop.eventually (eventually_gt_atTop (0 : ℝ))] with z hz
+  have he : z⁻¹*dslope A 0 z⁻¹ = A z⁻¹ := by
+    simpa only [sub_zero,smul_eq_mul,hA0] using sub_smul_dslope A 0 z⁻¹
+  dsimp only [Function.comp_def]
+  rw [← he,← mul_assoc,mul_inv_cancel₀ (norm_pos_iff.mp hz),one_mul]
 
 end NLS.ComplexAnalysis
