@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: Analytic sections for head actions
+## Latest progress: Invariance along head-action curves
+
+The actual frequency and refined correction in finite-head/tail-sum
+coordinates now have zero derivative in every retained-head rotation.
+At a head with no zero pair, their derivatives therefore annihilate every
+tangent preserving the head actions. They are constant along every
+differentiable action-preserving curve satisfying the explicit domain and
+nonzero-pair conditions.
+
+`HeadRotationStationarity.lean` proves that a rotation line in a retained
+head coordinate stays linear through mixed squaring and tail summation.
+Differentiating exact recovery transfers rotation stationarity to the
+reduced function. It also proves that the chosen original neighborhood
+covers the whole local tail-sum target.
+
+`HeadRotationDescent.lean` uses that coverage and local recovery to prove
+the rotation identity at every target point. The source local tail-sum
+theorem now has a stronger version exposing these identities for the
+actual frequency and correction in all admissible target norms. Both
+previous theorem interfaces remain available as corollaries.
+
+`HeadActionTangent.lean` expresses every action-preserving head tangent as
+a finite sum of rotations, choosing a nonzero member of each pair. One
+member may vanish, and the quadratic action itself need not be nonzero.
+`HeadActionCurveInvariance.lean` differentiates the quadratic identities
+and applies the mean-value theorem to obtain equality at the endpoints
+of a curve. The hypotheses require action preservation for the whole real
+parameter, differentiability and domain membership on the unit interval,
+and nonzero retained pairs along that interval. No connectivity of an
+entire action fiber is assumed.
+
+Public checks cover a pair with zero first coordinate, tangent annihilation
+with an `l∞` target, and the actual `p = 6` frequency/correction maps in
+`l3` and `l2`, including common-domain rotation identities, constancy along
+admissible curves, and exact recovery from the original source chart.
+
+Validation: the full build passes (5927 jobs), all public examples pass,
+and the transitive axiom audit passes for 21841 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: construct local action-preserving curves joining nearby points to
+the explicit analytic action section and apply the proved curve invariance.
+This is needed for recovery throughout an action neighborhood; the current
+curve theorem alone does not supply the joining curves. Gluing then remains.
+Theorem 18.1, Corollary 18.2, and the later dissertation are unfinished.
+
+## Previous milestone: Analytic sections for head actions
 
 The finite-head/tail-sum coordinates now admit an explicit analytic
 section from the full quadratic action space near each base with no zero

@@ -30974,3 +30974,69 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end HeadActionSectionChecks
+
+
+namespace HeadActionCurveChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- At a pair with zero first coordinate, tangents still come from rotations.
+example (u : ℂ) : ∃ c : ℂ, c*(-Complex.I) = u ∧ c*0 = 0 :=
+  Coeff.exists_rotation_scalar 0 Complex.I u 0 (Or.inr (by simp)) (by simp)
+
+-- A bounded functional into l-infinity kills every head-action tangent,
+-- with arbitrary finite heads and no nonzero-action assumption.
+example (S : Finset ℤ) (w v : Coeff.TailSumSpace 2 S)
+    (L : Coeff.TailSumSpace 2 S →L[ℂ] Coeff ⊤) (hw : Coeff.HeadNonzero S w)
+    (hr : ∀ k : S, L (Coeff.headRotationVector S k w) = 0)
+    (ht : ∀ n ∉ S, v.2 n = 0)
+    (hh : ∀ k : S, w.1 k*v.1 k+w.2 k.val*v.2 k.val = 0) : L v = 0 :=
+  Coeff.clm_headActionTangent_eq_zero S w v L hw hr ht hh
+
+-- The actual p = 6 factors are stationary in every retained-head rotation,
+-- and constant on every differentiable same-action curve satisfying the
+-- explicit domain and nonzero-pair conditions.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6, ∃ S : Finset ℤ,
+    ∃ z₀ : Coeff 6 × Coeff 6, ∃ Z : Set (Coeff 6 × Coeff 6),
+    ∃ T : Set (Coeff.TailSumSpace 3 S),
+    ∃ G : Coeff.TailSumSpace 3 S → Coeff 3, ∃ H : Coeff.TailSumSpace 3 S → Coeff 2,
+      IsOpen Z ∧ z₀ ∈ Z ∧ g z₀ = φ.val ∧ IsOpen T ∧
+      AnalyticOnNhd ℂ G T ∧ AnalyticOnNhd ℂ H T ∧
+      (∀ w ∈ T, ∀ k : S,
+        fderiv ℂ G w (Coeff.headRotationVector S k w) = 0 ∧
+        fderiv ℂ H w (Coeff.headRotationVector S k w) = 0) ∧
+      (∀ γ dγ : ℝ → Coeff.TailSumSpace 3 S,
+        (∀ t ∈ Icc (0 : ℝ) 1, HasDerivAt γ (dγ t) t) →
+        (∀ t ∈ Icc (0 : ℝ) 1, γ t ∈ T) →
+        (∀ t ∈ Icc (0 : ℝ) 1, Coeff.HeadNonzero S (γ t)) →
+        (∀ t : ℝ, Coeff.headActions S (γ t) = Coeff.headActions S (γ 0)) →
+        G (γ 1) = G (γ 0) ∧ H (γ 1) = H (γ 0)) ∧
+      ∀ z ∈ Z, Coeff.tailSumCLM S (Coeff.pairMixedSquare S z) ∈ T ∧
+        G (Coeff.tailSumCLM S (Coeff.pairMixedSquare S z)) = A.frequencySequence 3 (g z) ∧
+        H (Coeff.tailSumCLM S (Coeff.pairMixedSquare S z)) = A.actionFrequencyCorrectionSequence 2 (g z) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_headStationaryLocalTailSumDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,L,_,_,hZ,hbase,_,hmap,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨_,_,hG,hRG,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨_,_,hH,hRH,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,S,sourceBirkhoffMap (by simp) (by norm_num) t φ.val,
+    _,L.target,_,_,hZ,hbase,C.base_eq,L.target_open,hG,hH,fun w hw k => ⟨hRG w hw k,hRH w hw k⟩,?_,?_⟩
+  · intro γ dγ hd hm hn ha
+    exact ⟨Coeff.eq_of_headAction_curve S _ _ L.target_open hG.differentiableOn hRG γ dγ hd hm hn ha,
+      Coeff.eq_of_headAction_curve S _ _ L.target_open hH.differentiableOn hRH γ dγ hd hm hn ha⟩
+  · intro z hz
+    exact ⟨hmap z hz,(he z hz).1,(hj z hz).1⟩
+
+end
+end HeadActionCurveChecks
