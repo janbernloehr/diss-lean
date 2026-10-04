@@ -2296,3 +2296,5 @@ import NLS.ZakharovShabat.SourceFullAbelianFiniteGapInversion
 import NLS.ZakharovShabat.SourceFullAbelianFiniteGapLaurent
 import NLS.ZakharovShabat.SourceFiniteGapMassExponent
 import NLS.ZakharovShabat.SourceFullAbelianMassCoefficient
+import NLS.ZakharovShabat.NLSRiccatiHierarchy
+import NLS.ZakharovShabat.ClassicalNLSHamiltonians

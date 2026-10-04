@@ -27764,3 +27764,47 @@ example (W : Set (CoeffPair 2)) (C : SourceFullAbelianUniformCauchyFamily (by si
   · simpa only [Int.cast_zero,mul_zero,sub_zero] using hs 0
 
 end NLS.FullAbelianMassCoefficientChecks
+
+
+
+noncomputable section
+namespace NLS.RiccatiHierarchyChecks
+open Set Complex MeasureTheory ZakharovShabat
+open scoped ContDiff
+
+-- Nonzero constant potentials check both the quadratic mass and quartic
+-- energy normalization, while their momentum is zero.
+example (c d : ℂ) :
+    classicalNLSHamiltonian (fun _ => c) (fun _ => d) 1 = c*d ∧
+    classicalNLSHamiltonian (fun _ => c) (fun _ => d) 2 = 0 ∧
+    classicalNLSHamiltonian (fun _ => c) (fun _ => d) 3 = c^2*d^2 := by
+  refine ⟨?_,?_,?_⟩
+  · simp [classicalNLSHamiltonian_one]
+  · simp [classicalNLSHamiltonian_two_unsymmetrized]
+  · rw [classicalNLSHamiltonian_three _ _ contDiff_const contDiff_const (fun _ => rfl) (fun _ => rfl)]
+    simp
+
+-- The nonlinear correction in the third Riccati density has the sign
+-- required for positive quartic energy in the real source form.
+example (c d : ℂ) : nlsRiccatiDensity (fun _ => c) (fun _ => d) 2 = fun _ => c*d^2 := by
+  rw [nlsRiccatiDensity_two]
+  ext x
+  simp
+
+-- Every order is an integrable density and keeps the physical period.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1) (n : ℕ) :
+    IntervalIntegrable (fun x => a x*nlsRiccatiDensity a b n x) volume 0 1 ∧
+    Function.Periodic (nlsRiccatiDensity a b n) 1 :=
+  ⟨intervalIntegrable_nlsRiccatiDensity a b ha hb n,periodic_nlsRiccatiDensity a b 1 hpa hpb n⟩
+
+-- The all-order factor conversion uses the dissertation's Hamiltonian
+-- convention; the third term consequently has denominator 8*z^3.
+example (a b : ℝ → ℂ) (z : ℂ) :
+    (∫ x in (0 : ℝ)..1, a x*nlsRiccatiDensity a b 2 x)/(2*Complex.I*z)^3 =
+      Complex.I*classicalNLSHamiltonian a b 3/(8*z^3) := by
+  have h := classicalNLSHamiltonian_riccati_coefficient a b 2 z
+  convert h using 1
+  ring
+
+end NLS.RiccatiHierarchyChecks

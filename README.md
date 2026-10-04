@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the first Laurent coefficient of the actual finite-gap
-primitive is now proved to equal `i*H₁/2`, with `H₁` the original source
-mass, at every finite exponent above one. It is `i*‖φ‖²/4` in the Hilbert
-pair norm. The scaled remainder recovers this coefficient in every
-direction at infinity. Higher Hamiltonian coefficients in Lemma 19.2
-remain to be identified. See `STATUS.md`.
+Latest milestone: Appendix H's Riccati hierarchy is now defined at all
+orders, tied to the actual Zakharov–Shabat equation, and normalized to
+the Hamiltonian factors in Lemma 19.2. Its first three integrals are
+proved to be mass, momentum, and NLS energy. Identifying the higher
+formal terms with the actual Laurent coefficients still requires
+analytic remainder estimates. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -10932,3 +10932,34 @@ mass coefficient.
 The mass term in Lemma 19.2 is now identified. Identification of the
 higher Laurent coefficients with the remaining NLS Hamiltonians is the
 next step; the full lemma and dissertation remain unfinished.
+
+## Physical Riccati hierarchy and Hamiltonian normalization
+
+`NLSRiccatiHierarchy.lean` implements Appendix H's full recursive
+density sequence, beginning with `u₁ = -φ₊` and
+`u_(k+1) = ∂x u_k + φ₋*sum(u_(k-l)*u_l)`. It proves uniqueness of
+all coefficients, smoothness at every order, and the exact formal
+Riccati generating-series identity.
+
+The same module proves that `i*y₂/y₁` for the actual classical
+Zakharov–Shabat solution satisfies the corresponding Riccati equation
+where `y₁` is nonzero. Its first component's logarithmic derivative
+is `-i*z + φ₋*(i*y₂/y₁)`, connecting the hierarchy to the original
+spectral equation with the exact signs.
+
+`ClassicalNLSHamiltonians.lean` defines the physical positive-index
+Hamiltonians by the Appendix H integrals. Every density preserves
+periodicity and is integrable for smooth potentials. Integration by
+parts proves that `H₁` is the existing physical mass, `H₂` is the
+symmetrized momentum, and `H₃` is the NLS energy
+`integral(φ₋' * φ₊' + φ₋² * φ₊²)`. At every order, the integrated
+Riccati term has exactly the factor `i*H_k/(2*z)^k` from Lemma 19.2.
+
+Public checks verify nonzero constant potentials, the positive quartic
+energy term, smooth periodic densities at arbitrary order, and the
+third-order factor `i*H₃/(8*z³)`.
+
+These are the physical hierarchy and formal expansion needed for the
+remaining coefficients of Lemma 19.2. Quantitative remainder estimates
+and the identification with the actual convergent finite-gap Laurent
+series remain to be proved. The full lemma and dissertation are unfinished.
