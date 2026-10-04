@@ -2378,3 +2378,7 @@ import NLS.ZakharovShabat.SourceAbelianMomentRealCosine
 import NLS.ZakharovShabat.SourceAbelianMomentComplexCosine
 import NLS.ZakharovShabat.SourceGapCosineMeanBound
 import NLS.ZakharovShabat.SourceGapCosinePolynomial
+import NLS.ComplexAnalysis.ParametricCosineMeanSegment
+import NLS.ZakharovShabat.SourceGapCosineMeanDomain
+import NLS.ZakharovShabat.SourceAbelianMomentUniformCosine
+import NLS.ZakharovShabat.SourceAbelianMomentCosineNeighborhood

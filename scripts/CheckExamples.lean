@@ -28946,3 +28946,86 @@ example (A : SourceAbelianMomentAtlas hp hp1 W s)
 
 end
 end ComplexMomentCosineChecks
+
+namespace UniformMomentCosineChecks
+open Set Metric Filter Topology Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+noncomputable section
+
+private def signSwitchingHalfGap (a : ℂ) : ℂ :=
+  if a.re ≤ 0 then 3+a else -(3+a)
+
+-- The pole at 2i lies inside every centered disc enclosing [-3,3].
+-- Segment regularity still suffices, even with a discontinuous root sign.
+example : AnalyticAt ℂ (fun a : ℂ =>
+    ∫ θ in (0:ℝ)..Real.pi, (1:ℂ)/(signSwitchingHalfGap a*(Real.cos θ:ℂ)-2*Complex.I)) 0 := by
+  let D : Set (ℂ × ℂ) := {x | x.1 ≠ 2*Complex.I}
+  have hD : IsOpen D := isOpen_ne_fun continuous_fst continuous_const
+  have hg : AnalyticOnNhd ℂ (fun x : ℂ × ℂ => (1:ℂ)/(x.1-2*Complex.I)) D :=
+    fun _ hx => analyticAt_const.div (analyticAt_fst.sub analyticAt_const) (sub_ne_zero.mpr hx)
+  have he : (fun a => (signSwitchingHalfGap a)^2) = fun a : ℂ => (3+a)^2 := by
+    funext a
+    unfold signSwitchingHalfGap
+    split_ifs <;> ring
+  have hs : AnalyticAt ℂ (fun a => (signSwitchingHalfGap a)^2) 0 := by
+    rw [he]
+    exact (analyticAt_const.add analyticAt_id).pow 2
+  have h := analyticAt_parametricCosineMean_of_squared_gap_segment
+    (fun x : ℂ × ℂ => (1:ℂ)/(x.1-2*Complex.I)) (fun _ => 0) signSwitchingHalfGap D hD hg 0
+    analyticAt_const hs (by
+      intro θ _
+      change (0:ℂ)+signSwitchingHalfGap 0*(Real.cos θ:ℂ) ≠ 2*Complex.I
+      intro heq
+      have hi := congrArg Complex.im heq
+      norm_num [signSwitchingHalfGap] at hi)
+  unfold parametricCosineMean at h
+  simpa only [zero_add] using h
+
+-- The same segment theorem covers a collision at zero.
+example : AnalyticAt ℂ (fun a : ℂ =>
+    ∫ θ in (0:ℝ)..Real.pi, (Complex.sqrt a*(Real.cos θ:ℂ))^2) 0 := by
+  have he (a : ℂ) : (Complex.sqrt a)^2 = a := by
+    have h := Complex.cpow_nat_inv_pow a (Nat.succ_ne_zero 1)
+    norm_num at h
+    simpa only [Complex.sqrt,one_div] using h
+  have hs : AnalyticAt ℂ (fun a : ℂ => (Complex.sqrt a)^2) 0 := by
+    simp only [he]
+    exact analyticAt_id
+  have h := analyticAt_parametricCosineMean_of_squared_gap_segment
+    (fun x : ℂ × ℂ => x.1^2) (fun _ => 0) Complex.sqrt univ isOpen_univ
+    (fun _ _ => analyticAt_fst.pow 2) 0 analyticAt_const hs (by intros; trivial)
+  unfold parametricCosineMean at h
+  simpa only [zero_add] using h
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- One radius is selected before either moment index.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (hs : SourcePsiNormalizedComplexExtension hp hp1 V s) (hV : IsOpen V)
+    (φ : realTypeSourceSubmodule p) (hφ : φ.val ∈ V) :
+    ∃ r : ℝ, 0 < r ∧ ∀ n k : ℤ, ∀ ψ ∈ ball φ.val r,
+      A.moment n k 2 ψ = -(2*Complex.I) *
+        sourceGapCosineMean hp hp1 k (fun t : ℂ × CoeffPair p =>
+          sourceAbelianMomentEvenNumerator hp hp1 W n k 1 (s n t.2 : Coeff p) t.2 t.1) ψ := by
+  obtain ⟨r,hr,_,heq⟩ := A.exists_ball_all_even_moments_eq_cosineMean hs hV φ hφ
+  exact ⟨r,hr,fun n k ψ hψ => heq n k 0 ψ hψ⟩
+
+-- The connected common neighborhood supports all second-moment bounds.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (hs : SourcePsiNormalizedComplexExtension hp hp1 V s) (hV : IsOpen V)
+    (hrealV : realTypeSourceLocus p ⊆ V) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus p ⊆ U ∧
+      ∀ ψ ∈ U, ∀ n k : ℤ,
+        (∀ z ∈ sourcePeriodicSegment hp hp1 ψ k, ‖sourceFullAbelianSquare hp hp1 W k (z,ψ)‖ ≤ 2) →
+        (∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+          ‖sourceMomentRegularNumerator hp hp1 n k (s n ψ : Coeff p) ψ z‖ ≤ 3) →
+        ‖(2*Real.pi:ℂ)⁻¹ * A.moment n k 2 ψ‖ ≤ 6 := by
+  obtain ⟨U,hU,hconn,hreal,_,hb⟩ := A.exists_almostReal_second_moment_gap_bounds hs hV hrealV
+  refine ⟨U,hU,hconn,hreal,?_⟩
+  intro ψ hψ n k hS hP
+  convert (hb ψ hψ n k).2 2 3 (by norm_num) (by norm_num) hS hP using 1
+  norm_num
+
+end
+end UniformMomentCosineChecks

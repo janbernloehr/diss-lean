@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: positive even moments now have exact cosine formulas
-near real sources for complex as well as real gaps, including closed gaps.
-The formulas give bounds on the actual gap and the exact polynomial
-leading terms. A source neighborhood uniform in all indices and Lemma
-20.3's final sequence estimates remain next; see `STATUS.md`.
+Latest milestone: one open connected complex source neighborhood now
+supports every positive even cosine moment formula and all second-moment
+gap bounds, including closed gaps. The source domain is chosen before the
+indices and moment order. Lemma 20.3's final sequence estimates remain
+next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11701,4 +11701,40 @@ moment, and the second-moment bound with independently supplied factors.
 Next: obtain one source neighborhood for all moment indices, then combine
 the exact cosine identities and polynomial models with the square and
 psi-factor sequence estimates. Lemma 20.3's uniform decay claims, general
+infinite-gap frequencies, and the remaining dissertation are unfinished.
+
+
+## One complex source neighborhood for every cosine moment
+
+`ParametricCosineMeanSegment.lean` proves analyticity from regularity
+along the actual cosine segment, without an enclosing midpoint disc.
+At a nonzero half-gap a local analytic square root of its square supplies
+a branch, and evenness removes any sign choice. At a zero half-gap the
+existing square-descent construction applies on a small disc. The
+half-gap selection itself need not be continuous. A local theorem for
+jointly analytic interval integrals supplies the parameter regularity.
+
+`SourceGapCosineMeanDomain.lean` applies this result at arbitrary complex
+sources on a prescribed common domain. `SourceAbelianMomentUniformCosine.lean`
+uses the canonical all-gap Cauchy family and the common symmetric-coordinate
+and omitted-product domains to choose a positive source radius before
+both indices and the moment order. Real-form continuation then identifies
+all positive even moments with their actual cosine integrals on that same
+ball, including all open and closed gaps.
+
+`SourceAbelianMomentCosineNeighborhood.lean` assembles these balls into one
+open connected neighborhood containing the entire real source locus.
+Every positive even cosine formula holds there. The same domain supports
+the normalized second-moment bound by the product of a filled-square
+bound and a regular psi-factor bound, for every pair of indices. This
+removes the index-dependent-neighborhood limitation of the previous step.
+
+Public checks cover a pole outside the actual segment but inside its
+centered enclosing discs, a discontinuous half-gap sign selection, a
+square-root collision, a radius chosen before both indices, and all-index
+second-moment bounds on one connected almost-real domain.
+
+Next: combine these common-domain formulas with the polynomial model and
+the square and psi-factor sequence estimates to obtain Lemma 20.3's
+uniform diagonal and off-diagonal decay. Those estimates, general
 infinite-gap frequencies, and the remaining dissertation are unfinished.
