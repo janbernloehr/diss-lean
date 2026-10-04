@@ -1,6 +1,45 @@
 # Implementation plan
 
-## Latest progress: Finite-gap moment contour decomposition
+## Latest progress: Physical frequency formula at open finite-gap actions
+
+`SourceFullAbelianPhysicalContourLocal.lean` proves that every positive
+circle enclosing all open gaps has the physical cubic-contour value
+`H3-2*H1^2`. Annular deformation removes the point-dependent asymptotic
+radius. Finite endpoint continuity gives one fixed contour on nearby
+real sources with fixed finite gap support. Arbitrarily large admissible
+circles enclosing a prescribed finite gap family are constructed.
+
+`SourceHilbertActionReductionFiniteGap.lean` proves that the actual
+Birkhoff action-reduction curve remains finite-gap at every time,
+including collapse, and preserves all unselected closed gaps. With an
+open selected gap it introduces no new open-gap index. The first
+physical Hamiltonian is the source mass and decreases exactly by the
+curve parameter before collapse.
+
+`SourceFiniteGapOpenFrequency.lean` evaluates the physical Appendix H
+hierarchy along that source curve. A fixed contour identity on a whole
+time neighborhood now justifies differentiation: the derivative of
+physical `H3` is minus the cubic contour's angle bracket minus `4*H1`.
+The open-action frequency is defined as minus this physical derivative,
+not by a contour or moment formula. The module proves
+`omega_n - 4*H1 - (2*n*pi)^2 = -4/(2*pi)*sum_k Omega_nk^2`
+for real finite-gap Hilbert sources with an open selected gap. The final
+formula accepts any normalized moment atlas, constructs the required
+angle and primitive data internally, and compares their different
+source neighborhoods and psi branches. The physical frequency is
+independent of the chosen Birkhoff data.
+
+Public checks use the physical derivative definition, all-time finite-gap
+preservation, the moment formula without supplied angle/primitive data,
+and independence across Birkhoff realizations.
+
+Lemma 20.2 is not complete: the selected closed-gap case still needs a
+physical frequency extension/continuity theorem and a finite-gap opening
+approximation in the required topology. The present physical frequency
+interface is for open actions in the Hilbert source space. The
+dissertation as a whole remains unfinished.
+
+## Previous milestone: Finite-gap moment contour decomposition
 
 `FilledSimpleQuotient.lean` fills a quotient at simple denominator zeros
 with the ratio of derivatives and proves analyticity when the numerator

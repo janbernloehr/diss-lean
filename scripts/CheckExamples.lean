@@ -28563,3 +28563,51 @@ example {W₀ B V W U : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → De
 
 end
 end FilledMomentContourChecks
+
+
+namespace PhysicalOpenFrequencyChecks
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal Topology
+noncomputable section
+variable {W₀ B W V₀ C V X : Set (CoeffPair 2)}
+  {s u : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+-- The action curve remains genuinely finite-gap at every time, including collapse.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (t : ℝ) :
+    D.hilbertActionReduction φ n t ∈ sourceFiniteGapLocus (by simp) (by norm_num) :=
+  D.hilbertActionReduction_mem_finiteGap φ hf n t
+
+-- The frequency is defined by the physical hierarchy, without a contour or moment input.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n ≠ 0) :
+    D.finiteGapOpenFrequency φ hf n hn = -deriv (fun t : ℝ =>
+      sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) (D.hilbertActionReduction φ n t)
+        (D.hilbertActionReduction_mem_finiteGap φ hf n t) 3) 0 := rfl
+
+-- The final identity needs no supplied angle differential or primitive chart.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) X u)
+    (hs : SourcePsiNormalizedComplexExtension (by simp) (by norm_num) V u)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n ≠ 0) :
+    D.finiteGapOpenFrequency φ hf n hn -
+      4*sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1 - (2*(n : ℂ)*Real.pi)^2 =
+        -(4/(2*Real.pi) : ℂ)*(∑' k : ℤ, A.moment n k 2 φ.val) :=
+  D.finiteGapOpenFrequency_renormalized_eq_moments A hs φ hf n hn
+
+-- Different Birkhoff realizations produce the same physical action derivative.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (D' : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₀ C V u)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (n : ℤ) (hn : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n ≠ 0) :
+    D.finiteGapOpenFrequency φ hf n hn = D'.finiteGapOpenFrequency φ hf n hn :=
+  D.finiteGapOpenFrequency_independent_coordinates D' φ hf n hn
+
+end
+end PhysicalOpenFrequencyChecks

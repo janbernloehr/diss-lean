@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the large finite-gap moment contour now decomposes
-into the normalized moment circles around the open gaps. The quotient
-extends analytically through every closed gap, and the quadratic formula
-includes the exact `(2*n*pi)^2` correction. This also gives the moment
-sum for the cubic contour's angle bracket. Identifying that bracket with
-the physical NLS frequency in Lemma 20.2 remains unfinished. See `STATUS.md`.
+Latest milestone: the physical Hamiltonian's action derivative now satisfies
+Lemma 20.2's moment formula for real finite-gap Hilbert sources with an
+open selected gap. A fixed contour along the actual action-reduction curve
+justifies the derivative, and the frequency is independent of Birkhoff
+data. The selected closed-gap case remains unfinished. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -11456,3 +11455,43 @@ Lemma 20.2 remains unfinished: the contour bracket must still be
 identified with the physical NLS frequency, and the selected closed-gap
 case needs the finite-gap approximation and frequency-continuity
 argument. The dissertation as a whole remains unfinished.
+
+
+## Physical frequency formula at open finite-gap actions
+
+`SourceFullAbelianPhysicalContourLocal.lean` proves that every positive
+circle enclosing all open gaps has the physical cubic-contour value
+`H3-2*H1^2`. Annular deformation removes the point-dependent asymptotic
+radius. Finite endpoint continuity gives one fixed contour on nearby
+real sources with fixed finite gap support. Arbitrarily large admissible
+circles enclosing a prescribed finite gap family are constructed.
+
+`SourceHilbertActionReductionFiniteGap.lean` proves that the actual
+Birkhoff action-reduction curve remains finite-gap at every time,
+including collapse, and preserves all unselected closed gaps. With an
+open selected gap it introduces no new open-gap index. The first
+physical Hamiltonian is the source mass and decreases exactly by the
+curve parameter before collapse.
+
+`SourceFiniteGapOpenFrequency.lean` evaluates the physical Appendix H
+hierarchy along that source curve. A fixed contour identity on a whole
+time neighborhood now justifies differentiation: the derivative of
+physical `H3` is minus the cubic contour's angle bracket minus `4*H1`.
+The open-action frequency is defined as minus this physical derivative,
+not by a contour or moment formula. The module proves
+`omega_n - 4*H1 - (2*n*pi)^2 = -4/(2*pi)*sum_k Omega_nk^2`
+for real finite-gap Hilbert sources with an open selected gap. The final
+formula accepts any normalized moment atlas, constructs the required
+angle and primitive data internally, and compares their different
+source neighborhoods and psi branches. The physical frequency is
+independent of the chosen Birkhoff data.
+
+Public checks use the physical derivative definition, all-time finite-gap
+preservation, the moment formula without supplied angle/primitive data,
+and independence across Birkhoff realizations.
+
+Lemma 20.2 is not complete: the selected closed-gap case still needs a
+physical frequency extension/continuity theorem and a finite-gap opening
+approximation in the required topology. The present physical frequency
+interface is for open actions in the Hilbert source space. The
+dissertation as a whole remains unfinished.

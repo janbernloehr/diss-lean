@@ -2353,3 +2353,6 @@ import NLS.ZakharovShabat.SourceFullAbelianCubicContourPoisson
 import NLS.ComplexAnalysis.FilledSimpleQuotient
 import NLS.ZakharovShabat.SourcePsiOpenGapQuotient
 import NLS.ZakharovShabat.SourceAbelianMomentFiniteGapContour
+import NLS.ZakharovShabat.SourceFullAbelianPhysicalContourLocal
+import NLS.ZakharovShabat.SourceHilbertActionReductionFiniteGap
+import NLS.ZakharovShabat.SourceFiniteGapOpenFrequency
