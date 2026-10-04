@@ -29761,3 +29761,101 @@ example {W P : Set (CoeffPair 2)} {s : (n : ℤ) → CoeffPair 2 → DeletedCoef
 
 end
 end FrequencyActionInvarianceChecks
+
+
+namespace FrequencyBirkhoffChartChecks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+noncomputable section
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 6) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+
+-- At p = 6 the same complex chart gives an l3 frequency and an l2
+-- correction, with the exact quadratic relation between their coordinates.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6,
+    ∃ F : (Coeff 6 × Coeff 6) → Coeff 3,
+    ∃ G : (Coeff 6 × Coeff 6) → Coeff 2,
+    ∃ T : Set (Coeff 6 × Coeff 6), ∃ z₀ : Coeff 6 × Coeff 6,
+      IsOpen T ∧ z₀ ∈ T ∧ g z₀ = φ.val ∧ AnalyticOnNhd ℂ g T ∧
+      AnalyticOnNhd ℂ F T ∧ AnalyticOnNhd ℂ G T ∧
+      (∀ z ∈ T, ∀ n, G z n = F z n + z.1 n ^ 2 + z.2 n ^ 2) ∧
+      ∀ z : RealCoeff 6 × RealCoeff 6,
+        ((RealCoeff.complexCLM 6).prodMap (RealCoeff.complexCLM 6)) z ∈ T →
+        g (((RealCoeff.complexCLM 6).prodMap (RealCoeff.complexCLM 6)) z) ∈ realTypeSourceLocus 6 := by
+  obtain ⟨W,P,s,A,_,W₀,B,X,t,D,U,_,_,_,hcharts⟩ :=
+    exists_sourceFrequency_birkhoffCharts (p := 6) (by simp) (by norm_num)
+  obtain ⟨C,hfreq,hcorr,_⟩ := hcharts φ
+  obtain ⟨hf,hef⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨hg,heg⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨C.inverse,A.frequencySequence 3 ∘ C.inverse,
+    A.actionFrequencyCorrectionSequence 2 ∘ C.inverse,C.target,
+    sourceBirkhoffMap (by simp) (by norm_num) t φ.val,
+    C.target_open,C.center_mem,C.base_eq,C.analytic,hf,hg,?_,C.real_preserving⟩
+  intro z hz n
+  exact (heg z hz n).trans (by rw [Function.comp_apply,hef z hz n])
+
+-- The inverse recovers the original action at a specified signed index.
+example {W₀ B X U : Set (CoeffPair 4)} {t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t}
+    {φ : realTypeSourceSubmodule 4} (C : SourceBirkhoffInverseChart D φ U)
+    (z : Coeff 4 × Coeff 4) (hz : z ∈ C.target) :
+    (sourceComplexAction (by simp) (by norm_num) 0 (C.inverse z) =
+      (z.1 0 ^ 2 + z.2 0 ^ 2) / 2) := C.action_eq z hz 0
+
+-- The action identity also holds as equality of the full Banach sequences.
+example {W₀ B X U : Set (CoeffPair 4)} {t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t}
+    {φ : realTypeSourceSubmodule 4} (C : SourceBirkhoffInverseChart D φ U)
+    (z : Coeff 4 × Coeff 4) (hz : z ∈ C.target) :
+    ∃ a : Coeff 2, ∀ n, a n = sourceComplexAction (by simp) (by norm_num) n (C.inverse z) := by
+  have he : (4 : ℝ≥0∞) / 2 = 2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  let : (4 : ℝ≥0∞).HolderTriple 4 2 := by
+    simpa only [he] using Coeff.holderTriple_half 4
+  refine ⟨sourceActionSequence (q := 2) (by simp) (by norm_num) t (C.inverse z),?_⟩
+  rw [C.actionSequence_eq z hz]
+  intro n
+  rw [quadraticActionsExponent_apply,C.action_eq z hz n]
+
+-- Zero coordinates are included; no positive-gap assumption is required.
+example {W₀ B X U : Set (CoeffPair 4)} {t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t}
+    {φ : realTypeSourceSubmodule 4} (C : SourceBirkhoffInverseChart D φ U)
+    (z : Coeff 4 × Coeff 4) (hz : z ∈ C.target) (n : ℤ)
+    (hx : z.1 n = 0) (hy : z.2 n = 0) :
+    sourceComplexAction (by simp) (by norm_num) n (C.inverse z) = 0 := by
+  rw [C.action_eq z hz n,hx,hy]
+  norm_num
+
+-- The construction remains available below the Hilbert exponent and can
+-- be restricted to any prescribed open neighborhood of the source.
+example {W₀ B X : Set (CoeffPair (ENNReal.ofReal (3/2:ℝ)))}
+    {t : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2:ℝ)) → DeletedCoeff (ENNReal.ofReal (3/2:ℝ)) n}
+    (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) W₀ B X t)
+    (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2:ℝ)))
+    (U : Set (CoeffPair (ENNReal.ofReal (3/2:ℝ)))) (hU : IsOpen U) (hφ : φ.val ∈ U) :
+    Nonempty (SourceBirkhoffInverseChart D φ U) := D.exists_inverseChart φ U hU hφ
+
+-- Real sources lifted from equal quadratic actions have equal actual
+-- frequency and correction sequences, in any chosen target.
+example {W₀ B X W P U : Set (CoeffPair 4)} {s t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t}
+    {φ : realTypeSourceSubmodule 4} (C : SourceBirkhoffInverseChart D φ U)
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (z w : RealCoeff 4 × RealCoeff 4)
+    (hz : ((RealCoeff.complexCLM 4).prodMap (RealCoeff.complexCLM 4)) z ∈ C.target)
+    (hw : ((RealCoeff.complexCLM 4).prodMap (RealCoeff.complexCLM 4)) w ∈ C.target)
+    (he : ∀ n, RealCoeff.pairAction w n = RealCoeff.pairAction z n) :
+    A.frequencySequence 2 (C.realInverse w hw).val = A.frequencySequence 2 (C.realInverse z hz).val ∧
+    A.actionFrequencyCorrectionSequence 2 (C.realInverse w hw).val =
+      A.actionFrequencyCorrectionSequence 2 (C.realInverse z hz).val :=
+  ⟨C.frequency_eq_of_pairAction A hs z w hz hw he 2,
+    C.actionCorrection_eq_of_pairAction A hs z w hz hw he 2⟩
+
+end
+end FrequencyBirkhoffChartChecks

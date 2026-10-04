@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: equal actions now give equal normalized frequencies
-at every finite source exponent `p > 1`, including across independent
-contour atlases. The analytic source frequency map is constructed together
-with this invariance. Next is analytic descent to action space in
-Theorem 18.1; see `STATUS.md`.
+Latest milestone: the actual frequency and its refined correction now have
+complex analytic Birkhoff coordinate charts that preserve real sources,
+identify the original actions with quadratic coordinates, and retain
+invariance on real action fibers. One chart works for every admissible
+target exponent. Analytic descent to action space in Theorem 18.1 remains
+next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -12158,4 +12159,39 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 Next: prove analytic descent of the frequency map to action space,
 including the complex action neighborhood in Theorem 18.1. The present
 factorization proves well-definedness only. Corollary 18.2 and the later
+dissertation remain unfinished.
+
+
+## Real-compatible complex frequency charts
+
+`SourceBirkhoffInverseChart.lean` constructs complex analytic local inverses
+at every real source for every finite `p > 1`, restricted inside any
+prescribed open source neighborhood. Reality is proved by comparing the
+actual real and complex inverse germs. The charts retain both inverse
+identities and identify every original spectral action, including zero
+actions, with `(x_n^2 + y_n^2)/2`. The entire Banach action sequence has
+this identity as well.
+
+`SourceFrequencyBirkhoffChart.lean` constructs the moment atlas, Birkhoff
+family, and one chart per real source before choosing any target exponent.
+The frequency is analytic in every finite `lr` with `r > 1` and
+`r >= p/2`; its action correction is analytic for `r >= p/3` under the
+same finite and strict lower bounds. On that chart the correction is
+exactly frequency plus `x_n^2 + y_n^2`. Both actual sequences are constant
+on real quadratic action fibers. No inverse chart, contour atlas, or
+reality property is assumed in the construction theorem.
+
+Public checks cover a common `p = 6` chart with an `l3` frequency and
+an `l2` correction, the full `p = 4` action sequence, zero coordinates,
+real action-fiber invariance, and charts below the Hilbert exponent
+inside prescribed open source neighborhoods.
+
+Validation: the full check script passes (5,870 build jobs, all public
+examples, and an axiom audit of 21,483 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove analytic descent through the quadratic action map, including
+zero coordinates, and construct the complex action neighborhood in
+Theorem 18.1. These charts supply the required coordinate preparation;
+they do not yet prove analytic descent. Corollary 18.2 and the later
 dissertation remain unfinished.

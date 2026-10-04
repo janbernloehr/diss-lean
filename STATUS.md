@@ -1,6 +1,40 @@
 # Implementation status
 
-## Current milestone: Frequency invariance on action level sets
+## Current milestone: Real-compatible complex frequency charts
+
+`SourceBirkhoffInverseChart.lean` constructs complex analytic local inverses
+at every real source for every finite `p > 1`, restricted inside any
+prescribed open source neighborhood. Reality is proved by comparing the
+actual real and complex inverse germs. The charts retain both inverse
+identities and identify every original spectral action, including zero
+actions, with `(x_n^2 + y_n^2)/2`. The entire Banach action sequence has
+this identity as well.
+
+`SourceFrequencyBirkhoffChart.lean` constructs the moment atlas, Birkhoff
+family, and one chart per real source before choosing any target exponent.
+The frequency is analytic in every finite `lr` with `r > 1` and
+`r >= p/2`; its action correction is analytic for `r >= p/3` under the
+same finite and strict lower bounds. On that chart the correction is
+exactly frequency plus `x_n^2 + y_n^2`. Both actual sequences are constant
+on real quadratic action fibers. No inverse chart, contour atlas, or
+reality property is assumed in the construction theorem.
+
+Public checks cover a common `p = 6` chart with an `l3` frequency and
+an `l2` correction, the full `p = 4` action sequence, zero coordinates,
+real action-fiber invariance, and charts below the Hilbert exponent
+inside prescribed open source neighborhoods.
+
+Validation: the full check script passes (5,870 build jobs, all public
+examples, and an axiom audit of 21,483 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove analytic descent through the quadratic action map, including
+zero coordinates, and construct the complex action neighborhood in
+Theorem 18.1. These charts supply the required coordinate preparation;
+they do not yet prove analytic descent. Corollary 18.2 and the later
+dissertation remain unfinished.
+
+## Previous milestone: Frequency invariance on action level sets
 
 `SourceFrequencyActionInvariance.lean` proves that the actual moment-sum
 frequency depends only on the original spectral actions for every finite

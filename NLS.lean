@@ -2438,3 +2438,5 @@ import NLS.ZakharovShabat.SourceAbelianPrimitiveIsospectral
 import NLS.ZakharovShabat.SourceAbelianMomentIsospectral
 import NLS.ZakharovShabat.SourceActionIsospectralAllExponents
 import NLS.ZakharovShabat.SourceFrequencyActionInvariance
+import NLS.ZakharovShabat.SourceBirkhoffInverseChart
+import NLS.ZakharovShabat.SourceFrequencyBirkhoffChart
