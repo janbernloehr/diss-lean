@@ -2388,3 +2388,7 @@ import NLS.ZakharovShabat.SourceAbelianMomentGapRegularity
 import NLS.ZakharovShabat.SourceAbelianMomentErrorDomain
 import NLS.ZakharovShabat.SourceAbelianMomentSecondError
 import NLS.ZakharovShabat.SourceAbelianMomentSquaredOffsetError
+import NLS.ZakharovShabat.SourcePsiRefinedOffsetExponent
+import NLS.ZakharovShabat.SourcePsiRefinedQuotientTail
+import NLS.ZakharovShabat.SourcePsiRefinedChiTail
+import NLS.ZakharovShabat.SourcePsiRefinedActualGapTail

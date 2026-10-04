@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Quantitative second-moment errors and actual root offsets
+## Current milestone: Refined psi tail exponents on actual complex gaps
+
+`SourcePsiRefinedOffsetExponent.lean` uses the actual squared-gap
+root offsets of Lemma 12.12 to construct the midpoint-filled numerator
+displacement at every finite exponent above one and at least `p/2`.
+A bounded multiplier acts on the squared-gap sequence, followed by the
+contractive exponent inclusion, including when `p/2 < 1`. One source
+neighborhood and norm bound are chosen before both the deleted index
+and the target exponent.
+
+`SourcePsiRefinedQuotientTail.lean` inserts that actual displacement into
+Lemma 10.8. It combines the quotient's two error sequences at the target
+exponent and bounds their explicit constants on a compact range of the
+source norms. The source neighborhood and tail cutoff are independent
+of the exponent and deleted index; only the norm bound depends on the
+exponent.
+
+`SourcePsiRefinedChiTail.lean` carries the refined exponent through the
+midpoint denominator estimate. The added term is a translated reciprocal
+lattice whose norm is independent of the deleted index. The theorem uses
+the actual normalized psi branch, rather than a supplied root family or
+an assumed chi asymptotic.
+
+`SourcePsiRefinedActualGapTail.lean` places every distant moving complex
+gap inside its free-centered eighth-pi disc and restricts both estimates
+to the actual segments used by the moment formulas. Quotient and chi
+row majorants have uniform norms for every finite `r > 1` with `r >= p/2`.
+Both share one source neighborhood and cutoff selected before `r` and
+the deleted index. Collapsed selected gaps are included.
+
+Public checks cover the gain from source exponent four to exponent two,
+actual chi bounds on moving gaps, the half-exponent `3/4` case for a
+source exponent of `3/2`, and applicability at collapsed selected gaps.
+
+Next: patch the finite central selected indices uniformly in the deleted
+index and combine the tail majorants with the square estimates and the
+quantitative moment inequalities. The diagonal still needs a single
+sequence estimate; a uniform bound on separate row majorants does not
+by itself prove that. Lemma 20.3's final moment sequence bounds, general
+infinite-gap frequencies, and the remaining dissertation are unfinished.
+
+## Previous milestone: Quantitative second-moment errors and actual root offsets
 
 `SourceMomentRegularFactorization.lean` identifies the diagonal regular
 numerator with `i` times the single-root quotient. Its cross-multiplied

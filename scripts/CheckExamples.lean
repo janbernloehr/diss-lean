@@ -29104,3 +29104,87 @@ example (D : SourceAbelianMomentErrorDomain A)
 
 end
 end SecondMomentErrorChecks
+
+namespace RefinedPsiExponentChecks
+open Set Metric Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+section Four
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+variable {hp : (4:ℝ≥0∞) ≠ ⊤} {hp1 : 1 < (4:ℝ≥0∞)}
+
+-- A source exponent of four admits the strictly stronger exponent two.
+example (ψ : CoeffPair 4) (n : ℤ) (a : DeletedCoeff 4 n) (α : Coeff 4)
+    (hαn : α n = 0)
+    (hα : ∀ k, k ≠ n → displacedRoots (a : Coeff 4) k =
+      sourceStandardRootMidpoint hp hp1 ψ k+(sourcePeriodicGapDisplacement hp hp1 ψ k)^2*α k) :
+    ∃ β : Coeff 2,
+      (∀ k, displacedRoots (sourcePsiFillDeletedRoot n a (sourceStandardRootMidpoint hp hp1 ψ n)) k-
+        sourceStandardRootMidpoint hp hp1 ψ k = β k) ∧
+      ‖β‖ ≤ ‖α‖*‖sourcePeriodicSquaredGapCoeff hp hp1 ψ‖ := by
+  exact exists_filledPsi_offset_coeff_of_squared_offsets hp hp1 ψ n a α hαn hα 2
+    (by norm_num) (by norm_num) (by norm_num)
+
+-- The actual chi error is square summable on every sufficiently distant
+-- moving gap, with one neighborhood and cutoff for every deleted index.
+example {V : Set (CoeffPair 4)} {s : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (φ : realTypeSourceSubmodule 4) (hφ : φ.val ∈ V) :
+    ∃ T : Set (CoeffPair 4), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ V ∧ ∃ K : ℕ,
+      ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ T, ∀ n : ℤ, ∃ B : Coeff 2, ‖B‖ ≤ M ∧
+        ∀ k : ℤ, K ≤ k.natAbs → k ≠ n → ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+          ‖sourcePsiMidpointFilledRegularFactor hp hp1 n k (s n ψ) ψ z-Complex.I‖ ≤ ‖B k‖ := by
+  obtain ⟨T,hT,hφT,hTV,K,hb⟩ := hs.exists_local_refined_actualGap_tail_majorants φ hφ
+  obtain ⟨M,hM,hmajor⟩ := hb 2 (by norm_num) (by norm_num) (by norm_num)
+  refine ⟨T,hT,hφT,hTV,K,M,hM,?_⟩
+  intro ψ hψ n
+  obtain ⟨_,Bc,_,hBc,_,hchi⟩ := hmajor ψ hψ n
+  exact ⟨Bc,hBc,hchi⟩
+end Four
+
+section BelowTwo
+private noncomputable abbrev threeHalves : ℝ≥0∞ := ENNReal.ofReal (3/2:ℝ)
+local instance : Fact (1 ≤ threeHalves) := ⟨by norm_num [threeHalves]⟩
+private theorem finiteThreeHalves : threeHalves ≠ ⊤ := ENNReal.ofReal_ne_top
+private theorem oneLtThreeHalves : 1 < threeHalves := by norm_num [threeHalves,ENNReal.one_lt_ofReal]
+
+-- The proof passes through exponent 3/4 without assuming it is a Banach space.
+example (ψ : CoeffPair threeHalves) (n : ℤ) (a : DeletedCoeff threeHalves n)
+    (α : Coeff threeHalves) (hαn : α n = 0)
+    (hα : ∀ k, k ≠ n → displacedRoots (a : Coeff threeHalves) k =
+      sourceStandardRootMidpoint finiteThreeHalves oneLtThreeHalves ψ k+
+        (sourcePeriodicGapDisplacement finiteThreeHalves oneLtThreeHalves ψ k)^2*α k) :
+    ∃ β : Coeff (ENNReal.ofReal (5/4:ℝ)),
+      (∀ k, displacedRoots (sourcePsiFillDeletedRoot n a
+        (sourceStandardRootMidpoint finiteThreeHalves oneLtThreeHalves ψ n)) k-
+          sourceStandardRootMidpoint finiteThreeHalves oneLtThreeHalves ψ k = β k) ∧
+      ‖β‖ ≤ ‖α‖*‖sourcePeriodicSquaredGapCoeff finiteThreeHalves oneLtThreeHalves ψ‖ := by
+  exact exists_filledPsi_offset_coeff_of_squared_offsets finiteThreeHalves oneLtThreeHalves ψ n a α hαn hα
+    _ ENNReal.ofReal_ne_top (by norm_num) (by norm_num [threeHalves])
+end BelowTwo
+
+-- At a collapsed selected gap the same chi-tail theorem remains available;
+-- there is no nonzero-gap hypothesis in its source or selected-index inputs.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (hs : SourcePsiSquaredGapComplexExtension hp hp1 V s)
+    (φ : realTypeSourceSubmodule p) (hφ : φ.val ∈ V) :
+    ∃ T : Set (CoeffPair p), IsOpen T ∧ φ.val ∈ T ∧ T ⊆ V ∧ ∃ K : ℕ,
+      ∀ r : ℝ≥0∞, r ≠ ⊤ → 1 < r → ENNReal.ofReal (p.toReal/2) ≤ r →
+        ∃ M : ℝ, 0 ≤ M ∧ ∀ ψ ∈ T, ∀ n : ℤ, ∃ B : Coeff r, ‖B‖ ≤ M ∧
+          ∀ k : ℤ, K ≤ k.natAbs → k ≠ n →
+            sourcePeriodicGapDisplacement hp hp1 ψ k = 0 →
+            ∀ z ∈ sourcePeriodicSegment hp hp1 ψ k,
+              ‖sourcePsiMidpointFilledRegularFactor hp hp1 n k (s n ψ) ψ z-Complex.I‖ ≤ ‖B k‖ := by
+  obtain ⟨T,hT,hφT,hTV,K,hb⟩ := hs.exists_local_refined_actualGap_tail_majorants φ hφ
+  refine ⟨T,hT,hφT,hTV,K,?_⟩
+  intro r hr hr1 hpr
+  obtain ⟨M,hM,hmajor⟩ := hb r hr hr1 hpr
+  refine ⟨M,hM,?_⟩
+  intro ψ hψ n
+  obtain ⟨_,Bc,_,hBc,_,hchi⟩ := hmajor ψ hψ n
+  exact ⟨Bc,hBc,fun k hk hkn _ z hz => hchi k hk hkn z hz⟩
+
+end
+end RefinedPsiExponentChecks
