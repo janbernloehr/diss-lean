@@ -30502,3 +30502,111 @@ example (φ : realTypeSourceSubmodule 6) :
 
 end
 end AnalyticLineDescentChecks
+
+
+namespace FrechetDescentChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal Topology
+open Filter
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := by
+  have he : (4 : ℝ≥0∞)/2 = 2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 4
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The derivative is a bounded complex-linear map and agrees with line derivatives.
+example {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+    [NormedAddCommGroup F] [NormedSpace ℂ F] [CompleteSpace F]
+    (f : E → F) (U : Set E) (hU : IsOpen U) (hf : ContinuousOn f U)
+    (hl : ∀ a ∈ U, ∀ d : E, AnalyticOnNhd ℂ (fun t : ℂ => f (a+t • d))
+      ((fun t : ℂ => a+t • d) ⁻¹' U)) (a : E) (ha : a ∈ U) (v w : E) (c : ℂ) :
+    fderiv ℂ f a (v+c • w) = lineDeriv ℂ f a v+c • lineDeriv ℂ f a w := by
+  rw [map_add,map_smul,
+    ComplexAnalysis.fderiv_apply_eq_lineDeriv_of_analyticLines f U hU hf hl a ha v,
+    ComplexAnalysis.fderiv_apply_eq_lineDeriv_of_analyticLines f U hU hf hl a ha w]
+
+-- The quantitative remainder is uniform in directions in an infinite-dimensional domain.
+example (f : (Coeff 3 × Coeff 3) → Coeff 2) (U : Set (Coeff 3 × Coeff 3))
+    (hU : IsOpen U)
+    (hl : ∀ a ∈ U, ∀ d : Coeff 3 × Coeff 3, AnalyticOnNhd ℂ (fun t : ℂ => f (a+t • d))
+      ((fun t : ℂ => a+t • d) ⁻¹' U))
+    (a : Coeff 3 × Coeff 3) (hb : ball a 2 ⊆ U)
+    (hm : ∀ z ∈ ball a 2, ‖f z‖ ≤ 4) (h : Coeff 3 × Coeff 3) (hh : ‖h‖ < 1) :
+    ‖f (a+h)-f a-lineDeriv ℂ f a h‖ ≤ 12*‖h‖^2 := by
+  have ht := ComplexAnalysis.norm_sub_lineDeriv_le_of_ball_bound f U hU hl a 2 4
+    (by norm_num) hb hm h (by simpa using hh)
+  norm_num at ht ⊢
+  exact ht
+
+-- General descent allows l-infinity targets and gives C1 on the full image.
+example (S : Finset ℤ) (f : (Coeff 4 × Coeff 4) → Coeff ⊤) (V : Set (Coeff 4 × Coeff 4))
+    (hV : IsOpen V) (hf : AnalyticOnNhd ℂ f V)
+    (hi : ∀ e d : ℤ → Bool, (∀ n ∈ S, e n = false) → (∀ n ∈ S, d n = false) →
+      ∀ z ∈ V, f (Coeff.pairSignChange e d z) = f z) :
+    ContDiffOn ℂ 1 (Coeff.tailSquareDescent (q := 2) S f V) (Coeff.pairMixedSquare S '' V) :=
+  Coeff.contDiffOn_one_tailSquareDescent (by simp) S f V hV hf hi
+
+-- Full Fréchet differentiability holds at the all-zero source,
+-- where choosing analytic square roots directly would fail.
+example : DifferentiableAt ℂ (Coeff.tailSquareDescent (p := 4) (q := 2) ∅
+      (fun z : Coeff 4 × Coeff 4 => Coeff.square (q := 2) z.1+Coeff.square z.2) univ)
+      (0 : Coeff 2 × Coeff 2) := by
+  let f : (Coeff 4 × Coeff 4) → Coeff 2 := fun z => Coeff.square z.1+Coeff.square z.2
+  have hf : AnalyticOnNhd ℂ f univ := by
+    intro z _
+    exact ((Coeff.analyticOnNhd_square z.1 (mem_univ _)).comp analyticAt_fst).add
+      ((Coeff.analyticOnNhd_square z.2 (mem_univ _)).comp analyticAt_snd)
+  have hi : ∀ e d : ℤ → Bool, (∀ n ∈ (∅ : Finset ℤ), e n = false) →
+      (∀ n ∈ (∅ : Finset ℤ), d n = false) → ∀ z ∈ (univ : Set (Coeff 4 × Coeff 4)),
+      f (Coeff.pairSignChange e d z) = f z := by
+    intro e d _ _ z _
+    ext n
+    simp [f,Coeff.pairSignChange]
+  have hz : (0 : Coeff 2 × Coeff 2) ∈ Coeff.pairMixedSquare (p := 4) ∅ '' univ := by
+    refine ⟨0,mem_univ _,?_⟩
+    apply Prod.ext <;> ext n <;> simp [Coeff.pairMixedSquare]
+  exact (Coeff.differentiableOn_tailSquareDescent (p := 4) (q := 2)
+    (by simp) ∅ f univ isOpen_univ hf hi 0 hz).differentiableAt
+      ((Coeff.isOpenMap_pairMixedSquare (p := 4) (q := 2) (by simp) ∅ univ isOpen_univ).mem_nhds hz)
+
+-- Actual p = 6 frequency and correction are complex C1 in l3 and l2 norms,
+-- on one common open l3-pair domain, with exact source recovery.
+example (φ : realTypeSourceSubmodule 6) :
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ g : (Coeff 6 × Coeff 6) → CoeffPair 6,
+    ∃ S : Finset ℤ, ∃ c z₀ : Coeff 6 × Coeff 6, ∃ R : ℝ,
+    ∃ V : Set (Coeff 3 × Coeff 3),
+    ∃ F : (Coeff 3 × Coeff 3) → Coeff 3, ∃ H : (Coeff 3 × Coeff 3) → Coeff 2,
+      0 < R ∧ z₀ ∈ ball c R ∧ g z₀ = φ.val ∧ IsOpen V ∧
+      ContDiffOn ℂ 1 F V ∧ ContDiffOn ℂ 1 H V ∧
+      (∀ (b d : Coeff 3 × Coeff 3),
+        AnalyticOnNhd ℂ (fun v : ℂ => F (b+v • d))
+          ((fun v : ℂ => b+v • d) ⁻¹' V) ∧
+        AnalyticOnNhd ℂ (fun v : ℂ => H (b+v • d))
+          ((fun v : ℂ => b+v • d) ⁻¹' V)) ∧
+      ∀ z ∈ ball c R, Coeff.pairMixedSquare S z ∈ V ∧
+        F (Coeff.pairMixedSquare S z) = A.frequencySequence 3 (g z) ∧
+        H (Coeff.pairMixedSquare S z) = A.actionFrequencyCorrectionSequence 2 (g z) := by
+  obtain ⟨W,s,A,W₀,B,X,t,D,U,_,_,hcharts⟩ :=
+    exists_sourceFrequency_frechetTailSquareDescent (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨C,S,R,hR,hbase,_,hV,_,hfreq,hcorr⟩ := hcharts φ
+  obtain ⟨_,hf,_,hfa,he⟩ := hfreq 3 (by simp) (by norm_num) (by norm_num)
+  obtain ⟨_,hg,_,hga,hj⟩ := hcorr 2 (by simp) (by norm_num) (by norm_num)
+  refine ⟨W,s,A,C.inverse,S,Coeff.truncatePair S (sourceBirkhoffMap (by simp) (by norm_num) t φ.val),
+    sourceBirkhoffMap (by simp) (by norm_num) t φ.val,R,_,_,_,hR,hbase,C.base_eq,hV,hf,hg,
+    fun b d => ⟨hfa b d,hga b d⟩,?_⟩
+  intro z hz
+  exact ⟨⟨z,hz,rfl⟩,(he z hz).1,(hj z hz).1⟩
+
+end
+end FrechetDescentChecks

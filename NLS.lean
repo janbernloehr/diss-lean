@@ -2468,3 +2468,10 @@ import NLS.ZakharovShabat.SourceFrequencyFiniteLineDescent
 import NLS.ComplexAnalysis.AnalyticLineLimit
 import NLS.SequenceSpaces.TailSquareDescentAnalyticLine
 import NLS.ZakharovShabat.SourceFrequencyAnalyticLineDescent
+import NLS.ComplexAnalysis.AnalyticLineDerivative
+import NLS.ComplexAnalysis.AnalyticLineDerivativeLinear
+import NLS.ComplexAnalysis.AnalyticLineDerivativeBounds
+import NLS.ComplexAnalysis.AnalyticLineRemainder
+import NLS.ComplexAnalysis.AnalyticLineFrechet
+import NLS.SequenceSpaces.TailSquareDescentFrechet
+import NLS.ZakharovShabat.SourceFrequencyFrechetDescent

@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: Analytic slices in arbitrary sequence directions
+## Current milestone: Complex Fréchet differentiability of the frequency descent
+
+The actual descended frequency and refined correction now have complex
+Fréchet derivatives throughout their common open mixed-coordinate domain.
+Their derivatives are continuous in operator norm: both maps are complex
+`C¹`, in every admissible target sequence norm. The source charts, domain,
+and exact frequency and correction recovery formulas are preserved.
+
+`AnalyticLineDerivative.lean` proves joint continuity of directional
+derivatives in the center and direction using locally uniform convergence
+of holomorphic derivatives. `AnalyticLineDerivativeLinear.lean` restricts
+to two-dimensional affine planes to prove additivity, then packages the
+homogeneous directional derivative as a continuous complex-linear map.
+`AnalyticLineDerivativeBounds.lean` proves the Cauchy operator bound
+`‖D f(a)‖ ≤ 2*M/R` on a source ball of radius `R` bounded by `M`.
+
+`AnalyticLineRemainder.lean` applies the Schwarz estimate to each line
+after subtracting its constant and linear terms. Uniformly for
+`‖h‖ < R/2`, the error is bounded by `12*M/R² * ‖h‖²`.
+`AnalyticLineFrechet.lean` uses this estimate to prove a genuine Fréchet
+derivative, identifies its action with the directional derivative, and
+uses the existing holomorphic regularity theorem to obtain complex `C¹`.
+The general domain may be any complex normed space; the target is complete.
+
+`TailSquareDescentFrechet.lean` applies these results to the sign-invariant
+sequence descent, including infinite target exponent and zero tail entries.
+`SourceFrequencyFrechetDescent.lean` proves complex `C¹` regularity of the
+actual frequency and refined correction on the same local domain, with
+all admissible exponents and exact source formulas.
+
+Public checks cover complex-linear derivative identities, a quantitative
+quadratic remainder in an infinite-dimensional domain, an `l∞` target,
+Fréchet differentiability at the all-zero source, and the actual `p = 6`
+frequency and correction as `C¹` maps into `l3` and `l2`.
+
+Validation: the full check script passes (5,906 build jobs, all public
+examples, and an axiom audit of 21,679 declarations). There are no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: upgrade complex Fréchet differentiability to joint analyticity,
+then descend from individual coordinate squares to quadratic actions and
+glue the local maps. The joint analytic action map required by Theorem 18.1
+has not yet been formalized. Corollary 18.2 and the later dissertation
+remain unfinished.
+
+## Previous milestone: Analytic slices in arbitrary sequence directions
 
 The actual descended frequency and refined correction now have analytic
 slices in every complex sequence direction, in their full target norms.
