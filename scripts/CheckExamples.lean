@@ -27861,3 +27861,59 @@ example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) 
   ring
 
 end NLS.WKBApproximationChecks
+
+
+
+noncomputable section
+namespace NLS.HamiltonianDiscriminantChecks
+open Set Complex ZakharovShabat NLS.LinearVolterra
+open scoped ContDiff
+
+-- Vanishing forcing recovers the exact initial-value solution, including
+-- at the endpoints of the physical period.
+example (Φ : Curve (ℂ × ℂ)) (r : ℝ) (u : ℝ → ℂ × ℂ) (hu : Continuous u)
+    (hd : ∀ t : Icc (0 : ℝ) 1, HasDerivAt u (classicalODECoefficient (Φ t) r (u t)) t)
+    (t : Icc (0 : ℝ) 1) : u t = classicalSolution Φ r (u 0) t := by
+  have h := norm_sub_classicalSolution_real_le_of_residual Φ 0 r u hu
+    (fun s => by simpa using hd s) 0 le_rfl (fun _ => by simp) t
+  simp only [mul_zero] at h
+  exact sub_eq_zero.mp (norm_eq_zero.mp (le_antisymm h (norm_nonneg _)))
+
+-- The full solution estimate applies to negative frequencies and interior
+-- times, not just to the endpoint or to the positive real axis.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) :
+    ∃ C : ℝ, 0 < C ∧ ∀ r : ℝ, 1 ≤ r →
+      ‖nlsWKBVector a b 4 (-r) (1/2) -
+        classicalSolution (classicalPotentialOfFunctions a b ha.continuous hb.continuous) (-r)
+          (nlsWKBVector a b 4 (-r) 0) (1/2)‖ ≤ C/(16*r^4) := by
+  obtain ⟨C,hC,hbound⟩ := exists_nlsWKBVector_solution_error_bound a b ha hb 4
+  refine ⟨C,hC,?_⟩
+  intro r hr
+  have h := hbound (-r) (by simpa only [abs_neg,abs_of_nonneg (by linarith : 0 ≤ r)] using hr)
+    ⟨1/2,by constructor <;> norm_num⟩
+  simp only [ofReal_neg,abs_neg,abs_of_nonneg (by linarith : 0 ≤ r)] at h
+  convert h using 1
+  ring
+
+-- The actual discriminant has the first three physical Hamiltonians,
+-- with the original factors 2, 4, and 8 and a uniform cubic error.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1) :
+    ∃ C : ℝ, 0 < C ∧ ∀ r : ℝ, 1 ≤ |r| →
+      ‖classicalDiscriminant (classicalPotentialOfFunctions a b ha.continuous hb.continuous) r -
+        2*cos (Complex.I*(-Complex.I*r+
+          Complex.I*classicalNLSHamiltonian a b 1/(2*r)+
+          Complex.I*classicalNLSHamiltonian a b 2/(4*(r : ℂ)^2)+
+          Complex.I*classicalNLSHamiltonian a b 3/(8*(r : ℂ)^3)))‖ ≤ C/(2*|r|)^3 := by
+  obtain ⟨C,hC,hbound⟩ := exists_classicalDiscriminant_hamiltonian_error_bound a b ha hb hpa hpb 3
+  refine ⟨C,hC,?_⟩
+  intro r hr
+  have he : nlsHamiltonianPhase a b 3 r = -Complex.I*r+
+      Complex.I*classicalNLSHamiltonian a b 1/(2*r)+
+      Complex.I*classicalNLSHamiltonian a b 2/(4*(r : ℂ)^2)+
+      Complex.I*classicalNLSHamiltonian a b 3/(8*(r : ℂ)^3) := by
+    simp only [nlsHamiltonianPhase,Finset.sum_range_succ,Finset.sum_range_zero,zero_add,pow_one]
+    ring
+  simpa only [he] using hbound r hr
+
+end NLS.HamiltonianDiscriminantChecks

@@ -2302,3 +2302,8 @@ import NLS.ComplexAnalysis.PolynomialFunctionBounds
 import NLS.ZakharovShabat.NLSRiccatiTruncation
 import NLS.ZakharovShabat.NLSRiccatiResidualBounds
 import NLS.ZakharovShabat.NLSWKBApproximation
+import NLS.ZakharovShabat.ClassicalResidualStability
+import NLS.ZakharovShabat.NLSWKBCarrierBounds
+import NLS.ZakharovShabat.NLSWKBComparison
+import NLS.ComplexAnalysis.UnimodularTraceError
+import NLS.ZakharovShabat.NLSHamiltonianDiscriminantAsymptotics

@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Latest progress: all-order Riccati and spectral-system residual bounds
+## Latest progress: actual monodromy and Hamiltonian discriminant asymptotics
+
+`NLSWKBComparison.lean` compares the finite Hamiltonian approximation
+with the actual initial-value solution having the same initial vector.
+At every order `N`, their difference is bounded by `C/(2*|r|)^N`,
+uniformly over the whole physical period and both directions of the
+real spectral axis with `|r| ≥ 1`. Periodicity then gives an actual
+monodromy approximate-eigenvector estimate with the finite Hamiltonian
+sum in the multiplier.
+
+`ClassicalResidualStability.lean` proves a general forcing-to-solution
+error estimate using the true determinant-one fundamental matrix and
+its adjugate variation-of-constants formula. The resulting stability
+constant on the real spectral axis is independent of the spectral
+parameter. `NLSWKBCarrierBounds.lean` bounds both the approximate
+carrier and its reciprocal uniformly on that axis.
+
+`UnimodularTraceError.lean` converts a normalized approximate eigenvector
+into a trace estimate for a determinant-one two-by-two matrix.
+`NLSHamiltonianDiscriminantAsymptotics.lean` applies it to the actual
+monodromy: for every smooth periodic complex potential and every `N`,
+`|Delta(r) - 2*cos(i*sigma_N(r))| ≤ C/(2*|r|)^N`, where
+`sigma_N(r) = -i*r + sum_{k=1}^N i*H_k/(2*r)^k` uses the physical
+Appendix H Hamiltonians. No asymptotic formula is supplied as a premise.
+
+Public checks cover exact recovery when the forcing vanishes, negative
+real frequencies at interior spatial times, and the explicit first three
+Hamiltonian factors in the actual discriminant estimate.
+
+The all-order classical discriminant asymptotics used in Lemma 19.2 are
+now proved. The next steps are to connect smooth physical representatives
+to the finite-gap source and extract the normalized primitive's Laurent
+coefficients from these asymptotics. The full lemma and dissertation
+remain unfinished.
+
+## Previous milestone: all-order Riccati and spectral-system residual bounds
 
 `NLSRiccatiTruncation.lean` proves exact cancellation at every order:
 the residual polynomial of the first `N` Riccati terms is divisible

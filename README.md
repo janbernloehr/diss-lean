@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: finite Riccati expansions now have uniform residual
-bounds at every order. Their two-component spectral approximations
-satisfy the original system up to a controlled forcing term and have
-exact endpoint multipliers given by the finite Hamiltonian sums.
-Comparison with the actual monodromy, needed to identify the higher
-Laurent coefficients in Lemma 19.2, remains next. See `STATUS.md`.
+Latest milestone: the actual classical discriminant now has all-order
+real-axis asymptotics with the physical NLS Hamiltonians. This follows
+from uniform comparison with the true fundamental solution and the
+monodromy's determinant-one identity. Transferring the result to
+finite-gap sources and identifying the primitive's higher Laurent
+coefficients remains next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -10997,3 +10997,38 @@ fundamental solution and monodromy, then use the resulting asymptotics
 to identify the higher Laurent coefficients in Lemma 19.2. The residual
 bounds do not yet establish that identification. The full lemma and
 dissertation remain unfinished.
+
+## Actual monodromy and Hamiltonian discriminant asymptotics
+
+`NLSWKBComparison.lean` compares the finite Hamiltonian approximation
+with the actual initial-value solution having the same initial vector.
+At every order `N`, their difference is bounded by `C/(2*|r|)^N`,
+uniformly over the whole physical period and both directions of the
+real spectral axis with `|r| ≥ 1`. Periodicity then gives an actual
+monodromy approximate-eigenvector estimate with the finite Hamiltonian
+sum in the multiplier.
+
+`ClassicalResidualStability.lean` proves a general forcing-to-solution
+error estimate using the true determinant-one fundamental matrix and
+its adjugate variation-of-constants formula. The resulting stability
+constant on the real spectral axis is independent of the spectral
+parameter. `NLSWKBCarrierBounds.lean` bounds both the approximate
+carrier and its reciprocal uniformly on that axis.
+
+`UnimodularTraceError.lean` converts a normalized approximate eigenvector
+into a trace estimate for a determinant-one two-by-two matrix.
+`NLSHamiltonianDiscriminantAsymptotics.lean` applies it to the actual
+monodromy: for every smooth periodic complex potential and every `N`,
+`|Delta(r) - 2*cos(i*sigma_N(r))| ≤ C/(2*|r|)^N`, where
+`sigma_N(r) = -i*r + sum_{k=1}^N i*H_k/(2*r)^k` uses the physical
+Appendix H Hamiltonians. No asymptotic formula is supplied as a premise.
+
+Public checks cover exact recovery when the forcing vanishes, negative
+real frequencies at interior spatial times, and the explicit first three
+Hamiltonian factors in the actual discriminant estimate.
+
+The all-order classical discriminant asymptotics used in Lemma 19.2 are
+now proved. The next steps are to connect smooth physical representatives
+to the finite-gap source and extract the normalized primitive's Laurent
+coefficients from these asymptotics. The full lemma and dissertation
+remain unfinished.
