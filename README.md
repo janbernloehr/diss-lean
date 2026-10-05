@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the corrected derivative of the actual action frequency
-now factors through a fixed sequence exponent strictly below `p/2`, and
-its refined derivative depends analytically on the action. The zero values
-are proved. The derivative at zero and Pitt's compactness theorem are next;
-see `STATUS.md`.
+Latest milestone: Pitt's theorem is proved for arbitrary bounded operators
+from a larger finite sequence exponent to a smaller Banach exponent.
+It now proves Corollary 18.2(ii): the corrected derivative of the actual
+frequency map is compact throughout its complex action domain. The
+remaining parts of Corollary 18.2 are next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13070,3 +13070,55 @@ one remains to be formalized. The sequence inclusion itself is only used
 as a bounded operator. Corollary 18.2's compactness, Fredholm index, generic
 local invertibility, and the later dissertation remain unfinished. The
 separate real-coordinate frequency range assertion is also still pending.
+
+## Pitt's theorem and compact frequency derivatives
+
+Pitt's compactness theorem is now proved for arbitrary bounded complex
+operators `Coeff p ->L[ℂ] Coeff q` whenever `1 <= q < p < infinity`,
+including the target exponent one. Applying it to the actual refined
+frequency derivative proves Corollary 18.2(ii): `dF(b) + 2*Id` is compact
+at every complex point of the action domain, for every finite source
+exponent above two.
+
+`BoundedCoefficientWeakLimit.lean` uses the existing conjugate cotangent
+representation to show that bounded coefficient-null families converge to
+zero under every continuous functional, and hence coordinatewise under
+any bounded operator. `DisjointCoefficientSums.lean` proves the exact
+power-norm identity for finite sums with disjoint coordinate supports,
+and its matching cardinality growth bounds.
+
+`SimultaneousBlockApproximation.lean` constructs one increasing subsequence
+and disjoint finite blocks for a sequence and its image simultaneously,
+with any prescribed positive errors. `StrictPowerGrowth.lean` and
+`PittBlockContradiction.lean` show that images cannot remain bounded away
+from zero: the disjoint output blocks would grow faster than the bounded
+operator allows. Summable geometric approximation errors are included.
+
+`Pitt.lean` upgrades bounded coefficient convergence to norm convergence
+of images. Coefficient subsequences and the limit norm bound then show
+that the image of the closed unit ball is sequentially compact, yielding
+compactness of the operator. The proof does not assume compactness of a
+sequence inclusion or a uniform-tail condition on the operator.
+
+`CompactActionDerivative.lean` composes this compact refined derivative
+with the bounded inclusion. `SourceFrequencyCompactDerivative.lean`
+constructs the actual normalized frequency extension with compact
+corrected derivative everywhere. It retains recovery at all real sources,
+the full positive summable action cone, the open source-image description,
+and the zero value of the frequency.
+
+Public examples cover arbitrary operators `l3 -> l2` and `l2 -> l1`, norm
+convergence from bounded coefficient convergence, and actual frequency
+extensions at `p = 5/2` and `p = 6`, with compactness on their whole complex
+action domains.
+
+Validation: the full build passes (5963 jobs), all public examples pass,
+and the transitive axiom audit passes for 21985 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: Corollary 18.2(i), identifying the first frequency Taylor coefficient
+and proving `dF(0) = -2*Id` before applying the inverse function theorem.
+For (iii), compactness is now available; the Fredholm statement still needs
+closed range, finite-dimensional kernel and cokernel, and index zero.
+Generic local invertibility in (iv), the separate real-coordinate frequency
+range assertion, and the later dissertation remain unfinished.

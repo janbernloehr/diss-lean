@@ -1,6 +1,58 @@
 # Implementation status
 
-## Current milestone: Actual frequency derivatives in a strictly refined target
+## Current milestone: Pitt's theorem and compact frequency derivatives
+
+Pitt's compactness theorem is now proved for arbitrary bounded complex
+operators `Coeff p ->L[ℂ] Coeff q` whenever `1 <= q < p < infinity`,
+including the target exponent one. Applying it to the actual refined
+frequency derivative proves Corollary 18.2(ii): `dF(b) + 2*Id` is compact
+at every complex point of the action domain, for every finite source
+exponent above two.
+
+`BoundedCoefficientWeakLimit.lean` uses the existing conjugate cotangent
+representation to show that bounded coefficient-null families converge to
+zero under every continuous functional, and hence coordinatewise under
+any bounded operator. `DisjointCoefficientSums.lean` proves the exact
+power-norm identity for finite sums with disjoint coordinate supports,
+and its matching cardinality growth bounds.
+
+`SimultaneousBlockApproximation.lean` constructs one increasing subsequence
+and disjoint finite blocks for a sequence and its image simultaneously,
+with any prescribed positive errors. `StrictPowerGrowth.lean` and
+`PittBlockContradiction.lean` show that images cannot remain bounded away
+from zero: the disjoint output blocks would grow faster than the bounded
+operator allows. Summable geometric approximation errors are included.
+
+`Pitt.lean` upgrades bounded coefficient convergence to norm convergence
+of images. Coefficient subsequences and the limit norm bound then show
+that the image of the closed unit ball is sequentially compact, yielding
+compactness of the operator. The proof does not assume compactness of a
+sequence inclusion or a uniform-tail condition on the operator.
+
+`CompactActionDerivative.lean` composes this compact refined derivative
+with the bounded inclusion. `SourceFrequencyCompactDerivative.lean`
+constructs the actual normalized frequency extension with compact
+corrected derivative everywhere. It retains recovery at all real sources,
+the full positive summable action cone, the open source-image description,
+and the zero value of the frequency.
+
+Public examples cover arbitrary operators `l3 -> l2` and `l2 -> l1`, norm
+convergence from bounded coefficient convergence, and actual frequency
+extensions at `p = 5/2` and `p = 6`, with compactness on their whole complex
+action domains.
+
+Validation: the full build passes (5963 jobs), all public examples pass,
+and the transitive axiom audit passes for 21985 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: Corollary 18.2(i), identifying the first frequency Taylor coefficient
+and proving `dF(0) = -2*Id` before applying the inverse function theorem.
+For (iii), compactness is now available; the Fredholm statement still needs
+closed range, finite-dimensional kernel and cokernel, and index zero.
+Generic local invertibility in (iv), the separate real-coordinate frequency
+range assertion, and the later dissertation remain unfinished.
+
+## Previous milestone: Actual frequency derivatives in a strictly refined target
 
 The actual action-frequency maps now have the refined derivative
 factorization used in the proof of Corollary 18.2(ii). For every finite

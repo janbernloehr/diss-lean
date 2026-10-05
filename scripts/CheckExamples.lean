@@ -31483,3 +31483,87 @@ example {p q : ℝ≥0∞} [p.HolderTriple p q] (hp : p ≠ ⊤) (hp2 : 2 < p) :
 
 end
 end SmoothingDerivativeChecks
+
+
+
+namespace PittCompactFrequencyChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (5/2 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : Fact (1 ≤ (5/4 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : (5/2 : ℝ≥0∞).HolderTriple (5/2) (5/4) := by
+  have he : (5/2 : ℝ≥0∞)/2 = 5/4 := by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half (5/2)
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The theorem concerns arbitrary bounded operators, including the l1 endpoint.
+example (T : Coeff 3 →L[ℂ] Coeff 2) : IsCompactOperator T :=
+  Coeff.isCompactOperator_of_exponent_lt (by simp) (by norm_num) T
+
+example (T : Coeff 2 →L[ℂ] Coeff 1) : IsCompactOperator T :=
+  Coeff.isCompactOperator_of_exponent_lt (by simp) (by norm_num) T
+
+-- Bounded coefficient convergence becomes norm convergence of the images.
+example (T : Coeff 3 →L[ℂ] Coeff 2) (x : ℕ → Coeff 3) (a : Coeff 3)
+    (hx : Bornology.IsBounded (range x))
+    (hc : ∀ n, Filter.Tendsto (fun k => x k n) Filter.atTop (nhds (a n))) :
+    Filter.Tendsto (fun k => T (x k)) Filter.atTop (nhds (T a)) :=
+  Coeff.tendsto_operator_of_bounded_coefficientwise (by simp) (by norm_num) T x hx a hc
+
+-- Compactness holds on the whole complex action domain for the actual
+-- normalized frequency, including at the zero action.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 5/2,
+    ∃ W : Set (CoeffPair (5/2)), ∃ s : (n : ℤ) → CoeffPair (5/2) → DeletedCoeff (5/2) n,
+    ∃ A : SourceAbelianMomentAtlas (by finiteness) hp1 W s,
+    ∃ t : (n : ℤ) → CoeffPair (5/2) → DeletedCoeff (5/2) n,
+    ∃ V : Set (Coeff (5/4)), ∃ F : Coeff (5/4) → Coeff (5/4),
+      IsOpen V ∧ (0 : Coeff (5/4)) ∈ V ∧ F 0 = 0 ∧ AnalyticOnNhd ℂ F V ∧
+      (∀ ψ : realTypeSourceSubmodule (5/2),
+        sourceActionSequence (q := 5/4) (by finiteness) hp1 t ψ.val ∈ V ∧
+        ∀ n, F (sourceActionSequence (q := 5/4) (by finiteness) hp1 t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      ∀ b ∈ V,
+        IsCompactOperator (fderiv ℂ F b+(2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff (5/4))) := by
+  have hp2 : (2 : ℝ≥0∞) < 5/2 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hzero,hcenter,_,_,F,hF,_,hFzero,hrec,hcompact⟩ :=
+    exists_sourceFrequency_compactDerivative (p := 5/2) (q := 5/4) (by finiteness) hp2
+  exact ⟨hp1,W,s,A,t,V,F,hV,hzero,hFzero,hF,fun ψ => ⟨hcenter ψ,hrec ψ⟩,hcompact⟩
+
+-- Compactness holds on the whole complex action domain for the actual
+-- normalized frequency, including at the zero action.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
+    ∃ W : Set (CoeffPair (6)), ∃ s : (n : ℤ) → CoeffPair (6) → DeletedCoeff (6) n,
+    ∃ A : SourceAbelianMomentAtlas (by finiteness) hp1 W s,
+    ∃ t : (n : ℤ) → CoeffPair (6) → DeletedCoeff (6) n,
+    ∃ V : Set (Coeff (3)), ∃ F : Coeff (3) → Coeff (3),
+      IsOpen V ∧ (0 : Coeff (3)) ∈ V ∧ F 0 = 0 ∧ AnalyticOnNhd ℂ F V ∧
+      (∀ ψ : realTypeSourceSubmodule (6),
+        sourceActionSequence (q := 3) (by finiteness) hp1 t ψ.val ∈ V ∧
+        ∀ n, F (sourceActionSequence (q := 3) (by finiteness) hp1 t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      ∀ b ∈ V,
+        IsCompactOperator (fderiv ℂ F b+(2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff (3))) := by
+  have hp2 : (2 : ℝ≥0∞) < 6 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hzero,hcenter,_,_,F,hF,_,hFzero,hrec,hcompact⟩ :=
+    exists_sourceFrequency_compactDerivative (p := 6) (q := 3) (by finiteness) hp2
+  exact ⟨hp1,W,s,A,t,V,F,hV,hzero,hFzero,hF,fun ψ => ⟨hcenter ψ,hrec ψ⟩,hcompact⟩
+
+end
+end PittCompactFrequencyChecks

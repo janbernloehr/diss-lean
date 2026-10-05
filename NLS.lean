@@ -2533,3 +2533,12 @@ import NLS.SequenceSpaces.RefinedActionDerivative
 import NLS.SequenceSpaces.RefinedActionExponent
 import NLS.ZakharovShabat.SourceFrequencyOrigin
 import NLS.ZakharovShabat.SourceFrequencySmoothingDerivative
+
+import NLS.SequenceSpaces.BoundedCoefficientWeakLimit
+import NLS.SequenceSpaces.DisjointCoefficientSums
+import NLS.SequenceSpaces.SimultaneousBlockApproximation
+import NLS.SequenceSpaces.StrictPowerGrowth
+import NLS.SequenceSpaces.PittBlockContradiction
+import NLS.SequenceSpaces.Pitt
+import NLS.SequenceSpaces.CompactActionDerivative
+import NLS.ZakharovShabat.SourceFrequencyCompactDerivative
