@@ -2,7 +2,48 @@
 
 
 
-## Latest progress: complete Lemma 21.1 and complex gap bounds
+## Latest progress: finite-gap Hamiltonian identity
+
+Lemma 21.2 is now proved for every real finite-gap source at every finite
+source exponent greater than one, using the actual physical Hamiltonians,
+spectral actions, and primitive-power moments:
+
+`H_3 - 2*H_1^2 - sum_n (2*n*pi)^2 I_n = -(4/3) * sum_n R_n^(3)`.
+
+`SourceFiniteGapContourDecomposition.lean` decomposes a sufficiently large
+circle into any real-centered isolating family around precisely the open
+gaps. One threshold works for every function analytic off the open gaps;
+closed gaps require no holes or exterior spectral-avoidance assumption.
+
+`SourcePrimitivePowerCubicShift.lean` expands the actual identity
+`F_0 = F_n - i*pi*n`. Zeroth and second moments vanish, leaving the first
+and third moments with their exact coefficients and signs.
+
+`SourcePrimitivePowerHamiltonian.lean` combines this decomposition with
+the established physical Hamiltonian contour formula. Weighted moments
+have finite support at finite-gap sources, so the displayed infinite
+sums are proved equal to the actual finite sums over open gaps.
+
+`SourceFiniteGapRenormalizedHamiltonian.lean` defines the physical
+correction and proves it real and nonpositive. It is strictly negative
+whenever any gap is open and vanishes exactly when all gaps close.
+These are finite-gap consequences; the extension to all real sources
+required by Theorem 18.3 is not yet proved.
+
+Public examples construct the full identity at exponent `4`, verify the
+sign and zero criterion at exponent `3/2`, and use actual gap-opening
+curves to produce strictly negative corrections for every signed index.
+
+Validation: the full build passes (6010 jobs), all public examples pass,
+and the transitive axiom audit passes for 22238 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: Proposition 21.3, extending the cubic-moment sum analytically to
+the `FL^4` source neighborhood with its global real sign. Then establish
+the action-domain extension and local strict concavity in Theorem 18.3.
+The later dissertation remains unfinished.
+
+## Previous milestone: complete Lemma 21.1 and complex gap bounds
 
 The primitive-power moments now satisfy all five assertions of Lemma
 21.1 on one connected open complex neighborhood containing every real

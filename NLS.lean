@@ -2587,3 +2587,8 @@ import NLS.ZakharovShabat.SourceFullAbelianAllGapBound
 import NLS.ZakharovShabat.SourcePrimitivePowerComplexCosine
 import NLS.ZakharovShabat.SourcePrimitivePowerComplexBound
 import NLS.ZakharovShabat.SourcePrimitivePowerLemma21_1
+
+import NLS.ZakharovShabat.SourceFiniteGapContourDecomposition
+import NLS.ZakharovShabat.SourcePrimitivePowerCubicShift
+import NLS.ZakharovShabat.SourcePrimitivePowerHamiltonian
+import NLS.ZakharovShabat.SourceFiniteGapRenormalizedHamiltonian

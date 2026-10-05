@@ -32106,3 +32106,52 @@ example : ∃ W U : Set (CoeffPair (3/2)), IsOpen U ∧ IsConnected U ∧
 
 end
 end PrimitivePowerComplexChecks
+
+
+namespace PrimitivePowerHamiltonianChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- One actual moment construction gives the physical identity at every FL^4 finite-gap source.
+example : ∃ W : Set (CoeffPair 4), ∃ A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W,
+    ∀ (φ : realTypeSourceLocus 4) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)),
+      sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 3-
+        2*(sourceFiniteGapNLSHamiltonian (by simp) (by norm_num) φ hf 1)^2-
+        (∑' n : ℤ, (2*(n:ℂ)*Real.pi)^2*sourceComplexAction (by simp) (by norm_num) n φ.val) =
+          -(4/3:ℂ)*(∑' n : ℤ, A.moment n 3 φ.val) := by
+  obtain ⟨W,_,_,⟨A⟩⟩ := exists_sourcePrimitivePowerAtlas (p := 4) (by simp) (by norm_num)
+  exact ⟨W,A,A.finiteGap_hamiltonian_identity⟩
+
+-- Reality, nonpositivity, and the exact zero criterion also hold below the Hilbert exponent.
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+example (φ : realTypeSourceLocus (ENNReal.ofReal (3/2:ℝ)))
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    (sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num) φ hf).re ≤ 0 ∧
+    (sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num) φ hf).im = 0 ∧
+    (sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num) φ hf = 0 ↔
+      ∀ n, canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n = 0) := by
+  obtain ⟨hr,hi⟩ := sourceFiniteGapRenormalizedHamiltonian_nonpos (by simp) (by norm_num) φ hf
+  exact ⟨hr,hi,sourceFiniteGapRenormalizedHamiltonian_eq_zero_iff (by simp) (by norm_num) φ hf⟩
+
+-- Opening any free gap produces an actual finite-gap source with strictly negative correction.
+example (n : ℤ) : ∃ φ : realTypeSourceLocus 2,
+    ∃ hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num),
+      (sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num) φ hf).re < 0 := by
+  obtain ⟨W,B,X,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic (p := 2) (by simp) (by norm_num)
+  have hz (k : ℤ) : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (0 : CoeffPair 2))
+      (periodOnePotential_mem (0 : CoeffPair 2)) k = 0 := by
+    simpa only [map_zero] using canonicalPeriodicGap_zero (p := 2) (by simp) (by norm_num) k
+  have hf0 : (0 : realTypeSourceSubmodule 2) ∈ sourceFiniteGapLocus (by simp) (by norm_num) := by
+    apply Set.Finite.subset (s := (∅ : Set ℤ)) Set.finite_empty
+    intro k hk
+    exact (hk (hz k)).elim
+  have hf := D.hilbertGapOpening_mem_finiteGap 0 hf0 n 1
+  have hn := D.hilbertGapOpening_gap_ne_zero 0 n (hz n) 1 one_ne_zero
+  exact ⟨D.hilbertGapOpening 0 n 1,hf,
+    sourceFiniteGapRenormalizedHamiltonian_neg_of_open_gap (by simp) (by norm_num) _ hf n hn⟩
+
+end
+end PrimitivePowerHamiltonianChecks
