@@ -31664,3 +31664,80 @@ example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
 
 end
 end FredholmFrequencyChecks
+
+
+namespace OriginFrequencyChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (5/2 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : Fact (1 ≤ (5/4 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : (5/2 : ℝ≥0∞).HolderTriple (5/2) (5/4) := by
+  have he : (5/2 : ℝ≥0∞)/2 = 5/4 := by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half (5/2)
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The actual frequency extension and its inverse have the expected derivatives.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 5/2,
+    ∃ W : Set (CoeffPair (5/2)), ∃ s : (n : ℤ) → CoeffPair (5/2) → DeletedCoeff (5/2) n,
+    ∃ A : SourceAbelianMomentAtlas (by finiteness) hp1 W s,
+    ∃ t : (n : ℤ) → CoeffPair (5/2) → DeletedCoeff (5/2) n,
+    ∃ V : Set (Coeff (5/4)), ∃ F G : Coeff (5/4) → Coeff (5/4),
+      IsOpen V ∧ (0 : Coeff (5/4)) ∈ V ∧ F 0 = 0 ∧ AnalyticOnNhd ℂ F V ∧
+      (∀ ψ : realTypeSourceSubmodule (5/2),
+        sourceActionSequence (q := 5/4) (by finiteness) hp1 t ψ.val ∈ V ∧
+        ∀ n, F (sourceActionSequence (q := 5/4) (by finiteness) hp1 t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      fderiv ℂ F 0 = (-2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff (5/4)) ∧
+      AnalyticAt ℂ G 0 ∧ G 0 = 0 ∧
+      (∀ᶠ b in 𝓝 (0 : Coeff (5/4)), G (F b) = b) ∧
+      (∀ᶠ c in 𝓝 (0 : Coeff (5/4)), F (G c) = c) ∧
+      fderiv ℂ G 0 = (-2 : ℂ)⁻¹ • ContinuousLinearMap.id ℂ (Coeff (5/4)) := by
+  have hp2 : (2 : ℝ≥0∞) < 5/2 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hzero,hcenter,_,_,F,hF,_,hFzero,hrec,_,hd,
+      G,hG,hGzero,hleft,hright,hdG⟩ :=
+    exists_sourceFrequency_localInverse (p := 5/2) (q := 5/4) (by finiteness) hp2
+  exact ⟨hp1,W,s,A,t,V,F,G,hV,hzero,hFzero,hF,fun ψ => ⟨hcenter ψ,hrec ψ⟩,
+    hd,hG,hGzero,hleft,hright,hdG⟩
+
+-- The actual frequency extension and its inverse have the expected derivatives.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
+    ∃ W : Set (CoeffPair (6)), ∃ s : (n : ℤ) → CoeffPair (6) → DeletedCoeff (6) n,
+    ∃ A : SourceAbelianMomentAtlas (by finiteness) hp1 W s,
+    ∃ t : (n : ℤ) → CoeffPair (6) → DeletedCoeff (6) n,
+    ∃ V : Set (Coeff (3)), ∃ F G : Coeff (3) → Coeff (3),
+      IsOpen V ∧ (0 : Coeff (3)) ∈ V ∧ F 0 = 0 ∧ AnalyticOnNhd ℂ F V ∧
+      (∀ ψ : realTypeSourceSubmodule (6),
+        sourceActionSequence (q := 3) (by finiteness) hp1 t ψ.val ∈ V ∧
+        ∀ n, F (sourceActionSequence (q := 3) (by finiteness) hp1 t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      fderiv ℂ F 0 = (-2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff (3)) ∧
+      AnalyticAt ℂ G 0 ∧ G 0 = 0 ∧
+      (∀ᶠ b in 𝓝 (0 : Coeff (3)), G (F b) = b) ∧
+      (∀ᶠ c in 𝓝 (0 : Coeff (3)), F (G c) = c) ∧
+      fderiv ℂ G 0 = (-2 : ℂ)⁻¹ • ContinuousLinearMap.id ℂ (Coeff (3)) := by
+  have hp2 : (2 : ℝ≥0∞) < 6 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hzero,hcenter,_,_,F,hF,_,hFzero,hrec,_,hd,
+      G,hG,hGzero,hleft,hright,hdG⟩ :=
+    exists_sourceFrequency_localInverse (p := 6) (q := 3) (by finiteness) hp2
+  exact ⟨hp1,W,s,A,t,V,F,G,hV,hzero,hFzero,hF,fun ψ => ⟨hcenter ψ,hrec ψ⟩,
+    hd,hG,hGzero,hleft,hright,hdG⟩
+
+end
+end OriginFrequencyChecks

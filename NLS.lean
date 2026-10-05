@@ -2546,3 +2546,13 @@ import NLS.ZakharovShabat.SourceFrequencyCompactDerivative
 import NLS.FunctionalAnalysis.FredholmDecomposition
 import NLS.FunctionalAnalysis.CompactFredholm
 import NLS.ZakharovShabat.SourceFrequencyFredholmDerivative
+
+import NLS.ComplexAnalysis.ParametricSineSquareMean
+import NLS.ZakharovShabat.SourceMomentFreeFactors
+import NLS.ZakharovShabat.SourceNormalizedSecondMoment
+import NLS.ZakharovShabat.SourceSecondMomentActionOrigin
+import NLS.ZakharovShabat.SourceFrequencyOpeningOrigin
+import NLS.ComplexAnalysis.DerivativeRayLimit
+import NLS.ZakharovShabat.SourceFrequencyDerivativeOrigin
+import NLS.ComplexAnalysis.ScalarDerivativeInverse
+import NLS.ZakharovShabat.SourceFrequencyLocalInverse

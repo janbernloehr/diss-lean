@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Corollary 18.2(iii) is proved. The actual frequency
-derivative is Fredholm with index zero throughout its complex action
-domain. A reusable compact-operator theorem proves closed range and equal
-finite kernel and cokernel dimensions. The origin derivative and local
-invertibility assertions remain next; see `STATUS.md`.
+Latest milestone: the actual frequency map has derivative `-2*Id` at
+zero and an analytic local inverse with derivative `(-2)⁻¹*Id`.
+The coefficient is proved from the spectral moment formula. This adds
+Corollary 18.2(i) to the compactness and Fredholm results (ii) and (iii);
+generic local invertibility in (iv) remains next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13160,3 +13160,34 @@ Next: Corollary 18.2(i), identifying the first frequency Taylor coefficient
 and proving `dF(0) = -2*Id` before applying the inverse function theorem.
 Generic local invertibility in (iv), the separate real-coordinate frequency
 range assertion, and the later dissertation remain unfinished.
+
+## The origin derivative and analytic local inverse
+
+The actual action-frequency map now satisfies `dF(0) = -2*Id` for
+every finite source exponent `p > 2`. The analytic inverse function
+theorem supplies an analytic local inverse `G` fixing zero, both local
+inverse identities, and `dG(0) = (-2)⁻¹*Id`. This proves the complex local
+invertibility assertion of Corollary 18.2(i), alongside the previously
+proved compactness and Fredholm assertions (ii) and (iii).
+
+The first frequency coefficient is derived from the spectral moment
+formula. A sine-square mean removes the vanishing gap factor from the
+second moment, including at collapsed gaps. Its free value and the
+normalized action factor give a continuous quotient with value `pi`
+on the diagonal and zero off the diagonal. Opening one Hilbert action
+therefore gives the frequency coefficient `-2` on the selected mode and
+zero on the other modes. Compatibility across source exponents and
+density of finite Fourier sums identify the full bounded derivative.
+
+`SourceFrequencyLocalInverse.lean` retains the actual frequency recovery,
+full open action domain, nonnegative summable action cone, and Fredholm
+index zero throughout the domain. Public examples obtain both inverse
+identities and both origin derivatives for `p = 5/2` and `p = 6`.
+
+Validation: the full build passes (5980 jobs), all public examples pass,
+and the transitive axiom audit passes for 22025 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: generic local invertibility in Corollary 18.2(iv). The separate
+real-coordinate frequency range assertion and the later dissertation
+remain unfinished.

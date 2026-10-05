@@ -1,6 +1,37 @@
 # Implementation plan
 
-## Latest progress: Fredholm frequency derivatives of index zero
+## Latest progress: the origin derivative and analytic local inverse
+
+The actual action-frequency map now satisfies `dF(0) = -2*Id` for
+every finite source exponent `p > 2`. The analytic inverse function
+theorem supplies an analytic local inverse `G` fixing zero, both local
+inverse identities, and `dG(0) = (-2)⁻¹*Id`. This proves the complex local
+invertibility assertion of Corollary 18.2(i), alongside the previously
+proved compactness and Fredholm assertions (ii) and (iii).
+
+The first frequency coefficient is derived from the spectral moment
+formula. A sine-square mean removes the vanishing gap factor from the
+second moment, including at collapsed gaps. Its free value and the
+normalized action factor give a continuous quotient with value `pi`
+on the diagonal and zero off the diagonal. Opening one Hilbert action
+therefore gives the frequency coefficient `-2` on the selected mode and
+zero on the other modes. Compatibility across source exponents and
+density of finite Fourier sums identify the full bounded derivative.
+
+`SourceFrequencyLocalInverse.lean` retains the actual frequency recovery,
+full open action domain, nonnegative summable action cone, and Fredholm
+index zero throughout the domain. Public examples obtain both inverse
+identities and both origin derivatives for `p = 5/2` and `p = 6`.
+
+Validation: the full build passes (5980 jobs), all public examples pass,
+and the transitive axiom audit passes for 22025 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: generic local invertibility in Corollary 18.2(iv). The separate
+real-coordinate frequency range assertion and the later dissertation
+remain unfinished.
+
+## Previous milestone: Fredholm frequency derivatives of index zero
 
 The actual frequency derivative is now Fredholm of index zero at every
 complex point of its action domain, for every finite source exponent
