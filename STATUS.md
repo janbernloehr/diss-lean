@@ -1,8 +1,56 @@
 # Implementation status
 
+## Current milestone: analytic Hamiltonian on action space
 
+The cubic-moment Hamiltonian now descends to one analytic scalar function
+on an open complex `ell^2` action domain. The domain contains the action
+sequence of every real `FL^4` source and the full nonnegative `ell^1`
+cone. The function recovers the actual source Hamiltonian at every real
+source, and this recovery uniquely determines it among analytic functions
+on the constructed domain.
 
-## Current milestone: analytic cubic-moment Hamiltonian extension
+On every nonnegative `ell^2` action in the domain, the extension is real
+and nonpositive, and vanishes exactly at the zero action. This uses real
+source realization throughout the nonnegative part of each action ball;
+it does not assume global surjectivity of the `FL^4` Birkhoff map.
+
+`SourcePrimitivePowerIsospectral.lean` proves action invariance of all
+primitive-power moments at every finite source exponent above one, even
+for independently chosen atlases. Summing the cubic moments gives action
+invariance of the actual renormalized Hamiltonian.
+
+`ScalarTailSquareDescent.lean` transfers analytic descent to scalar maps
+through a continuous linear embedding into one `ell^1` coordinate.
+`LocalScalarActionDescent.lean` combines this with tail-sum and finite-head
+action charts. Independent tail sign symmetry and rotation stationarity
+give a scalar analytic factor with exact recovery on an open complex
+neighborhood; infinitely many zero tail coordinates are allowed.
+
+`SourceHamiltonianLocalActionDescent.lean` applies that construction to
+the actual Hamiltonian at every real `FL^4` source.
+`SourceHamiltonianRealActionBalls.lean` restricts the factors to balls
+with real action lifts and proves recovery for every real representative.
+`SourceHamiltonianActionExtension.lean` glues those factors, realizes the
+nonnegative summable cone, and proves analytic uniqueness, sign, and the
+exact zero criterion on the nonnegative part of the action domain.
+
+Public examples construct an actual extension analytic at the fully
+collapsed zero action, prove strict negativity at nonzero nonnegative
+actions in its domain, and check invariance of every moment across two
+atlases at source exponent `3/2`.
+
+Validation: the full build passes (6023 jobs), all public examples pass,
+and the transitive axiom audit passes for 22291 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: identify the action gradient with the established renormalized
+frequency map, compute the Hessian at zero, and prove local strict
+concavity in Theorem 18.3(ii). Agreement with a separately defined physical
+correction on the full `H^1` domain still needs the Sobolev continuity and
+density bridge; physical normalization is currently proved on finite-gap
+sources. The later dissertation remains unfinished.
+
+## Previous milestone: analytic cubic-moment Hamiltonian extension
 
 The cubic-moment series now constructs the source-space Hamiltonian
 extension in Proposition 21.3 on a connected open complex neighborhood

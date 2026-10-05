@@ -32205,3 +32205,52 @@ example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2:ℝ))) :
 
 end
 end RenormalizedHamiltonianExtensionChecks
+
+
+namespace HamiltonianActionExtensionChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4 : ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+
+-- Construct the actual extension, including the fully collapsed action at zero.
+-- Every nonzero nonnegative action in the domain has strictly negative value.
+example : ∃ V : Set (Coeff 2), ∃ H : Coeff 2 → ℂ,
+    IsOpen V ∧ (0 : Coeff 2) ∈ V ∧ AnalyticOnNhd ℂ H V ∧ AnalyticAt ℂ H 0 ∧ H 0 = 0 ∧
+    (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) →
+      Coeff.exponentInclusion (by norm_num : (1:ℝ≥0∞) ≤ 2) (RealCoeff.complexCLM 1 b) ∈ V) ∧
+    ∀ b ∈ V, b ∈ Coeff.nonnegativeLocus 2 → b ≠ 0 → (H b).re < 0 ∧ (H b).im = 0 := by
+  obtain ⟨W,_,_,⟨A⟩⟩ := exists_sourcePrimitivePowerAtlas (p := 4) (by simp) (by norm_num)
+  obtain ⟨W₀,B,X,t,D,V,H,hV,hcenter,hcone,_,_,ha,hrec,hsign,_⟩ :=
+    A.exists_hamiltonian_action_extension
+  have hz : (0 : Coeff 2) ∈ V := by
+    simpa only [ZeroMemClass.coe_zero,D.actionSequence_zero] using hcenter 0
+  have hH0 : H 0 = 0 := by
+    have he := hrec 0
+    have hA0 : A.renormalizedHamiltonian 0 = 0 := by
+      simpa using! (A.real_renormalizedHamiltonian_eq_zero_iff 0).mpr rfl
+    simpa only [ZeroMemClass.coe_zero,D.actionSequence_zero,hA0] using he
+  refine ⟨V,H,hV,hz,ha,ha 0 hz,hH0,hcone,?_⟩
+  intro b hb hpos hne
+  obtain ⟨hle,him,hzero⟩ := hsign b hb hpos
+  refine ⟨lt_of_le_of_ne hle ?_,him⟩
+  intro hr
+  exact hne (hzero.mp (Complex.ext hr him))
+
+-- Equality of real actions identifies every moment even across independently
+-- chosen atlases, at the non-Hilbert source exponent 3/2.
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+example {W V : Set (CoeffPair (ENNReal.ofReal (3/2:ℝ)))}
+    (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (B : SourcePrimitivePowerAtlas (by simp) (by norm_num) V)
+    (φ ψ : realTypeSourceSubmodule (ENNReal.ofReal (3/2:ℝ)))
+    (h : ψ ∈ sourceRealActionLevelSet (by simp) (by norm_num) φ) :
+    (fun (n : ℤ) (m : ℕ) => A.moment n m ψ.val) = fun n m => B.moment n m φ.val := by
+  funext n m
+  exact A.moment_real_eq_of_actions B φ ψ h n m
+
+end
+end HamiltonianActionExtensionChecks

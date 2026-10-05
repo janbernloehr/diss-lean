@@ -2599,3 +2599,10 @@ import NLS.ZakharovShabat.SourceClosedGapsZero
 import NLS.ZakharovShabat.SourcePrimitivePowerCubicSequence
 import NLS.ZakharovShabat.SourceRenormalizedHamiltonian
 import NLS.ZakharovShabat.SourceRenormalizedHamiltonianProposition21_3
+
+import NLS.SequenceSpaces.ScalarTailSquareDescent
+import NLS.SequenceSpaces.LocalScalarActionDescent
+import NLS.ZakharovShabat.SourcePrimitivePowerIsospectral
+import NLS.ZakharovShabat.SourceHamiltonianLocalActionDescent
+import NLS.ZakharovShabat.SourceHamiltonianRealActionBalls
+import NLS.ZakharovShabat.SourceHamiltonianActionExtension
