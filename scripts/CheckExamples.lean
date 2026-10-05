@@ -31998,3 +31998,59 @@ example {W : Set (CoeffPair 4)}
 
 end
 end PrimitivePowerChecks
+
+
+namespace PrimitivePowerPositiveChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- One actual FL^4 construction detects open gaps with every odd moment.
+example : ∃ W : Set (CoeffPair 4), ∃ A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W,
+    (∀ φ : realTypeSourceSubmodule 4, ∀ n m,
+      0 ≤ (A.moment n m φ.val).re ∧ (A.moment n m φ.val).im = 0) ∧
+    (∀ φ : realTypeSourceSubmodule 4, ∀ n m,
+      A.moment n (2*m+1) φ.val = 0 ↔
+        canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n = 0) := by
+  obtain ⟨W,_,_,⟨A⟩⟩ := exists_sourcePrimitivePowerAtlas (p := 4) (by simp) (by norm_num)
+  exact ⟨W,A,A.real_moment_nonneg,A.real_odd_moment_eq_zero_iff⟩
+
+-- Actual one-gap sources have strictly positive cubic and fifth moments.
+example (n : ℤ) : ∃ W : Set (CoeffPair 2),
+    ∃ A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W,
+    ∃ φ : realTypeSourceSubmodule 2,
+      0 < (A.moment n 3 φ.val).re ∧ 0 < (A.moment n 5 φ.val).re := by
+  obtain ⟨W,_,_,⟨A⟩⟩ := exists_sourcePrimitivePowerAtlas (p := 2) (by simp) (by norm_num)
+  obtain ⟨W₀,B,X,s,D⟩ := exists_sourceBirkhoffMap_complex_analytic (p := 2) (by simp) (by norm_num)
+  have hz : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (0 : CoeffPair 2))
+      (periodOnePotential_mem (0 : CoeffPair 2)) n = 0 := by
+    simpa only [map_zero] using canonicalPeriodicGap_zero (p := 2) (by simp) (by norm_num) n
+  have hn := D.hilbertGapOpening_gap_ne_zero 0 n hz 1 one_ne_zero
+  exact ⟨W,A,D.hilbertGapOpening 0 n 1,
+    A.real_odd_moment_pos _ n 1 hn,A.real_odd_moment_pos _ n 2 hn⟩
+
+-- Cubic moments have the quartic gap bound needed for the FL^4 Hamiltonian.
+example {W : Set (CoeffPair 4)}
+    (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W) (φ : realTypeSourceSubmodule 4) :
+    ∃ U : Set (CoeffPair 4), IsOpen U ∧ φ.val ∈ U ∧ ∃ K : ℕ, ∃ B : ℝ, 0 < B ∧
+      ∀ ψ : realTypeSourceSubmodule 4, ψ.val ∈ U → ∀ n : ℤ, K ≤ n.natAbs →
+        ‖A.moment n 3 ψ.val‖ ≤ B^3 *
+          ‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val)
+            (periodOnePotential_mem ψ.val) n‖^4 := by
+  obtain ⟨U,hU,hφ,K,B,hB,hbound⟩ := A.exists_real_local_uniform_power_bound φ
+  exact ⟨U,hU,hφ,K,B,hB,fun ψ hψ n hn => hbound ψ hψ n hn 3⟩
+
+-- Bounds on the real profile apply directly at any fixed source, including closed gaps.
+example {W : Set (CoeffPair 4)}
+    (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 4) (n : ℤ) (B : ℝ) (hB : 0 ≤ B)
+    (hb : ∀ θ ∈ Icc (0:ℝ) Real.pi, sourceRealGapCosineProfile (by simp) (by norm_num) φ.val n θ ≤ B) :
+    ‖A.moment n 3 φ.val‖ ≤
+      ‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+        (periodOnePotential_mem φ.val) n‖ * B^3 :=
+  A.real_odd_moment_norm_le φ n 1 B hB hb
+
+end
+end PrimitivePowerPositiveChecks

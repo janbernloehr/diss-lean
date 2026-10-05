@@ -2577,3 +2577,8 @@ import NLS.ZakharovShabat.SourceGapContourComparison
 import NLS.ZakharovShabat.SourcePrimitivePowerLocalChart
 import NLS.ZakharovShabat.SourcePrimitivePowerAtlas
 import NLS.ZakharovShabat.SourcePrimitivePowerAction
+
+import NLS.ZakharovShabat.SourcePrimitivePowerBoundary
+import NLS.ZakharovShabat.SourcePrimitivePowerRealIntegral
+import NLS.ZakharovShabat.SourcePrimitivePowerPositive
+import NLS.ZakharovShabat.SourcePrimitivePowerRealBound

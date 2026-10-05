@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the Section 21 primitive-power moments are analytic on
-one common source neighborhood, independent of contour choices, zero
-at even orders and collapsed gaps, and equal to the spectral actions at
-first order. Gap-size estimates, higher odd-moment positivity, and the
-Hamiltonian identity are next; see `STATUS.md`.
+Latest milestone: all primitive-power moments are real and nonnegative
+at real sources, and every odd moment detects whether its gap is open.
+Their arcosh integral formula gives locally uniform real-source gap
+bounds, including the quartic bound for cubic moments. The complex gap
+estimate and Hamiltonian identity are next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13305,3 +13305,45 @@ Next: the uniform gap-size estimate in Lemma 21.1(iii), positivity and
 strict positivity of higher odd moments in (iv), and the finite-gap
 Hamiltonian identity in Lemma 21.2. Theorem 18.3 and the later dissertation
 remain unfinished.
+
+
+## Positivity and real gap bounds for primitive-power moments
+
+Every primitive-power moment is now proved real and nonnegative at real
+sources, and every odd moment vanishes exactly when its spectral gap
+closes. This completes Lemma 21.1(iv), including all natural orders and
+all signed indices.
+
+`SourcePrimitivePowerBoundary.lean` constructs the analytic numerator
+obtained by multiplying an odd primitive power by the selected root.
+Shrinking a real isolating circle gives the exact cosine integral of
+the actual upper boundary power, with its orientation and coefficient.
+
+`SourcePrimitivePowerRealIntegral.lean` identifies the boundary value
+with the real arcosh profile by uniqueness of vertical limits. Every
+atlas therefore satisfies the actual arcosh integral formula, including
+collapsed gaps and without dependence on its chosen Cauchy family.
+
+`SourcePrimitivePowerPositive.lean` proves continuity and positivity of
+the cosine profile, strict positivity of every odd moment on open gaps,
+and nonnegativity and reality at every natural order.
+
+`SourcePrimitivePowerRealBound.lean` turns a profile bound into a moment
+bound with one additional gap-width factor. The established primitive
+estimates give `norm R_n^(m) <= B^m * norm gamma_n^(m+1)` locally uniformly
+in real sources and uniformly for distant indices, with the same
+neighborhood, cutoff and constant for all orders. In particular the
+cubic moment has a quartic gap bound. This is the real-source portion
+of Lemma 21.1(iii); its full complex-neighborhood assertion is still open.
+
+Public examples include actual one-gap Hilbert sources with strictly
+positive cubic and fifth moments, all-order positivity and zero detection
+at exponent `4`, and the locally uniform quartic estimate.
+
+Validation: the full build passes (6002 jobs), all public examples pass,
+and the transitive axiom audit passes for 22192 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: extend the gap-size estimate to the complex source neighborhood
+in Lemma 21.1(iii), then prove the finite-gap Hamiltonian identity in
+Lemma 21.2. Theorem 18.3 and the later dissertation remain unfinished.
