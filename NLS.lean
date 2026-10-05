@@ -2566,3 +2566,8 @@ import NLS.FunctionalAnalysis.AnalyticFredholmDensity
 import NLS.ComplexAnalysis.AnalyticUnitDerivativeInverse
 import NLS.ZakharovShabat.SourceFrequencyConnectedDomain
 import NLS.ZakharovShabat.SourceFrequencyGenericLocalInverse
+
+import NLS.ZakharovShabat.SourceMomentReality
+import NLS.SequenceSpaces.RealSummableApproximation
+import NLS.ZakharovShabat.SourceFrequencyReality
+import NLS.ZakharovShabat.SourceFrequencyTheorem18_1Real

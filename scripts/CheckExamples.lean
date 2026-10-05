@@ -31841,3 +31841,94 @@ example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
 
 end
 end GenericFrequencyChecks
+
+
+namespace RealFrequencyChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (5/2 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : Fact (1 ≤ (5/4 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : (5/2 : ℝ≥0∞).HolderTriple (5/2) (5/4) := by
+  have he : (5/2 : ℝ≥0∞)/2 = 5/4 := by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half (5/2)
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- One actual Hilbert frequency has a real-valued analytic realization.
+example : ∃ W : Set (CoeffPair 2), ∃ s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
+    ∃ V : Set (Coeff 1), ∃ omegaStar : Coeff 1 → ℤ → ℂ, ∃ R : RealCoeff 1 → RealCoeff (5/4),
+      IsOpen V ∧
+      (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → RealCoeff.complexCLM 1 b ∈ V) ∧
+      (∀ ψ : realTypeSourceSubmodule 2,
+        sourceActionSequence (q := 1) (by simp) (by norm_num) t ψ.val ∈ V ∧
+        ∀ n, omegaStar (sourceActionSequence (q := 1) (by simp) (by norm_num) t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      AnalyticOnNhd ℝ R (RealCoeff.complexCLM 1 ⁻¹' V) ∧
+      ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → ∀ n, (R b n : ℂ) = omegaStar (RealCoeff.complexCLM 1 b) n := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V,omegaStar,hV,hpos,hreal,hfamily,_⟩ :=
+    exists_sourceFrequency_theorem18_1_real
+  have hr : (1 : ℝ≥0∞) < 5/4 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨F,hF,hFR,he,R,hR,hrec⟩ := hfamily (5/4) (by finiteness) hr
+  exact ⟨W,s,A,t,V,omegaStar,R,hV,hpos,hreal,hR,hrec⟩
+
+-- One actual Hilbert frequency has a real-valued analytic realization.
+example : ∃ W : Set (CoeffPair 2), ∃ s : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s,
+    ∃ t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n,
+    ∃ V : Set (Coeff 1), ∃ omegaStar : Coeff 1 → ℤ → ℂ, ∃ R : RealCoeff 1 → RealCoeff (2),
+      IsOpen V ∧
+      (∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → RealCoeff.complexCLM 1 b ∈ V) ∧
+      (∀ ψ : realTypeSourceSubmodule 2,
+        sourceActionSequence (q := 1) (by simp) (by norm_num) t ψ.val ∈ V ∧
+        ∀ n, omegaStar (sourceActionSequence (q := 1) (by simp) (by norm_num) t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      AnalyticOnNhd ℝ R (RealCoeff.complexCLM 1 ⁻¹' V) ∧
+      ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → ∀ n, (R b n : ℂ) = omegaStar (RealCoeff.complexCLM 1 b) n := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V,omegaStar,hV,hpos,hreal,hfamily,_⟩ :=
+    exists_sourceFrequency_theorem18_1_real
+  have hr : (1 : ℝ≥0∞) < 2 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨F,hF,hFR,he,R,hR,hrec⟩ := hfamily (2) (by finiteness) hr
+  exact ⟨W,s,A,t,V,omegaStar,R,hV,hpos,hreal,hR,hrec⟩
+
+-- Reality also holds for nonsummable nonnegative actions at source exponent six.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
+    ∃ W : Set (CoeffPair 6), ∃ s : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ A : SourceAbelianMomentAtlas (by simp) hp1 W s,
+    ∃ t : (n : ℤ) → CoeffPair 6 → DeletedCoeff 6 n,
+    ∃ V : Set (Coeff 3), ∃ F : Coeff 3 → Coeff 3, ∃ R : RealCoeff 3 → RealCoeff 3,
+      IsOpen V ∧ AnalyticOnNhd ℂ F V ∧
+      (∀ ψ : realTypeSourceSubmodule 6, ∀ n,
+        F (sourceActionSequence (q := 3) (by simp) hp1 t ψ.val) n = A.renormalizedFrequency n ψ.val) ∧
+      AnalyticOnNhd ℝ R (RealCoeff.complexCLM 3 ⁻¹' V) ∧
+      ∀ b : RealCoeff 3, RealCoeff.complexCLM 3 b ∈ V → (∀ n, 0 ≤ b n) →
+        RealCoeff.complexCLM 3 (R b) = F (RealCoeff.complexCLM 3 b) := by
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,_,_,_,_,_,F,hF,_,_,hrec,_⟩ :=
+    exists_sourceFrequency_genericLocalInverse (p := 6) (q := 3) (by simp) (by norm_num)
+  obtain ⟨U,hU,hUeq,R,hR,hReq⟩ := A.exists_real_analytic_actionMap hs D (by norm_num) F hV hF hrec
+  refine ⟨hp1,W,s,A,t,V,F,R,hV,hF,hrec,?_,?_⟩
+  · simpa only [hUeq] using hR
+  · intro b hb hpos
+    apply hReq b _ hpos
+    rw [hUeq]
+    exact hb
+
+end
+end RealFrequencyChecks

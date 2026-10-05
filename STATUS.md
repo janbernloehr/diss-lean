@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: generic local invertibility of the frequency map
+## Current milestone: real sequence-space values of the frequency map
+
+The actual renormalized frequency is now proved real at every real
+source, and every continuous analytic action realization is real on the
+nonnegative part of its domain. Finite summable approximations extend
+this statement to nonnegative actions that need not belong to `l1`.
+
+`SourceMomentReality.lean` proves that the filled even-moment numerator
+is purely imaginary on a real gap: its squared Abelian factor is the
+real arcosh profile squared, and its regular psi quotient has the
+required imaginary factor. Conjugation through the cosine integral
+then proves reality of every positive even moment, including collapsed
+gaps. Conjugation through the moment sum gives reality of the actual
+frequency without assuming a finite-gap source.
+
+`RealSummableApproximation.lean` constructs nonnegative finite actions
+in `RealCoeff 1` converging in each finite target exponent.
+`SourceFrequencyReality.lean` combines Hilbert realization with this
+approximation and supplies real-valued analytic extensions agreeing
+in complex sequence norm on nonnegative actions.
+
+`SourceFrequencyTheorem18_1Real.lean` adds the real sequence-space range
+to Theorem 18.1. One fixed actual frequency on nonnegative summable
+actions has a real-valued analytic realization in every finite target
+exponent above one. The theorem retains the compatible complex
+extensions and locally uniform mixed remainder estimates. Public
+examples use target exponents `5/4` and `2`, and nonnegative `l3` actions
+for source exponent `6`.
+
+Validation: the full build passes (5993 jobs), all public examples pass,
+and the transitive axiom audit passes for 22069 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: the Hamiltonian and convexity results beginning with Theorem 18.3.
+Start with the primitive-power moments of Lemma 21.1 and the finite-gap
+Hamiltonian identity in Lemma 21.2. These and the later dissertation
+remain unfinished.
+
+## Previous milestone: generic local invertibility of the frequency map
 
 The actual frequency map now has two-sided analytic local inverses on an
 open dense subset of a connected complex action domain, for every finite
