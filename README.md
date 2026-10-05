@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual frequencies are real at all real sources
-and on all nonnegative actions in their analytic domains. Theorem 18.1
-now includes real-valued analytic realizations in every finite target
-exponent above one, alongside its complex extensions and remainder
-estimates. The Hamiltonian results are next; see `STATUS.md`.
+Latest milestone: the Section 21 primitive-power moments are analytic on
+one common source neighborhood, independent of contour choices, zero
+at even orders and collapsed gaps, and equal to the spectral actions at
+first order. Gap-size estimates, higher odd-moment positivity, and the
+Hamiltonian identity are next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13265,4 +13265,43 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 Next: the Hamiltonian and convexity results beginning with Theorem 18.3.
 Start with the primitive-power moments of Lemma 21.1 and the finite-gap
 Hamiltonian identity in Lemma 21.2. These and the later dissertation
+remain unfinished.
+
+
+## Primitive-power moments and the action identity
+
+The Section 21 moments are now defined from the actual normalized
+primitive by `R_n^(m) = -(1/pi) * integral F_n^m`. These have their own
+construction, separate from the psi-weighted Section 20 moments.
+
+`SourcePrimitivePowerCircle.lean` proves fixed-contour analyticity,
+even-order vanishing (including order zero), and vanishing of every
+order at a collapsed gap. The proofs use the analytic square and the
+regular Cauchy quotient of the existing full primitive.
+
+`SourceGapContourComparison.lean` gives contour comparison for arbitrary
+holomorphic gap integrands. `SourcePrimitivePowerLocalChart.lean` constructs
+one source ball supporting every index and order.
+`SourcePrimitivePowerAtlas.lean` glues these charts into moments on a
+common open neighborhood of the entire real source locus. Contour and
+ambient-neighborhood independence hold across the full complex overlaps.
+
+`SourcePrimitivePowerAction.lean` proves the exact first-order identity
+`R_n^(1) = I_n` by closed-circle integration by parts. Each moment chart
+also supplies an action chart, so equality holds on the full complex
+moment domain. The existence theorem constructs all of this data for
+every finite source exponent above one.
+
+This proves Lemma 21.1(i), (ii), and (v), and the collapsed-gap consequence
+of (iii). Public examples cover source exponents `4` and `3/2`, independence
+of ambient constructions, odd moments at complex collapsed gaps, and the
+first moment's real-action positivity criterion.
+
+Validation: the full build passes (5998 jobs), all public examples pass,
+and the transitive axiom audit passes for 22145 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: the uniform gap-size estimate in Lemma 21.1(iii), positivity and
+strict positivity of higher odd moments in (iv), and the finite-gap
+Hamiltonian identity in Lemma 21.2. Theorem 18.3 and the later dissertation
 remain unfinished.

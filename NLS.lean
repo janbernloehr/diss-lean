@@ -2571,3 +2571,9 @@ import NLS.ZakharovShabat.SourceMomentReality
 import NLS.SequenceSpaces.RealSummableApproximation
 import NLS.ZakharovShabat.SourceFrequencyReality
 import NLS.ZakharovShabat.SourceFrequencyTheorem18_1Real
+
+import NLS.ZakharovShabat.SourcePrimitivePowerCircle
+import NLS.ZakharovShabat.SourceGapContourComparison
+import NLS.ZakharovShabat.SourcePrimitivePowerLocalChart
+import NLS.ZakharovShabat.SourcePrimitivePowerAtlas
+import NLS.ZakharovShabat.SourcePrimitivePowerAction

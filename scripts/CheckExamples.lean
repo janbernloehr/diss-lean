@@ -31932,3 +31932,69 @@ example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
 
 end
 end RealFrequencyChecks
+
+
+namespace PrimitivePowerChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+
+-- One FL^4 neighborhood supports every contour order and recovers the actions.
+example : ∃ W U : Set (CoeffPair 4), ∃ M : ℤ → ℕ → CoeffPair 4 → ℂ,
+    IsOpen U ∧ realTypeSourceLocus 4 ⊆ U ∧
+    (∀ n m, AnalyticOnNhd ℂ (M n m) U) ∧
+    (∀ ψ ∈ U, ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ,
+      sourcePsiRealCenteredContourFamily (by simp) (by norm_num) ψ c R ∧
+      ∀ n m, M n m ψ = sourcePrimitivePowerCircle (by simp) (by norm_num) W n m ψ (c n) (R n)) ∧
+    (∀ n, EqOn (M n 1) (sourceComplexAction (by simp) (by norm_num) n) U) ∧
+    (∀ ψ ∈ U, ∀ n m, M n (2*m) ψ = 0) := by
+  obtain ⟨W,U,_,hU,hreal,M,hM,hcircle,heven,_,hone⟩ :=
+    exists_sourcePrimitivePower_moments (p := 4) (by simp) (by norm_num)
+  exact ⟨W,U,M,hU,hreal,hM,hcircle,hone,heven⟩
+
+-- The construction also works below the Hilbert exponent.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 3/2, ∃ W : Set (CoeffPair (3/2)),
+    Nonempty (SourcePrimitivePowerAtlas (by finiteness) hp1 W) := by
+  have hp1 : (1 : ℝ≥0∞) < 3/2 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨W,_,_,hA⟩ := exists_sourcePrimitivePowerAtlas (p := 3/2) (by finiteness) hp1
+  exact ⟨hp1,W,hA⟩
+
+-- Different ambient constructions have equal cubic moments at every real source.
+example {W V : Set (CoeffPair 4)}
+    (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (B : SourcePrimitivePowerAtlas (by simp) (by norm_num) V)
+    (φ : realTypeSourceLocus 4) (n : ℤ) : A.moment n 3 φ.val = B.moment n 3 φ.val :=
+  A.moment_eqOn B n 3 ⟨A.realType_subset_domain φ.property,B.realType_subset_domain φ.property⟩
+
+-- The first new moment inherits the established real-action positivity criterion.
+example {W : Set (CoeffPair 4)}
+    (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (φ : realTypeSourceLocus 4) (n : ℤ) :
+    0 ≤ (A.moment n 1 φ.val).re ∧ (A.moment n 1 φ.val).im = 0 ∧
+      (A.moment n 1 φ.val = 0 ↔
+        canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+          (periodOnePotential_mem φ.val) n = 0) := by
+  rw [A.moment_one n (A.realType_subset_domain φ.property),
+    sourceComplexAction_eq_sourceRealAction (by simp) (by norm_num) n φ.val φ.property]
+  obtain ⟨hpos,him,hzero⟩ := sourceRealAction_nonneg_and_eq_zero_iff_gap_zero
+    (by simp) (by norm_num) φ.val φ.property n
+  refine ⟨hpos,him,hzero.trans ?_⟩
+  exact (congrArg (fun v : ℂ => v = 0)
+    (sourcePeriodicGapDisplacement_apply (by simp) (by norm_num) φ.val n)).to_iff
+
+-- Collapsed gaps kill the odd moments too, for arbitrary complex sources.
+example {W : Set (CoeffPair 4)}
+    (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (ψ : CoeffPair 4) (hψ : ψ ∈ A.domain) (n : ℤ)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n = 0) : A.moment n 3 ψ = 0 ∧ A.moment n 5 ψ = 0 :=
+  ⟨A.moment_of_collapsed ψ hψ n hgap 3,A.moment_of_collapsed ψ hψ n hgap 5⟩
+
+end
+end PrimitivePowerChecks
