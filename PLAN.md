@@ -2,7 +2,45 @@
 
 
 
-## Latest progress: positivity and real gap bounds for primitive-power moments
+## Latest progress: complete Lemma 21.1 and complex gap bounds
+
+The primitive-power moments now satisfy all five assertions of Lemma
+21.1 on one connected open complex neighborhood containing every real
+source, for every finite source exponent greater than one.
+
+`SourcePrimitivePowerComplexCosine.lean` proves joint analyticity of the
+odd-power numerator and its cosine mean using symmetric endpoint
+coordinates. Real-form uniqueness extends the actual boundary integral
+to a complex source ball, including collapsed gaps. The same ball works
+for all indices and orders.
+
+`SourceFullAbelianAllGapBound.lean` converts the mixed sequence majorants
+and their finite central correction into one scalar bound on both
+primitive boundary values at every gap. No index cutoff is needed.
+
+`SourcePrimitivePowerComplexBound.lean` integrates this estimate to prove
+`norm R_n^(m) <= B^m * norm gamma_n^(m+1)`. At every complex point in the
+common domain, one radius and positive constant work for all nearby
+complex sources, all signed indices, and all natural orders. This
+completes Lemma 21.1(iii) with a bound uniform over every index.
+
+`SourcePrimitivePowerLemma21_1.lean` assembles the full statement: actual
+contour representation, analyticity, even-order vanishing, locally
+uniform gap bounds, collapsed-gap vanishing, real positivity and odd
+zero detection, and the identity `R_n^(1) = I_n`.
+
+Public examples combine the actual action and cubic moment estimates
+on a single complex ball at exponent `4`, and verify the full all-order
+bound at exponent `3/2`.
+
+Validation: the full build passes (6006 jobs), all public examples pass,
+and the transitive axiom audit passes for 22216 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: the finite-gap Hamiltonian identity in Lemma 21.2, followed by
+Theorem 18.3. The later dissertation remains unfinished.
+
+## Previous milestone: positivity and real gap bounds for primitive-power moments
 
 Every primitive-power moment is now proved real and nonnegative at real
 sources, and every odd moment vanishes exactly when its spectral gap

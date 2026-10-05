@@ -32054,3 +32054,55 @@ example {W : Set (CoeffPair 4)}
 
 end
 end PrimitivePowerPositiveChecks
+
+
+namespace PrimitivePowerComplexChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- A single neighborhood controls the actual action and cubic moment at every index.
+example : ∃ W U : Set (CoeffPair 4), IsOpen U ∧ IsConnected U ∧
+    realTypeSourceLocus 4 ⊆ U ∧
+    ∃ A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W,
+      (∀ n m, AnalyticOnNhd ℂ (A.moment n m) U) ∧
+      ∀ φ ∈ U, ∃ r : ℝ, 0 < r ∧ ball φ r ⊆ U ∧ ∃ B : ℝ, 0 < B ∧
+        ∀ ψ ∈ ball φ r, ∀ n : ℤ,
+          ‖sourceComplexAction (by simp) (by norm_num) n ψ‖ ≤ B *
+            ‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) n‖^2 ∧
+          ‖A.moment n 3 ψ‖ ≤ B^3 *
+            ‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) n‖^4 := by
+  obtain ⟨W,U,_,hU,hconn,hreal,A,_,han,_,_,hbound,_,_,_,hone⟩ :=
+    exists_sourcePrimitivePower_lemma21_1 (p := 4) (by simp) (by norm_num)
+  refine ⟨W,U,hU,hconn,hreal,A,han,?_⟩
+  intro φ hφ
+  obtain ⟨r,hr,hrU,B,hB,hb⟩ := hbound φ hφ
+  refine ⟨r,hr,hrU,B,hB,fun ψ hψ n => ⟨?_,hb ψ hψ n 3⟩⟩
+  simpa only [pow_one, hone n (hrU hψ)] using hb ψ hψ n 1
+
+-- The complete all-order estimate also holds below the Hilbert exponent.
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+private theorem threeHalves_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+  norm_num
+
+example : ∃ W U : Set (CoeffPair (3/2)), IsOpen U ∧ IsConnected U ∧
+    realTypeSourceLocus (3/2) ⊆ U ∧
+    ∃ A : SourcePrimitivePowerAtlas (by finiteness) threeHalves_gt_one W,
+      U ⊆ A.domain ∧
+      ∀ φ ∈ U, ∃ r : ℝ, 0 < r ∧ ball φ r ⊆ U ∧ ∃ B : ℝ, 0 < B ∧
+        ∀ ψ ∈ ball φ r, ∀ (n : ℤ) (m : ℕ),
+          ‖A.moment n m ψ‖ ≤ B^m *
+            ‖canonicalPeriodicGap (by finiteness) threeHalves_gt_one (periodOnePotential ψ)
+              (periodOnePotential_mem ψ) n‖^(m+1) := by
+  obtain ⟨W,U,_,hU,hconn,hreal,A,hsub,_,_,_,hbound,_,_,_,_⟩ :=
+    exists_sourcePrimitivePower_lemma21_1 (p := 3/2) (by finiteness) threeHalves_gt_one
+  exact ⟨W,U,hU,hconn,hreal,A,hsub,hbound⟩
+
+end
+end PrimitivePowerComplexChecks
