@@ -31741,3 +31741,103 @@ example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
 
 end
 end OriginFrequencyChecks
+
+
+namespace GenericFrequencyChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (5/2 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : Fact (1 ≤ (5/4 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : (5/2 : ℝ≥0∞).HolderTriple (5/2) (5/4) := by
+  have he : (5/2 : ℝ≥0∞)/2 = 5/4 := by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half (5/2)
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- Off-diagonal blocks move the singular parameter from zero to one.
+example (z : ℂ) : IsUnit (SchurComplement.block
+    (z • ContinuousLinearMap.id ℂ ℂ) (ContinuousLinearMap.id ℂ ℂ)
+    (ContinuousLinearMap.id ℂ ℂ) (ContinuousLinearMap.id ℂ ℂ)) ↔ z ≠ 1 := by
+  have h := SchurComplement.isUnit_block_iff_det_ne_zero
+    (z • ContinuousLinearMap.id ℂ ℂ) (ContinuousLinearMap.id ℂ ℂ)
+    (ContinuousLinearMap.id ℂ ℂ) (ContinuousLinearMap.id ℂ ℂ) isUnit_one
+  have he : SchurComplement.expression (z • ContinuousLinearMap.id ℂ ℂ)
+      (ContinuousLinearMap.id ℂ ℂ) (ContinuousLinearMap.id ℂ ℂ)
+      (ContinuousLinearMap.id ℂ ℂ) = (z-1) • ContinuousLinearMap.id ℂ ℂ := by
+    change z • (1 : ℂ →L[ℂ] ℂ) - (1 : ℂ →L[ℂ] ℂ).comp
+      ((Ring.inverse (1 : ℂ →L[ℂ] ℂ)).comp 1) = (z-1) • 1
+    rw [Ring.inverse_one]
+    apply ContinuousLinearMap.ext
+    intro x
+    change z*x-x = (z-1)*x
+    ring
+  rw [h,he]
+  change ((z-1) • (LinearMap.id : ℂ →ₗ[ℂ] ℂ)).det ≠ 0 ↔ z ≠ 1
+  simp [sub_eq_zero]
+
+-- Generic inverses retain the actual spectral frequency recovery.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 5/2,
+    ∃ W : Set (CoeffPair (5/2)), ∃ s : (n : ℤ) → CoeffPair (5/2) → DeletedCoeff (5/2) n,
+    ∃ A : SourceAbelianMomentAtlas (by finiteness) hp1 W s,
+    ∃ t : (n : ℤ) → CoeffPair (5/2) → DeletedCoeff (5/2) n,
+    ∃ V O : Set (Coeff (5/4)), ∃ F : Coeff (5/4) → Coeff (5/4),
+      IsOpen V ∧ IsPreconnected V ∧ (0 : Coeff (5/4)) ∈ V ∧ AnalyticOnNhd ℂ F V ∧
+      (∀ ψ : realTypeSourceSubmodule (5/2),
+        sourceActionSequence (q := 5/4) (by finiteness) hp1 t ψ.val ∈ V ∧
+        ∀ n, F (sourceActionSequence (q := 5/4) (by finiteness) hp1 t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      IsOpen O ∧ O ⊆ V ∧ V ⊆ closure O ∧
+      ∀ b ∈ O, ∃ G : Coeff (5/4) → Coeff (5/4),
+        AnalyticAt ℂ G (F b) ∧ G (F b) = b ∧
+        (∀ᶠ c in 𝓝 b, G (F c) = c) ∧
+        (∀ᶠ z in 𝓝 (F b), F (G z) = z) ∧
+        fderiv ℂ G (F b) = Ring.inverse (fderiv ℂ F b) := by
+  have hp2 : (2 : ℝ≥0∞) < 5/2 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hconn,hzero,hcenter,_,_,F,hF,_,_,hrec,_,_,_,
+      O,hO,hOV,hDense,hInv⟩ :=
+    exists_sourceFrequency_genericLocalInverse (p := 5/2) (q := 5/4) (by finiteness) hp2
+  exact ⟨hp1,W,s,A,t,V,O,F,hV,hconn,hzero,hF,fun ψ => ⟨hcenter ψ,hrec ψ⟩,
+    hO,hOV,hDense,fun b hb => (hInv b hb).2⟩
+
+-- Generic inverses retain the actual spectral frequency recovery.
+example : ∃ hp1 : (1 : ℝ≥0∞) < 6,
+    ∃ W : Set (CoeffPair (6)), ∃ s : (n : ℤ) → CoeffPair (6) → DeletedCoeff (6) n,
+    ∃ A : SourceAbelianMomentAtlas (by finiteness) hp1 W s,
+    ∃ t : (n : ℤ) → CoeffPair (6) → DeletedCoeff (6) n,
+    ∃ V O : Set (Coeff (3)), ∃ F : Coeff (3) → Coeff (3),
+      IsOpen V ∧ IsPreconnected V ∧ (0 : Coeff (3)) ∈ V ∧ AnalyticOnNhd ℂ F V ∧
+      (∀ ψ : realTypeSourceSubmodule (6),
+        sourceActionSequence (q := 3) (by finiteness) hp1 t ψ.val ∈ V ∧
+        ∀ n, F (sourceActionSequence (q := 3) (by finiteness) hp1 t ψ.val) n =
+          A.renormalizedFrequency n ψ.val) ∧
+      IsOpen O ∧ O ⊆ V ∧ V ⊆ closure O ∧
+      ∀ b ∈ O, ∃ G : Coeff (3) → Coeff (3),
+        AnalyticAt ℂ G (F b) ∧ G (F b) = b ∧
+        (∀ᶠ c in 𝓝 b, G (F c) = c) ∧
+        (∀ᶠ z in 𝓝 (F b), F (G z) = z) ∧
+        fderiv ℂ G (F b) = Ring.inverse (fderiv ℂ F b) := by
+  have hp2 : (2 : ℝ≥0∞) < 6 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hconn,hzero,hcenter,_,_,F,hF,_,_,hrec,_,_,_,
+      O,hO,hOV,hDense,hInv⟩ :=
+    exists_sourceFrequency_genericLocalInverse (p := 6) (q := 3) (by finiteness) hp2
+  exact ⟨hp1,W,s,A,t,V,O,F,hV,hconn,hzero,hF,fun ψ => ⟨hcenter ψ,hrec ψ⟩,
+    hO,hOV,hDense,fun b hb => (hInv b hb).2⟩
+
+end
+end GenericFrequencyChecks

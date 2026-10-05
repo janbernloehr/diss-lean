@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual frequency map has derivative `-2*Id` at
-zero and an analytic local inverse with derivative `(-2)⁻¹*Id`.
-The coefficient is proved from the spectral moment formula. This adds
-Corollary 18.2(i) to the compactness and Fredholm results (ii) and (iii);
-generic local invertibility in (iv) remains next. See `STATUS.md`.
+Latest milestone: Corollary 18.2(iv) now holds on a connected complex
+action domain containing every real-source action. The actual frequency
+map has two-sided analytic local inverses on an open dense subset.
+The proof uses local Schur determinants and the identity theorem;
+see `STATUS.md` for the remaining scope.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13191,3 +13191,40 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 Next: generic local invertibility in Corollary 18.2(iv). The separate
 real-coordinate frequency range assertion and the later dissertation
 remain unfinished.
+
+## Generic local invertibility of the frequency map
+
+The actual frequency map now has two-sided analytic local inverses on an
+open dense subset of a connected complex action domain, for every finite
+source exponent `p > 2`. This proves the complex generic local
+invertibility assertion of Corollary 18.2(iv), retaining the origin
+inverse, compact corrected derivative, and Fredholm index zero.
+
+`SchurComplement.lean` proves exact block elimination. The analytic Schur
+expression and its finite-dimensional determinant detect invertibility
+even when the center is singular. `CompactInvertibleComplement.lean`
+extracts the invariant finite-dimensional summand and invertible closed
+complement already used for the Fredholm proof; that proof now reuses
+the extracted result. Nearby operators need not preserve this splitting.
+
+`LocalAnalyticNonvanishing.lean` propagates density through connected
+open sets using the identity theorem. Different neighborhoods may use
+different scalar determinants. `AnalyticFredholmDensity.lean` applies
+this argument to analytic compact scalar perturbations with one
+invertible member.
+
+`SourceFrequencyGenericLocalInverse.lean` chooses the component of zero
+and proves that it still contains every real-source action and the
+nonnegative summable action cone. It also retains the open source-image
+description. Each point in the resulting open dense set has both local
+inverse identities and the inverse derivative. Public examples cover
+`p = 5/2`, `p = 6`, and a block family whose off-diagonal coupling shifts
+its singular parameter from zero to one.
+
+Validation: the full build passes (5989 jobs), all public examples pass,
+and the transitive axiom audit passes for 22056 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: the separate real-coordinate frequency range assertion, then the
+Hamiltonian and convexity results beginning with Theorem 18.3. The later
+dissertation remains unfinished.

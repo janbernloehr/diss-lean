@@ -2556,3 +2556,13 @@ import NLS.ComplexAnalysis.DerivativeRayLimit
 import NLS.ZakharovShabat.SourceFrequencyDerivativeOrigin
 import NLS.ComplexAnalysis.ScalarDerivativeInverse
 import NLS.ZakharovShabat.SourceFrequencyLocalInverse
+
+import NLS.FunctionalAnalysis.SchurComplement
+import NLS.FunctionalAnalysis.AnalyticSchurComplement
+import NLS.FunctionalAnalysis.CompactInvertibleComplement
+import NLS.FunctionalAnalysis.CompactAnalyticDeterminant
+import NLS.ComplexAnalysis.LocalAnalyticNonvanishing
+import NLS.FunctionalAnalysis.AnalyticFredholmDensity
+import NLS.ComplexAnalysis.AnalyticUnitDerivativeInverse
+import NLS.ZakharovShabat.SourceFrequencyConnectedDomain
+import NLS.ZakharovShabat.SourceFrequencyGenericLocalInverse
