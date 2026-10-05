@@ -2542,3 +2542,7 @@ import NLS.SequenceSpaces.PittBlockContradiction
 import NLS.SequenceSpaces.Pitt
 import NLS.SequenceSpaces.CompactActionDerivative
 import NLS.ZakharovShabat.SourceFrequencyCompactDerivative
+
+import NLS.FunctionalAnalysis.FredholmDecomposition
+import NLS.FunctionalAnalysis.CompactFredholm
+import NLS.ZakharovShabat.SourceFrequencyFredholmDerivative

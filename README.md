@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Pitt's theorem is proved for arbitrary bounded operators
-from a larger finite sequence exponent to a smaller Banach exponent.
-It now proves Corollary 18.2(ii): the corrected derivative of the actual
-frequency map is compact throughout its complex action domain. The
-remaining parts of Corollary 18.2 are next; see `STATUS.md`.
+Latest milestone: Corollary 18.2(iii) is proved. The actual frequency
+derivative is Fredholm with index zero throughout its complex action
+domain. A reusable compact-operator theorem proves closed range and equal
+finite kernel and cokernel dimensions. The origin derivative and local
+invertibility assertions remain next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13120,5 +13120,43 @@ Next: Corollary 18.2(i), identifying the first frequency Taylor coefficient
 and proving `dF(0) = -2*Id` before applying the inverse function theorem.
 For (iii), compactness is now available; the Fredholm statement still needs
 closed range, finite-dimensional kernel and cokernel, and index zero.
+Generic local invertibility in (iv), the separate real-coordinate frequency
+range assertion, and the later dissertation remain unfinished.
+
+
+## Fredholm frequency derivatives of index zero
+
+The actual frequency derivative is now Fredholm of index zero at every
+complex point of its action domain, for every finite source exponent
+`p > 2`. This proves Corollary 18.2(iii), retaining compactness of
+`dF(b) + 2*Id`, recovery of the original normalized frequencies at all
+real sources, the nonnegative summable action cone, and the open
+source-image description of the domain.
+
+`FredholmDecomposition.lean` proves a general reduction: an operator
+preserving a finite-dimensional summand and acting invertibly on its
+closed complement is Fredholm. Explicit kernel and quotient equivalences
+reduce equality of kernel and cokernel dimensions to finite-dimensional
+rank-nullity. The conclusion includes closed range, finite-dimensional
+kernel and cokernel, and the topological requirements in mathlib's
+`ContinuousLinearMap.IsFredholm`.
+
+`CompactFredholm.lean` applies the existing stabilized generalized
+eigenspace decomposition to every nonzero scalar shift of a compact
+operator on a complex Banach space. Its complementary restriction is
+injective and hence bijective by the compact Fredholm alternative. The
+result does not assume that the full operator is invertible.
+
+`SourceFrequencyFredholmDerivative.lean` applies this result to the
+actual corrected frequency derivative. Public examples include a
+singular finite-rank perturbation on `Coeff 2` and actual frequency
+extensions for `p = 5/2` and `p = 6` on their whole complex action domains.
+
+Validation: the full build passes (5971 jobs), all public examples pass,
+and the transitive axiom audit passes for 21992 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: Corollary 18.2(i), identifying the first frequency Taylor coefficient
+and proving `dF(0) = -2*Id` before applying the inverse function theorem.
 Generic local invertibility in (iv), the separate real-coordinate frequency
 range assertion, and the later dissertation remain unfinished.
