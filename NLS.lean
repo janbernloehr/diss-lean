@@ -2592,3 +2592,10 @@ import NLS.ZakharovShabat.SourceFiniteGapContourDecomposition
 import NLS.ZakharovShabat.SourcePrimitivePowerCubicShift
 import NLS.ZakharovShabat.SourcePrimitivePowerHamiltonian
 import NLS.ZakharovShabat.SourceFiniteGapRenormalizedHamiltonian
+
+import NLS.SequenceSpaces.QuarticSummability
+import NLS.SequenceSpaces.LocallyUniformSummation
+import NLS.ZakharovShabat.SourceClosedGapsZero
+import NLS.ZakharovShabat.SourcePrimitivePowerCubicSequence
+import NLS.ZakharovShabat.SourceRenormalizedHamiltonian
+import NLS.ZakharovShabat.SourceRenormalizedHamiltonianProposition21_3

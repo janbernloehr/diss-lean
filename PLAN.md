@@ -2,7 +2,57 @@
 
 
 
-## Latest progress: finite-gap Hamiltonian identity
+## Latest progress: analytic cubic-moment Hamiltonian extension
+
+The cubic-moment series now constructs the source-space Hamiltonian
+extension in Proposition 21.3 on a connected open complex neighborhood
+of every real `FL^4` source. It is absolutely and locally uniformly
+convergent, complex analytic, and real analytic on the full real source
+space. Its real value is nonpositive and vanishes exactly at zero.
+
+`QuarticSummability.lean` turns the actual quartic gap bound into an
+absolute `ell^1` estimate. `SourcePrimitivePowerCubicSequence.lean`
+constructs the cubic moments as an actual `ell^1`-valued map. Local norm
+bounds and bounded-coordinate Taylor assembly prove Banach analyticity.
+Continuous linear summation then gives the analytic scalar Hamiltonian.
+
+`LocallyUniformSummation.lean` proves locally uniform convergence of
+symmetric sums for every continuous `ell^1`-valued family. Dini's theorem
+applies to the continuous decreasing norms of the truncation tails.
+The result uses `TendstoLocallyUniformlyOn`, with the neighborhood allowed
+to depend on the error tolerance, and implies uniform convergence on
+every compact subset of the source domain.
+
+`SourceClosedGapsZero.lean` identifies closure of all periodic gaps with
+the zero real source at every finite exponent above one, using the
+Birkhoff coordinate zero criterion and global injectivity.
+
+`SourceRenormalizedHamiltonian.lean` defines the literal sum
+`H* = -(4/3) * sum_n R_n^(3)`, proves its real sign and exact zero
+criterion without a finite-gap premise, and identifies its finite-gap
+values with the physical correction proved in Lemma 21.2.
+`SourceRenormalizedHamiltonianProposition21_3.lean` assembles the source
+extension, proves independence of the primitive atlas on complex
+overlaps, and uniqueness among continuous real-source extensions of
+the physical finite-gap values. The normalization here is explicitly
+verified on finite-gap sources.
+
+Public examples check compact-uniform convergence, strict negativity
+at any nonzero real `FL^4` source, uniqueness from physical finite-gap
+data, and the closed-gap zero criterion at exponent `3/2`.
+
+Validation: the full build passes (6017 jobs), all public examples pass,
+and the transitive axiom audit passes for 22275 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining identification: agreement with a separately defined physical
+correction on the full `H^1` domain needs a Sobolev continuity/density
+bridge; the current normalization is proved on finite-gap sources.
+Next also come the action-domain extension in Theorem 18.3(ii), its
+identification with the established frequency map, and the Hessian and
+strict-concavity statements. The later dissertation remains unfinished.
+
+## Previous milestone: finite-gap Hamiltonian identity
 
 Lemma 21.2 is now proved for every real finite-gap source at every finite
 source exponent greater than one, using the actual physical Hamiltonians,

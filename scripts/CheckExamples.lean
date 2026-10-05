@@ -32155,3 +32155,53 @@ example (n : ℤ) : ∃ φ : realTypeSourceLocus 2,
 
 end
 end PrimitivePowerHamiltonianChecks
+
+
+namespace RenormalizedHamiltonianExtensionChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Filter Topology Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The actual extension and its partial sums converge uniformly on every compact subset.
+example : ∃ W U : Set (CoeffPair 4), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 4 ⊆ U ∧
+    ∃ A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W,
+      AnalyticOnNhd ℂ A.renormalizedHamiltonian U ∧
+      (∀ ψ ∈ U, Summable (fun n => ‖A.moment n 3 ψ‖)) ∧
+      ∀ K : Set (CoeffPair 4), IsCompact K → K ⊆ U →
+        TendstoUniformlyOn
+          (fun (N : ℕ) ψ => -(4/3:ℂ)*(∑ n ∈ Finset.Icc (-(N:ℤ)) N, A.moment n 3 ψ))
+          A.renormalizedHamiltonian atTop K := by
+  obtain ⟨W,U,_,hU,hconn,hreal,A,_,ha,hs,hconv,_,_,_,_⟩ :=
+    exists_sourceRenormalizedHamiltonian_proposition21_3
+  exact ⟨W,U,hU,hconn,hreal,A,ha,hs,fun K hK hKU =>
+    (tendstoLocallyUniformlyOn_iff_tendstoUniformlyOn_of_compact hK).mp (hconv.mono hKU)⟩
+
+-- Every nonzero real FL^4 source has strictly negative Hamiltonian, without a finite-gap premise.
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 4) (hφ : φ ≠ 0) :
+    (A.renormalizedHamiltonian φ.val).re < 0 := by
+  obtain ⟨hle,hi⟩ := A.real_renormalizedHamiltonian_nonpos φ
+  have hne : (A.renormalizedHamiltonian φ.val).re ≠ 0 := by
+    intro hz
+    apply hφ
+    apply (A.real_renormalizedHamiltonian_eq_zero_iff φ).mp
+    exact Complex.ext hz hi
+  exact lt_of_le_of_ne hle hne
+
+-- The physical finite-gap data uniquely determine any continuous real-source extension.
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (H : realTypeSourceSubmodule 4 → ℂ) (hH : Continuous H)
+    (he : ∀ (φ : realTypeSourceSubmodule 4) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)),
+      H φ = sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num) φ hf) :
+    H = fun φ => A.renormalizedHamiltonian φ.val := A.real_renormalizedHamiltonian_unique H hH he
+
+-- The closed-gap zero criterion is independent of the Hamiltonian's exponent restriction.
+local instance : Fact ((1 : ℝ≥0∞) ≤ ENNReal.ofReal (3/2:ℝ)) := ⟨by norm_num⟩
+example (φ : realTypeSourceSubmodule (ENNReal.ofReal (3/2:ℝ))) :
+    (∀ n, canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ.val)
+      (periodOnePotential_mem φ.val) n = 0) ↔ φ = 0 :=
+  real_source_all_gaps_closed_iff_zero (by simp) (by norm_num) φ
+
+end
+end RenormalizedHamiltonianExtensionChecks
