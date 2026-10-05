@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Theorem 18.1's compatible analytic extensions and
-locally uniform mixed remainder are now assembled. A single neighborhood
-and decomposition serve all auxiliary exponents, including when `p/3 < 1`.
-Corollary 18.2 is next; see `STATUS.md`.
+Latest milestone: the corrected derivative of the actual action frequency
+now factors through a fixed sequence exponent strictly below `p/2`, and
+its refined derivative depends analytically on the action. The zero values
+are proved. The derivative at zero and Pitt's compactness theorem are next;
+see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13023,3 +13024,49 @@ target and Pitt's theorem, as in the dissertation. Compactness of the
 corrected derivative, Fredholm index zero, generic local invertibility,
 and the later dissertation remain unfinished. A separate real-coordinate
 range assertion for the frequency also remains to be exposed.
+
+## Actual frequency derivatives in a strictly refined target
+
+The actual action-frequency maps now have the refined derivative
+factorization used in the proof of Corollary 18.2(ii). For every finite
+`p > 2`, one target `r` satisfies `1 < r < p/2` and `p/3 <= r`. On the
+entire complex action domain, the bounded operator `dF(b) + 2*Id` equals
+the inclusion of `dH(b)`, where the analytic correction `H` takes values
+in `Coeff r`. The operator-valued map `b -> dH(b)` is analytic.
+
+`RefinedActionExponent.lean` proves the strict target exists, including
+source exponents arbitrarily close to two. `RefinedActionDerivative.lean`
+differentiates the exact correction identity as an equality of continuous
+linear maps. It also retains each coordinate identity and the quantitative
+bound `norm(dF(b)v + 2v) <= norm(dH(b))*norm(v)`.
+
+`SourceFrequencyOrigin.lean` proves that every spectral action, the full
+action sequence, and the normalized moment-sum frequency vanish at the
+zero source at every finite source exponent above one. This generalizes
+the previously exposed Hilbert frequency value at zero.
+
+`SourceFrequencySmoothingDerivative.lean` constructs the actual maps,
+retaining the normalization witness, recovery of all real-source
+frequencies, positive summable action coverage, and the open source-image
+description of the domain. The zero action lies in the domain, and both
+the frequency and its refined correction vanish there. A single refined
+target serves every complex point, with an analytic family of derivatives
+and the exact operator factorization.
+
+Public checks specialize the derivative theorem at `p = 5/2` and `p = 6`,
+verify the zero values, and retain the coordinate and operator norm bounds.
+A general check covers the strict target for every finite `p > 2`, without
+an extra assumption such as `p > 3`.
+
+Validation: the full build passes (5955 jobs), all public examples pass,
+and the transitive axiom audit passes for 21967 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Next: prove the first frequency Taylor coefficient, hence
+`dF(0) = -2*Id`, and apply the inverse function theorem. For compactness,
+the refined derivative factorization is now available; Pitt's compactness
+theorem for operators from a larger finite sequence exponent to a smaller
+one remains to be formalized. The sequence inclusion itself is only used
+as a bounded operator. Corollary 18.2's compactness, Fredholm index, generic
+local invertibility, and the later dissertation remain unfinished. The
+separate real-coordinate frequency range assertion is also still pending.

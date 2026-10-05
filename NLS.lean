@@ -2528,3 +2528,8 @@ import NLS.ZakharovShabat.SourceActionCorrectionBounds
 import NLS.ZakharovShabat.SourceFrequencyBoundedActionSpaceMaps
 import NLS.ZakharovShabat.SourceFrequencyActionSpaceAsymptotic
 import NLS.ZakharovShabat.SourceFrequencyTheorem18_1
+
+import NLS.SequenceSpaces.RefinedActionDerivative
+import NLS.SequenceSpaces.RefinedActionExponent
+import NLS.ZakharovShabat.SourceFrequencyOrigin
+import NLS.ZakharovShabat.SourceFrequencySmoothingDerivative

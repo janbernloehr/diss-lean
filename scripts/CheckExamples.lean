@@ -31406,3 +31406,80 @@ example : ∃ V : Set (Coeff (3)), ∃ F : Coeff (3) → Coeff (3),
 
 end
 end Theorem18_1Checks
+
+
+
+namespace SmoothingDerivativeChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+local instance : Fact (1 ≤ (5/2 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : Fact (1 ≤ (5/4 : ℝ≥0∞)) := ⟨by
+  apply (ENNReal.toReal_le_toReal (by simp) (by finiteness)).mp
+  norm_num⟩
+local instance : (5/2 : ℝ≥0∞).HolderTriple (5/2) (5/4) := by
+  have he : (5/2 : ℝ≥0∞)/2 = 5/4 := by
+    apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half (5/2)
+local instance : Fact (1 ≤ (6 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : (6 : ℝ≥0∞).HolderTriple 6 3 := by
+  have he : (6 : ℝ≥0∞)/2 = 3 := by
+    rw [← Coeff.halfExponent_eq_div (by simp)]
+    norm_num
+  simpa only [he] using Coeff.holderTriple_half 6
+
+-- The refined target is chosen once for the entire complex domain.
+-- The zero action lies in that domain, and both actual maps vanish there.
+example : ∃ V : Set (Coeff (5/4)), ∃ F : Coeff (5/4) → Coeff (5/4),
+    IsOpen V ∧ (0 : Coeff (5/4)) ∈ V ∧ F 0 = 0 ∧ AnalyticOnNhd ℂ F V ∧
+    ∃ r : ℝ≥0∞, ∃ _ : Fact (1 ≤ r), r ≠ ⊤ ∧ 1 < r ∧ ∃ hrq : r < 5/4,
+      ∃ H : Coeff (5/4) → Coeff r, H 0 = 0 ∧ AnalyticOnNhd ℂ H V ∧
+        AnalyticOnNhd ℂ (fderiv ℂ H) V ∧
+        ∀ b ∈ V,
+          fderiv ℂ F b + (2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff (5/4)) =
+            (Coeff.exponentInclusion hrq.le).comp (fderiv ℂ H b) ∧
+          ∀ v : Coeff (5/4),
+            (∀ n, (fderiv ℂ H b v) n = (fderiv ℂ F b v) n+2*v n) ∧
+            ‖fderiv ℂ F b v+(2 : ℂ) • v‖ ≤ ‖fderiv ℂ H b‖*‖v‖ := by
+  have hp2 : (2 : ℝ≥0∞) < 5/2 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hzero,_,_,_,F,hF,_,hFzero,_,r,instR,hr,hr1,
+    hrq,_,H,hH,_,hHzero,_,hDH,hfactor⟩ :=
+    exists_sourceFrequency_smoothingDerivative (p := 5/2) (q := 5/4) (by finiteness) hp2
+  exact ⟨V,F,hV,hzero,hFzero,hF,r,instR,hr,hr1,hrq,H,hHzero,hH,hDH,hfactor⟩
+
+-- The refined target is chosen once for the entire complex domain.
+-- The zero action lies in that domain, and both actual maps vanish there.
+example : ∃ V : Set (Coeff (3)), ∃ F : Coeff (3) → Coeff (3),
+    IsOpen V ∧ (0 : Coeff (3)) ∈ V ∧ F 0 = 0 ∧ AnalyticOnNhd ℂ F V ∧
+    ∃ r : ℝ≥0∞, ∃ _ : Fact (1 ≤ r), r ≠ ⊤ ∧ 1 < r ∧ ∃ hrq : r < 3,
+      ∃ H : Coeff (3) → Coeff r, H 0 = 0 ∧ AnalyticOnNhd ℂ H V ∧
+        AnalyticOnNhd ℂ (fderiv ℂ H) V ∧
+        ∀ b ∈ V,
+          fderiv ℂ F b + (2 : ℂ) • ContinuousLinearMap.id ℂ (Coeff (3)) =
+            (Coeff.exponentInclusion hrq.le).comp (fderiv ℂ H b) ∧
+          ∀ v : Coeff (3),
+            (∀ n, (fderiv ℂ H b v) n = (fderiv ℂ F b v) n+2*v n) ∧
+            ‖fderiv ℂ F b v+(2 : ℂ) • v‖ ≤ ‖fderiv ℂ H b‖*‖v‖ := by
+  have hp2 : (2 : ℝ≥0∞) < 6 := by
+    apply (ENNReal.toReal_lt_toReal (by simp) (by finiteness)).mp
+    norm_num
+  obtain ⟨hp1,W,s,A,P,hs,W₀,B,X,t,D,V,hV,hzero,_,_,_,F,hF,_,hFzero,_,r,instR,hr,hr1,
+    hrq,_,H,hH,_,hHzero,_,hDH,hfactor⟩ :=
+    exists_sourceFrequency_smoothingDerivative (p := 6) (q := 3) (by finiteness) hp2
+  exact ⟨V,F,hV,hzero,hFzero,hF,r,instR,hr,hr1,hrq,H,hHzero,hH,hDH,hfactor⟩
+
+-- The strict target exists even when the source exponent is arbitrarily
+-- close to two; there is no extra lower bound such as p > 3.
+example {p q : ℝ≥0∞} [p.HolderTriple p q] (hp : p ≠ ⊤) (hp2 : 2 < p) :
+    ∃ r : ℝ≥0∞, 1 < r ∧ r < q ∧ ENNReal.ofReal (p.toReal/3) ≤ r := by
+  obtain ⟨r,_,hr1,hrq,hpr⟩ := Coeff.exists_strict_refined_actionExponent (q := q) hp hp2
+  exact ⟨r,hr1,hrq,hpr⟩
+
+end
+end SmoothingDerivativeChecks
