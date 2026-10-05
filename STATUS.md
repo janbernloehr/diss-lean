@@ -1,6 +1,62 @@
 # Implementation status
 
-## Current milestone: analytic Hamiltonian on action space
+## Current milestone: Hamiltonian gradient, Hessian, and strict concavity
+
+The analytic action Hamiltonian now has the actual renormalized frequency
+as its `ell^2` gradient at every real `FL^4` source. The full differential
+is the absolutely convergent pairing
+`D H*(I(phi))[J] = sum_n omega*_n(phi) J_n`, for every complex `ell^2`
+direction, without a finite-gap or finite-support restriction.
+
+Its Hessian at zero is the full complex bilinear form
+`D^2 H*(0)[v,w] = -2 sum_n v_n w_n`.
+There is a positive-radius complex action ball on which, for every real
+`ell^2` direction `J`, the real part of the Hessian satisfies
+`Re D^2 H*(I)[J,J] <= -norm(J)^2`. In particular, every nonzero real
+direction has strictly negative second variation. The earlier analytic
+extension, nonnegative-domain sign, and exact zero criterion are retained.
+
+`SourceHilbertActionReductionWeighted.lean` proves the exact affine change
+of arbitrary weighted finite-gap action sums on the actual action-reduction
+curve. `SourceFiniteGapRenormalizedDerivative.lean` differentiates physical
+`H3`, the mass subtraction, and the weighted-action subtraction, obtaining
+minus the actual renormalized frequency along that decreasing-action curve.
+
+`SourceFiniteGapHamiltonianExponent.lean` identifies the physical smooth
+representatives and every hierarchy Hamiltonian across coefficient-identical
+sources, and transfers the physical correction under exponent inclusion.
+`SourceHamiltonianOpenActionDerivative.lean` uses this to identify an action
+derivative of the actual `FL^4` extension. The gap-opening limit in
+`SourceHamiltonianFiniteGapDerivative.lean` covers closed actions, including
+zero. `SourceHamiltonianRealGradient.lean` uses finite-gap density in the
+original `FL^4` norm to cover every real source and every Hilbert direction.
+
+`HilbertScalarGradient.lean` represents a scalar differential by its analytic
+Hilbert coefficient gradient and relates the scalar Hessian to the gradient
+derivative. `SourceHamiltonianHessian.lean` applies the established frequency
+derivative at zero. `HilbertScalarConcavity.lean` proves the quantitative
+concavity estimate by continuity in operator norm.
+`SourceHamiltonianActionConcavity.lean` constructs the complete action
+extension, gradient, Hessian, and concavity packet from actual spectral data.
+
+Public examples construct a positive-radius concavity ball, check the exact
+second variation at zero and strict negativity in every nonzero real Hilbert
+direction, recover the absolutely convergent frequency pairing for arbitrary
+complex directions, and verify physical exponent compatibility.
+
+Validation: the full build passes (6033 jobs), all public examples pass,
+and the transitive axiom audit passes for 22333 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 21 identification: agreement with a separately defined
+physical correction on the full `H^1` domain still needs a Sobolev
+continuity/density bridge or another physical trace argument. The action
+calculus and concavity are now proved for the cubic-moment extension;
+physical normalization is currently verified on finite-gap sources.
+After this identification, continue to the NLS wellposedness and flow
+results in Section 22. The dissertation remains unfinished.
+
+## Previous milestone: analytic Hamiltonian on action space
 
 The cubic-moment Hamiltonian now descends to one analytic scalar function
 on an open complex `ell^2` action domain. The domain contains the action

@@ -32254,3 +32254,60 @@ example {W V : Set (CoeffPair (ENNReal.ofReal (3/2:ℝ)))}
 
 end
 end HamiltonianActionExtensionChecks
+
+
+namespace HamiltonianConcavityChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4:ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+
+-- Construct an actual analytic Hamiltonian with a strictly negative Hessian
+-- on every nonzero real Hilbert direction, including infinite-support directions.
+example : ∃ H : Coeff 2 → ℂ, ∃ r : ℝ, 0 < r ∧
+    AnalyticOnNhd ℂ H (ball (0:Coeff 2) r) ∧
+    (∀ J : RealCoeff 2,
+      (fderiv ℂ (fderiv ℂ H) 0 (RealCoeff.complexCLM 2 J) (RealCoeff.complexCLM 2 J)).re = -2*‖J‖^2) ∧
+    ∀ b ∈ ball (0:Coeff 2) r, ∀ J : RealCoeff 2, J ≠ 0 →
+      (fderiv ℂ (fderiv ℂ H) b (RealCoeff.complexCLM 2 J) (RealCoeff.complexCLM 2 J)).re < 0 := by
+  obtain ⟨W,A,W₀,B,X,t,D,Y,P,u,C,hs,hP,hrealP,V,H,_,_,_,_,hH,_,_,_,_,_,hess,r,hr,hball,hconc⟩ :=
+    exists_sourceHamiltonian_action_extension_with_concavity
+  refine ⟨H,r,hr,hH.mono hball,?_,?_⟩
+  · intro J
+    simp only [hess,Coeff.dualPairing_real_self]
+    norm_num [Complex.mul_re]
+    rw [← Complex.ofReal_pow,Complex.ofReal_re]
+  · intro b hb J hJ
+    exact (hconc b hb J).trans_lt (neg_lt_zero.mpr (sq_pos_of_pos (norm_pos_iff.mpr hJ)))
+
+-- The constructed gradient pairs absolutely with every complex Hilbert direction.
+-- Its coordinates are the actual renormalized frequencies, at all real FL^4 sources.
+example : ∃ W₀ B X : Set (CoeffPair 4), ∃ t : (k : ℤ) → CoeffPair 4 → DeletedCoeff 4 k,
+    ∃ _D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B X t,
+    ∃ Y : Set (CoeffPair 4), ∃ u : (k : ℤ) → CoeffPair 4 → DeletedCoeff 4 k,
+    ∃ C : SourceAbelianMomentAtlas (by simp) (by norm_num) Y u,
+    ∃ H : Coeff 2 → ℂ, ∀ φ : realTypeSourceSubmodule 4, ∀ J : Coeff 2,
+      Summable (fun n : ℤ => ‖C.renormalizedFrequency n φ.val * J n‖) ∧
+      fderiv ℂ H (sourceActionSequence (q := 2) (by simp) (by norm_num) t φ.val) J =
+        ∑' n : ℤ, C.renormalizedFrequency n φ.val * J n := by
+  obtain ⟨W,A,W₀,B,X,t,D,Y,P,u,C,hs,hP,hrealP,V,H,_,_,hcenter,_,hH,hrec,_⟩ :=
+    exists_sourceHamiltonian_action_extension_with_concavity
+  exact ⟨W₀,B,X,t,D,Y,u,C,H,fun φ J =>
+    sourceHamiltonian_fderiv_real_series A D C hs hP hrealP H V hH hcenter hrec φ J⟩
+
+-- Physical normalization is preserved when the same finite-gap Hilbert source
+-- is viewed in FL^4; the identity concerns the original physical correction.
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num) φ hf =
+      sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num)
+        (realTypeSourceExponentInclusion (by norm_num : (2:ℝ≥0∞) ≤ 4) φ)
+        ((sourceFiniteGapLocus_exponent_iff (by simp) (by simp) (by norm_num) (by norm_num)
+          (by norm_num : (2:ℝ≥0∞) ≤ 4) φ).mp hf) :=
+  sourceFiniteGapRenormalizedHamiltonian_real_exponent (by simp) (by simp) (by norm_num)
+    (by norm_num) (by norm_num) φ hf
+
+end
+end HamiltonianConcavityChecks
