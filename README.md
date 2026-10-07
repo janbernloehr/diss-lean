@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the weighted spectral-action sum is absolutely convergent
-and analytic near every real H¹ source. The full physical Hamiltonian
-correction is now analytic and continuous there, with finite-gap calibration.
-Its identification with the cubic-moment extension on all H¹ sources remains;
-see `STATUS.md`.
+Latest milestone: actual finite-gap sources are dense in H¹, and the physical
+Hamiltonian correction equals the cubic-moment FL⁴ extension at every real
+H¹ source. Its sign and zero-rigidity properties now hold for the physical
+expression. Section 22's NLS wellposedness is next; see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13677,3 +13676,47 @@ prerequisites are now established; Sobolev-controlled finite-gap approximation
 or a direct physical trace argument is still needed. Unweighted FL⁴ density
 and smoothness of individual finite-gap sources do not supply that argument.
 Section 22 remains ahead, and the dissertation is unfinished.
+
+## H¹ finite-gap density and physical Hamiltonian identification
+
+The physical H¹ Hamiltonian correction now equals the FL⁴ cubic-moment
+extension at every real H¹ source. This includes the literal absolutely
+convergent subtraction `sum_n (2*pi*n)^2 I_n`. The physical correction is
+real and nonpositive, and vanishes exactly at the zero source.
+
+The missing approximation argument is proved in the H¹ topology.
+`NormalizedWeightedPeriodOne.lean` embeds normalized source coordinates
+isometrically into the weighted physical space for every spectral weight.
+The normalized closing map, derivative estimates, analytic inverse,
+reality preservation, and truncated targets construct nearby real sources
+with all sufficiently distant actual closing equations zero.
+`NormalizedWeightedSource.lean` recovers the unchanged original physical
+operator and proves that these sources satisfy the existing canonical
+spectral finite-gap definition.
+
+`SourceSobolevNormalizedCoordinates.lean` supplies a continuous linear
+equivalence between H¹ sources and coordinates weighted by `1+2*|n|`,
+with exact physical-realization and reality compatibility.
+`SourceSobolevFiniteGapDensity.lean` proves actual finite-gap density in
+H¹, approximation preserving any open condition, and passage of continuous
+identities from finite-gap sources to all real H¹ sources.
+
+`SourceSobolevHamiltonianIdentification.lean` uses this density, continuity
+of the physical correction, analyticity of the cubic-moment sum, and
+finite-gap exponent compatibility to prove the full physical identity.
+It constructs an actual primitive atlas satisfying the identity, and
+transfers the sign and zero-rigidity statements to the physical H¹ expression.
+
+Public examples check unit-weight compatibility, negative-frequency
+normalization, spectral finite-gap approximation in H¹, simultaneous
+control of the physical correction, the literal Hamiltonian series identity,
+and sign and rigidity without a finite-gap hypothesis.
+
+Validation: the full build passes (6056 jobs), all public examples pass,
+and the transitive axiom audit passes for 22568 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This closes the physical H¹ identification gap recorded for Section 21.
+Next is Section 22: the renormalized NLS flow in complex Birkhoff coordinates,
+its continuity and wellposedness, and the source-space flow obtained through
+the actual Birkhoff map. The dissertation is not yet fully formalized.

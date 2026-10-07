@@ -32415,3 +32415,63 @@ example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by s
 
 end SobolevSpectralActionChecks
 end
+
+
+noncomputable section
+namespace SobolevFiniteGapDensityChecks
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- Unit weighting recovers the previous closing map exactly.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (N : ℕ) :
+    normalizedWeightedClosingMap hp SpectralWeight.one φ N = sourceAdaptedClosingMap hp φ N := rfl
+
+-- A negative original frequency receives its doubled physical Sobolev weight.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    (sobolevNormalizedCoordinates a).fst (-3) = 7*a.1.val (-3) := by
+  rw [sobolevNormalizedCoordinates_fst]
+  norm_num [SpectralWeight.sobolev_apply, Weight.sobolev_apply]
+
+-- Density controls the H¹ norm and the actual spectral finite-gap property together.
+example (a : realTypeSobolevSourceLocus) (ε : ℝ) (hε : 0 < ε) :
+    ∃ b : realTypeSobolevSourceLocus,
+      (⟨sobolevSourceInclusion b.val,b.property⟩ : realTypeSourceLocus 2)
+        ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧ ‖b.val-a.val‖ < ε :=
+  exists_sourceSobolevFiniteGap_norm_sub_lt a ε hε
+
+-- The approximation can retain a prescribed accuracy of the physical correction as well.
+example (a : realTypeSobolevSourceLocus) (ε δ : ℝ) (hε : 0 < ε) (hδ : 0 < δ) :
+    ∃ b ∈ sourceSobolevFiniteGapLocus, ‖b.val-a.val‖ < δ ∧
+      ‖sourceSobolevPhysicalCorrection b.val-sourceSobolevPhysicalCorrection a.val‖ < ε := by
+  have hC : Continuous (fun b : realTypeSobolevSourceLocus => sourceSobolevPhysicalCorrection b.val) := by
+    apply continuous_iff_continuousAt.mpr
+    intro b
+    exact (continuousAt_sourceSobolevPhysicalCorrection b.val b.property).comp
+      continuous_subtype_val.continuousAt
+  let U := {b : realTypeSobolevSourceLocus |
+    dist (sourceSobolevPhysicalCorrection b.val) (sourceSobolevPhysicalCorrection a.val) < ε}
+  have hU : IsOpen U := isOpen_lt (hC.dist continuous_const) continuous_const
+  have ha : a ∈ U := by simpa only [U,mem_ofPred_eq,dist_self] using hε
+  obtain ⟨b,hb,hbU,hclose⟩ := exists_sourceSobolevFiniteGap_mem_open U hU a ha δ hδ
+  exact ⟨b,hb,hclose,by simpa only [U,mem_ofPred_eq,dist_eq_norm] using hbU⟩
+
+-- The original physical formula is identified with literal cubic moments at every real H¹ source.
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (a : realTypeSobolevSourceLocus) :
+    periodOneSobolevHamiltonian a.val - 2*(periodOneSobolevMass a.val)^2 -
+      (∑' n : ℤ, (2*(Real.pi : ℂ)*n)^2 *
+        sourceComplexAction (by simp) (by norm_num) n (sobolevSourceInclusion a.val)) =
+      -(4/3 : ℂ)*(∑' n : ℤ, A.moment n 3 (sobolevSourceFL4 a.val)) :=
+  A.sobolevPhysicalHamiltonian_identity a
+
+-- Sign and rigidity now apply to the physical H¹ expression, without a finite-gap assumption.
+example (a : realTypeSobolevSourceLocus) :
+    (sourceSobolevPhysicalCorrection a.val).re ≤ 0 ∧
+      (sourceSobolevPhysicalCorrection a.val).im = 0 ∧
+      (sourceSobolevPhysicalCorrection a.val = 0 ↔ a.val = 0) :=
+  ⟨(sourceSobolevPhysicalCorrection_nonpos a).1,
+    (sourceSobolevPhysicalCorrection_nonpos a).2,sourceSobolevPhysicalCorrection_eq_zero_iff a⟩
+
+end SobolevFiniteGapDensityChecks
+end
