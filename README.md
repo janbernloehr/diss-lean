@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: smooth physical initial functions now yield their canonical
-real H¹ sources automatically. Both ordinary and renormalized classical
-solutions agree with their Hilbert spectral flows. Every classical
-approximation family with convergent initial Hilbert sources converges in
-the uniform compact-time physical L² norm, including renormalized families
-with varying initial masses. Other source exponents, classical existence,
-and the full wellposedness statements remain to be completed.
+Latest milestone: canonical smooth physical sources and classical agreement
+now cover all finite source exponents greater than one. Arbitrary classical
+approximations converge uniformly in the original source norm: globally for
+`1 < p ≤ 2`, and for renormalized NLS on admissible compact intervals above
+two. Each renormalized approximant uses its own physical initial mass.
+Classical existence and the full wellposedness assembly remain to be completed.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

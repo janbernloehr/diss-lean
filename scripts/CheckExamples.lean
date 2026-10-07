@@ -34094,3 +34094,94 @@ example (u : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ))
   A.tendsto_classicalNLSPhysicalPath_of_smoothInitial hs hP hr D u hu φ hinit 0
 
 end SmoothClassicalAgreementChecks
+
+
+namespace SmoothExponentChecks
+open NLS NLS.ZakharovShabat NLS.Fourier Set Filter Topology
+open scoped ENNReal ContDiff
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- Absolute summability represents every smooth initial datum already at exponent one.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hper : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    (smoothPeriodOneSourceAt 1 f hf hper).val.fst (-5) =
+      periodOneCoefficient (fun x : ℝ => f (x : AddCircle (2 : ℝ))) (-5) :=
+  smoothPeriodOneSourceAt_fst f hf hper (-5)
+
+-- Direct construction at exponent four agrees with inclusion of the Hilbert source.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hper : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    realTypeSourceExponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 4)
+      (smoothPeriodOneHilbertSource f hf hper) = smoothPeriodOneSourceAt 4 f hf hper := by
+  rw [← smoothPeriodOneSourceAt_two]
+  exact smoothPeriodOneSourceAt_exponent _ f hf hper
+
+section Global
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P V B X : Set (CoeffPair p)}
+variable {s t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 V B X t)
+
+-- Global ordinary convergence includes degenerate compact intervals and arbitrary rough limits.
+example (hp2 : p ≤ 2) (u : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : ∀ j, IsClassicalNLSTrajectory (u j)) (φ : realTypeSourceSubmodule p)
+    (hinit : Tendsto (fun j => smoothPeriodOneSourceAt p (u j 0)
+      ((hu j).spatial_smooth 0) ((hu j).periodic 0)) atTop (𝓝 φ)) :
+    TendstoUniformlyOn (fun j time => smoothPeriodOneSourceAt p (u j time)
+      ((hu j).spatial_smooth time) ((hu j).periodic time))
+      (A.hamiltonianOrdinarySourceFlow D hp2 φ) atTop (Icc (-(0 : ℝ)) 0) :=
+  A.tendstoUniformlyOn_classicalNLSSource_of_smoothInitial hs hP hr D hp2 u hu φ hinit 0
+
+-- The full ordinary real source, including its second component, agrees at negative times.
+example (hp2 : p ≤ 2) (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) (hu : IsClassicalNLSTrajectory u) :
+    smoothPeriodOneSourceAt p (u (-3)) (hu.spatial_smooth (-3)) (hu.periodic (-3)) =
+      A.hamiltonianOrdinarySourceFlow D hp2
+        (smoothPeriodOneSourceAt p (u 0) (hu.spatial_smooth 0) (hu.periodic 0)) (-3) :=
+  A.classicalNLS_source_eq_flow hs.toSourcePsiIsolatingComplexExtension D hp2 u hu (-3)
+
+-- Renormalized classical data agree with the actual image flow at every admissible exponent.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalRenormalizedNLSTrajectory (classicalNLSMass (u 0)) u) :
+    (A.hamiltonianRenormalizedImageFlow D
+      (smoothPeriodOneSourceAt p (u 0) (hu.spatial_smooth 0) (hu.periodic 0)) (-3)).val.fst (-5) =
+      periodOneCoefficient (fun x : ℝ => u (-3) (x : AddCircle (2 : ℝ))) (-5) := by
+  have he := A.classicalRenormalizedNLS_source_eq_imageFlow hs.toSourcePsiIsolatingComplexExtension D u hu (-3)
+  exact (congrArg (fun ξ : realTypeSourceSubmodule p => ξ.val.fst (-5)) he).symm.trans
+    (smoothPeriodOneSourceAt_fst _ _ _ (-5))
+end Global
+
+section AboveTwo
+variable {W P V B X : Set (CoeffPair 4)}
+variable {s t : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+variable (A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) W s)
+variable (hs : SourcePsiSquaredGapComplexExtension (by norm_num) (by norm_num) P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus 4 ⊆ P)
+variable (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) V B X t)
+
+-- Smooth data remain in the actual image even outside a chosen local time interval.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hper : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    (7,smoothPeriodOneSourceAt 4 f hf hper) ∈ A.renormalizedImageDomain t := by
+  simpa only [neg_neg] using! A.smoothPeriodOneSourceAt_mem_renormalizedImageDomain
+    hs.toSourcePsiIsolatingComplexExtension D (by norm_num) f hf hper (-7)
+
+-- Only the rough limit's compact interval must be admissible; masses may vary across approximants.
+example (u : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : ∀ j, IsClassicalRenormalizedNLSTrajectory (classicalNLSMass (u j 0)) (u j))
+    (φ : realTypeSourceSubmodule 4)
+    (hinit : Tendsto (fun j => smoothPeriodOneSourceAt 4 (u j 0)
+      ((hu j).spatial_smooth 0) ((hu j).periodic 0)) atTop (𝓝 φ))
+    (hφ : φ ∈ A.renormalizedTrajectoryDomain t 3) :
+    TendstoUniformlyOn (fun j time => smoothPeriodOneSourceAt 4 (u j time)
+      ((hu j).spatial_smooth time) ((hu j).periodic time))
+      (A.hamiltonianRenormalizedImageFlow D φ) atTop (Icc (-3) 3) :=
+  A.tendstoUniformlyOn_classicalRenormalizedImageSource_of_smoothInitial hs hP hr D
+    (by norm_num) u hu φ hinit 3 hφ
+end AboveTwo
+end SmoothExponentChecks

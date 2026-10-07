@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: smooth physical sources and renormalized classical agreement
+## Current milestone: smooth classical agreement across source exponents
+
+Canonical smooth physical sources and classical agreement now cover every
+finite source exponent greater than one. Ordinary NLS agrees with the global
+source flow for `1 < p ≤ 2`; renormalized NLS agrees with the actual image
+flow for every finite `p > 1`. Every supplied classical approximation family
+converges uniformly on compact time intervals in the corresponding original
+source norm, globally below two and on admissible limiting intervals above two.
+
+`SmoothPeriodOneSourceExponent.lean` embeds the canonical H¹ coefficients into
+ℓ¹ and then into every exponent at least one. The first component remains the
+literal unit-period Fourier integral, the second retains real conjugate
+reflection, and exponent inclusions commute with this construction. At two
+it is exactly the previously constructed Hilbert source.
+
+`SmoothClassicalNLSAgreementExponent.lean` constructs auxiliary Hilbert
+spectral data internally and uses exponent compatibility to identify the
+entire real source of every supplied ordinary or renormalized classical
+trajectory. Above two, smooth sources stay in the actual Birkhoff image for
+all time. This proves classical agreement of the image flow without assuming
+surjectivity of the Birkhoff map at those exponents.
+
+`ClassicalNLSSmoothApproximationExponent.lean` combines that agreement with
+analytic dependence of compact-time source paths. Initial-source convergence
+alone gives uniform source-norm convergence of arbitrary ordinary or
+renormalized classical families in the global range. Above two, the
+renormalized conclusion retains the explicit condition that the rough limit
+belongs to the actual compact-time trajectory domain. Every approximant uses
+its own physical initial mass. No finite-gap, stronger-norm convergence, or
+common amplitude bound is required.
+
+Public examples cover exponent-one representation, inclusion from two to
+four, complete source equality at negative times, negative physical Fourier
+modes, zero-length intervals, and arbitrary classical approximation families
+at exponent four with an admissible rough limit and varying initial masses.
+
+Validation: the full build passes (6166 jobs), all public examples pass,
+and the transitive axiom audit passes for 23581 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: formulate the dissertation’s all-smooth-sequence solution definition
+and assemble its global, local, and near-zero analytic wellposedness assertions.
+The current results assume the supplied classical trajectories exist. The
+classical existence input for every smooth initial datum, cited from [7] on
+dissertation page 85, still needs a proved implementation before claiming the
+full statements. The dissertation is not complete.
+
+## Previous milestone: smooth physical sources and renormalized classical agreement
 
 Every smooth period-one continuous function now has a canonical real H¹
 source with its actual unit-period Fourier coefficients. Both ordinary and

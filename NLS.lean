@@ -2746,3 +2746,6 @@ import NLS.ZakharovShabat.SmoothPeriodOneSource
 import NLS.ZakharovShabat.SourceClassicalRenormalizedNLSAgreement
 import NLS.ZakharovShabat.SmoothClassicalNLSAgreement
 import NLS.ZakharovShabat.ClassicalNLSSmoothApproximation
+import NLS.ZakharovShabat.SmoothPeriodOneSourceExponent
+import NLS.ZakharovShabat.SmoothClassicalNLSAgreementExponent
+import NLS.ZakharovShabat.ClassicalNLSSmoothApproximationExponent
