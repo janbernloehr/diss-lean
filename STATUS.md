@@ -1,6 +1,61 @@
 # Implementation status
 
-## Current milestone: the global classical renormalized extension
+## Current milestone: local and near-zero global classical renormalized extensions
+
+For every finite `p > 2`, every real source now has an open neighborhood
+and a common positive time interval with an analytic renormalized
+classical solution-map extension. Every continuous classical extension
+on that neighborhood coincides with it there and is automatically analytic.
+One invariant open neighborhood of zero, containing a positive source-norm
+ball, supports a global group with the same classical agreement and uniqueness
+on every compact time interval.
+
+`SourceHamiltonianRenormalizedImageFlow.lean` gives the physical time
+orientation of the actual image-inverse flow. Path evaluation and analytic
+regularity keep the admissibility condition explicit. The time-addition
+law and the comparison with the global flow below two use the same orientation.
+
+`SourceRenormalizedImageClassicalAgreement.lean` proves that every Hilbert
+trajectory, included into an exponent `p ≥ 2`, stays in the actual Birkhoff
+image for all real time and coincides with the larger-exponent image flow.
+This does not assume global surjectivity at that exponent. Every finite-gap
+source has its coefficient-identical Hilbert model, so its image-flow
+coordinates equal the actual Fourier integrals of the canonical classical
+renormalized solution for every time.
+
+`ClassicalRenormalizedNLSLocalExtension.lean` formulates classical agreement
+and continuity on an initial-data neighborhood. Openness and actual finite-gap
+density prove uniqueness there, the original initial values, and uniform
+compact-time convergence of arbitrary finite-gap classical approximations. Early
+approximants may lie outside the neighborhood. The local existence theorem
+constructs a positive interval, an open source neighborhood, and its analytic
+classical extension, with all spectral data constructed internally.
+
+`ClassicalRenormalizedNLSSmallGlobalExtension.lean` constructs one invariant
+open neighborhood of zero and a physical global group on it. The theorem
+supplies a contained positive-radius source ball, exact initial values,
+invariance, the group law, joint continuity, and analytic compact-time maps
+that are the unique continuous classical extensions on that neighborhood.
+This supplies the finite-gap classical extension part of Corollary 22.2(ii).
+
+Public examples check arbitrary `p=3` initial data, local uniqueness and
+automatic analyticity, the zero-length initial-value identity, classical
+approximations that are only eventually in the neighborhood, inverse time
+maps on the small global domain, its analytic classical compact-time maps,
+and negative-time/negative-mode finite-gap agreement.
+
+Validation: the full build passes (6152 jobs), all public examples pass,
+and the transitive axiom audit passes for 23451 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+The definition on dissertation page 86 requires convergence for every
+sequence of smooth initial potentials. The current results quantify over
+finite-gap classical approximations. Agreement with arbitrary smooth
+classical solutions, and hence the full smooth-approximation definition,
+remains unproved. Compatibility and theorem-level Chapter 4 assembly also
+remain. The dissertation is not complete.
+
+## Previous milestone: the global classical renormalized extension
 
 For `1 < p ≤ 2`, the Hamiltonian-oriented renormalized flow is now the
 unique continuous extension of the actual classical finite-gap solution

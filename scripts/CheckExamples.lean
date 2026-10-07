@@ -33810,3 +33810,90 @@ example (φ : realTypeSourceSubmodule p) (time : ℝ) (n : ℤ) :
   simpa only [classicalNLSGaugePhase,mul_neg,Complex.ofReal_neg,neg_mul] using
     A.hamiltonianRenormalizedSourceFlow_fst_eq_gauge hs hP hr D hp2 φ (-time) n
 end RenormalizedGaugeExtensionChecks
+
+
+namespace RenormalizedLocalExtensionChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Arbitrary p=3 data have a local analytic classical extension with the exact initial value.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ T > 0, ∃ U : Set (realTypeSourceSubmodule 3), IsOpen U ∧ φ ∈ U ∧
+      ∃ F : realTypeSourceSubmodule 3 → C(Icc (-T) T,realTypeSourceSubmodule 3),
+        AnalyticOnNhd ℝ F U ∧ IsContinuousClassicalRenormalizedNLSExtensionOn (by simp) (by norm_num) T U F ∧
+        ∀ time : Icc (-T) T, time.val = 0 → F φ time = φ := by
+  obtain ⟨T,hT,U,hU,hφ,F,hA,hF,_⟩ := exists_local_classicalRenormalizedNLSExtension
+    (p := 3) (by simp) (by norm_num) (by norm_num) φ
+  refine ⟨T,hT,U,hU,hφ,F,hA,hF,?_⟩
+  intro time ht
+  have he : time = ⟨0,by constructor <;> linarith⟩ := Subtype.ext ht
+  rw [he]
+  exact hF.initial_value hU hT.le φ hφ
+
+-- No behavior outside the open neighborhood is needed for uniqueness or automatic analyticity.
+example (T : ℝ) (U : Set (realTypeSourceSubmodule 3)) (hU : IsOpen U)
+    (F G : realTypeSourceSubmodule 3 → C(Icc (-T) T,realTypeSourceSubmodule 3))
+    (hF : IsContinuousClassicalRenormalizedNLSExtensionOn (by simp) (by norm_num) T U F)
+    (hG : IsContinuousClassicalRenormalizedNLSExtensionOn (by simp) (by norm_num) T U G)
+    (hA : AnalyticOnNhd ℝ F U) : EqOn G F U ∧ AnalyticOnNhd ℝ G U :=
+  ⟨hG.unique hF hU,hG.analytic_of_reference hF hU hA⟩
+
+-- At T=0, every continuous classical extension is the identity on its neighborhood.
+example (U : Set (realTypeSourceSubmodule 3)) (hU : IsOpen U)
+    (F : realTypeSourceSubmodule 3 → C(Icc (-(0 : ℝ)) 0,realTypeSourceSubmodule 3))
+    (hF : IsContinuousClassicalRenormalizedNLSExtensionOn (by simp) (by norm_num) 0 U F)
+    (φ : realTypeSourceSubmodule 3) (hφ : φ ∈ U) : F φ ⟨0,by norm_num⟩ = φ :=
+  hF.initial_value hU le_rfl φ hφ
+
+-- Approximants need only converge into U; no premise requires all of them to start inside U.
+example (U : Set (realTypeSourceSubmodule 3)) (hU : IsOpen U)
+    (F : realTypeSourceSubmodule 3 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 3))
+    (hF : IsContinuousClassicalRenormalizedNLSExtensionOn (by simp) (by norm_num) 1 U F)
+    (φ : realTypeSourceSubmodule 3) (hφ : φ ∈ U) (ψ : ℕ → realTypeSourceSubmodule 3)
+    (hf : ∀ j, ψ j ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (hψ : Tendsto ψ atTop (𝓝 φ))
+    (G : ℕ → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 3))
+    (hG : ∀ j (time : Icc (-1 : ℝ) 1) (n : ℤ), (G j time).val.fst n =
+      periodOneCoefficient (fun x : ℝ => sourceFiniteGapClassicalRenormalizedTrajectory (by simp) (by norm_num)
+        (ψ j) (hf j) time.val (x : AddCircle (2 : ℝ))) n) : Tendsto G atTop (𝓝 (F φ)) :=
+  hF.tendsto_classical_approximation hU φ hφ ψ hf hψ G hG
+
+-- A genuine source-norm ball lies in an invariant global domain with inverse time maps.
+example : ∃ U : Set (realTypeSourceSubmodule 3), IsOpen U ∧ (∃ r > 0, Metric.ball 0 r ⊆ U) ∧
+    ∃ S : realTypeSourceSubmodule 3 → ℝ → realTypeSourceSubmodule 3,
+      ∀ φ ∈ U, ∀ time : ℝ, S φ time ∈ U ∧ S (S φ (-time)) time = φ := by
+  obtain ⟨U,hU,_,hball,S,hzero,hinv,hgroup,_,_⟩ := exists_small_global_classicalRenormalizedNLSExtension
+    (p := 3) (by simp) (by norm_num) (by norm_num)
+  refine ⟨U,hU,hball,S,fun φ hφ time => ⟨hinv φ hφ time,?_⟩⟩
+  rw [hgroup φ hφ time (-time),add_neg_cancel,hzero φ hφ]
+
+-- Every compact-time near-zero map is an actual classical extension, not just a spectral path.
+example : ∃ U : Set (realTypeSourceSubmodule 3), IsOpen U ∧ (0 : realTypeSourceSubmodule 3) ∈ U ∧
+    ∀ T : ℝ, ∃ F : realTypeSourceSubmodule 3 → C(Icc (-T) T,realTypeSourceSubmodule 3),
+      AnalyticOnNhd ℝ F U ∧ IsContinuousClassicalRenormalizedNLSExtensionOn (by simp) (by norm_num) T U F := by
+  obtain ⟨U,hU,hzero,_,_,_,_,_,_,hpaths⟩ := exists_small_global_classicalRenormalizedNLSExtension
+    (p := 3) (by simp) (by norm_num) (by norm_num)
+  refine ⟨U,hU,hzero,fun T => ?_⟩
+  obtain ⟨F,hA,hF,_,_⟩ := hpaths T
+  exact ⟨F,hA,hF⟩
+
+section Spectral
+variable {W P V B X : Set (CoeffPair 3)}
+variable {s t : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+variable (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+variable (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+variable (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+
+-- Every p=3 finite-gap datum is admissible at every signed physical time.
+example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (time : ℝ) : (-time,φ) ∈ A.renormalizedImageDomain t :=
+  A.finiteGap_mem_renormalizedImageDomain hs D (by norm_num) φ hf time
+
+-- At negative time, a negative Fourier mode is the actual classical Fourier integral.
+example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    (A.hamiltonianRenormalizedImageFlow D φ (-1)).val.fst (-2) =
+      periodOneCoefficient (fun x : ℝ => sourceFiniteGapClassicalRenormalizedTrajectory
+        (by simp) (by norm_num) φ hf (-1) (x : AddCircle (2 : ℝ))) (-2) :=
+  A.hamiltonianRenormalizedImageFlow_fst_eq_classical hs D (by norm_num) φ hf (-1) (-2)
+end Spectral
+end RenormalizedLocalExtensionChecks

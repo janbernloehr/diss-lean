@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: for `1 < p ≤ 2`, the global renormalized flow is the unique
-continuous extension of classical finite-gap dynamics, real analytic in the
-uniform compact-time norm. Every convergent finite-gap approximation has the
-same limit.
-The physical mass-gauge relation to the ordinary flow now holds for all source
-data in this range. Local and near-zero global identification above `p=2`
-remains next. See `STATUS.md`.
+Latest milestone: for every finite `p > 2`, the renormalized local flow is
+identified as the unique continuous extension of classical finite-gap dynamics
+on a source neighborhood, with analytic compact-time dependence. An invariant
+neighborhood of zero supports the corresponding global group. Both results
+construct all spectral data and retain the exact physical time orientation.
+Agreement for arbitrary smooth data remains necessary for the dissertation’s
+full smooth-approximation definition of wellposedness. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
