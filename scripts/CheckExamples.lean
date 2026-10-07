@@ -32690,3 +32690,79 @@ example (hp2 : p ≤ 2) (T : ℝ) (φ : realTypeSourceSubmodule p) :
 
 end SourceTrajectoryAnalyticChecks
 end
+
+
+noncomputable section
+namespace ImageFlowChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+
+-- The image inverse recovers every initial source, with no global surjectivity premise.
+example (φ : realTypeSourceSubmodule p) :
+    D.realImageInverse (sourceRealBirkhoffMap hp hp1 t φ) = φ :=
+  D.realImageInverse_real_map φ
+
+-- An admissible step is reversed by negative time and the reverse step is admissible.
+example (φ : realTypeSourceSubmodule p) (τ : ℝ) (hτ : (τ,φ) ∈ A.renormalizedImageDomain t) :
+    (-τ,A.renormalizedImageFlow D φ τ) ∈ A.renormalizedImageDomain t ∧
+    A.renormalizedImageFlow D (A.renormalizedImageFlow D φ τ) (-τ) = φ :=
+  ⟨A.neg_mem_renormalizedImageDomain hs.toSourcePsiIsolatingComplexExtension D φ τ hτ,
+    A.renormalizedImageFlow_neg hs.toSourcePsiIsolatingComplexExtension D φ τ hτ⟩
+
+-- On every admissible interval the actual trajectory has a Frechet derivative in uniform norm.
+example (T : ℝ) (φ : realTypeSourceSubmodule p) (hφ : φ ∈ A.renormalizedTrajectoryDomain t T) :
+    HasFDerivAt (A.renormalizedImageTrajectoryOn D T)
+      (fderiv ℝ (A.renormalizedImageTrajectoryOn D T) φ) φ :=
+  (A.analytic_renormalizedImageTrajectoryOn hs hP hr D T φ hφ).differentiableAt.hasFDerivAt
+
+-- Evaluation at zero retains the initial datum; the continuous-map fallback never intervenes.
+example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p)
+    (hφ : φ ∈ A.renormalizedTrajectoryDomain t T) :
+    A.renormalizedImageTrajectoryOn D T φ ⟨0,by constructor <;> linarith⟩ = φ := by
+  rw [A.renormalizedImageTrajectoryOn_apply hs hP hr D T φ hφ]
+  exact A.renormalizedImageFlow_zero D φ
+
+-- The new image-domain construction agrees with the existing global flow when p ≤ 2.
+example (hp2 : p ≤ 2) (φ : realTypeSourceSubmodule p) (τ : ℝ) :
+    A.renormalizedImageFlow D φ τ = A.renormalizedSourceFlow D hp2 φ τ :=
+  A.renormalizedImageFlow_eq_global D hp2 φ τ
+
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Specialize to p = 4, outside the globally surjective range: local analytic paths still exist.
+example {hp4 : (4 : ℝ≥0∞) ≠ ⊤} {hp14 : (1 : ℝ≥0∞) < 4}
+    {W4 P4 : Set (CoeffPair 4)} {s4 : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    {W04 B4 X4 : Set (CoeffPair 4)} {t4 : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (A4 : SourceAbelianMomentAtlas hp4 hp14 W4 s4)
+    (hs4 : SourcePsiSquaredGapComplexExtension hp4 hp14 P4 s4)
+    (hP4 : IsOpen P4) (hr4 : realTypeSourceLocus 4 ⊆ P4)
+    (D4 : SourceBirkhoffMapComplexData hp4 hp14 W04 B4 X4 t4)
+    (φ : realTypeSourceSubmodule 4) :
+    ∃ T > 0, ∃ V : Set (realTypeSourceSubmodule 4), IsOpen V ∧ φ ∈ V ∧
+      V ⊆ A4.renormalizedTrajectoryDomain t4 T ∧
+      AnalyticOnNhd ℝ (A4.renormalizedImageTrajectoryOn D4 T) V :=
+  A4.exists_local_analytic_renormalizedTrajectories hs4 hP4 hr4 D4 φ
+
+-- One positive coordinate radius controls all real times, not just a fixed compact interval.
+example : ∃ ε > 0, ∀ φ : realTypeSourceSubmodule p,
+    ‖sourceComplexBirkhoffMap hp hp1 t φ.val‖ < ε →
+    ∀ τ : ℝ, (τ,φ) ∈ A.renormalizedImageDomain t :=
+  A.exists_small_renormalizedImageDomain D
+
+-- The invariant neighborhood contains an actual source norm ball.
+example : ∃ r > 0, ∀ φ : realTypeSourceSubmodule p, ‖φ‖ < r →
+    ∀ τ : ℝ, (τ,φ) ∈ A.renormalizedImageDomain t := by
+  obtain ⟨V,_,_,⟨r,hr,hball⟩,hvalid,_⟩ := A.exists_invariant_small_renormalizedFlow D
+  refine ⟨r,hr,fun φ hφ τ => hvalid φ (hball ?_) τ⟩
+  simpa only [Metric.mem_ball,dist_zero_right] using hφ
+
+end ImageFlowChecks
+end

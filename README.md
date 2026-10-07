@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: for `1 < p <= 2`, the complete renormalized source
-trajectory depends analytically on its initial source in the uniform norm
-on every compact time interval. This closes the source-trajectory
-analyticity gap; further Section 22 work remains. See `STATUS.md`.
+Latest milestone: for every finite `p > 1`, the renormalized spectral flow
+has local analytic source trajectories and global analytic trajectories
+on an invariant neighborhood of zero, including `p > 2`. Analyticity holds
+in the uniform source norm on compact time intervals. Further Section 22
+work remains. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13861,3 +13862,49 @@ global flow for `p > 2`, the ordinary NLS mass shift and its discontinuity
 outside `ell^2`, and agreement with classical NLS solutions. This milestone
 establishes analytic dependence for the constructed renormalized spectral
 flow; the dissertation remains unfinished.
+
+## Local and small-data global analytic source flows
+
+At every finite `p > 1`, including `p > 2`, the renormalized spectral flow
+now exists locally around every real source and globally on an open
+invariant neighborhood of zero. Nearby initial sources share a positive
+time interval. The complete source trajectory depends real analytically
+on the initial source in the uniform norm on each admissible compact
+interval. This supplies the spectral-flow construction in Corollary 22.2(ii).
+
+`SourceBirkhoffImageInverse.lean` identifies the source with the actual open
+Birkhoff image and proves analyticity of its inverse there. It also proves
+that the original Birkhoff maps send zero to zero. `SourceRenormalizedImageFlow.lean`
+constructs the flow with an explicit image-domain condition, proves joint
+continuity, its exact coordinates, preservation of actions and frequencies,
+the restart-domain identity, and time addition. In the globally surjective
+range it agrees with the previously constructed source flow.
+
+`SourceRenormalizedLocalFlow.lean` gives a common positive existence interval
+for a neighborhood of every source and proves reversibility. A sufficiently
+small ball in complex Birkhoff coordinates remains admissible for all time:
+phase rotation preserves its norm, and the bounded real decoder keeps it
+inside the actual image. Its source preimage is open, invariant, contains
+zero, and contains a source norm ball of positive radius.
+
+`SourceRenormalizedImageTrajectories.lean` proves that the initial sources
+admissible on a compact interval form an open set. The full trajectory is
+continuous there; the function-space inverse theorem for the actual
+Birkhoff map upgrades this lift to a real analytic trajectory map.
+`SourceRenormalizedLocalExistence.lean` packages local analytic existence
+and small-data global analytic dynamics, with the actual spectral atlas
+and Birkhoff family constructed rather than assumed.
+
+Public examples cover negative-time reversal with its domain condition,
+the uniform-norm trajectory derivative, evaluation at time zero, agreement
+with the previous global flow, a local analytic trajectory at `p = 4`,
+and all-time existence from positive coordinate and source norm bounds.
+
+Validation: the full build passes (6081 jobs), all public examples pass,
+and the transitive axiom audit passes for 22846 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+The ordinary NLS mass shift, its discontinuity outside `ell^2`, and agreement
+with classical PDE solutions remain open Section 22 work. These results
+concern the constructed renormalized spectral flow; the dissertation
+remains unfinished.
