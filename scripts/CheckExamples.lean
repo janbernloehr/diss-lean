@@ -34028,3 +34028,69 @@ example (hs : SourcePsiSquaredGapComplexExtension (by simp) (by norm_num) P s)
   A.classicalNLS_periodOneCoefficient_eq_hamiltonianFlow hs hP hr D a u hu hinit (-7) (-2)
 
 end EnergyClassicalAgreementChecks
+
+
+namespace SmoothClassicalAgreementChecks
+open NLS NLS.ZakharovShabat NLS.Fourier Set Filter Topology MeasureTheory
+open scoped ContDiff
+
+-- Arbitrary smooth physical data are reconstructed exactly, with the correct source mass.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hp : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    periodOneSobolevSynthesis (smoothPeriodOneSource f hf hp).val.1 = f ∧
+      sourceOrdinaryMass le_rfl (smoothPeriodOneHilbertSource f hf hp) =
+        ∫ x in (0 : ℝ)..1, ‖f (x : AddCircle (2 : ℝ))‖^2 := by
+  refine ⟨periodOneSobolevSynthesis_smoothPeriodOneSource f hf hp,?_⟩
+  exact (sourceOrdinaryMass_smoothPeriodOneHilbertSource f hf hp).trans (classicalNLSMass_eq_integral f hp)
+
+-- The canonical Hilbert source retains actual negative unit-period modes.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hp : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    (smoothPeriodOneHilbertSource f hf hp).val.fst (-3) =
+      periodOneCoefficient (fun x : ℝ => f (x : AddCircle (2 : ℝ))) (-3) :=
+  smoothPeriodOneHilbertSource_fst f hf hp (-3)
+
+variable {W P V B X : Set (CoeffPair 2)}
+variable {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+variable (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+variable (hs : SourcePsiSquaredGapComplexExtension (by simp) (by norm_num) P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus 2 ⊆ P)
+variable (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+
+-- Ordinary agreement needs no supplied H¹ representative or finite-gap assumption.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) (hu : IsClassicalNLSTrajectory u) :
+    periodOneCoefficient (fun x : ℝ => u (-4) (x : AddCircle (2 : ℝ))) (-3) =
+      (A.hamiltonianOrdinarySourceFlow D le_rfl
+        (smoothPeriodOneHilbertSource (u 0) (hu.spatial_smooth 0) (hu.periodic 0)) (-4)).val.fst (-3) :=
+  A.classicalNLS_periodOneCoefficient_eq_smoothFlow hs hP hr D u hu (-4) (-3)
+
+-- The renormalized statement uses the physical mass of this solution's initial data.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalRenormalizedNLSTrajectory (classicalNLSMass (u 0)) u) :
+    periodOneCoefficient (fun x : ℝ => u (-4) (x : AddCircle (2 : ℝ))) (-3) =
+      (A.hamiltonianRenormalizedSourceFlow D le_rfl
+        (smoothPeriodOneHilbertSource (u 0) (hu.spatial_smooth 0) (hu.periodic 0)) (-4)).val.fst (-3) :=
+  A.classicalRenormalizedNLS_periodOneCoefficient_eq_smoothFlow hs hP hr D u hu (-4) (-3)
+
+-- A rough Hilbert limit and arbitrary classical approximants are allowed, with distinct masses.
+example (u : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : ∀ j, IsClassicalRenormalizedNLSTrajectory (classicalNLSMass (u j 0)) (u j))
+    (φ : realTypeSourceSubmodule 2)
+    (hinit : Tendsto (fun j => smoothPeriodOneHilbertSource (u j 0)
+      ((hu j).spatial_smooth 0) ((hu j).periodic 0)) atTop (𝓝 φ)) :
+    Tendsto (fun j => classicalPhysicalL2Path 2 (u j) (hu j).time_differentiable.continuous) atTop
+      (𝓝 (sourceFirstPeriodOneL2Map.comp (A.hamiltonianRenormalizedSourceTrajectoryOn hs hP hr D le_rfl 2 φ))) :=
+  A.tendsto_classicalRenormalizedNLSPhysicalPath_of_smoothInitial hs hP hr D u hu φ hinit 2
+
+-- Zero-length compact intervals remain covered for arbitrary ordinary approximations.
+example (u : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : ∀ j, IsClassicalNLSTrajectory (u j)) (φ : realTypeSourceSubmodule 2)
+    (hinit : Tendsto (fun j => smoothPeriodOneHilbertSource (u j 0)
+      ((hu j).spatial_smooth 0) ((hu j).periodic 0)) atTop (𝓝 φ)) :
+    Tendsto (fun j => classicalPhysicalL2Path 0 (u j) (hu j).time_differentiable.continuous) atTop
+      (𝓝 (sourceFirstPeriodOneL2Map.comp (A.hamiltonianOrdinarySourceTrajectoryOn hs hP hr D le_rfl 0 φ))) :=
+  A.tendsto_classicalNLSPhysicalPath_of_smoothInitial hs hP hr D u hu φ hinit 0
+
+end SmoothClassicalAgreementChecks

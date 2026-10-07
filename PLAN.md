@@ -1,6 +1,54 @@
 # Implementation plan
 
-## Latest progress: energy bounds and arbitrary classical H¹ agreement
+## Latest progress: smooth physical sources and renormalized classical agreement
+
+Every smooth period-one continuous function now has a canonical real H¹
+source with its actual unit-period Fourier coefficients. Both ordinary and
+renormalized classical NLS trajectories agree with the corresponding Hilbert
+spectral flows without a supplied Sobolev representative or a finite-gap
+condition. In the renormalized case the parameter is exactly the physical
+mass of that trajectory’s initial data.
+
+`SmoothPeriodOneSource.lean` derives classical H¹ regularity from spatial
+smoothness. Reading the even ambient-circle coefficients preserves the H¹
+weight and gives the actual unit-period coefficients. Conjugate reflection
+constructs the real pair; bounded synthesis recovers the original continuous
+function pointwise, including the circle endpoints.
+
+`SourceClassicalRenormalizedNLSAgreement.lean` identifies the spectral mass
+with the physical mass for every real H¹ representative. The inverse
+classical gauge reduces to the established ordinary agreement theorem,
+and the full-source gauge restores the renormalized flow. Equality holds
+in physical L² and for every original Fourier integral at all real times.
+
+`SmoothClassicalNLSAgreement.lean` constructs the initial source internally
+for both equations and calibrates its mass by the actual physical integral.
+No H¹ representative or spectral mass equality is left as a premise.
+
+`ClassicalNLSSmoothApproximation.lean` proves convergence of every family
+of classical ordinary or renormalized trajectories whose canonical initial
+Hilbert sources converge to an arbitrary real Hilbert source. Their physical
+L² paths converge in the uniform compact-time norm. No finite-gap condition,
+H¹ convergence, common amplitude bound, or common mass parameter is assumed.
+Each renormalized approximant uses its own physical initial mass.
+
+Public examples check exact reconstruction and physical mass, negative
+Fourier modes and times for both equations, arbitrary renormalized sequences
+with varying masses and a rough Hilbert limit, and zero-length intervals.
+
+Validation: the full build passes (6163 jobs), all public examples pass,
+and the transitive axiom audit passes for 23559 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: transfer arbitrary-classical agreement and approximation convergence
+to all admissible source exponents, retain the actual local image domains
+above two, and assemble the dissertation’s all-smooth-sequence solution and
+wellposedness statements. Classical existence for arbitrary smooth initial
+data is not proved by these conditional agreement/convergence results and
+must be supplied or established before claiming the complete statements.
+The dissertation is not complete.
+
+## Previous milestone: energy bounds and arbitrary classical H¹ agreement
 
 The ordinary spectral flow now agrees with every classical trajectory
 whose initial continuous representative is supplied by a real H¹ source.
@@ -156,13 +204,14 @@ remain. The dissertation is not complete.
 
 Next implementation targets:
 
-1. Package H¹ representatives of arbitrary smooth initial potentials and
-   apply `classicalNLS_periodOneCoefficient_eq_hamiltonianFlow`. Transfer
-   agreement through the physical mass gauge and across source exponents.
-   State and prove convergence for every smooth approximation sequence,
-   retaining the exact definition on dissertation page 86. Audit the
-   classical existence required by the phrase “corresponding smooth solutions”;
-   the current agreement theorem assumes a classical trajectory.
+1. Transfer `classicalNLS_periodOneCoefficient_eq_smoothFlow` and
+   `classicalRenormalizedNLS_periodOneCoefficient_eq_smoothFlow` to all
+   admissible exponents using the existing flow-inclusion theorems. Above
+   two, retain the actual image domain and local source neighborhoods.
+   Upgrade convergence for every smooth classical approximation family to
+   the corresponding source path norm. Assemble the definition on page 86
+   and audit classical existence for every smooth initial datum; the current
+   results still assume the corresponding classical trajectories exist.
 2. Prove compatibility on overlapping source neighborhoods and time intervals
    and across admissible exponents; assemble Theorems 18.5 and 22.1 and
    Corollary 22.2 only after their full hypotheses and conclusions are met.

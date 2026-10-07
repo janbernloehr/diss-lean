@@ -2742,3 +2742,7 @@ import NLS.ZakharovShabat.SourceSobolevEnergyCoercivity
 import NLS.ZakharovShabat.SourceFiniteGapUniformBound
 import NLS.ZakharovShabat.SourceClassicalNLSApproximation
 import NLS.ZakharovShabat.SourceClassicalNLSAgreement
+import NLS.ZakharovShabat.SmoothPeriodOneSource
+import NLS.ZakharovShabat.SourceClassicalRenormalizedNLSAgreement
+import NLS.ZakharovShabat.SmoothClassicalNLSAgreement
+import NLS.ZakharovShabat.ClassicalNLSSmoothApproximation

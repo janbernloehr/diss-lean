@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: conserved physical energy now supplies uniform bounds for
-H¹ finite-gap approximations. The ordinary spectral flow agrees with any
-classical solution having a supplied real H¹ initial representative, at all
-times in physical L² and in every actual Fourier coefficient. No finite-gap
-condition on the limiting initial data or common approximation bound remains.
-Smooth-data representation, renormalized agreement, and the full
-smooth-approximation wellposedness statements remain to be assembled.
+Latest milestone: smooth physical initial functions now yield their canonical
+real H¹ sources automatically. Both ordinary and renormalized classical
+solutions agree with their Hilbert spectral flows. Every classical
+approximation family with convergent initial Hilbert sources converges in
+the uniform compact-time physical L² norm, including renormalized families
+with varying initial masses. Other source exponents, classical existence,
+and the full wellposedness statements remain to be completed.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
