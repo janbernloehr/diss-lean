@@ -1,6 +1,53 @@
 # Implementation plan
 
-## Latest progress: smooth classical agreement across source exponents
+## Latest progress: local weighted Fourier NLS existence
+
+Every initial datum in a spectral-weighted ℓ¹ space now has a local,
+norm-continuous Fourier NLS solution on a positive symmetric time interval.
+Every original Fourier coefficient satisfies the quadratic Schrödinger term
+and literal cubic convolution. No finite Fourier support, finite-gap condition,
+spectral atlas, or assumed classical solution is used in this existence proof.
+
+`WeightedPhaseFlow.lean` transports arbitrary diagonal unit phases through
+the weighted coefficient isometry. It proves the group law, norm preservation,
+and joint strong continuity at every finite exponent, without bounding the
+frequency sequence.
+
+`CubicNLS.lean` uses physical conjugate reflection and the actual weighted
+convolution to define the field `-2i (a * a * conjugateReflection a)`. Its norm
+is at most `2*‖a‖³`; on a norm-bounded ball it has Lipschitz constant `6*R²`.
+Both estimates hold for every spectral weight.
+
+`LocalNLSInteraction.lean` removes the free phases with frequencies
+`-(2πn)²`. The resulting time-dependent cubic field is jointly continuous
+and has the same bounds uniformly in time. Picard–Lindelöf then constructs
+an interaction solution on a positive interval about zero, with its actual
+Banach-space derivative.
+
+`LocalNLSExistence.lean` restores the free evolution and proves the original
+mode equations. The curve is continuous in the full weighted norm; every
+mode has the asserted derivative within the closed interval, hence an
+ordinary derivative at each interior time. The cubic coefficient formula
+retains both convolution sums and the reflected conjugate index explicitly.
+
+Public examples check the physical sign at negative modes, isometry and
+reversibility at negative times, the time-independent Lipschitz bound,
+the exact zero-mode nonlinearity, arbitrary weighted initial data, and
+interior differentiability for the concrete Sobolev weight of order four.
+
+Validation: the full build passes (6170 jobs), all public examples pass,
+and the transitive axiom audit passes for 23623 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: prove compatible local uniqueness and persistence of arbitrarily
+high Sobolev regularity on a common interval, identify the physical classical
+PDE after synthesis, and use conservation and continuation to obtain global
+classical solutions for every smooth initial datum. The current theorem is
+local Fourier-space existence in each fixed weighted ℓ¹ space; it is not yet
+the missing global smooth classical-existence theorem. The dissertation’s
+all-smooth-sequence wellposedness assembly and full inventory remain incomplete.
+
+## Previous milestone: smooth classical agreement across source exponents
 
 Canonical smooth physical sources and classical agreement now cover every
 finite source exponent greater than one. Ordinary NLS agrees with the global
@@ -251,12 +298,13 @@ remain. The dissertation is not complete.
 
 Next implementation targets:
 
-1. Formalize the all-smooth-sequence solution definition on page 86 using
-   the proved cross-exponent source agreement and uniform approximation
-   theorems. Assemble global and local analytic solution maps with their
-   actual trajectory-domain guards. Establish the classical existence input
-   for every smooth initial datum (cited from [7] on page 85); conditional
-   agreement and convergence alone do not provide that input.
+1. Complete smooth classical existence from the constructed local weighted
+   Fourier solutions: prove compatible local uniqueness, common-interval
+   persistence of higher Sobolev regularity, physical PDE identification,
+   and global continuation using conserved quantities. Then formalize the
+   all-smooth-sequence solution definition on page 86 and assemble global
+   and local analytic solution maps using the proved cross-exponent
+   approximation results and their actual trajectory-domain guards.
 2. Prove compatibility on overlapping source neighborhoods and time intervals
    and across admissible exponents; assemble Theorems 18.5 and 22.1 and
    Corollary 22.2 only after their full hypotheses and conclusions are met.

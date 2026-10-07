@@ -34185,3 +34185,58 @@ example (u : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ))
     (by norm_num) u hu φ hinit 3 hφ
 end AboveTwo
 end SmoothExponentChecks
+
+
+namespace LocalFourierNLSChecks
+open NLS NLS.Fourier Set
+
+-- Negative modes retain the period-one quadratic frequency and the physical sign.
+example : nlsLinearSymbol (-3) = -(36*(Real.pi : ℂ)^2)*Complex.I := by
+  simp only [nlsLinearSymbol,Int.cast_neg,Int.cast_ofNat,Complex.ofReal_pow,
+    Complex.ofReal_mul,Complex.ofReal_neg,Complex.ofReal_ofNat]
+  ring
+
+-- Free evolution is isometric and exactly reversible in every weight.
+example (w : Weight) (a : WeightedCoeff w 1) :
+    ‖nlsFreeFlow w (-7) a‖ = ‖a‖ ∧ nlsFreeFlow w 7 (nlsFreeFlow w (-7) a) = a := by
+  constructor
+  · exact norm_nlsFreeFlow w (-7) a
+  · rw [nlsFreeFlow_add,show (7 : ℝ)+(-7) = 0 by norm_num,nlsFreeFlow_zero]
+
+-- The local Lipschitz estimate is independent of time, including backwards evolution.
+example (w : SpectralWeight) (a b : WeightedCoeff w.toWeight 1)
+    (ha : ‖a‖ ≤ 4) (hb : ‖b‖ ≤ 4) :
+    ‖nlsInteraction w (-7) a-nlsInteraction w (-7) b‖ ≤ 96*‖a-b‖ := by
+  convert norm_nlsInteraction_sub_le w (-7) 4 a b ha hb using 1
+  norm_num
+
+-- The zero mode has no linear contribution and keeps the literal reflected cubic convolution.
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 1) :
+    nlsLinearSymbol 0*a.val 0 + (cubicNLS w a).val 0 =
+      (-2*Complex.I : ℂ) * ∑' k : ℤ, (∑' j : ℤ, a.val (-k-j)*a.val j) *
+        (starRingEnd ℂ) (a.val (-k)) := by
+  simp only [nlsLinearSymbol,Int.cast_zero,mul_zero,zero_pow (by norm_num : (2 : ℕ) ≠ 0),
+    Complex.ofReal_zero,zero_mul,zero_add,cubicNLS_apply,zero_sub]
+
+-- Existence imposes no finite-support or finite-gap condition on the weighted initial data.
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 1) :
+    ∃ T > 0, ∃ u : ℝ → WeightedCoeff w.toWeight 1, u 0 = a ∧
+      ContinuousOn u (Icc (-T) T) ∧
+      ∀ time ∈ Icc (-T) T, ∀ n : ℤ,
+        HasDerivWithinAt (fun r => (u r).val n)
+          (nlsLinearSymbol n*(u time).val n + (cubicNLS w (u time)).val n) (Icc (-T) T) time :=
+  exists_local_fourierNLS w a
+
+-- A concrete high Sobolev weight gives genuine two-sided mode derivatives inside the interval.
+example (a : WeightedCoeff (SpectralWeight.sobolev 4 (by norm_num)).toWeight 1) :
+    ∃ T > 0, ∃ u : ℝ → WeightedCoeff (SpectralWeight.sobolev 4 (by norm_num)).toWeight 1,
+      u 0 = a ∧ ∀ time ∈ Ioo (-T) T, ∀ n : ℤ,
+        HasDerivAt (fun r => (u r).val n)
+          (nlsLinearSymbol n*(u time).val n +
+            (cubicNLS (SpectralWeight.sobolev 4 (by norm_num)) (u time)).val n) time := by
+  obtain ⟨T,hT,u,hu0,_,hu⟩ := exists_local_fourierNLS (SpectralWeight.sobolev 4 (by norm_num)) a
+  refine ⟨T,hT,u,hu0,?_⟩
+  intro time ht n
+  exact (hu time ⟨ht.1.le,ht.2.le⟩ n).hasDerivAt (Icc_mem_nhds ht.1 ht.2)
+
+end LocalFourierNLSChecks

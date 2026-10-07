@@ -2749,3 +2749,7 @@ import NLS.ZakharovShabat.ClassicalNLSSmoothApproximation
 import NLS.ZakharovShabat.SmoothPeriodOneSourceExponent
 import NLS.ZakharovShabat.SmoothClassicalNLSAgreementExponent
 import NLS.ZakharovShabat.ClassicalNLSSmoothApproximationExponent
+import NLS.SequenceSpaces.WeightedPhaseFlow
+import NLS.Fourier.CubicNLS
+import NLS.Fourier.LocalNLSInteraction
+import NLS.Fourier.LocalNLSExistence

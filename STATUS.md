@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: smooth classical agreement across source exponents
+## Current milestone: local weighted Fourier NLS existence
+
+Every initial datum in a spectral-weighted ℓ¹ space now has a local,
+norm-continuous Fourier NLS solution on a positive symmetric time interval.
+Every original Fourier coefficient satisfies the quadratic Schrödinger term
+and literal cubic convolution. No finite Fourier support, finite-gap condition,
+spectral atlas, or assumed classical solution is used in this existence proof.
+
+`WeightedPhaseFlow.lean` transports arbitrary diagonal unit phases through
+the weighted coefficient isometry. It proves the group law, norm preservation,
+and joint strong continuity at every finite exponent, without bounding the
+frequency sequence.
+
+`CubicNLS.lean` uses physical conjugate reflection and the actual weighted
+convolution to define the field `-2i (a * a * conjugateReflection a)`. Its norm
+is at most `2*‖a‖³`; on a norm-bounded ball it has Lipschitz constant `6*R²`.
+Both estimates hold for every spectral weight.
+
+`LocalNLSInteraction.lean` removes the free phases with frequencies
+`-(2πn)²`. The resulting time-dependent cubic field is jointly continuous
+and has the same bounds uniformly in time. Picard–Lindelöf then constructs
+an interaction solution on a positive interval about zero, with its actual
+Banach-space derivative.
+
+`LocalNLSExistence.lean` restores the free evolution and proves the original
+mode equations. The curve is continuous in the full weighted norm; every
+mode has the asserted derivative within the closed interval, hence an
+ordinary derivative at each interior time. The cubic coefficient formula
+retains both convolution sums and the reflected conjugate index explicitly.
+
+Public examples check the physical sign at negative modes, isometry and
+reversibility at negative times, the time-independent Lipschitz bound,
+the exact zero-mode nonlinearity, arbitrary weighted initial data, and
+interior differentiability for the concrete Sobolev weight of order four.
+
+Validation: the full build passes (6170 jobs), all public examples pass,
+and the transitive axiom audit passes for 23623 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: prove compatible local uniqueness and persistence of arbitrarily
+high Sobolev regularity on a common interval, identify the physical classical
+PDE after synthesis, and use conservation and continuation to obtain global
+classical solutions for every smooth initial datum. The current theorem is
+local Fourier-space existence in each fixed weighted ℓ¹ space; it is not yet
+the missing global smooth classical-existence theorem. The dissertation’s
+all-smooth-sequence wellposedness assembly and full inventory remain incomplete.
+
+## Previous milestone: smooth classical agreement across source exponents
 
 Canonical smooth physical sources and classical agreement now cover every
 finite source exponent greater than one. Ordinary NLS agrees with the global
