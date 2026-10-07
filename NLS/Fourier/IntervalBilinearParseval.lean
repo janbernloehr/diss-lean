@@ -35,20 +35,21 @@ theorem unitFourierCoefficient_conj (f : ℝ → ℂ) (n : ℤ) :
 
 /-- The bilinear physical pairing is the absolutely convergent Hilbert
 Fourier pairing, with frequency reversed in the first factor. -/
-theorem hasSum_bilinear_unitFourierCoefficient {f g : ℝ → ℂ}
-    (hf : Continuous f) (hg : Continuous g) :
+theorem hasSum_bilinear_unitFourierCoefficient_of_memLp {f g : ℝ → ℂ}
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1)))
+    (hg : MemLp g 2 (volume.restrict (Ioc 0 1))) :
     HasSum (fun n : ℤ => unitFourierCoefficient f (-n)*unitFourierCoefficient g n)
       (∫ x in (0 : ℝ)..1, f x*g x) := by
   let : Fact (0 < (1 : ℝ)) := ⟨by norm_num⟩
   have hfc : MemLp (AddCircle.liftIoc (1 : ℝ) 0 (fun x => conj (f x))) 2
       (AddCircle.haarAddCircle (T := (1 : ℝ))) := by
     have hi : MemLp (fun x => conj (f x)) 2 (volume.restrict (Ioc (0 : ℝ) (0+1))) := by
-      simpa only [zero_add,Function.comp_def] using! memLp_two_interval (continuous_conj.comp hf) 0 1 (by norm_num)
+      simpa only [zero_add, Pi.star_apply, Complex.star_def] using! hf.star
     exact hi.memLp_liftIoc.haarAddCircle
   have hgc : MemLp (AddCircle.liftIoc (1 : ℝ) 0 g) 2
       (AddCircle.haarAddCircle (T := (1 : ℝ))) := by
     have hi : MemLp g 2 (volume.restrict (Ioc (0 : ℝ) (0+1))) := by
-      simpa only [zero_add] using memLp_two_interval hg 0 1 (by norm_num)
+      simpa only [zero_add] using hg
     exact hi.memLp_liftIoc.haarAddCircle
   have hs := lp.hasSum_inner (𝕜 := ℂ) (fourierBasis.repr hfc.toLp) (fourierBasis.repr hgc.toLp)
   rw [fourierBasis.repr.inner_map_map] at hs
@@ -74,6 +75,21 @@ theorem hasSum_bilinear_unitFourierCoefficient {f g : ℝ → ℂ}
         simp
   rw [he] at hs
   exact hs
+
+/-- The continuous version follows from the square-integrable pairing. -/
+theorem hasSum_bilinear_unitFourierCoefficient {f g : ℝ → ℂ}
+    (hf : Continuous f) (hg : Continuous g) :
+    HasSum (fun n : ℤ => unitFourierCoefficient f (-n)*unitFourierCoefficient g n)
+      (∫ x in (0 : ℝ)..1, f x*g x) :=
+  hasSum_bilinear_unitFourierCoefficient_of_memLp
+    (memLp_two_interval hf 0 1 (by norm_num)) (memLp_two_interval hg 0 1 (by norm_num))
+
+theorem tsum_bilinear_unitFourierCoefficient_of_memLp {f g : ℝ → ℂ}
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1)))
+    (hg : MemLp g 2 (volume.restrict (Ioc 0 1))) :
+    (∑' n : ℤ, unitFourierCoefficient f (-n)*unitFourierCoefficient g n) =
+      ∫ x in (0 : ℝ)..1, f x*g x :=
+  (hasSum_bilinear_unitFourierCoefficient_of_memLp hf hg).tsum_eq
 
 theorem tsum_bilinear_unitFourierCoefficient {f g : ℝ → ℂ}
     (hf : Continuous f) (hg : Continuous g) :

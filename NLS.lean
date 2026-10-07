@@ -2617,3 +2617,7 @@ import NLS.ZakharovShabat.SourceHamiltonianFiniteGapDerivative
 import NLS.ZakharovShabat.SourceHamiltonianRealGradient
 import NLS.ZakharovShabat.SourceHamiltonianHessian
 import NLS.ZakharovShabat.SourceHamiltonianActionConcavity
+import NLS.SequenceSpaces.SobolevPeriodDoubling
+import NLS.Fourier.PeriodOneSobolev
+import NLS.ZakharovShabat.PeriodOneSobolevHamiltonian
+import NLS.ZakharovShabat.SourceFiniteGapSobolevHamiltonian

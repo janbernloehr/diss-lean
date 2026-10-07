@@ -32311,3 +32311,64 @@ example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by s
 
 end
 end HamiltonianConcavityChecks
+
+
+noncomputable section
+open scoped ENNReal
+namespace PeriodOneSobolevHamiltonianChecks
+open NLS NLS.Fourier NLS.ZakharovShabat
+
+-- Negative Fourier modes carry the same period-one normalization as positive modes.
+example (c : ℂ) :
+    periodOneCoefficient (deriv (fun x : ℝ =>
+      periodOneSobolevSynthesis (scalarMode (-3) c) (x : AddCircle (2 : ℝ)))) (-3) =
+        -6 * Complex.I * (Real.pi : ℂ) * c := by
+  rw [periodOneCoefficient_deriv_periodOneSobolevSynthesis]
+  simp only [scalarMode_apply]
+  push_cast
+  ring
+
+-- Nonzero opposite modes retain the physical (2πn)² kinetic term.
+example (n : ℤ) (c d : ℂ) :
+    periodOneSobolevKinetic (scalarMode n c, scalarMode (-n) d) =
+      (2 * (Real.pi : ℂ) * n)^2 * c * d := by
+  unfold periodOneSobolevKinetic
+  rw [Coeff.dualPairing_apply]
+  simp only [Coeff.reflection_apply, periodOneDerivative_apply, scalarMode_apply]
+  rw [tsum_eq_single (-n)]
+  · simp only [neg_neg, Int.cast_neg]
+    ring_nf
+    simp [Complex.I_sq]
+  · intro k hk
+    rw [if_neg hk, mul_zero, mul_zero]
+
+-- The quartic term is present even when the kinetic energy vanishes.
+example (c d : ℂ) :
+    periodOneSobolevQuartic (scalarMode 0 c, scalarMode 0 d) = c^2 * d^2 := by
+  rw [periodOneSobolevQuartic_eq_integral]
+  simp only [periodOneSobolevSynthesis_scalarMode, mul_zero, wave_zero, mul_one]
+  simp
+
+example (a b : ScalarDomain 2) :
+    AnalyticAt ℂ periodOneSobolevHamiltonian (a,b) ∧
+      ContinuousAt periodOneSobolevMass (a,b) :=
+  ⟨analyticAt_periodOneSobolevHamiltonian _, continuous_periodOneSobolevMass.continuousAt⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    periodOneSobolevMass (sourceFiniteGapSobolevPair hp hp1 φ hf) =
+        sourceFiniteGapNLSHamiltonian hp hp1 φ hf 1 ∧
+    periodOneSobolevHamiltonian (sourceFiniteGapSobolevPair hp hp1 φ hf) =
+        sourceFiniteGapNLSHamiltonian hp hp1 φ hf 3 :=
+  ⟨periodOneSobolevMass_sourceFiniteGapSobolevPair hp hp1 φ hf,
+   periodOneSobolevHamiltonian_sourceFiniteGapSobolevPair hp hp1 φ hf⟩
+
+-- Arbitrary H¹ inputs are reached by finite Fourier approximations in physical energy.
+example (a b : ScalarDomain 2) :
+    Filter.Tendsto (fun s : Finset ℤ => periodOneSobolevHamiltonian
+      (WeightedCoeff.truncate (Weight.sobolev 1) 2 s a,
+       WeightedCoeff.truncate (Weight.sobolev 1) 2 s b)) Filter.atTop
+      (nhds (periodOneSobolevHamiltonian (a,b))) :=
+  tendsto_periodOneSobolevHamiltonian_truncate a b
+
+end PeriodOneSobolevHamiltonianChecks

@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Hamiltonian gradient, Hessian, and strict concavity
+## Current milestone: physical period-one H¹ mass and NLS energy
+
+The physical period-one mass and NLS energy are now complex analytic on the
+entire product H¹ coefficient space. Their definitions equal the actual
+unit-interval integrals `int a*b` and `int a'*b' + a^2*b^2`, where the
+classical derivatives are square integrable. Finite Fourier truncations
+converge in physical energy.
+
+`SobolevPeriodDoubling.lean` inserts original frequencies at the even
+period-two indices as a bounded linear map on the weighted Hilbert domain.
+`PeriodOneSobolev.lean` identifies its continuous representative with the
+period-one Fourier series, proves absolute continuity and square-integrable
+classical derivatives, and recovers the exact multiplier `2*pi*i*n`.
+The unit-interval bilinear Parseval theorem now works for arbitrary L²
+inputs, allowing its use on these derivatives without extra smoothness.
+
+`PeriodOneSobolevHamiltonian.lean` constructs the mass, kinetic energy,
+quartic interaction, and full NLS energy, proves the physical integral
+identities, and establishes analyticity and continuity on the full H¹
+product. `SourceFiniteGapSobolevHamiltonian.lean` embeds each finite-gap
+source with unchanged coefficients and identifies the new mass and energy
+with the first and third physical hierarchy Hamiltonians at every finite
+source exponent above one.
+
+Public examples check a negative frequency's derivative, the `(2*pi*n)^2`
+kinetic normalization of opposite signed modes, the nonzero quartic term
+for constant fields, full-domain analyticity, and finite-gap calibration.
+
+Validation: the full build passes (6037 jobs), all public examples pass,
+and the transitive axiom audit passes for 22412 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 21 work: convergence and continuity of the weighted
+spectral action subtraction, followed by the physical/cubic-moment
+identification using Sobolev-controlled finite-gap approximation or another
+physical trace argument. Fourier truncation convergence of the physical
+energy does not supply spectral finite-gap approximation. The existing
+FL⁴ density theorem and smoothness of individual finite-gap sources do not
+by themselves close this gap. Section 22 remains ahead, and the dissertation
+is unfinished.
+
+## Previous milestone: Hamiltonian gradient, Hessian, and strict concavity
 
 The analytic action Hamiltonian now has the actual renormalized frequency
 as its `ell^2` gradient at every real `FL^4` source. The full differential
