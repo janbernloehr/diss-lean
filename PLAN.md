@@ -1,6 +1,64 @@
 # Implementation plan
 
-## Latest progress: classical renormalized uniqueness and gauge agreement
+## Latest progress: the global classical renormalized extension
+
+For `1 < p ≤ 2`, the Hamiltonian-oriented renormalized flow is now the
+unique continuous extension of the actual classical finite-gap solution
+map on every compact interval `[-T,T]`. It is real analytic in the uniform
+trajectory norm. Every convergent finite-gap approximation has the same
+compact-time limit, and one global group realizes these maps consistently.
+
+`SourceHamiltonianRenormalizedFlowExponent.lean` proves compatibility of
+the actual renormalized frequencies across finite source exponents and
+of the global physical source flow for `1 < p ≤ q ≤ 2`. Independently
+constructed spectral atlases give the same coefficient-compatible flow.
+
+`SourceHamiltonianRenormalizedTrajectories.lean` transfers compact-time
+analyticity through bounded time reflection. It provides uniform-path
+continuity and convergence in the original source norm with the physical
+Hamiltonian time orientation.
+
+`ClassicalRenormalizedNLSContinuousExtension.lean` identifies the source
+flow's finite-gap coefficients with the actual Fourier integrals of the
+canonical classical renormalized solution. Density proves uniqueness of
+continuous extensions, convergence for arbitrary supplied classical
+approximation families, and automatic analyticity of every such extension.
+The global existence theorem constructs all spectral data and supplies
+joint continuity, initial values, the group law, and analytic compact-time maps.
+
+`SourceRenormalizedOrdinaryGauge.lean` extends the physical mass-gauge
+identity from classical finite-gap solutions to every source in `1 < p ≤ 2`.
+The entire first coefficient sequence differs from the ordinary flow by
+`exp(4*i*M*time)` and the second by its conjugate. The proof uses actual
+physical Fourier agreement, finite-gap density, and source-norm continuity;
+no gauge-equivariance premise on the Birkhoff map or pointwise realization
+of rough data is required.
+
+Public examples check the noninteger exponent `p=3/2`, automatic analyticity,
+a zero-length time interval, inverse time maps, uniqueness, arbitrary
+classical approximation families, the negative-time convention, preservation
+of both component norms under the full source gauge, and its sign at negative time.
+
+Validation: the full build passes (6148 jobs), all public examples pass,
+and the transitive axiom audit passes for 23426 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This identifies the global renormalized solution map in the range `1 < p ≤ 2`.
+Physical identification of the local maps above two and their global maps
+near zero remains. Continuous-extension uniqueness does not assert uniqueness
+among arbitrary rough weak-PDE trajectories. The dissertation is not complete.
+
+Next implementation targets:
+
+1. Identify the physical orientation and classical finite-gap agreement
+   of the local renormalized source maps for `2 < p < ∞`, then prove
+   uniqueness of their continuous classical extensions on source neighborhoods.
+2. Transfer that identification to the existing global maps on a neighborhood
+   of zero above the Hilbert exponent, as required by Corollary 22.2(ii).
+3. Audit the remaining Chapter 4 solution and wellposedness assertions,
+   keeping continuous-extension uniqueness distinct from weak-PDE uniqueness.
+
+## Previous progress: classical renormalized uniqueness and gauge agreement
 
 The renormalized finite-gap solution is now unique in the classical
 solution class: smooth period-one spatial slices and differentiability
@@ -46,17 +104,6 @@ Rough renormalized solution-map identification remains: these results
 provide its classical dense-domain agreement, but do not yet prove the
 unique continuous global/local extension in all the stated exponent ranges.
 The dissertation formalization is not complete.
-
-Next implementation targets:
-
-1. Transfer the canonical classical renormalized agreement to the global
-   analytic compact-time source maps for `1 < p ≤ 2`, with compatibility
-   across exponents and uniqueness as a continuous classical extension.
-2. Identify the physical orientation and classical agreement of the
-   existing local renormalized maps above the Hilbert exponent, including
-   the global maps on a neighborhood of zero required by Corollary 22.2(ii).
-3. Audit the remaining Chapter 4 solution and wellposedness assertions,
-   keeping continuous-extension uniqueness distinct from weak-PDE uniqueness.
 
 ## Previous progress: pointwise physical renormalized NLS
 

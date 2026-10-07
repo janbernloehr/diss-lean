@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: finite-gap sources at every finite `p > 1` have a unique
-classical renormalized NLS trajectory with their original physical mass.
-The actual ordinary and renormalized flows satisfy
-`u_ren(time) = exp(4*i*M*time)*u_NLS(time)`. Classical Fourier agreement and
-physical mass conservation are proved. Identification of rough global/local
-renormalized extensions remains next. See `STATUS.md`.
+Latest milestone: for `1 < p ≤ 2`, the global renormalized flow is the unique
+continuous extension of classical finite-gap dynamics, real analytic in the
+uniform compact-time norm. Every convergent finite-gap approximation has the
+same limit.
+The physical mass-gauge relation to the ordinary flow now holds for all source
+data in this range. Local and near-zero global identification above `p=2`
+remains next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

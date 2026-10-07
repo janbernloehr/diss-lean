@@ -33710,3 +33710,103 @@ example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by s
     (by simp) (by norm_num) φ hf _ hu.1 hu.2 (-1) (-3)
 end Spectral
 end RenormalizedClassicalChecks
+
+
+namespace RenormalizedExtensionChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+private theorem one_lt_half : (1 : ℝ≥0∞) < 3/2 := by
+  apply (ENNReal.lt_div_iff_mul_lt (by norm_num) (by norm_num)).mpr
+  norm_num
+private theorem half_ne_top : (3/2 : ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem half_le_two : (3/2 : ℝ≥0∞) ≤ 2 := by
+  apply (ENNReal.div_le_iff (by norm_num) (by norm_num)).mpr
+  norm_num
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3/2) := ⟨one_lt_half.le⟩
+
+-- Unique continuous extension holds at a noninteger exponent below the Hilbert endpoint.
+example : ∃! F : realTypeSourceSubmodule (3/2) →
+    C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule (3/2)),
+    IsContinuousClassicalRenormalizedNLSExtension half_ne_top one_lt_half 1 F :=
+  existsUnique_continuous_classicalRenormalizedNLSExtension half_ne_top one_lt_half half_le_two 1
+
+-- Continuity plus classical agreement already forces analytic dependence on initial data.
+example (F : realTypeSourceSubmodule (3/2) → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule (3/2)))
+    (hF : IsContinuousClassicalRenormalizedNLSExtension half_ne_top one_lt_half 1 F) :
+    AnalyticOnNhd ℝ F univ := hF.analytic half_le_two
+
+-- The zero-length interval is included, not excluded by a positive-time premise.
+example : ∃! F : realTypeSourceSubmodule 2 → C(Icc (-(0 : ℝ)) 0,realTypeSourceSubmodule 2),
+    IsContinuousClassicalRenormalizedNLSExtension (p := 2) (by simp) (by norm_num) 0 F :=
+  existsUnique_continuous_classicalRenormalizedNLSExtension (p := 2) (by simp) (by norm_num) le_rfl 0
+
+-- The constructed global extension has inverse time maps at arbitrary positive or negative times.
+example : ∃ S : realTypeSourceSubmodule 2 → ℝ → realTypeSourceSubmodule 2,
+    Continuous (fun x : ℝ × realTypeSourceSubmodule 2 => S x.2 x.1) ∧
+    ∀ φ time, S (S φ (-time)) time = φ := by
+  obtain ⟨S,hcont,hzero,hgroup,_⟩ := exists_global_analytic_classicalRenormalizedNLSExtension
+    (p := 2) (by simp) (by norm_num) le_rfl
+  refine ⟨S,hcont,fun φ time => ?_⟩
+  simpa only [add_neg_cancel,hzero] using hgroup φ time (-time)
+
+-- Different continuous extensions agreeing on the actual classical dense domain coincide.
+example (F G : realTypeSourceSubmodule 2 → C(Icc (-2 : ℝ) 2,realTypeSourceSubmodule 2))
+    (hF : IsContinuousClassicalRenormalizedNLSExtension (by simp) (by norm_num) 2 F)
+    (hG : IsContinuousClassicalRenormalizedNLSExtension (by simp) (by norm_num) 2 G) : F = G := hF.unique hG
+
+-- Arbitrarily supplied finite-gap classical approximations converge in the whole path norm.
+example (F : realTypeSourceSubmodule 2 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 2))
+    (hF : IsContinuousClassicalRenormalizedNLSExtension (by simp) (by norm_num) 1 F)
+    (φ : realTypeSourceSubmodule 2) (ψ : ℕ → realTypeSourceSubmodule 2)
+    (hf : ∀ j, ψ j ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (hψ : Tendsto ψ atTop (𝓝 φ))
+    (G : ℕ → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 2))
+    (hG : ∀ j (time : Icc (-1 : ℝ) 1) (n : ℤ), (G j time).val.fst n =
+      periodOneCoefficient (fun x : ℝ => sourceFiniteGapClassicalRenormalizedTrajectory (by simp) (by norm_num)
+        (ψ j) (hf j) time.val (x : AddCircle (2 : ℝ))) n) : Tendsto G atTop (𝓝 (F φ)) :=
+  hF.tendsto_classical_approximation φ ψ hf hψ G hG
+
+-- At negative physical time the compact trajectory evaluates at positive printed-flow time.
+example {W P V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiSquaredGapComplexExtension (by simp) (by norm_num) P s)
+    (hP : IsOpen P) (hr : realTypeSourceLocus 2 ⊆ P)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) :
+    A.hamiltonianRenormalizedSourceTrajectoryOn hs hP hr D le_rfl 1 φ ⟨-1,by norm_num⟩ =
+      A.renormalizedSourceFlow D le_rfl φ 1 := by
+  simp only [A.hamiltonianRenormalizedSourceTrajectoryOn_apply,
+    SourceAbelianMomentAtlas.hamiltonianRenormalizedSourceFlow,neg_neg]
+
+end RenormalizedExtensionChecks
+
+namespace RenormalizedGaugeExtensionChecks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P V B X : Set (CoeffPair p)}
+variable {s t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s) (hP : IsOpen P)
+variable (hr : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 V B X t) (hp2 : p ≤ 2)
+
+-- Both complete sequence norms coincide for arbitrary data, without any finite-gap premise.
+example (φ : realTypeSourceSubmodule p) (time : ℝ) :
+    ‖(A.hamiltonianRenormalizedSourceFlow D hp2 φ time).val.fst‖ =
+      ‖(A.hamiltonianOrdinarySourceFlow D hp2 φ time).val.fst‖ ∧
+    ‖(A.hamiltonianRenormalizedSourceFlow D hp2 φ time).val.snd‖ =
+      ‖(A.hamiltonianOrdinarySourceFlow D hp2 φ time).val.snd‖ := by
+  obtain ⟨hx,hy⟩ := A.hamiltonianRenormalizedSourceFlow_gauge hs hP hr D hp2 φ time
+  constructor
+  · rw [hx,norm_smul,norm_classicalNLSGaugePhase,one_mul]
+  · rw [hy,norm_smul,Complex.norm_conj,norm_classicalNLSGaugePhase,one_mul]
+
+-- The physical first-component phase has the negative exponent at negative time.
+example (φ : realTypeSourceSubmodule p) (time : ℝ) (n : ℤ) :
+    (A.hamiltonianRenormalizedSourceFlow D hp2 φ (-time)).val.fst n =
+      Complex.exp (-(((4*sourceOrdinaryMass hp2 φ*time : ℝ) : ℂ)*Complex.I)) *
+        (A.hamiltonianOrdinarySourceFlow D hp2 φ (-time)).val.fst n := by
+  simpa only [classicalNLSGaugePhase,mul_neg,Complex.ofReal_neg,neg_mul] using
+    A.hamiltonianRenormalizedSourceFlow_fst_eq_gauge hs hP hr D hp2 φ (-time) n
+end RenormalizedGaugeExtensionChecks
