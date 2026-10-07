@@ -2691,3 +2691,6 @@ import NLS.ZakharovShabat.SourceComplexActionHamiltonian
 import NLS.ZakharovShabat.SourceHamiltonianOrdinaryFlow
 import NLS.ZakharovShabat.SourceFiniteActionHamiltonian
 import NLS.ZakharovShabat.SourceFiniteGapHamiltonianODE
+import NLS.ZakharovShabat.SourceActionFiniteGapDifferential
+import NLS.ZakharovShabat.SourceSobolevActionDifferential
+import NLS.ZakharovShabat.SourceRenormalizedHamiltonianDifferential

@@ -1,6 +1,58 @@
 # Implementation plan
 
-## Latest progress: the finite-gap action Hamiltonian ODE
+## Latest progress: finite-gap energy differentials
+
+The full complex action differential now vanishes at every real closed
+gap, including directions that open that gap. At a finite-gap source,
+one finite set therefore supports the action-sequence differential for
+all source directions. A finite chain rule applies to every differentiable
+function of the Banach action sequence.
+
+`SourceActionFiniteGapDifferential.lean` proves these statements using
+the actual rectangular action-radius identity. The closed-gap and
+finite-support results construct their Birkhoff data internally and hold
+at every finite source exponent above one.
+
+`SourceSobolevActionDifferential.lean` differentiates the actual analytic
+ℓ¹ sequence of kinetic-weighted actions by bounded coordinate evaluation,
+and its scalar sum by bounded summation. At finite-gap H¹ sources the
+full derivative is the finite sum of `(2πn)² dI_n`. It is the restriction
+of an explicit bounded Hilbert source functional, despite the unbounded
+kinetic weights. The proof differentiates the Banach sequence map, so it
+does not assume that nearby sources have the same finite gap support.
+
+`SourceRenormalizedHamiltonianDifferential.lean` constructs the analytic
+action Hamiltonian, identifies its source germ by real-form uniqueness,
+and combines the finite chain rule with the proved frequency gradient.
+The actual FL⁴ renormalized Hamiltonian consequently has full differential
+`sum_n frequency_n * dI_n` at finite-gap sources. The statement assumes
+neither an auxiliary action Hamiltonian nor an auxiliary Birkhoff family.
+
+Public examples check arbitrary complex directions at a closed gap, the
+zero-source weighted cotangent, the actual H¹ derivative at canonical
+smooth finite-gap representatives, and the actual renormalized Hamiltonian
+derivative as a finite frequency-weighted cotangent.
+
+Validation: the full build passes (6111 jobs), all public examples pass,
+and the transitive axiom audit passes for 23070 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+The remaining energy bridge is to differentiate the real H¹ identity
+between the physical correction and the FL⁴ renormalized Hamiltonian,
+combine it with the mass correction, and identify the resulting field
+with the classical PDE. The dissertation formalization remains unfinished.
+
+Next implementation targets:
+
+1. Differentiate the physical-correction identity on the real H¹ locus
+   and transfer the FL⁴ Hamiltonian differential to all complex H¹ directions.
+2. Add the mass correction and identify the full physical energy differential
+   with the ordinary frequency-weighted action differential.
+3. Identify the proved source velocity with the physical NLS field, prove
+   classical PDE agreement, and transfer the nonextension result with the
+   Hamiltonian time orientation.
+
+## Previous progress: the finite-gap action Hamiltonian ODE
 
 The time derivative of every Hilbert finite-gap Hamiltonian-oriented
 ordinary spectral trajectory is now identified with a finite sum of the
@@ -38,15 +90,6 @@ This uses the Hamiltonian time orientation established in the previous
 milestone. Identifying the weighted action-field sum with the physical NLS
 energy field is the remaining bridge to the classical PDE. The dissertation
 formalization remains unfinished.
-
-Next implementation targets:
-
-1. Differentiate the physical Sobolev energy decomposition and identify its
-   derivative with the frequency-weighted action differential at finite-gap sources.
-2. Identify the proved source velocity with the physical NLS energy field
-   and establish classical PDE agreement.
-3. Transfer nonextension to the Hamiltonian-oriented classical solution map,
-   accounting explicitly for the sign convention and time reversal.
 
 ## Previous progress: Hamiltonian time orientation and finite-gap time derivatives
 

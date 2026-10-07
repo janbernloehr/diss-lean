@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Hilbert finite-gap spectral trajectories satisfy the
-original action Hamiltonian ODE, with their actual physical frequencies
-and Hamiltonian time orientation. The source velocity is independent of
-the finite cutoff containing the active coordinates. Identification with
-the classical PDE field remains open. See `STATUS.md`.
+Latest milestone: the kinetic-weighted action sum and the actual
+renormalized Hamiltonian now have finite action-differential formulas at
+finite-gap sources. These hold for arbitrary complex directions. The
+weighted H¹ derivative extends to a bounded Hilbert source functional.
+The remaining physical-energy and classical PDE bridge is tracked in
+`STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -14173,3 +14174,45 @@ This uses the Hamiltonian time orientation established in the previous
 milestone. Identifying the weighted action-field sum with the physical NLS
 energy field is the remaining bridge to the classical PDE. The dissertation
 formalization remains unfinished.
+
+## Finite-gap energy differentials
+
+The full complex action differential now vanishes at every real closed
+gap, including directions that open that gap. At a finite-gap source,
+one finite set therefore supports the action-sequence differential for
+all source directions. A finite chain rule applies to every differentiable
+function of the Banach action sequence.
+
+`SourceActionFiniteGapDifferential.lean` proves these statements using
+the actual rectangular action-radius identity. The closed-gap and
+finite-support results construct their Birkhoff data internally and hold
+at every finite source exponent above one.
+
+`SourceSobolevActionDifferential.lean` differentiates the actual analytic
+ℓ¹ sequence of kinetic-weighted actions by bounded coordinate evaluation,
+and its scalar sum by bounded summation. At finite-gap H¹ sources the
+full derivative is the finite sum of `(2πn)² dI_n`. It is the restriction
+of an explicit bounded Hilbert source functional, despite the unbounded
+kinetic weights. The proof differentiates the Banach sequence map, so it
+does not assume that nearby sources have the same finite gap support.
+
+`SourceRenormalizedHamiltonianDifferential.lean` constructs the analytic
+action Hamiltonian, identifies its source germ by real-form uniqueness,
+and combines the finite chain rule with the proved frequency gradient.
+The actual FL⁴ renormalized Hamiltonian consequently has full differential
+`sum_n frequency_n * dI_n` at finite-gap sources. The statement assumes
+neither an auxiliary action Hamiltonian nor an auxiliary Birkhoff family.
+
+Public examples check arbitrary complex directions at a closed gap, the
+zero-source weighted cotangent, the actual H¹ derivative at canonical
+smooth finite-gap representatives, and the actual renormalized Hamiltonian
+derivative as a finite frequency-weighted cotangent.
+
+Validation: the full build passes (6111 jobs), all public examples pass,
+and the transitive axiom audit passes for 23070 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+The remaining energy bridge is to differentiate the real H¹ identity
+between the physical correction and the FL⁴ renormalized Hamiltonian,
+combine it with the mass correction, and identify the resulting field
+with the classical PDE. The dissertation formalization remains unfinished.

@@ -33092,3 +33092,67 @@ example {W₂ P₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → De
 
 end FiniteActionODEChecks
 end
+
+
+namespace ActionDifferentialChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+-- Closed gaps are stationary to first order even in arbitrary complex directions.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) (n : ℤ)
+    (hn : sourcePeriodicGapDisplacement hp hp1 φ.val n = 0) (h : CoeffPair p) :
+    fderiv ℂ (sourceComplexAction hp hp1 n) φ.val h = 0 := by
+  rw [sourceComplexAction_fderiv_eq_zero_of_closed_gap hp hp1 φ.val φ.property n hn]
+  rfl
+
+-- The unbounded kinetic weights still give a zero cotangent at the zero source.
+example : fderiv ℂ sourceSobolevWeightedActionSum 0 = 0 := by
+  have hr : IsRealType (CoeffPair.toMax 2 (sobolevSourceInclusion 0)) := by
+    have hzero : IsRealType (CoeffPair.toMax 2 (0 : CoeffPair 2)) :=
+      (0 : realTypeSourceSubmodule 2).property
+    simpa only [map_zero] using hzero
+  have hS (n : ℤ) (_ : n ∉ (∅ : Finset ℤ)) :
+      fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) (sobolevSourceInclusion 0) = 0 := by
+    apply sourceComplexAction_fderiv_eq_zero_of_closed_gap (by simp) (by norm_num) _ hr
+    simpa only [map_zero,sourcePeriodicGapDisplacement_apply] using
+      canonicalPeriodicGap_zero (by simp : (2 : ℝ≥0∞) ≠ ⊤) (by norm_num) n
+  rw [sourceSobolevWeightedActionSum_fderiv_eq_comp 0 hr ∅ hS]
+  simp
+
+-- The canonical smooth representative of any Hilbert finite-gap source has
+-- an actual full H¹ derivative obtained from a bounded Hilbert functional.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    let a := sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf
+    ∃ S : Finset ℤ, HasFDerivAt sourceSobolevWeightedActionSum
+      ((∑ n ∈ S, (2*(Real.pi : ℂ)*n)^2 •
+        fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) φ.val).comp sobolevSourceInclusion) a := by
+  dsimp only
+  let a := sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf
+  have ha : sobolevSourceInclusion a = φ.val := sobolevSourceInclusion_sourceFiniteGapSobolevPair φ hf
+  have hr : IsRealType (CoeffPair.toMax 2 (sobolevSourceInclusion a)) := ha ▸ φ.property
+  obtain ⟨S,hS⟩ := exists_sourceComplexAction_fderiv_support (by simp) (by norm_num) φ hf
+  have hd := (analyticAt_sourceSobolevWeightedActionSum a hr).differentiableAt.hasFDerivAt
+  have he := sourceSobolevWeightedActionSum_fderiv_eq_comp a hr S (by simpa only [ha] using hS)
+  rw [he,ha] at hd
+  exact ⟨S,hd⟩
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The actual renormalized Hamiltonian, not an assumed auxiliary action
+-- function, has the finite frequency-weighted source differential.
+example {W Y P : Set (CoeffPair 4)} {u : (n : ℤ) → CoeffPair 4 → DeletedCoeff 4 n}
+    (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (C : SourceAbelianMomentAtlas (by simp) (by norm_num) Y u)
+    (hs : SourcePsiSquaredGapComplexExtension (by simp) (by norm_num) P u)
+    (hP : IsOpen P) (hr : realTypeSourceLocus 4 ⊆ P)
+    (φ : realTypeSourceSubmodule 4) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ S : Finset ℤ, HasFDerivAt A.renormalizedHamiltonian
+      (∑ n ∈ S, C.renormalizedFrequency n φ.val •
+        fderiv ℂ (sourceComplexAction (by simp) (by norm_num) n) φ.val) φ.val := by
+  obtain ⟨S,hS⟩ := A.exists_renormalizedHamiltonian_finiteGap_differential C hs hP hr φ hf
+  obtain ⟨U,_,_,hreal,_,hA,_,_⟩ := A.exists_renormalizedHamiltonian_analytic
+  exact ⟨S,hS ▸ (hA φ.val (hreal φ.property)).differentiableAt.hasFDerivAt⟩
+
+end ActionDifferentialChecks
