@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: renormalized coordinate trajectories depend analytically
-on their initial data in the compact-time uniform norm, for every finite
-`p > 1`. For `1 < p <= 2`, each actual source flow map and its inverse are
-real analytic. Further Section 22 wellposedness requirements remain;
-see `STATUS.md`.
+Latest milestone: for `1 < p <= 2`, the complete renormalized source
+trajectory depends analytically on its initial source in the uniform norm
+on every compact time interval. This closes the source-trajectory
+analyticity gap; further Section 22 work remains. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13815,3 +13814,50 @@ small-data global flow for `p > 2`, the ordinary NLS mass shift and its
 discontinuity outside `ell^2`, and agreement with classical NLS solutions.
 Fixed-time analyticity alone does not close the source-trajectory gap.
 The dissertation remains unfinished.
+
+## Analytic compact-time source trajectories
+
+For every `1 < p <= 2`, the actual renormalized source trajectory now depends
+real analytically on its initial source as a map into `C([-T,T], E)` for
+every compact time interval. This closes the source-trajectory analyticity
+gap from the previous milestone. The target is the original closed real
+source space with its uniform trajectory norm.
+
+`ComplexAnalysis/ContinuousMapAnalytic.lean` proves that norm continuity
+and analytic point evaluations imply analyticity into a compact continuous
+function space. Cauchy's integral formula proves the complex-line case;
+the existing Banach analytic-line criterion supplies the general result.
+`ContinuousMapSuperposition.lean` then makes pointwise composition analytic
+on the open set of paths whose ranges lie inside an analytic map's domain.
+Its derivative is exactly pointwise application of the original derivative.
+
+`ContinuousMapAnalyticInverse.lean` proves that pointwise invertible
+derivatives along a compact path give an invertible derivative on the
+whole trajectory space. Continuity of operator inversion supplies the
+continuous inverse path. The analytic inverse theorem yields a local
+inverse in the uniform norm, and upgrades a continuous real-parameter lift
+with analytic image to an analytic lift.
+
+`SourceRenormalizedSourceTrajectoryAnalytic.lean` applies these results to
+the actual Birkhoff map along the previously constructed source flow.
+Its image is exactly the analytic rectangular coordinate trajectory.
+The actual invertible source Jacobians supply the function-space inverse,
+and the bounded real-form projection retains the original trajectory.
+`SourceRenormalizedAnalyticTrajectoriesExistence.lean` constructs the
+spectral data with global continuous dynamics, the group law, action
+preservation, and analytic compact-time source dependence.
+
+Public examples check analytic pointwise exponentiation, the literal
+composition values, its full trajectory derivative, a local analytic
+inverse around every compact exponential path, and the actual source
+trajectory's analyticity, derivative, and Birkhoff image identity.
+
+Validation: the full build passes (6076 jobs), all public examples pass,
+and the transitive axiom audit passes for 22792 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 22 work includes the local source flow and small-data
+global flow for `p > 2`, the ordinary NLS mass shift and its discontinuity
+outside `ell^2`, and agreement with classical NLS solutions. This milestone
+establishes analytic dependence for the constructed renormalized spectral
+flow; the dissertation remains unfinished.

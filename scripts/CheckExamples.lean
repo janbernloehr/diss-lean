@@ -32616,3 +32616,77 @@ example (T : ℝ) (φ : realTypeSourceSubmodule p) :
 
 end AnalyticFlowChecks
 end
+
+
+noncomputable section
+namespace SourceTrajectoryAnalyticChecks
+open NLS NLS.ComplexAnalysis NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+
+-- The pointwise exponential is analytic in the uniform norm on compact trajectories.
+example (T : ℝ) :
+    AnalyticOnNhd ℂ (superposition (K := Icc (-T) T) Complex.exp) univ := by
+  intro g _
+  exact analyticOnNhd_superposition isOpen_univ (fun z _ => analyticAt_cexp) g (subset_univ _)
+
+-- Composition retains the literal values, independently of the mkD fallback.
+example (T : ℝ) (g : C(Icc (-T) T,ℂ)) (τ : Icc (-T) T) :
+    superposition Complex.exp g τ = Complex.exp (g τ) :=
+  superposition_apply Complex.continuous_exp.continuousOn (subset_univ _) τ
+
+-- The full trajectory derivative is multiplication by the exponential along the path.
+example (T : ℝ) (g v : C(Icc (-T) T,ℂ)) (τ : Icc (-T) T) :
+    fderiv ℂ (superposition Complex.exp) g v τ = Complex.exp (g τ)*v τ := by
+  rw [fderiv_superposition_apply isOpen_univ (fun z _ => analyticAt_cexp) g v (subset_univ _),
+    fderiv_eq_smul_deriv,Complex.deriv_exp,smul_eq_mul,mul_comm]
+
+-- Although exp is not globally injective, it has an analytic local inverse around every compact path.
+example (T : ℝ) (g : C(Icc (-T) T,ℂ)) :
+    ∃ H : C(Icc (-T) T,ℂ) → C(Icc (-T) T,ℂ),
+      AnalyticAt ℂ H (superposition Complex.exp g) ∧
+      H (superposition Complex.exp g) = g ∧
+      (∀ᶠ a in 𝓝 g, H (superposition Complex.exp a) = a) ∧
+      ∀ᶠ b in 𝓝 (superposition Complex.exp g), superposition Complex.exp (H b) = b := by
+  apply exists_analytic_superposition_inverse isOpen_univ
+    (fun z _ => analyticAt_cexp) g (subset_univ _)
+  intro τ
+  let c := Complex.exp (g τ)
+  have hc : c ≠ 0 := Complex.exp_ne_zero _
+  let e : ℂ ≃L[ℂ] ℂ :=
+    { LinearEquiv.smulOfNeZero ℂ ℂ c hc with
+      continuous_toFun := continuous_const_smul c
+      continuous_invFun := continuous_const_smul c⁻¹ }
+  refine ⟨e,?_⟩
+  apply ContinuousLinearMap.ext
+  intro z
+  change c*z = fderiv ℂ Complex.exp (g τ) z
+  rw [fderiv_eq_smul_deriv,Complex.deriv_exp,smul_eq_mul]
+  exact mul_comm _ _
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+
+-- Analyticity holds in the source trajectory norm, not only at fixed times.
+example (hp2 : p ≤ 2) (T : ℝ) (φ : realTypeSourceSubmodule p) :
+    AnalyticAt ℝ (A.renormalizedSourceTrajectoryOn hs hP hr D hp2 T) φ :=
+  A.analytic_renormalizedSourceTrajectoryOn hs hP hr D hp2 T φ (mem_univ _)
+
+-- The actual complete trajectory has a Frechet derivative with respect to initial data.
+example (hp2 : p ≤ 2) (T : ℝ) (φ : realTypeSourceSubmodule p) :
+    HasFDerivAt (A.renormalizedSourceTrajectoryOn hs hP hr D hp2 T)
+      (fderiv ℝ (A.renormalizedSourceTrajectoryOn hs hP hr D hp2 T) φ) φ :=
+  (A.analytic_renormalizedSourceTrajectoryOn hs hP hr D hp2 T φ (mem_univ _)).differentiableAt.hasFDerivAt
+
+-- The analytic lift is constrained by the original Birkhoff map on the entire path.
+example (hp2 : p ≤ 2) (T : ℝ) (φ : realTypeSourceSubmodule p) :
+    superposition (sourceBirkhoffMap hp hp1 t) (A.ambientSourceTrajectoryOn hs hP hr D hp2 T φ) =
+      A.rectangularPhaseTrajectoryOn hs hP hr D T φ :=
+  A.superposition_ambientSourceTrajectoryOn hs hP hr D hp2 T φ
+
+end SourceTrajectoryAnalyticChecks
+end

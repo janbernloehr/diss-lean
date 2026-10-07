@@ -1,6 +1,65 @@
 # Implementation plan
 
-## Latest progress: analytic compact-time coordinate trajectories and fixed-time source flows
+## Latest progress: analytic compact-time source trajectories
+
+For every `1 < p <= 2`, the actual renormalized source trajectory now depends
+real analytically on its initial source as a map into `C([-T,T], E)` for
+every compact time interval. This closes the source-trajectory analyticity
+gap from the previous milestone. The target is the original closed real
+source space with its uniform trajectory norm.
+
+`ComplexAnalysis/ContinuousMapAnalytic.lean` proves that norm continuity
+and analytic point evaluations imply analyticity into a compact continuous
+function space. Cauchy's integral formula proves the complex-line case;
+the existing Banach analytic-line criterion supplies the general result.
+`ContinuousMapSuperposition.lean` then makes pointwise composition analytic
+on the open set of paths whose ranges lie inside an analytic map's domain.
+Its derivative is exactly pointwise application of the original derivative.
+
+`ContinuousMapAnalyticInverse.lean` proves that pointwise invertible
+derivatives along a compact path give an invertible derivative on the
+whole trajectory space. Continuity of operator inversion supplies the
+continuous inverse path. The analytic inverse theorem yields a local
+inverse in the uniform norm, and upgrades a continuous real-parameter lift
+with analytic image to an analytic lift.
+
+`SourceRenormalizedSourceTrajectoryAnalytic.lean` applies these results to
+the actual Birkhoff map along the previously constructed source flow.
+Its image is exactly the analytic rectangular coordinate trajectory.
+The actual invertible source Jacobians supply the function-space inverse,
+and the bounded real-form projection retains the original trajectory.
+`SourceRenormalizedAnalyticTrajectoriesExistence.lean` constructs the
+spectral data with global continuous dynamics, the group law, action
+preservation, and analytic compact-time source dependence.
+
+Public examples check analytic pointwise exponentiation, the literal
+composition values, its full trajectory derivative, a local analytic
+inverse around every compact exponential path, and the actual source
+trajectory's analyticity, derivative, and Birkhoff image identity.
+
+Validation: the full build passes (6076 jobs), all public examples pass,
+and the transitive axiom audit passes for 22792 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 22 work includes the local source flow and small-data
+global flow for `p > 2`, the ordinary NLS mass shift and its discontinuity
+outside `ell^2`, and agreement with classical NLS solutions. This milestone
+establishes analytic dependence for the constructed renormalized spectral
+flow; the dissertation remains unfinished.
+
+Next implementation targets:
+
+1. Use the open Birkhoff image at `p > 2` to construct local source flows.
+   Transfer the analytic trajectory result through the new function-space
+   inverse theorem, and use an invariant small coordinate neighborhood to
+   obtain the small-data global flow in Corollary 22.2(ii).
+2. Add the ordinary NLS mass shift in the summable-action range and prove
+   its corresponding analytic compact-time trajectory statements.
+3. Establish agreement with classical solutions and failure of continuous
+   extension outside `ell^2` for `p > 2`, including the weaker target norms
+   required by the illposedness statement.
+
+## Previous progress: analytic compact-time coordinate trajectories and fixed-time source flows
 
 The actual renormalized coordinate trajectories now depend real analytically
 on the initial source in `C([-T,T], ell^p × ell^p)` for every finite `p > 1`.
@@ -46,18 +105,6 @@ small-data global flow for `p > 2`, the ordinary NLS mass shift and its
 discontinuity outside `ell^2`, and agreement with classical NLS solutions.
 Fixed-time analyticity alone does not close the source-trajectory gap.
 The dissertation remains unfinished.
-
-Next implementation targets:
-
-1. Prove analytic composition on compact-time function spaces and apply it
-   to the actual Birkhoff inverse, closing the remaining source-valued
-   trajectory analyticity gap for `p <= 2`.
-2. Use the open Birkhoff image at `p > 2` to construct local source flows
-   with analytic dependence. An invariant coordinate ball around zero
-   should give the small-data global flow in Corollary 22.2(ii).
-3. Add the ordinary NLS mass shift in the summable-action range, establish
-   agreement with classical solutions, and prove failure of continuous
-   extension outside `ell^2` for `p > 2`.
 
 ## Previous progress: continuous renormalized coordinate and source flows
 
