@@ -33965,3 +33965,66 @@ example (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
   hu.equation_physical_mass rfl time x
 
 end ClassicalStabilityMassChecks
+
+
+namespace EnergyClassicalAgreementChecks
+open NLS NLS.ZakharovShabat NLS.Fourier Set Filter Topology MeasureTheory
+
+-- Coercivity and spatial amplitude apply to every real H¹ source.
+example (a : realTypeSobolevSourceLocus) :
+    ‖a.val.1‖^2 ≤ 2*((periodOneSobolevMass a.val).re+(periodOneSobolevHamiltonian a.val).re) ∧
+    ‖periodOneSobolevSynthesis a.val.1‖ ≤ sobolevEnergyAmplitude a.val :=
+  ⟨norm_sobolev_fst_sq_le_mass_energy a,norm_periodOneSobolevSynthesis_le_energy a⟩
+
+variable {W P V B X : Set (CoeffPair 2)}
+variable {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+variable (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+variable (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+
+-- Energy conservation includes negative physical times and needs no extra spectral hypothesis.
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    periodOneSobolevHamiltonian (sourceFiniteGapSobolevPair (by simp) (by norm_num)
+      (A.hamiltonianRenormalizedSourceFlow D le_rfl φ (-7))
+      (A.hamiltonianRenormalizedSourceFlow_finiteGap D le_rfl φ hf (-7))) =
+        periodOneSobolevHamiltonian (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) :=
+  A.hamiltonianRenormalizedSourceFlow_energy D φ hf (-7)
+
+-- A single positive bound works for both equations and all times, eventually along any H¹ approximation.
+example (a : realTypeSobolevSourceLocus) (b : ℕ → realTypeSobolevSourceLocus)
+    (hf : ∀ j, b j ∈ sourceSobolevFiniteGapLocus) (hb : Tendsto b atTop (𝓝 a)) :
+    ∃ M > 0, ∀ᶠ j in atTop, ∀ time : ℝ,
+      ‖A.hamiltonianOrdinaryContinuousFlow D ⟨sobolevSourceInclusion (b j).val,(b j).property⟩ (hf j) time‖ ≤ M ∧
+      ‖A.hamiltonianRenormalizedContinuousFlow D ⟨sobolevSourceInclusion (b j).val,(b j).property⟩ (hf j) time‖ ≤ M :=
+  A.exists_eventual_uniform_finiteGap_bound D a b hf hb
+
+-- The classical limiting solution and the approximants need no supplied common amplitude bound.
+example (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (a : realTypeSobolevSourceLocus) (b : ℕ → realTypeSobolevSourceLocus)
+    (hf : ∀ j, b j ∈ sourceSobolevFiniteGapLocus) (hb : Tendsto b atTop (𝓝 a))
+    (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) (hu : IsClassicalNLSTrajectory u)
+    (hinit : u 0 = periodOneSobolevSynthesis a.val.1) :
+    TendstoUniformlyOn (fun j time => ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ
+      (A.hamiltonianOrdinaryContinuousFlow D ⟨sobolevSourceInclusion (b j).val,(b j).property⟩ (hf j) time))
+      (fun time => ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (u time)) atTop (Icc (-3 : ℝ) 3) :=
+  A.tendstoUniformlyOn_finiteGap_classicalNLS hs D a b hf hb u hu hinit 3
+
+-- No finite-gap condition on the initial H¹ data remains in spectral/classical agreement.
+example (hs : SourcePsiSquaredGapComplexExtension (by simp) (by norm_num) P s)
+    (hP : IsOpen P) (hr : realTypeSourceLocus 2 ⊆ P)
+    (a : realTypeSobolevSourceLocus) (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalNLSTrajectory u) (hinit : u 0 = periodOneSobolevSynthesis a.val.1) :
+    ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (u (-7)) =
+      sourceFirstPeriodOneL2 (A.hamiltonianOrdinarySourceFlow D le_rfl
+        ⟨sobolevSourceInclusion a.val,a.property⟩ (-7)) :=
+  A.classicalNLS_toLp_eq_hamiltonianFlow hs hP hr D a u hu hinit (-7)
+
+-- Actual Fourier integrals, including negative modes and times, retain the period-one normalization.
+example (hs : SourcePsiSquaredGapComplexExtension (by simp) (by norm_num) P s)
+    (hP : IsOpen P) (hr : realTypeSourceLocus 2 ⊆ P)
+    (a : realTypeSobolevSourceLocus) (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalNLSTrajectory u) (hinit : u 0 = periodOneSobolevSynthesis a.val.1) :
+    periodOneCoefficient (fun x : ℝ => u (-7) (x : AddCircle (2 : ℝ))) (-2) =
+      (A.hamiltonianOrdinarySourceFlow D le_rfl ⟨sobolevSourceInclusion a.val,a.property⟩ (-7)).val.fst (-2) :=
+  A.classicalNLS_periodOneCoefficient_eq_hamiltonianFlow hs hP hr D a u hu hinit (-7) (-2)
+
+end EnergyClassicalAgreementChecks

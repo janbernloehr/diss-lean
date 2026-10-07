@@ -1,6 +1,62 @@
 # Implementation plan
 
-## Latest progress: arbitrary classical stability and physical mass
+## Latest progress: energy bounds and arbitrary classical H¹ agreement
+
+The ordinary spectral flow now agrees with every classical trajectory
+whose initial continuous representative is supplied by a real H¹ source.
+The equality holds at every real time in physical L² and for every literal
+unit-period Fourier integral. There is no finite-gap condition on the
+limiting source and no supplied bound on approximating trajectories.
+
+`SourceFiniteGapEnergyConservation.lean` proves that the actual physical
+third Hamiltonian is fixed by the original actions. The trace identity,
+conservation of the mass, and invariance of cubic moments give conservation
+of the H¹ Hamiltonian for both physical finite-gap flows at all real times.
+
+`SourceSobolevEnergyCoercivity.lean` identifies the real H¹ mass and kinetic
+terms with squared first-component norms. H¹ density transfers the physical
+conjugate-pair condition to every real H¹ representative, making the quartic
+interaction nonnegative. It proves
+`‖a₁‖² ≤ 2*(mass.re + energy.re)` and supplies a continuous explicit bound
+`sobolevEnergyAmplitude` on the spatial uniform norm.
+
+`SourceFiniteGapUniformBound.lean` combines conservation and coercivity.
+Each finite-gap ordinary and renormalized physical trajectory is bounded
+for all real time by its initial amplitude bound. Every H¹-convergent
+finite-gap family has one eventual common bound, regardless of the number
+of open gaps or Fourier modes.
+
+`SourceClassicalNLSApproximation.lean` now applies the actual PDE stability
+theorem without assuming the common bound: it derives that bound from
+H¹ convergence and conserved quantities. Actual finite-gap classical
+solutions converge to any supplied classical limiting solution, uniformly
+on compact time intervals in physical L².
+
+`SourceClassicalNLSAgreement.lean` compares this PDE limit with continuity
+of the spectral source flow. Uniqueness of limits proves equality for
+arbitrary H¹ initial representatives. The physical Hilbert realization
+doubles ambient-circle modes, and the final theorem recovers every original
+unit-period Fourier integral with the correct normalization.
+
+Public examples cover full-H¹ coercivity, negative-time renormalized energy
+conservation, simultaneous all-time bounds for both equations, compact-time
+approximation without a supplied bound, and classical/spectral agreement
+at negative times and negative Fourier modes.
+
+Validation: the full build passes (6159 jobs), all public examples pass,
+and the transitive axiom audit passes for 23520 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: package H¹ representatives of arbitrary smooth initial data,
+transfer this agreement through the physical mass gauge to the renormalized
+flow and through exponent inclusions, and formulate the all-smooth-sequence
+solution definition on dissertation page 86. The current agreement theorem
+assumes a classical trajectory and its H¹ initial representative; it does
+not establish classical existence for all smooth initial data. Those
+requirements and theorem-level wellposedness assembly remain to be checked.
+The dissertation is not complete.
+
+## Previous milestone: arbitrary classical stability and physical mass
 
 The actual classical PDE now gives quantitative two-sided-in-time L²
 stability for arbitrary smooth trajectories. With a common amplitude bound
@@ -100,16 +156,13 @@ remain. The dissertation is not complete.
 
 Next implementation targets:
 
-1. Derive conservation of the finite-gap physical energy from
-   `SourcePrimitivePowerAtlas.finiteGap_hamiltonian_identity`,
-   `SourcePrimitivePowerAtlas.moment_real_eq_of_actions`, and the physical
-   flow’s action and mass conservation. Prove that physical mass plus
-   defocusing energy controls the H¹ norm and hence the uniform amplitude.
-   Combine `dense_sourceSobolevFiniteGapLocus` with
-   `IsClassicalNLSTrajectory.tendstoUniformlyOn_toLp` to identify arbitrary
-   smooth ordinary trajectories with the spectral flow. Transfer agreement
-   through the physical mass gauge, then upgrade to every smooth
-   approximation sequence as required on dissertation page 86.
+1. Package H¹ representatives of arbitrary smooth initial potentials and
+   apply `classicalNLS_periodOneCoefficient_eq_hamiltonianFlow`. Transfer
+   agreement through the physical mass gauge and across source exponents.
+   State and prove convergence for every smooth approximation sequence,
+   retaining the exact definition on dissertation page 86. Audit the
+   classical existence required by the phrase “corresponding smooth solutions”;
+   the current agreement theorem assumes a classical trajectory.
 2. Prove compatibility on overlapping source neighborhoods and time intervals
    and across admissible exponents; assemble Theorems 18.5 and 22.1 and
    Corollary 22.2 only after their full hypotheses and conclusions are met.

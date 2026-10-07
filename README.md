@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: arbitrary classical NLS solutions now satisfy quantitative
-L² stability in both time directions, and uniformly bounded classical
-approximations converge uniformly in time from convergent L² initial data.
-Physical mass conservation is proved directly for ordinary and renormalized
-classical solutions, without finite-gap assumptions. Deriving the common
-approximation bound and identifying arbitrary smooth solutions with the
-spectral flow remain necessary for the full wellposedness statements.
+Latest milestone: conserved physical energy now supplies uniform bounds for
+H¹ finite-gap approximations. The ordinary spectral flow agrees with any
+classical solution having a supplied real H¹ initial representative, at all
+times in physical L² and in every actual Fourier coefficient. No finite-gap
+condition on the limiting initial data or common approximation bound remains.
+Smooth-data representation, renormalized agreement, and the full
+smooth-approximation wellposedness statements remain to be assembled.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

@@ -2737,3 +2737,8 @@ import NLS.ZakharovShabat.ClassicalRenormalizedNLSLocalExtension
 import NLS.ZakharovShabat.ClassicalRenormalizedNLSSmallGlobalExtension
 import NLS.ZakharovShabat.ClassicalNLSStability
 import NLS.ZakharovShabat.ClassicalNLSMass
+import NLS.ZakharovShabat.SourceFiniteGapEnergyConservation
+import NLS.ZakharovShabat.SourceSobolevEnergyCoercivity
+import NLS.ZakharovShabat.SourceFiniteGapUniformBound
+import NLS.ZakharovShabat.SourceClassicalNLSApproximation
+import NLS.ZakharovShabat.SourceClassicalNLSAgreement
