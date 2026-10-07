@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: for every finite `p > 1`, the renormalized spectral flow
-has local analytic source trajectories and global analytic trajectories
-on an invariant neighborhood of zero, including `p > 2`. Analyticity holds
-in the uniform source norm on compact time intervals. Further Section 22
-work remains. See `STATUS.md`.
+Latest milestone: the ordinary NLS spectral flow for `1 < p <= 2` now has
+global analytic source trajectories, analytic inverse time maps, and
+conservation of the original actions and physical mass. Its exact mass
+phase shift from the renormalized flow is proved. Further Section 22 work
+remains. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13908,3 +13908,53 @@ The ordinary NLS mass shift, its discontinuity outside `ell^2`, and agreement
 with classical PDE solutions remain open Section 22 work. These results
 concern the constructed renormalized spectral flow; the dissertation
 remains unfinished.
+
+## Ordinary NLS mass correction and global analytic flows
+
+For `1 < p <= 2`, the ordinary NLS spectral flow now forms a global
+continuous group on the original real source space. Its complete
+trajectory depends real analytically on the initial source in the uniform
+norm on every compact time interval. Each fixed-time map and its
+negative-time inverse are real analytic. This supplies the ordinary-flow
+construction in Theorem 22.1(ii) and Corollary 22.2(i).
+
+`SourceOrdinaryMass.lean` pulls the physical Hilbert mass back through the
+bounded exponent inclusion. The resulting complex mass is entire, and
+its real restriction equals the literal absolutely convergent sum of the
+original spectral actions. This uses the proved Hilbert trace formula and
+compatibility of the original actions across exponents. Thus the mass
+correction has its physical normalization and is preserved by any map
+preserving the original actions.
+
+`SourceOrdinaryPhaseTrajectory.lean` adds four times this mass to the
+renormalized frequencies. `SourceOrdinaryFlow.lean` lifts the opposite
+phase rotations through the actual global Birkhoff inverse, proving the
+coordinate identity, action and mass conservation, frequency invariance,
+the group law, joint continuity, and inverse time homeomorphisms.
+`SourceOrdinaryFlowTrajectories.lean` supplies complete compact-time paths
+and continuous dependence in their uniform norms.
+
+`SourceOrdinaryPhaseAnalytic.lean` adds the entire complex mass as a
+constant bounded frequency symbol. One complex neighborhood supports
+analytic extensions of all compact-time coordinate trajectories.
+`SourceOrdinarySourceTrajectoryAnalytic.lean` applies the function-space
+inverse theorem to the actual Birkhoff map and projects the analytic lift
+back to the original real source space. `SourceOrdinaryFlowAnalytic.lean`
+proves analytic time maps, analytic inverses, and analytic trajectory
+parametrization by initial Birkhoff coordinates.
+
+`SourceOrdinaryMassShift.lean` proves the exact scalar phase factors
+`exp(+4it H1)` and `exp(-4it H1)` relative to the renormalized coordinates.
+`SourceOrdinaryFlowExistence.lean` constructs the spectral atlas and
+Birkhoff family with the global analytic trajectory and conservation laws.
+Public examples check absolute convergence of the action sum, both mass
+phase signs, mass conservation, time reversal, full trajectory derivatives,
+analytic inverse maps, and the initial value of the compact-time path.
+
+Validation: the full build passes (6090 jobs), all public examples pass,
+and the transitive axiom audit passes for 22941 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Agreement with classical PDE solutions and failure of continuous extension
+outside `ell^2` for `p > 2` remain open. The ordinary and renormalized flows
+constructed here are spectral flows; the dissertation remains unfinished.

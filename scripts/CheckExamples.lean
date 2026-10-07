@@ -32766,3 +32766,64 @@ example : ∃ r > 0, ∀ φ : realTypeSourceSubmodule p, ‖φ‖ < r →
 
 end ImageFlowChecks
 end
+
+
+noncomputable section
+namespace OrdinaryFlowChecks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t) (hp2 : p ≤ 2)
+
+-- The ordinary correction is the physical mass, equal to an absolutely convergent action sum.
+example (φ : realTypeSourceSubmodule p) :
+    Summable (fun n : ℤ => ‖sourceComplexAction hp hp1 n φ.val‖) ∧
+    sourceOrdinaryMass hp2 φ = ∑' n : ℤ, (sourceComplexAction hp hp1 n φ.val).re :=
+  ⟨summable_sourceOrdinaryActions hp hp1 hp2 φ,sourceOrdinaryMass_eq_tsum hp hp1 hp2 φ⟩
+
+-- The mass factor is +4 in the first component and -4 in the second.
+example (φ : realTypeSourceSubmodule p) (τ : ℝ) (n : ℤ) :
+    (A.ordinaryPhaseTrajectory t hp2 φ τ).1 n =
+      Complex.exp (((4*τ*sourceOrdinaryMass hp2 φ : ℝ) : ℂ)*Complex.I) *
+        (A.renormalizedPhaseTrajectory t φ τ).1 n ∧
+    (A.ordinaryPhaseTrajectory t hp2 φ τ).2 n =
+      Complex.exp (((-4*τ*sourceOrdinaryMass hp2 φ : ℝ) : ℂ)*Complex.I) *
+        (A.renormalizedPhaseTrajectory t φ τ).2 n :=
+  ⟨A.ordinaryPhaseTrajectory_massShift_fst t hp2 φ τ n,
+    A.ordinaryPhaseTrajectory_massShift_snd t hp2 φ τ n⟩
+
+-- The original source mass is conserved on the full nonlinear ordinary trajectory.
+example (φ : realTypeSourceSubmodule p) (τ : ℝ) :
+    sourceOrdinaryMass hp2 (A.ordinarySourceFlow D hp2 φ τ) = sourceOrdinaryMass hp2 φ :=
+  A.ordinarySourceFlow_mass D hp2 φ τ
+
+-- Backward time recovers the original source.
+example (φ : realTypeSourceSubmodule p) (τ : ℝ) :
+    A.ordinarySourceFlow D hp2 (A.ordinarySourceFlow D hp2 φ τ) (-τ) = φ := by
+  rw [A.ordinarySourceFlow_add hs.toSourcePsiIsolatingComplexExtension,
+    neg_add_cancel,A.ordinarySourceFlow_zero]
+
+-- Analyticity yields a Frechet derivative for the whole trajectory in the uniform source norm.
+example (T : ℝ) (φ : realTypeSourceSubmodule p) :
+    HasFDerivAt (A.ordinarySourceTrajectoryOn hs hP hr D hp2 T)
+      (fderiv ℝ (A.ordinarySourceTrajectoryOn hs hP hr D hp2 T) φ) φ :=
+  (A.analytic_ordinarySourceTrajectoryOn hs hP hr D hp2 T φ (mem_univ _)).differentiableAt.hasFDerivAt
+
+-- Both directions of each ordinary time map are analytic.
+example (τ : ℝ) :
+    AnalyticOnNhd ℝ (A.ordinarySourceHomeomorph hs hP hr D hp2 τ) univ ∧
+      AnalyticOnNhd ℝ (A.ordinarySourceHomeomorph hs hP hr D hp2 τ).symm univ :=
+  A.ordinarySourceHomeomorph_analytic hs hP hr D hp2 τ
+
+-- The initial source is retained by the compact-time source path.
+example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p) :
+    A.ordinarySourceTrajectoryOn hs hP hr D hp2 T φ ⟨0,by constructor <;> linarith⟩ = φ :=
+  A.ordinarySourceFlow_zero D hp2 φ
+
+end OrdinaryFlowChecks
+end

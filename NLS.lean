@@ -2664,3 +2664,12 @@ import NLS.ZakharovShabat.SourceRenormalizedImageFlow
 import NLS.ZakharovShabat.SourceRenormalizedLocalFlow
 import NLS.ZakharovShabat.SourceRenormalizedImageTrajectories
 import NLS.ZakharovShabat.SourceRenormalizedLocalExistence
+import NLS.ZakharovShabat.SourceOrdinaryMass
+import NLS.ZakharovShabat.SourceOrdinaryPhaseTrajectory
+import NLS.ZakharovShabat.SourceOrdinaryFlow
+import NLS.ZakharovShabat.SourceOrdinaryFlowTrajectories
+import NLS.ZakharovShabat.SourceOrdinaryPhaseAnalytic
+import NLS.ZakharovShabat.SourceOrdinarySourceTrajectoryAnalytic
+import NLS.ZakharovShabat.SourceOrdinaryFlowAnalytic
+import NLS.ZakharovShabat.SourceOrdinaryMassShift
+import NLS.ZakharovShabat.SourceOrdinaryFlowExistence
