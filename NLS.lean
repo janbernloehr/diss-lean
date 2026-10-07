@@ -2640,3 +2640,12 @@ import NLS.ZakharovShabat.NormalizedWeightedSource
 import NLS.ZakharovShabat.SourceSobolevNormalizedCoordinates
 import NLS.ZakharovShabat.SourceSobolevFiniteGapDensity
 import NLS.ZakharovShabat.SourceSobolevHamiltonianIdentification
+import NLS.SequenceSpaces.PhaseRotation
+import NLS.Dynamics.ComplexPhaseFlow
+import NLS.Dynamics.ComplexBirkhoffCoordinates
+import NLS.Dynamics.RealComplexBirkhoffCoordinates
+import NLS.ZakharovShabat.SourceComplexBirkhoffMap
+import NLS.ZakharovShabat.SourceRenormalizedPhaseTrajectory
+import NLS.ZakharovShabat.SourceRenormalizedFlow
+import NLS.ZakharovShabat.SourceRenormalizedFlowTrajectories
+import NLS.ZakharovShabat.SourceRenormalizedFlowExistence

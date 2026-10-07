@@ -1,6 +1,66 @@
 # Implementation plan
 
-## Latest progress: H¹ finite-gap density and physical Hamiltonian identification
+## Latest progress: continuous renormalized coordinate and source flows
+
+Section 22 now has actual global coordinate trajectories for every finite
+source exponent `p > 1`, with joint time/source continuity in the sequence
+norm. For `1 < p <= 2`, the actual global Birkhoff inverse lifts them to a
+continuous group on the original real source space. Every fixed-time map
+is a homeomorphism with negative time as its inverse, and the original
+spectral actions remain constant along the flow.
+
+`SequenceSpaces/PhaseRotation.lean` constructs simultaneous unit phase
+rotations for arbitrary real frequency sequences. Exact preservation of
+the finite-tail norm proves continuity without a bounded-frequency
+assumption, so the physical quadratic term `(2*pi*n)^2` is included.
+`Dynamics/ComplexPhaseFlow.lean` uses opposite signs for the two components,
+preserves their products and norms, and retains same-index conjugate reality.
+
+The complex/rectangular coordinate modules implement exactly
+`z=(x-i*y)/sqrt(2)` and `w=(x+i*y)/sqrt(2)`, with continuous inverse maps.
+`SourceComplexBirkhoffMap.lean` identifies their products with the original
+spectral actions. `SourceRenormalizedPhaseTrajectory.lean` inserts the actual
+moment-sum frequency, proves the literal formulas in (4.14), and establishes
+joint time/source continuity at all finite exponents above one.
+
+`SourceRenormalizedFlow.lean` lifts these trajectories through the actual
+Birkhoff inverse for `p <= 2`. Action preservation gives invariance of the
+actual frequencies and hence the nonlinear group law. The compact-time
+trajectory module proves continuous dependence in `C([-T,T], E)` and uniform
+convergence of source trajectories for convergent initial data.
+`SourceRenormalizedFlowExistence.lean` constructs the moment atlas and
+Birkhoff data together with the resulting continuous flow statements.
+
+Public examples check unbounded quadratic frequencies, the fixed zero mode,
+closed coordinates, exact complex action preservation, coordinate decoding,
+the physical frequency signs, nonlinear backward-time inversion, and uniform
+convergence on compact time intervals.
+
+Validation: the full build passes (6065 jobs), all public examples pass,
+and the transitive axiom audit passes for 22679 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 22 work includes analytic dependence in compact-time
+trajectory spaces, the local source flow and small-data global flow for
+`p > 2`, the ordinary NLS mass shift and its discontinuity outside `ell^2`,
+and the required agreement with classical NLS solutions. This milestone
+establishes continuous spectral dynamics, not all of Theorem 22.1 or
+Corollary 22.2. The dissertation remains unfinished.
+
+Next implementation targets:
+
+1. Use the Banach analytic frequency sequence and its local bounds to prove
+   analytic dependence into `C([-T,T], ell^p)`. Transfer this through actual
+   inverse charts; joint continuity alone does not prove Theorem 22.1's
+   analytic trajectory assertion or fixed-time diffeomorphisms.
+2. Use the open Birkhoff image at `p > 2` to construct the local-time source
+   flow. An invariant coordinate ball around zero should give the small-data
+   global flow required by Corollary 22.2(ii).
+3. Add the ordinary NLS mass shift in the summable-action range, establish
+   the classical-solution agreement required for the wellposedness statement,
+   and prove failure of continuous extension outside `ell^2` for `p > 2`.
+
+## Previous progress: H¹ finite-gap density and physical Hamiltonian identification
 
 The physical H¹ Hamiltonian correction now equals the FL⁴ cubic-moment
 extension at every real H¹ source. This includes the literal absolutely
@@ -43,20 +103,6 @@ This closes the physical H¹ identification gap recorded for Section 21.
 Next is Section 22: the renormalized NLS flow in complex Birkhoff coordinates,
 its continuity and wellposedness, and the source-space flow obtained through
 the actual Birkhoff map. The dissertation is not yet fully formalized.
-
-Next implementation targets for Section 22:
-
-1. Construct simultaneous complex phase rotations for arbitrary real frequency
-   sequences on finite `ell^p` spaces. Prove norm preservation, action
-   preservation, the time-addition law, and continuity in time despite the
-   unbounded quadratic frequency term.
-2. Insert the actual renormalized frequencies and prove analytic dependence
-   of the trajectories on initial data in `C([-T,T], ell^p)`, as required by
-   Theorem 22.1(i). Coordinatewise analyticity alone is insufficient.
-3. Transfer the coordinate flow through the actual Birkhoff inverse, retaining
-   the distinction between global surjectivity for `1 < p <= 2` and the image
-   domain for `p > 2`. Treat the ordinary NLS mass shift separately, including
-   Theorem 22.1(iii)'s failure of continuous extension outside `ell^2`.
 
 ## Previous progress: analytic weighted spectral sum and physical H¹ correction
 

@@ -32475,3 +32475,74 @@ example (a : realTypeSobolevSourceLocus) :
 
 end SobolevFiniteGapDensityChecks
 end
+
+
+noncomputable section
+namespace RenormalizedFlowChecks
+open NLS NLS.ZakharovShabat Set Filter Topology Complex
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The unbounded physical quadratic frequencies still give joint norm continuity.
+example : Continuous (fun x : ℝ × Coeff 2 =>
+    Coeff.phaseFlow (fun n : ℤ => (2*Real.pi*n)^2) x.1 x.2) :=
+  Coeff.continuous_phaseFlow (by simp) _
+
+-- The free quadratic part fixes the zero mode.
+example (a : Coeff 2) (τ : ℝ) :
+    Coeff.phaseFlow (fun n : ℤ => (2*Real.pi*n)^2) τ a 0 = a 0 := by
+  simp [Coeff.phaseFlow_apply]
+
+-- Opposite rotations preserve each complex action even away from the real locus.
+example (freq : ℤ → ℝ) (τ : ℝ) (z : Coeff 4 × Coeff 4) (n : ℤ) :
+    (Birkhoff.phaseFlow freq τ z).1 n*(Birkhoff.phaseFlow freq τ z).2 n = z.1 n*z.2 n :=
+  Birkhoff.phaseFlow_action freq τ z n
+
+-- A vanished coordinate remains vanished; no positive-action hypothesis is used.
+example (freq : ℤ → ℝ) (τ : ℝ) (z : Coeff 2 × Coeff 2) (n : ℤ) (hz : z.1 n = 0) :
+    (Birkhoff.phaseFlow freq τ z).1 n = 0 := by
+  simp [Birkhoff.phaseFlow_fst,hz]
+
+-- Decoding does not lose the imaginary coordinate of a conjugate pair.
+example (z : Coeff 2 × Coeff 2) (hz : Birkhoff.IsConjugatePair z) :
+    Birkhoff.encodeReal (Birkhoff.decodeReal z) = z := Birkhoff.encodeReal_decodeReal z hz
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s)
+variable (hP : IsOpen P) (hrealP : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+
+-- Actual moment-sum frequencies occur with the opposite signs required by (4.14).
+example (φ : realTypeSourceSubmodule p) (τ : ℝ) (n : ℤ) :
+    (A.renormalizedPhaseTrajectory t φ τ).1 n =
+      Complex.exp ((τ : ℂ)*Complex.I*((2*(Real.pi : ℂ)*n)^2+A.renormalizedFrequency n φ.val)) *
+        (sourceComplexBirkhoffMap hp hp1 t φ.val).1 n ∧
+    (A.renormalizedPhaseTrajectory t φ τ).2 n =
+      Complex.exp (-(τ : ℂ)*Complex.I*((2*(Real.pi : ℂ)*n)^2+A.renormalizedFrequency n φ.val)) *
+        (sourceComplexBirkhoffMap hp hp1 t φ.val).2 n :=
+  ⟨A.renormalizedPhaseTrajectory_fst hs.toSourcePsiIsolatingComplexExtension t φ τ n,
+    A.renormalizedPhaseTrajectory_snd hs.toSourcePsiIsolatingComplexExtension t φ τ n⟩
+
+-- Backward time undoes the nonlinear source map, not just a frozen coordinate rotation.
+example (hp2 : p ≤ 2) (φ : realTypeSourceSubmodule p) (τ : ℝ) :
+    A.renormalizedSourceFlow D hp2 (A.renormalizedSourceFlow D hp2 φ τ) (-τ) = φ := by
+  rw [A.renormalizedSourceFlow_add hs.toSourcePsiIsolatingComplexExtension, neg_add_cancel,
+    A.renormalizedSourceFlow_zero]
+
+-- Spectral actions of the lifted original source are preserved at every signed index.
+example (hp2 : p ≤ 2) (φ : realTypeSourceSubmodule p) (τ : ℝ) (n : ℤ) :
+    sourceComplexAction hp hp1 n (A.renormalizedSourceFlow D hp2 φ τ).val =
+      sourceComplexAction hp hp1 n φ.val := A.renormalizedSourceFlow_action D hp2 φ τ n
+
+-- Initial convergence gives uniform-in-time convergence in the original source norm.
+example (hp2 : p ≤ 2) (T : ℝ) (φ : ℕ → realTypeSourceSubmodule p) (ψ : realTypeSourceSubmodule p)
+    (hφ : Tendsto φ atTop (𝓝 ψ)) :
+    TendstoUniformly (fun k (τ : Icc (-T) T) => A.renormalizedSourceFlow D hp2 (φ k) τ.val)
+      (fun τ => A.renormalizedSourceFlow D hp2 ψ τ.val) atTop :=
+  A.tendstoUniformly_renormalizedSourceTrajectory hs hP hrealP D hp2 T φ ψ hφ
+
+end RenormalizedFlowChecks
+end
