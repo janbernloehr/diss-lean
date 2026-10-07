@@ -2673,3 +2673,9 @@ import NLS.ZakharovShabat.SourceOrdinarySourceTrajectoryAnalytic
 import NLS.ZakharovShabat.SourceOrdinaryFlowAnalytic
 import NLS.ZakharovShabat.SourceOrdinaryMassShift
 import NLS.ZakharovShabat.SourceOrdinaryFlowExistence
+import NLS.Dynamics.UnboundedPhaseObstruction
+import NLS.ZakharovShabat.SourceFiniteGapMassDivergence
+import NLS.ZakharovShabat.SourceFiniteGapOrdinaryTrajectory
+import NLS.ZakharovShabat.SourceOrdinaryCoordinateObstruction
+import NLS.ZakharovShabat.SourceComplexBirkhoffExponent
+import NLS.ZakharovShabat.SourceOrdinaryTheorem22_1III

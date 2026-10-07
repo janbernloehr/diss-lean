@@ -1,6 +1,70 @@
 # Implementation plan
 
-## Latest progress: ordinary NLS mass correction and global analytic flows
+## Latest progress: ordinary coordinate nonextension outside ell²
+
+The coordinate nonextension result of Theorem 22.1(iii) is now proved.
+At a point of the actual Birkhoff image outside `ell^2`, an ordinary NLS
+coordinate with nonzero initial amplitude has no continuous extension
+into `C([-T,T], complex)` for any `T > 0`. Both complex components are
+covered. Agreement with the original dynamics on actual finite-gap data
+alone is already enough to force the obstruction.
+
+`Dynamics/UnboundedPhaseObstruction.lean` proves a general uniform-trajectory
+obstruction. Convergent nonzero amplitudes with frequencies tending to
+positive infinity cannot give convergent continuous paths. At times
+`pi/frequency` tending to zero the phase equals minus one, contradicting
+the initial value of any continuous limiting path. The theorem works
+for arbitrary nontrivial filters, not just one chosen sequence.
+
+`SourceFiniteGapMassDivergence.lean` characterizes the embedded Hilbert
+source locus by square summability of the first Fourier component.
+It identifies the finite-gap physical mass with the Hilbert model's
+coefficient energy and bounds every finite partial energy sum by that
+mass. Consequently every convergent finite-gap approximation outside the
+Hilbert locus has mass tending to positive infinity. The existing finite-gap
+density theorem supplies such approximating sequences.
+
+`SourceFiniteGapOrdinaryTrajectory.lean` restores the physical mass in
+the renormalized frequencies and identifies the result with the original
+finite-gap Hamiltonian frequency. It defines both scalar coordinate paths
+and proves agreement with the previously constructed ordinary flow in
+`p <= 2`. Each fixed ordinary frequency diverges along the non-Hilbert
+approximations, while its renormalized part converges.
+
+`SourceOrdinaryCoordinateObstruction.lean` applies the scalar obstruction
+to the actual Birkhoff amplitudes. Conjugation gives the opposite-sign
+second coordinate. The actual Birkhoff image homeomorphism transfers the
+result from source parameters to coordinate initial data.
+`SourceComplexBirkhoffExponent.lean` proves compatibility of the complex
+coordinate map across exponents and square summability of coordinates for
+embedded Hilbert sources. `SourceOrdinaryTheorem22_1III.lean` states the
+nonextension results on the Birkhoff image and the full interval `[-T,T]`,
+with failure of square summability as the explicit initial-coordinate
+hypothesis. For real data the second coordinate is conjugate to the first,
+so this hypothesis is exactly exclusion from the complex `ell^2` pair space.
+
+Public examples check an explicit sequence of diverging frequencies,
+existence of actual finite-gap approximations with divergent mass,
+agreement with the earlier ordinary flow, and both forms of the
+coordinate obstruction, including the negative phase on `[-T,T]`.
+
+Validation: the full build passes (6096 jobs), all public examples pass,
+and the transitive axiom audit passes for 22980 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+The source-trajectory nonextension statement in the weaker target norms
+of Corollary 22.2(iii), and agreement of the spectral flows with classical
+PDE solutions, remain open. The dissertation remains unfinished.
+
+Next implementation targets:
+
+1. Transfer the coordinate obstruction through the Birkhoff maps to source
+   trajectories in every finite weaker target exponent `q >= p`, as in
+   Corollary 22.2(iii). Use compatibility across exponents to identify the
+   original finite-gap dynamics in the larger target space.
+2. Establish agreement of the spectral flows with classical PDE solutions.
+
+## Previous progress: ordinary NLS mass correction and global analytic flows
 
 For `1 < p <= 2`, the ordinary NLS spectral flow now forms a global
 continuous group on the original real source space. Its complete
@@ -49,14 +113,6 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 Agreement with classical PDE solutions and failure of continuous extension
 outside `ell^2` for `p > 2` remain open. The ordinary and renormalized flows
 constructed here are spectral flows; the dissertation remains unfinished.
-
-Next implementation targets:
-
-1. Prove the ordinary coordinate flow has no continuous extension outside
-   `ell^2`, using divergent action sums and the exact mass phase shift.
-2. Transfer this obstruction through the actual Birkhoff maps to the
-   weaker source norms required by Corollary 22.2(iii).
-3. Establish agreement of the spectral flows with classical PDE solutions.
 
 ## Previous progress: local and small-data global analytic source flows
 

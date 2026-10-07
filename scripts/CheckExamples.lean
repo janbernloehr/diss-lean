@@ -32827,3 +32827,64 @@ example (T : ℝ) (hT : 0 ≤ T) (φ : realTypeSourceSubmodule p) :
 
 end OrdinaryFlowChecks
 end
+
+
+noncomputable section
+namespace OrdinaryObstructionChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+
+-- Even constant nonzero amplitudes cannot compensate for diverging frequencies.
+example (g : ℕ → C(Icc (0 : ℝ) 1,ℂ))
+    (he : ∀ j (τ : Icc (0 : ℝ) 1), g j τ = Complex.exp (((τ.val*(j : ℝ) : ℝ) : ℂ)*Complex.I))
+    (G : C(Icc (0 : ℝ) 1,ℂ)) : ¬ Tendsto g atTop (𝓝 G) := by
+  apply NLS.Dynamics.not_tendsto_phase_trajectories 1 zero_lt_one
+    (fun j : ℕ => (j : ℝ)) (fun _ => (1 : ℂ)) 1 one_ne_zero
+    tendsto_natCast_atTop_atTop tendsto_const_nhds g ?_ G
+  intro j τ
+  simpa only [mul_one] using he j τ
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+
+-- Actual finite-gap approximants with mass tending to infinity exist at every non-Hilbert source.
+example (h2p : 2 ≤ p) (φ : realTypeSourceSubmodule p) (hφ : φ ∉ sourceHilbertLocus h2p) :
+    ∃ ψ : ℕ → realTypeSourceSubmodule p, ∃ hf : ∀ j, ψ j ∈ sourceFiniteGapLocus hp hp1,
+      Tendsto ψ atTop (𝓝 φ) ∧
+      Tendsto (fun j => sourceFiniteGapRealMass hp hp1 (ψ j) (hf j)) atTop atTop := by
+  obtain ⟨ψ,hf,hψ⟩ := exists_sourceFiniteGap_sequence hp hp1 φ
+  exact ⟨ψ,hf,hψ,tendsto_sourceFiniteGapRealMass_atTop hp hp1 h2p φ hφ ψ hf hψ⟩
+
+-- The finite-gap extension agrees with the previously constructed ordinary flow for p ≤ 2.
+example (hp2 : p ≤ 2) (T : ℝ) (φ : realTypeSourceSubmodule p)
+    (hf : φ ∈ sourceFiniteGapLocus hp hp1) (n : ℤ) (τ : Icc (0 : ℝ) T) :
+    A.finiteGapOrdinaryCoordinate t T φ hf n τ = (A.ordinaryPhaseTrajectory t hp2 φ τ.val).1 n :=
+  A.finiteGapOrdinaryCoordinate_eq_ordinary t hp2 T φ hf n τ
+
+-- Finite-gap agreement alone already forces discontinuity at a non-Hilbert source.
+example (h2p : 2 ≤ p) (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p)
+    (hφ : φ ∉ sourceHilbertLocus h2p) (n : ℤ) (hn : (sourceComplexBirkhoffMap hp hp1 t φ.val).1 n ≠ 0)
+    (F : realTypeSourceSubmodule p → C(Icc (0 : ℝ) T,ℂ))
+    (he : ∀ ψ : realTypeSourceSubmodule p, ∀ hf : ψ ∈ sourceFiniteGapLocus hp hp1,
+      F ψ = A.finiteGapOrdinaryCoordinate t T ψ hf n) : ¬ ContinuousAt F φ :=
+  A.not_continuousAt_ordinaryCoordinate_extension hs hP hr D h2p T hT φ hφ n hn F he
+
+-- The negative-sign component retains the same obstruction on the full interval [-T,T].
+example (h2p : 2 ≤ p) (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p)
+    (hφ : ¬ Summable (fun k : ℤ => ‖(sourceComplexBirkhoffMap hp hp1 t φ.val).1 k‖^2))
+    (n : ℤ) (hn : (sourceComplexBirkhoffMap hp hp1 t φ.val).2 n ≠ 0)
+    (F : range (sourceRealBirkhoffMap hp hp1 t) → C(Icc (-T) T,ℂ))
+    (he : ∀ ψ : realTypeSourceSubmodule p, ∀ hf : ψ ∈ sourceFiniteGapLocus hp hp1,
+      ∀ τ : Icc (-T) T, F (D.realImageHomeomorph ψ) τ =
+        Complex.exp (((-τ.val*A.finiteGapOrdinaryFrequency ψ hf n : ℝ) : ℂ)*Complex.I)*
+          (sourceComplexBirkhoffMap hp hp1 t ψ.val).2 n) :
+    ¬ ContinuousAt F (D.realImageHomeomorph φ) :=
+  A.theorem22_1_iii_snd hs hP hr D h2p T hT φ hφ n hn F he
+
+end OrdinaryObstructionChecks
+end

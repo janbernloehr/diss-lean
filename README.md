@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the ordinary NLS spectral flow for `1 < p <= 2` now has
-global analytic source trajectories, analytic inverse time maps, and
-conservation of the original actions and physical mass. Its exact mass
-phase shift from the renormalized flow is proved. Further Section 22 work
-remains. See `STATUS.md`.
+Latest milestone: Theorem 22.1(iii)'s ordinary coordinate nonextension is
+proved on the actual Birkhoff image outside `ell^2`, for both complex
+components on every positive compact time interval. Diverging physical
+mass forces rapid phase rotation. Further Section 22 work remains.
+See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13958,3 +13958,59 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 Agreement with classical PDE solutions and failure of continuous extension
 outside `ell^2` for `p > 2` remain open. The ordinary and renormalized flows
 constructed here are spectral flows; the dissertation remains unfinished.
+
+## Ordinary coordinate nonextension outside ell²
+
+The coordinate nonextension result of Theorem 22.1(iii) is now proved.
+At a point of the actual Birkhoff image outside `ell^2`, an ordinary NLS
+coordinate with nonzero initial amplitude has no continuous extension
+into `C([-T,T], complex)` for any `T > 0`. Both complex components are
+covered. Agreement with the original dynamics on actual finite-gap data
+alone is already enough to force the obstruction.
+
+`Dynamics/UnboundedPhaseObstruction.lean` proves a general uniform-trajectory
+obstruction. Convergent nonzero amplitudes with frequencies tending to
+positive infinity cannot give convergent continuous paths. At times
+`pi/frequency` tending to zero the phase equals minus one, contradicting
+the initial value of any continuous limiting path. The theorem works
+for arbitrary nontrivial filters, not just one chosen sequence.
+
+`SourceFiniteGapMassDivergence.lean` characterizes the embedded Hilbert
+source locus by square summability of the first Fourier component.
+It identifies the finite-gap physical mass with the Hilbert model's
+coefficient energy and bounds every finite partial energy sum by that
+mass. Consequently every convergent finite-gap approximation outside the
+Hilbert locus has mass tending to positive infinity. The existing finite-gap
+density theorem supplies such approximating sequences.
+
+`SourceFiniteGapOrdinaryTrajectory.lean` restores the physical mass in
+the renormalized frequencies and identifies the result with the original
+finite-gap Hamiltonian frequency. It defines both scalar coordinate paths
+and proves agreement with the previously constructed ordinary flow in
+`p <= 2`. Each fixed ordinary frequency diverges along the non-Hilbert
+approximations, while its renormalized part converges.
+
+`SourceOrdinaryCoordinateObstruction.lean` applies the scalar obstruction
+to the actual Birkhoff amplitudes. Conjugation gives the opposite-sign
+second coordinate. The actual Birkhoff image homeomorphism transfers the
+result from source parameters to coordinate initial data.
+`SourceComplexBirkhoffExponent.lean` proves compatibility of the complex
+coordinate map across exponents and square summability of coordinates for
+embedded Hilbert sources. `SourceOrdinaryTheorem22_1III.lean` states the
+nonextension results on the Birkhoff image and the full interval `[-T,T]`,
+with failure of square summability as the explicit initial-coordinate
+hypothesis. For real data the second coordinate is conjugate to the first,
+so this hypothesis is exactly exclusion from the complex `ell^2` pair space.
+
+Public examples check an explicit sequence of diverging frequencies,
+existence of actual finite-gap approximations with divergent mass,
+agreement with the earlier ordinary flow, and both forms of the
+coordinate obstruction, including the negative phase on `[-T,T]`.
+
+Validation: the full build passes (6096 jobs), all public examples pass,
+and the transitive axiom audit passes for 22980 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+The source-trajectory nonextension statement in the weaker target norms
+of Corollary 22.2(iii), and agreement of the spectral flows with classical
+PDE solutions, remain open. The dissertation remains unfinished.
