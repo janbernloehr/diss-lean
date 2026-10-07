@@ -2708,3 +2708,5 @@ import NLS.ZakharovShabat.NormalizedWeightedClosingInverseSupport
 import NLS.ZakharovShabat.NormalizedWeightedTruncation
 import NLS.ZakharovShabat.SourceFiniteGapWeightedLift
 import NLS.ZakharovShabat.SourceFiniteGapSobolevTime
+import NLS.Fourier.PeriodOneFourierUniqueness
+import NLS.ZakharovShabat.SourceFiniteGapPointwiseNLS

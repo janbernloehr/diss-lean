@@ -6,8 +6,8 @@ import NLS.ZakharovShabat.SourcePhysicalEnergyHamiltonianODE
 The full Hilbert-norm trajectory derivative equals the Fourier realization
 of the classical spatial NLS vector field. Every Fourier coefficient obeys
 the corresponding time equation, with the scalar defocusing NLS sign and
-normalization. Pointwise differentiation of the physical trajectory still
-requires a stronger time-regularity argument.
+normalization. `SourceFiniteGapPointwiseNLS` combines these identities with
+H¹ time regularity to prove the physical equation pointwise.
 -/
 noncomputable section
 open Set Complex NLS.Fourier

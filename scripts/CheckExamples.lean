@@ -33354,3 +33354,54 @@ example {W V B X : Set (CoeffPair 2)}
   (A.differentiable_hamiltonianOrdinarySourceFlow_physical D φ hf x).2 time
 
 end SobolevTimeChecks
+
+namespace PointwiseNLSChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set
+open scoped ENNReal
+
+-- Actual coefficients at a negative mode determine the continuous function everywhere.
+example (f : ℝ → ℂ) (hf : Continuous f) (hper : Function.Periodic f 1) (c : ℂ)
+    (hcoeff : ∀ n : ℤ, periodOneCoefficient f n = if n = -3 then c else 0) :
+    f = periodOneSynthesis (lp.single 1 (-3) c) := by
+  apply eq_of_periodOneCoefficient_eq f _ hf (continuous_periodOneSynthesis _) hper
+    (periodOneSynthesis_periodic _)
+  intro n
+  rw [hcoeff,periodOneCoefficient_synthesis]
+  simp only [lp.single_apply,Pi.single_apply]
+
+-- Initial-time evaluation has the exact original physical source and NLS normalization.
+example {W P V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (x : ℝ) :
+    let u₀ := (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1
+    Complex.I*deriv (fun time => (A.hamiltonianOrdinaryPhysicalFlow D φ hf time).1 x) 0 =
+      -deriv (deriv u₀) x+2*(‖u₀ x‖^2 : ℝ)*u₀ x := by
+  simpa only [A.hamiltonianOrdinaryPhysicalFlow_zero] using
+    A.hamiltonianOrdinaryPhysicalFlow_scalarNLS hs D φ hf 0 x
+
+-- The second physical component has the opposite Poisson sign, also at negative time.
+example {W P V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (x : ℝ) :
+    let u := A.hamiltonianOrdinaryPhysicalFlow D φ hf (-1)
+    HasDerivAt (fun time => (A.hamiltonianOrdinaryPhysicalFlow D φ hf time).2 x)
+      (Complex.I*(-deriv (deriv u.2) x+2*u.1 x*(u.2 x)^2)) (-1) := by
+  exact (A.hasDerivAt_hamiltonianOrdinaryPhysicalFlow hs D φ hf (-1) x).2
+
+-- The existence statement requires no user-supplied atlas or Birkhoff data.
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ u : ℝ → ℝ → ℂ,
+      u 0 = (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 ∧
+      (∀ time : ℝ, Function.Periodic (u time) 1) ∧
+      ∀ time x : ℝ, Complex.I*deriv (fun r => u r x) time =
+        -deriv (deriv (u time)) x+2*(‖u time x‖^2 : ℝ)*u time x := by
+  obtain ⟨u,hu,h⟩ := exists_sourceFiniteGap_pointwiseNLS_trajectory φ hf
+  exact ⟨u,hu,fun time => (h time).2.1,fun time x => ((h time).2.2 x).2⟩
+
+end PointwiseNLSChecks

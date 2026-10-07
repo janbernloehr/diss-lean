@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual finite-gap flow is differentiable in H¹,
-and both physical components are differentiable in time at every spatial
-point. An analytic weighted lift supplies the stronger regularity from
-the original source curve. Identifying these pointwise derivatives with
-the classical NLS field and proving solution-map agreement remain open.
-See `STATUS.md`.
+Latest milestone: the constructed finite-gap physical trajectory satisfies
+`i*u_t = -u_xx + 2*|u|^2*u` at every real time and spatial point. Its initial
+value, spatial smoothness, periodicity, and conjugate-pair reality are
+proved. The global existence theorem constructs all spectral data.
+Classical solution-map agreement and the nonextension transfer remain
+open. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

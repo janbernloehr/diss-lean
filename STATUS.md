@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: H¹ and pointwise time differentiability
+## Current milestone: the pointwise physical NLS equation
+
+The constructed Hamiltonian-oriented finite-gap trajectory now satisfies
+`i*u_t = -u_xx + 2*|u|^2*u` at every real time and spatial point. Both
+component time derivatives equal the classical NLS vector field, with the
+original Poisson signs. A global scalar trajectory is constructed from any
+real finite-gap Hilbert source without supplied spectral atlas data.
+
+`PeriodOneFourierUniqueness.lean` proves that actual period-one Fourier
+integrals determine a continuous periodic function everywhere. Even and
+odd period-two coefficients reduce the claim to continuous-circle Fourier
+uniqueness. An H¹ synthesis with the prescribed coefficients therefore
+equals the actual continuous periodic physical function.
+
+`SourceFiniteGapPointwiseNLS.lean` identifies the H¹ time derivative's
+source coefficients with the previously proved NLS coefficients and then
+identifies its synthesis with the classical spatial field. Bounded point
+evaluation gives both actual pointwise time derivatives. The named
+physical flow has the exact original initial representative, smooth
+period-one spatial slices, and the conjugate-pair reality condition.
+The scalar equation is proved both as a `HasDerivAt` statement and as
+`i` times the actual time derivative. The final existence theorem
+constructs the atlas and Birkhoff data internally.
+
+Public examples check Fourier uniqueness at a negative mode, the exact
+initial-time scalar equation, the second component's positive Poisson
+sign at negative time, and the global scalar trajectory without supplied
+spectral data.
+
+Validation: the full build passes (6127 jobs), all public examples pass,
+and the transitive axiom audit passes for 23191 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Classical solution uniqueness and solution-map agreement, followed by
+transfer of the nonextension theorem with this time orientation, remain
+unfinished. The dissertation formalization is not complete.
+
+## Previous milestone: H¹ and pointwise time differentiability
 
 The actual finite-gap Hamiltonian-oriented trajectory is now differentiable
 in H¹, and both physical components are differentiable in time at every
