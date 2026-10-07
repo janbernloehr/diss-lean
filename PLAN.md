@@ -1,6 +1,61 @@
 # Implementation plan
 
-## Latest progress: finite-gap energy differentials
+## Latest progress: the physical energy Hamiltonian ODE
+
+The actual physical NLS energy now has full complex H¹ differential
+`sum_n ordinaryFrequency_n * dI_n` at every real finite-gap source. Its
+bounded Hilbert cotangent generates the proved source trajectory through
+the original Poisson Hamiltonian direction, at every real time.
+
+`SourceSobolevHamiltonianDifferential.lean` transfers real-form analytic
+uniqueness through the existing normalized H¹ coordinate equivalence.
+The physical correction and the FL⁴ renormalized Hamiltonian agree as
+complex germs near every real H¹ source. Their full complex derivatives
+therefore agree on arbitrary H¹ directions, without a finite-gap premise.
+
+`SourceMassActionDifferential.lean` promotes the real action–mass trace to
+a complex analytic identity. Bounded ℓ¹ summation gives the mass derivative
+as the convergent sum of the original action derivatives. At finite gap
+this is a finite sum. Sobolev mass is identified with the original Hilbert
+mass under the coefficient inclusion, and inherits the derivative formula.
+
+`SourcePhysicalEnergyActionDifferential.lean` transfers the finite FL⁴
+renormalized Hamiltonian derivative to the original Hilbert actions and
+frequencies. It combines this with the kinetic-weighted action derivative
+and the derivative of twice the mass squared. The coefficient is exactly
+`(2πn)² + renormalizedFrequency_n + 4*mass`, the existing ordinary NLS
+frequency. A public theorem supplies the finite bounded Hilbert cotangent
+whose restriction is the full physical energy derivative.
+
+`SourcePhysicalEnergyHamiltonianODE.lean` identifies the existing finite-gap
+trajectory velocity with the Poisson Hamiltonian direction of that actual
+physical energy cotangent at each time. One initial finite gap cutoff
+continues to suffice, by action conservation. This uses the previously
+established Hamiltonian time orientation.
+
+Public examples check the radial mass normalization, the correction
+derivative in arbitrary complex H¹ directions, actual complex-line energy
+derivatives, and the physical-energy Hamiltonian ODE at initial time.
+
+Validation: the full build passes (6115 jobs), all public examples pass,
+and the transitive axiom audit passes for 23083 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+The remaining classical PDE bridge is to identify this physical-energy
+cotangent with the smooth spatial gradient and prove the resulting
+pointwise NLS equation for the trajectory. The dissertation formalization
+remains unfinished.
+
+Next implementation targets:
+
+1. Identify the physical-energy Hilbert cotangent with the original smooth
+   spatial gradient at finite-gap sources.
+2. Translate the physical-energy Hamiltonian ODE into the classical NLS
+   equation, including the required time and spatial regularity.
+3. Establish classical solution-map agreement and transfer the nonextension
+   theorem with the Hamiltonian time orientation.
+
+## Previous progress: finite-gap energy differentials
 
 The full complex action differential now vanishes at every real closed
 gap, including directions that open that gap. At a finite-gap source,
@@ -41,16 +96,6 @@ The remaining energy bridge is to differentiate the real H¹ identity
 between the physical correction and the FL⁴ renormalized Hamiltonian,
 combine it with the mass correction, and identify the resulting field
 with the classical PDE. The dissertation formalization remains unfinished.
-
-Next implementation targets:
-
-1. Differentiate the physical-correction identity on the real H¹ locus
-   and transfer the FL⁴ Hamiltonian differential to all complex H¹ directions.
-2. Add the mass correction and identify the full physical energy differential
-   with the ordinary frequency-weighted action differential.
-3. Identify the proved source velocity with the physical NLS field, prove
-   classical PDE agreement, and transfer the nonextension result with the
-   Hamiltonian time orientation.
 
 ## Previous progress: the finite-gap action Hamiltonian ODE
 
