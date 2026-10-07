@@ -2689,3 +2689,5 @@ import NLS.Dynamics.HamiltonianPhaseFlow
 import NLS.Dynamics.FiniteHamiltonianPhaseDerivative
 import NLS.ZakharovShabat.SourceComplexActionHamiltonian
 import NLS.ZakharovShabat.SourceHamiltonianOrdinaryFlow
+import NLS.ZakharovShabat.SourceFiniteActionHamiltonian
+import NLS.ZakharovShabat.SourceFiniteGapHamiltonianODE

@@ -18,6 +18,28 @@ def finiteHamiltonianPhaseVelocity (freq : ℤ → ℝ) (S : Finset ℤ)
    ∑ n ∈ S, lp.single p n (I*(freq n : ℂ)*z.2 n))
 
 omit [Fact (1 ≤ p)] in
+/-- Evaluation of the first finite phase velocity. -/
+@[simp] theorem finiteHamiltonianPhaseVelocity_fst (freq : ℤ → ℝ) (S : Finset ℤ)
+    (z : Coeff p × Coeff p) (n : ℤ) :
+    (finiteHamiltonianPhaseVelocity freq S z).1 n =
+      if n ∈ S then -I*(freq n : ℂ)*z.1 n else 0 := by
+  change (lp.evalₗ (𝕜 := ℂ) (fun _ : ℤ => ℂ) p n)
+    (∑ k ∈ S, lp.single p k (-I*(freq k : ℂ)*z.1 k)) = _
+  rw [map_sum]
+  by_cases hn : n ∈ S <;> simp [lp.evalₗ_apply,lp.single_apply,Pi.single_apply,hn]
+
+omit [Fact (1 ≤ p)] in
+/-- Evaluation of the second finite phase velocity. -/
+@[simp] theorem finiteHamiltonianPhaseVelocity_snd (freq : ℤ → ℝ) (S : Finset ℤ)
+    (z : Coeff p × Coeff p) (n : ℤ) :
+    (finiteHamiltonianPhaseVelocity freq S z).2 n =
+      if n ∈ S then I*(freq n : ℂ)*z.2 n else 0 := by
+  change (lp.evalₗ (𝕜 := ℂ) (fun _ : ℤ => ℂ) p n)
+    (∑ k ∈ S, lp.single p k (I*(freq k : ℂ)*z.2 k)) = _
+  rw [map_sum]
+  by_cases hn : n ∈ S <;> simp [lp.evalₗ_apply,lp.single_apply,Pi.single_apply,hn]
+
+omit [Fact (1 ≤ p)] in
 private theorem sum_single_of_support (S : Finset ℤ) (a : Coeff p)
     (ha : ∀ n ∉ S, a n = 0) : (∑ n ∈ S, lp.single p n (a n)) = a := by
   ext n

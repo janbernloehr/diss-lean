@@ -1,6 +1,54 @@
 # Implementation plan
 
-## Latest progress: Hamiltonian time orientation and finite-gap time derivatives
+## Latest progress: the finite-gap action Hamiltonian ODE
+
+The time derivative of every Hilbert finite-gap Hamiltonian-oriented
+ordinary spectral trajectory is now identified with a finite sum of the
+original source action Hamiltonian fields, weighted by the actual ordinary
+frequencies. The equation is autonomous: the frequencies may be evaluated
+at the current source. The trajectory remains finite-gap for all real time.
+
+`SourceFiniteActionHamiltonian.lean` identifies the actual complex Birkhoff
+differential with the rectangular Jacobian followed by the fixed complex
+coordinate change, and proves its injectivity at every real source. It
+then computes the differential of each finite frequency-weighted action
+field sum as the full finite phase velocity. Any two finite cutoffs
+containing all active coordinates give the same original source field.
+
+`SourceFiniteGapHamiltonianODE.lean` compares that differential with the
+proved full-norm trajectory derivative. Injectivity identifies the source
+velocities, removing the inverse Jacobian from the ODE statement. The
+existing frequency-invariance theorem gives the autonomous form. The
+initial coordinate cutoff contains the active coordinates for all time,
+and preservation of every action shows that finite-gap sources remain
+finite-gap. A public theorem supplies one finite cutoff for the entire
+Hilbert finite-gap trajectory.
+
+`Dynamics/FiniteHamiltonianPhaseDerivative.lean` now also exposes the
+coordinate evaluations of the finite phase velocity. Public examples
+prove vanishing of every finite action-field combination at the zero
+source, invariance under adding inactive cutoff indices, and simultaneous
+finite-gap preservation and the autonomous ODE at every real time.
+
+Validation: the full build passes (6108 jobs), all public examples pass,
+and the transitive axiom audit passes for 23058 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This uses the Hamiltonian time orientation established in the previous
+milestone. Identifying the weighted action-field sum with the physical NLS
+energy field is the remaining bridge to the classical PDE. The dissertation
+formalization remains unfinished.
+
+Next implementation targets:
+
+1. Differentiate the physical Sobolev energy decomposition and identify its
+   derivative with the frequency-weighted action differential at finite-gap sources.
+2. Identify the proved source velocity with the physical NLS energy field
+   and establish classical PDE agreement.
+3. Transfer nonextension to the Hamiltonian-oriented classical solution map,
+   accounting explicitly for the sign convention and time reversal.
+
+## Previous progress: Hamiltonian time orientation and finite-gap time derivatives
 
 Checking the classical PDE bridge exposed a sign inconsistency in the
 printed equation (4.14), verified directly on PDF page 98. With the stated
@@ -43,15 +91,6 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 Identification of the inverse-Jacobian velocity with the physical NLS
 energy field remains open. The classical PDE agreement and the overall
 dissertation formalization remain unfinished.
-
-Next implementation targets:
-
-1. Identify the proved inverse-Jacobian time derivative with the finite sum
-   of action Hamiltonian fields weighted by the physical frequencies.
-2. Use the physical Sobolev energy decomposition and its variational
-   derivatives to identify that field with the classical NLS right-hand side.
-3. Establish classical PDE agreement and transfer nonextension to the
-   Hamiltonian-oriented solution map, accounting explicitly for time reversal.
 
 ## Previous progress: physical NLS energy variations and vector field
 

@@ -33042,3 +33042,53 @@ example (A : SourceAbelianMomentAtlas hp hp1 W s)
 
 end HamiltonianOrientationChecks
 end
+
+
+noncomputable section
+open Set NLS NLS.ZakharovShabat NLS.Poisson
+open scoped ENNReal
+namespace FiniteActionODEChecks
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- All finite combinations of actual action fields vanish at the zero source.
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+    (h2p : 2 ≤ p) (freq : ℤ → ℝ) (S : Finset ℤ) :
+    sourceFiniteActionHamiltonianVector hp hp1 h2p freq S 0 = 0 := by
+  apply D.complex_jacobian_injective (0 : realTypeSourceSubmodule p)
+  change (fderiv ℂ (sourceComplexBirkhoffMap hp hp1 t) (0 : realTypeSourceSubmodule p).val)
+    (sourceFiniteActionHamiltonianVector hp hp1 h2p freq S (0 : realTypeSourceSubmodule p).val) = _
+  rw [D.complex_jacobian_finiteActionHamiltonian h2p freq S (0 : realTypeSourceSubmodule p),map_zero]
+  change Birkhoff.finiteHamiltonianPhaseVelocity freq S (sourceComplexBirkhoffMap hp hp1 t 0) = 0
+  rw [D.complex_map_zero]
+  simp [Birkhoff.finiteHamiltonianPhaseVelocity]
+
+-- Adding arbitrary inactive indices to a cutoff leaves the original source vector unchanged.
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+    (h2p : 2 ≤ p) (freq : ℤ → ℝ) (S T : Finset ℤ) (φ : realTypeSourceSubmodule p)
+    (hz : ∀ n ∉ S, (sourceComplexBirkhoffMap hp hp1 t φ.val).1 n = 0 ∧
+      (sourceComplexBirkhoffMap hp hp1 t φ.val).2 n = 0) :
+    sourceFiniteActionHamiltonianVector hp hp1 h2p freq (S ∪ T) φ.val =
+      sourceFiniteActionHamiltonianVector hp hp1 h2p freq S φ.val := by
+  apply D.finiteActionHamiltonianVector_eq_of_support h2p freq (S ∪ T) S φ _ hz
+  intro n hn
+  exact hz n (fun h => hn (Finset.mem_union_left T h))
+
+-- One finite cutoff gives an autonomous ODE and finite-gap states for every real time.
+example {W₂ P₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    {V₂ B₂ X₂ : Set (CoeffPair 2)} {t₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W₂ s₂)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P₂ s₂)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₂ B₂ X₂ t₂)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ S : Finset ℤ, ∀ τ : ℝ,
+      A.hamiltonianOrdinarySourceFlow D le_rfl φ τ ∈ sourceFiniteGapLocus (by simp) (by norm_num) ∧
+      HasDerivAt (fun time => (A.hamiltonianOrdinarySourceFlow D le_rfl φ time).val)
+        (sourceFiniteActionHamiltonianVector (by simp) (by norm_num) le_rfl
+          (A.ordinaryPhaseFrequency le_rfl (A.hamiltonianOrdinarySourceFlow D le_rfl φ τ)) S
+          (A.hamiltonianOrdinarySourceFlow D le_rfl φ τ).val) τ := by
+  obtain ⟨S,hS⟩ := A.exists_finiteAction_ordinarySource_ODE hs D φ hf
+  exact ⟨S,fun τ => ⟨A.hamiltonianOrdinarySourceFlow_finiteGap D le_rfl φ hf τ,hS τ⟩⟩
+
+end FiniteActionODEChecks
+end

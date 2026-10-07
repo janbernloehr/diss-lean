@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: finite-gap spectral trajectories now have proved time
-derivatives in the original source norm. A verified sign inconsistency
-in equation (4.14) is handled by an explicit Hamiltonian-oriented time
-reversal. Identifying this derivative with the classical PDE field remains
-open. See `STATUS.md` for the sign convention and exact scope.
+Latest milestone: Hilbert finite-gap spectral trajectories satisfy the
+original action Hamiltonian ODE, with their actual physical frequencies
+and Hamiltonian time orientation. The source velocity is independent of
+the finite cutoff containing the active coordinates. Identification with
+the classical PDE field remains open. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -14134,3 +14134,42 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 Identification of the inverse-Jacobian velocity with the physical NLS
 energy field remains open. The classical PDE agreement and the overall
 dissertation formalization remain unfinished.
+
+## The finite-gap action Hamiltonian ODE
+
+The time derivative of every Hilbert finite-gap Hamiltonian-oriented
+ordinary spectral trajectory is now identified with a finite sum of the
+original source action Hamiltonian fields, weighted by the actual ordinary
+frequencies. The equation is autonomous: the frequencies may be evaluated
+at the current source. The trajectory remains finite-gap for all real time.
+
+`SourceFiniteActionHamiltonian.lean` identifies the actual complex Birkhoff
+differential with the rectangular Jacobian followed by the fixed complex
+coordinate change, and proves its injectivity at every real source. It
+then computes the differential of each finite frequency-weighted action
+field sum as the full finite phase velocity. Any two finite cutoffs
+containing all active coordinates give the same original source field.
+
+`SourceFiniteGapHamiltonianODE.lean` compares that differential with the
+proved full-norm trajectory derivative. Injectivity identifies the source
+velocities, removing the inverse Jacobian from the ODE statement. The
+existing frequency-invariance theorem gives the autonomous form. The
+initial coordinate cutoff contains the active coordinates for all time,
+and preservation of every action shows that finite-gap sources remain
+finite-gap. A public theorem supplies one finite cutoff for the entire
+Hilbert finite-gap trajectory.
+
+`Dynamics/FiniteHamiltonianPhaseDerivative.lean` now also exposes the
+coordinate evaluations of the finite phase velocity. Public examples
+prove vanishing of every finite action-field combination at the zero
+source, invariance under adding inactive cutoff indices, and simultaneous
+finite-gap preservation and the autonomous ODE at every real time.
+
+Validation: the full build passes (6108 jobs), all public examples pass,
+and the transitive axiom audit passes for 23058 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This uses the Hamiltonian time orientation established in the previous
+milestone. Identifying the weighted action-field sum with the physical NLS
+energy field is the remaining bridge to the classical PDE. The dissertation
+formalization remains unfinished.
