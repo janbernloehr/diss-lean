@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: physical NLS energy variations and vector field
+## Current milestone: Hamiltonian time orientation and finite-gap time derivatives
+
+Checking the classical PDE bridge exposed a sign inconsistency in the
+printed equation (4.14), verified directly on PDF page 98. With the stated
+coordinates `z = (x-i*y)/sqrt(2)` and the original source Poisson bracket,
+the action Hamiltonian rotation `(-y,x)` gives `z_t = -i*z`, `w_t = i*w`.
+Equation (4.14) instead prints the opposite phases. Earlier Section 22
+flow definitions retain that literal printed convention. The new
+`hamiltonianOrdinarySourceFlow` explicitly reverses their time parameter
+and is the convention to use for the classical PDE bridge.
+
+`SourceComplexActionHamiltonian.lean` proves the actual complex-coordinate
+velocity of every original source action Hamiltonian, including collapsed
+gaps. The result follows from the proved canonical rectangular brackets
+and the exact complex change of coordinates, so the signs are derived
+from the existing source Poisson structure.
+
+`Dynamics/HamiltonianPhaseFlow.lean` defines the time-reversed coordinate
+flow, proves both scalar time derivatives and the group law, and proves
+that the printed positive first phase cannot have the Hamiltonian velocity
+when its frequency and amplitude are nonzero.
+`Dynamics/FiniteHamiltonianPhaseDerivative.lean` differentiates the full
+sequence-valued trajectory for finite Birkhoff support. The frequency
+sequence may be unbounded; only the active coordinate set must be finite.
+
+`SourceHamiltonianOrdinaryFlow.lean` lifts that full-norm derivative through
+the actual inverse real Birkhoff Jacobian. Every finite-gap source in
+`1 < p <= 2` consequently has a differentiable trajectory in the original
+source norm, with an explicit derivative formula. The Hamiltonian-oriented
+ordinary flow also has the global group law, joint continuity, analytic
+initial-data time maps, and conservation of every action and physical mass.
+
+Public examples check the full Hilbert-norm velocity of a unit mode,
+rejection of the opposite printed velocity, the sign derived from the
+actual action Hamiltonian, and finite-gap source-norm differentiability.
+
+Validation: the full build passes (6106 jobs), all public examples pass,
+and the transitive axiom audit passes for 23038 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Identification of the inverse-Jacobian velocity with the physical NLS
+energy field remains open. The classical PDE agreement and the overall
+dissertation formalization remain unfinished.
+
+## Previous milestone: physical NLS energy variations and vector field
 
 The first variations of the actual physical third hierarchy Hamiltonian
 are now proved for arbitrary smooth period-one complex fields and smooth

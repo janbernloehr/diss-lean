@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual physical NLS energy has proved variational
-gradients. Its Hamiltonian vector field gives the classical defocusing NLS
-right-hand side, including for the smooth representatives of every finite-gap
-source. Identifying this field with the spectral flow's time derivative
-remains open. See `STATUS.md`.
+Latest milestone: finite-gap spectral trajectories now have proved time
+derivatives in the original source norm. A verified sign inconsistency
+in equation (4.14) is handled by an explicit Hamiltonian-oriented time
+reversal. Identifying this derivative with the classical PDE field remains
+open. See `STATUS.md` for the sign convention and exact scope.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -14090,3 +14090,47 @@ This identifies the physical Hamiltonian field. Proving that it equals
 the time derivative of the constructed spectral flow, and establishing
 agreement with classical PDE solutions, remain open. The dissertation
 remains unfinished.
+
+## Hamiltonian time orientation and finite-gap time derivatives
+
+Checking the classical PDE bridge exposed a sign inconsistency in the
+printed equation (4.14), verified directly on PDF page 98. With the stated
+coordinates `z = (x-i*y)/sqrt(2)` and the original source Poisson bracket,
+the action Hamiltonian rotation `(-y,x)` gives `z_t = -i*z`, `w_t = i*w`.
+Equation (4.14) instead prints the opposite phases. Earlier Section 22
+flow definitions retain that literal printed convention. The new
+`hamiltonianOrdinarySourceFlow` explicitly reverses their time parameter
+and is the convention to use for the classical PDE bridge.
+
+`SourceComplexActionHamiltonian.lean` proves the actual complex-coordinate
+velocity of every original source action Hamiltonian, including collapsed
+gaps. The result follows from the proved canonical rectangular brackets
+and the exact complex change of coordinates, so the signs are derived
+from the existing source Poisson structure.
+
+`Dynamics/HamiltonianPhaseFlow.lean` defines the time-reversed coordinate
+flow, proves both scalar time derivatives and the group law, and proves
+that the printed positive first phase cannot have the Hamiltonian velocity
+when its frequency and amplitude are nonzero.
+`Dynamics/FiniteHamiltonianPhaseDerivative.lean` differentiates the full
+sequence-valued trajectory for finite Birkhoff support. The frequency
+sequence may be unbounded; only the active coordinate set must be finite.
+
+`SourceHamiltonianOrdinaryFlow.lean` lifts that full-norm derivative through
+the actual inverse real Birkhoff Jacobian. Every finite-gap source in
+`1 < p <= 2` consequently has a differentiable trajectory in the original
+source norm, with an explicit derivative formula. The Hamiltonian-oriented
+ordinary flow also has the global group law, joint continuity, analytic
+initial-data time maps, and conservation of every action and physical mass.
+
+Public examples check the full Hilbert-norm velocity of a unit mode,
+rejection of the opposite printed velocity, the sign derived from the
+actual action Hamiltonian, and finite-gap source-norm differentiability.
+
+Validation: the full build passes (6106 jobs), all public examples pass,
+and the transitive axiom audit passes for 23038 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Identification of the inverse-Jacobian velocity with the physical NLS
+energy field remains open. The classical PDE agreement and the overall
+dissertation formalization remain unfinished.

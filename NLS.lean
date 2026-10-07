@@ -2685,3 +2685,7 @@ import NLS.ZakharovShabat.SourceOrdinaryCorollary22_2III
 import NLS.ZakharovShabat.ClassicalNLSEnergyVariation
 import NLS.ZakharovShabat.ClassicalNLSVectorField
 import NLS.ZakharovShabat.SourceFiniteGapNLSVariation
+import NLS.Dynamics.HamiltonianPhaseFlow
+import NLS.Dynamics.FiniteHamiltonianPhaseDerivative
+import NLS.ZakharovShabat.SourceComplexActionHamiltonian
+import NLS.ZakharovShabat.SourceHamiltonianOrdinaryFlow

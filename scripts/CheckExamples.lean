@@ -32994,3 +32994,51 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
 
 end PhysicalNLSVariationChecks
 end
+
+
+noncomputable section
+open Set NLS NLS.ZakharovShabat NLS.Poisson
+open scoped ENNReal
+namespace HamiltonianOrientationChecks
+
+-- A single unit mode has the Hamiltonian velocity (-i,+i) in the full Hilbert norm.
+example : HasDerivAt
+    (fun τ => Birkhoff.hamiltonianPhaseFlow (fun _ => 1) τ
+      ((lp.single 2 0 (1 : ℂ),lp.single 2 0 (1 : ℂ)) : Coeff 2 × Coeff 2))
+    (lp.single 2 0 (-Complex.I),lp.single 2 0 Complex.I) 0 := by
+  have h := Birkhoff.hasDerivAt_hamiltonianPhaseFlow_of_support (fun _ => 1) {0}
+    ((lp.single 2 0 (1 : ℂ),lp.single 2 0 (1 : ℂ)) : Coeff 2 × Coeff 2)
+    (by intro n hn; simp only [Finset.mem_singleton] at hn; simp [lp.single_apply,Ne.symm hn]) 0
+  simpa [Birkhoff.finiteHamiltonianPhaseVelocity,lp.single_apply,Pi.single_apply] using! h
+
+-- The printed positive first phase cannot satisfy that same Hamiltonian ODE.
+example : ¬ HasDerivAt
+    (fun τ => (Birkhoff.phaseFlow (fun _ => 1) τ
+      ((lp.single 2 0 (1 : ℂ),lp.single 2 0 (1 : ℂ)) : Coeff 2 × Coeff 2)).1 0)
+    (-Complex.I) 0 := by
+  simpa [lp.single_apply,Pi.single_apply] using
+    Birkhoff.not_hasDerivAt_printedPhaseFlow_hamiltonian (fun _ => 1)
+      ((lp.single 2 0 (1 : ℂ),lp.single 2 0 (1 : ℂ)) : Coeff 2 × Coeff 2) 0 one_ne_zero
+      (by simp [lp.single_apply])
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- The sign comes from the actual source action Hamiltonian and actual Birkhoff map.
+example (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+    (h2p : 2 ≤ p) (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    (fderiv ℂ (fun ψ => (sourceComplexBirkhoffMap hp hp1 t ψ).1 n) φ.val)
+      (sourceHamiltonianVector h2p (sourceComplexAction hp hp1 n) φ.val) =
+        -Complex.I*(sourceComplexBirkhoffMap hp hp1 t φ.val).1 n := by
+  simpa using (D.complex_coordinates_actionHamiltonian h2p n n φ).1
+
+-- Finite spectral support gives differentiation in the original source norm.
+example (A : SourceAbelianMomentAtlas hp hp1 W s)
+    (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t) (hp2 : p ≤ 2)
+    (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    Differentiable ℝ (fun τ => A.hamiltonianOrdinarySourceFlow D hp2 φ τ) :=
+  A.differentiable_hamiltonianOrdinarySourceFlow_finiteGap D hp2 φ hf
+
+end HamiltonianOrientationChecks
+end

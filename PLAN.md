@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Latest progress: physical NLS energy variations and vector field
+## Latest progress: Hamiltonian time orientation and finite-gap time derivatives
+
+Checking the classical PDE bridge exposed a sign inconsistency in the
+printed equation (4.14), verified directly on PDF page 98. With the stated
+coordinates `z = (x-i*y)/sqrt(2)` and the original source Poisson bracket,
+the action Hamiltonian rotation `(-y,x)` gives `z_t = -i*z`, `w_t = i*w`.
+Equation (4.14) instead prints the opposite phases. Earlier Section 22
+flow definitions retain that literal printed convention. The new
+`hamiltonianOrdinarySourceFlow` explicitly reverses their time parameter
+and is the convention to use for the classical PDE bridge.
+
+`SourceComplexActionHamiltonian.lean` proves the actual complex-coordinate
+velocity of every original source action Hamiltonian, including collapsed
+gaps. The result follows from the proved canonical rectangular brackets
+and the exact complex change of coordinates, so the signs are derived
+from the existing source Poisson structure.
+
+`Dynamics/HamiltonianPhaseFlow.lean` defines the time-reversed coordinate
+flow, proves both scalar time derivatives and the group law, and proves
+that the printed positive first phase cannot have the Hamiltonian velocity
+when its frequency and amplitude are nonzero.
+`Dynamics/FiniteHamiltonianPhaseDerivative.lean` differentiates the full
+sequence-valued trajectory for finite Birkhoff support. The frequency
+sequence may be unbounded; only the active coordinate set must be finite.
+
+`SourceHamiltonianOrdinaryFlow.lean` lifts that full-norm derivative through
+the actual inverse real Birkhoff Jacobian. Every finite-gap source in
+`1 < p <= 2` consequently has a differentiable trajectory in the original
+source norm, with an explicit derivative formula. The Hamiltonian-oriented
+ordinary flow also has the global group law, joint continuity, analytic
+initial-data time maps, and conservation of every action and physical mass.
+
+Public examples check the full Hilbert-norm velocity of a unit mode,
+rejection of the opposite printed velocity, the sign derived from the
+actual action Hamiltonian, and finite-gap source-norm differentiability.
+
+Validation: the full build passes (6106 jobs), all public examples pass,
+and the transitive axiom audit passes for 23038 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Identification of the inverse-Jacobian velocity with the physical NLS
+energy field remains open. The classical PDE agreement and the overall
+dissertation formalization remain unfinished.
+
+Next implementation targets:
+
+1. Identify the proved inverse-Jacobian time derivative with the finite sum
+   of action Hamiltonian fields weighted by the physical frequencies.
+2. Use the physical Sobolev energy decomposition and its variational
+   derivatives to identify that field with the classical NLS right-hand side.
+3. Establish classical PDE agreement and transfer nonextension to the
+   Hamiltonian-oriented solution map, accounting explicitly for time reversal.
+
+## Previous progress: physical NLS energy variations and vector field
 
 The first variations of the actual physical third hierarchy Hamiltonian
 are now proved for arbitrary smooth period-one complex fields and smooth
@@ -39,14 +92,6 @@ This identifies the physical Hamiltonian field. Proving that it equals
 the time derivative of the constructed spectral flow, and establishing
 agreement with classical PDE solutions, remain open. The dissertation
 remains unfinished.
-
-Next implementation targets:
-
-1. Transport the physical energy gradient through the canonical Birkhoff
-   differential and identify the spectral flow's time derivative, starting
-   with Hilbert finite-gap sources.
-2. Establish agreement with classical PDE solutions and transfer the
-   proved spectral nonextension results to the classical solution map.
 
 ## Previous progress: ordinary source nonextension in weaker norms
 
