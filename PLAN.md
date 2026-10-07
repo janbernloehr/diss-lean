@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: the pointwise physical NLS equation
+## Latest progress: classical uniqueness and finite-gap agreement
+
+The actual finite-gap physical NLS flow now has a unique-existence theorem
+in the class of smooth period-one spatial trajectories that are
+differentiable in time in the uniform norm. Any such classical solution
+with the same initial physical representative agrees with the constructed
+Hamiltonian-oriented spectral flow at every real time and spatial point.
+
+`ClassicalNLSDifferenceEstimate.lean` proves the cubic Lipschitz bound
+`6 M²` on a complex disc. Periodic integration by parts cancels the linear
+Schrödinger contribution, giving the actual difference-energy estimate
+`|E′| ≤ 12 M² E`.
+
+`ClassicalNLSUniqueness.lean` identifies normalized circle L² pairings with
+the physical unit-interval integrals. Uniform-norm differentiability gives
+the energy derivative through bounded inclusion into L², and the PDE gives
+the derivative bound. Continuity supplies an amplitude bound on each
+compact time interval. Grönwall, including time reflection, proves equality
+at all real times from equality at any one time. No energy inequality,
+global amplitude bound, or finite-gap assumption is part of the general
+uniqueness hypothesis.
+
+`SourceFiniteGapClassicalNLS.lean` realizes the actual finite-gap flow as a
+uniform-norm differentiable continuous-function trajectory, verifies the
+classical solution hypotheses, and proves agreement and unique existence.
+The existence theorem constructs its atlas and Birkhoff data internally.
+
+Public examples check unit-period mass normalization, the zero solution,
+uniqueness forward and backward from a negative initial time, unique
+finite-gap existence, and agreement with the physical flow at negative time.
+
+Validation: the full build passes (6130 jobs), all public examples pass,
+and the transitive axiom audit passes for 23250 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Agreement beyond finite-gap data and transfer of the nonextension theorem
+with the Hamiltonian time orientation remain unfinished. The dissertation
+formalization is not complete.
+
+Next implementation targets:
+
+1. Transfer nonextension through the proved finite-gap classical agreement
+   and Hamiltonian time reversal. The underlying source obstruction already
+   requires agreement only on finite-gap Hilbert representatives.
+2. Extend classical solution agreement beyond finite-gap initial data.
+
+## Previous progress: the pointwise physical NLS equation
 
 The constructed Hamiltonian-oriented finite-gap trajectory now satisfies
 `i*u_t = -u_xx + 2*|u|^2*u` at every real time and spatial point. Both

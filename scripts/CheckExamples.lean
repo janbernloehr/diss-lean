@@ -33405,3 +33405,49 @@ example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by s
   exact ⟨u,hu,fun time => (h time).2.1,fun time x => ((h time).2.2 x).2⟩
 
 end PointwiseNLSChecks
+
+
+namespace ClassicalNLSChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set
+open scoped ENNReal
+
+-- Normalized period-two Haar measure gives mass one to the constant unit function.
+example : ‖ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ
+    (ContinuousMap.const (AddCircle (2 : ℝ)) (1 : ℂ))‖^2 = 1 := by
+  rw [norm_toLp_sq_eq_unit _ (fun _ => rfl)]
+  simp
+
+-- The zero trajectory satisfies the PDE, including the cubic and second derivative.
+private theorem zero_trajectory : IsClassicalNLSTrajectory
+    (fun _ : ℝ => (0 : C(AddCircle (2 : ℝ), ℂ))) := by
+  refine ⟨differentiable_const _,fun _ => contDiff_const,fun _ _ => rfl,?_⟩
+  intro time x
+  simp [scalarClassicalNLSVectorField,classicalNLSCubic]
+
+-- Initial equality at a negative time determines the solution in both directions.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) (hu : IsClassicalNLSTrajectory u)
+    (hzero : u (-3) = 0) : u 7 = 0 ∧ u (-8) = 0 := by
+  have he := hu.eq_of_eq_at zero_trajectory (-3) hzero
+  exact ⟨congrFun he 7,congrFun he (-8)⟩
+
+-- Unique existence constructs the spectral data; the caller supplies only finite-gap data.
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃! u : ℝ → C(AddCircle (2 : ℝ), ℂ), IsClassicalNLSTrajectory u ∧
+      ∀ x : ℝ, u 0 (x : AddCircle (2 : ℝ)) =
+        (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 x :=
+  existsUnique_sourceFiniteGap_classicalNLS_trajectory φ hf
+
+-- Agreement with the physical spectral flow holds also at negative time.
+example {W P V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) (hu : IsClassicalNLSTrajectory u)
+    (hinit : ∀ x : ℝ, u 0 (x : AddCircle (2 : ℝ)) =
+      (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 x) (x : ℝ) :
+    u (-2) (x : AddCircle (2 : ℝ)) = (A.hamiltonianOrdinaryPhysicalFlow D φ hf (-2)).1 x :=
+  A.classicalNLS_eq_hamiltonianOrdinaryPhysicalFlow hs D φ hf u hu hinit (-2) x
+
+end ClassicalNLSChecks

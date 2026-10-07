@@ -2710,3 +2710,6 @@ import NLS.ZakharovShabat.SourceFiniteGapWeightedLift
 import NLS.ZakharovShabat.SourceFiniteGapSobolevTime
 import NLS.Fourier.PeriodOneFourierUniqueness
 import NLS.ZakharovShabat.SourceFiniteGapPointwiseNLS
+import NLS.ZakharovShabat.ClassicalNLSDifferenceEstimate
+import NLS.ZakharovShabat.ClassicalNLSUniqueness
+import NLS.ZakharovShabat.SourceFiniteGapClassicalNLS
