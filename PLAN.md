@@ -1,6 +1,58 @@
 # Implementation plan
 
-## Latest progress: tame Sobolev estimates and two-sided norm growth
+## Latest progress: bounded continuation and Sobolev regularity continuation
+
+Bounded Fourier NLS trajectories now extend past either finite endpoint.
+For every nonnegative real Sobolev order, a compatible reference solution
+on the closed interval supplies continuation without assuming either a high
+norm bound or a low norm bound. Compactness gives the latter, and the tame
+Gronwall estimate gives the former.
+
+`FourierNLSEndpointUniqueness.lean` proves quantitative two-sided stability
+for interaction curves and uniqueness from every closed-interval initial
+time. The original Fourier equations inherit endpoint uniqueness and
+cross-weight compatibility, including singleton intervals.
+
+`UniformLocalNLS.lean` defines the explicit half-lifespan
+`nlsLocalTime B = 1/(2*(B+1)^3+1)` for every norm bound `B ≥ 0`.
+The same interval length works for every spectral weight and every real
+initial time. It constructs strong interaction solutions and restores the
+original coefficient equations with the prescribed original initial value.
+
+`ClosedIntegralCurveJoin.lean` glues solutions of a time-dependent field
+on adjacent closed intervals. Matching endpoint values and the within-interval
+derivatives give the derivative at the join itself. `FourierNLSContinuation.lean`
+transfers this to original Fourier trajectories and proves uniform left and
+right extensions preserving the entire old closed interval. A trajectory
+bounded on all closed truncations of a half-open interval extends past the
+missing endpoint, preserving every old value before it. No assigned value
+or limiting value at the missing endpoint is assumed.
+
+`FourierNLSRegularityContinuation.lean` combines closed-endpoint compatibility,
+compactness of a reference trajectory, and tame growth. It proves continuation
+in both directions for every additive spectral weight and, in particular,
+every nonnegative real Sobolev order. The reference weight need not be ordered
+with the higher weight. These are continuation criteria for supplied trajectories;
+constructing a higher-regularity solution on a full prescribed reference
+interval is the next existence step.
+
+Public examples cover cross-weight uniqueness from the right endpoint,
+the explicit lifespan `1/55` at norm bound two, negative initial times,
+the original equation at a negative joining time and Fourier mode, preservation
+of the old interval under left extension, both half-open continuation criteria,
+and fractional-order continuation with no norm-bound premises.
+
+Validation: the full build passes (6183 jobs), all public examples pass,
+and the transitive axiom audit passes for 23701 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: assemble local existence and continuation into common-interval
+persistence for all Sobolev orders, identify the synthesized physical PDE,
+and prove global smooth classical existence using conservation. The exact
+all-smooth-sequence wellposedness assembly and dissertation-wide inventory
+also remain incomplete.
+
+## Previous milestone: tame Sobolev estimates and two-sided norm growth
 
 Tame convolution and cubic NLS estimates now control every nonnegative real
 Sobolev order using only one high-norm factor. The resulting a priori growth
@@ -396,16 +448,16 @@ remain. The dissertation is not complete.
 Next implementation targets:
 
 1. Complete smooth classical existence using the compatible local Fourier
-   solutions and the proved tame Sobolev growth estimates. Prove a continuation
-   criterion for bounded weighted interaction trajectories: first strengthen
-   uniqueness to include endpoint initial times using the new interval
-   Gronwall lemma, and expose a uniform local lifespan for bounded initial
-   norms at arbitrary initial times. Join compatible local solutions, then
-   use a bounded low-norm reference solution and the high-norm bound to obtain
-   common-interval persistence of arbitrarily high Sobolev regularity. Identify
-   the synthesized physical PDE and establish global continuation using
-   conserved quantities. The a priori estimate on an existing interval alone
-   does not supply a common smooth lifetime.
+   solutions, uniform local lifespan, and two-sided continuation criteria.
+   Construct higher-weight solutions on a full prescribed reference interval:
+   derive one high-norm bound from the reference on the whole target interval,
+   fix its uniform positive extension length, and induct over the truncated
+   time grid until it covers the interval. Run the construction in both time
+   directions and join at the prescribed initial time. Then
+   obtain common-interval persistence for all Sobolev orders, identify the
+   synthesized physical PDE, and establish global smooth classical existence
+   using conserved quantities. The continuation criterion for an already
+   supplied trajectory does not yet construct that common-interval family.
    Then formalize the all-smooth-sequence definition on page 86 and assemble
    the analytic solution maps using the proved cross-exponent approximation
    results and their actual trajectory-domain guards.

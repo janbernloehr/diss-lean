@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: tame Sobolev estimates now bound the cubic NLS field by
-one high norm and two raw Fourier ℓ¹ norms. Higher norms obey an explicit
-exponential bound in both time directions, including interval endpoints;
-the low bound may come from an independently constructed compatible solution.
-Continuation, common-interval smoothness, physical PDE identification, global
-classical existence, and the full wellposedness assembly remain to be completed.
+Latest milestone: bounded Fourier NLS trajectories now extend past either
+finite endpoint, using an explicit uniform local lifespan and endpoint
+uniqueness. At every nonnegative real Sobolev order, a compatible reference
+solution supplies continuation without assumed norm bounds. Common-interval
+existence for all orders, physical PDE identification, global smooth classical
+existence, and the full wellposedness assembly remain to be completed.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

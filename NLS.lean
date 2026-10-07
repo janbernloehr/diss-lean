@@ -2761,3 +2761,8 @@ import NLS.SequenceSpaces.TameSpectralConvolution
 import NLS.Fourier.TameCubicNLS
 import NLS.FunctionalAnalysis.IntervalNormGronwall
 import NLS.Fourier.FourierNLSNormGrowth
+import NLS.Fourier.FourierNLSEndpointUniqueness
+import NLS.Fourier.UniformLocalNLS
+import NLS.FunctionalAnalysis.ClosedIntegralCurveJoin
+import NLS.Fourier.FourierNLSContinuation
+import NLS.Fourier.FourierNLSRegularityContinuation

@@ -34361,3 +34361,74 @@ example {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     hd (K := 0) (by simp) (by norm_num : (-2 : ℝ) ≤ 3)
 
 end TameFourierNLSChecks
+
+
+namespace FourierNLSContinuationChecks
+open NLS NLS.Fourier NLS.FunctionalAnalysis Set
+
+-- The right endpoint determines all coefficients, even in different weights.
+example (w v : SpectralWeight)
+    (u : ℝ → WeightedCoeff w.toWeight 1) (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn w (-2) 3 u) (hz : IsFourierNLSTrajectoryOn v (-2) 3 z)
+    (hinit : ∀ n : ℤ, (u 3).val n = (z 3).val n) : (u (-2)).val (-7) = (z (-2)).val (-7) :=
+  hu.eq_coefficients_of_eq_at_closed hz 3 (by constructor <;> norm_num) hinit (-2)
+    (by constructor <;> norm_num) (-7)
+
+-- The explicit half-lifespan for the norm ball of radius two is 1/55.
+example : nlsLocalTime 2 = (1/55 : ℝ) := by norm_num [nlsLocalTime]
+
+-- Uniform existence is centered at a nonzero negative initial time.
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 1) (ha : ‖a‖ ≤ 2) :
+    ∃ u : ℝ → WeightedCoeff w.toWeight 1, u (-3) = a ∧
+      IsFourierNLSTrajectoryOn w (-3-1/55) (-3+1/55) u := by
+  simpa only [show nlsLocalTime 2 = (1/55 : ℝ) by norm_num [nlsLocalTime]] using
+    exists_fourierNLS_on_uniform_interval w 2 (by norm_num) (-3) a ha
+
+-- The equation remains valid at the join itself, including a negative Fourier mode.
+example (w : SpectralWeight) (u v : ℝ → WeightedCoeff w.toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn w (-2) (-1) u)
+    (hv : IsFourierNLSTrajectoryOn w (-1) 3 v) (he : u (-1) = v (-1)) :
+    HasDerivWithinAt (fun r => (joinClosedCurves (-1) u v r).val (-4))
+      (nlsLinearSymbol (-4)*(joinClosedCurves (-1) u v (-1)).val (-4) +
+        (cubicNLS w (joinClosedCurves (-1) u v (-1))).val (-4)) (Icc (-2 : ℝ) 3) (-1) :=
+  (hu.join hv (by norm_num) (by norm_num) he).equation (-1) (by constructor <;> norm_num) (-4)
+
+-- Left extension preserves the complete old closed interval and uses the same lifespan.
+example (w : SpectralWeight) (u : ℝ → WeightedCoeff w.toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn w 2 3 u) (hbound : ‖u 2‖ ≤ 2) :
+    ∃ z : ℝ → WeightedCoeff w.toWeight 1,
+      IsFourierNLSTrajectoryOn w (2-1/55) 3 z ∧ EqOn z u (Icc (2 : ℝ) 3) := by
+  simpa only [show nlsLocalTime 2 = (1/55 : ℝ) by norm_num [nlsLocalTime]] using
+    hu.extend_left (by norm_num) 2 (by norm_num) hbound
+
+-- A finite open right endpoint is crossed without assuming its assigned value is correct.
+example (w : SpectralWeight) (u : ℝ → WeightedCoeff w.toWeight 1)
+    (hu : ∀ c ∈ Ico (-3 : ℝ) (-1), IsFourierNLSTrajectoryOn w (-3) c u)
+    (hb : ∀ r ∈ Ico (-3 : ℝ) (-1), ‖u r‖ ≤ 5) :
+    ∃ d > (-1 : ℝ), ∃ z : ℝ → WeightedCoeff w.toWeight 1,
+      IsFourierNLSTrajectoryOn w (-3) d z ∧ EqOn z u (Ico (-3 : ℝ) (-1)) :=
+  exists_fourierNLS_extension_of_bounded_Ico w (-3) (-1) (by norm_num) u hu 5 (by norm_num) hb
+
+-- The backward criterion preserves all old values on the opposite half-open interval.
+example (w : SpectralWeight) (u : ℝ → WeightedCoeff w.toWeight 1)
+    (hu : ∀ c ∈ Ioc (-2 : ℝ) 1, IsFourierNLSTrajectoryOn w c 1 u)
+    (hb : ∀ r ∈ Ioc (-2 : ℝ) 1, ‖u r‖ ≤ 5) :
+    ∃ d < (-2 : ℝ), ∃ z : ℝ → WeightedCoeff w.toWeight 1,
+      IsFourierNLSTrajectoryOn w d 1 z ∧ EqOn z u (Ioc (-2 : ℝ) 1) :=
+  exists_fourierNLS_extension_of_bounded_Ioc w (-2) 1 (by norm_num) u hu 5 (by norm_num) hb
+
+-- A compatible reference suffices for fractional-order continuation; neither norm bound is assumed.
+example (v : SpectralWeight)
+    (u : ℝ → WeightedCoeff (SpectralWeight.sobolev (3/2) (by norm_num)).toWeight 1)
+    (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hu : ∀ c ∈ Ico (0 : ℝ) 2,
+      IsFourierNLSTrajectoryOn (SpectralWeight.sobolev (3/2) (by norm_num)) 0 c u)
+    (hz : IsFourierNLSTrajectoryOn v 0 2 z)
+    (hinit : ∀ n : ℤ, (u 0).val n = (z 0).val n) :
+    ∃ d > (2 : ℝ), ∃ q : ℝ → WeightedCoeff (SpectralWeight.sobolev (3/2) (by norm_num)).toWeight 1,
+      IsFourierNLSTrajectoryOn (SpectralWeight.sobolev (3/2) (by norm_num)) 0 d q ∧
+        EqOn q u (Ico (0 : ℝ) 2) :=
+  exists_sobolev_fourierNLS_extension_of_reference_Ico (3/2) (by norm_num) v 0 2
+    (by norm_num) u z hu hz hinit
+
+end FourierNLSContinuationChecks
