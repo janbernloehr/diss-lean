@@ -34240,3 +34240,50 @@ example (a : WeightedCoeff (SpectralWeight.sobolev 4 (by norm_num)).toWeight 1) 
   exact (hu time ⟨ht.1.le,ht.2.le⟩ n).hasDerivAt (Icc_mem_nhds ht.1 ht.2)
 
 end LocalFourierNLSChecks
+
+
+namespace FourierNLSUniquenessChecks
+open NLS NLS.Fourier Set
+
+-- Continuous mode velocities give the strong derivative even at the left endpoint.
+example (w : SpectralWeight) (f g : ℝ → WeightedCoeff w.toWeight 1)
+    (hf : ContinuousOn f (Icc (-2 : ℝ) 3)) (hg : ContinuousOn g (Icc (-2 : ℝ) 3))
+    (hd : ∀ time ∈ Ioo (-2 : ℝ) 3, ∀ n : ℤ,
+      HasDerivAt (fun r => (f r).val n) ((g time).val n) time) :
+    HasDerivWithinAt f (g (-2)) (Icc (-2 : ℝ) 3) (-2) :=
+  w.hasDerivWithinAt_of_coordinate_derivatives (-2) 3 f g hf hg hd (-2) (by constructor <;> norm_num)
+
+-- The Banach integral identity holds for negative-time points, with a nonzero base time.
+example (w : SpectralWeight) (u : ℝ → WeightedCoeff w.toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn w (-2) 3 u) :
+    nlsToInteraction w u (-1) = nlsToInteraction w u (-2) +
+      ∫ r in (-2 : ℝ)..(-1), nlsInteraction w r (nlsToInteraction w u r) :=
+  hu.interaction_eq_add_integral (-1) (by constructor <;> norm_num)
+
+-- Uniqueness starts at an arbitrary interior time and reaches both interval endpoints.
+example (w : SpectralWeight) (u v : ℝ → WeightedCoeff w.toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn w (-2) 3 u)
+    (hv : IsFourierNLSTrajectoryOn w (-2) 3 v) (hinit : u (-1) = v (-1)) :
+    u (-2) = v (-2) ∧ u 3 = v 3 := by
+  have he := hu.eqOn_of_eq_at hv (-1) (by constructor <;> norm_num) hinit
+  exact ⟨he (by constructor <;> norm_num),he (by constructor <;> norm_num)⟩
+
+-- Different weights and different lifetimes give the same original negative modes on overlap.
+example (w v : SpectralWeight)
+    (u : ℝ → WeightedCoeff w.toWeight 1) (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn w (-3) 2 u)
+    (hz : IsFourierNLSTrajectoryOn v (-1) 4 z)
+    (hinit : ∀ n : ℤ, (u 0).val n = (z 0).val n) :
+    (u (-1)).val (-4) = (z (-1)).val (-4) ∧ (u 2).val (-4) = (z 2).val (-4) := by
+  have he := hu.eq_coefficients_on_overlap hz 0 (by constructor <;> norm_num) hinit
+  exact ⟨he (-1) (by constructor <;> norm_num) (-4),he 2 (by constructor <;> norm_num) (-4)⟩
+
+-- Unique existence constrains only the asserted local interval; exterior values are unrestricted.
+example (w : SpectralWeight) (u₀ : WeightedCoeff w.toWeight 1) :
+    ∃ T > 0, ∃ u : ℝ → WeightedCoeff w.toWeight 1,
+      u 0 = u₀ ∧ IsFourierNLSTrajectoryOn w (-T) T u ∧
+      ∀ v : ℝ → WeightedCoeff w.toWeight 1,
+        IsFourierNLSTrajectoryOn w (-T) T v → v 0 = u₀ → EqOn v u (Icc (-T) T) :=
+  exists_unique_local_fourierNLSTrajectory w u₀
+
+end FourierNLSUniquenessChecks

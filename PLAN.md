@@ -1,6 +1,57 @@
 # Implementation plan
 
-## Latest progress: local weighted Fourier NLS existence
+## Latest progress: local Fourier uniqueness and weight compatibility
+
+Local weighted Fourier NLS solutions are now unique on their asserted
+intervals and compatible across arbitrary spectral weights. The statements
+apply to every norm-continuous curve satisfying the original mode equations,
+not just to the particular solution selected by the existence construction.
+Equality at any interior initial time determines the entire closed interval.
+
+`WeightedCoordinateFTC.lean` proves that continuous weighted curves with
+continuous coordinate velocities satisfy the full Bochner integral identity.
+Bounded coefficient evaluation commutes with integration; the scalar
+fundamental theorem identifies every coefficient. Differentiating that
+identity gives the actual weighted Banach-space derivative, including
+one-sided derivatives at the interval endpoints.
+
+`FourierNLSIntegral.lean` packages the mode equations and norm continuity in
+`IsFourierNLSTrajectoryOn`. Removing the free phases cancels the unbounded
+linear symbol in each coordinate. The coordinate-to-integral theorem then
+supplies the strong interaction equation and its integral form. Restriction
+to smaller closed intervals preserves the trajectory predicate.
+
+`FourierNLSUniqueness.lean` derives a common norm bound for any two interaction
+curves from compactness and applies the uniform cubic Lipschitz estimate.
+It proves uniqueness from any interior time and combines it with local
+existence. Uniqueness is correctly stated as equality on the interval;
+values outside that interval are unrestricted.
+
+`FourierNLSWeightCompatibility.lean` proves that bounded weight inclusions
+commute with free evolution, the actual cubic convolution, and the interaction
+field, and preserve the original trajectory equations. Comparing both curves
+in the unit-weight space proves coefficient equality even for incomparable
+weights. Independently constructed solutions on different intervals agree
+on their closed overlap when the shared initial time is interior to it.
+
+Public examples cover strong endpoint derivatives from scalar coordinate
+equations, negative-time Bochner identities with a nonzero base time,
+uniqueness from a nonzero interior time, both overlap endpoints and negative
+modes across arbitrary weights, and the interval-scoped unique existence theorem.
+
+Validation: the full build passes (6174 jobs), all public examples pass,
+and the transitive axiom audit passes for 23658 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: prove persistence of arbitrarily high Sobolev regularity on a
+common time interval, identify the synthesized physical classical PDE, and
+use conservation and continuation to construct global classical solutions
+for all smooth initial data. Compatibility alone does not prevent the
+individual weighted existence intervals from shrinking as regularity grows.
+The dissertation’s all-smooth-sequence wellposedness assembly and full
+inventory remain incomplete.
+
+## Previous milestone: local weighted Fourier NLS existence
 
 Every initial datum in a spectral-weighted ℓ¹ space now has a local,
 norm-continuous Fourier NLS solution on a positive symmetric time interval.
@@ -298,13 +349,17 @@ remain. The dissertation is not complete.
 
 Next implementation targets:
 
-1. Complete smooth classical existence from the constructed local weighted
-   Fourier solutions: prove compatible local uniqueness, common-interval
-   persistence of higher Sobolev regularity, physical PDE identification,
-   and global continuation using conserved quantities. Then formalize the
-   all-smooth-sequence solution definition on page 86 and assemble global
-   and local analytic solution maps using the proved cross-exponent
-   approximation results and their actual trajectory-domain guards.
+1. Complete smooth classical existence using the now compatible local
+   Fourier solutions. First derive a cubic estimate linear in the higher
+   Sobolev norm and quadratic in the unweighted ℓ¹ norm; the existing exact
+   shifted-norm sum and convolution series provide a route to that estimate.
+   Use it to prove common-interval persistence of arbitrarily high Sobolev
+   regularity, identify the synthesized physical PDE, and establish global
+   continuation using conserved quantities. Compatibility of the
+   weighted solutions alone does not supply a common smooth lifetime.
+   Then formalize the all-smooth-sequence definition on page 86 and assemble
+   the analytic solution maps using the proved cross-exponent approximation
+   results and their actual trajectory-domain guards.
 2. Prove compatibility on overlapping source neighborhoods and time intervals
    and across admissible exponents; assemble Theorems 18.5 and 22.1 and
    Corollary 22.2 only after their full hypotheses and conclusions are met.

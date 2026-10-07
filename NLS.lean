@@ -2753,3 +2753,7 @@ import NLS.SequenceSpaces.WeightedPhaseFlow
 import NLS.Fourier.CubicNLS
 import NLS.Fourier.LocalNLSInteraction
 import NLS.Fourier.LocalNLSExistence
+import NLS.SequenceSpaces.WeightedCoordinateFTC
+import NLS.Fourier.FourierNLSIntegral
+import NLS.Fourier.FourierNLSUniqueness
+import NLS.Fourier.FourierNLSWeightCompatibility

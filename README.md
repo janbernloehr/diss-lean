@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: local Fourier NLS solutions are now constructed for every
-spectral-weighted ℓ¹ initial datum. They are continuous in the weighted norm
-and satisfy every original mode equation, with the physical quadratic sign
-and cubic convolution. This supplies a local existence step toward the
-remaining global smooth classical-existence theorem. Smooth persistence,
-physical PDE identification, continuation, and the full wellposedness
-assembly remain to be completed.
+Latest milestone: local weighted Fourier NLS solutions are now unique and
+compatible across arbitrary spectral weights and overlapping time intervals.
+The original coefficient equations imply a full Banach-space interaction
+integral equation, so uniqueness applies to every norm-continuous Fourier
+solution. Common-interval smoothness, physical PDE identification, global
+continuation, and the full wellposedness assembly remain to be completed.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
