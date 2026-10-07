@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: pointwise physical renormalized NLS
+## Current milestone: classical renormalized uniqueness and gauge agreement
+
+The renormalized finite-gap solution is now unique in the classical
+solution class: smooth period-one spatial slices and differentiability
+in the uniform function norm. This holds for finite-gap sources at every
+finite `p > 1`, with mass given by the original physical unit-period
+integral. Its classical Fourier coefficients agree with the constructed
+Hilbert spectral trajectory of the same source.
+
+`ClassicalRenormalizedNLSGauge.lean` defines the classical equation with a
+fixed real mass parameter. Multiplication by `exp(4*i*m*time)` transports
+the PDE from parameter `M` to `M+m`, preserves the uniform norm, and has
+an exact inverse. The inverse mass gauge reduces to ordinary classical
+NLS. The proved ordinary uniqueness theorem therefore gives renormalized
+uniqueness from agreement at any one real time, without a finite-gap
+restriction on this uniqueness lemma.
+
+`SourceFiniteGapClassicalRenormalizedNLS.lean` places the constructed
+renormalized finite-gap flow in that uniform-norm classical class and
+proves agreement with every classical solution with the same initial
+representative and physical mass. Uniqueness also proves the actual
+physical identity `u_ren(time) = exp(4*i*M*time)*u_NLS(time)`, with the
+positive physical gauge phase and no assumed Birkhoff gauge equivariance.
+
+`ClassicalRenormalizedNLSFiniteGap.lean` defines the mass as the actual
+physical integral and constructs a canonical classical renormalized
+trajectory at every finite exponent above one. It proves unique existence,
+exact initial values, agreement of its actual Fourier integrals with the
+Hilbert spectral flow, and conservation of the physical mass integral for
+any classical solution with the given finite-gap initial data. Thus the
+constant mass in its equation is also its mass at every later or earlier time.
+
+Public examples check uniqueness from negative initial time, inverse
+gauges, negative and zero mass parameters, uniform-norm preservation,
+finite-gap unique existence at `p=3`, conserved physical mass at negative
+time, the sign of the actual physical gauge, and negative Fourier modes
+of the canonical `p=3` solution.
+
+Validation: the full build passes (6144 jobs), all public examples pass,
+and the transitive axiom audit passes for 23401 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Rough renormalized solution-map identification remains: these results
+provide its classical dense-domain agreement, but do not yet prove the
+unique continuous global/local extension in all the stated exponent ranges.
+The dissertation formalization is not complete.
+
+## Previous milestone: pointwise physical renormalized NLS
 
 The Hamiltonian-oriented renormalized spectral trajectory now solves
 `i*u_t = -u_xx + 2*|u|²*u - 4*M*u` pointwise for every real finite-gap

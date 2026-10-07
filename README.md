@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the Hamiltonian-oriented renormalized finite-gap flow
-solves `i*u_t = -u_xx + 2*|u|²*u - 4*M*u` pointwise for all real times.
-The mass `M` is the conserved integral of `|u|²` over one period. Both
-component signs, H¹ time regularity, and global physical existence with
-the exact original initial value are proved. Classical uniqueness and
-rough renormalized solution-map identification remain next. See `STATUS.md`.
+Latest milestone: finite-gap sources at every finite `p > 1` have a unique
+classical renormalized NLS trajectory with their original physical mass.
+The actual ordinary and renormalized flows satisfy
+`u_ren(time) = exp(4*i*M*time)*u_NLS(time)`. Classical Fourier agreement and
+physical mass conservation are proved. Identification of rough global/local
+renormalized extensions remains next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

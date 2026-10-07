@@ -33640,3 +33640,73 @@ example : ∃ u : ℝ → ℝ → ℂ,
   exists_sourceFiniteGap_pointwiseRenormalizedNLS_trajectory φ hf
 
 end RenormalizedPhysicalChecks
+
+
+namespace RenormalizedClassicalChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set
+open scoped ENNReal ContDiff
+
+-- Uniqueness starts at an arbitrary time, including negative time.
+example (M : ℝ) (u v : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalRenormalizedNLSTrajectory M u)
+    (hv : IsClassicalRenormalizedNLSTrajectory M v) (hinit : u (-1) = v (-1)) : u 2 = v 2 := by
+  rw [hu.eq_of_eq_at hv (-1) hinit]
+
+-- Removing and restoring the physical mass phase is exactly the identity.
+example (M : ℝ) (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) :
+    classicalNLSGauge M (classicalNLSGauge (-M) u) = u := by
+  rw [classicalNLSGauge_add,add_neg_cancel,classicalNLSGauge_zero]
+
+-- Gauge transport works for either sign of the real parameter and retains the uniform norm.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) (hu : IsClassicalNLSTrajectory u) :
+    IsClassicalRenormalizedNLSTrajectory (-2) (classicalNLSGauge (-2) u) ∧
+      ‖classicalNLSGauge (-2) u (-3)‖ = ‖u (-3)‖ :=
+  ⟨hu.gauge (-2),norm_classicalNLSGauge (-2) u (-3)⟩
+
+-- At zero parameter the solution classes coincide.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ)) (hu : IsClassicalRenormalizedNLSTrajectory 0 u) :
+    IsClassicalNLSTrajectory u := (isClassicalRenormalizedNLSTrajectory_zero_iff u).mp hu
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Finite-gap classical existence and uniqueness persist above the Hilbert exponent.
+example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃! u : ℝ → C(AddCircle (2 : ℝ), ℂ),
+      IsClassicalRenormalizedNLSTrajectory (sourceFiniteGapPhysicalMass (by simp) (by norm_num) φ hf) u ∧
+        ∀ x : ℝ, u 0 (x : AddCircle (2 : ℝ)) = (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 x :=
+  existsUnique_sourceFiniteGap_classicalRenormalizedNLS_trajectory_atExponent (by simp) (by norm_num) φ hf
+
+-- The canonical trajectory conserves its actual physical mass, including at negative times.
+example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    (∫ x in (0 : ℝ)..1, ‖sourceFiniteGapClassicalRenormalizedTrajectory (by simp) (by norm_num)
+      φ hf (-2) (x : AddCircle (2 : ℝ))‖^2) =
+      ∫ x in (0 : ℝ)..1, ‖(sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 x‖^2 := by
+  have hu := sourceFiniteGapClassicalRenormalizedTrajectory_spec (by simp) (by norm_num) φ hf
+  exact classicalRenormalizedNLS_finiteGap_mass (by simp) (by norm_num) φ hf _ hu.1 hu.2 (-2)
+
+section Spectral
+variable {W P V B X : Set (CoeffPair 2)}
+variable {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+variable (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+variable (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+variable (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+
+-- Actual Hilbert spectral trajectories have the positive physical gauge phase.
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (time x : ℝ) :
+    (A.hamiltonianRenormalizedPhysicalFlow D φ hf time).1 x =
+      Complex.exp (((4*sourceOrdinaryMass le_rfl φ*time : ℝ) : ℂ)*Complex.I)*
+        (A.hamiltonianOrdinaryPhysicalFlow D φ hf time).1 x :=
+  A.hamiltonianRenormalizedPhysicalFlow_eq_gauge hs D φ hf time x
+
+-- The canonical p=3 classical solution agrees with the Hilbert spectral flow of the same coefficients.
+example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    periodOneCoefficient (fun x : ℝ => sourceFiniteGapClassicalRenormalizedTrajectory
+      (by simp) (by norm_num) φ hf (-1) (x : AddCircle (2 : ℝ))) (-3) =
+      (A.hamiltonianRenormalizedSourceFlow D le_rfl
+        (sourceFiniteGapHilbertModel (by simp) (by norm_num) φ hf) (-1)).val.fst (-3) := by
+  have hu := sourceFiniteGapClassicalRenormalizedTrajectory_spec (by simp) (by norm_num) φ hf
+  exact A.periodOneCoefficient_classicalRenormalizedNLS_eq_hamiltonianFlow hs D
+    (by simp) (by norm_num) φ hf _ hu.1 hu.2 (-1) (-3)
+end Spectral
+end RenormalizedClassicalChecks
