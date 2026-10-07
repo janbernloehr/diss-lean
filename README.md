@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: local weighted Fourier NLS solutions are now unique and
-compatible across arbitrary spectral weights and overlapping time intervals.
-The original coefficient equations imply a full Banach-space interaction
-integral equation, so uniqueness applies to every norm-continuous Fourier
-solution. Common-interval smoothness, physical PDE identification, global
-continuation, and the full wellposedness assembly remain to be completed.
+Latest milestone: tame Sobolev estimates now bound the cubic NLS field by
+one high norm and two raw Fourier ℓ¹ norms. Higher norms obey an explicit
+exponential bound in both time directions, including interval endpoints;
+the low bound may come from an independently constructed compatible solution.
+Continuation, common-interval smoothness, physical PDE identification, global
+classical existence, and the full wellposedness assembly remain to be completed.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

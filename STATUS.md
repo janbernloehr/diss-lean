@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: local Fourier uniqueness and weight compatibility
+## Current milestone: tame Sobolev estimates and two-sided norm growth
+
+Tame convolution and cubic NLS estimates now control every nonnegative real
+Sobolev order using only one high-norm factor. The resulting a priori growth
+bound is exponential in elapsed absolute time, with its rate determined by
+the raw Fourier ℓ¹ norm. It applies to every local Fourier trajectory and
+can use a low norm bound from an independently constructed compatible curve.
+
+`TameSpectralConvolution.lean` proves the additive weight inequality
+`w_s(n+k) ≤ 2^s*(w_s(n)+w_s(k))` and derives a tame translation bound from
+the exact shifted-norm sum. Summing the convolution series gives
+`‖a*b‖_s ≤ 2^s*(‖a‖_s*‖b‖₀ + ‖a‖₀*‖b‖_s)`.
+The abstract estimates also cover any spectral weight with an additive bound.
+
+`TameCubicNLS.lean` proves raw-norm invariance under conjugate reflection
+and free evolution. Applying the tame convolution estimate to the actual
+cubic field gives
+`‖N(a)‖_s ≤ (4*(2^s)^2+2*2^s)*‖a‖_s*‖a‖₀^2`.
+The same constant works for the interaction field at every real time.
+
+`IntervalNormGronwall.lean` proves two-sided Banach-space exponential growth
+using only derivatives within the closed interval. It includes both endpoints,
+equal endpoints, zero coupling, and zero initial norm without division.
+`FourierNLSNormGrowth.lean` applies this to the strong interaction equation.
+If the raw norm is bounded by `M` between two times, the high norm grows by
+at most `exp((4*(2^s)^2+2*2^s)*M^2*|time-initial|)`.
+Coefficient uniqueness allows the bound to come from a compatible trajectory
+in any spectral weight, without ordering the two weights or assuming a bound
+on the high norm itself.
+
+Public examples cover fractional orders and negative shifts, the tame product,
+the explicit second-order cubic constant 72, free phases at negative times,
+backward growth between both interval endpoints, a compatible comparison
+trajectory in an arbitrary weight, and the zero-coupling interval estimate.
+
+Validation: the full build passes (6178 jobs), all public examples pass,
+and the transitive axiom audit passes for 23676 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: turn the a priori high-norm bound into continuation and common-interval
+persistence of arbitrarily high regularity, identify the synthesized physical
+PDE, and use conservation to construct global classical solutions for all
+smooth initial data. The present estimates hold on an existing interval;
+they do not yet extend it. The dissertation’s all-smooth-sequence wellposedness
+assembly and full inventory remain incomplete.
+
+## Previous milestone: local Fourier uniqueness and weight compatibility
 
 Local weighted Fourier NLS solutions are now unique on their asserted
 intervals and compatible across arbitrary spectral weights. The statements

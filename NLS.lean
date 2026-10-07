@@ -2757,3 +2757,7 @@ import NLS.SequenceSpaces.WeightedCoordinateFTC
 import NLS.Fourier.FourierNLSIntegral
 import NLS.Fourier.FourierNLSUniqueness
 import NLS.Fourier.FourierNLSWeightCompatibility
+import NLS.SequenceSpaces.TameSpectralConvolution
+import NLS.Fourier.TameCubicNLS
+import NLS.FunctionalAnalysis.IntervalNormGronwall
+import NLS.Fourier.FourierNLSNormGrowth

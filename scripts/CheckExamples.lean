@@ -34287,3 +34287,77 @@ example (w : SpectralWeight) (u₀ : WeightedCoeff w.toWeight 1) :
   exists_unique_local_fourierNLSTrajectory w u₀
 
 end FourierNLSUniquenessChecks
+
+
+namespace TameFourierNLSChecks
+open NLS NLS.Fourier Set
+
+-- The additive Sobolev estimate includes fractional orders and negative shifts.
+example (n : ℤ) :
+    SpectralWeight.sobolev (1/2) (by norm_num) (n-7) ≤
+      (2 : ℝ)^(1/2 : ℝ) * (SpectralWeight.sobolev (1/2) (by norm_num) n +
+        SpectralWeight.sobolev (1/2) (by norm_num) (-7)) := by
+  simpa only [sub_eq_add_neg] using SpectralWeight.sobolev_add_le (1/2) (by norm_num) n (-7)
+
+-- The first-order tame product retains one raw norm on each summand.
+example (a b : WeightedCoeff (SpectralWeight.sobolev 1 (by norm_num)).toWeight 1) :
+    ‖(SpectralWeight.sobolev 1 (by norm_num)).convolution a b‖ ≤
+      2*(‖a‖*‖(SpectralWeight.sobolev 1 (by norm_num)).toCoeff b‖ +
+        ‖(SpectralWeight.sobolev 1 (by norm_num)).toCoeff a‖*‖b‖) := by
+  simpa only [Real.rpow_one] using SpectralWeight.norm_sobolev_convolution_le 1 (by norm_num) a b
+
+-- Second-order cubic growth is linear in the high norm, with explicit constant 72.
+example (a : WeightedCoeff (SpectralWeight.sobolev 2 (by norm_num)).toWeight 1) :
+    ‖cubicNLS (SpectralWeight.sobolev 2 (by norm_num)) a‖ ≤
+      72*‖a‖*‖(SpectralWeight.sobolev 2 (by norm_num)).toCoeff a‖^2 := by
+  simpa only [Real.rpow_two, show (4*((2 : ℝ)^2)^2+2*2^2) = 72 by norm_num] using
+    norm_sobolev_cubicNLS_le 2 (by norm_num) a
+
+-- Removing free phases preserves the raw norm at negative times.
+example (w : SpectralWeight) (a : WeightedCoeff w.toWeight 1) :
+    ‖w.toCoeff (nlsFreeFlow w.toWeight (-5) a)‖ = ‖w.toCoeff a‖ :=
+  norm_toCoeff_nlsFreeFlow w (-5) a
+
+-- The growth estimate goes backwards from the right endpoint to the left endpoint.
+example (u : ℝ → WeightedCoeff (SpectralWeight.sobolev 1 (by norm_num)).toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn (SpectralWeight.sobolev 1 (by norm_num)) (-1) 2 u)
+    (M : ℝ) (hbound : ∀ r ∈ Icc (-1 : ℝ) 2,
+      ‖(SpectralWeight.sobolev 1 (by norm_num)).toCoeff (u r)‖ ≤ M) :
+    ‖u (-1)‖ ≤ ‖u 2‖*Real.exp (60*M^2) := by
+  have h := hu.sobolev_norm_le_exp 1 (by norm_num) 2 (-1)
+    (by constructor <;> norm_num) (by constructor <;> norm_num) M (by
+      simpa only [min_eq_right (by norm_num : (-1 : ℝ) ≤ 2),
+        max_eq_left (by norm_num : (-1 : ℝ) ≤ 2)] using hbound)
+  norm_num only [Real.rpow_one, min_eq_right (by norm_num : (-1 : ℝ) ≤ 2),
+    max_eq_left (by norm_num : (-1 : ℝ) ≤ 2)] at h
+  convert h using 1
+  congr 2
+  ring
+
+-- The comparison can use an independently constructed solution in an arbitrary weight.
+example (v : SpectralWeight)
+    (u : ℝ → WeightedCoeff (SpectralWeight.sobolev 1 (by norm_num)).toWeight 1)
+    (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hu : IsFourierNLSTrajectoryOn (SpectralWeight.sobolev 1 (by norm_num)) (-2) 3 u)
+    (hz : IsFourierNLSTrajectoryOn v (-2) 3 z)
+    (hinit : ∀ n : ℤ, (u 0).val n = (z 0).val n)
+    (M : ℝ) (hbound : ∀ r ∈ Icc (-2 : ℝ) 0, ‖v.toCoeff (z r)‖ ≤ M) :
+    ‖u (-2)‖ ≤ ‖u 0‖*Real.exp (40*M^2) := by
+  have hadd : ∀ n k : ℤ, SpectralWeight.sobolev 1 (by norm_num) (n+k) ≤
+      2*(SpectralWeight.sobolev 1 (by norm_num) n + SpectralWeight.sobolev 1 (by norm_num) k) := by
+    simpa only [Real.rpow_one] using SpectralWeight.sobolev_add_le 1 (by norm_num)
+  have h := hu.norm_le_exp_of_compatible_trajectory hz 2 (by norm_num) hadd 0 (-2)
+    (by constructor <;> norm_num) (by constructor <;> norm_num) hinit M (by simpa using hbound)
+  norm_num at h
+  convert h using 1
+  congr 2
+  ring
+
+-- Zero coupling in the interval lemma needs no division or nonzero initial norm.
+example {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+    (f : ℝ → E) (hd : ∀ r ∈ Icc (-2 : ℝ) 3, HasDerivWithinAt f 0 (Icc (-2 : ℝ) 3) r) :
+    ‖f 3‖ ≤ ‖f (-2)‖ := by
+  simpa using FunctionalAnalysis.norm_le_exp_of_hasDerivWithinAt_Icc
+    hd (K := 0) (by simp) (by norm_num : (-2 : ℝ) ≤ 3)
+
+end TameFourierNLSChecks

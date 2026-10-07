@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: local Fourier uniqueness and weight compatibility
+## Latest progress: tame Sobolev estimates and two-sided norm growth
+
+Tame convolution and cubic NLS estimates now control every nonnegative real
+Sobolev order using only one high-norm factor. The resulting a priori growth
+bound is exponential in elapsed absolute time, with its rate determined by
+the raw Fourier ℓ¹ norm. It applies to every local Fourier trajectory and
+can use a low norm bound from an independently constructed compatible curve.
+
+`TameSpectralConvolution.lean` proves the additive weight inequality
+`w_s(n+k) ≤ 2^s*(w_s(n)+w_s(k))` and derives a tame translation bound from
+the exact shifted-norm sum. Summing the convolution series gives
+`‖a*b‖_s ≤ 2^s*(‖a‖_s*‖b‖₀ + ‖a‖₀*‖b‖_s)`.
+The abstract estimates also cover any spectral weight with an additive bound.
+
+`TameCubicNLS.lean` proves raw-norm invariance under conjugate reflection
+and free evolution. Applying the tame convolution estimate to the actual
+cubic field gives
+`‖N(a)‖_s ≤ (4*(2^s)^2+2*2^s)*‖a‖_s*‖a‖₀^2`.
+The same constant works for the interaction field at every real time.
+
+`IntervalNormGronwall.lean` proves two-sided Banach-space exponential growth
+using only derivatives within the closed interval. It includes both endpoints,
+equal endpoints, zero coupling, and zero initial norm without division.
+`FourierNLSNormGrowth.lean` applies this to the strong interaction equation.
+If the raw norm is bounded by `M` between two times, the high norm grows by
+at most `exp((4*(2^s)^2+2*2^s)*M^2*|time-initial|)`.
+Coefficient uniqueness allows the bound to come from a compatible trajectory
+in any spectral weight, without ordering the two weights or assuming a bound
+on the high norm itself.
+
+Public examples cover fractional orders and negative shifts, the tame product,
+the explicit second-order cubic constant 72, free phases at negative times,
+backward growth between both interval endpoints, a compatible comparison
+trajectory in an arbitrary weight, and the zero-coupling interval estimate.
+
+Validation: the full build passes (6178 jobs), all public examples pass,
+and the transitive axiom audit passes for 23676 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: turn the a priori high-norm bound into continuation and common-interval
+persistence of arbitrarily high regularity, identify the synthesized physical
+PDE, and use conservation to construct global classical solutions for all
+smooth initial data. The present estimates hold on an existing interval;
+they do not yet extend it. The dissertation’s all-smooth-sequence wellposedness
+assembly and full inventory remain incomplete.
+
+## Previous milestone: local Fourier uniqueness and weight compatibility
 
 Local weighted Fourier NLS solutions are now unique on their asserted
 intervals and compatible across arbitrary spectral weights. The statements
@@ -349,14 +395,17 @@ remain. The dissertation is not complete.
 
 Next implementation targets:
 
-1. Complete smooth classical existence using the now compatible local
-   Fourier solutions. First derive a cubic estimate linear in the higher
-   Sobolev norm and quadratic in the unweighted ℓ¹ norm; the existing exact
-   shifted-norm sum and convolution series provide a route to that estimate.
-   Use it to prove common-interval persistence of arbitrarily high Sobolev
-   regularity, identify the synthesized physical PDE, and establish global
-   continuation using conserved quantities. Compatibility of the
-   weighted solutions alone does not supply a common smooth lifetime.
+1. Complete smooth classical existence using the compatible local Fourier
+   solutions and the proved tame Sobolev growth estimates. Prove a continuation
+   criterion for bounded weighted interaction trajectories: first strengthen
+   uniqueness to include endpoint initial times using the new interval
+   Gronwall lemma, and expose a uniform local lifespan for bounded initial
+   norms at arbitrary initial times. Join compatible local solutions, then
+   use a bounded low-norm reference solution and the high-norm bound to obtain
+   common-interval persistence of arbitrarily high Sobolev regularity. Identify
+   the synthesized physical PDE and establish global continuation using
+   conserved quantities. The a priori estimate on an existing interval alone
+   does not supply a common smooth lifetime.
    Then formalize the all-smooth-sequence definition on page 86 and assemble
    the analytic solution maps using the proved cross-exponent approximation
    results and their actual trajectory-domain guards.
