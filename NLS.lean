@@ -2713,3 +2713,6 @@ import NLS.ZakharovShabat.SourceFiniteGapPointwiseNLS
 import NLS.ZakharovShabat.ClassicalNLSDifferenceEstimate
 import NLS.ZakharovShabat.ClassicalNLSUniqueness
 import NLS.ZakharovShabat.SourceFiniteGapClassicalNLS
+import NLS.Dynamics.HamiltonianPhaseObstruction
+import NLS.ZakharovShabat.SourceHamiltonianSourceObstruction
+import NLS.ZakharovShabat.ClassicalNLSNonextension

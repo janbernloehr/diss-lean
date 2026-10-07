@@ -33451,3 +33451,57 @@ example {W P V B X : Set (CoeffPair 2)}
   A.classicalNLS_eq_hamiltonianOrdinaryPhysicalFlow hs D φ hf u hu hinit (-2) x
 
 end ClassicalNLSChecks
+
+
+namespace ClassicalNonextensionChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- Negative Hamiltonian phases with frequency j have no uniform limit even on [0,1].
+example (G : C(Icc (0 : ℝ) 1,ℂ)) :
+    ¬ Tendsto (fun j : ℕ => (⟨fun time : Icc (0 : ℝ) 1 =>
+      Complex.exp (((-time.val*(j : ℝ) : ℝ) : ℂ)*Complex.I),by fun_prop⟩ : C(Icc (0 : ℝ) 1,ℂ)))
+      atTop (𝓝 G) := by
+  apply NLS.Dynamics.not_tendsto_hamiltonian_phase_trajectories 1 (by norm_num)
+    (fun j : ℕ => (j : ℝ)) (fun _ => (1 : ℂ)) 1 (by norm_num)
+    tendsto_natCast_atTop_atTop tendsto_const_nhds _ ?_ G
+  intro j time
+  simp
+
+-- Every finite-gap source at p=3 has an actual unique classical trajectory.
+example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    IsClassicalNLSTrajectory (sourceFiniteGapClassicalTrajectory (by simp) (by norm_num) φ hf) ∧
+      ∀ x : ℝ, sourceFiniteGapClassicalTrajectory (by simp) (by norm_num) φ hf 0 (x : AddCircle (2 : ℝ)) =
+        (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 x :=
+  sourceFiniteGapClassicalTrajectory_spec (by simp) (by norm_num) φ hf
+
+-- The forward-time p=3 to q=4 obstruction needs no supplied spectral data.
+example (φ : realTypeSourceSubmodule 3) (hφ : φ ∉ sourceHilbertLocus (by norm_num))
+    (F : realTypeSourceSubmodule 3 → C(Icc (0 : ℝ) 1,realTypeSourceSubmodule 4))
+    (hF : AgreesWithFiniteGapClassicalNLS (by simp) (by norm_num) 1 F) : ¬ ContinuousAt F φ :=
+  not_continuousAt_classicalNLS_extension (by simp) (by norm_num) (by simp) (by norm_num)
+    (by norm_num) (by norm_num) 1 (by norm_num) φ hφ F hF
+
+-- The dissertation's symmetric-time statement holds in the original p=3 norm too.
+example (φ : realTypeSourceSubmodule 3) (hφ : φ ∉ sourceHilbertLocus (by norm_num))
+    (F : realTypeSourceSubmodule 3 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 3))
+    (hF : ∀ ψ : realTypeSourceSubmodule 3,
+      ∀ hf : ψ ∈ sourceFiniteGapLocus (by simp) (by norm_num),
+      ∀ time : Icc (-1 : ℝ) 1, ∀ n : ℤ, (F ψ time).val.fst n =
+        periodOneCoefficient (fun x : ℝ => sourceFiniteGapClassicalTrajectory
+          (by simp) (by norm_num) ψ hf time.val (x : AddCircle (2 : ℝ))) n) :
+    ¬ ContinuousAt F φ :=
+  classicalNLS_theorem18_5_iv (by simp) (by simp) (by norm_num) le_rfl 1 (by norm_num) φ hφ F hF
+
+-- Any chosen classical representative gives exactly the canonical agreement condition.
+example (F : realTypeSourceSubmodule 3 → C(Icc (0 : ℝ) 1,realTypeSourceSubmodule 4))
+    (hF : AgreesWithFiniteGapClassicalNLS (by simp) (by norm_num) 1 F)
+    (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    (F φ ⟨0,by norm_num⟩).val.fst (-3) =
+      periodOneCoefficient (fun x : ℝ => sourceFiniteGapClassicalTrajectory
+        (by simp) (by norm_num) φ hf 0 (x : AddCircle (2 : ℝ))) (-3) :=
+  (agreesWithFiniteGapClassicalNLS_iff (by simp) (by norm_num) 1 F).mp hF φ hf ⟨0,by norm_num⟩ (-3)
+
+end ClassicalNonextensionChecks

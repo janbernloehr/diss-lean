@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: unique classical finite-gap NLS trajectories and agreement
-with the constructed Hamiltonian-oriented physical flow at all real times.
-Uniqueness is proved for smooth periodic spatial slices with uniform-norm
-time differentiability, using the PDE difference-energy estimate and
-Grönwall. Agreement beyond finite-gap data and the nonextension transfer
-remain open. See `STATUS.md`.
+Latest milestone: the actual classical NLS solution map cannot extend
+continuously at non-Hilbert sources, even into weaker finite-exponent
+coefficient norms. The result holds on `[0,T]` and `[-T,T]`, uses the
+physical Hamiltonian time orientation, and needs agreement only on the
+proved unique finite-gap classical solutions. This transfers Corollary
+22.2(iii) and Theorem 18.5(iv) to physical solutions. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

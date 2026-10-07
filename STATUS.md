@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: classical uniqueness and finite-gap agreement
+## Current milestone: physical NLS nonextension on positive time intervals
+
+The nonextension assertion now concerns actual classical NLS solutions,
+with the physical Hamiltonian sign, on the forward interval `[0,T]` of
+Corollary 22.2(iii). Restriction from `[-T,T]` also gives the formulation of
+Theorem 18.5(iv). For finite `2 < p ≤ q`, any proposed source-trajectory
+extension agreeing with the actual finite-gap classical solutions fails
+continuity at every source outside the Hilbert locus.
+
+`HamiltonianPhaseObstruction.lean` transfers the uniform-trajectory
+obstruction to negative exponential phases by conjugation. It retains the
+same positive interval; no negative-time observations are required.
+
+`SourceHamiltonianSourceObstruction.lean` identifies the observed Hilbert
+finite-gap trajectory with the actual Hamiltonian phase at every real time
+and after source-exponent inclusion. Diverging physical frequencies and a
+nonzero limiting coordinate then obstruct source-map continuity on `[0,T]`.
+
+`ClassicalNLSNonextension.lean` constructs the unique classical finite-gap
+trajectory at every finite source exponent greater than one. Its actual
+Fourier integrals equal the coefficients of the Hamiltonian-oriented
+Hilbert flow. Agreement with any classical representative is equivalent
+to agreement with this uniquely constructed trajectory. The nonextension
+theorems construct all atlases and Birkhoff data internally and require
+only agreement on the finite-gap domain. Reality determines the second
+component from the first, so the public hypothesis uses scalar physical
+Fourier coefficients directly.
+
+Public examples check negative phases on `[0,1]`, the classical initial
+representative at `p = 3`, forward nonextension from `p = 3` to `q = 4`,
+symmetric-time nonextension in the original `p = 3` norm, and canonical
+agreement at a negative Fourier mode.
+
+Validation: the full build passes (6133 jobs), all public examples pass,
+and the transitive axiom audit passes for 23267 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This completes the transfer of the nonextension assertion to the actual
+smooth classical finite-gap reference solutions. Physical solution-map
+identification beyond finite-gap data and the remaining wellposedness
+claims are separate tasks. The dissertation formalization is not complete.
+
+## Previous milestone: classical uniqueness and finite-gap agreement
 
 The actual finite-gap physical NLS flow now has a unique-existence theorem
 in the class of smooth period-one spatial trajectories that are
