@@ -8,8 +8,9 @@ import NLS.ZakharovShabat.SourceComplexActionHamiltonian
 The original ordinarySourceFlow retains equation (4.14)'s printed signs.
 Its time reversal uses the signs proved from the source action Hamiltonians.
 Finite-gap trajectories have an actual derivative in the full source norm,
-computed by the inverse Birkhoff Jacobian. Identification of this derivative
-with the physical NLS energy field remains to be proved.
+computed by the inverse Birkhoff Jacobian. Physical PDE identification and
+the continuous extension of the classical solution map are proved in
+subsequent finite-gap and compact-time modules.
 -/
 noncomputable section
 open Set

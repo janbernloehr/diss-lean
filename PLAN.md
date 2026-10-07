@@ -1,6 +1,62 @@
 # Implementation plan
 
-## Latest progress: physical NLS nonextension on positive time intervals
+## Latest progress: the unique continuous classical NLS extension
+
+For `1 < p ≤ 2`, the Hamiltonian-oriented ordinary flow is now the unique
+continuous extension of the actual finite-gap classical NLS solution map
+on every compact interval `[-T,T]`. Every such continuous extension is
+real analytic in the full uniform trajectory norm. One constructed global
+group realizes these compact-time maps consistently at all times.
+
+`SourceHamiltonianFlowExponent.lean` proves that the physical mass,
+ordinary frequency, and full Hamiltonian-oriented source flow commute
+with source-exponent inclusion for `1 < p ≤ q ≤ 2`. The result holds for
+all sources, using the original coefficient-compatible frequencies and
+Birkhoff maps, without a finite-gap restriction.
+
+`SourceHamiltonianTrajectories.lean` gives the compact-time physical paths.
+Time reflection acts by a bounded linear map on trajectory space, so the
+proved analyticity of the original spectral trajectory transfers to the
+Hamiltonian orientation. Convergent initial sources give convergence in
+the uniform compact-time source norm.
+
+`ClassicalNLSContinuousExtension.lean` identifies every finite-gap path
+with the actual Fourier integrals of the unique classical NLS solution.
+Actual finite-gap density proves uniqueness among continuous solution-map
+extensions. Every source admits classical finite-gap approximation, and
+every convergent finite-gap approximation with the prescribed classical
+coefficient trajectories has the same compact-time limit. The global
+existence theorem constructs all spectral data and supplies joint
+continuity, the original initial values, the group law, and analytic
+compact-time maps.
+
+Public examples check the noninteger exponent `p = 3/2`, automatic
+analyticity, a zero-length interval, inverse time maps, uniqueness of
+extensions, arbitrary classical approximation families, and evaluation at
+negative physical time with the correct spectral time orientation.
+
+Validation: the full build passes (6136 jobs), all public examples pass,
+and the transitive axiom audit passes for 23291 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This identifies the general ordinary solution map as the unique continuous
+extension of classical finite-gap dynamics. It does not establish uniqueness
+among arbitrary rough weak-PDE trajectories. Physical identification of the
+renormalized flow and the remaining wellposedness claims are still separate
+tasks. The dissertation formalization is not complete.
+
+Next implementation targets:
+
+1. Use the proved ordinary and mass action-cotangent formulas to identify
+   the Hamiltonian-oriented renormalized finite-gap velocity with the
+   physical equation `i*u_t = -u_xx + 2*|u|²*u - 4*M*u`, then establish
+   classical agreement with the original physical mass `M`.
+2. Transfer that agreement to the existing global and local analytic
+   renormalized flow maps in their stated exponent ranges.
+3. Audit the remaining Chapter 4 solution and wellposedness assertions,
+   keeping continuous-extension uniqueness distinct from weak-PDE uniqueness.
+
+## Previous progress: physical NLS nonextension on positive time intervals
 
 The nonextension assertion now concerns actual classical NLS solutions,
 with the physical Hamiltonian sign, on the forward interval `[0,T]` of

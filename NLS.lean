@@ -2716,3 +2716,6 @@ import NLS.ZakharovShabat.SourceFiniteGapClassicalNLS
 import NLS.Dynamics.HamiltonianPhaseObstruction
 import NLS.ZakharovShabat.SourceHamiltonianSourceObstruction
 import NLS.ZakharovShabat.ClassicalNLSNonextension
+import NLS.ZakharovShabat.SourceHamiltonianFlowExponent
+import NLS.ZakharovShabat.SourceHamiltonianTrajectories
+import NLS.ZakharovShabat.ClassicalNLSContinuousExtension
