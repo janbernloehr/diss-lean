@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: ordinary source nonextension in weaker norms
+## Current milestone: physical NLS energy variations and vector field
+
+The first variations of the actual physical third hierarchy Hamiltonian
+are now proved for arbitrary smooth period-one complex fields and smooth
+periodic variation directions. Their gradients are
+`(-b_xx + 2*a*b^2, -a_xx + 2*a^2*b)`. Applying the original source Poisson
+signs `(-i,+i)` gives a smooth periodic physical vector field. On the real
+form `b = conjugate(a)`, it is exactly the scalar defocusing NLS equation
+`i*u_t = -u_xx + 2*|u|^2*u`.
+
+`ClassicalNLSEnergyVariation.lean` proves the exact quadratic expansion of
+the physical energy when the first field is varied by a complex parameter.
+Periodic integration by parts removes derivatives of the variation. This
+gives an actual complex `HasDerivAt` theorem for the original hierarchy
+Hamiltonian. Symmetry of the third Hamiltonian supplies the second-field
+variation with the correct cross-component gradient.
+
+`ClassicalNLSVectorField.lean` defines the physical Hamiltonian field from
+these gradients and proves smoothness, periodicity, conjugate-pair reality,
+and the scalar NLS normalization. A trajectory whose time derivative is
+this field satisfies the conventional classical PDE pointwise.
+
+`SourceFiniteGapNLSVariation.lean` proves that the existing smooth Fourier
+representatives of actual finite-gap sources preserve the original real
+form at every physical point. It specializes both energy variations and
+the smooth periodic real NLS field to those representatives, at every
+finite source exponent greater than one. Finite Fourier support is not
+assumed. Public examples check the actual constant-potential energy
+expansion, its complex derivative, both Poisson signs, and the scalar
+PDE identity for finite-gap data.
+
+Validation: the full build passes (6102 jobs), all public examples pass,
+and the transitive axiom audit passes for 23010 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This identifies the physical Hamiltonian field. Proving that it equals
+the time derivative of the constructed spectral flow, and establishing
+agreement with classical PDE solutions, remain open. The dissertation
+remains unfinished.
+
+## Previous milestone: ordinary source nonextension in weaker norms
 
 The source-trajectory nonextension statement of Corollary 22.2(iii) is
 now proved for the constructed ordinary spectral flow. For every finite

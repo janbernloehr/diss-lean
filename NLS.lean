@@ -2682,3 +2682,6 @@ import NLS.ZakharovShabat.SourceOrdinaryTheorem22_1III
 import NLS.ZakharovShabat.SourceFiniteGapOrdinaryCompatibility
 import NLS.ZakharovShabat.SourceOrdinarySourceObstruction
 import NLS.ZakharovShabat.SourceOrdinaryCorollary22_2III
+import NLS.ZakharovShabat.ClassicalNLSEnergyVariation
+import NLS.ZakharovShabat.ClassicalNLSVectorField
+import NLS.ZakharovShabat.SourceFiniteGapNLSVariation

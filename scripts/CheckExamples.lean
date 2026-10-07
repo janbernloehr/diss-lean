@@ -32945,3 +32945,52 @@ example (H : SourceAbelianMomentAtlas (by simp) (by norm_num) W₂ s₂)
 
 end OrdinarySourceObstructionChecks
 end
+
+
+noncomputable section
+open Set Complex MeasureTheory NLS NLS.ZakharovShabat
+open scoped ENNReal ContDiff ComplexConjugate
+namespace PhysicalNLSVariationChecks
+
+-- The actual third hierarchy Hamiltonian has the expected quartic normalization.
+example (z : ℂ) :
+    classicalNLSHamiltonian (fun _ => 1+z) (fun _ => 1) 3 = 1+2*z+z^2 := by
+  have h := classicalNLSHamiltonian_three_variation_fst
+    (fun _ => 1) (fun _ => 1) (fun _ => 1) contDiff_const contDiff_const contDiff_const
+    (fun _ => rfl) (fun _ => rfl) (fun _ => rfl) z
+  have hbase : classicalNLSHamiltonian (fun _ => 1) (fun _ => 1) 3 = 1 := by
+    rw [classicalNLSHamiltonian_three _ _ contDiff_const contDiff_const (fun _ => rfl) (fun _ => rfl)]
+    simp
+  simpa [hbase,classicalNLSEnergyGradient,mul_comm] using h
+
+-- Differentiation is complex differentiation of the original physical integral.
+example : HasDerivAt (fun z : ℂ => classicalNLSHamiltonian (fun _ => 1+z) (fun _ => 1) 3) 2 0 := by
+  simpa [classicalNLSEnergyGradient] using hasDerivAt_classicalNLSHamiltonian_three_fst
+    (fun _ => 1) (fun _ => 1) (fun _ => 1) contDiff_const contDiff_const contDiff_const
+    (fun _ => rfl) (fun _ => rfl) (fun _ => rfl)
+
+-- Both Poisson signs are visible at the constant unit potential.
+example (x : ℝ) :
+    (classicalNLSVectorField (fun _ => 1) (fun _ => 1)).1 x = -2*Complex.I ∧
+      (classicalNLSVectorField (fun _ => 1) (fun _ => 1)).2 x = 2*Complex.I := by
+  simp [classicalNLSVectorField,classicalNLSEnergyGradient,mul_comm]
+
+-- Real Hamiltonian trajectories satisfy the conventional scalar PDE.
+example (u : ℝ → ℝ → ℂ)
+    (hu : ∀ t x, HasDerivAt (fun τ => u τ x)
+      ((classicalNLSVectorField (u t) (fun y => conj (u t y))).1 x) t) (t x : ℝ) :
+    Complex.I*deriv (fun τ => u τ x) t =
+      -deriv (deriv (u t)) x + 2*(‖u t x‖^2 : ℝ)*u t x :=
+  classicalNLS_equation_of_hasDerivAt u t x (hu t x)
+
+-- Every finite-gap representative, without finite Fourier support, has the physical NLS velocity.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) (x : ℝ) :
+    Complex.I*(sourceFiniteGapPhysicalNLSVectorField hp hp1 φ hf).1 x =
+      -deriv (deriv (sourceFiniteGapPhysicalPair hp hp1 φ hf).1) x +
+        2*(‖(sourceFiniteGapPhysicalPair hp hp1 φ hf).1 x‖^2 : ℝ)*
+          (sourceFiniteGapPhysicalPair hp hp1 φ hf).1 x :=
+  sourceFiniteGapPhysicalNLSVectorField_scalar hp hp1 φ hf x
+
+end PhysicalNLSVariationChecks
+end
