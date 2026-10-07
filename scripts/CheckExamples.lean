@@ -33217,3 +33217,63 @@ example {W P V B X : Set (CoeffPair 2)}
     A.exists_physicalEnergyHamiltonian_ODE hs D φ hf 0
 
 end PhysicalEnergyChecks
+
+
+namespace PhysicalNLSChecks
+open NLS NLS.ZakharovShabat NLS.Fourier NLS.Poisson
+open scoped ContDiff
+
+-- Constant fields check the cubic normalization and both Poisson signs.
+example (c d : ℂ) (L : CoeffPair 2 →L[ℂ] ℂ)
+    (hL : HasFDerivAt periodOneSobolevHamiltonian (L.comp sobolevSourceInclusion)
+      (scalarMode 0 c,scalarMode 0 d)) :
+    (sourceHamiltonianDirection le_rfl L).fst 0 = -2*Complex.I*c^2*d ∧
+    (sourceHamiltonianDirection le_rfl L).snd 0 = 2*Complex.I*c*d^2 := by
+  have hc : ContDiff ℝ ∞ (fun x : ℝ => periodOneSobolevSynthesis (scalarMode (p := 2) 0 c)
+      (x : AddCircle (2 : ℝ))) := by simpa only [periodOneSobolevSynthesis_scalarMode,mul_zero,wave_zero,mul_one] using (contDiff_const : ContDiff ℝ ∞ (fun _ : ℝ => c))
+  have hd : ContDiff ℝ ∞ (fun x : ℝ => periodOneSobolevSynthesis (scalarMode (p := 2) 0 d)
+      (x : AddCircle (2 : ℝ))) := by simpa only [periodOneSobolevSynthesis_scalarMode,mul_zero,wave_zero,mul_one] using (contDiff_const : ContDiff ℝ ∞ (fun _ : ℝ => d))
+  have h := sourceHamiltonianDirection_physicalEnergy_coordinates (scalarMode 0 c) (scalarMode 0 d) hc hd L hL 0
+  simp only [periodOneSobolevSynthesis_scalarMode,mul_zero,wave_zero,mul_one] at h
+  constructor
+  · rw [h.1]
+    simp [classicalNLSVectorField,classicalNLSEnergyGradient,
+      periodOneCoefficient,← unitFourierCoefficient_eq_fourierCoeffOn,unitFourierCoefficient]
+    ring
+  · rw [h.2]
+    simp [classicalNLSVectorField,classicalNLSEnergyGradient,
+      periodOneCoefficient,← unitFourierCoefficient_eq_fourierCoeffOn,unitFourierCoefficient]
+    ring
+
+-- The full physical source field preserves the conjugate Fourier relation at every signed index.
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℤ) :
+    (sourceFiniteGapPhysicalNLSCoefficients φ hf).snd n =
+      starRingEnd ℂ ((sourceFiniteGapPhysicalNLSCoefficients φ hf).fst (-n)) :=
+  sourceFiniteGapPhysicalNLSCoefficients_real φ hf n
+
+-- At initial time the Hilbert-norm derivative is the explicit classical physical field.
+example {W P V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    deriv (fun time => (A.hamiltonianOrdinarySourceFlow D le_rfl φ time).val) 0 =
+      sourceFiniteGapPhysicalNLSCoefficients φ hf := by
+  simpa only [A.hamiltonianOrdinarySourceFlow_zero] using
+    (A.hasDerivAt_hamiltonianOrdinarySourceFlow_physicalNLS hs D φ hf 0).deriv
+
+-- The scalar equation is available at negative as well as positive frequencies.
+example {W P V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) (n : ℤ) :
+    let u := (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1
+    deriv (fun time => Complex.I*(A.hamiltonianOrdinarySourceFlow D le_rfl φ time).val.fst (-n)) 0 =
+      periodOneCoefficient (fun x => -deriv (deriv u) x+2*(‖u x‖^2 : ℝ)*u x) (-n) := by
+  simpa only [A.hamiltonianOrdinarySourceFlow_zero] using
+    (A.hasDerivAt_hamiltonianOrdinarySourceFlow_scalarNLS_fourier hs D φ hf 0 (-n)).deriv
+
+end PhysicalNLSChecks

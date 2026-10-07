@@ -2698,3 +2698,7 @@ import NLS.ZakharovShabat.SourceSobolevHamiltonianDifferential
 import NLS.ZakharovShabat.SourceMassActionDifferential
 import NLS.ZakharovShabat.SourcePhysicalEnergyActionDifferential
 import NLS.ZakharovShabat.SourcePhysicalEnergyHamiltonianODE
+import NLS.ZakharovShabat.PeriodOneSobolevEnergyVariation
+import NLS.ZakharovShabat.PhysicalEnergyCotangent
+import NLS.ZakharovShabat.SourceFiniteGapPhysicalNLSCoefficients
+import NLS.ZakharovShabat.SourceFiniteGapPhysicalNLSODE

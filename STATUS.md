@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: the physical energy Hamiltonian ODE
+## Current milestone: the physical NLS field and Fourier equation
+
+The finite-gap trajectory derivative in the original Hilbert source norm
+is now the Fourier realization of the classical physical NLS field. Every
+signed Fourier mode satisfies the scalar equation with normalization
+`i*u_t = -u_xx + 2*|u|^2*u`. Pointwise time differentiation of the physical
+trajectory remains a separate regularity step.
+
+`PeriodOneSobolevEnergyVariation.lean` identifies the H¹ energy with the
+third classical hierarchy Hamiltonian whenever the physical representatives
+are smooth. Complex variations in either Sobolev component give integration
+against the previously proved classical spatial energy gradients.
+
+`PhysicalEnergyCotangent.lean` tests these variations against every signed
+Fourier mode. The two Hilbert cotangent coefficient sequences are precisely
+the reflected Fourier coefficients of the spatial gradients. Applying the
+original source Poisson map reverses the indices again and gives exactly
+the Fourier coefficients of the classical NLS field, with signs `(-i,+i)`.
+
+`SourceFiniteGapPhysicalNLSCoefficients.lean` realizes that field in the
+original Hilbert source space and proves that the constructor recovers
+every actual physical Fourier integral. Any Hilbert cotangent restricting
+to the physical H¹ energy derivative has this same Hamiltonian direction.
+The field preserves the original conjugate-pair real form.
+
+`SourceFiniteGapPhysicalNLSODE.lean` applies the identification to the
+constructed finite-gap spectral flow at every time. It proves the full
+Hilbert-norm ODE, both component coefficient equations, and the scalar
+Fourier form of defocusing NLS. The energy cotangent and inverse Jacobian
+no longer occur in the physical velocity statement.
+
+Public examples check the cubic normalization and both Poisson signs for
+constant fields, conjugate Fourier reality, the initial source-norm
+velocity, and the scalar equation at negative frequency indices.
+
+Validation: the full build passes (6119 jobs), all public examples pass,
+and the transitive axiom audit passes for 23109 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Spatial smoothness at each time and source-norm time differentiability
+are established. Passing from them to pointwise time differentiation
+requires stronger control of the trajectory in spatial norms; that and
+classical solution-map agreement remain open. The dissertation
+formalization remains unfinished.
+
+## Previous milestone: the physical energy Hamiltonian ODE
 
 The actual physical NLS energy now has full complex H¹ differential
 `sum_n ordinaryFrequency_n * dI_n` at every real finite-gap source. Its
