@@ -33574,3 +33574,69 @@ example {W P V B X : Set (CoeffPair 2)}
     SourceAbelianMomentAtlas.hamiltonianOrdinarySourceFlow,neg_neg]
 
 end ClassicalExtensionChecks
+
+
+namespace RenormalizedPhysicalChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set
+open scoped ENNReal ContDiff
+variable {W P V B X : Set (CoeffPair 2)}
+variable {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+variable (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+variable (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+variable (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+variable (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+
+-- Both directions of time belong to the same global group.
+example (time : ℝ) :
+    A.hamiltonianRenormalizedSourceFlow D le_rfl
+      (A.hamiltonianRenormalizedSourceFlow D le_rfl φ (-time)) time = φ := by
+  rw [A.hamiltonianRenormalizedSourceFlow_add hs,add_neg_cancel,
+    A.hamiltonianRenormalizedSourceFlow_zero]
+
+-- The time orientation is visible at a concrete negative time.
+example : A.hamiltonianRenormalizedSourceFlow D le_rfl φ (-1) =
+    A.renormalizedSourceFlow D le_rfl φ 1 := by
+  simp [SourceAbelianMomentAtlas.hamiltonianRenormalizedSourceFlow]
+
+-- Physical initialization keeps the exact original Fourier representative.
+example (n : ℤ) :
+    periodOneCoefficient (A.hamiltonianRenormalizedPhysicalFlow D φ hf 0).1 n = φ.val.fst n := by
+  rw [A.hamiltonianRenormalizedPhysicalFlow_zero]
+  exact (periodOneCoefficient_sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf n).1
+
+-- Physical mass conservation compares actual integrals at two arbitrary times.
+example (time r : ℝ) :
+    (∫ x in (0 : ℝ)..1, ‖(A.hamiltonianRenormalizedPhysicalFlow D φ hf time).1 x‖^2) =
+      ∫ x in (0 : ℝ)..1, ‖(A.hamiltonianRenormalizedPhysicalFlow D φ hf r).1 x‖^2 := by
+  rw [A.hamiltonianRenormalizedPhysicalFlow_mass,A.hamiltonianRenormalizedPhysicalFlow_mass]
+
+-- The PDE may be written using its current physical mass integral, with a minus sign.
+example (time x : ℝ) :
+    let u := fun r => (A.hamiltonianRenormalizedPhysicalFlow D φ hf r).1
+    Complex.I*deriv (fun r => u r x) time =
+      -deriv (deriv (u time)) x + 2*(‖u time x‖^2 : ℝ)*u time x -
+        (4*(∫ y in (0 : ℝ)..1, ‖u time y‖^2) : ℂ)*u time x := by
+  dsimp only
+  rw [A.hamiltonianRenormalizedPhysicalFlow_mass]
+  exact A.hamiltonianRenormalizedPhysicalFlow_scalarNLS hs D φ hf time x
+
+-- The conjugate component has the opposite mass rotation.
+example (time x : ℝ) :
+    HasDerivAt (fun r => (A.hamiltonianRenormalizedPhysicalFlow D φ hf r).2 x)
+      ((classicalNLSVectorField (A.hamiltonianRenormalizedPhysicalFlow D φ hf time).1
+        (A.hamiltonianRenormalizedPhysicalFlow D φ hf time).2).2 x -
+        (4*sourceOrdinaryMass le_rfl φ : ℂ)*Complex.I*
+          (A.hamiltonianRenormalizedPhysicalFlow D φ hf time).2 x) time :=
+  (A.hasDerivAt_hamiltonianRenormalizedPhysicalFlow hs D φ hf time x).2
+
+-- No externally supplied atlas or trajectory is required for global physical existence.
+example : ∃ u : ℝ → ℝ → ℂ,
+    u 0 = (sourceFiniteGapPhysicalPair (by simp) (by norm_num) φ hf).1 ∧
+    ∀ time : ℝ, ContDiff ℝ ∞ (u time) ∧ Function.Periodic (u time) 1 ∧
+      ∀ x : ℝ, DifferentiableAt ℝ (fun r => u r x) time ∧
+        Complex.I*deriv (fun r => u r x) time =
+          -deriv (deriv (u time)) x + 2*(‖u time x‖^2 : ℝ)*u time x -
+            (4*sourceOrdinaryMass le_rfl φ : ℂ)*u time x :=
+  exists_sourceFiniteGap_pointwiseRenormalizedNLS_trajectory φ hf
+
+end RenormalizedPhysicalChecks

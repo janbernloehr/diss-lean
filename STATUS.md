@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: the unique continuous classical NLS extension
+## Current milestone: pointwise physical renormalized NLS
+
+The Hamiltonian-oriented renormalized spectral trajectory now solves
+`i*u_t = -u_xx + 2*|u|²*u - 4*M*u` pointwise for every real finite-gap
+Hilbert source and every real time. The mass is exactly the unit-period
+integral of the squared modulus of the physical representative and is
+conserved along the trajectory.
+
+`SourceHamiltonianRenormalizedFlow.lean` reverses the existing printed
+spectral time convention. It proves the group law, action and mass
+conservation, joint continuity, initial-data analyticity, and full source
+norm differentiability for finite-gap data, for `1 < p ≤ 2`.
+
+`SourceFiniteGapRenormalizedHamiltonianODE.lean` identifies the Hilbert
+velocity as a finite sum of original action Hamiltonian fields and makes
+the equation autonomous. `SourceFiniteGapRenormalizedSobolevTime.lean`
+uses action conservation to retain a common closed-gap tail, upgrading
+the actual trajectory to differentiability in H¹.
+
+`SourceRenormalizedMassCorrection.lean` derives the correction from the
+mass action-cotangent trace. The constant-frequency action field is
+`-sourcePhase`, so subtracting `4*M` from the ordinary frequencies adds
+`4*M*sourcePhase` to the actual source velocity. Derivative uniqueness
+identifies the ordinary part with the previously proved physical NLS
+field. No gauge-equivariance assumption is supplied.
+
+`SourceFiniteGapPointwiseRenormalizedNLS.lean` synthesizes the H¹ velocity
+and proves both physical time equations. The first component has the
+negative `4*M*u` correction after multiplication by `i`; the conjugate
+component has the opposite mass rotation. It also constructs a global
+pointwise trajectory with the exact original physical initial value and
+smooth period-one spatial slices, constructing all spectral data internally.
+
+Public examples check inverse time maps, the negative-time convention,
+initial Fourier coefficients, conservation of actual physical integrals,
+the PDE with its current mass integral, the conjugate-component sign, and
+global existence without supplied spectral data.
+
+Validation: the full build passes (6141 jobs), all public examples pass,
+and the transitive axiom audit passes for 23342 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+This completes pointwise physical identification on the Hilbert finite-gap
+locus. Uniqueness in a classical renormalized solution class and transfer
+to the rough global/local solution-map extensions remain. The full
+dissertation formalization is not complete.
+
+## Previous milestone: the unique continuous classical NLS extension
 
 For `1 < p ≤ 2`, the Hamiltonian-oriented ordinary flow is now the unique
 continuous extension of the actual finite-gap classical NLS solution map

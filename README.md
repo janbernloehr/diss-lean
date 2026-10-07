@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: for `1 < p ≤ 2`, the physical ordinary NLS flow is the
-unique continuous extension of the classical finite-gap solution map.
-Its compact-time maps are real analytic in the uniform trajectory norm,
-and every convergent finite-gap approximation has the same limit. A global
-group with the physical time orientation is constructed. Renormalized
-physical identification and broader solution-class claims remain separate.
-See `STATUS.md`.
+Latest milestone: the Hamiltonian-oriented renormalized finite-gap flow
+solves `i*u_t = -u_xx + 2*|u|²*u - 4*M*u` pointwise for all real times.
+The mass `M` is the conserved integral of `|u|²` over one period. Both
+component signs, H¹ time regularity, and global physical existence with
+the exact original initial value are proved. Classical uniqueness and
+rough renormalized solution-map identification remain next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
