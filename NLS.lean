@@ -2679,3 +2679,6 @@ import NLS.ZakharovShabat.SourceFiniteGapOrdinaryTrajectory
 import NLS.ZakharovShabat.SourceOrdinaryCoordinateObstruction
 import NLS.ZakharovShabat.SourceComplexBirkhoffExponent
 import NLS.ZakharovShabat.SourceOrdinaryTheorem22_1III
+import NLS.ZakharovShabat.SourceFiniteGapOrdinaryCompatibility
+import NLS.ZakharovShabat.SourceOrdinarySourceObstruction
+import NLS.ZakharovShabat.SourceOrdinaryCorollary22_2III

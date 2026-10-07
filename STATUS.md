@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: ordinary coordinate nonextension outside ell²
+## Current milestone: ordinary source nonextension in weaker norms
+
+The source-trajectory nonextension statement of Corollary 22.2(iii) is
+now proved for the constructed ordinary spectral flow. For every finite
+`q >= p >= 2`, every `T > 0`, and every initial source outside the embedded
+Hilbert locus, a map agreeing with the Hilbert flow cannot be continuous
+into `C([-T,T], source q)` at that source. This includes strictly weaker
+target norms. At `p = 2` the excluded locus is empty.
+
+`SourceFiniteGapOrdinaryCompatibility.lean` identifies the ordinary
+frequency of each finite-gap source with that of its coefficient-preserving
+Hilbert model. Compatibility of the actual complex Birkhoff maps then
+identifies the first coordinate of the included Hilbert trajectory in any
+finite target exponent at least two.
+
+`SourceOrdinarySourceObstruction.lean` proves that every nonzero real source
+has a nonzero first complex Birkhoff component. Evaluating this component
+is continuous on the target space and hence on compact-time paths. The
+previous scalar obstruction therefore rules out continuous dependence of
+source paths at non-Hilbert data.
+Agreement only on finite-gap Hilbert representatives already suffices.
+
+`SourceOrdinaryCorollary22_2III.lean` gives the result on the full interval
+`[-T,T]`, constructs the source and target atlases, and packages analytic
+Hilbert trajectories with their nonextension property. A separate theorem
+rules out a globally continuous extension when a non-Hilbert source is
+given. Public examples cover `p = q = 3`, `p = 3, q = 4`, and the equivalent
+hypothesis of nonsummable squared Fourier coefficients.
+
+Validation: the full build passes (6099 jobs), all public examples pass,
+and the transitive axiom audit passes for 22987 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Agreement of the constructed spectral flows with classical PDE solutions
+remains open. The dissertation remains unfinished.
+
+## Previous milestone: ordinary coordinate nonextension outside ell²
 
 The coordinate nonextension result of Theorem 22.1(iii) is now proved.
 At a point of the actual Birkhoff image outside `ell^2`, an ordinary NLS

@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Theorem 22.1(iii)'s ordinary coordinate nonextension is
-proved on the actual Birkhoff image outside `ell^2`, for both complex
-components on every positive compact time interval. Diverging physical
-mass forces rapid phase rotation. Further Section 22 work remains.
-See `STATUS.md`.
+Latest milestone: Corollary 22.2(iii)'s source-trajectory nonextension is
+proved for the constructed ordinary spectral flow, at every non-Hilbert
+source and in every finite weaker target exponent `q >= p`. Agreement with
+classical PDE solutions remains a separate step. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -14014,3 +14013,39 @@ admitted proofs or new axioms. The 21 existing warnings are unchanged.
 The source-trajectory nonextension statement in the weaker target norms
 of Corollary 22.2(iii), and agreement of the spectral flows with classical
 PDE solutions, remain open. The dissertation remains unfinished.
+
+## Ordinary source nonextension in weaker norms
+
+The source-trajectory nonextension statement of Corollary 22.2(iii) is
+now proved for the constructed ordinary spectral flow. For every finite
+`q >= p >= 2`, every `T > 0`, and every initial source outside the embedded
+Hilbert locus, a map agreeing with the Hilbert flow cannot be continuous
+into `C([-T,T], source q)` at that source. This includes strictly weaker
+target norms. At `p = 2` the excluded locus is empty.
+
+`SourceFiniteGapOrdinaryCompatibility.lean` identifies the ordinary
+frequency of each finite-gap source with that of its coefficient-preserving
+Hilbert model. Compatibility of the actual complex Birkhoff maps then
+identifies the first coordinate of the included Hilbert trajectory in any
+finite target exponent at least two.
+
+`SourceOrdinarySourceObstruction.lean` proves that every nonzero real source
+has a nonzero first complex Birkhoff component. Evaluating this component
+is continuous on the target space and hence on compact-time paths. The
+previous scalar obstruction therefore rules out continuous dependence of
+source paths at non-Hilbert data.
+Agreement only on finite-gap Hilbert representatives already suffices.
+
+`SourceOrdinaryCorollary22_2III.lean` gives the result on the full interval
+`[-T,T]`, constructs the source and target atlases, and packages analytic
+Hilbert trajectories with their nonextension property. A separate theorem
+rules out a globally continuous extension when a non-Hilbert source is
+given. Public examples cover `p = q = 3`, `p = 3, q = 4`, and the equivalent
+hypothesis of nonsummable squared Fourier coefficients.
+
+Validation: the full build passes (6099 jobs), all public examples pass,
+and the transitive axiom audit passes for 22987 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Agreement of the constructed spectral flows with classical PDE solutions
+remains open. The dissertation remains unfinished.

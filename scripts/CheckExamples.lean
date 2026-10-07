@@ -32888,3 +32888,60 @@ example (h2p : 2 ≤ p) (T : ℝ) (hT : 0 < T) (φ : realTypeSourceSubmodule p)
 
 end OrdinaryObstructionChecks
 end
+
+
+noncomputable section
+open Set Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+namespace OrdinarySourceObstructionChecks
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Equal source and target exponents: the constructed Hilbert trajectories do not extend at p = 3.
+example :
+    ∃ S : realTypeSourceSubmodule 2 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 2),
+      AnalyticOnNhd ℝ S univ ∧
+      ∀ F : realTypeSourceSubmodule 3 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 3),
+        (∀ ψ : realTypeSourceSubmodule 2, ∀ τ : Icc (-1 : ℝ) 1,
+          F (realTypeSourceExponentInclusion (by norm_num) ψ) τ =
+            realTypeSourceExponentInclusion (by norm_num) (S ψ τ)) →
+        ∀ φ : realTypeSourceSubmodule 3,
+          φ ∉ sourceHilbertLocus (by norm_num) → ¬ ContinuousAt F φ :=
+  exists_ordinarySourceTrajectories_with_nonextension
+    (by simp) (by norm_num) (by simp) (by norm_num) (by norm_num) le_rfl 1 zero_lt_one
+
+-- The obstruction persists when trajectories are measured in the strictly weaker q = 4 norm.
+example :
+    ∃ S : realTypeSourceSubmodule 2 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 2),
+      AnalyticOnNhd ℝ S univ ∧
+      ∀ F : realTypeSourceSubmodule 3 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 4),
+        (∀ ψ : realTypeSourceSubmodule 2, ∀ τ : Icc (-1 : ℝ) 1,
+          F (realTypeSourceExponentInclusion (by norm_num) ψ) τ =
+            realTypeSourceExponentInclusion (by norm_num) (S ψ τ)) →
+        ∀ φ : realTypeSourceSubmodule 3,
+          φ ∉ sourceHilbertLocus (by norm_num) → ¬ ContinuousAt F φ :=
+  exists_ordinarySourceTrajectories_with_nonextension
+    (by simp) (by norm_num) (by simp) (by norm_num) (by norm_num) (by norm_num) 1 zero_lt_one
+
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
+variable {W₂ P₂ : Set (CoeffPair 2)} {s₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+variable {V₂ B₂ X₂ : Set (CoeffPair 2)} {t₂ : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+
+-- A direct Fourier-coefficient hypothesis also gives pointwise failure of continuity.
+example (H : SourceAbelianMomentAtlas (by simp) (by norm_num) W₂ s₂)
+    (hs₂ : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P₂ s₂)
+    (E : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₂ B₂ X₂ t₂)
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hq : q ≠ ⊤) (hq1 : 1 < q)
+    (h2p : 2 ≤ p) (hpq : p ≤ q) (T : ℝ) (hT : 0 < T)
+    (φ : realTypeSourceSubmodule p) (hφ : ¬ Summable (fun n : ℤ => ‖φ.val.fst n‖^2))
+    (F : realTypeSourceSubmodule p → C(Icc (-T) T,realTypeSourceSubmodule q))
+    (he : ∀ ψ : realTypeSourceSubmodule 2, ∀ τ : Icc (-T) T,
+      F (realTypeSourceExponentInclusion h2p ψ) τ =
+        realTypeSourceExponentInclusion (h2p.trans hpq) (H.ordinarySourceFlow E le_rfl ψ τ.val)) :
+    ¬ ContinuousAt F φ :=
+  H.corollary22_2_iii hs₂ E hp hp1 hq hq1 h2p hpq T hT φ
+    (fun h => hφ ((mem_sourceHilbertLocus_iff h2p φ).mp h)) F he
+
+end OrdinarySourceObstructionChecks
+end
