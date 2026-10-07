@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the physical period-one mass and NLS energy are analytic
-on the full H¹ space, equal their classical derivative integrals, and match
-the finite-gap hierarchy. The weighted spectral subtraction and full H¹
-identification with the cubic-moment extension remain; see `STATUS.md`.
+Latest milestone: the weighted spectral-action sum is absolutely convergent
+and analytic near every real H¹ source. The full physical Hamiltonian
+correction is now analytic and continuous there, with finite-gap calibration.
+Its identification with the cubic-moment extension on all H¹ sources remains;
+see `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -13627,3 +13628,52 @@ energy does not supply spectral finite-gap approximation. The existing
 FL⁴ density theorem and smoothness of individual finite-gap sources do not
 by themselves close this gap. Section 22 remains ahead, and the dissertation
 is unfinished.
+
+## Analytic weighted spectral sum and physical H¹ correction
+
+The literal weighted spectral sum `sum_n (2*pi*n)^2 I_n` is now absolutely
+convergent at every real H¹ source and analytic on a complex neighborhood
+of each such source. The weighted action sequence itself takes values
+analytically in `ell^1` on one open complex H¹ domain containing the entire
+real source locus.
+
+`CanonicalWeightedGapSummability.lean` identifies distant canonical
+squared gaps with the intrinsic contour invariants, independently of root
+ordering and including collapsed gaps, and transports the existing
+weighted power-tail estimates. `SourceSobolevEmbedding.lean` embeds the
+original H¹ source continuously into both its unweighted source and its
+weighted period-two physical realization, with exact coefficient and
+operator compatibility.
+
+`SourceSobolevGapBound.lean` combines the weighted tail estimate with a
+bound on the finite central block to obtain locally bounded `ell^1`
+realizations of the weighted squared gaps. This part holds near every
+complex H¹ source. `SourceNormalizedActionUniformBound.lean` bounds all
+normalized action factors on a common neighborhood of each real Hilbert
+source. `SourceSobolevActionBound.lean` then proves the full weighted action
+bound by the exact squared-gap factorization and the physical kinetic weight.
+
+`SourceSobolevActionAnalytic.lean` assembles the actual scalar actions into
+the analytic `ell^1` sequence and sums it by a bounded linear map. It also
+proves analyticity of the literal infinite series near every real H¹ source.
+`SourceSobolevPhysicalCorrection.lean` combines this with the physical
+energy and mass to define the full correction
+`H3 - 2 H1^2 - sum_n (2*pi*n)^2 I_n`, proves its analyticity and H¹
+continuity near real sources, and identifies it with the existing physical
+finite-gap correction for Hilbert sources.
+
+Public examples check absolute summability without finite-gap assumptions,
+the signed kinetic normalization, convergence of the literal spectral sum
+under arbitrary H¹ perturbations toward a real source, continuity of the
+physical correction, and exact finite-gap calibration.
+
+Validation: the full build passes (6044 jobs), all public examples pass,
+and the transitive axiom audit passes for 22466 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 21 work: prove that this physical H¹ correction agrees
+with the cubic-moment extension for all real H¹ sources. The continuity
+prerequisites are now established; Sobolev-controlled finite-gap approximation
+or a direct physical trace argument is still needed. Unweighted FL⁴ density
+and smoothness of individual finite-gap sources do not supply that argument.
+Section 22 remains ahead, and the dissertation is unfinished.

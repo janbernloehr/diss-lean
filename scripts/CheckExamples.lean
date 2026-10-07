@@ -32372,3 +32372,46 @@ example (a b : ScalarDomain 2) :
   tendsto_periodOneSobolevHamiltonian_truncate a b
 
 end PeriodOneSobolevHamiltonianChecks
+
+
+noncomputable section
+namespace SobolevSpectralActionChecks
+open NLS NLS.ZakharovShabat
+
+-- The physical subtraction has an absolutely convergent literal series at arbitrary real H¹ sources.
+example (a : ScalarDomain 2 × ScalarDomain 2)
+    (ha : IsRealType (CoeffPair.toMax 2 (sobolevSourceInclusion a))) :
+    Summable (fun n : ℤ => ‖(2*(Real.pi : ℂ)*n)^2 *
+      sourceComplexAction (by simp) (by norm_num) n (sobolevSourceInclusion a)‖) :=
+  summable_norm_sourceSobolevWeightedAction a ha
+
+-- Negative indices have the same kinetic weight as their positive counterparts.
+example (a : ScalarDomain 2 × ScalarDomain 2) (n : ℤ) :
+    sourceSobolevWeightedAction a (-n) = (2*(n : ℂ)*Real.pi)^2 *
+      sourceComplexAction (by simp) (by norm_num) (-n) (sobolevSourceInclusion a) := by
+  rw [sourceSobolevWeightedAction]
+  push_cast
+  ring
+
+-- Any H¹-convergent sequence, including complex perturbations, preserves the spectral sum limit.
+example (a : ScalarDomain 2 × ScalarDomain 2)
+    (ha : IsRealType (CoeffPair.toMax 2 (sobolevSourceInclusion a)))
+    (b : ℕ → ScalarDomain 2 × ScalarDomain 2)
+    (hb : Filter.Tendsto b Filter.atTop (nhds a)) :
+    Filter.Tendsto (fun k => ∑' n : ℤ, sourceSobolevWeightedAction (b k) n)
+      Filter.atTop (nhds (∑' n : ℤ, sourceSobolevWeightedAction a n)) :=
+  (analyticAt_tsum_sourceSobolevWeightedAction a ha).continuousAt.tendsto.comp hb
+
+example (a : ScalarDomain 2 × ScalarDomain 2)
+    (ha : IsRealType (CoeffPair.toMax 2 (sobolevSourceInclusion a))) :
+    ContinuousAt sourceSobolevPhysicalCorrection a :=
+  continuousAt_sourceSobolevPhysicalCorrection a ha
+
+-- Calibration is against the actual finite-gap physical correction, without a new spectral assumption.
+example (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    sourceSobolevPhysicalCorrection (sourceFiniteGapSobolevPair (by simp) (by norm_num) φ hf) =
+      sourceFiniteGapRenormalizedHamiltonian (by simp) (by norm_num) φ hf :=
+  sourceSobolevPhysicalCorrection_sourceFiniteGapSobolevPair φ hf
+
+end SobolevSpectralActionChecks
+end

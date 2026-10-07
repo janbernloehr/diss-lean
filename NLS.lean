@@ -2621,3 +2621,10 @@ import NLS.SequenceSpaces.SobolevPeriodDoubling
 import NLS.Fourier.PeriodOneSobolev
 import NLS.ZakharovShabat.PeriodOneSobolevHamiltonian
 import NLS.ZakharovShabat.SourceFiniteGapSobolevHamiltonian
+import NLS.ZakharovShabat.CanonicalWeightedGapSummability
+import NLS.ZakharovShabat.SourceSobolevEmbedding
+import NLS.ZakharovShabat.SourceSobolevGapBound
+import NLS.ZakharovShabat.SourceNormalizedActionUniformBound
+import NLS.ZakharovShabat.SourceSobolevActionBound
+import NLS.ZakharovShabat.SourceSobolevActionAnalytic
+import NLS.ZakharovShabat.SourceSobolevPhysicalCorrection
