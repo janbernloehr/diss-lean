@@ -33897,3 +33897,71 @@ example (φ : realTypeSourceSubmodule 3) (hf : φ ∈ sourceFiniteGapLocus (by s
   A.hamiltonianRenormalizedImageFlow_fst_eq_classical hs D (by norm_num) φ hf (-1) (-2)
 end Spectral
 end RenormalizedLocalExtensionChecks
+
+
+namespace ClassicalStabilityMassChecks
+open NLS.ZakharovShabat Set Filter Topology MeasureTheory
+
+-- Backwards evolution from a nonzero initial time has the same error estimate.
+example (u v : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalNLSTrajectory u) (hv : IsClassicalNLSTrajectory v)
+    (hum : ∀ r ∈ Icc (-1 : ℝ) 2, ‖u r‖ ≤ 3)
+    (hvm : ∀ r ∈ Icc (-1 : ℝ) 2, ‖v r‖ ≤ 3) :
+    classicalNLSDifferenceEnergy (u (-1)) (v (-1)) ≤
+      classicalNLSDifferenceEnergy (u 2) (v 2) * Real.exp 324 := by
+  have h := hu.difference_energy_le_exp hv 2 (-1) 3 (by norm_num)
+  norm_num only [min_eq_right (by norm_num : (-1 : ℝ) ≤ 2),
+    max_eq_left (by norm_num : (-1 : ℝ) ≤ 2)] at h
+  convert h hum hvm using 1
+
+-- No positive-length assumption is required for the compact estimate.
+example (u v : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalNLSTrajectory u) (hv : IsClassicalNLSTrajectory v)
+    (hum : ‖u 0‖ ≤ 1) (hvm : ‖v 0‖ ≤ 1) (δ : ℝ)
+    (hδ : classicalNLSDifferenceEnergy (u 0) (v 0) ≤ δ) :
+    classicalNLSDifferenceEnergy (u 0) (v 0) ≤ δ := by
+  have h := hu.difference_energy_le_exp_on_Icc hv 0 1 (by norm_num)
+    (by
+      intro r hr
+      have hr0 : r = 0 := by simpa using hr
+      simpa only [hr0] using hum)
+    (by
+      intro r hr
+      have hr0 : r = 0 := by simpa using hr
+      simpa only [hr0] using hvm) 0 (by simp)
+  exact h.trans (by simpa only [mul_zero,Real.exp_zero,mul_one] using hδ)
+
+-- Only an eventual common bound on the approximating family is needed.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalNLSTrajectory u) (v : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hv : ∀ j, IsClassicalNLSTrajectory (v j))
+    (hum : ∀ r ∈ Icc (-2 : ℝ) 2, ‖u r‖ ≤ 5)
+    (hvm : ∀ᶠ j in atTop, ∀ r ∈ Icc (-2 : ℝ) 2, ‖v j r‖ ≤ 5)
+    (hinit : Tendsto (fun j => ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (v j 0)) atTop
+      (𝓝 (ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (u 0)))) :
+    TendstoUniformlyOn (fun j r => ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (v j r))
+      (fun r => ContinuousMap.toLp 2 AddCircle.haarAddCircle ℂ (u r)) atTop (Icc (-2 : ℝ) 2) :=
+  hu.tendstoUniformlyOn_toLp v hv 2 5 (by norm_num) hum hvm hinit
+
+-- Mass conservation does not require a finite-gap source or any spectral atlas.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalNLSTrajectory u) :
+    (∫ x in (0 : ℝ)..1, ‖u (-3) (x : AddCircle (2 : ℝ))‖^2) =
+      ∫ x in (0 : ℝ)..1, ‖u 7 (x : AddCircle (2 : ℝ))‖^2 :=
+  hu.integral_mass_eq (-3) 7
+
+-- Conservation also holds with an arbitrary fixed, even negative, gauge parameter.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalRenormalizedNLSTrajectory (-2) u) :
+    classicalNLSMass (u (-3)) = classicalNLSMass (u 7) := hu.mass_eq (-3) 7
+
+-- Supplying the actual initial mass recovers the nonlocal physical equation.
+example (u : ℝ → C(AddCircle (2 : ℝ), ℂ))
+    (hu : IsClassicalRenormalizedNLSTrajectory (classicalNLSMass (u 0)) u) (time x : ℝ) :
+    deriv u time (x : AddCircle (2 : ℝ)) =
+      scalarClassicalNLSVectorField (fun y : ℝ => u time (y : AddCircle (2 : ℝ))) x +
+        (4*(∫ y in (0 : ℝ)..1, ‖u time (y : AddCircle (2 : ℝ))‖^2) : ℂ)*Complex.I*
+          u time (x : AddCircle (2 : ℝ)) :=
+  hu.equation_physical_mass rfl time x
+
+end ClassicalStabilityMassChecks

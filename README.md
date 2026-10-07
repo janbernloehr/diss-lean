@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: for every finite `p > 2`, the renormalized local flow is
-identified as the unique continuous extension of classical finite-gap dynamics
-on a source neighborhood, with analytic compact-time dependence. An invariant
-neighborhood of zero supports the corresponding global group. Both results
-construct all spectral data and retain the exact physical time orientation.
-Agreement for arbitrary smooth data remains necessary for the dissertation’s
-full smooth-approximation definition of wellposedness. See `STATUS.md`.
+Latest milestone: arbitrary classical NLS solutions now satisfy quantitative
+L² stability in both time directions, and uniformly bounded classical
+approximations converge uniformly in time from convergent L² initial data.
+Physical mass conservation is proved directly for ordinary and renormalized
+classical solutions, without finite-gap assumptions. Deriving the common
+approximation bound and identifying arbitrary smooth solutions with the
+spectral flow remain necessary for the full wellposedness statements.
+See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

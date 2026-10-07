@@ -2735,3 +2735,5 @@ import NLS.ZakharovShabat.SourceHamiltonianRenormalizedImageFlow
 import NLS.ZakharovShabat.SourceRenormalizedImageClassicalAgreement
 import NLS.ZakharovShabat.ClassicalRenormalizedNLSLocalExtension
 import NLS.ZakharovShabat.ClassicalRenormalizedNLSSmallGlobalExtension
+import NLS.ZakharovShabat.ClassicalNLSStability
+import NLS.ZakharovShabat.ClassicalNLSMass

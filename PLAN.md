@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Latest progress: local and near-zero global classical renormalized extensions
+## Latest progress: arbitrary classical stability and physical mass
+
+The actual classical PDE now gives quantitative two-sided-in-time L²
+stability for arbitrary smooth trajectories. With a common amplitude bound
+`M` between times `a` and `b`, the squared L² error is at most its value at
+`a` times `exp(12*M²*|b-a|)`. On `[-T,T]` one common constant controls the
+whole path. Convergence of initial data in physical L² therefore gives
+uniform-in-time L² convergence of any classical approximation family with
+an eventual common amplitude bound. No finite-gap hypothesis is used.
+
+`ClassicalNLSStability.lean` derives these conclusions from the existing
+PDE difference-energy derivative, applying Grönwall in both time directions.
+The final convergence theorem concerns the actual `ContinuousMap.toLp`
+realizations, not only scalar error quantities. Early approximants may
+fail the common bound.
+
+`ClassicalNLSMass.lean` proves physical mass conservation for every classical
+ordinary or fixed-parameter renormalized trajectory. Periodic integration
+by parts cancels the linear term, and the cubic mass pairing has zero real
+part. Uniform-norm time differentiability supplies the Hilbert norm derivative;
+zero derivative gives conservation between arbitrary real times. The unit
+scalar gauge transfers conservation to renormalized trajectories. The mass
+is identified with its literal unit-interval integral. When the renormalized
+parameter equals the physical initial mass, the equation uses that same
+physical integral at every time, as in the dissertation.
+
+Public examples check backwards evolution from a nonzero initial time,
+a zero-length interval, an eventually bounded approximation sequence,
+physical mass at negative and positive times, a negative fixed gauge
+parameter, and recovery of the nonlocal renormalized equation.
+
+Validation: the full build passes (6154 jobs), all public examples pass,
+and the transitive axiom audit passes for 23475 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+The common amplitude bound for the approximating family remains an explicit
+hypothesis. The next step is to derive it for H¹-convergent finite-gap
+approximations from conservation and coercivity of the defocusing physical
+energy. The resulting stability limit must then be identified with the
+spectral flow for arbitrary smooth initial data. Until that bridge is proved,
+the all-smooth-approximation solution definition on dissertation page 86 and
+the full wellposedness theorems remain incomplete.
+
+## Previous milestone: local and near-zero global classical renormalized extensions
 
 For every finite `p > 2`, every real source now has an open neighborhood
 and a common positive time interval with an analytic renormalized
@@ -57,11 +100,16 @@ remain. The dissertation is not complete.
 
 Next implementation targets:
 
-1. Prove agreement with arbitrary smooth classical NLS and renormalized
-   NLS trajectories, then upgrade approximation convergence from finite-gap
-   sequences to every smooth sequence, as required by the definition on
-   dissertation page 86. Audit weighted finite-gap density and the full
-   smooth physical Hamiltonian/Birkhoff differential needed for this bridge.
+1. Derive conservation of the finite-gap physical energy from
+   `SourcePrimitivePowerAtlas.finiteGap_hamiltonian_identity`,
+   `SourcePrimitivePowerAtlas.moment_real_eq_of_actions`, and the physical
+   flow’s action and mass conservation. Prove that physical mass plus
+   defocusing energy controls the H¹ norm and hence the uniform amplitude.
+   Combine `dense_sourceSobolevFiniteGapLocus` with
+   `IsClassicalNLSTrajectory.tendstoUniformlyOn_toLp` to identify arbitrary
+   smooth ordinary trajectories with the spectral flow. Transfer agreement
+   through the physical mass gauge, then upgrade to every smooth
+   approximation sequence as required on dissertation page 86.
 2. Prove compatibility on overlapping source neighborhoods and time intervals
    and across admissible exponents; assemble Theorems 18.5 and 22.1 and
    Corollary 22.2 only after their full hypotheses and conclusions are met.
