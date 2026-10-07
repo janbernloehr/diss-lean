@@ -2702,3 +2702,9 @@ import NLS.ZakharovShabat.PeriodOneSobolevEnergyVariation
 import NLS.ZakharovShabat.PhysicalEnergyCotangent
 import NLS.ZakharovShabat.SourceFiniteGapPhysicalNLSCoefficients
 import NLS.ZakharovShabat.SourceFiniteGapPhysicalNLSODE
+import NLS.ZakharovShabat.NormalizedWeightedSourceTopology
+import NLS.ZakharovShabat.NormalizedWeightedSourceClosing
+import NLS.ZakharovShabat.NormalizedWeightedClosingInverseSupport
+import NLS.ZakharovShabat.NormalizedWeightedTruncation
+import NLS.ZakharovShabat.SourceFiniteGapWeightedLift
+import NLS.ZakharovShabat.SourceFiniteGapSobolevTime

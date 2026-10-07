@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Latest progress: uniform finite-gap closing coordinates
+## Latest progress: H¹ and pointwise time differentiability
+
+The actual finite-gap Hamiltonian-oriented trajectory is now differentiable
+in H¹, and both physical components are differentiable in time at every
+spatial point. This closes the time-regularity gap left by the source-norm
+and Fourier NLS equations.
+
+`NormalizedWeightedSourceTopology.lean` provides a bounded complex-linear,
+injective decoder for normalized weighted coordinates.
+`NormalizedWeightedSourceClosing.lean` proves a uniform canonical-gap
+closing criterion directly from the weighted periodic spectrum, including
+complex sources.
+
+`NormalizedWeightedClosingInverseSupport.lean` gives one common inverse
+radius and cutoff: finite Fourier targets produce decoded sources whose
+actual spectral gaps vanish beyond that same cutoff. Real targets also
+give the exact unweighted adapted coordinates after decoding.
+`NormalizedWeightedTruncation.lean` constructs bounded finite weighting
+maps, proves exact decoding and reality preservation, and identifies the
+actual finite weighted target of every sufficiently regular finite-gap
+base point.
+
+`SourceFiniteGapWeightedLift.lean` constructs a complex analytic weighted
+lift near each weighted finite-gap base point. On nearby real sources with
+a common closed-gap tail, decoding the lift is the identity. The proof
+uses the original closing map's lower distance bound. Differentiable source
+curves therefore have local differentiable weighted lifts.
+
+`SourceFiniteGapSobolevTime.lean` identifies those lifts with the canonical
+H¹ representatives. Action conservation supplies one closed-gap tail for
+the full finite-gap trajectory. Bounded synthesis and evaluation then give
+pointwise time differentiability of both physical components.
+
+Public examples verify a negative low Fourier mode, the excluded cutoff
+boundary, pointwise time differentiability, and compatibility of the H¹
+derivative with the established physical NLS velocity in source norm.
+
+Validation: the full build passes (6125 jobs), all public examples pass,
+and the transitive axiom audit passes for 23170 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Identifying the pointwise time derivatives with the classical NLS spatial
+field, classical solution-map agreement, and the nonextension transfer
+remain unfinished. The dissertation formalization is not complete.
+
+Next implementation targets:
+
+1. Identify the bounded physical synthesis of the H¹ time derivative with
+   the classical NLS vector field using the proved Fourier coefficients.
+2. State and prove the classical pointwise scalar NLS equation.
+3. Prove classical solution-map agreement and transfer nonextension with
+   the established Hamiltonian time orientation.
+
+## Previous progress: uniform finite-gap closing coordinates
 
 The distant closed-gap equations now hold on open neighborhoods with a
 single cutoff. This removes the pointwise choice of cutoff from the

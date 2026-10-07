@@ -33302,3 +33302,55 @@ example (γ : ℝ → CoeffPair 3) (time : ℝ) (hc : ContinuousAt γ time)
     (fun n hn => hgap t n ((le_max_right _ _).trans hn))
 
 end UniformClosingChecks
+
+namespace SobolevTimeChecks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+
+-- Decoding a weighted finite target recovers a negative low Fourier mode exactly.
+example (w : SpectralWeight) (N : ℕ) (φ : CoeffPair 2) (n : ℤ) (hn : n.natAbs < N) :
+    (normalizedWeightedSource w (normalizedWeightedTruncateCLM w N φ)).fst (-n) = φ.fst (-n) := by
+  rw [normalizedWeightedSource_truncate]
+  change Coeff.truncate (Finset.Ioo (-(N : ℤ)) N) φ.fst (-n) = _
+  rw [Coeff.truncate_apply, if_pos (by simp only [Finset.mem_Ioo]; omega)]
+
+-- The exact boundary mode is excluded from the weighted target.
+example (w : SpectralWeight) (N : ℕ) (φ : CoeffPair 2) :
+    (normalizedWeightedTruncateCLM w N φ).fst (-(N : ℤ)) = 0 ∧
+    (normalizedWeightedTruncateCLM w N φ).snd (-(N : ℤ)) = 0 := by
+  exact normalizedWeightedTruncateCLM_support w N φ _ (by simp)
+
+-- The H¹ derivative retains the already proved physical NLS coefficients in source norm.
+example {W P V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (hs : SourcePsiIsolatingComplexExtension (by simp) (by norm_num) P s)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (time : ℝ) :
+    sobolevSourceInclusion (deriv (fun r => sourceFiniteGapSobolevPair (by simp) (by norm_num)
+      (A.hamiltonianOrdinarySourceFlow D le_rfl φ r)
+      (A.hamiltonianOrdinarySourceFlow_finiteGap D le_rfl φ hf r)) time) =
+    sourceFiniteGapPhysicalNLSCoefficients (A.hamiltonianOrdinarySourceFlow D le_rfl φ time)
+      (A.hamiltonianOrdinarySourceFlow_finiteGap D le_rfl φ hf time) := by
+  have hd := (A.differentiable_hamiltonianOrdinarySourceFlow_sobolev D φ hf time).hasDerivAt
+  have hi := (sobolevSourceInclusion.restrictScalars ℝ).hasFDerivAt.comp_hasDerivAt time hd
+  change HasDerivAt (fun r => sobolevSourceInclusion (sourceFiniteGapSobolevPair
+    (by simp) (by norm_num) (A.hamiltonianOrdinarySourceFlow D le_rfl φ r)
+    (A.hamiltonianOrdinarySourceFlow_finiteGap D le_rfl φ hf r))) _ time at hi
+  simp only [sobolevSourceInclusion_sourceFiniteGapSobolevPair] at hi
+  exact hi.unique (A.hasDerivAt_hamiltonianOrdinarySourceFlow_physicalNLS hs D φ hf time)
+
+-- Both physical components have genuine pointwise time derivatives at arbitrary space/time.
+example {W V B X : Set (CoeffPair 2)}
+    {s t : (n : ℤ) → CoeffPair 2 → DeletedCoeff 2 n}
+    (A : SourceAbelianMomentAtlas (by simp) (by norm_num) W s)
+    (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) V B X t)
+    (φ : realTypeSourceSubmodule 2) (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num))
+    (time x : ℝ) :
+    DifferentiableAt ℝ (fun r => (sourceFiniteGapPhysicalPair (by simp) (by norm_num)
+      (A.hamiltonianOrdinarySourceFlow D le_rfl φ r)
+      (A.hamiltonianOrdinarySourceFlow_finiteGap D le_rfl φ hf r)).2 x) time :=
+  (A.differentiable_hamiltonianOrdinarySourceFlow_physical D φ hf x).2 time
+
+end SobolevTimeChecks
