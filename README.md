@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: finite-gap trajectories satisfy the NLS equation in
-the original Hilbert source norm and in every signed Fourier mode. The
-velocity is identified with the classical physical spatial field, with
-normalization `i*u_t = -u_xx + 2*|u|^2*u`. Pointwise time regularity and
-classical solution-map agreement remain open. See `STATUS.md`.
+Latest milestone: closed-gap equations now hold uniformly on source
+neighborhoods, giving one finite adapted-coordinate
+cutoff for nearby sources with a common closed-gap tail. This supports
+the next time-regularity step beyond the proved source-norm and Fourier
+NLS equations. Pointwise time differentiation and classical solution-map
+agreement remain open. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

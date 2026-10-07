@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: the physical NLS field and Fourier equation
+## Current milestone: uniform finite-gap closing coordinates
+
+The distant closed-gap equations now hold on open neighborhoods with a
+single cutoff. This removes the pointwise choice of cutoff from the
+adapted-coordinate regularity route.
+
+`SourceClosedGapCenter.lean` now proves that every nearby real source has
+both center closing equations whenever its corresponding distant gap is
+closed. The proof combines uniform determinant bounds, root counts, and
+canonical endpoint labeling. The original pointwise theorem is retained
+as a corollary.
+
+`SourceFiniteGapAdaptedCoordinates.lean` now proves a uniform truncation
+identity: nearby real sources whose gaps vanish beyond a common cutoff
+have adapted coordinates equal to the same finite Fourier truncation.
+The identity holds at every sufficiently large cutoff.
+
+A public example applies the result to a continuous family at exponent 3
+with a common closed-gap tail, using a single local cutoff for both
+coefficient components.
+
+Validation: the full build passes (6119 jobs), all public examples pass,
+and the transitive axiom audit passes for 23115 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+The full source-norm and Fourier NLS equations remain established.
+Recovering the trajectory in stronger spatial norms through the weighted
+inverse, pointwise time differentiation, and classical solution-map
+agreement remain unfinished.
+
+## Previous milestone: the physical NLS field and Fourier equation
 
 The finite-gap trajectory derivative in the original Hilbert source norm
 is now the Fourier realization of the classical physical NLS field. Every

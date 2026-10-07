@@ -33277,3 +33277,28 @@ example {W P V B X : Set (CoeffPair 2)}
     (A.hasDerivAt_hamiltonianOrdinarySourceFlow_scalarNLS_fourier hs D φ hf 0 (-n)).deriv
 
 end PhysicalNLSChecks
+
+
+namespace UniformClosingChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A continuous family with one spectral tail uses one adapted-coordinate cutoff locally.
+example (γ : ℝ → CoeffPair 3) (time : ℝ) (hc : ContinuousAt γ time)
+    (hreal : ∀ t, IsRealType (CoeffPair.toMax 3 (γ t))) (K : ℕ)
+    (hgap : ∀ t n, K ≤ Int.natAbs n →
+      canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (γ t))
+        (periodOnePotential_mem (γ t)) n = 0) :
+    ∃ M : ℕ, K ≤ M ∧ ∀ᶠ t in 𝓝 time,
+      sourceAdaptedClosingMap (by simp) (γ t) M = (CoeffPair.toMax 3).symm
+        (Coeff.truncate (Finset.Ioo (-(M : ℤ)) M) (γ t).fst,
+         Coeff.truncate (Finset.Ioo (-(M : ℤ)) M) (γ t).snd) := by
+  obtain ⟨N,_,U,ho,hγ,h⟩ := exists_uniform_sourceAdaptedClosingMap_eq_truncate
+    (by simp) (by norm_num) (γ time)
+  refine ⟨max N K,le_max_right _ _,?_⟩
+  filter_upwards [hc.eventually (ho.mem_nhds hγ)] with t ht
+  exact h (γ t) ht (hreal t) (max N K) (le_max_left _ _)
+    (fun n hn => hgap t n ((le_max_right _ _).trans hn))
+
+end UniformClosingChecks

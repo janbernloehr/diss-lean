@@ -1,6 +1,7 @@
 import NLS.ZakharovShabat.ResonantDoubleRootClosing
 import NLS.ZakharovShabat.SourceFiniteGap
 import NLS.ZakharovShabat.SourceAdaptedClosingMapReality
+import NLS.ZakharovShabat.UniformCanonicalPeriodicEndpoints
 
 /-! # Real closed gaps force the actual center closing equations
 
@@ -17,29 +18,42 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
-/-- The converse of the distant center closing criterion for real sources. -/
-theorem exists_sourceClosedGap_center_equations
-    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p)
-    (hreal : IsRealType (CoeffPair.toMax p φ)) :
-    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs →
+/-- One open source neighborhood and one cutoff suffice for every real closed gap. -/
+theorem exists_uniform_sourceClosedGap_center_equations
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ₀ : CoeffPair p) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ U : Set (CoeffPair p), IsOpen U ∧ φ₀ ∈ U ∧
+      ∀ φ ∈ U, IsRealType (CoeffPair.toMax p φ) → ∀ n : ℤ, N ≤ n.natAbs →
       canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = 0 →
       let ζ := weightedResonantDiagonalCenter hp SpectralWeight.one (sourceWeightedPeriodOne φ) n
       canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = ζ ∧
       weightedResonantBPlusExtension hp SpectralWeight.one (sourceWeightedPeriodOne φ) n ζ = 0 ∧
       weightedResonantBMinusExtension hp SpectralWeight.one (sourceWeightedPeriodOne φ) n ζ = 0 := by
   let w := SpectralWeight.one
+  let ψ₀ := sourceWeightedPeriodOne φ₀
+  obtain ⟨N₁,hN₁,U₁,ho₁,_,hφ₁,_,h₁⟩ := exists_uniform_resonantDeterminant_control hp hp1 w ψ₀
+  obtain ⟨N₂,_,U₂,ho₂,_,hφ₂,_,h₂⟩ := exists_uniform_weightedDeterminant_spectral_iff hp w ψ₀
+  obtain ⟨N₃,_,U₃,ho₃,_,hφ₃,_,h₃⟩ := exists_uniform_resonantRoots hp hp1 w ψ₀
+  obtain ⟨N₄,_,U₄,ho₄,_,hφ₄,_,h₄⟩ := exists_uniform_canonicalPeriodicEndpoints hp hp1 w ψ₀
+  refine ⟨max N₁ (max N₂ (max N₃ (N₄+1))),by omega,
+    sourceWeightedPeriodOne ⁻¹' (U₁ ∩ U₂ ∩ U₃ ∩ U₄),
+    (((ho₁.inter ho₂).inter ho₃).inter ho₄).preimage sourceWeightedPeriodOne.continuous,
+    ⟨⟨⟨hφ₁,hφ₂⟩,hφ₃⟩,hφ₄⟩,?_⟩
+  intro φ hφ hreal n hn hgap
+  rcases hφ with ⟨⟨⟨hφ₁,hφ₂⟩,hφ₃⟩,hφ₄⟩
   let ψ := sourceWeightedPeriodOne φ
-  obtain ⟨N₁,hN₁,U₁,_,_,hφ₁,_,h₁⟩ := exists_uniform_resonantDeterminant_control hp hp1 w ψ
-  obtain ⟨N₂,_,U₂,_,_,hφ₂,_,h₂⟩ := exists_uniform_weightedDeterminant_spectral_iff hp w ψ
-  obtain ⟨N₃,_,U₃,_,_,hφ₃,_,h₃⟩ := exists_uniform_resonantRoots hp hp1 w ψ
-  let N₄ := canonicalPeriodicCutoff hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ)+1
-  refine ⟨max N₁ (max N₂ (max N₃ N₄)),by omega,?_⟩
-  intro n hn hgap
+  have hlabel : PeriodicEndpointLabeling hp (periodOnePotential φ) N₄
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ))
+      (canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ)) := by
+    have hh : ∀ hψ : weightedBaseToPair SpectralWeight.one (sourceWeightedPeriodOne φ) ∈ pairParitySubspace 0,
+        PeriodicEndpointLabeling hp (weightedBaseToPair SpectralWeight.one (sourceWeightedPeriodOne φ)) N₄
+          (canonicalPeriodicLeft hp hp1 _ hψ) (canonicalPeriodicRight hp hp1 _ hψ) :=
+      fun hψ => h₄ ψ hφ₄ hψ N₄ le_rfl
+    rw [weightedBaseToPair_sourceWeightedPeriodOne] at hh
+    exact hh (periodOnePotential_mem φ)
   let z := canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n
   have hend : canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = z :=
     sub_eq_zero.mp hgap
-  have hpair := (canonicalPeriodicEndpoints_spec hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ)).1.distant
-    n (by dsimp only [N₄] at hn; omega)
+  have hpair := hlabel.distant n (by omega)
   have hz : z ∈ refinedResonantDisk n := hpair.left_mem
   have hzs := refinedResonantDisk_subset_strip n hz
   have hspectrum (x : ℂ) (hx : x ∈ resonantStrip n) :
@@ -98,5 +112,18 @@ theorem exists_sourceClosedGap_center_equations
   exact ⟨hzcenter,
     (congrArg (weightedResonantBPlusExtension hp w ψ n) hzcenter.symm).trans hclose.2.1,
     (congrArg (weightedResonantBMinusExtension hp w ψ n) hzcenter.symm).trans hclose.2.2⟩
+
+/-- The converse of the distant center closing criterion for real sources. -/
+theorem exists_sourceClosedGap_center_equations
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p)
+    (hreal : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∀ n : ℤ, N ≤ n.natAbs →
+      canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = 0 →
+      let ζ := weightedResonantDiagonalCenter hp SpectralWeight.one (sourceWeightedPeriodOne φ) n
+      canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = ζ ∧
+      weightedResonantBPlusExtension hp SpectralWeight.one (sourceWeightedPeriodOne φ) n ζ = 0 ∧
+      weightedResonantBMinusExtension hp SpectralWeight.one (sourceWeightedPeriodOne φ) n ζ = 0 := by
+  obtain ⟨N,hN,U,_,hφ,h⟩ := exists_uniform_sourceClosedGap_center_equations hp hp1 φ
+  exact ⟨N,hN,h φ hφ hreal⟩
 
 end NLS.ZakharovShabat
