@@ -1,6 +1,65 @@
 # Implementation plan
 
-## Latest progress: continuous renormalized coordinate and source flows
+## Latest progress: analytic compact-time coordinate trajectories and fixed-time source flows
+
+The actual renormalized coordinate trajectories now depend real analytically
+on the initial source in `C([-T,T], ell^p × ell^p)` for every finite `p > 1`.
+There is a complex analytic extension on one common open source neighborhood
+containing the real locus, valid for every compact time interval. For
+`1 < p <= 2`, each fixed-time source flow and its negative-time inverse are
+real analytic, strengthening the previous homeomorphisms to bi-analytic maps.
+
+`SequenceSpaces/AnalyticPhaseTrajectory.lean` separates an arbitrary fixed
+real frequency sequence from a bounded complex correction. The fixed phase
+rotation acts bounded linearly on continuous trajectories, even with
+unbounded quadratic frequencies. The correction exponential is constructed
+in the Banach algebra of continuous bounded-symbol families. Its bounded
+bilinear action on the initial amplitude proves entire dependence in the
+uniform trajectory norm. Coordinate evaluation gives the literal scalar
+exponential formula.
+
+`Dynamics/AnalyticComplexPhaseTrajectory.lean` assembles the two opposite
+phase signs. `SourceRenormalizedPhaseAnalytic.lean` inserts the actual
+analytic moment-sum correction and original complex Birkhoff coordinates.
+Its extension agrees exactly with the previously constructed real
+trajectories, rather than introducing a different dynamics.
+
+`SourceRenormalizedFlowAnalytic.lean` evaluates these trajectories at any
+fixed real time and composes with the actual analytic Birkhoff inverse.
+It also proves compact-time analytic dependence on real Birkhoff initial
+coordinates globally for `p <= 2`, and locally on the actual coordinate
+image at every finite `p > 1`. `SourceRenormalizedAnalyticExistence.lean`
+constructs the spectral atlas and Birkhoff family with these properties.
+
+Public examples check the unbounded quadratic base at `p = 4`, complex
+frequency corrections with both signs, zero amplitudes, analytic dependence
+in the full trajectory space, analytic inverse flow maps, and local
+coordinate parametrization without global-surjectivity assumptions.
+
+Validation: the full build passes (6070 jobs), all public examples pass,
+and the transitive axiom audit passes for 22764 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 22 work includes analytic dependence of the complete
+source-valued trajectory in `C([-T,T], E)`, the local source flow and
+small-data global flow for `p > 2`, the ordinary NLS mass shift and its
+discontinuity outside `ell^2`, and agreement with classical NLS solutions.
+Fixed-time analyticity alone does not close the source-trajectory gap.
+The dissertation remains unfinished.
+
+Next implementation targets:
+
+1. Prove analytic composition on compact-time function spaces and apply it
+   to the actual Birkhoff inverse, closing the remaining source-valued
+   trajectory analyticity gap for `p <= 2`.
+2. Use the open Birkhoff image at `p > 2` to construct local source flows
+   with analytic dependence. An invariant coordinate ball around zero
+   should give the small-data global flow in Corollary 22.2(ii).
+3. Add the ordinary NLS mass shift in the summable-action range, establish
+   agreement with classical solutions, and prove failure of continuous
+   extension outside `ell^2` for `p > 2`.
+
+## Previous progress: continuous renormalized coordinate and source flows
 
 Section 22 now has actual global coordinate trajectories for every finite
 source exponent `p > 1`, with joint time/source continuity in the sequence
@@ -46,19 +105,6 @@ trajectory spaces, the local source flow and small-data global flow for
 and the required agreement with classical NLS solutions. This milestone
 establishes continuous spectral dynamics, not all of Theorem 22.1 or
 Corollary 22.2. The dissertation remains unfinished.
-
-Next implementation targets:
-
-1. Use the Banach analytic frequency sequence and its local bounds to prove
-   analytic dependence into `C([-T,T], ell^p)`. Transfer this through actual
-   inverse charts; joint continuity alone does not prove Theorem 22.1's
-   analytic trajectory assertion or fixed-time diffeomorphisms.
-2. Use the open Birkhoff image at `p > 2` to construct the local-time source
-   flow. An invariant coordinate ball around zero should give the small-data
-   global flow required by Corollary 22.2(ii).
-3. Add the ordinary NLS mass shift in the summable-action range, establish
-   the classical-solution agreement required for the wellposedness statement,
-   and prove failure of continuous extension outside `ell^2` for `p > 2`.
 
 ## Previous progress: H¹ finite-gap density and physical Hamiltonian identification
 

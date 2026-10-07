@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: continuous renormalized coordinate and source flows
+## Current milestone: analytic compact-time coordinate trajectories and fixed-time source flows
+
+The actual renormalized coordinate trajectories now depend real analytically
+on the initial source in `C([-T,T], ell^p × ell^p)` for every finite `p > 1`.
+There is a complex analytic extension on one common open source neighborhood
+containing the real locus, valid for every compact time interval. For
+`1 < p <= 2`, each fixed-time source flow and its negative-time inverse are
+real analytic, strengthening the previous homeomorphisms to bi-analytic maps.
+
+`SequenceSpaces/AnalyticPhaseTrajectory.lean` separates an arbitrary fixed
+real frequency sequence from a bounded complex correction. The fixed phase
+rotation acts bounded linearly on continuous trajectories, even with
+unbounded quadratic frequencies. The correction exponential is constructed
+in the Banach algebra of continuous bounded-symbol families. Its bounded
+bilinear action on the initial amplitude proves entire dependence in the
+uniform trajectory norm. Coordinate evaluation gives the literal scalar
+exponential formula.
+
+`Dynamics/AnalyticComplexPhaseTrajectory.lean` assembles the two opposite
+phase signs. `SourceRenormalizedPhaseAnalytic.lean` inserts the actual
+analytic moment-sum correction and original complex Birkhoff coordinates.
+Its extension agrees exactly with the previously constructed real
+trajectories, rather than introducing a different dynamics.
+
+`SourceRenormalizedFlowAnalytic.lean` evaluates these trajectories at any
+fixed real time and composes with the actual analytic Birkhoff inverse.
+It also proves compact-time analytic dependence on real Birkhoff initial
+coordinates globally for `p <= 2`, and locally on the actual coordinate
+image at every finite `p > 1`. `SourceRenormalizedAnalyticExistence.lean`
+constructs the spectral atlas and Birkhoff family with these properties.
+
+Public examples check the unbounded quadratic base at `p = 4`, complex
+frequency corrections with both signs, zero amplitudes, analytic dependence
+in the full trajectory space, analytic inverse flow maps, and local
+coordinate parametrization without global-surjectivity assumptions.
+
+Validation: the full build passes (6070 jobs), all public examples pass,
+and the transitive axiom audit passes for 22764 NLS declarations, with no
+admitted proofs or new axioms. The 21 existing warnings are unchanged.
+
+Remaining Section 22 work includes analytic dependence of the complete
+source-valued trajectory in `C([-T,T], E)`, the local source flow and
+small-data global flow for `p > 2`, the ordinary NLS mass shift and its
+discontinuity outside `ell^2`, and agreement with classical NLS solutions.
+Fixed-time analyticity alone does not close the source-trajectory gap.
+The dissertation remains unfinished.
+
+## Previous milestone: continuous renormalized coordinate and source flows
 
 Section 22 now has actual global coordinate trajectories for every finite
 source exponent `p > 1`, with joint time/source continuity in the sequence

@@ -2649,3 +2649,8 @@ import NLS.ZakharovShabat.SourceRenormalizedPhaseTrajectory
 import NLS.ZakharovShabat.SourceRenormalizedFlow
 import NLS.ZakharovShabat.SourceRenormalizedFlowTrajectories
 import NLS.ZakharovShabat.SourceRenormalizedFlowExistence
+import NLS.SequenceSpaces.AnalyticPhaseTrajectory
+import NLS.Dynamics.AnalyticComplexPhaseTrajectory
+import NLS.ZakharovShabat.SourceRenormalizedPhaseAnalytic
+import NLS.ZakharovShabat.SourceRenormalizedFlowAnalytic
+import NLS.ZakharovShabat.SourceRenormalizedAnalyticExistence

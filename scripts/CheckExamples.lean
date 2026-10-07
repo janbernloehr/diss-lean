@@ -32546,3 +32546,73 @@ example (hp2 : p ≤ 2) (T : ℝ) (φ : ℕ → realTypeSourceSubmodule p) (ψ :
 
 end RenormalizedFlowChecks
 end
+
+
+noncomputable section
+namespace AnalyticFlowChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- An unbounded quadratic base frequency allows an entire compact-time correction map.
+example (T : ℝ) (x : Coeff ⊤ × Coeff 4) :
+    AnalyticAt ℂ (fun y : Coeff ⊤ × Coeff 4 =>
+      Coeff.analyticPhaseTrajectory (by simp) (fun n : ℤ => (2*Real.pi*n)^2)
+        (⟨Subtype.val,continuous_subtype_val⟩ : C(Icc (-T) T, ℝ)) y.1 y.2) x :=
+  Coeff.analyticAt_analyticPhaseTrajectory (by simp) _ _ x
+
+-- The complex extension retains both opposite phase signs, even off the real locus.
+example (T : ℝ) (b : Coeff ⊤) (z : Coeff 4 × Coeff 4) (τ : Icc (-T) T) (n : ℤ) :
+    let F := Birkhoff.analyticPhaseTrajectory (by simp : (4 : ℝ≥0∞) ≠ ⊤)
+      (fun n : ℤ => (2*Real.pi*n)^2)
+      (⟨Subtype.val,continuous_subtype_val⟩ : C(Icc (-T) T, ℝ)) b z
+    (F τ).1 n = Complex.exp ((τ.val : ℂ)*Complex.I*((2*(Real.pi : ℂ)*n)^2+b n))*z.1 n ∧
+    (F τ).2 n = Complex.exp (-(τ.val : ℂ)*Complex.I*((2*(Real.pi : ℂ)*n)^2+b n))*z.2 n := by
+  dsimp only
+  constructor <;> simp only [Birkhoff.analyticPhaseTrajectory_fst,
+    Birkhoff.analyticPhaseTrajectory_snd,ContinuousMap.coe_mk,Complex.ofReal_pow,
+    Complex.ofReal_mul,Complex.ofReal_ofNat,Complex.ofReal_intCast]
+
+-- Zero coordinates remain zero throughout the analytic complex extension.
+example (T : ℝ) (freq : ℤ → ℝ) (b : Coeff ⊤) :
+    Coeff.analyticPhaseTrajectory (by simp : (2 : ℝ≥0∞) ≠ ⊤) freq
+      (⟨Subtype.val,continuous_subtype_val⟩ : C(Icc (-T) T, ℝ)) b 0 = 0 := by
+  ext τ n
+  simp only [Coeff.analyticPhaseTrajectory_apply,lp.coeFn_zero,Pi.zero_apply,mul_zero,
+    ContinuousMap.zero_apply]
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+variable {W P : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable {W₀ B X : Set (CoeffPair p)} {t : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+variable (A : SourceAbelianMomentAtlas hp hp1 W s)
+variable (hs : SourcePsiSquaredGapComplexExtension hp hp1 P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus p ⊆ P)
+variable (D : SourceBirkhoffMapComplexData hp hp1 W₀ B X t)
+
+-- Analyticity is in the uniform norm on trajectories, not merely coordinatewise.
+example (T : ℝ) (φ : realTypeSourceSubmodule p) :
+    AnalyticAt ℝ (A.renormalizedPhaseTrajectoryOn hs hP hr D T) φ :=
+  A.analytic_renormalizedPhaseTrajectoryOn hs hP hr D T φ (mem_univ _)
+
+-- Each actual nonlinear flow homeomorphism has an analytic inverse.
+example (hp2 : p ≤ 2) (τ : ℝ) :
+    AnalyticOnNhd ℝ (A.renormalizedSourceHomeomorph hs hP hr D hp2 τ).symm univ :=
+  (A.renormalizedSourceHomeomorph_analytic hs hP hr D hp2 τ).2
+
+-- Initial Birkhoff coordinates can parameterize the whole trajectory analytically.
+example (hp2 : p ≤ 2) (T : ℝ) (z : RealCoeff p × RealCoeff p) :
+    AnalyticAt ℝ (fun y => A.renormalizedPhaseTrajectoryOn hs hP hr D T
+      ((D.realHomeomorph hp2).symm y)) z :=
+  A.analytic_renormalizedPhaseTrajectoryOn_coordinates hs hP hr D hp2 T z (mem_univ _)
+
+-- Local coordinate parametrization works without the p ≤ 2 global-surjectivity premise.
+example (T : ℝ) (φ : realTypeSourceSubmodule p) :
+    ∃ G : (RealCoeff p × RealCoeff p) → C(Icc (-T) T, Coeff p × Coeff p),
+      AnalyticAt ℝ G (sourceRealBirkhoffMap hp hp1 t φ) ∧
+      G (sourceRealBirkhoffMap hp hp1 t φ) = A.renormalizedPhaseTrajectoryOn hs hP hr D T φ ∧
+      ∀ᶠ ψ in 𝓝 φ, G (sourceRealBirkhoffMap hp hp1 t ψ) =
+        A.renormalizedPhaseTrajectoryOn hs hP hr D T ψ :=
+  A.exists_analytic_coordinateTrajectory_germ hs hP hr D T φ
+
+end AnalyticFlowChecks
+end
