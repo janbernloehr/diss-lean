@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: exact algebraic multiplicities and endpoint occurrence counts
+## Current milestone: canonical signed endpoints at the exact H¹ threshold
+
+The canonical endpoints with signed index n now exhaust the spectrum in its
+quantitative strip whenever `⟨n⟩ ≥ 8 ‖φ‖H¹²`. The theorem
+`H1_canonical_periodic_localization` completes Lemma 25.4 in the existing
+period-one API: determinant roots are exactly these endpoints, their analytic
+orders are the pair's occurrence counts, and the original algebraic
+multiplicities agree. Both endpoints satisfy the explicit source radius,
+strictly below π/5, and the factor-six squared-gap bound. The norm uses the
+exact π-normalized H¹ weight; the canonical API retains even Fourier support.
+
+`OrderedPairStripPropagation.lean` proves the finite ordered-count argument
+in both directions. Two occurrences in each adjacent interval force the
+immediate neighboring pair into the next interval; repeated values still
+count twice. `EndpointStripPropagation.lean` applies this to the lexicographically
+ordered endpoint slots, using the strict separation of refined discs from
+strip boundaries. `EndpointStripAnchors.lean` inducts inward from separate
+positive and negative distant anchors, keeping every intervening index at
+least as large in absolute value as the target. This includes n=0 whenever
+its threshold holds.
+
+`LinearWeightCanonicalLocalization.lean` supplies the anchors and strip counts
+from the original canonical labeling, then obtains the radius and gap bounds
+for the actual signed endpoints. `EndpointPairOfStripCount.lean` recovers all
+original multiplicities from the two known slots, including collapsed gaps.
+`QuadraticCanonicalPeriodicPair.lean` packages the full source statement and
+also exposes the canonical pair theorem for M₁ weights comparable to linear
+growth.
+
+Public examples check equality at the threshold, negative signed indices,
+double analytic order at a collapsed canonical gap, zero potential at n=0,
+and the indexed gap estimate for general linearly comparable M₁ weights.
+
+Validation: the full build passed (6321 jobs), all public examples passed,
+and the transitive axiom audit passed for 24923 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next is Theorem 25.1's bound on the remaining central eigenvalues. Its
+high-frequency canonical endpoint estimate is now available. The central
+real-part bound requires excluding all quantitative strips; the imaginary-part
+bound requires an H¹-controlled estimate for the skew-adjoint part of the
+original operator. Theorem 25.1, Proposition 25.5 and the dependent higher-action
+estimates, Sections 27–28, fixed-domain trace scope, and the remaining
+dissertation inventory are still open.
+
+## Previous milestone: exact algebraic multiplicities and endpoint occurrence counts
 
 The two localized roots now have the original operator's algebraic
 multiplicities at the exact threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, for linearly growing

@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Latest progress: exact algebraic multiplicities and endpoint occurrence counts
+## Latest progress: canonical signed endpoints at the exact H¹ threshold
+
+The canonical endpoints with signed index n now exhaust the spectrum in its
+quantitative strip whenever `⟨n⟩ ≥ 8 ‖φ‖H¹²`. The theorem
+`H1_canonical_periodic_localization` completes Lemma 25.4 in the existing
+period-one API: determinant roots are exactly these endpoints, their analytic
+orders are the pair's occurrence counts, and the original algebraic
+multiplicities agree. Both endpoints satisfy the explicit source radius,
+strictly below π/5, and the factor-six squared-gap bound. The norm uses the
+exact π-normalized H¹ weight; the canonical API retains even Fourier support.
+
+`OrderedPairStripPropagation.lean` proves the finite ordered-count argument
+in both directions. Two occurrences in each adjacent interval force the
+immediate neighboring pair into the next interval; repeated values still
+count twice. `EndpointStripPropagation.lean` applies this to the lexicographically
+ordered endpoint slots, using the strict separation of refined discs from
+strip boundaries. `EndpointStripAnchors.lean` inducts inward from separate
+positive and negative distant anchors, keeping every intervening index at
+least as large in absolute value as the target. This includes n=0 whenever
+its threshold holds.
+
+`LinearWeightCanonicalLocalization.lean` supplies the anchors and strip counts
+from the original canonical labeling, then obtains the radius and gap bounds
+for the actual signed endpoints. `EndpointPairOfStripCount.lean` recovers all
+original multiplicities from the two known slots, including collapsed gaps.
+`QuadraticCanonicalPeriodicPair.lean` packages the full source statement and
+also exposes the canonical pair theorem for M₁ weights comparable to linear
+growth.
+
+Public examples check equality at the threshold, negative signed indices,
+double analytic order at a collapsed canonical gap, zero potential at n=0,
+and the indexed gap estimate for general linearly comparable M₁ weights.
+
+Validation: the full build passed (6321 jobs), all public examples passed,
+and the transitive axiom audit passed for 24923 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next is Theorem 25.1's bound on the remaining central eigenvalues. Its
+high-frequency canonical endpoint estimate is now available. The central
+real-part bound requires excluding all quantitative strips; the imaginary-part
+bound requires an H¹-controlled estimate for the skew-adjoint part of the
+original operator. Theorem 25.1, Proposition 25.5 and the dependent higher-action
+estimates, Sections 27–28, fixed-domain trace scope, and the remaining
+dissertation inventory are still open.
+
+## Previous milestone: exact algebraic multiplicities and endpoint occurrence counts
 
 The two localized roots now have the original operator's algebraic
 multiplicities at the exact threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, for linearly growing
@@ -41,37 +86,6 @@ slots labeled n. Preserve the even Fourier-support hypothesis of the
 canonical API. Theorem 25.1 and its dependent higher-action estimates,
 Sections 27–28, fixed-domain trace scope, and the remaining dissertation
 inventory are still open.
-
-Next, use the existing distant canonical pairs as anchors and propagate
-inward along consecutive quantitative strips. `linearWeight_endpoint_slot_count`
-now gives exactly two occurrences in each strip inside a sufficiently large
-central labeling. `canonicalPeriodicSlot_ordered` gives monotonic real parts.
-The localization bound keeps roots strictly inside each strip, so the two
-occurrences of neighboring strips cannot interleave. A finite ordered-slot
-lemma can propagate a known pair at n+1 to n, and its reverse version can
-propagate a known pair at n-1 to n. Use positive and negative distant anchors
-separately, so the argument never crosses a central strip where the quadratic
-threshold may fail. The n=0 case has a threshold that covers every strip.
-
-`exists_eventually_canonicalPeriodicEndpointLabeling_above` supplies a common
-central block containing the target indices and the distant anchors. Its
-self-of-neighborhood specialization gives the needed labeling at the fixed
-potential. The original canonical cutoff still supplies the distant anchored
-pairs. Keep the occurrence count, not merely the number of distinct values,
-throughout the propagation to retain collapsed gaps. Once membership of the
-canonical n-slots is proved, apply the existing spectral localization and gap
-bounds and the new analytic/algebraic multiplicity identity to finish Lemma 25.4.
-
-For the inward step from n+1 to n, let f be the real part of the ordered
-slot sequence. If f(n,1) were at or above the shared strip boundary, slots
-(n,1), (n+1,0), (n+1,1) would give three occurrences in strip n+1, contradicting
-its count two. If f(n,0) were below strip n, every occurrence in strip n
-would have index strictly between (n,0) and (n+1,0), hence only (n,1),
-contradicting its count two. Monotonicity then places both n-slots in strip n.
-Use the strict interior localization of the already anchored pair to exclude
-boundary ties. The reversed argument propagates from n-1 to n on the negative
-tail. These are finite-cardinality arguments on `centralPeriodicSlots N`;
-`Prod.Lex.toLex_le_toLex` and Fin 2 arithmetic describe the intervening slots.
 
 ## Previous milestone: H¹ eigenvector regularity and original spectral localization
 

@@ -2887,3 +2887,9 @@ import NLS.ZakharovShabat.SobolevWeightedSpectralBridge
 import NLS.ZakharovShabat.LinearWeightSpectralLocalization
 import NLS.ZakharovShabat.LinearWeightSpectralMultiplicity
 import NLS.ZakharovShabat.LinearWeightEndpointCounts
+import NLS.SequenceSpaces.OrderedPairStripPropagation
+import NLS.ZakharovShabat.EndpointStripPropagation
+import NLS.ZakharovShabat.EndpointStripAnchors
+import NLS.ZakharovShabat.LinearWeightCanonicalLocalization
+import NLS.ZakharovShabat.EndpointPairOfStripCount
+import NLS.ZakharovShabat.QuadraticCanonicalPeriodicPair

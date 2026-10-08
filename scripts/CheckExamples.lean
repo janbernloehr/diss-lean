@@ -35956,3 +35956,66 @@ example (w : SpectralWeight) (hw : w.HasLinearFactor) (C : ℝ)
     ((centralPeriodicSlots N).filter (fun k => periodicEndpointSlot ξ η k ∈ resonantStrip n)).card = 2 :=
   linearWeight_endpoint_slot_count w hw C hu φ n hn N hnN ξ η hl
 end QuantitativeMultiplicityChecks
+
+namespace QuadraticCanonicalPairChecks
+open NLS.ZakharovShabat
+open scoped Classical
+
+-- Equality at the threshold identifies the canonical signed pair itself.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (heven : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ ∈ pairParitySubspace 0)
+    (n : ℤ) (hn : 8*‖φ‖^2 = 1+|(n:ℝ)|) :
+    PeriodicEndpointPair (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) n
+      (canonicalPeriodicLeft (by simp) (by norm_num) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven n)
+      (canonicalPeriodicRight (by simp) (by norm_num) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven n) :=
+  (H1_canonical_periodic_localization φ heven n hn.le).1
+
+-- The negative tail uses the same explicit radius and its own signed label.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (heven : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ ∈ pairParitySubspace 0)
+    (hn : 8*‖φ‖^2 ≤ 3) :
+    ‖canonicalPeriodicRight (by simp) (by norm_num)
+      (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven (-2) -
+      (Real.pi:ℂ)*(-2:ℤ)‖ ≤ quadraticLocalizationRadius ‖φ‖ (-2) :=
+  (H1_canonical_periodic_localization φ heven (-2) (by norm_num; exact hn)).2.2.2.2.1
+
+-- A collapsed canonical gap carries both occurrences of the determinant root.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (heven : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ ∈ pairParitySubspace 0)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (z : ℂ)
+    (hx : canonicalPeriodicLeft (by simp) (by norm_num)
+      (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven n = z)
+    (hy : canonicalPeriodicRight (by simp) (by norm_num)
+      (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven n = z) :
+    analyticOrderNatAt (resonantDeterminantExtension (by simp)
+      (SpectralWeight.piSobolev 1 (by norm_num)) φ n) z = 2 := by
+  have h := H1_canonical_periodic_localization φ heven n hn
+  have hz := refinedResonantDisk_subset_strip n h.1.left_mem
+  rw [hx] at hz
+  simpa [hx, hy, Multiset.count_cons, Multiset.count_singleton] using h.2.2.1 z hz
+
+-- Zero potential includes n=0 and forces both canonical endpoints to be zero.
+example :
+    let w := SpectralWeight.piSobolev 1 (by norm_num)
+    let φ : WeightedCoeffPair w.toWeight 2 := 0
+    let heven : weightedBaseToPair w φ ∈ pairParitySubspace 0 := by simp [φ]
+    canonicalPeriodicLeft (by simp) (by norm_num) (weightedBaseToPair w φ) heven 0 = 0 ∧
+    canonicalPeriodicRight (by simp) (by norm_num) (weightedBaseToPair w φ) heven 0 = 0 := by
+  dsimp only
+  have h := H1_canonical_periodic_localization 0 (by simp) 0 (by simp)
+  constructor
+  · have hx := h.2.2.2.1
+    simp [quadraticLocalizationRadius] at hx ⊢
+  · have hy := h.2.2.2.2.1
+    simp [quadraticLocalizationRadius] at hy ⊢
+
+-- The indexed gap bound also works for any linearly comparable M₁ weight.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (C : ℝ)
+    (hu : ∀ k : ℤ, w k ≤ C*(1+|(k:ℝ)|)) (φ : WeightedCoeffPair w.toWeight 2)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    ‖canonicalPeriodicRight (by simp) (by norm_num) (weightedBaseToPair w φ) heven n -
+      canonicalPeriodicLeft (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖^2 ≤
+      6*resonantBProductSup (by simp) w φ n :=
+  (linearWeight_canonicalEndpoints_localization w hw C hu φ heven n hn).2.2
+end QuadraticCanonicalPairChecks
