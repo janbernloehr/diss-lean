@@ -3027,3 +3027,6 @@ import NLS.Fourier.SquaredAbsoluteRows
 import NLS.ZakharovShabat.AppendixDReciprocalBounds
 import NLS.ZakharovShabat.AppendixDQuadraticRemainder
 import NLS.ZakharovShabat.SourceRemarkD7
+import NLS.SequenceSpaces.CoordinateNormSup
+import NLS.ZakharovShabat.AppendixDDeletedRelativeProduct
+import NLS.ZakharovShabat.SourceLemmaD8

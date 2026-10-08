@@ -138,7 +138,7 @@ by absolute summability. The proof keeps the stronger intermediate bound
 `norm(P-exp(A)) <= B*exp(S+B)` before using B<=S^2. The logarithmic remainder
 is bounded by B, and the exponential Taylor estimate retains the exact
 factor 1/2. Finite cancelling-pair examples check that signed cancellation
-is preserved. The D.4–D.7 audit below does not certify the remainder
+is preserved. The D.4–D.8 audit below does not certify the remainder
 of Appendix D.
 
 ### Lemma D.4 and the displaced-root separation assertion
@@ -243,4 +243,34 @@ unseparated head discs may contain poles and are not included in this
 claim. Every later cutoff, including a source-admissible small-tail
 cutoff, is covered. Focused tests exercise p=3/2 and p=3, large cancelling
 factors, zero perturbations, and uniform constants preceding all inputs.
-D.8 and later source statements remain to be audited.
+The following audit treats D.8; later source statements remain to be audited.
+
+### Lemma D.8: the two deleted sine-product asymptotics
+
+D.8, printed page 129, is proved for every 1 < p < infinity, for arbitrary
+ell^p displacements and all open quarter-pi source discs. There is no
+restriction to a distant tail or to simple or small root displacements.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Literal left-side product and normalization | `tendsto_appendixDNormalizedDeletedProduct` | The positive symmetric product omitting n, divided by pi_n, converges to `jointDeletedSingleSpectralProduct n`; no factor of -2 or pi_n is dropped. |
+| Multiplicative sine-product form | `appendixDDeletedProduct_eq_free_mul_relative`, `sourceLemmaD8` | Exact identity with the filled sine quotient and an actual ell^p relative-error sequence, for any independent disc samples. |
+| Additive sine-product form | `appendixDDeletedProduct_sub_free_eq`, `sourceLemmaD8` | The same product is the filled quotient plus an actual ell^p additive-error sequence. |
+| Uniformity over whole discs and displacements | `sourceLemmaD8_uniform` | Both literal norm-supremum sequences lie in ell^p, bounded by C times the input norm with C fixed on each norm ball. |
+| Local uniformity in the displacement | `sourceLemmaD8_locally_uniform` | A common constant on the unit neighborhood of every input, for all independent samples. |
+| The printed quotient and its removable center | `sourceLemmaD8_off_center`, `sourceLemmaD8_center` | Exactly sin(z)/(z-pi*n) away from the center, with value cos(pi*n) at the center. |
+
+The finite-cutoff factorization proves the identity even at the free
+center. The source's sine quotient is interpreted with its usual removable
+extension there; the totalized quotient 0/0 would not have the correct
+value. This is an explicit analytic convention, not a claimed equality
+with Lean's raw division at zero. The entire deleted product is already
+normalized by D.4. D.6 at the free reference lattice supplies the common
+relative-error majorant on every disc, and the uniform sine-quotient bound
+supplies the additive one. Actual suprema are constructed from these
+majorants, rather than inferred from bounds on fixed sample sequences.
+
+Focused checks include the value -1 at a negative odd free center, the
+value 1 at zero, invariance under moving only the omitted root, a negative
+omitted-index cutoff, p=3 norm-ball bounds, and p=3/2 local uniformity.
+D.9 and Appendix E still require source-level comparison.

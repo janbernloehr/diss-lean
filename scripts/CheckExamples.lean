@@ -37949,3 +37949,79 @@ example (r : Coeff ⊤) {c : ℝ} {N : ℕ} (hc : 0 < c)
   simp [appendixDReciprocalTerm]
 
 end AppendixDQuadraticChecks
+
+section AppendixDDeletedSineChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+
+-- At an odd negative free root the filled value is -1, not the totalized 0/0 quotient.
+example : jointDeletedSingleSpectralProduct (-1) ((Real.pi:ℂ)*(-1),(0:Coeff 2)) = -1 := by
+  rw [congrFun (jointDeletedSingleSpectralProduct_zero_eq_freeSineQuotient
+    (by simp) (by norm_num) (-1)) _]
+  simpa using freeSineQuotient_center (-1)
+
+-- At the zero root the source normalization gives the removable value one.
+example : jointDeletedSingleSpectralProduct 0 (0,(0:Coeff 2)) = 1 := by
+  rw [congrFun (jointDeletedSingleSpectralProduct_zero_eq_freeSineQuotient
+    (by simp) (by norm_num) 0) 0]
+  simpa using freeSineQuotient_center 0
+
+-- Moving only the omitted root has no effect on the entire deleted product.
+private theorem d8_omitted_relative (n : ℤ) (δ z : ℂ) (hz : z ∈ refinedResonantDisk n) :
+    sourceLemmaD8RelativeError (lp.single 2 n δ) n z = 0 := by
+  rw [sourceLemmaD8RelativeError,appendixDRelativeProductError_eq (0:Coeff ⊤)
+    (lp.single 2 n δ) (by norm_num) appendixD_freeReferenceSeparated (Nat.zero_le _) hz]
+  have he (m : ℤ) : (1+(if m = n then 0 else
+      (lp.single 2 n δ : Coeff 2) m/(displacedRoots (0:Coeff ⊤) m-z))) = 1 := by
+    by_cases hmn : m = n
+    · simp [hmn]
+    · simp [hmn,lp.single_apply]
+  simp only [he,tprod_one,sub_self]
+
+example (n : ℤ) (δ z : ℂ) (hz : z ∈ refinedResonantDisk n) :
+    jointDeletedSingleSpectralProduct n (z,lp.single 2 n δ) = freeSineQuotient n z := by
+  rw [appendixDDeletedProduct_eq_free_mul_relative (by norm_num) (by simp) _ n z hz,
+    show appendixDRelativeProductError (0:Coeff ⊤) (lp.single 2 n δ) n z = 0 from
+      d8_omitted_relative n δ z hz]
+  simp
+
+-- The literal cutoff normalization also covers an omitted negative index.
+example (a : Coeff 2) (z : ℂ) :
+    Tendsto (fun M : ℕ => (1/singleSpectralDenominator (-2))*
+      ∏ m ∈ (Finset.Icc (-(M:ℤ)) (M:ℤ)).erase (-2),
+        (displacedRoots a m-z)/singleSpectralDenominator m) atTop
+      (𝓝 (jointDeletedSingleSpectralProduct (-2) (z,a))) :=
+  tendsto_appendixDNormalizedDeletedProduct (by simp) (-2) (z,a)
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- One constant bounds both literal supremum sequences for all inputs in the ball.
+example : ∃ C : ℝ, 0 < C ∧ ∀ a : Coeff 3, ‖a‖ ≤ 4 →
+    ∃ u v : Coeff 3,
+      (∀ n, u n = ((sourceLemmaD8RelativeSup a n):ℂ)) ∧
+      (∀ n, v n = ((sourceLemmaD8AdditiveSup a n):ℂ)) ∧
+      ‖u‖ ≤ C*‖a‖ ∧ ‖v‖ ≤ C*‖a‖ := by
+  obtain ⟨C,hC,hbound⟩ := sourceLemmaD8_uniform (by norm_num : (1:ℝ≥0∞) < 3)
+    (by simp) (by norm_num : (0:ℝ) ≤ 4)
+  refine ⟨C,hC,?_⟩
+  intro a ha
+  obtain ⟨u,v,hu,hv,_,hun,hvn⟩ := hbound a ha
+  exact ⟨u,v,hu,hv,hun,hvn⟩
+
+private theorem d8HalfAboveOne : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem d8HalfFinite : (3/2:ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact ((1:ℝ≥0∞) ≤ 3/2) := ⟨d8HalfAboveOne.le⟩
+
+-- Local uniformity includes exponents below two and arbitrary disc samples.
+example (a₀ : Coeff (3/2)) :
+    ∃ C : ℝ, 0 < C ∧ ∀ a : Coeff (3/2), ‖a-a₀‖ < 1 →
+      ∀ z : ℤ → ℂ, (∀ n, z n ∈ refinedResonantDisk n) →
+      ∃ e d : Coeff (3/2),
+        (∀ n : ℤ,
+          jointDeletedSingleSpectralProduct n (z n,a) = freeSineQuotient n (z n)*(1+e n) ∧
+          jointDeletedSingleSpectralProduct n (z n,a) = freeSineQuotient n (z n)+d n) ∧
+        ‖e‖ ≤ C*‖a‖ ∧ ‖d‖ ≤ C*‖a‖ :=
+  sourceLemmaD8_locally_uniform d8HalfAboveOne d8HalfFinite a₀
+
+end AppendixDDeletedSineChecks

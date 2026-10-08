@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: the half-exponent remainder in D.7
+## Current milestone: both deleted sine-product asymptotics in D.8
+
+Lemma D.8, printed page 129, now has both its multiplicative and additive
+deleted sine-product asymptotics for every 1 < p < infinity. The theorem
+uses arbitrary ell^p root displacements and every open quarter-pi source
+disc, with no tail restriction, simplicity assumption, or smallness condition.
+Both literal disc-supremum sequences belong to ell^p. A single constant
+controls their norms on each displacement norm ball, and the sampled
+formulation allows independent choices of one point from every disc.
+An explicit unit-neighborhood theorem gives the source's local uniformity.
+
+`AppendixDDeletedRelativeProduct.lean` proves convergence of the literal
+positive deleted product divided by pi_n, exactly as printed in D.8.
+It factors finite cutoffs against the free cutoffs and passes to the limit,
+identifying the result with the filled sine quotient times the relative
+product from D.6. This argument includes the free center without dividing
+by sin(z) or z-pi*n. Away from the center the filled quotient is the printed
+sin(z)/(z-pi*n); at the center its value is cos(pi*n), with the signed-index
+normalization retained.
+
+`CoordinateNormSup.lean` turns a common coefficient majorant into the actual
+coordinate norm suprema. `SourceLemmaD8.lean` combines D.6 with the uniform
+bound on the filled sine quotient, providing both error sequences, their
+norm-ball bounds, the local version, and the literal off-center formula.
+The displayed quotient in the source is understood through its standard
+removable extension at the center; no source correction is introduced.
+
+Next: audit D.9's sampled full-product estimate, then Appendix E. The
+dissertation remains incomplete: the printed spectral height above p=2
+is still required and unresolved. The accepted Lemma 27.2 correction and
+optional original m=1 sharpening are unchanged.
+
+Validation: focused checks cover zero and negative free centers, movement
+of only the omitted root, the literal negative-index cutoff, common
+supremum bounds at p=3, and local uniformity at p=3/2. The full build
+passed (6459 jobs), all public examples passed, and the axiom audit passed
+for 25867 NLS declarations. The same 21 pre-existing warnings remain,
+with no new warnings. The 156 candidate source labels were verified.
+
+## Previous milestone: the half-exponent remainder in D.7
 
 Remark D.7, printed page 129, is now proved under the full D.6 hypotheses
 for 1 < p < infinity. The supremum over each selected source disc of the
