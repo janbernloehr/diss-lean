@@ -35140,3 +35140,43 @@ example (a : realTypeSobolevSourceLocus) : ∃ U : Set (ScalarDomain 2 × Scalar
   obtain ⟨U,hU,ha,h⟩ := exists_local_sourceSobolevHigherActionSequence_analytic a.val a.property
   exact ⟨U,hU,ha,(h 1 (by norm_num)).2,(h 1 (by norm_num)).1⟩
 end HigherActionSobolevTraceChecks
+
+namespace MomentumTraceChecks
+open Set NLS NLS.ZakharovShabat
+
+-- Positive and negative physical Fourier frequencies have opposite momentum signs.
+example : periodOneSobolevMomentum (scalarMode 3 1,scalarMode (-3) 1) = -6*(Real.pi:ℂ) := by
+  have h := periodOneSobolevMomentum_scalarModes (-3) 1 1
+  norm_num at h
+  convert h using 1
+  ring
+
+example : periodOneSobolevMomentum (scalarMode (-3) 1,scalarMode 3 1) = 6*(Real.pi:ℂ) := by
+  have h := periodOneSobolevMomentum_scalarModes 3 1 1
+  norm_num at h
+  convert h using 1
+  ring
+
+-- Level two agrees with half the actual physical momentum on arbitrary real H¹ data.
+example (a : realTypeSobolevSourceLocus) :
+    (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 1 (sobolevSourceInclusion a.val)) =
+      periodOneSobolevMomentum a.val/2 ∧ (periodOneSobolevMomentum a.val).im = 0 :=
+  ⟨sourceSobolev_tsum_higherAction_two a,periodOneSobolevMomentum_im_zero a⟩
+
+-- The normalization comes from the physical derivative pairing, independently of actions.
+example (a b : ScalarDomain 2) :
+    periodOneSobolevMomentum (a,b) = -Complex.I * ∫ x in (0:ℝ)..1,
+      Fourier.periodOneSobolevSynthesis a (x : AddCircle (2:ℝ)) *
+        deriv (fun t : ℝ => Fourier.periodOneSobolevSynthesis b (t : AddCircle (2:ℝ))) x :=
+  periodOneSobolevMomentum_eq_integral a b
+
+-- All three identities and all three absolutely convergent sums coexist near each real source.
+example (a : realTypeSobolevSourceLocus) :
+    ∃ U : Set (ScalarDomain 2 × ScalarDomain 2), IsOpen U ∧ a.val ∈ U ∧ ∀ b ∈ U,
+      (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 0 (sobolevSourceInclusion b)) = periodOneSobolevMass b ∧
+      (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 1 (sobolevSourceInclusion b)) = periodOneSobolevMomentum b/2 ∧
+      (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 2 (sobolevSourceInclusion b)) = periodOneSobolevHamiltonian b/4 ∧
+      ∀ k : ℕ, k ≤ 2 → Summable (fun n : ℤ =>
+        ‖sourceComplexHigherAction (by simp) (by norm_num) n k (sobolevSourceInclusion b)‖) :=
+  exists_local_sourceSobolev_firstThree_trace a
+end MomentumTraceChecks

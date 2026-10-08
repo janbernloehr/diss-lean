@@ -2817,3 +2817,5 @@ import NLS.ZakharovShabat.SourceHigherActionPolynomialBound
 import NLS.ZakharovShabat.SourceSobolevHigherActionBound
 import NLS.ZakharovShabat.SourceSobolevHigherActionAnalytic
 import NLS.ZakharovShabat.SourceSobolevHigherActionTrace
+import NLS.ZakharovShabat.PeriodOneSobolevMomentum
+import NLS.ZakharovShabat.SourceSobolevMomentumTrace

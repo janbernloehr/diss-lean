@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: higher-action bounds and physical H¹ traces
+## Current milestone: the first three physical H¹ trace identities
+
+The second-level higher-action sum now equals half the physical momentum
+on every real H¹ source. Together with the mass and energy results, one open
+complex H¹ neighborhood of the entire real locus satisfies all three traces:
+`∑ₙ J_(n,1) = H_1`, `∑ₙ J_(n,2) = H_2/2`, and `∑ₙ J_(n,3) = H_3/4`.
+All three defining series are absolutely convergent there.
+
+`PeriodOneSobolevMomentum.lean` defines physical momentum independently of
+spectral actions, using bounded bilinear Fourier duality. Parseval identifies
+it with the actual unit-period integral `-i ∫ a b'`. It is complex analytic
+on the entire H¹ pair space and agrees with the second Riccati-hierarchy
+Hamiltonian on every actual real finite-gap source, at all finite `p > 1`.
+The Fourier series and opposite-mode formulas fix the sign and `2π` factor.
+
+`SourceSobolevMomentumTrace.lean` applies H¹ finite-gap density to obtain the
+momentum trace for arbitrary real H¹ data, and proves that the physical
+momentum is real on the conjugate-pair real form. Analytic uniqueness extends
+the identity to complex neighborhoods. Intersecting with the established
+mass/energy neighborhoods and taking their union gives one common open
+domain for all three physical identities and absolutely convergent series.
+
+The finite-gap density transfer lemma in `SourceSobolevHigherActionTrace.lean`
+is now public and reused by all three levels.
+
+Public examples verify both signs on physical Fourier modes, the derivative
+integral definition, real momentum and its trace without a finite-gap premise,
+and all three traces and convergence on a common complex neighborhood.
+
+Validation: the full build passes (6236 jobs), all public examples pass,
+and the transitive axiom audit passes for 24170 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: extend higher-action sequence convergence and all hierarchy trace
+identities to the higher Sobolev spaces in Theorem 24.1. The explicit
+norm-dependent localization and uniform higher Sobolev estimates of
+Sections 25–28 and the full dissertation inventory remain open. The common
+trace domain is a neighborhood of the real H¹ locus, not the entire complex
+H¹ space.
+
+## Previous milestone: higher-action bounds and physical H¹ traces
 
 The level-one and level-three trace identities now hold beyond finite-gap
 data: every real H¹ source satisfies `∑ₙ J_(n,1) = H_1` and

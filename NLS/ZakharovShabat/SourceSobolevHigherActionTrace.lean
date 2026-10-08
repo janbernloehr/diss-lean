@@ -11,7 +11,9 @@ noncomputable section
 open Set Metric Filter Topology
 namespace NLS.ZakharovShabat
 
-private theorem higherAction_trace_of_finiteGap (k : ℕ) (hk : k ≤ 2)
+/-- Continuous physical functionals agreeing with a summable higher-action trace
+on actual finite-gap H¹ sources agree on every real H¹ source. -/
+theorem sourceSobolevHigherAction_trace_of_finiteGap (k : ℕ) (hk : k ≤ 2)
     (H : (ScalarDomain 2 × ScalarDomain 2) → ℂ) (hH : Continuous H)
     (hf : ∀ b : realTypeSobolevSourceLocus, b ∈ sourceSobolevFiniteGapLocus →
       (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n k (sobolevSourceInclusion b.val)) = H b.val)
@@ -31,7 +33,7 @@ private theorem higherAction_trace_of_finiteGap (k : ℕ) (hk : k ≤ 2)
 theorem sourceSobolev_tsum_higherAction_one (a : realTypeSobolevSourceLocus) :
     (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 0 (sobolevSourceInclusion a.val)) =
       periodOneSobolevMass a.val := by
-  apply higherAction_trace_of_finiteGap 0 (by norm_num) _ continuous_periodOneSobolevMass ?_ a
+  apply sourceSobolevHigherAction_trace_of_finiteGap 0 (by norm_num) _ continuous_periodOneSobolevMass ?_ a
   intro b hf
   have h := sourceFiniteGap_tsum_complexHigherActions_eq_hamiltonian (by simp) (by norm_num)
     ⟨sobolevSourceInclusion b.val,b.property⟩ hf 0
@@ -44,7 +46,7 @@ theorem sourceSobolev_tsum_higherAction_one (a : realTypeSobolevSourceLocus) :
 theorem sourceSobolev_tsum_higherAction_three (a : realTypeSobolevSourceLocus) :
     (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 2 (sobolevSourceInclusion a.val)) =
       periodOneSobolevHamiltonian a.val/4 := by
-  apply higherAction_trace_of_finiteGap 2 le_rfl _ (continuous_periodOneSobolevHamiltonian.div_const 4) ?_ a
+  apply sourceSobolevHigherAction_trace_of_finiteGap 2 le_rfl _ (continuous_periodOneSobolevHamiltonian.div_const 4) ?_ a
   intro b hf
   have h := sourceFiniteGap_tsum_complexHigherActions_eq_hamiltonian (by simp) (by norm_num)
     ⟨sobolevSourceInclusion b.val,b.property⟩ hf 2

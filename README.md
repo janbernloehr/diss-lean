@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the higher-action mass and energy traces now hold for
-every real H¹ source and on an open complex H¹ neighborhood of the entire
-real locus. The first three action sequences and their absolutely convergent
-sums are analytic there. All-order local polynomial bounds are proved;
-higher Sobolev hierarchy traces and the uniform estimates remain.
+Latest milestone: the first three higher-action traces now recover the
+physical mass, momentum, and energy with factors `1`, `1/2`, and `1/4`.
+They hold for every real H¹ source and on one common open complex H¹
+neighborhood of the full real locus, with absolutely convergent series.
+Higher Sobolev hierarchy traces and the uniform estimates remain.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
