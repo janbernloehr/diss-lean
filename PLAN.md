@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Latest progress: Theorem 23.2(i), the upper Sobolev action bound
+## Latest progress: Lemma 27.1, the energy and H¹ converse estimates
+
+All three claims of Lemma 27.1 are proved on the full real H¹ source
+space, with the original physical Hamiltonians and exact Fourier weights:
+
+- `H3 - 2 H1² ≤ sum (2nπ)² In`;
+- `H3 ≤ ‖I‖ℓ²,¹ + 2 ‖I‖ℓ¹²`;
+- `(1/3) ‖φ‖H¹² ≤ ‖I‖ℓ²,¹ + ‖I‖ℓ¹²`.
+
+`SobolevQuarticMassBound.lean` proves the unit-period variance inequality,
+identifies the real mass and quartic integrals, and obtains `H1² ≤ ∫|ψ|⁴`.
+`PhysicalH1NormBound.lean` proves the discrete frequency comparison with
+factor 3/2, retains the exact ⟨2nπ⟩ weights, and uses the real conjugate-pair
+condition to recover both component energies. It yields the printed 1/3
+factor rather than an unspecified equivalent-norm constant.
+
+`SourceH1ActionSums.lean` supplies convergence of the bracket-weighted
+actions, the exact mass trace, and the comparison of kinetic actions plus
+mass with the weighted action norm. `SourceH1ConverseActionEstimate.lean`
+combines these results with the established nonpositive physical correction.
+There is no finite-gap restriction or extra weighted-realization premise.
+
+Public examples cover constant-function variance, the zero Fourier mode,
+a negative-frequency coordinate, the quartic-mass comparison, the factor-3
+converse norm bound, and vanishing actions forcing zero physical H¹
+coordinates.
+
+Validation: the full build passed (6355 jobs), all public examples passed,
+and the transitive axiom audit passed for 25133 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: Lemma 27.2 and the higher-order converse bound in Theorem 23.2(ii).
+The rendered PDF page 116 confirms that Lemma 27.2 ends its remainder
+with the weighted ℓ²,¹ action norm, while the preceding theorem proof uses
+the unweighted ℓ¹ norm. Keep that distinction explicit and audit the
+constants, including the m=1 endpoint. Compare higher actions to level-three
+actions in the central region before summing.
+The Birkhoff-map formulation in Theorem 23.1, Section 28, fixed-domain
+trace scope, and the remaining dissertation inventory remain open.
+
+## Previous milestone: Theorem 23.2(i), the upper Sobolev action bound
 
 Theorem 23.2(i) is proved for every real H^m source, m ≥ 1, with a
 single nonnegative constant c depending only on m:

@@ -2923,3 +2923,7 @@ import NLS.ZakharovShabat.ClassicalHamiltonianSignCheck
 import NLS.ZakharovShabat.SourcePiSobolevCoordinates
 import NLS.ZakharovShabat.SourcePiSobolevNormBounds
 import NLS.ZakharovShabat.SourceActionSobolevUpperBound
+import NLS.ZakharovShabat.SobolevQuarticMassBound
+import NLS.ZakharovShabat.PhysicalH1NormBound
+import NLS.ZakharovShabat.SourceH1ActionSums
+import NLS.ZakharovShabat.SourceH1ConverseActionEstimate

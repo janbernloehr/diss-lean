@@ -36383,3 +36383,44 @@ example : ∃ c : ℝ, 0 ≤ c ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
   exists_sourceWeightedAction_sobolev_upper_bound 2 (by decide)
 
 end Theorem232UpperChecks
+
+namespace Lemma271Checks
+open NLS.ZakharovShabat
+
+-- Constant functions attain equality in the unit-period variance bound.
+example : (∫ _x in (0:ℝ)..1, (2:ℝ))^2 ≤ ∫ _x in (0:ℝ)..1, (2:ℝ)^2 :=
+  unit_interval_mean_sq_le (fun _ => 2) continuous_const
+
+-- The zero frequency is covered by the discrete weight comparison.
+example : (1+|((2*(0:ℤ):ℤ):ℝ)*Real.pi|)^2 ≤ (3/2:ℝ)*(1+(2*Real.pi*((0:ℤ):ℝ))^2) :=
+  physical_H1_weight_sq_le 0
+
+-- Both components retain the same physical weight at negative frequencies.
+example (a : ZakharovShabat.ScalarDomain 2 × ZakharovShabat.ScalarDomain 2) :
+    (sourcePhysicalH1Coordinates a).snd (-1) = ((1+2*Real.pi : ℝ):ℂ)*a.2.val (-1) := by
+  rw [sourcePhysicalH1Coordinates_snd]
+  norm_num [abs_mul, abs_of_pos Real.pi_pos]
+
+-- The quartic bound supplies the squared mass needed for the exact norm constant.
+example (a : realTypeSobolevSourceLocus) :
+    (periodOneSobolevMass a.val).re^2 ≤ (periodOneSobolevQuartic a.val).re :=
+  periodOneSobolevMass_sq_le_quartic a
+
+-- The source's 1/3 estimate is equivalent to a converse norm bound with factor 3.
+example (a : realTypeSobolevSourceLocus) :
+    ‖sourcePhysicalH1Coordinates a.val‖^2 ≤
+      3*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+        3*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n)^2 := by
+  linarith [sourceH1_third_norm_sq_le_actions a]
+
+-- Vanishing actions force the actual physical H¹ coordinates to vanish.
+example (a : realTypeSobolevSourceLocus)
+    (ha : ∀ n : ℤ, sourceRealAction (by simp) (by norm_num)
+      (sourceH1RealSource a).val (sourceH1RealSource a).property n = 0) :
+    sourcePhysicalH1Coordinates a.val = 0 := by
+  have h := sourceH1_third_norm_sq_le_actions a
+  simp only [sourceWeightedActionTerm, ha, norm_zero, mul_zero, tsum_zero, zero_pow (by decide : 2 ≠ 0), add_zero] at h
+  apply norm_eq_zero.mp
+  nlinarith [norm_nonneg (sourcePhysicalH1Coordinates a.val)]
+
+end Lemma271Checks
