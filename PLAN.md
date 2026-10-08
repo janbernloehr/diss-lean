@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Latest progress: the locally uniform sine asymptotic in D.5
+## Latest progress: the full relative-product estimate in D.6
+
+Lemma D.6, printed pages 128-129, now covers arbitrary bounded reference
+and numerator displacements whose difference lies in ell^p, for 1 < p < infinity.
+Separation is required only on the indicated distant open quarter-pi discs.
+The relative products converge, the least disc majorant belongs to ell^p,
+and the literal sum of powered disc suprema has both a p-power norm bound
+and the linear-norm right side printed in the source.
+
+The constants are chosen uniformly on balls for the reference displacement
+norm and the difference norm, before either sequence or either cutoff.
+The signed reciprocal row is controlled by the discrete Hilbert transform
+and a summable correction. A global quadratic product remainder removes
+the need for the source's extra small-tail condition. Thus the estimates
+hold already at the separation cutoff and at every later cutoff; in
+particular they include every cutoff meeting the printed condition.
+The proof also does not need the source's simplicity assumption.
+
+`AppendixDRelativeProductRows.lean` connects the source hypotheses to the
+generic separated-row machinery and proves product convergence.
+`AppendixDRelativeProductSup.lean` controls all independent disc samples
+and then their least majorant and literal powered suprema.
+`AppendixDRelativeProductBounds.lean` makes the uniform norm dependence
+explicit. `SourceLemmaD6.lean` supplies the literal two-sequence statement.
+The linear-norm bound follows by absorbing a bounded power of the input
+norm into the constant, which is allowed to depend on its norm-ball radius.
+No correction to the statement is needed.
+
+Next: audit D.7's sharper quadratic remainder and D.8's sine-product
+consequence. The dissertation is not complete: the printed spectral
+height above p=2 remains required and unresolved. The accepted Lemma 27.2
+correction and optional original m=1 sharpening are unchanged.
+
+Validation: focused examples cover a constant nonzero bounded reference,
+a zero perturbation, a retained numerator vanishing at the sample, and
+uniform constants with arbitrary cutoffs at p=3. The full build passed
+(6451 jobs), all public examples passed, and the axiom audit passed for
+25802 NLS declarations. The same 21 pre-existing warnings remain, with
+no new warnings. The inventory of 156 candidate source labels was verified.
+
+## Previous milestone: the locally uniform sine asymptotic in D.5
 
 Lemma D.5, printed page 128, now has its remaining exterior asymptotic
 with a threshold that can be chosen locally uniformly in the displacement.

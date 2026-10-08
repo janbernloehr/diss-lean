@@ -138,7 +138,7 @@ by absolute summability. The proof keeps the stronger intermediate bound
 `norm(P-exp(A)) <= B*exp(S+B)` before using B<=S^2. The logarithmic remainder
 is bounded by B, and the exponential Taylor estimate retains the exact
 factor 1/2. Finite cancelling-pair examples check that signed cancellation
-is preserved. The partial D.4–D.5 audit below does not certify the remainder
+is preserved. The D.4–D.6 audit below does not certify the remainder
 of Appendix D.
 
 ### Lemma D.4 and the displaced-root separation assertion
@@ -182,14 +182,35 @@ than inferred from individual strict inequalities at each spectral point.
 
 Focused examples check the disc boundary, the zero-displacement quotient,
 and both neighborhood and supremum estimates at p=1, as well as the
-supremum estimate at p=3. D.6 and later Appendix D statements still require
-their own source comparisons; D.5 does not settle the separate printed
+supremum estimate at p=3. D.5 does not settle the separate printed
 spectral-height bound above p=2.
 
-Initial D.6 comparison: `FreeDiscProductLp.lean` fixes the reference roots
-to pi*m, while `SourceMidpointProductFullDiscSup.lean` uses actual periodic
-midpoints. D.6 allows an arbitrary bounded displacement of the reference
-lattice, an ell^p difference between the root sequences, and separation
-only on the indicated distant discs. Those two special-case APIs alone
-are not coverage of the full statement. The uniform norm dependence and
-the supremum over each source disc still need a source-level comparison.
+### Lemma D.6: relative products for arbitrary bounded reference roots
+
+D.6, printed pages 128-129, is proved for every 1 < p < infinity.
+Unlike the earlier free-lattice and spectral-midpoint special cases,
+this result allows any bounded reference displacement and any bounded
+numerator displacement with ell^p difference. The hypothesis is exactly
+the pointwise lower bound on the distant open quarter-pi discs.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Reference separation | `AppendixDReferenceSeparated` | Every point of each disc with abs(n) >= N, every m != n, and the source constant c > 0. |
+| Convergence of the omitted ratios | `sourceLemmaD6_multipliable` | Literal ratios for both bounded sequences; vanishing numerator factors are allowed. |
+| Uniform ell^p disc error | `exists_appendixDRelativeProductSup_normBall` | A least majorant in ell^p, zero off the selected tail, norm <= C times the actual difference norm. Constants fixed before inputs and cutoffs. |
+| Literal powered disc suprema | `sourceLemmaD6PowerSup`, `sourceLemmaD6` | Summability and both sum <= C times norm(difference)^p and the printed sum <= L times norm(difference). |
+| Uniformity and the later cutoff N1 | `sourceLemmaD6` | Constants depend only on c, p and the two norm-ball radii; every K >= N is allowed. |
+
+The signed reciprocal row plus a global quadratic product remainder
+proves a stronger conclusion than the source's small-tail argument:
+no additional cutoff smallness or simplicity of the reference sequence
+is needed. Therefore every cutoff satisfying the printed sufficient
+condition is covered. The linear-norm displayed right side is proved
+literally by absorbing a bounded power of the difference norm into the
+norm-ball constant; it is not silently replaced by a p-power right side.
+Independent sampling establishes control of all disc suprema at once.
+
+Focused examples use a nonzero constant bounded reference displacement,
+check zero perturbations and a vanishing retained numerator, and instantiate
+the two-sequence theorem at p=3 with constants preceding both cutoffs.
+D.7 and later statements still require their own source comparisons.

@@ -37808,3 +37808,71 @@ example (a : Coeff 3) (ε : ℝ) (hε : 0 < ε) :
   exists_local_appendixDProduct_div_sin_sup_lt (by simp) a hε
 
 end AppendixDExteriorChecks
+
+section AppendixDRelativeChecks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+
+-- A constant nonzero reference displacement is allowed; no finite-p norm is assumed.
+private def shiftedReference : Coeff ⊤ :=
+  ⟨fun _ => (1/8:ℂ), memℓp_infty ⟨1/8,by
+    rintro _ ⟨n,rfl⟩
+    norm_num⟩⟩
+
+private theorem shiftedReference_separated : AppendixDReferenceSeparated shiftedReference 1 0 := by
+  intro n _ z hz m hmn
+  have hm : displacedRoots shiftedReference m ∈ refinedResonantDisk m := by
+    simp only [refinedResonantDisk,Metric.mem_ball,dist_eq_norm,displacedRoots,
+      shiftedReference,add_sub_cancel_left]
+    norm_num
+    linarith [Real.pi_gt_three]
+  have h := (refinedResonantDisk_pointwise_separation hmn hm hz).1
+  rw [dist_eq_norm] at h
+  have hπ : 1 ≤ Real.pi/2 := by nlinarith [Real.pi_gt_three]
+  simp only [inv_one,one_mul]
+  nlinarith [abs_nonneg (((m-n:ℤ):ℝ))]
+
+-- The supremum sequence is summable on the whole tail of this nonfree reference.
+example (a : Coeff 2) : Summable (appendixDRelativeProductPowerSup shiftedReference a 0) :=
+  (appendixDRelativeProductPowerSup_bound (by norm_num) (by simp) shiftedReference a
+    (by norm_num) (norm_nonneg _) le_rfl shiftedReference_separated).1
+
+-- A retained numerator may vanish: convergence does not require small factors or simple numerator roots.
+example (a : Coeff 2) : Multipliable (fun m : ℤ => if m = 0 then 1 else
+    (displacedRoots shiftedReference m+a m)/(displacedRoots shiftedReference m)) := by
+  simpa only [sub_zero] using multipliable_appendixDRelativeProduct
+    (by norm_num : (1:ℝ≥0∞) < 2) (by simp) shiftedReference a
+    (by norm_num) shiftedReference_separated (n := 0) (by simp) (w := 0)
+    (by simp [refinedResonantDisk,Real.pi_pos])
+
+-- A perturbation that moves a retained root to the sample gives product error exactly -1.
+example : appendixDRelativeProductError shiftedReference
+    (lp.single 2 1 (-((Real.pi:ℂ)+1/8))) 0 0 = -1 := by
+  unfold appendixDRelativeProductError
+  rw [tprod_of_exists_eq_zero]
+  · ring
+  · refine ⟨1,?_⟩
+    simp [displacedRoots,shiftedReference]
+
+-- Zero perturbations give zero error despite a nonfree reference lattice.
+example (n : ℤ) (z : ℂ) (hz : z ∈ refinedResonantDisk n) :
+    appendixDRelativeProductError shiftedReference (0:Coeff 2) n z = 0 := by
+  rw [appendixDRelativeProductError_eq shiftedReference (0:Coeff 2)
+    (by norm_num) shiftedReference_separated (Nat.zero_le _) hz]
+  simp
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Constants are chosen before both sequences and both cutoffs, also above p=2.
+example : ∃ C L : ℝ, 0 < C ∧ 0 < L ∧
+    ∀ (r s : Coeff ⊤) (h : Memℓp (fun m : ℤ => s m-r m) 3) (N K : ℕ),
+    ‖r‖ ≤ 5 → ‖appendixDDisplacementDifference r s h‖ ≤ 7 →
+    AppendixDReferenceSeparated r 2 N → N ≤ K →
+    Summable (sourceLemmaD6PowerSup r s 3 K) ∧
+    (∑' n : ℤ, sourceLemmaD6PowerSup r s 3 K n) ≤
+      C*‖appendixDDisplacementDifference r s h‖^(3:ℝ≥0∞).toReal ∧
+    (∑' n : ℤ, sourceLemmaD6PowerSup r s 3 K n) ≤
+      L*‖appendixDDisplacementDifference r s h‖ :=
+  sourceLemmaD6 (by norm_num) (by simp) (by norm_num) (by norm_num) (by norm_num)
+
+end AppendixDRelativeChecks

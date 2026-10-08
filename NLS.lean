@@ -3018,3 +3018,7 @@ import NLS.ZakharovShabat.AppendixDProductMultiplicities
 import NLS.ZakharovShabat.DisplacedRootsSeparation
 import NLS.ZakharovShabat.LocallyUniformExteriorResolvent
 import NLS.ZakharovShabat.AppendixDExteriorAsymptotic
+import NLS.ZakharovShabat.AppendixDRelativeProductRows
+import NLS.ZakharovShabat.AppendixDRelativeProductSup
+import NLS.ZakharovShabat.AppendixDRelativeProductBounds
+import NLS.ZakharovShabat.SourceLemmaD6
