@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the full and deleted Appendix D products now have their
-literal source normalization, with joint analyticity and uniform cutoff
-convergence for every finite p >= 1. Their exact zero sets, simple roots
-and reciprocal poles for injective sequences, and the sine asymptotic along
-separated escaping paths are proved. D.4–D.5 remain partially audited; repeated-root
-multiplicities and the locally uniform exterior threshold are still pending.
-The printed spectral height above p=2 remains open.
+Latest milestone: Lemma D.4 now includes exact repeated-root multiplicities,
+higher reciprocal pole orders, and its literal product formulas for every
+finite p >= 1. Injective displaced-root sequences have a positive uniform
+separation bound without a smallness assumption. D.5 still needs its
+locally uniform exterior threshold. The printed spectral height above p=2
+remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

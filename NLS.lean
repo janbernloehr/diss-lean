@@ -3013,3 +3013,6 @@ import NLS.ComplexAnalysis.ProductEstimateNotation
 import NLS.ZakharovShabat.SingleSpectralProductEndpoints
 import NLS.ZakharovShabat.AppendixDSineProducts
 import NLS.ZakharovShabat.AppendixDSimpleRoots
+import NLS.ZakharovShabat.DisplacedProductOrders
+import NLS.ZakharovShabat.AppendixDProductMultiplicities
+import NLS.ZakharovShabat.DisplacedRootsSeparation

@@ -1,6 +1,45 @@
 # Implementation plan
 
-## Latest progress: source-normalized Appendix D products at p=1
+## Latest progress: exact root multiplicities and Lemma D.4
+
+Lemma D.4, printed page 127, now has all its stated conclusions for every
+finite 1 <= p < infinity. The previous milestone supplied literal symmetric
+cutoffs, the exact normalization, joint analyticity including p=1, exact
+zero sets, and simple roots and reciprocal poles for injective sequences.
+This step adds the missing multiplicities for arbitrary coincident roots
+and the literal reciprocal cutoff formula away from retained roots.
+
+`DisplacedProductOrders.lean` defines the finite set of indices taking a
+given root value. Properness of the displaced-root map isolates each value
+from the others. The finite cutoff orders stabilize to the cardinality of
+that set, and Rouche stability passes this exact multiplicity to the entire
+limit. The scalar normalization of Appendix D leaves the order unchanged.
+`AppendixDProductMultiplicities.lean` proves that deleting index n counts
+exactly the root indices remaining after erasing n. The reciprocal has the
+negative of that count as its meromorphic order, including higher poles
+and order zero away from roots.
+
+`DisplacedRootsSeparation.lean` proves the positive uniform separation
+assertion preceding D.4 for every injective finite-exponent displaced
+sequence, without a smallness assumption. Properness separates each fixed
+root; vanishing displacement gives a half-pi bound in the tail; taking a
+positive bound over the finite head finishes the global estimate.
+
+D.5's full-product root multiplicities are also covered. Its locally uniform
+exterior threshold in the displacement parameter remains the next required
+step. This does not certify the rest of Appendix D or the dissertation.
+The printed spectral height above p=2 remains unresolved. The accepted
+Lemma 27.2 correction and optional original m=1 sharpening are unchanged.
+
+Validation: the full build passed (6445 jobs), all public examples passed,
+and the axiom audit passed for 25758 NLS declarations. The same 21
+pre-existing warnings remain, with no new warnings. Focused p=1 examples
+create a double root, delete one occurrence or an unrelated root, and check
+the resulting analytic and meromorphic orders. The reciprocal cutoff and
+unrestricted separation APIs are also checked. The inventory of 156
+candidate source labels was independently verified.
+
+## Previous milestone: source-normalized Appendix D products at p=1
 
 The source-normalized full and deleted products are now exposed as
 `appendixDProduct` and `appendixDDeletedProduct`. Their literal symmetric

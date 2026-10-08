@@ -37714,3 +37714,55 @@ example (a : Coeff 1) (ha : Function.Injective (displacedRoots a)) (n k : ℤ) (
   meromorphicOrderAt_inv_appendixDDeletedProduct_of_injective (by simp) a ha n k hkn
 
 end AppendixDProductChecks
+
+namespace AppendixDMultiplicityChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal Classical
+
+-- Move the root at pi onto zero, creating a double root in ell^1.
+private noncomputable def collision : Coeff 1 := lp.single 1 1 (-(Real.pi:ℂ))
+
+private theorem collision_indices : displacedRootIndices collision 0 = {0,1} := by
+  ext n
+  rw [mem_displacedRootIndices]
+  by_cases hn : n = 1
+  · subst n
+    simp [collision, displacedRoots]
+  · simp [collision, displacedRoots, hn, Real.pi_ne_zero]
+
+example : analyticOrderAt (fun z => appendixDProduct (z,collision)) 0 = 2 := by
+  rw [analyticOrderAt_appendixDProduct (by simp), collision_indices]
+  norm_num
+
+-- Deleting one of the coincident occurrences leaves a simple root.
+example : analyticOrderAt (fun z => appendixDDeletedProduct 0 (z,collision)) 0 = 1 := by
+  rw [analyticOrderAt_appendixDDeletedProduct (by simp), collision_indices]
+  norm_num
+
+-- Deleting an unrelated root preserves the double root.
+example : analyticOrderAt (fun z => appendixDDeletedProduct 2 (z,collision)) 0 = 2 := by
+  rw [analyticOrderAt_appendixDDeletedProduct (by simp), collision_indices]
+  norm_num
+
+example : meromorphicOrderAt (fun z => (appendixDDeletedProduct 2 (z,collision))⁻¹) 0 = -2 := by
+  rw [meromorphicOrderAt_inv_appendixDDeletedProduct (by simp), collision_indices]
+  norm_num
+
+example : meromorphicOrderAt (fun z => (appendixDDeletedProduct 0 (z,collision))⁻¹) 0 = -1 := by
+  rw [meromorphicOrderAt_inv_appendixDDeletedProduct (by simp), collision_indices]
+  norm_num
+
+-- The global separation result includes the summable endpoint without a smallness assumption.
+example (a : Coeff 1) (ha : Function.Injective (displacedRoots a)) :
+    ∃ δ : ℝ, 0 < δ ∧ ∀ j k : ℤ, j ≠ k → δ ≤ dist (displacedRoots a j) (displacedRoots a k) :=
+  exists_uniform_displacedRoots_separation (by simp) a ha
+
+-- The source's literal reciprocal cutoff formula also holds at p=1.
+example (a : Coeff 1) (n : ℤ) (z : ℂ)
+    (hother : ∀ k : ℤ, k ≠ n → z ≠ displacedRoots a k) :
+    Tendsto (fun N : ℕ => -∏ m ∈ (Finset.Icc (-(N:ℤ)) (N:ℤ)).erase n,
+      singleSpectralDenominator m/(displacedRoots a m-z)) atTop
+      (𝓝 ((appendixDDeletedProduct n (z,a))⁻¹)) :=
+  tendsto_inv_appendixDDeletedProduct (by simp) n a z hother
+
+end AppendixDMultiplicityChecks

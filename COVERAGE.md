@@ -141,24 +141,33 @@ factor 1/2. Finite cancelling-pair examples check that signed cancellation
 is preserved. The partial D.4–D.5 audit below does not certify the remainder
 of Appendix D.
 
-D.4–D.5 partial comparison: `SingleSpectralProductEndpoints.lean` extends
-joint analyticity and uniform cutoff convergence on compact spectral sets
-over bounded displacement sets to all finite p >= 1. The contractive
-inclusion into ell^max(p,2) preserves each cutoff and its limit.
-`AppendixDSineProducts.lean` implements the literal negative product and
-negative deleted product, with their printed normalization denominators.
-The full free value is sin(z); restoring the deleted factor recovers the
-full product, and the deleted free value has its required denominator.
-Both products have exactly their prescribed (respectively retained) roots,
-without assuming simplicity. The sine quotient tends to one along any
-escaping path separated from the free lattice by a fixed positive radius.
-`AppendixDSimpleRoots.lean` proves order one at any full-product root that
-occurs only once, simple retained zeros for deleted products of injective
-sequences, and simple poles (meromorphic order minus one) of their
-reciprocals. Every deleted reciprocal is meromorphic even without simplicity.
+### Lemma D.4 and the displaced-root separation assertion
 
-Still pending before complete coverage: exact repeated-root multiplicities,
-a uniform positive separation bound for arbitrary injective displaced-root
-sequences, and local uniformity of
-the exterior threshold in the displacement parameter. Pointwise-in-parameter
-escaping-path convergence is not counted as the last assertion of D.5.
+D.4, printed page 127, is now proved for every finite 1 <= p < infinity:
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Literal deleted product and joint analyticity | `tendsto_appendixDDeletedProduct`, `analyticOnNhd_appendixDDeletedProduct` | Exact source signs and normalization, including p=1. Uniform cutoff convergence on compact spectral sets over bounded displacement sets is supplied by `tendstoUniformlyOn_jointDeletedSingleSpectralProduct_finite`. |
+| Roots listed with their multiplicities | `analyticOrderAt_appendixDDeletedProduct` | At every complex point, the order equals the cardinality of `displacedRootIndices a z` after erasing the omitted index. No injectivity hypothesis. |
+| Simple roots and simple reciprocal poles for a simple sequence | `analyticOrderAt_appendixDDeletedProduct_of_injective`, `meromorphicOrderAt_inv_appendixDDeletedProduct_of_injective` | Every retained root has order one, and the reciprocal has meromorphic order minus one. |
+| Meromorphic reciprocal and its printed product formula | `meromorphicAt_inv_appendixDDeletedProduct`, `tendsto_inv_appendixDDeletedProduct` | Meromorphic at every point; the literal negative reciprocal cutoffs converge away from retained roots. |
+| Positive separation of simple sequences (preceding D.4) | `exists_uniform_displacedRoots_separation` | A positive lower bound for every distinct pair, for arbitrary injective finite-exponent displacements. No quarter-pi localization assumption. |
+
+`DisplacedProductOrders.lean` uses properness to obtain finite root fibers
+and isolating discs, then Rouche stability to pass finite cutoff orders to
+the entire limit. `AppendixDProductMultiplicities.lean` also computes exact
+meromorphic orders of full and deleted reciprocals, including higher-order
+poles. The collision examples at p=1 check a double root, removal of one
+occurrence, removal of an unrelated root, and the resulting pole orders.
+
+### Lemma D.5: exterior local uniformity remains pending
+
+`AppendixDSineProducts.lean` implements the literal full negative product,
+with free value sin(z), joint analyticity, and exactly the prescribed roots.
+`analyticOrderAt_appendixDProduct` now counts every repeated occurrence.
+The sine quotient tends to one along every escaping path separated from
+the free lattice by a fixed positive radius.
+
+The remaining D.5 requirement is local uniformity of the exterior threshold
+in the displacement parameter. Convergence for each fixed displacement
+along escaping paths is not counted as this final assertion.
