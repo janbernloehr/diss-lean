@@ -36297,3 +36297,49 @@ example (n : ℤ) (hn0 : n ≠ 0) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (m : ℕ)
   have h := (sourceRealHigherAction_H1_exterior_bounds ψ φ hφ n hn0 hn m).1
   simpa only [sourceRealHigherAction_of_collapsed (by simp) (by norm_num) ψ n hgap (2*m),mul_zero] using h
 end Proposition261Checks
+
+namespace Lemma262Checks
+open NLS.ZakharovShabat
+
+-- The absolute action value in the weighted norm is its nonnegative real part.
+example (ψ : realTypeSourceSubmodule 2) (n : ℤ) :
+    ‖sourceRealAction (by simp) (by norm_num) ψ.val ψ.property n‖ =
+      (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property n).re :=
+  norm_sourceRealAction ψ n
+
+-- Zero frequency is part of the central bound even at zero potential size.
+example : (1+|((2*(0:ℤ):ℤ):ℝ)*Real.pi|)^4 ≤ (1+16*Real.pi)^4*(1+(0:ℝ))^8 :=
+  central_action_weight_le 0 le_rfl 0 (Or.inl rfl) 2
+
+-- H² regularity gives a genuine weighted ℓ¹ series, not merely a totalized tsum.
+example (a : realTypeHigherSobolevSourceLocus 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ =
+      periodOnePotential (higherSobolevSourceInclusion 2 a.val)) :
+    Summable (sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2) :=
+  (sourceWeightedAction_summable_and_le_half_mass 2 (by decide) a φ hφ).1
+
+-- At the first even order the Hamiltonian contribution is +4 H₅.
+example (a : realTypeHigherSobolevSourceLocus 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ =
+      periodOnePotential (higherSobolevSourceInclusion 2 a.val)) :
+    (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n) ≤
+      (1+16*Real.pi)^4*(1+‖φ‖)^8*(‖higherSobolevSourceInclusion 2 a.val‖^2/2)+
+        4*(sobolevOddHamiltonian 2 (by decide) a.val).re := by
+  simpa only [show 2*2 = 4 from rfl, show 4*2 = 8 from rfl, show (2:ℝ)^2 = 4 by norm_num] using
+    (sourceWeightedAction_summable_and_le_half_mass 2 (by decide) a φ hφ).2
+
+-- A nonzero H₅ rules out the negative trace identity printed in the proof.
+example (a : realTypeHigherSobolevSourceLocus 2)
+    (ha : (sobolevOddHamiltonian 2 (by decide) a.val).re ≠ 0) :
+    ¬ (8^2*(∑' n : ℤ, sourceRealHigherAction (by simp) (by norm_num)
+      ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ n (2*2)) =
+        (-1:ℝ)^(2+1)*2^2*(sobolevOddHamiltonian 2 (by decide) a.val).re) :=
+  fun h => ha ((printed_even_trace_identity_iff_zero 2 (by decide) (by decide) a).mp h)
+
+-- The unchanged Appendix H hierarchy has H₅ = 2 on the constant potential.
+example : classicalNLSHamiltonian (fun _ => 1) (fun _ => 1) 5 = 2 :=
+  classicalNLSHamiltonian_constant_one_five
+
+end Lemma262Checks

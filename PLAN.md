@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Latest progress: Proposition 26.1 quantitative higher-action estimates
+## Latest progress: Lemma 26.2 with the trace-consistent sign
+
+The trace-consistent form of Lemma 26.2 is proved, including absolute
+summability of the weighted action series on the real H^m source space
+for every m ≥ 1. The estimate uses the exact π-normalized H¹ realization
+and retains the stronger half-mass remainder:
+`sum ⟨2nπ⟩^(2m) |In| ≤ (1+16π)^(2m) (1+‖φ‖H¹)^(4m) ‖ψ‖L²²/2 + 2^m H2m+1`.
+A second theorem gives the full-mass remainder printed in the source.
+
+`SourceWeightedActionMajorant.lean` combines the exterior comparison of
+Proposition 26.1 with a central frequency bound, including index zero.
+Its nonnegative summable majorant proves convergence before estimating
+the infinite sum. `SourceSobolevActionEstimate.lean` obtains higher-action
+summability at sharp H^m regularity and substitutes the mass and higher
+Hamiltonian traces.
+
+A source discrepancy prevents claiming the signed statement verbatim:
+Lemma 26.2 inserts `(-1)^(m+1)` into a trace equality whose equation (5.4)
+has no such sign. The formal even-order audit proves that the printed
+equality requires the Hamiltonian to vanish. An independent Appendix H
+recurrence check gives H₅(1,1)=2. The physical Hamiltonian definitions
+remain unchanged. See `SOURCE_ERRATA.md` for the exact scope of this
+finding; the whole printed inequality has not been formally refuted.
+
+Public checks cover the absolute action norm, the zero-frequency central
+bound, H² weighted summability, the positive +4 H₅ term, the even-order
+trace obstruction, and the constant-potential H₅ normalization.
+
+Validation: the full build passed (6348 jobs), all public examples passed,
+and the transitive axiom audit passed for 25085 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: combine the corrected summed estimate with the Hamiltonian
+polynomial/interpolation bounds for Theorem 23.2(i). Sections 27–28,
+fixed-domain trace scope, and the remaining dissertation inventory remain
+open. Do not restore the erroneous signed trace term from older plans.
+
+## Previous milestone: Proposition 26.1 quantitative higher-action estimates
 
 Proposition 26.1 is proved for the actual real source higher actions, using
 the exact π-normalized H¹ weighted realization of the period-one potential.

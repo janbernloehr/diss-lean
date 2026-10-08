@@ -2917,3 +2917,6 @@ import NLS.ZakharovShabat.M1ComplexGlobalGapEstimate
 import NLS.ZakharovShabat.NonzeroQuadraticRadius
 import NLS.ZakharovShabat.H1GapIntervalLocalization
 import NLS.ZakharovShabat.SourceH1HigherActionEstimates
+import NLS.ZakharovShabat.SourceWeightedActionMajorant
+import NLS.ZakharovShabat.SourceSobolevActionEstimate
+import NLS.ZakharovShabat.ClassicalHamiltonianSignCheck

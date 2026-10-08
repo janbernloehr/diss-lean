@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Proposition 26.1 is proved for the actual higher actions,
-with the exact H¹ threshold, localized mean-value point, nonzero-index
-two-sided comparison, and central estimate. Collapsed gaps and the `m=0`
-case are included. The next step is the summed action bound of Lemma 26.2.
-See `STATUS.md`.
+Latest milestone: the trace-consistent weighted action estimate of Lemma 26.2
+is proved, with absolute summability and a sharper half-mass remainder.
+The printed Hamiltonian sign conflicts with trace formula (5.4) at even
+orders; the formalization keeps the physical Hamiltonians unchanged and
+proves the positive-sign estimate. See [source discrepancies](SOURCE_ERRATA.md)
+and [implementation status](STATUS.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
