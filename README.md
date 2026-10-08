@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma D.8 now has both deleted sine-product asymptotics
-for 1 < p < infinity, including the removable values at the free centers.
-Both literal disc-supremum errors lie in ell^p, uniformly on displacement
-norm balls. The result covers every source disc and arbitrary independent
-samples, with explicit local uniformity.
-Next is D.9; the printed spectral height above p=2 remains open.
+Latest milestone: Lemma D.9 now gives the full sine-product asymptotic
+for 1 < p < infinity at arbitrary independent source-disc samples, including
+free centers. The actual disc-supremum errors lie in ell^p with common bounds
+on displacement norm balls and explicit local uniformity. Literal negative
+product cutoffs and the restored-factor normalization are checked.
+Next is Appendix E.1; the printed spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

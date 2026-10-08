@@ -1,6 +1,36 @@
 # Implementation status
 
-## Current milestone: both deleted sine-product asymptotics in D.8
+## Current milestone: the full sine-product asymptotic in D.9
+
+Lemma D.9, printed page 130, now gives the full-product asymptotic
+f(z_n) = sin(z_n) + ell^p_n for every 1 < p < infinity and every independent
+choice of points in the open quarter-pi source discs. The literal negative
+symmetric product is identified with the existing entire boundary product.
+The actual disc-supremum error sequence lies in ell^p, with a common bound
+on each displacement norm ball and an explicit local-uniformity statement.
+
+`SourceLemmaD9.lean` also proves the exact error identity obtained by
+restoring D.8's omitted factor, including its negative normalization sign.
+The formulas hold at the free centers and allow arbitrary root displacements,
+without simplicity, smallness, or a distant-tail restriction. A separate
+entry point accepts a function defined by the printed negative-product
+cutoff limits and proves membership of its actual sampled error function.
+
+Next: audit Appendix E.1's full interpolation formula and its convergence
+scope; the existing zero-sample uniqueness result alone does not establish
+that formula. The dissertation remains incomplete: the printed spectral
+height above p=2 is still required and unresolved. The accepted Lemma 27.2
+correction and optional original m=1 sharpening are unchanged.
+
+Validation: focused checks passed for single-root perturbations at zero
+and a negative free center, literal cutoff-defined functions and disc
+suprema at p=3, and local uniformity and sampled errors at p=3/2.
+The full build passed (6460 jobs), all public examples passed, and the
+axiom audit passed for 25883 NLS declarations. The same 21 pre-existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified.
+
+## Previous milestone: both deleted sine-product asymptotics in D.8
 
 Lemma D.8, printed page 129, now has both its multiplicative and additive
 deleted sine-product asymptotics for every 1 < p < infinity. The theorem

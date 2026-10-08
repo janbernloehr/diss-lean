@@ -138,8 +138,7 @@ by absolute summability. The proof keeps the stronger intermediate bound
 `norm(P-exp(A)) <= B*exp(S+B)` before using B<=S^2. The logarithmic remainder
 is bounded by B, and the exponential Taylor estimate retains the exact
 factor 1/2. Finite cancelling-pair examples check that signed cancellation
-is preserved. The D.4–D.8 audit below does not certify the remainder
-of Appendix D.
+is preserved. The D.4–D.9 audit below is scoped to the statements explicitly listed.
 
 ### Lemma D.4 and the displaced-root separation assertion
 
@@ -273,4 +272,30 @@ majorants, rather than inferred from bounds on fixed sample sequences.
 Focused checks include the value -1 at a negative odd free center, the
 value 1 at zero, invariance under moving only the omitted root, a negative
 omitted-index cutoff, p=3 norm-ball bounds, and p=3/2 local uniformity.
-D.9 and Appendix E still require source-level comparison.
+The following audit treats D.9; Appendix E still requires source-level comparison.
+
+### Lemma D.9: the full sine-product asymptotic
+
+D.9, printed page 130, is proved for every 1 < p < infinity and arbitrary
+ell^p displacements. Every open quarter-pi source disc is included,
+with arbitrary independent samples and with no simplicity or smallness condition.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Literal negative-product normalization | `appendixDProduct_eq_displacedBoundaryProduct`, `sourceLemmaD9_of_cutoff_limits` | The existing negative symmetric cutoff limit is exactly the entire boundary product; the sampled assertion also accepts any function specified by those limits. |
+| Restoring the omitted factor | `appendixDProduct_sub_sin_eq_relative_error` | Exact identity `f(z)-sin(z) = -Q_n(z) * (a_n + (sigma_n-z) * error_n(z))`, including the filled center value. |
+| Sampled full-product asymptotic | `sourceLemmaD9`, `sourceLemmaD9_mem` | An actual ell^p error for every independent disc sample sequence, including the free centers. |
+| Disc-supremum control | `sourceLemmaD9Sup`, `sourceLemmaD9_uniform` | The literal norm suprema belong to ell^p with one bound on every displacement norm ball. |
+| Local uniformity in sigma | `sourceLemmaD9_locally_uniform` | One constant on the unit neighborhood of each displacement, uniformly for all independent samples. |
+
+The proof uses the existing entire-boundary disc majorants after identifying
+the normalization, then constructs the literal suprema and the sampled error.
+The independent restored-factor identity checks the source proof's sign.
+Moving only the root at a free center gives minus cos(pi*n) times that
+root displacement; focused examples check n=0 and n=-1. Other examples
+exercise literal cutoff-defined functions and p=3 and p=3/2 uniform bounds.
+No source correction is needed for D.9.
+
+Appendix E.1's full interpolation formula and the convergence of its sum
+remain to be audited. The existing zero-sample uniqueness theorem alone
+does not establish the full formula.

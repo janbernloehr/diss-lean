@@ -38025,3 +38025,71 @@ example (a₀ : Coeff (3/2)) :
   sourceLemmaD8_locally_uniform d8HalfAboveOne d8HalfFinite a₀
 
 end AppendixDDeletedSineChecks
+
+section AppendixDFullSineChecks
+open NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal
+
+-- Moving only the root at the sample exposes the full product's normalization sign.
+private theorem d9_single_center (n : ℤ) (δ : ℂ) :
+    appendixDProduct ((Real.pi:ℂ)*n,lp.single 2 n δ) = -Complex.cos ((Real.pi:ℂ)*n)*δ := by
+  have hz : (Real.pi:ℂ)*n ∈ refinedResonantDisk n := by
+    simp only [refinedResonantDisk,Metric.mem_ball,dist_self]
+    positivity
+  have hrel : sourceLemmaD8RelativeError (lp.single 2 n δ) n ((Real.pi:ℂ)*n) = 0 := by
+    rw [sourceLemmaD8RelativeError,appendixDRelativeProductError_eq (0:Coeff ⊤)
+      (lp.single 2 n δ) (by norm_num) appendixD_freeReferenceSeparated (Nat.zero_le _) hz]
+    have he (m : ℤ) : (1+(if m = n then 0 else
+        (lp.single 2 n δ : Coeff 2) m/(displacedRoots (0:Coeff ⊤) m-(Real.pi:ℂ)*n))) = 1 := by
+      by_cases hmn : m = n
+      · simp [hmn]
+      · simp [hmn,lp.single_apply]
+    simp only [he,tprod_one,sub_self]
+  have h := appendixDProduct_sub_sin_eq_relative_error (by norm_num) (by simp)
+    (lp.single 2 n δ) n ((Real.pi:ℂ)*n) hz
+  have hs : Complex.sin ((Real.pi:ℂ)*n) = 0 := by
+    simpa only [mul_comm] using Complex.sin_int_mul_pi n
+  rw [hs,sub_zero,hrel,mul_zero,add_zero,freeSineQuotient_center] at h
+  simpa [lp.single_apply] using h
+
+example (δ : ℂ) : appendixDProduct (0,lp.single 2 0 δ) = -δ := by
+  simpa using d9_single_center 0 δ
+
+example (δ : ℂ) : appendixDProduct (-((Real.pi:ℂ)),lp.single 2 (-1) δ) = δ := by
+  simpa using d9_single_center (-1) δ
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- One bound controls actual disc suprema for every displacement in the ball.
+example : ∃ C : ℝ, 0 < C ∧ ∀ a : Coeff 3, ‖a‖ ≤ 6 →
+    ∃ b : Coeff 3,
+      (∀ n, b n = ((sourceLemmaD9Sup a n):ℂ)) ∧
+      (∀ n : ℤ, ∀ z ∈ refinedResonantDisk n,
+        ‖appendixDProduct (z,a)-Complex.sin z‖ ≤ ‖b n‖) ∧ ‖b‖ ≤ C :=
+  sourceLemmaD9_uniform (by norm_num) (by simp) (by norm_num)
+
+-- The function may be given directly by the source's literal cutoff limit.
+example (a : Coeff 3) (f : ℂ → ℂ)
+    (hf : ∀ w : ℂ, Tendsto (fun M : ℕ => -∏ m ∈ Finset.Icc (-(M:ℤ)) (M:ℤ),
+      (displacedRoots a m-w)/singleSpectralDenominator m) atTop (𝓝 (f w)))
+    (z : ℤ → ℂ) (hz : ∀ n, z n ∈ refinedResonantDisk n) :
+    Memℓp (fun n => f (z n)-Complex.sin (z n)) 3 :=
+  sourceLemmaD9_of_cutoff_limits (by norm_num) (by simp) a f hf z hz
+
+private theorem d9HalfAboveOne : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem d9HalfFinite : (3/2:ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact ((1:ℝ≥0∞) ≤ 3/2) := ⟨d9HalfAboveOne.le⟩
+
+-- The sampled statement has one constant throughout a neighborhood, also below p=2.
+example (a₀ : Coeff (3/2)) : ∃ C : ℝ, 0 < C ∧
+    ∀ a : Coeff (3/2), ‖a-a₀‖ < 1 → ∀ z : ℤ → ℂ,
+    (∀ n, z n ∈ refinedResonantDisk n) → ∃ e : Coeff (3/2),
+      (∀ n : ℤ, appendixDProduct (z n,a) = Complex.sin (z n)+e n) ∧ ‖e‖ ≤ C :=
+  sourceLemmaD9_locally_uniform d9HalfAboveOne d9HalfFinite a₀
+
+example (a : Coeff (3/2)) (z : ℤ → ℂ) (hz : ∀ n, z n ∈ refinedResonantDisk n) :
+    Memℓp (fun n => appendixDProduct (z n,a)-Complex.sin (z n)) (3/2) :=
+  sourceLemmaD9_mem d9HalfAboveOne d9HalfFinite a z hz
+
+end AppendixDFullSineChecks
