@@ -5,11 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: both conclusions of Theorem 23.4 are proved for every M₁
-weight. The complex weighted-action bound holds on an open neighborhood of
-the entire real weighted source space, including zero, with constant 2²¹ and
-absolute summability. One constructed Birkhoff map satisfies the real weighted
-norm bound; 2048 is a common constant for the theorem's two conclusions.
+Latest milestone: Corollary 23.5 is proved for every real Sobolev order s ≥ 1.
+The complex action bound has exponent 4s and the real Birkhoff-map bound has
+exponent 2s, with one explicit positive constant for both. The exact physical
+weights ⟨2nπ⟩ are retained, including fractional orders and the zero source.
 See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

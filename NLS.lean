@@ -2971,3 +2971,6 @@ import NLS.ZakharovShabat.SourceM1ActionContinuity
 import NLS.ZakharovShabat.SourceM1ActionNearZero
 import NLS.ZakharovShabat.SourceM1ActionNeighborhood
 import NLS.ZakharovShabat.SourceTheorem23_4
+import NLS.SequenceSpaces.SobolevWeightInterpolationBound
+import NLS.ZakharovShabat.SourceRealSobolevCoordinates
+import NLS.ZakharovShabat.SourceCorollary23_5

@@ -37017,3 +37017,61 @@ example :
   exists_sourceBirkhoffMap_theorem23_4
 
 end Theorem234ComplexChecks
+
+namespace Corollary235Checks
+open NLS.ZakharovShabat
+variable {W₀ B W : Set (CoeffPair 2)}
+  {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+
+-- A genuinely fractional source order gives the action weight exponent three.
+example (a : CoeffPair 2) (n : ℤ) :
+    sourceRealSobolevActionTerm (3/2) (by norm_num) a n =
+      (1+|((2*n:ℤ):ℝ)*Real.pi|)^(3:ℝ)*
+        ‖sourceComplexAction (by simp) (by norm_num) n
+          (sourceRealSobolevInclusion (3/2) (by norm_num) a)‖ := by
+  unfold sourceRealSobolevActionTerm
+  norm_num
+
+-- The target estimate at s=3/2 has exponent three, with no integer rounding.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSourceSubmodule 2) :
+    ‖D.realSobolevCoordinates (3/2) (by norm_num) a‖ ≤
+      realSobolevEstimateConstant (3/2)*(1+‖a.val‖)^(3:ℝ)*‖a.val‖ := by
+  simpa only [show (2:ℝ)*(3/2)=3 by norm_num] using
+    D.realSobolevCoordinates_norm_le (3/2) (by norm_num) a
+
+-- Its complex action bound has exponent six on a neighborhood of every real source.
+example : ∃ V : Set (CoeffPair 2), IsOpen V ∧ realTypeSourceLocus 2 ⊆ V ∧ ∀ a ∈ V,
+    Summable (sourceRealSobolevActionTerm (3/2) (by norm_num) a) ∧
+    (∑' n : ℤ, sourceRealSobolevActionTerm (3/2) (by norm_num) a n) ≤
+      (realSobolevEstimateConstant (3/2))^2*(1+‖a‖)^(6:ℝ)*‖a‖^2 := by
+  simpa only [show (4:ℝ)*(3/2)=6 by norm_num] using
+    exists_sourceRealSobolev_action_neighborhood (3/2) (by norm_num)
+
+-- The endpoint s=1 is included with the explicit positive constant.
+example : realSobolevEstimateConstant 1 = 2048*(1+17*Real.pi) := by
+  simp [realSobolevEstimateConstant]
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSourceSubmodule 2) :
+    ‖D.realSobolevCoordinates 1 le_rfl a‖ ≤
+      realSobolevEstimateConstant 1*(1+‖a.val‖)^(2:ℝ)*‖a.val‖ := by
+  simpa only [mul_one] using D.realSobolevCoordinates_norm_le 1 le_rfl a
+
+-- Every real order retains the zero source and exact target-space identity.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (r : ℝ) (hr : 1 ≤ r) : D.realSobolevCoordinates r hr 0 = 0 := by simp
+
+-- One constructed map works for all real orders, and the constant is shared by both bounds.
+example :
+    ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+      ∃ D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s,
+        ∀ r : ℝ, ∀ hr : 1 ≤ r, ∃ c : ℝ, 0 < c ∧
+          ∃ V : Set (CoeffPair 2), IsOpen V ∧ realTypeSourceLocus 2 ⊆ V ∧
+            (∀ a ∈ V, Summable (sourceRealSobolevActionTerm r (zero_le_one.trans hr) a) ∧
+              (∑' n : ℤ, sourceRealSobolevActionTerm r (zero_le_one.trans hr) a n) ≤
+                c^2*(1+‖a‖)^(4*r)*‖a‖^2) ∧
+            ∀ a : realTypeSourceSubmodule 2,
+              ‖D.realSobolevCoordinates r hr a‖ ≤ c*(1+‖a.val‖)^(2*r)*‖a.val‖ :=
+  exists_sourceBirkhoffMap_corollary23_5
+
+end Corollary235Checks

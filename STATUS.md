@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Theorem 23.4, including the complex neighborhood and zero
+## Current milestone: Corollary 23.5 for every real Sobolev order
+
+Both conclusions of Corollary 23.5 are now proved at every real Sobolev
+order s ≥ 1, simultaneously for one constructed Birkhoff map. The action
+bound holds on an open complex neighborhood of the entire real H^s source
+space and includes absolute summability:
+
+`‖I(ψ)‖_{ℓ^{2s,1}} ≤ c_s² (1+P)^(4s) P²`,
+`‖Ω(ψ)‖_{h^s} ≤ c_s (1+P)^(2s) P`.
+
+Here P is the exact physical H^s norm in normalized source coordinates.
+The same explicit positive constant `c_s = 2048 (1+17π)^s` works in both
+inequalities. No integer rounding of s is used, and the zero source is included.
+
+`SobolevWeightInterpolationBound.lean` bounds the interpolated scaled Sobolev
+weight at 16P², then specializes to the physical π normalization. Its squared
+bound retains the real exponent 4s. `SourceRealSobolevCoordinates.lean` exposes
+the actual source coefficients divided by `⟨2nπ⟩^s`, the literal action
+summand `⟨2nπ⟩^(2s) |I_n|`, and the weighted rectangular Birkhoff coordinates
+as a real Hilbert pair. The exact Parseval identity is retained.
+
+`SourceCorollary23_5.lean` applies Theorem 23.4's complex neighborhood estimate
+and the real Birkhoff bound with one common constant. Its joint theorem
+chooses the Birkhoff map before quantifying over all real Sobolev orders.
+
+Public examples cover s=1, s=3/2 with target exponent three and action exponent
+six, the exact fractional action weight, zero, and the joint quantifiers.
+
+Validation: the full build passed (6403 jobs), all public examples passed,
+and the transitive axiom audit passed for 25434 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: audit the remaining Chapter 5 claims, including the common constants
+in Remark 23.3, unrestricted m=1 in Lemma 27.2, and the complex statements of
+Lemma 28.1 and Proposition 28.2. Completion of Corollary 23.5 does not close
+those separate assertions or older outstanding parts of the dissertation.
+
+## Previous milestone: Theorem 23.4, including the complex neighborhood and zero
 
 Both conclusions of Theorem 23.4 are now proved for the existing original
 actions and one constructed Birkhoff map, simultaneously for all M₁ weights.
