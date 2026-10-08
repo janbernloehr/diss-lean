@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Theorems 23.1 and 23.2 are proved for every integer
-m ≥ 1. The actual real Birkhoff map satisfies both Sobolev norm estimates
-with the exact physical weights and strictly positive uniform constants.
-The separate unrestricted m=1 endpoint of Lemma 27.2 remains open.
-See [implementation status](STATUS.md) and the earlier trace-sign
-[source discrepancy](SOURCE_ERRATA.md).
+Latest milestone: Section 28's action-gap estimate is proved on the real
+source space, including collapsed gaps. The factor-nine cosine estimate
+and a stronger real-source factor three are verified. A boundary-index
+issue in Lemma 28.1's scalar arithmetic is recorded in
+[source discrepancies](SOURCE_ERRATA.md); its spectral product bound and
+complex-neighborhood estimate remain open. Theorems 23.1 and 23.2 were
+completed earlier. See [implementation status](STATUS.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

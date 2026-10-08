@@ -1,6 +1,53 @@
 # Implementation plan
 
-## Latest progress: Theorem 23.1, the Birkhoff-map Sobolev estimates
+## Latest progress: Section 28 real action-gap bound and boundary audit
+
+The real-source action-gap estimate underlying (5.15) is proved for all
+finite source exponents p > 1, including collapsed gaps:
+`4 |I_n| ≤ 3 ‖χ_n‖_gap |γ_n|² ≤ 9 ‖χ_n‖_gap |γ_n|²`.
+The complementary factor is the actual deleted critical-root product,
+represented as a continuous function on the closed affine gap. Its norm
+is proved equivalent to a pointwise uniform bound on the original
+periodic segment; no arbitrary comparison factor is substituted.
+
+`NormalizedActionFactorBound.lean` proves the exact complex cosine moment
+`integral |u-cos θ|² = π (|u|²+1/2)`. Thus the normalized cosine model is
+bounded by `(1+2|u|²) K`, giving the printed factor nine for `|u| ≤ 2`.
+`SourceRealGapFactorBound.lean` uses the actual real critical point's gap
+membership to obtain `|u| ≤ 1`, hence the stronger factor three on real
+sources. It transfers this through the established actual-action cosine
+identity and handles zero gaps separately without dividing by zero.
+The corresponding identity on the complex neighborhood remains open.
+
+The final scalar comparison in Lemma 28.1 has a boundary-index issue,
+verified against PDF page 118 and formalized in
+`Lemma281BoundaryArithmetic.lean`. At `n=N=10` and squared H¹ norm
+`Q=21/16`, the proof's cutoff conditions hold, but its displayed ratio
+chain asks for `8704 ≤ 4736`. The scalar estimate with 2048 is proved
+for `n ≥ N+1`; retaining `n=N` gives a proved inclusive scalar estimate
+with 8192. These are arithmetic results, not counterexamples to the
+actual spectral factor bound. See `SOURCE_ERRATA.md` for the exact scope.
+
+Public examples cover the factor-nine cosine model, a complex offset,
+a negative index at p=3, collapsed gaps, the original-gap supremum norm,
+and the failing boundary versus valid exterior scalar comparisons.
+
+Validation: the full build passed (6374 jobs), all public examples passed,
+and the transitive axiom audit passed for 25248 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+A broad tactic import initially changed an older example; narrowing it
+restored the original behavior, and the full gate then passed.
+
+Next: prove the spectral product estimates of Lemma 28.1, resolving the
+boundary index explicitly, and extend (5.15) to the required complex
+neighborhood before deriving Theorem 23.4. The full Lemma 28.1 is not
+claimed. For positive P, choosing `N < 8P² ≤ N+1` makes the integer-index
+threshold in Proposition 28.2 strictly exterior (`|n| ≥ N+1`), so that
+proposition may still use the scalar constant 2048; P=0 needs its own case.
+Lemma 27.2's unrestricted m=1 assertion, fixed-domain trace scope, and
+the remaining dissertation inventory remain open.
+
+## Previous milestone: Theorem 23.1, the Birkhoff-map Sobolev estimates
 
 Both estimates of Theorem 23.1 are now proved for the actual real Birkhoff
 map at every integer order m ≥ 1, with strictly positive constants uniform

@@ -2943,3 +2943,6 @@ import NLS.SequenceSpaces.RealHilbertPairFromSquares
 import NLS.ZakharovShabat.SourceBirkhoffSobolevCoordinates
 import NLS.ZakharovShabat.BirkhoffSobolevNormArithmetic
 import NLS.ZakharovShabat.SourceBirkhoffSobolevEstimates
+import NLS.ZakharovShabat.NormalizedActionFactorBound
+import NLS.ZakharovShabat.SourceRealGapFactorBound
+import NLS.ZakharovShabat.Lemma281BoundaryArithmetic

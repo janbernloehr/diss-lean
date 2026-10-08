@@ -36656,3 +36656,55 @@ example {V₀ C V : Set (CoeffPair 2)}
     norm_nonneg (E.sobolevCoordinates m hm k hk a)]
 
 end Theorem231Checks
+
+namespace Section28FactorChecks
+open NLS.ZakharovShabat
+
+-- The exact complex cosine moment gives the printed factor nine at offset two.
+example : ‖normalizedActionCosineModel (2:ℂ) (fun _ => 1)‖ = 9 := by
+  rw [normalizedActionCosineModel_one]
+  norm_num
+
+-- A genuinely complex offset is covered by the norm-square moment argument.
+example (χ : ℝ → ℂ) (hχ : Continuous χ) (K : ℝ) (hK : 0 ≤ K)
+    (hbound : ∀ θ ∈ Set.Icc 0 Real.pi, ‖χ θ‖ ≤ K) :
+    ‖normalizedActionCosineModel Complex.I χ‖ ≤ 3*K :=
+  norm_normalizedActionCosineModel_le_three _ χ hχ K hK hbound (by simp)
+
+-- The division-free result covers negative indices at a non-Hilbert source exponent.
+example (ψ : CoeffPair 3) (hψ : IsRealType (CoeffPair.toMax 3 ψ)) :
+    4*‖sourceComplexAction (by simp) (by norm_num) (-1) ψ‖ ≤
+      9*‖sourceRealGapFactor (by simp) (by norm_num) ψ hψ (-1)‖*
+        ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ (-1)‖^2 :=
+  sourceComplexAction_le_nine_gapFactor_mul_gap_sq (by simp) (by norm_num) ψ hψ (-1)
+
+-- At a collapsed gap the bound forces the original action to vanish.
+example (ψ : CoeffPair 2) (hψ : IsRealType (CoeffPair.toMax 2 ψ)) (n : ℤ)
+    (hgap : sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ n = 0) :
+    sourceComplexAction (by simp) (by norm_num) n ψ = 0 := by
+  have h := sourceComplexAction_le_three_gapFactor_mul_gap_sq (by simp) (by norm_num) ψ hψ n
+  rw [hgap,norm_zero,zero_pow (by decide : 2 ≠ 0),mul_zero] at h
+  apply norm_eq_zero.mp
+  nlinarith [norm_nonneg (sourceComplexAction (by simp) (by norm_num) n ψ)]
+
+-- The supremum norm is interchangeable with a bound over the original gap.
+example (ψ : CoeffPair 2) (hψ : IsRealType (CoeffPair.toMax 2 ψ)) (n : ℤ) :
+    ‖sourceRealGapFactor (by simp) (by norm_num) ψ hψ n‖ ≤ 7 ↔
+      ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ n,
+        ‖sourceCriticalRootRatioExtension (by simp) (by norm_num) n ψ z‖ ≤ 7 :=
+  sourceRealGapFactor_norm_le_iff (by simp) (by norm_num) ψ hψ n 7 (by norm_num)
+
+-- The source's cutoff inequalities hold at an explicit failing boundary example.
+example : (10:ℝ) < 8*(21/16) ∧ 8*(21/16:ℝ) ≤ 11 ∧
+    ¬ (128*((10:ℝ)+10+2/5)/(10-10+3/10) ≤ 2048*(1+21/16)) := by
+  simpa only [show (10:ℝ)+1=11 by norm_num] using lemma281_constant_boundary_counterexample
+
+-- Moving one index beyond that cutoff restores the printed scalar constant.
+example : 128*(((11:ℝ)+10+2/5)/(11-10+3/10)) ≤ 2048*(1+21/16) :=
+  lemma281_scalar_constant_of_exterior 10 11 (21/16) (by norm_num) (by norm_num) (by norm_num)
+
+-- Keeping the boundary index requires the proved inclusive scalar bound.
+example : 128*(((10:ℝ)+10+2/5)/(10-10+3/10)) ≤ 8192*(1+21/16) :=
+  lemma281_scalar_constant_inclusive 10 10 (21/16) (by norm_num) le_rfl (by norm_num)
+
+end Section28FactorChecks

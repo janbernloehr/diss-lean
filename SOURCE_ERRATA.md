@@ -37,3 +37,37 @@ printed proof equality. It does not constitute a formal counterexample
 to the entire printed inequality, whose positive remainder must also be
 accounted for. The literal signed statement of Lemma 26.2 is not claimed
 as a proved result.
+
+## Lemma 28.1: the final scalar comparison at n=N
+
+Source: [dissertation, proof of Lemma 28.1, page 118](https://janbernloehr.de/Download/fs16/diss.pdf#page=118).
+The displayed final comparison is
+
+```
+(n+N+2/5)/(n-N+3/10) ≤ 4/3+2N ≤ 2⟨N⟩,
+```
+
+under `n ≥ N`, with `⟨N⟩=1+N` for a nonnegative integer cutoff.
+At `n=N=1`, the ratio is 8, exceeding `2⟨N⟩=4`.
+The subsequent scalar comparison to `2048(1+‖φ‖H¹²)` also fails for
+admissible scalar cutoff data: with `n=N=10` and `Q=‖φ‖H¹²=21/16`,
+`N < 8Q ≤ N+1` holds, but
+
+```
+128 (n+N+2/5)/(n-N+3/10) = 8704 > 4736 = 2048(1+Q).
+```
+
+Formal results in `Lemma281BoundaryArithmetic.lean` prove both numerical
+counterexamples. They also prove:
+
+- for `n ≥ N+1`, the ratio is at most `2(N+1)`, recovering the scalar
+  constant 2048 when `N ≤ 8Q`;
+- for `n ≥ N`, the ratio is at most `8(N+1)`, giving an inclusive scalar
+  constant 8192 under the same cutoff condition.
+
+This audit concerns the printed scalar implication and supplies no
+potential whose actual spectral factor violates the claimed norm bound.
+The spectral product estimate must still be proved; neither corrected
+scalar comparison is presented as a completed version of Lemma 28.1.
+The separate real-source version of (5.15) is proved using the exact
+cosine moment and does not rely on this disputed arithmetic step.
