@@ -1,6 +1,70 @@
 # Implementation plan
 
-## Latest progress: Lemma 25.4 determinant localization, multiplicities, and gap
+## Latest progress: H¹ eigenvector regularity and original spectral localization
+
+The missing original-spectrum equivalence is now proved for linearly growing
+M₁ weights, including the dissertation's exact π-normalized H¹ weight.
+At `⟨n⟩ ≥ 8 ‖φ‖H¹²`, an original periodic spectral point in the strip is
+exactly a zero of the weighted resonant determinant. The explicit source
+radius and factor-six gap bound therefore apply to the original spectrum.
+There is no extra unit-weight contraction assumption or qualitative cutoff.
+
+`SobolevConvolution.lean` proves closure of the one-derivative coefficient
+space under the actual Fourier convolution and its exact Leibniz rule.
+Both derivative terms are in `ℓᵖ` by Young's inequality and the embedding
+of one-derivative coefficients into `ℓ¹`. This works at every finite Banach
+exponent, including p=1. `SobolevEigenvectorRegularity.lean` uses the original
+signed operator equation to recover a second derivative of each eigenvector
+component when the potential has one derivative, with no frequency condition.
+
+`SobolevWeightedSpectralBridge.lean` proves injectivity of the base and domain
+inclusions and lifts every original eigenvector into the weighted domain
+when `⟨k⟩ ≤ w(k) ≤ C⟨k⟩`. Compatibility of the actual operators then gives
+spectral equivalence with weighted eigenvectors. This regularity argument
+avoids needing to compare two separately constructed complementary inverses.
+
+`LinearWeightSpectralLocalization.lean` combines the bridge with the explicit
+half-contraction and the determinant results. Two roots with repetition
+exhaust the original strip spectrum, retain their determinant analytic orders,
+and obey the stated radius and gap estimates. The source H¹ specialization
+uses the verified upper bound `⟨kπ⟩ ≤ π⟨k⟩`.
+
+Public examples check physical Fourier coefficients, the Leibniz rule at p=3,
+eigenvector regularity at p=1, equality in the H¹ threshold, zero potential
+at n=0, localization of original spectral points, and a negative-index gap.
+
+Validation: the full build passed (6313 jobs), all public examples passed,
+and the transitive axiom audit passed for 24860 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining for Lemma 25.4: identify determinant analytic orders with original
+algebraic spectral multiplicities at the explicit threshold, then identify
+the two roots with the canonical signed endpoints. The existing canonical
+endpoint API also requires the even Fourier-support hypothesis. These
+identifications are not asserted by this milestone. Theorem 25.1 and the
+dependent higher-action estimates remain open, as do Sections 27–28,
+fixed-domain trace scope, and the rest of the dissertation inventory.
+
+Next, prove the algebraic count two at the explicit threshold by applying
+`sum_enclosed_multiplicity_eq_on_preconnected` from `DiskMultiplicity.lean`
+to the image under `weightedBaseToPair` of the closed weighted norm ball
+`‖ψ‖ ≤ ‖φ‖` (or the segment from zero to φ). The new spectral equivalence
+and strict determinant boundary comparison give a common resolvent circle
+of radius π/4. The free count is already `sum_enclosed_multiplicity_zero`.
+Then `periodicAlgebraicMultiplicity_eq_rootPair_count` and
+`analyticOrderNatAt_eq_periodicAlgebraicMultiplicity_of_pair` in
+`SpectralRootPair.lean` transfer the count to individual root multiplicities,
+including double roots, without an operator-valued argument principle.
+
+For canonical identification, preserve the exact threshold and even
+Fourier-support hypothesis. `PeriodicEndpointPair` contains the needed
+membership and multiplicity fields. Avoid using `PeriodicResonantPair`
+unmodified: its old `3π/32` localization fields are stronger than the
+new explicit-threshold estimates. The canonical endpoint sequences are
+globally ordered with distant anchors, so a counting argument across the
+consecutive quantitative strips is still needed to fix their signed indices.
+
+## Previous milestone: Lemma 25.4 determinant localization, multiplicities, and gap
 
 The determinant part of Lemma 25.4 now holds at the exact quadratic
 threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, for every complex Hilbert pair and every M₁
@@ -42,37 +106,6 @@ claim that spectral identification. Theorem 25.1, Proposition 26.1,
 Lemma 26.2, and Theorem 23.2(i) still depend on it. The converse estimates
 of Section 27, uniform weighted estimates of Section 28, fixed-domain
 trace scope, and the full dissertation inventory also remain open.
-
-Next, prove H¹ closure under convolution and use the spectral equation to
-upgrade an original eigenvector from H¹ to H². Existing ingredients are
-`Coeff.norm_magnitude_convolution_apply` (`ConvolutionMajorants.lean`),
-`WeightedCoeff.sobolevToL1CLM`, and
-`WeightedCoeff.memlp_sobolev_succ_of_derivative`. The additive bracket
-inequality separates the weighted convolution into two `ℓ² * ℓ¹` bounds.
-`ExponentDomainRegularity.lean` provides a model for recovering the derivative
-from the spectral equation; adapt it to regularity rather than exponent.
-Then use `weightedFreePencil_eq_original`,
-`weightedDomainPotential_eq_original`, and
-`mem_periodicSpectrum_iff_exists_eigenvector` for the spectral equivalence.
-The exact π-normalized H¹ weight requires coefficient-preserving norm
-comparison with the ordinary bracket weights in this regularity argument.
-This route is planned, not yet proved. Spectral multiplicities and canonical
-signed endpoint labels must still be identified after the equivalence,
-retaining the even Fourier-support hypothesis used by the existing canonical
-endpoint API.
-
-The existing `mem_periodicSpectrum_iff_weightedDeterminant_zero` additionally
-requires a unit-weight contraction. M₁ does not contain the unit weight,
-so Lemma 25.2 alone does not discharge that extra hypothesis. Establish the
-needed original-spectrum bridge at the same threshold (for example through
-H¹ eigenfunction regularity or a suitable mixed-weight estimate) before
-claiming canonical eigenvalue localization. Another route to investigate is
-Fredholm index zero: weighted solvability could make the original operator's
-range dense, and closed range would then give surjectivity. The generic
-compact-shift Fredholm theorem already exists in `CompactFredholm.lean`,
-but the required operator compactness and density transport still need proof. Preserve analytic multiplicities,
-physical Fourier normalization, and identification of the two roots with
-the canonical signed endpoints.
 
 ## Previous milestone: Lemma 25.3 and analytic resonant coefficient bounds
 

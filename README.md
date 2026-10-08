@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the determinant part of Lemma 25.4 now holds at its
-explicit quadratic threshold. The two roots, counted with analytic
-multiplicity, lie in the stated disc of radius less than π/5 and obey the
-factor-six gap estimate. This covers complex potentials and all M₁ weights,
-including the exact H¹ weight. Identification with the canonical periodic
-eigenvalues at that threshold remains next. See `STATUS.md`.
+Latest milestone: Lemma 25.4's determinant roots are now identified with
+the original periodic spectrum at the exact H¹ quadratic threshold.
+Eigenvector regularity supplies the weighted-domain equivalence, so the
+explicit localization radius and factor-six gap bound apply directly to
+original spectral points. Algebraic spectral multiplicities and canonical
+signed labels remain next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

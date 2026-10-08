@@ -35846,3 +35846,59 @@ example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWei
   (linearWeight_determinant_zeroCount _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl)
     φ n hn.le).2.2.2.2.2.2
 end LinearWeightRootChecks
+
+namespace SobolevSpectralBridgeChecks
+open NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Convolution closure retains the exact physical Fourier coefficients.
+example (a b : ScalarDomain 2) (n : ℤ) :
+    (sobolevConvolution (by simp) a b).val n = ∑' k : ℤ, a.val (n-k)*b.val k :=
+  sobolevConvolution_apply (by simp) a b n
+
+-- The Leibniz rule uses the physical derivative symbol iπn, at a non-Hilbert exponent too.
+example (a b : ScalarDomain 3) (n : ℤ) :
+    Complex.I*(Real.pi:ℂ)*n*Coeff.convolution (scalarInclusion a) (WeightedCoeff.sobolevToL1CLM 3 (by simp) b) n =
+      (Coeff.convolution (derivative a) (WeightedCoeff.sobolevToL1CLM 3 (by simp) b) +
+        Coeff.youngConvolution (show YoungRelation 1 3 3 by simp [YoungRelation])
+          (WeightedCoeff.sobolevToL1CLM 3 (by simp) a) (derivative b)) n :=
+  sobolev_convolution_derivative_coeff (by simp) a b n
+
+-- Eigenvector regularity does not require a frequency threshold, and covers p=1.
+example (a f : Domain 1) (z : ℂ)
+    (he : operator (by simp) (domainInclusion a) f = z • domainInclusion f) :
+    Memℓp (fun n => (Weight.sobolev 2 n:ℂ)*f.1.val n) 1 ∧
+    Memℓp (fun n => (Weight.sobolev 2 n:ℂ)*f.2.val n) 1 :=
+  eigenvector_memlp_sobolev_two (by simp) a f z he
+
+-- The exact H¹ spectrum equivalence includes equality and needs no unit-weight contraction.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 = 1+|(n:ℝ)|) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    z ∈ periodicSpectrum (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) ↔
+      resonantDeterminantExtension (by simp) (SpectralWeight.piSobolev 1 (by norm_num)) φ n z = 0 :=
+  mem_periodicSpectrum_iff_H1_determinant_zero φ n hn.le z hz
+
+-- Localization now concerns the original operator's spectrum.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (hs : z ∈ periodicSpectrum (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ)) :
+    ‖z-(Real.pi:ℂ)*n‖ < Real.pi/5 :=
+  (H1_periodicSpectrum_localization φ n hn z hz hs).1.trans_lt
+    (quadraticLocalizationRadius_lt_pi_div_five (norm_nonneg _) n hn)
+
+-- The bridge applies at zero frequency for zero potential.
+example (z : ℂ) (hz : z ∈ resonantStrip 0) :
+    z ∈ periodicSpectrum (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num))
+      (0 : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)) ↔ z = 0 := by
+  rw [mem_periodicSpectrum_iff_H1_determinant_zero 0 0 (by simp) z hz]
+  simp
+
+-- The negative-frequency gap bound is for actual spectral points, not just formal roots.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hn : 8*‖φ‖^2 ≤ 3) (x y : ℂ) (hx : x ∈ resonantStrip (-2)) (hy : y ∈ resonantStrip (-2))
+    (hsx : x ∈ periodicSpectrum (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ))
+    (hsy : y ∈ periodicSpectrum (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ)) :
+    ‖x-y‖^2 ≤ 6*resonantBProductSup (by simp) (SpectralWeight.piSobolev 1 (by norm_num)) φ (-2) :=
+  linearWeight_periodicSpectrum_gap_le _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl)
+    Real.pi piSobolev_one_le_pi_bracket φ (-2) (by norm_num; exact hn) x y hx hy hsx hsy
+end SobolevSpectralBridgeChecks

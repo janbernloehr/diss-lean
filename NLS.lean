@@ -2881,3 +2881,7 @@ import NLS.ZakharovShabat.LinearWeightDeterminantBounds
 import NLS.ZakharovShabat.LinearWeightZeroCount
 import NLS.ZakharovShabat.LinearWeightRootGap
 import NLS.ZakharovShabat.LinearWeightRoots
+import NLS.SequenceSpaces.SobolevConvolution
+import NLS.ZakharovShabat.SobolevEigenvectorRegularity
+import NLS.ZakharovShabat.SobolevWeightedSpectralBridge
+import NLS.ZakharovShabat.LinearWeightSpectralLocalization

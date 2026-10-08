@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: Lemma 25.4 determinant localization, multiplicities, and gap
+## Current milestone: H¹ eigenvector regularity and original spectral localization
+
+The missing original-spectrum equivalence is now proved for linearly growing
+M₁ weights, including the dissertation's exact π-normalized H¹ weight.
+At `⟨n⟩ ≥ 8 ‖φ‖H¹²`, an original periodic spectral point in the strip is
+exactly a zero of the weighted resonant determinant. The explicit source
+radius and factor-six gap bound therefore apply to the original spectrum.
+There is no extra unit-weight contraction assumption or qualitative cutoff.
+
+`SobolevConvolution.lean` proves closure of the one-derivative coefficient
+space under the actual Fourier convolution and its exact Leibniz rule.
+Both derivative terms are in `ℓᵖ` by Young's inequality and the embedding
+of one-derivative coefficients into `ℓ¹`. This works at every finite Banach
+exponent, including p=1. `SobolevEigenvectorRegularity.lean` uses the original
+signed operator equation to recover a second derivative of each eigenvector
+component when the potential has one derivative, with no frequency condition.
+
+`SobolevWeightedSpectralBridge.lean` proves injectivity of the base and domain
+inclusions and lifts every original eigenvector into the weighted domain
+when `⟨k⟩ ≤ w(k) ≤ C⟨k⟩`. Compatibility of the actual operators then gives
+spectral equivalence with weighted eigenvectors. This regularity argument
+avoids needing to compare two separately constructed complementary inverses.
+
+`LinearWeightSpectralLocalization.lean` combines the bridge with the explicit
+half-contraction and the determinant results. Two roots with repetition
+exhaust the original strip spectrum, retain their determinant analytic orders,
+and obey the stated radius and gap estimates. The source H¹ specialization
+uses the verified upper bound `⟨kπ⟩ ≤ π⟨k⟩`.
+
+Public examples check physical Fourier coefficients, the Leibniz rule at p=3,
+eigenvector regularity at p=1, equality in the H¹ threshold, zero potential
+at n=0, localization of original spectral points, and a negative-index gap.
+
+Validation: the full build passed (6313 jobs), all public examples passed,
+and the transitive axiom audit passed for 24860 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining for Lemma 25.4: identify determinant analytic orders with original
+algebraic spectral multiplicities at the explicit threshold, then identify
+the two roots with the canonical signed endpoints. The existing canonical
+endpoint API also requires the even Fourier-support hypothesis. These
+identifications are not asserted by this milestone. Theorem 25.1 and the
+dependent higher-action estimates remain open, as do Sections 27–28,
+fixed-domain trace scope, and the rest of the dissertation inventory.
+
+## Previous milestone: Lemma 25.4 determinant localization, multiplicities, and gap
 
 The determinant part of Lemma 25.4 now holds at the exact quadratic
 threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, for every complex Hilbert pair and every M₁
