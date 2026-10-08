@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: Lemma 26.3 and L²-only Hamiltonian remainder bounds
+## Current milestone: Lemma 25.2 and the quadratic contraction threshold
+
+Lemma 25.2 now holds for the actual squared potential inverse on every
+weight in M₁: in the n-shifted Hilbert pair norm, `‖T_n²‖ ≤ 4 ‖φ‖w²/⟨n⟩`.
+The square is therefore a half-contraction whenever `⟨n⟩ ≥ 8 ‖φ‖w²`,
+uniformly on the entire closed strip, including its center and n=0.
+
+`LinearSpectralWeight.lean` defines the exact M₁ factorization by another
+spectral weight, proves the signed weight-ratio gain, and includes both the
+normalized Sobolev weights and the source's exact `⟨nπ⟩^s` weights for s≥1.
+`LinearWeightLattice.lean` proves summability and rational bounds for the full
+bracket-square lattice and the punctured homogeneous lattice. Their mixed
+convolution has a bound `15/(2⟨n⟩²)`.
+
+`LinearWeightKernel.lean` retains the π/2 factor in the closed-strip free
+denominator. Its actual double kernel is square summable, with squared sum
+at most `16/⟨n⟩²`. This proof uses slightly different auxiliary constants
+from the dissertation's `32/5` and `5/2`, but obtains the same final constant
+four. It explicitly retains the zero bracket coefficient and removes the
+resonant reciprocal coefficient.
+
+`LinearWeightKernelPairing.lean` applies Cauchy–Schwarz on the full integer
+pair lattice, proving absolute convergence and the exact norm product.
+`LinearWeightDoubleSeries.lean` transfers that bound to the actual weighted
+potential and input coefficients. `LinearWeightSandwich.lean` connects their
+absolutely convergent series to the existing complementary inverse, then
+uses reflection for the opposite physical sign. `LinearWeightSquareEstimate.lean`
+combines the scalar bounds with the existing convolution and Hilbert pair
+norm, and proves the operator norm and explicit half-contraction threshold.
+
+Public examples cover the weight class, zero and negative frequencies,
+absolute convergence for infinite coefficient inputs, both physical signs,
+the actual operator norm, equality at the threshold, and the H¹ case.
+
+Validation: the full build passed (6301 jobs), all public examples passed,
+and the transitive axiom audit passed for 24797 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining: use the explicit threshold to prove the actual diagonal and
+off-diagonal coefficient estimates in Lemma 25.3, then determinant and
+canonical eigenvalue localization in Lemma 25.4 and Theorem 25.1. Proposition
+26.1, Lemma 26.2, and Theorem 23.2(i) still need these bounds. The converse
+action estimates of Section 27, uniform weighted estimates of Section 28,
+fixed-domain trace scope, and the full dissertation inventory remain open.
+
+## Previous milestone: Lemma 26.3 and L²-only Hamiltonian remainder bounds
 
 Lemma 26.3 is now proved for every real H^m source. For every positive ε,
 the actual integral of the absolute reduced remainder is bounded by

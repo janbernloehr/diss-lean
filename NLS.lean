@@ -2866,3 +2866,10 @@ import NLS.ZakharovShabat.SobolevMonomialInterpolation
 import NLS.ZakharovShabat.SobolevRemainderAbsorption
 import NLS.ZakharovShabat.SobolevHighestJetEnergy
 import NLS.ZakharovShabat.OddHamiltonianRemainderEstimate
+import NLS.SequenceSpaces.LinearSpectralWeight
+import NLS.SequenceSpaces.LinearWeightLattice
+import NLS.ZakharovShabat.LinearWeightKernel
+import NLS.ZakharovShabat.LinearWeightKernelPairing
+import NLS.ZakharovShabat.LinearWeightDoubleSeries
+import NLS.ZakharovShabat.LinearWeightSandwich
+import NLS.ZakharovShabat.LinearWeightSquareEstimate

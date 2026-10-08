@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 26.3 is proved on every real H^m source. The actual
-absolute remainder integral has an arbitrarily small highest-derivative
-coefficient and an error involving only L² powers two and `4m+2`. The odd
-Hamiltonians now have quantitative upper and coercive lower bounds.
-The spectral localization needed for the action estimates is next. See `STATUS.md`.
+Latest milestone: Lemma 25.2 now bounds the actual squared potential inverse
+by `4 ‖φ‖w²/⟨n⟩` for every weight in M₁, with both physical components and
+the exact Hilbert pair norm. The explicit half-contraction threshold is
+`⟨n⟩ ≥ 8 ‖φ‖w²`, uniformly on every closed spectral strip. Lemma 25.3's
+coefficient estimates and canonical spectral localization are next.
+See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

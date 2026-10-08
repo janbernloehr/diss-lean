@@ -35674,3 +35674,65 @@ example (m : ℕ) (hm : 1 ≤ m) :
           ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg m) a.val.1‖^2 :=
   exists_sobolevOddHamiltonian_coercivity m hm
 end OddRemainderAbsorptionChecks
+
+namespace LinearWeightSquareChecks
+open NLS NLS.ZakharovShabat
+
+-- Every normalized Sobolev weight of real order at least one is covered.
+example (s : ℝ) (hs : 1 ≤ s) :
+    (SpectralWeight.sobolev s (zero_le_one.trans hs)).HasLinearFactor :=
+  SpectralWeight.hasLinearFactor_sobolev s hs
+
+-- The class includes arbitrary spectral factors, not just powers.
+example (v : SpectralWeight) : v.withLinearFactor.HasLinearFactor :=
+  v.hasLinearFactor_withLinearFactor
+
+-- The full bracket sum retains the zero coefficient; the homogeneous sum removes it.
+example : (∑' k : ℤ, NLS.ReciprocalSeries.bracketInverseSq k) ≤ (5/2:ℝ) :=
+  NLS.ReciprocalSeries.tsum_bracketInverseSq_le
+example : NLS.ReciprocalSeries.puncturedInverseSq 0 = 0 := by
+  simp [NLS.ReciprocalSeries.puncturedInverseSq]
+
+-- The two-dimensional estimate remains valid in the zero strip, at its center.
+example : (∑' p : ℤ × ℤ, linearWeightKernel 0 0 p.2 p.1 ^ 2) ≤ 16 := by
+  have hz : (0:ℂ) ∈ resonantStrip 0 := by simpa using center_mem_resonantStrip 0
+  simpa using tsum_linearWeightKernel_sq_le hz
+
+-- The estimate applies to actual infinite weighted coefficient data.
+example (w : SpectralWeight) (hw : w.HasLinearFactor)
+    (φ f : WeightedCoeff w.toWeight 2) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    Summable (linearWeightAbsoluteSeries w φ f n z) :=
+  (summable_and_linearWeightAbsoluteSeries_le w hw φ f hz).1
+
+-- Both physical signs have the exact shifted ℓ¹ estimate.
+example (w : SpectralWeight) (hw : w.HasLinearFactor)
+    (φ f : WeightedCoeff w.toWeight 2) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (b : Bool) :
+    w.shiftedNorm (-reciprocalCenter b n) (complementarySandwich (by simp) w φ n z hz b f) ≤
+      (4/(1+|(n:ℝ)|))*‖φ‖*w.shiftedNorm (-reciprocalCenter b n) f :=
+  shiftedNorm_complementarySandwich_linear w hw φ f hz b
+
+-- Lemma 25.2 bounds the actual conjugated square in the Hilbert pair norm.
+example (w : SpectralWeight) (hw : w.HasLinearFactor)
+    (φ : WeightedCoeffPair w.toWeight 2) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    ‖weightedPotentialSquareInShift (by simp) w φ n z hz‖ ≤ (4/(1+|(n:ℝ)|))*‖φ‖^2 :=
+  norm_weightedPotentialSquareInShift_linear w hw φ n z hz
+
+-- Equality at the explicit quadratic threshold is allowed, including negative frequencies.
+example (w : SpectralWeight) (hw : w.HasLinearFactor)
+    (φ : WeightedCoeffPair w.toWeight 2) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (hn : 8*‖φ‖^2 = 1+|(n:ℝ)|) :
+    ‖weightedPotentialSquareInShift (by simp) w φ n z hz‖ ≤ (1/2:ℝ) :=
+  norm_weightedPotentialSquareInShift_le_half w hw φ n z hz hn.le
+
+-- In particular the threshold holds for the normalized H¹ weight.
+example (φ : WeightedCoeffPair (SpectralWeight.sobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    ‖weightedPotentialSquareInShift (by simp) (SpectralWeight.sobolev 1 (by norm_num)) φ n z hz‖ ≤ (1/2:ℝ) :=
+  norm_weightedPotentialSquareInShift_le_half _ (SpectralWeight.hasLinearFactor_sobolev 1 le_rfl) φ n z hz hn
+
+-- The dissertation's π-normalized H¹ weight has the same explicit threshold.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    ‖weightedPotentialSquareInShift (by simp) (SpectralWeight.piSobolev 1 (by norm_num)) φ n z hz‖ ≤ (1/2:ℝ) :=
+  norm_weightedPotentialSquareInShift_le_half _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl) φ n z hz hn
+end LinearWeightSquareChecks
