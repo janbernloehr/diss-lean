@@ -2786,3 +2786,7 @@ import NLS.ZakharovShabat.ScalarNLSConservedBound
 import NLS.Fourier.FourierNLSConservedBound
 import NLS.Fourier.SmoothFourierNLSContinuation
 import NLS.Fourier.SmoothFourierNLSFiniteInterval
+import NLS.FunctionalAnalysis.CompatibleIntervalExhaustion
+import NLS.Fourier.GlobalSmoothFourierNLS
+import NLS.ZakharovShabat.GlobalClassicalNLSExistence
+import NLS.ZakharovShabat.GlobalClassicalRenormalizedNLS

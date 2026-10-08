@@ -1,6 +1,55 @@
 # Implementation plan
 
-## Latest progress: smooth continuation and arbitrary finite intervals
+## Latest progress: global classical NLS existence and uniqueness
+
+Every smooth period-one physical initial function now has a unique ordinary
+classical NLS solution defined for all real times. A constructed physical
+gauge also gives the unique global classical renormalized solution, with
+mass parameter equal to the actual initial integral `∫₀¹ |f|²`.
+
+`CompatibleIntervalExhaustion.lean` glues compatible curves on the intervals
+`[-(n+1), n+1]`. The chosen curve agrees with every finite-interval curve on
+its entire closed interval, including the boundary times where the selected
+interval can change. Every finite interval is covered by this exhaustion.
+
+`GlobalSmoothFourierNLS.lean` uses closed-interval uniqueness to prove
+compatibility of the constructed finite-interval solutions. One original
+Fourier trajectory then has norm continuity and the coefficient equation on
+every finite interval. It is globally norm-continuous and every original
+mode has its ordinary scalar derivative at every real time.
+
+`GlobalClassicalNLSExistence.lean` identifies the physical realization with
+the existing global classical trajectory predicate: uniform-norm time
+differentiability, spatial smoothness, period one, and the actual NLS equation
+hold at every real time. Exact initial reconstruction and the existing
+classical uniqueness theorem give global existence and uniqueness for every
+smooth periodic physical datum. A named constructor supplies the uniquely
+determined solution without a pre-existing trajectory premise.
+
+`GlobalClassicalRenormalizedNLS.lean` applies the physical phase rotation to
+this constructed solution. Its mass is the literal mass of the original
+initial function, and both ordinary and renormalized curves conserve that
+mass for all real times. The renormalized global solution is also unique
+among all classical trajectories with that initial function and mass.
+
+Public examples check gluing at interval boundaries, a single norm-continuous
+Fourier curve satisfying every mode equation for all times, exact initial
+equality and uniqueness as continuous circle-valued curves, construction for
+arbitrary smooth initial-data sequences, the literal ordinary PDE at arbitrary
+times, and the renormalized `36i*u` correction for initial constant value three.
+
+Validation: the full build passes (6207 jobs), all public examples pass,
+and the transitive axiom audit passes for 23889 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: insert these constructed global classical solutions into the
+all-smooth-sequence solution definition and the existing approximation and
+flow-agreement theorems. Global smooth classical existence is established;
+the dissertation’s exact wellposedness assembly and full inventory remain.
+The new constructors alone do not assert analyticity or continuity of the
+solution map with respect to rough initial data.
+
+## Previous milestone: smooth continuation and arbitrary finite intervals
 
 Conserved physical mass and energy now give a uniform bound on the original
 absolute Fourier norm, independent of the reference interval length. Smooth

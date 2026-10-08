@@ -34761,3 +34761,75 @@ example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1)
   exists_classicalNLS_on_interval_of_smooth_periodic (-T) T 0 ⟨by linarith,hT⟩ f hf hp
 
 end SmoothContinuationChecks
+
+namespace GlobalClassicalChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.FunctionalAnalysis Set
+open scoped ContDiff ComplexConjugate
+
+-- The glued curve agrees at a boundary where its choice of interval changes.
+example {E : Type*} (v : ℕ → ℝ → E)
+    (hc : ∀ m n : ℕ, m ≤ n → EqOn (v m) (v n) (Icc (-exhaustionRadius m) (exhaustionRadius m))) :
+    exhaustionCurve v 3 = v 2 3 ∧ exhaustionCurve v (-3) = v 2 (-3) := by
+  constructor
+  · exact exhaustionCurve_eqOn v hc 2 ⟨by norm_num [exhaustionRadius],by norm_num [exhaustionRadius]⟩
+  · exact exhaustionCurve_eqOn v hc 2 ⟨by norm_num [exhaustionRadius],by norm_num [exhaustionRadius]⟩
+
+-- One curve, rather than a separately chosen curve for each horizon, solves every original mode.
+example (u₀ : WeightedCoeff SpectralWeight.one.toWeight 1)
+    (hall : ∀ s : ℝ, 0 ≤ s → Memℓp (fun n => (Weight.sobolev s n : ℂ)*u₀.val n) 1) :
+    ∃ u : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1,
+      u 0 = u₀ ∧ Continuous u ∧ ∀ time : ℝ, ∀ n : ℤ,
+        HasDerivAt (fun r => (u r).val n)
+          (nlsLinearSymbol n*(u time).val n + (cubicNLS SpectralWeight.one (u time)).val n) time := by
+  obtain ⟨u,hi,hu⟩ := exists_global_smooth_fourierNLS u₀ hall
+  exact ⟨u,hi,continuous_of_global_fourierNLS hu,hasDerivAt_coefficient_of_global_fourierNLS hu⟩
+
+-- Global uniqueness is equality of continuous circle-valued curves, with the exact initial circle function.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hp : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    ∃! u : ℝ → C(AddCircle (2 : ℝ), ℂ), u 0 = f ∧ IsClassicalNLSTrajectory u := by
+  obtain ⟨u,hi,hu⟩ := exists_global_classicalNLS_of_smooth_periodic _ hf hp
+  have he : u 0 = f := by
+    apply ContinuousMap.ext
+    intro x
+    exact Quotient.inductionOn x (fun r => congrFun hi r)
+  exact ⟨u,⟨he,hu⟩,fun v hv => hv.2.eq_of_eq_at hu 0 (hv.1.trans he.symm)⟩
+
+-- Every member of an arbitrary smooth initial-data sequence has a constructed global classical solution.
+example (f : ℕ → ℝ → ℂ) (hf : ∀ k, ContDiff ℝ ∞ (f k)) (hp : ∀ k, Function.Periodic (f k) 1) :
+    ∃ u : ℕ → ℝ → C(AddCircle (2 : ℝ), ℂ), ∀ k,
+      (fun x : ℝ => u k 0 (x : AddCircle (2 : ℝ))) = f k ∧ IsClassicalNLSTrajectory (u k) :=
+  ⟨fun k => globalClassicalNLS (f k) (hf k) (hp k),
+    fun k => ⟨globalClassicalNLS_initial (f k) (hf k) (hp k),globalClassicalNLS_isClassical (f k) (hf k) (hp k)⟩⟩
+
+-- The original NLS equation holds at all times, including arbitrary negative times.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) (time x : ℝ) :
+    deriv (globalClassicalNLS f hf hp) time (x : AddCircle (2 : ℝ)) =
+      Complex.I*deriv (deriv (fun y : ℝ => globalClassicalNLS f hf hp time (y : AddCircle (2 : ℝ)))) x -
+        2*Complex.I*(globalClassicalNLS f hf hp time (x : AddCircle (2 : ℝ)))^2 *
+          conj (globalClassicalNLS f hf hp time (x : AddCircle (2 : ℝ))) := by
+  rw [(globalClassicalNLS_isClassical f hf hp).equation]
+  simp only [scalarClassicalNLSVectorField,classicalNLSCubic]
+  ring
+
+-- Constant initial value 3 has mass 9, hence the renormalized correction is exactly 36i u.
+example (time x : ℝ) :
+    let u := globalClassicalRenormalizedNLS (fun _ : ℝ => (3 : ℂ)) contDiff_const (fun _ => rfl)
+    deriv u time (x : AddCircle (2 : ℝ)) =
+      scalarClassicalNLSVectorField (fun y : ℝ => u time (y : AddCircle (2 : ℝ))) x +
+        36*Complex.I*u time (x : AddCircle (2 : ℝ)) := by
+  dsimp only
+  have h := (globalClassicalRenormalizedNLS_isClassical (fun _ : ℝ => (3 : ℂ))
+    contDiff_const (fun _ => rfl)).equation time x
+  norm_num at h
+  exact h
+
+-- Renormalized existence uses the actual initial mass, with no independently supplied solution family.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    ∃! u : ℝ → C(AddCircle (2 : ℝ), ℂ),
+      (fun x : ℝ => u 0 (x : AddCircle (2 : ℝ))) = f ∧
+      IsClassicalRenormalizedNLSTrajectory (∫ x in (0 : ℝ)..1, ‖f x‖^2) u :=
+  existsUnique_global_classicalRenormalizedNLS_of_smooth_periodic f hf hp
+
+end GlobalClassicalChecks
