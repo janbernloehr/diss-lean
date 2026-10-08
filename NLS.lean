@@ -2963,3 +2963,5 @@ import NLS.ZakharovShabat.SourceM1SpectralGeometry
 import NLS.ZakharovShabat.SourceM1GapFactorBound
 import NLS.ZakharovShabat.M1WeightedActionBudget
 import NLS.ZakharovShabat.SourceM1WeightedActionEstimate
+import NLS.ZakharovShabat.SourceBirkhoffM1Coordinates
+import NLS.ZakharovShabat.SourceBirkhoffM1Estimate

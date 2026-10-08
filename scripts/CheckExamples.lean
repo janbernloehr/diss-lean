@@ -36915,3 +36915,45 @@ example (w : SpectralWeight) (hw : w.HasLinearFactor)
   simpa only [Nat.zero_le,if_true] using h
 
 end Section28M1WeightedActionChecks
+
+namespace Section28M1BirkhoffChecks
+open NLS.ZakharovShabat
+variable {W₀ B W : Set (CoeffPair 2)}
+  {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+
+-- Negative source frequencies use the exact doubled positive weight by symmetry.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (w : SpectralWeight) (hw : w.HasLinearFactor) (a : realTypeSourceSubmodule 2) :
+    (D.m1Coordinates w hw a).fst (-3) = w 6*
+      (sourceRealBirkhoffMap (by simp) (by norm_num) s (normalizedWeightedRealSource w a)).1 (-3) := by
+  simp
+
+-- Both rectangular components contribute to the squared norm, with the factor two.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (v : SpectralWeight) (a : realTypeSourceSubmodule 2) :
+    ‖D.m1Coordinates v.withLinearFactor v.hasLinearFactor_withLinearFactor a‖^2 =
+      2*(∑' n : ℤ, sourceM1ActionTerm v.withLinearFactor
+        (normalizedWeightedSource v.withLinearFactor a.val) n) :=
+  D.m1Coordinates_norm_sq _ _ a
+
+-- Superlinear growth is admitted with exactly the same universal constant.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (a : realTypeSourceSubmodule 2) :
+    ‖D.m1Coordinates (SpectralWeight.sobolev 3 (by norm_num))
+      (SpectralWeight.hasLinearFactor_sobolev 3 (by norm_num)) a‖ ≤
+      2048*(SpectralWeight.sobolev 3 (by norm_num)).realExtension (16*‖a.val‖^2)*‖a.val‖ :=
+  D.m1Coordinates_norm_le _ _ a
+
+-- Zero is handled in the target space itself, not just by a scalar estimate.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (w : SpectralWeight) (hw : w.HasLinearFactor) : D.m1Coordinates w hw 0 = 0 := by simp
+
+-- The choice of Birkhoff map precedes the choice of weight.
+example :
+    ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+      ∃ D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s,
+        ∀ w : SpectralWeight, ∀ hw : w.HasLinearFactor, ∀ a : realTypeSourceSubmodule 2,
+          ‖D.m1Coordinates w hw a‖ ≤ 2048*w.realExtension (16*‖a.val‖^2)*‖a.val‖ :=
+  exists_sourceBirkhoffMap_M1_bound
+
+end Section28M1BirkhoffChecks

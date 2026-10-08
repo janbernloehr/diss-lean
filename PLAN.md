@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Latest progress: Theorem 23.4 real weighted-action estimate for every M₁ weight
+## Latest progress: Theorem 23.4 real weighted Birkhoff-map bound
+
+The real Birkhoff-map conclusion of Theorem 23.4 is now proved for every
+M₁ weight, with the explicit universal constant 2048:
+
+`‖Ω(ψ)‖_w ≤ 2048 w[16P²] P`.
+
+Here P is the exact weighted source norm. The target norm uses the literal
+coordinates `w(2n) x_n` and `w(2n) y_n` of the existing Birkhoff map.
+`SourceBirkhoffM1Coordinates.lean` constructs them as an actual real Hilbert
+pair, proving both components square summable from the weighted action
+estimate. Its Parseval identity is exact: the squared target norm is twice
+the weighted action sum. No target membership is assumed.
+
+`SourceBirkhoffM1Estimate.lean` proves the sharper squared bound
+`‖Ω(ψ)‖_w² ≤ 2²¹ w[16P²]² P²`, the stated norm bound, and the zero-source
+identity in the target space. Its existence theorem chooses one previously
+constructed Birkhoff map before quantifying over all weights and potentials.
+The constant has no dependence on the weight or on the potential.
+
+Public examples check the exact doubled weight at a negative index, the
+factor two in Parseval, a cubic Sobolev weight, the zero target, and the
+simultaneous choice of Birkhoff map for all weights.
+
+Validation: the full build passed (6394 jobs), all public examples passed,
+and the transitive axiom audit passed for 25377 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: extend the weighted action estimate to a complex neighborhood of the
+entire real weighted source space, including zero. This remaining clause
+requires continuity of the weighted action norm and a local bound near zero;
+Theorem 23.4 is not yet complete as a whole.
+
+The existing `Coeff.continuousOn_of_bounded_coordinatewise` also applies at
+exponent one. A local ℓ¹ realization of the complex weighted actions can be
+bounded using `M1_source_canonicalGap_global_summable_and_le` and the locally
+bounded normalized-action deviation, together with the all-index action
+factorization. The action-correction neighborhood already supplies simultaneous
+scalar analyticity, and `normalizedWeightedSourceCLM` transports it to the
+weighted source coordinates. This gives a route to norm continuity without
+first proving continuity of an ordered weighted gap sequence. The interpolation
+`SpectralWeight.realExtension` still needs a continuity theorem. At zero,
+`sourceNormalizedActionComplexExtension_zero_source` gives 1/4 at every index;
+continuity of the deviation sequence can supply a uniform nearby factor bound.
+
+## Previous milestone: Theorem 23.4 real weighted-action estimate for every M₁ weight
 
 The real-source estimate in the proof of Theorem 23.4 is now proved for
 all M₁ spectral weights, including absolute summability:
