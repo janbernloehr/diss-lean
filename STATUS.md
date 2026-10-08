@@ -1,6 +1,64 @@
 # Implementation status
 
-## Current milestone: analytic wellposedness in the dissertation solution sense
+## Current milestone: higher-level action contours and gap comparisons
+
+Section 24's higher-level actions now have their defining spectral contours,
+the integration-by-parts representation, and the real gap formula in cosine
+coordinates. Their mean-value comparison with the ordinary action includes
+collapsed gaps and yields bounds from localization of the periodic endpoints.
+
+The Chapter 5 review identified an essential distinction: the earlier
+Section 21 primitive-power moments integrate powers of the Abelian primitive;
+Section 24 instead weights the primitive by powers of the spectral variable.
+The existing local H¹ weighted-action bounds do not by themselves provide
+the uniform all-order estimates of Theorems 23.1–23.5.
+
+`CirclePolynomialIntegrationByParts.lean` proves integration by parts for
+polynomial spectral weights on a closed circle. Analyticity is required
+only near the circle, allowing the contour to enclose the spectral cut.
+
+`SourceHigherActionCircle.lean` defines the level `k+1` contour with the
+normalization `1/((k+1)π)` and integrand `z^(k+1) Δ'/sqrt(Δ²-4)`.
+It proves formula (5.2), identifying this with `-1/π` times the integral of
+`z^k F_n(z)`, and recovers the original action circle at level one.
+
+`SourceRealHigherAction.lean` defines the corresponding real gap integral
+in cosine coordinates. Its level-one value equals the original contour-defined
+action. The weighted mean-value theorem supplies a point ζ in the closed
+periodic gap with `J_(n,k+1) = ζ^k I_n`, including collapsed gaps without
+dividing by the action. In particular all odd-level actions are nonnegative.
+Every collapsed gap contributes zero at every level.
+
+`SourceHigherActionBoundary.lean` proves that the defining contour equals
+this real gap integral on intermediate circles of the constructed Cauchy
+families. The proof handles open gaps by their actual boundary values and
+collapsed gaps by analytic extension through the collapsed cut. An existence
+theorem constructs one family of positive-radius circles working at every
+index and level, with no supplied chart or contour hypothesis.
+
+`SourceHigherActionEstimates.lean` turns absolute spectral bounds on a gap
+into upper and lower bounds for its odd-level actions. If the gap lies in
+`[c-r,c+r]` with `r ≤ |c|`, its level `2m+1` action lies between
+`(|c|-r)^(2m) I_n` and `(|c|+r)^(2m) I_n`. This isolates the localization
+input needed for the later uniform Sobolev estimates.
+
+Public examples check the constructed contour family at `p = 3`, the
+level-one normalization, formula (5.6) at level five, quantitative bounds
+for a gap on the negative spectral axis, and vanishing of the actual
+contour integral at a collapsed gap.
+
+Validation: the full build passes (6221 jobs), all public examples pass,
+and the transitive axiom audit passes for 24011 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: establish the all-order hierarchy trace formula of Theorem 24.1,
+then the quantitative norm-dependent localization and higher Sobolev estimates
+in Sections 25–28. The new localization comparison assumes endpoint bounds;
+it does not yet derive the dissertation's explicit spectral cutoff from the
+source norm. Global complex-source gluing and regularity of higher actions
+also remain to be assembled. The full dissertation inventory remains open.
+
+## Previous milestone: analytic wellposedness in the dissertation solution sense
 
 The analytic wellposedness and classical nonextension conclusions of
 Theorem 18.5 and Corollary 22.2 are now connected to the dissertation's

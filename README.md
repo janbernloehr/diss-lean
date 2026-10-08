@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the analytic wellposedness and nonextension conclusions of
-Theorem 18.5 and Corollary 22.2 now use the dissertation's all-smooth-sequence
-solution definition. This includes global analytic wellposedness for `1 < p ≤ 2`,
-local and small-data global renormalized wellposedness at higher exponents,
-and ordinary classical nonextension outside the Hilbert locus. A full
-theorem-by-theorem dissertation inventory remains.
+Latest milestone: Section 24's higher-level actions now have defining contours,
+the real gap representation, and a mean-value comparison with the ordinary
+actions. Endpoint localization gives two-sided odd-level action bounds,
+including negative spectral indices and collapsed gaps. The all-order trace
+formula and Chapter 5's uniform Sobolev estimates remain.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

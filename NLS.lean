@@ -2799,3 +2799,8 @@ import NLS.ZakharovShabat.AnalyticNLSWellposedness
 import NLS.ZakharovShabat.GlobalAnalyticNLSSolutions
 import NLS.ZakharovShabat.HigherExponentAnalyticNLSSolutions
 import NLS.ZakharovShabat.SmoothClassicalNLSNonextension
+import NLS.ComplexAnalysis.CirclePolynomialIntegrationByParts
+import NLS.ZakharovShabat.SourceRealHigherAction
+import NLS.ZakharovShabat.SourceHigherActionCircle
+import NLS.ZakharovShabat.SourceHigherActionBoundary
+import NLS.ZakharovShabat.SourceHigherActionEstimates

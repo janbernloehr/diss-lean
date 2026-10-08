@@ -34952,3 +34952,58 @@ example (φ : realTypeSourceSubmodule 3) (hφ : φ ∉ sourceHilbertLocus (by no
   smoothClassicalNLS_theorem18_5_iv (by norm_num) (by norm_num) (by norm_num) le_rfl
     1 (by norm_num) φ hφ F hF
 end AnalyticWellposednessChecks
+
+namespace HigherActionChecks
+open Set Metric NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- One family of actual positive-radius defining contours works for every level.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ c : ℤ → ℂ, ∃ R : ℤ → ℝ, (∀ n, 0 < R n) ∧
+      ∀ n k, sourceHigherActionCircle (by norm_num) (by norm_num) φ.val (c n) (R n) k =
+        (sourceRealHigherAction (by norm_num) (by norm_num) φ n k : ℂ) :=
+  exists_sourceHigherAction_contours (by norm_num) (by norm_num) φ
+
+-- The zero-based level index recovers the original action at level one.
+example (φ : realTypeSourceSubmodule 3) (n : ℤ) :
+    sourceRealHigherAction (by norm_num) (by norm_num) φ n 0 =
+      (sourceRealAction (by norm_num) (by norm_num) φ.val φ.property n).re :=
+  sourceRealHigherAction_zero (by norm_num) (by norm_num) φ n
+
+-- Formula (5.6) at level five includes collapsed gaps, without assuming a positive action.
+example (φ : realTypeSourceSubmodule 2) (n : ℤ) :
+    ∃ ζ ∈ Icc
+      (canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re
+      (canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re,
+      sourceRealHigherAction (by norm_num) (by norm_num) φ n 4 =
+        ζ^4 * (sourceRealAction (by norm_num) (by norm_num) φ.val φ.property n).re :=
+  sourceRealHigherAction_eq_power_mul_action (by norm_num) (by norm_num) φ n 4
+
+-- Odd-level comparisons work for gaps on the negative spectral axis as well.
+example (φ : realTypeSourceSubmodule 2) (n : ℤ) (m : ℕ)
+    (hl : -10 ≤ (canonicalPeriodicLeft (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re)
+    (hu : (canonicalPeriodicRight (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n).re ≤ -8) :
+    8^(2*m) * (sourceRealAction (by norm_num) (by norm_num) φ.val φ.property n).re ≤
+        sourceRealHigherAction (by norm_num) (by norm_num) φ n (2*m) ∧
+      sourceRealHigherAction (by norm_num) (by norm_num) φ n (2*m) ≤
+        10^(2*m) * (sourceRealAction (by norm_num) (by norm_num) φ.val φ.property n).re := by
+  have h := sourceRealHigherAction_even_bounds_of_localization (by norm_num) (by norm_num)
+    φ n m (-9) 1 (by norm_num) (by norm_num; exact hl) (by norm_num; exact hu)
+  norm_num at h
+  exact h
+
+-- The contour identity itself covers a collapsed gap, not only its gap-integral definition.
+example {W : Set (CoeffPair 2)}
+    (C : SourceFullAbelianUniformCauchyFamily (by norm_num) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 2) (hφ : φ.val ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (n : ℤ) (k : ℕ)
+    (hgap : canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n = 0)
+    (R : ℝ) (hi : C.discs.inner n ≤ R) (ho : R < C.discs.outer n) :
+    sourceHigherActionCircle (by norm_num) (by norm_num) φ.val (C.discs.center n) R k = 0 :=
+  C.higherActionCircle_eq_zero_of_collapsed n k φ hφ hgap R hi ho
+
+end HigherActionChecks
