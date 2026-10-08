@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Latest progress: Proposition 28.2 on a connected L²-open neighborhood
+## Latest progress: Lemma 28.1 on a shared connected L²-open neighborhood
+
+The scalar complex gap-factor bound of Lemma 28.1 is now proved:
+
+`|χ_n(λ,ψ)| ≤ 2048 (1+P²)`, whenever `8P² ≤ 1+|n|`,
+for every point λ of the entire closed complex gap, including collapsed gaps.
+Here P is the exact physical H¹ norm. `exists_sourceH1_lemma28_1` chooses
+a connected L²-open neighborhood of the entire real L² source locus,
+contained in the spectral-strip domain, before the potential and index.
+`exists_sourceM1_gapFactor_neighborhood` makes that same choice before
+all M₁ weights as well.
+
+The proof separates distant gaps from finitely many remaining gaps.
+`ReciprocalRowContinuity.lean` controls reciprocal rows using an ℓ¹
+reference sequence and continuous ℓ² perturbations. Applied to the
+critical-point offsets, this combines with small squared-gap rows to give
+the uniform complex tail bound 3 in `SourceCriticalFactorSmallTail.lean`.
+This argument uses actual tail decay, not uniform decay inferred from a
+bounded family in ℓ².
+
+For the remaining gaps, `SourceGapFactorParameterContinuity.lean` proves
+joint continuity along the moving closed gap, including collapsed gaps,
+and a uniform error at most one against the real-type projection.
+`SourceRealGapFactorMargin.lean` sharpens the real bound to 1024(1+P²),
+leaving enough margin to recover the printed complex constant 2048.
+`SourceLemma28_1.lean` combines the estimates and proves
+`exists_sourceH1_section28_estimates`: Lemma 28.1 and Proposition 28.2
+hold on one connected L²-open neighborhood with their respective cutoffs.
+
+Public examples check the neighborhood topology and weight quantifiers,
+the uniform tail bound, simultaneous estimates at the action cutoff,
+and the actual complex bound 4736 at n=±10 and P²=21/16, where the
+printed intermediate ratio chain fails. That false chain remains
+disproved; it is not used to prove the spectral estimate.
+
+Validation: the full build passed (6417 jobs), all public examples passed,
+and the transitive axiom audit passed for 25505 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: continue the remaining Chapter 5 audit, in particular the unrestricted
+literal m=1 endpoint of Lemma 27.2. Its printed estimate is proved for
+S ≤ 2 and under a mass-sensitive sufficient condition, and the unrestricted
+variant with twice the remainder is proved. The literal unrestricted
+coefficient remains open.
+
+## Previous progress: Proposition 28.2 on a connected L²-open neighborhood
 
 Proposition 28.2 is now proved for complex H¹ sources on a connected,
 L²-open neighborhood of the entire real L² source locus:

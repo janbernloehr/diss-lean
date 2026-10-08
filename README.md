@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Proposition 28.2 now holds for complex H¹ sources on a
-connected L²-open neighborhood of the entire real L² locus, with the printed
-constant 4608. A stronger joint theorem uses the same neighborhood for all
-M₁ weights. Collapsed gaps and the exact index threshold are included.
+Latest milestone: the complex gap-factor bound of Lemma 28.1 now holds
+with the printed constant 2048, including the full closed gap and equality
+at the cutoff. It shares a connected L²-open neighborhood of the entire
+real L² locus with Proposition 28.2. The false intermediate ratio in the
+printed proof remains separately documented and is not used.
 See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

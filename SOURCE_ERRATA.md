@@ -110,5 +110,14 @@ The complex action estimate of Proposition 28.2 is now proved independently
 in `SourceProposition28_2.lean`, on a connected L²-open neighborhood of the
 entire real L² locus. It uses the real-type projection and uniform continuity
 of the normalized actions; it does not rely on a complex version of the
-false ratio chain. The complex gap-factor bound of Lemma 28.1 remains open;
-its printed intermediate scalar comparison is disproved above.
+false ratio chain.
+
+The complex scalar gap-factor bound of Lemma 28.1 is now also proved
+independently in `SourceLemma28_1.lean`, including the entire closed gap
+and the inclusive cutoff. A sharper real constant 1024 provides room for
+a uniform comparison to the real-type projection on finitely many gaps;
+a separate uniform complex tail bound of 3 handles all distant gaps.
+The neighborhood is connected and L²-open, contains the entire real L²
+locus, and can be shared with Proposition 28.2. The actual complex bound
+4736 at n=±10 and P²=21/16 is checked publicly. None of these results
+validates the printed intermediate scalar comparison disproved above.

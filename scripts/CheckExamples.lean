@@ -37263,3 +37263,57 @@ example (a : ScalarDomain 2 × ScalarDomain 2) :
       sobolevSourceInclusion a := normalizedWeightedSource_physicalH1Coordinates a
 
 end Proposition282Checks
+
+namespace Lemma281Checks
+open NLS.ZakharovShabat
+
+-- One L²-open neighborhood is selected before all M₁ weights and closed complex gaps.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 2 ⊆ U ∧
+    U ⊆ sourceSpectralStripNeighborhood (by simp) ∧
+    ∀ w : SpectralWeight, w.HasLinearFactor → ∀ a : CoeffPair 2,
+      normalizedWeightedSource w a ∈ U → ∀ n : ℤ, 8*‖a‖^2 ≤ 1+|(n:ℝ)| →
+        ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) (normalizedWeightedSource w a) n,
+          ‖sourceCriticalRootRatioExtension (by simp) (by norm_num) n (normalizedWeightedSource w a) z‖ ≤
+            2048*(1+‖a‖^2) := exists_sourceM1_gapFactor_neighborhood
+
+-- The actual complex gap bound holds at the scalar counterexample to the printed ratio chain.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ realTypeSourceLocus 2 ⊆ U ∧
+    ∀ a : ScalarDomain 2 × ScalarDomain 2, sobolevSourceInclusion a ∈ U →
+      ‖sourcePhysicalH1Coordinates a‖^2 = (21/16:ℝ) → ∀ n : ℤ, (n = 10 ∨ n = -10) →
+        ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) (sobolevSourceInclusion a) n,
+          ‖sourceCriticalRootRatioExtension (by simp) (by norm_num) n (sobolevSourceInclusion a) z‖ ≤ 4736 := by
+  obtain ⟨U,hU,_,hr,_,hb⟩ := exists_sourceH1_lemma28_1
+  refine ⟨U,hU,hr,?_⟩
+  intro a ha hP n hn z hz
+  have hcut : 8*‖sourcePhysicalH1Coordinates a‖^2 ≤ 1+|(n:ℝ)| := by
+    rw [hP]
+    rcases hn with rfl | rfl <;> norm_num
+  have h := hb a ha n hcut z hz
+  rw [hP] at h
+  norm_num only at h
+  exact h
+
+-- The endpoint cutoff allows equality, and the two bounds use the same neighborhood.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 2 ⊆ U ∧
+    ∀ a : ScalarDomain 2 × ScalarDomain 2, sobolevSourceInclusion a ∈ U →
+      ∀ n : ℤ, 8*‖sourcePhysicalH1Coordinates a‖^2 = |(n:ℝ)| →
+        (∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) (sobolevSourceInclusion a) n,
+          ‖sourceCriticalRootRatioExtension (by simp) (by norm_num) n (sobolevSourceInclusion a) z‖ ≤
+            2048*(1+‖sourcePhysicalH1Coordinates a‖^2)) ∧
+        ‖sourceComplexAction (by simp) (by norm_num) n (sobolevSourceInclusion a)‖ ≤
+          4608*(1+‖sourcePhysicalH1Coordinates a‖^2)*
+            ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (sobolevSourceInclusion a) n‖^2 := by
+  obtain ⟨U,hU,hc,hr,_,hb⟩ := exists_sourceH1_section28_estimates
+  refine ⟨U,hU,hc,hr,?_⟩
+  intro a ha n hn
+  exact ⟨(hb a ha).1 n (by linarith),(hb a ha).2 n hn.le⟩
+
+-- The bound on distant gaps is uniform in the original L² topology, including collapsed gaps.
+example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
+    ∃ V : Set (CoeffPair 2), IsOpen V ∧ φ ∈ V ∧ ∃ K : ℕ,
+      ∀ ψ ∈ V, ∀ n : ℤ, K ≤ n.natAbs →
+        ∀ z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ n,
+          ‖sourceCriticalRootRatioExtension (by simp) (by norm_num) n ψ z‖ ≤ 3 :=
+  exists_local_sourceCriticalFactor_tail_le_three φ hφ
+
+end Lemma281Checks
