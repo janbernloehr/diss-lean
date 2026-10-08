@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: Theorem 25.1 and the exact central spectral box
+## Current milestone: Proposition 25.5 weighted gap tail for all M₁ weights
+
+Proposition 25.5's first estimate now holds for every M₁ weight, at the
+exact threshold `8 ‖φ‖w² ≤ 1+N`, with its inclusive signed cutoff:
+`∑_{|n|≥N} w(2n)² |γn|² ≤ 6 ‖RN φ‖w² + 1152/(1+N) ‖φ‖w⁶`.
+The theorem proves summability as well as the numerical bound. Its source
+version uses the signed resonant leading tail; a companion version uses
+the equal physical Fourier tail at cutoff 2N. Canonical labels retain the
+period-one even Fourier-support hypothesis. The individual estimate (5.8),
+`w(2n) |γn| ≤ √12 ‖φ‖w`, is also proved at the same threshold.
+
+`SpectralWeightInclusion.lean` constructs the coefficient-preserving,
+norm-decreasing map between dominated weights in the exact finite-exponent
+pair norm. `DominatedWeightCorrection.lean` proves that it commutes with
+the potential-composed complementary inverse and resonant source vectors.
+Uniqueness of the squared-Neumann correction then identifies every correction
+entry and the determinant on the common contraction domain.
+
+`M1SpectralLocalization.lean` compares an arbitrary M₁ weight with the linear
+bracket. Norm decrease preserves the quadratic threshold in both spaces,
+so the original spectrum is equivalent to zeros of the higher-weight
+determinant without a linear upper-growth hypothesis. `M1CanonicalGap.lean`
+transfers canonical labels and original multiplicities from the lower weight,
+then proves the source radius and weighted gap bounds in the original weight.
+This covers superlinear weights, including H², without a larger cutoff.
+
+`BracketSquareTail.lean` proves the inclusive bilateral estimate
+`∑_{|n|≥N} ⟨n⟩⁻² ≤ 3/⟨N⟩`, including N=0. `M1GapTailMajorant.lean`
+retains the leading Fourier terms with constant six and bounds the remainder
+by `384 ‖φ‖w⁶/⟨n⟩²`. `M1GapTailEstimate.lean` sums that majorant to obtain
+the printed constant 1152 and identifies the source tail normalization.
+
+Public examples cover a norm-decreasing weight inclusion at p=3, original
+spectral equivalence for H², negative indices in (5.8), reciprocal cutoffs
+zero and one, equality at the tail threshold, and vanishing Fourier tails.
+
+Validation: the full build passed (6333 jobs), all public examples passed,
+and the transitive axiom audit passed for 24987 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining in Proposition 25.5: the global weighted gap bound in the complex
+neighborhood of the real potential space. This needs the finite central-gap
+estimate from the disjoint isolating discs, followed by the source cutoff
+choice and combination with the now-proved tail bound. The dependent
+higher-action estimates, Sections 27–28, fixed-domain trace scope, and the
+remaining dissertation inventory are still open.
+
+## Previous milestone: Theorem 25.1 and the exact central spectral box
 
 Theorem 25.1 is now proved in the period-one canonical endpoint API, with
 its exact quadratic threshold and π-normalized H¹ norm. The theorem

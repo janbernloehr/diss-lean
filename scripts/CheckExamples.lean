@@ -36074,3 +36074,56 @@ example (z : ℂ) (hz : z ∈ periodicSpectrum (by simp)
     have he : ‖z-(Real.pi:ℂ)*n‖ ≤ 0 := by simpa [quadraticLocalizationRadius] using hn
     exact sub_eq_zero.mp (norm_eq_zero.mp (le_antisymm he (norm_nonneg _)))
 end QuadraticSpectralBoxChecks
+
+namespace M1GapTailChecks
+open NLS.ZakharovShabat
+local instance : Fact (1 ≤ (3:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Lowering a weight preserves the exact Banach pair norm, here at p=3.
+example (w v : SpectralWeight) (h : ∀ k, v k ≤ w k)
+    (a : WeightedCoeffPair w.toWeight 3) : ‖w.inclusionPair v h a‖ ≤ ‖a‖ :=
+  SpectralWeight.norm_inclusionPair_le (by norm_num) w v h a
+
+-- Quadratically growing H² weights need no artificial linear upper bound.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 2 (by norm_num)).toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    z ∈ periodicSpectrum (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 2 (by norm_num)) φ) ↔
+      resonantDeterminantExtension (by simp) (SpectralWeight.piSobolev 2 (by norm_num)) φ n z = 0 :=
+  mem_periodicSpectrum_iff_M1_determinant_zero _
+    (SpectralWeight.hasLinearFactor_piSobolev 2 (by norm_num)) φ n hn z hz
+
+-- Equation (5.8) retains a negative canonical index and the doubled-frequency weight.
+example (v : SpectralWeight) (φ : WeightedCoeffPair v.withLinearFactor.toWeight 2)
+    (heven : weightedBaseToPair v.withLinearFactor φ ∈ pairParitySubspace 0)
+    (hn : 8*‖φ‖^2 ≤ 3) :
+    v.withLinearFactor (2*(-2))*‖canonicalPeriodicGap (by simp) (by norm_num)
+      (weightedBaseToPair v.withLinearFactor φ) heven (-2)‖ ≤ Real.sqrt 12*‖φ‖ :=
+  M1_canonicalGap_weighted_le _ (SpectralWeight.hasLinearFactor_withLinearFactor v)
+    φ heven (-2) (by norm_num; exact hn)
+
+-- Cutoff zero includes the central reciprocal term; cutoff one excludes just that term.
+example : (∑' n : ℤ, ReciprocalSeries.bracketInverseSq n) ≤ 3 := by
+  simpa using ReciprocalSeries.tsum_bracketSquareTail_le 0
+example : (∑' n : ℤ, if 1 ≤ n.natAbs then ReciprocalSeries.bracketInverseSq n else 0) ≤ 3/2 := by
+  simpa only [Nat.cast_one,show (1:ℝ)+1 = 2 by norm_num] using ReciprocalSeries.tsum_bracketSquareTail_le 1
+
+-- Equality at the threshold is allowed in the source-normalized 1152 tail bound.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0)
+    (N : ℕ) (hN : 8*‖φ‖^2 = 1+(N:ℝ)) :
+    (∑' n : ℤ, if N ≤ n.natAbs then
+      (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖)^2 else 0) ≤
+      6*‖weightedResonantLeadingTail w φ N‖^2+1152/(1+(N:ℝ))*‖φ‖^6 :=
+  M1_canonicalGap_tail_le w hw φ heven N hN.le
+
+-- A vanishing physical Fourier tail leaves only the sixth-power remainder budget.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0)
+    (N : ℕ) (hN : 8*‖φ‖^2 ≤ 1+(N:ℝ))
+    (ht : weightedPairFourierTail w.toWeight (2*N) φ = 0) :
+    (∑' n : ℤ, if N ≤ n.natAbs then
+      (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖)^2 else 0) ≤
+      1152/(1+(N:ℝ))*‖φ‖^6 := by
+  simpa only [ht,norm_zero,zero_pow (by decide : 2 ≠ 0),mul_zero,zero_add] using
+    (M1_canonicalGap_tail_summable_and_le w hw φ heven N hN).2
+end M1GapTailChecks

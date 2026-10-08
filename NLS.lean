@@ -2898,3 +2898,10 @@ import NLS.ZakharovShabat.AbsolutePotentialHeight
 import NLS.ZakharovShabat.H1SpectralHeight
 import NLS.ZakharovShabat.QuadraticCentralStrip
 import NLS.ZakharovShabat.QuadraticSpectralBox
+import NLS.SequenceSpaces.SpectralWeightInclusion
+import NLS.ZakharovShabat.DominatedWeightCorrection
+import NLS.ZakharovShabat.M1SpectralLocalization
+import NLS.ZakharovShabat.M1CanonicalGap
+import NLS.SequenceSpaces.BracketSquareTail
+import NLS.ZakharovShabat.M1GapTailMajorant
+import NLS.ZakharovShabat.M1GapTailEstimate
