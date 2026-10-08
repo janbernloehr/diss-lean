@@ -2975,3 +2975,6 @@ import NLS.SequenceSpaces.SobolevWeightInterpolationBound
 import NLS.ZakharovShabat.SourceRealSobolevCoordinates
 import NLS.ZakharovShabat.SourceCorollary23_5
 import NLS.ZakharovShabat.SourceSobolevCommonConstants
+import NLS.ZakharovShabat.Lemma272EndpointArithmetic
+import NLS.ZakharovShabat.SourceH1EndpointActionBound
+import NLS.ZakharovShabat.SourceH1EndpointMomentCriterion

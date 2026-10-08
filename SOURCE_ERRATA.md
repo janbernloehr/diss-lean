@@ -38,6 +38,33 @@ to the entire printed inequality, whose positive remainder must also be
 accounted for. The literal signed statement of Lemma 26.2 is not claimed
 as a proved result.
 
+## Lemma 27.2: unresolved endpoint in the constant argument
+
+Source: [dissertation, Lemma 27.2, page 116](https://janbernloehr.de/Download/fs16/diss.pdf#page=116).
+At m=1 the printed conclusion is `H3 ≤ 2S+S²`, where
+`S = sum_n ⟨2nπ⟩² I_n`. The final energy estimate used in its proof is
+`H3 ≤ S+2M²`, with total action M. Even retaining the stronger available
+estimate `H3 ≤ S-M+2M²`, the scalar conditions `0 ≤ M ≤ S` alone do not
+imply the conclusion at all sizes.
+
+`Lemma272EndpointArithmetic.lean` proves the precise limitation: the maximum
+of `S-M+2M²` over `0 ≤ M ≤ S` is `max(S,2S²)`, and it is at most `2S+S²`
+exactly when `S ≤ 2`. The scalar choice M=S=3 permits 18 while the target
+is 15. No potential realizing these scalar data and energy is asserted.
+
+`SourceH1EndpointActionBound.lean` proves the literal endpoint for S ≤ 2,
+a mass-sensitive sufficient condition, and an unrestricted all-order variant
+with twice the printed remainder. `SourceH1EndpointMomentCriterion.lean`
+reduces the literal endpoint exactly to a lower bound on the real cubic
+moments together with the nonnegative kinetic slack. Thus the missing
+spectral input is explicit; the literal unrestricted assertion remains open.
+
+For comparison, [the cited paper, Lemma 16, page 27](https://arxiv.org/pdf/1403.1369#page=27)
+uses the different remainder `(64π)^(2m) (1+M)^(2m-1) S^(2m-1)`.
+Its coefficient does not disappear on substituting m=1. This comparison
+does not establish a counterexample or justify silently replacing the
+constant in the dissertation.
+
 ## Lemma 28.1: the final scalar comparison at n=N
 
 Source: [dissertation, proof of Lemma 28.1, page 118](https://janbernloehr.de/Download/fs16/diss.pdf#page=118).

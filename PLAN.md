@@ -1,6 +1,62 @@
 # Implementation plan
 
-## Latest progress: Remark 23.3, common constants for all four estimates
+## Latest progress: Lemma 27.2 endpoint budget and spectral reduction
+
+The m=1 analysis of Lemma 27.2 now retains the mass subtraction in
+`H3 ≤ S - M + 2M²`, where M is total action and S is the order-one weighted
+action sum. This gives the unconditional bound `H3 ≤ max(S, 2S²)` and
+extends the literal printed estimate `H3 ≤ 2S+S²` to the closed region S ≤ 2
+(previously S ≤ 1). A separate mass-sensitive sufficient condition covers
+some sources with S > 2.
+
+`Lemma272EndpointArithmetic.lean` proves that this envelope is the exact
+maximum over scalar masses 0 ≤ M ≤ S. The same scalar hypotheses imply
+the printed endpoint uniformly in M if and only if S ≤ 2. The example
+M=S=3 disproves that scalar implication beyond the threshold; it is not
+a counterexample involving an actual potential.
+
+`SourceH1EndpointActionBound.lean` also proves an unrestricted variant of
+Lemma 27.2 for every m ≥ 1, with twice the printed remainder. The original
+coefficient remains proved for m ≥ 2. The enlarged coefficient is explicitly
+identified in the theorem name and is not presented as the literal lemma.
+
+`SourceH1EndpointMomentCriterion.lean` restores the discarded terms exactly.
+Writing K for the kinetic action sum, D=S-M-K ≥ 0, and R for the absolutely
+convergent real cubic-moment sum, it proves
+
+`H3 = S-M+2M²-D-(4/3)R`,
+
+and the equivalence of the printed endpoint with
+`2M²-M-S-S² ≤ D+(4/3)R`.
+This exposes the quantitative spectral estimate still needed for large
+sources. Neither global concavity nor a quantitative moment bound is assumed.
+
+Public examples check S=2, failure of the scalar implication at S=5/2,
+a mass-sensitive case with S=3, the unrestricted enlarged m=1 estimate,
+retention of the printed coefficient at m=2, and use of the moment criterion.
+
+Validation: the full build passed (6407 jobs), all public examples passed,
+and the transitive axiom audit passed for 25464 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: investigate the quantitative cubic-moment condition or the complex
+forms of Lemma 28.1 and Proposition 28.2. The unrestricted literal m=1
+statement remains open. See SOURCE_ERRATA.md for the source-proof audit.
+
+A concrete route for the next Proposition 28.2 step is now identified.
+First bound `sourceNormalizedActionComplexExtension` by three quarters of
+the real gap-factor norm, including collapsed gaps: its collapsed value is
+exactly the midpoint factor divided by four, so no density argument is
+needed there. The real H¹ bound would then give `|rho_n| ≤ 1536(1+P²)`
+under `8P² ≤ 1+|n|`. The existing local ℓ² continuity of `4rho-1` controls
+all coordinates simultaneously. Restricting a weighted source neighborhood
+by `8P_center² < 8P_current²+1` retains the real cutoff for every index
+satisfying the printed complex threshold. Continuity and the strict margin
+between 1536 and 4608 should provide the local complex bound; take the union
+over real centers and use the existing all-index action factorization.
+These are next-step proof obligations, not results claimed in this milestone.
+
+## Previous milestone: Remark 23.3, common constants for all four estimates
 
 Remark 23.3 is now formalized as a joint assertion for Theorems 23.1 and
 23.2. `SourceSobolevCommonConstants.lean` packages the two Birkhoff-map

@@ -37118,3 +37118,78 @@ example :
   exists_sourceBirkhoffMap_sobolev_common_constants
 
 end Remark233Checks
+
+namespace Lemma272EndpointChecks
+open NLS.ZakharovShabat
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The new closed boundary S=2 is included in the literal endpoint estimate.
+example (a : realTypeSobolevSourceLocus)
+    (hS : (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) = 2) :
+    (periodOneSobolevHamiltonian a.val).re ≤ 8 := by
+  have h := sourceH1_energy_le_lemma272_of_weighted_actions_le_two a (le_of_eq hS)
+  rw [hS] at h
+  norm_num at h
+  exact h
+
+-- Both endpoints of the mass interval attain the scalar envelope.
+example (S : ℝ) (hS : 0 ≤ S) :
+    (∀ M : ℝ, 0 ≤ M → M ≤ S → S-M+2*M^2 ≤ max S (2*S^2)) :=
+  (lemma272_mass_budget_uniform_iff S _ hS).2 le_rfl
+
+-- The scalar proof cannot extend even to S=5/2 without further spectral input.
+example : ¬ (∀ M : ℝ, 0 ≤ M → M ≤ (5/2:ℝ) →
+    (5/2:ℝ)-M+2*M^2 ≤ 2*(5/2:ℝ)+(5/2:ℝ)^2) := by
+  rw [lemma272_endpoint_budget_iff (5/2) (by norm_num)]
+  norm_num
+
+-- The mass-sensitive condition permits weighted action sums larger than two.
+example (a : realTypeSobolevSourceLocus)
+    (hM : (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n) = 1)
+    (hS : (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) = 3) :
+    (periodOneSobolevHamiltonian a.val).re ≤ 15 := by
+  have hb : 2*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n)^2-
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n) ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)^2 := by
+    rw [hM,hS]
+    norm_num
+  have h := sourceH1_energy_le_lemma272_of_mass_budget a hb
+  rw [hS] at h
+  norm_num at h
+  exact h
+
+-- The enlarged remainder works at m=1 without a smallness hypothesis.
+example (a : realTypeHigherSobolevSourceLocus 1) :
+    (sobolevOddHamiltonian 1 le_rfl a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)+
+      2*(1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)*
+        (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n) := by
+  simpa only [show 2*1-2=0 from rfl,show 4*1-3=1 from rfl,pow_zero,pow_one,mul_one] using
+    sobolevOddHamiltonian_le_twice_weighted_action_remainder 1 le_rfl a
+
+-- Higher orders retain their original coefficient through the existing API.
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (sobolevOddHamiltonian 2 (by omega) a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n)+
+      (64*Real.pi)^2*
+        (1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n)^5*
+        (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n) :=
+  sobolevOddHamiltonian_le_weighted_actions 2 le_rfl a
+
+-- Supplying the missing moment estimate suffices for the literal endpoint.
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (a : realTypeSobolevSourceLocus)
+    (h : 2*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n)^2-
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 n)-
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)-
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)^2 ≤
+      sourceH1KineticActionSlack a+
+        (4/3:ℝ)*(∑' n : ℤ, (A.moment n 3 (sobolevSourceFL4 a.val)).re)) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+      (1+∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)*
+        (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) :=
+  (A.sourceH1_lemma272_iff_moment_budget a).2 h
+
+end Lemma272EndpointChecks

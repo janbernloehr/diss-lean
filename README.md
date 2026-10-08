@@ -5,10 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Remark 23.3 is formalized with common positive constants
-for all four estimates in Theorems 23.1 and 23.2. One constructed Birkhoff map
-works at every integer Sobolev order m ≥ 1, with constants uniform over the
-entire real H^m source space and weighted-action summability included.
+Latest milestone: the printed m=1 estimate of Lemma 27.2 now holds when
+the weighted action sum is at most 2. An unrestricted all-order variant
+has twice the printed remainder, while an exact cubic-moment criterion
+identifies the spectral estimate still needed for the literal endpoint.
+Theorem 23.1, Theorem 23.2, Remark 23.3, Theorem 23.4, and Corollary 23.5
+remain formalized with their previously established constants.
 See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
