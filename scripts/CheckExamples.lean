@@ -35614,3 +35614,63 @@ example (m k : ℕ) (hk : k < m) (a : ScalarSobolev m) :
       ‖hierarchySobolevJetL2 m k (by omega) a‖^2 :=
   integral_norm_sq_hierarchySobolevJetContinuous m k hk a
 end SharpInterpolationChecks
+
+namespace OddRemainderAbsorptionChecks
+open NLS NLS.Fourier NLS.DifferentialPolynomial NLS.ZakharovShabat MeasureTheory
+
+-- Both selected L² factors may have the same derivative order.
+example (f : ℕ → ℝ) : (∏ k ∈ ({0} : Finset ℕ), f k^4) = f 0^2*f 0*f 0 := by
+  simpa using prod_pow_two_factor_split ({0}:Finset ℕ) (fun _ => 4) (fun _ => 2)
+    0 0 (by simp) (by simp) (by intro k hk; simp only [Finset.mem_singleton] at hk; subst k; norm_num) f
+
+-- A quartic H₅ monomial has H² exponent 3/2 and Young-conjugate L² power ten.
+example : 0 < (3/2:ℝ) ∧ (3/2:ℝ) < 2 ∧ (5/2:ℝ)/(1-(3/2:ℝ)/2) = 10 := by
+  convert monomial_interpolation_power_range 2 (by omega) 4 (by norm_num) (by norm_num) using 1 <;> norm_num
+
+-- The physical monomial estimate holds uniformly over all complex H^m pairs.
+example (m : ℕ) (hm : 1 ≤ m) (d : Monomial)
+    (hd : d ∈ (nlsOddReducedPolynomial m hm).support) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ a : SobolevSource m,
+      (∫ x in (0:ℝ)..1, sobolevRealMonomial m d a x) ≤
+        C*‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg m) a.1‖^
+          ((1+1/(2*m))*((∑ k ∈ Finset.range m, (jetMultiplicity d k:ℝ))-2))*
+        ‖a.1‖^(2-((∑ k ∈ Finset.range m, (jetMultiplicity d k:ℝ))-2)/(2*m)) :=
+  exists_sobolevRealMonomial_interpolation_bound m hm d hd
+
+-- The inhomogeneous H² norm is quantitatively controlled by physical energies.
+example (a : ScalarSobolev 2) :
+    ‖a‖^2 ≤ 16*(‖WeightedCoeff.sobolevToL2 (by norm_num : (0:ℝ) ≤ 2) a‖^2+
+      ‖hierarchySobolevJetL2 2 2 le_rfl a‖^2) := by
+  have h := norm_sobolev_sq_le_highestJet 2 a
+  norm_num at h ⊢
+  exact h
+
+-- Lemma 26.3 permits an arbitrarily small top-derivative coefficient on every real H^m input.
+example (m : ℕ) (hm : 1 ≤ m) (ε : ℝ) (hε : 0 < ε) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeHigherSobolevSourceLocus m,
+      (∫ x in (0:ℝ)..1, ‖sobolevPolynomialField m (nlsOddReducedPolynomial m hm) a.val
+        (x : AddCircle (2:ℝ))‖) ≤ ε*‖hierarchySobolevJetL2 m m le_rfl a.val.1‖^2+
+        C*(1+‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg m) a.val.1‖^(4*m))*
+          ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg m) a.val.1‖^2 :=
+  exists_sobolevOddRemainder_derivative_absorption m hm ε hε
+
+-- At H₃ the Hamiltonian upper bound has only L² powers two and six in the error.
+example : ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeHigherSobolevSourceLocus 1,
+    ‖sobolevOddHamiltonian 1 (by omega) a.val‖ ≤ 2*‖hierarchySobolevJetL2 1 1 le_rfl a.val.1‖^2+
+      C*(1+‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 1) a.val.1‖^4)*
+        ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 1) a.val.1‖^2 := by
+  obtain ⟨C,hC,h⟩ := exists_sobolevOddHamiltonian_energy_estimates 1 (by omega) 1 (by norm_num)
+  refine ⟨C,hC,?_⟩
+  intro a
+  have h' := (h a).2
+  norm_num at h' ⊢
+  exact h'
+
+-- The same L²-only error gives a uniform coercive bound at every odd order.
+example (m : ℕ) (hm : 1 ≤ m) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ a : realTypeHigherSobolevSourceLocus m,
+      ‖hierarchySobolevJetL2 m m le_rfl a.val.1‖^2 ≤ 2*(sobolevOddHamiltonian m hm a.val).re+
+        C*(1+‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg m) a.val.1‖^(4*m))*
+          ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg m) a.val.1‖^2 :=
+  exists_sobolevOddHamiltonian_coercivity m hm
+end OddRemainderAbsorptionChecks

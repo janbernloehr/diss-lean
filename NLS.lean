@@ -2858,3 +2858,11 @@ import NLS.SequenceSpaces.ShiftedHilbertInverse
 import NLS.SequenceSpaces.HilbertAgmon
 import NLS.ZakharovShabat.SobolevJetNormBounds
 import NLS.ZakharovShabat.SobolevJetInterpolation
+import NLS.DifferentialPolynomial.TwoFactorSplit
+import NLS.DifferentialPolynomial.MonomialInterpolationExponents
+import NLS.SequenceSpaces.GeometricAbsorption
+import NLS.ZakharovShabat.SobolevMonomialIntegral
+import NLS.ZakharovShabat.SobolevMonomialInterpolation
+import NLS.ZakharovShabat.SobolevRemainderAbsorption
+import NLS.ZakharovShabat.SobolevHighestJetEnergy
+import NLS.ZakharovShabat.OddHamiltonianRemainderEstimate

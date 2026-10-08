@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: both sharp derivative interpolation inequalities (5.11)
-are proved on H^m, with explicit period-one constants, endpoint cases,
-and the zero Fourier mode retained. Actual lower-derivative Parseval connects
-the estimates to physical integrals. The monomial estimate (5.12) and
-Lemma 26.3's absorption step are next. See `STATUS.md`.
+Latest milestone: Lemma 26.3 is proved on every real H^m source. The actual
+absolute remainder integral has an arbitrarily small highest-derivative
+coefficient and an error involving only L² powers two and `4m+2`. The odd
+Hamiltonians now have quantitative upper and coercive lower bounds.
+The spectral localization needed for the action estimates is next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

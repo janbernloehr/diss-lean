@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: sharp physical Sobolev interpolation (5.11)
+## Current milestone: Lemma 26.3 and L²-only Hamiltonian remainder bounds
+
+Lemma 26.3 is now proved for every real H^m source. For every positive ε,
+the actual integral of the absolute reduced remainder is bounded by
+`ε ‖∂^m ψ‖₂² + C (1+‖ψ‖₂^(4m)) ‖ψ‖₂²`, with a constant independent of
+the source. The physical odd Hamiltonian satisfies the stated upper bound
+with leading coefficient `1+ε`. A further corollary controls the highest
+derivative by twice the Hamiltonian and an error involving only the L² norm.
+
+`TwoFactorSplit.lean` selects two factors from any finite monomial, allowing
+the same derivative order twice. `SobolevMonomialIntegral.lean` uses actual
+unit-interval Cauchy–Schwarz and Parseval for these two factors, and bounds
+the remaining factors by their continuous norms.
+`MonomialInterpolationExponents.lean` proves the exact exponent arithmetic:
+for field count `d`, the H^m exponent is `2-(d-2)/(2m)`, strictly below two,
+and the conjugate L² power is exactly `4m+2`.
+
+`SobolevMonomialInterpolation.lean` proves (5.12) for each actual supported
+remainder monomial, uniformly even on complex Sobolev pairs, with a separate
+zero-data case. `GeometricAbsorption.lean` proves scaled Young absorption.
+`SobolevRemainderAbsorption.lean` applies it to the coefficient-weighted
+monomials and sums over their finite support, preserving an arbitrary small
+H^m-square coefficient and the exact L² power.
+
+`SobolevHighestJetEnergy.lean` separates the physical highest derivative and
+L² energies from the inhomogeneous Sobolev norm, retaining the zero mode and
+period-one normalization. `OddHamiltonianRemainderEstimate.lean` rescales ε
+to obtain Lemma 26.3, the Hamiltonian upper bound, and the coercivity corollary.
+The intermediate norm comparison uses the repository's `(1+|n|)^m` weight;
+its constant is absorbed without changing the final ε or L² powers.
+
+Public examples check repeated-factor selection, quartic H₅ exponents,
+uniform monomial interpolation, the H² energy comparison, arbitrary-ε
+absolute remainder control, the H₃ upper bound, and all-order coercivity.
+
+Validation: the full build passed (6294 jobs), all public examples passed,
+and the transitive axiom audit passed for 24719 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining: connect the Hamiltonian estimate to the quantitative action bounds
+in Lemma 26.2 and Theorem 23.2(i). These require the norm-dependent spectral
+localization of Section 25 and Proposition 26.1, whose explicit H¹ threshold
+remains open. The converse action estimates of Section 27, uniform weighted
+estimates of Section 28, fixed-domain trace scope, and the full dissertation
+inventory also remain open.
+
+## Previous milestone: sharp physical Sobolev interpolation (5.11)
 
 Both interpolation estimates (5.11) now hold for the actual Sobolev jets.
 For `0 ≤ k ≤ m`, the L² derivative bound has exponent `k/m` and explicit
