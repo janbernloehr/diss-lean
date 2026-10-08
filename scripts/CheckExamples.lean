@@ -34432,3 +34432,79 @@ example (v : SpectralWeight)
     (by norm_num) u z hu hz hinit
 
 end FourierNLSContinuationChecks
+
+
+namespace FourierNLSReferenceChecks
+open NLS NLS.Fourier Set
+open scoped ContDiff
+
+-- A fractional-order solution covers the entire reference interval from a nonzero interior time.
+example (v : SpectralWeight) (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hz : IsFourierNLSTrajectoryOn v (-4) 2 z)
+    (u₀ : WeightedCoeff (SpectralWeight.sobolev (3/2) (by norm_num)).toWeight 1)
+    (hinit : ∀ n : ℤ, u₀.val n = (z 1).val n) :
+    ∃ u : ℝ → WeightedCoeff (SpectralWeight.sobolev (3/2) (by norm_num)).toWeight 1,
+      u 1 = u₀ ∧ IsFourierNLSTrajectoryOn (SpectralWeight.sobolev (3/2) (by norm_num)) (-4) 2 u ∧
+      (u (-4)).val (-7) = (z (-4)).val (-7) ∧ (u 2).val (-7) = (z 2).val (-7) := by
+  obtain ⟨u,hu0,hu,he⟩ := exists_sobolev_fourierNLS_on_reference_interval (3/2) (by norm_num)
+    v (-4) 2 1 (by constructor <;> norm_num) z hz u₀ hinit
+  exact ⟨u,hu0,hu,he (-4) (by constructor <;> norm_num) (-7),he 2 (by constructor <;> norm_num) (-7)⟩
+
+-- Starting at the right endpoint constructs a solution throughout the preceding interval.
+example (v : SpectralWeight) (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hz : IsFourierNLSTrajectoryOn v (-4) 2 z)
+    (u₀ : WeightedCoeff (SpectralWeight.sobolev 4 (by norm_num)).toWeight 1)
+    (hinit : ∀ n : ℤ, u₀.val n = (z 2).val n) :
+    ∃ u : ℝ → WeightedCoeff (SpectralWeight.sobolev 4 (by norm_num)).toWeight 1,
+      u 2 = u₀ ∧ IsFourierNLSTrajectoryOn (SpectralWeight.sobolev 4 (by norm_num)) (-4) 2 u := by
+  obtain ⟨u,hu0,hu,_⟩ := exists_sobolev_fourierNLS_on_reference_interval 4 (by norm_num)
+    v (-4) 2 2 (by constructor <;> norm_num) z hz u₀ hinit
+  exact ⟨u,hu0,hu⟩
+
+-- Zero order and a singleton interval require no strict interval or positive-order premise.
+example (v : SpectralWeight) (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hz : IsFourierNLSTrajectoryOn v (-1) (-1) z)
+    (u₀ : WeightedCoeff (SpectralWeight.sobolev 0 le_rfl).toWeight 1)
+    (hinit : ∀ n : ℤ, u₀.val n = (z (-1)).val n) :
+    ∃ u : ℝ → WeightedCoeff (SpectralWeight.sobolev 0 le_rfl).toWeight 1,
+      u (-1) = u₀ ∧ IsFourierNLSTrajectoryOn (SpectralWeight.sobolev 0 le_rfl) (-1) (-1) u := by
+  obtain ⟨u,hu0,hu,_⟩ := exists_sobolev_fourierNLS_on_reference_interval 0 le_rfl
+    v (-1) (-1) (-1) ⟨le_rfl,le_rfl⟩ z hz u₀ hinit
+  exact ⟨u,hu0,hu⟩
+
+-- Sobolev membership propagates from one endpoint to the other in the original coefficients.
+example (v : SpectralWeight) (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hz : IsFourierNLSTrajectoryOn v (-2) 3 z)
+    (hm : Memℓp (fun n => (Weight.sobolev (1/2) n : ℂ)*(z (-2)).val n) 1) :
+    Memℓp (fun n => (Weight.sobolev (1/2) n : ℂ)*(z 3).val n) 1 :=
+  hz.mem_sobolev_at (-2) (by constructor <;> norm_num) (1/2) (by norm_num) hm 3
+    (by constructor <;> norm_num)
+
+-- All initial weights give genuine spatial C∞ synthesis at both closed endpoints.
+example (v : SpectralWeight) (z : ℝ → WeightedCoeff v.toWeight 1)
+    (hz : IsFourierNLSTrajectoryOn v (-2) 3 z)
+    (hall : ∀ s : ℝ, 0 ≤ s → Memℓp (fun n => (Weight.sobolev s n : ℂ)*(z 1).val n) 1) :
+    ContDiff ℝ ∞ (periodOneSynthesis (v.toCoeff (z (-2)))) ∧
+      ContDiff ℝ ∞ (periodOneSynthesis (v.toCoeff (z 3))) :=
+  ⟨hz.contDiff_synthesis_of_all_sobolev 1 (by constructor <;> norm_num) hall (-2)
+      (by constructor <;> norm_num),
+    hz.contDiff_synthesis_of_all_sobolev 1 (by constructor <;> norm_num) hall 3
+      (by constructor <;> norm_num)⟩
+
+-- One interval is selected before quantifying over every Sobolev order.
+example (w : SpectralWeight) (u₀ : WeightedCoeff w.toWeight 1)
+    (hall : ∀ s : ℝ, 0 ≤ s → Memℓp (fun n => (Weight.sobolev s n : ℂ)*u₀.val n) 1) :
+    ∃ T > 0, ∃ z : ℝ → WeightedCoeff w.toWeight 1, z 0 = u₀ ∧
+      ∀ s : ℝ, ∀ hs : 0 ≤ s,
+        ∃ u : ℝ → WeightedCoeff (SpectralWeight.sobolev s hs).toWeight 1,
+          IsFourierNLSTrajectoryOn (SpectralWeight.sobolev s hs) (-T) T u ∧
+          (u 0).val = u₀.val := by
+  obtain ⟨T,hT,z,hz0,_,hlift,_⟩ := exists_local_fourierNLS_all_sobolev w u₀ hall
+  refine ⟨T,hT,z,hz0,?_⟩
+  intro s hs
+  obtain ⟨u,hu,he⟩ := hlift s hs
+  refine ⟨u,hu,?_⟩
+  funext n
+  simpa only [hz0] using he 0 ⟨by linarith,hT.le⟩ n
+
+end FourierNLSReferenceChecks

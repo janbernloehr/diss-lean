@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Latest progress: bounded continuation and Sobolev regularity continuation
+## Latest progress: common-interval Sobolev persistence and smooth synthesis
+
+Higher-weight Fourier NLS solutions now exist on the entire closed interval
+of a compatible reference solution. No higher-weight trajectory or norm bound
+is assumed. Every nonnegative real Sobolev order present initially persists
+on that same interval, with an actual norm-continuous higher-weight solution
+of the original coefficient equations.
+
+`FourierNLSReferenceInterval.lean` derives one high-norm bound from the compact
+reference interval and the tame estimate. Its positive local extension length
+is fixed once. Induction over a truncated time grid constructs solutions up
+to each grid point; an Archimedean bound makes finitely many steps cover the
+whole interval. Separate forward and backward constructions join at any
+prescribed initial time, including either endpoint. Endpoint uniqueness
+identifies all coefficients with the reference throughout the closed interval.
+The reference and higher weights need not be ordered.
+
+`LocalSmoothFourierNLS.lean` turns initial Sobolev membership into a continuous
+higher-weight lift and propagates that membership to every time in the interval.
+All initial Sobolev weights give genuine spatial `C∞` Fourier synthesis,
+including at the interval endpoints. Local existence selects one positive
+interval first, and that interval then supports the solutions for every
+nonnegative real Sobolev order. Thus the time intervals no longer shrink
+as the order increases.
+
+Public examples cover fractional-order lifting from a nonzero initial time,
+negative modes at both reference endpoints, backward construction from the
+right endpoint, zero order on a singleton interval, endpoint-to-endpoint
+membership propagation, spatial smoothness at both endpoints, and the crucial
+quantifier order: one positive time interval before all Sobolev orders.
+
+Validation: the full build passes (6185 jobs), all public examples pass,
+and the transitive axiom audit passes for 23709 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: prove that arbitrary smooth periodic physical initial data supply
+all the weighted coefficient memberships used here, identify the synthesized
+physical time derivative and classical PDE, and establish global continuation
+using conservation. The current theorem gives a common local Fourier interval
+and spatially smooth synthesis; it is not yet the complete global smooth
+classical-existence theorem. The dissertation’s exact all-smooth-sequence
+wellposedness assembly and full inventory also remain incomplete.
+
+## Previous milestone: bounded continuation and Sobolev regularity continuation
 
 Bounded Fourier NLS trajectories now extend past either finite endpoint.
 For every nonnegative real Sobolev order, a compatible reference solution
@@ -447,17 +490,17 @@ remain. The dissertation is not complete.
 
 Next implementation targets:
 
-1. Complete smooth classical existence using the compatible local Fourier
-   solutions, uniform local lifespan, and two-sided continuation criteria.
-   Construct higher-weight solutions on a full prescribed reference interval:
-   derive one high-norm bound from the reference on the whole target interval,
-   fix its uniform positive extension length, and induct over the truncated
-   time grid until it covers the interval. Run the construction in both time
-   directions and join at the prescribed initial time. Then
-   obtain common-interval persistence for all Sobolev orders, identify the
-   synthesized physical PDE, and establish global smooth classical existence
-   using conserved quantities. The continuation criterion for an already
-   supplied trajectory does not yet construct that common-interval family.
+1. Complete smooth classical existence using the proved common-interval
+   Sobolev persistence. Show that arbitrary smooth periodic physical initial
+   data have Fourier coefficients in every weighted ℓ¹ space. The existing
+   `memlp_sobolev_succ_of_derivative` and periodic derivative-coefficient identity
+   support induction on integer orders; Sobolev inclusions and `sobolevToL1CLM`
+   then give real orders and absolute summability. Even period-two coefficients
+   recover the actual period-one coefficients. Identify the
+   synthesized time derivative and physical NLS equation using the continuous
+   higher-weight lifts, then derive conservation and global continuation.
+   The common local Fourier interval and spatially smooth synthesis alone
+   do not yet establish global smooth classical existence.
    Then formalize the all-smooth-sequence definition on page 86 and assemble
    the analytic solution maps using the proved cross-exponent approximation
    results and their actual trajectory-domain guards.

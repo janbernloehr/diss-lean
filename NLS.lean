@@ -2766,3 +2766,5 @@ import NLS.Fourier.UniformLocalNLS
 import NLS.FunctionalAnalysis.ClosedIntegralCurveJoin
 import NLS.Fourier.FourierNLSContinuation
 import NLS.Fourier.FourierNLSRegularityContinuation
+import NLS.Fourier.FourierNLSReferenceInterval
+import NLS.Fourier.LocalSmoothFourierNLS
