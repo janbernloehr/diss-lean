@@ -138,14 +138,27 @@ by absolute summability. The proof keeps the stronger intermediate bound
 `norm(P-exp(A)) <= B*exp(S+B)` before using B<=S^2. The logarithmic remainder
 is bounded by B, and the exponential Taylor estimate retains the exact
 factor 1/2. Finite cancelling-pair examples check that signed cancellation
-is preserved. D.4–D.5 still require comparison with the canonical-product
-APIs; this milestone does not certify the remainder of Appendix D.
+is preserved. The partial D.4–D.5 audit below does not certify the remainder
+of Appendix D.
 
-Initial D.4–D.5 comparison: `EntireSingleSpectralProducts.lean` constructs
-literal symmetric cutoffs and an entire limit with free value `-2 sin(z)`;
-the source's full product has free value `sin(z)`. The joint full and deleted
-analyticity theorems in `JointSingleSpectralProducts.lean` and
-`JointDeletedSingleSpectralProducts.lean` currently require p>1, whereas
-D.4–D.5 include p=1. Exact normalization, that endpoint, root multiplicities,
-and the locally uniform exterior asymptotic must all be matched before
-claiming coverage of these statements.
+D.4–D.5 partial comparison: `SingleSpectralProductEndpoints.lean` extends
+joint analyticity and uniform cutoff convergence on compact spectral sets
+over bounded displacement sets to all finite p >= 1. The contractive
+inclusion into ell^max(p,2) preserves each cutoff and its limit.
+`AppendixDSineProducts.lean` implements the literal negative product and
+negative deleted product, with their printed normalization denominators.
+The full free value is sin(z); restoring the deleted factor recovers the
+full product, and the deleted free value has its required denominator.
+Both products have exactly their prescribed (respectively retained) roots,
+without assuming simplicity. The sine quotient tends to one along any
+escaping path separated from the free lattice by a fixed positive radius.
+`AppendixDSimpleRoots.lean` proves order one at any full-product root that
+occurs only once, simple retained zeros for deleted products of injective
+sequences, and simple poles (meromorphic order minus one) of their
+reciprocals. Every deleted reciprocal is meromorphic even without simplicity.
+
+Still pending before complete coverage: exact repeated-root multiplicities,
+a uniform positive separation bound for arbitrary injective displaced-root
+sequences, and local uniformity of
+the exterior threshold in the displacement parameter. Pointwise-in-parameter
+escaping-path convergence is not counted as the last assertion of D.5.

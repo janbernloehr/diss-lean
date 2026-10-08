@@ -37662,3 +37662,55 @@ example : Summable (fun n => ‖productEstimateNegativeSingleton n‖) ∧
     productEstimateNegativeSingleton_admissible.2, printed_D3_absolute_linear_term_fails⟩
 
 end SignedProductEstimateChecks
+
+section AppendixDProductChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+
+-- The missing summable endpoint is explicit, with arbitrary bounded families.
+example (K : Set ℂ) (hK : IsCompact K) (S : Set (Coeff 1))
+    (R : ℝ) (hR : 0 ≤ R) (hb : ∀ a ∈ S, ‖a‖ ≤ R) :
+    TendstoUniformlyOn (jointDeletedSingleSpectralPartialProduct (p := 1) 0)
+      (jointDeletedSingleSpectralProduct 0) atTop (K ×ˢ S) :=
+  tendstoUniformlyOn_jointDeletedSingleSpectralProduct_finite (by simp) 0 K hK S R hR hb
+
+example : AnalyticOnNhd ℂ (appendixDProduct (p := 1)) univ :=
+  analyticOnNhd_appendixDProduct (by simp)
+
+example (n : ℤ) : AnalyticOnNhd ℂ (appendixDDeletedProduct (p := 1) n) univ :=
+  analyticOnNhd_appendixDDeletedProduct (by simp) n
+
+example (z : ℂ) : appendixDProduct (z,(0:Coeff 1)) = Complex.sin z :=
+  appendixDProduct_zero z
+
+example (n : ℤ) (z : ℂ) : appendixDDeletedProduct n (z,(0:Coeff 1)) =
+    -singleSpectralDenominator n*freeSineQuotient n z :=
+  appendixDDeletedProduct_zero (by simp) n z
+
+-- A collision remains a zero after deleting just one occurrence.
+example (a : Coeff 1) (n k : ℤ) (hkn : k ≠ n)
+    (hcollision : displacedRoots a k = displacedRoots a n) :
+    appendixDDeletedProduct n (displacedRoots a n,a) = 0 := by
+  rw [← hcollision]
+  exact appendixDDeletedProduct_root (by simp) n k hkn a
+
+example (a : Coeff 1) (ha : Function.Injective (displacedRoots a)) (n : ℤ) :
+    analyticOrderAt (fun z => appendixDProduct (z,a)) (displacedRoots a n) = 1 :=
+  analyticOrderAt_appendixDProduct_of_injective (by simp) a ha n
+
+example (a : Coeff 1) (n : ℤ) (z : ℂ) :
+    MeromorphicAt (fun w => (appendixDDeletedProduct n (w,a))⁻¹) z :=
+  meromorphicAt_inv_appendixDDeletedProduct (by simp) n a z
+
+example (a : Coeff 1) (z : ℕ → ℂ) (hescape : Tendsto (fun i => ‖z i‖) atTop atTop)
+    (hsep : ∀ i (n : ℤ), Real.pi/4 ≤ ‖z i-(Real.pi:ℂ)*n‖) :
+    Tendsto (fun i => appendixDProduct (z i,a)/Complex.sin (z i)) atTop (𝓝 1) :=
+  tendsto_appendixDProduct_div_sin_of_separated (by simp) a z hescape
+    (by positivity) le_rfl hsep
+
+example (a : Coeff 1) (ha : Function.Injective (displacedRoots a)) (n k : ℤ) (hkn : k ≠ n) :
+    meromorphicOrderAt (fun z => (appendixDDeletedProduct n (z,a))⁻¹)
+      (displacedRoots a k) = -1 :=
+  meromorphicOrderAt_inv_appendixDDeletedProduct_of_injective (by simp) a ha n k hkn
+
+end AppendixDProductChecks

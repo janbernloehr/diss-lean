@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Latest progress: exact signed product estimates in D.1–D.3
+## Latest progress: source-normalized Appendix D products at p=1
+
+The source-normalized full and deleted products are now exposed as
+`appendixDProduct` and `appendixDDeletedProduct`. Their literal symmetric
+cutoffs converge with the signs and denominator factors printed in D.4–D.5;
+the full free value is sin(z), and restoring a deleted factor recovers the
+full product. Exponent inclusion into ell^max(p,2) extends joint analyticity
+and uniform convergence on compact spectral sets over bounded displacement
+families to every finite p >= 1, including the previously missing endpoint.
+
+The normalized products have exactly their prescribed roots. The deleted
+product has exactly the retained roots, even when roots coincide. A root
+that occurs once is a simple zero of the full product; in particular this
+holds for injective displaced-root sequences. Their deleted products also
+have simple retained roots, and their reciprocals have order minus one
+there: the simple poles in D.4. Reciprocals of arbitrary deleted products
+are meromorphic throughout the plane. The full product divided
+by sin(z) tends to one along any escaping path outside fixed free discs.
+
+This is partial coverage of D.4–D.5. Exact multiplicities for repeated
+roots, uniform positive separation of arbitrary injective root sequences,
+and local uniformity of the exterior threshold in the displacement
+parameter still require verification.
+The printed spectral height above p=2 remains unresolved. The accepted
+Lemma 27.2 correction and optional original m=1 sharpening are unchanged.
+
+Validation: the full build passed (6442 jobs), all public examples passed,
+and the axiom audit passed for 25735 NLS declarations. The same 21
+pre-existing warnings remain, with no new warnings. Focused examples cover
+p=1 analyticity and uniform convergence, both free normalizations, a retained
+coincident root, simple full roots, deleted reciprocal poles, and the
+exterior sine asymptotic. The inventory of 156 candidate source labels was
+independently verified.
+
+## Previous milestone: exact signed product estimates in D.1–D.3
 
 The exact product bounds in Lemma D.1 and Remark D.2, printed page 126,
 and the signed-sum interpretation of Remark D.3, page 127, are now proved.

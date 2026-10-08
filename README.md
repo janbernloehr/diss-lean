@@ -5,11 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: D.1–D.3's sharper infinite-product estimates now retain
-the signed sum and the exact quadratic coefficient 1/2. D.1 and D.2 are
-proved as printed. D.3 is proved with the complex sum in its linear term;
-a formal counterexample identifies the inconsistency in reusing D.1's
-absolute-sum notation. The printed spectral height above p=2 remains open.
+Latest milestone: the full and deleted Appendix D products now have their
+literal source normalization, with joint analyticity and uniform cutoff
+convergence for every finite p >= 1. Their exact zero sets, simple roots
+and reciprocal poles for injective sequences, and the sine asymptotic along
+separated escaping paths are proved. D.4–D.5 remain partially audited; repeated-root
+multiplicities and the locally uniform exterior threshold are still pending.
+The printed spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

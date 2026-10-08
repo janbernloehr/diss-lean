@@ -3010,3 +3010,6 @@ import NLS.Fourier.ModifiedHilbert
 import NLS.ComplexAnalysis.SharpExponentialRemainder
 import NLS.ComplexAnalysis.SignedProductEstimates
 import NLS.ComplexAnalysis.ProductEstimateNotation
+import NLS.ZakharovShabat.SingleSpectralProductEndpoints
+import NLS.ZakharovShabat.AppendixDSineProducts
+import NLS.ZakharovShabat.AppendixDSimpleRoots
