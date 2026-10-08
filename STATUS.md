@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: all-order physical Sobolev trace identities
+## Current milestone: the polynomial structure of Appendix H
+
+Appendix H's algebraic structure is now represented by actual multivariate
+polynomials in the derivatives of the two scalar fields. Polynomial evaluation
+recovers the existing smooth Riccati densities at every order. Formal spatial
+differentiation is proved to agree with actual differentiation on smooth fields.
+
+`DifferentialPolynomial/JetAlgebra.lean` constructs the derivation which sends
+each jet to the next derivative. A support theorem tracks every monomial that
+can occur after differentiation, addition, negation, or multiplication.
+`JetDegrees.lean` tracks homogeneous total weight, signed field count, and the
+total number of derivatives across a whole monomial. A total derivative bound
+also bounds every individual jet occurring in that monomial.
+
+`NLSRiccatiPolynomials.lean` implements the canonical polynomial recurrence.
+Density order `n` has homogeneous weight `n+1`, counting every field and every
+derivative once, and one more second-field factor than first-field factor.
+`NLSRiccatiPolynomialRemainder.lean` separates the leading term `-b^(n)`.
+Every nonlinear remainder monomial has at most `n-2` derivatives in total;
+the zero remainders at orders zero and one satisfy even the negative bounds.
+Multiplication by the first field gives weight `n+2` and equal counts of both
+fields. These are the structural claims used in Lemma H.1. The evaluation
+identity is proved for smooth fields without assuming periodicity.
+
+Public examples check differentiation, the arbitrary-order leading term,
+all three monomial restrictions, the seventh Hamiltonian's jet bound, and
+an explicit expansion of the fifth Hamiltonian's density, including every
+nonlinear coefficient and sign.
+
+Validation: the full build passes (6265 jobs), all public examples pass,
+and the transitive axiom audit passes for 24472 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: use these monomial bounds in periodic integration by parts to
+construct Corollary H.2's lower-order remainder, then extend the odd physical
+Hamiltonians to H^m. Fixed-domain trace scope, explicit norm-dependent
+localization and uniform estimates in Sections 25–28, and the full dissertation
+inventory remain open. This milestone establishes polynomial structure and
+smooth evaluation; it does not yet prove the lower-regularity extension.
+
+## Previous milestone: all-order physical Sobolev trace identities
 
 The physical Sobolev hierarchy now agrees with the classical smooth hierarchy
 at every admissible order. For every integer `s ≥ 0` and `n ≤ s`, the literal

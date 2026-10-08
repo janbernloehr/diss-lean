@@ -2834,3 +2834,7 @@ import NLS.ZakharovShabat.SobolevNLSHamiltonianHierarchy
 import NLS.Fourier.SmoothPeriodOneCoefficientAlgebra
 import NLS.ZakharovShabat.SobolevRiccatiClassicalAgreement
 import NLS.ZakharovShabat.SobolevNLSHierarchyTrace
+import NLS.DifferentialPolynomial.JetAlgebra
+import NLS.DifferentialPolynomial.JetDegrees
+import NLS.ZakharovShabat.NLSRiccatiPolynomials
+import NLS.ZakharovShabat.NLSRiccatiPolynomialRemainder

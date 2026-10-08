@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: every constructed Sobolev Riccati density and Hamiltonian
-now agrees with the classical smooth hierarchy. For `n ≤ s`, the physical
-trace identity holds on real Hˢ and on a common open complex Hˢ neighborhood,
-with absolute convergence and the factor `2^n`. The complex domain may depend
-on `s`; sharper regularity and fixed-domain scope remain to be addressed.
-See `STATUS.md`.
+Latest milestone: actual differential polynomials now represent every Riccati
+density, with proved agreement with the smooth physical recurrence. Appendix H's
+total degree, field balance, leading derivative, and nonlinear derivative bounds
+are proved at every order. Periodic integration by parts and extension to sharper
+Sobolev regularity are next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

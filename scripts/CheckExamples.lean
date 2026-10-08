@@ -35376,3 +35376,44 @@ example (s : ℕ) :
           (higherSobolevSourceInclusion s b)‖) :=
   exists_sobolevNLSHamiltonian_trace_domain s
 end SobolevPhysicalTraceChecks
+
+namespace RiccatiPolynomialStructureChecks
+open NLS NLS.DifferentialPolynomial NLS.ZakharovShabat MvPolynomial
+open scoped ContDiff
+
+-- The formal derivation is actual spatial differentiation on smooth fields.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (p : DifferentialPolynomial.Polynomial) :
+    evaluate a b (spatialDerivative p) = deriv (evaluate a b p) :=
+  evaluate_spatialDerivative a b ha hb p
+
+-- Appendix H's leading term is separated at every order, with no periodicity requirement.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) (n : ℕ) :
+    nlsRiccatiDensity a b n = -iteratedDeriv n b + evaluate a b (nlsRiccatiRemainder n) :=
+  nlsRiccatiDensity_eq_leading_add_remainder a b ha hb n
+
+-- Every nonlinear Hamiltonian monomial has total weight n+2, balanced fields, and at most n-2 derivatives.
+example (n : ℕ) (m : DifferentialPolynomial.Monomial)
+    (hm : (X (false,0)*nlsRiccatiRemainder n).coeff m ≠ 0) :
+    Finsupp.weight totalWeight m = (n:ℤ)+2 ∧
+    Finsupp.weight fieldCharge m = 0 ∧
+    Finsupp.weight derivativeWeight m ≤ (n:ℤ)-2 :=
+  nlsRiccatiRemainder_hamiltonian_monomial n m hm
+
+-- No hidden high derivative occurs in the seventh Hamiltonian's nonlinear remainder.
+example (v : Jet) (hv : v ∈ (nlsRiccatiRemainder 6).vars) : v.2 ≤ 4 := by
+  have h := nlsRiccatiRemainder_vars 6 v hv
+  omega
+
+-- The fifth Hamiltonian's density fixes all nonlinear coefficients and signs.
+example : nlsRiccatiRemainder 4 =
+    X (false,2)*X (true,0)^2 + 6*X (false,1)*X (true,0)*X (true,1) +
+    5*X (false,0)*X (true,1)^2 + 6*X (false,0)*X (true,0)*X (true,2) -
+    2*X (false,0)^2*X (true,0)^3 := by
+  norm_num [nlsRiccatiRemainder,nlsRiccatiPolynomial_recurrence 2,
+    nlsRiccatiPolynomial_recurrence 1,nlsRiccatiPolynomial_recurrence 0,
+    Finset.Nat.antidiagonal_succ,Finset.Nat.antidiagonal_zero,spatialDerivative,
+    Derivation.leibniz,smul_eq_mul,nextJet]
+  ring
+
+end RiccatiPolynomialStructureChecks
