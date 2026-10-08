@@ -35229,3 +35229,52 @@ example (s : ℕ) : ∃ U : Set (SobolevSource s), IsOpen U ∧
         ∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n k (higherSobolevSourceInclusion s b)) U :=
   exists_sourceHigherSobolevHigherAction_domain s
 end HigherSobolevActionChecks
+
+namespace HigherSobolevFiniteGapChecks
+open Set Filter Topology NLS NLS.ZakharovShabat
+
+-- Density holds even at H⁰ and concerns actual spectral gaps.
+example : Dense (sourceHigherSobolevFiniteGapLocus 0) :=
+  dense_sourceHigherSobolevFiniteGapLocus 0
+
+-- Approximation in any original Hˢ norm can preserve a prescribed open condition.
+example (s : ℕ) (U : Set (realTypeHigherSobolevSourceLocus s)) (hU : IsOpen U)
+    (a : realTypeHigherSobolevSourceLocus s) (ha : a ∈ U) (ε : ℝ) (hε : 0 < ε) :
+    ∃ b ∈ sourceHigherSobolevFiniteGapLocus s, b ∈ U ∧ ‖b.val-a.val‖ < ε :=
+  exists_sourceHigherSobolevFiniteGap_mem_open s U hU a ha ε hε
+
+-- The action sequence converges in ℓ¹ at the highest H²-supported level.
+example (a : realTypeHigherSobolevSourceLocus 2) (b : ℕ → realTypeHigherSobolevSourceLocus 2)
+    (hlim : Tendsto b atTop (𝓝 a)) :
+    Tendsto (fun j => sourceHigherSobolevHigherActionSequence 2 4 (b j).val) atTop
+      (𝓝 (sourceHigherSobolevHigherActionSequence 2 4 a.val)) :=
+  tendsto_sourceHigherSobolevHigherActionSequence 2 a b hlim 4 (by norm_num)
+
+-- Actual fifth physical Hamiltonians converge with the required factor 16.
+example (a : realTypeHigherSobolevSourceLocus 2) (b : ℕ → realTypeHigherSobolevSourceLocus 2)
+    (hb : ∀ j, b j ∈ sourceHigherSobolevFiniteGapLocus 2) (hlim : Tendsto b atTop (𝓝 a)) :
+    Tendsto (fun j => sourceFiniteGapNLSHamiltonian (by simp) (by norm_num)
+      ⟨higherSobolevSourceInclusion 2 (b j).val,(b j).property⟩ (hb j) 5) atTop
+      (𝓝 (16 * ∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 4
+        (higherSobolevSourceInclusion 2 a.val))) := by
+  have h := tendsto_sourceHigherSobolevFiniteGapHamiltonian 2 a b hb hlim 4 (by norm_num)
+  norm_num at h
+  exact h
+
+-- Physical finite-gap agreement is sufficient to identify an independently defined candidate.
+example (s k : ℕ) (hk : k ≤ 2*s) (H : SobolevSource s → ℂ) (hH : Continuous H)
+    (hf : ∀ b : realTypeHigherSobolevSourceLocus s, ∀ hb : b ∈ sourceHigherSobolevFiniteGapLocus s,
+      H b.val = sourceFiniteGapNLSHamiltonian (by simp) (by norm_num)
+        ⟨higherSobolevSourceInclusion s b.val,b.property⟩ hb (k+1))
+    (a : realTypeHigherSobolevSourceLocus s) :
+    (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n k
+      (higherSobolevSourceInclusion s a.val)) = H a.val/2^k :=
+  sourceHigherSobolevHigherAction_trace_of_hamiltonian s k hk H hH hf a
+
+-- Real-form uniqueness also applies to Banach-valued maps.
+example (s : ℕ) (a : realTypeHigherSobolevSourceLocus s) (f g : SobolevSource s → Coeff 1)
+    (hf : AnalyticAt ℂ f a.val) (hg : AnalyticAt ℂ g a.val)
+    (hreal : ∀ b : realTypeHigherSobolevSourceLocus s, f b.val = g b.val) :
+    f =ᶠ[𝓝 a.val] g :=
+  eventuallyEq_higherSobolev_of_analyticAt_of_real_agreement s a f g hf hg hreal
+end HigherSobolevFiniteGapChecks

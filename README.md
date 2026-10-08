@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: at every nonnegative integer Sobolev order `s`, higher-action
-levels 1 through `2s+1` have absolutely convergent, analytic sums on an open
-complex Hˢ neighborhood of the entire real locus. The maps preserve the original
-Fourier coefficients. The first three physical H¹ traces are already proved;
-higher physical trace identifications and uniform estimates remain.
+Latest milestone: actual real spectral finite-gap sources are dense in Hˢ
+for every nonnegative integer `s`. Their physical Hamiltonians converge to
+the correctly normalized higher-action sums through order `2s+1`. Continuous
+physical candidates can now be identified by finite-gap agreement, and analytic
+ones satisfy the traces on complex neighborhoods. Constructing the remaining
+higher physical Sobolev functionals is next.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

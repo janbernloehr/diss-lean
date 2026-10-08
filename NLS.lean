@@ -2824,3 +2824,7 @@ import NLS.ZakharovShabat.SourceWeightedHigherActionBound
 import NLS.ZakharovShabat.SourceHigherSobolevEmbedding
 import NLS.ZakharovShabat.SourceHigherSobolevHigherActionBound
 import NLS.ZakharovShabat.SourceHigherSobolevHigherActionAnalytic
+import NLS.ZakharovShabat.SourceHigherSobolevFiniteGapDensity
+import NLS.ZakharovShabat.SourceHigherSobolevRealGerm
+import NLS.ZakharovShabat.SourceHigherSobolevTraceTransfer
+import NLS.ZakharovShabat.SourceHigherSobolevFiniteGapLimits

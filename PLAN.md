@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Latest progress: higher-action convergence at every integer Sobolev order
+## Latest progress: finite-gap density and physical hierarchy limits on Hˢ
+
+Actual real spectral finite-gap sources are now dense in every original Hˢ
+source space, for all nonnegative integers `s`. Approximation preserves any
+prescribed open condition and can be chosen as an Hˢ-convergent sequence.
+Finite-gap here means finitely many open canonical spectral gaps, not finite
+Fourier support.
+
+`SourceHigherSobolevFiniteGapDensity.lean` transfers the actual weighted closing
+inverse through the coefficient-preserving Hˢ coordinate equivalence. It also
+proves a local density-transfer principle for continuous identities.
+`SourceHigherSobolevRealGerm.lean` transfers analytic uniqueness of the real
+form to Hˢ, including Banach-valued maps.
+
+`SourceHigherSobolevTraceTransfer.lean` identifies a continuous physical
+candidate from its agreement with the independently defined finite-gap
+Hamiltonian. For `k ≤ 2s`, the literal action sum is the candidate divided by
+`2^k` on all real Hˢ sources. Analytic candidates satisfy the same absolutely
+convergent trace on complex neighborhoods. These are transfer theorems with
+explicit agreement hypotheses, not definitions of physical Hamiltonians by
+spectral sums.
+
+`SourceHigherSobolevFiniteGapLimits.lean` proves that real Hˢ convergence gives
+ℓ¹ convergence of higher-action sequences through level `2s+1`. Along any
+convergent actual finite-gap approximation, the physical Hamiltonian of order
+`k+1` converges to `2^k` times the literal higher-action sum. One approximating
+sequence works simultaneously for all `k ≤ 2s`. This limit statement needs no
+as-yet-unconstructed higher physical functional on general Hˢ sources.
+
+Public examples verify H⁰ density, approximation within open sets at arbitrary
+order, ℓ¹ convergence on H², the fifth physical Hamiltonian's factor `16`,
+physical trace transfer, and Banach-valued analytic uniqueness.
+
+Validation: the full build passes (6245 jobs), all public examples pass,
+and the transitive axiom audit passes for 24224 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: construct the general higher physical Sobolev Hamiltonians from
+their differential polynomials and verify finite-gap agreement, then apply
+the new transfer theorem. The first three physical H¹ traces are already
+proved. The explicit norm-dependent localization and uniform estimates of
+Sections 25–28 and the full dissertation inventory remain open.
+
+## Previous milestone: higher-action convergence at every integer Sobolev order
 
 Higher-action convergence is now proved on the original Hˢ source for every
 nonnegative integer `s`. On a common open complex neighborhood containing all
