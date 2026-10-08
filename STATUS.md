@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: Section 28 real action-gap bound and boundary audit
+## Current milestone: Lemma 28.1 exterior factors and finite products
+
+The exterior single-factor estimate used in Lemma 28.1 is now proved
+for the actual canonical critical points and standard roots. If both
+indices satisfy the quadratic H¹ localization threshold, every point z
+of the target gap satisfies
+`|(λ•_m-z)/w_m(z)| ≤ 1+|γ_m|/|m-n|`.
+This improves the printed coefficient 4/3 to 1. For complex sources the
+critical-offset bound `|λ•_m-τ_m| ≤ |γ_m|` remains an explicit hypothesis;
+for real sources it follows from critical-point membership in the gap.
+The real theorem includes collapsed gaps and arbitrary signed indices.
+
+`GapRootFactorGeometry.lean` proves the endpoint separation, root norm,
+and midpoint estimates. `SourceExteriorCriticalFactorBound.lean` applies
+them to the original spectral objects and proves finite-product bounds
+from norm majorants. `SourceH1ExteriorFactorBound.lean` supplies the H¹
+localization on the whole complex gap and proves the real finite-product
+bound `exp(sqrt(G)*sqrt(R))` from gap-square and reciprocal-distance-square
+budgets G and R. This bound depends on those budgets, not the number of
+factors. It does not assume that the complex factors are close to one.
+
+Public examples check opposite signed indices, complex collapsed gaps,
+factors equal to -1, genuinely complex factors, and the actual H¹ factor
+at indices -2 and 3.
+
+Validation: the full build passed (6377 jobs), all public examples passed,
+and the transitive axiom audit passed for 25273 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: supply the numerical tail budgets needed for the exterior product
+constant 128, control the finite central product, and pass to the actual
+infinite product. The full Lemma 28.1 and the complex-neighborhood version
+of (5.15) remain open. The previously audited boundary-index issue still
+requires the stated distinction between inclusive and exterior indices.
+
+## Previous milestone: Section 28 real action-gap bound and boundary audit
 
 The real-source action-gap estimate underlying (5.15) is proved for all
 finite source exponents p > 1, including collapsed gaps:

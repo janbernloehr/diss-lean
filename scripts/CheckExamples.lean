@@ -36708,3 +36708,53 @@ example : 128*(((10:ℝ)+10+2/5)/(10-10+3/10)) ≤ 8192*(1+21/16) :=
   lemma281_scalar_constant_inclusive 10 10 (21/16) (by norm_num) le_rfl (by norm_num)
 
 end Section28FactorChecks
+
+namespace Section28ExteriorFactorChecks
+open NLS.ZakharovShabat
+
+-- Opposite signed indices have the same separation control as positive ones.
+example (l z : ℂ) (hl : ‖l-(Real.pi:ℂ)*(-2)‖ ≤ Real.pi/5)
+    (hz : ‖z-(Real.pi:ℂ)*3‖ ≤ Real.pi/5) : (15/2:ℝ) ≤ ‖l-z‖ := by
+  have h := localized_endpoint_separation l z (-2) 3 (by decide) (by simpa using hl) (by simpa using hz)
+  norm_num at h
+  exact h
+
+-- Complex collapsed gaps need no division by their length.
+example (l z : ℂ) (m n : ℤ) (hmn : m ≠ n)
+    (hl : ‖l-(Real.pi:ℂ)*m‖ ≤ Real.pi/5)
+    (hz : ‖z-(Real.pi:ℂ)*n‖ ≤ Real.pi/5) : ‖(l-z)/(l-z)‖ ≤ 1 := by
+  have h := localized_critical_root_factor_le l l z (l-z) l m n hmn hl hl hz
+    (by ring) (by
+      have he : l-(l+l)/2=0 := by ring
+      simp only [he,sub_self,norm_zero,le_refl])
+  simpa only [sub_self,norm_zero,zero_div,add_zero] using h
+
+-- Norm majorants handle factors far from one: |-1-1|=2 is irrelevant here.
+example (s : Finset ℤ) : ‖∏ _m ∈ s, (-1:ℂ)‖ ≤ 1 := by
+  have h := norm_finite_product_le_exp_of_norm_le s (fun _ => (-1:ℂ)) (fun _ => (0:ℝ))
+    (by intros; simp)
+  simpa only [Finset.sum_const_zero,Real.exp_zero] using h
+
+-- The square-budget theorem applies to genuinely complex factors.
+example : ‖∏ _m ∈ ({-2,3}:Finset ℤ), (2*Complex.I)‖ ≤ Real.exp 2 := by
+  have h := norm_finite_product_le_exp_sqrt_budgets ({-2,3}:Finset ℤ)
+    (fun _ => 2*Complex.I) (fun _ => (1:ℝ)) (fun _ => (1:ℝ)) 2 2
+    (by intros; norm_num [norm_mul]) (by norm_num) (by norm_num)
+  simpa only [← sq,Real.sq_sqrt (by norm_num : (0:ℝ) ≤ 2)] using h
+
+-- The physical H¹ threshold controls the actual factor between opposite signed gaps.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (hsmall : 8*‖φ‖^2 ≤ 3) (z : ℂ)
+    (hz : z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ.val 3) :
+    ‖(canonicalCriticalPoints (by simp) (by norm_num) (periodOnePotential ψ.val)
+      (periodOnePotential_mem ψ.val) (-2)-z)/sourceStandardRoot (by simp) (by norm_num) ψ.val (-2) z‖ ≤
+      1+‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ.val)
+        (periodOnePotential_mem ψ.val) (-2)‖/5 := by
+  have h := sourceH1_real_exterior_critical_factor_le ψ φ hφ (-2) 3 (by decide)
+    (by norm_num; exact hsmall) (by norm_num; linarith) z hz
+  simpa only [Int.cast_sub,Int.cast_neg,Int.cast_ofNat,
+    show |(-(2:ℝ)-3)|=5 by norm_num] using h
+
+end Section28ExteriorFactorChecks

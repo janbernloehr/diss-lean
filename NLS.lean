@@ -2946,3 +2946,6 @@ import NLS.ZakharovShabat.SourceBirkhoffSobolevEstimates
 import NLS.ZakharovShabat.NormalizedActionFactorBound
 import NLS.ZakharovShabat.SourceRealGapFactorBound
 import NLS.ZakharovShabat.Lemma281BoundaryArithmetic
+import NLS.ZakharovShabat.GapRootFactorGeometry
+import NLS.ZakharovShabat.SourceExteriorCriticalFactorBound
+import NLS.ZakharovShabat.SourceH1ExteriorFactorBound
