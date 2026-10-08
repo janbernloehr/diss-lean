@@ -2927,3 +2927,7 @@ import NLS.ZakharovShabat.SobolevQuarticMassBound
 import NLS.ZakharovShabat.PhysicalH1NormBound
 import NLS.ZakharovShabat.SourceH1ActionSums
 import NLS.ZakharovShabat.SourceH1ConverseActionEstimate
+import NLS.ZakharovShabat.SourceRelativeHigherActions
+import NLS.ZakharovShabat.SourceCentralThirdActionComparison
+import NLS.ZakharovShabat.HigherSobolevH1Realization
+import NLS.ZakharovShabat.SobolevHamiltonianThirdActionBound

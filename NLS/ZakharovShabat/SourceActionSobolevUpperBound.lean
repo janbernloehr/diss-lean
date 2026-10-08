@@ -10,28 +10,13 @@ norm. The constant depends only on m; every real H^m source is admitted.
 noncomputable section
 namespace NLS.ZakharovShabat
 
-private theorem physical_one_realization (m : ℕ) (hm : 1 ≤ m) (a : SobolevSource m) :
-    weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num))
-      (normalizedWeightedPeriodOne _ (sourcePiSobolevCoordinates m 1 hm a)) =
-      periodOnePotential (higherSobolevSourceInclusion m a) := by
-  have hw : SpectralWeight.piSobolev 1 (by norm_num) =
-      SpectralWeight.piSobolev ((1:ℕ):ℝ) (Nat.cast_nonneg 1) := by
-    congr 1
-    norm_num
-  calc
-    _ = weightedBaseToPair (SpectralWeight.piSobolev ((1:ℕ):ℝ) (Nat.cast_nonneg 1))
-        (normalizedWeightedPeriodOne _ (sourcePiSobolevCoordinates m 1 hm a)) :=
-      congrArg (fun w : SpectralWeight => weightedBaseToPair w
-        (normalizedWeightedPeriodOne w (sourcePiSobolevCoordinates m 1 hm a))) hw
-    _ = _ := weightedBaseToPair_sourcePiSobolevCoordinates m 1 hm a
-
 /-- The actual weighted action series converges at every positive integer Sobolev order. -/
 theorem sourceWeightedAction_summable_on_Hm (m : ℕ) (hm : 1 ≤ m)
     (a : realTypeHigherSobolevSourceLocus m) :
     Summable (sourceWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ m) := by
   exact (sourceWeightedAction_summable_and_le_half_mass m hm a
     (normalizedWeightedPeriodOne _ (sourcePiSobolevCoordinates m 1 hm a.val))
-    (physical_one_realization m hm a.val)).1
+    (weightedBaseToPair_sourcePiSobolevOne m hm a.val)).1
 
 /-- Theorem 23.2(i), with a single constant uniform over the entire real H^m space. -/
 theorem exists_sourceWeightedAction_sobolev_upper_bound (m : ℕ) (hm : 1 ≤ m) :
@@ -63,7 +48,7 @@ theorem exists_sourceWeightedAction_sobolev_upper_bound (m : ℕ) (hm : 1 ≤ m)
     nlinarith
   have hsum := sourceWeightedAction_le_mass m hm a
     (normalizedWeightedPeriodOne _ (sourcePiSobolevCoordinates m 1 hm a.val))
-    (physical_one_realization m hm a.val)
+    (weightedBaseToPair_sourcePiSobolevOne m hm a.val)
   rw [norm_normalizedWeightedPeriodOne] at hsum
   have hmul := mul_le_mul_of_nonneg_left hham (by positivity : 0 ≤ (2:ℝ)^m)
   have hbound : (∑' n : ℤ, sourceWeightedActionTerm

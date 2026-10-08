@@ -96,4 +96,20 @@ theorem weightedBaseToPair_sourcePiSobolevCoordinates (m k : ℕ) (hk : k ≤ m)
   rw [weightedBaseToPair_normalizedWeightedPeriodOne,
     normalizedWeightedSource_sourcePiSobolevCoordinates]
 
+/-- The order-one physical realization, normalized for the H¹ action estimates. -/
+theorem weightedBaseToPair_sourcePiSobolevOne (m : ℕ) (hm : 1 ≤ m) (a : SobolevSource m) :
+    weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num))
+      (normalizedWeightedPeriodOne _ (sourcePiSobolevCoordinates m 1 hm a)) =
+      periodOnePotential (higherSobolevSourceInclusion m a) := by
+  have hw : SpectralWeight.piSobolev 1 (by norm_num) =
+      SpectralWeight.piSobolev ((1:ℕ):ℝ) (Nat.cast_nonneg 1) := by
+    congr 1
+    norm_num
+  calc
+    _ = weightedBaseToPair (SpectralWeight.piSobolev ((1:ℕ):ℝ) (Nat.cast_nonneg 1))
+        (normalizedWeightedPeriodOne _ (sourcePiSobolevCoordinates m 1 hm a)) :=
+      congrArg (fun w : SpectralWeight => weightedBaseToPair w
+        (normalizedWeightedPeriodOne w (sourcePiSobolevCoordinates m 1 hm a))) hw
+    _ = _ := weightedBaseToPair_sourcePiSobolevCoordinates m 1 hm a
+
 end NLS.ZakharovShabat

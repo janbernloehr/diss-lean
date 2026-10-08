@@ -36424,3 +36424,56 @@ example (a : realTypeSobolevSourceLocus)
   nlinarith [norm_nonneg (sourcePhysicalH1Coordinates a.val)]
 
 end Lemma271Checks
+
+namespace RelativeHigherActionChecks
+open NLS.ZakharovShabat
+
+-- The fifth action has a gap mean-value point relative to the third action.
+example (ψ : realTypeSourceSubmodule 2) :
+    ∃ ζ ∈ Set.Icc
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) (-1)).re
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) (-1)).re,
+      sourceRealHigherAction (by simp) (by norm_num) ψ (-1) 4 =
+        ζ^2*sourceRealHigherAction (by simp) (by norm_num) ψ (-1) 2 :=
+  sourceRealHigherAction_eq_power_mul_even_level (by simp) (by norm_num) ψ (-1) 1 2
+
+-- A vanishing odd base action forces every higher spectral moment to vanish.
+example (ψ : realTypeSourceSubmodule 2) (n : ℤ) (l k : ℕ)
+    (hzero : sourceRealHigherAction (by simp) (by norm_num) ψ n (2*l) = 0) :
+    sourceRealHigherAction (by simp) (by norm_num) ψ n (2*l+k) = 0 := by
+  obtain ⟨ζ,_,he⟩ := sourceRealHigherAction_eq_power_mul_even_level (by simp) (by norm_num) ψ n l k
+  rw [he,hzero,mul_zero]
+
+-- Zero index is always covered, including arbitrarily small potential norms.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val) :
+    16*sourceRealHigherAction (by simp) (by norm_num) ψ 0 4 ≤
+      (16*Real.pi)^2*(1+‖φ‖^2)^2*(4*sourceRealHigherAction (by simp) (by norm_num) ψ 0 2) := by
+  simpa only [show (4:ℝ)^2=16 by norm_num, show 2*(2-1)=2 from rfl] using
+    sourceRealHigherAction_H1_central_le_third ψ φ hφ 0 (Or.inl rfl) 2 (by decide)
+
+-- At m=1 the central factor is exactly one, even at a collapsed gap.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val) :
+    4*sourceRealHigherAction (by simp) (by norm_num) ψ 0 2 ≤
+      4*sourceRealHigherAction (by simp) (by norm_num) ψ 0 2 := by
+  simpa only [Nat.sub_self, Nat.mul_zero, Nat.mul_one, pow_zero, pow_one, one_mul] using
+    sourceRealHigherAction_H1_central_le_third ψ φ hφ 0 (Or.inl rfl) 1 le_rfl
+
+-- Forgetting higher regularity preserves the exact physical H¹ norm.
+example (a : SobolevSource 3) :
+    ‖sourcePhysicalH1Coordinates (higherSobolevToH1 3 (by decide) a)‖ =
+      ‖sourcePiSobolevCoordinates 3 1 (by decide) a‖ := by
+  rw [sourcePhysicalH1Coordinates_higherSobolevToH1]
+
+-- The summed fifth Hamiltonian bound retains the exact central coefficient.
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (sobolevOddHamiltonian 2 (by decide) a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n)+
+      (16*Real.pi)^2*(1+‖sourcePiSobolevCoordinates 2 1 (by decide) a.val‖^2)^2*
+        (periodOneSobolevHamiltonian (higherSobolevToH1 2 (by decide) a.val)).re :=
+  sobolevOddHamiltonian_le_actions_add_H1_energy 2 (by decide) a
+
+end RelativeHigherActionChecks

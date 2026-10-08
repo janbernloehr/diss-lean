@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: all three claims of Lemma 27.1 are proved for every real
-H¹ source, including the exact 1/3 factor in the converse norm estimate.
-The proof includes the quartic-mass bound, physical Fourier normalization,
-and convergence of the weighted action sums. See [implementation status](STATUS.md).
-The earlier trace-sign discrepancy remains documented in [source discrepancies](SOURCE_ERRATA.md).
+Latest milestone: the spectral comparison and summation step of Lemma 27.2
+is proved, bounding each odd Hamiltonian by weighted actions and a physical
+H¹ energy remainder. The exact action-only constants remain to be verified.
+See [implementation status](STATUS.md). The earlier trace-sign discrepancy
+remains documented in [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

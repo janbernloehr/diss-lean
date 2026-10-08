@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Latest progress: Lemma 27.1, the energy and H¹ converse estimates
+## Latest progress: Lemma 27.2 spectral comparison and summation
+
+The spectral comparison and summation step of Lemma 27.2 is proved.
+For every real H^m source, m ≥ 1, the actual physical odd Hamiltonian satisfies
+`H2m+1 ≤ S_m + (16π)^(2m-2) (1+P²)^(2m-2) H3`, where `S_m` is the
+actual ⟨2nπ⟩^(2m)-weighted absolute action sum and `P` is the exact physical
+H¹ pair norm. A second theorem substitutes `H3 ≤ S_1 + 2 S_0²` from
+Lemma 27.1. This is an intermediate estimate; the full printed action-only
+statement of Lemma 27.2 is not yet claimed.
+
+`SourceRelativeHigherActions.lean` proves a mean-value identity relative
+to any odd base action level, by placing its even spectral power in the
+nonnegative gap measure. It does not divide by an action. Consequently,
+collapsed gaps, gaps meeting zero, and zero increments all remain valid.
+`SourceCentralThirdActionComparison.lean` gives the exact central factor
+relative to level three, explicitly including the zero index at small
+potential norm, and combines it with the exterior comparison.
+
+`HigherSobolevH1Realization.lean` preserves the original coefficients and
+exact physical H¹ coordinates while forgetting higher regularity. It also
+provides the absolutely convergent real third-action trace with factor four.
+`SobolevHamiltonianThirdActionBound.lean` sums the nonnegative majorant and
+substitutes the actual Hamiltonian traces. The order-one weighted realization
+helper is now a reusable public theorem in `SourcePiSobolevCoordinates.lean`.
+
+Public examples cover a negative-index relative mean-value point, a zero
+base action, the central zero index without a size restriction, m=1,
+coefficient-preserving H³-to-H¹ realization, and the summed H₅ bound.
+
+Validation: the full build passed (6359 jobs), all public examples passed,
+and the transitive axiom audit passed for 25155 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: convert the H¹ factor into the exact action-only remainder of Lemma
+27.2. Audit the `(64π)^(2m-2)` constant and treat m=1 separately. A useful
+stronger lattice bound to prove is `⟨2nπ⟩² ≤ (4/3)(1+(2nπ)²)`; this can
+improve the H¹ factor before absorbing constants at m ≥ 2. The PDF page
+116 ends Lemma 27.2 with the weighted ℓ²,¹ norm but the preceding theorem
+proof uses the unweighted ℓ¹ norm; preserve this distinction when deriving
+Theorem 23.2(ii). The Birkhoff-map formulation in Theorem 23.1, Section 28,
+fixed-domain trace scope, and the remaining dissertation inventory remain open.
+
+## Previous milestone: Lemma 27.1, the energy and H¹ converse estimates
 
 All three claims of Lemma 27.1 are proved on the full real H¹ source
 space, with the original physical Hamiltonians and exact Fourier weights:
