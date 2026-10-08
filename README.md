@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma D.6 now has its full relative-product estimate for
-arbitrary bounded reference displacements and ell^p differences, 1 < p < infinity.
-It includes convergence, the full disc suprema, and both the p-power and
-printed linear-norm bounds, uniformly on norm balls. The result holds at
-every later separation cutoff without an extra small-tail assumption.
-Next are D.7 and D.8; the printed spectral height above p=2 remains open.
+Latest milestone: Remark D.7 now has its literal disc-supremum remainder
+estimate for arbitrary bounded reference displacements, 1 < p < infinity.
+The remainder lies in ell^(p/2), which implies the printed sum-space bound,
+including the quasi-normed range below p=2. The bounds are uniform on both
+norm balls and allow vanishing product factors.
+Next are D.8 and D.9; the printed spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Latest progress: the full relative-product estimate in D.6
+## Latest progress: the half-exponent remainder in D.7
+
+Remark D.7, printed page 129, is now proved under the full D.6 hypotheses
+for 1 < p < infinity. The supremum over each selected source disc of the
+relative product minus one minus the signed linear sum belongs to ell^(p/2).
+This is stronger than the printed ell^(p/2) + ell^(1+) conclusion: the
+second component can be zero. The half-exponent result includes 1 < p < 2,
+where the target carries a quasi-norm rather than a Banach norm.
+
+`GlobalSignedProductRemainder.lean` proves the global estimate
+norm(product(1+u)-1-sum(u)) <= exp(sum(norm(u)))/2 times
+(norm(sum(u))^2 + sum(norm(u)^2)). Finite-product induction compares the
+product with exp(sum(u)); absolute summability passes it to the limit.
+No logarithm, half-unit restriction, or nonvanishing factor is required.
+`SquaredAbsoluteRows.lean` applies powered Young to the squared reciprocal
+kernel at the half exponent. `AppendixDReciprocalBounds.lean` supplies
+common signed and squared row bounds on the full open quarter-pi discs.
+`AppendixDQuadraticRemainder.lean` constructs the half-exponent majorant
+and the literal disc-supremum sequence. `SourceRemarkD7.lean` identifies
+the exact two-root-sequence expression and supplies the printed sum-space
+decomposition using the existing CoeffOnePlus space.
+
+Constants are uniform on balls for both displacement norms, independent
+of the root sequences and cutoffs. All conclusions hold already at the
+separation cutoff and at every later cutoff. As in D.6, the selected tail
+is extended by zero on the omitted finite head; no assertion is made
+about unseparated discs. No extra small-tail or simplicity assumption is
+needed. The signed linear expression in D.7 has no D.3 notation ambiguity.
+
+Next: audit D.8's deleted sine-product consequence and D.9's sampled
+full-product estimate. The dissertation remains incomplete: the printed
+spectral height above p=2 is still required and unresolved. The accepted
+Lemma 27.2 correction and optional original m=1 sharpening are unchanged.
+
+Validation: focused checks cover large cancelling factors, the reciprocal
+square row and literal supremum at p=3/2 with target 3/4, norm-ball
+uniformity below exponent two, the printed decomposition at p=3, and
+zero perturbations. The full build passed (6456 jobs), all public examples
+passed, and the axiom audit passed for 25843 NLS declarations. The same
+21 pre-existing warnings remain, with no new warnings. The inventory of
+156 candidate source labels was verified.
+
+## Previous milestone: the full relative-product estimate in D.6
 
 Lemma D.6, printed pages 128-129, now covers arbitrary bounded reference
 and numerator displacements whose difference lies in ell^p, for 1 < p < infinity.

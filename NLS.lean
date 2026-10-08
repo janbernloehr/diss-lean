@@ -3022,3 +3022,8 @@ import NLS.ZakharovShabat.AppendixDRelativeProductRows
 import NLS.ZakharovShabat.AppendixDRelativeProductSup
 import NLS.ZakharovShabat.AppendixDRelativeProductBounds
 import NLS.ZakharovShabat.SourceLemmaD6
+import NLS.ComplexAnalysis.GlobalSignedProductRemainder
+import NLS.Fourier.SquaredAbsoluteRows
+import NLS.ZakharovShabat.AppendixDReciprocalBounds
+import NLS.ZakharovShabat.AppendixDQuadraticRemainder
+import NLS.ZakharovShabat.SourceRemarkD7

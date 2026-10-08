@@ -138,7 +138,7 @@ by absolute summability. The proof keeps the stronger intermediate bound
 `norm(P-exp(A)) <= B*exp(S+B)` before using B<=S^2. The logarithmic remainder
 is bounded by B, and the exponential Taylor estimate retains the exact
 factor 1/2. Finite cancelling-pair examples check that signed cancellation
-is preserved. The D.4–D.6 audit below does not certify the remainder
+is preserved. The D.4–D.7 audit below does not certify the remainder
 of Appendix D.
 
 ### Lemma D.4 and the displaced-root separation assertion
@@ -213,4 +213,34 @@ Independent sampling establishes control of all disc suprema at once.
 Focused examples use a nonzero constant bounded reference displacement,
 check zero perturbations and a vanishing retained numerator, and instantiate
 the two-sequence theorem at p=3 with constants preceding both cutoffs.
-D.7 and later statements still require their own source comparisons.
+The following audit treats D.7; later statements still require their own source comparisons.
+
+### Remark D.7: the signed quadratic product remainder
+
+D.7, printed page 129, is proved for every 1 < p < infinity under the
+arbitrary-reference hypotheses of D.6. The actual disc-supremum sequence
+belongs to ell^(p/2), which is stronger than the printed sum-space result.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Signed linear term | `sourceRemarkD7Remainder`, `sourceRemarkD7Remainder_eq` | Exactly the omitted product minus one minus the sum of (sigma_m-rho_m)/(rho_m-z); no absolute value replaces the signed sum. |
+| Literal supremum over each source disc | `sourceRemarkD7Sup`, `sourceRemarkD7_mem` | The norm supremum on the selected open quarter-pi discs is in ell^(p/2), extended by zero on the omitted finite head. |
+| Printed ell^(p/2) + ell^(1+) assertion | `sourceRemarkD7` | A half-exponent sequence plus one CoeffOnePlus sequence; the latter can be zero. |
+| Uniformity inherited from D.6 | `sourceRemarkD7_uniform` | One bound for both displacement norm balls, chosen before both sequences and cutoffs, valid for every K >= N. |
+| Range 1 < p < 2 | `exists_squaredAbsoluteRows`, `exists_appendixDQuadraticSup` | Powered Young and a quasi-norm addition bound avoid imposing a Banach assumption on p/2. |
+
+The global signed product remainder is bounded by exp(S)/2 times
+(norm(A)^2+B), with A the complex sum, S the absolute sum, and B the
+square sum. The proof compares finite products with exp(A), then passes
+to the unconditional limit. This avoids the source proof's small-factor
+step and handles vanishing numerator factors. The signed-row square and
+the reciprocal-square convolution both lie in ell^(p/2), so no nonzero
+ell^(1+) error is needed. The formula in D.7 explicitly subtracts the
+signed sum and is unaffected by the D.3 notation correction.
+
+The tail restriction is inherited from the D.6 separation hypothesis;
+unseparated head discs may contain poles and are not included in this
+claim. Every later cutoff, including a source-admissible small-tail
+cutoff, is covered. Focused tests exercise p=3/2 and p=3, large cancelling
+factors, zero perturbations, and uniform constants preceding all inputs.
+D.8 and later source statements remain to be audited.

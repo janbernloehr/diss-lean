@@ -37876,3 +37876,76 @@ example : ∃ C L : ℝ, 0 < C ∧ 0 < L ∧
   sourceLemmaD6 (by norm_num) (by simp) (by norm_num) (by norm_num) (by norm_num)
 
 end AppendixDRelativeChecks
+
+section AppendixDQuadraticChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+
+-- Signed cancellation is retained even when both factors exceed the half-unit bound.
+private def cancellingLargeFactors (i : Fin 2) : ℂ := if i = 0 then 2 else -2
+
+example : (∑' i : Fin 2, cancellingLargeFactors i) = 0 := by
+  norm_num [cancellingLargeFactors,tsum_fintype,Fin.sum_univ_two]
+
+example : ‖(∏' i : Fin 2, (1+cancellingLargeFactors i))-1-
+    ∑' i : Fin 2, cancellingLargeFactors i‖ = 4 := by
+  norm_num [cancellingLargeFactors,tprod_fintype,tsum_fintype,Fin.prod_univ_two,Fin.sum_univ_two]
+
+example : ‖(∏' i : Fin 2, (1+cancellingLargeFactors i))-1-
+    ∑' i : Fin 2, cancellingLargeFactors i‖ ≤
+    Real.exp (∑' i : Fin 2, ‖cancellingLargeFactors i‖)/2*
+      (‖∑' i : Fin 2, cancellingLargeFactors i‖^2+
+        ∑' i : Fin 2, ‖cancellingLargeFactors i‖^2) :=
+  norm_tprod_one_add_sub_one_sub_tsum_le_global_signed _ (summable_of_hasFiniteSupport (Set.toFinite _))
+
+private theorem d7HalfAboveOne : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem d7HalfFinite : (3/2:ℝ≥0∞) ≠ ⊤ := ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem d7QuarterEq : (3/2/2:ℝ≥0∞) = 3/4 := by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num
+local instance : Fact ((1:ℝ≥0∞) ≤ 3/2) := ⟨d7HalfAboveOne.le⟩
+
+-- The new square-row bound works at a genuinely non-Banach target exponent.
+example (a : Coeff (3/2)) : ∃ b : Coeff (3/4),
+    (∀ n : ℤ, Summable (fun m : ℤ => ‖a m‖^2*‖NLS.Fourier.hilbertKernel (n-m)‖^2) ∧
+      b n = ((∑' m : ℤ, ‖a m‖^2*‖NLS.Fourier.hilbertKernel (n-m)‖^2 : ℝ):ℂ)) := by
+  rw [← d7QuarterEq]
+  obtain ⟨b,hb,_⟩ := NLS.Fourier.exists_squaredAbsoluteRows d7HalfAboveOne
+    d7HalfFinite a
+  exact ⟨b,hb⟩
+
+-- The literal two-sequence remainder has exponent 3/4 when p=3/2.
+example (r s : Coeff ⊤) (h : Memℓp (fun m : ℤ => s m-r m) (3/2))
+    {c : ℝ} {N : ℕ} (hc : 0 < c) (hs : AppendixDReferenceSeparated r c N) :
+    Memℓp (fun n => ((sourceRemarkD7Sup r s N n):ℂ)) (3/4) := by
+  have hresult := sourceRemarkD7_mem d7HalfAboveOne d7HalfFinite r s h hc hs
+  rw [d7QuarterEq] at hresult
+  exact hresult
+
+-- Constants are selected before the inputs and cutoffs, also below exponent two.
+example : ∃ C : ℝ, 0 < C ∧
+    ∀ (r s : Coeff ⊤) (h : Memℓp (fun m : ℤ => s m-r m) (3/2)) (N K : ℕ),
+    ‖r‖ ≤ 5 → ‖appendixDDisplacementDifference r s h‖ ≤ 7 →
+    AppendixDReferenceSeparated r 2 N → N ≤ K →
+    ∃ b : Coeff ((3/2)/2), (∀ n, b n = ((sourceRemarkD7Sup r s K n):ℂ)) ∧ ‖b‖ ≤ C :=
+  sourceRemarkD7_uniform d7HalfAboveOne d7HalfFinite (by norm_num) (by norm_num) (by norm_num)
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The printed sum-space conclusion uses a single ell-(1+) sequence.
+example (r s : Coeff ⊤) (h : Memℓp (fun m : ℤ => s m-r m) 3)
+    {c : ℝ} {N : ℕ} (hc : 0 < c) (hs : AppendixDReferenceSeparated r c N) :
+    ∃ u : Coeff (3/2), ∃ v : CoeffOnePlus,
+      ∀ n : ℤ, ((sourceRemarkD7Sup r s N n):ℂ) = u n+v.1 n :=
+  sourceRemarkD7 (by norm_num) (by norm_num) r s h hc hs
+
+-- Zero perturbations have zero remainder on every separated disc.
+example (r : Coeff ⊤) {c : ℝ} {N : ℕ} (hc : 0 < c)
+    (hs : AppendixDReferenceSeparated r c N) {n : ℤ} (hn : N ≤ n.natAbs)
+    {z : ℂ} (hz : z ∈ refinedResonantDisk n) :
+    appendixDQuadraticRemainder r (0:Coeff (3/2)) n z = 0 := by
+  rw [appendixDQuadraticRemainder,appendixDRelativeProductError_eq r (0:Coeff (3/2)) hc hs hn hz]
+  simp [appendixDReciprocalTerm]
+
+end AppendixDQuadraticChecks
