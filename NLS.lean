@@ -3034,3 +3034,7 @@ import NLS.ZakharovShabat.SourceLemmaD9
 import NLS.ZakharovShabat.AppendixEInterpolationProducts
 import NLS.ZakharovShabat.AppendixEInterpolationDecay
 import NLS.ZakharovShabat.SourceLemmaE1
+import NLS.ComplexAnalysis.ContinuousRealFormIdentity
+import NLS.ComplexAnalysis.RealComplexification
+import NLS.ComplexAnalysis.SourceLemmaE2
+import NLS.ZakharovShabat.SourceRealTypeIdentity

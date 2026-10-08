@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma E.1's full interpolation formula is proved for
-1 <= p < infinity, including p=1, using the literal circle-supremum
-hypothesis. Both the omitted-index products and the outer symmetric sums
-have proved cutoff limits. The source's diagonal-index typo is documented;
-the product omits that index, as its residue proof requires.
-Next is E.2; the printed spectral height above p=2 remains open.
+Latest milestone: Lemma E.2's real-subspace identity theorem is proved on
+connected open domains meeting the real space, without convexity or a
+prescribed complexification norm. The necessary real-point condition is
+explicit, and a counterexample shows why it cannot be omitted. The actual
+Fourier source version includes every finite Banach exponent.
+Next is E.3; the printed spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -38199,3 +38199,75 @@ example (a : Coeff 3) (ha : Function.Injective (displacedRoots a)) (f : ℂ → 
   sourceLemmaE1 (by simp) a ha f hf hdecay w hw
 
 end AppendixEInterpolationChecks
+
+section AppendixERealIdentityChecks
+open NLS NLS.ComplexAnalysis NLS.ZakharovShabat Set Metric
+open scoped ENNReal Topology
+
+private theorem e2Punctured_connected : IsConnected ({Complex.I}ᶜ : Set ℂ) :=
+  isConnected_compl_singleton_of_one_lt_rank (by simp [Complex.rank_real_complex]) Complex.I
+
+-- The test domain genuinely does not satisfy the former convex-domain hypothesis.
+private theorem e2Punctured_not_convex : ¬ Convex ℝ ({Complex.I}ᶜ : Set ℂ) := by
+  intro h
+  have h0 : (0:ℂ) ∈ ({Complex.I}ᶜ : Set ℂ) := by norm_num [Complex.ext_iff]
+  have h2 : 2*Complex.I ∈ ({Complex.I}ᶜ : Set ℂ) := by norm_num [Complex.ext_iff]
+  have hc := h h0 h2 (show (0:ℝ) ≤ 1/2 by norm_num) (show (0:ℝ) ≤ 1/2 by norm_num)
+    (show (1/2:ℝ)+1/2 = 1 by norm_num)
+  have he : (1/2:ℝ) • (0:ℂ)+(1/2:ℝ) • (2*Complex.I) = Complex.I := by
+    simp only [smul_zero,zero_add,Complex.real_smul]
+    push_cast
+    ring
+  rw [he] at hc
+  simp at hc
+
+-- Real values determine an analytic function even on the connected punctured plane.
+example (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f ({Complex.I}ᶜ))
+    (hreal : ∀ x : ℝ, f (x:ℂ) = 0) : EqOn f 0 ({Complex.I}ᶜ) := by
+  have h0 : scalarRealComplexification.equiv (0,0) ∈ ({Complex.I}ᶜ : Set ℂ) := by
+    norm_num [scalarRealComplexification,Complex.equivRealProdCLM_symm_apply,Complex.ext_iff]
+  apply sourceLemmaE2_of_real_point scalarRealComplexification ({Complex.I}ᶜ)
+    isClosed_singleton.isOpen_compl e2Punctured_connected 0 h0 f hf
+  intro z hz
+  have him : z.im = 0 := by
+    simpa only [scalarRealComplexification_realLocus,Set.mem_ofPred_eq] using hz.2
+  have he : (z.re:ℂ) = z := Complex.ext (by simp) (by simpa using him.symm)
+  change f z = 0
+  rw [← he]
+  exact hreal z.re
+
+-- A real base point need not be the origin; agreement also allows a Banach-valued target.
+example (f g : ℂ → ℂ × ℂ) (hf : AnalyticOnNhd ℂ f (ball 3 1))
+    (hg : AnalyticOnNhd ℂ g (ball 3 1))
+    (he : EqOn f g ((ball 3 1) ∩ {z : ℂ | z.im = 0})) : EqOn f g (ball 3 1) := by
+  have hreal : ((ball 3 1 : Set ℂ) ∩ scalarRealComplexification.realLocus).Nonempty := by
+    refine ⟨3,by simp,?_⟩
+    rw [scalarRealComplexification_realLocus]
+    norm_num
+  apply sourceLemmaE2_eq scalarRealComplexification (ball 3 1) isOpen_ball
+    (isConnected_ball (by norm_num)) hreal f g hf hg
+  simpa only [scalarRealComplexification_realLocus] using he
+
+-- The real-slice hypothesis cannot be dropped even for a ball and a constant entire function.
+example : ∃ U : Set ℂ, IsOpen U ∧ IsConnected U ∧
+    AnalyticOnNhd ℂ (fun _ : ℂ => (1:ℂ)) U ∧
+    EqOn (fun _ : ℂ => (1:ℂ)) 0 (U ∩ scalarRealComplexification.realLocus) ∧
+    ¬ EqOn (fun _ : ℂ => (1:ℂ)) 0 U :=
+  sourceLemmaE2_realSlice_condition_needed
+
+-- The actual Fourier source statement retains p=1 and only needs one real-type point.
+example (U : Set (CoeffPair 1)) (hU : IsOpen U) (hc : IsConnected U)
+    (φ : CoeffPair 1) (hφ : φ ∈ U) (hr : φ ∈ realTypeSourceLocus 1)
+    (f : CoeffPair 1 → ℂ) (hf : AnalyticOnNhd ℂ f U)
+    (hz : EqOn f 0 (U ∩ realTypeSourceLocus 1)) : EqOn f 0 U :=
+  sourceLemmaE2_realType (by simp) U hU hc ⟨φ,hφ,hr⟩ f hf hz
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+example (U : Set (CoeffPair 3)) (hU : IsOpen U) (hc : IsConnected U) (h0 : 0 ∈ U)
+    (f : CoeffPair 3 → ℂ) (hf : AnalyticOnNhd ℂ f U)
+    (hz : EqOn f 0 (U ∩ realTypeSourceLocus 3)) : EqOn f 0 U :=
+  sourceLemmaE2_realType (by simp) U hU hc
+    ⟨0,h0,by simp [realTypeSourceLocus]⟩ f hf hz
+
+end AppendixERealIdentityChecks

@@ -1,5 +1,27 @@
 # Source discrepancies
 
+## Lemma E.2: the neighborhood must meet the real space
+
+Source: dissertation, printed page 131 (visually checked in the PDF).
+E.2 calls U an open connected "neighborhood" without specifying its base
+point. The proof begins near u in U intersect X_R, so that intersection
+must be nonempty. If "neighborhood" means a neighborhood of a real point,
+this is the intended condition, not a change to that interpretation.
+Both applications in the dissertation use neighborhoods of real-type
+potentials and satisfy it.
+
+The reading as an arbitrary nonempty open connected complex domain is
+false. `sourceLemmaE2_realSlice_condition_needed` proves the counterexample
+X_R=R, X=C, U the ball of radius 1/2 about i, and f identically one.
+U is open and connected and its real slice is empty, so f vanishes there
+vacuously, but f(i)=1. Nonemptiness of U alone is insufficient.
+
+`sourceLemmaE2` proves the identity with the necessary nonempty real slice
+explicit. `sourceLemmaE2_of_real_point` gives the equivalent real-neighborhood
+formulation. Neither theorem adds convexity or a contraction condition on
+the real and imaginary projections. The general statement uses continuous
+complexification coordinates and includes the source's Banach-space case.
+
 ## Lemma E.1: the cardinal product must omit the diagonal index
 
 Source: dissertation, printed pages 130-131. The displayed interpolation

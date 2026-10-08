@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: the full interpolation formula in E.1
+## Current milestone: the connected real-subspace identity theorem in E.2
+
+Lemma E.2, printed page 131, now has the real-subspace identity theorem
+on connected open domains meeting the included real space. No convexity
+or prescribed projection norm bound is assumed. The complexification is
+encoded by a continuous real-linear equivalence from the real coordinate
+pair (x,y), compatible with x+i*y. This permits arbitrary compatible
+complexification norms and includes every real Banach space with such a
+complexification. The result also allows complete complex Banach targets.
+
+The source's word "neighborhood" must supply a real point: its proof
+starts at u in U intersect X_R. This requirement is explicit in the
+formal theorem. Without it, the constant-one function on the half-unit
+ball about i is a counterexample; that open connected domain has empty
+real slice. The counterexample is proved in Lean. Both source applications
+are based at real-type potentials and meet the condition. SOURCE_ERRATA.md
+records the distinction between the intended real-neighborhood reading
+and the false arbitrary-open-domain reading.
+
+`ContinuousRealFormIdentity.lean` obtains a complex zero germ using only
+continuity of the real and imaginary projections at zero, then propagates
+it by the analytic identity theorem. `RealComplexification.lean` derives
+those projections from continuous real coordinates and constructs the
+usual scalar complexification. `SourceLemmaE2.lean` supplies the general
+statement, a specified-real-point version, and agreement of two analytic
+functions. `SourceRealTypeIdentity.lean` gives the connected-domain result
+for the actual Fourier source real form, for every finite Banach exponent,
+without requiring the domain to contain all real sources.
+
+Next: audit E.3's uniform Fourier-Lebesgue bound for shifted exponentials.
+The dissertation remains incomplete: the printed spectral height above
+p=2 is still required and unresolved. The accepted Lemma 27.2 correction
+and optional original m=1 sharpening are unchanged.
+
+Validation: focused checks passed for the punctured plane, with an
+explicit proof that this connected test domain is not convex; agreement
+near a nonzero real point with a paired complex target; the empty-real-slice
+counterexample; and the actual Fourier source statement at p=1 and p=3.
+The full build passed (6467 jobs), all public examples passed, and the
+axiom audit passed for 25990 NLS declarations. The same 21 pre-existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified.
+
+## Previous milestone: the full interpolation formula in E.1
 
 Lemma E.1, printed pages 130-131, now has its full interpolation formula
 for every 1 <= p < infinity, including p=1. An arbitrary simple displaced

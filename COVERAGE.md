@@ -272,7 +272,7 @@ majorants, rather than inferred from bounds on fixed sample sequences.
 Focused checks include the value -1 at a negative odd free center, the
 value 1 at zero, invariance under moving only the omitted root, a negative
 omitted-index cutoff, p=3 norm-ball bounds, and p=3/2 local uniformity.
-The following audits treat D.9 and E.1; later statements still require source-level comparison.
+The following audits treat D.9 and E.1-E.2; later statements still require source-level comparison.
 
 ### Lemma D.9: the full sine-product asymptotic
 
@@ -324,5 +324,34 @@ zero: `appendixE_all_index_cutoff_eq_zero` checks the obstruction formally.
 Focused examples include p=1 and p=3, a negative omitted index, and a
 nonreal single-root displacement. The end-to-end sinc example derives
 the literal supremum-decay hypothesis and reconstructs the nonzero value
-one at z=0 when the zero-index root is moved to i. E.2 and E.3 remain
-to be source-audited.
+one at z=0 when the zero-index root is moved to i. E.2 is audited below;
+E.3 remains to be source-audited.
+
+### Lemma E.2: the identity theorem for real subspaces
+
+E.2, printed page 131, is proved for arbitrary continuous complexifications
+on connected open domains that meet the included real space. The necessary
+nonempty-real-slice interpretation of "neighborhood" is explicit. The
+arbitrary-open-domain reading without that condition is refuted; see
+SOURCE_ERRATA.md. Both uses in the dissertation start at real-type potentials.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| An arbitrary real space and its complexification | `RealComplexification` | A continuous real-linear equivalence from R times R to E, with the imaginary axis mapped to i times the included real axis; no isometry or projection-norm restriction. |
+| Local uniqueness from the real slice | `DifferentiableOn.eventually_eq_zero_of_continuous_real_form` | Real and imaginary parts need only be continuous at zero, vanish there, and give the decomposition; no contractivity assumption. |
+| Connected open domain | `sourceLemmaE2` | Vanishing on the nonempty real slice implies vanishing throughout the domain; no convexity assumption. |
+| A neighborhood of a real point | `sourceLemmaE2_of_real_point` | An explicit included real point in the domain supplies the required nonemptiness. |
+| Identity of two analytic maps | `sourceLemmaE2_eq` | Real-slice agreement gives agreement on the domain, also for complete complex Banach targets. |
+| Necessity of the real-slice hypothesis | `sourceLemmaE2_realSlice_condition_needed` | Constant one on the ball of radius 1/2 about i satisfies real-slice vanishing vacuously but does not vanish on the domain. |
+| The actual Fourier source real form | `sourceLemmaE2_realType` | Every finite Banach exponent, including p=1, and a connected open domain containing just one real-type source. |
+
+The coordinate model encodes the usual unique decomposition x+i*y through
+a topological real-linear isomorphism. Continuity replaces the older local
+helper's contractive projections; the analytic identity theorem replaces
+convexity in the global step. The source's Taylor-series proof is thus
+replaced by a complex-line uniqueness argument with the same intended scope.
+
+Focused checks use the complex plane with i removed and formally verify
+that this domain is connected but not convex. They also check a translated
+real base point, a paired complex target, the real-slice obstruction, and
+the actual source spaces at p=1 and p=3. E.3 remains to be audited.
