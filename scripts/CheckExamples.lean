@@ -34578,3 +34578,64 @@ example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1)
   simpa only [hz0,smoothPeriodOneFourierData_apply] using he 0 ⟨by linarith,hT.le⟩ n
 
 end SmoothInitialFourierChecks
+
+namespace LocalClassicalNLSChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set Complex
+open scoped ContDiff ComplexConjugate
+
+-- Product and conjugation use the actual ℓ¹ series, including nonsymmetric complex data.
+example (a b : Coeff 1) (x : ℝ) :
+    periodOneSynthesis (Coeff.convolution a (star (Coeff.reflection b))) x =
+      periodOneSynthesis a x * conj (periodOneSynthesis b x) := by
+  rw [periodOneSynthesis_convolution,periodOneSynthesis_conjugateReflection]
+
+-- Negative original frequencies retain the 2π period-one normalization.
+example (a : WeightedCoeff (SpectralWeight.sobolev 2 (by norm_num)).toWeight 1) :
+    (nlsLinearCLM a).val (-3) = -(36*(Real.pi : ℂ)^2)*Complex.I*a.val (-3) := by
+  rw [nlsLinearCLM_apply,nlsLinearSymbol]
+  push_cast
+  ring
+
+-- The physical derivative is strong in the uniform norm even within the left endpoint.
+example {a b : ℝ} (hab : a ≤ b) {z : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1}
+    (hz : IsFourierNLSTrajectoryOn SpectralWeight.one a b z)
+    (v : ℝ → WeightedCoeff (SpectralWeight.sobolev 2 (by norm_num)).toWeight 1)
+    (hv : ContinuousOn v (Icc a b))
+    (he : ∀ time ∈ Icc a b, ∀ n : ℤ, (v time).val n = (z time).val n) :
+    ∃ velocity : C(AddCircle (2 : ℝ), ℂ),
+      HasDerivWithinAt (fourierNLSPhysicalCurve SpectralWeight.one z) velocity (Icc a b) a ∧
+      ∀ x : ℝ, velocity (x : AddCircle (2 : ℝ)) =
+        scalarClassicalNLSVectorField
+          (fun y : ℝ => fourierNLSPhysicalCurve SpectralWeight.one z a (y : AddCircle (2 : ℝ))) x :=
+  hz.hasDerivWithinAt_physical v hv he a ⟨le_rfl,hab⟩
+
+-- The constructed solution has the literal defocusing PDE sign i u_t = -u_xx + 2u²conj(u).
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    ∃ T > 0, ∃ u : ℝ → C(AddCircle (2 : ℝ), ℂ),
+      (fun x : ℝ => u 0 (x : AddCircle (2 : ℝ))) = f ∧
+      IsClassicalNLSTrajectoryOn (-T) T u ∧
+      ∀ time ∈ Ioo (-T) T, ∀ x : ℝ,
+        Complex.I*deriv u time (x : AddCircle (2 : ℝ)) =
+          -deriv (deriv (fun y : ℝ => u time (y : AddCircle (2 : ℝ)))) x +
+            2*(u time (x : AddCircle (2 : ℝ)))^2*conj (u time (x : AddCircle (2 : ℝ))) := by
+  obtain ⟨T,hT,u,hi,hu⟩ := exists_local_classicalNLS_of_smooth_periodic f hf hp
+  refine ⟨T,hT,u,hi,hu,?_⟩
+  intro time ht x
+  rw [hu.equation time ht x]
+  simp only [scalarClassicalNLSVectorField,classicalNLSCubic]
+  ring_nf
+  simp [Complex.I_sq]
+
+-- Initial equality is also equality in the continuous-function space, not merely almost everywhere.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hp : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    ∃ T > 0, ∃ u : ℝ → C(AddCircle (2 : ℝ), ℂ),
+      u 0 = f ∧ IsClassicalNLSTrajectoryOn (-T) T u ∧ DifferentiableAt ℝ u 0 := by
+  obtain ⟨T,hT,u,hi,hu⟩ := exists_local_classicalNLS_of_smooth_periodic _ hf hp
+  refine ⟨T,hT,u,?_,hu,hu.time_differentiable 0 ⟨by linarith,hT⟩⟩
+  apply ContinuousMap.ext
+  intro x
+  exact Quotient.inductionOn x (fun r => congrFun hi r)
+
+end LocalClassicalNLSChecks

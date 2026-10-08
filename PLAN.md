@@ -1,6 +1,53 @@
 # Implementation plan
 
-## Latest progress: arbitrary smooth physical initial data
+## Latest progress: local classical NLS existence
+
+Arbitrary smooth period-one physical initial functions now have actual local
+classical defocusing NLS solutions. The initial equality is pointwise, time
+differentiation is in the uniform spatial norm, and the equation has the
+normalization `i*u_t = -u_xx + 2*u²*conj(u)`. No weighted membership,
+finite-gap hypothesis, spectral atlas, or supplied classical solution is assumed.
+
+`PeriodOneSynthesisAlgebra.lean` proves that the actual absolutely convergent
+convolution synthesizes to pointwise multiplication and conjugate reflection
+to complex conjugation. It identifies the weighted cubic field with the
+physical cubic term, including its sign and factor two.
+
+`FourierNLSSpatialDerivatives.lean` constructs bounded first- and second-spatial
+derivative multipliers from order-two weighted ℓ¹ to the unit-weight space.
+Their synthesized series are the actual classical derivatives, with the
+original period-one frequency factor `2π`.
+
+`FourierNLSPhysicalEquation.lean` uses a continuous order-two lift to make the
+original Fourier velocity continuous in ℓ¹. Coordinate integration upgrades
+the mode equations to a strong original-variable derivative. Bounded synthesis
+then gives the physical time derivative in uniform norm, including derivatives
+within the closed interval at either endpoint. Its value is exactly the
+classical NLS vector field.
+
+`LocalClassicalNLSExistence.lean` defines an interval version of the existing
+classical trajectory predicate, proves restriction from global trajectories,
+and constructs a local classical solution from every smooth periodic function.
+The physical curve is uniformly continuous in time on the closed interval,
+spatially smooth and period one there, and satisfies the ordinary time equation
+at every interior time. No derivative of the arbitrary exterior extension is
+asserted at the interval endpoints.
+
+Public examples check products with complex conjugation, the original negative
+frequency normalization, strong physical derivatives within the left endpoint,
+the literal defocusing PDE sign, exact initial equality as continuous circle
+functions, and uniform-norm time differentiability at time zero.
+
+Validation: the full build passes (6193 jobs), all public examples pass,
+and the transitive axiom audit passes for 23784 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: conservation and global smooth classical existence. The local
+classical solution is now constructed, but global existence for arbitrary
+smooth data is not yet assembled. The dissertation’s exact all-smooth-sequence
+wellposedness assembly and full inventory also remain.
+
+## Previous milestone: arbitrary smooth physical initial data
 
 Arbitrary smooth period-one physical initial functions now supply the full
 weighted Fourier data required by the common-interval existence theorem.

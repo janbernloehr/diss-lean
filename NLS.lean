@@ -2772,3 +2772,7 @@ import NLS.SequenceSpaces.SobolevAbsoluteSummability
 import NLS.Fourier.SmoothPeriodicCoefficients
 import NLS.Fourier.FourierNLSPhysicalSynthesis
 import NLS.Fourier.SmoothInitialFourierNLS
+import NLS.Fourier.PeriodOneSynthesisAlgebra
+import NLS.Fourier.FourierNLSSpatialDerivatives
+import NLS.Fourier.FourierNLSPhysicalEquation
+import NLS.ZakharovShabat.LocalClassicalNLSExistence
