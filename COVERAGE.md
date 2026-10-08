@@ -4,7 +4,7 @@ This is a focused map of the dissertation's introductory results to the
 current public Lean API. It is not a completeness certificate for every
 chapter or appendix. All paths below are relative to the repository root;
 the introductory declarations are in `NLS.ZakharovShabat`.
-The appendix audit below uses `NLS.Fourier`.
+The appendix audits below use `NLS.Fourier` and `NLS.ComplexAnalysis`.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
@@ -118,3 +118,34 @@ A common translation of any size recovers the ordinary Hilbert operator,
 checking the exact pi normalization. The square-kernel correction also
 extends to p=1 and p=infinity; no such endpoint claim is made for the full
 operator. Only the valid boundedness part of C.1 is used.
+
+## Appendix D.1–D.3 audit
+
+The declarations in this section are in `NLS.ComplexAnalysis`.
+[`SignedProductEstimates.lean`](NLS/ComplexAnalysis/SignedProductEstimates.lean)
+uses A=sum(u), S=sum(norm(u)), B=sum(norm(u)^2), and P=prod(1+u).
+
+| Source statement | Public theorem | Scope |
+| --- | --- | --- |
+| Lemma D.1, p. 126 | `norm_tprod_one_add_sub_one_le_signed_sum` | Exactly `norm(P-1) <= norm(A)*exp(S)+B*exp(S+S^2)`, for absolutely summable complex inputs with norm(u_i)<=1/2. |
+| Remark D.2, p. 126 | `norm_tprod_one_add_sub_one_le_exp_sub_one_le` | Both printed inequalities `norm(P-1) <= exp(S)-1 <= S*exp(S)`; individual coefficients need not be small. |
+| Remark D.3, p. 127, signed-sum interpretation | `norm_tprod_one_add_sub_one_sub_tsum_le_signed_square` | Exactly `norm(P-1-A) <= norm(A)^2*exp(S)/2+B*exp(S+S^2)` with A the complex sum, including the half-unit boundary. |
+| Literal reuse of D.1's A in D.3 | `printed_D3_absolute_linear_term_fails` | An admissible single negative coefficient refutes subtraction of the absolute sum. See `SOURCE_ERRATA.md`; the literal notation is not marked proved. |
+
+The results apply to arbitrary index types and therefore to the printed
+integer sequences. Infinite products are unconditional and are justified
+by absolute summability. The proof keeps the stronger intermediate bound
+`norm(P-exp(A)) <= B*exp(S+B)` before using B<=S^2. The logarithmic remainder
+is bounded by B, and the exponential Taylor estimate retains the exact
+factor 1/2. Finite cancelling-pair examples check that signed cancellation
+is preserved. D.4–D.5 still require comparison with the canonical-product
+APIs; this milestone does not certify the remainder of Appendix D.
+
+Initial D.4–D.5 comparison: `EntireSingleSpectralProducts.lean` constructs
+literal symmetric cutoffs and an entire limit with free value `-2 sin(z)`;
+the source's full product has free value `sin(z)`. The joint full and deleted
+analyticity theorems in `JointSingleSpectralProducts.lean` and
+`JointDeletedSingleSpectralProducts.lean` currently require p>1, whereas
+D.4–D.5 include p=1. Exact normalization, that endpoint, root multiplicities,
+and the locally uniform exterior asymptotic must all be matched before
+claiming coverage of these statements.

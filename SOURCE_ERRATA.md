@@ -1,5 +1,26 @@
 # Source discrepancies
 
+## Remark D.3: the subtracted linear term must be the complex sum
+
+Source: dissertation, printed pages 126–127 (visually checked in the PDF).
+D.1 defines `A = |sum_m a_m|`, `B = sum_m |a_m|^2`, and `S = sum_m |a_m|`.
+D.3 then writes `|prod_m (1+a_m)-1-A| <= |A|^2 exp(S)/2 + B exp(S+S^2)`.
+Literal reuse of D.1's nonnegative A in that subtraction is false.
+
+`ProductEstimateNotation.lean` supplies the admissible integer sequence
+`a_0=-1/4`, with all other terms zero. It is absolutely summable and every
+coefficient has norm at most 1/2. Its product is 3/4, so the literal left
+side is 1/2. The right side is `exp(1/4)/32 + exp(5/16)/16`, less than
+9/32 since both exponentials are less than 3. The theorem
+`printed_D3_absolute_linear_term_fails` verifies the contradiction in Lean.
+
+Taking A to be the **complex sum** in D.3 gives the valid Taylor refinement.
+`norm_tprod_one_add_sub_one_sub_tsum_le_signed_square` in
+`SignedProductEstimates.lean` proves that interpretation, retaining the
+printed 1/2 and `B exp(S+S^2)` constants. The same module proves D.1 with
+its printed absolute sum and both inequalities of D.2. No redefinition is
+silently applied to the literal source statement.
+
 ## Appendix C.1: ordinary Hilbert transform is not an isomorphism
 
 Source: dissertation, Lemma C.1, printed page 125. The operator is

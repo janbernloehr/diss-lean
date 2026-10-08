@@ -3007,3 +3007,6 @@ import NLS.Fourier.HilbertKernelFactorization
 import NLS.Fourier.HilbertNotIsomorphism
 import NLS.Fourier.ModifiedHilbertKernel
 import NLS.Fourier.ModifiedHilbert
+import NLS.ComplexAnalysis.SharpExponentialRemainder
+import NLS.ComplexAnalysis.SignedProductEstimates
+import NLS.ComplexAnalysis.ProductEstimateNotation

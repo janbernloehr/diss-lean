@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma C.2 now holds for two arbitrarily displaced complex
-lattices satisfying the printed separation bound, for every 1<p<infinity.
-The continuous operator has the exact pi-normalized series and an explicit
-bound depending only on the displacement norms, separation and exponent.
-C.1's false isomorphism assertion is not needed. The printed spectral height
-in Theorem 1.1 remains unresolved for p>2.
+Latest milestone: D.1–D.3's sharper infinite-product estimates now retain
+the signed sum and the exact quadratic coefficient 1/2. D.1 and D.2 are
+proved as printed. D.3 is proved with the complex sum in its linear term;
+a formal counterexample identifies the inconsistency in reusing D.1's
+absolute-sum notation. The printed spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

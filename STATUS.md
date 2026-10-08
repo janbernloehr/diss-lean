@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: full two-lattice Hilbert bound in C.2
+## Current milestone: exact signed product estimates in D.1–D.3
+
+The exact product bounds in Lemma D.1 and Remark D.2, printed page 126,
+and the signed-sum interpretation of Remark D.3, page 127, are now proved.
+Write A=sum(u), S=sum(norm(u)), B=sum(norm(u)^2), and P=prod(1+u).
+For an absolutely summable complex sequence with norm(u_i) <= 1/2:
+
+```
+norm(P-1)   <= norm(A)*exp(S) + B*exp(S+S^2)
+norm(P-1-A) <= norm(A)^2/2*exp(S) + B*exp(S+S^2).
+```
+
+`SharpExponentialRemainder.lean` proves the exact quadratic coefficient
+one half for the real and complex exponential remainders, at every size.
+`SignedProductEstimates.lean` controls the logarithmic correction by B,
+then proves the stronger intermediate bound norm(P-exp(A)) <= B*exp(S+B).
+The inequality B <= S^2 gives the printed exponential remainder.
+Both inequalities of D.2, norm(P-1) <= exp(S)-1 <= S*exp(S), are also
+available without any bound on individual coefficients. The results are
+valid on any index type, including the source's integer sequences.
+
+Direct inspection of the PDF confirmed a notation inconsistency. D.1
+sets A=abs(sum(u)), whereas D.3 subtracts A. The valid refinement subtracts
+the complex sum, not its absolute value. `ProductEstimateNotation.lean`
+proves an admissible counterexample to literal reuse of D.1's A: the
+sequence u_0=-1/4, u_n=0 otherwise. Its literal left side is 1/2, while
+the right side is less than 9/32. The signed-sum version retains all
+printed constants. This discrepancy is recorded explicitly rather than
+counted as proof of the unchanged literal notation.
+
+Public examples verify D.1 on integer sequences, exact cancellation in
+D.3, a pair z,-z including the half-unit boundary, D.2 without smallness,
+and the counterexample together with its source admissibility hypotheses.
+
+Validation: the full build passed (6439 jobs), all public examples passed,
+and the axiom audit passed for 25673 NLS declarations. The same 21
+pre-existing warnings remain, with no new warnings. The saved inventory
+of 156 candidate statement labels was independently verified.
+
+Next: audit D.4–D.5 against the canonical-product APIs and continue the
+spectral overview comparisons. The printed height above p=2 remains
+unresolved; the accepted Lemma 27.2 correction and optional original
+m=1 sharpening retain their previous status.
+
+## Previous milestone: full two-lattice Hilbert bound in C.2
 
 Lemma C.2, printed page 126, is now implemented with its full hypotheses:
 two arbitrary bounded complex displacements of the pi-spaced lattice,

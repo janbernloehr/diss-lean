@@ -37617,3 +37617,48 @@ example (s r : Coeff ⊤) (n : ℤ) : modifiedHilbertKernel s r n n = 0 := by
   simp [modifiedHilbertKernel]
 
 end ModifiedHilbertChecks
+
+namespace SignedProductEstimateChecks
+open NLS.ComplexAnalysis
+
+-- The printed D.1 constants apply to an arbitrary absolutely summable integer sequence.
+example (u : ℤ → ℂ) (hu : Summable (fun n => ‖u n‖)) (hh : ∀ n, ‖u n‖ ≤ (1:ℝ)/2) :
+    ‖(∏' n, (1+u n))-1‖ ≤ ‖∑' n, u n‖*Real.exp (∑' n, ‖u n‖)+
+      (∑' n, ‖u n‖^2)*Real.exp ((∑' n, ‖u n‖)+(∑' n, ‖u n‖)^2) :=
+  norm_tprod_one_add_sub_one_le_signed_sum u hu hh
+
+-- Exact cancellation removes the entire signed-sum contribution in D.3.
+example (u : ℤ → ℂ) (hu : Summable (fun n => ‖u n‖)) (hh : ∀ n, ‖u n‖ ≤ (1:ℝ)/2)
+    (hcancel : ∑' n, u n = 0) :
+    ‖(∏' n, (1+u n))-1‖ ≤
+      (∑' n, ‖u n‖^2)*Real.exp ((∑' n, ‖u n‖)+(∑' n, ‖u n‖)^2) := by
+  simpa [hcancel] using norm_tprod_one_add_sub_one_sub_tsum_le_signed_square u hu hh
+
+-- A concrete pair tests signed cancellation, including the allowed half-unit boundary.
+example (z : ℂ) (hz : ‖z‖ ≤ (1:ℝ)/2) :
+    ‖(1+z)*(1-z)-1‖ ≤ (2*‖z‖^2)*Real.exp (2*‖z‖+(2*‖z‖)^2) := by
+  let u : Bool → ℂ := fun b => if b then z else -z
+  have hh : ∀ b, ‖u b‖ ≤ (1:ℝ)/2 := by intro b; cases b <;> simpa [u] using hz
+  have h := norm_tprod_one_add_sub_one_sub_tsum_le_signed_square u ((hasSum_fintype _).summable) hh
+  simpa [u, tsum_fintype, tprod_fintype, two_mul, sub_eq_add_neg] using h
+
+-- D.2 needs no bound on individual coefficients.
+example (u : ℤ → ℂ) (hu : Summable (fun n => ‖u n‖)) :
+    ‖(∏' n, (1+u n))-1‖ ≤ (∑' n, ‖u n‖)*Real.exp (∑' n, ‖u n‖) :=
+  (norm_tprod_one_add_sub_one_le_exp_sub_one_le u hu).1.trans
+    (norm_tprod_one_add_sub_one_le_exp_sub_one_le u hu).2
+
+-- This admissible sequence refutes the absolute-sum interpretation of the linear term.
+example : Summable (fun n => ‖productEstimateNegativeSingleton n‖) ∧
+    (∀ n, ‖productEstimateNegativeSingleton n‖ ≤ (1:ℝ)/2) ∧
+    ¬ (‖(∏' n : ℤ, (1+productEstimateNegativeSingleton n))-1-
+          (‖∑' n : ℤ, productEstimateNegativeSingleton n‖:ℂ)‖ ≤
+      ‖∑' n : ℤ, productEstimateNegativeSingleton n‖^2/2*
+          Real.exp (∑' n : ℤ, ‖productEstimateNegativeSingleton n‖)+
+        (∑' n : ℤ, ‖productEstimateNegativeSingleton n‖^2)*
+          Real.exp ((∑' n : ℤ, ‖productEstimateNegativeSingleton n‖)+
+            (∑' n : ℤ, ‖productEstimateNegativeSingleton n‖)^2)) :=
+  ⟨productEstimateNegativeSingleton_admissible.1,
+    productEstimateNegativeSingleton_admissible.2, printed_D3_absolute_linear_term_fails⟩
+
+end SignedProductEstimateChecks
