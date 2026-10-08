@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: H¹ eigenvector regularity and original spectral localization
+## Current milestone: exact algebraic multiplicities and endpoint occurrence counts
+
+The two localized roots now have the original operator's algebraic
+multiplicities at the exact threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, for linearly growing
+M₁ weights, including the source H¹ weight. The original quarter-spacing
+contour projection has rank two, its enclosed algebraic count is two, and
+the determinant's analytic order equals original algebraic multiplicity at
+every point of the full strip. Repeated roots are included.
+
+`LinearWeightSpectralMultiplicity.lean` keeps the quarter-spacing circle in
+the original resolvent set for every potential in the closed weighted norm
+ball `‖ψ‖ ≤ ‖φ‖`. Its continuous image in the original potential space is
+preconnected and contains both φ and zero. Constancy of the contour rank
+therefore transfers the free algebraic count two to φ. The existing
+root-pair multiplicity theorem then identifies each individual multiplicity,
+without an operator-valued argument principle or a larger frequency cutoff.
+The resulting pair satisfies `PeriodicEndpointPair` and retains the explicit
+radius and factor-six gap bound.
+
+`LinearWeightEndpointCounts.lean` proves that the original canonical periodic
+product has total analytic zero order two on the entire quantitative strip.
+It also shows that every complete endpoint labeling has exactly two slot
+occurrences in that strip, whenever the central block contains its index.
+This statement counts both copies of a collapsed root and supplies the
+finite-count input for canonical signed-index identification.
+
+Public examples cover equality at the exact H¹ threshold, negative indices,
+the free rank-two contour at n=0, multiple complex roots, the original
+canonical periodic product, and endpoint occurrence counts.
+
+Validation: the full build passed (6315 jobs), all public examples passed,
+and the transitive axiom audit passed for 24868 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining for Lemma 25.4: fix the signed indices of the two counted roots
+by comparison with the canonical ordered endpoint sequence at the same
+explicit threshold. The count alone does not yet prove that these are the
+slots labeled n. Preserve the even Fourier-support hypothesis of the
+canonical API. Theorem 25.1 and its dependent higher-action estimates,
+Sections 27–28, fixed-domain trace scope, and the remaining dissertation
+inventory are still open.
+
+## Previous milestone: H¹ eigenvector regularity and original spectral localization
 
 The missing original-spectrum equivalence is now proved for linearly growing
 M₁ weights, including the dissertation's exact π-normalized H¹ weight.

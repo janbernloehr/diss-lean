@@ -1,6 +1,79 @@
 # Implementation plan
 
-## Latest progress: H¹ eigenvector regularity and original spectral localization
+## Latest progress: exact algebraic multiplicities and endpoint occurrence counts
+
+The two localized roots now have the original operator's algebraic
+multiplicities at the exact threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, for linearly growing
+M₁ weights, including the source H¹ weight. The original quarter-spacing
+contour projection has rank two, its enclosed algebraic count is two, and
+the determinant's analytic order equals original algebraic multiplicity at
+every point of the full strip. Repeated roots are included.
+
+`LinearWeightSpectralMultiplicity.lean` keeps the quarter-spacing circle in
+the original resolvent set for every potential in the closed weighted norm
+ball `‖ψ‖ ≤ ‖φ‖`. Its continuous image in the original potential space is
+preconnected and contains both φ and zero. Constancy of the contour rank
+therefore transfers the free algebraic count two to φ. The existing
+root-pair multiplicity theorem then identifies each individual multiplicity,
+without an operator-valued argument principle or a larger frequency cutoff.
+The resulting pair satisfies `PeriodicEndpointPair` and retains the explicit
+radius and factor-six gap bound.
+
+`LinearWeightEndpointCounts.lean` proves that the original canonical periodic
+product has total analytic zero order two on the entire quantitative strip.
+It also shows that every complete endpoint labeling has exactly two slot
+occurrences in that strip, whenever the central block contains its index.
+This statement counts both copies of a collapsed root and supplies the
+finite-count input for canonical signed-index identification.
+
+Public examples cover equality at the exact H¹ threshold, negative indices,
+the free rank-two contour at n=0, multiple complex roots, the original
+canonical periodic product, and endpoint occurrence counts.
+
+Validation: the full build passed (6315 jobs), all public examples passed,
+and the transitive axiom audit passed for 24868 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining for Lemma 25.4: fix the signed indices of the two counted roots
+by comparison with the canonical ordered endpoint sequence at the same
+explicit threshold. The count alone does not yet prove that these are the
+slots labeled n. Preserve the even Fourier-support hypothesis of the
+canonical API. Theorem 25.1 and its dependent higher-action estimates,
+Sections 27–28, fixed-domain trace scope, and the remaining dissertation
+inventory are still open.
+
+Next, use the existing distant canonical pairs as anchors and propagate
+inward along consecutive quantitative strips. `linearWeight_endpoint_slot_count`
+now gives exactly two occurrences in each strip inside a sufficiently large
+central labeling. `canonicalPeriodicSlot_ordered` gives monotonic real parts.
+The localization bound keeps roots strictly inside each strip, so the two
+occurrences of neighboring strips cannot interleave. A finite ordered-slot
+lemma can propagate a known pair at n+1 to n, and its reverse version can
+propagate a known pair at n-1 to n. Use positive and negative distant anchors
+separately, so the argument never crosses a central strip where the quadratic
+threshold may fail. The n=0 case has a threshold that covers every strip.
+
+`exists_eventually_canonicalPeriodicEndpointLabeling_above` supplies a common
+central block containing the target indices and the distant anchors. Its
+self-of-neighborhood specialization gives the needed labeling at the fixed
+potential. The original canonical cutoff still supplies the distant anchored
+pairs. Keep the occurrence count, not merely the number of distinct values,
+throughout the propagation to retain collapsed gaps. Once membership of the
+canonical n-slots is proved, apply the existing spectral localization and gap
+bounds and the new analytic/algebraic multiplicity identity to finish Lemma 25.4.
+
+For the inward step from n+1 to n, let f be the real part of the ordered
+slot sequence. If f(n,1) were at or above the shared strip boundary, slots
+(n,1), (n+1,0), (n+1,1) would give three occurrences in strip n+1, contradicting
+its count two. If f(n,0) were below strip n, every occurrence in strip n
+would have index strictly between (n,0) and (n+1,0), hence only (n,1),
+contradicting its count two. Monotonicity then places both n-slots in strip n.
+Use the strict interior localization of the already anchored pair to exclude
+boundary ties. The reversed argument propagates from n-1 to n on the negative
+tail. These are finite-cardinality arguments on `centralPeriodicSlots N`;
+`Prod.Lex.toLex_le_toLex` and Fin 2 arithmetic describe the intervening slots.
+
+## Previous milestone: H¹ eigenvector regularity and original spectral localization
 
 The missing original-spectrum equivalence is now proved for linearly growing
 M₁ weights, including the dissertation's exact π-normalized H¹ weight.
@@ -44,25 +117,6 @@ endpoint API also requires the even Fourier-support hypothesis. These
 identifications are not asserted by this milestone. Theorem 25.1 and the
 dependent higher-action estimates remain open, as do Sections 27–28,
 fixed-domain trace scope, and the rest of the dissertation inventory.
-
-Next, prove the algebraic count two at the explicit threshold by applying
-`sum_enclosed_multiplicity_eq_on_preconnected` from `DiskMultiplicity.lean`
-to the image under `weightedBaseToPair` of the closed weighted norm ball
-`‖ψ‖ ≤ ‖φ‖` (or the segment from zero to φ). The new spectral equivalence
-and strict determinant boundary comparison give a common resolvent circle
-of radius π/4. The free count is already `sum_enclosed_multiplicity_zero`.
-Then `periodicAlgebraicMultiplicity_eq_rootPair_count` and
-`analyticOrderNatAt_eq_periodicAlgebraicMultiplicity_of_pair` in
-`SpectralRootPair.lean` transfer the count to individual root multiplicities,
-including double roots, without an operator-valued argument principle.
-
-For canonical identification, preserve the exact threshold and even
-Fourier-support hypothesis. `PeriodicEndpointPair` contains the needed
-membership and multiplicity fields. Avoid using `PeriodicResonantPair`
-unmodified: its old `3π/32` localization fields are stronger than the
-new explicit-threshold estimates. The canonical endpoint sequences are
-globally ordered with distant anchors, so a counting argument across the
-consecutive quantitative strips is still needed to fix their signed indices.
 
 ## Previous milestone: Lemma 25.4 determinant localization, multiplicities, and gap
 

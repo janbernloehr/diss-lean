@@ -35902,3 +35902,57 @@ example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWei
   linearWeight_periodicSpectrum_gap_le _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl)
     Real.pi piSobolev_one_le_pi_bracket φ (-2) (by norm_num; exact hn) x y hx hy hsx hsy
 end SobolevSpectralBridgeChecks
+
+namespace QuantitativeMultiplicityChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped Classical
+
+-- The resolvent circle survives at equality in the exact H¹ threshold.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 = 1+|(n:ℝ)|) :
+    Metric.sphere ((Real.pi:ℂ)*n) (Real.pi/4) ⊆
+      resolventSet (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) :=
+  linearWeight_circle_subset_resolvent _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl)
+    Real.pi piSobolev_one_le_pi_bracket φ n hn.le
+
+-- The count is the original algebraic spectral count, at negative frequencies too.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hn : 8*‖φ‖^2 ≤ 3) :
+    (∑ z ∈ enclosedPeriodicSpectrum (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ)
+      ((Real.pi:ℂ)*(-2:ℤ)) (Real.pi/4),
+      periodicAlgebraicMultiplicity (by simp) (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) z) = 2 :=
+  linearWeight_sum_enclosed_multiplicity_two _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl)
+    Real.pi piSobolev_one_le_pi_bracket φ (-2) (by norm_num; exact hn)
+
+-- A collapsed free pair still has a rank-two original contour projection at n=0.
+example : Module.finrank ℂ (resolventCircleIntegral (by simp)
+    (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num))
+      (0 : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2))
+      ((Real.pi:ℂ)*(0:ℤ)) (Real.pi/4)).range = 2 :=
+  linearWeight_contour_rank_two (SpectralWeight.piSobolev 1 (by norm_num))
+    (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl) Real.pi piSobolev_one_le_pi_bracket 0 0 (by simp)
+
+-- Analytic orders agree with algebraic multiplicities even at multiple complex roots.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (C : ℝ)
+    (hu : ∀ k : ℤ, w k ≤ C*(1+|(k:ℝ)|)) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    analyticOrderNatAt (resonantDeterminantExtension (by simp) w φ n) z =
+      periodicAlgebraicMultiplicity (by simp) (weightedBaseToPair w φ) z :=
+  linearWeight_analyticOrder_eq_periodicMultiplicity w hw C hu φ n hn z hz
+
+-- The original canonical periodic product has total zero order two on the whole strip.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    analyticZeroCount (canonicalPeriodicProduct (by simp)
+      (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ)) (resonantStrip n) = 2 :=
+  linearWeight_periodicProduct_strip_zeroCount _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl)
+    Real.pi piSobolev_one_le_pi_bracket φ n hn
+
+-- The endpoint count retains occurrences, not just distinct spectral values.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (C : ℝ)
+    (hu : ∀ k : ℤ, w k ≤ C*(1+|(k:ℝ)|)) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (N : ℕ) (hnN : n.natAbs ≤ N)
+    (ξ η : ℤ → ℂ) (hl : PeriodicEndpointLabeling (by simp) (weightedBaseToPair w φ) N ξ η) :
+    ((centralPeriodicSlots N).filter (fun k => periodicEndpointSlot ξ η k ∈ resonantStrip n)).card = 2 :=
+  linearWeight_endpoint_slot_count w hw C hu φ n hn N hnN ξ η hl
+end QuantitativeMultiplicityChecks

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 25.4's determinant roots are now identified with
-the original periodic spectrum at the exact H¹ quadratic threshold.
-Eigenvector regularity supplies the weighted-domain equivalence, so the
-explicit localization radius and factor-six gap bound apply directly to
-original spectral points. Algebraic spectral multiplicities and canonical
-signed labels remain next. See `STATUS.md`.
+Latest milestone: Lemma 25.4's localized roots now have the original
+algebraic spectral multiplicities at the exact H¹ threshold. The contour
+projection has rank two, and determinant analytic orders agree with original
+multiplicities throughout the strip, including collapsed roots. Complete
+endpoint labelings have exactly two occurrences per quantitative strip.
+Canonical signed-index identification remains next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
