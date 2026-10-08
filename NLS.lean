@@ -2993,3 +2993,8 @@ import NLS.ZakharovShabat.SourcePrimitivePowerCubicLowerBound
 import NLS.ZakharovShabat.SourceCubicActionGapBudget
 import NLS.ZakharovShabat.SourceCubicActionGapContinuity
 import NLS.ZakharovShabat.SourceH1CubicGapEnergyBound
+import NLS.ComplexAnalysis.SecondDerivativeQuadraticBound
+import NLS.SequenceSpaces.HilbertHamiltonianValueBound
+import NLS.SequenceSpaces.PositiveFlatBlocks
+import NLS.SequenceSpaces.HilbertHamiltonianNonextension
+import NLS.ZakharovShabat.SourceHamiltonianNonextension

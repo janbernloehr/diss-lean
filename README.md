@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: a quantitative cubic-moment lower bound now strengthens
-the H¹ energy estimate by a convergent action–gap correction. The correction
-is positive for nonzero real sources and continuous through closed gaps.
+Latest milestone: the actual renormalized Hamiltonian has no continuous
+extension at zero to the nonnegative ℓ^q cone for any finite q > 2. This
+strengthens the C¹ nonextension consequence following Theorem 0.2 and
+retains the identification with the physical H¹ energy correction.
 The accepted corrected Lemma 27.2 uses twice the printed remainder;
-recovering the original m=1 coefficient is optional. The main Sobolev
-estimates are proved independently of that sharpening. Lemma 28.1 and
-Proposition 28.2 hold on a shared connected L²-open neighborhood.
-See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
+recovering its original m=1 coefficient remains optional.
+See [implementation status](STATUS.md), [introductory-result coverage](COVERAGE.md),
+and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

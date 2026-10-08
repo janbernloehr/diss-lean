@@ -37381,3 +37381,48 @@ example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by nor
   ⟨(A.real_cubicActionGapTerm_sum_pos_iff φ).mpr hφ,A.real_renormalizedHamiltonian_le_cubicActionGapBudget φ⟩
 
 end CubicActionGapChecks
+
+namespace HamiltonianNonextensionChecks
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : (4:ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+
+-- The same nonnegative finite blocks have unit Hilbert norm and vanish in ℓ³.
+example (N : ℕ) :
+    ‖Coeff.positiveFlatBlock 2 N‖ = 1 ∧
+      Coeff.positiveFlatBlock 1 N ∈ Coeff.nonnegativeLocus 1 ∧
+      Coeff.exponentInclusion (by norm_num : (1:ℝ≥0∞) ≤ 3)
+        (Coeff.positiveFlatBlock 1 N) = Coeff.positiveFlatBlock 3 N :=
+  ⟨Coeff.norm_positiveFlatBlock_two N,Coeff.positiveFlatBlock_mem_nonnegativeLocus 1 N,
+    Coeff.positiveFlatBlock_exponent (by norm_num) N⟩
+
+example : Filter.Tendsto (Coeff.positiveFlatBlock 3) Filter.atTop (𝓝 0) :=
+  Coeff.tendsto_positiveFlatBlock (by simp) (by norm_num)
+
+-- The one-dimensional bound includes the sharp quadratic model.
+example (f f₁ f₂ : ℝ → ℝ)
+    (hf : ∀ t ∈ Set.Icc (0:ℝ) 1, HasDerivAt f (f₁ t) t)
+    (hf₁ : ∀ t ∈ Set.Icc (0:ℝ) 1, HasDerivAt f₁ (f₂ t) t)
+    (hf₂ : ∀ t ∈ Set.Icc (0:ℝ) 1, f₂ t ≤ -2)
+    (h0 : f 0 = 0) (hd0 : f₁ 0 = 0) : f 1 ≤ -1 := by
+  simpa using ComplexAnalysis.quadratic_upper_of_second_derivative f f₁ f₂ 2 hf hf₁ hf₂ h0 hd0
+
+-- The C¹ obstruction is attached to the same Hamiltonian that recovers the physical H¹ energy.
+open NLS.ZakharovShabat in
+example : ∃ t : (k : ℤ) → CoeffPair 4 → DeletedCoeff 4 k, ∃ H : Coeff 2 → ℂ,
+    (∀ a : realTypeSobolevSourceLocus,
+      H (sourceActionSequence (q := 2) (by simp) (by norm_num) t (sobolevSourceFL4 a.val)) =
+        sourceSobolevPhysicalCorrection a.val) ∧
+    ∀ (G : Coeff 3 → ℂ) (U : Set (Coeff 3)), U ∈ 𝓝 (0:Coeff 3) →
+      (∀ a : Coeff 1, a ∈ Coeff.nonnegativeLocus 1 →
+        Coeff.exponentInclusion (by norm_num : (1:ℝ≥0∞) ≤ 3) a ∈ U →
+        G (Coeff.exponentInclusion (by norm_num : (1:ℝ≥0∞) ≤ 3) a) =
+          H (Coeff.exponentInclusion (by norm_num : (1:ℝ≥0∞) ≤ 2) a)) →
+      ¬ ContDiffWithinAt ℝ 1 G (Coeff.nonnegativeLocus 3) 0 := by
+  obtain ⟨W,A,W₀,B,X,t,D,V,H,hV,h0,hH,hzero,hcone,hrec,hphysical,hbound,hext⟩ :=
+    exists_sourceHamiltonian_no_continuous_extension
+  exact ⟨t,H,hphysical,fun G U hU ha => (hext 3 (by simp) (by norm_num) G U hU ha).2⟩
+
+end HamiltonianNonextensionChecks

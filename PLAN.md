@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Latest progress: quantitative cubic correction for the Lemma 27.2 endpoint
+## Latest progress: optimal finite action exponent for the Hamiltonian
+
+The consequence following Theorem 0.2 is now proved in a stronger form:
+for every finite q > 2, the actual renormalized action Hamiltonian has no
+extension continuous at zero relative to the nonnegative ℓ^q cone, hence
+no C¹ extension there. Agreement is required only on nonnegative summable
+actions in a neighborhood of zero.
+
+`SourceHamiltonianNonextension.lean` constructs the actual analytic ℓ²
+Hamiltonian, retains its source recovery and physical H¹ energy-correction
+identity, and proves the obstruction for every finite q > 2. The argument
+uses the existing quantitative Hessian estimate to obtain
+`Re H*(I) ≤ -‖I‖₂²/2` on a small Hilbert ball. Nonnegative blocks with N+1
+equal coordinates have unit ℓ² norm but ℓ^q norm `(N+1)^(1/q-1/2)` tending
+to zero. Scaling them into that ball contradicts continuity at zero.
+
+The scalar second-derivative estimate, Hilbert value bound, normalized
+blocks, and abstract extension obstruction are separate reusable modules.
+Public examples check exponent compatibility, nonnegativity, Hilbert
+normalization, convergence in ℓ³, the scalar bound, and the C¹ obstruction
+for the same Hamiltonian that recovers the physical H¹ correction.
+
+The introductory-result coverage map is in `COVERAGE.md`. This milestone
+covers finite q > 2; it does not assert an ℓ∞ endpoint or completion of the
+whole dissertation. The accepted corrected Lemma 27.2 remains in force;
+recovering its original unrestricted m=1 coefficient is optional.
+
+Validation: the full build passed (6427 jobs), all public examples passed,
+and the axiom audit passed for 25568 NLS declarations. The build has the
+same 21 pre-existing warnings and no new warnings.
+
+Next: audit and package the relative openness and density of the positive
+action domains in the remarks following Theorems 0.2 and 0.3, using the
+existing nonnegative finite summable approximations.
+
+## Previous milestone: quantitative cubic correction for the Lemma 27.2 endpoint
 
 Accepted correction: use `sobolevOddHamiltonian_le_twice_weighted_action_remainder`
 as the corrected global version of Lemma 27.2 for every m ≥ 1:
