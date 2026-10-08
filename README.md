@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: repeated integration by parts now gives Corollary H.2's
-reduced polynomial formula for every smooth periodic odd Hamiltonian. The
-nonlinear remainder uses derivatives only through order `m-1`; on real-type
-fields the leading term is the squared norm of the mth derivative. Extension
-of this physical formula to H^m is next. See `STATUS.md`.
+Latest milestone: the physical odd Hamiltonian H_(2m+1) is now defined and
+entire analytic on H^m, with proved classical agreement and uniqueness. Its
+higher-action trace holds on all real H^m sources and on a complex H^m
+neighborhood, with absolute convergence and factor `4^m`. Quantitative norm
+and action estimates are next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

@@ -35460,3 +35460,61 @@ example (m : ℕ) (hm : 1 ≤ m) :
           (‖iteratedDeriv m f x‖^2 : ℝ)+evaluate f (fun y => star (f y)) q x :=
   exists_classicalNLSHamiltonian_odd_real_reduced_polynomial m hm
 end OddHamiltonianReductionChecks
+
+namespace SharpOddSobolevChecks
+open Set MeasureTheory NLS NLS.Fourier NLS.DifferentialPolynomial NLS.ZakharovShabat
+
+-- Even the top derivative is a bounded L² map with the original period-one multiplier.
+example (m : ℕ) (a : ScalarSobolev m) (j : ℤ) :
+    hierarchySobolevJetL2 m m le_rfl a j = (2*Complex.I*(Real.pi:ℂ)*j)^m*a.val j :=
+  hierarchySobolevJetL2_apply m m le_rfl a j
+
+-- The polynomial mean is an actual physical integral for arbitrary Sobolev inputs.
+example (s : ℕ) (q : DifferentialPolynomial.Polynomial) (ab : SobolevSource s) :
+    sobolevPolynomialMean s q ab = ∫ x in (0:ℝ)..1,
+      sobolevPolynomialField s q ab (x : AddCircle (2:ℝ)) :=
+  sobolevPolynomialMean_eq_physical_integral s q ab
+
+-- H_(2m+1) is entire analytic already on H^m, rather than requiring H^(2m).
+example (m : ℕ) (hm : 1 ≤ m) (ab : SobolevSource m) :
+    AnalyticAt ℂ (sobolevOddHamiltonian m hm) ab :=
+  analyticAt_sobolevOddHamiltonian m hm ab
+
+-- The leading physical mean remains absolutely convergent at the H^m endpoint.
+example (m : ℕ) (ab : SobolevSource m) :
+    Summable (fun j : ℤ => ‖((2*Complex.I*(Real.pi:ℂ)*(-j))^m*ab.1.val (-j))*
+      ((2*Complex.I*(Real.pi:ℂ)*j)^m*ab.2.val j)‖) :=
+  summable_norm_sobolevOddKinetic m ab
+
+-- The fifth Hamiltonian trace now requires only H², including non-finite-gap sources.
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (∑' j : ℤ, sourceComplexHigherAction (by simp) (by norm_num) j 4
+      (higherSobolevSourceInclusion 2 a.val)) = sobolevOddHamiltonian 2 (by omega) a.val/16 := by
+  convert sobolevOddHamiltonian_higherAction_trace 2 (by omega) a using 1
+  norm_num
+
+-- The seventh Hamiltonian trace holds on all real H³, with the factor 64.
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    (∑' j : ℤ, sourceComplexHigherAction (by simp) (by norm_num) j 6
+      (higherSobolevSourceInclusion 3 a.val)) = sobolevOddHamiltonian 3 (by omega) a.val/64 := by
+  convert sobolevOddHamiltonian_higherAction_trace 3 (by omega) a using 1
+  norm_num
+
+-- The same physical trace is absolutely convergent on an open complex H^m domain.
+example (m : ℕ) (hm : 1 ≤ m) :
+    ∃ U : Set (SobolevSource m), IsOpen U ∧
+      {a | IsRealType (CoeffPair.toMax 2 (higherSobolevSourceInclusion m a))} ⊆ U ∧
+      ∀ b ∈ U,
+        ((∑' j : ℤ, sourceComplexHigherAction (by simp) (by norm_num) j (2*m)
+          (higherSobolevSourceInclusion m b)) = sobolevOddHamiltonian m hm b/4^m) ∧
+        Summable (fun j : ℤ => ‖sourceComplexHigherAction (by simp) (by norm_num) j (2*m)
+          (higherSobolevSourceInclusion m b)‖) :=
+  exists_sobolevOddHamiltonian_trace_domain m hm
+
+-- Any entire physical extension with the same actual finite-gap values is identical everywhere.
+example (m : ℕ) (hm : 1 ≤ m) (H : SobolevSource m → ℂ) (hH : AnalyticOnNhd ℂ H univ)
+    (hf : ∀ a : realTypeHigherSobolevSourceLocus m, ∀ ha : a ∈ sourceHigherSobolevFiniteGapLocus m,
+      H a.val = sourceFiniteGapNLSHamiltonian (by simp) (by norm_num)
+        ⟨higherSobolevSourceInclusion m a.val,a.property⟩ ha (2*m+1)) :
+    H = sobolevOddHamiltonian m hm := sobolevOddHamiltonian_unique m hm H hH hf
+end SharpOddSobolevChecks

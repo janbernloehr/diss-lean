@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Latest progress: smooth odd Hamiltonians with reduced derivatives
+## Latest progress: sharp physical odd Hamiltonians and traces on H^m
+
+Every positive odd Hamiltonian H_(2m+1) now has an independently defined,
+entire complex-analytic physical extension to H^m. On all real H^m sources,
+the actual higher-action sum at index `2m` equals this Hamiltonian divided
+by `4^m`. The same absolutely convergent trace holds on an open complex H^m
+domain containing the entire real locus; the domain may depend on `m`.
+
+`SobolevPhysicalJets.lean` constructs bounded kth derivatives from Hˢ to
+H^(s-k), including the L² endpoint, and continuous representatives for all
+lower derivatives. Their coefficients have the exact period-one multiplier
+`(2π i n)^k`. Actual Fourier integrals prove agreement with smooth classical
+derivatives at every order.
+
+`PeriodOneCircleMean.lean` exposes the bounded physical mean.
+`SobolevDifferentialPolynomial.lean` evaluates finite differential polynomials
+in the Banach algebra of continuous periodic functions. This evaluation and
+its mean are entire analytic. The mean equals the actual unit-interval integral
+on arbitrary Sobolev inputs; for polynomials using only lower jets, smooth
+evaluation agrees with the classical differential polynomial.
+
+`SobolevOddHamiltonian.lean` combines the bounded L² Fourier pairing of the
+mth derivatives with the mean of the reduced polynomial. It proves absolute
+convergence of the leading Fourier sum, entire analyticity, and classical
+smooth agreement. `SobolevOddHamiltonianTrace.lean` identifies actual finite-gap
+physical values and transfers the sharp traces by density and analytic
+uniqueness. It also proves global uniqueness among entire candidates with
+those finite-gap values, ensuring that the extension does not depend on the
+choice of a valid reduced polynomial. Spectral sums do not define the physical
+Hamiltonians.
+
+Public examples check derivative normalization, actual physical integration,
+analyticity and absolute convergence at H^m regularity, H₅ on H² with factor
+16, H₇ on H³ with factor 64, the complex trace domain, and global uniqueness.
+
+Validation: the full build passes (6276 jobs), all public examples pass,
+and the transitive axiom audit passes for 24603 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: relate the leading real-type term to the Sobolev norm and prove
+quantitative bounds for the reduced remainder, then the action estimates of
+Sections 26–27. Explicit norm-dependent spectral localization in Section 25,
+the uniform weighted estimates in Section 28, fixed-domain trace scope, and
+the full dissertation inventory also remain open.
+
+For quantitative estimates, first identify the leading pairing on real-type
+coefficients with the squared L² norm of the mth derivative. Retain the actual
+polynomial support and gradings when estimating the remainder; the current
+uniqueness theorem allows replacing the chosen reduced polynomial by any
+explicitly equivalent physical construction. Section 25's uniform H¹ spectral
+localization is still needed to turn high-action identities into uniform
+action-norm bounds.
+
+## Previous milestone: smooth odd Hamiltonians with reduced derivatives
 
 The integration-by-parts reduction underlying Corollary H.2 is now proved
 at every order. For each positive `m`, one polynomial in derivatives through

@@ -2843,3 +2843,8 @@ import NLS.DifferentialPolynomial.IntegrationByPartsReduction
 import NLS.DifferentialPolynomial.PeriodicEvaluation
 import NLS.DifferentialPolynomial.BalancedJetProduct
 import NLS.ZakharovShabat.NLSOddHamiltonianReducedPolynomial
+import NLS.ZakharovShabat.SobolevPhysicalJets
+import NLS.Fourier.PeriodOneCircleMean
+import NLS.ZakharovShabat.SobolevDifferentialPolynomial
+import NLS.ZakharovShabat.SobolevOddHamiltonian
+import NLS.ZakharovShabat.SobolevOddHamiltonianTrace
