@@ -2920,3 +2920,6 @@ import NLS.ZakharovShabat.SourceH1HigherActionEstimates
 import NLS.ZakharovShabat.SourceWeightedActionMajorant
 import NLS.ZakharovShabat.SourceSobolevActionEstimate
 import NLS.ZakharovShabat.ClassicalHamiltonianSignCheck
+import NLS.ZakharovShabat.SourcePiSobolevCoordinates
+import NLS.ZakharovShabat.SourcePiSobolevNormBounds
+import NLS.ZakharovShabat.SourceActionSobolevUpperBound

@@ -36343,3 +36343,43 @@ example : classicalNLSHamiltonian (fun _ => 1) (fun _ => 1) 5 = 2 :=
   classicalNLSHamiltonian_constant_one_five
 
 end Lemma262Checks
+
+namespace Theorem232UpperChecks
+open NLS.ZakharovShabat
+
+-- Lower-order coordinates retain the physical negative-frequency weight.
+example (a : SobolevSource 3) :
+    (sourcePiSobolevCoordinates 3 2 (by decide) a).fst (-1) =
+      (((1+2*Real.pi)^2 : ℝ) : ℂ)*a.1.val (-1) := by
+  rw [sourcePiSobolevCoordinates_fst]
+  norm_num [SpectralWeight.piSobolev_apply, abs_mul, abs_of_pos Real.pi_pos]
+
+-- At order zero the pair has exactly the original L² Fourier energy.
+example (a : SobolevSource 2) :
+    ‖sourcePiSobolevCoordinates 2 0 (by decide) a‖^2 =
+      ∑' n : ℤ, (‖a.1.val n‖^2+‖a.2.val n‖^2) := by
+  simpa only [Nat.mul_zero, pow_zero, one_mul] using
+    sourcePiSobolevCoordinates_norm_sq 2 0 (by decide) a
+
+-- The third Sobolev order now supplies summability without an extra weighted lift.
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    Summable (sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 3) :=
+  sourceWeightedAction_summable_on_Hm 3 (by decide) a
+
+-- The endpoint m=1 uses one constant for every real H¹ source.
+example : ∃ c : ℝ, 0 ≤ c ∧ ∀ a : realTypeHigherSobolevSourceLocus 1,
+    (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n) ≤
+      c^2*(‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖^2+
+        (1+‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖)^4*
+          ‖higherSobolevSourceInclusion 1 a.val‖^2) := by
+  simpa only [Nat.mul_one] using exists_sourceWeightedAction_sobolev_upper_bound 1 le_rfl
+
+-- The bound also applies at the first order affected by the printed sign discrepancy.
+example : ∃ c : ℝ, 0 ≤ c ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n) ≤
+      c^2*(‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖^2+
+        (1+‖sourcePiSobolevCoordinates 2 1 (by decide) a.val‖)^8*
+          ‖higherSobolevSourceInclusion 2 a.val‖^2) :=
+  exists_sourceWeightedAction_sobolev_upper_bound 2 (by decide)
+
+end Theorem232UpperChecks

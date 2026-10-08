@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Latest progress: Lemma 26.2 with the trace-consistent sign
+## Latest progress: Theorem 23.2(i), the upper Sobolev action bound
+
+Theorem 23.2(i) is proved for every real H^m source, m ≥ 1, with a
+single nonnegative constant c depending only on m:
+`sum ⟨2nπ⟩^(2m) |In| ≤ c² (‖ψ‖H^m² + (1+‖ψ‖H¹)^(4m) ‖ψ‖L²²)`.
+The action series is also proved absolutely summable for every such source.
+
+`SourcePiSobolevCoordinates.lean` constructs exact physical coordinates at
+every integer order k ≤ m. Their coefficients are ⟨2nπ⟩^k times the
+original coefficients, and their squared norm is the sum of both physical
+component energies. Decoding recovers the original source and its exact
+weighted period-one realization. Thus no extra weighted-realization
+hypothesis remains in the theorem.
+
+`SourcePiSobolevNormBounds.lean` controls the physical top derivative by
+the exact H^m pair norm and the scalar mass by the H¹ and L² pair norms.
+These comparisons absorb the L²-only Hamiltonian error into the stated
+H¹ remainder. `SourceActionSobolevUpperBound.lean` combines Lemma 26.3
+at ε=1 with the trace-consistent Lemma 26.2 estimate, then chooses one
+constant before quantifying over all potentials. The sign discrepancy
+recorded in `SOURCE_ERRATA.md` does not alter the resulting upper bound.
+
+Public examples check a negative-frequency coefficient at a lower order,
+the exact zero-order Fourier energy, automatic H³ action summability,
+and uniform bounds at m=1 and m=2. These include the endpoint and the
+first even order affected by the source's trace-sign discrepancy.
+
+Validation: the full build passed (6351 jobs), all public examples passed,
+and the transitive axiom audit passed for 25105 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: Section 27, beginning with Lemma 27.1 and the converse norm bounds
+of Theorem 23.2(ii). Use the established
+`sourceSobolevPhysicalCorrection_nonpos` and physical Hamiltonian identity
+to obtain the energy-action inequality, then prove its H¹ norm corollary. The Birkhoff-map formulation in Theorem 23.1, Section
+28, fixed-domain trace scope, and the remaining dissertation inventory
+remain open.
+
+## Previous milestone: Lemma 26.2 with the trace-consistent sign
 
 The trace-consistent form of Lemma 26.2 is proved, including absolute
 summability of the weighted action series on the real H^m source space
