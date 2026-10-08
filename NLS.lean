@@ -2768,3 +2768,7 @@ import NLS.Fourier.FourierNLSContinuation
 import NLS.Fourier.FourierNLSRegularityContinuation
 import NLS.Fourier.FourierNLSReferenceInterval
 import NLS.Fourier.LocalSmoothFourierNLS
+import NLS.SequenceSpaces.SobolevAbsoluteSummability
+import NLS.Fourier.SmoothPeriodicCoefficients
+import NLS.Fourier.FourierNLSPhysicalSynthesis
+import NLS.Fourier.SmoothInitialFourierNLS

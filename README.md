@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: every initial Sobolev order now persists on the full closed
-interval of a compatible Fourier NLS reference solution. Data in all Sobolev
-weights have one positive local interval supporting every order and spatially
-smooth synthesis. The bridge from arbitrary smooth physical initial data,
-identification of the physical PDE, global classical existence, and the full
-wellposedness assembly remain to be completed. See `STATUS.md`.
+Latest milestone: arbitrary smooth periodic physical functions now produce
+local Fourier NLS solutions on one interval for every Sobolev order. Their
+actual Fourier integrals define the initial data, synthesis recovers the
+original function pointwise, and the physical curve is continuous in uniform
+spatial norm and smooth in space. Physical time-equation identification,
+global classical existence, and the full wellposedness assembly remain.
+See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

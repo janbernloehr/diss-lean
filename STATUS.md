@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: common-interval Sobolev persistence and smooth synthesis
+## Current milestone: arbitrary smooth physical initial data
+
+Arbitrary smooth period-one physical initial functions now supply the full
+weighted Fourier data required by the common-interval existence theorem.
+The local Fourier solution starts from their actual unit-period Fourier
+integrals, and its physical realization recovers the original function
+pointwise. No weighted membership, finite-gap hypothesis, spectral atlas,
+or pre-existing classical solution is a premise.
+
+`SobolevAbsoluteSummability.lean` proves that one additional weighted ℓ²
+order supplies weighted ℓ¹ membership at any real order, including negative
+orders. `SmoothPeriodicCoefficients.lean` uses the actual derivative-coefficient
+identity and the Sobolev graph characterization to induct over integer
+Hilbert orders. Inclusion gives arbitrary real orders, and the extra-derivative
+embedding gives absolute summability. Even period-two modes recover the
+original period-one coefficients without losing the frequency normalization.
+
+`FourierNLSPhysicalSynthesis.lean` realizes every Fourier curve in the uniform
+norm on the ambient circle. Fourier-space continuity gives uniform physical
+continuity; the pullback is period one and its unit-interval Fourier integrals
+recover every original trajectory coefficient.
+
+`SmoothInitialFourierNLS.lean` constructs the canonical unit-weight datum from
+a smooth periodic function, proves all its Sobolev memberships, and proves
+pointwise reconstruction. Its existence theorem selects one positive local
+interval for every Sobolev order and returns a physical curve continuous in
+time in the uniform spatial norm, with spatial smoothness and period one throughout the closed interval.
+
+Public examples cover negative-order absolute summability, fractional Hilbert
+and ℓ¹ orders, normalized constant zero modes, reconstruction at negative
+spatial points, negative physical Fourier modes at negative times, exact
+initial equality as continuous circle functions, and a common interval for
+all orders using only smoothness and periodicity of the physical initial data.
+
+Validation: the full build passes (6189 jobs), all public examples pass,
+and the transitive axiom audit passes for 23728 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: identify the physical time derivative and NLS PDE from the original
+mode equations and continuous higher-weight lifts. Then prove conservation
+and global smooth classical existence. The current physical curve is
+continuous in uniform spatial norm and smooth in space; the actual classical
+time equation and global existence are not yet assembled. The dissertation’s
+exact all-smooth-sequence wellposedness assembly and full inventory also remain.
+
+## Previous milestone: common-interval Sobolev persistence and smooth synthesis
 
 Higher-weight Fourier NLS solutions now exist on the entire closed interval
 of a compatible reference solution. No higher-weight trajectory or norm bound

@@ -34508,3 +34508,73 @@ example (w : SpectralWeight) (u₀ : WeightedCoeff w.toWeight 1)
   simpa only [hz0] using he 0 ⟨by linarith,hT.le⟩ n
 
 end FourierNLSReferenceChecks
+
+
+namespace SmoothInitialFourierChecks
+open NLS NLS.Fourier Set
+open scoped ContDiff
+
+-- The extra-derivative summability lemma also works at negative orders.
+example (a : ℤ → ℂ)
+    (ha : Memℓp (fun n => (Weight.sobolev (-1/2) n : ℂ)*a n) 2) :
+    Memℓp (fun n => (Weight.sobolev (-3/2) n : ℂ)*a n) 1 := by
+  apply WeightedCoeff.memlp_sobolev_one_of_two_succ (-3/2)
+  convert ha using 1
+  norm_num
+
+-- Smooth period-two input need not have period one; all integer modes are retained.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 2) :
+    Memℓp (fun n => (Weight.sobolev (13/2) n : ℂ)*periodTwoCoefficient f n) 2 :=
+  memlp_periodTwoCoefficient_sobolev_two (13/2) f hf hp
+
+-- Fractional weighted absolute summability comes solely from physical smoothness.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    Memℓp (fun n => (Weight.sobolev (17/3) n : ℂ)*periodOneCoefficient f n) 1 :=
+  memlp_periodOneCoefficient_sobolev_one (17/3) (by norm_num) f hf hp
+
+-- The zero Fourier mode of a constant keeps its unit-period normalization.
+example : (smoothPeriodOneFourierData (fun _ : ℝ => (3 : ℂ)) contDiff_const
+    (fun _ => rfl)).val 0 = 3 := by
+  change periodOneCoefficient (fun _ : ℝ => (3 : ℂ)) 0 = 3
+  simp [periodOneCoefficient,fourierCoeffOn,fourierCoeff,AddCircle.liftIoc]
+
+-- Reconstruction from the canonical original coefficients holds at negative spatial points.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    periodOneSynthesis (SpectralWeight.one.toCoeff (smoothPeriodOneFourierData f hf hp)) (-7/3) = f (-7/3) :=
+  congrFun (periodOneSynthesis_smoothPeriodOneFourierData f hf hp) (-7/3)
+
+-- The physical realization has the original negative Fourier modes at negative times.
+example (w : SpectralWeight) (z : ℝ → WeightedCoeff w.toWeight 1) :
+    periodOneCoefficient (fun x : ℝ => fourierNLSPhysicalCurve w z (-2) (x : AddCircle (2 : ℝ))) (-7) =
+      (z (-2)).val (-7) := periodOneCoefficient_fourierNLSPhysicalCurve w z (-2) (-7)
+
+-- Arbitrary smooth circle data give uniform-norm continuous physical curves with exact initial value.
+example (f : C(AddCircle (2 : ℝ), ℂ))
+    (hf : ContDiff ℝ ∞ (fun x : ℝ => f (x : AddCircle (2 : ℝ))))
+    (hp : Function.Periodic (fun x : ℝ => f (x : AddCircle (2 : ℝ))) 1) :
+    ∃ T > 0, ∃ z : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1,
+      IsFourierNLSTrajectoryOn SpectralWeight.one (-T) T z ∧
+      fourierNLSPhysicalCurve SpectralWeight.one z 0 = f ∧
+      ContinuousOn (fourierNLSPhysicalCurve SpectralWeight.one z) (Icc (-T) T) := by
+  obtain ⟨T,hT,z,_,hz,hi,hc,_,_⟩ := exists_local_fourierNLS_of_smooth_periodic _ hf hp
+  refine ⟨T,hT,z,hz,?_,hc⟩
+  apply ContinuousMap.ext
+  intro x
+  exact Quotient.inductionOn x (fun r => congrFun hi r)
+
+-- A single interval supports all Sobolev orders for arbitrary smooth physical data,
+-- without supplying weighted membership, a spectral atlas, or a finite-gap hypothesis.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    ∃ T > 0, ∀ s : ℝ, ∀ hs : 0 ≤ s,
+      ∃ u : ℝ → WeightedCoeff (SpectralWeight.sobolev s hs).toWeight 1,
+        IsFourierNLSTrajectoryOn (SpectralWeight.sobolev s hs) (-T) T u ∧
+        ∀ n : ℤ, (u 0).val n = periodOneCoefficient f n := by
+  obtain ⟨T,hT,z,hz0,_,_,_,hlift,_⟩ := exists_local_fourierNLS_of_smooth_periodic f hf hp
+  refine ⟨T,hT,?_⟩
+  intro s hs
+  obtain ⟨u,hu,he⟩ := hlift s hs
+  refine ⟨u,hu,?_⟩
+  intro n
+  simpa only [hz0,smoothPeriodOneFourierData_apply] using he 0 ⟨by linarith,hT.le⟩ n
+
+end SmoothInitialFourierChecks
