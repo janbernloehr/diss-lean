@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 25.3 now gives the actual diagonal and off-diagonal
-coefficient estimates with constants one and eight, at the explicit
-quadratic threshold from Lemma 25.2. The coefficient functions are analytic
-near every point of the closed strip, for arbitrary complex potentials and
-all M₁ weights. The quantitative eigenvalue localization of Lemma 25.4 is
-next. See `STATUS.md`.
+Latest milestone: the determinant part of Lemma 25.4 now holds at its
+explicit quadratic threshold. The two roots, counted with analytic
+multiplicity, lie in the stated disc of radius less than π/5 and obey the
+factor-six gap estimate. This covers complex potentials and all M₁ weights,
+including the exact H¹ weight. Identification with the canonical periodic
+eigenvalues at that threshold remains next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

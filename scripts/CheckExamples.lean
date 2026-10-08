@@ -35791,3 +35791,58 @@ example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWei
       (resonantStrip n) :=
   (linearWeight_resonantCoefficients _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl) φ n hn).2.1
 end LinearWeightCoefficientChecks
+
+namespace LinearWeightRootChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis
+
+-- The exact threshold includes equality and has a strict margin below π/5.
+example {P : ℝ} (hP : 0 ≤ P) (n : ℤ) (hn : 8*P^2 = 1+|(n:ℝ)|) :
+    quadraticLocalizationRadius P n < Real.pi/5 :=
+  quadraticLocalizationRadius_lt_pi_div_five hP n hn.le
+
+-- Both frequency signs give the same radius.
+example (P : ℝ) : quadraticLocalizationRadius P (-3) = quadraticLocalizationRadius P 3 := by
+  norm_num [quadraticLocalizationRadius]
+
+-- The product retains two component norms before passing to the Hilbert pair bound.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    ‖weightedResonantBPlusExtension (by simp) w φ n z *
+      weightedResonantBMinusExtension (by simp) w φ n z‖ ≤ 2*‖φ‖^2/(w (2*n))^2 :=
+  linearWeight_offDiagonal_product_le w hw φ n hn z hz
+
+-- The source disc, not just the larger Rouché disc, has total analytic multiplicity two.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    analyticZeroCount (resonantDeterminantExtension (by simp) w φ n)
+      (Metric.closedBall ((Real.pi:ℂ)*n) (quadraticLocalizationRadius ‖φ‖ n)) = 2 :=
+  linearWeight_determinant_sourceDisc_zeroCount w hw φ n hn
+
+-- Gap control applies to arbitrary complex strip roots, without a reality assumption.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (x y : ℂ)
+    (hx : x ∈ resonantStrip n) (hy : y ∈ resonantStrip n)
+    (hx0 : resonantDeterminantExtension (by simp) w φ n x = 0)
+    (hy0 : resonantDeterminantExtension (by simp) w φ n y = 0) :
+    ‖x-y‖^2 ≤ 6*resonantBProductSup (by simp) w φ n :=
+  linearWeight_determinant_root_gap_le w hw φ n hn x y hx hy hx0 hy0
+
+-- At zero potential the source radius collapses to zero and the root is repeated.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    analyticOrderNatAt (resonantDeterminantExtension (by simp) w
+      (0 : WeightedCoeffPair w.toWeight 2) 0) 0 = 2 := by
+  simpa using linearWeight_zero_determinant_order w hw 0
+
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (z : ℂ) (hz : z ∈ resonantStrip (-2)) :
+    resonantDeterminantExtension (by simp) w (0 : WeightedCoeffPair w.toWeight 2) (-2) z = 0 ↔
+      z = (Real.pi:ℂ)*(-2:ℤ) :=
+  linearWeight_zero_determinant_root_iff w hw (-2) z hz
+
+-- The exact π-normalized H¹ weight of the dissertation is covered at equality.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 = 1+|(n:ℝ)|) :
+    analyticZeroCount (resonantDeterminantExtension (by simp) (SpectralWeight.piSobolev 1 (by norm_num)) φ n)
+      (resonantStrip n) = 2 :=
+  (linearWeight_determinant_zeroCount _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl)
+    φ n hn.le).2.2.2.2.2.2
+end LinearWeightRootChecks

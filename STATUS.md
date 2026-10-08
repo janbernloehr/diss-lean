@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: Lemma 25.3 and analytic resonant coefficient bounds
+## Current milestone: Lemma 25.4 determinant localization, multiplicities, and gap
+
+The determinant part of Lemma 25.4 now holds at the exact quadratic
+threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, for every complex Hilbert pair and every M₁
+weight. There are exactly two roots counted with analytic multiplicity
+on the full closed strip and on the smaller source disc of radius
+`‖φ‖w²/⟨n⟩ + √2 ‖φ‖w/⟨2n⟩`. This radius is at most 5/8 and strictly
+less than π/5. Any two strip roots satisfy the factor-six estimate
+`|x-y|² ≤ 6 sup_Un |b_n⁺ b_n⁻|`.
+
+`QuadraticLocalizationRadius.lean` proves the numerical radius bounds,
+including equality in the threshold and n=0. `LinearWeightDeterminantBounds.lean`
+combines the leading Fourier coefficients with Lemma 25.3 to bound each
+weighted off-diagonal by twice its component norm. The true Hilbert pair
+identity gives `|b_n⁺ b_n⁻| ≤ 2 ‖φ‖w²/w(2n)²`; the M₁ factorization then
+gives the doubled-bracket bound. Every determinant zero is localized in
+the source disc, and the strict Rouché comparison holds on radius π/4.
+
+`LinearWeightZeroCount.lean` proves the count using actual analytic orders,
+then transfers it to the full strip and the source disc. `LinearWeightRootGap.lean`
+proves finiteness of the actual strip supremum. The diagonal bound 1/8
+and Cauchy's estimate give a derivative bound 1/6 on the refined disc,
+which still suffices for the source factor six without choosing square-root
+branches. `LinearWeightRoots.lean` extracts two roots with repetition,
+identifies their occurrences with analytic orders, and packages localization
+and gap control. At zero potential the center has analytic order exactly two.
+
+Public examples cover equality in the threshold, both frequency signs,
+the smaller source disc, complex root gaps, the repeated free root at n=0,
+and the dissertation's exact π-normalized H¹ weight.
+
+Validation: the full build passed (6309 jobs), all public examples passed,
+and the transitive axiom audit passed for 24837 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining for Lemma 25.4: identify these determinant roots, with their
+multiplicities and signed labels, with the original canonical periodic
+eigenvalues at the same explicit threshold. This milestone does not yet
+claim that spectral identification. Theorem 25.1, Proposition 26.1,
+Lemma 26.2, and Theorem 23.2(i) still depend on it. The converse estimates
+of Section 27, uniform weighted estimates of Section 28, fixed-domain
+trace scope, and the full dissertation inventory also remain open.
+
+## Previous milestone: Lemma 25.3 and analytic resonant coefficient bounds
 
 Lemma 25.3 now has its stated constants on every M₁ weight and every complex
 Hilbert pair. At the explicit threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, the actual common

@@ -2876,3 +2876,8 @@ import NLS.ZakharovShabat.LinearWeightSquareEstimate
 import NLS.ZakharovShabat.LinearWeightDiagonalRow
 import NLS.ZakharovShabat.LinearWeightResonantCoefficients
 import NLS.ZakharovShabat.LinearWeightCoefficientAnalytic
+import NLS.ZakharovShabat.QuadraticLocalizationRadius
+import NLS.ZakharovShabat.LinearWeightDeterminantBounds
+import NLS.ZakharovShabat.LinearWeightZeroCount
+import NLS.ZakharovShabat.LinearWeightRootGap
+import NLS.ZakharovShabat.LinearWeightRoots
