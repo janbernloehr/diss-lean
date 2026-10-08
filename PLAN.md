@@ -1,6 +1,57 @@
 # Implementation plan
 
-## Latest progress: solutions defined by arbitrary smooth approximation
+## Latest progress: analytic wellposedness in the dissertation solution sense
+
+The analytic wellposedness and classical nonextension conclusions of
+Theorem 18.5 and Corollary 22.2 are now connected to the dissertation's
+all-smooth-sequence solution definition in the original source norms.
+
+`AnalyticNLSWellposedness.lean` defines local and global real analytic
+wellposedness. Local wellposedness supplies a common positive time and an
+open neighborhood of every datum, solutions in the approximation sense,
+and an analytic map into the uniform norm space of continuous compact-time
+trajectories. Global wellposedness on an open set supplies one all-time
+solution map with analytic restrictions for every positive time horizon.
+Global wellposedness on the whole source space implies local wellposedness.
+
+`GlobalAnalyticNLSSolutions.lean` proves global analytic wellposedness of
+both ordinary and renormalized NLS for `1 < p ≤ 2`, constructing all spectral
+data internally. Analyticity holds in the full compact trajectory norm,
+not merely after evaluation at each time.
+
+`HigherExponentAnalyticNLSSolutions.lean` constructs a common positive
+interval and an analytic solution map around every higher-exponent source.
+Together with the global low-exponent theorem, this gives local renormalized
+analytic wellposedness for every finite `p > 1`. At higher exponents, an
+actual open neighborhood of zero containing a positive source-norm ball
+supports global approximation solutions and analytic trajectory maps for
+every compact horizon. The public theorems have no supplied spectral atlas,
+Birkhoff image admissibility, or classical trajectory hypotheses.
+
+`SmoothClassicalNLSNonextension.lean` states agreement with the constructed
+ordinary classical solutions of every smooth datum, allowing different input
+and output exponents. Classical uniqueness identifies these constructors
+with the earlier finite-gap solutions. Consequently, for `2 < p ≤ q < ∞`,
+any such extension is discontinuous at every source outside the Hilbert
+locus, on both forward `[0,T]` and symmetric `[-T,T]` intervals with `T > 0`.
+
+Public examples extract the all-time solution map and analytic compact-time
+maps at `p = 2`, a common local interval around an arbitrary `p = 3` datum,
+and a positive ball with unique global renormalized solutions. They also
+check ordinary nonextension with a weaker `p = 4` output norm and the
+symmetric-time form of Theorem 18.5(iv).
+
+Validation: the full build passes (6216 jobs), all public examples pass,
+and the transitive axiom audit passes for 23973 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: perform a theorem-by-theorem inventory against the dissertation,
+including earlier chapters and appendices, and fill any missing results or
+interface gaps. This milestone completes the stated analytic wellposedness
+assembly; it does not certify the entire dissertation as formalized or assert
+global renormalized existence for arbitrary higher-exponent rough data.
+
+## Previous milestone: solutions defined by arbitrary smooth approximation
 
 Arbitrary smooth initial data now determine their global ordinary and
 renormalized classical solutions internally. Convergence of the initial

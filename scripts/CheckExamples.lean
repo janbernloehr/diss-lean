@@ -34893,3 +34893,62 @@ example (φ : realTypeSourceSubmodule 3) (hφ : φ ∈ A.renormalizedTrajectoryD
   A.renormalizedImageFlow_isSolution hs hP hr D (by norm_num) φ 2 (by norm_num) hφ
 end HigherExponent
 end SmoothApproximationSolutionChecks
+
+namespace AnalyticWellposednessChecks
+open Set Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- Analyticity is in the norm of entire continuous trajectories, at every positive horizon.
+example : ∃ F : realTypeSourceSubmodule 2 → ℝ → realTypeSourceSubmodule 2,
+    (∀ φ, IsRenormalizedNLSSolutionOn univ φ (F φ)) ∧
+    ∀ T > 0, ∃ G : realTypeSourceSubmodule 2 → C(Icc (-T) T,realTypeSourceSubmodule 2),
+      AnalyticOnNhd ℝ G univ ∧ ∀ φ (time : Icc (-T) T), G φ time = F φ time.val := by
+  obtain ⟨_,F,hF,hG⟩ := renormalizedNLS_globallyAnalyticallyWellposed
+    (p := 2) (by norm_num) (by norm_num) le_rfl
+  refine ⟨F,fun φ => hF φ (mem_univ _),?_⟩
+  intro T hT
+  obtain ⟨G,ha,he⟩ := hG T hT
+  exact ⟨G,ha,fun φ => he φ (mem_univ _)⟩
+
+-- Ordinary NLS has the same analytic global property at the Hilbert endpoint.
+example : IsGloballyAnalyticallyWellposedOn (fun f : SmoothNLSData => f.ordinarySource 2) univ :=
+  ordinaryNLS_globallyAnalyticallyWellposed (by norm_num) (by norm_num) le_rfl
+
+-- A common positive time and analytic solution map are available around every p=3 source.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ T > 0, ∃ U : Set (realTypeSourceSubmodule 3), IsOpen U ∧ φ ∈ U ∧
+      ∃ F : realTypeSourceSubmodule 3 → ℝ → realTypeSourceSubmodule 3,
+        (∀ ψ ∈ U, IsRenormalizedNLSSolutionOn (Icc (-T) T) ψ (F ψ)) ∧
+        ∃ G : realTypeSourceSubmodule 3 → C(Icc (-T) T,realTypeSourceSubmodule 3),
+          AnalyticOnNhd ℝ G U ∧ ∀ ψ ∈ U, ∀ time : Icc (-T) T, G ψ time = F ψ time.val :=
+  renormalizedNLS_locallyAnalyticallyWellposed (by norm_num) (by norm_num) φ
+
+-- The actual small-data ball has a unique all-time solution for every datum in it.
+example : ∃ r > 0, ∀ φ : realTypeSourceSubmodule 3, ‖φ‖ < r →
+    ∃! γ : ℝ → realTypeSourceSubmodule 3, IsRenormalizedNLSSolutionOn univ φ γ := by
+  obtain ⟨U,_,⟨r,hr,hball⟩,_,F,hF,_⟩ := exists_small_global_analytic_renormalizedNLSSolutions
+    (p := 3) (by norm_num) (by norm_num) (by norm_num)
+  refine ⟨r,hr,?_⟩
+  intro φ hφ
+  have hsol := hF φ (hball (by simpa only [Metric.mem_ball,dist_zero_right] using hφ))
+  refine ⟨F φ,hsol,?_⟩
+  intro γ hγ
+  funext time
+  exact hγ.eqOn_inter hsol (by norm_num) (by norm_num) ⟨mem_univ time,mem_univ time⟩
+
+-- The obstruction still holds with the weaker p=4 output norm on forward times.
+example (φ : realTypeSourceSubmodule 3) (hφ : φ ∉ sourceHilbertLocus (by norm_num : (2 : ℝ≥0∞) ≤ 3))
+    (F : realTypeSourceSubmodule 3 → C(Icc (0 : ℝ) 1,realTypeSourceSubmodule 4))
+    (hF : AgreesWithSmoothClassicalNLS (Icc (0 : ℝ) 1) F) : ¬ ContinuousAt F φ :=
+  smoothClassicalNLS_corollary22_2_iii (by norm_num) (by norm_num) (by norm_num) (by norm_num)
+    1 (by norm_num) φ hφ F hF
+
+-- The theorem's symmetric-time form uses agreement with every constructed smooth solution.
+example (φ : realTypeSourceSubmodule 3) (hφ : φ ∉ sourceHilbertLocus (by norm_num : (2 : ℝ≥0∞) ≤ 3))
+    (F : realTypeSourceSubmodule 3 → C(Icc (-1 : ℝ) 1,realTypeSourceSubmodule 3))
+    (hF : AgreesWithSmoothClassicalNLS (Icc (-1 : ℝ) 1) F) : ¬ ContinuousAt F φ :=
+  smoothClassicalNLS_theorem18_5_iv (by norm_num) (by norm_num) (by norm_num) le_rfl
+    1 (by norm_num) φ hφ F hF
+end AnalyticWellposednessChecks

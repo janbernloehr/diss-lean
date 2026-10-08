@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the constructed classical solutions now satisfy the
-all-smooth-sequence approximation definition. Every real source at `1 < p ≤ 2`
-has a unique global ordinary and renormalized solution in this sense.
-Higher-exponent renormalized paths satisfy the definition on admissible
-compact intervals. The final analytic wellposedness assembly and full
-dissertation inventory remain.
+Latest milestone: the analytic wellposedness and nonextension conclusions of
+Theorem 18.5 and Corollary 22.2 now use the dissertation's all-smooth-sequence
+solution definition. This includes global analytic wellposedness for `1 < p ≤ 2`,
+local and small-data global renormalized wellposedness at higher exponents,
+and ordinary classical nonextension outside the Hilbert locus. A full
+theorem-by-theorem dissertation inventory remains.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

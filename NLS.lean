@@ -2795,3 +2795,7 @@ import NLS.ZakharovShabat.SmoothNLSDataDensity
 import NLS.ZakharovShabat.ConstructedClassicalNLSApproximation
 import NLS.ZakharovShabat.SmoothApproximationSolution
 import NLS.ZakharovShabat.SourceSmoothApproximationSolutions
+import NLS.ZakharovShabat.AnalyticNLSWellposedness
+import NLS.ZakharovShabat.GlobalAnalyticNLSSolutions
+import NLS.ZakharovShabat.HigherExponentAnalyticNLSSolutions
+import NLS.ZakharovShabat.SmoothClassicalNLSNonextension
