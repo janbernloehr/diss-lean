@@ -38,7 +38,7 @@ to the entire printed inequality, whose positive remainder must also be
 accounted for. The literal signed statement of Lemma 26.2 is not claimed
 as a proved result.
 
-## Lemma 27.2: unresolved endpoint in the constant argument
+## Lemma 27.2: corrected global coefficient and optional endpoint sharpening
 
 Source: [dissertation, Lemma 27.2, page 116](https://janbernloehr.de/Download/fs16/diss.pdf#page=116).
 At m=1 the printed conclusion is `H3 ≤ 2S+S²`, where
@@ -58,6 +58,25 @@ with twice the printed remainder. `SourceH1EndpointMomentCriterion.lean`
 reduces the literal endpoint exactly to a lower bound on the real cubic
 moments together with the nonnegative kinetic slack. Thus the missing
 spectral input is explicit; the literal unrestricted assertion remains open.
+
+The new `SourcePrimitivePowerCubicLowerBound.lean` proves
+`π² I_n³ ≤ 4|γ_n|² R_n` from the actual nonnegative gap profile, with R_n
+the cubic moment. Summing gives `H3 ≤ S-M+2M²-D-(π²/3)B`, where
+`B = sum_n I_n³/|γ_n|²` is convergent and D is the kinetic slack.
+The quotient has the continuous expression `|γ_n|⁴|rho_n|³`, including
+closed gaps. This supplies a quantitative sufficient condition using only
+actions and gaps, but does not yet prove the comparison needed for all
+sources. The unrestricted literal endpoint therefore remains open.
+
+The accepted formalization uses the proved corrected global statement
+`sobolevOddHamiltonian_le_twice_weighted_action_remainder`, with twice
+the printed remainder for all m ≥ 1. The exact printed bound remains
+proved for m ≥ 2; the original unrestricted m=1 coefficient is optional
+future work, not a blocker, and has not been disproved.
+The downstream proof of Theorem 23.2(ii) treats m=1 directly through
+Lemma 27.1 with d=√3. Its higher-order branch absorbs its explicit scalar
+constants. Theorem 23.1 and Remark 23.3 inherit that proved bound, so no
+exact downstream theorem needs a changed constant.
 
 For comparison, [the cited paper, Lemma 16, page 27](https://arxiv.org/pdf/1403.1369#page=27)
 uses the different remainder `(64π)^(2m) (1+M)^(2m-1) S^(2m-1)`.

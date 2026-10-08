@@ -37317,3 +37317,67 @@ example (φ : CoeffPair 2) (hφ : IsRealType (CoeffPair.toMax 2 φ)) :
   exists_local_sourceCriticalFactor_tail_le_three φ hφ
 
 end Lemma281Checks
+
+namespace CubicActionGapChecks
+open NLS.ZakharovShabat
+local instance : Fact ((1 : ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+
+-- The scalar coefficient four is attained by constant profiles.
+example (c : ℝ) :
+    (∫ x in (0:ℝ)..Real.pi, Real.sin x*c)^3 =
+      4*(∫ x in (0:ℝ)..Real.pi, Real.sin x*c^3) := by
+  rw [intervalIntegral.integral_mul_const,intervalIntegral.integral_mul_const,
+    integral_sin,Real.cos_zero,Real.cos_pi]
+  ring
+
+-- The cleared lower bound holds at every finite exponent above one, without a nonzero-gap assumption.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    {W : Set (CoeffPair p)} (A : SourcePrimitivePowerAtlas hp hp1 W)
+    (φ : realTypeSourceSubmodule p) (n : ℤ) :
+    Real.pi^2*‖sourceComplexAction hp hp1 n φ.val‖^3 ≤
+      4*‖canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n‖^2*
+        (A.moment n 3 φ.val).re := A.real_action_cube_le_gap_sq_mul_cubic φ n
+
+-- Closed gaps have zero correction and continuity in the ambient complex source space.
+example (φ : realTypeSourceSubmodule 2) (n : ℤ)
+    (hg : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n = 0) :
+    sourceCubicActionGapTerm (by simp) (by norm_num) φ.val n = 0 ∧
+      ContinuousAt (fun ψ => sourceCubicActionGapTerm (by simp) (by norm_num) ψ n) φ.val :=
+  ⟨sourceCubicActionGapTerm_of_collapsed (by simp) (by norm_num) φ.val n hg,
+    continuousAt_sourceCubicActionGapTerm_of_realType (by simp) (by norm_num) φ.val φ.property n⟩
+
+-- An observed open gap contributes strictly positively, for either sign of its index.
+example (φ : realTypeSourceSubmodule 2) (n : ℤ)
+    (hg : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    0 < sourceCubicActionGapTerm (by simp) (by norm_num) φ.val n :=
+  (sourceCubicActionGapTerm_pos_iff (by simp) (by norm_num) φ n).mpr hg
+
+-- The original H¹ source has an absolutely summable quotient sequence, including infinitely many gaps.
+example (a : realTypeSobolevSourceLocus) :
+    Summable (fun n : ℤ =>
+      ‖sourceComplexAction (by simp) (by norm_num) n (sobolevSourceInclusion a.val)‖^3/
+        ‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential (sobolevSourceInclusion a.val))
+          (periodOnePotential_mem (sobolevSourceInclusion a.val)) n‖^2) :=
+  sourceH1CubicActionGapTerm_summable a
+
+-- A single selected gap already yields a rigorous correction to the energy budget.
+example (a : realTypeSobolevSourceLocus) (n : ℤ) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      (∑' k : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 k)-
+      (∑' k : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 k)+
+      2*(∑' k : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 0 k)^2-
+      sourceH1KineticActionSlack a-(Real.pi^2/3)*
+        sourceCubicActionGapTerm (by simp) (by norm_num) (sobolevSourceInclusion a.val) n := by
+  simpa only [Finset.sum_singleton] using sourceH1_energy_le_mass_budget_sub_finite_cubic_gap a {n}
+
+-- For a nonzero FL⁴ source, the full correction is positive and bounds the renormalized Hamiltonian.
+example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W)
+    (φ : realTypeSourceSubmodule 4) (hφ : φ ≠ 0) :
+    0 < (∑' n : ℤ, sourceCubicActionGapTerm (by simp) (by norm_num) φ.val n) ∧
+      (A.renormalizedHamiltonian φ.val).re ≤
+        -(Real.pi^2/3)*(∑' n : ℤ, sourceCubicActionGapTerm (by simp) (by norm_num) φ.val n) :=
+  ⟨(A.real_cubicActionGapTerm_sum_pos_iff φ).mpr hφ,A.real_renormalizedHamiltonian_le_cubicActionGapBudget φ⟩
+
+end CubicActionGapChecks

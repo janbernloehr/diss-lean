@@ -2988,3 +2988,8 @@ import NLS.ZakharovShabat.SourceCriticalFactorSmallTail
 import NLS.ZakharovShabat.SourceGapFactorParameterContinuity
 import NLS.ZakharovShabat.SourceRealGapFactorMargin
 import NLS.ZakharovShabat.SourceLemma28_1
+import NLS.ComplexAnalysis.SineWeightedCubicIntegral
+import NLS.ZakharovShabat.SourcePrimitivePowerCubicLowerBound
+import NLS.ZakharovShabat.SourceCubicActionGapBudget
+import NLS.ZakharovShabat.SourceCubicActionGapContinuity
+import NLS.ZakharovShabat.SourceH1CubicGapEnergyBound

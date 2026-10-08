@@ -1,6 +1,72 @@
 # Implementation status
 
-## Current milestone: Lemma 28.1 on a shared connected L²-open neighborhood
+## Current milestone: quantitative cubic correction for the Lemma 27.2 endpoint
+
+Accepted correction: use `sobolevOddHamiltonian_le_twice_weighted_action_remainder`
+as the corrected global version of Lemma 27.2 for every m ≥ 1:
+
+`H_(2m+1) ≤ S_m + 2(64π)^(2m-2)(1+S_1)^(4m-3) S_1`.
+
+The original coefficient remains unresolved at unrestricted m=1, not
+disproved. Recovering it is optional and is no longer a prerequisite for
+continuing the dissertation formalization. The completed cubic estimates
+below are retained as useful additional results.
+
+Downstream audit: `SourceActionSobolevLowerBound.lean` handles m=1 directly
+with Lemma 27.1 and d=√3. For m ≥ 2 it uses
+`SourceHamiltonianUnweightedRemainder.lean`, whose proof retains the factor
+2 in its scalar energy input and absorbs constants explicitly. Theorem
+23.1 and Remark 23.3 use that proved lower bound. No exact-constant
+downstream statement requires adjustment.
+
+A quantitative lower bound now retains part of the cubic-moment contribution
+that was discarded in the earlier Lemma 27.2 endpoint estimate. For every
+real source at every finite exponent p > 1 and every gap index,
+
+`π² I_n³ ≤ 4 |γ_n|² R_n`,
+
+where I_n is the actual nonnegative action and R_n the real cubic
+primitive-power moment. `SineWeightedCubicIntegral.lean` proves the
+underlying cubic integral inequality directly from a nonnegative polynomial;
+`SourcePrimitivePowerCubicLowerBound.lean` applies it to the actual arcosh
+gap profile. The cleared inequality includes collapsed gaps.
+
+`SourceCubicActionGapBudget.lean` proves that
+`B = sum_n I_n³/|γ_n|²` is summable on the real FL⁴ locus and positive
+exactly for nonzero sources. Each quotient is zero at a collapsed gap.
+It also proves the quantitative renormalized-Hamiltonian bound
+`H* ≤ -(π²/3) B` and compatibility across coefficient-space exponents.
+`SourceCubicActionGapContinuity.lean` identifies each quotient with
+`|γ_n|⁴ |rho_n|³` on the action-factorization domain and proves continuity
+at every real source in the ambient complex topology, including closed gaps.
+
+`SourceH1CubicGapEnergyBound.lean` specializes to the original H¹ sources:
+
+`H3 ≤ S - M + 2M² - D - (π²/3) B`,
+
+where M is total action, S the order-one weighted action sum, and
+D = S - M - K ≥ 0 the kinetic-action slack. Every finite sub-sum of B also
+gives a valid correction. A sufficient condition for the printed endpoint
+is now stated entirely in terms of actions and gaps:
+`2M² - M - S - S² ≤ D + (π²/3) B`.
+This condition is not asserted to hold for every source, and this milestone
+does not complete the unrestricted m=1 statement of Lemma 27.2.
+
+Public examples check the sharp scalar coefficient on constant profiles,
+the general-exponent lower bound, continuity and zero value at collapsed
+gaps, positivity on open gaps, infinite-series convergence at H¹ regularity,
+a correction from one selected gap, and the nonzero-source FL⁴ bound.
+
+Validation: the full build passed (6422 jobs), all public examples passed,
+and the transitive axiom audit passed for 25548 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: resume the main formalization with a current coverage audit of the
+numbered dissertation statements, their hypotheses, and public theorem
+interfaces. Use the accepted corrected Lemma 27.2 above. Further work on
+the original endpoint coefficient is optional, not a completion blocker.
+
+## Previous milestone: Lemma 28.1 on a shared connected L²-open neighborhood
 
 The scalar complex gap-factor bound of Lemma 28.1 is now proved:
 

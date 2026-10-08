@@ -5,11 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the complex gap-factor bound of Lemma 28.1 now holds
-with the printed constant 2048, including the full closed gap and equality
-at the cutoff. It shares a connected L²-open neighborhood of the entire
-real L² locus with Proposition 28.2. The false intermediate ratio in the
-printed proof remains separately documented and is not used.
+Latest milestone: a quantitative cubic-moment lower bound now strengthens
+the H¹ energy estimate by a convergent action–gap correction. The correction
+is positive for nonzero real sources and continuous through closed gaps.
+The accepted corrected Lemma 27.2 uses twice the printed remainder;
+recovering the original m=1 coefficient is optional. The main Sobolev
+estimates are proved independently of that sharpening. Lemma 28.1 and
+Proposition 28.2 hold on a shared connected L²-open neighborhood.
 See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
