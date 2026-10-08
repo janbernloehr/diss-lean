@@ -36758,3 +36758,58 @@ example (ψ : realTypeSourceSubmodule 2)
     show |(-(2:ℝ)-3)|=5 by norm_num] using h
 
 end Section28ExteriorFactorChecks
+
+namespace Section28ProductBudgetChecks
+open NLS.ZakharovShabat
+
+-- The shifted sum also covers a resonant term, whose reciprocal is zero in Lean.
+example (s : Finset ℤ) : (∑ m ∈ s, (1/|((m-(-2):ℤ):ℝ)|)^2) ≤ (7/2:ℝ) :=
+  NLS.ReciprocalSeries.sum_shifted_reciprocal_sq_le s (-2)
+
+-- Passing to the limit permits a zero central product; no division is needed.
+example (f : ℤ → ℂ) (q : ℂ)
+    (hlim : Filter.Tendsto (fun K : ℕ => ∏ m ∈ (Finset.Icc (-(K:ℤ)) (K:ℤ)).erase 2, f m)
+      Filter.atTop (nhds q))
+    (hbound : ∀ s : Finset ℤ, (2:ℤ) ∉ s → (∀ m ∈ s, 1 ≤ m.natAbs) → ‖∏ m ∈ s, f m‖ ≤ 128)
+    (hzero : f 0 = 0) : q = 0 := by
+  have h := NLS.ComplexAnalysis.norm_symmetric_product_limit_le_core f 2 1 (by decide) q 128 hlim hbound
+  have hcentral : (∏ m ∈ Finset.Ioo (-(1:ℤ)) (1:ℤ), f m) = 0 := by
+    have he : Finset.Ioo (-(1:ℤ)) (1:ℤ) = {0} := by decide
+    simp only [he,Finset.prod_singleton,hzero]
+  simp only [Nat.cast_one] at h
+  rw [hcentral,norm_zero,mul_zero] at h
+  exact norm_eq_zero.mp (le_antisymm h (norm_nonneg q))
+
+-- Both boundary indices ±N are retained in the exterior product.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (hsmall : 8*‖φ‖^2 ≤ 3) (z : ℂ)
+    (hz : z ∈ sourcePeriodicSegment (by simp) (by norm_num) ψ.val 3) :
+    ‖∏ m ∈ ({-3,-2,2}:Finset ℤ), (canonicalCriticalPoints (by simp) (by norm_num)
+      (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) m-z)/
+      sourceStandardRoot (by simp) (by norm_num) ψ.val m z‖ ≤ 128 := by
+  apply sourceH1_real_exterior_product_le_128 ψ φ hφ 2 (by norm_num; exact hsmall)
+    _ 3 (by decide) _ (by decide) z hz
+  intro m hm
+  simp only [Finset.mem_insert,Finset.mem_singleton] at hm
+  rcases hm with rfl | rfl | rfl <;> decide
+
+-- At cutoff zero the full gap factor is controlled, including the zero index.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (hsmall : 8*‖φ‖^2 ≤ 1) :
+    ‖sourceRealGapFactor (by simp) (by norm_num) ψ.val ψ.property 0‖ ≤ 128 :=
+  sourceH1_real_gapFactor_le_128_of_small_norm ψ φ hφ hsmall 0
+
+-- The resulting actual action estimate handles negative indices without an open-gap hypothesis.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (hsmall : 8*‖φ‖^2 ≤ 1) :
+    ‖sourceComplexAction (by simp) (by norm_num) (-7) ψ.val‖ ≤
+      96*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ.val (-7)‖^2 :=
+  sourceH1_real_action_le_96_gap_sq_of_small_norm ψ φ hφ hsmall (-7)
+
+end Section28ProductBudgetChecks

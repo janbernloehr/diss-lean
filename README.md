@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 28.1's exterior single-factor bound is proved for
-the actual spectral roots under H¹ localization, with a stronger coefficient.
-Real sources also have a finite-product bound from explicit square-sum
-budgets, including collapsed gaps. The numerical tail budget and full
-infinite-product estimate remain open. Section 28's real action-gap bound
-and Theorems 23.1 and 23.2 were completed earlier. See
-[implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
+Latest milestone: Lemma 28.1's exterior-product bound of 128 is proved
+and transferred to the actual infinite spectral product, leaving a finite
+central product to estimate. For small real H¹ sources the central product is
+empty, giving a complete gap-factor bound and `|I_n| ≤ 96 |γ_n|²` at every
+index, including collapsed gaps. Theorems 23.1 and 23.2 were completed
+earlier. See [implementation status](STATUS.md) and
+[source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

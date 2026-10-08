@@ -2949,3 +2949,8 @@ import NLS.ZakharovShabat.Lemma281BoundaryArithmetic
 import NLS.ZakharovShabat.GapRootFactorGeometry
 import NLS.ZakharovShabat.SourceExteriorCriticalFactorBound
 import NLS.ZakharovShabat.SourceH1ExteriorFactorBound
+import NLS.SequenceSpaces.FiniteReciprocalSquareBudget
+import NLS.ZakharovShabat.M1ExteriorGapBudget
+import NLS.ComplexAnalysis.FiniteCoreProductBound
+import NLS.ZakharovShabat.SourceH1ExteriorProductBound
+import NLS.ZakharovShabat.SourceH1GapProductReduction

@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: Lemma 28.1 exterior factors and finite products
+## Current milestone: Lemma 28.1 exterior bound 128 and infinite-product reduction
+
+Lemma 28.1's numerical exterior-product bound 128 is now proved for
+every finite set of exterior indices. Both boundary indices ±N are
+included, the deleted index is excluded, and cutoff zero is allowed.
+The real-source theorem holds across the entire closed target gap;
+the complex-source theorem retains the explicit critical-offset bound.
+
+`M1ExteriorGapBudget.lean` derives the printed weighted tail budget
+`3*(1+N)²` from Proposition 25.5 and obtains an unweighted finite gap-square
+budget of three. `FiniteReciprocalSquareBudget.lean` supplies the translated
+reciprocal-square budget 7/2. Together with the previous factor estimate,
+these give `exp(sqrt(3)*sqrt(7/2)) ≤ 128` without a cardinality dependence.
+
+`FiniteCoreProductBound.lean` passes a uniform exterior bound through a
+convergent symmetric product while retaining the central product as a
+multiplier. `SourceH1GapProductReduction.lean` applies this to the existing
+actual deleted critical-root quotient, proving
+`|χ_n(z)| ≤ 128 * |product over |m|<N of (λ•_m-z)/w_m(z)|`.
+No central factor is divided out, so a zero central product is covered.
+
+For `8*P² ≤ 1`, choose N=0: the central product is empty. This gives the
+complete uniform gap-factor estimate `‖χ_n‖_gap ≤ 128` and the actual-action
+bound `|I_n| ≤ 96*|γ_n|²` for every signed index, including zero and
+collapsed gaps, on real H¹ sources.
+
+Public examples cover the resonant reciprocal convention, a vanishing
+central product, both cutoff boundary indices, the zero-index gap factor,
+and a negative-index action.
+
+Validation: the full build passed (6383 jobs), all public examples passed,
+and the transitive axiom audit passed for 25293 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: bound the remaining finite central product by the spectral ratio in
+Lemma 28.1, with the previously audited boundary distinction, then derive
+Proposition 28.2 beyond the small-norm regime. The full Lemma 28.1 and the
+required complex-neighborhood version of (5.15) remain open.
+
+## Previous milestone: Lemma 28.1 exterior factors and finite products
 
 The exterior single-factor estimate used in Lemma 28.1 is now proved
 for the actual canonical critical points and standard roots. If both
