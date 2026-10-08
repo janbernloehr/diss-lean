@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma D.4 now includes exact repeated-root multiplicities,
-higher reciprocal pole orders, and its literal product formulas for every
-finite p >= 1. Injective displaced-root sequences have a positive uniform
-separation bound without a smallness assumption. D.5 still needs its
-locally uniform exterior threshold. The printed spectral height above p=2
-remains open.
+Latest milestone: Lemma D.5 now has its locally uniform exterior sine
+asymptotic for every finite p >= 1, including the literal strict supremum
+bound. For each tolerance, one positive spectral threshold works for all
+displacements in a neighborhood of the chosen sequence. D.4 and D.5 now
+have their stated conclusions. The next audit is D.6; the printed spectral
+height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

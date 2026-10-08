@@ -160,14 +160,36 @@ meromorphic orders of full and deleted reciprocals, including higher-order
 poles. The collision examples at p=1 check a double root, removal of one
 occurrence, removal of an unrelated root, and the resulting pole orders.
 
-### Lemma D.5: exterior local uniformity remains pending
+### Lemma D.5: locally uniform exterior sine asymptotic
 
-`AppendixDSineProducts.lean` implements the literal full negative product,
-with free value sin(z), joint analyticity, and exactly the prescribed roots.
-`analyticOrderAt_appendixDProduct` now counts every repeated occurrence.
-The sine quotient tends to one along every escaping path separated from
-the free lattice by a fixed positive radius.
+D.5, printed page 128, is now proved for every finite 1 <= p < infinity:
 
-The remaining D.5 requirement is local uniformity of the exterior threshold
-in the displacement parameter. Convergence for each fixed displacement
-along escaping paths is not counted as this final assertion.
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Literal full product and joint analyticity | `tendsto_appendixDProduct`, `analyticOnNhd_appendixDProduct` | Exact negative product normalization, free value sin(z), including p=1. |
+| Prescribed roots | `appendixDProduct_eq_zero_iff`, `analyticOrderAt_appendixDProduct` | Exactly the prescribed roots, counting repeated indices. |
+| Source exterior Pi | `appendixDExterior_eq_compl_iUnion_ball` | Exactly the complement of the union of open quarter-pi discs, retaining their boundaries. |
+| Uniform exterior error, locally uniform threshold | `exists_local_appendixDProduct_div_sin_bound` | For every a and epsilon > 0, there are eta > 0 and R > 0 that work for every b with norm(b-a) < eta and every exterior z with R <= norm(z). |
+| Literal strict supremum inequality | `exists_local_appendixDProduct_div_sin_sup_lt` | The supremum of the quotient error over Pi and norm(z) > R is strictly below epsilon, with the same R for all b in the selected neighborhood. |
+
+`LocallyUniformExteriorResolvent.lean` upgrades strong exterior decay at a
+fixed input using the common operator bound. `AppendixDExteriorAsymptotic.lean`
+then uses the exponential absolute-product estimate of D.2. The neighborhood
+may depend on the tolerance, as in the source's explicit threshold formulation.
+There is no injectivity or localization restriction on the displaced roots.
+The strict supremum is proved via a uniform half-tolerance bound, rather
+than inferred from individual strict inequalities at each spectral point.
+
+Focused examples check the disc boundary, the zero-displacement quotient,
+and both neighborhood and supremum estimates at p=1, as well as the
+supremum estimate at p=3. D.6 and later Appendix D statements still require
+their own source comparisons; D.5 does not settle the separate printed
+spectral-height bound above p=2.
+
+Initial D.6 comparison: `FreeDiscProductLp.lean` fixes the reference roots
+to pi*m, while `SourceMidpointProductFullDiscSup.lean` uses actual periodic
+midpoints. D.6 allows an arbitrary bounded displacement of the reference
+lattice, an ell^p difference between the root sequences, and separation
+only on the indicated distant discs. Those two special-case APIs alone
+are not coverage of the full statement. The uniform norm dependence and
+the supremum over each source disc still need a source-level comparison.

@@ -37766,3 +37766,45 @@ example (a : Coeff 1) (n : ℤ) (z : ℂ)
   tendsto_inv_appendixDDeletedProduct (by simp) n a z hother
 
 end AppendixDMultiplicityChecks
+
+section AppendixDExteriorChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+
+-- The boundary of an excluded open disc remains in the exterior.
+example : Complex.I*((Real.pi/4:ℝ):ℂ) ∈ appendixDExterior := by
+  intro n
+  have h := Complex.abs_im_le_norm (Complex.I*((Real.pi/4:ℝ):ℂ)-(Real.pi:ℂ)*n)
+  simpa [Complex.mul_im, abs_of_pos (by positivity : 0 < Real.pi/4)] using h
+
+-- The free product gives error zero on the entire exterior.
+example (z : ℂ) (hz : z ∈ appendixDExterior) :
+    ‖appendixDProduct (z,(0:Coeff 1))/Complex.sin z-1‖ = 0 := by
+  rw [appendixDProduct_zero, div_self (sin_ne_zero_of_notMem_freeLattice
+    (notMem_freeLattice_of_separated (by positivity : 0 < Real.pi/4) hz))]
+  simp
+
+-- One threshold works simultaneously for every nearby ell^1 displacement.
+example (a : Coeff 1) (ε : ℝ) (hε : 0 < ε) :
+    ∃ η : ℝ, 0 < η ∧ ∃ R : ℝ, 0 < R ∧
+      ∀ b : Coeff 1, ‖b-a‖ < η → ∀ z ∈ appendixDExterior, R ≤ ‖z‖ →
+        ‖appendixDProduct (z,b)/Complex.sin z-1‖ < ε :=
+  exists_local_appendixDProduct_div_sin_bound (by simp) a hε
+
+-- Strict supremum control retains the source's open norm threshold.
+example (a : Coeff 1) (ε : ℝ) (hε : 0 < ε) :
+    ∃ η : ℝ, 0 < η ∧ ∃ R : ℝ, 0 < R ∧ ∀ b : Coeff 1, ‖b-a‖ < η →
+      sSup ((fun z : ℂ => ‖appendixDProduct (z,b)/Complex.sin z-1‖) ''
+        (appendixDExterior ∩ {z | R < ‖z‖})) < ε :=
+  exists_local_appendixDProduct_div_sin_sup_lt (by simp) a hε
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The same product asymptotic holds above the Hilbert exponent.
+example (a : Coeff 3) (ε : ℝ) (hε : 0 < ε) :
+    ∃ η : ℝ, 0 < η ∧ ∃ R : ℝ, 0 < R ∧ ∀ b : Coeff 3, ‖b-a‖ < η →
+      sSup ((fun z : ℂ => ‖appendixDProduct (z,b)/Complex.sin z-1‖) ''
+        (appendixDExterior ∩ {z | R < ‖z‖})) < ε :=
+  exists_local_appendixDProduct_div_sin_sup_lt (by simp) a hε
+
+end AppendixDExteriorChecks

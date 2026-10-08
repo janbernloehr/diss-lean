@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Latest progress: exact root multiplicities and Lemma D.4
+## Latest progress: the locally uniform sine asymptotic in D.5
+
+Lemma D.5, printed page 128, now has its remaining exterior asymptotic
+with a threshold that can be chosen locally uniformly in the displacement.
+For every finite p >= 1, every a in ell^p, and every epsilon > 0, there are
+eta > 0 and R > 0 such that the same R works for all b with norm(b-a) < eta.
+The error f_b(z)/sin(z)-1 is uniformly small on the full source exterior as
+norm(z) grows. The literal supremum over exterior points with norm(z) > R
+is strictly less than epsilon. No injectivity or root-localization
+hypothesis is imposed on a or b.
+
+`LocallyUniformExteriorResolvent.lean` combines the existing strong exterior
+decay at a fixed input with a common operator bound outside the free discs.
+A small perturbation of the input then shares one spectral threshold.
+`AppendixDExteriorAsymptotic.lean` identifies the source exterior with the
+complement of the union of open quarter-pi discs, rewrites the sine quotient
+as its relative product, and bounds the error by exp(norm(resolvent b))-1.
+The logarithmic tolerance transfers the neighborhood estimate to the
+product. Applying the bound at half the requested tolerance gives the
+strict supremum inequality printed in D.5.
+
+Together with the preceding normalization, joint analyticity, and exact
+root-multiplicity results, this completes the stated conclusions of D.5.
+It does not certify the remainder of Appendix D or the dissertation.
+Next: audit D.6's uniform ell^p estimate for omitted product ratios.
+The printed spectral height above p=2 remains unresolved. The accepted
+Lemma 27.2 correction and optional original m=1 sharpening are unchanged.
+
+Validation: the full build passed (6447 jobs), all public examples passed,
+and the axiom audit passed for 25769 NLS declarations. The same 21
+pre-existing warnings remain, with no new warnings. Focused examples check
+a free-disc boundary, the zero-displacement quotient, neighborhood and
+strict supremum bounds at p=1, and the supremum bound at p=3. The inventory
+of 156 candidate source labels was independently verified.
+
+## Previous milestone: exact root multiplicities and Lemma D.4
 
 Lemma D.4, printed page 127, now has all its stated conclusions for every
 finite 1 <= p < infinity. The previous milestone supplied literal symmetric

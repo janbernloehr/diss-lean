@@ -3016,3 +3016,5 @@ import NLS.ZakharovShabat.AppendixDSimpleRoots
 import NLS.ZakharovShabat.DisplacedProductOrders
 import NLS.ZakharovShabat.AppendixDProductMultiplicities
 import NLS.ZakharovShabat.DisplacedRootsSeparation
+import NLS.ZakharovShabat.LocallyUniformExteriorResolvent
+import NLS.ZakharovShabat.AppendixDExteriorAsymptotic
