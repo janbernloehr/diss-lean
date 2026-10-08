@@ -35007,3 +35007,43 @@ example {W : Set (CoeffPair 2)}
   C.higherActionCircle_eq_zero_of_collapsed n k φ hφ hgap R hi ho
 
 end HigherActionChecks
+
+namespace HigherActionTraceChecks
+open Set NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- All levels at a non-Hilbert ambient exponent use the actual physical hierarchy.
+example (φ : realTypeSourceSubmodule 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) (k : ℕ) :
+    (∑' n : ℤ, (sourceRealHigherAction (by norm_num) (by norm_num) φ n k : ℂ)) =
+      sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf (k+1)/2^k :=
+  sourceFiniteGap_tsum_higherActions_eq_hamiltonian (by norm_num) (by norm_num) φ hf k
+
+-- The level-one sum recovers physical mass, including an empty open-gap set.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    (∑' n : ℤ, (sourceRealHigherAction (by norm_num) (by norm_num) φ n 0 : ℂ)) =
+      periodOneSobolevMass (sourceFiniteGapSobolevPair (by norm_num) (by norm_num) φ hf) := by
+  rw [periodOneSobolevMass_sourceFiniteGapSobolevPair]
+  simpa only [Nat.zero_add,pow_zero,div_one] using
+    sourceFiniteGap_tsum_higherActions_eq_hamiltonian (by norm_num) (by norm_num) φ hf 0
+
+-- Level three is one quarter of the actual H¹ energy, fixing the power-of-two convention.
+example (φ : realTypeSourceSubmodule 2)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) :
+    (∑' n : ℤ, (sourceRealHigherAction (by norm_num) (by norm_num) φ n 2 : ℂ)) =
+      periodOneSobolevHamiltonian (sourceFiniteGapSobolevPair (by norm_num) (by norm_num) φ hf)/4 := by
+  rw [periodOneSobolevHamiltonian_sourceFiniteGapSobolevPair]
+  have h := sourceFiniteGap_tsum_higherActions_eq_hamiltonian (by norm_num) (by norm_num) φ hf 2
+  norm_num at h
+  exact h
+
+-- Positivity and reality follow at arbitrary orders, beyond mass and energy.
+example (φ : realTypeSourceSubmodule 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) (m : ℕ) :
+    0 ≤ (sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf (2*m+1)).re ∧
+      (sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf (2*m+1)).im = 0 :=
+  ⟨sourceFiniteGapNLSHamiltonian_odd_nonneg (by norm_num) (by norm_num) φ hf m,
+    sourceFiniteGapNLSHamiltonian_im_zero (by norm_num) (by norm_num) φ hf (2*m)⟩
+end HigherActionTraceChecks

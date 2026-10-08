@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 24's higher-level actions now have defining contours,
-the real gap representation, and a mean-value comparison with the ordinary
-actions. Endpoint localization gives two-sided odd-level action bounds,
-including negative spectral indices and collapsed gaps. The all-order trace
-formula and Chapter 5's uniform Sobolev estimates remain.
+Latest milestone: Section 24's trace formula is proved at every order for
+actual real finite-gap sources at every finite `p > 1`: the level `k+1`
+higher-action sum equals the physical Hamiltonian `H_(k+1)/2^k`.
+This also proves reality of all Hamiltonians and nonnegativity at odd orders.
+Extension to general Sobolev and complex sources, and Chapter 5's uniform
+Sobolev estimates, remain.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: higher-level action contours and gap comparisons
+## Current milestone: all-order physical finite-gap trace formula
+
+The higher-action trace identity now holds at every order for actual real
+finite-gap sources at every finite exponent `p > 1`:
+`∑ₙ J_(n,k+1) = H_(k+1)/2^k`. Both finite and infinite sum formulations
+are proved. The Hamiltonians are the differential hierarchy of the source's
+smooth physical Fourier representative, independently defined by the Riccati
+recurrence.
+
+`PolynomialInversionCircleCoefficients.lean` extracts every Taylor coefficient
+of an inversion germ by a polynomially weighted exterior circle integral.
+The proof uses repeated contour integration by parts and keeps the exact
+factorial normalization.
+
+`SourceFiniteGapHigherActionExterior.lean` applies the existing identification
+of the normalized inversion germ with the physical Hamiltonian coefficients.
+It evaluates every weighted exterior primitive contour, with one radius
+threshold working at all orders.
+
+`SourceFiniteGapHigherActionTrace.lean` decomposes that exterior contour over
+the finitely many open gaps. The primitive extends through the collapsed
+gaps, which contribute zero. The resulting trace formula proves reality of
+every positive-order Hamiltonian and nonnegativity of every odd-order
+Hamiltonian. No supplied contour family, expansion coefficients, or spectral
+sum definition of the Hamiltonians is needed.
+
+Public examples check arbitrary levels at `p = 3`, recovery of physical mass,
+the level-three sum as one quarter of the actual H¹ energy, and all-order
+reality and odd-order nonnegativity.
+
+Validation: the full build passes (6224 jobs), all public examples pass,
+and the transitive axiom audit passes for 24036 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: extend Theorem 24.1 from real finite-gap sources to the stated
+Sobolev and complex-source setting, and derive the norm-dependent spectral
+localization and higher Sobolev estimates of Sections 25–28. The previous
+endpoint comparisons still assume localization bounds. Complex higher-action
+gluing and regularity and the full dissertation inventory remain open.
+
+## Previous milestone: higher-level action contours and gap comparisons
 
 Section 24's higher-level actions now have their defining spectral contours,
 the integration-by-parts representation, and the real gap formula in cosine
