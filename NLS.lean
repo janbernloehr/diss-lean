@@ -2939,3 +2939,7 @@ import NLS.ZakharovShabat.UnweightedActionRemainderBudget
 import NLS.ZakharovShabat.SourceHamiltonianUnweightedRemainder
 import NLS.ZakharovShabat.SourcePiSobolevCoercivity
 import NLS.ZakharovShabat.SourceActionSobolevLowerBound
+import NLS.SequenceSpaces.RealHilbertPairFromSquares
+import NLS.ZakharovShabat.SourceBirkhoffSobolevCoordinates
+import NLS.ZakharovShabat.BirkhoffSobolevNormArithmetic
+import NLS.ZakharovShabat.SourceBirkhoffSobolevEstimates

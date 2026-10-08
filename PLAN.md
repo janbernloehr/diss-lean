@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Latest progress: Theorem 23.2(ii), completing both Sobolev action estimates
+## Latest progress: Theorem 23.1, the Birkhoff-map Sobolev estimates
+
+Both estimates of Theorem 23.1 are now proved for the actual real Birkhoff
+map at every integer order m ≥ 1, with strictly positive constants uniform
+over the entire real H^m source space:
+`Q_m ≤ c_m (P_m + (1+P_1)^(2m) P_0)` and
+`P_m ≤ d_m (Q_m + (1+Q_1)^(4m-3) Q_0)`.
+Here `P_k` and `Q_k` use the exact physical ⟨2nπ⟩^k weights and the
+sum-of-squares pair norm from the dissertation. A global existence theorem
+chooses one previously constructed Birkhoff map for all positive orders.
+
+`RealHilbertPairFromSquares.lean` builds actual real ℓ² pairs from summable
+squared coordinates. `SourceBirkhoffSobolevCoordinates.lean` proves lower
+weighted action summability, constructs the weighted real Birkhoff sequences,
+and identifies every coefficient with the original map's coefficient times
+its physical weight. The exact identity `Q_k² = 2 S_k` follows from the
+rectangular action radius. At order zero it gives Parseval, `Q_0 = P_0`.
+
+`BirkhoffSobolevNormArithmetic.lean` transfers squared action bounds to norm
+bounds with positive constants. `SourceBirkhoffSobolevEstimates.lean`
+combines this with both parts of Theorem 23.2. The norm bounds hold for any
+admissible existing Birkhoff-map data, without a smallness or finite-gap
+assumption and without replacing the image norm by a maximum norm.
+
+Public examples cover a one-mode pair with squared norm 25, zero-order
+coordinate evaluation, a negative-frequency physical weight, Parseval,
+the exact order-one and order-two exponents, and independence of the
+weighted norm from admissible root-family data.
+
+Validation: the full build passed (6371 jobs), all public examples passed,
+and the transitive axiom audit passed for 25219 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: Section 28's quantitative comparison of actions with squared gap
+lengths, starting with Lemma 28.1 and the estimate (5.15), then Theorem 23.4.
+The unrestricted m=1 assertion of Lemma 27.2, fixed-domain trace scope,
+and the remaining dissertation inventory remain open.
+
+## Previous milestone: Theorem 23.2(ii), completing both Sobolev action estimates
 
 Theorem 23.2(ii) is proved for every integer m ≥ 1 on the full real H^m
 source space, with the exact physical Fourier norm:

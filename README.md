@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: both parts of Theorem 23.2 are proved for every integer
-m ≥ 1, using the exact physical Sobolev norms and the printed action
-weights. The converse estimate includes the required unweighted action
-remainder. The separate unrestricted m=1 endpoint of Lemma 27.2 remains
-open. See [implementation status](STATUS.md) and the earlier trace-sign
+Latest milestone: Theorems 23.1 and 23.2 are proved for every integer
+m ≥ 1. The actual real Birkhoff map satisfies both Sobolev norm estimates
+with the exact physical weights and strictly positive uniform constants.
+The separate unrestricted m=1 endpoint of Lemma 27.2 remains open.
+See [implementation status](STATUS.md) and the earlier trace-sign
 [source discrepancy](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

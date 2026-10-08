@@ -36583,3 +36583,76 @@ example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m)
   nlinarith [norm_nonneg (sourcePiSobolevCoordinates m m le_rfl a.val)]
 
 end Theorem232LowerChecks
+
+namespace Theorem231Checks
+open NLS.ZakharovShabat
+
+-- The real Hilbert construction retains both components of a one-mode pair.
+example (h : Summable (fun n : ℤ =>
+    (if n=0 then (3:ℝ) else 0)^2+(if n=0 then (4:ℝ) else 0)^2)) :
+    ‖realHilbertPairFromSquares (fun n : ℤ => if n=0 then 3 else 0)
+      (fun n : ℤ => if n=0 then 4 else 0) h‖^2 = 25 := by
+  rw [realHilbertPairFromSquares_norm_sq]
+  rw [tsum_eq_single (0:ℤ)]
+  · norm_num
+  · intro n hn
+    simp [hn]
+
+variable {W₀ B W : Set (CoeffPair 2)}
+  {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+  (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+
+-- The zero-order coordinates are the original real Birkhoff coordinates.
+example (a : realTypeHigherSobolevSourceLocus 1) (n : ℤ) :
+    (D.sobolevCoordinates 1 le_rfl 0 (by decide) a).fst n =
+      (sourceRealBirkhoffMap (by simp) (by norm_num) s
+        ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩).1 n := by simp
+
+-- Negative frequencies retain precisely the period-one physical weight.
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (D.sobolevCoordinates 2 (by decide) 1 (by decide) a).snd (-1) =
+      (1+2*Real.pi)*(sourceRealBirkhoffMap (by simp) (by norm_num) s
+        ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩).2 (-1) := by
+  rw [D.sobolevCoordinates_snd]
+  norm_num [abs_mul,abs_of_pos Real.pi_pos]
+
+-- Parseval uses the actual pair norm of the source, not a component maximum.
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    ‖D.sobolevCoordinates 3 (by decide) 0 (by decide) a‖ =
+      ‖higherSobolevSourceInclusion 3 a.val‖ :=
+  D.sobolevCoordinates_zero_norm 3 (by decide) a
+
+-- The order-one estimates carry no smallness assumption and use positive constants.
+example : ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ ∀ a : realTypeHigherSobolevSourceLocus 1,
+    (‖D.sobolevCoordinates 1 le_rfl 1 le_rfl a‖ ≤ c*
+      (‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖+
+        (1+‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖)^2*‖higherSobolevSourceInclusion 1 a.val‖)) ∧
+    (‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖ ≤ d*
+      (‖D.sobolevCoordinates 1 le_rfl 1 le_rfl a‖+
+        (1+‖D.sobolevCoordinates 1 le_rfl 1 le_rfl a‖)*‖D.sobolevCoordinates 1 le_rfl 0 (by decide) a‖)) := by
+  simpa only [show 2*1=2 from rfl,show 4*1-3=1 from rfl,pow_one] using
+    D.exists_sobolev_two_sided_bounds 1 le_rfl
+
+-- At order two the direct and converse remainders have powers four and five.
+example : ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    (‖D.sobolevCoordinates 2 (by decide) 2 le_rfl a‖ ≤ c*
+      (‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖+
+        (1+‖sourcePiSobolevCoordinates 2 1 (by decide) a.val‖)^4*‖higherSobolevSourceInclusion 2 a.val‖)) ∧
+    (‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖ ≤ d*
+      (‖D.sobolevCoordinates 2 (by decide) 2 le_rfl a‖+
+        (1+‖D.sobolevCoordinates 2 (by decide) 1 (by decide) a‖)^5*
+          ‖D.sobolevCoordinates 2 (by decide) 0 (by decide) a‖)) :=
+  D.exists_sobolev_two_sided_bounds 2 (by decide)
+
+-- The exact weighted image norm does not depend on the admissible root-family data.
+example {V₀ C V : Set (CoeffPair 2)}
+    {t : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+    (E : SourceBirkhoffMapComplexData (by simp) (by norm_num) V₀ C V t)
+    (m : ℕ) (hm : 1 ≤ m) (k : ℕ) (hk : k ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
+    ‖D.sobolevCoordinates m hm k hk a‖ = ‖E.sobolevCoordinates m hm k hk a‖ := by
+  have hd := D.sobolevCoordinates_norm_sq m hm k hk a
+  have he := E.sobolevCoordinates_norm_sq m hm k hk a
+  nlinarith [norm_nonneg (D.sobolevCoordinates m hm k hk a),
+    norm_nonneg (E.sobolevCoordinates m hm k hk a)]
+
+end Theorem231Checks
