@@ -272,7 +272,7 @@ majorants, rather than inferred from bounds on fixed sample sequences.
 Focused checks include the value -1 at a negative odd free center, the
 value 1 at zero, invariance under moving only the omitted root, a negative
 omitted-index cutoff, p=3 norm-ball bounds, and p=3/2 local uniformity.
-The following audit treats D.9; Appendix E still requires source-level comparison.
+The following audits treat D.9 and E.1; later statements still require source-level comparison.
 
 ### Lemma D.9: the full sine-product asymptotic
 
@@ -296,6 +296,33 @@ root displacement; focused examples check n=0 and n=-1. Other examples
 exercise literal cutoff-defined functions and p=3 and p=3/2 uniform bounds.
 No source correction is needed for D.9.
 
-Appendix E.1's full interpolation formula and the convergence of its sum
-remain to be audited. The existing zero-sample uniqueness theorem alone
-does not establish the full formula.
+The following audit treats E.1's full interpolation formula, beyond the
+earlier zero-sample uniqueness result.
+
+### Lemma E.1: interpolation at arbitrary simple displaced roots
+
+E.1, printed pages 130-131, is proved for every 1 <= p < infinity, with
+an explicit correction of the product index m in Z to m != n. The source's
+own residue calculation uses the latter. See SOURCE_ERRATA.md.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Entire numerator and literal supremum decay | `appendixESineCircleSup`, `norm_sineQuotient_le_appendixESineCircleSup`, `sourceLemmaE1` | The supremum is over the whole circle of radius N*pi+pi/2; its finiteness is derived, and its limit to zero is the actual hypothesis. |
+| Arbitrary simple displaced sequence | `sourceLemmaE1` | Any injective roots pi*n+a_n with a in ell^p; complex roots and p=1 are included. |
+| Literal cardinal product | `tendsto_appendixEInterpolationKernel` | The symmetric product of (sigma_m-z)/(sigma_m-sigma_n), omitting n, converges to the ratio of deleted products. |
+| Correct residue coefficient | `deriv_appendixDProduct_at_root`, `appendixEInterpolationKernel_eq_deriv` | The full derivative at sigma_n is minus the deleted product divided by pi_n; the coefficient is exactly g(z)/(g'(sigma_n)*(z-sigma_n)). |
+| Finite residue identity | `eventually_appendixE_interpolation_error` | All sufficiently large source circles contain precisely the symmetric root block and have the exact derived outer Cauchy error. |
+| Vanishing error and convergence | `eventually_appendixE_outerCauchy_small`, `tendstoUniformlyOn_appendixEQuotientInterpolation` | No rate of source decay is assumed; quotient residue sums converge uniformly on bounded zero-free evaluation sets. |
+| Full interpolation formula | `sourceLemmaE1`, `sourceLemmaE1_literal` | Symmetric sums converge to f(z) at every z off the root set; the literal version specifies both product and sum cutoffs in one theorem. |
+
+The source contour argument determines symmetric convergence, which is
+explicit here. No unconditional `HasSum` or absolute convergence is claimed.
+The product index typo is not silently interpreted through division by
+zero: `appendixE_all_index_cutoff_eq_zero` checks the obstruction formally.
+`appendixEInterpolationKernel_root` gives the cardinal values one and zero.
+
+Focused examples include p=1 and p=3, a negative omitted index, and a
+nonreal single-root displacement. The end-to-end sinc example derives
+the literal supremum-decay hypothesis and reconstructs the nonzero value
+one at z=0 when the zero-index root is moved to i. E.2 and E.3 remain
+to be source-audited.

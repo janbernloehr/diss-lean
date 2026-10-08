@@ -1,5 +1,27 @@
 # Source discrepancies
 
+## Lemma E.1: the cardinal product must omit the diagonal index
+
+Source: dissertation, printed pages 130-131. The displayed interpolation
+formula on page 130 (visually checked in the PDF) writes the product over
+m in Z of (sigma_m-z)/(sigma_m-sigma_n). Its factor at m=n has denominator
+zero. The residue calculation on page 131 explicitly uses m != n, and
+solving that identity gives the omitted-index cardinal product.
+
+`appendixE_all_index_cutoff_eq_zero` proves that every symmetric cutoff
+containing n is zero if the all-index formula is interpreted using Lean's
+totalized division. This cannot be treated as the intended cardinal
+product. `tendsto_appendixEInterpolationKernel` instead proves convergence
+of the literal omitted-index cutoffs. The kernel equals one at its own
+root and zero at every other root, with the exact derivative normalization.
+
+`sourceLemmaE1_literal` proves the resulting interpolation formula for
+all 1 <= p < infinity, including p=1, with the printed circle-supremum
+hypothesis. Both infinite operations are specified as symmetric cutoff
+limits, as supplied by the source circle proof; no unconditional sum or
+absolute convergence is asserted. A focused nonzero example reconstructs
+sinc(0)=1 from the simple lattice with its zero-index root moved to i.
+
 ## Remark D.3: the subtracted linear term must be the complex sum
 
 Source: dissertation, printed pages 126–127 (visually checked in the PDF).

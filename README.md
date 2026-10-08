@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma D.9 now gives the full sine-product asymptotic
-for 1 < p < infinity at arbitrary independent source-disc samples, including
-free centers. The actual disc-supremum errors lie in ell^p with common bounds
-on displacement norm balls and explicit local uniformity. Literal negative
-product cutoffs and the restored-factor normalization are checked.
-Next is Appendix E.1; the printed spectral height above p=2 remains open.
+Latest milestone: Lemma E.1's full interpolation formula is proved for
+1 <= p < infinity, including p=1, using the literal circle-supremum
+hypothesis. Both the omitted-index products and the outer symmetric sums
+have proved cutoff limits. The source's diagonal-index typo is documented;
+the product omits that index, as its residue proof requires.
+Next is E.2; the printed spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

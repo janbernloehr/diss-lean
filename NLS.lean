@@ -3031,3 +3031,6 @@ import NLS.SequenceSpaces.CoordinateNormSup
 import NLS.ZakharovShabat.AppendixDDeletedRelativeProduct
 import NLS.ZakharovShabat.SourceLemmaD8
 import NLS.ZakharovShabat.SourceLemmaD9
+import NLS.ZakharovShabat.AppendixEInterpolationProducts
+import NLS.ZakharovShabat.AppendixEInterpolationDecay
+import NLS.ZakharovShabat.SourceLemmaE1

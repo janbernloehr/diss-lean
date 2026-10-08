@@ -38093,3 +38093,109 @@ example (a : Coeff (3/2)) (z : ℤ → ℂ) (hz : ∀ n, z n ∈ refinedResonant
   sourceLemmaD9_mem d9HalfAboveOne d9HalfFinite a z hz
 
 end AppendixDFullSineChecks
+
+section AppendixEInterpolationChecks
+open NLS NLS.ZakharovShabat Set Metric Complex Filter Topology
+open scoped ENNReal
+
+-- The endpoint p=1 uses the literal supremum hypothesis and actual symmetric sums.
+example (a : Coeff 1) (ha : Function.Injective (displacedRoots a)) (f : ℂ → ℂ)
+    (hf : AnalyticOnNhd ℂ f univ)
+    (hdecay : Tendsto (appendixESineCircleSup f) atTop (𝓝 0))
+    (w : ℂ) (hw : ∀ n : ℤ, w ≠ displacedRoots a n) :
+    Tendsto (fun N : ℕ => ∑ n ∈ Finset.Icc (-(N:ℤ)) N,
+      f (displacedRoots a n)*appendixEInterpolationKernel a n w) atTop (𝓝 (f w)) :=
+  sourceLemmaE1 (by simp) a ha f hf hdecay w hw
+
+-- Both infinite operations are specified by their finite cutoffs in one theorem.
+example (a : Coeff 1) (ha : Function.Injective (displacedRoots a)) (f : ℂ → ℂ)
+    (hf : AnalyticOnNhd ℂ f univ)
+    (hdecay : Tendsto (appendixESineCircleSup f) atTop (𝓝 0))
+    (w : ℂ) (hw : ∀ n : ℤ, w ≠ displacedRoots a n) :
+    ∃ P : ℤ → ℂ,
+      (∀ n : ℤ, Tendsto (fun M : ℕ =>
+        ∏ m ∈ (Finset.Icc (-(M:ℤ)) (M:ℤ)).erase n,
+          (displacedRoots a m-w)/(displacedRoots a m-displacedRoots a n)) atTop (𝓝 (P n))) ∧
+      Tendsto (fun N : ℕ => ∑ n ∈ Finset.Icc (-(N:ℤ)) N,
+        f (displacedRoots a n)*P n) atTop (𝓝 (f w)) :=
+  sourceLemmaE1_literal (by simp) a ha f hf hdecay w hw
+
+-- Literal omitted-product convergence at a negative index, including the p=1 endpoint.
+example (a : Coeff 1) (ha : Function.Injective (displacedRoots a)) (w : ℂ) :
+    Tendsto (fun M : ℕ => ∏ m ∈ (Finset.Icc (-(M:ℤ)) (M:ℤ)).erase (-2),
+      (displacedRoots a m-w)/(displacedRoots a m-displacedRoots a (-2)))
+      atTop (𝓝 (appendixEInterpolationKernel a (-2) w)) :=
+  tendsto_appendixEInterpolationKernel (by simp) a ha (-2) w
+
+-- A missing exclusion really inserts division by zero in the source's displayed formula.
+example (a : Coeff 1) (w : ℂ) :
+    (∏ m ∈ Finset.Icc (-3:ℤ) 3,
+      (displacedRoots a m-w)/(displacedRoots a m-displacedRoots a (-2))) = 0 :=
+  appendixE_all_index_cutoff_eq_zero a (-2) w 3 (by norm_num)
+
+-- A nonreal perturbation exercises arbitrary simple sequences, not only real spectral roots.
+private def e1ComplexDisplacement : Coeff 1 := lp.single 1 0 Complex.I
+private theorem e1ComplexSimple : Function.Injective (displacedRoots e1ComplexDisplacement) := by
+  intro m n he
+  by_cases hm : m = 0
+  · by_cases hn : n = 0
+    · omega
+    · have hi := congrArg Complex.im he
+      simp [displacedRoots,e1ComplexDisplacement,lp.single_apply,hm,hn] at hi
+  · by_cases hn : n = 0
+    · have hi := congrArg Complex.im he
+      simp [displacedRoots,e1ComplexDisplacement,lp.single_apply,hm,hn] at hi
+    · have hmul : (Real.pi:ℂ)*m = (Real.pi:ℂ)*n := by
+        simpa [displacedRoots,e1ComplexDisplacement,lp.single_apply,hm,hn] using he
+      have hcast := mul_left_cancel₀ (show (Real.pi:ℂ) ≠ 0 by exact_mod_cast Real.pi_ne_zero) hmul
+      exact_mod_cast hcast
+
+example : appendixEInterpolationKernel e1ComplexDisplacement 0 Complex.I = 1 := by
+  simpa [displacedRoots,e1ComplexDisplacement,lp.single_apply] using
+    appendixEInterpolationKernel_root (by simp) e1ComplexDisplacement e1ComplexSimple 0 0
+
+example : appendixEInterpolationKernel e1ComplexDisplacement 0 ((Real.pi:ℂ)*(-2:ℤ)) = 0 := by
+  simpa [displacedRoots,e1ComplexDisplacement,lp.single_apply] using
+    appendixEInterpolationKernel_root (by simp) e1ComplexDisplacement e1ComplexSimple 0 (-2)
+
+-- The filled sinc is nonzero and satisfies the actual circle supremum hypothesis.
+private theorem e1SincDecay : Tendsto (appendixESineCircleSup (freeSineQuotient 0)) atTop (𝓝 0) := by
+  apply tendsto_appendixESineCircleSup_of_circle_decay
+  intro ε hε
+  filter_upwards [tendsto_centralCircleRadius_atTop.eventually (eventually_gt_atTop (1/ε))]
+    with N hN z hz
+  have hs := sin_ne_zero_on_centralCircle N z hz
+  have hnorm : ‖z‖ = centralCircleRadius N := by simpa only [mem_sphere,dist_zero_right] using hz
+  have hz0 : z ≠ 0 := norm_pos_iff.mp (by rw [hnorm]; exact centralCircleRadius_pos N)
+  have he : freeSineQuotient 0 z/sin z = 1/z := by
+    rw [freeSineQuotient_eq_div 0 z (by simpa using hz0)]
+    simp only [Int.cast_zero,mul_zero,sub_zero]
+    field_simp
+  rw [he,norm_div,norm_one,hnorm]
+  apply (div_le_iff₀ (centralCircleRadius_pos N)).mpr
+  have h := (div_lt_iff₀ hε).mp hN
+  linarith
+
+-- End to end: reconstruct sinc(0)=1 using a lattice whose zero-index root was moved to i.
+example : Tendsto (fun N : ℕ => ∑ n ∈ Finset.Icc (-(N:ℤ)) N,
+    freeSineQuotient 0 (displacedRoots e1ComplexDisplacement n)*
+      appendixEInterpolationKernel e1ComplexDisplacement n 0) atTop (𝓝 1) := by
+  have hoff (n : ℤ) : (0:ℂ) ≠ displacedRoots e1ComplexDisplacement n := by
+    by_cases hn : n = 0
+    · simpa [displacedRoots,e1ComplexDisplacement,lp.single_apply,hn] using (Ne.symm I_ne_zero)
+    · simp [displacedRoots,e1ComplexDisplacement,lp.single_apply,hn,Real.pi_ne_zero]
+  simpa [freeSineQuotient] using sourceLemmaE1 (by simp) e1ComplexDisplacement e1ComplexSimple
+    (freeSineQuotient 0) (analyticOnNhd_freeSineQuotient 0) e1SincDecay 0 hoff
+
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The same source statement also covers exponents above two.
+example (a : Coeff 3) (ha : Function.Injective (displacedRoots a)) (f : ℂ → ℂ)
+    (hf : AnalyticOnNhd ℂ f univ)
+    (hdecay : Tendsto (appendixESineCircleSup f) atTop (𝓝 0))
+    (w : ℂ) (hw : ∀ n : ℤ, w ≠ displacedRoots a n) :
+    Tendsto (fun N : ℕ => ∑ n ∈ Finset.Icc (-(N:ℤ)) N,
+      f (displacedRoots a n)*appendixEInterpolationKernel a n w) atTop (𝓝 (f w)) :=
+  sourceLemmaE1 (by simp) a ha f hf hdecay w hw
+
+end AppendixEInterpolationChecks

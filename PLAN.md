@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Latest progress: the full sine-product asymptotic in D.9
+## Latest progress: the full interpolation formula in E.1
+
+Lemma E.1, printed pages 130-131, now has its full interpolation formula
+for every 1 <= p < infinity, including p=1. An arbitrary simple displaced
+lattice and an arbitrary entire numerator satisfying the literal circle
+supremum-decay hypothesis are allowed. Each omitted-index cardinal product
+converges, and the symmetric sums of the sampled values times those
+products converge to the numerator at every point outside the root set.
+
+The displayed source formula has a diagonal-index typo: its product says
+m in Z although the factor at m=n divides by zero. The residue calculation
+on the next page explicitly excludes n. The formalization uses m != n and
+records the correction in SOURCE_ERRATA.md. It also proves that retaining
+the diagonal makes every sufficiently large cutoff zero under Lean's
+totalized division. The outer sum is explicitly the symmetric cutoff
+limit supplied by the source circle argument; unconditional summability
+is not asserted.
+
+`AppendixEInterpolationProducts.lean` identifies the literal cardinal
+product limit with a ratio of deleted entire products, proves the exact
+root derivative normalization, and proves the cardinal values at roots.
+`AppendixEInterpolationDecay.lean` derives finiteness of the actual circle
+suprema, proves both directions between their limit and uniform epsilon
+decay, and transfers decay through D.5 to a vanishing outer Cauchy error.
+`SourceLemmaE1.lean` selects exactly the symmetric root block inside large
+circles and applies the finite interpolation identity. The quotient sums
+converge uniformly on bounded zero-free evaluation sets. Restoring the
+full product gives the source formula; `sourceLemmaE1_literal` states both
+levels of cutoff convergence in one theorem.
+
+Next: audit E.2's identity theorem for real subspaces, including the
+hypotheses on the real slice, then E.3. The dissertation remains incomplete.
+The printed spectral height above p=2 remains required and unresolved;
+the accepted Lemma 27.2 correction and optional original m=1 sharpening
+are unchanged.
+
+For E.2, first state the real-slice nonemptiness used by the proof and
+check its two source applications, both based at real-type potentials.
+Generalize the existing local real-form argument as needed to continuous
+real and imaginary projections, then use the analytic identity theorem
+on a connected open domain. Avoid imposing convexity or contractive
+projection bounds absent from the source statement.
+
+Validation: focused checks passed for literal inner and outer cutoffs at
+p=1, negative omitted indices, the diagonal-index obstruction, cardinal
+values after a nonreal root perturbation, and the general statement at
+p=3. A nonzero end-to-end example reconstructs sinc(0)=1 after moving the
+zero-index root to i, proving its circle-supremum decay rather than
+assuming it. The full build passed (6463 jobs), all public examples
+passed, and the axiom audit passed for 25942 NLS declarations. The same
+21 pre-existing warnings remain, with no new warnings. The 156 candidate
+source labels were verified.
+
+## Previous milestone: the full sine-product asymptotic in D.9
 
 Lemma D.9, printed page 130, now gives the full-product asymptotic
 f(z_n) = sin(z_n) + ell^p_n for every 1 < p < infinity and every independent
