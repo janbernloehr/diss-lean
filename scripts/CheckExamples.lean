@@ -35092,3 +35092,51 @@ example (φ : realTypeSourceSubmodule 3)
       sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf (k+1)/2^k :=
   sourceFiniteGap_tsum_complexHigherActions_eq_hamiltonian (by norm_num) (by norm_num) φ hf k
 end HigherActionAnalyticChecks
+
+namespace HigherActionSobolevTraceChecks
+open Set NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- At p=3, one neighborhood and two constants control every index and level.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ U : Set (CoeffPair 3), IsOpen U ∧ φ.val ∈ U ∧
+      U ⊆ sourceComplexHigherActionDomain (by norm_num) (by norm_num) ∧
+      ∃ B D : ℝ, 0 < B ∧ 0 < D ∧ ∀ ψ ∈ U, ∀ (n : ℤ) (k : ℕ),
+        ‖sourceComplexHigherAction (by norm_num) (by norm_num) n k ψ‖ ≤
+          B*D^k*(1+|(n:ℝ)|)^k*‖sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n‖^2 :=
+  (sourceHigherActionAtlas (by norm_num) (by norm_num)).exists_local_all_actions_polynomial_bound φ
+
+-- Every real H¹ source satisfies the physical energy trace, with no finite-gap premise.
+example (a : realTypeSobolevSourceLocus) :
+    (∑' n : ℤ, (sourceRealHigherAction (by simp) (by norm_num)
+      ⟨sobolevSourceInclusion a.val,a.property⟩ n 2 : ℂ)) = periodOneSobolevHamiltonian a.val/4 := by
+  simp_rw [← sourceComplexHigherAction_eq_real (by simp) (by norm_num)
+    (⟨sobolevSourceInclusion a.val,a.property⟩ : realTypeSourceSubmodule 2)]
+  exact sourceSobolev_tsum_higherAction_three a
+
+-- The literal infinite level-three series is analytic in the complex H¹ norm.
+example (a : realTypeSobolevSourceLocus) : AnalyticAt ℂ
+    (fun b : ScalarDomain 2 × ScalarDomain 2 =>
+      ∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 2 (sobolevSourceInclusion b)) a.val :=
+  analyticAt_tsum_sourceSobolevHigherAction a.val a.property 2 le_rfl
+
+-- Nearby complex sources retain both physical trace identities and absolute convergence.
+example (a : realTypeSobolevSourceLocus) :
+    ∃ U : Set (ScalarDomain 2 × ScalarDomain 2), IsOpen U ∧ a.val ∈ U ∧ ∀ b ∈ U,
+      (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 0 (sobolevSourceInclusion b)) =
+        periodOneSobolevMass b ∧
+      (∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n 2 (sobolevSourceInclusion b)) =
+        periodOneSobolevHamiltonian b/4 ∧
+      Summable (fun n : ℤ => ‖sourceComplexHigherAction (by simp) (by norm_num) n 2 (sobolevSourceInclusion b)‖) := by
+  obtain ⟨U,hU,ha,h⟩ := exists_local_sourceSobolevHigherAction_trace a
+  exact ⟨U,hU,ha,fun b hb => ⟨(h b hb).1,(h b hb).2.1,(h b hb).2.2 2 le_rfl⟩⟩
+
+-- The intermediate level also has an analytic ℓ¹ realization on the same neighborhood.
+example (a : realTypeSobolevSourceLocus) : ∃ U : Set (ScalarDomain 2 × ScalarDomain 2),
+    IsOpen U ∧ a.val ∈ U ∧ AnalyticOnNhd ℂ (sourceSobolevHigherActionSequence 1) U ∧
+      ∀ b ∈ U, ∀ n : ℤ, sourceSobolevHigherActionSequence 1 b n =
+        sourceComplexHigherAction (by simp) (by norm_num) n 1 (sobolevSourceInclusion b) := by
+  obtain ⟨U,hU,ha,h⟩ := exists_local_sourceSobolevHigherActionSequence_analytic a.val a.property
+  exact ⟨U,hU,ha,(h 1 (by norm_num)).2,(h 1 (by norm_num)).1⟩
+end HigherActionSobolevTraceChecks

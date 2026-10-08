@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 24's higher actions are complex analytic on one
-open source domain containing all real sources, simultaneously for every
-gap index and level. Contour charts agree on complex overlaps and vanish
-at collapsed gaps; the real restrictions are real analytic. The physical
-finite-gap trace formula is retained. Convergence of the higher-action
-series and its extension to general Sobolev and complex sources remain.
+Latest milestone: the higher-action mass and energy traces now hold for
+every real H¹ source and on an open complex H¹ neighborhood of the entire
+real locus. The first three action sequences and their absolutely convergent
+sums are analytic there. All-order local polynomial bounds are proved;
+higher Sobolev hierarchy traces and the uniform estimates remain.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

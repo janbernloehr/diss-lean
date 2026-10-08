@@ -2811,3 +2811,9 @@ import NLS.ZakharovShabat.SourceHigherActionCircleAnalytic
 import NLS.ZakharovShabat.SourceHigherActionLocalChart
 import NLS.ZakharovShabat.SourceHigherActionAtlas
 import NLS.ZakharovShabat.SourceHigherActionRegularity
+import NLS.ZakharovShabat.SourceHigherActionComplexCosine
+import NLS.ZakharovShabat.SourceHigherActionComplexBound
+import NLS.ZakharovShabat.SourceHigherActionPolynomialBound
+import NLS.ZakharovShabat.SourceSobolevHigherActionBound
+import NLS.ZakharovShabat.SourceSobolevHigherActionAnalytic
+import NLS.ZakharovShabat.SourceSobolevHigherActionTrace

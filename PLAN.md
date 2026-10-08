@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Latest progress: complex analytic higher actions
+## Latest progress: higher-action bounds and physical H¹ traces
+
+The level-one and level-three trace identities now hold beyond finite-gap
+data: every real H¹ source satisfies `∑ₙ J_(n,1) = H_1` and
+`∑ₙ J_(n,3) = H_3/4`, with the actual physical mass and energy on the right.
+Both literal, absolutely convergent series satisfy the same identities on
+one open complex H¹ neighborhood containing the entire real H¹ locus.
+
+`SourceHigherActionComplexCosine.lean` continues the polynomially weighted
+gap-boundary formula to complex sources. Symmetric midpoint and squared-gap
+coordinates make its cosine mean analytic through collapsed gaps. One source
+ball works for every index and level.
+
+`SourceHigherActionComplexBound.lean` bounds each higher action by its squared
+gap times the spectral size of that gap to the appropriate power.
+`SourceHigherActionPolynomialBound.lean` derives the spectral size bound from
+the actual displacement norms. On a common complex neighborhood of each real
+source, positive constants `B,D` give
+`|J_(n,k+1)| ≤ B D^k (1+|n|)^k |γ_n|²` for all indices and orders.
+A summable weighted squared-gap majorant therefore gives absolute convergence
+and a norm-sum bound at any level. These are local bounds; they are not the
+explicit norm-dependent cutoff or global tame estimates of Sections 25–28.
+
+`SourceSobolevHigherActionBound.lean` combines that estimate with the existing
+H¹ weighted-gap theorem. The first three levels have actual ℓ¹ realizations,
+with one common bound on a complex H¹ neighborhood of each real source.
+
+`SourceSobolevHigherActionAnalytic.lean` upgrades coordinate analyticity and
+the ℓ¹ bound to Banach analyticity of those action sequences. Bounded linear
+summation proves analyticity of the literal infinite series, not merely of
+each indexed action.
+
+`SourceSobolevHigherActionTrace.lean` passes the physical finite-gap mass and
+energy traces through H¹ finite-gap density to all real H¹ data. Analytic
+uniqueness for the H¹ real form then extends both identities to complex
+neighborhoods, whose union contains the full real locus.
+
+Public examples check the all-order polynomial estimate at `p = 3`, the real
+H¹ energy trace without a finite-gap premise, analyticity of its literal sum,
+the mass and energy identities for nearby complex sources, and the analytic
+ℓ¹ realization of the intermediate second level.
+
+Validation: the full build passes (6234 jobs), all public examples pass,
+and the transitive axiom audit passes for 24150 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: identify the second-level sum with physical momentum and extend
+series convergence and all hierarchy trace identities to the higher Sobolev
+spaces in Theorem 24.1. The norm-dependent spectral localization and uniform
+higher Sobolev estimates of Sections 25–28 and the full dissertation inventory
+remain open. The new complex trace domain is a neighborhood of the real H¹
+locus, not the entire complex H¹ space.
+
+## Previous milestone: complex analytic higher actions
 
 Section 24's higher actions now extend to actual complex analytic functions
 on one open source domain containing the entire real locus, for every finite
