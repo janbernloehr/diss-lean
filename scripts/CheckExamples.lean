@@ -36187,3 +36187,57 @@ example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 2 (by norm_num)).toWei
   (M1_real_canonicalGap_global_summable_and_le _
     (SpectralWeight.hasLinearFactor_piSobolev 2 (by norm_num)) φ heven hreal).2
 end M1RealGlobalGapChecks
+
+namespace M1ComplexGlobalGapChecks
+open NLS.ZakharovShabat
+
+-- The original source neighborhood is open in L² and independent of the weight.
+example : IsOpen (sourceSpectralStripNeighborhood (p := 2) (by simp)) :=
+  isOpen_sourceSpectralStripNeighborhood (by simp)
+
+-- The neighborhood construction also works at a non-Hilbert finite exponent.
+example (φ : CoeffPair 3) (hreal : IsRealType (CoeffPair.toMax 3 φ)) :
+    φ ∈ sourceSpectralStripNeighborhood (by norm_num) :=
+  real_mem_sourceSpectralStripNeighborhood (by norm_num) (by norm_num) φ hreal
+
+-- Negative distant indices have the same uniform imaginary bound.
+example (z : ℂ) (hz : z ∈ refinedResonantDisk (-3)) : |z.im| < 1 :=
+  abs_im_lt_one_of_mem_refinedResonantDisk (-3) z hz
+
+-- For complex endpoints the finite bound includes the imaginary contribution.
+example (ξ η : ℤ → ℂ) (s : Finset ℤ) (a b : ℝ) (hab : a ≤ b)
+    (hb : ∀ n ∈ s, a ≤ (ξ n).re ∧ (ξ n).re ≤ (η n).re ∧ (η n).re ≤ b)
+    (ho : ∀ i ∈ s, ∀ j ∈ s, i < j → (η i).re ≤ (ξ j).re)
+    (hh : ∀ n ∈ s, |(ξ n).im| ≤ 1 ∧ |(η n).im| ≤ 1) :
+    ∑ n ∈ s, ‖η n-ξ n‖^2 ≤ (b-a)^2+4*s.card :=
+  sum_gap_sq_le_of_height_one s ξ η a b hab hb ho hh
+
+-- Complex H¹ potentials of norm at most one need no real-type hypothesis.
+-- The non-strict boundary is permitted by the height-based theorem.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (heven : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ ∈ pairParitySubspace 0)
+    (hφ : ‖φ‖ ≤ 1) :
+    (∑' n : ℤ, ((SpectralWeight.piSobolev 1 (by norm_num)) (2*n)*
+      ‖canonicalPeriodicGap (by simp) (by norm_num)
+        (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven n‖)^2) ≤
+      265*Real.pi^2*((SpectralWeight.piSobolev 1 (by norm_num)).realExtension (16*‖φ‖^2))^2*
+        (1+‖φ‖^2)*‖φ‖^2 :=
+  (M1_canonicalGap_global_summable_and_le_of_height_one _
+    (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl) φ heven
+    (fun z hz => (abs_im_le_H1_norm φ z hz).trans hφ)).2
+
+-- Every M₁ weight uses the same original source neighborhood and exact norm of its realization.
+example (ψ : CoeffPair 2) (hψ : ψ ∈ sourceSpectralStripNeighborhood (by simp))
+    (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (hφ : weightedBaseToPair w φ = periodOnePotential ψ) :
+    (∑' n : ℤ, (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n‖)^2) ≤
+      265*Real.pi^2*(w.realExtension (16*‖φ‖^2))^2*(1+‖φ‖^2)*‖φ‖^2 :=
+  (M1_source_canonicalGap_global_summable_and_le ψ hψ w hw φ hφ).2
+
+-- At zero size, the enlarged budget still vanishes exactly.
+example (W : ℝ) (hW : 1 ≤ W) :
+    W^2*(256*Real.pi^2*0^2+64*0)+(18*0+(432/5)*0^2) ≤
+      265*Real.pi^2*W^2*(1+0)*0 :=
+  gap_global_265_height_budget 0 W le_rfl hW
+end M1ComplexGlobalGapChecks

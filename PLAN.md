@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: Proposition 25.5 global gap bound on the real potential space
+## Latest progress: Proposition 25.5 on a complex neighborhood
+
+Both estimates of Proposition 25.5 are now proved for the full M₁ class
+in the canonical period-one formulation. The global estimate holds on a
+single open complex neighborhood of the entire real L² potential space,
+independent of the weight, with the printed factor `265 π²` and exact
+piecewise-linear weight `w[16 ‖φ‖w²]`. It includes summability and an API
+on the original source coefficient space for every weighted realization.
+
+`SpectralStripNeighborhood.lean` constructs the neighborhood as the interior
+of the potentials whose original periodic spectrum lies in `|Im z| < 1`.
+It proves that every real potential belongs: finitely many central endpoints
+remain in the strip by continuity, while all distant endpoints share uniform
+quarter-π discs. Exhaustiveness covers the entire original spectrum. The
+construction works at every finite exponent greater than one; the global
+weighted estimate uses its Hilbert instance. Pullback under period doubling
+gives an open neighborhood on the original source space. This neighborhood
+can be intersected with the previously constructed analytic domains.
+
+`FiniteGapHeight.lean` bounds finite complex gaps by the squared horizontal
+width plus four per pair. `M1ComplexCentralGap.lean` applies the actual central
+spectral-strip bound and global ordering, with exact central cardinality
+`2N−1`. `M1ComplexGlobalGapEstimate.lean` chooses `N = floor(8 ‖φ‖w²)` and
+bounds the imaginary contribution by `64 w[16 ‖φ‖w²]² ‖φ‖w²`. Combining this
+with the parameter-five tail still gives the printed constant 265.
+This proof establishes the needed neighborhood directly and does not assume
+unproved diameter bounds for the existing isolating discs.
+
+Public examples cover openness on the source L² space, real inclusion at
+p=3, negative distant indices, complex finite-gap packing, arbitrary complex
+H¹ potentials of norm at most one (including the non-strict height boundary),
+the original-source weighted estimate, and the zero-size numerical budget.
+
+Validation: the full build passed (6342 jobs), all public examples passed,
+and the transitive axiom audit passed for 25051 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: Proposition 26.1. Connect the existing actual higher-action mean-value
+identity and upper/lower comparison theorems in `SourceHigherActionEstimates`
+to the exact H¹ localization from Theorem 25.1. Prove the printed radius for
+the mean-value point, the two-sided nonzero-index comparison with
+`⟨2nπ⟩^(2m)`, and the remaining central estimate, including collapsed gaps
+and level m=0. Then use these bounds with the established trace identities
+for Lemma 26.2 and Theorem 23.2(i). Sections 27–28, fixed-domain trace scope,
+and the remaining dissertation inventory remain open.
+
+## Previous milestone: Proposition 25.5 global gap bound on the real potential space
 
 Proposition 25.5's global weighted gap estimate is now proved on the real
 potential space for every M₁ weight:

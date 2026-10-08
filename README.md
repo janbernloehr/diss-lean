@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Proposition 25.5's global weighted gap bound is proved
-on the real potential space for every M₁ weight, with the printed constant
-`265 π²` and the source's piecewise-linear weight extension. Summability,
-the exact finite central estimate, and a sharper tail budget are included.
-The extension to an open complex neighborhood remains next. See `STATUS.md`.
+Latest milestone: both estimates of Proposition 25.5 are proved for every
+M₁ weight. The global bound holds on one open complex neighborhood of all
+real L² potentials, with the printed constant `265 π²` and the exact
+piecewise-linear weight extension. The next step is the quantitative
+higher-action estimates of Proposition 26.1. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

@@ -2910,3 +2910,7 @@ import NLS.ZakharovShabat.FiniteGapPacking
 import NLS.ZakharovShabat.M1CentralGapEstimate
 import NLS.ZakharovShabat.M1GapGlobalBudget
 import NLS.ZakharovShabat.M1RealGlobalGapEstimate
+import NLS.ZakharovShabat.SpectralStripNeighborhood
+import NLS.ZakharovShabat.FiniteGapHeight
+import NLS.ZakharovShabat.M1ComplexCentralGap
+import NLS.ZakharovShabat.M1ComplexGlobalGapEstimate
