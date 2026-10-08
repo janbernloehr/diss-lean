@@ -2934,3 +2934,8 @@ import NLS.ZakharovShabat.SobolevHamiltonianThirdActionBound
 import NLS.ZakharovShabat.RefinedH1ActionBound
 import NLS.ZakharovShabat.Lemma272ConstantBudget
 import NLS.ZakharovShabat.SourceHamiltonianActionOnlyBound
+import NLS.ZakharovShabat.SourceActionMomentComparison
+import NLS.ZakharovShabat.UnweightedActionRemainderBudget
+import NLS.ZakharovShabat.SourceHamiltonianUnweightedRemainder
+import NLS.ZakharovShabat.SourcePiSobolevCoercivity
+import NLS.ZakharovShabat.SourceActionSobolevLowerBound

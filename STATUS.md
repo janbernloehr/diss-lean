@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: Lemma 27.2 exact constants for m ≥ 2
+## Current milestone: Theorem 23.2(ii), completing both Sobolev action estimates
+
+Theorem 23.2(ii) is proved for every integer m ≥ 1 on the full real H^m
+source space, with the exact physical Fourier norm:
+`P_m² ≤ d_m² (S_m + (1+S_1)^(4m-3) S_0)`.
+The constant depends only on m. The final action factor is the unweighted
+sum `S_0`, exactly as printed. Together with the earlier upper estimate,
+both parts of Theorem 23.2 are now proved.
+
+`SourceActionMomentComparison.lean` proves a frequency-threshold estimate
+`B^(2m-2) S_1 ≤ S_m + B^(2m) S_0` without dividing by an action or using
+fractional powers. It includes zero mass and every nonnegative threshold.
+`UnweightedActionRemainderBudget.lean` splits at `S_0 = 1` and uses this
+comparison to bound the physical H¹ remainder by a constant times
+`S_m + (1+S_1)^(4m-3) S_0`. `SourceHamiltonianUnweightedRemainder.lean`
+then supplies the Hamiltonian estimate needed in the theorem's proof.
+This establishes the extra step between the weighted factor in the printed
+Lemma 27.2 and the unweighted factor used in Theorem 23.2(ii).
+
+`SourcePiSobolevCoercivity.lean` bounds the exact physical Sobolev pair norm
+by the highest derivative energy and scalar mass, preserves conjugate
+reflection at every order, and identifies that mass with total action.
+`SourceActionSobolevLowerBound.lean` combines these facts with Lemma 26.3
+for m ≥ 2. The m=1 case follows directly from Lemma 27.1 for arbitrary
+action size, with no smallness restriction.
+
+Public examples cover the order-one endpoint, the H² exponent and
+unweighted remainder, the exact H³ mass identity, simultaneous upper and
+lower estimates with uniform constants, zero frequency threshold, and
+vanishing actions at arbitrary positive Sobolev order.
+
+Validation: the full build passed (6367 jobs), all public examples passed,
+and the transitive axiom audit passed for 25188 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: the unrestricted m=1 statement of Lemma 27.2 remains open as a
+separate assertion; Theorem 23.2 does not depend on resolving it. The
+Birkhoff-map formulation in Theorem 23.1, Section 28, fixed-domain trace
+scope, and the remaining dissertation inventory remain open.
+
+## Previous milestone: Lemma 27.2 exact constants for m ≥ 2
 
 The exact printed action-only estimate of Lemma 27.2 is now proved for
 all real H^m sources with m ≥ 2:

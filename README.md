@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 27.2's action-only Hamiltonian bound is proved for
-all m ≥ 2, with the exact printed constant `(64π)^(2m-2)`. The unrestricted
-m=1 endpoint remains open; it is proved when the weighted action sum is at
-most one. See [implementation status](STATUS.md). The earlier trace-sign
-discrepancy remains documented in [source discrepancies](SOURCE_ERRATA.md).
+Latest milestone: both parts of Theorem 23.2 are proved for every integer
+m ≥ 1, using the exact physical Sobolev norms and the printed action
+weights. The converse estimate includes the required unweighted action
+remainder. The separate unrestricted m=1 endpoint of Lemma 27.2 remains
+open. See [implementation status](STATUS.md) and the earlier trace-sign
+[source discrepancy](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

@@ -36522,3 +36522,64 @@ example (a : realTypeSobolevSourceLocus)
   nlinarith [sourceH1_energy_le_lemma272_of_weighted_actions_le_one a ha]
 
 end Lemma272ActionOnlyChecks
+
+namespace Theorem232LowerChecks
+open NLS.ZakharovShabat
+
+-- The moment split includes a zero threshold and the order-one boundary.
+example (w : ℝ) (hw : 0 ≤ w) : (0:ℝ)^2*w^2 ≤ w^4+(0:ℝ)^4 :=
+  threshold_mul_sq_le_top_add 2 (by decide) 0 w le_rfl hw
+example (B w : ℝ) (hB : 0 ≤ B) (hw : 0 ≤ w) : w^2 ≤ w^2+B^2 := by
+  simpa only [Nat.sub_self,Nat.mul_zero,Nat.mul_one,pow_zero,one_mul] using
+    threshold_mul_sq_le_top_add 1 le_rfl B w hB hw
+
+-- The H¹ endpoint has no small-action hypothesis.
+example : ∃ d : ℝ, 0 ≤ d ∧ ∀ a : realTypeHigherSobolevSourceLocus 1,
+    ‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖^2 ≤ d^2*
+      ((∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)+
+        (1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)*
+          (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 0 n)) := by
+  simpa only [show 4*1-3=1 from rfl,pow_one] using
+    exists_sourceSobolev_weightedAction_lower_bound 1 le_rfl
+
+-- The H² result uses the fifth power and ends in unweighted total action.
+example : ∃ d : ℝ, 0 ≤ d ∧ ∀ a : realTypeHigherSobolevSourceLocus 2,
+    ‖sourcePiSobolevCoordinates 2 2 le_rfl a.val‖^2 ≤ d^2*
+      ((∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n)+
+        (1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n)^5*
+          (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 0 n)) :=
+  exists_sourceSobolev_weightedAction_lower_bound 2 (by decide)
+
+-- The scalar L² energy agrees exactly with the original action mass at H³.
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    ‖WeightedCoeff.sobolevToL2 (Nat.cast_nonneg 3) a.val.1‖^2 =
+      ∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 0 n :=
+  (sourceHigher_sum_actions_eq_scalar_mass 3 (by decide) a).symm
+
+-- The two independent estimates hold simultaneously with source-independent constants.
+example (m : ℕ) (hm : 1 ≤ m) : ∃ c d : ℝ, 0 ≤ c ∧ 0 ≤ d ∧
+    (∀ a : realTypeHigherSobolevSourceLocus m,
+      (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ m n) ≤
+        c^2*(‖sourcePiSobolevCoordinates m m le_rfl a.val‖^2+
+          (1+‖sourcePiSobolevCoordinates m 1 hm a.val‖)^(4*m)*‖higherSobolevSourceInclusion m a.val‖^2)) ∧
+    (∀ a : realTypeHigherSobolevSourceLocus m,
+      ‖sourcePiSobolevCoordinates m m le_rfl a.val‖^2 ≤ d^2*
+        ((∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ m n)+
+          (1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ 1 n)^(4*m-3)*
+            (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion m a.val,a.property⟩ 0 n))) := by
+  obtain ⟨c,hc,hupper⟩ := exists_sourceWeightedAction_sobolev_upper_bound m hm
+  obtain ⟨d,hd,hlower⟩ := exists_sourceSobolev_weightedAction_lower_bound m hm
+  exact ⟨c,d,hc,hd,hupper,hlower⟩
+
+-- Vanishing actions force the physical Sobolev norm to vanish at every order.
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m)
+    (ha : ∀ n : ℤ, sourceRealAction (by simp) (by norm_num)
+      (higherSobolevSourceInclusion m a.val) a.property n = 0) :
+    sourcePiSobolevCoordinates m m le_rfl a.val = 0 := by
+  obtain ⟨d,_,hbound⟩ := exists_sourceSobolev_weightedAction_lower_bound m hm
+  have h := hbound a
+  simp only [sourceWeightedActionTerm,ha,norm_zero,mul_zero,tsum_zero,add_zero] at h
+  apply norm_eq_zero.mp
+  nlinarith [norm_nonneg (sourcePiSobolevCoordinates m m le_rfl a.val)]
+
+end Theorem232LowerChecks
