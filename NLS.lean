@@ -2959,3 +2959,7 @@ import NLS.ZakharovShabat.H1CutoffCentralStrip
 import NLS.ZakharovShabat.SourceRealCentralProduct
 import NLS.ZakharovShabat.SourceH1CentralProductBound
 import NLS.ZakharovShabat.SourceH1ActionGapEstimate
+import NLS.ZakharovShabat.SourceM1SpectralGeometry
+import NLS.ZakharovShabat.SourceM1GapFactorBound
+import NLS.ZakharovShabat.M1WeightedActionBudget
+import NLS.ZakharovShabat.SourceM1WeightedActionEstimate

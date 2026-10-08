@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Latest progress: Lemma 28.1 and Proposition 28.2 on real H¹ sources
+## Latest progress: Theorem 23.4 real weighted-action estimate for every M₁ weight
+
+The real-source estimate in the proof of Theorem 23.4 is now proved for
+all M₁ spectral weights, including absolute summability:
+
+`∑ₙ w(2n)² |Iₙ(ψ)| ≤ 2²⁰ w[16P²]² P²`.
+
+Here P is the exact weighted norm of the potential. The normalized-source
+API supplies this norm directly, without an auxiliary realization hypothesis.
+The doubled frequency, interpolated weight argument, and printed constant
+are retained. Zero potentials and collapsed gaps are included.
+
+`SourceM1SpectralGeometry.lean` extends the endpoint and central-strip
+localization to arbitrary M₁ weights by lowering to the linear factor.
+`SourceM1GapFactorBound.lean` then proves the exterior-product constant 128,
+the squared central-product bound, the gap-factor constant 2048, and the
+real action-gap constant 1536 at the original weighted cutoff. No upper
+linear-growth assumption is imposed on the weight.
+
+`M1WeightedActionBudget.lean` controls the unweighted Hilbert norm by the
+weighted realization, derives the gap-tail budget `6P²+144P⁴`, and proves
+the final scalar constant. `SourceM1WeightedActionEstimate.lean` combines
+that tail with the mass trace for the central actions and proves summability
+of the entire weighted action series.
+
+Public examples cover an arbitrary M₁ weight, a cubic Sobolev weight, a
+linear factor times any spectral weight, the zero potential, and cutoff zero.
+
+Validation: the full build passed (6392 jobs), all public examples passed,
+and the transitive axiom audit passed for 25358 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: prove continuity of the weighted action norm on an appropriate complex
+neighborhood and extend the real estimate with constant 2²¹, including a
+separate estimate near zero. The complex-neighborhood conclusion of
+Theorem 23.4 is not yet claimed. Its weighted Birkhoff-map conclusion also
+remains to be assembled from the action-radius identity.
+
+## Previous milestone: Lemma 28.1 and Proposition 28.2 on real H¹ sources
 
 The scalar conclusion of Lemma 28.1 is now proved for real H¹ sources:
 `‖χ_n‖_gap ≤ 2048*(1+P²)` whenever `8*P² ≤ 1+|n|`. It includes both signs,

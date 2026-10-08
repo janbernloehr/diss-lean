@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 28.1's scalar gap-factor bound and Proposition
-28.2's action-gap estimate are proved on real H¹ sources, including boundary
-indices and collapsed gaps. A stronger squared central-product estimate
-recovers 2048 despite the error in the printed arithmetic; the real action
-constant improves from 4608 to 1536. The complex-neighborhood extension
-remains open. See [implementation status](STATUS.md) and
+Latest milestone: the real-source weighted-action estimate in the proof of
+Theorem 23.4 is proved for every M₁ weight, with absolute summability and the
+printed constant 2²⁰. The bound retains the exact weight w(2n), interpolated
+argument 16P², and weighted norm P. It includes zero potentials and weights
+that grow faster than linearly. The complex-neighborhood extension remains
+open. See [implementation status](STATUS.md) and
 [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

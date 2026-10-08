@@ -36873,3 +36873,45 @@ example (ψ : realTypeSourceSubmodule 2)
   exact norm_eq_zero.mp (le_antisymm h (norm_nonneg _))
 
 end Section28RealCentralChecks
+
+namespace Section28M1WeightedActionChecks
+open NLS.ZakharovShabat
+
+-- The full class M₁ is covered in normalized source coordinates.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a : realTypeSourceSubmodule 2) :
+    Summable (sourceM1ActionTerm w (normalizedWeightedSource w a.val)) ∧
+    (∑' n : ℤ, sourceM1ActionTerm w (normalizedWeightedSource w a.val) n) ≤
+      (2:ℝ)^20*(w.realExtension (16*‖a.val‖^2))^2*‖a.val‖^2 :=
+  sourceM1_real_weighted_actions_normalized w hw a
+
+-- A cubic Sobolev weight checks that there is no upper linear-growth restriction.
+example (a : realTypeSourceSubmodule 2) :
+    Summable (sourceM1ActionTerm (SpectralWeight.sobolev 3 (by norm_num))
+      (normalizedWeightedSource (SpectralWeight.sobolev 3 (by norm_num)) a.val)) :=
+  (sourceM1_real_weighted_actions_normalized _
+    (SpectralWeight.hasLinearFactor_sobolev 3 (by norm_num)) a).1
+
+-- The construction works for a linear factor times any spectral weight.
+example (v : SpectralWeight) (a : realTypeSourceSubmodule 2) :
+    (∑' n : ℤ, sourceM1ActionTerm v.withLinearFactor
+      (normalizedWeightedSource v.withLinearFactor a.val) n) ≤
+      (2:ℝ)^20*(v.withLinearFactor.realExtension (16*‖a.val‖^2))^2*‖a.val‖^2 :=
+  (sourceM1_real_weighted_actions_normalized _ v.hasLinearFactor_withLinearFactor a).2
+
+-- The estimate includes the zero potential with a vanishing right-hand side.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    (∑' n : ℤ, sourceM1ActionTerm w (normalizedWeightedSource w 0) n) = 0 := by
+  have h := (sourceM1_real_weighted_actions_normalized w hw 0).2
+  simp only [ZeroMemClass.coe_zero,norm_zero,zero_pow (by decide : 2 ≠ 0),mul_zero] at h
+  exact le_antisymm h (tsum_nonneg (fun n => by unfold sourceM1ActionTerm; positivity))
+
+-- Cutoff zero puts every index in the exterior series, with no central exception.
+example (w : SpectralWeight) (hw : w.HasLinearFactor)
+    (ψ : realTypeSourceSubmodule 2) (φ : WeightedCoeffPair w.toWeight 2)
+    (hφ : weightedBaseToPair w φ = periodOnePotential ψ.val) (hsmall : 8*‖φ‖^2 ≤ 1) :
+    Summable (sourceM1ActionTerm w ψ.val) := by
+  have h := (sourceM1_real_action_tail_summable_and_le w hw ψ φ hφ 0
+    (by simpa using hsmall) (by simp only [Nat.cast_zero]; positivity)).1
+  simpa only [Nat.zero_le,if_true] using h
+
+end Section28M1WeightedActionChecks
