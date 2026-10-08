@@ -1,6 +1,58 @@
 # Implementation plan
 
-## Latest progress: local classical NLS existence
+## Latest progress: local smooth mass and energy conservation
+
+The local classical solutions constructed from arbitrary smooth period-one
+initial functions now conserve both mass and the physical defocusing energy
+throughout their closed time interval. Energy is identified with the literal
+real integral `∫₀¹ (|u_x|² + |u|⁴)`. No finite-gap or spectral-flow assumption
+enters the conservation argument.
+
+`ClosedDerivativeZero.lean` proves constancy on a closed interval from
+continuity there and zero ordinary derivative in the interior. It includes
+both endpoints and singleton intervals. `LocalClassicalNLSMass.lean` applies
+this to every local classical trajectory: the physical PDE makes the mass
+derivative zero, and the conserved mass equals the integral over one period.
+
+`SobolevHamiltonianConservation.lean` identifies the full derivative of the
+existing H¹ Hamiltonian with its two physical first variations. Their sum
+vanishes on the classical pair NLS field by direct algebra. A strong local
+H¹ curve satisfying that field therefore conserves energy, including the
+endpoints. The pair argument also applies to independent complex components.
+
+`FourierNLSWeightedVelocity.lean` supplies the strong original-variable time
+derivative at any nonnegative real Sobolev order from a continuous lift two
+orders higher. Initial higher membership is enough: the existing persistence
+theorem constructs the lift on the whole reference interval.
+
+`ClassicalNLSSobolevEnergy.lean` constructs bounded real-linear physical
+conjugation and the real pair on H¹. Its scalar energy is the actual real
+kinetic-plus-quartic integral. Every strong H¹ realization of a local classical
+scalar solution conserves this energy.
+
+`LocalSmoothNLSConservation.lean` constructs that realization for arbitrary
+smooth periodic initial data. The order-one ℓ¹ lift embeds into Hilbert H¹
+without changing coefficients or the physical representative; order-three
+persistence gives its strong time derivative. The public existence theorem
+returns the actual classical curve with exact initial value and both
+conservation laws on the closed local interval.
+
+Public examples check mass at opposite endpoints, fractional-order negative
+frequency normalization, exact real energy normalization, the literal energy
+integral relative to the original initial function, and H¹ time
+differentiability at time zero.
+
+Validation: the full build passes (6199 jobs), all public examples pass,
+and the transitive axiom audit passes for 23829 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: combine these conserved quantities with coercivity and the
+bounded continuation theorem to construct global smooth classical solutions.
+Local existence and conservation are established; arbitrary-data global
+existence is not yet assembled. The dissertation’s exact all-smooth-sequence
+wellposedness assembly and full inventory also remain.
+
+## Previous milestone: local classical NLS existence
 
 Arbitrary smooth period-one physical initial functions now have actual local
 classical defocusing NLS solutions. The initial equality is pointwise, time

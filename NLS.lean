@@ -2776,3 +2776,9 @@ import NLS.Fourier.PeriodOneSynthesisAlgebra
 import NLS.Fourier.FourierNLSSpatialDerivatives
 import NLS.Fourier.FourierNLSPhysicalEquation
 import NLS.ZakharovShabat.LocalClassicalNLSExistence
+import NLS.FunctionalAnalysis.ClosedDerivativeZero
+import NLS.ZakharovShabat.LocalClassicalNLSMass
+import NLS.ZakharovShabat.SobolevHamiltonianConservation
+import NLS.Fourier.FourierNLSWeightedVelocity
+import NLS.ZakharovShabat.ClassicalNLSSobolevEnergy
+import NLS.ZakharovShabat.LocalSmoothNLSConservation

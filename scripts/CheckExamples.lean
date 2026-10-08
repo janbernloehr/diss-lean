@@ -34639,3 +34639,64 @@ example (f : C(AddCircle (2 : ℝ), ℂ))
   exact Quotient.inductionOn x (fun r => congrFun hi r)
 
 end LocalClassicalNLSChecks
+
+namespace LocalConservationChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set
+open scoped ContDiff ENNReal ComplexConjugate
+
+-- Closed endpoints require only continuity there, not a two-sided derivative outside the interval.
+example (f : ℝ → ℂ) (hc : ContinuousOn f (Icc (-3) 2))
+    (hd : ∀ time ∈ Ioo (-3) 2, HasDerivAt f 0 time) : f (-3) = f 2 :=
+  NLS.FunctionalAnalysis.eq_of_hasDerivAt_zero_Icc hc hd ⟨le_rfl,by norm_num⟩ ⟨by norm_num,le_rfl⟩
+
+-- Every local classical trajectory conserves literal physical mass at both endpoints.
+example {T : ℝ} (hT : 0 < T) {u : ℝ → C(AddCircle (2 : ℝ), ℂ)}
+    (hu : IsClassicalNLSTrajectoryOn (-T) T u) :
+    (∫ x in (0 : ℝ)..1, ‖u (-T) (x : AddCircle (2 : ℝ))‖^2) =
+      ∫ x in (0 : ℝ)..1, ‖u T (x : AddCircle (2 : ℝ))‖^2 :=
+  hu.integral_mass_eq ⟨le_rfl,by linarith⟩ ⟨by linarith,le_rfl⟩
+
+-- Fractional-order strong derivatives retain the original negative-frequency sign.
+example (a : WeightedCoeff (SpectralWeight.sobolev ((1/2 : ℝ)+2) (by norm_num)).toWeight 1) :
+    (nlsSobolevLinearCLM (1/2) (by norm_num) a).val (-2) =
+      -(16*(Real.pi : ℂ)^2)*Complex.I*a.val (-2) := by
+  rw [nlsSobolevLinearCLM_apply,nlsLinearSymbol]
+  push_cast
+  ring
+
+-- The energy is literally the real unit-period integral, with no hidden normalization.
+example (a : ScalarDomain 2) :
+    (scalarSobolevEnergy a).re = ∫ x in (0 : ℝ)..1,
+      ‖deriv (fun y : ℝ => periodOneSobolevSynthesis a (y : AddCircle (2 : ℝ))) x‖^2 +
+        ‖periodOneSobolevSynthesis a (x : AddCircle (2 : ℝ))‖^4 := by
+  rw [scalarSobolevEnergy_eq_real_integral,Complex.ofReal_re]
+
+-- Arbitrary smooth periodic initial functions have local classical solutions
+-- conserving the literal physical energy at every time, including both endpoints.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    ∃ T > 0, ∃ u : ℝ → C(AddCircle (2 : ℝ), ℂ),
+      (fun x : ℝ => u 0 (x : AddCircle (2 : ℝ))) = f ∧
+      IsClassicalNLSTrajectoryOn (-T) T u ∧
+      ∀ time ∈ Icc (-T) T,
+        (∫ x in (0 : ℝ)..1,
+          ‖deriv (fun y : ℝ => u time (y : AddCircle (2 : ℝ))) x‖^2 +
+            ‖u time (x : AddCircle (2 : ℝ))‖^4) =
+          ∫ x in (0 : ℝ)..1, ‖deriv f x‖^2+‖f x‖^4 := by
+  obtain ⟨T,hT,v,hi,_,_,hv,_,hE⟩ := exists_local_smoothNLS_with_conservation f hf hp
+  refine ⟨T,hT,(fun time => periodOneSobolevSynthesis (v time)),hi,hv,?_⟩
+  intro time ht
+  have he := congrArg Complex.re (hE time ht)
+  simp only [scalarSobolevEnergy_eq_real_integral,Complex.ofReal_re] at he
+  simpa only [hi,show ∀ x : ℝ, periodOneSobolevSynthesis (v 0) (x : AddCircle (2 : ℝ)) = f x
+    from fun x => congrFun hi x] using he
+
+-- The same constructed curve is strongly differentiable in H¹ at the initial time.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    ∃ T > 0, ∃ u : ℝ → ScalarDomain 2,
+      DifferentiableAt ℝ u 0 ∧
+      scalarSobolevEnergy (u (-T)) = scalarSobolevEnergy (u T) := by
+  obtain ⟨T,hT,u,_,_,hd,_,_,hE⟩ := exists_local_smoothNLS_with_conservation f hf hp
+  exact ⟨T,hT,u,hd 0 ⟨by linarith,hT⟩,
+    (hE (-T) ⟨le_rfl,by linarith⟩).trans (hE T ⟨by linarith,le_rfl⟩).symm⟩
+
+end LocalConservationChecks
