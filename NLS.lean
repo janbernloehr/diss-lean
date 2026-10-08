@@ -2838,3 +2838,8 @@ import NLS.DifferentialPolynomial.JetAlgebra
 import NLS.DifferentialPolynomial.JetDegrees
 import NLS.ZakharovShabat.NLSRiccatiPolynomials
 import NLS.ZakharovShabat.NLSRiccatiPolynomialRemainder
+import NLS.DifferentialPolynomial.JetOrderBounds
+import NLS.DifferentialPolynomial.IntegrationByPartsReduction
+import NLS.DifferentialPolynomial.PeriodicEvaluation
+import NLS.DifferentialPolynomial.BalancedJetProduct
+import NLS.ZakharovShabat.NLSOddHamiltonianReducedPolynomial

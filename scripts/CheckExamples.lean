@@ -35417,3 +35417,46 @@ example : nlsRiccatiRemainder 4 =
   ring
 
 end RiccatiPolynomialStructureChecks
+
+namespace OddHamiltonianReductionChecks
+open Set MeasureTheory NLS NLS.DifferentialPolynomial NLS.ZakharovShabat MvPolynomial
+open scoped ContDiff
+
+-- The exact polynomial identity retains the total derivative discarded by integration.
+example : X (false,0)*X (false,2)*X (true,0)^2 =
+    -(X (false,1)^2*X (true,0)^2)-2*X (false,0)*X (false,1)*X (true,0)*X (true,1) +
+      spatialDerivative (X (false,0)*X (false,1)*X (true,0)^2) := by
+  simp [pow_two,Derivation.leibniz,smul_eq_mul,nextJet]
+  ring
+
+-- Reduction works at every positive order and preserves both homogeneous gradings.
+example (m : ℕ) (hm : 1 ≤ m) :
+    HasJetReduction m (2*(m:ℤ)+2) 0 (2*(m:ℤ)-2) (X (false,0)*nlsRiccatiRemainder (2*m)) :=
+  exists_nlsOddRemainder_jet_reduction m hm
+
+-- A total derivative has zero physical integral for any smooth periodic fields.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1)
+    (p : DifferentialPolynomial.Polynomial) :
+    (∫ x in (0:ℝ)..1, evaluate a b (spatialDerivative p) x) = 0 :=
+  integral_evaluate_spatialDerivative a b ha hb hpa hpb p
+
+-- Three transfers of derivatives produce the required negative sign.
+example (a b : ℝ → ℂ) (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
+    (hpa : Function.Periodic a 1) (hpb : Function.Periodic b 1) :
+    (∫ x in (0:ℝ)..1, a x*iteratedDeriv 6 b x) =
+      -(∫ x in (0:ℝ)..1, iteratedDeriv 3 a x*iteratedDeriv 3 b x) := by
+  have h := integral_balanced_derivatives a b ha hb hpa hpb 3
+  norm_num at h
+  exact h
+
+-- Corollary H.2 on smooth real-type fields, with one polynomial independent of the field.
+example (m : ℕ) (hm : 1 ≤ m) :
+    ∃ q : DifferentialPolynomial.Polynomial, JetOrderLE q (m-1) ∧
+      q.IsWeightedHomogeneous totalWeight (2*(m:ℤ)+2) ∧
+      q.IsWeightedHomogeneous fieldCharge 0 ∧
+      ∀ f : ℝ → ℂ, ContDiff ℝ ∞ f → Function.Periodic f 1 →
+        classicalNLSHamiltonian f (fun x => star (f x)) (2*m+1) = ∫ x in (0:ℝ)..1,
+          (‖iteratedDeriv m f x‖^2 : ℝ)+evaluate f (fun y => star (f y)) q x :=
+  exists_classicalNLSHamiltonian_odd_real_reduced_polynomial m hm
+end OddHamiltonianReductionChecks

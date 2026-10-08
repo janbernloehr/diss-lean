@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: the polynomial structure of Appendix H
+## Current milestone: smooth odd Hamiltonians with reduced derivatives
+
+The integration-by-parts reduction underlying Corollary H.2 is now proved
+at every order. For each positive `m`, one polynomial in derivatives through
+order `m-1` gives the nonlinear remainder of `H_(2m+1)` on every smooth
+periodic pair. On real-type pairs the leading term is exactly the squared
+norm of the mth derivative. The reduced polynomial has total weight `2m+2`
+and equal counts of the two fields.
+
+`JetOrderBounds.lean` separates the largest individual derivative from the
+total number of derivatives in a monomial. `IntegrationByPartsReduction.lean`
+proves an exact polynomial identity `p = q + D r`: if every monomial has at
+most `2m-2` derivatives, `q` uses jets only through order `m-1`. Induction on
+the largest jet order terminates the reduction while preserving both
+homogeneous gradings and the total derivative bound. The polynomial `r`
+explicitly records the discarded total spatial derivative.
+
+`PeriodicEvaluation.lean` proves that actual evaluation preserves the period
+and that total derivatives integrate to zero. `BalancedJetProduct.lean`
+transfers derivatives between the leading pair of factors, including the
+sign from every integration-by-parts step.
+`NLSOddHamiltonianReducedPolynomial.lean` applies both results to the existing
+classical Hamiltonian hierarchy with its exact phase normalization. The
+remainder polynomial is chosen before the fields, so a single polynomial
+works for all smooth periodic inputs, including all real-type inputs.
+
+Public examples check a nonlinear polynomial reduction with its explicit
+primitive, arbitrary-order graded reduction, vanishing periodic derivative
+integrals, the sign after three derivative transfers, and the full smooth
+real-type reduced Hamiltonian formula.
+
+Validation: the full build passes (6270 jobs), all public examples pass,
+and the transitive axiom audit passes for 24512 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: construct the reduced physical functional on H^m and prove its
+analyticity, classical agreement, and the sharper physical traces there.
+This step proves the smooth periodic reduction of Corollary H.2; the extension
+to all H^m inputs is not yet proved. Fixed-domain trace scope, the explicit
+norm-dependent localization and uniform estimates of Sections 25–28, and the
+full dissertation inventory also remain open.
+
+## Previous milestone: the polynomial structure of Appendix H
 
 Appendix H's algebraic structure is now represented by actual multivariate
 polynomials in the derivatives of the two scalar fields. Polynomial evaluation

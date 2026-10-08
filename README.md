@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: actual differential polynomials now represent every Riccati
-density, with proved agreement with the smooth physical recurrence. Appendix H's
-total degree, field balance, leading derivative, and nonlinear derivative bounds
-are proved at every order. Periodic integration by parts and extension to sharper
-Sobolev regularity are next. See `STATUS.md`.
+Latest milestone: repeated integration by parts now gives Corollary H.2's
+reduced polynomial formula for every smooth periodic odd Hamiltonian. The
+nonlinear remainder uses derivatives only through order `m-1`; on real-type
+fields the leading term is the squared norm of the mth derivative. Extension
+of this physical formula to H^m is next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
