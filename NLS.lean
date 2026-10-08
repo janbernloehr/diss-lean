@@ -2965,3 +2965,9 @@ import NLS.ZakharovShabat.M1WeightedActionBudget
 import NLS.ZakharovShabat.SourceM1WeightedActionEstimate
 import NLS.ZakharovShabat.SourceBirkhoffM1Coordinates
 import NLS.ZakharovShabat.SourceBirkhoffM1Estimate
+import NLS.SequenceSpaces.SpectralWeightContinuity
+import NLS.ZakharovShabat.SourceM1ComplexActionBudget
+import NLS.ZakharovShabat.SourceM1ActionContinuity
+import NLS.ZakharovShabat.SourceM1ActionNearZero
+import NLS.ZakharovShabat.SourceM1ActionNeighborhood
+import NLS.ZakharovShabat.SourceTheorem23_4

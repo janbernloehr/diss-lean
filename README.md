@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the real weighted Birkhoff-map bound in Theorem 23.4 is
-proved for every M₁ weight, with universal constant 2048. The actual weighted
-coordinates form a real Hilbert pair, whose squared norm is exactly twice
-the weighted action sum. A single constructed Birkhoff map works for all
-weights, including those growing faster than linearly. The complex-neighborhood
-action bound remains open. See [implementation status](STATUS.md) and
-[source discrepancies](SOURCE_ERRATA.md).
+Latest milestone: both conclusions of Theorem 23.4 are proved for every M₁
+weight. The complex weighted-action bound holds on an open neighborhood of
+the entire real weighted source space, including zero, with constant 2²¹ and
+absolute summability. One constructed Birkhoff map satisfies the real weighted
+norm bound; 2048 is a common constant for the theorem's two conclusions.
+See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

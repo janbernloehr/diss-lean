@@ -36957,3 +36957,63 @@ example :
   exists_sourceBirkhoffMap_M1_bound
 
 end Section28M1BirkhoffChecks
+
+namespace Theorem234ComplexChecks
+open NLS.ZakharovShabat
+
+-- Interpolation is continuous at signed integer boundaries and at zero.
+example (w : SpectralWeight) : ContinuousAt w.realExtension (-17) :=
+  w.continuous_realExtension.continuousAt
+example (w : SpectralWeight) : ContinuousAt w.realExtension 0 :=
+  w.continuous_realExtension.continuousAt
+
+-- The zero-source result contains an actual ball of complex weighted potentials.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) :
+    ∃ r : ℝ, 0 < r ∧ ∀ a : CoeffPair 2, ‖a‖ < r →
+      Summable (sourceM1ActionTerm w (normalizedWeightedSource w a)) ∧
+      (∑' n : ℤ, sourceM1ActionTerm w (normalizedWeightedSource w a) n) ≤
+        (2:ℝ)^21*sourceM1ActionScale w a := by
+  obtain ⟨V,hV,h0V,hbound⟩ := exists_zero_sourceM1Action_bound w hw
+  obtain ⟨r,hr,hball⟩ := Metric.isOpen_iff.mp hV 0 h0V
+  exact ⟨r,hr,fun a ha => hbound a (hball (by simpa only [Metric.mem_ball,dist_zero_right] using ha))⟩
+
+-- A collapsed complex gap is covered by the uniform near-zero factor bound.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ (0:CoeffPair 2) ∈ U ∧
+    ∀ ψ ∈ U, sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ 0 = 0 →
+      sourceComplexAction (by simp) (by norm_num) 0 ψ = 0 := by
+  obtain ⟨U,hU,h0U,hbound⟩ := exists_zero_sourceAction_gap_bound
+  refine ⟨U,hU,h0U,?_⟩
+  intro ψ hψ hgap
+  have h := hbound ψ hψ 0
+  rw [hgap,norm_zero,zero_pow (by decide : 2 ≠ 0)] at h
+  exact norm_eq_zero.mp (le_antisymm h (norm_nonneg _))
+
+-- Fractional Sobolev orders are admitted by the complex-neighborhood theorem.
+example : ∃ V : Set (CoeffPair 2), IsOpen V ∧ realTypeSourceLocus 2 ⊆ V ∧ ∀ a ∈ V,
+    Summable (sourceM1ActionTerm (SpectralWeight.sobolev (3/2) (by norm_num))
+      (normalizedWeightedSource (SpectralWeight.sobolev (3/2) (by norm_num)) a)) := by
+  obtain ⟨V,hV,hreal,hbound⟩ := exists_sourceM1Action_neighborhood
+    (SpectralWeight.sobolev (3/2) (by norm_num))
+    (SpectralWeight.hasLinearFactor_sobolev (3/2) (by norm_num))
+  exact ⟨V,hV,hreal,fun a ha => (hbound a ha).1⟩
+
+-- Continuity is for the complete weighted absolute sum at every real source.
+example (v : SpectralWeight) (a : realTypeSourceSubmodule 2) :
+    ContinuousAt (fun b : CoeffPair 2 => ∑' n : ℤ,
+      sourceM1ActionTerm v.withLinearFactor (normalizedWeightedSource v.withLinearFactor b) n) a.val :=
+  continuousAt_sourceM1ActionTotal _ v.hasLinearFactor_withLinearFactor a
+
+-- One map, one positive constant per weight, and both conclusions together.
+example :
+    ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+      ∃ D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s,
+        ∀ w : SpectralWeight, ∀ hw : w.HasLinearFactor,
+          ∃ c : ℝ, 0 < c ∧ ∃ V : Set (CoeffPair 2), IsOpen V ∧ realTypeSourceLocus 2 ⊆ V ∧
+            (∀ a ∈ V, Summable (sourceM1ActionTerm w (normalizedWeightedSource w a)) ∧
+              (∑' n : ℤ, sourceM1ActionTerm w (normalizedWeightedSource w a) n) ≤
+                c^2*(w.realExtension (16*‖a‖^2))^2*‖a‖^2) ∧
+            ∀ a : realTypeSourceSubmodule 2,
+              ‖D.m1Coordinates w hw a‖ ≤ c*w.realExtension (16*‖a.val‖^2)*‖a.val‖ :=
+  exists_sourceBirkhoffMap_theorem23_4
+
+end Theorem234ComplexChecks

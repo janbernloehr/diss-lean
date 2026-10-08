@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: Theorem 23.4 real weighted Birkhoff-map bound
+## Current milestone: Theorem 23.4, including the complex neighborhood and zero
+
+Both conclusions of Theorem 23.4 are now proved for the existing original
+actions and one constructed Birkhoff map, simultaneously for all M₁ weights.
+`SourceTheorem23_4.lean` supplies one positive constant for both bounds;
+2048 works for every weight. The sharper complex action estimate retains
+the printed constant 2²¹:
+
+`∑ₙ w(2n)² |Iₙ(ψ)| ≤ 2²¹ w[16P²]² P²`.
+
+The action estimate holds on an open complex neighborhood containing the
+entire real weighted source locus, including zero. Absolute summability is
+part of the conclusion. Weighted source coordinates retain the exact norm P
+and physical frequency w(2n); the existing weighted Birkhoff coordinates
+supply actual membership in the target real Hilbert space.
+
+`SpectralWeightContinuity.lean` proves continuity of the exact interpolated
+weight, including its integer boundaries and zero. `SourceM1ComplexActionBudget.lean`
+combines the all-index normalized-action factorization with the complex
+spectral-height gap bound and constructs the actual complex ℓ¹ action sequence.
+`SourceM1ActionContinuity.lean` upgrades coordinate analyticity and a local
+norm bound to continuity of this full sequence and its absolute action sum.
+
+`SourceM1ActionNearZero.lean` uses the free normalized-factor value 1/4 and
+sequence-norm continuity to control all factors uniformly near zero. This
+provides a complex weighted estimate without dividing by the source norm.
+`SourceM1ActionNeighborhood.lean` doubles the real estimate near every
+nonzero real source, then takes the union with the zero neighborhood.
+
+Public examples check signed interpolation boundaries, a genuine complex
+ball around zero, a collapsed complex gap, a fractional Sobolev weight,
+continuity of the entire weighted sum, and the joint theorem's quantifiers.
+
+Validation: the full build passed (6400 jobs), all public examples passed,
+and the transitive axiom audit passed for 25405 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: derive Corollary 23.5's explicit polynomial bounds for every real
+Sobolev order s ≥ 1. The outstanding complex versions of Lemma 28.1 and
+Proposition 28.2, and unrestricted m=1 in Lemma 27.2, remain separate tasks;
+Theorem 23.4 is complete via the normalized-action continuity argument above.
+
+## Previous milestone: Theorem 23.4 real weighted Birkhoff-map bound
 
 The real Birkhoff-map conclusion of Theorem 23.4 is now proved for every
 M₁ weight, with the explicit universal constant 2048:
