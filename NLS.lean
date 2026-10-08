@@ -2978,3 +2978,7 @@ import NLS.ZakharovShabat.SourceSobolevCommonConstants
 import NLS.ZakharovShabat.Lemma272EndpointArithmetic
 import NLS.ZakharovShabat.SourceH1EndpointActionBound
 import NLS.ZakharovShabat.SourceH1EndpointMomentCriterion
+import NLS.ZakharovShabat.NormalizedWeightedSourceRealPart
+import NLS.ZakharovShabat.SourceRealNormalizedActionGapBound
+import NLS.ZakharovShabat.SourceNormalizedActionRealPartNeighborhood
+import NLS.ZakharovShabat.SourceProposition28_2

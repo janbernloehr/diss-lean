@@ -104,5 +104,11 @@ Combined with the exterior constant 128, this gives
 recover the bound 4736 for the actual real gap factor at n=±10 under the
 norm assumption above. This does not validate the false ratio chain.
 The real-source version of Proposition 28.2 follows, with the stronger
-constant 1536 (and hence the printed 4608). The almost-real complex
-extension and the printed intermediate spectral ratio remain open.
+constant 1536 (and hence the printed 4608).
+
+The complex action estimate of Proposition 28.2 is now proved independently
+in `SourceProposition28_2.lean`, on a connected L²-open neighborhood of the
+entire real L² locus. It uses the real-type projection and uniform continuity
+of the normalized actions; it does not rely on a complex version of the
+false ratio chain. The complex gap-factor bound of Lemma 28.1 remains open;
+its printed intermediate scalar comparison is disproved above.

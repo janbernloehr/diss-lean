@@ -37193,3 +37193,73 @@ example {W : Set (CoeffPair 4)} (A : SourcePrimitivePowerAtlas (by simp) (by nor
   (A.sourceH1_lemma272_iff_moment_budget a).2 h
 
 end Lemma272EndpointChecks
+
+namespace Proposition282Checks
+open NLS.ZakharovShabat
+
+-- Physical projection contracts the exact normalized weighted norm and preserves decoding.
+example (w : SpectralWeight) (a : CoeffPair 2) :
+    ‖sourceRealPart a‖ ≤ ‖a‖ ∧
+      normalizedWeightedSource w (sourceRealPart a) = sourceRealPart (normalizedWeightedSource w a) :=
+  ⟨norm_sourceRealPart_le (by simp) a,normalizedWeightedSource_sourceRealPart w a⟩
+
+-- A collapsed gap retains the midpoint factor; no division by the zero gap is used.
+example (ψ : realTypeSourceSubmodule 2) (n : ℤ)
+    (hgap : sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ.val n = 0) :
+    4*sourceNormalizedActionComplexExtension (by simp) (by norm_num) n ψ.val =
+      sourceRealGapFactor (by simp) (by norm_num) ψ.val ψ.property n ⟨0,by norm_num⟩ :=
+  sourceNormalizedAction_four_eq_gapFactor_of_collapsed (by simp) (by norm_num) ψ.val ψ.property n hgap
+
+-- The neighborhood is connected and open in the original L² space, and contains all real L² sources.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 2 ⊆ U ∧
+    U ⊆ sourceSpectralStripNeighborhood (by simp) ∧
+    ∀ a : ScalarDomain 2 × ScalarDomain 2, sobolevSourceInclusion a ∈ U →
+      ∀ n : ℤ, 8*‖sourcePhysicalH1Coordinates a‖^2 ≤ |(n:ℝ)| →
+        ‖sourceComplexAction (by simp) (by norm_num) n (sobolevSourceInclusion a)‖ ≤
+          4608*(1+‖sourcePhysicalH1Coordinates a‖^2)*
+            ‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (sobolevSourceInclusion a) n‖^2 :=
+  exists_sourceH1_proposition28_2
+
+-- Both signed boundary indices ±10 are included at P²=5/4, with constant 10368.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ realTypeSourceLocus 2 ⊆ U ∧
+    ∀ a : ScalarDomain 2 × ScalarDomain 2, sobolevSourceInclusion a ∈ U →
+      ‖sourcePhysicalH1Coordinates a‖^2 = (5/4:ℝ) → ∀ n : ℤ, (n = 10 ∨ n = -10) →
+        ‖sourceComplexAction (by simp) (by norm_num) n (sobolevSourceInclusion a)‖ ≤
+          10368*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) (sobolevSourceInclusion a) n‖^2 := by
+  obtain ⟨U,hU,_,hr,_,hb⟩ := exists_sourceH1_proposition28_2
+  refine ⟨U,hU,hr,?_⟩
+  intro a ha hP n hn
+  have hcut : 8*‖sourcePhysicalH1Coordinates a‖^2 ≤ |(n:ℝ)| := by
+    rw [hP]
+    rcases hn with rfl | rfl <;> norm_num
+  have h := hb a ha n hcut
+  rw [hP] at h
+  norm_num only at h
+  exact h
+
+-- A single neighborhood is selected before all weights, including fractional Sobolev weights.
+-- Its stronger inclusive threshold also covers the zero source at index zero.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ IsConnected U ∧ (0:CoeffPair 2) ∈ U ∧
+    realTypeSourceLocus 2 ⊆ U ∧ ∀ w : SpectralWeight, w.HasLinearFactor →
+      ∀ a : CoeffPair 2, normalizedWeightedSource w a ∈ U → ∀ n : ℤ,
+        8*‖a‖^2 ≤ 1+|(n:ℝ)| →
+          ‖sourceNormalizedActionComplexExtension (by simp) (by norm_num) n (normalizedWeightedSource w a)‖ ≤
+            4608*(1+‖a‖^2) := by
+  obtain ⟨U,hU,hc,hr,_,hb⟩ := exists_sourceM1_action_gap_neighborhood
+  exact ⟨U,hU,hc,hr (by simp [realTypeSourceLocus]),hr,fun w hw a ha n hn => (hb w hw a ha n hn).1⟩
+
+-- The same complex neighborhood includes collapsed actions as zero, at every index.
+example : ∃ U : Set (CoeffPair 2), IsOpen U ∧ IsConnected U ∧ realTypeSourceLocus 2 ⊆ U ∧
+    ∀ ψ ∈ U, ∀ n : ℤ, sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ n = 0 →
+      sourceComplexAction (by simp) (by norm_num) n ψ = 0 := by
+  obtain ⟨U,hU,hc,hr,_,hb⟩ := exists_sourceNormalizedAction_realPart_neighborhood
+  refine ⟨U,hU,hc,hr,?_⟩
+  intro ψ hψ n hgap
+  rw [(hb ψ hψ n).2,hgap,zero_pow (by norm_num : (2:ℕ) ≠ 0),zero_mul]
+
+-- Physical H¹ coordinates represent the original source, even for non-real potentials.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    normalizedWeightedSource (SpectralWeight.piSobolev 1 (by norm_num)) (sourcePhysicalH1Coordinates a) =
+      sobolevSourceInclusion a := normalizedWeightedSource_physicalH1Coordinates a
+
+end Proposition282Checks

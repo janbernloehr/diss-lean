@@ -5,12 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the printed m=1 estimate of Lemma 27.2 now holds when
-the weighted action sum is at most 2. An unrestricted all-order variant
-has twice the printed remainder, while an exact cubic-moment criterion
-identifies the spectral estimate still needed for the literal endpoint.
-Theorem 23.1, Theorem 23.2, Remark 23.3, Theorem 23.4, and Corollary 23.5
-remain formalized with their previously established constants.
+Latest milestone: Proposition 28.2 now holds for complex H¹ sources on a
+connected L²-open neighborhood of the entire real L² locus, with the printed
+constant 4608. A stronger joint theorem uses the same neighborhood for all
+M₁ weights. Collapsed gaps and the exact index threshold are included.
 See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

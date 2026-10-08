@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: Lemma 27.2 endpoint budget and spectral reduction
+## Current milestone: Proposition 28.2 on a connected L²-open neighborhood
+
+Proposition 28.2 is now proved for complex H¹ sources on a connected,
+L²-open neighborhood of the entire real L² source locus:
+
+`|I_n(ψ)| ≤ 4608 (1+P²) |γ_n(ψ)|²`, whenever `8P² ≤ |n|`.
+
+Here P is the exact physical H¹ norm. `exists_sourceH1_proposition28_2`
+uses the original H¹ coefficients, canonical gaps, and existing complex
+actions. The neighborhood is contained in the spectral-strip domain;
+collapsed gaps and zero are included.
+
+`NormalizedWeightedSourceRealPart.lean` proves that weighted decoding
+commutes with the physical real-type projection. The existing contraction
+of this projection therefore applies in every normalized weighted norm.
+`SourceRealNormalizedActionGapBound.lean` fills the previous collapsed-gap
+issue explicitly: four times the removable normalized action is the gap
+factor at its midpoint. Together with the real gap-factor estimate this
+gives `|rho_n| ≤ 1536(1+P²)` under `8P² ≤ 1+|n|` for every M₁ weight.
+
+`SourceNormalizedActionRealPartNeighborhood.lean` uses local ℓ² continuity
+of `4rho-1` to bound all differences `|rho_n(ψ)-rho_n(Re ψ)|` by one on a
+single source neighborhood. Taking the connected component containing the
+real locus gives a connected L²-open domain. No stronger-norm continuity
+in the L² topology is assumed.
+
+`SourceProposition28_2.lean` combines projection, the real bound, and this
+uniform error. Its stronger joint theorem chooses the neighborhood before
+all M₁ weights and proves both normalized-action and action-gap bounds
+under the inclusive threshold `8P² ≤ 1+|n|`. The physical H¹ specialization
+retains the literal threshold and constant in Proposition 28.2.
+
+Public examples check the L² topology and quantifier order, the exact
+collapsed-gap value, collapsed complex actions, projection and decoding,
+and both signed boundary indices n=±10 at P²=5/4 (coefficient 10368).
+
+Validation: the full build passed (6411 jobs), all public examples passed,
+and the transitive axiom audit passed for 25476 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: complete the complex gap-factor bound of Lemma 28.1, retaining the
+separate audit of its false intermediate ratio. The unrestricted literal
+m=1 endpoint of Lemma 27.2 also remains open. Audit the other complex
+neighborhood statements for their original topology and quantifier order.
+
+## Previous milestone: Lemma 27.2 endpoint budget and spectral reduction
 
 The m=1 analysis of Lemma 27.2 now retains the mass subtraction in
 `H3 ≤ S - M + 2M²`, where M is total action and S is the order-one weighted
