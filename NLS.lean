@@ -2831,3 +2831,6 @@ import NLS.ZakharovShabat.SourceHigherSobolevFiniteGapLimits
 import NLS.ZakharovShabat.SobolevHierarchyOperations
 import NLS.ZakharovShabat.SobolevRiccatiHierarchy
 import NLS.ZakharovShabat.SobolevNLSHamiltonianHierarchy
+import NLS.Fourier.SmoothPeriodOneCoefficientAlgebra
+import NLS.ZakharovShabat.SobolevRiccatiClassicalAgreement
+import NLS.ZakharovShabat.SobolevNLSHierarchyTrace

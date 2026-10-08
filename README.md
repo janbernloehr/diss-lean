@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the full Riccati recurrence now defines analytic Sobolev
-densities and Hamiltonians from physical derivatives and Fourier products.
-Every Hamiltonian of order `k ≥ 1` is analytic on H^(k-1); the first two agree
-with the established mass and momentum. All-order classical and finite-gap
-identification is next, followed by the higher physical trace identities.
+Latest milestone: every constructed Sobolev Riccati density and Hamiltonian
+now agrees with the classical smooth hierarchy. For `n ≤ s`, the physical
+trace identity holds on real Hˢ and on a common open complex Hˢ neighborhood,
+with absolute convergence and the factor `2^n`. The complex domain may depend
+on `s`; sharper regularity and fixed-domain scope remain to be addressed.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

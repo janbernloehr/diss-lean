@@ -35326,3 +35326,53 @@ example : sobolevNLSHamiltonian 1
   convert h using 1
   ring
 end SobolevPhysicalHierarchyChecks
+
+namespace SobolevPhysicalTraceChecks
+open Set NLS NLS.Fourier NLS.ZakharovShabat
+open scoped ContDiff
+
+-- Actual Fourier integration gives the period-one derivative multiplier, including negative modes.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) :
+    periodOneCoefficient (deriv f) (-3) =
+      2*Complex.I*(Real.pi:ℂ)*(-3)*periodOneCoefficient f (-3) := by
+  simpa using periodOneCoefficient_deriv_of_smooth_periodic f hf hp (-3)
+
+-- Comparison with the classical differential recurrence is uniform in the order.
+example (s : ℕ) (ab : SobolevSource s) (f g : ℝ → ℂ)
+    (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hpf : Function.Periodic f 1) (hpg : Function.Periodic g 1)
+    (ha : ∀ j, ab.1.val j = periodOneCoefficient f j)
+    (hb : ∀ j, ab.2.val j = periodOneCoefficient g j) :
+    sobolevNLSHamiltonian s ab (s+1) le_rfl = classicalNLSHamiltonian f g (s+1) :=
+  sobolevNLSHamiltonian_eq_classical s ab f g hf hg hpf hpg ha hb (s+1) le_rfl
+
+-- The H⁰ endpoint gives mass without smoothness or finite-gap assumptions.
+example (a : realTypeHigherSobolevSourceLocus 0) :
+    (∑' j : ℤ, sourceComplexHigherAction (by simp) (by norm_num) j 0
+      (higherSobolevSourceInclusion 0 a.val)) = sobolevNLSHamiltonian 0 a.val 1 le_rfl := by
+  simpa using sobolevNLSHamiltonian_higherAction_trace 0 0 le_rfl a
+
+-- The fourth and fifth physical Hamiltonians have factors eight and sixteen.
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    (∑' j : ℤ, sourceComplexHigherAction (by simp) (by norm_num) j 3
+      (higherSobolevSourceInclusion 3 a.val)) = sobolevNLSHamiltonian 3 a.val 4 le_rfl/8 := by
+  convert sobolevNLSHamiltonian_higherAction_trace 3 3 le_rfl a using 1
+  norm_num
+
+example (a : realTypeHigherSobolevSourceLocus 4) :
+    (∑' j : ℤ, sourceComplexHigherAction (by simp) (by norm_num) j 4
+      (higherSobolevSourceInclusion 4 a.val)) = sobolevNLSHamiltonian 4 a.val 5 le_rfl/16 := by
+  convert sobolevNLSHamiltonian_higherAction_trace 4 4 le_rfl a using 1
+  norm_num
+
+-- One open complex Hˢ domain supports every admissible physical trace and absolute convergence.
+example (s : ℕ) :
+    ∃ U : Set (SobolevSource s), IsOpen U ∧
+      {a | IsRealType (CoeffPair.toMax 2 (higherSobolevSourceInclusion s a))} ⊆ U ∧
+      ∀ b ∈ U, ∀ n : ℕ, ∀ hn : n ≤ s,
+        ((∑' j : ℤ, sourceComplexHigherAction (by simp) (by norm_num) j n
+          (higherSobolevSourceInclusion s b)) = sobolevNLSHamiltonian s b (n+1) (by omega)/2^n) ∧
+        Summable (fun j : ℤ => ‖sourceComplexHigherAction (by simp) (by norm_num) j n
+          (higherSobolevSourceInclusion s b)‖) :=
+  exists_sobolevNLSHamiltonian_trace_domain s
+end SobolevPhysicalTraceChecks

@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: the analytic Sobolev Riccati Hamiltonian hierarchy
+## Current milestone: all-order physical Sobolev trace identities
+
+The physical Sobolev hierarchy now agrees with the classical smooth hierarchy
+at every admissible order. For every integer `s ≥ 0` and `n ≤ s`, the literal
+higher-action sum on real Hˢ equals the independently constructed Hamiltonian
+of order `n+1` divided by `2^n`. One open complex Hˢ domain contains the entire
+real locus and supports all these traces simultaneously, with absolute
+convergence of their defining series.
+
+`SmoothPeriodOneCoefficientAlgebra.lean` proves the derivative multiplier
+`2π i n` and the full convolution formula directly for the Fourier integrals
+of smooth period-one functions, together with finite-sum identities.
+`SobolevRiccatiClassicalAgreement.lean` uses these identities to compare every
+coefficient of every Riccati density with the classical differential recurrence.
+Bilinear Parseval identifies the resulting Hamiltonians with the classical
+physical integrals.
+
+`SobolevNLSHierarchyTrace.lean` identifies the Sobolev Hamiltonians with the
+actual smooth finite-gap reconstruction. The existing finite-gap density and
+analytic uniqueness theorems then give the real and complex physical traces.
+The complex domain may depend on `s`; this does not yet assert a single fixed
+unweighted domain for every Sobolev order. The direct construction presently
+requires H^(k-1) for Hamiltonian order `k`; lower-regularity extensions of the
+full hierarchy remain separate work. The first three physical traces on H¹
+were established previously.
+
+Public examples check the negative-frequency derivative normalization,
+arbitrary-order classical agreement, the H⁰ mass endpoint, the fourth and fifth
+trace factors `8` and `16`, and the common complex domain with absolute
+convergence. No Hamiltonian is defined by a spectral action sum.
+
+Validation: the full build passes (6251 jobs), all public examples pass,
+and the transitive axiom audit passes for 24371 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: extend the higher physical Hamiltonians to the sharper regularity
+suggested by the higher-action bounds, resolve the fixed-domain scope, and
+formalize the explicit norm-dependent localization and uniform estimates of
+Sections 25–28. The full dissertation inventory remains open.
+
+## Previous milestone: the analytic Sobolev Riccati Hamiltonian hierarchy
 
 The full coefficient Riccati hierarchy is now constructed on the original
 integer Sobolev scale. Its density of order `n ≤ s` is an entire analytic
