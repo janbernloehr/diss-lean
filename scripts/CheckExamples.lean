@@ -35278,3 +35278,51 @@ example (s : ℕ) (a : realTypeHigherSobolevSourceLocus s) (f g : SobolevSource 
     f =ᶠ[𝓝 a.val] g :=
   eventuallyEq_higherSobolev_of_analyticAt_of_real_agreement s a f g hf hg hreal
 end HigherSobolevFiniteGapChecks
+
+namespace SobolevPhysicalHierarchyChecks
+open Set NLS NLS.ZakharovShabat
+
+-- The derivative preserves the actual period-one frequency, with one regularity loss.
+example (s t : ℕ) (h : t+1 ≤ s) (a : ScalarSobolev s) (j : ℤ) :
+    (hierarchySobolevDerivative s t h a).val j = 2*Complex.I*(Real.pi:ℂ)*j*a.val j :=
+  hierarchySobolevDerivative_apply s t h a j
+
+-- The highest supported Riccati density is still analytic with values in H⁰.
+example (s : ℕ) (ab : SobolevSource s) :
+    AnalyticAt ℂ (fun cd => sobolevRiccatiDensity s cd s le_rfl) ab :=
+  analyticAt_sobolevRiccatiDensity s s le_rfl ab
+
+-- The nonlinear density has the physical -b'' + a*b² sign and full convolutions.
+example (ab : SobolevSource 2) (j : ℤ) :
+    (sobolevRiccatiDensity 2 ab 2 le_rfl).val j =
+      -(2*Complex.I*(Real.pi:ℂ)*j)^2*ab.2.val j +
+        ∑' l : ℤ, ab.1.val (j-l) * ∑' m : ℤ, ab.2.val (l-m)*ab.2.val m :=
+  sobolevRiccatiDensity_two_apply 2 le_rfl ab j
+
+-- Every positive order is defined and analytic on its required H^(k-1) space.
+example (n : ℕ) (ab : SobolevSource n) :
+    AnalyticAt ℂ (fun cd => sobolevNLSHamiltonian n cd (n+1) le_rfl) ab :=
+  analyticAt_sobolevNLSHamiltonian n (n+1) le_rfl ab
+
+-- The physical Fourier mean is absolutely convergent even for the top derivative.
+example (s : ℕ) (ab : SobolevSource s) :
+    Summable (fun j : ℤ => ‖ab.1.val (-j)*(sobolevRiccatiDensity s ab s le_rfl).val j‖) :=
+  summable_norm_sobolevRiccatiMean s s le_rfl ab
+
+-- The independently constructed hierarchy agrees with the established mass and momentum.
+example (ab : ScalarDomain 2 × ScalarDomain 2) :
+    sobolevNLSHamiltonian 1 (higherSobolevSourceOneEquiv ab) 1 (by norm_num) = periodOneSobolevMass ab ∧
+    sobolevNLSHamiltonian 1 (higherSobolevSourceOneEquiv ab) 2 (by norm_num) = periodOneSobolevMomentum ab :=
+  ⟨sobolevNLSHamiltonian_one_eq_periodOneSobolevMass ab,
+    sobolevNLSHamiltonian_two_eq_periodOneSobolevMomentum ab⟩
+
+-- The signed-mode check fixes the hierarchy's momentum normalization.
+example : sobolevNLSHamiltonian 1
+    (higherSobolevSourceOneEquiv (scalarMode 3 1,scalarMode (-3) 1)) 2 (by norm_num) =
+      -6*(Real.pi:ℂ) := by
+  rw [sobolevNLSHamiltonian_two_eq_periodOneSobolevMomentum]
+  have h := periodOneSobolevMomentum_scalarModes (-3) 1 1
+  norm_num at h
+  convert h using 1
+  ring
+end SobolevPhysicalHierarchyChecks

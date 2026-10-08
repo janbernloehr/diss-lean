@@ -2828,3 +2828,6 @@ import NLS.ZakharovShabat.SourceHigherSobolevFiniteGapDensity
 import NLS.ZakharovShabat.SourceHigherSobolevRealGerm
 import NLS.ZakharovShabat.SourceHigherSobolevTraceTransfer
 import NLS.ZakharovShabat.SourceHigherSobolevFiniteGapLimits
+import NLS.ZakharovShabat.SobolevHierarchyOperations
+import NLS.ZakharovShabat.SobolevRiccatiHierarchy
+import NLS.ZakharovShabat.SobolevNLSHamiltonianHierarchy

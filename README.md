@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: actual real spectral finite-gap sources are dense in Hˢ
-for every nonnegative integer `s`. Their physical Hamiltonians converge to
-the correctly normalized higher-action sums through order `2s+1`. Continuous
-physical candidates can now be identified by finite-gap agreement, and analytic
-ones satisfy the traces on complex neighborhoods. Constructing the remaining
-higher physical Sobolev functionals is next.
+Latest milestone: the full Riccati recurrence now defines analytic Sobolev
+densities and Hamiltonians from physical derivatives and Fourier products.
+Every Hamiltonian of order `k ≥ 1` is analytic on H^(k-1); the first two agree
+with the established mass and momentum. All-order classical and finite-gap
+identification is next, followed by the higher physical trace identities.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

@@ -1,6 +1,55 @@
 # Implementation plan
 
-## Latest progress: finite-gap density and physical hierarchy limits on Hˢ
+## Latest progress: the analytic Sobolev Riccati Hamiltonian hierarchy
+
+The full coefficient Riccati hierarchy is now constructed on the original
+integer Sobolev scale. Its density of order `n ≤ s` is an entire analytic
+map from Hˢ pairs into H^(s-n), including the H⁰ endpoint. The resulting
+Hamiltonian of positive order `k` is entire analytic on H^(k-1), with an
+absolutely convergent physical Fourier mean and Appendix H's normalization.
+
+`SobolevHierarchyOperations.lean` supplies coefficient-preserving inclusions,
+period-one differentiation with multiplier `2π i n`, and weighted ℓ¹ embeddings
+from one additional Hilbert order. Two actual Fourier convolutions construct
+the cubic product needed by the recurrence, with analytic dependence on all
+inputs.
+
+`SobolevRiccatiHierarchy.lean` implements the differential recurrence at every
+order, tracking its exact loss of regularity. The first nonlinear density is
+proved to have the coefficients of `-b'' + a*b²`, including both full infinite
+convolutions and the period-one frequency factor.
+
+`SobolevNLSHamiltonianHierarchy.lean` pairs the first source component with the
+Riccati density through bounded bilinear Fourier duality. The normalization is
+`(-i)^(n+2)` for Hamiltonian order `n+1`, as in the classical hierarchy. Hölder
+proves absolute convergence of the density mean. The first two Hamiltonians
+agree with the established physical mass and momentum, including the signed
+Fourier-mode normalization.
+
+These constructions use derivatives, products and Fourier means. No spectral
+action sum defines a Hamiltonian. All-order agreement with the classical smooth
+Riccati densities and the finite-gap physical Hamiltonians is still to be proved
+before applying the preceding trace-transfer theorem.
+
+Public examples check differentiation, endpoint analytic densities, the first
+nonlinear formula, analyticity at arbitrary Hamiltonian order, absolute
+convergence of the mean, and mass/momentum agreement with a signed-mode check.
+
+Validation: the full build passes (6248 jobs), all public examples pass,
+and the transitive axiom audit passes for 24349 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: identify all constructed Sobolev densities and Hamiltonians with
+the classical smooth recurrence, prove finite-gap agreement, and apply the
+trace-transfer theorem to complete the higher physical traces. The next proof
+uses unit-period derivative and product coefficient identities, induction on
+the Riccati order, bilinear Parseval, and the proved coefficient identity for
+the smooth physical finite-gap representative. The first three
+physical H¹ traces are already proved. The explicit norm-dependent localization
+and uniform estimates of Sections 25–28 and the full dissertation inventory
+remain open.
+
+## Previous milestone: finite-gap density and physical hierarchy limits on Hˢ
 
 Actual real spectral finite-gap sources are now dense in every original Hˢ
 source space, for all nonnegative integers `s`. Approximation preserves any
