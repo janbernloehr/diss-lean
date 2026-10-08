@@ -36241,3 +36241,59 @@ example (W : ℝ) (hW : 1 ≤ W) :
       265*Real.pi^2*W^2*(1+0)*0 :=
   gap_global_265_height_budget 0 W le_rfl hW
 end M1ComplexGlobalGapChecks
+
+namespace Proposition261Checks
+open NLS.ZakharovShabat
+
+-- Equality in the quadratic threshold and a negative frequency are allowed.
+example : quadraticLocalizationRadius (1/2) (-1) ≤ 3/8 :=
+  quadraticLocalizationRadius_le_three_eighths (by norm_num) (-1) (by decide) (by norm_num)
+
+variable (ψ : realTypeSourceSubmodule 2)
+  (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+  (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+
+-- The zero index is included in the mean-value localization at level m=0.
+example (hn : 8*‖φ‖^2 = 1) :
+    ∃ ζ : ℝ,
+      sourceRealHigherAction (by simp) (by norm_num) ψ 0 0 =
+        (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property 0).re ∧
+      |ζ| ≤ quadraticLocalizationRadius ‖φ‖ 0 := by
+  obtain ⟨ζ,_,he,hζ⟩ := sourceRealHigherAction_H1_meanValue_localization ψ φ hφ 0
+    (by simpa only [Int.cast_zero,abs_zero,add_zero] using hn.le) 0
+  exact ⟨ζ,by simpa only [Nat.mul_zero,pow_zero,one_mul] using he,by simpa using hζ⟩
+
+-- The printed comparison at a negative nonzero index, at the first higher odd level.
+example (hn : 8*‖φ‖^2 ≤ 2) :
+    (1/2)*(1+2*Real.pi)^2*(sourceRealAction (by simp) (by norm_num) ψ.val ψ.property (-1)).re ≤
+      4*sourceRealHigherAction (by simp) (by norm_num) ψ (-1) 2 ∧
+    4*sourceRealHigherAction (by simp) (by norm_num) ψ (-1) 2 ≤
+      (1+2*Real.pi)^2*(sourceRealAction (by simp) (by norm_num) ψ.val ψ.property (-1)).re := by
+  simpa [abs_mul,abs_of_pos Real.pi_pos] using
+    sourceRealHigherAction_H1_exterior_bounds ψ φ hφ (-1) (by decide) (by norm_num; exact hn) 1
+
+-- Level m=0 returns two-sided equality with the ordinary action.
+example (n : ℤ) (hn0 : n ≠ 0) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property n).re ≤
+      sourceRealHigherAction (by simp) (by norm_num) ψ n 0 ∧
+    sourceRealHigherAction (by simp) (by norm_num) ψ n 0 ≤
+      (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property n).re := by
+  simpa only [Nat.mul_zero,pow_zero,one_mul] using
+    sourceRealHigherAction_H1_exterior_bounds ψ φ hφ n hn0 hn 0
+
+-- The central zero index has the exact power 4m of the H¹ norm.
+example (hn : 1 < 8*‖φ‖^2) :
+    16*|sourceRealHigherAction (by simp) (by norm_num) ψ 0 4| ≤
+      (16*Real.pi)^4*‖φ‖^8*(sourceRealAction (by simp) (by norm_num) ψ.val ψ.property 0).re := by
+  convert sourceRealHigherAction_H1_central_bound ψ φ hφ 0 (by simpa using hn) 2 using 1
+  norm_num
+
+-- Collapsed gaps cause no division-by-zero side condition at any odd level.
+example (n : ℤ) (hn0 : n ≠ 0) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) (m : ℕ)
+    (hgap : canonicalPeriodicGap (by simp) (by norm_num)
+      (periodOnePotential ψ.val) (periodOnePotential_mem ψ.val) n = 0) :
+    ((2:ℝ)⁻¹)^m*(1+|((2*n:ℤ):ℝ)*Real.pi|)^(2*m)*
+      (sourceRealAction (by simp) (by norm_num) ψ.val ψ.property n).re ≤ 0 := by
+  have h := (sourceRealHigherAction_H1_exterior_bounds ψ φ hφ n hn0 hn m).1
+  simpa only [sourceRealHigherAction_of_collapsed (by simp) (by norm_num) ψ n hgap (2*m),mul_zero] using h
+end Proposition261Checks

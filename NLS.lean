@@ -2914,3 +2914,6 @@ import NLS.ZakharovShabat.SpectralStripNeighborhood
 import NLS.ZakharovShabat.FiniteGapHeight
 import NLS.ZakharovShabat.M1ComplexCentralGap
 import NLS.ZakharovShabat.M1ComplexGlobalGapEstimate
+import NLS.ZakharovShabat.NonzeroQuadraticRadius
+import NLS.ZakharovShabat.H1GapIntervalLocalization
+import NLS.ZakharovShabat.SourceH1HigherActionEstimates

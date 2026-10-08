@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Proposition 25.5 on a complex neighborhood
+## Current milestone: Proposition 26.1 quantitative higher-action estimates
+
+Proposition 26.1 is proved for the actual real source higher actions, using
+the exact π-normalized H¹ weighted realization of the period-one potential.
+The theorem includes all three printed claims: a mean-value point with the
+source localization radius, the nonzero-index two-sided comparison
+`2^(-m) ⟨2nπ⟩^(2m) In ≤ 4^m Jn,2m+1 ≤ ⟨2nπ⟩^(2m) In`, and the central
+estimate `4^m |Jn,2m+1| ≤ (16π)^(2m) ‖φ‖H¹^(4m) In`.
+
+`NonzeroQuadraticRadius.lean` sharpens the exact-threshold radius to 3/8
+at every nonzero signed index. Half-unit localization then gives the
+spectral square comparison, which is raised to every natural level with
+the precise factors `2^(-m)` and `4^m`.
+
+`H1GapIntervalLocalization.lean` transfers endpoint norm bounds to every
+point between their real parts. High-index points retain the full source
+radius; remaining points have absolute value at most `8π ‖φ‖H¹²`.
+`SourceH1HigherActionEstimates.lean` applies the established mean-value
+identity to the actual contour-defined actions, proves the exterior
+comparison, and combines the central bound with positivity. Its source
+arguments carry a coefficient-preserving weighted realization, so the norm
+is the printed H¹ norm rather than an equivalent graph norm. No spectral
+localization hypotheses remain beyond the printed norm threshold.
+
+No action or gap is divided out: collapsed gaps and level m=0 are included.
+Public examples cover threshold equality at a negative index, the zero-index
+mean-value point at m=0, the first higher odd level at n=-1, m=0 equality,
+the central n=0 estimate at m=2, and a collapsed gap at arbitrary level.
+
+Validation: the full build passed (6345 jobs), all public examples passed,
+and the transitive axiom audit passed for 25065 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: Lemma 26.2. Sum the exterior action comparison using positivity and
+the existing higher-action trace, and bound the finite central action sum
+by the mass trace. Preserve the source factor `⟨16π⟩^(2m)`, the norm factor
+`(1+‖φ‖H¹)^(4m)`, and the signed Hamiltonian term `(-1)^(m+1) 2^m H2m+1`.
+Then combine it with the Hamiltonian polynomial/interpolation estimates
+for Theorem 23.2(i). Sections 27–28, fixed-domain trace scope, and the
+remaining dissertation inventory remain open.
+
+## Previous milestone: Proposition 25.5 on a complex neighborhood
 
 Both estimates of Proposition 25.5 are now proved for the full M₁ class
 in the canonical period-one formulation. The global estimate holds on a

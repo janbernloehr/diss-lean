@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: both estimates of Proposition 25.5 are proved for every
-M₁ weight. The global bound holds on one open complex neighborhood of all
-real L² potentials, with the printed constant `265 π²` and the exact
-piecewise-linear weight extension. The next step is the quantitative
-higher-action estimates of Proposition 26.1. See `STATUS.md`.
+Latest milestone: Proposition 26.1 is proved for the actual higher actions,
+with the exact H¹ threshold, localized mean-value point, nonzero-index
+two-sided comparison, and central estimate. Collapsed gaps and the `m=0`
+case are included. The next step is the summed action bound of Lemma 26.2.
+See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
