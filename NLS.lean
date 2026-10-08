@@ -2807,3 +2807,7 @@ import NLS.ZakharovShabat.SourceHigherActionEstimates
 import NLS.ComplexAnalysis.PolynomialInversionCircleCoefficients
 import NLS.ZakharovShabat.SourceFiniteGapHigherActionExterior
 import NLS.ZakharovShabat.SourceFiniteGapHigherActionTrace
+import NLS.ZakharovShabat.SourceHigherActionCircleAnalytic
+import NLS.ZakharovShabat.SourceHigherActionLocalChart
+import NLS.ZakharovShabat.SourceHigherActionAtlas
+import NLS.ZakharovShabat.SourceHigherActionRegularity

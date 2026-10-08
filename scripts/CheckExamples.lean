@@ -35047,3 +35047,48 @@ example (φ : realTypeSourceSubmodule 3)
   ⟨sourceFiniteGapNLSHamiltonian_odd_nonneg (by norm_num) (by norm_num) φ hf m,
     sourceFiniteGapNLSHamiltonian_im_zero (by norm_num) (by norm_num) φ hf (2*m)⟩
 end HigherActionTraceChecks
+
+namespace HigherActionAnalyticChecks
+open Set Metric NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- A single open complex domain contains every real p=3 source and every level.
+example : ∃ U : Set (CoeffPair 3), IsOpen U ∧ realTypeSourceLocus 3 ⊆ U ∧
+    ∀ n k, AnalyticOnNhd ℂ (sourceComplexHigherAction (by norm_num) (by norm_num) n k) U :=
+  ⟨sourceComplexHigherActionDomain (by norm_num) (by norm_num),
+    isOpen_sourceComplexHigherActionDomain (by norm_num) (by norm_num),
+    realType_subset_sourceComplexHigherActionDomain (by norm_num) (by norm_num),
+    analyticOnNhd_sourceComplexHigherAction (by norm_num) (by norm_num)⟩
+
+-- Atlas choices agree on complex overlaps, not only on real sources.
+example (A B : SourceHigherActionAtlas (p := 3) (by norm_num) (by norm_num)) (n : ℤ) (k : ℕ) :
+    EqOn (A.action n k) (B.action n k) (A.domain ∩ B.domain) := A.action_eqOn B n k
+
+-- All higher levels vanish at a collapsed complex gap.
+example (ψ : CoeffPair 3)
+    (hψ : ψ ∈ sourceComplexHigherActionDomain (by norm_num) (by norm_num)) (n : ℤ)
+    (hgap : sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ n = 0) (k : ℕ) :
+    sourceComplexHigherAction (by norm_num) (by norm_num) n k ψ = 0 :=
+  sourceComplexHigherAction_of_collapsed (by norm_num) (by norm_num) ψ hψ n hgap k
+
+-- Level one agrees with the original complex action throughout their common domain.
+example (ψ : CoeffPair 3) (n : ℤ)
+    (hψ : ψ ∈ sourceComplexHigherActionDomain (by norm_num) (by norm_num) ∩
+      sourceComplexActionDomain (by norm_num) (by norm_num) n) :
+    sourceComplexHigherAction (by norm_num) (by norm_num) n 0 ψ =
+      sourceComplexAction (by norm_num) (by norm_num) n ψ :=
+  sourceComplexHigherAction_zero (by norm_num) (by norm_num) n hψ
+
+-- Real analyticity requires no open-gap hypothesis.
+example (n : ℤ) (k : ℕ) : AnalyticOnNhd ℝ
+    (fun φ : realTypeSourceSubmodule 3 => sourceRealHigherAction (by norm_num) (by norm_num) φ n k) univ :=
+  analyticOnNhd_sourceRealHigherAction (by norm_num) (by norm_num) n k
+
+-- The globally glued functions retain the physical finite-gap trace normalization.
+example (φ : realTypeSourceSubmodule 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by norm_num) (by norm_num)) (k : ℕ) :
+    (∑' n : ℤ, sourceComplexHigherAction (by norm_num) (by norm_num) n k φ.val) =
+      sourceFiniteGapNLSHamiltonian (by norm_num) (by norm_num) φ hf (k+1)/2^k :=
+  sourceFiniteGap_tsum_complexHigherActions_eq_hamiltonian (by norm_num) (by norm_num) φ hf k
+end HigherActionAnalyticChecks

@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: all-order physical finite-gap trace formula
+## Current milestone: complex analytic higher actions
+
+Section 24's higher actions now extend to actual complex analytic functions
+on one open source domain containing the entire real locus, for every finite
+`p > 1`. The domain is chosen before the gap index and level. These functions
+are defined by the dissertation's spectral contour integrals and agree with
+the real gap integrals already constructed.
+
+`SourceHigherActionCircleAnalytic.lean` proves Banach analyticity of fixed
+higher-action contours, invariance under changing real-centered isolating
+circles at a real source, and vanishing at collapsed complex gaps at every
+level. The collapsed-gap proof uses the analytic filled quotient.
+
+`SourceHigherActionLocalChart.lean` constructs one source ball and one family
+of isolating circles for all indices and orders simultaneously. It proves
+agreement with the real gap formula and complex collapsed-gap vanishing.
+
+`SourceHigherActionAtlas.lean` glues those contour formulas using the
+real-form identity theorem on overlaps of real-centered source balls. The
+result is analytic throughout the open union. Different atlases agree on
+their complex overlap, and level one equals the original complex action on
+the common domain. The module exports a chosen atlas, a common complex
+domain, and the resulting `sourceComplexHigherAction` functions.
+
+`SourceHigherActionRegularity.lean` proves real analyticity and continuity
+of every real higher action in the original source norm, including at
+collapsed gaps. Every real-centered isolating circle computes the same real
+gap integral. The glued complex functions inherit the previously proved
+all-order physical trace formula at real finite-gap sources.
+
+Public examples check a common analytic domain at `p = 3`, compatibility of
+independently chosen atlases on complex overlaps, collapsed complex gaps,
+level-one calibration, real analyticity, and the physical finite-gap trace.
+
+Validation: the full build passes (6228 jobs), all public examples pass,
+and the transitive axiom audit passes for 24109 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: establish the convergence and uniform bounds on the higher-action
+series needed to extend Theorem 24.1 to general Sobolev and complex sources.
+The next step is the complex weighted gap-boundary formula and bounds combining
+it with the existing weighted gap summability. The norm-dependent spectral localization and higher Sobolev estimates of
+Sections 25–28 and the full dissertation inventory also remain. Individual
+coordinate analyticity alone does not establish analyticity or convergence
+of the infinite higher-action sum.
+
+## Previous milestone: all-order physical finite-gap trace formula
 
 The higher-action trace identity now holds at every order for actual real
 finite-gap sources at every finite exponent `p > 1`:
