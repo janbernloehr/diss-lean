@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: a Lean proof refutes Appendix C.1's assertion that the
-ordinary discrete Hilbert transform is an isomorphism. Alternating finite
-blocks rule out any bounded linear left inverse at p=2. The valid boundedness
-result remains available for every 1<p<infinity. The printed spectral height
-in Theorem 1.1 remains proved for 1 ≤ p ≤ 2 and unresolved above two.
+Latest milestone: Lemma C.2 now holds for two arbitrarily displaced complex
+lattices satisfying the printed separation bound, for every 1<p<infinity.
+The continuous operator has the exact pi-normalized series and an explicit
+bound depending only on the displacement norms, separation and exponent.
+C.1's false isomorphism assertion is not needed. The printed spectral height
+in Theorem 1.1 remains unresolved for p>2.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

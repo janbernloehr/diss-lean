@@ -29,6 +29,8 @@ already proves for every 1 < p < infinity. Neither failure of injectivity
 nor the corresponding obstruction at every other exponent is asserted here.
 Existing library proofs never used the false invertibility assertion.
 The source proof of Lemma C.2 uses only the boundedness part of C.1.
+`ModifiedHilbert.lean` now proves C.2 with its full two-lattice hypotheses,
+exact normalization, and uniform dependence on the specified norms.
 
 ## Theorem 1.1: unresolved printed height above two
 

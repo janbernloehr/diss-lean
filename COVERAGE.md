@@ -92,3 +92,29 @@ This is a proved source discrepancy, not a completed proof of the literal
 statement. The correction and its precise scope are recorded in
 [`SOURCE_ERRATA.md`](SOURCE_ERRATA.md). The argument makes no claim of a
 nonzero kernel and leaves boundedness for all 1 < p < infinity intact.
+
+## Appendix C.2 audit
+
+Lemma C.2, printed page 126, is covered with its literal hypotheses by
+[`ModifiedHilbertKernel.lean`](NLS/Fourier/ModifiedHilbertKernel.lean) and
+[`ModifiedHilbert.lean`](NLS/Fourier/ModifiedHilbert.lean), in `NLS.Fourier`.
+The displacement sequences s and r are arbitrary elements of ℓ∞. Their
+nodes are sigma_n=pi*n+s_n and rho_k=pi*k+r_k. The hypothesis
+`HilbertLatticeSeparated s r c` is precisely
+`c^(-1)*|k-n| <= |rho_k-sigma_n|` for k != n, with c>0.
+
+For every 1<p<infinity, `modifiedHilbert` is a continuous complex linear
+operator on ℓp. `modifiedHilbert_source_apply` identifies it with
+`pi * sum_{k != n} a_k/(rho_k-sigma_n)` on every input;
+`summable_norm_modifiedHilbert_source_series` proves absolute convergence.
+`norm_modifiedHilbert_le` gives the operator norm bound
+`C_p+c*(norm(s)+norm(r))*norm(hilbertSquareCoeffs)`.
+`exists_modifiedHilbert_uniform_bound` explicitly chooses the bound before
+s and r, uniformly over prescribed upper bounds for their norms.
+
+No smallness, real-valuedness, or ordering of the two displacements is
+required. The diagonal is omitted even when rho_n differs from sigma_n.
+A common translation of any size recovers the ordinary Hilbert operator,
+checking the exact pi normalization. The square-kernel correction also
+extends to p=1 and p=infinity; no such endpoint claim is made for the full
+operator. Only the valid boundedness part of C.1 is used.

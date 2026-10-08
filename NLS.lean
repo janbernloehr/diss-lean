@@ -3005,3 +3005,5 @@ import NLS.ZakharovShabat.PrintedHeight
 import NLS.ZakharovShabat.SourcePrintedHeightCounting
 import NLS.Fourier.HilbertKernelFactorization
 import NLS.Fourier.HilbertNotIsomorphism
+import NLS.Fourier.ModifiedHilbertKernel
+import NLS.Fourier.ModifiedHilbert

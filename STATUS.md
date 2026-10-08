@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: Appendix C.1 is not an isomorphism
+## Current milestone: full two-lattice Hilbert bound in C.2
+
+Lemma C.2, printed page 126, is now implemented with its full hypotheses:
+two arbitrary bounded complex displacements of the pi-spaced lattice,
+a positive off-diagonal separation constant, and every 1 < p < infinity.
+The earlier sampled-row theorem restricted one displacement to a half-unit
+ball and did not cover this statement.
+
+`ModifiedHilbertKernel.lean` defines the two lattices, the source separation
+hypothesis and the normalized reciprocal kernel with an explicitly omitted
+diagonal. The difference from the ordinary Hilbert kernel has a square-kernel
+majorant with constant c*(norm(s)+norm(r)). Neither displacement is assumed
+small. Common constant translations preserve the separation and reduce the
+kernel exactly to 1/(k-n).
+
+`ModifiedHilbert.lean` constructs the correction as a continuous complex
+linear operator at every Banach exponent, including one and infinity.
+Adding the ordinary Hilbert transform gives the printed operator for all
+1 < p < infinity. Every row converges absolutely on every input, and
+`modifiedHilbert_source_apply` proves the exact source formula with its
+outer pi factor and omitted diagonal. The operator norm is at most
+
+```
+C_p + c*(norm(s)+norm(r))*norm(hilbertSquareCoeffs).
+```
+
+`exists_modifiedHilbert_uniform_bound` chooses one bound before the two
+lattices, using only p, c and prescribed bounds for the displacement norms.
+The proof uses the valid boundedness part of C.1 and does not require its
+false isomorphism assertion. Theorem 1.1's height for p > 2 remains open;
+the accepted Lemma 27.2 correction and optional sharpening remain unchanged.
+
+Public examples cover the full formula and absolute convergence at p=3,
+uniformity over both lattices, the correction's two Banach endpoints,
+explicit diagonal omission, and recovery of the ordinary transform after
+a common imaginary translation of size 1000.
+
+Validation: the full build passed (6436 jobs), all public examples passed,
+and the axiom audit passed for 25656 NLS declarations. The same 21
+pre-existing warnings remain, with no new warnings. The saved inventory
+of 156 candidate statement labels was independently verified.
+
+Next: audit the exact signed-sum and squared-sum product bounds in
+Appendix D.1–D.3, continue the spectral overview comparisons, and seek
+a sharper argument for the printed height above p=2.
+
+## Previous milestone: Appendix C.1 is not an isomorphism
 
 The source audit identified a false assertion in Appendix C.1, printed
 page 125: the ordinary discrete Hilbert transform is described as an

@@ -37572,3 +37572,48 @@ example (e : Coeff 2 ≃L[ℂ] Coeff 2) :
   hilbertTransform_two_ne_equiv e
 
 end HilbertNonisomorphismChecks
+
+namespace ModifiedHilbertChecks
+open NLS.Fourier
+
+-- The full printed formula holds on every input at a non-Hilbert exponent.
+example (s r : Coeff ⊤) {c : ℝ} (hc : 0 < c) (hsep : HilbertLatticeSeparated s r c)
+    (a : Coeff 3) (n : ℤ) :
+    modifiedHilbert s r hc hsep (by norm_num) (by simp) a n =
+      (Real.pi:ℂ)*(∑' k : ℤ, if k = n then 0 else a k/(hilbertLattice r k-hilbertLattice s n)) ∧
+    Summable (fun k : ℤ => ‖if k = n then 0 else a k/(hilbertLattice r k-hilbertLattice s n)‖) :=
+  ⟨modifiedHilbert_source_apply s r hc hsep (by norm_num) (by simp) a n,
+    summable_norm_modifiedHilbert_source_series s r hc hsep (by norm_num) (by simp) a n⟩
+
+-- One constant is chosen before either lattice, for all their admissible displacements.
+example {c S R : ℝ} (hc : 0 < c) (hS : 0 ≤ S) (hR : 0 ≤ R) :
+    ∃ C : ℝ, 0 ≤ C ∧ ∀ s r : Coeff ⊤, ‖s‖ ≤ S → ‖r‖ ≤ R →
+      ∀ hsep : HilbertLatticeSeparated s r c,
+        ‖modifiedHilbert (p := 3) s r hc hsep (by norm_num) (by simp)‖ ≤ C :=
+  exists_modifiedHilbert_uniform_bound hc (by norm_num) (by simp) hS hR
+
+-- The correction, unlike the full transform, also has both endpoint bounds.
+example (s r : Coeff ⊤) {c : ℝ} (hc : 0 < c) (hsep : HilbertLatticeSeparated s r c)
+    (a : Coeff 1) (b : Coeff ⊤) :
+    ‖modifiedHilbertCorrection s r hc hsep a‖ ≤
+      (modifiedHilbertCorrectionBound s r c*‖hilbertSquareCoeffs‖)*‖a‖ ∧
+    ‖modifiedHilbertCorrection s r hc hsep b‖ ≤
+      (modifiedHilbertCorrectionBound s r c*‖hilbertSquareCoeffs‖)*‖b‖ :=
+  ⟨norm_modifiedHilbertCorrection_le s r hc hsep a,
+    norm_modifiedHilbertCorrection_le s r hc hsep b⟩
+
+private def largeCommonShift : Coeff ⊤ :=
+  ⟨fun _ => 1000*Complex.I, memℓp_infty ⟨‖1000*Complex.I‖, by rintro _ ⟨n,rfl⟩; exact le_rfl⟩⟩
+
+-- A large imaginary translation checks both absence of smallness and exact pi normalization.
+example : modifiedHilbert (p := 3) largeCommonShift largeCommonShift
+    (inv_pos.mpr Real.pi_pos)
+    (hilbertLatticeSeparated_common_constant largeCommonShift (fun _ => rfl))
+    (by norm_num) (by simp) = hilbertTransform (p := 3) (by norm_num) (by simp) :=
+  modifiedHilbert_common_constant largeCommonShift (fun _ => rfl) (by norm_num) (by simp)
+
+-- Diagonal exclusion persists even when the two displaced nodes are different.
+example (s r : Coeff ⊤) (n : ℤ) : modifiedHilbertKernel s r n n = 0 := by
+  simp [modifiedHilbertKernel]
+
+end ModifiedHilbertChecks
