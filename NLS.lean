@@ -2998,3 +2998,6 @@ import NLS.SequenceSpaces.HilbertHamiltonianValueBound
 import NLS.SequenceSpaces.PositiveFlatBlocks
 import NLS.SequenceSpaces.HilbertHamiltonianNonextension
 import NLS.ZakharovShabat.SourceHamiltonianNonextension
+import NLS.SequenceSpaces.NonnegativeActionDensity
+import NLS.ZakharovShabat.SourceHamiltonianPositiveDomain
+import NLS.ZakharovShabat.SourceFrequencyPositiveDomains

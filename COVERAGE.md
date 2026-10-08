@@ -14,6 +14,8 @@ the named declarations are in `NLS.ZakharovShabat`.
 | Theorem 0.3; Theorem 18.1: frequency extensions | [`SourceFrequencyTheorem18_1Real.lean`](NLS/ZakharovShabat/SourceFrequencyTheorem18_1Real.lean), `exists_sourceFrequency_theorem18_1_real` | A common actual frequency on summable actions, real analytic values in every finite exponent above one, compatible higher-exponent complex extensions and locally uniform mixed remainders. |
 | Local invertibility near zero; Corollary 18.2(i) | [`SourceFrequencyLocalInverse.lean`](NLS/ZakharovShabat/SourceFrequencyLocalInverse.lean), `exists_sourceFrequency_localInverse` | Actual frequency derivative −2 times identity, both analytic local inverse identities, inverse derivative −1/2 times identity, and the Fredholm property throughout the action domain. |
 | Remark after Theorem 0.3; Corollary 18.2(iv): generic local invertibility | [`SourceFrequencyGenericLocalInverse.lean`](NLS/ZakharovShabat/SourceFrequencyGenericLocalInverse.lean), `exists_sourceFrequency_genericLocalInverse` | Open dense set of points with two-sided analytic local inverses on a connected action domain containing all real-source actions and all nonnegative summable actions. |
+| Remark after Theorem 0.2: open dense positive Hamiltonian domain | [`SourceHamiltonianPositiveDomain.lean`](NLS/ZakharovShabat/SourceHamiltonianPositiveDomain.lean), `exists_sourceHamiltonian_open_dense_positive_domain` | The actual Hamiltonian domain restricted to the positive ℓ² cone is open and dense; source recovery, gradient, Hessian and local concavity are retained. |
+| Remark after Theorem 0.3: open dense positive frequency domains | [`SourceFrequencyPositiveDomains.lean`](NLS/ZakharovShabat/SourceFrequencyPositiveDomains.lean), `exists_sourceFrequency_open_dense_positive_domains` | For every finite p > 2 the compatible action domain at exponent p/2 is open dense relative to the positive cone, retaining real analytic ranges and all locally uniform mixed remainder conclusions. |
 
 ## Nonextension proof and limits
 
@@ -39,3 +41,15 @@ unrestricted m=1 coefficient is unresolved and optional, not disproved.
 The principal Sobolev estimates do not depend on recovering it. See
 [`SOURCE_ERRATA.md`](SOURCE_ERRATA.md) for the precise scope of this and
 other discrepancies in printed statements or proofs.
+
+## Relative density and limits
+
+[`NonnegativeActionDensity.lean`](NLS/SequenceSpaces/NonnegativeActionDensity.lean)
+proves a reusable closure identity: for finite q ≥ 1, every set V containing
+all nonnegative summable actions has
+`closure (V ∩ nonnegativeLocus q) = nonnegativeLocus q`.
+Finite truncations preserve nonnegativity and converge in ℓ^q. Openness of V
+then gives relative openness in the positive-cone subtype. This proves the
+density assertions without requiring the entire positive cone to lie in V.
+It makes no claim of density in the ambient complex space, no density claim
+at q=∞, and no global extension or global strict-concavity claim.

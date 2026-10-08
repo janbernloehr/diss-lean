@@ -37426,3 +37426,67 @@ example : ∃ t : (k : ℤ) → CoeffPair 4 → DeletedCoeff 4 k, ∃ H : Coeff 
   exact ⟨t,H,hphysical,fun G U hU ha => (hext 3 (by simp) (by norm_num) G U hU ha).2⟩
 
 end HamiltonianNonextensionChecks
+
+namespace PositiveActionDomainChecks
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact ((1:ℝ≥0∞) ≤ 4) := ⟨by norm_num⟩
+local instance : Fact ((1:ℝ≥0∞) ≤ 6) := ⟨by norm_num⟩
+local instance : (4:ℝ≥0∞).HolderTriple 4 2 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+local instance : (6:ℝ≥0∞).HolderTriple 6 3 := (ENNReal.holderTriple_iff _ _ _).mpr (by
+  apply (ENNReal.toReal_eq_toReal_iff' (by finiteness) (by finiteness)).mp
+  norm_num [ENNReal.toReal_add])
+
+-- Density needs no openness, and the ambient closure is exactly the positive cone.
+example (V : Set (Coeff 3))
+    (hV : ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) →
+      Coeff.exponentInclusion (by norm_num : (1:ℝ≥0∞) ≤ 3) (RealCoeff.complexCLM 1 b) ∈ V) :
+    closure (V ∩ Coeff.nonnegativeLocus 3) = Coeff.nonnegativeLocus 3 :=
+  Coeff.closure_inter_nonnegativeLocus (by simp) V hV
+
+-- Closedness of the cone does not require a finite exponent.
+example : IsClosed (Coeff.nonnegativeLocus ⊤) := Coeff.isClosed_nonnegativeLocus
+
+-- The summable endpoint is also covered by the relative-domain statement.
+example (V : Set (Coeff 1)) (hV : IsOpen V)
+    (hcone : ∀ b : RealCoeff 1, (∀ n, 0 ≤ b n) → RealCoeff.complexCLM 1 b ∈ V) :
+    IsOpen {b : Coeff.nonnegativeLocus 1 | b.val ∈ V} ∧
+      Dense {b : Coeff.nonnegativeLocus 1 | b.val ∈ V} := by
+  apply Coeff.isOpen_dense_nonnegative_domain (by simp) V hV
+  intro b hb
+  have he : Coeff.exponentInclusion (le_refl (1:ℝ≥0∞)) (RealCoeff.complexCLM 1 b) =
+      RealCoeff.complexCLM 1 b := by ext n; rfl
+  rw [he]
+  exact hcone b hb
+
+-- The same actual source Hamiltonian has the dense positive domain and negative Hessian at zero.
+open NLS.ZakharovShabat in
+example : ∃ W : Set (CoeffPair 4), ∃ A : SourcePrimitivePowerAtlas (by simp) (by norm_num) W,
+    ∃ t : (k : ℤ) → CoeffPair 4 → DeletedCoeff 4 k,
+    ∃ V : Set (Coeff 2), ∃ H : Coeff 2 → ℂ,
+      AnalyticOnNhd ℂ H V ∧ Dense {b : Coeff.nonnegativeLocus 2 | b.val ∈ V} ∧
+      (∀ φ : realTypeSourceSubmodule 4,
+        H (sourceActionSequence (q := 2) (by simp) (by norm_num) t φ.val) = A.renormalizedHamiltonian φ.val) ∧
+      ∀ v w : Coeff 2, fderiv ℂ (fderiv ℂ H) 0 v w = -2*Coeff.dualPairing v w := by
+  obtain ⟨W,A,W₀,B,X,t,D,Y,P,u,C,hs,hP,hrealP,V,H,hV,h0,hcenter,hcone,hopen,hdense,
+    hH,hrec,hsign,hG,hGrec,hd,hess,hball⟩ := exists_sourceHamiltonian_open_dense_positive_domain
+  exact ⟨W,A,t,V,H,hH,hdense,hrec,hess⟩
+
+-- At source exponent six, the ℓ³ frequency domain is open dense in the cone,
+-- and the analytic remainder takes values in ℓ² on that same domain.
+open NLS.ZakharovShabat in
+example : ∃ V : Set (Coeff 3), ∃ F : Coeff 3 → Coeff 3,
+    AnalyticOnNhd ℂ F V ∧
+    IsOpen {b : Coeff.nonnegativeLocus 3 | b.val ∈ V} ∧
+    Dense {b : Coeff.nonnegativeLocus 3 | b.val ∈ V} ∧
+    ∃ R : Coeff 3 → Coeff 2, AnalyticOnNhd ℂ R V ∧
+      ∀ b ∈ V, ∀ n, R b n = F b n+2*b n := by
+  obtain ⟨W,s,A,P,hs,W₀,B,X,t,D,V₁,ωstar,hV₁,hpos,hreal,hfamily,higher⟩ :=
+    exists_sourceFrequency_open_dense_positive_domains
+  obtain ⟨V,hV,hcone,hopen,hdense,himage,F,hF,hFR,hagree,hrem,huniform⟩ :=
+    higher 6 3 (by simp) (by norm_num)
+  obtain ⟨R,hR,hRR,he⟩ := hrem 2 (by simp) (by norm_num) (by norm_num)
+  exact ⟨V,F,hF,hopen,hdense,R,hR,he⟩
+
+end PositiveActionDomainChecks

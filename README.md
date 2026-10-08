@@ -5,10 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual renormalized Hamiltonian has no continuous
-extension at zero to the nonnegative ℓ^q cone for any finite q > 2. This
-strengthens the C¹ nonextension consequence following Theorem 0.2 and
-retains the identification with the physical H¹ energy correction.
+Latest milestone: the actual Hamiltonian and compatible frequency extensions
+now have formally proved open dense domains within their positive action
+cones, as stated after Theorems 0.2 and 0.3. Source recovery, Hamiltonian
+concavity and frequency asymptotic estimates are retained. The Hamiltonian's
+finite-exponent nonextension obstruction is also proved.
 The accepted corrected Lemma 27.2 uses twice the printed remainder;
 recovering its original m=1 coefficient remains optional.
 See [implementation status](STATUS.md), [introductory-result coverage](COVERAGE.md),

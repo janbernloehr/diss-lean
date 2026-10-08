@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Latest progress: optimal finite action exponent for the Hamiltonian
+## Latest progress: open dense positive action domains
+
+The relative openness and density assertions in the remarks following
+Theorems 0.2 and 0.3 are now part of the public source theorems.
+
+`NonnegativeActionDensity.lean` proves that the nonnegative action cone is
+closed and that, for every finite Banach exponent q, any set V containing
+all nonnegative summable actions satisfies
+`closure (V ∩ nonnegativeLocus q) = nonnegativeLocus q`.
+This density assertion does not require V to be open. If V is open, its
+restriction to the positive cone is an open dense subset in the subtype
+topology. The proof uses finite summable approximations preserving positivity.
+
+`SourceHamiltonianPositiveDomain.lean` adds this property to the actual
+Hamiltonian's ℓ² domain while retaining source recovery, sign, frequency
+gradient, Hessian and quantitative local concavity.
+`SourceFrequencyPositiveDomains.lean` adds it simultaneously to the compatible
+frequency domains for every finite source exponent p > 2, with action
+exponent p/2. The common frequency on summable actions, real analytic
+ranges, source images and locally uniform asymptotic remainders are retained.
+
+Public examples check closure at q=3 without openness, closedness of the
+cone even at q=∞, the q=1 endpoint for relative openness/density, the actual
+Hamiltonian together with its Hessian, and the ℓ³ frequency domain with its
+ℓ² analytic remainder at source exponent p=6. Density is only asserted at
+finite exponents and only relative to the positive cone. Global extension
+throughout that cone remains outside these assertions.
+
+Validation: the full build passed (6430 jobs), all public examples passed,
+and the axiom audit passed for 25574 NLS declarations. The build has the
+same 21 pre-existing warnings and no new warnings.
+
+Next: expand the coverage audit into a numbered-statement inventory and
+check the remaining chapter and appendix statements against the public API.
+The accepted corrected Lemma 27.2 remains in force; its original unrestricted
+m=1 coefficient is optional.
+
+## Previous milestone: optimal finite action exponent for the Hamiltonian
 
 The consequence following Theorem 0.2 is now proved in a stronger form:
 for every finite q > 2, the actual renormalized action Hamiltonian has no
