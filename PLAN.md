@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Latest progress: the first three physical H¹ trace identities
+## Latest progress: higher-action convergence at every integer Sobolev order
+
+Higher-action convergence is now proved on the original Hˢ source for every
+nonnegative integer `s`. On a common open complex neighborhood containing all
+real Hˢ sources, levels 1 through `2s+1` have absolutely convergent, complex
+analytic sums. Locally, their actual ℓ¹ sequences share a single norm bound
+and are analytic as ℓ¹-valued maps.
+
+`SourceHigherSobolevEmbedding.lean` uses the standard Fourier weight
+`(1+|n|)^s`. Normalized coordinates with weight `(1+2|n|)^s` have an equivalent
+topology, with comparison factor `2^s`. Decoding preserves every original
+Fourier coefficient and the real form. The weighted spectral realization
+therefore gives exactly the original source operator.
+
+`SourceWeightedGapBound.lean` generalizes the weighted squared-gap estimate
+to compatible continuous linear source maps. The infinite tail is controlled
+by the canonical weighted estimate, and the finite central block by the
+local gap-sequence bound. `SourceWeightedHigherActionBound.lean` uses it to
+bound any finite range of levels dominated by the squared weight. Existing
+H¹ bounds now reuse these proofs without changing their public statements.
+
+`SourceHigherSobolevHigherActionBound.lean` proves the polynomial domination
+through order `2s`, giving levels 1 through `2s+1` on Hˢ.
+`SourceHigherSobolevHigherActionAnalytic.lean` proves analyticity of the actual
+ℓ¹ sequences and their literal infinite sums, and combines local neighborhoods
+into an open domain containing the entire real Hˢ locus.
+
+Public examples check unchanged Fourier coefficients, compatibility with the
+old H¹ inclusion, the H⁰ endpoint, the level-five sum on H², and simultaneous
+bounds and analytic sums at arbitrary integer Sobolev order.
+
+Validation: the full build passes (6241 jobs), all public examples pass,
+and the transitive axiom audit passes for 24200 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: independently construct the higher physical Sobolev Hamiltonians
+and extend their finite-gap trace identities by density and analytic uniqueness.
+The first three physical H¹ traces are already proved. This step establishes
+convergence and analyticity, not the remaining physical trace identifications.
+The explicit norm-dependent localization and uniform estimates of Sections
+25–28 and the full dissertation inventory remain open.
+
+## Previous milestone: the first three physical H¹ trace identities
 
 The second-level higher-action sum now equals half the physical momentum
 on every real H¹ source. Together with the mass and energy results, one open

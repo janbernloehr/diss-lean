@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the first three higher-action traces now recover the
-physical mass, momentum, and energy with factors `1`, `1/2`, and `1/4`.
-They hold for every real H¹ source and on one common open complex H¹
-neighborhood of the full real locus, with absolutely convergent series.
-Higher Sobolev hierarchy traces and the uniform estimates remain.
+Latest milestone: at every nonnegative integer Sobolev order `s`, higher-action
+levels 1 through `2s+1` have absolutely convergent, analytic sums on an open
+complex Hˢ neighborhood of the entire real locus. The maps preserve the original
+Fourier coefficients. The first three physical H¹ traces are already proved;
+higher physical trace identifications and uniform estimates remain.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

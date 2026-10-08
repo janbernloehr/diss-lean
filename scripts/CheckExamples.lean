@@ -35180,3 +35180,52 @@ example (a : realTypeSobolevSourceLocus) :
         ‖sourceComplexHigherAction (by simp) (by norm_num) n k (sobolevSourceInclusion b)‖) :=
   exists_local_sourceSobolev_firstThree_trace a
 end MomentumTraceChecks
+
+namespace HigherSobolevActionChecks
+open Set NLS NLS.ZakharovShabat
+
+-- The order is arbitrary, and the actual original Fourier coefficients are unchanged.
+example (s : ℕ) (a : SobolevSource s) (n : ℤ) :
+    (higherSobolevSourceInclusion s a).fst n = a.1.val n ∧
+    (higherSobolevSourceInclusion s a).snd n = a.2.val n :=
+  ⟨higherSobolevSourceInclusion_fst s a n,higherSobolevSourceInclusion_snd s a n⟩
+
+-- The generalized order-one inclusion agrees with the existing physical H¹ source.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    higherSobolevSourceInclusion 1 (higherSobolevSourceOneEquiv a) = sobolevSourceInclusion a :=
+  higherSobolevSourceInclusion_one a
+
+-- No regularity above H⁰ is needed for the first action sum.
+example (a : SobolevSource 0)
+    (ha : IsRealType (CoeffPair.toMax 2 (higherSobolevSourceInclusion 0 a))) :
+    Summable (fun n : ℤ =>
+      ‖sourceComplexHigherAction (by simp) (by norm_num) n 0 (higherSobolevSourceInclusion 0 a)‖) := by
+  obtain ⟨U,_,haU,h⟩ := exists_local_sourceHigherSobolevHigherAction_tsum_analytic 0 a ha
+  exact (h 0 (by norm_num)).1 a haU
+
+-- H² controls the literal level-five sum analytically, without a finite-gap premise.
+example (a : SobolevSource 2)
+    (ha : IsRealType (CoeffPair.toMax 2 (higherSobolevSourceInclusion 2 a))) :
+    AnalyticAt ℂ (fun b : SobolevSource 2 => ∑' n : ℤ,
+      sourceComplexHigherAction (by simp) (by norm_num) n 4 (higherSobolevSourceInclusion 2 b)) a :=
+  analyticAt_tsum_sourceHigherSobolevHigherAction 2 a ha 4 (by norm_num)
+
+-- All 2s+1 levels have a common locally bounded ℓ¹ realization.
+example (s : ℕ) (a : SobolevSource s)
+    (ha : IsRealType (CoeffPair.toMax 2 (higherSobolevSourceInclusion s a))) :
+    ∃ U : Set (SobolevSource s), IsOpen U ∧ a ∈ U ∧
+      ∃ C : ℝ, ∀ b ∈ U, ∀ k : ℕ, k ≤ 2*s → ∃ J : Coeff 1,
+        (∀ n : ℤ, J n = sourceComplexHigherAction (by simp) (by norm_num) n k
+          (higherSobolevSourceInclusion s b)) ∧ ‖J‖ ≤ C :=
+  exists_local_sourceHigherSobolevHigherAction_bound s a ha
+
+-- One open domain contains every real source, with analytic, absolutely convergent sums.
+example (s : ℕ) : ∃ U : Set (SobolevSource s), IsOpen U ∧
+    {a | IsRealType (CoeffPair.toMax 2 (higherSobolevSourceInclusion s a))} ⊆ U ∧
+    ∀ k : ℕ, k ≤ 2*s →
+      (∀ b ∈ U, Summable (fun n : ℤ =>
+        ‖sourceComplexHigherAction (by simp) (by norm_num) n k (higherSobolevSourceInclusion s b)‖)) ∧
+      AnalyticOnNhd ℂ (fun b : SobolevSource s =>
+        ∑' n : ℤ, sourceComplexHigherAction (by simp) (by norm_num) n k (higherSobolevSourceInclusion s b)) U :=
+  exists_sourceHigherSobolevHigherAction_domain s
+end HigherSobolevActionChecks
