@@ -52,24 +52,32 @@ private theorem hilbert_sq_summable (b : Coeff 2) : Summable (fun n : ℤ => ‖
   simpa only [ENNReal.toReal_ofNat, Real.rpow_two] using
     (lp.memℓp b).summable (by norm_num : 0 < (2:ENNReal).toReal)
 
-/-- The first physical H¹ component is controlled with the source's factor 3/2. -/
-theorem sourcePhysicalH1_fst_sq_le (a : ScalarDomain 2 × ScalarDomain 2) :
+/-- Any uniform frequency-weight comparison transfers to the physical scalar norm. -/
+theorem sourcePhysicalH1_fst_sq_le_of_weight_bound (a : ScalarDomain 2 × ScalarDomain 2)
+    (C : ℝ) (hC : ∀ n : ℤ, (1+|((2*n:ℤ):ℝ)*Real.pi|)^2 ≤
+      C*(1+(2*Real.pi*(n:ℝ))^2)) :
     ‖(sourcePhysicalH1Coordinates a).fst‖^2 ≤
-      (3/2:ℝ)*(‖scalarInclusion a.1‖^2+‖periodOneDerivative a.1‖^2) := by
+      C*(‖scalarInclusion a.1‖^2+‖periodOneDerivative a.1‖^2) := by
   rw [hilbert_norm_sq, hilbert_norm_sq (scalarInclusion a.1), hilbert_norm_sq (periodOneDerivative a.1)]
   have hs := ((hilbert_sq_summable (scalarInclusion a.1)).add
-    (hilbert_sq_summable (periodOneDerivative a.1))).mul_left (3/2:ℝ)
+    (hilbert_sq_summable (periodOneDerivative a.1))).mul_left C
   have h := (hilbert_sq_summable (sourcePhysicalH1Coordinates a).fst).tsum_le_tsum (fun n => ?_) hs
   · simpa only [tsum_mul_left, Summable.tsum_add (hilbert_sq_summable (scalarInclusion a.1))
       (hilbert_sq_summable (periodOneDerivative a.1))] using h
   · rw [sourcePhysicalH1Coordinates_fst, norm_mul, Complex.norm_real,
       Real.norm_of_nonneg (by positivity : 0 ≤ 1+|((2*n:ℤ):ℝ)*Real.pi|), mul_pow,
       scalarInclusion_apply, periodOneDerivative_apply]
-    have hb := mul_le_mul_of_nonneg_right (physical_H1_weight_sq_le n) (sq_nonneg ‖a.1.val n‖)
+    have hb := mul_le_mul_of_nonneg_right (hC n) (sq_nonneg ‖a.1.val n‖)
     simp only [norm_mul, Complex.norm_ofNat, Complex.norm_I, Complex.norm_real,
       Real.norm_eq_abs, abs_of_pos Real.pi_pos, Complex.norm_intCast, mul_one] 
     simp only [mul_pow, sq_abs] at hb ⊢
     nlinarith
+
+/-- The first physical H¹ component is controlled with the source's factor 3/2. -/
+theorem sourcePhysicalH1_fst_sq_le (a : ScalarDomain 2 × ScalarDomain 2) :
+    ‖(sourcePhysicalH1Coordinates a).fst‖^2 ≤
+      (3/2:ℝ)*(‖scalarInclusion a.1‖^2+‖periodOneDerivative a.1‖^2) :=
+  sourcePhysicalH1_fst_sq_le_of_weight_bound a (3/2) physical_H1_weight_sq_le
 
 /-- Real-type coordinates have equal component norms, preserving the factor two in the energy. -/
 theorem sourcePhysicalH1_norm_sq_eq_twice_fst (a : realTypeSobolevSourceLocus) :

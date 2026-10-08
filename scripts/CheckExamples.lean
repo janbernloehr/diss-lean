@@ -36477,3 +36477,48 @@ example (a : realTypeHigherSobolevSourceLocus 2) :
   sobolevOddHamiltonian_le_actions_add_H1_energy 2 (by decide) a
 
 end RelativeHigherActionChecks
+
+namespace Lemma272ActionOnlyChecks
+open NLS.ZakharovShabat
+
+-- The improved lattice comparison includes the zero and negative frequencies.
+example : (1+|((2*(0:ℤ):ℤ):ℝ)*Real.pi|)^2 ≤ (4/3:ℝ)*(1+(2*Real.pi*((0:ℤ):ℝ))^2) :=
+  physical_H1_weight_sq_le_four_thirds 0
+example : (1+2*Real.pi)^2 ≤ (4/3:ℝ)*(1+(2*Real.pi)^2) := by
+  have h := physical_H1_weight_sq_le_four_thirds (-1)
+  norm_num [abs_mul, abs_of_pos Real.pi_pos] at h
+  nlinarith
+
+-- The first admissible exponent supplies the necessary factor-two margin.
+example : 2*(8/3:ℝ)^2 ≤ (4:ℝ)^2 :=
+  two_mul_eight_thirds_pow_le_four_pow 2 le_rfl
+example : ¬ (2*(8/3:ℝ)^0 ≤ (4:ℝ)^0) :=
+  lemma272_zero_exponent_margin_fails
+
+-- H5 has exactly the printed coefficient and fifth power of the weighted norm.
+example (a : realTypeHigherSobolevSourceLocus 2) :
+    (sobolevOddHamiltonian 2 (by decide) a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 2 n)+
+      (64*Real.pi)^2*
+        (1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n)^5*
+        (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 2 a.val,a.property⟩ 1 n) :=
+  sobolevOddHamiltonian_le_weighted_actions 2 le_rfl a
+
+-- H7 tests the exponent arithmetic away from the lowest admissible order.
+example (a : realTypeHigherSobolevSourceLocus 3) :
+    (sobolevOddHamiltonian 3 (by decide) a.val).re ≤
+      (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 3 n)+
+      (64*Real.pi)^4*
+        (1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 1 n)^9*
+        (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 3 a.val,a.property⟩ 1 n) :=
+  sobolevOddHamiltonian_le_weighted_actions 3 (by decide) a
+
+-- The endpoint statement carries its small-action assumption explicitly.
+example (a : realTypeSobolevSourceLocus)
+    (ha : (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n) ≤ 1) :
+    (periodOneSobolevHamiltonian a.val).re ≤
+      2*(∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)+
+        (∑' n : ℤ, sourceWeightedActionTerm (sourceH1RealSource a) 1 n)^2 := by
+  nlinarith [sourceH1_energy_le_lemma272_of_weighted_actions_le_one a ha]
+
+end Lemma272ActionOnlyChecks

@@ -2931,3 +2931,6 @@ import NLS.ZakharovShabat.SourceRelativeHigherActions
 import NLS.ZakharovShabat.SourceCentralThirdActionComparison
 import NLS.ZakharovShabat.HigherSobolevH1Realization
 import NLS.ZakharovShabat.SobolevHamiltonianThirdActionBound
+import NLS.ZakharovShabat.RefinedH1ActionBound
+import NLS.ZakharovShabat.Lemma272ConstantBudget
+import NLS.ZakharovShabat.SourceHamiltonianActionOnlyBound

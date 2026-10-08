@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: Lemma 27.2 spectral comparison and summation
+## Current milestone: Lemma 27.2 exact constants for m ≥ 2
+
+The exact printed action-only estimate of Lemma 27.2 is now proved for
+all real H^m sources with m ≥ 2:
+`H2m+1 ≤ S_m + (64π)^(2m-2) (1+S_1)^(4m-3) S_1`.
+Here `S_k` is the actual ⟨2nπ⟩^(2k)-weighted absolute action sum.
+There is no finite-gap restriction or additional realization premise.
+
+`RefinedH1ActionBound.lean` uses the period-one frequency lattice to improve
+the scalar weight factor from 3/2 to 4/3. Consequently the exact physical
+pair norm satisfies `P² ≤ (8/3)(S_1 + S_0²)`. The original factor-3 theorem
+and its public API remain available. `PhysicalH1NormBound.lean` now exposes
+the generic transfer of a uniform weight comparison to the scalar norm.
+
+`Lemma272ConstantBudget.lean` proves the complete constant arithmetic:
+for `e = 2m-2 ≥ 2`, `2(8/3)^e ≤ 4^e` absorbs the factor two from the
+third-Hamiltonian estimate. `SourceHamiltonianActionOnlyBound.lean`
+combines this with the spectral summation theorem and exact H¹ realization.
+
+The unrestricted m=1 endpoint is still open. Its printed expression
+`H3 ≤ 2 S_1 + S_1²` is proved under the explicit assumption `S_1 ≤ 1`.
+The arithmetic audit shows only that the above factor-two absorption fails
+at exponent zero; this is not a counterexample to the dissertation's lemma.
+Public examples check zero and negative frequencies, the minimum exponent,
+the H₅ and H₇ constants, and the conditional m=1 endpoint.
+
+Validation: the full build passed (6362 jobs), all public examples passed,
+and the transitive axiom audit passed for 25169 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: resolve the unrestricted m=1 endpoint and derive Theorem 23.2(ii).
+The final factor in the printed Lemma 27.2 is weighted `S_1`, whereas the
+preceding theorem proof uses unweighted `S_0`; that further step remains
+unproved. The Birkhoff-map formulation in Theorem 23.1, Section 28,
+fixed-domain trace scope, and the remaining dissertation inventory remain open.
+
+## Previous milestone: Lemma 27.2 spectral comparison and summation
 
 The spectral comparison and summation step of Lemma 27.2 is proved.
 For every real H^m source, m ≥ 1, the actual physical odd Hamiltonian satisfies

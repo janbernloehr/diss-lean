@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the spectral comparison and summation step of Lemma 27.2
-is proved, bounding each odd Hamiltonian by weighted actions and a physical
-H¹ energy remainder. The exact action-only constants remain to be verified.
-See [implementation status](STATUS.md). The earlier trace-sign discrepancy
-remains documented in [source discrepancies](SOURCE_ERRATA.md).
+Latest milestone: Lemma 27.2's action-only Hamiltonian bound is proved for
+all m ≥ 2, with the exact printed constant `(64π)^(2m-2)`. The unrestricted
+m=1 endpoint remains open; it is proved when the weighted action sum is at
+most one. See [implementation status](STATUS.md). The earlier trace-sign
+discrepancy remains documented in [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
