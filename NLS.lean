@@ -2905,3 +2905,8 @@ import NLS.ZakharovShabat.M1CanonicalGap
 import NLS.SequenceSpaces.BracketSquareTail
 import NLS.ZakharovShabat.M1GapTailMajorant
 import NLS.ZakharovShabat.M1GapTailEstimate
+import NLS.SequenceSpaces.SpectralWeightInterpolation
+import NLS.ZakharovShabat.FiniteGapPacking
+import NLS.ZakharovShabat.M1CentralGapEstimate
+import NLS.ZakharovShabat.M1GapGlobalBudget
+import NLS.ZakharovShabat.M1RealGlobalGapEstimate

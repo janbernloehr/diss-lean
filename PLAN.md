@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: Proposition 25.5 weighted gap tail for all M₁ weights
+## Latest progress: Proposition 25.5 global gap bound on the real potential space
+
+Proposition 25.5's global weighted gap estimate is now proved on the real
+potential space for every M₁ weight:
+`∑n w(2n)² |γn|² ≤ 265 π² w[16 ‖φ‖w²]² (1+‖φ‖w²) ‖φ‖w²`.
+The theorem includes summability and retains the period-one even Fourier
+support hypothesis. The extension to an open complex neighborhood is still
+pending; this milestone does not claim that part of the proposition.
+
+`SpectralWeightInterpolation.lean` defines the source's piecewise-linear
+extension, proves its integer values, even symmetry, lower normalization,
+monotonicity in absolute value, and exact affine formula on closed unit
+intervals. In particular, interpolation of H² is not evaluation of the
+quadratic Sobolev formula at a noninteger argument.
+
+`FiniteGapPacking.lean` proves finite interval packing and the corresponding
+complex-gap estimate for ordered real-centered discs with explicit enclosing
+bounds. `M1CentralGapEstimate.lean` transfers exterior strip exclusion to all
+M₁ weights, bounds every central endpoint's real part, and proves the exact
+real-potential central estimate with weight `w(2N−2)` and width `(2N−1)π`.
+No neighborhood geometry is assumed in the real-potential result.
+
+The tail majorant and sum estimate now have a positive Young parameter.
+Parameter one recovers the existing source constant 1152 without changing
+its API. Parameter five yields `18 ‖φ‖w² + (432/5) ‖φ‖w⁴` at any valid
+cutoff. `M1GapGlobalBudget.lean` verifies the arithmetic for the printed
+factor 265. `M1RealGlobalGapEstimate.lean` splits the full sum at the inclusive
+signed cutoff, handles the zero-cutoff case, and combines both estimates at
+`N = floor(8 ‖φ‖w²)`. A separate conditional combination theorem exposes the
+central budget needed for the future complex-neighborhood proof.
+
+Public examples check noninteger H² interpolation and its negative argument,
+the closed interpolation endpoint for a scaled constant weight, cutoff zero,
+equality in the tail threshold, the first nonempty central block, and the
+global bound for the exact π-normalized H² weight.
+
+Validation: the full build passed (6338 jobs), all public examples passed,
+and the transitive axiom audit passed for 25023 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: prove the finite central budget on an actual open complex neighborhood
+of the real potential space, then apply the existing combination theorem.
+Pairwise disjointness of isolating discs alone does not supply their enclosing
+horizontal interval. The dependent higher-action estimates, Sections 27–28,
+fixed-domain trace scope, and remaining dissertation inventory remain open.
+
+## Previous milestone: Proposition 25.5 weighted gap tail for all M₁ weights
 
 Proposition 25.5's first estimate now holds for every M₁ weight, at the
 exact threshold `8 ‖φ‖w² ≤ 1+N`, with its inclusive signed cutoff:

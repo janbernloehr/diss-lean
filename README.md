@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Proposition 25.5's weighted gap-tail estimate now holds
-for the full M₁ class, including superlinear weights, with the exact quadratic
-threshold and source constant 1152. The individual estimate (5.8) is also
-proved. Canonical labels retain the period-one even Fourier-support hypothesis.
-The global weighted gap bound near real potentials is next. See `STATUS.md`.
+Latest milestone: Proposition 25.5's global weighted gap bound is proved
+on the real potential space for every M₁ weight, with the printed constant
+`265 π²` and the source's piecewise-linear weight extension. Summability,
+the exact finite central estimate, and a sharper tail budget are included.
+The extension to an open complex neighborhood remains next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the

@@ -10,12 +10,27 @@ theorem gap_sq_le_six_leading_remainder (d l m r s : ℝ)
     (h : d^2 ≤ 6*(l+r)*(m+s)) : d^2 ≤ 6*(l^2+m^2+r^2+s^2) := by
   nlinarith [sq_nonneg ((l+r)-(m+s)),sq_nonneg (l-r),sq_nonneg (m-s)]
 
-/-- The pointwise majorant retains the signed leading coefficients and the precise quadratic remainder. -/
-theorem M1_canonicalGap_tail_majorant (w : SpectralWeight) (hw : w.HasLinearFactor)
+/-- Young's inequality with an adjustable allocation to the leading coefficients.
+This preserves enough remainder budget for the global constant in Proposition 25.5. -/
+theorem gap_sq_le_parameter_leading_remainder (d l m r s ε : ℝ) (hε : 0 < ε)
+    (h : d^2 ≤ 6*(l+r)*(m+s)) :
+    d^2 ≤ 3*(1+ε)*(l^2+m^2)+3*(1+1/ε)*(r^2+s^2) := by
+  have hl : (l+r)^2 ≤ (1+ε)*l^2+(1+1/ε)*r^2 := by
+    apply (mul_le_mul_iff_right₀ hε).mp
+    field_simp
+    nlinarith [sq_nonneg (ε*l-r)]
+  have hm : (m+s)^2 ≤ (1+ε)*m^2+(1+1/ε)*s^2 := by
+    apply (mul_le_mul_iff_right₀ hε).mp
+    field_simp
+    nlinarith [sq_nonneg (ε*m-s)]
+  nlinarith [sq_nonneg ((l+r)-(m+s))]
+
+/-- Adjustable pointwise majorant for every M₁ weight at the exact quadratic threshold. -/
+theorem M1_canonicalGap_tail_majorant_parameter (ε : ℝ) (hε : 0 < ε) (w : SpectralWeight) (hw : w.HasLinearFactor)
     (φ : WeightedCoeffPair w.toWeight 2) (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0)
     (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
     (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖)^2 ≤
-      6*resonantLeadingPower w φ n+384*‖φ‖^6*ReciprocalSeries.bracketInverseSq n := by
+      3*(1+ε)*resonantLeadingPower w φ n+192*(1+1/ε)*‖φ‖^6*ReciprocalSeries.bracketInverseSq n := by
   let L := w (2*n)*‖φ.fst.val (-(2*n))‖
   let M := w (2*n)*‖φ.snd.val (2*n)‖
   let R := (8/(1+|(n:ℝ)|))*‖φ‖^2*‖φ.fst‖
@@ -32,9 +47,9 @@ theorem M1_canonicalGap_tail_majorant (w : SpectralWeight) (hw : w.HasLinearFact
       constructor <;> nlinarith [hb.2.1,hb.2.2])
   have hg := mul_le_mul_of_nonneg_left (M1_canonicalEndpoints_localization w hw φ heven n hn).2.2
     (sq_nonneg (w (2*n)))
-  have h := gap_sq_le_six_leading_remainder
+  have h := gap_sq_le_parameter_leading_remainder
     (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖)
-    L M R S (by rw [mul_pow]; nlinarith)
+    L M R S ε hε (by rw [mul_pow]; nlinarith)
   have hlead : L^2+M^2 = resonantLeadingPower w φ n := by
     simp only [resonantLeadingPower,ENNReal.toReal_ofNat,Real.rpow_two,L,M]
   have hrem : R^2+S^2 = 64*‖φ‖^6*ReciprocalSeries.bracketInverseSq n := by
@@ -44,7 +59,16 @@ theorem M1_canonicalGap_tail_majorant (w : SpectralWeight) (hw : w.HasLinearFact
     simp only [div_eq_mul_inv,← inv_pow]
     ring
   calc
-    _ ≤ 6*(L^2+M^2+(R^2+S^2)) := by simpa only [add_assoc] using h
+    _ ≤ 3*(1+ε)*(L^2+M^2)+3*(1+1/ε)*(R^2+S^2) := h
     _ = _ := by rw [hlead,hrem]; ring
+
+/-- The source constant six is the balanced choice of the parameter. -/
+theorem M1_canonicalGap_tail_majorant (w : SpectralWeight) (hw : w.HasLinearFactor)
+    (φ : WeightedCoeffPair w.toWeight 2) (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖)^2 ≤
+      6*resonantLeadingPower w φ n+384*‖φ‖^6*ReciprocalSeries.bracketInverseSq n := by
+  convert M1_canonicalGap_tail_majorant_parameter 1 (by norm_num) w hw φ heven n hn using 1
+  norm_num
 
 end NLS.ZakharovShabat

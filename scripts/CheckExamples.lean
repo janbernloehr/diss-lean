@@ -36127,3 +36127,63 @@ example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.
   simpa only [ht,norm_zero,zero_pow (by decide : 2 ≠ 0),mul_zero,zero_add] using
     (M1_canonicalGap_tail_summable_and_le w hw φ heven N hN).2
 end M1GapTailChecks
+
+namespace M1RealGlobalGapChecks
+open NLS.ZakharovShabat
+
+-- Interpolating H² at a half-integer differs from evaluating its quadratic formula there.
+example : (SpectralWeight.sobolev 2 (by norm_num)).realExtension (1/2) = 5/2 := by
+  have h := SpectralWeight.realExtension_affine (SpectralWeight.sobolev 2 (by norm_num)) 0 (1/2)
+    (by norm_num) (by norm_num)
+  norm_num [SpectralWeight.sobolev_apply,Weight.sobolev_apply] at h ⊢
+  exact h
+
+example : (SpectralWeight.sobolev 2 (by norm_num)).realExtension (-(1/2)) = 5/2 := by
+  rw [SpectralWeight.realExtension_neg]
+  have h := SpectralWeight.realExtension_affine (SpectralWeight.sobolev 2 (by norm_num)) 0 (1/2)
+    (by norm_num) (by norm_num)
+  norm_num [SpectralWeight.sobolev_apply,Weight.sobolev_apply] at h ⊢
+  exact h
+
+-- The interpolation endpoint u=1 is allowed, including weights with w(0)>1.
+example : (SpectralWeight.constant 2 (by norm_num)).realExtension (0+1) = 2 := by
+  simpa using SpectralWeight.realExtension_affine (SpectralWeight.constant 2 (by norm_num)) 0 1
+    (by norm_num) le_rfl
+
+-- A zero cutoff has no finite central contribution.
+example (f : ℤ → ℝ) (hf : Summable f) :
+    (∑' n, f n) = (∑ n ∈ Finset.Ioo (0:ℤ) 0, f n)+(∑' n, f n) := by
+  simpa only [Nat.cast_zero,neg_zero,Nat.zero_le,ite_true] using
+    (sum_eq_central_add_tail f 0 (by simpa using hf)).2
+
+-- The sharper quartic budget includes equality in the threshold.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0)
+    (N : ℕ) (hN : 8*‖φ‖^2 = 1+(N:ℝ)) :
+    (∑' n : ℤ, if N ≤ n.natAbs then
+      (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖)^2 else 0) ≤
+      18*‖φ‖^2+(432/5)*‖φ‖^4 :=
+  M1_canonicalGap_tail_quartic_le w hw φ heven N hN.le
+
+-- The first nonempty central block is exactly {0}, with the unnormalized weight w(0).
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (heven : weightedBaseToPair w φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType (weightedBaseToPair w φ)) (hN : 8*‖φ‖^2 ≤ 2) :
+    (∑ n ∈ Finset.Ioo (-1:ℤ) 1,
+      (w (2*n)*‖canonicalPeriodicGap (by simp) (by norm_num) (weightedBaseToPair w φ) heven n‖)^2) ≤
+      w 0^2*Real.pi^2 := by
+  convert M1_real_canonicalGap_weighted_central_sq_le w hw φ heven hreal 1 (by decide)
+    (by norm_num; exact hN) using 1 <;> norm_num
+
+-- Superlinear H² weights satisfy the printed global bound on the real potential space.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 2 (by norm_num)).toWeight 2)
+    (heven : weightedBaseToPair (SpectralWeight.piSobolev 2 (by norm_num)) φ ∈ pairParitySubspace 0)
+    (hreal : IsRealType (weightedBaseToPair (SpectralWeight.piSobolev 2 (by norm_num)) φ)) :
+    (∑' n : ℤ, ((SpectralWeight.piSobolev 2 (by norm_num)) (2*n)*
+      ‖canonicalPeriodicGap (by simp) (by norm_num)
+        (weightedBaseToPair (SpectralWeight.piSobolev 2 (by norm_num)) φ) heven n‖)^2) ≤
+      265*Real.pi^2*((SpectralWeight.piSobolev 2 (by norm_num)).realExtension (16*‖φ‖^2))^2*
+        (1+‖φ‖^2)*‖φ‖^2 :=
+  (M1_real_canonicalGap_global_summable_and_le _
+    (SpectralWeight.hasLinearFactor_piSobolev 2 (by norm_num)) φ heven hreal).2
+end M1RealGlobalGapChecks
