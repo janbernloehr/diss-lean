@@ -2954,3 +2954,8 @@ import NLS.ZakharovShabat.M1ExteriorGapBudget
 import NLS.ComplexAnalysis.FiniteCoreProductBound
 import NLS.ZakharovShabat.SourceH1ExteriorProductBound
 import NLS.ZakharovShabat.SourceH1GapProductReduction
+import NLS.ZakharovShabat.OrderedGapProductBound
+import NLS.ZakharovShabat.H1CutoffCentralStrip
+import NLS.ZakharovShabat.SourceRealCentralProduct
+import NLS.ZakharovShabat.SourceH1CentralProductBound
+import NLS.ZakharovShabat.SourceH1ActionGapEstimate

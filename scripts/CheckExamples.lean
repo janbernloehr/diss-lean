@@ -36813,3 +36813,63 @@ example (ψ : realTypeSourceSubmodule 2)
   sourceH1_real_action_le_96_gap_sq_of_small_norm ψ φ hφ hsmall (-7)
 
 end Section28ProductBudgetChecks
+
+namespace Section28RealCentralChecks
+open NLS.ZakharovShabat
+
+-- The same cutoff data that defeated the printed ratio chain still satisfy
+-- the actual real-source bound, by the stronger squared-product argument.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (hsize : ‖φ‖^2 = 21/16) :
+    ‖sourceRealGapFactor (by simp) (by norm_num) ψ.val ψ.property 10‖ ≤ 4736 := by
+  have h := sourceH1_real_gapFactor_le_2048_at_cutoff ψ φ hφ 10
+    (by rw [hsize]; norm_num) (by rw [hsize]; norm_num) 10 (by decide)
+  rw [hsize] at h
+  norm_num at h
+  exact h
+
+-- The inclusive boundary on the negative side has the identical constant.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (hsize : ‖φ‖^2 = 21/16) :
+    ‖sourceRealGapFactor (by simp) (by norm_num) ψ.val ψ.property (-10)‖ ≤ 4736 := by
+  have h := sourceH1_real_gapFactor_le_2048 ψ φ hφ (-10) (by rw [hsize]; norm_num)
+  rw [hsize] at h
+  norm_num at h
+  exact h
+
+-- An exact integer threshold is covered at |n|+1=8P², without rounding up the index.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (hsize : ‖φ‖^2 = 11/8) :
+    ‖sourceRealGapFactor (by simp) (by norm_num) ψ.val ψ.property (-10)‖ ≤ 4864 := by
+  have h := sourceH1_real_gapFactor_le_2048 ψ φ hφ (-10) (by rw [hsize]; norm_num)
+  rw [hsize] at h
+  norm_num at h
+  exact h
+
+-- The printed action constant is recovered at both signs of its original threshold.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ |(n:ℝ)|) :
+    ‖sourceComplexAction (by simp) (by norm_num) n ψ.val‖ ≤
+      4608*(1+‖φ‖^2)*‖sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ.val n‖^2 :=
+  sourceH1_real_action_le_4608_gap_sq ψ φ hφ n hn
+
+-- A collapsed gap needs no division by its length in the new high-index theorem.
+example (ψ : realTypeSourceSubmodule 2)
+    (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (hφ : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ = periodOnePotential ψ.val)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|)
+    (hgap : sourcePeriodicGapDisplacement (by simp) (by norm_num) ψ.val n = 0) :
+    sourceComplexAction (by simp) (by norm_num) n ψ.val = 0 := by
+  have h := sourceH1_real_action_le_1536_gap_sq ψ φ hφ n hn
+  rw [hgap,norm_zero,zero_pow (by decide : 2 ≠ 0),mul_zero] at h
+  exact norm_eq_zero.mp (le_antisymm h (norm_nonneg _))
+
+end Section28RealCentralChecks

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 28.1's exterior-product bound of 128 is proved
-and transferred to the actual infinite spectral product, leaving a finite
-central product to estimate. For small real H¹ sources the central product is
-empty, giving a complete gap-factor bound and `|I_n| ≤ 96 |γ_n|²` at every
-index, including collapsed gaps. Theorems 23.1 and 23.2 were completed
-earlier. See [implementation status](STATUS.md) and
+Latest milestone: Lemma 28.1's scalar gap-factor bound and Proposition
+28.2's action-gap estimate are proved on real H¹ sources, including boundary
+indices and collapsed gaps. A stronger squared central-product estimate
+recovers 2048 despite the error in the printed arithmetic; the real action
+constant improves from 4608 to 1536. The complex-neighborhood extension
+remains open. See [implementation status](STATUS.md) and
 [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete

@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Latest progress: Lemma 28.1 exterior bound 128 and infinite-product reduction
+## Latest progress: Lemma 28.1 and Proposition 28.2 on real H¹ sources
+
+The scalar conclusion of Lemma 28.1 is now proved for real H¹ sources:
+`‖χ_n‖_gap ≤ 2048*(1+P²)` whenever `8*P² ≤ 1+|n|`. It includes both signs,
+cutoff zero, collapsed gaps, and the inclusive boundary index. A cutoff-free
+API chooses `min(|n|, floor(8*P²))`, so exact integer thresholds are covered.
+
+The central product has the stronger estimate
+`|product over |m|<N of (λ•_m-z)/w_m(z)|² ≤ 8*(N+1)`.
+`OrderedGapProductBound.lean` proves enclosing-interval product inequalities
+on both sides of the real spectrum. Critical-point membership in each gap
+gives the squared-factor estimate; ordered gaps then bound the whole product.
+`H1CutoffCentralStrip.lean` locates every central endpoint between
+`±(N-1/2)π`. `SourceRealCentralProduct.lean` and
+`SourceH1CentralProductBound.lean` apply these facts to the actual roots.
+
+Combining this with the previously proved exterior constant 128 proves
+2048 directly, without the invalid scalar comparison at n=N. The arithmetic
+counterexamples remain valid; the actual real-source bound is now proved
+by a stronger argument. `SOURCE_ERRATA.md` records this distinction.
+
+`SourceH1ActionGapEstimate.lean` also proves Proposition 28.2 on the real
+source locus with its printed constant 4608 and original index threshold.
+The stronger real-source factor three yields 1536 and permits the inclusive
+localization threshold `8*P² ≤ 1+|n|`. These are estimates for the original
+actions and periodic gaps, with no division by a possibly zero gap.
+
+Public examples cover the previously failing scalar cutoff data on both
+sides, an exact integer threshold, the printed action constant, and a
+collapsed gap.
+
+Validation: the full build passed (6388 jobs), all public examples passed,
+and the transitive axiom audit passed for 25332 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: extend the required Section 28 estimates to the almost-real complex
+neighborhood and assemble the weighted action estimate of Theorem 23.4.
+The complex-source statements and the printed intermediate spectral ratio
+are not claimed by this milestone. The real scalar and action conclusions
+above are complete.
+
+## Previous milestone: Lemma 28.1 exterior bound 128 and infinite-product reduction
 
 Lemma 28.1's numerical exterior-product bound 128 is now proved for
 every finite set of exterior indices. Both boundary indices ±N are

@@ -67,7 +67,15 @@ counterexamples. They also prove:
 
 This audit concerns the printed scalar implication and supplies no
 potential whose actual spectral factor violates the claimed norm bound.
-The spectral product estimate must still be proved; neither corrected
-scalar comparison is presented as a completed version of Lemma 28.1.
-The separate real-source version of (5.15) is proved using the exact
-cosine moment and does not rely on this disputed arithmetic step.
+The corrected scalar comparisons alone do not prove the spectral claim.
+
+The actual real-source scalar bound is now proved independently in
+`SourceH1ActionGapEstimate.lean`. The central product has squared norm at
+most `8(N+1)`, using critical-point membership in ordered real gaps.
+Combined with the exterior constant 128, this gives
+`‖χ_n‖_gap ≤ 2048(1+P²)` even at the inclusive boundary. Public examples
+recover the bound 4736 for the actual real gap factor at n=±10 under the
+norm assumption above. This does not validate the false ratio chain.
+The real-source version of Proposition 28.2 follows, with the stronger
+constant 1536 (and hence the printed 4608). The almost-real complex
+extension and the printed intermediate spectral ratio remain open.
