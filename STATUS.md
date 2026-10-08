@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: printed spectral height for 1 ≤ p ≤ 2
+## Current milestone: Appendix C.1 is not an isomorphism
+
+The source audit identified a false assertion in Appendix C.1, printed
+page 125: the ordinary discrete Hilbert transform is described as an
+isomorphism for every 1 < p < infinity. Its boundedness was already proved;
+its invertibility had never been assumed in this development.
+
+`HilbertKernelFactorization.lean` constructs a decaying bilateral sequence t
+from the integrals I_n = integral_0^1 x^n/(1+x) dx. Adjacent remainders sum
+to 1/(n+1), giving h(n) = t(n)+t(n-1) for h(n) = -1/n, including zero.
+The factor belongs to every sequence space with exponent greater than one.
+
+`HilbertNotIsomorphism.lean` uses alternating blocks a_N supported on
+0,...,N. Their squared Hilbert norm is N+1, while cancellation gives
+H a_N = t + (-1)^N shift_(N+1) t. Thus their transformed norms are bounded
+by 2 norm(t), independently of N. No uniform lower norm estimate exists.
+The result applies to any bounded linear operator with the source's finite
+kernel formula, including both library constructions at p=2. It rules out
+any bounded linear left inverse and any continuous linear equivalence.
+
+This is a counterexample to the universal Banach-space isomorphism claim,
+already at p=2. It does not assert a nonzero kernel or failure of injectivity.
+The valid full-range boundedness theorem and all existing downstream proofs
+are retained. Theorem 1.1's printed height above p=2 remains unresolved;
+the accepted corrected Lemma 27.2 and its optional original m=1 sharpening
+retain their previous status.
+
+Public examples verify the zero diagonal, both cancellation parities,
+the growing input norm with uniformly bounded output for the completed
+operator, and the obstruction to candidate inverses and equivalences.
+
+Validation: the full build passed (6434 jobs), all public examples passed,
+and the axiom audit passed for 25617 NLS declarations. The build retains
+the same 21 pre-existing warnings and has no new warnings. The inventory
+of 156 candidate statement labels was independently verified with `--check`.
+
+Next: continue the numbered-statement audit and seek a sharper argument
+for the printed spectral height at p > 2.
+
+## Previous milestone: printed spectral height for 1 ≤ p ≤ 2
 
 The numbered-statement audit found an outstanding exact constant in
 Theorem 1.1: the central spectral box has printed height `(1+8‖φ‖ₚ)^p`,

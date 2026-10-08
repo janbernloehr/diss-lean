@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the printed spectral height in Theorem 1.1 now holds
-throughout 1 ≤ p ≤ 2, with actual source-space counting, parity and analytic
-rectangular projections. The printed height for p > 2 remains unresolved;
-a formal result identifies why the existing numerical criterion cannot
-settle that range at large norms.
+Latest milestone: a Lean proof refutes Appendix C.1's assertion that the
+ordinary discrete Hilbert transform is an isomorphism. Alternating finite
+blocks rule out any bounded linear left inverse at p=2. The valid boundedness
+result remains available for every 1<p<infinity. The printed spectral height
+in Theorem 1.1 remains proved for 1 ≤ p ≤ 2 and unresolved above two.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

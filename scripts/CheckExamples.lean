@@ -37537,3 +37537,38 @@ example (q M : ℝ) (hq : 2 < q) (hM : 1/(4*q-8) ≤ M) :
   (printed_height_neumann_bound_fails hq hM).not_gt
 
 end PrintedHeightChecks
+
+namespace HilbertNonisomorphismChecks
+open NLS.Fourier
+
+-- The factorization also handles the omitted diagonal correctly.
+example : hilbertKernelFactor 0 + hilbertKernelFactor (-1) = 0 := by
+  simpa using (hilbertKernel_factorization 0).symm
+
+-- Both block parities occur in the explicit cancellation formula.
+example : discreteHilbert (alternatingHilbertBlock 0) =
+    hilbertFactorCoeffs + Coeff.shift 1 hilbertFactorCoeffs := by
+  simpa using transform_alternatingHilbertBlock discreteHilbert discreteHilbert_finite 0
+
+example : discreteHilbert (alternatingHilbertBlock 1) =
+    hilbertFactorCoeffs - Coeff.shift 2 hilbertFactorCoeffs := by
+  simpa [sub_eq_add_neg] using
+    transform_alternatingHilbertBlock discreteHilbert discreteHilbert_finite 1
+
+-- The same blocks test the completed full-range operator, not only its ℓ² construction.
+example (N : ℕ) : ‖alternatingHilbertBlock N‖^2 = (N:ℝ)+1 ∧
+    ‖hilbertTransform (p := 2) (by norm_num) (by norm_num) (alternatingHilbertBlock N)‖ ≤
+      2*‖hilbertFactorCoeffs‖ :=
+  ⟨norm_alternatingHilbertBlock_sq N,
+    norm_transform_alternatingHilbertBlock_le _ (hilbertTransform_finite _ _) N⟩
+
+-- No candidate inverse or continuous linear equivalence can realize the printed assertion.
+example (L : Coeff 2 →L[ℂ] Coeff 2) :
+    ¬ Function.LeftInverse L discreteHilbert :=
+  no_left_inverse_of_hilbert_finite_formula _ discreteHilbert_finite L
+
+example (e : Coeff 2 ≃L[ℂ] Coeff 2) :
+    hilbertTransform (p := 2) (by norm_num) (by norm_num) ≠ e.toContinuousLinearMap :=
+  hilbertTransform_two_ne_equiv e
+
+end HilbertNonisomorphismChecks

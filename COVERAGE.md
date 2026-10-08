@@ -3,7 +3,8 @@
 This is a focused map of the dissertation's introductory results to the
 current public Lean API. It is not a completeness certificate for every
 chapter or appendix. All paths below are relative to the repository root;
-the named declarations are in `NLS.ZakharovShabat`.
+the introductory declarations are in `NLS.ZakharovShabat`.
+The appendix audit below uses `NLS.Fourier`.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
@@ -75,3 +76,19 @@ source-norm height for 1 ≤ p ≤ 2, including the central counts and moving
 projections. Above two, `printed_height_neumann_bound_fails` shows a
 limitation of the numerical criterion, not a spectral counterexample.
 The literal bound above two still needs proof.
+
+## Appendix C.1 audit
+
+The full-range boundedness assertion is proved by
+[`HilbertBoundedness.lean`](NLS/Fourier/HilbertBoundedness.lean), including
+the finite-input formula and, through `HilbertSeries.lean`, the convergent
+series on every input. The printed isomorphism assertion is refuted at p=2
+by [`HilbertNotIsomorphism.lean`](NLS/Fourier/HilbertNotIsomorphism.lean).
+Alternating finite blocks have squared norm N+1 and uniformly bounded
+transforms. The public results rule out a lower norm estimate, a bounded
+linear left inverse, and a continuous linear equivalence realizing H.
+
+This is a proved source discrepancy, not a completed proof of the literal
+statement. The correction and its precise scope are recorded in
+[`SOURCE_ERRATA.md`](SOURCE_ERRATA.md). The argument makes no claim of a
+nonzero kernel and leaves boundedness for all 1 < p < infinity intact.

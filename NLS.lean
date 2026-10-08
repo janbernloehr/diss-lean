@@ -3003,3 +3003,5 @@ import NLS.ZakharovShabat.SourceHamiltonianPositiveDomain
 import NLS.ZakharovShabat.SourceFrequencyPositiveDomains
 import NLS.ZakharovShabat.PrintedHeight
 import NLS.ZakharovShabat.SourcePrintedHeightCounting
+import NLS.Fourier.HilbertKernelFactorization
+import NLS.Fourier.HilbertNotIsomorphism

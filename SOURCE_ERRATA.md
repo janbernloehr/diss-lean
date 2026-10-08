@@ -1,5 +1,35 @@
 # Source discrepancies
 
+## Appendix C.1: ordinary Hilbert transform is not an isomorphism
+
+Source: dissertation, Lemma C.1, printed page 125. The operator is
+`(Hx)_n = sum_{m != n} x_m/(m-n)`. The assertion that it is a Banach-space
+isomorphism for every 1 < p < infinity is false already at p=2.
+
+`HilbertKernelFactorization.lean` proves h(n)=t(n)+t(n-1), with t in ℓ²
+and h(n)=-1/n (zero on the diagonal). For the finitely supported sequence
+`a_N(k)=(-1)^k` on 0,...,N, `HilbertNotIsomorphism.lean` proves
+
+```
+||a_N||₂² = N+1
+H a_N = t + (-1)^N shift_(N+1) t
+||H a_N||₂ <= 2 ||t||₂.
+```
+
+Consequently `discreteHilbert_not_bounded_below` rules out every nonnegative
+constant C satisfying `||a||₂ <= C ||Ha||₂` for all a. The theorem
+`hilbertTransform_two_no_left_inverse` rules out any bounded linear left
+inverse of the completed transform, and `hilbertTransform_two_ne_equiv`
+rules out its equality with any continuous linear equivalence. A generic
+version applies to any bounded operator agreeing with the printed formula
+on finite inputs, so the obstruction is independent of the construction.
+
+The correction is to assert boundedness, which `HilbertBoundedness.lean`
+already proves for every 1 < p < infinity. Neither failure of injectivity
+nor the corresponding obstruction at every other exponent is asserted here.
+Existing library proofs never used the false invertibility assertion.
+The source proof of Lemma C.2 uses only the boundedness part of C.1.
+
 ## Theorem 1.1: unresolved printed height above two
 
 The printed central box uses `(1+8‖φ‖ₚ)^p`. The Neumann criterion in
