@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: every smooth periodic physical initial function now produces
-a local classical NLS solution conserving mass and the physical energy
-`∫₀¹ (|u_x|² + |u|⁴)`, including both time endpoints. The construction also
-provides a strong H¹ time derivative. Global continuation and the full
-wellposedness assembly remain.
+Latest milestone: conserved mass and energy bound the absolute Fourier norm
+uniformly, so smooth NLS solutions extend past any finite endpoint in either
+direction. Every smooth periodic physical initial function now has a classical
+solution on any prescribed finite interval. Assembly of one all-time trajectory
+and the full wellposedness statement remain.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

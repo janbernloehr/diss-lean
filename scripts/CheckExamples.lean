@@ -34700,3 +34700,64 @@ example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1)
     (hE (-T) ⟨le_rfl,by linarith⟩).trans (hE T ⟨by linarith,le_rfl⟩).symm⟩
 
 end LocalConservationChecks
+
+namespace SmoothContinuationChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set
+open scoped ContDiff
+
+-- The coercive bound is the actual ℓ¹ Fourier norm, not just a pointwise amplitude bound.
+example (a : ScalarDomain 2) :
+    ‖WeightedCoeff.sobolevToL1CLM 2 (by simp) a‖ ≤
+      WeightedCoeff.sobolevEmbeddingConstant 2 (by simp) *
+        Real.sqrt (2*(classicalNLSMass (periodOneSobolevSynthesis a)+(scalarSobolevEnergy a).re)) :=
+  norm_sobolevToL1_le_conserved a
+
+-- One constant bounds every reference interval with the same smooth initial datum.
+example (u₀ : WeightedCoeff SpectralWeight.one.toWeight 1)
+    (hall : ∀ s : ℝ, 0 ≤ s → Memℓp (fun n => (Weight.sobolev s n : ℂ)*u₀.val n) 1) :
+    ∃ B ≥ 0, ∀ T ≥ 0, ∀ z : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1,
+      z 0 = u₀ → IsFourierNLSTrajectoryOn SpectralWeight.one (-T) T z →
+        ∀ time ∈ Icc (-T) T, ‖z time‖ ≤ B := by
+  let a := fourierNLSHilbertData u₀ (hall 1 (by norm_num))
+  refine ⟨nlsConservedBound a,nlsConservedBound_nonneg a,?_⟩
+  intro T hT z hz0 hz time ht
+  exact hz.norm_le_conserved 0 ⟨by linarith,hT⟩ (by simpa only [hz0] using hall) a
+    (by simpa only [hz0] using fourierNLSHilbertData_apply u₀ (hall 1 (by norm_num))) time ht
+
+-- No value or limit of u at time 1 is supplied; the extension is differentiable there.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1)
+    (u : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1)
+    (hu : ∀ c ∈ Ico (0 : ℝ) 1, IsFourierNLSTrajectoryOn SpectralWeight.one 0 c u)
+    (hi : ∀ n : ℤ, (u 0).val n = periodOneCoefficient f n) :
+    ∃ d : ℝ, d > 1 ∧ ∃ z : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1,
+      EqOn z u (Ico (0 : ℝ) 1) ∧
+      DifferentiableAt ℝ (fourierNLSPhysicalCurve SpectralWeight.one z) 1 := by
+  obtain ⟨d,hd,z,_,he,hclass⟩ := exists_fourierNLS_extension_of_smooth_periodic_Ico f hf hp
+    0 1 (by norm_num) u hu hi
+  exact ⟨d,hd,z,he,hclass.time_differentiable 1 ⟨by norm_num,hd⟩⟩
+
+-- The backward extension is classical at the previously missing left endpoint as well.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1)
+    (u : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1)
+    (hu : ∀ c ∈ Ioc (-1 : ℝ) 0, IsFourierNLSTrajectoryOn SpectralWeight.one c 0 u)
+    (hi : ∀ n : ℤ, (u 0).val n = periodOneCoefficient f n) :
+    ∃ d : ℝ, d < -1 ∧ ∃ z : ℝ → WeightedCoeff SpectralWeight.one.toWeight 1,
+      EqOn z u (Ioc (-1 : ℝ) 0) ∧
+      DifferentiableAt ℝ (fourierNLSPhysicalCurve SpectralWeight.one z) (-1) := by
+  obtain ⟨d,hd,z,_,he,hclass⟩ := exists_fourierNLS_extension_of_smooth_periodic_Ioc f hf hp
+    (-1) 0 (by norm_num) u hu hi
+  exact ⟨d,hd,z,he,hclass.time_differentiable (-1) ⟨hd,by norm_num⟩⟩
+
+-- The interval is prescribed by the caller, with initial time allowed at its endpoint.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) (a b : ℝ) (hab : a ≤ b) :
+    ∃ u : ℝ → C(AddCircle (2 : ℝ), ℂ),
+      (fun x : ℝ => u b (x : AddCircle (2 : ℝ))) = f ∧ IsClassicalNLSTrajectoryOn a b u :=
+  exists_classicalNLS_on_interval_of_smooth_periodic a b b ⟨hab,le_rfl⟩ f hf hp
+
+-- Arbitrarily long symmetric intervals are available using only physical smoothness and periodicity.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1) (T : ℝ) (hT : 0 ≤ T) :
+    ∃ u : ℝ → C(AddCircle (2 : ℝ), ℂ),
+      (fun x : ℝ => u 0 (x : AddCircle (2 : ℝ))) = f ∧ IsClassicalNLSTrajectoryOn (-T) T u :=
+  exists_classicalNLS_on_interval_of_smooth_periodic (-T) T 0 ⟨by linarith,hT⟩ f hf hp
+
+end SmoothContinuationChecks

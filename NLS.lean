@@ -2782,3 +2782,7 @@ import NLS.ZakharovShabat.SobolevHamiltonianConservation
 import NLS.Fourier.FourierNLSWeightedVelocity
 import NLS.ZakharovShabat.ClassicalNLSSobolevEnergy
 import NLS.ZakharovShabat.LocalSmoothNLSConservation
+import NLS.ZakharovShabat.ScalarNLSConservedBound
+import NLS.Fourier.FourierNLSConservedBound
+import NLS.Fourier.SmoothFourierNLSContinuation
+import NLS.Fourier.SmoothFourierNLSFiniteInterval

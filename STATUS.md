@@ -1,6 +1,55 @@
 # Implementation status
 
-## Current milestone: local smooth mass and energy conservation
+## Current milestone: smooth continuation and arbitrary finite intervals
+
+Conserved physical mass and energy now give a uniform bound on the original
+absolute Fourier norm, independent of the reference interval length. Smooth
+solutions extend past every finite endpoint in either direction, with no
+assumed endpoint value, limit, or norm bound. A finite sequence of uniform
+extensions constructs a classical solution on any prescribed finite interval.
+
+`ScalarNLSConservedBound.lean` identifies scalar H¹ data with an actual
+real-type Sobolev source and equates its bilinear mass with physical mass.
+The existing defocusing coercivity estimate bounds the full H¹ norm by
+mass plus energy. Sobolev embedding then gives an explicit ℓ¹ Fourier bound
+depending only on those conserved quantities.
+
+`FourierNLSConservedBound.lean` constructs a coefficient-identical strong
+H¹ realization of every smooth reference trajectory, at any initial time
+in its closed interval. It proves conservation there and bounds the original
+unit-weight norm by the initial physical mass and energy. Neither the bound
+nor the canonical H¹ initial datum depends on the interval length.
+
+`SmoothFourierNLSContinuation.lean` applies this estimate to every closed
+truncation of a half-open solution interval. The existing bounded-continuation
+theorem extends past the missing endpoint, preserving all old values and
+producing an actual classical physical solution on the extended interval.
+Separate forward and backward statements work directly from arbitrary
+smooth periodic physical initial functions, without weighted or bound premises.
+
+`SmoothFourierNLSFiniteInterval.lean` fixes one positive extension length
+from the initial conserved bound. Induction over a truncated time grid reaches
+any prescribed endpoint in finitely many steps. Forward and backward curves
+join at any chosen initial time. The physical corollary constructs a classical
+solution with the exact prescribed smooth periodic initial function on any
+finite closed interval, including singleton intervals and endpoint initial times.
+
+Public examples verify one common bound for every reference interval, actual
+ℓ¹ norm control, differentiability at previously missing endpoints in both
+directions, initial data at a prescribed interval endpoint, and existence on
+arbitrarily long symmetric intervals using only physical smoothness and periodicity.
+
+Validation: the full build passes (6203 jobs), all public examples pass,
+and the transitive axiom audit passes for 23860 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: use uniqueness on overlapping finite intervals to assemble one
+trajectory on all real times, then establish the corresponding global classical
+existence statement. Existence on every prescribed finite interval is proved;
+the single all-time trajectory has not yet been assembled. The dissertation’s
+exact all-smooth-sequence wellposedness assembly and full inventory also remain.
+
+## Previous milestone: local smooth mass and energy conservation
 
 The local classical solutions constructed from arbitrary smooth period-one
 initial functions now conserve both mass and the physical defocusing energy
