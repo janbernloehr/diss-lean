@@ -35736,3 +35736,58 @@ example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWei
     ‖weightedPotentialSquareInShift (by simp) (SpectralWeight.piSobolev 1 (by norm_num)) φ n z hz‖ ≤ (1/2:ℝ) :=
   norm_weightedPotentialSquareInShift_le_half _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl) φ n z hz hn
 end LinearWeightSquareChecks
+
+namespace LinearWeightCoefficientChecks
+open NLS NLS.ZakharovShabat
+
+-- The actual diagonal row has the inverse-bracket gain on every closed strip.
+example (n m : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    (1+|(n:ℝ)|)*‖complementarySymbol n z m‖ ≤ (1+|((m+n:ℤ):ℝ)|)^2 :=
+  bracket_mul_complementarySymbol_le hz m
+
+-- Resonance is removed even at the center of the zero strip.
+example : (1+|(0:ℝ)|)*‖complementarySymbol 0 0 0‖ = 0 := by simp
+
+-- The row estimate applies to infinite complex coefficient sequences.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (a f : WeightedCoeff w.toWeight 2)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    Summable (fun k : ℤ => ‖a.val (n-k)*complementarySymbol n z (-k)*f.val k‖) :=
+  (summable_and_diagonalRow_linear w hw a f hz).1
+
+-- The diagonal estimate uses the full Hilbert pair norm, with no real-type hypothesis.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    ‖weightedResonantAExtension (by simp) w φ n z‖ ≤ ‖φ‖^2/(1+|(n:ℝ)|) :=
+  ((linearWeight_resonantCoefficients w hw φ n hn).2.2.2 z hz).1
+
+-- Positive and negative off-diagonals retain distinct components and physical Fourier signs.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    w (2*n)*‖weightedResonantBPlusExtension (by simp) w φ n z-φ.snd.val (2*n)‖ ≤
+      (8/(1+|(n:ℝ)|))*‖φ‖^2*‖φ.snd‖ :=
+  ((linearWeight_resonantCoefficients w hw φ n hn).2.2.2 z hz).2.1
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    w (2*n)*‖weightedResonantBMinusExtension (by simp) w φ n z-φ.fst.val (-(2*n))‖ ≤
+      (8/(1+|(n:ℝ)|))*‖φ‖^2*‖φ.fst‖ :=
+  ((linearWeight_resonantCoefficients w hw φ n hn).2.2.2 z hz).2.2
+
+-- Equality at the threshold still gives analyticity near the whole closed strip.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (φ : WeightedCoeffPair w.toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 = 1+|(n:ℝ)|) :
+    AnalyticOnNhd ℂ (weightedResonantAExtension (by simp) w φ n) (resonantStrip n) :=
+  (linearWeight_resonantCoefficients w hw φ n hn.le).1
+
+-- The diagonal vanishes for zero potential even at n=0, without increasing the cutoff.
+example (w : SpectralWeight) (hw : w.HasLinearFactor) (z : ℂ) (hz : z ∈ resonantStrip 0) :
+    weightedResonantAExtension (by simp) w (0 : WeightedCoeffPair w.toWeight 2) 0 z = 0 := by
+  have h := ((linearWeight_resonantCoefficients w hw 0 0 (by simp)).2.2.2 z hz).1
+  simpa using h
+
+-- The source's exact π-normalized H¹ weight is covered.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (n : ℤ) (hn : 8*‖φ‖^2 ≤ 1+|(n:ℝ)|) :
+    AnalyticOnNhd ℂ (weightedResonantBPlusExtension (by simp) (SpectralWeight.piSobolev 1 (by norm_num)) φ n)
+      (resonantStrip n) :=
+  (linearWeight_resonantCoefficients _ (SpectralWeight.hasLinearFactor_piSobolev 1 le_rfl) φ n hn).2.1
+end LinearWeightCoefficientChecks

@@ -2873,3 +2873,6 @@ import NLS.ZakharovShabat.LinearWeightKernelPairing
 import NLS.ZakharovShabat.LinearWeightDoubleSeries
 import NLS.ZakharovShabat.LinearWeightSandwich
 import NLS.ZakharovShabat.LinearWeightSquareEstimate
+import NLS.ZakharovShabat.LinearWeightDiagonalRow
+import NLS.ZakharovShabat.LinearWeightResonantCoefficients
+import NLS.ZakharovShabat.LinearWeightCoefficientAnalytic

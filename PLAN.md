@@ -1,6 +1,72 @@
 # Implementation plan
 
-## Latest progress: Lemma 25.2 and the quadratic contraction threshold
+## Latest progress: Lemma 25.3 and analytic resonant coefficient bounds
+
+Lemma 25.3 now has its stated constants on every M₁ weight and every complex
+Hilbert pair. At the explicit threshold `⟨n⟩ ≥ 8 ‖φ‖w²`, the actual common
+diagonal obeys `|a_n| ≤ ‖φ‖w²/⟨n⟩`. The positive and negative off-diagonal
+remainders satisfy `w(2n) |b_n± − φ±(±2n)| ≤ 8 ‖φ‖w² ‖φ±‖w/⟨n⟩`, with
+the repository's physical signs: +2n for the second component, -2n for the
+first. These are bounds for the existing resonant matrix coefficients.
+
+`LinearWeightDiagonalRow.lean` proves the inverse-bracket gain for the
+actual complementary symbol and applies weighted Cauchy–Schwarz to the
+absolutely convergent diagonal row. The argument retains the π/2 strip
+denominator and both weighted component norms. It does not require a
+real-type relation between those components.
+
+`LinearWeightResonantCoefficients.lean` combines that row with the existing
+even-vector estimate. The inequality `2ab ≤ a²+b²` gives the diagonal
+constant one in the true Hilbert pair norm. A resonant-coordinate estimate
+retains the factor w(2n); applying Lemma 25.2 to each actual even vector
+gives both off-diagonal constants eight and the correct component norms.
+
+`LinearWeightCoefficientAnalytic.lean` puts every point of the closed strip
+in the existing open correction domain at the same explicit threshold.
+The total coefficient extensions are analytic near every strip point,
+agree with the actual coefficients, and obey all three uniform bounds.
+Equality at the threshold and n=0 remain included. No larger qualitative
+frequency cutoff is introduced.
+
+Public examples check the actual diagonal row, removal of resonance,
+absolute convergence, the three coefficient bounds, analyticity at equality
+in the threshold, zero potential at n=0, and the exact π-normalized H¹ weight.
+
+Validation: the full build passed (6304 jobs), all public examples passed,
+and the transitive axiom audit passed for 24812 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Remaining: prove Lemma 25.4 and Theorem 25.1 with the explicit localization
+radius, exact root multiplicities, and identification with canonical
+periodic eigenvalues. Proposition 26.1, Lemma 26.2, and Theorem 23.2(i)
+still depend on that localization. The converse estimates of Section 27,
+uniform weighted estimates of Section 28, fixed-domain trace scope, and
+the full dissertation inventory also remain open.
+
+Next for Lemma 25.4: combine the coefficient remainders with the leading
+Fourier coefficient bounds, retaining the product of the two component
+norms. For the H¹ source this gives the radius
+`‖φ‖H¹²/⟨n⟩ + √2 ‖φ‖H¹/⟨2n⟩`, at most 5/8 and hence less than π/5.
+The existing Rouché and zero-multiset machinery can count two determinant
+roots inside the radius-π/4 disc, but its old numerical assumptions
+(`|a| ≤ π/32`, `|b±| ≤ π/16`) must be replaced by bounds derived at the
+explicit threshold. Likewise the root-gap argument needs the corresponding
+Cauchy derivative bound, rather than a larger qualitative cutoff.
+
+The existing `mem_periodicSpectrum_iff_weightedDeterminant_zero` additionally
+requires a unit-weight contraction. M₁ does not contain the unit weight,
+so Lemma 25.2 alone does not discharge that extra hypothesis. Establish the
+needed original-spectrum bridge at the same threshold (for example through
+H¹ eigenfunction regularity or a suitable mixed-weight estimate) before
+claiming canonical eigenvalue localization. Another route to investigate is
+Fredholm index zero: weighted solvability could make the original operator's
+range dense, and closed range would then give surjectivity. The generic
+compact-shift Fredholm theorem already exists in `CompactFredholm.lean`,
+but the required operator compactness and density transport still need proof. Preserve analytic multiplicities,
+physical Fourier normalization, and identification of the two roots with
+the canonical signed endpoints.
+
+## Previous milestone: Lemma 25.2 and the quadratic contraction threshold
 
 Lemma 25.2 now holds for the actual squared potential inverse on every
 weight in M₁: in the n-shifted Hilbert pair norm, `‖T_n²‖ ≤ 4 ‖φ‖w²/⟨n⟩`.

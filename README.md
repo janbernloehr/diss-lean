@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 25.2 now bounds the actual squared potential inverse
-by `4 ‖φ‖w²/⟨n⟩` for every weight in M₁, with both physical components and
-the exact Hilbert pair norm. The explicit half-contraction threshold is
-`⟨n⟩ ≥ 8 ‖φ‖w²`, uniformly on every closed spectral strip. Lemma 25.3's
-coefficient estimates and canonical spectral localization are next.
-See `STATUS.md`.
+Latest milestone: Lemma 25.3 now gives the actual diagonal and off-diagonal
+coefficient estimates with constants one and eight, at the explicit
+quadratic threshold from Lemma 25.2. The coefficient functions are analytic
+near every point of the closed strip, for arbitrary complex potentials and
+all M₁ weights. The quantitative eigenvalue localization of Lemma 25.4 is
+next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
