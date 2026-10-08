@@ -36019,3 +36019,58 @@ example (w : SpectralWeight) (hw : w.HasLinearFactor) (C : ℝ)
       6*resonantBProductSup (by simp) w φ n :=
   (linearWeight_canonicalEndpoints_localization w hw C hu φ heven n hn).2.2
 end QuadraticCanonicalPairChecks
+
+namespace QuadraticSpectralBoxChecks
+open NLS.ZakharovShabat
+
+-- The global source height bound needs neither a parity hypothesis nor a frequency cutoff.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (z : ℂ) (hz : z ∈ periodicSpectrum (by simp)
+      (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ)) :
+    |z.im| ≤ ‖φ‖ := abs_im_le_H1_norm φ z hz
+
+-- The component argument includes the Banach endpoint p=1 and one-sided complex potentials.
+example (b : Coeff 1) (z : ℂ)
+    (hz : z ∈ periodicSpectrum (by simp) (0,b)) : z.im = 0 := by
+  have h := periodicSpectrum_im_sq_le_l1 (by simp) (0,b) 0 b (by simp) (by simp) z hz
+  simp only [norm_zero,zero_mul,sq_abs] at h
+  nlinarith [sq_nonneg z.im]
+
+-- The zero-mode term is retained in the exact π-normalized absolute Fourier-sum bound.
+example (a : WeightedCoeff (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2) :
+    ‖WeightedCoeff.piSobolevToL1 a‖^2 ≤ 2*‖a‖^2 :=
+  WeightedCoeff.norm_piSobolevToL1_sq_le a
+
+-- Equality belongs to the exterior-disc case, with the printed radius at most π/5.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (heven : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ ∈ pairParitySubspace 0)
+    (n : ℤ) (hn : 8*‖φ‖^2 = 1+|(n:ℝ)|) :
+    ‖canonicalPeriodicLeft (by simp) (by norm_num)
+      (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven n -
+      (Real.pi:ℂ)*n‖ ≤ Real.pi/5 := by
+  have h := (H1_periodicSpectrum_uniform_localization φ heven).1 n hn.le
+  exact h.1.trans h.2.2.le
+
+-- Negative-index remaining eigenvalues have both of the source box bounds.
+example (φ : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2)
+    (heven : weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ ∈ pairParitySubspace 0)
+    (hn : 3 < 8*‖φ‖^2) :
+    canonicalPeriodicRight (by simp) (by norm_num)
+      (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num)) φ) heven (-2) ∈
+      quadraticSpectralBox ‖φ‖ :=
+  ((H1_periodicSpectrum_uniform_localization φ heven).2 (-2) (by norm_num; exact hn)).2
+
+-- For zero potential the central box is empty, so all spectral points are free lattice points.
+example (z : ℂ) (hz : z ∈ periodicSpectrum (by simp)
+    (weightedBaseToPair (SpectralWeight.piSobolev 1 (by norm_num))
+      (0 : WeightedCoeffPair (SpectralWeight.piSobolev 1 (by norm_num)).toWeight 2))) :
+    ∃ n : ℤ, z = (Real.pi:ℂ)*n := by
+  have h := H1_periodicSpectrum_subset_box_union_discs 0 (by simp) z hz
+  rcases h with hbox | ⟨n,_,hn⟩
+  · have hr := hbox.1
+    simp only [norm_zero,zero_pow (by decide : 2 ≠ 0),mul_zero,zero_sub] at hr
+    nlinarith [abs_nonneg z.re,Real.pi_pos]
+  · refine ⟨n,?_⟩
+    have he : ‖z-(Real.pi:ℂ)*n‖ ≤ 0 := by simpa [quadraticLocalizationRadius] using hn
+    exact sub_eq_zero.mp (norm_eq_zero.mp (le_antisymm he (norm_nonneg _)))
+end QuadraticSpectralBoxChecks

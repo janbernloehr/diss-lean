@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: canonical signed endpoints at the exact H¹ threshold
+## Current milestone: Theorem 25.1 and the exact central spectral box
+
+Theorem 25.1 is now proved in the period-one canonical endpoint API, with
+its exact quadratic threshold and π-normalized H¹ norm. The theorem
+`H1_periodicSpectrum_uniform_localization` combines the source radius for
+`⟨n⟩ ≥ 8 ‖φ‖H¹²` with the central box for every remaining signed index:
+`|Re λ| ≤ (8 ‖φ‖H¹² - 1/2)π` and `|Im λ| ≤ ‖φ‖H¹`.
+The canonical statements retain even Fourier support. The global imaginary
+bound itself applies to all complex coefficient pairs, without parity or a
+frequency cutoff. A separate theorem covers the entire original spectrum
+by the central box and the quantitative source discs.
+
+`PiSobolevEmbedding.lean` bounds the squared ℓ² norm of the reciprocal
+π-normalized weight by two, including its zero mode. Cauchy–Schwarz gives
+`‖φ‖ℓ¹² ≤ 2 ‖φ‖H¹²` for each scalar component.
+
+`AbsolutePotentialHeight.lean` moves the absolutely summable factor to the
+potential in the existing Fourier convolution. Each real diagonal of the
+eigenvector equation gives `|Im λ| ‖f₁‖ ≤ ‖φ₁‖ℓ¹ ‖f₂‖`, and conversely
+for the second component. Multiplying and treating zero components explicitly
+gives `|Im λ|² ≤ ‖φ₁‖ℓ¹ ‖φ₂‖ℓ¹` at every finite Banach exponent, including
+p=1. `H1SpectralHeight.lean` combines this with the scalar embedding and
+the exact Hilbert pair norm to obtain the printed constant one.
+
+`QuadraticCentralStrip.lean` uses occurrence counts to exclude all differently
+indexed slots from a quantitative strip. The nearest-frequency strip cover
+then gives a strict real-part bound for every remaining canonical endpoint.
+`QuadraticSpectralBox.lean` packages these bounds with the previous explicit
+localization theorem and canonical spectral exhaustivity.
+
+Public examples cover the parity-free global height estimate, one-sided
+complex potentials at p=1, the source embedding constant, equality at the
+frequency threshold, negative remaining indices, and the free lattice when
+the central box is empty.
+
+Validation: the full build passed (6326 jobs), all public examples passed,
+and the transitive axiom audit passed for 24945 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next is Proposition 25.5: the weighted gap-tail estimate with coefficient
+1152 and the global weighted gap bound near the real potential space. Its
+M₁ weights need not have the linear upper bound used by the current canonical
+pair theorem. Extend the quantitative identification to that scope, preserving
+the exact threshold, then sum the resonant coefficient bounds and retain the
+source tail norm. The dependent higher-action estimates, Sections 27–28,
+fixed-domain trace scope, and the remaining dissertation inventory stay open.
+
+## Previous milestone: canonical signed endpoints at the exact H¹ threshold
 
 The canonical endpoints with signed index n now exhaust the spectrum in its
 quantitative strip whenever `⟨n⟩ ≥ 8 ‖φ‖H¹²`. The theorem

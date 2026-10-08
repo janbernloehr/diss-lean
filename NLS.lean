@@ -2893,3 +2893,8 @@ import NLS.ZakharovShabat.EndpointStripAnchors
 import NLS.ZakharovShabat.LinearWeightCanonicalLocalization
 import NLS.ZakharovShabat.EndpointPairOfStripCount
 import NLS.ZakharovShabat.QuadraticCanonicalPeriodicPair
+import NLS.SequenceSpaces.PiSobolevEmbedding
+import NLS.ZakharovShabat.AbsolutePotentialHeight
+import NLS.ZakharovShabat.H1SpectralHeight
+import NLS.ZakharovShabat.QuadraticCentralStrip
+import NLS.ZakharovShabat.QuadraticSpectralBox

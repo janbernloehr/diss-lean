@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 25.4 now identifies the canonical signed endpoints
-at the exact H¹ threshold, including collapsed gaps and their multiplicities.
-Both endpoints obey the explicit source radius and factor-six gap bound.
-The period-one formulation retains the canonical API's even Fourier-support
-hypothesis. Theorem 25.1's remaining central-box estimate is next. See `STATUS.md`.
+Latest milestone: Theorem 25.1 now gives the full uniform H¹ spectral
+localization: the canonical high-frequency endpoints satisfy the source
+radius, and every remaining endpoint lies in the exact central box.
+The global imaginary-part bound holds for arbitrary complex H¹ pairs.
+Canonical labels retain the period-one even Fourier-support hypothesis.
+Proposition 25.5's weighted gap estimates are next. See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
