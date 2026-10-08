@@ -2848,3 +2848,7 @@ import NLS.Fourier.PeriodOneCircleMean
 import NLS.ZakharovShabat.SobolevDifferentialPolynomial
 import NLS.ZakharovShabat.SobolevOddHamiltonian
 import NLS.ZakharovShabat.SobolevOddHamiltonianTrace
+import NLS.ZakharovShabat.SobolevRealJets
+import NLS.DifferentialPolynomial.RealMonomialBounds
+import NLS.ZakharovShabat.SobolevOddHamiltonianReal
+import NLS.ZakharovShabat.SobolevOddRemainderBounds

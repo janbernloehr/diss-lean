@@ -35518,3 +35518,52 @@ example (m : ℕ) (hm : 1 ≤ m) (H : SobolevSource m → ℂ) (hH : AnalyticOnN
         ⟨higherSobolevSourceInclusion m a.val,a.property⟩ ha (2*m+1)) :
     H = sobolevOddHamiltonian m hm := sobolevOddHamiltonian_unique m hm H hH hf
 end SharpOddSobolevChecks
+
+namespace RealOddRemainderChecks
+open NLS NLS.Fourier NLS.DifferentialPolynomial NLS.ZakharovShabat MeasureTheory
+open scoped ComplexConjugate
+
+-- Real-type symmetry survives every derivative, including its negative-frequency sign.
+example (s k : ℕ) (hk : k ≤ s) (a : realTypeHigherSobolevSourceLocus s) :
+    hierarchySobolevJetL2 s k hk a.val.2 =
+      star (Coeff.reflection (hierarchySobolevJetL2 s k hk a.val.1)) :=
+  hierarchySobolevJetL2_real s k hk a.val.1 a.val.2 (realTypeHigherSobolevSource_coefficients s a)
+
+-- The leading H^m pairing is the squared L² norm on every real Sobolev input.
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
+    sobolevOddHamiltonian m hm a.val =
+      (‖hierarchySobolevJetL2 m m le_rfl a.val.1‖^2 : ℝ)+
+        sobolevPolynomialMean m (nlsOddReducedPolynomial m hm) a.val :=
+  sobolevOddHamiltonian_real_decomposition m hm a
+
+-- Both reality and positivity concern the independently defined physical functional.
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
+    (sobolevOddHamiltonian m hm a.val).im = 0 ∧ 0 ≤ (sobolevOddHamiltonian m hm a.val).re :=
+  ⟨sobolevOddHamiltonian_im_zero m hm a,sobolevOddHamiltonian_real_nonneg m hm a⟩
+
+-- The third Hamiltonian's reduced remainder is exactly quartic in the fields.
+example (d : Monomial) (hd : d ∈ (nlsOddReducedPolynomial 1 (by omega)).support) :
+    (∑ k ∈ Finset.range 1, jetMultiplicity d k) = 4 := by
+  obtain ⟨hl,hu⟩ := nlsOddReducedPolynomial_field_degree_bounds 1 (by omega) d hd
+  omega
+
+-- In H₅ the only possible total field counts are four and six.
+example (d : Monomial) (hd : d ∈ (nlsOddReducedPolynomial 2 (by omega)).support) :
+    (∑ k ∈ Finset.range 2, jetMultiplicity d k) = 4 ∨
+      (∑ k ∈ Finset.range 2, jetMultiplicity d k) = 6 := by
+  obtain ⟨hl,hu⟩ := nlsOddReducedPolynomial_field_degree_bounds 2 (by omega) d hd
+  obtain ⟨_,c,hc⟩ := nlsOddReducedPolynomial_multiplicity_constraints 2 (by omega) d hd
+  omega
+
+-- The physical polynomial, not an abstract substitute, has the pointwise majorant.
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) (x : ℝ) :
+    ‖sobolevPolynomialField m (nlsOddReducedPolynomial m hm) a.val (x : AddCircle (2:ℝ))‖ ≤
+      sobolevOddRemainderMajorant m hm a.val x := norm_sobolevOddRemainderField_le m hm a x
+
+-- The full difference from the kinetic energy is bounded by actual monomial integrals.
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
+    |(sobolevOddHamiltonian m hm a.val).re-‖hierarchySobolevJetL2 m m le_rfl a.val.1‖^2| ≤
+      ∑ d ∈ (nlsOddReducedPolynomial m hm).support,
+        ‖(nlsOddReducedPolynomial m hm).coeff d‖ * ∫ x in (0:ℝ)..1, sobolevRealMonomial m d a.val x :=
+  abs_sobolevOddHamiltonian_sub_kinetic_le m hm a
+end RealOddRemainderChecks

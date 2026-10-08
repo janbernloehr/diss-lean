@@ -1,6 +1,61 @@
 # Implementation plan
 
-## Latest progress: sharp physical odd Hamiltonians and traces on H^m
+## Latest progress: real H^m energies and physical remainder majorants
+
+The real H^m odd Hamiltonian now has the exact leading term
+`‖∂^m ψ‖₂²`, expressed by its L² Fourier representative, plus the actual
+lower-jet polynomial mean. Its value is real and nonnegative, proved from
+the already established physical higher-action trace. The remainder mean
+is therefore real on every real H^m source as well.
+
+`SobolevRealJets.lean` proves conjugate-reflection symmetry at every derivative
+order and pointwise conjugacy of the continuous lower jets.
+`SobolevOddHamiltonianReal.lean` identifies the top pairing with the squared
+L² norm, proves the real decomposition, and derives reality and positivity.
+
+`RealMonomialBounds.lean` combines the two field multiplicities at each
+jet order. Their weighted sum is preserved, charge zero gives even total
+field count, and evaluation is bounded by the finite positive sum in (5.10).
+`SobolevOddRemainderBounds.lean` applies this to the actual chosen reduced
+polynomial on arbitrary real H^m inputs. Every supported monomial satisfies
+(5.9), has between four and `2m+2` field factors, and yields an actual physical
+monomial integral. Their coefficient-weighted sum bounds the absolute
+difference between the Hamiltonian and its leading squared derivative norm.
+
+Public examples check real derivative symmetry, the H^m decomposition,
+reality and positivity, the quartic field count for H₃, the quartic-or-sextic
+field count for H₅, and both pointwise and integrated remainder bounds.
+
+Validation: the full build passes (6280 jobs), all public examples pass,
+and the transitive axiom audit passes for 24647 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: prove the interpolation and absorption estimate of Lemma 26.3,
+with an arbitrarily small multiple of the highest derivative norm and a
+remainder depending only on the L² norm. The present monomial majorant is
+the input to that estimate, not its conclusion. The quantitative action bounds
+of Sections 26–27, explicit H¹ spectral localization in Section 25, uniform
+weighted estimates in Section 28, fixed-domain trace scope, and the full
+dissertation inventory remain open.
+
+Next proof sequence for Lemma 26.3:
+
+1. Prove the two interpolation inequalities (5.11) for the actual Sobolev
+   jets: L² exponent `i/m` and continuous-supremum exponent `(i+1/2)/m`.
+   Weighted Hölder supplies the former. A low/high Fourier-frequency split
+   with reciprocal-series tail bounds supplies the latter; retain the zero
+   mode and handle zero L² norm explicitly.
+2. Bound each `sobolevRealMonomial` integral using two L² factors and
+   continuous norms for the remaining factors. Apply the proved weight and
+   field-count constraints to obtain the exponent `2-(|μ|-2)/(2m) < 2`
+   in (5.12). The pointwise majorant also directly bounds the integral of
+   the absolute remainder field, the left side of Lemma 26.3.
+3. Apply scaled Young inequalities, sum over the finite polynomial support,
+   and use `WeightedCoeff.norm_sq_le_homogeneous` to separate the top
+   derivative from the L² term. The final bound must retain the exact
+   L²-only power `4m+2`; a bound in lower Sobolev norms is insufficient.
+
+## Previous milestone: sharp physical odd Hamiltonians and traces on H^m
 
 Every positive odd Hamiltonian H_(2m+1) now has an independently defined,
 entire complex-analytic physical extension to H^m. On all real H^m sources,
