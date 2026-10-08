@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: Corollary 23.5 for every real Sobolev order
+## Current milestone: Remark 23.3, common constants for all four estimates
+
+Remark 23.3 is now formalized as a joint assertion for Theorems 23.1 and
+23.2. `SourceSobolevCommonConstants.lean` packages the two Birkhoff-map
+estimates and the two weighted-action estimates with the same strictly
+positive constants c and d. Absolute summability of the weighted actions is
+included. All physical norms and lower-order remainders are unchanged.
+
+`SourceSobolevJointBounds` exposes the four estimates together. The proof
+chooses the maximum of the previously available upper constants and the
+maximum of the lower constants; nonnegativity allows the same enlargement
+in both the linear norm bounds and the squared action bounds. The constants
+are chosen before the potential, so they apply uniformly on the whole real
+H^m source space.
+
+`exists_sourceBirkhoffMap_sobolev_common_constants` chooses one constructed
+Birkhoff map before quantifying over all integers m ≥ 1 and then provides
+the common pair for each order. The endpoint m=1 is included without any
+smallness assumption. This completes the common-constant claim, rather than
+only supplying separate existence statements for the four estimates.
+
+Public examples cover the positive endpoint constants, reuse of the same
+upper constant at two different potentials, the inverse action estimate
+at m=1, and the joint quantifier order.
+
+Validation: the full build passed (6404 jobs), all public examples passed,
+and the transitive axiom audit passed for 25449 NLS declarations. The 21
+existing warnings are unchanged; there are no admitted proofs or new axioms.
+
+Next: return to the unrestricted m=1 statement of Lemma 27.2. The existing
+constant argument covers m ≥ 2 and only a small-action case at m=1; its
+missing endpoint margin is not a counterexample to the spectral assertion.
+The complex forms of Lemma 28.1 and Proposition 28.2 and older outstanding
+parts of the dissertation remain to be audited and completed.
+
+## Previous milestone: Corollary 23.5 for every real Sobolev order
 
 Both conclusions of Corollary 23.5 are now proved at every real Sobolev
 order s ≥ 1, simultaneously for one constructed Birkhoff map. The action

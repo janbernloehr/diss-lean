@@ -37075,3 +37075,46 @@ example :
   exists_sourceBirkhoffMap_corollary23_5
 
 end Corollary235Checks
+
+namespace Remark233Checks
+open NLS.ZakharovShabat
+variable {W₀ B W : Set (CoeffPair 2)}
+  {s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k}
+
+-- The endpoint m=1 has strictly positive common constants and summable actions.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s) :
+    ∃ c d : ℝ, 0 < c ∧ 0 < d ∧ SourceSobolevJointBounds D 1 le_rfl c d := by
+  obtain ⟨c,d,h⟩ := D.exists_sobolev_joint_bounds 1 le_rfl
+  exact ⟨c,d,h.c_pos,h.d_pos,h⟩
+
+-- One common c applies to the Birkhoff bound at a and the action bound at b.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (m : ℕ) (hm : 1 ≤ m) : ∃ c d : ℝ, 0 < c ∧ 0 < d ∧
+    ∀ a b : realTypeHigherSobolevSourceLocus m,
+      (‖D.sobolevCoordinates m hm m le_rfl a‖ ≤ c*
+        (‖sourcePiSobolevCoordinates m m le_rfl a.val‖+
+          (1+‖sourcePiSobolevCoordinates m 1 hm a.val‖)^(2*m)*‖higherSobolevSourceInclusion m a.val‖)) ∧
+      (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion m b.val,b.property⟩ m n) ≤
+        c^2*(‖sourcePiSobolevCoordinates m m le_rfl b.val‖^2+
+          (1+‖sourcePiSobolevCoordinates m 1 hm b.val‖)^(4*m)*‖higherSobolevSourceInclusion m b.val‖^2) := by
+  obtain ⟨c,d,h⟩ := D.exists_sobolev_joint_bounds m hm
+  exact ⟨c,d,h.c_pos,h.d_pos,fun a b => ⟨h.birkhoff_upper a,h.action_upper b⟩⟩
+
+-- The same d also controls the inverse estimates, including the m=1 endpoint.
+example (D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s)
+    (c d : ℝ) (h : SourceSobolevJointBounds D 1 le_rfl c d)
+    (a : realTypeHigherSobolevSourceLocus 1) :
+    ‖sourcePiSobolevCoordinates 1 1 le_rfl a.val‖^2 ≤ d^2*
+      ((∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)+
+        (1+∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 1 n)*
+          (∑' n : ℤ, sourceWeightedActionTerm ⟨higherSobolevSourceInclusion 1 a.val,a.property⟩ 0 n)) := by
+  simpa only [show 4*1-3=1 from rfl,pow_one] using h.action_lower a
+
+-- A single map is chosen before all Sobolev orders and their common constants.
+example :
+    ∃ W₀ B W : Set (CoeffPair 2), ∃ s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k,
+      ∃ D : SourceBirkhoffMapComplexData (by simp) (by norm_num) W₀ B W s,
+        ∀ m : ℕ, ∀ hm : 1 ≤ m, ∃ c d : ℝ, SourceSobolevJointBounds D m hm c d :=
+  exists_sourceBirkhoffMap_sobolev_common_constants
+
+end Remark233Checks

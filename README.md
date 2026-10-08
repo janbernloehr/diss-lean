@@ -5,10 +5,10 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Corollary 23.5 is proved for every real Sobolev order s ≥ 1.
-The complex action bound has exponent 4s and the real Birkhoff-map bound has
-exponent 2s, with one explicit positive constant for both. The exact physical
-weights ⟨2nπ⟩ are retained, including fractional orders and the zero source.
+Latest milestone: Remark 23.3 is formalized with common positive constants
+for all four estimates in Theorems 23.1 and 23.2. One constructed Birkhoff map
+works at every integer Sobolev order m ≥ 1, with constants uniform over the
+entire real H^m source space and weighted-action summability included.
 See [implementation status](STATUS.md) and [source discrepancies](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
