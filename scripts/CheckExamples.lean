@@ -34833,3 +34833,63 @@ example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1)
   existsUnique_global_classicalRenormalizedNLS_of_smooth_periodic f hf hp
 
 end GlobalClassicalChecks
+
+namespace SmoothApproximationSolutionChecks
+open Set Filter Topology NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Smooth approximation exists at a higher exponent, so the universal condition is non-vacuous.
+example (φ : realTypeSourceSubmodule 3) :
+    ∃ f : ℕ → SmoothNLSData, Tendsto (fun j => (f j).source 3) atTop (𝓝 φ) :=
+  exists_smoothNLSData_sequence (by norm_num) (by norm_num) φ
+
+-- Uniqueness holds on overlapping time domains, including above the global exponent range.
+example {J K : Set ℝ} {φ : realTypeSourceSubmodule 3}
+    {γ η : ℝ → realTypeSourceSubmodule 3}
+    (hγ : IsRenormalizedNLSSolutionOn J φ γ)
+    (hη : IsRenormalizedNLSSolutionOn K φ η) : EqOn γ η (J ∩ K) :=
+  hγ.eqOn_inter hη (by norm_num) (by norm_num)
+
+-- Global Hilbert solutions use the actual arbitrary-smooth-sequence definition.
+example (φ : realTypeSourceSubmodule 2) :
+    ∃! γ : ℝ → realTypeSourceSubmodule 2, IsOrdinaryNLSSolutionOn univ φ γ :=
+  existsUnique_global_ordinaryNLSSolution (by norm_num) (by norm_num) le_rfl φ
+
+example (φ : realTypeSourceSubmodule 2) :
+    ∃! γ : ℝ → realTypeSourceSubmodule 2, IsRenormalizedNLSSolutionOn univ φ γ :=
+  existsUnique_global_renormalizedNLSSolution (by norm_num) (by norm_num) le_rfl φ
+
+-- The compact definition restricts to the open interval appearing in the dissertation.
+example {φ : realTypeSourceSubmodule 3} {γ : ℝ → realTypeSourceSubmodule 3}
+    (hγ : IsRenormalizedNLSSolutionOn (Icc (-2) 2) φ γ) :
+    IsRenormalizedNLSSolutionOn (Ioo (-2) 2) φ γ :=
+  hγ.restrict Ioo_subset_Icc_self (by constructor <;> norm_num)
+
+-- Each constructed renormalized approximant uses its own initial physical mass.
+example (f : ℕ → SmoothNLSData) (j : ℕ) :
+    IsClassicalRenormalizedNLSTrajectory (classicalNLSMass ((f j).value)) (f j).renormalized := by
+  simpa only [SmoothNLSData.renormalized_zero] using (f j).renormalized_isClassical
+
+section HigherExponent
+variable {W P V B X : Set (CoeffPair 3)}
+variable {s t : (n : ℤ) → CoeffPair 3 → DeletedCoeff 3 n}
+variable (A : SourceAbelianMomentAtlas (by norm_num) (by norm_num) W s)
+variable (hs : SourcePsiSquaredGapComplexExtension (by norm_num) (by norm_num) P s)
+variable (hP : IsOpen P) (hr : realTypeSourceLocus 3 ⊆ P)
+variable (D : SourceBirkhoffMapComplexData (by norm_num) (by norm_num) V B X t)
+
+-- Arbitrary smooth data, not a supplied trajectory family, suffice for uniform compact convergence.
+example (f : ℕ → SmoothNLSData) (φ : realTypeSourceSubmodule 3)
+    (hf : Tendsto (fun j => (f j).source 3) atTop (𝓝 φ))
+    (hφ : φ ∈ A.renormalizedTrajectoryDomain t 2) :
+    TendstoUniformlyOn (fun j => (f j).renormalizedSource 3)
+      (A.hamiltonianRenormalizedImageFlow D φ) atTop (Icc (-2) 2) :=
+  A.tendstoUniformlyOn_constructedRenormalizedImageSource hs hP hr D (by norm_num) f φ hf 2 hφ
+
+-- The admissible spectral path satisfies the all-smooth definition on the closed interval.
+example (φ : realTypeSourceSubmodule 3) (hφ : φ ∈ A.renormalizedTrajectoryDomain t 2) :
+    IsRenormalizedNLSSolutionOn (Icc (-2) 2) φ (A.hamiltonianRenormalizedImageFlow D φ) :=
+  A.renormalizedImageFlow_isSolution hs hP hr D (by norm_num) φ 2 (by norm_num) hφ
+end HigherExponent
+end SmoothApproximationSolutionChecks

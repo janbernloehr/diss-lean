@@ -1,6 +1,59 @@
 # Implementation status
 
-## Current milestone: global classical NLS existence and uniqueness
+## Current milestone: solutions defined by arbitrary smooth approximation
+
+Arbitrary smooth initial data now determine their global ordinary and
+renormalized classical solutions internally. Convergence of the initial
+Fourier sources implies uniform convergence of these constructed solutions
+on compact time intervals in the established exponent and trajectory domains.
+
+`SmoothNLSData.lean` bundles a smooth period-one initial function with its
+original Fourier source at every exponent. Its ordinary and renormalized
+classical curves are the proved global constructors. Both source curves
+have exactly the prescribed source at time zero; each renormalized curve
+uses its own actual initial physical mass.
+
+`SmoothNLSDataDensity.lean` turns the existing actual finite-gap approximation
+into a sequence of smooth physical initial data converging to every real
+source at finite `p > 1`. This witnesses non-vacuity of the universal smooth
+approximation condition; finite-gap data are used only to prove density,
+not to restrict the sequences quantified over in the solution definition.
+
+`ConstructedClassicalNLSApproximation.lean` proves uniform compact-time
+convergence from arbitrary smooth initial-data convergence alone. Ordinary
+and renormalized solutions have this property globally for `1 < p ≤ 2`.
+At `2 ≤ p < ∞`, renormalized solutions have it on every compact interval
+where the limiting spectral trajectory remains in the actual Birkhoff image.
+No pre-existing family of classical trajectories is a hypothesis.
+
+`SmoothApproximationSolution.lean` defines solutions by continuity, the
+prescribed initial value, and pointwise convergence for every convergent
+sequence of smooth initial data. Time domains contain zero. Smooth density
+proves uniqueness on intersections of time domains, and restriction gives
+the same definition on open intervals or smaller closed intervals.
+
+`SourceSmoothApproximationSolutions.lean` proves that the global ordinary
+and renormalized spectral flows satisfy this definition for `1 < p ≤ 2`.
+Public existence-and-uniqueness theorems construct their spectral data
+internally. Higher-exponent renormalized paths satisfy the definition on
+admissible compact intervals, retaining the actual image-domain hypothesis.
+
+Public examples check smooth density and overlapping-domain uniqueness at
+`p = 3`, global Hilbert existence and uniqueness for both equations,
+restriction to the dissertation's open time interval, the approximants' own
+physical masses, and higher-exponent compact convergence and solutionhood.
+
+Validation: the full build passes (6212 jobs), all public examples pass,
+and the transitive axiom audit passes for 23954 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: assemble the existing analytic trajectory maps, local admissible
+neighborhoods, small-data global domains, and ordinary nonextension results
+with this exact solution definition into the dissertation's wellposedness
+statements. No global higher-exponent surjectivity or arbitrary-data global
+renormalized existence is asserted. The full dissertation inventory remains.
+
+## Previous milestone: global classical NLS existence and uniqueness
 
 Every smooth period-one physical initial function now has a unique ordinary
 classical NLS solution defined for all real times. A constructed physical

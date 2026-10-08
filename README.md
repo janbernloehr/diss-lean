@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: every smooth periodic physical initial function now has a
-unique ordinary classical NLS solution defined for all real times. The proved
-physical gauge also constructs the unique global renormalized solution with
-its actual initial mass. The exact all-smooth-sequence wellposedness assembly
-and full dissertation inventory remain.
+Latest milestone: the constructed classical solutions now satisfy the
+all-smooth-sequence approximation definition. Every real source at `1 < p ≤ 2`
+has a unique global ordinary and renormalized solution in this sense.
+Higher-exponent renormalized paths satisfy the definition on admissible
+compact intervals. The final analytic wellposedness assembly and full
+dissertation inventory remain.
 See `STATUS.md`.
 
 The library currently proves sequence-space foundations, the full discrete

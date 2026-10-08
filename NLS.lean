@@ -2790,3 +2790,8 @@ import NLS.FunctionalAnalysis.CompatibleIntervalExhaustion
 import NLS.Fourier.GlobalSmoothFourierNLS
 import NLS.ZakharovShabat.GlobalClassicalNLSExistence
 import NLS.ZakharovShabat.GlobalClassicalRenormalizedNLS
+import NLS.ZakharovShabat.SmoothNLSData
+import NLS.ZakharovShabat.SmoothNLSDataDensity
+import NLS.ZakharovShabat.ConstructedClassicalNLSApproximation
+import NLS.ZakharovShabat.SmoothApproximationSolution
+import NLS.ZakharovShabat.SourceSmoothApproximationSolutions
