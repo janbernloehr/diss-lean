@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Latest progress: open dense positive action domains
+## Latest progress: printed spectral height for 1 ≤ p ≤ 2
+
+The numbered-statement audit found an outstanding exact constant in
+Theorem 1.1: the central spectral box has printed height `(1+8‖φ‖ₚ)^p`,
+whereas the prior general-exponent result used `(1+8p‖φ‖ₚ)^p`.
+The printed height was previously proved only at p=2.
+
+`PrintedHeight.lean` now proves the printed bound for the full interval
+1 ≤ p ≤ 2. Convexity in the exponent interpolates the scalar Neumann
+estimates at one and two. The resulting resolvent includes both horizontal
+edges, so all spectral points lie strictly below the printed height.
+`SourcePrintedHeightCounting.lean` applies this to the actual period-one
+source and its finite-exponent pair norm. One open convex neighborhood
+supports all larger cutoffs, central multiplicity 4N+2 in each source's
+own printed-height box, the existing disk/parity data, spectral exhaustion,
+and analytic actual rectangular projections equal to the central projection.
+
+For every p > 2, the same numerical criterion is proved to fail whenever
+`M ≥ 1/(4p-8)`. This is not a spectral counterexample. The printed height
+above two remains unresolved and required for full Theorem 1.1 coverage;
+the larger proved height is not silently substituted for it.
+
+A reproducible inventory indexes 156 candidate numbered labels from the
+cached dissertation extraction, including occurrence positions and its SHA256.
+Candidates can be proof references and are not completion claims. The manual
+spectral overview audit records Theorem 1.1's exact remaining scope and the
+candidate ingredients for the subsequent displacement statements.
+
+Public examples check the fractional exponent p=3/2 in the actual source
+norm, the p=1 endpoint, uniform printed-box counts and high-mode parity, and
+the all-p>2 limitation of the numerical criterion. Inventory regeneration
+matches the saved file.
+
+Validation: the full build passed (6432 jobs), all public examples passed,
+and the axiom audit passed for 25583 NLS declarations. The build has the
+same 21 pre-existing warnings and no new warnings. The saved statement
+inventory was independently regenerated and verified with `--check`.
+
+Next: investigate a sharper spectral-height argument for p > 2 and continue
+the statement-by-statement overview audit. The accepted corrected Lemma 27.2
+remains in force; its original unrestricted m=1 coefficient is optional.
+
+## Previous milestone: open dense positive action domains
 
 The relative openness and density assertions in the remarks following
 Theorems 0.2 and 0.3 are now part of the public source theorems.

@@ -1,4 +1,4 @@
-# Introductory-result coverage
+# Dissertation coverage audit
 
 This is a focused map of the dissertation's introductory results to the
 current public Lean API. It is not a completeness certificate for every
@@ -53,3 +53,25 @@ then gives relative openness in the positive-cone subtype. This proves the
 density assertions without requiring the entire positive cone to lie in V.
 It makes no claim of density in the ambient complex space, no density claim
 at q=∞, and no global extension or global strict-concavity claim.
+
+## Numbered-statement inventory and spectral overview
+
+[`coverage/statement-candidates.json`](coverage/statement-candidates.json)
+indexes 156 distinct candidate numbered labels in the cached text extraction.
+It records every matching occurrence, text page and line, and the extraction's
+SHA256. Labels in proof references can also match: this is a navigation aid,
+not a list of certified statements or completed proofs. It does not replace
+an audit of unnumbered definitions, remarks and consequences.
+
+Regenerate with `python3 scripts/source_inventory.py PATH_TO_DISS_TEXT
+--output coverage/statement-candidates.json`; add `--check` to verify the
+saved inventory without editing it. The source must be the same UTF-8 text
+extraction to reproduce its hash and line positions.
+
+[`coverage/SPECTRAL_OVERVIEW.md`](coverage/SPECTRAL_OVERVIEW.md) records the
+first detailed comparison. Theorem 1.1 remains partial: the new
+`exists_source_periodicCounting_printed_height` recovers the exact printed
+source-norm height for 1 ≤ p ≤ 2, including the central counts and moving
+projections. Above two, `printed_height_neumann_bound_fails` shows a
+limitation of the numerical criterion, not a spectral counterexample.
+The literal bound above two still needs proof.

@@ -1,5 +1,20 @@
 # Source discrepancies
 
+## Theorem 1.1: unresolved printed height above two
+
+The printed central box uses `(1+8‖φ‖ₚ)^p`. The Neumann criterion in
+Corollary 3.3 is `(4p/H^(1/p)+1/H)‖φ‖ₚ < 1` at height H.
+`PrintedHeight.lean` proves that the printed height satisfies this criterion
+for all 1 ≤ p ≤ 2, extending the previous Hilbert-only result.
+
+For p > 2 and M ≥ 1/(4p-8), `printed_height_neumann_bound_fails` proves
+that the same criterion is strictly greater than one at H=(1+8M)^p.
+Failure of a sufficient condition is not a spectral counterexample.
+The literal general-exponent height remains unresolved, not disproved;
+`(1+8pM)^p` is a proved alternative but does not complete the printed claim.
+See [the spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) for the
+source-space counting and projection conclusions now proved for p ≤ 2.
+
 ## Lemma 26.2: sign of the higher Hamiltonian
 
 Source: [dissertation, Lemma 26.2](https://janbernloehr.de/Download/fs16/diss.pdf#page=113).

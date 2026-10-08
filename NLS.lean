@@ -3001,3 +3001,5 @@ import NLS.ZakharovShabat.SourceHamiltonianNonextension
 import NLS.SequenceSpaces.NonnegativeActionDensity
 import NLS.ZakharovShabat.SourceHamiltonianPositiveDomain
 import NLS.ZakharovShabat.SourceFrequencyPositiveDomains
+import NLS.ZakharovShabat.PrintedHeight
+import NLS.ZakharovShabat.SourcePrintedHeightCounting

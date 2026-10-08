@@ -5,15 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual Hamiltonian and compatible frequency extensions
-now have formally proved open dense domains within their positive action
-cones, as stated after Theorems 0.2 and 0.3. Source recovery, Hamiltonian
-concavity and frequency asymptotic estimates are retained. The Hamiltonian's
-finite-exponent nonextension obstruction is also proved.
-The accepted corrected Lemma 27.2 uses twice the printed remainder;
-recovering its original m=1 coefficient remains optional.
-See [implementation status](STATUS.md), [introductory-result coverage](COVERAGE.md),
-and [source discrepancies](SOURCE_ERRATA.md).
+Latest milestone: the printed spectral height in Theorem 1.1 now holds
+throughout 1 ≤ p ≤ 2, with actual source-space counting, parity and analytic
+rectangular projections. The printed height for p > 2 remains unresolved;
+a formal result identifies why the existing numerical criterion cannot
+settle that range at large norms.
+See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
+and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
 The library currently proves sequence-space foundations, the full discrete
 Young convolution inequality, the mixed three-sequence inequality, and the
@@ -212,12 +210,12 @@ space and proves equality with the central spectral projection. The actual
 rectangular integral is idempotent, has exactly the central generalized-eigenspace
 range, and is analytic with rank `4N+2` on one common counting neighborhood.
 Explicit bounds now place the resolvent on and above height `(1+8pM)^p`
-for every finite exponent and every potential of norm at most `M`. At `p=2`,
-the smaller printed height `(1+8M)^2` also works. One common neighborhood gives
+for every finite exponent and every potential of norm at most `M`. For `1 ≤ p ≤ 2`,
+the smaller printed height `(1+8M)^p` also works. One common neighborhood gives
 central algebraic count `4N+2` in each potential's Hilbert norm-height box,
 with its cluster projection equal to the existing rectangular integral.
-These use coefficient maximum pair norms. The printed general-`p` height
-`(1+8‖φ‖ₚ)^p` still needs an additional argument: direct substitution into the
+These use coefficient maximum pair norms. The printed height
+`(1+8‖φ‖ₚ)^p` for `p > 2` still needs an additional argument: direct substitution into the
 proved `4p` Neumann estimate is insufficient. The actual contour formula now
 holds for every ordered rectangle with resolvent boundary, with its whole
 range and rank identified. In particular, contours at the printed Hilbert

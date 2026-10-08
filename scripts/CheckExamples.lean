@@ -37490,3 +37490,50 @@ example : ∃ V : Set (Coeff 3), ∃ F : Coeff 3 → Coeff 3,
   exact ⟨V,F,hF,hopen,hdense,R,hR,he⟩
 
 end PositiveActionDomainChecks
+
+namespace PrintedHeightChecks
+open NLS.ZakharovShabat Set
+local instance : Fact ((1:ℝ≥0∞) ≤ ENNReal.ofReal ((3:ℝ)/2)) := ⟨by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]⟩
+
+-- The printed bound holds at a genuinely non-Hilbert exponent between one and two.
+example (φ : CoeffPair (ENNReal.ofReal ((3:ℝ)/2))) (z : ℂ)
+    (hz : (1+8*‖φ‖)^((3:ℝ)/2) ≤ |z.im|) :
+    z ∈ resolventSet (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) (periodOnePotential φ) := by
+  apply mem_resolventSet_of_printed_height (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff])
+    _ (norm_periodOnePotential_le φ)
+  simpa only [ENNReal.toReal_ofReal (by norm_num : (0:ℝ) ≤ 3/2)] using hz
+
+-- The p=1 endpoint needs no strict lower exponent hypothesis.
+example (φ : PairSpace 1) (z : ℂ) (hz : 1+8*‖φ‖ ≤ |z.im|) :
+    z ∈ resolventSet (by simp) φ := by
+  apply mem_resolventSet_of_printed_height (by simp) (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) φ le_rfl
+  simpa only [ENNReal.toReal_one,Real.rpow_one] using hz
+
+-- Counts use each source's own printed-height box and hold for every larger cutoff.
+-- Its high-frequency eigenvectors automatically have the source parity.
+example (φ : CoeffPair (ENNReal.ofReal ((3:ℝ)/2))) :
+    ∃ N₀ : ℕ, ∃ V : Set (CoeffPair (ENNReal.ofReal ((3:ℝ)/2))), IsOpen V ∧ φ ∈ V ∧
+      ∀ ψ ∈ V, ∀ N : ℕ, N₀ ≤ N →
+        (∑ z ∈ heightPeriodicSpectrum (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) (periodOnePotential ψ) N
+          ((1+8*‖ψ‖)^((3:ℝ)/2)),
+          periodicAlgebraicMultiplicity (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) (periodOnePotential ψ) z) = 4*N+2 ∧
+        ∀ n : ℤ, N < n.natAbs → ∀ z ∈ Metric.ball ((Real.pi:ℂ)*n) (Real.pi/4),
+          ∀ f : Domain (ENNReal.ofReal ((3:ℝ)/2)),
+            operator (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) (periodOnePotential ψ) f = z • domainInclusion f →
+              f ∈ domainParitySubspace n := by
+  obtain ⟨N₀,V,hN,hV,hconv,hφ,h0,hdata⟩ :=
+    exists_source_periodicCounting_printed_height (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) (by norm_num [ENNReal.one_le_ofReal,ENNReal.ofReal_le_ofReal_iff]) φ
+  refine ⟨N₀,V,hV,hφ,?_⟩
+  intro ψ hψ N hN
+  have hd := (hdata N hN).2 ψ hψ
+  refine ⟨?_,?_⟩
+  · simpa only [ENNReal.toReal_ofReal (by norm_num : (0:ℝ) ≤ 3/2)] using hd.2.2.1
+  · intro n hn z hz f hf
+    exact hd.1.disk_eigenvector_parity (periodOnePotential_mem ψ) n hn z hz f hf
+
+-- Failure of the sufficient criterion is proved at every exponent above two.
+example (q M : ℝ) (hq : 2 < q) (hM : 1/(4*q-8) ≤ M) :
+    ¬ ((4*q / ((1+8*M)^q)^(1/q) + 1/(1+8*M)^q)*M < 1) :=
+  (printed_height_neumann_bound_fails hq hM).not_gt
+
+end PrintedHeightChecks
