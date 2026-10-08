@@ -35567,3 +35567,50 @@ example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
         ‖(nlsOddReducedPolynomial m hm).coeff d‖ * ∫ x in (0:ℝ)..1, sobolevRealMonomial m d a.val x :=
   abs_sobolevOddHamiltonian_sub_kinetic_le m hm a
 end RealOddRemainderChecks
+
+namespace SharpInterpolationChecks
+open NLS NLS.Fourier NLS.ZakharovShabat MeasureTheory
+
+-- Fractional Sobolev orders interpolate with constant one.
+example (a : WeightedCoeff (Weight.sobolev 2) 2) :
+    ‖WeightedCoeff.sobolevInclusion (by norm_num : (1/2:ℝ) ≤ 2) a‖ ≤
+      ‖WeightedCoeff.sobolevToL2 (by norm_num : (0:ℝ) ≤ 2) a‖^(3/4:ℝ)*‖a‖^(1/4:ℝ) := by
+  have h := WeightedCoeff.norm_sobolevInclusion_interpolate 2 (1/2) (by norm_num) (by norm_num) (by norm_num) a
+  norm_num at h ⊢
+  exact h
+
+-- The shifted bound includes the zero coefficient.
+example : ‖Coeff.shiftedInverse 2 (by norm_num)‖^2 ≤ (3/2:ℝ) :=
+  Coeff.norm_shiftedInverse_sq_le 2 (by norm_num)
+
+-- Multiplicative absolute summability uses both the L² and H¹ norms.
+example (a : ScalarDomain 2) :
+    ‖WeightedCoeff.sobolevToL1CLM 2 (by simp) a‖^2 ≤
+      12*‖WeightedCoeff.sobolevToL2 (by norm_num : (0:ℝ) ≤ 1) a‖*‖a‖ :=
+  WeightedCoeff.norm_sobolevToL1_sq_le a
+
+-- The zero-derivative endpoint needs only the L² norm.
+example (a : ScalarSobolev 3) :
+    ‖hierarchySobolevJetL2 3 0 (by omega) a‖ ≤
+      ‖WeightedCoeff.sobolevToL2 (by norm_num : (0:ℝ) ≤ 3) a‖ := by
+  simpa using norm_hierarchySobolevJetL2_interpolate 3 0 (by omega) (by omega) a
+
+-- The highest L² derivative has the exact period-one normalization.
+example (a : ScalarSobolev 3) :
+    ‖hierarchySobolevJetL2 3 3 le_rfl a‖ ≤ (2*Real.pi)^3*‖a‖ := by
+  simpa using norm_hierarchySobolevJetL2_interpolate 3 3 (by omega) le_rfl a
+
+-- For H² input, the first derivative has the sharp supremum exponent 3/4.
+example (a : ScalarSobolev 2) :
+    ‖hierarchySobolevJetContinuous 2 1 (by omega) a‖ ≤
+      8*Real.pi*‖WeightedCoeff.sobolevToL2 (by norm_num : (0:ℝ) ≤ 2) a‖^(1/4:ℝ)*‖a‖^(3/4:ℝ) := by
+  have h := norm_hierarchySobolevJetContinuous_interpolate 2 1 (by omega) a
+  norm_num at h ⊢
+  convert h using 1; ring
+
+-- Parseval is for the actual physical lower derivative, on the unit interval.
+example (m k : ℕ) (hk : k < m) (a : ScalarSobolev m) :
+    (∫ x in (0:ℝ)..1, ‖hierarchySobolevJetContinuous m k hk a (x : AddCircle (2:ℝ))‖^2) =
+      ‖hierarchySobolevJetL2 m k (by omega) a‖^2 :=
+  integral_norm_sq_hierarchySobolevJetContinuous m k hk a
+end SharpInterpolationChecks

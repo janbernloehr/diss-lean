@@ -2852,3 +2852,9 @@ import NLS.ZakharovShabat.SobolevRealJets
 import NLS.DifferentialPolynomial.RealMonomialBounds
 import NLS.ZakharovShabat.SobolevOddHamiltonianReal
 import NLS.ZakharovShabat.SobolevOddRemainderBounds
+import NLS.SequenceSpaces.HilbertGeometricInterpolation
+import NLS.SequenceSpaces.SobolevInterpolation
+import NLS.SequenceSpaces.ShiftedHilbertInverse
+import NLS.SequenceSpaces.HilbertAgmon
+import NLS.ZakharovShabat.SobolevJetNormBounds
+import NLS.ZakharovShabat.SobolevJetInterpolation

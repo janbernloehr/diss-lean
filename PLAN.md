@@ -1,6 +1,60 @@
 # Implementation plan
 
-## Latest progress: real H^m energies and physical remainder majorants
+## Latest progress: sharp physical Sobolev interpolation (5.11)
+
+Both interpolation estimates (5.11) now hold for the actual Sobolev jets.
+For `0 ≤ k ≤ m`, the L² derivative bound has exponent `k/m` and explicit
+constant `(2π)^k`. For `k < m`, the continuous supremum bound has exponent
+`(k+1/2)/m` and constant `4(2π)^k`. Both use the L² norm and the existing
+inhomogeneous H^m coefficient norm, including the zero Fourier mode.
+
+`HilbertGeometricInterpolation.lean` proves constant-one geometric
+interpolation for coefficient magnitudes, including both interpolation
+endpoints. `SobolevInterpolation.lean` applies it to arbitrary real Sobolev
+orders between zero and a positive highest order.
+
+`ShiftedHilbertInverse.lean` proves that the full inverse multiplier
+`1/(R+|n|)` has squared ℓ² norm at most `3/R` for `R ≥ 1`.
+`HilbertAgmon.lean` optimizes the shift using the H¹-to-L² norm ratio.
+Cauchy–Schwarz gives the squared bound `‖a‖₁² ≤ 12 ‖a‖₂ ‖a‖H¹`,
+with a separate zero-data case and no mean-zero assumption.
+
+`SobolevJetNormBounds.lean` retains the exact period-one differentiation
+factor and proves the L² part of (5.11). `SobolevJetInterpolation.lean`
+combines the multiplicative H¹ bound with interpolation at adjacent orders
+to prove the supremum part. It also proves pointwise bounds and actual
+unit-interval Parseval for every continuous lower derivative, providing the
+physical L² factors required in the next monomial estimate.
+
+Public examples check fractional interpolation, the shifted zero mode,
+absolute summability, the zero and top derivative endpoints, the sharp
+three-quarters exponent for the first derivative of H² data, and physical
+lower-derivative Parseval.
+
+Validation: the full build passes (6286 jobs), all public examples pass,
+and the transitive axiom audit passes for 24676 NLS declarations. The 21
+existing warnings are unchanged; no new axioms or unfinished proofs were added.
+
+Remaining: use two physical L² factors and the new supremum bounds in each
+remainder monomial to prove (5.12), then apply Young's inequality and absorb
+the top derivative term to finish Lemma 26.3. The required remainder must
+depend only on the L² norm with power `4m+2`. The quantitative action bounds
+of Sections 26–27, explicit H¹ spectral localization in Section 25, uniform
+weighted estimates in Section 28, fixed-domain trace scope, and the full
+dissertation inventory remain open.
+
+For (5.12), select two field factors from each supported monomial, allowing
+both factors to have the same derivative order. Bound the remaining factors
+by `norm_hierarchySobolevJetContinuous_apply_interpolate`; Cauchy–Schwarz
+and `integral_norm_sq_hierarchySobolevJetContinuous` control the two retained
+factors. This avoids assuming that any single multiplicity is at least two.
+For total field count `d`, the resulting H^m exponent must be
+`α = 2-(d-2)/(2m)` and the L² exponent `(1+1/(2m))*(d-2)`.
+The proved bounds `4 ≤ d ≤ 2m+2` ensure `0 < α < 2` and give the exact
+Young-conjugate L² power `4m+2`. Sum only after proving the estimate for each
+actual supported monomial, retaining coefficient norms in the constants.
+
+## Previous milestone: real H^m energies and physical remainder majorants
 
 The real H^m odd Hamiltonian now has the exact leading term
 `‖∂^m ψ‖₂²`, expressed by its L² Fourier representative, plus the actual
