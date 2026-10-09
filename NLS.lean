@@ -3186,3 +3186,7 @@ import NLS.Fourier.ContinuousPeriodOneRealization
 import NLS.Fourier.TentProfile
 import NLS.Fourier.OddTentProfile
 import NLS.ZakharovShabat.OrderedTentSources
+import NLS.SequenceSpaces.UniformQuadraticEnvelope
+import NLS.Fourier.DyadicGeometricBounds
+import NLS.Fourier.NormalizedDyadicTent
+import NLS.Fourier.DyadicTentSum

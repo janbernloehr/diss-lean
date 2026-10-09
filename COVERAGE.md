@@ -1342,3 +1342,30 @@ Public checks include concrete width 1/4 and p=5, as well as signed
 profile estimates on [1/8,1/4]. The signed profiles have not yet been
 summed over dyadic scales. No periodic-height violation is asserted;
 Theorem 1.1 above p=4 remains required and unresolved.
+
+### Theorem 1.1: dyadic interaction growth with bounded original coefficient norm
+
+[`DyadicGeometricBounds.lean`](NLS/Fourier/DyadicGeometricBounds.lean),
+[`NormalizedDyadicTent.lean`](NLS/Fourier/NormalizedDyadicTent.lean),
+[`DyadicTentSum.lean`](NLS/Fourier/DyadicTentSum.lean), and
+[`UniformQuadraticEnvelope.lean`](NLS/SequenceSpaces/UniformQuadraticEnvelope.lean)
+prove the upper half of the proposed ordered multiscale construction.
+
+| Public entry point | Scope |
+| --- | --- |
+| `sum_norm_le_of_dyadic_envelopes` | A bound of 80 for any finite set of scales satisfying the two envelopes; the proof splits at the frequency's dyadic bracket. |
+| `periodOneCoefficient_dyadicTentSum`, `circlePullback_dyadicTentSumCoefficients` | The actual finite physical sum, every original Fourier integral, and the Hilbert representative agree. |
+| `dyadicTentSum_eq_zero_near_ends` | The full upper profile vanishes on both endpoint intervals of width 2^(-J). |
+| `norm_periodOneCoefficient_dyadicTentSum_le`, `norm_periodOneCoefficient_dyadicTentSum_tail` | Uniform coefficient bound 80 and quadratic tail abs(n)^2 abs(U_hat_J(n)) <= 16*4^J, without a scale-count factor. |
+| `Coeff.norm_le_of_uniform_quadratic_envelope` | Original lp norm <= C (8N)^(1/p) for a zero-mean sequence bounded by C with quadratic tail C N^2, at every finite Banach exponent. |
+| `norm_exponent_dyadicTentSumCoefficients_le` | Actual upper coefficient norm <= 80 (8*2^J)^(1/p), for every finite p>=2. |
+| `norm_dyadicTentSumCoefficients_twice_exponent_le` | At J=2P and p=P, the original coefficient norm is at most 640 for every integer P>=3. |
+| `integral_normalizedDyadicTent_ge_quarter` | Each sufficiently fine normalized scale contributes at least 1/4. |
+| `integral_dyadicTentSum_pow_height` | The upper interaction at H=2^P is at least (P-2)/4 for every integer P>=3. |
+
+Public checks cover negative frequencies, the zero mean and endpoint
+support, a concrete scale contribution, and p=5 together with the full
+integer-exponent family. The normalized lower coupling and final spectral
+normalization estimate remain to be combined with these results.
+Theorem 1.1 above p=4 is still required and unresolved; no periodic-height
+counterexample or source correction is claimed.

@@ -146,6 +146,19 @@ an explicit exponential lower bound. Dyadic summation, the resulting lp
 norm estimate, and the final printed-height comparison remain unproved.
 Thus this step does not settle Theorem 1.1 above p=4.
 
+
+The dyadic upper sum is now constructed and estimated in
+`DyadicTentSum.lean`. Its actual Fourier coefficients have uniform bound
+80 and quadratic tail bound `abs(n)^2 abs(U_hat_J(n))<=16*4^J`, with
+zero mean and verified physical reconstruction. The original coefficient
+norm at J=2P and p=P is at most 640 for every integer P>=3, while the
+weighted upper interaction at H=2^P is at least (P-2)/4. The entire sum
+vanishes on the endpoint intervals of width 2^(-2P), leaving room for an
+ordered lower coupling. The scale-sum bounds and the original lp norm
+estimate are proved; the lower coupling's norm and the final spectral
+normalization comparison are still outstanding. This is not yet a
+periodic-height counterexample and does not settle Theorem 1.1 above four.
+
 ## Theorem 1.2: proved in the full printed range
 
 The source statement on p. 19 requires the globally lexicographically

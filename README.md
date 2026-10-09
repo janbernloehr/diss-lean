@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: continuous tent profiles now have proved original Fourier
-coefficients and physical realizations. An explicit pair of ordered tents
-can be normalized to place any imaginary parameter in the actual periodic
-spectrum at every finite p>=2. Reflected signed tents also have proved
-zero mean, low/high frequency bounds, and a quantitative interaction lower
-bound, preparing a multiscale construction. The printed periodic height
-above p=4 remains unresolved. Real-type finite-gap analyticity remains
-proved; G.2's norm is unresolved, and the proposed all-p boundary height
-correction remains separate from the refuted formula.
+Latest milestone: the continuous dyadic upper profile now has a proved
+original lP norm bound of 640, independent of P>=3, while its interaction
+at height 2^P grows at least as (P-2)/4. Every Fourier coefficient and
+the physical reconstruction are preserved. Uniform and tail bounds are
+proved for the full sum, including negative frequencies. Combining this
+with the normalized lower coupling and the spectral normalization remains
+next; the printed periodic height above p=4 is still unresolved. Real-type
+finite-gap analyticity remains proved, and no source correction is adopted.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

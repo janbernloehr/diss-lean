@@ -41362,3 +41362,50 @@ example (H : ℝ) (hH : 0 ≤ H) :
   ring_nf
 
 end OrderedTentProfileChecks
+
+namespace DyadicTentSumChecks
+open NLS.Fourier
+local instance instFiveDyadic : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance instFiveNatDyadic : Fact (1 ≤ ((5 : ℕ) : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The mean is exactly zero, and negative frequencies obey the same uniform bound.
+example (J : ℕ) : dyadicTentSumCoefficients J 0 = 0 ∧
+    ‖dyadicTentSumCoefficients J (-7)‖ ≤ 80 := by
+  constructor
+  · simp
+  · simpa only [dyadicTentSumCoefficients_apply] using norm_periodOneCoefficient_dyadicTentSum_le J (-7)
+
+-- A lower coupling can be placed after the full support of the upper sum.
+example (J : ℕ) (x : ℝ) (hx : 1-dyadicTentWidth J ≤ x) : dyadicTentSum J x = 0 :=
+  dyadicTentSum_eq_zero_near_ends J (Or.inr hx)
+
+-- The first fine scale at H=4 already gives the promised numerical contribution.
+example : (1/4 : ℝ) ≤ ∫ x in (0 : ℝ)..1, normalizedDyadicTent 5 x*Real.exp (-8*x) := by
+  have h := integral_normalizedDyadicTent_ge_quarter 5 (by norm_num) 4
+    (by norm_num) (by norm_num [dyadicTentWidth])
+  norm_num at h
+  simpa only [neg_mul] using h
+
+-- Concrete non-Hilbert source norm, with the original coefficients retained.
+example : ‖Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 5)
+    (dyadicTentSumCoefficients 10)‖ ≤ 640 := by
+  simpa using norm_dyadicTentSumCoefficients_twice_exponent_le 5 (by norm_num)
+
+example : (3/4 : ℝ) ≤ ∫ x in (0 : ℝ)..1, dyadicTentSum 10 x*Real.exp (-64*x) := by
+  have h := integral_dyadicTentSum_pow_height 5 (by norm_num)
+  norm_num at h
+  simpa only [neg_mul] using h
+
+-- Arbitrarily many scales keep a uniform original lp norm while the interaction grows.
+example (P : ℕ) [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 3 ≤ P) :
+    ‖Coeff.exponentInclusion (show (2 : ℝ≥0∞) ≤ P by exact_mod_cast (show 2 ≤ P by omega))
+      (dyadicTentSumCoefficients (2*P))‖ ≤ 640 ∧
+    ((P-2 : ℕ) : ℝ)/4 ≤ ∫ x in (0 : ℝ)..1, dyadicTentSum (2*P) x*Real.exp (-2*(2 : ℝ)^P*x) :=
+  ⟨norm_dyadicTentSumCoefficients_twice_exponent_le P hP,integral_dyadicTentSum_pow_height P hP⟩
+
+-- The unspecialized norm bound also applies at every finite target exponent at least two.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (h2p : (2 : ℝ≥0∞) ≤ p) (J : ℕ) :
+    ‖Coeff.exponentInclusion h2p (dyadicTentSumCoefficients J)‖ ≤ 80*(8*(2 : ℝ)^J)^(1/p.toReal) :=
+  norm_exponent_dyadicTentSumCoefficients_le hp h2p J
+
+end DyadicTentSumChecks

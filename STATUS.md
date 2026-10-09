@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: concrete tent sources and reflected Fourier cancellation
+## Current milestone: dyadic interaction growth with bounded original coefficient norm
+
+The continuous upper profile is now an actual finite sum of normalized
+reflected tents on `[2^(-j),2^(1-j)]`, for `2<=j<=J`.
+`DyadicTentSum.lean` retains every original unit-period Fourier integral,
+constructs the corresponding Hilbert coefficients, and proves their
+almost-everywhere physical reconstruction. The sum has zero mean and
+vanishes before `2^(-J)` and after `1-2^(-J)`.
+
+`DyadicGeometricBounds.lean` splits at an integer frequency's dyadic
+bracket. Combining the low-frequency envelope `32 |n| 2^(-j)` with the
+high-frequency envelope `|n|^2 |a_j(n)| <= 8*4^j` gives a coefficient sum
+bound of 80, independent of the number of scales. Consequently the actual
+sum satisfies `|U_hat_J(n)|<=80` and
+`|n|^2 |U_hat_J(n)|<=16*4^J` at every signed integer frequency.
+
+`UniformQuadraticEnvelope.lean` converts a uniform bound C and a quadratic
+tail C N^2 for a zero-mean sequence into the original lp norm bound
+`C (8N)^(1/p)`, at every finite Banach exponent. Applied to the actual
+upper coefficients, this yields `80 (8*2^J)^(1/p)` for finite p>=2.
+At `J=2P` and exponent `p=P`, the norm is at most 640 for every integer
+P>=3. This is a proved bound in the original coefficient norm, not a
+supremum-norm substitute.
+
+`NormalizedDyadicTent.lean` proves that each sufficiently fine scale
+contributes at least 1/4 to the upper interaction. Other included scales
+have nonnegative interaction. Summing scales `P+3` through `2P` proves
+`integral(U_(2P)(x) exp(-2*2^P*x)) >= (P-2)/4` for every integer P>=3.
+Thus the interaction grows linearly while the original lP norm stays
+uniformly bounded. Public examples check negative frequencies, zero mean,
+the empty endpoint interval, the first 1/4 contribution, and the concrete
+p=5 norm and interaction bounds.
+
+The normalized lower coupling and its norm estimate still need to be
+combined with this sum and the exact monodromy normalization. No periodic
+height violation is asserted. Theorem 1.1 above p=4 remains required and
+unresolved. Real-type finite-gap analyticity remains proved. The all-p
+printed boundary height remains refuted, with its proposed correction
+separate. G.2's original interval norm and the optional original m=1
+sharpening remain unresolved. No source correction is adopted; the
+dissertation is incomplete.
+
+Validation: the full project check passed (6620 build jobs), including all
+public examples and the axiom audit of 27891 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: concrete tent sources and reflected Fourier cancellation
 
 `ContinuousPeriodOneRealization.lean` now constructs original Hilbert
 source coefficients from any continuous profile with matching endpoints.
