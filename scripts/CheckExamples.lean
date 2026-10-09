@@ -38507,3 +38507,82 @@ example : 0 < ‖((1/4:ℝ):ℂ)/(Real.sqrt (5/16:ℝ):ℂ)‖ ∧
   appendixF_printed_majorant_counterexample.2.2.2
 
 end AppendixFEndpointAnalyticChecks
+
+section AppendixFBetweenEndpointsChecks
+open NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Filter Topology Complex
+open scoped ENNReal Classical
+
+private theorem f3ThreeHalves : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem f3ThreeHalvesFinite : (3/2:ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact ((1:ℝ≥0∞) ≤ 3/2) := ⟨f3ThreeHalves.le⟩
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Exact signs for two collapsed free gaps, in both directions and below p=2.
+example : sourceAbelianEndpointToEndpointIntegral (p:=3) (by simp) (by norm_num) 0
+    ((Real.pi:ℂ)*(-3:ℤ)) ((Real.pi:ℂ)*(2:ℤ)) = -5*Complex.I*(Real.pi:ℂ) := by
+  rw [sourceAbelianEndpointToEndpointIntegral_zero (by simp) (by norm_num) (-3) 2]
+  norm_num
+  ring
+
+example : sourceAbelianEndpointToEndpointIntegral f3ThreeHalvesFinite f3ThreeHalves 0
+    ((Real.pi:ℂ)*(2:ℤ)) ((Real.pi:ℂ)*(-3:ℤ)) = 5*Complex.I*(Real.pi:ℂ) := by
+  rw [sourceAbelianEndpointToEndpointIntegral_zero f3ThreeHalvesFinite f3ThreeHalves 2 (-3)]
+  norm_num
+  ring
+
+-- Distinct left/right labels of the same complex gap give zero without a collapse assumption.
+example (W : Set (CoeffPair 3))
+    (C : SourceFullAbelianUniformCauchyFamily (p:=3) (by simp) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius) (n : ℤ) :
+    sourceAbelianEndpointToEndpointIntegral (by simp) (by norm_num) ψ
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = 0 := by
+  simpa only [sub_self,mul_zero] using
+    C.endpointToEndpointIntegral_eq ψ hψ n n _ _ (by simp) (by simp)
+
+-- Completely arbitrary source predicates may switch endpoint labels.
+example (W : Set (CoeffPair (3/2)))
+    (C : SourceFullAbelianUniformCauchyFamily f3ThreeHalvesFinite f3ThreeHalves W)
+    (P Q : CoeffPair (3/2) → Prop) (n m : ℤ) :
+    AnalyticOnNhd ℂ (fun ψ => sourceAbelianEndpointToEndpointIntegral f3ThreeHalvesFinite f3ThreeHalves ψ
+      (if P ψ then canonicalPeriodicLeft f3ThreeHalvesFinite f3ThreeHalves
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) n
+        else canonicalPeriodicRight f3ThreeHalvesFinite f3ThreeHalves
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (if Q ψ then canonicalPeriodicRight f3ThreeHalvesFinite f3ThreeHalves
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) m
+        else canonicalPeriodicLeft f3ThreeHalvesFinite f3ThreeHalves
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) m))
+      (ball C.discs.source.val C.discs.sourceRadius) := by
+  apply C.endpointToEndpointIntegral_analytic n m <;>
+    intro ψ _ <;> split_ifs <;> simp
+
+-- The improper construction agrees with actual integrable C1 endpoint paths.
+example (W : Set (CoeffPair 3))
+    (C : SourceFullAbelianUniformCauchyFamily (p:=3) (by simp) (by norm_num) W)
+    (ψ : CoeffPair 3) (hψ : ψ ∈ ball C.discs.source.val C.discs.sourceRadius)
+    (γ : Path
+      (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-3))
+      (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) 2))
+    (hγ : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hpath : ∀ t ∈ Ioo (0:ℝ) 1, γ.extend t ∈ sourceCanonicalRootDomain (by simp) (by norm_num) ψ)
+    (hint : CurveIntegrable (holomorphicOneForm (sourceAbelianDifferential (by simp) (by norm_num) ψ)) γ) :
+    (∫ᶜ z in γ, holomorphicOneForm (sourceAbelianDifferential (by simp) (by norm_num) ψ) z) =
+      -5*Complex.I*(Real.pi:ℂ) := by
+  rw [C.endpointToEndpointCurveIntegral_eq ψ hψ (-3) 2 _ _ (by simp) (by simp) γ hγ hpath hint,
+    C.endpointToEndpointIntegral_eq ψ hψ (-3) 2 _ _ (by simp) (by simp)]
+  norm_num
+  ring
+
+-- A single connected almost-real domain works for all pairs of signed indices.
+example : ∃ V : Set (CoeffPair 3), IsOpen V ∧ IsConnected V ∧ realTypeSourceLocus 3 ⊆ V ∧
+    ∀ n m : ℤ, AnalyticOnNhd ℂ (fun ψ =>
+      sourceAbelianEndpointToEndpointIntegral (by simp) (by norm_num) ψ
+        (canonicalPeriodicLeft (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+        (canonicalPeriodicRight (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) m)) V := by
+  obtain ⟨V,hV,hconn,hr,h⟩ := sourceCorollaryF3 (p:=3) (by simp) (by norm_num)
+  exact ⟨V,hV,hconn,hr,fun n m => (h n m _ _ (by intros; simp) (by intros; simp)).1⟩
+
+end AppendixFBetweenEndpointsChecks

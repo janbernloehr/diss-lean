@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Latest progress: the endpoint-integral analyticity in F.2
+## Latest progress: endpoint-to-endpoint analyticity in F.3
+
+Corollary F.3, printed page 134, now holds for actual endpoint-to-endpoint
+integrals. `SourceCorollaryF3.lean` defines the second improper limit of
+the polygonal endpoint integrals constructed for F.2 and proves convergence
+through the cut complement. Both endpoint limit filters are nontrivial.
+The exact value from gap n to gap m is i*pi*(n-m), for either choice of
+endpoint and including collapsed complex gaps. Every integrable admissible
+C1 path has this value as well.
+
+Pointwise endpoint selections need no continuity or analyticity: the
+resulting source functional is constant. `sourceCorollaryF3` exports
+analyticity on one connected open domain containing all real sources,
+simultaneously for all signed gap pairs and all endpoint selections.
+The zero-source normalization is also proved, where every gap collapses.
+No correction to the printed F.3 statement is needed.
+
+Next: audit Appendix G from Lemma G.1, comparing the exact printed
+fundamental-solution identities and estimates with the existing classical
+and Section 16 modules. The dissertation remains incomplete: the printed
+spectral height above p=2 is still required and unresolved. The accepted
+Lemma 27.2 correction and optional original m=1 sharpening are unchanged.
+
+Validation: focused examples passed for p=3/2 and p=3, the signed values
+-5*i*pi and +5*i*pi between free gaps -3 and 2, zero between either
+endpoint of one complex gap, arbitrary predicates switching the endpoint
+labels, actual integrable C1 paths, and the common almost-real domain.
+The full build passed (6478 jobs), all public examples passed, and the
+axiom audit passed for 26124 NLS declarations. The same 21 pre-existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified.
+
+For G.1, the existing `ClassicalFirstBorn.lean` provides the actual
+Duhamel identities and `ClassicalRemainderBound.lean` provides a supremum
+norm Gronwall bound for continuous potentials. The printed statement
+instead uses L2 potentials and the literal coefficient norm(phi)*exp(norm(phi))
+multiplying the L2-in-time norm of the first Born term. Audit the potential
+and matrix norm conventions and the extension to L2 before treating those
+earlier continuous-potential estimates as a proof of G.1.
+
+## Previous milestone: the endpoint-integral analyticity in F.2
 
 Lemma F.2, printed pages 132-134, now has analyticity of the literal
 endpoint-averaged primitive. One source neighborhood works for all signed

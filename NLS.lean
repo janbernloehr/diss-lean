@@ -3048,3 +3048,4 @@ import NLS.ComplexAnalysis.PolygonalEndpointIntegral
 import NLS.ZakharovShabat.SourceAbelianEndpointIntegrals
 import NLS.ZakharovShabat.SourceLemmaF2
 import NLS.ComplexAnalysis.AppendixFProofAudit
+import NLS.ZakharovShabat.SourceCorollaryF3

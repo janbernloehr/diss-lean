@@ -375,7 +375,7 @@ coefficients are the actual integrals on the unit interval.
 Focused examples check q=3/2 and infinity, negative even and odd frequency
 normalizations, a complex displacement exactly on the pi/4 boundary, and
 a large exceptional imaginary frequency at index zero. No correction to
-E.3 is needed. F.1-F.2 are audited below; F.3 remains to be audited.
+E.3 is needed. F.1-F.3 are audited below.
 
 ### Lemma F.1: critical-point bounds in terms of the periodic gap
 
@@ -430,4 +430,27 @@ primitive and avoids the problematic dominated-convergence calculation.
 The common-path coefficient check and the counterexample to the printed
 real majorant are in `AppendixFProofAudit.lean`. Focused examples include
 a nonconvex punctured domain, its improper endpoint integral, p=3/2 and
-p=3, and nonzero free values. Corollary F.3 remains to be audited.
+p=3, and nonzero free values. Corollary F.3 is audited below.
+
+### Corollary F.3: analyticity between actual spectral endpoints
+
+F.3, printed page 134, is proved unchanged. The integral is a second relative
+endpoint limit of the actual improper polygonal integrals used in F.2.
+For an initial endpoint in gap n and a terminal endpoint in gap m, its value
+is i*pi*(n-m), including complex collapsed gaps and either endpoint choice.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Actual endpoint-to-endpoint integration | `sourceAbelianEndpointToEndpointIntegral`, `SourceFullAbelianUniformCauchyFamily.tendsto_endpointIntegral` | Iterated relative limits of finite sums of genuine curve integrals; terminal limit convergence is proved. |
+| Exact endpoint normalization | `.endpointToEndpointIntegral_eq` | Value i*pi*(n-m) for all signed indices and either endpoint, with nontrivial endpoint filters. |
+| Agreement with admissible paths | `.endpointToEndpointCurveIntegral_eq` | Every integrable C1 path with interior off the cuts agrees with the improper definition. |
+| Arbitrary endpoint selections | `.endpointToEndpointIntegral_analytic` | Pointwise membership in each endpoint pair is enough; no continuity of the choices or nonzero-gap assumption. |
+| Full source statement | `sourceCorollaryF3` | One connected open almost-real domain supports all gap pairs and all pointwise endpoint selections, including every complex base point. |
+| Collapsed free normalization | `sourceAbelianEndpointToEndpointIntegral_zero` | Actual integral between pi*n and pi*m at zero equals i*pi*(n-m). |
+
+Focused checks cover p=3/2 and p=3, opposite signs between gaps -3 and 2,
+the vanishing same-gap integral, arbitrary predicates switching endpoint
+choices, admissible C1 paths, and the common domain. Appendix G is next for
+source-level audit; its existing implementation is not treated as automatic
+coverage of every printed statement. The required unresolved p>2 spectral
+height is unchanged.
