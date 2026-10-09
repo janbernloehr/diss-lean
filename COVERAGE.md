@@ -919,9 +919,9 @@ are included. The conclusion concerns inverses of local complex analytic
 extensions, and agreement with the original cone map is proved. Only local
 extensions are required; they need not be chosen as one global map.
 
-Weighted transport is proved below. Restriction of the inverse to real
-sequence spaces and the remaining real-analytic formulation are still
-pending. Accordingly I.4 is partial, not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
+Weighted complex transport and the unweighted real inverse conclusion are
+proved below. Weighted real transport and the remaining source formulation
+are still pending. Accordingly I.4 is partial, not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
 and optional original m=1 obligations retain their status. Source-label
 inventories and declaration counts do not certify completeness.
 
@@ -943,7 +943,30 @@ All weighted statements use raw coefficients and the existing weighted norm.
 No comparison constants, boundedness assumption on the weight, or compactness
 hypothesis off the nonnegative cone have been added. The local inverses are
 currently complex ambient inverses of the original weighted extensions.
-Restriction to real sequence spaces and the remaining real-analytic source
-formulation are the next obligations. I.4 is not yet marked fully proved.
+Restriction to real sequence spaces is proved below in the unweighted case;
+its weighted transport and the remaining source formulation are the next
+obligations. I.4 is not yet marked fully proved.
 The previously recorded G.2, p>2 spectral-height, and optional original m=1
 obligations remain open; counts do not certify completeness.
+
+
+### Proposition I.4: actual real inverses and a real seed, unweighted
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Reality from original cone values | `eventually_realLocus_of_nonnegative_analytic`, `NonnegativeAnalyticAtlas.extension_eventually_real` | Local complex extensions preserve the full nearby real locus, derived from real values on the original cone, including at zero. The reality lemma also covers the infinite exponent. |
+| Real derivative and inverse | `fderiv_entries_real_of_eventually_real`, `inverse_mapsTo_realLocus_of_real_entries` | Real matrix entries and preservation of the real locus by the inverse derivative; the latter uses finite p. |
+| Preservation by nonlinear inverse | `eventually_mem_closedSubmodule_of_localInverse`, `exists_real_localInverse_of_nonnegative_atlas` | The actual complex inverse preserves nearby real targets; no extra inverse-reality assumption. |
+| Actual real sequence maps | `realRestriction_localInverse`, `exists_realRestriction_localInverse_of_nonnegative_atlas` | Real analytic maps between `RealCoeff p` spaces, both inverse identities, center identity, and recovery of the original cone map. |
+| Real inverse seed | `isUnit_fderiv_of_real_localLeftInverse`, `NonnegativeAnalyticAtlas.realLocalInversePoints_eq` | A differentiable real left inverse plus compact derivative minus identity yields an invertible complex derivative. The real and complex local-inverse loci coincide. |
+| Real open dense conclusion | `sourcePropositionI4_real_unweighted`, `sourcePropositionI4_real_of_differentiable_seed` | Relatively open dense real analytic inverse locus on a relatively open preconnected cone domain at every finite Banach exponent. |
+| Nonlinear boundary example | `AppendixI4RealChecks` | A quadratic coordinate perturbation at p=1 has an actual real analytic inverse at zero with both identities; generic examples check the real analytic and merely differentiable seed APIs. |
+
+These results use local complex extension atlases to represent analyticity
+at the cone boundary. The reality required to restrict those extensions and
+their inverses is proved from the original cone values. A general construction
+of such an atlas from a separate real-analytic predicate is not asserted.
+The real conclusion, real inverse locus, and real seed still need transport
+to all positive weights. The weighted complex theorem above is unchanged;
+I.4 as a whole is not yet marked fully proved. The G.2 local-norm, required
+p>2 spectral-height, and optional original m=1 obligations remain unchanged.

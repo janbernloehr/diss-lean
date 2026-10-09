@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: I.4's cone-density and local-inverse construction now
-holds for every positive sequence weight and every finite Banach exponent,
-including all real Sobolev orders. Derivatives and inverses live in the
-original weighted spaces, and zero-boundary points are retained. Restriction
-to real sequence spaces remains for the full I.4 source statement. The
-printed Schur-sign error is verified. G.2's arbitrary-time local norm and
-the required spectral height above p=2 also remain open.
+Latest milestone: I.4 now has actual real analytic local inverses on
+unweighted sequence spaces for every finite Banach exponent, with both
+inverse identities and an open dense inverse locus from a real seed.
+Zero and other cone boundary points are included. Transport of these real
+inverses to all weights remains; the weighted complex inverse theorem is
+already proved. G.2's arbitrary-time local norm and the required spectral
+height above p=2 also remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

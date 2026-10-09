@@ -24,8 +24,14 @@ The current theorem supplies ambient complex local inverses on the original
 weighted spaces, together with their left-inverse identity on the original
 cone map, at all points of a relatively open dense locus. This now covers
 every positive weight and every real Sobolev order at finite exponent.
-Restriction of the inverses to real sequence spaces and the remaining
-real-analytic source formulation are still pending. The domain interpretation
+For unweighted spaces, the inverses now restrict to actual real sequence
+maps with both real analytic inverse identities. Their real inverse locus
+is relatively open and dense from a real local inverse seed; a differentiable
+real left inverse suffices under the compactness hypothesis. Reality of
+extensions and inverses follows from the original cone values. Transport
+of this real conclusion and seed to all weights remains pending, as does
+the full source formulation. Local extension atlases are still the explicit
+representation of analyticity at the cone boundary. The domain interpretation
 and weighting transport are not recorded as source errors.
 
 ## Lemma I.3: finite exponents and the cutoff convention

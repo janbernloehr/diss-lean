@@ -3120,3 +3120,12 @@ import NLS.ComplexAnalysis.LocalAnalyticExtensionTransport
 import NLS.SequenceSpaces.WeightedNonnegativeActions
 import NLS.FunctionalAnalysis.WeightedNonnegativeAnalyticFredholm
 import NLS.SequenceSpaces.WeightedNonnegativeAnalyticAtlas
+import NLS.SequenceSpaces.CoefficientModulus
+import NLS.SequenceSpaces.NonnegativeRealAnalyticExtension
+import NLS.SequenceSpaces.RealDerivativeEntries
+import NLS.SequenceSpaces.RealOperatorInverse
+import NLS.ComplexAnalysis.LocalInverseClosedSubspace
+import NLS.SequenceSpaces.RealAnalyticInverseRestriction
+import NLS.SequenceSpaces.NonnegativeRealLocalInverse
+import NLS.SequenceSpaces.RealInverseFredholmSeed
+import NLS.SequenceSpaces.SourcePropositionI4RealCore

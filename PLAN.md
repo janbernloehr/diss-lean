@@ -1,6 +1,54 @@
 # Implementation plan
 
-## Latest progress: I.4 on every positive weighted cone
+## Latest progress: I.4 with actual real inverses and a real seed
+
+The unweighted real-space part of I.4 is now proved for every finite
+Banach exponent 1<=p<infinity, including zero and arbitrary boundary points
+of the nonnegative cone. `SourcePropositionI4RealCore.lean` proves that one
+real analytic local inverse gives a relatively open dense locus of such
+inverses. A differentiable real left inverse already suffices as the seed,
+using the source assumption that the complex derivative minus identity is
+compact.
+
+Reality of the local extensions is derived from the original cone map's
+real values. `CoefficientModulus.lean` and
+`NonnegativeRealAnalyticExtension.lean` move a nearby real sequence along
+a short affine line into the cone, then use real analytic uniqueness to
+propagate reality back. This argument does not require interior points of
+the cone. The reality lemma itself also covers p=infinity; the Fredholm and
+inverse-density conclusions here are restricted to finite p.
+
+`RealDerivativeEntries.lean` and `RealOperatorInverse.lean` prove reality
+of the derivative and its inverse. `LocalInverseClosedSubspace.lean`
+normalizes the derivative and applies the closed real subspace fixed-point
+argument. `RealAnalyticInverseRestriction.lean` and
+`NonnegativeRealLocalInverse.lean` then construct actual maps
+`RealCoeff p -> RealCoeff p`, with real analyticity, both local inverse
+identities, and recovery of the original cone map. Reality of the inverse
+is proved, not an extra hypothesis.
+
+`RealInverseFredholmSeed.lean` differentiates a real left inverse, proves
+injectivity of the complex derivative, and applies the compact Fredholm
+alternative. The resulting real inverse locus agrees with the previously
+constructed complex inverse locus. Public examples check both forms of
+the seed theorem and a nonlinear map with a real inverse at zero at p=1.
+
+Next: transport the real inverse construction, locus, and real seed to
+all positive weighted sequence spaces. The previous weighted complex
+results remain available for every real Sobolev order. The local extension
+atlas remains the explicit representation of analyticity at cone boundary
+points; no generic real-to-complex atlas construction is claimed here.
+Accordingly the full I.4 source formulation is still pending. G.2's
+arbitrary-time local norm, the required p>2 spectral height, and the optional
+original m=1 sharpening retain their status. The dissertation is incomplete.
+
+Validation: the focused modules, standalone public examples, and full
+project check passed: 6,558 build jobs, all public examples, and an axiom
+audit of 27,100 NLS declarations. The 21 existing warnings are unchanged,
+with none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: I.4 on every positive weighted cone
 
 The cone density and local-inverse construction for I.4 now applies to
 `WeightedCoeff w p` for every positive weight w and every finite Banach

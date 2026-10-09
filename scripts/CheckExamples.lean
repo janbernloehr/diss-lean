@@ -40130,3 +40130,81 @@ example (w : Weight) :
   simpa only [mem_univ,true_and] using hd.2 (mem_univ x)
 
 end AppendixI4WeightedChecks
+
+noncomputable section
+open Set Filter Topology NLS NLS.Coeff
+open scoped ENNReal
+namespace AppendixI4RealChecks
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (a : Coeff p) :
+    coefficientModulus a ∈ nonnegativeLocus p ∧ ‖coefficientModulus a‖ = ‖a‖ :=
+  ⟨coefficientModulus_nonnegative a,norm_coefficientModulus a⟩
+
+-- Reality propagation itself also covers the infinite-exponent endpoint.
+example {F : Coeff ⊤ → Coeff ⊤} (hF : AnalyticAt ℂ F 0)
+    (hr : ∀ᶠ y in 𝓝 (0 : Coeff ⊤), y ∈ nonnegativeLocus ⊤ → F y ∈ realLocus ⊤) :
+    ∀ᶠ y in 𝓝 (0 : Coeff ⊤), y ∈ realLocus ⊤ → F y ∈ realLocus ⊤ :=
+  eventually_realLocus_of_nonnegative_analytic (zero_mem_nonnegativeLocus ⊤) hF hr
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {f : nonnegativeLocus p → Coeff p} {U : Set (nonnegativeLocus p)}
+    (a : NonnegativeAnalyticAtlas f U) (hU : IsOpen U) (hconn : IsPreconnected U)
+    (hr : ∀ x ∈ U, f x ∈ realLocus p)
+    (hc : ∀ x ∈ U, IsCompactOperator (a.derivative x-1 : Coeff p →L[ℂ] Coeff p))
+    (hs : a.realLocalInversePoints.Nonempty) :
+    IsOpen a.realLocalInversePoints ∧ U ⊆ closure a.realLocalInversePoints :=
+  sourcePropositionI4_real_unweighted hp a hU hconn hr hc hs
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {f : nonnegativeLocus p → Coeff p} {U : Set (nonnegativeLocus p)}
+    (a : NonnegativeAnalyticAtlas f U) (hU : IsOpen U) (hconn : IsPreconnected U)
+    (hr : ∀ x ∈ U, f x ∈ realLocus p)
+    (hc : ∀ x ∈ U, IsCompactOperator (a.derivative x-1 : Coeff p →L[ℂ] Coeff p))
+    (hs : ∃ x ∈ U, ∃ G : RealCoeff p → RealCoeff p,
+      DifferentiableAt ℝ G (reCLM p (f x)) ∧
+      ∀ᶠ y in 𝓝 (reCLM p x.val), G (realRestriction (a.extension x) y) = y) :
+    IsOpen a.realLocalInversePoints ∧ U ⊆ closure a.realLocalInversePoints :=
+  sourcePropositionI4_real_of_differentiable_seed hp a hU hconn hr hc hs
+
+-- A nonlinear map, with a real local inverse at the zero boundary.
+def quadraticMap (z : Coeff 1) : Coeff 1 := z+(z 0)^2 • (lp.single 1 0 1 : Coeff 1)
+
+def quadraticAtlas : NonnegativeAnalyticAtlas
+    (fun x : nonnegativeLocus 1 => quadraticMap x.val) Set.univ where
+  extension _ := quadraticMap
+  analyticAt x _ := analyticAt_id.add
+    (((lp.evalCLM ℂ (fun _ : ℤ => ℂ) 1 0).analyticAt x.val).pow 2 |>.smul analyticAt_const)
+  agreement _ _ := Filter.EventuallyEq.rfl
+
+lemma quadratic_real (x : nonnegativeLocus 1) : quadraticMap x.val ∈ realLocus 1 := by
+  intro n
+  change (x.val n+(x.val 0)^2*(lp.single 1 0 1 : Coeff 1) n).im = 0
+  by_cases hn : n = 0 <;> simp [lp.single_apply,hn,pow_two,(x.property n).1,(x.property 0).1]
+
+lemma quadratic_derivative_zero : fderiv ℂ quadraticMap (0 : Coeff 1) = 1 := by
+  let ev := lp.evalCLM ℂ (fun _ : ℤ => ℂ) 1 0
+  have hd := (hasFDerivAt_id (0 : Coeff 1)).add
+    ((ev.hasFDerivAt (x := (0 : Coeff 1))).pow 2 |>.smul_const (lp.single 1 0 1 : Coeff 1))
+  change HasFDerivAt quadraticMap _ (0 : Coeff 1) at hd
+  convert hd.fderiv using 1
+  ext z n
+  simp [ev, ContinuousLinearMap.smulRight_apply]
+
+example : ∃ G : RealCoeff 1 → RealCoeff 1,
+    AnalyticAt ℝ G 0 ∧ G 0 = 0 ∧
+    (∀ᶠ y in 𝓝 (0 : RealCoeff 1), G (realRestriction quadraticMap y) = y) ∧
+    (∀ᶠ z in 𝓝 (0 : RealCoeff 1), realRestriction quadraticMap (G z) = z) := by
+  have hu : IsUnit (quadraticAtlas.derivative ⟨0,zero_mem_nonnegativeLocus 1⟩) := by
+    change IsUnit (fderiv ℂ quadraticMap (0 : Coeff 1))
+    rw [quadratic_derivative_zero]
+    exact isUnit_one
+  obtain ⟨G,_,hG,hG0,hl,hr,_⟩ := exists_realRestriction_localInverse_of_nonnegative_atlas
+    (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) quadraticAtlas isOpen_univ
+    (fun x _ => quadratic_real x) (mem_univ _) hu
+  refine ⟨G,?_,?_,?_,?_⟩
+  · simpa [quadraticMap] using hG
+  · simpa [quadraticMap] using hG0
+  · simpa only [quadraticAtlas, map_zero] using hl
+  · simpa [quadraticAtlas, quadraticMap] using hr
+
+end AppendixI4RealChecks
