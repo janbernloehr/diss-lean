@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: Lemma G.1 on the full physical L2 domain
+## Current milestone: G.2 with explicit trace and derivative data
+
+The integration-by-parts estimate behind Lemma G.2 is now proved for the
+actual first Born operator on every interval [0,t], t >= 0, at every nonzero
+complex frequency. `IntervalHermitianFirstBornBound.lean` uses the genuine
+Hermitian induced operator norm, retains both endpoint values, and proves
+the exact sqrt(t) times derivative-L2 term. No continuity of the derivative
+or periodic endpoint condition is assumed. The scalar Cauchy--Schwarz step
+in `OscillatoryIntegralL2.lean` allows arbitrary L2 derivatives, including
+zero-length intervals. The new operator recovers both the existing classical
+operator and the physical L2 operator exactly.
+
+`L2HermitianUniformRemainderBound.lean` proves that a uniform bound B on the
+actual first Born operator gives (1+||phi||_2 exp(||phi||_2) sqrt(t)) B for
+the actual remainder. This holds on the full physical L2 space; on [0,1]
+it gives exactly (1+||phi||_2 exp(||phi||_2)) B.
+
+`ClassicalHermitianTraceL2Bound.lean` combines these results with the explicit
+size S = max(sup ||phi||, ||phi_-'||_2, ||phi_+'||_2), where the pointwise
+potential norm is the coordinate maximum. It proves (2+sqrt(t))/(2|z|) S
+for the first Born operator and 3/(2|z|) (1+c_phi) S for the actual remainder.
+Every physical H1 Fourier pair supplies the regularity premises, without
+any extra assumptions about its representative.
+
+This is a prerequisite for the literal G.2 statement, not a claim that G.2
+is complete. The dissertation specifies the periodic Sobolev norm on printed page 103
+using Fourier weights (1+|2*pi*n|)^s. That definition does not specify
+the norm on arbitrary intervals [0,t] used in G.2. The passages checked
+do not settle the required interval trace comparison.
+The related 2009 author preprint defines the interval Sobolev space on
+printed page 15 but does not resolve that norm comparison there; its result
+numbering differs from the 2014 reference. We do not identify S with the
+printed H1 norm, and assert no source erratum. Next: establish the source's
+interval norm convention and the required trace/derivative comparison,
+including the arbitrary-time scope of the first inequality.
+
+Focused public checks passed for sharp Cauchy--Schwarz scaling on [0,4],
+an affine potential on [0,4] at arbitrary nonzero complex frequency, both
+Born matrix entries at zero frequency, zero time, the exact size of constant
+potentials, all physical H1 Fourier pairs, and the sharper sqrt(t) remainder
+at t=1/4. The full build passed (6502 jobs), all public examples passed,
+and the axiom audit passed for 26362 NLS declarations. The same 21 existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified; this inventory is not a completeness certificate.
+
+## Previous milestone: Lemma G.1 on the full physical L2 domain
 
 Lemma G.1 (printed page 135) is now proved on its full physical L2 domain
 in `SourceLemmaG1.lean`. The estimate uses the actual fundamental-solution

@@ -3069,3 +3069,7 @@ import NLS.FunctionalAnalysis.ContinuousCurveIntegral
 import NLS.ZakharovShabat.L2HermitianFirstBorn
 import NLS.ZakharovShabat.L2HermitianOperatorBound
 import NLS.ZakharovShabat.SourceLemmaG1
+import NLS.ComplexAnalysis.OscillatoryIntegralL2
+import NLS.ZakharovShabat.IntervalHermitianFirstBornBound
+import NLS.ZakharovShabat.L2HermitianUniformRemainderBound
+import NLS.ZakharovShabat.ClassicalHermitianTraceL2Bound

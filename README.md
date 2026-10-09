@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma G.1 is proved for every physical L2 potential,
-using the actual fundamental solution and first Born operator in the Hermitian
-operator norm, with exactly ||phi||_2 exp(||phi||_2). Uniform convergence
-passes the actual square integral to the limit. F.1-F.3 are also proved;
-the required spectral height above p=2 remains open. Lemma G.2 is next
-for comparison with its precise printed constants and H1 norm.
+Latest milestone: the integration-by-parts estimate behind Lemma G.2 now
+holds in the Hermitian operator norm for arbitrary nonnegative time, with
+the exact endpoint and derivative-L2 terms. On [0,1] the actual remainder
+has the printed numerical factors with an explicit supremum/derivative size.
+The comparison with the source's precise H1 norm remains open; G.2 is not
+claimed complete. G.1 is proved on the full physical L2 domain, and F.1-F.3
+are proved. The required spectral height above p=2 also remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

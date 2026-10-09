@@ -579,3 +579,30 @@ terminal first Born norm one half, and the literal coefficient exp(1).
 The full dissertation is still incomplete. Lemma G.2 requires a separate
 comparison of its H1 norm convention, arbitrary time range, and precise
 constants; the existing broader Sobolev bounds do not establish it verbatim.
+
+
+### Lemma G.2: trace and derivative estimate; source norm comparison open
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Cauchy--Schwarz length factor | `integral_norm_le_sqrt_length_mul_L2` | Every t >= 0, arbitrary scalar L2 function; exact sqrt(t). |
+| Integration by parts with L2 derivative | `norm_oscillatoryIntegral_weighted_le_L2` | Absolutely continuous functions; actual endpoint values and square integral of the derivative. |
+| Actual Hermitian first Born operator | `intervalHermitianFirstBornOperator_weighted_le` | Any nonnegative time and any nonzero complex frequency; no matrix norm conversion factor. |
+| Exact existing operator recovery | `intervalHermitianFirstBornOperator_of_continuous`, `intervalHermitianFirstBornOperator_eq_l2` | Equality with the classical operator and with the physical L2 operator of any original representative. |
+| Numerical factor (2+sqrt(t))/(2\|z\|) | `intervalHermitianFirstBornOperator_weighted_le_of_trace_L2_bound` | Explicit common bound on both traces and coordinate derivative L2 norms; not an assumed Sobolev embedding. |
+| Remainder consequence of G.1 | `l2HermitianRemainder_le_of_firstBorn_uniform`, `l2HermitianRemainder_le_of_firstBorn_uniform_unit` | Full physical L2; exact coefficient, with an optional sharper sqrt(t) factor. |
+| Explicit size S | `classicalHermitianFirstBorn_le_traceL2Size`, `classicalHermitianRemainder_le_traceL2Size` | S is exactly max(sup norm(phi), norm(phi_-')_2, norm(phi_+')_2); constants (2+sqrt(t))/(2*abs(z)) and 3/(2*abs(z))(1+c_phi). |
+| Physical H1 inputs | `classicalHermitianRemainder_sobolev_le_traceL2Size` | All physical period-two H1 Fourier pairs; regularity proved, no additional AC or derivative premises. |
+| Printed interval H1 norm | **Unresolved** | Need its precise convention and a trace/derivative comparison on [0,t]. S is not declared equal to that norm. |
+
+The source was checked at printed page 135. Printed page 103 explicitly
+uses the periodic Fourier norm with weights (1+|2*pi*n|)^s; it does not
+define the norm on arbitrary intervals [0,t]. A comparison with the combined
+endpoint/derivative bound may be needed; a constant-one bound on each
+component of S is not presumed. The related author preprint
+[arXiv:0907.3938](https://arxiv.org/pdf/0907.3938), printed page 15, defines
+the interval Sobolev space via distributional derivatives but does not settle
+the required norm comparison in that definition. Its numbering differs from
+the cited 2014 book, which has not been read directly. No source discrepancy
+is asserted by this milestone. Existing coarse Fourier-norm estimates and
+the explicit size S do not establish the literal printed H1 bound.

@@ -38953,3 +38953,75 @@ example (p : ℕ → IntervalPairL2) (u : IntervalPairL2) (z : ℂ) (t : Icc (0:
   (((continuous_curve_squareIntegral t).comp (continuous_l2NormalizedHermitianFirstBorn z)).tendsto u).comp hp
 
 end AppendixG1FullL2Checks
+
+noncomputable section
+open Set MeasureTheory intervalIntegral
+open NLS.LinearVolterra NLS.ComplexAnalysis NLS.ZakharovShabat NLS.Fourier
+namespace AppendixG2TraceChecks
+
+private theorem sqrt_four : Real.sqrt 4 = 2 := by
+  rw [show (4 : ℝ) = 2^2 by norm_num,Real.sqrt_sq (by norm_num)]
+private theorem sqrt_sixteen : Real.sqrt 16 = 4 := by
+  rw [show (16 : ℝ) = 4^2 by norm_num,Real.sqrt_sq (by norm_num)]
+
+-- Sharp Cauchy--Schwarz length factor on an interval longer than one.
+example : (∫ _s in (0 : ℝ)..4, ‖(2 : ℂ)‖) =
+    Real.sqrt 4 * Real.sqrt (∫ _s in (0 : ℝ)..4, ‖(2 : ℂ)‖^2) := by norm_num [sqrt_four,sqrt_sixteen]
+
+-- A genuinely nonconstant potential on [0,4], arbitrary nonzero complex frequency.
+example (z : ℂ) (hz : z ≠ 0) :
+    Real.exp (-(|z.im| * 4))*
+      ‖intervalHermitianFirstBornOperator (fun s => ((s : ℂ),(0 : ℂ))) z 4‖ ≤ 4/‖z‖ := by
+  have hf : AbsolutelyContinuousOnInterval (fun s : ℝ => (s : ℂ)) 0 4 :=
+    Complex.ofRealCLM.contDiff.contDiffOn.absolutelyContinuousOnInterval
+  have hg : AbsolutelyContinuousOnInterval (fun _ : ℝ => (0 : ℂ)) 0 4 :=
+    contDiff_const.contDiffOn.absolutelyContinuousOnInterval
+  have hd : deriv (fun s : ℝ => (s : ℂ)) = fun _ => (1 : ℂ) := by
+    funext s
+    exact Complex.ofRealCLM.hasDerivAt.deriv
+  have hdf : MemLp (deriv (fun s : ℝ => (s : ℂ))) 2
+      (volume.restrict (Ioc (0 : ℝ) 4)) := by rw [hd]; exact memLp_const 1
+  have hdg : MemLp (deriv (fun _ : ℝ => (0 : ℂ))) 2
+      (volume.restrict (Ioc (0 : ℝ) 4)) := by simp
+  have h := intervalHermitianFirstBornOperator_weighted_le
+    (fun s => ((s : ℂ),(0 : ℂ))) z hz 4 (by norm_num) hf hg hdf hdg
+  norm_num [hd,Prod.norm_def,sqrt_four] at h
+  convert h using 1; ring
+
+-- Both off-diagonal entries are retained, with their actual Hermitian norm.
+example : ‖intervalHermitianFirstBornOperator (fun _ => ((1 : ℂ),(2 : ℂ))) 0 4‖ = 8 := by
+  norm_num [norm_intervalHermitianFirstBornOperator,oscillatoryIntegral,oscillatoryKernel]
+
+-- Zero time is covered, including the zero derivative energy.
+example (φ : ℝ → ℂ × ℂ) (z : ℂ) : intervalHermitianFirstBornOperator φ z 0 = 0 := by
+  apply norm_eq_zero.mp
+  simp [norm_intervalHermitianFirstBornOperator,oscillatoryIntegral]
+
+-- The explicit size reduces exactly to the supremum norm on a constant potential.
+example (v : ℂ × ℂ) : classicalTraceL2Size (ContinuousMap.const _ v) = ‖v‖ := by
+  have hn : ‖(ContinuousMap.const (Icc (0 : ℝ) 1) v)‖ = ‖v‖ := by
+    apply le_antisymm
+    · exact (ContinuousMap.norm_le _ (norm_nonneg v)).mpr (fun _ => le_rfl)
+    · exact (ContinuousMap.const (Icc (0 : ℝ) 1) v).norm_coe_le_norm ⟨0,by norm_num,by norm_num⟩
+  simp [classicalTraceL2Size,NLS.LinearVolterra.extend,hn]
+
+-- Every physical H1 Fourier potential instantiates the remainder estimate.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (hz : z ≠ 0)
+    (t : Icc (0 : ℝ) 1) :
+    classicalNormalizedHermitianRemainder (classicalSobolevPotential a) z t ≤
+      3/(2*‖z‖)*(1+classicalPotentialL2Norm (classicalSobolevPotential a)*
+        Real.exp (classicalPotentialL2Norm (classicalSobolevPotential a)))*
+        classicalTraceL2Size (classicalSobolevPotential a) :=
+  classicalHermitianRemainder_sobolev_le_traceL2Size a z hz t
+
+-- The sharper sqrt(time) consequence remains valid for arbitrary L2 classes.
+example (φ : IntervalPairL2) (z : ℂ) (B : ℝ) (hB : 0 ≤ B)
+    (hF : ∀ s : Icc (0 : ℝ) 1, l2NormalizedHermitianFirstBorn φ z s ≤ B) :
+    l2NormalizedHermitianRemainder φ z ⟨1/4,by norm_num,by norm_num⟩ ≤
+      (1+‖φ‖*Real.exp ‖φ‖/2)*B := by
+  have h := l2HermitianRemainder_le_of_firstBorn_uniform φ z B hB hF
+    ⟨1/4,by norm_num,by norm_num⟩
+  norm_num [sqrt_four] at h
+  convert h using 1; ring
+
+end AppendixG2TraceChecks
