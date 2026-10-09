@@ -919,8 +919,31 @@ are included. The conclusion concerns inverses of local complex analytic
 extensions, and agreement with the original cone map is proved. Only local
 extensions are required; they need not be chosen as one global map.
 
-The original all-real-weight formulation and restriction of the inverse
-to real sequence spaces are still pending. Accordingly I.4 is partial,
-not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
+Weighted transport is proved below. Restriction of the inverse to real
+sequence spaces and the remaining real-analytic formulation are still
+pending. Accordingly I.4 is partial, not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
 and optional original m=1 obligations retain their status. Source-label
 inventories and declaration counts do not certify completeness.
+
+
+### Proposition I.4: original weighted spaces at every real order
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Original positive cone | `WeightedCoeff.mem_nonnegativeLocus_iff`, `nonnegativeHomeomorph` | Positivity of raw coefficients is equivalent to positivity after weighting; the full cone, including zero, is identified homeomorphically. |
+| Local extension transport | `localAnalyticExtensions_transport`, `WeightedCoeff.HasLocalAnalyticExtensions.toCoeff` | Local germs are transported by compatible continuous parameter maps and ambient complex linear coordinates; no global extension assumption. |
+| Weighted Fredholm density | `WeightedCoeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift` | Every positive weight and finite Banach exponent; compactness only at original parameters, on the original operator space. |
+| Intrinsic weighted derivative | `WeightedCoeff.NonnegativeAnalyticAtlas.derivative_eq`, `derivative_hasLocalAnalyticExtensions` | Original weighted derivatives are independent of local extension choices and locally analytic as operators. |
+| One actual inverse as seed | `WeightedCoeff.open_dense_localInversePoints_of_nonnegative_atlas` | A relatively open dense local-inverse locus from one two-sided local inverse and compact derivative minus identity. |
+| Original-space inverse identities | `WeightedCoeff.open_dense_localInverse_of_nonnegative_atlas` | The inverse maps the weighted space to itself; both extension identities, original cone-map recovery, and inverse derivative are proved. |
+| Arbitrary real Sobolev order | `AppendixI4WeightedChecks` public examples | Instantiation at `Weight.sobolev s` for every real s, p=1 at zero, and arbitrary finite exponent; no nonnegative-order restriction. |
+| Nonconstant boundary check | `AppendixI4WeightedChecks.rawCoordinateFamily` | The raw-coordinate scalar operator family is singular at zero and has an open dense invertible locus for every positive weight. |
+
+All weighted statements use raw coefficients and the existing weighted norm.
+No comparison constants, boundedness assumption on the weight, or compactness
+hypothesis off the nonnegative cone have been added. The local inverses are
+currently complex ambient inverses of the original weighted extensions.
+Restriction to real sequence spaces and the remaining real-analytic source
+formulation are the next obligations. I.4 is not yet marked fully proved.
+The previously recorded G.2, p>2 spectral-height, and optional original m=1
+obligations remain open; counts do not certify completeness.

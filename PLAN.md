@@ -1,6 +1,56 @@
 # Implementation plan
 
-## Latest progress: I.4 density on the nonnegative cone
+## Latest progress: I.4 on every positive weighted cone
+
+The cone density and local-inverse construction for I.4 now applies to
+`WeightedCoeff w p` for every positive weight w and every finite Banach
+exponent 1<=p<infinity. In particular, w may be `Weight.sobolev s` for any
+real s, including negative and fractional orders. The theorem uses the
+original weighted norms and raw coefficient values.
+
+`WeightedNonnegativeActions.lean` defines positivity on raw coefficients
+and proves that the weighting isometry preserves and reflects this cone.
+Its restriction is a homeomorphism of the entire cones, retaining zero
+and arbitrary zero coordinates. No lower or upper global bound on the
+weight is assumed.
+
+`LocalAnalyticExtensionTransport.lean` gives a general transport theorem
+for local extension germs and a homeomorphism theorem for relative
+openness and density. `WeightedNonnegativeAnalyticFredholm.lean` applies
+them to the source parameters. The operators themselves remain on their
+original target Banach space; no operator norm comparison is introduced.
+Compactness is required only at the original cone parameters, and only
+local complex analytic extensions are used.
+
+`WeightedNonnegativeAnalyticAtlas.lean` proves weighted cone-germ
+uniqueness, independence of the derivative and inverse locus from the
+chosen atlas, and local analytic dependence of the derivative. One actual
+two-sided local inverse, together with compact derivative minus identity,
+gives a relatively open dense local-inverse locus. At its points the
+constructed inverse maps the original weighted space to itself, satisfies
+both ambient extension identities, recovers the original cone map as a
+relative germ, and has the inverse derivative.
+
+Focused examples cover raw positivity, zero-boundary uniqueness at p=1
+for every real Sobolev order, the identity atlas, the theorem at arbitrary
+finite exponent, and an actual weighted inverse at zero. A nonconstant
+raw-coordinate operator family is singular at zero but has an open dense
+invertible locus for every positive weight.
+
+Next: prove restriction of the local inverses to real sequence spaces and
+close the remaining real-analytic source formulation of I.4. The present
+inverses are complex ambient inverses; their cone-map recovery is proved.
+The printed Schur-sign audit remains unchanged. G.2's arbitrary-time local
+norm, the required p>2 spectral height, and the optional original m=1
+sharpening remain open. The dissertation is incomplete.
+
+Validation: all focused modules and the standalone public probe passed.
+The full project check passed with 6,549 build jobs, all public examples,
+and the axiom audit for 27,054 NLS declarations. The 21 existing warnings
+are unchanged, with none introduced. The source inventory verified 156
+candidate labels; these counts do not certify dissertation completeness.
+
+## Previous milestone: I.4 density on the nonnegative cone
 
 The main density argument for I.4 now works in the relative topology of
 the nonnegative l^p cone for every finite Banach exponent, including p=1

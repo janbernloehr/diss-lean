@@ -40023,3 +40023,110 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
   open_dense_localInversePoints_of_nonnegative_atlas hp a hU hconn hc hs
 
 end AppendixI4ConeChecks
+
+
+noncomputable section
+open Set Filter Topology NLS
+open scoped ENNReal
+namespace AppendixI4WeightedChecks
+
+example (w : Weight) {p : ℝ≥0∞} [Fact (1 ≤ p)] (a : WeightedCoeff w p) :
+    a ∈ WeightedCoeff.nonnegativeLocus w p ↔
+      WeightedCoeff.weightEquiv w p a ∈ Coeff.nonnegativeLocus p :=
+  WeightedCoeff.mem_nonnegativeLocus_iff w p a
+
+example (s : ℝ) {f g : WeightedCoeff (Weight.sobolev s) 1 → ℂ}
+    (hf : AnalyticAt ℂ f 0) (hg : AnalyticAt ℂ g 0)
+    (he : (fun y : WeightedCoeff.nonnegativeLocus (Weight.sobolev s) 1 => f y.val)
+      =ᶠ[𝓝 ⟨0,WeightedCoeff.zero_mem_nonnegativeLocus _ _⟩] (fun y => g y.val)) :
+    f =ᶠ[𝓝 0] g :=
+  WeightedCoeff.eventuallyEq_of_nonnegative_restriction (by norm_num) hf hg he
+
+def identityAtlas (w : Weight) (p : ℝ≥0∞) [Fact (1 ≤ p)] :
+    WeightedCoeff.NonnegativeAnalyticAtlas
+      (fun x : WeightedCoeff.nonnegativeLocus w p => x.val) Set.univ where
+  extension _ := id
+  analyticAt _ _ := analyticAt_id
+  agreement _ _ := Filter.EventuallyEq.rfl
+
+example (w : Weight) {p : ℝ≥0∞} [Fact (1 ≤ p)] :
+    (identityAtlas w p).localInversePoints = Set.univ := by
+  rw [WeightedCoeff.NonnegativeAnalyticAtlas.localInversePoints_eq]
+  ext x
+  simp only [mem_ofPred_eq,mem_univ,true_and,iff_true]
+  change IsUnit (fderiv ℂ id x.val)
+  rw [fderiv_id]
+  exact isUnit_one
+
+example (s : ℝ) {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {f : WeightedCoeff.nonnegativeLocus (Weight.sobolev s) p → WeightedCoeff (Weight.sobolev s) p}
+    {U : Set (WeightedCoeff.nonnegativeLocus (Weight.sobolev s) p)}
+    (a : WeightedCoeff.NonnegativeAnalyticAtlas f U) (hU : IsOpen U) (hconn : IsPreconnected U)
+    (hc : ∀ x ∈ U, IsCompactOperator
+      (a.derivative x-1 : WeightedCoeff (Weight.sobolev s) p →L[ℂ] WeightedCoeff (Weight.sobolev s) p))
+    (hs : a.localInversePoints.Nonempty) :
+    IsOpen a.localInversePoints ∧ U ⊆ closure a.localInversePoints :=
+  WeightedCoeff.open_dense_localInversePoints_of_nonnegative_atlas hp a hU hconn hc hs
+
+-- The inverse conclusion is expressed in the weighted space itself.
+example (s : ℝ) : ∃ G : WeightedCoeff (Weight.sobolev s) 1 → WeightedCoeff (Weight.sobolev s) 1,
+    AnalyticAt ℂ G 0 ∧ G 0 = 0 ∧
+    (∀ᶠ y : WeightedCoeff.nonnegativeLocus (Weight.sobolev s) 1 in
+      𝓝 ⟨0,WeightedCoeff.zero_mem_nonnegativeLocus _ _⟩, G y.val = y.val) := by
+  let w := Weight.sobolev s
+  let e := WeightedCoeff.nonnegativeHomeomorph w 1
+  let : PreconnectedSpace (Coeff.nonnegativeLocus 1) :=
+    isPreconnected_iff_preconnectedSpace.mp (Coeff.convex_nonnegativeLocus 1).isPreconnected
+  have hconn : IsPreconnected (Set.univ : Set (WeightedCoeff.nonnegativeLocus w 1)) := by
+    have hh := e.isPreconnected_preimage.mpr (isPreconnected_univ :
+      IsPreconnected (Set.univ : Set (Coeff.nonnegativeLocus 1)))
+    simpa only [preimage_univ] using hh
+  have hD (x : WeightedCoeff.nonnegativeLocus w 1) : (identityAtlas w 1).derivative x = 1 := by
+    change fderiv ℂ id x.val = _
+    rw [fderiv_id]
+    rfl
+  have hh := WeightedCoeff.open_dense_localInverse_of_nonnegative_atlas
+    (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) (identityAtlas w 1) isOpen_univ hconn
+    (fun x _ => by rw [hD,sub_self]; exact isCompactOperator_zero)
+    ⟨⟨0,WeightedCoeff.zero_mem_nonnegativeLocus w 1⟩,mem_univ _,by rw [hD]; exact isUnit_one⟩
+  obtain ⟨G,hG,hz,hl,_⟩ := hh.2.2 ⟨0,WeightedCoeff.zero_mem_nonnegativeLocus w 1⟩
+    (mem_univ _) (by rw [hD]; exact isUnit_one)
+  exact ⟨G,hG,hz,hl⟩
+
+-- Raw-coordinate dependence, with no bounds on the positive weight.
+def rawCoordinateFamily (w : Weight) (x : WeightedCoeff.nonnegativeLocus w 1) : ℂ →L[ℂ] ℂ :=
+  x.val.val 0 • 1
+
+example (w : Weight) :
+    ¬IsUnit (rawCoordinateFamily w ⟨0,WeightedCoeff.zero_mem_nonnegativeLocus w 1⟩) := by
+  intro hu
+  have hinj := (ContinuousLinearMap.isUnit_iff_bijective.mp hu).injective
+  have he : (1 : ℂ) = 0 := hinj (by simp [rawCoordinateFamily])
+  exact one_ne_zero he
+
+example (w : Weight) :
+    IsOpen {x | IsUnit (rawCoordinateFamily w x)} ∧ Dense {x | IsUnit (rawCoordinateFamily w x)} := by
+  let e := WeightedCoeff.nonnegativeHomeomorph w 1
+  let : PreconnectedSpace (Coeff.nonnegativeLocus 1) :=
+    isPreconnected_iff_preconnectedSpace.mp (Coeff.convex_nonnegativeLocus 1).isPreconnected
+  have hconn : IsPreconnected (Set.univ : Set (WeightedCoeff.nonnegativeLocus w 1)) := by
+    have hh := e.isPreconnected_preimage.mpr (isPreconnected_univ :
+      IsPreconnected (Set.univ : Set (Coeff.nonnegativeLocus 1)))
+    simpa only [preimage_univ] using hh
+  have ha : WeightedCoeff.HasLocalAnalyticExtensions (rawCoordinateFamily w) Set.univ := by
+    intro x _
+    refine ⟨fun z : WeightedCoeff w 1 => z.val 0 • (1 : ℂ →L[ℂ] ℂ),?_,Filter.EventuallyEq.rfl⟩
+    exact ((WeightedCoeff.evalCLM w 1 0).analyticAt x.val).smul analyticAt_const
+  let b := WeightedCoeff.ofFinsupp w 1 (Finsupp.single 0 1)
+  have hb : b ∈ WeightedCoeff.nonnegativeLocus w 1 := by
+    intro n
+    by_cases hn : n = 0 <;> simp [b,WeightedCoeff.ofFinsupp_apply,hn]
+  have hd := WeightedCoeff.open_dense_isUnit_of_nonnegative_analytic_compact_shift
+    (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) isOpen_univ hconn ha (c := 1) one_ne_zero
+    (fun x _ => isCompactOperator_of_locallyCompactSpace_dom _)
+    ⟨⟨b,hb⟩,mem_univ _,by simp [rawCoordinateFamily,b,WeightedCoeff.ofFinsupp_apply]⟩
+  refine ⟨by simpa only [mem_univ,true_and] using hd.1,?_⟩
+  intro x
+  simpa only [mem_univ,true_and] using hd.2 (mem_univ x)
+
+end AppendixI4WeightedChecks

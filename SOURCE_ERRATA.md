@@ -20,12 +20,13 @@ cone map. Compactness is required only at cone parameters. No global
 complex extension or ambient interior assumption has been inserted.
 Derivative and local-inverse loci are independent of the extension atlas.
 
-The current theorem supplies ambient complex local inverses, together with
-their left-inverse identity on the original cone map, at all points of a
-relatively open dense locus. Transport to all real Sobolev weights and
-restriction of the inverses to real sequence spaces remain to complete
-the original real-source formulation. The domain interpretation itself
-is not recorded as a source error.
+The current theorem supplies ambient complex local inverses on the original
+weighted spaces, together with their left-inverse identity on the original
+cone map, at all points of a relatively open dense locus. This now covers
+every positive weight and every real Sobolev order at finite exponent.
+Restriction of the inverses to real sequence spaces and the remaining
+real-analytic source formulation are still pending. The domain interpretation
+and weighting transport are not recorded as source errors.
 
 ## Lemma I.3: finite exponents and the cutoff convention
 
@@ -49,7 +50,7 @@ The weighted theorem uses raw coefficients for pointwise boundedness and
 the exact weighted norm for tails. The compact-operator consequence gives
 small full output tails in operator norm, as needed at the start of I.4.
 The relative-cone density argument and the displayed signs are audited above;
-weighted transport and real inverse restriction remain open.
+real inverse restriction remains open; weighted transport is now proved.
 
 ## Lemma I.1: missing lower-block invertibility hypothesis
 

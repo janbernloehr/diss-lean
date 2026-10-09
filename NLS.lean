@@ -3116,3 +3116,7 @@ import NLS.FunctionalAnalysis.NonnegativeAnalyticFredholm
 import NLS.ComplexAnalysis.AnalyticLocalInverseCriterion
 import NLS.SequenceSpaces.NonnegativeAnalyticAtlas
 import NLS.FunctionalAnalysis.SourcePropositionI4Audit
+import NLS.ComplexAnalysis.LocalAnalyticExtensionTransport
+import NLS.SequenceSpaces.WeightedNonnegativeActions
+import NLS.FunctionalAnalysis.WeightedNonnegativeAnalyticFredholm
+import NLS.SequenceSpaces.WeightedNonnegativeAnalyticAtlas
