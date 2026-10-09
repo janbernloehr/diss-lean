@@ -894,7 +894,33 @@ obligations remain open. Counts do not certify completeness.
 
 The printed I.3 is proved unchanged. The operator consequence supplies the
 initial tail estimate for I.4; it does not claim I.4's full real-analytic
-or generic local-diffeomorphism conclusion. That is the next audit, together
-with its Schur signs. G.2's local-norm, required p>2 spectral-height, and
+or generic local-diffeomorphism conclusion. The relative-cone argument and Schur signs are covered below. G.2's local-norm, required p>2 spectral-height, and
 optional original m=1 obligations remain open. Counts do not certify
 completeness.
+
+
+### Proposition I.4: relative-cone density and the Schur signs
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Boundary uniqueness | `eventuallyEq_of_nonnegative_agreement`, `eventuallyEq_of_nonnegative_restriction` | All finite Banach exponents; relative agreement on nonnegative sequences determines an ambient holomorphic germ, including at zero. |
+| Relative density | `subset_closure_of_nonnegative_local_analytic_nonvanishing` | Local scalar criteria on the cone subtype; preconnected source domain, with no ambient-interior assumption. |
+| Local compact Fredholm families | `open_dense_isUnit_of_nonnegative_analytic_compact_shift` | Local operator-valued extensions; compactness only at original cone parameters; one invertible point gives a relatively open dense invertible locus. |
+| Intrinsic complexified derivative | `NonnegativeAnalyticAtlas.derivative_eq`, `derivative_hasLocalAnalyticExtensions` | Derivative independence and local analytic dependence follow from cone uniqueness and original-map agreement. |
+| Actual local-inverse seed | `isUnit_fderiv_iff_localInverse`, `open_dense_localInversePoints_of_nonnegative_atlas` | One actual two-sided analytic local inverse implies a relatively open dense set of such points. |
+| Original cone-map recovery | `open_dense_localInverse_of_nonnegative_atlas` | Both ambient extension inverse identities, inverse derivative, and the original map's left-inverse identity as a relative germ. |
+| Atlas-independent locus | `NonnegativeAnalyticAtlas.localInversePoints_eq_of_atlas` | Changing local analytic extensions does not change which source points have local inverses. |
+| Printed Schur signs | `sourceI4_printedSchur_false_positive`, `sourceI4_correctSchur_zero` | Finite-dimensional false positive for the displayed determinant; the corrected signs detect singularity. This does not refute I.4's conclusion. |
+
+The source of these new theorems is the nonnegative cone in unweighted
+l^p for every 1<=p<infinity. The openness and closure statements use its
+relative topology, so the zero boundary and arbitrary zero coordinates
+are included. The conclusion concerns inverses of local complex analytic
+extensions, and agreement with the original cone map is proved. Only local
+extensions are required; they need not be chosen as one global map.
+
+The original all-real-weight formulation and restriction of the inverse
+to real sequence spaces are still pending. Accordingly I.4 is partial,
+not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
+and optional original m=1 obligations retain their status. Source-label
+inventories and declaration counts do not certify completeness.

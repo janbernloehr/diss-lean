@@ -3111,3 +3111,8 @@ import NLS.SequenceSpaces.TotalBoundedTails
 import NLS.SequenceSpaces.SourceLemmaI3
 import NLS.SequenceSpaces.WeightedSourceLemmaI3
 import NLS.SequenceSpaces.SourceCompactProjection
+import NLS.SequenceSpaces.NonnegativeAnalyticDensity
+import NLS.FunctionalAnalysis.NonnegativeAnalyticFredholm
+import NLS.ComplexAnalysis.AnalyticLocalInverseCriterion
+import NLS.SequenceSpaces.NonnegativeAnalyticAtlas
+import NLS.FunctionalAnalysis.SourcePropositionI4Audit

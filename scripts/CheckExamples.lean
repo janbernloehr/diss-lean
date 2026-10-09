@@ -39934,3 +39934,92 @@ example (T : Coeff 1 →L[ℂ] Coeff 1) (hT : IsCompactOperator T) :
   Coeff.tendsto_sourceI3Tail_comp (by simp) T hT
 
 end AppendixI3FullSetChecks
+
+
+noncomputable section
+open Set Filter Topology NLS NLS.Coeff
+open scoped ENNReal
+namespace AppendixI4ConeChecks
+
+-- The endpoint and the zero boundary are both genuine parameters.
+example {f g : Coeff 1 → ℂ}
+    (hf : AnalyticAt ℂ f 0) (hg : AnalyticAt ℂ g 0)
+    (he : (fun y : nonnegativeLocus 1 => f y.val) =ᶠ[𝓝 ⟨0,zero_mem_nonnegativeLocus 1⟩]
+      (fun y => g y.val)) : f =ᶠ[𝓝 0] g :=
+  eventuallyEq_of_nonnegative_restriction (by norm_num) hf hg he
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {f : nonnegativeLocus p → Coeff p} {U : Set (nonnegativeLocus p)}
+    (a b : NonnegativeAnalyticAtlas f U) {x : nonnegativeLocus p} (hx : x ∈ U) :
+    a.derivative x = b.derivative x := a.derivative_eq hp b hx
+
+example :
+    (NLS.SchurComplement.sourceI4PrintedSchur 0 1 1 0).toLinearMap.det ≠ 0 ∧
+    ¬IsUnit (1+NLS.SchurComplement.block (0 : ℂ →L[ℂ] ℂ) 1 1 (0 : ℂ →L[ℂ] ℂ)) :=
+  NLS.SchurComplement.sourceI4_printedSchur_false_positive
+
+def identityAtlas : NonnegativeAnalyticAtlas
+    (fun x : nonnegativeLocus 1 => x.val) Set.univ where
+  extension _ := id
+  analyticAt _ _ := analyticAt_id
+  agreement _ _ := Filter.EventuallyEq.rfl
+
+example : identityAtlas.derivative ⟨0,zero_mem_nonnegativeLocus 1⟩ = 1 := by
+  change fderiv ℂ id _ = _
+  rw [fderiv_id]
+  rfl
+
+example :
+    ∀ x : nonnegativeLocus 1, ∃ G : Coeff 1 → Coeff 1,
+      AnalyticAt ℂ G x.val ∧ G x.val = x.val ∧
+      (∀ᶠ y in 𝓝 x, G y.val = y.val) := by
+  let : PreconnectedSpace (nonnegativeLocus 1) :=
+    isPreconnected_iff_preconnectedSpace.mp (convex_nonnegativeLocus 1).isPreconnected
+  have hD (x : nonnegativeLocus 1) : identityAtlas.derivative x = 1 := by
+    change fderiv ℂ id _ = _
+    rw [fderiv_id]
+    rfl
+  have h := open_dense_localInverse_of_nonnegative_atlas (by norm_num : (1 : ℝ≥0∞) ≠ ⊤)
+    identityAtlas isOpen_univ isPreconnected_univ (fun x _ => by rw [hD,sub_self]; exact isCompactOperator_zero)
+    ⟨⟨0,zero_mem_nonnegativeLocus 1⟩,mem_univ _,by rw [hD]; exact isUnit_one⟩
+  intro x
+  obtain ⟨G,hG,hx,hl,_⟩ := h.2.2 x (mem_univ _) (by rw [hD]; exact isUnit_one)
+  exact ⟨G,hG,hx,hl⟩
+
+-- A nonconstant family is singular at the boundary but invertible elsewhere.
+def coordinateFamily (x : nonnegativeLocus 1) : ℂ →L[ℂ] ℂ := x.val 0 • 1
+
+example : ¬IsUnit (coordinateFamily ⟨0,zero_mem_nonnegativeLocus 1⟩) := by
+  intro hu
+  have hinj := (ContinuousLinearMap.isUnit_iff_bijective.mp hu).injective
+  have he : (1 : ℂ) = 0 := hinj (by simp [coordinateFamily])
+  exact one_ne_zero he
+
+example : IsOpen {x : nonnegativeLocus 1 | IsUnit (coordinateFamily x)} ∧
+    Dense {x : nonnegativeLocus 1 | IsUnit (coordinateFamily x)} := by
+  let : PreconnectedSpace (nonnegativeLocus 1) :=
+    isPreconnected_iff_preconnectedSpace.mp (convex_nonnegativeLocus 1).isPreconnected
+  have ha : HasLocalAnalyticExtensions coordinateFamily Set.univ := by
+    intro x _
+    refine ⟨fun z : Coeff 1 => z 0 • (1 : ℂ →L[ℂ] ℂ),?_,Filter.EventuallyEq.rfl⟩
+    exact ((lp.evalCLM ℂ (fun _ : ℤ => ℂ) 1 0).analyticAt x.val).smul analyticAt_const
+  have hp : (lp.single 1 0 1 : Coeff 1) ∈ nonnegativeLocus 1 := by
+    intro n
+    by_cases hn : n = 0 <;> simp [lp.single_apply,hn]
+  have h := open_dense_isUnit_of_nonnegative_analytic_compact_shift
+    (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) isOpen_univ isPreconnected_univ ha
+    (c := 1) one_ne_zero (fun x _ => isCompactOperator_of_locallyCompactSpace_dom _)
+    ⟨⟨lp.single 1 0 1,hp⟩,mem_univ _,by simp [coordinateFamily,lp.single_apply]⟩
+  refine ⟨by simpa only [mem_univ,true_and] using h.1,?_⟩
+  intro x
+  simpa only [mem_univ,true_and] using h.2 (mem_univ x)
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {f : nonnegativeLocus p → Coeff p} {U : Set (nonnegativeLocus p)}
+    (a : NonnegativeAnalyticAtlas f U) (hU : IsOpen U) (hconn : IsPreconnected U)
+    (hc : ∀ x ∈ U, IsCompactOperator (a.derivative x - 1 : Coeff p →L[ℂ] Coeff p))
+    (hs : a.localInversePoints.Nonempty) :
+    IsOpen a.localInversePoints ∧ U ⊆ closure a.localInversePoints :=
+  open_dense_localInversePoints_of_nonnegative_atlas hp a hU hconn hc hs
+
+end AppendixI4ConeChecks

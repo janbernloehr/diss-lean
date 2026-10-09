@@ -1,5 +1,32 @@
 # Source discrepancies
 
+## Proposition I.4: reversed signs in the displayed Schur block
+
+Source: dissertation, printed page 140, checked in the rendered PDF.
+The proof displays Id-A+B*(Id+D)^(-1)*C. For the decomposition of
+Id+T, the correct Schur block is Id+A-B*(Id+D)^(-1)*C, as in I.1.
+
+Take A=D=0 and B=C=Id on C. The printed block is 2*Id and has nonzero
+determinant. The full operator sends (x,y) to (x+y,x+y), so it is singular,
+even though norm(D)=0<1. `sourceI4_printedSchur_false_positive` proves
+this false positive, and `sourceI4_correctSchur_zero` proves that the
+corrected block is zero. This is an error in the proof formula, not a
+counterexample to Proposition I.4's generic local-invertibility statement.
+
+The source domain is relatively open in the nonnegative sequence cone,
+which includes zero and other boundary points. The new density argument
+uses that relative topology and local analytic extensions of the original
+cone map. Compactness is required only at cone parameters. No global
+complex extension or ambient interior assumption has been inserted.
+Derivative and local-inverse loci are independent of the extension atlas.
+
+The current theorem supplies ambient complex local inverses, together with
+their left-inverse identity on the original cone map, at all points of a
+relatively open dense locus. Transport to all real Sobolev weights and
+restriction of the inverses to real sequence spaces remain to complete
+the original real-source formulation. The domain interpretation itself
+is not recorded as a source error.
+
 ## Lemma I.3: finite exponents and the cutoff convention
 
 Source: dissertation, printed page 140, checked in the rendered PDF.
@@ -21,7 +48,8 @@ checks, not counterexamples to the printed statement.
 The weighted theorem uses raw coefficients for pointwise boundedness and
 the exact weighted norm for tails. The compact-operator consequence gives
 small full output tails in operator norm, as needed at the start of I.4.
-The rest of I.4 and its displayed signs remain a separate audit.
+The relative-cone density argument and the displayed signs are audited above;
+weighted transport and real inverse restriction remain open.
 
 ## Lemma I.1: missing lower-block invertibility hypothesis
 
@@ -52,7 +80,7 @@ the Schur expression is Id and has determinant one, but Id+T kills the
 second coordinate. `sourceCorollaryI2_boundary_counterexample` formalizes
 this boundary example; it is not a counterexample to the printed I.2.
 
-I.4's later displayed Schur formula has not yet been audited in this step.
+I.4's later displayed Schur formula has a separate sign error, audited above.
 
 ## Corollary H.2: physical interpretation on the entire H^m source
 

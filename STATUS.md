@@ -1,6 +1,60 @@
 # Implementation status
 
-## Current milestone: the full I.3 compactness criterion
+## Current milestone: I.4 density on the nonnegative cone
+
+The main density argument for I.4 now works in the relative topology of
+the nonnegative l^p cone for every finite Banach exponent, including p=1
+and the zero boundary. `NonnegativeAnalyticDensity.lean` proves uniqueness
+of ambient analytic germs from relative cone agreement, then propagates
+local scalar nonvanishing across a preconnected relatively open domain.
+No ambient interior of the cone is assumed.
+
+`NonnegativeAnalyticFredholm.lean` uses local analytic operator extensions
+and local Schur determinants. Compactness is required only at the original
+nonnegative parameters. Neither a global complex extension nor compactness
+throughout a complex neighborhood is assumed. A single invertible member
+gives a relatively open dense set of invertible members.
+
+`NonnegativeAnalyticAtlas.lean` applies this result to derivatives of maps
+on the cone. Local extensions agree with the original map as relative
+germs; cone uniqueness makes their derivatives and local-inverse loci
+independent of the atlas. Nearby derivatives are derivatives of a fixed
+local extension, so operator-valued analyticity is proved rather than
+assumed separately. `AnalyticLocalInverseCriterion.lean` proves that a
+two-sided analytic local inverse is equivalent to an invertible derivative.
+Thus one actual local inverse suffices for the density theorem.
+
+At every point in this open dense locus, the implementation supplies a
+two-sided ambient analytic inverse, its inverse derivative, and a left
+inverse identity for the original cone map. At a boundary point the
+ambient inverse is the inverse of the extension. A cone neighborhood is
+not being asserted to map onto an ambient open set.
+
+`SourcePropositionI4Audit.lean` verifies a sign error in the displayed
+Schur block on page 140. With A=D=0 and B=C=Id, the printed block is 2*Id,
+but the full operator has two equal rows and is singular. The corrected
+block Id+A-B*(Id+D)^(-1)*C is zero, as required. This refutes the displayed
+proof criterion, not the generic-invertibility proposition.
+
+The focused public probe checks cone-germ uniqueness at zero for p=1,
+atlas-independent derivatives at arbitrary finite p, the identity map's
+actual inverses on the whole cone, a nonconstant scalar operator family
+singular at zero with an open dense invertible locus, and the sign audit.
+
+Next: transport this construction to the original weighted sequence spaces
+for all real Sobolev orders and prove restriction of the local inverses to
+real sequence spaces. The new results use local holomorphic extensions;
+they do not yet close every part of the printed real-analytic formulation.
+G.2's arbitrary-time local norm, the required p>2 spectral height, and the
+optional original m=1 sharpening remain open. The dissertation is incomplete.
+
+Validation: focused modules and the standalone public probe passed. The full
+project check passed with 6,545 build jobs, all public examples, and the axiom
+audit for 27,009 NLS declarations. The 21 existing warnings are unchanged,
+with none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: the full I.3 compactness criterion
 
 `SourceLemmaI3.lean` proves both directions of the printed total-boundedness
 criterion for arbitrary subsets of l^p and every finite Banach exponent

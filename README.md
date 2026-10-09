@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: I.3 is proved for arbitrary sets at every finite
-exponent, with pointwise bounds and uniformly small symmetric tails.
-The criterion also holds for every positive weight, including all real
-Sobolev orders. Compact operators have uniformly small full output tails
-in operator norm. I.4's real-source formulation and printed Schur signs
-are next. G.2's arbitrary-time local norm and the required spectral height
-above p=2 remain open.
+Latest milestone: I.4's generic-invertibility argument now works in the
+relative topology of the nonnegative l^p cone, including its zero boundary.
+Local analytic extensions give intrinsic derivatives and actual two-sided
+inverses at an open dense set of points. The printed Schur-sign error is
+formally verified. Weighted transport and real inverse restriction remain
+for the full I.4 source statement. G.2's arbitrary-time local norm and the
+required spectral height above p=2 also remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
