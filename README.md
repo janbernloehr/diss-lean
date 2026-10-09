@@ -5,14 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: finite Fourier vectors now prove that the actual free
-resolvent norm from lp to l1 needs a coefficient growing with p. Its norm
-at -i2^P lies between P/48 and 2P+2^(-P); the constant-eight estimate fails
-for integer P>240. This rules out one route to the printed periodic height,
-which remains unresolved above p=4. The test points themselves are in the
-free periodic resolvent set. Real-type finite-gap spatial analyticity
-remains proved. G.2's norm remains unresolved, and the proposed all-p
-boundary-height correction remains separate from the refuted formula.
+Latest milestone: the squared-resolvent criterion now retains the product
+of the two component norms. This gives a geometric-mean spectral-height
+bound at every finite exponent and proves the original printed height
+for sources satisfying an explicit component-imbalance condition. Checked
+examples at p=256 have both components nonzero, including a parameter
+where the old Neumann test fails and the new test proves invertibility.
+The unrestricted printed periodic height remains unresolved above p=4.
+Real-type finite-gap spatial analyticity remains proved. G.2's norm is
+unresolved, and the proposed all-p boundary-height correction remains
+separate from the refuted formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

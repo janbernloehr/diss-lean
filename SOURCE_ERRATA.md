@@ -569,6 +569,26 @@ belong to the actual free periodic resolvent set at every finite exponent.
 Theorem 1.1 above four remains required and unresolved. A proof of the
 printed height must go beyond a uniform free lp-to-l1 norm estimate.
 
+
+`ComponentProductResolvent.lean` now uses the off-diagonal structure in
+the square: `||(Phi R_0)^2|| <= B(z)^2 ||phi_1|| ||phi_2||`. Thus the
+actual resolvent contains both edges and the exterior of
+`(1+8p sqrt(||phi_1|| ||phi_2||))^p` for every finite p. Period doubling
+preserves this product. The original printed source height follows under
+the additional hypothesis
+`p sqrt(||phi.fst|| ||phi.snd||) <= ||phi||_p`, for example whenever
+`p^2 ||phi.snd|| <= ||phi.fst||`.
+
+The source norm is still the p-th root of the combined component
+p-energies. It is not replaced by a sum of component norms. The new
+all-p result has an extra hypothesis; the unrestricted printed height
+above four remains unresolved. The supplementary geometric-mean height
+is not adopted as a replacement for the source formula. At fixed z off
+the free lattice, the product criterion gives an open potential region
+containing every triangular potential, with an analytic actual resolvent.
+The checked p=256 examples include two nonzero components and a successful
+product test at z=i where the previous Neumann condition fails.
+
 ## Theorem 1.4: the all-p printed boundary height is false
 
 Source: dissertation, printed p. 20 (statement) and p. 32 (proof).

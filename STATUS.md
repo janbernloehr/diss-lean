@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: necessary exponent dependence of the free resolvent
+## Current milestone: component-product squared resolvent bounds
+
+`ComponentProductResolvent.lean` now bounds the actual squared perturbation
+by both component norms:
+
+`||(Phi R_0)^2|| <= B(z)^2 ||phi_1|| ||phi_2||`,
+
+where B is the existing free lp-to-l1 bound. This replaces the earlier
+square of the maximum component norm in this sufficient criterion.
+The proof tracks the off-diagonal components through both applications,
+then uses the existing squared inverse with its two inverse identities.
+
+Writing `G(phi)=sqrt(||phi_1|| ||phi_2||)`, the actual periodic resolvent
+contains both edges and everything above the height `(1+8p G(phi))^p`,
+at every finite Banach exponent. The spectrum lies strictly inside that
+strip. This is a proved supplementary bound, not an adopted replacement
+for the dissertation's printed height.
+
+Period doubling preserves both component norms. Hence the unchanged
+printed source height `(1+8||phi||_p)^p` is proved at every finite p for
+sources satisfying `p sqrt(||phi.fst|| ||phi.snd||) <= ||phi||_p`.
+The directly checkable condition `p^2 ||phi.snd|| <= ||phi.fst||` suffices.
+The source norm remains the p-th root of the sum of both component
+p-energies, not the sum of the two component norms. No factor-two gain
+from a sum of norms is used.
+
+For each fixed parameter off the free lattice, the product criterion
+defines an explicit open set of potentials containing every triangular
+potential. The actual resolvent is analytic throughout that set. Public
+examples include p=256 with both components nonzero: the product test
+succeeds at z=i where the existing Neumann condition fails. A separate
+p=256 example checks the unchanged printed height for an imbalanced source.
+
+The unrestricted Theorem 1.1 remains proved only through p=4; above four
+is required and unresolved. The new all-p conclusion has an explicit
+additional coupling hypothesis and does not replace that obligation.
+Real-type finite-gap spatial analyticity remains proved; the printed
+all-p boundary height remains refuted, with its proposed correction kept
+separate. G.2's original interval norm and the optional original m=1
+sharpening remain unresolved. No source correction is adopted.
+
+Validation: the full project check passed (6607 build jobs), including all
+public examples and the axiom audit of 27685 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: necessary exponent dependence of the free resolvent
 
 The actual free-resolvent norm from lp to l1 now has a proved lower bound
 at the explicit parameters z=-i2^P, for every positive integer exponent P:

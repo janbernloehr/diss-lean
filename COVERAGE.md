@@ -1248,3 +1248,26 @@ unchanged printed periodic height remains proved through p=4 and required
 but unresolved above four. The original source norm is unchanged, and no
 source correction is adopted. The next periodic argument must use more
 than a free-resolvent norm estimate with a fixed coefficient.
+
+### Squared resolvent: component product and a conditional all-p printed height
+
+[`ComponentProductResolvent.lean`](NLS/ZakharovShabat/ComponentProductResolvent.lean)
+retains both off-diagonal component norms in the actual operator square.
+
+| Public entry point | Scope |
+| --- | --- |
+| `norm_potentialFreeResolvent_sq_le_component_product` | Actual square norm bounded by B(z)^2 times the component-norm product, at every finite Banach exponent. |
+| `squaredNeumannCondition_of_component_product` | Supplies the existing squared inverse with both inverse identities. |
+| `mem_resolventSet_of_componentMean_height` | Both horizontal edges and the entire exterior for height (1+8p sqrt(ab))^p, where a,b are the component norms. |
+| `periodicSpectrum_abs_im_lt_componentMean_height` | Every actual periodic spectral point lies strictly within that strip. |
+| `source_mem_resolventSet_of_printed_height_component_product` | Unchanged printed source height at every finite p, assuming p sqrt(ab) <= original source norm. |
+| `source_componentMean_condition_of_imbalance` | The norm condition p^2 b <= a implies that coupling hypothesis. |
+| `analyticOnNhd_resolvent_componentProductRegion` | Actual resolvent analytic on an explicit open potential region containing every triangular potential for fixed z off the free lattice. |
+
+Public examples check arbitrary finite exponents and p=256 with both
+components nonzero. One example proves invertibility at z=i while the
+previous Neumann condition fails; another checks the literal printed
+height under the imbalance condition. The source norm remains the p-th
+root of the two component p-energies. The unrestricted printed height
+above p=4 is still required and unresolved, and the geometric-mean
+supplement is not adopted as a replacement source statement.

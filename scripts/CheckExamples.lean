@@ -41086,3 +41086,78 @@ example {P : ℕ} [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 0 < P) (C : ℝ)
     (P : ℝ) ≤ 24*C+48 := freeResolventHeightCoefficient_necessary hP C hbound
 
 end FreeResolventHeightNecessityChecks
+
+namespace ComponentProductResolventChecks
+
+local instance inst256Product : Fact (1 ≤ (256 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : PairSpace p)
+    (z : ℂ) (hz : z ∉ freeLattice) :
+    ‖potentialFreeResolvent hp φ z hz ^ 2‖ ≤
+      freeL1Bound p hp z hz ^ 2 * (‖φ.1‖*‖φ.2‖) :=
+  norm_potentialFreeResolvent_sq_le_component_product hp φ z hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : PairSpace p)
+    {z : ℂ} (hz : z ∈ periodicSpectrum hp φ) :
+    |z.im| < (1+8*p.toReal*Real.sqrt (‖φ.1‖*‖φ.2‖))^p.toReal :=
+  periodicSpectrum_abs_im_lt_componentMean_height hp φ hz
+
+-- Both source components are nonzero. The condition uses their actual p-energy norm.
+example (z : ℂ)
+    (hz : (1+8*‖(WithLp.toLp 256
+      (lp.single 256 (0 : ℤ) (65536 : ℂ), lp.single 256 (0 : ℤ) (1 : ℂ)) : CoeffPair 256)‖)
+        ^(256 : ℝ) ≤ |z.im|) :
+    z ∈ resolventSet (by simp : (256 : ℝ≥0∞) ≠ ⊤)
+      (periodOnePotential (WithLp.toLp 256
+        (lp.single 256 (0 : ℤ) (65536 : ℂ), lp.single 256 (0 : ℤ) (1 : ℂ)))) := by
+  apply source_mem_resolventSet_of_printed_height_component_product (by simp) _ _ hz
+  apply source_componentMean_condition_of_imbalance
+  simp only [WithLp.toLp_fst, WithLp.toLp_snd,
+    lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 256)]
+  norm_num
+
+-- The new criterion succeeds with both components present when the old Neumann condition fails.
+example :
+    let φ : PairSpace 256 :=
+      (lp.single 256 (0 : ℤ) (2 : ℂ), lp.single 256 (0 : ℤ) (1/16777216 : ℂ))
+    let hz : Complex.I ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp)
+    Complex.I ∈ resolventSet (by simp : (256 : ℝ≥0∞) ≠ ⊤) φ ∧
+      ¬ NeumannCondition (by simp : (256 : ℝ≥0∞) ≠ ⊤) φ Complex.I hz := by
+  dsimp only
+  let φ : PairSpace 256 :=
+    (lp.single 256 (0 : ℤ) (2 : ℂ), lp.single 256 (0 : ℤ) (1/16777216 : ℂ))
+  have hz : Complex.I ∉ freeLattice := notMem_freeLattice_of_im_ne_zero (by simp)
+  have hn1 : ‖φ.1‖ = 2 := by simp [φ, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 256)]
+  have hn2 : ‖φ.2‖ = 1/16777216 := by
+    norm_num [φ, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 256), norm_div]
+  have hB : freeL1Bound 256 (by simp) Complex.I hz ≤ 1025 := by
+    have h := freeL1Bound_le_height (by simp : (256 : ℝ≥0∞) ≠ ⊤) Complex.I hz (by simp)
+    norm_num at h ⊢
+    exact h
+  have hB0 := freeL1Bound_nonneg 256 (by simp) Complex.I hz
+  have hB1 : 1 ≤ freeL1Bound 256 (by simp) Complex.I hz := by
+    have hq : (256 : ℝ≥0∞).conjExponent ≠ 0 :=
+      (zero_lt_one.trans_le (ENNReal.HolderConjugate.one_le (256 : ℝ≥0∞).conjExponent 256)).ne'
+    have h := lp.norm_apply_le_norm hq (conjugateInverseSymbol 256 (by simp) Complex.I hz) 0
+    have hscalar : 1 ≤ scalarFreeL1Bound 256 (by simp) Complex.I hz := by
+      simpa [conjugateInverseSymbol, scalarFreeL1Bound] using h
+    exact hscalar.trans (le_max_right _ _)
+  constructor
+  · apply mem_resolventSet_of_squaredNeumannCondition (by simp) φ Complex.I hz
+    apply squaredNeumannCondition_of_component_product
+    rw [hn1, hn2]
+    nlinarith
+  · change ¬ (freeL1Bound 256 (by simp) Complex.I hz * ‖φ‖ < 1)
+    have hφ : 2 ≤ ‖φ‖ := hn1 ▸ norm_fst_le φ
+    nlinarith
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (u : Coeff p)
+    (z : ℂ) (hz : z ∉ freeLattice) :
+    (u,0) ∈ componentProductNeumannRegion hp z hz ∧
+    IsOpen (componentProductNeumannRegion hp z hz) ∧
+    AnalyticOnNhd ℂ (fun φ => resolvent hp φ z) (componentProductNeumannRegion hp z hz) :=
+  ⟨mem_componentProductNeumannRegion_of_oneSided hp (u,0) z hz (Or.inr rfl),
+    isOpen_componentProductNeumannRegion hp z hz,
+    analyticOnNhd_resolvent_componentProductRegion hp z hz⟩
+
+end ComponentProductResolventChecks
