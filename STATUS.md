@@ -1,6 +1,46 @@
 # Implementation status
 
-## Current milestone: a spectral counterexample to the printed boundary height
+## Current milestone: a proposed all-p boundary height and necessary coefficient growth
+
+A proposed correction to Theorem 1.4 is now proved for every finite p>1:
+use height `(1+8*p*E_p*||phi||_p)^p`, where E_p is the proved constant
+`BoundaryCondition.intervalExtensionBound hp1 hp`. The original source
+norm is retained. Both ordinary boundary resolvents exist on and above
+this height, uniformly on source norm balls. Both spectra lie strictly
+inside its horizontal edges.
+
+`SourceBoundaryExplicitHeight.lean` proves the source-to-extension norm
+bound and `sourceTheorem1_4_proposed_height`. One open convex source
+neighborhood contains the given potential and zero, and every larger
+cutoff has the exact central count 2N+1 for both conditions, one simple
+root in each high disk, and no other roots. Original algebraic
+multiplicities and the source topology are preserved. The transfer lemma
+in `SourceBoundaryPrintedHeight.lean` now accepts an explicit nonnegative
+coefficient; its old printed-height API and the proved p=2 result remain
+available unchanged.
+
+`SourceBoundaryHeightNecessity.lean` strengthens the earlier counterexample.
+At each integer P>1, a universal height of the form `(1+C_P*||phi||_P)^P`
+requires `P<=96*C_P`. This is true even when every source can choose its
+own cutoff and all high-frequency disks are included.
+`not_exists_uniform_sourceBoundaryCountingHeightCoefficient` proves that
+no fixed nonnegative replacement for eight can repair the all-p exhaustion
+assertion. The same triangular finite Fourier family supplies the proof.
+The factor 96 is a sufficient obstruction, not an optimality claim.
+
+The corrected height is recorded as a separate proposed replacement;
+the printed all-p statement remains refuted. Theorem 1.4 at p=2 and
+Theorem 1.5 at every finite p>1 remain valid. The periodic height in
+Theorem 1.1 above four, G.2's original interval-norm interpretation, and
+the optional original m=1 sharpening remain unresolved. The whole
+dissertation remains incomplete.
+
+Validation: the full project check passed (6594 build jobs), including all
+public examples and the axiom audit of 27521 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: a spectral counterexample to the printed boundary height
 
 Theorem 1.4's all-p printed boundary height is now refuted by an actual
 spectral counterexample. For every natural exponent P>=1024, the finite

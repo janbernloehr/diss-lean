@@ -40819,3 +40819,69 @@ example : ¬ ∀ φ : CoeffPair 1024, ∃ N : ℕ,
       highSpectralDisks N (Real.pi/4) := not_sourceTheorem1_4_printed_exhaustion
 
 end SourceBoundaryCounterexampleChecks
+
+
+namespace SourceBoundaryProposedHeightChecks
+open Set NLS NLS.Coeff NLS.ZakharovShabat
+open scoped ENNReal Classical
+local instance : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ((1024 : ℕ) : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Both boundary resolvents exist on the edge as well as beyond it, on norm balls.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (b : BoundaryCondition) (φ : CoeffPair p) {M : ℝ} (hφ : ‖φ‖ ≤ M) {z : ℂ}
+    (hz : (1+8*p.toReal*BoundaryCondition.intervalExtensionBound hp1 hp*M)^p.toReal ≤ |z.im|) :
+    z ∈ b.resolventSet hp (periodOneBoundaryPotential hp hp1 φ).val
+      (periodOneBoundaryPotential hp hp1 φ).property :=
+  mem_boundaryResolventSet_of_sourceBoundaryExplicitHeight hp hp1 b φ hφ hz
+
+-- One neighborhood supports the exact count and unique simple high roots at p=5.
+example (φ : CoeffPair 5) :
+    ∃ N₀ : ℕ, 0 < N₀ ∧ ∃ U : Set (CoeffPair 5), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N → ∀ b : BoundaryCondition,
+        (∑ z ∈ b.heightSpectrum (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+          (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property N
+            (sourceBoundaryExplicitHeight (p := 5) (by norm_num) (by norm_num) ‖ψ‖),
+          b.algebraicMultiplicity (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+            (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property z) = 2*N+1 ∧
+        ∀ n : ℤ, N < n.natAbs → ∃! z : ℂ,
+          z ∈ b.spectrum (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+            (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property ∧
+          z ∈ Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) ∧
+          b.algebraicMultiplicity (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+            (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property z = 1 := by
+  obtain ⟨N,hN,U,hU,hconv,hφ,h0,h⟩ := sourceTheorem1_4_proposed_height (by norm_num) (by norm_num) φ
+  exact ⟨N,hN,U,hU,hconv,hφ,h0,fun ψ hψ K hK b =>
+    ⟨((h ψ hψ K hK).2 b).2.1,fun n hn => (h ψ hψ K hK).1.disk_unique_simple b n hn⟩⟩
+
+-- The corrected boxes exhaust both spectra, with no exponent restriction above one.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    ∃ N : ℕ, ∀ b : BoundaryCondition,
+      b.spectrum hp (periodOneBoundaryPotential hp hp1 φ).val
+        (periodOneBoundaryPotential hp hp1 φ).property ⊆
+      heightSpectralBox N (sourceBoundaryExplicitHeight hp hp1 ‖φ‖) ∪
+        highSpectralDisks N (Real.pi/4) := by
+  obtain ⟨N,_,U,_,_,hφ,_,h⟩ := sourceTheorem1_4_proposed_height hp hp1 φ
+  exact ⟨N,fun b => ((h φ hφ N le_rfl).2 b).2.2⟩
+
+-- The earlier counterexample is strictly below the new proposed height.
+example : (2 : ℝ)^1024 < sourceBoundaryExplicitHeight
+    (ENNReal.natCast_ne_top 1024) (by norm_num)
+    ‖CoeffPair.ofFinsupp (p := ((1024 : ℕ) : ℝ≥0∞)) (triangularNormalizedCoefficients 1024,0)‖ := by
+  have h := sourceBoundarySpectrum_abs_im_lt_explicit_height (ENNReal.natCast_ne_top 1024)
+    (by norm_num) .dirichlet (CoeffPair.ofFinsupp (triangularNormalizedCoefficients 1024,0)) le_rfl
+    (mem_sourceDirichletSpectrum_triangularNormalized (P := 1024) (by norm_num))
+  simpa only [abs_im_triangular_height] using h
+
+-- No fixed replacement for eight works, even if every potential gets its own cutoff.
+example : ¬ ∃ C : ℝ, 0 ≤ C ∧ ∀ P : ℕ, ∀ hP : 1 < (P : ℝ≥0∞),
+    let _ : Fact (1 ≤ (P : ℝ≥0∞)) := ⟨hP.le⟩
+    ∀ φ : CoeffPair (P : ℝ≥0∞), ∃ N : ℕ,
+      BoundaryCondition.spectrum .dirichlet (ENNReal.natCast_ne_top P)
+        (periodOneBoundaryPotential (ENNReal.natCast_ne_top P) hP φ).val
+        (periodOneBoundaryPotential (ENNReal.natCast_ne_top P) hP φ).property ⊆
+      heightSpectralBox N ((1+C*‖φ‖)^((P : ℝ≥0∞).toReal)) ∪
+        highSpectralDisks N (Real.pi/4) :=
+  not_exists_uniform_sourceBoundaryCountingHeightCoefficient
+
+end SourceBoundaryProposedHeightChecks

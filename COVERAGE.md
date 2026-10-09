@@ -1133,3 +1133,25 @@ Validation: the full project check passed (6592 build jobs), including all
 public examples and the axiom audit of 27502 NLS declarations. There are
 21 existing warnings and no new warnings. The source inventory check
 passed with 156 labels. Counts do not certify completeness.
+
+
+### Proposed boundary-height correction and necessary exponent dependence
+
+| Requirement | Public evidence | Verified scope |
+| --- | --- | --- |
+| Retain the interval-extension loss | `norm_periodOneBoundaryPotential_le` | Reflected maximum pair norm bounded by E_p times the original source norm, all finite p>1. |
+| Explicit sufficient source height | `mem_boundaryResolventSet_of_sourceBoundaryExplicitHeight`, `sourceBoundarySpectrum_abs_im_lt_explicit_height` | `(1+8*p*E_p*M)^p` on every original source norm ball; both ordinary boundary conditions, including the horizontal edges. |
+| Corrected counts and exhaustion | `sourceTheorem1_4_proposed_height` | One open convex neighborhood containing the source and zero; every larger cutoff; original central count 2N+1, simple high roots and no other roots. |
+| Necessary growth of any height coefficient | `sourceBoundaryCountingHeightCoefficient_necessary` | C_P>=P/96 for integer P>1, even with source-dependent cutoffs. |
+| No fixed replacement for eight | `not_exists_uniform_sourceBoundaryCountingHeightCoefficient` | Negates all-source exhaustion for all integer exponents for every fixed nonnegative coefficient. |
+
+The new sufficient height is recorded as a proved proposed correction,
+not an adopted replacement for Theorem 1.4. The printed p=2 theorem and
+all-p Theorem 1.5 remain unchanged. The periodic height above four is a
+separate unresolved obligation. No optimality or whole-source completion
+is certified.
+
+Validation: the full project check passed (6594 build jobs), including all
+public examples and the axiom audit of 27521 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.

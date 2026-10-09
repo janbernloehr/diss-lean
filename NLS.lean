@@ -3163,3 +3163,5 @@ import NLS.ZakharovShabat.TriangularOddFourier
 import NLS.ZakharovShabat.TriangularDyadicKernel
 import NLS.ZakharovShabat.TriangularNormalizedBand
 import NLS.ZakharovShabat.SourceBoundaryHeightCounterexample
+import NLS.ZakharovShabat.SourceBoundaryExplicitHeight
+import NLS.ZakharovShabat.SourceBoundaryHeightNecessity

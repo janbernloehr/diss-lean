@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lean verifies a finite Fourier counterexample to Theorem
-1.4's all-p printed boundary height. At p=1024 the source norm is at most
-3/32, but an actual Dirichlet eigenvalue at i*2^1024 lies outside the printed
-box and every high-frequency disk, for every cutoff. No replacement height
-is adopted. The printed boundary result remains proved at p=2; Theorem 1.5
-holds for every finite p>1. Theorem 1.1's periodic height is proved through
-p=4 and remains unresolved above four. G.2's interval norm is also unresolved.
+Latest milestone: a proposed replacement for Theorem 1.4's false all-p
+boundary height is proved: `(1+8*p*E_p*||phi||_p)^p`, retaining the interval
+extension bound E_p and the original source norm. It gives both exact
+boundary counts and exhaustion for every finite p>1. Lean also proves
+that no fixed replacement for eight can work for all p: a coefficient
+C_p must be at least p/96 at integer exponents. This correction remains
+separate from the printed theorem. The unchanged boundary result holds
+at p=2; the periodic printed height above p=4 and G.2's norm remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

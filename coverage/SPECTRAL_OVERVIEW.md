@@ -170,6 +170,21 @@ Theorem 1.1's periodic height is a separate question, still open above
 four. See `SOURCE_ERRATA.md` for the complete construction and source
 comparison.
 
+A proposed all-p replacement is now proved in
+`SourceBoundaryExplicitHeight.lean`: height `(1+8*p*E_p*||phi||_p)^p`,
+with E_p the proved interval-extension bound. The source norm remains
+unchanged. `sourceTheorem1_4_proposed_height` gives the same two central
+counts, simple high roots, and exhaustion on one open convex neighborhood,
+for every larger cutoff. Closedness, discreteness, and real-type reality
+continue to use the existing all-p source theorems. This proposed correction
+is separate from the printed statement and is not adopted in its place.
+
+`SourceBoundaryHeightNecessity.lean` proves that a coefficient C_p in this
+shape of height must satisfy C_P>=P/96 at every integer P>1. This remains
+necessary with arbitrary source-dependent cutoffs and all high disks.
+Thus increasing eight to any fixed nonnegative constant cannot repair
+the all-p statement. The lower bound is not claimed optimal.
+
 ## Theorem 1.5: proved in the full printed range
 
 The source statement on p. 21 requires both globally lexicographically

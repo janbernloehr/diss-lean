@@ -559,6 +559,46 @@ which remains proved through p=4 and unresolved above four. No replacement
 boundary height is adopted; other exponents not covered here remain to
 be investigated.
 
+### Proved proposed correction and an obstruction to every fixed constant
+
+`SourceBoundaryExplicitHeight.lean` supplies a separate all-p statement
+with height
+
+```
+H_p(M) = (1 + 8*p*E_p*M)^p,
+E_p = BoundaryCondition.intervalExtensionBound hp1 hp
+    = 2 * Fourier.halfIntervalBound hp1 hp.
+```
+
+E_p is the finite positive bound constructed from the half-interval map
+and its discrete Hilbert-transform estimate. It depends on p, not the
+source potential. The input M is a bound for the original source norm;
+`norm_periodOneBoundaryPotential_le` proves the reflected maximum pair
+norm is at most E_p*M. No inverse change-of-pair-norm factor is needed.
+The explicit periodic Neumann estimate then gives the actual reflected
+resolvent and both ordinary boundary resolvents on `|Im z|>=H_p(M)`.
+Every boundary eigenvalue lies strictly inside this strip.
+
+`sourceTheorem1_4_proposed_height` proves both central counts 2N+1,
+simple high-disk roots, and exhaustion on one open convex source
+neighborhood containing the base source and zero, for every larger cutoff.
+The old printed-height transfer theorem is preserved as the coefficient-eight
+specialization of `exists_source_boundaryCounting_height_of_bound`.
+This is a proved proposed correction, not a proof of the false source
+formula or an adopted replacement for it. No optimality is asserted.
+
+There is also a stronger necessary condition. For every integer P>1,
+`triangular_height_gt_coefficient` puts the earlier family's eigenvalue
+above `(1+C*||phi||_P)^P` whenever C>=0 and 96*C<P.
+`sourceBoundaryCountingHeightCoefficient_necessary` proves P<=96*C for
+any coefficient that supplies exhaustion for every source at this
+exponent, even if each source has its own cutoff.
+`not_exists_uniform_sourceBoundaryCountingHeightCoefficient` therefore
+rules out every fixed nonnegative replacement for eight at all exponents.
+The corresponding global-strip necessity is proved separately. This is
+an actual spectral obstruction, and it does not apply to the periodic
+spectrum in Theorem 1.1.
+
 ## Lemma 26.2: sign of the higher Hamiltonian
 
 Source: [dissertation, Lemma 26.2](https://janbernloehr.de/Download/fs16/diss.pdf#page=113).
