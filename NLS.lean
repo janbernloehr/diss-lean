@@ -3176,3 +3176,4 @@ import NLS.ZakharovShabat.SourceTranslationFiniteTarget
 import NLS.ZakharovShabat.SourceFiniteGapTranslationLift
 import NLS.ZakharovShabat.NormalizedSobolevSourceEvaluation
 import NLS.ZakharovShabat.SourceFiniteGapAnalyticRealization
+import NLS.ZakharovShabat.FreeResolventHeightNecessity

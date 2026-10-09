@@ -41049,3 +41049,40 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
   exists_analyticAt_sourceFiniteGap_translationLift hp hp1 w φ hr hf
 
 end FiniteGapAnalyticRealizationChecks
+
+namespace FreeResolventHeightNecessityChecks
+
+local instance instDyadic256 : Fact (1 ≤ ((256 : ℕ) : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- A finite vector gives an exact nonzero output sum at arbitrarily large heights.
+example {P : ℕ} [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 0 < P) :
+    (∑' n : ℤ, scalarResolventToL1 (ENNReal.natCast_ne_top P) (negativeDyadicHeight P)
+      (negativeDyadicHeight_not_mem_freeLattice P)
+      (Coeff.ofFinsupp (triangularNormalizedCoefficients P)) n) = -2 :=
+  tsum_scalarResolventToL1_triangularNormalized hP
+
+-- Both bounds concern the norm of the actual operator between the stated spaces.
+example {P : ℕ} [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 0 < P) :
+    (P : ℝ)/48 ≤ ‖freeResolventToL1 (ENNReal.natCast_ne_top P)
+      (negativeDyadicHeight P) (negativeDyadicHeight_not_mem_freeLattice P)‖ ∧
+    ‖freeResolventToL1 (ENNReal.natCast_ne_top P)
+      (negativeDyadicHeight P) (negativeDyadicHeight_not_mem_freeLattice P)‖ ≤
+      2*(P : ℝ)+((2 : ℝ)^P)⁻¹ :=
+  ⟨freeResolventToL1_dyadic_norm_lower hP, freeResolventToL1_dyadic_norm_upper hP⟩
+
+-- The failed constant-eight bound does not produce an eigenvalue counterexample.
+example :
+    8/|(negativeDyadicHeight 256).im|^(1/(256 : ℝ)) + |(negativeDyadicHeight 256).im|⁻¹ <
+      ‖freeResolventToL1 (ENNReal.natCast_ne_top 256)
+        (negativeDyadicHeight 256) (negativeDyadicHeight_not_mem_freeLattice 256)‖ ∧
+    negativeDyadicHeight 256 ∈ resolventSet (ENNReal.natCast_ne_top 256) 0 :=
+  ⟨freeResolvent_eight_height_bound_fails (by norm_num),
+    negativeDyadicHeight_mem_free_resolvent (ENNReal.natCast_ne_top 256) 256⟩
+
+example {P : ℕ} [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 0 < P) (C : ℝ)
+    (hbound : ‖freeResolventToL1 (ENNReal.natCast_ne_top P)
+      (negativeDyadicHeight P) (negativeDyadicHeight_not_mem_freeLattice P)‖ ≤
+      C/|(negativeDyadicHeight P).im|^(1/(P : ℝ)) + |(negativeDyadicHeight P).im|⁻¹) :
+    (P : ℝ) ≤ 24*C+48 := freeResolventHeightCoefficient_necessary hP C hbound
+
+end FreeResolventHeightNecessityChecks

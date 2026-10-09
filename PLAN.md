@@ -1,6 +1,50 @@
 # Implementation plan
 
-## Latest progress: real-type finite-gap spatial analyticity
+## Latest progress: necessary exponent dependence of the free resolvent
+
+The actual free-resolvent norm from lp to l1 now has a proved lower bound
+at the explicit parameters z=-i2^P, for every positive integer exponent P:
+
+`P/48 <= ||R_0(-i2^P)||_(lP -> l1) <= 2P + 2^(-P)`.
+
+`FreeResolventHeightNecessity.lean` uses a finite Fourier input of norm at
+most 96/P whose output coefficient sum is exactly -2. Thus the lower bound
+concerns the actual operator, rather than the size of an upper estimate.
+The scalar bound transfers to the full pair resolvent in its maximum norm.
+
+Any coefficient C_P in the height-decay estimate
+`||R_0(z)|| <= C_P / |Im z|^(1/P) + 1/|Im z|` must satisfy
+`P <= 24 C_P + 48`, even if required only at that test point. No fixed
+coefficient works for all exponents. In particular, the constant-eight
+estimate fails for every integer P>240; public examples check P=256.
+
+This rules out extending the existing proof of the printed periodic height
+by a uniform constant-eight free-resolvent estimate. Every test point is
+also proved to belong to the actual zero-potential periodic resolvent set.
+It is not a counterexample to Theorem 1.1, whose printed height remains
+proved through p=4 and required but unresolved above four. A different
+argument must use more of the perturbed operator than this free norm.
+
+The real-type finite-gap spatial analyticity result remains proved. The
+printed all-p boundary height remains refuted, with a separate proposed
+correction that has not been adopted. G.2's original interval norm and the
+optional original m=1 sharpening remain unresolved. No source correction
+is adopted in this step; the dissertation remains incomplete.
+
+Validation: the full project check passed (6606 build jobs), including all
+public examples and the axiom audit of 27663 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+Next: investigate a potential-dependent or squared-Neumann argument for
+Theorem 1.1's printed periodic height above four, retaining the original
+source norm. Alternatively, construct an actual periodic eigenvalue
+violating it. Do not retry a fixed-coefficient free lp-to-l1 estimate: its
+failure is now proved. The triangular boundary counterexample still has
+free periodic spectrum and cannot settle the periodic claim. Keep G.2's
+norm interpretation pending and the proposed boundary correction separate.
+
+## Previous milestone: real-type finite-gap spatial analyticity
 
 The missing spatial real-analyticity result for real-type finite-gap
 sources is now proved at every finite exponent p>1. Both functions in

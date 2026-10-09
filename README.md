@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: real-type finite-gap sources now have spatially real
-analytic period-one representatives at every finite p>1, preserving every
-original Fourier coefficient. The proof uses the finite-dimensional
-spectral inverse and the translation-invariant canonical gaps, followed
-by bounded Sobolev evaluation. The unrestricted complex regularity
-sentence remains refuted; the real-type qualification is essential.
-The printed periodic height above p=4 and G.2's norm remain unresolved.
-The proposed all-p boundary-height correction remains separate from the
-refuted printed formula.
+Latest milestone: finite Fourier vectors now prove that the actual free
+resolvent norm from lp to l1 needs a coefficient growing with p. Its norm
+at -i2^P lies between P/48 and 2P+2^(-P); the constant-eight estimate fails
+for integer P>240. This rules out one route to the printed periodic height,
+which remains unresolved above p=4. The test points themselves are in the
+free periodic resolvent set. Real-type finite-gap spatial analyticity
+remains proved. G.2's norm remains unresolved, and the proposed all-p
+boundary-height correction remains separate from the refuted formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -553,6 +553,22 @@ finite-exponent height remains required and unresolved above four.
 `(1+8pM)^p` is still a proved alternative, not completion of the printed
 claim. See [the spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
 
+
+`FreeResolventHeightNecessity.lean` now gives an obstruction at the level
+of the actual free operator norm, beyond the failure of the power-sum
+test. For positive integer P and z=-i2^P it proves
+`P/48 <= ||R_0(z)||_(lP -> l1) <= 2P+2^(-P)`. A finite input has norm at
+most 96/P and an output coefficient sum of exactly -2. Any coefficient
+C_P in `||R_0(z)|| <= C_P/|Im z|^(1/P)+1/|Im z|` must satisfy
+`P <= 24 C_P+48`. There is no coefficient uniform in P; constant eight
+fails for every integer P>240, with a checked example at P=256.
+
+This is a proof-route obstruction, not a new source counterexample.
+`negativeDyadicHeight_mem_free_resolvent` proves that these parameters
+belong to the actual free periodic resolvent set at every finite exponent.
+Theorem 1.1 above four remains required and unresolved. A proof of the
+printed height must go beyond a uniform free lp-to-l1 norm estimate.
+
 ## Theorem 1.4: the all-p printed boundary height is false
 
 Source: dissertation, printed p. 20 (statement) and p. 32 (proof).

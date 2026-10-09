@@ -1227,3 +1227,24 @@ Validation: the full project check passed (6605 build jobs), including all
 public examples and the axiom audit of 27645 NLS declarations. There are
 21 existing warnings and no new warnings. The source inventory check
 passed with 156 labels. Counts do not certify completeness.
+
+### Lemma 3.2(ii) / Theorem 1.1 proof route: exponent dependence is necessary
+
+[`FreeResolventHeightNecessity.lean`](NLS/ZakharovShabat/FreeResolventHeightNecessity.lean)
+proves bounds for the actual free operator, using finite Fourier inputs.
+
+| Public entry point | Scope |
+| --- | --- |
+| `tsum_scalarResolventToL1_triangularNormalized` | Exact output coefficient sum -2 at z=-i2^P for every positive integer exponent P. |
+| `freeResolventToL1_dyadic_norm_lower`, `freeResolventToL1_dyadic_norm_upper` | P/48 <= actual pair-resolvent norm <= 2P+2^(-P), from lP to l1. |
+| `freeResolventHeightCoefficient_necessary` | Any height coefficient C_P in the standard decay form must obey P <= 24 C_P+48. |
+| `not_exists_uniform_freeResolventHeightCoefficient` | No fixed coefficient works for all finite integer exponents and nonreal parameters. |
+| `freeResolvent_eight_height_bound_fails` | Actual constant-eight norm estimate fails for every integer P>240; checked at P=256. |
+| `negativeDyadicHeight_mem_free_resolvent` | Every test point belongs to the actual free periodic resolvent set at every finite exponent. |
+
+This establishes the necessary linear order of the exponent coefficient
+in Lemma 3.2(ii)'s type of bound. It does not refute Theorem 1.1: its
+unchanged printed periodic height remains proved through p=4 and required
+but unresolved above four. The original source norm is unchanged, and no
+source correction is adopted. The next periodic argument must use more
+than a free-resolvent norm estimate with a fixed coefficient.
