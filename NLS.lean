@@ -3156,3 +3156,5 @@ import NLS.ZakharovShabat.RefinedHeightResolvent
 import NLS.ZakharovShabat.PrintedHeightFour
 import NLS.ZakharovShabat.SourcePrintedHeightFourCounting
 import NLS.ZakharovShabat.SourcePeriodicOverview
+import NLS.ZakharovShabat.SourceBoundaryOverview
+import NLS.ZakharovShabat.SourceBoundaryPrintedHeight

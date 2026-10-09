@@ -1,6 +1,84 @@
 # Implementation plan
 
-## Latest progress: periodic asymptotics and the finite-gap density audit
+## Latest progress: boundary overview and printed Hilbert box
+
+Theorem 1.5 is now assembled in the original source space for every finite
+p>1 and both ordinary boundary conditions. Theorem 1.4's exact printed box
+is proved at p=2, using the original source norm. Its height requirement
+at the other exponents remains open; the periodic p<=4 result does not
+automatically transfer through the interval extension.
+
+`SourceBoundaryOverview.lean` supplies one open convex source neighborhood
+containing the base potential and zero, one cutoff, and one displacement
+norm bound for both canonical boundary sequences. Every larger cutoff
+retains the complete labels and original algebraic multiplicities. The
+actual boundary spectra are closed and discrete, their canonical labels
+are globally lexicographically ordered, and every spectral point is real
+at a real-type source. No analyticity or continuity of sorted individual
+roots at arbitrary complex sources is assumed.
+
+`sourceTheorem1_5_mem` proves the literal Dirichlet and Neumann frequency
+displacements belong to lp. `sourceTheorem1_5` bounds their full p-power
+sums, including all central roots, with one positive constant on one
+source neighborhood. Summability is explicit. There is no smallness,
+reality, finite-support, or restriction p<=4 in these assertions.
+
+`SourceBoundaryPrintedHeight.lean` defines the actual finite boundary
+spectrum in a box of arbitrary height and proves that a sufficient
+boundary strip bound identifies the same central cluster. Its generic
+source theorem isolates the original-norm height estimate needed to
+transfer all central counts and spectral exhaustion to the printed box.
+At p=2, the completed interval extension is contractive in the source
+norm, and the Hilbert spectral-height bound provides this input.
+`sourceTheorem1_4_two` yields the exact printed height (1+8||phi||_2)^2,
+central count 2N+1, simple high-disk roots, and exhaustion simultaneously
+for both boundary conditions on one neighborhood and at all larger cutoffs.
+
+Public checks cover both literal lp sequences, a common full-series
+bound at p=5, ordering, both printed-box counts at p=2, uniqueness and
+simplicity in high disks, exhaustion, spectrum-wide reality, discreteness,
+and the numerical height 81 on the Hilbert unit source ball.
+
+The source overview audit now records Theorem 1.5 as complete and identifies
+Theorem 1.4's exact remaining height obligation. Boundedness of the interval
+extension alone does not justify using the unextended source norm in the
+printed formula. This is an unresolved estimate, not a spectral
+counterexample or an adopted replacement. Theorem 1.1's printed height
+above four and G.2's printed interval-norm interpretation remain open.
+The original unrestricted m=1 sharpening remains optional and unresolved;
+the whole dissertation remains incomplete.
+
+Validation: the full project check passed (6587 build jobs), including all
+public examples and the axiom audit of 27434 NLS declarations. There
+are 21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+Next: test Theorem 1.4's remaining height with an explicit triangular
+potential before pursuing further upper estimates. This is an unverified
+calculation to formalize, not a recorded spectral counterexample:
+
+- For source `(u,0)`, the Dirichlet equation at z=iH appears to reduce to
+  `sum_n u_n/(H-i*pi*n)=2i`, by solving the triangular first-order system.
+- Take an integer P, H=2^P, and coefficients u_n=a and u_{-n}=-a for
+  H<=n<2^P*H. Let A=sum_n pi*n/(H^2+pi^2*n^2) over these positive indices
+  and a=1/A. Pairing the coefficients gives the proposed root equation.
+- A dyadic-block estimate should give A>=P/12. There are at most
+  2^(2P+1) nonzero coefficients, suggesting ||(u,0)||_P<=96/P.
+  At P=1024 this is at most 3/32, so the proposed printed height is at
+  most (7/4)^P, strictly below H=2^P.
+- Verify the signs and normalization against the actual classical
+  fundamental matrix and `periodOneBoundaryCharacteristic_eq_zero_iff`,
+  then prove the finite sums and source norm bounds in Lean. Avoid
+  evaluating the enormous finite index range. Only a proof for the actual
+  spectrum can establish failure of the printed statement. This candidate
+  says nothing about Theorem 1.1: triangular periodic spectra stay free.
+
+Continue to seek the unchanged periodic source-norm height in Theorem 1.1.
+Separately audit the unnumbered spatial real-analyticity claim for finite-gap
+potentials; smoothness alone is insufficient. G.2's original interval-norm
+interpretation remains a separate pending matter.
+
+## Previous milestone: periodic asymptotics and the finite-gap density audit
 
 Theorem 1.2 and Corollary 1.3 are now assembled and audited in the original
 source coefficient space for every finite 1<p. The canonical endpoints

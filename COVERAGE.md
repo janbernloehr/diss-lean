@@ -76,8 +76,9 @@ Failure of the available sufficient criteria is not a spectral
 counterexample. Theorem 1.2 and Corollary 1.3 are proved for every finite
 p>1, with the actual ordered endpoints, their multiplicities, and the
 full locally uniform source bounds. Corollary 1.6's density of actual real
-finite-gap sources is also verified. The boundary-spectrum overview
-comparison remains pending.
+finite-gap sources is also verified. Theorem 1.5 is covered for every
+finite p>1; Theorem 1.4 is covered at p=2, with the original-norm printed
+height still unresolved at other exponents.
 
 ## Appendix C.1 audit
 
@@ -1082,9 +1083,9 @@ use the original finite-p source norm. No global constant over all
 potentials or continuity of the sorted individual endpoints is claimed.
 The construction does not depend on the unresolved printed height above
 four. See `coverage/SPECTRAL_OVERVIEW.md` for the requirement-by-requirement
-audit. The boundary-spectrum overview comparison, G.2's interval norm,
-and the remaining height range are still open; the dissertation is
-incomplete.
+audit. The boundary-spectrum overview comparison is recorded below.
+G.2's interval norm and the remaining height ranges are still open; the
+dissertation is incomplete.
 
 
 ### Corollary 1.6: actual real finite-gap density
@@ -1099,3 +1100,24 @@ finite-gap property. Existing public checks cover p=3 approximants and
 density at p=2 and p=3/2. The detailed audit is recorded in
 `coverage/SPECTRAL_OVERVIEW.md`. The separate unnumbered spatial real
 analyticity claim is not certified by this density result.
+
+
+### Theorems 1.4 and 1.5: original boundary spectra and printed Hilbert box
+
+| Source requirement | Public evidence | Verified scope |
+| --- | --- | --- |
+| Actual ordinary boundary spectra | `periodOneBoundaryPotential`, `BoundaryCondition.spectrum`, `sourceBoundarySpectrum_closed_discrete` | Same reflected source potential, two boundary restrictions, closed and discrete for every finite p>1. |
+| One common neighborhood and cutoff | `exists_uniform_sourceBoundaryLabels` | Both canonical sequences and every larger cutoff, original source topology, full multiplicities and displacement norm bounds. |
+| Reality of every eigenvalue | `sourceBoundarySpectrum_im_eq_zero` | Every real-type source, either condition, all central and distant points. |
+| Exact printed height at p=2 | `norm_periodOneBoundaryPotential_two_le`, `sourceBoundarySpectrum_abs_im_lt_printed_height_two` | Original source norm and constant eight; spectrum strictly inside both horizontal edges. |
+| Printed-box counts and exhaustion at p=2 | `sourceTheorem1_4_two` | Central count 2N+1, one simple root per high disk for either condition, no other roots, one neighborhood and all larger cutoffs. |
+| Full Theorem 1.5 | `sourceTheorem1_5_mem`, `sourceTheorem1_5` | Both literal lp sequences and a common full-series bound for every finite p>1 and every complex source. |
+| Canonical ordering and multiplicities | `monotone_canonicalPeriodOneBoundaryRoots`, `canonicalPeriodOneBoundaryRoots_multiplicity` | Global lexicographic order and all actual repetitions, independent of initial labels. |
+
+Theorem 1.5 is covered unchanged. Every clause of Theorem 1.4 is covered
+at p=2. The remaining finite exponents require its exact original-norm
+height estimate; general boundedness of the interval extension and
+height-N counting boxes do not establish that formula. The generic
+`exists_source_boundaryCounting_printed_height_of_bound` isolates this
+remaining input without assuming it silently. The source overview and
+errata audits record the distinction. The dissertation remains incomplete.

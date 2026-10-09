@@ -1,6 +1,59 @@
 # Implementation status
 
-## Current milestone: periodic asymptotics and the finite-gap density audit
+## Current milestone: boundary overview and printed Hilbert box
+
+Theorem 1.5 is now assembled in the original source space for every finite
+p>1 and both ordinary boundary conditions. Theorem 1.4's exact printed box
+is proved at p=2, using the original source norm. Its height requirement
+at the other exponents remains open; the periodic p<=4 result does not
+automatically transfer through the interval extension.
+
+`SourceBoundaryOverview.lean` supplies one open convex source neighborhood
+containing the base potential and zero, one cutoff, and one displacement
+norm bound for both canonical boundary sequences. Every larger cutoff
+retains the complete labels and original algebraic multiplicities. The
+actual boundary spectra are closed and discrete, their canonical labels
+are globally lexicographically ordered, and every spectral point is real
+at a real-type source. No analyticity or continuity of sorted individual
+roots at arbitrary complex sources is assumed.
+
+`sourceTheorem1_5_mem` proves the literal Dirichlet and Neumann frequency
+displacements belong to lp. `sourceTheorem1_5` bounds their full p-power
+sums, including all central roots, with one positive constant on one
+source neighborhood. Summability is explicit. There is no smallness,
+reality, finite-support, or restriction p<=4 in these assertions.
+
+`SourceBoundaryPrintedHeight.lean` defines the actual finite boundary
+spectrum in a box of arbitrary height and proves that a sufficient
+boundary strip bound identifies the same central cluster. Its generic
+source theorem isolates the original-norm height estimate needed to
+transfer all central counts and spectral exhaustion to the printed box.
+At p=2, the completed interval extension is contractive in the source
+norm, and the Hilbert spectral-height bound provides this input.
+`sourceTheorem1_4_two` yields the exact printed height (1+8||phi||_2)^2,
+central count 2N+1, simple high-disk roots, and exhaustion simultaneously
+for both boundary conditions on one neighborhood and at all larger cutoffs.
+
+Public checks cover both literal lp sequences, a common full-series
+bound at p=5, ordering, both printed-box counts at p=2, uniqueness and
+simplicity in high disks, exhaustion, spectrum-wide reality, discreteness,
+and the numerical height 81 on the Hilbert unit source ball.
+
+The source overview audit now records Theorem 1.5 as complete and identifies
+Theorem 1.4's exact remaining height obligation. Boundedness of the interval
+extension alone does not justify using the unextended source norm in the
+printed formula. This is an unresolved estimate, not a spectral
+counterexample or an adopted replacement. Theorem 1.1's printed height
+above four and G.2's printed interval-norm interpretation remain open.
+The original unrestricted m=1 sharpening remains optional and unresolved;
+the whole dissertation remains incomplete.
+
+Validation: the full project check passed (6587 build jobs), including all
+public examples and the axiom audit of 27434 NLS declarations. There
+are 21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: periodic asymptotics and the finite-gap density audit
 
 Theorem 1.2 and Corollary 1.3 are now assembled and audited in the original
 source coefficient space for every finite 1<p. The canonical endpoints

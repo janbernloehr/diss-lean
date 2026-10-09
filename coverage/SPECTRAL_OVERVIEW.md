@@ -108,6 +108,88 @@ locally uniform tail statements. All finite p>1 and every complex source
 potential are covered. No continuity or analyticity of the individually
 lexicographically sorted endpoints is inferred from these bounds.
 
+## Theorem 1.4: full printed conclusion at p=2; other heights unresolved
+
+The source statement on p. 20 concerns both ordinary boundary spectra,
+using the original period-one source norm. Section 4, p. 32, defines them
+as the restrictions of the operator with the same Dirichlet-reflected
+potential to its Dirichlet and Neumann spaces. This is implemented by
+`periodOneBoundaryPotential hp hp1` and `BoundaryCondition.spectrum`;
+the Neumann problem does not use a second potential extension here.
+
+The source-facing results in `SourceBoundaryOverview.lean` cover:
+
+- `sourceBoundarySpectrum_closed_discrete`: both actual spectra are
+  closed and discrete for every finite p>1. The existing
+  `finite_spectrum_inter_of_isBounded` additionally gives finiteness in
+  every bounded region.
+- `exists_uniform_sourceBoundaryLabels`: one open convex neighborhood in
+  the original `CoeffPair p` norm, one cutoff, both conditions, and all
+  larger cutoffs. `BoundaryCountingData` gives high-disk multiplicity one,
+  the central count 2N+1, and exhaustion in the height-N box.
+  `disk_unique_simple` identifies the unique high-disk eigenvalue and
+  its actual algebraic multiplicity one.
+- `sourceBoundarySpectrum_im_eq_zero`: every spectral point is real at
+  every real-type source, including all central and repeated eigenvalues.
+
+The height-N box does not establish the printed box. The new
+`SourceBoundaryPrintedHeight.lean` proves the missing transfer precisely:
+
+- `BoundaryCondition.heightSpectrum` is the actual finite boundary
+  spectrum intersected with `heightSpectralBox N H`, with the source's
+  strict horizontal and nonstrict vertical inequalities.
+- `heightSpectrum_eq_central` and
+  `exists_source_boundaryCounting_printed_height_of_bound` preserve both
+  central counts and exhaustion on a single source neighborhood whenever
+  the original source-norm strip bound is available.
+- `norm_periodOneBoundaryPotential_two_le` proves contractivity of the
+  completed interval extension at p=2, in the original source norm.
+  `sourceBoundarySpectrum_abs_im_lt_printed_height_two` then gives the
+  unchanged (1+8||phi||_2)^2 strip, with both edges excluded from the spectrum.
+- `sourceTheorem1_4_two` gives both printed-box counts 2N+1 and exhaustion,
+  plus all `BoundaryCountingData`, on one open convex source neighborhood
+  and for every larger cutoff. Together with the first group of results,
+  this covers every clause of Theorem 1.4 at p=2.
+
+The unchanged printed-height obligation remains unresolved for the other
+finite exponents greater than one. `intervalExtensionCLM` is bounded there,
+but the available general bound includes `intervalExtensionBound hp1 hp`.
+Applying a periodic estimate at the reflected potential norm does not
+justify dropping that factor and using the original source norm. In
+particular the periodic p<=4 theorem does not by itself prove the boundary
+claim in that range. No spectral counterexample or replacement height is
+asserted. See `SOURCE_ERRATA.md`.
+
+## Theorem 1.5: proved in the full printed range
+
+The source statement on p. 21 requires both globally lexicographically
+ordered ordinary boundary sequences to have lp frequency displacements,
+locally uniformly in every complex source, for every finite p>1.
+
+`sourceTheorem1_5_mem` proves membership of each literal sequence
+`canonicalPeriodOneBoundaryRoots ... b phi n - n*pi`. `sourceTheorem1_5`
+proves summability of its p-power energy and one positive full-series
+bound, simultaneously for both boundary conditions, on a common open
+convex source neighborhood containing the base source and zero. This
+bounds the actual full lp norms and includes every central index.
+
+The canonical roots exhaust the original boundary spectrum by
+`canonicalPeriodOneBoundaryRoots_exhaustive`, and repetitions have exactly
+the original algebraic multiplicity by
+`canonicalPeriodOneBoundaryRoots_multiplicity`. Their global ordering is
+`monotone_canonicalPeriodOneBoundaryRoots`; uniqueness of complete ordered
+labelings makes them independent of the cutoff and initial enumeration.
+The public checks cover the literal sequences for general p, the shared
+series bound at p=5, and global ordering.
+
+No real-type assumption or smallness restriction is used. The source
+neighborhood is the continuous linear pullback of the reflected-potential
+neighborhood; no norm equality is needed for this qualitative local bound.
+Theorem 1.5 is therefore covered for every finite p>1 independently of
+Theorem 1.4's remaining numerical-height obligation. No continuity or
+analyticity of individually sorted roots at arbitrary complex potentials
+is claimed by these locally uniform bounds.
+
 ## Corollary 1.6: proved in the full printed range
 
 The statement on p. 21 requires real finite-gap potentials to be dense in
@@ -137,11 +219,6 @@ assumption of density in a smoother space. The preceding unnumbered
 claim of spatial real analyticity for all finite-gap potentials is a
 separate regularity claim; it is not certified by this density audit.
 
-## Boundary-spectrum overview statements: audit pending
-
-Theorems 1.4 and 1.5 require a statement-by-statement comparison with the
-boundary-spectrum implementation, including both boundary conditions,
-domains, ordering, multiplicities, local uniformity, and the exact source
-norms and constants. Their completion is not inferred from this
-periodic-spectrum or finite-gap density audit. The dissertation remains
-incomplete.
+The numbered overview audit now leaves the full-range printed heights in
+Theorems 1.1 and 1.4 unresolved. It does not certify the remaining chapters
+or unnumbered source claims. The dissertation remains incomplete.

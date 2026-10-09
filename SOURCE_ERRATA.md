@@ -495,6 +495,32 @@ finite-exponent height remains required and unresolved above four.
 `(1+8pM)^p` is still a proved alternative, not completion of the printed
 claim. See [the spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
 
+## Theorem 1.4: boundary height proved at p=2; other exponents unresolved
+
+The printed box on p. 20 uses `(1+8||phi||_p)^p` with the original source
+norm for both ordinary boundary conditions. The proof on p. 32 applies
+periodic localization to the reflected potential `phi^dir`; Lemma 4.3
+supplies boundedness of that extension, with no stated contractive bound
+in the general exponent range.
+
+The implementation now isolates this distinction. The general available
+extension estimate contains `intervalExtensionBound hp1 hp`; applying a
+periodic spectral-height theorem to the reflected norm does not justify
+replacing it by the original source norm. This issue is separate from
+Theorem 1.1's exponent-dependent reciprocal estimate. It prevents an
+automatic inference of Theorem 1.4 even from the proved periodic p<=4 range.
+
+At p=2 the completed Hilbert extension is contractive.
+`norm_periodOneBoundaryPotential_two_le` transfers that estimate to the
+original source norm, and `sourceTheorem1_4_two` proves the exact printed
+box with central count 2N+1, simple high-disk roots, and exhaustion for both
+conditions on one neighborhood. Discreteness and spectrum-wide reality
+are proved at every finite p>1. The printed boundary height at other
+exponents remains required and unresolved, not refuted; no replacement
+height has been adopted. The generic counting theorem records the exact
+missing source-height premise. Theorem 1.5's locally uniform full-sequence
+bounds are proved independently for all finite p>1.
+
 ## Lemma 26.2: sign of the higher Hamiltonian
 
 Source: [dissertation, Lemma 26.2](https://janbernloehr.de/Download/fs16/diss.pdf#page=113).

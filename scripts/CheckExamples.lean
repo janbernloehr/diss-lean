@@ -40690,3 +40690,87 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p) :
     norm_zero,Real.zero_rpow (ENNReal.toReal_pos (ne_of_gt (zero_lt_one.trans hp1)) hp).ne',add_zero]
 
 end SourcePeriodicOverviewChecks
+
+
+noncomputable section
+open Set NLS NLS.Coeff NLS.ComplexAnalysis NLS.ZakharovShabat
+open scoped ENNReal Classical
+namespace SourceBoundaryOverviewChecks
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- Both literal displacement sequences belong to lp at every finite p>1.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    Memℓp (fun n : ℤ => canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ n-(Real.pi : ℂ)*n) p ∧
+    Memℓp (fun n : ℤ => canonicalPeriodOneBoundaryRoots hp hp1 .neumann φ n-(Real.pi : ℂ)*n) p :=
+  ⟨sourceTheorem1_5_mem hp hp1 .dirichlet φ,sourceTheorem1_5_mem hp hp1 .neumann φ⟩
+
+-- One source neighborhood and one positive constant bound both full power sums.
+local instance : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+example (φ : CoeffPair 5) :
+    ∃ U : Set (CoeffPair 5), IsOpen U ∧ φ ∈ U ∧ ∃ C : ℝ, 0 < C ∧
+      ∀ ψ ∈ U, ∀ b : BoundaryCondition,
+        Summable (fun n : ℤ => ‖canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n-
+          (Real.pi : ℂ)*n‖^5) ∧
+        (∑' n : ℤ, ‖canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) b ψ n-
+          (Real.pi : ℂ)*n‖^5) ≤ C := by
+  obtain ⟨U,hU,_,hφ,_,C,hC,h⟩ := sourceTheorem1_5 (by norm_num) (by norm_num) φ
+  refine ⟨U,hU,hφ,C,hC,?_⟩
+  simpa only [ENNReal.toReal_ofNat,Real.rpow_ofNat] using h
+
+-- Canonical ordering is global and independent of a chosen central cutoff.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition) (φ : CoeffPair p) :
+    Monotone (fun n => complexLexKey (canonicalPeriodOneBoundaryRoots hp hp1 b φ n)) :=
+  monotone_canonicalPeriodOneBoundaryRoots hp hp1 b φ
+
+-- The printed box contains exactly 2N+1 roots for each boundary condition,
+-- and each high disk has one simple root, on the same source neighborhood.
+example (φ : CoeffPair 2) :
+    ∃ N₀ : ℕ, 0 < N₀ ∧ ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N → ∀ b : BoundaryCondition,
+        (∑ z ∈ b.heightSpectrum (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+          (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property N ((1+8*‖ψ‖)^2),
+          b.algebraicMultiplicity (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+            (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property z) = 2*N+1 ∧
+        ∀ n : ℤ, N < n.natAbs → ∃! z : ℂ,
+          z ∈ b.spectrum (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+            (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property ∧
+          z ∈ Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) ∧
+          b.algebraicMultiplicity (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).val
+            (periodOneBoundaryPotential (by norm_num) (by norm_num) ψ).property z = 1 := by
+  obtain ⟨N,hN,U,hU,_,hφ,_,h⟩ := sourceTheorem1_4_two φ
+  exact ⟨N,hN,U,hU,hφ,fun ψ hψ K hK b =>
+    ⟨((h ψ hψ K hK).2 b).2.1,fun n hn => (h ψ hψ K hK).1.disk_unique_simple b n hn⟩⟩
+
+-- No boundary eigenvalues lie outside the exact printed box and high disks at p=2.
+example (φ : CoeffPair 2) :
+    ∃ N : ℕ, ∀ b : BoundaryCondition,
+      b.spectrum (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).val
+        (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).property ⊆
+      heightSpectralBox N ((1+8*‖φ‖)^2) ∪ highSpectralDisks N (Real.pi/4) := by
+  obtain ⟨N,_,U,_,_,hφ,_,h⟩ := sourceTheorem1_4_two φ
+  exact ⟨N,fun b => ((h φ hφ N le_rfl).2 b).2.2⟩
+
+-- Spectrum-wide reality uses no restriction to simple or high-index roots.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition) (φ : CoeffPair p)
+    (hr : IsRealType (CoeffPair.toMax p φ)) {z : ℂ}
+    (hz : z ∈ b.spectrum hp (periodOneBoundaryPotential hp hp1 φ).val
+      (periodOneBoundaryPotential hp hp1 φ).property) : z.im = 0 :=
+  sourceBoundarySpectrum_im_eq_zero hp hp1 b φ hr hz
+
+-- Both closed and discrete conclusions concern the actual ordinary boundary spectrum.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (b : BoundaryCondition) (φ : CoeffPair p) :
+    IsClosed (b.spectrum hp (periodOneBoundaryPotential hp hp1 φ).val
+      (periodOneBoundaryPotential hp hp1 φ).property) ∧
+    DiscreteTopology (b.spectrum hp (periodOneBoundaryPotential hp hp1 φ).val
+      (periodOneBoundaryPotential hp hp1 φ).property) :=
+  sourceBoundarySpectrum_closed_discrete hp hp1 b φ
+
+-- The inherited Hilbert estimate uses the original source norm.
+example (b : BoundaryCondition) (φ : CoeffPair 2) (hφ : ‖φ‖ ≤ 1) {z : ℂ}
+    (hz : z ∈ b.spectrum (by norm_num) (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).val
+      (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).property) : |z.im| < 81 := by
+  have h := sourceBoundarySpectrum_abs_im_lt_printed_height_two b φ hz
+  have hn := norm_nonneg φ
+  nlinarith
+
+end SourceBoundaryOverviewChecks

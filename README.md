@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Theorem 1.2's full eigenvalue displacement sum and
-Corollary 1.3's midpoint and gap bounds are proved locally uniformly for
-every finite p>1 in the original source space, using the actual ordered
-eigenvalues and their multiplicities. The audit also confirms Corollary
-1.6's density of actual real finite-gap potentials. The printed spectral
-height remains proved through p=4 and unresolved above four. G.2's printed interval-norm
-interpretation and the remaining source-scope audits are still open.
+Latest milestone: Theorem 1.5's Dirichlet and Neumann displacement bounds
+are proved locally uniformly for every finite p>1, and Theorem 1.4's exact
+printed-box counts and exhaustion are proved at p=2 in the original source
+norm. Its other exponents remain open. Theorem 1.1's printed height is
+proved through p=4; its higher range and G.2's interval norm remain unresolved.
+The source audit also covers Theorem 1.2, Corollary 1.3, and Corollary 1.6.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
