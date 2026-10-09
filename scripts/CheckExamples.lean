@@ -40208,3 +40208,108 @@ example : ∃ G : RealCoeff 1 → RealCoeff 1,
   · simpa [quadraticAtlas, quadraticMap] using hr
 
 end AppendixI4RealChecks
+
+noncomputable section
+open Set Filter Topology NLS NLS.WeightedCoeff
+open scoped ENNReal
+namespace AppendixI4WeightedRealChecks
+
+example (w : Weight) (p : ℝ≥0∞) [Fact (1 ≤ p)] : CompleteSpace (WeightedRealCoeff w p) := inferInstance
+example (w : Weight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (a : WeightedRealCoeff w p) : ‖a‖ = ‖a.val‖ := rfl
+example (w : Weight) (p : ℝ≥0∞) [Fact (1 ≤ p)] (a : WeightedRealCoeff w p) (n : ℤ) :
+    (a.val.val n).im = 0 := WeightedRealCoeff.im_eq_zero w p a n
+example (s : ℝ) (a : nonnegativeLocus (Weight.sobolev s) 1) :
+    WeightedRealCoeff.complexCLM _ _ (reCLM _ _ a.val) = a.val :=
+  complexCLM_reCLM _ _ _ (fun n => (a.property n).1)
+
+example {w : Weight} {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {f : nonnegativeLocus w p → WeightedCoeff w p} {U : Set (nonnegativeLocus w p)}
+    (a : NonnegativeAnalyticAtlas f U) (hU : IsOpen U) (hconn : IsPreconnected U)
+    (hr : ∀ x ∈ U, f x ∈ realLocus w p)
+    (hc : ∀ x ∈ U, IsCompactOperator (a.derivative x-1 : WeightedCoeff w p →L[ℂ] WeightedCoeff w p))
+    (hs : a.realLocalInversePoints.Nonempty) :
+    IsOpen a.realLocalInversePoints ∧ U ⊆ closure a.realLocalInversePoints :=
+  sourcePropositionI4_real_weighted hp a hU hconn hr hc hs
+
+example {w : Weight} {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    {f : nonnegativeLocus w p → WeightedCoeff w p} {U : Set (nonnegativeLocus w p)}
+    (a : NonnegativeAnalyticAtlas f U) (hU : IsOpen U) (hconn : IsPreconnected U)
+    (hr : ∀ x ∈ U, f x ∈ realLocus w p)
+    (hc : ∀ x ∈ U, IsCompactOperator (a.derivative x-1 : WeightedCoeff w p →L[ℂ] WeightedCoeff w p))
+    (hs : ∃ x ∈ U, ∃ G : WeightedRealCoeff w p → WeightedRealCoeff w p,
+      DifferentiableAt ℝ G (reCLM w p (f x)) ∧
+      ∀ᶠ y in 𝓝 (reCLM w p x.val), G (realRestriction (a.extension x) y) = y) :
+    IsOpen a.realLocalInversePoints ∧ U ⊆ closure a.realLocalInversePoints :=
+  sourcePropositionI4_real_weighted_of_differentiable_seed hp a hU hconn hr hc hs
+
+-- A nonlinear perturbation of the zeroth raw coefficient, in every positive weight.
+def basis (w : Weight) : WeightedCoeff w 1 := ofFinsupp w 1 (Finsupp.single 0 1)
+def quadraticMap (w : Weight) (z : WeightedCoeff w 1) := z+(z.val 0)^2 • basis w
+
+def quadraticAtlas (w : Weight) : NonnegativeAnalyticAtlas
+    (fun x : nonnegativeLocus w 1 => quadraticMap w x.val) Set.univ where
+  extension _ := quadraticMap w
+  analyticAt x _ := analyticAt_id.add
+    (((evalCLM w 1 0).analyticAt x.val).pow 2 |>.smul analyticAt_const)
+  agreement _ _ := Filter.EventuallyEq.rfl
+
+lemma quadratic_real (w : Weight) (x : nonnegativeLocus w 1) : quadraticMap w x.val ∈ realLocus w 1 := by
+  intro n
+  change (x.val.val n+(x.val.val 0)^2*(basis w).val n).im = 0
+  by_cases hn : n = 0 <;> simp [basis,WeightedCoeff.ofFinsupp_apply,hn,pow_two,(x.property n).1,(x.property 0).1]
+
+lemma quadratic_derivative (w : Weight) (z : WeightedCoeff w 1) :
+    fderiv ℂ (quadraticMap w) z = 1+((2*z.val 0) • evalCLM w 1 0).smulRight (basis w) := by
+  have hd := (hasFDerivAt_id z).add
+    ((evalCLM w 1 0).hasFDerivAt (x := z) |>.pow 2 |>.smul_const (basis w))
+  change HasFDerivAt (quadraticMap w) _ z at hd
+  convert hd.fderiv using 1
+  ext y
+  simp
+
+lemma quadratic_compact (w : Weight) (x : nonnegativeLocus w 1) :
+    IsCompactOperator ((quadraticAtlas w).derivative x-1 : WeightedCoeff w 1 →L[ℂ] WeightedCoeff w 1) := by
+  change IsCompactOperator (fderiv ℂ (quadraticMap w) x.val-1 : WeightedCoeff w 1 →L[ℂ] WeightedCoeff w 1)
+  rw [quadratic_derivative,add_sub_cancel_left]
+  have hc := isCompactOperator_of_locallyCompactSpace_rng
+    ((ContinuousLinearMap.id ℂ ℂ).smulRight (basis w))
+  exact hc.comp_clm ((2*x.val.val 0) • evalCLM w 1 0)
+
+lemma quadratic_zero_mem (w : Weight) : (⟨0,zero_mem_nonnegativeLocus w 1⟩ : nonnegativeLocus w 1) ∈ (quadraticAtlas w).realLocalInversePoints := by
+  rw [(quadraticAtlas w).realLocalInversePoints_eq (by norm_num) isOpen_univ
+    (fun x _ => quadratic_real w x) (fun x _ => quadratic_compact w x),
+    (quadraticAtlas w).localInversePoints_eq]
+  refine ⟨mem_univ _,?_⟩
+  change IsUnit (fderiv ℂ (quadraticMap w) (0 : WeightedCoeff w 1))
+  have hD : fderiv ℂ (quadraticMap w) (0 : WeightedCoeff w 1) = 1 := by
+    rw [quadratic_derivative]
+    ext y
+    simp
+  rw [hD]
+  exact isUnit_one
+
+example (w : Weight) : ∃ G : WeightedRealCoeff w 1 → WeightedRealCoeff w 1,
+    AnalyticAt ℝ G 0 ∧ G 0 = 0 ∧
+    (∀ᶠ y in 𝓝 (0 : WeightedRealCoeff w 1), G (realRestriction (quadraticMap w) y) = y) ∧
+    (∀ᶠ z in 𝓝 (0 : WeightedRealCoeff w 1), realRestriction (quadraticMap w) (G z) = z) := by
+  have hm := quadratic_zero_mem w
+  obtain ⟨G,_,hG,hG0,hl,hr,_⟩ := (quadraticAtlas w).exists_real_localInverse hm
+  refine ⟨G,?_,?_,?_,?_⟩
+  · simpa [quadraticMap] using hG
+  · simpa [quadraticMap] using hG0
+  · simpa only [quadraticAtlas,map_zero] using hl
+  · simpa [quadraticAtlas,quadraticMap] using hr
+
+example (w : Weight) : IsOpen (quadraticAtlas w).realLocalInversePoints ∧
+    (Set.univ : Set (nonnegativeLocus w 1)) ⊆ closure (quadraticAtlas w).realLocalInversePoints := by
+  let : PreconnectedSpace (Coeff.nonnegativeLocus 1) :=
+    isPreconnected_iff_preconnectedSpace.mp (Coeff.convex_nonnegativeLocus 1).isPreconnected
+  have hconn : IsPreconnected (Set.univ : Set (nonnegativeLocus w 1)) := by
+    have hh := (nonnegativeHomeomorph w 1).isPreconnected_preimage.mpr
+      (isPreconnected_univ : IsPreconnected (Set.univ : Set (Coeff.nonnegativeLocus 1)))
+    simpa only [preimage_univ] using hh
+  exact sourcePropositionI4_real_weighted (by norm_num) (quadraticAtlas w) isOpen_univ hconn
+    (fun x _ => quadratic_real w x) (fun x _ => quadratic_compact w x)
+    ⟨_,quadratic_zero_mem w⟩
+
+end AppendixI4WeightedRealChecks

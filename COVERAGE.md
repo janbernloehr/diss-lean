@@ -919,9 +919,8 @@ are included. The conclusion concerns inverses of local complex analytic
 extensions, and agreement with the original cone map is proved. Only local
 extensions are required; they need not be chosen as one global map.
 
-Weighted complex transport and the unweighted real inverse conclusion are
-proved below. Weighted real transport and the remaining source formulation
-are still pending. Accordingly I.4 is partial, not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
+Weighted complex and real transport are proved below. The bridge from
+local real-analytic germs to the extension-atlas hypothesis remains pending. Accordingly I.4 is partial, not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
 and optional original m=1 obligations retain their status. Source-label
 inventories and declaration counts do not certify completeness.
 
@@ -943,9 +942,9 @@ All weighted statements use raw coefficients and the existing weighted norm.
 No comparison constants, boundedness assumption on the weight, or compactness
 hypothesis off the nonnegative cone have been added. The local inverses are
 currently complex ambient inverses of the original weighted extensions.
-Restriction to real sequence spaces is proved below in the unweighted case;
-its weighted transport and the remaining source formulation are the next
-obligations. I.4 is not yet marked fully proved.
+Restriction to real sequence spaces is proved below for both unweighted
+and weighted spaces. The real-analytic-to-complex-atlas representation
+bridge is the next obligation. I.4 is not yet marked fully proved.
 The previously recorded G.2, p>2 spectral-height, and optional original m=1
 obligations remain open; counts do not certify completeness.
 
@@ -966,7 +965,30 @@ These results use local complex extension atlases to represent analyticity
 at the cone boundary. The reality required to restrict those extensions and
 their inverses is proved from the original cone values. A general construction
 of such an atlas from a separate real-analytic predicate is not asserted.
-The real conclusion, real inverse locus, and real seed still need transport
-to all positive weights. The weighted complex theorem above is unchanged;
-I.4 as a whole is not yet marked fully proved. The G.2 local-norm, required
+The real conclusion, real inverse locus, and real seed are now transported
+to all positive weights below. The real-analytic-to-complex-atlas bridge is
+still pending; I.4 as a whole is not yet marked fully proved. The G.2 local-norm, required
 p>2 spectral-height, and optional original m=1 obligations remain unchanged.
+
+
+### Proposition I.4: real inverses in every positive weighted space
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Original weighted real Banach space | `WeightedRealCoeff`, `WeightedRealCoeff.im_eq_zero`, `WeightedCoeff.mem_realSubmodule_iff` | Closed subspace with real raw coefficients and the original inherited weighted norm; complete at every Banach exponent. |
+| Compatible real coordinates | `coordinateRealEquiv`, `val_coordinateReCLM`, `realRestriction_linear_conjugate` | Real inclusion and projection, recovery of real original values, and compatibility of real restriction with complex weighting. |
+| Original compactness | `WeightedCoeff.NonnegativeAnalyticAtlas.toCoeff_derivative`, `toCoeff_compact` | Derivative conjugacy and compactness of derivative minus identity in normalized coordinates, from the original cone hypotheses only. |
+| Actual real inverse locus | `WeightedCoeff.NonnegativeAnalyticAtlas.realLocalInversePoints_eq`, `realLocalInversePoints_eq_of_atlas` | Real and complex inverse loci coincide; the real locus is intrinsic to the original cone map. |
+| Real weighted density | `WeightedCoeff.sourcePropositionI4_real_weighted` | One actual real local inverse implies a relatively open dense real inverse locus for all positive weights and finite Banach exponents. |
+| Differentiable real starting inverse | `WeightedCoeff.sourcePropositionI4_real_weighted_of_differentiable_seed` | The initial real map need only be differentiable and a left inverse; the resulting inverse points have analytic two-sided real inverses. |
+| Both real identities and original recovery | `WeightedCoeff.NonnegativeAnalyticAtlas.exists_real_localInverse` | Actual maps `WeightedRealCoeff w p -> WeightedRealCoeff w p`, with analyticity, center identity, both local inverse identities, and recovery of the original cone map. |
+| Nonlinear check in arbitrary weights | `AppendixI4WeightedRealChecks` | A quadratic raw-coordinate perturbation has compact derivative minus identity, an inverse at the zero boundary, and an open dense real inverse locus for every positive weight. Both inverse identities are checked. |
+
+The weight is only required to be strictly positive. All real Sobolev orders
+are included, and no global upper or lower bound on the weight is assumed.
+Only local complex extension atlases are used; compactness is assumed at
+original cone points. The real transport obligation is now complete.
+Constructing those atlases from local real-analytic germs remains pending,
+so the unrestricted source formulation is not marked complete. The separate
+G.2 local-norm, required p>2 spectral-height, and optional original m=1
+obligations retain their status. Counts do not certify completeness.

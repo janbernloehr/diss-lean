@@ -1,6 +1,60 @@
 # Implementation status
 
-## Current milestone: I.4 with actual real inverses and a real seed
+## Current milestone: I.4 on weighted real sequence spaces
+
+I.4's real inverse construction now holds in the original weighted sequence
+spaces for every positive weight and every finite Banach exponent
+1<=p<infinity. This includes every real Sobolev order, with no restriction
+to nonnegative or integer orders. The relatively open cone domain retains
+zero and all other boundary points.
+
+`WeightedRealCoeff.lean` defines the complete real Banach space as the
+closed subspace of weighted sequences with real raw coefficients, using
+the inherited weighted norm. Real weighting coordinates, inclusion, and
+real-part projection are constructed in `RealCoefficientCoordinates.lean`.
+These are actual real sequence spaces, not the entire complex space viewed
+as a real vector space.
+
+`LinearCoordinatesLocalInverse.lean` transports analytic inverse germs,
+differentiable left-inverse germs, derivatives, and compact perturbations
+of identity. `NonnegativeAtlasCoordinates.lean` and
+`WeightedAnalyticAtlasCoordinates.lean` normalize local extension atlases
+and prove derivative conjugacy using only the original compactness
+assumptions at cone parameters. `RealAtlasInversePredicate.lean` and
+`RealAtlasCoordinateGerms.lean` transport the real inverse locus with its
+actual base points.
+
+`WeightedRealLocalInverse.lean` proves that the real and complex inverse
+loci coincide under the source hypotheses, and that the real locus is
+independent of the chosen extension atlas.
+`SourcePropositionI4WeightedReal.lean` proves relative openness and density
+from one actual weighted real local inverse. A differentiable real left
+inverse suffices as the starting assumption. At every inverse point there
+is a real analytic map on the original weighted real space, with both
+inverse identities and recovery of the original cone map.
+
+Public examples check arbitrary weights and exponents, real coefficients
+and the inherited norm, and all real Sobolev orders. A nonlinear quadratic
+perturbation of the zeroth raw coefficient has compact derivative minus
+identity, a real local inverse at zero, and an open dense real inverse
+locus for every positive weight. Both inverse identities are checked.
+
+The weighted real transport obligation is complete. The theorem still
+uses local complex extension atlases to represent analyticity at cone
+boundary points. Next: construct these atlases from local real-analytic
+germs, so this representation is connected explicitly to the real-analytic
+source hypothesis. That bridge is not claimed here; I.4's unrestricted
+source formulation remains pending. G.2's arbitrary-time local norm, the
+required p>2 spectral height, and the optional original m=1 sharpening
+retain their status. The dissertation is incomplete.
+
+Validation: focused modules, standalone examples, and the full project
+check passed: 6,567 build jobs, all public examples, and the axiom audit
+of 27,188 NLS declarations. The 21 existing warnings are unchanged, with
+none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: I.4 with actual real inverses and a real seed
 
 The unweighted real-space part of I.4 is now proved for every finite
 Banach exponent 1<=p<infinity, including zero and arbitrary boundary points

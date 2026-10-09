@@ -3129,3 +3129,12 @@ import NLS.SequenceSpaces.RealAnalyticInverseRestriction
 import NLS.SequenceSpaces.NonnegativeRealLocalInverse
 import NLS.SequenceSpaces.RealInverseFredholmSeed
 import NLS.SequenceSpaces.SourcePropositionI4RealCore
+import NLS.ComplexAnalysis.LinearCoordinatesLocalInverse
+import NLS.SequenceSpaces.RealCoefficientCoordinates
+import NLS.SequenceSpaces.WeightedRealCoeff
+import NLS.SequenceSpaces.NonnegativeAtlasCoordinates
+import NLS.SequenceSpaces.WeightedAnalyticAtlasCoordinates
+import NLS.SequenceSpaces.RealAtlasInversePredicate
+import NLS.SequenceSpaces.RealAtlasCoordinateGerms
+import NLS.SequenceSpaces.WeightedRealLocalInverse
+import NLS.SequenceSpaces.SourcePropositionI4WeightedReal
