@@ -3165,3 +3165,5 @@ import NLS.ZakharovShabat.TriangularNormalizedBand
 import NLS.ZakharovShabat.SourceBoundaryHeightCounterexample
 import NLS.ZakharovShabat.SourceBoundaryExplicitHeight
 import NLS.ZakharovShabat.SourceBoundaryHeightNecessity
+import NLS.ZakharovShabat.TriangularPeriodicSpectrum
+import NLS.ZakharovShabat.ComplexFiniteGapRegularityCounterexample

@@ -1,5 +1,56 @@
 # Source discrepancies
 
+## Unnumbered finite-gap regularity sentence: complex sources need a qualification
+
+Source: dissertation, printed p. 21, immediately before Corollary 1.6.
+The source defines finite-gap potentials by finitely many nonzero gaps,
+then says they are smooth and real analytic. The following density
+assertion explicitly concerns real type, but the regularity sentence
+itself states no such restriction. The unrestricted complex reading is
+false. This audit does not infer that the author intended the unrestricted
+reading; it records the qualification needed when formalizing it.
+
+For any finite p>1 take the original period-one source `phi=(u,0)` with
+
+```
+u_n = 1/(1+|n|),  n in Z.
+```
+
+The formal construction `roughTriangularSource hp hp1` lies in `CoeffPair p`
+by the exact reciprocal Sobolev-weight summability theorem. It is not of
+real type, since its second component is zero and its first coefficient
+at index zero is one.
+
+`TriangularPeriodicSpectrum.lean` works directly with the actual
+coefficient-space operator and its original one-derivative domain.
+For any triangular potential, `T=V*R_0` satisfies `T^2=0`, so the two-term
+expression `R_0*(1+T)` supplies both inverse identities at every point
+off the free lattice. The negative signed modes remain eigenvectors at
+every point of the free lattice. Thus the entire periodic spectrum is
+exactly `pi*Z`, with no smoothness or smallness assumption. Applying the
+period-one source embedding gives `roughTriangularSource_spectrum`.
+The singleton-strip criterion for the actual canonical endpoint labels
+then proves `roughTriangularSource_finite_gap`: the set of nonzero
+canonical indexed gaps is finite. Identifying every central label is
+unnecessary for this literal finite-gap property.
+
+The same coefficients are not in l1, by the exact harmonic threshold.
+The Fourier coefficients of every smooth periodic function are in l1.
+`roughTriangularCoefficients_no_smooth_representative` therefore excludes
+every smooth period-one representative preserving the original Fourier
+coefficients. `roughTriangularCoefficients_no_analytic_representative`
+excludes every spatially real-analytic periodic representative as well.
+`not_every_complex_finiteGap_source_smooth` explicitly negates the
+unrestricted all-source assertion at every finite p>1.
+
+These are complex counterexamples, not counterexamples to real-type
+finite-gap regularity. `SourceFiniteGapSmoothRealization.lean` already
+proves the coefficient-preserving smooth realization for real-type
+finite-gap sources, and Corollary 1.6's real-type density remains valid.
+The real-type spatial real-analyticity claim is still a separate required
+proof. The free periodic spectrum here also gives no counterexample to
+Theorem 1.1's unresolved printed height above four.
+
 ## Proposition I.4: reversed signs in the displayed Schur block
 
 Source: dissertation, printed page 140, checked in the rendered PDF.

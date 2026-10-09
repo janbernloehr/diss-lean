@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: a proposed all-p boundary height and necessary coefficient growth
+## Current milestone: complex finite-gap regularity requires a qualification
+
+The unqualified finite-gap regularity sentence on printed p. 21 is now
+refuted for complex sources. For every finite p>1, the source `(u,0)`
+with `u_n=1/(1+|n|)` belongs to the original coefficient space, has exactly
+the free periodic spectrum, and has only finitely many nonzero canonical
+indexed gaps. Its first component has no smooth period-one representative
+with the original Fourier coefficients, and no spatially real-analytic
+periodic representative. The source is explicitly not of real type.
+
+`TriangularPeriodicSpectrum.lean` proves the full spectral statement for
+any triangular coefficient potential at every finite Banach exponent.
+The operator `T=V*R_0` squares to zero, so `R_0*(1+T)` is a two-sided
+inverse from the base space into the original derivative domain away
+from the free lattice. Each free frequency remains an actual eigenvalue.
+No smallness, finite support, smoothness, discriminant assumption, or
+substitute spectrum enters this argument. The period-one source embedding
+preserves triangularity. The existing canonical labeling then proves
+finiteness of the set of nonzero indexed gaps.
+
+`ComplexFiniteGapRegularityCounterexample.lean` constructs the reciprocal
+bracket source at every finite p>1. Exact Sobolev-reciprocal summability
+proves it fails l1 membership. Every smooth periodic function has l1
+Fourier coefficients, so no such function represents this source. Real
+analyticity implies smoothness and is excluded as well.
+`not_every_complex_finiteGap_source_smooth` negates the unrestricted
+assertion using the actual canonical gaps and physical Fourier integrals.
+The proof only claims finitely many nonzero canonical gaps; it does not
+need to identify every central label individually.
+
+This settles the unrestricted complex reading of the source sentence.
+The existing real-type finite-gap smoothness theorem and Corollary 1.6's
+real-type density theorem remain valid. Spatial real analyticity for
+real-type finite-gap sources remains required and unproved. Theorem 1.1's
+printed periodic height above four, G.2's original interval norm, and the
+optional original m=1 sharpening remain unresolved. The proposed boundary
+height correction remains separate from the refuted all-p printed formula.
+The whole dissertation remains incomplete.
+
+Validation: the full project check passed (6596 build jobs), including all
+public examples and the axiom audit of 27550 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: a proposed all-p boundary height and necessary coefficient growth
 
 A proposed correction to Theorem 1.4 is now proved for every finite p>1:
 use height `(1+8*p*E_p*||phi||_p)^p`, where E_p is the proved constant

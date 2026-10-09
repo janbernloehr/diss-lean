@@ -1100,8 +1100,9 @@ source space. Real spectral closing approximants converge in the original
 finite-p pair norm, and the singleton-strip criterion proves their actual
 finite-gap property. Existing public checks cover p=3 approximants and
 density at p=2 and p=3/2. The detailed audit is recorded in
-`coverage/SPECTRAL_OVERVIEW.md`. The separate unnumbered spatial real
-analyticity claim is not certified by this density result.
+`coverage/SPECTRAL_OVERVIEW.md`. The unrestricted complex regularity
+sentence is refuted below; real-type spatial real analyticity remains
+unproved and is not certified by this density result.
 
 
 ### Theorems 1.4 and 1.5: Hilbert box, all-p asymptotics, and a height counterexample
@@ -1153,5 +1154,28 @@ is certified.
 
 Validation: the full project check passed (6594 build jobs), including all
 public examples and the axiom audit of 27521 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+
+### Unnumbered finite-gap regularity: unrestricted complex reading refuted
+
+| Requirement | Public evidence | Verified scope |
+| --- | --- | --- |
+| Actual triangular periodic inverse | `triangularResolvent_spectralPencil`, `spectralPencil_triangularResolvent` | Original one-derivative domain; any triangular coefficient potential; every finite Banach exponent; no smallness. |
+| Full free spectrum | `periodicSpectrum_triangular`, `sourcePeriodicSpectrum_triangular` | Equality with the whole free lattice, including the original period-one source embedding. |
+| Literal finite-gap property | `finite_canonicalPeriodicGap_triangular`, `roughTriangularSource_finite_gap` | Finite set of nonzero actual canonical indexed gaps for every finite p>1. |
+| A rough source in the original space | `roughTriangularSource` | First coefficients 1/(1+|n|), second component zero; belongs to every finite lp with p>1. |
+| Failure of smooth and analytic realizations | `roughTriangularCoefficients_no_smooth_representative`, `roughTriangularCoefficients_no_analytic_representative` | No periodic physical representative with the same Fourier coefficients has the claimed regularity. |
+| Scope separation | `roughTriangularSource_not_realType`, `not_every_complex_finiteGap_source_smooth` | Refutes the unrestricted complex reading; preserves the existing real-type regularity and density results. |
+
+The statement audited is the unnumbered sentence on printed p. 21, not
+Corollary 1.6's real-type density theorem. Real-type spatial real
+analyticity remains required and unproved. The result uses no proposed
+replacement definition of finite gaps or of the periodic spectrum.
+The dissertation remains incomplete.
+
+Validation: the full project check passed (6596 build jobs), including all
+public examples and the axiom audit of 27550 NLS declarations. There are
 21 existing warnings and no new warnings. The source inventory check
 passed with 156 labels. Counts do not certify completeness.

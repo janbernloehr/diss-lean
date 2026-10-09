@@ -40885,3 +40885,55 @@ example : ¬ ∃ C : ℝ, 0 ≤ C ∧ ∀ P : ℕ, ∀ hP : 1 < (P : ℝ≥0∞)
   not_exists_uniform_sourceBoundaryCountingHeightCoefficient
 
 end SourceBoundaryProposedHeightChecks
+
+
+namespace ComplexFiniteGapRegularityChecks
+open Set NLS NLS.Coeff NLS.ZakharovShabat
+open scoped ENNReal ContDiff Classical
+local instance : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The triangular inverse is two-sided on the original domain, without smallness.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (u : Coeff p)
+    (z : ℂ) (hz : z ∉ freeLattice) (f : Domain p) (a : PairSpace p) :
+    triangularResolventToDomain hp u z hz (spectralPencil hp (u,0) z f) = f ∧
+      spectralPencil hp (u,0) z (triangularResolventToDomain hp u z hz a) = a :=
+  ⟨triangularResolvent_spectralPencil hp u z hz f,spectralPencil_triangularResolvent hp u z hz a⟩
+
+-- The entire period-one source spectrum is free, also at a non-Hilbert exponent.
+example (u : Coeff 5) :
+    periodicSpectrum (by norm_num) (periodOnePotential (WithLp.toLp 5 (u,0))) = freeLattice :=
+  sourcePeriodicSpectrum_triangular (by norm_num) u
+
+-- The rough coefficients are exactly the reciprocal bracket, including index zero.
+example {p : ℝ≥0∞} (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) :
+    roughTriangularCoefficients hp hp1 n = (Complex.ofReal (1+|(n : ℝ)|))⁻¹ := by
+  simp only [roughTriangularCoefficients_apply,Weight.sobolev_apply,Real.rpow_one]
+
+-- A single actual source combines free spectrum, finite gaps, and failure of smoothness.
+example : ∃ φ : CoeffPair 2,
+    periodicSpectrum (by norm_num) (periodOnePotential φ) = freeLattice ∧
+    {n : ℤ | canonicalPeriodicGap (by norm_num) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0}.Finite ∧
+    ¬ ∃ f : ℝ → ℂ, ContDiff ℝ ∞ f ∧ Function.Periodic f 1 ∧
+      ∀ n : ℤ, Fourier.periodOneCoefficient f n = φ.fst n := by
+  refine ⟨roughTriangularSource (p := 2) (by norm_num) (by norm_num),
+    roughTriangularSource_spectrum (by norm_num) (by norm_num),
+    roughTriangularSource_finite_gap (by norm_num) (by norm_num),?_⟩
+  exact roughTriangularCoefficients_no_smooth_representative (by norm_num) (by norm_num)
+
+-- The failure holds for real analyticity too, and does not concern real-type sources.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ¬ IsRealType (CoeffPair.toMax p (roughTriangularSource hp hp1)) ∧
+    ¬ ∃ f : ℝ → ℂ, AnalyticOnNhd ℝ f Set.univ ∧ Function.Periodic f 1 ∧
+      ∀ n : ℤ, Fourier.periodOneCoefficient f n = (roughTriangularSource hp hp1).fst n :=
+  ⟨roughTriangularSource_not_realType hp hp1,roughTriangularCoefficients_no_analytic_representative hp hp1⟩
+
+-- The negated assertion uses the literal finite set of nonzero canonical gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ¬ ∀ φ : CoeffPair p,
+      {n : ℤ | canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0}.Finite →
+      ∃ f : ℝ → ℂ, ContDiff ℝ ∞ f ∧ Function.Periodic f 1 ∧
+        ∀ n : ℤ, Fourier.periodOneCoefficient f n = φ.fst n :=
+  not_every_complex_finiteGap_source_smooth hp hp1
+
+end ComplexFiniteGapRegularityChecks

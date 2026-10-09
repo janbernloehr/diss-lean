@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: a proposed replacement for Theorem 1.4's false all-p
-boundary height is proved: `(1+8*p*E_p*||phi||_p)^p`, retaining the interval
-extension bound E_p and the original source norm. It gives both exact
-boundary counts and exhaustion for every finite p>1. Lean also proves
-that no fixed replacement for eight can work for all p: a coefficient
-C_p must be at least p/96 at integer exponents. This correction remains
-separate from the printed theorem. The unchanged boundary result holds
-at p=2; the periodic printed height above p=4 and G.2's norm remain open.
+Latest milestone: Lean refutes the unrestricted complex reading of the
+finite-gap regularity sentence on p. 21. The source `(u,0)` with
+`u_n=1/(1+|n|)` has free periodic spectrum and finitely many nonzero
+canonical gaps, but no smooth or real-analytic periodic representative.
+The example is not of real type. Real-type finite-gap smoothness and
+density remain proved; real-type spatial real analyticity remains open.
+The printed periodic height above p=4 and G.2's norm are also unresolved.
+The proposed all-p boundary-height correction is recorded separately
+from the refuted printed formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

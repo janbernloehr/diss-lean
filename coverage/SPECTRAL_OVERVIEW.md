@@ -241,8 +241,19 @@ the real source space for every finite p>1. The existing
 
 This completes the numbered density statement without an additional
 assumption of density in a smoother space. The preceding unnumbered
-claim of spatial real analyticity for all finite-gap potentials is a
-separate regularity claim; it is not certified by this density audit.
+regularity sentence needs a scope qualification. Its unrestricted complex
+reading is refuted by `ComplexFiniteGapRegularityCounterexample.lean`:
+`roughTriangularSource` has coefficients `(1/(1+|n|),0)`, free actual
+periodic spectrum, and finitely many nonzero canonical gaps, but no smooth
+periodic representative preserving its Fourier coefficients. A fortiori
+it has no spatially real-analytic periodic representative. This holds at
+every finite p>1. The triangular inverse is explicit and two-sided on
+the original domain; the finite-gap property uses actual canonical gaps.
+
+The counterexample is not of real type. Existing real-type finite-gap
+smoothness and density are unaffected; spatial real analyticity in that
+real-type scope remains a required proof. See `SOURCE_ERRATA.md` for the
+source wording, counterexample, and exact scope.
 
 The numbered overview audit leaves Theorem 1.1's printed height above
 four unresolved and records Theorem 1.4's all-p printed height as refuted.
