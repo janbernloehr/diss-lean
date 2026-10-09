@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: G.4 summability for full matrices on exact source H1 balls
+## Current milestone: G.5 reference and endpoint audit
+
+`SourceLemmaG5ReferenceAudit.lean` audits the two displayed formulas on
+printed page 137 against the actual potential derivative. The statement
+uses an upper plus wave and a lower minus wave, while the proof's own
+star-product expansions give an upper minus wave and a lower plus wave.
+The exact actual free-gradient formulas confirm the proof's orientation.
+
+At the original zero H1 source and nu_n=n*pi, both frequency hypotheses
+hold and both printed references coincide. The first component of the
+upper-entry error is -(-1)^n exp(2*pi*i*n*s). Its actual unit-interval
+Fourier coefficient at frequency n is -(-1)^n. Therefore its Fourier l2
+norm is at least one for every signed n, and the norm sequence is not in
+l2. No l2 majorant works even outside an arbitrary finite spectral head.
+Any full-matrix norm dominating this component inherits the obstruction.
+This refutes the literal printed reference already at finite p=2.
+
+The earlier, independent p=infinity obstruction is now explicitly
+identified with an original period-one H1 source: phi=(1,0), with
+nu_n=n*pi+i/(2*(abs(n)+1)). Both printed displacement conditions hold.
+A diagonal gradient component fails Fourier l1 at every index, for either
+free reference. Since the reference is zero in this diagonal entry,
+swapping the off-diagonal superscripts cannot repair this endpoint.
+
+Next: assemble the corrected finite-p full-gradient estimate on exact
+source-norm balls, retaining both reference corrections and excluding the
+refuted infinity endpoint. Existing finite-p scalar-observation estimates
+use the actual free gradient; this milestone does not claim that their
+full matrix assembly and source-ball transfer are complete. G.2's
+arbitrary-time local norm, the required p>2 spectral height, and the
+optional original m=1 sharpening remain open. The accepted Lemma 27.2
+correction and G.3 epsilon qualification are unchanged.
+
+Focused checks cover zero, positive and negative spectral indices,
+actual gradient orientation, both literal references and frequency
+hypotheses, the finite-head obstruction, and the source identification
+for the independent infinity-endpoint counterexample.
+
+The full build passed (6516 jobs), all public examples passed, and the
+axiom audit passed for 26545 NLS declarations. The same 21 existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified; neither this inventory nor the declaration count is a
+completeness certificate.
+
+## Previous milestone: G.4 summability for full matrices on exact source H1 balls
 
 `SourceCorollaryG4.lean` proves the full-matrix summability assertions on
 the original complex period-one H1 source. The parameter range is every

@@ -1,5 +1,52 @@
 # Source discrepancies
 
+## Lemma G.5: swapped free-reference components and the infinity endpoint
+
+Source: dissertation, printed page 137, checked in the rendered PDF.
+Immediately above the lemma, e^-_alpha=(exp(-i*pi*alpha*x),0) and
+e^+_alpha=(0,exp(i*pi*alpha*x)). The statement's upper off-diagonal
+reference is -e^+_(-2*nu_n/pi), while its lower one is e^-_(-2*nu_n/pi).
+However, the proof gives M2 star M2 = e^-_(-2*nu_n/pi) plus errors and
+M1 star M1 = e^+_(-2*nu_n/pi) plus errors. Thus the statement swaps the
+two superscripts relative to its own proof. The same swap occurs in the
+second formula with the lattice reference.
+
+The actual unconjugated potential derivative confirms this discrepancy:
+i times the free upper-entry gradient is
+(-exp(-i*z)*exp(i*z*s)^2,0), and i times the lower-entry gradient is
+(0,exp(i*z)*exp(-i*z*s)^2). `sourceG5_actual_i_free_upper` and
+`sourceG5_actual_i_free_lower` prove these identities using the actual
+free-gradient representation of the endpoint derivative.
+
+At zero potential and nu_n=n*pi, both source hypotheses hold exactly.
+The two printed references coincide, and the first component of the
+upper-entry error is -(-1)^n exp(2*pi*i*n*s). Its actual Fourier coefficient
+at n has modulus one. `not_memlp_sourceG5PrintedUpperError_norms` proves
+failure of the printed outer p=2 assertion; the inner exponent p'=2 is
+also exactly the printed conjugate exponent. The majorant and eventual
+majorant theorems propagate this obstruction to any full-matrix norm
+dominating the component and show that deleting a finite head cannot
+help. This is a literal-reference counterexample, not a failure of the
+finite-p estimate after exchanging the two superscripts.
+
+There is also a separate failure at p=infinity, p'=1, already established
+by `ClassicalGradientInfinityCounterexample.lean`. The smooth period-one
+source phi=(1,0) and nu_n=n*pi+i/(2*(abs(n)+1)) satisfy both displacement
+conditions. A diagonal gradient component has unequal endpoint traces
+and hence is not in Fourier l1, at every spectral index. Its free
+reference is zero, so this obstruction survives the off-diagonal
+correction. `sourceG5_triangular_coefficients` and
+`sourceG5_not_eventually_fourier_l1` explicitly transfer it to the original
+period-one H1 source. Multiplication by i does not change Fourier
+summability. The proof's strict inequality p'>1+1/p also fails at this
+endpoint, where both sides equal one.
+
+The supported correction is upper e^- and lower e^+ in both displayed
+references, with the outer range restricted to finite 2<=p<infinity.
+Existing finite-p scalar gradient estimates use this actual free reference.
+Full matrix assembly and uniformity on the exact source-norm balls remain
+the next implementation step; this audit does not claim them complete.
+
 ## Lemma G.3: the epsilon range in the printed exponent
 
 Source: dissertation, printed page 136. The wording "any epsilon > 0"

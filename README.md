@@ -5,12 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: G.4 now has full-matrix summability on balls in the exact
-periodic source H1 norm, for every finite p>1 and q>1+1/p, including
-q=infinity. The estimates include arbitrary finite initial spectral values
-and the shifted-free comparison under inverse-index displacement. G.5,
-including its printed p=infinity endpoint, is next. G.2's arbitrary-time
-local norm and the required spectral height above p=2 remain open.
+Latest milestone: a Lean audit of G.5 confirms that its printed off-diagonal
+free-reference components are swapped. The literal formula fails already
+at zero potential and p=2, even after deleting a finite spectral head.
+The separate p=infinity failure also applies to an original period-one H1
+source. The corrected finite-p full-gradient estimate is next; it is not
+yet claimed as a full-matrix theorem on exact source-norm balls.
+G.2's arbitrary-time local norm and the required spectral height above p=2
+remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

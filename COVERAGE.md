@@ -702,6 +702,26 @@ with the literal pi/4 hypothesis supplied by the source specialization.
 Focused checks exercise q=3/2, q=2, q=infinity, a non-Hilbert outer p=3/2,
 an arbitrary complex initial spectral value, an actual nonzero 1/abs(n)
 displacement, and a common majorant chosen before the spectral family.
-G.5 is the next source audit, including its printed p=infinity endpoint.
+G.5's reference and endpoint audit is recorded below.
 The dissertation remains incomplete; the previously recorded G.2 local-norm,
 p>2 spectral-height, and optional original m=1 obligations remain open.
+
+
+### Lemma G.5: literal-reference and infinity-endpoint audit
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Actual off-diagonal free gradients | `sourceG5_actual_i_free_upper`, `sourceG5_actual_i_free_lower` | Upper minus component and lower plus component, agreeing with the proof but opposing the printed statement. |
+| Original source and both frequency hypotheses | `sourceG5_zero_admissible`, `sourceG5_printed_upper_lattice` | Zero period-one H1 potential, nu_n=n*pi, both printed references equal at every signed index. |
+| Literal finite p=2 claim | `sourceG5PrintedUpperErrorCoefficients_diagonal`, `not_memlp_sourceG5PrintedUpperError_norms` | Actual scalar Fourier integral has modulus one at mode n; the norm sequence is not in l2. |
+| Full-matrix implication and arbitrary finite exceptions | `not_memlp_sourceG5PrintedError_majorant`, `not_eventually_sourceG5PrintedError_majorant` | No l2 majorant of this component exists, even on any spectral tail. |
+| Independent printed infinity endpoint | `sourceG5_triangular_coefficients`, `sourceG5_not_eventually_fourier_l1` | Original smooth period-one H1 source (1,0); a diagonal component fails Fourier l1 at every perturbed lattice index, independently of the off-diagonal reference correction. |
+
+The source formula needs the two off-diagonal superscripts exchanged.
+Even with this correction the printed outer p=infinity endpoint fails.
+The corrected finite-p full-gradient estimate on exact source-norm balls
+remains the next implementation step. Existing scalar-observation gradient
+estimates do not by themselves certify completion of that assembly.
+See `SOURCE_ERRATA.md` for the literal formulas and proof discrepancy.
+These findings do not change the unresolved G.2 local-norm and required
+p>2 spectral-height obligations or the optional original m=1 sharpening.

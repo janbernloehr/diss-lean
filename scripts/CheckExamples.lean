@@ -39345,3 +39345,64 @@ example (M B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) :
     sourceG4_shiftedFree_tail_majorant 2 (by norm_num) ⊤ (by simp) M B hB N₀
 
 end AppendixG4FullMatrixChecks
+
+
+namespace SourceG5ReferenceAuditChecks
+open NLS NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+
+-- Signed modes and phases, including the central spectral index.
+example : sourceG5PrintedUpperErrorCoefficients 0 0 = -1 := by
+  rw [sourceG5PrintedUpperErrorCoefficients_diagonal,sourceG5LatticePhase_eq]
+  norm_num
+example : sourceG5PrintedUpperErrorCoefficients 1 1 = 1 := by
+  rw [sourceG5PrintedUpperErrorCoefficients_diagonal,sourceG5LatticePhase_eq]
+  norm_num
+example : sourceG5PrintedUpperErrorCoefficients (-2) (-2) = -1 := by
+  rw [sourceG5PrintedUpperErrorCoefficients_diagonal,sourceG5LatticePhase_eq]
+  norm_num
+
+-- The actual free derivative has the opposite component from the printed reference.
+example (s : Set.Icc (0 : ℝ) 1) :
+    Complex.I • classicalEndpointGradient 0 0 (0,1)
+      (ContinuousLinearMap.fst ℂ ℂ ℂ) s = (-1,0) := by
+  have h := sourceG5_actual_i_zero_upper 0 s
+  simpa [sourceG5LatticePhase_eq,wave] using h
+example (s : Set.Icc (0 : ℝ) 1) :
+    Complex.I • classicalEndpointGradient 0 0 (1,0)
+      (ContinuousLinearMap.snd ℂ ℂ ℂ) s = (0,1) := by
+  have h := sourceG5_actual_i_zero_lower 0 s
+  simpa [sourceG5LatticePhase_eq,wave] using h
+example (n : ℤ) (s : ℝ) :
+    sourceG5PrintedUpperReference ((Real.pi : ℂ)*n) s =
+      sourceG5PrintedUpperLattice n s := sourceG5_printed_upper_lattice n s
+example : classicalSobolevPotential (sourceG3ClassicalCoefficients (0,0)) = 0 :=
+  sourceG5_zero_admissible.1
+example (n : ℤ) : ‖((Real.pi : ℂ)*n)-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 :=
+  sourceG5_zero_admissible.2.1 n
+example (n : ℤ) : ‖((Real.pi : ℂ)*n)-(Real.pi : ℂ)*n‖ ≤ 0/(n.natAbs : ℝ) :=
+  sourceG5_zero_admissible.2.2 n
+example : ¬Memℓp (fun n : ℤ => ‖sourceG5PrintedUpperErrorCoefficients n‖) 2 :=
+  not_memlp_sourceG5PrintedUpperError_norms
+example (b : ℤ → ℝ) (hb : Memℓp b 2) :
+    ¬∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+      ‖sourceG5PrintedUpperErrorCoefficients n‖ ≤ b n :=
+  not_eventually_sourceG5PrintedError_majorant b hb
+
+-- Original period-one H1 source and both frequency hypotheses for the independent endpoint failure.
+example : sourceG3ClassicalCoefficients triangularSobolevCoefficients = triangularSobolevCoefficients :=
+  sourceG5_triangular_coefficients
+example (n : ℤ) : ‖gradientCounterexampleFrequency n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 :=
+  gradientCounterexampleFrequency_close n
+example (n : ℤ) (hn : n ≠ 0) :
+    ‖gradientCounterexampleFrequency n-(Real.pi : ℂ)*n‖ ≤ (1/2 : ℝ)/(n.natAbs : ℝ) :=
+  gradientCounterexampleFrequency_decay n hn
+example (referenceFreq : ℤ → ℂ) :
+    ¬∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+      Memℓp (intervalFourierCoefficient 1 (fun t =>
+        (classicalEndpointGradientRemainder
+          (classicalSobolevPotential (sourceG3ClassicalCoefficients triangularSobolevCoefficients))
+          (gradientCounterexampleFrequency n) (referenceFreq n) (1,0)
+          (ContinuousLinearMap.fst ℂ ℂ ℂ) t).2)) 1 :=
+  sourceG5_not_eventually_fourier_l1 referenceFreq
+end SourceG5ReferenceAuditChecks
