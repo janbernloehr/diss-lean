@@ -3178,3 +3178,5 @@ import NLS.ZakharovShabat.NormalizedSobolevSourceEvaluation
 import NLS.ZakharovShabat.SourceFiniteGapAnalyticRealization
 import NLS.ZakharovShabat.FreeResolventHeightNecessity
 import NLS.ZakharovShabat.ComponentProductResolvent
+import NLS.ZakharovShabat.PeriodicDiagonalSimilarity
+import NLS.ZakharovShabat.SourceBalancedHeightReduction

@@ -41161,3 +41161,84 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (u : Coeff p)
     analyticOnNhd_resolvent_componentProductRegion hp z hz⟩
 
 end ComponentProductResolventChecks
+
+namespace SourceBalancedHeightChecks
+
+local instance instFiveBalanced : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Similarity preserves the whole root space, including nontrivial generalized eigenvectors.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (c : ℂˣ)
+    (φ : PairSpace p) (z : ℂ) :
+    periodicRootSpaceTop hp (diagonalPotential c φ) z ≃ₗ[ℂ] periodicRootSpaceTop hp φ z :=
+  periodicRootSpaceTopDiagonalEquiv hp c φ z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (hfst : φ.fst ≠ 0) (hsnd : φ.snd ≠ 0) :
+    ∃ c : ℂˣ,
+      ‖(sourceDiagonalPotential c φ).fst‖ = Real.sqrt (‖φ.fst‖*‖φ.snd‖) ∧
+      ‖(sourceDiagonalPotential c φ).snd‖ = Real.sqrt (‖φ.fst‖*‖φ.snd‖) ∧
+      ‖sourceDiagonalPotential c φ‖ =
+        (2 : ℝ)^(1/p.toReal)*Real.sqrt (‖φ.fst‖*‖φ.snd‖) ∧
+      ‖sourceDiagonalPotential c φ‖ ≤ ‖φ‖ :=
+  exists_source_balanced_diagonalPotential hp φ hfst hsnd
+
+-- A nonisometric rescaling at p=5 balances (1,4) to (2,2), preserving actual spectral data.
+example :
+    let φ : CoeffPair 5 := WithLp.toLp 5
+      (lp.single 5 (0 : ℤ) (1 : ℂ), lp.single 5 (0 : ℤ) (4 : ℂ))
+    let c : ℂˣ := Units.mk0 2 (by norm_num)
+    let ψ := sourceDiagonalPotential c φ
+    ‖ψ.fst‖ = 2 ∧ ‖ψ.snd‖ = 2 ∧ ‖ψ‖ ≤ ‖φ‖ ∧
+      periodicSpectrum (by simp : (5 : ℝ≥0∞) ≠ ⊤) (periodOnePotential ψ) =
+        periodicSpectrum (by simp) (periodOnePotential φ) ∧
+      ∀ z : ℂ, periodicAlgebraicMultiplicity (by simp : (5 : ℝ≥0∞) ≠ ⊤) (periodOnePotential ψ) z =
+        periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ) z := by
+  dsimp only
+  let φ : CoeffPair 5 := WithLp.toLp 5
+    (lp.single 5 (0 : ℤ) (1 : ℂ), lp.single 5 (0 : ℤ) (4 : ℂ))
+  let c : ℂˣ := Units.mk0 2 (by norm_num)
+  have h₁ : ‖(sourceDiagonalPotential c φ).fst‖ = 2 := by
+    norm_num [sourceDiagonalPotential_fst, norm_smul, φ, c,
+      lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 5)]
+  have h₂ : ‖(sourceDiagonalPotential c φ).snd‖ = 2 := by
+    norm_num [sourceDiagonalPotential_snd, norm_smul, Units.val_inv_eq_inv_val, φ, c,
+      lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 5), norm_inv]
+  have hG : Real.sqrt (‖φ.fst‖*‖φ.snd‖) = 2 := by
+    norm_num [φ, lp.norm_single (by norm_num : (0 : ℝ≥0∞) < 5)]
+    convert Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 2) using 1
+    norm_num
+  exact ⟨h₁,h₂,norm_source_le_of_balanced_component_norms (by simp) φ _
+    (h₁.trans hG.symm) (h₂.trans hG.symm),
+    sourcePeriodicSpectrum_diagonalPotential (by simp) c φ,
+    sourcePeriodicAlgebraicMultiplicity_diagonalPotential (by simp) c φ⟩
+
+-- Any putative counterexample retains its spectral parameter under balancing.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) {z : ℂ}
+    (hz : z ∈ periodicSpectrum hp (periodOnePotential φ))
+    (hbad : (1+8*‖φ‖)^p.toReal ≤ |z.im|) :
+    ∃ ψ : CoeffPair p, ‖ψ.fst‖ = ‖ψ.snd‖ ∧ ‖ψ‖ ≤ ‖φ‖ ∧
+      z ∈ periodicSpectrum hp (periodOnePotential ψ) ∧
+      (1+8*‖ψ‖)^p.toReal ≤ |z.im| :=
+  source_printedHeight_counterexample_balances hp φ hz hbad
+
+-- The balanced-case assumption is explicit; it is not a proved assertion for arbitrary p.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    (hbalanced : ∀ ψ : CoeffPair p, ‖ψ.fst‖ = ‖ψ.snd‖ → ∀ z : ℂ,
+      z ∈ periodicSpectrum hp (periodOnePotential ψ) → |z.im| < (1+8*‖ψ‖)^p.toReal)
+    (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ V : Set (CoeffPair p), 0 < N₀ ∧ IsOpen V ∧ Convex ℝ V ∧ φ ∈ V ∧ 0 ∈ V ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        AnalyticOnNhd ℂ (fun ψ => heightRectangleIntegral hp (periodOnePotential ψ) N
+          ((1+8*‖ψ‖)^p.toReal)) V ∧
+        ∀ ψ ∈ V, PeriodicCountingData hp (periodOnePotential ψ) N ∧
+          heightPeriodicSpectrum hp (periodOnePotential ψ) N ((1+8*‖ψ‖)^p.toReal) =
+            centralPeriodicSpectrum hp (periodOnePotential ψ) N ∧
+          (∑ z ∈ heightPeriodicSpectrum hp (periodOnePotential ψ) N ((1+8*‖ψ‖)^p.toReal),
+            periodicAlgebraicMultiplicity hp (periodOnePotential ψ) z) = 4*N+2 ∧
+          heightRectangleIntegral hp (periodOnePotential ψ) N ((1+8*‖ψ‖)^p.toReal) =
+            centralSpectralProjection hp (periodOnePotential ψ) N ∧
+          periodicSpectrum hp (periodOnePotential ψ) ⊆
+            heightSpectralBox N ((1+8*‖ψ‖)^p.toReal) ∪ highSpectralDisks N (Real.pi/4) :=
+  exists_source_periodicCounting_printed_height_of_balanced hp hbalanced φ
+
+end SourceBalancedHeightChecks

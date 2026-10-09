@@ -1271,3 +1271,27 @@ height under the imbalance condition. The source norm remains the p-th
 root of the two component p-energies. The unrestricted printed height
 above p=4 is still required and unresolved, and the geometric-mean
 supplement is not adopted as a replacement source statement.
+
+### Theorem 1.1: exact balanced-source reduction of the remaining height claim
+
+[`PeriodicDiagonalSimilarity.lean`](NLS/ZakharovShabat/PeriodicDiagonalSimilarity.lean)
+and [`SourceBalancedHeightReduction.lean`](NLS/ZakharovShabat/SourceBalancedHeightReduction.lean)
+transport actual spectral data while controlling the original source norm.
+
+| Public entry point | Scope |
+| --- | --- |
+| `spectralPencil_diagonalSimilarity` | Exact conjugation of z-L on the original one-derivative domain, for any nonzero complex scalar. |
+| `periodicRootSpaceTopDiagonalEquiv` | Full generalized root-space equivalence; finite root-chain transport is also proved. |
+| `periodicAlgebraicMultiplicity_diagonalPotential`, `periodicSpectrum_diagonalPotential` | Actual multiplicities and entire periodic spectral set unchanged. |
+| `exists_source_balanced_diagonalPotential` | For two nonzero components, both new norms equal sqrt(ab), the new p-energy norm is exactly 2^(1/p) sqrt(ab), and it does not exceed the original norm. |
+| `source_printedHeight_iff_balanced` | At each finite exponent, the unrestricted literal height is equivalent to its equal-component-norm case. |
+| `source_printedHeight_counterexample_balances` | Any putative violation retains its spectral parameter under balancing, with no increase in the source norm; no violation is asserted to exist. |
+| `exists_source_periodicCounting_printed_height_of_balanced` | An explicit balanced-height hypothesis gives full counts, exhaustion, and actual analytic rectangular projections on one common open convex neighborhood, for all sufficiently large cutoffs. |
+
+Public examples include p=5, rescaling component norms (1,4) to (2,2) and
+checking the actual spectra and multiplicities, as well as arbitrary-exponent
+interfaces and the full conditional counting conclusion. Equal norms do
+not imply the source's real-type conjugation condition. The unrestricted
+height above p=4 remains required and unresolved; the reduction is not a
+proof of its explicit balanced-case hypothesis. No source correction is
+adopted.

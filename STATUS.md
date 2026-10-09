@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: component-product squared resolvent bounds
+## Current milestone: exact reduction of the printed height to balanced sources
+
+Constant diagonal similarity is now proved on the actual periodic operator
+and its original one-derivative domain. For every nonzero complex c,
+`PeriodicDiagonalSimilarity.lean` conjugates `(u,v)` to `(c u,c^(-1) v)`.
+The same map transports every finite root chain and the full generalized
+root space, so the entire periodic spectrum and every algebraic
+multiplicity are unchanged. No unit-modulus or isometry assumption is used.
+
+`SourceBalancedHeightReduction.lean` transfers this operation through the
+period-one embedding. Any source with two nonzero components can be
+rescaled so that both component norms equal
+`G=sqrt(||phi.fst|| ||phi.snd||)`. Its original p-energy norm then equals
+`2^(1/p) G` and is at most the original source norm. This uses the actual
+p-th root of the combined component energies, not a sum of norms.
+
+`source_printedHeight_iff_balanced` proves that, at each finite Banach
+exponent, the unchanged printed height for all sources is equivalent to
+that height for sources with equal component norms. Triangular sources
+are handled by the previously proved component-product criterion.
+`source_printedHeight_counterexample_balances` also transports any
+putative violation to an equal-component-norm source at the same spectral
+parameter, without increasing its norm. It does not assert that any
+counterexample exists.
+
+`exists_source_periodicCounting_printed_height_of_balanced` connects a
+balanced-case height proof to the full source counting result: one open
+convex neighborhood containing the source and zero, every sufficiently
+large cutoff, the original algebraic counts, spectral exhaustion, and
+actual analytic rectangular projections. Its balanced-height hypothesis
+is explicit and is not proved in this step for exponents above four.
+A public p=5 example rescales component norms (1,4) to (2,2), retaining
+actual spectra and multiplicities while not increasing the source norm.
+
+Equal component norms do not mean real type. The unrestricted complex
+height above p=4 remains required and unresolved; the reduction does not
+extend the proved unconditional exponent range. Real-type finite-gap
+spatial analyticity remains proved. The printed all-p boundary height
+remains refuted, with its proposed correction separate. G.2's original
+interval norm and the optional original m=1 sharpening remain unresolved.
+No source correction is adopted, and the dissertation remains incomplete.
+
+Validation: the full project check passed (6609 build jobs), including all
+public examples and the axiom audit of 27725 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: component-product squared resolvent bounds
 
 `ComponentProductResolvent.lean` now bounds the actual squared perturbation
 by both component norms:

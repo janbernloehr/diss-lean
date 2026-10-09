@@ -91,6 +91,26 @@ containing every triangular potential, with an analytic actual resolvent.
 The checked p=256 examples include two nonzero components and a successful
 product test at z=i where the previous Neumann condition fails.
 
+
+`PeriodicDiagonalSimilarity.lean` and `SourceBalancedHeightReduction.lean`
+now reduce the unrestricted height exactly to sources with equal component
+norms. Reciprocal rescaling `(u,v) -> (c u,c^(-1) v)` transports the actual
+operator domain, all generalized root chains, and every algebraic
+multiplicity. It also commutes with the period-one embedding. When both
+components are nonzero, one can make both norms equal to `G=sqrt(ab)`;
+the resulting source norm is `2^(1/p) G`, no larger than the original
+p-energy norm. Triangular cases already satisfy the printed bound.
+
+`source_printedHeight_iff_balanced` is an equivalence at each finite
+exponent. Any hypothetical counterexample also transfers at the same
+spectral parameter to a balanced source of no larger norm.
+`exists_source_periodicCounting_printed_height_of_balanced` carries an
+explicit balanced-case height hypothesis through the full original
+counting, exhaustion, and analytic-projection conclusions on one common
+neighborhood for all sufficiently large cutoffs. That hypothesis remains
+unproved above four. Equal component norms do not imply real type, and
+neither an all-p height proof nor a periodic counterexample is claimed.
+
 ## Theorem 1.2: proved in the full printed range
 
 The source statement on p. 19 requires the globally lexicographically
