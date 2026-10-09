@@ -23,7 +23,10 @@ We do not select such a correction here. The second, unit-interval remainder
 bound **does hold** in this same integral H1 norm: it is independently proved
 by `l2HermitianRemainder_le_unit_H1`, using a combined endpoint estimate and
 G.1. Its factor 3/(2*abs(z)) and coefficient 1+norm(phi)_2 exp(norm(phi)_2)
-are unchanged.
+are unchanged. The same unit-interval consequence is now also proved in
+Chapter 5's exact periodic Fourier norm by `sourceLemmaG2_remainder_unit`,
+using a constant-one comparison with the integral norm. That theorem does
+not select a norm convention for the arbitrary-time local statement.
 
 ## The proof of Lemma F.2: a common-path coefficient and a real majorant
 

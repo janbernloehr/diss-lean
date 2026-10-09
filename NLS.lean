@@ -3078,3 +3078,6 @@ import NLS.ComplexAnalysis.OscillatoryIntegralConstant
 import NLS.ZakharovShabat.IntervalH1OperatorBound
 import NLS.ZakharovShabat.LemmaG2IntegralNormAudit
 import NLS.Fourier.IntervalH1NormIdentification
+import NLS.Fourier.PeriodOneH1Norm
+import NLS.ZakharovShabat.SourcePeriodicH1Norm
+import NLS.ZakharovShabat.SourceLemmaG2Unit

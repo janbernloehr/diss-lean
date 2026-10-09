@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: G.2 in the integral H1 norm, with a qualified audit
+## Current milestone: G.2 on [0,1] in the exact periodic source norm
+
+The unit-interval remainder estimate from G.2 is now proved using the exact
+Chapter 5 periodic Hilbert Fourier norm, with weights 1+|2*pi*n| and the sum
+of both component energies. `SourceLemmaG2Unit.lean` retains precisely
+3/(2|z|) and 1+||phi||_2 exp(||phi||_2). It applies to every complex period-one
+H1 source, every nonzero complex spectral parameter, and every t in [0,1].
+The matrix norm remains the genuine Hermitian induced operator norm.
+
+`PeriodOneH1Norm.lean` proves exact physical unit-interval Parseval identities
+for the potential and its actual derivative, whose multiplier is 2*pi*i*n.
+The integral H1 norm squared equals the coefficient graph energy without
+any residual factor from the ambient period-two circle.
+
+`SourcePeriodicH1Norm.lean` proves that this integral norm is bounded by the
+printed periodic Fourier norm with constant one. The comparison follows
+from 1+(2*pi*n)^2 <= (1+|2*pi*n|)^2. The exact weighted square-sum formula
+is exposed by `sourcePeriodicH1_fourierNorm_sq`; no equivalent-norm constant
+is substituted. Reconstruction retains both original coefficient sequences,
+is period one, and recovers the existing classical H1 potential curve.
+The order-one coefficient identification is the existing bijection
+`higherSobolevSourceOneEquiv`, so no H1 sources are excluded.
+
+The physical L2 class has exactly the original source coefficient L2 norm,
+proved by `norm_sourcePeriodicH1L2Class`. Both the actual L2 solution and
+the existing classical fundamental solution satisfy the source remainder
+estimate. The uniform first Born estimate is proved in the same norm.
+
+The arbitrary-time first inequality with a local interval H1 norm remains
+a separate source obligation. The preceding counterexample applies only
+to its unnormalized local integral-norm interpretation and does not refute
+this global unit-interval estimate. Next: audit G.3 against the existing
+Sobolev and Fourier-Lebesgue remainder bounds, including its epsilon and q
+ranges and the stronger spectral-sequence assumption in its second claim.
+The required p>2 spectral height and optional original m=1 sharpening remain
+open; the accepted Lemma 27.2 correction is unchanged.
+
+Focused public checks passed for unit-period Parseval on all signed modes,
+the derivative energy of frequency -2, the constant 3-4 pair (both norms
+are exactly five, attaining comparison constant one), original coefficient
+recovery, exact physical/source L2 norm equality, the printed weighted
+square sum, and the actual classical remainder estimate. The full build
+passed (6510 jobs), all public examples passed, and the axiom audit passed
+for 26421 NLS declarations. The same 21 existing warnings remain, with no
+new warnings. The 156 candidate source labels were verified; this inventory
+is not a completeness certificate.
+
+## Previous milestone: G.2 in the integral H1 norm, with a qualified audit
 
 The unit-interval first Born and fundamental-solution remainder bounds are
 now proved with exactly 3/(2|z|) in the unnormalized integral Hilbert H1

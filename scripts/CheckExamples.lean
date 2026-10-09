@@ -39096,3 +39096,76 @@ example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1)))
   NLS.Fourier.intervalH1Norm_eq_sqrt_energy f 1 (by norm_num) hf hd
 
 end AppendixG2IntegralH1Checks
+
+noncomputable section
+open Set MeasureTheory intervalIntegral
+open NLS.Fourier NLS.ComplexAnalysis NLS.ZakharovShabat NLS.LinearVolterra
+namespace AppendixG2SourcePeriodicChecks
+
+-- Parseval has no residual factor two from the ambient period-two circle.
+example (n : ℤ) (c : ℂ) :
+    (∫ s in (0 : ℝ)..1, ‖periodOneSobolevSynthesis (scalarMode n c) (s : AddCircle (2 : ℝ))‖^2) =
+      ‖c‖^2 := by
+  rw [integral_sq_periodOneSobolevSynthesis,scalarInclusion_scalarMode]
+  simp
+
+private theorem derivative_mode (n : ℤ) (c : ℂ) :
+    periodOneDerivative (scalarMode n c) = lp.single 2 n (2*Complex.I*Real.pi*n*c) := by
+  ext k
+  by_cases h : k = n
+  · subst k
+    simp [periodOneDerivative_apply,scalarMode_apply,lp.single_apply]
+  · simp [periodOneDerivative_apply,scalarMode_apply,lp.single_apply,h]
+
+-- A negative unit-period mode retains its physical derivative energy.
+example : (∫ s in (0 : ℝ)..1, ‖deriv (fun r : ℝ =>
+    periodOneSobolevSynthesis (scalarMode (-2) 1) (r : AddCircle (2 : ℝ))) s‖^2) = 16*Real.pi^2 := by
+  rw [integral_sq_deriv_periodOneSobolevSynthesis,derivative_mode]
+  norm_num [lp.norm_single,Real.norm_eq_abs,Real.pi_pos.le,mul_pow]
+  ring
+
+-- The comparison is exact in the constant 3-4 Hilbert pair, whose norm is five.
+example : intervalPairH1Norm
+    (sourcePeriodicH1Potential (scalarMode 0 (3 : ℂ),scalarMode 0 (4 : ℂ))) 1 = 5 := by
+  have h := intervalPairH1Norm_sourcePeriodic_sq (scalarMode 0 (3 : ℂ),scalarMode 0 (4 : ℂ))
+  rw [scalarInclusion_scalarMode,scalarInclusion_scalarMode,derivative_mode,derivative_mode] at h
+  norm_num at h
+  nlinarith [intervalPairH1Norm_nonneg (sourcePeriodicH1Potential (scalarMode 0 (3 : ℂ),scalarMode 0 (4 : ℂ))) 1]
+
+-- The source Fourier norm is also five, so the comparison constant one is attained.
+example : ‖sourcePiSobolevCoordinates 1 1 le_rfl
+    (higherSobolevSourceOneEquiv (scalarMode 0 (3 : ℂ),scalarMode 0 (4 : ℂ)))‖ = 5 := by
+  have h := sourcePeriodicH1_fourierNorm_sq (scalarMode 0 (3 : ℂ),scalarMode 0 (4 : ℂ))
+  rw [tsum_eq_single 0] at h
+  · norm_num [scalarMode_apply] at h
+    nlinarith [norm_nonneg (sourcePiSobolevCoordinates 1 1 le_rfl
+      (higherSobolevSourceOneEquiv (scalarMode 0 (3 : ℂ),scalarMode 0 (4 : ℂ))))]
+  · intro n hn
+    simp [scalarMode_apply,hn]
+
+-- Both original signed coefficient sequences are recovered.
+example (a : ScalarDomain 2 × ScalarDomain 2) (n : ℤ) :
+    periodOneCoefficient (fun s => (sourcePeriodicH1Potential a s).1) n = a.1.val n ∧
+      periodOneCoefficient (fun s => (sourcePeriodicH1Potential a s).2) n = a.2.val n :=
+  sourcePeriodicH1Potential_coefficients a n
+
+-- The actual L2 solution uses the original coefficient L2 norm in c_phi.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    ‖sourcePeriodicH1L2Class a‖ = ‖sobolevSourceInclusion a‖ := norm_sourcePeriodicH1L2Class a
+
+-- Constant-one comparison, with the exact printed Fourier weights exposed.
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    intervalPairH1Norm (sourcePeriodicH1Potential a) 1 ^ 2 ≤
+      ∑' n : ℤ, (1+|((2*n : ℤ) : ℝ)*Real.pi|)^2*(‖a.1.val n‖^2+‖a.2.val n‖^2) := by
+  rw [← sourcePeriodicH1_fourierNorm_sq]
+  exact pow_le_pow_left₀ (intervalPairH1Norm_nonneg _ _) (intervalPairH1Norm_sourcePeriodic_le a) 2
+
+-- The actual classical M-E estimate has the printed coefficient on the whole unit interval.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (hz : z ≠ 0) (t : Icc (0 : ℝ) 1) :
+    classicalNormalizedHermitianRemainder
+      (classicalSobolevPotential (NLS.Coeff.periodDoubleSobolev a.1,NLS.Coeff.periodDoubleSobolev a.2)) z t ≤
+      3/(2*‖z‖)*(1+‖sobolevSourceInclusion a‖*Real.exp ‖sobolevSourceInclusion a‖)*
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ :=
+  sourceLemmaG2_classical_remainder_unit a z hz t
+
+end AppendixG2SourcePeriodicChecks

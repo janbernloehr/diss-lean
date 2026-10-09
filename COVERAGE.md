@@ -626,7 +626,30 @@ the explicit size S do not establish the literal printed H1 bound.
 The endpoint estimates are combined before integration: their variation sum
 is at most 2 times the L1 function norm plus 2 times the L1 derivative norm.
 Cauchy--Schwarz yields the needed constant three in H1. This avoids assuming
-that individual point evaluations have norm at most one. The source's
-periodic Fourier convention on printed page 103 still needs to be compared
-with the explicit integral norm for source-level identification. The
+that individual point evaluations have norm at most one. The comparison with the source's
+periodic Fourier convention on printed page 103 is proved in the next stage
+below. The
 arbitrary-time first inequality is not silently replaced or marked complete.
+
+
+### Lemma G.2: unit-interval estimate in the exact periodic source norm
+
+| Requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Physical unit-period Parseval | `hasSum_sq_periodOneCoefficient`, `integral_sq_periodOneSobolevSynthesis` | Arbitrary L2 interval functions, then every original H1 Fourier input; no factor two. |
+| Actual derivative energy | `integral_sq_deriv_periodOneSobolevSynthesis`, `intervalH1Norm_sq_periodOneSobolevSynthesis` | Actual classical derivative, with multiplier 2*pi*i*n at every signed frequency. |
+| Original H1 source | `sourcePeriodicH1Potential_coefficients`, `periodic_sourcePeriodicH1Potential` | Both original sequences recovered, actual period-one representative; all complex H1 pairs. |
+| Exact Chapter 5 norm | `sourcePeriodicH1_fourierNorm_sq` | Exactly the sum with weights (1+abs(2*pi*n))^2 and both component energies. |
+| Constant-one comparison | `graphEnergy_le_sourcePiSobolev_one`, `intervalPairH1Norm_sourcePeriodic_le` | Integral H1 norm <= exact source norm, with no larger constant. |
+| Physical/source L2 normalization | `norm_sourcePeriodicH1L2Class` | Original physical L2 norm equals the original source coefficient Hilbert norm. |
+| Uniform Born estimate on [0,1] | `sourceLemmaG2_firstBorn_unit` | Actual Hermitian operator, coefficient 3/(2*abs(z)), exact periodic source norm. |
+| Unit-interval G.2 remainder estimate | `sourceLemmaG2_remainder_unit` | Actual L2 fundamental solution; exact printed factors and Chapter 5 periodic norm. |
+| Existing classical recovery | `sourcePeriodicH1Potential_eq_classical`, `sourcePeriodicH1L2Class_eq_classical`, `sourceLemmaG2_classical_remainder_unit` | Equality with the period-doubled classical curve and the same actual M-E estimate. |
+| Arbitrary-time local-norm first inequality | **Still separate** | Not asserted by these unit-interval theorems. The qualified integral-norm counterexample remains valid. |
+
+The periodic source norm is the one explicitly defined on printed page 103.
+The comparison preserves its exact coefficient in G.2; equality is tested
+on a constant 3-4 pair. The source space is identified through the existing
+coefficient-preserving bijection `higherSobolevSourceOneEquiv`, rather than
+restricted to a subset of Fourier inputs. G.3 still needs an audit of all
+printed parameter ranges and of its stronger spectral-sequence hypothesis.
