@@ -40619,3 +40619,74 @@ example : (4 : ℝ)^(5/4 : ℝ) < 2/((5/4 : ℝ)-1) :=
   reciprocal_power_coefficient_four_fails_at_five
 
 end PrintedHeightFourChecks
+
+
+noncomputable section
+open Set NLS NLS.Coeff NLS.ZakharovShabat
+open scoped ENNReal Classical
+namespace SourcePeriodicOverviewChecks
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- The full printed series is bounded near every source, for every finite p>1.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ ∃ C : ℝ, 0 < C ∧
+      ∀ ψ ∈ U,
+        Summable (fun n : ℤ =>
+          ‖canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n -
+            (Real.pi : ℂ)*n‖^p.toReal +
+          ‖canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n -
+            (Real.pi : ℂ)*n‖^p.toReal) ∧
+        (∑' n : ℤ,
+          (‖canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n -
+            (Real.pi : ℂ)*n‖^p.toReal +
+          ‖canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n -
+            (Real.pi : ℂ)*n‖^p.toReal)) ≤ C := by
+  obtain ⟨U,hU,_,hφ,_,C,hC,h⟩ := sourceTheorem1_2 hp hp1 φ
+  exact ⟨U,hU,hφ,C,hC,h⟩
+
+-- The source result does not inherit the p<=4 restriction of the printed-height theorem.
+local instance : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+example (φ : CoeffPair 5) :
+    ∃ U : Set (CoeffPair 5), IsOpen U ∧ φ ∈ U ∧ ∃ C : ℝ, 0 < C ∧
+      ∀ ψ ∈ U, (∑' n : ℤ, sourcePeriodicEndpointEnergy (by norm_num) (by norm_num) ψ n) ≤ C := by
+  obtain ⟨U,hU,_,hφ,_,C,hC,h⟩ := sourceTheorem1_2 (by norm_num) (by norm_num) φ
+  exact ⟨U,hU,hφ,C,hC,fun ψ hψ => (h ψ hψ).2⟩
+
+-- Repeated central eigenvalues are counted with their original algebraic multiplicity.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) :
+    ∃ N : ℕ, ∀ z : ℂ,
+      (∑ n ∈ Finset.Icc (-(N : ℤ)) N,
+        ({canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n,
+          canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n} : Multiset ℂ).count z) =
+      if z ∈ centralPeriodicSpectrum hp (periodOnePotential ψ) N then
+        periodicAlgebraicMultiplicity hp (periodOnePotential ψ) z else 0 := by
+  obtain ⟨N,h,_,_⟩ := sourceTheorem1_2_ordered_labels hp hp1 ψ
+  exact ⟨N,h.central.count_eq⟩
+
+-- Both literal sequences in Corollary 1.3 belong to the original exponent.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) :
+    Memℓp (fun n : ℤ => canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ)
+      (periodOnePotential_mem ψ) n - (Real.pi : ℂ)*n) p ∧
+    Memℓp (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ)) p :=
+  sourceCorollary1_3_mem hp hp1 ψ
+
+-- A single neighborhood and every larger cutoff control both tails, also above p=4.
+example (φ : CoeffPair 5) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, ∃ U : Set (CoeffPair 5), IsOpen U ∧ φ ∈ U ∧ ∀ ψ ∈ U, ∀ M : ℕ, N ≤ M →
+      ‖sourcePeriodicMidpointDisplacement (by norm_num) (by norm_num) ψ -
+        Coeff.truncate (Finset.Icc (-(M : ℤ)) M)
+          (sourcePeriodicMidpointDisplacement (by norm_num) (by norm_num) ψ)‖ ≤ ε ∧
+      ‖sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ -
+        Coeff.truncate (Finset.Icc (-(M : ℤ)) M)
+          (sourcePeriodicGapDisplacement (by norm_num) (by norm_num) ψ)‖ ≤ ε := by
+  obtain ⟨N,_,U,hU,hφ,_,_,h⟩ := sourceCorollary1_3 (by norm_num) (by norm_num) φ hε
+  exact ⟨N,U,hU,hφ,fun ψ hψ => (h ψ hψ).2.2⟩
+
+-- At the free potential both endpoints coincide and the literal energy vanishes.
+example (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    (∑' n : ℤ, sourcePeriodicEndpointEnergy hp hp1 (0 : CoeffPair p) n) = 0 := by
+  rw [(sourcePeriodicEndpointEnergy_sum hp hp1 0).2]
+  simp only [map_zero,canonicalPeriodicLeftDisplacement_zero,canonicalPeriodicRightDisplacement_zero,
+    norm_zero,Real.zero_rpow (ENNReal.toReal_pos (ne_of_gt (zero_lt_one.trans hp1)) hp).ne',add_zero]
+
+end SourcePeriodicOverviewChecks

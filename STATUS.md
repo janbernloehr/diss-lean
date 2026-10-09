@@ -1,6 +1,57 @@
 # Implementation status
 
-## Current milestone: printed spectral height through p=4
+## Current milestone: periodic asymptotics and the finite-gap density audit
+
+Theorem 1.2 and Corollary 1.3 are now assembled and audited in the original
+source coefficient space for every finite 1<p. The canonical endpoints
+are globally lexicographically ordered and retain the original algebraic
+multiplicities, including repeated central roots. No bound p<=4, reality,
+smallness, or finite-support assumption is used.
+
+`SourcePeriodicOverview.lean` identifies the literal Theorem 1.2 series
+
+    sum_n (|lambda_n^- - n*pi|^p + |lambda_n^+ - n*pi|^p)
+
+with the sum of the p-th powers of the two full displacement norms. It
+proves summability as well as the bound, avoiding the fallback value of a
+nonconvergent Lean `tsum`. One positive constant works for all potentials
+in a single open convex source neighborhood containing the base potential
+and zero. The constant may depend on that neighborhood and p; it is not a
+global bound over all potentials.
+
+`sourceTheorem1_2_ordered_labels` records the actual spectral labeling,
+global ordering, and its central and distant multiplicity data.
+`sourceCorollary1_3_mem` proves the printed midpoint and gap sequences
+belong to the same lp space. `sourceCorollary1_3` combines their bounds on
+one open source neighborhood, with a common positive norm bound and
+arbitrarily small tails beyond every larger cutoff.
+
+The public checks expose the literal series, repeated central-root
+multiplicities, both printed Corollary 1.3 sequences, common tail bounds at
+p=5, and zero energy at the free potential. The scope audit in
+`coverage/SPECTRAL_OVERVIEW.md` now records the evidence for both source
+statements. These conclusions use the existing height-N counting boxes;
+they do not depend on settling Theorem 1.1's printed height above p=4.
+
+The source audit also verifies Corollary 1.6 using the existing
+`dense_sourceFiniteGapLocus`. Its approximants lie in the real source
+space, have only finitely many nonzero actual canonical gaps, and converge
+in the original source norm for every finite p>1. The spectral closing
+criterion and the existing public examples verify this interpretation;
+finite Fourier support is not substituted for the finite-gap property.
+
+The dissertation remains incomplete. The printed height above four, the
+boundary-spectrum overview comparison, and G.2's printed interval-norm
+interpretation remain open. The original unrestricted m=1 sharpening
+remains optional and unresolved. No replacement for either unresolved
+source statement is adopted here.
+
+Validation: the full project check passed (6585 build jobs), including all
+public examples and the axiom audit of 27415 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check passed
+with 156 labels. These counts do not certify completeness.
+
+## Previous milestone: printed spectral height through p=4
 
 The printed spectral height `(1+8||phi||_p)^p` is now proved throughout
 1<=p<=4, extending the previous 1<=p<=2 result. The original constant eight,

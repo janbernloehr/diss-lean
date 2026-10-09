@@ -70,12 +70,14 @@ saved inventory without editing it. The source must be the same UTF-8 text
 extraction to reproduce its hash and line positions.
 
 [`coverage/SPECTRAL_OVERVIEW.md`](coverage/SPECTRAL_OVERVIEW.md) records the
-first detailed comparison. Theorem 1.1 remains partial: the new
-`exists_source_periodicCounting_printed_height` recovers the exact printed
-source-norm height for 1 ≤ p ≤ 2, including the central counts and moving
-projections. Above two, `printed_height_neumann_bound_fails` shows a
-limitation of the numerical criterion, not a spectral counterexample.
-The literal bound above two still needs proof.
+detailed comparison. Theorem 1.1's unchanged printed source-norm height
+and counting conclusions are proved for 1<=p<=4; above four remains open.
+Failure of the available sufficient criteria is not a spectral
+counterexample. Theorem 1.2 and Corollary 1.3 are proved for every finite
+p>1, with the actual ordered endpoints, their multiplicities, and the
+full locally uniform source bounds. Corollary 1.6's density of actual real
+finite-gap sources is also verified. The boundary-spectrum overview
+comparison remains pending.
 
 ## Appendix C.1 audit
 
@@ -1062,3 +1064,38 @@ above four. The all-exponent alternative height is not substituted for it.
 The detailed source-scope audit is in `coverage/SPECTRAL_OVERVIEW.md`.
 G.2's interval-norm interpretation and the optional original m=1 sharpening
 retain their status. The dissertation remains incomplete.
+
+
+### Theorem 1.2 and Corollary 1.3: full source periodic asymptotics
+
+| Source requirement | Public evidence | Verified scope |
+| --- | --- | --- |
+| Literal full eigenvalue displacement series | `sourcePeriodicEndpointEnergy_sum`, `sourceTheorem1_2` | Summability and one positive full-series bound on an open convex source neighborhood, every finite p>1. |
+| Ordered actual eigenvalues with multiplicities | `sourceTheorem1_2_ordered_labels`, `PeriodicEndpointLabeling.exhaustive`, `CentralPeriodicLabeling.count_eq` | Both global lexicographic inequalities, all central repetitions, distant disk multiplicities, and exact original spectrum. |
+| Choice-independent labels | `PeriodicEndpointLabeling.eq_canonicalPeriodicEndpoints` | Any admissible cutoff and complete ordered enumeration give the same endpoints. |
+| Literal midpoint and gap membership | `sourceCorollary1_3_mem` and the displacement evaluation identities | Actual midpoint minus n*pi and unsquared gap in lp, without a smaller exponent range. |
+| Joint local uniformity | `sourceCorollary1_3` | One source neighborhood and positive norm bound for both sequences; arbitrarily small tails at all larger cutoffs. |
+| Public scope checks | `SourcePeriodicOverviewChecks` | General finite p, p=5, original multiplicities, literal series and sequences, coincident free roots. |
+
+Both printed statements on p. 19 are covered unchanged. The neighborhoods
+use the original finite-p source norm. No global constant over all
+potentials or continuity of the sorted individual endpoints is claimed.
+The construction does not depend on the unresolved printed height above
+four. See `coverage/SPECTRAL_OVERVIEW.md` for the requirement-by-requirement
+audit. The boundary-spectrum overview comparison, G.2's interval norm,
+and the remaining height range are still open; the dissertation is
+incomplete.
+
+
+### Corollary 1.6: actual real finite-gap density
+
+The source statement on p. 21 is covered by the existing
+`exists_mem_sourceFiniteGapLocus_norm_sub_lt` and
+`dense_sourceFiniteGapLocus` for every finite p>1. The underlying locus
+uses finitely many nonzero actual canonical periodic gaps in the real
+source space. Real spectral closing approximants converge in the original
+finite-p pair norm, and the singleton-strip criterion proves their actual
+finite-gap property. Existing public checks cover p=3 approximants and
+density at p=2 and p=3/2. The detailed audit is recorded in
+`coverage/SPECTRAL_OVERVIEW.md`. The separate unnumbered spatial real
+analyticity claim is not certified by this density result.
