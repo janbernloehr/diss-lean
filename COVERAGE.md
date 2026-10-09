@@ -919,8 +919,9 @@ are included. The conclusion concerns inverses of local complex analytic
 extensions, and agreement with the original cone map is proved. Only local
 extensions are required; they need not be chosen as one global map.
 
-Weighted complex and real transport are proved below. The bridge from
-local real-analytic germs to the extension-atlas hypothesis remains pending. Accordingly I.4 is partial, not marked fully proved. The G.2 local-norm, required p>2 spectral-height,
+Weighted complex and real transport, and the construction of the complex
+atlas from real-analytic germs, are proved in the later entries below.
+The G.2 local-norm, required p>2 spectral-height,
 and optional original m=1 obligations retain their status. Source-label
 inventories and declaration counts do not certify completeness.
 
@@ -944,7 +945,7 @@ hypothesis off the nonnegative cone have been added. The local inverses are
 currently complex ambient inverses of the original weighted extensions.
 Restriction to real sequence spaces is proved below for both unweighted
 and weighted spaces. The real-analytic-to-complex-atlas representation
-bridge is the next obligation. I.4 is not yet marked fully proved.
+bridge is proved in the final I.4 entry below.
 The previously recorded G.2, p>2 spectral-height, and optional original m=1
 obligations remain open; counts do not certify completeness.
 
@@ -963,11 +964,10 @@ obligations remain open; counts do not certify completeness.
 
 These results use local complex extension atlases to represent analyticity
 at the cone boundary. The reality required to restrict those extensions and
-their inverses is proved from the original cone values. A general construction
-of such an atlas from a separate real-analytic predicate is not asserted.
-The real conclusion, real inverse locus, and real seed are now transported
-to all positive weights below. The real-analytic-to-complex-atlas bridge is
-still pending; I.4 as a whole is not yet marked fully proved. The G.2 local-norm, required
+their inverses is proved from the original cone values. The subsequent
+entries transport the real conclusion, inverse locus, and seed to all
+positive weights and construct the atlas from actual real-analytic germs.
+The G.2 local-norm, required
 p>2 spectral-height, and optional original m=1 obligations remain unchanged.
 
 
@@ -988,7 +988,36 @@ The weight is only required to be strictly positive. All real Sobolev orders
 are included, and no global upper or lower bound on the weight is assumed.
 Only local complex extension atlases are used; compactness is assumed at
 original cone points. The real transport obligation is now complete.
-Constructing those atlases from local real-analytic germs remains pending,
-so the unrestricted source formulation is not marked complete. The separate
+The following entry constructs those atlases from real-analytic germs and
+closes this final representation obligation. The separate
 G.2 local-norm, required p>2 spectral-height, and optional original m=1
 obligations retain their status. Counts do not certify completeness.
+
+
+### Proposition I.4: real-analytic germs and the original real derivative
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Complexify real coefficients | `Complexification.complexifyLinear`, `complexifyMultilinear`, `norm_complexifyMultilinear_apply_le`, `complexifyMultilinear_real` | Continuous complex multilinear extensions, agreement on real arguments, degree-n norm bound 2^n. |
+| Extend real-analytic germs | `half_radius_le_complexifySeries`, `exists_complex_extension_of_analyticAt`, `exists_complex_extension_in_coordinates` | At least half the original radius; full real-neighborhood agreement at arbitrary real centers, also at p=infinity. |
+| Identify the actual derivative | `complexifyRealMap_real`, `fderiv_eq_complexifyRealMap`, `realGermComplexExtension_fderiv` | Complex derivative equals complexification of the original real derivative. This is proved, not assumed. |
+| Original real analyticity | `WeightedCoeff.NonnegativeRealAnalyticAtlas`, `toComplex`, `toComplex_restriction`, `toComplex_derivative` | Real analytic neighborhood extensions of the cone map yield the needed complex atlas and preserve full real germs. |
+| Preserve the original inverse locus | `HasAnalyticInverse.congr`, `toComplex_realLocalInversePoints`, `complexifiedDerivative_eq`, `localInversePoints_eq_of_atlas` | The conclusion concerns the original real extensions, and the derivative and inverse locus are intrinsic. |
+| Proposition I.4 | `WeightedCoeff.sourcePropositionI4_real_analytic` | Relatively open dense real inverse locus from one real local inverse, for all positive weights and finite Banach exponents; compactness only at cone points. |
+| Original differentiable seed | `sourcePropositionI4_real_analytic_of_differentiable_seed` | A differentiable real left inverse suffices; analytic two-sided inverses result on the generic locus. |
+| Both identities and source recovery | `NonnegativeRealAnalyticAtlas.exists_localInverse` | Actual real maps, both inverse identities on real neighborhoods, and recovery of the original cone map. |
+| Nonlinear real-input checks | `AppendixI4RealAnalyticChecks` | A directly defined real quadratic map has compact complexified derivative minus identity, a real inverse at zero with both identities, and an open dense inverse locus for arbitrary positive weights. |
+
+This completes I.4 with real-neighborhood extensions as the meaning of
+real analyticity and local diffeomorphism at cone boundary points. No
+ambient-interior, global complex-extension, or off-cone compactness
+hypothesis is introduced. The source's path-connected domain is covered
+by the weaker preconnected-domain hypothesis. All real Sobolev orders are
+included. The density theorem keeps 1<=p<infinity; the separate extension
+construction also permits p=infinity. The printed Schur sign error remains
+recorded in `SOURCE_ERRATA.md`.
+
+G.2's arbitrary-time local norm and the required p>2 spectral height remain
+open; the original unrestricted m=1 sharpening remains optional and
+unresolved. The dissertation is incomplete, and statement counts do not
+certify completeness.

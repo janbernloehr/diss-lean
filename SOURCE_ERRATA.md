@@ -31,11 +31,17 @@ inverse seed; a differentiable real left inverse suffices under the
 compactness hypothesis. Reality follows from the original cone values,
 and the real inverse locus is independent of the extension atlas.
 
-Local complex extension atlases remain the explicit representation of
-analyticity at the cone boundary. Constructing these atlases from separate
-real-analytic germs remains pending; the full source formulation is not
-claimed here. This remaining representation bridge, the domain interpretation,
-and weighting transport are not recorded as source errors.
+The real-analytic representation bridge is now proved.
+`SourcePropositionI4RealAnalytic.lean` constructs local complex extensions
+from actual real-analytic germs, identifies their derivatives with the
+complexification of the original real derivatives, and proves the real
+inverse conclusion for those original germs. The power-series construction
+has a 2^n coefficient bound and retains at least half the radius. Thus I.4's
+statement is covered with the usual real-neighborhood extension meaning of
+analyticity and local diffeomorphism at cone boundary points; the density
+conclusion uses the relative cone topology. This interpretation and the
+weighting transport are not recorded as source errors. The displayed Schur
+sign error above is unchanged.
 
 ## Lemma I.3: finite exponents and the cutoff convention
 

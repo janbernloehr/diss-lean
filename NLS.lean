@@ -3138,3 +3138,13 @@ import NLS.SequenceSpaces.RealAtlasInversePredicate
 import NLS.SequenceSpaces.RealAtlasCoordinateGerms
 import NLS.SequenceSpaces.WeightedRealLocalInverse
 import NLS.SequenceSpaces.SourcePropositionI4WeightedReal
+import NLS.ComplexAnalysis.LocalInverseGermCongruence
+import NLS.SequenceSpaces.CoefficientComplexification
+import NLS.SequenceSpaces.MultilinearComplexification
+import NLS.SequenceSpaces.RealAnalyticComplexExtension
+import NLS.SequenceSpaces.RealGermExtensionCoordinates
+import NLS.SequenceSpaces.RealDerivativeComplexification
+import NLS.SequenceSpaces.RealAnalyticGermChoice
+import NLS.SequenceSpaces.RealAtlasComplexification
+import NLS.SequenceSpaces.WeightedRealAnalyticAtlas
+import NLS.SequenceSpaces.SourcePropositionI4RealAnalytic

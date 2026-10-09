@@ -1,6 +1,56 @@
 # Implementation status
 
-## Current milestone: I.4 on weighted real sequence spaces
+## Current milestone: I.4 from real-analytic germs
+
+I.4 now starts from real-analytic germs on the actual weighted real sequence
+space. `SourcePropositionI4RealAnalytic.lean` proves that one real local
+inverse gives a relatively open dense real inverse locus, for every positive
+weight and every finite Banach exponent 1<=p<infinity. A differentiable real
+left inverse already suffices as the seed. This includes all real Sobolev
+orders and all boundary points of the nonnegative cone.
+
+`CoefficientComplexification.lean` extends continuous real linear maps.
+`MultilinearComplexification.lean` extends degree-n coefficients with norm
+at most 2^n times the original norm. `RealAnalyticComplexExtension.lean`
+therefore preserves at least half the original power-series radius and
+constructs a holomorphic extension at every real center, with agreement on
+a full real neighborhood. This extension construction also works at
+p=infinity; the I.4 density conclusion retains its finite-p restriction.
+
+`RealGermExtensionCoordinates.lean`, `RealDerivativeComplexification.lean`,
+and `RealAnalyticGermChoice.lean` transport the construction to original
+coordinates and prove that the complex derivative is the complexification
+of the actual real derivative. `RealAtlasComplexification.lean` assembles
+the local family. `WeightedRealAnalyticAtlas.lean` accepts actual
+`AnalyticAt ℝ` extensions, constructs the complex atlas, and identifies its
+real inverse locus with that of the original real extensions. Compactness
+is imposed only on the complexified original derivative minus identity at
+cone points. No complex-extension or derivative-compatibility assumption
+remains in the new source theorem.
+
+The resulting real inverses have both local inverse identities and recover
+the original cone map. Their locus and the complexified derivative are
+independent of the chosen real atlas. Public examples check arbitrary
+weights, all real Sobolev orders, the infinite-exponent extension lemma,
+and a real quadratic map with compact derivative minus identity, an inverse
+at zero, and a relatively open dense inverse locus.
+
+This closes the remaining I.4 representation bridge. Analyticity and local
+diffeomorphism at cone boundary points mean extension to real neighborhoods;
+the openness and density conclusion is relative to the cone. The printed
+Schur sign error remains recorded separately and does not refute I.4.
+G.2's arbitrary-time local norm, the required p>2 spectral height, and the
+optional original m=1 sharpening remain unresolved. The dissertation is
+incomplete; declaration counts and source-label inventories are not
+completeness certificates.
+
+Validation: focused modules, standalone examples, and the full project
+check passed: 6,577 build jobs, all public examples, and the axiom audit
+of 27,369 NLS declarations. The 21 existing warnings are unchanged, with
+none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: I.4 on weighted real sequence spaces
 
 I.4's real inverse construction now holds in the original weighted sequence
 spaces for every positive weight and every finite Banach exponent
