@@ -3041,3 +3041,6 @@ import NLS.ZakharovShabat.SourceRealTypeIdentity
 import NLS.Fourier.ShiftedExponentialFourier
 import NLS.Fourier.ShiftedExponentialCoefficientBound
 import NLS.Fourier.SourceLemmaE3
+import NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain
+import NLS.ZakharovShabat.SourceCriticalHalfGapBounds
+import NLS.ZakharovShabat.SourceLemmaF1

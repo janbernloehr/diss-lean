@@ -1,6 +1,58 @@
 # Implementation plan
 
-## Latest progress: the uniform shifted-exponential bound in E.3
+## Latest progress: the critical-point gap bounds in F.1
+
+Lemma F.1, printed pages 131-132, is now proved with both literal
+constants. At every collapsed complex gap in one connected almost-real
+domain, a neighborhood gives |critical-midpoint| <= |gap|/2. Around
+every real source, one complex neighborhood gives |critical-midpoint|
+<= |gap| for all signed indices simultaneously. Part (i) does not assume
+that its base point is real, and part (ii) includes collapsed head gaps.
+
+`SourceCriticalGapAnalyticDomain.lean` combines the uniformly analytic
+distant quotients with finitely many central neighborhoods. It constructs
+a connected open domain containing all real sources, with analytic
+squared gaps, analytic quotient coefficients, and the exact squared-gap
+offset identity. This domain may be chosen inside any previously specified
+open neighborhood of the real locus, so it is compatible with the earlier
+almost-real constructions. Continuity of gap magnitudes follows from
+analyticity of their squares, without assuming continuous endpoint labels.
+
+`SourceCriticalHalfGapBounds.lean` makes the squared-gap identity give
+any positive linear gap constant near a collapsed complex gap. Real
+interlacing gives the half-gap bound at every real source. Uniform quotient
+bounds and small gap tails give arbitrarily small tail constants on one
+neighborhood. `SourceLemmaF1.lean` combines these with the finite head
+and exports both source statements on the same constructed domain.
+No source correction is needed for F.1.
+
+Next: audit F.2's analyticity of the endpoint-averaged primitive at a
+fixed boundary point, including continuation through collapsed gaps and
+identification with the already constructed source primitive.
+The dissertation remains incomplete: the printed spectral height above
+p=2 is still required and unresolved. The accepted Lemma 27.2 correction
+and optional original m=1 sharpening are unchanged.
+
+For F.2, compare the literal endpoint-averaged integral with the full
+normalized primitive using `SourceFullAbelianUniformNormalization.lean`,
+`SourceFullAbelianUniformEndpoints.lean`, and the boundary-path integral
+lemmas. Check every fixed point on the isolating boundary and complex
+collapsed parameters. The PDF proof on page 134 also needs a normalization
+audit of the 1/(2*i) prefactor in (F.3) and an audit of the displayed
+majorant g_k for t < |epsilon_k|. These proof details have not yet been
+formally checked; do not infer a failure of the analyticity statement.
+
+Validation: focused examples passed at p=3/2 and p=3, for an arbitrary
+complex collapsed base point at a negative index, an arbitrarily small
+constant at the zero source, exact free spectral values, an actual nonzero
+real source with one neighborhood for all indices, small tail constants,
+and containment inside any earlier open real neighborhood.
+The full build passed (6473 jobs), all public examples passed, and the
+axiom audit passed for 26063 NLS declarations. The same 21 pre-existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified.
+
+## Previous milestone: the uniform shifted-exponential bound in E.3
 
 Lemma E.3, printed page 131, now has the uniform Fourier-Lebesgue
 bound for complex frequencies within pi/4 of n*pi in the tail. Every

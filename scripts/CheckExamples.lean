@@ -38355,3 +38355,77 @@ example : Asymptotics.IsBigO (Filter.comap Int.natAbs atTop)
   sourceLemmaE3_bigO (by simp) e3ExceptionalFrequency e3ExceptionalTail
 
 end AppendixEShiftedExponentialChecks
+
+section AppendixFCriticalGapChecks
+open NLS NLS.ZakharovShabat Set Filter
+open scoped ENNReal Topology
+
+private theorem f1ThreeHalves : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem f1ThreeHalvesFinite : (3/2:ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact ((1:ℝ≥0∞) ≤ 3/2) := ⟨f1ThreeHalves.le⟩
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- Any earlier almost-real open domain can be retained by taking the new domain inside it.
+example (U : Set (CoeffPair 3)) (hU : IsOpen U) (hr : realTypeSourceLocus 3 ⊆ U) :
+    ∃ D : SourceCriticalGapAnalyticDomain (p:=3) (by simp) (by norm_num), D.domain ⊆ U :=
+  exists_sourceCriticalGapAnalyticDomain_within (by simp) (by norm_num) U hU hr
+
+-- Part (i) uses a complex base point; no real-type hypothesis is supplied, even at a negative index.
+example (D : SourceCriticalGapAnalyticDomain (p:=3) (by simp) (by norm_num))
+    (φ : CoeffPair 3) (hφ : φ ∈ D.domain)
+    (hg : canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem φ) (-7) = 0) :
+    ∃ V : Set (CoeffPair 3), IsOpen V ∧ φ ∈ V ∧ V ⊆ D.domain ∧ ∀ ψ ∈ V,
+      ‖canonicalCriticalPoints (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-7)-
+        canonicalPeriodicMidpoint (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-7)‖ ≤
+          ‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) (-7)‖/2 :=
+  D.sourceLemmaF1_i φ hφ (-7) hg
+
+-- At a collapsed gap the constant can be arbitrarily small, also below the Hilbert exponent.
+example (D : SourceCriticalGapAnalyticDomain (p:=3/2) f1ThreeHalvesFinite f1ThreeHalves) :
+    ∃ V : Set (CoeffPair (3/2)), IsOpen V ∧ 0 ∈ V ∧ V ⊆ D.domain ∧ ∀ ψ ∈ V,
+      ‖canonicalCriticalPoints f1ThreeHalvesFinite f1ThreeHalves (periodOnePotential ψ) (periodOnePotential_mem ψ) 0-
+        canonicalPeriodicMidpoint f1ThreeHalvesFinite f1ThreeHalves (periodOnePotential ψ) (periodOnePotential_mem ψ) 0‖ ≤
+          (1/100)*‖sourcePeriodicGapDisplacement f1ThreeHalvesFinite f1ThreeHalves ψ 0‖ := by
+  apply D.exists_collapsedGap_bound 0 (D.real_subset (by simp [realTypeSourceLocus])) 0 _ (1/100) (by norm_num)
+  simp only [sourcePeriodicGapDisplacement_apply,map_zero,canonicalPeriodicGap_zero]
+
+-- The zero source simultaneously has zero critical offset and zero gap at every signed index.
+example (n : ℤ) :
+    canonicalCriticalPoints (p:=3) (by simp) (by norm_num) (periodOnePotential 0) (periodOnePotential_mem 0) n-
+      canonicalPeriodicMidpoint (p:=3) (by simp) (by norm_num) (periodOnePotential 0) (periodOnePotential_mem 0) n = 0 ∧
+    canonicalPeriodicGap (p:=3) (by simp) (by norm_num) (periodOnePotential 0) (periodOnePotential_mem 0) n = 0 := by
+  simp only [map_zero,canonicalCriticalPoints_zero,canonicalPeriodicMidpoint_zero,
+    canonicalPeriodicGap_zero,sub_self,and_self]
+
+private def f1NonzeroReal : CoeffPair 3 :=
+  (CoeffPair.toMax 3).symm (lp.single 3 (-2) (1:ℂ),lp.single 3 2 (1:ℂ))
+
+private theorem f1NonzeroReal_real : IsRealType (CoeffPair.toMax 3 f1NonzeroReal) := by
+  simpa only [f1NonzeroReal,ContinuousLinearEquiv.apply_symm_apply,map_one,neg_neg,Int.reduceNeg] using
+    (isRealType_single (p:=3) (-2) (1:ℂ))
+
+private theorem f1NonzeroReal_ne_zero : f1NonzeroReal ≠ 0 := by
+  intro h
+  have he := congrArg (fun φ : CoeffPair 3 => (CoeffPair.toMax 3 φ).1 (-2)) h
+  simp [f1NonzeroReal] at he
+
+-- Part (ii) gives a single neighborhood for all indices at an actual nonzero real source.
+example (D : SourceCriticalGapAnalyticDomain (p:=3) (by simp) (by norm_num)) :
+    ∃ V : Set (CoeffPair 3), IsOpen V ∧ f1NonzeroReal ∈ V ∧ V ⊆ D.domain ∧ ∀ ψ ∈ V, ∀ n : ℤ,
+      ‖canonicalCriticalPoints (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+        canonicalPeriodicMidpoint (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n‖ ≤
+          ‖canonicalPeriodicGap (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n‖ :=
+  D.sourceLemmaF1_ii f1NonzeroReal f1NonzeroReal_real
+
+-- Arbitrarily small tail constants retain a common source neighborhood and a common cutoff.
+example (φ : CoeffPair (3/2)) (hφ : IsRealType (CoeffPair.toMax (3/2) φ)) :
+    ∃ N : ℕ, ∃ V : Set (CoeffPair (3/2)), IsOpen V ∧ φ ∈ V ∧ ∀ ψ ∈ V,
+      ∀ n : ℤ, N < n.natAbs →
+        ‖canonicalCriticalPoints f1ThreeHalvesFinite f1ThreeHalves (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+          canonicalPeriodicMidpoint f1ThreeHalvesFinite f1ThreeHalves (periodOnePotential ψ) (periodOnePotential_mem ψ) n‖ ≤
+            (1/10)*‖sourcePeriodicGapDisplacement f1ThreeHalvesFinite f1ThreeHalves ψ n‖ :=
+  exists_local_sourceCriticalOffset_small_gap_tail f1ThreeHalvesFinite f1ThreeHalves φ hφ (1/10) (by norm_num)
+
+end AppendixFCriticalGapChecks

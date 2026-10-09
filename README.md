@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma E.3's uniform Fourier-Lebesgue bound is proved
-for complex shifted frequencies and every q>1, including infinity.
-The actual unit-interval Fourier integrals satisfy the reciprocal-decay
-estimate in the proof, and arbitrary exceptional frequencies in the finite
-head are allowed. Next is Appendix F; the printed spectral height above
-p=2 remains open.
+Latest milestone: Lemma F.1 is proved with its exact half-gap and
+full-gap constants. The first bound holds near collapsed complex gaps;
+the second uses one complex neighborhood for all indices around each real
+source. A common analytic domain can be chosen inside earlier open real
+neighborhoods. Next is F.2; the printed spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -375,4 +375,31 @@ coefficients are the actual integrals on the unit interval.
 Focused examples check q=3/2 and infinity, negative even and odd frequency
 normalizations, a complex displacement exactly on the pi/4 boundary, and
 a large exceptional imaginary frequency at index zero. No correction to
-E.3 is needed. Appendix F remains to be source-audited.
+E.3 is needed. F.1 is audited below; later Appendix F results remain to be audited.
+
+### Lemma F.1: critical-point bounds in terms of the periodic gap
+
+F.1, printed pages 131-132, is proved with both printed constants. Its
+first part covers every collapsed complex point in a single connected
+almost-real domain, and its second part gives a common neighborhood for
+all signed indices around each real source. No source correction is needed.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| One complex domain for every index | `exists_local_source_allCriticalGapQuotients_analytic`, `nonempty_sourceCriticalGapAnalyticDomain` | Uniform distant-index analyticity plus finitely many head neighborhoods; the connected domain contains all real sources. |
+| Compatibility with earlier choices of W_p | `exists_sourceCriticalGapAnalyticDomain_within` | The domain can be chosen inside any prescribed open set containing the real locus. |
+| Continuity without continuous endpoint labels | `SourceCriticalGapAnalyticDomain.continuousAt_gap_norm`, `.analyticAt_offset` | Gap magnitude is the square root of the norm of its analytic square; the exact squared-gap identity gives analytic critical offset. |
+| F.1(i): constant 1/2 at a collapsed gap | `SourceCriticalGapAnalyticDomain.sourceLemmaF1_i` | Every complex base point in the domain with zero selected gap; an open neighborhood remains inside that domain. |
+| Stronger local collapsed-gap estimate | `SourceCriticalGapAnalyticDomain.exists_collapsedGap_bound` | Any positive constant times gap magnitude is valid on a sufficiently small neighborhood; no division by the gap. |
+| Uniform tail control | `exists_local_sourceCriticalOffset_small_gap_tail` | A common cutoff and source neighborhood for any positive linear gap constant, at all positive and negative tail indices. |
+| F.1(ii): constant 1 for all indices | `SourceCriticalGapAnalyticDomain.sourceLemmaF1_ii` | One complex neighborhood around each real source, including every collapsed or noncollapsed finite-head gap. |
+| Both statements on the same constructed domain | `sourceLemmaF1` | Every finite exponent strictly above one, an open connected domain containing the real locus, and the two source conclusions with literal canonical spectral coordinates. |
+
+The proof uses the already proved exact squared-gap identity instead of
+repeating the source's Rouche argument. The quotient is analytic even at
+complex collapsed points of the constructed domain. Part (ii) uses real
+interlacing to leave a strict margin at open head gaps; collapsed head gaps
+use part (i), and a common small tail supplies the remaining indices.
+Focused checks include p=3/2 and p=3, a negative index with no real-base-point
+hypothesis, exact zero-source values, an actual nonzero real source, and
+compatibility with an earlier prescribed domain. F.2 remains to be audited.
