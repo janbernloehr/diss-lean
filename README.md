@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: H.1 is proved at its printed H^(k-1) source regularity,
-with the leading kth derivative interpreted in H^-1. The canonical weak
-Riccati recurrence equals the leading derivative plus the actual lower-jet
-polynomial, including its homogeneity, field balance, and derivative bounds.
-The identity is also proved for actual tempered distributions, and the weak
-hierarchy is the unique continuous extension of the smooth hierarchy.
-H.2's full Sobolev formulation is next. G.2's arbitrary-time local norm
-and the required spectral height above p=2 remain open.
+Latest milestone: H.2 is proved for every real H^m input, with one
+polynomial chosen before the input and all printed degree and field-balance
+properties. The leading term is the actual unit-interval square integral
+of the highest weak derivative. The proof also gives the complex bilinear
+formula and uniqueness of the continuous extension from smooth inputs.
+Appendix I's Schur-complement hypotheses are next. G.2's arbitrary-time
+local norm and the required spectral height above p=2 remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

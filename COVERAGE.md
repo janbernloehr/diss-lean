@@ -831,6 +831,28 @@ smallness, or extra smoothness restriction is imposed. The polynomial is
 canonical and independent of the input. The distributional realization
 preserves the original period-one normalization, including negative modes.
 
-H.2's full H^m statement is next. The G.2 local-norm, required p>2
+H.2's full H^m statement is covered below. The G.2 local-norm, required p>2
 spectral-height, and optional original m=1 obligations retain their status.
 The source inventory and declaration count do not certify completeness.
+
+
+### Corollary H.2: one polynomial and the physical integral on every real H^m source
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| One polynomial before all inputs | `sourceCorollaryH2` | For every m>=1, there exists a single polynomial giving the displayed integral for every real H^m source. |
+| Jet order, homogeneity, field balance | `sourceH2Polynomial_properties` | Jets through m-1, total weight 2m+2, field charge zero; all for the same canonical chosen polynomial. |
+| Highest physical derivative | `memLp_sobolevTopJetPhysical`, `periodOneCoefficient_sobolevTopJetPhysical` | Actual derivative of the penultimate H1 representative; square integrability and exact period-one coefficients on every H^m source. |
+| Actual weak-derivative hierarchy | `hierarchySobolevJetL2_distribution_succ`, `hierarchySobolevJetL2_distribution_iterate` | Every available jet equals successive Mathlib tempered-distribution derivatives of the zeroth jet. |
+| Exact physical square integral | `integral_sq_sobolevTopJetPhysical` | Unit-interval Parseval, including nonsmooth data, with no lost normalization factor. |
+| Single real integral | `sourceCorollaryH2_integral` | Squared physical top derivative plus the continuous lower-jet polynomial, integrated over the original unit period. |
+| Complex extension | `sobolevOddHamiltonian_eq_physical_integral` | Bilinear physical top-derivative integral plus the same polynomial, for every complex H^m pair. |
+| Original smooth meaning | `sobolevTopJetPhysical_eq_classical`, `sobolevOddHamiltonian_unique_continuous` | Pointwise classical derivative agreement on smooth inputs; unique continuous Hamiltonian extension on complex H^m. |
+
+The polynomial and Hamiltonian are the existing physical constructions;
+no replacement by an action sum or an input-dependent polynomial occurs.
+The lower jets of real inputs are pointwise conjugates by the existing
+`hierarchySobolevJetContinuous_real` theorem. There is no source correction
+for H.2. Appendix I's Schur-complement hypotheses are the next audit.
+The G.2 local-norm, required p>2 spectral-height, and optional original
+m=1 obligations remain open. Counts are not completeness certificates.

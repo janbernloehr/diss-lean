@@ -3103,3 +3103,5 @@ import NLS.ZakharovShabat.SobolevSourceSmoothDensity
 import NLS.ZakharovShabat.SourceLemmaH1
 import NLS.ZakharovShabat.WeakRiccatiDistribution
 import NLS.ZakharovShabat.SourceLemmaH1Distribution
+import NLS.ZakharovShabat.SobolevTopJetPhysical
+import NLS.ZakharovShabat.SourceCorollaryH2

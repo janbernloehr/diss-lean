@@ -39738,3 +39738,66 @@ example (s : ℕ) (ab : SobolevSource s) (f g : ℝ → ℂ)
   weakSobolevRiccatiDensity_eq_classical_coefficients s ab f g hf hg hpf hpg ha hb j
 
 end AppendixH1WeakSourceChecks
+
+
+
+noncomputable section
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.DifferentialPolynomial MeasureTheory Set
+open scoped ContDiff SchwartzMap FourierTransform
+namespace AppendixH2FullSourceChecks
+
+-- One polynomial works for every real source, even at the H1 endpoint.
+example : ∃ q : DifferentialPolynomial.Polynomial, JetOrderLE q 0 ∧
+    q.IsWeightedHomogeneous totalWeight 4 ∧ q.IsWeightedHomogeneous fieldCharge 0 ∧
+    ∀ a : realTypeHigherSobolevSourceLocus 1,
+      sobolevOddHamiltonian 1 (by omega) a.val = ∫ x in (0 : ℝ)..1,
+        (‖sobolevTopJetPhysical 1 (by omega) a.val.1 x‖^2 : ℝ)+
+          sobolevPolynomialField 1 q a.val (x : AddCircle (2 : ℝ)) := by
+  simpa using sourceCorollaryH2 1 (by omega)
+
+example : JetOrderLE (nlsOddReducedPolynomial 4 (by omega)) 3 ∧
+    (nlsOddReducedPolynomial 4 (by omega)).IsWeightedHomogeneous totalWeight 10 ∧
+    (nlsOddReducedPolynomial 4 (by omega)).IsWeightedHomogeneous fieldCharge 0 :=
+  sourceH2Polynomial_properties 4 (by omega)
+
+example (m : ℕ) (hm : 1 ≤ m) (a : realTypeHigherSobolevSourceLocus m) :
+    sobolevOddHamiltonian m hm a.val = ∫ x in (0 : ℝ)..1,
+      (‖sobolevTopJetPhysical m hm a.val.1 x‖^2 : ℝ)+
+        sobolevPolynomialField m (nlsOddReducedPolynomial m hm) a.val (x : AddCircle (2 : ℝ)) :=
+  sourceCorollaryH2_integral m hm a
+
+example (m : ℕ) (hm : 1 ≤ m) (ab : SobolevSource m) :
+    sobolevOddHamiltonian m hm ab = ∫ x in (0 : ℝ)..1,
+      sobolevTopJetPhysical m hm ab.1 x*sobolevTopJetPhysical m hm ab.2 x+
+        sobolevPolynomialField m (nlsOddReducedPolynomial m hm) ab (x : AddCircle (2 : ℝ)) :=
+  sobolevOddHamiltonian_eq_physical_integral m hm ab
+
+-- Physical square integrals, not only abstract coefficient norms.
+example (m : ℕ) (hm : 1 ≤ m) (a : ScalarSobolev m) :
+    (∫ x in (0 : ℝ)..1, ‖sobolevTopJetPhysical m hm a x‖^2) =
+      ‖hierarchySobolevJetL2 m m le_rfl a‖^2 := integral_sq_sobolevTopJetPhysical m hm a
+example (m : ℕ) (hm : 1 ≤ m) (a : ScalarSobolev m) :
+    MemLp (sobolevTopJetPhysical m hm a) 2 (volume.restrict (Ioc 0 1)) :=
+  memLp_sobolevTopJetPhysical m hm a
+
+private def negativeMode : ScalarSobolev 2 := WeightedCoeff.ofFinsupp _ 2 (Finsupp.single (-2) 1)
+example : periodOneCoefficient (sobolevTopJetPhysical 2 (by omega) negativeMode) (-2) =
+    -16*(Real.pi : ℂ)^2 := by
+  rw [periodOneCoefficient_sobolevTopJetPhysical,hierarchySobolevJetL2_apply]
+  norm_num [negativeMode,WeightedCoeff.ofFinsupp_apply,Complex.I_sq]
+  ring_nf
+  simp [Complex.I_sq]
+
+-- The entire jet hierarchy consists of actual iterated weak derivatives.
+example (s k : ℕ) (hk : k ≤ s) (a : ScalarSobolev s) :
+    distributionSynthesis (Coeff.periodDouble (hierarchySobolevJetL2 s k hk a)) =
+      (fun T => TemperedDistribution.derivCLM ℂ T)^[k]
+        (distributionSynthesis (Coeff.periodDouble (hierarchySobolevJetL2 s 0 (by omega) a))) :=
+  hierarchySobolevJetL2_distribution_iterate s k hk a
+example (m : ℕ) (hm : 1 ≤ m) (a : ScalarSobolev m) (f : ℝ → ℂ)
+    (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 1)
+    (ha : ∀ j, a.val j = periodOneCoefficient f j) :
+    sobolevTopJetPhysical m hm a = iteratedDeriv m f :=
+  sobolevTopJetPhysical_eq_classical m hm a f hf hp ha
+
+end AppendixH2FullSourceChecks

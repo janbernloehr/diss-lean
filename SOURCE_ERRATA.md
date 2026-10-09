@@ -1,5 +1,22 @@
 # Source discrepancies
 
+## Corollary H.2: physical interpretation on the entire H^m source
+
+Source: dissertation, printed page 139. The displayed formula holds at
+the stated regularity without a correction. The highest derivative is
+represented almost everywhere by the derivative of the penultimate H1
+jet; its square is integrable. All lower jets used by the polynomial have
+continuous representatives. `sourceCorollaryH2` retains the printed
+quantifier order, with one polynomial chosen before every real H^m input,
+as well as the stated homogeneity and equal field counts.
+
+`integral_sq_sobolevTopJetPhysical` identifies the leading term with the
+actual unit-period integral. The weak-derivative chain is proved using
+Mathlib's actual tempered-distribution derivative, and the smooth
+comparison recovers the classical mth derivative. The physical Hamiltonian
+is the unique continuous extension from the smooth complex hierarchy.
+This is an endpoint-regularity verification, not an erratum.
+
 ## Lemma H.1: the highest derivative at the printed Sobolev regularity
 
 Source: dissertation, printed page 139, checked in the rendered PDF.

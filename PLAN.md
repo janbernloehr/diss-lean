@@ -1,6 +1,57 @@
 # Implementation plan
 
-## Latest progress: H.1 at the full weak Sobolev regularity
+## Latest progress: H.2 on the full real Sobolev space
+
+`SourceCorollaryH2.lean` proves the printed quantifier order: for every
+m>=1, one polynomial p_(2m), chosen independently of the input, gives the
+single physical integral formula for every real H^m source. Its jets have
+order at most m-1, its total weight is 2m+2, and each monomial has equal
+counts of the two fields. These properties belong to the same polynomial
+used in the previously constructed Hamiltonian.
+
+`SobolevTopJetPhysical.lean` realizes the highest derivative as the actual
+almost-everywhere derivative of the penultimate continuous H1 jet. This
+representative is square integrable on the unit interval and has exactly
+the original coefficients (2*pi*i*j)^m*a_j. Parseval identifies its physical
+square integral with the coefficient norm squared, with no period-two
+normalization factor. Each Fourier jet is also the actual distributional
+derivative of the preceding one; the iterated identity is proved at every
+available order. For smooth inputs, the physical representative equals
+the classical mth derivative at every point.
+
+`sobolevOddHamiltonian_eq_physical_integral` gives the bilinear formula
+on all complex H^m sources. `sourceCorollaryH2_integral` gives the squared
+norm formula on the entire real locus, and `sourceCorollaryH2` packages
+it with the single polynomial and all printed algebraic restrictions.
+The lower-jet field is continuous and its mean is the actual unit-period
+integral. No extra smoothness, smallness, or finite-gap assumption is used.
+
+`sobolevOddHamiltonian_unique_continuous` proves that agreement with the
+original smooth physical Hamiltonian determines this extension uniquely
+among continuous maps on complex H^m. This complements the existing
+analyticity and actual higher-action trace theorems; the Hamiltonian is
+not redefined from the desired identity or from spectral actions.
+
+Focused checks passed at m=1, at polynomial order m=4, for arbitrary
+real and complex sources, for physical square integrals and iterated
+distribution derivatives, and for smooth agreement. The negative mode -2
+has second-derivative coefficient -16*pi^2, checking sign and normalization.
+The printed H.2 formula requires no correction.
+
+Next: audit Appendix I's Schur-complement statements against their printed
+hypotheses and the existing bounded-operator implementation. G.2's
+arbitrary-time local norm, the required p>2 spectral height, and the
+optional original m=1 sharpening remain open. The accepted Lemma 27.2
+correction and the G.5-G.7 source audits are unchanged. The dissertation
+remains incomplete.
+
+Validation: focused modules and the public probe passed. The full project
+check passed with 6,534 build jobs, all public examples, and the axiom audit
+for 26,915 NLS declarations. The 21 existing warnings are unchanged, with
+none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: H.1 at the full weak Sobolev regularity
 
 `SourceLemmaH1.lean` and `SourceLemmaH1Distribution.lean` prove H.1 at
 its printed H^(k-1) regularity for every integer k>=1, writing k=s+1.
