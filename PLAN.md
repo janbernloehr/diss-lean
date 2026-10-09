@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: G.3 for the full matrix on exact periodic H1 source balls
+## Latest progress: G.4 summability for full matrices on exact source H1 balls
+
+`SourceCorollaryG4.lean` proves the full-matrix summability assertions on
+the original complex period-one H1 source. The parameter range is every
+finite real p > 1 and every Fourier exponent q > 1+1/p, including q > 2
+and q=infinity. The exact Chapter 5 source norm defines the potential
+balls, and the matrix Fourier norms are the genuine Hermitian operator
+norms from the preceding G.3 milestone.
+
+`sourceCorollaryG4` retains the printed eventual pi/4 displacement
+hypothesis. A single nonnegative lp sequence majorizes all matrix Fourier
+norms, at every signed spectral index, for every potential in the fixed
+source-norm ball. `sourceG4_shiftedFree_uniform_majorant` proves the same
+for M(nu_n)-E_(n*pi) under eventual O(1/abs(n)) displacement. The finite
+initial spectral values are unrestricted and may enter these whole-sequence
+majorants. No smallness or reality condition is imposed on the potential.
+
+The separate tail theorems choose a common cutoff and a common summable
+majorant before either the spectral sequence or the potential is chosen.
+They retain uniformity over all sequences with the same displacement bound
+and initial cutoff. The whole-sequence statements fix the spectral sequence
+first, which correctly allows its arbitrary finite initial values to affect
+the bound. The generalized near-free theorem permits any fixed O(1)
+displacement bound; pi/4 is the literal source specialization.
+
+The norm sequences and the actual operator-valued Fourier sequences are
+both proved to belong to lp. For q above two, including infinity, the
+existing Fourier exponent embedding preserves the actual coefficients;
+no q<=2 restriction is carried into the corollary. The strict threshold
+q>1+1/p and finite p>1 range remain explicit; no threshold equality or
+outer p=1 or p=infinity endpoint is asserted.
+
+Next: audit G.5's full gradient statement and its printed p=infinity
+endpoint. G.2's arbitrary-time local norm, the required p>2 spectral height,
+and the optional original m=1 sharpening remain open. The accepted
+Lemma 27.2 correction and G.3's epsilon qualification are unchanged.
+
+Focused public checks passed for q=3/2, q=2, q=infinity, non-Hilbert
+outer p=3/2, arbitrary complex initial frequencies, nonzero inverse-index
+displacement, and the common spectral-family tail majorant. The full build
+passed (6515 jobs), all public examples passed, and the axiom audit passed
+for 26516 NLS declarations. The same 21 existing warnings remain, with no
+new warnings. The 156 candidate source labels were verified; this inventory
+is not a completeness certificate.
+
+
+## Previous milestone: G.3 for the full matrix on exact periodic H1 source balls
 
 `SourceLemmaG3.lean` now proves the full-matrix H1 time bound and both
 Fourier-Lebesgue decay assertions for every complex period-one H1 source.

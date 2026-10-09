@@ -39268,3 +39268,80 @@ example (a : ScalarDomain 2 × ScalarDomain 2) (t : Set.Icc (0 : ℝ) 1) :
   sourceG3ClassicalCoefficients_potential a t
 
 end AppendixG3FullMatrixChecks
+
+
+noncomputable section
+open scoped ENNReal
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+namespace AppendixG4FullMatrixChecks
+
+-- No restriction on the initial spectral value, even when it is far from the lattice.
+private def arbitraryHead (z : ℂ) (n : ℤ) : ℂ :=
+  if n = 0 then z else (Real.pi : ℂ)*(n : ℂ)
+
+private theorem arbitraryHead_tail (z : ℂ) (n : ℤ) (hn : 1 ≤ n.natAbs) :
+    ‖arbitraryHead z n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ Real.pi/4 := by
+  have hn0 : n ≠ 0 := by omega
+  simp only [arbitraryHead,if_neg hn0,sub_self,norm_zero]
+  positivity
+
+-- The q=infinity conclusion is uniform over each exact source-norm ball.
+example (M : ℝ) (z : ℂ) :
+    ∃ b : ℤ → ℝ, Memℓp b 2 ∧ (∀ n, 0 ≤ b n) ∧
+      ∀ (a : ScalarDomain 2 × ScalarDomain 2),
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M → ∀ n : ℤ,
+      ‖classicalHermitianRemainderFourierCoefficients (q := ⊤) (by simp)
+        (sourceG3ClassicalCoefficients a) (arbitraryHead z n)‖ ≤ b n := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceCorollaryG4 2 (by norm_num) ⊤ (by simp) M 1 (arbitraryHead z) (arbitraryHead_tail z)
+
+-- A q below two, strictly above the threshold 1+1/3, gives summability of whole operators.
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+example (z : ℂ) (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => classicalHermitianRemainderFourierCoefficients
+      (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num)
+      (sourceG3ClassicalCoefficients a) (arbitraryHead z n)) 3 := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceG4_remainder_operator_memlp 3 (by norm_num) (ENNReal.ofReal (3/2 : ℝ))
+      (by norm_num) (Real.pi/4) (by positivity) 1 (arbitraryHead z) (arbitraryHead_tail z) a
+
+-- The stronger hypothesis is exercised with an actual nonzero inverse-index displacement.
+private def inverseDisplacement (z : ℂ) (n : ℤ) : ℂ :=
+  if n = 0 then z else (Real.pi : ℂ)*(n : ℂ)+1/((n.natAbs : ℝ) : ℂ)
+
+private theorem inverseDisplacement_tail (z : ℂ) (n : ℤ) (hn : 1 ≤ n.natAbs) :
+    ‖inverseDisplacement z n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ 1/(n.natAbs : ℝ) := by
+  have hn0 : n ≠ 0 := by omega
+  simp [inverseDisplacement,hn0,Complex.norm_real]
+
+-- Non-Hilbert outer exponent p=3/2, q=infinity; initial value still arbitrary.
+example (z : ℂ) (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => classicalHermitianShiftedFreeFourierCoefficients (q := ⊤) (by simp)
+      (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) (inverseDisplacement z n)
+      (Real.pi*(n : ℝ))) (ENNReal.ofReal (3/2 : ℝ)) :=
+  sourceG4_shiftedFree_operator_memlp (3/2) (by norm_num) ⊤ (by simp)
+    1 zero_le_one 1 (inverseDisplacement z) (inverseDisplacement_tail z) a
+
+-- The literal q=2 space requires no dependent exponent transport.
+example (z : ℂ) (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalHermitianShiftedFreeFourierCoefficients (q := 2) (by norm_num)
+      (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) (inverseDisplacement z n)
+      (Real.pi*(n : ℝ))‖) 2 := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceG4_shiftedFree_memlp 2 (by norm_num) 2 (by norm_num)
+      1 zero_le_one 1 (inverseDisplacement z) (inverseDisplacement_tail z) a
+
+-- One summable tail majorant works before the spectral sequence or potential is chosen.
+example (M B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) :
+    ∃ (N : ℕ) (b : ℤ → ℝ), 0 < N ∧ Memℓp b 2 ∧ (∀ n, 0 ≤ b n) ∧
+      ∀ (ν : ℤ → ℂ),
+        (∀ n : ℤ, N₀ ≤ n.natAbs → ‖ν n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ B/(n.natAbs : ℝ)) →
+      ∀ (a : ScalarDomain 2 × ScalarDomain 2),
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M →
+      ∀ n : ℤ, N ≤ n.natAbs →
+      ‖classicalHermitianShiftedFreeFourierCoefficients (q := ⊤) (by simp)
+        (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) (ν n) (Real.pi*(n : ℝ))‖ ≤ b n := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceG4_shiftedFree_tail_majorant 2 (by norm_num) ⊤ (by simp) M B hB N₀
+
+end AppendixG4FullMatrixChecks

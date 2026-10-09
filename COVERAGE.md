@@ -678,3 +678,30 @@ existing bijective coefficient identification, not just real sources.
 The full dissertation remains incomplete. G.4 is the next source audit;
 G.2's arbitrary-time local norm, the required p>2 spectral height, and the
 optional original m=1 sharpening retain their previously recorded status.
+
+
+### Corollary G.4: full-matrix summability on exact source-norm balls
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Literal eventual pi/4 displacement | `sourceCorollaryG4` | One nonnegative lp majorant for the full matrix norms at all signed indices, uniform on each exact Chapter 5 source-norm ball. |
+| Full shifted-free comparison | `sourceG4_shiftedFree_uniform_majorant` | Actual M(nu_n)-E_(n*pi), eventual O(1/abs(n)) displacement, arbitrary finite initial spectral values. |
+| Uniform tails over spectral families | `sourceG4_remainder_tail_majorant`, `sourceG4_shiftedFree_tail_majorant` | The cutoff and summable majorant precede the spectral sequence and potential quantifiers; common displacement bound and initial cutoff. |
+| Whole-sequence membership | `sourceG4_remainder_memlp`, `sourceG4_shiftedFree_memlp` | The actual full-matrix Fourier norms are in lp for every complex period-one H1 source. |
+| Actual operator-valued membership | `sourceG4_remainder_operator_memlp`, `sourceG4_shiftedFree_operator_memlp` | The Fourier sequences themselves, with values in the Hermitian-operator coefficient space, form an lp sequence. |
+| Complete exponent range | All preceding theorems | Finite real p>1, q>1+1/p, including q>2 and q=infinity; no threshold equality or excluded outer endpoints claimed. |
+
+The source statement on printed page 137 fixes a spectral sequence before
+asserting uniformity over potential balls. The whole-sequence majorant may
+therefore depend on its finite initial values. The tail statements are
+stronger uniform-family results, but do not impose a common bound on
+unrestricted finite initial segments. This distinction is explicit in the
+quantifier order. The generic near-free majorants allow any O(1) bound,
+with the literal pi/4 hypothesis supplied by the source specialization.
+
+Focused checks exercise q=3/2, q=2, q=infinity, a non-Hilbert outer p=3/2,
+an arbitrary complex initial spectral value, an actual nonzero 1/abs(n)
+displacement, and a common majorant chosen before the spectral family.
+G.5 is the next source audit, including its printed p=infinity endpoint.
+The dissertation remains incomplete; the previously recorded G.2 local-norm,
+p>2 spectral-height, and optional original m=1 obligations remain open.

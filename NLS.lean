@@ -3085,3 +3085,4 @@ import NLS.ComplexAnalysis.HermitianFourierAssembly
 import NLS.ZakharovShabat.ClassicalHermitianFourierDecay
 import NLS.ZakharovShabat.ClassicalHermitianTimeBounds
 import NLS.ZakharovShabat.SourceLemmaG3
+import NLS.ZakharovShabat.SourceCorollaryG4
