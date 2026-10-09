@@ -1411,3 +1411,49 @@ public examples and the axiom audit of 27956 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Theorem 1.1: necessary coefficient growth and a proposed all-p height
+
+[`SourcePeriodicHeightNecessity.lean`](NLS/ZakharovShabat/SourcePeriodicHeightNecessity.lean)
+uses the actual balanced dyadic counterexample family.
+[`SourcePeriodicExplicitHeight.lean`](NLS/ZakharovShabat/SourcePeriodicExplicitHeight.lean)
+packages a separate sufficient correction in the original source norm.
+
+| Public entry point | Scope |
+| --- | --- |
+| `exists_sourcePeriodicHeightCoefficient_counterexample` | At integer P>=3, every nonnegative C with 276480*C^2<P-2 has an actual balanced source whose spectral point exceeds (1+C*norm)^P. |
+| `sourcePeriodicHeightCoefficient_necessary` | A universal original-source strip coefficient requires P-2<=276480*C^2. |
+| `sourcePeriodicCountingHeightCoefficient_necessary` | The same necessary growth survives arbitrary source-dependent cutoffs and all high disks. |
+| `not_exists_uniform_sourcePeriodicHeightCoefficient`, `not_exists_uniform_sourcePeriodicCountingHeightCoefficient` | No fixed nonnegative coefficient works at all integer exponents, for either strips or box/disk exhaustion. |
+| `exists_source_periodicCounting_coefficient_height_of_resolvent` | General counting transfer for any nonnegative coefficient with an exterior resolvent estimate; the printed coefficient-eight API is preserved. |
+| `mem_resolventSet_of_sourcePeriodicExplicitHeight` | Both closed exterior edges and the full exterior region for (1+8pM)^p, at all finite p>=1, in the original source norm. |
+| `sourcePeriodicSpectrum_abs_im_lt_explicit_height` | Strict spectral strip bound for every source in the original norm ball. |
+| `sourceTheorem1_1_proposed_height` | Common open convex source neighborhood, all larger cutoffs, full counting/parity data, central count 4N+2, spectral exhaustion, actual central projection, and analytic moving rectangular integrals. |
+
+Public checks include the cutoff-dependent necessity, a concrete
+coefficient-one failure at P=300000, exclusion of every uniform coefficient,
+both signs of the corrected p=5 resolvent edge, and simultaneous central
+count/parity data with analytic projections on one source neighborhood.
+The printed height remains refuted at large integer exponents and proved
+through p=4. No correction is adopted and no optimal growth rate is claimed.
+
+Validation: the full project check passed (6626 build jobs), including all
+public examples and the axiom audit of 27977 NLS declarations. Focused
+builds and the standalone public probe passed. There are 21 existing
+warnings and no new warnings. The source inventory check passed with
+156 labels. Counts do not certify completeness.
+
+### Appendix G introduction: full-time fundamental-solution regularity to audit
+
+Printed p. 135 recalls joint continuity of the original fundamental matrix
+on `[0,infinity) x Complex x L2_c` and analyticity in frequency and potential
+for every fixed time. The current `l2FundamentalMatrix` in
+`L2HermitianOperatorBound.lean` is defined on `[0,1]`; its columns come
+from `l2SolutionCurve` in `L2SolutionExtension.lean`. The integral equation,
+a.e. differential equation, initial data, norm bounds, and recovery of
+continuous inputs are proved. They do not by themselves establish the
+full parameter-regularity and all-time statement. No matching public
+entry point for that exact assertion was located during this audit.
+It remains a concrete obligation, separate from G.2's interval-norm issue.
+The plan is to establish regularity of the actual L2 solution and a
+compatible extension of periodic inputs to all nonnegative times.

@@ -3194,3 +3194,5 @@ import NLS.Fourier.LowerDyadicTent
 import NLS.ZakharovShabat.OrderedDyadicSource
 import NLS.ZakharovShabat.DyadicNormalizationBound
 import NLS.ZakharovShabat.SourcePeriodicHeightCounterexample
+import NLS.ZakharovShabat.SourcePeriodicHeightNecessity
+import NLS.ZakharovShabat.SourcePeriodicExplicitHeight

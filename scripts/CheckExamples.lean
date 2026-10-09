@@ -41464,3 +41464,66 @@ example : ¬ ∀ ψ : CoeffPair 100000000, ∃ N : ℕ,
         highSpectralDisks N (Real.pi/4) := not_sourceTheorem1_1_printed_exhaustion
 
 end OrderedDyadicCounterexampleChecks
+
+namespace PeriodicHeightCoefficientChecks
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+
+-- The quantitative obstruction includes freely chosen central cutoffs.
+example (P : ℕ) [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 3 ≤ P) (C : ℝ) (hC : 0 ≤ C)
+    (hcount : ∀ ψ : CoeffPair (P : ℝ≥0∞), ∃ N : ℕ,
+      periodicSpectrum (ENNReal.natCast_ne_top P) (periodOnePotential ψ) ⊆
+        heightSpectralBox N ((1+C*‖ψ‖)^((P : ℝ≥0∞).toReal)) ∪ highSpectralDisks N (Real.pi/4)) :
+    ((P-2 : ℕ) : ℝ) ≤ 276480*C^2 :=
+  sourcePeriodicCountingHeightCoefficient_necessary hP hC hcount
+
+local instance instPeriodicCoefficientNat : Fact (1 ≤ ((300000 : ℕ) : ℝ≥0∞)) := ⟨by norm_num⟩
+-- Coefficient one already fails at this concrete exponent; actual spectral membership is retained.
+example : ∃ ψ : CoeffPair ((300000 : ℕ) : ℝ≥0∞), ‖ψ.fst‖ = ‖ψ.snd‖ ∧
+    Complex.I*Complex.ofReal ((2 : ℝ)^300000) ∈ periodicSpectrum (ENNReal.natCast_ne_top 300000) (periodOnePotential ψ) ∧
+    (1+‖ψ‖)^(((300000 : ℕ) : ℝ≥0∞).toReal) < |(Complex.I*Complex.ofReal ((2 : ℝ)^300000)).im| := by
+  simpa only [one_mul] using exists_sourcePeriodicHeightCoefficient_counterexample
+    300000 (by omega) (C := 1) (by norm_num) (by norm_num)
+
+-- Even a height coefficient larger than eight cannot be fixed independently of P.
+example : ¬ ∃ C : ℝ, 0 ≤ C ∧ ∀ P : ℕ, ∀ hP : 3 ≤ P,
+    let _ : Fact (1 ≤ (P : ℝ≥0∞)) := ⟨by exact_mod_cast (show 1 ≤ P by omega)⟩
+    ∀ ψ : CoeffPair (P : ℝ≥0∞), ∃ N : ℕ,
+      periodicSpectrum (ENNReal.natCast_ne_top P) (periodOnePotential ψ) ⊆
+        heightSpectralBox N ((1+C*‖ψ‖)^((P : ℝ≥0∞).toReal)) ∪ highSpectralDisks N (Real.pi/4) :=
+  not_exists_uniform_sourcePeriodicCountingHeightCoefficient
+
+local instance instFivePeriodicHeight : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- Both signs of the closed corrected-height edge are in the actual resolvent for a source norm ball.
+example (φ : CoeffPair 5) (hφ : ‖φ‖ ≤ 1) :
+    Complex.I*(41^5 : ℝ) ∈ resolventSet (by simp : (5 : ℝ≥0∞) ≠ ⊤) (periodOnePotential φ) ∧
+    -Complex.I*(41^5 : ℝ) ∈ resolventSet (by simp : (5 : ℝ≥0∞) ≠ ⊤) (periodOnePotential φ) := by
+  constructor
+  · apply mem_resolventSet_of_sourcePeriodicExplicitHeight (by simp) φ hφ
+    norm_num [sourcePeriodicExplicitHeight]
+  · apply mem_resolventSet_of_sourcePeriodicExplicitHeight (by simp) φ hφ
+    norm_num [sourcePeriodicExplicitHeight]
+
+-- The corrected count and the original parity data hold on one source neighborhood for all cutoffs.
+example (φ : CoeffPair 5) : ∃ N₀ : ℕ, ∃ V : Set (CoeffPair 5),
+    0 < N₀ ∧ IsOpen V ∧ Convex ℝ V ∧ φ ∈ V ∧ 0 ∈ V ∧
+    ∀ N : ℕ, N₀ ≤ N →
+      AnalyticOnNhd ℂ (fun ψ => heightRectangleIntegral (by simp) (periodOnePotential ψ) N
+        (sourcePeriodicExplicitHeight 5 ‖ψ‖)) V ∧
+      ∀ ψ ∈ V,
+        (∑ z ∈ heightPeriodicSpectrum (by simp) (periodOnePotential ψ) N
+          (sourcePeriodicExplicitHeight 5 ‖ψ‖),
+          periodicAlgebraicMultiplicity (by simp) (periodOnePotential ψ) z) = 4*N+2 ∧
+        ∀ r : ℤ, Module.finrank ℂ
+          ↥((centralSpectralProjection (by simp) (periodOnePotential ψ) N).range ⊓ pairParitySubspace r) =
+          if (N : ℤ) % 2 = r % 2 then 2*N+2 else 2*N := by
+  obtain ⟨N₀,V,hN₀,ho,hconv,hφ,h0,hall⟩ := sourceTheorem1_1_proposed_height (by simp) φ
+  refine ⟨N₀,V,hN₀,ho,hconv,hφ,h0,?_⟩
+  intro N hN
+  obtain ⟨han,hdata⟩ := hall N hN
+  refine ⟨han,?_⟩
+  intro ψ hψ
+  obtain ⟨hd,_,hcount,_,_⟩ := hdata ψ hψ
+  exact ⟨hcount,hd.central_parity (periodOnePotential_mem ψ)⟩
+
+end PeriodicHeightCoefficientChecks

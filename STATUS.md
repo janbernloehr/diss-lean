@@ -1,6 +1,48 @@
 # Implementation status
 
-## Current milestone: the all-exponent printed periodic height is false
+## Current milestone: necessary periodic height growth and a proposed correction
+
+`SourcePeriodicHeightNecessity.lean` proves that any nonnegative coefficient
+C_P bounding all original source spectra by `(1+C_P*norm)^P` at integer
+P>=3 must satisfy `P-2 <= 276480*C_P^2`. The same necessity holds for
+counting-box exhaustion with a source-dependent cutoff and all the high
+quarter-pi disks. Thus no fixed nonnegative replacement for the printed
+eight repairs the all-exponent assertion. Both no-uniform-coefficient
+statements are proved, using actual balanced dyadic sources and their
+actual spectral point i*2^P, not a sufficient-criterion failure.
+
+`SourcePeriodicExplicitHeight.lean` packages the sufficient height
+`(1+8pM)^p` in the original source norm at every finite p>=1. The closed
+exterior strip, including both edges, lies in the actual resolvent, and
+all spectral points lie strictly inside. `sourceTheorem1_1_proposed_height`
+retains one open convex source neighborhood containing the given source
+and zero, all larger cutoffs, the full `PeriodicCountingData`, central
+multiplicity 4N+2, equality with the central spectrum, spectral exhaustion,
+and the actual analytic moving rectangular projection. The original
+periodic/antiperiodic parity data is retained through period-one support.
+
+The source counting transfer now accepts any nonnegative coefficient with
+a proved exterior resolvent estimate. Its existing printed-height API is
+preserved as the coefficient-eight specialization. The printed result
+through p=4 remains valid; the all-exponent printed assertion remains
+refuted. The proposed periodic correction is proved separately and has not
+been adopted. The necessary square-root growth and sufficient linear
+growth leave a gap; no optimal coefficient or optimal growth is asserted.
+
+The independent all-p boundary-height refutation and its proposed
+correction remain unchanged. Real-type finite-gap analyticity is proved.
+G.2's original arbitrary-time interval norm and the optional original m=1
+sharpening of Lemma 27.2 remain unresolved. The source audit also identifies
+the full-time L2 fundamental-solution parameter regularity recalled in
+Appendix G as a concrete next obligation. The dissertation is incomplete.
+
+Validation: the full project check passed (6626 build jobs), including all
+public examples and the axiom audit of 27977 NLS declarations. Focused
+builds and the standalone public probe passed. There are 21 existing
+warnings and no new warnings. The source inventory check passed with
+156 labels. Counts do not certify completeness.
+
+## Previous milestone: the all-exponent printed periodic height is false
 
 The all-exponent printed periodic height in Theorem 1.1 is now refuted.
 `SourcePeriodicHeightCounterexample.lean` proves that for every integer

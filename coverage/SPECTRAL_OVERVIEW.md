@@ -91,6 +91,34 @@ uniform free lp-to-l1 resolvent coefficient. Neither alone was a spectral
 counterexample. The actual dyadic source above resolves the all-exponent
 printed-height obligation negatively.
 
+The necessary exponent dependence is now quantified in
+`SourcePeriodicHeightNecessity.lean`. For every integer P>=3, any
+nonnegative C_P giving the original-source strip bound
+`abs(Im z)<=(1+C_P*norm(psi))^P` for all source spectra must satisfy
+`P-2<=276480*C_P^2`. The same conclusion holds if only exhaustion by
+a source-dependent central box and the high disks is required.
+`sourcePeriodicHeightCoefficient_necessary` and
+`sourcePeriodicCountingHeightCoefficient_necessary` prove these two
+statements. The corresponding `not_exists_uniform_sourcePeriodic...`
+theorems exclude every fixed nonnegative coefficient for all integer
+exponents. These bounds follow from the actual balanced dyadic family;
+they are not free-resolvent norm obstructions.
+
+`SourcePeriodicExplicitHeight.lean` proves the separate proposed
+correction `(1+8pM)^p` in the original source norm, for all finite p>=1.
+`mem_resolventSet_of_sourcePeriodicExplicitHeight` includes both horizontal
+edges and the entire closed exterior strip.
+`sourcePeriodicSpectrum_abs_im_lt_explicit_height` gives strict exclusion
+for spectral points. `sourceTheorem1_1_proposed_height` retains one open
+convex source neighborhood, every larger cutoff, full central and distant
+counting data and parity, central multiplicity 4N+2, exhaustion, equality
+with the central cluster projection, and analyticity of the actual moving
+rectangular integral. It specializes a general source counting transfer
+for any nonnegative coefficient with a proved resolvent bound; the
+existing printed-height API remains the coefficient-eight specialization.
+No replacement has been adopted. The necessary square-root growth and
+sufficient linear growth do not establish an optimal growth rate.
+
 ## Theorem 1.2: proved in the full printed range
 
 The source statement on p. 19 requires the globally lexicographically

@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the all-exponent printed periodic height in Theorem 1.1
-is refuted by a proved family of actual source potentials. For every integer
-P>=100000000, a balanced source of norm at most 1/16 has the spectral point
-i*2^P, outside the printed box and high-frequency disks at every cutoff.
-The original coefficient norm and Fourier convention are retained. The
-printed result through p=4 and real-type finite-gap analyticity remain
-proved. No replacement height is adopted. The dissertation is incomplete.
+Latest milestone: no fixed replacement for the printed periodic height
+coefficient works at all exponents. Lean proves the necessary bound
+`P-2 <= 276480*C_P^2` at every integer P>=3, even with a freely chosen
+central cutoff. The sufficient height `(1+8pM)^p` now retains the full
+source counting data and actual analytic projections on one common
+neighborhood. This is a separate proposed correction; it is not adopted.
+The printed result through p=4 remains proved, and the all-exponent
+printed height remains refuted. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -5,7 +5,8 @@ import NLS.ZakharovShabat.PrintedHeightFour
 
 The parameter uses the original period-one component-sum coefficient norm.
 All counts, parity data, exclusions and actual analytic projections retain
-their original definitions. Exponents above four remain unresolved.
+their original definitions. The all-exponent assertion is refuted separately
+in SourcePeriodicHeightCounterexample; this finite range remains valid.
 -/
 noncomputable section
 open Set Metric Complex
