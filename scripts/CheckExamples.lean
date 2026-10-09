@@ -39667,3 +39667,74 @@ example (φ : CoeffPair 2) (n k : ℤ) :
   (sourceG7MidpointGradient_coefficients (by simp) (by norm_num) φ n k).1
 
 end AppendixG7SourceChecks
+
+
+
+noncomputable section
+open NLS NLS.ZakharovShabat NLS.Fourier NLS.DifferentialPolynomial
+open scoped ENNReal ContDiff SchwartzMap FourierTransform
+namespace AppendixH1WeakSourceChecks
+
+-- The printed low-regularity endpoint and first nonlinear case.
+example (ab : SobolevSource 0) (j : ℤ) :
+    (weakSobolevRiccatiDensity 0 ab).val j = -(2*Complex.I*(Real.pi : ℂ)*j*ab.2.val j) :=
+  weakSobolevRiccatiDensity_zero_apply ab j
+example (ab : SobolevSource 0) (j : ℤ) : sourceH1RemainderCoefficient 0 ab j = 0 := by
+  simp [sourceH1RemainderCoefficient,nlsRiccatiRemainder_one,sobolevPolynomialField]
+example (ab : SobolevSource 1) (j : ℤ) :
+    (weakSobolevRiccatiDensity 1 ab).val j = -(2*Complex.I*(Real.pi : ℂ)*j)^2*ab.2.val j+
+      ∑' l : ℤ, ab.1.val (j-l)*∑' m : ℤ, ab.2.val (l-m)*ab.2.val m :=
+  weakSobolevRiccatiDensity_one_apply ab j
+
+-- Every Sobolev order uses the same canonical recurrence and source polynomial.
+example (s : ℕ) (ab : SobolevSource s) (j : ℤ) :
+    (weakSobolevRiccatiDensity s ab).val j =
+      -(2*Complex.I*(Real.pi : ℂ)*j)^(s+1)*ab.2.val j+sourceH1RemainderCoefficient s ab j :=
+  sourceLemmaH1 s ab j
+example (s : ℕ) (ab : SobolevSource s) :
+    weakSobolevRiccatiDensity s ab =
+      -weakRiccatiDerivative (sourceH1TopJet s ab)+weakRiccatiInclusion 0 (sourceH1RemainderL2 s ab) :=
+  sourceLemmaH1_weak s ab
+example (s : ℕ) (ab : SobolevSource s) :
+    AnalyticAt ℂ (weakSobolevRiccatiDensity s) ab := analyticAt_weakSobolevRiccatiDensity s ab
+example : (nlsRiccatiRemainder 7).IsWeightedHomogeneous totalWeight 8 := by
+  simpa using (sourceLemmaH1_polynomial 6).1
+example : DerivativeOrderLE (MvPolynomial.X (false,0)*nlsRiccatiRemainder 7) 5 := by
+  simpa using (sourceLemmaH1_polynomial 6).2.2.1
+example : (MvPolynomial.X (false,0)*nlsRiccatiRemainder 7).IsWeightedHomogeneous fieldCharge 0 :=
+  (sourceLemmaH1_polynomial 6).2.1
+
+-- The distribution derivative has the original unit-period multiplier, including negative modes.
+private def negativeMode : SobolevSource 0 := sobolevSourceOfFinsupp 0 (0,Finsupp.single (-2) 1)
+example : (weakSobolevRiccatiDensity 0 negativeMode).val (-2) = 4*Complex.I*(Real.pi : ℂ) := by
+  rw [weakSobolevRiccatiDensity_zero_apply]
+  simp [negativeMode,sobolevSourceOfFinsupp]
+  ring
+example : weakRiccatiDistribution (weakSobolevRiccatiDensity 0 negativeMode)
+    (coefficientTest (2*(-2))) = 4*Complex.I*(Real.pi : ℂ) := by
+  rw [weakRiccatiDistribution_even,weakSobolevRiccatiDensity_zero_apply]
+  simp [negativeMode,sobolevSourceOfFinsupp]
+  ring
+example (u : WeakRiccatiSpace) : weakRiccatiDistribution u (coefficientTest 5) = 0 :=
+  weakRiccatiDistribution_odd u 2
+example (a : ScalarSobolev 0) : weakRiccatiDistribution (weakRiccatiDerivative a) =
+    TemperedDistribution.derivCLM ℂ (distributionSynthesis
+      (Coeff.periodDouble (WeightedCoeff.weightEquiv (Weight.sobolev (0 : ℕ)) 2 a))) :=
+  weakRiccatiDistribution_derivative a
+example (s : ℕ) (ab : SobolevSource s) :
+    weakRiccatiDistribution (weakSobolevRiccatiDensity s ab) =
+      -TemperedDistribution.derivCLM ℂ (distributionSynthesis
+        (Coeff.periodDouble (WeightedCoeff.weightEquiv (Weight.sobolev (0 : ℕ)) 2 (sourceH1TopJet s ab))))+
+      weakRiccatiDistribution (weakRiccatiInclusion 0 (sourceH1RemainderL2 s ab)) :=
+  sourceLemmaH1_distribution s ab
+
+-- Smooth agreement compares with the independently defined differential recurrence.
+example (s : ℕ) (ab : SobolevSource s) (f g : ℝ → ℂ)
+    (hf : ContDiff ℝ ∞ f) (hg : ContDiff ℝ ∞ g)
+    (hpf : Function.Periodic f 1) (hpg : Function.Periodic g 1)
+    (ha : ∀ j, ab.1.val j = periodOneCoefficient f j)
+    (hb : ∀ j, ab.2.val j = periodOneCoefficient g j) (j : ℤ) :
+    (weakSobolevRiccatiDensity s ab).val j = periodOneCoefficient (nlsRiccatiDensity f g (s+1)) j :=
+  weakSobolevRiccatiDensity_eq_classical_coefficients s ab f g hf hg hpf hpg ha hb j
+
+end AppendixH1WeakSourceChecks

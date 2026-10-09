@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: G.7 is proved in the exact signed Fourier pair norm
-for finite p>=2 on a common complex neighborhood of the real source locus.
-The midpoint estimate is unchanged. The Dirichlet estimate uses the corrected
-half-wave subscripts -2*n; Lean proves that the printed -2*n*pi reference
-fails already at zero potential and p=2. The proof identifies the actual
-eigenvalue derivative, original H1 source, and corrected Fourier integrals.
-Appendix H is next. G.2's arbitrary-time local norm and the required
-spectral height above p=2 remain open.
+Latest milestone: H.1 is proved at its printed H^(k-1) source regularity,
+with the leading kth derivative interpreted in H^-1. The canonical weak
+Riccati recurrence equals the leading derivative plus the actual lower-jet
+polynomial, including its homogeneity, field balance, and derivative bounds.
+The identity is also proved for actual tempered distributions, and the weak
+hierarchy is the unique continuous extension of the smooth hierarchy.
+H.2's full Sobolev formulation is next. G.2's arbitrary-time local norm
+and the required spectral height above p=2 remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

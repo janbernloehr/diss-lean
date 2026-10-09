@@ -3097,3 +3097,9 @@ import NLS.ZakharovShabat.ClassicalHermitianCharacteristicGradients
 import NLS.ZakharovShabat.SourceCorollaryG6
 import NLS.ZakharovShabat.SourceLemmaG7ReferenceAudit
 import NLS.ZakharovShabat.SourceLemmaG7
+import NLS.SequenceSpaces.WeightedFiniteCoefficients
+import NLS.ZakharovShabat.SobolevRiccatiWeakHierarchy
+import NLS.ZakharovShabat.SobolevSourceSmoothDensity
+import NLS.ZakharovShabat.SourceLemmaH1
+import NLS.ZakharovShabat.WeakRiccatiDistribution
+import NLS.ZakharovShabat.SourceLemmaH1Distribution

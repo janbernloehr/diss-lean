@@ -1,6 +1,63 @@
 # Implementation plan
 
-## Latest progress: corrected G.7 and its actual source gradients
+## Latest progress: H.1 at the full weak Sobolev regularity
+
+`SourceLemmaH1.lean` and `SourceLemmaH1Distribution.lean` prove H.1 at
+its printed H^(k-1) regularity for every integer k>=1, writing k=s+1.
+The kth derivative is interpreted in H^-1, while the nonlinear remainder
+is a continuous periodic polynomial in the available lower jets.
+The source is the entire complex period-one Sobolev space.
+
+`SobolevRiccatiWeakHierarchy.lean` extends the existing Riccati recurrence
+one step beyond its L2 endpoint. Its differentiated term is the weak
+derivative of the last L2 density. Every nonlinear factor still has at
+least H1 regularity, so the triple convolutions yield an L2 remainder.
+The resulting H^-1 density is entire complex analytic in the source.
+At H0 the formula is the weak derivative of -b; at H1 the first nonlinear
+density is exactly -b''+a*b^2, with the actual double Fourier convolution.
+
+The construction agrees with the independently defined classical Riccati
+density on all smooth periodic inputs. Finite raw Fourier coefficients
+are proved dense in every weighted finite-exponent space, and smooth
+complex Fourier polynomials determine continuous maps on each original
+Sobolev source. This extends the classical leading-term identity to every
+H^(k-1) source and proves uniqueness of the continuous H^-1 extension.
+
+`sourceLemmaH1` identifies every original period-one coefficient, using
+the exact multiplier 2*pi*i*j. `sourceLemmaH1_polynomial` retains the
+canonical polynomial's total weight k+1, equal field counts after
+multiplication by the first field, total derivative bound k-2, and
+individual jet bound k-2. The k=1 remainder is exactly zero, including
+the negative derivative-count bound.
+
+`sourceLemmaH1_weak` is equality in H^-1. `WeakRiccatiDistribution.lean`
+constructs faithful period-one tempered-distribution synthesis by
+contractive even insertion. It proves that the coefficient derivative is
+Mathlib's actual distributional derivative. `sourceLemmaH1_distribution`
+then gives the same leading-term identity in distributions. The nonlinear
+distribution has exactly the actual Fourier integrals of the continuous
+polynomial field. This is a regularity interpretation of H.1, not a
+change to its formula or source hypothesis.
+
+Focused checks passed for the H0 endpoint, the nonlinear H1 case,
+arbitrary orders, the order-seven polynomial bounds, smooth agreement,
+and a negative Fourier mode that checks the factor 2*pi and sign. The
+public examples also cover the exact H^-1 and distributional identities.
+
+Next: audit H.2 against the existing reduced odd-Hamiltonian construction,
+including its full H^m scope and one polynomial chosen before the input.
+G.2's arbitrary-time local norm, the required p>2 spectral height, and
+the optional original m=1 sharpening remain open. The accepted Lemma 27.2
+correction and the G.5-G.7 source audits are unchanged. The dissertation
+remains incomplete.
+
+Validation: focused modules and the public probe passed. The full project
+check passed with 6,532 build jobs, all public examples, and the axiom audit
+for 26,884 NLS declarations. The build retained the 21 existing warnings
+and introduced none. The source inventory verified 156 candidate labels;
+these counts are not a certificate of dissertation completeness.
+
+## Previous milestone: corrected G.7 and its actual source gradients
 
 `SourceLemmaG7.lean` proves both G.7 estimates for every finite source
 exponent p>=2 and its conjugate q. For each p, one open complex domain

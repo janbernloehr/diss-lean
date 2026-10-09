@@ -1,5 +1,30 @@
 # Source discrepancies
 
+## Lemma H.1: the highest derivative at the printed Sobolev regularity
+
+Source: dissertation, printed page 139, checked in the rendered PDF.
+The hypothesis is phi in H^(k-1), while the displayed leading term is
+minus the kth derivative of phi_+. Thus at this regularity the leading
+derivative is an H^-1 distribution. For k>=2, every remainder jet has
+order at most k-2 and a continuous representative; for k=1 the remainder
+is zero. This is a weak-derivative interpretation, not a counterexample
+or a correction to the printed formula.
+
+`weakSobolevRiccatiDensity` extends the actual derivative-plus-convolution
+recurrence to this H^-1 endpoint. Its classical coefficient agreement and
+`weakSobolevRiccatiDensity_unique` identify it as the unique continuous
+H^-1 extension of the independently defined smooth hierarchy.
+`sourceLemmaH1` proves the exact leading-term coefficient formula on all
+complex H^(k-1) sources, and `sourceLemmaH1_polynomial` retains the printed
+homogeneity, field balance, and derivative bounds.
+
+`sourceLemmaH1_weak` states equality in H^-1.
+`sourceLemmaH1_distribution` uses the actual tempered-distribution
+derivative after the exact period-one insertion of coefficients. The
+remainder's coefficients are the actual Fourier integrals of its
+continuous lower-jet polynomial field. The endpoint k=1 and the first
+nonlinear case k=2 are both explicitly checked.
+
 ## Lemma G.7: an extra pi in the Dirichlet half-wave reference
 
 Source: dissertation, printed page 138, checked in the rendered PDF.
@@ -69,7 +94,7 @@ printed conjugate exponent, uniformly on exact Chapter 5 H1 source-norm
 balls and in the exact finite-exponent output norm of equation (1.2).
 The signed Fourier-coordinate and coefficient-energy identities explicitly
 identify this output norm. These results do not reinstate the printed
-reference. G.7 has similar printed indices but still needs its own audit.
+reference. G.7's corresponding wave-index audit is recorded above.
 
 ## Lemma G.5: swapped free-reference components and the infinity endpoint
 

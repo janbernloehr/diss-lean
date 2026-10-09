@@ -804,7 +804,33 @@ neighborhood is asserted. The midpoint assertion is unchanged, and the
 Dirichlet reference is explicitly corrected from -2*n*pi to -2*n.
 See `SOURCE_ERRATA.md` for the zero-source counterexample.
 
-Next are Appendix H's recurrence/homogeneity statement and its subsequent
-integration-by-parts argument. The G.2 local-norm, required p>2 spectral-height,
+Appendix H's recurrence/homogeneity statement is covered below; its subsequent
+integration-by-parts formulation is the next audit. The G.2 local-norm, required p>2 spectral-height,
 and optional original m=1 obligations remain open. Neither source-label
 inventories nor declaration counts certify completeness.
+
+
+### Lemma H.1: the canonical weak density on the printed Sobolev source
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Original H^(k-1) source | `weakSobolevRiccatiDensity`, `analyticAt_weakSobolevRiccatiDensity` | Every integer k=s+1>=1 and every complex period-one H^s pair; the next actual recurrence density belongs to H^-1 and depends analytically on the source. |
+| Actual recurrence | `weakSobolevRiccatiDensity_apply`, `weakRiccatiNonlinear` | Weak derivative of the last L2 Riccati density plus actual double Fourier convolutions; all nonlinear factors retain at least H1 regularity. |
+| Smooth identification | `weakSobolevRiccatiDensity_eq_classical_coefficients` | Exact Fourier integrals of the independently defined classical density u_(s+2), for every smooth periodic pair. |
+| Full-source extension | `denseRange_sobolevSourceOfFinsupp`, `eq_of_continuous_of_smooth_sobolevSource`, `weakSobolevRiccatiDensity_unique` | Finite Fourier polynomials are dense in the complex H^s source; the weak density is the unique continuous extension of the actual smooth hierarchy. |
+| Leading derivative and polynomial | `sourceLemmaH1`, `sourceLemmaH1_weak` | Coefficientwise and H^-1 equality: u_(k+1)=-b^(k)+q_k, with the exact multiplier 2*pi*i*j and actual lower-jet polynomial. |
+| Every polynomial restriction | `sourceLemmaH1_polynomial` | Total weight k+1; after multiplication by the first field, equal field counts and total derivative count at most k-2; each remainder jet has order at most k-2. |
+| Actual nonlinear Fourier integral | `sourceH1RemainderCoefficient_eq_integral`, `sourceH1RemainderL2_apply` | The remainder has the actual unit-period Fourier integrals of the continuous polynomial field, assembled in L2. |
+| Distributional interpretation | `weakRiccatiDistribution_derivative`, `sourceLemmaH1_distribution`, `sourceH1RemainderDistribution_coefficient` | Faithful period-one tempered-distribution synthesis; the leading derivative is the actual distributional derivative and the remainder keeps its physical coefficients. |
+| Low-order endpoints | `weakSobolevRiccatiDensity_zero_apply`, `weakSobolevRiccatiDensity_one_apply` | u2=-b' for H0 inputs; u3=-b''+a*b^2 for H1 inputs, using actual convolutions. |
+
+The displayed kth derivative is weak at the printed H^(k-1) regularity.
+The construction covers all k>=1; for k=1 the remainder polynomial is
+zero, so its negative derivative-count bound is meaningful. No real-type,
+smallness, or extra smoothness restriction is imposed. The polynomial is
+canonical and independent of the input. The distributional realization
+preserves the original period-one normalization, including negative modes.
+
+H.2's full H^m statement is next. The G.2 local-norm, required p>2
+spectral-height, and optional original m=1 obligations retain their status.
+The source inventory and declaration count do not certify completeness.
