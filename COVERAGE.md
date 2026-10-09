@@ -856,3 +856,24 @@ The lower jets of real inputs are pointwise conjugates by the existing
 for H.2. Appendix I's Schur-complement hypotheses are the next audit.
 The G.2 local-norm, required p>2 spectral-height, and optional original
 m=1 obligations remain open. Counts are not completeness certificates.
+
+
+### Appendix I.1-I.2: the missing hypothesis and the original operator
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Identity terms and signs | `sourceSchur_apply`, `one_add_block` | S=Id+A-B*(Id+D)^(-1)*C; the identity shifts both diagonal blocks. |
+| Corrected I.1 equivalence | `sourceLemmaI1_corrected` | Arbitrary complex Banach blocks, assuming Id+D has a bounded inverse; no finite-dimensional restriction. |
+| Valid printed direction | `sourceLemmaI1_sufficient` | Invertibility of Id+D and S implies invertibility of Id+T. |
+| Printed forward implication | `sourceLemmaI1_printed_false` | Refuted on C times C: Id+T is coordinate exchange while Id+D is zero. |
+| I.2's lower inverse | `source_lower_isUnit_of_norm_lt_one` | The exact strict norm bound gives a bounded inverse by Neumann series. |
+| I.2 determinant condition | `sourceCorollaryI2`, `sourceCorollaryI2_iff` | Finite-dimensional first block, arbitrary Banach second block; the printed sufficient condition and the equivalence under its norm bound. |
+| Original Banach space | `source_operator_isUnit_iff`, `sourceLemmaI1_on_decomposition`, `sourceCorollaryI2_on_decomposition` | Any bounded direct-sum coordinate equivalence realizing T; conclusions concern Id+T on Z itself. |
+| Strict-bound check | `sourceCorollaryI2_boundary_counterexample` | At norm(D)=1 a nonzero Schur determinant alone is insufficient; no refutation of the printed strict version. |
+
+I.1's unrestricted statement is refuted, not proved by silently adding an
+assumption. Its corrected form and the unchanged I.2 criterion are proved.
+The polynomial and physical H.2 results above remain unchanged. Next is
+I.3's full total-boundedness characterization, followed by I.4. The G.2
+local-norm, required p>2 spectral-height, and optional original m=1
+obligations remain open. Counts do not certify completeness.

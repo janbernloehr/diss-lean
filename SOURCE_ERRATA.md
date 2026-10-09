@@ -1,5 +1,36 @@
 # Source discrepancies
 
+## Lemma I.1: missing lower-block invertibility hypothesis
+
+Source: dissertation, printed page 139, checked in the rendered PDF.
+The statement asserts that invertibility of Id+T implies invertibility of
+both Id+D and the Schur complement. The first of these conclusions is false
+without an extra assumption, even for bounded operators on C times C.
+
+Take A=D=-Id and B=C=Id. The full operator Id+T maps (x,y) to (y,x), hence
+is its own bounded inverse. Its lower-right block Id+D is zero and is not
+invertible. `sourceI1_swap_operator`, `sourceI1_swap_isUnit`, and
+`sourceI1_lower_not_isUnit` prove these facts; `sourceLemmaI1_printed_false`
+refutes the printed biconditional. This counterexample precedes any use of
+the inverse of Id+D and does not depend on defining a singular inverse.
+
+The corrected statement assumes Id+D invertible and then asserts that
+Id+T is invertible if and only if S=Id+A-B*(Id+D)^(-1)*C is invertible.
+`sourceLemmaI1_corrected` proves this for arbitrary complex Banach blocks;
+`sourceLemmaI1_sufficient` retains the valid sufficient direction of the
+printed version. The direct-sum transfer theorem applies the result to the
+original operator on Z through its bounded linear coordinate equivalence.
+
+Corollary I.2 needs no correction: norm(D)<1 supplies the lower inverse,
+and the nonzero finite-dimensional Schur determinant gives invertibility.
+`sourceCorollaryI2` and `sourceCorollaryI2_on_decomposition` prove the printed
+sufficient condition. The norm bound is strict: with A=B=C=0 and D=-Id,
+the Schur expression is Id and has determinant one, but Id+T kills the
+second coordinate. `sourceCorollaryI2_boundary_counterexample` formalizes
+this boundary example; it is not a counterexample to the printed I.2.
+
+I.4's later displayed Schur formula has not yet been audited in this step.
+
 ## Corollary H.2: physical interpretation on the entire H^m source
 
 Source: dissertation, printed page 139. The displayed formula holds at

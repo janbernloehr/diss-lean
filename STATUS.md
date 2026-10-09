@@ -1,6 +1,57 @@
 # Implementation status
 
-## Current milestone: H.2 on the full real Sobolev space
+## Current milestone: corrected I.1 and the printed I.2 criterion
+
+`SourceSchurComplement.lean` proves the corrected I.1 and the unchanged
+I.2 for bounded operators on complex Banach spaces, using the original
+identity-plus-operator convention. The Schur complement is exactly
+Id+A-B*(Id+D)^(-1)*C. Adding the identity shifts both diagonal blocks.
+
+For I.1, `sourceLemmaI1_corrected` assumes Id+D is invertible and proves
+that Id+T is invertible if and only if the Schur complement is invertible.
+Neither block is required to be finite dimensional. The sufficient direction
+of the printed statement is retained separately. Invertibility means a
+bounded two-sided inverse, expressed as a unit in the bounded-operator ring.
+
+`SourceLemmaI1Audit.lean` formally refutes the printed unrestricted forward
+implication. On C times C, take A=D=-Id and B=C=Id. Then Id+T is coordinate
+exchange and is invertible, while Id+D is zero. This obstruction does not
+depend on any convention for the inverse of a singular block. The missing
+lower-block hypothesis is therefore an explicit source correction.
+
+For I.2, the printed strict bound norm(D)<1 supplies the lower inverse by
+the Neumann series. With a finite-dimensional first block, the full operator
+is invertible exactly when det(S) is nonzero. The printed sufficient
+condition is a separate theorem with precisely those norm and determinant
+hypotheses. The second block can be infinite dimensional. A further explicit
+counterexample shows that the strict bound cannot be replaced by norm(D)<=1.
+
+`source_operator_isUnit_iff` transfers these results through any bounded
+linear equivalence Z to X times Y realizing the original block decomposition.
+`sourceLemmaI1_on_decomposition` and `sourceCorollaryI2_on_decomposition`
+therefore conclude invertibility of the original operator on Z, not just
+of an external product representation.
+
+Focused examples passed with infinite-dimensional l2 blocks, a finite head
+and an infinite tail, reordered direct-sum coordinates, singular coupled
+blocks, an invertible full operator with singular upper diagonal block,
+the coordinate-exchange counterexample, and the norm-one boundary example.
+The corrected I.1 and printed I.2 are distinguished throughout the audit.
+
+Next: prove I.3's full equivalence between total boundedness and pointwise
+boundedness with uniformly small tails at every finite exponent. I.4 and
+its printed Schur signs still require their own audit. G.2's arbitrary-time
+local norm, the required p>2 spectral height, and the optional original m=1
+sharpening remain open. Earlier accepted corrections retain their status;
+the dissertation remains incomplete.
+
+Validation: focused modules and the public probe passed. The full project
+check passed with 6,536 build jobs, all public examples, and the axiom audit
+for 26,933 NLS declarations. The 21 existing warnings are unchanged, with
+none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: H.2 on the full real Sobolev space
 
 `SourceCorollaryH2.lean` proves the printed quantifier order: for every
 m>=1, one polynomial p_(2m), chosen independently of the input, gives the

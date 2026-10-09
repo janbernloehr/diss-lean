@@ -39801,3 +39801,55 @@ example (m : ℕ) (hm : 1 ≤ m) (a : ScalarSobolev m) (f : ℝ → ℂ)
   sobolevTopJetPhysical_eq_classical m hm a f hf hp ha
 
 end AppendixH2FullSourceChecks
+
+
+
+noncomputable section
+open NLS NLS.SchurComplement
+namespace AppendixI12SourceChecks
+
+-- The corrected I.1 has no finite-dimensional assumption on either block.
+example (A B C : Coeff 2 →L[ℂ] Coeff 2) :
+    IsUnit (1+block A B C 0) ↔ IsUnit (sourceSchur A B C 0) :=
+  sourceLemmaI1_corrected A B C 0 (by simp)
+
+-- I.2 allows an infinite-dimensional tail with the exact printed norm bound.
+example (A : ℂ →L[ℂ] ℂ) (B : Coeff 2 →L[ℂ] ℂ) (C : ℂ →L[ℂ] Coeff 2)
+    (D : Coeff 2 →L[ℂ] Coeff 2) (hD : ‖D‖ < 1) :
+    IsUnit (1+block A B C D) ↔ (sourceSchur A B C D).toLinearMap.det ≠ 0 :=
+  sourceCorollaryI2_iff A B C D hD
+
+-- Direct-sum coordinates can differ from the underlying source space.
+example (T : Coeff 2 × ℂ →L[ℂ] Coeff 2 × ℂ)
+    (A : ℂ →L[ℂ] ℂ) (B : Coeff 2 →L[ℂ] ℂ) (C : ℂ →L[ℂ] Coeff 2)
+    (D : Coeff 2 →L[ℂ] Coeff 2)
+    (hT : ∀ z, (ContinuousLinearEquiv.prodComm ℂ (Coeff 2) ℂ) (T z) =
+      block A B C D ((ContinuousLinearEquiv.prodComm ℂ (Coeff 2) ℂ) z))
+    (hS : (sourceSchur A B C D).toLinearMap.det ≠ 0) (hD : ‖D‖ < 1) : IsUnit (1+T) :=
+  sourceCorollaryI2_on_decomposition (ContinuousLinearEquiv.prodComm ℂ (Coeff 2) ℂ)
+    T A B C D hT hS hD
+
+-- Coupling can destroy invertibility even when both original diagonal blocks are identities.
+example : ¬IsUnit (1+block (0 : ℂ →L[ℂ] ℂ) 1 1 (0 : ℂ →L[ℂ] ℂ)) := by
+  rw [sourceCorollaryI2_iff _ _ _ _ (by simp)]
+  simp [sourceSchur,expression]
+
+-- An invertible upper diagonal block is not required.
+example : IsUnit (1+block (-1 : ℂ →L[ℂ] ℂ) 1 1 (0 : ℂ →L[ℂ] ℂ)) := by
+  apply sourceCorollaryI2 _ _ _ _ _ (by simp)
+  simp [sourceSchur,expression]
+
+-- The source's unrestricted forward implication fails already on C².
+example : IsUnit (1+block (-1 : ℂ →L[ℂ] ℂ) 1 1 (-1 : ℂ →L[ℂ] ℂ)) := sourceI1_swap_isUnit
+example : ¬IsUnit (1+(-1 : ℂ →L[ℂ] ℂ)) := sourceI1_lower_not_isUnit
+example : ¬∀ A B C D : ℂ →L[ℂ] ℂ,
+    IsUnit (1+block A B C D) ↔ IsUnit (1+D) ∧ IsUnit (sourceSchur A B C D) :=
+  sourceLemmaI1_printed_false
+
+-- The strict inequality in I.2 matters.
+example : ‖(-1 : ℂ →L[ℂ] ℂ)‖ = 1 ∧
+    (sourceSchur (0 : ℂ →L[ℂ] ℂ) 0 0 (-1 : ℂ →L[ℂ] ℂ)).toLinearMap.det ≠ 0 ∧
+    ¬IsUnit (1+block (0 : ℂ →L[ℂ] ℂ) 0 0 (-1 : ℂ →L[ℂ] ℂ)) :=
+  sourceCorollaryI2_boundary_counterexample
+
+end AppendixI12SourceChecks
