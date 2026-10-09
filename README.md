@@ -5,15 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: constant diagonal similarity now preserves the entire
-actual periodic spectrum and its algebraic multiplicities. It balances
-the two component norms without increasing the original p-energy norm.
-The printed-height claim is now proved equivalent to its equal-component-norm
-case, with a wrapper transferring a proof of that case to all source
-counting conclusions. This is an exact reduction; the unrestricted complex
-height above p=4 remains unresolved. Real-type finite-gap analyticity
-remains proved. G.2's norm is unresolved, and the proposed all-p boundary
-height correction remains separate from the refuted formula.
+Latest milestone: ordered upper and lower couplings now have a proved
+exact monodromy and scalar spectral criterion. An explicit rescaling
+places a chosen point in the actual periodic spectrum; balancing then
+gives an exact formula for its original source norm at every finite p>=2.
+The physical-representative and nonzero-interaction assumptions remain
+explicit. Quantitative estimates for a concrete family are still needed;
+Theorem 1.1's printed height above p=4 remains unresolved. Real-type
+finite-gap analyticity remains proved. G.2's norm is unresolved, and the
+proposed all-p boundary height correction remains separate from the
+refuted formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

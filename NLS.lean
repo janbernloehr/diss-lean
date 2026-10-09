@@ -3180,3 +3180,5 @@ import NLS.ZakharovShabat.FreeResolventHeightNecessity
 import NLS.ZakharovShabat.ComponentProductResolvent
 import NLS.ZakharovShabat.PeriodicDiagonalSimilarity
 import NLS.ZakharovShabat.SourceBalancedHeightReduction
+import NLS.ZakharovShabat.OrderedTriangularMonodromy
+import NLS.ZakharovShabat.OrderedTriangularNormalization

@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: exact reduction of the printed height to balanced sources
+## Current milestone: exact ordered-coupling spectral criterion and normalization
+
+For continuous potentials whose upper coupling acts before their lower
+coupling, `OrderedTriangularMonodromy.lean` proves the exact fundamental
+solution, monodromy, and discriminant. With integrating-factor integrals
+A and B evaluated over one period, the two Floquet conditions become
+`A B = -(exp(-i z)-1)^2` and `A B = -(exp(-i z)+1)^2`.
+These characterize membership in the actual coefficient-space periodic
+spectrum at every finite p>=2, assuming the stated physical representative
+agrees almost everywhere with the original Hilbert source.
+
+`OrderedTriangularNormalization.lean` rescales the upper component by
+`kappa=-(exp(-i z)-1)^2/(A B)`. When A B is nonzero, this places the chosen
+z in the actual periodic spectrum, including after exponent inclusion.
+At nonreal z, with both source components nonzero, diagonal similarity
+then produces equal component norms. The exact original source norm is
+`2^(1/p) sqrt(|kappa| a b)`, where a and b are the original component
+norms at the target exponent. The normalization's absolute value and the
+unbalanced p-energy cost are also proved explicitly.
+
+Public checks recover the free trace, verify the antiperiodic sign, check
+the actual normalized spectral point at p=5 under explicit representative
+and nonzero-interaction assumptions, and exercise the general balanced
+norm formula. A concrete small-norm family satisfying the needed
+quantitative estimates has not yet been constructed. This step neither
+proves nor refutes Theorem 1.1's printed height above p=4.
+
+Real-type finite-gap spatial analyticity remains proved. The all-p
+printed boundary height remains refuted, with its proposed correction
+separate. G.2's original interval norm and the optional original m=1
+sharpening remain unresolved. No source correction is adopted, and the
+dissertation remains incomplete.
+
+Validation: the full project check passed (6611 build jobs), including all
+public examples and the axiom audit of 27768 NLS declarations. There
+are 21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: exact reduction of the printed height to balanced sources
 
 Constant diagonal similarity is now proved on the actual periodic operator
 and its original one-derivative domain. For every nonzero complex c,

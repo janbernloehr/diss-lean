@@ -41242,3 +41242,61 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
   exists_source_periodicCounting_printed_height_of_balanced hp hbalanced φ
 
 end SourceBalancedHeightChecks
+
+namespace OrderedTriangularChecks
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.ZakharovShabat
+
+local instance instFiveOrdered : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- With no coupling the exact formula recovers the free trace at every parameter.
+example (z : ℂ) : classicalDiscriminant (0 : Curve (ℂ × ℂ)) z =
+    Complex.exp (-Complex.I*z)+Complex.exp (Complex.I*z) := by
+  have h : HasOrderedTriangularSupport (0 : Curve (ℂ × ℂ)) 0 := by
+    intro t
+    exact ⟨fun _ => rfl,fun _ => rfl⟩
+  rw [classicalDiscriminant_orderedTriangular _ z h]
+  simp [upperInteractionPrimitive, lowerInteractionPrimitive, NLS.LinearVolterra.extend]
+
+-- The antiperiodic sign has a plus inside the characteristic square.
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) {c : ℝ}
+    (hΦ : HasOrderedTriangularSupport Φ c) :
+    classicalDiscriminant Φ z = -2 ↔
+      upperInteractionPrimitive Φ z 1*lowerInteractionPrimitive Φ z 1 =
+        -(Complex.exp (-Complex.I*z)+1)^2 := by
+  simpa using classicalDiscriminant_orderedTriangular_level_iff Φ z hΦ (-1) (by norm_num)
+
+-- At a non-Hilbert exponent the eigenvalue is in the actual coefficient-space spectrum.
+example (φ : CoeffPair 2) (Φ : Curve (ℂ × ℂ))
+    (hphysical : physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)] extend Φ)
+    {c : ℝ} (hΦ : HasOrderedTriangularSupport Φ c) (z : ℂ)
+    (hprod : upperInteractionPrimitive Φ z 1*lowerInteractionPrimitive Φ z 1 ≠ 0) :
+    z ∈ periodicSpectrum (by simp : (5 : ℝ≥0∞) ≠ ⊤)
+      (periodOnePotential (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 5)
+        (scaleUpperSource (orderedPeriodicNormalization Φ z) φ))) :=
+  source_mem_periodicSpectrum_orderedPeriodicNormalization (by simp) (by norm_num)
+    φ Φ hphysical hΦ z hprod
+
+-- Balancing retains the chosen eigenvalue and exposes the original p-energy norm cost.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (h2p : (2 : ℝ≥0∞) ≤ p)
+    (φ : CoeffPair 2) (Φ : Curve (ℂ × ℂ))
+    (hphysical : physicalBase (periodOnePotential φ) =ᵐ[volume.restrict (Ioc 0 1)] extend Φ)
+    {c : ℝ} (hΦ : HasOrderedTriangularSupport Φ c) (z : ℂ) (him : z.im ≠ 0)
+    (hprod : upperInteractionPrimitive Φ z 1*lowerInteractionPrimitive Φ z 1 ≠ 0)
+    (hfst : φ.fst ≠ 0) (hsnd : φ.snd ≠ 0) :
+    ∃ ψ : CoeffPair p, ‖ψ.fst‖ = ‖ψ.snd‖ ∧
+      z ∈ periodicSpectrum hp (periodOnePotential ψ) ∧
+      ‖ψ‖ = (2 : ℝ)^(1/p.toReal)*Real.sqrt
+        (‖orderedPeriodicNormalization Φ z‖ *
+          ‖(CoeffPair.exponentInclusion h2p φ).fst‖ *
+          ‖(CoeffPair.exponentInclusion h2p φ).snd‖) :=
+  exists_balanced_source_orderedPeriodicNormalization hp h2p φ Φ hphysical hΦ z him hprod hfst hsnd
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (Φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    ‖scaleUpperSource (orderedPeriodicNormalization Φ z) φ‖^p.toReal =
+      ((‖Complex.exp (-Complex.I*z)-1‖^2 /
+        (‖upperInteractionPrimitive Φ z 1‖*‖lowerInteractionPrimitive Φ z 1‖))*‖φ.fst‖)^p.toReal +
+        ‖φ.snd‖^p.toReal := by
+  rw [norm_scaleUpperSource_rpow hp, norm_orderedPeriodicNormalization]
+
+end OrderedTriangularChecks

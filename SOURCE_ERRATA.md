@@ -609,6 +609,23 @@ neighborhood for all sufficiently large cutoffs. That hypothesis remains
 unproved above four. Equal component norms do not imply real type, and
 neither an all-p height proof nor a periodic counterexample is claimed.
 
+
+`OrderedTriangularMonodromy.lean` now supplies an exact spectral criterion
+for continuous potentials whose upper coupling acts before the lower one.
+The actual monodromy trace is `exp(-i z)+exp(i z)(1+A B)`, where A and B
+are the integrating-factor integrals. The two characteristic equations
+are `A B=-(exp(-i z)-1)^2` and `A B=-(exp(-i z)+1)^2`. They characterize
+actual source periodic spectral membership at finite p>=2 under an
+explicit coefficient/physical-representative compatibility assumption.
+
+`OrderedTriangularNormalization.lean` makes a chosen z periodic by
+rescaling the upper coupling by `kappa=-(exp(-i z)-1)^2/(A B)`, provided
+A B is nonzero. At nonreal z with nonzero components, exact balancing
+gives source norm `2^(1/p) sqrt(abs(kappa) a b)`. These are proved
+identities, not a quantitative small-norm construction. A concrete family
+and its Fourier and interaction estimates remain to be supplied; this
+step does not settle the printed periodic height above four.
+
 ## Theorem 1.4: the all-p printed boundary height is false
 
 Source: dissertation, printed p. 20 (statement) and p. 32 (proof).

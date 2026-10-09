@@ -1295,3 +1295,24 @@ not imply the source's real-type conjugation condition. The unrestricted
 height above p=4 remains required and unresolved; the reduction is not a
 proof of its explicit balanced-case hypothesis. No source correction is
 adopted.
+
+### Theorem 1.1: exact ordered-coupling criterion and normalization
+
+[`OrderedTriangularMonodromy.lean`](NLS/ZakharovShabat/OrderedTriangularMonodromy.lean)
+and [`OrderedTriangularNormalization.lean`](NLS/ZakharovShabat/OrderedTriangularNormalization.lean)
+connect separated physical couplings to actual coefficient-space spectral points.
+
+| Public entry point | Scope |
+| --- | --- |
+| `classicalSolution_eq_orderedTriangular` | Exact continuous-potential solution when the upper coupling acts before the lower coupling. |
+| `classicalMonodromy_orderedTriangular`, `classicalDiscriminant_orderedTriangular` | Actual monodromy and trace expressed through two integrating-factor integrals A and B. |
+| `source_mem_periodicSpectrum_orderedTriangular_iff` | Both Floquet signs characterize the actual spectrum at every finite p>=2; the original Hilbert source and its physical representative must agree. |
+| `source_mem_periodicSpectrum_orderedPeriodicNormalization` | Scaling the upper coupling by -(exp(-i z)-1)^2/(A B) places z in the actual spectrum, assuming A B is nonzero. |
+| `norm_orderedPeriodicNormalization`, `norm_scaleUpperSource_rpow` | Exact normalization magnitude and original source p-energy cost. |
+| `exists_balanced_source_orderedPeriodicNormalization` | At nonreal z with nonzero components, a balanced realization retains z and has norm exactly 2^(1/p) sqrt(abs(kappa) a b). |
+
+Public examples check the free trace, antiperiodic sign, normalized actual
+spectral membership at p=5, and the arbitrary-exponent norm identities.
+No quantitative small-norm profile or periodic-height counterexample is
+claimed. Theorem 1.1's unrestricted printed height above p=4 remains
+required and unresolved. No source correction is adopted.
