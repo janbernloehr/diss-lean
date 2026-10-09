@@ -1,6 +1,56 @@
 # Implementation plan
 
-## Latest progress: G.2 on [0,1] in the exact periodic source norm
+## Latest progress: G.3 for the full matrix on exact periodic H1 source balls
+
+`SourceLemmaG3.lean` now proves the full-matrix H1 time bound and both
+Fourier-Lebesgue decay assertions for every complex period-one H1 source.
+The potential-ball assumption uses the exact Chapter 5 periodic Fourier
+norm. Reconstruction agrees with the original potential on [0,1], and
+`norm_sourceG3ClassicalCoefficients_le` supplies an explicit bound for the
+classical coefficient representation.
+
+`HermitianFourierAssembly.lean` assembles the four entries into an lp
+sequence whose pointwise norm is the genuine Hermitian induced operator
+norm. The coefficient identity is the actual operator-valued Bochner
+Fourier integral, with unit-interval frequencies 2*pi*k, not a separate
+entrywise norm. `ClassicalHermitianFourierDecay.lean` identifies both M-E_z
+and M-E_x with their actual full fundamental matrices. Assembly costs at
+most a fixed factor four; all constants remain independent of the spectral
+index and of the potential inside the fixed source-norm ball.
+
+`ClassicalHermitianTimeBounds.lean` proves C1 regularity, identifies the
+actual operator-valued derivative, and bounds the physical H1 time norm
+sqrt(integral ||Mhat||^2 + integral ||dMhat/dt||^2). Its uniform bound is
+4*(C+D). No periodic endpoint condition on the matrix remainder is imposed.
+
+The Fourier exponent is exactly (q-1-epsilon)/(1-epsilon), for
+0 < epsilon < 1 and 1+epsilon <= q <= 2, including both q endpoints.
+The printed epsilon=1, q=2 expression is 0/0 and is not given a source
+interpretation. Both q=2 conclusions are separately exposed as O(1/|n|)
+without an epsilon parameter. See SOURCE_ERRATA.md for this qualification.
+
+All three bounds have one cutoff for a fixed potential ball, displacement
+bound, and initial cutoff. The near-free assertions require eventual
+O(1) displacement; the shifted-free assertion requires eventual O(1/|n|)
+displacement. Both positive and negative indices are included, and finite
+initial sequence values are unrestricted. The parameterization of all H1
+sources remains the coefficient-preserving bijection higherSobolevSourceOneEquiv.
+
+Next: audit G.4 and its summability range using these full-matrix bounds.
+G.2's arbitrary-time local-norm interpretation remains separate. The required
+p>2 spectral height and optional original m=1 sharpening remain open;
+the accepted Lemma 27.2 correction is unchanged.
+
+Focused public checks passed for signed Fourier modes, column orientation,
+the exact operator-sequence norm of a nontrivial off-diagonal matrix, both
+Bochner Fourier identities, both q endpoints, the actual source potential,
+and all three source-ball estimates. The full build passed (6514 jobs), all
+public examples passed, and the axiom audit passed for 26507 NLS declarations.
+The same 21 existing warnings remain, with no new warnings. The 156 candidate
+source labels were verified; this inventory is not a completeness certificate.
+
+
+## Previous milestone: G.2 on [0,1] in the exact periodic source norm
 
 The unit-interval remainder estimate from G.2 is now proved using the exact
 Chapter 5 periodic Hilbert Fourier norm, with weights 1+|2*pi*n| and the sum

@@ -39169,3 +39169,102 @@ example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (hz : z ≠ 0) (t : Icc
   sourceLemmaG2_classical_remainder_unit a z hz t
 
 end AppendixG2SourcePeriodicChecks
+
+
+noncomputable section
+open scoped ENNReal
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis NLS.Fourier intervalIntegral
+namespace AppendixG3FullMatrixChecks
+
+-- Signed frequency and column orientation survive assembly.
+example : hermitianFourierAssembly (q := 2) 0 (lp.single 2 (-2) 4)
+    (lp.single 2 (-2) 3) 0 (-2) (hermitianPair (1,2)) = hermitianPair (6,4) := by
+  norm_num [hermitianColumns_apply,lp.single_apply,smul_eq_mul]
+
+-- The actual operator-valued sequence has norm four, not the sum of its entry norms.
+example : ‖hermitianFourierAssembly (q := 2) 0 (lp.single 2 (-2) 4)
+    (lp.single 2 (-2) 3) 0‖ = 4 := by
+  have he : hermitianFourierAssembly (q := 2) 0 (lp.single 2 (-2) 4)
+      (lp.single 2 (-2) 3) 0 = lp.single 2 (-2) (hermitianColumns (0,4) (3,0)) := by
+    apply lp.ext
+    funext k
+    simp only [hermitianFourierAssembly_apply]
+    by_cases hk : k = -2
+    · subst k; simp [lp.single_apply]
+    · rw [lp.single_apply_ne (E := fun _ : ℤ => HermitianOperator) 2 (-2) (hermitianColumns (0,4) (3,0)) hk]
+      simp [lp.single_apply,hk,hermitianColumns_eq_matrixUnits]
+      change (0 : ℂ) • hermitianMatrixUnit 0 0 + (0 : ℂ) • hermitianMatrixUnit 1 0 +
+        (0 : ℂ) • hermitianMatrixUnit 0 1 + (0 : ℂ) • hermitianMatrixUnit 1 1 = 0
+      rw [zero_smul ℂ (hermitianMatrixUnit 0 0),zero_smul ℂ (hermitianMatrixUnit 1 0),
+        zero_smul ℂ (hermitianMatrixUnit 0 1),zero_smul ℂ (hermitianMatrixUnit 1 1)]
+      simp
+  rw [he,lp.norm_single (by norm_num)]
+  norm_num [norm_hermitianColumns_offDiagonal]
+
+-- The full operator coefficient is an actual Bochner Fourier integral at every signed mode.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (k : ℤ) :
+    classicalHermitianRemainderFourierCoefficients (q := 2) (by norm_num) a z k =
+      ∫ t in (0 : ℝ)..1, wave (-k) (2*t) •
+        classicalHermitianMatrixOperator
+          (classicalFundamentalMatrix (classicalSobolevPotential a) z t-
+            classicalFreeMatrix z t) := by
+  simpa only [classicalHermitianRemainderOperator_eq_matrix] using
+    classicalHermitianRemainderFourierCoefficients_apply (q := 2) (by norm_num) a z k
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (x : ℝ) (k : ℤ) :
+    classicalHermitianShiftedFreeFourierCoefficients (q := 2) (by norm_num)
+      (classicalSobolevPotential a) z x k =
+      ∫ t in (0 : ℝ)..1, wave (-k) (2*t) •
+        classicalHermitianMatrixOperator
+          (classicalFundamentalMatrix (classicalSobolevPotential a) z t-classicalFreeMatrix x t) := by
+  simpa only [classicalHermitianShiftedFreeOperator_eq_matrix] using
+    classicalHermitianShiftedFreeFourierCoefficients_apply (q := 2) (by norm_num)
+      (classicalSobolevPotential a) z x k
+
+-- Both regular q endpoints, without assigning meaning to the printed 0/0.
+example (ε : ℝ) : fundamentalFourierDecayExponent ε (1+ε) = 0 := by
+  simp [fundamentalFourierDecayExponent]
+example (ε : ℝ) (hε : ε < 1) : fundamentalFourierDecayExponent ε 2 = 1 := by
+  unfold fundamentalFourierDecayExponent
+  have h : 1-ε ≠ 0 := by linarith
+  convert div_self h using 1; ring
+
+-- Full complex source balls in the exact Chapter 5 norm; all signed tail indices.
+example (M B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) :
+    ∃ N : ℕ, 0 < N ∧ ∀ (ν : ℤ → ℂ),
+      (∀ n : ℤ, N₀ ≤ n.natAbs → ‖ν n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ B) →
+      ∀ (a : ScalarDomain 2 × ScalarDomain 2),
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M →
+      ∀ n : ℤ, N ≤ n.natAbs →
+      ‖classicalHermitianRemainderFourierCoefficients (q := 2) (by norm_num)
+        (sourceG3ClassicalCoefficients a) (ν n)‖ ≤
+        4*classicalSobolevInterpolationConstant (1/2) (by norm_num) (2*M) B/(n.natAbs : ℝ) :=
+  sourceLemmaG3_l2_decay M B hB N₀
+
+example (M B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) :
+    ∃ N : ℕ, 0 < N ∧ ∀ (ν : ℤ → ℂ),
+      (∀ n : ℤ, N₀ ≤ n.natAbs → ‖ν n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ B/(n.natAbs : ℝ)) →
+      ∀ (a : ScalarDomain 2 × ScalarDomain 2),
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M →
+      ∀ n : ℤ, N ≤ n.natAbs →
+      ‖classicalHermitianShiftedFreeFourierCoefficients (q := 2) (by norm_num)
+        (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) (ν n) (Real.pi*(n : ℝ))‖ ≤
+        4*classicalShiftedFreeInterpolationConstant (1/2) (by norm_num) (2*M) B/(n.natAbs : ℝ) :=
+  sourceLemmaG3_shiftedFree_l2_decay M B hB N₀
+
+example (M B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) :
+    ∃ N : ℕ, 0 < N ∧ ∀ (ν : ℤ → ℂ),
+      (∀ n : ℤ, N₀ ≤ n.natAbs → ‖ν n-(Real.pi : ℂ)*(n : ℂ)‖ ≤ B) →
+      ∀ (a : ScalarDomain 2 × ScalarDomain 2),
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M →
+      ∀ n : ℤ, N ≤ n.natAbs →
+      hermitianIntervalH1Norm (classicalHermitianRemainderOperator
+        (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) (ν n)) ≤
+        4*(classicalSobolevErrorConstant (2*M) B+classicalSobolevDerivativeConstant (2*M) B) :=
+  sourceLemmaG3_H1 M B hB N₀
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (t : Set.Icc (0 : ℝ) 1) :
+    classicalSobolevPotential (sourceG3ClassicalCoefficients a) t = sourcePeriodicH1Potential a t :=
+  sourceG3ClassicalCoefficients_potential a t
+
+end AppendixG3FullMatrixChecks

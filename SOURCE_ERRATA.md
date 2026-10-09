@@ -1,5 +1,22 @@
 # Source discrepancies
 
+## Lemma G.3: the epsilon range in the printed exponent
+
+Source: dissertation, printed page 136. The wording "any epsilon > 0"
+accompanies 1+epsilon <= q <= 2 and exponent (q-1-epsilon)/(1-epsilon).
+For epsilon > 1 the q interval is empty. For epsilon = 1 its only possible
+point is q=2, where the displayed exponent is 0/0. Thus the meaningful
+nonempty range of the printed formula is 0 < epsilon < 1.
+
+`sourceLemmaG3_fourier_decay` and `sourceLemmaG3_shiftedFree_decay` retain
+that formula on this range, including q=1+epsilon and q=2. The theorems
+`sourceLemmaG3_l2_decay` and `sourceLemmaG3_shiftedFree_l2_decay` state
+O(1/|n|) at q=2 without any epsilon parameter, obtained by choosing the
+regular value epsilon=1/2. They do not interpret the source's undefined
+0/0 using Lean's totalized division. This is a parameter qualification,
+not a counterexample to either decay conclusion.
+
+
 ## Lemma G.2: arbitrary-time first inequality under the integral H1 convention
 
 Source: dissertation, printed page 135. This is a **norm-qualified** failure,

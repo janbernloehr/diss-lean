@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: G.2's unit-interval remainder estimate is proved in the
-exact periodic Hilbert Fourier norm from Chapter 5, with the printed
-coefficient unchanged. A constant-one comparison connects the integral H1
-norm to this source norm. The arbitrary-time local-norm interpretation
-remains separate and unresolved. G.1 holds on the full physical L2 domain,
-and F.1-F.3 are proved. G.3 is next for a precise source audit; the required
-spectral height above p=2 also remains open.
+Latest milestone: G.3 now has full-matrix H1 and Fourier-Lebesgue bounds
+on balls in the exact periodic source norm. Both Fourier sequences are the
+actual matrix Fourier integrals in the Hermitian operator norm. The range
+is 0 < epsilon < 1, including both q endpoints; q=2 also has explicit
+inverse-index bounds without epsilon. G.4 is next. G.2's arbitrary-time
+local-norm interpretation and the required spectral height above p=2 remain
+open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

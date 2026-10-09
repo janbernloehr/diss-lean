@@ -3081,3 +3081,7 @@ import NLS.Fourier.IntervalH1NormIdentification
 import NLS.Fourier.PeriodOneH1Norm
 import NLS.ZakharovShabat.SourcePeriodicH1Norm
 import NLS.ZakharovShabat.SourceLemmaG2Unit
+import NLS.ComplexAnalysis.HermitianFourierAssembly
+import NLS.ZakharovShabat.ClassicalHermitianFourierDecay
+import NLS.ZakharovShabat.ClassicalHermitianTimeBounds
+import NLS.ZakharovShabat.SourceLemmaG3

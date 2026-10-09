@@ -651,5 +651,30 @@ The periodic source norm is the one explicitly defined on printed page 103.
 The comparison preserves its exact coefficient in G.2; equality is tested
 on a constant 3-4 pair. The source space is identified through the existing
 coefficient-preserving bijection `higherSobolevSourceOneEquiv`, rather than
-restricted to a subset of Fourier inputs. G.3 still needs an audit of all
-printed parameter ranges and of its stronger spectral-sequence hypothesis.
+restricted to a subset of Fourier inputs. The following milestone audits
+G.3, with an explicit qualification of the singular epsilon endpoint.
+
+
+### Lemma G.3: full matrices, exact source balls, and endpoint qualification
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Actual full matrix Fourier coefficients | `classicalHermitianRemainderFourierCoefficients_apply`, `classicalHermitianShiftedFreeFourierCoefficients_apply` | Bochner integrals of M-E_z and M-E_x; genuine Hermitian operator norm at each Fourier mode. |
+| Original period-one H1 inputs | `sourceG3ClassicalCoefficients_potential`, `norm_sourceG3ClassicalCoefficients_le` | Actual source potential recovered on [0,1]; one uniform coefficient bound on each exact Chapter 5 source-norm ball. |
+| Full-matrix physical H1 time norm | `sourceLemmaG3_H1` | Actual derivative and integrals; uniform O(1) under eventual bounded displacement from n*pi. |
+| Near-free Fourier-Lebesgue decay | `sourceLemmaG3_fourier_decay` | Exact exponent, 0 < epsilon < 1, 1+epsilon <= q <= 2; one common cutoff for each ball and displacement tail. |
+| Shifted-free comparison | `sourceLemmaG3_shiftedFree_decay` | Full M(nu_n)-E_(n*pi), with the stronger eventual O(1/abs(n)) displacement hypothesis. |
+| q=2 endpoints | `sourceLemmaG3_l2_decay`, `sourceLemmaG3_shiftedFree_l2_decay` | Explicit inverse-index decay, with no epsilon parameter or singular quotient. |
+| Printed epsilon=1 expression | **Qualified** | It is 0/0 at its only admissible q=2; no interpretation is assigned. See SOURCE_ERRATA.md. |
+
+Both signed tails are covered, with unrestricted finite initial segments.
+The fixed assembly factor four and coefficient-ball conversion factor two
+are displayed in the bounds; neither changes the source's Big-O exponents.
+A concrete off-diagonal Fourier mode checks that the sequence uses the
+actual operator norm (four for entries three and four), rather than the
+sum of entry norms. The source-ball domain is all complex H1 via the
+existing bijective coefficient identification, not just real sources.
+
+The full dissertation remains incomplete. G.4 is the next source audit;
+G.2's arbitrary-time local norm, the required p>2 spectral height, and the
+optional original m=1 sharpening retain their previously recorded status.
