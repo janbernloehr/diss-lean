@@ -39479,3 +39479,106 @@ example (φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z w : ℂ) (k : ℤ) :
       ∫ t in (0 : ℝ)..1, wave (-k) (2*t) • classicalHermitianGradientError φ z w t :=
   classicalHermitianGradientFourierCoefficients_apply (by norm_num) φ z w k
 end AppendixG5FullGradientChecks
+
+
+noncomputable section
+open scoped ENNReal
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis NLS.Fourier
+namespace AppendixG6SourceChecks
+
+-- The literal printed reference agrees at the central index but fails on both signed tails.
+example : sourceG6PrintedAntiErrorCoefficients 0 0 = 0 := by
+  rw [sourceG6PrintedAntiErrorCoefficients_diagonal]
+  simp [sourceG6PrintedWave,unitIntervalExponential,intervalFourierCoefficient]
+example : (1/2 : ℝ) ≤ ‖sourceG6PrintedAntiErrorCoefficients 1‖ :=
+  half_le_norm_sourceG6PrintedAntiErrorCoefficients 1 (by norm_num)
+example : (1/2 : ℝ) ≤ ‖sourceG6PrintedAntiErrorCoefficients (-1)‖ :=
+  half_le_norm_sourceG6PrintedAntiErrorCoefficients (-1) (by norm_num)
+example : ¬Memℓp (fun n : ℤ => ‖sourceG6PrintedAntiErrorCoefficients n‖) 2 :=
+  not_memlp_sourceG6PrintedAntiError_norms
+example (b : ℤ → ℝ) (hb : Memℓp b 2) :
+    ¬∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs → ‖sourceG6PrintedAntiErrorCoefficients n‖ ≤ b n :=
+  not_eventually_sourceG6PrintedError_majorant b hb
+example : classicalSobolevPotential (sourceG3ClassicalCoefficients (0,0)) = 0 :=
+  sourceG5_zero_admissible.1
+example (n : ℤ) : ‖((Real.pi : ℂ)*n)-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 :=
+  sourceG5_zero_admissible.2.1 n
+example (n : ℤ) : ‖((Real.pi : ℂ)*n)-(Real.pi : ℂ)*n‖ ≤ 0/(n.natAbs : ℝ) :=
+  sourceG5_zero_admissible.2.2 n
+
+private def arbitraryHead (z : ℂ) (n : ℤ) : ℂ :=
+  if n = 0 then z else (Real.pi : ℂ)*n
+private theorem arbitraryHead_tail (z : ℂ) (n : ℤ) (hn : 1 ≤ n.natAbs) :
+    ‖arbitraryHead z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 := by
+  have hn0 : n ≠ 0 := by omega
+  simp only [arbitraryHead,if_neg hn0,sub_self,norm_zero]
+  positivity
+private def inverseDisplacement (z : ℂ) (n : ℤ) : ℂ :=
+  if n = 0 then z else (Real.pi : ℂ)*n+1/((n.natAbs : ℝ) : ℂ)
+private theorem inverseDisplacement_tail (z : ℂ) (n : ℤ) (hn : 1 ≤ n.natAbs) :
+    ‖inverseDisplacement z n-(Real.pi : ℂ)*n‖ ≤ 1/(n.natAbs : ℝ) := by
+  have hn0 : n ≠ 0 := by omega
+  simp [inverseDisplacement,hn0,Complex.norm_real]
+
+local instance : Fact (1 ≤ ENNReal.ofReal ((3 : ℝ)/(3-1))) := ⟨by norm_num⟩
+-- Both conjugate-exponent source assertions, with an unrestricted initial frequency.
+example (M : ℝ) (z : ℂ) :
+    ∃ b : ℤ → ℝ, Memℓp b 3 ∧ (∀ n, 0 ≤ b n) ∧
+      ∀ a : ScalarDomain 2 × ScalarDomain 2,
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M → ∀ n : ℤ,
+        ‖sourceG6DiscriminantCoefficients
+          (q := ENNReal.ofReal ((3 : ℝ)/(3-1))) (by norm_num)
+          (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) (arbitraryHead z n)‖ ≤ b n := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceCorollaryG6_discriminant 3 (by norm_num) M 1 (arbitraryHead z) (arbitraryHead_tail z)
+example (M : ℝ) (z : ℂ) :
+    ∃ b : ℤ → ℝ, Memℓp b 3 ∧ (∀ n, 0 ≤ b n) ∧
+      ∀ a : ScalarDomain 2 × ScalarDomain 2,
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M → ∀ n : ℤ,
+        ‖sourceG6AntiDiscriminantCoefficients
+          (q := ENNReal.ofReal ((3 : ℝ)/(3-1))) (by norm_num)
+          (classicalSobolevPotential (sourceG3ClassicalCoefficients a))
+          (inverseDisplacement z n) ((Real.pi : ℂ)*n)‖ ≤ b n := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceCorollaryG6_antiDiscriminant_corrected 3 (by norm_num) M 1 zero_le_one 1
+      (inverseDisplacement z) (inverseDisplacement_tail z)
+
+-- The Hilbert endpoint and the generalized inner infinity exponent remain distinct.
+example (z : ℂ) (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalHermitianDiscriminantGradientCoefficients (q := 2) (by norm_num)
+      (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) (arbitraryHead z n)‖) 2 := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceG6_discriminant_norms_memlp 2 (by norm_num) 2 (by norm_num) (Real.pi/4) (by positivity)
+      1 (arbitraryHead z) (arbitraryHead_tail z) a
+example (z : ℂ) (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => classicalHermitianAntiDiscriminantGradientCoefficients (q := ⊤) (by simp)
+      (classicalSobolevPotential (sourceG3ClassicalCoefficients a))
+      (inverseDisplacement z n) ((Real.pi : ℂ)*n)) (ENNReal.ofReal (3/2 : ℝ)) :=
+  sourceG6_antiDiscriminant_memlp (3/2) (by norm_num) ⊤ (by simp)
+    1 zero_le_one 1 (inverseDisplacement z) (inverseDisplacement_tail z) a
+
+-- Actual vector Fourier integrals, including the corrected signed reference for negative n.
+example (φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z : ℂ) (k : ℤ) :
+    classicalHermitianAntiDiscriminantGradientCoefficients (q := 2) (by norm_num) φ z
+      ((Real.pi : ℂ)*(-2 : ℤ)) k =
+      ∫ t in (0 : ℝ)..1, wave (-k) (2*t) • hermitianPair
+        (Complex.I • classicalAntiDiscriminantGradient φ z t-(-1 : ℂ)^(-2 : ℤ) •
+          (-wave (2*(-2)) t,wave (-(2*(-2))) t)) :=
+  classicalHermitianAntiDiscriminantGradientCoefficients_lattice (by norm_num) φ z (-2) k
+-- Exact source output coordinates and their combined coefficient energy.
+example (φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z w : ℂ) (k : ℤ) :
+    (sourceG6AntiDiscriminantCoefficients (q := 2) (by norm_num) φ z w).fst k =
+      Complex.I*intervalFourierCoefficient 1
+        (fun t => (classicalAntiDiscriminantGradientRemainder φ z w t).1) (-k) :=
+  sourceG6AntiDiscriminantCoefficients_fst (by norm_num) φ z w k
+example (φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z : ℂ) :
+    ‖sourceG6DiscriminantCoefficients (q := 2) (by norm_num) φ z‖^((2 : ℝ≥0∞).toReal) =
+      ∑' k : ℤ, (‖intervalFourierCoefficient 1 (fun t => (classicalDiscriminantGradient φ z t).1) (-k)‖^((2 : ℝ≥0∞).toReal)+
+        ‖intervalFourierCoefficient 1 (fun t => (classicalDiscriminantGradient φ z t).2) k‖^((2 : ℝ≥0∞).toReal)) :=
+  sourceG6DiscriminantCoefficients_norm_rpow (by norm_num) (by norm_num) φ z
+example (c : ℤ → Coeff 2) :
+    ¬Memℓp (fun n : ℤ => ‖(CoeffPair.toMax 2).symm
+      (Coeff.reflection (sourceG6PrintedAntiErrorCoefficients n),c n)‖) 2 :=
+  not_memlp_sourceG6Printed_pair_norms c
+
+end AppendixG6SourceChecks

@@ -1,5 +1,41 @@
 # Source discrepancies
 
+## Corollary G.6: an extra pi in the anti-discriminant wave index
+
+Source: dissertation, printed page 138, checked in the rendered PDF.
+The preceding definition is e_alpha(x)=exp(i*pi*alpha*x), with
+e^-_alpha=(e_(-alpha),0) and e^+_alpha=(0,e_alpha).
+The second assertion subtracts (-1)^n times
+(e^+_(-2*n*pi)-e^-_(-2*n*pi)). Under this definition, its wave frequencies
+contain pi twice. The correct subscripts are -2*n.
+
+At zero potential and nu_n=n*pi, the actual i times anti-discriminant
+gradient is (-1)^n times (-exp(2*pi*i*n*s),exp(-2*pi*i*n*s)).
+The first component of the printed error is therefore (-1)^n times
+(exp(2*pi^2*i*n*s)-exp(2*pi*i*n*s)). Its Fourier coefficient at mode n
+is (-1)^n times (c_n-1), where c_n is the coefficient of the first
+exponential. `sourceG6PrintedWave_diagonal_le_half` bounds |c_n| by 1/2
+for every nonzero integer n, using the exact exponential integral and
+the frequency-gap bound. Thus the actual inner l2 norm is at least 1/2
+at every nonzero n.
+
+`not_memlp_sourceG6PrintedAntiError_norms` and
+`not_eventually_sourceG6PrintedError_majorant` prove failure of outer
+l2 summability, even after removing any finite spectral head.
+`sourceG5_zero_admissible` supplies the original zero H1 source and both
+frequency hypotheses. `not_memlp_sourceG6Printed_pair_norms` transfers the
+obstruction to the exact source signed pair norm, for any second component.
+This refutes the literal second assertion already at p=2.
+
+`sourceCorollaryG6_antiDiscriminant_corrected` proves the estimate after
+removing the extra pi. `sourceCorollaryG6_discriminant` proves the first
+assertion unchanged. Both hold for every finite 2<=p<infinity with the
+printed conjugate exponent, uniformly on exact Chapter 5 H1 source-norm
+balls and in the exact finite-exponent output norm of equation (1.2).
+The signed Fourier-coordinate and coefficient-energy identities explicitly
+identify this output norm. These results do not reinstate the printed
+reference. G.7 has similar printed indices but still needs its own audit.
+
 ## Lemma G.5: swapped free-reference components and the infinity endpoint
 
 Source: dissertation, printed page 137, checked in the rendered PDF.

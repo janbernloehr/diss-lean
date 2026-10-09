@@ -748,6 +748,35 @@ sequence and before choosing a potential in the ball. No common bound on
 arbitrary finite initial spectral values is silently imposed. Both G.5
 assertions are proved with the explicit reference correction and finite
 outer exponent restriction; the two printed failures remain documented.
-G.6 is next. The dissertation remains incomplete, with the previously
+G.6 is covered below. The dissertation remains incomplete, with the previously
 recorded G.2 local-norm, required p>2 spectral-height, and optional original
 m=1 obligations unchanged.
+
+
+### Corollary G.6: exact source norms and the corrected wave reference
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Discriminant assertion | `sourceCorollaryG6_discriminant` | Unchanged assertion for every finite p>=2, conjugate q, eventual pi/4 displacement, exact H1 source ball and exact finite-q signed pair output norm. |
+| Anti-discriminant assertion | `sourceCorollaryG6_antiDiscriminant_corrected` | Same exponent and norm scope, eventual O(1/abs(n)) displacement, reference wave subscripts corrected from -2*n*pi to -2*n. |
+| Actual signed Fourier coefficients | `sourceG6DiscriminantCoefficients_fst`, `sourceG6DiscriminantCoefficients_snd`, and the anti-discriminant counterparts | Actual scalar Fourier integrals of i times the gradient or gradient remainder; the first physical index is -k and the second is k. |
+| Exact equation (1.2) norm | `sourceG6DiscriminantCoefficients_norm_rpow`, `sourceG6AntiDiscriminantCoefficients_norm_rpow` | Combined coefficient energy for finite q, with the signed first-index reversal. |
+| Uniform generalized bounds | `sourceG6_discriminant_sourceNorm_majorant`, `sourceG6_antiDiscriminant_sourceNorm_majorant` | Finite p>1 and finite q>1+1/p; one nonnegative summable majorant for all potentials in the exact source ball. |
+| Coefficient-valued membership | `sourceG6_discriminant_source_memlp`, `sourceG6_antiDiscriminant_source_memlp` | The actual signed pair coefficient sequences belong to outer lp; arbitrary finite initial spectral values are included. |
+| Vector Bochner integral interpretation | `classicalHermitianDiscriminantGradientCoefficients_apply`, `classicalHermitianAntiDiscriminantGradientCoefficients_apply`, `classicalHermitianAntiDiscriminantGradientCoefficients_lattice` | Separate Hermitian-vector coefficient representation and the actual corrected reference, including negative indices. |
+| Printed-reference failure | `half_le_norm_sourceG6PrintedAntiErrorCoefficients`, `not_memlp_sourceG6PrintedAntiError_norms`, `not_eventually_sourceG6PrintedError_majorant` | At zero potential and exact lattice frequencies, the inner l2 norm is at least 1/2 for every nonzero n; no finite spectral head repairs outer l2 summability. |
+| Failure in the exact source norm | `not_memlp_sourceG6Printed_pair_norms` | The same obstruction in the exact signed source pair norm, regardless of the second component. |
+
+The majorant is chosen after fixing the spectral sequence and before the
+potential. No uniform bound on arbitrary finite initial spectral values is
+imposed. The source is the full complex period-one H1 domain, with no
+smallness or reality restriction. The separate Hermitian-vector extension
+allows inner q=infinity; no exact-source infinity output norm is claimed
+here. The source's finite conjugate range is fully covered.
+
+The printed second reference is refuted at p=2 under the source's own wave
+definition; the first assertion remains unchanged. See `SOURCE_ERRATA.md`.
+G.7's domain and printed wave indices require their own audit next.
+The previously recorded G.2 local-norm, required p>2 spectral-height, and
+optional original m=1 obligations remain open. Neither declaration counts
+nor the source-label inventory certify completeness.

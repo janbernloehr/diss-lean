@@ -3090,3 +3090,8 @@ import NLS.ZakharovShabat.SourceLemmaG5ReferenceAudit
 import NLS.ComplexAnalysis.HermitianGradientFourierAssembly
 import NLS.ZakharovShabat.ClassicalHermitianGradientFourier
 import NLS.ZakharovShabat.SourceLemmaG5
+import NLS.Fourier.RealExponentialCoefficientBound
+import NLS.ComplexAnalysis.HermitianPairFourierAssembly
+import NLS.ZakharovShabat.SourceCorollaryG6ReferenceAudit
+import NLS.ZakharovShabat.ClassicalHermitianCharacteristicGradients
+import NLS.ZakharovShabat.SourceCorollaryG6

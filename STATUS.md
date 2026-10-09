@@ -1,6 +1,60 @@
 # Implementation status
 
-## Current milestone: corrected G.5 for full gradients on exact source H1 balls
+## Current milestone: G.6 in exact source norms and its wave-normalization audit
+
+`SourceCorollaryG6.lean` proves `sourceCorollaryG6_discriminant` and
+`sourceCorollaryG6_antiDiscriminant_corrected` for every finite real p>=2,
+with conjugate Fourier exponent q=p/(p-1). Both use the exact Chapter 5
+periodic H1 source ball and the exact finite-q pair norm from equation
+(1.2). The first assertion retains the eventual pi/4 frequency condition;
+the second uses eventual O(1/abs(n)) displacement and the corrected lattice
+reference. No smallness or reality assumption is imposed on the complex
+period-one H1 source.
+
+The signed source coordinates reverse the first physical Fourier index.
+The component identities and combined coefficient-energy identities prove
+that the output is the source's actual norm, including that reversal.
+A single nonnegative lp majorant controls the entire signed sequence,
+uniformly over the potential ball. The spectral sequence is fixed before
+the majorant is chosen; arbitrary finite initial frequencies are allowed.
+The actual coefficient-valued sequences also belong to outer lp.
+
+`SourceCorollaryG6ReferenceAudit.lean` checks the printed wave subscripts
+against the preceding definition e_alpha(x)=exp(i*pi*alpha*x). At zero
+potential and nu_n=n*pi, the printed anti-discriminant error has a Fourier
+coefficient of modulus at least 1/2 for every nonzero n. Consequently its
+norm sequence is not in l2, even after removing any finite spectral head.
+The obstruction also holds in the exact source pair norm, regardless of
+the second component. Removing the extra pi gives the correct reference;
+the discriminant assertion needs no such correction.
+
+`HermitianPairFourierAssembly.lean` and
+`ClassicalHermitianCharacteristicGradients.lean` separately identify the
+actual vector-valued Bochner Fourier integrals. Generalized estimates hold
+for finite p>1 and q>1+1/p. The exact source output norm is covered for
+finite q; inner q=infinity is included only in the Hermitian-vector version.
+This distinction does not restrict G.6's finite conjugate-exponent range.
+
+Focused checks passed for both source assertions at p=3 and q=3/2,
+arbitrary complex initial frequencies, nonzero inverse-index displacement,
+negative lattice indices, signed coefficient identities, the exact combined
+energy at q=2, and the printed-reference counterexample. They also cover
+the Hermitian-vector extension with outer p=3/2 and inner q=infinity.
+
+Next: audit G.7's own source domain and actual eigenvalue gradients,
+including its printed -2*n*pi wave indices. G.7 is not yet certified by
+the G.6 normalization result. The G.2 arbitrary-time local norm, required
+p>2 spectral height, and optional original m=1 sharpening remain open.
+The accepted Lemma 27.2 correction and the G.5 reference and endpoint
+audits are unchanged. The dissertation remains incomplete.
+
+The full build passed (6524 jobs), all public examples passed, and the
+axiom audit passed for 26730 NLS declarations. The same 21 existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified; neither this inventory nor the declaration count is a
+completeness certificate.
+
+## Previous milestone: corrected G.5 for full gradients on exact source H1 balls
 
 `SourceLemmaG5.lean` proves both corrected G.5 assertions for the full
 matrix gradient, uniformly on each ball in the exact Chapter 5 periodic
