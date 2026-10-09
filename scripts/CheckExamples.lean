@@ -40774,3 +40774,48 @@ example (b : BoundaryCondition) (φ : CoeffPair 2) (hφ : ‖φ‖ ≤ 1) {z : �
   nlinarith
 
 end SourceBoundaryOverviewChecks
+
+
+namespace SourceBoundaryCounterexampleChecks
+open Set NLS NLS.Coeff NLS.ZakharovShabat
+open scoped ENNReal Classical
+
+local instance : Fact (1 ≤ (1024 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ((1024 : ℕ) : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The original characteristic normalization holds at every finite exponent.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : ℂ) :
+    periodOneBoundaryCharacteristic hp hp1 b (CoeffPair.ofFinsupp a) z =
+      classicalSeparatedCharacteristic b (finiteSourceCurve a) z :=
+  periodOneBoundaryCharacteristic_finite_eq_classical_all hp hp1 b a z
+
+-- The finite construction is symbolic; its enormous band is never enumerated.
+example (P : ℕ) : (P : ℝ)/12 ≤ triangularDyadicMass P :=
+  triangularDyadicMass_lower P
+
+example : triangularBoundarySum (triangularNormalizedCoefficients 1024) (2^1024) =
+    2*Complex.I := triangularBoundarySum_normalized (by omega)
+
+example : ‖CoeffPair.ofFinsupp (p := (1024 : ℝ≥0∞))
+    (triangularNormalizedCoefficients 1024,0)‖ ≤ 3/32 := by
+  exact norm_triangularNormalized_source_le_three_div_thirtytwo (P := 1024) (by omega)
+
+-- The witness belongs to the actual spectrum and escapes the union for every N.
+example (N : ℕ) :
+    let φ := CoeffPair.ofFinsupp (p := (1024 : ℝ≥0∞)) (triangularNormalizedCoefficients 1024,0)
+    ((2 : ℂ)^1024)*Complex.I ∈ BoundaryCondition.spectrum .dirichlet (by norm_num)
+      (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).val
+      (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).property ∧
+    ((2 : ℂ)^1024)*Complex.I ∉ heightSpectralBox N ((1+8*‖φ‖)^((1024 : ℝ≥0∞).toReal)) ∪
+      highSpectralDisks N (Real.pi/4) := by
+  exact sourceBoundaryPrintedHeight_counterexample (P := 1024) (by omega) (by norm_num) N
+
+example : ¬ ∀ φ : CoeffPair 1024, ∃ N : ℕ,
+    BoundaryCondition.spectrum .dirichlet (by norm_num)
+      (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).val
+      (periodOneBoundaryPotential (by norm_num) (by norm_num) φ).property ⊆
+    heightSpectralBox N ((1+8*‖φ‖)^((1024 : ℝ≥0∞).toReal)) ∪
+      highSpectralDisks N (Real.pi/4) := not_sourceTheorem1_4_printed_exhaustion
+
+end SourceBoundaryCounterexampleChecks

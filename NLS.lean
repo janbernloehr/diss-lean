@@ -3158,3 +3158,8 @@ import NLS.ZakharovShabat.SourcePrintedHeightFourCounting
 import NLS.ZakharovShabat.SourcePeriodicOverview
 import NLS.ZakharovShabat.SourceBoundaryOverview
 import NLS.ZakharovShabat.SourceBoundaryPrintedHeight
+import NLS.ZakharovShabat.TriangularFourierBoundary
+import NLS.ZakharovShabat.TriangularOddFourier
+import NLS.ZakharovShabat.TriangularDyadicKernel
+import NLS.ZakharovShabat.TriangularNormalizedBand
+import NLS.ZakharovShabat.SourceBoundaryHeightCounterexample

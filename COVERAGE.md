@@ -77,8 +77,10 @@ counterexample. Theorem 1.2 and Corollary 1.3 are proved for every finite
 p>1, with the actual ordered endpoints, their multiplicities, and the
 full locally uniform source bounds. Corollary 1.6's density of actual real
 finite-gap sources is also verified. Theorem 1.5 is covered for every
-finite p>1; Theorem 1.4 is covered at p=2, with the original-norm printed
-height still unresolved at other exponents.
+finite p>1; Theorem 1.4 is covered at p=2, but its all-p original-norm
+printed height is refuted by an actual Dirichlet spectral counterexample
+at p=1024 (and every natural exponent at least 1024). No replacement
+height is adopted.
 
 ## Appendix C.1 audit
 
@@ -1102,7 +1104,7 @@ density at p=2 and p=3/2. The detailed audit is recorded in
 analyticity claim is not certified by this density result.
 
 
-### Theorems 1.4 and 1.5: original boundary spectra and printed Hilbert box
+### Theorems 1.4 and 1.5: Hilbert box, all-p asymptotics, and a height counterexample
 
 | Source requirement | Public evidence | Verified scope |
 | --- | --- | --- |
@@ -1115,9 +1117,19 @@ analyticity claim is not certified by this density result.
 | Canonical ordering and multiplicities | `monotone_canonicalPeriodOneBoundaryRoots`, `canonicalPeriodOneBoundaryRoots_multiplicity` | Global lexicographic order and all actual repetitions, independent of initial labels. |
 
 Theorem 1.5 is covered unchanged. Every clause of Theorem 1.4 is covered
-at p=2. The remaining finite exponents require its exact original-norm
-height estimate; general boundedness of the interval extension and
-height-N counting boxes do not establish that formula. The generic
-`exists_source_boundaryCounting_printed_height_of_bound` isolates this
-remaining input without assuming it silently. The source overview and
-errata audits record the distinction. The dissertation remains incomplete.
+at p=2, but its all-p printed height is now refuted. The finite potential
+`triangularNormalizedCoefficients P`, for every natural P>=1024, has source
+norm at most 3/32 and an actual Dirichlet eigenvalue at i*2^P. The eigenvalue
+escapes the printed box and every stated disk at every cutoff.
+`sourceBoundaryPrintedHeight_counterexample` proves that assertion;
+`not_sourceTheorem1_4_printed_exhaustion` negates the all-source exhaustion
+statement at p=1024. No substitute spectrum, extended norm, or failed
+sufficient estimate is used. See `SOURCE_ERRATA.md` and
+`coverage/SPECTRAL_OVERVIEW.md`. No replacement height is adopted.
+Theorem 1.1's periodic height above four remains unresolved, and the
+dissertation remains incomplete.
+
+Validation: the full project check passed (6592 build jobs), including all
+public examples and the axiom audit of 27502 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.

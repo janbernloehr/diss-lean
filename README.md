@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Theorem 1.5's Dirichlet and Neumann displacement bounds
-are proved locally uniformly for every finite p>1, and Theorem 1.4's exact
-printed-box counts and exhaustion are proved at p=2 in the original source
-norm. Its other exponents remain open. Theorem 1.1's printed height is
-proved through p=4; its higher range and G.2's interval norm remain unresolved.
-The source audit also covers Theorem 1.2, Corollary 1.3, and Corollary 1.6.
+Latest milestone: Lean verifies a finite Fourier counterexample to Theorem
+1.4's all-p printed boundary height. At p=1024 the source norm is at most
+3/32, but an actual Dirichlet eigenvalue at i*2^1024 lies outside the printed
+box and every high-frequency disk, for every cutoff. No replacement height
+is adopted. The printed boundary result remains proved at p=2; Theorem 1.5
+holds for every finite p>1. Theorem 1.1's periodic height is proved through
+p=4 and remains unresolved above four. G.2's interval norm is also unresolved.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
@@ -104,7 +105,7 @@ central count is `2N+1` for each boundary condition. The coefficient counting
 argument of Theorem 1.4 is now proved for reflected nonzero potentials: on one
 common neighborhood and for every sufficiently large cutoff, each high disk has
 one simple Dirichlet and one simple Neumann eigenvalue, and each central count
-is `2N+1`. Boundary cluster and contour ranks count the actual restricted root
+in the height-N box is `2N+1`. Boundary cluster and contour ranks count the actual restricted root
 spaces, including Jordan chains. The projectors are analytic on that same
 neighborhood. Lemma 4.5's coefficient statement is now proved: the boundary
 projectors lift analytically into the weighted boundary domains, and the trace

@@ -108,7 +108,7 @@ locally uniform tail statements. All finite p>1 and every complex source
 potential are covered. No continuity or analyticity of the individually
 lexicographically sorted endpoints is inferred from these bounds.
 
-## Theorem 1.4: full printed conclusion at p=2; other heights unresolved
+## Theorem 1.4: proved at p=2; all-p printed height refuted
 
 The source statement on p. 20 concerns both ordinary boundary spectra,
 using the original period-one source norm. Section 4, p. 32, defines them
@@ -151,14 +151,24 @@ The height-N box does not establish the printed box. The new
   and for every larger cutoff. Together with the first group of results,
   this covers every clause of Theorem 1.4 at p=2.
 
-The unchanged printed-height obligation remains unresolved for the other
-finite exponents greater than one. `intervalExtensionCLM` is bounded there,
-but the available general bound includes `intervalExtensionBound hp1 hp`.
-Applying a periodic estimate at the reflected potential norm does not
-justify dropping that factor and using the original source norm. In
-particular the periodic p<=4 theorem does not by itself prove the boundary
-claim in that range. No spectral counterexample or replacement height is
-asserted. See `SOURCE_ERRATA.md`.
+The all-p printed height is refuted by the finite Fourier construction in
+`SourceBoundaryHeightCounterexample.lean`. For every natural P>=1024,
+`sourceBoundaryPrintedHeight_counterexample` produces an actual source
+Dirichlet eigenvalue at i*2^P outside the printed box and all high disks,
+for every cutoff. The source is `(u,0)` with opposite real coefficients on
+the bands 2^P<=|n|<2^(2P), normalized by the positive kernel mass. Its
+original source norm is at most 96/P<=3/32, so the printed height is at
+most (7/4)^P<2^P. The finite equation is connected to the classical
+fundamental solution and then to `BoundaryCondition.spectrum`; this is
+not a counterexample to a mere numerical criterion.
+
+`not_sourceTheorem1_4_printed_exhaustion` explicitly negates the weaker
+pointwise all-source assertion at p=1024, hence also the printed
+neighborhood conclusion. No replacement height is adopted. The Hilbert
+result above and all finite-p height-N counting results remain valid.
+Theorem 1.1's periodic height is a separate question, still open above
+four. See `SOURCE_ERRATA.md` for the complete construction and source
+comparison.
 
 ## Theorem 1.5: proved in the full printed range
 
@@ -186,7 +196,7 @@ No real-type assumption or smallness restriction is used. The source
 neighborhood is the continuous linear pullback of the reflected-potential
 neighborhood; no norm equality is needed for this qualitative local bound.
 Theorem 1.5 is therefore covered for every finite p>1 independently of
-Theorem 1.4's remaining numerical-height obligation. No continuity or
+Theorem 1.4's false all-p printed-height assertion. No continuity or
 analyticity of individually sorted roots at arbitrary complex potentials
 is claimed by these locally uniform bounds.
 
@@ -219,6 +229,8 @@ assumption of density in a smoother space. The preceding unnumbered
 claim of spatial real analyticity for all finite-gap potentials is a
 separate regularity claim; it is not certified by this density audit.
 
-The numbered overview audit now leaves the full-range printed heights in
-Theorems 1.1 and 1.4 unresolved. It does not certify the remaining chapters
-or unnumbered source claims. The dissertation remains incomplete.
+The numbered overview audit leaves Theorem 1.1's printed height above
+four unresolved and records Theorem 1.4's all-p printed height as refuted.
+The latter still holds at p=2; no replacement height is adopted. This
+audit does not certify the remaining chapters or unnumbered source claims.
+The dissertation remains incomplete.

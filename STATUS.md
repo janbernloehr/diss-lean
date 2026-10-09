@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: boundary overview and printed Hilbert box
+## Current milestone: a spectral counterexample to the printed boundary height
+
+Theorem 1.4's all-p printed boundary height is now refuted by an actual
+spectral counterexample. For every natural exponent P>=1024, the finite
+source `(u,0)` constructed by `triangularNormalizedCoefficients P` has
+source norm at most 3/32 and a Dirichlet eigenvalue at i*2^P. Its printed
+height is at most (7/4)^P, strictly below that eigenvalue. The eigenvalue
+also lies outside every quarter-pi disk about a real free frequency, so
+no choice of cutoff repairs the printed exhaustion assertion.
+
+The proof is symbolic: it never enumerates the enormous finite band.
+`TriangularFourierBoundary.lean` solves the original classical triangular
+system and identifies its finite Fourier equation with the actual source
+Dirichlet spectrum at every finite p>1. `TriangularOddFourier.lean` pairs
+opposite coefficients and bounds the original source norm by the number
+of coefficients. `TriangularDyadicKernel.lean` proves the harmonic lower
+bound and the contribution of each dyadic block.
+`TriangularNormalizedBand.lean` normalizes P blocks, proves the exact
+root equation, and obtains the norm bound 96/P.
+
+`SourceBoundaryHeightCounterexample.lean` proves
+`sourceBoundaryPrintedHeight_counterexample` for every natural P>=1024
+and every cutoff. `not_sourceTheorem1_4_printed_exhaustion` explicitly
+negates even the pointwise all-source assertion at p=1024. Consequently
+the neighborhood version in the dissertation cannot hold as printed.
+This is a counterexample in the actual original boundary spectrum, not
+failure of a sufficient resolvent estimate. See `SOURCE_ERRATA.md` for
+the coefficients, inequalities, source pages, and scope.
+
+Theorem 1.4 remains proved unchanged at p=2. Its behavior at other finite
+exponents not covered by this counterexample is not settled here. No
+replacement height is adopted. Theorem 1.5, Theorem 1.2, Corollary 1.3,
+and Corollary 1.6 retain their verified full finite-p scope. Theorem 1.1's
+periodic height remains proved through p=4 and unresolved above four;
+this boundary construction does not refute it. G.2's printed interval
+norm and the optional original m=1 sharpening remain unresolved. The
+whole dissertation remains incomplete.
+
+Validation: the full project check passed (6592 build jobs), including all
+public examples and the axiom audit of 27502 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: boundary overview and printed Hilbert box
 
 Theorem 1.5 is now assembled in the original source space for every finite
 p>1 and both ordinary boundary conditions. Theorem 1.4's exact printed box

@@ -495,31 +495,69 @@ finite-exponent height remains required and unresolved above four.
 `(1+8pM)^p` is still a proved alternative, not completion of the printed
 claim. See [the spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
 
-## Theorem 1.4: boundary height proved at p=2; other exponents unresolved
+## Theorem 1.4: the all-p printed boundary height is false
 
-The printed box on p. 20 uses `(1+8||phi||_p)^p` with the original source
-norm for both ordinary boundary conditions. The proof on p. 32 applies
-periodic localization to the reflected potential `phi^dir`; Lemma 4.3
-supplies boundedness of that extension, with no stated contractive bound
-in the general exponent range.
+Source: dissertation, printed p. 20 (statement) and p. 32 (proof).
+The printed box has height `(1+8||phi||_p)^p` in the original period-one
+source norm. Clause (iii) asserts that the box and quarter-pi disks contain
+all Dirichlet and Neumann eigenvalues. Lean now proves a finite Fourier
+counterexample to this assertion, already at p=1024.
 
-The implementation now isolates this distinction. The general available
-extension estimate contains `intervalExtensionBound hp1 hp`; applying a
-periodic spectral-height theorem to the reflected norm does not justify
-replacing it by the original source norm. This issue is separate from
-Theorem 1.1's exponent-dependent reciprocal estimate. It prevents an
-automatic inference of Theorem 1.4 even from the proved periodic p<=4 range.
+For any natural P>=1024, put H=2^P and define
 
-At p=2 the completed Hilbert extension is contractive.
-`norm_periodOneBoundaryPotential_two_le` transfers that estimate to the
-original source norm, and `sourceTheorem1_4_two` proves the exact printed
-box with central count 2N+1, simple high-disk roots, and exhaustion for both
-conditions on one neighborhood. Discreteness and spectrum-wide reality
-are proved at every finite p>1. The printed boundary height at other
-exponents remains required and unresolved, not refuted; no replacement
-height has been adopted. The generic counting theorem records the exact
-missing source-height premise. Theorem 1.5's locally uniform full-sequence
-bounds are proved independently for all finite p>1.
+```
+S = {n in Z : H <= n < 2^P*H},
+A = sum_{n in S} pi*n/(H^2+(pi*n)^2),
+a = 1/A,
+u_n = a for n in S, u_{-n} = -a for n in S, and zero otherwise.
+phi = (u,0), with u(t) = sum_n u_n exp(2*pi*i*n*t).
+```
+
+The following chain is verified with the original source and spectrum:
+
+1. The classical triangular equation at z=iH has initial vector (1,1).
+   Its solution satisfies the Dirichlet endpoint condition when
+   `sum_n u_n/(H-i*pi*n)=2i`. The finite ordinary characteristic agrees
+   with the classical one at every finite p>1. Thus this equation gives
+   membership in the actual `BoundaryCondition.spectrum .dirichlet` of
+   `periodOneBoundaryPotential`; no substitute spectrum is introduced.
+2. Pairing the positive and negative coefficients gives `2i*a*A=2i`.
+   On n>=H the kernel is at least 1/(6n), so each dyadic block contributes
+   at least 1/12. There are P such blocks, hence A>=P/12>0.
+3. There are at most 8^P signed coefficients, each of magnitude a. The
+   original coefficient-pair norm at exponent P is therefore at most
+   `8a <= 96/P <= 3/32`. No reflected-potential norm appears in this bound.
+4. The printed height is at most `(7/4)^P < 2^P = H`. Also H>=2>pi/4,
+   so iH belongs to none of the quarter-pi disks centered on the real
+   free frequencies. This holds for every cutoff N, however large.
+
+The files `TriangularFourierBoundary.lean`, `TriangularOddFourier.lean`,
+`TriangularDyadicKernel.lean`, and `TriangularNormalizedBand.lean` prove
+these ingredients without enumerating the finite band.
+`SourceBoundaryHeightCounterexample.lean` supplies
+`sourceBoundaryPrintedHeight_counterexample` for every natural P>=1024
+and every N. `not_sourceTheorem1_4_printed_exhaustion` explicitly negates
+`forall phi, exists N, spectrum subset printed-box union high-disks` at
+p=1024. Since a neighborhood of phi contains phi itself, this also refutes
+the stronger neighborhood assertion in the source. The exponent threshold
+1024 is a convenient verified choice, not an optimality claim.
+
+The proof on p. 32 applies periodic localization to the reflected
+potential `phi^dir`. Lemma 4.3 supplies boundedness of the extension;
+the available general estimate includes `intervalExtensionBound hp1 hp`.
+Dropping that dependence and using the original source norm does not
+follow from the periodic result. The new counterexample settles failure
+of the printed all-p statement itself, beyond this gap in the proof.
+
+At p=2 the extension is contractive, and `sourceTheorem1_4_two` still
+proves every clause with the exact printed height and original norm.
+The finite-p discreteness, reality, height-N counts, and Theorem 1.5's
+locally uniform full-sequence bounds remain valid. This counterexample
+concerns complex triangular sources and makes no claim against the
+real-type spectrum. It does not refute Theorem 1.1's periodic height,
+which remains proved through p=4 and unresolved above four. No replacement
+boundary height is adopted; other exponents not covered here remain to
+be investigated.
 
 ## Lemma 26.2: sign of the higher Hamiltonian
 
