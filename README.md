@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Corollary F.3 is proved for actual endpoint-to-endpoint
-integrals. The exact value from gap n to gap m is i*pi*(n-m), including
-collapsed complex gaps and arbitrary choices of either endpoint. This gives
-analyticity on a common connected almost-real domain. The next source audit
-starts with G.1; the printed spectral height above p=2 remains open.
+Latest milestone: the variable-forcing estimate needed for G.1 is proved
+with its literal L2 coefficient A*exp(A), and applied to the actual
+continuous-potential fundamental solution and first Born term. G.1 remains
+incomplete: extension to arbitrary L2 potentials and verification of the
+source matrix norm are next. F.1-F.3 are proved; the required spectral
+height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -1,6 +1,54 @@
 # Implementation status
 
-## Current milestone: endpoint-to-endpoint analyticity in F.3
+## Current milestone: the L2 forcing estimate toward G.1
+
+The scalar variable-forcing estimate needed for Lemma G.1 is proved in
+`VariableForcingGronwall.lean`. From f(t) <= F(t) + integral(a*f), an
+integrating factor gives f(T) <= F(T) + exp(integral a)*integral(a*F).
+Cauchy--Schwarz then gives the literal A*exp(A) coefficient on intervals
+of length at most one, with A an L2 coupling budget and the actual L2
+norm in time of the forcing. No bound on the unknown error is assumed.
+
+`ClassicalRemainderL2Bound.lean` retains the actual pointwise potential
+norm in the constructed solution's Duhamel inequality. It proves continuity
+of the actual first Born term and obtains the L2 forcing bound for every
+initial vector, every complex spectral parameter (including zero), and every
+time in [0,1]. The potential budget is explicitly the square root of the
+integral of the sum of both coordinate norm squares, not a supremum norm.
+`ClassicalMatrixRemainderL2Bound.lean` assembles both fundamental columns
+and proves the corresponding bound for the actual remainder matrix M-E
+and the actual first Born matrix, using the explicit elementwise maximum
+matrix norm.
+
+G.1 remains incomplete. These are continuous-potential estimates, whereas
+the printed statement on page 135 covers arbitrary L2 potentials. The
+fundamental-solution extension to L2 and the source's matrix norm convention
+must still be resolved. These prerequisites are not presented as full
+coverage of G.1. Next: establish L2 stability of the actual solutions,
+construct their extension by continuous approximation, and transfer the
+integral identity and bound. Audit the matrix norm against reference [23].
+The required p>2 spectral height and optional original m=1 sharpening
+remain unresolved; the accepted Lemma 27.2 correction is unchanged.
+
+Validation: focused examples passed for zero potential, nonzero triangular
+potential at zero frequency, the Hilbert L2 contribution from both potential
+coordinates, a variable ramp potential with L2 budget sqrt(1/3), and an
+exponential scalar solution with genuinely time-dependent forcing.
+The full build passed (6481 jobs), all public examples passed, and the
+axiom audit passed for 26146 NLS declarations. The same 21 pre-existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified.
+
+The related author preprint [Normal form theory for the NLS equation,
+arXiv:0907.3938](https://arxiv.org/pdf/0907.3938), printed page 7,
+explicitly uses the matrix operator norm induced by the Hermitian vector
+norm. Its Lemma 2.1 (printed page 12) gives the variable-forcing estimate.
+This supplies a concrete next target: use Euclidean vector/operator norms,
+without multiplying the printed coefficient by a norm-equivalence constant.
+The 2014 book [23] is a later publication, so its convention has not been
+verified directly from that edition.
+
+## Previous milestone: endpoint-to-endpoint analyticity in F.3
 
 Corollary F.3, printed page 134, now holds for actual endpoint-to-endpoint
 integrals. `SourceCorollaryF3.lean` defines the second improper limit of

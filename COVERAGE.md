@@ -454,3 +454,38 @@ choices, admissible C1 paths, and the common domain. Appendix G is next for
 source-level audit; its existing implementation is not treated as automatic
 coverage of every printed statement. The required unresolved p>2 spectral
 height is unchanged.
+
+### Lemma G.1: L2 forcing prerequisite, full source statement still open
+
+The literal dependence on the potential's Hilbert L2 norm and on the
+first Born term's L2 norm in time is now proved for the constructed
+continuous-potential solutions. This replaces neither the full printed
+L2 domain nor its matrix norm convention. G.1, printed page 135, is still
+incomplete pending those requirements.
+
+| Required ingredient | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Variable-forcing comparison | `le_forcing_add_exp_integral_mul` | Continuous scalar functions; integrating-factor proof retains terminal forcing and integral of coupling times forcing. |
+| Exact L2 coefficient | `integral_mul_le_sqrt_sq_mul_sqrt_sq`, `le_forcing_add_L2_bound` | Actual square integrals give A*exp(A) on [0,T], T<=1; no supplied bound on the error. |
+| Actual variable coupling | `classicalNormalizedRemainder_le_firstBorn_add_variable_integral` | Original signed Duhamel equations, with pointwise potential norm inside the integral rather than the potential supremum. |
+| Actual first Born time dependence | `continuous_oscillatoryIntegral`, `continuous_classicalFirstBornVector`, `classicalNormalizedFirstBorn` | Continuity proved from the literal oscillatory integral, without differentiating the potential. |
+| Hilbert L2 potential budget | `classicalPotentialL2Norm`, `sqrt_integral_potential_norm_sq_le` | Integral of the sum of both coordinate norm squares; controls every truncated pointwise-norm square integral. |
+| Actual vector solution estimate | `classicalNormalizedRemainder_le_L2_firstBorn` | All continuous potentials, complex spectral parameters, initial vectors, and times in [0,1]; no nonzero-frequency or smoothness restriction. |
+| Actual matrix estimate | `classicalNormalizedMatrixRemainder_le_L2_firstBorn` | Both columns of M-E and of the actual first Born matrix, explicitly using the elementwise maximum matrix norm. |
+| Arbitrary L2 potentials | Not yet proved | The current fundamental solution is constructed for continuous potentials; an L2-stable extension with its integral identity is required. |
+| Source matrix norm | Not yet verified | Reference [23] must be checked; the elementwise maximum norm is not silently identified with an operator norm. |
+
+Checks include an actual nonzero triangular potential at zero frequency,
+both-coordinate Hilbert norm sqrt(2), a variable potential (t,0) with
+Hilbert L2 norm sqrt(1/3), free zero error for every complex frequency,
+and a scalar exponential solution with time-dependent forcing. No source
+erratum is asserted by this partial G.1 audit.
+
+The related author preprint [Normal form theory for the NLS equation,
+arXiv:0907.3938](https://arxiv.org/pdf/0907.3938), printed page 7,
+explicitly uses the matrix operator norm induced by the Hermitian vector
+norm. Its Lemma 2.1 (printed page 12) gives the variable-forcing estimate.
+This supplies a concrete next target: use Euclidean vector/operator norms,
+without multiplying the printed coefficient by a norm-equivalence constant.
+The 2014 book [23] is a later publication, so its convention has not been
+verified directly from that edition.

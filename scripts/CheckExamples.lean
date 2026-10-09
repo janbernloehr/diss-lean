@@ -38586,3 +38586,76 @@ example : ∃ V : Set (CoeffPair 3), IsOpen V ∧ IsConnected V ∧ realTypeSour
   exact ⟨V,hV,hconn,hr,fun n m => (h n m _ _ (by intros; simp) (by intros; simp)).1⟩
 
 end AppendixFBetweenEndpointsChecks
+
+section AppendixGL2ForcingChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis NLS.FunctionalAnalysis NLS.LinearVolterra
+open Set Complex MeasureTheory
+open scoped Matrix.Norms.Elementwise
+
+-- The L2 budget vanishes for the actual free potential.
+example : classicalPotentialL2Norm 0 = 0 := by
+  simp [classicalPotentialL2Norm,NLS.LinearVolterra.extend]
+
+-- An asymmetric nonzero potential has Hilbert L2 norm exactly one.
+private noncomputable def g1TriangularPotential : Curve (ℂ × ℂ) := ContinuousMap.const _ (1,0)
+
+private theorem g1Triangular_L2 : classicalPotentialL2Norm g1TriangularPotential = 1 := by
+  simp [classicalPotentialL2Norm,g1TriangularPotential,NLS.LinearVolterra.extend]
+
+-- Both nonzero coordinates contribute to the Hilbert norm; it is not a maximum norm.
+example : classicalPotentialL2Norm (ContinuousMap.const _ (1,1)) = Real.sqrt 2 := by
+  norm_num [classicalPotentialL2Norm,NLS.LinearVolterra.extend]
+
+-- At zero frequency the actual Born matrix of the triangular potential has norm |t|.
+private theorem g1Triangular_firstBorn (t : ℝ) :
+    classicalNormalizedFirstBornMatrix g1TriangularPotential 0 t = |t| := by
+  rw [classicalNormalizedFirstBornMatrix_eq_max]
+  simp [classicalNormalizedFirstBorn,classicalFirstBornVector,oscillatoryIntegral,
+    oscillatoryKernel,g1TriangularPotential,NLS.LinearVolterra.extend,Prod.norm_def,Complex.norm_real]
+
+-- The full actual fundamental matrix obeys the nonzero L2 forcing estimate.
+example : classicalNormalizedMatrixRemainder g1TriangularPotential 0 1 ≤
+    1+Real.exp 1*Real.sqrt (1/3) := by
+  have h := classicalNormalizedMatrixRemainder_le_L2_firstBorn g1TriangularPotential 0
+    ⟨1,by constructor <;> norm_num⟩
+  simp only [g1Triangular_L2,g1Triangular_firstBorn,one_mul,abs_one,sq_abs] at h
+  norm_num [integral_pow] at h ⊢
+  exact h
+
+-- The constructed free solution has zero error for every complex spectral parameter.
+example (z : ℂ) (t : Icc (0:ℝ) 1) : classicalNormalizedMatrixRemainder 0 z t = 0 := by
+  rw [classicalNormalizedMatrixRemainder_eq_max]
+  simp [classicalNormalizedRemainder,classicalSolutionRemainder_free]
+
+-- A time-dependent forcing is retained: exp(t)-1 = t + integral(exp(s)-1).
+example : Real.exp 1-1 ≤ 1+Real.exp 1/2 := by
+  have h := le_forcing_add_exp_integral_mul (fun t => Real.exp t-1) (fun t => t) (fun _ => 1)
+    (by fun_prop) continuous_id continuous_const 1 (by norm_num)
+    (by intros; norm_num) (fun t ht => ht.1) (by
+      intro t _
+      simp only [one_mul]
+      rw [intervalIntegral.integral_sub (Real.continuous_exp.intervalIntegrable 0 t)
+        (continuous_const.intervalIntegrable 0 t)]
+      simp only [integral_exp,Real.exp_zero,intervalIntegral.integral_const,sub_zero,smul_eq_mul,mul_one]
+      linarith)
+  norm_num [integral_id] at h ⊢
+  linarith
+
+-- A variable potential uses its actual L2 norm sqrt(1/3), not its supremum 1.
+private noncomputable def g1RampPotential : Curve (ℂ × ℂ) where
+  toFun t := ((t.val:ℂ),0)
+  continuous_toFun := by fun_prop
+
+example : classicalPotentialL2Norm g1RampPotential = Real.sqrt (1/3) := by
+  unfold classicalPotentialL2Norm
+  congr 1
+  calc
+    (∫ s in (0:ℝ)..1, ‖(LinearVolterra.extend g1RampPotential s).1‖^2+
+        ‖(LinearVolterra.extend g1RampPotential s).2‖^2) = ∫ s in (0:ℝ)..1, s^2 := by
+      apply intervalIntegral.integral_congr
+      intro s hs
+      have hs' : s ∈ Icc (0:ℝ) 1 := by simpa using hs
+      simp [LinearVolterra.extend,projIcc_of_mem _ hs',g1RampPotential,Complex.norm_real]
+    _ = 1/3 := by norm_num [integral_pow]
+
+end AppendixGL2ForcingChecks
