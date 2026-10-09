@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Latest progress: G.6 in exact source norms and its wave-normalization audit
+## Latest progress: corrected G.7 and its actual source gradients
+
+`SourceLemmaG7.lean` proves both G.7 estimates for every finite source
+exponent p>=2 and its conjugate q. For each p, one open complex domain
+contains the entire real source locus and supports both estimates. The
+source is the original complex period-one H1 space, supplied directly by
+its Sobolev coefficients; the physical Sobolev representative is proved
+internally rather than imposed as an extra hypothesis. No smallness or
+separate simplicity assumption is required.
+
+`sourceLemmaG7_corrected_with_coefficients` combines outer lp membership
+of the actual midpoint gradient and Dirichlet gradient error with the
+actual Fourier-integral identities on this same domain. The first physical
+Fourier index is reversed to match the signed source convention. This map
+is a linear isometry for the exact pair norm. The combined coefficient
+energy is proved explicitly by `sourceG7DirichletGradientError_norm_rpow`.
+These are pointwise source estimates; this step does not assert a new
+uniform majorant over all H1 balls inside that domain.
+
+The midpoint statement is unchanged. The Dirichlet error subtracts the
+actual zero-source derivative, identified with one half of the pair of
+waves at signed physical indices 2*n and -2*n. Both components of this
+reference are exactly one half at signed source index -n. The underlying
+cotangents are actual Frechet derivatives of the canonical spectral
+coordinates, and the physical formula uses the normalized squared
+Dirichlet eigenfunction. All signed indices, including the finite central
+block and collapsed periodic gaps, are retained.
+
+`SourceLemmaG7ReferenceAudit.lean` checks the printed -2*n*pi subscripts
+on page 138 against the preceding wave definition. At zero potential and
+nu_n=n*pi, the actual Dirichlet reference error has a Fourier coefficient
+of magnitude at least 1/4 at every nonzero n. It is not outer l2, even after
+removing any finite spectral head. The same obstruction holds in the
+exact signed source pair norm for any second component. The corrected
+reference cancels exactly at zero, for every finite source exponent p>=2.
+
+Focused examples passed for the p=3, q=3/2 common complex domain,
+summability at arbitrary real H1 sources, actual zero-source eigenvalues
+and derivatives, signed Fourier-coordinate identities, negative lattice
+indices, and the literal-reference obstruction on both tails.
+
+Next: audit Appendix H's recurrence and homogeneity claims in H.1, then
+the integration-by-parts and Sobolev scope of H.2. The G.2 arbitrary-time
+local norm, required p>2 spectral height, and optional original m=1
+sharpening remain open. The accepted Lemma 27.2 correction and the G.5
+and G.6 audits are unchanged. The dissertation remains incomplete.
+
+The full build passed (6526 jobs), all public examples passed, and the
+axiom audit passed for 26769 NLS declarations. The same 21 existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified; neither this inventory nor the declaration count is a
+completeness certificate.
+
+## Previous milestone: G.6 in exact source norms and its wave-normalization audit
 
 `SourceCorollaryG6.lean` proves `sourceCorollaryG6_discriminant` and
 `sourceCorollaryG6_antiDiscriminant_corrected` for every finite real p>=2,

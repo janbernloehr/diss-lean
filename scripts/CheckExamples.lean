@@ -39582,3 +39582,88 @@ example (c : ℤ → Coeff 2) :
   not_memlp_sourceG6Printed_pair_norms c
 
 end AppendixG6SourceChecks
+
+
+
+noncomputable section
+open Set NLS NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+namespace AppendixG7SourceChecks
+
+example : sourceG7PrintedDirichletErrorCoefficients 0 0 = 0 := by
+  rw [sourceG7PrintedDirichletErrorCoefficients_diagonal]
+  simp [sourceG6PrintedWave,unitIntervalExponential,intervalFourierCoefficient]
+example : (1/4 : ℝ) ≤ ‖sourceG7PrintedDirichletErrorCoefficients 1‖ :=
+  quarter_le_norm_sourceG7PrintedDirichletErrorCoefficients 1 (by norm_num)
+example : (1/4 : ℝ) ≤ ‖sourceG7PrintedDirichletErrorCoefficients (-1)‖ :=
+  quarter_le_norm_sourceG7PrintedDirichletErrorCoefficients (-1) (by norm_num)
+example (b : ℤ → ℝ) (hb : Memℓp b 2) :
+    ¬∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs → ‖sourceG7PrintedDirichletErrorCoefficients n‖ ≤ b n :=
+  not_eventually_sourceG7PrintedError_majorant b hb
+example (c : ℤ → Coeff 2) :
+    ¬Memℓp (fun n : ℤ => ‖(CoeffPair.toMax 2).symm
+      (Coeff.reflection (sourceG7PrintedDirichletErrorCoefficients n),c n)‖) 2 :=
+  not_memlp_sourceG7Printed_pair_norms c
+
+-- The counterexample uses a genuine real H¹ source and its actual canonical eigenvalue derivative.
+example : sobolevSourceInclusion (0 : ScalarDomain 2 × ScalarDomain 2) ∈ realTypeSourceLocus 2 := by
+  intro n
+  simp
+example (n : ℤ) : canonicalPeriodOneBoundaryRoots (p := 2) (by simp) (by norm_num)
+    .dirichlet 0 n = (Real.pi : ℂ)*n := canonicalPeriodOneBoundaryRoots_zero _ _ _ n
+example (n : ℤ) : fderiv ℂ (fun ψ : CoeffPair 2 =>
+    canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n) 0 =
+    sourceFreeDirichletCotangent 2 n :=
+  fderiv_canonicalDirichletRoot_zero_eq_free (by simp) (by norm_num) le_rfl n
+example (t : Icc (0 : ℝ) 1) : classicalDirichletNormalizedGradient 0 ((Real.pi : ℂ)*(-3 : ℤ)) t =
+    (1/2 : ℂ) • (wave (2*(-3)) t,wave (-(2*(-3))) t) :=
+  classicalDirichletNormalizedGradient_free_lattice (-3) t
+
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : (ENNReal.ofReal (3/2)).HolderConjugate 3 := by
+  have h := (Real.HolderConjugate.conjExponent (by norm_num : 1 < (3 : ℝ))).symm.ennrealOfReal
+  convert h using 1 <;> norm_num [Real.conjExponent]
+
+example : ∃ W : Set (CoeffPair 3), IsOpen W ∧ realTypeSourceLocus 3 ⊆ W ∧
+    ∀ a : ScalarDomain 2 × ScalarDomain 2,
+      CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3) (sobolevSourceInclusion a) ∈ W →
+      Memℓp (fun n : ℤ => sourceG7MidpointGradient (p := 3) (q := ENNReal.ofReal (3/2))
+        (by simp) (by norm_num) (CoeffPair.exponentInclusion (by norm_num) (sobolevSourceInclusion a)) n) 3 ∧
+      Memℓp (fun n : ℤ => sourceG7DirichletGradientError (p := 3) (q := ENNReal.ofReal (3/2))
+        (by simp) (by norm_num) (CoeffPair.exponentInclusion (by norm_num) (sobolevSourceInclusion a)) n) 3 ∧
+      SourceG7DirichletCoefficients (p := 3) (q := ENNReal.ofReal (3/2)) (by simp) (by norm_num) (by norm_num) a :=
+  sourceLemmaG7_corrected_with_coefficients (p := 3) (q := ENNReal.ofReal (3/2)) (by simp) (by norm_num) (by norm_num)
+
+example (a : ScalarDomain 2 × ScalarDomain 2) (ha : sobolevSourceInclusion a ∈ realTypeSourceLocus 2) :
+    Memℓp (fun n : ℤ => ‖sourceG7DirichletGradientError (p := 3) (q := ENNReal.ofReal (3/2))
+      (by simp) (by norm_num) (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 3)
+        (sobolevSourceInclusion a)) n‖) 3 :=
+  (sourceLemmaG7_real_corrected (p := 3) (q := ENNReal.ofReal (3/2)) (by simp) (by norm_num) (by norm_num) a ha).2.norm
+
+example (n : ℤ) : sourceG7DirichletGradientError (p := 3) (q := ENNReal.ofReal (3/2))
+    (by simp) (by norm_num) 0 n = 0 :=
+  sourceG7DirichletGradientError_zero (by simp) (by norm_num) (by norm_num) n
+
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    periodOnePotential (sobolevSourceInclusion a) = domainInclusion (sourceG3ClassicalCoefficients a) :=
+  sourceG7_periodic_representative a
+
+example (a : ScalarDomain 2 × ScalarDomain 2)
+    (ha : SourceG7DirichletCoefficients (p := 2) (q := 2) (by simp) (by norm_num) le_rfl a) (n k : ℤ) :
+    (sourceG7DirichletGradientError (p := 2) (q := 2) (by simp) (by norm_num)
+      (CoeffPair.exponentInclusion le_rfl (sobolevSourceInclusion a)) n).fst k =
+    intervalFourierCoefficient 1 (fun t => (sourceG7CorrectedDirichletError
+      (classicalSobolevPotential (sourceG3ClassicalCoefficients a))
+      (canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet
+        (CoeffPair.exponentInclusion le_rfl (sobolevSourceInclusion a)) n) n t).1) (-k) :=
+  (ha n k).1
+
+example (φ : CoeffPair 2) (n k : ℤ) :
+    let L := fderiv ℂ (fun ψ : CoeffPair 2 => canonicalPeriodicMidpoint (by simp) (by norm_num)
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ
+    (sourceG7MidpointGradient (q := 2) (by simp) (by norm_num) φ n).fst k =
+      L (CoeffPair.inlCLM (lp.single 2 k 1)) :=
+  (sourceG7MidpointGradient_coefficients (by simp) (by norm_num) φ n k).1
+
+end AppendixG7SourceChecks

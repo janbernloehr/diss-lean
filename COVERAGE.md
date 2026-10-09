@@ -776,7 +776,35 @@ here. The source's finite conjugate range is fully covered.
 
 The printed second reference is refuted at p=2 under the source's own wave
 definition; the first assertion remains unchanged. See `SOURCE_ERRATA.md`.
-G.7's domain and printed wave indices require their own audit next.
+G.7's domain and printed wave indices are audited below.
 The previously recorded G.2 local-norm, required p>2 spectral-height, and
 optional original m=1 obligations remain open. Neither declaration counts
 nor the source-label inventory certify completeness.
+
+
+### Lemma G.7: actual spectral gradients and the corrected half-wave reference
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Original complex H1 source | `sourceG7_periodic_representative` | Every original period-one Sobolev source supplies the required physical Sobolev representative; no separate compatibility assumption. |
+| Both finite-p estimates | `sourceLemmaG7_corrected`, `sourceLemmaG7_corrected_with_coefficients` | Finite p>=2 and conjugate q; for each exponent one common open complex domain contains the entire real source locus. All signed indices and collapsed periodic gaps are retained. |
+| Actual midpoint derivative | `sourceG7MidpointGradient_coefficients` | Exact signed coefficients of the Frechet derivative of the canonical periodic midpoint; first direction k and second direction -k. |
+| Actual corrected Dirichlet gradient | `exists_sourceG7_dirichlet_coefficients`, `SourceG7DirichletCoefficients` | Actual Fourier integrals of the normalized squared eigenfunction gradient minus (wave(2*n),wave(-2*n))/2, on the same domain as the summability theorem. |
+| Exact source norm | `norm_sourceG7SignedCoordinates`, `sourceG7DirichletGradientError_norm_rpow` | First-index reflection is an isometry; the norm power is the combined Fourier coefficient energy from equation (1.2). |
+| Entire real H1 locus | `sourceLemmaG7_real_corrected` | Both estimates at every real H1 source, with no smallness assumption. |
+| Correct free reference | `classicalDirichletNormalizedGradient_free_lattice`, `sourceG7_free_signed_coefficients`, `sourceG7DirichletGradientError_zero` | Exact factor one half, physical indices 2*n and -2*n, signed source index -n in both components, and exact cancellation of the actual free derivative. |
+| Printed-reference failure | `quarter_le_norm_sourceG7PrintedDirichletErrorCoefficients`, `not_eventually_sourceG7PrintedError_majorant` | Actual error norm at least 1/4 for every nonzero n at the zero H1 source; outer p=2 fails even after removing an arbitrary finite head. |
+| Exact-norm obstruction | `not_memlp_sourceG7Printed_pair_norms` | Failure in the exact signed source pair norm, regardless of the second component. |
+
+The exponent is finite, with q conjugate to p. The complex neighborhood
+may depend on p, and the same neighborhood supports both estimates and
+the actual corrected Fourier-integral representation. These are pointwise
+H1 source estimates; no new uniform bound on all source balls in that
+neighborhood is asserted. The midpoint assertion is unchanged, and the
+Dirichlet reference is explicitly corrected from -2*n*pi to -2*n.
+See `SOURCE_ERRATA.md` for the zero-source counterexample.
+
+Next are Appendix H's recurrence/homogeneity statement and its subsequent
+integration-by-parts argument. The G.2 local-norm, required p>2 spectral-height,
+and optional original m=1 obligations remain open. Neither source-label
+inventories nor declaration counts certify completeness.

@@ -3095,3 +3095,5 @@ import NLS.ComplexAnalysis.HermitianPairFourierAssembly
 import NLS.ZakharovShabat.SourceCorollaryG6ReferenceAudit
 import NLS.ZakharovShabat.ClassicalHermitianCharacteristicGradients
 import NLS.ZakharovShabat.SourceCorollaryG6
+import NLS.ZakharovShabat.SourceLemmaG7ReferenceAudit
+import NLS.ZakharovShabat.SourceLemmaG7

@@ -1,5 +1,40 @@
 # Source discrepancies
 
+## Lemma G.7: an extra pi in the Dirichlet half-wave reference
+
+Source: dissertation, printed page 138, checked in the rendered PDF.
+The statement subtracts (e^+_(-2*n*pi)+e^-_(-2*n*pi))/2 from the Dirichlet
+eigenvalue gradient. Under the preceding definition
+e_alpha(x)=exp(i*pi*alpha*x), the subscripts must instead be -2*n.
+The midpoint assertion has no such reference and remains unchanged.
+
+`classicalDirichletNormalizedGradient_free_lattice` proves that the actual
+free normalized gradient is (wave(2*n),wave(-2*n))/2, where
+wave(m)(s)=exp(i*pi*m*s). The canonical eigenvalues at zero are n*pi,
+and `fderiv_canonicalDirichletRoot_zero_eq_free` identifies their actual
+derivative with the free functional h |-> (h.fst(-n)+h.snd(n))/2.
+The zero H1 source is real and belongs to every complex source neighborhood
+used in the corrected result, because each contains the full real locus.
+
+The first component of the printed error is
+(exp(2*pi*i*n*s)-exp(2*pi^2*i*n*s))/2. Its Fourier coefficient at mode n
+is (1-c_n)/2; G.6's real-frequency integral bound gives |c_n|<=1/2 for
+nonzero n. `quarter_le_norm_sourceG7PrintedDirichletErrorCoefficients`
+therefore gives a lower bound 1/4 on both signed tails.
+`not_eventually_sourceG7PrintedError_majorant` rules out any l2 majorant
+even after deleting finitely many spectral indices.
+`not_memlp_sourceG7Printed_pair_norms` gives the same failure in the exact
+source signed pair norm, regardless of the second component.
+
+`sourceLemmaG7_corrected_with_coefficients` proves both estimates for
+finite p>=2 and conjugate q on one common complex neighborhood containing
+the real source locus, using the original H1 source. The Dirichlet
+Fourier-integral identities explicitly subtract the corrected half waves;
+the signed-coordinate isometry and energy identity identify the exact
+source norm. The actual corrected derivative error vanishes at zero.
+This proves the corrected assertion and does not reinstate its printed
+wave normalization.
+
 ## Corollary G.6: an extra pi in the anti-discriminant wave index
 
 Source: dissertation, printed page 138, checked in the rendered PDF.
