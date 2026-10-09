@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Latest progress: uniform solution extension to physical L2 potentials
+## Latest progress: the original equation for physical L2 potentials
+
+The approximation-independent L2 curve now satisfies the original Volterra
+integral equation for every physical L2 potential, every complex spectral
+parameter, and every initial vector. `l2SolutionCurve_eq_integral` uses the
+actual coefficient integral, whose integrability is proved. The theorem
+`l2SolutionCurve_eq_integral_ofFunction` gives the same equation directly
+for any original square-integrable representative, including discontinuous
+ones, without assuming convergence of representatives pointwise.
+
+`PhysicalL2IntegralPairing.lean` identifies each scalar coefficient integral
+on [0,t] with an L2 inner product. This proves joint continuity in the L2
+potential and the uniform curve norm. `L2VolterraEquation.lean` uses that
+continuity to pass the actual classical equation to the previously proved
+uniform limit. `L2SolutionDifferentialEquation.lean` then applies Lebesgue
+differentiation in the interval interior and proves the original signed
+first-order system almost everywhere. Its physical-operator theorem uses
+actual coordinate derivatives and proves L_phi y = z y almost everywhere,
+including when phi is an arbitrary original square-integrable function.
+The two endpoints do not require a pointwise derivative claim.
+
+G.1 still requires construction and convergence of the actual L2 first Born
+operator and passage of the Hermitian estimate, including its square integral
+in time and the literal coefficient A*exp(A). The L2 integral-equation gap
+is now closed. The required p>2 spectral height and optional original m=1
+sharpening remain unresolved; the accepted Lemma 27.2 correction is unchanged.
+
+Focused checks passed for a discontinuous two-component
+step potential, a directly computed coefficient integral checking both
+coupling signs, its actual integral and differential equations, zero time,
+coupled convergence of potentials and curves, and invariance under changes
+on null sets. The full build passed (6492 jobs), all public examples passed,
+and the axiom audit passed for 26265 NLS declarations. The same 21 existing
+warnings remain, with no new warnings. The 156 candidate source labels were
+verified.
+
+## Previous milestone: uniform solution extension to physical L2 potentials
 
 The continuous-potential solution now extends to every original physical
 L2 class as an approximation-independent uniform limit. The class embedding
@@ -85,13 +121,13 @@ all public examples passed, and the axiom audit passed for 26193 NLS
 declarations. The same 21 pre-existing warnings remain, with no new warnings.
 The 156 candidate source labels were verified.
 
-Next, use the original `intervalL2Representative` and its MemLp theorem to
-prove integrability of the coefficient times the extended continuous curve.
-Pass the classical Volterra identity using L2 convergence of coefficients
-and uniform convergence of curves. Then define the actual L2 first Born
-operator, prove its uniform convergence under continuous approximation,
-and pass the weighted Hermitian estimate and its square integral. Preserve
-the coefficient A*exp(A) and recover the existing continuous definitions.
+Next, define the actual first Born operator for arbitrary physical L2
+potentials and identify it with the existing classical first Born operator
+on continuous classes. Prove convergence uniformly in time under L2
+approximation, then pass the weighted Hermitian remainder inequality and
+its square integral in time. Preserve the coefficient A*exp(A) exactly.
+The original integral and a.e. differential equations are now available;
+no pointwise convergence of L2 representatives should be assumed.
 
 For stability at fixed spectral parameter, a bound involving norm(z) is
 sufficient and does not alter the sharp G.1 estimate already proved. Apply

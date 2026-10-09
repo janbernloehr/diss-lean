@@ -507,7 +507,7 @@ G.1 is not yet counted as complete.
 | Actual operator identification | `classicalHermitianRemainderOperator_eq_matrix`, `classicalHermitianFirstBornOperator_eq_matrix` | Operators are precisely M-E and the actual first Born matrix. |
 | True induced operator norm | `classicalHermitianOperator_le_L2_firstBorn` | All initial vectors are bounded before taking the operator norm; exact A*exp(A) coefficient and actual first Born L2 time integral. |
 | Exact first Born formula | `classicalNormalizedHermitianFirstBorn_eq` | The off-diagonal operator norm is the maximum of the oscillatory integral magnitudes. |
-| Arbitrary L2 potentials | Partial; see next stage | Density, stability, and the uniform extension are proved. The integral identity and passage of G.1 are still required. |
+| Arbitrary L2 potentials | Partial; see next stage | Density, stability, and the uniform extension are proved. The original integral and a.e. differential equations are proved below; passage of G.1 is still required. |
 
 The Hermitian convention is explicit on printed page 7 of the related
 author preprint [arXiv:0907.3938](https://arxiv.org/pdf/0907.3938). The 2014
@@ -528,10 +528,29 @@ place of the printed coefficient.
 | Approximation independence | `tendsto_solutionCurve_of_tendsto_L2` | Every approaching family, along any filter, has the same uniform limit. |
 | Exact recovery and normalization | `l2SolutionCurve_of_continuous`, `l2SolutionCurve_zero`, `l2SolutionCurve_free`, `l2SolutionCurve_zero_initial` | Entire classical curves, arbitrary initial values, zero initial vector, signed free solution. |
 | L2 growth bound | `norm_l2SolutionCurve_le` | Uniform curve norm bounded by ||v|| exp(||z||+||u||_2). |
-| Original L2 integral equation and G.1 | Still open | Must identify the limit as a solution of the original integral equation, construct its actual first Born operator, and pass the Hermitian estimate. |
+| Original L2 equation and G.1 | Partial; see next stage | The original integral and a.e. differential equations are proved. The first Born operator and passage of the Hermitian estimate remain. |
 
-The extension currently denotes a proved uniform limit of actual classical
-solutions. Its defining convergence alone is not counted as a proof of the
-L2 differential or integral equation. Public checks include a discontinuous
+The uniform-limit construction is now supplemented by the actual integral
+and a.e. differential equations in the next stage. Its defining convergence
+alone was not counted as proof of those equations. Public checks include a discontinuous
 step potential through `intervalL2OfFunction`, distinct approaching
 sequences, both potential coordinates, and the free frequency signs.
+
+### Lemma G.1: the original equation for arbitrary physical L2 potentials
+
+| Requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Actual scalar integral pairing | `intervalL2_integral_mul_eq_inner`, `continuous_intervalL2_integral_mul` | Ordinary representative-based integrals on [0,t]; joint continuity in L2 and uniform norms via an exact Hilbert inner-product identity. |
+| Coefficient integrability | `intervalIntegrable_l2ODECoefficient` | Any physical L2 potential times any continuous vector curve. |
+| Continuity of the original vector integral | `continuous_l2ODEIntegral` | Both signed coordinates; potential and curve vary together, for every fixed complex z and t in [0,1]. |
+| Exact classical recovery | `classicalSolutionCurve_eq_l2ODEIntegral`, `l2ODEIntegral_of_continuous` | The actual previously constructed classical Volterra equation. |
+| Original L2 Volterra equation | `l2SolutionCurve_eq_integral`, `l2SolutionCurve_eq_integral_ofFunction` | The constructed L2 limit solves the original equation at every time, for every complex z and initial vector. |
+| Original differential equation | `ae_hasDerivAt_l2SolutionCurve` | Actual derivatives of the curve extension almost everywhere on the physical interval. |
+| Physical spectral equation | `ae_physicalOperator_l2SolutionCurve`, `ae_physicalOperator_l2SolutionCurve_ofFunction` | L_phi y = z y with actual coordinate derivatives and any original L2 representative. |
+| Full G.1 estimate | Still open | Construct the actual L2 first Born operator, prove its uniform convergence under approximation, and pass the Hermitian bound and square integral with the literal coefficient. |
+
+These results require neither pointwise convergence of L2 representatives
+nor a continuous representative of the potential. Public checks directly
+compute the signed coefficient integral for a discontinuous two-component
+step and instantiate both the original integral and differential equations.
+No claim of full dissertation completion follows from this milestone.

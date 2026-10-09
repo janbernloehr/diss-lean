@@ -38783,3 +38783,75 @@ example (z : ℂ) (v : ℂ × ℂ) :
       ⟨0,by constructor <;> norm_num⟩ = v := by simp
 
 end AppendixGL2ExtensionChecks
+
+
+open Set MeasureTheory Filter Topology
+open NLS.LinearVolterra NLS.ZakharovShabat
+namespace AppendixGL2EquationChecks
+
+-- A jump in both potential coordinates, with no endpoint matching assumption.
+private noncomputable def stepPotential (s : ℝ) : ℂ × ℂ :=
+  (Ioc (0:ℝ) (1/2)).indicator (fun _ => ((1:ℂ),1)) s
+
+private theorem stepPotential_memLp :
+    MemLp stepPotential 2 (volume.restrict (Ioc (0:ℝ) 1)) :=
+  (memLp_const ((1:ℂ),1)).indicator measurableSet_Ioc
+
+-- Direct computation of the actual coefficient integral checks both coupling signs.
+example : l2ODEIntegral (intervalL2OfFunction stepPotential stepPotential_memLp) 0
+    (ContinuousMap.const _ (1,1)) ⟨1,by constructor <;> norm_num⟩ =
+      (Complex.I/2,-Complex.I/2) := by
+  rw [l2ODEIntegral_ofFunction]
+  have he : (fun s => classicalODECoefficient (stepPotential s) 0
+      (NLS.LinearVolterra.extend (ContinuousMap.const _ (1,1)) s)) =
+      (Ioc (0:ℝ) (1/2)).indicator (fun _ => (Complex.I,-Complex.I)) := by
+    funext s
+    by_cases hs : s ∈ Ioc (0:ℝ) (1/2)
+    · simp only [stepPotential,indicator_of_mem hs]
+      simp [NLS.LinearVolterra.extend]
+    · simp only [stepPotential,indicator_of_notMem hs]
+      simp [NLS.LinearVolterra.extend]
+  rw [he,intervalIntegral.integral_of_le (by norm_num),MeasureTheory.integral_indicator measurableSet_Ioc,
+    Measure.restrict_restrict measurableSet_Ioc]
+  rw [inter_eq_self_of_subset_left (Ioc_subset_Ioc_right (by norm_num : (1:ℝ)/2 ≤ 1))]
+  norm_num [measureReal_def,smul_eq_mul]
+  constructor <;> ring
+
+-- The solution of that discontinuous potential obeys the original integral equation.
+example (z : ℂ) (v : ℂ × ℂ) (t : Icc (0:ℝ) 1) :
+    l2SolutionCurve (intervalL2OfFunction stepPotential stepPotential_memLp) z v t =
+      v+∫ s in (0:ℝ)..t.val, classicalODECoefficient (stepPotential s) z
+        (NLS.LinearVolterra.extend (l2SolutionCurve (intervalL2OfFunction stepPotential stepPotential_memLp) z v) s) :=
+  l2SolutionCurve_eq_integral_ofFunction stepPotential stepPotential_memLp z v t
+
+-- The actual differential expression, with coordinate derivatives, equals z times the solution.
+example (z : ℂ) (v : ℂ × ℂ) :
+    physicalOperator stepPotential
+      (NLS.LinearVolterra.extend (l2SolutionCurve (intervalL2OfFunction stepPotential stepPotential_memLp) z v))
+    =ᵐ[volume.restrict (Ioc (0:ℝ) 1)]
+      (fun s => z • NLS.LinearVolterra.extend
+        (l2SolutionCurve (intervalL2OfFunction stepPotential stepPotential_memLp) z v) s) :=
+  ae_physicalOperator_l2SolutionCurve_ofFunction stepPotential stepPotential_memLp z v
+
+-- Coupled convergence of potentials and curves passes the actual integral to the limit.
+example (p : ℕ → IntervalPairL2 × Curve (ℂ × ℂ))
+    (p₀ : IntervalPairL2 × Curve (ℂ × ℂ)) (z : ℂ) (t : Icc (0:ℝ) 1)
+    (hp : Tendsto p atTop (𝓝 p₀)) :
+    Tendsto ((fun q : IntervalPairL2 × Curve (ℂ × ℂ) => l2ODEIntegral q.1 z q.2 t) ∘ p)
+      atTop (𝓝 (l2ODEIntegral p₀.1 z p₀.2 t)) :=
+  ((continuous_l2ODEIntegral z t).tendsto p₀).comp hp
+
+-- Zero time retains the prescribed initial vector for this same representative-based equation.
+example (u : IntervalPairL2) (z : ℂ) (w : Curve (ℂ × ℂ)) :
+    l2ODEIntegral u z w ⟨0,by constructor <;> norm_num⟩ = 0 := by
+  simp [l2ODEIntegral]
+
+-- Changes on null sets give the exact same entire solution curve.
+example (φ ψ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc (0:ℝ) 1)))
+    (hψ : MemLp ψ 2 (volume.restrict (Ioc (0:ℝ) 1)))
+    (h : φ =ᵐ[volume.restrict (Ioc (0:ℝ) 1)] ψ) (z : ℂ) (v : ℂ × ℂ) :
+    l2SolutionCurve (intervalL2OfFunction φ hφ) z v =
+      l2SolutionCurve (intervalL2OfFunction ψ hψ) z v := by
+  rw [(intervalL2OfFunction_eq_iff φ ψ hφ hψ).mpr h]
+
+end AppendixGL2EquationChecks

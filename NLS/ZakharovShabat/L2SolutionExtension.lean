@@ -6,7 +6,8 @@ import NLS.ZakharovShabat.ContinuousPotentialL2Density
 Density and uniform stability prove convergence in the complete space of
 continuous solution curves. The limit is taken over all continuous potentials
 approaching a given physical L2 class, not over a selected approximation.
-The original Volterra identity and G.1 limit passage are separate next steps.
+The original Volterra identity is proved in `L2VolterraEquation`. Passage
+of the Hermitian G.1 estimate remains a separate step.
 -/
 noncomputable section
 open Set Metric Filter Topology MeasureTheory

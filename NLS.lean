@@ -3060,3 +3060,6 @@ import NLS.ZakharovShabat.ContinuousPotentialL2Class
 import NLS.ZakharovShabat.ContinuousPotentialL2Density
 import NLS.ZakharovShabat.ClassicalL2Stability
 import NLS.ZakharovShabat.L2SolutionExtension
+import NLS.ZakharovShabat.PhysicalL2IntegralPairing
+import NLS.ZakharovShabat.L2VolterraEquation
+import NLS.ZakharovShabat.L2SolutionDifferentialEquation
