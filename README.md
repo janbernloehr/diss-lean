@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Proposition I.4 now follows from real-analytic germs on
-the original weighted real sequence spaces. Holomorphic extensions and
-compatibility of their derivatives are constructed, giving both real
-inverse identities and an open dense inverse locus from one real starting
-inverse. This covers every positive weight, finite Banach exponent, and
-real Sobolev order, including cone boundary points. G.2's arbitrary-time
-local norm and the required spectral height above p=2 remain open.
+Latest milestone: an arbitrary-interval G.2 estimate is proved in the
+explicit integral H1 norm, with its interval-length factor. A family of
+smooth constant potentials proves that inverse-square-root growth at short
+times is necessary, with the same leading coefficient as the new bound.
+This remains a correction candidate: the printed statement's interval norm
+is unresolved. I.4 now follows from actual real-analytic germs. The required
+spectral height above p=2 also remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

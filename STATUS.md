@@ -1,6 +1,55 @@
 # Implementation status
 
-## Current milestone: I.4 from real-analytic germs
+## Current milestone: G.2 interval-length dependence
+
+The arbitrary-time G.2 gap is now quantified in the explicit unnormalized
+integral H1 norm. For every positive interval length T and every t in [0,T],
+`intervalHermitianFirstBornOperator_weighted_le_interval_H1` proves
+
+    exp(-|Im z| t) ||F(t,z)|| <= sqrt(1/T+T)/|z| * ||phi||_{H1[0,T]}.
+
+The actual first Born operator and its Hermitian induced norm are retained.
+The input components are absolutely continuous with square-integrable
+derivatives; no periodic endpoint conditions, supremum-norm premises, or
+continuous derivative assumptions are added. The local version takes T=t
+and also proves the zero-time case directly.
+
+`IntervalH1LengthBound.lean` first bounds both traces and the variation
+uniformly on [0,T] by sampling and averaging. Cauchy--Schwarz gives the
+explicit factor 2*sqrt(1/T+T) in the trace numerator.
+`IntervalH1LengthOperatorBound.lean` transfers this to the scalar oscillatory
+integral and actual Born operator. At T=1 the numerator is 2*sqrt(2)<=3,
+consistent with the previously proved unit-interval G.2 consequence.
+
+`LemmaG2LengthNecessity.lean` uses the same smooth period-one constant
+potential (1,0), now at every t>0 and frequency pi/(2t). Its local norm is
+sqrt(t), and its actual first Born norm is exactly 2t/pi. Consequently any
+bound with numerator B(t) over 2|z| requires B(t)>=2/sqrt(t). No fixed
+numerator works on all positive intervals, even for this one potential.
+The ratio of the sufficient numerator to this lower bound is exactly
+sqrt(1+t^2), and its right-hand limit at zero is one. Thus the leading
+short-time coefficient is sharp, not only its growth order.
+
+This is a concrete correction candidate under the integral convention.
+It is not a silent replacement of the printed coefficient 2+sqrt(t), and
+does not identify the dissertation's unspecified interval norm with this
+convention. That source interpretation remains unresolved pending a norm
+decision or additional source evidence. The cited 2014 book's publisher
+page requires a subscription; its norm convention has not been inferred
+from the accessible metadata. The already proved unit-interval estimate
+in the exact periodic Fourier norm remains valid.
+
+The required p>2 spectral height and the optional original m=1 sharpening
+remain unresolved. I.4's real-analytic bridge is complete. The dissertation
+as a whole is incomplete.
+
+Validation: focused modules, standalone examples, and the full project
+check passed: 6,580 build jobs, all public examples, and the axiom audit
+of 27,390 NLS declarations. The 21 existing warnings are unchanged, with
+none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: I.4 from real-analytic germs
 
 I.4 now starts from real-analytic germs on the actual weighted real sequence
 space. `SourcePropositionI4RealAnalytic.lean` proves that one real local

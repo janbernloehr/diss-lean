@@ -1021,3 +1021,24 @@ G.2's arbitrary-time local norm and the required p>2 spectral height remain
 open; the original unrestricted m=1 sharpening remains optional and
 unresolved. The dissertation is incomplete, and statement counts do not
 certify completeness.
+
+
+### Lemma G.2: arbitrary-length integral-norm bound and necessary scaling
+
+| Requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Length-dependent trace bound | `endpoint_variation_le_sample_interval`, `endpoint_variation_le_integrals_interval`, `endpoint_variation_le_length_H1` | Every T>0 and t in [0,T]; combined endpoints and variation bounded by 2*sqrt(1/T+T) times the integral H1 norm. |
+| Actual all-time Born bound | `intervalHermitianFirstBornOperator_weighted_le_interval_H1`, `intervalHermitianFirstBornOperator_weighted_le_local_H1` | Original Hermitian operator, arbitrary nonzero complex frequency, all finite nonnegative times; local version uses T=t and handles zero separately. |
+| Exact constant family | `g2IntegralNormTestPotential_norm_length`, `oscillatoryIntegral_const_half_phase`, `g2IntegralNormTestPotential_firstBorn_length` | Smooth period-one (1,0), every t>0, frequency pi/(2t), norm sqrt(t), actual Born norm 2t/pi. |
+| Necessary length dependence | `lemmaG2_integralNorm_length_necessary`, `lemmaG2_integralNorm_no_uniform_numerator` | Any bound B(t)/(2|z|) in the integral norm requires B(t)>=2/sqrt(t); no fixed numerator suffices. |
+| Sharp leading short-time coefficient | `intervalH1_length_factor_normalized`, `tendsto_intervalH1_length_factor_normalized` | Ratio of the sufficient numerator to the necessary lower bound equals sqrt(1+t^2) and tends to one from the right at zero. |
+| Public checks | `AppendixG2LengthChecks` | Full interval theorem, arbitrary-length constant inputs, affine input on [0,4], zero time, exact values, the impossibility theorem, normalized limit, and the unit-length coefficient comparison. |
+
+The integral H1 norm is exactly the previously defined integral energy,
+with no length normalization. This entry supplies an explicit correction
+candidate, not a proof of the printed coefficient under an unspecified
+norm convention. The printed arbitrary-time G.2 interpretation remains
+unresolved. The exact periodic-norm unit-interval theorem remains valid;
+the required p>2 spectral height and optional original m=1 sharpening also
+retain their status. None of these counts or examples certify completion
+of the dissertation.

@@ -40469,3 +40469,82 @@ example (w : Weight) (c : WeightedRealCoeff w 1) :
     isOpen_univ hconn (fun x _ => realQuadratic_compact w c x) ⟨_,realQuadratic_zero_mem w c⟩
 
 end AppendixI4RealAnalyticChecks
+
+
+noncomputable section
+open Set MeasureTheory Filter Topology intervalIntegral
+open NLS.ComplexAnalysis NLS.ZakharovShabat
+namespace AppendixG2LengthChecks
+
+-- Uniform over every point in every positive finite interval.
+example (T : ℝ) (hT : 0 < T) (φ : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 T)))
+    (hf : AbsolutelyContinuousOnInterval (fun s => (φ s).1) 0 T)
+    (hg : AbsolutelyContinuousOnInterval (fun s => (φ s).2) 0 T)
+    (hdf : MemLp (deriv (fun s => (φ s).1)) 2 (volume.restrict (Ioc 0 T)))
+    (hdg : MemLp (deriv (fun s => (φ s).2)) 2 (volume.restrict (Ioc 0 T)))
+    (z : ℂ) (hz : z ≠ 0) (t : Icc (0 : ℝ) T) :
+    Real.exp (-(|z.im| * t.val))*‖intervalHermitianFirstBornOperator φ z t‖ ≤
+      Real.sqrt (T⁻¹+T)/‖z‖*intervalPairH1Norm φ T :=
+  intervalHermitianFirstBornOperator_weighted_le_interval_H1 T hT φ hφ hf hg hdf hdg z hz t
+
+-- The fixed smooth periodic example is admissible at every positive length.
+example (T : ℝ) (hT : 0 < T) (z : ℂ) (hz : z ≠ 0) (t : Icc (0 : ℝ) T) :
+    Real.exp (-(|z.im| * t.val))*‖intervalHermitianFirstBornOperator g2IntegralNormTestPotential z t‖ ≤
+      Real.sqrt (T⁻¹+T)/‖z‖*Real.sqrt T := by
+  have h := intervalHermitianFirstBornOperator_weighted_le_interval_H1 T hT
+    g2IntegralNormTestPotential (memLp_const _)
+    contDiff_const.contDiffOn.absolutelyContinuousOnInterval
+    contDiff_const.contDiffOn.absolutelyContinuousOnInterval
+    (by simp [g2IntegralNormTestPotential]) (by simp [g2IntegralNormTestPotential]) z hz t
+  simpa only [g2IntegralNormTestPotential_norm_length T hT.le] using h
+
+-- A nonconstant function on [0,4], uniformly at all intermediate times.
+example (t : Icc (0 : ℝ) 4) :
+    ‖((0 : ℝ) : ℂ)‖+‖(t.val : ℂ)‖+(∫ s in 0..t.val, ‖deriv (fun r : ℝ => (r : ℂ)) s‖) ≤
+      2*Real.sqrt ((4 : ℝ)⁻¹+4)*intervalH1Norm (fun s : ℝ => (s : ℂ)) 4 := by
+  apply endpoint_variation_le_length_H1 _ 4 (by norm_num)
+  · exact Complex.ofRealCLM.contDiff.contDiffOn.absolutelyContinuousOnInterval
+  · exact (memLp_two_iff_integrable_sq_norm Complex.continuous_ofReal.aestronglyMeasurable).mpr
+      ((Complex.continuous_ofReal.norm.pow 2).intervalIntegrable 0 4).1
+  · have hd : deriv (fun s : ℝ => (s : ℂ)) = fun _ => (1 : ℂ) := by
+      funext s
+      exact Complex.ofRealCLM.hasDerivAt.deriv
+    rw [hd]
+    exact memLp_const 1
+
+-- The local endpoint theorem also includes the zero-length interval.
+example (z : ℂ) (hz : z ≠ 0) :
+    Real.exp (-(|z.im| * 0))*‖intervalHermitianFirstBornOperator g2IntegralNormTestPotential z 0‖ ≤
+      Real.sqrt ((0 : ℝ)⁻¹+0)/‖z‖*intervalPairH1Norm g2IntegralNormTestPotential 0 := by
+  apply intervalHermitianFirstBornOperator_weighted_le_local_H1 0 le_rfl
+  · exact memLp_const _
+  · exact contDiff_const.contDiffOn.absolutelyContinuousOnInterval
+  · exact contDiff_const.contDiffOn.absolutelyContinuousOnInterval
+  · simp [g2IntegralNormTestPotential]
+  · simp [g2IntegralNormTestPotential]
+  · exact hz
+
+-- Exact norm, exact actual operator value, and necessary coefficient for every t>0.
+example (t : ℝ) (ht : 0 < t) :
+    intervalPairH1Norm g2IntegralNormTestPotential t = Real.sqrt t ∧
+    Real.exp (-(|((Real.pi/(2*t) : ℝ) : ℂ).im| * t))*
+      ‖intervalHermitianFirstBornOperator g2IntegralNormTestPotential (Real.pi/(2*t) : ℝ) t‖ =
+        2*t/Real.pi :=
+  ⟨g2IntegralNormTestPotential_norm_length t ht.le,g2IntegralNormTestPotential_firstBorn_length t ht⟩
+
+example : ¬ ∃ B : ℝ, ∀ t : ℝ, 0 < t →
+    Real.exp (-(|((Real.pi/(2*t) : ℝ) : ℂ).im| * t))*
+      ‖intervalHermitianFirstBornOperator g2IntegralNormTestPotential (Real.pi/(2*t) : ℝ) t‖ ≤
+        B/(2*‖((Real.pi/(2*t) : ℝ) : ℂ)‖)*intervalPairH1Norm g2IntegralNormTestPotential t :=
+  lemmaG2_integralNorm_no_uniform_numerator
+
+example : Tendsto (fun t : ℝ => Real.sqrt (t⁻¹+t)*Real.sqrt t)
+    (𝓝[>] 0) (𝓝 1) := tendsto_intervalH1_length_factor_normalized
+
+-- At length one, the new coefficient is no larger than the printed numerator three.
+example : 2*Real.sqrt ((1 : ℝ)⁻¹+1) ≤ 3 := by
+  norm_num
+  nlinarith [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 2)]
+
+end AppendixG2LengthChecks

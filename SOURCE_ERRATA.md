@@ -310,6 +310,32 @@ Chapter 5's exact periodic Fourier norm by `sourceLemmaG2_remainder_unit`,
 using a constant-one comparison with the integral norm. That theorem does
 not select a norm convention for the arbitrary-time local statement.
 
+The new arbitrary-length calculation makes the obstruction quantitative.
+For every t>0, the same potential at the real frequency z=pi/(2t) has local
+integral norm sqrt(t) and actual weighted first Born norm 2t/pi. Therefore
+any estimate B(t)/(2|z|) times this integral norm must have
+B(t)>=2/sqrt(t). `lemmaG2_integralNorm_length_necessary` proves this, and
+`lemmaG2_integralNorm_no_uniform_numerator` rules out a fixed numerator.
+
+A proved correction candidate is now available:
+
+    ||F(t,z)||_z <= sqrt(1/t+t)/|z| * ||phi||_{H1[0,t]},  t>0.
+
+More generally, the same coefficient with t replaced by T bounds every
+intermediate time in [0,T]. The zero-time operator vanishes.
+`intervalHermitianFirstBornOperator_weighted_le_local_H1` and
+`intervalHermitianFirstBornOperator_weighted_le_interval_H1` prove these
+statements for genuine AC/H1 inputs in the Hermitian operator norm.
+The sufficient numerator 2*sqrt(1/t+t) divided by the necessary 2/sqrt(t)
+is sqrt(1+t^2), with right-hand limit one at zero; both the identity and
+limit are proved. No finite-time optimality claim is made.
+
+This correction has not been adopted as the source's intended statement.
+The interval norm convention remains unresolved. The publisher's
+[2014 reference page](https://ems.press/books/elm/205) requires a subscription;
+its accessible metadata supplies no norm definition. The separate verified
+unit-interval consequence remains unchanged.
+
 ## The proof of Lemma F.2: a common-path coefficient and a real majorant
 
 Source: dissertation, printed page 134, visually checked in the PDF.
