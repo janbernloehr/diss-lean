@@ -40937,3 +40937,64 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
   not_every_complex_finiteGap_source_smooth hp hp1
 
 end ComplexFiniteGapRegularityChecks
+
+namespace SpatialTranslationChecks
+
+-- The domain conjugacy includes the endpoint exponent one.
+example (t : ℝ) (φ : PairSpace 1) (z : ℂ) (f : Domain 1) :
+    spectralPencil (by simp) (pairSpatialTranslation t φ) z (domainSpatialTranslation t f) =
+      pairSpatialTranslation t (spectralPencil (by simp) φ z f) :=
+  spectralPencil_spatialTranslation (by simp) t φ z f
+
+-- Root chains, not only eigenvectors, survive at every finite exponent.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤)
+    (t : ℝ) (φ : PairSpace p) (z : ℂ) (n : ℕ) (x : PairSpace p) :
+    pairSpatialTranslation t x ∈ periodicRootSpace hp (pairSpatialTranslation t φ) z n ↔
+      x ∈ periodicRootSpace hp φ z n :=
+  mem_periodicRootSpace_spatialTranslation hp t φ z n x
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (t : ℝ) (φ : CoeffPair p) :
+    ‖sourceSpatialTranslation t φ‖ = ‖φ‖ := (sourceSpatialTranslation t).norm_map φ
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) :
+    Continuous (fun x : ℝ × CoeffPair p => sourceSpatialTranslation x.1 x.2) :=
+  continuous_sourceSpatialTranslation hp
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (t : ℝ) (φ : CoeffPair p) :
+    sourceSpatialTranslation (-t) (sourceSpatialTranslation t φ) = φ := by
+  rw [sourceSpatialTranslation_add, neg_add_cancel, sourceSpatialTranslation_zero]
+
+example (t : ℝ) (φ : CoeffPair 2) (z : ℂ) :
+    periodicAlgebraicMultiplicity (by simp) (periodOnePotential (sourceSpatialTranslation t φ)) z =
+      periodicAlgebraicMultiplicity (by simp) (periodOnePotential φ) z :=
+  sourcePeriodicAlgebraicMultiplicity_spatialTranslation (by simp) t φ z
+
+-- The index is unchanged, including central gaps and negative indices.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (t : ℝ) (φ : CoeffPair p) (n : ℤ) :
+    canonicalPeriodicGap hp hp1 (periodOnePotential (sourceSpatialTranslation t φ))
+        (periodOnePotential_mem _) n =
+      canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n :=
+  sourceCanonicalPeriodicGap_spatialTranslation hp hp1 t φ n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (t : ℝ) (φ : realTypeSourceLocus p) (hφ : φ ∈ sourceFiniteGapLocus hp hp1) :
+    (⟨sourceSpatialTranslation t φ.val, sourceSpatialTranslation_realType t φ.val φ.property⟩ :
+      realTypeSourceLocus p) ∈ sourceFiniteGapLocus hp hp1 :=
+  sourceSpatialTranslation_mem_sourceFiniteGapLocus hp hp1 t φ hφ
+
+-- These physical checks fix both the spatial sign and the period-one scale.
+example (a : Coeff 1) (x t : ℝ) :
+    Fourier.periodOneSynthesis (Coeff.spatialTranslation (2*Real.pi) t a) x =
+      Fourier.periodOneSynthesis a (x+t) :=
+  Fourier.periodOneSynthesis_spatialTranslation t a x
+
+example (a : Coeff 1) (t : ℝ) :
+    Fourier.periodOneCoefficient (fun x => Fourier.periodOneSynthesis a (x+t)) (-1) =
+      Complex.exp (-(2*Real.pi*t : ℝ)*Complex.I)*a (-1) := by
+  rw [Fourier.periodOneCoefficient_translated_synthesis]
+  congr 2
+  push_cast
+  ring
+
+end SpatialTranslationChecks

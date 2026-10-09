@@ -3167,3 +3167,8 @@ import NLS.ZakharovShabat.SourceBoundaryExplicitHeight
 import NLS.ZakharovShabat.SourceBoundaryHeightNecessity
 import NLS.ZakharovShabat.TriangularPeriodicSpectrum
 import NLS.ZakharovShabat.ComplexFiniteGapRegularityCounterexample
+import NLS.SequenceSpaces.SpatialTranslation
+import NLS.Fourier.SpatialTranslation
+import NLS.ZakharovShabat.SpatialTranslation
+import NLS.ZakharovShabat.PeriodicTranslation
+import NLS.ZakharovShabat.SourceSpatialTranslation

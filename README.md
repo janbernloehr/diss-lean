@@ -5,15 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lean refutes the unrestricted complex reading of the
-finite-gap regularity sentence on p. 21. The source `(u,0)` with
-`u_n=1/(1+|n|)` has free periodic spectrum and finitely many nonzero
-canonical gaps, but no smooth or real-analytic periodic representative.
-The example is not of real type. Real-type finite-gap smoothness and
-density remain proved; real-type spatial real analyticity remains open.
-The printed periodic height above p=4 and G.2's norm are also unresolved.
-The proposed all-p boundary-height correction is recorded separately
-from the refuted printed formula.
+Latest milestone: spatial translation preserves the original periodic
+operator's generalized eigenspaces, algebraic multiplicities, and spectrum.
+In the period-one source space it preserves the norm, real type, and every
+canonical indexed gap, with the physical action verified as `f(x+t)`.
+This supplies the translation-invariance step toward real-type finite-gap
+spatial analyticity; that regularity proof remains unfinished. The
+unrestricted complex regularity sentence remains refuted. The printed
+periodic height above p=4 and G.2's norm remain unresolved; the proposed
+all-p boundary-height correction remains separate from the printed formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

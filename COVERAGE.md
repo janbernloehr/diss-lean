@@ -1179,3 +1179,25 @@ Validation: the full project check passed (6596 build jobs), including all
 public examples and the axiom audit of 27550 NLS declarations. There are
 21 existing warnings and no new warnings. The source inventory check
 passed with 156 labels. Counts do not certify completeness.
+
+
+### Spatial translation: prerequisite for real-type finite-gap analyticity
+
+| Requirement | Public evidence | Verified scope |
+| --- | --- | --- |
+| Translation in the original norms | `Coeff.spatialTranslation`, `WeightedCoeff.spatialTranslation`, `sourceSpatialTranslation`, `continuous_sourceSpatialTranslation` | Isometric equivalences, source group law, and joint continuity at every finite exponent. |
+| Actual domain-to-base operator conjugacy | `domainInclusion_spatialTranslation`, `potentialMul_spatialTranslation`, `spectralPencil_spatialTranslation` | Original one-derivative domain and convolution, including p=1. |
+| Full intrinsic spectral data | `mem_periodicRootSpace_spatialTranslation`, `periodicRootSpaceTopTranslationEquiv`, `periodicAlgebraicMultiplicity_spatialTranslation`, `periodicSpectrum_spatialTranslation` | All chain lengths, actual multiplicities, and the entire periodic spectral set. |
+| Source normalization and indexing | `periodOnePotential_spatialTranslation`, `sourceCanonicalPeriodicEndpoints_spatialTranslation`, `sourceCanonicalPeriodicGap_spatialTranslation` | Original period-one coefficients and both complete canonical endpoint sequences; every finite p>1, with no index shift. |
+| Real finite-gap translation orbit | `sourceSpatialTranslation_realType`, `sourceSpatialTranslation_closedGapTail`, `sourceSpatialTranslation_mem_sourceFiniteGapLocus` | Real type and exactly the same closed-gap cutoff survive every real displacement. |
+| Physical spatial sign and scale | `Fourier.continuousSynthesis_spatialTranslation`, `Fourier.periodOneSynthesis_spatialTranslation`, `Fourier.periodOneCoefficient_translated_synthesis` | The action is f(x+t), in both periods, for arbitrary absolutely summable coefficients. |
+
+Real-type spatial analyticity remains unproved. The translation lemmas
+supply a fixed-gap-tail curve for the existing local inverse construction;
+they do not assume or conclude exponential coefficient decay. The complex
+counterexample and the other unresolved source obligations are unchanged.
+
+Validation: the full project check passed (6601 build jobs), including all
+public examples and the axiom audit of 27610 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.

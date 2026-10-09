@@ -1,6 +1,71 @@
 # Implementation plan
 
-## Latest progress: complex finite-gap regularity requires a qualification
+## Latest progress: spatial translation preserves the actual indexed gaps
+
+Spatial translation now preserves the actual periodic spectral data in
+Lean. The proof works on the original one-derivative operator domain:
+translation intertwines `z-L`, identifies every finite root chain and the
+full generalized root space, and preserves algebraic multiplicities and
+the entire periodic spectral set at every finite Banach exponent.
+
+The period-one source action is an isometric group in the original
+component-sum norm and is jointly continuous at finite exponents. Its
+embedding agrees exactly with period-two operator translation. At every
+finite p>1, both complete canonical endpoint sequences and every indexed
+gap are unchanged. No relabeling or larger cutoff is needed. Real type
+is preserved, so each real finite-gap source remains in the same
+closed-gap-tail locus throughout its translation orbit.
+
+The physical normalization is checked separately: for absolutely
+summable coefficients the action synthesizes to `f(x+t)` in both period
+conventions, and the actual period-one Fourier integrals have precisely
+the expected phase. These identities do not assume finite Fourier support.
+
+Public modules: `SequenceSpaces/SpatialTranslation.lean`,
+`Fourier/SpatialTranslation.lean`, and `ZakharovShabat/SpatialTranslation.lean`,
+`PeriodicTranslation.lean`, `SourceSpatialTranslation.lean`, all under `NLS/`.
+
+This is a prerequisite for real-type finite-gap spatial analyticity,
+not a proof of analyticity itself. The existing weighted inverse proof
+already reconstructs nearby fixed-gap-tail sources from finitely many
+coefficients; translation now supplies a continuous curve with exactly
+that same gap tail. The finite-dimensional analytic reconstruction and
+physical analytic evaluation are the next obligations.
+
+The unrestricted complex regularity sentence remains refuted. The
+printed periodic height above four, G.2's original interval norm, and
+the optional original m=1 sharpening remain unresolved. The proposed
+all-p boundary-height correction remains separate from the refuted
+printed formula. The dissertation remains incomplete.
+
+Validation: the full project check passed (6601 build jobs), including all
+public examples and the axiom audit of 27610 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+Next: expose the finite-dimensional factorization already constructed
+inside `exists_analyticAt_sourceFiniteGap_weightedLift`: for a sufficiently
+large N, its lift is `g (normalizedWeightedTruncateCLM w N psi)`, with g
+analytic at the base target. Preserve the existing lift theorem as a
+wrapper. Prove the truncated translation target is analytic in time
+using its finite Fourier sum. The current translation invariance then
+identifies the decoded analytic lift with the original translated source
+on a real neighborhood.
+
+A fixed sufficiently strong Sobolev weight may suffice: compose the
+analytic weighted lift with bounded Fourier synthesis/evaluation, then
+use `periodOneSynthesis_spatialTranslation` to identify the result with
+the original physical representative. This route would prove spatial
+real analyticity without first constructing exponential weights or
+proving covariance of the adapted closing map. A concrete weight to try
+is `SpectralWeight.scaledSobolev (1/2) 1`: its value at the embedded
+index 2n is exactly `Weight.sobolev 1 n`. The existing
+`WeightedCoeff.sobolevToL1CLM` and `Fourier.continuousSynthesisCLM`
+then provide the bounded evaluation route. The analytic factorization,
+weighted evaluation, and final identity still need proofs. Retain the
+original coefficients and every finite source exponent above one.
+
+## Previous milestone: complex finite-gap regularity requires a qualification
 
 The unqualified finite-gap regularity sentence on printed p. 21 is now
 refuted for complex sources. For every finite p>1, the source `(u,0)`

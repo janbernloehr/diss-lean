@@ -48,7 +48,11 @@ finite-gap regularity. `SourceFiniteGapSmoothRealization.lean` already
 proves the coefficient-preserving smooth realization for real-type
 finite-gap sources, and Corollary 1.6's real-type density remains valid.
 The real-type spatial real-analyticity claim is still a separate required
-proof. The free periodic spectrum here also gives no counterexample to
+proof. `SourceSpatialTranslation.lean` now proves that every real spatial
+translation preserves the exact canonical gap sequence and the same
+closed-gap cutoff. The phase action is verified to synthesize to `f(x+t)`;
+its continuity and spectral invariance are prerequisites, not a completed
+analyticity proof. The free periodic spectrum here also gives no counterexample to
 Theorem 1.1's unresolved printed height above four.
 
 ## Proposition I.4: reversed signs in the displayed Schur block
