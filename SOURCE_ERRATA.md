@@ -43,9 +43,16 @@ endpoint, where both sides equal one.
 
 The supported correction is upper e^- and lower e^+ in both displayed
 references, with the outer range restricted to finite 2<=p<infinity.
-Existing finite-p scalar gradient estimates use this actual free reference.
-Full matrix assembly and uniformity on the exact source-norm balls remain
-the next implementation step; this audit does not claim them complete.
+`SourceLemmaG5.lean` now proves both corrected finite-p assertions for the
+full gradient, uniformly on balls in the exact Chapter 5 source H1 norm.
+`classicalHermitianGradientError_eq_correctedReference` identifies the
+assembled operator with the actual gradient minus the explicit corrected
+reference, and `classicalHermitianCorrectedFreeGradientMatrix_lattice`
+checks the (-1)^n phase and signed waves in the second formula. The
+Fourier coefficients are actual gradient-valued Bochner integrals, using
+the induced operator norm from Hermitian potential directions to Hermitian
+matrix operators. This proves the corrected statement; it does not
+restore either refuted feature of the printed version.
 
 ## Lemma G.3: the epsilon range in the printed exponent
 

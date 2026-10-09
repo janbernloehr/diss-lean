@@ -5,7 +5,9 @@ import NLS.ZakharovShabat.ClassicalSobolevRemainderSequenceBounds
 
 Both actual gradient errors have uniform outer ℓp majorants whenever
 q > 1+1/p. In particular this applies to the conjugate exponent p′
-for every finite p > 1, and hence to G.5's entire finite range.
+for every finite p > 1, and hence to corrected G.5's entire finite range.
+The actual free reference has the upper minus and lower plus components;
+the two superscripts are swapped in the printed statement.
 -/
 
 noncomputable section

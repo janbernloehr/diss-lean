@@ -450,8 +450,8 @@ is i*pi*(n-m), including complex collapsed gaps and either endpoint choice.
 
 Focused checks cover p=3/2 and p=3, opposite signs between gaps -3 and 2,
 the vanishing same-gap integral, arbitrary predicates switching endpoint
-choices, admissible C1 paths, and the common domain. Appendix G is next for
-source-level audit; its existing implementation is not treated as automatic
+choices, admissible C1 paths, and the common domain. The Appendix G audits
+follow below; its existing implementation is not treated as automatic
 coverage of every printed statement. The required unresolved p>2 spectral
 height is unchanged.
 
@@ -675,7 +675,7 @@ actual operator norm (four for entries three and four), rather than the
 sum of entry norms. The source-ball domain is all complex H1 via the
 existing bijective coefficient identification, not just real sources.
 
-The full dissertation remains incomplete. G.4 is the next source audit;
+The full dissertation remains incomplete. The G.4 audit follows below;
 G.2's arbitrary-time local norm, the required p>2 spectral height, and the
 optional original m=1 sharpening retain their previously recorded status.
 
@@ -720,8 +720,34 @@ p>2 spectral-height, and optional original m=1 obligations remain open.
 The source formula needs the two off-diagonal superscripts exchanged.
 Even with this correction the printed outer p=infinity endpoint fails.
 The corrected finite-p full-gradient estimate on exact source-norm balls
-remains the next implementation step. Existing scalar-observation gradient
-estimates do not by themselves certify completion of that assembly.
+is now proved by the full assembly described below. This uses all eight
+scalar components and the actual gradient-valued Fourier integrals.
 See `SOURCE_ERRATA.md` for the literal formulas and proof discrepancy.
 These findings do not change the unresolved G.2 local-norm and required
 p>2 spectral-height obligations or the optional original m=1 sharpening.
+
+
+### Corrected G.5: full-gradient summability on exact source-norm balls
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Full gradient and actual coefficients | `classicalHermitianGradientFourierCoefficients_apply` | Actual Bochner Fourier integral of i times the gradient error; induced norm from Hermitian potential directions to Hermitian matrix operators. |
+| Corrected reference identification | `classicalHermitianGradientError_eq_correctedReference` | Exact matrix identity with the upper minus and lower plus component, for any complex source and both frequency arguments. |
+| Exact signed lattice reference | `classicalHermitianCorrectedFreeGradientMatrix_lattice` | (-1)^n phase, signed +/-2n waves, and arbitrary potential directions; negative indices included. |
+| First finite-p source assertion | `sourceLemmaG5_corrected` | Every finite p>=2, q=p/(p-1), eventual pi/4 displacement, one nonnegative lp majorant on each exact periodic source H1 ball. |
+| Second finite-p source assertion | `sourceLemmaG5_shifted_corrected` | Exact lattice reference and eventual O(1/abs(n)) displacement, with the same source-domain and uniformity scope. |
+| Generalized exponents | `sourceG5_gradient_uniform_majorant`, `sourceG5_shifted_gradient_uniform_majorant` | Every finite p>1 and q>1+1/p, including inner q=infinity; no outer p=infinity claim. |
+| Whole-sequence membership | `sourceG5_gradient_memlp`, `sourceG5_shifted_gradient_memlp`, and the corresponding `norms_memlp` theorems | Actual gradient-valued Fourier sequences and their full operator Fourier norms belong to outer lp, including arbitrary finite initial spectral values. |
+| Zero-source consistency | `classicalHermitianGradientError_zero`, `classicalHermitianGradientFourierCoefficients_zero` | Exact cancellation against the actual free reference, at every complex frequency and all q>1. |
+
+A fixed factor eight assembles the scalar bounds in the full induced norm.
+The source potential is reconstructed through the existing period-doubling
+identification, and its classical coefficient norm is bounded by twice
+the exact source norm. The majorant is chosen after fixing the spectral
+sequence and before choosing a potential in the ball. No common bound on
+arbitrary finite initial spectral values is silently imposed. Both G.5
+assertions are proved with the explicit reference correction and finite
+outer exponent restriction; the two printed failures remain documented.
+G.6 is next. The dissertation remains incomplete, with the previously
+recorded G.2 local-norm, required p>2 spectral-height, and optional original
+m=1 obligations unchanged.

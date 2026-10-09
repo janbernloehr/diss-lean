@@ -1,6 +1,63 @@
 # Implementation plan
 
-## Latest progress: G.5 reference and endpoint audit
+## Latest progress: corrected G.5 for full gradients on exact source H1 balls
+
+`SourceLemmaG5.lean` proves both corrected G.5 assertions for the full
+matrix gradient, uniformly on each ball in the exact Chapter 5 periodic
+H1 source norm. `sourceLemmaG5_corrected` retains the eventual pi/4
+frequency condition; `sourceLemmaG5_shifted_corrected` uses eventual
+O(1/abs(n)) displacement and the exact lattice free reference. Both hold
+for every finite real p>=2 with Fourier exponent p'=p/(p-1).
+
+`HermitianGradientFourierAssembly.lean` represents the gradient as a
+complex linear map from a Hermitian potential direction to a Hermitian
+matrix operator. Its Fourier sequence uses the induced operator norm in
+both variables. The eight scalar components assemble with a fixed factor
+at most eight; this factor is independent of the spectral index and the
+potential. `ClassicalHermitianGradientFourier.lean` proves that these are
+the actual full-gradient Bochner Fourier integrals, including the factor i
+in the source statement.
+
+The matrix identity `classicalHermitianGradientError_eq_correctedReference`
+identifies the assembled error with the actual gradient matrix minus the
+explicit corrected free matrix. The upper reference uses the minus
+potential component; the lower reference uses the plus component. The
+lattice identity has exactly (-1)^n and waves with signed indices +/-2n,
+including negative n. At zero potential, comparison with the same free
+frequency gives the zero Fourier sequence at every exponent above one.
+
+The generalized theorems allow every finite p>1 and every q>1+1/p,
+including q=infinity. This inner infinity exponent is distinct from the
+refuted outer p=infinity endpoint. The actual gradient-valued Fourier
+sequences and their norm sequences both belong to outer lp. A single
+nonnegative summable majorant works for every potential in the fixed
+source-norm ball. The spectral sequence is fixed first, so arbitrary
+finite initial spectral values may affect that majorant. No smallness or
+reality assumption is imposed on the complex period-one H1 source.
+
+Next: G.6's discriminant and anti-discriminant gradients on the same exact
+source domain, first checking its printed wave indices against the physical
+signed-wave convention. Printed page 138 uses subscripts -2*n*pi, while the
+preceding wave definition already includes pi in the exponential; the
+consequence of this normalization still needs a Lean audit. The literal
+G.5 reference and infinity-endpoint failures
+remain recorded in `SOURCE_ERRATA.md`; they have not been removed by
+relabeling the printed theorem. G.2's arbitrary-time local norm, the
+required p>2 spectral height, and the optional original m=1 sharpening
+remain open. The accepted Lemma 27.2 correction is unchanged.
+
+Focused checks passed for arbitrary initial frequencies, nonzero
+inverse-index displacement, p=3 with q=3/2, the q=2 norm, finite p=3/2
+with q=infinity, negative lattice indices, exact zero-source cancellation,
+and the full-gradient Bochner coefficient identity.
+
+The full build passed (6519 jobs), all public examples passed, and the
+axiom audit passed for 26650 NLS declarations. The same 21 existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified; neither this inventory nor the declaration count is a
+completeness certificate.
+
+## Previous milestone: G.5 reference and endpoint audit
 
 `SourceLemmaG5ReferenceAudit.lean` audits the two displayed formulas on
 printed page 137 against the actual potential derivative. The statement

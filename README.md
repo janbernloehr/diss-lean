@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: a Lean audit of G.5 confirms that its printed off-diagonal
-free-reference components are swapped. The literal formula fails already
-at zero potential and p=2, even after deleting a finite spectral head.
-The separate p=infinity failure also applies to an original period-one H1
-source. The corrected finite-p full-gradient estimate is next; it is not
-yet claimed as a full-matrix theorem on exact source-norm balls.
-G.2's arbitrary-time local norm and the required spectral height above p=2
-remain open.
+Latest milestone: corrected G.5 is proved for the full matrix gradient,
+uniformly on balls in the exact periodic source H1 norm. Both free
+references are covered for every finite p>=2 at the conjugate Fourier
+exponent. The gradient norm is the induced norm from potential directions
+to Hermitian matrix operators, and the coefficients are actual Fourier
+integrals. The printed reference swap and outer p=infinity failure remain
+explicit source corrections. G.6 is next. G.2's arbitrary-time local norm
+and the required spectral height above p=2 remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

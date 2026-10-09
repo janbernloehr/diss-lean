@@ -3087,3 +3087,6 @@ import NLS.ZakharovShabat.ClassicalHermitianTimeBounds
 import NLS.ZakharovShabat.SourceLemmaG3
 import NLS.ZakharovShabat.SourceCorollaryG4
 import NLS.ZakharovShabat.SourceLemmaG5ReferenceAudit
+import NLS.ComplexAnalysis.HermitianGradientFourierAssembly
+import NLS.ZakharovShabat.ClassicalHermitianGradientFourier
+import NLS.ZakharovShabat.SourceLemmaG5

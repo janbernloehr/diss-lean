@@ -39406,3 +39406,76 @@ example (referenceFreq : ℤ → ℂ) :
           (ContinuousLinearMap.fst ℂ ℂ ℂ) t).2)) 1 :=
   sourceG5_not_eventually_fourier_l1 referenceFreq
 end SourceG5ReferenceAuditChecks
+
+
+noncomputable section
+open scoped ENNReal
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis NLS.Fourier
+namespace AppendixG5FullGradientChecks
+
+private def arbitraryHead (z : ℂ) (n : ℤ) : ℂ :=
+  if n = 0 then z else (Real.pi : ℂ)*n
+private theorem arbitraryHead_tail (z : ℂ) (n : ℤ) (hn : 1 ≤ n.natAbs) :
+    ‖arbitraryHead z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 := by
+  have hn0 : n ≠ 0 := by omega
+  simp only [arbitraryHead,if_neg hn0,sub_self,norm_zero]
+  positivity
+private def inverseDisplacement (z : ℂ) (n : ℤ) : ℂ :=
+  if n = 0 then z else (Real.pi : ℂ)*n+1/((n.natAbs : ℝ) : ℂ)
+private theorem inverseDisplacement_tail (z : ℂ) (n : ℤ) (hn : 1 ≤ n.natAbs) :
+    ‖inverseDisplacement z n-(Real.pi : ℂ)*n‖ ≤ 1/(n.natAbs : ℝ) := by
+  have hn0 : n ≠ 0 := by omega
+  simp [inverseDisplacement,hn0,Complex.norm_real]
+
+-- Both operator norms are controlled: a direction maps to a full Hermitian matrix.
+example (A B : HermitianOperator) (h : ℂ × ℂ) :
+    hermitianGradientColumns A B (hermitianPair h) = h.1 • A+h.2 • B :=
+  hermitianGradientColumns_apply A B h
+example (q : ℝ≥0∞) [Fact (1 ≤ q)] (hq : 1 < q) (z : ℂ) :
+    classicalHermitianGradientFourierCoefficients hq 0 z z = 0 :=
+  classicalHermitianGradientFourierCoefficients_zero hq z
+example (h : ℂ × ℂ) (s : Set.Icc (0 : ℝ) 1) :
+    classicalHermitianCorrectedFreeGradientMatrix ((Real.pi : ℂ)*(-1 : ℤ)) h s =
+      (-1 : ℂ) • hermitianColumns (0,wave 2 s*h.2) (-wave (-2) s*h.1,0) := by
+  simpa using classicalHermitianCorrectedFreeGradientMatrix_lattice (-1) h s
+
+local instance : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ ENNReal.ofReal ((3 : ℝ)/(3-1))) := ⟨by norm_num⟩
+-- The source's conjugate exponent p'=3/2, with arbitrary initial spectral data.
+example (M : ℝ) (z : ℂ) :
+    ∃ b : ℤ → ℝ, Memℓp b 3 ∧ (∀ n, 0 ≤ b n) ∧
+      ∀ a : ScalarDomain 2 × ScalarDomain 2,
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M → ∀ n : ℤ,
+        ‖classicalHermitianGradientFourierCoefficients (q := ENNReal.ofReal (3/2 : ℝ)) (by norm_num)
+          (classicalSobolevPotential (sourceG3ClassicalCoefficients a))
+          (arbitraryHead z n) (arbitraryHead z n)‖ ≤ b n := by
+  obtain ⟨b,hb,hpos,h⟩ := sourceLemmaG5_corrected 3 (by norm_num) M 1
+    (arbitraryHead z) (arbitraryHead_tail z)
+  refine ⟨b,by simpa using hb,hpos,?_⟩
+  intro a ha n
+  rw [norm_classicalHermitianGradientFourierCoefficients_congr (by norm_num)
+    (q := ENNReal.ofReal ((3 : ℝ)/(3-1))) (by norm_num) (by norm_num)]
+  exact h a ha n
+
+-- Nonzero inverse-index displacement, with the exact q=2 Fourier norm.
+example (z : ℂ) (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => ‖classicalHermitianGradientFourierCoefficients (q := 2) (by norm_num)
+      (classicalSobolevPotential (sourceG3ClassicalCoefficients a))
+      (inverseDisplacement z n) ((Real.pi : ℂ)*n)‖) 2 := by
+  simpa only [ENNReal.ofReal_ofNat] using
+    sourceG5_shifted_gradient_norms_memlp 2 (by norm_num) 2 (by norm_num)
+      1 zero_le_one 1 (inverseDisplacement z) (inverseDisplacement_tail z) a
+
+-- The generalized result includes q=infinity and non-Hilbert finite outer exponents.
+example (z : ℂ) (a : ScalarDomain 2 × ScalarDomain 2) :
+    Memℓp (fun n : ℤ => classicalHermitianGradientFourierCoefficients (q := ⊤) (by simp)
+      (classicalSobolevPotential (sourceG3ClassicalCoefficients a))
+      (inverseDisplacement z n) ((Real.pi : ℂ)*n)) (ENNReal.ofReal (3/2 : ℝ)) :=
+  sourceG5_shifted_gradient_memlp (3/2) (by norm_num) ⊤ (by simp)
+    1 zero_le_one 1 (inverseDisplacement z) (inverseDisplacement_tail z) a
+
+example (φ : NLS.LinearVolterra.Curve (ℂ × ℂ)) (z w : ℂ) (k : ℤ) :
+    classicalHermitianGradientFourierCoefficients (q := 2) (by norm_num) φ z w k =
+      ∫ t in (0 : ℝ)..1, wave (-k) (2*t) • classicalHermitianGradientError φ z w t :=
+  classicalHermitianGradientFourierCoefficients_apply (by norm_num) φ z w k
+end AppendixG5FullGradientChecks
