@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: the L2 forcing estimate toward G.1
+## Current milestone: the Hermitian operator-norm estimate for G.1
+
+The G.1 estimate now holds in the actual Hermitian operator norm for the
+constructed continuous-potential fundamental solution. The new
+`classicalHermitianOperator_le_L2_firstBorn` retains exactly the coefficient
+A*exp(A), with A the Hilbert L2 norm of both potential coordinates, and the
+L2-in-time norm of the actual first Born operator. No dimension-dependent
+norm-equivalence factor appears.
+
+`HermitianPair.lean` uses `WithLp 2 (Complex × Complex)`, proves diagonal
+bounds and the exact off-diagonal operator norm, and assembles operators
+from their columns. `ClassicalHermitianDuhamel.lean` transports the actual
+signed coordinate equations to a vector-valued integral identity. Its norm
+estimate is proved directly in the Euclidean norm with coefficient one.
+`ClassicalHermitianOperatorBound.lean` identifies the remainder operator
+with the actual matrix M-E, identifies the Born operator with the actual
+Born matrix, and takes the operator norm after proving the bound for every
+initial vector. Continuity, zero time, zero frequency, and both complex
+spectral half-planes are included. For the off-diagonal Born matrix the
+operator norm is exactly the larger oscillatory-integral magnitude.
+
+This establishes the Hermitian norm target specified in the related author
+preprint [arXiv:0907.3938](https://arxiv.org/pdf/0907.3938), printed page 7,
+whose Lemma 2.1 gives the basic estimate. The 2014 edition of [23] has not
+been checked directly. The earlier entrywise matrix bound remains a
+separately named result, not a substitute for the Hermitian operator bound.
+
+G.1 is still incomplete because the constructed solution currently requires
+continuous potentials; the printed statement covers arbitrary L2 potentials.
+Next: prove solution stability in the L2 potential distance, construct an
+approximation-independent extension, and pass the Duhamel identity and
+Hermitian norm bound to the limit. The required p>2 spectral height and
+optional original m=1 sharpening remain unresolved; the accepted Lemma 27.2
+correction is unchanged.
+
+Validation: focused examples passed for the Euclidean norm of (1,1), an
+operator whose norm differs from its entrywise maximum, exact unequal
+off-diagonal norms, sharp signed kernel values in both spectral half-planes,
+zero time for arbitrary potentials, the free solution at arbitrary complex
+frequency, and a nonzero triangular potential at zero frequency with the
+literal coefficient and square integral. The full build passed (6484 jobs),
+all public examples passed, and the axiom audit passed for 26193 NLS
+declarations. The same 21 pre-existing warnings remain, with no new warnings.
+The 156 candidate source labels were verified.
+
+## Previous milestone: the L2 forcing estimate toward G.1
 
 The scalar variable-forcing estimate needed for Lemma G.1 is proved in
 `VariableForcingGronwall.lean`. From f(t) <= F(t) + integral(a*f), an

@@ -3052,3 +3052,6 @@ import NLS.ZakharovShabat.SourceCorollaryF3
 import NLS.FunctionalAnalysis.VariableForcingGronwall
 import NLS.ZakharovShabat.ClassicalRemainderL2Bound
 import NLS.ZakharovShabat.ClassicalMatrixRemainderL2Bound
+import NLS.ComplexAnalysis.HermitianPair
+import NLS.ZakharovShabat.ClassicalHermitianDuhamel
+import NLS.ZakharovShabat.ClassicalHermitianOperatorBound

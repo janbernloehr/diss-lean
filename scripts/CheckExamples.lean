@@ -38659,3 +38659,58 @@ example : classicalPotentialL2Norm g1RampPotential = Real.sqrt (1/3) := by
     _ = 1/3 := by norm_num [integral_pow]
 
 end AppendixGL2ForcingChecks
+
+section AppendixGHermitianChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis NLS.LinearVolterra
+open Set Complex MeasureTheory
+
+-- The new vector norm is genuinely Hermitian.
+example : ‖hermitianPair (1,1)‖ = Real.sqrt 2 := by norm_num
+
+-- This matrix has entrywise maximum one, but Hermitian operator norm at least sqrt(2).
+example : Real.sqrt 2 ≤ ‖hermitianColumns (1,1) (0,0)‖ := by
+  have h := (hermitianColumns (1,1) (0,0)).le_opNorm (hermitianPair (1,0))
+  norm_num [hermitianColumns_apply] at h ⊢
+  exact h
+
+-- Exact off-diagonal operator norm, with unequal coordinate magnitudes.
+example : ‖hermitianColumns (0,(3:ℂ)) ((2:ℂ),0)‖ = 3 := by
+  rw [norm_hermitianColumns_offDiagonal]
+  norm_num
+
+-- Both spectral half-planes attain the free exponential factor with the correct signs.
+example : ‖classicalHermitianDuhamelKernel Complex.I 1 (1,0) (0,1)‖ = Real.exp 1 := by
+  norm_num [classicalHermitianDuhamelKernel,hermitianPair_norm,Complex.norm_exp,← Real.exp_half]
+
+example : ‖classicalHermitianDuhamelKernel (-Complex.I) 1 (0,1) (1,0)‖ = Real.exp 1 := by
+  norm_num [classicalHermitianDuhamelKernel,hermitianPair_norm,Complex.norm_exp,← Real.exp_half]
+
+-- Zero time for every potential, and the free case for every complex frequency.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) : classicalNormalizedHermitianRemainder φ z 0 = 0 := by
+  simp [classicalNormalizedHermitianRemainder,classicalHermitianRemainderOperator,
+    classicalSolutionRemainder_zero,hermitianColumns]
+
+example (z : ℂ) (t : Icc (0:ℝ) 1) : classicalNormalizedHermitianRemainder 0 z t = 0 := by
+  simp [classicalNormalizedHermitianRemainder,classicalHermitianRemainderOperator,
+    classicalSolutionRemainder_free,hermitianColumns]
+
+private noncomputable def g1HermitianTriangular : Curve (ℂ × ℂ) := ContinuousMap.const _ (1,0)
+
+private theorem g1HermitianTriangular_norm : classicalPotentialL2Norm g1HermitianTriangular = 1 := by
+  simp [classicalPotentialL2Norm,g1HermitianTriangular,NLS.LinearVolterra.extend]
+
+private theorem g1HermitianTriangular_born (t : ℝ) :
+    classicalNormalizedHermitianFirstBorn g1HermitianTriangular 0 t = |t| := by
+  rw [classicalNormalizedHermitianFirstBorn_eq]
+  simp [oscillatoryIntegral,oscillatoryKernel,g1HermitianTriangular,NLS.LinearVolterra.extend,Complex.norm_real]
+
+-- The actual operator estimate has exactly the source coefficient, with no sqrt(2) loss.
+example : classicalNormalizedHermitianRemainder g1HermitianTriangular 0 1 ≤
+    1+Real.exp 1*Real.sqrt (1/3) := by
+  have h := classicalHermitianOperator_le_L2_firstBorn g1HermitianTriangular 0
+    ⟨1,by constructor <;> norm_num⟩
+  simp only [g1HermitianTriangular_norm,g1HermitianTriangular_born,one_mul,abs_one,sq_abs] at h
+  norm_num [integral_pow] at h ⊢
+  exact h
+
+end AppendixGHermitianChecks

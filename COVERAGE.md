@@ -489,3 +489,30 @@ This supplies a concrete next target: use Euclidean vector/operator norms,
 without multiplying the printed coefficient by a norm-equivalence constant.
 The 2014 book [23] is a later publication, so its convention has not been
 verified directly from that edition.
+
+### Lemma G.1: Hermitian operator norm, continuous-potential stage
+
+The genuine Hermitian operator-norm estimate is now proved, with the literal
+Hilbert L2 coefficient A*exp(A). This closes the norm gap in the preceding
+continuous-potential result. The arbitrary-L2 domain is still missing, so
+G.1 is not yet counted as complete.
+
+| Requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Genuine Hermitian vectors | `hermitianPair_norm`, `hermitianPair_norm_sq` | Euclidean norm on both complex coordinates, using WithLp 2. |
+| No norm-conversion loss | `hermitianPair_norm_diagonal_le`, `norm_classicalHermitianDuhamelKernel_le` | Direct diagonal and off-diagonal bounds with coefficient one and the correct signed free exponential. |
+| Exact off-diagonal operator norm | `norm_hermitianColumns_offDiagonal` | Maximum of the two scalar magnitudes. |
+| Actual vector integral identity | `classicalHermitianRemainder_duhamel` | Transport of both original signed Duhamel equations, through a continuous linear equivalence used only for algebra and integration. |
+| Actual vector Volterra bound | `classicalHermitianRemainder_le_firstBorn_add_integral` | Weighted Hermitian vector norm with the original pointwise potential coefficient. |
+| Actual operator identification | `classicalHermitianRemainderOperator_eq_matrix`, `classicalHermitianFirstBornOperator_eq_matrix` | Operators are precisely M-E and the actual first Born matrix. |
+| True induced operator norm | `classicalHermitianOperator_le_L2_firstBorn` | All initial vectors are bounded before taking the operator norm; exact A*exp(A) coefficient and actual first Born L2 time integral. |
+| Exact first Born formula | `classicalNormalizedHermitianFirstBorn_eq` | The off-diagonal operator norm is the maximum of the oscillatory integral magnitudes. |
+| Arbitrary L2 potentials | Still open | Current theorems use the constructed continuous-potential solution; L2 stability, extension, and passage of the integral identity are next. |
+
+The Hermitian convention is explicit on printed page 7 of the related
+author preprint [arXiv:0907.3938](https://arxiv.org/pdf/0907.3938). The 2014
+book [23] has not been read directly. Checks distinguish this operator norm
+from the entrywise maximum, attain the signed kernel bounds in both
+half-planes, and exercise zero time, arbitrary complex free frequency,
+and a nonzero potential at zero frequency. No extra factor is accepted in
+place of the printed coefficient.
