@@ -467,20 +467,33 @@ The source proof of Lemma C.2 uses only the boundedness part of C.1.
 `ModifiedHilbert.lean` now proves C.2 with its full two-lattice hypotheses,
 exact normalization, and uniform dependence on the specified norms.
 
-## Theorem 1.1: unresolved printed height above two
+## Theorem 1.1: printed height proved through four; higher exponents unresolved
 
-The printed central box uses `(1+8‖φ‖ₚ)^p`. The Neumann criterion in
-Corollary 3.3 is `(4p/H^(1/p)+1/H)‖φ‖ₚ < 1` at height H.
+The printed central box uses `(1+8||phi||_p)^p`. The coarse Neumann criterion
+in Corollary 3.3 is `(4p/H^(1/p)+1/H)||phi||_p < 1` at height H.
 `PrintedHeight.lean` proves that the printed height satisfies this criterion
-for all 1 ≤ p ≤ 2, extending the previous Hilbert-only result.
+for all 1<=p<=2.
 
-For p > 2 and M ≥ 1/(4p-8), `printed_height_neumann_bound_fails` proves
-that the same criterion is strictly greater than one at H=(1+8M)^p.
+For p>2 and M>=1/(4p-8), `printed_height_neumann_bound_fails` proves that
+the same coarse criterion is strictly greater than one at H=(1+8M)^p.
 Failure of a sufficient condition is not a spectral counterexample.
-The literal general-exponent height remains unresolved, not disproved;
-`(1+8pM)^p` is a proved alternative but does not complete the printed claim.
-See [the spectral overview audit](coverage/SPECTRAL_OVERVIEW.md) for the
-source-space counting and projection conclusions now proved for p ≤ 2.
+
+The sharper reciprocal estimate now closes the printed claim through p=4.
+`RefinedReciprocalNorm.lean` retains the coefficient
+2*(2/(q-1))^(1/q), where q is conjugate to p. For p<=4 the power-sum
+inequality 2/(q-1)<=4^q gives a constant-eight resolvent bound.
+`PrintedHeightFour.lean` proves the unchanged printed height, and
+`SourcePrintedHeightFourCounting.lean` transfers the full source counting
+and projection conclusions, on one common neighborhood, to these boxes.
+In particular, p=3 supplies checked examples where the old criterion fails
+but the actual resolvent exists at the printed height.
+
+The power-sum test with constant four fails at p=5;
+`reciprocal_power_coefficient_four_fails_at_five` proves this exact
+inequality. This does not refute the spectral statement. The unrestricted
+finite-exponent height remains required and unresolved above four.
+`(1+8pM)^p` is still a proved alternative, not completion of the printed
+claim. See [the spectral overview audit](coverage/SPECTRAL_OVERVIEW.md).
 
 ## Lemma 26.2: sign of the higher Hamiltonian
 

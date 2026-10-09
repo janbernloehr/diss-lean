@@ -40548,3 +40548,74 @@ example : 2*Real.sqrt ((1 : ℝ)⁻¹+1) ≤ 3 := by
   nlinarith [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 2)]
 
 end AppendixG2LengthChecks
+
+
+noncomputable section
+open Set Filter Topology NLS NLS.Coeff NLS.ZakharovShabat
+open scoped ENNReal
+namespace PrintedHeightFourChecks
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Retaining the conjugate root gives an all-exponent envelope bound.
+example {p h : ℝ} {q : ℝ≥0∞} [Fact (1 ≤ q)] (hc : p.HolderConjugate q.toReal)
+    (hh : 0 < h) (a : Coeff q) (ha0 : ‖a 0‖ ≤ h⁻¹)
+    (ha : ∀ k : ℤ, k ≠ 0 → ‖a k‖ ≤ 2/(h+|(k : ℝ)|)) :
+    ‖a‖ ≤ 2*(2/(q.toReal-1))^(1/q.toReal)/h^(1/p)+h⁻¹ :=
+  norm_reciprocal_le_conjugate_root hc hh a ha0 ha
+
+-- All potentials at p=3; no smallness or Fourier-support hypothesis is added.
+example (φ : PairSpace 3) {M : ℝ} (hφ : ‖φ‖ ≤ M) {z : ℂ}
+    (hz : (1+8*M)^3 ≤ |z.im|) : z ∈ resolventSet (by norm_num) φ := by
+  apply mem_resolventSet_of_printed_height_up_to_four (by norm_num) (by norm_num) φ hφ
+  simpa only [ENNReal.toReal_ofNat,Real.rpow_ofNat] using hz
+
+-- The endpoint p=4 is included in the original source's component-sum norm.
+example (φ : CoeffPair 4) {z : ℂ} (hz : z ∈ periodicSpectrum (by norm_num) (periodOnePotential φ)) :
+    |z.im| < (1+8*‖φ‖)^4 := by
+  simpa only [ENNReal.toReal_ofNat,Real.rpow_ofNat] using
+    sourceSpectrum_abs_im_lt_printed_height_up_to_four (by norm_num) (by norm_num) φ hz
+
+-- The old numerical criterion fails here; the actual resolvent still exists.
+example (φ : PairSpace 3) (hφ : ‖φ‖ ≤ 1) :
+    1 < (4*(3 : ℝ)/((1+8)^ (3 : ℝ))^(1/(3 : ℝ))+1/(1+8)^(3 : ℝ)) ∧
+      (729*Complex.I : ℂ) ∈ resolventSet (by norm_num) φ := by
+  constructor
+  · have h := printed_height_neumann_bound_fails (q := 3) (M := 1) (by norm_num) (by norm_num)
+    simpa only [mul_one] using h
+  · apply mem_resolventSet_of_printed_height_up_to_four (by norm_num) (by norm_num) φ hφ
+    norm_num [Real.rpow_ofNat]
+
+-- The full source conclusion supplies a common open neighborhood and central count at p=4.
+example (φ : CoeffPair 4) :
+    ∃ N : ℕ, ∃ U : Set (CoeffPair 4), 0 < N ∧ IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U,
+        PeriodicCountingData (by norm_num) (periodOnePotential ψ) N ∧
+        (∑ z ∈ heightPeriodicSpectrum (by norm_num) (periodOnePotential ψ) N ((1+8*‖ψ‖)^4),
+          periodicAlgebraicMultiplicity (by norm_num) (periodOnePotential ψ) z) = 4*N+2 ∧
+        heightRectangleIntegral (by norm_num) (periodOnePotential ψ) N ((1+8*‖ψ‖)^4) =
+          centralSpectralProjection (by norm_num) (periodOnePotential ψ) N := by
+  obtain ⟨N,U,hN,hU,_,hφ,h0,hh⟩ :=
+    exists_source_periodicCounting_printed_height_up_to_four (by norm_num) (by norm_num) φ
+  refine ⟨N,U,hN,hU,hφ,h0,?_⟩
+  intro ψ hψ
+  obtain ⟨hdata,_,hcount,hproj,_⟩ := (hh N le_rfl).2 ψ hψ
+  simpa only [ENNReal.toReal_ofNat,Real.rpow_ofNat] using And.intro hdata (And.intro hcount hproj)
+
+-- Both endpoint one and the full proven range have a valid free bound.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp4 : p ≤ 4)
+    (z : ℂ) (hz : z ∉ freeLattice) (him : z.im ≠ 0) :
+    freeL1Bound p hp z hz ≤ 8/|z.im|^(1/p.toReal)+|z.im|⁻¹ :=
+  freeL1Bound_le_height_eight hp hp4 z hz him
+
+-- The negative horizontal edge is included as well.
+example (φ : PairSpace 4) (hφ : ‖φ‖ ≤ 1) :
+    (-6561*Complex.I : ℂ) ∈ resolventSet (by norm_num) φ := by
+  apply mem_resolventSet_of_printed_height_up_to_four (by norm_num) (by norm_num) φ hφ
+  norm_num [Real.rpow_ofNat]
+
+-- The constant-four power-sum criterion cannot simply be reused at p=5.
+example : (4 : ℝ)^(5/4 : ℝ) < 2/((5/4 : ℝ)-1) :=
+  reciprocal_power_coefficient_four_fails_at_five
+
+end PrintedHeightFourChecks

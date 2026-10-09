@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: an arbitrary-interval G.2 estimate is proved in the
-explicit integral H1 norm, with its interval-length factor. A family of
-smooth constant potentials proves that inverse-square-root growth at short
-times is necessary, with the same leading coefficient as the new bound.
-This remains a correction candidate: the printed statement's interval norm
-is unresolved. I.4 now follows from actual real-analytic germs. The required
-spectral height above p=2 also remains open.
+Latest milestone: the unchanged printed spectral height is now proved
+through p=4, including the original source-norm eigenvalue counts, parity
+data, spectral exhaustion, and analytic rectangular projections. A sharper
+reciprocal estimate extends the previous p<=2 result. The printed height
+above p=4 remains open. G.2's arbitrary-interval integral-norm correction is
+proved, but its printed norm convention remains unresolved. I.4's
+real-analytic bridge is complete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

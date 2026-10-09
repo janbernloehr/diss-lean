@@ -3151,3 +3151,7 @@ import NLS.SequenceSpaces.SourcePropositionI4RealAnalytic
 import NLS.ComplexAnalysis.IntervalH1LengthBound
 import NLS.ZakharovShabat.IntervalH1LengthOperatorBound
 import NLS.ZakharovShabat.LemmaG2LengthNecessity
+import NLS.SequenceSpaces.RefinedReciprocalNorm
+import NLS.ZakharovShabat.RefinedHeightResolvent
+import NLS.ZakharovShabat.PrintedHeightFour
+import NLS.ZakharovShabat.SourcePrintedHeightFourCounting

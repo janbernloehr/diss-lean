@@ -1,6 +1,56 @@
 # Implementation status
 
-## Current milestone: G.2 interval-length dependence
+## Current milestone: printed spectral height through p=4
+
+The printed spectral height `(1+8||phi||_p)^p` is now proved throughout
+1<=p<=4, extending the previous 1<=p<=2 result. The original constant eight,
+the original potential norm, and both horizontal edges are retained. No
+smallness, reality, regularity, or finite Fourier-support hypothesis has
+been added. The range p>4 remains a required open obligation.
+
+`RefinedReciprocalNorm.lean` keeps the conjugate exponent when taking the
+root of the reciprocal-series estimate. For conjugate exponents p and q,
+the punctured envelope coefficient is 2*(2/(q-1))^(1/q), rather than its
+coarser bound 4p. A general coefficient theorem and the exact root estimate
+are proved for every finite conjugate pair. The inequality
+2/(q-1)<=4^q holds when p<=4, giving the constant-eight free-resolvent bound
+in `RefinedHeightResolvent.lean`.
+
+`PrintedHeightFour.lean` shows that this bound yields the unchanged printed
+height for 2<=p<=4 and combines it with the existing proof below two.
+Every spectral point lies strictly inside the printed strip; the resolvent
+exists on both horizontal edges and beyond. The proof uses the actual
+Neumann condition, not the older coarse numerical height region, which can
+fail even at parameters now proved to be in the resolvent set.
+
+`SourcePrintedHeightCounting.lean` now extracts a reusable counting theorem
+from any printed-height resolvent estimate, preserving the old public API.
+`SourcePrintedHeightFourCounting.lean` applies it on the original period-one
+source space with its component-sum norm. One open convex neighborhood and
+every sufficiently large cutoff retain all algebraic counts, parity data,
+spectral exhaustion, and analytic moving rectangular projections. The
+central count is 4N+2 in each source's own printed-height box.
+
+Public checks cover arbitrary potentials at p=3, the endpoint p=4 in the
+actual source norm, the negative horizontal edge, and the central count
+with the full counting data. At p=3 and norm bound one, the old 4p test is
+strictly greater than one, yet the new proof puts 729i in the resolvent.
+This demonstrates why failure of that sufficient test was not a spectral
+counterexample.
+
+The new constant-four power-sum test itself fails at p=5 (q=5/4), as proved
+by `reciprocal_power_coefficient_four_fails_at_five`. This is another
+limitation of an estimate, not a counterexample to the printed height.
+No all-exponent completion or replacement height is claimed. G.2's printed
+interval-norm interpretation remains unresolved, and the original m=1
+sharpening remains optional and unresolved. The dissertation is incomplete.
+
+Validation: the full project check passed (6584 build jobs), including all
+public examples and the axiom audit of 27407 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. These counts do not certify completeness.
+
+## Previous milestone: G.2 interval-length dependence
 
 The arbitrary-time G.2 gap is now quantified in the explicit unnormalized
 integral H1 norm. For every positive interval length T and every t in [0,T],

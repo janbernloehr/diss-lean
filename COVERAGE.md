@@ -676,7 +676,7 @@ sum of entry norms. The source-ball domain is all complex H1 via the
 existing bijective coefficient identification, not just real sources.
 
 The full dissertation remains incomplete. The G.4 audit follows below;
-G.2's arbitrary-time local norm, the required p>2 spectral height, and the
+G.2's arbitrary-time local norm, the remaining p>4 spectral height, and the
 optional original m=1 sharpening retain their previously recorded status.
 
 
@@ -723,8 +723,8 @@ The corrected finite-p full-gradient estimate on exact source-norm balls
 is now proved by the full assembly described below. This uses all eight
 scalar components and the actual gradient-valued Fourier integrals.
 See `SOURCE_ERRATA.md` for the literal formulas and proof discrepancy.
-These findings do not change the unresolved G.2 local-norm and required
-p>2 spectral-height obligations or the optional original m=1 sharpening.
+These findings do not change the unresolved G.2 local-norm and remaining
+p>4 spectral-height obligations or the optional original m=1 sharpening.
 
 
 ### Corrected G.5: full-gradient summability on exact source-norm balls
@@ -749,7 +749,7 @@ arbitrary finite initial spectral values is silently imposed. Both G.5
 assertions are proved with the explicit reference correction and finite
 outer exponent restriction; the two printed failures remain documented.
 G.6 is covered below. The dissertation remains incomplete, with the previously
-recorded G.2 local-norm, required p>2 spectral-height, and optional original
+recorded G.2 local-norm, remaining p>4 spectral-height, and optional original
 m=1 obligations unchanged.
 
 
@@ -777,7 +777,7 @@ here. The source's finite conjugate range is fully covered.
 The printed second reference is refuted at p=2 under the source's own wave
 definition; the first assertion remains unchanged. See `SOURCE_ERRATA.md`.
 G.7's domain and printed wave indices are audited below.
-The previously recorded G.2 local-norm, required p>2 spectral-height, and
+The previously recorded G.2 local-norm, remaining p>4 spectral-height, and
 optional original m=1 obligations remain open. Neither declaration counts
 nor the source-label inventory certify completeness.
 
@@ -805,7 +805,7 @@ Dirichlet reference is explicitly corrected from -2*n*pi to -2*n.
 See `SOURCE_ERRATA.md` for the zero-source counterexample.
 
 Appendix H's recurrence/homogeneity statement is covered below; its subsequent
-integration-by-parts formulation is the next audit. The G.2 local-norm, required p>2 spectral-height,
+integration-by-parts formulation is the next audit. The G.2 local-norm, remaining p>4 spectral-height,
 and optional original m=1 obligations remain open. Neither source-label
 inventories nor declaration counts certify completeness.
 
@@ -854,7 +854,7 @@ no replacement by an action sum or an input-dependent polynomial occurs.
 The lower jets of real inputs are pointwise conjugates by the existing
 `hierarchySobolevJetContinuous_real` theorem. There is no source correction
 for H.2. Appendix I's Schur-complement hypotheses are the next audit.
-The G.2 local-norm, required p>2 spectral-height, and optional original
+The G.2 local-norm, remaining p>4 spectral-height, and optional original
 m=1 obligations remain open. Counts are not completeness certificates.
 
 
@@ -875,7 +875,7 @@ I.1's unrestricted statement is refuted, not proved by silently adding an
 assumption. Its corrected form and the unchanged I.2 criterion are proved.
 The polynomial and physical H.2 results above remain unchanged. Next is
 I.3's full total-boundedness characterization, followed by I.4. The G.2
-local-norm, required p>2 spectral-height, and optional original m=1
+local-norm, remaining p>4 spectral-height, and optional original m=1
 obligations remain open. Counts do not certify completeness.
 
 
@@ -894,7 +894,7 @@ obligations remain open. Counts do not certify completeness.
 
 The printed I.3 is proved unchanged. The operator consequence supplies the
 initial tail estimate for I.4; it does not claim I.4's full real-analytic
-or generic local-diffeomorphism conclusion. The relative-cone argument and Schur signs are covered below. G.2's local-norm, required p>2 spectral-height, and
+or generic local-diffeomorphism conclusion. The relative-cone argument and Schur signs are covered below. G.2's local-norm, remaining p>4 spectral-height, and
 optional original m=1 obligations remain open. Counts do not certify
 completeness.
 
@@ -921,7 +921,7 @@ extensions are required; they need not be chosen as one global map.
 
 Weighted complex and real transport, and the construction of the complex
 atlas from real-analytic germs, are proved in the later entries below.
-The G.2 local-norm, required p>2 spectral-height,
+The G.2 local-norm, remaining p>4 spectral-height,
 and optional original m=1 obligations retain their status. Source-label
 inventories and declaration counts do not certify completeness.
 
@@ -967,8 +967,8 @@ at the cone boundary. The reality required to restrict those extensions and
 their inverses is proved from the original cone values. The subsequent
 entries transport the real conclusion, inverse locus, and seed to all
 positive weights and construct the atlas from actual real-analytic germs.
-The G.2 local-norm, required
-p>2 spectral-height, and optional original m=1 obligations remain unchanged.
+The G.2 local-norm, remaining
+p>4 spectral-height, and optional original m=1 obligations remain unchanged.
 
 
 ### Proposition I.4: real inverses in every positive weighted space
@@ -990,7 +990,7 @@ Only local complex extension atlases are used; compactness is assumed at
 original cone points. The real transport obligation is now complete.
 The following entry constructs those atlases from real-analytic germs and
 closes this final representation obligation. The separate
-G.2 local-norm, required p>2 spectral-height, and optional original m=1
+G.2 local-norm, remaining p>4 spectral-height, and optional original m=1
 obligations retain their status. Counts do not certify completeness.
 
 
@@ -1017,7 +1017,7 @@ included. The density theorem keeps 1<=p<infinity; the separate extension
 construction also permits p=infinity. The printed Schur sign error remains
 recorded in `SOURCE_ERRATA.md`.
 
-G.2's arbitrary-time local norm and the required p>2 spectral height remain
+G.2's arbitrary-time local norm and the remaining p>4 spectral height remain
 open; the original unrestricted m=1 sharpening remains optional and
 unresolved. The dissertation is incomplete, and statement counts do not
 certify completeness.
@@ -1039,6 +1039,26 @@ with no length normalization. This entry supplies an explicit correction
 candidate, not a proof of the printed coefficient under an unspecified
 norm convention. The printed arbitrary-time G.2 interpretation remains
 unresolved. The exact periodic-norm unit-interval theorem remains valid;
-the required p>2 spectral height and optional original m=1 sharpening also
+the remaining p>4 spectral height and optional original m=1 sharpening also
 retain their status. None of these counts or examples certify completion
 of the dissertation.
+
+
+### Theorem 1.1 / Proposition 3.1: unchanged printed height through p=4
+
+| Requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Preserve the conjugate root | `norm_punctured_reciprocal_le_of_power_bound`, `norm_reciprocal_le_conjugate_root` | All finite conjugate pairs; retain the reciprocal-envelope coefficient 2*(2/(q-1))^(1/q). |
+| Constant-eight free bound | `reciprocal_power_coefficient_le_four`, `freeL1Bound_le_height_eight` | Every 1<=p<=4, with the central inverse-height term retained. |
+| Printed height and its edges | `mem_resolventSet_of_printed_height_up_to_four`, `abs_im_lt_printed_height_up_to_four` | Arbitrary complex potentials and norm balls; unchanged (1+8M)^p, both horizontal edges, strict spectral exclusion outside. |
+| Exact source norm | `sourceSpectrum_abs_im_lt_printed_height_up_to_four` | Original period-one source with its component-sum norm, including p=4. |
+| Full common-neighborhood counting | `exists_source_periodicCounting_printed_height_of_resolvent`, `exists_source_periodicCounting_printed_height_up_to_four` | One open convex neighborhood and every sufficiently large cutoff; central count 4N+2, disk counts two, parity, exhaustion, and analytic actual projections. |
+| Distinguish criterion failure from spectral failure | `PrintedHeightFourChecks` | At p=3 and norm bound one the coarse test exceeds one, while the actual resolvent exists at 729i; p=4 checks include the negative edge and source central count. |
+| Remaining limitation | `reciprocal_power_coefficient_four_fails_at_five` | Constant-four power-sum test fails at p=5; no spectral counterexample or all-exponent completion follows. |
+
+This extends the required result beyond two without changing the printed
+height or source norm. The full finite-exponent statement remains unresolved
+above four. The all-exponent alternative height is not substituted for it.
+The detailed source-scope audit is in `coverage/SPECTRAL_OVERVIEW.md`.
+G.2's interval-norm interpretation and the optional original m=1 sharpening
+retain their status. The dissertation remains incomplete.
