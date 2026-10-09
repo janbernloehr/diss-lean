@@ -1,6 +1,62 @@
 # Implementation plan
 
-## Latest progress: dyadic interaction growth with bounded original coefficient norm
+## Latest progress: the all-exponent printed periodic height is false
+
+The all-exponent printed periodic height in Theorem 1.1 is now refuted.
+`SourcePeriodicHeightCounterexample.lean` proves that for every integer
+P>=100000000 there is an original source `psi : CoeffPair P` with equal
+component norms and `||psi||<=1/16`, whose actual periodic spectrum
+contains `i*2^P`. The same point lies outside the printed-height central
+box and all quarter-pi disks, for every cutoff N. The explicit negation
+`not_sourceTheorem1_1_printed_exhaustion` specializes this to P=100000000.
+The result through p=4 remains valid; no claim about the smallest failing
+exponent or every exponent above four is made.
+
+`LowerDyadicTent.lean` constructs the late tent of width `2^(-J)` and
+area one. Its original mean coefficient is one, every coefficient has
+absolute value at most one, and its quadratic tail is bounded by `4^J`.
+Removing the mean gives the original lp estimate
+`1+(8*2^J)^(1/p)`, hence a bound of nine at J=2P, p=P, P>=3.
+Its weighted lower interaction B is at least
+`exp(2H(1-2^(-J)))`. All Fourier coefficients and the physical
+reconstruction retain the source convention.
+
+`OrderedDyadicSource.lean` pairs this lower tent with the previously
+proved signed upper sum. It proves the ordered support cut, physical
+compatibility, nonzero components, and nonzero interactions. Exact
+monodromy normalization gives actual spectral membership at `i*2^P`,
+and diagonal balancing preserves it with the exact original pair norm.
+`DyadicNormalizationBound.lean` proves `abs(kappa)<=12/(P-2)` using
+A>=(P-2)/4, the lower interaction estimate, and `exp(1)<3`.
+Together with upper coefficient norm <=640 and lower norm <=9, the
+balanced pair norm is at most `2 sqrt(69120/(P-2))`. The stated threshold
+makes this at most 1/16, while the printed height is at most `(3/2)^P`,
+strictly below `2^P`. These are exact symbolic estimates, not numerical
+spectral approximations.
+
+The all-p boundary height remains refuted independently. Real-type
+finite-gap spatial analyticity remains proved; these new examples are
+not real-type potentials. No replacement height is adopted. G.2's
+original arbitrary-time interval norm and the optional original m=1
+sharpening of Lemma 27.2 remain unresolved. The dissertation is incomplete.
+
+Validation: the full project check passed (6624 build jobs), including all
+public examples and the axiom audit of 27956 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+Next: quantify the necessary exponent dependence of any replacement
+periodic height coefficient using the proved small-norm family. A candidate
+consequence to prove is `P-2 <= 276480*C_P^2` for a nonnegative coefficient
+C_P that bounds all original-source spectra by `(1+C_P*norm)^P`.
+Then package the already sufficient all-p height `(1+8pM)^p` with the
+original-source counting and projection conclusions as a separate proposed
+correction, without treating it as the printed theorem or adopting it.
+Keep the arbitrary-time G.2 norm interpretation and the optional m=1
+sharpening separate; neither is resolved by this counterexample.
+
+## Previous milestone: dyadic interaction growth with bounded original coefficient norm
 
 The continuous upper profile is now an actual finite sum of normalized
 reflected tents on `[2^(-j),2^(1-j)]`, for `2<=j<=J`.

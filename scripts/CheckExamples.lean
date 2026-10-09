@@ -41409,3 +41409,58 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (h2p : (2 : ℝ≥0�
   norm_exponent_dyadicTentSumCoefficients_le hp h2p J
 
 end DyadicTentSumChecks
+
+namespace OrderedDyadicCounterexampleChecks
+open NLS NLS.Fourier NLS.ZakharovShabat Set Complex MeasureTheory
+open scoped ENNReal
+local instance instFiveLowerDyadic : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance instFiveNatLowerDyadic : Fact (1 ≤ ((5 : ℕ) : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The original mean is one, and the coefficient bounds include negative frequencies.
+example : lowerDyadicTentCoefficients 10 (by norm_num) 0 = 1 ∧
+    ‖lowerDyadicTentCoefficients 10 (by norm_num) (-7)‖ ≤ 1 :=
+  ⟨lowerDyadicTentCoefficients_zero _ _,norm_lowerDyadicTentCoefficients_le_one _ _ _⟩
+
+example : ‖Coeff.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 5)
+    (lowerDyadicTentCoefficients 10 (by norm_num))‖ ≤ 9 := by
+  simpa using norm_lowerDyadicTentCoefficients_twice_exponent_le 5 (by norm_num)
+
+-- The weighted lower estimate uses the unit-area physical profile.
+example (J : ℕ) (hJ : 2 ≤ J) (H : ℝ) (hH : 0 ≤ H) :
+    Real.exp (2*H*(1-dyadicTentWidth J)) ≤ dyadicLowerInteraction J H :=
+  integral_lowerDyadicTent_exp_lower J hJ H hH
+
+-- The original Hilbert coefficients reconstruct the ordered physical pair.
+example (J : ℕ) (hJ : 2 ≤ J) :
+    physicalBase (periodOnePotential (orderedDyadicSource J hJ)) =ᵐ[volume.restrict (Ioc 0 1)]
+      NLS.LinearVolterra.extend (orderedDyadicCurve J) := physicalBase_orderedDyadicSource J hJ
+
+-- A concrete non-Hilbert spectral point, before using any asymptotic norm estimate.
+example : Complex.I*(32 : ℝ) ∈ periodicSpectrum (by simp : (5 : ℝ≥0∞) ≠ ⊤)
+    (periodOnePotential (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 5)
+      (scaleUpperSource (orderedPeriodicNormalization (orderedDyadicCurve 10) (Complex.I*(32 : ℝ)))
+        (orderedDyadicSource 10 (by norm_num))))) := by
+  simpa only [show 2*5 = (10 : ℕ) by norm_num,show (2 : ℝ)^5 = 32 by norm_num] using
+    normalized_orderedDyadicSource_mem_periodicSpectrum (by simp : (5 : ℝ≥0∞) ≠ ⊤)
+      (by norm_num) 5 (by norm_num)
+
+example (P : ℕ) (hP : 3 ≤ P) :
+    ‖orderedPeriodicNormalization (orderedDyadicCurve (2*P)) (Complex.I*(2^P : ℝ))‖ ≤
+      12/(P-2 : ℕ) := norm_orderedDyadicNormalization_le P hP
+
+-- The same source and point escape every cutoff, in the original source norm.
+example (P : ℕ) [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 100000000 ≤ P) :
+    ∃ ψ : CoeffPair (P : ℝ≥0∞), ‖ψ.fst‖ = ‖ψ.snd‖ ∧ ‖ψ‖ ≤ 1/16 ∧
+      Complex.I*(2^P : ℝ) ∈ periodicSpectrum (ENNReal.natCast_ne_top P) (periodOnePotential ψ) ∧
+      ∀ N : ℕ, Complex.I*(2^P : ℝ) ∉
+        heightSpectralBox N ((1+8*‖ψ‖)^((P : ℝ≥0∞).toReal)) ∪ highSpectralDisks N (Real.pi/4) :=
+  sourcePeriodicPrintedHeight_counterexample P hP
+
+local instance instPeriodicCounterexample : Fact (1 ≤ (100000000 : ℝ≥0∞)) := ⟨by norm_num⟩
+-- The all-source printed exhaustion is explicitly false at a concrete finite exponent.
+example : ¬ ∀ ψ : CoeffPair 100000000, ∃ N : ℕ,
+    periodicSpectrum (by norm_num) (periodOnePotential ψ) ⊆
+      heightSpectralBox N ((1+8*‖ψ‖)^((100000000 : ℝ≥0∞).toReal)) ∪
+        highSpectralDisks N (Real.pi/4) := not_sourceTheorem1_1_printed_exhaustion
+
+end OrderedDyadicCounterexampleChecks

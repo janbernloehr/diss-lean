@@ -5,6 +5,9 @@ current public Lean API. It is not a completeness certificate for every
 chapter or appendix. All paths below are relative to the repository root;
 the introductory declarations are in `NLS.ZakharovShabat`.
 The appendix audits below use `NLS.Fourier` and `NLS.ComplexAnalysis`.
+Later milestone entries retain their historical validation counts and
+then-current limitations. The spectral overview link below and the final
+dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
 | --- | --- | --- |
@@ -71,9 +74,9 @@ extraction to reproduce its hash and line positions.
 
 [`coverage/SPECTRAL_OVERVIEW.md`](coverage/SPECTRAL_OVERVIEW.md) records the
 detailed comparison. Theorem 1.1's unchanged printed source-norm height
-and counting conclusions are proved for 1<=p<=4; above four remains open.
-Failure of the available sufficient criteria is not a spectral
-counterexample. Theorem 1.2 and Corollary 1.3 are proved for every finite
+and counting conclusions are proved for 1<=p<=4. Its all-exponent claim
+is now refuted by actual balanced dyadic sources for every integer
+P>=100000000, in the original source norm. Theorem 1.2 and Corollary 1.3 are proved for every finite
 p>1, with the actual ordered endpoints, their multiplicities, and the
 full locally uniform source bounds. Corollary 1.6's density of actual real
 finite-gap sources is also verified. Theorem 1.5 is covered for every
@@ -1369,3 +1372,42 @@ integer-exponent family. The normalized lower coupling and final spectral
 normalization estimate remain to be combined with these results.
 Theorem 1.1 above p=4 is still required and unresolved; no periodic-height
 counterexample or source correction is claimed.
+
+### Theorem 1.1: actual counterexample to the all-exponent printed height
+
+[`LowerDyadicTent.lean`](NLS/Fourier/LowerDyadicTent.lean),
+[`OrderedDyadicSource.lean`](NLS/ZakharovShabat/OrderedDyadicSource.lean),
+[`DyadicNormalizationBound.lean`](NLS/ZakharovShabat/DyadicNormalizationBound.lean), and
+[`SourcePeriodicHeightCounterexample.lean`](NLS/ZakharovShabat/SourcePeriodicHeightCounterexample.lean)
+complete the ordered multiscale construction in the original source norm.
+This supersedes the historical unresolved-height entries above: the
+all-exponent assertion is refuted, while the result through p=4 is proved.
+
+| Public entry point | Scope |
+| --- | --- |
+| `integral_lowerDyadicTent`, `lowerDyadicTentCoefficients_zero` | Late tent has area one and original mean coefficient one. |
+| `norm_lowerDyadicTentCoefficients_le_one`, `norm_lowerDyadicTentCoefficients_tail` | Every signed Fourier coefficient is bounded by one; its quadratic tail is bounded by 4^J. |
+| `norm_exponent_lowerDyadicTentCoefficients_le` | Original lp norm <= 1+(8*2^J)^(1/p), for every finite p>=2. |
+| `norm_lowerDyadicTentCoefficients_twice_exponent_le` | At J=2P and p=P>=3, the lower coefficient norm is at most nine. |
+| `integral_lowerDyadicTent_exp_lower` | Lower interaction at H>=0 is at least exp(2H(1-2^(-J))). |
+| `physicalBase_orderedDyadicSource`, `orderedDyadicCurve_support` | Original coefficients reconstruct the combined physical pair, with the upper coupling before the lower. |
+| `normalized_orderedDyadicSource_mem_periodicSpectrum` | Normalization places i*2^P in the actual spectrum at every finite target p>=2 for each integer P>=3. |
+| `exists_balanced_orderedDyadicSource` | Balanced source preserves that point with its exact original pair norm; no compatibility or nonzero-component hypotheses remain. |
+| `norm_orderedDyadicNormalization_le` | Normalization magnitude <=12/(P-2) for integer P>=3. |
+| `exists_balanced_dyadicSource_norm_le` | At exponent P, source norm <=2 sqrt(69120/(P-2)). |
+| `exists_small_dyadicSource` | For integer P>=100000000, balanced source norm <=1/16 with actual spectral point i*2^P. |
+| `sourcePeriodicPrintedHeight_counterexample` | The same source and point escape the printed-height box and all high disks at every cutoff N. |
+| `not_sourceTheorem1_1_printed_exhaustion` | Explicit negation of all-source printed exhaustion at p=100000000. |
+
+Public examples check the original mean and negative frequencies, the
+concrete p=5 lower norm, physical reconstruction, actual spectral membership
+at 32i, the normalization bound, the full counterexample family, and the
+concrete negated assertion. No claim about the optimal threshold or every
+individual exponent above four is made. Real-type reality and the printed
+result through four remain valid. No replacement height is adopted.
+
+Validation: the full project check passed (6624 build jobs), including all
+public examples and the axiom audit of 27956 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

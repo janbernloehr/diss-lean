@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the continuous dyadic upper profile now has a proved
-original lP norm bound of 640, independent of P>=3, while its interaction
-at height 2^P grows at least as (P-2)/4. Every Fourier coefficient and
-the physical reconstruction are preserved. Uniform and tail bounds are
-proved for the full sum, including negative frequencies. Combining this
-with the normalized lower coupling and the spectral normalization remains
-next; the printed periodic height above p=4 is still unresolved. Real-type
-finite-gap analyticity remains proved, and no source correction is adopted.
+Latest milestone: the all-exponent printed periodic height in Theorem 1.1
+is refuted by a proved family of actual source potentials. For every integer
+P>=100000000, a balanced source of norm at most 1/16 has the spectral point
+i*2^P, outside the printed box and high-frequency disks at every cutoff.
+The original coefficient norm and Fourier convention are retained. The
+printed result through p=4 and real-type finite-gap analyticity remain
+proved. No replacement height is adopted. The dissertation is incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
@@ -217,10 +216,11 @@ for every finite exponent and every potential of norm at most `M`. For `1 ≤ p 
 the smaller printed height `(1+8M)^p` also works. One common neighborhood gives
 central algebraic count `4N+2` in each potential's Hilbert norm-height box,
 with its cluster projection equal to the existing rectangular integral.
-These use coefficient maximum pair norms. The printed height
-`(1+8‖φ‖ₚ)^p` for `p > 2` still needs an additional argument: direct substitution into the
-proved `4p` Neumann estimate is insufficient. The actual contour formula now
-holds for every ordered rectangle with resolvent boundary, with its whole
+Those initial results use coefficient maximum pair norms. The original
+source-norm printed height is now proved through p=4 and its all-exponent
+assertion is refuted by the dyadic construction described above. Direct
+substitution into the proved `4p` Neumann estimate was insufficient. The
+actual contour formula now holds for every ordered rectangle with resolvent boundary, with its whole
 range and rank identified. In particular, contours at the printed Hilbert
 height and the proved all-exponent height equal the fixed central projection
 and are analytic with rank `4N+2`. This even holds for discontinuous choices

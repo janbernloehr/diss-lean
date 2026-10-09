@@ -3190,3 +3190,7 @@ import NLS.SequenceSpaces.UniformQuadraticEnvelope
 import NLS.Fourier.DyadicGeometricBounds
 import NLS.Fourier.NormalizedDyadicTent
 import NLS.Fourier.DyadicTentSum
+import NLS.Fourier.LowerDyadicTent
+import NLS.ZakharovShabat.OrderedDyadicSource
+import NLS.ZakharovShabat.DyadicNormalizationBound
+import NLS.ZakharovShabat.SourcePeriodicHeightCounterexample

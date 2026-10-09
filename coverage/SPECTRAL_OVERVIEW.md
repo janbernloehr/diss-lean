@@ -4,160 +4,92 @@ Source: dissertation Section 1, printed pp. 17–20, and the proof of Theorem
 1.1 on p. 27. This audit compares statements and quantifiers, not filenames
 or declaration counts. It does not certify the whole chapter.
 
-## Theorem 1.1: printed height through four; higher exponents remain open
+## Theorem 1.1: printed height proved through four; all-exponent assertion refuted
 
-For every finite p > 1 the source requires one neighborhood and one positive
-cutoff, with two eigenvalues in each distant quarter-pi disk, count 4N+2 in
-the central box, the stated periodic/antiperiodic parity counts, no other
-eigenvalues, and real spectrum for real-type potentials. The central box has
-height `(1+8‖φ‖ₚ)^p`.
+Source: dissertation, printed p. 17 (statement), especially clauses (ii)
+and (iii), and p. 27 (proof). The central box uses the original source
+height `(1+8||phi||_p)^p`, and this box together with the quarter-pi disks
+must contain every periodic eigenvalue.
 
-The following are verified ingredients:
+`SourcePeriodicHeightCounterexample.lean` now proves a counterexample
+for every integer P>=100000000. The theorem
+`sourcePeriodicPrintedHeight_counterexample` supplies a single original
+source psi with equal component norms and `||psi||<=1/16`, an actual
+periodic spectral point `z=i*2^P`, and nonmembership in the union of the
+printed-height box and high disks for **every** cutoff N. Thus no
+neighborhood/cutoff pair can satisfy the printed exhaustion at this
+source. `not_sourceTheorem1_1_printed_exhaustion` explicitly negates the
+all-source exhaustion assertion at the concrete finite exponent 100000000.
+This is an operator-spectrum counterexample, not merely failure of a
+sufficient resolvent estimate. The threshold is sufficient, not optimized.
+The behavior of each individual exponent between four and this threshold
+is not determined by this result.
 
-- `exists_uniform_periodicCountingData` (declaration namespace
-  `NLS.ZakharovShabat`, file `NLS/ZakharovShabat/PeriodicCounting.lean`) supplies
-  one open convex neighborhood and every larger cutoff, with full algebraic
-  multiplicities, disk and central parity, and spectral exhaustion. Its box
-  initially has height N. The period-one source embedding supplies the even
-  Fourier-support condition required by the parity conclusions.
-- `periodicSpectrum_im_eq_zero_of_realType` in
-  `NLS/ZakharovShabat/RealType.lean` supplies reality for every finite exponent.
-- `exists_source_periodicCounting_printed_height_up_to_four` in
-  `NLS/ZakharovShabat/SourcePrintedHeightFourCounting.lean` transfers the counts to
-  each source's own printed-height box for **1 ≤ p ≤ 4**, on one open convex
-  source neighborhood. It retains spectral exhaustion and identifies the
-  actual moving rectangular integral with the central projection. Those
-  integrals depend analytically on the source.
+The construction and its proved constants are:
 
-The initial numerical input is `printed_height_neumann_bound` in
-`NLS/ZakharovShabat/PrintedHeight.lean`, proving
-`(4p/B + B^(-p)) M < 1` for B=1+8M throughout 1<=p<=2.
-Above two that coarse test can fail, but the sharper reciprocal estimate
-retains the conjugate-root coefficient 2*(2/(q-1))^(1/q). The power-sum
-inequality 2/(q-1)<=4^q holds through p=4. This gives
-`freeL1Bound_le_height_eight`, and
-`mem_resolventSet_of_printed_height_up_to_four` proves the unchanged
-horizontal edges and exterior region. `abs_im_lt_printed_height_up_to_four`
-places every spectral point strictly inside the printed height.
+1. At J=2P, the upper real profile U is the sum, for j=2,...,J, of
+   `(4*4^j)` times the tent on `[2^(-j),2^(1-j)]` minus its reflection
+   across 1/2. `DyadicTentSum.lean` proves that its original lP coefficient
+   norm is at most 640 and its weighted interaction
+   `A=integral_0^1 U(x) exp(-2H*x) dx` at H=2^P is at least (P-2)/4.
+2. `LowerDyadicTent.lean` puts a tent V of area one on `[1-epsilon,1]`,
+   epsilon=2^(-2P). Its original mean is one. Uniform and quadratic-tail
+   Fourier bounds, after removing the mean, give an lP coefficient norm
+   at most nine. Its interaction
+   `B=integral_0^1 V(x) exp(2H*x) dx` is at least
+   `exp(2H(1-epsilon))`.
+3. `OrderedDyadicSource.lean` proves coefficient/physical compatibility,
+   ordered support, and positivity of A and B. The complex interaction
+   primitives are iA and -iB. The exact monodromy normalization multiplies
+   U by `kappa=-(exp(H)-1)^2/(A*B)`, placing iH in the actual periodic
+   spectrum at every finite target exponent p>=2.
+4. `DyadicNormalizationBound.lean` proves
+   `abs(kappa)<=12/(P-2)`. Indeed the numerator is at most exp(2H),
+   the lower interaction cancels that exponential up to
+   `exp(2H*epsilon)<=exp(1)<3`, and A>=(P-2)/4.
+5. Diagonal similarity balances the component norms while preserving
+   the actual spectral point. The original pair norm is exactly
+   `2^(1/P) sqrt(abs(kappa)*norm(U_hat)*norm(V_hat))`, hence at most
+   `2 sqrt(69120/(P-2))`. For P>=100000000 this is at most 1/16.
+   The unchanged printed height is therefore at most `(3/2)^P<2^P`.
+   The imaginary part also exceeds pi/4, excluding every disk centered
+   on the real free lattice, independently of N.
 
-The counting proof is factored through
-`exists_source_periodicCounting_printed_height_of_resolvent`, keeping the
-old p<=2 API available. The new p<=4 source theorem retains a common open
-convex neighborhood, every larger cutoff, both parity clauses, the full
-central and disk multiplicities, exhaustion, and actual analytic moving
-rectangular projections. Public examples check p=3 and p=4, including
-729i at p=3 with norm bound one, where the coarse test exceeds one.
+The original finite-exponent pair norm is the P-th root of the combined
+component coefficient energies from equation (1.2). The construction does
+not replace it by a maximum norm or a physical-space norm. It uses genuine
+continuous piecewise linear profiles and their original Fourier integrals;
+no numerical truncation or Galerkin spectral assertion is involved.
+The proof uses the existing actual monodromy/discriminant correspondence,
+exponent compatibility, and domain-preserving diagonal similarity.
 
-Above four the literal height remains a required open obligation. The
-new constant-four power-sum test already fails at p=5, which only rules out
-that use of this envelope estimate. No spectral counterexample is claimed.
-The all-exponent height `(1+8pM)^p` remains available but is not accepted as
-completion of the printed requirement. Neither improved finite-range
-estimates nor green tests establish the full theorem for every finite p.
+The verified positive results remain valid. `PrintedHeight.lean` gives
+the printed height through p=2; `RefinedReciprocalNorm.lean` and
+`PrintedHeightFour.lean` extend it through p=4.
+`exists_source_periodicCounting_printed_height_up_to_four` in
+`SourcePrintedHeightFourCounting.lean` retains the common open convex
+source neighborhood, all larger cutoffs, central and distant algebraic
+multiplicities, periodic/antiperiodic parity, spectral exhaustion, and
+actual analytic moving rectangular projections for 1<=p<=4.
+`periodicSpectrum_im_eq_zero_of_realType` retains spectral reality at all
+finite exponents. The counterexample sources cannot be of real type.
+Equal component norms alone do not imply real type.
 
+At every finite exponent the height-N counting theorem
+`exists_uniform_periodicCountingData` still gives one common neighborhood,
+all sufficiently large cutoffs, full multiplicities and parity, and
+exhaustion. Thus this erratum concerns the specified quantitative height,
+not spectral discreteness or the existence of a central counting box.
+The known sufficient height `(1+8pM)^p` and the component-product height
+`(1+8p sqrt(norm(phi_1)*norm(phi_2)))^p` are separate proved alternatives.
+No correction is adopted here.
 
-`FreeResolventHeightNecessity.lean` now gives an obstruction at the level
-of the actual free operator norm, beyond the failure of the power-sum
-test. For positive integer P and z=-i2^P it proves
-`P/48 <= ||R_0(z)||_(lP -> l1) <= 2P+2^(-P)`. A finite input has norm at
-most 96/P and an output coefficient sum of exactly -2. Any coefficient
-C_P in `||R_0(z)|| <= C_P/|Im z|^(1/P)+1/|Im z|` must satisfy
-`P <= 24 C_P+48`. There is no coefficient uniform in P; constant eight
-fails for every integer P>240, with a checked example at P=256.
-
-This is a proof-route obstruction, not a new source counterexample.
-`negativeDyadicHeight_mem_free_resolvent` proves that these parameters
-belong to the actual free periodic resolvent set at every finite exponent.
-Theorem 1.1 above four remains required and unresolved. A proof of the
-printed height must go beyond a uniform free lp-to-l1 norm estimate.
-
-
-`ComponentProductResolvent.lean` now uses the off-diagonal structure in
-the square: `||(Phi R_0)^2|| <= B(z)^2 ||phi_1|| ||phi_2||`. Thus the
-actual resolvent contains both edges and the exterior of
-`(1+8p sqrt(||phi_1|| ||phi_2||))^p` for every finite p. Period doubling
-preserves this product. The original printed source height follows under
-the additional hypothesis
-`p sqrt(||phi.fst|| ||phi.snd||) <= ||phi||_p`, for example whenever
-`p^2 ||phi.snd|| <= ||phi.fst||`.
-
-The source norm is still the p-th root of the combined component
-p-energies. It is not replaced by a sum of component norms. The new
-all-p result has an extra hypothesis; the unrestricted printed height
-above four remains unresolved. The supplementary geometric-mean height
-is not adopted as a replacement for the source formula. At fixed z off
-the free lattice, the product criterion gives an open potential region
-containing every triangular potential, with an analytic actual resolvent.
-The checked p=256 examples include two nonzero components and a successful
-product test at z=i where the previous Neumann condition fails.
-
-
-`PeriodicDiagonalSimilarity.lean` and `SourceBalancedHeightReduction.lean`
-now reduce the unrestricted height exactly to sources with equal component
-norms. Reciprocal rescaling `(u,v) -> (c u,c^(-1) v)` transports the actual
-operator domain, all generalized root chains, and every algebraic
-multiplicity. It also commutes with the period-one embedding. When both
-components are nonzero, one can make both norms equal to `G=sqrt(ab)`;
-the resulting source norm is `2^(1/p) G`, no larger than the original
-p-energy norm. Triangular cases already satisfy the printed bound.
-
-`source_printedHeight_iff_balanced` is an equivalence at each finite
-exponent. Any hypothetical counterexample also transfers at the same
-spectral parameter to a balanced source of no larger norm.
-`exists_source_periodicCounting_printed_height_of_balanced` carries an
-explicit balanced-case height hypothesis through the full original
-counting, exhaustion, and analytic-projection conclusions on one common
-neighborhood for all sufficiently large cutoffs. That hypothesis remains
-unproved above four. Equal component norms do not imply real type, and
-neither an all-p height proof nor a periodic counterexample is claimed.
-
-
-`OrderedTriangularMonodromy.lean` now supplies an exact spectral criterion
-for continuous potentials whose upper coupling acts before the lower one.
-The actual monodromy trace is `exp(-i z)+exp(i z)(1+A B)`, where A and B
-are the integrating-factor integrals. The two characteristic equations
-are `A B=-(exp(-i z)-1)^2` and `A B=-(exp(-i z)+1)^2`. They characterize
-actual source periodic spectral membership at finite p>=2 under an
-explicit coefficient/physical-representative compatibility assumption.
-
-`OrderedTriangularNormalization.lean` makes a chosen z periodic by
-rescaling the upper coupling by `kappa=-(exp(-i z)-1)^2/(A B)`, provided
-A B is nonzero. At nonreal z with nonzero components, exact balancing
-gives source norm `2^(1/p) sqrt(abs(kappa) a b)`. These are proved
-identities, not a quantitative small-norm construction. A concrete family
-and its Fourier and interaction estimates remain to be supplied; this
-step does not settle the printed periodic height above four.
-
-
-Concrete continuous profiles are now available. `OrderedTentSources.lean`
-uses original Fourier coefficients of tents on `[0,epsilon]` and
-`[1-epsilon,1]`, with `0<epsilon<=1/2`. It proves their actual physical
-representative and nonzero interactions at every iH, so normalization
-and balancing apply without those extra hypotheses. This is a genuine
-family of actual spectral points, not a claimed small-norm violation.
-
-For future norm estimates, `TentProfile.lean` proves the exact exponential
-transform, mean, area bound, and quadratic Fourier decay.
-`OddTentProfile.lean` proves that subtracting the reflected tent cancels
-the original mean, gives a low-frequency bound proportional to
-`abs(n) b (b-a)^2`, and retains quadratic high-frequency decay. Its upper
-interaction remains strictly positive for H>0 and `0<=a<b<=1/2`, with
-an explicit exponential lower bound. Dyadic summation, the resulting lp
-norm estimate, and the final printed-height comparison remain unproved.
-Thus this step does not settle Theorem 1.1 above p=4.
-
-
-The dyadic upper sum is now constructed and estimated in
-`DyadicTentSum.lean`. Its actual Fourier coefficients have uniform bound
-80 and quadratic tail bound `abs(n)^2 abs(U_hat_J(n))<=16*4^J`, with
-zero mean and verified physical reconstruction. The original coefficient
-norm at J=2P and p=P is at most 640 for every integer P>=3, while the
-weighted upper interaction at H=2^P is at least (P-2)/4. The entire sum
-vanishes on the endpoint intervals of width 2^(-2P), leaving room for an
-ordered lower coupling. The scale-sum bounds and the original lp norm
-estimate are proved; the lower coupling's norm and the final spectral
-normalization comparison are still outstanding. This is not yet a
-periodic-height counterexample and does not settle Theorem 1.1 above four.
+Earlier estimates remain useful but are logically weaker evidence:
+`reciprocal_power_coefficient_four_fails_at_five` refutes a sufficient
+power-sum test, and `FreeResolventHeightNecessity.lean` rules out a
+uniform free lp-to-l1 resolvent coefficient. Neither alone was a spectral
+counterexample. The actual dyadic source above resolves the all-exponent
+printed-height obligation negatively.
 
 ## Theorem 1.2: proved in the full printed range
 
@@ -190,7 +122,7 @@ The common bounds follow from
 `exists_uniform_bounded_canonicalPeriodicDisplacements`, pulled back along
 the continuous linear period-one source embedding. That construction uses
 height-N counting boxes and finite central bounds. It does not require
-Theorem 1.1's unresolved printed-height estimate above four. The public
+Theorem 1.1's now-refuted all-exponent printed-height estimate. The public
 checks include the literal series for general p and the instance p=5,
 original central multiplicities, and coincident free endpoints with zero
 energy. The full printed range 1<p<infinity is covered, unchanged.
@@ -367,8 +299,9 @@ support assumption. Thus the real-type qualification is both sufficient
 for the proved regularity result and essential to the source sentence's
 unrestricted complex interpretation.
 
-The numbered overview audit leaves Theorem 1.1's printed height above
-four unresolved and records Theorem 1.4's all-p printed height as refuted.
+The numbered overview audit retains Theorem 1.1's printed height through
+four and records both Theorem 1.1's and Theorem 1.4's all-p printed heights
+as refuted.
 The latter still holds at p=2; no replacement height is adopted. This
 audit does not certify the remaining chapters or unnumbered source claims.
 The dissertation remains incomplete.
