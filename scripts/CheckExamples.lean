@@ -38429,3 +38429,81 @@ example (φ : CoeffPair (3/2)) (hφ : IsRealType (CoeffPair.toMax (3/2) φ)) :
   exists_local_sourceCriticalOffset_small_gap_tail f1ThreeHalvesFinite f1ThreeHalves φ hφ (1/10) (by norm_num)
 
 end AppendixFCriticalGapChecks
+
+section AppendixFEndpointAnalyticChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Filter
+open scoped ENNReal Topology
+
+private theorem f2ThreeHalves : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+private theorem f2ThreeHalvesFinite : (3/2:ℝ≥0∞) ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+local instance : Fact ((1:ℝ≥0∞) ≤ 3/2) := ⟨f2ThreeHalves.le⟩
+local instance : Fact ((1:ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+-- The integral definition has actual finite polygonal witnesses, even on a nonconvex domain.
+example : ∃ v, HasPolygonalIntegral (fun z : ℂ => 2*z) ({0}ᶜ) 1 (-1) v := by
+  apply exists_hasPolygonalIntegral _ _ isClosed_singleton.isOpen_compl
+    (isConnected_compl_singleton_of_one_lt_rank (by simp [Complex.rank_real_complex]) (0:ℂ)).isPreconnected
+    (by fun_prop) <;> simp
+
+-- Improper polygonal integrals recover the primitive at a puncture.
+example : endpointPolygonalIntegral (fun z : ℂ => 2*z) ({0}ᶜ) 0 1 = 1 := by
+  have hF : ∀ z ∈ ({0}ᶜ : Set ℂ), HasDerivAt (fun w : ℂ => w^2) (2*z) z := by
+    intro z _
+    simpa only [Pi.pow_def,id_eq,Nat.cast_ofNat,Nat.reduceSub,pow_one,mul_one] using (hasDerivAt_id z).pow 2
+  have ha : (0:ℂ) ∈ closure ({0}ᶜ : Set ℂ) := by
+    rw [closure_compl_singleton]
+    trivial
+  have h := endpointPolygonalIntegral_eq_sub (fun z : ℂ => 2*z) (fun z => z^2) ({0}ᶜ)
+    isClosed_singleton.isOpen_compl
+    (isConnected_compl_singleton_of_one_lt_rank (by simp [Complex.rank_real_complex]) (0:ℂ)).isPreconnected
+    (by fun_prop) hF 0 1 0 ha (by simp)
+    (by simpa only [Pi.pow_def,id_eq,zero_pow (by norm_num : (2:ℕ) ≠ 0)] using ((continuousAt_id.pow 2 : ContinuousAt (fun z : ℂ => z^2) 0).tendsto.mono_left
+      (nhdsWithin_le_nhds (s := ({0}ᶜ : Set ℂ)))))
+  simpa using h
+
+-- A single source ball gives analyticity at any boundary point of a negative gap.
+example (W : Set (CoeffPair 3))
+    (C : SourceFullAbelianUniformCauchyFamily (p:=3) (by simp) (by norm_num) W)
+    (ν : ℂ) (hν : ν ∈ sphere (C.discs.center (-3)) (C.discs.outer (-3))) :
+    AnalyticOnNhd ℂ (sourceAbelianEndpointAverage (by simp) (by norm_num) (-3) ν)
+      (ball C.discs.source.val C.discs.sourceRadius) := C.sourceLemmaF2 (-3) ν hν
+
+-- The same conclusion at exponent 3/2 has no noncollapsed-gap hypothesis.
+example (W : Set (CoeffPair (3/2)))
+    (C : SourceFullAbelianUniformCauchyFamily f2ThreeHalvesFinite f2ThreeHalves W)
+    (n : ℤ) (ν : ℂ) (hν : ν ∈ sphere (C.discs.center n) (C.discs.outer n)) :
+    AnalyticOnNhd ℂ (sourceAbelianEndpointAverage f2ThreeHalvesFinite f2ThreeHalves n ν)
+      (ball C.discs.source.val C.discs.sourceRadius) := C.sourceLemmaF2 n ν hν
+
+private theorem f2Imaginary_off_free_cuts : Complex.I ∈ sourceCanonicalRootDomain
+    (p:=3) (by simp) (by norm_num) 0 := by
+  intro n hn
+  have he : Complex.I = (Real.pi:ℂ)*n := by
+    simpa only [sourcePeriodicSegment,map_zero,canonicalPeriodicLeft_zero,
+      canonicalPeriodicRight_zero,segment_same,mem_singleton_iff] using hn
+  have hi := congrArg Complex.im he
+  norm_num at hi
+
+-- End-to-end integral normalization: both endpoints coincide at zero, and the average is 1.
+example : sourceAbelianEndpointAverage (p:=3) (by simp) (by norm_num) 0 Complex.I 0 = 1 := by
+  rw [sourceAbelianEndpointAverage_zero (by simp) (by norm_num) 0 Complex.I f2Imaginary_off_free_cuts]
+  norm_num
+
+example : sourceAbelianEndpointAverage (p:=3) (by simp) (by norm_num) (-3) Complex.I 0 =
+    1-3*Complex.I*(Real.pi:ℂ) := by
+  rw [sourceAbelianEndpointAverage_zero (by simp) (by norm_num) (-3) Complex.I f2Imaginary_off_free_cuts]
+  norm_num
+  ring
+
+-- The shared common path cannot acquire another factor of one half.
+example : -(Complex.I)*Complex.I ≠ (1/(2*Complex.I))*Complex.I :=
+  appendixF_half_coefficient_ne Complex.I Complex.I_ne_zero
+
+-- Even a nonsingular imaginary-epsilon model defeats the printed real-valued majorant.
+example : 0 < ‖((1/4:ℝ):ℂ)/(Real.sqrt (5/16:ℝ):ℂ)‖ ∧
+    appendixFPrintedMajorant ‖(Complex.I/2:ℂ)‖ (1/4) = 0 :=
+  appendixF_printed_majorant_counterexample.2.2.2
+
+end AppendixFEndpointAnalyticChecks

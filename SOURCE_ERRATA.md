@@ -1,5 +1,39 @@
 # Source discrepancies
 
+## The proof of Lemma F.2: a common-path coefficient and a real majorant
+
+Source: dissertation, printed page 134, visually checked in the PDF.
+These issues concern intermediate formulas in the proof. The analyticity
+statement of F.2 is proved unchanged by identifying actual endpoint
+integrals with the already constructed joint analytic primitive.
+
+In (F.3), the common integral from tau_n to nu has coefficient 1/(2*i).
+Both endpoint integrals contain that same common path. Averaging therefore
+retains its full coefficient 1/i=-i; only the two short endpoint pieces
+are halved. `appendixF_shared_path_normalization` proves the exact splitting
+algebra, and `appendixF_half_coefficient_ne` proves that the printed half
+coefficient differs whenever the common integral is nonzero. The actual
+free endpoint average has value -i*nu+i*pi*n, checked nontrivially at n=0,
+nu=i, where its value is 1.
+
+The displayed majorant g_k(t)=sqrt(t+|epsilon_k|)/sqrt(t-|epsilon_k|) is
+not a real-valued expression for 0<t<|epsilon_k|. It therefore cannot
+justify the claimed estimate on all of [0,1] as written. Under Lean's
+totalized real square root and division it is zero on that interval.
+`appendixF_printed_majorant_counterexample` uses epsilon=i/2, t=1/4,
+and w=sqrt(5/16): w^2=t^2-epsilon^2, the actual normalized quotient t/w
+has strictly positive norm, while the printed majorant is zero. Thus no
+finite constant repairs that pointwise bound under this interpretation.
+The imaginary epsilon also avoids a real-parameter root singularity in
+the example. An absolute value in the denominator and a treatment of the
+moving singularity would be needed for a real-majorant repair; such a
+repair is not used or claimed by the formalization.
+
+The formal route constructs finite polygonal integrals, proves their
+improper endpoint limits and agreement with admissible C1 curve integrals,
+and identifies both endpoint values with the analytic primitive. This
+supplies F.2 directly, including complex collapsed gaps.
+
 ## Lemma E.2: the neighborhood must meet the real space
 
 Source: dissertation, printed page 131 (visually checked in the PDF).

@@ -1,6 +1,52 @@
 # Implementation status
 
-## Current milestone: the critical-point gap bounds in F.1
+## Current milestone: the endpoint-integral analyticity in F.2
+
+Lemma F.2, printed pages 132-134, now has analyticity of the literal
+endpoint-averaged primitive. One source neighborhood works for all signed
+indices and every point on each assigned isolating boundary. Every complex
+base point in a connected open neighborhood of all real sources is covered,
+including collapsed gaps; no continuous choice of endpoint labels is assumed.
+
+`PolygonalEndpointIntegral.lean` proves that finite chains of integrable
+straight segments connect every two points of an open connected domain.
+It defines their integral by the actual finite sum of curve integrals,
+proves independence using a primitive, and defines singular endpoint
+integration by relative limits of these sums. Existence of the connecting
+chains and nontriviality of the endpoint limit filters are proved.
+`SourceAbelianEndpointIntegrals.lean` specializes this construction to
+the actual discriminant differential. Either endpoint integral equals
+the full normalized source primitive, so their half-sum does too. Every
+integrable C1 admissible endpoint path agrees with this improper definition.
+
+`SourceLemmaF2.lean` transfers the existing joint analyticity through that
+identity, supplies the common complex neighborhoods, and proves the exact
+free normalization. This proves the printed analyticity statement without
+using two problematic intermediate formulas on page 134: (F.3) halves a
+common path term that should retain its full coefficient, and its displayed
+real majorant is undefined below the moving threshold. Exact algebra and
+a nonsingular imaginary-epsilon model verify these issues in
+`AppendixFProofAudit.lean`; SOURCE_ERRATA.md records their scope. They do
+not refute or change the statement of F.2.
+
+Next: Corollary F.3, actual endpoint-to-endpoint integrals, their exact
+normalization, and analyticity independent of which endpoint is selected.
+Use the endpoint limits already proved for the same full primitive.
+The dissertation remains incomplete: the printed spectral height above
+p=2 is still required and unresolved. The accepted Lemma 27.2 correction
+and optional original m=1 sharpening are unchanged.
+
+Validation: focused examples passed for genuine polygonal connectors on
+the nonconvex punctured plane, an improper primitive integral through its
+puncture, p=3/2 and p=3 source analyticity, a negative gap index, and exact
+free endpoint averages (including value 1 at n=0, nu=i). The two printed
+proof discrepancies have formal checks.
+The full build passed (6477 jobs), all public examples passed, and the
+axiom audit passed for 26117 NLS declarations. The same 21 pre-existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified.
+
+## Previous milestone: the critical-point gap bounds in F.1
 
 Lemma F.1, printed pages 131-132, is now proved with both literal
 constants. At every collapsed complex gap in one connected almost-real

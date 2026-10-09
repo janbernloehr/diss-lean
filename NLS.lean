@@ -3044,3 +3044,7 @@ import NLS.Fourier.SourceLemmaE3
 import NLS.ZakharovShabat.SourceCriticalGapAnalyticDomain
 import NLS.ZakharovShabat.SourceCriticalHalfGapBounds
 import NLS.ZakharovShabat.SourceLemmaF1
+import NLS.ComplexAnalysis.PolygonalEndpointIntegral
+import NLS.ZakharovShabat.SourceAbelianEndpointIntegrals
+import NLS.ZakharovShabat.SourceLemmaF2
+import NLS.ComplexAnalysis.AppendixFProofAudit

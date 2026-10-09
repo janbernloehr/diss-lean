@@ -375,7 +375,7 @@ coefficients are the actual integrals on the unit interval.
 Focused examples check q=3/2 and infinity, negative even and odd frequency
 normalizations, a complex displacement exactly on the pi/4 boundary, and
 a large exceptional imaginary frequency at index zero. No correction to
-E.3 is needed. F.1 is audited below; later Appendix F results remain to be audited.
+E.3 is needed. F.1-F.2 are audited below; F.3 remains to be audited.
 
 ### Lemma F.1: critical-point bounds in terms of the periodic gap
 
@@ -402,4 +402,32 @@ interlacing to leave a strict margin at open head gaps; collapsed head gaps
 use part (i), and a common small tail supplies the remaining indices.
 Focused checks include p=3/2 and p=3, a negative index with no real-base-point
 hypothesis, exact zero-source values, an actual nonzero real source, and
-compatibility with an earlier prescribed domain. F.2 remains to be audited.
+compatibility with an earlier prescribed domain. F.2 is audited below.
+
+### Lemma F.2: analyticity of the actual endpoint-averaged integral
+
+F.2, printed pages 132-134, is proved for the literal half-sum of two
+improper endpoint integrals of Delta′/sqrt_c(Delta^2-4). One source
+neighborhood supports every signed gap and every point on its assigned
+isolating boundary. Complex collapsed points are included. The statement
+is unchanged; two intermediate proof formulas need correction as recorded
+in SOURCE_ERRATA.md.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Genuine nonsingular path integrals | `HasPolygonalIntegral`, `exists_hasPolygonalIntegral`, `polygonalIntegral_spec` | Finite sums of actual curve integrals along integrable straight segments; connectors exist on every open connected domain. |
+| Genuine improper endpoint integration | `endpointPolygonalIntegral`, `tendsto_polygonalIntegral_endpoint` | Relative limit as the start approaches a singular endpoint through the domain; primitive boundary values give convergence. |
+| Actual source differential and endpoint average | `sourceAbelianDifferential`, `sourceAbelianEndpointIntegral`, `sourceAbelianEndpointAverage` | Canonical discriminant derivative and canonical root; both actual periodic endpoints and the factor 1/2 appear in the definition. |
+| Nonvacuous endpoint limits | `SourceFullAbelianUniformCauchyFamily.endpoint_mem_closure_rootDomain`, `.tendsto_endpointPolygonalIntegral` | Every endpoint, including a collapsed one, is approached through the cut complement; the limit filter is nontrivial. |
+| Equality with the previously constructed primitive | `.endpointIntegral_eq`, `.endpointAverage_eq` | Either endpoint integral equals the full primitive normalized at that gap, hence so does their average. |
+| Agreement with conventional admissible paths | `.endpointCurveIntegral_eq` | Every integrable C1 path whose interior avoids the cuts has the same value; no artificial endpoint value of the differential is used. |
+| F.2 on each whole boundary circle | `.sourceLemmaF2` | One source ball, every gap and every boundary point, without a nonzero-gap hypothesis. |
+| Full almost-real source statement | `sourceLemmaF2` | Connected open domain containing all real sources; every complex point has a common neighborhood supporting all boundary functions and their literal integral identification. |
+| Exact free normalization | `sourceAbelianEndpointAverage_zero` | Value -i*nu+i*pi*n at every off-lattice evaluation point, including negative indices and collapsed free endpoints. |
+
+The proof transfers joint analyticity through equality with the canonical
+primitive and avoids the problematic dominated-convergence calculation.
+The common-path coefficient check and the counterexample to the printed
+real majorant are in `AppendixFProofAudit.lean`. Focused examples include
+a nonconvex punctured domain, its improper endpoint integral, p=3/2 and
+p=3, and nonzero free values. Corollary F.3 remains to be audited.
