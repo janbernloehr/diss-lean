@@ -3073,3 +3073,8 @@ import NLS.ComplexAnalysis.OscillatoryIntegralL2
 import NLS.ZakharovShabat.IntervalHermitianFirstBornBound
 import NLS.ZakharovShabat.L2HermitianUniformRemainderBound
 import NLS.ZakharovShabat.ClassicalHermitianTraceL2Bound
+import NLS.ComplexAnalysis.IntervalH1Variation
+import NLS.ComplexAnalysis.OscillatoryIntegralConstant
+import NLS.ZakharovShabat.IntervalH1OperatorBound
+import NLS.ZakharovShabat.LemmaG2IntegralNormAudit
+import NLS.Fourier.IntervalH1NormIdentification

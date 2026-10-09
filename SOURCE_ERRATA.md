@@ -1,5 +1,30 @@
 # Source discrepancies
 
+## Lemma G.2: arbitrary-time first inequality under the integral H1 convention
+
+Source: dissertation, printed page 135. This is a **norm-qualified** failure,
+not a refutation of every possible interpretation of the unspecified interval
+norm. Define the local H1 norm as the square root of the integral of the
+squared magnitudes of both potential components and both derivatives.
+
+For the smooth period-one constant potential phi=(1,0), t=1/4 and z=2*pi,
+that norm is 1/2. The actual weighted Hermitian first Born operator norm is
+1/(2*pi). The first displayed G.2 right side, using this local norm, equals
+5/(16*pi), which is strictly smaller. `lemmaG2_firstBorn_integralNorm_counterexample`
+proves the strict inequality, while `g2IntegralNormTestPotential_admissible`
+checks smoothness, periodicity, and the nonzero spectral parameter. The exact
+original oscillatory kernel is evaluated by
+`oscillatoryIntegral_const_quarter_period`; no numerical approximation is used.
+
+Consequently this local integral convention cannot validate the printed
+first inequality for all nonnegative times. A different interval norm
+convention or a change in the estimate would need separate justification.
+We do not select such a correction here. The second, unit-interval remainder
+bound **does hold** in this same integral H1 norm: it is independently proved
+by `l2HermitianRemainder_le_unit_H1`, using a combined endpoint estimate and
+G.1. Its factor 3/(2*abs(z)) and coefficient 1+norm(phi)_2 exp(norm(phi)_2)
+are unchanged.
+
 ## The proof of Lemma F.2: a common-path coefficient and a real majorant
 
 Source: dissertation, printed page 134, visually checked in the PDF.

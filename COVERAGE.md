@@ -606,3 +606,27 @@ the required norm comparison in that definition. Its numbering differs from
 the cited 2014 book, which has not been read directly. No source discrepancy
 is asserted by this milestone. Existing coarse Fourier-norm estimates and
 the explicit size S do not establish the literal printed H1 bound.
+
+
+### Lemma G.2: integral H1 norm and the arbitrary-time interpretation
+
+| Requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Explicit scalar H1 energy | `intervalH1Norm`, `intervalH1Norm_sq` | Unnormalized integral of squared function and derivative magnitudes. |
+| Existing energy compatibility | `NLS.Fourier.intervalH1Norm_eq_sqrt_energy` | Exactly the square root of the pre-existing physical squared energy on [0,t]. |
+| Explicit Hilbert pair norm | `intervalPairH1Norm_eq_integral` | Exactly the square root of the sum of all four component integrals, with no norm-equivalence constant. |
+| Combined trace estimate | `endpoint_variation_le_sample`, `endpoint_variation_le_integrals`, `endpoint_variation_le_three_H1` | Every t in [0,1], complex AC functions with L2 derivatives; no periodicity requirement. |
+| Unit-interval Born bound | `intervalHermitianFirstBornOperator_weighted_le_unit_H1` | Actual Hermitian operator; coefficient 3/(2*abs(z)); original H1 functions. |
+| Unit-interval remainder consequence | `l2HermitianRemainder_le_unit_H1` | Actual physical L2 solution; same coefficient and exact factor 1+norm(phi)_2 exp(norm(phi)_2). |
+| Physical Fourier H1 inputs | `classicalHermitianRemainder_sobolev_le_unit_H1` | No extra AC/derivative premises; actual integral H1 norm retained. |
+| Exact constant kernel | `oscillatoryIntegral_const`, `oscillatoryIntegral_neg_const`, `oscillatoryIntegral_const_quarter_period` | Original oscillatory integral and both frequency signs. |
+| Arbitrary-time first inequality under the integral convention | `lemmaG2_firstBorn_integralNorm_counterexample`, `g2IntegralNormTestPotential_admissible` | Strict failure for smooth period-one phi=(1,0), t=1/4, z=2*pi; actual left side 1/(2*pi), right side 5/(16*pi). |
+| Source's precise interval norm | **Still unresolved** | The counterexample concerns the explicit integral norm only. The unit-interval consequence is independently proved under that convention. |
+
+The endpoint estimates are combined before integration: their variation sum
+is at most 2 times the L1 function norm plus 2 times the L1 derivative norm.
+Cauchy--Schwarz yields the needed constant three in H1. This avoids assuming
+that individual point evaluations have norm at most one. The source's
+periodic Fourier convention on printed page 103 still needs to be compared
+with the explicit integral norm for source-level identification. The
+arbitrary-time first inequality is not silently replaced or marked complete.

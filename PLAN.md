@@ -1,6 +1,56 @@
 # Implementation plan
 
-## Latest progress: G.2 with explicit trace and derivative data
+## Latest progress: G.2 in the integral H1 norm, with a qualified audit
+
+The unit-interval first Born and fundamental-solution remainder bounds are
+now proved with exactly 3/(2|z|) in the unnormalized integral Hilbert H1
+norm. `intervalPairH1Norm_eq_integral` identifies the norm exactly with
+sqrt(integral (|phi_-|^2+|phi_+|^2+|phi_-'|^2+|phi_+'|^2)). This is not the
+supremum/derivative size used in the preceding milestone.
+`IntervalH1NormIdentification.lean` also proves that the scalar norm is
+exactly the square root of the existing physical squared energy, preserving
+its unnormalized measure and enabling the next Fourier norm comparison.
+
+`IntervalH1Variation.lean` combines both endpoint values and the derivative
+variation before applying Cauchy--Schwarz. For every t in [0,1], their sum
+is at most twice the L1 norm of the function plus twice the L1 norm of its
+derivative, hence at most three times its integral H1 norm. The proof uses
+absolute continuity and an L2 derivative; periodic endpoint conditions and
+constant-one bounds for individual traces are unnecessary.
+
+`IntervalH1OperatorBound.lean` proves the actual Hermitian Born bound for
+these inputs. G.1 then gives the actual physical L2 solution remainder bound
+with the exact factor 1+||phi||_2 exp(||phi||_2). All physical H1 Fourier
+pairs instantiate the result without additional regularity premises.
+
+The arbitrary-time first inequality of printed G.2 cannot use this same
+local integral norm. `LemmaG2IntegralNormAudit.lean` proves a strict
+counterexample: for the smooth period-one potential phi=(1,0), t=1/4 and
+z=2*pi, the actual weighted Born norm is 1/(2*pi), while the printed right
+side with the local integral H1 norm is 5/(16*pi). The norm itself is 1/2.
+`OscillatoryIntegralConstant.lean` evaluates the original kernel exactly;
+no numeric approximation or alternative matrix norm is involved.
+
+This refutes only the explicitly stated integral-norm interpretation of the
+first inequality. The source's interval norm convention remains unresolved;
+no claim is made against every possible norm convention. The unit-interval
+remainder consequence is proved independently and is not refuted. Next:
+compare the integral norm with the source's periodic Fourier norm, then use
+the unit-interval estimate in G.3, retaining the arbitrary-time interpretation
+as a separate source obligation. The required p>2 spectral height and optional
+original m=1 sharpening remain open; the accepted Lemma 27.2 correction is
+unchanged.
+
+Focused checks cover the exact energy of an affine nonperiodic function,
+its endpoint estimate at every unit-interval time, the Hilbert norm of a
+3-4 potential pair, the signed quarter-period kernel, admissibility and
+strict failure under the integral convention, and all physical H1 Fourier
+potentials. The full build passed (6507 jobs), all public examples passed,
+and the axiom audit passed for 26396 NLS declarations. The same 21 existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified; this inventory is not a completeness certificate.
+
+## Previous milestone: G.2 with explicit trace and derivative data
 
 The integration-by-parts estimate behind Lemma G.2 is now proved for the
 actual first Born operator on every interval [0,t], t >= 0, at every nonzero

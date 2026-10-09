@@ -39025,3 +39025,74 @@ example (φ : IntervalPairL2) (z : ℂ) (B : ℝ) (hB : 0 ≤ B)
   convert h using 1; ring
 
 end AppendixG2TraceChecks
+
+noncomputable section
+open Set MeasureTheory intervalIntegral
+open NLS.ComplexAnalysis NLS.ZakharovShabat NLS.LinearVolterra
+namespace AppendixG2IntegralH1Checks
+
+private theorem affine_deriv : deriv (fun s : ℝ => (s : ℂ)) = fun _ => (1 : ℂ) := by
+  funext s
+  exact Complex.ofRealCLM.hasDerivAt.deriv
+
+-- The energy contains both the function and its derivative, with physical length one.
+example : intervalH1Norm (fun s : ℝ => (s : ℂ)) 1 = Real.sqrt (4/3 : ℝ) := by
+  unfold intervalH1Norm
+  simp only [affine_deriv,Complex.norm_real,Real.norm_eq_abs,sq_abs,norm_one,one_pow]
+  have hi : IntervalIntegrable (fun s : ℝ => s^2) volume 0 1 :=
+    (continuous_id.pow 2).intervalIntegrable 0 1
+  rw [intervalIntegral.integral_add hi intervalIntegrable_const,integral_pow]
+  norm_num
+
+-- A nonperiodic H1 potential satisfies the combined endpoint estimate at every time.
+example (t : Icc (0 : ℝ) 1) :
+    ‖((0 : ℝ) : ℂ)‖+‖(t.val : ℂ)‖+(∫ s in 0..t.val, ‖deriv (fun r : ℝ => (r : ℂ)) s‖) ≤
+      3*intervalH1Norm (fun s : ℝ => (s : ℂ)) 1 := by
+  apply endpoint_variation_le_three_H1
+  · exact Complex.ofRealCLM.contDiff.contDiffOn.absolutelyContinuousOnInterval
+  · exact (memLp_two_iff_integrable_sq_norm Complex.continuous_ofReal.aestronglyMeasurable).mpr
+      ((Complex.continuous_ofReal.norm.pow 2).intervalIntegrable 0 1).1
+  · rw [affine_deriv]
+    exact memLp_const 1
+
+-- The pair norm is Hilbert, not the coordinate maximum: the 3-4 pair has norm 5.
+example : intervalPairH1Norm (fun _ => ((3 : ℂ),4*Complex.I)) 1 = 5 := by
+  norm_num [intervalPairH1Norm,intervalH1Norm]
+  rw [show (25 : ℝ) = 5^2 by norm_num,Real.sqrt_sq (by norm_num)]
+
+-- Exact Born integral at a nonzero real frequency, including the sign-flipped kernel.
+example : oscillatoryIntegral (-Complex.I*(2*Real.pi)) (1/4) (fun _ => (1 : ℂ)) =
+    (1/(2*Real.pi) : ℝ) := by
+  have hc : Complex.I*(2*Real.pi) ≠ (0 : ℂ) :=
+    mul_ne_zero Complex.I_ne_zero (mul_ne_zero (by norm_num)
+      (Complex.ofReal_ne_zero.mpr Real.pi_ne_zero))
+  rw [neg_mul,oscillatoryIntegral_neg_const _ hc,oscillatoryIntegral_const_quarter_period]
+
+-- The arbitrary-time source formula fails under this explicitly stated norm convention.
+example : ¬ (Real.exp (-(|(2*Real.pi : ℂ).im| * (1/4 : ℝ)))*
+    ‖intervalHermitianFirstBornOperator g2IntegralNormTestPotential (2*Real.pi) (1/4)‖ ≤
+      (2+Real.sqrt (1/4 : ℝ))/(2*‖(2*Real.pi : ℂ)‖)*
+        intervalPairH1Norm g2IntegralNormTestPotential (1/4)) :=
+  not_le_of_gt lemmaG2_firstBorn_integralNorm_counterexample
+
+-- The same input is smooth, periodic, and uses a nonzero spectral parameter.
+example : ContDiff ℝ ⊤ g2IntegralNormTestPotential ∧
+    Function.Periodic g2IntegralNormTestPotential 1 ∧ (2*Real.pi : ℂ) ≠ 0 :=
+  g2IntegralNormTestPotential_admissible
+
+-- All physical Fourier H1 inputs give the actual remainder bound with no extra regularity.
+example (a : ScalarDomain 2 × ScalarDomain 2) (z : ℂ) (hz : z ≠ 0)
+    (t : Icc (0 : ℝ) 1) :
+    classicalNormalizedHermitianRemainder (classicalSobolevPotential a) z t ≤
+      3/(2*‖z‖)*(1+classicalPotentialL2Norm (classicalSobolevPotential a)*
+        Real.exp (classicalPotentialL2Norm (classicalSobolevPotential a)))*
+        intervalPairH1Norm (extend (classicalSobolevPotential a)) 1 :=
+  classicalHermitianRemainder_sobolev_le_unit_H1 a z hz t
+
+-- Exact recovery of the pre-existing squared-energy convention.
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1)))
+    (hd : MemLp (deriv f) 2 (volume.restrict (Ioc 0 1))) :
+    intervalH1Norm f 1 = Real.sqrt (NLS.Fourier.intervalH1Energy f 0 1) :=
+  NLS.Fourier.intervalH1Norm_eq_sqrt_energy f 1 (by norm_num) hf hd
+
+end AppendixG2IntegralH1Checks
