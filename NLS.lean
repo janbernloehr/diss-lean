@@ -3038,3 +3038,6 @@ import NLS.ComplexAnalysis.ContinuousRealFormIdentity
 import NLS.ComplexAnalysis.RealComplexification
 import NLS.ComplexAnalysis.SourceLemmaE2
 import NLS.ZakharovShabat.SourceRealTypeIdentity
+import NLS.Fourier.ShiftedExponentialFourier
+import NLS.Fourier.ShiftedExponentialCoefficientBound
+import NLS.Fourier.SourceLemmaE3

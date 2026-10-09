@@ -1,6 +1,41 @@
 # Implementation status
 
-## Current milestone: the connected real-subspace identity theorem in E.2
+## Current milestone: the uniform shifted-exponential bound in E.3
+
+Lemma E.3, printed page 131, now has the uniform Fourier-Lebesgue
+bound for complex frequencies within pi/4 of n*pi in the tail. Every
+q>1 is covered, including infinity. The finite head is unrestricted and
+is absorbed into a global positive bound; the literal O(1) statement
+is exported along the filter where the absolute integer index tends
+to infinity. No real-frequency or matching-endpoint hypothesis is used.
+
+`ShiftedExponentialFourier.lean` constructs the actual unit-interval
+Fourier coefficients, proves exact modulation by integer modes and
+invariance of the sequence norm, and removes n/2 to leave a residual
+frequency bounded by 5*pi/4. Euclidean integer division also handles
+negative odd indices. The existing C1 estimate then gives a tail constant
+depending only on q. `ShiftedExponentialCoefficientBound.lean` proves
+the reciprocal decay in the source proof for the literal difference
+of exponentials, uniformly over all tail indices and Fourier modes.
+`SourceLemmaE3.lean` packages the tail, global, and asymptotic bounds.
+No source correction is needed for E.3.
+
+Next: audit Appendix F, starting with F.1's critical-point/midpoint
+bounds near collapsed gaps and its common source neighborhood.
+The dissertation remains incomplete: the printed spectral height above
+p=2 is still required and unresolved. The accepted Lemma 27.2 correction
+and optional original m=1 sharpening are unchanged.
+
+Validation: focused examples passed for the exact free-mode Fourier
+normalization, a negative odd mode with nonzero mean, negative integer
+modulation, q=3/2 and q=infinity, a complex displacement on the pi/4
+boundary, and a large exceptional frequency in the finite head.
+The full build passed (6470 jobs), all public examples passed, and the
+axiom audit passed for 26021 NLS declarations. The same 21 pre-existing
+warnings remain, with no new warnings. The 156 candidate source labels
+were verified.
+
+## Previous milestone: the connected real-subspace identity theorem in E.2
 
 Lemma E.2, printed page 131, now has the real-subspace identity theorem
 on connected open domains meeting the included real space. No convexity

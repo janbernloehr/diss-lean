@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma E.2's real-subspace identity theorem is proved on
-connected open domains meeting the real space, without convexity or a
-prescribed complexification norm. The necessary real-point condition is
-explicit, and a counterexample shows why it cannot be omitted. The actual
-Fourier source version includes every finite Banach exponent.
-Next is E.3; the printed spectral height above p=2 remains open.
+Latest milestone: Lemma E.3's uniform Fourier-Lebesgue bound is proved
+for complex shifted frequencies and every q>1, including infinity.
+The actual unit-interval Fourier integrals satisfy the reciprocal-decay
+estimate in the proof, and arbitrary exceptional frequencies in the finite
+head are allowed. Next is Appendix F; the printed spectral height above
+p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

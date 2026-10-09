@@ -38271,3 +38271,87 @@ example (U : Set (CoeffPair 3)) (hU : IsOpen U) (hc : IsConnected U) (h0 : 0 ∈
     ⟨0,h0,by simp [realTypeSourceLocus]⟩ f hf hz
 
 end AppendixERealIdentityChecks
+
+section AppendixEShiftedExponentialChecks
+open NLS NLS.Fourier Filter
+open scoped ENNReal Topology
+
+private theorem e3ThreeHalves : (1:ℝ≥0∞) < 3/2 :=
+  (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr (by norm_num)
+local instance : Fact ((1:ℝ≥0∞) ≤ 3/2) := ⟨e3ThreeHalves.le⟩
+
+-- Frequency signs and the period-one normalization agree with the physical integral.
+example (k m : ℤ) :
+    intervalFourierCoefficient 1 (unitIntervalExponential ((Real.pi:ℂ)*((2*k:ℤ):ℂ))) m =
+      if m = k then 1 else 0 := by
+  rw [intervalFourierCoefficient_exponential_lattice]
+  rw [show 2*k-2*m = 2*(k-m) by ring,unitIntegral_even]
+  simp [sub_eq_zero,eq_comm]
+
+-- A negative odd free mode has nonzero mean; endpoint matching would wrongly exclude it.
+example : intervalFourierCoefficient 1 (unitIntervalExponential (-(Real.pi:ℂ))) 0 =
+    -(2*Complex.I)/(Real.pi:ℂ) := by
+  have h := intervalFourierCoefficient_exponential_lattice (-1) 0
+  norm_num at h
+  rw [h]
+  have hu := unitIntegral_odd (-1)
+  norm_num at hu
+  rw [hu]
+  ring
+
+-- Euclidean division at -1 leaves residual +pi, not -pi.
+example : (-(Real.pi:ℂ))-2*(Real.pi:ℂ)*((-1:ℤ)/2:ℤ) = (Real.pi:ℂ) := by
+  norm_num
+  ring
+
+-- Non-Hilbert exponents and negative modulations preserve the coefficient norm.
+example (z : ℂ) :
+    ‖exponentialFourierCoefficients e3ThreeHalves (z+2*(Real.pi:ℂ)*(-7:ℤ))‖ =
+      ‖exponentialFourierCoefficients e3ThreeHalves z‖ :=
+  norm_exponentialFourierCoefficients_modulation e3ThreeHalves z (-7)
+
+example (z : ℂ) (k : ℤ) :
+    ‖exponentialFourierCoefficients (q:=⊤) (by simp) (z+2*(Real.pi:ℂ)*k)‖ =
+      ‖exponentialFourierCoefficients (q:=⊤) (by simp) z‖ :=
+  norm_exponentialFourierCoefficients_modulation (by simp) z k
+
+-- A complex displacement exactly on the permitted boundary is allowed.
+private theorem e3Boundary (n : ℤ) :
+    ‖((Real.pi:ℂ)*n+Complex.I*(Real.pi/4:ℝ))-(Real.pi:ℂ)*n‖ ≤ Real.pi/4 := by
+  rw [add_sub_cancel_left,norm_mul,Complex.norm_I,one_mul,Complex.norm_real,
+    Real.norm_of_nonneg (by positivity)]
+
+example (n : ℤ) :
+    ‖exponentialFourierCoefficients e3ThreeHalves
+      ((Real.pi:ℂ)*n+Complex.I*(Real.pi/4:ℝ))‖ ≤ sourceLemmaE3Bound e3ThreeHalves :=
+  sourceLemmaE3_tail e3ThreeHalves _ 0 (fun j _ => e3Boundary j) n (Nat.zero_le _)
+
+example (n m : ℤ) :
+    ‖intervalFourierCoefficient 1
+      (fun x => unitIntervalExponential ((Real.pi:ℂ)*n+Complex.I*(Real.pi/4:ℝ)) x-
+        unitIntervalExponential ((Real.pi:ℂ)*n) x) m‖ ≤
+      (4*((2+5*Real.pi/4)*Real.exp (5*Real.pi/4)))/(1+|((n-2*m:ℤ):ℝ)|) :=
+  norm_intervalFourierCoefficient_exponential_difference n m _ (e3Boundary n)
+
+-- A very large exceptional frequency at index zero does not need the tail bound.
+private def e3ExceptionalFrequency (n : ℤ) : ℂ :=
+  if n = 0 then 100*Complex.I else (Real.pi:ℂ)*n
+
+private theorem e3ExceptionalTail : ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+    ‖e3ExceptionalFrequency n-(Real.pi:ℂ)*n‖ ≤ Real.pi/4 := by
+  refine ⟨1,?_⟩
+  intro n hn
+  have hn0 : n ≠ 0 := by omega
+  simp only [e3ExceptionalFrequency,if_neg hn0,sub_self,norm_zero]
+  positivity
+
+example : ∃ C : ℝ, 0 < C ∧ ∀ n : ℤ,
+    ‖exponentialFourierCoefficients e3ThreeHalves (e3ExceptionalFrequency n)‖ ≤ C :=
+  sourceLemmaE3 e3ThreeHalves e3ExceptionalFrequency e3ExceptionalTail
+
+example : Asymptotics.IsBigO (Filter.comap Int.natAbs atTop)
+    (fun n : ℤ => exponentialFourierCoefficients (q:=⊤) (by simp) (e3ExceptionalFrequency n))
+    (fun _ : ℤ => (1:ℝ)) :=
+  sourceLemmaE3_bigO (by simp) e3ExceptionalFrequency e3ExceptionalTail
+
+end AppendixEShiftedExponentialChecks

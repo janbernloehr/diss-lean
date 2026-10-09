@@ -272,7 +272,7 @@ majorants, rather than inferred from bounds on fixed sample sequences.
 Focused checks include the value -1 at a negative odd free center, the
 value 1 at zero, invariance under moving only the omitted root, a negative
 omitted-index cutoff, p=3 norm-ball bounds, and p=3/2 local uniformity.
-The following audits treat D.9 and E.1-E.2; later statements still require source-level comparison.
+The following audits treat D.9 and E.1-E.3; later statements still require source-level comparison.
 
 ### Lemma D.9: the full sine-product asymptotic
 
@@ -324,8 +324,7 @@ zero: `appendixE_all_index_cutoff_eq_zero` checks the obstruction formally.
 Focused examples include p=1 and p=3, a negative omitted index, and a
 nonreal single-root displacement. The end-to-end sinc example derives
 the literal supremum-decay hypothesis and reconstructs the nonzero value
-one at z=0 when the zero-index root is moved to i. E.2 is audited below;
-E.3 remains to be source-audited.
+one at z=0 when the zero-index root is moved to i. E.2 and E.3 are audited below.
 
 ### Lemma E.2: the identity theorem for real subspaces
 
@@ -354,4 +353,26 @@ replaced by a complex-line uniqueness argument with the same intended scope.
 Focused checks use the complex plane with i removed and formally verify
 that this domain is connected but not convex. They also check a translated
 real base point, a paired complex target, the real-slice obstruction, and
-the actual source spaces at p=1 and p=3. E.3 remains to be audited.
+the actual source spaces at p=1 and p=3.
+
+### Lemma E.3: uniform Fourier-Lebesgue bounds for shifted exponentials
+
+E.3, printed page 131, is proved for arbitrary complex frequencies with
+|nu_n-n*pi| <= pi/4 outside a finite index block. Every q>1 is covered,
+including infinity. No periodic endpoint matching is assumed: the
+coefficients are the actual integrals on the unit interval.
+
+| Source requirement | Public theorem(s) | Scope |
+| --- | --- | --- |
+| Actual Fourier coefficients of exp(i*nu*x) | `exponentialFourierCoefficients_apply` | The coefficient-space element evaluates to the literal unit-interval Fourier integral. |
+| Modulation and Fourier normalization | `intervalFourierCoefficient_exponential_modulation`, `intervalFourierCoefficient_exponential_lattice` | Integer modulation shifts the Fourier index; free pi-lattice modes recover the exact overlap integral. |
+| Uniformity in the lattice index | `norm_exponential_residual_frequency_le`, `norm_exponentialFourierCoefficients_modulation` | Removing n/2 leaves norm at most 5*pi/4, including negative odd n; modulation preserves the full sequence norm. |
+| Reciprocal decay in the printed proof | `norm_intervalFourierCoefficient_exponential_difference` | A common explicit constant bounds the literal difference coefficient by 1/(1+abs(n-2*m)) for every near-lattice index and every Fourier mode. |
+| A common tail constant | `sourceLemmaE3_tail` | Positive constant depends only on q, before the sequence and cutoff. |
+| Arbitrary finite head | `sourceLemmaE3` | All-index positive norm bound absorbs the unrestricted exceptional frequencies. |
+| Literal O(1) conclusion | `sourceLemmaE3_bigO` | Boundedness as the absolute integer index tends to infinity, for every q>1 including infinity. |
+
+Focused examples check q=3/2 and infinity, negative even and odd frequency
+normalizations, a complex displacement exactly on the pi/4 boundary, and
+a large exceptional imaginary frequency at index zero. No correction to
+E.3 is needed. Appendix F remains to be source-audited.
