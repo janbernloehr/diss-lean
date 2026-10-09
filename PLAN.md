@@ -1,6 +1,63 @@
 # Implementation plan
 
-## Latest progress: corrected I.1 and the printed I.2 criterion
+## Latest progress: the full I.3 compactness criterion
+
+`SourceLemmaI3.lean` proves both directions of the printed total-boundedness
+criterion for arbitrary subsets of l^p and every finite Banach exponent
+1<=p<infinity. The hypotheses are pointwise boundedness of the original
+coefficients and, for each positive epsilon, one N>=1 whose complementary
+projection is at most epsilon for every element of the set. No global norm
+bound, closedness, nonemptiness, or sequence parametrization is assumed.
+
+`TotalBoundedTails.lean` proves the finite-set criterion. Pointwise bounds
+and a single uniformly bounded tail first give a global norm bound; compact
+finite Fourier projections then supply finite covers. Conversely, the
+closure of a totally bounded set is compact, and Dini's theorem upgrades
+pointwise convergence of the decreasing tail norms to uniform convergence.
+This argument covers p=1 as well as every larger finite exponent.
+
+The source projection retains the closed head |n|<=N. Its complement is
+exactly the existing boundary-retaining `fourierTail (N+1)`, so the two
+cutoff conventions are explicitly related. The proof enlarges arbitrary
+finite heads to symmetric heads with N>=1. Compactness and relative
+compactness are also characterized: add closedness for compactness, and
+use the same criterion for compact closure.
+
+`WeightedSourceLemmaI3.lean` transports the full equivalence to every
+positive coefficient weight, hence to all real Sobolev orders. Its
+pointwise bounds concern the raw source coefficients, and the tail norm
+is the original weighted norm. The weighting isometry preserves the
+projection exactly, with no comparison constant or growth assumption on
+the weight. A weighted compactness characterization is included.
+
+`SourceCompactProjection.lean` proves the consequence used at the start
+of I.4: for every compact operator into finite-exponent l^p, the full
+complementary output projection tends to zero in operator norm. For each
+epsilon>0, one N>=1 works for every larger cutoff and every unit input.
+The result applies to arbitrary complex normed input spaces. It does not
+merely discard a finite set of input columns.
+
+Focused examples passed for the p=1 endpoint, arbitrary finite exponents,
+weighted Sobolev spaces at p=3 and every real order, compact closure,
+signed cutoff boundaries, and the quarter-norm compact-operator estimate.
+Unit vectors show that pointwise boundedness alone is insufficient. A
+compact singleton consisting of the constant-one l-infinity sequence
+shows why finite p is essential for the necessary tail condition. Neither
+example contradicts the printed I.3, which needs no correction.
+
+Next: audit and prove I.4 at its original real-source scope, including
+its analytic extension and the signs in its displayed Schur formula.
+G.2's arbitrary-time local norm, the required p>2 spectral height, and
+the optional original m=1 sharpening remain open. Earlier accepted
+corrections retain their status; the dissertation remains incomplete.
+
+Validation: focused modules and the public probe passed. The full project
+check passed with 6,540 build jobs, all public examples, and the axiom audit
+for 26,963 NLS declarations. The 21 existing warnings are unchanged, with
+none introduced. The source inventory verified 156 candidate labels;
+these counts do not certify dissertation completeness.
+
+## Previous milestone: corrected I.1 and the printed I.2 criterion
 
 `SourceSchurComplement.lean` proves the corrected I.1 and the unchanged
 I.2 for bounded operators on complex Banach spaces, using the original

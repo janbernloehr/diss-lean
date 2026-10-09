@@ -39853,3 +39853,84 @@ example : ‖(-1 : ℂ →L[ℂ] ℂ)‖ = 1 ∧
   sourceCorollaryI2_boundary_counterexample
 
 end AppendixI12SourceChecks
+
+
+
+noncomputable section
+open NLS Set Filter Topology
+open scoped ENNReal
+namespace AppendixI3FullSetChecks
+local instance : Fact ((1 : ℝ≥0∞) ≤ 3) := ⟨by norm_num⟩
+
+example (B : Set (Coeff 1)) : TotallyBounded B ↔
+    (∀ n : ℤ, ∃ C : ℝ, ∀ a ∈ B, ‖a n‖ ≤ C) ∧
+    (∀ ε : ℝ, 0 < ε → ∃ N : ℕ, 1 ≤ N ∧ ∀ a ∈ B, ‖Coeff.sourceI3Tail N a‖ ≤ ε) :=
+  Coeff.sourceLemmaI3 (by simp) B
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (B : Set (Coeff p)) :
+    IsCompact (closure B) ↔
+      (∀ n : ℤ, ∃ C : ℝ, ∀ a ∈ B, ‖a n‖ ≤ C) ∧
+      (∀ ε : ℝ, 0 < ε → ∃ N : ℕ, 1 ≤ N ∧ ∀ a ∈ B, ‖Coeff.sourceI3Tail N a‖ ≤ ε) :=
+  Coeff.sourceLemmaI3_compactClosure hp B
+
+-- All positive weights, and in particular every real Sobolev exponent.
+example (s : ℝ) (B : Set (WeightedCoeff (Weight.sobolev s) 3)) :
+    TotallyBounded B ↔
+      (∀ n : ℤ, ∃ C : ℝ, ∀ a ∈ B, ‖a.val n‖ ≤ C) ∧
+      (∀ ε : ℝ, 0 < ε → ∃ N : ℕ, 1 ≤ N ∧
+        ∀ a ∈ B, ‖WeightedCoeff.sourceI3Tail (Weight.sobolev s) N a‖ ≤ ε) :=
+  WeightedCoeff.sourceLemmaI3 (by simp) (Weight.sobolev s) B
+
+example (w : Weight) (B : Set (WeightedCoeff w 1)) : IsCompact B ↔ IsClosed B ∧
+    (∀ n : ℤ, ∃ C : ℝ, ∀ a ∈ B, ‖a.val n‖ ≤ C) ∧
+    (∀ ε : ℝ, 0 < ε → ∃ N : ℕ, 1 ≤ N ∧ ∀ a ∈ B, ‖WeightedCoeff.sourceI3Tail w N a‖ ≤ ε) :=
+  WeightedCoeff.sourceLemmaI3_compact (by simp) w B
+
+-- Both signed boundary frequencies belong to the retained head.
+example : Coeff.sourceI3Tail 2 (lp.single 2 (-2) 1) = 0 := by
+  rw [Coeff.sourceI3Tail_eq_fourierTail,Coeff.fourierTail_single]
+  norm_num
+example : Coeff.sourceI3Tail 2 (lp.single 2 2 1) = 0 := by
+  rw [Coeff.sourceI3Tail_eq_fourierTail,Coeff.fourierTail_single]
+  norm_num
+example : Coeff.sourceI3Tail 2 (lp.single 2 (-3) 1) = lp.single 2 (-3) 1 := by
+  rw [Coeff.sourceI3Tail_eq_fourierTail,Coeff.fourierTail_single]
+  norm_num
+
+-- Pointwise boundedness alone does not control mass escaping to higher frequencies.
+example : ∀ n : ℤ, ∃ C : ℝ, ∀ a ∈ range (fun k : ℤ => (lp.single 2 k 1 : Coeff 2)), ‖a n‖ ≤ C := by
+  intro n
+  refine ⟨1,?_⟩
+  rintro a ⟨k,rfl⟩
+  simp only [lp.single_apply,Pi.single_apply]
+  split_ifs <;> simp
+example : ¬TotallyBounded (range (fun k : ℤ => (lp.single 2 k 1 : Coeff 2))) := by
+  intro h
+  obtain ⟨N,_,hN⟩ := ((Coeff.sourceLemmaI3 (by simp) _).mp h).2 (1/2) (by norm_num)
+  have he := hN (lp.single 2 (N+1 : ℕ) 1) ⟨(N+1 : ℕ),rfl⟩
+  rw [Coeff.sourceI3Tail_eq_fourierTail,Coeff.fourierTail_single] at he
+  rw [if_pos (by omega)] at he
+  norm_num [lp.norm_single] at he
+
+-- The finite-exponent assumption is essential for necessity, even for a singleton.
+example : IsCompact ({(1 : Coeff ⊤)} : Set (Coeff ⊤)) := isCompact_singleton
+example : ¬∃ N : ℕ, ‖Coeff.sourceI3Tail N (1 : Coeff ⊤)‖ ≤ (1/2 : ℝ) := by
+  rintro ⟨N,hN⟩
+  have h := lp.norm_apply_le_norm (by simp : (⊤ : ℝ≥0∞) ≠ 0)
+    (Coeff.sourceI3Tail N (1 : Coeff ⊤)) ((N+1 : ℕ) : ℤ)
+  rw [Coeff.sourceI3Tail_apply,if_pos (by omega)] at h
+  change ‖(1 : ℂ)‖ ≤ ‖Coeff.sourceI3Tail N (1 : Coeff ⊤)‖ at h
+  norm_num at h
+  simp only [Coeff.sourceI3Tail_eq] at hN
+  linarith
+
+-- Compact operators have uniformly small full output tails in operator norm.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (T : Coeff p →L[ℂ] Coeff p)
+    (hT : IsCompactOperator T) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∀ M : ℕ, N ≤ M → ‖(Coeff.sourceI3Tail M).comp T‖ ≤ (1/4 : ℝ) :=
+  Coeff.exists_sourceI3Tail_comp_norm_le hp T hT (by norm_num)
+example (T : Coeff 1 →L[ℂ] Coeff 1) (hT : IsCompactOperator T) :
+    Tendsto (fun N : ℕ => (Coeff.sourceI3Tail N).comp T) atTop (𝓝 0) :=
+  Coeff.tendsto_sourceI3Tail_comp (by simp) T hT
+
+end AppendixI3FullSetChecks

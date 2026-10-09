@@ -3107,3 +3107,7 @@ import NLS.ZakharovShabat.SobolevTopJetPhysical
 import NLS.ZakharovShabat.SourceCorollaryH2
 import NLS.FunctionalAnalysis.SourceSchurComplement
 import NLS.FunctionalAnalysis.SourceLemmaI1Audit
+import NLS.SequenceSpaces.TotalBoundedTails
+import NLS.SequenceSpaces.SourceLemmaI3
+import NLS.SequenceSpaces.WeightedSourceLemmaI3
+import NLS.SequenceSpaces.SourceCompactProjection

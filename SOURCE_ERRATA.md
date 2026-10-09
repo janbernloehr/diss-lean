@@ -1,5 +1,28 @@
 # Source discrepancies
 
+## Lemma I.3: finite exponents and the cutoff convention
+
+Source: dissertation, printed page 140, checked in the rendered PDF.
+The statement is proved without a correction for every finite exponent
+1<=p<infinity, including p=1. `Coeff.sourceLemmaI3` uses a symmetric head
+|n|<=N and the complementary tail |n|>N, with N>=1. This complement equals
+the existing boundary-retaining Fourier tail at N+1; the exact identity
+and both signed boundary modes are checked. Enlarging a finite head gives
+the required symmetric head, so the quantifier over all positive errors
+is preserved.
+
+The formal examples also check the hypotheses. The unit vectors are
+pointwise bounded but not totally bounded, so the uniform-tail condition
+cannot be dropped. At p=infinity the singleton containing the constant-one
+sequence is compact, while every symmetric tail has norm at least one;
+thus the finite-exponent restriction cannot be dropped. These are boundary
+checks, not counterexamples to the printed statement.
+
+The weighted theorem uses raw coefficients for pointwise boundedness and
+the exact weighted norm for tails. The compact-operator consequence gives
+small full output tails in operator norm, as needed at the start of I.4.
+The rest of I.4 and its displayed signs remain a separate audit.
+
 ## Lemma I.1: missing lower-block invertibility hypothesis
 
 Source: dissertation, printed page 139, checked in the rendered PDF.

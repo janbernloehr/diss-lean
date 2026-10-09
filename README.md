@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: I.1's Schur-complement equivalence is proved with the
-necessary lower-block invertibility hypothesis. A formal coordinate-swap
-counterexample refutes its printed unrestricted forward implication.
-I.2 is proved unchanged under its strict norm and determinant conditions,
-including transfer to operators on the original Banach space. I.3's full
-compactness criterion is next. G.2's arbitrary-time local norm and the
-required spectral height above p=2 remain open.
+Latest milestone: I.3 is proved for arbitrary sets at every finite
+exponent, with pointwise bounds and uniformly small symmetric tails.
+The criterion also holds for every positive weight, including all real
+Sobolev orders. Compact operators have uniformly small full output tails
+in operator norm. I.4's real-source formulation and printed Schur signs
+are next. G.2's arbitrary-time local norm and the required spectral height
+above p=2 remain open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -877,3 +877,24 @@ The polynomial and physical H.2 results above remain unchanged. Next is
 I.3's full total-boundedness characterization, followed by I.4. The G.2
 local-norm, required p>2 spectral-height, and optional original m=1
 obligations remain open. Counts do not certify completeness.
+
+
+### Lemma I.3: arbitrary sets, finite exponents, and weighted norms
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Full equivalence | `Coeff.sourceLemmaI3` | Every subset of l^p for 1<=p<infinity; pointwise coefficient bounds and one uniform N>=1 for each epsilon>0. |
+| No hidden norm-bound hypothesis | `isBounded_of_pointwise_tail`, `totallyBounded_iff_pointwise_uniform_finite_tails` | The global norm bound is derived from the printed assumptions before applying finite-rank compactness. |
+| Necessity uniformly over sets | `tendstoUniformlyOn_norm_tail_of_isCompact` | Decreasing continuous tail norms converge uniformly on compact sets by Dini; applies to the compact closure of any totally bounded set. |
+| Exact symmetric cutoffs | `sourceI3Tail_apply`, `sourceI3Tail_eq_fourierTail` | Retains |n|<=N; complement equals the existing `fourierTail (N+1)`. Both signed boundary frequencies are tested. |
+| Compactness and relative compactness | `Coeff.sourceLemmaI3_compact`, `Coeff.sourceLemmaI3_compactClosure` | Add closedness for compactness; the same printed criterion characterizes compact closure. |
+| Original weighted source | `WeightedCoeff.sourceLemmaI3`, `WeightedCoeff.sourceLemmaI3_compact` | Every positive weight and every finite exponent; raw pointwise bounds and exact weighted tail norm, including all real Sobolev orders. |
+| Full compact-operator output | `exists_sourceI3Tail_comp_norm_le`, `tendsto_sourceI3Tail_comp` | Arbitrary complex normed input space; entire output tails vanish in operator norm for compact operators, uniformly for all larger cutoffs. |
+| Endpoint and hypothesis checks | `AppendixI3FullSetChecks` public examples | p=1, signed boundaries, weighted p=3, escaping unit vectors, and the compact constant-one singleton in l-infinity. |
+
+The printed I.3 is proved unchanged. The operator consequence supplies the
+initial tail estimate for I.4; it does not claim I.4's full real-analytic
+or generic local-diffeomorphism conclusion. That is the next audit, together
+with its Schur signs. G.2's local-norm, required p>2 spectral-height, and
+optional original m=1 obligations remain open. Counts do not certify
+completeness.
