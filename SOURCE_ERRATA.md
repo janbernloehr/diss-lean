@@ -626,6 +626,24 @@ identities, not a quantitative small-norm construction. A concrete family
 and its Fourier and interaction estimates remain to be supplied; this
 step does not settle the printed periodic height above four.
 
+
+Concrete continuous profiles are now available. `OrderedTentSources.lean`
+uses original Fourier coefficients of tents on `[0,epsilon]` and
+`[1-epsilon,1]`, with `0<epsilon<=1/2`. It proves their actual physical
+representative and nonzero interactions at every iH, so normalization
+and balancing apply without those extra hypotheses. This is a genuine
+family of actual spectral points, not a claimed small-norm violation.
+
+For future norm estimates, `TentProfile.lean` proves the exact exponential
+transform, mean, area bound, and quadratic Fourier decay.
+`OddTentProfile.lean` proves that subtracting the reflected tent cancels
+the original mean, gives a low-frequency bound proportional to
+`abs(n) b (b-a)^2`, and retains quadratic high-frequency decay. Its upper
+interaction remains strictly positive for H>0 and `0<=a<b<=1/2`, with
+an explicit exponential lower bound. Dyadic summation, the resulting lp
+norm estimate, and the final printed-height comparison remain unproved.
+Thus this step does not settle Theorem 1.1 above p=4.
+
 ## Theorem 1.4: the all-p printed boundary height is false
 
 Source: dissertation, printed p. 20 (statement) and p. 32 (proof).

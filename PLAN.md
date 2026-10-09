@@ -1,6 +1,78 @@
 # Implementation plan
 
-## Latest progress: exact ordered-coupling spectral criterion and normalization
+## Latest progress: concrete tent sources and reflected Fourier cancellation
+
+`ContinuousPeriodOneRealization.lean` now constructs original Hilbert
+source coefficients from any continuous profile with matching endpoints.
+Every coefficient equals the actual unit-interval Fourier integral, even
+period-two insertion reconstructs the profile almost everywhere, and
+Parseval retains the exact unit-interval square energy.
+
+`TentProfile.lean` supplies continuous tents
+`T(a,b,x)=max(0,min(x-a,b-x))`, their support and positivity, and the exact
+transform `q^2 integral(T exp(q x))=exp(q a)-2 exp(q(a+b)/2)+exp(q b)`.
+On the unit interval their mean is `(b-a)^2/4`, their Fourier coefficients
+are bounded by that area, and `(2 pi |n|)^2 |T_hat(n)| <= 4`.
+
+`OrderedTentSources.lean` uses an upper tent on `[0,epsilon]` and a lower
+tent on `[1-epsilon,1]`, with `0<epsilon<=1/2`. The physical representative
+and both nonzero interactions are proved for this explicit family.
+Normalization places every chosen `i H` in its actual periodic spectrum
+at every finite p>=2. For H nonzero, balancing preserves the spectral
+point and yields the exact original p-energy norm formula. No additional
+representative or nonzero-interaction hypotheses are left to the caller.
+This family is not claimed to violate the printed height.
+
+`OddTentProfile.lean` prepares the cancellation needed for a multiscale
+construction. An early tent minus its reflected tent has zero original
+Fourier mean. Its coefficient F_n satisfies
+`|F_n| <= pi |n| b (b-a)^2` and `(2 pi |n|)^2 |F_n| <= 8` for
+`0<=a<=b<=1`. For H>=0 its weighted integral has the explicit lower bound
+`(exp(-2 H b)-exp(-2 H (1-b))) (b-a)^2/4`; it is strictly positive when
+`0<=a<b<=1/2` and H>0. Thus the zero mean does not remove the upper
+interaction. These signed profiles have not yet been summed over scales
+or connected to a printed-height violation.
+
+Public examples check the two means 1/64 at width 1/4, an actual p=5
+spectral point at i, balanced sources for arbitrary nonzero H, zero mean
+with positive interaction for the signed profile on [1/8,1/4], and its
+low/high frequency and interaction estimates.
+
+Theorem 1.1's printed height above p=4 remains required and unresolved.
+Real-type finite-gap analyticity remains proved. The all-p printed boundary
+height remains refuted, with its proposed correction separate. G.2's
+original interval norm and the optional original m=1 sharpening remain
+unresolved. No source correction is adopted; the dissertation is incomplete.
+
+Validation: the full project check passed (6615 build jobs), including all
+public examples and the axiom audit of 27842 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+Next: form an area-normalized sum of signed tents on dyadic intervals
+`[delta,2 delta]`, with a normalized lower tent on `[1-epsilon,1]` and
+`epsilon` no larger than the smallest upper scale. The already proved
+bounds give `8 pi |n| delta` at low frequency and
+`8/(pi^2 n^2 delta^2)` at high frequency for each normalized signed tent.
+Prove a uniform bound for the coefficient sum by splitting at the scale
+`|n| delta=1`, then prove its lp norm bound using the smallest-scale tail.
+The new interaction lower bound can count the scales for which H delta
+is small; it must be summed with explicit constants. Construct the
+actual source and ordered representative of this signed sum, then use
+the existing normalization and balancing theorem to compare its norm
+with the literal printed height. No favorable estimate or counterexample
+is assumed in advance.
+
+A concrete scale choice to investigate is `H=2^P`,
+`epsilon=2^(-2P)`, and `delta_j=2^(-j)` for `2<=j<=2P`.
+The reflected supports end at most at `1-epsilon`, so the lower tent
+can act last. The potentially useful scales satisfy `j>=P+3`, where
+`H delta_j<=1/8`. Prove the geometric coefficient-sum bounds and a
+quantitative contribution from each such scale before selecting a final
+threshold P. These parameter choices are a proposed construction, not
+a proved spectral-height counterexample.
+
+## Previous milestone: exact ordered-coupling spectral criterion and normalization
 
 For continuous potentials whose upper coupling acts before their lower
 coupling, `OrderedTriangularMonodromy.lean` proves the exact fundamental

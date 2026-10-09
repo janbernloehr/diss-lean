@@ -1316,3 +1316,29 @@ spectral membership at p=5, and the arbitrary-exponent norm identities.
 No quantitative small-norm profile or periodic-height counterexample is
 claimed. Theorem 1.1's unrestricted printed height above p=4 remains
 required and unresolved. No source correction is adopted.
+
+### Theorem 1.1: concrete tent sources and reflected Fourier cancellation
+
+[`ContinuousPeriodOneRealization.lean`](NLS/Fourier/ContinuousPeriodOneRealization.lean),
+[`TentProfile.lean`](NLS/Fourier/TentProfile.lean),
+[`OddTentProfile.lean`](NLS/Fourier/OddTentProfile.lean), and
+[`OrderedTentSources.lean`](NLS/ZakharovShabat/OrderedTentSources.lean)
+supply actual continuous profiles and quantitative estimates.
+
+| Public entry point | Scope |
+| --- | --- |
+| `continuousPeriodOneCoefficients_apply`, `circlePullback_continuousPeriodOneCoefficients` | Every original Fourier integral and the actual almost-everywhere physical representative agree; no finite-support assumption. |
+| `norm_sq_continuousPeriodOneCoefficients` | Exact unit-interval Parseval normalization. |
+| `integral_tentProfile_mul_cexp`, `periodOneCoefficient_tentProfile` | Exact second-difference exponential transform. |
+| `periodOneCoefficient_tentProfile_zero`, `norm_periodOneCoefficient_tentProfile_le_area` | Exact mean (b-a)^2/4 and the same coefficient bound at every frequency. |
+| `norm_periodOneCoefficient_tentProfile_mul_frequency_le` | (2 pi abs(n))^2 times the coefficient norm is at most 4. |
+| `normalized_orderedTentSource_mem_periodicSpectrum` | Explicit ordered tents realize every iH after normalization, at every finite p>=2; representative and interaction hypotheses are proved. |
+| `exists_balanced_orderedTentSource` | At nonzero H, a balanced actual source retains iH with its exact original norm cost. |
+| `periodOneCoefficient_oddTentProfile_zero` | An early tent minus its reflected tent has zero original Fourier mean. |
+| `norm_periodOneCoefficient_oddTentProfile_le_low`, `norm_periodOneCoefficient_oddTentProfile_mul_frequency_le` | Low-frequency cancellation pi abs(n) b (b-a)^2 and quadratic high-frequency bound 8. |
+| `integral_oddTentProfile_mul_exp_lower`, `integral_oddTentProfile_mul_exp_pos` | Quantitative weighted-interaction lower bound and strict positivity for an early nonempty signed pair. |
+
+Public checks include concrete width 1/4 and p=5, as well as signed
+profile estimates on [1/8,1/4]. The signed profiles have not yet been
+summed over dyadic scales. No periodic-height violation is asserted;
+Theorem 1.1 above p=4 remains required and unresolved.

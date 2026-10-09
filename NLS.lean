@@ -3182,3 +3182,7 @@ import NLS.ZakharovShabat.PeriodicDiagonalSimilarity
 import NLS.ZakharovShabat.SourceBalancedHeightReduction
 import NLS.ZakharovShabat.OrderedTriangularMonodromy
 import NLS.ZakharovShabat.OrderedTriangularNormalization
+import NLS.Fourier.ContinuousPeriodOneRealization
+import NLS.Fourier.TentProfile
+import NLS.Fourier.OddTentProfile
+import NLS.ZakharovShabat.OrderedTentSources

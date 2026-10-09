@@ -5,16 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: ordered upper and lower couplings now have a proved
-exact monodromy and scalar spectral criterion. An explicit rescaling
-places a chosen point in the actual periodic spectrum; balancing then
-gives an exact formula for its original source norm at every finite p>=2.
-The physical-representative and nonzero-interaction assumptions remain
-explicit. Quantitative estimates for a concrete family are still needed;
-Theorem 1.1's printed height above p=4 remains unresolved. Real-type
-finite-gap analyticity remains proved. G.2's norm is unresolved, and the
-proposed all-p boundary height correction remains separate from the
-refuted formula.
+Latest milestone: continuous tent profiles now have proved original Fourier
+coefficients and physical realizations. An explicit pair of ordered tents
+can be normalized to place any imaginary parameter in the actual periodic
+spectrum at every finite p>=2. Reflected signed tents also have proved
+zero mean, low/high frequency bounds, and a quantitative interaction lower
+bound, preparing a multiscale construction. The printed periodic height
+above p=4 remains unresolved. Real-type finite-gap analyticity remains
+proved; G.2's norm is unresolved, and the proposed all-p boundary height
+correction remains separate from the refuted formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

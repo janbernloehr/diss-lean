@@ -41300,3 +41300,65 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
   rw [norm_scaleUpperSource_rpow hp, norm_orderedPeriodicNormalization]
 
 end OrderedTriangularChecks
+
+namespace OrderedTentProfileChecks
+open NLS.Fourier NLS.ZakharovShabat
+local instance instFiveTent : Fact (1 ≤ (5 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Both actual coefficient means equal the triangle area, without a period-two factor.
+example : (orderedTentSource (1/4) (by norm_num)).fst 0 = (1/64 : ℂ) ∧
+    (orderedTentSource (1/4) (by norm_num)).snd 0 = (1/64 : ℂ) := by
+  constructor
+  · rw [orderedTentSource_fst_apply]
+    change periodOneCoefficient (fun x => (tentProfile 0 (1/4) x : ℂ)) 0 = _
+    rw [periodOneCoefficient_tentProfile_zero 0 (1/4) (by norm_num) (by norm_num) (by norm_num)]
+    norm_num
+  · rw [orderedTentSource_snd_apply]
+    change periodOneCoefficient (fun x => (tentProfile (1-1/4) 1 x : ℂ)) 0 = _
+    rw [periodOneCoefficient_tentProfile_zero (1-1/4) 1 (by norm_num) (by norm_num) (by norm_num)]
+    norm_num
+
+-- A fully specified continuous potential realizes i in the actual p=5 periodic spectrum.
+example : Complex.I ∈ periodicSpectrum (by simp : (5 : ℝ≥0∞) ≠ ⊤)
+    (periodOnePotential (CoeffPair.exponentInclusion (by norm_num : (2 : ℝ≥0∞) ≤ 5)
+      (scaleUpperSource (orderedPeriodicNormalization (orderedTentCurve (1/4)) Complex.I)
+        (orderedTentSource (1/4) (by norm_num))))) := by
+  simpa only [Complex.ofReal_one,mul_one] using
+    normalized_orderedTentSource_mem_periodicSpectrum (by simp : (5 : ℝ≥0∞) ≠ ⊤)
+      (by norm_num) (1/4) (by norm_num) (by norm_num) 1
+
+-- Actual balanced sources now exist without a supplied physical-representative hypothesis.
+example (H : ℝ) (hH : H ≠ 0) : ∃ ψ : CoeffPair 5, ‖ψ.fst‖ = ‖ψ.snd‖ ∧
+    Complex.I*H ∈ periodicSpectrum (by simp : (5 : ℝ≥0∞) ≠ ⊤) (periodOnePotential ψ) := by
+  obtain ⟨ψ,hbal,hz,_⟩ := exists_balanced_orderedTentSource
+    (by simp : (5 : ℝ≥0∞) ≠ ⊤) (by norm_num) (1/4) (by norm_num) (by norm_num) H hH
+  exact ⟨ψ,hbal,hz⟩
+
+-- Reflection cancels the original zero-frequency coefficient, while the weighted integral is positive.
+example : periodOneCoefficient (fun x => (oddTentProfile (1/8) (1/4) x : ℂ)) 0 = 0 ∧
+    0 < ∫ x in (0 : ℝ)..1, oddTentProfile (1/8) (1/4) x*Real.exp (-2*x) := by
+  refine ⟨periodOneCoefficient_oddTentProfile_zero _ _,?_⟩
+  simpa using integral_oddTentProfile_mul_exp_pos (1/8) (1/4)
+    (by norm_num) (by norm_num) (by norm_num) 1 (by norm_num)
+
+-- Low-frequency cancellation and high-frequency decay are both checked in the source convention.
+example (n : ℤ) :
+    ‖periodOneCoefficient (fun x => (oddTentProfile (1/8) (1/4) x : ℂ)) n‖ ≤
+      Real.pi*|(n : ℝ)| /256 ∧
+    (2*Real.pi*|(n : ℝ)|)^2 *
+      ‖periodOneCoefficient (fun x => (oddTentProfile (1/8) (1/4) x : ℂ)) n‖ ≤ 8 := by
+  constructor
+  · convert norm_periodOneCoefficient_oddTentProfile_le_low (1/8) (1/4)
+      (by norm_num) (by norm_num) (by norm_num) n using 1
+    ring
+  · exact norm_periodOneCoefficient_oddTentProfile_mul_frequency_le (1/8) (1/4)
+      (by norm_num) (by norm_num) (by norm_num) n
+
+example (H : ℝ) (hH : 0 ≤ H) :
+    (Real.exp (-H/2)-Real.exp (-3*H/2))/256 ≤
+      ∫ x in (0 : ℝ)..1, oddTentProfile (1/8) (1/4) x*Real.exp (-2*H*x) := by
+  convert integral_oddTentProfile_mul_exp_lower (1/8) (1/4)
+    (by norm_num) (by norm_num) (by norm_num) H hH using 1
+  ring_nf
+
+end OrderedTentProfileChecks
