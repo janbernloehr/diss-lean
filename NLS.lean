@@ -3172,3 +3172,7 @@ import NLS.Fourier.SpatialTranslation
 import NLS.ZakharovShabat.SpatialTranslation
 import NLS.ZakharovShabat.PeriodicTranslation
 import NLS.ZakharovShabat.SourceSpatialTranslation
+import NLS.ZakharovShabat.SourceTranslationFiniteTarget
+import NLS.ZakharovShabat.SourceFiniteGapTranslationLift
+import NLS.ZakharovShabat.NormalizedSobolevSourceEvaluation
+import NLS.ZakharovShabat.SourceFiniteGapAnalyticRealization

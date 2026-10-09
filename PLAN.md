@@ -1,6 +1,66 @@
 # Implementation plan
 
-## Latest progress: spatial translation preserves the actual indexed gaps
+## Latest progress: real-type finite-gap spatial analyticity
+
+The missing spatial real-analyticity result for real-type finite-gap
+sources is now proved at every finite exponent p>1. Both functions in
+`sourceFiniteGapPhysicalPair` are real analytic at every spatial point.
+They are the same period-one Fourier sums used by the smoothness theorem,
+so every original source coefficient and the physical normalization are
+retained. No finite Fourier support assumption is added.
+
+`SourceFiniteGapWeightedLift.lean` now exposes the finite-dimensional
+factorization already present in its inverse construction:
+`exists_analyticAt_sourceFiniteGap_finiteReconstruction`. The previous
+weighted-lift and differentiable-lift APIs are retained. A finite weighted
+block of the translation curve has an entire complex-time extension in
+`SourceTranslationFiniteTarget.lean`. Combining its analyticity with
+translation invariance of the actual canonical gap tail gives the local
+analytic weighted curve in `SourceFiniteGapTranslationLift.lean`.
+
+`NormalizedSobolevSourceEvaluation.lean` chooses the spectral weight
+whose value at 2n is exactly 1+|n|. Its decoder maps boundedly into l1,
+and physical Fourier evaluation is a bounded complex linear map. The
+existing finite-gap Sobolev theorem supplies those weighted coordinates.
+Evaluating the analytic lift at x agrees with the original physical
+function at x+t on a real neighborhood of zero. This proves spatial
+analyticity without assuming it for the original translation curve.
+
+The main entry points are `analyticOnNhd_sourceFiniteGapPhysicalPair`
+and `sourceFiniteGap_exists_analytic_representative` in
+`SourceFiniteGapAnalyticRealization.lean`. The latter packages real
+analyticity, period one, and recovery of every original Fourier integral.
+This resolves the real-type reading of the regularity sentence on p. 21.
+The unrestricted complex reading remains refuted by the earlier rough
+triangular example; the real-type qualification is essential.
+
+The dissertation remains incomplete. Theorem 1.1's unchanged printed
+periodic height above four, G.2's original interval-norm interpretation,
+and the optional original m=1 sharpening remain unresolved. The proposed
+all-p boundary-height correction remains separate from the refuted
+printed formula; no source correction is adopted in this step.
+
+Validation: the full project check passed (6605 build jobs), including all
+public examples and the axiom audit of 27645 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+Next: return to the required printed periodic height in Theorem 1.1
+for p>4. Inspect the exact source requirement and the reciprocal/Neumann
+bounds retained in `RefinedReciprocalNorm.lean`, `RefinedHeightResolvent.lean`,
+and `PrintedHeightFour.lean`. A failure of the current sufficient bound
+is not a spectral counterexample. Preserve the original source norm and
+printed coefficient; either prove the remaining range or produce an
+actual periodic eigenvalue violating the statement. The triangular
+boundary counterexample has free periodic spectrum and cannot settle it.
+
+Keep G.2's arbitrary-time printed norm unresolved while its interpretation
+awaits clarification, and retain the proposed boundary-height correction
+as a separate theorem. Continue checking original statements against
+actual public APIs; declaration counts and the 156-label inventory are
+not a completeness certificate.
+
+## Previous milestone: spatial translation preserves the actual indexed gaps
 
 Spatial translation now preserves the actual periodic spectral data in
 Lean. The proof works on the original one-derivative operator domain:

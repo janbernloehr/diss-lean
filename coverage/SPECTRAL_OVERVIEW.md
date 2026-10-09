@@ -250,10 +250,18 @@ it has no spatially real-analytic periodic representative. This holds at
 every finite p>1. The triangular inverse is explicit and two-sided on
 the original domain; the finite-gap property uses actual canonical gaps.
 
-The counterexample is not of real type. Existing real-type finite-gap
-smoothness and density are unaffected; spatial real analyticity in that
-real-type scope remains a required proof. See `SOURCE_ERRATA.md` for the
-source wording, counterexample, and exact scope.
+The counterexample is not of real type. Real-type finite-gap smoothness
+and density remain valid, and spatial real analyticity is now proved by
+`analyticOnNhd_sourceFiniteGapPhysicalPair`. The theorem applies to the
+existing coefficient-preserving representative at every finite p>1.
+`sourceFiniteGap_exists_analytic_representative` packages analyticity,
+period one, and every original Fourier coefficient. The proof composes
+the analytic finite-dimensional spectral reconstruction with finite
+translation targets and bounded Sobolev evaluation. It uses translation
+invariance of the exact canonical gap tail and makes no finite Fourier
+support assumption. Thus the real-type qualification is both sufficient
+for the proved regularity result and essential to the source sentence's
+unrestricted complex interpretation.
 
 The numbered overview audit leaves Theorem 1.1's printed height above
 four unresolved and records Theorem 1.4's all-p printed height as refuted.

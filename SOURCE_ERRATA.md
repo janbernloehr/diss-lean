@@ -47,12 +47,15 @@ These are complex counterexamples, not counterexamples to real-type
 finite-gap regularity. `SourceFiniteGapSmoothRealization.lean` already
 proves the coefficient-preserving smooth realization for real-type
 finite-gap sources, and Corollary 1.6's real-type density remains valid.
-The real-type spatial real-analyticity claim is still a separate required
-proof. `SourceSpatialTranslation.lean` now proves that every real spatial
-translation preserves the exact canonical gap sequence and the same
-closed-gap cutoff. The phase action is verified to synthesize to `f(x+t)`;
-its continuity and spectral invariance are prerequisites, not a completed
-analyticity proof. The free periodic spectrum here also gives no counterexample to
+`SourceFiniteGapAnalyticRealization.lean` now proves the real-type spatial
+real-analyticity claim as well. Its theorem
+`sourceFiniteGap_exists_analytic_representative` preserves period one and
+every original Fourier coefficient at every finite p>1. The proof uses
+the analytic finite-dimensional reconstruction, the same canonical gap
+tail under translation, and bounded Sobolev evaluation of the original
+physical Fourier sums. Thus the qualified real-type regularity assertion
+is proved, while the unrestricted complex assertion remains refuted.
+The free periodic spectrum of the complex example gives no counterexample to
 Theorem 1.1's unresolved printed height above four.
 
 ## Proposition I.4: reversed signs in the displayed Schur block

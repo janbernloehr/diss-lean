@@ -40998,3 +40998,54 @@ example (a : Coeff 1) (t : ℝ) :
   ring
 
 end SpatialTranslationChecks
+
+namespace FiniteGapAnalyticRealizationChecks
+
+local instance instThreeFiniteGapAnalytic : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Finite translation targets have entire complex-time extensions even for rough sources.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (w : SpectralWeight) (N : ℕ)
+    (φ : CoeffPair p) (z : ℂ) : AnalyticAt ℂ (sourceTranslationFiniteTarget w N φ) z :=
+  analyticAt_sourceTranslationFiniteTarget w N φ z
+
+example (w : SpectralWeight) (N : ℕ) (φ : CoeffPair 3) (t : ℝ) :
+    sourceTranslationFiniteTarget w N φ t =
+      normalizedWeightedTruncateCLM w N (sourceSpatialTranslation t φ) :=
+  sourceTranslationFiniteTarget_ofReal w N φ t
+
+-- The bounded physical evaluation decodes the original source coefficients.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) :
+    (normalizedSobolevSourceL1 hp φ).fst n =
+      (normalizedWeightedSource sourceOneDerivativeWeight φ).fst n :=
+  normalizedSobolevSourceL1_fst hp φ n
+
+example (n : ℤ) : sourceOneDerivativeWeight (2*n) = Weight.sobolev 1 n :=
+  sourceOneDerivativeWeight_double n
+
+-- The existing representatives are analytic for arbitrary finite source exponents.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : realTypeSourceSubmodule p) (hf : φ ∈ sourceFiniteGapLocus hp hp1) :
+    AnalyticOnNhd ℝ (sourceFiniteGapPhysicalPair hp hp1 φ hf).1 Set.univ ∧
+      AnalyticOnNhd ℝ (sourceFiniteGapPhysicalPair hp hp1 φ hf).2 Set.univ :=
+  analyticOnNhd_sourceFiniteGapPhysicalPair hp hp1 φ hf
+
+-- A concrete non-Hilbert exponent retains both physical period and every original coefficient.
+example (φ : realTypeSourceSubmodule 3)
+    (hf : φ ∈ sourceFiniteGapLocus (by simp) (by norm_num)) :
+    ∃ u v : ℝ → ℂ, AnalyticOnNhd ℝ u Set.univ ∧ AnalyticOnNhd ℝ v Set.univ ∧
+      Function.Periodic u 1 ∧ Function.Periodic v 1 ∧
+      ∀ n : ℤ, Fourier.periodOneCoefficient u n = φ.val.fst n ∧
+        Fourier.periodOneCoefficient v n = φ.val.snd n :=
+  sourceFiniteGap_exists_analytic_representative (by simp) (by norm_num) φ hf
+
+-- Weighted translation analyticity requires only an existing weighted realization of the base point.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (w : SpectralWeight) (φ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p φ))
+    (hf : (⟨normalizedWeightedSource w φ, normalizedWeightedSource_realType w φ hr⟩ :
+      realTypeSourceLocus p) ∈ sourceFiniteGapLocus hp hp1) :
+    ∃ ξ : ℝ → CoeffPair p, AnalyticAt ℝ ξ 0 ∧ ξ 0 = φ ∧
+      ∀ᶠ t in 𝓝 (0 : ℝ), normalizedWeightedSource w (ξ t) =
+        sourceSpatialTranslation t (normalizedWeightedSource w φ) :=
+  exists_analyticAt_sourceFiniteGap_translationLift hp hp1 w φ hr hf
+
+end FiniteGapAnalyticRealizationChecks

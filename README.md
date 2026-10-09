@@ -5,15 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: spatial translation preserves the original periodic
-operator's generalized eigenspaces, algebraic multiplicities, and spectrum.
-In the period-one source space it preserves the norm, real type, and every
-canonical indexed gap, with the physical action verified as `f(x+t)`.
-This supplies the translation-invariance step toward real-type finite-gap
-spatial analyticity; that regularity proof remains unfinished. The
-unrestricted complex regularity sentence remains refuted. The printed
-periodic height above p=4 and G.2's norm remain unresolved; the proposed
-all-p boundary-height correction remains separate from the printed formula.
+Latest milestone: real-type finite-gap sources now have spatially real
+analytic period-one representatives at every finite p>1, preserving every
+original Fourier coefficient. The proof uses the finite-dimensional
+spectral inverse and the translation-invariant canonical gaps, followed
+by bounded Sobolev evaluation. The unrestricted complex regularity
+sentence remains refuted; the real-type qualification is essential.
+The printed periodic height above p=4 and G.2's norm remain unresolved.
+The proposed all-p boundary-height correction remains separate from the
+refuted printed formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

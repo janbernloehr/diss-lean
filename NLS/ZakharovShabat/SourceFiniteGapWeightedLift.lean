@@ -14,21 +14,21 @@ open scoped ENNReal
 namespace NLS.ZakharovShabat
 variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
-/-- Nearby real sources with a fixed closed-gap tail admit one actual
-complex analytic weighted lift through any finite-gap weighted base point. -/
-theorem exists_analyticAt_sourceFiniteGap_weightedLift
+/-- The local weighted reconstruction factors through a finite block of
+original Fourier coefficients, with an analytic inverse at its target. -/
+theorem exists_analyticAt_sourceFiniteGap_finiteReconstruction
     (hp : p ≠ ⊤) (hp1 : 1 < p) (w : SpectralWeight) (φ : CoeffPair p)
     (hreal : IsRealType (CoeffPair.toMax p φ))
     (hf : (⟨normalizedWeightedSource w φ, normalizedWeightedSource_realType w φ hreal⟩ : realTypeSourceLocus p)
       ∈ sourceFiniteGapLocus hp hp1) (K : ℕ) :
-    ∃ f : CoeffPair p → CoeffPair p,
-      AnalyticAt ℂ f (normalizedWeightedSource w φ) ∧
-      f (normalizedWeightedSource w φ) = φ ∧
+    ∃ N : ℕ, K ≤ N ∧ ∃ g : CoeffPair p → CoeffPair p,
+      AnalyticAt ℂ g (normalizedWeightedTruncateCLM w N (normalizedWeightedSource w φ)) ∧
+      g (normalizedWeightedTruncateCLM w N (normalizedWeightedSource w φ)) = φ ∧
       ∀ᶠ ψ in 𝓝 (normalizedWeightedSource w φ),
         IsRealType (CoeffPair.toMax p ψ) →
         (∀ n : ℤ, K ≤ n.natAbs →
           canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) →
-        normalizedWeightedSource w (f ψ) = ψ := by
+        normalizedWeightedSource w (g (normalizedWeightedTruncateCLM w N ψ)) = ψ := by
   let a := normalizedWeightedSource w φ
   obtain ⟨δ,hδ,N₀,_,hI⟩ := exists_uniform_real_normalizedWeightedClosingInverse_support hp hp1 w φ hreal
   obtain ⟨N₁,_,hbase⟩ := exists_normalizedWeightedClosingMap_eq_truncate_of_finiteGap hp hp1 w φ hreal hf
@@ -58,7 +58,7 @@ theorem exists_analyticAt_sourceFiniteGap_weightedLift
       exact mem_ball_self hr))
   have htargetBall : ∀ᶠ ψ in 𝓝 a, T ψ ∈ ball (normalizedWeightedClosingMap hp w φ N) δ :=
     T.continuous.continuousAt.eventually (isOpen_ball.mem_nhds hTaBall)
-  refine ⟨f,hfA,hfa,?_⟩
+  refine ⟨N,hK,g,hg _ hTaBall,hfa,?_⟩
   filter_upwards [ho.mem_nhds ha,isOpen_ball.mem_nhds (mem_ball_self hr),hdecodeBall,htargetBall]
     with ψ hψU hψBall hdecodeBall htargetBall
   intro hψReal hψGap
@@ -80,6 +80,26 @@ theorem exists_analyticAt_sourceFiniteGap_weightedLift
     (normalizedWeightedSource w (f ψ)) ψ hdecodeBall hψBall
   rw [hsame,sub_self,norm_zero,mul_zero] at hb
   exact sub_eq_zero.mp (norm_le_zero_iff.mp hb)
+
+/-- Nearby real sources with a fixed closed-gap tail admit one actual
+complex analytic weighted lift through any finite-gap weighted base point. -/
+theorem exists_analyticAt_sourceFiniteGap_weightedLift
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (w : SpectralWeight) (φ : CoeffPair p)
+    (hreal : IsRealType (CoeffPair.toMax p φ))
+    (hf : (⟨normalizedWeightedSource w φ, normalizedWeightedSource_realType w φ hreal⟩ : realTypeSourceLocus p)
+      ∈ sourceFiniteGapLocus hp hp1) (K : ℕ) :
+    ∃ f : CoeffPair p → CoeffPair p,
+      AnalyticAt ℂ f (normalizedWeightedSource w φ) ∧
+      f (normalizedWeightedSource w φ) = φ ∧
+      ∀ᶠ ψ in 𝓝 (normalizedWeightedSource w φ),
+        IsRealType (CoeffPair.toMax p ψ) →
+        (∀ n : ℤ, K ≤ n.natAbs →
+          canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) →
+        normalizedWeightedSource w (f ψ) = ψ := by
+  obtain ⟨N,_,g,hg,hbase,hdecode⟩ :=
+    exists_analyticAt_sourceFiniteGap_finiteReconstruction hp hp1 w φ hreal hf K
+  exact ⟨fun ψ => g (normalizedWeightedTruncateCLM w N ψ),
+    hg.comp ((normalizedWeightedTruncateCLM (p := p) w N).analyticAt (normalizedWeightedSource w φ)), hbase, hdecode⟩
 
 /-- A differentiable original curve with one closed-gap tail has a
 locally differentiable weighted lift through its weighted base point. -/

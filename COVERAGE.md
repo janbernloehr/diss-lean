@@ -1101,8 +1101,9 @@ finite-p pair norm, and the singleton-strip criterion proves their actual
 finite-gap property. Existing public checks cover p=3 approximants and
 density at p=2 and p=3/2. The detailed audit is recorded in
 `coverage/SPECTRAL_OVERVIEW.md`. The unrestricted complex regularity
-sentence is refuted below; real-type spatial real analyticity remains
-unproved and is not certified by this density result.
+sentence is refuted below. Real-type spatial real analyticity is now
+proved separately in `SourceFiniteGapAnalyticRealization.lean`, as recorded
+in the latest entry below.
 
 
 ### Theorems 1.4 and 1.5: Hilbert box, all-p asymptotics, and a height counterexample
@@ -1171,7 +1172,8 @@ passed with 156 labels. Counts do not certify completeness.
 
 The statement audited is the unnumbered sentence on printed p. 21, not
 Corollary 1.6's real-type density theorem. Real-type spatial real
-analyticity remains required and unproved. The result uses no proposed
+analyticity is now proved in the later analytic-realization entry. The
+complex counterexample uses no proposed
 replacement definition of finite gaps or of the periodic spectrum.
 The dissertation remains incomplete.
 
@@ -1192,12 +1194,36 @@ passed with 156 labels. Counts do not certify completeness.
 | Real finite-gap translation orbit | `sourceSpatialTranslation_realType`, `sourceSpatialTranslation_closedGapTail`, `sourceSpatialTranslation_mem_sourceFiniteGapLocus` | Real type and exactly the same closed-gap cutoff survive every real displacement. |
 | Physical spatial sign and scale | `Fourier.continuousSynthesis_spatialTranslation`, `Fourier.periodOneSynthesis_spatialTranslation`, `Fourier.periodOneCoefficient_translated_synthesis` | The action is f(x+t), in both periods, for arbitrary absolutely summable coefficients. |
 
-Real-type spatial analyticity remains unproved. The translation lemmas
-supply a fixed-gap-tail curve for the existing local inverse construction;
-they do not assume or conclude exponential coefficient decay. The complex
-counterexample and the other unresolved source obligations are unchanged.
+The translation lemmas supply the fixed-gap-tail curve used in the
+analytic-realization proof below. They do not assume or conclude
+exponential coefficient decay. The complex counterexample and the other
+unresolved source obligations are unchanged.
 
 Validation: the full project check passed (6601 build jobs), including all
 public examples and the axiom audit of 27610 NLS declarations. There are
+21 existing warnings and no new warnings. The source inventory check
+passed with 156 labels. Counts do not certify completeness.
+
+
+### Unnumbered finite-gap regularity: real-type spatial analyticity proved
+
+| Requirement | Public evidence | Verified scope |
+| --- | --- | --- |
+| Finite-dimensional analytic reconstruction | `exists_analyticAt_sourceFiniteGap_finiteReconstruction` | Local weighted lift factors through finitely many original Fourier coefficients; previous weighted-lift APIs retained. |
+| Analytic target without analytic source assumption | `analyticAt_sourceTranslationFiniteTarget`, `sourceTranslationFiniteTarget_ofReal` | Entire complex-time finite target equals the exact weighted block of the real spatial translation. |
+| Weighted lift of the same translated source | `exists_analyticAt_sourceFiniteGap_translationLift` | Analytic near time zero; decoding equals the actual original translation, using the unchanged canonical gap tail. |
+| Bounded physical evaluation | `sourceOneDerivativeWeight_double`, `normalizedSobolevSourceL1`, `normalizedSobolevSourceEvaluation` | Exactly the original one-derivative weight after embedding; bounded l1 decoding and physical evaluation at every finite p. |
+| Analyticity of the existing representative | `analyticOnNhd_sourceFiniteGapPhysicalPair` | Both original coefficient-preserving physical functions are real analytic on all of R, for every real-type finite-gap source at finite p>1. |
+| Full qualified source assertion | `sourceFiniteGap_exists_analytic_representative` | Real analyticity, period one, and every original Fourier integral, without finite Fourier support or an extra regularity assumption. |
+
+This completes the real-type reading of the regularity sentence on
+printed p. 21. Its unrestricted complex reading remains refuted, while
+Corollary 1.6's real-type density theorem remains proved. No claim about
+p=infinity or a uniform analytic strip width is made. The unresolved
+periodic-height range above four and G.2 norm interpretation remain;
+the dissertation is incomplete.
+
+Validation: the full project check passed (6605 build jobs), including all
+public examples and the axiom audit of 27645 NLS declarations. There are
 21 existing warnings and no new warnings. The source inventory check
 passed with 156 labels. Counts do not certify completeness.
