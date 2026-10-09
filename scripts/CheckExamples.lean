@@ -38855,3 +38855,101 @@ example (φ ψ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc (0:
   rw [(intervalL2OfFunction_eq_iff φ ψ hφ hψ).mpr h]
 
 end AppendixGL2EquationChecks
+
+open Set MeasureTheory Filter Topology intervalIntegral
+open NLS.LinearVolterra NLS.ComplexAnalysis NLS.ZakharovShabat
+namespace AppendixG1FullL2Checks
+
+-- A discontinuous potential with both coordinates nonzero.
+private noncomputable def stepPotential (s : ℝ) : ℂ × ℂ :=
+  (Ioc (0:ℝ) (1/2)).indicator (fun _ => ((1:ℂ),1)) s
+private theorem stepPotential_memLp : MemLp stepPotential 2 (volume.restrict (Ioc (0:ℝ) 1)) :=
+  (memLp_const ((1:ℂ),1)).indicator measurableSet_Ioc
+private noncomputable def stepClass : IntervalPairL2 := intervalL2OfFunction stepPotential stepPotential_memLp
+
+private theorem step_same (s : ℝ) : (stepPotential s).2 = (stepPotential s).1 := by
+  by_cases hs : s ∈ Ioc (0:ℝ) (1/2)
+  · simp only [stepPotential,indicator_of_mem hs]
+  · simp only [stepPotential,indicator_of_notMem hs,Prod.fst_zero,Prod.snd_zero]
+
+private theorem step_energy : (∫ s in (0:ℝ)..1, ‖(stepPotential s).1‖^2) = 1/2 := by
+  have he : (fun s => ‖(stepPotential s).1‖^2) =
+      (Ioc (0:ℝ) (1/2)).indicator (fun _ => (1:ℝ)) := by
+    funext s
+    by_cases hs : s ∈ Ioc (0:ℝ) (1/2)
+    · simp only [stepPotential,indicator_of_mem hs]
+      norm_num
+    · simp only [stepPotential,indicator_of_notMem hs]
+      norm_num
+  rw [he,intervalIntegral.integral_of_le (by norm_num),MeasureTheory.integral_indicator measurableSet_Ioc,
+    Measure.restrict_restrict measurableSet_Ioc,
+    inter_eq_self_of_subset_left (Ioc_subset_Ioc_right (by norm_num : (1:ℝ)/2 ≤ 1))]
+  norm_num [measureReal_def]
+
+private theorem stepClass_norm : ‖stepClass‖ = 1 := by
+  have h := norm_sq_intervalL2OfFunction stepPotential stepPotential_memLp
+  simp_rw [step_same,step_energy] at h
+  change ‖stepClass‖^2 = _ at h
+  nlinarith [norm_nonneg stepClass]
+
+private theorem step_oscillatory : oscillatoryIntegral 0 1 (fun s => (stepPotential s).1) = (1/2:ℂ) := by
+  have he : (fun s => (stepPotential s).1) =
+      (Ioc (0:ℝ) (1/2)).indicator (fun _ => (1:ℂ)) := by
+    funext s
+    by_cases hs : s ∈ Ioc (0:ℝ) (1/2)
+    · simp only [stepPotential,indicator_of_mem hs]
+    · simp only [stepPotential,indicator_of_notMem hs,Prod.fst_zero]
+  simp only [oscillatoryIntegral,oscillatoryKernel,zero_mul,Complex.exp_zero,one_mul]
+  rw [he,intervalIntegral.integral_of_le (by norm_num),MeasureTheory.integral_indicator measurableSet_Ioc,
+    Measure.restrict_restrict measurableSet_Ioc,
+    inter_eq_self_of_subset_left (Ioc_subset_Ioc_right (by norm_num : (1:ℝ)/2 ≤ 1))]
+  norm_num [measureReal_def,smul_eq_mul]
+
+private theorem step_firstBorn : l2NormalizedHermitianFirstBorn stepClass 0
+    ⟨1,by constructor <;> norm_num⟩ = 1/2 := by
+  rw [show stepClass = intervalL2OfFunction stepPotential stepPotential_memLp from rfl,
+    l2NormalizedHermitianFirstBorn_ofFunction]
+  simp only [step_same,mul_zero,neg_zero,Complex.zero_im,abs_zero,zero_mul,Real.exp_zero,one_mul]
+  rw [step_oscillatory]
+  norm_num
+
+-- G.1 now applies to this genuinely discontinuous input, with exactly A exp(A)=exp(1).
+example : l2NormalizedHermitianRemainder stepClass 0 ⟨1,by constructor <;> norm_num⟩ ≤
+    1/2+Real.exp 1*Real.sqrt (∫ s in (0:ℝ)..1, (NLS.LinearVolterra.extend
+      (l2NormalizedHermitianFirstBorn stepClass 0) s)^2) := by
+  have h := sourceLemmaG1 stepClass 0 ⟨1,by constructor <;> norm_num⟩
+  simpa only [stepClass_norm,step_firstBorn,one_mul] using h
+
+-- The actual fundamental matrix, not a separate comparison matrix, is normalized to the identity.
+example (u : IntervalPairL2) (z : ℂ) :
+    l2FundamentalMatrix u z ⟨0,by constructor <;> norm_num⟩ = 1 := by simp
+
+-- Zero potential recovers the free remainder for all complex frequencies and times.
+example (z : ℂ) (t : Icc (0:ℝ) 1) : l2NormalizedHermitianRemainder 0 z t = 0 := by
+  simp [l2NormalizedHermitianRemainder,l2HermitianRemainderOperator,hermitianColumns]
+
+-- The source has no division by frequency, so zero frequency is included on the full L2 domain.
+example (u : IntervalPairL2) (t : Icc (0:ℝ) 1) :
+    l2NormalizedHermitianRemainder u 0 t ≤ l2NormalizedHermitianFirstBorn u 0 t+
+      ‖u‖*Real.exp ‖u‖*Real.sqrt (∫ s in (0:ℝ)..t.val,
+        (NLS.LinearVolterra.extend (l2NormalizedHermitianFirstBorn u 0) s)^2) := sourceLemmaG1 u 0 t
+
+-- Exact recovery of the original continuous-potential first Born operator at the operator level.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) (t : Icc (0:ℝ) 1) :
+    l2HermitianFirstBornOperatorCurve (continuousPotentialL2Class φ) z t =
+      classicalHermitianFirstBornOperator φ z t := l2HermitianFirstBornOperatorCurve_of_continuous φ z t
+
+-- Convergence here is in the uniform operator-curve norm, not only at each time.
+example (p : ℕ → IntervalPairL2) (u : IntervalPairL2) (z : ℂ) (hp : Tendsto p atTop (𝓝 u)) :
+    Tendsto ((fun q => l2HermitianFirstBornOperatorCurve q z) ∘ p) atTop
+      (𝓝 (l2HermitianFirstBornOperatorCurve u z)) :=
+  ((continuous_l2HermitianFirstBornOperatorCurve z).tendsto u).comp hp
+
+-- The actual square integral in G.1 also converges.
+example (p : ℕ → IntervalPairL2) (u : IntervalPairL2) (z : ℂ) (t : Icc (0:ℝ) 1)
+    (hp : Tendsto p atTop (𝓝 u)) :
+    Tendsto ((fun q => ∫ s in (0:ℝ)..t.val, (NLS.LinearVolterra.extend (l2NormalizedHermitianFirstBorn q z) s)^2) ∘ p)
+      atTop (𝓝 (∫ s in (0:ℝ)..t.val, (NLS.LinearVolterra.extend (l2NormalizedHermitianFirstBorn u z) s)^2)) :=
+  (((continuous_curve_squareIntegral t).comp (continuous_l2NormalizedHermitianFirstBorn z)).tendsto u).comp hp
+
+end AppendixG1FullL2Checks

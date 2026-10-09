@@ -455,13 +455,17 @@ source-level audit; its existing implementation is not treated as automatic
 coverage of every printed statement. The required unresolved p>2 spectral
 height is unchanged.
 
-### Lemma G.1: L2 forcing prerequisite, full source statement still open
+### Lemma G.1: prerequisite stages
+
+Current status: `sourceLemmaG1` now proves the estimate on the full physical
+L2 domain in the Hermitian operator norm; see the final G.1 table below.
+The following stages record how the earlier domain and norm gaps were closed.
 
 The literal dependence on the potential's Hilbert L2 norm and on the
 first Born term's L2 norm in time is now proved for the constructed
 continuous-potential solutions. This replaces neither the full printed
-L2 domain nor its matrix norm convention. G.1, printed page 135, is still
-incomplete pending those requirements.
+L2 domain nor its matrix norm convention. Those requirements are supplied
+by the subsequent stages below.
 
 | Required ingredient | Public theorem(s) | Verified scope |
 | --- | --- | --- |
@@ -472,8 +476,8 @@ incomplete pending those requirements.
 | Hilbert L2 potential budget | `classicalPotentialL2Norm`, `sqrt_integral_potential_norm_sq_le` | Integral of the sum of both coordinate norm squares; controls every truncated pointwise-norm square integral. |
 | Actual vector solution estimate | `classicalNormalizedRemainder_le_L2_firstBorn` | All continuous potentials, complex spectral parameters, initial vectors, and times in [0,1]; no nonzero-frequency or smoothness restriction. |
 | Actual matrix estimate | `classicalNormalizedMatrixRemainder_le_L2_firstBorn` | Both columns of M-E and of the actual first Born matrix, explicitly using the elementwise maximum matrix norm. |
-| Arbitrary L2 potentials | Not yet proved | The current fundamental solution is constructed for continuous potentials; an L2-stable extension with its integral identity is required. |
-| Source matrix norm | Not yet verified | Reference [23] must be checked; the elementwise maximum norm is not silently identified with an operator norm. |
+| Arbitrary L2 potentials | Completed in later stages below | L2-stable extension, original integral equation, and full estimate. |
+| Matrix norm | Hermitian operator norm proved below | The convention is explicit in the related author preprint; the 2014 edition of [23] has not been checked directly. |
 
 Checks include an actual nonzero triangular potential at zero frequency,
 both-coordinate Hilbert norm sqrt(2), a variable potential (t,0) with
@@ -494,8 +498,8 @@ verified directly from that edition.
 
 The genuine Hermitian operator-norm estimate is now proved, with the literal
 Hilbert L2 coefficient A*exp(A). This closes the norm gap in the preceding
-continuous-potential result. The arbitrary-L2 domain is still missing, so
-G.1 is not yet counted as complete.
+continuous-potential result. The arbitrary-L2 domain is supplied by the
+subsequent extension and limit passage below.
 
 | Requirement | Public theorem(s) | Verified scope |
 | --- | --- | --- |
@@ -507,7 +511,7 @@ G.1 is not yet counted as complete.
 | Actual operator identification | `classicalHermitianRemainderOperator_eq_matrix`, `classicalHermitianFirstBornOperator_eq_matrix` | Operators are precisely M-E and the actual first Born matrix. |
 | True induced operator norm | `classicalHermitianOperator_le_L2_firstBorn` | All initial vectors are bounded before taking the operator norm; exact A*exp(A) coefficient and actual first Born L2 time integral. |
 | Exact first Born formula | `classicalNormalizedHermitianFirstBorn_eq` | The off-diagonal operator norm is the maximum of the oscillatory integral magnitudes. |
-| Arbitrary L2 potentials | Partial; see next stage | Density, stability, and the uniform extension are proved. The original integral and a.e. differential equations are proved below; passage of G.1 is still required. |
+| Arbitrary L2 potentials | Proved in later stages below | Density, stability, the original equations, and passage of G.1 to the physical L2 space. |
 
 The Hermitian convention is explicit on printed page 7 of the related
 author preprint [arXiv:0907.3938](https://arxiv.org/pdf/0907.3938). The 2014
@@ -528,7 +532,7 @@ place of the printed coefficient.
 | Approximation independence | `tendsto_solutionCurve_of_tendsto_L2` | Every approaching family, along any filter, has the same uniform limit. |
 | Exact recovery and normalization | `l2SolutionCurve_of_continuous`, `l2SolutionCurve_zero`, `l2SolutionCurve_free`, `l2SolutionCurve_zero_initial` | Entire classical curves, arbitrary initial values, zero initial vector, signed free solution. |
 | L2 growth bound | `norm_l2SolutionCurve_le` | Uniform curve norm bounded by ||v|| exp(||z||+||u||_2). |
-| Original L2 equation and G.1 | Partial; see next stage | The original integral and a.e. differential equations are proved. The first Born operator and passage of the Hermitian estimate remain. |
+| Original L2 equation and G.1 | Proved in later stages below | The original equations and the full Hermitian estimate are now proved. |
 
 The uniform-limit construction is now supplemented by the actual integral
 and a.e. differential equations in the next stage. Its defining convergence
@@ -547,10 +551,31 @@ sequences, both potential coordinates, and the free frequency signs.
 | Original L2 Volterra equation | `l2SolutionCurve_eq_integral`, `l2SolutionCurve_eq_integral_ofFunction` | The constructed L2 limit solves the original equation at every time, for every complex z and initial vector. |
 | Original differential equation | `ae_hasDerivAt_l2SolutionCurve` | Actual derivatives of the curve extension almost everywhere on the physical interval. |
 | Physical spectral equation | `ae_physicalOperator_l2SolutionCurve`, `ae_physicalOperator_l2SolutionCurve_ofFunction` | L_phi y = z y with actual coordinate derivatives and any original L2 representative. |
-| Full G.1 estimate | Still open | Construct the actual L2 first Born operator, prove its uniform convergence under approximation, and pass the Hermitian bound and square integral with the literal coefficient. |
+| Full G.1 estimate | Proved in the final stage below | Actual L2 first Born operator, uniform convergence, and passage of the Hermitian bound with the literal coefficient. |
 
 These results require neither pointwise convergence of L2 representatives
 nor a continuous representative of the potential. Public checks directly
 compute the signed coefficient integral for a discontinuous two-component
 step and instantiate both the original integral and differential equations.
 No claim of full dissertation completion follows from this milestone.
+
+### Lemma G.1: full physical L2 domain and literal Hermitian estimate
+
+| Source requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Uniform L2 primitive | `intervalL2PrimitiveCLM`, `norm_intervalL2_integral_mul_le` | Actual integrals of representatives; bounded complex-linear map to the uniform curve norm. |
+| Actual oscillatory integrals | `l2OscillatoryCurve_apply`, `l2OscillatoryCurve_apply_ofFunction` | Exact original kernels with signed complex frequencies and arbitrary L2 inputs. |
+| Actual first Born operator and matrix | `l2HermitianFirstBornOperatorCurve_apply`, `l2HermitianFirstBornOperatorCurve_eq_matrix`, `l2HermitianFirstBornOperatorCurve_ofFunction` | Signed off-diagonal entries are the original oscillatory integrals; independent of null-set changes. |
+| Genuine Hermitian norm | `l2NormalizedHermitianFirstBorn_eq`, `l2NormalizedHermitianFirstBorn_ofFunction` | Exact maximum of the two scalar oscillatory integral magnitudes; no dimension factor. |
+| Uniform first Born convergence | `continuous_l2HermitianFirstBornOperatorCurve`, `continuous_l2NormalizedHermitianFirstBorn` | Continuity from physical L2 potentials into operator and real curves with the uniform norm. |
+| Actual square integral convergence | `continuous_curve_squareIntegral`, `integral_l2NormalizedHermitianFirstBorn_sq_of_continuous` | The literal time integral in G.1, with exact classical recovery. |
+| Actual remainder M-E | `l2HermitianRemainderOperator_eq_matrix`, `tendsto_classicalNormalizedHermitianRemainder_L2` | Constructed L2 solution columns with the original integral and a.e. differential equations and identity initial matrix. |
+| Printed estimate | `sourceLemmaG1`, `l2HermitianOperator_le_L2_firstBorn` | [0,1] × Complex × physical L2; exact weight exp(-|Im z|t), coefficient ||phi||_2 exp(||phi||_2), and actual first Born L2 time norm. |
+| Exact classical recovery | `l2FundamentalMatrix_of_continuous`, `l2NormalizedHermitianRemainder_of_continuous`, `l2HermitianFirstBornOperatorCurve_of_continuous` | Existing actual matrices and operators are retained exactly. |
+
+The source formula and domain were checked against printed page 135. A
+noncontinuous two-component step is exercised with exact norm one, exact
+terminal first Born norm one half, and the literal coefficient exp(1).
+The full dissertation is still incomplete. Lemma G.2 requires a separate
+comparison of its H1 norm convention, arbitrary time range, and precise
+constants; the existing broader Sobolev bounds do not establish it verbatim.

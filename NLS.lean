@@ -3063,3 +3063,9 @@ import NLS.ZakharovShabat.L2SolutionExtension
 import NLS.ZakharovShabat.PhysicalL2IntegralPairing
 import NLS.ZakharovShabat.L2VolterraEquation
 import NLS.ZakharovShabat.L2SolutionDifferentialEquation
+import NLS.ZakharovShabat.PhysicalL2Primitive
+import NLS.ZakharovShabat.L2OscillatoryIntegral
+import NLS.FunctionalAnalysis.ContinuousCurveIntegral
+import NLS.ZakharovShabat.L2HermitianFirstBorn
+import NLS.ZakharovShabat.L2HermitianOperatorBound
+import NLS.ZakharovShabat.SourceLemmaG1

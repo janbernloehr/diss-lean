@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the L2 extension satisfies the original integral equation
-and the original differential equation almost everywhere, for arbitrary
-physical L2 potentials and their representatives. Integrability and joint
-continuity of the coefficient integral are proved. Passing the Hermitian
-first-Born estimate to L2 remains before G.1 is complete. F.1-F.3 are proved;
-the required spectral height above p=2 remains open.
+Latest milestone: Lemma G.1 is proved for every physical L2 potential,
+using the actual fundamental solution and first Born operator in the Hermitian
+operator norm, with exactly ||phi||_2 exp(||phi||_2). Uniform convergence
+passes the actual square integral to the limit. F.1-F.3 are also proved;
+the required spectral height above p=2 remains open. Lemma G.2 is next
+for comparison with its precise printed constants and H1 norm.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

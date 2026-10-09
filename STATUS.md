@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: the original equation for physical L2 potentials
+## Current milestone: Lemma G.1 on the full physical L2 domain
+
+Lemma G.1 (printed page 135) is now proved on its full physical L2 domain
+in `SourceLemmaG1.lean`. The estimate uses the actual fundamental-solution
+remainder M-E, the actual first Born operator, the genuine Hermitian induced
+operator norm, and exactly the coefficient ||phi||_2 exp(||phi||_2). It holds
+for all complex spectral parameters, including zero, and all times in [0,1].
+
+`PhysicalL2Primitive.lean` constructs a bounded complex-linear primitive
+map from L2 classes into continuous curves with the uniform norm.
+`L2OscillatoryIntegral.lean` factors the actual kernel into a fixed weighted
+primitive and a free exponential; evaluation is proved equal to the original
+oscillatory integral. `L2HermitianFirstBorn.lean` assembles the exact signed
+off-diagonal operator and proves uniform convergence in time as the physical
+potential varies in L2. Its norm is exactly the maximum of the two oscillatory
+integral magnitudes, with no norm-equivalence factor.
+
+`L2HermitianOperatorBound.lean` identifies the remainder with the actual L2
+fundamental matrix minus the free matrix. Uniform convergence of the Born
+curve passes its squared time integral to the limit; convergence of the
+actual solution columns passes the remainder operator norm. The continuous
+G.1 inequality therefore gives the literal printed bound on the original
+L2 space. The existing classical fundamental matrix, remainder, and first
+Born operator are recovered exactly. The L2 solution already satisfies the
+original integral and almost-everywhere differential equations.
+
+The Hermitian convention is explicit in the related author preprint
+[arXiv:0907.3938](https://arxiv.org/pdf/0907.3938); the 2014 edition of [23]
+has not been read directly. The G.1 formula and full L2 domain were checked
+against the cached dissertation text. This milestone does not settle the
+required p>2 spectral height or the optional original m=1 sharpening; the
+accepted Lemma 27.2 correction is unchanged.
+
+Focused public checks passed for a discontinuous two-component step potential
+whose physical L2 norm is exactly one and whose first Born norm at time one
+is exactly one half. G.1 retains exactly exp(1) as its coefficient on this
+input. Checks also cover the identity initial matrix, free remainder at all
+complex frequencies, zero frequency on the full L2 domain, exact classical
+operator recovery, uniform Born-operator convergence, and convergence of the
+actual square integral. The full build passed (6498 jobs), all public examples
+passed, and the axiom audit passed for 26341 NLS declarations. The same 21
+existing warnings remain, with no new warnings. The 156 candidate source
+labels were verified.
+
+## Previous milestone: the original equation for physical L2 potentials
 
 The approximation-independent L2 curve now satisfies the original Volterra
 integral equation for every physical L2 potential, every complex spectral
