@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Latest progress: the Hermitian operator-norm estimate for G.1
+## Latest progress: uniform solution extension to physical L2 potentials
+
+The continuous-potential solution now extends to every original physical
+L2 class as an approximation-independent uniform limit. The class embedding
+preserves exactly the component-sum Hilbert L2 norm. Continuous potentials
+are dense in this space without an endpoint-matching condition.
+
+`ClassicalL2Stability.lean` proves the quantitative estimate
+
+    ||y_phi - y_psi||_infinity
+      <= ||v|| exp(2||z|| + ||phi||_2 + ||psi||_2) ||phi - psi||_2.
+
+The proof uses the actual differential equations, retains the variable
+potential coefficient inside the Gronwall integral, and bounds its integral
+by the physical L2 norm. It does not assume solution stability or convergence.
+`L2SolutionExtension.lean` then proves the defining family is Cauchy in the
+complete space of continuous curves. Every continuous approximation tending
+to the same L2 class, along any filter, gives the same uniform limit.
+The extension recovers each classical curve exactly, preserves the initial
+value and the signed free solution, and satisfies
+
+    ||y_u||_infinity <= ||v|| exp(||z|| + ||u||_2).
+
+This is the construction stage of the arbitrary-L2 extension. G.1 remains
+incomplete: the original integral equation must still be proved for the
+extended curve, and the actual first Born operator and the Hermitian G.1
+bound must be passed to the limit. The already proved continuous-potential
+Hermitian estimate retains the literal coefficient A*exp(A). The required
+p>2 spectral height and optional original m=1 sharpening remain unresolved;
+the accepted Lemma 27.2 correction is unchanged.
+
+Focused checks passed for the exact two-coordinate norm and distance,
+arbitrary-L2 density, agreement of two approaching sequences, classical
+recovery, initial values, growth, and the signed free solution at arbitrary
+complex frequency. A discontinuous half-interval step potential is checked
+through its original a.e. L2 class. The full build passed (6489 jobs),
+all public examples passed, and the axiom audit passed for 26229 NLS
+declarations. The same 21 pre-existing warnings remain, with no new warnings.
+The 156 candidate source labels were verified.
+
+## Previous milestone: the Hermitian operator-norm estimate for G.1
 
 The G.1 estimate now holds in the actual Hermitian operator norm for the
 constructed continuous-potential fundamental solution. The new
@@ -45,19 +85,13 @@ all public examples passed, and the axiom audit passed for 26193 NLS
 declarations. The same 21 pre-existing warnings remain, with no new warnings.
 The 156 candidate source labels were verified.
 
-For the next L2 step, reuse `IntervalPairL2` from
-`PhysicalIntervalL2.lean`, rather than creating another physical potential
-space. Its `intervalL2OfFunction`, a.e. representative API, and
-`norm_sq_intervalL2OfFunction` already encode the component-sum Hilbert norm.
-First identify the class of each continuous curve with the current
-`classicalPotentialL2Norm`. Mathlib's
-`BoundedContinuousFunction.toLp_denseRange` on the finite restricted
-Lebesgue measure can approximate each scalar component; restricting these
-functions to [0,1] gives the required curves. Prove stability uniformly in
-time on L2-bounded sets before defining any limit. Then prove independence
-of the approximation, the original integral equation, and passage of the
-Hermitian first-Born estimate. The current continuous construction and
-its zero-source normalization must be recovered exactly.
+Next, use the original `intervalL2Representative` and its MemLp theorem to
+prove integrability of the coefficient times the extended continuous curve.
+Pass the classical Volterra identity using L2 convergence of coefficients
+and uniform convergence of curves. Then define the actual L2 first Born
+operator, prove its uniform convergence under continuous approximation,
+and pass the weighted Hermitian estimate and its square integral. Preserve
+the coefficient A*exp(A) and recover the existing continuous definitions.
 
 For stability at fixed spectral parameter, a bound involving norm(z) is
 sufficient and does not alter the sharp G.1 estimate already proved. Apply

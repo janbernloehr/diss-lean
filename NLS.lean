@@ -3055,3 +3055,8 @@ import NLS.ZakharovShabat.ClassicalMatrixRemainderL2Bound
 import NLS.ComplexAnalysis.HermitianPair
 import NLS.ZakharovShabat.ClassicalHermitianDuhamel
 import NLS.ZakharovShabat.ClassicalHermitianOperatorBound
+import NLS.FunctionalAnalysis.VariableIntegralGronwall
+import NLS.ZakharovShabat.ContinuousPotentialL2Class
+import NLS.ZakharovShabat.ContinuousPotentialL2Density
+import NLS.ZakharovShabat.ClassicalL2Stability
+import NLS.ZakharovShabat.L2SolutionExtension

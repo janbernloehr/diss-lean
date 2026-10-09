@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the G.1 estimate is proved in the genuine Hermitian
-operator norm for the actual continuous-potential fundamental solution,
-with the literal Hilbert L2 coefficient A*exp(A). Extension to arbitrary
-L2 potentials remains necessary before G.1 is complete. F.1-F.3 are proved;
-the required spectral height above p=2 remains open.
+Latest milestone: the classical solution has an approximation-independent
+uniform extension to every physical L2 potential, with exact classical
+recovery, initial values, free normalization, and a growth bound. L2 density
+and quantitative solution stability are proved. The integral equation and
+passage of the Hermitian estimate to this limit remain before G.1 is complete.
+F.1-F.3 are proved; the required spectral height above p=2 remains open.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

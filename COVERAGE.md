@@ -507,7 +507,7 @@ G.1 is not yet counted as complete.
 | Actual operator identification | `classicalHermitianRemainderOperator_eq_matrix`, `classicalHermitianFirstBornOperator_eq_matrix` | Operators are precisely M-E and the actual first Born matrix. |
 | True induced operator norm | `classicalHermitianOperator_le_L2_firstBorn` | All initial vectors are bounded before taking the operator norm; exact A*exp(A) coefficient and actual first Born L2 time integral. |
 | Exact first Born formula | `classicalNormalizedHermitianFirstBorn_eq` | The off-diagonal operator norm is the maximum of the oscillatory integral magnitudes. |
-| Arbitrary L2 potentials | Still open | Current theorems use the constructed continuous-potential solution; L2 stability, extension, and passage of the integral identity are next. |
+| Arbitrary L2 potentials | Partial; see next stage | Density, stability, and the uniform extension are proved. The integral identity and passage of G.1 are still required. |
 
 The Hermitian convention is explicit on printed page 7 of the related
 author preprint [arXiv:0907.3938](https://arxiv.org/pdf/0907.3938). The 2014
@@ -516,3 +516,22 @@ from the entrywise maximum, attain the signed kernel bounds in both
 half-planes, and exercise zero time, arbitrary complex free frequency,
 and a nonzero potential at zero frequency. No extra factor is accepted in
 place of the printed coefficient.
+
+### Lemma G.1: physical L2 stability and uniform extension
+
+| Requirement | Public theorem(s) | Verified scope |
+| --- | --- | --- |
+| Exact physical norm | `norm_continuousPotentialL2Class`, `dist_continuousPotentialL2Class` | Hilbert sum of both coordinate square integrals, with no normalization factor. |
+| Full physical L2 density | `denseRange_continuousPotentialL2Class`, `exists_continuousPotential_L2_approximation` | Arbitrary a.e. L2 classes; no periodicity or endpoint condition. |
+| Quantitative solution stability | `norm_classicalSolution_sub_le_L2`, `dist_classicalSolutionCurve_le_L2` | Actual classical solutions, uniformly in time and on L2-bounded potential sets. |
+| Uniform extension exists | `cauchy_classicalSolutionCurve_L2`, `tendsto_classicalSolutionCurve_L2` | Convergence proved before relying on the limit; all physical L2 potentials and complex spectral parameters. |
+| Approximation independence | `tendsto_solutionCurve_of_tendsto_L2` | Every approaching family, along any filter, has the same uniform limit. |
+| Exact recovery and normalization | `l2SolutionCurve_of_continuous`, `l2SolutionCurve_zero`, `l2SolutionCurve_free`, `l2SolutionCurve_zero_initial` | Entire classical curves, arbitrary initial values, zero initial vector, signed free solution. |
+| L2 growth bound | `norm_l2SolutionCurve_le` | Uniform curve norm bounded by ||v|| exp(||z||+||u||_2). |
+| Original L2 integral equation and G.1 | Still open | Must identify the limit as a solution of the original integral equation, construct its actual first Born operator, and pass the Hermitian estimate. |
+
+The extension currently denotes a proved uniform limit of actual classical
+solutions. Its defining convergence alone is not counted as a proof of the
+L2 differential or integral equation. Public checks include a discontinuous
+step potential through `intervalL2OfFunction`, distinct approaching
+sequences, both potential coordinates, and the free frequency signs.

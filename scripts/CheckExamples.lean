@@ -38714,3 +38714,72 @@ example : classicalNormalizedHermitianRemainder g1HermitianTriangular 0 1 ≤
   exact h
 
 end AppendixGHermitianChecks
+
+
+open Set MeasureTheory Filter Topology
+open NLS.LinearVolterra NLS.ZakharovShabat
+
+namespace AppendixGL2ExtensionChecks
+
+-- Both coordinates contribute to the physical Hilbert norm.
+example : ‖continuousPotentialL2Class (ContinuousMap.const _ ((1:ℂ),1))‖ = Real.sqrt 2 := by
+  rw [norm_continuousPotentialL2Class]
+  norm_num [classicalPotentialL2Norm,NLS.LinearVolterra.extend]
+
+-- Potential differences use their physical L2 distance, not a sup norm.
+example : dist (continuousPotentialL2Class (ContinuousMap.const _ ((3:ℂ),4)))
+    (continuousPotentialL2Class (ContinuousMap.const _ ((1:ℂ),1))) = Real.sqrt 13 := by
+  rw [dist_continuousPotentialL2Class]
+  norm_num [classicalPotentialL2Norm,NLS.LinearVolterra.extend]
+
+-- The arbitrary physical L2 class is approximable with no periodicity hypothesis.
+example (u : IntervalPairL2) : ∃ φ : Curve (ℂ × ℂ),
+    dist u (continuousPotentialL2Class φ) < 1 / 1000 :=
+  exists_continuousPotential_L2_approximation u _ (by norm_num)
+
+-- All approaching sequences give the same limit in the uniform curve norm.
+example (φ ψ : ℕ → Curve (ℂ × ℂ)) (u : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ)
+    (hφ : Tendsto (fun n => continuousPotentialL2Class (φ n)) atTop (𝓝 u))
+    (hψ : Tendsto (fun n => continuousPotentialL2Class (ψ n)) atTop (𝓝 u)) :
+    Tendsto (fun n => classicalSolutionCurve (φ n) z v-classicalSolutionCurve (ψ n) z v)
+      atTop (𝓝 0) := by
+  simpa using (tendsto_solutionCurve_of_tendsto_L2 φ u z v hφ).sub
+    (tendsto_solutionCurve_of_tendsto_L2 ψ u z v hψ)
+
+-- Recovery is equality of entire curves, including both endpoints.
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) :
+    l2SolutionCurve (continuousPotentialL2Class φ) z v = classicalSolutionCurve φ z v := by simp
+
+example (u : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) :
+    l2SolutionCurve u z v ⟨0,by constructor <;> norm_num⟩ = v := by simp
+
+example (u : IntervalPairL2) (z : ℂ) : l2SolutionCurve u z 0 = 0 := by simp
+
+-- At zero potential, arbitrary complex frequencies retain the signed free solution.
+example (z : ℂ) (t : Icc (0:ℝ) 1) :
+    l2SolutionCurve 0 z (1,1) t = (Complex.exp (-Complex.I*z*t),Complex.exp (Complex.I*z*t)) := by
+  simp [classicalFreeVector]
+
+-- The same global growth bound survives in the uniform norm.
+example (u : IntervalPairL2) (z : ℂ) :
+    ‖l2SolutionCurve u z (1,1)‖ ≤ Real.exp (‖z‖+‖u‖) := by
+  simpa using norm_l2SolutionCurve_le u z (1,1)
+
+-- A discontinuous potential is admitted through its original a.e. L2 class.
+private noncomputable def stepPotential (s : ℝ) : ℂ × ℂ :=
+  (Ioc (0:ℝ) (1/2)).indicator (fun _ => ((1:ℂ),0)) s
+
+private theorem stepPotential_memLp :
+    MemLp stepPotential 2 (volume.restrict (Ioc (0:ℝ) 1)) := by
+  exact (memLp_const ((1:ℂ),0)).indicator measurableSet_Ioc
+
+example : ∃ φ : Curve (ℂ × ℂ),
+    dist (intervalL2OfFunction stepPotential stepPotential_memLp)
+      (continuousPotentialL2Class φ) < 1/100 :=
+  exists_continuousPotential_L2_approximation _ _ (by norm_num)
+
+example (z : ℂ) (v : ℂ × ℂ) :
+    l2SolutionCurve (intervalL2OfFunction stepPotential stepPotential_memLp) z v
+      ⟨0,by constructor <;> norm_num⟩ = v := by simp
+
+end AppendixGL2ExtensionChecks
