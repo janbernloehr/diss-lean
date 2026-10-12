@@ -1536,3 +1536,44 @@ public examples and the axiom audit of 28119 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Chapter 2, printed p. 45: the actual L2 monodromy trace for rough sources
+
+`SourcePhysicalL2.lean`, `L2Discriminant.lean`, and
+`L2DiscriminantCotangent.lean` extend the physical discriminant comparison
+from continuous representatives to every original Hilbert source. The
+source map reuses `physicalRestrictionL2CLM` and `periodOnePotential`.
+The proof uses exact finite-source recovery, source density, and joint
+continuity of the actual physical L2 trace.
+
+| Public entry point | Scope |
+| --- | --- |
+| `sourcePhysicalL2_representative`, `sourcePhysicalL2_ofFinsupp` | Original Fourier representative on [0,1] and exact finite-curve recovery. |
+| `analyticOnNhd_l2Discriminant_joint` | Joint frequency/potential analyticity of the actual L2 monodromy trace. |
+| `canonicalDiscriminant_eq_l2_source` | Trace identity for every original Hilbert source, with no continuous-representative hypothesis. |
+| `canonicalDiscriminant_eq_l2` | The same identity on the full even-supported Hilbert coefficient subspace. |
+| `canonicalPeriodicProduct_eq_l2Discriminant` | Original normalized full spectral product equals actual trace squared minus four. |
+| `l2Discriminant_sq_eq_four_iff` | Entire original periodic spectrum is exactly the physical characteristic zero set. |
+| `l2Discriminant_parity_levels` | Trace levels two/minus two correspond to positive original even/odd algebraic multiplicity. |
+| `l2Discriminant_zero` | Exact original free discriminant normalization. |
+| `sourceDiscriminantCotangent_eq_l2`, `sourceDiscriminantCotangent_apply_eq_l2` | Complete source cotangent and every Hilbert variation agree with the physical L2 differential under the established source map. |
+| `deriv_canonicalDiscriminant_eq_l2` | Equality of spectral derivatives. |
+
+Public checks cover the literal monodromy trace, arbitrary even-supported
+potentials, original representative recovery, source linearity, normalized
+spectral product, spectrum equivalence, both parity sectors, arbitrary
+Hilbert directions, spectral derivatives, and free/finite-source recovery.
+These are exact identities, not only shared zero sets or proportionality.
+The source normalization is retained throughout.
+
+The rough-source physical anti-discriminant and separated-characteristic
+comparisons remain the next transfer. Their current classical comparison
+theorems require continuous representatives. A physical integral formula
+for the full rough-potential gradient is also not supplied merely by the
+cotangent chain-rule identity. The dissertation remains incomplete.
+
+Validation: the full project check passed (6638 build jobs), including all
+public examples and the axiom audit of 28144 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

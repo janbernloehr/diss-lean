@@ -3205,3 +3205,6 @@ import NLS.ZakharovShabat.L2FundamentalInitialValue
 import NLS.ZakharovShabat.L2PeriodicFundamental
 import NLS.ZakharovShabat.L2PeriodicEquation
 import NLS.ZakharovShabat.L2PeriodicUniqueness
+import NLS.ZakharovShabat.SourcePhysicalL2
+import NLS.ZakharovShabat.L2Discriminant
+import NLS.ZakharovShabat.L2DiscriminantCotangent

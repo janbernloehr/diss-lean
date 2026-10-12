@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the physical L2 fundamental solution is continued
-periodically to every nonnegative time, with joint time/parameter
-continuity and fixed-time complex analyticity. Its columns satisfy the
-original integral equation on every period and the spectral equation
-almost everywhere, with uniqueness and determinant one. This proves
-the full-time regularity recalled in Appendix G. The dissertation is
-incomplete; the next comparison concerns the canonical discriminant and
-the actual L2 monodromy for rough Hilbert source potentials.
+Latest milestone: the canonical discriminant equals the actual L2
+monodromy trace for every Hilbert source, including rough potentials.
+The comparison retains the normalized periodic spectral product and
+both parity levels, and identifies the complete source cotangent with
+the physical L2 differential. Full-time fundamental-solution regularity
+is proved. The dissertation is incomplete; the next transfer concerns
+the anti-discriminant and separated boundary characteristics.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

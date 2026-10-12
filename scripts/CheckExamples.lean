@@ -41646,3 +41646,62 @@ example (u : IntervalPairL2) (z : ℂ) (j : Fin 2) (w : ℝ → ℂ × ℂ) (hw 
   l2PeriodicColumn_unique u z j w hw h0 he
 
 end PeriodicL2FundamentalChecks
+
+-- Actual L2 traces, canonical spectral products, and full source differentials.
+section L2DiscriminantRealizationChecks
+open Set MeasureTheory NLS.LinearVolterra NLS.ZakharovShabat
+open scoped Matrix.Norms.Elementwise
+
+example (φ : NLS.CoeffPair 2) (z : ℂ) :
+    canonicalDiscriminant (by simp) (periodOnePotential φ) z =
+      (l2Monodromy (sourcePhysicalL2 φ) z).trace := canonicalDiscriminant_eq_l2_source φ z
+
+example (φ : PairSpace 2) (hφ : φ ∈ pairParitySubspace 0) (z : ℂ) :
+    canonicalDiscriminant (by simp) φ z = (l2Monodromy (physicalRestrictionL2 φ) z).trace :=
+  canonicalDiscriminant_eq_l2 φ hφ z
+
+example (φ : NLS.CoeffPair 2) :
+    intervalL2Representative (sourcePhysicalL2 φ) =ᵐ[volume.restrict (Ioc (0 : ℝ) 1)]
+      physicalBase (periodOnePotential φ) := sourcePhysicalL2_representative φ
+
+example (φ h : NLS.CoeffPair 2) (c : ℂ) :
+    sourcePhysicalL2 (φ+c • h) = sourcePhysicalL2 φ+c • sourcePhysicalL2 h := by
+  rw [map_add,map_smul]
+
+example (φ : NLS.CoeffPair 2) (z : ℂ) :
+    canonicalPeriodicProduct (by simp) (periodOnePotential φ) z =
+      (l2Discriminant (sourcePhysicalL2 φ) z)^2-4 :=
+  canonicalPeriodicProduct_eq_l2Discriminant _ (periodOnePotential_mem φ) z
+
+example (φ : NLS.CoeffPair 2) (z : ℂ) :
+    (l2Discriminant (sourcePhysicalL2 φ) z)^2 = 4 ↔
+      z ∈ periodicSpectrum (by simp) (periodOnePotential φ) :=
+  l2Discriminant_sq_eq_four_iff _ (periodOnePotential_mem φ) z
+
+example (φ : NLS.CoeffPair 2) (z : ℂ) :
+    (l2Discriminant (sourcePhysicalL2 φ) z = 2 ↔
+      0 < parityAlgebraicMultiplicity (by simp) (periodOnePotential φ) 0 z) ∧
+    (l2Discriminant (sourcePhysicalL2 φ) z = -2 ↔
+      0 < parityAlgebraicMultiplicity (by simp) (periodOnePotential φ) 1 z) :=
+  l2Discriminant_parity_levels _ (periodOnePotential_mem φ) z
+
+example (φ h : NLS.CoeffPair 2) (z : ℂ) :
+    sourceDiscriminantCotangent (by simp) z φ h =
+      (fderiv ℂ (fun u : IntervalPairL2 => (l2Monodromy u z).trace) (sourcePhysicalL2 φ))
+        (sourcePhysicalL2 h) := sourceDiscriminantCotangent_apply_eq_l2 φ h z
+
+example (φ : NLS.CoeffPair 2) (z : ℂ) :
+    deriv (canonicalDiscriminant (by simp) (periodOnePotential φ)) z =
+      deriv (l2Discriminant (sourcePhysicalL2 φ)) z := deriv_canonicalDiscriminant_eq_l2 φ z
+
+example (z : ℂ) : l2Discriminant 0 z = freeDiscriminant z := l2Discriminant_zero z
+
+example : AnalyticOnNhd ℂ (fun q : ℂ × IntervalPairL2 => l2Discriminant q.2 q.1) univ :=
+  analyticOnNhd_l2Discriminant_joint
+
+example (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : ℂ) :
+    l2Discriminant (sourcePhysicalL2 (NLS.CoeffPair.ofFinsupp (p := 2) a)) z =
+      classicalDiscriminant (finiteSourceCurve a) z := by
+  rw [sourcePhysicalL2_ofFinsupp,l2Discriminant_of_continuous]
+
+end L2DiscriminantRealizationChecks

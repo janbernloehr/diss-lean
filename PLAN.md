@@ -1,6 +1,60 @@
 # Implementation plan
 
-## Latest progress: full-time periodic physical L2 fundamental solution
+## Latest progress: the canonical discriminant is the actual L2 trace
+
+The actual physical L2 monodromy trace now equals the canonical
+discriminant for every Hilbert source, without requiring a continuous
+representative. `canonicalDiscriminant_eq_l2_source` gives the comparison
+in the original source space; `canonicalDiscriminant_eq_l2` covers every
+even-supported Hilbert coefficient potential. This supplies the rough-L2
+physical realization of the trace definition on printed p. 45.
+
+`SourcePhysicalL2.lean` reuses the existing `physicalRestrictionL2CLM`
+from the boundary realization and composes it with `periodOnePotential`.
+It proves exact agreement of the physical representatives and recovery
+of each finite source curve. Joint analyticity of the actual L2 trace
+and finite-source density extend the existing classical comparison.
+No new Fourier normalization or independent physical restriction is used.
+
+The normalized full periodic product equals the square of this actual
+trace minus four. Its zero set is the entire original periodic spectrum,
+and the separate trace levels two and minus two correspond to positive
+even and odd algebraic multiplicity. The physical trace retains the
+original free discriminant normalization.
+
+`L2DiscriminantCotangent.lean` identifies the complete source cotangent
+with the physical L2 trace differential composed with `sourcePhysicalL2`.
+This includes every Hilbert base point and every Hilbert direction,
+without finite-support or continuity assumptions. Spectral derivatives
+also agree. This is an identity of actual Frechet derivatives; an
+additional physical integral formula for the rough-potential gradient
+is not claimed here.
+
+The full-time Appendix G regularity result remains proved. G.2's
+arbitrary-time interval norm remains unresolved, both proposed spectral
+height corrections remain unadopted, and the original m=1 sharpening of
+Lemma 27.2 remains optional under the accepted correction. The
+anti-discriminant and separated-characteristic physical comparisons at
+rough Hilbert sources are the next concrete transfer. The dissertation
+is incomplete.
+
+Validation: the full project check passed (6638 build jobs), including all
+public examples and the axiom audit of 28144 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+Next: remove the continuous-representative hypotheses from
+`sourceAntiDiscriminantCandidate_eq_classical_of_continuous` and
+`periodOneBoundaryCharacteristic_eq_classical_of_continuous` at the
+Hilbert exponent. Define their actual L2 monodromy-entry formulas,
+retain the sine normalization and original endpoint signs, and use the
+same source-to-physical map and finite-source density. Then identify the
+corresponding full source cotangents and verify the original separated
+endpoint conditions for the L2 solution. The anti-discriminant is the
+sum of the off-diagonal monodromy entries in the established convention.
+
+## Previous milestone: full-time periodic physical L2 fundamental solution
 
 `sourceFundamentalSolution_regularity` now proves the full-domain
 regularity recalled at the start of Appendix G (printed p. 135): joint
