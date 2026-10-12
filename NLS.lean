@@ -3284,3 +3284,6 @@ import NLS.SequenceSpaces.SobolevSesquilinearPairing
 import NLS.SequenceSpaces.SobolevPairSesquilinear
 import NLS.SequenceSpaces.SobolevSesquilinearDuality
 import NLS.Fourier.SobolevSesquilinearDistributionPairing
+import NLS.Fourier.PeriodicL1Functional
+import NLS.Fourier.PeriodicL1Pairing
+import NLS.Fourier.PeriodicL1Distribution

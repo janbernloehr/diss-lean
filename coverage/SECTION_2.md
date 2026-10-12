@@ -210,8 +210,29 @@ map. The bilinear gradient convention and its analytic theorems remain
 unchanged. Auxiliary maximum products are used only for continuity; endpoint
 bounds and formulas explicitly use the original infinity pair space.
 
-Next: the normalized periodic action of locally integrable functions, then
-the numbered Section 3 statements. Smooth-test action on distributions and
-the L2 integral special case do not alone certify the locally integrable
-source statement. The candidate inventory and these maps are not a
-completeness certificate for the dissertation.
+## Locally integrable periodic action
+
+The normalized action on page 21 now follows from interval integrability
+alone. Local integrability supplies this hypothesis on every fundamental
+interval. For periodic input this gives its periodic smooth-test action;
+for arbitrary interval input the construction realizes its periodic extension.
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Bounded action on continuous circle tests | `NLS.Fourier.periodicL1Functional`, `norm_periodicL1Functional_le` | Any L>0 and interval-integrable complex input; operator norm bounded by the normalized L1 norm. |
+| Actual bounded coefficients | `periodicL1Coefficients`, `norm_periodicL1Coefficients_le` | The original normalized integral coefficients belong to the zero-order infinity space with the same bound. |
+| Physical product series | `hasSum_periodicL1_pairing`, `tsum_periodicL1_pairing`, `summable_norm_periodicL1_pairing` | Every smooth periodic test; opposite indices, absolute convergence, and the exact 1/L integral. |
+| Actual periodic distribution | `periodicL1Distribution_periodic`, `periodicL1Distribution_coefficient` | A genuine tempered distribution with the required period and actual coefficients. |
+| Normalized smooth-test action | `periodicL1Distribution_smooth_action`, `locallyIntegrable_periodic_smooth_action` | Windowed periodic action equals the normalized physical integral, with no L2 or bounded-input premise. |
+| Uniqueness and almost-everywhere invariance | `existsUnique_periodicL1Distribution`, `periodicL1Distribution_congr_ae` | Unique among actual periodic distributions with these coefficients; unchanged by almost-everywhere modifications on the fundamental interval. |
+| Sesquilinear action | `periodicL1Distribution_sesquilinear_action` | The same normalized action with the smooth test conjugated. |
+
+The proof applies the bounded integral functional to uniform Fourier
+convergence of the smooth test and then uses the established distributional
+coefficient identification. It proves the normalized periodic action stated
+in Section 2; it does not add a global real-line integration theorem for
+arbitrary Schwartz tests.
+
+Next: the numbered Section 3 statements, beginning with Proposition 3.1
+and its existing printed-height qualification. The candidate inventory and
+these maps are not a completeness certificate for the dissertation.

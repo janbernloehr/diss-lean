@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: Section 2 sesquilinear duality and physical pairings
+## Current milestone: Section 2 normalized L1 periodic action
+
+Section 2's normalized action is now proved for locally integrable data on
+any positive period. `PeriodicL1Functional.lean` constructs the bounded
+functional on continuous circle tests from interval-integrable input. Its
+operator norm and every actual Fourier coefficient are bounded by the
+normalized L1 norm. No square-integrability or boundedness hypothesis is
+needed on the input.
+
+`PeriodicL1Pairing.lean` applies that functional to the uniformly convergent
+Fourier series of a smooth periodic test. The resulting opposite-index
+coefficient sum equals the physical integral with exactly the factor 1/L.
+The proof handles arbitrary positive periods directly.
+
+`PeriodicL1Distribution.lean` realizes these bounded coefficients as an
+actual periodic tempered distribution. Its normalized windowed action on
+every smooth periodic test equals the same integral, and its Fourier
+coefficients are exactly the normalized physical coefficients. The product
+series converges absolutely. The distribution is unique among periodic
+tempered distributions with these coefficients and depends only on the
+almost-everywhere class on the fundamental interval. Conjugating the test
+gives the corresponding sesquilinear action. Local integrability supplies
+the interval hypothesis; the construction also works for the periodic
+extension of arbitrary interval-integrable data.
+
+This closes the pending normalized periodic smooth-test action obligation
+on printed page 21. It does not assert an additional global real-line
+integral formula for arbitrary Schwartz tests. The existing infinity norm
+convergence, scalar pairing, and infinity duality qualifications remain.
+
+Next: audit Section 3's numbered statements, starting with Proposition 3.1.
+Its printed height must retain the existing qualification from Theorem 1.1;
+neither proposed height correction is adopted. The dissertation remains
+incomplete. G.2's arbitrary-time interval norm and the optional original
+m=1 sharpening remain unresolved.
+
+Validation: focused builds and the standalone public probe passed without
+warnings, including a non-unit-period normalization check. The full project
+check passed all 6,723 build jobs and public examples. The axiom audit passed
+for 29,053 NLS declarations with only the permitted classical axioms. The
+full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.
+
+## Previous milestone: Section 2 sesquilinear duality and physical pairings
 
 Section 2's sesquilinear product is now proved on the full real Sobolev
 scale and at both conjugate endpoints. `SobolevSesquilinearPairing.lean`

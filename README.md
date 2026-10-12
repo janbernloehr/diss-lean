@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's sesquilinear product now covers all real
-Sobolev orders and both conjugate endpoints, with the original pair norms,
-full finite-source Riesz representation, and normalized physical action on
-smooth periodic tests. The infinity-source obstruction remains explicit.
-[The current audit](coverage/SECTION_2.md) records the scope. Locally
-integrable periodic action is next; the dissertation remains incomplete.
+Latest milestone: Section 2's normalized periodic action now holds for
+locally integrable input on every positive period, with the exact 1/L factor,
+actual Fourier coefficients, and absolute convergence against smooth tests.
+[The current audit](coverage/SECTION_2.md) records the scope and endpoint
+qualifications. The numbered Section 3 audit is next; the dissertation remains
+incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

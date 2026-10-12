@@ -43201,3 +43201,57 @@ example (s : ℝ) :
   WeightedCoeff.exists_analytic_sobolev_without_sesquilinearRepresentative s
 
 end SectionTwoSesquilinearChecks
+
+noncomputable section
+open NLS NLS.Fourier MeasureTheory Set
+open scoped ENNReal SchwartzMap ContDiff
+section SectionTwoL1Checks
+local instance : Fact (0 < (3 : ℝ)) := ⟨by norm_num⟩
+
+-- Arbitrary positive periods and merely interval-integrable data suffice.
+example (L : ℝ) [Fact (0 < L)] (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L) :
+    ‖periodicL1Coefficients L f hf‖ ≤ L⁻¹ * ∫ x in (0 : ℝ)..L, ‖f x‖ :=
+  norm_periodicL1Coefficients_le L f hf
+
+example (L : ℝ) [Fact (0 < L)] (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L)
+    (n : ℤ) :
+    periodicL1Distribution L f hf (periodCoefficientTest L Fact.out n) =
+      intervalFourierCoefficient L f n := periodicL1Distribution_coefficient L f hf n
+
+example (L : ℝ) [Fact (0 < L)] (f : ℝ → ℂ) (hf : LocallyIntegrable f volume)
+    (g : ℝ → ℂ) (hg : ContDiff ℝ ∞ g) (hp : Function.Periodic g L) :
+    periodicL1Distribution L f (intervalIntegrable_of_locallyIntegrable L f hf)
+      (SchwartzMap.smulLeftCLM ℂ g (periodCoefficientTest L Fact.out 0)) =
+        (L : ℂ)⁻¹ * ∫ x in (0 : ℝ)..L, f x*g x :=
+  locallyIntegrable_periodic_smooth_action L f hf g hg hp
+
+example (L : ℝ) [Fact (0 < L)] (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L)
+    (g : ℝ → ℂ) (hg : ContDiff ℝ ∞ g) (hp : Function.Periodic g L) :
+    Summable (fun n : ℤ => ‖intervalFourierCoefficient L f n * intervalFourierCoefficient L g (-n)‖) :=
+  summable_norm_periodicL1_pairing L f hf g hg hp
+
+example (L : ℝ) [Fact (0 < L)] (f g : ℝ → ℂ)
+    (hf : IntervalIntegrable f volume 0 L) (hg : IntervalIntegrable g volume 0 L)
+    (hfg : f =ᵐ[volume.restrict (Ioc 0 L)] g) :
+    periodicL1Distribution L f hf = periodicL1Distribution L g hg :=
+  periodicL1Distribution_congr_ae L f g hf hg hfg
+
+-- On a non-unit period, the constant test returns the mean, not the integral.
+example (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 3) :
+    periodicL1Functional 3 f hf (1 : C(AddCircle (3 : ℝ), ℂ)) =
+      (3 : ℂ)⁻¹ * ∫ x in (0 : ℝ)..3, f x := by
+  simp [periodicL1Functional_apply]
+
+example : periodicL1Functional 3 (fun _ => (1 : ℂ)) intervalIntegrable_const
+    (1 : C(AddCircle (3 : ℝ), ℂ)) = 1 := by
+  simp [periodicL1Functional_apply]
+
+-- Arbitrary imaginary phase is conjugated only in the test for the sesquilinear action.
+example (L : ℝ) [Fact (0 < L)] (f : ℝ → ℂ) (hf : IntervalIntegrable f volume 0 L)
+    (g : ℝ → ℂ) (hg : ContDiff ℝ ∞ g) (hp : Function.Periodic g L) :
+    periodicL1Distribution L f hf
+      (SchwartzMap.smulLeftCLM ℂ (fun x => star (g x)) (periodCoefficientTest L Fact.out 0)) =
+        (L : ℂ)⁻¹ * ∫ x in (0 : ℝ)..L, f x*star (g x) :=
+  periodicL1Distribution_sesquilinear_action L f hf g hg hp
+
+end SectionTwoL1Checks

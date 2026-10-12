@@ -1064,5 +1064,12 @@ is also proved in the sesquilinear convention.
 
 The smooth-test distributional identity and normalized L2 integral formula
 hold at every positive period in `SobolevSesquilinearDistributionPairing.lean`.
-The broader locally integrable-function action is the next audit obligation;
-these results do not claim that it follows from the L2 special case alone.
+The broader locally integrable-function action is now proved separately in
+`PeriodicL1Functional.lean`, `PeriodicL1Pairing.lean`, and
+`PeriodicL1Distribution.lean`. These use only interval integrability of the
+input and smoothness and periodicity of the test, retaining the exact 1/L
+normalization. The unique actual periodic distribution has the normalized
+physical Fourier coefficients, and the opposite-index product series is
+absolutely convergent. This closes the page-21 normalized action obligation
+without inferring it from the L2 special case. The source qualifications
+above remain unchanged.
