@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: no fixed replacement for the printed periodic height
-coefficient works at all exponents. Lean proves the necessary bound
-`P-2 <= 276480*C_P^2` at every integer P>=3, even with a freely chosen
-central cutoff. The sufficient height `(1+8pM)^p` now retains the full
-source counting data and actual analytic projections on one common
-neighborhood. This is a separate proposed correction; it is not adopted.
-The printed result through p=4 remains proved, and the all-exponent
-printed height remains refuted. The dissertation is incomplete.
+Latest milestone: the original physical L2 fundamental solution is jointly
+complex analytic in frequency and potential on the unit interval, and
+jointly continuous with time. Its actual Volterra equation has a unique
+solution for arbitrary continuous forcing, with an explicit L2-based
+inverse bound. The fundamental matrix has determinant one. Periodic
+continuation to all nonnegative times remains the next step; the
+full-time Appendix G regularity claim and the dissertation are incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

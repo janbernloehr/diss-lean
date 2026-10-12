@@ -1,6 +1,52 @@
 # Implementation plan
 
-## Latest progress: necessary periodic height growth and a proposed correction
+## Latest progress: physical L2 fundamental-solution regularity on [0,1]
+
+The actual physical L2 Volterra integral now defines a bounded operator on
+continuous solution curves. Its coefficient map is complex linear in
+frequency and the original L2 potential. The resulting operator has norm
+at most `|z|+||u||_2` and a potential difference bound of `||u-v||_2`.
+The original signs and integral representatives are retained.
+
+The operator `1-K(z,u)` is invertible for every frequency and every L2
+potential. The proof approximates by continuous potentials, uses a uniform
+L2-based bound for their full forcing inverses, and applies a small
+perturbation argument. The resulting inverse has norm at most
+`exp(|z|+||u||_2)`. It solves the actual integral equation for arbitrary
+continuous forcing, uniquely, and recovers the existing `l2SolutionCurve`
+and the classical continuous-potential inverse exactly.
+
+`L2FundamentalAnalytic.lean` proves joint complex analyticity in `(z,u)`
+in the uniform curve norm, fixed-time analyticity of the original
+`l2FundamentalMatrix`, and joint time/parameter continuity including both
+endpoints of [0,1]. The fundamental matrix has determinant one for every
+original L2 input. Public examples check both inverse identities,
+arbitrary-forcing uniqueness and estimates, initial-vector additivity,
+classical recovery, analyticity, continuity, and determinant one.
+
+This establishes the unit-interval prerequisite for the regularity
+recalled at the start of Appendix G (printed p. 135). The all-time claim
+on `[0,infinity)` still requires a compatible periodic continuation and
+its identification with the original equation. It is not yet proved.
+The unresolved arbitrary-time G.2 interval norm and the optional original
+m=1 sharpening of Lemma 27.2 remain separate. Neither proposed spectral
+height correction has been adopted. The dissertation is incomplete.
+
+Validation: the full project check passed (6631 build jobs), including all
+public examples and the axiom audit of 28075 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+Next: continue periodic physical L2 potentials to all nonnegative times.
+Use the actual unit-interval fundamental matrix and its monodromy to glue
+successive intervals; prove agreement at integer seams, the original
+integral/a.e. differential equation, and joint continuity and fixed-time
+analyticity on the full domain. The existing classical construction
+outside [0,1] uses endpoint clamping and cannot substitute for this
+periodic continuation.
+
+## Previous milestone: necessary periodic height growth and a proposed correction
 
 `SourcePeriodicHeightNecessity.lean` proves that any nonnegative coefficient
 C_P bounding all original source spectra by `(1+C_P*norm)^P` at integer

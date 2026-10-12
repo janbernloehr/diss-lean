@@ -1457,3 +1457,40 @@ entry point for that exact assertion was located during this audit.
 It remains a concrete obligation, separate from G.2's interval-norm issue.
 The plan is to establish regularity of the actual L2 solution and a
 compatible extension of periodic inputs to all nonnegative times.
+
+### Appendix G introduction: unit-interval L2 parameter regularity proved
+
+The preceding all-time obligation is now reduced by a proved
+unit-interval regularity result. The new modules
+`ClassicalVolterraL2Bound.lean`, `L2ScalarVolterra.lean`,
+`L2VolterraOperator.lean`, `L2VolterraInverse.lean`, and
+`L2FundamentalAnalytic.lean` work with the original physical L2 norm and
+actual integral equation. They impose no continuity assumption on the
+potential. The existing coordinate integral formula is now public.
+
+| Public entry point | Scope |
+| --- | --- |
+| `l2Volterra_apply`, `l2Volterra_of_continuous` | Exact original integral and classical-operator recovery. |
+| `l2VolterraCoefficientMap`, `norm_l2Volterra_sub_le` | Bounded complex-linear parameter map and potential difference bound. |
+| `isUnit_one_sub_l2Volterra` | Invertibility for every physical L2 potential and every complex frequency. |
+| `l2SolutionOperator_eq_iff` | Unique actual integral-equation solution for arbitrary continuous forcing. |
+| `norm_l2SolutionOperator_le` | Full forcing inverse norm at most exp(abs(z)+norm(u)). |
+| `l2SolutionCurve_eq_l2SolutionOperator`, `l2SolutionCurve_unique_integral` | Identification and uniqueness for the existing initial-value solution. |
+| `analyticOnNhd_l2SolutionOperator`, `analyticOnNhd_l2SolutionCurve_joint` | Joint parameter analyticity in the operator/uniform curve norm. |
+| `analyticOnNhd_l2FundamentalMatrix_joint` | Fixed-time complex analyticity of the original matrix for every t in [0,1]. |
+| `continuous_l2FundamentalMatrix_time_joint` | Joint time/frequency/potential continuity including both endpoints. |
+| `det_l2FundamentalMatrix` | Determinant one for every original physical L2 input on [0,1]. |
+
+The proof uses continuous approximation with a uniform L2 forcing bound,
+then analytic inversion of the actual Volterra operator. It does not
+replace the existing solution by an unrelated abstract construction.
+Public checks include arbitrary forcing, both inverse identities,
+initial-vector additivity, classical recovery, and matrix regularity.
+The full `[0,infinity)` claim still requires periodic continuation and
+identification with the original equation. The G.2 norm issue is separate.
+
+Validation: the full project check passed (6631 build jobs), including all
+public examples and the axiom audit of 28075 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

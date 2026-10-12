@@ -12,10 +12,12 @@ open scoped BoundedContinuousFunction
 open NLS.LinearVolterra
 namespace NLS.ZakharovShabat
 
-private def boundedFirst (w : Curve (ℂ × ℂ)) : ℝ →ᵇ ℂ :=
+/-- Bounded extension of the first coordinate of a physical test curve. -/
+def l2BoundedFirst (w : Curve (ℂ × ℂ)) : ℝ →ᵇ ℂ :=
   (ContinuousLinearMap.fst ℂ ℂ ℂ).compLeftContinuousBounded ℝ (curveBoundedExtension _ w)
 
-private def boundedSecond (w : Curve (ℂ × ℂ)) : ℝ →ᵇ ℂ :=
+/-- Bounded extension of the second coordinate of a physical test curve. -/
+def l2BoundedSecond (w : Curve (ℂ × ℂ)) : ℝ →ᵇ ℂ :=
   (ContinuousLinearMap.snd ℂ ℂ ℂ).compLeftContinuousBounded ℝ (curveBoundedExtension _ w)
 
 /-- The actual coefficient integral with an original physical L2 representative. -/
@@ -29,26 +31,26 @@ theorem intervalIntegrable_l2ODECoefficient (u : IntervalPairL2) (z : ℂ)
       volume 0 t.val := by
   have h₁ := ((continuous_extend w).fst.intervalIntegrable (μ := volume) 0 t.val).const_mul (-I*z)
   have h₂ := ((continuous_extend w).snd.intervalIntegrable (μ := volume) 0 t.val).const_mul (I*z)
-  have hp₁ := (intervalIntegrable_intervalL2_mul u.ofLp.1 (boundedSecond w) t).const_mul I
-  have hp₂ := (intervalIntegrable_intervalL2_mul u.ofLp.2 (boundedFirst w) t).const_mul (-I)
+  have hp₁ := (intervalIntegrable_intervalL2_mul u.ofLp.1 (l2BoundedSecond w) t).const_mul I
+  have hp₂ := (intervalIntegrable_intervalL2_mul u.ofLp.2 (l2BoundedFirst w) t).const_mul (-I)
   apply (intervalIntegrable_iff_integrableOn_Ioc_of_le t.property.1).mpr
-  simpa only [IntegrableOn,classicalODECoefficient_apply,intervalL2Representative,boundedFirst,boundedSecond,
+  simpa only [IntegrableOn,classicalODECoefficient_apply,intervalL2Representative,l2BoundedFirst,l2BoundedSecond,
     ContinuousLinearMap.compLeftContinuousBounded_apply,curveBoundedExtension_apply,
     ContinuousLinearMap.coe_fst',ContinuousLinearMap.coe_snd',mul_assoc] using
     ((h₁.add hp₁).1.prodMk (hp₂.add h₂).1)
 
 /-- Coordinate formula for the original integral, including both spectral signs. -/
-private theorem l2ODEIntegral_eq (u : IntervalPairL2) (z : ℂ) (w : Curve (ℂ × ℂ)) (t : Icc (0:ℝ) 1) :
+theorem l2ODEIntegral_eq (u : IntervalPairL2) (z : ℂ) (w : Curve (ℂ × ℂ)) (t : Icc (0:ℝ) 1) :
     l2ODEIntegral u z w t =
-      (-I*z*(∫ s in (0:ℝ)..t.val, boundedFirst w s)+
-        I*(∫ s in (0:ℝ)..t.val, u.ofLp.1 s*boundedSecond w s),
-       -I*(∫ s in (0:ℝ)..t.val, u.ofLp.2 s*boundedFirst w s)+
-        I*z*(∫ s in (0:ℝ)..t.val, boundedSecond w s)) := by
+      (-I*z*(∫ s in (0:ℝ)..t.val, l2BoundedFirst w s)+
+        I*(∫ s in (0:ℝ)..t.val, u.ofLp.1 s*l2BoundedSecond w s),
+       -I*(∫ s in (0:ℝ)..t.val, u.ofLp.2 s*l2BoundedFirst w s)+
+        I*z*(∫ s in (0:ℝ)..t.val, l2BoundedSecond w s)) := by
   have h₁ := ((continuous_extend w).fst.intervalIntegrable (μ := volume) 0 t.val).const_mul (-I*z)
   have h₂ := ((continuous_extend w).snd.intervalIntegrable (μ := volume) 0 t.val).const_mul (I*z)
-  have hp₁ := (intervalIntegrable_intervalL2_mul u.ofLp.1 (boundedSecond w) t).const_mul I
-  have hp₂ := (intervalIntegrable_intervalL2_mul u.ofLp.2 (boundedFirst w) t).const_mul (-I)
-  simp only [boundedFirst,boundedSecond,ContinuousLinearMap.compLeftContinuousBounded_apply,
+  have hp₁ := (intervalIntegrable_intervalL2_mul u.ofLp.1 (l2BoundedSecond w) t).const_mul I
+  have hp₂ := (intervalIntegrable_intervalL2_mul u.ofLp.2 (l2BoundedFirst w) t).const_mul (-I)
+  simp only [l2BoundedFirst,l2BoundedSecond,ContinuousLinearMap.compLeftContinuousBounded_apply,
     curveBoundedExtension_apply,ContinuousLinearMap.coe_fst',ContinuousLinearMap.coe_snd'] at hp₁ hp₂ ⊢
   simp_rw [← mul_assoc] at hp₁ hp₂
   simp only [l2ODEIntegral,classicalODECoefficient_apply,intervalL2Representative]
@@ -60,10 +62,10 @@ private theorem l2ODEIntegral_eq (u : IntervalPairL2) (z : ℂ) (w : Curve (ℂ 
 /-- Joint continuity in the physical L2 class and uniform curve, at each time. -/
 theorem continuous_l2ODEIntegral (z : ℂ) (t : Icc (0:ℝ) 1) :
     Continuous (fun p : IntervalPairL2 × Curve (ℂ × ℂ) => l2ODEIntegral p.1 z p.2 t) := by
-  have hf : Continuous (fun p : IntervalPairL2 × Curve (ℂ × ℂ) => boundedFirst p.2) :=
+  have hf : Continuous (fun p : IntervalPairL2 × Curve (ℂ × ℂ) => l2BoundedFirst p.2) :=
     ((ContinuousLinearMap.fst ℂ ℂ ℂ).compLeftContinuousBounded ℝ).continuous.comp
       ((curveBoundedExtension _).continuous.comp continuous_snd)
-  have hg : Continuous (fun p : IntervalPairL2 × Curve (ℂ × ℂ) => boundedSecond p.2) :=
+  have hg : Continuous (fun p : IntervalPairL2 × Curve (ℂ × ℂ) => l2BoundedSecond p.2) :=
     ((ContinuousLinearMap.snd ℂ ℂ ℂ).compLeftContinuousBounded ℝ).continuous.comp
       ((curveBoundedExtension _).continuous.comp continuous_snd)
   have hu := (WithLp.prodContinuousLinearEquiv 2 ℂ IntervalL2 IntervalL2).continuous.comp

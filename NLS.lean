@@ -3196,3 +3196,8 @@ import NLS.ZakharovShabat.DyadicNormalizationBound
 import NLS.ZakharovShabat.SourcePeriodicHeightCounterexample
 import NLS.ZakharovShabat.SourcePeriodicHeightNecessity
 import NLS.ZakharovShabat.SourcePeriodicExplicitHeight
+import NLS.ZakharovShabat.ClassicalVolterraL2Bound
+import NLS.ZakharovShabat.L2ScalarVolterra
+import NLS.ZakharovShabat.L2VolterraOperator
+import NLS.ZakharovShabat.L2VolterraInverse
+import NLS.ZakharovShabat.L2FundamentalAnalytic

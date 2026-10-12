@@ -41527,3 +41527,58 @@ example (φ : CoeffPair 5) : ∃ N₀ : ℕ, ∃ V : Set (CoeffPair 5),
   exact ⟨hcount,hd.central_parity (periodOnePotential_mem ψ)⟩
 
 end PeriodicHeightCoefficientChecks
+
+-- Actual L2 integral equations, arbitrary forcing, and unit-interval regularity.
+section L2FundamentalRegularityChecks
+open Set NLS.LinearVolterra NLS.ZakharovShabat
+open scoped Matrix.Norms.Elementwise
+
+example (u : IntervalPairL2) (z : ℂ) (f : Curve (ℂ × ℂ)) :
+    ∃! w : Curve (ℂ × ℂ), ∀ t, w t = f t+l2ODEIntegral u z w t := by
+  refine ⟨l2SolutionOperator (z,u) f, ?_, ?_⟩
+  · exact (l2SolutionOperator_eq_iff (z,u) f _).mp rfl
+  · intro w hw
+    exact (l2SolutionOperator_eq_iff (z,u) f w).mpr hw
+
+example (u : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) (w : Curve (ℂ × ℂ))
+    (hw : ∀ t, w t = v+l2ODEIntegral u z w t) : w = l2SolutionCurve u z v :=
+  l2SolutionCurve_unique_integral u z v w hw
+
+example (q : ℂ × IntervalPairL2) :
+    l2SolutionOperator q*(1-l2Volterra q) = 1 ∧
+      (1-l2Volterra q)*l2SolutionOperator q = 1 :=
+  ⟨l2SolutionOperator_mul q,mul_l2SolutionOperator q⟩
+
+example (q : ℂ × IntervalPairL2) (f : Curve (ℂ × ℂ)) :
+    ‖l2SolutionOperator q f‖ ≤ Real.exp (‖q.1‖+‖q.2‖)*‖f‖ :=
+  (ContinuousLinearMap.le_opNorm _ _).trans
+    (mul_le_mul_of_nonneg_right (norm_l2SolutionOperator_le q) (norm_nonneg f))
+
+example (u : IntervalPairL2) (z : ℂ) (v w : ℂ × ℂ) :
+    l2SolutionCurve u z (v+w) = l2SolutionCurve u z v+l2SolutionCurve u z w := by
+  simp only [l2SolutionCurve_eq_l2SolutionOperator]
+  change l2SolutionOperator (z,u) (ContinuousMap.const _ v+ContinuousMap.const _ w) = _
+  exact map_add _ _ _
+
+example (φ : Curve (ℂ × ℂ)) (z : ℂ) :
+    l2SolutionOperator (z,continuousPotentialL2Class φ) =
+      solutionOperator (classicalCoefficientCurveCLM (z,φ)) :=
+  l2SolutionOperator_of_continuous φ z
+
+example (v : ℂ × ℂ) :
+    AnalyticOnNhd ℂ (fun q : ℂ × IntervalPairL2 => l2SolutionCurve q.2 q.1 v) univ :=
+  analyticOnNhd_l2SolutionCurve_joint v
+
+example (t : Icc (0 : ℝ) 1) :
+    AnalyticOnNhd ℂ (fun q : ℂ × IntervalPairL2 => l2FundamentalMatrix q.2 q.1 t) univ :=
+  analyticOnNhd_l2FundamentalMatrix_joint t
+
+example : Continuous (fun qt : (ℂ × IntervalPairL2) × Icc (0 : ℝ) 1 =>
+    l2FundamentalMatrix qt.1.2 qt.1.1 qt.2) :=
+  continuous_l2FundamentalMatrix_time_joint
+
+example (u : IntervalPairL2) (z : ℂ) :
+    (l2FundamentalMatrix u z ⟨1,by constructor <;> norm_num⟩).det = 1 :=
+  det_l2FundamentalMatrix u z _
+
+end L2FundamentalRegularityChecks
