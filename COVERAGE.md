@@ -1712,3 +1712,34 @@ public examples and the axiom audit of 28245 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Classical comparison and actual L2 realization of G.6 coefficient estimates
+
+The endpoint, trace, anti-trace, and separated gradient functions now
+have pointwise classical comparisons on the physical unit interval.
+The established G.6 signed coefficient vectors and their source-norm
+estimates consequently apply to the actual physical L2 derivatives.
+
+| Public entry point | Scope |
+| --- | --- |
+| `l2EndpointGradient_of_continuous`, `l2DiscriminantGradient_of_continuous`, `l2AntiDiscriminantGradient_of_continuous`, `l2SeparatedGradient_of_continuous` | Exact pointwise agreement on [0,1]. |
+| `l2AntiDiscriminantGradientRemainder_of_continuous`, `l2AntiDiscriminantGradientRemainder_lattice` | Subtraction of the actual free L2 gradient and the corrected signed lattice waves. |
+| `L2GradientFourierRealizes` | Actual Fourier integrals, factor i, first index -k and second index k. |
+| `L2GradientFourierRealizes.unique`, `L2GradientFourierRealizes.norm_rpow` | Unique represented coefficient vector and the exact finite-q source energy. |
+| `sourceG6DiscriminantCoefficients_realizes_l2`, `sourceG6AntiDiscriminantCoefficients_realizes_l2` | Existing coefficient vectors represent the actual L2 gradient and its free-reference error. |
+| `sourceG6_l2DiscriminantGradient_majorant`, `sourceG6_l2AntiDiscriminantGradient_majorant` | One nonnegative outer-lp majorant on each exact H1 source ball, with the established spectral and exponent hypotheses. |
+| `sourceG6_l2DiscriminantGradient_memlp`, `sourceG6_l2AntiDiscriminantGradient_memlp` | Realized whole coefficient sequences belong to outer lp; finite initial spectral values are retained. |
+
+Public checks include the pointwise comparisons, actual free-gradient
+subtraction, all signed lattice indices, both Fourier index conventions,
+uniqueness, the q=2 energy, a p=q=2 uniform source-ball majorant, and
+whole-sequence anti-discriminant summability. No new rough-L2-ball
+asymptotic estimate or infinity endpoint is claimed. The existing
+G.5–G.7 reference corrections and exponent restrictions remain unchanged.
+Physical simple-root gradient normalization remains the next step.
+
+Validation: the full project check passed (6654 build jobs), including all
+public examples and the axiom audit of 28266 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

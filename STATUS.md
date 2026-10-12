@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: physical spectral-gradient integrals on Hilbert sources
+## Current milestone: actual L2 gradient coefficients and G.6 estimates
+
+The physical L2 endpoint, discriminant, anti-discriminant, and separated
+gradients now agree pointwise on [0,1] with the established classical
+gradient functions for every continuous representative.
+`L2GradientComparison.lean` also subtracts the actual zero-potential L2
+gradient in the anti-discriminant remainder and proves the exact signed
+lattice-wave formula, including negative indices.
+
+`L2GradientFourierRealization.lean` records the source Fourier convention
+explicitly: ordinary unit-interval integrals, multiplication by i, first
+index -k and second index k. The existing G.6 coefficient vectors realize
+the actual L2 discriminant gradient and anti-discriminant remainder.
+Realizations are unique and their finite-q norm power equals the combined
+Fourier coefficient energy of equation (1.2).
+
+`L2SourceG6Gradients.lean` carries the established majorants to vectors
+realizing these actual physical derivatives. It retains the exact H1
+source ball, finite outer p>1, finite q>1+1/p, eventual bounded frequency
+displacement for the discriminant, and eventual O(1/abs(n)) displacement
+for the anti-discriminant. One nonnegative lp majorant works throughout
+the prescribed source ball. Whole coefficient sequences belong to outer
+lp, including arbitrary finite initial spectral values. The majorant is
+chosen after the spectral sequence, with no uniform bound on all possible
+finite spectral heads asserted.
+
+These are the existing corrected G.6 estimates interpreted through the
+actual L2 gradients. No new asymptotic estimate on arbitrary rough L2
+balls or refuted infinity endpoint is asserted. The previous original
+Hilbert cotangent integral identities remain in force.
+
+Next are physical L2 derivatives of simple separated eigenvalue branches
+and their normalized eigenfunction formulas, connecting the existing G.7
+work to the same actual L2 construction. G.2's arbitrary-time interval
+norm remains unresolved; neither proposed spectral-height correction is
+adopted. The optional original m=1 sharpening remains under the accepted
+Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6654 build jobs), including all
+public examples and the axiom audit of 28266 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: physical spectral-gradient integrals on Hilbert sources
 
 The physical L2 discriminant, anti-discriminant, and both separated
 characteristics now have explicit unconjugated potential-gradient

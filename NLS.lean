@@ -3221,3 +3221,6 @@ import NLS.ZakharovShabat.L2SourceEndpointGradient
 import NLS.ZakharovShabat.L2EndpointGradientCalculus
 import NLS.ZakharovShabat.L2CharacteristicGradients
 import NLS.ZakharovShabat.L2SourceCharacteristicGradients
+import NLS.ZakharovShabat.L2GradientComparison
+import NLS.ZakharovShabat.L2GradientFourierRealization
+import NLS.ZakharovShabat.L2SourceG6Gradients

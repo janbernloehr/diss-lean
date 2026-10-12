@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the discriminant, anti-discriminant, and separated
-characteristics have their actual physical L2 gradient integrals. These
-integrals equal the original source cotangents at every Hilbert base
-point and direction, retaining the Fourier normalization and boundary
-signs. The dissertation is incomplete; next is the pointwise comparison
-with the classical gradients and existing spectral-gradient estimates.
+Latest milestone: the physical L2 gradients agree with the classical
+formulas on continuous inputs, and the signed G.6 Fourier coefficients
+now realize those actual derivatives. Their exact source-norm majorants
+and whole-sequence summability retain the original H1 domain and the
+corrected reference. The dissertation is incomplete; next are actual
+L2 simple-eigenvalue gradients and their eigenfunction normalization.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

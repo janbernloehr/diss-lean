@@ -41967,3 +41967,74 @@ example (b : BoundaryCondition) (s : ℝ) :
     ring_nf <;> simp [Complex.I_sq] <;> norm_num
 
 end L2CharacteristicGradientChecks
+
+noncomputable section
+section L2GradientFourierChecks
+open Set NLS NLS.LinearVolterra NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) (s : Icc (0 : ℝ) 1) :
+    l2DiscriminantGradient (continuousPotentialL2Class Φ) z s = classicalDiscriminantGradient Φ z s :=
+  l2DiscriminantGradient_of_continuous Φ z s
+
+example (b : BoundaryCondition) (Φ : Curve (ℂ × ℂ)) (z : ℂ) (s : Icc (0 : ℝ) 1) :
+    l2SeparatedGradient b (continuousPotentialL2Class Φ) z s = classicalSeparatedGradient b Φ z s :=
+  l2SeparatedGradient_of_continuous b Φ z s
+
+example (Φ : Curve (ℂ × ℂ)) (z w : ℂ) (s : Icc (0 : ℝ) 1) :
+    l2AntiDiscriminantGradient (continuousPotentialL2Class Φ) z s-l2AntiDiscriminantGradient 0 w s =
+      classicalAntiDiscriminantGradientRemainder Φ z w s :=
+  l2AntiDiscriminantGradientRemainder_of_continuous Φ z w s
+
+example (u : IntervalPairL2) (z : ℂ) (n : ℤ) (s : Icc (0 : ℝ) 1) :
+    l2AntiDiscriminantGradientRemainder u z ((Real.pi : ℂ)*n) s =
+      l2AntiDiscriminantGradient u z s-
+        (Complex.I*Complex.cos ((Real.pi : ℂ)*n)*wave (2*n) s,
+         -Complex.I*Complex.cos ((Real.pi : ℂ)*n)*wave (-(2*n)) s) :=
+  l2AntiDiscriminantGradientRemainder_lattice u z n s
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) (k : ℤ) :
+    (sourceG6DiscriminantCoefficients (q := 2) (by norm_num) Φ z).fst k =
+      Complex.I*intervalFourierCoefficient 1
+        (fun s => (l2DiscriminantGradient (continuousPotentialL2Class Φ) z s).1) (-k) :=
+  (sourceG6DiscriminantCoefficients_realizes_l2 (q := 2) (by norm_num) Φ z k).1
+
+example (Φ : Curve (ℂ × ℂ)) (z w : ℂ) (k : ℤ) :
+    (sourceG6AntiDiscriminantCoefficients (q := 2) (by norm_num) Φ z w).snd k =
+      Complex.I*intervalFourierCoefficient 1
+        (fun s => (l2AntiDiscriminantGradientRemainder (continuousPotentialL2Class Φ) z w s).2) k :=
+  (sourceG6AntiDiscriminantCoefficients_realizes_l2 (q := 2) (by norm_num) Φ z w k).2
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] (g : ℝ → ℂ × ℂ) (a b : CoeffPair q)
+    (ha : L2GradientFourierRealizes g a) (hb : L2GradientFourierRealizes g b) : a = b := ha.unique hb
+
+example (g : ℝ → ℂ × ℂ) (a : CoeffPair 2) (ha : L2GradientFourierRealizes g a) :
+    ‖a‖^2 = ∑' k : ℤ, (‖intervalFourierCoefficient 1 (fun s => (g s).1) (-k)‖^2+
+      ‖intervalFourierCoefficient 1 (fun s => (g s).2) k‖^2) := by
+  simpa using ha.norm_rpow (by norm_num)
+
+example (M B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) (ν : ℤ → ℂ)
+    (hν : ∀ n : ℤ, N₀ ≤ n.natAbs → ‖ν n-(Real.pi : ℂ)*n‖ ≤ B) :
+    ∃ b : ℤ → ℝ, Memℓp b 2 ∧ (∀ n, 0 ≤ b n) ∧
+      ∀ a : ScalarDomain 2 × ScalarDomain 2,
+        ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M → ∀ n : ℤ,
+        ∃ c : CoeffPair 2,
+          L2GradientFourierRealizes
+            (l2DiscriminantGradient
+              (continuousPotentialL2Class (classicalSobolevPotential (sourceG3ClassicalCoefficients a))) (ν n)) c ∧
+          ‖c‖ ≤ b n := by
+  simpa using sourceG6_l2DiscriminantGradient_majorant 2 (by norm_num) 2 (by norm_num)
+    (by norm_num) M B hB N₀ ν hν
+
+example (B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) (ν : ℤ → ℂ)
+    (hν : ∀ n : ℤ, N₀ ≤ n.natAbs → ‖ν n-(Real.pi : ℂ)*n‖ ≤ B/(n.natAbs : ℝ))
+    (a : ScalarDomain 2 × ScalarDomain 2) :
+    ∃ c : ℤ → CoeffPair 2, Memℓp c 2 ∧ ∀ n,
+      L2GradientFourierRealizes
+        (l2AntiDiscriminantGradientRemainder
+          (continuousPotentialL2Class (classicalSobolevPotential (sourceG3ClassicalCoefficients a)))
+          (ν n) ((Real.pi : ℂ)*n)) (c n) := by
+  simpa using sourceG6_l2AntiDiscriminantGradient_memlp 2 (by norm_num) 2 (by norm_num)
+    (by norm_num) B hB N₀ ν hν a
+
+end L2GradientFourierChecks
