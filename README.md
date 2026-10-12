@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: actual source midpoint derivatives now have physical
-L2 contour gradients, including collapsed gaps. Isolating circles are
-constructed at every signed index, and the existing G.7 midpoint vectors
-realize their physical Fourier coefficients with the original H1
-summability estimate. The dissertation is incomplete; next is contour
-independence and a choice-independent midpoint gradient.
+Latest milestone: the physical midpoint gradient is uniquely determined
+by the actual source cotangent and is independent of its isolating contour,
+including at collapsed gaps and physical endpoints. G.7's signed vectors
+now realize this canonical gradient without contour parameters. The
+dissertation is incomplete; next is physical-gradient realization in the
+source spaces below the Hilbert exponent.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

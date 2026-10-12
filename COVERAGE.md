@@ -1911,3 +1911,63 @@ rough L2 pairing-contour interchange, the curve norm bound, arbitrary real
 Hilbert source directions, the collapsed zero-potential case, and the generic
 finite conjugate-exponent H1 summability result. Contour independence of the
 pointwise physical representative is not yet asserted.
+
+### Pointwise gradient uniqueness and contour-independent midpoint gradients
+
+Physical midpoint gradients are now independent of the constructing
+isolating circle. `IntervalContinuousUniqueness.lean` proves that equal
+actual Fourier coefficients determine continuous functions on the entire
+closed physical interval. The proof reconstructs their L2 classes and then
+uses continuity to recover both endpoints; no endpoint-matching condition
+is imposed.
+
+`L2SourceGradientUniqueness.lean` proves pointwise uniqueness both from a
+common signed Fourier vector and from the full Hilbert source cotangent.
+`SourcePhysicalGradientRepresents` records the actual unconjugated source
+integral, and every continuous curve representing the same cotangent is
+equal. The selected representative agrees with any such constructed curve.
+Its representation theorem requires existence; the total definition's
+zero fallback outside that domain is not asserted to represent a cotangent.
+
+`L2CanonicalMidpointGradient.lean` defines the physical midpoint curve from
+the actual source derivative restricted to Hilbert directions. On a common
+complex neighborhood of the entire real source locus, it represents that
+full restriction at every signed index. Every admissible isolating circle
+gives exactly the same curve, including endpoint values and collapsed gaps.
+At real Hilbert sources the curve also agrees across all finite ambient
+source exponents p>=2.
+
+The signed G.7 midpoint vector now realizes this unique physical gradient
+without contour parameters. The established whole-sequence H1 summability
+persists on a common complex neighborhood, with finite p>=2 and conjugate q.
+No new asymptotic estimate on rough L2 balls or infinity endpoint is claimed.
+
+Next is physical-gradient realization below the Hilbert exponent, using
+restriction to the original source spaces 1<p<=2 while retaining their
+actual norms and established summability. G.2's arbitrary-time interval
+norm remains unresolved; neither proposed spectral-height correction is
+adopted. The optional original m=1 sharpening remains under the accepted
+Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6668 build jobs), including all
+public examples and the axiom audit of 28399 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+| Public entry point | Scope |
+| --- | --- |
+| `eqOn_Icc_of_intervalFourierCoefficient_eq` | Fourier uniqueness on any closed positive-length interval, with no endpoint-matching condition. |
+| `L2RootGradientFourierRealizes.eqOn` | A common signed coefficient vector determines the physical gradient at every point of [0,1]. |
+| `SourcePhysicalGradientRepresents.unique` | The full Hilbert source cotangent determines the entire continuous physical curve. |
+| `sourcePhysicalGradientCurve_eq_of_represents` | Every constructed representative equals the selected curve. |
+| `exists_global_source_midpoint_physical_gradient` | Canonical physical curve represents the actual source differential and is realized by a constructed contour at every index. |
+| `exists_global_source_midpoint_contour_independent` | Every admissible isolating circle produces that same curve, including collapsed gaps. |
+| `sourceMidpointPhysicalGradientCurve_exponent_of_real` | Equality with the Hilbert ambient-exponent construction at real sources. |
+| `exists_global_sourceG7_canonical_midpoint_realization`, `exists_global_sourceG7_canonical_midpoint_memlp` | Actual signed Fourier identity and original H1 summability without contour parameters. |
+
+Public checks include equality at both physical endpoints, uniqueness from
+source cotangents and signed Fourier coefficients, admissible-circle
+independence, equality of two represented contour curves, finite-exponent
+compatibility, the collapsed zero-source case, and generic conjugate-
+exponent H1 summability of the canonical gradient coefficients.

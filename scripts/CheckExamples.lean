@@ -42232,3 +42232,70 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate 
   exact h a (hr (fun n => ha n))
 
 end L2MidpointChecks
+
+noncomputable section
+section L2ContourIndependenceChecks
+open Set Metric Complex MeasureTheory NLS NLS.LinearVolterra NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+
+example (f g : ℝ → ℂ) (hf : Continuous f) (hg : Continuous g)
+    (hc : ∀ n : ℤ, intervalFourierCoefficient 1 f n = intervalFourierCoefficient 1 g n) :
+    f 0 = g 0 ∧ f 1 = g 1 := by
+  have he := eqOn_Icc_of_intervalFourierCoefficient_eq (by norm_num : (0 : ℝ) < 1) f g hf hg hc
+  exact ⟨he (by norm_num),he (by norm_num)⟩
+
+example (L : CoeffPair 2 →L[ℂ] ℂ) (g h : Curve (ℂ × ℂ))
+    (hg : SourcePhysicalGradientRepresents L g) (hh : SourcePhysicalGradientRepresents L h) :
+    g = h ∧ sourcePhysicalGradientCurve L = g :=
+  ⟨hg.unique hh,sourcePhysicalGradientCurve_eq_of_represents hg⟩
+
+example {q : ℝ≥0∞} (g h : ℝ → ℂ × ℂ) (a : CoeffPair q)
+    (hg : Continuous g) (hh : Continuous h)
+    (hga : L2RootGradientFourierRealizes g a) (hha : L2RootGradientFourierRealizes h a) :
+    ∀ s ∈ Icc (0 : ℝ) 1, g s = h s := hga.eqOn hg hh hha
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (h2p : (2 : ℝ≥0∞) ≤ p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∀ φ : CoeffPair 2, CoeffPair.exponentInclusion h2p φ ∈ W →
+      ∀ (n : ℤ) (c : ℂ) (r : ℝ), 0 < r →
+      let ψ := CoeffPair.exponentInclusion h2p φ
+      canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ∈ ball c r →
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ∈ ball c r →
+      closedBall c r ⊆ sourceStandardRootOmittedDomain hp hp1 ψ n →
+        sourceMidpointPhysicalGradientCurve hp hp1 h2p φ n = l2MidpointGradientCurve (sourcePhysicalL2 φ) c r :=
+  exists_global_source_midpoint_contour_independent hp hp1 h2p
+
+example (L : CoeffPair 2 →L[ℂ] ℂ) (u : IntervalPairL2) (c d : ℂ) (r s : ℝ)
+    (hc : SourcePhysicalGradientRepresents L (l2MidpointGradientCurve u c r))
+    (hd : SourcePhysicalGradientRepresents L (l2MidpointGradientCurve u d s)) (t : ℝ) :
+    l2MidpointGradient u c r t = l2MidpointGradient u d s t := by
+  exact congrArg (fun g : Curve (ℂ × ℂ) => extend g t) (hc.unique hd)
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (h2p : (2 : ℝ≥0∞) ≤ p)
+    (φ : CoeffPair 2) (hφ : φ ∈ realTypeSourceLocus 2) (n : ℤ) :
+    sourceMidpointPhysicalGradientCurve hp hp1 h2p φ n =
+      sourceMidpointPhysicalGradientCurve (by simp) (by norm_num) (le_rfl : (2 : ℝ≥0∞) ≤ 2) φ n :=
+  sourceMidpointPhysicalGradientCurve_exponent_of_real hp hp1 h2p φ hφ n
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (h2p : (2 : ℝ≥0∞) ≤ p)
+    (a : ScalarDomain 2 × ScalarDomain 2) (ha : sobolevSourceInclusion a ∈ realTypeSourceLocus 2) :
+    Memℓp (fun n : ℤ => sourceG7MidpointGradient (q := q) hp hp1
+      (CoeffPair.exponentInclusion h2p (sobolevSourceInclusion a)) n) p ∧ ∀ n : ℤ,
+        L2RootGradientFourierRealizes (sourceMidpointPhysicalGradient hp hp1 h2p (sobolevSourceInclusion a) n)
+          (sourceG7MidpointGradient (q := q) hp hp1 (CoeffPair.exponentInclusion h2p (sobolevSourceInclusion a)) n) := by
+  obtain ⟨W,_,hr,h⟩ := exists_global_sourceG7_canonical_midpoint_memlp (q := q) hp hp1 h2p
+  exact h a (hr (fun n => ha n))
+
+example (n : ℤ) : SourcePhysicalGradientRepresents
+    (sourceMidpointRestrictedCotangent (by simp) (by norm_num) (le_rfl : (2 : ℝ≥0∞) ≤ 2) 0 n)
+    (sourceMidpointPhysicalGradientCurve (by simp) (by norm_num) (le_rfl : (2 : ℝ≥0∞) ≤ 2) 0 n) := by
+  obtain ⟨W,_,hr,h⟩ := exists_global_source_midpoint_physical_gradient
+    (p := 2) (by simp) (by norm_num) le_rfl
+  have h0 : CoeffPair.exponentInclusion (le_rfl : (2 : ℝ≥0∞) ≤ 2) 0 ∈ W := by
+    simpa only [map_zero] using hr (show (0 : CoeffPair 2) ∈ realTypeSourceLocus 2 by intro k; simp)
+  exact (h 0 h0 n).1
+
+end L2ContourIndependenceChecks

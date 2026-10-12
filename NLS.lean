@@ -3235,3 +3235,6 @@ import NLS.ZakharovShabat.L2GradientCurves
 import NLS.ZakharovShabat.L2MidpointContour
 import NLS.ZakharovShabat.L2SourceMidpointGradient
 import NLS.ZakharovShabat.L2SourceMidpointFourier
+import NLS.Fourier.IntervalContinuousUniqueness
+import NLS.ZakharovShabat.L2SourceGradientUniqueness
+import NLS.ZakharovShabat.L2CanonicalMidpointGradient
