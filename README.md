@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 3.4 is proved in the original p-to-one pair norms
-with an explicit constant c_p=64p² for every finite Banach exponent.
-The actual sandwich resolvent becomes uniformly small on high-frequency
-strips. [The Section 3 audit](coverage/SECTION_3.md) records the statement
-and norm comparisons. Corollary 3.5 is next; the dissertation remains
-incomplete.
+Latest milestone: Corollary 3.5 is proved in the original source topology
+for every finite Banach exponent. One open convex neighborhood and cutoff
+control the actual compact analytic resolvent on the printed box-and-disk
+complement, with the same neighborhood valid for every larger cutoff.
+[The Section 3 audit](coverage/SECTION_3.md) records the exact boundary
+conditions. The contour projectors in equation (1.4) are next; the
+dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

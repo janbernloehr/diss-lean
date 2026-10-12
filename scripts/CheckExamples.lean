@@ -43465,3 +43465,51 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
   exists_sourceDoubleResolvent_small hp φ hr hrπ hε
 
 end LemmaThreeFourOriginalNormChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+section CorollaryThreeFiveOriginalNormChecks
+
+-- One original-norm neighborhood works for every larger cutoff and every source in it.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair p), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧
+      φ ∈ U ∧ 0 ∈ U ∧ ∀ N : ℕ, N₀ ≤ N → ∀ ψ ∈ U,
+        spectralExterior N (Real.pi/4) ⊆ sourceResolventSet hp ψ ∧
+        AnalyticOnNhd ℂ (sourceResolvent hp ψ) (spectralExterior N (Real.pi/4)) ∧
+        (∀ z ∈ spectralExterior N (Real.pi/4), IsCompactOperator (sourceResolvent hp ψ z)) ∧
+        (sourceResolventSet hp ψ)ᶜ ⊆ centralSpectralBox N ∪ highSpectralDisks N (Real.pi/4) :=
+  sourceCorollary3_5_all_larger hp φ
+
+-- At p=1 the entire straight line from zero to the source shares the same cutoff.
+example (φ : CoeffPair 1) : ∃ N : ℕ, ∀ t ∈ Set.Icc (0 : ℝ) 1,
+    spectralExterior N (Real.pi/4) ⊆ sourceResolventSet (by norm_num) (t • φ) ∧
+    AnalyticOnNhd ℂ (sourceResolvent (by norm_num) (t • φ)) (spectralExterior N (Real.pi/4)) := by
+  obtain ⟨N,U,_,_,hc,_,hφ,h0,hregion⟩ := sourceCorollary3_5 (by norm_num) φ
+  refine ⟨N,?_⟩
+  intro t ht
+  have h := hregion (t • φ) (hc.smul_mem_of_zero_mem h0 hφ ht)
+  exact ⟨h.1,h.2.1⟩
+
+-- The horizontal edge is covered separately: it belongs to the printed box.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N : ℕ, ∃ U : Set (CoeffPair p), 0 < N ∧ IsOpen U ∧ φ ∈ U ∧
+      ∀ ψ ∈ U, ∀ z : ℂ, |z.im| = (N : ℝ) → z ∈ sourceResolventSet hp ψ := by
+  obtain ⟨N,U,hN,ho,_,hφ,_,h⟩ := exists_source_uniform_height_and_strips hp φ
+    (r := Real.pi/4) (by positivity) le_rfl
+  exact ⟨N,U,hN,ho,hφ,fun ψ hψ z hz => (h ψ hψ).1 z hz.ge⟩
+
+-- Exterior membership gives the genuine inverse identities on the original domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N : ℕ, ∀ z ∈ spectralExterior N (Real.pi/4),
+      (∀ a : CoeffPair p, sourceSpectralPencil hp φ z (sourceResolventToDomain hp φ z a) = a) ∧
+      (∀ a : WeightedCoeffPair (Weight.sobolev 1) p,
+        sourceResolventToDomain hp φ z (sourceSpectralPencil hp φ z a) = a) := by
+  obtain ⟨N,U,_,_,_,_,hφ,_,h⟩ := sourceCorollary3_5 hp φ
+  refine ⟨N,?_⟩
+  intro z hz
+  have hmem := (h φ hφ).1 hz
+  exact ⟨sourceSpectralPencil_sourceResolventToDomain hp φ z hmem,
+    sourceResolventToDomain_sourceSpectralPencil hp φ z hmem⟩
+
+end CorollaryThreeFiveOriginalNormChecks

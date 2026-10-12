@@ -1,8 +1,8 @@
 # Section 3: periodic spectrum
 
 This audit covers the operator setup, Proposition 3.1, Lemmas 3.2 and
-3.4, and Corollary 3.3 on printed pages 23–25. It retains the original
-period-two space, its finite-exponent component-sum norm, and the
+3.4, and Corollaries 3.3 and 3.5 on printed pages 23–26. It retains the
+original period-two space, its finite-exponent component-sum norm, and the
 conditional period-one parity clauses. It is not a completeness certificate
 for Section 3 or the dissertation.
 
@@ -125,5 +125,32 @@ full potential remainder controls the strip; Lean's totalized division
 sets the frequency term to zero. No use is made of the false original-norm
 height estimate in Lemma 3.2(ii).
 
-Next: Corollary 3.5 in the original source topology, including one
-neighborhood and cutoff for the entire stated box-and-disk complement.
+## Corollary 3.5
+
+All results use the full period-two source space with its original finite
+component-sum norm. The central box retains strict real-part bounds and
+non-strict imaginary-part bounds. Only open quarter-pi disks at indices
+abs(n)>N are removed. There is no printed norm-dependent height here.
+
+| Printed requirement or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Common neighborhood and cutoff | `sourceCorollary3_5` | Every finite Banach exponent and period-two potential; one positive cutoff and an open, convex, connected source neighborhood containing both the potential and zero. |
+| Exact exterior region | `spectralExterior`, `centralSpectralBox`, `highSpectralDisks` in `SpectralLocalization.lean` | Exactly the printed mixed-boundary box and open quarter-pi disks with abs(n)>N. |
+| Actual resolvent inclusion | `sourceCorollary3_5` | Every exterior point belongs to `sourceResolventSet` for every source in the same neighborhood; this supplies both inverse identities from `SourceResolvent.lean`. |
+| Compact analytic source resolvent | `sourceCorollary3_5` | The actual original-norm resolvent is analytic near every exterior point and compact there. |
+| Spectrum enclosure | `sourceCorollary3_5` | The complement of the full source resolvent set lies in the stated central box and high-disk union. |
+| Same neighborhood for larger cutoffs | `sourceCorollary3_5_all_larger` | All conclusions hold for every N>=N0 on one common neighborhood. |
+| Horizontal boundary and strips | `exists_source_uniform_height_and_strips` | Includes abs(Im(lambda))=N and every punctured strip with abs(n)>=N; the radius may be any 0<r<=pi/4. |
+| Vertical boundary case | `spectralExterior_height_or_strip` in `SpectralLocalization.lean` | The exact real-part edge may use abs(n)=N, so the non-strict strip cutoff is retained. |
+
+The new entry points are in `SourceCorollary3_5.lean`, in the Lean
+namespace `NLS.ZakharovShabat`. Neighborhoods
+are pulled back through the coefficient-preserving continuous linear
+equivalence, and the full resolvent-set identity connects them to the
+actual original-norm inverse. Convexity includes the whole real line
+segment from zero to the potential, including at p=1. The horizontal
+boundary belongs to the box; its admissibility comes from the stronger
+height-and-strips result, rather than exterior inclusion alone.
+
+Next: equation (1.4), the actual source-norm Cauchy-Riesz contour projectors
+and their analytic dependence on the potential, then Lemma 3.6.

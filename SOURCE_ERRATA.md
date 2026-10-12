@@ -1144,3 +1144,17 @@ modes. The zero strip is bounded by the full potential remainder, with
 the reciprocal frequency term zero under Lean's totalized division.
 `sourceLemma3_4` quantifies the constant before every potential and strip;
 no period-one restriction or p>1 restriction is added.
+
+## Corollary 3.5: original topology and exact boundary conventions
+
+`SourceCorollary3_5.lean` verifies the printed region for every finite
+Banach exponent in the original source topology. No numerical correction
+is needed: the box uses height N, with strict real-part and non-strict
+imaginary-part bounds, and the high disks are open with abs(n)>N.
+The vertical-edge argument retains strips with abs(n)=N. Horizontal
+boundary points lie inside the printed box, so their separate resolvent
+admissibility is retained in `exists_source_uniform_height_and_strips`.
+The neighborhood can be open and convex, containing both the source and
+zero, and can serve every larger cutoff. This does not adopt either of
+the proposed corrections to the different norm-dependent heights in
+Theorems 1.1 and 1.4.

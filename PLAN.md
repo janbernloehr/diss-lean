@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: Lemma 3.4 in the original pair norms
+## Current milestone: Corollary 3.5 in the original source topology
+
+Corollary 3.5 (printed page 26) is now proved on the entire period-two
+source space for every finite Banach exponent, using the original
+component-sum norm for both the potential topology and the resolvent's
+base space. `SourceCorollary3_5.lean` gives one positive cutoff and one
+open, convex, connected neighborhood containing the potential and zero.
+Every potential in that neighborhood has its actual compact analytic
+resolvent on the precise printed box-and-disk complement.
+
+The geometry is unchanged: the central box has strict real-part bounds
+and non-strict imaginary-part bounds; the removed high disks are open
+quarter-pi disks with abs(n)>N. The proof preserves the vertical boundary
+case abs(n)=N in the strip argument. The supporting height-and-strips
+theorem includes equality at the horizontal height, so it also handles
+horizontal contour points which lie inside the printed central box.
+
+`sourceCorollary3_5_all_larger` proves the same conclusions for every
+larger cutoff on the same neighborhood. The full source resolvent-set
+inclusion is explicit, and the complement of that actual set lies in the
+stated box-and-disk union. The construction pulls back the established
+maximum-product neighborhood through the coefficient-preserving norm
+equivalence, then uses the actual original-norm resolvent. No period-one
+support restriction, p>1 restriction, or printed-height assumption is
+introduced. Convexity also controls the entire line from zero to the
+potential with one cutoff.
+
+Next: equation (1.4), transporting the actual Cauchy-Riesz contour
+projectors and their source analyticity to the original norms, followed
+by the parity subspaces and Lemma 3.6. The dissertation remains incomplete;
+all earlier source qualifications remain in force.
+
+Validation: the focused build and standalone public probe passed without
+warnings, covering the common neighborhood at all finite exponents,
+the p=1 line segment, horizontal-boundary admissibility, and actual
+inverse identities in the original domain. The source inventory check
+passed for 156 candidate labels; this is not a completeness certificate.
+The full check passed all 6,733 build jobs and public examples. The axiom
+audit passed for 29,188 NLS declarations with only the permitted classical
+axioms. The build retains 21 existing warnings; the new module adds none.
+
+## Previous milestone: Lemma 3.4 in the original pair norms
 
 Lemma 3.4 (printed page 25) is now proved in the original component-sum
 pair norms for every finite Banach exponent and every period-two
