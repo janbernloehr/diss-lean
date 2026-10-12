@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's full scalar duality now includes p=1, with
-unique physical gradient representation and exact operator norm at every
-real Sobolev order. Scalar gradients are analytic, and weighted spaces are
-reflexive for every 1<p<infinity. [The current audit](coverage/SECTION_2.md)
-records the scope. The dissertation remains incomplete; the two-component
-gradient and infinity-source endpoint audit are next.
+Latest milestone: Section 2's full pair gradients now cover every finite
+source exponent and real Sobolev order, preserving the original finite and
+infinity pair norms. The unrestricted infinity-source extension is formally
+refuted by everywhere-analytic functionals without coefficient gradients.
+[The current audit](coverage/SECTION_2.md) records the scope. The dissertation
+remains incomplete; the Section 2 Poisson-bracket audit is next.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

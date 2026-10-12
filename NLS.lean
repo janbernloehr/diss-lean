@@ -3268,3 +3268,7 @@ import NLS.SequenceSpaces.FullDuality
 import NLS.SequenceSpaces.Reflexivity
 import NLS.SequenceSpaces.SobolevFullDuality
 import NLS.SequenceSpaces.SobolevScalarGradient
+import NLS.SequenceSpaces.InfinityDuality
+import NLS.SequenceSpaces.SobolevInfinityDuality
+import NLS.SequenceSpaces.SobolevPairCotangent
+import NLS.SequenceSpaces.SobolevPairGradient

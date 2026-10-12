@@ -1,6 +1,54 @@
 # Implementation plan
 
-## Current milestone: Section 2 full scalar duality and reflexivity
+## Current milestone: Section 2 pair gradients and the infinity obstruction
+
+Section 2's two-component gradient representation is now proved for all
+finite source exponents and every real Sobolev order. The finite-conjugate
+case retains the source q-sum norm; the p=1 case returns a gradient in the
+separate frequencywise sum-norm infinity space. Both representations are
+unique, bounded linear in the full functional, and analytic on the original
+analytic domain. The conversion from signed pair coefficients to physical
+scalar Fourier coefficients reflects the first component in both factors
+and preserves the corrected physical pairing.
+
+`SobolevPairCotangent.lean` supplies the complete component representation
+and uniqueness. `SobolevPairGradient.lean` packages the two original target
+norms, with bounds 2^(1/q) and 2 respectively. These are proved bounds, not
+claims that the pair gradient is always isometric to the dual. Recovery of
+prescribed endpoint components is exact; equal components have twice the
+scalar norm, including the inverse-weight infinite-support example.
+
+`InfinityDuality.lean` proves that full coefficient-dual representation is
+surjective exactly when the source exponent is finite. A Hahn-Banach
+functional vanishes on every finite sequence but is nonzero on one, so it
+has no l1 representative. It is itself an everywhere-analytic functional
+whose derivative has no coefficient gradient at any point.
+`SobolevInfinityDuality.lean` transports the obstruction to every real
+Sobolev order and the original weighted infinity pair norm.
+
+The scalar duality statement on page 21 explicitly assumes finite p and
+remains valid. The gradient paragraph on page 22 must retain that source
+restriction: interpreting it for arbitrary infinity-source analytic
+functionals is false, even with the corrected physical pairing. In
+particular, the later automatic Poisson-regularity sentence cannot use
+analyticity alone to supply a gradient for an infinity-domain functional.
+The exact scope is recorded in `SOURCE_ERRATA.md` and `coverage/SECTION_2.md`.
+
+Next: audit the Section 2 Poisson bracket and its automatic regularity
+claim against these full gradient APIs, then the numbered Section 3 results.
+The dissertation remains incomplete. G.2's arbitrary-time interval norm
+is unresolved; neither proposed spectral-height correction is adopted.
+The optional original m=1 sharpening remains under the accepted Lemma 27.2
+correction.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The full project check passed all 6,708 build jobs and public
+examples. The axiom audit passed for 28,770 NLS declarations with only the
+permitted classical axioms. The full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.
+
+## Previous milestone: Section 2 full scalar duality and reflexivity
 
 Section 2's scalar full-dual identification is now proved for every finite
 Banach exponent, including p=1 with conjugate exponent infinity.

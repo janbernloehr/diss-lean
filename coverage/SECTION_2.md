@@ -1,9 +1,9 @@
-# Section 2: current convergence and scalar pairing audit
+# Section 2: convergence, duality, and gradient audit
 
-This records the Fourier-convergence and scalar-pairing paragraphs on
-printed pages 21–22, checked against the rendered source. It is a focused
-part of the Section 2 audit; it does not certify the remaining full dual
-representation, reflexivity, or gradient claims.
+This records the Fourier-Lebesgue-space statements on printed pages 21–22,
+checked against the rendered source. The maps below identify proved scope
+and endpoint corrections. The Poisson-bracket domain audit remains open;
+this file is not a completeness certificate for the dissertation.
 
 The source defines the scalar Fourier-Lebesgue space for every real
 regularity and every exponent from one through infinity, then asserts that
@@ -99,9 +99,31 @@ periodic representatives at every positive period. Reflexivity here is
 proved through the canonical map, rather than an unrelated bijection with
 the double dual. No endpoint reflexivity claim is made.
 
-The remaining Section 2 audit concerns the original two-component gradient,
-its signed coefficient convention and distinct infinity pair norm, and the
-unrestricted infinity-source gradient claim. These scalar results do not
-close those obligations. Numbered Section 3 statements follow that audit.
-The candidate-label inventory and this focused map do not establish
-completeness of the dissertation.
+## Full pair gradients and the infinity-source obstruction
+
+The finite-source gradient claim now preserves the original pair norms
+and signed Fourier convention. The infinity-source extension fails even
+for everywhere-analytic linear functionals, at every real Sobolev order.
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Both full component representatives | `NLS.WeightedCoeffPair.sobolevCotangentComponentsCLM`, `sobolevCotangentComponents_unique` | All real Sobolev orders, finite source exponents, and conjugate exponents including infinity; uniqueness on the whole source pair space. |
+| Finite conjugate pair gradient | `NLS.WeightedCoeffPair.existsUnique_sobolevFiniteGradient`, `analyticOnNhd_sobolevFiniteGradient` | Every finite conjugate pair; the original component q-sum norm, full representation and analytic dependence. |
+| Original p=1 endpoint gradient | `NLS.WeightedCoeffPair.existsUnique_sobolevOneGradient`, `analyticOnNhd_sobolevOneGradient` | Every real order, with target `WeightedCoeffPairInfty` carrying the source frequencywise sum norm. |
+| Bounds in the original pair norms | `NLS.WeightedCoeffPair.norm_sobolevFiniteGradientCLM_le`, `norm_sobolevOneGradientCLM_le` | Bounds 2^(1/q) and 2 times the original functional norm; no assertion of pair-dual isometry. |
+| Signed-frequency fidelity | `NLS.WeightedCoeff.sobolevBilinearPairing_reflection`, `NLS.WeightedCoeffPair.sobolevOneGradient_represents_physical`, `sobolevFiniteGradient_represents_physical` | Reversing both first signed components gives the physical scalar convention and preserves the representation formula. |
+| Actual endpoint norm regression | `NLS.WeightedCoeffPair.sobolevOneGradient_pairFunctional`, `norm_sobolevOneGradient_diagonal` | Arbitrary prescribed endpoint components are recovered exactly. Equal components have twice the scalar norm, including nondecaying inverse-weight coefficients. |
+| Full-dual exponent range | `NLS.Coeff.dualPairing_surjective_iff` | Coefficient representation is onto the full continuous dual exactly for finite Banach source exponents. |
+| Infinity counterexample | `NLS.Coeff.exists_singular_functional`, `exists_analytic_without_coefficient_gradient` | A bounded functional vanishes on every finite sequence but not on one; its analytic derivative has no l1 representative at any point. |
+| Original weighted pair counterexample | `NLS.WeightedCoeffPairInfty.exists_analytic_sobolev_pair_without_gradient` | Every real order, the exact infinity pair norm, and the corrected physical pairing; an everywhere-analytic functional has no opposite-order l1 pair gradient at any point. |
+
+The page-21 scalar duality statement explicitly assumes finite p and is
+preserved. The page-22 gradient paragraph must carry that restriction if
+it is read as a full-dual claim. At the infinity endpoint, coefficient
+representability is an additional condition; analyticity does not imply it.
+The same issue constrains the later automatic Poisson-regularity sentence
+when one functional has infinity as its source exponent.
+
+Next: the positive Poisson-bracket statement, exact domains, and automatic
+regularity, followed by the numbered Section 3 statements. The candidate
+inventory and these maps do not establish completeness of those obligations.

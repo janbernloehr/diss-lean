@@ -986,5 +986,47 @@ every positive period, every real regularity and both conjugate endpoints.
 Full scalar duality, including p=1, is now proved with the corrected pairing
 in `SobolevFullDuality.lean`; its representative has the exact operator norm.
 `SobolevScalarGradient.lean` proves analytic scalar gradients and the Hessian
-identity. The two-component gradient and unrestricted infinity-source
-endpoint remain separate audit obligations.
+identity. `SobolevPairGradient.lean` now proves unique analytic pair-gradient
+representation for every finite source exponent, including p=1, in the
+original pair norms. The infinity-source restriction is detailed below.
+
+
+## Section 2 gradient paragraph: the source exponent must remain finite
+
+Printed page 21 explicitly restricts the scalar full-dual identification to
+1<=p<infinity. That statement is proved, including p=1. The gradient
+paragraph on page 22 does not repeat the restriction after introducing
+pair spaces at all exponents. If that paragraph is read as asserting a
+coefficient gradient for arbitrary analytic functionals on an infinity
+source space, the extension is false.
+
+`InfinityDuality.lean` constructs a bounded complex functional on linfinity
+that annihilates every finitely supported sequence and is nonzero on the
+constant-one sequence. The construction separates the constant sequence
+from the closed finite-support subspace by Hahn-Banach on the quotient.
+Every l1 coefficient representative would have all coefficients zero,
+contradicting the nonzero value. The functional is everywhere analytic and
+has no coefficient-gradient representation at any base point.
+`Coeff.dualPairing_surjective_iff` proves the exact source-exponent scope:
+full coefficient representation is onto the continuous dual if and only if
+the source exponent is finite.
+
+`SobolevInfinityDuality.lean` proves the obstruction at every real Sobolev
+order and for the exact source weighted infinity pair norm
+sup_n w(n)(|a(n)|+|b(n)|). It uses the corrected physical pairing, so changing
+the erroneous scalar frequency convention does not remove this obstruction.
+The first-component signed-frequency conversion preserves the pairing.
+
+The positive statement is retained in full at finite source exponents.
+`SobolevPairGradient.lean` proves unique bounded linear recovery and analytic
+pair gradients in both the finite conjugate norm and the separate infinity
+pair norm required when p=1. Equal endpoint components have exactly twice
+the scalar norm; no maximum-norm replacement is made.
+
+Consequently, the automatic Poisson-regularity sentence at the end of page
+22 needs a finite-source restriction for each analytic functional, or an
+additional assumption that an infinity-source differential is represented
+by the required coefficient gradient. Analyticity alone cannot imply that
+assumption. The positive interior Poisson statement and its precise domains
+remain the next audit obligation; this endpoint result does not declare
+the bracket itself invalid on regular functionals.

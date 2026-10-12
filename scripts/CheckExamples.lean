@@ -42873,3 +42873,70 @@ example (L : WeightedCoeff (Weight.sobolev (-3/2)) 1 →L[ℂ] ℂ) :
   norm_sobolevCotangent (-3/2) (by simp) L
 
 end SectionTwoScalarDualityChecks
+
+noncomputable section
+open NLS NLS.WeightedCoeffPair
+open scoped ENNReal
+section SectionTwoPairDualityChecks
+
+-- Exact endpoint scope of the full continuous dual, for any conjugate exponents.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p] :
+    Function.Surjective (Coeff.dualPairing (p := q) (q := p)) ↔ p ≠ ⊤ :=
+  Coeff.dualPairing_surjective_iff
+
+-- The original p=1 sum-norm source has a unique gradient in the original infinity pair norm.
+example (s : ℝ) (L : WeightedCoeffPair (Weight.sobolev s) 1 →L[ℂ] ℂ) :
+    ∃! g : WeightedCoeffPairInfty (Weight.sobolev (-s)),
+      ∀ h : WeightedCoeffPair (Weight.sobolev s) 1,
+        WeightedCoeff.sobolevBilinearPairing s h.fst g.1 +
+          WeightedCoeff.sobolevBilinearPairing s h.snd g.2 = L h :=
+  existsUnique_sobolevOneGradient s L
+
+example (s : ℝ) (L : WeightedCoeffPair (Weight.sobolev s) 1 →L[ℂ] ℂ) :
+    ‖sobolevOneGradientCLM s L‖ ≤ 2*‖L‖ := norm_sobolevOneGradientCLM_le s L
+
+-- A nondecaying prescribed gradient has original infinity pair norm exactly two.
+example (s : ℝ) :
+    let a := WeightedCoeff.inverseWeightCoefficients (Weight.sobolev (-s))
+    ‖sobolevOneGradientCLM s (sobolevPairFunctional s a a)‖ = 2 := by
+  dsimp only
+  rw [norm_sobolevOneGradient_diagonal,WeightedCoeff.norm_inverseWeightCoefficients,mul_one]
+
+-- Physical scalar coordinates reverse the first signed sequence in both factors.
+example (s : ℝ) (L : WeightedCoeffPair (Weight.sobolev s) 1 →L[ℂ] ℂ)
+    (h : WeightedCoeffPair (Weight.sobolev s) 1) :
+    let g := WeightedCoeffPairInfty.toScalarMax (-s) (sobolevOneGradientCLM s L)
+    WeightedCoeff.sobolevBilinearPairing s (WeightedCoeff.reflection s h.fst) g.1 +
+      WeightedCoeff.sobolevBilinearPairing s h.snd g.2 = L h :=
+  sobolevOneGradient_represents_physical s L h
+
+example (s : ℝ) (F : WeightedCoeffPair (Weight.sobolev s) 1 → ℂ)
+    {U : Set (WeightedCoeffPair (Weight.sobolev s) 1)} (hF : AnalyticOnNhd ℂ F U) :
+    AnalyticOnNhd ℂ (fun x => sobolevOneGradientCLM s (fderiv ℂ F x)) U :=
+  analyticOnNhd_sobolevOneGradient s F hF
+
+-- Interior exponents preserve the actual finite conjugate pair norm and full representation.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (s : ℝ) (hp : p ≠ ⊤) (hq : q ≠ ⊤)
+    (L : WeightedCoeffPair (Weight.sobolev s) p →L[ℂ] ℂ) :
+    ∃! g : WeightedCoeffPair (Weight.sobolev (-s)) q,
+      ∀ h : WeightedCoeffPair (Weight.sobolev s) p,
+        WeightedCoeff.sobolevBilinearPairing s h.fst g.fst +
+          WeightedCoeff.sobolevBilinearPairing s h.snd g.snd = L h :=
+  existsUnique_sobolevFiniteGradient s hp hq L
+
+-- Analyticity alone does not give a coefficient gradient on any real-order infinity source.
+example (s : ℝ) :
+    ∃ F : WeightedCoeffPairInfty (Weight.sobolev s) → ℂ,
+      AnalyticOnNhd ℂ F Set.univ ∧
+      ∀ x, ¬∃ g : WeightedCoeffPair (Weight.sobolev (-s)) 1,
+        ∀ h : WeightedCoeffPairInfty (Weight.sobolev s),
+          fderiv ℂ F x h = WeightedCoeff.sobolevBilinearPairing s h.1 g.fst +
+            WeightedCoeff.sobolevBilinearPairing s h.2 g.snd :=
+  WeightedCoeffPairInfty.exists_analytic_sobolev_pair_without_gradient s
+
+example : ∃ L : Coeff ⊤ →L[ℂ] ℂ,
+    L 1 ≠ 0 ∧ ∀ a : ℤ →₀ ℂ, L (Coeff.ofFinsupp a) = 0 :=
+  Coeff.exists_singular_functional
+
+end SectionTwoPairDualityChecks
