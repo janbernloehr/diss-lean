@@ -43637,3 +43637,80 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
   sourceParityProjection_commute_circleIntegral hp φ hφ r c R hR hc
 
 end LemmaThreeSixOriginalNormChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+section EquationOneFiveOriginalNormChecks
+
+-- These have the parity subspace as both domain and codomain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (N : ℕ) :
+    sourceParitySubspace (p := p) 0 →L[ℂ] sourceParitySubspace (p := p) 0 :=
+  sourceParityCentralProjection hp (periodOnePair φ) N 0
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) :
+    sourceParitySubspace (p := p) 1 →L[ℂ] sourceParitySubspace (p := p) 1 :=
+  sourceParityCircleProjection hp (periodOnePair φ) ((Real.pi : ℂ)*n) (Real.pi/4) 1
+
+-- The typed circle restriction is literally the evaluated source resolvent integral.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (c : ℂ) (R : ℝ) (r : ℤ) (hR : 0 ≤ R)
+    (hc : Metric.sphere c R ⊆ sourceResolventSet hp (periodOnePair φ))
+    (x : sourceParitySubspace (p := p) r) :
+    (sourceParityCircleProjection hp (periodOnePair φ) c R r x).val =
+      (2*Real.pi*Complex.I : ℂ)⁻¹ • ∮ z in C(c,R), sourceResolvent hp (periodOnePair φ) z x.val := by
+  exact (sourceParityCircleProjection_apply hp (periodOnePair φ) (periodOnePotential_mem φ) c R r hR hc x).trans
+    (sourceResolventCircleIntegral_apply hp (periodOnePair φ) c R hR hc x.val)
+
+-- The rectangle restriction agrees with the full central projector on odd vectors too.
+example (φ : CoeffPair 1) (N : ℕ)
+    (hc : centralRectangleBoundary N ⊆ sourceResolventSet (by norm_num) (periodOnePair φ))
+    (x : sourceParitySubspace (p := 1) 1) :
+    (sourceParityCentralProjection (by norm_num) (periodOnePair φ) N 1 x).val =
+      sourceCentralRectangleIntegral (by norm_num) (periodOnePair φ) N x.val :=
+  sourceParityCentralProjection_apply (by norm_num) (periodOnePair φ) (periodOnePotential_mem φ) N 1 hc x
+
+-- The restricted range is exactly the ambient range within the selected parity.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (c : ℂ) (R : ℝ) (r : ℤ) (hR : 0 ≤ R)
+    (hc : Metric.sphere c R ⊆ sourceResolventSet hp (periodOnePair φ))
+    (x : sourceParitySubspace (p := p) r) :
+    x ∈ (sourceParityCircleProjection hp (periodOnePair φ) c R r).range ↔
+      x.val ∈ (sourceResolventCircleIntegral hp (periodOnePair φ) c R).range :=
+  mem_range_sourceParityCompression_iff r _
+    (sourceParityProjection_commute_circleIntegral hp (periodOnePair φ) (periodOnePotential_mem φ) r c R hR hc)
+    (sourceResolventCircleIntegral_idempotent hp (periodOnePair φ) c R hR hc) x
+
+-- Idempotence and finite rank hold on the subspace itself at p=1.
+example (φ : CoeffPair 1) (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hc : Metric.sphere c R ⊆ sourceResolventSet (by norm_num) (periodOnePair φ))
+    (x : sourceParitySubspace (p := 1) 0) :
+    sourceParityCircleProjection (by norm_num) (periodOnePair φ) c R 0
+      (sourceParityCircleProjection (by norm_num) (periodOnePair φ) c R 0 x) =
+        sourceParityCircleProjection (by norm_num) (periodOnePair φ) c R 0 x ∧
+    FiniteDimensional ℂ (sourceParityCircleProjection (by norm_num) (periodOnePair φ) c R 0).range := by
+  constructor
+  · have h := sourceParityCircleProjection_idempotent (by norm_num) (periodOnePair φ)
+      (periodOnePotential_mem φ) c R 0 hR hc
+    exact congrArg (fun A : sourceParitySubspace (p := 1) 0 →L[ℂ] sourceParitySubspace (p := 1) 0 => A x) h
+  · exact finiteDimensional_range_sourceParityCircleProjection (by norm_num) (periodOnePair φ)
+      (periodOnePotential_mem φ) c R 0 hR hc
+
+-- Every finite exponent gets a single connected period-one neighborhood for all parities and cutoffs.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair p), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧
+      φ ∈ U ∧ 0 ∈ U ∧ ∀ N : ℕ, N₀ ≤ N → ∀ r : ℤ,
+        AnalyticOnNhd ℂ (fun ψ => sourceParityCentralProjection hp (periodOnePair ψ) N r) U ∧
+        ∀ n : ℤ, N < n.natAbs → AnalyticOnNhd ℂ
+          (fun ψ => sourceParityCircleProjection hp (periodOnePair ψ) ((Real.pi : ℂ)*n) (Real.pi/4) r) U := by
+  obtain ⟨N₀,U,hN₀,ho,hc,hconn,hφ,h0,h⟩ := sourceEquation1_5 hp φ
+  exact ⟨N₀,U,hN₀,ho,hc,hconn,hφ,h0,fun N hN r =>
+    ⟨(h N hN r).1.1,fun n hn => ((h N hN r).2 n hn).1⟩⟩
+
+-- At p=1 every point on the segment from zero to the source has the same finite-rank restrictions.
+example (φ : CoeffPair 1) : ∃ N : ℕ, ∀ t ∈ Set.Icc (0 : ℝ) 1, ∀ r : ℤ,
+    IsIdempotentElem (sourceParityCentralProjection (by norm_num) (periodOnePair (t • φ)) N r) ∧
+    FiniteDimensional ℂ (sourceParityCentralProjection (by norm_num) (periodOnePair (t • φ)) N r).range := by
+  obtain ⟨N,U,_,_,hc,_,hφ,h0,h⟩ := sourceEquation1_5 (by norm_num) φ
+  exact ⟨N,fun t ht r => ((h N le_rfl r).1.2 _ (hc.smul_mem_of_zero_mem h0 hφ ht)).2⟩
+
+end EquationOneFiveOriginalNormChecks

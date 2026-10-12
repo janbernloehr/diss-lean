@@ -1181,3 +1181,15 @@ entry point accepts even support directly. The explicit odd potential
 `lemma3_6OddPotential` maps `lemma3_6EvenInput`, proved to lie in the even
 domain, outside the even base subspace. This is a check that the hypothesis
 is necessary, not an erratum or a weakening of the source statement.
+
+## Equation (1.5): the correct parameter topology and actual restrictions
+
+`SourceEquation1_5.lean` verifies the displayed restricted projectors on
+an open neighborhood in period-one potential coordinates, as printed.
+`SourceParityRestriction.lean` constructs continuous linear endomorphisms
+of the parity subspaces and proves equality with the actual circle and
+central rectangular integrals there. The period-one assumption ensures
+commutation and is retained throughout. No correction to equation (1.5)
+is required. These statements do not change the earlier qualifications
+for the separate norm-dependent heights in Proposition 3.1 and Theorems
+1.1 and 1.4.

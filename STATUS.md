@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: parity subspaces and Lemma 3.6 in the original norms
+## Current milestone: equation (1.5) in the original period-one topology
+
+Equation (1.5) (printed page 26) now has actual bounded endomorphisms of
+the original-norm parity subspaces. `SourceParityRestriction.lean` constructs
+the central rectangular and circle projectors with each parity subspace
+as both domain and codomain. For even-supported potentials and admissible
+contours, their values agree exactly with the actual original-norm contour
+integrals on those subspaces. They are idempotent and have finite-dimensional
+range. The restricted range is exactly the part of the ambient range lying
+in the selected parity subspace.
+
+The construction uses bounded compression on the space of operators.
+Commutation with parity proves that this compression equals restriction;
+the rectangular commutation result covers all four edges. Analyticity of
+compression transfers analytic dependence from the ambient projectors.
+
+`SourceEquation1_5.lean` gives one positive cutoff and one open, convex,
+connected neighborhood in the original period-one potential coordinates,
+containing both the potential and zero. Simultaneously for both parities,
+every larger central projector and every quarter-pi circle with abs(n)>N
+is analytic on that neighborhood, agrees with the actual integral there,
+and is a finite-rank projection on the parity subspace. The canonical
+`periodOnePair` embedding supplies even support. Every finite Banach
+exponent, including p=1, is covered.
+
+No period-one assumption is dropped, and the neighborhood is open in the
+period-one parameter space specified by the source. The fixed-norm-height
+qualifications in Proposition 3.1 and Theorems 1.1 and 1.4 remain unchanged.
+
+Next: the rank calculations following equation (1.5), then Lemma 3.7.
+The dissertation remains incomplete; earlier source qualifications remain
+in force.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The probe checks typed domains and codomains, equality with the
+literal source resolvent integral, the exact restricted range, idempotence
+and finite rank at p=1, and the common neighborhood for all finite exponents,
+parities, and cutoffs. The source inventory check passed for 156 candidate
+labels, not a completeness certificate. The full check passed all 6,739
+build jobs and public examples. The axiom audit passed for 29,313 NLS
+declarations with only the permitted classical axioms. The build retains
+21 existing warnings; the new modules add none.
+
+## Previous milestone: parity subspaces and Lemma 3.6 in the original norms
 
 The closed even and odd subspaces immediately before Lemma 3.6 (printed
 page 26) are now implemented in the original component-sum norms.

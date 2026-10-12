@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the original-norm even and odd subspaces are closed
-topological complements, and period-one pairs identify isometrically with
-the even subspace. Lemma 3.6 proves parity preservation on the actual
-operator domain for every finite Banach exponent. [The Section 3 audit](coverage/SECTION_3.md)
-records the statement. Equation (1.5)'s restricted analytic projectors
-are next; the dissertation remains incomplete.
+Latest milestone: equation (1.5)'s circle and central projectors now act
+on the original-norm parity subspaces themselves. They are analytic
+finite-rank projections on one common period-one potential neighborhood,
+including at p=1. [The Section 3 audit](coverage/SECTION_3.md) records the
+statement. The ensuing rank calculations are next; the dissertation
+remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

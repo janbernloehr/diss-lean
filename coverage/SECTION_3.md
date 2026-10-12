@@ -207,6 +207,35 @@ norms and the original one-derivative operator domain.
 
 Entry points lie in `NLS.ZakharovShabat`, in `SourceParity.lean` and
 `SourceLemma3_6.lean`. The necessity example confirms the source hypothesis;
-it does not identify a source error. The next step is equation (1.5):
-actual endomorphisms of the parity subspaces, with analytic dependence
-on a neighborhood within the period-one potential space.
+it does not identify a source error. Equation (1.5) is verified below.
+
+
+## Equation (1.5): actual restrictions and period-one analyticity
+
+The two projection families are continuous linear endomorphisms of the
+original-norm parity subspaces. The common neighborhood is in period-one
+potential coordinates, embedded into the period-two operator by `periodOnePair`.
+All finite Banach exponents, including p=1, are covered.
+
+| Printed requirement or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Bounded operation on operators | `sourceParityCompression` | Maps each ambient operator to a continuous linear endomorphism of the chosen parity subspace. |
+| Actual restriction | `sourceParityCompression_apply` | For a commuting ambient operator, the output is exactly its value on the input vector. |
+| Exact restricted range | `mem_range_sourceParityCompression_iff` | For a commuting idempotent, membership in the restricted range is equivalent to ambient range membership of the underlying vector. |
+| Analytic restriction construction | `analyticAt_sourceParityCompression` | The bounded operation is analytic in the ambient operator. |
+| Rectangle and central commutation | `sourceParityProjection_commute_rectangleIntegral`, `sourceParityProjection_commute_centralIntegral` | Even-supported potentials; full admissible rectangular boundary. |
+| Typed circle and central projections | `sourceParityCircleProjection`, `sourceParityCentralProjection` | Domain and codomain are both the chosen parity subspace. |
+| Agreement with actual integrals | `sourceParityCircleProjection_apply`, `sourceParityCentralProjection_apply` | Exact vector equality on admissible contours for even-supported potentials. |
+| Projection identities | `sourceParityCircleProjection_idempotent`, `sourceParityCentralProjection_idempotent` | Idempotence on the parity subspace itself. |
+| Finite rank | `finiteDimensional_range_sourceParityCircleProjection`, `finiteDimensional_range_sourceParityCentralProjection` | The restricted range injects into the finite-dimensional ambient range. |
+| Local circle analyticity | `analyticAt_sourceParityCircleProjection` | Original period-one potential coordinates at any source with an admissible circle. |
+| Full equation (1.5) package | `sourceEquation1_5` | One positive cutoff and open convex connected neighborhood containing source and zero; both parities, every larger central cutoff, and all abs(n)>N quarter-pi circles. Analyticity, actual restriction identities, idempotence, and finite rank all hold on the same neighborhood. |
+
+Entry points lie in `NLS.ZakharovShabat`, in `SourceParityRestriction.lean`
+and `SourceEquation1_5.lean`. The operator definitions extend by compression
+to arbitrary potentials; their interpretation as the source's restrictions
+is proved under even support and contour admissibility. `sourceEquation1_5`
+supplies those hypotheses automatically in period-one coordinates. Earlier
+fixed-height qualifications are unchanged.
+
+Next: the rank calculations following equation (1.5), then Lemma 3.7.
