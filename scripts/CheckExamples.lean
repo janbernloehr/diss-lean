@@ -42375,3 +42375,82 @@ example {q : ℝ≥0∞} [Fact (1 ≤ q)] (g h : ℝ → ℂ × ℂ) (a b : Coef
     L2RootGradientFourierRealizes (fun s => g s-h s) (a-b) := ha.sub hb hg hh
 
 end L2BelowTwoChecks
+
+noncomputable section
+section L2G6BelowTwoChecks
+open Set Complex MeasureTheory NLS NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2)
+    (φ h : CoeffPair p) (z : ℂ) :
+    sourceAntiDiscriminantCotangent hp hp1 z φ h =
+      ∫ s in (0 : ℝ)..1,
+        (l2AntiDiscriminantGradient (sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)) z s).1*
+          (physicalBase (periodOnePotential (CoeffPair.exponentInclusion hp2 h)) s).1+
+        (l2AntiDiscriminantGradient (sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)) z s).2*
+          (physicalBase (periodOnePotential (CoeffPair.exponentInclusion hp2 h)) s).2 :=
+  sourceAntiDiscriminantCotangent_below_two_integral hp hp1 hp2 φ h z
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2) (φ : CoeffPair p) (z w : ℂ) :
+    ‖sourceG6AntiDiscriminantCotangentCoefficients (q := q) hp hp1 φ z w‖^q.toReal =
+      ∑' k : ℤ,
+        (‖intervalFourierCoefficient 1 (fun s =>
+          (l2AntiDiscriminantGradientRemainder (sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)) z w s).1) (-k)‖^q.toReal+
+        ‖intervalFourierCoefficient 1 (fun s =>
+          (l2AntiDiscriminantGradientRemainder (sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)) z w s).2) k‖^q.toReal) :=
+  (sourceG6AntiDiscriminantCotangentCoefficients_realizes_below_two (q := q) hp hp1 hp2 φ z w).norm_rpow
+    ((ENNReal.HolderConjugate.ne_top_iff_ne_one q p).mpr hp1.ne')
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (z : ℂ) :
+    sourceG6AntiDiscriminantCotangentCoefficients (q := q) hp hp1 0 z z = 0 := by
+  change Complex.I • sourceG7SignedCoordinates q (CoeffPair.conjugateGradientCLM hp _ (_-_)) = 0
+  rw [sub_self,map_zero,map_zero,smul_zero]
+
+example (φ : CoeffPair 2) (z w : ℂ) :
+    L2GradientFourierRealizes (l2AntiDiscriminantGradientRemainder (sourcePhysicalL2 φ) z w)
+      (sourceG6AntiDiscriminantCotangentCoefficients (p := 2) (q := 2) (by simp) (by norm_num) φ z w) := by
+  simpa only [CoeffPair.exponentInclusion_refl] using
+    sourceG6AntiDiscriminantCotangentCoefficients_realizes_below_two
+      (p := 2) (q := 2) (by simp) (by norm_num) le_rfl φ z w
+
+private theorem g6BelowTwo_finite : (3 : ℝ≥0∞)/2 ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem g6BelowTwo_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))]
+  norm_num
+private theorem g6BelowTwo_le_two : (3 : ℝ≥0∞)/2 ≤ 2 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]
+  norm_num
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)/2) := ⟨g6BelowTwo_gt_one.le⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : ENNReal.HolderConjugate 3 ((3 : ℝ≥0∞)/2) :=
+  ENNReal.holderConjugate_iff.mpr (by
+    rw [ENNReal.inv_div (Or.inl (by norm_num)) (Or.inl (by norm_num)),
+      ← one_div,← ENNReal.add_div]
+    norm_num only [show (1+2 : ℝ≥0∞) = 3 by norm_num]
+    exact ENNReal.div_self (by norm_num) (by norm_num))
+
+example (φ : CoeffPair ((3 : ℝ≥0∞)/2)) (a : Domain 2)
+    (ha : periodOnePotential (CoeffPair.exponentInclusion g6BelowTwo_le_two φ) = domainInclusion a)
+    (b : BoundaryCondition) :
+    Memℓp (fun n : ℤ => sourceG6AntiDiscriminantCotangentCoefficients (q := 3)
+      g6BelowTwo_finite g6BelowTwo_gt_one φ
+      (canonicalPeriodOneBoundaryRoots g6BelowTwo_finite g6BelowTwo_gt_one b φ n) ((Real.pi : ℂ)*n)) ((3 : ℝ≥0∞)/2) ∧ ∀ n : ℤ,
+      L2GradientFourierRealizes
+        (l2AntiDiscriminantGradientRemainder (sourcePhysicalL2 (CoeffPair.exponentInclusion g6BelowTwo_le_two φ))
+          (canonicalPeriodOneBoundaryRoots g6BelowTwo_finite g6BelowTwo_gt_one b φ n) ((Real.pi : ℂ)*n))
+        (sourceG6AntiDiscriminantCotangentCoefficients (q := 3) g6BelowTwo_finite g6BelowTwo_gt_one φ
+          (canonicalPeriodOneBoundaryRoots g6BelowTwo_finite g6BelowTwo_gt_one b φ n) ((Real.pi : ℂ)*n)) :=
+  sourceG6_below_two_physical_complex (q := 3) g6BelowTwo_finite g6BelowTwo_gt_one g6BelowTwo_le_two φ a ha b
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2) (φ : CoeffPair p) (a : Domain 2)
+    (ha : periodOnePotential (CoeffPair.exponentInclusion hp2 φ) = domainInclusion a) (z w : ℂ) :
+    sourceG6AntiDiscriminantCotangentCoefficients (q := q) hp hp1 φ z w =
+      sourceG6AntiDiscriminantCoefficients
+        ((ENNReal.HolderConjugate.lt_top_iff_one_lt p q).mp hp.lt_top) (classicalSobolevPotential a) z w :=
+  sourceG6AntiDiscriminantCotangentCoefficients_eq_sobolev hp hp1 hp2 φ a ha z w
+
+end L2G6BelowTwoChecks

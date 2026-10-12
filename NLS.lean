@@ -3242,3 +3242,5 @@ import NLS.SequenceSpaces.PairExponentIdentity
 import NLS.ZakharovShabat.L2GradientsBelowTwo
 import NLS.ZakharovShabat.L2GradientRestrictionFourier
 import NLS.ZakharovShabat.L2SourceG7BelowTwo
+import NLS.ZakharovShabat.L2AntiDiscriminantBelowTwo
+import NLS.ZakharovShabat.L2SourceG6BelowTwo

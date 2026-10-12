@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Latest progress: physical G.7 gradients below the Hilbert exponent
+## Latest progress: physical G.6 errors below two for complex sources
+
+The actual anti-discriminant cotangent now has its physical integral in
+every original source direction for 1<p<=2, at every complex potential and
+spectral parameter. `L2AntiDiscriminantBelowTwo.lean` restricts the entire
+Hilbert cotangent and constructs its error vector in G.6's signed Fourier
+convention. The factor i and first-component index reversal preserve the
+exact conjugate pair norm. Subtraction uses the actual zero-potential
+gradient at the reference parameter.
+
+`L2SourceG6BelowTwo.lean` proves outer-lp summability of this physical error
+at both canonical Dirichlet and Neumann sequences for complex H1 sources.
+Every signed index and the finite central block are retained. The Hilbert
+estimate already applies to complex sources, so restricting it requires
+neither a reality assumption nor root simplicity. On the original H1
+source, uniqueness of the actual Fourier coefficients identifies the new
+cotangent vector exactly with the established Sobolev G.6 vector.
+
+The standalone public checks include arbitrary complex spectral and
+reference parameters, exact coefficient energy, zero-source cancellation,
+the Hilbert endpoint p=2, the concrete conjugate pair p=3/2 and q=3, and
+both boundary conditions. This step supplies no infinity endpoint.
+
+Next is extending the physical G.7 summability below two from real H1
+sources to a common complex neighborhood of the real source locus. G.2's
+arbitrary-time interval norm remains unresolved; neither proposed spectral-
+height correction is adopted. The optional original m=1 sharpening remains
+under the accepted Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6674 build jobs), including all
+public examples and the axiom audit of 28435 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21 existing
+warnings and no new warnings. The source inventory check passed with 156
+labels. Counts do not certify completeness.
+
+## Previous milestone: physical G.7 gradients below the Hilbert exponent
 
 The actual canonical midpoint and Dirichlet differentials now have physical
 integral formulas in every original source direction for 1<p<=2.
