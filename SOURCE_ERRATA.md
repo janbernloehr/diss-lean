@@ -1216,3 +1216,27 @@ transport. No correction is needed, and no diagonalizability assumption
 is added at a coincident pair. The source functions are traces of the actual
 original-domain restriction, with coefficient-space equality proved by
 conjugation. All finite Banach exponents, including p=1, are covered.
+
+## Section 4: the potential map is not the normalized vector matrix
+
+On printed page 29, the displayed assertion `phi = T(q,p)` uses
+`T = (1/sqrt(2)) [[1,i],[1,-i]]`. With that normalization, the simultaneous
+identity `L_AKNS(q,p) = T⁻¹ L(phi) T` is false. The potential term is scaled
+by `1/sqrt(2)`. Printed page 19 already gives the correct relation:
+`phi = (q+i*p,q-i*p) = sqrt(2) T(q,p)`.
+
+The normalized vector transformation and both endpoint-domain formulas are
+unchanged. `aknsPotential_eq_sqrt_two_smul` proves the correct potential
+relation and `aknsAction_intertwining` proves conjugation with that map.
+`aknsPotential_ne_vectorMap` distinguishes the two maps at `(q,p)=(1,0)`.
+`aknsAction_printed_normalization_false` proves failure of the printed
+conjugation at that potential with value `(1,0)` and derivative zero.
+`physicalOperator_printed_akns_normalization_false` realizes the failure using
+actual derivatives of constant smooth functions (the vector satisfies the
+AKNS Dirichlet endpoint condition). These are proofs, not numerical tests.
+
+The original physical L² unitary, physical H¹ norm, dense endpoint domains,
+and actual operator conjugation are established using the page 19 potential
+map in `AKNSPhysicalNorms.lean` and `AKNSIntervalOperator.lean`. No isometry
+of the maximum component norm is asserted. The cached PDF page 29 was
+visually checked; the discrepancy is present in the display itself.

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 3.7 is proved using traces of the actual original-norm
-operator restriction. Midpoints and half-squared gaps are analytic on one
-common neighborhood, including at p=1 and at eigenvalue collisions. Both
-intrinsic and transported trace formulas are verified.
-[The Section 3 audit](coverage/SECTION_3.md) records the scope. Section 4's
-Dirichlet/Neumann domains are next; the dissertation remains incomplete.
+Latest milestone: Section 4's original AKNS domains and operators are
+constructed, with a physical L² unitary, exact H¹ norms, dense inclusions,
+and actual differential-expression conjugation. A proved correction separates
+the potential map from the normalized vector matrix on page 29.
+[The Section 4 audit](coverage/SECTION_4.md) records the scope. The extension
+formulas and Lemma 4.1 are next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

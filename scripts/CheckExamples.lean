@@ -43904,3 +43904,69 @@ example : sourcePeriodicMidpoint (by norm_num) (0 : CoeffPair 1) (-3) = (Real.pi
   exact ⟨hm,by rw [hg]; norm_num⟩
 
 end LemmaThreeSevenOriginalNormChecks
+
+open MeasureTheory Set NLS.Fourier NLS.ZakharovShabat
+
+-- Section 4: actual Sobolev domains, physical unitary, and original operator action.
+example (g : ℝ → ℂ × ℂ) :
+    BoundaryCondition.HasClassicalIntervalDomain .dirichlet (fun x => aknsToZS (g x)) ↔
+      HasAKNSIntervalDomain .dirichlet g := hasClassicalIntervalDomain_aknsToZS_iff _ _
+
+example (f : ℝ → ℂ × ℂ) :
+    HasAKNSIntervalDomain .neumann (fun x => zsToAKNS (f x)) ↔
+      BoundaryCondition.HasClassicalIntervalDomain .neumann f := hasAKNSIntervalDomain_zsToAKNS_iff _ _
+
+example (u : Icc (0 : ℝ) 1 → ℂ × ℂ) :
+    u ∈ aknsIntervalSubmodule .dirichlet ↔ ∃ g : ℝ → ℂ × ℂ,
+      HasAKNSIntervalDomain .dirichlet g ∧ ∀ x : Icc (0 : ℝ) 1, u x = g x.val :=
+  mem_aknsIntervalSubmodule_iff _ _
+
+example (b : BoundaryCondition) : DenseRange (aknsInclusion b) := aknsInclusion_denseRange b
+
+example (u : IntervalPairL2) : ‖aknsL2Equiv u‖ = ‖u‖ := aknsL2Equiv.norm_map u
+
+example (b : BoundaryCondition) (g : ℝ → ℂ × ℂ) (hg : HasAKNSIntervalDomain b g) :
+    ‖aknsDomainOfFunction b g hg‖ = BoundaryCondition.classicalIntervalNorm g :=
+  norm_aknsDomainOfFunction b g hg
+
+example (b : BoundaryCondition) (g : ℝ → ℂ × ℂ) (hg : HasAKNSIntervalDomain b g) :
+    intervalL2Representative (aknsInclusion b (aknsDomainOfFunction b g hg))
+      =ᵐ[volume.restrict (Ioc 0 1)] g := aknsInclusion_realization b g hg
+
+example (b : BoundaryCondition) (q p : ℝ → ℂ)
+    (hq : MemLp q 2 (volume.restrict (Ioc 0 1))) (hp : MemLp p 2 (volume.restrict (Ioc 0 1)))
+    (g : ℝ → ℂ × ℂ) (hg : HasAKNSIntervalDomain b g) :
+    intervalL2Representative (aknsIntervalOperator b q p hq hp (aknsDomainOfFunction b g hg))
+      =ᵐ[volume.restrict (Ioc 0 1)] aknsPhysicalOperator q p g :=
+  aknsIntervalOperator_realization b q p hq hp g hg
+
+example (b : BoundaryCondition) (q p : ℝ → ℂ)
+    (hq : MemLp q 2 (volume.restrict (Ioc 0 1))) (hp : MemLp p 2 (volume.restrict (Ioc 0 1)))
+    (u : AKNSIntervalDomain b) :
+    aknsL2Equiv (aknsIntervalOperator b q p hq hp u) =
+      BoundaryCondition.classicalOperator b
+        (intervalL2OfFunction (fun x => aknsPotential (q x) (p x)) (memLp_aknsPotential hq hp))
+        (aknsDomainEquiv b u) := aknsL2Equiv_operator b q p hq hp u
+
+example (b : BoundaryCondition) (g : ℝ → ℂ × ℂ) (hg : HasAKNSIntervalDomain b g)
+    (q p : ℝ → ℂ) (z : ℂ) :
+    (physicalOperator (fun x => aknsPotential (q x) (p x)) (fun x => aknsToZS (g x))
+      =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • aknsToZS (g x))) ↔
+    (aknsPhysicalOperator q p g =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • g x)) :=
+  akns_eigenEquation_iff b hg q p z
+
+example (q p z : ℂ) (u v : ℂ × ℂ) :
+    aknsAction q p u v = z • u ↔ -v.2 = z * u.1 - q * u.1 - p * u.2 ∧
+      v.1 = z * u.2 - p * u.1 + q * u.2 := aknsAction_eigen_iff q p z u v
+
+example : aknsPotential 1 0 ≠ aknsToZS (1,0) := aknsPotential_ne_vectorMap
+
+example : zsAction (aknsToZS (1,0)) (aknsToZS (1,0)) (aknsToZS (0,0)) ≠
+    aknsToZS (aknsAction 1 0 (1,0) (0,0)) := aknsAction_printed_normalization_false
+
+example (q p : ℂ) : aknsPotential q p = (Real.sqrt 2 : ℂ) • aknsToZS (q,p) :=
+  aknsPotential_eq_sqrt_two_smul q p
+
+example : physicalOperator (fun _ => aknsToZS (1,0)) (fun _ => aknsToZS (1,0)) 0 ≠
+    aknsToZS (aknsPhysicalOperator (fun _ => 1) (fun _ => 0) (fun _ => (1,0)) 0) :=
+  physicalOperator_printed_akns_normalization_false

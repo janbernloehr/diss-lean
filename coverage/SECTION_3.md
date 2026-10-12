@@ -306,5 +306,5 @@ coefficient-space trace equality is proved afterward. The common neighborhood
 includes p=1. Earlier qualifications, including the distinct norm-dependent
 height issue, remain unchanged.
 
-Next: Section 4, equation (1.6) and the AKNS representation of the classical
-Dirichlet/Neumann domains.
+Section 4, equation (1.6) and the AKNS representation of the classical
+Dirichlet/Neumann domains, are audited in [SECTION_4.md](SECTION_4.md).

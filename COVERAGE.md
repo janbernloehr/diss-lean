@@ -3056,3 +3056,39 @@ in equation (1.6) and their AKNS representation. The dissertation remains
 incomplete; earlier source qualifications remain in force.
 
 Validation: `./scripts/check.sh` passed: 6,745 build jobs, public examples, and the axiom audit of 29,480 NLS declarations. The build retains 21 existing warnings; the new modules and standalone public probe are warning-free. The source inventory check passed with 156 candidate labels (not a completeness certificate).
+
+## Section 4 classical domains and AKNS conjugation
+
+The beginning of Section 4 (printed pages 28–29) now has the original
+classical AKNS domain and operator, with exact identifications of equation
+(1.6), the component system (1.7), and the normalized coordinate matrix.
+`AKNSCoordinates.lean` proves both matrix inverses, both boundary conditions,
+and the derivative/potential intertwining for arbitrary complex coordinates.
+
+`IntervalH1Linear.lean` supplies linear closure of the original interval H¹
+class. `AKNSClassicalDomain.lean` proves equivalence of the original Sobolev
+endpoint domains, actual derivative intertwining almost everywhere, and
+equivalence of the physical eigenvalue equations. No regularity outside
+[0,1] or endpoint periodicity is assumed.
+
+`AKNSPhysicalNorms.lean` constructs `aknsL2Equiv` on the actual Lebesgue
+component-sum L² space and proves exact preservation of the original H¹
+norm. `AKNSIntervalOperator.lean` constructs the actual closed-interval AKNS
+domain, characterizes membership by original H¹ functions and the printed
+endpoint conditions, and identifies its norm with the physical H¹ norm.
+The inclusion is injective and dense. Both inclusion and operator are
+conjugated by the L² unitary and domain H¹ isometry. Their values are proved
+to be the original function and actual AKNS differential expression almost
+everywhere, for arbitrary L² potentials and either boundary condition.
+
+The page 29 assertion phi = T(q,p) has a normalization error: the potential
+map is (q+i*p,q-i*p) = sqrt(2) T(q,p), while T remains the normalized vector
+matrix. This agrees with page 19. Lean proves the corrected relation and
+counterexamples to the printed normalization, including the actual operator
+on constant smooth data. The correction is confined to the potential map.
+
+Next: the even/odd and signed-swap extensions and Lemma 4.1, auditing the
+existing physical transfer against the original source spaces. The full
+dissertation remains incomplete; all earlier qualifications remain in force.
+
+Validation: `./scripts/check.sh` passed: 6,750 build jobs, public examples, and the axiom audit of 29,625 NLS declarations. The build retains 21 existing warnings; the five new modules and standalone public probe are warning-free. The source inventory check passed with 156 candidate labels (not a completeness certificate).

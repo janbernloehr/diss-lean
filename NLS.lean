@@ -3309,3 +3309,8 @@ import NLS.ZakharovShabat.SourcePeriodicCounting
 import NLS.ZakharovShabat.SourceContourTrace
 import NLS.ZakharovShabat.SourceContourReduction
 import NLS.ZakharovShabat.SourceLemma3_7
+import NLS.Fourier.IntervalH1Linear
+import NLS.ZakharovShabat.AKNSCoordinates
+import NLS.ZakharovShabat.AKNSClassicalDomain
+import NLS.ZakharovShabat.AKNSPhysicalNorms
+import NLS.ZakharovShabat.AKNSIntervalOperator
