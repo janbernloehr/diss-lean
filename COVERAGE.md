@@ -2662,3 +2662,48 @@ examples. The axiom audit passed for 29,081 NLS declarations with only the
 permitted classical axioms. The build retains 21 existing warnings.
 The source inventory check passed for 156 candidate statement labels; that
 count is not a completeness certificate.
+
+## Lemma 3.2 in the original pair norms
+
+Lemma 3.2 (printed pages 23–24) is now checked in the original
+component-sum pair norms. `SourceFreeResolvent.lean` transports the actual
+free resolvent through the coefficient-preserving norm equivalences.
+Clause (i) is compact in the original l1 space, and the same compactness
+holds on every finite-exponent source space. Clause (iii)'s printed
+8p/r estimate holds in the original p-to-one norms; the proof gives 4p/r.
+
+The printed clause (ii) is false in these norms, already at p=2.
+`SourceFreeResolventCounterexample.lean` uses lambda=i/10000 and a vector
+with both zero-mode coefficients equal to one. The input norm is exactly
+sqrt(2), the output norm is 20000, and the printed operator bound is 10800.
+The output/input ratio exceeds that bound. The parameter is off the free
+lattice with nonzero imaginary part, and the input is a finite, smooth
+Fourier vector. `not_lemma3_2_ii_original_norms` explicitly refutes the
+printed assertion in this domain.
+
+`PairComponentHolder.lean` proves the exact two-component comparison
+factor 2^(1-1/p), including p=1, and its attainment on equal components.
+The original p-to-one free resolvent has a proved corrected height bound
+with this factor multiplying the printed expression. A zero-mode lower
+bound also proves that its pole term must account for this factor.
+At p=1 the factor is one and the printed height bound remains valid.
+The older maximum-product bound remains valid as stated in its own norm;
+it does not certify the original component-sum operator estimate. The
+corrected estimate is recorded separately, not silently substituted for
+the false printed clause.
+
+Next: audit Corollary 3.3 in the source norms and its dependence on the
+maximum-product Neumann estimate, then continue Section 3. The failure
+of the printed p-to-one bound alone does not refute the corollary's
+resolvent region. The dissertation remains incomplete; the existing
+spectral-height, Section 2, G.2, and optional m=1 qualifications remain.
+
+Validation: focused builds and the standalone public probe passed without
+warnings, covering compactness in the actual l1 norm, both endpoint and
+finite-exponent factors, the pole lower bound, the concrete counterexample,
+and the printed strip bound. The full check passed all 6,728 build jobs
+and public examples. The axiom audit passed for 29,124 NLS declarations
+with only the permitted classical axioms. The build retains 21 existing
+warnings.
+The source inventory check passed for 156 candidate labels; this count
+is not a completeness certificate.

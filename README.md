@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Proposition 3.1 now covers the entire period-two source
-space with the original pair norm. Its printed-height conclusions hold for
-1<=p<=4; the unrestricted claim is explicitly refuted at a large finite
-exponent. Discreteness, reality, and qualitative counting retain their
-all-finite-p scope. [The Section 3 audit](coverage/SECTION_3.md) records the
-clauses. Lemma 3.2 is next; the dissertation remains incomplete.
+Latest milestone: Lemma 3.2 is now audited in the original pair norms.
+Compactness and the printed strip bound hold. Its printed height bound
+is refuted at p=2; a separate corrected estimate retains the exact
+two-component norm factor. [The Section 3 audit](coverage/SECTION_3.md)
+records the distinction. Corollary 3.3 is next; the dissertation remains
+incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
@@ -44,7 +44,9 @@ General resolvent identities and explicit spectral and potential derivatives
 are also proved in
 operator norm. Appendix B.1's quantitative reciprocal-series inequalities,
 including explicit tail and lattice bounds, are also proved. These give the
-numerical height-decay and punctured-strip bounds in Lemma 3.2(ii–iii),
+numerical height-decay bounds in maximum-product coordinates and the
+punctured-strip bound in Lemma 3.2(iii). Clause (ii)'s original pair-norm
+height estimate is refuted as recorded above. Separate Neumann estimates give
 the explicit compact analytic resolvent region of Corollary 3.3, and uniform
 spectral disk localization for sufficiently small potentials. The double-resolvent
 operator and squared Neumann inversion are constructed, including both inverse

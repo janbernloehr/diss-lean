@@ -1093,3 +1093,33 @@ exhaustion clause. Consequently Proposition 3.1 cannot be certified as
 printed for every finite p. Discreteness and real-type reality still hold
 at every finite p, as does the separate height-N counting theorem. No
 proposed height correction is adopted.
+
+## Lemma 3.2(ii): the original p-to-one pair norm bound is false
+
+Printed pages 23–24 use the source component-sum norm for both the p input
+and l1 output, while the proof first estimates each component separately.
+Combining those component estimates requires the factor 2^(1-1/p).
+The pre-existing `HeightResolvent.lean` theorem explicitly uses the
+maximum norm on pairs and remains valid in that norm.
+
+`SourceFreeResolventCounterexample.lean` supplies an actual free-resolvent
+counterexample in the original norms at p=2 and lambda=i/10000. Each input
+component has only its zero Fourier coefficient, equal to one. The input
+norm is sqrt(2), the output norm is 20000, and the printed bound
+8/sqrt(abs(Im(lambda)))+1/abs(Im(lambda)) is exactly 10800. Since
+20000/sqrt(2)>10800, the printed operator inequality fails. This uses
+smooth finite data and a nonreal parameter off the free lattice; it is
+neither an infinity-endpoint issue nor a failure merely of a proof estimate.
+
+`PairComponentHolder.lean` proves the component factor and its attainment
+by equal components. `SourceFreeResolvent.lean` proves the full corrected
+height estimate with that factor, as well as the operator lower bound
+2^(1-1/p)/abs(lambda) from the two zero modes. At p=1 the original printed
+height bound still holds. No replacement is silently adopted for the
+false general assertion.
+
+Clauses (i) and (iii) are valid in the original norms: compactness on l1
+is proved by conjugating the actual free resolvent, and the strip estimate
+even holds with 4p/r in place of 8p/r. The downstream Corollary 3.3 region
+requires its own source-norm audit; the failed p-to-one bound alone does
+not refute the region obtained from maximum-product Neumann estimates.

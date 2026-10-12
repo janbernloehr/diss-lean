@@ -43305,3 +43305,51 @@ example : ¬ ∀ φ : CoeffPair 100000000, ∃ N : ℕ, Proposition3_1Data (by n
   not_proposition3_1_all_p
 
 end PropositionThreeOneChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+section LemmaThreeTwoOriginalNormChecks
+
+-- Clause (i) concerns the actual source l1 norm on both ends.
+example (z : ℂ) (hz : z ∉ freeLattice) :
+    IsCompactOperator (sourceFreeResolventToL1 (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) z hz) := by
+  rw [sourceFreeResolventToL1_one]
+  exact isCompactOperator_sourceFreeResolvent (by norm_num) z hz
+
+example : CoeffPair.l1Factor 1 = 1 := CoeffPair.l1Factor_one
+example : CoeffPair.l1Factor 2 = Real.sqrt 2 := by
+  norm_num [CoeffPair.l1Factor, ← Real.sqrt_eq_rpow]
+
+-- The original p-to-one height estimate requires the two-component factor.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (z : ℂ) (hz : z ∉ freeLattice) (him : z.im ≠ 0) :
+    ‖sourceFreeResolventToL1 hp z hz‖ ≤ (2 : ℝ)^(1-1/p.toReal) *
+      (4*p.toReal/|z.im|^(1/p.toReal)+1/|z.im|) :=
+  norm_sourceFreeResolventToL1_le_height hp z hz him
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (z : ℂ) (hz : z ∉ freeLattice) :
+    CoeffPair.l1Factor p/‖z‖ ≤ ‖sourceFreeResolventToL1 hp z hz‖ :=
+  l1Factor_div_norm_le_sourceFreeResolventToL1 hp z hz
+
+-- A concrete finite, smooth input refutes the printed clause (ii).
+example : ‖lemma3_2CounterexampleInput‖ = Real.sqrt 2 := lemma3_2Counterexample_input_norm
+example : ‖sourceFreeResolventToL1 (by norm_num : (2 : ℝ≥0∞) ≠ ⊤)
+    lemma3_2CounterexampleParameter lemma3_2Counterexample_off_lattice
+    lemma3_2CounterexampleInput‖ = 20000 := lemma3_2Counterexample_output_norm
+
+example : ¬ ∀ (z : ℂ) (hz : z ∉ freeLattice), z.im ≠ 0 →
+    ‖sourceFreeResolventToL1 (by norm_num : (2 : ℝ≥0∞) ≠ ⊤) z hz‖ ≤
+      8/|z.im|^(1/(2 : ℝ))+1/|z.im| := not_lemma3_2_ii_original_norms
+
+-- At the p=1 endpoint the printed height formula remains valid.
+example (z : ℂ) (hz : z ∉ freeLattice) (him : z.im ≠ 0) :
+    ‖sourceFreeResolventToL1 (by norm_num : (1 : ℝ≥0∞) ≠ ⊤) z hz‖ ≤ 4/|z.im|+1/|z.im| :=
+  norm_sourceFreeResolventToL1_one_le_height z hz him
+
+-- Clause (iii) retains its printed constant in the original source norms.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (z : ℂ) (hz0 : z ∉ freeLattice)
+    {n : ℤ} {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi/4) (hz : z ∈ verticalStrip n r) :
+    ‖sourceFreeResolventToL1 hp z hz0‖ ≤ 8*p.toReal/r :=
+  norm_sourceFreeResolventToL1_le_verticalStrip hp z hz0 hr hrπ hz
+
+end LemmaThreeTwoOriginalNormChecks

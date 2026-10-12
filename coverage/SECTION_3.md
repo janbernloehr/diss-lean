@@ -1,7 +1,7 @@
 # Section 3: periodic spectrum
 
-This audit starts with the operator setup and Proposition 3.1 on printed
-page 23. It retains the original period-two space, its finite-exponent
+This audit covers the operator setup, Proposition 3.1, and Lemma 3.2 on
+printed pages 23–24. It retains the original period-two space, its finite-exponent
 component-sum norm, and the conditional period-one parity clauses. It is
 not a completeness certificate for Section 3 or the dissertation.
 
@@ -45,6 +45,31 @@ therefore also applies to Proposition 3.1. No proposed height correction
 has been adopted, and nothing here asserts the printed formula for every
 p>4. Discreteness, reality, and the height-N counting result remain valid.
 
-Next: Lemma 3.2, including its exact operator norms in the original source
-pair spaces. Existing maximum-product estimates alone do not certify
-those numerical source bounds.
+## Lemma 3.2
+
+The printed operator norm has the original source p-norm on the input and
+the original component-sum l1 norm on the output. These are not the same
+operator norms as the existing maximum-product estimates.
+
+| Printed requirement or correction | Public entry point | Verified scope |
+| --- | --- | --- |
+| Actual operator in the source norms | `sourceFreeResolvent`, `sourceFreeResolventToL1` | Coefficient-preserving conjugation by `CoeffPair.toMax`; all finite Banach exponents. The target-one coefficients are exactly the original reciprocal symbols. |
+| (i) Compactness on the l1 source space | `isCompactOperator_sourceFreeResolvent`, `sourceFreeResolventToL1_one` | Every parameter off the free lattice; base-space compactness also holds for every finite p. |
+| Exact component comparison | `NLS.CoeffPair.componentNormSum_le`, `l1Factor_mul_norm_diagonal` | Factor 2^(1-1/p), attained by equal components, with factor one at p=1. |
+| Corrected height estimate | `norm_sourceFreeResolventToL1_le_height` | The printed expression multiplied by the component comparison factor; all finite p and nonzero imaginary part. |
+| Necessary pole factor | `l1Factor_div_norm_le_sourceFreeResolventToL1` | The actual original-norm operator norm is at least 2^(1-1/p)/abs(lambda), from the two zero modes. |
+| (ii) Printed estimate at p=1 | `norm_sourceFreeResolventToL1_one_le_height` | The component comparison factor is exactly one. |
+| (ii) Refutation in general | `lemma3_2_printed_height_bound_false`, `not_lemma3_2_ii_original_norms` | A concrete p=2 counterexample at lambda=i/10000, off the free lattice and with nonzero imaginary part. |
+| Exact counterexample data | `lemma3_2Counterexample_input_norm`, `lemma3_2Counterexample_output_norm`, `lemma3_2Counterexample_printed_rhs` | Input norm sqrt(2), output norm 20000, printed operator bound 10800; both input components are the constant Fourier mode. |
+| (iii) Printed strip bound | `norm_sourceFreeResolventToL1_le_verticalStrip` | Original p-to-one pair norms, all finite p, radius 0<r<=pi/4. |
+| Stronger proved strip bound | `norm_sourceFreeResolventToL1_le_verticalStrip_four` | Constant 4p/r, hence the printed 8p/r follows. |
+
+Except for the explicitly qualified component lemmas, these entry points
+lie in `NLS.ZakharovShabat`. The corrected height bound is separate from
+the false printed clause (ii). The maximum-product estimate remains valid;
+a change of norms without its quantitative factor cannot establish the
+printed original-norm assertion.
+
+Next: Corollary 3.3, verifying the original source-norm resolvent region
+through the maximum-product Neumann construction. The counterexample to
+(ii) does not by itself refute that region.

@@ -3289,3 +3289,6 @@ import NLS.Fourier.PeriodicL1Pairing
 import NLS.Fourier.PeriodicL1Distribution
 import NLS.ZakharovShabat.PeriodTwoPrintedHeightCounting
 import NLS.ZakharovShabat.Proposition3_1
+import NLS.SequenceSpaces.PairComponentHolder
+import NLS.ZakharovShabat.SourceFreeResolvent
+import NLS.ZakharovShabat.SourceFreeResolventCounterexample
