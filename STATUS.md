@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: G.3 derivative correction and current Appendix G audit
+## Current milestone: actual Riccati and Hamiltonian field rescaling
+
+Appendix H's identity u_k(a,c*b)=c*u_k(c*a,b) is now proved for the actual
+Riccati recurrence at every order and every complex scalar, including zero.
+`NLSRiccatiRescaling.lean` uses recurrence uniqueness and then proves the
+corresponding identity for the physical Hamiltonian integrals. No division
+by the scalar or smoothness assumption is needed for the classical identity.
+
+`SobolevRiccatiRescaling.lean` transfers the identity to every admissible
+Sobolev density in H^(s-n) and to the next weak H^-1 density for an H^s
+source. Continuity and dense smooth Fourier sources preserve the original
+period-one coefficients. The result includes the H^0 endpoint and does
+not impose extra regularity on the highest derivative.
+
+`SobolevHamiltonianRescaling.lean` proves the Hamiltonian identity on the
+original H^(k-1) domain and on the sharper H^m domain of H_(2m+1). It also
+proves reciprocal field-rescaling invariance for nonzero scalars on both
+domains. These are the existing physical Hamiltonians, with their exact
+normalization and original smooth integral meaning.
+
+`coverage/APPENDIX_H.md` records the current recurrence, normalization,
+weak-source, polynomial, and physical-integral coverage for H.1 and H.2.
+The public checks include scalar zero, the top available Sobolev density,
+the weak H^-1 endpoint, mass on H^0, and reciprocal scaling of the odd
+Hamiltonian on H^1 without imposing H^2 regularity.
+
+Next is a systematic numbered-statement coverage audit beyond the existing
+spectral overview, beginning with Sections 2–3. G.2's arbitrary-time
+interval norm remains unresolved; neither proposed spectral-height
+correction is adopted. The optional original m=1 sharpening remains under
+the accepted Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: focused module builds, the standalone public probe, and the full
+project check passed (6,683 build jobs and all public examples). The axiom
+audit passed for 28,476 NLS declarations with only the permitted classical
+axioms. The build retains 21 existing warnings and introduces none. The
+source inventory check passed for 156 candidate statement labels; this is
+not a completeness certificate.
+
+## Previous milestone: G.3 derivative correction and current Appendix G audit
 
 The intermediate derivative line in the proof of G.3 omits the remainder
 hat. The rendered PDF on printed page 136 displays a uniform bound for the

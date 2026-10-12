@@ -42587,3 +42587,49 @@ example (z : ℂ) (t : Icc (0 : ℝ) 1) :
   simpa only [hermitianColumnsCLM_apply,Prod.fst_zero,Prod.snd_zero] using map_zero hermitianColumnsCLM
 
 end G3DerivativeAuditChecks
+
+noncomputable section
+section AppendixHRescalingChecks
+open Set Complex NLS NLS.ZakharovShabat
+
+example (a b : ℝ → ℂ) (c : ℂ) (n : ℕ) :
+    nlsRiccatiDensity a (c • b) n = c • nlsRiccatiDensity (c • a) b n :=
+  nlsRiccatiDensity_field_rescaling a b c n
+
+example (a : ℝ → ℂ) (n : ℕ) : nlsRiccatiDensity a 0 n = 0 := by
+  simpa only [zero_smul] using nlsRiccatiDensity_field_rescaling a 0 0 n
+
+example (s : ℕ) (ab : SobolevSource s) (c : ℂ) :
+    sobolevRiccatiDensity s (ab.1,c • ab.2) s le_rfl =
+      c • sobolevRiccatiDensity s (c • ab.1,ab.2) s le_rfl :=
+  sobolevRiccatiDensity_field_rescaling s s le_rfl ab c
+
+example (s : ℕ) (ab : SobolevSource s) (c : ℂ) :
+    weakSobolevRiccatiDensity s (ab.1,c • ab.2) =
+      c • weakSobolevRiccatiDensity s (c • ab.1,ab.2) :=
+  weakSobolevRiccatiDensity_field_rescaling s ab c
+
+example (a : ScalarSobolev 0) : weakSobolevRiccatiDensity 0 (a,0) = 0 := by
+  simpa only [zero_smul] using weakSobolevRiccatiDensity_field_rescaling 0 (a,0) 0
+
+example (s k : ℕ) (hk : k ≤ s+1) (ab : SobolevSource s) (c : ℂ) :
+    sobolevNLSHamiltonian s (ab.1,c • ab.2) k hk =
+      sobolevNLSHamiltonian s (c • ab.1,ab.2) k hk :=
+  sobolevNLSHamiltonian_field_rescaling s k hk ab c
+
+example (ab : SobolevSource 0) (c : ℂ) (hc : c ≠ 0) :
+    sobolevNLSHamiltonian 0 (c • ab.1,c⁻¹ • ab.2) 1 (by norm_num) =
+      sobolevNLSHamiltonian 0 ab 1 (by norm_num) :=
+  sobolevNLSHamiltonian_reciprocal_rescaling 0 1 (by norm_num) ab c hc
+
+example (m : ℕ) (hm : 1 ≤ m) (ab : SobolevSource m) (c : ℂ) :
+    sobolevOddHamiltonian m hm (ab.1,c • ab.2) =
+      sobolevOddHamiltonian m hm (c • ab.1,ab.2) :=
+  sobolevOddHamiltonian_field_rescaling m hm ab c
+
+example (ab : SobolevSource 1) :
+    sobolevOddHamiltonian 1 le_rfl ((2 : ℂ) • ab.1,(1/2 : ℂ) • ab.2) =
+      sobolevOddHamiltonian 1 le_rfl ab := by
+  simpa only [one_div] using sobolevOddHamiltonian_reciprocal_rescaling 1 le_rfl ab (2 : ℂ) (by norm_num)
+
+end AppendixHRescalingChecks

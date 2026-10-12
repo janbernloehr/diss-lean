@@ -3250,3 +3250,6 @@ import NLS.ZakharovShabat.SourceSobolevAllExponents
 import NLS.ZakharovShabat.SourceLemmaG7AllFinite
 import NLS.ZakharovShabat.ClassicalFundamentalDerivativeAudit
 import NLS.ZakharovShabat.SourceG3DerivativeCorrection
+import NLS.ZakharovShabat.NLSRiccatiRescaling
+import NLS.ZakharovShabat.SobolevRiccatiRescaling
+import NLS.ZakharovShabat.SobolevHamiltonianRescaling
