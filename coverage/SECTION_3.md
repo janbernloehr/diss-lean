@@ -1,8 +1,9 @@
 # Section 3: periodic spectrum
 
-This audit covers the operator setup, Proposition 3.1, and Lemma 3.2 on
-printed pages 23–24. It retains the original period-two space, its finite-exponent
-component-sum norm, and the conditional period-one parity clauses. It is
+This audit covers the operator setup, Proposition 3.1, Lemma 3.2, and
+Corollary 3.3 on printed pages 23–24. It retains the original period-two
+space, its finite-exponent component-sum norm, and the conditional
+period-one parity clauses. It is
 not a completeness certificate for Section 3 or the dissertation.
 
 ## Operator setup
@@ -70,6 +71,31 @@ the false printed clause (ii). The maximum-product estimate remains valid;
 a change of norms without its quantitative factor cannot establish the
 printed original-norm assertion.
 
-Next: Corollary 3.3, verifying the original source-norm resolvent region
-through the maximum-product Neumann construction. The counterexample to
-(ii) does not by itself refute that region.
+## Corollary 3.3
+
+The printed region retains the original potential norm. Its denominators
+require nonzero imaginary part, made explicit in the formal definition.
+All results below hold on the entire period-two space for 1<=p<infinity,
+including p=1 and with no even-support restriction.
+
+| Printed requirement or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Actual source operator and pencil | `sourceOperator`, `sourceSpectralPencil_eq` | Original component-sum norms on both the base and one-derivative domain; pencil equals lambda times inclusion minus operator. |
+| Full resolvent set | `sourceResolventSet_eq`, `isOpen_sourceResolventSet` | Exact equality with the established maximum-product resolvent set and openness. |
+| Both actual inverse identities | `sourceSpectralPencil_sourceResolventToDomain`, `sourceResolventToDomain_sourceSpectralPencil` | Throughout the full source resolvent set, with the original one-derivative domain norm. |
+| Base-space versus domain-valued inverse | `sourceResolvent_eq_inclusion_comp` | Coefficient-preserving domain inclusion composed with the domain-valued inverse. |
+| Printed numerical region | `sourceHeightNeumannRegion_subset_resolventSet` | Exactly the printed sufficient inequality measured with the original potential norm, using the valid maximum-product Neumann estimate. |
+| Openness and nonemptiness | `isOpen_sourceHeightNeumannRegion`, `sourceHeightNeumannRegion_nonempty` | Every finite Banach exponent and every source. |
+| Uniform height | `exists_uniform_sourceHeightNeumannRegion` | One height works for every potential in an original-norm ball and both signs of the imaginary part. |
+| Compactness and analyticity | `isCompactOperator_sourceResolvent`, `analyticOnNhd_sourceResolvent` | Compact analytic inverse on the full source resolvent set, hence on the printed region. |
+| Discrete spectrum | `discreteTopology_sourceResolventSet_compl` | The complement of the actual source resolvent set has discrete subspace topology. |
+| Free compatibility | `mem_sourceResolventSet_zero_of_notMem`, `sourceResolvent_zero_eq_free` | At zero potential, every parameter off the free lattice, including real parameters. |
+| Assembled corollary | `sourceCorollary3_3` | Open nonempty numerical region, compact analytic inverse, both identities, and discrete spectrum in the original norms. |
+
+These entry points lie in `NLS.ZakharovShabat`. The failure of the
+original p-to-one estimate in Lemma 3.2(ii) does not invalidate this
+corollary: contractivity of the potential conversion gives the sufficient
+Neumann condition before transporting the inverse to the original norms.
+
+Next: Lemma 3.4, auditing the sandwich-resolvent estimate in the original
+p-to-one pair norms and tracking its component constants.

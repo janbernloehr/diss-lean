@@ -43353,3 +43353,55 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (z : ℂ) (hz0 : z �
   norm_sourceFreeResolventToL1_le_verticalStrip hp z hz0 hr hrπ hz
 
 end LemmaThreeTwoOriginalNormChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+section CorollaryThreeThreeOriginalNormChecks
+
+-- The printed numerical region uses the original potential norm at every finite exponent.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (z : ℂ)
+    (hi : z.im ≠ 0)
+    (hsmall : (4*p.toReal/|z.im|^(1/p.toReal)+1/|z.im|)*‖φ‖ < 1) :
+    z ∈ sourceResolventSet hp φ :=
+  sourceHeightNeumannRegion_subset_resolventSet hp φ ⟨hi, hsmall⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    IsOpen (sourceHeightNeumannRegion φ) ∧ (sourceHeightNeumannRegion φ).Nonempty ∧
+    AnalyticOnNhd ℂ (sourceResolvent hp φ) (sourceHeightNeumannRegion φ) := by
+  have h := sourceCorollary3_3 hp φ
+  exact ⟨h.1, h.2.1, h.2.2.1⟩
+
+-- Both norms, including the one-derivative domain norm, are original component norms.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (z : ℂ)
+    (hz : z ∈ sourceResolventSet hp φ) :
+    (∀ a : CoeffPair p, sourceSpectralPencil hp φ z (sourceResolventToDomain hp φ z a) = a) ∧
+    (∀ a : WeightedCoeffPair (Weight.sobolev 1) p,
+      sourceResolventToDomain hp φ z (sourceSpectralPencil hp φ z a) = a) :=
+  ⟨sourceSpectralPencil_sourceResolventToDomain hp φ z hz,
+    sourceResolventToDomain_sourceSpectralPencil hp φ z hz⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (z : ℂ) :
+    sourceSpectralPencil hp φ z = z • sourceDomainInclusion (p := p) - sourceOperator hp φ :=
+  sourceSpectralPencil_eq hp φ z
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    DiscreteTopology ↥((sourceResolventSet hp φ)ᶜ) :=
+  (sourceCorollary3_3 hp φ).2.2.2.2
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (M : ℝ) :
+    ∃ H : ℝ, 0 < H ∧ ∀ φ : CoeffPair p, ‖φ‖ ≤ M →
+      ∀ z : ℂ, H ≤ |z.im| → z ∈ sourceHeightNeumannRegion φ :=
+  exists_uniform_sourceHeightNeumannRegion hp M
+
+-- The endpoint p=1 and zero-potential compatibility need no stronger hypotheses.
+example (φ : CoeffPair 1) :
+    AnalyticOnNhd ℂ (sourceResolvent (by norm_num) φ) (sourceHeightNeumannRegion φ) :=
+  (sourceCorollary3_3 (by norm_num) φ).2.2.1
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (z : ℂ) (hz : z ∉ freeLattice) :
+    z ∈ sourceResolventSet (p := p) hp 0 ∧
+    sourceResolvent (p := p) hp 0 z = sourceFreeResolvent hp z hz :=
+  ⟨mem_sourceResolventSet_zero_of_notMem hp z hz, sourceResolvent_zero_eq_free hp z hz⟩
+
+end CorollaryThreeThreeOriginalNormChecks

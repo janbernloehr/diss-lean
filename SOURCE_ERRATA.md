@@ -1121,5 +1121,12 @@ false general assertion.
 Clauses (i) and (iii) are valid in the original norms: compactness on l1
 is proved by conjugating the actual free resolvent, and the strip estimate
 even holds with 4p/r in place of 8p/r. The downstream Corollary 3.3 region
-requires its own source-norm audit; the failed p-to-one bound alone does
-not refute the region obtained from maximum-product Neumann estimates.
+has now been verified in the original norms in `SourceCorollary3_3.lean`.
+The contractive conversion of the original potential norm implies the
+valid maximum-product Neumann condition with exactly the printed
+numerical region. `SourceResolvent.lean` transports the actual inverse,
+its two identities, compactness, analyticity, and spectrum to the original
+base and one-derivative domain norms. Thus Corollary 3.3 survives the
+failure of Lemma 3.2(ii); no extra component factor is needed in its
+sufficient region. Nonzero imaginary part is explicit, as required for
+the finite denominators in the printed expression.

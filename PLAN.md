@@ -1,6 +1,46 @@
 # Implementation plan
 
-## Current milestone: Lemma 3.2 in the original pair norms
+## Current milestone: Corollary 3.3 in the original source norms
+
+Corollary 3.3 (printed page 24) is now proved for every finite Banach
+exponent on the full period-two potential space in the original
+component-sum norms. Its printed sufficient region remains valid:
+`(4p/abs(Im(lambda))^(1/p)+1/abs(Im(lambda)))*norm(phi)<1`, with nonzero
+imaginary part so both denominators are meaningful. This follows from
+the valid maximum-product Neumann bound and the contractive conversion
+of the original potential norm. It does not use the false original-norm
+p-to-one estimate from Lemma 3.2(ii).
+
+`SourceResolvent.lean` defines the actual operator, spectral pencil,
+one-derivative inverse, base-space resolvent, and complete resolvent set
+in the original norms. The source resolvent set equals the established
+maximum-product resolvent set. Both inverse identities hold throughout
+that set, the base-space inverse factors through the coefficient-preserving
+domain inclusion, and the pencil is exactly lambda times inclusion minus
+the source operator. The resolvent is compact and analytic on its full
+natural set; its complement has the discrete subspace topology.
+At zero potential it agrees with the original free resolvent at every
+parameter off the free lattice, including real parameters.
+
+`SourceCorollary3_3.lean` proves the numerical region is open and nonempty,
+with one common height for every original-norm ball of potentials.
+`sourceCorollary3_3` bundles the printed conclusion, actual resolvent-set
+membership, both inverse identities, and discreteness. The p=1 endpoint
+is included. No period-one support restriction is imposed.
+
+Next: audit Lemma 3.4 in the original p-to-one pair norms, tracking the
+component constants in the existing sandwich-resolvent estimate. The
+dissertation remains incomplete, and all previously recorded source
+qualifications remain in force.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The source inventory check passed for 156 candidate labels;
+this count is not a completeness certificate. The full check passed all
+6,730 build jobs and public examples. The axiom audit passed for 29,165
+NLS declarations with only the permitted classical axioms. The build
+retains 21 existing warnings; the new modules add none.
+
+## Previous milestone: Lemma 3.2 in the original pair norms
 
 Lemma 3.2 (printed pages 23–24) is now checked in the original
 component-sum pair norms. `SourceFreeResolvent.lean` transports the actual

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 3.2 is now audited in the original pair norms.
-Compactness and the printed strip bound hold. Its printed height bound
-is refuted at p=2; a separate corrected estimate retains the exact
-two-component norm factor. [The Section 3 audit](coverage/SECTION_3.md)
-records the distinction. Corollary 3.3 is next; the dissertation remains
-incomplete.
+Latest milestone: Corollary 3.3 is proved in the original source norms
+for every finite Banach exponent. The printed numerical region has a
+compact analytic resolvent, and the actual spectrum is discrete. This
+region remains valid despite the failed bound in Lemma 3.2(ii).
+[The Section 3 audit](coverage/SECTION_3.md) records the distinction.
+Lemma 3.4 is next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
