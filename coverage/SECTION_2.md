@@ -185,9 +185,33 @@ The page-22 automatic-regularity assertion only supplies a pairing when the
 two gradient domains are dual; the proved positive assertion and its endpoint
 restriction are recorded above.
 
-Next: audit the general weighted sesquilinear dual product and the
-normalized periodic action of locally integrable functions. The existing
-arbitrary-period sesquilinear integral theorem above covers L2 inputs;
-it alone does not certify those two broader source statements. Then
-continue with numbered Section 3 statements. The candidate inventory
-and these maps are not a completeness certificate for the dissertation.
+## Full weighted sesquilinear product
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Physical conjugation | `NLS.WeightedCoeff.sobolevConjugation`, `sobolevConjugation_apply` | A conjugate-linear isometric involution at every real order and Banach exponent, including infinity; coefficients conjugate and reverse index. |
+| Printed scalar sesquilinear sum | `NLS.WeightedCoeff.sobolevSesquilinearPairing_apply`, `summable_norm_sobolevSesquilinearPairing` | Same-index product with conjugated second coefficient, absolutely convergent for every conjugate pair, including both endpoints. |
+| Scalar bound and topology | `NLS.WeightedCoeff.norm_sobolevSesquilinearPairing_le`, `continuous_sobolevSesquilinearPairing`, `sobolevSesquilinearLeft`, `sobolevSesquilinearRight` | Constant-one bound and joint continuity; bundled bounded linear first-variable and conjugate-linear second-variable functionals. |
+| Relation to the corrected physical product | `NLS.WeightedCoeff.sobolevSesquilinearPairing_conjugation`, `sobolevSesquilinearPairing_reflection` | Conjugating the second physical function recovers the opposite-index bilinear product; reflecting both factors preserves the product. |
+| Original finite pair product | `NLS.WeightedCoeffPair.sobolevSesquilinearPairing_eq_tsum`, `norm_sobolevSesquilinearPairing_le_one`, `continuous_sobolevSesquilinearPairing` | Finite conjugate p,q, original component-sum norms, constant-one bound, absolute convergence, and joint continuity. |
+| Original infinity-first endpoint | `NLS.WeightedCoeffPairInfty.sobolevSesquilinearPairing`, `norm_sobolevSesquilinearPairing_le`, `continuous_sobolevSesquilinearPairing` | Infinity against one, with the actual frequencywise sum infinity norm and constant-one bound; absolute convergence and joint continuity. |
+| Original infinity-second endpoint | `NLS.WeightedCoeffPair.sobolevSesquilinearOneInfinity`, `norm_sobolevSesquilinearOneInfinity_le`, `continuous_sobolevSesquilinearOneInfinity` | One against infinity, with the actual infinity norm and constant-one bound; absolute convergence and joint continuity. |
+| Signed pair physical fidelity | `NLS.WeightedCoeffPair.sobolevSesquilinearPairing_physical`, `sobolevSesquilinearOneInfinity_physical`, `NLS.WeightedCoeffPairInfty.sobolevSesquilinearPairing_physical` | Reflection of the first signed component in both factors gives the scalar physical convention, including the original endpoint types. |
+| Entire scalar dual under this convention | `NLS.WeightedCoeff.sobolevSesquilinearRiesz`, `existsUnique_sobolevSesquilinearRepresentative`, `norm_sobolevSesquilinearRiesz` | Every real order and finite source exponent including one; a conjugate-linear isometry with unique representation on the full ambient space. |
+| Exact Riesz phase and frequency | `NLS.WeightedCoeff.sobolevSesquilinearRiesz_smul`, `sobolevSesquilinearRiesz_val` | Scalars conjugate in the representative; its coefficient at n equals the conjugate of the functional on the original mode n. |
+| Endpoint limitation retained | `NLS.WeightedCoeff.exists_analytic_sobolev_without_sesquilinearRepresentative` | At every real order there is an everywhere-analytic infinity-source functional whose derivative has no l1 representative in the sesquilinear convention. |
+| Actual distributional meaning | `NLS.Fourier.periodicDistribution_sobolevSesquilinearPairing`, `existsUnique_sesquilinear_smooth_test` | Every positive period, real order, and conjugate pair including endpoints; action on a conjugated smooth periodic test with the original normalized window. Every such test supplies its unique coefficients. |
+| Physical L2 normalization | `NLS.Fourier.sobolevSesquilinearPairing_eq_intervalIntegral` | The same coefficient pairing equals (1/L) times the integral of f times the conjugate of g for square-integrable physical inputs at every positive period. |
+
+The product is complex linear in the first variable and conjugate linear
+in the second. Its full Riesz representative is therefore conjugate linear
+in the functional; it is not asserted to be a complex-analytic gradient
+map. The bilinear gradient convention and its analytic theorems remain
+unchanged. Auxiliary maximum products are used only for continuity; endpoint
+bounds and formulas explicitly use the original infinity pair space.
+
+Next: the normalized periodic action of locally integrable functions, then
+the numbered Section 3 statements. Smooth-test action on distributions and
+the L2 integral special case do not alone certify the locally integrable
+source statement. The candidate inventory and these maps are not a
+completeness certificate for the dissertation.

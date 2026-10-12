@@ -43110,3 +43110,94 @@ example (F G : WeightedCoeffPair (Weight.sobolev 0) 2 → ℂ)
     AnalyticOnNhd ℂ (zeroOrderBracket F G) U := analyticOnNhd_zeroOrderBracket F G hF hG
 
 end SectionTwoSobolevBracketCompatibilityChecks
+
+noncomputable section
+open NLS
+open scoped ENNReal SchwartzMap ContDiff
+section SectionTwoSesquilinearChecks
+
+-- Physical conjugation is an isometry even on the nondecaying infinity endpoint.
+example (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤) :
+    ‖WeightedCoeff.sobolevConjugation s a‖ = ‖a‖ :=
+  (WeightedCoeff.sobolevConjugation s).norm_map a
+
+-- Equal positive modes pair with conjugation, so the imaginary phase changes sign.
+example (s : ℝ) :
+    WeightedCoeff.sobolevSesquilinearPairing s
+      (WeightedCoeff.ofFinsupp (Weight.sobolev s) 1 (Finsupp.single 1 1))
+      (WeightedCoeff.ofFinsupp (Weight.sobolev (-s)) ⊤ (Finsupp.single 1 Complex.I)) = -Complex.I := by
+  simp [WeightedCoeff.sobolevSesquilinearPairing_apply,WeightedCoeff.ofFinsupp_apply,Finsupp.single_apply]
+
+-- The corrected bilinear product of those same two modes is instead zero.
+example (s : ℝ) :
+    WeightedCoeff.sobolevBilinearPairing s
+      (WeightedCoeff.ofFinsupp (Weight.sobolev s) 1 (Finsupp.single 1 1))
+      (WeightedCoeff.ofFinsupp (Weight.sobolev (-s)) ⊤ (Finsupp.single 1 Complex.I)) = 0 := by
+  rw [WeightedCoeff.sobolevBilinearPairing_apply]
+  trans ∑' _ : ℤ, (0 : ℂ)
+  · apply tsum_congr
+    intro n
+    by_cases hn : n = 1
+    · simp [hn,WeightedCoeff.ofFinsupp_apply]
+    · simp [WeightedCoeff.ofFinsupp_apply,Finsupp.single_apply,Ne.symm hn]
+  · simp
+
+-- The full Riesz representative is conjugate linear, including the source p=1 endpoint.
+example (s : ℝ) :
+    (WeightedCoeff.sobolevSesquilinearRiesz (q := ⊤) s (by norm_num)
+      (Complex.I • WeightedCoeff.evalCLM (Weight.sobolev s) 1 3)).val 3 = -Complex.I := by
+  simp [WeightedCoeff.ofFinsupp_apply]
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q]
+    (s : ℝ) (hp : p ≠ ⊤) (L : WeightedCoeff (Weight.sobolev s) p →L[ℂ] ℂ) :
+    ∃! b : WeightedCoeff (Weight.sobolev (-s)) q, ∀ h : WeightedCoeff (Weight.sobolev s) p,
+      WeightedCoeff.sobolevSesquilinearPairing s h b = L h :=
+  WeightedCoeff.existsUnique_sobolevSesquilinearRepresentative s hp L
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q]
+    (s : ℝ) (hp : p ≠ ⊤) (hq : q ≠ ⊤)
+    (a : WeightedCoeffPair (Weight.sobolev s) p) (b : WeightedCoeffPair (Weight.sobolev (-s)) q) :
+    ‖WeightedCoeffPair.sobolevSesquilinearPairing s a b‖ ≤ ‖a‖*‖b‖ :=
+  WeightedCoeffPair.norm_sobolevSesquilinearPairing_le_one s hp hq a b
+
+-- Both endpoint bounds use the actual frequencywise sum norm, not a maximum replacement.
+example (s : ℝ) (a : WeightedCoeffPairInfty (Weight.sobolev s))
+    (b : WeightedCoeffPair (Weight.sobolev (-s)) 1) :
+    ‖WeightedCoeffPairInfty.sobolevSesquilinearPairing s a b‖ ≤ ‖a‖*‖b‖ :=
+  WeightedCoeffPairInfty.norm_sobolevSesquilinearPairing_le s a b
+
+example (s : ℝ) (a : WeightedCoeffPair (Weight.sobolev s) 1)
+    (b : WeightedCoeffPairInfty (Weight.sobolev (-s))) :
+    ‖WeightedCoeffPair.sobolevSesquilinearOneInfinity s a b‖ ≤ ‖a‖*‖b‖ :=
+  WeightedCoeffPair.norm_sobolevSesquilinearOneInfinity_le s a b
+
+example (s : ℝ) :
+    ‖WeightedCoeffPairInfty.ofPair (Weight.sobolev s)
+      (WeightedCoeff.inverseWeightCoefficients (Weight.sobolev s))
+      (WeightedCoeff.inverseWeightCoefficients (Weight.sobolev s))‖ = 2 := by
+  rw [WeightedCoeffPairInfty.norm_diagonal,WeightedCoeff.norm_inverseWeightCoefficients,mul_one]
+
+example (s : ℝ) :
+    Continuous (fun ab : WeightedCoeffPair (Weight.sobolev s) 1 × WeightedCoeffPairInfty (Weight.sobolev (-s)) =>
+      WeightedCoeffPair.sobolevSesquilinearOneInfinity s ab.1 ab.2) :=
+  WeightedCoeffPair.continuous_sobolevSesquilinearOneInfinity s
+
+-- A genuine arbitrary-period distribution is tested against the conjugated smooth function.
+example (L : ℝ) (hL : 0 < L) (s : ℝ) (T : 𝓢'(ℝ, ℂ)) (hT : Fourier.IsPeriodicDistribution L T)
+    (a : WeightedCoeff (Weight.sobolev s) ⊤)
+    (ha : ∀ n, a.val n = T (Fourier.periodCoefficientTest L hL n))
+    (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f L) :
+    ∃! b : WeightedCoeff (Weight.sobolev (-s)) 1,
+      (∀ n, b.val n = Fourier.intervalFourierCoefficient L f n) ∧
+      WeightedCoeff.sobolevSesquilinearPairing s a b =
+        T (SchwartzMap.smulLeftCLM ℂ (fun x => star (f x)) (Fourier.periodCoefficientTest L hL 0)) :=
+  Fourier.existsUnique_sesquilinear_smooth_test L hL s T hT a ha f hf hp
+
+example (s : ℝ) :
+    ∃ F : WeightedCoeff (Weight.sobolev s) ⊤ → ℂ, AnalyticOnNhd ℂ F Set.univ ∧
+      ∀ x, ¬∃ b : WeightedCoeff (Weight.sobolev (-s)) 1,
+        ∀ h : WeightedCoeff (Weight.sobolev s) ⊤,
+          WeightedCoeff.sobolevSesquilinearPairing s h b = fderiv ℂ F x h :=
+  WeightedCoeff.exists_analytic_sobolev_without_sesquilinearRepresentative s
+
+end SectionTwoSesquilinearChecks

@@ -1,6 +1,56 @@
 # Implementation status
 
-## Current milestone: Section 2 bracket compatibility, domain exchange, and Hilbert Jacobi
+## Current milestone: Section 2 sesquilinear duality and physical pairings
+
+Section 2's sesquilinear product is now proved on the full real Sobolev
+scale and at both conjugate endpoints. `SobolevSesquilinearPairing.lean`
+bundles physical conjugation as a conjugate-linear isometric involution:
+it conjugates coefficients and reverses their Fourier indices. Composing
+the corrected bilinear product with this involution gives precisely the
+printed same-index sesquilinear sum. The sum converges absolutely, has a
+constant-one norm bound, is jointly continuous, and is complex linear in
+the first variable and conjugate linear in the second.
+
+`SobolevPairSesquilinear.lean` adds the two signed components. The product
+has a constant-one bound in the original finite pair norms, and in both
+endpoint orientations using the separate frequencywise sum-norm infinity
+space. All three pair products are jointly continuous and absolutely
+convergent. Reflecting both first components recovers the physical scalar
+Fourier convention without changing the product. The maximum product norm
+is used only as an auxiliary continuity coordinate, not as the source
+infinity norm.
+
+`SobolevSesquilinearDuality.lean` identifies the entire scalar continuous
+dual at every finite source exponent, including one, with a unique
+opposite-order representative of exactly the operator norm. This Riesz
+map is a conjugate-linear isometry; multiplying a functional by i multiplies
+its representative by -i. Its coefficient at n is the conjugate of the
+functional on the raw mode n. The infinity-source analytic counterexample
+persists with this convention, so no unrestricted infinity Riesz or gradient
+claim is introduced.
+
+`SobolevSesquilinearDistributionPairing.lean` identifies the product with
+actual periodic distributional action on a conjugated smooth test for every
+positive period. Every smooth periodic test supplies its unique coefficient
+representative automatically. The original normalized physical L2 integral
+formula is also proved, retaining the factor 1/L. These statements keep the
+sesquilinear same-index formula distinct from the corrected opposite-index
+bilinear formula.
+
+Next: prove the normalized periodic action for locally integrable periodic
+functions, then resume the numbered Section 3 audit. The dissertation remains
+incomplete. G.2's arbitrary-time interval norm is unresolved; neither proposed
+spectral-height correction is adopted. The optional original m=1 sharpening
+remains under the accepted Lemma 27.2 correction.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The full project check passed all 6,720 build jobs and public
+examples. The axiom audit passed for 29,013 NLS declarations with only the
+permitted classical axioms. The full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.
+
+## Previous milestone: Section 2 bracket compatibility, domain exchange, and Hilbert Jacobi
 
 The new full-gradient Sobolev bracket now agrees with the established
 physical source bracket on their order-zero overlap.

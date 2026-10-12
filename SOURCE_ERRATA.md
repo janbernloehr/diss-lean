@@ -1042,3 +1042,27 @@ ambient domains and shared state, and both product rules are available.
 `SobolevZeroBracket.lean` proves Jacobi on the order-zero Hilbert domain.
 These results do not claim closure under nested brackets on every reciprocal
 Sobolev intersection or remove the infinity-source obstruction.
+
+
+## Section 2 sesquilinear convention: the original same-index formula is retained
+
+The scalar discrepancy above concerns the unconjugated physical product.
+The printed sesquilinear sum with equal indices is valid.
+`SobolevSesquilinearPairing.lean` proves this distinction for all real orders
+and both conjugate endpoints: physical conjugation conjugates and reverses
+coefficients, so applying it in the second factor of the corrected bilinear
+pairing gives the same-index sesquilinear sum.
+
+`SobolevPairSesquilinear.lean` retains the original finite pair norms and
+the separate frequencywise sum-norm infinity space in both endpoint
+orientations, with constant-one bounds. The full scalar sesquilinear Riesz
+map in `SobolevSesquilinearDuality.lean` is conjugate linear in the functional,
+not complex linear. This agrees with linearity of the product in its first
+argument and conjugate linearity in its second. The previous bilinear
+gradient convention is unchanged. The infinity-source analytic obstruction
+is also proved in the sesquilinear convention.
+
+The smooth-test distributional identity and normalized L2 integral formula
+hold at every positive period in `SobolevSesquilinearDistributionPairing.lean`.
+The broader locally integrable-function action is the next audit obligation;
+these results do not claim that it follows from the L2 special case alone.

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the full-gradient Sobolev bracket now agrees with the
-existing physical bracket on their order-zero overlap. Antisymmetry and
-both product rules are proved on the general common Sobolev domain;
-Jacobi is proved for the order-zero Hilbert bracket through that agreement.
-[The current audit](coverage/SECTION_2.md) records the domains and endpoint
-restrictions. The dissertation remains incomplete.
+Latest milestone: Section 2's sesquilinear product now covers all real
+Sobolev orders and both conjugate endpoints, with the original pair norms,
+full finite-source Riesz representation, and normalized physical action on
+smooth periodic tests. The infinity-source obstruction remains explicit.
+[The current audit](coverage/SECTION_2.md) records the scope. Locally
+integrable periodic action is next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

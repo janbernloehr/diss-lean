@@ -3280,3 +3280,7 @@ import NLS.Poisson.SobolevEndpointBivector
 import NLS.Poisson.SobolevSourceCompatibility
 import NLS.Poisson.SobolevZeroBracket
 import NLS.Poisson.SobolevBracketSwap
+import NLS.SequenceSpaces.SobolevSesquilinearPairing
+import NLS.SequenceSpaces.SobolevPairSesquilinear
+import NLS.SequenceSpaces.SobolevSesquilinearDuality
+import NLS.Fourier.SobolevSesquilinearDistributionPairing
