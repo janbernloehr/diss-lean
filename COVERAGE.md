@@ -8,7 +8,7 @@ The appendix audits below use `NLS.Fourier` and `NLS.ComplexAnalysis`.
 Later milestone entries retain their historical validation counts and
 then-current limitations. The current Appendix G comparison is in
 [`coverage/APPENDIX_G.md`](coverage/APPENDIX_G.md), and Appendix H is in
-[`coverage/APPENDIX_H.md`](coverage/APPENDIX_H.md). The focused Section 2 convergence audit is in
+[`coverage/APPENDIX_H.md`](coverage/APPENDIX_H.md). The focused Section 2 convergence and scalar-pairing audit is in
 [`coverage/SECTION_2.md`](coverage/SECTION_2.md). The spectral overview link below and the final
 dyadic-counterexample entry record the current status of Theorem 1.1.
 
@@ -2264,3 +2264,40 @@ jobs and public examples. The axiom audit passed for 28,499 NLS declarations
 with only the permitted classical axioms. The full build retains 21 existing
 warnings and introduces none. The source inventory check passed for 156
 candidate statement labels; that count is not a completeness certificate.
+
+## Section 2 physical bilinear pairing
+
+Section 2's printed same-index scalar bilinear pairing is now formally
+refuted by the smooth period-one wave exp(2*pi*i*x): its coefficient sum
+is one and its actual physical integral against itself is zero. The
+corrected pairing reverses one Fourier index. Abstract coefficient duality
+remains unchanged; its physical interpretation uses that reflection.
+
+`ArbitraryPeriodBilinearParseval.lean` proves the corrected physical
+identity for all positive periods and square-integrable inputs with the
+original 1/L factor. It also proves the unchanged sesquilinear formula.
+`SobolevBilinearPairing.lean` supplies a bounded bilinear map on every real
+Sobolev scale with absolute convergence and the sharp Hölder constant,
+including both conjugate infinity endpoints.
+
+`SobolevDistributionPairing.lean` identifies the pairing with normalized
+actual distributional action. `SmoothPeriodicTestLift.lean` constructs
+an exact Schwartz lift of every smooth period-two test, and
+`SmoothPeriodicDistributionPairing.lean` gives the action identity for
+all such tests and arbitrary periodic distributions of the stated regularity.
+No extra smooth-test growth hypothesis is imposed. The source discrepancy
+and the exact scope are recorded in `SOURCE_ERRATA.md` and `coverage/SECTION_2.md`.
+
+Next: arbitrary-positive-period distribution transport and the full
+Section 2 dual-gradient representation, including exponent endpoints,
+then the numbered Section 3 statements. The dissertation remains incomplete.
+G.2's arbitrary-time interval norm is unresolved; neither proposed
+spectral-height correction is adopted. The optional original m=1 sharpening
+remains under the accepted Lemma 27.2 correction.
+
+Validation: the focused builds and standalone public probe passed without
+new warnings. The full project check passed all 6,691 build jobs and public
+examples. The axiom audit passed for 28,555 NLS declarations with only the
+permitted classical axioms. The full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.

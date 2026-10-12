@@ -42685,3 +42685,68 @@ example (s : ℝ) :
   tendsto_sobolevDistributionSynthesis_truncate s _
 
 end SectionTwoConvergenceChecks
+
+noncomputable section
+open NLS NLS.Fourier MeasureTheory Set
+open scoped ENNReal SchwartzMap ContDiff
+section SectionTwoPairingChecks
+
+-- The original 1/L normalization is retained on every positive interval.
+example {L : ℝ} (hL : 0 < L) {f g : ℝ → ℂ}
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 L)))
+    (hg : MemLp g 2 (volume.restrict (Ioc 0 L))) :
+    (∑' n : ℤ, intervalFourierCoefficient L f (-n)*intervalFourierCoefficient L g n) =
+      (L : ℂ)⁻¹ * ∫ x in (0 : ℝ)..L, f x*g x :=
+  (hasSum_bilinear_intervalFourierCoefficient hL hf hg).tsum_eq
+
+-- Both conjugate endpoints retain the exact weighted Hölder constant.
+example (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) 1)
+    (b : WeightedCoeff (Weight.sobolev (-s)) ⊤) :
+    ‖WeightedCoeff.sobolevBilinearPairing s a b‖ ≤ ‖a‖*‖b‖ :=
+  WeightedCoeff.norm_sobolevBilinearPairing_le s a b
+
+example (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤)
+    (b : WeightedCoeff (Weight.sobolev (-s)) 1) :
+    Summable (fun n : ℤ => ‖a.val n*b.val (-n)‖) :=
+  WeightedCoeff.summable_norm_sobolevBilinearPairing s a b
+
+-- Any smooth periodic test, not only a finite Fourier polynomial, has an actual Schwartz lift.
+example (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 2) (x : ℝ) :
+    periodizationCLM (smoothPeriodicTestLift f) (x : AddCircle (2 : ℝ)) = f x :=
+  periodization_smoothPeriodicTestLift f hf hp x
+
+-- The actual physical test coefficients exist even at the infinity endpoint and negative order.
+example (s : ℝ) (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 2) :
+    ∃ b : WeightedCoeff (Weight.sobolev s) ⊤, ∀ n, b.val n = periodTwoCoefficient f n :=
+  ⟨periodizationSobolevCoefficients s (smoothPeriodicTestLift f),
+    smoothPeriodicTestLift_sobolev_coefficients s f hf hp⟩
+
+example (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤) (f : ℝ → ℂ)
+    (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f 2)
+    (b : WeightedCoeff (Weight.sobolev (-s)) 1) (hb : ∀ n, b.val n = periodTwoCoefficient f n) :
+    WeightedCoeff.sobolevBilinearPairing s a b =
+      sobolevDistributionSynthesisCLM s a (SchwartzMap.smulLeftCLM ℂ f (coefficientTest 0)) :=
+  sobolevBilinearPairing_smooth_periodic s a f hf hp b hb
+
+-- The source discrepancy is an exact physical single-mode calculation.
+example : (∑' n : ℤ, periodOneCoefficient sourceSectionTwoBilinearWave n *
+    periodOneCoefficient sourceSectionTwoBilinearWave n) = 1 := sourceSectionTwo_same_index_pairing
+
+example : (∫ x in (0 : ℝ)..1, sourceSectionTwoBilinearWave x*sourceSectionTwoBilinearWave x) = 0 :=
+  sourceSectionTwo_bilinear_integral
+
+example : ¬∀ f g : ℝ → ℂ, ContDiff ℝ ∞ f → ContDiff ℝ ∞ g →
+    Function.Periodic f 1 → Function.Periodic g 1 →
+    (∑' n : ℤ, periodOneCoefficient f n*periodOneCoefficient g n) =
+      ∫ x in (0 : ℝ)..1, f x*g x := sourceSectionTwo_printed_bilinear_pairing_false
+
+-- The sesquilinear formula preserves equal indices and physical complex conjugation.
+example {L : ℝ} (hL : 0 < L) {f g : ℝ → ℂ}
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 L)))
+    (hg : MemLp g 2 (volume.restrict (Ioc 0 L))) :
+    HasSum (fun n : ℤ => intervalFourierCoefficient L f n *
+      starRingEnd ℂ (intervalFourierCoefficient L g n))
+      ((L : ℂ)⁻¹ * ∫ x in (0 : ℝ)..L, f x*starRingEnd ℂ (g x)) :=
+  hasSum_sesquilinear_intervalFourierCoefficient hL hf hg
+
+end SectionTwoPairingChecks

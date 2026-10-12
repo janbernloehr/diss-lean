@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's unrestricted Fourier-series norm convergence
-is now refuted at infinity by actual periodic distributions at every real
-Sobolev order. The exact weighted c0 criterion and the finite-exponent
-correction are proved. [The current convergence audit](coverage/SECTION_2.md)
-records the scope. The dissertation is incomplete; Section 2's pairing and
-dual-gradient assertions are next.
+Latest milestone: Section 2's scalar bilinear pairing now has a formal
+single-mode counterexample and a corrected formula with frequency reversal.
+The physical integral identity retains every positive period; weighted
+bounds include both conjugate endpoints, with actual distributional action
+proved on all smooth period-two tests. [The current audit](coverage/SECTION_2.md)
+records the scope. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

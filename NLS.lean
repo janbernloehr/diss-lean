@@ -3255,3 +3255,9 @@ import NLS.ZakharovShabat.SobolevRiccatiRescaling
 import NLS.ZakharovShabat.SobolevHamiltonianRescaling
 import NLS.SequenceSpaces.InfinityTruncation
 import NLS.Fourier.SourceSectionTwoConvergence
+import NLS.SequenceSpaces.SobolevBilinearPairing
+import NLS.Fourier.ArbitraryPeriodBilinearParseval
+import NLS.Fourier.SobolevDistributionPairing
+import NLS.Fourier.SourceSectionTwoPairingAudit
+import NLS.Fourier.SmoothPeriodicTestLift
+import NLS.Fourier.SmoothPeriodicDistributionPairing

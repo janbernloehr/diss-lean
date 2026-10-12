@@ -938,3 +938,43 @@ convergence for weighted c0 inputs at infinity; or distributional convergence
 at every Banach exponent. The last is already proved on the full real Sobolev
 scale and remains unchanged. See `coverage/SECTION_2.md` for the precise scope;
 the remaining Section 2 duality and gradient assertions are still being audited.
+
+## Section 2: missing frequency reversal in scalar bilinear duality
+
+Source: dissertation, printed pages 21–22, checked in the rendered PDF.
+The scalar coefficients use the usual negative Fourier wave in their
+extraction. On page 22 the source defines the unconjugated pairing as
+sum_n u_n*v_n and calls it a natural extension of distributional action.
+The corresponding physical pairing instead uses sum_n u_n*v_(-n).
+
+`SourceSectionTwoPairingAudit.lean` gives an exact smooth period-one
+counterexample: u=v=exp(2*pi*i*x). Its actual normalized coefficients have
+only the value one at index one. The printed same-index sum is one, whereas
+the physical integral of u*v over the unit period is zero. The theorem
+`sourceSectionTwo_printed_bilinear_pairing_false` refutes the assertion even
+when both inputs are smooth and periodic.
+
+`ArbitraryPeriodBilinearParseval.lean` proves the corrected identity for
+all positive periods L and all square-integrable physical inputs, retaining
+the factor 1/L. Reversal may be placed in either factor by reindexing.
+It separately preserves the ordinary sesquilinear formula with equal
+indices and complex conjugation. Physical conjugation reverses the Fourier
+index, which explains why the corrected bilinear formula is consistent
+with the source's relation to the sesquilinear product.
+
+`SobolevBilinearPairing.lean` constructs the corrected bounded bilinear map
+on FL^(s,p) times FL^(-s,q), with absolute convergence and the exact product
+of the original norms for every real s and every conjugate Banach pair,
+including (1,infinity) and (infinity,1). `SobolevDistributionPairing.lean`
+identifies it with normalized actual distributional action on Schwartz
+periodizations. `SmoothPeriodicTestLift.lean` lifts every smooth period-two
+test without an additional growth hypothesis, and
+`SmoothPeriodicDistributionPairing.lean` proves the action identity for all
+such tests and arbitrary periodic distributions with the stated coefficients.
+
+Abstract same-index `Coeff.dualPairing` remains valid as coefficient
+duality. Its physical interpretation inserts frequency reflection, as the
+existing source-gradient constructions already do. The source's signed
+pair basis does not remove this discrepancy in its preceding scalar formula.
+Arbitrary-positive-period distribution transport and the full dual-gradient
+representation remain separate audit obligations.

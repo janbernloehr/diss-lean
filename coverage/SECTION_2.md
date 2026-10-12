@@ -1,8 +1,9 @@
-# Section 2: current convergence audit
+# Section 2: current convergence and scalar pairing audit
 
-This records the Fourier-convergence paragraph on printed page 21, checked
-against the rendered source. It is a focused part of the Section 2 audit;
-it does not certify the remaining duality, reflexivity, or gradient claims.
+This records the Fourier-convergence and scalar-pairing paragraphs on
+printed pages 21–22, checked against the rendered source. It is a focused
+part of the Section 2 audit; it does not certify the remaining full dual
+representation, reflexivity, or gradient claims.
 
 The source defines the scalar Fourier-Lebesgue space for every real
 regularity and every exponent from one through infinity, then asserts that
@@ -31,7 +32,33 @@ component magnitudes; existing `PairDistributionInfty.lean` preserves that
 norm and the reflected first signed coefficient. It must not be silently
 replaced by the product maximum norm when auditing the rest of Section 2.
 
-Next: audit the scalar bilinear pairing against the actual distributional
-action on printed page 22, then its dual-gradient representation and the
-numbered statements in Section 3. Neither the candidate-label inventory nor
-this focused map establishes completeness of those remaining claims.
+## Scalar bilinear pairing
+
+The printed scalar sum uses the same index in both factors while claiming
+to extend physical distributional action. In the coefficient convention
+specified on page 21, the physical unconjugated pairing reverses one index.
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Source counterexample | `NLS.Fourier.sourceSectionTwo_printed_bilinear_pairing_false` | A smooth period-one wave has printed same-index sum one and physical integral zero. Its actual Fourier coefficients are computed exactly. |
+| Corrected physical bilinear formula | `NLS.Fourier.hasSum_bilinear_intervalFourierCoefficient` | Every positive period L and square-integrable inputs; reversed first index and the original 1/L normalization. |
+| Original sesquilinear formula | `NLS.Fourier.hasSum_sesquilinear_intervalFourierCoefficient` | The same physical domain, with equal indices and complex conjugation. |
+| Bounded scalar pairing | `NLS.WeightedCoeff.sobolevBilinearPairing`, `sobolevBilinearPairing_apply` | A complex bounded bilinear map on conjugate Sobolev coefficient spaces at every real order, using reversed second index. |
+| Exact bound and absolute convergence | `NLS.WeightedCoeff.norm_sobolevBilinearPairing_le`, `summable_norm_sobolevBilinearPairing` | Constant one for every conjugate Banach pair, including either infinity endpoint. |
+| Physical distributional action | `NLS.Fourier.periodicDistribution_sobolevBilinearPairing` | Any period-two tempered distribution with the stated coefficients, tested on Schwartz periodizations; the factor one half retains normalized periodic action. |
+| Every smooth periodic test | `NLS.Fourier.periodization_smoothPeriodicTestLift`, `smoothPeriodicTestLift_sobolev_coefficients` | Every smooth period-two test has an exact Schwartz lift and actual Fourier coefficients in every real Sobolev class and Banach exponent. No additional growth hypothesis. |
+| Full smooth-test action | `NLS.Fourier.periodicDistribution_sobolevBilinearPairing_smooth` | The corrected pairing equals the actual normalized windowed action on every smooth period-two test, for arbitrary periodic distributions of the stated regularity. |
+
+The zero-mode Schwartz window has periodization one half; this fixes the
+normalized action and prevents an accidental factor-two change. The lift
+multiplies by two and reconstructs the original test exactly. Ordinary
+abstract coefficient duality remains available; frequency reflection is
+required when interpreting it as a physical unconjugated pairing.
+
+The physical L2 integral formula covers every positive period. The general
+distributional smooth-test bridge currently uses the repository's period-two
+realization; arbitrary-positive-period distribution transport remains to
+be verified. Next are that transport and the full dual-gradient assertion,
+including its exponent endpoints, then the numbered Section 3 statements.
+The candidate-label inventory and this focused map do not establish
+completeness of those remaining claims.
