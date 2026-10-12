@@ -1577,3 +1577,43 @@ public examples and the axiom audit of 28144 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Physical L2 anti-discriminant and separated characteristics at rough sources
+
+`L2SeparatedCharacteristics.lean`, `L2SourceCharacteristics.lean`, and
+`L2CharacteristicCotangents.lean` remove the continuous-representative
+hypotheses from the physical comparisons at the Hilbert exponent. They
+reuse the established source-to-physical L2 map and prove exact identities
+by finite-source density.
+
+| Public entry point | Scope |
+| --- | --- |
+| `analyticOnNhd_l2SeparatedCharacteristic_joint`, `analyticOnNhd_l2AntiDiscriminant_joint` | Actual monodromy-entry formulas are jointly analytic on the entire physical L2 parameter space. |
+| `l2SeparatedCharacteristic_eq_zero_iff` | Literal original endpoint condition for normalized initial data, with both boundary signs. |
+| `l2SeparatedCharacteristic_zero`, `l2AntiDiscriminant_zero` | Exact sine and zero free normalizations. |
+| `l2Discriminant_sq_sub_four` | Delta squared minus four equals delta squared minus four times the two separated characteristics for every physical L2 input. |
+| `periodOneBoundaryCharacteristic_eq_l2`, `sourceAntiDiscriminantCandidate_eq_l2` | Exact original-source comparisons for every Hilbert source, without continuous-representative assumptions. |
+| `l2SeparatedCharacteristic_source_eq_zero_iff`, `sourceBoundarySpectrum_iff_l2_endpoint` | Original restricted-operator spectrum equals the physical characteristic zero set and the actual L2 endpoint condition. |
+| `analyticOrderAt_l2SeparatedCharacteristic_source` | Actual physical zero orders equal original algebraic multiplicities. |
+| `l2SeparatedCharacteristic_source_eq_product` | Complete original boundary labelings give the normalized physical characteristic product. |
+| `sourceBoundaryCharacteristicCotangent_eq_l2`, `sourceAntiDiscriminantCotangent_eq_l2` | Full continuous cotangent identities on the Hilbert source space. |
+| `sourceBoundaryCharacteristicCotangent_apply_eq_l2`, `sourceAntiDiscriminantCotangent_apply_eq_l2` | Every Hilbert source direction is included. |
+| `deriv_periodOneBoundaryCharacteristic_eq_l2`, `deriv_sourceAntiDiscriminantCandidate_eq_l2` | Exact spectral derivative comparisons. |
+
+Public checks verify the Dirichlet and Neumann endpoint signs separately,
+the off-diagonal anti-discriminant sum, original boundary spectra and
+multiplicities, labeled normalized products, arbitrary Hilbert variations,
+spectral differentiation, the determinant identity at a characteristic
+zero, and both free normalizations.
+
+The remaining physical-gradient transfer is an explicit integral formula
+for the actual potential derivative at arbitrary rough L2 inputs and
+directions. `ClassicalPotentialVariation.lean` proves the corresponding
+variation result for continuous input. The cotangent identities above
+alone do not supply that physical formula. The dissertation is incomplete.
+
+Validation: the full project check passed (6641 build jobs), including all
+public examples and the axiom audit of 28177 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

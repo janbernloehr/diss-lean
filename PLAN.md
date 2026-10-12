@@ -1,6 +1,60 @@
 # Implementation plan
 
-## Latest progress: the canonical discriminant is the actual L2 trace
+## Latest progress: physical L2 anti-discriminant and boundary characteristics
+
+The original source anti-discriminant and both separated boundary
+characteristics now have their exact physical L2 monodromy-entry formulas
+at every Hilbert source. No continuous representative or finite Fourier
+support is required. The comparisons use the same `sourcePhysicalL2`
+map as the discriminant, with the existing finite-source identities and
+density.
+
+`L2SeparatedCharacteristics.lean` defines the anti-discriminant as the
+sum of the two off-diagonal monodromy entries and retains the literal
+source formula for each separated characteristic. Their joint parameter
+analyticity is proved on the entire physical L2 space. A characteristic
+zero is exactly the original endpoint condition for the actual solution
+with initial data `(1,extensionSign b)`, including both Dirichlet and
+Neumann signs. The free characteristics equal sine, the free
+anti-discriminant vanishes, and determinant one gives
+`Delta^2-4 = delta^2-4*chi_D*chi_N` for every physical L2 potential.
+
+`L2SourceCharacteristics.lean` identifies these physical functions with
+the original source functions exactly. Consequently their zeros are the
+original boundary spectra, their zero orders are the original algebraic
+multiplicities, and a complete boundary labeling gives the normalized
+physical characteristic product. The spectral equivalence is also stated
+directly as the actual L2 endpoint condition.
+
+`L2CharacteristicCotangents.lean` transfers the entire source cotangents,
+including every Hilbert base point and direction, to the physical L2
+differentials under the established source map. Spectral derivatives
+agree as well. These differential identities do not yet supply the
+explicit physical variation integral at a rough L2 potential.
+
+The canonical discriminant trace comparison and full-time fundamental
+solution regularity remain proved. G.2's arbitrary-time interval norm
+remains unresolved; neither proposed spectral-height correction is
+adopted. The original m=1 sharpening remains optional under the accepted
+Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6641 build jobs), including all
+public examples and the axiom audit of 28177 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+Next: identify the actual potential derivative of the physical L2
+fundamental solution with the linearized Volterra equation and its
+physical integral. `ClassicalPotentialVariation.lean` supplies this for
+continuous potentials and continuous directions; the new source
+cotangent comparisons cover rough Hilbert inputs abstractly but do not
+provide the corresponding explicit integral formula. Use the actual L2
+Volterra inverse, retain the two off-diagonal signs, and prove the
+zero initial value and uniqueness of the variation for arbitrary L2
+directions before transferring endpoint gradient integral formulas.
+
+## Previous milestone: the canonical discriminant is the actual L2 trace
 
 The actual physical L2 monodromy trace now equals the canonical
 discriminant for every Hilbert source, without requiring a continuous

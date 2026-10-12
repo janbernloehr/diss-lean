@@ -41705,3 +41705,73 @@ example (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (z : ℂ) :
   rw [sourcePhysicalL2_ofFinsupp,l2Discriminant_of_continuous]
 
 end L2DiscriminantRealizationChecks
+
+-- Literal endpoint signs and physical characteristic comparisons for arbitrary Hilbert sources.
+section L2SourceCharacteristicChecks
+open Set NLS.LinearVolterra NLS.ZakharovShabat
+
+example (b : BoundaryCondition) (φ : NLS.CoeffPair 2) (z : ℂ) :
+    periodOneBoundaryCharacteristic (by simp) (by norm_num) b φ z =
+      l2SeparatedCharacteristic b (sourcePhysicalL2 φ) z := periodOneBoundaryCharacteristic_eq_l2 b φ z
+
+example (φ : NLS.CoeffPair 2) (z : ℂ) :
+    sourceAntiDiscriminantCandidate (by simp) (by norm_num) φ z =
+      (l2Monodromy (sourcePhysicalL2 φ) z) 0 1+(l2Monodromy (sourcePhysicalL2 φ) z) 1 0 :=
+  sourceAntiDiscriminantCandidate_eq_l2 φ z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    l2SeparatedCharacteristic .dirichlet u z = 0 ↔
+      (l2SolutionCurve u z (1,1) ⟨1,by constructor <;> norm_num⟩).1 =
+      (l2SolutionCurve u z (1,1) ⟨1,by constructor <;> norm_num⟩).2 := by
+  simpa only [BoundaryCondition.extensionSign,one_mul] using
+    l2SeparatedCharacteristic_eq_zero_iff .dirichlet u z
+
+example (u : IntervalPairL2) (z : ℂ) :
+    l2SeparatedCharacteristic .neumann u z = 0 ↔
+      (l2SolutionCurve u z (1,-1) ⟨1,by constructor <;> norm_num⟩).1 =
+      -(l2SolutionCurve u z (1,-1) ⟨1,by constructor <;> norm_num⟩).2 := by
+  simpa only [BoundaryCondition.extensionSign,neg_one_mul] using
+    l2SeparatedCharacteristic_eq_zero_iff .neumann u z
+
+example (b : BoundaryCondition) (φ : NLS.CoeffPair 2) (z : ℂ) :
+    l2SeparatedCharacteristic b (sourcePhysicalL2 φ) z = 0 ↔
+      z ∈ b.spectrum (by simp) (periodOneBoundaryPotential (by simp) (by norm_num) φ).val
+        (periodOneBoundaryPotential (by simp) (by norm_num) φ).property :=
+  l2SeparatedCharacteristic_source_eq_zero_iff b φ z
+
+example (b : BoundaryCondition) (φ : NLS.CoeffPair 2) (z : ℂ) :
+    analyticOrderAt (l2SeparatedCharacteristic b (sourcePhysicalL2 φ)) z =
+      (b.algebraicMultiplicity (by simp) (periodOneBoundaryPotential (by simp) (by norm_num) φ).val
+        (periodOneBoundaryPotential (by simp) (by norm_num) φ).property z : ℕ∞) :=
+  analyticOrderAt_l2SeparatedCharacteristic_source b φ z
+
+example (b : BoundaryCondition) (φ : NLS.CoeffPair 2) (N : ℕ) (ξ : ℤ → ℂ)
+    (h : BoundaryRootLabeling b (by simp) (periodOneBoundaryPotential (by simp) (by norm_num) φ).val
+      (periodOneBoundaryPotential (by simp) (by norm_num) φ).property N ξ) :
+    l2SeparatedCharacteristic b (sourcePhysicalL2 φ) = boundaryCharacteristicProduct ξ :=
+  l2SeparatedCharacteristic_source_eq_product b φ N ξ h
+
+example (b : BoundaryCondition) (φ h : NLS.CoeffPair 2) (z : ℂ) :
+    sourceBoundaryCharacteristicCotangent (by simp) (by norm_num) b z φ h =
+      (fderiv ℂ (fun u : IntervalPairL2 => l2SeparatedCharacteristic b u z) (sourcePhysicalL2 φ))
+        (sourcePhysicalL2 h) := sourceBoundaryCharacteristicCotangent_apply_eq_l2 b φ h z
+
+example (φ h : NLS.CoeffPair 2) (z : ℂ) :
+    sourceAntiDiscriminantCotangent (by simp) (by norm_num) z φ h =
+      (fderiv ℂ (fun u : IntervalPairL2 => l2AntiDiscriminant u z) (sourcePhysicalL2 φ))
+        (sourcePhysicalL2 h) := sourceAntiDiscriminantCotangent_apply_eq_l2 φ h z
+
+example (b : BoundaryCondition) (φ : NLS.CoeffPair 2) (z : ℂ) :
+    deriv (periodOneBoundaryCharacteristic (by simp) (by norm_num) b φ) z =
+      deriv (l2SeparatedCharacteristic b (sourcePhysicalL2 φ)) z :=
+  deriv_periodOneBoundaryCharacteristic_eq_l2 b φ z
+
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ)
+    (hz : l2SeparatedCharacteristic b u z = 0) :
+    (l2Discriminant u z)^2-4 = (l2AntiDiscriminant u z)^2 := by
+  cases b <;> rw [l2Discriminant_sq_sub_four] <;> simp [hz]
+
+example (b : BoundaryCondition) (z : ℂ) :
+    l2SeparatedCharacteristic b 0 z = Complex.sin z ∧ l2AntiDiscriminant 0 z = 0 := by simp
+
+end L2SourceCharacteristicChecks

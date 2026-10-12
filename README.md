@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the canonical discriminant equals the actual L2
-monodromy trace for every Hilbert source, including rough potentials.
-The comparison retains the normalized periodic spectral product and
-both parity levels, and identifies the complete source cotangent with
-the physical L2 differential. Full-time fundamental-solution regularity
-is proved. The dissertation is incomplete; the next transfer concerns
-the anti-discriminant and separated boundary characteristics.
+Latest milestone: the anti-discriminant and both separated boundary
+characteristics have their exact physical L2 formulas at every Hilbert
+source. The original endpoint signs, spectra, zero multiplicities,
+normalized products, and full source cotangents are retained. This
+extends the preceding L2 discriminant comparison. The dissertation is
+incomplete; the next step is the explicit L2 potential-variation integral.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

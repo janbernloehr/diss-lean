@@ -3208,3 +3208,6 @@ import NLS.ZakharovShabat.L2PeriodicUniqueness
 import NLS.ZakharovShabat.SourcePhysicalL2
 import NLS.ZakharovShabat.L2Discriminant
 import NLS.ZakharovShabat.L2DiscriminantCotangent
+import NLS.ZakharovShabat.L2SeparatedCharacteristics
+import NLS.ZakharovShabat.L2SourceCharacteristics
+import NLS.ZakharovShabat.L2CharacteristicCotangents
