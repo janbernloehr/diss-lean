@@ -976,5 +976,11 @@ Abstract same-index `Coeff.dualPairing` remains valid as coefficient
 duality. Its physical interpretation inserts frequency reflection, as the
 existing source-gradient constructions already do. The source's signed
 pair basis does not remove this discrepancy in its preceding scalar formula.
-Arbitrary-positive-period distribution transport and the full dual-gradient
-representation remain separate audit obligations.
+Arbitrary-positive-period distribution transport is now proved in
+`ArbitraryPeriodDistribution.lean` and `ArbitraryPeriodDistributionPairing.lean`.
+The normalized coefficient tests periodize to (1/L) times the original
+negative Fourier wave; the zero-mode window periodizes to exactly 1/L.
+Inverse dilation preserves each raw coefficient, gives unique weighted
+Fourier representation, and proves the corrected smooth-test pairing for
+every positive period, every real regularity and both conjugate endpoints.
+The full dual-gradient representation remains a separate audit obligation.

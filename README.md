@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's scalar bilinear pairing now has a formal
-single-mode counterexample and a corrected formula with frequency reversal.
-The physical integral identity retains every positive period; weighted
-bounds include both conjugate endpoints, with actual distributional action
-proved on all smooth period-two tests. [The current audit](coverage/SECTION_2.md)
-records the scope. The dissertation remains incomplete.
+Latest milestone: Section 2's corrected distributional pairing now covers
+every positive period, with exact coefficient normalization and both
+conjugate endpoints. Actual periodic distributions have unique weighted
+Fourier representations and distributionally convergent Fourier sums.
+[The current audit](coverage/SECTION_2.md) records the scope. The dissertation
+remains incomplete; full dual-gradient representation is next.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

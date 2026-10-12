@@ -1,6 +1,45 @@
 # Implementation plan
 
-## Latest progress: Section 2 physical bilinear pairing
+## Latest progress: Section 2 distributional pairing on every positive period
+
+The corrected Section 2 scalar distributional pairing now holds on every
+positive period. `DistributionDilation.lean` constructs continuous linear
+rescaling of actual distributions with an exact inverse and the required
+inverse Jacobian. Actual translation invariance rescales with the period.
+
+`ArbitraryPeriodDistribution.lean` defines normalized Schwartz coefficient
+tests whose periodizations are exactly (1/L) times the negative Fourier
+waves. The zero-mode window is therefore normalized by 1/L. Each raw
+weighted coefficient is recovered unchanged; every actual periodic
+distribution of the stated coefficient regularity has a unique synthesized
+representative. Continuous synthesis and distributional Fourier convergence
+include the infinity endpoint and all real Sobolev orders. Period two
+recovers the existing tests and distributions exactly.
+
+`ArbitraryPeriodDistributionPairing.lean` proves the original smooth-test
+action identity for every positive period and both conjugate endpoints.
+It also proves existence and uniqueness of the smooth test's actual
+normalized Fourier coefficients at every real order and Banach exponent.
+The public checks include period three's exact 1/3 normalization, arbitrary
+real regularity, p=1 and p=infinity, unique physical reconstruction, and
+distributional convergence for the previous norm-convergence counterexample.
+
+The period restriction in the previous scalar-pairing milestone is resolved.
+Next: the full Section 2 dual-gradient representation and reflexivity,
+with exponent endpoints audited explicitly, then numbered Section 3 results.
+The dissertation remains incomplete. G.2's arbitrary-time interval norm
+is unresolved; neither proposed spectral-height correction is adopted.
+The optional original m=1 sharpening remains under the accepted Lemma 27.2
+correction.
+
+Validation: the focused builds and standalone public probe passed without
+new warnings. The full project check passed all 6,694 build jobs and public
+examples. The axiom audit passed for 28,624 NLS declarations with only the
+permitted classical axioms. The full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.
+
+## Previous milestone: Section 2 physical bilinear pairing
 
 Section 2's printed same-index scalar bilinear pairing is now formally
 refuted by the smooth period-one wave exp(2*pi*i*x): its coefficient sum

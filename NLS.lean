@@ -3261,3 +3261,6 @@ import NLS.Fourier.SobolevDistributionPairing
 import NLS.Fourier.SourceSectionTwoPairingAudit
 import NLS.Fourier.SmoothPeriodicTestLift
 import NLS.Fourier.SmoothPeriodicDistributionPairing
+import NLS.Fourier.DistributionDilation
+import NLS.Fourier.ArbitraryPeriodDistribution
+import NLS.Fourier.ArbitraryPeriodDistributionPairing

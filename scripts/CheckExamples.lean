@@ -42750,3 +42750,66 @@ example {L : ℝ} (hL : 0 < L) {f g : ℝ → ℂ}
   hasSum_sesquilinear_intervalFourierCoefficient hL hf hg
 
 end SectionTwoPairingChecks
+
+noncomputable section
+open NLS NLS.Fourier Filter Topology
+open scoped ENNReal SchwartzMap ContDiff
+section ArbitraryPeriodDistributionChecks
+
+-- The original coefficient tests and distribution are recovered at period two.
+example (n : ℤ) : periodCoefficientTest 2 (by norm_num) n = coefficientTest n :=
+  periodCoefficientTest_two n
+
+example (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤) :
+    arbitraryPeriodDistributionSynthesis 2 (by norm_num) (Weight.sobolev s)
+      (Weight.hasTemperedInverse_sobolev s) a = sobolevDistributionSynthesisCLM s a :=
+  arbitraryPeriodDistributionSynthesis_two _ _ a
+
+-- A non-unit, non-two period keeps its exact normalized window.
+example (x : ℝ) : (∑' k : ℤ, periodCoefficientTest 3 (by norm_num) 0 (x+3*k)) = (1/3 : ℂ) := by
+  simpa only [Complex.ofReal_ofNat,one_div] using periodCoefficientTest_zero_periodization 3 (by norm_num) x
+
+-- Both negative real regularity and the infinity endpoint are allowed in physical synthesis.
+example (L : ℝ) (hL : 0 < L) (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤) :
+    IsPeriodicDistribution L (arbitraryPeriodDistributionSynthesis L hL (Weight.sobolev s)
+      (Weight.hasTemperedInverse_sobolev s) a) :=
+  arbitraryPeriodDistributionSynthesis_periodic L hL _ _ a
+
+example (L : ℝ) (hL : 0 < L) (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) 1) (n : ℤ) :
+    arbitraryPeriodDistributionSynthesis L hL (Weight.sobolev s)
+      (Weight.hasTemperedInverse_sobolev s) a (periodCoefficientTest L hL n) = a.val n :=
+  arbitraryPeriodDistributionSynthesis_coefficient L hL _ _ a n
+
+-- Arbitrary-period sources have exactly the same intrinsic weighted Fourier membership.
+example (L : ℝ) (hL : 0 < L) (s : ℝ) (T : 𝓢'(ℝ, ℂ))
+    (hT : IsPeriodicDistribution L T)
+    (ha : Memℓp (fun n : ℤ => (Weight.sobolev s n : ℂ)*T (periodCoefficientTest L hL n)) ⊤) :
+    ∃! a : WeightedCoeff (Weight.sobolev s) ⊤,
+      arbitraryPeriodDistributionSynthesis L hL _ (Weight.hasTemperedInverse_sobolev s) a = T :=
+  (periodicDistribution_weighted_memlp_iff_existsUnique_arbitraryPeriod L hL _ _ T).mp ⟨hT,ha⟩
+
+-- The same norm-convergence counterexample has distributionally convergent sums on every period.
+example (L : ℝ) (hL : 0 < L) (s : ℝ) :
+    let w := Weight.sobolev s
+    let a := WeightedCoeff.inverseWeightCoefficients w
+    Tendsto (fun S : Finset ℤ => arbitraryPeriodDistributionSynthesis L hL w
+      (Weight.hasTemperedInverse_sobolev s) (WeightedCoeff.truncate w ⊤ S a))
+      atTop (𝓝 (arbitraryPeriodDistributionSynthesis L hL w
+        (Weight.hasTemperedInverse_sobolev s) a)) :=
+  tendsto_arbitraryPeriodDistributionSynthesis_truncate L hL _ _ _
+
+-- Smooth test coefficients exist at every real order, including the infinity endpoint.
+example (L : ℝ) (hL : 0 < L) (s : ℝ) (f : ℝ → ℂ)
+    (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f L) :
+    ∃! b : WeightedCoeff (Weight.sobolev s) ⊤, ∀ n, b.val n = intervalFourierCoefficient L f n :=
+  existsUnique_smooth_arbitraryPeriod_coefficients L hL s f hf hp
+
+-- The arbitrary-period distributional action retains the conjugate (infinity,1) endpoint.
+example (L : ℝ) (hL : 0 < L) (s : ℝ) (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodicDistribution L T)
+    (a : WeightedCoeff (Weight.sobolev s) ⊤) (ha : ∀ n, a.val n = T (periodCoefficientTest L hL n))
+    (f : ℝ → ℂ) (hf : ContDiff ℝ ∞ f) (hp : Function.Periodic f L)
+    (b : WeightedCoeff (Weight.sobolev (-s)) 1) (hb : ∀ n, b.val n = intervalFourierCoefficient L f n) :
+    WeightedCoeff.sobolevBilinearPairing s a b = T (SchwartzMap.smulLeftCLM ℂ f (periodCoefficientTest L hL 0)) :=
+  periodicDistribution_sobolevBilinearPairing_arbitraryPeriod L hL s T hT a ha f hf hp b hb
+
+end ArbitraryPeriodDistributionChecks

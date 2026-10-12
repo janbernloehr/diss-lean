@@ -55,10 +55,27 @@ multiplies by two and reconstructs the original test exactly. Ordinary
 abstract coefficient duality remains available; frequency reflection is
 required when interpreting it as a physical unconjugated pairing.
 
-The physical L2 integral formula covers every positive period. The general
-distributional smooth-test bridge currently uses the repository's period-two
-realization; arbitrary-positive-period distribution transport remains to
-be verified. Next are that transport and the full dual-gradient assertion,
-including its exponent endpoints, then the numbered Section 3 statements.
-The candidate-label inventory and this focused map do not establish
-completeness of those remaining claims.
+## Arbitrary positive periods
+
+The distributional bridge now covers every positive period as well as the
+physical L2 integral formula. The transport acts on genuine tempered
+distributions and Schwartz tests, retains the inverse Jacobian, and has
+an exact inverse. No new source correction is introduced by this transport.
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Actual period rescaling | `NLS.Fourier.distributionDilation_periodic`, `distributionDilation_inverse` | Translation-invariant distributions are rescaled with their original action; inverse rescaling recovers the same distribution. Physical period applications use positive scales. |
+| Original coefficient normalization | `NLS.Fourier.periodCoefficientTest_periodization`, `periodCoefficientTest_zero_periodization` | The coefficient test periodizes to (1/L) times the negative Fourier wave. The zero-mode window periodizes to 1/L, including non-unit and non-integer periods. |
+| Intrinsic Fourier identification | `NLS.Fourier.periodicDistribution_weighted_memlp_iff_existsUnique_arbitraryPeriod` | Every actual period-L distribution belongs to the weighted coefficient class exactly when it has a unique synthesized representative. All Banach exponents and all positive weights with tempered inverse; in particular every real Sobolev order. |
+| Continuous physical synthesis | `NLS.Fourier.arbitraryPeriodDistributionSynthesisCLM`, `arbitraryPeriodDistributionSynthesis_coefficient` | A continuous linear map into actual distributions recovers every raw coefficient without a period-dependent factor. |
+| Fourier convergence at every period | `NLS.Fourier.tendsto_arbitraryPeriodDistributionSynthesis_truncate` | Distributional convergence of the finite Fourier sums at all Banach exponents, including infinity. This does not assert infinity norm convergence. |
+| Compatibility with the existing realization | `NLS.Fourier.periodCoefficientTest_two`, `arbitraryPeriodDistributionSynthesis_two` | Period two recovers the existing tests and synthesized distribution exactly. |
+| Original smooth-test coefficient membership | `NLS.Fourier.existsUnique_smooth_arbitraryPeriod_coefficients` | Every smooth period-L test has its actual normalized Fourier coefficients in every real Sobolev class and every Banach exponent, without an additional growth hypothesis. |
+| Corrected full smooth-test action | `NLS.Fourier.periodicDistribution_sobolevBilinearPairing_arbitraryPeriod` | Every positive period, real Sobolev order and conjugate Banach pair, including (1,infinity) and (infinity,1); the pairing equals the actual normalized distributional action. |
+
+The earlier period-two smooth-test entry is the core theorem used by this
+transport; its period restriction is no longer a limitation on the final
+pairing API. The remaining Section 2 audit concerns full dual-gradient
+representation, exponent endpoints, and reflexivity, followed by the
+numbered Section 3 statements. The candidate-label inventory and this
+focused map do not establish completeness of those remaining claims.
