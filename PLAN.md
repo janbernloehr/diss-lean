@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Current milestone: Lemma 4.4 and original restricted spectra
+## Current milestone: original boundary Riesz ranks and algebraic counts
+
+`SourceBoundaryContours.lean` constructs the actual restrictions of the
+original circle and four-edge rectangular Riesz integrals to each boundary
+base space. On admissible contours these are finite-rank idempotents.
+Their ranges are identified with the boundary part of the ambient range,
+and continuous linear equivalences preserve their ranks under the change
+from the original component-sum norm to the auxiliary maximum norm.
+
+`SourceBoundaryRootSpaces.lean` proves the exact original-domain pencil
+recursion for every finite Jordan chain. The full root space consists of
+all finite chains, stabilizes, and is finite dimensional. Its dimension
+defines the original restricted operator's algebraic multiplicity and
+agrees with the existing coefficient multiplicity. This identifies whole
+root spaces, not only eigenvectors or spectral sets.
+
+`SourceBoundaryContourDomains.lean` shows that both projected ranges lie
+in the original one-derivative boundary domain. Restricting the input to
+that domain leaves the entire range unchanged. Thus the ranks also apply
+to the displayed domain restrictions in the proof on page 32.
+
+`SourceBoundaryCounting.lean` proves the rank/multiplicity formulas and
+one common open convex connected original-input neighborhood containing
+the given potential and zero. Both boundary signs and every larger cutoff
+are covered. The projectors depend analytically on the original interval
+input, central ranks and total algebraic counts are 2N+1, and high-disk
+ranks and counts are one. Each high disk contains exactly one simple
+boundary eigenvalue, and there is no spectrum outside the central box
+and high disks. The central cutoff is positive.
+
+This completes the original-norm Riesz counting argument of Theorem 1.4
+with the established height-N boxes. It does not assert the separately
+refuted all-exponent norm-dependent height printed in the theorem.
+No replacement numerical height is silently adopted. The dissertation
+remains incomplete. Next: Lemma 4.5, auditing the original restricted
+operator trace formula for the analytic simple boundary eigenvalues.
+
+Validation: `./scripts/check.sh` passed: 6,765 build jobs, public examples,
+and the axiom audit of all 30,060 NLS declarations. The build reports
+21 existing warnings; all four new modules and the standalone public
+examples are warning-free. The source inventory check passed for 156
+candidate labels; this is not a completeness certificate.
+
+## Previous milestone: Lemma 4.4 and original restricted spectra
 
 `SourceLemma4_4.lean` restricts the actual operator to each original
 one-derivative boundary domain and proves its boundedness into the original

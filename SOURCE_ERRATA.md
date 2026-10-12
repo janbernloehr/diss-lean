@@ -1326,3 +1326,20 @@ the earlier auxiliary spectra and, after the completed interval extension,
 with the spectra exhausted by the canonical source labels. This step does
 not establish a new original-norm Riesz rank formula or repair the separate
 all-exponent printed-height assertion in Theorem 1.4.
+
+## Theorem 1.4 proof: original Riesz restrictions and counts (page 32)
+
+The original-norm audit proves the Riesz argument for both boundary signs
+on a common open convex connected neighborhood of the potential and zero.
+The actual circle restrictions have rank one; the central rectangular
+restrictions have rank 2N+1. Their ranges lie in the original one-derivative
+boundary domain, so the displayed restriction of the input to that domain
+leaves the ranges and ranks unchanged. Every Jordan-chain step is preserved,
+and the ranks count full original algebraic multiplicities.
+
+No correction to these rank formulas is needed for admissible contours
+with positive central cutoff. The uniform statement uses the already
+established central boxes of height N. It does not repair or reassert the
+separate all-exponent norm-dependent height claim in the printed theorem.
+In particular, neither a new numerical height nor the degenerate N=0
+central rectangle is silently introduced into the counting argument.

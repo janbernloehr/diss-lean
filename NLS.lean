@@ -3324,3 +3324,7 @@ import NLS.ZakharovShabat.SourceLemma4_3
 import NLS.ZakharovShabat.SourceLemma4_3Physical
 import NLS.ZakharovShabat.SourceLemma4_4
 import NLS.ZakharovShabat.SourceBoundarySpectra
+import NLS.ZakharovShabat.SourceBoundaryRootSpaces
+import NLS.ZakharovShabat.SourceBoundaryContours
+import NLS.ZakharovShabat.SourceBoundaryContourDomains
+import NLS.ZakharovShabat.SourceBoundaryCounting

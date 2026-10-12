@@ -44323,3 +44323,106 @@ example (b : BoundaryCondition) (φ : CoeffPair 1)
       DiscreteTopology (sourceBoundarySpectrum b (by simp) φ hφ) :=
   ⟨isClosed_sourceBoundarySpectrum b (by simp) φ hφ,
     discreteTopology_sourceBoundarySpectrum b (by simp) φ hφ⟩
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The original root chains use the actual domain, pencil, and inclusion at each step.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (z : ℂ) (n : ℕ) :
+    sourceBoundaryRootSpace b (by simp) φ hφ z (n+1) =
+      ((sourceBoundaryRootSpace b (by simp) φ hφ z n).comap
+        (sourceBoundaryPencil b (by simp) φ hφ z).toLinearMap).map (sourceBoundaryInclusion b).toLinearMap :=
+  sourceBoundaryRootSpace_succ b (by simp) φ hφ z n
+
+example (b : BoundaryCondition) (φ : CoeffPair 1)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (z : ℂ) :
+    FiniteDimensional ℂ (sourceBoundaryRootSpaceTop b (by simp) φ hφ z) :=
+  finiteDimensional_sourceBoundaryRootSpaceTop b (by simp) φ hφ z
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (z : ℂ) :
+    ∃ n, sourceBoundaryRootSpace b (by simp) φ hφ z n = sourceBoundaryRootSpaceTop b (by simp) φ hφ z :=
+  exists_sourceBoundaryRootSpace_eq_top b (by simp) φ hφ z
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (z : ℂ) :
+    sourceBoundaryAlgebraicMultiplicity b (by simp) φ hφ z =
+      b.algebraicMultiplicity (by simp) (CoeffPair.toMax 3 φ) hφ z :=
+  sourceBoundaryAlgebraicMultiplicity_eq b (by simp) φ hφ z
+
+-- These are restrictions of the actual integrals, with the entire range in the domain.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ)
+    (x : sourceBoundaryBaseSubspace (p := 3) b) :
+    (sourceBoundaryCircleProjection b (by simp) φ c r x).val = sourceResolventCircleIntegral (by simp) φ c r x.val :=
+  sourceBoundaryCircleProjection_apply b (by simp) φ hφ c r hr hc x
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (N : ℕ)
+    (hc : centralRectangleBoundary N ⊆ sourceResolventSet (by simp) φ)
+    (x : sourceBoundaryBaseSubspace (p := 3) b) :
+    ∃ a : sourceWeightedBoundarySubspace (p := 3) b 1,
+      sourceBoundaryInclusion b a = sourceBoundaryCentralProjection b (by simp) φ N x :=
+  sourceBoundaryCentralProjection_exists_domain b (by simp) φ hφ N hc x
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (N : ℕ)
+    (hc : centralRectangleBoundary N ⊆ sourceResolventSet (by simp) φ) :
+    ((sourceBoundaryCentralProjection b (by simp) φ N).comp (sourceBoundaryInclusion b)).range =
+      (sourceBoundaryCentralProjection b (by simp) φ N).range :=
+  range_sourceBoundaryCentralProjection_comp_inclusion b (by simp) φ hφ N hc
+
+-- Ranks count full original algebraic multiplicities, not only distinct spectral values.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (N : ℕ)
+    (hc : centralRectangleBoundary N ⊆ sourceResolventSet (by simp) φ) :
+    Module.finrank ℂ (sourceBoundaryCentralProjection b (by simp) φ N).range =
+      ∑ z ∈ sourceBoundaryCentralSpectrum b (by simp) φ hφ N,
+        sourceBoundaryAlgebraicMultiplicity b (by simp) φ hφ z :=
+  sourceBoundaryCentralProjection_rank_eq_sum b (by simp) φ hφ N hc
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (N : ℕ)
+    (h : SourceBoundaryCountingData (by simp) φ hφ N) :
+    (∑ z ∈ sourceBoundaryCentralSpectrum b (by simp) φ hφ N,
+      sourceBoundaryAlgebraicMultiplicity b (by simp) φ hφ z) = 2*N+1 := h.central_multiplicity b
+
+example (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet)
+    (N : ℕ) (h : SourceBoundaryCountingData (by simp) φ hφ N) (hn : N < (-5 : ℤ).natAbs) :
+    ∃! z : ℂ, z ∈ sourceBoundarySpectrum .neumann (by simp) φ hφ ∧
+      z ∈ Metric.ball ((Real.pi : ℂ)*(-5 : ℤ)) (Real.pi/4) ∧
+        sourceBoundaryAlgebraicMultiplicity .neumann (by simp) φ hφ z = 1 :=
+  h.disk_unique_simple .neumann (-5) hn
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (N : ℕ)
+    (h : SourceBoundaryCountingData (by simp) φ hφ N) :
+    Module.finrank ℂ ((sourceBoundaryCentralProjection b (by simp) φ N).comp (sourceBoundaryInclusion b)).range = 2*N+1 :=
+  h.central_domain_rank b
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (N : ℕ)
+    (h : SourceBoundaryCountingData (by simp) φ hφ N) :
+    IsIdempotentElem (sourceBoundaryCentralProjection b (by simp) φ N) ∧
+      FiniteDimensional ℂ (sourceBoundaryCentralProjection b (by simp) φ N).range := h.central_properties b
+
+-- One connected original-input neighborhood contains phi and zero, for all larger cutoffs.
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair p), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        (∀ b : BoundaryCondition, AnalyticOnNhd ℂ
+          (fun ψ => sourceBoundaryCentralProjection b hp (sourceReflectedPotential hp1 hp ψ) N) U) ∧
+        (∀ n : ℤ, N < n.natAbs → ∀ b : BoundaryCondition, AnalyticOnNhd ℂ
+          (fun ψ => sourceBoundaryCircleProjection b hp (sourceReflectedPotential hp1 hp ψ)
+            ((Real.pi : ℂ)*n) (Real.pi/4)) U) ∧
+        ∀ ψ ∈ U, SourceBoundaryCountingData hp (sourceReflectedPotential hp1 hp ψ)
+          (sourceReflectedPotential_mem hp1 hp ψ) N := exists_uniform_sourceBoundaryCountingData hp1 hp φ
+
+example (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet)
+    (N : ℕ) (h : SourceBoundaryCountingData (by simp) φ hφ N) :
+    sourceBoundarySpectrum .dirichlet (by simp) φ hφ ⊆ centralSpectralBox N ∪ highSpectralDisks N (Real.pi/4) :=
+  h.spectrum_subset .dirichlet

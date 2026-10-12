@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 4.4 is proved in the original norms, including
-both restricted operators and the signed, norm-convergent mode formulas.
-The actual restricted spectra agree with the existing boundary spectra
-and canonical labels. [The Section 4 audit](coverage/SECTION_4.md) records
-the scope. The original-norm Riesz ranks in Theorem 1.4 are next;
+Latest milestone: Theorem 1.4's Riesz counting argument is proved in the
+original norms, including analytic boundary projectors, full Jordan-chain
+multiplicities, central count 2N+1, and one simple eigenvalue per high disk.
+The result uses the established height-N boxes; the separate printed
+all-exponent height claim remains refuted. [The Section 4 audit](coverage/SECTION_4.md)
+records the scope. Lemma 4.5's original trace formula is next;
 the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

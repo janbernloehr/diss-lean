@@ -209,9 +209,48 @@ signs explicitly, negative mode indices, a concrete exponent above two,
 p=1 for already-reflected potentials, physical p=2 mode identification,
 the actual pencil, spectral splitting, discreteness, and canonical labels.
 
+## Theorem 1.4 proof: original Riesz restrictions and counts (page 32)
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Boundary compression in original norms | `sourceBoundaryProjection`, `sourceBoundaryCompression` | Bounded maps in the original component-sum norms. |
+| Actual circle and rectangle restrictions | `sourceBoundaryCircleProjection_apply`, `sourceBoundaryCentralProjection_apply` | Equal the original normalized integrals on boundary inputs. |
+| Finite-rank idempotents | `sourceBoundaryCircleProjection_properties`, `sourceBoundaryCentralProjection_properties` | Admissible circle/rectangle boundaries. |
+| Restricted range identification | `sourceBoundaryCompressionRangeEquiv` | Isometry to the boundary part of the ambient range; auxiliary norm transfer is only a continuous equivalence. |
+| Original operator-domain recursion | `sourceBoundaryRootSpace_zero`, `sourceBoundaryRootSpace_succ` | Every finite Jordan chain uses the actual boundary inclusion and pencil. |
+| Full root space | `mem_sourceBoundaryRootSpaceTop`, `finiteDimensional_sourceBoundaryRootSpaceTop`, `exists_sourceBoundaryRootSpace_eq_top` | All finite chains, finite dimension, and stabilization. |
+| Original algebraic multiplicity | `sourceBoundaryAlgebraicMultiplicity`, `sourceBoundaryAlgebraicMultiplicity_eq` | Dimension of the full original root space, identified with coefficient multiplicity. |
+| Domain-valued contour ranges | `sourceBoundaryCircleProjection_exists_domain`, `sourceBoundaryCentralProjection_exists_domain` | Every projected vector has an original one-derivative boundary-domain representative. |
+| Printed domain restrictions | `range_sourceBoundaryCircleProjection_comp_inclusion`, `range_sourceBoundaryCentralProjection_comp_inclusion` | Restricting input to the original weighted domain retains the entire projected range. |
+| Rank equals original multiplicity sum | `sourceBoundaryCircleProjection_rank_eq_sum`, `sourceBoundaryCentralProjection_rank_eq_sum` | Actual finite spectral sets, retaining Jordan multiplicities. |
+| Common analytic neighborhood | `exists_uniform_sourceBoundaryCountingData` | Open, convex, connected, contains input and zero; both signs and every larger cutoff. |
+| Central and disk ranks | `SourceBoundaryCountingData.central_rank`, `.disk_rank`, `.central_domain_rank`, `.disk_domain_rank` | 2N+1 and one, for base and displayed weighted-domain restrictions. |
+| Central and disk counts | `SourceBoundaryCountingData.central_multiplicity`, `.disk_multiplicity` | Full original algebraic counts 2N+1 and one. |
+| Unique simple high eigenvalue | `SourceBoundaryCountingData.disk_unique_simple` | Exactly one spectral point of original algebraic multiplicity one in each high disk. |
+| Exhaustive localization | `SourceBoundaryCountingData.spectrum_subset` | No boundary spectrum outside the same central box and high disks. |
+
+The four new modules are `SourceBoundaryRootSpaces`, `SourceBoundaryContours`,
+`SourceBoundaryContourDomains`, and `SourceBoundaryCounting` in
+`NLS.ZakharovShabat`. The interval-input theorem requires 1<p<infinity;
+root chains and restrictions for already-reflected potentials also cover
+p=1. The source infinity norm is not identified with a maximum norm.
+
+The actual chain recursion establishes that transported dimensions are
+multiplicities of the original operator. The projected range is contained
+in its weighted domain, resolving the domain notation in the displayed
+projectors. Counts include the zero potential in the common neighborhood.
+The positive cutoff excludes the degenerate central rectangle.
+
+This establishes the proof's counting argument using the existing
+height-N central boxes. The independently refuted all-exponent printed
+norm-dependent height remains refuted; no replacement bound is adopted.
+Public examples cover arbitrary finite p>1, p=1 for reflected root spaces,
+a concrete p>2, both boundary signs, negative high indices, domain-range
+identification, Jordan recursion, algebraic sums, analytic neighborhoods,
+finite-rank projections, simple eigenvalues, and exhaustive localization.
+
 ## Next source assertions
 
-Continue the proof of Theorem 1.4 with the original-norm Cauchy–Riesz
-restrictions, analytic dependence, and ranks. The separate all-exponent
-printed-height failure remains in force. This milestone does not assert
-a new original-norm rank or algebraic-multiplicity formula.
+Audit Lemma 4.5 (page 33): identify the trace of the actual original
+restricted operator on the rank-one Riesz range with the simple boundary
+eigenvalue, and obtain analyticity in the original interval-input norm.
