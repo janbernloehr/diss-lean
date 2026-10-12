@@ -1971,3 +1971,57 @@ source cotangents and signed Fourier coefficients, admissible-circle
 independence, equality of two represented contour curves, finite-exponent
 compatibility, the collapsed zero-source case, and generic conjugate-
 exponent H1 summability of the canonical gradient coefficients.
+
+### Physical G.7 gradients in original source spaces below two
+
+The actual canonical midpoint and Dirichlet differentials now have physical
+integral formulas in every original source direction for 1<p<=2.
+`L2GradientsBelowTwo.lean` differentiates the spectral-coordinate identities
+under inclusion into the Hilbert source. It constructs open complex
+neighborhoods containing the entire real source locus where these formulas
+hold at every signed index. The midpoint uses the canonical Hilbert physical
+gradient; the Dirichlet formula uses normalized squared eigenfunctions with
+nonzero normalization proved on the same domain.
+
+`L2GradientRestrictionFourier.lean` identifies the signed conjugate vectors
+with the actual physical Fourier coefficients in the original source norm.
+Both midpoint gradients and Dirichlet errors have this realization on
+complex neighborhoods. The Dirichlet error subtracts the actual zero-source
+gradient, with its exact half-wave normalization. The endpoint p=2 agrees
+with the Hilbert construction.
+
+`L2SourceG7BelowTwo.lean` transfers the established derivative estimates to
+both physical G.7 coefficient sequences. For real H1 sources and every
+1<p<=2, both sequences belong to outer lp in the exact conjugate pair norm,
+including every signed index and the finite central block. The physical
+formulas and coefficient realization hold on complex neighborhoods; this
+step's summability theorem is for real H1 sources. It does not assert a new
+complex-neighborhood summability estimate below two.
+
+Next is physical realization of the G.6 anti-discriminant error in the
+original source spaces below two. G.2's arbitrary-time interval norm remains
+unresolved; neither proposed spectral-height correction is adopted. The
+optional original m=1 sharpening remains under the accepted Lemma 27.2
+correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6672 build jobs), including all
+public examples and the axiom audit of 28422 NLS declarations. Focused
+module builds and the standalone public probe passed, including the concrete
+conjugate pair p=3/2, q=3 and the endpoint p=2. There are 21 existing warnings
+and no new warnings. The source inventory check passed with 156 labels.
+Counts do not certify completeness.
+
+| Public entry point | Scope |
+| --- | --- |
+| `CoeffPair.exponentInclusion_refl` | Identity exponent inclusion, including the Hilbert boundary case. |
+| `fderiv_midpoint_below_two_of_hilbert_differentiable`, `fderiv_dirichlet_below_two_of_hilbert_differentiable` | Actual source derivatives restricted from the Hilbert source wherever its coordinate is differentiable. |
+| `exists_global_source_midpoint_below_two_integral`, `exists_global_source_dirichlet_below_two_integral` | Physical integrals in every original direction on open complex neighborhoods, with nonzero Dirichlet normalization. |
+| `signedGradient_realizes_below_two_of_integral` | An actual source integral determines its signed conjugate Fourier vector. |
+| `fderiv_canonicalDirichletRoot_zero_eq_free_below_two` | Exact free half-wave differential for 1<p<=2. |
+| `exists_global_sourceG7_midpoint_below_two_realization`, `exists_global_sourceG7_dirichlet_below_two_realization` | Both physical G.7 Fourier realizations on complex neighborhoods, with the actual free gradient subtracted for the Dirichlet error. |
+| `sourceG7_below_two_memlp_real`, `sourceG7_below_two_physical_real` | Both whole coefficient sequences have outer-lp summability in the original conjugate norm at real H1 sources. |
+
+Public checks cover the Hilbert boundary case, full original-direction
+integrals on complex neighborhoods, subtraction of continuous physical
+gradients, and both physical realizations and summability at the concrete
+conjugate pair p=3/2, q=3. No infinity endpoint is asserted.

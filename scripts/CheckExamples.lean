@@ -42299,3 +42299,79 @@ example (n : ℤ) : SourcePhysicalGradientRepresents
   exact (h 0 h0 n).1
 
 end L2ContourIndependenceChecks
+
+noncomputable section
+section L2BelowTwoChecks
+open Set Complex MeasureTheory NLS NLS.LinearVolterra NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+
+example (φ : CoeffPair 2) (n : ℤ) :
+    sourceMidpointPhysicalGradientBelowTwo (le_rfl : (2 : ℝ≥0∞) ≤ 2) φ n =
+      sourceMidpointPhysicalGradient (by simp) (by norm_num) (le_rfl : (2 : ℝ≥0∞) ≤ 2) φ n := by
+  simp only [sourceMidpointPhysicalGradientBelowTwo,CoeffPair.exponentInclusion_refl]
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧ ∀ φ ∈ W, ∀ (n : ℤ) (h : CoeffPair p),
+      (fderiv ℂ (fun ψ : CoeffPair p => canonicalPeriodicMidpoint hp hp1
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ) h =
+        ∫ s in (0 : ℝ)..1, (sourceMidpointPhysicalGradientBelowTwo hp2 φ n s).1*
+          (physicalBase (periodOnePotential (CoeffPair.exponentInclusion hp2 h)) s).1+
+          (sourceMidpointPhysicalGradientBelowTwo hp2 φ n s).2*
+            (physicalBase (periodOnePotential (CoeffPair.exponentInclusion hp2 h)) s).2 :=
+  exists_global_source_midpoint_below_two_integral hp hp1 hp2
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧ ∀ φ ∈ W, ∀ n : ℤ,
+      let u := sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)
+      let z := canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ n
+      l2DirichletNormalization u z ≠ 0 ∧ ∀ h : CoeffPair p,
+        (fderiv ℂ (fun ψ : CoeffPair p => canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n) φ) h =
+          ∫ s in (0 : ℝ)..1, (l2DirichletNormalizedGradient u z s).1*
+            (physicalBase (periodOnePotential (CoeffPair.exponentInclusion hp2 h)) s).1+
+            (l2DirichletNormalizedGradient u z s).2*
+              (physicalBase (periodOnePotential (CoeffPair.exponentInclusion hp2 h)) s).2 :=
+  exists_global_source_dirichlet_below_two_integral hp hp1 hp2
+
+private theorem belowTwoChecks_finite : (3 : ℝ≥0∞)/2 ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem belowTwoChecks_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))]
+  norm_num
+private theorem belowTwoChecks_le_two : (3 : ℝ≥0∞)/2 ≤ 2 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]
+  norm_num
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)/2) := ⟨belowTwoChecks_gt_one.le⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : ENNReal.HolderConjugate 3 ((3 : ℝ≥0∞)/2) :=
+  ENNReal.holderConjugate_iff.mpr (by
+    rw [ENNReal.inv_div (Or.inl (by norm_num)) (Or.inl (by norm_num)),
+      ← one_div,← ENNReal.add_div]
+    norm_num only [show (1+2 : ℝ≥0∞) = 3 by norm_num]
+    exact ENNReal.div_self (by norm_num) (by norm_num))
+
+example (n : ℤ) :
+    fderiv ℂ (fun ψ : CoeffPair ((3 : ℝ≥0∞)/2) => canonicalPeriodOneBoundaryRoots
+      belowTwoChecks_finite belowTwoChecks_gt_one .dirichlet ψ n) 0 = sourceFreeDirichletCotangent ((3 : ℝ≥0∞)/2) n :=
+  fderiv_canonicalDirichletRoot_zero_eq_free_below_two belowTwoChecks_finite belowTwoChecks_gt_one belowTwoChecks_le_two n
+
+example (φ : realTypeSourceLocus ((3 : ℝ≥0∞)/2)) (a : Domain 2)
+    (ha : periodOnePotential (CoeffPair.exponentInclusion (show (3 : ℝ≥0∞)/2 ≤ 2 from belowTwoChecks_le_two) φ.val) = domainInclusion a) :
+    Memℓp (fun n : ℤ => sourceG7MidpointGradient (q := 3) belowTwoChecks_finite belowTwoChecks_gt_one φ.val n) ((3 : ℝ≥0∞)/2) ∧
+      Memℓp (fun n : ℤ => sourceG7DirichletGradientError (q := 3) belowTwoChecks_finite belowTwoChecks_gt_one φ.val n) ((3 : ℝ≥0∞)/2) ∧
+      ∀ n : ℤ,
+        L2RootGradientFourierRealizes (sourceMidpointPhysicalGradientBelowTwo belowTwoChecks_le_two φ.val n)
+          (sourceG7MidpointGradient (q := 3) belowTwoChecks_finite belowTwoChecks_gt_one φ.val n) ∧
+        let u := sourcePhysicalL2 (CoeffPair.exponentInclusion (show (3 : ℝ≥0∞)/2 ≤ 2 from belowTwoChecks_le_two) φ.val)
+        let z := canonicalPeriodOneBoundaryRoots belowTwoChecks_finite belowTwoChecks_gt_one .dirichlet φ.val n
+        l2DirichletNormalization u z ≠ 0 ∧
+          L2RootGradientFourierRealizes (l2DirichletGradientRemainder u z ((Real.pi : ℂ)*n))
+            (sourceG7DirichletGradientError (q := 3) belowTwoChecks_finite belowTwoChecks_gt_one φ.val n) :=
+  sourceG7_below_two_physical_real (q := 3) belowTwoChecks_finite belowTwoChecks_gt_one belowTwoChecks_le_two φ a ha
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] (g h : ℝ → ℂ × ℂ) (a b : CoeffPair q)
+    (ha : L2RootGradientFourierRealizes g a) (hb : L2RootGradientFourierRealizes h b)
+    (hg : Continuous g) (hh : Continuous h) :
+    L2RootGradientFourierRealizes (fun s => g s-h s) (a-b) := ha.sub hb hg hh
+
+end L2BelowTwoChecks

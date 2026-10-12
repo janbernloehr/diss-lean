@@ -3238,3 +3238,7 @@ import NLS.ZakharovShabat.L2SourceMidpointFourier
 import NLS.Fourier.IntervalContinuousUniqueness
 import NLS.ZakharovShabat.L2SourceGradientUniqueness
 import NLS.ZakharovShabat.L2CanonicalMidpointGradient
+import NLS.SequenceSpaces.PairExponentIdentity
+import NLS.ZakharovShabat.L2GradientsBelowTwo
+import NLS.ZakharovShabat.L2GradientRestrictionFourier
+import NLS.ZakharovShabat.L2SourceG7BelowTwo

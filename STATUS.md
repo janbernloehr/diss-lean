@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: unique physical midpoint gradients independent of contours
+## Current milestone: physical G.7 gradients below the Hilbert exponent
+
+The actual canonical midpoint and Dirichlet differentials now have physical
+integral formulas in every original source direction for 1<p<=2.
+`L2GradientsBelowTwo.lean` differentiates the spectral-coordinate identities
+under inclusion into the Hilbert source. It constructs open complex
+neighborhoods containing the entire real source locus where these formulas
+hold at every signed index. The midpoint uses the canonical Hilbert physical
+gradient; the Dirichlet formula uses normalized squared eigenfunctions with
+nonzero normalization proved on the same domain.
+
+`L2GradientRestrictionFourier.lean` identifies the signed conjugate vectors
+with the actual physical Fourier coefficients in the original source norm.
+Both midpoint gradients and Dirichlet errors have this realization on
+complex neighborhoods. The Dirichlet error subtracts the actual zero-source
+gradient, with its exact half-wave normalization. The endpoint p=2 agrees
+with the Hilbert construction.
+
+`L2SourceG7BelowTwo.lean` transfers the established derivative estimates to
+both physical G.7 coefficient sequences. For real H1 sources and every
+1<p<=2, both sequences belong to outer lp in the exact conjugate pair norm,
+including every signed index and the finite central block. The physical
+formulas and coefficient realization hold on complex neighborhoods; this
+step's summability theorem is for real H1 sources. It does not assert a new
+complex-neighborhood summability estimate below two.
+
+Next is physical realization of the G.6 anti-discriminant error in the
+original source spaces below two. G.2's arbitrary-time interval norm remains
+unresolved; neither proposed spectral-height correction is adopted. The
+optional original m=1 sharpening remains under the accepted Lemma 27.2
+correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6672 build jobs), including all
+public examples and the axiom audit of 28422 NLS declarations. Focused
+module builds and the standalone public probe passed, including the concrete
+conjugate pair p=3/2, q=3 and the endpoint p=2. There are 21 existing warnings
+and no new warnings. The source inventory check passed with 156 labels.
+Counts do not certify completeness.
+
+## Previous milestone: unique physical midpoint gradients independent of contours
 
 Physical midpoint gradients are now independent of the constructing
 isolating circle. `IntervalContinuousUniqueness.lean` proves that equal
