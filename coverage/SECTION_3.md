@@ -1,8 +1,8 @@
 # Section 3: periodic spectrum
 
 This audit covers the operator setup, Proposition 3.1, Lemmas 3.2 and
-3.4, and Corollaries 3.3 and 3.5 on printed pages 23–26. It retains the
-original period-two space, its finite-exponent component-sum norm, and the
+3.4, Corollaries 3.3 and 3.5, and equation (1.4) on printed pages 23–26.
+It retains the original period-two space, its finite-exponent component-sum norm, and the
 conditional period-one parity clauses. It is not a completeness certificate
 for Section 3 or the dissertation.
 
@@ -152,5 +152,34 @@ segment from zero to the potential, including at p=1. The horizontal
 boundary belongs to the box; its admissibility comes from the stronger
 height-and-strips result, rather than exterior inclusion alone.
 
-Next: equation (1.4), the actual source-norm Cauchy-Riesz contour projectors
-and their analytic dependence on the potential, then Lemma 3.6.
+## Equation (1.4): actual Cauchy-Riesz projectors
+
+The normalized integrals use the actual original-norm resolvent as their
+integrand. The central rectangle retains all four boundary edges, and the
+distant circles have radius pi/4 and positive orientation. Every finite
+Banach exponent and every period-two source are included.
+
+| Printed requirement or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Actual normalized circle integral | `sourceResolventCircleIntegral` | Operator-norm integral of `sourceResolvent`, with factor (2*pi*i)^(-1). |
+| Actual rectangular and central integrals | `sourceResolventRectangleIntegral`, `sourceCentralRectangleIntegral` | Four oriented edges; central corners are exactly those of the height-N box. |
+| Circle and rectangle integrability | `circleIntegrable_sourceResolvent`, `rectangleIntegrable_sourceResolvent` | The entire contour lies in the actual source resolvent set. |
+| Coefficient-preserving conjugation of the actual integrals | `sourceResolventCircleIntegral_eq_conj`, `sourceResolventRectangleIntegral_eq_conj`, `sourceCentralRectangleIntegral_eq_conj` | Bounded linear conjugation commutes with integration on admissible contours. |
+| Evaluation on source vectors | `sourceResolventCircleIntegral_apply`, `sourceResolventRectangleIntegral_apply` | Evaluation of the operator integral equals the integral of the evaluated resolvent. |
+| Projection identities | `sourceResolventCircleIntegral_idempotent`, `sourceCentralRectangleIntegral_idempotent` | Idempotence on the entire original-norm base space. |
+| Compactness | `isCompactOperator_sourceResolventCircleIntegral`, `isCompactOperator_sourceCentralRectangleIntegral` | Compactness of the actual contour operators. |
+| Finite rank | `finiteDimensional_range_sourceResolventCircleIntegral`, `finiteDimensional_range_sourceCentralRectangleIntegral` | The range of each compact idempotent is finite-dimensional. |
+| Circle analytic dependence | `analyticAt_sourceResolventCircleIntegral` | Analytic in the original potential norm wherever the fixed circle is admissible. |
+| Common central neighborhood | `exists_uniform_sourceCentralRectangleIntegral` | Every larger central rectangle is admissible and gives an analytic projector on one original-norm neighborhood. |
+| Full simultaneous equation (1.4) package | `sourceEquation1_4` | One positive cutoff and open convex connected neighborhood containing source and zero; every larger central rectangle and every distant quarter-pi circle is admissible and yields an analytic compact finite-rank projection on that same neighborhood. |
+
+The entry points lie in `NLS.ZakharovShabat`, in `SourceResolventContours.lean`
+and `SourceEquation1_4.lean`. Analyticity here concerns the potential, as
+stated after equation (1.4). The common neighborhood includes p=1 and has
+no period-one restriction. The entire central boundary is proved admissible,
+including its horizontal edges; exterior inclusion alone would not cover
+those edges. The actual integrals are defined first, then identified with
+the conjugated maximum-product operators under the stated contour hypotheses.
+
+Next: the original-norm closed parity subspaces and Lemma 3.6, followed by
+the restricted analytic projectors in equation (1.5).

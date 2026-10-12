@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: Corollary 3.5 in the original source topology
+## Current milestone: equation (1.4) in the original norms
+
+Equation (1.4) (printed page 26) now has actual Cauchy-Riesz contour
+projectors in the original component-sum norms. `SourceResolventContours.lean`
+defines normalized, positively oriented circle integrals and four-edge
+rectangle integrals of `sourceResolvent`. The central projector uses the
+actual lower-left and upper-right corners of the height-N box.
+
+For admissible contours, bounded linear conjugation commutes with these
+operator-norm integrals. The resulting equalities identify them with the
+established maximum-product contour operators. Integrability and evaluation
+on vectors are proved in the original norm. The circle and central rectangle
+operators are idempotent and compact, and their ranges are finite-dimensional.
+The circle integral also has analytic dependence on the potential near every
+source for which its circle lies in the full resolvent set.
+
+`SourceEquation1_4.lean` proves the simultaneous statement. One positive
+cutoff and one open, convex, connected original-norm neighborhood contain
+the potential and zero. For every larger cutoff, the central rectangular
+projector and every quarter-pi circle projector with abs(n)>N are analytic
+on that same neighborhood. Every contour is in the actual source resolvent
+set, and every corresponding actual integral is a compact finite-rank
+projection. All finite Banach exponents, including p=1, and all period-two
+potentials are covered without an even-support restriction.
+
+The central boundary is established separately on all four edges, including
+the horizontal edges inside the printed box. The integrals are defined as
+integrals of the original resolvent, and their conjugation identities are
+proved rather than used as replacement definitions. No quantitative claim
+of isometry between the original norm and the maximum-product norm is made.
+
+Next: the closed complementary parity subspaces and Lemma 3.6 in the original
+norms, then the restricted projectors of equation (1.5). The dissertation
+remains incomplete; earlier source qualifications remain in force.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The probe covers the literal operator integrals, evaluation,
+projection identities and finite rank, the common p=1 neighborhood, and
+the full central-boundary package at every finite exponent. The source
+inventory check passed for 156 candidate labels, not a completeness
+certificate. The full check passed all 6,735 build jobs and public
+examples. The axiom audit passed for 29,216 NLS declarations with only
+the permitted classical axioms. The build retains 21 existing warnings;
+the new modules add none.
+
+## Previous milestone: Corollary 3.5 in the original source topology
 
 Corollary 3.5 (printed page 26) is now proved on the entire period-two
 source space for every finite Banach exponent, using the original

@@ -43513,3 +43513,57 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
     sourceResolventToDomain_sourceSpectralPencil hp φ z hmem⟩
 
 end CorollaryThreeFiveOriginalNormChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat Complex Metric
+open scoped ENNReal
+section EquationOneFourOriginalNormChecks
+
+-- Both objects are actual normalized operator integrals of the source resolvent.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (c : ℂ) (r : ℝ) :
+    sourceResolventCircleIntegral hp φ c r =
+      (2*Real.pi*Complex.I : ℂ)⁻¹ • ∮ z in C(c,r), sourceResolvent hp φ z := rfl
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (N : ℕ) :
+    sourceCentralRectangleIntegral hp φ N = (2*Real.pi*Complex.I : ℂ)⁻¹ •
+      RectangleIntegral.integral (sourceResolvent hp φ) (centralLowerCorner N) (centralUpperCorner N) := rfl
+
+-- Evaluation commutes with the source operator integral.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (c : ℂ) (r : ℝ)
+    (hr : 0 ≤ r) (hc : sphere c r ⊆ sourceResolventSet hp φ) (a : CoeffPair p) :
+    sourceResolventCircleIntegral hp φ c r a =
+      (2*Real.pi*Complex.I : ℂ)⁻¹ • ∮ z in C(c,r), sourceResolvent hp φ z a :=
+  sourceResolventCircleIntegral_apply hp φ c r hr hc a
+
+-- The integral is a genuine finite-rank projection on the original space.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (c : ℂ) (r : ℝ)
+    (hr : 0 ≤ r) (hc : sphere c r ⊆ sourceResolventSet hp φ) (a : CoeffPair p) :
+    sourceResolventCircleIntegral hp φ c r (sourceResolventCircleIntegral hp φ c r a) =
+      sourceResolventCircleIntegral hp φ c r a ∧
+    FiniteDimensional ℂ (sourceResolventCircleIntegral hp φ c r).range :=
+  ⟨DFunLike.congr_fun (sourceResolventCircleIntegral_idempotent hp φ c r hr hc) a,
+    finiteDimensional_range_sourceResolventCircleIntegral hp φ c r hr hc⟩
+
+-- The same neighborhood carries the rectangle and every distant circle, including p=1.
+example (φ : CoeffPair 1) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 1), 0 < N₀ ∧ IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        AnalyticOnNhd ℂ (fun ψ => sourceCentralRectangleIntegral (by norm_num) ψ N) U ∧
+        ∀ n : ℤ, N < n.natAbs →
+          AnalyticOnNhd ℂ (fun ψ => sourceResolventCircleIntegral (by norm_num) ψ
+            ((Real.pi : ℂ)*n) (Real.pi/4)) U := by
+  obtain ⟨N₀,U,hN₀,ho,_,hc,hφ,h0,h⟩ := sourceEquation1_4 (by norm_num) φ
+  exact ⟨N₀,U,hN₀,ho,hc,hφ,h0,fun N hN => ⟨(h N hN).1.1,fun n hn => ((h N hN).2 n hn).1⟩⟩
+
+-- At every finite exponent the common neighborhood admits the entire central boundary.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N → ∀ ψ ∈ U,
+        centralRectangleBoundary N ⊆ sourceResolventSet hp ψ ∧
+        IsIdempotentElem (sourceCentralRectangleIntegral hp ψ N) ∧
+        IsCompactOperator (sourceCentralRectangleIntegral hp ψ N) ∧
+        FiniteDimensional ℂ (sourceCentralRectangleIntegral hp ψ N).range := by
+  obtain ⟨N₀,U,_,ho,_,_,hφ,_,h⟩ := sourceEquation1_4 hp φ
+  exact ⟨N₀,U,ho,hφ,fun N hN => (h N hN).1.2⟩
+
+end EquationOneFourOriginalNormChecks

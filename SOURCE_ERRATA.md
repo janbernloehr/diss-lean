@@ -1158,3 +1158,15 @@ The neighborhood can be open and convex, containing both the source and
 zero, and can serve every larger cutoff. This does not adopt either of
 the proposed corrections to the different norm-dependent heights in
 Theorems 1.1 and 1.4.
+
+## Equation (1.4): actual integrals and full boundary admissibility
+
+`SourceResolventContours.lean` defines actual normalized operator-norm
+circle and rectangle integrals of the original-norm resolvent, and proves
+their equality with conjugated maximum-product contour operators on
+admissible contours. The proof does not assert that the two norms are
+isometric. `sourceEquation1_4` puts the central rectangle and all distant
+circles on one common original-norm neighborhood for every finite p.
+Horizontal central edges, which belong to the printed box, are proved
+admissible separately; exterior resolvent inclusion is insufficient for
+them by itself. No change to the printed contour formula is required.
