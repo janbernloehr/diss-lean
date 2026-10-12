@@ -3264,3 +3264,7 @@ import NLS.Fourier.SmoothPeriodicDistributionPairing
 import NLS.Fourier.DistributionDilation
 import NLS.Fourier.ArbitraryPeriodDistribution
 import NLS.Fourier.ArbitraryPeriodDistributionPairing
+import NLS.SequenceSpaces.FullDuality
+import NLS.SequenceSpaces.Reflexivity
+import NLS.SequenceSpaces.SobolevFullDuality
+import NLS.SequenceSpaces.SobolevScalarGradient

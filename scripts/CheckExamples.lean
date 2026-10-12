@@ -42813,3 +42813,63 @@ example (L : ℝ) (hL : 0 < L) (s : ℝ) (T : 𝓢'(ℝ, ℂ)) (hT : IsPeriodicD
   periodicDistribution_sobolevBilinearPairing_arbitraryPeriod L hL s T hT a ha f hf hp b hb
 
 end ArbitraryPeriodDistributionChecks
+
+noncomputable section
+open NLS NLS.WeightedCoeff
+open scoped ENNReal
+section SectionTwoScalarDualityChecks
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The complete dual of l1 is linfinity, with exact norm equality.
+example (L : Coeff 1 →L[ℂ] ℂ) :
+    Coeff.dualPairing (Coeff.fullCotangent (q := ⊤) (by simp) L) = L :=
+  Coeff.dualPairing_fullCotangent (by simp) L
+
+example (L : Coeff 1 →L[ℂ] ℂ) : ‖Coeff.fullCotangent (q := ⊤) (by simp) L‖ = ‖L‖ :=
+  Coeff.norm_fullCotangent (by simp) L
+
+example : Coeff ⊤ ≃ₗᵢ[ℂ] (Coeff 1 →L[ℂ] ℂ) := Coeff.dualityIsometry (by simp)
+
+-- Every real regularity and both raw modes are retained at the l1 endpoint.
+example (s : ℝ) (L : WeightedCoeff (Weight.sobolev s) 1 →L[ℂ] ℂ) :
+    ∃! a : WeightedCoeff (Weight.sobolev (-s)) ⊤,
+      ∀ h : WeightedCoeff (Weight.sobolev s) 1, sobolevBilinearPairing s h a = L h :=
+  existsUnique_sobolevCotangent s (by simp) L
+
+example (s : ℝ) (L : WeightedCoeff (Weight.sobolev s) 1 →L[ℂ] ℂ) (n : ℤ) :
+    (sobolevCotangent (q := ⊤) s (by simp) L).val n =
+      L (ofFinsupp (Weight.sobolev s) 1 (Finsupp.single (-n) 1)) :=
+  sobolevCotangent_val s (by simp) L n
+
+example (s : ℝ) (L : WeightedCoeff (Weight.sobolev s) 1 →L[ℂ] ℂ) :
+    ‖sobolevCotangent (q := ⊤) s (by simp) L‖ = ‖L‖ :=
+  norm_sobolevCotangent s (by simp) L
+
+-- Reflexivity is surjectivity of the canonical evaluation map, for the full printed range.
+example (w : Weight) {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : 1 < p) (hpfin : p ≠ ⊤) :
+    Function.Surjective (NormedSpace.inclusionInDoubleDual ℂ (WeightedCoeff w p)) :=
+  WeightedCoeff.bidual_surjective w hp hpfin
+
+example (s : ℝ) :
+    Function.Surjective (NormedSpace.inclusionInDoubleDual ℂ
+      (WeightedCoeff (Weight.sobolev s) 3)) :=
+  WeightedCoeff.bidual_surjective _ (by norm_num) (by simp)
+
+-- Scalar gradients remain analytic at the l1 endpoint and represent the full Hessian.
+example (s : ℝ) (F : WeightedCoeff (Weight.sobolev s) 1 → ℂ)
+    {U : Set (WeightedCoeff (Weight.sobolev s) 1)} (hF : AnalyticOnNhd ℂ F U) :
+    AnalyticOnNhd ℂ (sobolevScalarGradient (q := ⊤) s (by simp) F) U :=
+  analyticOnNhd_sobolevScalarGradient s (by simp) F hF
+
+example (s : ℝ) (F : WeightedCoeff (Weight.sobolev s) 1 → ℂ)
+    (a v h : WeightedCoeff (Weight.sobolev s) 1) (hF : AnalyticAt ℂ F a) :
+    fderiv ℂ (fderiv ℂ F) a v h = sobolevBilinearPairing s h
+      (fderiv ℂ (sobolevScalarGradient (q := ⊤) s (by simp) F) a v) :=
+  hessian_eq_sobolevBilinearPairing_gradient_derivative s (by simp) F a hF v h
+
+-- A negative nonintegral regularity retains the original operator norm.
+example (L : WeightedCoeff (Weight.sobolev (-3/2)) 1 →L[ℂ] ℂ) :
+    ‖sobolevCotangent (q := ⊤) (-3/2) (by simp) L‖ = ‖L‖ :=
+  norm_sobolevCotangent (-3/2) (by simp) L
+
+end SectionTwoScalarDualityChecks

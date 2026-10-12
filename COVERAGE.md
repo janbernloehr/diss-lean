@@ -2340,3 +2340,41 @@ examples. The axiom audit passed for 28,624 NLS declarations with only the
 permitted classical axioms. The full build retains 21 existing warnings.
 The source inventory check passed for 156 candidate statement labels; that
 count is not a completeness certificate.
+
+## Section 2 full scalar duality and reflexivity
+
+Section 2's scalar full-dual identification is now proved for every finite
+Banach exponent, including p=1 with conjugate exponent infinity.
+`FullDuality.lean` constructs the representative of an arbitrary bounded
+complex functional, proves exact operator-norm equality, and bundles the
+pairing as a linear isometry onto the entire continuous dual.
+
+`SobolevFullDuality.lean` transports this result to every real Sobolev order
+under the corrected physical bilinear pairing. Representation is unique,
+the norm remains exact, and the coefficient at n is the original functional
+applied to the raw mode -n. `SobolevScalarGradient.lean` gives a bounded linear
+recovery operator, analytic scalar gradients on the original analytic domain,
+and the complete Hessian identity. The p=1 endpoint is included throughout.
+
+`Reflexivity.lean` proves surjectivity of the canonical evaluation map into
+the continuous double dual for every positive weight and every 1<p<infinity.
+The conjugate exponent is obtained automatically; the final theorem does
+not require the caller to supply a second finite exponent. Together with
+the existing intrinsic periodic-distribution identification, these scalar
+coefficient results apply to the source's Fourier-Lebesgue spaces.
+
+Next: finish the two-component gradient audit with the original signed
+coefficients and the distinct infinity pair norm, and audit the unrestricted
+infinity-source gradient claim before moving to numbered Section 3 results.
+This milestone proves scalar duality and reflexivity; it does not claim
+completion of the pair-gradient or endpoint audit. The dissertation remains
+incomplete. G.2's arbitrary-time interval norm is unresolved; neither proposed
+spectral-height correction is adopted. The optional original m=1 sharpening
+remains under the accepted Lemma 27.2 correction.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The full project check passed all 6,704 build jobs and public
+examples. The axiom audit passed for 28,692 NLS declarations with only the
+permitted classical axioms. The full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.

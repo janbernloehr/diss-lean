@@ -75,7 +75,33 @@ an exact inverse. No new source correction is introduced by this transport.
 
 The earlier period-two smooth-test entry is the core theorem used by this
 transport; its period restriction is no longer a limitation on the final
-pairing API. The remaining Section 2 audit concerns full dual-gradient
-representation, exponent endpoints, and reflexivity, followed by the
-numbered Section 3 statements. The candidate-label inventory and this
-focused map do not establish completeness of those remaining claims.
+pairing API.
+
+## Full scalar duality and reflexivity
+
+The scalar dual-space assertion explicitly covers 1<=p<infinity. The
+p=1 endpoint has conjugate exponent infinity and is included here. Physical
+representation uses the corrected index reversal recorded above.
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Entire scalar coefficient dual | `NLS.Coeff.dualityIsometry`, `dualPairing_fullCotangent` | All finite Banach source exponents, including p=1; every bounded complex functional has a conjugate coefficient representative. |
+| Original operator norm | `NLS.Coeff.norm_fullCotangent`, `norm_dualPairing_eq` | Exact norm equality, including the (1,infinity) endpoint. |
+| Full physical Sobolev dual | `NLS.WeightedCoeff.sobolevDualityIsometry`, `existsUnique_sobolevCotangent` | Every real Sobolev order and finite source exponent; a complex linear isometry onto the entire dual under the corrected physical pairing. |
+| Frequency sign and original modes | `NLS.WeightedCoeff.sobolevCotangent_val` | The representative's coefficient at n equals the functional evaluated on the raw coefficient mode -n; no weight or normalization factor is lost. |
+| Scalar gradient representation | `NLS.WeightedCoeff.fderiv_eq_sobolevBilinearPairing_gradient`, `norm_sobolevScalarGradient` | The complete differential is represented on every direction, and its operator norm equals the gradient norm. |
+| Analytic scalar gradients | `NLS.WeightedCoeff.analyticOnNhd_sobolevScalarGradient`, `hessian_eq_sobolevBilinearPairing_gradient_derivative` | Analyticity on the original scalar domain and the full Hessian identity, including p=1 and arbitrary real regularity. |
+| Reflexivity in the printed range | `NLS.WeightedCoeff.bidual_surjective` | Surjectivity of the canonical map into the continuous double dual, for every positive weight and every 1<p<infinity. The conjugate exponent is constructed automatically. |
+
+The scalar coefficient norm is precisely the source Fourier-Lebesgue norm;
+the earlier intrinsic distributional identification supplies unique actual
+periodic representatives at every positive period. Reflexivity here is
+proved through the canonical map, rather than an unrelated bijection with
+the double dual. No endpoint reflexivity claim is made.
+
+The remaining Section 2 audit concerns the original two-component gradient,
+its signed coefficient convention and distinct infinity pair norm, and the
+unrestricted infinity-source gradient claim. These scalar results do not
+close those obligations. Numbered Section 3 statements follow that audit.
+The candidate-label inventory and this focused map do not establish
+completeness of the dissertation.

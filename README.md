@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's corrected distributional pairing now covers
-every positive period, with exact coefficient normalization and both
-conjugate endpoints. Actual periodic distributions have unique weighted
-Fourier representations and distributionally convergent Fourier sums.
-[The current audit](coverage/SECTION_2.md) records the scope. The dissertation
-remains incomplete; full dual-gradient representation is next.
+Latest milestone: Section 2's full scalar duality now includes p=1, with
+unique physical gradient representation and exact operator norm at every
+real Sobolev order. Scalar gradients are analytic, and weighted spaces are
+reflexive for every 1<p<infinity. [The current audit](coverage/SECTION_2.md)
+records the scope. The dissertation remains incomplete; the two-component
+gradient and infinity-source endpoint audit are next.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

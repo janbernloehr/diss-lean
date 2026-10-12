@@ -983,4 +983,8 @@ negative Fourier wave; the zero-mode window periodizes to exactly 1/L.
 Inverse dilation preserves each raw coefficient, gives unique weighted
 Fourier representation, and proves the corrected smooth-test pairing for
 every positive period, every real regularity and both conjugate endpoints.
-The full dual-gradient representation remains a separate audit obligation.
+Full scalar duality, including p=1, is now proved with the corrected pairing
+in `SobolevFullDuality.lean`; its representative has the exact operator norm.
+`SobolevScalarGradient.lean` proves analytic scalar gradients and the Hessian
+identity. The two-component gradient and unrestricted infinity-source
+endpoint remain separate audit obligations.
