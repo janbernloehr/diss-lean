@@ -3214,3 +3214,7 @@ import NLS.ZakharovShabat.L2CharacteristicCotangents
 import NLS.ZakharovShabat.L2SolutionVariation
 import NLS.ZakharovShabat.L2PotentialVariation
 import NLS.ZakharovShabat.L2VariationEquation
+import NLS.ZakharovShabat.L2KernelPairing
+import NLS.ZakharovShabat.L2VariationKernel
+import NLS.ZakharovShabat.L2EndpointGradient
+import NLS.ZakharovShabat.L2SourceEndpointGradient

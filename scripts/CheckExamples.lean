@@ -41844,3 +41844,62 @@ example (Φ H : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) :
       classicalPotentialVariationCurve Φ H z v := l2PotentialVariation_of_continuous Φ H z v
 
 end L2VariationChecks
+
+noncomputable section
+section L2KernelChecks
+open Set MeasureTheory NLS.LinearVolterra NLS.ZakharovShabat
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) :
+    (fderiv ℂ (fun w : IntervalPairL2 => l2SolutionCurve w z v) u) h =
+      l2PotentialKernelCurve u h z v := fderiv_l2SolutionCurve_potential_eq_kernel u h z v
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    l2VariationCurve (z,u) (0,h) v t =
+      l2KernelPairing h (l2SolutionCurve u z (0,1)) (l2SolutionCurve u z v) t •
+        l2SolutionCurve u z (1,0) t-
+      l2KernelPairing h (l2SolutionCurve u z (1,0)) (l2SolutionCurve u z v) t •
+        l2SolutionCurve u z (0,1) t := by
+  rw [← l2PotentialKernelCurve_eq_variation]
+  rfl
+
+example (h : IntervalPairL2) (w y : Curve (ℂ × ℂ)) (t : Icc (0 : ℝ) 1) :
+    l2KernelPairing h w y t = ∫ s in (0 : ℝ)..t.val,
+      Complex.I*(h.ofLp.1 s*(NLS.LinearVolterra.extend w s).2*(NLS.LinearVolterra.extend y s).2+
+        h.ofLp.2 s*(NLS.LinearVolterra.extend w s).1*(NLS.LinearVolterra.extend y s).1) :=
+  l2KernelPairing_apply h w y t
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ)
+    (ℓ : (ℂ × ℂ) →L[ℂ] ℂ) (t : Icc (0 : ℝ) 1) :
+    (fderiv ℂ (fun w : IntervalPairL2 => ℓ (l2SolutionCurve w z v t)) u) h =
+      ∫ s in (0 : ℝ)..t.val, (l2EndpointGradient u z v ℓ t s).1*h.ofLp.1 s+
+        (l2EndpointGradient u z v ℓ t s).2*h.ofLp.2 s :=
+  fderiv_l2Endpoint_eq_gradient_integral u h z v ℓ t
+
+example (u h : IntervalPairL2) (z : ℂ) :
+    (fderiv ℂ (fun w : IntervalPairL2 => (l2Monodromy w z) 0 0) u) h =
+      ∫ s in (0 : ℝ)..1,
+        (l2EndpointGradient u z (1,0) (ContinuousLinearMap.fst ℂ ℂ ℂ) ⟨1,by norm_num⟩ s).1*h.ofLp.1 s+
+        (l2EndpointGradient u z (1,0) (ContinuousLinearMap.fst ℂ ℂ ℂ) ⟨1,by norm_num⟩ s).2*h.ofLp.2 s :=
+  fderiv_l2Endpoint_eq_gradient_integral u h z (1,0) (ContinuousLinearMap.fst ℂ ℂ ℂ) _
+
+example (φ h : NLS.CoeffPair 2) (z : ℂ) (v : ℂ × ℂ)
+    (ℓ : (ℂ × ℂ) →L[ℂ] ℂ) (t : Icc (0 : ℝ) 1) :
+    (fderiv ℂ (fun ψ : NLS.CoeffPair 2 => ℓ (l2SolutionCurve (sourcePhysicalL2 ψ) z v t)) φ) h =
+      ∫ s in (0 : ℝ)..t.val, (l2EndpointGradient (sourcePhysicalL2 φ) z v ℓ t s).1*
+        (physicalBase (periodOnePotential h) s).1+
+        (l2EndpointGradient (sourcePhysicalL2 φ) z v ℓ t s).2*(physicalBase (periodOnePotential h) s).2 :=
+  fderiv_sourceL2Endpoint_eq_physical_integral φ h z v ℓ t
+
+example (Φ H : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) :
+    l2PotentialKernelCurve (continuousPotentialL2Class Φ) (continuousPotentialL2Class H) z v =
+      classicalPotentialVariationCurve Φ H z v := l2PotentialKernelCurve_of_continuous Φ H z v
+
+example (t : Icc (0 : ℝ) 1) (s : ℝ) :
+    l2EndpointGradient 0 0 (0,1) (ContinuousLinearMap.fst ℂ ℂ ℂ) t s = (Complex.I,0) := by
+  simp [l2EndpointGradient,NLS.LinearVolterra.extend,l2SolutionCurve_free,classicalFreeVector]
+
+example (t : Icc (0 : ℝ) 1) (s : ℝ) :
+    l2EndpointGradient 0 0 (1,0) (ContinuousLinearMap.snd ℂ ℂ ℂ) t s = (0,-Complex.I) := by
+  simp [l2EndpointGradient,NLS.LinearVolterra.extend,l2SolutionCurve_free,classicalFreeVector]
+
+end L2KernelChecks

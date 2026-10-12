@@ -1649,3 +1649,35 @@ public examples and the axiom audit of 28197 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Actual physical L2 variation kernel and endpoint gradient integrals
+
+The matrix-kernel prerequisite for the gradient formula in the proof of
+Lemma G.5 (printed p. 137) is now established at arbitrary physical L2
+inputs. This is an exact formula, not an assumed gradient or a change
+of the original Fourier normalization.
+
+| Public entry point | Scope |
+| --- | --- |
+| `l2KernelPairing_apply` | Integrated adjugate forcing is the ordinary unconjugated integral of the original L2 representatives. |
+| `continuous_l2KernelPairing`, `l2KernelPairing_sub`, `l2KernelPairing_smul` | Joint continuity and linearity in the adjugate column. |
+| `continuous_l2VariationCurve`, `continuous_l2PotentialKernelCurve` | Joint continuity needed to pass both base potentials and directions through L2 approximation. |
+| `l2PotentialKernelCurve_of_continuous` | Exact recovery of the existing classical variation through its determinant-one kernel. |
+| `l2PotentialKernelCurve_eq_variation`, `fderiv_l2SolutionCurve_potential_eq_kernel` | Explicit kernel equals the actual derivative as a whole continuous curve on [0,1]. |
+| `l2EndpointGradient`, `continuous_l2EndpointGradient` | Explicit physical adjugate gradient for any complex-linear endpoint functional at any unit-interval time. |
+| `fderiv_l2Endpoint_eq_gradient_integral` | Actual L2 Fréchet derivative equals its unconjugated physical gradient integral. |
+| `fderiv_sourceL2Endpoint_eq_gradient_integral`, `fderiv_sourceL2Endpoint_eq_physical_integral` | Every Hilbert source and direction, with the original physical Fourier representative and normalization. |
+
+Public checks cover the entire-curve kernel identity, its two column
+signs, literal integral pairing, general endpoint functional, an actual
+monodromy-entry derivative, original Hilbert source directions,
+classical recovery, and both free off-diagonal gradient signs.
+Named trace, anti-trace, and separated-characteristic gradient integral
+specializations remain to be connected to the existing source
+cotangents. Counts do not certify completion of the dissertation.
+
+Validation: the full project check passed (6648 build jobs), including all
+public examples and the axiom audit of 28227 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

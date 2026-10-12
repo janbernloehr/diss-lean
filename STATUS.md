@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: actual physical L2 solution variation
+## Current milestone: the physical L2 kernel and endpoint gradients
+
+The actual potential derivative of the physical L2 solution now has its
+explicit fundamental-matrix kernel on the entire unit interval.
+`L2KernelPairing.lean` constructs the integrated adjugate forcing from
+bounded L2 Volterra pairings and identifies it with the ordinary,
+unconjugated integral of the original representatives. It proves
+continuity in the L2 direction and the uniform test curves, as well as
+linearity in the adjugate column.
+
+`L2VariationKernel.lean` combines those two integrated coordinates with
+the actual homogeneous columns. Continuous potentials and directions
+recover the existing classical variation exactly. Joint continuity and
+density in both L2 inputs then identify this explicit kernel with the
+actual potential derivative, as an equality of whole continuous curves.
+No pointwise convergence of L2 representatives is assumed.
+
+`L2EndpointGradient.lean` derives the ordinary physical gradient integral
+for every complex-linear endpoint functional and every time in [0,1].
+The gradient is the explicit polynomial in the homogeneous columns,
+the base solution, and the endpoint functional. The original plus/minus
+signs and the unconjugated pairing are retained.
+
+`L2SourceEndpointGradient.lean` transfers this formula to every original
+Hilbert source and direction through `sourcePhysicalL2`. It also states
+the integral directly against `physicalBase (periodOnePotential h)`;
+there is no new source normalization or continuous-representative
+hypothesis. Public checks include an actual monodromy-entry derivative
+and the free off-diagonal gradients `(i,0)` and `(0,-i)`.
+
+The next step is to specialize and sum these endpoint integrals for the
+original discriminant, anti-discriminant, and separated characteristics,
+and connect them to their existing source cotangents. The generic
+endpoint result is proved; those named gradient formulas are not yet
+claimed at rough L2 inputs. G.2's arbitrary-time interval norm remains
+unresolved; neither proposed spectral-height correction is adopted.
+The optional original m=1 sharpening remains under the accepted Lemma
+27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6648 build jobs), including all
+public examples and the axiom audit of 28227 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: actual physical L2 solution variation
 
 The actual physical L2 solution now has a proved Fréchet variation in
 both frequency and potential. `L2SolutionVariation.lean` differentiates

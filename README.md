@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the physical L2 solution's actual Fréchet derivative
-is the unique zero-initial solution of the linearized Volterra equation.
-The result includes arbitrary L2 directions, endpoint evaluation, the
-original off-diagonal signs, an a.e. differential equation, and exact
-recovery of the classical variation. The dissertation is incomplete;
-next are the fundamental-matrix kernel and rough-L2 gradient integrals.
+Latest milestone: the actual L2 potential derivative now has its explicit
+fundamental-matrix kernel and unconjugated endpoint-gradient integral.
+Both hold for arbitrary rough L2 inputs and directions; the endpoint
+formula also uses the original Hilbert source normalization. The
+dissertation is incomplete. Next are the named discriminant,
+anti-discriminant, and separated-characteristic gradient integrals.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
