@@ -1130,3 +1130,17 @@ base and one-derivative domain norms. Thus Corollary 3.3 survives the
 failure of Lemma 3.2(ii); no extra component factor is needed in its
 sufficient region. Nonzero imaginary part is explicit, as required for
 the finite denominators in the printed expression.
+
+## Lemma 3.4: the unspecified constant accommodates the source norm
+
+`SourceDoubleResolvent.lean` verifies the sandwich estimate in the original
+p-to-one pair norms with c_p=64p². The older maximum-product estimate has
+constant 32p². The output conversion to the original l1 component-sum
+norm costs at most two; input and potential conversions are contractive.
+The source only requires a constant depending on p, so this is a proved
+instance of its claim, not a correction to its statement. The proof uses
+the existing exact source Fourier remainder, including its boundary
+modes. The zero strip is bounded by the full potential remainder, with
+the reciprocal frequency term zero under Lean's totalized division.
+`sourceLemma3_4` quantifies the constant before every potential and strip;
+no period-one restriction or p>1 restriction is added.

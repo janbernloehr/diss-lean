@@ -3294,3 +3294,5 @@ import NLS.ZakharovShabat.SourceFreeResolvent
 import NLS.ZakharovShabat.SourceFreeResolventCounterexample
 import NLS.ZakharovShabat.SourceResolvent
 import NLS.ZakharovShabat.SourceCorollary3_3
+import NLS.ZakharovShabat.SourceDoubleResolvent
+import NLS.ZakharovShabat.SourceLemma3_4

@@ -43405,3 +43405,63 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (z : ℂ) (hz : z ∉
   ⟨mem_sourceResolventSet_zero_of_notMem hp z hz, sourceResolvent_zero_eq_free hp z hz⟩
 
 end CorollaryThreeThreeOriginalNormChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+section LemmaThreeFourOriginalNormChecks
+
+-- The source statement quantifies its constant before the potential and strip.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) :
+    ∃ C : ℝ, 0 < C ∧ ∀ (φ : CoeffPair p) (n : ℤ) (r : ℝ),
+      ∀ (hr : 0 < r) (hrπ : r ≤ Real.pi/4) (z : ℂ) (hz : z ∈ verticalStrip n r),
+      ‖sourceDoubleResolvent hp φ z (notMem_freeLattice_of_mem_verticalStrip hr hrπ hz)‖ ≤
+        (C/r^2)*(‖φ‖/|(n : ℝ)|^(1/p.toReal)+‖sourceFourierTail n.natAbs φ‖) :=
+  sourceLemma3_4 hp
+
+-- This is the actual three-factor composition, with original norms at every stage.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (z : ℂ)
+    (hz : z ∉ freeLattice) :
+    sourceDoubleResolvent hp φ z hz = (sourceFreeResolventToL1 hp z hz).comp
+      ((sourcePotentialFromL1 φ).comp (sourceFreeResolventToL1 hp z hz)) :=
+  sourceDoubleResolvent_eq_comp hp φ z hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (z : ℂ)
+    (hz : z ∉ freeLattice) (a : CoeffPair p) (j : ℤ) :
+    (sourceDoubleResolvent hp φ z hz a).fst j =
+      ∑' k : ℤ, φ.fst (j-k)*a.snd k / ((z+(Real.pi : ℂ)*j)*(z-(Real.pi : ℂ)*k)) :=
+  sourceDoubleResolvent_fst_apply hp φ z hz a j
+
+-- The p=1 endpoint retains the same explicit admissible constant.
+example (φ : CoeffPair 1) (z : ℂ) (hz0 : z ∉ freeLattice) {n : ℤ} {r : ℝ}
+    (hr : 0 < r) (hrπ : r ≤ Real.pi/4) (hz : z ∈ verticalStrip n r) :
+    ‖sourceDoubleResolvent (by norm_num) φ z hz0‖ ≤
+      (64/r^2)*(‖φ‖/|(n : ℝ)|+‖sourceFourierTail n.natAbs φ‖) := by
+  simpa using norm_sourceDoubleResolvent_le_verticalStrip (by norm_num) φ z hz0 hr hrπ hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (N : ℕ) :
+    ‖sourceFourierTail N φ‖ ≤ ‖φ‖ ∧ Antitone (fun M => ‖sourceFourierTail M φ‖) :=
+  ⟨norm_sourceFourierTail_le hp N φ, norm_sourceFourierTail_antitone hp φ⟩
+
+-- Boundary modes survive; modes strictly inside the cutoff are removed.
+example :
+    (sourceFourierTail 1 ((CoeffPair.toMax 2).symm
+      (lp.single 2 1 1, lp.single 2 0 1))).fst 1 = 1 := by
+  simp [sourceFourierTail_fst, lp.single_apply]
+
+example :
+    (sourceFourierTail 1 ((CoeffPair.toMax 2).symm
+      (lp.single 2 1 1, lp.single 2 0 1))).snd 0 = 0 := by
+  simp [sourceFourierTail_snd]
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    Filter.Tendsto (fun N : ℕ => sourceFourierTail N φ) Filter.atTop (nhds 0) :=
+  tendsto_sourceFourierTail hp φ
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    {r : ℝ} (hr : 0 < r) (hrπ : r ≤ Real.pi/4) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs → ∀ z : ℂ, ∀ hz : z ∈ verticalStrip n r,
+      ‖sourceDoubleResolvent hp φ z (notMem_freeLattice_of_mem_verticalStrip hr hrπ hz)‖ < ε :=
+  exists_sourceDoubleResolvent_small hp φ hr hrπ hε
+
+end LemmaThreeFourOriginalNormChecks

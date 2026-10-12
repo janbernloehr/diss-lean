@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Corollary 3.3 is proved in the original source norms
-for every finite Banach exponent. The printed numerical region has a
-compact analytic resolvent, and the actual spectrum is discrete. This
-region remains valid despite the failed bound in Lemma 3.2(ii).
-[The Section 3 audit](coverage/SECTION_3.md) records the distinction.
-Lemma 3.4 is next; the dissertation remains incomplete.
+Latest milestone: Lemma 3.4 is proved in the original p-to-one pair norms
+with an explicit constant c_p=64p² for every finite Banach exponent.
+The actual sandwich resolvent becomes uniformly small on high-frequency
+strips. [The Section 3 audit](coverage/SECTION_3.md) records the statement
+and norm comparisons. Corollary 3.5 is next; the dissertation remains
+incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

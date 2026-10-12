@@ -1,10 +1,10 @@
 # Section 3: periodic spectrum
 
-This audit covers the operator setup, Proposition 3.1, Lemma 3.2, and
-Corollary 3.3 on printed pages 23–24. It retains the original period-two
-space, its finite-exponent component-sum norm, and the conditional
-period-one parity clauses. It is
-not a completeness certificate for Section 3 or the dissertation.
+This audit covers the operator setup, Proposition 3.1, Lemmas 3.2 and
+3.4, and Corollary 3.3 on printed pages 23–25. It retains the original
+period-two space, its finite-exponent component-sum norm, and the
+conditional period-one parity clauses. It is not a completeness certificate
+for Section 3 or the dissertation.
 
 ## Operator setup
 
@@ -97,5 +97,33 @@ original p-to-one estimate in Lemma 3.2(ii) does not invalidate this
 corollary: contractivity of the potential conversion gives the sufficient
 Neumann condition before transporting the inverse to the original norms.
 
-Next: Lemma 3.4, auditing the sandwich-resolvent estimate in the original
-p-to-one pair norms and tracking its component constants.
+## Lemma 3.4
+
+The operator has the original p norm on its input and the original l1
+component-sum norm on its output. The source leaves c_p unspecified;
+the proved choice c_p=64p² depends only on p and works for every finite
+Banach exponent. No claim of optimality is made.
+
+| Printed requirement or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Actual sandwich | `sourceDoubleResolvent_eq_comp` | R0 Phi R0 as the composition of the original-norm free resolvent and potential convolution. |
+| Both component formulas | `sourceDoubleResolvent_fst_apply`, `sourceDoubleResolvent_snd_apply` | Exact convergent-sum coefficient formulas in the raw scalar Fourier convention, for all parameters off the free lattice. |
+| Norm conversion | `norm_sourceDoubleResolvent_le_max` | Original p-to-one operator norm is at most twice the maximum-product operator norm. |
+| Explicit strip estimate | `norm_sourceDoubleResolvent_le_verticalStrip` | c_p=64p², every period-two potential, 1<=p<infinity, 0<r<=pi/4, and every punctured strip. |
+| Constant quantified independently of the potential | `sourceLemma3_4` | One positive c_p precedes every potential, radius, strip index, and spectral parameter; strip membership supplies existence of the free inverse. |
+| Actual source remainder | `sourceFourierTail_fst`, `sourceFourierTail_snd` in `SourceFourierTail.lean` | Retains precisely the modes with abs(j)>=N, including boundary modes, in both original components. |
+| Remainder at zero and contraction | `sourceFourierTail_zero`, `norm_sourceFourierTail_le` | Cutoff zero gives the full potential; every cutoff is contractive in the original finite pair norm. |
+| Remainder monotonicity and convergence | `norm_sourceFourierTail_antitone`, `tendsto_sourceFourierTail` in `SourceFourierTail.lean` | Existing original-norm results reused by the new estimate. |
+| Vanishing numerical bound | `tendsto_sourceDoubleResolventBound_zero` | The frequency term and original-norm remainder both vanish as the absolute cutoff grows. |
+| Uniform smallness on high strips | `exists_sourceDoubleResolvent_small` | For every positive epsilon and fixed admissible radius, one cutoff works for both signs of the strip index and every spectral parameter in those strips. |
+
+These entry points lie in `NLS.ZakharovShabat`. The factor two in the
+comparison comes from the l1 output norm; the base and potential maps to
+the maximum norm are contractive. It changes the admissible unspecified
+constant, without changing the printed assertion. At index zero, the
+full potential remainder controls the strip; Lean's totalized division
+sets the frequency term to zero. No use is made of the false original-norm
+height estimate in Lemma 3.2(ii).
+
+Next: Corollary 3.5 in the original source topology, including one
+neighborhood and cutoff for the entire stated box-and-disk complement.

@@ -1,6 +1,51 @@
 # Implementation plan
 
-## Current milestone: Corollary 3.3 in the original source norms
+## Current milestone: Lemma 3.4 in the original pair norms
+
+Lemma 3.4 (printed page 25) is now proved in the original component-sum
+pair norms for every finite Banach exponent and every period-two
+potential. `SourceDoubleResolvent.lean` constructs the actual map
+R0 Phi R0 from the original p space to the original l1 space. Its
+composition identity uses the original-norm free resolvent and potential
+convolution, and both coefficient formulas are proved in the library's
+raw scalar Fourier convention.
+
+The explicit admissible constant is c_p=64p^2. The maximum-product
+estimate has constant 32p^2; transporting its l1 output to the original
+sum norm costs at most two, while the input and potential conversions
+are contractive. The same comparison applies to the Fourier remainder.
+The source only asks for a constant depending on p, so this verifies its
+claim without asserting sharpness. The numerical discrepancy in
+Lemma 3.2(ii) is not used or altered.
+
+`SourceLemma3_4.lean` supplies `sourceLemma3_4`, with the positive constant
+quantified before the potential, radius, spectral parameter, and strip
+index. Membership in a permitted punctured strip proves that the free
+inverse exists. The p=1 endpoint and both signs of the strip index are
+included. The zero strip is controlled by the full potential remainder;
+Lean's totalized division makes its frequency term zero.
+
+The proof reuses `sourceFourierTail`, including its exact boundary cutoff,
+norm monotonicity, and convergence to zero, and adds its contraction
+bound. The explicit sandwich bound tends to zero, yielding uniform
+smallness of the actual original-norm operator on all sufficiently high
+punctured strips at every fixed admissible radius.
+
+Next: Corollary 3.5 in the original source topology, with one neighborhood
+and cutoff controlling the full stated complement of the central box
+and high disks. The dissertation remains incomplete, and earlier source
+qualifications remain in force.
+
+Validation: the focused builds and standalone public probe passed without
+warnings, including the original-norm composition, quantified constant,
+p=1 endpoint, remainder boundary modes, and uniform smallness. The source
+inventory check passed for 156 candidate labels; this is not a completeness
+certificate. The full check passed all 6,732 build jobs and public
+examples. The axiom audit passed for 29,183 NLS declarations with only
+the permitted classical axioms. The build retains 21 existing warnings;
+the new modules add none.
+
+## Previous milestone: Corollary 3.3 in the original source norms
 
 Corollary 3.3 (printed page 24) is now proved for every finite Banach
 exponent on the full period-two potential space in the original
