@@ -3218,3 +3218,6 @@ import NLS.ZakharovShabat.L2KernelPairing
 import NLS.ZakharovShabat.L2VariationKernel
 import NLS.ZakharovShabat.L2EndpointGradient
 import NLS.ZakharovShabat.L2SourceEndpointGradient
+import NLS.ZakharovShabat.L2EndpointGradientCalculus
+import NLS.ZakharovShabat.L2CharacteristicGradients
+import NLS.ZakharovShabat.L2SourceCharacteristicGradients

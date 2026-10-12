@@ -41903,3 +41903,67 @@ example (t : Icc (0 : ℝ) 1) (s : ℝ) :
   simp [l2EndpointGradient,NLS.LinearVolterra.extend,l2SolutionCurve_free,classicalFreeVector]
 
 end L2KernelChecks
+
+noncomputable section
+section L2CharacteristicGradientChecks
+open Set Complex MeasureTheory NLS.LinearVolterra NLS.ZakharovShabat
+
+example (u h : IntervalPairL2) (z : ℂ) :
+    (fderiv ℂ (fun w : IntervalPairL2 => l2Discriminant w z) u) h =
+      ∫ s in (0 : ℝ)..1, (l2DiscriminantGradient u z s).1*h.ofLp.1 s+
+        (l2DiscriminantGradient u z s).2*h.ofLp.2 s := fderiv_l2Discriminant_eq_gradient_integral u h z
+
+example (u h : IntervalPairL2) (z : ℂ) :
+    (fderiv ℂ (fun w : IntervalPairL2 => l2AntiDiscriminant w z) u) h =
+      ∫ s in (0 : ℝ)..1, (l2AntiDiscriminantGradient u z s).1*h.ofLp.1 s+
+        (l2AntiDiscriminantGradient u z s).2*h.ofLp.2 s := fderiv_l2AntiDiscriminant_eq_gradient_integral u h z
+
+example (b : BoundaryCondition)
+    (u h : IntervalPairL2) (z : ℂ) :
+    (fderiv ℂ (fun w : IntervalPairL2 => l2SeparatedCharacteristic b w z) u) h =
+      ∫ s in (0 : ℝ)..1, (l2SeparatedGradient b u z s).1*h.ofLp.1 s+
+        (l2SeparatedGradient b u z s).2*h.ofLp.2 s := fderiv_l2SeparatedCharacteristic_eq_gradient_integral b u h z
+
+example (φ h : NLS.CoeffPair 2) (z : ℂ) :
+    sourceDiscriminantCotangent (by simp) z φ h =
+      ∫ s in (0 : ℝ)..1, (l2DiscriminantGradient (sourcePhysicalL2 φ) z s).1*
+        (physicalBase (periodOnePotential h) s).1+
+        (l2DiscriminantGradient (sourcePhysicalL2 φ) z s).2*(physicalBase (periodOnePotential h) s).2 := sourceDiscriminantCotangent_eq_physical_gradient_integral φ h z
+
+example (φ h : NLS.CoeffPair 2) (z : ℂ) :
+    sourceAntiDiscriminantCotangent (by simp) (by norm_num) z φ h =
+      ∫ s in (0 : ℝ)..1, (l2AntiDiscriminantGradient (sourcePhysicalL2 φ) z s).1*
+        (physicalBase (periodOnePotential h) s).1+
+        (l2AntiDiscriminantGradient (sourcePhysicalL2 φ) z s).2*(physicalBase (periodOnePotential h) s).2 := sourceAntiDiscriminantCotangent_eq_physical_gradient_integral φ h z
+
+example
+    (b : BoundaryCondition) (φ h : NLS.CoeffPair 2) (z : ℂ) :
+    sourceBoundaryCharacteristicCotangent (by simp) (by norm_num) b z φ h =
+      ∫ s in (0 : ℝ)..1, (l2SeparatedGradient b (sourcePhysicalL2 φ) z s).1*
+        (physicalBase (periodOnePotential h) s).1+
+        (l2SeparatedGradient b (sourcePhysicalL2 φ) z s).2*(physicalBase (periodOnePotential h) s).2 := sourceBoundaryCharacteristicCotangent_eq_physical_gradient_integral b φ h z
+
+example (t : Icc (0 : ℝ) 1) (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ)
+    (ℓ : (ℂ × ℂ) →L[ℂ] ℂ) :
+    IntervalIntegrable (fun s => (l2EndpointGradient u z v ℓ t s).1*h.ofLp.1 s+
+      (l2EndpointGradient u z v ℓ t s).2*h.ofLp.2 s) volume 0 t.val :=
+  intervalIntegrable_l2EndpointGradient_pairing u h z v ℓ t
+
+example (s : ℝ) : l2DiscriminantGradient 0 0 s = 0 := by
+  simp [l2DiscriminantGradient,l2EndpointGradient,NLS.LinearVolterra.extend,
+    l2SolutionCurve_free,classicalFreeVector]
+
+example (s : ℝ) : l2AntiDiscriminantGradient 0 0 s = (Complex.I,-Complex.I) := by
+  simp [l2AntiDiscriminantGradient,l2EndpointGradient,NLS.LinearVolterra.extend,
+    l2SolutionCurve_free,classicalFreeVector]
+
+example (b : BoundaryCondition) (s : ℝ) :
+    l2SeparatedGradient b 0 0 s =
+      (-(BoundaryCondition.extensionSign b)/2,-(BoundaryCondition.extensionSign b)/2) := by
+  cases b <;>
+    simp [l2SeparatedGradient,l2EndpointGradient,NLS.LinearVolterra.extend,
+      l2SolutionCurve_free,classicalFreeVector,classicalSeparatedEndpointCLM_apply,
+      BoundaryCondition.extensionSign,div_eq_mul_inv,Complex.inv_I] <;>
+    ring_nf <;> simp [Complex.I_sq] <;> norm_num
+
+end L2CharacteristicGradientChecks

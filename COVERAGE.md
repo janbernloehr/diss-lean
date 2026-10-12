@@ -1681,3 +1681,34 @@ public examples and the axiom audit of 28227 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Physical spectral-characteristic gradients on the full Hilbert source space
+
+The generic endpoint integral now supplies the actual trace,
+anti-discriminant, and both separated-characteristic gradients at rough
+L2 inputs. Existing source cotangents are identified with these physical
+integrals in every Hilbert direction.
+
+| Public entry point | Scope |
+| --- | --- |
+| `intervalIntegrable_l2EndpointGradient_pairing` | Actual L2 endpoint pairings are integrable on every unit subinterval. |
+| `fderiv_l2Endpoint_add_eq_gradient_integral` | Endpoint sums differentiate and combine inside the ordinary integral. |
+| `l2DiscriminantGradient`, `l2AntiDiscriminantGradient`, `l2SeparatedGradient` | Explicit physical gradients constructed from the proven endpoint kernel. |
+| `l2SeparatedCharacteristic_eq_endpoint` | Exact separated endpoint identity, including the original sine normalization and signs. |
+| `fderiv_l2Discriminant_eq_gradient_integral`, `fderiv_l2AntiDiscriminant_eq_gradient_integral`, `fderiv_l2SeparatedCharacteristic_eq_gradient_integral` | Actual potential derivatives for all physical L2 bases and directions. |
+| `continuous_l2DiscriminantGradient`, `continuous_l2AntiDiscriminantGradient`, `continuous_l2SeparatedGradient` | Continuity in the physical variable. |
+| `sourceDiscriminantCotangent_eq_physical_gradient_integral`, `sourceAntiDiscriminantCotangent_eq_physical_gradient_integral`, `sourceBoundaryCharacteristicCotangent_eq_physical_gradient_integral` | Existing source cotangents equal ordinary integrals against the original Fourier-synthesized direction at every Hilbert source. |
+
+Public checks include all six derivative/cotangent formulas,
+integrability, the free trace and anti-trace gradients, and the exact
+free gradient for both boundary signs. Pointwise comparison with the
+classical gradient functions and the resulting connection to existing
+corrected coefficient estimates remain the next step. The previously
+proved estimates and documented reference/exponent corrections are
+unchanged. The dissertation remains incomplete.
+
+Validation: the full project check passed (6651 build jobs), including all
+public examples and the axiom audit of 28245 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

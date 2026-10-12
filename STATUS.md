@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: the physical L2 kernel and endpoint gradients
+## Current milestone: physical spectral-gradient integrals on Hilbert sources
+
+The physical L2 discriminant, anti-discriminant, and both separated
+characteristics now have explicit unconjugated potential-gradient
+integrals at every L2 base point and in every L2 direction.
+`L2EndpointGradientCalculus.lean` proves integrability of the endpoint
+pairings and justifies adding them inside the ordinary interval integral.
+
+`L2CharacteristicGradients.lean` constructs the trace and off-diagonal
+sum gradients from the appropriate two endpoint gradients. The separated
+gradient uses the exact original signed initial vector and normalized
+endpoint functional. The characteristic equals that endpoint functional
+exactly, so the sine normalization is retained. All three gradient
+families are continuous in the physical variable.
+
+`L2SourceCharacteristicGradients.lean` identifies each existing original
+Hilbert source cotangent with its physical gradient integral. The
+integrands use `physicalBase (periodOnePotential h)` for the source
+direction. No finite-support, continuous-representative, smallness, or
+reality hypothesis is imposed, and no new Fourier normalization is used.
+
+Public examples verify all three physical derivative formulas and all
+three original source cotangent formulas. Free checks give zero for the
+discriminant gradient, `(i,-i)` for the anti-discriminant gradient, and
+`(-epsilon/2,-epsilon/2)` for each separated gradient, with epsilon the
+original Dirichlet/Neumann extension sign.
+
+The remaining comparison is the pointwise identification with the
+established classical gradient formulas on continuous representatives,
+then its use in connecting the existing corrected spectral-gradient
+coefficient estimates to these actual source cotangents. No new G.5–G.7
+asymptotic assertion is claimed by the present integral identities.
+G.2's arbitrary-time interval norm remains unresolved; neither proposed
+spectral-height correction is adopted. The optional original m=1
+sharpening remains under the accepted Lemma 27.2 correction. The
+dissertation is incomplete.
+
+Validation: the full project check passed (6651 build jobs), including all
+public examples and the axiom audit of 28245 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: the physical L2 kernel and endpoint gradients
 
 The actual potential derivative of the physical L2 solution now has its
 explicit fundamental-matrix kernel on the entire unit interval.

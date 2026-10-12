@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual L2 potential derivative now has its explicit
-fundamental-matrix kernel and unconjugated endpoint-gradient integral.
-Both hold for arbitrary rough L2 inputs and directions; the endpoint
-formula also uses the original Hilbert source normalization. The
-dissertation is incomplete. Next are the named discriminant,
-anti-discriminant, and separated-characteristic gradient integrals.
+Latest milestone: the discriminant, anti-discriminant, and separated
+characteristics have their actual physical L2 gradient integrals. These
+integrals equal the original source cotangents at every Hilbert base
+point and direction, retaining the Fourier normalization and boundary
+signs. The dissertation is incomplete; next is the pointwise comparison
+with the classical gradients and existing spectral-gradient estimates.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
