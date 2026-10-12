@@ -3287,3 +3287,5 @@ import NLS.Fourier.SobolevSesquilinearDistributionPairing
 import NLS.Fourier.PeriodicL1Functional
 import NLS.Fourier.PeriodicL1Pairing
 import NLS.Fourier.PeriodicL1Distribution
+import NLS.ZakharovShabat.PeriodTwoPrintedHeightCounting
+import NLS.ZakharovShabat.Proposition3_1

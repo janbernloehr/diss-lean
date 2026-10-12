@@ -1073,3 +1073,23 @@ physical Fourier coefficients, and the opposite-index product series is
 absolutely convergent. This closes the page-21 normalized action obligation
 without inferring it from the L2 special case. The source qualifications
 above remain unchanged.
+
+## Proposition 3.1: full period-two scope and the same printed-height discrepancy
+
+Printed page 23 states Proposition 3.1 for every period-two potential at
+all finite exponents. Its central box repeats Theorem 1.1's height
+`(1+8*norm(phi))^p`. `PeriodTwoPrintedHeightCounting.lean` now proves the
+unchanged height and all counts on the entire period-two source space for
+1<=p<=4, using the original component-sum norm. It does not assume even
+support; the period-one parity clauses are conditional.
+
+`Proposition3_1.lean` assembles the statement and transfers the existing
+counterexample through the isometric period-one pair embedding. The
+result `proposition3_1_printed_height_counterexample` preserves the norm
+bound 1/16, equal component norms, even support, and the actual escaped
+spectral point for every cutoff. `not_proposition3_1_all_p` negates all
+printed clauses at once at exponent 100000000 through the failed
+exhaustion clause. Consequently Proposition 3.1 cannot be certified as
+printed for every finite p. Discreteness and real-type reality still hold
+at every finite p, as does the separate height-N counting theorem. No
+proposed height correction is adopted.

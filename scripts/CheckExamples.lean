@@ -43255,3 +43255,53 @@ example (L : ℝ) [Fact (0 < L)] (f : ℝ → ℂ) (hf : IntervalIntegrable f vo
   periodicL1Distribution_sesquilinear_action L f hf g hg hp
 
 end SectionTwoL1Checks
+
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+section PropositionThreeOneChecks
+local instance propositionThreeOneProbeFourFact : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Odd Fourier support is allowed: this is the whole period-two source space.
+example (φ : CoeffPair 4) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 4), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        AnalyticOnNhd ℂ (fun ψ => heightRectangleIntegral (by norm_num) (CoeffPair.toMax 4 ψ) N
+          ((1+8*‖ψ‖)^((4 : ℝ≥0∞).toReal))) U ∧
+        ∀ ψ ∈ U, Proposition3_1Data (by norm_num) ψ N :=
+  exists_proposition3_1_up_to_four (by norm_num) le_rfl φ
+
+example : CoeffPair.toMax 4 (WithLp.toLp 4 ((lp.single 4 1 1 : Coeff 4), 0)) ∉ pairParitySubspace 0 := by
+  intro h
+  have hz := (Coeff.mem_paritySubspace 0 _).mp h.1 1 (by norm_num)
+  simp at hz
+
+-- The original pair norm, not a substituted maximum, appears in the central box.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N : ℕ}
+    (h : Proposition3_1Data hp φ N) :
+    (∑ z ∈ heightPeriodicSpectrum hp (CoeffPair.toMax p φ) N ((1+8*‖φ‖)^p.toReal),
+      periodicAlgebraicMultiplicity hp (CoeffPair.toMax p φ) z) = 4*N+2 := h.central_multiplicity
+
+-- On an even cutoff the periodic sector has 2N+2 dimensions and the antiperiodic sector 2N.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N : ℕ}
+    (h : Proposition3_1Data hp φ N) (hφ : CoeffPair.toMax p φ ∈ pairParitySubspace 0)
+    (hN : (N : ℤ) % 2 = 0) :
+    Module.finrank ℂ ↥((heightRectangleIntegral hp (CoeffPair.toMax p φ) N
+      ((1+8*‖φ‖)^p.toReal)).range ⊓ pairParitySubspace 0) = 2*N+2 ∧
+    Module.finrank ℂ ↥((heightRectangleIntegral hp (CoeffPair.toMax p φ) N
+      ((1+8*‖φ‖)^p.toReal)).range ⊓ pairParitySubspace 1) = 2*N := by
+  constructor
+  · simpa only [hN, Int.zero_emod, ite_true] using h.central_parity hφ 0
+  · simpa only [hN, Int.one_emod_two, zero_ne_one, ite_false] using h.central_parity hφ 1
+
+-- Qualitative localization and counting still hold at arbitrary finite p.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair p), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N → PeriodicCountingData hp (CoeffPair.toMax p ψ) N :=
+  exists_periodTwo_periodicCountingData hp φ
+
+local instance propositionThreeOneProbeExponentFact : Fact (1 ≤ (100000000 : ℝ≥0∞)) := ⟨by norm_num⟩
+example : ¬ ∀ φ : CoeffPair 100000000, ∃ N : ℕ, Proposition3_1Data (by norm_num) φ N :=
+  not_proposition3_1_all_p
+
+end PropositionThreeOneChecks

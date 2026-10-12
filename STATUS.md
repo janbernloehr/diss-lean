@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: Section 2 normalized L1 periodic action
+## Current milestone: Proposition 3.1 on the full period-two source space
+
+Proposition 3.1 (printed page 23) now has an explicit statement on the entire
+period-two potential space with the original finite-exponent component-sum
+norm. The earlier printed-height source theorem only covered embedded
+period-one potentials. `PeriodTwoPrintedHeightCounting.lean` supplies the
+full period-two neighborhood theorem, without an even-support restriction.
+
+For 1<=p<=4, one open convex neighborhood containing the potential and zero
+supports all sufficiently large cutoffs, the original norm-dependent
+height, exact central and disk algebraic multiplicities, exhaustion, and
+analytic moving rectangular projections. The original source norm occurs
+in the height; the maximum norm is used only in the equivalent operator
+coordinates. At every finite p, a separate theorem retains the established
+height-N qualitative counting data on the original source space.
+
+`Proposition3_1.lean` bundles the actual printed clauses: discreteness,
+two eigenvalues per distant disk counted algebraically, the central count
+4N+2, conditional parity and its central dimensions, exhaustion, and
+real-type spectral reality. The conditional disk parity also implies the
+actual pointwise unit-translation law of every finite-exponent eigenfunction.
+
+The same module transfers the existing balanced dyadic counterexample to
+the full period-two source space without changing its original norm. For
+every integer P>=100000000, it gives a source of norm at most 1/16 and an
+actual spectral point outside the printed box and high disks for every
+cutoff. `not_proposition3_1_all_p` explicitly refutes the unrestricted
+printed proposition at exponent 100000000. This is a source qualification,
+not a replacement-height theorem; no proposed correction is adopted.
+
+Next: audit Lemma 3.2, explicitly checking its operator norms in the source
+pair norms, then continue through Section 3. The dissertation remains
+incomplete. The earlier Section 2 endpoint and pairing corrections, G.2's
+unresolved arbitrary-time interval norm, and the optional original m=1
+sharpening remain as recorded.
+
+Validation: focused builds and a standalone public probe passed without
+warnings. The probe covers the p=4 endpoint, odd Fourier support, original
+norms, central parity counts, all-finite-p qualitative counting, and the
+concrete refutation. The full check passed all 6,725 build jobs and public
+examples. The axiom audit passed for 29,081 NLS declarations with only the
+permitted classical axioms. The build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.
+
+## Previous milestone: Section 2 normalized L1 periodic action
 
 Section 2's normalized action is now proved for locally integrable data on
 any positive period. `PeriodicL1Functional.lean` constructs the bounded

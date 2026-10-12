@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's normalized periodic action now holds for
-locally integrable input on every positive period, with the exact 1/L factor,
-actual Fourier coefficients, and absolute convergence against smooth tests.
-[The current audit](coverage/SECTION_2.md) records the scope and endpoint
-qualifications. The numbered Section 3 audit is next; the dissertation remains
-incomplete.
+Latest milestone: Proposition 3.1 now covers the entire period-two source
+space with the original pair norm. Its printed-height conclusions hold for
+1<=p<=4; the unrestricted claim is explicitly refuted at a large finite
+exponent. Discreteness, reality, and qualitative counting retain their
+all-finite-p scope. [The Section 3 audit](coverage/SECTION_3.md) records the
+clauses. Lemma 3.2 is next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

@@ -233,6 +233,7 @@ coefficient identification. It proves the normalized periodic action stated
 in Section 2; it does not add a global real-line integration theorem for
 arbitrary Schwartz tests.
 
-Next: the numbered Section 3 statements, beginning with Proposition 3.1
-and its existing printed-height qualification. The candidate inventory and
-these maps are not a completeness certificate for the dissertation.
+The numbered Section 3 audit now starts with Proposition 3.1 in
+[SECTION_3.md](SECTION_3.md), retaining the printed-height qualification.
+The candidate inventory and these maps are not a completeness certificate
+for the dissertation.
