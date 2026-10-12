@@ -911,3 +911,30 @@ The neighborhood is connected and L²-open, contains the entire real L²
 locus, and can be shared with Proposition 28.2. The actual complex bound
 4736 at n=±10 and P²=21/16 is checked publicly. None of these results
 validates the printed intermediate scalar comparison disproved above.
+
+## Section 2: norm convergence at the infinity endpoint
+
+Source: dissertation, printed page 21, checked in the rendered PDF.
+After defining Fourier-Lebesgue spaces for every real s and 1<=p<=infinity,
+the source asserts that the Fourier series converges in the same norm.
+There is no finite-exponent restriction on that sentence. It is false at
+p=infinity.
+
+`InfinityTruncation.lean` proves the exact endpoint criterion: finite
+Fourier sums converge in a positive weighted infinity norm if and only if
+the weighted coefficients tend to zero outside finite sets. For every
+positive weight w, the coefficients 1/w(n) have norm one and every finite
+truncation has error exactly one. Thus universal convergence holds exactly
+at finite Banach exponents, including p=1.
+
+`SourceSectionTwoConvergence.lean` realizes this counterexample as an actual
+period-two tempered distribution with coefficients 1/(1+abs(n))^s for every
+real s. Its Fourier sums still converge distributionally. Period two is a
+valid instance of the source's arbitrary positive period, so this is an
+actual source counterexample, not merely a defect in a coefficient model.
+
+The valid alternatives are norm convergence at finite exponents; norm
+convergence for weighted c0 inputs at infinity; or distributional convergence
+at every Banach exponent. The last is already proved on the full real Sobolev
+scale and remains unchanged. See `coverage/SECTION_2.md` for the precise scope;
+the remaining Section 2 duality and gradient assertions are still being audited.

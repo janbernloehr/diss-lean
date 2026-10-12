@@ -42633,3 +42633,55 @@ example (ab : SobolevSource 1) :
   simpa only [one_div] using sobolevOddHamiltonian_reciprocal_rescaling 1 le_rfl ab (2 : ℂ) (by norm_num)
 
 end AppendixHRescalingChecks
+
+noncomputable section
+open Filter Topology NLS NLS.Fourier
+open scoped ENNReal SchwartzMap
+section SectionTwoConvergenceChecks
+
+-- The exact source endpoint p=1 retains norm convergence at negative regularity.
+example (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) 1) :
+    Tendsto (fun S : Finset ℤ => WeightedCoeff.truncate (Weight.sobolev s) 1 S a)
+      atTop (𝓝 a) := sourceSectionTwo_norm_convergence s 1 (by simp) a
+
+-- Infinity convergence is characterized on every positive weighted space.
+example (w : Weight) (a : WeightedCoeff w ⊤)
+    (ha : ∀ ε : ℝ, 0 < ε → ∃ S : Finset ℤ, ∀ n ∉ S, ‖(w n : ℂ)*a.val n‖ ≤ ε) :
+    Tendsto (fun S : Finset ℤ => WeightedCoeff.truncate w ⊤ S a) atTop (𝓝 a) :=
+  (WeightedCoeff.tendsto_truncate_top_iff w a).mpr ha
+
+-- Infinite-support finite-p data also converge when measured in the infinity norm.
+example (a : Coeff 2) :
+    Tendsto (fun S : Finset ℤ => Coeff.truncate S (Coeff.exponentInclusion (le_top : (2 : ℝ≥0∞) ≤ ⊤) a))
+      atTop (𝓝 (Coeff.exponentInclusion le_top a)) :=
+  (Coeff.tendsto_truncate_top_iff _).mpr
+    (Coeff.exponentInclusion_top_vanishing_tails (by simp) a)
+
+-- Both signed endpoints of every symmetric Fourier sum retain norm error exactly one.
+example (s : ℝ) (N : ℕ) :
+    let a := WeightedCoeff.inverseWeightCoefficients (Weight.sobolev s)
+    ‖a-WeightedCoeff.truncate (Weight.sobolev s) ⊤ (Finset.Icc (-(N : ℤ)) N) a‖ = 1 :=
+  WeightedCoeff.norm_inverseWeightCoefficients_sub_truncate _ _
+
+-- The counterexample is an actual periodic distribution even at negative half regularity.
+example : IsPeriodTwoDistribution (sourceSectionTwoInfinityDistribution (-1/2)) :=
+  sourceSectionTwoInfinityDistribution_periodic _
+
+example (n : ℤ) : sourceSectionTwoInfinityDistribution 0 (coefficientTest n) = 1 := by
+  simp [sourceSectionTwoInfinityDistribution_coefficient]
+
+-- Universal norm convergence is false at infinity for every Sobolev order.
+example (s : ℝ) : ¬∀ a : WeightedCoeff (Weight.sobolev s) ⊤,
+    Tendsto (fun S : Finset ℤ => WeightedCoeff.truncate (Weight.sobolev s) ⊤ S a) atTop (𝓝 a) := by
+  rw [WeightedCoeff.forall_tendsto_truncate_iff]
+  simp
+
+-- Distributional convergence still holds for the same norm counterexample.
+example (s : ℝ) :
+    Tendsto (fun S : Finset ℤ => sobolevDistributionSynthesisCLM s
+      (WeightedCoeff.truncate (Weight.sobolev s) ⊤ S
+        (WeightedCoeff.inverseWeightCoefficients (Weight.sobolev s))))
+      atTop (𝓝 (sourceSectionTwoInfinityDistribution s)) :=
+  tendsto_sobolevDistributionSynthesis_truncate s _
+
+end SectionTwoConvergenceChecks

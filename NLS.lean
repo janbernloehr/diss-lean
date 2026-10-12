@@ -3253,3 +3253,5 @@ import NLS.ZakharovShabat.SourceG3DerivativeCorrection
 import NLS.ZakharovShabat.NLSRiccatiRescaling
 import NLS.ZakharovShabat.SobolevRiccatiRescaling
 import NLS.ZakharovShabat.SobolevHamiltonianRescaling
+import NLS.SequenceSpaces.InfinityTruncation
+import NLS.Fourier.SourceSectionTwoConvergence

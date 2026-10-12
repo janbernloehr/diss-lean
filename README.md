@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Appendix H's field-rescaling identity now holds for the
-actual Riccati densities, including the weak Sobolev boundary, and the
-physical Hamiltonians on their stated regularity domains. The current
-[Appendix H audit](coverage/APPENDIX_H.md) records the recurrence and
-physical-integral coverage. The dissertation is incomplete; a systematic
-numbered-statement audit is next.
+Latest milestone: Section 2's unrestricted Fourier-series norm convergence
+is now refuted at infinity by actual periodic distributions at every real
+Sobolev order. The exact weighted c0 criterion and the finite-exponent
+correction are proved. [The current convergence audit](coverage/SECTION_2.md)
+records the scope. The dissertation is incomplete; Section 2's pairing and
+dual-gradient assertions are next.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

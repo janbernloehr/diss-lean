@@ -8,7 +8,8 @@ The appendix audits below use `NLS.Fourier` and `NLS.ComplexAnalysis`.
 Later milestone entries retain their historical validation counts and
 then-current limitations. The current Appendix G comparison is in
 [`coverage/APPENDIX_G.md`](coverage/APPENDIX_G.md), and Appendix H is in
-[`coverage/APPENDIX_H.md`](coverage/APPENDIX_H.md). The spectral overview link below and the final
+[`coverage/APPENDIX_H.md`](coverage/APPENDIX_H.md). The focused Section 2 convergence audit is in
+[`coverage/SECTION_2.md`](coverage/SECTION_2.md). The spectral overview link below and the final
 dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
@@ -2227,3 +2228,39 @@ not a completeness certificate.
 
 See [`coverage/APPENDIX_H.md`](coverage/APPENDIX_H.md) for the current
 comparison of the printed recurrence, proof identity, and H.1–H.2 conclusions.
+
+## Section 2 infinity convergence correction
+
+The rendered Section 2 paragraph on printed page 21 asserts Fourier-series
+norm convergence without excluding p=infinity. `InfinityTruncation.lean`
+now proves the exact correction for every positive weight: universal norm
+convergence holds exactly at finite Banach exponents, while an individual
+infinity input converges exactly when its weighted coefficients vanish
+outside finite sets.
+
+The coefficients 1/w(n) have weighted norm one and every finite Fourier
+truncation has error exactly one. `SourceSectionTwoConvergence.lean`
+realizes the Sobolev case as an actual period-two tempered distribution
+for every real regularity, including negative orders. The same Fourier
+sums converge distributionally while failing norm convergence. The
+existing finite-exponent and distributional convergence results are retained.
+
+`coverage/SECTION_2.md` records this focused source comparison and
+`SOURCE_ERRATA.md` records the missing infinity qualification. The public
+checks include p=1, general real regularity, every symmetric cutoff,
+the zero-order constant coefficients, and infinity convergence for
+finite-p inputs, which may have infinite support.
+
+Next: the scalar bilinear pairing and dual-gradient claims on printed
+page 22, followed by the numbered statements in Section 3. This focused
+audit does not establish completeness. G.2's arbitrary-time interval norm
+remains unresolved; neither proposed spectral-height correction is adopted.
+The optional original m=1 sharpening remains under the accepted Lemma 27.2
+correction.
+
+Validation: both focused module builds and the standalone public probe
+passed without warnings. The full project check passed all 6,685 build
+jobs and public examples. The axiom audit passed for 28,499 NLS declarations
+with only the permitted classical axioms. The full build retains 21 existing
+warnings and introduces none. The source inventory check passed for 156
+candidate statement labels; that count is not a completeness certificate.
