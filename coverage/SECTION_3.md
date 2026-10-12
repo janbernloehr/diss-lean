@@ -272,4 +272,39 @@ The data retain a positive cutoff; no rank formula is asserted for a
 degenerate, inadmissible central rectangle. The parity formulas use integer
 residues and therefore include negative disk indices.
 
-Next: Lemma 3.7 in the original source norms.
+Lemma 3.7 in the original source norms is verified below.
+
+
+## Lemma 3.7: intrinsic traces and analytic symmetric eigenvalue functions
+
+The two printed functions are the midpoint and half the squared gap. They
+are defined from traces of the actual source operator on the actual source
+contour range. Every finite Banach exponent is included, and the formulas
+remain valid at a double eigenvalue without diagonalizability assumptions.
+
+| Printed conclusion or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Original-domain contour lift | `sourceContourLift`, `sourceResolventCircleIntegral_eq_sourceInclusion`, `sourceInclusion_contourLift_range` | Inclusion of the bounded domain lift equals the actual integral; a range vector lifts to that exact original-domain representative. |
+| Actual intrinsic operator | `sourceContourOperator`, `sourceContourRestriction`, `sourceContourRestriction_apply` | The finite-dimensional endomorphism acts by the actual `sourceOperator` on the domain lift. |
+| Conjugation and trace identification | `sourceContourRangeEquiv`, `sourceContourRestriction_conjugate`, `sourceContourTracePower_eq` | Proved linear conjugation and trace invariance; no isometry of the converted norms is asserted. |
+| Intrinsic source definitions | `sourceContourTracePower`, `sourceContourMidpoint`, `sourceContourSquaredGap`, `sourcePeriodicMidpoint`, `sourcePeriodicSquaredGap` | Functions are defined by traces on the actual source range. The periodic functions use the quarter-pi disk at pi*n. |
+| Centered-square formula | `sourceContour_centeredSquare_trace` | At rank two the centered second trace equals the squared gap divided by two, exactly as printed. |
+| Identification with the eigenvalue pair | `sourceContourMidpoint_squaredGap_eq_pair`, `SourcePeriodicCountingData.midpoint_squaredGap_eq_pair` | Midpoint (a+b)/2, squared gap (a-b)^2, centered trace (a-b)^2/2, including a=b. |
+| Local intrinsic analyticity | `analyticAt_sourceContourTracePower`, `analyticAt_sourceContourMidpoint_and_halfSquaredGap` | Original potential topology on every admissible circle. |
+| Actual transport and range equivalence | `sourceContourTransport`, `sourceContourRangeTransport`, `sourceContourRangeTransport_apply` | The concrete range isomorphism is induced by invertible ambient projection transport. |
+| Original-domain intertwining | `sourceInclusion_contourLift_transported`, `sourceContourTransport_reduced_apply` | The lift represents the transported vector and the reduction intertwines its actual original-domain operator action. |
+| Local analytic reduction | `exists_local_sourceContourReduction` | One open neighborhood with analytic transport, inverse transport, and fixed-range operator, with admissible contours and isomorphic ranges. |
+| Fixed-range trace formulas | `sourceContourTracePower_eq_reduced`, `sourceContourMidpoint_halfSquaredGap_eq_reduced` | All intrinsic power traces agree with the reduction; both displayed rank-two formulas retain the exact factor one half. |
+| Full Lemma 3.7 package | `sourceLemma3_7` | One positive cutoff and open convex connected original-norm neighborhood containing source and zero; both printed analytic functions for every high index, actual counting data, pair identification, and algebraic multiplicities. |
+| Printed period-one topology | `sourceLemma3_7_periodOne` | Both analytic functions on a common original-norm period-one parameter neighborhood. |
+| Free-potential normalization | `sourcePeriodicMidpoint_squaredGap_zero` | Midpoint pi*n and squared gap zero for every integer n, including negative indices. |
+
+The entry points lie in `NLS.ZakharovShabat`, in `SourceContourTrace.lean`,
+`SourceContourReduction.lean`, and `SourceLemma3_7.lean`. The finite-dimensional
+trace formulas concern the actual restriction of the original operator;
+coefficient-space trace equality is proved afterward. The common neighborhood
+includes p=1. Earlier qualifications, including the distinct norm-dependent
+height issue, remain unchanged.
+
+Next: Section 4, equation (1.6) and the AKNS representation of the classical
+Dirichlet/Neumann domains.

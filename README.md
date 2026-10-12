@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual original-norm contour ranks and periodic
-counts are proved: two in each distant disk, 4N+2 in the central box,
-and the exact even/odd split. The results include algebraic multiplicities,
-physical eigenfunction parity, spectral exhaustion, and real-type spectral
-reality. [The Section 3 audit](coverage/SECTION_3.md) records the scope.
-Lemma 3.7 is next; the dissertation remains incomplete.
+Latest milestone: Lemma 3.7 is proved using traces of the actual original-norm
+operator restriction. Midpoints and half-squared gaps are analytic on one
+common neighborhood, including at p=1 and at eigenvalue collisions. Both
+intrinsic and transported trace formulas are verified.
+[The Section 3 audit](coverage/SECTION_3.md) records the scope. Section 4's
+Dirichlet/Neumann domains are next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

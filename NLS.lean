@@ -3306,3 +3306,6 @@ import NLS.ZakharovShabat.SourceEquation1_5
 import NLS.FunctionalAnalysis.ConjugatedRanges
 import NLS.ZakharovShabat.SourceContourRanks
 import NLS.ZakharovShabat.SourcePeriodicCounting
+import NLS.ZakharovShabat.SourceContourTrace
+import NLS.ZakharovShabat.SourceContourReduction
+import NLS.ZakharovShabat.SourceLemma3_7

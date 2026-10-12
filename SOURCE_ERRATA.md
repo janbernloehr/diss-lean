@@ -1205,3 +1205,14 @@ The results hold at every finite Banach exponent. They neither remove
 the qualification on the different printed norm-dependent height nor
 adopt its proposed correction. Positive cutoffs and boundary admissibility
 exclude the degenerate central rectangle at N=0.
+
+## Lemma 3.7: preserve the half-squared-gap normalization
+
+`SourceContourTrace.lean`, `SourceContourReduction.lean`, and
+`SourceLemma3_7.lean` verify the original-norm midpoint and trace identities.
+The centered-square trace is gamma_n squared divided by two, both on the
+intrinsic contour range and on a fixed reference range under analytic
+transport. No correction is needed, and no diagonalizability assumption
+is added at a coincident pair. The source functions are traces of the actual
+original-domain restriction, with coefficient-space equality proved by
+conjugation. All finite Banach exponents, including p=1, are covered.

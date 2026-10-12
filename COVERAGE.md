@@ -3015,3 +3015,44 @@ passed for 156 candidate labels, not a completeness certificate. The full
 check passed all 6,742 build jobs and public examples. The axiom audit passed
 for 29,407 NLS declarations with only the permitted classical axioms. The
 build retains 21 existing warnings; the new modules add none.
+
+## Lemma 3.7 in the original source norms
+
+Lemma 3.7 (printed page 27) now uses traces of the actual original-norm
+operator restriction. `SourceContourTrace.lean` lifts each contour-range
+vector into the original one-derivative domain and proves that inclusion
+recovers that same vector. Its intrinsic endomorphism acts by `sourceOperator`
+on this lift. A proved range conjugation identifies its power traces with
+the established coefficient-space traces; the source functions are defined
+from the intrinsic traces themselves.
+
+The midpoint is one half of the first trace, and the squared gap is twice
+the second trace minus the square of the first. At rank two, the trace of
+the centered square is exactly half the squared gap, as printed. These
+identities hold for coincident eigenvalues and possible nontrivial Jordan
+blocks. The functions agree with the midpoint and squared difference of
+the algebraically counted enclosed pair. Free-potential values are pi*n
+and zero, respectively.
+
+`SourceContourReduction.lean` constructs analytic ambient transport, inverse
+transport, and the operator on a fixed reference range, on an open neighborhood.
+The concrete continuous linear range isomorphism is induced by that transport.
+Its domain lift represents the transported vector exactly, and the transported
+operator intertwines the actual original-domain operator. All power traces,
+and both displayed rank-two formulas, agree in the intrinsic and fixed-range
+representations.
+
+`SourceLemma3_7.lean` supplies one positive cutoff and one open, convex,
+connected original-norm neighborhood containing the potential and zero.
+The midpoint and half-squared-gap functions are analytic there for every
+high disk. The same neighborhood retains the actual counting data, the
+trace formulas, and the enclosed eigenvalue pair with its algebraic
+multiplicities. Every finite Banach exponent, including p=1, is covered.
+The explicit period-one version uses the original period-one parameter
+topology. The norm conversion is not claimed to be isometric.
+
+Next: Section 4, beginning with the classical Dirichlet/Neumann domains
+in equation (1.6) and their AKNS representation. The dissertation remains
+incomplete; earlier source qualifications remain in force.
+
+Validation: `./scripts/check.sh` passed: 6,745 build jobs, public examples, and the axiom audit of 29,480 NLS declarations. The build retains 21 existing warnings; the new modules and standalone public probe are warning-free. The source inventory check passed with 156 candidate labels (not a completeness certificate).

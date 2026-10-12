@@ -43808,3 +43808,99 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N
         ((Real.pi : ℂ)*n) (Real.pi/4) := h.mem_spectrum_iff_central_or_disk z
 
 end OriginalNormPeriodicCountingChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+section LemmaThreeSevenOriginalNormChecks
+
+-- The midpoint is the trace of the actual original-norm restriction divided by two.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (c : ℂ) (R : ℝ) :
+    sourceContourMidpoint hp φ c R = LinearMap.trace ℂ (sourceResolventCircleIntegral hp φ c R).range
+      (sourceContourRestriction hp φ c R).toLinearMap / 2 := by
+  simp only [sourceContourMidpoint,sourceContourTracePower,pow_one]
+
+-- At p=1 a contour-range vector lifts to that exact original-domain vector,
+-- and the intrinsic operator acts by the original sourceOperator.
+example (φ : CoeffPair 1) (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hc : Metric.sphere c R ⊆ sourceResolventSet (by norm_num) φ)
+    (x : (sourceResolventCircleIntegral (by norm_num) φ c R).range) :
+    sourceDomainInclusion (sourceContourLift (by norm_num) φ c R x.val) = x.val ∧
+    (sourceContourRestriction (by norm_num) φ c R x).val =
+      sourceOperator (by norm_num) φ (sourceContourLift (by norm_num) φ c R x.val) :=
+  ⟨sourceInclusion_contourLift_range (by norm_num) φ c R hR hc x,
+    sourceContourRestriction_apply (by norm_num) φ c R hR hc x⟩
+
+-- The printed half-squared-gap is the centered-square trace, not twice that trace.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) (c : ℂ) (R : ℝ)
+    (hR : 0 ≤ R) (hc : Metric.sphere c R ⊆ sourceResolventSet hp φ)
+    (hdim : Module.finrank ℂ (sourceResolventCircleIntegral hp φ c R).range = 2) :
+    LinearMap.trace ℂ (sourceResolventCircleIntegral hp φ c R).range
+      (((sourceContourRestriction hp φ c R).toLinearMap - sourceContourMidpoint hp φ c R • 1)^2) =
+        sourceContourSquaredGap hp φ c R / 2 :=
+  sourceContour_centeredSquare_trace hp φ c R hR hc hdim
+
+-- At a repeated eigenvalue, the formulas remain valid without diagonalizability.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N : ℕ}
+    (h : SourcePeriodicCountingData hp φ N) (n : ℤ) (hn : N < n.natAbs) (a : ℂ)
+    (hs : enclosedPeriodicSpectrum hp (CoeffPair.toMax p φ) ((Real.pi : ℂ)*n) (Real.pi/4) = {a,a}) :
+    sourcePeriodicMidpoint hp φ n = a ∧ sourcePeriodicSquaredGap hp φ n = 0 ∧
+      LinearMap.trace ℂ (sourceResolventCircleIntegral hp φ ((Real.pi : ℂ)*n) (Real.pi/4)).range
+        (((sourceContourRestriction hp φ ((Real.pi : ℂ)*n) (Real.pi/4)).toLinearMap -
+          sourcePeriodicMidpoint hp φ n • 1)^2) = 0 := by
+  simpa using h.midpoint_squaredGap_eq_pair n hn a a hs
+
+-- Noncoincident pairs retain the exact half in the displayed trace formula.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N : ℕ}
+    (h : SourcePeriodicCountingData hp φ N) (n : ℤ) (hn : N < n.natAbs) (a b : ℂ)
+    (hs : enclosedPeriodicSpectrum hp (CoeffPair.toMax p φ) ((Real.pi : ℂ)*n) (Real.pi/4) = {a,b}) :
+    LinearMap.trace ℂ (sourceResolventCircleIntegral hp φ ((Real.pi : ℂ)*n) (Real.pi/4)).range
+      (((sourceContourRestriction hp φ ((Real.pi : ℂ)*n) (Real.pi/4)).toLinearMap -
+        sourcePeriodicMidpoint hp φ n • 1)^2) = (a-b)^2/2 :=
+  (h.midpoint_squaredGap_eq_pair n hn a b hs).2.2
+
+-- Actual range transport has an original-domain representative and intertwines the operator.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ ψ : CoeffPair p) (c : ℂ) (R : ℝ)
+    (hR : 0 ≤ R) (hφ : Metric.sphere c R ⊆ sourceResolventSet hp φ)
+    (hψ : Metric.sphere c R ⊆ sourceResolventSet hp ψ) (hu : IsUnit (sourceContourTransport hp φ ψ c R))
+    (x : (sourceResolventCircleIntegral hp φ c R).range) :
+    sourceDomainInclusion (sourceContourLift hp ψ c R (sourceContourTransport hp φ ψ c R x.val)) =
+      sourceContourTransport hp φ ψ c R x.val ∧
+    sourceContourTransport hp φ ψ c R (sourceReducedContourOperator hp φ ψ c R x) =
+      sourceOperator hp ψ (sourceContourLift hp ψ c R (sourceContourTransport hp φ ψ c R x.val)) :=
+  ⟨sourceInclusion_contourLift_transported hp φ ψ c R hR hφ hψ hu x,
+    sourceContourTransport_reduced_apply hp φ ψ c R hR hφ hψ hu x⟩
+
+-- The fixed-range formulas have exactly the same normalization.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ ψ : CoeffPair p) (c : ℂ) (R : ℝ)
+    (hR : 0 ≤ R) (hφ : Metric.sphere c R ⊆ sourceResolventSet hp φ)
+    (hψ : Metric.sphere c R ⊆ sourceResolventSet hp ψ) (hu : IsUnit (sourceContourTransport hp φ ψ c R))
+    (hdim : Module.finrank ℂ (sourceResolventCircleIntegral hp φ c R).range = 2) :
+    sourceContourMidpoint hp ψ c R = LinearMap.trace ℂ (sourceResolventCircleIntegral hp φ c R).range
+      (sourceReducedContourOperator hp φ ψ c R).toLinearMap / 2 ∧
+    LinearMap.trace ℂ (sourceResolventCircleIntegral hp φ c R).range
+      (((sourceReducedContourOperator hp φ ψ c R).toLinearMap - sourceContourMidpoint hp ψ c R • 1)^2) =
+        sourceContourSquaredGap hp ψ c R / 2 :=
+  sourceContourMidpoint_halfSquaredGap_eq_reduced hp φ ψ c R hR hφ hψ hu hdim
+
+-- One connected neighborhood works for both printed functions and every high index.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N : ℕ, ∃ U : Set (CoeffPair p), 0 < N ∧ IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ n : ℤ, N < n.natAbs →
+        AnalyticOnNhd ℂ (fun ψ => sourcePeriodicMidpoint hp ψ n) U ∧
+        AnalyticOnNhd ℂ (fun ψ => sourcePeriodicSquaredGap hp ψ n / 2) U := by
+  obtain ⟨N,U,hN,ho,_,hc,hφ,h0,han,_⟩ := sourceLemma3_7 hp φ
+  exact ⟨N,U,hN,ho,hc,hφ,h0,han⟩
+example (φ : CoeffPair 1) : ∃ N : ℕ, ∃ U : Set (CoeffPair 1), IsOpen U ∧ φ ∈ U ∧
+    ∀ n : ℤ, N < n.natAbs → AnalyticOnNhd ℂ
+      (fun ψ => sourcePeriodicSquaredGap (by norm_num) (periodOnePair ψ) n / 2) U := by
+  obtain ⟨N,U,_,ho,_,_,hφ,_,han⟩ := sourceLemma3_7_periodOne (by norm_num) φ
+  exact ⟨N,U,ho,hφ,fun n hn => (han n hn).2⟩
+
+-- Free coincident eigenvalues, at a negative index and the endpoint p=1.
+example : sourcePeriodicMidpoint (by norm_num) (0 : CoeffPair 1) (-3) = (Real.pi : ℂ)*(-3 : ℤ) ∧
+    sourcePeriodicSquaredGap (by norm_num) (0 : CoeffPair 1) (-3) / 2 = 0 := by
+  obtain ⟨hm,hg⟩ := sourcePeriodicMidpoint_squaredGap_zero (p := 1) (by norm_num) (-3)
+  exact ⟨hm,by rw [hg]; norm_num⟩
+
+end LemmaThreeSevenOriginalNormChecks
