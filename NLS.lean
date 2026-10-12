@@ -3211,3 +3211,6 @@ import NLS.ZakharovShabat.L2DiscriminantCotangent
 import NLS.ZakharovShabat.L2SeparatedCharacteristics
 import NLS.ZakharovShabat.L2SourceCharacteristics
 import NLS.ZakharovShabat.L2CharacteristicCotangents
+import NLS.ZakharovShabat.L2SolutionVariation
+import NLS.ZakharovShabat.L2PotentialVariation
+import NLS.ZakharovShabat.L2VariationEquation

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the anti-discriminant and both separated boundary
-characteristics have their exact physical L2 formulas at every Hilbert
-source. The original endpoint signs, spectra, zero multiplicities,
-normalized products, and full source cotangents are retained. This
-extends the preceding L2 discriminant comparison. The dissertation is
-incomplete; the next step is the explicit L2 potential-variation integral.
+Latest milestone: the physical L2 solution's actual Fréchet derivative
+is the unique zero-initial solution of the linearized Volterra equation.
+The result includes arbitrary L2 directions, endpoint evaluation, the
+original off-diagonal signs, an a.e. differential equation, and exact
+recovery of the classical variation. The dissertation is incomplete;
+next are the fundamental-matrix kernel and rough-L2 gradient integrals.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

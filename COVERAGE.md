@@ -1617,3 +1617,35 @@ public examples and the axiom audit of 28177 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Actual physical L2 solution variation and linearized equation
+
+`L2SolutionVariation.lean`, `L2PotentialVariation.lean`, and
+`L2VariationEquation.lean` identify the actual solution derivative with
+its physical linearized Volterra solution. They supply the rough-L2
+variation prerequisite for the fundamental-matrix gradient formula in
+the proof of Lemma G.5 (printed p. 137).
+
+| Public entry point | Scope |
+| --- | --- |
+| `fderiv_l2SolutionCurve_joint_apply` | Joint frequency/potential derivative in the uniform curve norm, at every physical L2 input. |
+| `l2VariationCurve_eq_integral`, `l2VariationCurve_zero`, `l2VariationCurve_unique` | Actual signed integral equation, zero initial value, and uniqueness among its continuous solutions. |
+| `fderiv_l2SolutionCurve_potential`, `fderiv_l2SolutionCurve_potential_eval` | Arbitrary L2 potential directions and evaluation at every time, including the endpoint. |
+| `l2PotentialVariation_eq_integral` | Explicit off-diagonal forcing with the original plus/minus signs. |
+| `norm_l2VariationCurve_le` | Global bound, linear in the frequency and L2 perturbation norms. |
+| `l2PotentialVariation_of_continuous` | Exact agreement with the existing classical potential variation. |
+| `ae_hasDerivAt_l2VariationCurve`, `ae_hasDerivAt_l2PotentialVariation` | Actual linearized differential equation almost everywhere on the unit interval. |
+| `l2VariationCurve_eq_integral_ofFunction`, `ae_hasDerivAt_l2VariationCurve_ofFunction` | Integral and differential equations for arbitrary original square-integrable representatives. |
+
+Public examples verify the full derivative formula, potential directions,
+endpoint and initial values, explicit signed forcing integrals,
+uniqueness, the norm estimate, the a.e. equation, arbitrary physical
+representatives, and classical recovery. The matrix kernel and the
+resulting rough-L2 endpoint gradient integrals are not yet claimed.
+The dissertation remains incomplete.
+
+Validation: the full project check passed (6644 build jobs), including all
+public examples and the axiom audit of 28197 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

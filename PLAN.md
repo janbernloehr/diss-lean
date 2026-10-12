@@ -1,6 +1,56 @@
 # Implementation plan
 
-## Latest progress: physical L2 anti-discriminant and boundary characteristics
+## Latest progress: actual physical L2 solution variation
+
+The actual physical L2 solution now has a proved Fréchet variation in
+both frequency and potential. `L2SolutionVariation.lean` differentiates
+the globally invertible Volterra equation and identifies the derivative
+with `l2VariationCurve`: the full inverse applied to the perturbed
+coefficient acting on the base solution. The result holds at every L2
+potential and in every L2 direction, without a smallness condition.
+
+The variation satisfies the original linearized physical integral
+equation, has zero initial value, and is the unique continuous curve
+satisfying that integral equation. Uniqueness is not inferred from an
+a.e. differential equation alone.
+
+`L2PotentialVariation.lean` isolates pure potential directions, commutes
+the derivative with evaluation at every time (including the endpoint),
+and exposes the forcing `(i*h1*y2, -i*h2*y1)` in actual interval integrals.
+A global uniform-norm estimate is linear in the parameter perturbation.
+Continuous potentials and directions recover the existing classical
+potential variation exactly.
+
+`L2VariationEquation.lean` applies Lebesgue differentiation to the two
+integrals. It proves the signed linearized differential equation almost
+everywhere for arbitrary L2 classes, and supplies both the integral and
+a.e. differential equations for arbitrary original square-integrable
+representatives. These results establish the physical variation needed
+before the fundamental-matrix gradient formula used in Lemma G.5.
+
+The variation-of-constants kernel and the explicit rough-L2 endpoint
+gradient integrals are still to be proved. The earlier characteristic
+cotangent comparisons do not by themselves give those formulas. G.2's
+arbitrary-time interval norm remains unresolved; neither proposed
+spectral-height correction is adopted. The optional original m=1
+sharpening remains under the accepted Lemma 27.2 correction. The
+dissertation is incomplete.
+
+Validation: the full project check passed (6644 build jobs), including all
+public examples and the axiom audit of 28197 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+Next: express the actual L2 variation by the fundamental-matrix
+variation-of-constants kernel, then identify the physical endpoint,
+discriminant, anti-discriminant, and separated-characteristic gradient
+integrals at rough Hilbert sources. Reuse the existing classical
+endpoint gradient formulas, determinant-one identity, physical L2
+pairings, and the now-proved actual variation. Preserve the source
+normalization and both off-diagonal signs.
+
+## Previous milestone: physical L2 anti-discriminant and boundary characteristics
 
 The original source anti-discriminant and both separated boundary
 characteristics now have their exact physical L2 monodromy-entry formulas

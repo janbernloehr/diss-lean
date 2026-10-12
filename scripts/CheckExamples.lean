@@ -41775,3 +41775,72 @@ example (b : BoundaryCondition) (z : ℂ) :
     l2SeparatedCharacteristic b 0 z = Complex.sin z ∧ l2AntiDiscriminant 0 z = 0 := by simp
 
 end L2SourceCharacteristicChecks
+
+noncomputable section
+section L2VariationChecks
+open Set MeasureTheory NLS.LinearVolterra NLS.ZakharovShabat
+
+example (q d : ℂ × IntervalPairL2) (v : ℂ × ℂ) :
+    (fderiv ℂ (fun r : ℂ × IntervalPairL2 => l2SolutionCurve r.2 r.1 v) q) d =
+      l2SolutionOperator q (l2Volterra d (l2SolutionCurve q.2 q.1 v)) :=
+  fderiv_l2SolutionCurve_joint_apply q d v
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) :
+    (fderiv ℂ (fun w : IntervalPairL2 => l2SolutionCurve w z v) u) h =
+      l2VariationCurve (z,u) (0,h) v := fderiv_l2SolutionCurve_potential u h z v
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) :
+    (fderiv ℂ (fun w : IntervalPairL2 => l2SolutionCurve w z v ⟨1,by norm_num⟩) u) h =
+      l2VariationCurve (z,u) (0,h) v ⟨1,by norm_num⟩ :=
+  fderiv_l2SolutionCurve_potential_eval u h z v _
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) :
+    ((fderiv ℂ (fun w : IntervalPairL2 => l2SolutionCurve w z v) u) h) ⟨0,by norm_num⟩ = 0 := by
+  rw [fderiv_l2SolutionCurve_potential,l2VariationCurve_zero]
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) (t : Icc (0 : ℝ) 1) :
+    l2VariationCurve (z,u) (0,h) v t =
+      (Complex.I*(∫ s in (0 : ℝ)..t.val, h.ofLp.1 s*l2BoundedSecond (l2SolutionCurve u z v) s),
+       -Complex.I*(∫ s in (0 : ℝ)..t.val, h.ofLp.2 s*l2BoundedFirst (l2SolutionCurve u z v) s))+
+      l2ODEIntegral u z (l2VariationCurve (z,u) (0,h) v) t :=
+  l2PotentialVariation_eq_integral u h z v t
+
+example (q d : ℂ × IntervalPairL2) (v : ℂ × ℂ) (w : Curve (ℂ × ℂ))
+    (hw : ∀ t, w t = l2ODEIntegral d.2 d.1 (l2SolutionCurve q.2 q.1 v) t+
+      l2ODEIntegral q.2 q.1 w t) :
+    w = (fderiv ℂ (fun r : ℂ × IntervalPairL2 => l2SolutionCurve r.2 r.1 v) q) d := by
+  rw [fderiv_l2SolutionCurve_joint_apply]
+  exact l2VariationCurve_unique q d v w hw
+
+example (q d : ℂ × IntervalPairL2) (v : ℂ × ℂ) :
+    ‖l2VariationCurve q d v‖ ≤
+      Real.exp (‖q.1‖+‖q.2‖)*((‖d.1‖+‖d.2‖)*(‖v‖*Real.exp (‖q.1‖+‖q.2‖))) :=
+  norm_l2VariationCurve_le q d v
+
+example (u h : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) :
+    ∀ᵐ s ∂volume.restrict (Ioc (0 : ℝ) 1),
+      HasDerivAt (NLS.LinearVolterra.extend (l2VariationCurve (z,u) (0,h) v))
+        ((Complex.I*h.ofLp.1 s*(NLS.LinearVolterra.extend (l2SolutionCurve u z v) s).2,
+          -Complex.I*h.ofLp.2 s*(NLS.LinearVolterra.extend (l2SolutionCurve u z v) s).1)+
+         classicalODECoefficient (intervalL2Representative u s) z
+          (NLS.LinearVolterra.extend (l2VariationCurve (z,u) (0,h) v) s)) s :=
+  ae_hasDerivAt_l2PotentialVariation u h z v
+
+example (φ ψ : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)))
+    (hψ : MemLp ψ 2 (volume.restrict (Ioc 0 1))) (z dz : ℂ) (v : ℂ × ℂ)
+    (t : Icc (0 : ℝ) 1) :
+    let q := (z,intervalL2OfFunction φ hφ)
+    let d := (dz,intervalL2OfFunction ψ hψ)
+    l2VariationCurve q d v t =
+      (∫ s in (0 : ℝ)..t.val, classicalODECoefficient (ψ s) dz
+        (NLS.LinearVolterra.extend (l2SolutionCurve q.2 z v) s))+
+      (∫ s in (0 : ℝ)..t.val, classicalODECoefficient (φ s) z
+        (NLS.LinearVolterra.extend (l2VariationCurve q d v) s)) :=
+  l2VariationCurve_eq_integral_ofFunction φ ψ hφ hψ z dz v t
+
+example (Φ H : Curve (ℂ × ℂ)) (z : ℂ) (v : ℂ × ℂ) :
+    l2VariationCurve (z,continuousPotentialL2Class Φ) (0,continuousPotentialL2Class H) v =
+      classicalPotentialVariationCurve Φ H z v := l2PotentialVariation_of_continuous Φ H z v
+
+end L2VariationChecks
