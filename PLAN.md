@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Current milestone: Lemma 4.3 in original norms and physical L² spaces
+## Current milestone: Lemma 4.4 and original restricted spectra
+
+`SourceLemma4_4.lean` restricts the actual operator to each original
+one-derivative boundary domain and proves its boundedness into the original
+base space. Both restrictions use the same Dirichlet-reflected potential
+from Lemma 4.3. The interval-input statement covers 1<p<infinity; the
+restriction also works at p=1 for an already-reflected potential.
+
+The free operator acts by pi times the mode index. The potential action
+is the printed unconditionally convergent series in the original norm:
+positive Dirichlet sign, negative Neumann sign, and output index k-n.
+At p=2 the modes agree with those already identified with physical waves.
+Removing the zero Sobolev weight is an isometry, and the base boundary
+space is closed. The sufficient operator bound explicitly retains the
+norm-comparison factor 2^(1/p).
+
+`SourceBoundarySpectra.lean` defines the spectrum as the complement of
+bijectivity of the actual restricted pencil, and proves that equivalent
+base/domain norms preserve the full spectrum. The original periodic
+spectrum is the union of the two restricted spectra. Both are closed,
+discrete, and finite in bounded regions. For original interval input,
+the canonical source labels exhaust exactly these restricted spectra.
+
+Next: audit the original-norm Cauchy–Riesz restrictions and ranks in the
+proof of Theorem 1.4. No new rank or algebraic-multiplicity formula is
+claimed here. No correction to Lemma 4.4's signs or index shift is needed.
+The separate all-exponent printed-height failure remains unresolved as
+printed; the dissertation is not complete.
+
+Validation: `./scripts/check.sh` passed: 6,761 build jobs, public examples,
+and the axiom audit of all 29,941 NLS declarations. The build reports
+21 existing warnings; both new modules and the standalone public examples
+are warning-free. The source inventory check passed for 156 candidate
+labels; this is not a completeness certificate.
+
+## Previous milestone: Lemma 4.3 in original norms and physical L² spaces
 
 `SourceLemma4_3.lean` proves bounded and complex-analytic signed extension
 from the original period-one component-sum Fourier–Lebesgue space into

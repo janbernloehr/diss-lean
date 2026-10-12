@@ -44245,3 +44245,81 @@ example : BoundaryCondition.intervalAmplitude .dirichlet (fun _ => ((1 : ℂ), 1
 
 example : BoundaryCondition.intervalAmplitude .dirichlet (fun _ => ((0 : ℂ), 1)) 1 ≠ (-2 : ℂ) * Complex.I :=
   sourceLemma4_3_printed_odd_counterexample
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Lemma 4.4: one reflected potential, both original-norm restrictions.
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤)
+    (b : BoundaryCondition) (φ : CoeffPair p)
+    (a : WeightedCoeffPair (Weight.sobolev 1) p) (ha : a ∈ sourceWeightedBoundarySubspace b 1) :
+    sourceOperator hp (sourceReflectedPotential hp1 hp φ) a ∈ sourceBoundaryBaseSubspace b :=
+  sourceLemma4_4 b hp1 hp φ a ha
+
+example (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet)
+    (a : sourceWeightedBoundarySubspace (p := 3) .neumann 1) :
+    ‖sourceBoundaryOperator .neumann (by simp) φ hφ a‖ ≤ (2 : ℝ)^(1/(3 : ℝ≥0∞).toReal) *
+      (Real.pi + WeightedCoeff.sobolevEmbeddingConstant 3 (by simp) * ‖φ‖) * ‖a‖ :=
+  norm_sourceBoundaryOperator_le .neumann (by simp) φ hφ a
+
+-- Already-reflected potentials also admit the restriction at p=1.
+example (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) :
+    sourceWeightedBoundarySubspace (p := 1) .dirichlet 1 →L[ℂ] sourceBoundaryBaseSubspace (p := 1) .dirichlet :=
+  sourceBoundaryOperator .dirichlet (by simp) φ hφ
+
+example (b : BoundaryCondition) (a : WeightedCoeffPair (Weight.sobolev 0) 3) :
+    sourceBoundaryZeroWeightEquiv a ∈ sourceBoundaryBaseSubspace b ↔
+      a ∈ sourceWeightedBoundarySubspace b 0 := sourceBoundaryZeroWeightEquiv_mem b a
+
+example (b : BoundaryCondition) :
+    sourceOperator (p := 3) (by simp) 0 (sourceBoundaryDomainMode b (-3)) =
+      ((Real.pi : ℂ) * (-3 : ℤ)) • sourceDomainInclusion (sourceBoundaryDomainMode b (-3)) :=
+  sourceBoundaryDomainMode_free b (by simp) (-3)
+
+example (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) :
+    HasSum (fun k : ℤ => φ.snd k • sourceBoundaryBaseMode .dirichlet (k - (-3)))
+      (sourceOperator (by simp) φ (sourceBoundaryDomainMode .dirichlet (-3)) -
+        sourceOperator (by simp) 0 (sourceBoundaryDomainMode .dirichlet (-3))) := by
+  simpa [BoundaryCondition.extensionSign] using
+    sourceBoundaryDomainMode_potential_series .dirichlet (by simp) φ hφ (-3)
+
+example (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) :
+    HasSum (fun k : ℤ => (-φ.snd k) • sourceBoundaryBaseMode .neumann (k - (-3)))
+      (sourceOperator (by simp) φ (sourceBoundaryDomainMode .neumann (-3)) -
+        sourceOperator (by simp) 0 (sourceBoundaryDomainMode .neumann (-3))) := by
+  simpa [BoundaryCondition.extensionSign] using
+    sourceBoundaryDomainMode_potential_series .neumann (by simp) φ hφ (-3)
+
+example (b : BoundaryCondition) :
+    sourceBoundaryBaseMode (p := 2) b (-3) = sourceBoundaryMode b (-3) := sourceBoundaryBaseMode_two b (-3)
+
+example (b : BoundaryCondition) :
+    sourceDomainInclusion (sourceBoundaryDomainMode (p := 2) b (-3)) = sourceBoundaryMode b (-3) :=
+  sourceBoundaryDomainMode_inclusion_two b (-3)
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (z : ℂ) :
+    sourceBoundaryPencil b (by simp) φ hφ z =
+      z • sourceBoundaryInclusion b - sourceBoundaryOperator b (by simp) φ hφ :=
+  sourceBoundaryPencil_eq b (by simp) φ hφ z
+
+example (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) :
+    (sourceResolventSet (by simp) φ)ᶜ = sourceBoundarySpectrum .dirichlet (by simp) φ hφ ∪
+      sourceBoundarySpectrum .neumann (by simp) φ hφ :=
+  sourcePeriodicSpectrum_eq_sourceBoundary_union (by simp) φ hφ
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (z : ℂ) :
+    z ∈ sourceBoundarySpectrum b (by simp) (sourceReflectedPotential (by norm_num) (by simp) φ)
+      (sourceReflectedPotential_mem (by norm_num) (by simp) φ) ↔
+      ∃ n : ℤ, canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) b φ n = z :=
+  mem_sourceBoundarySpectrum_reflected_iff b (by norm_num) (by simp) φ z
+
+example (b : BoundaryCondition) (φ : CoeffPair 1)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) :
+    IsClosed (sourceBoundarySpectrum b (by simp) φ hφ) ∧
+      DiscreteTopology (sourceBoundarySpectrum b (by simp) φ hφ) :=
+  ⟨isClosed_sourceBoundarySpectrum b (by simp) φ hφ,
+    discreteTopology_sourceBoundarySpectrum b (by simp) φ hφ⟩

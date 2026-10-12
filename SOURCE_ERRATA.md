@@ -1310,3 +1310,19 @@ for all 1<p<infinity. Its p=2 map preserves the original norm and is
 identified with actual reflection for arbitrary physical L² interval
 pairs. These corrections do not resolve the separate all-p printed-height
 failure in Theorem 1.4.
+
+## Lemma 4.4 and the following spectrum definitions (page 32)
+
+The original-norm audit confirms the printed free action m*pi and the
+potential-action series: positive Dirichlet sign, negative Neumann sign,
+and mode index k-m. Both series converge unconditionally for finite p.
+Both operators use the same Dirichlet-reflected potential. No correction
+to these formulas is needed. A sufficient explicit bound includes the
+factor 2^(1/p) when transferring the auxiliary maximum-norm estimate;
+this is not asserted to be optimal or a printed numerical constant.
+
+The spectra defined by actual restricted-pencil bijectivity agree with
+the earlier auxiliary spectra and, after the completed interval extension,
+with the spectra exhausted by the canonical source labels. This step does
+not establish a new original-norm Riesz rank formula or repair the separate
+all-exponent printed-height assertion in Theorem 1.4.

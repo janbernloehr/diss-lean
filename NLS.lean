@@ -3322,3 +3322,5 @@ import NLS.ZakharovShabat.SourceBoundarySeries
 import NLS.Fourier.HalfIntervalL2Identification
 import NLS.ZakharovShabat.SourceLemma4_3
 import NLS.ZakharovShabat.SourceLemma4_3Physical
+import NLS.ZakharovShabat.SourceLemma4_4
+import NLS.ZakharovShabat.SourceBoundarySpectra

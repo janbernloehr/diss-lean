@@ -179,9 +179,39 @@ Public checks include arbitrary L² representatives, negative frequencies,
 exact Hilbert norms, a concrete exponent above two, all-p analytic bounds,
 rough distributional limits, signed formulas, and both counterexamples.
 
+## Lemma 4.4 and restricted spectra (page 32)
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original base boundary space | `sourceBoundaryBaseSubspace`, `isClosed_sourceBoundaryBaseSubspace` | Closed subspace with the original component-sum norm. |
+| Zero-weight identification | `sourceBoundaryZeroWeightEquiv`, `sourceBoundaryZeroWeightEquiv_mem` | Isometry retaining all raw coefficients and the boundary condition. |
+| The common reflected potential | `sourceReflectedPotential`, `toMax_sourceReflectedPotential` | Actual completed Dirichlet extension from Lemma 4.3 for both restrictions. |
+| Boundary invariance | `sourceLemma4_4` | Original interval input, 1<p<infinity. |
+| Actual bounded restrictions | `sourceBoundaryOperator`, `norm_sourceBoundaryOperator_le` | Original one-derivative domain to original base; finite p including 1 for already-reflected potentials. |
+| Free mode action | `sourceBoundaryDomainMode_free` | Eigenvalue pi*n for either boundary sign. |
+| Potential mode action | `sourceBoundaryDomainMode_potential_series` | Original-norm HasSum, sign epsilon and output index k-n. |
+| Physical Hilbert modes | `sourceBoundaryBaseMode_two`, `sourceBoundaryDomainMode_inclusion_two` | Agreement with the previously reconstructed physical waves. |
+| Actual restricted pencil | `sourceBoundaryPencil_eq` | z times inclusion minus the actual restricted operator. |
+| Full resolvent and spectrum | `sourceBoundaryResolventSet_eq`, `sourceBoundarySpectrum_eq` | Bijectivity is unchanged by the continuous base/domain equivalences. |
+| Periodic spectral splitting | `sourcePeriodicSpectrum_eq_sourceBoundary_union` | Original periodic spectrum equals the union of the two restrictions. |
+| Closedness and discreteness | `isClosed_sourceBoundarySpectrum`, `discreteTopology_sourceBoundarySpectrum`, `finite_sourceBoundarySpectrum_inter` | Each restriction has finitely many spectral points in bounded regions. |
+| Interval-input spectrum | `sourceBoundarySpectrum_reflected`, `mem_sourceBoundarySpectrum_reflected_iff` | The canonical source labels exhaust the actual original-norm restriction. |
+
+The main entries are in `NLS.ZakharovShabat.SourceLemma4_4` and
+`NLS.ZakharovShabat.SourceBoundarySpectra`. The sufficient boundedness
+constant is 2^(1/p)*(pi+Kp*norm(phi)), where Kp is the existing Sobolev
+embedding constant and phi is the already-reflected potential. The
+interval extension itself still requires 1<p<infinity. No endpoint
+extension or original infinity-norm assertion is added.
+
+The printed mode formulas need no correction. Public examples check both
+signs explicitly, negative mode indices, a concrete exponent above two,
+p=1 for already-reflected potentials, physical p=2 mode identification,
+the actual pencil, spectral splitting, discreteness, and canonical labels.
+
 ## Next source assertions
 
-Next audit Lemma 4.4 in the original norms, restricting the actual operator
-with the Dirichlet-reflected potential to both weighted boundary domains.
-Track the positive Dirichlet and negative Neumann signs in the mode action,
-and then the spectral definitions and the proof of Theorem 1.4 on page 32.
+Continue the proof of Theorem 1.4 with the original-norm Cauchy–Riesz
+restrictions, analytic dependence, and ranks. The separate all-exponent
+printed-height failure remains in force. This milestone does not assert
+a new original-norm rank or algebraic-multiplicity formula.
