@@ -40,12 +40,41 @@ The normalization discrepancy and its correction are recorded in
 L² setting. It does not extend the interval regularity definition to all
 Fourier–Lebesgue exponents; the source's later extension has 1<p<infinity.
 
+## Reflection formulas and Lemma 4.1 (pages 28–29)
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Even/odd eigenfunction extensions | `aknsIntervalExtension` | Dirichlet is even/odd; Neumann is odd/even. |
+| Signed-swap coordinate formulas | `aknsToZS_intervalExtension`, `akns_intervalExtension_zsToAKNS` | Exact pointwise formulas for arbitrary original functions. |
+| Common potential extension | `aknsPotential_intervalExtension`, `memLp_aknsPotentialExtension` | q even, p odd; actual Dirichlet potential extension in either boundary problem; arbitrary L² input. |
+| Actual periodic H¹ AKNS representatives | `aknsCircleExtension`, `aknsCircleExtension_regular`, `aknsCircleExtension_reconstruct` | Circle functions recover the full closed-period piecewise extension, including both endpoints. |
+| Extended AKNS equation | `akns_interval_equation_transfer` | Actual derivatives and a.e. equations for either original endpoint domain. |
+| Both parts of Lemma 4.1 | `sourceLemma4_1` | Actual periodic H¹ circle representative, exact extension, and physical equation with the Dirichlet-reflected potential. |
+| Original source potential | `sourceDirichletPotentialCoefficients`, `sourceDirichletPotentialCoefficients_coefficients`, `sourceDirichletPotentialCoefficients_reconstruct` | Exact normalized physical Fourier integrals in `CoeffPair 2`, with a.e. reconstruction. |
+| Original weighted source domain | `sourceClassicalIntervalExtension`, `sourceClassicalIntervalExtension_coefficients` | Original component-sum weighted space, exact physical Fourier coefficients. |
+| Actual source circle representative | `sourceClassicalCircleExtension`, `sourceClassicalCircleExtension_regular`, `sourceClassicalCircleExtension_reconstruct`, `sourceClassicalCircleExtension_restrict` | Periodic H¹ regularity, closed-period reconstruction, and exact original closed-interval values. |
+| Actual original-norm operator equation | `source_classical_interval_equation_transfer` | The actual `sourceOperator` and `sourceDomainInclusion`, for arbitrary original L² potentials. |
+| Nonzero source eigenvector | `sourceClassicalIntervalExtension_ne_zero`, `source_classical_interval_eigenvector_transfer` | Nonzero original interval functions remain nonzero in the actual source domain. |
+| Boundary eigenvalues are periodic | `source_classical_interval_eigenvalue_mem_spectrum` | Membership in the complement of the actual original source resolvent set. |
+| Exhaustion paragraph after the lemma | `source_periodicSpectrum_eq_classicalEigenvalues_union` | The source spectrum equals the union of the two original physical interval eigenvalue sets. |
+
+The new entries are in `NLS.ZakharovShabat`, in `AKNSReflection.lean` and
+`SourceLemma4_1.lean`. They reuse the proved physical reflection and
+classical Fourier extension infrastructure while identifying the original
+source spaces explicitly. No isometry of maximum and component-sum norms
+is asserted. The physical equation transfer needs only its stated domain
+and a.e. equation; Fourier and spectral conclusions require original L²
+potentials. The spectrum-union theorem is a set identity, with no new
+multiplicity assertion. The AKNS potential-normalization correction is
+retained; the reflection signs and Lemma 4.1 need no further correction.
+
+Public examples exercise both boundary conditions, endpoint reconstruction,
+negative Fourier indices, the physical equation, nonzero original source
+eigenvectors, and full spectral exhaustion.
+
 ## Next source assertions
 
-Next audit the even/odd AKNS extensions, signed-swap ZS extensions, and
-Lemma 4.1 (page 29), including original-space membership and eigenvalue
-transfer. Existing support includes `ClassicalIntervalExtension`,
-`IntervalEquationReflection`, `ClassicalIntervalTransfer`, and
-`ClassicalIntervalEigenvalues`. Their presence is not an assertion that
-all source identifications and the following spectral exhaustion paragraph
-have already passed this audit.
+Next audit the Fourier representations (1.8)–(1.9) on page 30 and their
+original-space interpretation, followed by the extension/isomorphism
+assertions. Existing Fourier and boundary-basis modules provide supporting
+results but do not by themselves certify these source identifications.

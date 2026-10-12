@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 4's original AKNS domains and operators are
-constructed, with a physical L² unitary, exact H¹ norms, dense inclusions,
-and actual differential-expression conjugation. A proved correction separates
-the potential map from the normalized vector matrix on page 29.
-[The Section 4 audit](coverage/SECTION_4.md) records the scope. The extension
-formulas and Lemma 4.1 are next; the dissertation remains incomplete.
+Latest milestone: the reflection formulas and Lemma 4.1 are proved with
+actual periodic H¹ representatives and the original-norm source operator.
+The two original interval eigenvalue sets exhaust the reflected spectrum.
+[The Section 4 audit](coverage/SECTION_4.md) records the scope and the retained
+AKNS normalization correction. Fourier formulas (1.8)–(1.9) are next;
+the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

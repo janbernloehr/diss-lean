@@ -1240,3 +1240,14 @@ and actual operator conjugation are established using the page 19 potential
 map in `AKNSPhysicalNorms.lean` and `AKNSIntervalOperator.lean`. No isometry
 of the maximum component norm is asserted. The cached PDF page 29 was
 visually checked; the discrepancy is present in the display itself.
+
+## Lemma 4.1: the potential uses the same reflection in both boundary cases
+
+`AKNSReflection.lean` and `SourceLemma4_1.lean` preserve the printed signs:
+q is extended evenly and p oddly, and the ZS potential is Dirichlet-reflected
+for both problems. Dirichlet and Neumann change only the eigenfunction
+reflection. The page 29 potential-normalization correction above remains
+in effect in the coordinate identification; no additional correction is
+needed for Lemma 4.1. Actual periodic H¹ regularity and the physical and
+original-norm operator equations are proved. Spectral exhaustion is stated
+as an equality of sets of eigenvalues, without an added multiplicity claim.

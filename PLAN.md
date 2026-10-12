@@ -1,6 +1,40 @@
 # Implementation plan
 
-## Current milestone: Section 4 classical domains and AKNS conjugation
+## Current milestone: reflection formulas and Lemma 4.1
+
+The even/odd AKNS extensions on printed pages 28–29 are now connected
+pointwise to the signed-swap ZS extensions. `AKNSReflection.lean` proves
+both boundary cases, the inverse-coordinate formulas, and the common
+potential extension (q even, p odd). It constructs actual periodic H¹
+circle representatives with reconstruction on the whole closed period.
+The extended functions solve the AKNS equation almost everywhere, and
+original L² potentials have square-integrable reflected potentials.
+
+`SourceLemma4_1.lean` proves both parts of Lemma 4.1 using actual periodic
+H¹ representatives, exact closed-period reconstruction, and the reflected
+physical operator equation. The potential is Dirichlet-reflected for both
+boundary conditions; only the eigenfunction's reflection sign varies.
+This physical implication does not need an extra potential integrability
+assumption beyond its given almost-everywhere equation.
+
+For original L² potentials, the file defines the exact normalized physical
+Fourier coefficients in `CoeffPair 2` and the original weighted
+`WeightedCoeffPair (Weight.sobolev 1) 2` domain. Their reconstruction and
+coefficient identities are proved. The extended vector solves the actual
+`sourceOperator` equation and is nonzero whenever the original interval
+function is nonzero. Every original boundary eigenvalue lies in the actual
+source spectrum. The spectrum is exactly the union of the two original
+interval eigenvalue sets, establishing the paragraph following the lemma.
+The exhaustion statement is a set identity; it adds no new multiplicity
+formula. No maximum-norm conversion is claimed to be isometric.
+
+Next: the Fourier representations (1.8)–(1.9) on page 30, followed by the
+original-space extension/isomorphism assertions. The full dissertation
+remains incomplete, and the earlier normalization correction is retained.
+
+Validation: `./scripts/check.sh` passed: 6,752 build jobs, public examples, and the axiom audit of 29,664 NLS declarations. The build retains 21 existing warnings; both new modules and the standalone public probe are warning-free. The source inventory check passed with 156 candidate labels (not a completeness certificate).
+
+## Previous milestone: Section 4 classical domains and AKNS conjugation
 
 The beginning of Section 4 (printed pages 28–29) now has the original
 classical AKNS domain and operator, with exact identifications of equation

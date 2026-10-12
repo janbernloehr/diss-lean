@@ -43970,3 +43970,74 @@ example (q p : ℂ) : aknsPotential q p = (Real.sqrt 2 : ℂ) • aknsToZS (q,p)
 example : physicalOperator (fun _ => aknsToZS (1,0)) (fun _ => aknsToZS (1,0)) 0 ≠
     aknsToZS (aknsPhysicalOperator (fun _ => 1) (fun _ => 0) (fun _ => (1,0)) 0) :=
   physicalOperator_printed_akns_normalization_false
+
+open MeasureTheory Set NLS NLS.Fourier NLS.ZakharovShabat
+
+-- Section 4: actual even/odd reflection and original-space Lemma 4.1.
+example (f : ℝ → ℂ × ℂ) (x : ℝ) :
+    aknsToZS (aknsIntervalExtension .neumann (fun t => zsToAKNS (f t)) x) =
+      BoundaryCondition.intervalExtension .neumann f x := akns_intervalExtension_zsToAKNS _ _ _
+
+example (q p : ℝ → ℂ) (x : ℝ) :
+    aknsPotential (folded 1 q q x) (folded (-1) p p x) =
+      BoundaryCondition.intervalExtension .dirichlet (fun t => aknsPotential (q t) (p t)) x :=
+  aknsPotential_intervalExtension q p x
+
+example (b : BoundaryCondition) (g : ℝ → ℂ × ℂ) (hg : HasAKNSIntervalDomain b g) :
+    HasPeriodicH1Regularity (aknsCircleExtension b g hg).1 ∧
+      HasPeriodicH1Regularity (aknsCircleExtension b g hg).2 := aknsCircleExtension_regular b g hg
+
+example (b : BoundaryCondition) (g : ℝ → ℂ × ℂ) (hg : HasAKNSIntervalDomain b g) :
+    ((aknsCircleExtension b g hg).1 ((2 : ℝ) : AddCircle (2 : ℝ)),
+      (aknsCircleExtension b g hg).2 ((2 : ℝ) : AddCircle (2 : ℝ))) = aknsIntervalExtension b g 2 :=
+  aknsCircleExtension_reconstruct b g hg (by norm_num)
+
+example (b : BoundaryCondition) (q p : ℝ → ℂ) (g : ℝ → ℂ × ℂ)
+    (hg : HasAKNSIntervalDomain b g) (z : ℂ)
+    (h : aknsPhysicalOperator q p g =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • g x)) :
+    aknsPhysicalOperator (folded 1 q q) (folded (-1) p p) (aknsIntervalExtension b g)
+      =ᵐ[volume.restrict (Ioc 0 2)] (fun x => z • aknsIntervalExtension b g x) :=
+  akns_interval_equation_transfer b q p g hg z h
+
+example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
+    (hf : BoundaryCondition.HasClassicalIntervalDomain b f) (z : ℂ)
+    (h : physicalOperator φ f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x)) :
+    ∃ F : C(AddCircle (2 : ℝ), ℂ) × C(AddCircle (2 : ℝ), ℂ),
+      HasPeriodicH1Regularity F.1 ∧ HasPeriodicH1Regularity F.2 ∧
+      EqOn (fun x : ℝ => (F.1 (x : AddCircle (2 : ℝ)), F.2 (x : AddCircle (2 : ℝ))))
+        (BoundaryCondition.intervalExtension b f) (Icc 0 2) ∧
+      physicalOperator (BoundaryCondition.intervalExtension .dirichlet φ)
+        (fun x : ℝ => (F.1 (x : AddCircle (2 : ℝ)), F.2 (x : AddCircle (2 : ℝ))))
+        =ᵐ[volume.restrict (Ioc 0 2)]
+        (fun x : ℝ => z • (F.1 (x : AddCircle (2 : ℝ)), F.2 (x : AddCircle (2 : ℝ)))) :=
+  sourceLemma4_1 b φ f hf z h
+
+example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) :
+    physicalBase (CoeffPair.toMax 2 (sourceDirichletPotentialCoefficients φ hφ))
+      =ᵐ[volume.restrict (Ioc 0 2)] BoundaryCondition.intervalExtension .dirichlet φ :=
+  sourceDirichletPotentialCoefficients_reconstruct φ hφ
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : BoundaryCondition.HasClassicalIntervalDomain b f) :
+    (sourceClassicalIntervalExtension b f hf).fst.val (-3) =
+      periodTwoCoefficient (fun x => (BoundaryCondition.intervalExtension b f x).1) (-3) :=
+  (sourceClassicalIntervalExtension_coefficients b f hf (-3)).1
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : BoundaryCondition.HasClassicalIntervalDomain b f) :
+    ((sourceClassicalCircleExtension b f hf).1 ((0 : ℝ) : AddCircle (2 : ℝ)),
+      (sourceClassicalCircleExtension b f hf).2 ((0 : ℝ) : AddCircle (2 : ℝ))) = f 0 :=
+  sourceClassicalCircleExtension_restrict b f hf (by norm_num)
+
+example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) (hf : BoundaryCondition.HasClassicalIntervalDomain b f)
+    (z : ℂ) (hne : ¬ EqOn f 0 (Icc 0 1))
+    (h : physicalOperator φ f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x)) :
+    ∃ a : WeightedCoeffPair (Weight.sobolev 1) 2, a ≠ 0 ∧
+      sourceOperator (by simp) (sourceDirichletPotentialCoefficients φ hφ) a = z • sourceDomainInclusion a :=
+  source_classical_interval_eigenvector_transfer b φ f hφ hf z hne h
+
+example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) :
+    (sourceResolventSet (by simp) (sourceDirichletPotentialCoefficients φ hφ))ᶜ =
+      BoundaryCondition.classicalEigenvalues .dirichlet φ ∪ BoundaryCondition.classicalEigenvalues .neumann φ :=
+  source_periodicSpectrum_eq_classicalEigenvalues_union φ hφ
