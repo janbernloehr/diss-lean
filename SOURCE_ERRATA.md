@@ -324,6 +324,31 @@ the induced operator norm from Hermitian potential directions to Hermitian
 matrix operators. This proves the corrected statement; it does not
 restore either refuted feature of the printed version.
 
+## Lemma G.3 proof: missing remainder hat in the derivative bound
+
+Source: printed page 136, verified in the rendered PDF. After estimates for
+`partial_t (M-E)`, the proof displays `||partial_t M||_lambda = O(1)` uniformly
+in abs(lambda)>=1 and t in [0,1], on bounded H1 source sets. That displayed
+line is false for M itself. At zero potential and time zero,
+
+    partial_t M(0,z) = diag(-i*z, i*z),
+    ||partial_t M(0,z)|| = abs(z).
+
+`norm_deriv_classicalHermitianFundamental_zeroPotential_at_zero` proves this
+exact Hermitian operator norm for the actual fundamental matrix.
+`sourceG3_printed_full_derivative_false` rules out the claimed uniform bound,
+even for real spectral parameters and the singleton zero-potential set.
+The exponential weight equals one there.
+
+The estimate needed by the surrounding argument is for `M-E`.
+`sourceLemmaG3_weighted_remainder_derivative` proves it on the exact original
+periodic H1 source ball of radius M, with explicit constant
+`4*(8+pi)*(2*M)*exp(4*(2*M))`, for every nonzero complex z and all t in [0,1].
+This is a correction to an intermediate proof line. The stated remainder
+conclusions of G.3 retain their existing proofs; the separate epsilon
+qualification below also remains in force.
+
+
 ## Lemma G.3: the epsilon range in the printed exponent
 
 Source: dissertation, printed page 136. The wording "any epsilon > 0"

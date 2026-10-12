@@ -3248,3 +3248,5 @@ import NLS.ZakharovShabat.SourceHilbertGradientComplexSummability
 import NLS.ZakharovShabat.L2SourceG7ComplexBelowTwo
 import NLS.ZakharovShabat.SourceSobolevAllExponents
 import NLS.ZakharovShabat.SourceLemmaG7AllFinite
+import NLS.ZakharovShabat.ClassicalFundamentalDerivativeAudit
+import NLS.ZakharovShabat.SourceG3DerivativeCorrection

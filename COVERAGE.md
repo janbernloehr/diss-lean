@@ -6,7 +6,8 @@ chapter or appendix. All paths below are relative to the repository root;
 the introductory declarations are in `NLS.ZakharovShabat`.
 The appendix audits below use `NLS.Fourier` and `NLS.ComplexAnalysis`.
 Later milestone entries retain their historical validation counts and
-then-current limitations. The spectral overview link below and the final
+then-current limitations. The current Appendix G comparison is in
+[`coverage/APPENDIX_G.md`](coverage/APPENDIX_G.md). The spectral overview link below and the final
 dyadic-counterexample entry record the current status of Theorem 1.1.
 
 | Source result | Public entry point | Scope |
@@ -2122,3 +2123,56 @@ labels. Counts do not certify completeness.
 | `sobolevSourceExponentInclusion`, `exponentInclusion_sobolevSourceExponentInclusion` | Continuous original H1 inclusion preserving both raw Fourier sequences across source exponents. |
 | `sourceG7_below_two_periodic_representative` | Automatic physical H1 representative below two, without an added compatibility premise. |
 | `sourceLemmaG7_all_finite_corrected` | Both corrected G.7 estimates for every finite p>1 on the original complex H1 source. |
+
+### G.3 derivative proof correction and consolidated Appendix G audit
+
+The intermediate derivative line in the proof of G.3 omits the remainder
+hat. The rendered PDF on printed page 136 displays a uniform bound for the
+time derivative of M. `ClassicalFundamentalDerivativeAudit.lean` proves
+that at zero potential and time zero the actual fundamental derivative is
+diag(-i*z,i*z), with Hermitian operator norm exactly abs(z). The displayed
+uniform claim therefore fails even on real spectral parameters with
+abs(z)>=1 and the singleton zero-potential source set.
+
+`SourceG3DerivativeCorrection.lean` proves the required corrected bound for
+the actual remainder M-E. After the printed exponential normalization,
+the full Hermitian derivative is bounded uniformly at every nonzero
+complex spectral parameter and every time in [0,1]. On the exact original
+periodic H1 source ball of radius M, an explicit valid constant is
+4*(8+pi)*(2*M)*exp(4*(2*M)). No spectral-strip restriction is required.
+The stated G.3 remainder decay conclusions retain their existing proofs.
+
+`coverage/APPENDIX_G.md` now consolidates the current source audit, including
+the actual physical L2 fundamental solution, all seven numbered results,
+original H1 source interfaces, corrected references, and exponent ranges.
+It distinguishes source-level refutations from intermediate proof typos
+and does not treat a corrected theorem as the unchanged printed statement.
+
+Public checks cover the exact derivative norm at an arbitrary complex
+parameter and at z=3, failure of the uniform printed estimate, the corrected
+bound on the exact source ball, and vanishing of the free remainder's
+derivative on the entire closed unit interval.
+
+Next is auditing Appendix H's Hamiltonian formulas and weak-source
+identifications against the printed assumptions. G.2's arbitrary-time
+interval norm remains unresolved; neither proposed spectral-height
+correction is adopted. The optional original m=1 sharpening remains under
+the accepted Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6680 build jobs), including all
+public examples and the axiom audit of 28468 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21 existing
+warnings and no new warnings. The source inventory check passed with 156
+labels. Counts do not certify completeness.
+
+| Public entry point | Scope |
+| --- | --- |
+| `deriv_classicalHermitianFundamental_zeroPotential_at_zero` | Actual free diagonal generator at time zero. |
+| `norm_deriv_classicalHermitianFundamental_zeroPotential_at_zero` | Exact genuine Hermitian operator norm abs(z). |
+| `sourceG3_printed_full_derivative_false` | Failure of the displayed uniform full-derivative bound even at the zero potential. |
+| `classicalHermitianRemainder_derivative_weighted_sobolev_ball` | Corrected full-matrix derivative bound for every nonzero complex spectral parameter. |
+| `sourceLemmaG3_weighted_remainder_derivative` | The same corrected estimate on the exact original periodic H1 source balls. |
+
+See [`coverage/APPENDIX_G.md`](coverage/APPENDIX_G.md) for the current complete
+comparison of Appendix G's numbered statements, distinct from a claim that
+every printed assertion holds unchanged.

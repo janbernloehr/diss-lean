@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: corrected G.7 estimates now hold on the original complex
-H1 source for every finite p>1. Below two, both coefficient sequences realize
-the physical gradients and are summable on one common complex neighborhood.
-The H1 inclusion preserves every original Fourier coefficient. The
-dissertation is incomplete; remaining Appendix G assumptions and physical
-interfaces are the next audit.
+Latest milestone: the missing remainder hat in G.3's proof is now formally
+audited. The full derivative's claimed uniform bound is refuted at zero
+potential, and the corrected M-E bound is proved on the exact original H1
+source balls. [Appendix G's current audit](coverage/APPENDIX_G.md) consolidates
+its physical formulas, source interfaces, and remaining qualifications.
+The dissertation is incomplete; Appendix H's source formulas are next.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

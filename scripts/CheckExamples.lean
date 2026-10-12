@@ -42552,3 +42552,38 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate 
   sourceLemmaG7_all_finite_corrected hp hp1
 
 end L2G7ComplexBelowTwoChecks
+
+noncomputable section
+section G3DerivativeAuditChecks
+open Set Complex NLS NLS.LinearVolterra NLS.ComplexAnalysis NLS.ZakharovShabat
+
+example :
+    ‖deriv (fun t => classicalHermitianMatrixOperator (classicalFundamentalMatrix 0 (3 : ℂ) t)) 0‖ = 3 := by
+  simpa using norm_deriv_classicalHermitianFundamental_zeroPotential_at_zero (3 : ℂ)
+
+example (z : ℂ) :
+    ‖deriv (fun t => classicalHermitianMatrixOperator (classicalFundamentalMatrix 0 z t)) 0‖ = ‖z‖ :=
+  norm_deriv_classicalHermitianFundamental_zeroPotential_at_zero z
+
+example : ¬ ∃ C : ℝ, ∀ x : ℝ, 1 ≤ |x| → ∀ t ∈ Icc (0 : ℝ) 1,
+    Real.exp (-(|(x : ℂ).im| * t))*
+      ‖deriv (fun s => classicalHermitianMatrixOperator (classicalFundamentalMatrix 0 (x : ℂ) s)) t‖ ≤ C :=
+  sourceG3_printed_full_derivative_false
+
+example (M : ℝ) (a : ScalarDomain 2 × ScalarDomain 2)
+    (ha : ‖sourcePiSobolevCoordinates 1 1 le_rfl (higherSobolevSourceOneEquiv a)‖ ≤ M)
+    (z : ℂ) (hz : z ≠ 0) (t : Icc (0 : ℝ) 1) :
+    Real.exp (-(|z.im| * t.val))*
+      ‖deriv (classicalHermitianRemainderOperator (classicalSobolevPotential (sourceG3ClassicalCoefficients a)) z) t‖ ≤
+        4*((8+Real.pi)*(2*M)*Real.exp (4*(2*M))) :=
+  sourceLemmaG3_weighted_remainder_derivative M a ha z hz t
+
+example (z : ℂ) (t : Icc (0 : ℝ) 1) :
+    deriv (classicalHermitianRemainderOperator 0 z) t = 0 := by
+  have hv (v : ℂ × ℂ) : deriv (classicalSolutionRemainder 0 z v) t = 0 := by
+    rw [(hasDerivAt_classicalSolutionRemainder 0 z v t).deriv]
+    simp [classicalSolutionRemainder,classicalSolution_free,classicalFreeVector]
+  rw [deriv_classicalHermitianRemainderOperator,hv,hv]
+  simpa only [hermitianColumnsCLM_apply,Prod.fst_zero,Prod.snd_zero] using map_zero hermitianColumnsCLM
+
+end G3DerivativeAuditChecks
