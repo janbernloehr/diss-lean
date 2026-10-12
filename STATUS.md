@@ -1,6 +1,49 @@
 # Implementation status
 
-## Current milestone: normalized eigenvalue gradients on physical L2
+## Current milestone: original source Dirichlet gradients and physical G.7 realization
+
+The original canonical source Dirichlet differential now has its actual
+physical L2 normalized squared-eigenfunction integral for arbitrary
+Hilbert potentials and directions. `L2SourceDirichletGradient.lean`
+retains the original period-one Fourier synthesis and proves compatibility
+with every finite source exponent p>=2. One open complex neighborhood of
+the entire real source locus supplies simplicity and nonzero normalization
+at every signed index. No continuous representative or H1 assumption is
+needed for this differential formula.
+
+`L2SourceDirichletFourier.lean` identifies both unit-mode values of the
+actual source cotangent with the normalized L2 Fourier integrals. Finite
+directions are handled through their almost-everywhere physical
+representatives; no continuity of the base potential is introduced.
+
+`L2SourceG7Gradients.lean` identifies the existing signed G.7 Dirichlet
+error vector with the actual normalized L2 gradient minus its actual free
+reference. The signed coefficient convention has first index -k, second
+index k, and no extra factor i. The represented vector is unique and its
+finite-q norm power is exactly the combined coefficient energy. The free
+reference has corrected waves at 2*n and -2*n, each divided by two.
+
+Intersecting the physical-realization domain with the established G.7
+summability domain gives one open complex domain for both results. On the
+original H1 source, the realized whole sequence lies in outer lp with
+finite p>=2 and conjugate exponent q, including all finite central indices.
+Every real H1 source is covered without an extra smallness, simplicity,
+or normalization premise. No new asymptotic estimate on rough L2 balls
+or infinity endpoint is asserted.
+
+Next is the actual physical L2 midpoint gradient and its contour formula,
+connecting the other half of G.7 to the same construction. G.2's arbitrary-
+time interval norm remains unresolved; neither proposed spectral-height
+correction is adopted. The optional original m=1 sharpening remains under
+the accepted Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6661 build jobs), including all
+public examples and the axiom audit of 28330 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: normalized eigenvalue gradients on physical L2
 
 The actual physical L2 separated characteristics now differentiate any
 continuous local selection of a simple zero. The implicit-root quotient

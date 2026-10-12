@@ -42098,3 +42098,70 @@ example (s : Icc (0 : ℝ) 1) :
   simp [l2DirichletNormalizedGradient_free]
 
 end L2DirichletRootChecks
+
+noncomputable section
+section L2SourceG7Checks
+open Set Complex MeasureTheory NLS NLS.LinearVolterra NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+
+private theorem l2SourceG7Checks_inclusion_self (φ : CoeffPair 2) :
+    CoeffPair.exponentInclusion (le_rfl : (2 : ℝ≥0∞) ≤ 2) φ = φ := by
+  apply (CoeffPair.toMax 2).injective
+  apply Prod.ext <;> ext k <;> rfl
+
+example (φ h : CoeffPair 2) (b : BoundaryCondition) (z : ℂ) :
+    sourceBoundaryCharacteristicCotangent (by simp) (by norm_num) b z φ h =
+      ∫ s in (0 : ℝ)..1, (l2SeparatedGradient b (sourcePhysicalL2 φ) z s).1*
+        (physicalBase (periodOnePotential h) s).1+
+        (l2SeparatedGradient b (sourcePhysicalL2 φ) z s).2*(physicalBase (periodOnePotential h) s).2 := by
+  simpa only [l2SourceG7Checks_inclusion_self] using sourceBoundaryCharacteristicCotangent_exponent_l2_integral
+    (p := 2) (by simp) (by norm_num) le_rfl b φ h z
+
+example (φ : CoeffPair 2) (hreal : φ ∈ realTypeSourceLocus 2) (n : ℤ) :
+    let z := canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ n
+    l2DirichletNormalization (sourcePhysicalL2 φ) z ≠ 0 ∧ ∀ h : CoeffPair 2,
+      (fderiv ℂ (fun ψ : CoeffPair 2 => canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n) φ) h =
+        ∫ s in (0 : ℝ)..1, (l2DirichletNormalizedGradient (sourcePhysicalL2 φ) z s).1*
+          (physicalBase (periodOnePotential h) s).1+
+          (l2DirichletNormalizedGradient (sourcePhysicalL2 φ) z s).2*(physicalBase (periodOnePotential h) s).2 := by
+  obtain ⟨W,_,hr,h⟩ := exists_global_source_dirichlet_l2_normalized_integral (p := 2)
+    (by simp) (by norm_num) le_rfl
+  have hφ : CoeffPair.exponentInclusion (show (2 : ℝ≥0∞) ≤ 2 from le_rfl) φ ∈ W := by
+    simpa only [l2SourceG7Checks_inclusion_self] using hr hreal
+  simpa only [l2SourceG7Checks_inclusion_self] using h φ hφ n
+
+example : ∃ W : Set (CoeffPair 2), IsOpen W ∧ realTypeSourceLocus 2 ⊆ W ∧
+    ∀ φ ∈ W, ∀ n : ℤ,
+      let z := canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet φ n
+      l2DirichletNormalization (sourcePhysicalL2 φ) z ≠ 0 ∧
+        L2RootGradientFourierRealizes (l2DirichletGradientRemainder (sourcePhysicalL2 φ) z ((Real.pi : ℂ)*n))
+          (sourceG7DirichletGradientError (q := 2) (by simp) (by norm_num) φ n) := by
+  simpa only [l2SourceG7Checks_inclusion_self] using exists_global_sourceG7_l2_realization (p := 2) (q := 2) (by simp) (by norm_num) le_rfl
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (h2p : (2 : ℝ≥0∞) ≤ p)
+    (a : ScalarDomain 2 × ScalarDomain 2) (ha : sobolevSourceInclusion a ∈ realTypeSourceLocus 2) :
+    Memℓp (fun n : ℤ => sourceG7DirichletGradientError (q := q) hp hp1
+      (CoeffPair.exponentInclusion h2p (sobolevSourceInclusion a)) n) p ∧ ∀ n : ℤ,
+      let φ := sobolevSourceInclusion a
+      let z := canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet (CoeffPair.exponentInclusion h2p φ) n
+      l2DirichletNormalization (sourcePhysicalL2 φ) z ≠ 0 ∧
+        L2RootGradientFourierRealizes (l2DirichletGradientRemainder (sourcePhysicalL2 φ) z ((Real.pi : ℂ)*n))
+          (sourceG7DirichletGradientError (q := q) hp hp1 (CoeffPair.exponentInclusion h2p φ) n) :=
+  sourceG7_l2_memlp_real hp hp1 h2p a ha
+
+example (u : IntervalPairL2) (z : ℂ) (n : ℤ) (s : Icc (0 : ℝ) 1) :
+    l2DirichletGradientRemainder u z ((Real.pi : ℂ)*n) s =
+      l2DirichletNormalizedGradient u z s-(1/2 : ℂ) • (wave (2*n) s,wave (-(2*n)) s) :=
+  l2DirichletGradientRemainder_lattice u z n s
+
+example (g : ℝ → ℂ × ℂ) (a b : CoeffPair 2)
+    (ha : L2RootGradientFourierRealizes g a) (hb : L2RootGradientFourierRealizes g b) : a = b :=
+  ha.unique hb
+
+example (g : ℝ → ℂ × ℂ) (a : CoeffPair 2) (ha : L2RootGradientFourierRealizes g a) :
+    ‖a‖^2 = ∑' k : ℤ, (‖intervalFourierCoefficient 1 (fun s => (g s).1) (-k)‖^2+
+      ‖intervalFourierCoefficient 1 (fun s => (g s).2) k‖^2) := by
+  simpa using ha.norm_rpow (by norm_num)
+
+end L2SourceG7Checks

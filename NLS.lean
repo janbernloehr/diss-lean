@@ -3228,3 +3228,6 @@ import NLS.ZakharovShabat.L2SeparatedRootGradient
 import NLS.ZakharovShabat.L2SpectralVariation
 import NLS.ZakharovShabat.L2DirichletNormalization
 import NLS.ZakharovShabat.L2DirichletRootGradient
+import NLS.ZakharovShabat.L2SourceDirichletGradient
+import NLS.ZakharovShabat.L2SourceDirichletFourier
+import NLS.ZakharovShabat.L2SourceG7Gradients

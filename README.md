@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: simple eigenvalue branches of the actual physical L2
-separated characteristics have their gradient-integral derivatives.
-For Dirichlet roots, simplicity proves nonzero bilinear eigenfunction
-normalization and yields the normalized squared-eigenfunction formula,
-with exact classical and free-potential comparisons. The dissertation is
-incomplete; next is the transfer to original Hilbert source coordinates
-and the corrected G.7 estimates.
+Latest milestone: the canonical source Dirichlet derivatives now have
+normalized physical L2 eigenfunction integrals for arbitrary Hilbert
+potentials and directions. The existing corrected G.7 Dirichlet coefficient
+vectors realize these actual gradient errors, with the original H1
+summability estimate on a common complex neighborhood. The dissertation
+is incomplete; next is the physical midpoint gradient and contour formula.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
