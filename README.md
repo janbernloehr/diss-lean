@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's Sobolev Poisson bracket now has full-gradient
-representation, absolute convergence, and analytic dependence on a common
-physical state when both conjugate source exponents are finite. Endpoint
-pairing is proved for supplied represented gradients in the original pair
-norms. [The current audit](coverage/SECTION_2.md) records the scope.
-Compatibility with the existing source bracket and the remaining algebra
-are next; the dissertation remains incomplete.
+Latest milestone: the full-gradient Sobolev bracket now agrees with the
+existing physical bracket on their order-zero overlap. Antisymmetry and
+both product rules are proved on the general common Sobolev domain;
+Jacobi is proved for the order-zero Hilbert bracket through that agreement.
+[The current audit](coverage/SECTION_2.md) records the domains and endpoint
+restrictions. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

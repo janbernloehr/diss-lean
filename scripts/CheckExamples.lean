@@ -43033,3 +43033,80 @@ example (s : ℝ)
   signedBivector_antisymm s a b
 
 end SectionTwoSobolevPoissonChecks
+
+noncomputable section
+open NLS NLS.Poisson
+open scoped ENNReal
+section SectionTwoSobolevBracketCompatibilityChecks
+
+-- The actual first physical mode reverses the original signed index.
+example (n : ℤ) :
+    zeroOrderPhysicalEquiv 0 rfl 2 (WeightedCoeffPair.inlCLM _
+      (WeightedCoeff.ofFinsupp _ 2 (Finsupp.single n 1))) =
+      CoeffPair.inlCLM (lp.single 2 (-n) 1) := zeroOrderPhysicalEquiv_inl_mode 0 rfl n
+
+-- Compatibility uses full source functionals and preserves the physical -i sign.
+private def bracketCompatLeft : CoeffPair 2 →L[ℂ] ℂ :=
+  (lp.evalCLM ℂ (fun _ : ℤ => ℂ) 2 1).comp
+    ((ContinuousLinearMap.fst ℂ _ _).comp (CoeffPair.toMax 2).toContinuousLinearMap)
+private def bracketCompatRight : CoeffPair 2 →L[ℂ] ℂ :=
+  (lp.evalCLM ℂ (fun _ : ℤ => ℂ) 2 (-1)).comp
+    ((ContinuousLinearMap.snd ℂ _ _).comp (CoeffPair.toMax 2).toContinuousLinearMap)
+example : conjugateBivector (p := 2) (q := 2) 0 (by norm_num) (by norm_num)
+    (bracketCompatLeft.comp (zeroOrderPhysicalEquiv (-0) neg_zero 2).toContinuousLinearMap)
+    (bracketCompatRight.comp (zeroOrderPhysicalEquiv 0 rfl 2).toContinuousLinearMap) = -Complex.I := by
+  rw [conjugateBivector_zero_source,sourceBivector_eq_tsum]
+  simp [bracketCompatLeft,bracketCompatRight,lp.evalCLM,lp.single_apply,Pi.single_apply]
+
+-- Full common-state agreement for arbitrary finite conjugate exponents in the overlap.
+example {p q r : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [Fact (1 ≤ r)] [p.HolderConjugate q]
+    (hp : p ≠ ⊤) (hq : q ≠ ⊤) (h2r : 2 ≤ r) (hpr : p ≤ r) (hqr : q ≤ r)
+    (F G : CoeffPair r → ℂ) (x : SobolevCommonState 0 p q)
+    (hF : DifferentiableAt ℂ F (zeroOrderSourceMap 0 rfl hpr x.val.2))
+    (hG : DifferentiableAt ℂ G (zeroOrderSourceMap 0 rfl hpr x.val.2)) :
+    commonSobolevBracket 0 hp hq (F ∘ zeroOrderSourceMap (-0) neg_zero hqr)
+      (G ∘ zeroOrderSourceMap 0 rfl hpr) x =
+      sourceBracket h2r F G (zeroOrderSourceMap 0 rfl hpr x.val.2) :=
+  commonSobolevBracket_zero_source hp hq h2r hpr hqr F G x hF hG
+
+-- Swapping the full ambient domains is valid at every real Sobolev order.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q]
+    (s : ℝ) (hp : p ≠ ⊤) (hq : q ≠ ⊤)
+    (F : WeightedCoeffPair (Weight.sobolev (-s)) q → ℂ)
+    (G : WeightedCoeffPair (Weight.sobolev s) p → ℂ) (x : SobolevCommonState s p q) :
+    commonSobolevBracket s hp hq F G x =
+      -commonSobolevBracket (-s) hq hp (G ∘ negNegPairEquiv s p) F (swapCommonState s x) :=
+  commonSobolevBracket_swap s hp hq F G x
+
+example (F G : WeightedCoeffPair (Weight.sobolev 0) 2 → ℂ) (x : SobolevCommonState 0 2 2) :
+    commonSobolevBracket 0 (by norm_num) (by norm_num) (F ∘ zeroOrderNormalization) G x =
+      zeroOrderBracket F G x.val.2 := commonSobolevBracket_zeroOrderBracket F G x
+
+-- Jacobi is checked for arbitrary analytic functionals, not just linear or finite-mode inputs.
+example (F G H : WeightedCoeffPair (Weight.sobolev 0) 2 → ℂ)
+    (x : WeightedCoeffPair (Weight.sobolev 0) 2)
+    (hF : AnalyticAt ℂ F x) (hG : AnalyticAt ℂ G x) (hH : AnalyticAt ℂ H x) :
+    zeroOrderBracket (zeroOrderBracket F G) H x + zeroOrderBracket (zeroOrderBracket G H) F x +
+      zeroOrderBracket (zeroOrderBracket H F) G x = 0 := zeroOrderBracket_jacobi F G H x hF hG hH
+
+-- Scalar zero is included even for nondifferentiable functions by total fderiv semantics.
+example (F G : WeightedCoeffPair (Weight.sobolev 0) 2 → ℂ)
+    (x : WeightedCoeffPair (Weight.sobolev 0) 2) :
+    zeroOrderBracket (fun y => (0 : ℂ)*F y) G x = 0*zeroOrderBracket F G x :=
+  zeroOrderBracket_smul_left F G 0 x
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q]
+    (s : ℝ) (hp : p ≠ ⊤) (hq : q ≠ ⊤)
+    (F : WeightedCoeffPair (Weight.sobolev (-s)) q → ℂ)
+    (G H : WeightedCoeffPair (Weight.sobolev s) p → ℂ) (x : SobolevCommonState s p q)
+    (hG : DifferentiableAt ℂ G x.val.2) (hH : DifferentiableAt ℂ H x.val.2) :
+    commonSobolevBracket s hp hq F (fun y => G y*H y) x =
+      G x.val.2*commonSobolevBracket s hp hq F H x + H x.val.2*commonSobolevBracket s hp hq F G x :=
+  commonSobolevBracket_mul_right s hp hq F G H x hG hH
+
+example (F G : WeightedCoeffPair (Weight.sobolev 0) 2 → ℂ)
+    {U : Set (WeightedCoeffPair (Weight.sobolev 0) 2)}
+    (hF : AnalyticOnNhd ℂ F U) (hG : AnalyticOnNhd ℂ G U) :
+    AnalyticOnNhd ℂ (zeroOrderBracket F G) U := analyticOnNhd_zeroOrderBracket F G hF hG
+
+end SectionTwoSobolevBracketCompatibilityChecks

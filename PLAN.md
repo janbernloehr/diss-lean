@@ -1,6 +1,55 @@
 # Implementation plan
 
-## Current milestone: Section 2 Sobolev Poisson pairing on common physical states
+## Current milestone: Section 2 bracket compatibility, domain exchange, and Hilbert Jacobi
+
+The new full-gradient Sobolev bracket now agrees with the established
+physical source bracket on their order-zero overlap.
+`SobolevSourceCompatibility.lean` gives the signed-to-physical coordinate
+equivalence, including exact first-component frequency reversal, and the
+full differential mode formula at every real Sobolev order. Its comparison
+allows any finite conjugate pair p,q and an ambient exponent r>=2 with
+p<=r and q<=r. The two functionals are restricted from the same ambient
+source space. Equality holds for actual brackets at every common physical
+base point under differentiability of those ambient functionals.
+
+`SobolevBracketSwap.lean` proves antisymmetry on the entire common Sobolev
+domain for every real order and finite conjugate source pair. It explicitly
+exchanges the two ambient domains, normalizes the double negative order
+without changing signed coefficients, and exchanges the representatives of
+the same state. The right product rule is also proved, complementing the
+previous left product rule.
+
+`SobolevZeroBracket.lean` defines a single-domain bracket from the full
+Sobolev differentials at order zero and exponent two. It agrees both with
+the common-state bracket and, through the coordinate equivalence, with the
+existing physical bracket. This proves Jacobi for arbitrary functionals
+analytic at the base point, analytic closure on their original domain,
+antisymmetry, both product rules, left additivity under differentiability,
+and scalar homogeneity (including scalar zero).
+
+These results do not assert that arbitrary reciprocal Sobolev intersections
+are closed under nested brackets. The Jacobi transfer is specifically on
+the order-zero Hilbert domain; the common-domain antisymmetry and product
+rules hold for every real order. The legacy ambient comparison at r=infinity
+uses its existing maximum pair norm and finite-exponent restrictions; it
+does not imply full coefficient-gradient representation on the original
+infinity source norm. The previously proved infinity obstruction remains.
+
+Next: audit the general weighted sesquilinear product and the normalized
+periodic action of locally integrable functions in Section 2, then resume
+the numbered Section 3 spectral statements. The dissertation
+remains incomplete. G.2's arbitrary-time interval norm is unresolved;
+neither proposed spectral-height correction is adopted. The optional
+original m=1 sharpening remains under the accepted Lemma 27.2 correction.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The full project check passed all 6,716 build jobs and public
+examples. The axiom audit passed for 28,936 NLS declarations with only the
+permitted classical axioms. The full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.
+
+## Previous milestone: Section 2 Sobolev Poisson pairing on common physical states
 
 Section 2's Poisson pairing now covers every real Sobolev order and
 conjugate gradient exponents, with the printed -iJ sign and matrix.

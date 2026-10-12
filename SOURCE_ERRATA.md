@@ -1034,6 +1034,11 @@ conjugate source exponents and every real Sobolev order. The intersection
 represents the same actual distribution pair on every positive period.
 `SobolevEndpointBivector.lean` proves bounded, absolutely convergent pairing
 in the original endpoint pair norms when represented gradients are supplied.
-Thus the bracket remains valid on these regular functionals. Compatibility
-with the existing source bracket and the remaining algebra/domain audit
-are still open obligations.
+Thus the bracket remains valid on these regular functionals.
+`SobolevSourceCompatibility.lean` now proves agreement with the existing
+physical bracket on the order-zero finite-conjugate overlap.
+`SobolevBracketSwap.lean` proves antisymmetry after exchanging the actual
+ambient domains and shared state, and both product rules are available.
+`SobolevZeroBracket.lean` proves Jacobi on the order-zero Hilbert domain.
+These results do not claim closure under nested brackets on every reciprocal
+Sobolev intersection or remove the infinity-source obstruction.

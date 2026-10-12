@@ -3277,3 +3277,6 @@ import NLS.Poisson.ConjugateSobolevBracket
 import NLS.Poisson.SobolevCommonState
 import NLS.Poisson.SobolevCommonBracket
 import NLS.Poisson.SobolevEndpointBivector
+import NLS.Poisson.SobolevSourceCompatibility
+import NLS.Poisson.SobolevZeroBracket
+import NLS.Poisson.SobolevBracketSwap

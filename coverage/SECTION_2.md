@@ -2,7 +2,7 @@
 
 This records the Fourier-Lebesgue-space statements on printed pages 21–22,
 checked against the rendered source. The maps below identify proved scope
-and endpoint corrections. The remaining bracket compatibility and algebra audit is open;
+and endpoint corrections. The bracket results below retain their explicit domain restrictions;
 this file is not a completeness certificate for the dissertation.
 
 The source defines the scalar Fourier-Lebesgue space for every real
@@ -158,8 +158,36 @@ infinity uses a product maximum norm and is not claimed to carry the
 source's distinct infinity pair norm; the endpoint API uses the separate
 `WeightedCoeffPairInfty` type.
 
-Next: prove compatibility with the existing physical `SourceBracket`
-interface and finish the remaining bracket algebra/domain audit, then
-continue with numbered Section 3. Core antisymmetry and the left product
-rule are not a full Sobolev bracket Jacobi theorem. The candidate inventory
-and these maps do not establish completeness of these obligations.
+## Bracket compatibility and algebra
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Actual coordinate equivalence | `NLS.Poisson.zeroOrderPhysicalEquiv`, `zeroOrderPhysicalEquiv_inl_mode`, `zeroOrderPhysicalEquiv_inr_mode` | Order zero; first signed component reverses frequency, second component retains it. This is a continuous linear equivalence of the whole source spaces. |
+| Complete differential mode formula | `NLS.Poisson.conjugateBivector_eq_tsum` | Every real order and finite conjugate source pair; the formula evaluates the complete functionals on the original signed mode directions. |
+| Compatibility with existing cotangent pairing | `NLS.Poisson.conjugateBivector_zero_source_restrict` | Order zero, arbitrary finite conjugate p,q, and an ambient r>=2 with p,q<=r. Both full functionals come from that ambient space; no finite-support assumption. |
+| Same ambient physical base point | `NLS.Poisson.zeroOrderSourceMap_common` | Every point of the common-state domain has equal physical images under the two original exponent inclusions. |
+| Actual bracket agreement | `NLS.Poisson.commonSobolevBracket_zero_source` | The full common-state bracket equals the existing `sourceBracket` at that physical base point, under differentiability of the ambient functionals. |
+| Exchange of source domains | `NLS.Poisson.negNegPairEquiv`, `swapCommonState` | All real orders; double-negative order normalization preserves every signed coefficient and swapping retains the same physical state. |
+| Full common-domain antisymmetry | `NLS.Poisson.conjugateBivector_swap`, `commonSobolevBracket_swap` | All real orders and finite conjugate pairs, with the functionals, domains, and state explicitly exchanged. |
+| Both common-domain product rules | `NLS.Poisson.commonSobolevBracket_mul_left`, `commonSobolevBracket_mul_right` | Differentiable factors in their respective full ambient domains. |
+| Single-domain full-gradient bracket | `NLS.Poisson.zeroOrderBracket`, `zeroOrderBracket_source`, `commonSobolevBracket_zeroOrderBracket` | Order zero and exponent two; agrees with both the new common-state and established physical source brackets. |
+| Analytic closure and Jacobi | `NLS.Poisson.analyticOnNhd_zeroOrderBracket`, `zeroOrderBracket_jacobi` | Analyticity on the original order-zero Hilbert domain; Jacobi for arbitrary functionals analytic at the base point. |
+| Algebra on the Hilbert domain | `NLS.Poisson.zeroOrderBracket_antisymm`, `zeroOrderBracket_mul_left`, `zeroOrderBracket_mul_right`, `zeroOrderBracket_add_left`, `zeroOrderBracket_smul_left` | Antisymmetry, both product rules, differentiable left additivity, and scalar homogeneity including zero. |
+
+The general comparison uses finite p,q. Its legacy ambient type at
+r=infinity has the existing maximum pair norm; agreement of its finite
+restrictions does not establish full gradient representation in the source's
+distinct infinity pair norm. The original endpoint obstruction is unchanged.
+
+Jacobi is proved on the single order-zero Hilbert domain. No closure theorem
+for arbitrary nested brackets on reciprocal Sobolev intersections is claimed.
+The page-22 automatic-regularity assertion only supplies a pairing when the
+two gradient domains are dual; the proved positive assertion and its endpoint
+restriction are recorded above.
+
+Next: audit the general weighted sesquilinear dual product and the
+normalized periodic action of locally integrable functions. The existing
+arbitrary-period sesquilinear integral theorem above covers L2 inputs;
+it alone does not certify those two broader source statements. Then
+continue with numbered Section 3 statements. The candidate inventory
+and these maps are not a completeness certificate for the dissertation.
