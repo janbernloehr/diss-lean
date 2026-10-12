@@ -3272,3 +3272,8 @@ import NLS.SequenceSpaces.InfinityDuality
 import NLS.SequenceSpaces.SobolevInfinityDuality
 import NLS.SequenceSpaces.SobolevPairCotangent
 import NLS.SequenceSpaces.SobolevPairGradient
+import NLS.Poisson.SobolevBivector
+import NLS.Poisson.ConjugateSobolevBracket
+import NLS.Poisson.SobolevCommonState
+import NLS.Poisson.SobolevCommonBracket
+import NLS.Poisson.SobolevEndpointBivector

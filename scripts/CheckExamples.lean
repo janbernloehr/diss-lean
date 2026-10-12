@@ -42940,3 +42940,96 @@ example : ∃ L : Coeff ⊤ →L[ℂ] ℂ,
   Coeff.exists_singular_functional
 
 end SectionTwoPairDualityChecks
+
+noncomputable section
+open NLS NLS.Poisson
+open scoped ENNReal SchwartzMap
+section SectionTwoSobolevPoissonChecks
+
+-- The physical J matrix and its frequency reversal are explicit.
+example (s : ℝ) (b : WeightedCoeff (Weight.sobolev s) 1 × WeightedCoeff (Weight.sobolev s) 1) :
+    (WeightedCoeff.reflection s (signedJ s b).1,(signedJ s b).2) =
+      (b.2,-WeightedCoeff.reflection s b.1) := signedJ_physical s b
+
+-- Equal signed modes in opposite components give the printed sign -i at every real order.
+example (s : ℝ) :
+    signedBivector s
+      ((WeightedCoeff.ofFinsupp (Weight.sobolev s) 2 (Finsupp.single 1 1)),0)
+      (0,(WeightedCoeff.ofFinsupp (Weight.sobolev (-s)) 2 (Finsupp.single 1 1))) = -Complex.I := by
+  simp [signedBivector_apply,sameIndexPairing_apply,WeightedCoeff.ofFinsupp_apply,Finsupp.single_apply]
+
+-- Reversing one signed mode instead gives zero; the same-index convention is intentional.
+example (s : ℝ) :
+    signedBivector s
+      ((WeightedCoeff.ofFinsupp (Weight.sobolev s) 2 (Finsupp.single 1 1)),0)
+      (0,(WeightedCoeff.ofFinsupp (Weight.sobolev (-s)) 2 (Finsupp.single (-1) 1))) = 0 := by
+  simp [signedBivector_apply,sameIndexPairing_apply,WeightedCoeff.ofFinsupp_apply,Finsupp.single_apply]
+
+-- The full intersection is a Banach space and denotes one actual physical state at every period.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] (s : ℝ) :
+    CompleteSpace (SobolevCommonState s p q) := inferInstance
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] (s : ℝ)
+    (L : ℝ) (hL : 0 < L) (x : SobolevCommonState s p q) :
+    signedPairDistributionCLM L hL (-s) x.val.1 = signedPairDistributionCLM L hL s x.val.2 :=
+  commonState_distribution_eq L hL s x
+
+-- The common domain includes every pair of equal representatives, without extra smoothness.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] (s : ℝ)
+    (a : WeightedCoeffPair (Weight.sobolev (-s)) q) (b : WeightedCoeffPair (Weight.sobolev s) p)
+    (h : ∀ n, a.fst.val n = b.fst.val n ∧ a.snd.val n = b.snd.val n) :
+    SobolevCommonState s p q := commonStateOfCoefficients s a b h
+
+-- Analyticity on the complete common physical domain of the two original functionals.
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q]
+    (s : ℝ) (hp : p ≠ ⊤) (hq : q ≠ ⊤)
+    (F : WeightedCoeffPair (Weight.sobolev (-s)) q → ℂ)
+    (G : WeightedCoeffPair (Weight.sobolev s) p → ℂ)
+    {UF : Set (WeightedCoeffPair (Weight.sobolev (-s)) q)}
+    {UG : Set (WeightedCoeffPair (Weight.sobolev s) p)}
+    (hF : AnalyticOnNhd ℂ F UF) (hG : AnalyticOnNhd ℂ G UG) :
+    AnalyticOnNhd ℂ (commonSobolevBracket s hp hq F G)
+      {x : SobolevCommonState s p q | x.val.1 ∈ UF ∧ x.val.2 ∈ UG} :=
+  analyticOnNhd_commonSobolevBracket s hp hq F G hF hG
+
+-- Original endpoint norms support the bracket of given gradients.
+example (s : ℝ) (a : WeightedCoeffPair (Weight.sobolev s) 1)
+    (b : WeightedCoeffPairInfty (Weight.sobolev (-s))) :
+    ‖oneInfinityBivector s a b‖ ≤ 2*‖a‖*‖b‖ := norm_oneInfinityBivector_le s a b
+
+example (s : ℝ) (a : WeightedCoeffPair (Weight.sobolev s) 1)
+    (b : WeightedCoeffPairInfty (Weight.sobolev (-s))) :
+    Summable (fun n : ℤ => ‖a.fst.val n*b.2.val n-a.snd.val n*b.1.val n‖) :=
+  oneInfinityBivector_summable s a b
+
+-- A non-Hilbert conjugate pair exercises automatic regularity below exponent two.
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+private theorem sobPoissonThreeHalves_finite : (3 : ℝ≥0∞)/2 ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem sobPoissonThreeHalves_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))]
+  norm_num
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)/2) := ⟨sobPoissonThreeHalves_gt_one.le⟩
+local instance : ENNReal.HolderConjugate 3 ((3 : ℝ≥0∞)/2) :=
+  ENNReal.holderConjugate_iff.mpr (by
+    rw [ENNReal.inv_div (Or.inl (by norm_num)) (Or.inl (by norm_num)),← one_div,← ENNReal.add_div]
+    norm_num only [show (1+2 : ℝ≥0∞) = 3 by norm_num]
+    exact ENNReal.div_self (by norm_num) (by norm_num))
+
+example (s : ℝ) (F : WeightedCoeffPair (Weight.sobolev (-s)) 3 → ℂ)
+    (G : WeightedCoeffPair (Weight.sobolev s) ((3 : ℝ≥0∞)/2) → ℂ)
+    (x : SobolevCommonState s ((3 : ℝ≥0∞)/2) 3) :
+    let a := commonLeftGradient s (by norm_num) F x
+    let b := commonRightGradient s sobPoissonThreeHalves_finite G x
+    Summable (fun n : ℤ => ‖a.1.val n*b.2.val n-a.2.val n*b.1.val n‖) :=
+  commonSobolevBracket_summable s sobPoissonThreeHalves_finite (by norm_num) F G x
+
+-- Order normalization in antisymmetry preserves every raw coefficient.
+example (s : ℝ)
+    (a : WeightedCoeff (Weight.sobolev s) 2 × WeightedCoeff (Weight.sobolev s) 2)
+    (b : WeightedCoeff (Weight.sobolev (-s)) 2 × WeightedCoeff (Weight.sobolev (-s)) 2) :
+    signedBivector s a b = -signedBivector (-s) b
+      ((negNegIsometry s).symm a.1,(negNegIsometry s).symm a.2) :=
+  signedBivector_antisymm s a b
+
+end SectionTwoSobolevPoissonChecks

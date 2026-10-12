@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Section 2's full pair gradients now cover every finite
-source exponent and real Sobolev order, preserving the original finite and
-infinity pair norms. The unrestricted infinity-source extension is formally
-refuted by everywhere-analytic functionals without coefficient gradients.
-[The current audit](coverage/SECTION_2.md) records the scope. The dissertation
-remains incomplete; the Section 2 Poisson-bracket audit is next.
+Latest milestone: Section 2's Sobolev Poisson bracket now has full-gradient
+representation, absolute convergence, and analytic dependence on a common
+physical state when both conjugate source exponents are finite. Endpoint
+pairing is proved for supplied represented gradients in the original pair
+norms. [The current audit](coverage/SECTION_2.md) records the scope.
+Compatibility with the existing source bracket and the remaining algebra
+are next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

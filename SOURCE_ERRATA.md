@@ -1027,6 +1027,13 @@ Consequently, the automatic Poisson-regularity sentence at the end of page
 22 needs a finite-source restriction for each analytic functional, or an
 additional assumption that an infinity-source differential is represented
 by the required coefficient gradient. Analyticity alone cannot imply that
-assumption. The positive interior Poisson statement and its precise domains
-remain the next audit obligation; this endpoint result does not declare
-the bracket itself invalid on regular functionals.
+assumption. The positive interior statement is now proved by
+`SobolevCommonBracket.lean`: full gradients give an absolutely convergent,
+analytic bracket on the entire common-state intersection for finite
+conjugate source exponents and every real Sobolev order. The intersection
+represents the same actual distribution pair on every positive period.
+`SobolevEndpointBivector.lean` proves bounded, absolutely convergent pairing
+in the original endpoint pair norms when represented gradients are supplied.
+Thus the bracket remains valid on these regular functionals. Compatibility
+with the existing source bracket and the remaining algebra/domain audit
+are still open obligations.

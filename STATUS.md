@@ -1,6 +1,54 @@
 # Implementation status
 
-## Current milestone: Section 2 pair gradients and the infinity obstruction
+## Current milestone: Section 2 Sobolev Poisson pairing on common physical states
+
+Section 2's Poisson pairing now covers every real Sobolev order and
+conjugate gradient exponents, with the printed -iJ sign and matrix.
+`SobolevBivector.lean` proves boundedness, absolute convergence, the signed
+Fourier formula, and antisymmetry with explicit opposite-order transport.
+The cross-component sum uses equal signed indices: reflecting the first
+signed component converts it to the corrected physical scalar pairing,
+which still uses opposite indices.
+
+`ConjugateSobolevBracket.lean` applies this pairing to the full differentials
+on reciprocal Sobolev domains when both source exponents are finite.
+`SobolevCommonState.lean` constructs their closed Banach intersection, with
+the maximum of the two original source norms. Every pair of representatives
+with equal raw signed coefficients belongs to this intersection, and the
+two representatives synthesize the same actual distribution pair on every
+positive period.
+
+`SobolevCommonBracket.lean` evaluates both functionals at that common state.
+It proves the physical formula, automatic absolute convergence, analyticity
+on the entire intersection of the analytic domains, and the left product
+rule. The recovered gradients represent the complete ambient differentials
+on every direction. The bracket bound is twice the product of the original
+operator norms; no extra Hilbert regularity hypothesis is imposed.
+
+`SobolevEndpointBivector.lean` retains the original l1 and frequencywise
+sum-norm infinity pair spaces. Given represented gradients, its pairing is
+bounded and absolutely convergent; analytic gradient fields give an analytic
+bracket. This does not extend full-gradient existence to arbitrary analytic
+functionals on an infinity source space, which the preceding milestone
+refuted.
+
+Next: formally compare this interface with the existing physical source
+bracket and finish the remaining bracket algebra and domain audit, then
+continue with numbered Section 3 results. Core bivector antisymmetry and a
+left product rule do not by themselves establish the full bracket algebra
+or Jacobi identity on these Sobolev domains. The dissertation remains
+incomplete. G.2's arbitrary-time interval norm is unresolved; neither
+proposed spectral-height correction is adopted. The optional original m=1
+sharpening remains under the accepted Lemma 27.2 correction.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The full project check passed all 6,713 build jobs and public
+examples. The axiom audit passed for 28,868 NLS declarations with only the
+permitted classical axioms. The full build retains 21 existing warnings.
+The source inventory check passed for 156 candidate statement labels; that
+count is not a completeness certificate.
+
+## Previous milestone: Section 2 pair gradients and the infinity obstruction
 
 Section 2's two-component gradient representation is now proved for all
 finite source exponents and every real Sobolev order. The finite-conjugate

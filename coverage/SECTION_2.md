@@ -1,8 +1,8 @@
-# Section 2: convergence, duality, and gradient audit
+# Section 2: convergence, duality, gradients, and Poisson pairing
 
 This records the Fourier-Lebesgue-space statements on printed pages 21–22,
 checked against the rendered source. The maps below identify proved scope
-and endpoint corrections. The Poisson-bracket domain audit remains open;
+and endpoint corrections. The remaining bracket compatibility and algebra audit is open;
 this file is not a completeness certificate for the dissertation.
 
 The source defines the scalar Fourier-Lebesgue space for every real
@@ -124,6 +124,42 @@ representability is an additional condition; analyticity does not imply it.
 The same issue constrains the later automatic Poisson-regularity sentence
 when one functional has infinity as its source exponent.
 
-Next: the positive Poisson-bracket statement, exact domains, and automatic
-regularity, followed by the numbered Section 3 statements. The candidate
-inventory and these maps do not establish completeness of those obligations.
+## Sobolev Poisson bracket on common physical states
+
+The positive automatic-regularity statement is proved when both conjugate
+source exponents are finite, for every real Sobolev order. The common-state
+domain is the full intersection of the two original coefficient spaces,
+with their original norms; it is not restricted to smooth or Hilbert inputs.
+
+| Requirement | Public entry point | Verified scope |
+| --- | --- | --- |
+| Physical matrix and sign | `NLS.Poisson.signedBivector_physical`, `signedJ_physical` | The printed -iJ formula; the first signed component is reflected to obtain physical scalar coefficients. |
+| Absolutely convergent signed formula | `NLS.Poisson.summable_signed_cross`, `signedBivector_eq_tsum` | All real orders and conjugate gradient exponents, including either endpoint; cross-component products use equal signed indices. |
+| Core antisymmetry | `NLS.Poisson.signedBivector_antisymm` | Swapped orders and exponents, with explicit coefficient-preserving transport from order -(-s) to s. |
+| Complete intersection | `NLS.Poisson.SobolevCommonState`, `commonStateOfCoefficients`, `norm_commonState` | A closed Banach subspace; every equal-coefficient pair is admitted. At finite exponents its norm is the maximum of the two original source norms. |
+| Actual shared physical state | `NLS.Poisson.commonState_distribution_eq` | Both representatives synthesize the same actual pair of periodic distributions, at every positive period. |
+| Full ambient differentials | `NLS.Poisson.commonLeftGradient_represents`, `commonRightGradient_represents` | Each gradient represents the differential on every direction of its own complete ambient domain. |
+| Automatic bracket regularity | `NLS.Poisson.commonSobolevBracket_summable`, `commonSobolevBracket_physical`, `commonSobolevBracket_eq_tsum` | Both conjugate source exponents finite, all real orders, and the same common base point; no additional Hilbert premise. |
+| Original operator norm bound | `NLS.Poisson.norm_commonSobolevBracket_le` | Twice the product of the two original differential norms. |
+| Analyticity on the intersection | `NLS.Poisson.analyticOnNhd_commonSobolevBracket` | The entire intersection of the functionals' analytic domains. |
+| Product rule | `NLS.Poisson.commonSobolevBracket_mul_left` | Left Leibniz rule under differentiability of the two left-domain factors. |
+| Represented endpoint gradients | `NLS.Poisson.oneInfinityBivector_summable`, `norm_oneInfinityBivector_le`, `analyticOnNhd_oneInfinityBivector` | Original l1 and frequencywise sum-norm infinity pair spaces; bounded, absolutely convergent pairing and analyticity for supplied analytic gradient fields. |
+
+The same-index cross-component sum here is a consequence of the opposite
+signs in the source pair basis. It does not restore the erroneous preceding
+same-index scalar physical pairing. The physical formula explicitly uses
+that scalar pairing with the necessary first-component reflections.
+
+The endpoint result supplies a pairing for represented gradients, not a
+full-dual representation theorem for infinity-source analytic functionals.
+The common-state bracket with automatically recovered gradients requires
+both source exponents to be finite. The auxiliary common-state type at
+infinity uses a product maximum norm and is not claimed to carry the
+source's distinct infinity pair norm; the endpoint API uses the separate
+`WeightedCoeffPairInfty` type.
+
+Next: prove compatibility with the existing physical `SourceBracket`
+interface and finish the remaining bracket algebra/domain audit, then
+continue with numbered Section 3. Core antisymmetry and the left product
+rule are not a full Sobolev bracket Jacobi theorem. The candidate inventory
+and these maps do not establish completeness of these obligations.
