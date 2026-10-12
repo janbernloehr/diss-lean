@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: equation (1.5)'s circle and central projectors now act
-on the original-norm parity subspaces themselves. They are analytic
-finite-rank projections on one common period-one potential neighborhood,
-including at p=1. [The Section 3 audit](coverage/SECTION_3.md) records the
-statement. The ensuing rank calculations are next; the dissertation
-remains incomplete.
+Latest milestone: the actual original-norm contour ranks and periodic
+counts are proved: two in each distant disk, 4N+2 in the central box,
+and the exact even/odd split. The results include algebraic multiplicities,
+physical eigenfunction parity, spectral exhaustion, and real-type spectral
+reality. [The Section 3 audit](coverage/SECTION_3.md) records the scope.
+Lemma 3.7 is next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

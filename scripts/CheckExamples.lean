@@ -43714,3 +43714,97 @@ example (φ : CoeffPair 1) : ∃ N : ℕ, ∀ t ∈ Set.Icc (0 : ℝ) 1, ∀ r :
   exact ⟨N,fun t ht r => ((h N le_rfl r).1.2 _ (hc.smul_mem_of_zero_mem h0 hφ ht)).2⟩
 
 end EquationOneFiveOriginalNormChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal ComplexConjugate
+section OriginalNormPeriodicCountingChecks
+
+-- Actual original-norm ranks and algebraic counts share one neighborhood and cutoff.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair p), 0 < N₀ ∧ IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N → ∀ ψ ∈ U,
+        Module.finrank ℂ (sourceCentralRectangleIntegral hp ψ N).range = 4*N+2 ∧
+        (∑ z ∈ centralPeriodicSpectrum hp (CoeffPair.toMax p ψ) N,
+          periodicAlgebraicMultiplicity hp (CoeffPair.toMax p ψ) z) = 4*N+2 ∧
+        ∀ n : ℤ, N < n.natAbs →
+          Module.finrank ℂ (sourceResolventCircleIntegral hp ψ ((Real.pi : ℂ)*n) (Real.pi/4)).range = 2 ∧
+          (∑ z ∈ enclosedPeriodicSpectrum hp (CoeffPair.toMax p ψ) ((Real.pi : ℂ)*n) (Real.pi/4),
+            periodicAlgebraicMultiplicity hp (CoeffPair.toMax p ψ) z) = 2 := by
+  obtain ⟨N₀,U,hN₀,ho,_,hc,hφ,h0,h⟩ := exists_uniform_sourcePeriodicCountingData hp φ
+  refine ⟨N₀,U,hN₀,ho,hc,hφ,h0,?_⟩
+  intro N hN ψ hψ
+  have hd := (h N hN).2.2 ψ hψ
+  exact ⟨hd.central_rank,hd.central_multiplicity,fun n hn => ⟨hd.disk_rank n hn,hd.disk_multiplicity n hn⟩⟩
+
+-- Both central parity formulas, including the reversal when the cutoff is odd.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N : ℕ}
+    (h : SourcePeriodicCountingData hp φ N) (hφ : φ ∈ sourceParitySubspace 0) (hN : (N : ℤ)%2 = 0) :
+    Module.finrank ℂ (sourceParityCentralProjection hp φ N 0).range = 2*N+2 ∧
+    Module.finrank ℂ (sourceParityCentralProjection hp φ N 1).range = 2*N := by
+  constructor
+  · simpa [hN] using h.central_parity hφ 0
+  · simpa [hN] using h.central_parity hφ 1
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N : ℕ}
+    (h : SourcePeriodicCountingData hp φ N) (hφ : φ ∈ sourceParitySubspace 0) (hN : (N : ℤ)%2 = 1) :
+    Module.finrank ℂ (sourceParityCentralProjection hp φ N 0).range = 2*N ∧
+    Module.finrank ℂ (sourceParityCentralProjection hp φ N 1).range = 2*N+2 := by
+  constructor
+  · simpa [hN] using h.central_parity hφ 0
+  · simpa [hN] using h.central_parity hφ 1
+
+-- A negative odd disk has rank two in the odd subspace and zero in the even one.
+example {φ : CoeffPair 1} {N : ℕ} (h : SourcePeriodicCountingData (by norm_num) φ N)
+    (hφ : φ ∈ sourceParitySubspace 0) (hN : N < 3) :
+    Module.finrank ℂ (sourceParityCircleProjection (by norm_num) φ ((Real.pi : ℂ)*(-3 : ℤ)) (Real.pi/4) 1).range = 2 ∧
+    Module.finrank ℂ (sourceParityCircleProjection (by norm_num) φ ((Real.pi : ℂ)*(-3 : ℤ)) (Real.pi/4) 0).range = 0 := by
+  constructor
+  · simpa using h.disk_parity hφ (-3) (by simpa using hN) 1
+  · simpa using h.disk_parity hφ (-3) (by simpa using hN) 0
+
+-- At p=1, every point on the segment from zero to the potential has the same central rank.
+example (φ : CoeffPair 1) : ∃ N : ℕ, ∀ t ∈ Set.Icc (0 : ℝ) 1,
+    Module.finrank ℂ (sourceCentralRectangleIntegral (by norm_num) (t • φ) N).range =
+      Module.finrank ℂ (sourceCentralRectangleIntegral (by norm_num) (0 : CoeffPair 1) N).range := by
+  obtain ⟨N,U,_,_,hc,_,hφ,h0,h⟩ := exists_uniform_sourcePeriodicCountingData (by norm_num) φ
+  refine ⟨N,?_⟩
+  intro t ht
+  exact ((h N le_rfl).2.2 _ (hc.smul_mem_of_zero_mem h0 hφ ht)).central_rank.trans
+    ((h N le_rfl).2.2 0 h0).central_rank.symm
+
+-- Period-one neighborhoods carry counts and analytic typed restrictions simultaneously.
+example (φ : CoeffPair 1) : ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 1), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+    ∀ N : ℕ, N₀ ≤ N → ∀ r : ℤ,
+      AnalyticOnNhd ℂ (fun ψ => sourceParityCentralProjection (by norm_num) (periodOnePair ψ) N r) U ∧
+      ∀ ψ ∈ U, Module.finrank ℂ (sourceParityCentralProjection (by norm_num) (periodOnePair ψ) N r).range =
+        if (N : ℤ)%2 = r%2 then 2*N+2 else 2*N := by
+  obtain ⟨N₀,U,_,ho,_,_,hφ,h0,h⟩ := exists_uniform_sourcePeriodOneCountingData (by norm_num) φ
+  exact ⟨N₀,U,ho,hφ,h0,fun N hN r =>
+    ⟨((h N hN).2 r).1,fun ψ hψ => ((h N hN).1 ψ hψ).central_parity (periodOnePotential_mem ψ) r⟩⟩
+
+-- The physical eigenfunction for an odd index is antiperiodic, even at p=1.
+example {φ : CoeffPair 1} {N : ℕ} (h : SourcePeriodicCountingData (by norm_num) φ N)
+    (hφ : φ ∈ sourceParitySubspace 0) (k : ℤ) (hn : N < (2*k+1).natAbs) (z : ℂ)
+    (hz : z ∈ Metric.ball ((Real.pi : ℂ)*(2*k+1 : ℤ)) (Real.pi/4))
+    (a : WeightedCoeffPair (Weight.sobolev 1) 1)
+    (ha : sourceOperator (by norm_num) φ a = z • sourceDomainInclusion a) (x : ℝ) :
+    Fourier.sobolevSynthesis (by norm_num) a.fst ((x+1 : ℝ) : AddCircle (2 : ℝ)) =
+      -Fourier.sobolevSynthesis (by norm_num) a.fst (x : AddCircle (2 : ℝ)) ∧
+    Fourier.sobolevSynthesis (by norm_num) a.snd ((x+1 : ℝ) : AddCircle (2 : ℝ)) =
+      -Fourier.sobolevSynthesis (by norm_num) a.snd (x : AddCircle (2 : ℝ)) := by
+  simpa only [Fourier.wave_odd_at_one,neg_one_mul] using
+    h.disk_eigenvector_unit_translation hφ (2*k+1) hn z hz a ha x
+
+-- Reality concerns the full original-norm spectrum and does not require even support.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (hφ : ∀ k : ℤ, φ.snd k = conj (φ.fst (-k))) (z : ℂ) (hz : z ∉ sourceResolventSet hp φ) :
+    z.im = 0 := sourcePeriodicSpectrum_im_eq_zero_of_realType hp φ hφ z hz
+
+-- Actual source spectral values are exhausted by the central cluster and unique high disks.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {φ : CoeffPair p} {N : ℕ}
+    (h : SourcePeriodicCountingData hp φ N) (z : ℂ) :
+    z ∉ sourceResolventSet hp φ ↔ z ∈ centralPeriodicSpectrum hp (CoeffPair.toMax p φ) N ∨
+      ∃! n : ℤ, N < n.natAbs ∧ z ∈ enclosedPeriodicSpectrum hp (CoeffPair.toMax p φ)
+        ((Real.pi : ℂ)*n) (Real.pi/4) := h.mem_spectrum_iff_central_or_disk z
+
+end OriginalNormPeriodicCountingChecks

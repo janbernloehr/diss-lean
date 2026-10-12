@@ -1193,3 +1193,15 @@ commutation and is retained throughout. No correction to equation (1.5)
 is required. These statements do not change the earlier qualifications
 for the separate norm-dependent heights in Proposition 3.1 and Theorems
 1.1 and 1.4.
+
+## Rank calculations after equation (1.5): retain the height-N region
+
+`SourcePeriodicCounting.lean` proves the actual original-norm ranks and
+algebraic counts for the height-N central box from Corollary 3.5. The
+central count is 4N+2, with parity ranks 2N+2 and 2N; each high disk has
+rank and algebraic count two, entirely in the index's parity. The exact
+contour formulas and original operator-domain eigenfunctions are retained.
+The results hold at every finite Banach exponent. They neither remove
+the qualification on the different printed norm-dependent height nor
+adopt its proposed correction. Positive cutoffs and boundary admissibility
+exclude the degenerate central rectangle at N=0.

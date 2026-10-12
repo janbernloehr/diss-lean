@@ -3303,3 +3303,6 @@ import NLS.ZakharovShabat.SourceParity
 import NLS.ZakharovShabat.SourceLemma3_6
 import NLS.ZakharovShabat.SourceParityRestriction
 import NLS.ZakharovShabat.SourceEquation1_5
+import NLS.FunctionalAnalysis.ConjugatedRanges
+import NLS.ZakharovShabat.SourceContourRanks
+import NLS.ZakharovShabat.SourcePeriodicCounting

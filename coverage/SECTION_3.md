@@ -238,4 +238,38 @@ is proved under even support and contour admissibility. `sourceEquation1_5`
 supplies those hypotheses automatically in period-one coordinates. Earlier
 fixed-height qualifications are unchanged.
 
-Next: the rank calculations following equation (1.5), then Lemma 3.7.
+The rank calculations following equation (1.5) are verified below.
+
+
+## Rank calculations and periodic counts following equation (1.5)
+
+Printed page 27 obtains the central and distant-disk counts from contour
+ranks, then gives parity, exhaustion, and reality conclusions. The actual
+source integrals and typed restrictions now have those ranks at every
+finite Banach exponent. The central region is the height-N box from
+Corollary 3.5; the separate norm-dependent height qualification remains.
+
+| Printed conclusion or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Conjugation preserves range dimensions | `NLS.ConjugatedRanges.rangeEquiv`, `rangeInfEquiv` | Linear equivalences for ranges and their intersections with corresponding subspaces; no isometry of the converted norms is asserted. |
+| Exact typed restricted range | `sourceParityCompressionRangeEquiv` | Linear isometric equivalence within the original norm, from the typed range to the ambient range intersection. |
+| Actual source rank transfer | `finrank_range_sourceResolventCircleIntegral`, `finrank_range_sourceCentralRectangleIntegral` | The actual normalized integrals have the same ranks as the established coefficient-space projectors on admissible contours. |
+| Typed restriction rank transfer | `finrank_range_sourceParityCircleProjection`, `finrank_range_sourceParityCentralProjection` | Their ranks equal the appropriate coefficient-space range intersection dimensions. |
+| Complete source counting data | `SourcePeriodicCountingData` | Full central rank 4N+2, high-disk rank two, central parity ranks 2N+2 and 2N, disk parity ranks two and zero. |
+| Algebraic multiplicities | `SourcePeriodicCountingData.central_multiplicity`, `disk_multiplicity` | Uses the established coefficient-operator algebraic multiplicity definition after coefficient-preserving norm conversion. Totals count multiplicity, not distinct values. |
+| Actual high-disk range parity | `SourcePeriodicCountingData.disk_range_parity` | Every vector in the actual source circle range has the parity of its signed disk index, for even-supported potentials. |
+| Actual domain eigenvector parity | `SourcePeriodicCountingData.disk_eigenvector_parity` | The eigenvalue equation uses `sourceOperator` and `sourceDomainInclusion` on the original one-derivative domain. |
+| Physical unit translation | `SourcePeriodicCountingData.disk_eigenvector_unit_translation` | Both continuous Fourier components satisfy translation by one with phase +1 for even n and -1 for odd n, including p=1. |
+| Exhaustion and exterior analyticity | `SourcePeriodicCountingData.spectrum_subset`, `mem_spectrum_iff_central_or_disk`, `analyticOnNhd_exterior` | Every source spectral value belongs to the central cluster or exactly one high disk; the complement has the actual analytic source resolvent. |
+| Real-type spectrum | `sourcePeriodicSpectrum_im_eq_zero_of_realType` | Every finite exponent, full period-two source spectrum; no even-support requirement. |
+| Common period-two neighborhood | `exists_uniform_sourcePeriodicCountingData` | One positive cutoff and open convex connected original-norm neighborhood containing source and zero; all larger cutoffs, complete counting data, and analytic actual central/circle projectors. |
+| Common period-one neighborhood | `exists_uniform_sourcePeriodOneCountingData` | All counts together with analytic typed parity restrictions, on one open convex connected neighborhood in period-one coordinates. |
+
+The source entry points are in `NLS.ZakharovShabat`, in
+`SourceContourRanks.lean` and `SourcePeriodicCounting.lean`. The generic
+range equivalences are in `NLS/FunctionalAnalysis/ConjugatedRanges.lean`.
+The data retain a positive cutoff; no rank formula is asserted for a
+degenerate, inadmissible central rectangle. The parity formulas use integer
+residues and therefore include negative disk indices.
+
+Next: Lemma 3.7 in the original source norms.

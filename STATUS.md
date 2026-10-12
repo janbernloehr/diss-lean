@@ -1,6 +1,59 @@
 # Implementation status
 
-## Current milestone: equation (1.5) in the original period-one topology
+## Current milestone: original-norm ranks and periodic counts after equation (1.5)
+
+The rank calculations and counting conclusions on printed page 27 now apply
+to the actual original-norm contour projectors. The central rectangle has
+rank 4N+2, and every distant quarter-pi circle has rank two. For period-one
+potentials, the typed central restriction has rank 2N+2 in the parity of N
+and 2N in the other parity. A distant circle has rank two in the parity of
+its index and rank zero in the opposite parity, including negative indices.
+
+`ConjugatedRanges.lean` gives linear range equivalences under continuous
+linear conjugation, including intersections with transported subspaces.
+`SourceContourRanks.lean` applies these to the actual source integrals and
+typed parity restrictions. The norm conversion is not claimed to be an
+isometry. Within the original norm, the typed restricted range is linearly
+isometric to the corresponding ambient range intersection.
+
+`SourcePeriodicCounting.lean` packages the numeric ranks together with the
+established algebraic multiplicities of the coefficient operator, under
+coefficient-preserving norm conversion. The disk counts are two with
+algebraic multiplicity, and the central count is 4N+2. One positive cutoff
+and one open, convex, connected original-norm neighborhood containing the
+potential and zero support all larger cutoffs simultaneously. The actual
+central and circle projectors are analytic there. A period-one version
+also gives analytic typed restrictions and the same complete counting data.
+All finite Banach exponents, including p=1, are covered.
+
+Every vector in a distant contour range has the index's parity for an
+even-supported potential. Eigenvectors in the actual original-norm domain
+inherit that parity, and their continuous Fourier representatives satisfy
+the corresponding unit-translation law. The full original-norm spectrum
+is exhausted by the central cluster and unique high disks; its exterior
+resolvent is analytic. Real-type potentials have real spectrum, without
+an even-support restriction.
+
+The central box here has height N, as in Corollary 3.5 and equations
+(1.4–1.5). This does not resolve or adopt a correction to the separate
+printed norm-dependent height in Proposition 3.1 and Theorems 1.1 and 1.4.
+The positive cutoff and contour admissibility hypotheses are retained.
+
+Next: Lemma 3.7, the analytic midpoint and squared-gap trace expressions
+in the original source norms. The dissertation remains incomplete;
+earlier source qualifications remain in force.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The probe covers full ranks and algebraic counts on one neighborhood,
+both central parity formulas, negative odd disk indices, the p=1 segment to
+zero, analytic typed restrictions, physical antiperiodicity, spectral reality,
+and exhaustive source-spectrum classification. The source inventory check
+passed for 156 candidate labels, not a completeness certificate. The full
+check passed all 6,742 build jobs and public examples. The axiom audit passed
+for 29,407 NLS declarations with only the permitted classical axioms. The
+build retains 21 existing warnings; the new modules add none.
+
+## Previous milestone: equation (1.5) in the original period-one topology
 
 Equation (1.5) (printed page 26) now has actual bounded endomorphisms of
 the original-norm parity subspaces. `SourceParityRestriction.lean` constructs
