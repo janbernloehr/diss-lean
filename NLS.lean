@@ -3231,3 +3231,7 @@ import NLS.ZakharovShabat.L2DirichletRootGradient
 import NLS.ZakharovShabat.L2SourceDirichletGradient
 import NLS.ZakharovShabat.L2SourceDirichletFourier
 import NLS.ZakharovShabat.L2SourceG7Gradients
+import NLS.ZakharovShabat.L2GradientCurves
+import NLS.ZakharovShabat.L2MidpointContour
+import NLS.ZakharovShabat.L2SourceMidpointGradient
+import NLS.ZakharovShabat.L2SourceMidpointFourier

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the canonical source Dirichlet derivatives now have
-normalized physical L2 eigenfunction integrals for arbitrary Hilbert
-potentials and directions. The existing corrected G.7 Dirichlet coefficient
-vectors realize these actual gradient errors, with the original H1
-summability estimate on a common complex neighborhood. The dissertation
-is incomplete; next is the physical midpoint gradient and contour formula.
+Latest milestone: actual source midpoint derivatives now have physical
+L2 contour gradients, including collapsed gaps. Isolating circles are
+constructed at every signed index, and the existing G.7 midpoint vectors
+realize their physical Fourier coefficients with the original H1
+summability estimate. The dissertation is incomplete; next is contour
+independence and a choice-independent midpoint gradient.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

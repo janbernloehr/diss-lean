@@ -1852,3 +1852,62 @@ with 156 labels. Counts do not certify completeness.
 Public checks include the Hilbert cotangent, arbitrary real Hilbert bases
 and directions, complex-domain realization, the generic conjugate-exponent
 real H1 result, signed lattice reference, uniqueness, and exact q=2 energy.
+
+### Physical midpoint gradient contours and actual G.7 coefficients
+
+The actual source midpoint differential now has a physical L2 gradient
+contour. `L2GradientCurves.lean` places the endpoint and discriminant
+gradients in the Banach space of continuous physical curves, proves
+spectral continuity in the uniform norm, and constructs the unconjugated
+pairing with any rough L2 direction as a continuous linear map.
+
+`L2MidpointContour.lean` integrates the quotient-weighted discriminant
+gradient in that uniform norm. Evaluation recovers its pointwise contour,
+and the continuous pairing commutes with the contour to give the actual
+directional discriminant integral. A radius-times-supremum estimate bounds
+the entire physical gradient curve. Nonvanishing of the periodic
+characteristic on the circle ensures integrability.
+
+`L2SourceMidpointGradient.lean` identifies this physical integral with the
+actual canonical source midpoint derivative on an isolating circle. The
+original period-one realization, arbitrary Hilbert directions, and every
+finite source exponent p>=2 are retained. Enclosing both indexed periodic
+endpoints and avoiding the other cuts supplies denominator nonvanishing;
+the two enclosed endpoints may coincide.
+
+`L2SourceMidpointFourier.lean` constructs such circles for every signed
+index on one common complex neighborhood of the real source locus. It
+identifies the existing signed G.7 midpoint vector with the actual Fourier
+coefficients of the physical contour gradient. On the original H1 source,
+the whole realized sequence retains G.7's outer-lp summability with finite
+p>=2 and conjugate q. The finite central block and collapsed gaps are
+included without supplied circles or distinct-endpoint hypotheses.
+
+Next is uniqueness of physical gradient representatives and independence
+of the chosen isolating circle, followed by a choice-independent midpoint
+gradient API. No new rough-L2-ball asymptotic estimate is asserted. G.2's
+arbitrary-time interval norm remains unresolved; neither proposed spectral-
+height correction is adopted. The optional original m=1 sharpening remains
+under the accepted Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6665 build jobs), including all
+public examples and the axiom audit of 28375 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+| Public entry point | Scope |
+| --- | --- |
+| `continuous_l2EndpointGradientCurve_spectral`, `continuous_l2DiscriminantGradientCurve_spectral` | Spectral continuity in the uniform norm of physical gradient curves. |
+| `l2GradientPairing_apply`, `l2GradientPairing_discriminant` | Continuous unconjugated pairing with rough L2 directions; exact actual discriminant derivative. |
+| `circleIntegrable_l2MidpointGradientIntegrand`, `l2MidpointGradient_apply` | Uniform curve contour and its literal pointwise values. |
+| `l2MidpointGradient_pairing`, `norm_l2MidpointGradientCurve_le` | Justified pairing-contour interchange and the radius-times-supremum bound. |
+| `exists_global_source_midpoint_l2_gradient_contour` | Actual source midpoint derivative from any admissible isolating circle, with finite exponent inclusion. |
+| `exists_global_source_midpoint_isolating_circles`, `exists_global_source_midpoint_l2_gradient` | Constructed circles and physical gradient formulas for every signed index on a complex neighborhood. |
+| `exists_global_sourceG7_l2_midpoint_realization`, `exists_global_sourceG7_l2_midpoint_memlp` | Exact signed G.7 coefficient vectors and whole-sequence H1 summability for the physical gradients. |
+
+Public checks cover uniform continuity, the actual discriminant differential,
+rough L2 pairing-contour interchange, the curve norm bound, arbitrary real
+Hilbert source directions, the collapsed zero-potential case, and the generic
+finite conjugate-exponent H1 summability result. Contour independence of the
+pointwise physical representative is not yet asserted.

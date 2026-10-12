@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Latest progress: original source Dirichlet gradients and physical G.7 realization
+## Latest progress: physical midpoint contours and G.7 realization
+
+The actual source midpoint differential now has a physical L2 gradient
+contour. `L2GradientCurves.lean` places the endpoint and discriminant
+gradients in the Banach space of continuous physical curves, proves
+spectral continuity in the uniform norm, and constructs the unconjugated
+pairing with any rough L2 direction as a continuous linear map.
+
+`L2MidpointContour.lean` integrates the quotient-weighted discriminant
+gradient in that uniform norm. Evaluation recovers its pointwise contour,
+and the continuous pairing commutes with the contour to give the actual
+directional discriminant integral. A radius-times-supremum estimate bounds
+the entire physical gradient curve. Nonvanishing of the periodic
+characteristic on the circle ensures integrability.
+
+`L2SourceMidpointGradient.lean` identifies this physical integral with the
+actual canonical source midpoint derivative on an isolating circle. The
+original period-one realization, arbitrary Hilbert directions, and every
+finite source exponent p>=2 are retained. Enclosing both indexed periodic
+endpoints and avoiding the other cuts supplies denominator nonvanishing;
+the two enclosed endpoints may coincide.
+
+`L2SourceMidpointFourier.lean` constructs such circles for every signed
+index on one common complex neighborhood of the real source locus. It
+identifies the existing signed G.7 midpoint vector with the actual Fourier
+coefficients of the physical contour gradient. On the original H1 source,
+the whole realized sequence retains G.7's outer-lp summability with finite
+p>=2 and conjugate q. The finite central block and collapsed gaps are
+included without supplied circles or distinct-endpoint hypotheses.
+
+Next is uniqueness of physical gradient representatives and independence
+of the chosen isolating circle, followed by a choice-independent midpoint
+gradient API. No new rough-L2-ball asymptotic estimate is asserted. G.2's
+arbitrary-time interval norm remains unresolved; neither proposed spectral-
+height correction is adopted. The optional original m=1 sharpening remains
+under the accepted Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6665 build jobs), including all
+public examples and the axiom audit of 28375 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: original source Dirichlet gradients and physical G.7 realization
 
 The original canonical source Dirichlet differential now has its actual
 physical L2 normalized squared-eigenfunction integral for arbitrary

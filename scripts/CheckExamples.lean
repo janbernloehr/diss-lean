@@ -42165,3 +42165,70 @@ example (g : ℝ → ℂ × ℂ) (a : CoeffPair 2) (ha : L2RootGradientFourierRe
   simpa using ha.norm_rpow (by norm_num)
 
 end L2SourceG7Checks
+
+noncomputable section
+section L2MidpointChecks
+open Set Metric Complex MeasureTheory NLS NLS.LinearVolterra NLS.ZakharovShabat NLS.Fourier
+open scoped ENNReal
+
+private theorem l2MidpointChecks_inclusion_self (φ : CoeffPair 2) :
+    CoeffPair.exponentInclusion (le_rfl : (2 : ℝ≥0∞) ≤ 2) φ = φ := by
+  apply (CoeffPair.toMax 2).injective
+  apply Prod.ext <;> ext k <;> rfl
+
+example (u : IntervalPairL2) : Continuous (l2DiscriminantGradientCurve u) :=
+  continuous_l2DiscriminantGradientCurve_spectral u
+
+example (u h : IntervalPairL2) (z : ℂ) :
+    l2GradientPairing h (l2DiscriminantGradientCurve u z) =
+      (fderiv ℂ (fun w : IntervalPairL2 => l2Discriminant w z) u) h :=
+  l2GradientPairing_discriminant u h z
+
+example (u h : IntervalPairL2) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hne : ∀ z ∈ sphere c r, (l2Discriminant u z)^2-4 ≠ 0) :
+    (∫ s in (0 : ℝ)..1, (l2MidpointGradient u c r s).1*h.ofLp.1 s+
+      (l2MidpointGradient u c r s).2*h.ofLp.2 s) =
+      -(2*Real.pi*Complex.I : ℂ)⁻¹ * (∮ z in C(c,r), l2Discriminant u z*
+        ((fderiv ℂ (fun w : IntervalPairL2 => l2Discriminant w z) u) h)/
+          ((l2Discriminant u z)^2-4)) :=
+  l2MidpointGradient_pairing u h c r hr hne
+
+example (u : IntervalPairL2) (c : ℂ) (r : ℝ) (hr : 0 ≤ r) (B : ℝ)
+    (hB : ∀ z ∈ sphere c r, ‖l2MidpointGradientIntegrand u z‖ ≤ B) :
+    ‖l2MidpointGradientCurve u c r‖ ≤ r*B :=
+  norm_l2MidpointGradientCurve_le u c r hr B hB
+
+example (φ : CoeffPair 2) (hreal : φ ∈ realTypeSourceLocus 2) (n : ℤ) :
+    ∃ c : ℂ, ∃ r : ℝ, 0 < r ∧ ∀ h : CoeffPair 2,
+      (fderiv ℂ (fun χ : CoeffPair 2 => canonicalPeriodicMidpoint (by simp) (by norm_num)
+        (periodOnePotential χ) (periodOnePotential_mem χ) n) φ) h =
+        ∫ s in (0 : ℝ)..1, (l2MidpointGradient (sourcePhysicalL2 φ) c r s).1*
+          (physicalBase (periodOnePotential h) s).1+
+          (l2MidpointGradient (sourcePhysicalL2 φ) c r s).2*(physicalBase (periodOnePotential h) s).2 := by
+  obtain ⟨W,_,hr,h⟩ := exists_global_source_midpoint_l2_gradient (p := 2) (by simp) (by norm_num) le_rfl
+  have hφ : CoeffPair.exponentInclusion (le_rfl : (2 : ℝ≥0∞) ≤ 2) φ ∈ W := by
+    simpa only [l2MidpointChecks_inclusion_self] using hr hreal
+  simpa only [l2MidpointChecks_inclusion_self] using h φ hφ n
+
+-- The zero source has collapsed gaps; no distinct-endpoint premise is used.
+example (n : ℤ) : ∃ c : ℂ, ∃ r : ℝ, 0 < r ∧
+    L2RootGradientFourierRealizes (l2MidpointGradient 0 c r)
+      (sourceG7MidpointGradient (p := 2) (q := 2) (by simp) (by norm_num) 0 n) := by
+  obtain ⟨W,_,hr,h⟩ := exists_global_sourceG7_l2_midpoint_realization
+    (p := 2) (q := 2) (by simp) (by norm_num) le_rfl
+  have h0 : CoeffPair.exponentInclusion (le_rfl : (2 : ℝ≥0∞) ≤ 2) 0 ∈ W := by
+    simpa only [map_zero] using hr (show (0 : CoeffPair 2) ∈ realTypeSourceLocus 2 by intro k; simp)
+  simpa only [map_zero] using h 0 h0 n
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (h2p : (2 : ℝ≥0∞) ≤ p)
+    (a : ScalarDomain 2 × ScalarDomain 2) (ha : sobolevSourceInclusion a ∈ realTypeSourceLocus 2) :
+    Memℓp (fun n : ℤ => sourceG7MidpointGradient (q := q) hp hp1
+      (CoeffPair.exponentInclusion h2p (sobolevSourceInclusion a)) n) p ∧
+      ∀ n : ℤ, ∃ c : ℂ, ∃ r : ℝ, 0 < r ∧
+        L2RootGradientFourierRealizes (l2MidpointGradient (sourcePhysicalL2 (sobolevSourceInclusion a)) c r)
+          (sourceG7MidpointGradient (q := q) hp hp1 (CoeffPair.exponentInclusion h2p (sobolevSourceInclusion a)) n) := by
+  obtain ⟨W,_,hr,h⟩ := exists_global_sourceG7_l2_midpoint_memlp (q := q) hp hp1 h2p
+  exact h a (hr (fun n => ha n))
+
+end L2MidpointChecks
