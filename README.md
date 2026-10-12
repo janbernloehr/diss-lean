@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: G.6 anti-discriminant error vectors now realize the actual
-physical gradients for 1<p<=2. Both Dirichlet and Neumann sequences have
-outer-lp summability for complex H1 sources in the original conjugate norm.
-The dissertation is incomplete; next is complex-neighborhood G.7
-summability below two.
+Latest milestone: corrected G.7 estimates now hold on the original complex
+H1 source for every finite p>1. Below two, both coefficient sequences realize
+the physical gradients and are summable on one common complex neighborhood.
+The H1 inclusion preserves every original Fourier coefficient. The
+dissertation is incomplete; remaining Appendix G assumptions and physical
+interfaces are the next audit.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

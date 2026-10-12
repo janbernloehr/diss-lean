@@ -42454,3 +42454,101 @@ example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate 
   sourceG6AntiDiscriminantCotangentCoefficients_eq_sobolev hp hp1 hp2 φ a ha z w
 
 end L2G6BelowTwoChecks
+
+noncomputable section
+section L2G7ComplexBelowTwoChecks
+open Set Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+example : ∃ W : Set (CoeffPair 2), IsOpen W ∧ realTypeSourceLocus 2 ⊆ W ∧
+    ∀ (s : ℝ), 1 < s → ∀ φ ∈ W, ∀ a : Domain 2,
+      periodOnePotential φ = domainInclusion a →
+      Memℓp (fun n : ℤ => fderiv ℂ (fun ψ : CoeffPair 2 => canonicalPeriodicMidpoint
+        (by simp) (by norm_num) (periodOnePotential ψ) (periodOnePotential_mem ψ) n) φ)
+        (ENNReal.ofReal s) ∧
+      Memℓp (fun n : ℤ => fderiv ℂ (fun ψ : CoeffPair 2 =>
+        canonicalPeriodOneBoundaryRoots (by simp) (by norm_num) .dirichlet ψ n) φ-
+        sourceFreeDirichletCotangent 2 n) (ENNReal.ofReal s) := by
+  obtain ⟨U,hU,hUr,hm⟩ := exists_global_hilbert_midpoint_outer_complex
+  obtain ⟨V,hV,hVr,hd⟩ := exists_global_hilbert_dirichlet_outer_complex
+  exact ⟨U ∩ V,hU.inter hV,fun φ hφ => ⟨hUr hφ,hVr hφ⟩,
+    fun s hs φ hφ a ha => ⟨hm s hs φ hφ.1 a ha,hd s hs φ hφ.2 a ha⟩⟩
+
+section
+variable {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+example
+    (hp : p ≠ ⊤) (hp1 : 1 < p) (hp2 : p ≤ 2) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∀ φ ∈ W, ∀ a : Domain 2,
+        periodOnePotential (CoeffPair.exponentInclusion hp2 φ) = domainInclusion a →
+        Memℓp (fun n : ℤ => sourceG7MidpointGradient (q := q) hp hp1 φ n) p ∧
+        Memℓp (fun n : ℤ => sourceG7DirichletGradientError (q := q) hp hp1 φ n) p ∧
+        ∀ n : ℤ,
+          L2RootGradientFourierRealizes (sourceMidpointPhysicalGradientBelowTwo hp2 φ n)
+            (sourceG7MidpointGradient (q := q) hp hp1 φ n) ∧
+          let u := sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)
+          let z := canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet φ n
+          l2DirichletNormalization u z ≠ 0 ∧
+            L2RootGradientFourierRealizes (l2DirichletGradientRemainder u z ((Real.pi : ℂ)*n))
+              (sourceG7DirichletGradientError (q := q) hp hp1 φ n) :=
+  exists_global_sourceG7_below_two_physical_complex hp hp1 hp2
+end
+
+private theorem g7ComplexBelowTwo_finite : (3 : ℝ≥0∞)/2 ≠ ⊤ :=
+  ENNReal.div_ne_top (by norm_num) (by norm_num)
+private theorem g7ComplexBelowTwo_gt_one : (1 : ℝ≥0∞) < 3/2 := by
+  rw [ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))]
+  norm_num
+private theorem g7ComplexBelowTwo_le_two : (3 : ℝ≥0∞)/2 ≤ 2 := by
+  rw [ENNReal.div_le_iff (by norm_num) (by norm_num)]
+  norm_num
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)/2) := ⟨g7ComplexBelowTwo_gt_one.le⟩
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance : ENNReal.HolderConjugate 3 ((3 : ℝ≥0∞)/2) :=
+  ENNReal.holderConjugate_iff.mpr (by
+    rw [ENNReal.inv_div (Or.inl (by norm_num)) (Or.inl (by norm_num)),
+      ← one_div,← ENNReal.add_div]
+    norm_num only [show (1+2 : ℝ≥0∞) = 3 by norm_num]
+    exact ENNReal.div_self (by norm_num) (by norm_num))
+
+example : ∃ W : Set (CoeffPair ((3 : ℝ≥0∞)/2)), IsOpen W ∧
+    realTypeSourceLocus ((3 : ℝ≥0∞)/2) ⊆ W ∧ ∀ φ ∈ W, ∀ a : Domain 2,
+      periodOnePotential (CoeffPair.exponentInclusion g7ComplexBelowTwo_le_two φ) = domainInclusion a →
+      Memℓp (fun n : ℤ => sourceG7MidpointGradient (q := 3)
+        g7ComplexBelowTwo_finite g7ComplexBelowTwo_gt_one φ n) ((3 : ℝ≥0∞)/2) ∧
+      Memℓp (fun n : ℤ => sourceG7DirichletGradientError (q := 3)
+        g7ComplexBelowTwo_finite g7ComplexBelowTwo_gt_one φ n) ((3 : ℝ≥0∞)/2) := by
+  obtain ⟨W,hW,hreal,h⟩ := exists_global_sourceG7_below_two_physical_complex (q := 3)
+    g7ComplexBelowTwo_finite g7ComplexBelowTwo_gt_one g7ComplexBelowTwo_le_two
+  exact ⟨W,hW,hreal,fun φ hφ a ha => ⟨(h φ hφ a ha).1,(h φ hφ a ha).2.1⟩⟩
+
+example (n : ℤ) :
+    l2DirichletNormalization (sourcePhysicalL2 (0 : CoeffPair 2))
+      (canonicalPeriodOneBoundaryRoots (p := 2) (by simp) (by norm_num) .dirichlet 0 n) ≠ 0 := by
+  obtain ⟨W,_,hr,h⟩ := exists_global_sourceG7_below_two_physical_complex
+    (p := 2) (q := 2) (by simp) (by norm_num) le_rfl
+  have h0 : (0 : CoeffPair 2) ∈ W := hr (by intro k; simp)
+  have hz := ((h 0 h0 0 (by simp)).2.2 n).2.1
+  simpa only [map_zero] using hz
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (a : ScalarDomain 2 × ScalarDomain 2) (k : ℤ) :
+    (sobolevSourceExponentInclusion p a).fst k = a.1.val k ∧
+    (sobolevSourceExponentInclusion p a).snd k = a.2.val k := by simp
+
+example (a : ScalarDomain 2 × ScalarDomain 2) :
+    periodOnePotential (CoeffPair.exponentInclusion g7ComplexBelowTwo_le_two
+      (sobolevSourceExponentInclusion ((3 : ℝ≥0∞)/2) a)) =
+      domainInclusion (sourceG3ClassicalCoefficients a) :=
+  sourceG7_below_two_periodic_representative g7ComplexBelowTwo_le_two a
+
+example {p q : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ q)] [q.HolderConjugate p]
+    (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∀ a : ScalarDomain 2 × ScalarDomain 2, sobolevSourceExponentInclusion p a ∈ W →
+        Memℓp (fun n : ℤ => sourceG7MidpointGradient (q := q) hp hp1
+          (sobolevSourceExponentInclusion p a) n) p ∧
+        Memℓp (fun n : ℤ => sourceG7DirichletGradientError (q := q) hp hp1
+          (sobolevSourceExponentInclusion p a) n) p :=
+  sourceLemmaG7_all_finite_corrected hp hp1
+
+end L2G7ComplexBelowTwoChecks

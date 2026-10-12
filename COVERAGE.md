@@ -2070,3 +2070,55 @@ labels. Counts do not certify completeness.
 | `memlp_source_antiDiscriminantCotangent_error_below_two_complex` | Original operator estimate at either boundary sequence for complex H1 sources. |
 | `sourceG6_below_two_physical_complex` | Whole-sequence physical Fourier realization and outer-lp summability in the original source norm. |
 | `sourceG6AntiDiscriminantCotangentCoefficients_eq_sobolev` | Exact equality with the established Sobolev physical G.6 coefficient vector. |
+
+### Complex physical G.7 summability and the full finite source range
+
+Physical G.7 summability below two now holds on a common open complex
+neighborhood containing the entire real source locus, rather than only at
+real H1 sources. `SourceHilbertGradientComplexSummability.lean` constructs
+Hilbert neighborhoods before choosing the outer exponent. Every real outer
+exponent greater than one works on those same domains, with the original
+H1 source and the finite central block retained.
+
+`L2SourceG7ComplexBelowTwo.lean` intersects the estimate domains with the
+analytic coordinate domains, then restricts both actual derivatives to
+the original source space for 1<p<=2. On one common complex neighborhood,
+both signed conjugate coefficient sequences have outer-lp summability and
+realize the canonical midpoint gradient and normalized Dirichlet gradient
+error. Dirichlet normalization is nonzero at every signed index. The exact
+free derivative and corrected half-wave reference are retained.
+
+`SourceSobolevAllExponents.lean` supplies the original H1 input directly in
+every coefficient exponent through its l1 embedding. The map preserves
+both Fourier sequences and agrees with the established Hilbert inclusion.
+`SourceLemmaG7AllFinite.lean` uses this map to give both corrected G.7
+estimates for every finite p>1 on the original complex H1 source, with no
+separate physical-compatibility premise. For each exponent, a single open
+complex domain contains the real source locus and supports both estimates.
+
+The public checks include a Hilbert domain common to all outer exponents,
+the concrete conjugate pair p=3/2 and q=3, the collapsed zero source,
+automatic physical H1 realization, and the full finite-exponent statement.
+These remain pointwise H1 summability conclusions; no new uniform bound on
+all H1 source balls or infinity endpoint is asserted.
+
+Next is auditing the remaining Appendix G physical estimates and source
+interfaces against the printed assumptions. G.2's arbitrary-time interval
+norm remains unresolved; neither proposed spectral-height correction is
+adopted. The optional original m=1 sharpening remains under the accepted
+Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6678 build jobs), including all
+public examples and the axiom audit of 28454 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21 existing
+warnings and no new warnings. The source inventory check passed with 156
+labels. Counts do not certify completeness.
+
+| Public entry point | Scope |
+| --- | --- |
+| `exists_global_hilbert_midpoint_outer_complex`, `exists_global_hilbert_dirichlet_outer_complex` | Complex Hilbert domains chosen before every outer exponent above one, for the actual derivatives and free-reference errors. |
+| `exists_global_source_gradients_below_two_complex_memlp` | Both original source operator sequences summable on a common complex neighborhood for 1<p<=2. |
+| `exists_global_sourceG7_below_two_physical_complex` | Both exact conjugate-norm sequences, physical Fourier realizations, and nonzero Dirichlet normalization on the same domain. |
+| `sobolevSourceExponentInclusion`, `exponentInclusion_sobolevSourceExponentInclusion` | Continuous original H1 inclusion preserving both raw Fourier sequences across source exponents. |
+| `sourceG7_below_two_periodic_representative` | Automatic physical H1 representative below two, without an added compatibility premise. |
+| `sourceLemmaG7_all_finite_corrected` | Both corrected G.7 estimates for every finite p>1 on the original complex H1 source. |

@@ -3244,3 +3244,7 @@ import NLS.ZakharovShabat.L2GradientRestrictionFourier
 import NLS.ZakharovShabat.L2SourceG7BelowTwo
 import NLS.ZakharovShabat.L2AntiDiscriminantBelowTwo
 import NLS.ZakharovShabat.L2SourceG6BelowTwo
+import NLS.ZakharovShabat.SourceHilbertGradientComplexSummability
+import NLS.ZakharovShabat.L2SourceG7ComplexBelowTwo
+import NLS.ZakharovShabat.SourceSobolevAllExponents
+import NLS.ZakharovShabat.SourceLemmaG7AllFinite

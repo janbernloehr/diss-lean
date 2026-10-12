@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Latest progress: physical G.6 errors below two for complex sources
+## Latest progress: complex G.7 summability on every finite source exponent
+
+Physical G.7 summability below two now holds on a common open complex
+neighborhood containing the entire real source locus, rather than only at
+real H1 sources. `SourceHilbertGradientComplexSummability.lean` constructs
+Hilbert neighborhoods before choosing the outer exponent. Every real outer
+exponent greater than one works on those same domains, with the original
+H1 source and the finite central block retained.
+
+`L2SourceG7ComplexBelowTwo.lean` intersects the estimate domains with the
+analytic coordinate domains, then restricts both actual derivatives to
+the original source space for 1<p<=2. On one common complex neighborhood,
+both signed conjugate coefficient sequences have outer-lp summability and
+realize the canonical midpoint gradient and normalized Dirichlet gradient
+error. Dirichlet normalization is nonzero at every signed index. The exact
+free derivative and corrected half-wave reference are retained.
+
+`SourceSobolevAllExponents.lean` supplies the original H1 input directly in
+every coefficient exponent through its l1 embedding. The map preserves
+both Fourier sequences and agrees with the established Hilbert inclusion.
+`SourceLemmaG7AllFinite.lean` uses this map to give both corrected G.7
+estimates for every finite p>1 on the original complex H1 source, with no
+separate physical-compatibility premise. For each exponent, a single open
+complex domain contains the real source locus and supports both estimates.
+
+The public checks include a Hilbert domain common to all outer exponents,
+the concrete conjugate pair p=3/2 and q=3, the collapsed zero source,
+automatic physical H1 realization, and the full finite-exponent statement.
+These remain pointwise H1 summability conclusions; no new uniform bound on
+all H1 source balls or infinity endpoint is asserted.
+
+Next is auditing the remaining Appendix G physical estimates and source
+interfaces against the printed assumptions. G.2's arbitrary-time interval
+norm remains unresolved; neither proposed spectral-height correction is
+adopted. The optional original m=1 sharpening remains under the accepted
+Lemma 27.2 correction. The dissertation is incomplete.
+
+Validation: the full project check passed (6678 build jobs), including all
+public examples and the axiom audit of 28454 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21 existing
+warnings and no new warnings. The source inventory check passed with 156
+labels. Counts do not certify completeness.
+
+## Previous milestone: physical G.6 errors below two for complex sources
 
 The actual anti-discriminant cotangent now has its physical integral in
 every original source direction for 1<p<=2, at every complex potential and
