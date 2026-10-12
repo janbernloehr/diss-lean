@@ -41582,3 +41582,67 @@ example (u : IntervalPairL2) (z : ℂ) :
   det_l2FundamentalMatrix u z _
 
 end L2FundamentalRegularityChecks
+
+-- Full-time periodic physical L2 solutions, including integer joins and original representatives.
+section PeriodicL2FundamentalChecks
+open Set MeasureTheory NLS.LinearVolterra NLS.ZakharovShabat
+open scoped Matrix.Norms.Elementwise
+
+example : Continuous (fun p : Ici (0 : ℝ) × (ℂ × IntervalPairL2) =>
+    l2PeriodicFundamentalMatrix p.2.2 p.2.1 p.1) ∧
+    ∀ t : Ici (0 : ℝ), AnalyticOnNhd ℂ
+      (fun q : ℂ × IntervalPairL2 => l2PeriodicFundamentalMatrix q.2 q.1 t) univ :=
+  sourceFundamentalSolution_regularity
+
+example (u : IntervalPairL2) (z : ℂ) :
+    l2PeriodicFundamentalMatrix u z ⟨5,by norm_num⟩ = l2Monodromy u z ^ 5 := by
+  simpa using l2PeriodicFundamentalMatrix_nat u z 5
+
+example (u : IntervalPairL2) (z : ℂ) :
+    l2PeriodicFundamentalMatrix u z ⟨5/2,by norm_num⟩ =
+      l2FundamentalMatrix u z ⟨1/2,by constructor <;> norm_num⟩*l2Monodromy u z ^ 2 := by
+  have h := l2PeriodicFundamentalMatrix_on_period u z 2 ⟨5/2,by norm_num⟩ (by constructor <;> norm_num)
+  norm_num at h
+  exact h
+
+example (u : IntervalPairL2) (z : ℂ) (t : Ici (0 : ℝ)) :
+    l2PeriodicFundamentalMatrix u z ⟨t.val+1,by change 0 ≤ t.val+1; exact add_nonneg (show 0 ≤ t.val from t.property) zero_le_one⟩ =
+      l2PeriodicFundamentalMatrix u z t*l2Monodromy u z := by
+  simpa only [Nat.cast_one,pow_one] using l2PeriodicFundamentalMatrix_add_nat u z t 1
+
+example (u : IntervalPairL2) (z : ℂ) (t : Icc (0 : ℝ) 1) :
+    l2PeriodicFundamentalMatrix u z ⟨t.val,t.property.1⟩ = l2FundamentalMatrix u z t :=
+  l2PeriodicFundamentalMatrix_unit u z t
+
+example (u : IntervalPairL2) (z : ℂ) (t : Ici (0 : ℝ)) :
+    (l2PeriodicFundamentalMatrix u z t).det = 1 := det_l2PeriodicFundamentalMatrix u z t
+
+example (t : Ici (0 : ℝ)) : l2PeriodicFundamentalMatrix 0 0 t = 1 := by
+  have hf (s : Icc (0 : ℝ) 1) : l2FundamentalMatrix 0 0 s = 1 := by
+    ext i j
+    fin_cases i <;> fin_cases j <;>
+      simp [l2FundamentalMatrix,l2SolutionCurve_free,classicalFreeVector]
+  simp [l2PeriodicFundamentalMatrix,l2Monodromy,hf]
+
+example (u : IntervalPairL2) (z : ℂ) (j : Fin 2) (s : Icc (0 : ℝ) 1) :
+    l2PeriodicColumn u z j (3+s.val) = l2PeriodicColumn u z j 3+
+      ∫ r in (0 : ℝ)..s.val,
+        classicalODECoefficient (intervalL2Representative u r) z (l2PeriodicColumn u z j (3+r)) := by
+  simpa using l2PeriodicColumn_integral_on_period u z j 3 s
+
+example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)))
+    (hper : Function.Periodic φ 1) (z : ℂ) (j : Fin 2) :
+    physicalOperator φ (l2PeriodicColumn (intervalL2OfFunction φ hφ) z j)
+      =ᵐ[volume.restrict (Ioi (0 : ℝ))]
+        (fun x => z • l2PeriodicColumn (intervalL2OfFunction φ hφ) z j x) :=
+  ae_physicalOperator_l2PeriodicColumn_ofFunction φ hφ hper z j
+
+example (u : IntervalPairL2) (z : ℂ) (j : Fin 2) (w : ℝ → ℂ × ℂ) (hw : Continuous w)
+    (h0 : w 0 = l2PeriodicColumn u z j 0)
+    (he : ∀ (n : ℕ) (s : Icc (0 : ℝ) 1),
+      w (n+s.val) = w n+∫ r in (0 : ℝ)..s.val,
+        classicalODECoefficient (intervalL2Representative u r) z (w (n+r))) :
+    EqOn w (l2PeriodicColumn u z j) (Ici (0 : ℝ)) :=
+  l2PeriodicColumn_unique u z j w hw h0 he
+
+end PeriodicL2FundamentalChecks

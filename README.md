@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the original physical L2 fundamental solution is jointly
-complex analytic in frequency and potential on the unit interval, and
-jointly continuous with time. Its actual Volterra equation has a unique
-solution for arbitrary continuous forcing, with an explicit L2-based
-inverse bound. The fundamental matrix has determinant one. Periodic
-continuation to all nonnegative times remains the next step; the
-full-time Appendix G regularity claim and the dissertation are incomplete.
+Latest milestone: the physical L2 fundamental solution is continued
+periodically to every nonnegative time, with joint time/parameter
+continuity and fixed-time complex analyticity. Its columns satisfy the
+original integral equation on every period and the spectral equation
+almost everywhere, with uniqueness and determinant one. This proves
+the full-time regularity recalled in Appendix G. The dissertation is
+incomplete; the next comparison concerns the canonical discriminant and
+the actual L2 monodromy for rough Hilbert source potentials.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

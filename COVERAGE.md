@@ -1494,3 +1494,45 @@ public examples and the axiom audit of 28075 NLS declarations. Focused
 module builds and the standalone public probe passed. There are 21
 existing warnings and no new warnings. The source inventory check passed
 with 156 labels. Counts do not certify completeness.
+
+### Appendix G introduction: full-time physical L2 regularity proved
+
+`L2PeriodicFundamental.lean`, `L2FundamentalInitialValue.lean`,
+`L2PeriodicEquation.lean`, and `L2PeriodicUniqueness.lean` close the
+full-time regularity obligation recorded above. The domain is all
+nonnegative times and the original physical L2 space, with no continuity
+assumption on the potential.
+
+| Public entry point | Scope |
+| --- | --- |
+| `l2FundamentalMatrix_mul_column` | Matrix multiplication gives the existing initial-value solution for arbitrary initial columns. |
+| `l2PeriodicFundamentalMatrix_on_period` | Exact M(s)*B^n formula on each whole closed period, including both joins. |
+| `l2PeriodicFundamentalMatrix_unit`, `l2PeriodicFundamentalMatrix_nat` | Recovery on [0,1] and actual monodromy powers at all natural times. |
+| `l2PeriodicFundamentalMatrix_zero`, `det_l2PeriodicFundamentalMatrix` | Identity initial value and determinant one for all nonnegative times. |
+| `l2PeriodicFundamentalMatrix_add_nat` | Correct multiplication order in the monodromy relation for every natural time shift. |
+| `continuous_l2PeriodicFundamentalMatrix_joint`, `analyticOnNhd_l2PeriodicFundamentalMatrix_joint` | Joint continuity through integer joins and fixed-time analyticity for all nonnegative times. |
+| `l2PeriodicColumn_integral_on_period` | Actual signed Volterra equation on every closed period. |
+| `ae_hasDerivAt_l2PeriodicColumn`, `ae_physicalOperator_l2PeriodicColumn` | Original differential and spectral equations almost everywhere on the full positive time domain. |
+| `periodicL2Representative_ofFunction_periodic`, `ae_physicalOperator_l2PeriodicColumn_ofFunction` | Full-time agreement and spectral equation for any original period-one L2 representative. |
+| `l2PeriodicColumn_unique` | Uniqueness among continuous columns with the same initial value and period-by-period integral equation. |
+| `sourceFundamentalSolution_regularity` | The exact full-time continuity/analyticity assertion recalled on printed p. 135. |
+
+Public checks include integer time 5, fractional time 5/2, a whole-period
+shift, the free zero-frequency solution, first-period recovery, determinant
+one, the actual integral equation on period three, arbitrary original
+periodic representatives, and uniqueness. The construction uses periodic
+coefficients after time one. The existing endpoint-clamped classical
+construction is used only through its proved unit-interval recovery.
+
+The independent G.2 interval-norm interpretation remains unresolved.
+Next audit target: the trace-of-monodromy definition of the discriminant
+on printed p. 45 for arbitrary rough Hilbert source potentials. The
+existing `canonicalDiscriminant_eq_classical` requires a compatible
+continuous representative; its removal is not supplied by the full-time
+regularity theorem alone. The dissertation is incomplete.
+
+Validation: the full project check passed (6635 build jobs), including all
+public examples and the axiom audit of 28119 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.

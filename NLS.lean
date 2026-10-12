@@ -3201,3 +3201,7 @@ import NLS.ZakharovShabat.L2ScalarVolterra
 import NLS.ZakharovShabat.L2VolterraOperator
 import NLS.ZakharovShabat.L2VolterraInverse
 import NLS.ZakharovShabat.L2FundamentalAnalytic
+import NLS.ZakharovShabat.L2FundamentalInitialValue
+import NLS.ZakharovShabat.L2PeriodicFundamental
+import NLS.ZakharovShabat.L2PeriodicEquation
+import NLS.ZakharovShabat.L2PeriodicUniqueness

@@ -1,6 +1,54 @@
 # Implementation plan
 
-## Latest progress: physical L2 fundamental-solution regularity on [0,1]
+## Latest progress: full-time periodic physical L2 fundamental solution
+
+`sourceFundamentalSolution_regularity` now proves the full-domain
+regularity recalled at the start of Appendix G (printed p. 135): joint
+continuity on `[0,infinity) x Complex x L2_c`, and joint complex analyticity
+in frequency and the physical L2 potential at each fixed nonnegative time.
+
+`l2PeriodicFundamentalMatrix` continues the original unit-interval matrix
+by its actual monodromy B. On every closed period it equals `M(s)*B^n`,
+including both s=0 and s=1. The endpoint identity proves agreement across
+integer joins; a locally finite closed-interval argument proves joint
+continuity there. The matrix recovers the original solution throughout
+[0,1], equals B^n at integer times, has initial value one and determinant
+one, and obeys the monodromy relation after any natural number of periods.
+
+The identification with the original equation is explicit. Multiplying
+the unit-interval matrix by arbitrary initial data gives the existing L2
+initial-value solution. Each continued column therefore satisfies its
+actual integral equation on every closed period. The signed differential
+and physical spectral equations hold almost everywhere on all positive
+times, also for any original period-one square-integrable representative.
+A continuous column with the same initial value and period-by-period
+integral equation is unique. The uniqueness hypothesis retains the
+integral information; an a.e. derivative condition alone is not asserted
+to imply uniqueness.
+
+This closes the previously recorded full-time Appendix G regularity
+obligation. It does not resolve G.2's unspecified arbitrary-time interval
+norm, adopt either proposed spectral-height correction, or establish the
+optional original m=1 sharpening of Lemma 27.2. The dissertation remains
+incomplete.
+
+Validation: the full project check passed (6635 build jobs), including all
+public examples and the axiom audit of 28119 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+Next: transfer the physical realization of the canonical discriminant to
+arbitrary Hilbert source potentials. Chapter 2, printed p. 45, defines
+the discriminant as the trace of the actual period-one monodromy.
+The existing `canonicalDiscriminant_eq_classical` comparison requires a
+compatible continuous representative. The new L2 monodromy permits a
+comparison without that extra hypothesis, using finite-source density
+and continuity in the original source-to-physical L2 map. Audit and prove
+that comparison before claiming the corresponding physical realization
+for rough sources or transferring its derivative identities.
+
+## Previous milestone: physical L2 fundamental-solution regularity on [0,1]
 
 The actual physical L2 Volterra integral now defines a bounded operator on
 continuous solution curves. Its coefficient map is complex linear in
