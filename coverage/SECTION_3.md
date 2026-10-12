@@ -181,5 +181,32 @@ including its horizontal edges; exterior inclusion alone would not cover
 those edges. The actual integrals are defined first, then identified with
 the conjugated maximum-product operators under the stated contour hypotheses.
 
-Next: the original-norm closed parity subspaces and Lemma 3.6, followed by
-the restricted analytic projectors in equation (1.5).
+The original-norm parity subspaces and Lemma 3.6 are verified below.
+
+
+## Parity subspaces and Lemma 3.6
+
+The source's period-one hypothesis is explicit in the proof of Lemma 3.6.
+The following results concern the original finite-exponent component-sum
+norms and the original one-derivative operator domain.
+
+| Printed requirement or supporting identification | Public entry point | Verified scope |
+| --- | --- | --- |
+| Even and odd coefficient conditions | `mem_sourceParitySubspace_zero_iff`, `mem_sourceParitySubspace_one_iff` | Both components vanish at every 2m+1 or every 2m, respectively, including negative frequencies. |
+| Closed base and domain subspaces | `isClosed_sourceParitySubspace`, `isClosed_sourceDomainParitySubspace` | Closedness in the original norms. |
+| Direct sum and topological complement | `isCompl_sourceParitySubspaces`, `isTopCompl_sourceParitySubspaces` | The two subspaces span the entire base space and have trivial intersection; the splitting is continuous. |
+| Bounded parity masks | `sourceParityProjection`, `sourceDomainParityProjection` | Exact coefficient masks on the original base space and domain. |
+| Contractive base projections | `norm_sourceParityProjection_apply_le` | Every finite Banach exponent. |
+| Period-one identification | `sourcePeriodOneEquiv` | Linear isometric equivalence onto the even subspace; the inverse reads the even coefficients. |
+| Lemma 3.6 | `sourceLemma3_6` | Every finite Banach exponent, including p=1, for potentials embedded canonically from period one. |
+| Explicit support version | `sourceOperator_mem_sourceParitySubspace` | Every even-supported potential preserves each parity on its operator domain. |
+| Domain/base intertwining | `sourceOperator_domainParityProjection` | Applying the domain mask before the operator equals applying the base mask after it. |
+| Resolvent commutation | `sourceParityProjection_commute_resolvent` | The actual original-norm resolvent, throughout its full resolvent set, for even-supported potentials. |
+| Circle integral commutation | `sourceParityProjection_commute_circleIntegral` | The actual normalized circle integral on every admissible circle, for even-supported potentials. |
+| Necessity of period one | `lemma3_6EvenInput_mem`, `lemma3_6_even_support_needed` | An explicit odd potential sends a verified even domain vector outside the even subspace. |
+
+Entry points lie in `NLS.ZakharovShabat`, in `SourceParity.lean` and
+`SourceLemma3_6.lean`. The necessity example confirms the source hypothesis;
+it does not identify a source error. The next step is equation (1.5):
+actual endomorphisms of the parity subspaces, with analytic dependence
+on a neighborhood within the period-one potential space.

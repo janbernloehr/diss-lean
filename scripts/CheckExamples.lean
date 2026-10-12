@@ -43567,3 +43567,73 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
   exact ⟨N₀,U,ho,hφ,fun N hN => (h N hN).1.2⟩
 
 end EquationOneFourOriginalNormChecks
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+section LemmaThreeSixOriginalNormChecks
+
+-- Both printed coefficient conditions hold at all integer frequencies.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (a : CoeffPair p) :
+    a ∈ sourceParitySubspace 0 ↔ ∀ m : ℤ, a.fst (2*m+1) = 0 ∧ a.snd (2*m+1) = 0 :=
+  mem_sourceParitySubspace_zero_iff a
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (a : CoeffPair p) :
+    a ∈ sourceParitySubspace 1 ↔ ∀ m : ℤ, a.fst (2*m) = 0 ∧ a.snd (2*m) = 0 :=
+  mem_sourceParitySubspace_one_iff a
+example (a : CoeffPair 1) : (sourceParityProjection 0 a).fst (-3) = 0 ∧
+    (sourceParityProjection 1 a).snd (-3) = a.snd (-3) := by simp
+example (a : CoeffPair 2) : (sourceParityProjection 0 a).fst (-4) = a.fst (-4) ∧
+    (sourceParityProjection 1 a).snd (-4) = 0 := by simp
+
+-- Closed topological complements and contraction in the original finite-p norm.
+example : Submodule.IsTopCompl (sourceParitySubspace (p := 1) 0) (sourceParitySubspace 1) :=
+  isTopCompl_sourceParitySubspaces
+example : IsClosed (sourceParitySubspace (p := 2) 1 : Set (CoeffPair 2)) :=
+  isClosed_sourceParitySubspace 1
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (a : CoeffPair p) :
+    ‖sourceParityProjection 0 a‖ ≤ ‖a‖ ∧ ‖sourceParityProjection 1 a‖ ≤ ‖a‖ :=
+  ⟨norm_sourceParityProjection_apply_le hp 0 a, norm_sourceParityProjection_apply_le hp 1 a⟩
+example (a : CoeffPair 2) : ‖sourcePeriodOneEquiv a‖ = ‖a‖ :=
+  sourcePeriodOneEquiv.norm_map a
+example (a : sourceParitySubspace (p := 1) 0) :
+    (sourcePeriodOneEquiv.symm a).fst (-3) = a.val.fst (-6) := rfl
+
+-- Lemma 3.6 uses the actual original-norm one-derivative domain, including p=1.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (a : WeightedCoeffPair (Weight.sobolev 1) p) (ha : a ∈ sourceDomainParitySubspace 1) :
+    sourceOperator hp (periodOnePair φ) a ∈ sourceParitySubspace 1 :=
+  sourceLemma3_6 hp φ 1 a ha
+example (φ : CoeffPair 1) (a : WeightedCoeffPair (Weight.sobolev 1) 1)
+    (ha : a ∈ sourceDomainParitySubspace 0) :
+    sourceOperator (by norm_num) (periodOnePair φ) a ∈ sourceParitySubspace 0 :=
+  sourceLemma3_6 (by norm_num) φ 0 a ha
+
+-- A nonconstant even potential really shifts an odd input to other odd modes.
+private def sourceEvenShiftPotential : CoeffPair 1 :=
+  (CoeffPair.toMax 1).symm (lp.single 1 2 1, lp.single 1 (-2) 1)
+example : (sourceOperator (by norm_num) sourceEvenShiftPotential
+    ((WeightedCoeffPair.toMax (Weight.sobolev 1) 1).symm (positiveMode 1))).fst 3 = 1 := by
+  change (operator (by norm_num) (lp.single 1 2 1, lp.single 1 (-2) 1) (positiveMode 1)).1 3 = 1
+  simp [operator_fst_apply, positiveMode, lp.single_apply, Pi.single_apply]
+example : (sourceOperator (by norm_num) sourceEvenShiftPotential
+    ((WeightedCoeffPair.toMax (Weight.sobolev 1) 1).symm (negativeMode 1))).snd (-3) = 1 := by
+  change (operator (by norm_num) (lp.single 1 2 1, lp.single 1 (-2) 1) (negativeMode 1)).2 (-3) = 1
+  simp [operator_snd_apply, negativeMode, lp.single_apply, Pi.single_apply]
+
+-- Dropping period one fails even on an input in the even domain.
+example : lemma3_6EvenInput ∈ sourceDomainParitySubspace 0 ∧
+    sourceOperator (by norm_num) lemma3_6OddPotential lemma3_6EvenInput ∉ sourceParitySubspace 0 :=
+  ⟨lemma3_6EvenInput_mem, lemma3_6_even_support_needed⟩
+
+-- The actual source resolvent and its admissible circle integral commute with parity.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (hφ : φ ∈ sourceParitySubspace 0) (r : ℤ) (z : ℂ) (hz : z ∈ sourceResolventSet hp φ) :
+    Commute (sourceParityProjection r) (sourceResolvent hp φ z) :=
+  sourceParityProjection_commute_resolvent hp φ hφ r z hz
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p)
+    (hφ : φ ∈ sourceParitySubspace 0) (r : ℤ) (c : ℂ) (R : ℝ) (hR : 0 ≤ R)
+    (hc : Metric.sphere c R ⊆ sourceResolventSet hp φ) :
+    Commute (sourceParityProjection r) (sourceResolventCircleIntegral hp φ c R) :=
+  sourceParityProjection_commute_circleIntegral hp φ hφ r c R hR hc
+
+end LemmaThreeSixOriginalNormChecks

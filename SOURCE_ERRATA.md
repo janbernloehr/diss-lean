@@ -1170,3 +1170,14 @@ circles on one common original-norm neighborhood for every finite p.
 Horizontal central edges, which belong to the printed box, are proved
 admissible separately; exterior resolvent inclusion is insufficient for
 them by itself. No change to the printed contour formula is required.
+
+## Lemma 3.6: retain the period-one hypothesis
+
+The source proof explicitly assumes that the potential is period one,
+which is even support in period-two Fourier coordinates. `sourceLemma3_6`
+implements that assumption through `periodOnePair`, on the original
+one-derivative domain and at every finite Banach exponent. The alternate
+entry point accepts even support directly. The explicit odd potential
+`lemma3_6OddPotential` maps `lemma3_6EvenInput`, proved to lie in the even
+domain, outside the even base subspace. This is a check that the hypothesis
+is necessary, not an erratum or a weakening of the source statement.

@@ -2878,3 +2878,44 @@ certificate. The full check passed all 6,735 build jobs and public
 examples. The axiom audit passed for 29,216 NLS declarations with only
 the permitted classical axioms. The build retains 21 existing warnings;
 the new modules add none.
+
+## parity subspaces and Lemma 3.6 in the original norms
+
+The closed even and odd subspaces immediately before Lemma 3.6 (printed
+page 26) are now implemented in the original component-sum norms.
+`SourceParity.lean` proves the exact printed coefficient conditions,
+closedness, complementary bounded projections, and a topological direct
+sum. The masks are contractive for every finite Banach exponent. Frequency
+doubling gives a linear isometric equivalence from period-one coefficient
+pairs onto the even subspace, with an explicit inverse reading index 2n.
+
+`SourceLemma3_6.lean` proves that the actual Zakharov-Shabat operator,
+with its original one-derivative domain, preserves both parities for
+period-one potentials at every finite exponent, including p=1.
+`sourceLemma3_6` supplies the even support automatically through the
+canonical period-one embedding; a separate entry point accepts explicit
+even support. The operator intertwines the domain and base parity masks.
+The actual source resolvent and admissible circle integral commute with
+the base parity projections.
+
+An explicit odd potential sends an even domain vector to an output with
+a nonzero odd coefficient. This verifies that the period-one assumption
+cannot be dropped; it is not a correction to the source, whose proof
+states this assumption explicitly. No claim identifies the infinity
+endpoint's source pair norm with the maximum-product norm.
+
+Next: equation (1.5), with actual continuous linear endomorphisms of each
+parity subspace and analytic dependence on a neighborhood within the
+period-one potential space. The dissertation remains incomplete; earlier
+source qualifications remain in force.
+
+Validation: focused builds and the standalone public probe passed without
+warnings. The probe covers both printed support conditions, negative
+frequencies, the topological direct sum, finite-exponent contraction,
+the isometry and inverse, domain invariance including p=1, nonconstant
+mode coupling, necessity of period one, and commutation with the actual
+resolvent and circle integral. The source inventory check passed for 156 candidate labels, not a
+completeness certificate. The full check passed all 6,737 build jobs and
+public examples. The axiom audit passed for 29,285 NLS declarations with
+only the permitted classical axioms. The build retains 21 existing
+warnings; the new modules add none.
