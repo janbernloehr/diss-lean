@@ -1,6 +1,51 @@
 # Implementation status
 
-## Current milestone: complementary boundary spaces and Lemma 4.2
+## Current milestone: Lemma 4.3 in original norms and physical L² spaces
+
+`SourceLemma4_3.lean` proves bounded and complex-analytic signed extension
+from the original period-one component-sum Fourier–Lebesgue space into
+either original period-two boundary space for every 1<p<infinity.
+`sourceLemma4_3` supplies one positive bound for both boundary conditions.
+The exact output amplitude factor and the two-component Hölder factor
+cancel, leaving the sufficient bound `intervalExtensionBound`, equal to
+twice the half-interval bound. At p=2 the original norm is preserved exactly.
+
+The forward coefficients agree with the physical signed-reflection
+integrals for finite Fourier inputs, and these values uniquely determine
+the continuous extension. Finite input truncations converge in the
+original norm. Their extensions also converge as actual periodic tempered-
+distribution pairs, retaining every raw Fourier coefficient. No pointwise
+representative is assumed for a general rough Fourier–Lebesgue input.
+
+`HalfIntervalL2Identification.lean` represents each half-interval integral
+by a bounded Hilbert functional. Parseval and density identify it with
+the completed half-interval map on arbitrary original L² data.
+`SourceLemma4_3Physical.lean` then proves that the completed pair operator
+gives exactly the actual signed-reflection coefficients for every L²
+interval pair. Physical Fourier synthesis reconstructs the reflection
+almost everywhere on [0,2]. The input coefficients have the ordinary
+unit-interval L² norm. No continuity or endpoint matching is added.
+
+The displayed coefficient formulas in the printed proof need corrections:
+the even coefficient retains a factor 1/2, and the odd kernel has factor
+i/pi rather than 2i. Both corrected formulas are proved in the literal
+signed source convention. Physical constant-input counterexamples refute
+the printed constants. These proof corrections do not change Lemma 4.3's
+boundedness or analyticity statement. The proof's reference to an input
+FL¹ norm is also distinguished from the FLᵖ bound actually needed.
+
+Next: Lemma 4.4, with the actual original-norm operator restricted to the
+weighted Dirichlet and Neumann domains and the same Dirichlet-reflected
+potential. The dissertation remains incomplete; earlier qualifications,
+including the all-exponent printed-height failure, remain in force.
+
+Validation: `./scripts/check.sh` passed: 6,759 build jobs, public examples,
+and the axiom audit of all 29,884 NLS declarations. The build reports
+21 existing warnings; the three new modules and standalone public
+examples are warning-free. The source inventory check passed for 156
+labels; this is not a completeness certificate.
+
+## Previous milestone: complementary boundary spaces and Lemma 4.2
 
 `SourceBoundarySpaces.lean` proves the closed, complementary Dirichlet and
 Neumann Fourier–Lebesgue subspaces introduced after (1.9), at every real

@@ -1279,3 +1279,34 @@ series for finite p. This preserves the Section 2 endpoint qualification:
 an arbitrary infinity-space series need not converge in that norm.
 Lemma 4.2 is proved with the actual physical H¹ interval domain, actual
 signed extension, and restriction on the closed unit interval.
+
+## Lemma 4.3: missing half and incorrect odd-kernel constant in the proof
+
+Source: printed page 31, verified against the rendered PDF. The statement
+that signed extension is bounded and analytic for 1<p<infinity is valid.
+The displayed formulas in its proof do not retain the normalization of
+(1.8)–(1.9). Write a^-_k and a^+_k for the input's signed coefficients,
+and epsilon=1 for Dirichlet, -1 for Neumann. The correct formulas are
+
+```
+c_(2n)   = (a^+_n + epsilon*a^-_n)/2,
+c_(2n+1) = (i/pi) * sum_k (a^+_k - epsilon*a^-_k)/(2k-2n-1).
+```
+
+For finite Fourier inputs these are `sourceLemma4_3_even_signed` and
+`sourceLemma4_3_odd_signed`. The full completed map also has the corrected
+even formula and a bounded shifted-Hilbert representation at odd indices.
+The printed Dirichlet even formula omits 1/2. The two-sided constant
+(1,1) has amplitude 1 at index zero, not 2. The printed odd formula uses
+2i in place of i/pi. The one-sided constant (0,1) has amplitude -i/pi
+at index one, not -2i. Both inequalities are formally proved as
+`sourceLemma4_3_printed_even_counterexample` and
+`sourceLemma4_3_printed_odd_counterexample`.
+
+The proof also refers to the input FL¹ norm while proving an FLᵖ-to-FLᵖ
+bound; such an FL¹ estimate alone would not establish the stated result.
+The formal theorem uses the original FLᵖ norm and proves the needed bound
+for all 1<p<infinity. Its p=2 map preserves the original norm and is
+identified with actual reflection for arbitrary physical L² interval
+pairs. These corrections do not resolve the separate all-p printed-height
+failure in Theorem 1.4.

@@ -3319,3 +3319,6 @@ import NLS.ZakharovShabat.SourceLemma4_1
 import NLS.ZakharovShabat.SourceBoundaryFourier
 import NLS.ZakharovShabat.SourceBoundarySpaces
 import NLS.ZakharovShabat.SourceBoundarySeries
+import NLS.Fourier.HalfIntervalL2Identification
+import NLS.ZakharovShabat.SourceLemma4_3
+import NLS.ZakharovShabat.SourceLemma4_3Physical

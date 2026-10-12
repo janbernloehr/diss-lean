@@ -44168,3 +44168,80 @@ example (b : BoundaryCondition) (a : sourceWeightedBoundarySubspace (p := 2) b 1
     ((sourceClassicalBoundaryEquiv b).symm a).val x =
       BoundaryCondition.classicalIntervalRestriction (WeightedCoeffPair.toMax (Weight.sobolev 1) 2 a.val) x.val :=
   sourceClassicalBoundaryEquiv_symm_apply b a x
+
+noncomputable section
+open NLS NLS.Fourier NLS.ZakharovShabat MeasureTheory Set
+open scoped ENNReal SchwartzMap
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Lemma 4.3 uses the original source norms for both boundary conditions.
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤) :
+    ∃ C : ℝ, 0 < C ∧ ∀ b : BoundaryCondition,
+      (∀ a : CoeffPair p, ‖sourceIntervalExtensionToBoundary b hp1 hp a‖ ≤ C * ‖a‖) ∧
+      (∀ a : CoeffPair p, AnalyticAt ℂ (sourceIntervalExtensionToBoundary b hp1 hp) a) :=
+  sourceLemma4_3 hp1 hp
+
+example (b : BoundaryCondition) (a : CoeffPair 2) :
+    ‖sourceIntervalExtensionToBoundary b (by norm_num) (by simp) a‖ = ‖a‖ :=
+  norm_sourceIntervalExtensionToBoundary_two b a
+
+example (a : CoeffPair 3) :
+    ‖sourceIntervalExtensionToBoundary .neumann (by norm_num) (by simp) a‖ ≤
+      BoundaryCondition.intervalExtensionBound (p := 3) (by norm_num) (by simp) * ‖a‖ :=
+  norm_sourceIntervalExtensionToBoundary_le .neumann (by norm_num) (by simp) a
+
+-- General rough inputs have norm and actual periodic-distribution limits.
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤)
+    (b : BoundaryCondition) (a : CoeffPair p) :
+    Filter.Tendsto (fun S : Finset ℤ => sourceIntervalExtensionToBoundary b hp1 hp (sourceIntervalInputTruncate S a))
+      Filter.atTop (nhds (sourceIntervalExtensionToBoundary b hp1 hp a)) :=
+  tendsto_sourceIntervalExtension_truncate b hp1 hp a
+
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤)
+    (b : BoundaryCondition) (a : CoeffPair p) :
+    Filter.Tendsto (fun S : Finset ℤ => sourceIntervalExtensionDistributionCLM b hp1 hp (sourceIntervalInputTruncate S a))
+      Filter.atTop (nhds (sourceIntervalExtensionDistributionCLM b hp1 hp a)) :=
+  tendsto_sourceIntervalExtensionDistribution_truncate b hp1 hp a
+
+example (a : CoeffPair 3) :
+    IsPeriodTwoDistribution (sourceIntervalExtensionDistributionCLM .dirichlet (by norm_num) (by simp) a).1 ∧
+      IsPeriodTwoDistribution (sourceIntervalExtensionDistributionCLM .dirichlet (by norm_num) (by simp) a).2 :=
+  sourceIntervalExtensionDistribution_periodic .dirichlet (by norm_num) (by simp) a
+
+-- Actual L2 integrals and reflection, with no endpoint or continuity assumptions.
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    halfIntervalCoeffs (by norm_num : (1 : ℝ≥0∞) < 2) (by simp) (unitIntervalMemLpCoefficients f hf) (-3) =
+      halfCoefficient f (-3) := halfIntervalCoeffs_two_ofFunction f hf (-3)
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    sourceIntervalExtensionL2 b (sourceUnitIntervalL2Coefficients f hf) =
+      sourceIntervalExtensionCoefficients b f hf := sourceIntervalExtensionL2_ofFunction b f hf
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    sourceCircleRepresentative (sourceCircleSynthesis
+      (sourceIntervalExtensionL2 b (sourceUnitIntervalL2Coefficients f hf)))
+      =ᵐ[volume.restrict (Ioc 0 2)] BoundaryCondition.intervalExtension b f := sourceLemma4_3_L2_physical b f hf
+
+example (f : ℝ → ℂ × ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    ‖sourceUnitIntervalL2Coefficients f hf‖ = ‖intervalL2OfFunction f hf‖ :=
+  norm_sourceUnitIntervalL2Coefficients f hf
+
+-- The corrected formulas retain the source's signed first-component convention.
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (n : ℤ) :
+    BoundaryCondition.intervalAmplitude b (BoundaryCondition.periodOnePair (sourceSignedFinitePair a)) (2*n) =
+      (1/2 : ℂ) * (a.2 n + b.extensionSign * a.1 n) := sourceLemma4_3_even_signed b a n
+
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) (n : ℤ) :
+    BoundaryCondition.intervalAmplitude b (BoundaryCondition.periodOnePair (sourceSignedFinitePair a)) (2*n+1) =
+      a.2.sum (fun k z => z * (Complex.I / ((Real.pi : ℂ) * (2*k-2*n-1)))) -
+      b.extensionSign * a.1.sum (fun k z => z * (Complex.I / ((Real.pi : ℂ) * (2*k-2*n-1)))) :=
+  sourceLemma4_3_odd_signed b a n
+
+example : BoundaryCondition.intervalAmplitude .dirichlet (fun _ => ((1 : ℂ), 1)) 0 ≠ (1 : ℂ) + 1 :=
+  sourceLemma4_3_printed_even_counterexample
+
+example : BoundaryCondition.intervalAmplitude .dirichlet (fun _ => ((0 : ℂ), 1)) 1 ≠ (-2 : ℂ) * Complex.I :=
+  sourceLemma4_3_printed_odd_counterexample

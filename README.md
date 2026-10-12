@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the closed complementary boundary spaces and Lemma 4.2
-are proved in the original norms, with exact amplitude norm factors,
-convergent boundary-mode series, and actual extension/restriction maps.
-[The Section 4 audit](coverage/SECTION_4.md) records the finite-exponent and
-infinity cases. Lemma 4.3 is next; the dissertation remains incomplete.
+Latest milestone: Lemma 4.3 is proved in the original norms, including
+boundedness, analyticity, and actual reflection of arbitrary L² input.
+[The Section 4 audit](coverage/SECTION_4.md) records the scope and the
+corrected even/odd constants in the printed proof. Lemma 4.4 is next;
+the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

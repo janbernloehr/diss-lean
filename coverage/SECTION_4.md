@@ -138,9 +138,50 @@ Public checks include both boundary signs, the finite endpoint p=1, the
 coupled infinity norm, negative/fractional regularity, negative indices,
 actual physical wave integrals, and forward/inverse classical maps.
 
+## Lemma 4.3 (page 31)
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original-norm extension map | `sourceIntervalExtensionToBoundary` | Original period-one `CoeffPair p` to the original weighted order-zero boundary space, 1<p<infinity. |
+| Exact amplitude norm | `norm_sourceIntervalExtensionToBoundary` | Output norm equals 2^(1/p) times amplitude norm. |
+| Required FLᵖ bound | `norm_sourceIntervalExtensionToBoundary_le`, `sourceLemma4_3` | One positive constant `intervalExtensionBound` works for both boundary signs; component factors cancel. |
+| Analyticity | `analyticAt_sourceIntervalExtensionToBoundary` | Complex analytic at every original input. |
+| Physical finite-input coefficients | `sourceIntervalExtensionToBoundary_finite_integrals` | Both normalized Fourier integrals of the actual signed reflection. |
+| Uniqueness of completion | `sourceIntervalExtensionToBoundary_unique` | The continuous map is determined by all finite physical inputs. |
+| Norm limit of finite extensions | `tendsto_sourceIntervalExtension_truncate` | Actual original-norm convergence at every 1<p<infinity. |
+| Actual distributional extension | `sourceIntervalExtensionDistributionCLM`, `tendsto_sourceIntervalExtensionDistribution_truncate` | Periodic tempered-distribution pairs and convergence of finite-input extensions. |
+| Distributional coefficients and period | `sourceIntervalExtensionDistribution_coefficients`, `sourceIntervalExtensionDistribution_periodic` | Every raw coefficient and period two in both components. |
+| Corrected even/odd formulas | `sourceIntervalAmplitudeCLM_even`, `sourceIntervalAmplitudeCLM_odd` | All original inputs; exact half and normalized shifted-Hilbert map. |
+| Literal signed formulas | `sourceLemma4_3_even_signed`, `sourceLemma4_3_odd_signed` | Finite signed inputs: even factor 1/2, odd kernel i/pi, both boundary signs. |
+| Printed-constant failures | `sourceLemma4_3_printed_even_counterexample`, `sourceLemma4_3_printed_odd_counterexample` | Actual constant interval inputs refute the printed even and odd constants. |
+| Exact Hilbert norm | `norm_sourceIntervalExtensionToBoundary_two`, `norm_sourceIntervalExtensionL2` | Original component-sum norm is preserved. |
+| Actual L² half-interval map | `halfIntervalCoeffs_two_ofFunction` | Arbitrary physical L² scalar input, no endpoint matching. |
+| Actual L² pair coefficients | `sourceIntervalExtensionL2_ofFunction` | Completed operator equals actual signed-reflection Fourier coefficients. |
+| Physical L² reconstruction | `sourceLemma4_3_L2_physical` | Its physical Fourier synthesis is the reflected function a.e. on [0,2]. |
+| Original input normalization | `norm_sourceUnitIntervalL2Coefficients` | Unit-period coefficient norm equals ordinary physical interval L² norm. |
+
+The main entries are in `NLS.ZakharovShabat`, in `SourceLemma4_3.lean`
+and `SourceLemma4_3Physical.lean`. The scalar L² bridge is in
+`NLS.Fourier.HalfIntervalL2Identification`. It uses Parseval and density
+to identify a bounded Hilbert functional with each actual half coefficient.
+No pointwise function is assumed for an arbitrary rough input. The general
+map is a unique bounded completion with actual distributional synthesis;
+for every physical L² input the actual reflection is identified as well.
+
+The printed proof needs the normalization corrections recorded in
+`SOURCE_ERRATA.md`: its even formula drops 1/2 and its odd kernel has 2i
+instead of i/pi. Its reference to FL¹ input norm is not the FLᵖ estimate
+needed for the theorem. The boundedness/analyticity statement is proved in
+the required original FLᵖ norms. No extension to p=1 or p=infinity is claimed.
+The separate all-exponent height problem in Theorem 1.4 remains unchanged.
+
+Public checks include arbitrary L² representatives, negative frequencies,
+exact Hilbert norms, a concrete exponent above two, all-p analytic bounds,
+rough distributional limits, signed formulas, and both counterexamples.
+
 ## Next source assertions
 
-Next audit Lemma 4.3's bounded and analytic extension from the original
-period-one pair space, identifying its physical action and checking the
-normalization of the even/odd Fourier formulas in its proof. Existing
-half-interval and boundary-extension modules provide supporting results.
+Next audit Lemma 4.4 in the original norms, restricting the actual operator
+with the Dirichlet-reflected potential to both weighted boundary domains.
+Track the positive Dirichlet and negative Neumann signs in the mode action,
+and then the spectral definitions and the proof of Theorem 1.4 on page 32.

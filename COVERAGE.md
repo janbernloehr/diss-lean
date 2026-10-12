@@ -3201,3 +3201,41 @@ and the axiom audit of all 29,809 NLS declarations. The build reports
 21 existing warnings; both new modules and their standalone public
 examples are warning-free. The source inventory check passed for 156
 labels; this is not a completeness certificate.
+
+## Lemma 4.3: original norms, rough limits, and arbitrary L² reflection
+
+`SourceLemma4_3.lean` proves the two bounded analytic extensions for
+1<p<infinity in the original period-one input norm and original period-two
+boundary-space norm. The sufficient bound is `intervalExtensionBound`;
+the exact amplitude factor 2^(1/p) cancels the input component comparison
+factor 2^(1-1/p). The Hilbert case preserves the original norm exactly.
+Finite physical Fourier integrals determine the continuous map uniquely.
+Input truncations converge in norm, and their extensions converge both in
+the boundary norm and as actual period-two distribution pairs.
+
+`HalfIntervalL2Identification.lean` constructs the actual unit-interval
+Fourier coefficients for arbitrary L² functions, identifies half-interval
+integrals by bounded Hilbert functionals and Parseval, and proves that the
+completed half-interval operator has exactly those integrals.
+`SourceLemma4_3Physical.lean` identifies the original pair operator with
+the actual signed-reflection coefficients for every original L² input.
+Its physical synthesis equals the reflection a.e. on [0,2], without
+continuity or boundary matching. The ordinary interval L² norm is retained.
+
+`sourceLemma4_3_even_signed` and `sourceLemma4_3_odd_signed` prove the
+corrected formulas in the source's signed coefficient convention.
+The printed even formula is missing 1/2 and the odd kernel's factor 2i
+must be i/pi. Constant-input counterexamples verify both discrepancies.
+The theorem's boundedness and analyticity claims remain valid; the proof's
+FL¹ input-norm notation does not replace the required FLᵖ estimate.
+
+Public checks exercise both boundary signs, the all-finite-exponent
+statement, a concrete exponent above two, exact Hilbert norms, rough
+truncation/distribution limits, arbitrary L² integrals and reflection,
+negative frequencies, signed finite formulas, and both counterexamples.
+
+Validation: `./scripts/check.sh` passed: 6,759 build jobs, public examples,
+and the axiom audit of all 29,884 NLS declarations. The build reports
+21 existing warnings; the three new modules and standalone public
+examples are warning-free. The source inventory check passed for 156
+labels; this is not a completeness certificate.
