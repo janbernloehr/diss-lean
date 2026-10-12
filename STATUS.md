@@ -1,6 +1,42 @@
 # Implementation status
 
-## Current milestone: actual L2 gradient coefficients and G.6 estimates
+## Current milestone: normalized eigenvalue gradients on physical L2
+
+The actual physical L2 separated characteristics now differentiate any
+continuous local selection of a simple zero. The implicit-root quotient
+uses the previously proved physical gradient integral for either boundary
+sign, with no regularity assumption on the L2 potential or direction.
+
+`L2SpectralVariation.lean` proves spectral differentiation of the entire
+solution curve and the endpoint-dual integral identity for every L2
+potential, before imposing a characteristic zero. Continuity and density
+are used on this unrestricted identity; no density of smooth potentials
+inside a root locus is assumed.
+
+`L2DirichletNormalization.lean` proves that the dual curve at a Dirichlet
+root is proportional to the forward eigenfunction. The spectral derivative
+is -i times that factor times Q, where Q is twice the unconjugated integral
+of the two eigenfunction components. Simplicity implies Q is nonzero.
+`L2DirichletRootGradient.lean` then identifies the actual branch derivative
+with the integral against (y2 squared / Q, y1 squared / Q). These expressions
+agree with the classical ones on [0,1]; at zero potential Q=2 and the two
+opposite exponential waves have exactly the factor one half.
+
+Next is transfer of this normalized root differential to the original
+Hilbert source coordinates and connection to the established corrected
+G.7 coefficient estimates. No new asymptotic estimate on arbitrary rough
+L2 balls is asserted. G.2's arbitrary-time interval norm remains unresolved;
+neither proposed spectral-height correction is adopted. The optional
+original m=1 sharpening remains under the accepted Lemma 27.2 correction.
+The dissertation is incomplete.
+
+Validation: the full project check passed (6658 build jobs), including all
+public examples and the axiom audit of 28313 NLS declarations. Focused
+module builds and the standalone public probe passed. There are 21
+existing warnings and no new warnings. The source inventory check passed
+with 156 labels. Counts do not certify completeness.
+
+## Previous milestone: actual L2 gradient coefficients and G.6 estimates
 
 The physical L2 endpoint, discriminant, anti-discriminant, and separated
 gradients now agree pointwise on [0,1] with the established classical

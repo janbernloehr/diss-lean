@@ -42038,3 +42038,63 @@ example (B : ℝ) (hB : 0 ≤ B) (N₀ : ℕ) (ν : ℤ → ℂ)
     (by norm_num) B hB N₀ ν hν a
 
 end L2GradientFourierChecks
+
+noncomputable section
+section L2DirichletRootChecks
+open Set Complex MeasureTheory Filter Topology NLS.LinearVolterra NLS.ZakharovShabat
+
+example (b : BoundaryCondition) (μ : IntervalPairL2 → ℂ) (u h : IntervalPairL2)
+    (hc : ContinuousAt μ u)
+    (hr : ∀ᶠ w in 𝓝 u, l2SeparatedCharacteristic b w (μ w) = 0)
+    (hs : deriv (l2SeparatedCharacteristic b u) (μ u) ≠ 0) :
+    (fderiv ℂ μ u) h = -(deriv (l2SeparatedCharacteristic b u) (μ u))⁻¹*
+      (∫ s in (0 : ℝ)..1, (l2SeparatedGradient b u (μ u) s).1*h.ofLp.1 s+
+        (l2SeparatedGradient b u (μ u) s).2*h.ofLp.2 s) :=
+  fderiv_l2SeparatedRoot_eq_gradient_quotient b μ u hc hr hs h
+
+example (u : IntervalPairL2) (z : ℂ) (v : ℂ × ℂ) (ℓ : (ℂ × ℂ) →L[ℂ] ℂ) :
+    deriv (fun w : ℂ => ℓ (l2SolutionCurve u w v ⟨1,by norm_num⟩)) z =
+      ∫ s in (0 : ℝ)..1, -Complex.I*
+        ((extend (l2EndpointDualCurve u z ℓ) s).2*(extend (l2SolutionCurve u z v) s).1+
+         (extend (l2EndpointDualCurve u z ℓ) s).1*(extend (l2SolutionCurve u z v) s).2) :=
+  deriv_l2Endpoint_eq_spectral_integral u z v ℓ
+
+example (u : IntervalPairL2) (z : ℂ)
+    (hz : l2SeparatedCharacteristic .dirichlet u z = 0) :
+    deriv (l2SeparatedCharacteristic .dirichlet u) z =
+      -Complex.I*l2DirichletDualFactor u z*l2DirichletNormalization u z :=
+  deriv_l2DirichletCharacteristic_of_root u z hz
+
+example (u : IntervalPairL2) (z : ℂ)
+    (hz : l2SeparatedCharacteristic .dirichlet u z = 0)
+    (hs : deriv (l2SeparatedCharacteristic .dirichlet u) z ≠ 0) :
+    2*(∫ s in (0 : ℝ)..1,
+      (l2DirichletEigenfunction u z s).1*(l2DirichletEigenfunction u z s).2) ≠ 0 :=
+  l2DirichletNormalization_ne_zero_of_simple u z hz hs
+
+example (μ : IntervalPairL2 → ℂ) (u h : IntervalPairL2)
+    (hc : ContinuousAt μ u)
+    (hr : ∀ᶠ w in 𝓝 u, l2SeparatedCharacteristic .dirichlet w (μ w) = 0)
+    (hs : deriv (l2SeparatedCharacteristic .dirichlet u) (μ u) ≠ 0) :
+    (fderiv ℂ μ u) h = ∫ s in (0 : ℝ)..1,
+      (l2DirichletEigenfunction u (μ u) s).2^2/l2DirichletNormalization u (μ u)*h.ofLp.1 s+
+      (l2DirichletEigenfunction u (μ u) s).1^2/l2DirichletNormalization u (μ u)*h.ofLp.2 s :=
+  fderiv_l2DirichletRoot_eq_normalized_integral μ u hc hr hs h
+
+example (Φ : Curve (ℂ × ℂ)) (z : ℂ) (s : Icc (0 : ℝ) 1) :
+    l2DirichletNormalizedGradient (continuousPotentialL2Class Φ) z s =
+      classicalDirichletNormalizedGradient Φ z s :=
+  l2DirichletNormalizedGradient_of_continuous Φ z s
+
+example (z : ℂ) : l2DirichletNormalization 0 z = 2 := by simp
+
+example (z : ℂ) (s : Icc (0 : ℝ) 1) :
+    l2DirichletNormalizedGradient 0 z s =
+      (Complex.exp (2*Complex.I*z*s.val)/2,Complex.exp (-2*Complex.I*z*s.val)/2) :=
+  l2DirichletNormalizedGradient_free z s
+
+example (s : Icc (0 : ℝ) 1) :
+    l2DirichletNormalizedGradient 0 0 s = ((1 : ℂ)/2,(1 : ℂ)/2) := by
+  simp [l2DirichletNormalizedGradient_free]
+
+end L2DirichletRootChecks

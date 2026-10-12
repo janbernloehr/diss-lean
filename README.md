@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the physical L2 gradients agree with the classical
-formulas on continuous inputs, and the signed G.6 Fourier coefficients
-now realize those actual derivatives. Their exact source-norm majorants
-and whole-sequence summability retain the original H1 domain and the
-corrected reference. The dissertation is incomplete; next are actual
-L2 simple-eigenvalue gradients and their eigenfunction normalization.
+Latest milestone: simple eigenvalue branches of the actual physical L2
+separated characteristics have their gradient-integral derivatives.
+For Dirichlet roots, simplicity proves nonzero bilinear eigenfunction
+normalization and yields the normalized squared-eigenfunction formula,
+with exact classical and free-potential comparisons. The dissertation is
+incomplete; next is the transfer to original Hilbert source coordinates
+and the corrected G.7 estimates.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
