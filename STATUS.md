@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: Fourier representations (1.8)–(1.9)
+## Current milestone: complementary boundary spaces and Lemma 4.2
+
+`SourceBoundarySpaces.lean` proves the closed, complementary Dirichlet and
+Neumann Fourier–Lebesgue subspaces introduced after (1.9), at every real
+Sobolev order. The finite-exponent spaces carry the original component-sum
+norm. A separate infinity space carries the original frequencywise sum
+supremum norm, with the source's signed first-component coordinates.
+Both algebraic and topological direct-sum decompositions are proved.
+
+Scalar amplitudes give continuous linear equivalences onto each boundary
+space. Their exact norm factors are 2^(1/p) for finite p and 2 at infinity.
+The finite-exponent raw scalar coordinates reverse the first frequency;
+the signed infinity coordinates compare the two components at the same
+index. The auxiliary maximum-norm amplitude isometries are not used as
+isometries for the original norms.
+
+`SourceBoundarySeries.lean` identifies these spaces with the printed
+boundary-mode series. Every finite-exponent weighted amplitude sequence
+has an unconditionally norm-convergent expansion in the original boundary
+space. At every Banach exponent, including infinity, the expansion also
+converges as a pair of actual periodic tempered distributions. The modes
+act by integration against the printed exponential waves, and the sum is
+identified with the synthesis of the original coefficient pair. No
+infinity-norm convergence is asserted.
+
+`sourceClassicalBoundaryEquiv` proves Lemma 4.2 as a continuous linear
+equivalence from the actual classical interval domain with its original
+physical H¹ norm onto the original weighted boundary space at (s,p)=(1,2).
+Its forward map is the Fourier data of the actual signed extension; its
+inverse is physical restriction at every point of the closed interval.
+These are isomorphisms, with no claim of isometry. No correction to these
+source assertions is needed.
+
+Next: Lemma 4.3, including bounded and analytic extension from the original
+period-one Fourier–Lebesgue pair space, the physical interpretation, and
+the normalization of its even/odd coefficient formulas. The dissertation
+remains incomplete; earlier qualifications remain in force.
+
+Validation: `./scripts/check.sh` passed: 6,756 build jobs, public examples,
+and the axiom audit of all 29,809 NLS declarations. The build reports
+21 existing warnings; both new modules and their standalone public
+examples are warning-free. The source inventory check passed for 156
+labels; this is not a completeness certificate.
+
+## Previous milestone: Fourier representations (1.8)–(1.9)
 
 `SourceBoundaryFourier.lean` proves the printed series on page 30 in the
 original component-sum coefficient norm and normalized physical period-two

@@ -3164,3 +3164,40 @@ and the axiom audit of all 29,752 NLS declarations. The build reports
 21 existing warnings; the new module and standalone public examples are
 warning-free. The source inventory check passed for 156 labels; this is
 not a completeness certificate.
+
+## Original boundary spaces and Lemma 4.2 (pages 30–31)
+
+`SourceBoundarySpaces.lean` supplies both source boundary subspaces in
+`WeightedCoeffPair` for finite exponents and in `WeightedCoeffPairInfty`
+for the original signed coupled-supremum endpoint. At every real Sobolev
+order both are closed, algebraically complementary, and topologically
+complementary. Membership retains frequency reversal in scalar coordinates
+and same-index signs in the source infinity coordinates.
+
+`sourceWeightedBoundaryAmplitudeEquiv` and its infinity counterpart are
+continuous linear equivalences, with exact original-norm factors 2^(1/p)
+and 2 respectively. `SourceBoundarySeries.lean` supplies unit raw weighted
+modes, their norm-convergent finite-p expansions, and actual tempered-
+distribution expansions for all Banach exponents. The distributional modes
+are identified by the ordinary physical wave integrals. Their sum is the
+actual synthesis of the original coefficient pair, including at infinity.
+Surjectivity of the amplitude equivalences identifies every boundary
+element with such a series; infinity-norm convergence is not asserted.
+
+`sourceClassicalBoundaryEquiv` establishes Lemma 4.2 using the original
+physical H¹ classical domain and the original (1,2) weighted pair norm.
+`sourceClassicalBoundaryEquiv_ofFunction` identifies the forward map with
+the actual signed extension's coefficients, and
+`sourceClassicalBoundaryEquiv_symm_apply` identifies the inverse with
+physical restriction on the entire closed interval. No additional
+normalization correction is needed for these assertions.
+
+Public checks cover both boundary conditions, p=1, the original infinity
+norm, negative and fractional Sobolev orders, negative frequencies, the
+physical wave action, and both directions of the classical equivalence.
+
+Validation: `./scripts/check.sh` passed: 6,756 build jobs, public examples,
+and the axiom audit of all 29,809 NLS declarations. The build reports
+21 existing warnings; both new modules and their standalone public
+examples are warning-free. The source inventory check passed for 156
+labels; this is not a completeness certificate.

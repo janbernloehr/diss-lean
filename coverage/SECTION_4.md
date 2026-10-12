@@ -105,11 +105,42 @@ Public checks cover both boundary signs, negative indices, the full
 H¹-input package, original and physical norm identities, literal pairing,
 coefficient convergence, and reconstruction of both the basis and sum.
 
+## Closed boundary spaces and Lemma 4.2 (pages 30–31)
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original finite-exponent boundary spaces | `sourceWeightedBoundarySubspace` | Raw scalar Fourier coordinates with the original component-sum norm. |
+| Original infinity boundary spaces | `sourceWeightedBoundarySubspaceInfty` | Signed source coefficients and the actual frequencywise sum supremum norm. |
+| Closedness | `isClosed_sourceWeightedBoundarySubspace`, `isClosed_sourceWeightedBoundarySubspaceInfty` | Every real Sobolev order and Banach exponent, with the separate source endpoint norm. |
+| Algebraic direct sum | `isCompl_sourceWeightedBoundarySubspaces`, `isCompl_sourceWeightedBoundarySubspacesInfty` | Zero intersection and sum equal to the full ambient space. |
+| Topological direct sum | `isTopCompl_sourceWeightedBoundarySubspaces`, `isTopCompl_sourceWeightedBoundarySubspacesInfty` | Continuous complementary decomposition in the original topologies. |
+| Exact coordinate conditions | `mem_sourceWeightedBoundarySubspace`, `mem_sourceWeightedBoundarySubspaceInfty` | Scalar frequency reversal versus signed same-index boundary sign. |
+| Amplitude parametrizations | `sourceWeightedBoundaryAmplitudeEquiv`, `sourceWeightedBoundaryAmplitudeEquivInfty` | Continuous linear equivalences, hence unique amplitudes for every boundary element. |
+| Exact amplitude norms | `norm_sourceWeightedBoundaryAmplitudeEquiv`, `norm_sourceWeightedBoundaryAmplitudeEquivInfty` | Factors 2^(1/p) for finite p and 2 for the actual source infinity norm. |
+| Original-norm boundary series | `hasSum_sourceWeightedBoundaryModes` | Unconditional norm convergence for finite p. |
+| Actual distributional boundary series | `hasSum_sourceBoundaryDistribution` | Every Banach exponent, including infinity, and every real Sobolev order. |
+| Series sum identification | `sourceBoundaryDistribution_eq_sourcePair`, `sourceBoundaryDistribution_eq_sourcePairInfty` | Actual distributional synthesis of the original coefficient pair. |
+| Mode identification | `sourceBoundaryDistribution_single`, `sourceBoundaryDistributionMode_physical` | Weighted raw single modes become the actual signed exponential waves under synthesis. |
+| Lemma 4.2 | `sourceClassicalBoundaryEquiv` | Continuous linear equivalence of the original physical H¹ domain and original weighted (1,2) boundary space. |
+| Forward extension | `sourceClassicalBoundaryEquiv_ofFunction` | Actual signed-extension Fourier coefficients of every classical input. |
+| Inverse restriction | `sourceClassicalBoundaryEquiv_symm_apply` | Physical restriction at every point in the closed interval [0,1]. |
+
+All entries are in `NLS.ZakharovShabat`, in `SourceBoundarySpaces.lean`
+and `SourceBoundarySeries.lean`. The infinity assertions use the separate
+`WeightedCoeffPairInfty` space, not the maximum norm on `CoeffPair ⊤`.
+The finite-exponent original space is expressed in scalar Fourier
+coordinates; the infinity space is expressed in signed source coordinates.
+The conversion between these conventions is explicit. The series at
+infinity is distributionally convergent; norm convergence is not claimed.
+No correction to the source direct sum or Lemma 4.2 is needed.
+
+Public checks include both boundary signs, the finite endpoint p=1, the
+coupled infinity norm, negative/fractional regularity, negative indices,
+actual physical wave integrals, and forward/inverse classical maps.
+
 ## Next source assertions
 
-Next audit the closed complementary Fourier–Lebesgue boundary subspaces
-introduced after (1.9), including the original finite-exponent and coupled
-supremum norms, followed by Lemma 4.2's original-domain isomorphisms.
-Existing maximum-norm boundary-space results are supporting ingredients;
-their amplitude isometries are not automatically isometries in the original
-component-sum norms. This remains a separate source-space audit.
+Next audit Lemma 4.3's bounded and analytic extension from the original
+period-one pair space, identifying its physical action and checking the
+normalization of the even/odd Fourier formulas in its proof. Existing
+half-interval and boundary-extension modules provide supporting results.

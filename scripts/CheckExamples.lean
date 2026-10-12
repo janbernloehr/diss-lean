@@ -44098,3 +44098,73 @@ example (x : ℝ) : physicalBoundaryMode .neumann (-3) x = (-wave 3 x, wave (-3)
 
 example : sourceCircleRepresentative (sourceCircleSynthesis (sourceBoundaryMode .dirichlet (-3)))
     =ᵐ[volume.restrict (Ioc 0 2)] physicalBoundaryMode .dirichlet (-3) := sourceBoundaryMode_physical _ _
+
+noncomputable section
+open NLS NLS.Fourier NLS.ZakharovShabat
+open scoped ENNReal SchwartzMap
+
+-- Closed complementary spaces in the original finite-exponent and infinity norms.
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (b : BoundaryCondition) (s : ℝ) :
+    IsClosed (sourceWeightedBoundarySubspace (p := p) b s : Set (WeightedCoeffPair (Weight.sobolev s) p)) :=
+  isClosed_sourceWeightedBoundarySubspace b s
+
+example (s : ℝ) : Submodule.IsTopCompl
+    (sourceWeightedBoundarySubspace (p := 1) .dirichlet s)
+    (sourceWeightedBoundarySubspace (p := 1) .neumann s) :=
+  isTopCompl_sourceWeightedBoundarySubspaces s
+
+example (s : ℝ) : Submodule.IsTopCompl
+    (sourceWeightedBoundarySubspaceInfty .dirichlet s)
+    (sourceWeightedBoundarySubspaceInfty .neumann s) :=
+  isTopCompl_sourceWeightedBoundarySubspacesInfty s
+
+example (u : WeightedCoeffPairInfty (Weight.sobolev (-2))) :
+    u ∈ sourceWeightedBoundarySubspaceInfty .neumann (-2) ↔ ∀ n : ℤ, u.1.val n = -u.2.val n := by
+  simpa [BoundaryCondition.extensionSign] using mem_sourceWeightedBoundarySubspaceInfty .neumann (-2) u
+
+example (b : BoundaryCondition) (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) 1) :
+    ‖sourceWeightedBoundaryAmplitudeEquiv b s a‖ = 2 * ‖a‖ := by
+  simpa only [ENNReal.toReal_one, div_one, Real.rpow_one] using norm_sourceWeightedBoundaryAmplitudeEquiv (p := 1) (by simp) b s a
+
+example (b : BoundaryCondition) (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤) :
+    ‖sourceWeightedBoundaryAmplitudeEquivInfty b s a‖ = 2 * ‖a‖ :=
+  norm_sourceWeightedBoundaryAmplitudeEquivInfty b s a
+
+example (b : BoundaryCondition) (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤) :
+    pairDistributionInftyCLM s (sourceWeightedBoundaryAmplitudeEquivInfty b s a).val =
+      sourceBoundaryDistribution b s a := sourceBoundaryDistribution_eq_sourcePairInfty b s a
+
+-- Norm convergence for finite p; actual distributional convergence also at infinity.
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp : p ≠ ⊤) (b : BoundaryCondition) (s : ℝ)
+    (a : WeightedCoeff (Weight.sobolev s) p) :
+    HasSum (fun n : ℤ => a.val n • sourceWeightedBoundaryMode b s n)
+      (sourceWeightedBoundaryAmplitudeEquiv b s a) := hasSum_sourceWeightedBoundaryModes hp b s a
+
+example (b : BoundaryCondition) (a : WeightedCoeff (Weight.sobolev (-3 / 2)) ⊤) :
+    HasSum (fun n : ℤ => a.val n • sourceBoundaryDistributionMode b n)
+      (sourceBoundaryDistribution b (-3 / 2) a) := hasSum_sourceBoundaryDistribution b (-3 / 2) a
+
+example (b : BoundaryCondition) (g : 𝓢(ℝ, ℂ)) :
+    ((sourceBoundaryDistributionMode b (-3)).1 g, (sourceBoundaryDistributionMode b (-3)).2 g) =
+      (b.extensionSign * ∫ x : ℝ, wave 3 x * g x, ∫ x : ℝ, wave (-3) x * g x) := by
+  simpa using sourceBoundaryDistributionMode_physical b (-3) g
+
+example (b : BoundaryCondition) :
+    sourceBoundaryDistribution b (-2) (sourceWeightedSingle (p := 1) (-2) (-3)) =
+      sourceBoundaryDistributionMode b (-3) := sourceBoundaryDistribution_single b (-2) (-3)
+
+-- Lemma 4.2: original physical H1 domain, actual extension, and closed-interval restriction.
+example (b : BoundaryCondition) :
+    BoundaryCondition.ClassicalIntervalDomain b ≃L[ℂ] sourceWeightedBoundarySubspace (p := 2) b 1 :=
+  sourceClassicalBoundaryEquiv b
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : BoundaryCondition.HasClassicalIntervalDomain b f) :
+    (sourceClassicalBoundaryEquiv b (BoundaryCondition.classicalDomainOfFunction b f hf)).val =
+      sourceClassicalIntervalExtension b f hf := sourceClassicalBoundaryEquiv_ofFunction b f hf
+
+example (b : BoundaryCondition) (a : sourceWeightedBoundarySubspace (p := 2) b 1)
+    (x : Set.Icc (0 : ℝ) 1) :
+    ((sourceClassicalBoundaryEquiv b).symm a).val x =
+      BoundaryCondition.classicalIntervalRestriction (WeightedCoeffPair.toMax (Weight.sobolev 1) 2 a.val) x.val :=
+  sourceClassicalBoundaryEquiv_symm_apply b a x

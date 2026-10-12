@@ -1263,3 +1263,19 @@ The page 30 input is arbitrary interval H¹ data, with no endpoint-domain
 condition. Its reflection can have jumps, so no uniform or H¹ convergence
 is asserted under those hypotheses. The formal result also covers every
 original L² input and preserves the original interval L² energy exactly.
+
+## Boundary spaces and Lemma 4.2: original norms and series interpretation
+
+`SourceBoundarySpaces.lean` verifies the closed direct-sum assertions after
+(1.9) and Lemma 4.2 without a correction. The scalar-amplitude maps have
+exact norm factors 2^(1/p) for finite p and 2 for the source's coupled
+supremum norm. They are continuous linear equivalences, not isometries in
+these original norms. The infinity norm uses signed source coordinates;
+its first component has reversed scalar Fourier frequency.
+
+`SourceBoundarySeries.lean` realizes the printed series as actual periodic
+tempered distributions at all Banach exponents and as norm-convergent
+series for finite p. This preserves the Section 2 endpoint qualification:
+an arbitrary infinity-space series need not converge in that norm.
+Lemma 4.2 is proved with the actual physical H¹ interval domain, actual
+signed extension, and restriction on the closed unit interval.

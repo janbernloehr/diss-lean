@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Fourier representations (1.8)–(1.9) are proved as convergent
-series in the original coefficient and physical L² norms, with the exact
-half-pairing coefficients and reflected-function reconstruction.
-[The Section 4 audit](coverage/SECTION_4.md) records the scope. The closed
-complementary boundary subspaces are next; the dissertation remains incomplete.
+Latest milestone: the closed complementary boundary spaces and Lemma 4.2
+are proved in the original norms, with exact amplitude norm factors,
+convergent boundary-mode series, and actual extension/restriction maps.
+[The Section 4 audit](coverage/SECTION_4.md) records the finite-exponent and
+infinity cases. Lemma 4.3 is next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
