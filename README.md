@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the reflection formulas and Lemma 4.1 are proved with
-actual periodic H¹ representatives and the original-norm source operator.
-The two original interval eigenvalue sets exhaust the reflected spectrum.
-[The Section 4 audit](coverage/SECTION_4.md) records the scope and the retained
-AKNS normalization correction. Fourier formulas (1.8)–(1.9) are next;
-the dissertation remains incomplete.
+Latest milestone: Fourier representations (1.8)–(1.9) are proved as convergent
+series in the original coefficient and physical L² norms, with the exact
+half-pairing coefficients and reflected-function reconstruction.
+[The Section 4 audit](coverage/SECTION_4.md) records the scope. The closed
+complementary boundary subspaces are next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

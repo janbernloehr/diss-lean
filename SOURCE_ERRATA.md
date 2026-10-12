@@ -1251,3 +1251,15 @@ in effect in the coordinate identification; no additional correction is
 needed for Lemma 4.1. Actual periodic H¹ regularity and the physical and
 original-norm operator equations are proved. Spectral exhaustion is stated
 as an equality of sets of eigenvalues, without an added multiplicity claim.
+
+## Equations (1.8)–(1.9): normalization and convergence scope
+
+`SourceBoundaryFourier.lean` verifies the printed factor one half, the
+sesquilinear physical interval pairing, both boundary signs, and the
+reversed frequency in the first component. No correction is needed.
+The actual series converges in the original component-sum coefficient
+norm and normalized physical L² norm; its sum is the signed reflection.
+The page 30 input is arbitrary interval H¹ data, with no endpoint-domain
+condition. Its reflection can have jumps, so no uniform or H¹ convergence
+is asserted under those hypotheses. The formal result also covers every
+original L² input and preserves the original interval L² energy exactly.

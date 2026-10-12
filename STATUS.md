@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: reflection formulas and Lemma 4.1
+## Current milestone: Fourier representations (1.8)–(1.9)
+
+`SourceBoundaryFourier.lean` proves the printed series on page 30 in the
+original component-sum coefficient norm and normalized physical period-two
+L² norm. The source boundary modes are identified with the established
+signed free modes and with the actual waves
+(epsilon*exp(-i*pi*n*x), exp(i*pi*n*x)). Both boundary signs and the reversed
+first-component frequency are explicit.
+
+For arbitrary original L² interval data, the reflected function's normalized
+Fourier coefficients equal the printed half-interval amplitudes. The
+coefficient is exactly one half of the original sesquilinear component-sum
+pairing with the physical boundary mode. The series converges in the
+original `CoeffPair 2` norm. An actual linear isometric Fourier synthesis
+transfers it to the physical component-sum L² space, and the sum is proved
+to represent the actual signed reflection almost everywhere on [0,2].
+
+The reflected coefficients have exactly the original interval L² norm:
+normalizing the doubled period cancels the doubled reflection energy.
+`sourceEquation1_8_1_9` supplies the printed H¹-input statement, with an
+actual physical sum, its convergent half-pairing series, and its exact
+energy. The stronger arbitrary-L²-input theorem is also public.
+
+No endpoint condition is added to the page 30 input. Such a reflected
+function may jump at the joins, so the asserted convergence is L², not
+uniform or H¹ convergence. No correction to (1.8)–(1.9) is needed; the
+page 29 AKNS potential-normalization correction is retained.
+
+Next: the closed complementary Fourier–Lebesgue boundary subspaces after
+(1.9), in the original norms, followed by Lemma 4.2. The dissertation
+remains incomplete; earlier qualifications remain in force.
+
+Validation: `./scripts/check.sh` passed: 6,753 build jobs, public examples,
+and the axiom audit of all 29,752 NLS declarations. The build reports
+21 existing warnings; the new module and standalone public examples are
+warning-free. The source inventory check passed for 156 labels; this is
+not a completeness certificate.
+
+## Previous milestone: reflection formulas and Lemma 4.1
 
 The even/odd AKNS extensions on printed pages 28–29 are now connected
 pointwise to the signed-swap ZS extensions. `AKNSReflection.lean` proves

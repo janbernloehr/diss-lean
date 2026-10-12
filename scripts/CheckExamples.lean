@@ -44041,3 +44041,60 @@ example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1)))
     (sourceResolventSet (by simp) (sourceDirichletPotentialCoefficients φ hφ))ᶜ =
       BoundaryCondition.classicalEigenvalues .dirichlet φ ∪ BoundaryCondition.classicalEigenvalues .neumann φ :=
   source_periodicSpectrum_eq_classicalEigenvalues_union φ hφ
+
+open MeasureTheory Set NLS NLS.Fourier NLS.ZakharovShabat
+
+-- Equations (1.8)-(1.9): original norms, printed coefficients, and the actual physical sum.
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    HasSum (fun n : ℤ => BoundaryCondition.intervalAmplitude b f n • sourceBoundaryMode b n)
+      (sourceIntervalExtensionCoefficients b f hf) := hasSum_sourceIntervalExtensionCoefficients b f hf
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    HasSum (fun n : ℤ => ((1/2 : ℂ) * intervalBoundaryPairing b f n) •
+      sourceCircleSynthesis (sourceBoundaryMode b n))
+      (sourceCircleSynthesis (sourceIntervalExtensionCoefficients b f hf)) := sourceEquation1_8_1_9_L2 b f hf
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (h₁ : HasIntervalH1Regularity (fun x => (f x).1))
+    (h₂ : HasIntervalH1Regularity (fun x => (f x).2)) :
+    ∃ F : SourceCirclePairL2,
+      sourceCircleRepresentative F =ᵐ[volume.restrict (Ioc 0 2)] BoundaryCondition.intervalExtension b f ∧
+      HasSum (fun n : ℤ => ((1 / 2 : ℂ) * intervalBoundaryPairing b f n) •
+        sourceCircleSynthesis (sourceBoundaryMode b n)) F ∧
+      ‖F‖ ^ 2 = (∫ x in (0 : ℝ)..1, ‖(f x).1‖ ^ 2) + ∫ x in (0 : ℝ)..1, ‖(f x).2‖ ^ 2 :=
+  sourceEquation1_8_1_9 b f h₁ h₂
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    ‖sourceIntervalExtensionCoefficients b f hf‖ = ‖intervalL2OfFunction f hf‖ :=
+  norm_sourceIntervalExtensionCoefficients b f hf
+
+example (a : CoeffPair 2) : ‖sourceCircleSynthesis a‖ = ‖a‖ := sourceCircleSynthesis.norm_map a
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    sourceCircleRepresentative (sourceCircleSynthesis (sourceIntervalExtensionCoefficients b f hf))
+      =ᵐ[volume.restrict (Ioc 0 2)] BoundaryCondition.intervalExtension b f :=
+  sourceCircleSynthesis_intervalExtension b f hf
+
+example (f : ℝ → ℂ × ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    (sourceIntervalExtensionCoefficients .neumann f hf).fst (-3) =
+      -BoundaryCondition.intervalAmplitude .neumann f 3 := by
+  simpa [BoundaryCondition.extensionSign] using sourceIntervalExtensionCoefficients_fst .neumann f hf (-3)
+
+example (f : ℝ → ℂ × ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    BoundaryCondition.intervalAmplitude .dirichlet f 0 = (1/2 : ℂ) * intervalBoundaryPairing .dirichlet f 0 :=
+  intervalAmplitude_eq_half_pairing .dirichlet f hf 0
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (n : ℤ) :
+    intervalBoundaryPairing b f n = ∫ x in (0 : ℝ)..1,
+      (f x).1 * starRingEnd ℂ ((physicalBoundaryMode b n x).1) +
+        (f x).2 * starRingEnd ℂ ((physicalBoundaryMode b n x).2) := intervalBoundaryPairing_eq_integral b f n
+
+example (x : ℝ) : physicalBoundaryMode .neumann (-3) x = (-wave 3 x, wave (-3) x) := by
+  simp [physicalBoundaryMode, BoundaryCondition.extensionSign]
+
+example : sourceCircleRepresentative (sourceCircleSynthesis (sourceBoundaryMode .dirichlet (-3)))
+    =ᵐ[volume.restrict (Ioc 0 2)] physicalBoundaryMode .dirichlet (-3) := sourceBoundaryMode_physical _ _

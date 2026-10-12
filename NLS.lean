@@ -3316,3 +3316,4 @@ import NLS.ZakharovShabat.AKNSPhysicalNorms
 import NLS.ZakharovShabat.AKNSIntervalOperator
 import NLS.ZakharovShabat.AKNSReflection
 import NLS.ZakharovShabat.SourceLemma4_1
+import NLS.ZakharovShabat.SourceBoundaryFourier

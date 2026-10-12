@@ -72,9 +72,44 @@ Public examples exercise both boundary conditions, endpoint reconstruction,
 negative Fourier indices, the physical equation, nonzero original source
 eigenvectors, and full spectral exhaustion.
 
+## Fourier representations (1.8)–(1.9) (page 30)
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original-norm reflected Fourier data | `sourceIntervalExtensionCoefficients` | Actual normalized physical integrals for arbitrary original L² data, with either boundary sign. |
+| Both coefficient formulas | `sourceIntervalExtensionCoefficients_snd`, `sourceIntervalExtensionCoefficients_fst` | Printed half-interval amplitudes, first-frequency reversal, and boundary sign. |
+| Assembly from scalar amplitudes | `sourceBoundaryAssembly`, `sourceIntervalExtensionCoefficients_eq_assembly` | Exact reconstruction of the original component-sum coefficient pair. |
+| Original boundary modes | `sourceBoundaryMode`, `sourceBoundaryMode_eq` | The original-norm signed free modes. |
+| Physical mode identification | `physicalBoundaryMode`, `sourceBoundaryMode_physical` | Actual waves (epsilon*exp(-i*pi*n*x), exp(i*pi*n*x)), as physical L² representatives. |
+| Original coefficient series | `hasSum_sourceIntervalExtensionCoefficients` | Unconditional norm convergence in `CoeffPair 2`. |
+| Original physical pair space and Fourier inverse | `SourceCirclePairL2`, `sourceCircleSynthesis` | Actual component-sum L² space on the period-two circle, with normalized Haar measure; linear isometric Fourier equivalence. |
+| Physical L² convergence | `hasSum_intervalExtension_L2` | Convergence of the same boundary-mode series in the physical L² norm. |
+| Actual reflected-function sum | `sourceCircleSynthesis_intervalExtension` | The physical representative of the sum equals the signed reflection a.e. on [0,2]. |
+| Literal physical pairing | `intervalBoundaryPairing_eq_integral` | Integral of f times the componentwise conjugate boundary mode on [0,1]. |
+| Printed half coefficient | `intervalAmplitude_eq_half_pairing` | Exactly one half of the physical pairing, at every integer index. |
+| Full arbitrary-L² series | `sourceEquation1_8_1_9_L2` | The printed half-pairing series for either boundary condition, with no endpoint matching. |
+| Exact original norm | `norm_sourceIntervalExtensionCoefficients` | Normalized doubled-period energy equals original interval energy. |
+| Printed H¹-input package | `sourceEquation1_8_1_9` | Actual reflected L² sum, convergent half-pairing series, and exact physical energy for arbitrary original interval H¹ pairs. |
+
+All entries are in `NLS.ZakharovShabat`, in `SourceBoundaryFourier.lean`.
+The full page 30 H¹-input hypotheses are retained: no boundary-domain
+condition is added. The result is strengthened to L² input where possible.
+A reflected function may have jumps, so this milestone asserts neither
+uniform nor H¹ convergence for arbitrary input. The separate periodic-H¹
+extension results require the endpoint conditions stated in Lemma 4.1.
+The physical period-two norm uses normalized Haar measure; the interval
+energy uses ordinary Lebesgue measure. Their exact equality after signed
+reflection is proved. No correction to the printed series is needed.
+
+Public checks cover both boundary signs, negative indices, the full
+H¹-input package, original and physical norm identities, literal pairing,
+coefficient convergence, and reconstruction of both the basis and sum.
+
 ## Next source assertions
 
-Next audit the Fourier representations (1.8)–(1.9) on page 30 and their
-original-space interpretation, followed by the extension/isomorphism
-assertions. Existing Fourier and boundary-basis modules provide supporting
-results but do not by themselves certify these source identifications.
+Next audit the closed complementary Fourier–Lebesgue boundary subspaces
+introduced after (1.9), including the original finite-exponent and coupled
+supremum norms, followed by Lemma 4.2's original-domain isomorphisms.
+Existing maximum-norm boundary-space results are supporting ingredients;
+their amplitude isometries are not automatically isometries in the original
+component-sum norms. This remains a separate source-space audit.
