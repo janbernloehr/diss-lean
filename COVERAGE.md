@@ -3809,3 +3809,45 @@ Next: the resonant matrix coefficients and Lemma 6.7's diagonal and
 real/imaginary-type symmetry identities. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6806 build jobs, the combined public examples, and the axiom audit of 30702 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Section 6 audit: Original resonant coefficients and Lemma 6.7
+
+`SourceResonantCoefficients.lean` identifies every correction-matrix entry
+with the actual original-source corrected potential evaluated on a resonant
+domain vector. The library's physical order (minus, plus) is explicitly
+reversed to the source's printed order (plus, minus). Thus the printed upper
+and lower off-diagonals are b_n⁺ and b_n⁻ respectively. The determinant is
+unchanged by this reversal and equals (λ−nπ−a_n)²−b_n⁺b_n⁻; its zero set is
+the actual original periodic spectrum. Lemma 6.7(i), equality of the two
+correction diagonals, holds for arbitrary complex potentials.
+
+`SourceLemma6_7.lean` defines physical conjugation and component exchange
+on the original potential, with Fourier-index reversal in both components.
+The source condition φ*=εφ agrees with its weighted realization; sign one
+also agrees with the existing original real-type predicate. For ε²=1, the
+corrected Lemma 6.7(ii) proves a_n(conj λ)=conj(a_n(λ)) and
+b_n⁺(conj λ)=ε conj(b_n⁻(λ)). The reality hypothesis applies to both
+conclusions. Either sign gives a real diagonal on the real spectral axis.
+One open convex neighborhood containing the input and zero and one positive
+cutoff support both symmetry statements throughout all distant closed strips,
+for every 1≤p<∞, including p=1.
+
+`SourceLemma6_7Counterexample.lean` computes the actual original diagonal
+for constant components (a,b) as ab/(2πn) at every nonzero free center where
+the square is small. For the single fixed potential (1,i), this is nonreal.
+Beyond every proposed cutoff there is a positive index where the source
+half-contraction holds and diagonal reality fails. The formal negation of
+the printed unconditional claim therefore rules out even an individual
+potential-dependent cutoff, rather than only a locally uniform version.
+The correction restores the reality assumption used in the source's proof;
+it does not alter Lemma 6.7(i) or the signed off-diagonal statement.
+
+Public checks cover actual operator entries, basis order, the scalar spectral
+equation, arbitrary-complex diagonal equality, coefficient conjugation,
+constant real- and imaginary-type inputs, both signs at p=1, the exact
+constant-potential diagonal, and counterexamples beyond every cutoff.
+
+Next: the parity expansions (1.14)–(1.15) and Lemma 6.8's analyticity and
+coefficient-tail estimates. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6809 build jobs, the combined public examples, and the axiom audit of 30748 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

@@ -45569,3 +45569,103 @@ example (n : ℤ) : (Real.pi : ℂ)*n ∉ sourceResolventSet (p := 1) (by norm_n
 
 end
 end SourceLemma66Checks
+
+namespace SourceLemma67Checks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- Physical conjugation exchanges components AND reverses frequency.
+example (φ : CoeffPair p) (k : ℤ) :
+    (sourcePotentialStar φ).fst k = (starRingEnd ℂ) (φ.snd (-k)) ∧
+      (sourcePotentialStar φ).snd k = (starRingEnd ℂ) (φ.fst (-k)) := by simp
+
+example (a : ℂ) : SourceHasRealitySign (p := p) 1 (sourceConstantPotential a ((starRingEnd ℂ) a)) := by
+  rw [sourceHasRealitySign_iff_coeff]
+  constructor <;> intro k <;> by_cases hk : k=0 <;> simp [hk]
+
+example (a : ℂ) : SourceHasRealitySign (p := p) (-1) (sourceConstantPotential a (-(starRingEnd ℂ) a)) := by
+  rw [sourceHasRealitySign_iff_coeff]
+  constructor <;> intro k <;> by_cases hk : k=0 <;> simp [hk]
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1)
+    (hs : ‖(sourcePotentialInverse hp φ n z hz).comp (sourcePotentialInverse hp φ n z hz)‖ < 1)
+    (i j : Fin 2) :
+    sourceCorrectionMatrix hp φ n z hz h i j =
+      resonantCoordinates SpectralWeight.one.toWeight n (unitWeightedPairEquiv
+        (sourceComplementaryCorrection hp φ n z hz hs
+          (sourceOperator hp φ (sourceUnitDomainEquiv
+              (resonantSynthesis SpectralWeight.one.toWeight.oneDerivative n (Pi.single j 1))) -
+            sourceOperator hp 0 (sourceUnitDomainEquiv
+              (resonantSynthesis SpectralWeight.one.toWeight.oneDerivative n (Pi.single j 1)))))) i :=
+  sourceCorrectionMatrix_entry hp φ n z hz h hs i j
+
+-- The printed top-right entry is -b⁺, despite the opposite library basis order.
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    sourcePrintedResonantMatrix hp φ n z hz h 0 1 = -sourceResonantBPlus hp φ n z hz h ∧
+    sourcePrintedResonantMatrix hp φ n z hz h 1 0 = -sourceResonantBMinus hp φ n z hz h := by
+  rw [sourcePrintedResonantMatrix_form]
+  exact ⟨rfl,rfl⟩
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    z ∉ sourceResolventSet hp φ ↔
+      (z-(Real.pi : ℂ)*n-sourceResonantA hp φ n z hz h)^2 =
+        sourceResonantBPlus hp φ n z hz h * sourceResonantBMinus hp φ n z hz h :=
+  sourceSpectrum_iff_resonantScalarEquation hp φ n z hz h
+
+-- Diagonal equality still needs no reality assumption.
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    sourceCorrectionMatrix hp φ n z hz h 0 0 = sourceCorrectionMatrix hp φ n z hz h 1 1 :=
+  sourceLemma6_7_i hp φ n z hz h
+
+example (hp : p ≠ ⊤) (a b : ℂ) (n : ℤ) (hn : n ≠ 0)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv (sourceConstantPotential a b)) n
+      ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ < 1) :
+    sourceResonantA hp (sourceConstantPotential a b) n ((Real.pi : ℂ)*n) (center_mem_resonantStrip n) h =
+      a*b / ((2*Real.pi*(n : ℝ) : ℝ) : ℂ) := sourceResonantA_constant_center hp a b n hn h
+end
+
+-- The real-type branch agrees with the existing Fourier real-type predicate.
+example (φ : CoeffPair 1) (hφ : IsRealType (CoeffPair.toMax 1 φ)) (n : ℤ) (x : ℝ)
+    (hx : (x : ℂ) ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (unitWeightedPairEquiv φ) n (x : ℂ) hx‖ < 1) :
+    (sourceResonantA (by norm_num) φ n (x : ℂ) hx h).im = 0 :=
+  sourceResonantA_im_eq_zero (by norm_num) 1 (by norm_num) φ
+    ((sourceHasRealitySign_one_iff φ).mpr hφ) n x hx h
+
+-- The endpoint includes the imaginary-type sign in the off-diagonal identity.
+example (φ : CoeffPair 1) (hφ : SourceHasRealitySign (-1) φ)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1)
+    (hc : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (unitWeightedPairEquiv φ) n
+      ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz)‖ < 1) :
+    sourceResonantA (by norm_num) φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc =
+      (starRingEnd ℂ) (sourceResonantA (by norm_num) φ n z hz h) ∧
+    sourceResonantBPlus (by norm_num) φ n ((starRingEnd ℂ) z) (conj_mem_resonantStrip hz) hc =
+      -(starRingEnd ℂ) (sourceResonantBMinus (by norm_num) φ n z hz h) := by
+  simpa using sourceLemma6_7_ii (by norm_num) (-1) (by norm_num) φ hφ n z hz h hc
+
+-- A single fixed original potential fails diagonal reality beyond every cutoff,
+-- even where the exact source half-contraction holds.
+example (M : ℕ) :
+    ∃ n : ℤ, (M : ℤ) ≤ n ∧ 0 < n ∧
+      ∃ h : ‖weightedPotentialSquareInShift (p := 1) (by norm_num) SpectralWeight.one
+        (unitWeightedPairEquiv (sourceConstantPotential 1 Complex.I)) n
+        ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ < 1,
+        ‖weightedPotentialSquareInShift (p := 1) (by norm_num) SpectralWeight.one
+          (unitWeightedPairEquiv (sourceConstantPotential 1 Complex.I)) n
+          ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ ≤ 1/2 ∧
+        (starRingEnd ℂ) (sourceResonantA (p := 1) (by norm_num) (sourceConstantPotential 1 Complex.I) n
+          ((Real.pi : ℂ)*n) (center_mem_resonantStrip n) h) ≠
+        sourceResonantA (p := 1) (by norm_num) (sourceConstantPotential 1 Complex.I) n
+          ((Real.pi : ℂ)*n) (center_mem_resonantStrip n) h :=
+  exists_large_nonreal_sourceResonantA (p := 1) (by norm_num) M
+
+end
+end SourceLemma67Checks

@@ -1570,3 +1570,37 @@ prove locally small weighted tails and the qualitative weighted ℓᵖ conclusio
 for 1<p<∞. The corrected bound uses floor(N/2); no sharper ceiling-cutoff
 version is claimed. See `coverage/SECTION_6.md` for the exact formula and
 central-index qualifications.
+
+## Lemma 6.7(ii): diagonal reality needs the hypothesis used in its proof
+
+Source: dissertation, printed pp. 40–41. The displayed part (ii) states
+`a_n(conj λ)=conj(a_n(λ))` before introducing `φ*=±φ` for the b_n⁺ identity.
+The source's proof of part (ii) begins by assuming `φ*=±φ` and uses this
+assumption for the diagonal as well. The unrestricted complex reading of
+the displayed diagonal clause is false.
+
+`SourceResonantCoefficients.lean` identifies the coefficients with actual
+original-source corrected potential entries and restores the printed basis
+order. `sourceResonantA_constant_center` computes, for constant components
+`φ=(a,b)` and n≠0,
+
+```
+a_n(nπ) = ab/(2πn).
+```
+
+For the single fixed original potential `φ=(1,i)`, this is `i/(2πn)`, which
+is nonreal at every positive index where the correction is defined.
+`exists_large_nonreal_sourceResonantA` constructs such an index beyond
+**every** proposed cutoff, together with the actual source half-contraction
+bound `‖T_n²‖≤1/2`. This works for each finite 1≤p<∞, including p=1.
+`not_sourceLemma6_7_printed_diagonal` formally refutes the existence of an
+individual cutoff making the printed unconditional diagonal identity true
+on all subsequent strips. The issue cannot be repaired by enlarging that
+cutoff or attributing the failure to a nonconvergent inverse.
+
+The corrected `sourceLemma6_7_ii` assumes `φ*=εφ`, `ε²=1`, for **both**
+the diagonal and signed off-diagonal identities. It includes the real-type
+and imaginary-type cases and holds locally uniformly on the entire closed
+strips. This is a sufficient correction, not a claim that these are the only
+potentials having diagonal reality. Lemma 6.7(i), equality of the two
+correction diagonals for arbitrary complex potentials, remains unchanged.

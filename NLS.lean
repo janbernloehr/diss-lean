@@ -3369,3 +3369,6 @@ import NLS.ZakharovShabat.SourceLemma6_5
 import NLS.ZakharovShabat.SourceComplementaryCorrection
 import NLS.ZakharovShabat.SourceQEquation
 import NLS.ZakharovShabat.SourceLemma6_6
+import NLS.ZakharovShabat.SourceResonantCoefficients
+import NLS.ZakharovShabat.SourceLemma6_7
+import NLS.ZakharovShabat.SourceLemma6_7Counterexample

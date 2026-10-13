@@ -5,12 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the original Q-equation has a unique solution in the
-full derivative domain. Lemma 6.6 equates the actual source spectrum with
-the resonant determinant, with explicit eigenfunction reconstruction in
-both directions for every 1≤p<∞ and one locally uniform frequency cutoff.
+Latest milestone: the original resonant coefficients now have the printed
+basis order and exact scalar spectral equation. Lemma 6.7's diagonal equality
+is proved for arbitrary complex potentials; its conjugation identities hold
+for real and imaginary type. A fixed constant-potential counterexample
+refutes the printed unconditional diagonal-reality clause at arbitrarily
+large frequencies, including where the half-contraction holds.
 [The Section 6 audit](coverage/SECTION_6.md) records the precise scope.
-Next are the matrix coefficients and Lemma 6.7's symmetry identities.
+Next are the parity expansions and Lemma 6.8's analytic coefficient bounds.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

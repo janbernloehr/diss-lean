@@ -315,10 +315,51 @@ center, including n=0 and negative n, at p=1 directly from the matrix criterion.
 The high-frequency uniform statement itself retains the source's N≥1.
 No source correction is required for Lemma 6.6.
 
+## Resonant matrix coefficients and the printed basis order
+
+The source prints the basis in (plus, minus) order; the library uses the
+physical first-component −n and second-component n modes in (minus, plus)
+order. `sourceCorrectionMatrix_entry` identifies the entries with actual
+original-source corrected potential coefficients, evaluated on actual
+resonant domain vectors. The common diagonal is `sourceResonantA`;
+`sourceResonantBPlus` and `sourceResonantBMinus` are the physical-order
+entries (1,0) and (0,1).
+
+`sourcePrintedResonantMatrix_form` restores the printed order:
+
+```
+S_n = [[ λ−nπ−a_n, −b_n⁺ ], [ −b_n⁻, λ−nπ−a_n ]].
+```
+
+Reversing both rows and columns preserves the determinant.
+`sourceSpectrum_iff_resonantScalarEquation` identifies the actual original
+periodic spectrum with (λ−nπ−a_n)²=b_n⁺b_n⁻.
+
+## Lemma 6.7: valid symmetries and the missing hypothesis
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Equal correction diagonals | `sourceLemma6_7_i` | Every complex potential; no reality hypothesis. |
+| Original physical star | `sourcePotentialStar_fst`, `sourcePotentialStar_snd` | Component exchange, complex conjugation, and reversal k↦−k. |
+| Exact reality condition | `sourceHasRealitySign_iff`, `sourceHasRealitySign_one_iff` | Original φ*=εφ matches the weighted condition; ε=1 matches the existing real-type predicate. |
+| Corrected conjugation identities | `sourceLemma6_7_ii` | Under ε²=1 and φ*=εφ, both a_n and b_n⁺ obey their printed conjugation formulas. |
+| Real diagonal on the real axis | `sourceResonantA_im_eq_zero` | Both real and imaginary type. |
+| Local uniformity | `sourceLemma6_7_uniform` | One open convex neighborhood containing φ and zero, one positive cutoff, both conjugate parameters, the full closed strips, and all 1≤p<∞. |
+| Constant-potential calculation | `sourceResonantA_constant_center` | Actual original coefficient ab/(2πn) at every nonzero center under the small-square condition. |
+| Arbitrarily distant counterexample | `exists_large_nonreal_sourceResonantA` | Same fixed original potential (1,i), positive n beyond every proposed cutoff, squared norm ≤1/2, nonreal diagonal. |
+| Printed claim refuted | `not_sourceLemma6_7_printed_diagonal` | No individual frequency cutoff makes unconditional diagonal reality true for that fixed potential. |
+
+The displayed Lemma 6.7(ii) on printed page 40 states diagonal reality before
+introducing φ*=±φ for the off-diagonal claim. Its proof starts with that
+hypothesis and uses it for both conclusions. The counterexample verifies
+that the unrestricted diagonal clause is false. The corrected sufficient
+hypothesis is exactly the one used in the source's proof; no characterization
+of all potentials with real diagonal is claimed. See `SOURCE_ERRATA.md`.
+
 ## Remaining source assertions
 
-Continue with the actual resonant matrix coefficients and Lemma 6.7's
-diagonal equality and conjugation/real-type/imaginary-type identities.
-Sharper ceiling-cutoff versions of the corrected Propositions 6.1/6.3
-estimates remain unproved. Existing later results and the candidate-label
-inventory do not certify this section or the dissertation complete.
+Continue with the parity expansions (1.14)–(1.15), then Lemma 6.8's
+analyticity and coefficient-tail bounds with their precise exponent and
+cutoff conventions. Sharper ceiling-cutoff versions of the corrected
+Propositions 6.1/6.3 estimates remain unproved. Existing later results and
+the candidate-label inventory do not certify this section or the dissertation complete.
