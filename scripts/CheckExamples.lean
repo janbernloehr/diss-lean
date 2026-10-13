@@ -44868,3 +44868,76 @@ example : ∃ N₀ : ℕ, 0 < N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
   simpa using exists_sourceAuxiliaryZero_printedBox_count (p := 3) (by norm_num) (by simp)
 
 end SourceAuxiliaryCountingChecks
+
+/-! Proposition 5.2: actual original auxiliary contour restrictions, domain lifts, and ranks. -/
+section SourceAuxiliaryContourChecks
+open NLS NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition
+open scoped ENNReal
+
+example (φ : PairSpace 1) (z : ℂ) :
+    z ∈ NLS.ZakharovShabat.resolventSet (by simp) φ ↔
+      z ∈ NLS.ZakharovShabat.resolventSet (by simp) (auxiliaryPotential φ) :=
+  mem_resolventSet_auxiliaryPotential_iff (by simp) φ z
+
+example (φ : PairSpace 1) (z : ℂ) (a : PairSpace 1) :
+    resolventToDomain (by simp) φ z (auxiliaryPhase (Coeff 1) a) =
+      auxiliaryPhase (ScalarDomain 1) (resolventToDomain (by simp) (auxiliaryPotential φ) z a) :=
+  resolventToDomain_auxiliaryPhase (by simp) φ z a
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r) (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ)
+    (x : auxiliarySourceSpace (p := 1) b) :
+    (sourceAuxiliaryCircleProjection b (by simp) φ c r x).val = sourceResolventCircleIntegral (by simp) φ c r x.val :=
+  sourceAuxiliaryCircleProjection_apply b (by simp) φ hφ c r hr hc x
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (N : ℕ) (hc : centralRectangleBoundary N ⊆ sourceResolventSet (by simp) φ)
+    (x : auxiliarySourceSpace (p := 1) b) :
+    ∃ a : sourceWeightedAuxiliarySubspace (p := 1) b 1,
+      sourceAuxiliaryInclusion b a = sourceAuxiliaryCentralProjection b (by simp) φ N x :=
+  sourceAuxiliaryCentralProjection_exists_domain b (by simp) φ hφ N hc x
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r) (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ) :
+    ((sourceAuxiliaryCircleProjection b (by simp) φ c r).comp (sourceAuxiliaryInclusion b)).range =
+      (sourceAuxiliaryCircleProjection b (by simp) φ c r).range :=
+  range_sourceAuxiliaryCircleProjection_comp_inclusion b (by simp) φ hφ c r hr hc
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (c : ℂ) (r : ℝ) (hr : 0 ≤ r) (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ) :
+    Module.finrank ℂ (sourceAuxiliaryCircleProjection b (by simp) φ c r).range =
+      ∑ z ∈ sourceAuxiliaryEnclosedSpectrum b (by simp) φ hφ c r,
+        sourceAuxiliaryAlgebraicMultiplicity b (by simp) φ hφ z :=
+  sourceAuxiliaryCircleProjection_rank_eq_sum b (by simp) φ hφ c r hr hc
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (N : ℕ) (h : SourceAuxiliaryContourData (by simp) φ hφ N) :
+    Module.finrank ℂ ((sourceAuxiliaryCentralProjection b (by simp) φ N).comp (sourceAuxiliaryInclusion b)).range = 2*N+1 :=
+  h.central_domain_rank b
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (N : ℕ) (h : SourceAuxiliaryContourData (by simp) φ hφ N) (n : ℤ) (hn : N < n.natAbs) :
+    Module.finrank ℂ ((sourceAuxiliaryCircleProjection b (by simp) φ ((Real.pi : ℂ)*n) (Real.pi/4)).comp
+      (sourceAuxiliaryInclusion b)).range = 1 := h.disk_domain_rank b n hn
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (N : ℕ) (h : SourceAuxiliaryContourData (by simp) φ hφ N) :
+    IsIdempotentElem (sourceAuxiliaryCentralProjection b (by simp) φ N) ∧
+      FiniteDimensional ℂ (sourceAuxiliaryCentralProjection b (by simp) φ N).range := h.central_properties b
+
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 3), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ N : ℕ, N₀ ≤ N →
+        (∀ b : BoundaryCondition, AnalyticOnNhd ℂ
+          (fun ψ => sourceAuxiliaryCentralProjection b (by simp)
+            (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ) N) U) ∧
+        (∀ n : ℤ, N < n.natAbs → ∀ b : BoundaryCondition, AnalyticOnNhd ℂ
+          (fun ψ => sourceAuxiliaryCircleProjection b (by simp)
+            (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ) ((Real.pi : ℂ)*n) (Real.pi/4)) U) ∧
+        ∀ ψ ∈ U, SourceAuxiliaryContourData (by simp) (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ)
+          (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) ψ) N :=
+  exists_uniform_sourceAuxiliaryContourData (by norm_num) (by simp) φ
+
+end SourceAuxiliaryContourChecks

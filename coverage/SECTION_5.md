@@ -172,16 +172,40 @@ high-disk uniqueness and full multiplicity, central sums, reality, even
 height-zero real clusters, physical multiplicity equality, and the literal
 printed-box counterexample.
 
+## Proposition 5.2 proof: actual original contour ranks and domain lifts
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Full ambient phase conjugation | `mem_resolventSet_auxiliaryPotential_iff`, `resolventToDomain_auxiliaryPhase`, `resolvent_auxiliaryPhase_conj` | Actual resolvent and domain-valued inverse; zero extensions off the resolvent set included. |
+| Actual contour conjugation | `resolventCircleIntegral_auxiliaryPhase_conj`, `resolventRectangleIntegral_auxiliaryPhase_conj` | Normalized operator-valued integrals on admissible circle and four-edge rectangle contours. |
+| Auxiliary complementary projection | `BoundaryCondition.auxiliaryProjection`, `sourceAuxiliaryProjection` | Coefficient phase projection and its original-norm realization, with membership and identity on the selected auxiliary subspace. |
+| Preservation by contour integrals | `sourceAuxiliaryProjection_commute_circleIntegral`, `sourceAuxiliaryProjection_commute_centralIntegral` | Both signs, the same already Neumann-reflected potential. |
+| Actual original restrictions | `sourceAuxiliaryCircleProjection_apply`, `sourceAuxiliaryCentralProjection_apply` | The typed restrictions act exactly as the original ambient integrals on auxiliary vectors. |
+| Actual restricted ranges | `sourceAuxiliaryCompressionRangeEquiv` | Isometry to the intersection of the ambient original range with the auxiliary subspace. |
+| Finite-rank idempotence | `sourceAuxiliaryCircleProjection_properties`, `sourceAuxiliaryCentralProjection_properties` | Actual circle and rectangle restrictions, not merely abstract rank assignments. |
+| One-derivative lifts | `sourceAuxiliaryCircleProjection_exists_domain`, `sourceAuxiliaryCentralProjection_exists_domain` | Every projected vector comes from the original weighted auxiliary domain. |
+| Unchanged range on domain input | `range_sourceAuxiliaryCircleProjection_comp_inclusion`, `range_sourceAuxiliaryCentralProjection_comp_inclusion` | Exact range equality for the restrictions displayed in the proof. |
+| Full original Jordan rank formulas | `sourceAuxiliaryCircleProjection_rank_eq_sum`, `sourceAuxiliaryCentralProjection_rank_eq_sum` | Sums over actual original auxiliary spectral clusters of full-chain algebraic multiplicities. |
+| Completed original potential map | `sourceAuxiliaryReflectedPotentialCLM`, `sourceAuxiliaryReflectedPotentialCLM_apply` | Actual common Neumann reflection as a bounded linear map in the original norms. |
+| Uniform analytic families | `exists_uniform_sourceAuxiliaryContourData` | One open convex connected neighborhood containing the input and zero, both signs, all larger cutoffs. |
+| Counted ranks | `SourceAuxiliaryContourData.central_rank`, `SourceAuxiliaryContourData.disk_rank` | 2N+1 centrally and one in every high quarter-pi disk. |
+| Counted domain ranks | `SourceAuxiliaryContourData.central_domain_rank`, `SourceAuxiliaryContourData.disk_domain_rank` | The same ranks after restricting input to the original one-derivative domain. |
+
+These entries are in `AuxiliaryContourPhase`, `SourceAuxiliaryContours`,
+`SourceAuxiliaryContourDomains`, `SourceAuxiliaryContourRanks`, and
+`SourceAuxiliaryContourCounting`. The range comparison uses continuous
+norm changes and the exact phase conjugation; it does not assume that the
+original norm equals the auxiliary maximum norm. Public checks include the
+p=1 ambient resolvent identity, actual original integral action, domain lifts,
+unchanged ranges, full Jordan rank sums, p=3 counted domain ranks,
+finite-rank idempotence, and the uniform original-input analytic family.
+
 ## Next source assertions
 
-Audit the proof's actual original auxiliary Cauchy–Riesz restrictions,
-including preservation by the ambient circle and rectangle integrals,
-one-derivative domain lifts, unchanged ranges on domain input, ranks, and
-analytic dependence on the original input. The counting statement above
-follows from the established chain equivalences and auxiliary counts; these
-additional identities concern the specific projectors in the printed proof.
-
-The printed numerical height for general complex input remains separate.
-The height-N localization is not a replacement for that assertion. The
-prescribed-height results in this milestone require real type, apart from
-the explicit zero-potential counterexample to the final count typo.
+Audit the literal norm-dependent height in Proposition 5.2 for general
+complex input. The completed contour proof above uses height-N rectangles;
+these do not by themselves establish the source's prescribed-height box.
+The preceding real-type and zero-input statements retain their exact scope.
+Check phase transport of original interval potentials and their norms before
+transferring either the ordinary boundary height bounds or counterexamples.
+Once that assertion is resolved or explicitly refuted, continue to Section 6.

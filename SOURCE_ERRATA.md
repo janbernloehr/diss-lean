@@ -1455,3 +1455,17 @@ For real-type input any nonnegative central height gives the same cluster
 and exhaustive localization. The norm-dependent printed height for general
 complex input remains a distinct unresolved source claim here; neither
 the count correction nor the reality result silently changes that bound.
+
+
+## Proposition 5.2 proof: actual auxiliary contour ranks
+
+The contour-rank argument is now proved for the actual original auxiliary
+restrictions, including their one-derivative domain input, uniform analytic
+dependence, and full Jordan multiplicity interpretation. Both central ranks
+are 2N+1; both high-disk ranks are one. This confirms the page-35 count
+correction without a further phase or normalization correction.
+
+These central contour theorems use rectangles of height N. They do not
+settle the separate norm-dependent height printed in Proposition 5.2 for
+general complex input. Real-type prescribed-height results and the literal
+zero-input count counterexample from the previous milestone remain valid.

@@ -3343,3 +3343,8 @@ import NLS.ZakharovShabat.SourceAuxiliaryReality
 import NLS.ZakharovShabat.SourceAuxiliaryCounting
 import NLS.ZakharovShabat.SourceAuxiliaryPhysicalMultiplicity
 import NLS.ZakharovShabat.SourceAuxiliaryHeightClusters
+import NLS.ZakharovShabat.AuxiliaryContourPhase
+import NLS.ZakharovShabat.SourceAuxiliaryContours
+import NLS.ZakharovShabat.SourceAuxiliaryContourDomains
+import NLS.ZakharovShabat.SourceAuxiliaryContourRanks
+import NLS.ZakharovShabat.SourceAuxiliaryContourCounting

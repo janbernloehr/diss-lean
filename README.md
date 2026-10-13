@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: original auxiliary Jordan chains, uniform algebraic counts,
-and reality are proved. Both auxiliary problems have central multiplicity
-2N+1 and one simple eigenvalue in each sufficiently distant disk, uniformly
-near each input. Physical L² Jordan multiplicities agree with these counts.
-A formal zero-potential counterexample corrects the final 2N−1 count on page 35.
-[The Section 5 audit](coverage/SECTION_5.md) separates the proved height-N
-localization from the unresolved printed height for general complex input.
-The contour-rank proof audit is next; the dissertation remains incomplete.
+Latest milestone: the actual auxiliary Cauchy–Riesz restrictions now have
+proved domain lifts, full Jordan rank formulas, and uniform analytic families
+in the original coefficient norms. Central rank is 2N+1 and each sufficiently
+distant disk has rank one; restricting inputs to the one-derivative domain
+preserves these ranges and ranks.
+[The Section 5 audit](coverage/SECTION_5.md) records the contour proof and
+distinguishes height-N rectangles from the printed norm-dependent height.
+The latter remains the next audit for general complex input; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

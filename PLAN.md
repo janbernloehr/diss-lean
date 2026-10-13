@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Current milestone: original auxiliary Jordan counts and reality
+## Current milestone: actual auxiliary contour ranks and domain lifts
+
+`AuxiliaryContourPhase.lean` proves exact conjugacy of the ambient resolvent
+under the auxiliary phase, including its zero extension off the resolvent
+set. It transports the actual normalized operator-valued circle and four-edge
+rectangle integrals. For a Neumann-reflected potential, the auxiliary
+complementary projections commute with both integrals.
+
+`SourceAuxiliaryContours.lean` constructs the corresponding restrictions in
+the original coefficient norm. On admissible contours their values are
+exactly those of the actual ambient integrals. They are finite-rank
+idempotents, and their ranges are isometric to the auxiliary parts of the
+original ambient ranges. The completed common Neumann potential is a bounded
+linear map of the original interval input, giving analytic circle families.
+
+`SourceAuxiliaryContourDomains.lean` proves that each projected vector lifts
+to the original one-derivative auxiliary domain. Restricting either integral's
+input to that domain leaves its entire range unchanged.
+`SourceAuxiliaryContourRanks.lean` identifies the actual ranks with sums of
+full original auxiliary Jordan multiplicities, through the proved norm and
+phase range equivalences.
+
+`SourceAuxiliaryContourCounting.lean` combines admissible contours with the
+original counts. One open convex connected neighborhood containing the
+original input and zero supports both auxiliary signs, all sufficiently
+large cutoffs, and analytic dependence of the actual restricted projections.
+Central rank is 2N+1 and high-disk rank is one, including the displayed
+restrictions to one-derivative inputs in the proof of Proposition 5.2.
+
+The central rectangles here have height N. The source's printed norm-dependent
+height for general complex input remains a separate audit; these contour
+identities do not replace or repair it. Already-reflected potentials are
+covered at every finite Banach exponent including p=1. The completed
+interval-input neighborhood theorem requires 1 < p < ∞. The dissertation
+remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6785 build jobs, the combined public examples, and the axiom audit of 30451 NLS declarations. The 21 existing warnings are unchanged; all five new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: original auxiliary Jordan counts and reality
 
 `SourceAuxiliaryRootSpaces.lean` identifies finite and full Jordan chains
 of the actual original auxiliary pencil. The exact recursion uses the
