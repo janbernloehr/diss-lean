@@ -115,10 +115,39 @@ negative Sobolev order and negative frequency, actual Schwartz-wave
 integrals, unique infinity representation, both physical H¹ maps, and
 both forms of the printed repeated-summand counterexample.
 
+## Completed auxiliary extensions, operators, and spectra, page 34
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original input phase | `sourceAuxiliaryInputPhase` | Isometry for every finite Banach exponent. |
+| Completed auxiliary extension | `sourceAuxiliaryExtensionToBoundary` | Actual original weighted zero-order target, 1 < p < ∞. |
+| Sufficient original-norm bound | `norm_sourceAuxiliaryExtensionToBoundary_le`, `norm_auxiliarySourceExtension_improved_le` | Ordinary interval-extension constant; no optimality assertion. |
+| Exact Hilbert norm | `norm_sourceAuxiliaryExtensionToBoundary_two` | Isometry at p=2. |
+| Physical coefficients and unique completion | `sourceAuxiliaryExtensionToBoundary_finite_integrals`, `sourceAuxiliaryExtensionToBoundary_unique`, `tendsto_sourceAuxiliaryExtension_truncate` | Actual physical integrals on finite inputs, density and original-norm convergence. |
+| Actual distributional reflection | `sourceAuxiliaryExtensionDistributionCLM`, `sourceAuxiliaryExtensionDistribution_coefficients`, `tendsto_sourceAuxiliaryExtensionDistribution_truncate` | Paired periodic distributions with exact signed coefficients and truncation limits. |
+| Arbitrary physical L² input | `sourceAuxiliaryExtensionToBoundary_two_ofFunction`, `sourceAuxiliaryExtensionToBoundary_two_physical` | Actual reflection coefficients and a.e. synthesis on the doubled interval. |
+| Sobolev compatibility | `auxiliarySourceExtension_two_classical` | Actual inclusion of the H¹ auxiliary extension. |
+| Common reflected potential | `sourceAuxiliaryReflectedPotential`, `sourceAuxiliaryReflectedPotential_ofFunction` | Ordinary Neumann reflection for both auxiliary signs; physical identification at p=2. |
+| Actual original-domain invariance | `sourceOperator_mem_auxiliarySourceSpace`, `sourceAuxiliaryReflectedPotential_invariant` | Finite p including 1 for already-reflected input; completed input requires p>1. |
+| Restricted operator and inclusion | `sourceAuxiliaryOperator`, `sourceAuxiliaryInclusion`, `norm_sourceAuxiliaryOperator_le` | Actual restrictions in original norms, with a sufficient operator bound. |
+| Actual restricted pencil | `sourceAuxiliaryPencil`, `sourceAuxiliaryPencil_eq_conj` | Defined as z·inclusion − operator, with exact continuous conjugacy. |
+| Full resolvent and spectrum | `sourceAuxiliaryResolventSet_eq`, `sourceAuxiliarySpectrum_eq` | Resolvent defined by actual pencil bijectivity; spectrum by its complement. |
+| Closed discrete spectrum | `isClosed_sourceAuxiliarySpectrum`, `discreteTopology_sourceAuxiliarySpectrum`, `finite_sourceAuxiliarySpectrum_inter` | Every finite Banach exponent; finite in arbitrary bounded regions. |
+| Classical physical spectrum | `sourceAuxiliarySpectrum_eq_classical`, `sourceAuxiliarySpectrum_reflected_ofFunction` | Equality with actual physical auxiliary eigenvalues for every L² potential. |
+
+These entries are in `SourceAuxiliaryExtension`,
+`SourceAuxiliaryExtensionPhysical`, `SourceAuxiliaryOperators`, and
+`SourceAuxiliarySpectra`. Public checks cover generic completion uniqueness,
+p=2 physical reconstruction and Sobolev compatibility, p=1 invariance, p=3
+bounds and analyticity, finite-input Fourier integrals at negative frequency,
+distributional limits, literal pencil and resolvent definitions, discreteness,
+bounded finiteness, and classical physical spectrum identification.
+
 ## Next source assertions
 
-Audit the completed bounded auxiliary extension maps on page 34, including
-the original input and target norms and arbitrary physical L² identification.
-Then prove original-domain operator invariance and identify the actual
-restricted source pencils. Proposition 5.2's spectrum, counting, reality
-and numerical-height assertions retain separate audits.
+Audit Proposition 5.2's uniform counts and reality using actual original
+restricted contour projections, domain lifts, and full Jordan root spaces.
+The existing closed/discrete/finite-in-bounded-regions statements do not
+by themselves prove the central count, high-frequency simplicity, or
+exhaustive localization. Keep the printed numerical-height claim separate
+from localization in central boxes whose height is the spectral cutoff.

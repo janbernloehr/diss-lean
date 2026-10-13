@@ -1417,3 +1417,19 @@ norm factors are 2^(1/p) and 2 respectively. Finite-exponent mode series
 converge in the original norm; the infinity series is proved distributionally,
 without adding an infinity-norm convergence claim. This is separate from
 the ordinary-mode typo in (1.11).
+
+
+## Page 34: completed auxiliary maps and spectral scope
+
+The bounded extension and operator-invariance assertions are now proved in
+the original spaces without a new sign correction. Bounded interval
+completion is proved for 1 < p < ∞, while invariance and restricted pencils
+also cover p=1 for already Neumann-reflected potentials. The same ordinary
+Neumann-reflected potential is used for both auxiliary boundary signs.
+The original extension bound is sufficient; optimality is not claimed.
+
+The actual restricted spectrum is closed, discrete, finite in bounded
+regions, and equals the classical physical auxiliary eigenvalue set at p=2.
+These results do not settle Proposition 5.2's uniform multiplicities,
+reality, or printed norm-dependent height. In particular, they introduce
+no replacement for that numerical height claim.

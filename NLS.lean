@@ -3334,3 +3334,7 @@ import NLS.ZakharovShabat.SourceLemma5_1
 import NLS.ZakharovShabat.SourceAuxiliaryBoundaryFourier
 import NLS.ZakharovShabat.SourceAuxiliarySpaces
 import NLS.ZakharovShabat.SourceAuxiliarySeries
+import NLS.ZakharovShabat.SourceAuxiliaryExtension
+import NLS.ZakharovShabat.SourceAuxiliaryExtensionPhysical
+import NLS.ZakharovShabat.SourceAuxiliaryOperators
+import NLS.ZakharovShabat.SourceAuxiliarySpectra

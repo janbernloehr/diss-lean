@@ -1,6 +1,41 @@
 # Implementation plan
 
-## Current milestone: original auxiliary subspaces and mode decompositions
+## Current milestone: completed auxiliary extensions and actual spectra
+
+`SourceAuxiliaryExtension.lean` constructs the completed page-34 auxiliary
+reflection into the actual original zero-order weighted subspace for
+1 < p < ∞. The auxiliary phase is an isometry of the original input norm,
+so the ordinary interval-extension constant is a sufficient bound here too.
+The map preserves the norm at p=2, agrees with the physical finite Fourier
+integrals, is uniquely determined by those inputs, and is their norm limit.
+Its actual paired periodic distribution has the same coefficients and phases.
+
+`SourceAuxiliaryExtensionPhysical.lean` identifies this completion with
+the physical auxiliary reflection for every original interval L² input.
+Synthesis reconstructs the reflected function almost everywhere. On the
+auxiliary H¹ domain it agrees with the actual Sobolev extension from Lemma 5.1.
+No endpoint condition is needed for the L² identification.
+
+`SourceAuxiliaryOperators.lean` proves invariance of the original auxiliary
+domain under the actual operator. Both boundary signs use the same ordinary
+Neumann-reflected potential. It constructs the restricted inclusion, operator,
+and pencil z·inclusion − operator, and defines the resolvent set by actual
+pencil bijectivity. Exact continuous conjugacy identifies that set and its
+complement with the existing auxiliary realization. These restrictions also
+cover p=1 when the potential already has the required reflection symmetry;
+no bounded p=1 interval-extension map is asserted.
+
+`SourceAuxiliarySpectra.lean` proves that the actual original spectrum is
+closed, discrete, and finite in bounded regions. For physical L² potentials
+it equals the classical auxiliary interval eigenvalue set, including when
+the potential is supplied through the completed original interval map.
+Proposition 5.2's uniform counts, original Riesz ranks, full Jordan
+multiplicities, reality, and printed numerical height remain separate
+assertions. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6775 build jobs, the combined public examples, and the axiom audit of 30286 NLS declarations. The 21 existing warnings are unchanged; all four new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: original auxiliary subspaces and mode decompositions
 
 `SourceAuxiliarySpaces.lean` proves that the auxiliary D* and N* spaces
 are closed topological complements at every real Sobolev order. Finite

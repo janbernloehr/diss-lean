@@ -44703,3 +44703,90 @@ example (s : ℝ) : ¬ IsCompl (sourceWeightedAuxiliarySubspace (p := 3) .dirich
     (sourceWeightedAuxiliarySubspace .dirichlet s) := not_isCompl_sourceWeightedAuxiliaryDirichlet_self s
 
 end SourceAuxiliarySpaceChecks
+
+/-! Page 34: completed auxiliary maps, actual source pencils and physical spectra. -/
+section SourceAuxiliaryOperatorChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+open scoped ENNReal SchwartzMap
+
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤) (b : BoundaryCondition)
+    (F : CoeffPair p →L[ℂ] sourceWeightedAuxiliarySubspace (p := p) b 0)
+    (hF : ∀ a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ),
+      F ((CoeffPair.toMax p).symm (finitePairCoeffs a)) =
+        sourceAuxiliaryExtensionToBoundary b hp1 hp ((CoeffPair.toMax p).symm (finitePairCoeffs a))) :
+    F = sourceAuxiliaryExtensionToBoundary b hp1 hp := sourceAuxiliaryExtensionToBoundary_unique b hp1 hp F hF
+
+example (b : BoundaryCondition) (a : CoeffPair 2) :
+    ‖sourceAuxiliaryExtensionToBoundary b (by norm_num) (by simp) a‖ = ‖a‖ :=
+  norm_sourceAuxiliaryExtensionToBoundary_two b a
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    sourceCircleRepresentative (sourceCircleSynthesis (sourceBoundaryZeroWeightEquiv
+      (sourceAuxiliaryExtensionToBoundary b (by norm_num) (by simp) (sourceUnitIntervalL2Coefficients f hf)).val))
+      =ᵐ[volume.restrict (Ioc 0 2)] auxiliaryIntervalExtension b f :=
+  sourceAuxiliaryExtensionToBoundary_two_physical b f hf
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain b f)
+    (hL : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    auxiliarySourceExtension b (by norm_num) (by simp) (sourceUnitIntervalL2Coefficients f hL) =
+      sourceDomainInclusion (sourceClassicalAuxiliaryExtension b f hf) :=
+  auxiliarySourceExtension_two_classical b f hf hL
+
+example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) :
+    sourceAuxiliaryReflectedPotential (by norm_num) (by simp) (sourceUnitIntervalL2Coefficients φ hφ) =
+      sourceNeumannPotentialCoefficients φ hφ := sourceAuxiliaryReflectedPotential_ofFunction φ hφ
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (a : WeightedCoeffPair (Weight.sobolev 1) 1) (ha : a ∈ sourceWeightedAuxiliarySubspace b 1) :
+    sourceOperator (by simp) φ a ∈ auxiliarySourceSpace b := sourceOperator_mem_auxiliarySourceSpace b (by simp) φ hφ a ha
+
+example (b : BoundaryCondition) (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) :
+    sourceAuxiliarySpectrum b (by simp)
+      (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) (sourceUnitIntervalL2Coefficients φ hφ))
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) (sourceUnitIntervalL2Coefficients φ hφ)) =
+      classicalAuxiliaryEigenvalues b φ := sourceAuxiliarySpectrum_reflected_ofFunction b φ hφ
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example (b : BoundaryCondition) (a : CoeffPair 3) :
+    ‖sourceAuxiliaryExtensionToBoundary b (by norm_num) (by simp) a‖ ≤
+      intervalExtensionBound (p := 3) (by norm_num) (by simp) * ‖a‖ :=
+  norm_sourceAuxiliaryExtensionToBoundary_le b (by norm_num) (by simp) a
+
+example (b : BoundaryCondition) (a : CoeffPair 3) :
+    AnalyticAt ℂ (sourceAuxiliaryExtensionToBoundary b (by norm_num) (by simp)) a :=
+  analyticAt_sourceAuxiliaryExtensionToBoundary b (by norm_num) (by simp) a
+
+example (b : BoundaryCondition) (a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ)) :
+    let u := sourceAuxiliaryExtensionToBoundary b (by norm_num : (1 : ℝ≥0∞) < 3) (by simp)
+      ((CoeffPair.toMax 3).symm (finitePairCoeffs a))
+    (u.val.fst.val (-3), u.val.snd.val (-3)) =
+      (periodTwoCoefficient (fun x => (auxiliaryIntervalExtension b (BoundaryCondition.periodOnePair a) x).1) (-3),
+        periodTwoCoefficient (fun x => (auxiliaryIntervalExtension b (BoundaryCondition.periodOnePair a) x).2) (-3)) :=
+  sourceAuxiliaryExtensionToBoundary_finite_integrals b (by norm_num) (by simp) a (-3)
+
+example (b : BoundaryCondition) (a : CoeffPair 3) :
+    Filter.Tendsto (fun S : Finset ℤ => sourceAuxiliaryExtensionDistributionCLM b (by norm_num) (by simp)
+      (sourceIntervalInputTruncate S a)) Filter.atTop
+      (nhds (sourceAuxiliaryExtensionDistributionCLM b (by norm_num) (by simp) a)) :=
+  tendsto_sourceAuxiliaryExtensionDistribution_truncate b (by norm_num) (by simp) a
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (a : WeightedCoeffPair (Weight.sobolev 1) 3) (ha : a ∈ sourceWeightedAuxiliarySubspace b 1) :
+    sourceOperator (by simp) (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) φ) a ∈ auxiliarySourceSpace b :=
+  sourceAuxiliaryReflectedPotential_invariant b (by norm_num) (by simp) φ a ha
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann) (z : ℂ) :
+    sourceAuxiliaryPencil b (by simp) φ hφ z = z • sourceAuxiliaryInclusion b - sourceAuxiliaryOperator b (by simp) φ hφ := rfl
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann) (z : ℂ) :
+    z ∈ sourceAuxiliaryResolventSet b (by simp) φ hφ ↔ Function.Bijective (sourceAuxiliaryPencil b (by simp) φ hφ z) := Iff.rfl
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann) :
+    DiscreteTopology (sourceAuxiliarySpectrum b (by simp) φ hφ) := discreteTopology_sourceAuxiliarySpectrum b (by simp) φ hφ
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    {K : Set ℂ} (hK : Bornology.IsBounded K) : Set.Finite (sourceAuxiliarySpectrum b (by simp) φ hφ ∩ K) :=
+  finite_sourceAuxiliarySpectrum_inter b (by simp) φ hφ hK
+
+end SourceAuxiliaryOperatorChecks
