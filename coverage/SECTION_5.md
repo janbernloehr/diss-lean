@@ -200,12 +200,44 @@ p=1 ambient resolvent identity, actual original integral action, domain lifts,
 unchanged ranges, full Jordan rank sums, p=3 counted domain ranks,
 finite-rank idempotence, and the uniform original-input analytic family.
 
-## Next source assertions
+## Proposition 5.2: literal printed-height audit
 
-Audit the literal norm-dependent height in Proposition 5.2 for general
-complex input. The completed contour proof above uses height-N rectangles;
-these do not by themselves establish the source's prescribed-height box.
-The preceding real-type and zero-input statements retain their exact scope.
-Check phase transport of original interval potentials and their norms before
-transferring either the ordinary boundary height bounds or counterexamples.
-Once that assertion is resolved or explicitly refuted, continue to Section 6.
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Exact original potential phase norm | `sourceAuxiliaryPotentialPhase`, `sourceAuxiliaryPotentialPhase_eq_sourcePhase` | Linear isometry at every finite Banach exponent; agrees with the existing source phase. |
+| Finite Fourier input under inverse phase | `sourceAuxiliaryPotentialPhase_symm_ofFinsupp` | Explicit coefficients (−i a, i b); support remains finite. |
+| Actual completed spectral transport | `sourceAuxiliarySpectrum_eq_sourcePhaseBoundary` | Auxiliary restrictions at the original input equal ordinary restrictions at its phase rotation. |
+| Printed Hilbert height | `sourceAuxiliarySpectrum_abs_im_lt_printed_height_two` | Strict bound abs(Im z) < (1+8‖φ‖)² for both auxiliary spectra in the original input norm. |
+| Specified-height cluster identification | `sourceAuxiliaryHeightSpectrum_eq_central_of_bound` | Uses an actual spectral height bound and H≤N, rather than silently replacing the box. |
+| Literal p=2 counts and exhaustion | `sourceProposition5_2_two` | Both signs, one open convex connected neighborhood containing the input and zero, all larger cutoffs; original full Jordan multiplicities. |
+| Small original counterexample norm | `norm_sourceAuxiliaryHeightCounterexample_le` | At most 3/32 for every natural exponent P≥1024. |
+| Explicit all-cutoff height failure | `sourceAuxiliaryPrintedHeight_counterexample` | Actual auxiliary D* eigenvalue i·2^P outside both the printed box and all high quarter-pi disks, for every cutoff. |
+| Refuted unrestricted exhaustion | `not_sourceProposition5_2_printed_exhaustion` | The literal universal assertion fails already at p=1024. |
+
+These entries are in `SourceAuxiliaryPotentialPhase`,
+`SourceAuxiliaryPrintedHeight`, and `SourceAuxiliaryHeightCounterexample`.
+The counterexample concerns the actual original spectrum and norm and is a
+finite Fourier input. It does not refute high-disk simplicity or central
+counts in the proved height-N boxes, or the earlier real-type results.
+It is separate from the final 2N−1 count typo in the proof.
+
+Public checks include finite-input phase transport at p=1, the exact phase
+norm, strict p=2 height, the complete uniform literal-height counting theorem,
+the counterexample's original norm bound, its explicit spectral membership
+and escape for every large natural exponent and every cutoff, and the
+negation of universal printed exhaustion at p=1024.
+
+## Section 5 outcome and next source assertions
+
+The auxiliary extensions, spaces, physical correspondence, actual operators,
+Jordan counts, reality, and actual contour-rank proof have been audited in
+the original norms. The ordinary-mode typo in (1.11), repeated D* summand,
+and final 2N−1 count are formally corrected. The printed numerical height
+is proved at p=2 and refuted as an assertion for every 1<p<∞. Its optimal
+validity range is not claimed, and no replacement bound is adopted.
+
+Continue with Section 6, beginning with Proposition 6.1's original-norm
+quantitative eigenvalue-displacement estimate and its locally uniform cutoff.
+Keep the subsequent weighted-gap assertions, four boundary asymptotics,
+and midpoint/gap corollaries separate until their exact formulations are
+matched to the existing coefficient and physical constructions.

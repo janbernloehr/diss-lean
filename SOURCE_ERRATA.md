@@ -1469,3 +1469,34 @@ These central contour theorems use rectangles of height N. They do not
 settle the separate norm-dependent height printed in Proposition 5.2 for
 general complex input. Real-type prescribed-height results and the literal
 zero-input count counterexample from the previous milestone remain valid.
+
+
+## Proposition 5.2: unrestricted printed auxiliary height is false (page 34)
+
+The printed central box has imaginary height (1+8‖φ‖_p)^p for every
+1<p<∞. The exhaustive localization assertion fails with this height for
+general complex potentials, already at p=1024.
+
+`sourceAuxiliaryPrintedHeight_counterexample` gives, for every natural
+P≥1024, the inverse phase rotation of the finite triangular Fourier input.
+`sourceAuxiliaryPotentialPhase_symm_ofFinsupp` identifies its finite
+coefficients explicitly, and `norm_sourceAuxiliaryHeightCounterexample_le`
+bounds its original component-sum norm by 3/32. Its actual auxiliary D*
+spectrum contains i·2^P. The printed height is at most (7/4)^P, which is
+strictly smaller, and this eigenvalue also lies outside every quarter-pi disk
+about a real free frequency. Increasing the real cutoff N cannot repair
+exhaustion. `not_sourceProposition5_2_printed_exhaustion` states the formal
+negation of universal exhaustion at p=1024.
+
+The exact source phase is an isometry, and the completed Neumann reflection
+is proved to correspond to the ordinary Dirichlet reflection at the rotated
+input. Thus this transfers the established boundary counterexample without
+changing the norm, potential realization, or meaning of spectrum.
+
+At p=2, `sourceProposition5_2_two` proves the unchanged printed height,
+uniform full algebraic counts, high-disk simplicity, and exhaustive
+localization. The height-N counts for 1<p<∞ and original contour ranks remain valid,
+as do prescribed-height results for real-type input.
+No replacement numerical height is adopted, and the optimal exponent range
+for the printed formula is not asserted. This failure is distinct from
+the final 2N−1 count typo on page 35.

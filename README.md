@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the actual auxiliary Cauchy–Riesz restrictions now have
-proved domain lifts, full Jordan rank formulas, and uniform analytic families
-in the original coefficient norms. Central rank is 2N+1 and each sufficiently
-distant disk has rank one; restricting inputs to the one-derivative domain
-preserves these ranges and ranks.
-[The Section 5 audit](coverage/SECTION_5.md) records the contour proof and
-distinguishes height-N rectangles from the printed norm-dependent height.
-The latter remains the next audit for general complex input; the dissertation remains incomplete.
+Latest milestone: Proposition 5.2's printed auxiliary height and counts are
+proved unchanged at p=2. Its unrestricted exponent assertion is formally
+refuted: a finite Fourier input of original norm at most 3/32 has an auxiliary
+eigenvalue outside every printed cutoff box at p=1024.
+[The Section 5 audit](coverage/SECTION_5.md) separates this height failure
+from the valid general height-N counts, contour ranks, and real-type results.
+Section 6's quantitative eigenvalue asymptotics are next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

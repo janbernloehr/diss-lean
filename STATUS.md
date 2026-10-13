@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: actual auxiliary contour ranks and domain lifts
+## Current milestone: Proposition 5.2 printed-height audit
+
+`SourceAuxiliaryPotentialPhase.lean` upgrades the existing original-input
+phase (iφ₋,−iφ₊) to an exact linear isometry at every finite Banach exponent.
+Its inverse preserves finite Fourier input, with explicit component phases.
+The actual completed auxiliary spectrum equals the ordinary boundary spectrum
+at the rotated original input, retaining the precise source norm.
+
+`SourceAuxiliaryPrintedHeight.lean` proves the unchanged printed height at
+p=2 for both auxiliary conditions. One open convex connected neighborhood
+containing the input and zero supports all larger cutoffs, central algebraic
+count 2N+1 in the literal box of height (1+8‖ψ‖)², one simple eigenvalue in
+each high disk, and exhaustive localization. Multiplicities remain the
+dimensions of full original auxiliary Jordan root spaces. The earlier reality
+and actual contour-rank results retain their separate proved scope.
+
+`SourceAuxiliaryHeightCounterexample.lean` refutes the unrestricted printed
+height assertion. For every natural exponent P≥1024, an explicit inverse-phase
+rotation of the finite triangular input has original norm at most 3/32 and
+an actual auxiliary D* eigenvalue i·2^P. That value lies outside the printed
+height box and all quarter-pi high disks, for every cutoff N. The universal
+exhaustion assertion is therefore formally false already at p=1024.
+
+This is a height failure for complex input, distinct from the page-35
+2N−1 count typo. No replacement numerical bound is adopted. The height-N counting theorem for 1<p<∞, original contour ranks, and
+real-type prescribed-height results remain valid. The optimal validity range for the
+printed formula is not claimed. Next: Section 6, starting with the original-
+norm quantitative eigenvalue-displacement assertion of Proposition 6.1.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6788 build jobs, the combined public examples, and the axiom audit of 30472 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: actual auxiliary contour ranks and domain lifts
 
 `AuxiliaryContourPhase.lean` proves exact conjugacy of the ambient resolvent
 under the auxiliary phase, including its zero extension off the resolvent

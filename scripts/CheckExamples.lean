@@ -44941,3 +44941,63 @@ example (φ : CoeffPair 3) :
   exists_uniform_sourceAuxiliaryContourData (by norm_num) (by simp) φ
 
 end SourceAuxiliaryContourChecks
+
+/-! Proposition 5.2: literal printed height, valid Hilbert counts, and original-norm counterexample. -/
+section SourceAuxiliaryHeightChecks
+open NLS NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition
+open scoped ENNReal
+
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ‖sourceAuxiliaryPotentialPhase hp φ‖ = ‖φ‖ := (sourceAuxiliaryPotentialPhase hp).norm_map φ
+
+example (a b : ℤ →₀ ℂ) :
+    (sourceAuxiliaryPotentialPhase (p := 1) (by simp)).symm (CoeffPair.ofFinsupp (a,b)) =
+      CoeffPair.ofFinsupp (-Complex.I • a, Complex.I • b) := sourceAuxiliaryPotentialPhase_symm_ofFinsupp (by simp) a b
+
+example (b : BoundaryCondition) (φ : CoeffPair 2) {z : ℂ}
+    (hz : z ∈ sourceAuxiliarySpectrum b (by simp)
+      (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) φ)
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) φ)) : |z.im| < (1+8*‖φ‖)^2 :=
+  sourceAuxiliarySpectrum_abs_im_lt_printed_height_two b φ hz
+
+example (φ : CoeffPair 2) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 2), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        SourceAuxiliaryCountingData (by simp) (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ)
+          (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) ψ) N ∧
+        ∀ b : BoundaryCondition,
+          (∑ z ∈ sourceAuxiliaryHeightSpectrum b (by simp)
+            (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ)
+            (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) ψ) N ((1+8*‖ψ‖)^2),
+            sourceAuxiliaryAlgebraicMultiplicity b (by simp)
+              (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ)
+              (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) ψ) z) = 2*N+1 ∧
+          sourceAuxiliarySpectrum b (by simp)
+            (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ)
+            (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) ψ) ⊆
+              heightSpectralBox N ((1+8*‖ψ‖)^2) ∪ highSpectralDisks N (Real.pi/4) := sourceProposition5_2_two φ
+
+example (P : ℕ) [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 1024 ≤ P) :
+    ‖(sourceAuxiliaryPotentialPhase (ENNReal.natCast_ne_top P)).symm
+      (CoeffPair.ofFinsupp (p := (P : ℝ≥0∞)) (triangularNormalizedCoefficients P,0))‖ ≤ 3/32 :=
+  norm_sourceAuxiliaryHeightCounterexample_le hP
+
+example (P : ℕ) [Fact (1 ≤ (P : ℝ≥0∞))] (hP : 1024 ≤ P) (hp1 : 1 < (P : ℝ≥0∞)) (N : ℕ) :
+    let φ := (sourceAuxiliaryPotentialPhase (ENNReal.natCast_ne_top P)).symm
+      (CoeffPair.ofFinsupp (p := (P : ℝ≥0∞)) (triangularNormalizedCoefficients P,0))
+    ((2 : ℂ)^P)*Complex.I ∈ sourceAuxiliarySpectrum .dirichlet (ENNReal.natCast_ne_top P)
+      (sourceAuxiliaryReflectedPotential hp1 (ENNReal.natCast_ne_top P) φ)
+      (sourceAuxiliaryReflectedPotential_mem hp1 (ENNReal.natCast_ne_top P) φ) ∧
+    ((2 : ℂ)^P)*Complex.I ∉ heightSpectralBox N ((1+8*‖φ‖)^((P : ℝ≥0∞).toReal)) ∪
+      highSpectralDisks N (Real.pi/4) := sourceAuxiliaryPrintedHeight_counterexample hP hp1 N
+
+local instance : Fact (1 ≤ (1024 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example : ¬ ∀ φ : CoeffPair 1024, ∃ N : ℕ,
+    sourceAuxiliarySpectrum .dirichlet (by norm_num)
+      (sourceAuxiliaryReflectedPotential (by norm_num) (by norm_num) φ)
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by norm_num) φ) ⊆
+    heightSpectralBox N ((1+8*‖φ‖)^((1024 : ℝ≥0∞).toReal)) ∪ highSpectralDisks N (Real.pi/4) :=
+  not_sourceProposition5_2_printed_exhaustion
+
+end SourceAuxiliaryHeightChecks
