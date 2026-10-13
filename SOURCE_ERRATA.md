@@ -1433,3 +1433,25 @@ regions, and equals the classical physical auxiliary eigenvalue set at p=2.
 These results do not settle Proposition 5.2's uniform multiplicities,
 reality, or printed norm-dependent height. In particular, they introduce
 no replacement for that numerical height claim.
+
+
+## Proposition 5.2 proof: auxiliary N count 2N−1 on page 35
+
+The proof's final paragraph prints 2N−1 auxiliary N eigenvalues in the
+central box. Proposition 5.2(ii) and the preceding zero-potential rank
+display on page 34 both give 2N+1 for each auxiliary boundary condition.
+The final N count must also be 2N+1.
+
+`exists_sourceAuxiliaryZero_printedBox_count` formally refutes the final
+2N−1 count at zero original input, for every sufficiently large cutoff.
+The theorem uses the literal printed height (1+8‖0‖)^p = 1, not just the
+separate height-N box. Reality proves that these boxes contain the same
+free central cluster. The count is the sum of dimensions of full original
+auxiliary Jordan root spaces. The physical p=2 multiplicity correspondence
+is proved independently through actual physical root spaces.
+
+The general original counting theorem proves 2N+1 in height-N boxes.
+For real-type input any nonnegative central height gives the same cluster
+and exhaustive localization. The norm-dependent printed height for general
+complex input remains a distinct unresolved source claim here; neither
+the count correction nor the reality result silently changes that bound.

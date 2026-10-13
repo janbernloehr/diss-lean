@@ -143,11 +143,45 @@ bounds and analyticity, finite-input Fourier integrals at negative frequency,
 distributional limits, literal pencil and resolvent definitions, discreteness,
 bounded finiteness, and classical physical spectrum identification.
 
+## Proposition 5.2: original Jordan multiplicities, counts, and reality
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual Jordan recursion | `mem_sourceAuxiliaryRootSpace_succ`, `sourceAuxiliaryRootSpace_succ` | Original auxiliary domain, pencil, and inclusion at every step; finite p including 1. |
+| Full original root space | `mem_sourceAuxiliaryRootSpaceTop`, `sourceAuxiliaryRootSpaceTopEquiv` | All finite chains; continuous equivalence with the auxiliary coefficient root space. |
+| Finite-dimensional stabilization | `finiteDimensional_sourceAuxiliaryRootSpaceTop`, `exists_sourceAuxiliaryRootSpace_eq_top` | Every spectral parameter, including outside the spectrum. |
+| Original algebraic multiplicity | `sourceAuxiliaryAlgebraicMultiplicity`, `sourceAuxiliaryAlgebraicMultiplicity_eq`, `sourceAuxiliaryAlgebraicMultiplicity_pos_iff` | Defined as the dimension of the actual full original root space, positive precisely on the restricted spectrum. |
+| Actual finite spectral clusters | `sourceAuxiliaryCentralSpectrum`, `sourceAuxiliaryEnclosedSpectrum`, membership theorems | Finite sets from the actual restricted spectrum intersected with the geometric regions. |
+| Uniform original counts | `exists_uniform_sourceAuxiliaryCountingData` | One open convex connected original-input neighborhood containing the input and zero; both signs, all larger cutoffs, 1 < p < ∞. |
+| Central algebraic count | `SourceAuxiliaryCountingData.central_multiplicity` | 2N+1 for each auxiliary condition, in the height-N central box. |
+| High-disk simplicity | `SourceAuxiliaryCountingData.disk_multiplicity`, `SourceAuxiliaryCountingData.disk_unique_simple` | Exactly one spectral point in each high quarter-pi disk, full original algebraic multiplicity one. |
+| Exhaustive localization | `SourceAuxiliaryCountingData.spectrum_subset` | No further spectral values outside the height-N box and high disks. |
+| Original reflected real type | `isRealType_sourceAuxiliaryReflectedPotential` | Common completed Neumann reflection preserves real type. |
+| Proposition 5.2(iv) | `sourceAuxiliarySpectrum_im_eq_zero_of_realType`, `sourceAuxiliaryReflectedSpectrum_im_eq_zero_of_realType` | Both actual original auxiliary spectra are real for real-type input. |
+| Physical Jordan multiplicity | `sourceAuxiliaryAlgebraicMultiplicity_eq_classical`, `sourceAuxiliaryAlgebraicMultiplicity_reflected_ofFunction` | Equality with the independently defined full physical auxiliary root-space dimensions, for every interval L² potential. |
+| Prescribed heights for real spectra | `sourceAuxiliaryHeightSpectrum_eq_central_of_realType` | Every nonnegative height gives the same central cluster. |
+| Real-type counts and localization at prescribed height | `SourceAuxiliaryCountingData.central_height_multiplicity_of_realType`, `SourceAuxiliaryCountingData.spectrum_subset_height_of_realType` | Includes the positive printed height; no analogous claim for arbitrary complex potentials. |
+| Final proof count discrepancy | `exists_sourceAuxiliaryZero_printedBox_count` | The literal printed zero-input box has count 2N+1, not 2N−1, for every sufficiently large cutoff. |
+
+These entries are in `SourceAuxiliaryRootSpaces`, `SourceAuxiliaryReality`,
+`SourceAuxiliaryCounting`, `SourceAuxiliaryPhysicalMultiplicity`, and
+`SourceAuxiliaryHeightClusters`. Counts measure full Jordan multiplicities,
+not just eigenspace dimensions or distinct spectral values. Public checks
+exercise p=1 chain recursion and stabilization, p=3 uniform neighborhoods,
+high-disk uniqueness and full multiplicity, central sums, reality, even
+height-zero real clusters, physical multiplicity equality, and the literal
+printed-box counterexample.
+
 ## Next source assertions
 
-Audit Proposition 5.2's uniform counts and reality using actual original
-restricted contour projections, domain lifts, and full Jordan root spaces.
-The existing closed/discrete/finite-in-bounded-regions statements do not
-by themselves prove the central count, high-frequency simplicity, or
-exhaustive localization. Keep the printed numerical-height claim separate
-from localization in central boxes whose height is the spectral cutoff.
+Audit the proof's actual original auxiliary Cauchy–Riesz restrictions,
+including preservation by the ambient circle and rectangle integrals,
+one-derivative domain lifts, unchanged ranges on domain input, ranks, and
+analytic dependence on the original input. The counting statement above
+follows from the established chain equivalences and auxiliary counts; these
+additional identities concern the specific projectors in the printed proof.
+
+The printed numerical height for general complex input remains separate.
+The height-N localization is not a replacement for that assertion. The
+prescribed-height results in this milestone require real type, apart from
+the explicit zero-potential counterexample to the final count typo.

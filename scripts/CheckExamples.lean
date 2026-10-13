@@ -44790,3 +44790,81 @@ example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryB
   finite_sourceAuxiliarySpectrum_inter b (by simp) φ hφ hK
 
 end SourceAuxiliaryOperatorChecks
+
+/-! Proposition 5.2: actual original Jordan counts, reality, and printed-count discrepancy. -/
+section SourceAuxiliaryCountingChecks
+open NLS NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition
+open scoped ENNReal
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (z : ℂ) (n : ℕ) (x : auxiliarySourceSpace (p := 1) b) :
+    x ∈ sourceAuxiliaryRootSpace b (by simp) φ hφ z (n+1) ↔
+      ∃ a : sourceWeightedAuxiliarySubspace (p := 1) b 1, sourceAuxiliaryInclusion b a = x ∧
+        sourceAuxiliaryPencil b (by simp) φ hφ z a ∈ sourceAuxiliaryRootSpace b (by simp) φ hφ z n :=
+  mem_sourceAuxiliaryRootSpace_succ b (by simp) φ hφ z n x
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann) (z : ℂ) :
+    ∃ n, sourceAuxiliaryRootSpace b (by simp) φ hφ z n = sourceAuxiliaryRootSpaceTop b (by simp) φ hφ z :=
+  exists_sourceAuxiliaryRootSpace_eq_top b (by simp) φ hφ z
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann) (z : ℂ) :
+    FiniteDimensional ℂ (sourceAuxiliaryRootSpaceTop b (by simp) φ hφ z) :=
+  finiteDimensional_sourceAuxiliaryRootSpaceTop b (by simp) φ hφ z
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann) (z : ℂ) :
+    0 < sourceAuxiliaryAlgebraicMultiplicity b (by simp) φ hφ z ↔ z ∈ sourceAuxiliarySpectrum b (by simp) φ hφ :=
+  sourceAuxiliaryAlgebraicMultiplicity_pos_iff b (by simp) φ hφ z
+
+example (b : BoundaryCondition) (u : IntervalPairL2) (z : ℂ) :
+    sourceAuxiliaryAlgebraicMultiplicity b (by simp)
+      (sourceAuxiliaryReflectedPotential (by norm_num) (by simp)
+        (sourceUnitIntervalL2Coefficients (intervalL2Representative u) (memLp_intervalL2Representative u)))
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) _) z =
+        classicalAuxiliaryAlgebraicMultiplicity b u z :=
+  sourceAuxiliaryAlgebraicMultiplicity_reflected_ofFunction b u z
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example (φ : CoeffPair 3) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 3), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N → SourceAuxiliaryCountingData (by simp)
+        (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) ψ)
+        (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) ψ) N :=
+  exists_uniform_sourceAuxiliaryCountingData (by norm_num) (by simp) φ
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (N : ℕ) (h : SourceAuxiliaryCountingData (by simp) φ hφ N) (n : ℤ) (hn : N < n.natAbs) :
+    ∃ z : ℂ, z ∈ sourceAuxiliarySpectrum b (by simp) φ hφ ∧ z ∈ Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) ∧
+      sourceAuxiliaryAlgebraicMultiplicity b (by simp) φ hφ z = 1 ∧
+      ∀ w ∈ sourceAuxiliarySpectrum b (by simp) φ hφ, w ∈ Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) → w = z :=
+  h.disk_unique_simple b n hn
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (N : ℕ) (h : SourceAuxiliaryCountingData (by simp) φ hφ N) :
+    (∑ z ∈ sourceAuxiliaryCentralSpectrum b (by simp) φ hφ N,
+      sourceAuxiliaryAlgebraicMultiplicity b (by simp) φ hφ z) = 2*N+1 := h.central_multiplicity b
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hr : IsRealType (CoeffPair.toMax 3 φ)) (z : ℂ)
+    (hz : z ∈ sourceAuxiliarySpectrum b (by simp) (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) φ)
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) φ)) : z.im = 0 :=
+  sourceAuxiliaryReflectedSpectrum_im_eq_zero_of_realType b (by norm_num) (by simp) φ hr z hz
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .neumann)
+    (hr : IsRealType (CoeffPair.toMax 3 φ)) (N : ℕ) (h : SourceAuxiliaryCountingData (by simp) φ hφ N) :
+    (∑ z ∈ sourceAuxiliaryHeightSpectrum b (by simp) φ hφ N 0,
+      sourceAuxiliaryAlgebraicMultiplicity b (by simp) φ hφ z) = 2*N+1 :=
+  h.central_height_multiplicity_of_realType hr b (by norm_num)
+
+example : ∃ N₀ : ℕ, 0 < N₀ ∧ ∀ N : ℕ, N₀ ≤ N →
+    let S := sourceAuxiliaryHeightSpectrum .neumann (by simp)
+      (sourceAuxiliaryReflectedPotential (by norm_num : (1 : ℝ≥0∞) < 3) (by simp) 0)
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) 0) N ((1+8*‖(0 : CoeffPair 3)‖)^(3 : ℝ))
+    (∑ z ∈ S, sourceAuxiliaryAlgebraicMultiplicity (p := 3) .neumann (by simp)
+      (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) 0)
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) 0) z) = 2*N+1 ∧
+    (∑ z ∈ S, sourceAuxiliaryAlgebraicMultiplicity (p := 3) .neumann (by simp)
+      (sourceAuxiliaryReflectedPotential (by norm_num) (by simp) 0)
+      (sourceAuxiliaryReflectedPotential_mem (by norm_num) (by simp) 0) z) ≠ 2*N-1 := by
+  simpa using exists_sourceAuxiliaryZero_printedBox_count (p := 3) (by norm_num) (by simp)
+
+end SourceAuxiliaryCountingChecks

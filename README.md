@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the completed auxiliary reflections, restricted operators,
-and spectra are proved in the original coefficient norms. The completed maps
-reconstruct the physical L² reflections, and the restricted spectra equal
-the classical auxiliary eigenvalue sets. The spectra are closed and discrete,
-with finitely many values in bounded regions.
-[The Section 5 audit](coverage/SECTION_5.md) records the precise exponent ranges.
-Proposition 5.2's counting and reality assertions are next; the dissertation remains incomplete.
+Latest milestone: original auxiliary Jordan chains, uniform algebraic counts,
+and reality are proved. Both auxiliary problems have central multiplicity
+2N+1 and one simple eigenvalue in each sufficiently distant disk, uniformly
+near each input. Physical L² Jordan multiplicities agree with these counts.
+A formal zero-potential counterexample corrects the final 2N−1 count on page 35.
+[The Section 5 audit](coverage/SECTION_5.md) separates the proved height-N
+localization from the unresolved printed height for general complex input.
+The contour-rank proof audit is next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

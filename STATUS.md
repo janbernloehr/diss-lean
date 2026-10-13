@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: completed auxiliary extensions and actual spectra
+## Current milestone: original auxiliary Jordan counts and reality
+
+`SourceAuxiliaryRootSpaces.lean` identifies finite and full Jordan chains
+of the actual original auxiliary pencil. The exact recursion uses the
+original one-derivative domain and inclusion at every step. The full root
+space is finite-dimensional and stabilizes at a finite level; its dimension
+defines algebraic multiplicity and is positive exactly on the actual spectrum.
+A continuous linear equivalence proves agreement with the existing auxiliary
+coefficient realization, including every generalized eigenvector.
+
+`SourceAuxiliaryCounting.lean` proves uniform counts in the original spaces.
+One open convex connected neighborhood containing the original interval input
+and zero supports both auxiliary signs and every sufficiently large cutoff.
+Each high disk contains exactly one spectral value of algebraic multiplicity
+one. The central cluster has total multiplicity 2N+1 for both signs, and these
+regions exhaust the spectrum. The central box here has height N.
+
+`SourceAuxiliaryReality.lean` proves Proposition 5.2(iv): the completed common
+Neumann potential reflection preserves real type, and every eigenvalue of
+either actual original auxiliary restriction is real for real-type input.
+`SourceAuxiliaryPhysicalMultiplicity.lean` proves that at p=2 the original
+full-chain multiplicities equal the independently defined physical auxiliary
+Jordan multiplicities, also through the completed interval input map.
+
+`SourceAuxiliaryHeightClusters.lean` identifies the central cluster of a
+real-type potential at every nonnegative height, with its count and exhaustive
+localization. In particular, a formal zero-input counterexample refutes the
+proof's final 2N−1 auxiliary N count on page 35 in the literal printed box;
+the count is 2N+1, as Proposition 5.2 itself states.
+
+These results do not prove the printed norm-dependent height for general
+complex input. The original restrictions of the actual Cauchy–Riesz contour
+integrals, their domain lifts, ranks, and analytic dependence remain the next
+proof audit. The bounded input completion and uniform source neighborhoods
+require 1 < p < ∞; already-reflected root spaces and reality also include p=1.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6780 build jobs, the combined public examples, and the axiom audit of 30355 NLS declarations. The 21 existing warnings are unchanged; all five new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: completed auxiliary extensions and actual spectra
 
 `SourceAuxiliaryExtension.lean` constructs the completed page-34 auxiliary
 reflection into the actual original zero-order weighted subspace for

@@ -3338,3 +3338,8 @@ import NLS.ZakharovShabat.SourceAuxiliaryExtension
 import NLS.ZakharovShabat.SourceAuxiliaryExtensionPhysical
 import NLS.ZakharovShabat.SourceAuxiliaryOperators
 import NLS.ZakharovShabat.SourceAuxiliarySpectra
+import NLS.ZakharovShabat.SourceAuxiliaryRootSpaces
+import NLS.ZakharovShabat.SourceAuxiliaryReality
+import NLS.ZakharovShabat.SourceAuxiliaryCounting
+import NLS.ZakharovShabat.SourceAuxiliaryPhysicalMultiplicity
+import NLS.ZakharovShabat.SourceAuxiliaryHeightClusters
