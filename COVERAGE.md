@@ -3736,3 +3736,37 @@ consequence, with the source tail, shift, and endpoint conventions audited.
 The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6802 build jobs, the combined public examples, and the axiom audit of 30640 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Section 6 audit: Lemma 6.5 and compatible original-source inverses
+
+`SourceLemma6_5.lean` identifies the conjugated square norm with the exact
+operator norm induced by the source's n-shifted pair norm. The displayed
+estimate holds for every 1≤p<∞, with tail |k|≥|n| including its boundary and
+the factor 1/w_n. The constant depends only on p. No normalized-weight
+assumption or restriction away from the free strip center is added.
+
+The original unweighted operator `sourcePotentialInverse` is exactly
+Φ A_λ⁻¹ Q_n on the original component-sum coefficient space. Unit weighting
+preserves its squared operator norm exactly. One open convex neighborhood
+containing the input and zero, and one positive cutoff, give both printed
+half-contractions for every sufficiently large signed frequency and every
+parameter in the entire closed strip.
+
+`SourceComplementaryCorrection.lean` constructs the original-source inverse
+of Id−T_n through (Id+T_n)(Id−T_n²)⁻¹. The even inverse is a convergent series
+in the original operator norm. The correction has both inverse identities
+and solves every right-hand-side equation uniquely. On weighted inputs it
+agrees with the existing weighted correction. A locally uniform theorem
+constructs both compatible bounded inverses on the same neighborhood and
+all sufficiently distant closed strips. Only the square needs to be small.
+
+Public checks cover the induced-norm characterization, exact operator
+identity and norm transport, weighted inverse compatibility, tail-boundary
+coefficients, and endpoint half-contraction and two-sided inversion. A
+concrete p=1 check uses constant weight two, index −3, and λ=−3π.
+
+Next: the source Q-equation solution and Lemma 6.6's two-dimensional
+resonant determinant criterion, including actual domain reconstruction.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6804 build jobs, the combined public examples, and the axiom audit of 30668 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

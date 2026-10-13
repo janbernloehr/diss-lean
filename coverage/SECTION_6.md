@@ -237,10 +237,51 @@ shifted coefficient formula, both endpoints, and the resonant free center.
 The p=1 check with constant weight two also verifies that no extra w_0=1
 hypothesis was introduced. No correction to Lemma 6.4 is required.
 
+## Lemma 6.5: the exact induced norm and common contraction threshold
+
+`sourceSquareNorm_le_iff` characterizes the norm of the conjugated square
+by its bound on every input measured in the source's n-shifted pair norm.
+`sourceLemma6_5` proves the displayed estimate
+
+```
+‖T_n²‖_(w,p;n) ≤ C_p ‖φ‖_(w,p)
+  [ ‖φ‖_(w,p)/(1+|n|)^(1/p) + ‖R_n φ‖_(w,p)/w_n ].
+```
+
+The range is every 1≤p<∞. The tail retains |k|≥|n|, including equality;
+there is no half-cutoff in this lemma. The estimate applies to every signed
+n and the entire closed U_n, including λ=nπ, for the original source weight
+class. It requires no w_0=1 normalization. No source correction is needed.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Exact induced shifted norm | `sourceSquareNorm_le_iff` | Equivalent to the input-wise estimate for every nonnegative proposed bound. |
+| Original unweighted operator | `sourcePotentialInverse_operator` | Exactly the actual source potential part applied to the complementary domain inverse, for arbitrary original input. |
+| Constant-free norm identification | `sourceSquareNorm_one`, `sourcePotentialInverse_square_norm` | Unit shifts and unit weighting preserve the squared operator norm. |
+| Same weighted and original operator | `sourcePotentialInverse_weightedInput` | Every weighted input, preserving all raw coefficients. |
+| Common local half-contraction | `sourceLemma6_5_uniform_half` | One open convex neighborhood containing φ and zero, one positive cutoff, both norms, all sufficiently large signed n and all of U_n. |
+
+## Following paragraph: compatible squared Neumann inverses
+
+`sourceComplementaryCorrection` constructs (Id−T_n)⁻¹ on the original
+unweighted pair space from smallness of its square. The formula theorem
+identifies (Id+T_n)(Id−T_n²)⁻¹; the even inverse has a proved convergent
+operator-norm series. The left and right inverse identities and uniqueness
+hold for every right-hand side. `sourceComplementaryCorrection_weightedInput`
+shows that the weighted inverse restricts to the same original solution.
+`exists_uniform_sourceComplementaryCorrection` constructs both compatible
+bounded inverses on one neighborhood and every sufficiently distant closed
+strip. It does not assume that the norm of T_n itself is less than one.
+
+The public API checks include p=1, constant weight two, index −3 and its
+free center, exact boundary retention in both Fourier components, and
+weighted/unweighted compatibility. The actual Q-solution and resonant
+determinant reduction are the next source-level audit step.
+
 ## Remaining source assertions
 
-Continue with Lemma 6.5's squared-operator estimate and the locally uniform
-contraction consequence, retaining the exact source tail, signed shift, and
-endpoint assumptions. Sharper ceiling-cutoff versions of the corrected
-Propositions 6.1/6.3 estimates remain unproved. Existing later results and the
-candidate-label inventory do not certify this section or the dissertation complete.
+Continue with the Q-equation solution and Lemma 6.6, identifying the actual
+original differential-domain reconstruction and two-dimensional determinant
+criterion. Sharper ceiling-cutoff versions of the corrected Propositions
+6.1/6.3 estimates remain unproved. Existing later results and the candidate-label
+inventory do not certify this section or the dissertation complete.

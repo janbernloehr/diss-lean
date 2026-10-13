@@ -45396,3 +45396,83 @@ example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2)
 
 end
 end SourceLemma64Checks
+
+namespace SourceLemma65Checks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- The boundary of the tail is retained, in both physical component orientations.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) (n : ℤ) :
+    (weightedPairFourierTail w.toWeight n.natAbs φ).fst.val (-n) = φ.fst.val (-n) ∧
+      (weightedPairFourierTail w.toWeight n.natAbs φ).snd.val n = φ.snd.val n := by simp
+
+-- The endpoint, a non-normalized weight, a negative strip, and its central point are all allowed.
+example (φ : WeightedCoeffPair (SpectralWeight.constant 2 (by norm_num)).toWeight 1) :
+    ‖weightedPotentialSquareInShift (by norm_num) (SpectralWeight.constant 2 (by norm_num))
+        φ (-3) ((Real.pi : ℂ)*((-3 : ℤ) : ℂ)) (center_mem_resonantStrip (-3))‖ ≤
+      weightedDoubleConstant (p := 1) (by norm_num) * ‖φ‖ *
+        (‖φ‖ / 4 + ‖weightedPairFourierTail (SpectralWeight.constant 2 (by norm_num)).toWeight 3 φ‖ / 2) := by
+  simpa [show (1:ℝ)+3=4 by norm_num] using sourceLemma6_5 (by norm_num) (SpectralWeight.constant 2 (by norm_num))
+    φ (-3) _ (center_mem_resonantStrip (-3))
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+example (hp : p ≠ ⊤) (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) {C : ℝ} (hC : 0 ≤ C) :
+    ‖weightedPotentialSquareInShift hp w φ n z hz‖ ≤ C ↔
+      ∀ f, w.shiftedPairNorm n (weightedPotentialInverse hp w φ n z hz
+        (weightedPotentialInverse hp w φ n z hz f)) ≤ C * w.shiftedPairNorm n f :=
+  sourceSquareNorm_le_iff hp w φ n z hz hC
+
+example (hp : p ≠ ⊤) (φ f : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    sourcePotentialInverse hp φ n z hz f =
+      sourceOperator hp φ
+        (sourceWeightedDomainInput SpectralWeight.one
+          (complementaryFreeDomainInverse SpectralWeight.one.toWeight n z hz (unitWeightedPairEquiv f))) -
+      sourceOperator hp 0
+        (sourceWeightedDomainInput SpectralWeight.one
+          (complementaryFreeDomainInverse SpectralWeight.one.toWeight n z hz (unitWeightedPairEquiv f))) :=
+  sourcePotentialInverse_operator hp φ f n z hz
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    ‖(sourcePotentialInverse hp φ n z hz).comp (sourcePotentialInverse hp φ n z hz)‖ =
+      ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ :=
+  sourcePotentialInverse_square_norm hp φ n z hz
+
+example (hp : p ≠ ⊤) (w : SpectralWeight) (φ a : WeightedCoeffPair w.toWeight p)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (hw : ‖weightedPotentialSquareInShift hp w φ n z hz‖ < 1)
+    (h : ‖(sourcePotentialInverse hp (sourceWeightedPeriodTwoInput w φ) n z hz).comp
+      (sourcePotentialInverse hp (sourceWeightedPeriodTwoInput w φ) n z hz)‖ < 1) :
+    sourceWeightedPeriodTwoInput w (weightedCorrection hp w φ n z hz hw a) =
+      sourceComplementaryCorrection hp (sourceWeightedPeriodTwoInput w φ) n z hz h
+        (sourceWeightedPeriodTwoInput w a) :=
+  sourceComplementaryCorrection_weightedInput hp w φ n z hz hw h a
+end
+
+-- One neighborhood and cutoff work simultaneously for the endpoint and every closed strip.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight 1),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      (∀ ψ ∈ U, ‖ψ‖ < ‖φ‖ + 1) ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs → ∀ z : ℂ, ∀ hz : z ∈ resonantStrip n,
+        ‖weightedPotentialSquareInShift (by norm_num) w ψ n z hz‖ ≤ 1 / 2 ∧
+        ‖(sourcePotentialInverse (by norm_num) (sourceWeightedPeriodTwoInput w ψ) n z hz).comp
+          (sourcePotentialInverse (by norm_num) (sourceWeightedPeriodTwoInput w ψ) n z hz)‖ ≤ 1 / 2 :=
+  sourceLemma6_5_uniform_half (by norm_num) w φ
+
+-- No smallness condition on T itself is required for the two-sided inverse.
+example (φ a : CoeffPair 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖(sourcePotentialInverse (by norm_num) φ n z hz).comp
+      (sourcePotentialInverse (by norm_num) φ n z hz)‖ < 1) :
+    sourceComplementaryCorrection (by norm_num) φ n z hz h
+      (a - sourcePotentialInverse (by norm_num) φ n z hz a) = a ∧
+    sourceComplementaryCorrection (by norm_num) φ n z hz h a -
+      sourcePotentialInverse (by norm_num) φ n z hz
+        (sourceComplementaryCorrection (by norm_num) φ n z hz h a) = a :=
+  ⟨sourceComplementaryCorrection_left _ φ n z hz h a,
+    sourceComplementaryCorrection_right _ φ n z hz h a⟩
+
+end
+end SourceLemma65Checks

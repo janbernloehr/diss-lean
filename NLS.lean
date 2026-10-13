@@ -3365,3 +3365,5 @@ import NLS.ZakharovShabat.SourceWeightedGapCounterexample
 import NLS.ZakharovShabat.SourceWeightedPencil
 import NLS.ZakharovShabat.SourcePQSplitting
 import NLS.ZakharovShabat.SourceLemma6_4
+import NLS.ZakharovShabat.SourceLemma6_5
+import NLS.ZakharovShabat.SourceComplementaryCorrection

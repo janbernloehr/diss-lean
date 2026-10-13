@@ -5,12 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the original weighted spectral pencil now has an explicit
-P/Q decomposition and a unique complementary free inverse. Lemma 6.4 holds
-in the exact signed source norms for every 1≤p<∞, including λ=nπ, with
-constant two at p=2 and constant one at p=1.
+Latest milestone: Lemma 6.5 holds in the exact shifted source norm for
+all 1≤p<∞, retaining the full Fourier tail and its weight divisor. One local
+neighborhood and cutoff give both weighted and original unweighted
+half-contractions, with compatible two-sided squared Neumann inverses.
 [The Section 6 audit](coverage/SECTION_6.md) records the precise scope.
-Next is Lemma 6.5's squared-operator estimate. The dissertation remains incomplete.
+Next is the Q-equation and Lemma 6.6's determinant criterion.
+The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
