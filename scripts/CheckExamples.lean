@@ -45476,3 +45476,96 @@ example (φ a : CoeffPair 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
 
 end
 end SourceLemma65Checks
+
+namespace SourceLemma66Checks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- The domain identification is onto; arbitrary source-domain inputs are included.
+example : Function.Surjective (sourceWeightedDomainInput (p := p) SpectralWeight.one) := by
+  intro f
+  obtain ⟨a,ha⟩ := (sourceUnitDomainEquiv (p := p)).surjective f
+  exact ⟨a,by simpa only [sourceUnitDomainEquiv_apply] using ha⟩
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1)
+    (u : WeightedCoeffPair (Weight.sobolev 1) p) :
+    ∃! v : WeightedCoeffPair (Weight.sobolev 1) p,
+      complementaryProjection (Weight.sobolev 1) n v = v ∧
+      sourceSpectralPencil hp 0 z v = sourceComplementaryProjection n
+        (sourceOperator hp φ (u+v) - sourceOperator hp 0 (u+v)) :=
+  exists_unique_sourceQSolution hp φ n z hz h u
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1)
+    (hs : ‖(sourcePotentialInverse hp φ n z hz).comp (sourcePotentialInverse hp φ n z hz)‖ < 1)
+    (u : WeightedCoeffPair (Weight.sobolev 1) p) :
+    sourceOperator hp φ (sourceQSolution hp φ n z hz h u) -
+      sourceOperator hp 0 (sourceQSolution hp φ n z hz h u) =
+    sourceComplementaryCorrection hp φ n z hz hs
+      (sourcePotentialInverse hp φ n z hz (sourceOperator hp φ u - sourceOperator hp 0 u)) :=
+  sourceQSolution_potential hp φ n z hz h hs u
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1)
+    (c : Fin 2 → ℂ) :
+    (sourceResonantReconstruction hp φ n z hz h c).fst.val (-n) = c 0 ∧
+      (sourceResonantReconstruction hp φ n z hz h c).snd.val n = c 1 := by
+  have hc := sourceResonantReconstruction_coordinates hp φ n z hz h c
+  exact ⟨by simpa using congrFun hc 0, by simpa using congrFun hc 1⟩
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1)
+    (f : WeightedCoeffPair (Weight.sobolev 1) p) (hf : sourceSpectralPencil hp φ z f = 0) :
+    sourceResonantReconstruction hp φ n z hz h (resonantCoordinates (Weight.sobolev 1) n f) = f :=
+  sourceResonantReconstruction_of_eigenvector hp φ n z hz h f hf
+
+-- The full differential residual, including its sign, is the synthesized matrix residual.
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1)
+    (c : Fin 2 → ℂ) :
+    sourceSpectralPencil hp φ z (sourceResonantReconstruction hp φ n z hz h c) =
+      sourceWeightedPeriodTwoInput SpectralWeight.one
+        (resonantSynthesis SpectralWeight.one.toWeight n ((sourceResonantMatrix hp φ n z hz h).mulVec c)) :=
+  sourceResonantReconstruction_residual hp φ n z hz h c
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    z ∉ sourceResolventSet hp φ ↔ (sourceResonantMatrix hp φ n z hz h).det = 0 :=
+  sourceLemma6_6 hp φ n z hz h
+
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    (∃ f : WeightedCoeffPair (Weight.sobolev 1) p, f ≠ 0 ∧ sourceSpectralPencil hp φ z f = 0) ↔
+      (sourceResonantMatrix hp φ n z hz h).det = 0 := sourceLemma6_6_eigenvector hp φ n z hz h
+end
+
+-- The unchanged endpoint statement has one neighborhood and one cutoff for all closed strips.
+example (φ : CoeffPair 1) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (CoeffPair 1), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs → ∀ z : ℂ, ∀ hz : z ∈ resonantStrip n,
+        ∃ h : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (unitWeightedPairEquiv ψ) n z hz‖ < 1,
+          z ∉ sourceResolventSet (by norm_num) ψ ↔ (sourceResonantMatrix (by norm_num) ψ n z hz h).det = 0 :=
+  sourceLemma6_6_uniform (by norm_num) φ
+
+-- At zero potential the free center remains a genuine eigenvalue, also for p=1.
+example (n : ℤ) : (Real.pi : ℂ)*n ∉ sourceResolventSet (p := 1) (by norm_num) 0 := by
+  have h : ‖weightedPotentialSquareInShift (p := 1) (by norm_num) SpectralWeight.one
+      (unitWeightedPairEquiv 0) n ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ < 1 :=
+    (sourceLemma6_5 (by norm_num) SpectralWeight.one (unitWeightedPairEquiv 0) n _ _).trans_lt (by simp)
+  apply (sourceLemma6_6 (by norm_num) 0 n _ (center_mem_resonantStrip n) h).mpr
+  have hz : weightedDomainPotential (p := 1) (by norm_num) SpectralWeight.one (unitWeightedPairEquiv 0) = 0 := by
+    ext f : 1
+    apply weightedPair_ext <;> intro k <;> simp
+  have hm : sourceResonantMatrix (by norm_num) 0 n _ (center_mem_resonantStrip n) h = 0 := by
+    ext i j
+    change weightedResonantMatrix _ _ _ _ _ _ _ i j = 0
+    rw [weightedResonantMatrix_entry,hz]
+    simp
+  rw [hm,Matrix.det_zero]
+
+end
+end SourceLemma66Checks

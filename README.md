@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 6.5 holds in the exact shifted source norm for
-all 1≤p<∞, retaining the full Fourier tail and its weight divisor. One local
-neighborhood and cutoff give both weighted and original unweighted
-half-contractions, with compatible two-sided squared Neumann inverses.
+Latest milestone: the original Q-equation has a unique solution in the
+full derivative domain. Lemma 6.6 equates the actual source spectrum with
+the resonant determinant, with explicit eigenfunction reconstruction in
+both directions for every 1≤p<∞ and one locally uniform frequency cutoff.
 [The Section 6 audit](coverage/SECTION_6.md) records the precise scope.
-Next is the Q-equation and Lemma 6.6's determinant criterion.
+Next are the matrix coefficients and Lemma 6.7's symmetry identities.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

@@ -1,6 +1,45 @@
 # Implementation status
 
-## Current milestone: Lemma 6.5 and compatible original-source inverses
+## Current milestone: Original Q-solutions and Lemma 6.6
+
+`SourceQEquation.lean` identifies the entire unit-weight derivative domain
+with the original source derivative domain, preserving raw coefficients.
+The complementary projection commutes with the source inclusions. The
+weighted Q-equation is equivalent to the actual original projected equation.
+For every original-domain input u, the constructed v belongs to the same
+domain and Q_n, solves that equation, and is its unique complementary solution.
+The displayed Φv=T̂_n T_n Φu identity uses the original-source potential,
+complementary inverse, and correction. The two small-square hypotheses in
+that identity agree by the preceding exact norm-transport theorem.
+
+`SourceLemma6_6.lean` defines the actual two-mode resonant matrix and
+reconstruction into the original derivative domain. Reconstruction is the
+resonant lift plus the unique Q-solution and preserves both resonant amplitudes.
+Its full original spectral-pencil residual is the synthesized matrix residual.
+Consequently, precisely the matrix kernel reconstructs eigenvectors; nonzero
+amplitudes give nonzero eigenvectors. Every original-domain eigenvector is
+recovered from its own two resonant coefficients.
+
+Lemma 6.6 now equates a zero determinant both with the actual original
+periodic spectrum (noninvertibility of the source spectral pencil) and with
+a nonzero vector in its full one-derivative domain. The locally uniform
+formulation uses one positive cutoff and one open convex neighborhood
+containing the input and zero. It covers all sufficiently large signed
+frequencies, the entire closed strips, and every 1≤p<∞, including p=1.
+No correction to the printed lemma is needed.
+
+Public checks cover full-domain surjectivity, unique original Q-solutions,
+the displayed potential formula, unchanged raw resonant amplitudes, full
+residual and reconstruction identities, the spectrum and eigenvector criteria,
+and the p=1 local uniform statement. At zero potential, the matrix criterion
+recovers every free lattice center as a genuine eigenvalue, also at p=1.
+
+Next: the resonant matrix coefficients and Lemma 6.7's diagonal and
+real/imaginary-type symmetry identities. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6806 build jobs, the combined public examples, and the axiom audit of 30702 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Lemma 6.5 and compatible original-source inverses
 
 `SourceLemma6_5.lean` identifies the conjugated square norm with the exact
 operator norm induced by the source's n-shifted pair norm. The displayed

@@ -278,10 +278,47 @@ free center, exact boundary retention in both Fourier components, and
 weighted/unweighted compatibility. The actual Q-solution and resonant
 determinant reduction are the next source-level audit step.
 
+## Q-equation: actual original-domain solution and uniqueness
+
+`sourceUnitDomainEquiv` is a coefficient-preserving continuous linear
+equivalence onto the entire original derivative domain. Thus the source
+Q-solution covers every original-domain input, not merely a specified range.
+The base and domain complementary projections commute with the coefficient
+inclusions. `sourceQEquation_iff` identifies the actual original equation
+with the weighted equation.
+
+`sourceQSolution` constructs v=A_λ⁻¹ Q_n T̂_n Φu in the original derivative
+domain. It belongs to Q_n, satisfies A_λ v=Q_n Φ(u+v), and is the unique
+complementary solution for every u. `sourceQSolution_potential` proves
+Φv=T̂_n T_n Φu with the actual original-source operators. Its weighted and
+original small-square assumptions are equivalent by
+`sourcePotentialInverse_square_norm`; no new smallness restriction is added.
+
+## Lemma 6.6: actual determinant and eigenfunction reconstruction
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual two-mode matrix | `sourceResonantMatrix` | Matrix of the corrected resonant map in the physical first-component −n and second-component n basis. |
+| Full domain reconstruction | `sourceResonantReconstruction`, `sourceResonantReconstruction_eq` | Resonant domain lift plus the actual unique Q-solution. |
+| Original amplitudes retained | `sourceResonantReconstruction_coordinates` | Its first coefficient at −n and second coefficient at n are exactly the specified amplitudes. |
+| Full differential residual | `sourceResonantReconstruction_residual` | The actual source pencil applied to reconstruction equals the synthesized matrix residual, with matching sign. |
+| Exact kernel correspondence | `sourceResonantReconstruction_kernel_iff`, `sourceResonantReconstruction_ne_zero_iff` | Exactly matrix-kernel vectors reconstruct pencil-kernel vectors; nonzeroness is preserved. |
+| Converse reconstruction | `sourceResonantReconstruction_of_eigenvector` | Every original-domain eigenvector is recovered from its own resonant coefficients. |
+| Actual spectrum | `sourceLemma6_6` | Original source spectral-pencil noninvertibility iff the matrix determinant is zero. |
+| Full-domain eigenvectors | `sourceLemma6_6_eigenvector` | Nonzero original derivative-domain pencil kernel iff determinant zero. |
+| Local uniform threshold | `sourceLemma6_6_uniform` | One open convex neighborhood containing φ and zero, one positive cutoff, all sufficiently large signed n and the entire closed U_n. |
+
+Every statement allows 1≤p<∞. The strip includes the free center λ=nπ;
+no puncture, p>1 hypothesis, or max-norm threshold loss is introduced.
+The public free-potential check derives spectral membership at every lattice
+center, including n=0 and negative n, at p=1 directly from the matrix criterion.
+The high-frequency uniform statement itself retains the source's N≥1.
+No source correction is required for Lemma 6.6.
+
 ## Remaining source assertions
 
-Continue with the Q-equation solution and Lemma 6.6, identifying the actual
-original differential-domain reconstruction and two-dimensional determinant
-criterion. Sharper ceiling-cutoff versions of the corrected Propositions
-6.1/6.3 estimates remain unproved. Existing later results and the candidate-label
+Continue with the actual resonant matrix coefficients and Lemma 6.7's
+diagonal equality and conjugation/real-type/imaginary-type identities.
+Sharper ceiling-cutoff versions of the corrected Propositions 6.1/6.3
+estimates remain unproved. Existing later results and the candidate-label
 inventory do not certify this section or the dissertation complete.
