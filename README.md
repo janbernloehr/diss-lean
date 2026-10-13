@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the original resonant coefficients now have the printed
-basis order and exact scalar spectral equation. Lemma 6.7's diagonal equality
-is proved for arbitrary complex potentials; its conjugation identities hold
-for real and imaginary type. A fixed constant-potential counterexample
-refutes the printed unconditional diagonal-reality clause at arbitrarily
-large frequencies, including where the half-contraction holds.
+Latest milestone: the original resonant coefficients now have proved parity
+expansions (1.14)–(1.15), convergent operator series, and joint analyticity
+in the potential and spectral parameter. One neighborhood and cutoff cover
+the entire distant closed strips for every finite p≥1, including p=1.
+The same coefficient functions agree across spectral weights on those strips.
 [The Section 6 audit](coverage/SECTION_6.md) records the precise scope.
-Next are the parity expansions and Lemma 6.8's analytic coefficient bounds.
-The dissertation remains incomplete.
+Next are Lemma 6.8's quantitative coefficient-tail estimates and an audit of
+its printed exponents and norm factors. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

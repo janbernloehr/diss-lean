@@ -45669,3 +45669,72 @@ example (M : ℕ) :
 
 end
 end SourceLemma67Checks
+
+namespace SourceParityAnalyticChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- The total analytic functions give the same actual spectral equation.
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift hp SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    z ∉ sourceResolventSet hp φ ↔
+      (z-(Real.pi : ℂ)*n-sourceResonantAFunction hp φ n z)^2 =
+        sourceResonantBPlusFunction hp φ n z * sourceResonantBMinusFunction hp φ n z := by
+  obtain ⟨ha,hp',hm⟩ := sourceResonantFunctions_eq hp φ n z hz h
+  rw [ha,hp',hm]
+  exact sourceSpectrum_iff_resonantScalarEquation hp φ n z hz h
+
+-- All three parity cancellations require no contraction assumption.
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (j : ℕ) :
+    (((sourcePotentialInverse hp φ n z hz ^ 2)^j) (sourceResonantPotentialVector hp φ n 1)).snd n = 0 ∧
+    (sourcePotentialInverse hp φ n z hz
+      (((sourcePotentialInverse hp φ n z hz ^ 2)^j) (sourceResonantPotentialVector hp φ n 0))).snd n = 0 ∧
+    (sourcePotentialInverse hp φ n z hz
+      (((sourcePotentialInverse hp φ n z hz ^ 2)^j) (sourceResonantPotentialVector hp φ n 1))).fst (-n) = 0 :=
+  ⟨sourceResonantA_even_term_zero hp φ n z hz j,
+   sourceResonantBPlus_odd_term_zero hp φ n z hz j,
+   sourceResonantBMinus_odd_term_zero hp φ n z hz j⟩
+
+-- Weight compatibility holds on the entire closed strip, including nonreal parameters.
+example (hp : p ≠ ⊤) (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (WeightedCoeffPair w.toWeight p),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, N ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+        sourceResonantBPlusFunction hp (sourceWeightedPeriodTwoInput w ψ) n z -
+          (sourceWeightedPeriodTwoInput w ψ).snd (2*n) =
+            weightedResonantBPlusExtension hp w ψ n z - ψ.snd.val (2*n) ∧
+        sourceResonantBMinusFunction hp (sourceWeightedPeriodTwoInput w ψ) n z -
+          (sourceWeightedPeriodTwoInput w ψ).fst (-(2*n)) =
+            weightedResonantBMinusExtension hp w ψ n z - ψ.fst.val (-(2*n)) := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,heq⟩ := exists_uniform_sourceResonantFunctions_weightedInput hp w φ
+  refine ⟨N,hN,U,ho,hc,hφ,h0,?_⟩
+  intro ψ hψ n hn z hz
+  obtain ⟨_,hp',hm⟩ := heq ψ hψ n hn z hz
+  simp only [hp',hm,sourceWeightedPeriodTwoInput_fst,sourceWeightedPeriodTwoInput_snd,and_self]
+end
+
+-- Joint neighborhood analyticity remains valid at the Banach endpoint p=1.
+example (φ : CoeffPair 1) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ U : Set (CoeffPair 1), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ n : ℤ, N ≤ n.natAbs →
+        AnalyticOnNhd ℂ (fun s : CoeffPair 1 × ℂ => sourceResonantAFunction (by norm_num) s.1 n s.2) (U ×ˢ resonantStrip n) ∧
+        AnalyticOnNhd ℂ (fun s : CoeffPair 1 × ℂ => sourceResonantBPlusFunction (by norm_num) s.1 n s.2) (U ×ˢ resonantStrip n) ∧
+        AnalyticOnNhd ℂ (fun s : CoeffPair 1 × ℂ => sourceResonantBMinusFunction (by norm_num) s.1 n s.2) (U ×ˢ resonantStrip n) := by
+  obtain ⟨N,hN,U,ho,hc,hφ,h0,ha⟩ := sourceLemma6_8_analytic (by norm_num) φ
+  exact ⟨N,hN,U,ho,hc,hφ,h0,fun n hn => ⟨(ha n hn).1,(ha n hn).2.1,(ha n hn).2.2.1⟩⟩
+
+-- Endpoint convergence and the leading physical negative frequency.
+example (φ : CoeffPair 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    HasSum (fun j : ℕ => (sourcePotentialInverse (by norm_num) φ n z hz
+      (sourcePotentialInverse (by norm_num) φ n z hz
+        (((sourcePotentialInverse (by norm_num) φ n z hz ^ 2)^j)
+          (sourceResonantPotentialVector (by norm_num) φ n 1)))).fst (-n))
+      (sourceResonantBMinus (by norm_num) φ n z hz h - φ.fst (-(2*n))) :=
+  sourceResonantBMinus_remainder_hasSum (by norm_num) φ n z hz h
+
+end
+end SourceParityAnalyticChecks

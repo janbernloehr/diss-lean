@@ -356,10 +356,41 @@ that the unrestricted diagonal clause is false. The corrected sufficient
 hypothesis is exactly the one used in the source's proof; no characterization
 of all potentials with real diagonal is claimed. See `SOURCE_ERRATA.md`.
 
+## Equations (1.14)–(1.15): original parity expansions
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original operator powers | `sourcePotentialInverse_pow_unitInput` | Every natural power agrees under the coefficient-preserving unit-weight inclusion. |
+| Actual potential input | `sourceResonantPotentialVector_eq` | Difference of the actual source operator at φ and zero, applied to the original resonant domain vector. |
+| Even Neumann vector | `sourceResonantEvenVector_hasSum` | Convergence of actual original even powers under the small-square hypothesis. |
+| Diagonal formula | `sourceEquation1_14` | Original T applied to the even vector, evaluated in the second component at n. |
+| Off-diagonal formulas | `sourceEquation1_15_plus`, `sourceEquation1_15_minus` | Original T² applied to the even vectors; leading physical coefficients φ.snd(2n), φ.fst(−2n). |
+| Convergent coefficient series | `sourceResonantA_hasSum`, `sourceResonantBPlus_remainder_hasSum`, `sourceResonantBMinus_remainder_hasSum` | Odd diagonal series and strictly positive even remainder series. |
+| Vanishing discarded terms | `sourceResonantA_even_term_zero`, `sourceResonantBPlus_odd_term_zero`, `sourceResonantBMinus_odd_term_zero` | No small-square assumption is needed for the individual cancellations. |
+
+## Lemma 6.8: original joint analytic functions
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual coefficient agreement | `sourceResonantFunctions_eq` | Total extensions recover all three original coefficients on the small-square domain. |
+| Joint analyticity | `analyticAt_sourceCorrectionEntryFunction` | Analytic in the original potential and spectral parameter together. |
+| Uniform full-strip analyticity | `sourceLemma6_8_analytic` | One open convex neighborhood containing φ and zero, N≥1, every signed index with |n|≥N, entire closed strips, and actual coefficient agreement. |
+| Weight compatibility | `sourceCorrectionEntryFunction_weightedInput` | Exact entry equality with arbitrary spectral weights on the common correction domain. |
+| Uniform weight compatibility | `exists_uniform_sourceResonantFunctions_weightedInput` | All three coefficient functions agree on every distant closed strip on one weighted neighborhood. |
+
+These analytic and parity statements hold for all 1≤p<∞, including p=1.
+They make no global analyticity claim for the total extensions outside the
+correction domain. The public checks also recover the actual original scalar
+spectral equation using the analytic functions and check both signed Fourier
+remainders under weighted inclusion.
+
 ## Remaining source assertions
 
-Continue with the parity expansions (1.14)–(1.15), then Lemma 6.8's
-analyticity and coefficient-tail bounds with their precise exponent and
-cutoff conventions. Sharper ceiling-cutoff versions of the corrected
-Propositions 6.1/6.3 estimates remain unproved. Existing later results and
-the candidate-label inventory do not certify this section or the dissertation complete.
+Continue with Lemma 6.8's quantitative full-strip suprema and coefficient-tail
+bounds, including the printed power and potential-norm factors. The existing
+weighted summability results use strict p>1; the present analytic endpoint
+does not extend those estimates to p=1. The literal printed quantitative
+statement has not yet been fully audited at the original source level.
+Sharper ceiling-cutoff versions of the corrected Propositions 6.1/6.3
+estimates remain unproved. Existing later results and the candidate-label
+inventory do not certify this section or the dissertation complete.

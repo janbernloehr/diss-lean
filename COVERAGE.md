@@ -3851,3 +3851,39 @@ Next: the parity expansions (1.14)–(1.15) and Lemma 6.8's analyticity and
 coefficient-tail estimates. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6809 build jobs, the combined public examples, and the axiom audit of 30748 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Original-source audit: Original parity expansions and Lemma 6.8 analyticity
+
+`SourceResonantParity.lean` transports every complementary-operator power
+to the original source space. Its resonant input is the actual potential
+applied to the original resonant derivative-domain vector. The even Neumann
+vector has a convergent series in the original operator. Equations
+(1.14)–(1.15) express the actual diagonal and off-diagonal remainders through
+that vector. The leading terms are the second component at 2n and the first
+component at −2n. The diagonal odd series and both strictly positive even
+remainder series converge to the actual coefficients. The discarded parity
+terms vanish without a contraction hypothesis.
+
+`SourceResonantAnalytic.lean` defines total coefficient functions agreeing
+with the original correction entries wherever the squared operator is small.
+They are jointly analytic in the original potential and spectral parameter.
+One open convex neighborhood containing the input and zero and one positive
+cutoff give joint neighborhood analyticity on every distant closed strip,
+with agreement with the actual source coefficients everywhere on those strips.
+All results allow 1≤p<∞, including p=1. Analyticity is not asserted globally
+for the total extensions outside the correction domain.
+
+The same functions agree with the weighted analytic coefficients on the
+common correction domain. A single weighted neighborhood and cutoff give
+this agreement throughout every distant closed strip, rather than only at
+free centers. Public checks connect the total functions to the actual scalar
+spectral criterion, preserve both signed Fourier remainders under weight
+inclusion, and exercise parity cancellation and endpoint convergence and
+joint analyticity.
+
+Next: transport Lemma 6.8's quantitative full-strip suprema and coefficient
+tail estimates to these original functions, and audit its printed exponents
+and norm factors. This milestone establishes the analytic assertion, not the
+entire quantitative lemma. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6811 build jobs, the combined public examples, and the axiom audit of 30789 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
