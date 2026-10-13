@@ -3374,3 +3374,5 @@ import NLS.ZakharovShabat.SourceLemma6_7
 import NLS.ZakharovShabat.SourceLemma6_7Counterexample
 import NLS.ZakharovShabat.SourceResonantParity
 import NLS.ZakharovShabat.SourceResonantAnalytic
+import NLS.ZakharovShabat.SourceResonantSup
+import NLS.ZakharovShabat.SourceLemma6_8

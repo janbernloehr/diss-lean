@@ -45738,3 +45738,70 @@ example (φ : CoeffPair 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
 
 end
 end SourceParityAnalyticChecks
+
+namespace SourceLemma68Checks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+
+-- The diagonal estimate uses the actual original coefficients and original pair norm.
+example (hp : p ≠ ⊤) (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) (N : ℕ)
+    (h : SourceCoefficientTailEstimates hp w φ N) :
+    (∑' n : ℤ, if N ≤ n.natAbs then
+      (sourceResonantDiagonalSup hp (sourceWeightedPeriodTwoInput w φ) n)^p.toReal else 0) ≤
+      diagonalSummationConstant p * ‖sourceWeightedPeriodTwoInput w φ‖^p.toReal *
+        (‖sourceWeightedPeriodTwoInput w φ‖^p.toReal / (N : ℝ)^(min 1 (p.toReal-1)) +
+          ‖sourceFourierTail (N/2) (sourceWeightedPeriodTwoInput w φ)‖^p.toReal) := h.1.2
+
+-- Both signs retain their respective component norm, with the full pair in the inner budget.
+example (hp : p ≠ ⊤) (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) (N : ℕ)
+    (h : SourceCoefficientTailEstimates hp w φ N) :
+    (∑' n : ℤ, if N ≤ n.natAbs then
+      (sourceResonantBMinusSup hp w (sourceWeightedPeriodTwoInput w φ) n)^p.toReal else 0) ≤
+      offDiagonalSummationConstant p * ‖φ.fst‖^p.toReal *
+        (‖φ‖^(2*p.toReal) / (N : ℝ)^(min 1 (p.toReal-1)) + ‖weightedPairFourierTail w.toWeight (N/2) φ‖^(2*p.toReal)) ∧
+    (∑' n : ℤ, if N ≤ n.natAbs then
+      (sourceResonantBPlusSup hp w (sourceWeightedPeriodTwoInput w φ) n)^p.toReal else 0) ≤
+      offDiagonalSummationConstant p * ‖φ.snd‖^p.toReal *
+        (‖φ‖^(2*p.toReal) / (N : ℝ)^(min 1 (p.toReal-1)) + ‖weightedPairFourierTail w.toWeight (N/2) φ‖^(2*p.toReal)) :=
+  ⟨h.2.1.2,h.2.2.2⟩
+
+-- The actual negative remainder at any strip point is controlled by its full-strip supremum.
+example (hp : p ≠ ⊤) (w : SpectralWeight) (φ : CoeffPair p) (n : ℤ)
+    (h : SourceCoefficientStripBounds hp w φ n) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    w (2*n) * ‖sourceResonantBMinusFunction hp φ n z - φ.fst (-(2*n))‖ ≤ sourceResonantBMinusSup hp w φ n :=
+  (h.2.2.2.2.2.2 z hz).2.1
+
+-- Unit weighting introduces no hidden component-norm constant in the source estimate.
+example (hp : p ≠ ⊤) (φ : CoeffPair p) (N : ℕ)
+    (h : SourceCoefficientTailEstimates hp SpectralWeight.one (unitWeightedPairEquiv φ) N) :
+    (∑' n : ℤ, sourceCoefficientPowerTail p N (sourceResonantBMinusSup hp SpectralWeight.one φ) n) ≤
+      offDiagonalSummationConstant p * ‖φ.fst‖^p.toReal *
+        (‖φ‖^(2*p.toReal) / (N : ℝ)^(min 1 (p.toReal-1)) + ‖sourceFourierTail (N/2) φ‖^(2*p.toReal)) := by
+  have hm := h.2.1.2
+  simpa only [sourceWeightedInput_unitWeightedPairEquiv,sourceOffDiagonalTailBudget_unit,
+    (sourceUnitWeighted_component_norms φ).1] using hm
+end
+
+-- One original p=2 neighborhood works for both signs and all larger cutoffs.
+example (φ : CoeffPair 2) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 2),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U,
+        (∀ n : ℤ, N₀ ≤ n.natAbs → SourceCoefficientStripBounds (by norm_num) SpectralWeight.one ψ n) ∧
+        (∀ N : ℕ, N₀ ≤ N → SourceCoefficientTailEstimates (by norm_num) SpectralWeight.one (unitWeightedPairEquiv ψ) N) :=
+  sourceLemma6_8_unweighted (by norm_num) (by norm_num) φ
+
+-- Both boundary indices are included; a cutoff of three still uses floor(3/2)=1.
+example (a : ℤ → ℝ) :
+    sourceCoefficientPowerTail 2 3 a (-3) = (a (-3))^2 ∧
+    sourceCoefficientPowerTail 2 3 a 3 = (a 3)^2 ∧
+    sourceCoefficientPowerTail 2 3 a 2 = 0 := by norm_num [sourceCoefficientPowerTail]
+example (φ : CoeffPair 2) :
+    sourceDiagonalTailBudget φ 3 = diagonalSummationConstant 2 * ‖φ‖^2 *
+      (‖φ‖^2 / 3 + ‖sourceFourierTail 1 φ‖^2) := by norm_num [sourceDiagonalTailBudget]
+
+end
+end SourceLemma68Checks

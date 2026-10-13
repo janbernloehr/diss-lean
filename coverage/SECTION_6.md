@@ -384,13 +384,47 @@ correction domain. The public checks also recover the actual original scalar
 spectral equation using the analytic functions and check both signed Fourier
 remainders under weighted inclusion.
 
+## Lemma 6.8: quantitative original full-strip tails
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual original suprema | `sourceResonantDiagonalSup`, `sourceResonantBMinusSup`, `sourceResonantBPlusSup` | Full closed strips; weighted off-diagonal remainders retain physical frequencies −2n and 2n. |
+| Exact weighted agreement | `sourceResonantSup_eq_weighted`, `exists_uniform_sourceResonantSup_eq` | Equality of full strip images; no majorant substituted for the supremum. |
+| Boundedness and domination | `exists_uniform_sourceCoefficientStripBounds` | All three images bounded above, suprema nonnegative, and every actual strip value dominated by its supremum. |
+| Exact diagonal budget | `sourceDiagonalTailBudget_weightedInput` | Original unweighted component-sum norm and original Fourier tail, with no comparison constant. |
+| Exact unit-weight budgets | `sourceOffDiagonalTailBudget_unit`, `sourceUnitWeighted_component_norms` | Both pair and distinguished component norms are the original norms. |
+| All three signed tails | `sourceLemma6_8_summability` | Summable p-power tails with explicit diagonal and off-diagonal budgets, for every larger cutoff. |
+| Common neighborhood | `sourceLemma6_8_quantitative` | Bounded-image assertions and all tail estimates on one open convex neighborhood containing φ and zero, N₀≥2. |
+| Original unweighted neighborhood | `sourceLemma6_8_unweighted` | Neighborhood in the original `CoeffPair p` space, preserving the full period-two input. |
+
+For the diagonal let B=‖φ‖_p and T=‖R_floor(N/2) φ‖_p. Its budget is
+
+```
+C_p B^p (B^p/N^δ + T^p),     δ=min(1,p−1).
+```
+
+For each weighted off-diagonal remainder, let W=‖φ‖_{w,p},
+T_w=‖R_floor(N/2) φ‖_{w,p}, and B_±=‖φ_±‖_{w,p}. Its budget is
+
+```
+D_p B_±^p (W^(2p)/N^δ + T_w^(2p)).
+```
+
+The left-hand sides sum the p-th powers of the actual suprema over all
+integer n with |n|≥N. The off-diagonal supremum already includes w(2n),
+so the weight is raised to p along with the remainder norm. The proof uses
+strict 1<p<∞, not the analytic endpoint p=1. The floor-half cutoff includes
+its boundary; no sharper ceiling-half result is claimed.
+
+The page-41 printed off-diagonal display has neither these left-hand powers
+nor the same inner norm. The formal result follows the p-power and full-pair
+form of the concluding source proof. The literal display is not yet formally
+refuted; see `SOURCE_ERRATA.md` for the precise distinction.
+
 ## Remaining source assertions
 
-Continue with Lemma 6.8's quantitative full-strip suprema and coefficient-tail
-bounds, including the printed power and potential-norm factors. The existing
-weighted summability results use strict p>1; the present analytic endpoint
-does not extend those estimates to p=1. The literal printed quantitative
-statement has not yet been fully audited at the original source level.
-Sharper ceiling-cutoff versions of the corrected Propositions 6.1/6.3
-estimates remain unproved. Existing later results and the candidate-label
-inventory do not certify this section or the dissertation complete.
+Continue with the formal audit of the literal Lemma 6.8(ii) display, including
+its omitted powers and positive-component norm factor. Sharper ceiling-cutoff
+versions of the corrected Propositions 6.1/6.3 estimates remain unproved.
+Existing later results and the candidate-label inventory do not certify this
+section or the dissertation complete.

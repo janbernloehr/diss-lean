@@ -1604,3 +1604,22 @@ and imaginary-type cases and holds locally uniformly on the entire closed
 strips. This is a sufficient correction, not a claim that these are the only
 potentials having diagonal reality. Lemma 6.7(i), equality of the two
 correction diagonals for arbitrary complex potentials, remains unchanged.
+
+## Lemma 6.8(ii): the display differs from the concluding estimate
+
+Printed page 41 sums w(2n)|b_n^±−φ_2n^±|_{U_n} without p-th powers,
+and its first inner norm is that of the positive component. The concluding
+estimate on printed page 43 instead has p-th powers on both weight and
+remainder and uses the full weighted pair norm. These are different
+quantitative statements.
+
+`sourceLemma6_8_quantitative` proves the p-power, full-pair form for the
+actual original coefficient functions, with all signed indices, genuine
+bounded full-strip images, and a common neighborhood and cutoff. It uses
+the explicit floor(N/2) tail, including the boundary, and strict 1<p<∞.
+The diagonal part agrees with the displayed norm structure. Constants depend
+only on p, and exact unit-weight transport introduces no norm comparison loss.
+
+No formal counterexample to the literal off-diagonal display is claimed yet.
+The missing-power and component-factor assertions still require that audit;
+the proved estimate must not be counted as verification of the literal display.

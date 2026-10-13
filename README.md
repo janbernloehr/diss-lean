@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the original resonant coefficients now have proved parity
-expansions (1.14)–(1.15), convergent operator series, and joint analyticity
-in the potential and spectral parameter. One neighborhood and cutoff cover
-the entire distant closed strips for every finite p≥1, including p=1.
-The same coefficient functions agree across spectral weights on those strips.
-[The Section 6 audit](coverage/SECTION_6.md) records the precise scope.
-Next are Lemma 6.8's quantitative coefficient-tail estimates and an audit of
-its printed exponents and norm factors. The dissertation remains incomplete.
+Latest milestone: Lemma 6.8 now has quantitative bounds for the original
+coefficient functions on full closed strips. All three signed p-power tails
+are summable, with one neighborhood and cutoff, exact original norms,
+and explicit floor-half Fourier tails for 1<p<∞.
+[The Section 6 audit](coverage/SECTION_6.md) distinguishes the proved
+proof-consistent off-diagonal estimate from the different printed display.
+Next is a formal audit of that display's omitted powers and component-norm
+factor. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

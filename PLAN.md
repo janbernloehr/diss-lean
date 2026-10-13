@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: Original parity expansions and Lemma 6.8 analyticity
+## Current milestone: Lemma 6.8 quantitative original coefficient tails
+
+`SourceResonantSup.lean` defines all three suprema using the actual original
+coefficient functions on the entire closed, unbounded resonant strip. Weight
+compatibility identifies their full images with those of the weighted
+coefficients. Uniform majorants prove the images bounded, the suprema
+nonnegative, and every pointwise coefficient norm bounded by its supremum.
+These are genuine suprema, not replacement majorant sequences.
+
+`SourceLemma6_8.lean` proves summability and explicit bounds for the full
+signed p-power tails of the diagonal and both weighted off-diagonal
+remainders. One open convex neighborhood containing the input and zero and
+one cutoff N₀≥2 support both the bounded-image assertions and every tail
+cutoff N≥N₀. The unweighted specialization provides a neighborhood directly
+in the original period-two source space. Exact unit-weight identities retain
+the original pair norm, component norms, and Fourier tail without constants.
+
+The diagonal budget is C_p B^p(B^p/N^δ+T^p), where B is the original
+unweighted pair norm, T its floor(N/2) tail norm, and δ=min(1,p−1).
+The negative/positive remainder budgets are D_p B_±^p(W^(2p)/N^δ+T_w^(2p)),
+with W the full weighted pair norm, B_± the corresponding component norm,
+and T_w the weighted floor(N/2) tail norm. Both signs and both signed index
+tails are included. Quantitative results require 1<p<∞; the preceding
+analytic p=1 endpoint is not asserted for these bounds.
+
+The printed page-41 off-diagonal display omits the left-hand p-powers and
+uses the positive component in place of the full inner pair norm. This
+milestone proves the form supported by the source's concluding proof,
+with the explicit floor-half tail convention. It does not prove or formally
+refute the literal display. The discrepancy and its remaining counterexample
+audit are recorded in `SOURCE_ERRATA.md` and `coverage/SECTION_6.md`.
+
+Public checks exercise both component factors, exact original norms,
+pointwise supremum domination, the original p=2 neighborhood, both signed
+cutoff boundary indices, and floor(3/2)=1.
+
+Next: formally audit the literal Lemma 6.8(ii) display, including its omitted
+powers and positive-component norm factor. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6813 build jobs, the combined public examples, and the axiom audit of 30832 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Original parity expansions and Lemma 6.8 analyticity
 
 `SourceResonantParity.lean` transports every complementary-operator power
 to the original source space. Its resonant input is the actual potential
