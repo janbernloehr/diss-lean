@@ -1546,3 +1546,27 @@ finite input and with actual restriction on arbitrary L² data.
 pair norm: all four complete canonical boundary spectra have locally uniformly
 bounded displacement power sums. Separate theorems identify actual spectral
 membership and full original Jordan multiplicities. See `coverage/SECTION_6.md`.
+
+## Proposition 6.3: the printed weighted gap estimate fails locally at zero
+
+On printed page 36 the overall potential-norm factor again makes the p=2
+right-hand side quartic near zero. This cannot control the actual squared
+gap of two resonant modes. `SourceWeightedGapCounterexample` independently
+identifies the actual roots nπ±t and their intrinsic squared gap 4t²,
+using the counted periodic spectral pair and the spectral equivalence of the
+reduced determinant. The original weighted pair norm is retained throughout.
+
+For unit weight, every open neighborhood of zero and every proposed cutoff
+contain such a witness exceeding the printed bound. Both natural half-cutoff
+roundings fail. `not_sourceProposition6_3_printed_pair_sum` rules out every
+choice of actual counted high-pair labels with the claimed locally uniform
+bound. The assertion for all weights therefore already fails at unit weight
+and p=2. No failure for every individually chosen cutoff at a fixed input is
+asserted.
+
+`sourceProposition6_3_corrected` retains an additive leading Fourier-tail
+term. `sourceProposition6_3_small_tails` and `sourceProposition6_3_gap_mem`
+prove locally small weighted tails and the qualitative weighted ℓᵖ conclusion
+for 1<p<∞. The corrected bound uses floor(N/2); no sharper ceiling-cutoff
+version is claimed. See `coverage/SECTION_6.md` for the exact formula and
+central-index qualifications.

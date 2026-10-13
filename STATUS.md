@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: Corollary 6.2 for arbitrary original period-two input
+## Current milestone: Midpoint/gap asymptotics and the Proposition 6.3 audit
+
+`SourcePeriodTwoMidpointGap.lean` proves the midpoint and gap ℓᵖ
+asymptotics for arbitrary original period-two input. The distant entries
+are actual counted spectral pairs, retaining algebraic multiplicity.
+Their contour-defined midpoint and squared gap have locally uniformly
+small full signed power tails. The intrinsic full midpoint displacement is
+in ℓᵖ; the full squared-gap p/2 powers are summable. Individual central
+pairs are not newly labeled here, and no spectral meaning is assigned to
+the finitely many unspecified entries of the selected root sequences.
+
+`SourceWeightedGapAsymptotics.lean` proves the corrected Proposition 6.3
+estimate on the exact original weighted component-sum norm. Forgetting
+the weight preserves every raw Fourier coefficient and identifies spectral
+membership with noninvertibility of the actual original source pencil.
+One open convex neighborhood containing the input and zero controls all
+larger cutoffs. The intrinsic squared gap, independent of root ordering,
+is weighted at the source's resonant frequency 2n. The corrected budget
+has an additive leading Fourier-tail term and becomes locally uniformly
+small; the neighborhood may depend on the tolerance. All weighted gap
+powers are summable, and every square-root choice of the intrinsic squared
+gaps has the claimed weighted ℓᵖ regularity.
+
+`SourceWeightedGapCounterexample.lean` refutes the printed locally uniform
+quantitative gap estimate already for unit weight at p=2. In every open
+neighborhood of zero and beyond every proposed uniform cutoff, an explicit
+single-resonance input has actual roots nπ±t and squared gap 4t², while the
+printed budget is at most 24C t⁴. The formal negation covers any choice of
+actual counted root pairs. Both floor and ceiling half-cutoff conventions
+fail. This does not refute the qualitative asymptotics or assert failure
+for every individually chosen cutoff at a fixed input.
+
+Next: the Section 6 Lyapunov–Schmidt decomposition, shifted source norms,
+and Lemma 6.4. The corrected bounds use floor(N/2); sharper ceiling-cutoff
+versions remain unproved. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6799 build jobs, the combined public examples, and the axiom audit of 30608 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Corollary 6.2 for arbitrary original period-two input
 
 `PeriodTwoRestriction.lean` constructs bounded restriction from period-two
 coefficients to unit-interval Fourier coefficients for every 1<p<∞. Even

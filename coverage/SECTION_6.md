@@ -105,10 +105,82 @@ map defines the completion; no pointwise representative of a general
 Fourier–Lebesgue distribution is assumed. This step does not assert
 continuity of individual canonical eigenvalue labels.
 
+## Midpoint and gap consequences on page 35
+
+`SourcePeriodTwoMidpointGap` works on the original raw period-two input.
+It does not use `periodOnePotential`, which would double the input frequencies.
+For every 1<p<∞, the actual distant counted pairs give
+`(ξ_n+η_n)/2 − nπ ∈ ℓᵖ` and `ξ_n−η_n ∈ ℓᵖ` on one open convex
+neighborhood containing the input and zero. The finitely many unspecified
+entries of those selected sequences do not affect membership.
+
+The contour midpoint and squared gap agree with these pairs at high indices.
+`exists_uniform_small_sourcePeriodTwoMidpointGapTail` proves arbitrarily small
+full signed tails of the sum of midpoint-displacement p-powers and squared-gap
+p/2-powers, locally uniformly. `sourcePeriodTwoMidpointGap_summable` proves
+both complete power sums converge; `sourcePeriodTwoMidpoint_mem` gives the
+midpoint's actual ℓᵖ membership. This does not assign individual central pairs
+to the fixed low-index contours or assert continuity of eigenvalue labels.
+
+## Proposition 6.3: exact weighted input and corrected bound
+
+The displayed source weight assumptions are exactly those of `SpectralWeight`:
+`w_n≥1`, symmetry, submultiplicativity, and monotonicity on nonnegative indices.
+They do not require the extra normalization `w_0=1`. The public checks use
+`WeightedCoeffPair.norm_rpow_eq_tsum` to verify the printed component-sum norm.
+`sourceWeightedPeriodTwoInput` forgets the weight while retaining both raw
+Fourier components at every integer frequency, without period doubling.
+`sourceWeightedPeriodTwoSpectrum_iff` identifies the actual source pencil's
+noninvertibility with the existing weighted spectral realization.
+
+Write B=‖φ‖_(w,p), T=‖R_floor(N/2) φ‖_(w,p), and δ=min(1,p−1).
+The corrected estimate in `sourceProposition6_3_corrected` is
+
+```
+Σ_(|n|≥N) w_(2n)^p |γ_n|^p
+  ≤ C_p [ T^p + D_p B^p (B^(2p)/N^δ + T^(2p)) ].
+```
+
+Here `C_p=rootGapSummationConstant p` and
+`D_p=offDiagonalSummationConstant p` depend only on p. The theorem uses the
+actual contour squared gap through `‖γ_n²‖^(p/2)=|γ_n|^p`. It supplies actual
+counted spectral pairs, their source spectral equivalence, and the sum bound
+on one open convex neighborhood for every larger cutoff.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Small corrected budget | `exists_uniform_small_rootGapBudget` | Every source weight and 1<p<∞; one neighborhood and cutoff for each positive tolerance. |
+| Small actual weighted gap tails | `sourceProposition6_3_small_tails` | All signed indices beyond every larger cutoff; actual intrinsic squared gap. |
+| Full weighted gap-power convergence | `sourceProposition6_3_summable` | Includes the finitely many central contour values. |
+| Weighted ℓᵖ gap membership | `sourceProposition6_3_gap_mem` | Any choice of square roots of the intrinsic squared gaps, weighted at 2n. |
+
+## Proposition 6.3: printed quantitative estimate is false locally at zero
+
+The printed page-36 p=2 estimate with unit weight has the same quartic budget
+as the earlier root-displacement display. `SourceWeightedGapCounterexample`
+now proves the failure for the actual gap, rather than inferring it from a
+single displaced root. In every open weighted-input neighborhood of zero and
+beyond every proposed cutoff, the two finite resonant modes produce actual
+roots `nπ±t`. The full counted pair and spectral equivalence identify the
+intrinsic squared gap with `4t²`. The printed budget is at most `24C t⁴`.
+
+`exists_periodicGap_exceeding_printed_budget` exceeds the floor-cutoff budget.
+`sourcePrintedHilbertGapBudget` records the ceiling-cutoff version for general
+weights, and `exists_periodicGap_exceeding_printed_ceiling_budget` exceeds that
+smaller budget too. The final negations
+`not_sourceProposition6_3_printed_gap_sum` and
+`not_sourceProposition6_3_printed_pair_sum` exclude the printed locally uniform
+claim for both the intrinsic gap and any actual counted pair labels, already
+at unit weight and p=2. Thus the assertion for all source weights is false.
+
+This is a failure of the uniform cutoff on neighborhoods of zero. It does not
+claim that every separately chosen cutoff for a fixed potential fails. The
+qualitative weighted ℓᵖ asymptotics and the corrected budget remain proved.
+
 ## Remaining source assertions
 
-Continue with the midpoint and gap consequences and Proposition 6.3,
-matching their exact source norms and weighted assumptions. The sharper
-ceiling-cutoff version of the corrected Proposition 6.1 quantitative estimate
-remains unproved. Existing later results and the candidate-label inventory
+Continue with the source's Lyapunov–Schmidt decomposition, shifted norms,
+and Lemma 6.4, matching the actual original spaces and endpoint assumptions.
+Sharper ceiling-cutoff versions of the corrected quantitative estimates
+remain unproved. Existing later results and the candidate-label inventory
 do not certify this section or the dissertation complete.

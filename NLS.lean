@@ -3359,3 +3359,6 @@ import NLS.Fourier.PeriodTwoRestrictionIntegrals
 import NLS.Fourier.PeriodTwoRestrictionL2
 import NLS.ZakharovShabat.SourcePeriodTwoRestriction
 import NLS.ZakharovShabat.SourceCorollary6_2
+import NLS.ZakharovShabat.SourcePeriodTwoMidpointGap
+import NLS.ZakharovShabat.SourceWeightedGapAsymptotics
+import NLS.ZakharovShabat.SourceWeightedGapCounterexample

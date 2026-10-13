@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Corollary 6.2 now holds for arbitrary original period-two
-input, using a bounded restriction map that retains odd Fourier modes.
-All four complete boundary spectra have locally uniformly bounded ℓᵖ
-displacements, with actual spectral membership and full Jordan multiplicities.
-[The Section 6 audit](coverage/SECTION_6.md) records the exact scope.
-The midpoint/gap consequences and Proposition 6.3 are next; the dissertation
+Latest milestone: the midpoint/gap asymptotics and corrected weighted gap
+estimate now hold for arbitrary original period-two input. Proposition 6.3's
+printed locally uniform quantitative bound is formally refuted at p=2;
+the qualitative weighted ℓᵖ conclusion remains valid.
+[The Section 6 audit](coverage/SECTION_6.md) records the exact scope and bounds.
+Next are the shifted norms and Lyapunov–Schmidt reduction. The dissertation
 remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

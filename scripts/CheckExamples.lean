@@ -45148,3 +45148,133 @@ example (hp1 : 1 < p) (hp : p ≠ ⊤) (φ : CoeffPair p) :
 end
 end
 end SourceCorollary62Checks
+
+namespace SourceWeightedGapAuditChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+local instance gapAuditFactThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example (N : ℕ) (n : ℤ) : sourcePeriodTwoMidpointGapTail (p := 3) (by simp) 0 N n = 0 := by
+  simp [sourcePeriodTwoMidpointGapTail,
+    (periodicMidpoint_squaredGap_zero (p := 3) (by simp) n).1,
+    (periodicMidpoint_squaredGap_zero (p := 3) (by simp) n).2]
+
+-- The original weighted source norm and both raw frequency components are retained.
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+example (hp : p ≠ ⊤) (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) :
+    ‖φ‖^p.toReal = ∑' n : ℤ, (w n)^p.toReal *
+      (‖φ.fst.val n‖^p.toReal+‖φ.snd.val n‖^p.toReal) :=
+  WeightedCoeffPair.norm_rpow_eq_tsum hp w.toWeight φ
+
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) (k : ℤ) :
+    (sourceWeightedPeriodTwoInput w φ).fst k = φ.fst.val k ∧
+      (sourceWeightedPeriodTwoInput w φ).snd k = φ.snd.val k :=
+  ⟨sourceWeightedPeriodTwoInput_fst w φ k,sourceWeightedPeriodTwoInput_snd w φ k⟩
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    Summable (fun n : ℤ => ‖periodicMidpoint hp (CoeffPair.toMax p φ) n-(Real.pi : ℂ)*n‖^p.toReal) ∧
+      Summable (fun n : ℤ => ‖periodicSquaredGap hp (CoeffPair.toMax p φ) n‖^(p.toReal/2)) :=
+  sourcePeriodTwoMidpointGap_summable hp hp1 φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    Memℓp (fun n : ℤ => periodicMidpoint hp (CoeffPair.toMax p φ) n-(Real.pi : ℂ)*n) p :=
+  sourcePeriodTwoMidpoint_mem hp hp1 φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (φ : CoeffPair p) :
+    ∃ N : ℕ, 2 ≤ N ∧ ∃ U : Set (CoeffPair p),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U,
+        ∃ ξ η : ℤ → ℂ,
+          (∀ n : ℤ, N ≤ n.natAbs →
+            PeriodicResonantPair hp SpectralWeight.one (unitWeightedPairEquiv ψ) n (ξ n) (η n)) ∧
+          Memℓp (fun n : ℤ => (ξ n+η n)/2-(Real.pi : ℂ)*n) p ∧
+          Memℓp (fun n : ℤ => ξ n-η n) p :=
+  sourcePeriodTwo_midpoint_gap_asymptotics hp hp1 φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight p),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U,
+        ∃ ξ η : ℤ → ℂ,
+          (∀ n : ℤ, N₀ ≤ n.natAbs → PeriodicResonantPair hp w ψ n (ξ n) (η n)) ∧
+          (∀ n : ℤ, N₀ ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+            z ∉ sourceResolventSet hp (sourceWeightedPeriodTwoInput w ψ) ↔ z = ξ n ∨ z = η n) ∧
+          ∀ N : ℕ, N₀ ≤ N →
+            Summable (periodicGapPowerTail hp w ψ N) ∧
+            (∑' n : ℤ, periodicGapPowerTail hp w ψ N n) ≤ rootGapBudget w ψ N :=
+  sourceProposition6_3_corrected hp hp1 w φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) :
+    Summable (fun n : ℤ => (w (2*n))^p.toReal *
+      ‖periodicSquaredGap hp (weightedBaseToPair w φ) n‖^(p.toReal/2)) :=
+  sourceProposition6_3_summable hp hp1 w φ
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair p),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        Summable (sourcePeriodTwoMidpointGapTail hp ψ N) ∧
+        (∑' n : ℤ, sourcePeriodTwoMidpointGapTail hp ψ N n) < ε :=
+  exists_uniform_small_sourcePeriodTwoMidpointGapTail hp hp1 φ hε
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (WeightedCoeffPair w.toWeight p),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U, ∀ N : ℕ, N₀ ≤ N →
+        Summable (periodicGapPowerTail hp w ψ N) ∧
+        (∑' n : ℤ, periodicGapPowerTail hp w ψ N n) < ε :=
+  sourceProposition6_3_small_tails hp hp1 w φ hε
+
+example (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight p) (γ : ℤ → ℂ)
+    (hγ : ∀ n, (γ n)^2 = periodicSquaredGap hp (weightedBaseToPair w φ) n) :
+    Memℓp (fun n : ℤ => (w (2*n) : ℂ)*γ n) p :=
+  sourceProposition6_3_gap_mem hp hp1 w φ γ hγ
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (z : ℂ) :
+    z ∉ sourceResolventSet hp (sourceWeightedPeriodTwoInput w φ) ↔
+      z ∈ periodicSpectrum hp (weightedBaseToPair w φ) :=
+  sourceWeightedPeriodTwoSpectrum_iff hp w φ z
+
+end
+
+example (C : ℝ) (hC : 0 ≤ C)
+    (U : Set (WeightedCoeffPair SpectralWeight.one.toWeight 2)) (ho : IsOpen U) (h0 : 0 ∈ U) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ ∈ U,
+      printedHilbertRootBudget C φ n <
+        ‖periodicSquaredGap (by norm_num) (weightedBaseToPair SpectralWeight.one φ) n‖ :=
+  exists_periodicGap_exceeding_printed_budget C hC U ho h0 M
+
+example (C : ℝ) (hC : 0 ≤ C)
+    (U : Set (WeightedCoeffPair SpectralWeight.one.toWeight 2)) (ho : IsOpen U) (h0 : 0 ∈ U) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ ∈ U,
+      sourcePrintedHilbertGapBudget C SpectralWeight.one φ n <
+        ‖periodicSquaredGap (by norm_num) (weightedBaseToPair SpectralWeight.one φ) n‖ :=
+  exists_periodicGap_exceeding_printed_ceiling_budget C hC U ho h0 M
+
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ,
+      ∃ U : Set (WeightedCoeffPair SpectralWeight.one.toWeight 2), IsOpen U ∧ 0 ∈ U ∧
+        ∀ φ ∈ U, ∀ N : ℕ, M ≤ N → 2 ≤ N →
+          Summable (periodicGapPowerTail (by norm_num) SpectralWeight.one φ N) ∧
+          (∑' n : ℤ, periodicGapPowerTail (by norm_num) SpectralWeight.one φ N n) ≤
+            sourcePrintedHilbertGapBudget C SpectralWeight.one φ N :=
+  not_sourceProposition6_3_printed_gap_sum
+
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ,
+      ∃ U : Set (WeightedCoeffPair SpectralWeight.one.toWeight 2), IsOpen U ∧ 0 ∈ U ∧
+        ∀ φ ∈ U, ∃ ξ η : ℤ → ℂ,
+          (∀ n : ℤ, M ≤ n.natAbs → 2 ≤ n.natAbs →
+            PeriodicResonantPair (by norm_num) SpectralWeight.one φ n (ξ n) (η n)) ∧
+          ∀ N : ℕ, M ≤ N → 2 ≤ N →
+            Summable (rootGapPowerTail 2 SpectralWeight.one N ξ η) ∧
+            (∑' n : ℤ, rootGapPowerTail 2 SpectralWeight.one N ξ η n) ≤
+              sourcePrintedHilbertGapBudget C SpectralWeight.one φ N :=
+  not_sourceProposition6_3_printed_pair_sum
+
+end
+end SourceWeightedGapAuditChecks
