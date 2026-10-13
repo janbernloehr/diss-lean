@@ -3351,3 +3351,6 @@ import NLS.ZakharovShabat.SourceAuxiliaryContourCounting
 import NLS.ZakharovShabat.SourceAuxiliaryPotentialPhase
 import NLS.ZakharovShabat.SourceAuxiliaryPrintedHeight
 import NLS.ZakharovShabat.SourceAuxiliaryHeightCounterexample
+import NLS.ZakharovShabat.SourcePeriodTwoDisplacement
+import NLS.ZakharovShabat.SourcePeriodTwoDisplacementCounterexample
+import NLS.ZakharovShabat.SourcePeriodTwoAsymptotics

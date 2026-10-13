@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Proposition 5.2's printed auxiliary height and counts are
-proved unchanged at p=2. Its unrestricted exponent assertion is formally
-refuted: a finite Fourier input of original norm at most 3/32 has an auxiliary
-eigenvalue outside every printed cutoff box at p=1024.
-[The Section 5 audit](coverage/SECTION_5.md) separates this height failure
-from the valid general height-N counts, contour ranks, and real-type results.
-Section 6's quantitative eigenvalue asymptotics are next; the dissertation remains incomplete.
+Latest milestone: Proposition 6.1's qualitative eigenvalue asymptotics now
+hold in the original period-two norm, with locally uniform small ℓᵖ tails.
+The printed quantitative estimate is formally refuted at p=2 for the actual
+operator spectrum. A corrected estimate retains an additive Fourier-tail term.
+[The Section 6 audit](coverage/SECTION_6.md) records the exact scope and cutoff
+conventions. Corollary 6.2 is next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

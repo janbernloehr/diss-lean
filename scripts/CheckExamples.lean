@@ -45001,3 +45001,58 @@ example : ¬ ∀ φ : CoeffPair 1024, ∃ N : ℕ,
   not_sourceProposition5_2_printed_exhaustion
 
 end SourceAuxiliaryHeightChecks
+
+-- Proposition 6.1: original period-two norm, actual spectrum, and printed-bound audit.
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+
+section SourcePeriodTwoChecks
+local instance sourcePeriodTwoThreeFact : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example (φ : CoeffPair 3) (N : ℕ) :
+    ‖weightedPairFourierTail SpectralWeight.one.toWeight N (unitWeightedPairEquiv φ)‖ =
+      ‖sourceFourierTail N φ‖ := by
+  rw [weightedPairFourierTail_unitWeightedPairEquiv, LinearIsometryEquiv.norm_map]
+
+example (φ : CoeffPair 2) (z : ℂ) :
+    z ∉ sourceResolventSet (by simp) φ ↔
+      z ∈ periodicSpectrum (by simp) (weightedBaseToPair SpectralWeight.one (unitWeightedPairEquiv φ)) :=
+  sourcePeriodTwoSpectrum_iff (by simp) φ z
+
+example (C : ℝ) (hC : 0 ≤ C) (U : Set (CoeffPair 2)) (ho : IsOpen U) (h0 : 0 ∈ U) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ ∈ U, ∃ z ∈ refinedResonantDisk (n : ℤ),
+      z ∉ sourceResolventSet (by norm_num) φ ∧
+        C*(‖φ‖^2/(n : ℝ)+‖sourceFourierTail ((n+1)/2) φ‖^2)*(1+‖φ‖^2)*‖φ‖^2 <
+          ‖z-(Real.pi : ℂ)*(n : ℤ)‖^2 :=
+  exists_sourcePeriodTwoRoot_exceeding_printed_budget C hC U ho h0 M
+
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ 0 ∈ U ∧
+      ∀ φ ∈ U, ∃ ξ η : ℤ → ℂ,
+        (∀ n : ℕ, M ≤ n → 2 ≤ n → ∀ z ∈ refinedResonantDisk (n : ℤ),
+          z ∉ sourceResolventSet (by norm_num) φ → z = ξ n ∨ z = η n) ∧
+        ∀ N : ℕ, M ≤ N → 2 ≤ N → Summable (rootDisplacementPowerTail 2 N ξ η) ∧
+          (∑' n : ℤ, rootDisplacementPowerTail 2 N ξ η n) ≤
+            sourcePrintedHilbertDisplacementBudget C φ N :=
+  not_sourceProposition6_1_printed_pair_sum
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+example (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) {ε : ℝ} (hε : 0 < ε) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair p),
+      IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧ ∀ ψ ∈ U,
+        ∃ ξ η : ℤ → ℂ,
+          Memℓp (fun n => ξ n-(Real.pi : ℂ)*n) p ∧
+          Memℓp (fun n => η n-(Real.pi : ℂ)*n) p ∧
+          (∀ n : ℤ, N₀ ≤ n.natAbs →
+            PeriodicResonantPair hp SpectralWeight.one (unitWeightedPairEquiv ψ) n (ξ n) (η n)) ∧
+          (∀ n : ℤ, N₀ ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+            z ∉ sourceResolventSet hp ψ ↔ z = ξ n ∨ z = η n) ∧
+          ∀ N : ℕ, N₀ ≤ N → Summable (rootDisplacementPowerTail p N ξ η) ∧
+            (∑' n : ℤ, rootDisplacementPowerTail p N ξ η n) ≤ sourcePeriodTwoDisplacementBudget ψ N ∧
+            (∑' n : ℤ, rootDisplacementPowerTail p N ξ η n) < ε :=
+  sourceProposition6_1_asymptotics hp hp1 φ hε
+end
+
+end SourcePeriodTwoChecks

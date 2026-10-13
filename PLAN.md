@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Current milestone: Proposition 5.2 printed-height audit
+## Current milestone: Proposition 6.1 in the original period-two norm
+
+`SourcePeriodTwoDisplacement.lean` transports the actual periodic eigenvalue
+pairs through the coefficient-preserving unit-weight isometry. Every Fourier
+coefficient, the component-sum norm, and each symmetric tail cutoff remain
+unchanged. Spectral membership is expressed as noninvertibility of the actual
+original-domain pencil. The pairs retain their algebraic multiplicities.
+One open convex neighborhood containing the input and zero supports the
+corrected displacement power-sum estimate for every larger cutoff.
+
+`SourcePeriodTwoAsymptotics.lean` proves the qualitative ℓᵖ conclusion for
+finite p>1 with locally uniform small full signed power tails. The neighborhood
+may depend on the tolerance. The selected entries are actual spectral pairs
+at every sufficiently distant index; no spectral meaning is assigned to the
+finitely many unspecified entries. Their values do not affect ℓᵖ membership.
+
+`SourcePeriodTwoDisplacementCounterexample.lean` refutes the printed locally
+uniform quantitative estimate already at p=2. Every open original-norm
+neighborhood of zero and every proposed cutoff contain a potential with an
+actual distant spectral value whose squared displacement exceeds the printed
+budget. The final negation covers any labels that exhaust the high spectral
+pairs and have the claimed summable bound. The underlying single-resonance
+construction has quadratic displacement and a quartic printed budget.
+
+The corrected bound includes an additive leading Fourier-tail term. Its
+natural-number half-cutoff is floor(N/2), explicitly recorded in the audit.
+The counterexample also defeats the smaller ceiling(N/2) printed budget;
+rounding cannot account for the discrepancy. No sharp ceiling-cutoff version
+of the corrected quantitative bound is claimed here.
+
+Next: Corollary 6.2's four original boundary spectra, followed by the
+midpoint/gap consequences and Proposition 6.3. The dissertation remains
+incomplete.
+
+Validation: `./scripts/check.sh` passed: 6791 build jobs, the combined public examples, and the axiom audit of 30495 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Proposition 5.2 printed-height audit
 
 `SourceAuxiliaryPotentialPhase.lean` upgrades the existing original-input
 phase (iφ₋,−iφ₊) to an exact linear isometry at every finite Banach exponent.

@@ -1500,3 +1500,35 @@ as do prescribed-height results for real-type input.
 No replacement numerical height is adopted, and the optimal exponent range
 for the printed formula is not asserted. This failure is distinct from
 the final 2N−1 count typo on page 35.
+
+## Proposition 6.1 and Lemma 6.9: the printed displacement budget fails locally at zero
+
+Source: printed pages 35 and 43. At p=2 the printed right-hand side is
+
+```
+C (‖φ‖²/N + ‖R_(N/2) φ‖²)(1+‖φ‖²)‖φ‖².
+```
+
+The earlier `RootDisplacementSourceAudit` proved a reduced-determinant
+counterexample. `SourcePeriodTwoDisplacementCounterexample` now connects
+that witness to the actual period-two operator and its original domain and
+norm. Unit weighting preserves every coefficient and the component-sum norm;
+it does not restrict the input to period-one potentials.
+
+For small equal amplitudes t at the two resonant frequencies, the squared
+original norm is 2t² and the roots are nπ±t. The printed budget is at most
+24C t⁴. Choosing t sufficiently small and n beyond any proposed cutoff
+violates even the bound for one actual root in every open neighborhood of
+zero. `not_sourceProposition6_1_printed_pair_sum` formally refutes the pair-sum
+assertion for any labels exhausting the actual high disk spectra. The
+ceiling-half-cutoff version is also refuted, so rounding does not repair it.
+This is a failure of the claimed locally uniform cutoff at zero; no failure
+for every individually chosen cutoff at a fixed input is asserted.
+
+The qualitative ℓᵖ asymptotics remain valid.
+`sourceProposition6_1_asymptotics` gives actual distant pairs, original-pencil
+spectral equivalence, ℓᵖ displacements, and locally uniform small signed
+power tails for every finite p>1. The proved corrected quantitative budget
+adds the leading Fourier-tail power outside the nonlinear factors. It uses
+the explicit discrete convention floor(N/2); a sharper ceiling-cutoff bound
+is not claimed. See `coverage/SECTION_6.md` for exact theorem scope.
