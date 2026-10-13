@@ -1532,3 +1532,17 @@ power tails for every finite p>1. The proved corrected quantitative budget
 adds the leading Fourier-tail power outside the nonlinear factors. It uses
 the explicit discrete convention floor(N/2); a sharper ceiling-cutoff bound
 is not claimed. See `coverage/SECTION_6.md` for exact theorem scope.
+
+## Corollary 6.2: period-two scope resolved by actual restriction
+
+On printed page 35 the preceding paragraph discusses a one-periodic potential,
+whereas Corollary 6.2 names the period-two input space. This is not recorded
+as a source error. `periodTwoToUnit` constructs the bounded restriction and
+unit-period re-expansion for 1<p<∞, retaining the odd input modes through a
+shifted Hilbert transform. It agrees with physical Fourier integrals on every
+finite input and with actual restriction on arbitrary L² data.
+
+`sourceCorollary6_2` now proves the displayed period-two scope for the original
+pair norm: all four complete canonical boundary spectra have locally uniformly
+bounded displacement power sums. Separate theorems identify actual spectral
+membership and full original Jordan multiplicities. See `coverage/SECTION_6.md`.

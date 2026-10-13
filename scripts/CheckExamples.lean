@@ -45056,3 +45056,95 @@ example (hp : p ≠ ⊤) (hp1 : 1 < p)
 end
 
 end SourcePeriodTwoChecks
+
+namespace SourceCorollary62Checks
+open NLS NLS.Fourier NLS.ZakharovShabat MeasureTheory Set
+open scoped ENNReal
+noncomputable section
+local instance cor62FactThree : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- An odd input mode is retained, even though its even-frequency samples vanish.
+example : periodTwoToUnit (p := 3) (by norm_num) (by simp)
+    (Coeff.ofFinsupp (Finsupp.single 1 1)) 0 = 2*Complex.I/(Real.pi : ℂ) := by
+  simpa using periodTwoToUnit_single_odd (p := 3) (by norm_num) (by simp) 0 0 1
+
+example : periodTwoToUnit (p := 3) (by norm_num) (by simp)
+    (Coeff.ofFinsupp (Finsupp.single 1 1)) 0 ≠ 0 := by
+  rw [show (1 : ℤ) = 2*0+1 by norm_num, periodTwoToUnit_single_odd]
+  simp [Real.pi_ne_zero, Complex.I_ne_zero]
+
+example (a : Coeff 3) : periodTwoToUnit (by norm_num) (by simp) (Coeff.periodDouble a) = a :=
+  periodTwoToUnit_periodDouble (by norm_num) (by simp) a
+
+example (a : ℤ →₀ ℂ) (n : ℤ) :
+    periodTwoToUnit (p := 3) (by norm_num) (by simp) (Coeff.ofFinsupp a) n =
+      intervalFourierCoefficient 1 (periodTwoPolynomial a) n :=
+  periodTwoToUnit_finite_integral (by norm_num) (by simp) a n
+
+example (f : ℝ → ℂ) (hf : MemLp f 2 (volume.restrict (Ioc 0 2))) (n : ℤ) :
+    periodTwoToUnit (by norm_num) (by simp) (periodTwoL2Coefficients f hf) n =
+      intervalFourierCoefficient 1 f n := periodTwoToUnit_two_ofFunction f hf n
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 2)))
+    (hf1 : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    sourceCircleRepresentative (sourceCircleSynthesis
+      (sourceIntervalExtensionL2 b (sourcePeriodTwoRestriction (by norm_num) (by simp)
+        (sourcePeriodTwoL2Coefficients f hf))))
+      =ᵐ[volume.restrict (Ioc 0 2)] BoundaryCondition.intervalExtension b f :=
+  sourcePeriodTwoRestriction_reflection b f hf hf1
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+example (hp1 : 1 < p) (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ‖sourcePeriodTwoRestriction hp1 hp φ‖ ≤ periodTwoToUnitBound hp1 hp * ‖φ‖ :=
+  norm_sourcePeriodTwoRestriction_le hp1 hp φ
+
+example (hp1 : 1 < p) (hp : p ≠ ⊤) (b : BoundaryCondition) (φ : CoeffPair p) :
+    Memℓp (fun n : ℤ => sourcePeriodTwoBoundaryRoots hp1 hp b φ n-(Real.pi : ℂ)*n) p ∧
+      Memℓp (fun n : ℤ => sourcePeriodTwoAuxiliaryRoots hp1 hp b φ n-(Real.pi : ℂ)*n) p :=
+  sourceCorollary6_2_mem hp1 hp b φ
+
+example (hp1 : 1 < p) (hp : p ≠ ⊤)
+    (b : BoundaryCondition) (φ : CoeffPair p) (z : ℂ) :
+    z ∈ sourceBoundarySpectrum b hp (sourceReflectedPotential hp1 hp (sourcePeriodTwoRestriction hp1 hp φ))
+      (sourceReflectedPotential_mem hp1 hp (sourcePeriodTwoRestriction hp1 hp φ)) ↔
+      ∃ n : ℤ, sourcePeriodTwoBoundaryRoots hp1 hp b φ n = z :=
+  sourcePeriodTwoBoundaryRoots_exhaustive hp1 hp b φ z
+
+example (hp1 : 1 < p) (hp : p ≠ ⊤)
+    (b : BoundaryCondition) (φ : CoeffPair p) (z : ℂ) :
+    z ∈ sourceAuxiliarySpectrum b hp
+      (sourceAuxiliaryReflectedPotential hp1 hp (sourcePeriodTwoRestriction hp1 hp φ))
+      (sourceAuxiliaryReflectedPotential_mem hp1 hp (sourcePeriodTwoRestriction hp1 hp φ)) ↔
+      ∃ n : ℤ, sourcePeriodTwoAuxiliaryRoots hp1 hp b φ n = z :=
+  sourcePeriodTwoAuxiliaryRoots_exhaustive hp1 hp b φ z
+
+example (hp1 : 1 < p) (hp : p ≠ ⊤)
+    (b : BoundaryCondition) (φ : CoeffPair p) (z : ℂ) :
+    (∑ᶠ n : ℤ, if sourcePeriodTwoBoundaryRoots hp1 hp b φ n = z then (1 : ℕ) else 0) =
+      sourceBoundaryAlgebraicMultiplicity b hp
+        (sourceReflectedPotential hp1 hp (sourcePeriodTwoRestriction hp1 hp φ))
+        (sourceReflectedPotential_mem hp1 hp (sourcePeriodTwoRestriction hp1 hp φ)) z :=
+  sourcePeriodTwoBoundaryRoots_multiplicity hp1 hp b φ z
+
+example (hp1 : 1 < p) (hp : p ≠ ⊤)
+    (b : BoundaryCondition) (φ : CoeffPair p) (z : ℂ) :
+    (∑ᶠ n : ℤ, if sourcePeriodTwoAuxiliaryRoots hp1 hp b φ n = z then (1 : ℕ) else 0) =
+      sourceAuxiliaryAlgebraicMultiplicity b hp
+        (sourceAuxiliaryReflectedPotential hp1 hp (sourcePeriodTwoRestriction hp1 hp φ))
+        (sourceAuxiliaryReflectedPotential_mem hp1 hp (sourcePeriodTwoRestriction hp1 hp φ)) z :=
+  sourcePeriodTwoAuxiliaryRoots_multiplicity hp1 hp b φ z
+
+example (hp1 : 1 < p) (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ U, ∀ b : BoundaryCondition,
+        (Summable (fun n : ℤ => ‖sourcePeriodTwoBoundaryRoots hp1 hp b ψ n-(Real.pi : ℂ)*n‖^p.toReal) ∧
+          (∑' n : ℤ, ‖sourcePeriodTwoBoundaryRoots hp1 hp b ψ n-(Real.pi : ℂ)*n‖^p.toReal) ≤ C) ∧
+        (Summable (fun n : ℤ => ‖sourcePeriodTwoAuxiliaryRoots hp1 hp b ψ n-(Real.pi : ℂ)*n‖^p.toReal) ∧
+          (∑' n : ℤ, ‖sourcePeriodTwoAuxiliaryRoots hp1 hp b ψ n-(Real.pi : ℂ)*n‖^p.toReal) ≤ C) :=
+  sourceCorollary6_2 hp1 hp φ
+
+end
+end
+end SourceCorollary62Checks

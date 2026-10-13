@@ -1,6 +1,38 @@
 # Implementation status
 
-## Current milestone: Proposition 6.1 in the original period-two norm
+## Current milestone: Corollary 6.2 for arbitrary original period-two input
+
+`PeriodTwoRestriction.lean` constructs bounded restriction from period-two
+coefficients to unit-interval Fourier coefficients for every 1<p<∞. Even
+frequencies are sampled directly; odd frequencies contribute through a
+shifted Hilbert transform. The map is the identity on embedded period-one
+input. `PeriodTwoRestrictionIntegrals.lean` proves exact physical integral
+formulas for every finite input, including negative and odd frequencies.
+
+`PeriodTwoRestrictionL2.lean` identifies the completed map with actual
+restriction for arbitrary L² functions and proves almost-everywhere
+reconstruction on the unit interval. `SourcePeriodTwoRestriction.lean`
+lifts it to the original component-sum pair norm, proves its norm bound and
+phase compatibility, and identifies restriction followed by completed
+reflection with the literal physical reflection for arbitrary L² pairs.
+
+`SourceCorollary6_2.lean` supplies all four complete canonical boundary
+root sequences for arbitrary original period-two input. They exhaust the
+actual ordinary and auxiliary restricted spectra, with repetitions equal
+to full original Jordan multiplicities. Their displacement sequences belong
+to ℓᵖ for every 1<p<∞. One open convex neighborhood containing the input
+and zero bounds all four full displacement power sums, including central
+indices. This proves the displayed period-two scope of Corollary 6.2 by
+restriction; no correction of its input domain is needed.
+
+Next: the midpoint/gap consequences and Proposition 6.3, preserving the
+original norms and exact weighted assumptions. The dissertation remains
+incomplete. Proposition 6.1's printed quantitative bound remains refuted;
+the sharper ceiling-cutoff version of the corrected bound is unproved.
+
+Validation: `./scripts/check.sh` passed: 6796 build jobs, the combined public examples, and the axiom audit of 30569 NLS declarations. The 21 existing warnings are unchanged; all five new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Proposition 6.1 in the original period-two norm
 
 `SourcePeriodTwoDisplacement.lean` transports the actual periodic eigenvalue
 pairs through the coefficient-preserving unit-weight isometry. Every Fourier

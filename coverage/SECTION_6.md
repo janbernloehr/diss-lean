@@ -67,15 +67,48 @@ It does not refute the qualitative ℓᵖ assertion, nor does it assert that a
 separate cutoff chosen individually for each fixed input must fail. The
 counterexample covers both natural rounding conventions at N/2.
 
+## Corollary 6.2: arbitrary period-two input
+
+The paragraph preceding the corollary discusses one-periodic input, but the
+corollary itself states the period-two space. This scope is now realized
+constructively by bounded restriction to [0,1] and re-expansion with unit
+frequencies. No typo or change of the displayed input space is needed.
+Merely keeping the even input coefficients would discard physical odd modes.
+
+For raw period-two coefficients a, the unit-period sequence is
+
+```
+b_n = a_(2n) + i H(oddSamples(a))_(n−1),
+```
+
+where H is the established shifted discrete Hilbert transform. On one odd
+input mode at 2k+1 with amplitude c, the output is
+`c · 2i / (π(2k−2n+1))`. In particular, input mode 1 has nonzero output
+`2i/π` at unit frequency zero. The public checks cover this value and its
+nonvanishing at p=3. The map recovers embedded period-one input exactly.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Bounded scalar restriction | `periodTwoToUnit`, `norm_periodTwoToUnit_le` | Every 1<p<∞; even samples plus odd shifted Hilbert transform. |
+| Exact finite physical coefficients | `periodTwoToUnit_finite_integral` | Every finitely supported period-two Fourier polynomial; both frequency signs and parities. |
+| Arbitrary physical L² restriction | `periodTwoToUnit_two_ofFunction`, `periodTwoToUnit_two_reconstruct` | Actual unit-interval coefficients and almost-everywhere reconstruction, without period-one or endpoint-matching assumptions. |
+| Original pair norm and phase | `norm_sourcePeriodTwoRestriction_le`, `sourcePeriodTwoRestriction_sourcePhase` | Same scalar bound in the source component-sum norm; commutes with the auxiliary potential phase. |
+| Physical pair reflection | `sourcePeriodTwoRestriction_ofFunction`, `sourcePeriodTwoRestriction_reflection` | Restriction then completed extension equals literal physical reflection for arbitrary L² pairs. |
+| Actual full boundary spectra | `sourcePeriodTwoBoundaryRoots_exhaustive`, `sourcePeriodTwoAuxiliaryRoots_exhaustive` | Both ordinary and both auxiliary spectra after restriction and their respective reflections. |
+| Full Jordan multiplicities | `sourcePeriodTwoBoundaryRoots_multiplicity`, `sourcePeriodTwoAuxiliaryRoots_multiplicity` | Repeated canonical labels count actual original-domain full root-space dimensions. |
+| Locally uniform full power sums | `sourceCorollary6_2` | One open convex neighborhood containing the input and zero; one positive bound for all four complete displacement power sums. |
+| Full ℓᵖ membership | `sourceCorollary6_2_mem` | All integer indices, including central labels, for every finite p>1. |
+
+The physical integral identification is proved for finite inputs at every
+1<p<∞ and arbitrary L² input. On general ℓᵖ input, the bounded coefficient
+map defines the completion; no pointwise representative of a general
+Fourier–Lebesgue distribution is assumed. This step does not assert
+continuity of individual canonical eigenvalue labels.
+
 ## Remaining source assertions
 
-Continue with Corollary 6.2 for all four original boundary spectra. First
-resolve its input domain: the preceding paragraph assumes a one-periodic
-potential, while the displayed corollary names the period-two space. Existing
-period-one coefficient embeddings must not be silently treated as restriction
-of arbitrary period-two potentials to [0,1]. This is an audit question, not a
-confirmed source typo. Then match the midpoint and gap consequences and Proposition 6.3 against their
-exact source norms and weighted assumptions. The sharper ceiling-cutoff
-version of the corrected quantitative estimate remains unproved. Existing
-later results and the candidate-label inventory do not certify this section
-or the dissertation complete.
+Continue with the midpoint and gap consequences and Proposition 6.3,
+matching their exact source norms and weighted assumptions. The sharper
+ceiling-cutoff version of the corrected Proposition 6.1 quantitative estimate
+remains unproved. Existing later results and the candidate-label inventory
+do not certify this section or the dissertation complete.

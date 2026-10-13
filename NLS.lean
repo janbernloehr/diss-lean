@@ -3354,3 +3354,8 @@ import NLS.ZakharovShabat.SourceAuxiliaryHeightCounterexample
 import NLS.ZakharovShabat.SourcePeriodTwoDisplacement
 import NLS.ZakharovShabat.SourcePeriodTwoDisplacementCounterexample
 import NLS.ZakharovShabat.SourcePeriodTwoAsymptotics
+import NLS.Fourier.PeriodTwoRestriction
+import NLS.Fourier.PeriodTwoRestrictionIntegrals
+import NLS.Fourier.PeriodTwoRestrictionL2
+import NLS.ZakharovShabat.SourcePeriodTwoRestriction
+import NLS.ZakharovShabat.SourceCorollary6_2
