@@ -3362,3 +3362,6 @@ import NLS.ZakharovShabat.SourceCorollary6_2
 import NLS.ZakharovShabat.SourcePeriodTwoMidpointGap
 import NLS.ZakharovShabat.SourceWeightedGapAsymptotics
 import NLS.ZakharovShabat.SourceWeightedGapCounterexample
+import NLS.ZakharovShabat.SourceWeightedPencil
+import NLS.ZakharovShabat.SourcePQSplitting
+import NLS.ZakharovShabat.SourceLemma6_4

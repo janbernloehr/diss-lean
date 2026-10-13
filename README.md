@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the midpoint/gap asymptotics and corrected weighted gap
-estimate now hold for arbitrary original period-two input. Proposition 6.3's
-printed locally uniform quantitative bound is formally refuted at p=2;
-the qualitative weighted ℓᵖ conclusion remains valid.
-[The Section 6 audit](coverage/SECTION_6.md) records the exact scope and bounds.
-Next are the shifted norms and Lyapunov–Schmidt reduction. The dissertation
-remains incomplete.
+Latest milestone: the original weighted spectral pencil now has an explicit
+P/Q decomposition and a unique complementary free inverse. Lemma 6.4 holds
+in the exact signed source norms for every 1≤p<∞, including λ=nπ, with
+constant two at p=2 and constant one at p=1.
+[The Section 6 audit](coverage/SECTION_6.md) records the precise scope.
+Next is Lemma 6.5's squared-operator estimate. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

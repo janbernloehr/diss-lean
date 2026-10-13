@@ -177,10 +177,70 @@ This is a failure of the uniform cutoff on neighborhoods of zero. It does not
 claim that every separately chosen cutoff for a fixed potential fails. The
 qualitative weighted ℓᵖ asymptotics and the corrected budget remain proved.
 
+## Equation (1.13), the P/Q equations, and the original derivative domain
+
+`SourceWeightedPencil` adds the derivative-domain counterpart of the existing
+coefficient-preserving weighted source inclusion. The two maps are injective,
+and including the derivative domain into the base commutes with forgetting
+the weight. The exact identity `sourceWeightedPencil_eq` identifies the original
+source pencil with `weightedFreePencil − weightedDomainPotential`.
+`sourceWeightedDomainPotential_eq` identifies the weighted potential with the
+original operator at φ minus the original operator at zero. Thus the projected
+equations concern the actual original operator on the weighted derivative
+domain, rather than a separately stipulated coefficient equation.
+
+`SourcePQSplitting` proves unique decomposition into the two raw resonant
+amplitudes and a complementary vector. The synthesis uses physical frequencies
+−n in the first component and n in the second. The theorem applies to every
+positive weight, including the one-derivative weight, and every finite Banach
+exponent. It realizes the direct decomposition in (1.13) on both domains.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original and weighted pencil equality | `sourceWeightedPencil_eq`, `sourceWeightedPencil_zero_iff` | Every weighted domain vector; exact source base/domain conventions. |
+| Original eigenvalue equation | `sourceWeighted_eigenvalue_iff` | `sourceOperator f = λ • sourceDomainInclusion f` iff the actual weighted free/potential equation. |
+| Unique resonant/complementary decomposition | `exists_unique_sourcePQDecomposition` | Exactly two resonant amplitudes and one complementary remainder; both base and derivative weights. |
+| The projected equations | `sourceWeightedPencil_zero_iff_PQ`, `sourceWeightedPencil_add_zero_iff_PQ` | Equivalent to the original pencil at every frequency; no smallness assumption. |
+| Actual complementary inverse | `sourceComplementaryFreeInverse_equation`, `sourceComplementaryFreeInverse_unique` | Solves the original zero-potential source equation with Q_n right-hand side, uniquely on the complementary weighted domain. |
+| Removed resonant modes | `sourceComplementaryFreeInverse_resonant`, `sourceLemma6_4_resonant_zero` | Both modes vanish under the complementary inverse and its potential composition, also at λ=nπ. |
+
+## Lemma 6.4: exact shifts, operator, and endpoints
+
+For physical coefficients f₋ and f₊, the exact source norm is
+
+```
+‖f‖_(w,p;i)^p = Σ_k w_(k+i)^p (|f₋(-k)|^p + |f₊(k)|^p).
+```
+
+`sourceShiftedNorm_formula` proves this identity. The first component has the
+opposite physical modulation, as required by the signed Fourier convention.
+`sourceLemma6_4_operator` identifies the bounded weighted map T_n with the
+actual potential part of the original operator applied to A_λ⁻¹ Q_n in the
+weighted derivative domain.
+
+`sourceLemma6_4` proves the unchanged displayed estimate
+
+```
+‖T_n f‖_(w,p;i) ≤ c_p ‖φ‖_(w,p) ‖f‖_(w,p;−i)
+```
+
+for every 1≤p<∞. The constant depends only on p; there is no weight-, shift-,
+or strip-index-dependent factor. The parameter may lie anywhere in the entire
+closed strip U_n, including λ=nπ. `sourceLemma6_4_two` retains the printed
+constant two. `sourceLemma6_4_one` proves that the endpoint admits constant one,
+using reciprocal-symbol contraction and the exact component-sum norm. This
+is a sufficient constant, not a claim of optimality.
+
+The focused public checks cover the original eigenvalue/PQ equivalences,
+complementary inverse equation and uniqueness, raw domain coefficients,
+shifted coefficient formula, both endpoints, and the resonant free center.
+The p=1 check with constant weight two also verifies that no extra w_0=1
+hypothesis was introduced. No correction to Lemma 6.4 is required.
+
 ## Remaining source assertions
 
-Continue with the source's Lyapunov–Schmidt decomposition, shifted norms,
-and Lemma 6.4, matching the actual original spaces and endpoint assumptions.
-Sharper ceiling-cutoff versions of the corrected quantitative estimates
-remain unproved. Existing later results and the candidate-label inventory
-do not certify this section or the dissertation complete.
+Continue with Lemma 6.5's squared-operator estimate and the locally uniform
+contraction consequence, retaining the exact source tail, signed shift, and
+endpoint assumptions. Sharper ceiling-cutoff versions of the corrected
+Propositions 6.1/6.3 estimates remain unproved. Existing later results and the
+candidate-label inventory do not certify this section or the dissertation complete.

@@ -45278,3 +45278,121 @@ example :
 
 end
 end SourceWeightedGapAuditChecks
+
+namespace SourceLemma64Checks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- The central free lattice point is allowed: only the two resonant modes are removed.
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1) (n : ℤ) (c : Fin 2 → ℂ) :
+    weightedPotentialInverse (by norm_num) w φ n ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)
+      (resonantSynthesis w.toWeight n c) = 0 :=
+  sourceLemma6_4_resonant_zero (by norm_num) w φ n _ _ c
+
+-- The source weight class permits w(0)>1; the endpoint estimate still has constant one.
+example (φ f : WeightedCoeffPair (SpectralWeight.constant 2 (by norm_num)).toWeight 1)
+    (i n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) :
+    (SpectralWeight.constant 2 (by norm_num)).shiftedPairNorm i
+      (weightedPotentialInverse (by norm_num) (SpectralWeight.constant 2 (by norm_num)) φ n z hz f) ≤
+    ‖φ‖*(SpectralWeight.constant 2 (by norm_num)).shiftedPairNorm (-i) f :=
+  sourceLemma6_4_one _ φ i n z hz f
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)]
+example (w : SpectralWeight) (f : WeightedDomain w.toWeight p) (k : ℤ) :
+    (sourceWeightedDomainInput w f).fst.val k = f.fst.val k ∧
+      (sourceWeightedDomainInput w f).snd.val k = f.snd.val k :=
+  ⟨sourceWeightedDomainInput_fst w f k,sourceWeightedDomainInput_snd w f k⟩
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (z : ℂ) (f : WeightedDomain w.toWeight p) :
+    sourceSpectralPencil hp (sourceWeightedPeriodTwoInput w φ) z (sourceWeightedDomainInput w f) =
+      sourceWeightedPeriodTwoInput w (weightedFreePencil w.toWeight z f - weightedDomainPotential hp w φ f) :=
+  sourceWeightedPencil_eq hp w φ z f
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (z : ℂ) (f : WeightedDomain w.toWeight p) :
+    sourceOperator hp (sourceWeightedPeriodTwoInput w φ) (sourceWeightedDomainInput w f) =
+      z • sourceDomainInclusion (sourceWeightedDomainInput w f) ↔
+        weightedFreePencil w.toWeight z f = weightedDomainPotential hp w φ f :=
+  sourceWeighted_eigenvalue_iff hp w φ z f
+
+example (w : Weight) (n : ℤ) (f : WeightedCoeffPair w p) :
+    ∃! cv : (Fin 2 → ℂ) × WeightedCoeffPair w p,
+      complementaryProjection w n cv.2 = cv.2 ∧ resonantSynthesis w n cv.1 + cv.2 = f :=
+  exists_unique_sourcePQDecomposition w n f
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (f : WeightedDomain w.toWeight p) :
+    sourceSpectralPencil hp (sourceWeightedPeriodTwoInput w φ) z (sourceWeightedDomainInput w f) = 0 ↔
+      weightedFreePencil w.toWeight z (resonantProjection w.toWeight.oneDerivative n f) =
+        resonantProjection w.toWeight n (weightedDomainPotential hp w φ f) ∧
+      weightedFreePencil w.toWeight z (complementaryProjection w.toWeight.oneDerivative n f) =
+        complementaryProjection w.toWeight n (weightedDomainPotential hp w φ f) :=
+  sourceWeightedPencil_zero_iff_PQ hp w φ n z f
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (u v : WeightedDomain w.toWeight p)
+    (hu : resonantProjection w.toWeight.oneDerivative n u = u)
+    (hv : complementaryProjection w.toWeight.oneDerivative n v = v) :
+    sourceSpectralPencil hp (sourceWeightedPeriodTwoInput w φ) z (sourceWeightedDomainInput w (u+v)) = 0 ↔
+      weightedFreePencil w.toWeight z u = resonantProjection w.toWeight n (weightedDomainPotential hp w φ (u+v)) ∧
+      weightedFreePencil w.toWeight z v = complementaryProjection w.toWeight n (weightedDomainPotential hp w φ (u+v)) :=
+  sourceWeightedPencil_add_zero_iff_PQ hp w φ n z u v hu hv
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (f : WeightedCoeffPair w.toWeight p) :
+    sourceSpectralPencil hp 0 z
+      (sourceWeightedDomainInput w (complementaryFreeDomainInverse w.toWeight n z hz f)) =
+        sourceWeightedPeriodTwoInput w (complementaryProjection w.toWeight n f) :=
+  sourceComplementaryFreeInverse_equation hp w n z hz f
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (f : WeightedCoeffPair w.toWeight p)
+    (v : WeightedDomain w.toWeight p)
+    (hv : complementaryProjection w.toWeight.oneDerivative n v = v)
+    (he : sourceSpectralPencil hp 0 z (sourceWeightedDomainInput w v) =
+      sourceWeightedPeriodTwoInput w (complementaryProjection w.toWeight n f)) :
+    v = complementaryFreeDomainInverse w.toWeight n z hz f :=
+  sourceComplementaryFreeInverse_unique hp w n z hz f v hv he
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (i : ℤ) (f : WeightedCoeffPair w.toWeight p) :
+    w.shiftedPairNorm i f ^ p.toReal = ∑' k : ℤ, (w (k+i))^p.toReal *
+      (‖f.fst.val (-k)‖^p.toReal+‖f.snd.val k‖^p.toReal) :=
+  sourceShiftedNorm_formula hp w i f
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (f : WeightedCoeffPair w.toWeight p) :
+    sourceWeightedPeriodTwoInput w (weightedPotentialInverse hp w φ n z hz f) =
+      sourceOperator hp (sourceWeightedPeriodTwoInput w φ)
+        (sourceWeightedDomainInput w (complementaryFreeDomainInverse w.toWeight n z hz f)) -
+      sourceOperator hp 0
+        (sourceWeightedDomainInput w (complementaryFreeDomainInverse w.toWeight n z hz f)) :=
+  sourceLemma6_4_operator hp w φ n z hz f
+
+example (hp : p ≠ ⊤) (w : SpectralWeight)
+    (φ : WeightedCoeffPair w.toWeight p) (i n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (f : WeightedCoeffPair w.toWeight p) :
+    w.shiftedPairNorm i (weightedPotentialInverse hp w φ n z hz f) ≤
+      (Coeff.complementaryConstant p hp * ‖φ‖) * w.shiftedPairNorm (-i) f :=
+  sourceLemma6_4 hp w φ i n z hz f
+
+end
+
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 1)
+    (i n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (f : WeightedCoeffPair w.toWeight 1) :
+    w.shiftedPairNorm i (weightedPotentialInverse (by norm_num) w φ n z hz f) ≤
+      ‖φ‖ * w.shiftedPairNorm (-i) f :=
+  sourceLemma6_4_one w φ i n z hz f
+
+example (w : SpectralWeight) (φ : WeightedCoeffPair w.toWeight 2)
+    (i n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n) (f : WeightedCoeffPair w.toWeight 2) :
+    w.shiftedPairNorm i (weightedPotentialInverse (by norm_num) w φ n z hz f) ≤
+      (2*‖φ‖) * w.shiftedPairNorm (-i) f :=
+  sourceLemma6_4_two w φ i n z hz f
+
+end
+end SourceLemma64Checks

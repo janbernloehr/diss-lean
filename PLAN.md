@@ -1,6 +1,38 @@
 # Implementation plan
 
-## Current milestone: Midpoint/gap asymptotics and the Proposition 6.3 audit
+## Current milestone: The original P/Q splitting and Lemma 6.4
+
+`SourceWeightedPencil.lean` includes the weighted derivative domain into the
+original source domain without changing either raw Fourier component. Both
+base and domain inclusions are injective and commute with domain inclusion.
+The actual original spectral pencil is exactly the weighted free pencil minus
+the weighted potential. The potential itself agrees with the difference
+between the original operator at φ and at zero.
+
+`SourcePQSplitting.lean` proves unique decomposition into the two resonant
+amplitudes and a complementary remainder, for both base and derivative
+weights. The original eigenvalue equation is equivalent to the actual P/Q
+equations, including the form for a specified resonant part u and complementary
+part v. These equivalences require no smallness or high-frequency assumption.
+The complementary domain inverse solves the original free source equation
+with right-hand side Q_n f, is unique on the complementary domain, and
+annihilates both resonant modes even at λ=nπ.
+
+`SourceLemma6_4.lean` identifies T_n with the actual potential part of the
+original operator applied to that domain inverse. It proves the exact signed
+shifted coefficient formula and the printed opposite-shift estimate for
+every 1≤p<∞, uniformly in the weight, shift, strip index, and parameter in
+the full closed strip. The printed Hilbert constant remains two. The endpoint
+p=1 admits constant one in the same original pair norm. No extra assumption
+w_0=1 is introduced; the public endpoint check includes a constant weight two.
+
+Next: Lemma 6.5's squared-operator estimate and its locally uniform contraction
+consequence, with the source tail, shift, and endpoint conventions audited.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6802 build jobs, the combined public examples, and the axiom audit of 30640 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Midpoint/gap asymptotics and the Proposition 6.3 audit
 
 `SourcePeriodTwoMidpointGap.lean` proves the midpoint and gap ℓᵖ
 asymptotics for arbitrary original period-two input. The distant entries
