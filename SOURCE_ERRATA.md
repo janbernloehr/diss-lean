@@ -1364,3 +1364,19 @@ analyticity in the original p=1 norm. This does not assert bounded reflection
 into the p=1 space or a p=1 reflected-operator trace. The multiplicity in the
 endpoint statement is explicitly that of the original Hilbert boundary
 realization. No correction to the printed analytic conclusion is needed.
+
+
+## Lemma 5.1: auxiliary endpoint signs and the reflected potential (page 33)
+
+Visual inspection confirms the endpoint equations f₋+i f₊=0 for D* and
+f₋−i f₊=0 for N*, and the reflected pair (−i f₊, i f₋). The N* extension
+uses the negative of that pair. Both extended equations use φneu. The
+formal physical phase computation agrees with these signs, including the
+potential transformation (i φ₋, −i φ₊). No correction is required for
+(1.10), these reflection formulas, or either part of Lemma 5.1.
+
+The physical theorem uses actual periodic H¹ representatives and the
+original differential equation almost everywhere. It requires no extra
+integrability assumption on the potential; only the separate original-norm
+coefficient realization invokes an L² potential. The subsequent Fourier
+expansions (1.11)–(1.12) are outside this milestone and are audited next.

@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 4.5's trace formula and analytic boundary branches
-are proved in the original norms. The printed p=1 endpoint is covered via
-the same continuous physical potential and its Hilbert boundary realization.
-[The Section 4 audit](coverage/SECTION_4.md) records the scope. Section 5's
-auxiliary physical boundary conditions and Lemma 5.1 are next;
-the dissertation remains incomplete.
+Latest milestone: Lemma 5.1 is proved with actual periodic H¹ representatives
+for both auxiliary boundary conditions and the Neumann-reflected potential.
+The original-norm coefficients preserve the differential equation and nonzero
+eigenfunctions. [The Section 5 audit](coverage/SECTION_5.md) records the scope.
+The Fourier expansions (1.11)–(1.12) are next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

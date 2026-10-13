@@ -1,6 +1,34 @@
 # Implementation status
 
-## Current milestone: Lemma 4.5 trace formula, including p=1
+## Current milestone: Lemma 5.1 and physical auxiliary reflections
+
+`SourceLemma5_1.lean` proves both parts of Lemma 5.1 using actual
+periodic H¹ representatives. The auxiliary endpoint equations (1.10) are
+f₋+i f₊=0 for D* and f₋−i f₊=0 for N*, at both endpoints. Their
+extensions use the phase-twisted reflection (−i f₊, i f₋), with opposite
+signs for the two problems. Both solve the physical differential equation
+at the same Neumann-reflected potential on the full period.
+
+The physical transfer does not add an L² hypothesis on the potential.
+The constructed representatives reconstruct the entire reflected function
+on [0,2] and retain the original values on [0,1], including the endpoints.
+For L² potentials, the extension's weighted original-norm coefficients
+solve the actual source operator equation. Both the potential coefficients
+and the function coefficients are identified with their normalized physical
+Fourier integrals. Nonzero original eigenfunctions remain nonzero and yield
+spectral points of the original periodic source pencil.
+
+The existing physical auxiliary H¹ domain and L² operator realize the
+opening operator definition of Section 5; the new audit records the exact
+entry points. The physical H¹-to-coefficient-domain identification is a
+continuous equivalence, without asserting equality of those different norms.
+No correction to (1.10), the reflected signs, or Lemma 5.1 is needed.
+The following Fourier expansions (1.11)–(1.12), their normalizations and
+auxiliary subspace decompositions are next. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6768 build jobs, the combined public examples, and the axiom audit of 30146 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Lemma 4.5 trace formula, including p=1
 
 `SourceLemma4_5.lean` defines the intrinsic trace on the actual original
 boundary contour range. Its bounded lift belongs to the original

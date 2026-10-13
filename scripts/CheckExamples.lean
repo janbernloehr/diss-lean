@@ -44514,3 +44514,73 @@ example (φ : CoeffPair 1) :
           BoundaryCondition.classicalEigenvalues b (sourceOnePhysicalPotential ψ) ∩
             Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) = {sourceOneBoundaryEigenvalue b ψ n} ∧
           sourceOneBoundaryMultiplicity b ψ (sourceOneBoundaryEigenvalue b ψ n) = 1 := sourceLemma4_5_one φ
+
+/-! Section 5: actual auxiliary endpoints, periodic H¹ reflection, and original coefficients. -/
+section SourceLemma51Checks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain .dirichlet f) :
+    (f 0).1 + Complex.I * (f 0).2 = 0 ∧ (f 1).1 + Complex.I * (f 1).2 = 0 := by
+  constructor <;> simp [hf.left, hf.right, extensionSign]
+
+example (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain .neumann f) :
+    (f 0).1 - Complex.I * (f 0).2 = 0 ∧ (f 1).1 - Complex.I * (f 1).2 = 0 := by
+  constructor <;> simp [hf.left, hf.right, extensionSign]
+
+example (f : ℝ → ℂ × ℂ) (x : ℝ) (hx : 1 < x) :
+    auxiliaryIntervalExtension .dirichlet f x =
+      (-Complex.I * (f (2-x)).2, Complex.I * (f (2-x)).1) := by
+  simpa [extensionSign] using auxiliaryIntervalExtension_right .dirichlet f x hx
+
+example (f : ℝ → ℂ × ℂ) (x : ℝ) (hx : 1 < x) :
+    auxiliaryIntervalExtension .neumann f x =
+      -(-Complex.I * (f (2-x)).2, Complex.I * (f (2-x)).1) := by
+  simpa [extensionSign] using auxiliaryIntervalExtension_right .neumann f x hx
+
+example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
+    (hf : HasClassicalAuxiliaryDomain b f) (z : ℂ)
+    (h : physicalOperator φ f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x)) :
+    ∃ F : C(AddCircle (2 : ℝ), ℂ) × C(AddCircle (2 : ℝ), ℂ),
+      HasPeriodicH1Regularity F.1 ∧ HasPeriodicH1Regularity F.2 ∧
+      EqOn (fun x : ℝ => (F.1 (x : AddCircle (2 : ℝ)), F.2 (x : AddCircle (2 : ℝ))))
+        (auxiliaryIntervalExtension b f) (Icc 0 2) ∧
+      physicalOperator (intervalExtension .neumann φ)
+        (fun x : ℝ => (F.1 (x : AddCircle (2 : ℝ)), F.2 (x : AddCircle (2 : ℝ))))
+        =ᵐ[volume.restrict (Ioc 0 2)]
+        (fun x : ℝ => z • (F.1 (x : AddCircle (2 : ℝ)), F.2 (x : AddCircle (2 : ℝ)))) :=
+  sourceLemma5_1 b φ f hf z h
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain b f)
+    (x : ℝ) (hx : x ∈ Icc 0 1) :
+    ((sourceClassicalAuxiliaryCircleExtension b f hf).1 (x : AddCircle (2 : ℝ)),
+      (sourceClassicalAuxiliaryCircleExtension b f hf).2 (x : AddCircle (2 : ℝ))) = f x :=
+  sourceClassicalAuxiliaryCircleExtension_restrict b f hf hx
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain b f) :
+    (sourceClassicalAuxiliaryExtension b f hf).fst.val (-3) =
+      periodTwoCoefficient (fun x => (auxiliaryIntervalExtension b f x).1) (-3) ∧
+    (sourceClassicalAuxiliaryExtension b f hf).snd.val (-3) =
+      periodTwoCoefficient (fun x => (auxiliaryIntervalExtension b f x).2) (-3) :=
+  sourceClassicalAuxiliaryExtension_coefficients b f hf (-3)
+
+example (φ : ℝ → ℂ × ℂ) (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) :
+    physicalBase (CoeffPair.toMax 2 (sourceNeumannPotentialCoefficients φ hφ))
+      =ᵐ[volume.restrict (Ioc 0 2)] intervalExtension .neumann φ :=
+  sourceNeumannPotentialCoefficients_reconstruct φ hφ
+
+example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) (hf : HasClassicalAuxiliaryDomain b f) (z : ℂ)
+    (hne : ¬ EqOn f 0 (Icc 0 1))
+    (h : physicalOperator φ f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x)) :
+    ∃ a : WeightedCoeffPair (Weight.sobolev 1) 2, a ≠ 0 ∧
+      sourceOperator (by simp) (sourceNeumannPotentialCoefficients φ hφ) a = z • sourceDomainInclusion a :=
+  source_classical_auxiliary_eigenvector_transfer b φ f hφ hf z hne h
+
+example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
+    (hφ : MemLp φ 2 (volume.restrict (Ioc 0 1))) (hf : HasClassicalAuxiliaryDomain b f) (z : ℂ)
+    (hne : ¬ EqOn f 0 (Icc 0 1))
+    (h : physicalOperator φ f =ᵐ[volume.restrict (Ioc 0 1)] (fun x => z • f x)) :
+    z ∈ (sourceResolventSet (by simp) (sourceNeumannPotentialCoefficients φ hφ))ᶜ :=
+  source_classical_auxiliary_eigenvalue_mem_spectrum b φ f hφ hf z hne h
+
+end SourceLemma51Checks
