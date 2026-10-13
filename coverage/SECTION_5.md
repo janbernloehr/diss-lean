@@ -84,11 +84,41 @@ The public checks cover both literal physical modes, a negative frequency,
 the full L² sum and energy, the original norm, the component coefficients,
 Sobolev compatibility, and the formal printed-series counterexample.
 
+## Original weighted auxiliary spaces and decomposition, page 34
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original weighted auxiliary spaces | `sourceWeightedAuxiliarySubspace`, `sourceWeightedAuxiliarySubspaceInfty` | All real Sobolev orders; finite component-sum norm and separate signed coupled-supremum norm. |
+| Actual phase conditions | `mem_sourceWeightedAuxiliarySubspace`, `mem_sourceWeightedAuxiliarySubspaceInfty` | Raw first-component frequency reversal versus matching signed indices; both auxiliary signs. |
+| Closedness | `isClosed_sourceWeightedAuxiliarySubspace`, `isClosed_sourceWeightedAuxiliarySubspaceInfty` | The actual original ambient topologies. |
+| Corrected topological decomposition | `isCompl_sourceWeightedAuxiliarySubspaces`, `isTopCompl_sourceWeightedAuxiliarySubspaces`, and `Infty` counterparts | D* and N* have zero intersection and span the entire original space. |
+| Complete scalar amplitude parametrization | `sourceWeightedAuxiliaryAmplitudeEquiv`, `sourceWeightedAuxiliaryAmplitudeEquivInfty` | Continuous linear equivalences onto the actual subspaces. |
+| Explicit amplitude assemblies | `sourceWeightedAuxiliaryAmplitudeEquiv_apply`, `sourceWeightedAuxiliaryAmplitudeEquivInfty_apply` | (ε reflection(a),i a) in raw coordinates; (ε a,i a) in signed infinity coordinates. |
+| Exact original amplitude norms | `norm_sourceWeightedAuxiliaryAmplitudeEquiv`, `norm_sourceWeightedAuxiliaryAmplitudeEquivInfty` | Factors 2^(1/p) for finite p and 2 for the source infinity norm. |
+| Physical H¹ isomorphism | `sourceClassicalAuxiliaryBoundaryEquiv` | Original physical interval H¹ domain to original one-derivative auxiliary coefficient space, as a continuous linear equivalence. |
+| Actual forward and inverse maps | `sourceClassicalAuxiliaryBoundaryEquiv_ofFunction`, `sourceClassicalAuxiliaryBoundaryEquiv_symm_apply` | Reflected Fourier coefficients and endpoint-inclusive physical restriction. |
+| Finite-exponent mode series | `hasSum_sourceWeightedAuxiliaryModes`, `existsUnique_sourceWeightedAuxiliaryExpansion` | Norm convergence and exactly one weighted scalar amplitude sequence for every auxiliary vector. |
+| Actual distributional sum | `hasSum_sourceAuxiliaryDistribution` | Every Banach exponent, including infinity, and every real Sobolev order. |
+| Original synthesis identification | `sourceAuxiliaryDistribution_eq_sourcePair`, `sourceAuxiliaryDistribution_eq_sourcePairInfty` | The sums are the actual original raw or signed pair distributions. |
+| Infinity amplitude representation | `existsUnique_sourceWeightedAuxiliaryInftyExpansion` | Unique amplitude assembly together with its actual distributional sum; no infinity-norm convergence assertion. |
+| Literal physical modes | `sourceAuxiliaryDistribution_single`, `sourceAuxiliaryDistributionMode_physical` | The same weighted single modes act by integrals of (ε exp(−iπnx), i exp(iπnx)) against Schwartz tests. |
+| Printed repeated-summand failure | `not_isCompl_sourceWeightedAuxiliaryDirichlet_self`, `not_isCompl_sourceWeightedAuxiliaryDirichletInfty_self` | A nonzero weighted zero mode refutes the repeated D* summand in both original norm conventions. |
+
+These entries are in `SourceAuxiliarySpaces` and `SourceAuxiliarySeries`.
+The physical H¹ norm is not identified isometrically with the weighted
+coefficient norm. The finite and infinity amplitude factors explicitly
+record the original norm difference from the auxiliary maximum norm.
+
+Public checks include both complementary decompositions, the exact signed
+infinity membership condition and factor, a p=1 norm expansion, p=3 with
+negative Sobolev order and negative frequency, actual Schwartz-wave
+integrals, unique infinity representation, both physical H¹ maps, and
+both forms of the printed repeated-summand counterexample.
+
 ## Next source assertions
 
-Audit the auxiliary Fourier spaces and their complementary decomposition
-on page 34 in the original norms, including their full weighted and
-finite-exponent/distributional series formulations. Then identify the
-original-domain isomorphisms and the completed auxiliary extension maps.
-The spectrum, counting and reality assertions of Proposition 5.2 retain
-separate source-space and numerical-height audits.
+Audit the completed bounded auxiliary extension maps on page 34, including
+the original input and target norms and arbitrary physical L² identification.
+Then prove original-domain operator invariance and identify the actual
+restricted source pencils. Proposition 5.2's spectrum, counting, reality
+and numerical-height assertions retain separate audits.

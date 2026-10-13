@@ -44638,3 +44638,68 @@ example : ¬ HasSum (fun n : ℤ => ((1/2 : ℂ) * intervalAuxiliaryBoundaryPair
   sourceEquation1_11_printed_ordinary_mode_false
 
 end SourceAuxiliaryFourierChecks
+
+/-! Page 34: original auxiliary spaces, complementary decomposition, and actual mode series. -/
+section SourceAuxiliarySpaceChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition
+open scoped ENNReal SchwartzMap FourierTransform
+
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (s : ℝ) :
+    Submodule.IsTopCompl (sourceWeightedAuxiliarySubspace (p := p) .dirichlet s)
+      (sourceWeightedAuxiliarySubspace .neumann s) := isTopCompl_sourceWeightedAuxiliarySubspaces s
+
+example (s : ℝ) : Submodule.IsTopCompl (sourceWeightedAuxiliarySubspaceInfty .dirichlet s)
+    (sourceWeightedAuxiliarySubspaceInfty .neumann s) := isTopCompl_sourceWeightedAuxiliarySubspacesInfty s
+
+example (s : ℝ) (u : WeightedCoeffPairInfty (Weight.sobolev s)) :
+    u ∈ sourceWeightedAuxiliarySubspaceInfty .neumann s ↔ ∀ n : ℤ, u.1.val n = Complex.I * u.2.val n := by
+  simpa [extensionSign] using mem_sourceWeightedAuxiliarySubspaceInfty .neumann s u
+
+example (b : BoundaryCondition) (s : ℝ) (a : WeightedCoeff (Weight.sobolev s) ⊤) :
+    ‖sourceWeightedAuxiliaryAmplitudeEquivInfty b s a‖ = 2 * ‖a‖ :=
+  norm_sourceWeightedAuxiliaryAmplitudeEquivInfty b s a
+
+example (b : BoundaryCondition) (s : ℝ) (u : sourceWeightedAuxiliarySubspace (p := 1) b s) :
+    ∃! a : WeightedCoeff (Weight.sobolev s) 1,
+      HasSum (fun n : ℤ => a.val n • sourceWeightedAuxiliaryMode b s n) u :=
+  existsUnique_sourceWeightedAuxiliaryExpansion (by simp) b s u
+
+example (b : BoundaryCondition) (s : ℝ) (u : sourceWeightedAuxiliarySubspaceInfty b s) :
+    ∃! a : WeightedCoeff (Weight.sobolev s) ⊤,
+      sourceWeightedAuxiliaryAmplitudeEquivInfty b s a = u ∧
+      HasSum (fun n : ℤ => a.val n • sourceAuxiliaryDistributionMode b n)
+        (pairDistributionInftyCLM s u.val) := existsUnique_sourceWeightedAuxiliaryInftyExpansion b s u
+
+example (b : BoundaryCondition) (g : 𝓢(ℝ, ℂ)) :
+    ((sourceAuxiliaryDistributionMode b (-3)).1 g, (sourceAuxiliaryDistributionMode b (-3)).2 g) =
+      (b.extensionSign * ∫ x : ℝ, wave 3 x * g x, Complex.I * ∫ x : ℝ, wave (-3) x * g x) := by
+  simpa using sourceAuxiliaryDistributionMode_physical b (-3) g
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain b f) :
+    (sourceClassicalAuxiliaryBoundaryEquiv b (classicalAuxiliaryDomainOfFunction b f hf)).val =
+      sourceClassicalAuxiliaryExtension b f hf := sourceClassicalAuxiliaryBoundaryEquiv_ofFunction b f hf
+
+example (b : BoundaryCondition) (a : sourceWeightedAuxiliarySubspace (p := 2) b 1) (x : Set.Icc (0 : ℝ) 1) :
+    ((sourceClassicalAuxiliaryBoundaryEquiv b).symm a).val x =
+      classicalIntervalRestriction (WeightedCoeffPair.toMax (Weight.sobolev 1) 2 a.val) x.val :=
+  sourceClassicalAuxiliaryBoundaryEquiv_symm_apply b a x
+
+example (s : ℝ) : ¬ IsCompl (sourceWeightedAuxiliarySubspaceInfty .dirichlet s)
+    (sourceWeightedAuxiliarySubspaceInfty .dirichlet s) := not_isCompl_sourceWeightedAuxiliaryDirichletInfty_self s
+
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example (a : WeightedCoeff (Weight.sobolev (-2)) 3) :
+    ‖sourceWeightedAuxiliaryAmplitudeEquiv .neumann (-2) a‖ = (2 : ℝ) ^ (1 / 3 : ℝ) * ‖a‖ := by
+  simpa using norm_sourceWeightedAuxiliaryAmplitudeEquiv (by simp : (3 : ℝ≥0∞) ≠ ⊤) .neumann (-2) a
+
+example (a : WeightedCoeff (Weight.sobolev (-2)) 3) :
+    (sourceWeightedAuxiliaryAmplitudeEquiv .neumann (-2) a).val.fst.val (-7) = -a.val 7 ∧
+    (sourceWeightedAuxiliaryAmplitudeEquiv .neumann (-2) a).val.snd.val (-7) = Complex.I * a.val (-7) := by
+  simp [sourceWeightedAuxiliaryAmplitudeEquiv_apply, extensionSign, WeightedCoeff.reflection_apply,
+    WeightedCoeff.smul_val]
+
+example (s : ℝ) : ¬ IsCompl (sourceWeightedAuxiliarySubspace (p := 3) .dirichlet s)
+    (sourceWeightedAuxiliarySubspace .dirichlet s) := not_isCompl_sourceWeightedAuxiliaryDirichlet_self s
+
+end SourceAuxiliarySpaceChecks

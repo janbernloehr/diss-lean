@@ -1399,3 +1399,21 @@ series in `sourceEquation1_11_1_12_coefficients` uses the auxiliary mode;
 The first line's component formula, the half-pairing normalization, and
 (1.12)'s N* mode are correct. The later subspace decomposition on page 34
 is a separate audit and is not silently included in this correction.
+
+
+## Page 34: repeated auxiliary D* summand in the direct sum
+
+The displayed decomposition following (1.12) repeats FL_d* as both summands.
+The second summand must be FL_n*. The repeated-summand statement is false:
+D* contains a nonzero weighted zero mode, so its intersection with itself
+is nonzero. `not_isCompl_sourceWeightedAuxiliaryDirichlet_self` proves
+this for the original finite-exponent spaces at every real Sobolev order;
+`not_isCompl_sourceWeightedAuxiliaryDirichletInfty_self` proves it for the
+separate signed coupled-supremum source space.
+
+`isTopCompl_sourceWeightedAuxiliarySubspaces` and its `Infty` counterpart
+prove the corrected closed topological D* ⊕ N* decomposition. The amplitude
+norm factors are 2^(1/p) and 2 respectively. Finite-exponent mode series
+converge in the original norm; the infinity series is proved distributionally,
+without adding an infinity-norm convergence claim. This is separate from
+the ordinary-mode typo in (1.11).

@@ -3415,3 +3415,38 @@ result concerns L² data; the later finite-exponent and distributional
 statements retain their separate scope. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6769 build jobs, the combined public examples, and the axiom audit of 30177 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+
+## Section 5 audit: original auxiliary subspaces and mode decompositions
+
+`SourceAuxiliarySpaces.lean` proves that the auxiliary D* and N* spaces
+are closed topological complements at every real Sobolev order. Finite
+exponents use the original component-sum norm; infinity uses the separate
+signed coefficient space with the source's frequencywise-sum supremum norm.
+Membership is the actual ±i reflection condition, with reversed first
+frequency for raw coordinates and matching indices for signed coordinates.
+
+The scalar amplitude maps are continuous linear equivalences onto these
+spaces. Their explicit assemblies have norm factors 2^(1/p) for finite p
+and 2 for the source infinity norm. The physical auxiliary H¹ domain is
+continuously equivalent to the original one-derivative coefficient space;
+the forward map is the actual reflected Fourier extension, and the inverse
+is restriction at every point of the original closed interval.
+
+`SourceAuxiliarySeries.lean` proves unique norm-convergent expansions for
+finite exponents and actual periodic distributional expansions for all
+Banach exponents, including infinity. The distributional sums are identified
+with the actual original pair syntheses, and their modes act by the physical
+exponential-wave integrals with the auxiliary phase. The infinity theorem
+asserts a unique amplitude representation with its distributional sum; it
+does not assert convergence in the infinity norm.
+
+The page-34 decomposition repeats D* as both summands. A nonzero weighted
+zero mode formally refutes self-complementarity, in both original norm
+conventions. The corrected D* ⊕ N* decomposition is proved. The earlier
+(1.11) correction remains separate. Next: the completed bounded auxiliary
+extensions in the original spaces, their physical identification, and
+operator invariance. Proposition 5.2's counting, reality and numerical-height
+claims remain a separate audit. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6771 build jobs, the combined public examples, and the axiom audit of 30218 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

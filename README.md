@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the auxiliary Fourier expansions (1.11)–(1.12) are proved
-in the original coefficient and physical L² norms, including reconstruction
-and exact energy. A formal counterexample identifies the ordinary mode
-misprinted in (1.11); the auxiliary-mode formula is proved.
-[The Section 5 audit](coverage/SECTION_5.md) records the scope. Auxiliary
-subspaces and their decomposition are next; the dissertation remains incomplete.
+Latest milestone: the weighted auxiliary D* and N* spaces are proved to
+be closed complements in the original finite and infinity norms, with
+unique mode representations and the physical H¹ correspondence. The
+repeated D* summand printed on page 34 is formally refuted.
+[The Section 5 audit](coverage/SECTION_5.md) records the corrected decomposition.
+Completed extensions and operator invariance are next; the dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

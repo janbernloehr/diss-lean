@@ -3332,3 +3332,5 @@ import NLS.ZakharovShabat.SourceLemma4_5
 import NLS.ZakharovShabat.SourceLemma4_5Endpoint
 import NLS.ZakharovShabat.SourceLemma5_1
 import NLS.ZakharovShabat.SourceAuxiliaryBoundaryFourier
+import NLS.ZakharovShabat.SourceAuxiliarySpaces
+import NLS.ZakharovShabat.SourceAuxiliarySeries
