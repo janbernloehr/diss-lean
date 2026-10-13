@@ -44426,3 +44426,91 @@ example (φ : CoeffPair 3) (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet)
     (N : ℕ) (h : SourceBoundaryCountingData (by simp) φ hφ N) :
     sourceBoundarySpectrum .dirichlet (by simp) φ hφ ⊆ centralSpectralBox N ∪ highSpectralDisks N (Real.pi/4) :=
   h.spectrum_subset .dirichlet
+
+noncomputable section
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+local instance : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The finite-dimensional trace uses the actual original operator on its domain lift.
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ)
+    (x : (sourceBoundaryAmbientCircleProjection b (by simp) φ c r).range) :
+    (sourceBoundaryContourRestriction b (by simp) φ c r x).val =
+      sourceOperator (by simp) φ (sourceBoundaryAmbientContourLift b (by simp) φ c r x.val) :=
+  sourceBoundaryContourRestriction_apply b (by simp) φ hφ c r hr hc x
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ)
+    (x : (sourceBoundaryAmbientCircleProjection b (by simp) φ c r).range) :
+    sourceDomainInclusion (sourceBoundaryAmbientContourLift b (by simp) φ c r x.val) = x.val :=
+  sourceBoundaryAmbientContourLift_range b (by simp) φ hφ c r hr hc x
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) (c : ℂ) (r : ℝ) (x : CoeffPair 1) :
+    sourceBoundaryAmbientContourLift b (by simp) φ c r x ∈ sourceWeightedBoundarySubspace b 1 :=
+  sourceBoundaryAmbientContourLift_mem b (by simp) φ c r x
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (c : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ) :
+    (sourceBoundaryCircleProjection b (by simp) φ c r).range ≃ₗᵢ[ℂ]
+      (sourceBoundaryAmbientCircleProjection b (by simp) φ c r).range :=
+  sourceBoundaryContourRangeEquiv b (by simp) φ hφ c r hr hc
+
+example (b : BoundaryCondition) (φ : CoeffPair 3) (c : ℂ) (r : ℝ) :
+    sourceBoundaryContourTrace b (by simp) φ c r = LinearMap.trace ℂ
+      (sourceBoundaryAmbientCircleProjection b (by simp) φ c r).range
+      (sourceBoundaryContourRestriction b (by simp) φ c r).toLinearMap :=
+  sourceBoundaryContourTrace_eq_trace_restriction b (by simp) φ c r
+
+example (b : BoundaryCondition) (φ : CoeffPair 3)
+    (hφ : φ ∈ sourceBoundaryBaseSubspace .dirichlet) (c z : ℂ) (r : ℝ) (hr : 0 ≤ r)
+    (hc : Metric.sphere c r ⊆ sourceResolventSet (by simp) φ)
+    (hrank : Module.finrank ℂ (sourceBoundaryCircleProjection b (by simp) φ c r).range = 1)
+    (hz : z ∈ sourceBoundaryEnclosedSpectrum b (by simp) φ hφ c r) :
+    sourceBoundaryContourTrace b (by simp) φ c r = z :=
+  sourceBoundaryContourTrace_eq_of_rank_one b (by simp) φ hφ c z r hr hc hrank hz
+
+example (φ : CoeffPair 3)
+    (hc : Metric.sphere ((Real.pi : ℂ)*(-5 : ℤ)) (Real.pi/4) ⊆
+      sourceResolventSet (by simp) (sourceReflectedPotential (by norm_num) (by simp) φ)) :
+    AnalyticAt ℂ (fun ψ => sourceBoundaryEigenvalue .neumann (by norm_num) (by simp) ψ (-5)) φ :=
+  analyticAt_sourceBoundaryEigenvalue .neumann (by norm_num) (by simp) φ (-5) hc
+
+-- One original-input neighborhood works for both branches and all high signed indices.
+example (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp1 : 1 < p) (hp : p ≠ ⊤) (φ : CoeffPair p) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair p), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ b : BoundaryCondition, ∀ n : ℤ, N₀ < n.natAbs →
+        AnalyticOnNhd ℂ (fun ψ => sourceBoundaryEigenvalue b hp1 hp ψ n) U ∧
+        ∀ ψ ∈ U,
+          sourceBoundaryEnclosedSpectrum b hp (sourceReflectedPotential hp1 hp ψ)
+            (sourceReflectedPotential_mem hp1 hp ψ) ((Real.pi : ℂ)*n) (Real.pi/4) =
+              {sourceBoundaryEigenvalue b hp1 hp ψ n} ∧
+          sourceBoundaryAlgebraicMultiplicity b hp (sourceReflectedPotential hp1 hp ψ)
+            (sourceReflectedPotential_mem hp1 hp ψ) (sourceBoundaryEigenvalue b hp1 hp ψ n) = 1 :=
+  sourceLemma4_5 hp1 hp φ
+
+-- The p=1 endpoint keeps the same physical potential and classical boundary conditions.
+example (φ : CoeffPair 1) :
+    sourceUnitIntervalL2Coefficients (sourceOnePhysicalPotential φ) (memLp_sourceOnePhysicalPotential φ) =
+      sourceOneToHilbert φ := sourceOneToHilbert_coefficients φ
+
+example (φ : CoeffPair 1) :
+    CoeffPair.toMax 2 (sourceReflectedPotential (by norm_num) (by simp) (sourceOneToHilbert φ)) =
+      BoundaryCondition.dirichletPotentialCoefficients (sourceOnePhysicalPotential φ) (memLp_sourceOnePhysicalPotential φ) :=
+  sourceOneToHilbert_reflected φ
+
+example (b : BoundaryCondition) (φ : CoeffPair 1) :
+    sourceOneBoundarySpectrum b φ = BoundaryCondition.classicalEigenvalues b (sourceOnePhysicalPotential φ) :=
+  sourceOneBoundarySpectrum_eq_classical b φ
+
+example (φ : CoeffPair 1) :
+    ∃ N₀ : ℕ, ∃ U : Set (CoeffPair 1), 0 < N₀ ∧ IsOpen U ∧ Convex ℝ U ∧ IsConnected U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ b : BoundaryCondition, ∀ n : ℤ, N₀ < n.natAbs →
+        AnalyticOnNhd ℂ (fun ψ => sourceOneBoundaryEigenvalue b ψ n) U ∧
+        ∀ ψ ∈ U,
+          BoundaryCondition.classicalEigenvalues b (sourceOnePhysicalPotential ψ) ∩
+            Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4) = {sourceOneBoundaryEigenvalue b ψ n} ∧
+          sourceOneBoundaryMultiplicity b ψ (sourceOneBoundaryEigenvalue b ψ n) = 1 := sourceLemma4_5_one φ

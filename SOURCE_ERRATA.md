@@ -1343,3 +1343,24 @@ established central boxes of height N. It does not repair or reassert the
 separate all-exponent norm-dependent height claim in the printed theorem.
 In particular, neither a new numerical height nor the degenerate N=0
 central rectangle is silently introduced into the counting argument.
+
+## Lemma 4.5: trace normalization and the p=1 endpoint (page 33)
+
+Visual inspection confirms that the printed lemma allows 1<=p<infinity.
+The original contour trace requires no normalization correction: it is the
+trace of the actual original operator on the rank-one boundary Riesz range,
+and equals its enclosed eigenvalue. The domain lift and identification with
+the typed boundary range are proved, including preservation of the trace
+under the continuous change of norms.
+
+The interval-extension construction of Lemma 4.3 covers 1<p<infinity and
+alone does not supply a period-two p=1 realization. The endpoint analytic
+conclusion is nevertheless proved by an additional argument. Original p=1
+coefficients give a continuous physical potential. Their bounded inclusion
+into p=2 is proved to give exactly its physical unit-interval coefficients,
+and the completed Hilbert reflection gives the same classical interval
+boundary eigenvalue set. Pullback of the Hilbert trace branches establishes
+analyticity in the original p=1 norm. This does not assert bounded reflection
+into the p=1 space or a p=1 reflected-operator trace. The multiplicity in the
+endpoint statement is explicitly that of the original Hilbert boundary
+realization. No correction to the printed analytic conclusion is needed.

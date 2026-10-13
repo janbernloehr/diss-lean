@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: original boundary Riesz ranks and algebraic counts
+## Current milestone: Lemma 4.5 trace formula, including p=1
+
+`SourceLemma4_5.lean` defines the intrinsic trace on the actual original
+boundary contour range. Its bounded lift belongs to the original
+one-derivative boundary domain and represents each spectral-range vector
+itself. The intrinsic endomorphism acts by the original operator on that
+lift. An isometry identifies this ambient boundary range with the typed
+boundary-projector range from the preceding milestone. Continuous norm
+conversion preserves the trace by conjugation of the finite restrictions.
+
+The trace equals the enclosed eigenvalue whenever the original boundary
+range has rank one. For 1<p<infinity, both trace-defined high-index branches
+are analytic on one open convex connected original-input neighborhood
+containing the input and zero. Their disks contain exactly those values,
+with original algebraic multiplicity one. On admissible circles they agree
+with the previously constructed period-one eigenvalue branches.
+
+The PDF explicitly includes p=1 in Lemma 4.5. `SourceLemma4_5Endpoint.lean`
+proves that endpoint using the classical Hilbert realization: an original
+absolutely summable coefficient pair synthesizes a continuous period-one
+physical potential, whose unit-interval L² coefficients are exactly the
+bounded inclusion into p=2. Its completed reflection is the actual physical
+Dirichlet reflection. The resulting spectrum equals the classical interval
+eigenvalue set with the same boundary condition. Pulling back the Hilbert
+trace branches proves analyticity in the original p=1 norm on a common
+neighborhood, with exactly one classical eigenvalue in every high disk.
+Multiplicity one is proved in this original Hilbert boundary realization.
+
+The two theorems cover the printed finite-exponent range. No bounded
+reflection into the period-two p=1 space, or trace on such a p=1 realization,
+is asserted. No change to the analytic conclusion is needed; the endpoint
+uses an explicit additional argument. Earlier source qualifications,
+including the printed all-exponent height failure, remain unchanged.
+Next: Section 5, the auxiliary physical boundary conditions (1.10), their
+phase-twisted reflections, and Lemma 5.1. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6767 build jobs, the combined public examples, and the axiom audit of 30125 NLS declarations. The 21 existing warnings are unchanged; both new modules and their focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: original boundary Riesz ranks and algebraic counts
 
 `SourceBoundaryContours.lean` constructs the actual restrictions of the
 original circle and four-edge rectangular Riesz integrals to each boundary

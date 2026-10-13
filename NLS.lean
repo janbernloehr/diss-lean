@@ -3328,3 +3328,5 @@ import NLS.ZakharovShabat.SourceBoundaryRootSpaces
 import NLS.ZakharovShabat.SourceBoundaryContours
 import NLS.ZakharovShabat.SourceBoundaryContourDomains
 import NLS.ZakharovShabat.SourceBoundaryCounting
+import NLS.ZakharovShabat.SourceLemma4_5
+import NLS.ZakharovShabat.SourceLemma4_5Endpoint

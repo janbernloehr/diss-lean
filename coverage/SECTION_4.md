@@ -249,8 +249,48 @@ a concrete p>2, both boundary signs, negative high indices, domain-range
 identification, Jordan recursion, algebraic sums, analytic neighborhoods,
 finite-rank projections, simple eigenvalues, and exhaustive localization.
 
+## Lemma 4.5: original trace and the finite-exponent endpoint (page 33)
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual boundary projector in the ambient source space | `sourceBoundaryAmbientCircleProjection` | Original normalized circle integral followed by the boundary projection. |
+| Original operator-domain lift | `sourceBoundaryAmbientContourLift_mem`, `sourceBoundaryAmbientContourLift_inclusion`, `sourceBoundaryAmbientContourLift_range` | The lift belongs to the original weighted boundary domain and represents the spectral vector itself. |
+| Typed range identification | `sourceBoundaryContourRangeEquiv` | Isometry between the typed boundary-projector range and the ambient boundary range used for trace. |
+| Actual operator on the range | `sourceBoundaryContourRestriction_apply` | Intrinsic endomorphism acts by the original source operator on its domain lift. |
+| Intrinsic trace formula | `sourceBoundaryContourTrace_eq_trace_restriction`, `sourceBoundaryContourTrace_eq` | The actual finite restriction has the coefficient-theory trace, by continuous conjugation. |
+| Rank-one trace equals eigenvalue | `sourceBoundaryContourTrace_eq_of_rank_one` | Any admissible circle with rank one and an enclosed original eigenvalue. |
+| Trace-defined high branches | `sourceBoundaryEigenvalue`, `sourceBoundaryEigenvalue_eq_periodOne` | Original trace agrees with the existing period-one branch on admissible high circles. |
+| Analyticity in the original norm | `analyticAt_sourceBoundaryContourTrace`, `analyticAt_sourceBoundaryEigenvalue` | Complex analytic after the completed original interval extension, 1<p<infinity. |
+| Common neighborhood and simple spectrum | `sourceLemma4_5`, `sourceBoundaryEigenvalue_spec` | Both signs, all high signed indices, singleton disks and original algebraic multiplicity one. |
+| Continuous physical p=1 input | `sourceOnePhysicalPotential`, `continuous_sourceOnePhysicalPotential` | Absolute Fourier summability gives the actual period-one interval potential. |
+| Coefficient-preserving Hilbert inclusion | `sourceOneToHilbert_coefficients` | The bounded inclusion gives exactly the physical unit-interval L² coefficients. |
+| Actual physical reflected potential | `sourceOneToHilbert_reflected` | The completed Hilbert reflection equals the actual Dirichlet-reflected physical coefficients. |
+| Classical endpoint spectrum | `sourceOneBoundarySpectrum_eq_classical` | Equality with the original interval differential equation and boundary conditions. |
+| Printed p=1 analytic conclusion | `sourceLemma4_5_one` | Open convex connected neighborhood in the original p=1 norm; analytic trace branches, singleton classical eigenvalue disks, Hilbert-realization multiplicity one. |
+
+The main entries are in `NLS.ZakharovShabat.SourceLemma4_5` and
+`NLS.ZakharovShabat.SourceLemma4_5Endpoint`. The trace is independent of
+any chosen basis or reference projection. The range equivalence preserves
+the original norm; the separate equivalence to maximum-norm coefficients
+is not asserted to be an isometry.
+
+The strict-exponent theorem and the separate endpoint theorem cover the
+printed range 1<=p<infinity. For p=1 the realization is explicitly the
+classical Hilbert boundary problem for the same continuous potential.
+No bounded interval-reflection map into the period-two p=1 space or trace
+on that unavailable realization is inferred. The original-p=1 analytic
+conclusion follows by bounded pullback, with physical spectrum equality
+proved rather than assumed. No change to the printed trace normalization
+or analytic conclusion is needed. The prior height qualifications remain.
+
+Public checks include the actual operator and lift, both range realizations,
+intrinsic trace, rank-one identification, all strict finite exponents,
+a concrete exponent above two, negative high indices, coefficient and
+physical-spectrum identification at p=1, and the full endpoint statement.
+
 ## Next source assertions
 
-Audit Lemma 4.5 (page 33): identify the trace of the actual original
-restricted operator on the rank-one Riesz range with the simple boundary
-eigenvalue, and obtain analyticity in the original interval-input norm.
+Continue Section 5 with the physical auxiliary boundary conditions (1.10),
+the phase-twisted interval reflections, and Lemma 5.1. Track the distinct
+Neumann-reflected potential and both auxiliary boundary signs before
+formalizing the corresponding physical Fourier expansions (1.11)–(1.12).
