@@ -44584,3 +44584,57 @@ example (b : BoundaryCondition) (φ f : ℝ → ℂ × ℂ)
   source_classical_auxiliary_eigenvalue_mem_spectrum b φ f hφ hf z hne h
 
 end SourceLemma51Checks
+
+/-! Equations (1.11)–(1.12): physical auxiliary Fourier series and the printed mode error. -/
+section SourceAuxiliaryFourierChecks
+open NLS NLS.Fourier NLS.ZakharovShabat NLS.ZakharovShabat.BoundaryCondition MeasureTheory Set
+
+example (a : CoeffPair 2) : ‖sourceAuxiliaryPhaseTwo a‖ = ‖a‖ := sourceAuxiliaryPhaseTwo.norm_map a
+
+example (x : ℝ) : physicalAuxiliaryBoundaryMode .dirichlet (-3) x =
+    (wave 3 x, Complex.I * wave (-3) x) := by
+  simp [physicalAuxiliaryBoundaryMode, extensionSign]
+
+example (x : ℝ) : physicalAuxiliaryBoundaryMode .neumann 4 x =
+    (-wave (-4) x, Complex.I * wave 4 x) := by
+  simp [physicalAuxiliaryBoundaryMode, extensionSign]
+
+example (b : BoundaryCondition) (n : ℤ) :
+    sourceCircleRepresentative (sourceCircleSynthesis (sourceAuxiliaryBoundaryMode b n))
+      =ᵐ[volume.restrict (Ioc 0 2)] physicalAuxiliaryBoundaryMode b n :=
+  sourceAuxiliaryBoundaryMode_physical b n
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    HasSum (fun n : ℤ => ((1/2 : ℂ) * intervalAuxiliaryBoundaryPairing b f n) •
+      sourceAuxiliaryBoundaryMode b n) (sourceAuxiliaryIntervalExtensionCoefficients b f hf) :=
+  sourceEquation1_11_1_12_coefficients b f hf
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    ∃ F : SourceCirclePairL2,
+      sourceCircleRepresentative F =ᵐ[volume.restrict (Ioc 0 2)] auxiliaryIntervalExtension b f ∧
+      HasSum (fun n : ℤ => ((1/2 : ℂ) * intervalAuxiliaryBoundaryPairing b f n) •
+        sourceCircleSynthesis (sourceAuxiliaryBoundaryMode b n)) F ∧
+      ‖F‖ ^ 2 = (∫ x in (0 : ℝ)..1, ‖(f x).1‖ ^ 2) + ∫ x in (0 : ℝ)..1, ‖(f x).2‖ ^ 2 :=
+  sourceEquation1_11_1_12 b f hf
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ)
+    (hf : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    (sourceAuxiliaryIntervalExtensionCoefficients b f hf).fst (-3) =
+      halfCoefficient (fun x => (f x).1) (-3) - Complex.I * extensionSign b * halfCoefficient (fun x => (f x).2) 3 ∧
+    (sourceAuxiliaryIntervalExtensionCoefficients b f hf).snd (-3) =
+      halfCoefficient (fun x => (f x).2) (-3) + Complex.I * extensionSign b * halfCoefficient (fun x => (f x).1) 3 := by
+  simpa using sourceAuxiliaryIntervalExtensionCoefficients_raw b f hf (-3)
+
+example (b : BoundaryCondition) (f : ℝ → ℂ × ℂ) (hf : HasClassicalAuxiliaryDomain b f)
+    (hL : MemLp f 2 (volume.restrict (Ioc 0 1))) :
+    sourceAuxiliaryIntervalExtensionCoefficients b f hL = sourceDomainInclusion (sourceClassicalAuxiliaryExtension b f hf) :=
+  sourceAuxiliaryIntervalExtensionCoefficients_eq_classical b f hf hL
+
+example : ¬ HasSum (fun n : ℤ => ((1/2 : ℂ) * intervalAuxiliaryBoundaryPairing .dirichlet
+      (fun _ => ((1 : ℂ), Complex.I)) n) • sourceBoundaryMode .dirichlet n)
+      (sourceAuxiliaryIntervalExtensionCoefficients .dirichlet _ memLp_auxiliaryZeroMode) :=
+  sourceEquation1_11_printed_ordinary_mode_false
+
+end SourceAuxiliaryFourierChecks

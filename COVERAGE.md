@@ -3384,3 +3384,34 @@ The following Fourier expansions (1.11)–(1.12), their normalizations and
 auxiliary subspace decompositions are next. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6768 build jobs, the combined public examples, and the axiom audit of 30146 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+
+## Section 5 audit: auxiliary Fourier expansions (1.11)–(1.12)
+
+`SourceAuxiliaryBoundaryFourier.lean` proves the auxiliary Fourier
+expansions in the original component-sum coefficient and physical L² norms.
+The unnormalized modes are (ε exp(−iπnx), i exp(iπnx)), with ε=1 for D*
+and ε=−1 for N*. The amplitude is exactly half the physical sesquilinear
+pairing with that auxiliary mode. Both component coefficients equal the
+normalized physical Fourier integrals of the actual reflected function.
+
+For arbitrary original interval L² data, the series reconstructs the
+auxiliary reflection almost everywhere on [0,2] and preserves the original
+interval energy when the doubled period is normalized. Endpoint matching
+is not assumed; uniform or H¹ convergence is not asserted for arbitrary
+L² input. When the original data do satisfy the auxiliary H¹ endpoint
+conditions, these coefficients agree exactly with the inclusion of the
+Sobolev extension from Lemma 5.1.
+
+The second line of printed (1.11) uses E_m^dir where E_m^d* is required.
+A formal counterexample proves that its ordinary-mode series cannot sum
+to the auxiliary reflection of the constant function (1,i). The corrected
+auxiliary-mode series is proved. The component formula in the first line,
+the factor 1/2, and equation (1.12) require no correction.
+
+Next: the auxiliary Fourier subspaces, their complementary decomposition,
+and the original-norm extension maps on page 34. The current Fourier-sum
+result concerns L² data; the later finite-exponent and distributional
+statements retain their separate scope. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6769 build jobs, the combined public examples, and the axiom audit of 30177 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

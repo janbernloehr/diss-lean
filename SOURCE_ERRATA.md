@@ -1380,3 +1380,22 @@ original differential equation almost everywhere. It requires no extra
 integrability assumption on the potential; only the separate original-norm
 coefficient realization invokes an L² potential. The subsequent Fourier
 expansions (1.11)–(1.12) are outside this milestone and are audited next.
+
+
+## Equation (1.11): ordinary mode in the auxiliary expansion (pages 33–34)
+
+The second line of (1.11) prints E_m^dir as the synthesis vector, although
+the pairing uses E_m^d* and the same line defines E_m^d*=i e_m^+ + e_m^−.
+The synthesis vector must also be E_m^d*. This is a substantive equality
+failure as printed, not a normalization convention: the two zero modes
+have physical values (1,1) and (1,i).
+
+`sourceEquation1_11_printed_ordinary_mode_false` proves that, for the
+constant original function (1,i), the printed ordinary-mode series does
+not have the actual auxiliary reflected coefficients as its sum. Its proof
+uses uniqueness of sums and the zero-frequency coefficient. The corrected
+series in `sourceEquation1_11_1_12_coefficients` uses the auxiliary mode;
+`sourceEquation1_11_1_12` also proves the physical L² sum and exact energy.
+The first line's component formula, the half-pairing normalization, and
+(1.12)'s N* mode are correct. The later subspace decomposition on page 34
+is a separate audit and is not silently included in this correction.

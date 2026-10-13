@@ -53,9 +53,42 @@ endpoint restriction, negative-frequency physical coefficient identities,
 potential reconstruction, nonzero source eigenvectors and spectral membership.
 No correction is required for these source statements.
 
+## Physical Fourier expansions (1.11)–(1.12), pages 33–34
+
+| Source assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original coefficient phase isometry | `sourceAuxiliaryPhaseTwo` | Exact component-sum norm at p=2. |
+| Literal auxiliary modes | `physicalAuxiliaryBoundaryMode`, `sourceAuxiliaryBoundaryMode_physical` | (ε exp(−iπnx), i exp(iπnx)), unnormalized, both boundary signs. |
+| Actual sesquilinear pairing | `intervalAuxiliaryBoundaryPairing`, `intervalAuxiliaryBoundaryPairing_eq_phase` | Physical integral, conjugate in the auxiliary mode; exact inverse-phase comparison. |
+| Actual reflection coefficients | `sourceAuxiliaryIntervalExtensionCoefficients_integrals` | Both components are normalized physical Fourier integrals. |
+| Printed component formula | `sourceAuxiliaryIntervalExtensionCoefficients_raw` | Both signs, arbitrary signed frequencies; the first line of (1.11) is unchanged. |
+| Half-pairing series | `sourceEquation1_11_1_12_coefficients` | Convergence in the original component-sum coefficient norm, using the auxiliary mode. |
+| Actual reflected physical sum | `sourceCircleSynthesis_auxiliaryIntervalExtension` | Reconstructs the printed phase-twisted extension a.e. on [0,2]. |
+| Physical L² series | `sourceEquation1_11_1_12_L2` | Convergence in normalized component-sum period-two L². |
+| Exact original energy | `norm_sourceAuxiliaryIntervalExtensionCoefficients`, `sourceEquation1_11_1_12` | Preserves the original interval L² energy. |
+| Compatibility with Lemma 5.1 | `sourceAuxiliaryIntervalExtensionCoefficients_eq_classical` | On the auxiliary physical H¹ domain, equals the actual source-domain inclusion of the Sobolev extension. |
+| Printed mode mismatch | `physicalAuxiliaryBoundaryMode_ne_ordinary_zero` | Ordinary and auxiliary D* modes differ already at zero frequency. |
+| Printed series counterexample | `sourceEquation1_11_printed_ordinary_mode_false` | For constant data (1,i), the ordinary-mode series in the second line of (1.11) cannot sum to the auxiliary reflected coefficients. |
+
+These entries are in `NLS.ZakharovShabat.SourceAuxiliaryBoundaryFourier`.
+The complete series theorem covers arbitrary L² interval input, hence also
+H¹ input, without imposing endpoint equations for L² convergence. It does
+not assert uniform or H¹ convergence for arbitrary L² data. The coefficient
+phase is an isometry in the original norm, and physical realization is proved
+through the actual Fourier integrals and a.e. reconstruction.
+
+The second line of (1.11) needs E_m^d* in place of E_m^dir. The first line
+and the factor 1/2 need no change. Equation (1.12) already uses the correct
+N* mode. This correction is explicitly tracked in `SOURCE_ERRATA.md`.
+The public checks cover both literal physical modes, a negative frequency,
+the full L² sum and energy, the original norm, the component coefficients,
+Sobolev compatibility, and the formal printed-series counterexample.
+
 ## Next source assertions
 
-Audit the actual physical Fourier expansions (1.11)–(1.12), their mode labels,
-phase factors and normalization. Then identify the auxiliary Fourier spaces
-and their complementary decomposition in the original norms. Analyticity,
-counting and later auxiliary results require their own source-space audits.
+Audit the auxiliary Fourier spaces and their complementary decomposition
+on page 34 in the original norms, including their full weighted and
+finite-exponent/distributional series formulations. Then identify the
+original-domain isomorphisms and the completed auxiliary extension maps.
+The spectrum, counting and reality assertions of Proposition 5.2 retain
+separate source-space and numerical-height audits.
