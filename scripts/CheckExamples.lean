@@ -48719,3 +48719,100 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceLemma1011iiPeriodChecks
+
+namespace SourceLemma1011EndpointChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- The full lemma upgrades the existing W, retaining part (i) and all original circle data.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceLemma10_11CircleData hp hp1 W) :
+    SourceLemma10_11Data hp hp1 W ∧ SourceLemma10_11iData hp hp1 W :=
+  ⟨h.admissibleEndpoints,h.previous⟩
+
+-- Admissibility excludes every gap at all interior parameters, including collapsed gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) {a b : ℂ} (γ : Path a b) :
+    SourceAdmissiblePath hp hp1 ψ γ ↔
+      ∀ t ∈ Ioo (0 : ℝ) 1, ∀ m : ℤ, γ.extend t ∉ sourcePeriodicSegment hp hp1 ψ m :=
+  sourceAdmissiblePath_iff hp hp1 ψ γ
+
+-- One full relative boundary value works at both complex endpoints in the original central disk.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11Data hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) :
+    ∃ F : ℂ → ℂ, ∃ A : ℂ,
+      (∀ z ∈ D 0 \ sourcePeriodicSegment hp hp1 ψ 0,
+        HasDerivAt F (sourceCriticalRootRatioJoint hp hp1 (z,ψ)) z) ∧
+      Tendsto F (𝓝[D 0 \ sourcePeriodicSegment hp hp1 ψ 0]
+        (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0)) (𝓝 A) ∧
+      Tendsto F (𝓝[D 0 \ sourcePeriodicSegment hp hp1 ψ 0]
+        (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0)) (𝓝 A) :=
+  h.previous.originalDisk_common_endpoint_primitive hD ψ hψW hψV 0
+
+-- Independent endpoint truncations converge to zero without any full-path integrability hypothesis.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11Data hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (n : ℤ)
+    (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n))
+    (hs : ContDiffOn ℝ 1 γ.extend (Ioo 0 1))
+    (hadm : SourceAdmissiblePath hp hp1 ψ γ) (hin : range γ ⊆ D n) :
+    Tendsto (fun uv : ℝ × ℝ => ∫ t in uv.1..uv.2,
+      sourceCriticalRootRatioJoint hp hp1 (γ.extend t,ψ)*deriv γ.extend t)
+      ((𝓝[>] (0 : ℝ)) ×ˢ (𝓝[<] (1 : ℝ))) (𝓝 0) :=
+  (h.endpoint_paths hD ψ hψW hψV n γ hs hadm hin).1
+
+-- The full package includes cornered paths, with neither a supplied primitive nor a homotopy.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11Data hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (n : ℤ)
+    (Γ : PiecewiseInteriorC1Path
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n))
+    (hadm : SourceAdmissiblePiecewisePath hp hp1 ψ Γ) (hin : ∀ i u, Γ.edge i u ∈ D n) :
+    Γ.improperIntegral (fun z => deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+      sourceCanonicalRoot hp hp1 ψ z) = 0 :=
+  (h.piecewise_paths hD ψ hψW hψV n Γ hadm hin).2
+
+-- The ordinary curve integral also vanishes whenever it is absolutely integrable.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11Data hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (n : ℤ)
+    (γ : Path (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n))
+    (hs : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hadm : SourceAdmissiblePath hp hp1 ψ γ) (hin : range γ ⊆ D n)
+    (hint : CurveIntegrable (holomorphicOneForm (fun z => sourceCriticalRootRatioJoint hp hp1 (z,ψ))) γ) :
+    (∫ᶜ z in γ, holomorphicOneForm (fun z => sourceCriticalRootRatioJoint hp hp1 (z,ψ)) z) = 0 :=
+  h.previous.endpointPath_curveIntegral_zero hD ψ hψW hψV n γ hs hadm hin hint
+
+-- The improper integral definition is not a default zero: integrating 1 from 0 to 1 gives 1.
+example : improperPathIntegral (fun _ : ℂ => 1) (Path.segment (0 : ℂ) 1) = 1 := by
+  have hlim (z : ℂ) : Tendsto (fun w : ℂ => w) (𝓝[univ] z) (𝓝 z) :=
+    continuous_id.continuousAt.tendsto.mono_left nhdsWithin_le_nhds
+  simpa only [sub_zero] using improperPathIntegral_eq_sub (fun _ : ℂ => 1) (fun z : ℂ => z) univ
+    continuousOn_const (fun z _ => hasDerivAt_id z) (Path.segment (0 : ℂ) 1)
+    ((contDiffOn_segment_extend _ _).mono Ioo_subset_Icc_self) (fun _ _ => mem_univ _) (hlim 0) (hlim 1)
+
+-- The literal truncated sums also retain the endpoint difference for arbitrary cornered chains.
+example {a b : ℂ} (Γ : PiecewiseInteriorC1Path a b) : Γ.improperIntegral (fun _ => 1) = b-a := by
+  have hlim (k : ℕ) (_ : k ≤ Γ.count) :
+      Tendsto (fun z : ℂ => z) (𝓝[univ] (Γ.vertex k)) (𝓝 (Γ.vertex k)) :=
+    continuous_id.continuousAt.tendsto.mono_left nhdsWithin_le_nhds
+  simpa only [Γ.initial,Γ.terminal] using Γ.improperIntegral_eq_sub (fun _ => 1) (fun z => z) univ
+    continuousOn_const (fun z _ => hasDerivAt_id z) (fun _ _ _ => mem_univ _) Γ.vertex hlim
+
+local instance source1011EndpointsThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceLemma10_11Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceLemma10_11 (by norm_num) (by norm_num)
+
+end
+end SourceLemma1011EndpointChecks

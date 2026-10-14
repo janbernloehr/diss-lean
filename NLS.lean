@@ -3485,3 +3485,8 @@ import NLS.ZakharovShabat.SourceCriticalRootPeriodCircle
 import NLS.ZakharovShabat.SourceCriticalRootPeriod
 import NLS.ZakharovShabat.SourceCriticalRootPeriodZero
 import NLS.ZakharovShabat.SourceCriticalRootOriginalDiscPrimitive
+import NLS.ComplexAnalysis.ImproperPrimitivePathIntegral
+import NLS.ComplexAnalysis.PiecewiseImproperPathIntegral
+import NLS.ZakharovShabat.SourceCriticalRootCommonEndpointLimit
+import NLS.ZakharovShabat.SourceAdmissibleEndpointPath
+import NLS.ZakharovShabat.SourceLemma10_11

@@ -31,8 +31,10 @@ spectral and joint analyticity on the original domains. Lemma 10.11(i)
 is now covered by one explicit analytic extension through every collapsed
 gap on the unchanged source domain. Original circle periods and arbitrary
 piecewise C¹ closed contours in the original cut disks now have zero
-integral throughout that domain. The endpoint-path assertion of
-Lemma 10.11(ii) remains to be audited.
+integral throughout that domain. The endpoint-path assertion is now
+covered for the usual piecewise C¹ path class, with independently
+truncated improper endpoint integrals and full limits at complex or
+collapsed endpoints. The next source section is Section 11.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -1370,3 +1372,69 @@ expressed as improper limits of truncated integrals rather than assuming
 absolute integrability for every admissible parametrization.
 
 Validation: `./scripts/check.sh` passed (6,922 build jobs, the complete public example suite, and the axiom audit of 32,193 NLS declarations). The build retains 21 existing warnings; the five new modules and eight focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Lemma 10.11: arbitrary admissible endpoint paths
+
+`SourceCriticalRootCommonEndpointLimit.lean` proves that every actual
+primitive on an original cut disk has the same full relative limit at
+both spectral endpoints. For a noncollapsed complex gap, existing
+inverse-square-root estimates give finite limits along every approach
+within the cut disk. The cosine coordinate then pulls the primitive back
+to two analytic angle charts with opposite sheet coefficients. Its endpoint
+difference is both equal and opposite on those charts, hence zero.
+There is no assumption that the endpoints are real or horizontally ordered.
+For a collapsed gap, the omitted quotient is analytic through the cut.
+An analytic primitive on the full disk is adjusted by a constant to agree
+with the given primitive on the whole cut disk, giving its endpoint limit.
+All omitted-factor analyticity comes from the existing common W.
+
+`ImproperPrimitivePathIntegral.lean` defines a truncated integral by
+
+    integral_(u..v) quotient(path(t)) * path'(t) dt.
+
+The improper integral is the limit as u approaches zero from above and v
+approaches one from below, independently. Every compact interior truncation
+is integrable, and the fundamental theorem of calculus evaluates it as
+the primitive difference. Full relative boundary limits prove existence
+of the improper limit. This does not infer absolute integrability from
+an arbitrary path's approach to a square-root endpoint. When the full
+curve integral is integrable and the path is C¹ up to its endpoints, the
+improper definition agrees with the ordinary curve integral.
+
+`PiecewiseImproperPathIntegral.lean` handles finite chains of continuous
+paths, each C¹ on its open parameter interval. Derivatives need not match
+or even exist at the endpoints of individual pieces. Its improper integral
+is a limit of sums of actual truncated piece integrals. Primitive
+differences telescope across all intermediate vertices, including corners.
+The empty chain is allowed and also has zero integral when its endpoints
+coincide. Thus the class includes ordinary finite piecewise C¹ contours
+and also permits singular endpoint parametrizations.
+
+`SourceAdmissibleEndpointPath.lean` defines admissibility exactly by
+avoidance of every indexed gap in the path interior. For a piecewise path,
+this includes the interior corner vertices. The common endpoint primitive
+gives zero improper integral for every such path in every original D_n,
+at every complex source in W. No half-plane restriction, supplied homotopy,
+reality assumption, or full-path absolute-integrability hypothesis is used.
+The ordinary curve integral vanishes whenever it is absolutely integrable.
+
+`SourceLemma10_11.lean` packages these endpoint assertions alongside the
+previous analytic continuation and original closed-contour conclusions.
+`SourceLemma10_11CircleData.admissibleEndpoints` strengthens any existing
+package without shrinking W or changing the original disks. The public
+`sourceLemma10_11` constructs the full package for every finite p>1 on the
+retained open connected neighborhood of the entire real-type locus.
+
+Nine public checks cover the source's quantifiers and the integral
+conventions. Besides unchanged W, complex central endpoints, cornered
+paths and p=3/2, they prove nonzero reference integrals: integrating one
+along the segment 0→1 yields one, and along any piecewise chain a→b yields
+b−a. Thus the zero endpoint theorem concerns genuine integral limits,
+not a function defined to equal zero or defined by primitive values.
+
+Both parts of Lemma 10.11 are now covered with this explicit standard
+path-integral interpretation. Next: Section 11. The dissertation as a
+whole remains incomplete, and the earlier Section 10 source corrections
+and counterexamples are retained.
+
+Validation: `./scripts/check.sh` passed (6,927 build jobs, the complete public example suite, and the axiom audit of 32,249 NLS declarations). The build retains 21 existing warnings; the five new modules and nine focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.

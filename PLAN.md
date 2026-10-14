@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Current milestone: Lemma 10.11(ii), periods and closed contours
+## Current milestone: full Lemma 10.11, admissible endpoint paths
+
+Five modules finish Lemma 10.11 on the unchanged common source domain
+for every finite p>1. Every primitive of the actual critical-root
+quotient on an original disk minus its gap has the same finite relative
+limit at both endpoints, including non-real and collapsed gaps. The
+full analytic continuation in part (i) and the closed-contour assertion
+proved in the preceding step are retained.
+
+Admissibility is defined literally as avoiding every periodic gap except
+possibly at the path endpoints. Every admissible path that is C¹ in its
+parameter interior has zero improper integral in its original disk.
+The result also covers finite piecewise interior C¹ paths: corners are
+allowed, and their interior vertices must avoid the gaps. Neither a
+real-source condition, a half-plane restriction, a supplied homotopy,
+nor full-path absolute integrability is assumed.
+
+The improper integral is defined by actual truncated parameter integrals,
+with its two cutoffs approaching the endpoints independently. The theorem
+proves existence and value zero of that limit. For a piecewise path it
+uses the limit of sums of truncated piece integrals. For absolutely
+integrable C¹ paths the same result holds for the ordinary curve integral.
+`SourceLemma10_11CircleData.admissibleEndpoints` upgrades the existing W;
+`sourceLemma10_11` supplies the full public package on that domain.
+
+Nine public checks cover retention of W and part (i), literal admissibility,
+common boundary values at complex central endpoints, independent cutoffs,
+cornered paths, ordinary curve integrals, and p=3/2. Two nonzero integral
+checks verify the actual integral definitions: integrating one along
+0→1 gives one, and along any cornered chain a→b gives b−a.
+
+Next: Section 11, the action definition and its following assertions.
+The dissertation remains incomplete; earlier source corrections and
+counterexamples remain recorded in the coverage audit and errata.
+
+Validation: `./scripts/check.sh` passed (6,927 build jobs, the complete public example suite, and the axiom audit of 32,249 NLS declarations). The build retains 21 existing warnings; the five new modules and nine focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: Lemma 10.11(ii), periods and closed contours
 
 Five modules prove vanishing of the critical-root quotient's original
 circle periods throughout the unchanged connected common source domain,
