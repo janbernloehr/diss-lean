@@ -3407,3 +3407,6 @@ import NLS.ZakharovShabat.SpectralSetDistance
 import NLS.ZakharovShabat.SourceIsolatingDiscDistance
 import NLS.ZakharovShabat.SourceLemma10_1
 import NLS.ZakharovShabat.SourceIsolatingDomainCounterexample
+import NLS.ZakharovShabat.SourceLemma10_2Sequences
+import NLS.ZakharovShabat.SourceSimpleSpectralDomain
+import NLS.ZakharovShabat.SourceLemma10_2

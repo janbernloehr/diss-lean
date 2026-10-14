@@ -46888,3 +46888,104 @@ example : Function.Injective (collisionFourModeEmbedding (p := p101)) := collisi
 
 end
 end SourceLemma101Checks
+
+
+namespace SourceLemma102Checks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+noncomputable section
+private abbrev p102 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource102ThreeHalf : Fact (1 ≤ p102) := ⟨by norm_num [p102,ENNReal.one_le_ofReal]⟩
+
+-- A single connected domain supplies every clause below the Hilbert exponent.
+example : ∃ W : Set (CoeffPair p102), IsOpen W ∧ IsConnected W ∧ realTypeSourceLocus p102 ⊆ W ∧
+    SourceLemma10_2Data (by simp [p102]) (by norm_num [p102,ENNReal.one_lt_ofReal]) W :=
+  sourceLemma10_2 _ _
+
+-- The target exponent is literally 3/4, where only a quasi-norm is available.
+example (φ : CoeffPair p102) : ∃ h : Coeff (ENNReal.ofReal (3/4)),
+    (∀ n : ℤ, h n = (canonicalPeriodicGap (by simp [p102])
+      (by norm_num [p102,ENNReal.one_lt_ofReal]) (periodOnePotential φ) (periodOnePotential_mem φ) n)^2) ∧
+    ‖h‖ = ‖sourcePeriodicGapDisplacement (by simp [p102])
+      (by norm_num [p102,ENNReal.one_lt_ofReal]) φ‖^2 := by
+  have hhalf : p102/2 = ENNReal.ofReal (3/4) := by
+    convert (ENNReal.ofReal_div_of_pos (x := (3/2 : ℝ)) (y := (2 : ℝ)) (by norm_num)).symm using 1 <;>
+      norm_num [p102]
+  rw [← hhalf]
+  refine ⟨sourcePeriodicSquaredGapSequence (by simp [p102])
+    (by norm_num [p102,ENNReal.one_lt_ofReal]) φ,?_,norm_sourcePeriodicSquaredGapSequence _ _ φ⟩
+  intro n
+  rfl
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+variable {W : Set (CoeffPair p)} (D : SourceLemma10_2Data hp hp1 W)
+
+-- Power sums include arbitrary powers and central/negative indices without ordering continuity.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (k : ℕ) :
+    AnalyticAt ℂ (fun χ : CoeffPair p =>
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential χ) (periodOnePotential_mem χ) (-1))^k+
+      (canonicalPeriodicRight hp hp1 (periodOnePotential χ) (periodOnePotential_mem χ) (-1))^k) ψ :=
+  D.power_sums (-1) k ψ hψ
+
+-- Complex spectral parameters are included in joint analyticity.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    AnalyticAt ℂ (fun q : ℂ × CoeffPair p =>
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential q.2) (periodOnePotential_mem q.2) 0-q.1)*
+      (canonicalPeriodicRight hp hp1 (periodOnePotential q.2) (periodOnePotential_mem q.2) 0-q.1))
+      (Complex.I,ψ) := D.joint_factor 0 _ ⟨mem_univ _,hψ⟩
+
+-- Algebraic multiplicity and analytic zero order are one at every point of that same W.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (b : BoundaryCondition) (n : ℤ) :
+    b.algebraicMultiplicity hp (periodOneBoundaryPotential hp hp1 ψ).val
+      (periodOneBoundaryPotential hp hp1 ψ).property (canonicalPeriodOneBoundaryRoots hp hp1 b ψ n) = 1 ∧
+    analyticOrderAt (deriv (canonicalDiscriminant hp (periodOnePotential ψ)))
+      (canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = 1 :=
+  ⟨D.simplicity.boundary_multiplicity ψ hψ b n,D.simplicity.critical_order ψ hψ n⟩
+
+-- Isolation remains available inside W for every complex point in W.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ ψ ∈ V ∧ V ⊆ W ∧
+      ∃ U c, SourceIsolatingNeighborhoods hp hp1 V U c := D.isolation ψ hψ
+
+-- Both full sequences and both tails use one neighborhood, one cutoff and one bound.
+example (φ : CoeffPair p) (hφ : φ ∈ W) (η : ℝ) (hη : 0 < η) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧ ∃ N : ℕ, 2 ≤ N ∧ ∃ R : ℝ, 0 ≤ R ∧
+      ∀ ψ ∈ U, ‖sourcePeriodicMidpointDisplacement hp hp1 ψ‖ ≤ R ∧
+        ‖sourcePeriodicSquaredGapSequence hp hp1 ψ‖ ≤ R^2 ∧
+        ∀ M : ℕ, N ≤ M →
+          ‖sourcePeriodicMidpointDisplacement hp hp1 ψ-
+            Coeff.truncate (Finset.Icc (-(M : ℤ)) M) (sourcePeriodicMidpointDisplacement hp hp1 ψ)‖ ≤ η ∧
+          ‖sourcePeriodicSquaredGapSequence hp hp1 ψ-
+            Coeff.truncate (Finset.Icc (-(M : ℤ)) M) (sourcePeriodicSquaredGapSequence hp hp1 ψ)‖ ≤ η^2 :=
+  D.uniform_sequences φ hφ η hη
+
+-- The exact quasi-norm identity survives removing any finite, asymmetric set of indices.
+example (φ : CoeffPair p) :
+    ‖sourcePeriodicSquaredGapSequence hp hp1 φ-
+      Coeff.truncate {0,-1,3} (sourcePeriodicSquaredGapSequence hp hp1 φ)‖ =
+    ‖sourcePeriodicGapDisplacement hp hp1 φ-
+      Coeff.truncate {0,-1,3} (sourcePeriodicGapDisplacement hp hp1 φ)‖^2 :=
+  norm_sourcePeriodicSquaredGapSequence_tail hp hp1 φ _
+
+-- The factorization uses the actual endpoints at every complex source, even outside W.
+example (φ : CoeffPair p) (n : ℤ) (z : ℂ) :
+    (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n-z)*
+      (canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n-z) =
+    (canonicalPeriodicMidpoint hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n-z)^2-
+      (canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n)^2/4 :=
+  sourcePeriodicPair_factorization hp hp1 φ n z
+
+-- At zero, all gaps collapse and the two complete asymptotic sequences vanish.
+example : sourcePeriodicSquaredGapSequence hp hp1 (0 : CoeffPair p) = 0 ∧
+    sourcePeriodicMidpointDisplacement hp hp1 (0 : CoeffPair p) = 0 := by
+  simp [sourcePeriodicMidpointDisplacement_zero_source]
+example (n : ℤ) (z : ℂ) :
+    (canonicalPeriodicLeft hp hp1 (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) n-z)*
+      (canonicalPeriodicRight hp hp1 (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) n-z) =
+    ((Real.pi : ℂ)*n-z)^2 := by
+  rw [sourcePeriodicPair_factorization]
+  simp only [map_zero,canonicalPeriodicMidpoint_zero,canonicalPeriodicGap_zero,zero_pow (by decide : (2 : ℕ) ≠ 0),zero_div,sub_zero]
+end
+end
+end SourceLemma102Checks

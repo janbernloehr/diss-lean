@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: the corrected Lemma 10.1 provides common isolating
-disks on an open connected neighborhood of all real-type sources, including
-the literal two-sided disk-distance bounds. The printed all-complex domain
-is formally refuted by the constant source (iπ,iπ), whose zero eigenvalue
-has algebraic multiplicity at least four. [The Section 10 audit](coverage/SECTION_10.md)
-records the theorem and correction. Next is Lemma 10.2's analytic symmetric
-spectral coordinates.
+Latest milestone: Lemma 10.2's periodic power sums, midpoint, squared gap,
+and joint pair factor are analytic on one connected neighborhood of all
+real-type sources. The same domain retains quantitative isolation and
+simple ordinary boundary and critical roots. Full sequence bounds include
+the literal squared-gap exponent p/2 below one. [The Section 10 audit](coverage/SECTION_10.md)
+records the exact scope and the earlier domain correction. Next is Lemma
+10.3's standard-root analyticity, bounds and contour normalization.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

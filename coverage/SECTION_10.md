@@ -3,7 +3,8 @@
 This audit follows the source statement and proof on printed pp. 54–55.
 The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.
-Lemma 10.2 and later statements are not certified by this milestone.
+Lemma 10.2 and its preceding simple-root assertions are now covered on
+one common domain. Lemma 10.3 and later statements remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -122,7 +123,7 @@ disjoint isolating family for this source.
 sources at every finite p>1. The correction is recorded in
 [`SOURCE_ERRATA.md`](../SOURCE_ERRATA.md).
 
-## Verification and remaining scope
+## Lemma 10.1 verification
 
 The public examples exercise the global theorem at p=3/2, zero-potential
 local families and collapsed gaps, all ordinary cluster coordinates,
@@ -134,6 +135,111 @@ The counterexample checks include the multiplicity lower bound,
 four-coordinate injectivity below two, impossibility of arbitrary
 disjoint shapes, and negation of the printed all-complex domain.
 
-Next: Lemma 10.2, including common-domain analytic power sums and pair
-factors, and locally uniform original sequence bounds for the midpoint
-and squared gap. The remaining dissertation is incomplete.
+
+## Lemma 10.2: one common analytic domain
+
+For every finite p>1, `sourceLemma10_2` constructs W, open and connected
+in the original complex coefficient space, with the entire real-type
+locus contained in W. All fields of `SourceLemma10_2Data` use this same W:
+
+| Source requirement | Field or theorem | Exact scope |
+| --- | --- | --- |
+| Retained Lemma 10.1 isolation | `.isolation` | Each ψ∈W has an open connected V with ψ∈V⊆W, one disk family and one constant satisfying all quantitative isolation conditions. |
+| Periodic power sums, clause (i) | `.power_sums` | Actual left/right endpoint powers, for all signed n and all natural k (including k=0). |
+| Midpoint and squared gap, clause (ii) | `.midpoint`, `.squared_gap` | Complex analytic at every point of W, including collapsed gaps. |
+| Locally uniform sequence asymptotics | `.uniform_sequences` | One neighborhood, cutoff and bound for both complete sequences and all sufficiently distant tails. |
+| Joint pair factor, clause (iii) | `.joint_factor` | Complex analytic on ℂ×W, at arbitrary complex spectral parameters. |
+| Exact pair identity | `sourcePeriodicPair_factorization` | The actual product equals (τ_n−z)²−γ_n²/4 at every complex source and spectral parameter. |
+| Preceding simple-root paragraph | `.simplicity` | Every ordinary boundary and critical coordinate is complex analytic, with nonzero spectral derivative of its defining characteristic. |
+
+Complex analyticity is stronger than the stated real analyticity. No
+analyticity or continuity of individually ordered periodic endpoints on
+W is assumed. Their symmetric functions are obtained from the existing
+spectral-cluster trace formulas. The midpoint and squared gap determine
+all power sums through the symmetric-pair recurrence, including the
+constant power. Composition with the source projection and polynomial
+operations gives joint analyticity of the exact pair factor.
+
+## Simplicity and connectedness on the same domain
+
+`exists_local_source_allCriticalPoints_simple_analytic` intersects one
+common distant-index analyticity neighborhood with finitely many central
+analyticity neighborhoods and the all-index simplicity neighborhood.
+This gives one open source set around each real-type base where all
+critical coordinates are simple and analytic simultaneously.
+
+`exists_sourceSimpleSpectralDomain_within` works inside any prescribed
+open set containing the real locus. Intersect that set with the common
+ordinary boundary-root domain and the interior of the all-critical-root
+property. Take the connected component containing zero. Local
+connectedness makes this component open, and connectedness of the real
+locus places the entire locus in it. This avoids assuming that an
+arbitrary intersection of connected sets is connected.
+
+Applying the construction inside the Lemma 10.1 domain gives W above.
+At each point ψ∈W, a source ball contained in both W and its previous
+isolating neighborhood retains the same disks and distance constant.
+`SourceIsolatingNeighborhoods.mono` records this restriction explicitly.
+
+`SourceSimpleSpectralDomainData.boundary_multiplicity` identifies
+simplicity with algebraic multiplicity one for the actual ordinary
+boundary operator, using the characteristic's analytic order.
+`.critical_order` proves analytic order one for the actual derivative
+of the discriminant at each canonical critical point. These statements
+hold for every ψ∈W, not just real-type sources, and include central and
+negative indices. The assertion that lexicographically ordered periodic
+labels can be discontinuous is not supplied as a formal counterexample
+by this milestone.
+
+## Literal half-exponent and locally uniform sequences
+
+`sourcePeriodicMidpointDisplacement` has coordinates τ_n−nπ in `Coeff p`.
+`sourcePeriodicSquaredGapSequence` has coordinates γ_n² in `Coeff (p/2)`.
+The second exponent is the literal extended-real division p/2, rather
+than a new Banach exponent or an assumption p≥2. When 1<p<2, the norm
+notation denotes the existing ℓ^(p/2) quasi-norm; the proof does not
+assume a triangle inequality for that space.
+
+`lp_norm_eq_sq_of_apply_eq_sq` proves the exact identity
+
+```
+‖(g_n²)_n‖_(p/2) = ‖g‖_p².
+```
+
+It compares the powered norms through their sums of nonnegative real
+powers. The half exponent is positive because p is finite and greater
+than one. Applying this identity to the full actual gap sequence gives
+`norm_sourcePeriodicSquaredGapSequence`. Applying it after any finite
+truncation gives `norm_sourcePeriodicSquaredGapSequence_tail`; no symmetry
+of the removed set is needed.
+
+The precise common-neighborhood statement is: for every φ∈W and η>0,
+there are an open U with φ∈U⊆W, N≥2, and R≥0 such that every ψ∈U satisfies
+
+```
+‖(τ_n(ψ)−nπ)_n‖_p ≤ R,      ‖(γ_n(ψ)²)_n‖_(p/2) ≤ R²,
+```
+
+and, for every M≥N, their tails outside [−M,M] are bounded by η and η²
+respectively. All choices precede ψ and M. U, N and R may depend on η;
+a single neighborhood working for all tolerances is not asserted.
+`exists_uniform_sourceLemma10_2_sequences` proves these bounds near
+arbitrary complex base sources even without membership in W; the main
+theorem then intersects U with W. Both complete sequences, including
+all central indices, vanish at the free potential.
+
+## Lemma 10.2 verification and remaining scope
+
+Public examples instantiate the common domain at p=3/2 and explicitly
+construct the squared-gap sequence at exponent 3/4 with its exact
+quasi-norm. They exercise arbitrary powers at a negative index, joint
+analyticity at a nonreal spectral point, boundary multiplicity and
+critical zero order, common isolation and tail quantifiers, truncation
+by the asymmetric set {0,−1,3}, the exact all-complex factorization, and
+free collapsed gaps. No additional source correction is needed for
+Lemma 10.2; the Lemma 10.1 domain correction remains in force.
+
+Next: Lemma 10.3, including the standard root on the complement of the
+moving gap, joint analyticity outside isolating disks, two-sided bounds
+between distinct disks, and the negative Kronecker-delta contour integral.
+The dissertation remains incomplete.

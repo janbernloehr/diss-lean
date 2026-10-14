@@ -4459,3 +4459,48 @@ coordinates, and their locally uniform original sequence bounds on a
 common almost-real domain. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6844 build jobs, the combined public examples, and the axiom audit of 31359 NLS declarations. The 21 existing warnings are unchanged; all four new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 10.2 milestone: analytic symmetric coordinates and full sequence bounds
+
+`SourceLemma10_2.lean` proves all three clauses on one open connected
+complex neighborhood of the entire real-type locus, for every finite
+p>1 in the original source topology. The actual periodic power sums
+for every natural power, midpoint, squared gap, and pair factor are
+complex analytic; the pair factor is jointly analytic with the spectral
+parameter. Its exact polynomial identity uses the actual endpoints and
+holds at every complex source, including collapsed gaps.
+
+`SourceSimpleSpectralDomain.lean` puts all ordinary Dirichlet and Neumann
+coordinates and all critical coordinates on that same domain. Every
+boundary root has actual operator algebraic multiplicity one; every
+critical root has analytic order one as a zero of the discriminant's
+derivative. Finite central neighborhoods and one common tail neighborhood
+cover all indices. Taking the connected component containing the real
+locus preserves connectedness after imposing the earlier isolation
+constraints. Every point retains a connected local isolating neighborhood
+inside the new domain, with the quantitative disk-distance bounds.
+
+`SourceLemma10_2Sequences.lean` constructs the complete squared-gap
+sequence in the literal space ℓ^(p/2), including p/2<1. Its quasi-norm
+is exactly the square of the gap's ℓp norm, and the same identity holds
+after removing any finite set of indices. For each base point and
+positive tolerance, one original open neighborhood, cutoff and constant
+control both complete midpoint and squared-gap sequences and all larger
+truncation tails. The neighborhood may depend on the tolerance. Central
+indices are included, and both complete sequences vanish at zero.
+
+Public checks cover p=3/2 with literal target exponent 3/4, arbitrary
+powers and signed indices, nonreal spectral parameters, actual operator
+multiplicity and derivative zero order, common isolation and sequence
+bounds, asymmetric truncations, exact factorization and free collapsed
+gaps. The three new modules and focused public probe compile warning-free.
+The corrected domain from Lemma 10.1 is retained; no additional correction
+to Lemma 10.2 is needed. See `coverage/SECTION_10.md` for exact quantifiers.
+The separate remark about discontinuity of ordered periodic labels is
+not claimed as a new formal counterexample in this milestone.
+
+Next: Lemma 10.3, the standard root's analytic domains, uniform bounds
+between distinct isolating disks, and its normalized contour integrals.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6847 build jobs, the combined public examples, and the axiom audit of 31400 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
