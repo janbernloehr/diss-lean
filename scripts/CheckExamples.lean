@@ -47503,3 +47503,168 @@ example : ∃ a : Coeff (ENNReal.ofReal (3/2 : ℝ)),
 
 end
 end SourceCorollary106Checks
+
+
+namespace SourceLemma107Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex Filter Topology
+open scoped ENNReal
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+example {W : Set (CoeffPair p)} (h : SourceCorollary10_6Data hp hp1 W) :
+    SourceLemma10_7Data hp hp1 W := h.canonicalRoots
+
+example (ψ : CoeffPair p) (z : ℂ) (N : ℕ) :
+    sourceCanonicalRootPartialProduct hp hp1 N ψ z =
+      2*Complex.I*∏ m ∈ Finset.Icc (-(N:ℤ)) N,
+        sourceStandardRoot hp hp1 ψ m z/singleSpectralDenominator m := rfl
+
+example : sourceCanonicalRootPartialProduct hp hp1 0 0 Complex.I = 2 := by
+  simp [sourceCanonicalRootPartialProduct,sourceStandardRoot_zero_source,singleSpectralDenominator,mul_assoc]
+
+example : sourceCanonicalRoot hp hp1 0 ((Real.pi:ℂ)/2) = -2*Complex.I :=
+  sourceCanonicalRoot_zero_source_halfPi hp hp1
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_7Data hp hp1 W) (ψ : CoeffPair p) :
+    AnalyticOnNhd ℂ (sourceCanonicalRoot hp hp1 ψ) (⋃ m : ℤ, sourcePeriodicSegment hp hp1 ψ m)ᶜ := by
+  rw [← sourceCanonicalRootDomain_eq_compl_iUnion hp hp1 ψ]
+  exact h.spectral ψ
+
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceCanonicalRootNeighborhoods hp hp1 V D c) :
+    AnalyticOnNhd ℂ (sourceCanonicalRootJointProduct hp hp1) ((⋃ m : ℤ, closure (D m))ᶜ ×ˢ V) :=
+  hD.canonical_joint
+
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceCanonicalRootNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    AnalyticOnNhd ℂ (sourceCanonicalRoot hp hp1 ψ) (D n) := hD.collapsed ψ hψ n hg
+
+/-- The derivative at the negative free center is +2i, checking both the collapse and parity. -/
+example : HasDerivAt (sourceCanonicalRoot hp hp1 (0 : CoeffPair p)) (2*Complex.I) (-(Real.pi:ℂ)) := by
+  obtain ⟨W,_,_,hreal,h⟩ := sourceLemma10_5 hp hp1
+  have h0 : (0 : CoeffPair p) ∈ W := hreal (by simp [realTypeSourceLocus])
+  have hg : canonicalPeriodicGap hp hp1 (periodOnePotential (0 : CoeffPair p))
+      (periodOnePotential_mem 0) (-1) = 0 := by
+    simp [canonicalPeriodicGap,map_zero,canonicalPeriodicLeft_zero,canonicalPeriodicRight_zero]
+  have hd := (h.canonicalCollapsed_derivative 0 h0 (-1) hg).1
+  have hm : canonicalPeriodicMidpoint hp hp1 (periodOnePotential (0 : CoeffPair p))
+      (periodOnePotential_mem 0) (-1) = -(Real.pi:ℂ) := by
+    simp [canonicalPeriodicMidpoint,map_zero,canonicalPeriodicLeft_zero,canonicalPeriodicRight_zero]
+  rw [hm] at hd
+  have hf : sourceStandardRootOmittedProduct hp hp1 (-1) (0 : CoeffPair p) (-(Real.pi:ℂ)) = -1 := by
+    simpa using sourceStandardRootOmittedProduct_zero_source_center hp hp1 (-1)
+  simpa [hf] using hd
+
+/-- A genuine noncollapsed source realizes distinct, nonzero opposite traces at the gap midpoint. -/
+example : ∃ ψ : CoeffPair p, IsRealType (CoeffPair.toMax p ψ) ∧
+    canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1) ≠ 0 ∧
+    sourceCanonicalRootGapUpperValue hp hp1 ψ (-1) 0 ≠ 0 ∧
+    sourceCanonicalRootGapUpperValue hp hp1 ψ (-1) 0 = -sourceCanonicalRootGapLowerValue hp hp1 ψ (-1) 0 := by
+  obtain ⟨ψ,hreal,hg,_⟩ := sourceLemma10_4_printed_kernel_counterexample hp hp1 (-1)
+  obtain ⟨W,_,_,hrealW,h⟩ := sourceLemma10_5 hp hp1
+  refine ⟨ψ,hreal,hg,(h.canonicalBoundary_nonzero ψ (hrealW hreal) (-1) 0
+    (by constructor <;> norm_num) hg).1,?_⟩
+  exact sourceCanonicalRootGapUpperValue_eq_neg_lower hp hp1 ψ (-1) 0
+
+-- The literal normalization restores any selected index after its first containing cutoff.
+example (ψ : CoeffPair p) (z : ℂ) (N : ℕ) (hN : 1 ≤ N) :
+    sourceCanonicalRootPartialProduct hp hp1 N ψ z =
+      2*Complex.I*sourceStandardRoot hp hp1 ψ (-1) z*
+        sourceStandardRootOmittedPartialProduct hp hp1 (-1) N (z,ψ) :=
+  sourceCanonicalRootPartialProduct_eq_omitted hp hp1 (-1) N (by simpa using hN) ψ z
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_7Data hp hp1 W)
+    (K : Set (ℂ × CoeffPair p)) (hK : IsCompact K)
+    (hsub : K ⊆ sourceCanonicalRootJointDomain hp hp1 W) :
+    TendstoUniformlyOn (fun N (q : ℂ × CoeffPair p) => sourceCanonicalRootPartialProduct hp hp1 N q.2 q.1)
+      (sourceCanonicalRootJointProduct hp hp1) atTop K := h.previous.roots.canonicalCompact K hK hsub
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_7Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (K : Set ℂ) (hK : IsCompact K)
+    (hsub : K ⊆ sourceCanonicalRootDomain hp hp1 ψ) :
+    TendstoUniformlyOn (fun N => sourceCanonicalRootPartialProduct hp hp1 N ψ)
+      (sourceCanonicalRoot hp hp1 ψ) atTop K := h.previous.roots.canonicalSpectralCompact ψ hψ K hK hsub
+
+-- Square-root identity and nonvanishing are asserted on the actual gap complement.
+example {W : Set (CoeffPair p)} (h : SourceLemma10_7Data hp hp1 W)
+    (ψ : CoeffPair p) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    (sourceCanonicalRoot hp hp1 ψ z)^2 = (canonicalDiscriminant hp (periodOnePotential ψ) z)^2-4 ∧
+      sourceCanonicalRoot hp hp1 ψ z ≠ 0 := ⟨h.square ψ z hz,h.nonzero ψ z hz⟩
+
+-- On a gap, use the boundary trace for the square identity, including both endpoints.
+example (ψ : CoeffPair p) (h : SourceCanonicalRootBoundaryData hp hp1 ψ (-1)) :
+    ContinuousOn (sourceCanonicalRootGapUpperValue hp hp1 ψ (-1)) (Icc (-1:ℝ) 1) ∧
+    (sourceCanonicalRootGapUpperValue hp hp1 ψ (-1) 0)^2 =
+      (canonicalDiscriminant hp (periodOnePotential ψ) (sourceCanonicalRootGapPoint hp hp1 ψ (-1) 0))^2-4 ∧
+    sourceCanonicalRootGapUpperValue hp hp1 ψ (-1) (-1) = 0 ∧
+    sourceCanonicalRootGapLowerValue hp hp1 ψ (-1) 1 = 0 :=
+  ⟨h.upper_continuous,h.upper_square 0 (by constructor <;> norm_num),h.endpoints.1,h.endpoints.2.2.2⟩
+
+example (ψ : CoeffPair p) (h : SourceCanonicalRootBoundaryData hp hp1 ψ (-1))
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1) ≠ 0) :
+    Tendsto (sourceCanonicalRoot hp hp1 ψ)
+      (𝓝[standardRootGapUpperSide (sourceStandardRootMidpoint hp hp1 ψ (-1))
+        (sourceStandardRootHalfGap hp hp1 ψ (-1))] (sourceCanonicalRootGapPoint hp hp1 ψ (-1) 1)) (𝓝 0) := by
+  simpa only [h.endpoints.2.2.1] using h.upper_limit 1 (by constructor <;> norm_num) hg
+
+example (ψ : CoeffPair p) (h : SourceCanonicalRootBoundaryData hp hp1 ψ (-1))
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1) ≠ 0) :
+    Tendsto (sourceCanonicalRoot hp hp1 ψ)
+      (𝓝[standardRootGapLowerSide (sourceStandardRootMidpoint hp hp1 ψ (-1))
+        (sourceStandardRootHalfGap hp hp1 ψ (-1))] (sourceCanonicalRootGapPoint hp hp1 ψ (-1) 0))
+      (𝓝 (-sourceCanonicalRootGapUpperValue hp hp1 ψ (-1) 0)) := by
+  have he : sourceCanonicalRootGapLowerValue hp hp1 ψ (-1) 0 =
+      -sourceCanonicalRootGapUpperValue hp hp1 ψ (-1) 0 := by rw [h.opposite]; simp
+  simpa only [he] using h.lower_limit 0 (by constructor <;> norm_num) hg
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_7Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    let τ := canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n
+    sourceCanonicalRoot hp hp1 ψ τ = 0 ∧
+    HasDerivAt (sourceCanonicalRoot hp hp1 ψ) (-2*Complex.I*sourceStandardRootOmittedProduct hp hp1 n ψ τ) τ ∧
+    -2*Complex.I*sourceStandardRootOmittedProduct hp hp1 n ψ τ ≠ 0 :=
+  h.previous.roots.canonicalCollapsed_simple_zero ψ hψ n hg
+
+-- The negative-index arrows in Figure 2.4 have opposite signs on the adjacent bands.
+example (ψ : CoeffPair p) (hψ : IsRealType (CoeffPair.toMax p ψ)) (x y : ℝ)
+    (hx : x ∈ sourceRealBand hp hp1 ψ (-2)) (hy : y ∈ sourceRealBand hp hp1 ψ (-1)) :
+    (sourceCanonicalRoot hp hp1 ψ (x:ℂ)).im < 0 ∧ 0 < (sourceCanonicalRoot hp hp1 ψ (y:ℂ)).im := by
+  have hs := sourceCanonicalRoot_figure_band_signs hp hp1 ψ hψ (-1) x y (by simpa using hx) hy
+  norm_num at hs
+  exact ⟨hs.2.1,hs.2.2.2⟩
+
+-- A genuine open negative-index gap realizes the upper/lower real signs in the figure.
+example : ∃ ψ : CoeffPair p, IsRealType (CoeffPair.toMax p ψ) ∧
+    (sourceCanonicalRootGapUpperValue hp hp1 ψ (-1) 0).re < 0 ∧
+    0 < (sourceCanonicalRootGapLowerValue hp hp1 ψ (-1) 0).re := by
+  obtain ⟨ψ,hψ,hg,_⟩ := sourceLemma10_4_printed_kernel_counterexample hp hp1 (-1)
+  have hends := canonicalPeriodicEndpoints_im_eq_zero_of_realType hp hp1 (periodOnePotential ψ)
+    (periodOnePotential_mem ψ) (isRealType_periodOnePotential ψ hψ) (-1)
+  have hle := NLS.ComplexAnalysis.re_le_of_complexLexLE
+    ((canonicalPeriodicEndpoints_spec hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ)).2.1 (-1))
+  have hopen : (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re <
+      (canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1)).re := by
+    apply lt_of_le_of_ne hle
+    intro he
+    apply hg
+    unfold canonicalPeriodicGap
+    apply sub_eq_zero.mpr
+    exact Complex.ext he.symm (hends.2.trans hends.1.symm)
+  have hs := sourceCanonicalRoot_figure_gap_signs hp hp1 ψ hψ (-1) hopen 0
+    (by constructor <;> norm_num)
+  norm_num at hs
+  exact ⟨ψ,hψ,hs.2.1,hs.2.2.2⟩
+
+end
+local instance pThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    SourceLemma10_7Data (by simp) (by norm_num [ENNReal.one_lt_ofReal]) W :=
+  sourceLemma10_7 (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+end
+end SourceLemma107Checks

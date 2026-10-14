@@ -1,6 +1,6 @@
 # Section 10: potentials of almost real type
 
-This audit follows the source statements and proofs on printed pp. 54–57.
+This audit follows the source statements and proofs on printed pp. 54–58.
 The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.
 Lemmas 10.2 and 10.3 are covered on the same common domain, including the
@@ -11,7 +11,9 @@ Lemma 10.5 is covered on the unchanged common domain, with literal
 symmetric cutoffs, paired absolute convergence, both analytic domains
 and nonvanishing. Corollary 10.6 is covered with its full displacement
 space, literal unordered quotient product and printed closed-disk domain.
-Equation (2.13), Lemma 10.7 and later statements remain to be audited.
+Equation (2.13), Lemma 10.7 and equation (2.14) are covered on the same
+common domain, including collapsed gaps, actual side limits and Figure 2.4
+on the real locus. Lemma 10.8 and later statements remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -626,3 +628,112 @@ The source statement requires no new correction.
 
 Next: equation (2.13) and Lemma 10.7, the canonical-root product and its
 analytic domains. The dissertation remains incomplete.
+
+
+## Equation (2.13) and Lemma 10.7: exact product and domains
+
+The source on printed pp. 57–58, visually checked, defines the canonical
+root by
+
+    R(λ) = 2i w_n(λ) f_n(λ) = 2i ∏_{m∈ℤ} w_m(λ)/π_m,
+
+with π_0=1 and π_m=mπ for nonzero m. Its literal finite products use
+[-N,N]. Restoring an omitted index gives the same finite product once
+N≥|n|. The limit factors through every omitted n, and its square is the
+actual source Δ²−4 on the complement of ALL closed periodic gaps. The
+paired convention from Lemma 10.5 is retained for the full standard-root
+product; Corollary 10.6's unconditional quotient result is not incorrectly
+applied to these separate factors.
+
+`SourceCorollary10_6Data.canonicalRoots` constructs `SourceLemma10_7Data`
+on exactly its supplied W. The package retains the entire preceding
+corollary. The full joint moving-gap domain is open: it is the intersection
+of the omitted domains for indices 0 and 1. The literal symmetric cutoffs
+converge locally uniformly there. Uniform convergence on joint compacts
+and on spectral compacts at a fixed source is explicit.
+
+The printed fixed domain is
+
+    (ℂ \ ⋃_{m∈ℤ} closure(U_m)) × V_φ.
+
+The bar over U_m is present in the printed formula. Every local
+`SourceCanonicalRootNeighborhoods` retains the original V, D and c and
+proves analyticity on this exact closed-disk complement. Spectral
+analyticity and nonvanishing on the full gap complement hold for every
+original complex source, a stronger scope than restricting to W.
+
+## Equation (2.14): actual boundary values on closed complex gaps
+
+For the affine coordinate λ=τ_n+(γ_n/2)t, -1≤t≤1, the upper and lower
+traces are the actual limits of the canonical root from the corresponding
+open sides of the gap. The limits allow arbitrary approaches within each
+side, including to the midpoint and both endpoints. The chosen sides
+are oriented by the complex half-gap, as in the standard-root formulas.
+The traces are defined by multiplying the corresponding standard-root
+trace by 2i f_n at the same point.
+
+`SourceCanonicalRootBoundaryData` includes:
+
+- continuity of both traces on the CLOSED parameter interval [-1,1];
+- actual upper and lower limits for every noncollapsed gap;
+- the exact opposite-value relation (2.14);
+- zero values at both endpoints on both sides;
+- nonzero interior values for a noncollapsed gap;
+- both traces' squares equal to the actual source Δ²−4 at the gap point.
+
+The entire selected gap belongs to the omitted product's domain by the
+original isolating family. These statements therefore hold for all
+complex sources in the same W, with no new separation hypothesis or
+source-neighborhood shrink.
+
+The globally totalized algebraic expression for a standard root at a
+point on its cut is not substituted for its boundary trace. In particular,
+the raw midpoint expression of a noncollapsed gap must not be used to
+claim the canonical-root square identity at that cut point. The package
+states the raw root's square identity off the gaps and the trace square
+identities on them.
+
+## Lemma 10.7: collapsed gaps and the branch normalization
+
+If γ_n=0, the canonical root is exactly
+
+    R(λ) = 2i (τ_n−λ) f_n(λ)
+
+and is analytic on the entire original selected disk D_n. Its value at
+τ_n is zero, and its derivative there is -2i f_n(τ_n), which is nonzero.
+Thus the analytic continuation has a simple zero. This is an extension
+for the fixed source, not a joint extension through arbitrary nearby
+sources where the gap could reopen.
+
+At zero source, the actual root equals -2i sin(λ) on all of ℂ and is
+entire. Its value at π/2 is -2i, the first cutoff at i is 2, and its
+derivative at -π is +2i. These values check the factor 2i, the π_0=1
+normalization and the choice of branch, beyond merely checking a square.
+
+## Figure 2.4: real-source signs, including negative indices
+
+For real-type sources and an open real gap, the upper and lower traces
+are real and have opposite signs. Their signs relative to (-1)^n are
+positive above and negative below. In the adjacent bands the canonical
+root is purely imaginary, with sign (+i)(-1)^n on the left and
+(-i)(-1)^n on the right. `sourceCanonicalRoot_figure_gap_signs` and
+`sourceCanonicalRoot_figure_band_signs` give these four assertions for
+every integer n. The equivalence between parity of |n| and n handles
+negative indices and the change from band n−1 to band n.
+
+These real/imaginary signs describe the figure on the real-type locus;
+for complex sources the exact opposite boundary-value relation is used.
+A genuine open gap at n=−1 witnesses a negative upper real value and a
+positive lower real value. The proof obtains the source from the existing
+real Floquet gap-opening theorem and derives strict endpoint separation.
+
+Public checks include the full package at p=3/2, preservation of the
+Corollary 10.6 domain, literal cutoff normalization, restoration at a
+negative index, both compact convergence statements, the exact gap-union
+and closed-disk domains, the discriminant identity and nonvanishing off
+cuts, trace squares on cuts, endpoint and midpoint approaches, collapsed
+continuation and its simple-zero derivative, and both negative-index
+figure signs. No new source correction is required.
+
+Next: Lemma 10.8, the quotient-product asymptotic estimate with its sequence
+exponents and local uniformity. The dissertation remains incomplete.

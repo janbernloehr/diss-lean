@@ -1,6 +1,59 @@
 # Implementation status
 
-## Current milestone: Corollary 10.6 with an unconditional quotient product
+## Current milestone: Lemma 10.7 and the canonical-root boundary values
+
+`SourceLemma10_7.lean` proves the canonical-root assertions of equation
+(2.13), Lemma 10.7 and equation (2.14) for every finite p>1. The package
+retains all Corollary 10.6 data on exactly the supplied common domain W.
+Its local neighborhoods preserve the original V, isolating disks D and
+distance constant c.
+
+`SourceCanonicalRootCommonDomain.lean` proves joint analyticity on the
+open complement of all moving periodic gaps, and on the printed complement
+of the CLOSED isolating disks times V. The literal full symmetric cutoffs
+converge locally uniformly in the spectral parameter and source, uniformly
+on joint compact subsets and on spectral compact subsets at each source.
+Equation (2.13) retains the exact 2i factor and π_0=1 normalization. The
+canonical root factors through every omitted index, squares to the actual
+source discriminant squared minus four off the gaps, and is nonzero there.
+
+`SourceCanonicalRootBoundaryDomain.lean` puts the complete closed selected
+gap in the omitted product's domain without shrinking W. The actual limits
+from either open side exist, including at both endpoints. Their values
+are continuous on the closed gap parameter interval, square to the
+actual discriminant radicand, and are exact negatives. Both endpoint
+values are zero; both interior values are nonzero for a noncollapsed gap.
+These statements hold for complex sources in W, not only real sources.
+
+`canonicalCollapsedDisk` proves analytic continuation on the original
+selected disk when the gap collapses. `SourceCanonicalRootNormalization.lean`
+shows that its center is a simple zero, with derivative -2i f_n(τ_n),
+which is nonzero. This extension fixes the source; it does not assert a joint
+extension through a gap that may reopen under source variation. At zero
+source the root is the entire function -2i sin(λ), with value -2i at π/2
+and derivative +2i at the negative free center -π.
+
+The four real-source arrows in Figure 2.4 are also checked. The upper and
+lower real-gap values have signs (+1)(-1)^n and (-1)(-1)^n; the adjacent
+bands have imaginary signs (+i)(-1)^n on the left and (-i)(-1)^n on the
+right. Negative integer indices are included. An actual open negative-index
+gap witnesses the opposite real signs; no empty-hypothesis shortcut is
+used for the sign and nonvanishing checks.
+
+Public examples cover the full package at p=3/2, the unchanged domain,
+literal finite prefactor and negative-index restoration, both compact
+convergence statements, printed closed-disk domain, fixed-source collapsed
+extension, simple-zero derivative, actual gap traces and endpoint limits,
+discriminant-square identities and the figure's negative-index signs.
+No new source correction is required. The exact domains and boundary
+conventions are audited in `coverage/SECTION_10.md`.
+
+Next: Lemma 10.8, the quotient-product asymptotic estimate with its sequence
+exponents and local uniformity. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,865 build jobs, the full public example suite, and the axiom audit of 31,689 NLS declarations). The build retains 21 existing warnings; the four new modules and focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+## Previous milestone: Corollary 10.6 with an unconditional quotient product
 
 `SourceCorollary10_6.lean` proves joint analyticity of the literal quotient
 product for every finite p>1, every omitted integer index and every ℓᵖ

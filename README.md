@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Corollary 10.6 proves joint analyticity of the literal
-quotient product for all ℓᵖ root displacements, on the unchanged common
-source domain and the printed closed-disk domains. Its individual factors
-converge absolutely without pairing; numerator collisions and zeros are
-allowed. [The Section 10 audit](coverage/SECTION_10.md) records the exact
-product, domains and normalization checks. Next are equation (2.13) and
-Lemma 10.7 on the canonical root.
+Latest milestone: Lemma 10.7 proves the canonical root's analytic domains,
+locally uniform product convergence and continuous opposite boundary values
+on every closed gap. The same source domain and isolating disks are retained.
+Collapsed gaps give simple zeros of the analytic continuation; the exact
+free normalization and Figure 2.4 signs are checked, including negative
+indices. [The Section 10 audit](coverage/SECTION_10.md) records the scope
+and boundary conventions. Next is Lemma 10.8's quotient-product estimate.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

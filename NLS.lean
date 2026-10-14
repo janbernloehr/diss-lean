@@ -3424,3 +3424,7 @@ import NLS.ZakharovShabat.SourceSingleRootQuotientAbsolute
 import NLS.ZakharovShabat.SourceSingleRootQuotientCommonDomain
 import NLS.ZakharovShabat.SourceSingleRootQuotientNormalization
 import NLS.ZakharovShabat.SourceCorollary10_6
+import NLS.ZakharovShabat.SourceCanonicalRootCommonDomain
+import NLS.ZakharovShabat.SourceCanonicalRootBoundaryDomain
+import NLS.ZakharovShabat.SourceCanonicalRootNormalization
+import NLS.ZakharovShabat.SourceLemma10_7
