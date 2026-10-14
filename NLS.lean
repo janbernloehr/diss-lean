@@ -3567,3 +3567,7 @@ import NLS.ZakharovShabat.SourcePsiOriginalJacobianNonzero
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianDiagonal
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianOffDiagonal
 import NLS.ZakharovShabat.SourceLemma12_5
+import NLS.SequenceSpaces.DeletedFiniteRankApproximation
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianDecomposition
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianFiniteRank
+import NLS.ZakharovShabat.SourceLemma12_6

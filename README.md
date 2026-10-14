@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 12.5 is proved for the actual Jacobian on the original
-real domain Ωᵖ. Its entries are real, every retained diagonal is nonzero,
-and the diagonal/off-diagonal estimates are locally uniform in every
-omitted index. The full original disk family and every finite 1<p<∞ are
-retained. The actual weighted off-diagonal row suprema belong to ℓᵖ.
-Next: Lemma 12.6's invertible diagonal and compact remainder.
+Latest step: Lemma 12.6 is proved for the actual Jacobian at every point
+of the original real domain Ωᵖ. It is an invertible diagonal plus a compact
+remainder, for every finite 1<p<∞. The diagonal inverse divides by the
+actual diagonal entries, and finite output cutoffs of the remainder
+converge in operator norm. The preceding source domain is retained.
+Next: Lemma 12.7's injectivity of the actual original-domain Jacobian.
 [The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
 [the source clarifications](SOURCE_ERRATA.md) explain domain assumptions.
 The dissertation remains incomplete.

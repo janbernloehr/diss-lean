@@ -50640,3 +50640,127 @@ example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
 
 end
 end SourceLemma125Checks
+
+namespace SourceLemma126Checks
+noncomputable section
+open Set Metric Complex NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The diagonal is that of the actual derivative, including its zero deleted entry.
+example (n m : ℤ) (a : Coeff p) (ψ : CoeffPair p) :
+    Coeff.deletedJacobianDiagonalSymbol n
+      (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ) m =
+      sourcePsiOriginalJacobianEntry hp hp1 n m m a ψ :=
+  sourcePsiOriginalJacobian_diagonalSymbol_eq_entry hp hp1 n m a ψ
+
+example (n : ℤ) (a : Coeff p) (ψ : CoeffPair p) :
+    Coeff.deletedJacobianDiagonalSymbol n
+      (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ) n = 0 := by
+  rw [sourcePsiOriginalJacobian_diagonalSymbol_eq_entry]
+  simp
+
+variable {a : Coeff p} {ψ : CoeffPair p} {K C : ℝ}
+  (B : SourcePsiOriginalJacobianBounds hp hp1 a ψ K C)
+
+-- The diagonal limit is for each fixed omitted index, in both signed directions.
+example (n : ℤ) (ε : ℝ) (hε : 0 < ε) :
+    ∃ N : ℕ, ∀ m : ℤ, N ≤ m.natAbs →
+      ‖sourcePsiOriginalJacobianEntry hp hp1 n m m a ψ-2‖ < ε :=
+  B.diagonal_tail n ε hε
+
+example : Tendsto (fun m : ℤ => sourcePsiOriginalJacobianEntry hp hp1 (-7) m m a ψ)
+    (Filter.comap Int.natAbs atTop) (𝓝 2) := B.diagonal_tendsto_two (-7)
+
+-- All retained coordinates, including the finite central head, have a positive lower bound.
+example (n : ℤ) : ∃ δ : ℝ, 0 < δ ∧ ∀ m : ℤ, m ≠ n →
+    δ ≤ ‖sourcePsiOriginalJacobianEntry hp hp1 n m m a ψ‖ := by
+  obtain ⟨δ,hδ,h⟩ := B.diagonal_lowerBound n
+  exact ⟨δ,hδ,fun m hm => by simpa only [sourcePsiOriginalJacobian_diagonalSymbol_eq_entry] using h m hm⟩
+
+example (n : ℤ) : IsCompactOperator (Coeff.deletedJacobianOffDiagonal n
+    (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ)) :=
+  B.offDiagonal_compact n
+
+-- Both inverse identities are on the original complex deleted Banach space.
+example (n : ℤ) : ∃ D : DeletedCoeff p n ≃L[ℂ] DeletedCoeff p n,
+    ∃ T : DeletedCoeff p n →L[ℂ] DeletedCoeff p n, IsCompactOperator T ∧
+      sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ = D.toContinuousLinearMap+T ∧
+      (∀ b, D.symm (D b) = b) ∧ (∀ b, D (D.symm b) = b) ∧
+      ∀ b : DeletedCoeff p n, ∀ m : ℤ,
+        (D.symm b:Coeff p) m = (sourcePsiOriginalJacobianEntry hp hp1 n m m a ψ)⁻¹*(b:Coeff p) m := by
+  obtain ⟨D,T,hT,hQ,_,hInv⟩ := B.diagonal_plus_compact_with_inverse n
+  exact ⟨D,T,hT,hQ,D.symm_apply_apply,D.apply_symm_apply,hInv⟩
+
+-- The actual remainder has a row majorant for arbitrary inputs, not just basis vectors.
+example (n : ℤ) : ∃ E : Coeff p, ∀ b : DeletedCoeff p n,
+    ‖((Coeff.deletedJacobianOffDiagonal n
+      (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ) b):Coeff p) 0‖ ≤
+      ‖E 0‖*‖b‖ := by
+  obtain ⟨E,hE⟩ := B.offDiagonal_rowMajorant n
+  exact ⟨E,hE 0⟩
+
+example (n : ℤ) :
+    let T := Coeff.deletedJacobianOffDiagonal n
+      (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ)
+    Tendsto (Coeff.deletedOutputCutoff n T) atTop (𝓝 T) :=
+  (B.offDiagonal_finiteRankApproximation n).2
+
+-- Keeping only the omitted output coordinate gives the zero operator.
+example (n : ℤ) (T : DeletedCoeff p n →L[ℂ] DeletedCoeff p n) :
+    Coeff.deletedOutputCutoff n T {n} = 0 := by
+  ext b m
+  change (Coeff.deletedOutputCutoff n T {n} b:Coeff p) m = 0
+  rw [Coeff.deletedOutputCutoff_apply,Coeff.truncate_apply]
+  by_cases hm : m = n
+  · subst m
+    simp only [Finset.mem_singleton,ite_true]
+    exact (T b).property
+  · simp [hm]
+
+example (n : ℤ) (T : DeletedCoeff p n →L[ℂ] DeletedCoeff p n) (b : DeletedCoeff p n) :
+    (Coeff.deletedOutputCutoff n T {-7,0,4} b:Coeff p) 0 = (T b:Coeff p) 0 := by
+  rw [Coeff.deletedOutputCutoff_apply,Coeff.truncate_apply]
+  simp
+
+example (n : ℤ) (T : DeletedCoeff p n →L[ℂ] DeletedCoeff p n) (b : DeletedCoeff p n) :
+    (Coeff.deletedOutputCutoff n T {-7,0,4} b:Coeff p) (-9) = 0 := by
+  rw [Coeff.deletedOutputCutoff_apply,Coeff.truncate_apply]
+  norm_num
+
+example (n : ℤ) (T : DeletedCoeff p n →L[ℂ] DeletedCoeff p n) :
+    FiniteDimensional ℂ (LinearMap.range (Coeff.deletedOutputCutoff n T {-7,0,4}).toLinearMap) :=
+  Coeff.finiteDimensional_range_deletedOutputCutoff n T _
+
+example (n : ℤ) (T : DeletedCoeff p n →L[ℂ] DeletedCoeff p n) (E : Coeff p)
+    (hE : ∀ m : ℤ, ∀ b : DeletedCoeff p n, ‖(T b:Coeff p) m‖ ≤ ‖E m‖*‖b‖)
+    (s : Finset ℤ) : ‖Coeff.deletedOutputCutoff n T s-T‖ ≤ ‖Coeff.truncate s E-E‖ :=
+  Coeff.norm_deletedOutputCutoff_sub_le n T E hE s
+
+-- The construction retains exactly the preceding source domain.
+example {W : Set (CoeffPair p)} (H : SourceLemma12_5Data hp hp1 W) : SourceLemma12_6Data hp hp1 W :=
+  H.lemma12_6
+
+-- The source package supplies actual finite-rank approximations at every original Omega point.
+example {W V : Set (CoeffPair p)} (H : SourceLemma12_6Data hp hp1 W)
+    {discs : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V discs c)
+    (hV : IsOpen V) (t : realTypeSourceSubmodule p × RealCoeff p)
+    (htW : (t.1:CoeffPair p) ∈ W) (htΩ : t ∈ sourcePsiOriginalOmega V discs) (n : ℤ) :
+    let T := Coeff.deletedJacobianOffDiagonal n
+      (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n (RealCoeff.complexCLM p t.2)) t.1)
+    (∀ s : Finset ℤ, FiniteDimensional ℂ (LinearMap.range (Coeff.deletedOutputCutoff n T s).toLinearMap)) ∧
+    Tendsto (Coeff.deletedOutputCutoff n T) atTop (𝓝 T) :=
+  H.finiteRankApproximation hD hV t htW htΩ n
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceLemma12_6Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_6 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceLemma12_6Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_6 (by norm_num) (by norm_num)
+
+end
+end SourceLemma126Checks

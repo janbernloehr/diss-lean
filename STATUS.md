@@ -1,6 +1,44 @@
 # Implementation status
 
-## Current milestone: Lemma 12.5 on the original real domain
+## Current milestone: Lemma 12.6 on the original real domain
+
+`SourceLemma12_5Data.lemma12_6` proves that the actual bounded root
+Jacobian is a diagonal continuous linear equivalence plus a compact
+operator at every original Ωᵖ point, for every finite 1<p<∞ and every
+omitted index. The preceding open connected source domain W and all
+Lemma 12.5 data are retained.
+
+For each fixed omitted index n, the diagonal entries tend to 2 as
+|m| tends to infinity. Their nonvanishing on the finite head gives a
+positive lower bound on all retained entries. The diagonal inverse
+is explicit coordinatewise multiplication by the reciprocal entries;
+both inverse identities hold on the complex deleted Banach space.
+
+The canonical off-diagonal remainder has an actual ℓᵖ row majorant,
+obtained from the reciprocal matrix bounds and conjugate-exponent
+Hölder duality. Its finite output cutoffs have finite-dimensional range
+and converge in operator norm. The cutoff error is bounded by the
+ℓᵖ tail of that majorant. All central rows and columns are included.
+See the [Section 12 audit](coverage/SECTION_12.md).
+
+Eighteen new public checks cover signed diagonal limits, the finite-head
+lower bound, reciprocal inverse formulas, both inverse identities,
+compactness, finite-rank ranges and norm convergence, cutoff behavior at
+and away from the omitted index, the unchanged source domain, original
+Ωᵖ points, and exponents 3/2 and 4.
+
+Next: Lemma 12.7, injectivity of this actual original-domain Jacobian.
+The dissertation remains incomplete. No new source correction is needed
+for Lemma 12.6.
+
+Validation: `./scripts/check.sh` passed (7,008 build jobs, the complete
+public example suite, and the axiom audit of 33,006 NLS declarations).
+The build retains 21 existing warnings. The four new modules and eighteen
+new public checks are warning-free. The source inventory verified 156
+candidate labels; all 115 local Markdown links and diff checks passed.
+No admitted proofs, additional axioms, or heartbeat overrides were added.
+
+## Previous milestone: Lemma 12.5 on the original real domain
 
 `SourceLemma12_4Data.lemma12_5` proves Lemma 12.5 for the actual bounded
 root derivative of the original equation, retaining the preceding source

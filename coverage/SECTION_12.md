@@ -13,7 +13,10 @@ The literal auxiliary products (2.24)–(2.25), the full original-disk
 asymptotic (2.26), and the actual equation-index supremum sequence in
 Lemma 12.4's proof are now also certified. Lemma 12.5 now holds for the
 actual original-domain Jacobian, with nonzero diagonals and the full
-locally uniform diagonal/off-diagonal estimates.
+locally uniform diagonal/off-diagonal estimates. Lemma 12.6 now gives an
+invertible diagonal plus a compact remainder for that same actual
+Jacobian, with explicit reciprocal inverse and finite-rank norm
+approximations.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -423,3 +426,64 @@ The eight new modules are `SourcePsiOriginalJacobian`,
 `SourcePsiOriginalZetaRegular`, `SourcePsiOriginalJacobianNonzero`,
 `SourcePsiOriginalJacobianDiagonal`, `SourcePsiOriginalJacobianOffDiagonal`,
 and `SourceLemma12_5`, under `NLS/ZakharovShabat/`.
+
+## Lemma 12.6 on the original real domain
+
+`SourceLemma12_5Data.lemma12_6` proves that the actual bounded root
+Jacobian is a diagonal continuous linear equivalence plus a compact
+operator at every original Ωᵖ point, for every finite 1<p<∞ and every
+omitted index. The preceding open connected source domain W and all
+Lemma 12.5 data are retained.
+
+For each fixed omitted index n, the diagonal entries tend to 2 as
+|m| tends to infinity. Their nonvanishing on the finite head gives a
+positive lower bound on all retained entries. The diagonal inverse
+is explicit coordinatewise multiplication by the reciprocal entries;
+both inverse identities hold on the complex deleted Banach space.
+
+The canonical off-diagonal remainder has an actual ℓᵖ row majorant,
+obtained from the reciprocal matrix bounds and conjugate-exponent
+Hölder duality. Its finite output cutoffs have finite-dimensional range
+and converge in operator norm. The cutoff error is bounded by the
+ℓᵖ tail of that majorant. All central rows and columns are included.
+
+
+Eighteen new public checks cover signed diagonal limits, the finite-head
+lower bound, reciprocal inverse formulas, both inverse identities,
+compactness, finite-rank ranges and norm convergence, cutoff behavior at
+and away from the omitted index, the unchanged source domain, original
+Ωᵖ points, and exponents 3/2 and 4.
+
+Next: Lemma 12.7, injectivity of this actual original-domain Jacobian.
+The dissertation remains incomplete. No new source correction is needed
+for Lemma 12.6.
+
+Validation: `./scripts/check.sh` passed (7,008 build jobs, the complete
+public example suite, and the axiom audit of 33,006 NLS declarations).
+The build retains 21 existing warnings. The four new modules and eighteen
+new public checks are warning-free. The source inventory verified 156
+candidate labels; all 115 local Markdown links and diff checks passed.
+No admitted proofs, additional axioms, or heartbeat overrides were added.
+
+### Proof assertions and public API
+
+| Source assertion (printed p. 66) | Lean implementation |
+| --- | --- |
+| Actual diagonal tends to 2 for fixed n | `SourcePsiOriginalJacobianBounds.diagonal_tail`, `.diagonal_tendsto_two` |
+| Uniform positive lower bound on all retained diagonal entries | `.diagonal_lowerBound` |
+| Actual Jacobian equals an invertible diagonal plus a compact operator | `.diagonal_plus_compact` |
+| Bounded inverse with reciprocal coordinates | `.diagonal_plus_compact_with_inverse` |
+| Hölder row estimate for the canonical remainder | `.offDiagonal_rowMajorant` |
+| Finite-dimensional ranges and convergence in operator norm | `.offDiagonal_finiteRankApproximation` |
+| Actual output cutoff and its tail error bound | `Coeff.deletedOutputCutoff`, `Coeff.norm_deletedOutputCutoff_sub_le` |
+| Source statement on the retained W | `SourceLemma12_5Data.lemma12_6`, `sourceLemma12_6` |
+| Finite-rank approximation at original Ωᵖ points | `SourceLemma12_6Data.finiteRankApproximation` |
+
+Implementation: `SourcePsiOriginalJacobianDecomposition`,
+`SourcePsiOriginalJacobianFiniteRank`, and `SourceLemma12_6`, under
+`NLS/ZakharovShabat/`, together with
+`NLS/SequenceSpaces/DeletedFiniteRankApproximation.lean`.
+
+The diagonal limit is asserted for each fixed n, as in the source's
+proof. No uniform-in-n diagonal limit or invertibility of the entire
+Jacobian is asserted here; injectivity is the next lemma.
