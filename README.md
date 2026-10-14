@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean now proves that the actual periodic midpoint differs
-from the resonant diagonal center by an ℓ(p/2) sequence, locally uniformly
-in the original source topology. The estimate includes repeated roots,
-central indices, and the quasi-normed range 1<p<2. Improved midpoint
-summability is now equivalent to improved diagonal-center summability.
-The nonlinear diagonal remainder still needs stronger sequence bounds
-to finish Lemma 10.8's free-sine exponent audit. Its separate p=4, q=1
-local-uniformity counterexample remains proved.
+Latest step: the free-sine consequence of Lemma 10.8 is now proved with
+locally uniform ℓ(p/2)+ℓ(1+) supremum bounds on every original isolating
+disk. An exact transposition of the nonlinear diagonal remainder supplies
+the missing half-exponent estimate; the actual midpoint now has the
+corresponding refined summability. The separate arbitrary-numerator
+local-uniformity claim remains formally refuted at p=4, q=1. Next is
+Remark 10.9's sharpness expansion and the remaining Section 10 audit.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

@@ -16,7 +16,9 @@ common domain, including collapsed gaps, actual side limits and Figure 2.4
 on the real locus. Lemma 10.8 has full-disk supremum decompositions and
 precise bounded-offset estimates. Its printed original-topology uniformity
 claim is refuted at p=4, q=1 by a formal quotient counterexample. The
-free-sine display’s general q remains under audit, as do later statements.
+free-sine consequence is now proved in the stronger locally uniform
+ℓ(p/2)+ℓ(1+) class on every original disk. Remark 10.9 and later source
+statements remain under audit.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -960,3 +962,55 @@ by the quadratic-diagonal approach. The nonlinear diagonal remainder at
 the moving centers still needs sequence bounds; its quartic pointwise
 bound is insufficient. The printed general-q free-sine claim remains
 unresolved, and its unconditional q=p version remains proved.
+
+## Lemma 10.8: completion of the refined free-sine consequence
+
+Eight modules close the remaining Lemma 10.8 free-sine exponent audit.
+The literal free-sine quotient error on every original isolating disk has
+one locally uniformly bounded ℓ(p/2)+ℓ(1+) decomposition for every finite
+p>1. This implies the printed consequence for every q≥1 by taking its
+ℓq summand to be zero. The separate original-topology uniformity claim
+for arbitrary numerators remains formally refuted at p=4, q=1.
+
+`YoungConvolutionTranspose.lean` transposes the absolutely convergent
+Banach-space convolution series through the conjugate pairing.
+`UnweightedDoubleRowTesting.lean` tests the two remaining actual
+resolvent symbols against arbitrary outer rows.
+`ResonantDiagonalRemainderRows.lean` uses the auxiliary exponent 2p and
+its conjugate to identify the exact transposed nonlinear diagonal
+remainder. Young and Hölder retain two source-frequency reciprocal rows
+instead of discarding their dependence on the index.
+
+`ResonantDiagonalRemainderMajorants.lean` applies powered Young to both
+rows. Each has an ℓp majorant; their product belongs to ℓ(p/2), including
+the quasi-normed range p<2. The resulting majorant controls the actual
+nonlinear remainder simultaneously over each full strip on the proved
+contraction region. Its norm is quartic in the unweighted component norms.
+`SourceDiagonalRemainderMajorants.lean` supplies the contractions on one
+original-source neighborhood and cutoff, with a common majorant norm.
+
+`SourceDiagonalCenterSummability.lean` combines the quadratic disk
+estimate with this nonlinear bound at the moving diagonal centers.
+A fixed finite head covers the named center's free fallback.
+`SourcePeriodicMidpointRefined.lean` adds the previous midpoint-center
+error. The full actual canonical midpoint displacement is locally
+uniformly in every finite ℓr with r>1 and r≥p/2, on a single neighborhood
+independent of r. Thus p>2 includes ℓ(p/2); p≤2 gives ℓ(1+), without
+claiming ℓ1. One fixed mixed pair realizes these estimates.
+
+`SourceFreeSineQuotientRefined.lean` inserts the actual free-minus-midpoint
+offset into the existing full-disk quotient estimates. The theorem
+`sourceLemma10_8_freeSine_refined` keeps the common almost-real source
+domain and the original disk family, including every central disk and
+the filled value at the removable free center. Its two summand maps are
+chosen before every ℓ(1+) projection exponent, with uniform bounds on
+one source neighborhood.
+
+Lemma 10.8's audit is now resolved: bounded-offset estimates, the valid
+original-topology range, the arbitrary-numerator uniformity counterexample,
+and the unrestricted free-sine consequence are all accounted for. The
+printed arbitrary-numerator uniformity assertion has not been proved;
+it is false as stated. Next: Remark 10.9's sharpness expansion, then
+Lemma 10.10 and the remaining Section 10 statements.
+
+Validation: `./scripts/check.sh` passed (6,893 build jobs, the full public example suite, and the axiom audit of 31,950 NLS declarations). The build retains 21 existing warnings; the eight new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.

@@ -48011,3 +48011,92 @@ example : (let x : ℂ := (Real.pi:ℂ)/64;
 
 end
 end SourceLemma108MidpointCenterChecks
+
+namespace SourceLemma108FreeRefinedChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+local instance freeRefinedFourFact : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The actual full-strip nonlinear remainder has a common half-exponent norm bound.
+example (φ : CoeffPair 4) :
+    ∃ N : ℕ, 1 ≤ N ∧ ∃ V : Set (CoeffPair 4), IsOpen V ∧ φ ∈ V ∧ ∃ K : ℝ, 0 ≤ K ∧
+      ∀ ψ ∈ V, ∃ D : Coeff ((4:ℝ≥0∞)/2), ‖D‖ ≤ K ∧
+        ∀ n : ℤ, N ≤ n.natAbs → ∀ z ∈ resonantStrip n,
+          ‖weightedResonantAExtension (by norm_num) SpectralWeight.one (sourceWeightedPeriodOne ψ) n z-
+            sourceResonantDiagonalQuadratic ψ n z‖ ≤ ‖D n‖ :=
+  exists_uniform_sourceDiagonalRemainderMajorant (by norm_num) (by norm_num) φ
+
+-- For l4 sources the full canonical midpoint displacement is locally uniformly l2.
+example (φ : CoeffPair 4) :
+    ∃ V : Set (CoeffPair 4), IsOpen V ∧ φ ∈ V ∧ ∃ K : ℝ, 0 ≤ K ∧
+      ∀ ψ ∈ V, ∃ D : Coeff 2,
+        (∀ n : ℤ, D n = canonicalPeriodicMidpoint (p := 4) (by norm_num) (by norm_num)
+          (periodOnePotential ψ) (periodOnePotential_mem ψ) n-(Real.pi:ℂ)*n) ∧ ‖D‖ ≤ K := by
+  obtain ⟨V,ho,hφ,h⟩ := exists_uniform_sourcePeriodicMidpoint_refined (p := 4) (by norm_num) (by norm_num) φ
+  obtain ⟨K,hK,hb⟩ := h 2 (by norm_num) (by norm_num)
+    (by apply (ENNReal.div_le_iff (by norm_num) (by norm_num)).mpr; norm_num)
+  exact ⟨V,ho,hφ,K,hK,fun ψ hψ => by simpa only [sourcePeriodicMidpointDisplacement_apply] using hb ψ hψ⟩
+
+-- At p=2 the genuine endpoint is every r>1; this check uses r=3/2.
+example (φ : CoeffPair 2) :
+    Memℓp (fun n => sourcePeriodicMidpointDisplacement (p := 2) (by norm_num) (by norm_num) φ n)
+      (ENNReal.ofReal (3/2:ℝ)) := by
+  apply memℓp_sourcePeriodicMidpoint_refined (by norm_num) (by norm_num)
+    (by norm_num [ENNReal.one_lt_ofReal]) (by norm_num)
+  rw [ENNReal.div_self (by norm_num) (by norm_num)]
+  norm_num [ENNReal.one_le_ofReal]
+
+section
+local instance freeRefinedThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2:ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+-- The nonlinear remainder keeps its quasi-normed 3/4 exponent below p=2.
+example (φ : CoeffPair (ENNReal.ofReal (3/2:ℝ))) :
+    ∃ D : Coeff (ENNReal.ofReal (3/4:ℝ)),
+      ∀ n : ℤ, ∀ z : ℂ, ∀ hz : z ∈ resonantStrip n,
+        ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one (sourceWeightedPeriodOne φ) n z hz‖ ≤ 1/2 →
+        ‖weightedResonantAExtension (by norm_num) SpectralWeight.one (sourceWeightedPeriodOne φ) n z-
+          sourceResonantDiagonalQuadratic φ n z‖ ≤ ‖D n‖ := by
+  obtain ⟨D,_,hD⟩ := exists_sourceDiagonalRemainderMajorant (by norm_num)
+    (by norm_num [ENNReal.one_lt_ofReal]) φ
+  have he : ENNReal.ofReal (3/2:ℝ)/2 = ENNReal.ofReal (3/4:ℝ) := by
+    convert (ENNReal.ofReal_div_of_pos (x := (3/2:ℝ)) (y := (2:ℝ)) (by norm_num)).symm using 1 <;> norm_num
+  exact ⟨⟨fun n => D n,(lp.memℓp D).of_exponent_ge he.le⟩,hD⟩
+end
+
+-- The filled free quotient has the printed q=1 form with its l1 summand zero.
+example {D : ℤ → Set ℂ} {V : Set (CoeffPair 4)}
+    (h : SourceFreeSineSupDecomposition (p := 4) (by norm_num) (by norm_num) D V) :
+    ∃ A : CoeffPair 4 → Coeff ((4:ℝ≥0∞)/2), ∃ B : CoeffPair 4 → CoeffOnePlus,
+      ∀ ψ ∈ V, ∀ n : ℤ,
+        ((sSup ((fun z => ‖freeSineQuotient n z /
+          sourceStandardRootOmittedJointProduct (p := 4) (by norm_num) (by norm_num) n (z,ψ)-1‖) '' D n) : ℝ):ℂ) =
+          (0:Coeff 1) n+A ψ n+(B ψ).1 n := by
+  obtain ⟨A,B,he,_,_⟩ := h
+  exact ⟨A,B,fun ψ hψ n => by simpa only [lp.coeFn_zero,Pi.zero_apply,zero_add] using he ψ hψ n⟩
+
+-- The final package retains the common almost-real domain and every original disk.
+example : ∃ W : Set (CoeffPair 4), IsOpen W ∧ IsConnected W ∧ realTypeSourceLocus 4 ⊆ W ∧
+    SourceLemma10_8Estimates (by norm_num) (by norm_num) W ∧
+    ∀ φ ∈ W, ∃ V : Set (CoeffPair 4), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧ V ⊆ W ∧
+      ∃ D c, SourceCanonicalRootNeighborhoods (by norm_num) (by norm_num) V D c ∧
+        ∃ S : Set (CoeffPair 4), IsOpen S ∧ φ ∈ S ∧ S ⊆ V ∧
+          SourceFreeSineSupDecomposition (by norm_num) (by norm_num) D S :=
+  sourceLemma10_8_freeSine_refined (by norm_num) (by norm_num)
+
+local instance freeRefinedDoubleFact : Fact (1 ≤ 2*(2:ℝ≥0∞)) := ⟨by norm_num⟩
+local instance freeRefinedConjFact : Fact (1 ≤ (2*(2:ℝ≥0∞)).conjExponent) :=
+  ⟨ENNReal.HolderConjugate.one_le (2*(2:ℝ≥0∞)).conjExponent (2*(2:ℝ≥0∞))⟩
+
+-- Nonzero modes detect the reflection sign in the exact transposition identity.
+example :
+    (∑' k : ℤ, (lp.single 4 4 (1:ℂ) : Coeff 4) k *
+      Coeff.convolution (lp.single 4 1 (1:ℂ)) (lp.single 1 3 (1:ℂ)) k) = 1 ∧
+    (∑' l : ℤ, Coeff.youngConvolution (youngRelation_double_conjugate (2:ℝ≥0∞))
+      (Coeff.reflection (lp.single 2 1 (1:ℂ)))
+      (lp.single ((2*(2:ℝ≥0∞)).conjExponent) 4 (1:ℂ)) l * (lp.single 1 3 (1:ℂ) : Coeff 1) l) = 1 := by
+  constructor <;> simp [Coeff.convolution_apply,Coeff.youngConvolution_apply,Coeff.reflection_apply,
+    lp.single_apply,Pi.single_apply,sub_eq_iff_eq_add]
+
+end
+end SourceLemma108FreeRefinedChecks

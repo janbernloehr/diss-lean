@@ -1906,15 +1906,18 @@ uniformity on explicitly bounded ℓq midpoint-offset families, as already
 proved. The original ℓp topology works for q≥p, including infinity.
 No assertion is made that every pair q<p fails.
 
-The separate free-sine consequence is proved unconditionally with q=p.
-Its printed unspecialized q remains open in the audit: sharper information
-about the free midpoint offset may justify more exponents, and the
-counterexample above varies the numerator rather than fixing it to the
-free roots. See `coverage/SECTION_10.md` for the precise proved scope.
+The separate free-sine consequence is now proved without restricting q.
+`sourceLemma10_8_freeSine_refined` gives the stronger literal disk-supremum
+decomposition ℓ(p/2)+ℓ(1+), locally uniformly in the original source
+topology. The ℓq summand in the printed display can therefore be zero.
+This result uses the fixed free numerator; it does not contradict the
+counterexample above, which varies arbitrary numerator displacements.
 
-The midpoint-center comparison has since been proved: the full actual
-canonical midpoint minus the named diagonal center is locally uniformly
-bounded in ℓ(p/2), including 1<p<2. Thus the quadratic-diagonal approach
-now reduces the free-sine exponent question to sequence estimates for
-the nonlinear diagonal remainder at the moving centers. This does not
-yet resolve the printed unspecialized q.
+The missing estimate comes from transposing the actual nonlinear diagonal
+remainder through Young convolution at exponent 2p. Two retained
+reciprocal rows have ℓp majorants, giving an ℓ(p/2) product. Combining this
+with the quadratic diagonal estimate and the midpoint-center comparison
+yields the refined actual midpoint displacement and then the full-disk
+free-sine estimate. The construction includes central disks, repeated
+roots, and the filled free center. The endpoint remains ℓ(1+), not ℓ1.
+See `coverage/SECTION_10.md` for the precise theorem and quantifiers.
