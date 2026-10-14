@@ -1,6 +1,48 @@
 # Implementation plan
 
-## Current milestone: full Lemma 11.1 on the retained domain
+## Current milestone: Theorem 11.2, normalized indexed actions
+
+Four modules prove the analytic zero-locus assertion and the full statement
+of Theorem 11.2 for every finite p>1. The original domain W₀ and all of
+Lemma 11.1 are retained. One open neighborhood W⊆W₀ contains the entire
+real-type source locus and supports all signed indices simultaneously.
+
+The analytic normalized factor multiplies the literal canonical squared
+gap to give the actual `sourceIndexedAction`, including at collapsed
+complex gaps. Away from the gap zero set it is exactly I_n/γ_n². Both this
+factor and its principal square root are complex and real analytic on W.
+The roots never vanish, have positive real values on real sources, and
+equal one at the zero source. The normalized factor equals 1/4 there.
+
+At every complex point of W, one open neighborhood has a positive lower
+bound for the real parts of all normalized factors. That same local
+construction supplies actual ℓ^(p/2) and ℓ^(1+) summand functions for
+both 4I_n/γ_n²−1 and ξ_n−1. The neighborhood and the summands are chosen
+before the index and before every finite one-plus exponent q>1; their
+respective quasi-norm and norm bounds are uniform on that neighborhood.
+
+The key bridge builds all real-centered action charts on one source ball
+using the simultaneous circles. This identifies every indexed action with
+the previous complex-action construction on that common ball, allowing
+its established analytic factors and estimates to be used for the actual
+indexed actions. No infinite intersection of index-dependent domains is
+used. Taking the union of qualifying open neighborhoods proves local
+uniformity at arbitrary complex points, not only at real base points.
+
+`sourceTheorem11_2` is the public existence theorem;
+`SourceLemma11_1Data.normalizedActions` upgrades an existing original
+domain. `sourceActionGapZeroLocus` is defined by the actual squared gap
+on W₀, with an analytic defining function, relative closedness, and zero
+indexed action there. On W, zero action is also equivalent to zero gap
+for complex sources.
+
+Next: audit the intermediate formulas (2.18)–(2.19), then Section 12.
+The dissertation remains incomplete. See the
+[Section 11 audit](coverage/SECTION_11.md).
+
+Validation: `./scripts/check.sh` passed (6,946 build jobs, the complete public example suite, and the axiom audit of 32,429 NLS declarations). The build retains 21 existing warnings; the four new modules and fifteen focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: full Lemma 11.1 on the retained domain
 
 Six modules complete Lemma 11.1 for every finite p>1 on the unchanged
 common source domain W. The indexed actions retain equation (2.16) and

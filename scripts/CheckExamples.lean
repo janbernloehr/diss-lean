@@ -49125,3 +49125,147 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceLemma111Checks
+
+namespace SourceTheorem112Checks
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+noncomputable section
+
+-- The original domain and its Lemma 11.1 package are retained when W is shrunk.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W₀)
+    (hr : realTypeSourceLocus p ⊆ W₀) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ realTypeSourceLocus p ⊆ W ∧ W ⊆ W₀ ∧
+      SourceLemma11_1Data hp hp1 W₀ ∧ SourceTheorem11_2Data hp hp1 W₀ W := by
+  obtain ⟨W,hW,hR,Hn⟩ := H.normalizedActions hr
+  exact ⟨W,hW,hR,Hn.subset,Hn.previous,Hn⟩
+
+-- Z_n is the analytic zero set of the literal squared gap on the original domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W₀) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun ψ : CoeffPair p =>
+      (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2) W₀ ∧
+    sourceActionGapZeroLocus hp hp1 W₀ n = W₀ ∩
+      (fun ψ : CoeffPair p =>
+        (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2) ⁻¹' {0} ∧
+    IsClosed {ψ : W₀ | ψ.1 ∈ sourceActionGapZeroLocus hp hp1 W₀ n} :=
+  ⟨H.squared_gap_analytic n,sourceActionGapZeroLocus_eq_preimage hp hp1 W₀ n,H.gapZeroLocus_isClosed n⟩
+
+-- Complex collapsed central gaps already have zero action on all of W₀.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W₀)
+    (ψ : CoeffPair p) (hψ : ψ ∈ sourceActionGapZeroLocus hp hp1 W₀ 0) :
+    sourceIndexedAction hp hp1 0 ψ = 0 := H.action_zero_on_gapZeroLocus 0 hψ
+
+-- One real-centered neighborhood identifies all indices with the old complex actions.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W₀)
+    (φ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p φ)) (hφ : φ ∈ W₀) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ U ⊆ W₀ ∧
+      ∀ ψ ∈ U, ∀ n : ℤ, ψ ∈ sourceComplexActionDomain hp hp1 n ∧
+        sourceIndexedAction hp hp1 n ψ = sourceComplexAction hp hp1 n ψ :=
+  H.previous.previous.indexedAction_eq_complexAction_allIndices_near_real φ hr hφ
+
+-- The actual indexed action factorizes at every complex point, including zero gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourceIndexedAction hp hp1 n ψ =
+      (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2 *
+        sourceNormalizedActionComplexExtension hp hp1 n ψ := H.factorization ψ hψ n
+
+-- Away from the analytic zero set this is exactly I_n/gamma_n^2.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ)
+    (hg : ψ ∉ sourceActionGapZeroLocus hp hp1 W₀ n) :
+    sourceNormalizedActionComplexExtension hp hp1 n ψ = sourceIndexedAction hp hp1 n ψ /
+      (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2 := by
+  apply H.normalized_eq_quotient ψ hψ n
+  exact fun he => hg ((mem_sourceActionGapZeroLocus_iff hp hp1 W₀ n ψ).mpr ⟨H.subset hψ,he⟩)
+
+-- Lower bounds are shared by all signed indices near ANY complex point of W.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ c : ℝ, 0 < c ∧ ∀ ψ ∈ U, ∀ n : ℤ,
+        c ≤ (sourceNormalizedActionComplexExtension hp hp1 n ψ).re := by
+  obtain ⟨U,hU,hφU,hUW,Hu⟩ := H.locally_uniform φ hφ
+  exact ⟨U,hU,hφU,hUW,Hu.positive⟩
+
+-- One neighborhood and one actual one-plus summand precede EVERY exponent q>1.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ GA GR : CoeffPair p → Coeff (ENNReal.ofReal (p.toReal/2)),
+      ∃ BA BR : CoeffPair p → CoeffOnePlus,
+        (∀ ψ ∈ U, ∀ n : ℤ,
+          GA ψ n + (BA ψ).1 n = 4*sourceNormalizedActionComplexExtension hp hp1 n ψ-1 ∧
+          GR ψ n + (BR ψ).1 n = sourceNormalizedActionRoot hp hp1 n ψ-1) ∧
+        (∃ Ma Mr : ℝ, ∀ ψ ∈ U, ‖GA ψ‖ ≤ Ma ∧ ‖GR ψ‖ ≤ Mr) ∧
+        ∀ (q : ℝ≥0∞) (hq1 : 1 < q) (hq : q ≠ ⊤), ∃ La Lr : ℝ, ∀ ψ ∈ U,
+          ‖CoeffOnePlus.toCoeff q hq1 hq (BA ψ)‖ ≤ La ∧
+          ‖CoeffOnePlus.toCoeff q hq1 hq (BR ψ)‖ ≤ Lr := by
+  obtain ⟨U,hU,hφU,hUW,Hu⟩ := H.locally_uniform φ hφ
+  obtain ⟨GA,GR,BA,BR,he,_,_,hb,hq⟩ := Hu.asymptotics
+  exact ⟨U,hU,hφU,hUW,GA,GR,BA,BR,he,hb,hq⟩
+
+-- Both analytic notions hold on the SAME W, including at collapsed gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W) (n : ℤ) :
+    AnalyticOnNhd ℂ (sourceNormalizedActionComplexExtension hp hp1 n) W ∧
+    AnalyticOnNhd ℂ (sourceNormalizedActionRoot hp hp1 n) W ∧
+    AnalyticOnNhd ℝ (sourceNormalizedActionComplexExtension hp hp1 n) W ∧
+    AnalyticOnNhd ℝ (sourceNormalizedActionRoot hp hp1 n) W :=
+  ⟨H.analytic n,H.root_analytic n,H.real_analytic n⟩
+
+-- The root is literally principal sqrt(4*extension), never zero, with the exact square.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourceNormalizedActionRoot hp hp1 n ψ = Complex.sqrt (4*sourceNormalizedActionComplexExtension hp hp1 n ψ) ∧
+    sourceNormalizedActionRoot hp hp1 n ψ ≠ 0 ∧
+    (sourceNormalizedActionRoot hp hp1 n ψ)^2 = 4*sourceNormalizedActionComplexExtension hp hp1 n ψ :=
+  ⟨rfl,H.root_ne_zero ψ hψ n,H.root_sq ψ n⟩
+
+-- The real branch is positive, including at a collapsed selected gap.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (hr : IsRealType (CoeffPair.toMax p ψ)) (n : ℤ) :
+    (sourceNormalizedActionRoot hp hp1 n ψ).im = 0 ∧
+      0 < (sourceNormalizedActionRoot hp hp1 n ψ).re := H.root_real_positive ψ hψ hr n
+
+-- The zero-set equivalence extends to complex sources on the normalized domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceTheorem11_2Data hp hp1 W₀ W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourceIndexedAction hp hp1 n ψ = 0 ↔ ψ ∈ sourceActionGapZeroLocus hp hp1 W₀ n := by
+  rw [mem_sourceActionGapZeroLocus_iff, H.action_eq_zero_iff_gap_zero ψ hψ n]
+  simp only [H.subset hψ,true_and]
+
+-- Actual nonzero free normalization: the extension is 1/4 even though the gap vanishes.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) :
+    sourceNormalizedActionComplexExtension hp hp1 n (0 : CoeffPair p) = 1/4 ∧
+      sourceNormalizedActionRoot hp hp1 n (0 : CoeffPair p) = 1 := by
+  constructor
+  · exact sourceNormalizedActionComplexExtension_zero_source hp hp1 n
+  · simp [sourceNormalizedActionRoot,sourceNormalizedActionComplexExtension_zero_source]
+
+local instance source112ThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W₀ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W₀ ∧ IsConnected W₀ ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W₀ ∧ IsOpen W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+    SourceTheorem11_2Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W₀ W :=
+  sourceTheorem11_2 (by norm_num) (by norm_num)
+
+local instance source112Four : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W₀ W : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W₀ ∧ IsConnected W₀ ∧
+    realTypeSourceLocus (4 : ℝ≥0∞) ⊆ W₀ ∧ IsOpen W ∧
+    realTypeSourceLocus (4 : ℝ≥0∞) ⊆ W ∧
+    SourceTheorem11_2Data (p := (4 : ℝ≥0∞)) (by norm_num) (by norm_num) W₀ W :=
+  sourceTheorem11_2 (by norm_num) (by norm_num)
+
+end
+end SourceTheorem112Checks

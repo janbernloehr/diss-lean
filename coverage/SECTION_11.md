@@ -6,7 +6,9 @@ counterclockwise piecewise C¹ circuits are proved on the unchanged common
 source domain from Section 10. The full Lemma 11.1 is now proved there:
 analyticity, the exact complex Fréchet gradient in equation (2.17), zero
 action at complex collapsed gaps, and real nonnegativity with the exact
-zero-gap criterion. The analytic zero sets Z_n and Theorem 11.2 are next.
+zero-gap criterion. The analytic zero sets Z_n and the full statement of
+Theorem 11.2 are also proved. The intermediate proof formulas (2.18)–(2.19)
+remain to be compared on their exact printed domains before Section 12.
 
 ## One neighborhood for all original contours
 
@@ -174,14 +176,99 @@ between zero action and zero **canonical gap** on the whole real locus.
 open gap. These follow through the proved agreement with the existing
 real action and its real-gap integral results.
 
+## The analytic zero sets Z_n
+
+`sourceActionGapZeroLocus hp hp1 W₀ n` is defined literally by ψ∈W₀ and
+γ_n(ψ)²=0. Here W₀ is the unchanged domain of Lemma 11.1. The theorem
+`SourceLemma11_1Data.squared_gap_analytic` retrieves the analytic squared
+canonical gap from the retained Lemma 10.2 data. Together with
+`sourceActionGapZeroLocus_eq_preimage`, it provides one global analytic
+defining equation for Z_n. This is the analytic zero-locus assertion;
+no smoothness or nonsingularity of this zero set is claimed.
+
+`.gapZeroLocus_isClosed` proves closedness relative to W₀, and
+`.action_zero_on_gapZeroLocus` proves zero indexed action there, including
+at non-real sources and the central gap. The equivalence between a zero
+squared gap and a zero canonical gap uses the actual complex field.
+
+## Theorem 11.2 on one common smaller domain
+
+`SourceLemma11_1Data.normalizedActions` constructs an open W⊆W₀ containing
+the entire real-type source locus. The original W₀ and its full preceding
+package remain in `SourceTheorem11_2Data.previous`. The theorem
+`sourceTheorem11_2` supplies both domains for every finite p>1.
+
+Write F_n for the existing `sourceNormalizedActionComplexExtension` and
+ξ_n for `sourceNormalizedActionRoot`. The following assertions all hold
+on the same W, simultaneously for every signed index.
+
+| Source assertion | Public API | Exact scope |
+| --- | --- | --- |
+| Analytic extension of I_n/γ_n² | `.analytic`, `.factorization`, `.normalized_eq_quotient` | F_n is analytic on W and I_n=γ_n²F_n everywhere, with the actual indexed action and canonical gap. On W\Z_n it is exactly the quotient. |
+| Principal root | `.root_analytic`, `.root_sq` | ξ_n is literally `Complex.sqrt (4*F_n)`, analytic on W, and ξ_n²=4F_n. |
+| Real analyticity | `.real_analytic` | Both functions are also analytic over ℝ on the same domain. |
+| Positive real part | `.re_pos`, `.locally_uniform`, `SourceNormalizedActionUniformBounds.positive` | At every complex point of W, one open neighborhood and one positive lower bound work for Re F_n at every n. |
+| Both sequence asymptotics | `.locally_uniform`, `SourceNormalizedActionUniformBounds.asymptotics` | Exact ℓ^(p/2)+ℓ^(1+) decompositions of 4F_n−1 and ξ_n−1, locally uniformly in the original source topology. |
+| Nonvanishing and the real branch | `.root_ne_zero`, `.root_real_positive` | ξ_n never vanishes on W and is positive real at real-type sources, including collapsed gaps. |
+| Free normalization | `.root_zero`, `sourceNormalizedActionComplexExtension_zero_source` | ξ_n(0)=1 and F_n(0)=1/4 for every n, including n=0. |
+| Compatibility with existing actions | `.agreement` | Every ψ∈W belongs to every old complex-action chart domain, and both indexed actions agree there. |
+
+The asymptotics choose one open U containing an arbitrary complex φ∈W,
+with U⊆W, and four functions GA, GR, BA, BR before choosing ψ, n or q.
+GA and GR take values in `Coeff (ENNReal.ofReal (p.toReal/2))`, including
+the quasi-norm case p/2<1. BA and BR take values in the actual intersection
+space `CoeffOnePlus`. Their coordinates satisfy
+
+`GA(ψ)_n + BA(ψ)_n = 4F_n(ψ)−1`,
+`GR(ψ)_n + BR(ψ)_n = ξ_n(ψ)−1`.
+
+One pair of constants bounds the two half-exponent quasi-norms throughout
+U. For every finite q>1, another pair bounds the ℓ^q projections of these
+same BA and BR throughout the same U. BA and BR are continuous there.
+Thus neither the neighborhood nor the one-plus summands depend on q.
+
+The bridge `indexedAction_eq_complexAction_allIndices_near_real` is proved
+by taking a single real-centered source ball inside a simultaneous-contour
+neighborhood. For every n, its fixed circle defines a valid old action
+chart on that same ball. Chart compatibility identifies the old and new
+actions for every n at once. A finite intersection then combines that
+ball with the previously proved analytic factors, analytic principal roots,
+positive lower bounds and one-plus decompositions.
+
+The final W is the union of all qualifying open neighborhoods inside W₀.
+Any complex point of W belongs to one such neighborhood, which supplies
+the local uniform bounds there. This proves the requested statement at
+all complex points, rather than only at the real centers used to establish
+existence. As a consequence, `.action_eq_zero_iff_gap_zero` also proves
+the exact complex zero-gap criterion throughout W.
+
 ## Remaining source assertions
 
-Next are the analytic zero sets Z_n and Theorem 11.2's analytic normalized
-actions, positivity and asymptotic estimates. That theorem permits a later
-shrink of W; no such shrink was used in Lemma 11.1. The dissertation
-remains incomplete.
+The theorem uses the established rationalized circle construction for
+analytic extension through collapsed gaps. It does not require the source's
+particular removability proof. The exact printed intermediate formulas
+(2.18) and (2.19), their original-domain quantifiers and the stated collapsed
+limit still need a separate comparison. Section 12 follows that audit.
+The dissertation remains incomplete.
 
 ## Validation
+
+The Theorem 11.2 step has fifteen focused checks: retention of the original
+domain and lemma, the literal analytic zero locus and relative closedness,
+zero action at complex central collapses, one chart neighborhood for all
+indices, canonical-gap factorization, the exact quotient off Z_n, common
+positive lower bounds at arbitrary complex points, exact sequence-summand
+quantifiers, real and complex analyticity, principal-root square and
+nonvanishing, positive real branch, complex zero-gap equivalence, actual
+nonzero free normalization, and p=3/2 and p=4. All pass without warnings.
+The full `./scripts/check.sh` gate passed: 6,946 build jobs, the complete
+public example suite, and the axiom audit of 32,429 NLS declarations.
+There are 21 existing build warnings; the four new modules and fifteen
+focused checks are warning-free. No admitted proofs, additional axioms
+or heartbeat overrides were introduced. The 156-label source inventory
+and `git diff --check` also passed.
+
+The preceding Lemma 11.1 step:
 
 The full Lemma 11.1 step has eleven focused checks: unchanged W and
 equation (2.16), joint root and mixed derivatives at complex sources,

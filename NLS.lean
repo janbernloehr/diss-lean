@@ -3505,3 +3505,7 @@ import NLS.ZakharovShabat.SourceActionCommonGradient
 import NLS.ComplexAnalysis.PiecewiseContourOuterPeriod
 import NLS.ZakharovShabat.SourceIndexedActionGradient
 import NLS.ZakharovShabat.SourceLemma11_1
+import NLS.ZakharovShabat.SourceActionGapZeroLocus
+import NLS.ZakharovShabat.SourceIndexedActionCommonCharts
+import NLS.ZakharovShabat.SourceNormalizedIndexedActionLocal
+import NLS.ZakharovShabat.SourceTheorem11_2

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves the full Lemma 11.1 on the unchanged common
-source domain. Every indexed action has the exact complex Fréchet gradient
-from equation (2.17), computed on arbitrary admissible piecewise C¹ circuits.
-Complex collapsed gaps have zero action. Real actions are nonnegative and
-vanish exactly at collapsed gaps, with strict positivity on open gaps.
-Next: the analytic zero sets Z_n and Theorem 11.2's normalized actions.
+Latest step: Lean proves Theorem 11.2 on one complex neighborhood for all
+indices. The actual indexed actions admit analytic squared-gap factors
+and nonvanishing principal roots, with positive uniform lower bounds and
+locally uniform ℓ^(p/2)+ℓ^(1+) asymptotics. The original Lemma 11.1 domain
+and its analytic collapsed-gap zero sets are retained.
+Next: audit formulas (2.18)–(2.19), then Section 12.
 [The Section 11 audit](coverage/SECTION_11.md) records the precise scope;
 [Section 10](coverage/SECTION_10.md) retains the preceding results.
 The dissertation remains incomplete.
