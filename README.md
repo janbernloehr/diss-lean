@@ -5,14 +5,16 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean now proves a counterexample to Lemma 10.8's printed
-local-uniformity claim at p=4, q=1. Finite root perturbations can have
-arbitrarily small ℓ4 norm while the actual quotient disk suprema have
-unbounded ℓ2 norms. Each supremum sequence still belongs individually
-to ℓ2. The corrected estimates on bounded ℓq offset families and the
-original-topology estimates for q≥p remain proved. The free-sine display's
-general q is the remaining Lemma 10.8 audit question.
-[The Section 10 audit](coverage/SECTION_10.md) records the proof and scope.
+Latest step: the actual resonant diagonal now has a verified quadratic
+Hilbert-transform term and an explicit nonlinear remainder. The quadratic
+term has full free-disk supremum estimates at the half exponent (with the
+ℓ(1+) endpoint), and the remainder has a quartic source-norm bound on a
+common source neighborhood. Period-one normalization and negative-index
+signs are verified. Sequence bounds for the nonlinear remainder and the
+transfer to periodic midpoints remain necessary to finish Lemma 10.8's
+free-sine exponent audit. Its separate p=4, q=1 local-uniformity
+counterexample remains proved.
+[The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

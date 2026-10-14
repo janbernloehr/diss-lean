@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Current milestone: Lemma 10.8 local-uniformity counterexample
+## Current milestone: quadratic diagonal estimates for the Lemma 10.8 free-sine audit
+
+Four modules identify and estimate the actual quadratic contribution to
+the resonant diagonal. This advances the remaining free-sine exponent
+audit; it does not yet prove improved midpoint summability or finish
+Lemma 10.8.
+
+`ResonantDiagonalQuadratic.lean` constructs the reflected product
+b_j a_(−j) in ℓ(p/2), with norm at most ||a||p ||b||p even when p/2<1.
+Its signed reciprocal sum is exactly the leading physical diagonal row,
+with the resonant denominator omitted.
+`ResonantDiagonalQuadraticSummability.lean` lifts independent spectral
+samples to even Hilbert rows. It proves bounds for the literal supremum
+on each free quarter-π disk in every finite r>1 with r≥p/2. For p>2
+this includes r=p/2. A single ℓ(p/2)+ℓ(1+) pair works on bounded input
+families, with all projections of the same endpoint summand controlled.
+
+`ResonantDiagonalNonlinearRemainder.lean` splits the actual analytic
+diagonal into that quadratic row and the explicit second-iterate
+correction of the even source vector. The remainder bound first retains
+the spectral square estimate and reciprocal row norm, then gives an
+exponent-only quartic bound in the unweighted potential norm on the
+contraction region.
+`SourceResonantDiagonalQuadratic.lean` transports these formulas to the
+original period-one source. The quadratic term is
+
+    A2_n(z,φ) = ∑_(m≠n) φ₂,m φ₁,−m / (z+πn−2πm).
+
+At z=nπ its Hilbert-transform factor is −1/(2π), including negative
+indices. One open neighborhood of every original source and one cutoff
+supply the actual diagonal expansion on every distant closed resonant
+strip, with |A_n−A2_n|≤C_p ||φ||p⁴. The contraction hypotheses are
+provided by the theorem, rather than assumed of the source family.
+
+Remaining: control the nonlinear remainder in the required sequence
+exponents and transfer the diagonal expansion to the actual periodic
+midpoint. A coordinatewise quartic bound alone does not supply either
+result. The free-sine consequence is still proved unconditionally at
+q=p; its printed general q remains unresolved. The previous formal
+p=4, q=1 counterexample to numerator local uniformity remains unchanged.
+
+Validation: `./scripts/check.sh` passed (6,879 build jobs, the full public example suite, and the axiom audit of 31,856 NLS declarations). The build retains 21 existing warnings; the four new modules and six focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+## Previous milestone: Lemma 10.8 local-uniformity counterexample
 
 `SourceQuotientUniformityCounterexample.lean` resolves the first remaining
 source-audit question: the printed original-topology local-uniformity

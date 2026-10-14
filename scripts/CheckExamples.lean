@@ -47844,3 +47844,88 @@ example : ∃ U : Set (Coeff 4 × CoeffPair 4), IsOpen U ∧ (0,0) ∈ U ∧
 
 end
 end SourceLemma108UniformityChecks
+
+namespace SourceLemma108QuadraticChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex Filter Topology
+open scoped ENNReal
+local instance quadraticFourFact : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- Reflection is not complex conjugation; the source components are independent complex data.
+example (a b : Coeff 4) : resonantDiagonalPairProduct a b (-3) = b (-3)*a 3 := by simp
+
+-- The period-one normalization has factor 1/(2π), with the sign at a negative free center.
+example : resonantDiagonalQuadratic
+    (Coeff.periodDouble (Coeff.ofFinsupp (p := 4) (Finsupp.single 0 1)))
+    (Coeff.periodDouble (Coeff.ofFinsupp (p := 4) (Finsupp.single 0 Complex.I)))
+    (-1) (-(Real.pi:ℂ)) = -Complex.I/(2*(Real.pi:ℂ)) := by
+  have h := resonantDiagonalQuadratic_periodDouble_center
+    (Coeff.ofFinsupp (p := 4) (Finsupp.single 0 1))
+    (Coeff.ofFinsupp (p := 4) (Finsupp.single 0 Complex.I)) (-1)
+  norm_num only [Int.cast_neg,Int.cast_one,mul_neg,mul_one] at h
+  rw [h]
+  have hs : (∑' m : ℤ,
+      (Coeff.ofFinsupp (p := 4) (Finsupp.single 0 Complex.I)) m *
+      (Coeff.ofFinsupp (p := 4) (Finsupp.single 0 1)) (-m) / ((m:ℂ)-(-1))) = Complex.I := by
+    rw [tsum_eq_single 0]
+    · simp [Coeff.ofFinsupp_apply]
+    · intro m hm
+      simp [Coeff.ofFinsupp_apply,Finsupp.single_eq_of_ne hm]
+  rw [hs]
+  ring
+
+example (φ : CoeffPair 4) : ∃ B : Coeff 2,
+    (∀ n : ℤ, B n = ((sSup ((fun z => ‖sourceResonantDiagonalQuadratic φ n z‖) '' refinedResonantDisk n) : ℝ):ℂ)) ∧
+    (∀ n : ℤ, ∀ z ∈ refinedResonantDisk n, ‖sourceResonantDiagonalQuadratic φ n z‖ ≤ ‖B n‖) ∧
+    ‖B‖ ≤ Real.pi⁻¹*(Fourier.hilbertTransformBound (by norm_num : (1:ℝ≥0∞)<2) (by norm_num)+
+      ‖Fourier.hilbertSquareCoeffs‖)*‖φ‖^2 :=
+  exists_sourceResonantDiagonalQuadraticSup (by norm_num) (by norm_num) (by norm_num)
+    (by apply (ENNReal.div_le_iff (by norm_num) (by norm_num)).mpr; norm_num) φ
+
+-- Actual distant-strip data are supplied near every source; no contraction premise is assumed here.
+example (φ : CoeffPair 4) : ∃ N : ℕ, ∀ n : ℤ, N ≤ n.natAbs →
+    ∃ hz : (Real.pi:ℂ)*n ∈ resonantStrip n,
+      ‖weightedPotentialSquareInShift (p := 4) (by norm_num) SpectralWeight.one
+        (sourceWeightedPeriodOne φ) n ((Real.pi:ℂ)*n) hz‖ ≤ 1/2 ∧
+      ‖weightedResonantAExtension (p := 4) (by norm_num) SpectralWeight.one (sourceWeightedPeriodOne φ)
+          n ((Real.pi:ℂ)*n)-sourceResonantDiagonalQuadratic φ n ((Real.pi:ℂ)*n)‖ ≤
+        resonantDiagonalRemainderConstant (p := 4) (by norm_num)*‖φ‖^4 := by
+  obtain ⟨N,_,V,_,hφ,hV⟩ := exists_local_sourceResonantDiagonalQuadraticExpansion (by norm_num) φ
+  refine ⟨N,?_⟩
+  intro n hn
+  have hz : (Real.pi:ℂ)*n ∈ resonantStrip n := by
+    simp [resonantStrip]
+    positivity
+  exact ⟨hz,hV φ hφ n hn _ hz⟩
+
+-- At p=2 the half exponent is one; one fixed endpoint sequence serves every projection.
+example (M : ℝ) (hM : 0 ≤ M) :
+    ∃ A : (Coeff 2 × Coeff 2) → Coeff 1, ∃ B : (Coeff 2 × Coeff 2) → CoeffOnePlus,
+      (∀ x : Coeff 2 × Coeff 2, ‖x.1‖ ≤ M → ‖x.2‖ ≤ M → ∀ n : ℤ,
+        (resonantDiagonalQuadraticSup x.1 x.2 n : ℂ) = A x n+(B x).1 n) ∧
+      ∀ x : Coeff 2 × Coeff 2, ∀ n : ℤ,
+        CoeffOnePlus.toCoeff 2 (by norm_num) (by norm_num) (B x) n =
+        CoeffOnePlus.toCoeff 3 (by norm_num) (by norm_num) (B x) n := by
+  obtain ⟨A,B,he,_,_⟩ := exists_uniform_resonantDiagonalQuadraticSup_decomposition (p := 2) (by norm_num) M hM
+  have hhalf : (2:ℝ≥0∞)/2 = 1 := ENNReal.div_self (by norm_num) (by norm_num)
+  let Aone (x : Coeff 2 × Coeff 2) : Coeff 1 :=
+    ⟨fun n => A x n, by
+      have hm : Memℓp (fun n => A x n) ((2:ℝ≥0∞)/2) := lp.memℓp (A x)
+      exact hm.of_exponent_ge hhalf.le⟩
+  exact ⟨Aone,B,he,fun _ _ => rfl⟩
+
+section
+local instance quadraticThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2:ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+-- Below p=2, the pair product itself still belongs to the quasi-normed half exponent.
+example (a b : Coeff (ENNReal.ofReal (3/2:ℝ))) :
+    Memℓp (fun n : ℤ => b n*a (-n)) (ENNReal.ofReal (3/4:ℝ)) := by
+  have h : Memℓp (fun n : ℤ => b n*a (-n)) (ENNReal.ofReal (3/2:ℝ)/2) :=
+    lp.memℓp (resonantDiagonalPairProduct a b)
+  have he : ENNReal.ofReal (3/2:ℝ)/2 = ENNReal.ofReal (3/4:ℝ) := by
+    convert (ENNReal.ofReal_div_of_pos (x := (3/2:ℝ)) (y := (2:ℝ)) (by norm_num)).symm using 1 <;> norm_num
+  rw [he] at h
+  exact h
+end
+end
+end SourceLemma108QuadraticChecks

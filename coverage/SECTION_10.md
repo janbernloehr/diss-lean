@@ -867,3 +867,59 @@ A general-q specialization requires appropriate estimates for the free
 midpoint offset, which cannot be inferred from an arbitrary numerator's
 offset. The present counterexample does not settle that separate claim.
 After resolving it, proceed to Remark 10.9 and Lemma 10.10.
+
+## Lemma 10.8: quadratic diagonal contribution to the free-sine audit
+
+The remaining general-q question cannot be settled by the numerator
+counterexample, which varies the roots while holding the source at zero.
+The free numerator fixes those roots; its offset is the negative midpoint
+displacement. The new work isolates an actual source contribution that
+has better sequence summability than the existing endpoint-average bound.
+
+For physical coefficients a,b, define f_j=b_j a_(−j). Hölder gives
+f∈ℓ(p/2) and ||f||_(p/2)≤||a||p ||b||p, including p/2<1. The quadratic
+diagonal is the signed row
+
+    A2_n(z) = ∑_(j≠2n) f_j / (z+πn−πj).
+
+`resonantDiagonalQuadratic_eq_physical` identifies this with the first
+actual resolvent iterate. Sampling each z_n independently in its free
+quarter-π disk and filling unused odd rows yields a sampled discrete
+Hilbert transform at indices 2n. For finite r>1 and r≥p/2, contractive
+sequence inclusion and the Hilbert bound give
+
+    ||sup_(z∈disk_n) |A2_n(z)||r
+      ≤ π⁻¹ (H_r+||HilbertSquare||) ||a||p ||b||p.
+
+The supremum is literal. Its coefficient sequence is obtained from the
+uniform bound over every independent selection, not merely from estimates
+at one center. Bounded input families have a single ℓ(p/2)+ℓ(1+) pair;
+the ℓ(1+) summand is fixed before choosing any projection exponent.
+
+The actual diagonal's remainder is explicitly the diagonal row tested
+against T_n² E_n, where E_n is the actual even corrected source vector.
+`weightedResonantA_sub_quadratic` proves exact equality with that
+remainder. The estimates retain the spectral square bound and reciprocal
+row norm before giving |R_n(z)|≤C_p ||φ||⁴ on the contraction region.
+No half-exponent sequence estimate for R is claimed from this pointwise
+quartic inequality.
+
+Period-one embedding removes the odd physical frequencies and produces
+
+    A2_n(z,φ) = ∑_(m≠n) φ₂,m φ₁,−m / (z+πn−2πm).
+
+At the free center this equals −(2π)⁻¹ times the source Hilbert row.
+The components are independent complex sequences; reflection introduces
+no complex conjugation. The source transport supplies a quadratic bound
+for the actual free-disk supremum using the original pair norm.
+`exists_local_sourceResonantDiagonalQuadraticExpansion` supplies one open
+original-source neighborhood and one cutoff on which the actual analytic
+diagonal differs from this term by at most C_p ||φ||⁴, throughout every
+distant closed resonant strip. No contraction assumption is left as a
+premise on that neighborhood.
+
+This proves the needed summability for the quadratic contribution only.
+The nonlinear remainder still requires sequence estimates, and the
+diagonal centers must still be related quantitatively to the actual
+periodic midpoints. The unconditional free-sine result remains q=p until
+those steps, or another complete argument, resolve its printed general q.

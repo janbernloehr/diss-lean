@@ -3438,3 +3438,7 @@ import NLS.ZakharovShabat.SourceQuotientDiscNormalization
 import NLS.ZakharovShabat.SourceQuotientBlockRoots
 import NLS.ZakharovShabat.SourceQuotientBlockLowerBound
 import NLS.ZakharovShabat.SourceQuotientUniformityCounterexample
+import NLS.ZakharovShabat.ResonantDiagonalQuadratic
+import NLS.ZakharovShabat.ResonantDiagonalQuadraticSummability
+import NLS.ZakharovShabat.ResonantDiagonalNonlinearRemainder
+import NLS.ZakharovShabat.SourceResonantDiagonalQuadratic
