@@ -1,13 +1,15 @@
 # Section 10: potentials of almost real type
 
-This audit follows the source statements and proofs on printed pp. 54–56.
+This audit follows the source statements and proofs on printed pp. 54–57.
 The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.
 Lemmas 10.2 and 10.3 are covered on the same common domain, including the
 preceding simple-root assertions and general piecewise C¹ contours.
 Lemma 10.4 is covered with the selected-root index correction, actual
 side traces, improper endpoint limits and the sharp constant one.
-Lemma 10.5 and later statements remain to be audited.
+Lemma 10.5 is covered on the unchanged common domain, with literal
+symmetric cutoffs, paired absolute convergence, both analytic domains
+and nonvanishing. Corollary 10.6 and later statements remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -449,3 +451,92 @@ is conditional on an uninhabited hypothesis.
 
 Next: Lemma 10.5, convergence, analytic domains and nonvanishing of the
 omitted standard-root product. The dissertation remains incomplete.
+
+
+## Lemma 10.5: the actual product and its normalization
+
+The source on printed p. 57 defines
+
+```
+f_n(z) = (1/π_n) ∏_{m≠n} w_m(z)/π_m,   π_0=1, π_n=nπ for n≠0.
+```
+
+`sourceStandardRootOmittedPartialProduct hp hp1 n N (z,ψ)` is literally
+that finite product over [-N,N] with n erased. Its definition includes
+the outer division by π_n at every cutoff, even before the cutoff
+reaches n. `sourceStandardRootOmittedProduct` is the zero-mode prefactor
+times the infinite product of positive/negative pairs, with the selected
+factor replaced by one. `tendsto_sourceStandardRootOmittedPartialProduct`
+identifies this value as the limit of the literal cutoffs at every source,
+spectral point and omitted index. No limit or normalization is assumed.
+
+The paired factors have summable norms of their deviations from one.
+`exists_uniform_absolute_sourceStandardRootOmittedPairedFactor_tails`
+strengthens this to a common vanishing bound on arbitrary finite subsets
+of the high-frequency tail, uniformly for all nearby sources and all
+spectral points in a prescribed bounded region. After a cutoff at least
+|n|, omission no longer changes the tail. This gives the normal convergence
+used in the analyticity proof. Absolute convergence concerns these paired
+blocks, as in the source's displayed regrouping.
+
+## Lemma 10.5: one unchanged common domain and local family
+
+`SourceLemma10_3Data.omittedProducts` takes any open common domain W
+with the Lemma 10.3 data and returns `SourceLemma10_5Data` on exactly W.
+It does not construct a replacement W or shrink it. Each local package
+is built from the already supplied V,D,c and extends its
+`SourceStandardRootNeighborhoods`; its isolation, root bounds, root
+analyticity and general contour identity remain available.
+
+| Source requirement | Formal field or theorem | Exact scope |
+| --- | --- | --- |
+| Spectral domain | `sourceStandardRootOmittedDomain_eq_compl_iUnion` | The literal complement of the union of all G_m with m≠n. |
+| Spectral analyticity | `SourceLemma10_5Data.spectral` | Every source in the same W and every integer n. |
+| Joint analytic domain | `.joint` | The open moving-gap complement over W; openness is proved. |
+| Local uniform convergence | `.locally_uniform` | Actual symmetric finite cutoffs, jointly in source and spectral point. |
+| Uniform convergence on compact sets | `SourceLemma10_3Data.omittedCompact`, `.omittedSpectralCompact` | Joint compact sets and spectral compact sets at a fixed source. |
+| Printed fixed-disk domain | `SourceOmittedRootNeighborhoods.omitted_joint` | (ℂ∖⋃_{m≠n} closure(D_m))×V, retaining the source's overlines. |
+| Stronger fixed domain | `SourceLemma10_3Data.omittedFixed` | Analyticity and nonvanishing also on the complement of the open disks, including their boundaries. |
+| Nonvanishing | `SourceLemma10_5Data.nonzero`, local `.omitted_nonzero` | The whole moving-gap domain, even for arbitrary complex sources, and the printed local fixed domain. |
+| Omitted gap itself | `SourceOmittedRootNeighborhoods.omitted_disk` | The whole omitted disk D_n is analytic and nonzero, including all points of G_n and collapsed gaps. |
+
+The joint proof uses the same analytic midpoint and squared-gap
+coordinates as Lemma 10.3. Every finite cutoff is analytic, and the
+uniform paired tails give a locally uniform limit on the open joint
+domain. Restriction to a fixed source gives spectral analyticity.
+Containment of each actual gap in its fixed disk gives the claimed local
+joint domain. Pairwise disjointness puts all of D_n in the complement of
+the unomitted gaps. Nonvanishing follows from summable paired deviations
+and the nonzero actual factors; finite products alone would not suffice.
+
+## Lemma 10.5: free normalization and ordering checks
+
+`sourceStandardRootOmittedProduct_zero_source_eq_freeSineQuotient` proves
+that the actual free product is the filled quotient sin(z)/(z−nπ) on all
+of ℂ. The omitted point is filled by cos(nπ), of norm one. The function
+is entire and vanishes at every unomitted lattice point. These assertions
+check the sign and the prefactor for positive, zero and negative indices,
+and delimit the nonvanishing domain precisely.
+
+`sourceStandardRootRelativeError_zero_source_positive_norm` proves the
+exact harmonic error |z|/(π(k+1)) for an individual positive-index factor
+at zero source. Its series is not summable when z≠0, whereas the paired
+deviations are summable. A public check uses z=i and formally verifies
+that this is in the actual free omitted domain. Pairing is therefore an
+essential convergence convention, not merely a notation choice.
+
+The source's isolated a_k a_{-m} in one intermediate estimate is recorded
+as a proof-index typo: the next lines use the required a_k a_{-k}.
+The statement of Lemma 10.5 itself needs no new correction.
+
+Public checks instantiate the full package at p=3/2, transfer an arbitrary
+Lemma 10.3 domain unchanged, expose the literal cutoff formula, and test
+negative-index omission before its index enters the cutoff. They check
+joint and spectral compact convergence, the printed closed-disk domain,
+analyticity and nonvanishing on the entire omitted gap, and uniform
+absolute tails over arbitrary finite sets. Free checks cover the omitted
+negative center's sign, its unit norm, every other zero, entire extension,
+and paired versus individual convergence at the same genuine domain point.
+
+Next: Corollary 10.6, the quotient product with variable displaced roots.
+The dissertation remains incomplete.

@@ -3417,3 +3417,6 @@ import NLS.ZakharovShabat.SourceLemma10_3
 import NLS.ZakharovShabat.SourceStandardRootGapSideEndpoint
 import NLS.ZakharovShabat.SourceLemma10_4
 import NLS.ZakharovShabat.SourceLemma10_4IndexCorrection
+import NLS.ZakharovShabat.SourceStandardRootOmittedCommonDomain
+import NLS.ZakharovShabat.SourceStandardRootOmittedFreeNormalization
+import NLS.ZakharovShabat.SourceLemma10_5

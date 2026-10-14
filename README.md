@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: corrected Lemma 10.4 bounds every endpoint integral on
-both sides of a noncollapsed gap by one attained maximum of the data.
-The integrals use actual standard-root side traces, with verified endpoint
-integrability and improper limits. Constant data attain the bound. The
-printed denominator index is audited in [source discrepancies](SOURCE_ERRATA.md)
-and [the Section 10 audit](coverage/SECTION_10.md). Next is Lemma 10.5's
-omitted standard-root product.
+Latest milestone: Lemma 10.5 proves analyticity, nonvanishing and locally
+uniform convergence of the actual omitted standard-root products, on the
+unchanged common source domain. The proof retains the original isolating
+disks and the paired product ordering; free normalization is verified at
+omitted and unomitted spectral points. [The Section 10 audit](coverage/SECTION_10.md)
+records the exact domains and convergence convention. Next is Corollary
+10.6's quotient product with variable displaced roots.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

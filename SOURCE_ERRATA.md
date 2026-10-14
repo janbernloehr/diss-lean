@@ -1,5 +1,28 @@
 # Source discrepancies
 
+## Lemma 10.5 proof: paired indices and absolute convergence
+
+Source: [dissertation, printed p. 57](https://janbernloehr.de/Download/fs16/diss.pdf#page=57),
+visually checked. One intermediate estimate prints a_k a_{-m}, although
+m is not bound there. The next sentence and the displayed regrouping both
+use a_k a_{-k}; this is the pair required by the proof. The existing
+`standardRootRelativeError_pair_factor` gives the exact algebraic factor
+1+a_k+a_{-k}+a_k a_{-k} for the two actual normalized roots. This local
+proof-index typo does not change the statement of Lemma 10.5.
+
+The proof's absolute convergence is understood for its explicitly paired
+blocks. `summable_norm_sourceStandardRootOmittedPairedFactor_sub_one`
+proves their absolute summability, and the literal symmetric cutoffs
+converge to the corresponding product with the factor 1/π_n retained.
+This convention must not be replaced by absolute summability of the
+individual factor errors. At zero potential the positive-index error
+has norm |z|/(π(k+1));
+`not_summable_norm_sourceStandardRootRelativeError_zero_source` proves
+that its series diverges for every z≠0. The point z=i lies in the actual
+free omitted domain, so the distinction persists on the claimed analytic
+domain. This is a clarification of the source's explicit regrouping,
+not a correction to the paired convergence assertion.
+
 ## Lemma 10.4: the selected gap determines the root index
 
 Source: [dissertation, printed p. 56](https://janbernloehr.de/Download/fs16/diss.pdf#page=56),

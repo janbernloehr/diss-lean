@@ -47258,3 +47258,125 @@ example : ∃ ψ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)),
 
 end
 end SourceLemma104Checks
+
+namespace SourceLemma105Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex Filter Topology
+open scoped ENNReal
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The normalization and omission are literal, including cutoffs that do not yet contain n.
+example (ψ : CoeffPair p) (n : ℤ) (N : ℕ) (z : ℂ) :
+    sourceStandardRootOmittedPartialProduct hp hp1 n N (z,ψ) =
+      (∏ m ∈ (Finset.Icc (-(N : ℤ)) (N : ℤ)).erase n,
+        sourceStandardRoot hp hp1 ψ m z/singleSpectralDenominator m)/singleSpectralDenominator n := rfl
+
+example (ψ : CoeffPair p) (z : ℂ) :
+    sourceStandardRootOmittedPairedFactor hp hp1 ψ z (-1) 0 =
+      sourceStandardRoot hp hp1 ψ 1 z/(Real.pi:ℂ) := by
+  simp [sourceStandardRootOmittedPairedFactor,omittedSymmetricPairFactor,singleSpectralDenominator]
+
+example : sourceStandardRootOmittedPartialProduct hp hp1 (-1) 0 (Complex.I,(0 : CoeffPair p)) =
+    Complex.I/(Real.pi:ℂ) := by
+  simp [sourceStandardRootOmittedPartialProduct,singleSpectralDenominator,sourceStandardRoot_zero_source]
+
+-- Any earlier common domain is preserved exactly, with every earlier assertion retained.
+example {W : Set (CoeffPair p)} (hW : IsOpen W) (h : SourceLemma10_3Data hp hp1 W) :
+    SourceLemma10_5Data hp hp1 W := h.omittedProducts hW
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_5Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    AnalyticOnNhd ℂ (sourceStandardRootOmittedProduct hp hp1 (-1) ψ)
+      (⋃ m : ℤ, ⋃ (_ : m ≠ -1), sourcePeriodicSegment hp hp1 ψ m)ᶜ := by
+  rw [← sourceStandardRootOmittedDomain_eq_compl_iUnion hp hp1 ψ (-1)]
+  exact h.spectral ψ hψ (-1)
+
+example {W : Set (CoeffPair p)} (hW : IsOpen W) (h : SourceLemma10_5Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (K : Set ℂ) (hK : IsCompact K)
+    (hsub : K ⊆ sourceStandardRootOmittedDomain hp hp1 ψ (-1)) :
+    TendstoUniformlyOn (fun N z => sourceStandardRootOmittedPartialProduct hp hp1 (-1) N (z,ψ))
+      (sourceStandardRootOmittedProduct hp hp1 (-1) ψ) atTop K :=
+  h.roots.omittedSpectralCompact hW ψ hψ (-1) K hK hsub
+
+example {W : Set (CoeffPair p)} (hW : IsOpen W) (h : SourceLemma10_5Data hp hp1 W)
+    (K : Set (ℂ × CoeffPair p)) (hK : IsCompact K)
+    (hsub : K ⊆ sourceStandardRootOmittedJointDomain hp hp1 W 0) :
+    TendstoUniformlyOn (sourceStandardRootOmittedPartialProduct hp hp1 0)
+      (sourceStandardRootOmittedJointProduct hp hp1 0) atTop K :=
+  h.roots.omittedCompact hW 0 K hK hsub
+
+-- The fixed domain is the printed complement of CLOSED disks, on the same local source neighborhood.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceOmittedRootNeighborhoods hp hp1 V D c) (n : ℤ) :
+    AnalyticOnNhd ℂ (sourceStandardRootOmittedJointProduct hp hp1 n)
+      ((⋃ m : ℤ, ⋃ (_ : m ≠ n), closure (D m))ᶜ ×ˢ V) := hD.omitted_joint n
+
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceOmittedRootNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (z : ℂ)
+    (hz : z ∈ (⋃ m : ℤ, ⋃ (_ : m ≠ -1), closure (D m))ᶜ) :
+    sourceStandardRootOmittedProduct hp hp1 (-1) ψ z ≠ 0 :=
+  hD.omitted_nonzero ψ hψ (-1) z hz
+
+-- Analyticity and nonvanishing include the whole omitted gap, with no open-gap hypothesis.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceOmittedRootNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (z : ℂ) (hz : z ∈ sourcePeriodicSegment hp hp1 ψ (-1)) :
+    AnalyticAt ℂ (sourceStandardRootOmittedProduct hp hp1 (-1) ψ) z ∧
+      sourceStandardRootOmittedProduct hp hp1 (-1) ψ z ≠ 0 := by
+  have hzD := hD.gap ψ hψ (-1) hz
+  exact ⟨(hD.omitted_disk ψ hψ (-1)).1 z hzD,(hD.omitted_disk ψ hψ (-1)).2 z hzD⟩
+
+-- Absolute paired tails are uniform over nearby sources, the spectral ball, and arbitrary finite tails.
+example (φ : CoeffPair p) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧ ∃ N₀ : ℕ, ∃ E : ℕ → ℝ,
+      Tendsto E atTop (𝓝 0) ∧
+      ∀ N : ℕ, N₀ ≤ N → ∀ ψ ∈ V, ∀ z : ℂ, ‖z‖ ≤ 2 → ∀ s : Finset ℕ,
+        (∀ j ∈ s, N ≤ j) →
+        (∑ j ∈ s, ‖sourceStandardRootOmittedPairedFactor hp hp1 ψ z (-3) j-1‖) ≤ E N :=
+  exists_uniform_absolute_sourceStandardRootOmittedPairedFactor_tails hp hp1 φ 2 (by norm_num) (-3)
+
+-- At the same genuine domain point, paired errors are summable and individual errors are not.
+example : Complex.I ∈ sourceStandardRootOmittedDomain hp hp1 (0 : CoeffPair p) 0 ∧
+    Summable (fun j => ‖sourceStandardRootOmittedPairedFactor hp hp1 (0 : CoeffPair p) Complex.I 0 j-1‖) ∧
+    ¬Summable (fun j : ℕ =>
+      ‖sourceStandardRootRelativeError hp hp1 (0 : CoeffPair p) ((j+1 : ℕ) : ℤ) Complex.I‖) :=
+  ⟨sourceStandardRootOmittedDomain_zero_source_contains_I hp hp1 0,
+    summable_norm_sourceStandardRootOmittedPairedFactor_sub_one hp hp1 0 Complex.I 0,
+    not_summable_norm_sourceStandardRootRelativeError_zero_source hp hp1 Complex.I Complex.I_ne_zero⟩
+
+-- The free function is exact on the entire plane, including all removable values and other zeros.
+example (n : ℤ) (z : ℂ) :
+    sourceStandardRootOmittedProduct hp hp1 n (0 : CoeffPair p) z = freeSineQuotient n z :=
+  sourceStandardRootOmittedProduct_zero_source_eq_freeSineQuotient hp hp1 n z
+
+example (n : ℤ) :
+    AnalyticAt ℂ (sourceStandardRootOmittedProduct hp hp1 n (0 : CoeffPair p)) ((Real.pi:ℂ)*n) :=
+  sourceStandardRootOmittedProduct_zero_source_entire hp hp1 n _ (mem_univ _)
+
+example : sourceStandardRootOmittedProduct hp hp1 (-1) (0 : CoeffPair p) (-(Real.pi:ℂ)) = -1 := by
+  simpa using sourceStandardRootOmittedProduct_zero_source_center hp hp1 (-1)
+
+example : sourceStandardRootOmittedProduct hp hp1 0 (0 : CoeffPair p) 0 = 1 := by
+  simpa using sourceStandardRootOmittedProduct_zero_source_center hp hp1 0
+
+example (n : ℤ) : ‖sourceStandardRootOmittedProduct hp hp1 n (0 : CoeffPair p) ((Real.pi:ℂ)*n)‖ = 1 :=
+  sourceStandardRootOmittedProduct_zero_source_center_norm hp hp1 n
+
+example : sourceStandardRootOmittedProduct hp hp1 (-1) (0 : CoeffPair p) ((Real.pi:ℂ)*2) = 0 :=
+  sourceStandardRootOmittedProduct_zero_source_other_center hp hp1 (-1) 2 (by decide)
+end
+
+-- The full package works below the Hilbert exponent.
+local instance pThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    IsOpen W ∧ IsConnected W ∧ realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    SourceLemma10_5Data (by simp) (by norm_num [ENNReal.one_lt_ofReal]) W :=
+  sourceLemma10_5 (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+
+end
+end SourceLemma105Checks

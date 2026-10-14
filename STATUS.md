@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: corrected Lemma 10.4 and sharp gap-side integral bounds
+## Current milestone: Lemma 10.5 on the unchanged common domain
+
+`SourceLemma10_5.lean` proves convergence, analyticity and nonvanishing of
+the literal omitted standard-root product for every finite p>1 and every
+integer omitted index. `SourceLemma10_3Data.omittedProducts` keeps exactly
+the supplied common domain. Each local package retains the original V,
+disks D and distance constant c, including all Lemma 10.3 properties.
+No new source-domain shrink is required.
+
+The actual cutoffs are (1/π_n) times the product of w_m/π_m over
+[-N,N] with n erased, with π_0=1. Their limits are the existing paired
+products, not newly stipulated functions. `SourceStandardRootOmittedCommonDomain.lean`
+proves joint analyticity and local uniform convergence on the full moving
+complement of all unomitted gaps. It includes uniform convergence on
+spectral and joint compact subsets, the printed complement of the CLOSED
+isolating disks, and the stronger complement of the open disks. The
+whole omitted disk, including its gap endpoints and any collapsed gap,
+is an analytic, nonzero domain for the omitted product.
+
+Absolute convergence is for the paired positive/negative blocks used in
+the source proof. Their absolute tails vanish uniformly on a bounded
+spectral region and a neighborhood of each original source, for arbitrary
+finite subsets of the tail. Omitting an index changes only one pair.
+`SourceStandardRootOmittedFreeNormalization.lean` proves that individual
+free factor errors instead have a divergent harmonic tail at every
+nonzero spectral point; this also occurs at i, which belongs to the
+actual free omitted domain. Thus the pairing convention is substantive.
+
+The free omitted product equals the filled sine quotient on all of ℂ.
+At its omitted point it has value cos(nπ), of norm one, and it vanishes
+at every unomitted free point. The public checks cover these signs and
+zeros, the exact prefactor and early cutoffs for a negative index,
+p=3/2, unchanged-domain transfer, both compact convergence statements,
+closed-disk analyticity, omitted-gap nonvanishing, uniform absolute tails,
+and paired versus individual convergence. All three new modules and the
+focused public checks compile warning-free.
+
+The proof's isolated a_k a_{-m} index typo is recorded in `SOURCE_ERRATA.md`;
+the following regrouping uses a_k a_{-k}. The lemma's statement requires
+no new correction. Exact domains and ordering are audited in
+`coverage/SECTION_10.md`.
+
+Next: Corollary 10.6, joint analyticity of the quotient product with
+variable displaced roots. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,857 build jobs, the full public example suite, and the axiom audit of 31,565 NLS declarations). The build retains 21 existing warnings; the three new modules and focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+## Previous milestone: corrected Lemma 10.4 and sharp gap-side integral bounds
 
 `SourceLemma10_4.lean` proves the gap-side endpoint integral estimate for
 all original complex sources at every finite p>1, whenever the selected
