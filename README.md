@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 10.3 retains Lemma 10.2's common domain and proves
-standard-root analyticity, uniform bounds with the disk-distance constant,
-and the negative Kronecker-delta contour identity. The contour proof covers
-arbitrary finite piecewise C¹ loops through an explicit logarithmic
-primitive, including corners and collapsed gaps. [The Section 10 audit](coverage/SECTION_10.md)
-records its precise winding and domain conventions. Next is Lemma 10.4's
-gap-side endpoint integral estimate.
+Latest milestone: corrected Lemma 10.4 bounds every endpoint integral on
+both sides of a noncollapsed gap by one attained maximum of the data.
+The integrals use actual standard-root side traces, with verified endpoint
+integrability and improper limits. Constant data attain the bound. The
+printed denominator index is audited in [source discrepancies](SOURCE_ERRATA.md)
+and [the Section 10 audit](coverage/SECTION_10.md). Next is Lemma 10.5's
+omitted standard-root product.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

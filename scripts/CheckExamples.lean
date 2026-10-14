@@ -47139,3 +47139,122 @@ example : (PiecewiseC1Loop.circle 0 1).windingIntegral 0 = 1 :=
 
 end
 end SourceLemma103Checks
+
+namespace SourceLemma104Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Complex Filter MeasureTheory
+open scoped ENNReal Topology
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+variable (ψ : CoeffPair p) (n : ℤ)
+variable (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0)
+variable (f : ℂ → ℂ) (hf : ContinuousOn f (sourcePeriodicSegment hp hp1 ψ n))
+
+-- The displayed denominator is the trace of the selected actual root; the Jacobian is literal.
+example (a b : ℝ) (upper : Bool) :
+    sourceStandardRootSideIntegral hp hp1 ψ n f a b upper =
+      ∫ r in a..b,
+        f (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(r:ℂ))*
+          (sourceStandardRootHalfGap hp hp1 ψ n/sourceStandardRootSideTrace hp hp1 ψ n r upper) := rfl
+
+-- The actual gap, not a surrogate set, carries both the continuity hypothesis and the maximum.
+example : ∃ z ∈ sourcePeriodicSegment hp hp1 ψ n,
+    (∀ w ∈ sourcePeriodicSegment hp hp1 ψ n, ‖f w‖ ≤ ‖f z‖) ∧
+    (∀ t ∈ Icc (-1 : ℝ) 1, ∀ upper : Bool,
+      ‖sourceStandardRootSideIntegral hp hp1 ψ n f (-1) t upper/(Real.pi:ℂ)‖ ≤ ‖f z‖) ∧
+    sSup {r : ℝ | ∃ t ∈ Icc (-1 : ℝ) 1, ∃ upper : Bool,
+      r = ‖sourceStandardRootSideIntegral hp hp1 ψ n f (-1) t upper/(Real.pi:ℂ)‖} ≤ ‖f z‖ :=
+  sourceLemma10_4 hp hp1 ψ n hg f hf
+
+-- Endpoints are genuinely integrable, and both endpoint singularities can be omitted and restored.
+example (upper : Bool) :
+    IntervalIntegrable (sourceStandardRootSideIntegrand hp hp1 ψ n f upper) volume (-1) 1 :=
+  sourceStandardRootSideIntegrand_intervalIntegrable hp hp1 ψ n hg f hf (-1) 1
+    (by norm_num) (by norm_num) upper
+
+example (upper : Bool) :
+    Tendsto (fun ε : ℝ => sourceStandardRootSideIntegral hp hp1 ψ n f (-1+ε) (1-ε) upper)
+      (𝓝[>] (0 : ℝ)) (𝓝 (sourceStandardRootSideIntegral hp hp1 ψ n f (-1) 1 upper)) :=
+  sourceStandardRootSideIntegral_double_trunc_tendsto hp hp1 ψ n hg f hf upper
+
+example (upper : Bool) :
+    Tendsto (fun ε : ℝ => sourceStandardRootSideIntegral hp hp1 ψ n f (-1+ε) 0 upper)
+      (𝓝[>] (0 : ℝ)) (𝓝 (sourceStandardRootSideIntegral hp hp1 ψ n f (-1) 0 upper)) :=
+  sourceStandardRootSideIntegral_tendsto hp hp1 ψ n hg f hf 0 (by norm_num) upper
+
+-- A midpoint stop and both orientation signs use the exact inverse-square-root formula.
+example : sourceStandardRootSideIntegral hp hp1 ψ n f (-1) 0 false =
+    -Complex.I*∫ r in (-1 : ℝ)..0,
+      f (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(r:ℂ))/
+        (Real.sqrt (1-r^2):ℂ) :=
+  sourceStandardRootSideIntegral_eq_weighted hp hp1 ψ n hg f (-1) 0
+    (by norm_num) (by norm_num) false
+
+example : sourceStandardRootSideIntegral hp hp1 ψ n f (-1) 1 false =
+    -sourceStandardRootSideIntegral hp hp1 ψ n f (-1) 1 true :=
+  sourceStandardRootSideIntegral_lower_eq_neg_upper hp hp1 ψ n hg f (-1) 1
+    (by norm_num) (by norm_num)
+
+-- Constants attain the bound on both full sides, with signs fixed by the actual root limits.
+example (c : ℂ) : sourceStandardRootSideIntegral hp hp1 ψ n (fun _ => c) (-1) 1 true/
+    (Real.pi:ℂ) = Complex.I*c :=
+  sourceStandardRootSideIntegral_const_full hp hp1 ψ n hg c true
+
+example (c : ℂ) : sourceStandardRootSideIntegral hp hp1 ψ n (fun _ => c) (-1) 1 false/
+    (Real.pi:ℂ) = -Complex.I*c :=
+  sourceStandardRootSideIntegral_const_full hp hp1 ψ n hg c false
+
+example (c : ℂ) : sSup (sourceStandardRootSideIntegralNorms hp hp1 ψ n (fun _ => c)) = ‖c‖ :=
+  sourceLemma10_4_const_sharp hp hp1 ψ n hg c
+
+-- The formula remains meaningful at both branch points, where either trace vanishes.
+example (upper : Bool) : sourceStandardRootSideTrace hp hp1 ψ n (-1) upper = 0 ∧
+    sourceStandardRootSideTrace hp hp1 ψ n 1 upper = 0 := by
+  simp [sourceStandardRootSideTrace]
+
+example (upper : Bool) : sourceStandardRootSideIntegral hp hp1 ψ n f (-1) (-1) upper = 0 :=
+  sourceStandardRootSideIntegral_left hp hp1 ψ n f upper
+
+example : Tendsto (sourceStandardRoot hp hp1 ψ n)
+    (𝓝[standardRootGapUpperSide (sourceStandardRootMidpoint hp hp1 ψ n)
+      (sourceStandardRootHalfGap hp hp1 ψ n)]
+      (sourceStandardRootMidpoint hp hp1 ψ n))
+    (𝓝 (-sourceStandardRootHalfGap hp hp1 ψ n*Complex.I)) := by
+  simpa only [sourceStandardRootSideTrace,ite_true,Complex.ofReal_zero,mul_zero,add_zero,
+    zero_pow (by decide : (2 : ℕ) ≠ 0),sub_zero,Real.sqrt_one,Complex.ofReal_one,mul_one] using
+    sourceStandardRoot_tendsto_sideTrace hp hp1 ψ n hg 0 (by norm_num) true
+
+-- A general continuous, nonconstant test function uses the literal sup on the actual gap.
+example : sSup (sourceStandardRootSideIntegralNorms hp hp1 ψ n (fun z => z)) ≤
+    sSup ((fun z : ℂ => ‖z‖) '' sourcePeriodicSegment hp hp1 ψ n) :=
+  sourceLemma10_4_sup hp hp1 ψ n hg (fun z => z) continuousOn_id
+
+-- At actual noncollapsed real gaps the printed proof kernel fails for every other index.
+example : ∃ χ : CoeffPair p, IsRealType (CoeffPair.toMax p χ) ∧
+    canonicalPeriodicGap hp hp1 (periodOnePotential χ) (periodOnePotential_mem χ) n ≠ 0 ∧
+    ∀ m : ℤ, m ≠ n → ∀ upper : Bool,
+      sourceStandardRootHalfGap hp hp1 χ n/
+        sourceStandardRoot hp hp1 χ m (sourceStandardRootMidpoint hp hp1 χ n) ≠
+        (if upper then Complex.I else -Complex.I) :=
+  sourceLemma10_4_printed_kernel_counterexample hp hp1 n
+end
+
+-- Below the Hilbert exponent, actual sources attain the sharp constant at a negative index.
+local instance pThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+
+example : ∃ ψ : CoeffPair (ENNReal.ofReal (3/2 : ℝ)),
+    IsRealType (CoeffPair.toMax _ ψ) ∧
+    canonicalPeriodicGap (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+      (periodOnePotential ψ) (periodOnePotential_mem ψ) (-1) ≠ 0 ∧
+    sSup (sourceStandardRootSideIntegralNorms (by simp)
+      (by norm_num [ENNReal.one_lt_ofReal]) ψ (-1) (fun _ => (1 : ℂ))) = 1 := by
+  let hp : ENNReal.ofReal (3/2 : ℝ) ≠ ⊤ := by simp
+  let hp1 : 1 < ENNReal.ofReal (3/2 : ℝ) := by norm_num [ENNReal.one_lt_ofReal]
+  obtain ⟨ψ,hreal,hg,_⟩ := sourceLemma10_4_printed_kernel_counterexample hp hp1 (-1)
+  refine ⟨ψ,hreal,hg,?_⟩
+  simpa using sourceLemma10_4_const_sharp hp hp1 ψ (-1) hg 1
+
+end
+end SourceLemma104Checks

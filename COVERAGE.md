@@ -4549,3 +4549,47 @@ Next: Lemma 10.4, the gap-side endpoint integral estimate and its printed
 index convention. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed (6,851 build jobs, the full public example suite, and the axiom audit of 31,480 NLS declarations). The build retains 21 existing warnings; the four new modules and focused public probe are warning-free. The source inventory check verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+
+## Lemma 10.4 milestone: actual side traces and a sharp endpoint bound
+
+`SourceLemma10_4.lean` proves the gap-side endpoint integral estimate for
+all original complex sources at every finite p>1, whenever the selected
+actual gap is noncollapsed. The denominator is the side trace of w_n on
+G_n, correcting the printed unbound m. One attained maximum of |f| on the
+actual canonical segment controls every stopping point on both closed
+sides. The theorem includes the literal real supremum over these values;
+`sourceLemma10_4_sup` also writes the data maximum as its real supremum.
+
+`SourceStandardRootGapSideEndpoint.lean` identifies the affine gap with
+the actual canonical segment and its two endpoints. The trace is the
+arbitrary-approach limit of the actual standard root on each side and is
+continuous in the closed gap coordinate. The side integral is defined
+from that trace and the actual affine Jacobian. Its integrand is genuinely
+integrable at the branch points. Exact weighted substitution and both
+one-endpoint and two-endpoint truncation limits connect the integral to
+the improper interpretation in the source. Only continuity on the actual
+gap is required; arbitrary complex gap directions are allowed.
+
+Constant data give the exact normalized full-side values +ic and -ic.
+Their supremum equals |c|, proving the factor one is sharp. The public
+checks include actual noncollapsed real sources at p=3/2 and index -1,
+endpoint integrability, midpoint stopping, both signs, both truncation
+limits, a nonconstant test function, and the literal maximum/supremum.
+
+`SourceLemma10_4IndexCorrection.lean` verifies the printed proof's index
+mismatch. On a real gap G_n, the actual wrong-index kernel
+(γ_n/2)/w_m(τ_n) is real for m≠n, hence cannot equal either claimed value
+±i. Actual noncollapsed real gaps witness this failure at every finite
+p>1 and every selected index. This refutes the printed substitution with
+m≠n; it is not presented as a counterexample to every wrong-index
+integral inequality. The corrected theorem uses n consistently.
+
+All three new modules and the focused public checks compile warning-free.
+The index correction and exact integral conventions are recorded in
+`SOURCE_ERRATA.md` and `coverage/SECTION_10.md`.
+
+Next: Lemma 10.5, convergence, analytic domains and nonvanishing of the
+omitted standard-root product. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,854 build jobs, the full public example suite, and the axiom audit of 31,511 NLS declarations). The build retains 21 existing warnings; the three new modules and focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.

@@ -5,7 +5,9 @@ The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.
 Lemmas 10.2 and 10.3 are covered on the same common domain, including the
 preceding simple-root assertions and general piecewise C¹ contours.
-Lemma 10.4 and later statements remain to be audited.
+Lemma 10.4 is covered with the selected-root index correction, actual
+side traces, improper endpoint limits and the sharp constant one.
+Lemma 10.5 and later statements remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -368,3 +370,82 @@ needed for Lemma 10.3.
 
 Next: Lemma 10.4, its gap-side endpoint integral bound and the printed
 index convention in its denominator. The dissertation remains incomplete.
+
+
+## Lemma 10.4: actual traces and the selected-root correction
+
+The source on printed p. 56 uses w_m in both the statement and proof,
+with m unbound, while the path follows G_n. Equation (2.12) and the
+substitution require w_n. `SOURCE_ERRATA.md` records the correction and
+its precise formal evidence. The result below uses n consistently and
+is proved for every original complex source with γ_n≠0, not only sources
+in the almost-real neighborhood. All finite exponents p>1 are included.
+
+| Requirement | Formal result | Exact scope |
+| --- | --- | --- |
+| Actual gap | `sourceStandardRoot_gapSegment_eq_periodicSegment` | The affine image of [-1,1] is exactly the canonical segment G_n. |
+| Actual endpoints | `sourceStandardRoot_gap_left_endpoint`, `sourceStandardRoot_gap_right_endpoint` | Coordinates -1 and 1 are λ_n⁻ and λ_n⁺. |
+| Boundary denominator | `sourceStandardRoot_tendsto_sideTrace` | The trace is the limit of the actual root under arbitrary approach within the appropriate open side, including endpoints. |
+| Continuous side values | `sourceStandardRootSideTrace_continuous` | Continuity in the closed affine gap coordinate. |
+| Genuine integrability | `sourceStandardRootSideIntegrand_intervalIntegrable` | Continuous f on G_n suffices for any two closed-gap endpoints. |
+| Exact substitution | `sourceStandardRootSideIntegral_eq_weighted` | The signed inverse-square-root integral, with the actual half-gap Jacobian canceled. |
+| Improper interpretation | `sourceStandardRootSideIntegral_tendsto`, `sourceStandardRootSideIntegral_double_trunc_tendsto` | Omitting the left branch point, or both branch points, converges to the same side integral. |
+| One attained maximum | `sourceLemma10_4` | One z∈G_n maximizes |f| and controls both sides and all endpoints. |
+| Literal supremum | `sourceLemma10_4`, `sourceLemma10_4_sup` | Real suprema of the actual sets of integral norms and data norms. |
+| Sharp constant | `sourceLemma10_4_const_sharp` | Constant data c have supremum exactly |c|. |
+
+The chosen side is represented by a Boolean and the stopping point by
+t∈[-1,1]. Together they parametrize the two closed copies G_n⁺ and G_n⁻.
+The upper and lower traces are respectively -iδ√(1-t²) and +iδ√(1-t²),
+where δ=γ_n/2. Their identification with the actual root is proved by the
+existing arbitrary-approach limit theorem; it is not an assumed boundary
+formula. Both trace values vanish at the two branch points.
+
+`sourceStandardRootSideIntegral` is defined by the literal affine pullback
+
+```
+∫_a^b f(τ_n + δ r) · δ / sourceStandardRootSideTrace(n,r,side) dr.
+```
+
+This is a boundary-trace integral; the value of the totalized principal
+root formula on its branch cut is not substituted for its side limit.
+Only f restricted to G_n is needed. Endpoint division is totalized in
+Lean, but genuine integrability and the truncation-limit theorems prove
+that endpoint values do not change the intended improper integral.
+No assumption of an off-gap extension of f is made.
+
+The main theorem chooses one attained maximum before quantifying over
+all stopping points and both sides. The set of integral norms is
+nonempty (it includes the left endpoint) and bounded above by that same
+maximum. The supremum bound therefore concerns the literal real sSup,
+not a newly defined quantity stipulated to satisfy the estimate. The
+right-hand data supremum is likewise finite and attained on the actual
+canonical gap.
+
+For constants c, `sourceStandardRootSideIntegral_const_full` proves the
+exact normalized values +ic on the upper side and -ic on the lower side.
+Both full sides attain |c|; the entire set of values has supremum |c|.
+The two endpoint integrals have opposite signs for arbitrary continuous
+data, and stopping at the initial endpoint gives zero.
+
+## Lemma 10.4: evidence for the index correction
+
+For real-type ψ and m≠n, w_m is real on the whole closed real gap G_n,
+and δ_n is real. Thus δ_n/w_m(τ_n) has imaginary part zero. It cannot
+equal either ±i, as the printed substitution would require at r=0 with
+constant data one. `sourceLemma10_4_printed_kernel_counterexample`
+provides an actual noncollapsed real source for every selected index
+and every finite exponent p>1. This formally refutes that wrong-index
+kernel identity. It does not purport to disprove every possible
+wrong-index integral bound.
+
+Public checks expose the literal trace-based integrand and supremum,
+exercise both endpoint singularities, one- and two-endpoint truncations,
+midpoint stopping, both orientation signs, constant sharpness and a
+nonconstant test function. An actual noncollapsed real source at p=3/2
+and index -1 attains the sharp value one. The correction check also uses
+actual noncollapsed sources, so neither sharpness nor the index witness
+is conditional on an uninhabited hypothesis.
+
+Next: Lemma 10.5, convergence, analytic domains and nonvanishing of the
+omitted standard-root product. The dissertation remains incomplete.

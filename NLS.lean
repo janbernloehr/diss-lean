@@ -3414,3 +3414,6 @@ import NLS.ComplexAnalysis.PiecewiseC1Loop
 import NLS.ZakharovShabat.SourceStandardRootLogPrimitive
 import NLS.ZakharovShabat.SourceStandardRootPiecewiseContour
 import NLS.ZakharovShabat.SourceLemma10_3
+import NLS.ZakharovShabat.SourceStandardRootGapSideEndpoint
+import NLS.ZakharovShabat.SourceLemma10_4
+import NLS.ZakharovShabat.SourceLemma10_4IndexCorrection

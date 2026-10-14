@@ -1,5 +1,38 @@
 # Source discrepancies
 
+## Lemma 10.4: the selected gap determines the root index
+
+Source: [dissertation, printed p. 56](https://janbernloehr.de/Download/fs16/diss.pdf#page=56),
+visually checked. Both the statement and its proof print w_m in the
+denominator of an integral along G_n, although m is unbound. The proof's
+substitution uses equation (2.12), which gives the side values of w_n:
+
+```
+w_n(τ_n + (r ± i0)γ_n/2) = ∓i (γ_n/2) sqrt(1-r²).
+```
+
+Consequently the denominator must be w_n for the displayed substitution.
+`sourceStandardRootSideIntegral_eq_weighted` proves that substitution
+using the actual selected root's boundary trace and affine Jacobian.
+`sourceLemma10_4` proves the bound with this consistent index, for every
+complex source with a noncollapsed selected gap and every finite p>1.
+
+The index difference has a formal diagnostic. For real-type sources,
+`sourceStandardRoot_wrongIndex_midpoint_kernel_im` proves that
+(γ_n/2)/w_m(τ_n) has imaginary part zero when m≠n: the half-gap is real,
+and w_m is real on the entire distinct real gap G_n. It therefore cannot
+equal either +i or -i, the kernel values at r=0 in the printed proof.
+`sourceLemma10_4_printed_kernel_counterexample` supplies actual real
+sources with γ_n≠0 witnessing this failure, at every finite p>1 and every
+n. Nontriviality follows from the existing actual Floquet gap-opening
+witness, not from assuming the existence of an open gap.
+
+This formal result refutes the wrong-index substitution. It does not
+claim that every possible interpretation of the wrong-index integral
+inequality is false. The formalized replacement uses the selected index
+n and retains both sides, every endpoint, the original continuity
+hypothesis, and the sharp constant one.
+
 ## Lemma 10.1: the domain must be a neighborhood of real-type sources
 
 Source: [dissertation, printed p. 54](https://janbernloehr.de/Download/fs16/diss.pdf#page=54),
