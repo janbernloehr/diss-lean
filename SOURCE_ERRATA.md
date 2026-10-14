@@ -1,5 +1,55 @@
 # Source discrepancies
 
+## Equation (2.4) and Lemma 8.1: incompatible parity-product prefactors
+
+Source: [dissertation, printed p. 48](https://janbernloehr.de/Download/fs16/diss.pdf#page=48),
+visually checked. The displayed periodic and antiperiodic products have
+prefactors -2 and 2, respectively, with the source's zero-mode convention.
+At zero potential and λ=0, every finite periodic cutoff is zero and every
+printed antiperiodic cutoff is 2. Thus the two proposed discriminants
+f+2 and g-2 have the incompatible values 2 and 0.
+
+`SpectralProductSourceAudit.lean` proves this already at finite cutoffs,
+refutes the simultaneous limiting identities, and proves that the free
+values force prefactors -1 and 4. The proof's periodic cutoff on the same
+page does use -1, consistent with the correction. The full product's
+prefactor -4 is unchanged.
+
+`exists_sourceDiscriminant_printed_parity_limits` now identifies the literal
+printed products for every finite p>1 source: their limits are 2(Δ-2) and
+(Δ+2)/2. These functions remain jointly analytic, so part (i)'s analyticity
+survives. Part (ii)'s shifted identities require the corrected factors.
+The two scaling constants cancel in fg, so the full product in part (iv)
+retains its correct normalization.
+`sourceLemma8_1` constructs those corrected identities, with literal actual
+root products and the original spectral zeros and multiplicities.
+
+## Lemma 8.1(iii): cosine zeros in the stated exterior domain
+
+Source: [dissertation, printed p. 48](https://janbernloehr.de/Download/fs16/diss.pdf#page=48),
+visually checked. The displayed quotient Δ/(2 cos λ)-1 is bounded over
+the exterior of the open π/4 disks centered at nπ. That exterior includes
+λ=(n+1/2)π for arbitrarily large n, where the denominator vanishes.
+
+`FreeCosineZeroAudit.lean` proves separation from every excluded disk,
+escape to infinite norm, and vanishing of the free cosine discriminant.
+With Lean's totalized division the displayed error is exactly one for any
+numerator, so no threshold can give the requested bound for ε=1/2.
+With ordinary division that literal quotient is undefined there.
+`sourceLemma8_1_printed_cosine_quotient_false` specializes the obstruction
+to the actual original-source discriminant. This audits the literal
+quotient domain; it does not claim failure on every domain that omits
+the denominator zeros, or rule out other interpretations of a removable ratio.
+
+The corrected trace asymptotic uses the additive error divided by
+exp(|Im λ|). `exists_uniform_sourceDiscriminant_exterior` proves it and
+the additive derivative error and valid derivative sine quotient, on one
+original source neighborhood and with one positive spectral threshold.
+The whole original exterior is retained. A separate cosine quotient
+estimate holds under an explicit positive lower bound relative to
+exp(|Im λ|). These results and their scope are indexed in
+[the Section 8 audit](coverage/SECTION_8.md).
+
 ## Unnumbered finite-gap regularity sentence: complex sources need a qualification
 
 Source: dissertation, printed p. 21, immediately before Corollary 1.6.

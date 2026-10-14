@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Theorem 7.1 now has one original neighborhood for all
-analytic action extensions and open-gap angle charts, for every finite p>1.
-The real angles are actual classes modulo 2π, compatible with the complex
-analytic phase modulo π and the literal spectral integral. All three
-canonical bracket identities use the actual regular source cotangents.
-[The Section 7 audit](coverage/SECTION_7.md) records the exact scope.
-Next is Lemma 8.1's discriminant products and exterior asymptotics.
+Latest milestone: Lemma 8.1 now has a combined original-source theorem
+for the discriminant products, unique analytic extension, exact spectral
+multiplicities, and simultaneous exterior estimates. The printed product
+prefactors and unrestricted cosine quotient require corrections, with
+formal counterexamples. [The Section 8 audit](coverage/SECTION_8.md)
+records the valid results and the precise discrepancies.
+Next is Lemma 8.2's real-source eigenvalue continuity and interlacing.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

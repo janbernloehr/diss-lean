@@ -46105,3 +46105,81 @@ example (φ : CoeffPair 2) (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedC
   ring
 end
 end SourceTheorem71EndpointChecks
+
+namespace SourceLemma81Checks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+noncomputable section
+
+private abbrev p81 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource81ThreeHalf : Fact (1 ≤ p81) := ⟨by norm_num [p81,ENNReal.one_le_ofReal]⟩
+
+-- The complete source theorem includes exponents strictly below two.
+example : SourceLemma8_1Data (p := p81) (by simp [p81]) (by norm_num [p81,ENNReal.one_lt_ofReal]) :=
+  sourceLemma8_1 _ _
+
+-- Below two the exact physical Hilbert trace is obtained by inclusion, not a new normalization.
+example (φ : CoeffPair p81) (z : ℂ) :
+    canonicalDiscriminant (by simp [p81]) (periodOnePotential φ) z =
+      l2Discriminant (sourcePhysicalL2 (CoeffPair.exponentInclusion
+        (by norm_num [p81] : p81 ≤ 2) φ)) z :=
+  sourceDiscriminant_eq_l2_of_le_two _ _ φ z
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- Agreement with all Hilbert sources determines a jointly analytic extension above two.
+example (h2p : 2 ≤ p) (F : ℂ × CoeffPair p → ℂ) (hF : AnalyticOnNhd ℂ F univ)
+    (hHilbert : ∀ z : ℂ, ∀ φ : CoeffPair 2,
+      F (z,CoeffPair.exponentInclusion h2p φ) = l2Discriminant (sourcePhysicalL2 φ) z) :
+    F = fun t => canonicalDiscriminant hp (periodOnePotential t.2) t.1 := by
+  apply (sourceLemma8_1 hp hp1).unique F (continuousOn_univ.mp hF.continuousOn)
+  intro z a
+  have h := hHilbert z (CoeffPair.ofFinsupp (p := 2) a)
+  rw [CoeffPair.exponentInclusion_ofFinsupp,← canonicalDiscriminant_eq_l2_source,
+    canonicalDiscriminant_finite_eq_classical] at h
+  exact h
+
+-- One neighborhood and one positive cutoff give both source estimates at the same tolerance.
+example (φ : CoeffPair p) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ R : ℝ, 0 < R ∧ ∀ ψ ∈ U, ∀ z : ℂ, R ≤ ‖z‖ →
+        (∀ k : ℤ, Real.pi/4 ≤ ‖z-(Real.pi : ℂ)*k‖) →
+        ‖canonicalDiscriminant hp (periodOnePotential ψ) z-2*Complex.cos z‖ ≤ (1/10)*Real.exp |z.im| ∧
+        ‖deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z/(-2*Complex.sin z)-1‖ ≤ 1/10 := by
+  obtain ⟨U,ho,_,hφ,h0,R,hR,h⟩ := (sourceLemma8_1 hp hp1).exterior φ (1/10) (by norm_num)
+  exact ⟨U,ho,hφ,h0,R,hR,fun ψ hψ z hz hs => ⟨(h ψ hψ z hz hs).1,(h ψ hψ z hz hs).2.2⟩⟩
+
+-- At included cosine zeros, the literal quotient error is one regardless of the source.
+example (φ : CoeffPair p) (n : ℕ) :
+    (∀ k : ℤ, Real.pi/4 ≤ ‖freeCosineZero n-(Real.pi : ℂ)*k‖) ∧
+    ‖canonicalDiscriminant hp (periodOnePotential φ) (freeCosineZero n)/
+      (2*Complex.cos (freeCosineZero n))-1‖ = 1 :=
+  ⟨freeCosineZero_separated n,norm_div_free_at_freeCosineZero _ n⟩
+
+-- The corrected full product preserves each original spectral algebraic multiplicity.
+example (φ : CoeffPair p) (z : ℂ) :
+    analyticOrderAt (fun w => (canonicalDiscriminant hp (periodOnePotential φ) w)^2-4) z =
+      (periodicAlgebraicMultiplicity hp (periodOnePotential φ) z : ℕ∞) :=
+  ((sourceLemma8_1 hp hp1).spectrum φ z).2
+
+-- Literal cutoffs, including the exceptional zero denominator, have prefactors -1, 4, -4.
+example (ξ η : ℤ → ℂ) (z : ℂ) :
+    evenSpectralPairCutoff ξ η z 0 = -(ξ 0-z)*(η 0-z) ∧
+    oddSpectralPairCutoff ξ η z 0 = 4*((ξ 1-z)*(η 1-z)/(Real.pi : ℂ)^2) ∧
+    spectralPairPartialProduct ξ η z 0 = -4*((ξ 0-z)*(η 0-z)) := by
+  simp [evenSpectralPairCutoff,oddSpectralPairCutoff,spectralPairPartialProduct,spectralPairFactor]
+  ring
+
+end
+
+-- The two printed definitions give different shifted values even at the zero potential.
+example (N : ℕ) : printedFreePeriodicProduct 0 N+2 = 2 ∧
+    printedFreeAntiperiodicProduct 0 N-2 = 0 := by simp
+
+example : ¬∃ Δ : ℂ, Tendsto (printedFreePeriodicProduct 0) atTop (𝓝 (Δ-2)) ∧
+    Tendsto (printedFreeAntiperiodicProduct 0) atTop (𝓝 (Δ+2)) :=
+  sourceLemma8_1_printed_products_incompatible
+
+end
+end SourceLemma81Checks

@@ -68,7 +68,7 @@ Public checks include p=3/2, real/complex phase compatibility, local
 derivative agreement, precise open-gap conditions, and the literal Fourier
 bracket formula.
 
-Continue with Section 8's Lemma 8.1: the source discriminant products,
-analytic extension, exterior asymptotics, and spectral zero set. This audit
+Section 8's Lemma 8.1 is now audited in [Section 8](SECTION_8.md), with
+its necessary normalization and quotient corrections. Next is Lemma 8.2. This audit
 does not certify the remaining dissertation or the cited classical
 background from the introductory overview as complete.

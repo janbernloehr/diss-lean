@@ -4100,3 +4100,48 @@ analytic extension, and uniform exterior asymptotics. The dissertation
 remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6826 build jobs, the combined public examples, and the axiom audit of 31030 NLS declarations. The 21 existing warnings are unchanged; all four new modules and both focused public probes compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 8.1 milestone: original discriminant products and exterior estimates
+
+`SourceDiscriminantExtension.lean` identifies the source discriminant with
+the physical L² monodromy trace. For p≥2 it extends along the original
+Hilbert inclusion; for p≤2 it restricts the Hilbert function. Agreement on
+finite Fourier sources determines it uniquely even among jointly continuous
+functions on ℂ × `CoeffPair p`. The construction covers every finite p>1.
+
+`SourceDiscriminantProductFormula.lean` supplies literal parity products
+from actual counted roots, including the central roots in their correct
+parity sectors. With prefactors -1 and 4 their locally uniform limits on
+the whole spectral plane are Δ-2 and Δ+2. The full product uses the actual
+canonical lexicographic endpoints and prefactor -4, with limit Δ²-4.
+The printed -2 and 2 products also have literal limits: 2(Δ-2) and (Δ+2)/2.
+They remain jointly analytic, but their shifted values are incompatible.
+
+`SourceDiscriminantExterior.lean` gives one open convex neighborhood in the
+original component-sum source norm, containing the base potential and zero,
+and one positive spectral threshold for three estimates: the additive
+trace error, additive derivative error, and derivative sine-quotient error.
+The additive errors are normalized by exp(|Im λ|). All estimates hold on
+the whole exterior of the open π/4 disks about πℤ. A companion cosine
+quotient estimate retains an explicit positive relative denominator bound.
+
+`SourceLemma8_1.lean` constructs the combined corrected theorem, including
+joint analyticity, uniqueness, both Hilbert comparisons, the literal
+products, and exact original spectral zeros and algebraic multiplicities.
+The printed normalization and unrestricted cosine quotient are formally
+refuted. The latter audit concerns the literal denominator-zero points;
+it does not assert failure on every domain excluding those zeros.
+The source PDF on printed p. 48 was visually checked. `SOURCE_ERRATA.md`
+and `coverage/SECTION_8.md` record the precise corrections and scope.
+
+Public checks cover p=3/2, physical Hilbert agreement, uniqueness from
+Hilbert data, one neighborhood for simultaneous exterior estimates,
+actual algebraic orders, all three finite-cutoff prefactors, and both
+printed counterexamples. All four new modules and the focused public
+probe compile without new warnings.
+
+Next: Lemma 8.2, the continuity and strict interlacing of the actual
+ordered periodic eigenvalues at real-type sources. The dissertation
+remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6830 build jobs, the combined public examples, and the axiom audit of 31061 NLS declarations. The 21 existing warnings are unchanged; all four new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

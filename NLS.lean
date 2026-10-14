@@ -3389,3 +3389,7 @@ import NLS.ZakharovShabat.SourceActionCommonNeighborhood
 import NLS.ZakharovShabat.SourceRealThetaPhase
 import NLS.ZakharovShabat.SourceThetaSpectralPhase
 import NLS.ZakharovShabat.SourceTheorem7_1
+import NLS.ZakharovShabat.SourceDiscriminantExtension
+import NLS.ZakharovShabat.SourceDiscriminantProductFormula
+import NLS.ZakharovShabat.SourceDiscriminantExterior
+import NLS.ZakharovShabat.SourceLemma8_1
