@@ -1921,3 +1921,22 @@ yields the refined actual midpoint displacement and then the full-disk
 free-sine estimate. The construction includes central disks, repeated
 roots, and the filled free center. The endpoint remains ℓ(1+), not ℓ1.
 See `coverage/SECTION_10.md` for the precise theorem and quantifiers.
+
+## Remark 10.9: the leading-term audit remains open
+
+`sourceRemark10_9_exactTaylor` proves the actual midpoint-numerator
+expansion with signed leading sum
+
+    sum_(m≠n) γ_m² / [8(τ_m−z)²].
+
+Its literal disk-supremum remainder is locally uniformly ℓ(p/4), including
+all central indices and quasi-normed exponents. The printed display on
+p. 59 instead subtracts sum_(m≠n) γ_m²/(m−n)². That replacement is not
+part of the proved result: both its coefficient and its spectral-parameter
+dependence require examination. Their difference alone does not formally
+refute the asserted remainder class for actual source potentials.
+
+The absolute reciprocal-square row also dominates every squared gap after
+an index shift, so stronger row summability would require stronger gap
+summability. Constructing actual potentials that realize the claimed sharp
+exponent, and resolving the printed replacement, remain open audit items.

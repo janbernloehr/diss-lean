@@ -48100,3 +48100,128 @@ example :
 
 end
 end SourceLemma108FreeRefinedChecks
+
+namespace SourceRemark109TaylorChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+local instance taylorFourFact : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- At p=4 the exact remainder has a genuine l1 supremum sequence on every disk.
+example {V : Set (CoeffPair 4)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (hV : IsOpen V) (φ : CoeffPair 4) (hφ : φ ∈ V) :
+    ∃ T : Set (CoeffPair 4), IsOpen T ∧ φ ∈ T ∧ T ⊆ V ∧
+      ∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ T, ∃ E : Coeff 1,
+        (∀ n, E n = (sourceMidpointQuotientTaylorSup (p := 4) (by norm_num) (by norm_num) D ψ n : ℂ)) ∧
+        ‖E‖ ≤ K := by
+  obtain ⟨T,ho,hφT,hTV,K,hK,hb⟩ := h.uniform_midpoint_taylor_sup hV φ hφ
+  refine ⟨T,ho,hφT,hTV,K,hK,?_⟩
+  intro ψ hψ
+  obtain ⟨E,hE,hEn,_⟩ := hb ψ hψ
+  have he : (4:ℝ≥0∞)/4 = 1 := ENNReal.div_self (by norm_num) (by norm_num)
+  exact ⟨⟨fun n => E n,(lp.memℓp E).of_exponent_ge he.le⟩,hE,
+    (Coeff.norm_quasiExponentInclusion_le (by rw [he]; norm_num) (by norm_num) (by norm_num) he.le E).trans hEn⟩
+
+-- At p=2 the quarter exponent is 1/2, with no rounding to a Banach exponent.
+example {V : Set (CoeffPair 2)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (ψ : CoeffPair 2) (hψ : ψ ∈ V) (S : Coeff 1)
+    (hS : ∀ n : ℤ, S n = ((∑' m, sourceSquaredGapReciprocalTerm (p := 2)
+      (by norm_num) (by norm_num) ψ n m : ℝ):ℂ)) :
+    ∃ E : Coeff ((2:ℝ≥0∞)/4), ∀ n : ℤ, ∀ z ∈ D n,
+      ‖sourceMidpointQuotient (p := 2) (by norm_num) (by norm_num) ψ n z-1-
+        sourceMidpointQuotientLinearTerm (p := 2) (by norm_num) (by norm_num) ψ n z‖ ≤ ‖E n‖ := by
+  have he : ENNReal.ofReal ((2:ℝ≥0∞).toReal/2) = 1 := by norm_num
+  let A : Coeff (ENNReal.ofReal ((2:ℝ≥0∞).toReal/2)) :=
+    ⟨fun n => S n,(lp.memℓp S).of_exponent_ge he.ge⟩
+  obtain ⟨E,_,hE⟩ := h.midpoint_taylor_majorant_of_row ψ hψ A hS le_rfl
+  exact ⟨E,hE⟩
+
+-- The literal leading term has denominator 8(tau_m-z)^2, including complex z.
+example (ψ : CoeffPair 4) (n : ℤ) (z : ℂ) :
+    sourceMidpointQuotientLinearTerm (p := 4) (by norm_num) (by norm_num) ψ n z =
+      ∑' m : ℤ, if m = n then 0 else
+        (canonicalPeriodicGap (p := 4) (by norm_num) (by norm_num) (periodOnePotential ψ)
+          (periodOnePotential_mem ψ) m)^2 /
+          (8*(canonicalPeriodicMidpoint (p := 4) (by norm_num) (by norm_num)
+            (periodOnePotential ψ) (periodOnePotential_mem ψ) m-z)^2) :=
+  sourceMidpointQuotientLinearTerm_eq (by norm_num) (by norm_num) ψ n z
+
+-- A non-small radicand checks the Taylor coefficient and the two-factor cross term.
+example :
+    ((Complex.sqrt (1-(-3:ℂ)))⁻¹-1-(-3:ℂ)/2 = 1) ∧
+    ((∏' _i : Fin 2, (Complex.sqrt (1-(-3:ℂ)))⁻¹)-1-(∑' _i : Fin 2, (-3:ℂ))/2 = 9/4) := by
+  have h4 : Real.sqrt 4 = 2 := by rw [show (4:ℝ) = 2^2 by norm_num,Real.sqrt_sq (by norm_num)]
+  have hs : Complex.sqrt (1-(-3:ℂ)) = 2 := by
+    rw [Complex.sqrt_eq_real_add_ite]
+    norm_num [h4]
+  rw [hs]
+  norm_num [tprod_fintype,tsum_fintype]
+
+-- The product estimate applies to radicands outside the half-unit disk.
+example :
+    ‖(∏' _i : Fin 2, (Complex.sqrt (1-(-3:ℂ)))⁻¹)-1-(∑' _i : Fin 2, (-3:ℂ))/2‖ ≤
+      ((1:ℝ)^2*Real.exp (1*6)+1+1/2)*(∑' _i : Fin 2, ‖(-3:ℂ)‖)^2 := by
+  have h4 : Real.sqrt 4 = 2 := by rw [show (4:ℝ) = 2^2 by norm_num,Real.sqrt_sq (by norm_num)]
+  apply norm_tprod_inv_sqrt_taylor_le (fun _ : Fin 2 => (-3:ℂ)) (hasSum_fintype _).summable
+  · intro i
+    rw [Complex.sqrt_eq_real_add_ite]
+    norm_num [h4]
+  · norm_num
+  · intro i
+    rw [Complex.sqrt_eq_real_add_ite]
+    norm_num [h4]
+  · norm_num [tsum_fintype]
+
+-- Row improvement would force improved summability of the actual squared gaps.
+example (ψ : CoeffPair 4)
+    (hgap : ¬ Memℓp (fun m : ℤ =>
+      (sourcePeriodicGapDisplacement (p := 4) (by norm_num) (by norm_num) ψ m)^2) 1) :
+    ¬ Memℓp (fun n : ℤ => ((∑' j : ℤ,
+      sourceSquaredGapReciprocalTerm (p := 4) (by norm_num) (by norm_num) ψ n j : ℝ):ℂ)) 1 := by
+  intro hrow
+  exact hgap (memℓp_squared_sourceGap_of_physicalRows (by norm_num) (by norm_num) (by norm_num) ψ hrow)
+
+-- The quotient definition agrees with the literal product with sigma=tau.
+example {V : Set (CoeffPair 4)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (ψ : CoeffPair 4) (hψ : ψ ∈ V) (n : ℤ) (z : ℂ) (hz : z ∈ D n) :
+    (∏' m : {m : ℤ // m ≠ n},
+      (canonicalPeriodicMidpoint (p := 4) (by norm_num) (by norm_num)
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) m-z) /
+        sourceStandardRoot (p := 4) (by norm_num) (by norm_num) ψ m z) =
+      sourceMidpointQuotient (p := 4) (by norm_num) (by norm_num) ψ n z := by
+  have he := (hasProd_sourceSingleRootQuotient_subtype (p := 4) (by norm_num) (by norm_num) ψ
+    (sourcePeriodicMidpointDisplacement (p := 4) (by norm_num) (by norm_num) ψ) z n
+    (h.disk_subset_omittedDomain ψ hψ n hz)).tprod_eq
+  unfold sourceMidpointQuotient
+  convert he using 1
+  apply tprod_congr
+  intro m
+  congr 1
+  simp only [displacedRoots,sourcePeriodicMidpointDisplacement_apply]
+  ring
+
+-- The literal supremum is zero on every actual free-source disk, including the center.
+example {V : Set (CoeffPair 4)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (h0 : (0:CoeffPair 4) ∈ V) (n : ℤ) :
+    sourceMidpointQuotientTaylorSup (p := 4) (by norm_num) (by norm_num) D 0 n = 0 := by
+  obtain ⟨a,r,hr,he⟩ := h.discs n
+  have hn : (D n).Nonempty := by rw [he]; exact nonempty_ball.mpr hr
+  have hpt (z : ℂ) (hz : z ∈ D n) :
+      ‖sourceMidpointQuotient (p := 4) (by norm_num) (by norm_num) 0 n z-1-
+        sourceMidpointQuotientLinearTerm (p := 4) (by norm_num) (by norm_num) 0 n z‖ = 0 := by
+    rw [h.midpoint_quotient_product 0 h0 n z hz]
+    have hg (m : ℤ) : canonicalPeriodicGap (p := 4) (by norm_num) (by norm_num)
+        (periodOnePotential (0:CoeffPair 4)) (periodOnePotential_mem 0) m = 0 := by
+      simpa only [map_zero] using canonicalPeriodicGap_zero (p := 4) (by norm_num) (by norm_num) m
+    simp only [sourceMidpointQuotientLinearTerm,sourceMidpointGapRadicand,sourceSingleRootGapRadicand,
+      hg,zero_pow (by norm_num : (2:ℕ) ≠ 0),zero_div,ite_self,sub_zero,Complex.sqrt_one,
+      inv_one,tprod_one,tsum_zero,sub_self,norm_zero]
+  unfold sourceMidpointQuotientTaylorSup
+  rw [Set.image_congr hpt,hn.image_const,csSup_singleton]
+
+end
+end SourceRemark109TaylorChecks

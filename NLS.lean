@@ -3456,3 +3456,8 @@ import NLS.ZakharovShabat.SourceDiagonalRemainderMajorants
 import NLS.ZakharovShabat.SourceDiagonalCenterSummability
 import NLS.ZakharovShabat.SourcePeriodicMidpointRefined
 import NLS.ZakharovShabat.SourceFreeSineQuotientRefined
+import NLS.ZakharovShabat.InverseSqrtProductTaylor
+import NLS.ZakharovShabat.SourceMidpointQuotientTaylorGeometry
+import NLS.ZakharovShabat.SourceMidpointQuotientTaylorMajorant
+import NLS.ZakharovShabat.SourceRemark10_9Taylor
+import NLS.ZakharovShabat.SourceSquaredGapRowLowerBound

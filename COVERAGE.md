@@ -4970,3 +4970,49 @@ it is false as stated. Next: Remark 10.9's sharpness expansion, then
 Lemma 10.10 and the remaining Section 10 statements.
 
 Validation: `./scripts/check.sh` passed (6,893 build jobs, the full public example suite, and the axiom audit of 31,950 NLS declarations). The build retains 21 existing warnings; the eight new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+## Exact Taylor expansion underlying Remark 10.9
+
+Five modules prove the exact Taylor expansion underlying Remark 10.9.
+For every finite p>1, the literal supremum over each original isolating
+disk of
+
+    | product_(m≠n) (τ_m−z)/w_m(z) − 1 − sum_(m≠n) γ_m²/[8(τ_m−z)²] |
+
+is an ℓ(p/4) sequence, locally uniformly in the original source topology.
+The estimate includes every central disk, repeated roots and collapsed
+gaps. It does not round the exponent up to one or require a distant-index
+cutoff. The disk family and common almost-real domain are retained.
+
+`InverseSqrtProductTaylor.lean` proves the exact algebraic identity
+
+    (sqrt(1−q))⁻¹ − 1 − q/2
+      = (sqrt(1−q)−1)² (1/2 + (sqrt(1−q))⁻¹).
+
+A uniform inverse-root bound controls the absolutely convergent infinite
+product after its signed linear term, without a small-radicand hypothesis.
+`SourceMidpointQuotientTaylorGeometry.lean` derives that inverse-root bound
+from the original two-sided disk separation, identifies the unordered
+product with the actual midpoint-numerator quotient, and records the
+coefficient 1/8 and the moving midpoint denominator explicitly.
+
+`SourceMidpointQuotientTaylorMajorant.lean` squares the actual reciprocal
+squared-gap row using quasi-norm Hölder. `SourceRemark10_9Taylor.lean`
+constructs the literal supremum coefficient and gives one common norm
+bound near each source. The public theorem is
+`sourceRemark10_9_exactTaylor`.
+
+`SourceSquaredGapRowLowerBound.lean` shows that the row centered at m+1
+is at least |γ_m|². Thus improved summability of the absolute row would
+force the same improvement for the actual squared gaps. This gives a
+necessary condition, not an example realizing a sharp exponent.
+
+Remark 10.9 remains under audit. Its printed leading sum is
+sum_(m≠n) γ_m²/(m−n)²; the proved Taylor sum retains z and has coefficient
+1/8. The present result does not justify replacing one by the other,
+and the discrepancy alone is not a formal counterexample to the printed
+sequence-class remainder. Next: resolve that replacement and prove or
+correct the optimality claim for actual source potentials, before Lemma
+10.10 and the remaining Section 10 statements.
+
+Validation: `./scripts/check.sh` passed (6,898 build jobs, the full public example suite, and the axiom audit of 31,985 NLS declarations). The build retains 21 existing warnings; the five new modules and eight focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.

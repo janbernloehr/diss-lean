@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the free-sine consequence of Lemma 10.8 is now proved with
-locally uniform ℓ(p/2)+ℓ(1+) supremum bounds on every original isolating
-disk. An exact transposition of the nonlinear diagonal remainder supplies
-the missing half-exponent estimate; the actual midpoint now has the
-corresponding refined summability. The separate arbitrary-numerator
-local-uniformity claim remains formally refuted at p=4, q=1. Next is
-Remark 10.9's sharpness expansion and the remaining Section 10 audit.
+Latest step: Lean proves the exact Taylor expansion underlying Remark
+10.9, with a locally uniform ℓ(p/4) remainder supremum on every original
+isolating disk. The leading sum is γ_m²/[8(τ_m−z)²]. The printed replacement
+by an integer-lattice kernel and the optimality claim remain under audit.
+Lemma 10.8's free-sine consequence remains proved, with its separate
+arbitrary-numerator uniformity counterexample recorded.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
