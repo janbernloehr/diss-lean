@@ -12,8 +12,9 @@ and its recentered action formula are now proved on the original domain.
 The fixed-domain disk index is corrected as documented in
 [`SOURCE_ERRATA.md`](../SOURCE_ERRATA.md). Equation (2.19), the complex
 weighted gap integral, the collapsed limit and analytic extension are
-also proved on the original domain. The remaining p. 62 estimates still
-need comparison on that full domain before Section 12.
+also proved on the original domain. The remaining p. 62 estimates for
+the literal gap supremum and normalized actions now hold locally uniformly
+on that full domain. The next source audit is Section 12.
 
 ## One neighborhood for all original contours
 
@@ -333,18 +334,74 @@ filled function agrees locally with an analytic circle integral and is
 analytic on all W. This proves the extension assertion on every original
 V_φ⊆W; it is independent of the old complex-action chart domain.
 
-## Remaining source assertions
+## Page 62: uniform estimates on the entire original domain
 
-The original-domain integral and extension assertions after (2.18)–(2.19)
-are now proved. The following p. 62 claims still need a separate audit:
-the locally uniform literal supremum of |χ_n−1| over G_n in
-ℓ^(p/2)+ℓ^(1+), and the ensuing normalized-action estimate on the full
-original domain. Theorem 11.2's estimates on its common smaller domain
-remain established. They are not substituted for these stronger-domain
-intermediate assertions. Section 12 follows this comparison.
-The dissertation remains incomplete.
+`SourceEquation2_19Data.originalEstimates` retains the original open W and
+all previous formulas and analytic extension results. The public existence
+theorem `sourceSection11OriginalEstimates` gives such an open connected W
+containing the entire real-type source locus, for every finite p>1.
+
+| Assertion | Public API | Exact scope |
+| --- | --- | --- |
+| Literal gap supremum | `sourceActionChiGapSup`, `.chiGapSup_bddAbove`, `.norm_chi_sub_one_le_gapSup` | The actual supremum of ∣χ_n−1∣ over G_n is finite and bounds every point, including endpoints and collapsed complex gaps. |
+| Collapsed and free values | `sourceActionChiGapSup_of_gap_zero`, `sourceActionChiGapSup_zero_source` | At collapse the supremum is the midpoint error; every free-source supremum is zero. |
+| Original isolating families | `.chiGapSup_refined_on` | Any existing original family is allowed. One open neighborhood supports all indices and every finite r>1 with r≥p/2. |
+| Critical coordinate | `.criticalCoordinate_halfExponent`, `.criticalCoordinate_locally_uniform` | The exact t_n has an actual ℓ^(p/2) coefficient, with norm at most 2‖γ‖_p‖B‖_p and locally uniform bounds on W. |
+| Cosine identity through collapse | `.normalized_eq_cosineModel` | 4F_n is the actual normalized cosine model at every complex point of W, even at zero gaps. |
+| Quantitative action error | `.norm_normalized_sub_one_le` | ‖4F_n−1‖≤8∣γ_n∣²∣B_n∣²+2(2∣γ_n∣∣B_n∣+1)² sup_G_n∣χ_n−1∣ on W. |
+| Both source estimates together | `SourceSection11OriginalEstimates.locally_uniform` | One neighborhood and four actual summand functions give the two ℓ^(p/2)+ℓ^(1+) decompositions, before every index and one-plus exponent. |
+
+The critical-displacement map is analytic into the original ℓᵖ space.
+Pulling back the joint quotient-estimate neighborhood along its graph
+therefore gives an open source neighborhood at any complex point of W.
+Lemma 10.10 identifies its numerator-minus-midpoint offset with γ²B,
+an actual bounded half-exponent sequence. Its inclusion into each refined
+exponent gives the required quotient majorants. These cover the original
+disks and finite central block; restricting them to G_n controls the
+literal supremum. Compactness and analyticity independently establish
+that this supremum is finite.
+
+The cosine representation and its error estimate extend to collapsed
+complex gaps using F_n=χ_n(τ_n)/4 and t_n=0 there. Uniform bounds for γ and
+B then transfer the supremum estimate to 4F_n−1. Both estimates hold on
+one neighborhood chosen before the refined exponent. The resulting
+ℓ^(p/2) and genuine ℓ^(1+) summand functions are chosen before all
+one-plus projections; each projection has a uniform norm bound on that
+same neighborhood. Quasi-norms below exponent one are handled explicitly.
+
+This proves the original-domain assertions directly. The known limitation
+of Lemma 10.8 for arbitrary numerator offsets does not apply: here the
+actual critical offset has the stronger half-exponent bound required by
+the quotient estimates.
+
+## Next source audit
+
+The Section 11 audit now covers Lemma 11.1, Theorem 11.2, equations
+(2.16)–(2.19), and the following original-domain uniform estimates.
+The principal square root and positivity use Theorem 11.2's smaller
+common domain; no such claims are added on the full original W.
+Next is Section 12: equation (2.20), the normalized periods (2.21), and
+Theorem 12.1 with its simultaneous domain, analytic root dependence,
+uniform offset bounds and real-gap location. The dissertation remains
+incomplete.
 
 ## Validation
+
+The original-domain estimates step has seventeen focused checks covering
+retention of W, the literal supremum and collapsed value, the complex
+cosine identity and quantitative bound, the critical-coordinate sequence,
+arbitrary original disk families, fixed summands before all one-plus
+exponents, literal quotient agreement, exact collapsed error, free
+values, and p=3/2, p=2 and p=4. At p=3/2, the critical-coordinate check
+explicitly constructs an ℓ^(3/4) sequence. All pass without warnings.
+The full `./scripts/check.sh` gate passed: 6,962 build jobs, the complete
+public example suite, and the axiom audit of 32,580 NLS declarations.
+There are 21 existing build warnings; the five new modules and seventeen
+focused checks are warning-free. No admitted proofs, additional axioms
+or heartbeat overrides were introduced. The 156-label source inventory
+and `git diff --check` also passed.
+
+The preceding equation (2.19) step:
 
 The equation (2.19) step has eighteen focused checks covering the original
 domain, both weighted identities and endpoint integrability, the exact

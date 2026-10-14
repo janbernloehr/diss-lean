@@ -3520,3 +3520,8 @@ import NLS.ZakharovShabat.SourceActionChiGapIntegral
 import NLS.ZakharovShabat.SourceNormalizedActionCommonKernel
 import NLS.ZakharovShabat.SourceNormalizedIndexedActionCommon
 import NLS.ZakharovShabat.SourceEquation2_19
+import NLS.ZakharovShabat.SourceActionChiGapSup
+import NLS.ZakharovShabat.SourceActionChiUniform
+import NLS.ZakharovShabat.SourceNormalizedIndexedActionEstimate
+import NLS.ZakharovShabat.SourceNormalizedIndexedActionUniform
+import NLS.ZakharovShabat.SourceSection11OriginalEstimates

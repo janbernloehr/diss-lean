@@ -5,14 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves equation (2.19) and the weighted gap-integral
-formula for complex potentials on the original source domain. The actual
-normalized indexed actions extend analytically through collapsed gaps,
-with the stated midpoint value and limit. Both singular weighted integrals
-are proved integrable, and the extension agrees with Theorem 11.2 on its
-smaller domain.
-Next: audit the remaining original-domain uniform estimates on p. 62,
-then Section 12.
+Latest step: Lean proves the remaining page 62 estimates on the original
+complex source domain. The literal gap supremum of |χ_n−1| and the filled
+normalized-action deviation have locally uniform ℓ^(p/2)+ℓ^(1+)
+decompositions, with one neighborhood and fixed summand functions for
+all indices and one-plus exponents. Collapsed gaps and p/2<1 are included.
+Next: Section 12, the simultaneous psi-functions (2.20) and normalized
+periods (2.21).
 [The Section 11 audit](coverage/SECTION_11.md) records the precise scope;
 [Section 10](coverage/SECTION_10.md) retains the preceding results.
 The dissertation remains incomplete.

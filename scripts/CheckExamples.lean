@@ -49512,3 +49512,161 @@ example : ∃ W : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W ∧ IsConnected W �
 
 end
 end SourceEquation219Checks
+
+namespace SourceSection11OriginalChecks
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+noncomputable section
+
+-- Upgrade the very same W and retain all of the preceding integral formulas.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W) (hW : IsOpen W) :
+    SourceSection11OriginalEstimates hp hp1 W ∧ SourceEquation2_19Data hp hp1 W :=
+  ⟨H.originalEstimates hW,H⟩
+
+-- Finiteness is proved for the literal moving gap, not an assumed majorant.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    BddAbove ((fun z => ‖sourceActionChi hp hp1 n ψ z-1‖) '' sourcePeriodicSegment hp hp1 ψ n) :=
+  H.chiGapSup_bddAbove ψ hψ n
+
+-- A central gap point is bounded without source-reality or nonzero-gap hypotheses.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (z : ℂ) (hz : z ∈ sourcePeriodicSegment hp hp1 ψ 0) :
+    ‖sourceActionChi hp hp1 0 ψ z-1‖ ≤ sourceActionChiGapSup hp hp1 ψ 0 :=
+  H.norm_chi_sub_one_le_gapSup ψ hψ 0 z hz
+
+-- At collapse the supremum is exactly the midpoint error.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    sourceActionChiGapSup hp hp1 ψ n =
+      ‖sourceActionChi hp hp1 n ψ (sourceStandardRootMidpoint hp hp1 ψ n)-1‖ :=
+  sourceActionChiGapSup_of_gap_zero hp hp1 ψ n hg
+
+-- The cosine identity is for the actual filled indexed action at every complex source.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    4*sourceNormalizedIndexedAction hp hp1 n ψ =
+      normalizedActionCosineModel (sourceActionCriticalCoordinate hp hp1 n ψ)
+        (fun θ => sourceActionChi hp hp1 n ψ
+          (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(Real.cos θ:ℂ))) :=
+  H.normalized_eq_cosineModel ψ hψ n
+
+-- The quantitative bound keeps the actual gap, coefficient and supremum.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    ‖4*sourceNormalizedIndexedAction hp hp1 n ψ-1‖ ≤
+      8*‖sourcePeriodicGapDisplacement hp hp1 ψ n‖^2*‖sourceCriticalGapQuotient hp hp1 ψ n‖^2+
+      2*(2*‖sourcePeriodicGapDisplacement hp hp1 ψ n‖*‖sourceCriticalGapQuotient hp hp1 ψ n‖+1)^2*
+        sourceActionChiGapSup hp hp1 ψ n := H.norm_normalized_sub_one_le ψ hψ n
+
+-- The critical coordinate has one actual half-exponent sequence for all signed indices.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceSection11OriginalEstimates hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    ∃ a : Coeff (p/2), (∀ n : ℤ, a n = sourceActionCriticalCoordinate hp hp1 n ψ) ∧
+      ‖a‖ ≤ 2*‖sourcePeriodicGapDisplacement hp hp1 ψ‖*‖sourceCriticalGapQuotient hp hp1 ψ‖ :=
+  H.previous.previous.criticalCoordinate_halfExponent ψ hψ
+
+-- Any original isolating family may be supplied; all refined exponents share one S.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W)
+    (hW : IsOpen W) (hV : IsOpen V) (hVW : V ⊆ W)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (φ : CoeffPair p) (hφ : φ ∈ V) :
+    ∃ S : Set (CoeffPair p), IsOpen S ∧ φ ∈ S ∧ S ⊆ V ∧
+      ∀ (r : ℝ≥0∞), r ≠ ⊤ → 1 < r → p/2 ≤ r →
+        ∃ L : ℝ, 0 ≤ L ∧ ∀ ψ ∈ S, ∃ a : Coeff r,
+          (∀ n : ℤ, a n = (sourceActionChiGapSup hp hp1 ψ n : ℂ)) ∧ ‖a‖ ≤ L :=
+  H.chiGapSup_refined_on hW hV hVW hD φ hφ
+
+-- The neighborhood and all four summand functions precede every index and one-plus exponent.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceSection11OriginalEstimates hp hp1 W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧ V ⊆ W ∧
+      ∃ Gχ GA : CoeffPair p → Coeff (p/2), ∃ Bχ BA : CoeffPair p → CoeffOnePlus,
+        (∀ ψ ∈ V, ∀ n : ℤ,
+          (sourceActionChiGapSup hp hp1 ψ n : ℂ) = Gχ ψ n+(Bχ ψ).1 n ∧
+          4*sourceNormalizedIndexedAction hp hp1 n ψ-1 = GA ψ n+(BA ψ).1 n) ∧
+        (∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ V, ‖Gχ ψ‖ ≤ K ∧ ‖GA ψ‖ ≤ K) ∧
+        ∀ (r : ℝ≥0∞) (hr1 : 1 < r) (hr : r ≠ ⊤),
+          ∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ V,
+            ‖CoeffOnePlus.toCoeff r hr1 hr (Bχ ψ)‖ ≤ K ∧ ‖CoeffOnePlus.toCoeff r hr1 hr (BA ψ)‖ ≤ K :=
+  H.locally_uniform φ hφ
+
+-- Off the zero set, the same action summands give the literal quotient in the source.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} (H : SourceSection11UniformAsymptotics hp hp1 V) :
+    ∃ A : CoeffPair p → Coeff (p/2), ∃ B : CoeffPair p → CoeffOnePlus,
+      ∀ ψ ∈ V, ∀ n : ℤ,
+        canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0 →
+        4*sourceIndexedAction hp hp1 n ψ /
+          (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2-1 =
+            A ψ n+(B ψ).1 n := by
+  obtain ⟨_,A,_,B,he,_,_⟩ := H
+  refine ⟨A,B,?_⟩
+  intro ψ hψ n hg
+  have h := (he ψ hψ n).2
+  rw [sourceNormalizedIndexedAction_eq_quotient hp hp1 n ψ hg] at h
+  simpa only [mul_div_assoc] using h
+
+-- At a collapsed complex gap, the normalized error equals the actual gap supremum.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    ‖4*sourceNormalizedIndexedAction hp hp1 n ψ-1‖ = sourceActionChiGapSup hp hp1 ψ n := by
+  rw [sourceNormalizedIndexedAction_eq_collapsed hp hp1 n ψ hg,
+    sourceActionChiGapSup_of_gap_zero hp hp1 ψ n hg]
+  congr 1
+  ring
+
+-- Free gap suprema vanish at all indices, including zero and both signed tails.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) :
+    sourceActionChiGapSup hp hp1 (0 : CoeffPair p) n = 0 :=
+  sourceActionChiGapSup_zero_source hp hp1 n
+
+-- The filled free normalization gives zero deviation despite all free gaps being zero.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) :
+    4*sourceNormalizedIndexedAction hp hp1 n (0 : CoeffPair p)-1 = 0 := by
+  rw [sourceNormalizedIndexedAction_zero_source hp hp1 n]
+  norm_num
+
+local instance originalThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceSection11OriginalEstimates (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceSection11OriginalEstimates (by norm_num) (by norm_num)
+
+-- The critical coordinate lives below exponent one for p=3/2.
+example {W : Set (CoeffPair (ENNReal.ofReal (3/2)))}
+    (H : SourceSection11OriginalEstimates (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W)
+    (ψ : CoeffPair (ENNReal.ofReal (3/2))) (hψ : ψ ∈ W) :
+    ∃ a : Coeff (ENNReal.ofReal (3/4)), ∀ n : ℤ,
+      a n = sourceActionCriticalCoordinate (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) n ψ := by
+  have hfrac : ENNReal.ofReal (3/4) = ENNReal.ofReal (3/2)/2 := by
+    rw [← Coeff.halfExponent_eq_div (by simp : ENNReal.ofReal (3/2) ≠ ⊤)]
+    norm_num
+  rw [hfrac]
+  obtain ⟨a,ha,_⟩ := H.previous.previous.criticalCoordinate_halfExponent ψ hψ
+  exact ⟨a,ha⟩
+
+local instance originalTwo : Fact (1 ≤ (2 : ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (2 : ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (2 : ℝ≥0∞) ⊆ W ∧
+      SourceSection11OriginalEstimates (p := (2 : ℝ≥0∞)) (by norm_num) (by norm_num) W :=
+  sourceSection11OriginalEstimates (by norm_num) (by norm_num)
+
+local instance originalFour : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (4 : ℝ≥0∞) ⊆ W ∧
+      SourceSection11OriginalEstimates (p := (4 : ℝ≥0∞)) (by norm_num) (by norm_num) W :=
+  sourceSection11OriginalEstimates (by norm_num) (by norm_num)
+
+end
+end SourceSection11OriginalChecks

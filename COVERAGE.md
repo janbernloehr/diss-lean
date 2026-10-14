@@ -5501,3 +5501,43 @@ those original-domain proof assertions. The dissertation remains
 incomplete. See the [Section 11 audit](coverage/SECTION_11.md).
 
 Validation: `./scripts/check.sh` passed (6,957 build jobs, the complete public example suite, and the axiom audit of 32,536 NLS declarations). The build retains 21 existing warnings; the six new modules and eighteen focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Section 11: page 62 estimates on the original domain
+
+Five modules prove the remaining p. 62 estimates on the entire original
+source domain for every finite p>1. `SourceEquation2_19Data.originalEstimates`
+keeps W and all previous integral and extension results.
+
+The literal supremum of |χ_n−1| over the actual complex gap G_n is finite,
+nonnegative, and bounds every gap point. At collapse it is exactly the
+midpoint error; at the free source it vanishes for every signed index.
+Near every complex point of W, this supremum and the actual deviation
+4F_n−1 have fixed ℓ^(p/2)+ℓ^(1+) summand functions with uniform bounds.
+One neighborhood and all four functions are chosen before any index or
+finite one-plus exponent. F_n is the actual indexed quotient I_n/γ_n²
+off zero gaps and the established analytic extension at zero gaps.
+
+The proof substitutes the analytic critical-displacement map into the
+existing joint quotient estimates. Lemma 10.10 gives the needed actual
+half-exponent midpoint offset, so no stronger-topology assumption on an
+arbitrary numerator is used. All original isolating families are allowed,
+and the finite central block is included. The normalized-action cosine
+identity now includes collapsed complex gaps; its quantitative error
+bound transfers the literal gap supremum estimate to the actions.
+The exact critical coordinate t_n=2γ_n B_n also has a locally uniformly
+bounded ℓ^(p/2) coefficient, including the quasi-norm range p/2<1.
+
+`sourceSection11OriginalEstimates` supplies the original open connected
+W containing the entire real-type source locus and the complete package.
+Seventeen focused checks cover domain retention, finite and collapsed
+suprema, the complex cosine identity and error constants, original disk
+families, the order of the uniformity quantifiers, the literal quotient,
+free values, and p=3/2, p=2 and p=4. The p=3/2 check explicitly produces
+the critical coordinate in ℓ^(3/4).
+
+Next: Section 12, starting with the simultaneous psi-functions in (2.20)
+and their normalized periods in (2.21). Positivity and the principal
+square root remain on Theorem 11.2's established smaller domain. The
+dissertation remains incomplete. See the [Section 11 audit](coverage/SECTION_11.md).
+
+Validation: `./scripts/check.sh` passed (6,962 build jobs, the complete public example suite, and the axiom audit of 32,580 NLS declarations). The build retains 21 existing warnings; the five new modules and seventeen focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
