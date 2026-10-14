@@ -3465,3 +3465,9 @@ import NLS.SequenceSpaces.QuarterPowerWitness
 import NLS.ZakharovShabat.SourceSquaredGapNonSummability
 import NLS.ZakharovShabat.SourceRemark10_9LatticeTerm
 import NLS.ZakharovShabat.SourceRemark10_9Counterexample
+import NLS.SequenceSpaces.StrictSquaredExponentWitness
+import NLS.ZakharovShabat.SourceSquaredGapSharpness
+import NLS.ZakharovShabat.SourceMidpointTaylorLowerBound
+import NLS.ZakharovShabat.SourceMidpointQuotientSup
+import NLS.ZakharovShabat.SourceMidpointQuotientSharpness
+import NLS.ZakharovShabat.SourceRemark10_9Optimality

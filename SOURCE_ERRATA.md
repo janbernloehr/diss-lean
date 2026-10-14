@@ -1961,6 +1961,17 @@ Implemented in `QuarterPowerWitness.lean`,
 and `SourceRemark10_9Counterexample.lean`. The corrected statement is
 `sourceRemark10_9_exactTaylor`: subtract L_n(z) and retain a locally
 uniform ℓ(p/4) supremum remainder for every finite p>1 and every original
-disk, including central indices and quasi-normed exponents. The full
-claim that p/2 is optimal for actual potentials remains under audit;
-the p=8 example at exponent two alone does not establish that claim.
+disk, including central indices and quasi-normed exponents.
+
+The separate p/2 optimality assertion is now proved in full by
+`sourceRemark10_9_halfExponent_optimal`. For every finite p>2, every
+r<p/2, and every original-source neighborhood of zero, one actual real
+potential has squared gaps, the signed lattice row, and the literal
+midpoint-quotient suprema in ℓ(p/2) but outside ℓr. The original isolating
+disks are constructed and retained, including all central indices.
+The proof uses inverse-chart sequence witnesses, positivity of the
+exact Taylor sum, and an intermediate exponent above both one and p/4.
+It covers r≤1 and the finite-support endpoint. Optimality is existential;
+it is not a claim about every source, and the free source is smoother.
+This settles the optimality assertion without reinstating the false
+printed remainder display. See `coverage/SECTION_10.md`.

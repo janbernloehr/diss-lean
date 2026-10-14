@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean refutes the printed remainder estimate in Remark 10.9
-at p=8 using actual real potentials arbitrarily near zero. Its literal
-disk-supremum remainder can lie outside ℓ², hence outside ℓ(p/4)+ℓ(1+).
-The corrected Taylor expansion with leading term γ_m²/[8(τ_m−z)²]
-remains proved on every original disk. The full p/2 optimality assertion
-is the next audit item.
+Latest step: Lean proves full p/2 optimality in Remark 10.9 for every
+finite p>2. Every stronger exponent fails for some actual real potential
+arbitrarily near zero, simultaneously for the squared gaps, lattice sum,
+and original-disk quotient suprema. The printed remainder formula remains
+refuted; the corrected moving-denominator Taylor expansion remains proved.
+Next: Lemma 10.10 and the remaining Section 10 audit.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

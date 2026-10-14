@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Current milestone: actual-source counterexample to Remark 10.9's printed remainder
+## Current milestone: full half-exponent optimality in Remark 10.9
+
+Six modules prove the full p/2 optimality assertion for actual source
+potentials. For every finite p>2, every r<p/2, and every open neighborhood
+U of zero in the original source space, there is a real ψ in U and one
+constructed original isolating-disk family such that all three sequences
+
+- the actual squared spectral gaps γ_n²;
+- the signed lattice sum sum_(m≠n) γ_m²/(m−n)²;
+- the literal supremum over D_n of |product_(m≠n)(τ_m−z)/w_m(z)−1|
+
+belong to ℓ(p/2) and fail membership in ℓr. The same source and disk
+family witness all three conclusions. The witness may depend on r;
+this is optimality of the general exponent, not a claim that every
+potential has exactly that regularity. The free source has zero quotient
+supremum and remains an explicitly checked smooth special case.
+
+`StrictSquaredExponentWitness.lean` proves the sharp squared-sequence
+behavior of |n|^(-1/(2r)) and its nonzero real multiples.
+`SourceSquaredGapSharpness.lean` lifts these real sequence witnesses
+through the actual inverse Birkhoff chart inside any prescribed source
+neighborhood. The action-radius and normalized-action identities force
+the actual squared gaps to fail the stronger exponent.
+
+`SourceMidpointTaylorLowerBound.lean` identifies the linear Taylor sum
+at nπ with a convergent nonnegative real sum. A unit bound on the midpoint
+displacement gives the neighboring lower estimate
+
+    |γ_m|² ≤ 8(π+1)² |L_(m+1)((m+1)π)|.
+
+`SourceMidpointQuotientSup.lean` proves boundedness and nonnegativity of
+the literal quotient supremum and retains its ℓ(p/2) upper membership on
+every original disk for p>2. `SourceMidpointQuotientSharpness.lean` shows
+that stronger quotient-supremum summability would force stronger
+squared-gap summability, by combining the lower estimate with the exact
+ℓ(p/4) Taylor remainder and restoring the finite central head.
+
+`SourceRemark10_9Optimality.lean` chooses an intermediate exponent q
+between max(r,1,p/4) and p/2. This lets the argument cover every r<p/2,
+including r≤1 and the finite-support exponent zero. The public theorem
+is `sourceRemark10_9_halfExponent_optimal`. Nine public checks cover the
+generic original-topology statement, p=3 and p=8 specializations, the
+finite-support endpoint, a central neighboring gap, all-disk upper
+membership, and the free-source exception.
+
+Remark 10.9's audit is now resolved: its full general-exponent optimality
+assertion is proved, its printed remainder display is formally refuted,
+and the exact moving-denominator ℓ(p/4) expansion is the proved correction.
+Next: Lemma 10.10, equation (2.15), and the remaining Section 10 statements.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,908 build jobs, the complete public example suite, and the axiom audit of 32,050 NLS declarations). The build retains 21 existing warnings; the six new modules and nine focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: actual-source counterexample to Remark 10.9's printed remainder
 
 Four modules resolve the printed integer-kernel replacement in Remark
 10.9. At p=8, every open neighborhood of zero in the original source
@@ -42,10 +95,11 @@ disks. Seven public checks cover small nonzero real sources, both
 remainder classes on the same data, the literal lattice sum, and bounded,
 nonnegative suprema on all disks.
 
-Next: prove or correct the full p/2 optimality assertion for actual source
-potentials, then audit Lemma 10.10 and the remaining Section 10 statements.
-The p=8 obstruction at exponent two does not by itself prove optimality
-at every exponent below p/2. The dissertation remains incomplete.
+This p=8 obstruction at exponent two did not by itself prove full
+optimality. The subsequent half-exponent optimality milestone recorded
+here proves that assertion for every finite p>2 and every r<p/2, using
+actual sources. The printed remainder formula remains refuted. The
+next source statement is Lemma 10.10; the dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed (6,902 build jobs, the complete public example suite, and the axiom audit of 32,016 NLS declarations). The build retains 21 existing warnings; the four new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
 
@@ -89,8 +143,8 @@ At this milestone, the printed replacement of the exact leading sum
 by sum_(m≠n) γ_m²/(m−n)² was unresolved. The subsequent actual-source
 counterexample recorded here refutes its asserted remainder class at
 p=8. The corrected moving-denominator expansion remains valid. The full
-p/2 optimality assertion still requires a separate audit before Lemma
-10.10 and the remaining Section 10 statements.
+p/2 optimality assertion was proved in the subsequent optimality
+milestone; Lemma 10.10 and the remaining Section 10 statements remain.
 
 Validation: `./scripts/check.sh` passed (6,898 build jobs, the full public example suite, and the axiom audit of 31,985 NLS declarations). The build retains 21 existing warnings; the five new modules and eight focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
 

@@ -48308,3 +48308,106 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
 
 end
 end SourceRemark109CounterexampleChecks
+
+namespace SourceRemark109OptimalityChecks
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+noncomputable section
+local instance three : Fact (1 ≤ (3 : ℝ≥0∞)) := ⟨by norm_num⟩
+local instance eight : Fact (1 ≤ (8 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example : Memℓp (squaredExponentWitness 1) 3 ∧
+    ¬ Memℓp (fun n : ℤ => (squaredExponentWitness 1 n : ℂ)^2) 1 := by
+  refine ⟨memℓp_squaredExponentWitness (by norm_num) (by norm_num),?_⟩
+  simpa only [ENNReal.toReal_one] using not_memℓp_squaredExponentWitness_sq (r := 1) (by norm_num)
+
+example {p r : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (hr : 0 < r.toReal) (hrp : r < p/2) (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ : CoeffPair p, ‖ψ‖ < ε ∧ IsRealType (CoeffPair.toMax p ψ) ∧
+      ¬ Memℓp (fun n : ℤ => (sourcePeriodicGapDisplacement hp hp1 ψ n)^2) r := by
+  obtain ⟨ψ,hψ,hr,hbad⟩ := exists_near_zero_real_source_squaredGap_not_memℓp hp hp1 hr hrp
+    (ball 0 ε) isOpen_ball (mem_ball_self hε)
+  exact ⟨ψ,by simpa only [mem_ball,dist_zero_right] using hψ,hr,hbad⟩
+
+-- One actual source and one original disk family witness both upper and sharp lower exponents.
+example {p r : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp2 : 2 < p)
+    (hr : r < p/2) (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ : CoeffPair p, ‖ψ‖ < ε ∧ IsRealType (CoeffPair.toMax p ψ) ∧
+      ∃ V : Set (CoeffPair p), IsOpen V ∧ (0 : CoeffPair p) ∈ V ∧ ψ ∈ V ∧
+        ∃ D c, SourceIsolatingNeighborhoods hp (lt_trans (by norm_num) hp2) V D c ∧
+          (Memℓp (sourceRemark10_9LatticeTerm hp (lt_trans (by norm_num) hp2) ψ) (p/2) ∧
+            ¬ Memℓp (sourceRemark10_9LatticeTerm hp (lt_trans (by norm_num) hp2) ψ) r) ∧
+          (Memℓp (fun n : ℤ => (sourceMidpointQuotientSup hp (lt_trans (by norm_num) hp2) D ψ n : ℂ)) (p/2) ∧
+            ¬ Memℓp (fun n : ℤ => (sourceMidpointQuotientSup hp (lt_trans (by norm_num) hp2) D ψ n : ℂ)) r) := by
+  obtain ⟨ψ,hψ,hreal,V,hV,hzero,hψV,D,c,hD,_,hrow,hquot⟩ :=
+    sourceRemark10_9_halfExponent_optimal hp hp2 hr (ball 0 ε) isOpen_ball (mem_ball_self hε)
+  exact ⟨ψ,by simpa only [mem_ball,dist_zero_right] using hψ,hreal,V,hV,hzero,hψV,D,c,hD,hrow,hquot⟩
+
+example (ε : ℝ) (hε : 0 < ε) : ∃ ψ : CoeffPair 3, ‖ψ‖ < ε ∧
+    IsRealType (CoeffPair.toMax 3 ψ) ∧ ∃ V D c,
+      ψ ∈ V ∧ SourceIsolatingNeighborhoods (p := 3) (by norm_num) (by norm_num) V D c ∧
+      ¬ Memℓp (fun n : ℤ => (sourceMidpointQuotientSup (p := 3)
+        (by norm_num) (by norm_num) D ψ n : ℂ)) 1 := by
+  have hr : (1 : ℝ≥0∞) < 3/2 := by
+    apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+    norm_num
+  obtain ⟨ψ,hψ,hreal,V,_,_,hψV,D,c,hD,_,_,hquot⟩ := sourceRemark10_9_halfExponent_optimal
+    (p := 3) (by norm_num) (by norm_num) hr (ball 0 ε) isOpen_ball (mem_ball_self hε)
+  exact ⟨ψ,by simpa only [mem_ball,dist_zero_right] using hψ,hreal,V,D,c,hψV,hD,hquot.2⟩
+
+example : ∃ ψ : CoeffPair 8, IsRealType (CoeffPair.toMax 8 ψ) ∧
+    ¬ Memℓp (sourceRemark10_9LatticeTerm (p := 8) (by norm_num) (by norm_num) ψ) 3 := by
+  have hr : (3 : ℝ≥0∞) < 8/2 := by
+    apply (ENNReal.lt_div_iff_mul_lt (Or.inl (by norm_num)) (Or.inl (by norm_num))).mpr
+    norm_num
+  obtain ⟨ψ,_,hreal,_,_,_,_,_,_,_,_,hrow,_⟩ := sourceRemark10_9_halfExponent_optimal
+    (p := 8) (by norm_num) (by norm_num) hr univ isOpen_univ (mem_univ _)
+  exact ⟨ψ,hreal,hrow.2⟩
+
+-- Exponent zero means finite support; the general theorem has no r>0 restriction.
+example : ∃ ψ : CoeffPair 3, IsRealType (CoeffPair.toMax 3 ψ) ∧
+    ¬ Memℓp (fun n : ℤ => (sourcePeriodicGapDisplacement (p := 3)
+      (by norm_num) (by norm_num) ψ n)^2) 0 := by
+  have hr : (0 : ℝ≥0∞) < 3/2 := ENNReal.div_pos (by norm_num) (by norm_num)
+  obtain ⟨ψ,_,hreal,_,_,_,_,_,_,_,hgap,_,_⟩ := sourceRemark10_9_halfExponent_optimal
+    (p := 3) (by norm_num) (by norm_num) hr univ isOpen_univ (mem_univ _)
+  exact ⟨ψ,hreal,hgap.2⟩
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p ψ))
+    (hs : ‖sourcePeriodicMidpointDisplacement hp hp1 ψ‖ ≤ 1) :
+    ‖sourcePeriodicGapDisplacement hp hp1 ψ 0‖^2 ≤
+      (8*(Real.pi+1)^2)*‖sourceMidpointQuotientLinearTerm hp hp1 ψ 1 (Real.pi : ℂ)‖ := by
+  simpa only [zero_add,Int.cast_one,mul_one] using squared_sourceGap_le_neighbor_linearTerm hp hp1 ψ hr hs 0
+
+-- Smooth special cases are compatible with existential optimality.
+example {V : Set (CoeffPair 3)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods (by norm_num) (by norm_num) V D c)
+    (h0 : (0 : CoeffPair 3) ∈ V) (n : ℤ) :
+    sourceMidpointQuotientSup (p := 3) (by norm_num) (by norm_num) D 0 n = 0 := by
+  obtain ⟨a,r,hr,he⟩ := h.discs n
+  have hn : (D n).Nonempty := by rw [he]; exact nonempty_ball.mpr hr
+  have hpt (z : ℂ) (hz : z ∈ D n) :
+      ‖sourceMidpointQuotient (p := 3) (by norm_num) (by norm_num) 0 n z-1‖ = 0 := by
+    rw [h.midpoint_quotient_product 0 h0 n z hz]
+    have hg (m : ℤ) : canonicalPeriodicGap (p := 3) (by norm_num) (by norm_num)
+        (periodOnePotential (0 : CoeffPair 3)) (periodOnePotential_mem 0) m = 0 := by
+      simpa only [map_zero] using canonicalPeriodicGap_zero (p := 3) (by norm_num) (by norm_num) m
+    simp only [sourceMidpointGapRadicand,sourceSingleRootGapRadicand,hg,
+      zero_pow (by norm_num : (2 : ℕ) ≠ 0),zero_div,ite_self,sub_zero,Complex.sqrt_one,
+      inv_one,tprod_one,sub_self,norm_zero]
+  unfold sourceMidpointQuotientSup
+  rw [Set.image_congr hpt,hn.image_const,csSup_singleton]
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods hp hp1 V D c) (hp2 : 2 < p)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) (z : ℂ) (hz : z ∈ D n) :
+    Memℓp (fun k : ℤ => (sourceMidpointQuotientSup hp hp1 D ψ k : ℂ)) (p/2) ∧
+      0 ≤ sourceMidpointQuotientSup hp hp1 D ψ n ∧
+      ‖sourceMidpointQuotient hp hp1 ψ n z-1‖ ≤ sourceMidpointQuotientSup hp hp1 D ψ n :=
+  ⟨h.memℓp_midpointQuotientSup_half hp2 ψ hψ,h.midpointQuotientSup_nonneg ψ hψ n,
+    h.norm_le_midpointQuotientSup ψ hψ n z hz⟩
+
+end
+end SourceRemark109OptimalityChecks
