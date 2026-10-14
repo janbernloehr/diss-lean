@@ -3529,3 +3529,8 @@ import NLS.ZakharovShabat.SourcePsiPiecewiseContour
 import NLS.ZakharovShabat.SourcePsiOriginalPeriods
 import NLS.ZakharovShabat.SourceTheorem12_1
 import NLS.ZakharovShabat.SourceTheorem12_1Functions
+import NLS.ZakharovShabat.SourceLocalGapContourZeros
+import NLS.ZakharovShabat.SourceGapFunctional
+import NLS.ZakharovShabat.SourceGapFunctionalZeros
+import NLS.ZakharovShabat.SourceEquation2_22
+import NLS.ZakharovShabat.SourceLocalContourDomain

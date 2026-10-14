@@ -5,15 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves Theorem 12.1 on one common source neighborhood
-inside the retained Section 11 domain. The entire psi-functions have the
-literal product (2.20), analytic roots, locally uniform squared-gap root
-estimates for all indices, and normalized periods (2.21) on arbitrary
-admissible original circuits. Real-gap placement, collapsed gaps, and
-free normalization are included. Next: the functional formulation
-(2.22)–(2.23) and Lemmas 12.2–12.3.
+Latest step: the scalar psi equation (2.22) now works on arbitrary
+original circuits with its exact unnormalized factor. The zero-contour
+argument extends to local analytic numerators on filled contour disks,
+including collapsed real gaps. A verified interior-pole counterexample
+clarifies the analytic-domain requirement in Lemma 12.3.
+Next: complete the local-neighborhood and complex-gap contour estimates
+in Lemmas 12.2–12.3, then the sequence-valued mapping in Lemma 12.4.
 [The Section 12 audit](coverage/SECTION_12.md) records the precise scope;
-[Section 11](coverage/SECTION_11.md) retains the preceding results.
+[the source clarification](SOURCE_ERRATA.md) records the counterexample.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

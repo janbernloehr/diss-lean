@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: Theorem 12.1 and original psi circuits
+## Current milestone: scalar psi equations and local contour domains
+
+The scalar formulation of (2.22)–(2.23) now uses the actual original
+piecewise C¹ circuits. `sourceGapFunctional` is (n−m) times the raw
+canonical-root integral, with no 1/(2π) factor. Substituting the literal
+entire product recovers the existing circle coordinate for every
+arbitrary ℓᵖ displacement vector. Original circle families agree, and
+an arbitrary original circuit computes that coordinate times its winding.
+The simultaneous Theorem 12.1 family solves all these scalar equations.
+
+The zero-contour argument now applies to a numerator analytic near the
+filled original disk, with reality required only on the selected gap.
+It covers both open and collapsed real gaps and every nonzero circuit
+winding. In the collapsed case no reality condition on the numerator
+is needed. The older entire-numerator APIs retain their signatures and
+follow from these local proofs.
+
+A verified counterexample makes the domain requirement precise. At the
+free central gap {0}, f(z)=z/(z−1/2) is analytic on ℂ\{1/2}, which contains
+the gap and the unit circle, and f vanishes on the gap. Nevertheless its
+normalized standard-root contour is −1 and its normalized absolute value
+is 1. The circle avoids all periodic gaps. Thus mere inclusion of the
+gap and curve in an open analytic domain is insufficient for Lemma 12.3;
+interior poles must be excluded from the contour deformation region.
+See [the domain clarification](SOURCE_ERRATA.md).
+
+This step proves the scalar formulation and the local disk version of
+the zero-contour implication. It does not yet complete Lemmas 12.2–12.3
+for contours adapted to arbitrary analytic gap neighborhoods, or the
+complex open-gap maximum estimate. Those are next, followed by the full
+ℓᵖ-valued mapping assertion in Lemma 12.4. The dissertation remains
+incomplete. See the [Section 12 audit](coverage/SECTION_12.md).
+
+Validation: `./scripts/check.sh` passed (6,971 build jobs, the complete
+public example suite, and the axiom audit of 32,661 NLS declarations).
+The build retains 21 existing warnings; the five new modules, the
+refactored entire-numerator module, and seventeen focused checks are
+warning-free. The source inventory verified 156 candidate labels, and
+`git diff --check` passed. No admitted proofs, additional axioms, or
+heartbeat overrides were introduced.
+
+## Previous milestone: Theorem 12.1 and original psi circuits
 
 Four modules assemble the full statement of Theorem 12.1 for every
 finite p>1. `SourceSection11OriginalEstimates.psiFunctions` constructs one

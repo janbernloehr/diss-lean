@@ -1,5 +1,38 @@
 # Source discrepancies
 
+## Lemma 12.3: the numerator's analytic domain must allow the contour deformation
+
+Source: [dissertation, printed p. 64](https://janbernloehr.de/Download/fs16/diss.pdf#page=64),
+visually checked. The stated neighborhood contains the gap and its
+circuit. If this is read as an arbitrary open set containing just those
+two sets, it does not exclude poles between them. Such poles invalidate
+both the bound and the real mean-value conclusion.
+
+`SourceLocalContourDomain.lean` proves an explicit counterexample for
+every finite p>1. At zero potential G₀={0} and w₀(z)=−z. Take the positive
+unit circle and f(z)=z/(z−1/2). The open set ℂ\{1/2} contains G₀ and the
+circle, f is analytic there and real on the real axis, and f(0)=0. But
+
+    ∮ f(z)/w₀(z) dz = −2πi,
+    (2πi)⁻¹ ∮ f(z)/w₀(z) dz = −1,
+    |(2π)⁻¹ ∮ f(z)/w₀(z) dz| = 1 > 0 = max_{G₀}|f|.
+
+The numerator's pole at 1/2 supplies the extra residue. The circle itself
+avoids every free periodic gap, as proved by
+`sourceLocalContourPole_circle_rootDomain`. The counterexample is about
+the numerator's domain, not a failure of the standard-root branch or
+contour orientation.
+
+This clarifies the admissibility convention for the intended local
+theorem: the contour must be deformable to the gap inside the numerator's
+analytic region. For the current original-circle proofs, analyticity on
+a neighborhood of the filled contour disk is an explicit sufficient
+condition. An entire numerator meets it automatically. A contour adapted
+to an arbitrary smaller analytic gap neighborhood requires a further
+local argument; that broader assertion remains open in this audit.
+The disk version of Lemma 12.2's zero-contour implication uses the same
+explicit sufficient condition, with reality required only on the gap.
+
 ## Equation (2.18): the omitted-disk domain uses the union index
 
 Source: [dissertation, printed p. 62](https://janbernloehr.de/Download/fs16/diss.pdf#page=62),

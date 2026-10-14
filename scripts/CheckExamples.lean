@@ -49828,3 +49828,161 @@ example : ∃ W₀ : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W₀ ∧ IsConnect
 
 end
 end SourceTheorem121Checks
+
+namespace SourceGapFunctionalChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+
+-- The scalar functional retains the literal unnormalized factor n-m.
+example (ψ : CoeffPair p) (Γ : PiecewiseC1Loop) (f : ℂ → ℂ) :
+    sourceGapFunctional hp hp1 (-1) 1 ψ Γ f =
+      -2*Γ.integral (fun z => f z/sourceCanonicalRoot hp hp1 ψ z) := by
+  norm_num [sourceGapFunctional]
+
+-- The product may use any displacement vector, without root placement or equation hypotheses.
+example (n : ℤ) (a : Coeff p) (z : ℂ) :
+    Tendsto (fun N : ℕ => (-2/singleSpectralDenominator n)*
+      ∏ m ∈ (Finset.Icc (-(N:ℤ)) (N:ℤ)).erase n,
+        (((Real.pi:ℂ)*m+a m)-z)/singleSpectralDenominator m)
+      atTop (𝓝 (sourcePsiCandidate n (z,a))) :=
+  tendsto_sourcePsiCandidate_literalProduct hp hp1 n a z
+
+example (n m : ℤ) (a : Coeff p) (ψ : CoeffPair p) (c : ℂ) (r : ℝ) :
+    sourceGapFunctional hp hp1 n m ψ (PiecewiseC1Loop.circle c r)
+      (fun z => sourcePsiCandidate n (z,a)) = sourcePsiEquationCoordinate hp hp1 n m a ψ c r :=
+  sourceGapFunctional_candidate_circle hp hp1 n m a ψ c r
+
+-- Arbitrary original circle families give the same equation, at complex sources.
+example (ψ : CoeffPair p) (n m : ℤ) (a : Coeff p)
+    (D E : SourceCriticalRootPeriodCircle hp hp1 ψ m) :
+    sourcePsiEquationCoordinate hp hp1 n m a ψ (D.center:ℂ) D.radius =
+      sourcePsiEquationCoordinate hp hp1 n m a ψ (E.center:ℂ) E.radius := D.psiEquation_eq E n a
+
+-- The circle coordinate computes every winding-one original circuit exactly.
+example (ψ : CoeffPair p) (n m : ℤ) (a : Coeff p)
+    (D : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (ball (D.center:ℂ) D.radius \ sourcePeriodicSegment hp hp1 ψ m))
+    (hw : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) = 1) :
+    ((n-m:ℤ):ℂ)*Γ.integral
+      (fun z => sourcePsiCandidate n (z,a)/sourceCanonicalRoot hp hp1 ψ z) =
+        sourcePsiEquationCoordinate hp hp1 n m a ψ (D.center:ℂ) D.radius := by
+  change sourceGapFunctional hp hp1 n m ψ Γ _ = _
+  rw [D.psiEquation_circuit n a Γ hΓ,hw,mul_one]
+
+-- The preceding common-domain psi family solves all the scalar equations simultaneously.
+example {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (H : SourceTheorem12_1Data hp hp1 W₀ W s)
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (hψV : ψ ∈ V) (n m : ℤ)
+    (Γ : PiecewiseC1Loop) (hΓ : Γ.Inside (D m \ sourcePeriodicSegment hp hp1 ψ m)) :
+    sourceGapFunctional hp hp1 n m ψ Γ (fun z => sourcePsiCandidate n (z,(s n ψ : Coeff p))) = 0 :=
+  H.equation_zero hD ψ hψ hψV n m Γ hΓ
+
+-- The zero-contour theorem uses only a filled local disk and reality on the gap.
+example (ψ : CoeffPair p) (hψ : IsRealType (CoeffPair.toMax p ψ)) (m : ℤ)
+    (D : SourceCriticalRootPeriodCircle hp hp1 ψ m) (f : ℂ → ℂ)
+    (hf : AnalyticOnNhd ℂ f (closedBall (D.center:ℂ) D.radius))
+    (hr : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ m, (f z).im = 0)
+    (hz : (∮ z in C((D.center:ℂ),D.radius), f z/sourceCanonicalRoot hp hp1 ψ z) = 0) :
+    ∃ z ∈ sourcePeriodicSegment hp hp1 ψ m, f z = 0 :=
+  D.localNumerator_zero_of_circle hψ f hf hr hz
+
+-- Reversed orientation still gives a gap zero; the winding need only be nonzero.
+example (ψ : CoeffPair p) (hψ : IsRealType (CoeffPair.toMax p ψ)) (n m : ℤ) (hmn : m ≠ n)
+    (D : SourceCriticalRootPeriodCircle hp hp1 ψ m) (f : ℂ → ℂ)
+    (hf : AnalyticOnNhd ℂ f (closedBall (D.center:ℂ) D.radius))
+    (hr : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ m, (f z).im = 0)
+    (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (ball (D.center:ℂ) D.radius \ sourcePeriodicSegment hp hp1 ψ m))
+    (hw : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) = -1)
+    (hz : sourceGapFunctional hp hp1 n m ψ Γ f = 0) :
+    ∃ z ∈ sourcePeriodicSegment hp hp1 ψ m, f z = 0 :=
+  D.localNumerator_zero_of_functional hψ n hmn f hf hr Γ hΓ (by rw [hw]; norm_num) hz
+
+-- The collapsed case does not require a real-valued numerator.
+example (ψ : CoeffPair p) (hψ : IsRealType (CoeffPair.toMax p ψ)) (m : ℤ)
+    (D : SourceCriticalRootPeriodCircle hp hp1 ψ m) (f : ℂ → ℂ)
+    (hf : AnalyticOnNhd ℂ f (closedBall (D.center:ℂ) D.radius))
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m = 0)
+    (hz : (∮ z in C((D.center:ℂ),D.radius), f z/sourceCanonicalRoot hp hp1 ψ z) = 0) :
+    f (sourceStandardRootMidpoint hp hp1 ψ m) = 0 :=
+  sourceLocalNumerator_zero_at_collapsedGap hp hp1 ψ hψ m f hg (D.center:ℂ) D.radius D.radius_pos hf
+    (D.gap (sourcePeriodicMidpoint_mem_segment hp hp1 ψ m))
+    D.closedBall_subset_omittedDomain D.sphere_subset_rootDomain hz
+
+-- A rational numerator with a pole outside the filled disk is a valid local input.
+example (D : SourceCriticalRootPeriodCircle hp hp1 (0:CoeffPair p) 0)
+    (h2 : (2:ℂ) ∉ closedBall (D.center:ℂ) D.radius) :
+    (∮ z in C((D.center:ℂ),D.radius), (z-2)⁻¹/sourceCanonicalRoot hp hp1 (0:CoeffPair p) z) ≠ 0 := by
+  intro hz
+  have hf : AnalyticOnNhd ℂ (fun z : ℂ => (z-2)⁻¹) (closedBall (D.center:ℂ) D.radius) := by
+    intro z hzd
+    exact (analyticAt_id.sub analyticAt_const).inv (sub_ne_zero.mpr (by
+      intro he
+      change z = 2 at he
+      exact h2 (he ▸ hzd)))
+  have hgap : sourcePeriodicSegment hp hp1 (0:CoeffPair p) 0 = {0} := by
+    simpa using sourcePeriodicSegment_zero_source hp hp1 (p := p) 0
+  obtain ⟨z,hzgap,hzero⟩ := D.localNumerator_zero_of_circle (by simp [IsRealType]) _ hf (by
+    intro z hz
+    rw [hgap,mem_singleton_iff] at hz
+    simp [hz]) hz
+  rw [hgap,mem_singleton_iff] at hzgap
+  norm_num [hzgap] at hzero
+
+-- The exclusion m≠n is essential: the diagonal functional vanishes even for f=1.
+example (ψ : CoeffPair p) (n : ℤ) (Γ : PiecewiseC1Loop) :
+    sourceGapFunctional hp hp1 n n ψ Γ (fun _ => 1) = 0 ∧
+      ¬∃ z ∈ sourcePeriodicSegment hp hp1 ψ n, (1:ℂ) = 0 := by
+  simp [sourceGapFunctional]
+
+-- A zero-winding empty traversal also vanishes for the nonzero constant numerator.
+example (ψ : CoeffPair p) (n m : ℤ) :
+    sourceGapFunctional hp hp1 n m ψ
+      (PiecewiseC1Loop.repeatPath 0 (circlePath 0 1)
+        ((circlePath_contDiffOn 0 1).of_le (by norm_num))) (fun _ => 1) = 0 := by
+  simp [sourceGapFunctional]
+
+-- Mere inclusion of the curve and the gap in an open analytic domain does not give a mean value.
+example : sphere (0:ℂ) 1 ⊆ sourceCanonicalRootDomain hp hp1 (0:CoeffPair p) ∧
+    (PiecewiseC1Loop.circle 0 1).windingIntegral 0 = 1 :=
+  ⟨sourceLocalContourPole_circle_rootDomain p hp hp1,
+    PiecewiseC1Loop.windingIntegral_circle 0 0 1 (by simp)⟩
+
+example : ¬∃ μ ∈ sourcePeriodicSegment hp hp1 (0:CoeffPair p) 0,
+    (2*(Real.pi:ℂ)*Complex.I)⁻¹ *
+      (∮ z in C((0:ℂ),1), sourceLocalContourPole z/sourceStandardRoot hp hp1 (0:CoeffPair p) 0 z) =
+        -sourceLocalContourPole μ := by
+  obtain ⟨_,_,_,_,_,_,hzero,hmean,_⟩ := sourceLocalContourPole_counterexample p hp hp1
+  rintro ⟨μ,hμ,he⟩
+  rw [hmean,hzero μ hμ] at he
+  norm_num at he
+
+-- The same explicit numerator disproves the maximum bound under that insufficient domain premise.
+example : ¬∃ μ ∈ sourcePeriodicSegment hp hp1 (0:CoeffPair p) 0,
+    ‖(2*(Real.pi:ℂ))⁻¹ *
+      (∮ z in C((0:ℂ),1), sourceLocalContourPole z/sourceStandardRoot hp hp1 (0:CoeffPair p) 0 z)‖ ≤
+        ‖sourceLocalContourPole μ‖ := by
+  obtain ⟨_,_,_,_,_,_,hzero,_,hnorm⟩ := sourceLocalContourPole_counterexample p hp hp1
+  rintro ⟨μ,hμ,he⟩
+  rw [hnorm,hzero μ hμ,norm_zero] at he
+  norm_num at he
+
+local instance functionalThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : (∮ z in C((0:ℂ),1), sourceLocalContourPole z /
+    sourceStandardRoot (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) 0 0 z) = -(2*(Real.pi:ℂ)*Complex.I) :=
+  circleIntegral_sourceLocalContourPole _ (by norm_num) (by norm_num)
+
+local instance functionalFour : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : (∮ z in C((0:ℂ),1), sourceLocalContourPole z /
+    sourceStandardRoot (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num) 0 0 z) = -(2*(Real.pi:ℂ)*Complex.I) :=
+  circleIntegral_sourceLocalContourPole _ (by norm_num) (by norm_num)
+
+end
+end SourceGapFunctionalChecks

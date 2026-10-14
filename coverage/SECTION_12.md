@@ -3,7 +3,10 @@
 This audit begins with printed p. 63 of the dissertation. Theorem 12.1,
 including the entire product (2.20) and the normalized periods (2.21), is
 proved on one common neighborhood inside the original Section 11 source
-domain. The next audit concerns (2.22)–(2.23) and Lemmas 12.2–12.3.
+domain. The scalar formulation (2.22)–(2.23) and the zero-contour implication for
+local numerators on filled original disks are now proved. The complete
+arbitrary-neighborhood and complex-gap assertions in Lemmas 12.2–12.3
+remain the next audit.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -94,3 +97,64 @@ There are 21 existing build warnings; the four new modules and twenty
 focused checks are warning-free. No admitted proofs, additional axioms,
 or heartbeat overrides were introduced. The 156-label source inventory,
 repository documentation links and `git diff --check` also passed.
+
+## Scalar equations (2.22)–(2.23) and local numerator domains
+
+`sourceGapFunctional hp hp1 n m ψ Γ f` is exactly
+(n−m)∫_Γ f/canonicalRoot. Its actual finite piecewise C¹ integral has no
+normalizing factor. `sourceGapFunctional_candidate_circle` identifies it
+with `sourcePsiEquationCoordinate` when f is the arbitrary entire product
+in (2.23). The existing literal symmetric-product limit applies to every
+ℓᵖ displacement vector; no root placement or equation-solving hypothesis
+is imposed. The unused deleted coordinate remains irrelevant.
+
+`SourceCriticalRootPeriodCircle.psiEquation_eq` proves independence of
+original circle families. `.psiEquation_circuit` gives the coordinate
+times winding on every original cut disk. `SourceTheorem12_1Data.equation_zero`
+shows that the same simultaneous root family solves all these scalar
+equations, without requiring a new choice of roots or source domain.
+The full sequence-valued range and uniform mapping statement belong to
+Lemma 12.4 and are not asserted by these scalar identities.
+
+The general `.localNumerator_circuit_eq` and
+`.gapFunctional_eq_mul_winding` allow any numerator analytic on a
+neighborhood of the filled original disk. At real sources,
+`.localNumerator_zero_of_circle` combines open and collapsed gaps.
+`.localNumerator_zero_of_functional` assumes m≠n and any nonzero winding,
+and concludes a genuine numerator zero in the actual gap. The numerator
+need only be real on that gap. The collapsed Cauchy argument itself
+needs no numerator reality. `.localNumerator_zero_of_functional_on`
+accepts an explicitly supplied larger analytic domain containing the
+filled disk. The entire-numerator APIs keep their original signatures
+and now specialize these local proofs.
+
+The hypotheses about the analytic region are substantive. The verified
+`sourceLocalContourPole_counterexample` shows that merely containing the
+gap and curve in an open analytic domain does not imply either conclusion
+of Lemma 12.3. At the free collapsed gap, f(z)=z/(z−1/2) gives zero on the
+gap but normalized period −1 and normalized norm 1 on the unit circle.
+The circle avoids all free gaps. See the
+[domain clarification](../SOURCE_ERRATA.md) for the precise interpretation.
+
+This is the disk version of the local zero-contour implication. The audit
+does not yet claim the complete arbitrary-neighborhood version of Lemma
+12.2, the complex open-gap estimate of Lemma 12.3, or its full admissible
+local-contour formulation. Those remain ahead of Lemma 12.4.
+
+Five new modules supply this continuation: `SourceLocalGapContourZeros`,
+`SourceGapFunctional`, `SourceGapFunctionalZeros`, `SourceEquation2_22`,
+and `SourceLocalContourDomain`. `SourceEntireGapContourZeros` now wraps
+the local proofs while preserving its public signatures. Seventeen
+focused public checks cover the unnormalized signed factor, arbitrary
+products and circle choices, original circuits, the simultaneous
+solutions, local numerators, reversed winding, collapsed gaps without
+numerator reality, an exterior pole, the necessity of m≠n and nonzero
+winding, the actual winding and gap avoidance of the counterexample,
+both refuted conclusions, and p=3/2 and p=4.
+
+Validation: `./scripts/check.sh` passed (6,971 build jobs, the complete
+public example suite, and the axiom audit of 32,661 NLS declarations).
+The build retains 21 existing warnings; all new and refactored modules
+and the seventeen focused checks are warning-free. The 156-label source
+inventory and `git diff --check` passed. No admitted proofs, additional
+axioms, or heartbeat overrides were introduced.
