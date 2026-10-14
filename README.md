@@ -5,15 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves the remaining page 62 estimates on the original
-complex source domain. The literal gap supremum of |χ_n−1| and the filled
-normalized-action deviation have locally uniform ℓ^(p/2)+ℓ^(1+)
-decompositions, with one neighborhood and fixed summand functions for
-all indices and one-plus exponents. Collapsed gaps and p/2<1 are included.
-Next: Section 12, the simultaneous psi-functions (2.20) and normalized
-periods (2.21).
-[The Section 11 audit](coverage/SECTION_11.md) records the precise scope;
-[Section 10](coverage/SECTION_10.md) retains the preceding results.
+Latest step: Lean proves Theorem 12.1 on one common source neighborhood
+inside the retained Section 11 domain. The entire psi-functions have the
+literal product (2.20), analytic roots, locally uniform squared-gap root
+estimates for all indices, and normalized periods (2.21) on arbitrary
+admissible original circuits. Real-gap placement, collapsed gaps, and
+free normalization are included. Next: the functional formulation
+(2.22)–(2.23) and Lemmas 12.2–12.3.
+[The Section 12 audit](coverage/SECTION_12.md) records the precise scope;
+[Section 11](coverage/SECTION_11.md) retains the preceding results.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

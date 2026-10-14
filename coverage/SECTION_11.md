@@ -14,7 +14,8 @@ The fixed-domain disk index is corrected as documented in
 weighted gap integral, the collapsed limit and analytic extension are
 also proved on the original domain. The remaining p. 62 estimates for
 the literal gap supremum and normalized actions now hold locally uniformly
-on that full domain. The next source audit is Section 12.
+on that full domain. The continuation through Theorem 12.1 is recorded
+in the [Section 12 audit](SECTION_12.md).
 
 ## One neighborhood for all original contours
 

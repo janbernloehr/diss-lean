@@ -5541,3 +5541,42 @@ square root remain on Theorem 11.2's established smaller domain. The
 dissertation remains incomplete. See the [Section 11 audit](coverage/SECTION_11.md).
 
 Validation: `./scripts/check.sh` passed (6,962 build jobs, the complete public example suite, and the axiom audit of 32,580 NLS declarations). The build retains 21 existing warnings; the five new modules and seventeen focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Section 12: Theorem 12.1 and original psi circuits
+
+Four modules assemble the full statement of Theorem 12.1 for every
+finite p>1. `SourceSection11OriginalEstimates.psiFunctions` constructs one
+open, simply connected W inside the supplied original W₀, containing the
+whole real-type source locus and supporting every deleted index n.
+The complete preceding Section 11 package on W₀ is retained.
+
+The entire functions use the literal symmetric product (2.20), with
+prefactor −2/πₙ and π₀=1. Their roots are complex analytic, hence real
+analytic, in the source. At every complex point of W, one neighborhood
+and one positive bound work for all n in σₘⁿ=τₘ+γₘ²aₘⁿ, with actual
+bounded ℓᵖ vectors aⁿ and aₙⁿ=0. At real sources every retained root lies
+between the actual periodic endpoints; at zero potential σₘⁿ=mπ.
+
+Equation (2.21) holds on every admissible original piecewise C¹ circuit,
+with the exact factor 1/(2π). More generally, its period is δₘₙ times
+the winding around the actual gap midpoint. The proof compares the
+atlas's assigned circles with arbitrary original circles and then uses
+the contour theorem for a disk cut along a compact segment. Collapsed
+complex gaps and the finite central block are included.
+
+Twenty focused checks cover retention of the original domain, the
+literal product and zero-mode denominator, genuine root zeros,
+entireness and joint analyticity, all-index uniformity, complex collapsed
+roots, real endpoint bounds, arbitrary circuits and winding two,
+nonzero free normalization, both signed free roots, and p=3/2 and p=4.
+
+Next: audit the functional formulation (2.22)–(2.23) and Lemmas 12.2–12.3
+against the original domain and circuits. The dissertation remains
+incomplete. See the [Section 12 audit](coverage/SECTION_12.md).
+
+Validation: `./scripts/check.sh` passed (6,966 build jobs, the complete
+public example suite, and the axiom audit of 32,621 NLS declarations).
+The build retains 21 existing warnings; the four new modules and twenty
+focused checks are warning-free. The source inventory verified 156
+candidate labels, and `git diff --check` passed. No admitted proofs,
+additional axioms, or heartbeat overrides were introduced.

@@ -3525,3 +3525,7 @@ import NLS.ZakharovShabat.SourceActionChiUniform
 import NLS.ZakharovShabat.SourceNormalizedIndexedActionEstimate
 import NLS.ZakharovShabat.SourceNormalizedIndexedActionUniform
 import NLS.ZakharovShabat.SourceSection11OriginalEstimates
+import NLS.ZakharovShabat.SourcePsiPiecewiseContour
+import NLS.ZakharovShabat.SourcePsiOriginalPeriods
+import NLS.ZakharovShabat.SourceTheorem12_1
+import NLS.ZakharovShabat.SourceTheorem12_1Functions

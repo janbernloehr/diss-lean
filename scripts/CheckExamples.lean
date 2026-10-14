@@ -49670,3 +49670,161 @@ example : ∃ W : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W ∧ IsConnected W �
 
 end
 end SourceSection11OriginalChecks
+
+
+namespace SourceTheorem121Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ W : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+
+-- The new common domain retains the supplied original domain and its preceding results.
+example (H : SourceSection11OriginalEstimates hp hp1 W₀) (ho : IsOpen W₀)
+    (hr : realTypeSourceLocus p ⊆ W₀) :
+    ∃ W : Set (CoeffPair p), IsOpen W ∧ IsSimplyConnected W ∧ realTypeSourceLocus p ⊆ W ∧
+      ∃ s : (n : ℤ) → CoeffPair p → DeletedCoeff p n,
+        W ⊆ W₀ ∧ SourceSection11OriginalEstimates hp hp1 W₀ ∧ SourceTheorem12_1Data hp hp1 W₀ W s := by
+  obtain ⟨W,ho,hc,hr,s,hs⟩ := H.psiFunctions ho hr
+  exact ⟨W,ho,hc,hr,s,hs.subset,hs.previous,hs⟩
+
+-- The literal product uses the actual solved roots, all signed cutoffs, and -2/πₙ.
+example (n : ℤ) (ψ : CoeffPair p) (z : ℂ) :
+    Tendsto (fun N : ℕ => (-2 / singleSpectralDenominator n) *
+      ∏ m ∈ (Finset.Icc (-(N : ℤ)) (N : ℤ)).erase n,
+        (displacedRoots (s n ψ : Coeff p) m-z)/singleSpectralDenominator m)
+      atTop (𝓝 (sourcePsiCandidate n (z,(s n ψ : Coeff p)))) :=
+  tendsto_sourcePsiCandidate_literalProduct hp hp1 n _ z
+
+-- At n=0 the prefactor is -2, because π₀=1.
+example (ψ : CoeffPair p) (z : ℂ) :
+    Tendsto (fun N : ℕ => -2 *
+      ∏ m ∈ (Finset.Icc (-(N : ℤ)) (N : ℤ)).erase 0,
+        (displacedRoots (s 0 ψ : Coeff p) m-z)/singleSpectralDenominator m)
+      atTop (𝓝 (sourcePsiCandidate 0 (z,(s 0 ψ : Coeff p)))) := by
+  have hden : singleSpectralDenominator 0 = 1 := by simp [singleSpectralDenominator]
+  simpa only [hden,div_one] using tendsto_sourcePsiCandidate_literalProduct hp hp1 0 (s 0 ψ : Coeff p) z
+
+-- Every retained displaced root is a genuine zero, including colliding roots.
+example (n m : ℤ) (hmn : m ≠ n) (ψ : CoeffPair p) :
+    sourcePsiCandidate n (displacedRoots (s n ψ : Coeff p) m,(s n ψ : Coeff p)) = 0 :=
+  sourcePsiCandidate_other_root hp hp1 n m hmn _
+
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (n : ℤ) (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    Differentiable ℂ (fun z => sourcePsiCandidate n (z,(s n ψ : Coeff p))) := H.entire n ψ hψ
+
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p => sourcePsiCandidate n (t.1,(s n t.2 : Coeff p)))
+      (univ ×ˢ W) := H.numerator_joint n
+
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (n m : ℤ) :
+    AnalyticOnNhd ℂ (fun ψ => displacedRoots (s n ψ : Coeff p) m) W ∧
+    AnalyticOnNhd ℝ (fun ψ => displacedRoots (s n ψ : Coeff p) m) W :=
+  ⟨H.root_analytic n m,H.root_real_analytic n m⟩
+
+-- One neighborhood and bound precede all deleted indices, at every complex source.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧ V ⊆ W ∧
+      ∃ C : ℝ, 0 < C ∧ ∀ ψ ∈ V, ∀ n : ℤ, ∃ a : Coeff p, a n = 0 ∧
+        (∀ m : ℤ, m ≠ n → displacedRoots (s n ψ : Coeff p) m =
+          sourceStandardRootMidpoint hp hp1 ψ m+(sourcePeriodicGapDisplacement hp hp1 ψ m)^2*a m) ∧ ‖a‖ ≤ C :=
+  H.locally_uniform_offsets φ hφ
+
+-- A collapsed complex gap forces its retained root to equal the actual midpoint.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (ψ : CoeffPair p) (hψ : ψ ∈ W)
+    (n m : ℤ) (hmn : m ≠ n) (hg : sourcePeriodicGapDisplacement hp hp1 ψ m = 0) :
+    displacedRoots (s n ψ : Coeff p) m = sourceStandardRootMidpoint hp hp1 ψ m := by
+  obtain ⟨V,_,hV,_,C,_,ha⟩ := H.locally_uniform_offsets ψ hψ
+  obtain ⟨a,_,he,_⟩ := ha ψ hV n
+  simpa only [hg,zero_pow (by decide : 2 ≠ 0),zero_mul,add_zero] using he m hmn
+
+-- The real bounds refer to the actual ordered periodic endpoints.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (n m : ℤ) (hmn : m ≠ n)
+    (φ : realTypeSourceLocus p) :
+    (displacedRoots (s n φ.val : Coeff p) m).im = 0 ∧
+      (displacedRoots (s n φ.val : Coeff p) m).re ∈ Icc
+        (canonicalPeriodicLeft hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m).re
+        (canonicalPeriodicRight hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m).re :=
+  H.root_real_bounds n m hmn φ
+
+-- The central diagonal period is one even at a collapsed complex gap.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (ψ : CoeffPair p) (hψ : ψ ∈ W)
+    (D : SourceCriticalRootPeriodCircle hp hp1 ψ 0) :
+    sourcePsiContour hp hp1 0 (s 0 ψ : Coeff p) ψ (D.center:ℂ) D.radius = 1 := by
+  simpa using H.period ψ hψ 0 0 D
+
+-- Two unrelated original circles give the same period for any numerator.
+example (ψ : CoeffPair p) (m n : ℤ) (a : Coeff p)
+    (D E : SourceCriticalRootPeriodCircle hp hp1 ψ m) :
+    sourcePsiContour hp hp1 n a ψ (D.center:ℂ) D.radius =
+      sourcePsiContour hp hp1 n a ψ (E.center:ℂ) E.radius := D.psiContour_eq E n a
+
+-- Winding two gives period two for the selected index, with the literal normalization.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) {V : Set (CoeffPair p)}
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (hψV : ψ ∈ V) (n : ℤ)
+    (Γ : PiecewiseC1Loop) (hΓ : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n))
+    (hw : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = 2) :
+    (2*Real.pi:ℂ)⁻¹*Γ.integral
+      (fun z => sourcePsiCandidate n (z,(s n ψ : Coeff p))/sourceCanonicalRoot hp hp1 ψ z) = 2 := by
+  change sourcePsiCircuit hp hp1 n (s n ψ : Coeff p) ψ Γ = 2
+  rw [H.circuit_winding hD ψ hψ hψV n n Γ hΓ,if_pos rfl,one_mul,hw]
+
+-- The literal equation (2.21) applies to any admissible original circuit.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) {V : Set (CoeffPair p)}
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (hψV : ψ ∈ V) (n m : ℤ)
+    (Γ : PiecewiseC1Loop) (hΓ : Γ.Inside (D m \ sourcePeriodicSegment hp hp1 ψ m))
+    (hw : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m) = 1) :
+    (2*Real.pi:ℂ)⁻¹*Γ.integral
+      (fun z => sourcePsiCandidate n (z,(s n ψ : Coeff p))/sourceCanonicalRoot hp hp1 ψ z) =
+        if m = n then 1 else 0 := H.circuit hD ψ hψ hψV n m Γ hΓ hw
+
+-- The exact free roots include zero and both signed tails.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (n m : ℤ) :
+    displacedRoots (s n 0 : Coeff p) m = (Real.pi:ℂ)*m := H.root_zero n m
+
+-- The actual free numerator does not vanish at its omitted root.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) (n : ℤ) :
+    sourcePsiCandidate n ((Real.pi:ℂ)*n,(s n 0 : Coeff p)) ≠ 0 := by
+  rw [H.numerator_zero]
+  exact sourcePsiFree_center_ne_zero n
+
+-- Its retained negative and positive lattice roots both vanish.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) :
+    sourcePsiCandidate 0 (-(Real.pi:ℂ),(s 0 0 : Coeff p)) = 0 ∧
+      sourcePsiCandidate 0 ((Real.pi:ℂ),(s 0 0 : Coeff p)) = 0 := by
+  simp only [H.numerator_zero]
+  constructor
+  · simpa using sourcePsiFree_other_center_eq_zero 0 (-1) (by decide)
+  · simpa using sourcePsiFree_other_center_eq_zero 0 1 (by decide)
+
+-- A nonzero numerical free normalization rules out an accidentally zero numerator.
+example (H : SourceTheorem12_1Data hp hp1 W₀ W s) :
+    sourcePsiCandidate 0 (0,(s 0 0 : Coeff p)) = -2 := by
+  rw [H.numerator_zero,sourcePsiFree]
+  have h := freeSineQuotient_center 0
+  simpa using congrArg (fun z : ℂ => -2*z) h
+
+local instance theorem121ThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W₀ : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W₀ ∧ IsConnected W₀ ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W₀ ∧
+      ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsSimplyConnected W ∧
+        realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+          ∃ s : (n : ℤ) → CoeffPair (ENNReal.ofReal (3/2)) → DeletedCoeff (ENNReal.ofReal (3/2)) n,
+            SourceTheorem12_1Data (by norm_num) (by norm_num) W₀ W s :=
+  sourceTheorem12_1 (by norm_num) (by norm_num)
+
+local instance theorem121Four : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W₀ : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W₀ ∧ IsConnected W₀ ∧
+    realTypeSourceLocus (4 : ℝ≥0∞) ⊆ W₀ ∧
+      ∃ W : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W ∧ IsSimplyConnected W ∧
+        realTypeSourceLocus (4 : ℝ≥0∞) ⊆ W ∧
+          ∃ s : (n : ℤ) → CoeffPair (4 : ℝ≥0∞) → DeletedCoeff (4 : ℝ≥0∞) n,
+            SourceTheorem12_1Data (by norm_num) (by norm_num) W₀ W s :=
+  sourceTheorem12_1 (by norm_num) (by norm_num)
+
+end
+end SourceTheorem121Checks
