@@ -1,6 +1,47 @@
 # Implementation plan
 
-## Current milestone: Lemma 8.1 in the original source space
+## Current milestone: Lemma 8.2 and the original real-gap characterization
+
+`SourcePeriodicEndpointContinuity.lean` recovers the actual left and right
+endpoint displacement sequences from the midpoint displacement and half
+the gap. Their existing sequence-norm continuity therefore gives continuity
+of both endpoint sequences in ℓp at every real-type source. Perturbations
+range over the whole complex source space. One open neighborhood controls
+both endpoint errors simultaneously at every signed integer index.
+
+`SourceLemma8_2.lean` constructs the original-source statement for every
+finite p>1. Each actual canonical endpoint is continuous at real type,
+real-valued there, and belongs to the original periodic spectrum. The
+interlacing chain has a weak inequality within each gap and strict
+inequalities between neighboring gaps. Distinct closed gaps are disjoint,
+including central gaps and gaps of zero width.
+
+The signed endpoint identity (2.5) uses integer powers and holds at both
+endpoints for every positive and negative index. The following unnumbered
+source assertions are also assembled: the signed discriminant inequality
+on each closed gap, the full closed-gap union as the modulus-at-least-two
+set, the open-gap interiors as the modulus-greater-than-two set, and the
+endpoint set as the modulus-two set. Each superlevel point has a unique
+gap index. At zero potential every gap is exactly its signed lattice
+singleton; there are no false open gap interiors.
+
+No simplicity or open-gap assumption is added. The result is continuity
+at real-type base points under arbitrary complex perturbations, without
+asserting global continuity of lexicographic labels at complex base points.
+The precise scope is indexed in `coverage/SECTION_8.md`.
+
+Public checks cover p=3/2, complex approximating sequences, a single
+neighborhood for all indices, the negative-index level, uniqueness of the
+gap index, and collapsed gaps at zero. Both new modules and the focused
+public probe compile warning-free.
+
+Next: Lemma 8.3, the locally uniform critical-root counts, exhaustion, and
+reality of the discriminant derivative's roots. The dissertation remains
+incomplete.
+
+Validation: `./scripts/check.sh` passed: 6832 build jobs, the combined public examples, and the axiom audit of 31092 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Lemma 8.1 in the original source space
 
 `SourceDiscriminantExtension.lean` identifies the source discriminant with
 the physical L² monodromy trace. For p≥2 it extends along the original

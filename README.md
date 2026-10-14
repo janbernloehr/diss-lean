@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 8.1 now has a combined original-source theorem
-for the discriminant products, unique analytic extension, exact spectral
-multiplicities, and simultaneous exterior estimates. The printed product
-prefactors and unrestricted cosine quotient require corrections, with
-formal counterexamples. [The Section 8 audit](coverage/SECTION_8.md)
-records the valid results and the precise discrepancies.
-Next is Lemma 8.2's real-source eigenvalue continuity and interlacing.
+Latest milestone: Lemma 8.2 now gives original-source endpoint continuity
+under complex perturbations at real type, strict separation of neighboring
+gaps, and the following discriminant characterization of the real gaps.
+Endpoint displacement sequences are also continuous in ℓp, with one
+neighborhood controlling every index. Collapsed and negative-index gaps
+are included. [The Section 8 audit](coverage/SECTION_8.md) records the scope.
+Next is Lemma 8.3's critical-root counts and reality.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

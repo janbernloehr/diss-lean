@@ -46183,3 +46183,72 @@ example : ¬∃ Δ : ℂ, Tendsto (printedFreePeriodicProduct 0) atTop (𝓝 (Δ
 
 end
 end SourceLemma81Checks
+
+namespace SourceLemma82Checks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+noncomputable section
+
+private abbrev p82 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource82ThreeHalf : Fact (1 ≤ p82) := ⟨by norm_num [p82,ENNReal.one_le_ofReal]⟩
+
+-- The complete theorem applies below two and at a potential where every gap is collapsed.
+example : SourceLemma8_2Data (p := p82) (by simp [p82]) (by norm_num [p82,ENNReal.one_lt_ofReal]) 0 :=
+  sourceLemma8_2 _ _ 0 (by simpa only [map_zero] using (isRealType_zero (p := p82)))
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+  (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+
+-- Perturbing sources may be complex; only the limiting source is assumed real type.
+example (ψ : ℕ → CoeffPair p) (hψ : Tendsto ψ atTop (𝓝 φ)) (n : ℤ) :
+    Tendsto (fun k =>
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential (ψ k)) (periodOnePotential_mem (ψ k)) n,
+        canonicalPeriodicRight hp hp1 (periodOnePotential (ψ k)) (periodOnePotential_mem (ψ k)) n)) atTop
+      (𝓝 (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n,
+        canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n)) := by
+  let D := sourceLemma8_2 hp hp1 φ hφ
+  exact ((D.continuous_left n).prodMk (D.continuous_right n)).tendsto.comp hψ
+
+-- A single neighborhood controls every index, not a different neighborhood for each coordinate.
+example : ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ ∀ ψ ∈ U, ∀ n : ℤ,
+    ‖canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+      canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n‖ < 1/10 ∧
+    ‖canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+      canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n‖ < 1/10 :=
+  exists_uniform_sourcePeriodicEndpoint_neighborhood hp hp1 φ hφ (by norm_num)
+
+-- The integer-power level convention also identifies a negative-index discriminant value.
+example : canonicalDiscriminant hp (periodOnePotential φ)
+    (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) (-1)) = -2 := by
+  have h := ((sourceLemma8_2 hp hp1 φ hφ).endpoint_levels (-1)).1
+  norm_num at h
+  exact neg_eq_iff_eq_neg.mp h
+
+-- Superlevel points have a unique gap index, including points of closed gaps of zero width.
+example (x : ℝ) (hx : 2 ≤ ‖canonicalDiscriminant hp (periodOnePotential φ) x‖) :
+    ∃! n : ℤ, x ∈ sourceRealPeriodicGap hp hp1 φ n :=
+  ((sourceLemma8_2 hp hp1 φ hφ).existsUnique_gap x).mp hx
+
+-- Equal endpoints are allowed within a gap, while distinct gap indices remain disjoint.
+example (i j : ℤ) (hij : i ≠ j) :
+    Disjoint (sourceRealPeriodicGap hp hp1 (0 : CoeffPair p) i)
+      (sourceRealPeriodicGap hp hp1 (0 : CoeffPair p) j) :=
+  (sourceLemma8_2 hp hp1 0 (by simpa only [map_zero] using (isRealType_zero (p := p)))).disjoint_gaps i j hij
+
+-- At zero the gaps are precisely the signed singleton lattice points.
+example : sourceRealPeriodicGap hp hp1 (0 : CoeffPair p) (-1) = {-Real.pi} := by
+  rw [sourceRealPeriodicGap_zero]
+  norm_num
+
+-- The open-gap characterization gives no false open interiors at the free potential.
+example (x : ℝ) : ‖canonicalDiscriminant hp (periodOnePotential (0 : CoeffPair p)) x‖ ≤ 2 := by
+  let D := sourceLemma8_2 hp hp1 0 (by simpa only [map_zero] using (isRealType_zero (p := p)))
+  by_contra h
+  obtain ⟨n,hn⟩ := (D.open_gaps x).mp (lt_of_not_ge h)
+  simp only [map_zero,canonicalPeriodicLeft_zero,canonicalPeriodicRight_zero,mem_Ioo] at hn
+  exact (lt_asymm hn.1 hn.2)
+
+end
+end
+end SourceLemma82Checks

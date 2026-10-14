@@ -79,7 +79,7 @@ spectrum of `periodOnePotential φ` and each analytic zero order with its
 original spectral algebraic multiplicity. The product is therefore more
 than a characteristic function with the correct zero set.
 
-## Combined theorem and next step
+## Lemma 8.1 combined theorem
 
 `sourceLemma8_1` constructs `SourceLemma8_1Data` without assuming product
 compatibility, classical agreement, or any of the exterior bounds.
@@ -87,6 +87,71 @@ Public checks include p=3/2, exact Hilbert agreement, extension uniqueness,
 simultaneous estimates, actual orders, cutoff normalization, and both
 printed counterexamples.
 
-Continue with Lemma 8.2: continuity at real-type potentials and strict
-separation of successive periodic gaps. Later Section 8 results and the
-remaining dissertation are not certified complete by this audit.
+Lemma 8.2 and its following real-gap characterization are audited below.
+Later Section 8 results and the remaining dissertation are not certified
+complete by this audit.
+
+
+## Lemma 8.2(i): continuity at real type under complex perturbations
+
+The source statement appears on printed p. 49. Its continuity is at a
+real-type base point within the full complex source space. No simplicity,
+noncollapsed-gap, or restriction to real perturbations is imposed.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original coordinate continuity | `SourceLemma8_2Data.continuous_left`, `.continuous_right` | Every integer index, including central and repeated endpoints, under arbitrary complex source perturbations. |
+| Exact sequence decomposition | `sourcePeriodicLeftDisplacement_eq_midpoint_sub_half_gap`, `sourcePeriodicRightDisplacement_eq_midpoint_add_half_gap` | Actual endpoint displacements equal the midpoint displacement minus/plus half the actual gap. |
+| Full sequence-norm continuity | `continuousAt_sourcePeriodicEndpointDisplacements_of_realType` | Both endpoint displacement sequences in ℓp, at every real-type source. |
+| One neighborhood for all indices | `exists_uniform_sourcePeriodicEndpoint_neighborhood` | A common original open neighborhood bounds both coordinate errors at every signed integer index, for any positive tolerance. |
+
+The coordinate proof uses the existing stable spectral counts and real
+barriers, with imaginary-part control for nearby complex roots. The
+stronger sequence statement uses the already constructed uniform ℓp tails
+of the midpoint and gap sequences. Neither assertion claims that the
+lexicographic labels are globally continuous at arbitrary complex base
+points; the source explicitly illustrates their possible discontinuity.
+
+## Lemma 8.2(ii) and equation (2.5): strict gap separation
+
+`SourceLemma8_2Data.real_endpoints` proves that the endpoints are real,
+and `.spectral_endpoints` records their membership in the actual periodic
+spectrum of `periodOnePotential φ`. The chain in `.interlacing` is
+
+```
+right(n-1) < left(n) ≤ right(n) < left(n+1).
+```
+
+Its weak middle inequality permits collapsed gaps. Its strict outer
+inequalities apply to every index, including the central cluster.
+`.disjoint_gaps` gives disjoint closed intervals for any distinct indices.
+
+`sourcePeriodicEndpoints_signed_discriminant` and `.endpoint_levels`
+prove the literal normalization `(-1)^n Δ(left(n)) = 2` and the same identity
+at the right endpoint. The exponent is an integer, including negative
+indices. These prescribed opposite levels separate neighboring gaps.
+
+## The following unnumbered real-gap characterization, printed p. 50
+
+`sourceRealPeriodicGap hp hp1 φ n` is the closed interval between the real
+parts of the actual canonical endpoints. Its spectral interpretation here
+is asserted for real-type φ, where endpoint reality is proved.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Signed inequality on a gap | `SourceLemma8_2Data.gap_sign` | `(-1)^n Re Δ(x) ≥ 2` for every x in the nth closed gap. |
+| All closed gaps | `SourceLemma8_2Data.closed_gaps` | Their union is exactly the real set where the complex modulus of Δ is at least two. |
+| All open gap interiors | `SourceLemma8_2Data.open_gaps` | Their union is exactly the real set where that modulus is greater than two. |
+| Exact endpoint set | `SourceLemma8_2Data.endpoint_set` | Modulus two holds exactly at a canonical endpoint; coincident endpoints are allowed. |
+| Unique gap index | `SourceLemma8_2Data.existsUnique_gap` | Every point of the closed-gap union belongs to exactly one indexed gap. |
+| Free collapsed gaps | `sourceRealPeriodicGap_zero` | The nth gap at zero potential is exactly the singleton {nπ}. |
+
+`sourceLemma8_2` constructs all fields for every finite 1<p<∞ in the
+original component-sum source norm. It does not assume interlacing,
+endpoint levels, continuity, or the gap characterization as additional
+data. Public checks exercise the range below two, arbitrary complex
+approximating sequences, uniform control over all indices, negative-index
+levels, unique gap membership, and the completely collapsed free example.
+
+Continue with Lemma 8.3: locally uniform critical-root counts for Δ′,
+exhaustion of its zeros, and their reality at real type.

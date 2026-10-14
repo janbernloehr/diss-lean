@@ -3393,3 +3393,5 @@ import NLS.ZakharovShabat.SourceDiscriminantExtension
 import NLS.ZakharovShabat.SourceDiscriminantProductFormula
 import NLS.ZakharovShabat.SourceDiscriminantExterior
 import NLS.ZakharovShabat.SourceLemma8_1
+import NLS.ZakharovShabat.SourcePeriodicEndpointContinuity
+import NLS.ZakharovShabat.SourceLemma8_2
