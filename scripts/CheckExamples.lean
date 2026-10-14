@@ -46989,3 +46989,153 @@ example (n : ℤ) (z : ℂ) :
 end
 end
 end SourceLemma102Checks
+
+
+namespace SourceLemma103Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Filter
+open scoped ENNReal unitInterval Topology
+noncomputable section
+private abbrev p103 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource103ThreeHalf : Fact (1 ≤ p103) := ⟨by norm_num [p103,ENNReal.one_le_ofReal]⟩
+
+-- The common domain and every previous symmetric-coordinate assertion survive below two.
+example : ∃ W : Set (CoeffPair p103), IsOpen W ∧ IsConnected W ∧ realTypeSourceLocus p103 ⊆ W ∧
+    SourceLemma10_3Data (by simp [p103]) (by norm_num [p103,ENNReal.one_lt_ofReal]) W :=
+  sourceLemma10_3 _ _
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- No further choice or shrinking of the domain is required.
+example {W : Set (CoeffPair p)} (h : SourceLemma10_2Data hp hp1 W) :
+    SourceLemma10_3Data hp hp1 W := h.standardRoots
+
+-- Formula (2.9) uses the actual midpoint and squared gap, including its sign.
+example (ψ : CoeffPair p) (n : ℤ) (z : ℂ) : sourceStandardRoot hp hp1 ψ n z =
+    (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-z)*
+      Complex.sqrt (1-(canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2/
+        (4*(canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-z)^2)) := rfl
+
+-- Distinct-index bounds reuse the isolation constant, including central and negative indices.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceStandardRootNeighborhoods hp hp1 V D c) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (z : ℂ) (hz : z ∈ D 0) :
+    c⁻¹ ≤ ‖sourceStandardRoot hp hp1 ψ (-1) z‖ ∧
+      ‖sourceStandardRoot hp hp1 ψ (-1) z‖ ≤ c := by
+  simpa using h.bounds ψ hψ 0 (-1) (by norm_num) z hz
+
+-- The joint theorem includes boundary points outside an open isolating disk.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceStandardRootNeighborhoods hp hp1 V D c) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (n : ℤ) (z : ℂ) (hz : z ∉ D n) :
+    AnalyticAt ℂ (fun q : ℂ × CoeffPair p => sourceStandardRoot hp hp1 q.2 n q.1) (z,ψ) :=
+  h.joint n _ ⟨hz,hψ⟩
+
+-- Every piecewise C1 contour, with corners allowed, has the full winding formula.
+example (ψ : CoeffPair p) (n : ℤ) (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (sourcePeriodicSegment hp hp1 ψ n)ᶜ) :
+    Γ.normalizedIntegral (fun z => (sourceStandardRoot hp hp1 ψ n z)⁻¹) =
+      -Γ.windingIntegral (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) :=
+  normalized_sourceStandardRoot_inv_piecewiseIntegral_eq_neg_winding hp hp1 ψ n Γ hΓ
+
+-- A clockwise contour has the opposite sign; no parametrization or homotopy is supplied.
+example (ψ : CoeffPair p) (n : ℤ) (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (sourcePeriodicSegment hp hp1 ψ n)ᶜ)
+    (hw : Γ.windingIntegral (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = -1) :
+    Γ.normalizedIntegral (fun z => (sourceStandardRoot hp hp1 ψ n z)⁻¹) = 1 := by
+  rw [normalized_sourceStandardRoot_inv_piecewiseIntegral_eq_neg_winding hp hp1 ψ n Γ hΓ,hw,neg_neg]
+
+-- Both diagonal and off-diagonal contour values use the same local package.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceStandardRootNeighborhoods hp hp1 V D c) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (Γ : PiecewiseC1Loop) (hinside : Γ.Inside (D 0))
+    (havoid : Γ.Inside (sourcePeriodicSegment hp hp1 ψ 0)ᶜ)
+    (hw : Γ.windingIntegral (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) = 1) :
+    Γ.normalizedIntegral (fun z => (sourceStandardRoot hp hp1 ψ 0 z)⁻¹) = -1 ∧
+    Γ.normalizedIntegral (fun z => (sourceStandardRoot hp hp1 ψ (-1) z)⁻¹) = 0 := by
+  constructor
+  · simpa using h.contours ψ hψ 0 0 Γ hinside havoid hw
+  · simpa using h.contours ψ hψ 0 (-1) Γ hinside havoid hw
+
+-- A collapsed gap extends across the excluded midpoint as an entire linear root.
+example (ψ : CoeffPair p) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    AnalyticAt ℂ (sourceStandardRoot hp hp1 ψ n)
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) :=
+  sourceStandardRoot_analyticOnNhd_of_zeroGap hp hp1 ψ n hg _ (mem_univ _)
+example (n : ℤ) (z : ℂ) : sourceStandardRoot hp hp1 (0 : CoeffPair p) n z = (Real.pi : ℂ)*n-z :=
+  sourceStandardRoot_zero_source hp hp1 n z
+
+-- Actual side limits allow arbitrary approach through the oriented complex half-plane.
+example (ψ : CoeffPair p) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    Tendsto (sourceStandardRoot hp hp1 ψ n)
+      (𝓝[standardRootGapUpperSide (sourceStandardRootMidpoint hp hp1 ψ n)
+        (sourceStandardRootHalfGap hp hp1 ψ n)] (sourceStandardRootMidpoint hp hp1 ψ n))
+      (𝓝 (-sourceStandardRootHalfGap hp hp1 ψ n*Complex.I)) := by
+  simpa using sourceStandardRoot_tendsto_gap_upper_side hp hp1 ψ n 0 hg (by norm_num) (by norm_num)
+example (ψ : CoeffPair p) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    Tendsto (sourceStandardRoot hp hp1 ψ n)
+      (𝓝[standardRootGapLowerSide (sourceStandardRootMidpoint hp hp1 ψ n)
+        (sourceStandardRootHalfGap hp hp1 ψ n)]
+        (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n)) (𝓝 0) := by
+  simpa using sourceStandardRoot_tendsto_gap_lower_side hp hp1 ψ n 1 hg (by norm_num) (by norm_num)
+
+-- Repeated traversal is a concrete two-piece loop; the free collapsed gap has period -2.
+example :
+    (PiecewiseC1Loop.repeatPath 2 (circlePath 0 1)
+      ((circlePath_contDiffOn 0 1).of_le (by norm_num))).normalizedIntegral
+        (fun z => (sourceStandardRoot hp hp1 (0 : CoeffPair p) 0 z)⁻¹) = -2 := by
+  let Γ := PiecewiseC1Loop.repeatPath 2 (circlePath 0 1)
+    ((circlePath_contDiffOn 0 1).of_le (by norm_num))
+  have havoid : Γ.Inside (sourcePeriodicSegment hp hp1 (0 : CoeffPair p) 0)ᶜ := by
+    intro i u
+    change circlePath 0 1 u ∉ sourcePeriodicSegment hp hp1 (0 : CoeffPair p) 0
+    rw [sourcePeriodicSegment_zero_source]
+    simp only [Int.cast_zero,mul_zero,mem_singleton_iff]
+    have hs : circlePath 0 1 u ∈ sphere (0 : ℂ) 1 :=
+      circleMap_mem_sphere 0 (by norm_num) _
+    intro he
+    have hh := mem_sphere.mp hs
+    simp [he] at hh
+  change Γ.normalizedIntegral _ = _
+  rw [normalized_sourceStandardRoot_inv_piecewiseIntegral_eq_neg_winding hp hp1 0 0 Γ havoid]
+  simp only [map_zero,canonicalPeriodicMidpoint_zero,Int.cast_zero,mul_zero]
+  change -((2*Real.pi*Complex.I)⁻¹*Γ.integral (fun z => (z-0)⁻¹)) = -2
+  rw [PiecewiseC1Loop.integral_repeatPath,curveIntegral_circlePath,
+    circleIntegral.integral_sub_inv_of_mem_ball (mem_ball_self (by norm_num : (0 : ℝ) < 1))]
+  have hn : (2*Real.pi*Complex.I : ℂ) ≠ 0 := by simp [Real.pi_ne_zero]
+  field_simp
+  norm_num
+
+-- A two-edge polygon has a genuine corner and nonclosed individual pieces.
+example :
+    (PiecewiseC1Loop.polygon 2 (fun k => if k = 1 then (3 : ℂ) else 2) (by norm_num)).integral
+      (fun z => (sourceStandardRoot hp hp1 (0 : CoeffPair p) 0 z)⁻¹) = 0 := by
+  let v : ℕ → ℂ := fun k => if k = 1 then 3 else 2
+  let Γ := PiecewiseC1Loop.polygon 2 v (by norm_num [v])
+  have hΓ : Γ.Inside (ball (2 : ℂ) (3/2)) := by
+    intro i u
+    change AffineMap.lineMap (v i.val) (v (i.val+1)) (u : ℝ) ∈ ball (2 : ℂ) (3/2)
+    apply (convex_ball (2 : ℂ) (3/2)).lineMap_mem
+    · fin_cases i <;> norm_num [v,dist_eq_norm]
+    · fin_cases i <;> norm_num [v,dist_eq_norm]
+    · exact u.property
+  apply Γ.integral_eq_zero_of_convex _ _ isOpen_ball (convex_ball _ _) ?_ hΓ
+  intro z hz
+  have hnot : z ∉ sourcePeriodicSegment hp hp1 (0 : CoeffPair p) 0 := by
+    rw [sourcePeriodicSegment_zero_source]
+    simp only [Int.cast_zero,mul_zero,mem_singleton_iff]
+    intro he
+    norm_num [he,dist_eq_norm] at hz
+  exact (sourceStandardRoot_inv_analyticAt hp hp1 0 0 z hnot).differentiableAt.differentiableWithinAt
+
+end
+
+-- The conventional winding condition is nonvacuous and fixes positive circle orientation.
+example : (PiecewiseC1Loop.circle 0 1).windingIntegral 0 = 1 :=
+  PiecewiseC1Loop.windingIntegral_circle 0 0 1 (mem_ball_self (by norm_num))
+
+end
+end SourceLemma103Checks

@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 10.2's periodic power sums, midpoint, squared gap,
-and joint pair factor are analytic on one connected neighborhood of all
-real-type sources. The same domain retains quantitative isolation and
-simple ordinary boundary and critical roots. Full sequence bounds include
-the literal squared-gap exponent p/2 below one. [The Section 10 audit](coverage/SECTION_10.md)
-records the exact scope and the earlier domain correction. Next is Lemma
-10.3's standard-root analyticity, bounds and contour normalization.
+Latest milestone: Lemma 10.3 retains Lemma 10.2's common domain and proves
+standard-root analyticity, uniform bounds with the disk-distance constant,
+and the negative Kronecker-delta contour identity. The contour proof covers
+arbitrary finite piecewise C¹ loops through an explicit logarithmic
+primitive, including corners and collapsed gaps. [The Section 10 audit](coverage/SECTION_10.md)
+records its precise winding and domain conventions. Next is Lemma 10.4's
+gap-side endpoint integral estimate.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

@@ -3410,3 +3410,7 @@ import NLS.ZakharovShabat.SourceIsolatingDomainCounterexample
 import NLS.ZakharovShabat.SourceLemma10_2Sequences
 import NLS.ZakharovShabat.SourceSimpleSpectralDomain
 import NLS.ZakharovShabat.SourceLemma10_2
+import NLS.ComplexAnalysis.PiecewiseC1Loop
+import NLS.ZakharovShabat.SourceStandardRootLogPrimitive
+import NLS.ZakharovShabat.SourceStandardRootPiecewiseContour
+import NLS.ZakharovShabat.SourceLemma10_3

@@ -4504,3 +4504,48 @@ between distinct isolating disks, and its normalized contour integrals.
 The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6847 build jobs, the combined public examples, and the axiom audit of 31400 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 10.3 milestone: standard roots and general contour normalization
+
+`SourceLemma10_3.lean` proves the standard-root assertions for every
+finite p>1 on exactly the same domain as Lemma 10.2. Spectral analyticity
+holds off the actual closed gap at every complex source; joint analyticity
+holds on the moving-gap complement over the common domain, and in
+particular outside each fixed local isolating disk. One local neighborhood,
+one disk family and the same c≥1 as the disk-distance estimate control
+all distinct-index root norms, including central indices.
+
+`PiecewiseC1Loop.lean` represents finite closed chains of actual C¹ paths.
+Their derivatives need not match at corners, and the pieces need not be
+individually closed. The contour integral is the sum of their actual path
+integrals. Its winding integral is the conventional normalized integral
+of the reciprocal pole; no desired root integral enters that definition.
+
+`SourceStandardRootLogPrimitive.lean` constructs a single-valued
+logarithmic correction whose derivative equals the inverse standard root
+plus the midpoint pole. `SourceStandardRootPiecewiseContour.lean` telescopes
+its primitive values across all pieces. The inverse-root integral is thus
+the negative midpoint winding integral for every gap-avoiding piecewise
+C¹ contour. Winding one gives the diagonal value -1; a primitive on a
+distinct isolating disk gives zero off the diagonal. No circle-shape or
+supplied homotopy hypothesis is required. Repeated traversals, reversed
+orientation and collapsed gaps are included in the general winding formula.
+
+The normalized root retains the literal principal-branch formula (2.9)
+and extends as an entire linear function when the gap collapses. Existing
+arbitrary-approach upper and lower gap-side limit theorems give the signs
+in (2.12), including the midpoint and endpoints of complex gaps.
+
+Public checks cover p=3/2, the unchanged common domain, literal branch
+normalization, central/negative-index bounds, joint analyticity outside
+open disks, both contour indices, clockwise winding, an actual two-turn
+circle with period -2, a two-edge polygon with a corner, collapsed roots,
+and complex one-sided limits. All four new modules and the focused public
+probe compile warning-free. No new source correction is needed for
+Lemma 10.3. Exact contour and domain conventions are recorded in
+`coverage/SECTION_10.md`.
+
+Next: Lemma 10.4, the gap-side endpoint integral estimate and its printed
+index convention. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,851 build jobs, the full public example suite, and the axiom audit of 31,480 NLS declarations). The build retains 21 existing warnings; the four new modules and focused public probe are warning-free. The source inventory check verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.

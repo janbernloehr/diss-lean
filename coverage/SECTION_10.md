@@ -1,10 +1,11 @@
 # Section 10: potentials of almost real type
 
-This audit follows the source statement and proof on printed pp. 54–55.
+This audit follows the source statements and proofs on printed pp. 54–56.
 The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.
-Lemma 10.2 and its preceding simple-root assertions are now covered on
-one common domain. Lemma 10.3 and later statements remain to be audited.
+Lemmas 10.2 and 10.3 are covered on the same common domain, including the
+preceding simple-root assertions and general piecewise C¹ contours.
+Lemma 10.4 and later statements remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -239,7 +240,131 @@ by the asymmetric set {0,−1,3}, the exact all-complex factorization, and
 free collapsed gaps. No additional source correction is needed for
 Lemma 10.2; the Lemma 10.1 domain correction remains in force.
 
-Next: Lemma 10.3, including the standard root on the complement of the
-moving gap, joint analyticity outside isolating disks, two-sided bounds
-between distinct disks, and the negative Kronecker-delta contour integral.
-The dissertation remains incomplete.
+
+## Lemma 10.3: the unchanged common domain
+
+`SourceLemma10_2Data.standardRoots` produces `SourceLemma10_3Data` on
+exactly its input W. No further shrinking or separate existential domain
+is used. Consequently `sourceLemma10_3` supplies an open connected W
+containing every real-type source, with all Lemma 10.2 properties retained.
+
+| Source requirement | Field or theorem | Exact scope |
+| --- | --- | --- |
+| Principal-branch definition (2.9) | `sourceStandardRoot`, `normalizedStandardRoot` | The literal expression (τ_n−z)√(1−γ_n²/(4(τ_n−z)²)), with the principal square root. |
+| Spectral analyticity | `SourceLemma10_3Data.spectral` | At every complex source, on the full complement of its actual closed gap. |
+| Joint analyticity | `.joint` | On the moving-gap complement over the same W. |
+| One local family | `.neighborhoods` | For every ψ∈W, one open connected V with ψ∈V⊆W and one `SourceStandardRootNeighborhoods` package. |
+| Fixed-disk joint domain | `SourceStandardRootNeighborhoods.joint` | (ℂ∖D_n)×V, including points on the boundary of the open disk. |
+| Two-sided root bound (2.10) | `.bounds` | The same c≥1 from quantitative isolation, for all nearby sources, all m≠n and all z∈D_m. |
+| Normalized contour identity | `.contours` | Every finite piecewise C¹ contour inside D_m, avoiding G_m, with winding one about τ_m. The value is −1 if m=n and zero otherwise. |
+
+The bound uses the exact identity |w_n(z)|²=|λ_n⁻−z||λ_n⁺−z|.
+Both endpoint distances have the same lower and upper bounds from
+`.pointwise_distance`. Nonnegativity transfers those bounds to |w_n|
+without changing c. Gap containment and pairwise disjointness ensure
+that z∈D_m avoids G_n when m≠n. Central and negative indices are included.
+
+## General contours and the orientation convention
+
+`PiecewiseC1Loop` consists of a finite number of paths between consecutive
+vertices, each C¹ on the closed unit interval, with the last vertex equal
+to the first. The definition allows corners, self-intersections, repeated
+vertices and repeated traversals. Individual pieces need not be loops.
+Its `integral f` is the finite sum of the actual complex one-form path
+integrals. `normalizedIntegral f` multiplies that sum by (2πi)⁻¹.
+
+`windingIntegral z` is the normalized integral of the reciprocal pole
+1/(w−z). It is complex-valued; the contour theorem uses the conventional
+orientation condition `windingIntegral τ_m = 1`. This condition concerns
+the reciprocal pole, not the inverse standard root being evaluated.
+The contour must avoid the entire closed gap. This winding-one convention
+expresses a single counterclockwise circuit around the gap; simplicity
+of the curve or a chosen homotopy is not an additional assumption.
+
+`windingIntegral_circle` proves that a positively oriented circle has
+value one about every point in its interior. `integral_circle` identifies
+the piecewise-contour integral with the existing circle integral using
+the same orientation. `repeatPath` constructs actual repeated traversals,
+and `integral_repeatPath` proves that their integrals multiply by the
+number of traversals. `polygon` constructs contours with literal straight
+pieces and permits corners without matching endpoint derivatives.
+
+## A single-valued primitive fixes the sign
+
+Put t=τ_n, g=γ_n² and S(z)=√(1−g/(4(t−z)²)). The new correction is
+
+```
+F(z) = −log(1+S(z)).
+```
+
+Outside the actual gap, t−z is nonzero and the square-root radicand lies
+in the principal slit plane. The principal square root has nonnegative
+real part, so 1+S(z) lies in the open right half-plane. Thus this logarithm
+is single-valued throughout the needed domain. Differentiating S² and
+then the logarithm gives the formally checked identity
+
+```
+F′(z) = 1/w_n(z) + 1/(z−t).
+```
+
+`hasDerivAt_standardRootLogCorrection` proves this for arbitrary complex
+t,g whenever the denominator and slit conditions hold. Applying the
+actual source branch-cut theorem supplies these conditions off G_n.
+
+`PiecewiseC1Loop.integral_eq_zero_of_primitive` evaluates the derivative
+integral on each C¹ piece and telescopes the vertex differences. The
+closed-chain condition cancels the final difference, even when the
+pieces are not individually closed. Integrability follows from continuity
+on the domain and C¹ regularity of the pieces; it is not an extra source
+hypothesis. Therefore
+`normalized_sourceStandardRoot_inv_piecewiseIntegral_eq_neg_winding`
+proves the full formula
+
+```
+(2πi)⁻¹ ∫_Γ dz/w_n(z) = −windingIntegral(Γ,τ_n).
+```
+
+This holds at every complex source for every gap-avoiding piecewise C¹
+contour, independently of W. It also covers collapsed gaps, clockwise
+orientation and any number of traversals. No contour-deformation
+hypothesis or reduction to the Hilbert exponent appears in the proof.
+
+For m≠n, the inverse root is holomorphic on the whole convex disk D_m.
+An actual primitive there makes its integral zero on every piecewise C¹
+closed contour inside D_m. Combining this with the diagonal winding-one
+formula proves `standardRoot_piecewiseIntegral_indexed` and the local
+`.contours` field using the same family as the norm estimate.
+
+## Collapsed gaps and the following boundary-value formulas
+
+`sourceStandardRoot_analyticOnNhd_of_zeroGap` proves that a collapsed root
+is analytic on all of ℂ, including its midpoint, where the original
+complement-of-gap assertion says nothing. The exact value is τ_n−z.
+At zero source this is nπ−z, fixing the sign of the contour normalization.
+
+For noncollapsed gaps, the existing
+`sourceStandardRoot_tendsto_gap_upper_side` and
+`sourceStandardRoot_tendsto_gap_lower_side` prove (2.12) under arbitrary
+approach from the corresponding open side in the coordinate
+u=(z−τ_n)/(γ_n/2). Their limits are respectively
+−i(γ_n/2)√(1−t²) and +i(γ_n/2)√(1−t²), for every −1≤t≤1.
+The midpoint, both endpoints, and arbitrary complex gap directions are
+included. These are stronger approach limits than just vertical paths
+with the longitudinal parameter held fixed.
+
+## Lemma 10.3 verification and remaining scope
+
+The public checks instantiate the common domain at p=3/2, transfer any
+Lemma 10.2 domain unchanged, expose the literal branch formula and free
+sign, and check root bounds at central and negative indices. They test
+joint analyticity outside the fixed open disk and both values of the
+indexed contour identity. The general winding formula is exercised with
+clockwise winding. A concrete two-piece repeated circle has period −2;
+a concrete two-edge polygon has a genuine corner and nonclosed pieces
+and integrates to zero in a gap-free convex disk. Additional checks cover
+collapsed-root analyticity at its midpoint and complex upper/lower side
+limits at the midpoint and an endpoint. No new source correction is
+needed for Lemma 10.3.
+
+Next: Lemma 10.4, its gap-side endpoint integral bound and the printed
+index convention in its denominator. The dissertation remains incomplete.
