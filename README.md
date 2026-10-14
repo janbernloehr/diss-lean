@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves Lemma 10.11(i) on the unchanged common source
-domain. One explicit analytic function extends the critical-root quotient
-across all collapsed gaps, including central and infinitely many closed
-gaps. At the free source it fills every lattice point with -i.
-Next: admissible paths and the integral assertions of Lemma 10.11(ii).
+Latest step: Lean proves the closed-contour assertion of Lemma 10.11(ii)
+on the unchanged common source domain. All original circle periods vanish,
+and the quotient has a primitive on each entire original disk minus its
+gap. Every piecewise C¹ closed contour there has zero integral, including
+at complex sources. The full analytic continuation in part (i) is retained.
+Next: arbitrary admissible paths ending at the two spectral endpoints.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

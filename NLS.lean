@@ -3480,3 +3480,8 @@ import NLS.ZakharovShabat.SourceEquation2_15
 import NLS.ZakharovShabat.SourceCriticalRootRatioRegularizedProduct
 import NLS.ZakharovShabat.SourceCriticalRootRatioOpenGapDomain
 import NLS.ZakharovShabat.SourceLemma10_11i
+import NLS.ComplexAnalysis.RealCenteredCircleHomotopy
+import NLS.ZakharovShabat.SourceCriticalRootPeriodCircle
+import NLS.ZakharovShabat.SourceCriticalRootPeriod
+import NLS.ZakharovShabat.SourceCriticalRootPeriodZero
+import NLS.ZakharovShabat.SourceCriticalRootOriginalDiscPrimitive

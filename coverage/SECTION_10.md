@@ -29,8 +29,10 @@ locally uniform full-sequence bound. Equation (2.15) is now covered with
 its literal absolutely convergent product, exact -i normalization, and
 spectral and joint analyticity on the original domains. Lemma 10.11(i)
 is now covered by one explicit analytic extension through every collapsed
-gap on the unchanged source domain. Admissible paths and the integral
-assertions in Lemma 10.11(ii) remain to be audited.
+gap on the unchanged source domain. Original circle periods and arbitrary
+piecewise C¹ closed contours in the original cut disks now have zero
+integral throughout that domain. The endpoint-path assertion of
+Lemma 10.11(ii) remains to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -1313,3 +1315,58 @@ remain for the next audit. This milestone does not claim their completion
 or completion of the dissertation.
 
 Validation: `./scripts/check.sh` passed (6,917 build jobs, the complete public example suite, and the axiom audit of 32,137 NLS declarations). The build retains 21 existing warnings; the three new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Lemma 10.11(ii): original periods and arbitrary closed contours
+
+`RealCenteredCircleHomotopy.lean` proves the projection geometry needed
+to compare circles from different original disk families. Disjoint disks
+with real centers have disjoint real projections. The two selected disks
+both contain the selected gap's left endpoint, so their real projections
+overlap. Every other-gap point must therefore lie on the same side of
+both selected projections. Convexity of the relevant open half-plane
+keeps the affine circle homotopy away from that point. The selected gap
+stays inside both endpoint circles and also avoids the homotopy.
+
+`SourceCriticalRootPeriodCircle.lean` extracts this geometry from every
+original isolating family and proves equality of the actual quotient
+integrals. Neither nesting nor a larger gap-avoiding outer disk is
+assumed. Both the original boundary circles and the homotopy avoid all
+gaps, including at complex sources and for collapsed selected gaps.
+
+`SourceCriticalRootPeriod.lean` defines one indexed period by choosing an
+isolating circle, proves independence of that choice, and identifies it
+with each original fixed-circle integral throughout its original source
+neighborhood. Joint analyticity of the actual quotient gives a complex
+Fréchet derivative under the contour integral. The local representatives
+therefore prove analyticity of the period on all of the retained W.
+
+`SourceCriticalRootPeriodZero.lean` uses a real base only to obtain an
+open zero germ. The Banach-space analytic identity theorem propagates
+that germ throughout the preconnected W. It does not replace W by the
+seed neighborhood. Every original selected circle consequently has zero
+period at every complex source in W. The package retains the full
+collapsed-gap continuation from part (i) and all preceding source data.
+
+`SourceCriticalRootOriginalDiscPrimitive.lean` transfers the zero period
+to a smaller enclosing circle and uses an annular primitive followed by
+radial continuation. The resulting primitive is defined on the entire
+original disk minus the selected gap, with the original outer radius
+unchanged. Its derivative is the actual quotient. Primitive differences
+telescope on every finite piecewise C¹ closed contour in that domain.
+No separate integrability assumption is needed: continuity of the
+quotient on each compact smooth piece supplies it. Corners, repeated
+traversals and self-intersections are allowed; no prescribed homotopy
+or winding number is required.
+
+Eight public checks cover preservation of W and part (i), different
+original circle families without nesting, analytic dependence on all W,
+propagation from one real base, the full original central disk, general
+piecewise contours, ordinary smooth curve integrals, and p=3/2.
+
+The endpoint-path assertion is still outstanding. Its intended scope
+includes complex endpoints and arbitrary admissible paths; a real-source
+or half-plane result would not suffice. Endpoint integrals may need to be
+expressed as improper limits of truncated integrals rather than assuming
+absolute integrability for every admissible parametrization.
+
+Validation: `./scripts/check.sh` passed (6,922 build jobs, the complete public example suite, and the axiom audit of 32,193 NLS declarations). The build retains 21 existing warnings; the five new modules and eight focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.

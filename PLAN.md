@@ -1,6 +1,38 @@
 # Implementation plan
 
-## Current milestone: Lemma 10.11(i), all collapsed gaps
+## Current milestone: Lemma 10.11(ii), periods and closed contours
+
+Five modules prove vanishing of the critical-root quotient's original
+circle periods throughout the unchanged connected common source domain,
+for every finite p>1. A primitive then exists on every entire original
+disk minus its selected gap. Every finite piecewise C¹ closed contour
+there has zero integral, including contours with corners, repeated
+traversals and self-intersections, at arbitrary complex sources in W.
+
+The circle comparison uses the real centers and separation of the
+original disk families. Other gaps lie on the same side of both selected
+real diameters, while the selected gap stays inside both circles. Their
+affine homotopy avoids every gap even when neither disk contains the other.
+Thus one choice-independent indexed period is locally represented by
+any original fixed circle and is analytic throughout W. An open zero
+germ near one real base propagates across W by the identity theorem.
+
+`SourceLemma10_11iData.zeroPeriods` retains W and the full part (i).
+`sourceLemma10_11CirclePeriods` constructs the resulting common domain.
+`SourceLemma10_11CircleData.originalDisk_primitive` keeps the entire
+original disk; `.originalDisk_loopIntegral_zero` needs no prescribed
+homotopy, winding number or real-source assumption. Eight public checks
+cover circle independence, analytic periods, propagation from one real
+base, retention of W, the central disk, general contours, smooth loops
+and p=3/2.
+
+Next: the endpoint-path assertion of Lemma 10.11(ii), including arbitrary
+admissible paths and improper endpoint limits. That assertion and the
+dissertation remain incomplete.
+
+Validation: `./scripts/check.sh` passed (6,922 build jobs, the complete public example suite, and the axiom audit of 32,193 NLS declarations). The build retains 21 existing warnings; the five new modules and eight focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: Lemma 10.11(i), all collapsed gaps
 
 Three modules prove Lemma 10.11(i) for every finite p>1 on the unchanged
 common source domain. One explicit product extends the critical-root

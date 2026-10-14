@@ -48643,3 +48643,79 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceLemma1011iContinuationChecks
+
+namespace SourceLemma1011iiPeriodChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex
+open scoped ENNReal
+noncomputable section
+
+-- The upgrade retains the existing W and the full collapsed-gap continuation.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceLemma10_11iData hp hp1 W)
+    (ho : IsOpen W) (hc : IsConnected W) (hr : realTypeSourceLocus p ⊆ W) :
+    SourceLemma10_11CircleData hp hp1 W ∧ SourceLemma10_11iData hp hp1 W :=
+  ⟨h.zeroPeriods ho hc hr,h⟩
+
+-- Distinct original families give the same actual integral; neither disk must contain the other.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V U : Set (CoeffPair p)} {D E : ℤ → Set ℂ} {c d : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (hE : SourceIsolatingNeighborhoods hp hp1 U E d)
+    (ψ : CoeffPair p) (hψV : ψ ∈ V) (hψU : ψ ∈ U) (n : ℤ)
+    (a b r s : ℝ) (hr : 0 < r) (hs : 0 < s)
+    (heD : D n = ball (a : ℂ) r) (heE : E n = ball (b : ℂ) s) :
+    (∮ z in C((a : ℂ),r), sourceCriticalRootRatioJoint hp hp1 (z,ψ)) =
+      ∮ z in C((b : ℂ),s), sourceCriticalRootRatioJoint hp hp1 (z,ψ) :=
+  (hD.periodCircle ψ hψV n a r hr heD).integral_eq (hE.periodCircle ψ hψU n b s hs heE)
+
+-- The period is analytic on all W, not just a neighborhood of its real locus.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceEquation2_15Data hp hp1 W) (ho : IsOpen W) (n : ℤ) :
+    AnalyticOnNhd ℂ (sourceCriticalRootPeriod hp hp1 n) W := h.analytic_period ho n
+
+-- One real base suffices; vanishing holds at every complex point of the same connected W.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceEquation2_15Data hp hp1 W)
+    (ho : IsOpen W) (hc : IsConnected W)
+    (φ ψ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (hφW : φ ∈ W) (hψ : ψ ∈ W)
+    (n : ℤ) : sourceCriticalRootPeriod hp hp1 n ψ = 0 :=
+  h.period_eq_zero ho hc.isPreconnected φ hφ hφW n hψ
+
+-- The primitive reaches the full original central disk, for open or collapsed complex gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11CircleData hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) :
+    ∃ F : ℂ → ℂ, ∀ z ∈ D 0 \ sourcePeriodicSegment hp hp1 ψ 0,
+      HasDerivAt F (deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+        sourceCanonicalRoot hp hp1 ψ z) z := h.originalDisk_primitive hD ψ hψW hψV 0
+
+-- Arbitrary finite piecewise C¹ contours need no prescribed homotopy or winding hypothesis.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11CircleData hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (n : ℤ)
+    (Γ : PiecewiseC1Loop) (hΓ : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n)) :
+    Γ.integral (fun z => deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+      sourceCanonicalRoot hp hp1 ψ z) = 0 := h.originalDisk_loopIntegral_zero hD ψ hψW hψV n Γ hΓ
+
+-- A smooth loop gives the ordinary curve integral, with integrability supplied by the proof.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11CircleData hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (n : ℤ)
+    {a : ℂ} (γ : Path a a) (hs : ContDiffOn ℝ 1 γ.extend (Icc 0 1))
+    (hγ : range γ ⊆ D n \ sourcePeriodicSegment hp hp1 ψ n) :
+    (∫ᶜ z in γ, holomorphicOneForm (fun z => sourceCriticalRootRatioJoint hp hp1 (z,ψ)) z) = 0 := by
+  simpa only [PiecewiseC1Loop.integral_ofPath] using
+    h.originalDisk_loopIntegral_zero hD ψ hψW hψV n (PiecewiseC1Loop.ofPath γ hs)
+      (fun _ u => hγ ⟨u,rfl⟩)
+
+local instance source1011iiPeriodsThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceLemma10_11CircleData (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceLemma10_11CirclePeriods (by norm_num) (by norm_num)
+
+end
+end SourceLemma1011iiPeriodChecks
