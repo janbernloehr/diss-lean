@@ -1,6 +1,35 @@
 # Implementation plan
 
-## Current milestone: equation (2.15) on the unchanged common domain
+## Current milestone: Lemma 10.11(i), all collapsed gaps
+
+Three modules prove Lemma 10.11(i) for every finite p>1 on the unchanged
+common source domain. One explicit product extends the critical-root
+quotient analytically to the complex plane with only the noncollapsed
+gap segments removed. Every collapsed factor is filled by one before
+taking the product, and the individual factor errors remain absolutely
+summable. Central and infinitely many collapsed gaps are included.
+
+The continued function equals the actual quotient off all gaps and the
+selected omitted analytic product throughout the omitted domain of any
+collapsed index. The enlarged spectral domain is open at every complex
+source in W. The preceding common domain, all previous conclusions and
+the original isolating disks are retained by
+`SourceEquation2_15Data.collapsedContinuation`; `sourceLemma10_11i`
+constructs the common open connected neighborhood of the real-type locus.
+
+At zero source, the extension is -i on the entire plane. In particular,
+it fills the lattice points where the raw totalized quotient is 0/0=0.
+Seven public checks cover that distinction, the infinitely collapsed
+free case, a complex collapsed central gap, the exact extension domain,
+actual product convergence, unchanged W and p=3/2.
+
+Next: admissible paths and the endpoint-path and closed-contour vanishing
+assertions of Lemma 10.11(ii). Part (ii) and the dissertation remain
+incomplete.
+
+Validation: `./scripts/check.sh` passed (6,917 build jobs, the complete public example suite, and the axiom audit of 32,137 NLS declarations). The build retains 21 existing warnings; the three new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: equation (2.15) on the unchanged common domain
 
 Three modules complete equation (2.15) and its following analytic-domain
 assertions on the unchanged common source domain for every finite p>1.

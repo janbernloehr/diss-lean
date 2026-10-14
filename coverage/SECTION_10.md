@@ -1,6 +1,6 @@
 # Section 10: potentials of almost real type
 
-This audit follows the source statements and proofs on printed pp. 54–59.
+This audit follows the source statements and proofs on printed pp. 54–60.
 The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.
 Lemmas 10.2 and 10.3 are covered on the same common domain, including the
@@ -27,8 +27,10 @@ resolved with the corrected expansion. Lemma 10.10 is now covered on
 the unchanged common domain, with actual analytic coefficients and one
 locally uniform full-sequence bound. Equation (2.15) is now covered with
 its literal absolutely convergent product, exact -i normalization, and
-spectral and joint analyticity on the original domains. Admissible paths
-and Lemma 10.11 remain to be audited.
+spectral and joint analyticity on the original domains. Lemma 10.11(i)
+is now covered by one explicit analytic extension through every collapsed
+gap on the unchanged source domain. Admissible paths and the integral
+assertions in Lemma 10.11(ii) remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -1264,3 +1266,50 @@ the retained closed-disk domain and p=3/2.
 Next: admissible paths and Lemma 10.11. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed (6,914 build jobs, the complete public example suite, and the axiom audit of 32,104 NLS declarations). The build retains 21 existing warnings; the three new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Lemma 10.11(i): one analytic extension across all collapsed gaps
+
+`SourceCriticalRootRatioRegularizedProduct.lean` defines a single
+function on the spectral plane:
+
+    continuedRatio(z,ψ) = -i * product_m F_m(z,ψ),
+    F_m = 1 if gap_m=0, and (critical_m−z)/w_m(z) otherwise.
+
+The individual deviations from one are absolutely summable and the
+product is unconditional. Off all gaps the filled factors equal the
+original factors, so equation (2.15) identifies this function with the
+actual discriminant derivative divided by the canonical root. If the
+selected gap n is collapsed, the function agrees with the selected
+omitted analytic product on its entire omitted domain, including the
+common endpoint. No selected denominator is divided out at that point.
+
+`SourceCriticalRootRatioOpenGapDomain.lean` reuses the existing
+`sourceOpenGapComplement`, literally the complement of the union of all
+nonzero gap segments. On W it equals the union of the original cut
+complement and the omitted domains of all collapsed indices. Each set
+in this cover is open, and on each the same continued product equals an
+analytic function. This proves openness of the full enlarged spectral
+domain and analyticity of the continued product there. The construction
+works for every complex source in W, every signed index, and infinitely
+many collapsed gaps. There is no real-source or finite-gap restriction.
+
+`SourceLemma10_11i.lean` packages the full statement of part (i), retains
+`SourceEquation2_15Data`, and gives agreement on every original disk whose
+selected gap has collapsed. `SourceEquation2_15Data.collapsedContinuation`
+upgrades the existing W without shrinking it. `sourceLemma10_11i`
+constructs the resulting common open connected neighborhood of the entire
+real-type locus, and `.exists_analytic_extension` exposes the literal
+existential extension assertion on the printed noncollapsed-gap domain.
+
+The free-source check distinguishes analytic continuation from Lean's
+totalized division: at every free lattice point the continued function
+is -i whereas the raw quotient is 0/0=0. The continued function is entire
+at zero source, where all infinitely many gaps have collapsed. Other
+public checks cover a complex collapsed central endpoint in its original
+disk, the actual product limit, retention of W and p=3/2.
+
+The admissible-path definition and both integral conclusions of part (ii)
+remain for the next audit. This milestone does not claim their completion
+or completion of the dissertation.
+
+Validation: `./scripts/check.sh` passed (6,917 build jobs, the complete public example suite, and the axiom audit of 32,137 NLS declarations). The build retains 21 existing warnings; the three new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.

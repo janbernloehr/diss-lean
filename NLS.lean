@@ -3477,3 +3477,6 @@ import NLS.ZakharovShabat.SourceLemma10_10
 import NLS.ZakharovShabat.SourceCriticalRootRatioProduct
 import NLS.ZakharovShabat.SourceCriticalRootRatioCommonDomain
 import NLS.ZakharovShabat.SourceEquation2_15
+import NLS.ZakharovShabat.SourceCriticalRootRatioRegularizedProduct
+import NLS.ZakharovShabat.SourceCriticalRootRatioOpenGapDomain
+import NLS.ZakharovShabat.SourceLemma10_11i

@@ -48563,3 +48563,83 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceEquation215ProductChecks
+
+namespace SourceLemma1011iContinuationChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- The same W supports the extension and retains the literal product from equation (2.15).
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceEquation2_15Data hp hp1 W) :
+    SourceLemma10_11iData hp hp1 W ∧ SourceEquation2_15Data hp hp1 W :=
+  ⟨h.collapsedContinuation,h⟩
+
+-- One function extends across every collapsed index, at an arbitrary complex source in W.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceLemma10_11iData hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) :
+    ∃ F : ℂ → ℂ,
+      AnalyticOnNhd ℂ F (⋃ m : ℤ, ⋃ (_ : canonicalPeriodicGap hp hp1
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) m ≠ 0), sourcePeriodicSegment hp hp1 ψ m)ᶜ ∧
+      ∀ z ∈ sourceCanonicalRootDomain hp hp1 ψ,
+        F z = deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z/sourceCanonicalRoot hp hp1 ψ z :=
+  h.exists_analytic_extension ψ hψ
+
+-- The central collapsed endpoint lies inside its original analytic disk, without a reality assumption.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceLemma10_11iData hp hp1 W) (hVW : V ⊆ W)
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0 = 0) :
+    AnalyticAt ℂ (sourceCriticalRootRatioContinued hp hp1 ψ)
+      (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) ∧
+    sourceCriticalRootRatioContinued hp hp1 ψ
+        (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) =
+      sourceCriticalRootRatioExtension hp hp1 0 ψ
+        (canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) := by
+  obtain ⟨ha,he⟩ := h.continued_analytic_originalDisk hVW hD ψ hψ 0 hg
+  have hz := hD.cluster ψ hψ 0 (Or.inl rfl)
+  exact ⟨ha _ hz,he _ hz⟩
+
+-- The continued function really fills the singularity; it differs from raw 0/0 at free lattice points.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) :
+    sourceCriticalRootRatioContinued hp hp1 (0 : CoeffPair p) ((Real.pi : ℂ)*n) = -Complex.I ∧
+    sourceCriticalRootRatioJoint hp hp1 (((Real.pi : ℂ)*n),(0 : CoeffPair p)) = 0 ∧
+    sourceCriticalRootRatioContinued hp hp1 (0 : CoeffPair p) ((Real.pi : ℂ)*n) ≠
+      sourceCriticalRootRatioJoint hp hp1 (((Real.pi : ℂ)*n),(0 : CoeffPair p)) := by
+  have hf := sourceCriticalRootRatioContinued_zero_source hp hp1 ((Real.pi : ℂ)*n)
+  have hr : sourceCanonicalRoot hp hp1 (0 : CoeffPair p) ((Real.pi : ℂ)*n) = 0 := by
+    rw [sourceCanonicalRoot_eq_omitted hp hp1 n,sourceStandardRoot_zero_source]
+    simp only [sub_self,mul_zero,zero_mul]
+  have hraw : sourceCriticalRootRatioJoint hp hp1 (((Real.pi : ℂ)*n),(0 : CoeffPair p)) = 0 := by
+    simp only [sourceCriticalRootRatioJoint,hr,div_zero]
+  refine ⟨hf,hraw,?_⟩
+  rw [hf,hraw]
+  exact neg_ne_zero.mpr Complex.I_ne_zero
+
+-- Infinitely many collapsed gaps are filled by a single entire function at the free source.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    AnalyticOnNhd ℂ (sourceCriticalRootRatioContinued hp hp1 (0 : CoeffPair p)) univ := by
+  have he : sourceCriticalRootRatioContinued hp hp1 (0 : CoeffPair p) = fun _ : ℂ => -Complex.I :=
+    funext (sourceCriticalRootRatioContinued_zero_source hp hp1)
+  rw [he]
+  exact analyticOnNhd_const
+
+-- Absolute factor convergence accompanies an actual product limit at every spectral point.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (ψ : CoeffPair p) (z : ℂ) :
+    Summable (fun m : ℤ => ‖sourceCriticalRootRegularizedFactor hp hp1 ψ z m-1‖) ∧
+    HasProd (sourceCriticalRootRegularizedFactor hp hp1 ψ z)
+      (Complex.I*sourceCriticalRootRatioContinued hp hp1 ψ z) := by
+  refine ⟨summable_norm_sourceCriticalRootRegularizedFactor_sub_one hp hp1 ψ z,?_⟩
+  simpa only [sourceCriticalRootRatioContinued,← mul_assoc,mul_neg,Complex.I_mul_I,neg_neg,one_mul] using
+    (multipliable_sourceCriticalRootRegularizedFactor hp hp1 ψ z).hasProd
+
+local instance source1011iThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceLemma10_11iData (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceLemma10_11i (by norm_num) (by norm_num)
+
+end
+end SourceLemma1011iContinuationChecks
