@@ -923,3 +923,40 @@ The nonlinear remainder still requires sequence estimates, and the
 diagonal centers must still be related quantitatively to the actual
 periodic midpoints. The unconditional free-sine result remains q=p until
 those steps, or another complete argument, resolve its printed general q.
+
+## Lemma 10.8: midpoint-center comparison at the half exponent
+
+The midpoint-to-center step left open above is now proved, locally
+uniformly on the original source space. Write ζ_n for the named center
+solving ζ_n=nπ+a_n(ζ_n) on distant strips, and τ_n for the actual canonical
+periodic midpoint. Then
+
+    |τ_n−ζ_n| ≤ (8/π) sup_(z∈strip_n) |b_n⁺(z)b_n⁻(z)|.
+
+For distinct endpoints, subtracting the two root equations controls the
+sum of their diagonal residuals. At a repeated endpoint, actual analytic
+order two forces the determinant derivative to vanish, giving the same
+bound. A repeated simple root would not suffice; the public checks
+include a concrete failure when one simply duplicates a simple root.
+Second-derivative bounds for the diagonal make the midpoint Taylor error
+proportional to the squared gap. All estimates apply to complex sources.
+
+The full off-diagonal coefficients are bounded by actual ℓp sequences,
+including their leading Fourier coefficients and double reciprocal-row
+remainders. Hölder places their product in ℓ(p/2), even below exponent
+one. The comparison therefore produces an actual half-exponent tail
+sequence with a locally uniform norm bound. The canonical midpoint has
+an existing uniform coordinate bound, and the named diagonal center
+always stays within π/4 of the free center. These control a fixed finite
+head and give the full sequence result. The named center retains its
+existing free fallback at central indices where its fixed-point
+existence is unavailable.
+
+`exists_uniform_sourceMidpointCenterError` proves the full neighborhood
+and norm assertion. `memℓp_sourceMidpointDisplacement_iff_center` proves
+that for any r≥p/2, midpoint and diagonal-center displacements have
+equivalent ℓr membership. This resolves the midpoint transfer required
+by the quadratic-diagonal approach. The nonlinear diagonal remainder at
+the moving centers still needs sequence bounds; its quartic pointwise
+bound is insufficient. The printed general-q free-sine claim remains
+unresolved, and its unconditional q=p version remains proved.

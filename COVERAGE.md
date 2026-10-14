@@ -4873,3 +4873,48 @@ q=p; its printed general q remains unresolved. The previous formal
 p=4, q=1 counterexample to numerator local uniformity remains unchanged.
 
 Validation: `./scripts/check.sh` passed (6,879 build jobs, the full public example suite, and the axiom audit of 31,856 NLS declarations). The build retains 21 existing warnings; the four new modules and six focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+## Lemma 10.8 progress: half-exponent midpoint-center comparison
+
+Six modules close the midpoint-to-diagonal-center comparison needed for
+the remaining Lemma 10.8 free-sine audit. On one original-source
+neighborhood, the entire sequence τ_n−ζ_n belongs to ℓ(p/2) with a
+common norm bound, for every finite p>1, including 1<p<2.
+
+`ResonantMidpointTaylor.lean` proves second-derivative and Taylor bounds
+from Cauchy estimates on nested disks. Averaging the two endpoint
+expansions cancels the linear terms and leaves a squared-gap error.
+`ResonantMidpointCenter.lean` subtracts the two determinant root equations
+to bound the sum of the diagonal residuals. For a repeated root, the
+vanishing determinant derivative gives the same estimate. Together,
+these prove
+
+    |τ_n−ζ_n| ≤ (8/π) sup_(z∈strip_n) |b_n⁺(z)b_n⁻(z)|.
+
+`WeightedResonantMidpointCenter.lean` discharges the root and repeated-root
+conditions using the actual periodic spectral pair and its algebraic
+multiplicities. It identifies the midpoint with the intrinsic contour
+trace. No reality, simple-root, or open-gap premise is needed.
+`ResonantOffDiagonalMajorants.lean` constructs two actual ℓp majorants for
+the full off-diagonal coefficients, retaining both the leading Fourier
+coefficients and the double-row remainder. Their norms have a polynomial
+bound on bounded source families.
+
+`SourceResonantMidpointCenter.lean` transports all data to the original
+period-one source and identifies the counted pair with the canonical
+endpoint labels. `SourceMidpointCenterSummability.lean` multiplies the two
+ℓp majorants using Hölder, retaining the quasi-normed exponent p/2 below
+one. A fixed finite head completes the full sequence estimate. In that
+head the named center retains its existing free fallback if no
+refined-disc fixed point is available; its displacement is always at
+most π/4.
+
+For every r≥p/2, the actual midpoint displacement belongs to ℓr if and
+only if the named diagonal-center displacement does. The remaining
+free-sine question is therefore reduced to the nonlinear diagonal
+remainder at the moving centers. Its pointwise quartic bound does not
+yet give the required sequence estimate. Lemma 10.8 remains incomplete;
+the unconditional q=p result and the separate p=4, q=1 local-uniformity
+counterexample remain proved.
+
+Validation: `./scripts/check.sh` passed (6,885 build jobs, the full public example suite, and the axiom audit of 31,911 NLS declarations). The build retains 21 existing warnings; the six new modules and six focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.

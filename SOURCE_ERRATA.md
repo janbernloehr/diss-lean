@@ -1911,3 +1911,10 @@ Its printed unspecialized q remains open in the audit: sharper information
 about the free midpoint offset may justify more exponents, and the
 counterexample above varies the numerator rather than fixing it to the
 free roots. See `coverage/SECTION_10.md` for the precise proved scope.
+
+The midpoint-center comparison has since been proved: the full actual
+canonical midpoint minus the named diagonal center is locally uniformly
+bounded in ℓ(p/2), including 1<p<2. Thus the quadratic-diagonal approach
+now reduces the free-sine exponent question to sequence estimates for
+the nonlinear diagonal remainder at the moving centers. This does not
+yet resolve the printed unspecialized q.

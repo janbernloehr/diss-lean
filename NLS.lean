@@ -3442,3 +3442,9 @@ import NLS.ZakharovShabat.ResonantDiagonalQuadratic
 import NLS.ZakharovShabat.ResonantDiagonalQuadraticSummability
 import NLS.ZakharovShabat.ResonantDiagonalNonlinearRemainder
 import NLS.ZakharovShabat.SourceResonantDiagonalQuadratic
+import NLS.ZakharovShabat.ResonantMidpointTaylor
+import NLS.ZakharovShabat.ResonantMidpointCenter
+import NLS.ZakharovShabat.WeightedResonantMidpointCenter
+import NLS.ZakharovShabat.ResonantOffDiagonalMajorants
+import NLS.ZakharovShabat.SourceResonantMidpointCenter
+import NLS.ZakharovShabat.SourceMidpointCenterSummability

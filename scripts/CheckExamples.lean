@@ -47929,3 +47929,85 @@ example (a b : Coeff (ENNReal.ofReal (3/2:ℝ))) :
 end
 end
 end SourceLemma108QuadraticChecks
+
+namespace SourceLemma108MidpointCenterChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex
+open scoped ENNReal
+local instance midpointFourFact : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The full actual error, including central indices, has a common l2 bound near every l4 source.
+example (φ : CoeffPair 4) : ∃ V : Set (CoeffPair 4), IsOpen V ∧ φ ∈ V ∧ ∃ K : ℝ, 0 ≤ K ∧
+    ∀ ψ ∈ V, ∃ D : Coeff 2,
+      (∀ n : ℤ, D n = sourcePeriodicMidpointCenterError (p := 4) (by norm_num) (by norm_num) ψ n) ∧ ‖D‖ ≤ K := by
+  obtain ⟨V,ho,hφ,K,hK,h⟩ := exists_uniform_sourceMidpointCenterError (p := 4) (by norm_num) (by norm_num) φ
+  refine ⟨V,ho,hφ,K,hK,?_⟩
+  intro ψ hψ
+  obtain ⟨D,hD,hDn⟩ := h ψ hψ
+  have he : (4:ℝ≥0∞)/2 = 2 := by
+    symm
+    apply (ENNReal.eq_div_iff (by norm_num) (by norm_num)).mpr
+    norm_num
+  let E : Coeff 2 := ⟨fun n => D n,(lp.memℓp D).of_exponent_ge he.le⟩
+  refine ⟨E,hD,?_⟩
+  exact (Coeff.norm_quasiExponentInclusion_le (by rw [he]; norm_num) (by norm_num) (by norm_num) he.le D).trans hDn
+
+-- The Hilbert endpoint gives genuine l1 membership of the midpoint-center difference.
+example (φ : CoeffPair 2) :
+    Memℓp (sourcePeriodicMidpointCenterError (p := 2) (by norm_num) (by norm_num) φ) 1 := by
+  have h := memℓp_sourceMidpointCenterError (p := 2) (by norm_num) (by norm_num) φ
+  have he : (2:ℝ≥0∞)/2 = 1 := ENNReal.div_self (by norm_num) (by norm_num)
+  exact h.of_exponent_ge he.le
+
+section
+local instance midpointThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2:ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+-- Below two, the conclusion retains the quasi-normed exponent rather than rounding it to one.
+example (φ : CoeffPair (ENNReal.ofReal (3/2:ℝ))) :
+    Memℓp (sourcePeriodicMidpointCenterError (by norm_num) (by norm_num [ENNReal.one_lt_ofReal]) φ)
+      (ENNReal.ofReal (3/4:ℝ)) := by
+  have he : ENNReal.ofReal (3/2:ℝ)/2 = ENNReal.ofReal (3/4:ℝ) := by
+    convert (ENNReal.ofReal_div_of_pos (x := (3/2:ℝ)) (y := (2:ℝ)) (by norm_num)).symm using 1 <;> norm_num
+  exact (memℓp_sourceMidpointCenterError (by norm_num) (by norm_num [ENNReal.one_lt_ofReal]) φ).of_exponent_ge he.le
+end
+
+-- The remaining l2 midpoint question at p=4 is exactly the actual diagonal-center question.
+example (φ : CoeffPair 4) :
+    Memℓp (fun n : ℤ => canonicalPeriodicMidpoint (p := 4) (by norm_num) (by norm_num)
+      (periodOnePotential φ) (periodOnePotential_mem φ) n-(Real.pi:ℂ)*n) 2 ↔
+    Memℓp (fun n : ℤ => weightedResonantDiagonalCenter (p := 4) (by norm_num) SpectralWeight.one
+      (sourceWeightedPeriodOne φ) n-(Real.pi:ℂ)*n) 2 :=
+  memℓp_sourceMidpointDisplacement_iff_center (by norm_num) (by norm_num)
+    (by apply (ENNReal.div_le_iff (by norm_num) (by norm_num)).mpr; norm_num) φ
+
+-- A genuinely double scalar root is covered by the derivative branch of the comparison.
+example : ‖((0:ℂ)+0)/2-0‖ ≤ (8*Real.pi⁻¹)*0 := by
+  apply norm_resonant_midpoint_sub_center_le 0 (fun _ => 0) (fun _ => 0) 0
+  · exact analyticOnNhd_const
+  · intro z hz; simp only [norm_zero]; positivity
+  · exact analyticOnNhd_const
+  · intro z hz; simp
+  · simp [refinedResonantDisk,Real.pi_pos]
+  · simp [refinedResonantDisk,Real.pi_pos]
+  · simp [refinedResonantDisk,Real.pi_pos]
+  · simp
+  · simp
+  · simp
+  · intro h
+    have hd := (((hasDerivAt_id (0:ℂ)).sub_const ((Real.pi:ℂ)*(0:ℤ))).sub_const 0).pow 2 |>.sub_const 0
+    simpa only [Nat.reduceSub,pow_one,Pi.sub_apply,id_eq,Int.cast_zero,mul_zero,sub_zero,mul_one,zero_mul,mul_zero] using! hd.deriv
+
+-- Repeating one simple root is insufficient: counted multiplicity is essential.
+example : (let x : ℂ := (Real.pi:ℂ)/64;
+    x^2-x^2 = 0 ∧ ¬ ‖(x+x)/2‖ ≤ (8*Real.pi⁻¹)*‖x^2‖) := by
+  dsimp
+  refine ⟨sub_self _,?_⟩
+  have he : (((Real.pi:ℂ)/64)+((Real.pi:ℂ)/64))/2 = (Real.pi:ℂ)/64 := by ring
+  rw [he,norm_pow,norm_div,Complex.norm_real,Real.norm_of_nonneg Real.pi_pos.le]
+  norm_num only [norm_ofNat]
+  have hpi : Real.pi*Real.pi⁻¹ = 1 := mul_inv_cancel₀ Real.pi_ne_zero
+  intro h
+  nlinarith [Real.pi_pos, mul_nonneg Real.pi_pos.le (sq_nonneg (Real.pi/64))]
+
+end
+end SourceLemma108MidpointCenterChecks

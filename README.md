@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the actual resonant diagonal now has a verified quadratic
-Hilbert-transform term and an explicit nonlinear remainder. The quadratic
-term has full free-disk supremum estimates at the half exponent (with the
-ℓ(1+) endpoint), and the remainder has a quartic source-norm bound on a
-common source neighborhood. Period-one normalization and negative-index
-signs are verified. Sequence bounds for the nonlinear remainder and the
-transfer to periodic midpoints remain necessary to finish Lemma 10.8's
-free-sine exponent audit. Its separate p=4, q=1 local-uniformity
-counterexample remains proved.
+Latest step: Lean now proves that the actual periodic midpoint differs
+from the resonant diagonal center by an ℓ(p/2) sequence, locally uniformly
+in the original source topology. The estimate includes repeated roots,
+central indices, and the quasi-normed range 1<p<2. Improved midpoint
+summability is now equivalent to improved diagonal-center summability.
+The nonlinear diagonal remainder still needs stronger sequence bounds
+to finish Lemma 10.8's free-sine exponent audit. Its separate p=4, q=1
+local-uniformity counterexample remains proved.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
