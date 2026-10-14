@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 6.8(ii)'s positive-component norm factor is now
-independently refuted locally near the fixed potential (1,0), even after
-restoring the left-hand powers. The actual squared remainder is quadratic
-in a small perturbation, while that budget is quartic. Both half-cutoff
-roundings fail. The proved p-power/full-pair estimate remains valid.
-[The Section 6 audit](coverage/SECTION_6.md) records the exact local scope.
-Next are Lemma 6.9's determinant zeros and displacement estimates in the
-original source realization. The dissertation remains incomplete.
+Latest milestone: Lemma 6.9 now connects the actual original determinant,
+its two roots counted with multiplicity, the full-strip factor-six gap bound,
+and the corrected displacement estimate on one original neighborhood.
+The printed displacement budget is formally refuted for any choice of these
+counted root labels. [The Section 6 audit](coverage/SECTION_6.md) records
+both the valid statements and the correction's exact scope.
+Next is Chapter 2's Theorem 7.1 and its action-angle assertions.
+The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

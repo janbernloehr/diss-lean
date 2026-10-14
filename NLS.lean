@@ -3382,3 +3382,6 @@ import NLS.ZakharovShabat.SourceLemma6_8Counterexample
 import NLS.ZakharovShabat.ReverseCubicResonantPotential
 import NLS.ZakharovShabat.SourceReverseCubicPotential
 import NLS.ZakharovShabat.SourceLemma6_8ComponentCounterexample
+import NLS.ZakharovShabat.SourceResonantDeterminant
+import NLS.ZakharovShabat.SourceLemma6_9
+import NLS.ZakharovShabat.SourceLemma6_9Counterexample

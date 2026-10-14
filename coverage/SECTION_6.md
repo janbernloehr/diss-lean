@@ -476,10 +476,41 @@ not an assertion that one fixed perturbed potential defeats every individual
 cutoff. The full pair norm is a proved sufficient replacement, with no
 claim of optimality or a sharp constant.
 
+## Lemma 6.9: original determinant roots and corrected displacement
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Original scalar determinant | `sourceResonantDeterminantFunction_eq_det`, `sourceResonantDeterminantFunction_eq_printed_det` | Equals the actual reduced matrix determinant in both basis orders on the correction domain. |
+| Actual original spectrum | `sourceResonantDeterminantFunction_spectrum_iff` | Zeros are precisely noninvertible original period-two pencils on the strip. |
+| Joint analyticity | `analyticAt_sourceResonantDeterminantFunction` | Original component-sum potential norm and spectral variable, including p=1 on the correction domain. |
+| Genuine product supremum | `sourceResonantBProductSup`, `SourceResonantStripControl.product_bounds` | Full closed unbounded strip; bounded image, nonnegative supremum, pointwise domination. |
+| Cauchy bound | `SourceResonantStripControl.deriv_bound` | Diagonal derivative norm at most 1/8 on the open π/4 disk. |
+| Counted roots | `SourceResonantRootPair`, `.zero_count` | No other strip zeros; scalar order equals the two-element multiset's count; total count exactly two, including coincident roots. |
+| Algebraic multiplicities | `SourceResonantRootPair.multiplicity_eq_count` | Same coefficient-preserving operator input `CoeffPair.toMax p φ`, without period doubling. |
+| Localization and gap | `SourceResonantRootPair.left_bound`, `.right_bound`, `.gap_le` | Distance at most 3π/32; squared gap at most six times the actual product supremum. |
+| One original neighborhood | `sourceLemma6_9` | Finite p>1; joint analyticity, strip control, counted pairs, summability and corrected power budget, for all later signed-tail cutoffs. |
+| Label independence | `SourceResonantRootPair.eq_or_swap`, `sourceResonantRoot_displacementTail_eq` | Arbitrary exchanges at each mode preserve the complete displacement tail, including double roots. |
+| Printed sum refuted | `not_sourceLemma6_9_printed_pair_sum` | At p=2, no locally uniform printed budget near zero for any choice of counted scalar roots. |
+
+The main theorem's displacement budget is exactly
+`sourcePeriodTwoDisplacementBudget`, displayed above in the Proposition 6.1
+audit. It includes the additive leading Fourier-tail term and uses floor(N/2).
+The printed formula is not claimed. The new counterexample entry point
+applies the previous actual-source spectral witness to these scalar root
+pairs. Its failure is locally uniform, not a fixed-input assertion about
+all individual cutoffs.
+
+The neighborhood is open and convex, contains the specified original input
+and zero, and is chosen before every distant index and every later cutoff.
+Each pair exhausts both determinant zeros and original spectral points on
+the whole strip. The proof uses the existing branch-free root-gap argument;
+it requires neither a global square-root branch nor analytic root labels.
+Finitely many central labels remain unspecified by this high-frequency result.
+
 ## Remaining source assertions
 
-Continue with Lemma 6.9's determinant zeros and displacement estimates in
-the original source realization. Sharper ceiling-cutoff versions of the
-corrected Propositions 6.1/6.3 estimates remain unproved. Existing later
-results and the candidate-label inventory do not certify this section or
-the dissertation complete.
+Continue with Chapter 2's Theorem 7.1, auditing the existing action-angle
+construction against its common-neighborhood and Poisson-bracket assertions.
+Sharper ceiling-cutoff versions of the corrected Propositions 6.1/6.3 and
+Lemma 6.9 estimates remain unproved. Existing later results and the
+candidate-label inventory do not certify the dissertation complete.

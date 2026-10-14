@@ -45920,3 +45920,81 @@ example :
 
 end
 end SourceLemma68ComponentChecks
+
+namespace SourceLemma69Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal
+noncomputable section
+
+-- The determinant is the actual source matrix in both basis orders, also at p=1.
+example (φ : CoeffPair 1) (n : ℤ) (z : ℂ) (hz : z ∈ resonantStrip n)
+    (h : ‖weightedPotentialSquareInShift (by norm_num) SpectralWeight.one
+      (unitWeightedPairEquiv φ) n z hz‖ < 1) :
+    sourceResonantDeterminantFunction (by norm_num) φ n z =
+      (sourcePrintedResonantMatrix (by norm_num) φ n z hz h).det ∧
+    (z ∉ sourceResolventSet (by norm_num) φ ↔ sourceResonantDeterminantFunction (by norm_num) φ n z = 0) :=
+  ⟨sourceResonantDeterminantFunction_eq_printed_det (by norm_num) φ n z hz h,
+    sourceResonantDeterminantFunction_spectrum_iff (by norm_num) φ n z hz h⟩
+
+-- A repeated label contributes order two, not one distinct point.
+example (φ : CoeffPair 2) (n : ℤ) (x : ℂ)
+    (h : SourceResonantRootPair (by norm_num) φ n x x) :
+    analyticOrderNatAt (sourceResonantDeterminantFunction (by norm_num) φ n) x = 2 ∧
+    analyticZeroCount (sourceResonantDeterminantFunction (by norm_num) φ n) (resonantStrip n) = 2 := by
+  exact ⟨by simpa using h.order_eq_count x (refinedResonantDisk_subset_strip n h.left_mem),h.zero_count⟩
+
+-- At zero potential both labels equal the free center, for either sign of n.
+example (n : ℤ) (x y : ℂ) (h : SourceResonantRootPair (p := 2) (by norm_num) 0 n x y) :
+    x = (Real.pi : ℂ)*n ∧ y = (Real.pi : ℂ)*n := by
+  constructor
+  · simpa [sub_eq_zero] using h.left_zero
+  · simpa [sub_eq_zero] using h.right_zero
+
+-- The full-strip supremum bounds the actual product and gives the source factor six.
+example (φ : CoeffPair 2) (n : ℤ) (x y : ℂ)
+    (hc : SourceResonantStripControl (by norm_num) φ n)
+    (hr : SourceResonantRootPair (by norm_num) φ n x y) :
+    (∀ z ∈ resonantStrip n, ‖sourceResonantBPlusFunction (by norm_num) φ n z *
+      sourceResonantBMinusFunction (by norm_num) φ n z‖ ≤ sourceResonantBProductSup (by norm_num) φ n) ∧
+    ‖x-y‖^2 ≤ 6*sourceResonantBProductSup (by norm_num) φ n ∧
+    ∀ z ∈ refinedResonantDisk n, ‖deriv (sourceResonantAFunction (by norm_num) φ n) z‖ ≤ 1/8 :=
+  ⟨hc.product_bounds.2.2.2,hr.gap_le,hc.deriv_bound⟩
+
+-- One original neighborhood and cutoff serve both directions and every later cutoff.
+example (φ : CoeffPair 2) :
+    ∃ N₀ : ℕ, 2 ≤ N₀ ∧ ∃ U : Set (CoeffPair 2), IsOpen U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∀ ψ ∈ U, ∃ ξ η : ℤ → ℂ,
+        (∀ n : ℕ, N₀ ≤ n →
+          SourceResonantRootPair (by norm_num) ψ n (ξ n) (η n) ∧
+          SourceResonantRootPair (by norm_num) ψ (-(n : ℤ)) (ξ (-(n : ℤ))) (η (-(n : ℤ)))) ∧
+        ∀ N : ℕ, N₀ ≤ N → Summable (rootDisplacementPowerTail 2 N ξ η) ∧
+          (∑' n : ℤ, rootDisplacementPowerTail 2 N ξ η n) ≤ sourcePeriodTwoDisplacementBudget ψ N := by
+  obtain ⟨N,hN,U,ho,_,hφ,h0,_,hdata⟩ := sourceLemma6_9 (p := 2) (by norm_num) (by norm_num) φ
+  refine ⟨N,hN,U,ho,hφ,h0,?_⟩
+  intro ψ hψ
+  obtain ⟨ξ,η,hr,ht⟩ := hdata ψ hψ
+  exact ⟨ξ,η,fun n hn => ⟨hr n (by simpa using hn),hr (-(n : ℤ)) (by simpa using hn)⟩,ht⟩
+
+-- Different choices, including exchanges at individual modes, preserve the whole sum.
+example (φ : CoeffPair 2) (N : ℕ) (ξ η α β : ℤ → ℂ)
+    (h : ∀ n : ℤ, N ≤ n.natAbs → SourceResonantRootPair (by norm_num) φ n (ξ n) (η n))
+    (k : ∀ n : ℤ, N ≤ n.natAbs → SourceResonantRootPair (by norm_num) φ n (α n) (β n))
+    (hs : Summable (rootDisplacementPowerTail 2 N ξ η))
+    (hb : (∑' n : ℤ, rootDisplacementPowerTail 2 N ξ η n) ≤ sourcePeriodTwoDisplacementBudget φ N) :
+    Summable (rootDisplacementPowerTail 2 N α β) ∧
+      (∑' n : ℤ, rootDisplacementPowerTail 2 N α β n) ≤ sourcePeriodTwoDisplacementBudget φ N := by
+  rw [← sourceResonantRoot_displacementTail_eq N ξ η α β h k]
+  exact ⟨hs,hb⟩
+
+-- The printed budget still fails for every choice of these counted scalar roots.
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ 0 ∈ U ∧
+      ∀ φ ∈ U, ∃ ξ η : ℤ → ℂ,
+        (∀ n : ℤ, M ≤ n.natAbs → 2 ≤ n.natAbs →
+          SourceResonantRootPair (by norm_num) φ n (ξ n) (η n)) ∧
+        ∀ N : ℕ, M ≤ N → 2 ≤ N → Summable (rootDisplacementPowerTail 2 N ξ η) ∧
+          (∑' n : ℤ, rootDisplacementPowerTail 2 N ξ η n) ≤
+            sourcePrintedHilbertDisplacementBudget C φ N := not_sourceLemma6_9_printed_pair_sum
+
+end
+end SourceLemma69Checks

@@ -4007,3 +4007,49 @@ Next: Lemma 6.9's determinant zeros and displacement estimates in the
 original source realization. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6819 build jobs, the combined public examples, and the axiom audit of 30937 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 6.9 milestone in the original source space
+
+`SourceResonantDeterminant.lean` forms the determinant from the actual original
+analytic coefficients and identifies it with both basis orders of the source
+matrix. Its zeros detect noninvertibility of the original period-two pencil.
+The determinant is jointly analytic in potential and spectral parameter.
+These pointwise assertions include p=1 on the correction domain.
+
+The product supremum is the supremum of the actual product b⁺b⁻ over the
+entire closed, unbounded strip. Its image is bounded and every pointwise
+norm is bounded by this nonnegative supremum. One original open convex
+neighborhood and cutoff give the numerical coefficient bounds, a small
+correction, and the Cauchy derivative bound 1/8 on the refined disk.
+
+`SourceLemma6_9.lean` gives two roots with repetition in each distant strip,
+with no other scalar zeros or original spectral points there. Every scalar
+analytic order equals the occurrence count in the two-element multiset;
+the total count on the whole strip is exactly two. The coefficient-preserving
+operator realization has the same algebraic multiplicities. Each root is
+within 3π/32 of nπ, hence in the source's open π/4 disk, and the squared gap
+is at most six times the full-strip product supremum.
+
+For every finite p>1, `sourceLemma6_9` provides the joint analyticity, strip
+control, counted pairs, and corrected displacement sums on one original
+neighborhood and cutoff. Every larger signed-tail cutoff works. The budget
+retains the additive leading Fourier tail and the explicit floor half-cutoff.
+The labels are unique up to exchange, and arbitrary modewise choices give
+identical displacement tails; no analytic individual labeling is asserted.
+
+`SourceLemma6_9Counterexample.lean` formally refutes the printed Hilbert
+pair-sum budget for any choices of these counted scalar roots, using the
+previous actual-source spectral counterexample. This is a local uniform
+failure near zero, not a claim about every individual cutoff at fixed input.
+
+Public checks cover actual matrix/spectrum agreement at p=1, repeated roots
+and free centers, both signs of the index, product and derivative bounds,
+one neighborhood for all later cutoffs, label-independent sums, and the
+printed sum negation.
+
+Next: audit Chapter 2's Theorem 7.1 against the existing action-angle
+construction, including its common neighborhood and Poisson-bracket scope.
+Sharper ceiling-cutoff replacements remain unproved. The dissertation remains
+incomplete.
+
+Validation: `./scripts/check.sh` passed: 6822 build jobs, the combined public examples, and the axiom audit of 30990 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

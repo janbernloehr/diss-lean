@@ -1533,6 +1533,14 @@ adds the leading Fourier-tail power outside the nonlinear factors. It uses
 the explicit discrete convention floor(N/2); a sharper ceiling-cutoff bound
 is not claimed. See `coverage/SECTION_6.md` for exact theorem scope.
 
+`not_sourceLemma6_9_printed_pair_sum` now directly negates the printed
+Hilbert budget for any labels satisfying `SourceResonantRootPair`. These are
+actual original determinant roots with exact scalar analytic orders, not
+arbitrary approximate spectral labels. The corrected `sourceLemma6_9`
+combines their count, original spectral equivalence, localization, factor-six
+gap bound, and corrected displacement sum on one original neighborhood.
+No new counterexample or stronger fixed-input failure is inferred here.
+
 ## Corollary 6.2: period-two scope resolved by actual restriction
 
 On printed page 35 the preceding paragraph discusses a one-periodic potential,
