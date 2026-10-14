@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 10.8 now has exact quotient-supremum decompositions
-on every original isolating disk, including the finite central disks,
-for every source in the common complex domain. The ℓ(1+) endpoint uses
-a single sequence for all projection exponents. Local uniformity in the
-original root topology is proved for q≥p, including infinity. The printed
-q<p uniformity and the free-sine display’s general q remain under audit.
-[The Section 10 audit](coverage/SECTION_10.md) records the proved scope
-and the remaining work.
+Latest step: Lean now proves a counterexample to Lemma 10.8's printed
+local-uniformity claim at p=4, q=1. Finite root perturbations can have
+arbitrarily small ℓ4 norm while the actual quotient disk suprema have
+unbounded ℓ2 norms. Each supremum sequence still belongs individually
+to ℓ2. The corrected estimates on bounded ℓq offset families and the
+original-topology estimates for q≥p remain proved. The free-sine display's
+general q is the remaining Lemma 10.8 audit question.
+[The Section 10 audit](coverage/SECTION_10.md) records the proof and scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

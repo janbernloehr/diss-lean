@@ -1873,18 +1873,41 @@ The second counterexample is again locally uniform, not a single fixed
 perturbation violating all its individual cutoffs. The full pair norm is a
 proved sufficient replacement; no uniquely necessary replacement or optimal
 constant is asserted.
-## Lemma 10.8: unresolved local-uniformity scope (pages 58–59)
 
-This is an open audit item, not a declared counterexample. The implemented
-quotient estimate tracks the ℓq norm of σ−τ explicitly and proves uniform
-supremum decompositions on bounded families of such offsets. For q≥p,
-including infinity, local uniformity in the original ℓp root topology is
-proved. For q<p, the proof does not establish that the stronger ℓq offset
-norm is bounded on an ℓp neighborhood. The printed assertion in that
-range still needs to be resolved.
+## Lemma 10.8: original-topology local uniformity fails in general (pages 58–59)
 
-The free-sine consequence is proved unconditionally with q=p. The printed
-display retains q; a general-q version requires corresponding information
-about the free offset σ⁰−τ. No such stronger information is inferred from
-an arbitrary numerator sequence. See `coverage/SECTION_10.md` for the
-precise theorem scope and remaining audit requirements.
+The printed uniformity assertion on ℓp × V_φ is formally false at p=4,
+q=1. This resolves the earlier open audit item; it is an actual quotient
+counterexample, not just a failure to bound the stronger input norm.
+
+At zero source, choose a_m=b for 1≤m≤L and zero otherwise, so the
+midpoint offset is exactly a and belongs to ℓ1. At each free center nπ
+outside the block, the quotient equals ∏_(1≤m≤L)(1−b/(π(n−m))).
+For 2L<n≤3L and 0≤b≤π, its error from one is at least b/(6π).
+Consequently any ℓ2 majorant has norm at least sqrt(L)b/(6π).
+Setting L=k⁴ and b=δ/(2k) gives input norm ||a||₄=δ/2 and output
+majorant norm at least δk/(12π). These bounds hold for the actual
+infinite quotient on its omitted-root domain.
+
+Every actual isolating disk at the free source contains its center.
+Its literal supremum therefore dominates the center error. The printed
+ℓ1+ℓ2+ℓ(1+) decomposition with locally bounded component norms would
+provide a uniformly bounded ℓ2 majorant, a contradiction. It suffices to
+bound the ℓ(1+) component's ℓ2 projection; the formal negation therefore
+also rules out simultaneous bounds in all its projection exponents.
+The counterexample is realized in a genuine open Lemma 10.8 neighborhood,
+and a separate theorem proves individual ℓ2 membership of each summable
+free-source perturbation's disk supremum.
+
+Implemented in `SourceQuotientBlockRoots.lean`,
+`SourceQuotientBlockLowerBound.lean`, and
+`SourceQuotientUniformityCounterexample.lean`. A sufficient replacement is
+uniformity on explicitly bounded ℓq midpoint-offset families, as already
+proved. The original ℓp topology works for q≥p, including infinity.
+No assertion is made that every pair q<p fails.
+
+The separate free-sine consequence is proved unconditionally with q=p.
+Its printed unspecialized q remains open in the audit: sharper information
+about the free midpoint offset may justify more exponents, and the
+counterexample above varies the numerator rather than fixing it to the
+free roots. See `coverage/SECTION_10.md` for the precise proved scope.

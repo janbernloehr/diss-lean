@@ -14,9 +14,9 @@ space, literal unordered quotient product and printed closed-disk domain.
 Equation (2.13), Lemma 10.7 and equation (2.14) are covered on the same
 common domain, including collapsed gaps, actual side limits and Figure 2.4
 on the real locus. Lemma 10.8 has full-disk supremum decompositions and
-precise bounded-offset estimates; its q<p local-uniformity wording and
-the free-sine display’s general q remain under audit. Later statements
-remain to be audited.
+precise bounded-offset estimates. Its printed original-topology uniformity
+claim is refuted at p=4, q=1 by a formal quotient counterexample. The
+free-sine display’s general q remains under audit, as do later statements.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -824,19 +824,46 @@ the numerator vanishes at −π while the omitted denominator is nonzero.
 The actual selected central disk contains −π, and its supremum is at
 least one. This witnesses that the finite head has not been discarded.
 
-Two source claims remain unresolved in the audit:
+## Lemma 10.8: the original-topology claim is false in general
 
-1. The statement says “locally uniformly on ℓp × V_φ” even for q<p.
-   The proof through Appendix D.6 has explicit dependence on ||σ−τ||q.
-   A bound on that norm cannot simply be inferred from the original
-   ℓp topology. The current theorem proves bounded-offset uniformity
-   and the original-topology assertion for q≥p; it does not settle the
-   remaining printed assertion or declare a formal counterexample.
-2. The free-sine display retains q without an explicit free-offset
-   hypothesis. The proved unconditional consequence uses q=p.
-   A general-q specialization is justified whenever the free offset
-   satisfies the corresponding membership and norm bounds, but those
-   stronger bounds are not inferred from the arbitrary numerator's α.
+The p=4, q=1 case is now refuted by actual finite-block numerator
+perturbations at the free source. This is stronger than observing that
+an ℓ1 input norm need not be bounded in ℓ4.
 
-Lemma 10.8 is therefore not marked fully audited. Resolve these two
-points next, then proceed to Remark 10.9 and Lemma 10.10.
+For a_m=b on 1≤m≤L and zero elsewhere,
+`sourceSingleRootQuotient_block_eq_finiteProduct` proves
+
+    Q_n(nπ,a,0) = ∏_(1≤m≤L) (1−b/(π(n−m)))    (n outside the block).
+
+If 0≤b≤π and 2L<n≤3L, the sum of the deficits is between b/(3π)
+and one. The finite-product estimate gives |Q_n−1|≥b/(6π), hence
+||B||₂²≥L(b/(6π))² for every ℓ2 majorant B. With L=k⁴ and b=δ/(2k),
+the input has ||a||₄=δ/2 while ||B||₂≥δk/(12π). Increasing k yields
+unbounded output norms on every ℓ4 neighborhood, with all offsets in ℓ1.
+
+`not_locally_uniform_sourceQuotientDiscSup_mixed` applies the obstruction
+to the literal supremum on any actual disk-estimate neighborhood of the
+free source whose disks contain the free centers. The three printed
+components would give an ℓ2 majorant by contractive ℓ1 inclusion and the
+ℓ2 projection of the ℓ(1+) component. Their combined norm bound is
+impossible, independently of how the components are chosen or cancel.
+`exists_sourceQuotientDiscSup_uniformity_counterexample` constructs such
+a neighborhood from `sourceLemma10_8_estimates` itself.
+
+`SourceQuotientDiscEstimates.free_sup_mem_l2_of_summable` separately
+proves individual ℓ2 membership for every summable free-source offset
+in an actual estimate neighborhood. Thus the discrepancy is specifically
+local uniformity, not the pointwise sequence class. Public checks also
+test the exact finite product at a negative free center, constant small
+input norm as the support grows, and an arbitrarily large output bound.
+
+A sufficient correction is the already proved explicit ℓq offset bound
+when q<p. The original-topology result for q≥p remains valid. The formal
+counterexample uses p=4, q=1; it does not classify every pair q<p.
+
+The free-sine display's unspecialized q is now the sole remaining
+Lemma 10.8 audit question. Its unconditional q=p consequence is proved.
+A general-q specialization requires appropriate estimates for the free
+midpoint offset, which cannot be inferred from an arbitrary numerator's
+offset. The present counterexample does not settle that separate claim.
+After resolving it, proceed to Remark 10.9 and Lemma 10.10.

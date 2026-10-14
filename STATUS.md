@@ -1,6 +1,43 @@
 # Implementation status
 
-## Current milestone: Lemma 10.8 estimates on every original disk
+## Current milestone: Lemma 10.8 local-uniformity counterexample
+
+`SourceQuotientUniformityCounterexample.lean` resolves the first remaining
+source-audit question: the printed original-topology local-uniformity
+assertion is false in general. The formal counterexample has p=4, q=1,
+zero source, and finitely supported numerator displacements. It does not
+assert failure for every q<p.
+
+`SourceQuotientBlockRoots.lean` perturbs roots 1 through L by one real
+amplitude b. Outside this block, the actual analytic quotient at nπ is
+exactly the finite product of 1−b/(π(n−m)). The proof uses the convergent
+infinite product and the genuine omitted-root domain.
+`SourceQuotientBlockLowerBound.lean` proves that for 2L<n≤3L and
+0≤b≤π, each error is at least b/(6π). Thus every ℓ2 majorant B satisfies
+||B||₂²≥L(b/(6π))².
+
+Taking L=k⁴ and b=δ/(2k) fixes the input ℓ4 norm at δ/2, while forcing
+||B||₂≥δk/(12π). Every input also belongs to ℓ1. Arbitrarily small
+ℓ4 neighborhoods therefore have no common ℓ2 error bound. The three
+printed summands ℓ1+ℓ2+ℓ(1+) would give such a bound by projecting the
+last summand to ℓ2 and using contractive inclusion ℓ1→ℓ2, so even allowing
+arbitrary decompositions and cancellation cannot restore uniformity.
+
+The final theorem realizes this obstruction for the literal supremum on
+a genuine Lemma 10.8 neighborhood with the actual original disks. A
+separate positive theorem proves that each individual summable free-source
+perturbation still has an ℓ2 supremum sequence. The failure concerns a
+common local norm bound, not individual sequence membership.
+
+The sufficient correction already proved is to bound ||σ−τ||q explicitly
+when working with q<p. Original-topology uniformity for q≥p, including
+infinity, remains proved without that extra bound. The free-sine display's
+unspecialized q remains under audit; its unconditional q=p version is
+proved. Remark 10.9 and later statements remain ahead.
+
+Validation: `./scripts/check.sh` passed (6,875 build jobs, the full public example suite, and the axiom audit of 31,803 NLS declarations). The build retains 21 existing warnings; the three new modules and focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+## Previous milestone: Lemma 10.8 estimates on every original disk
 
 `SourceLemma10_8Estimates.lean` extends the quotient-product estimates to
 every source in the unchanged Lemma 10.7 domain W and every original

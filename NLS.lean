@@ -3435,3 +3435,6 @@ import NLS.ZakharovShabat.SourceQuotientDiscSupDecomposition
 import NLS.ZakharovShabat.SourceQuotientOriginalTopology
 import NLS.ZakharovShabat.SourceLemma10_8Estimates
 import NLS.ZakharovShabat.SourceQuotientDiscNormalization
+import NLS.ZakharovShabat.SourceQuotientBlockRoots
+import NLS.ZakharovShabat.SourceQuotientBlockLowerBound
+import NLS.ZakharovShabat.SourceQuotientUniformityCounterexample

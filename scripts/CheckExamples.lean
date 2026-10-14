@@ -47791,3 +47791,56 @@ example : ∃ a : Coeff (ENNReal.ofReal (3/2 : ℝ)),
 
 end
 end SourceLemma108EstimateChecks
+
+namespace SourceLemma108UniformityChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex Filter Topology
+open scoped ENNReal
+local instance : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+
+-- The same finite numerator product has the correct sign at a negative free center.
+example : sourceSingleRootQuotientJointProduct (p := 4) (by norm_num) (by norm_num) (-1)
+    (-(Real.pi:ℂ),(sourceQuotientBlock 4 1 ((Real.pi/2:ℝ):ℂ),0)) = 5/4 := by
+  have h := sourceSingleRootQuotient_block_eq_finiteProduct 1 (Real.pi/2) (-1) (by simp)
+  norm_num only [Int.cast_neg,Int.cast_one,mul_neg,mul_one] at h
+  rw [h]
+  simp only [Finset.Icc_self,Finset.prod_singleton]
+  push_cast
+  field_simp
+  ring
+
+-- The growing support has a fixed small input norm, with no hidden support-size assumption.
+example (k : ℕ) (hk : 0 < k) :
+    ‖sourceQuotientBlock 4 (k^4) ((1/(200*(k:ℝ)):ℝ):ℂ)‖ = 1/200 := by
+  have he : (1/(200*(k:ℝ)):ℝ) = (1/100)/(2*(k:ℝ)) := by ring
+  rw [he]
+  convert sourceQuotientBlock_scaled_norm (1/100) (by norm_num) k hk using 1
+  norm_num
+
+example : ∃ a : Coeff 4, ‖a‖ < 1/100 ∧ Memℓp (fun m => a m) 1 ∧
+    ∀ B : Coeff 2,
+      (∀ n : ℤ, ‖sourceSingleRootQuotientJointProduct (p := 4) (by norm_num) (by norm_num) n
+        ((Real.pi:ℂ)*n,(a,0))-1‖ ≤ ‖B n‖) → 1000000 < ‖B‖ :=
+  exists_small_summable_sourceQuotient_large_error (1/100) (by norm_num) 1000000
+
+-- Actual l2 membership survives individually; a common local bound fails.
+example {U : Set (Coeff 4 × CoeffPair 4)} {D : ℤ → Set ℂ} {c R H M : ℝ} {N K : ℕ}
+    (h : SourceQuotientDiscEstimates (p := 4) (by norm_num) (by norm_num) U D c R H M N K)
+    (a : Coeff 4) (ha : (a,0) ∈ U) (hmem : Memℓp (fun m => a m) 1) :
+    ∃ E : Coeff 2, ∀ n : ℤ, E n =
+      (sourceQuotientDiscSup (p := 4) (by norm_num) (by norm_num) D (a,0) n : ℂ) :=
+  ⟨⟨_,h.free_sup_mem_l2_of_summable a ha hmem⟩,fun _ => rfl⟩
+
+-- The three-summand obstruction is realized on an actual source disk neighborhood.
+example : ∃ U : Set (Coeff 4 × CoeffPair 4), IsOpen U ∧ (0,0) ∈ U ∧
+    ∃ D : ℤ → Set ℂ, ∃ c R H M : ℝ, ∃ N K : ℕ,
+      SourceQuotientDiscEstimates (p := 4) (by norm_num) (by norm_num) U D c R H M N K ∧
+      ¬ ∃ L₁ L₂ Lplus : ℝ, ∀ a : Coeff 4, (a,0) ∈ U → Memℓp (fun m => a m) 1 →
+        ∃ A : Coeff 1, ∃ B : Coeff 2, ∃ E : CoeffOnePlus,
+          (∀ n : ℤ, (sourceQuotientDiscSup (p := 4) (by norm_num) (by norm_num) D (a,0) n : ℂ) =
+            A n+B n+E.1 n) ∧
+          ‖A‖ ≤ L₁ ∧ ‖B‖ ≤ L₂ ∧ ‖CoeffOnePlus.toCoeff 2 (by norm_num) (by norm_num) E‖ ≤ Lplus :=
+  exists_sourceQuotientDiscSup_uniformity_counterexample
+
+end
+end SourceLemma108UniformityChecks
