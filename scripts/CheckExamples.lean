@@ -50176,3 +50176,156 @@ example (ψ : CoeffPair (4:ℝ≥0∞)) (m : ℤ) (U : Set ℂ) (hU : IsOpen U)
 
 end
 end SourceLocalEllipseChecks
+
+namespace SourceLemma124Checks
+noncomputable section
+open Set Metric Complex NLS NLS.ZakharovShabat NLS.ComplexAnalysis
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+private def freeCircle (m : ℤ) : SourceCriticalRootPeriodCircle hp hp1 (0:CoeffPair p) m where
+  center := Real.pi*m
+  radius := Real.pi/4
+  radius_pos := by positivity
+  gap := by
+    rw [sourcePeriodicSegment_zero_source]
+    intro z hz
+    rw [mem_singleton_iff] at hz
+    subst z
+    simpa using (show 0 < Real.pi/4 by positivity)
+  other := by
+    intro k hkm z hz
+    rw [sourcePeriodicSegment_zero_source,mem_singleton_iff] at hz
+    subst z
+    simp only [mul_re,ofReal_re,intCast_re,ofReal_im,intCast_im,mul_zero,sub_zero]
+    rcases lt_or_gt_of_ne hkm with hlt | hgt
+    · left
+      have hk : (k:ℝ)+1 ≤ m := by exact_mod_cast (show k+1 ≤ m by omega)
+      nlinarith [Real.pi_pos]
+    · right
+      have hk : (m:ℝ)+1 ≤ k := by exact_mod_cast (show m+1 ≤ k by omega)
+      nlinarith [Real.pi_pos]
+
+variable {W : Set (CoeffPair p)} (H : SourceLemma12_4Data hp hp1 W) (hW : IsOpen W)
+
+-- The source parameter is unrestricted apart from membership in the retained W.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) (a : DeletedCoeff p n) :
+    AnalyticAt ℂ (fun t : CoeffPair p × DeletedCoeff p n => sourcePsiOriginalEquation hp hp1 n t.2 t.1) (ψ,a) :=
+  H.analytic n (ψ,a) ⟨hψ,mem_univ _⟩
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) (a : DeletedCoeff p n) :
+    AnalyticAt ℝ (fun t : CoeffPair p × DeletedCoeff p n => sourcePsiOriginalEquation hp hp1 n t.2 t.1) (ψ,a) :=
+  H.real_analytic n (ψ,a) ⟨hψ,mem_univ _⟩
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) (a : DeletedCoeff p n) (m : ℤ)
+    (D E : SourceCriticalRootPeriodCircle hp hp1 ψ m) :
+    sourcePsiEquationCoordinate hp hp1 n m (a:Coeff p) ψ (D.center:ℂ) D.radius =
+      sourcePsiEquationCoordinate hp hp1 n m (a:Coeff p) ψ (E.center:ℂ) E.radius :=
+  (H.equation ψ hψ n a m D).symm.trans (H.equation ψ hψ n a m E)
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) (a : DeletedCoeff p n) (m : ℤ)
+    (D : SourceCriticalRootPeriodCircle hp hp1 ψ m) (Γ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (ball (D.center:ℂ) D.radius \ sourcePeriodicSegment hp hp1 ψ m))
+    (hw : Γ.windingIntegral (sourceStandardRootMidpoint hp hp1 ψ m) = -2) :
+    sourceGapFunctional hp hp1 n m ψ Γ (fun z => sourcePsiCandidate n (z,(a:Coeff p))) =
+      -2*(sourcePsiOriginalEquation hp hp1 n a ψ:Coeff p) m := by
+  rw [H.circuit hW ψ hψ n a m D Γ hΓ,hw]
+  ring
+
+example (φ : CoeffPair p) (hφ : φ ∈ W) (a₀ : Coeff p) :
+    ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧ (a₀,φ) ∈ U ∧ U ⊆ univ ×ˢ W ∧
+      ∃ C : ℝ, 0 < C ∧ ∀ n : ℤ, ∀ a : DeletedCoeff p n, ∀ ψ : CoeffPair p,
+        ((a:Coeff p),ψ) ∈ U → (∑' m : ℤ, ‖(sourcePsiOriginalEquation hp hp1 n a ψ:Coeff p) m‖^p.toReal) < C :=
+  H.power_sum φ hφ a₀
+
+-- An arbitrary single root shift gives the exact free response, even far outside its disk.
+include H in
+private theorem single_response (h0 : (0:CoeffPair p) ∈ W) (t : ℂ) :
+    (sourcePsiOriginalEquation hp hp1 0 (Coeff.deletedSingleCLM 0 1 (by norm_num) t) 0:Coeff p) 1 = 2*t := by
+  rw [H.equation 0 h0 0 _ 1 (freeCircle hp hp1 1)]
+  simp only [Coeff.deletedSingleCLM_coe]
+  simpa only [freeCircle,Int.cast_one,mul_one,ite_true,mul_comm] using
+    sourcePsiEquationCoordinate_single_zero_eq hp hp1 1 0 1 (by norm_num) (by norm_num)
+      (Real.pi/4) (by positivity) (by nlinarith [Real.pi_pos]) t
+
+example (h0 : (0:CoeffPair p) ∈ W) :
+    (sourcePsiOriginalEquation hp hp1 0 (Coeff.deletedSingleCLM 0 1 (by norm_num) (100*Complex.I)) 0:Coeff p) 1 = 200*Complex.I := by
+  rw [single_response hp hp1 H h0]
+  ring
+
+example : displacedRoots (lp.single p 1 (100*Complex.I):Coeff p) 1 ∉
+    ball ((Real.pi:ℂ)*1) (Real.pi/4) := by
+  simp only [displacedRoots,lp.single_apply_self,mem_ball,dist_eq_norm,Int.cast_one,mul_one,add_sub_cancel_left]
+  simp only [norm_mul,Complex.norm_ofNat,norm_I,mul_one]
+  linarith [Real.pi_lt_four]
+
+-- Moving the first retained root to the second free root creates a collision.
+example : displacedRoots (lp.single p 1 (Real.pi:ℂ):Coeff p) 1 =
+    displacedRoots (lp.single p 1 (Real.pi:ℂ):Coeff p) 2 := by
+  simp [displacedRoots,lp.single_apply]
+  ring
+
+example (h0 : (0:CoeffPair p) ∈ W) :
+    (sourcePsiOriginalEquation hp hp1 0 (Coeff.deletedSingleCLM 0 1 (by norm_num) (Real.pi:ℂ)) 0:Coeff p) 1 = 2*(Real.pi:ℂ) :=
+  single_response hp hp1 H h0 _
+
+example (h0 : (0:CoeffPair p) ∈ W) :
+    AnalyticAt ℂ (fun t : CoeffPair p × DeletedCoeff p 0 => sourcePsiOriginalEquation hp hp1 0 t.2 t.1)
+      (0,Coeff.deletedSingleCLM 0 1 (by norm_num) (Real.pi:ℂ)) :=
+  H.analytic 0 _ ⟨h0,mem_univ _⟩
+
+example (ψ : CoeffPair p) (n : ℤ) (a : DeletedCoeff p n) :
+    (sourcePsiOriginalEquation hp hp1 n a ψ:Coeff p) n = 0 :=
+  (sourcePsiOriginalEquation hp hp1 n a ψ).property
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (hr : IsRealType (CoeffPair.toMax p ψ))
+    (n : ℤ) (a : DeletedCoeff p n) (ha : ∀ k, ((a:Coeff p) k).im = 0) :
+    ∀ m, ((sourcePsiOriginalEquation hp hp1 n a ψ:Coeff p) m).im = 0 := H.real ψ hψ hr n a ha
+
+-- Every open domain containing zero includes actual non-real-type sources.
+example (h0 : (0:CoeffPair p) ∈ W) :
+    ∃ ψ ∈ W, ¬IsRealType (CoeffPair.toMax p ψ) ∧
+      AnalyticAt ℂ (fun t : CoeffPair p × DeletedCoeff p 0 => sourcePsiOriginalEquation hp hp1 0 t.2 t.1)
+        (ψ,0) := by
+  let f : ℂ → CoeffPair p := fun z => (CoeffPair.toMax p).symm (lp.single p 0 z,0)
+  have hf : Continuous f := (CoeffPair.toMax p).symm.continuous.comp
+    ((lp.singleContinuousLinearMap ℂ (fun _ : ℤ => ℂ) p 0).continuous.prodMk continuous_const)
+  have hf0 : f 0 = 0 := by
+    change (CoeffPair.toMax p).symm (lp.single p 0 0,0) = 0
+    rw [lp.single_zero]
+    exact (CoeffPair.toMax p).symm.map_zero
+  have hz : f 0 ∈ W := hf0.symm ▸ h0
+  obtain ⟨ε,hε,hball⟩ := Metric.isOpen_iff.mp (hW.preimage hf) 0 hz
+  let z : ℂ := (ε/2:ℝ)
+  have hzn : z ≠ 0 := by dsimp [z]; exact_mod_cast (half_pos hε).ne'
+  have hzball : z ∈ ball (0:ℂ) ε := by
+    simp only [mem_ball,dist_zero_right,z,Complex.norm_real,Real.norm_of_nonneg (half_pos hε).le]
+    linarith
+  have hψ := hball hzball
+  refine ⟨f z,hψ,?_,H.analytic 0 _ ⟨hψ,mem_univ _⟩⟩
+  intro hr
+  have hh := hr 0
+  simp only [f,ContinuousLinearEquiv.apply_symm_apply,lp.coeFn_zero,Pi.zero_apply,neg_zero,lp.single_apply_self] at hh
+  exact hzn (by simpa using congrArg star hh.symm)
+
+-- The same original domain is retained; no new root-input-dependent W is introduced.
+example (S : SourceSection11OriginalEstimates hp hp1 W) : SourceLemma12_4Data hp hp1 W := S.lemma12_4 hW
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧ SourceLemma12_4Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_4 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (4:ℝ≥0∞) ⊆ W ∧ SourceLemma12_4Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_4 (by norm_num) (by norm_num)
+
+example {W₀ : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoeff p n}
+    (P : SourceTheorem12_1Data hp hp1 W₀ W s) (hW₀ : IsOpen W₀)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourcePsiOriginalEquation hp hp1 n (s n ψ) ψ = 0 :=
+  P.originalEquation_zero hW₀ ψ hψ n
+
+end
+end SourceLemma124Checks

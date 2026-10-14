@@ -6,8 +6,9 @@ proved on one common neighborhood inside the original Section 11 source
 domain. The scalar formulation (2.22)–(2.23) is proved. Lemmas 12.2–12.3
 now have explicit admissibility versions on original filled disks and
 contours constructed in arbitrary analytic gap neighborhoods, including
-complex open and collapsed gaps. Lemma 12.4's full sequence-valued mapping
-and all-index local bounds are next.
+complex open and collapsed gaps. Lemma 12.4 now holds on the full original
+source domain for arbitrary root inputs, with actual ℓᵖ-valued complex
+and real analyticity and bounds locally uniform in every deleted index.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -223,3 +224,61 @@ axioms, or heartbeat overrides were introduced.
 Next: audit Lemma 12.4 on the full original source domain, with an actual
 ℓᵖ-valued map and local bounds uniform in all deleted indices. Existing
 selected-equation analyticity alone does not establish that statement.
+
+## Lemma 12.4: the actual sequence map on the original W
+
+`SourceSection11OriginalEstimates.lemma12_4` upgrades the supplied package
+on exactly the same W. Its `SourceLemma12_4Data.previous` field retains
+that package. `sourceLemma12_4` constructs the open connected W containing
+the entire real-type source locus with the full new statement.
+
+| Assertion | Public API |
+| --- | --- |
+| Literal coordinates form a deleted ℓᵖ sequence on W | `SourceCorollary10_6Data.originalEquation_exists` |
+| Every original circle gives the same actual coordinate | `.originalEquation_apply`, `SourceLemma12_4Data.equation` |
+| Complex and real analyticity in (source, roots) | `SourceLemma12_4Data.analytic`, `.real_analytic` |
+| One local bound before choosing n | `.locally_uniform` |
+| Positive strict bound for the literal p-power sum | `.power_sum` |
+| Real source and real displacement inputs give real outputs | `.real` |
+| Every original circuit, with actual winding | `.circuit` |
+| Theorem 12.1 family solves the Banach-valued map | `SourceTheorem12_1Data.originalEquation_zero` |
+
+The bound does not require numerator roots to belong to the isolating
+disks. For the unused index n, fill its root with the base source midpoint
+ξₙ in the original disk Dₙ. The added single-coordinate displacements lie
+in a compact subset of ℓᵖ, by a fixed coefficient majorant. Local quotient
+bounds on the original disks, combined over a finite subcover of this
+compact set, yield one bound for all n and all selected m. Disk separation
+bounds |n−m|/|ξₙ−z|. The exact complex-gap estimate from Lemma 12.3 gives
+
+    |Fₘⁿ| ≤ 2π C (|aₘ| + |τₘ−mπ| + |γₘ|).
+
+The three sequences are in ℓᵖ and their norms are locally bounded around
+every complex source. This proves membership and a bound for the literal
+coordinates simultaneously. Analytic scalar contours and the bounded
+coordinate analyticity theorem assemble the actual Banach-valued map.
+Contour independence identifies all local constructions on overlaps.
+
+`sourcePsiOriginalEquation` is a total choice definition, with a fallback
+if its coordinate characterization has no witness. Existence is proved
+for every source in W and every deleted ℓᵖ input, so its values on W are
+always the actual contour equation. The omitted coordinate is zero; the
+sum over all integers in `.power_sum` is therefore the printed deleted sum.
+
+Seventeen focused checks include a large imaginary root displacement
+outside its disk and exact response 200i, a retained-root collision and
+analyticity there, an explicitly nonreal source in every open W containing
+zero, winding −2, unchanged-domain transfer, the simultaneous solution,
+and p=3/2 and p=4.
+
+Validation: `./scripts/check.sh` passed (6,989 build jobs, the complete
+public example suite, and the axiom audit of 32,817 NLS declarations).
+The build retains 21 existing warnings; the eight new modules and seventeen
+focused public checks are warning-free. The source inventory verified
+156 candidate labels, and diff checks passed. No admitted proofs,
+additional axioms, or heartbeat overrides were introduced.
+
+Next: audit the literal auxiliary products and asymptotic (2.24)–(2.26),
+then the Jacobian assertions in Lemma 12.5. The new proof establishes
+Lemma 12.4 without assuming that intermediate asymptotic; it does not
+certify the rest of Section 12.

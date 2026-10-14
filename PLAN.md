@@ -1,6 +1,60 @@
 # Implementation plan
 
-## Current milestone: local gap contours and Lemmas 12.2–12.3
+## Current milestone: Lemma 12.4 on the original source domain
+
+`SourceSection11OriginalEstimates.lemma12_4` proves the sequence-valued
+mapping assertion on the entire supplied original W, retaining the
+preceding Section 11 data without shrinking that domain. For every finite
+p>1, every complex source in W, every deleted index n and every arbitrary
+deleted ℓᵖ root input, `sourcePsiOriginalEquation` is an actual deleted
+ℓᵖ sequence whose coordinates equal (2.22) on every original circle.
+The map is both complex analytic and real analytic in the source-first
+parameter order printed in the dissertation.
+
+The proof supplies one neighborhood and one norm bound before choosing n.
+The literal p-power sum is strictly bounded by a positive constant on
+that neighborhood, again uniformly in n. The omitted coordinate is zero,
+so summing the extended sequence over all integers gives the printed
+sum over m≠n. Reality on real source/root data and the exact winding
+formula for original piecewise C¹ circuits are also proved. The family
+from Theorem 12.1 solves this actual Banach-valued equation.
+
+Arbitrary root inputs need not place all displaced roots inside the
+isolating disks. The unused root is filled with the base source midpoint
+in its original disk. These single-coordinate insertions lie in a compact
+set in ℓᵖ. A finite subcover makes the quotient bound uniform in the
+inserted index; original disk separation controls its denominator.
+Lemma 12.3 then bounds every coordinate by the three displacement
+magnitudes, which are actual ℓᵖ sequences. This includes the finite head,
+complex gaps and collapse without any root-location restriction.
+
+The total equation definition has a fallback outside the set where its
+literal coordinate characterization has a witness. The witness is proved
+at every point of W for every input; the fallback is never used there.
+The public equation theorem gives exact coordinate agreement, rather
+than assuming the choice has the desired formula.
+
+Seventeen focused examples cover large imaginary root shifts with an
+exact nonzero response, roots outside their disks, root collisions,
+analyticity at those collisions, an explicitly nonreal source in any
+open W containing zero, negative circuit winding, the same original W,
+the Theorem 12.1 solution, and exponents 3/2 and 4.
+See the [Section 12 audit](coverage/SECTION_12.md).
+
+Next: audit the literal auxiliary products and the precise asymptotic
+(2.24)–(2.26), then the Jacobian assertions of Lemma 12.5. Lemma 12.4 is
+proved directly from the original-domain quotient bounds; this does not
+by itself certify every intermediate asymptotic or later statement.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,989 build jobs, the complete
+public example suite, and the axiom audit of 32,817 NLS declarations).
+The build retains 21 existing warnings; the eight new modules and seventeen
+focused public checks are warning-free. The source inventory verified
+156 candidate labels, and diff checks passed. No admitted proofs,
+additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: local gap contours and Lemmas 12.2–12.3
 
 The local contour argument now works in arbitrary analytic neighborhoods
 of a gap. The affine Joukowski map sends circles with radius r>1 to

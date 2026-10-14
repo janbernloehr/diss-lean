@@ -3544,3 +3544,11 @@ import NLS.ZakharovShabat.SourceStandardRootOriginalLocalPeriod
 import NLS.ZakharovShabat.SourceStandardRootLocalContours
 import NLS.ZakharovShabat.SourceLemma12_3
 import NLS.ZakharovShabat.SourceLemma12_2LocalContours
+import NLS.ComplexAnalysis.CompactSliceLocalBounds
+import NLS.SequenceSpaces.SingleCoordinateCompact
+import NLS.ZakharovShabat.SourcePsiOriginalQuotientBound
+import NLS.ZakharovShabat.SourcePsiOriginalCoordinateBound
+import NLS.ZakharovShabat.SourcePsiOriginalSequenceBound
+import NLS.ZakharovShabat.SourcePsiOriginalEquation
+import NLS.ZakharovShabat.SourcePsiOriginalEquationAnalytic
+import NLS.ZakharovShabat.SourceLemma12_4

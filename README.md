@@ -5,14 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: shrinking ellipse contours prove the local gap estimates in
-Lemma 12.3 for arbitrary analytic gap neighborhoods and complex gap
-directions. Original circles and circuits are covered under an explicit
-filled-disk condition, including collapsed gaps. Lemma 12.2 now also has
-a contour adapted to any local numerator domain, avoiding all source gaps.
-Next: the full sequence-valued mapping and uniform bounds in Lemma 12.4.
+Latest step: Lemma 12.4 now gives an actual ℓᵖ-valued psi equation on
+the full original source domain, with complex and real analyticity,
+bounds locally uniform in every deleted index, and exact agreement with
+original circles and circuits. Arbitrary root inputs and collisions are
+included. The Theorem 12.1 family solves this sequence-valued equation.
+Next: the auxiliary-product asymptotics (2.24)–(2.26) and Lemma 12.5.
 [The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
-[the source clarification](SOURCE_ERRATA.md) explains contour admissibility.
+[the source clarifications](SOURCE_ERRATA.md) explain domain assumptions.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

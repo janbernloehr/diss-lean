@@ -1,5 +1,25 @@
 # Source discrepancies
 
+## Lemma 12.4: arbitrary root inputs need not remain in the isolating disks
+
+Printed p. 64 writes σₖ∈Uₖ after (2.24), while Lemma 12.4 allows every
+input in the deleted ℓᵖ space. The finite coordinates of such an input
+can put a root outside its disk or make two numerator roots coincide.
+The later domain Ωᵖ imposes a root-location restriction; the mapping
+assertion of Lemma 12.4 does not.
+
+The formalization preserves the unrestricted mapping assertion. It fills
+only the unused root with a fixed point in its own original disk, which
+does not change the deleted numerator. Compactness of all these fills
+and quantitative disk separation yield a bound uniform in the deleted
+index. No assumption about the other root locations is introduced.
+Public checks include a shift of 100i with exact equation response 200i,
+and a shift by π that makes the first and second retained roots coincide.
+The local map remains analytic at that collision.
+
+This repairs the use of the auxiliary root in the mapping proof; the
+precise asymptotic (2.26) remains the next separate audit.
+
 ## Lemma 12.3: the numerator's analytic domain must allow the contour deformation
 
 Source: [dissertation, printed p. 64](https://janbernloehr.de/Download/fs16/diss.pdf#page=64),
