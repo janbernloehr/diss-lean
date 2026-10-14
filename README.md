@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves both parts of Lemma 10.11 on the unchanged
-common source domain. The analytic continuation and closed-contour results
-now accompany zero improper integrals along arbitrary admissible paths of
-the piecewise C¹ class, including complex endpoints and corners. These
-are limits of actual truncated integrals, with no extra assumption of
-absolute integrability at singular endpoints.
-Next: Section 11, the action definition and its following assertions.
-[The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
+Latest step: Lean proves the simultaneous action-contour setup at the
+start of Section 11 on the unchanged common source domain. One neighborhood
+of any complex source supports every signed index, with positively oriented
+circles and fixed open annuli inside the original isolating disks. The
+literal action integrand is jointly analytic on those annuli, and the
+chosen circle actions are analytic on the common neighborhood.
+Next: general circuit independence in equation (2.16), then Lemma 11.1.
+[The Section 11 audit](coverage/SECTION_11.md) records the precise scope;
+[Section 10](coverage/SECTION_10.md) retains the preceding results.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

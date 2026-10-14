@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Current milestone: full Lemma 10.11, admissible endpoint paths
+## Current milestone: Section 11 simultaneous action contours
+
+Four modules prove the contour setup at the start of Section 11 on the
+unchanged common source domain, for every finite p>1. Around any complex
+source in W, one open connected neighborhood supports all signed indices
+simultaneously. Every circle and its fixed open annular neighborhood lie
+inside the corresponding original isolating disk and avoid every moving
+gap. The circles have winding number one around each point of their gap,
+including collapsed gaps. Outside one finite cutoff they have free centers
+and radius 3π/16 inside the original radius-π/4 disks.
+
+The finite-head argument uses the open joint gap complement, a compact
+sphere and continuity of the analytic midpoint. Connectedness prevents a
+gap from crossing that sphere. No continuity of the ordered endpoint
+labels at complex sources is assumed. Locally uniform tail estimates and
+a finite intersection give the single common source neighborhood.
+
+`SourceLemma10_11Data.actionContours` preserves W and all of Lemma 10.11.
+`SourceSection11ContourData.contours` works with any supplied original
+disk family; `.neighborhoods` supplies a family at every source in W.
+`sourceSection11Contours` constructs the resulting public package. The
+literal integrand λΔ′/canonicalRoot is jointly analytic on each entire
+collar times the common source neighborhood, and every chosen fixed-circle
+action is analytic there with the exact 1/π normalization.
+
+Nine public checks cover unchanged W, the common all-index quantifiers,
+original disks, avoidance of every gap, positive winding at the central
+midpoint, both signed tails, the literal action formula, joint analyticity,
+actual neighborhood existence and p=3/2.
+
+Next: independence of arbitrary counterclockwise circuits and isolating
+families in equation (2.16), followed by the full Lemma 11.1 on the retained
+W. The fixed-circle results do not yet establish this global indexed action
+or its gradient. See [the Section 11 audit](coverage/SECTION_11.md).
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,931 build jobs, the complete public example suite, and the axiom audit of 32,305 NLS declarations). The build retains 21 existing warnings; the four new modules and nine focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: full Lemma 10.11, admissible endpoint paths
 
 Five modules finish Lemma 10.11 on the unchanged common source domain
 for every finite p>1. Every primitive of the actual critical-root

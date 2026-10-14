@@ -48816,3 +48816,95 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceLemma1011EndpointChecks
+
+namespace SourceSection11ContourChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- Upgrading preserves W and all the endpoint/closed-contour conclusions of Lemma 10.11.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceLemma10_11Data hp hp1 W) :
+    SourceSection11ContourData hp hp1 W ∧ SourceLemma10_11Data hp hp1 W :=
+  ⟨h.actionContours,h.actionContours.previous⟩
+
+-- The quantifiers choose ONE U and ONE family before every source and signed index.
+-- The original disks are kept, even when the base source is not real.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (h : SourceSection11ContourData hp hp1 W)
+    (hV : IsOpen V) (hVW : V ⊆ W) {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (φ : CoeffPair p) (hφ : φ ∈ V) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ U ⊆ V ∧
+      ∃ C : SourceActionContourFamily hp hp1 U D, ∀ ψ ∈ U, ∀ n : ℤ,
+        IsOpen (C.collar n) ∧ sphere (C.center n : ℂ) (C.radius n) ⊆ C.collar n ∧
+          C.collar n ⊆ D n \ sourcePeriodicSegment hp hp1 ψ n := by
+  obtain ⟨U,ho,hc,hφU,hUV,C,_⟩ := h.contours hV hVW hD φ hφ
+  exact ⟨U,ho,hc,hφU,hUV,C,fun ψ hψ n =>
+    ⟨C.collar_open n,C.sphere_subset_collar n,C.collar_subset_cutDisk ψ hψ n⟩⟩
+
+-- The fixed collar avoids ALL gaps, not just the one it surrounds.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (C : SourceActionContourFamily hp hp1 V D) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (n m : ℤ) (z : ℂ) (hz : z ∈ C.collar n) :
+    z ∉ sourcePeriodicSegment hp hp1 ψ m :=
+  C.collar_subset_rootDomain hD ψ hψ n hz m
+
+-- Positive winding includes the central gap and collapsed midpoint singleton.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} (C : SourceActionContourFamily hp hp1 V D)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) :
+    (PiecewiseC1Loop.circle (C.center 0 : ℂ) (C.radius 0)).windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) = 1 :=
+  C.windingIntegral_eq_one ψ hψ 0 _ (sourcePeriodicMidpoint_mem_segment hp hp1 ψ 0)
+
+-- The free tail uses one cutoff for both positive and negative indices.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} (C : SourceActionContourFamily hp hp1 V D) :
+    ∃ K : ℕ, ∀ k : ℕ, K < k →
+      C.radius (k : ℤ) = 3*Real.pi/16 ∧ C.radius (-(k : ℤ)) = 3*Real.pi/16 := by
+  obtain ⟨K,hK⟩ := C.tail
+  refine ⟨K,fun k hk => ?_⟩
+  exact ⟨(hK (k : ℤ) (by simpa using hk)).2.2.1,
+    (hK (-(k : ℤ)) (by simpa using hk)).2.2.1⟩
+
+-- The circle action is the literal integral in (2.16), with its 1/π normalization.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (a : ℂ) (r : ℝ) :
+    sourceActionCircle hp hp1 ψ a r = (Real.pi : ℂ)⁻¹ *
+      ∮ z in C(a,r), z * deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z /
+        sourceCanonicalRoot hp hp1 ψ z := by
+  simp only [sourceActionCircle,sourceCriticalRootRatioJoint,mul_div_assoc]
+
+-- The analyticity result covers the product of the ENTIRE collar and common source neighborhood.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (h : SourceSection11ContourData hp hp1 W)
+    (hV : IsOpen V) (hVW : V ⊆ W) {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (φ : CoeffPair p) (hφ : φ ∈ V) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ C : SourceActionContourFamily hp hp1 U D, ∀ n : ℤ,
+        AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p =>
+          t.1 * deriv (canonicalDiscriminant hp (periodOnePotential t.2)) t.1 /
+            sourceCanonicalRoot hp hp1 t.2 t.1) (C.collar n ×ˢ U) ∧
+        AnalyticOnNhd ℂ (fun ψ => sourceActionCircle hp hp1 ψ (C.center n : ℂ) (C.radius n)) U := by
+  obtain ⟨U,ho,_,hφU,hUV,C,ha⟩ := h.contours hV hVW hD φ hφ
+  exact ⟨U,ho,hφU,hUV.trans hVW,C,ha⟩
+
+-- No isolation or contour existence is assumed at an arbitrary point of W.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceSection11ContourData hp hp1 W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ IsConnected U ∧ φ ∈ U ∧ U ⊆ W ∧
+      ∃ D c, SourceIsolatingNeighborhoods hp hp1 U D c ∧
+        Nonempty (SourceActionContourFamily hp hp1 U D) := by
+  obtain ⟨U,ho,hc,hφU,hUW,D,c,hD,C,_⟩ := h.neighborhoods φ hφ
+  exact ⟨U,ho,hc,hφU,hUW,D,c,hD,⟨C⟩⟩
+
+local instance source11ContoursThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceSection11ContourData (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceSection11Contours (by norm_num) (by norm_num)
+
+end
+end SourceSection11ContourChecks

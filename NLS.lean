@@ -3490,3 +3490,7 @@ import NLS.ComplexAnalysis.PiecewiseImproperPathIntegral
 import NLS.ZakharovShabat.SourceCriticalRootCommonEndpointLimit
 import NLS.ZakharovShabat.SourceAdmissibleEndpointPath
 import NLS.ZakharovShabat.SourceLemma10_11
+import NLS.ComplexAnalysis.ConnectedSetInBall
+import NLS.ZakharovShabat.SourcePeriodicSegmentComplexStability
+import NLS.ZakharovShabat.SourceActionContourFamily
+import NLS.ZakharovShabat.SourceSection11Contours
