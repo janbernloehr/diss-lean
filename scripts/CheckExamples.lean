@@ -48225,3 +48225,86 @@ example {V : Set (CoeffPair 4)} {D : ℤ → Set ℂ} {c : ℝ}
 
 end
 end SourceRemark109TaylorChecks
+
+namespace SourceRemark109CounterexampleChecks
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+noncomputable section
+local instance eight : Fact (1 ≤ (8 : ℝ≥0∞)) := ⟨by norm_num⟩
+
+example : quarterPowerCoeff 0 = 0 ∧ quarterPowerCoeff 1 = 1 ∧
+    ¬ Memℓp (fun n : ℤ => (quarterPowerCoeff n : ℂ)^2) 2 := by
+  refine ⟨?_,?_,not_memℓp_quarterPowerWitness_sq⟩ <;>
+    norm_num [quarterPowerCoeff_apply,quarterPowerWitness]
+
+example (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ : CoeffPair 8, ‖ψ‖ < ε ∧ ψ ≠ 0 ∧ IsRealType (CoeffPair.toMax 8 ψ) ∧
+      ¬ Memℓp (fun n : ℤ => (sourcePeriodicGapDisplacement (p := 8)
+        (by norm_num) (by norm_num) ψ n)^2) 2 := by
+  obtain ⟨ψ,hψ,hr,hgap⟩ := exists_near_zero_real_source_squaredGap_not_memℓp_two
+    (ball 0 ε) isOpen_ball (mem_ball_self hε)
+  refine ⟨ψ,by simpa only [mem_ball,dist_zero_right] using hψ,?_,hr,hgap⟩
+  intro hz
+  subst ψ
+  apply hgap
+  simpa only [sourcePeriodicGapDisplacement_zero_source,lp.coeFn_zero,Pi.zero_apply,
+    zero_pow (by norm_num : (2 : ℕ) ≠ 0)] using! (zero_memℓp : Memℓp (0 : ℤ → ℂ) 2)
+
+example (ε : ℝ) (hε : 0 < ε) :
+    ∃ ψ : CoeffPair 8, ψ ∈ ball 0 ε ∧ IsRealType (CoeffPair.toMax 8 ψ) ∧
+      ∃ V : Set (CoeffPair 8), IsOpen V ∧ (0 : CoeffPair 8) ∈ V ∧ ψ ∈ V ∧
+        ∃ D c, SourceIsolatingNeighborhoods (p := 8) (by norm_num) (by norm_num) V D c ∧
+          ¬ ∃ A : Coeff ((8 : ℝ≥0∞)/4), ∃ B : CoeffOnePlus, ∀ n : ℤ,
+            (sourceRemark10_9PrintedSup (p := 8) (by norm_num) (by norm_num) D ψ n : ℂ) =
+              A n+B.1 n :=
+  sourceRemark10_9_printed_decomposition_counterexample (ball 0 ε) isOpen_ball (mem_ball_self hε)
+
+-- The exact and printed remainders have different membership on the same disks and source.
+example : ∃ ψ : CoeffPair 8, IsRealType (CoeffPair.toMax 8 ψ) ∧
+    ∃ V : Set (CoeffPair 8), ψ ∈ V ∧ ∃ D c,
+      SourceIsolatingNeighborhoods (p := 8) (by norm_num) (by norm_num) V D c ∧
+      Memℓp (fun n : ℤ => (sourceMidpointQuotientTaylorSup (p := 8)
+        (by norm_num) (by norm_num) D ψ n : ℂ)) 2 ∧
+      ¬ Memℓp (fun n : ℤ => (sourceRemark10_9PrintedSup (p := 8)
+        (by norm_num) (by norm_num) D ψ n : ℂ)) 2 := by
+  obtain ⟨ψ,_,hr,V,_,_,hψ,D,c,hD,hbad⟩ :=
+    sourceRemark10_9_printed_counterexample univ isOpen_univ (mem_univ _)
+  obtain ⟨S,hS,_⟩ := exists_sourceSquaredGapPhysicalRows (p := 8) (by norm_num) (by norm_num) ψ
+  obtain ⟨E,hE,_,_⟩ := hD.midpoint_taylor_sup_of_row ψ hψ S (fun n => (hS n).2) le_rfl
+  have h82 : (8 : ℝ≥0∞)/4 = 2 := by
+    apply Eq.symm
+    apply (ENNReal.eq_div_iff (by norm_num) (by norm_num)).mpr
+    norm_num
+  have hm : Memℓp (fun n => E n) 2 := by simpa only [h82] using! lp.memℓp E
+  refine ⟨ψ,hr,V,hψ,D,c,hD,?_,hbad⟩
+  convert hm using 1
+  funext n
+  exact (hE n).symm
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p ψ)) (n : ℤ) :
+    (∑' m : ℤ, if m = n then (0 : ℂ) else
+      (sourcePeriodicGapDisplacement hp hp1 ψ m)^2 / (((m-n : ℤ) : ℂ)^2)) =
+        ((∑' m : ℤ, sourceSquaredGapReciprocalTerm hp hp1 ψ n m : ℝ) : ℂ) :=
+  sourceRemark10_9LatticeTerm_eq_physicalRow hp hp1 ψ hr n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (hs : ‖sourcePeriodicMidpointDisplacement hp hp1 ψ‖ ≤ 1) (n : ℤ) :
+    ‖sourceMidpointQuotientLinearTerm hp hp1 ψ n ((Real.pi : ℂ)*n)‖ ≤
+      (∑' m : ℤ, sourceSquaredGapReciprocalTerm hp hp1 ψ n m)/8 :=
+  norm_sourceMidpointQuotientLinearTerm_freeCenter_le hp hp1 ψ hs n
+
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods hp hp1 V D c) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (n : ℤ) (z : ℂ) (hz : z ∈ D n) :
+    BddAbove ((fun w => ‖sourceMidpointQuotient hp hp1 ψ n w-1-
+      sourceRemark10_9LatticeTerm hp hp1 ψ n‖) '' D n) ∧
+      0 ≤ sourceRemark10_9PrintedSup hp hp1 D ψ n ∧
+      ‖sourceMidpointQuotient hp hp1 ψ n z-1-sourceRemark10_9LatticeTerm hp hp1 ψ n‖ ≤
+        sourceRemark10_9PrintedSup hp hp1 D ψ n :=
+  ⟨h.printed_remainder_bddAbove ψ hψ n,h.printedSup_nonneg ψ hψ n,
+    h.norm_le_printedSup ψ hψ n z hz⟩
+
+end
+end SourceRemark109CounterexampleChecks

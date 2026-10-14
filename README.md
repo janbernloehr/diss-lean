@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves the exact Taylor expansion underlying Remark
-10.9, with a locally uniform ℓ(p/4) remainder supremum on every original
-isolating disk. The leading sum is γ_m²/[8(τ_m−z)²]. The printed replacement
-by an integer-lattice kernel and the optimality claim remain under audit.
-Lemma 10.8's free-sine consequence remains proved, with its separate
-arbitrary-numerator uniformity counterexample recorded.
+Latest step: Lean refutes the printed remainder estimate in Remark 10.9
+at p=8 using actual real potentials arbitrarily near zero. Its literal
+disk-supremum remainder can lie outside ℓ², hence outside ℓ(p/4)+ℓ(1+).
+The corrected Taylor expansion with leading term γ_m²/[8(τ_m−z)²]
+remains proved on every original disk. The full p/2 optimality assertion
+is the next audit item.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

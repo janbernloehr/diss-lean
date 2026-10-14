@@ -1,6 +1,55 @@
 # Implementation plan
 
-## Current milestone: exact Taylor expansion underlying Remark 10.9
+## Current milestone: actual-source counterexample to Remark 10.9's printed remainder
+
+Four modules resolve the printed integer-kernel replacement in Remark
+10.9. At p=8, every open neighborhood of zero in the original source
+space contains a real potential and an original isolating-disk family
+for which the literal printed remainder supremum is outside ℓ². Hence
+it is outside the asserted ℓ(p/4)+ℓ(1+) class. This is a counterexample
+using actual spectral data, not freely chosen abstract gaps.
+
+`QuarterPowerWitness.lean` constructs the real ℓ⁸ sequence |n|^(-1/4),
+zero at n=0, and proves that the squares of every nonzero real multiple
+fail ℓ² membership. `SourceSquaredGapNonSummability.lean` scales this
+sequence into the target of the already verified inverse Birkhoff chart,
+restricted to an arbitrary prescribed open source neighborhood. The
+chart preserves reality and the actual action-radius identity. The
+bounded normalized-action roots and exact action-gap factorization then
+force the actual squared gaps of the inverse source to lie outside ℓ².
+
+`SourceRemark10_9LatticeTerm.lean` identifies the printed signed sum with
+the nonnegative physical squared-gap row S for real sources. When the
+midpoint displacement has norm at most one, the exact linear term L at
+the free center nπ satisfies |L_n(nπ)| ≤ S_n/8. The printed row therefore
+cannot be replaced by that Taylor term modulo an ℓ² error for the
+constructed source.
+
+`SourceRemark10_9Counterexample.lean` proves boundedness of each printed
+supremum on every original disk before using it. If those suprema formed
+an ℓ² sequence, combining them with the verified exact Taylor remainder
+would give an ℓ² majorant for S on the tail. Finite-head completion and
+the neighboring-row lower bound would put the squared gaps in ℓ², a
+contradiction. The conditional obstruction works for every isolating
+family containing the source; the final theorems construct such a family.
+
+The public results are `sourceRemark10_9_printed_counterexample` and
+`sourceRemark10_9_printed_decomposition_counterexample`. The latter
+explicitly excludes a decomposition with one ℓ(8/4) summand and one
+ℓ(1+) summand. The corrected moving-denominator expansion from the
+previous milestone remains valid, including for these same sources and
+disks. Seven public checks cover small nonzero real sources, both
+remainder classes on the same data, the literal lattice sum, and bounded,
+nonnegative suprema on all disks.
+
+Next: prove or correct the full p/2 optimality assertion for actual source
+potentials, then audit Lemma 10.10 and the remaining Section 10 statements.
+The p=8 obstruction at exponent two does not by itself prove optimality
+at every exponent below p/2. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,902 build jobs, the complete public example suite, and the axiom audit of 32,016 NLS declarations). The build retains 21 existing warnings; the four new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: exact Taylor expansion underlying Remark 10.9
 
 Five modules prove the exact Taylor expansion underlying Remark 10.9.
 For every finite p>1, the literal supremum over each original isolating
@@ -36,12 +85,11 @@ is at least |γ_m|². Thus improved summability of the absolute row would
 force the same improvement for the actual squared gaps. This gives a
 necessary condition, not an example realizing a sharp exponent.
 
-Remark 10.9 remains under audit. Its printed leading sum is
-sum_(m≠n) γ_m²/(m−n)²; the proved Taylor sum retains z and has coefficient
-1/8. The present result does not justify replacing one by the other,
-and the discrepancy alone is not a formal counterexample to the printed
-sequence-class remainder. Next: resolve that replacement and prove or
-correct the optimality claim for actual source potentials, before Lemma
+At this milestone, the printed replacement of the exact leading sum
+by sum_(m≠n) γ_m²/(m−n)² was unresolved. The subsequent actual-source
+counterexample recorded here refutes its asserted remainder class at
+p=8. The corrected moving-denominator expansion remains valid. The full
+p/2 optimality assertion still requires a separate audit before Lemma
 10.10 and the remaining Section 10 statements.
 
 Validation: `./scripts/check.sh` passed (6,898 build jobs, the full public example suite, and the axiom audit of 31,985 NLS declarations). The build retains 21 existing warnings; the five new modules and eight focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.

@@ -3461,3 +3461,7 @@ import NLS.ZakharovShabat.SourceMidpointQuotientTaylorGeometry
 import NLS.ZakharovShabat.SourceMidpointQuotientTaylorMajorant
 import NLS.ZakharovShabat.SourceRemark10_9Taylor
 import NLS.ZakharovShabat.SourceSquaredGapRowLowerBound
+import NLS.SequenceSpaces.QuarterPowerWitness
+import NLS.ZakharovShabat.SourceSquaredGapNonSummability
+import NLS.ZakharovShabat.SourceRemark10_9LatticeTerm
+import NLS.ZakharovShabat.SourceRemark10_9Counterexample

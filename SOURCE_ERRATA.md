@@ -1922,21 +1922,45 @@ free-sine estimate. The construction includes central disks, repeated
 roots, and the filled free center. The endpoint remains ℓ(1+), not ℓ1.
 See `coverage/SECTION_10.md` for the precise theorem and quantifiers.
 
-## Remark 10.9: the leading-term audit remains open
+## Remark 10.9: the printed remainder class fails for actual real sources
 
-`sourceRemark10_9_exactTaylor` proves the actual midpoint-numerator
-expansion with signed leading sum
+The display on printed p. 59 subtracts
 
-    sum_(m≠n) γ_m² / [8(τ_m−z)²].
+    S_n = sum_(m≠n) γ_m²/(m−n)²
 
-Its literal disk-supremum remainder is locally uniformly ℓ(p/4), including
-all central indices and quasi-normed exponents. The printed display on
-p. 59 instead subtracts sum_(m≠n) γ_m²/(m−n)². That replacement is not
-part of the proved result: both its coefficient and its spectral-parameter
-dependence require examination. Their difference alone does not formally
-refute the asserted remainder class for actual source potentials.
+from the midpoint-numerator quotient minus one, and places the literal
+disk-supremum remainder in ℓ(p/4)+ℓ(1+). This is false as printed.
+`sourceRemark10_9_printed_decomposition_counterexample` proves that at
+p=8 every open neighborhood of zero contains an actual real source and
+a constructed original isolating-disk family for which no such
+decomposition exists. In fact the supremum sequence is outside ℓ².
 
-The absolute reciprocal-square row also dominates every squared gap after
-an index shift, so stronger row summability would require stronger gap
-summability. Constructing actual potentials that realize the claimed sharp
-exponent, and resolving the printed replacement, remain open audit items.
+The proof uses the already verified local inverse Birkhoff chart, not an
+assumption that arbitrary spectral gaps can be realized. Scaled real
+coordinates |n|^(-1/4) belong to ℓ⁸ but their squares do not belong to ℓ².
+The action-radius identity, exact action-gap factorization, and a common
+bound on normalized-action roots transfer this obstruction to the
+actual squared gaps of arbitrarily small real source potentials.
+
+For these sources the signed lattice sum equals its nonnegative absolute
+row. Small midpoint displacement implies that the exact Taylor term
+
+    L_n(z) = sum_(m≠n) γ_m²/[8(τ_m−z)²]
+
+has |L_n(nπ)| ≤ S_n/8. If the printed remainder suprema were in ℓ², the
+verified exact Taylor remainder in ℓ(8/4)=ℓ² would force S into ℓ² on
+the tail. The finite central head does not change membership. Since the
+row at m+1 dominates |γ_m|², this contradicts the constructed gaps.
+Each printed supremum is proved bounded above on its full original disk,
+so the result does not exploit the totalized value of an unbounded sSup.
+The conditional obstruction applies to any isolating family containing
+the source; the existential theorem supplies such a family near zero.
+
+Implemented in `QuarterPowerWitness.lean`,
+`SourceSquaredGapNonSummability.lean`, `SourceRemark10_9LatticeTerm.lean`,
+and `SourceRemark10_9Counterexample.lean`. The corrected statement is
+`sourceRemark10_9_exactTaylor`: subtract L_n(z) and retain a locally
+uniform ℓ(p/4) supremum remainder for every finite p>1 and every original
+disk, including central indices and quasi-normed exponents. The full
+claim that p/2 is optimal for actual potentials remains under audit;
+the p=8 example at exponent two alone does not establish that claim.
