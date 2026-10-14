@@ -1,5 +1,39 @@
 # Source discrepancies
 
+## Following Lemma 9.1: exchanged auxiliary monodromy labels
+
+Source: [dissertation, printed p. 53](https://janbernloehr.de/Download/fs16/diss.pdf#page=53),
+visually checked against the endpoint domains on p. 33. Those domains are
+f₋+i f₊=0 for D* and f₋−i f₊=0 for N*, at both endpoints.
+With these labels, their sine-normalized monodromy characteristics are
+
+```
+actual D*: (m₄ - m₁ - i(m₃+m₂))/(2i),
+actual N*: (m₄ - m₁ + i(m₃+m₂))/(2i).
+```
+
+Page 53 prints the plus expression under D* and the minus expression
+under N*. `sourceLemma9_1_printed_starredDirichlet` and
+`sourceLemma9_1_printed_starredNeumann` identify these expressions with
+the opposite actual canonical products at every finite source exponent.
+`sourceAuxiliaryCharacteristic_eq_l2_monodromy` proves the domain-consistent
+formulas for every physical Hilbert source, with no continuous-representative
+assumption. Thus the labels on the monodromy expressions must be exchanged
+for them to match the products of the correspondingly labeled eigenvalues.
+
+The swap has mathematical content: `sourceLemma9_1_starred_labels_distinct`
+uses the smooth constant potential (1,0) and λ=i to distinguish the two
+actual characteristics. `sourceLemma9_1_starred_labels_distinct_source`
+proves the same inequality for the actual source products at every finite
+p>1, using the single zero Fourier mode in the first component.
+
+The displayed algebraic identity δ=χ_D*−χ_N* remains correct if χ_D*,χ_N*
+denote the displayed expressions. In the endpoint-domain labels, the
+same anti-discriminant is actual N* minus actual D*. The existence,
+analyticity, real-type continuity, and interlacing assertions hold for
+both actual auxiliary spectra and are proved in `SourceLemma9_1Auxiliary.lean`.
+This correction does not change the valid endpoint signs in Lemma 5.1.
+
 ## Lemma 8.6: sign of the midpoint factorization
 
 Source: [dissertation, printed pp. 51–52](https://janbernloehr.de/Download/fs16/diss.pdf#page=51),

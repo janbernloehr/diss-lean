@@ -46549,3 +46549,157 @@ example (n : ℤ) :
 
 end
 end SourceLemma86ProductChecks
+
+
+namespace SourceLemma91Checks
+open NLS NLS.ZakharovShabat Set Filter
+open scoped ENNReal Topology
+noncomputable section
+private abbrev p91 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource91ThreeHalf : Fact (1 ≤ p91) := ⟨by norm_num [p91,ENNReal.one_le_ofReal]⟩
+
+example : SourceLemma9_1Data (p := p91) (by simp [p91]) (by norm_num [p91,ENNReal.one_lt_ofReal]) :=
+  sourceLemma9_1_data _ _
+
+example (φ : CoeffPair p91) (hφ : IsRealType (CoeffPair.toMax p91 φ)) :
+    SourceLemma9_1RealData (by simp [p91]) (by norm_num [p91,ENNReal.one_lt_ofReal]) φ :=
+  sourceLemma9_1_real _ _ φ hφ
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The literal symmetric product keeps the exceptional zero factor and its minus sign.
+example (b : BoundaryCondition) (z : ℂ) :
+    -(∏ n ∈ Finset.Icc (-(0 : ℤ)) (0 : ℤ),
+      (canonicalPeriodOneBoundaryRoots hp hp1 b (0 : CoeffPair p) n-z)/
+        (if n = 0 then 1 else (Real.pi : ℂ)*n)) = z := by simp
+
+-- For both boundary conditions the full free product has limit one at pi/2.
+example (b : BoundaryCondition) :
+    Tendsto (fun M : ℕ => -(∏ n ∈ Finset.Icc (-(M : ℤ)) M,
+      (canonicalPeriodOneBoundaryRoots hp hp1 b (0 : CoeffPair p) n-(Real.pi : ℂ)/2)/
+        (if n = 0 then 1 else (Real.pi : ℂ)*n))) atTop (𝓝 (1 : ℂ)) := by
+  have h := ((sourceLemma9_1_data hp hp1).product b 0).tendsto_at (mem_univ ((Real.pi : ℂ)/2))
+  simpa only [periodOneBoundaryCharacteristic_zero,Complex.sin_pi_div_two] using h
+
+-- Continuity is under arbitrary complex perturbations, in full sequence norm.
+example (b : BoundaryCondition) (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (u : ℕ → CoeffPair p) (hu : Tendsto u atTop (𝓝 φ)) :
+    Tendsto (fun k => sourceBoundaryDisplacement hp hp1 b (u k)) atTop
+      (𝓝 (sourceBoundaryDisplacement hp hp1 b φ)) :=
+  ((sourceLemma9_1_real hp hp1 φ hφ).norm_continuity b).tendsto.comp hu
+
+-- Both ordinary roots coincide with the endpoint of a collapsed negative gap.
+example (b : BoundaryCondition) (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (hgap : canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) (-1) =
+      canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) (-1)) :
+    canonicalPeriodOneBoundaryRoots hp hp1 b φ (-1) =
+      canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) (-1) :=
+  canonicalPeriodOneBoundaryRoots_eq_of_collapsed_gap hp hp1 b φ hφ (-1) hgap
+
+-- At negative indices the integer power retains the correct discriminant sign.
+example (b : BoundaryCondition) (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    (canonicalDiscriminant hp (periodOnePotential φ) (canonicalPeriodOneBoundaryRoots hp hp1 b φ (-1))).re ≤ -2 := by
+  have h := (sourceLemma9_1_real hp hp1 φ hφ).signed_level b (-1)
+  have hs : (-1 : ℝ)^(-1 : ℤ) = -1 := by norm_num
+  rw [hs,neg_one_mul] at h
+  linarith
+
+end
+end
+end SourceLemma91Checks
+
+namespace SourceLemma91AuxiliaryChecks
+open NLS NLS.ZakharovShabat Set Filter
+open scoped ENNReal Topology
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- All ordinary and auxiliary indices share one original neighborhood.
+example (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧ ∀ ψ ∈ V, ∀ b : BoundaryCondition, ∀ n : ℤ,
+      ‖canonicalPeriodOneBoundaryRoots hp hp1 b ψ n-canonicalPeriodOneBoundaryRoots hp hp1 b φ n‖ < 1/10 ∧
+      ‖canonicalAuxiliaryPeriodOneRoots hp hp1 b ψ n-canonicalAuxiliaryPeriodOneRoots hp hp1 b φ n‖ < 1/10 :=
+  sourceLemma9_1_uniform_coordinate_neighborhood hp hp1 φ hφ (by norm_num)
+
+-- Repeated complex roots retain their exact actual auxiliary multiplicity.
+example (b : BoundaryCondition) (φ : CoeffPair p) (z : ℂ)
+    (hz : b.auxiliaryAlgebraicMultiplicity hp (auxiliaryPeriodOnePotential hp hp1 φ).val
+      (auxiliaryPeriodOnePotential hp hp1 φ).property z = 2) :
+    analyticOrderAt (auxiliaryPeriodOneCharacteristic hp hp1 b φ) z = (2 : ℕ∞) := by
+  rw [(sourceLemma9_1_auxiliary_data hp hp1).multiplicity b φ z,hz]
+  rfl
+
+-- The auxiliary product, including its sign, also has free limit one at pi/2.
+example (b : BoundaryCondition) :
+    Tendsto (fun M : ℕ => -(∏ n ∈ Finset.Icc (-(M : ℤ)) M,
+      (canonicalAuxiliaryPeriodOneRoots hp hp1 b (0 : CoeffPair p) n-(Real.pi : ℂ)/2)/
+        (if n = 0 then 1 else (Real.pi : ℂ)*n))) atTop (𝓝 (1 : ℂ)) := by
+  have h := ((sourceLemma9_1_auxiliary_data hp hp1).product b 0).tendsto_at (mem_univ ((Real.pi : ℂ)/2))
+  simpa only [auxiliaryPeriodOneCharacteristic_zero,Complex.sin_pi_div_two] using h
+
+-- Complex perturbations give convergence of the whole actual auxiliary displacement sequence.
+example (b : BoundaryCondition) (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (u : ℕ → CoeffPair p) (hu : Tendsto u atTop (𝓝 φ)) :
+    Tendsto (fun k => sourceAuxiliaryBoundaryDisplacement hp hp1 b (u k)) atTop
+      (𝓝 (sourceAuxiliaryBoundaryDisplacement hp hp1 b φ)) :=
+  ((sourceLemma9_1_auxiliary_real hp hp1 φ hφ).norm_continuity b).tendsto.comp hu
+
+-- The physical Hilbert trace is preserved in each exponent-inclusion direction.
+example (hp2 : p ≤ 2) (b : BoundaryCondition) (φ : CoeffPair p) (z : ℂ) :
+    periodOneBoundaryCharacteristic hp hp1 b φ z =
+      l2SeparatedCharacteristic b (sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)) z :=
+  sourceBoundaryCharacteristic_eq_l2_of_le_two hp hp1 hp2 b φ z
+example (h2p : 2 ≤ p) (b : BoundaryCondition) (φ : CoeffPair 2) (z : ℂ) :
+    periodOneBoundaryCharacteristic hp hp1 b (CoeffPair.exponentInclusion h2p φ) z =
+      l2SeparatedCharacteristic b (sourcePhysicalL2 φ) z :=
+  sourceBoundaryCharacteristic_eq_l2_of_two_le hp hp1 h2p b φ z
+
+-- The literal printed D* monodromy expression is not the actual D* characteristic.
+example :
+    ((classicalMonodromy classicalTriangularPotential Complex.I) 1 1+
+      Complex.I*(classicalMonodromy classicalTriangularPotential Complex.I) 1 0+
+      Complex.I*(classicalMonodromy classicalTriangularPotential Complex.I) 0 1-
+      (classicalMonodromy classicalTriangularPotential Complex.I) 0 0)/(2*Complex.I) ≠
+        classicalAuxiliaryCharacteristic .dirichlet classicalTriangularPotential Complex.I := by
+  rw [printed_starredDirichlet_eq_actualNeumann]
+  exact sourceLemma9_1_starred_labels_distinct
+
+-- The actual Hilbert D* characteristic has the minus sign dictated by f_-+i f_+=0.
+example (φ : CoeffPair 2) (z : ℂ) :
+    auxiliaryPeriodOneCharacteristic (by simp) (by norm_num) .dirichlet φ z =
+      ((l2Monodromy (sourcePhysicalL2 φ) z) 1 1-(l2Monodromy (sourcePhysicalL2 φ) z) 0 0-
+        Complex.I*((l2Monodromy (sourcePhysicalL2 φ) z) 1 0+(l2Monodromy (sourcePhysicalL2 φ) z) 0 1))/(2*Complex.I) := by
+  simpa only [BoundaryCondition.extensionSign,one_mul] using
+    sourceAuxiliaryCharacteristic_eq_l2_monodromy .dirichlet φ z
+
+end
+end SourceLemma91AuxiliaryChecks
+
+namespace SourceLemma91NormalizationChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+private abbrev p91Aux : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource91AuxThreeHalf : Fact (1 ≤ p91Aux) := ⟨by norm_num [p91Aux,ENNReal.one_le_ofReal]⟩
+example : SourceLemma9_1AuxiliaryData (p := p91Aux) (by simp [p91Aux])
+    (by norm_num [p91Aux,ENNReal.one_lt_ofReal]) := sourceLemma9_1_auxiliary_data _ _
+
+-- The normalization issue persists for the actual source products below the Hilbert exponent.
+example :
+    auxiliaryPeriodOneCharacteristic (by simp [p91Aux]) (by norm_num [p91Aux,ENNReal.one_lt_ofReal]) .neumann
+      (CoeffPair.ofFinsupp (p := p91Aux) (Finsupp.single 0 1,0)) Complex.I ≠
+    auxiliaryPeriodOneCharacteristic (by simp [p91Aux]) (by norm_num [p91Aux,ENNReal.one_lt_ofReal]) .dirichlet
+      (CoeffPair.ofFinsupp (p := p91Aux) (Finsupp.single 0 1,0)) Complex.I :=
+  sourceLemma9_1_starred_labels_distinct_source _ _
+
+-- Finite Fourier agreement fixes the actual entire function, including its scalar normalization.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (b : BoundaryCondition) (z : ℂ) (F : CoeffPair p → ℂ) (hF : Continuous F)
+    (hfinite : ∀ a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ),
+      F (CoeffPair.ofFinsupp (p := p) a) = classicalSeparatedCharacteristic b (finiteSourceCurve a) z)
+    (φ : CoeffPair p) : F φ = periodOneBoundaryCharacteristic hp hp1 b φ z :=
+  congrFun (sourceBoundaryCharacteristic_unique_continuous hp hp1 b z F hF hfinite) φ
+
+end
+end SourceLemma91NormalizationChecks

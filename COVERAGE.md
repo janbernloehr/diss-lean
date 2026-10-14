@@ -4329,3 +4329,46 @@ continuity at real type, and interlacing. The dissertation remains
 incomplete.
 
 Validation: `./scripts/check.sh` passed: 6836 build jobs, the combined public examples, and the axiom audit of 31195 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 9.1 milestone: actual characteristic products, continuity, and interlacing
+
+`SourceLemma9_1.lean` proves all three ordinary assertions for every
+finite p>1. Both characteristics are jointly analytic in the spectral
+parameter and original source. Their literal symmetric products use the
+actual canonical roots, prefactor -1, and denominator one at index zero.
+They converge locally uniformly on all of the spectral plane, with exact
+boundary spectra and analytic orders equal to algebraic multiplicities.
+
+At real-type sources, coordinates and full ℓp displacement sequences are
+continuous under arbitrary complex perturbations. Both boundary roots
+satisfy the literal interlacing chain, with strict separation from adjacent
+periodic gaps. Collapsed gaps are included. The ordinary characteristics
+agree exactly with the physical Hilbert formulas in both exponent-inclusion
+directions, and finite Fourier agreement determines their continuous
+extension uniquely.
+
+`SourceLemma9_1Auxiliary.lean` proves the corresponding auxiliary statements
+for the actual endpoint domains. One original open neighborhood controls
+all indices of all four ordinary and auxiliary sequences simultaneously.
+Phase conjugation preserves the original periodic gap indices.
+
+`SourceAuxiliaryCharacteristicNormalization.lean` identifies the actual
+auxiliary products with their classical and physical Hilbert monodromy
+formulas. The printed D* and N* monodromy expressions on p. 53 exchange
+the labels fixed by the endpoint domains on p. 33. The smooth constant
+potential (1,0) distinguishes the two, both physically and in the actual
+source products at every finite exponent. The auxiliary existence,
+continuity, and interlacing assertions remain valid. The correction is
+recorded in `SOURCE_ERRATA.md` and `coverage/SECTION_9.md`.
+
+Public checks cover p=3/2, literal free product normalization, full sequence
+convergence under complex perturbations, one neighborhood for all four
+sequences, negative indices and collapsed gaps, exact complex multiplicities,
+physical Hilbert agreement, uniqueness, and the auxiliary label mismatch.
+All three new modules and the focused public probe compile warning-free.
+
+Next: Lemma 9.2, the analytic anti-discriminant extension, its identity
+at Dirichlet roots, and locally uniform sampled ℓp estimates. The
+dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6839 build jobs, the combined public examples, and the axiom audit of 31268 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

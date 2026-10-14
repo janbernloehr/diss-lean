@@ -388,4 +388,5 @@ norm is at most 1/10, the free coefficient sequence, zero-index product
 normalization, the value one at every removed free double root, and the
 printed-sign counterexample.
 
-Next: Lemma 9.1 and the Dirichlet and Neumann characteristic functions.
+The subsequent ordinary and auxiliary characteristic results are audited in
+[Section 9](SECTION_9.md).

@@ -3399,3 +3399,6 @@ import NLS.ZakharovShabat.SourceLemma8_3
 import NLS.ZakharovShabat.SourceLemma8_4
 import NLS.ZakharovShabat.SourceLemma8_5
 import NLS.ZakharovShabat.SourceLemma8_6
+import NLS.ZakharovShabat.SourceLemma9_1
+import NLS.ZakharovShabat.SourceLemma9_1Auxiliary
+import NLS.ZakharovShabat.SourceAuxiliaryCharacteristicNormalization

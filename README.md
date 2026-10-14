@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 8.6 now gives the locally uniform squared-gap
-midpoint-offset estimate at arbitrary complex sources, including collapsed
-gaps. Its actual ℓp coefficient and nonzero denominator are explicit.
-The printed proof's +4 factor is corrected to -4 with a formal counterexample.
-[The Section 8 audit](coverage/SECTION_8.md) records the scope.
-Next is Lemma 9.1's Dirichlet and Neumann characteristic functions.
+Latest milestone: Lemma 9.1 now packages the ordinary and auxiliary
+characteristic products, exact spectral multiplicities, real-type continuity,
+and interlacing. One neighborhood controls all four root sequences.
+The auxiliary monodromy formulas' exchanged D*/N* labels are documented
+with an explicit counterexample. [The Section 9 audit](coverage/SECTION_9.md)
+records the scope. Next is Lemma 9.2's anti-discriminant estimates.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
