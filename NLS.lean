@@ -3534,3 +3534,13 @@ import NLS.ZakharovShabat.SourceGapFunctional
 import NLS.ZakharovShabat.SourceGapFunctionalZeros
 import NLS.ZakharovShabat.SourceEquation2_22
 import NLS.ZakharovShabat.SourceLocalContourDomain
+import NLS.ZakharovShabat.SourceStandardRootJoukowski
+import NLS.ZakharovShabat.SourceStandardRootEllipseGeometry
+import NLS.ZakharovShabat.SourceStandardRootEllipsePath
+import NLS.ZakharovShabat.SourceStandardRootEllipsePeriod
+import NLS.ZakharovShabat.SourceStandardRootLocalEllipseEstimates
+import NLS.ZakharovShabat.SourceStandardRootLocalEllipses
+import NLS.ZakharovShabat.SourceStandardRootOriginalLocalPeriod
+import NLS.ZakharovShabat.SourceStandardRootLocalContours
+import NLS.ZakharovShabat.SourceLemma12_3
+import NLS.ZakharovShabat.SourceLemma12_2LocalContours

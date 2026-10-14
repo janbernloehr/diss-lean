@@ -27,11 +27,19 @@ This clarifies the admissibility convention for the intended local
 theorem: the contour must be deformable to the gap inside the numerator's
 analytic region. For the current original-circle proofs, analyticity on
 a neighborhood of the filled contour disk is an explicit sufficient
-condition. An entire numerator meets it automatically. A contour adapted
-to an arbitrary smaller analytic gap neighborhood requires a further
-local argument; that broader assertion remains open in this audit.
-The disk version of Lemma 12.2's zero-contour implication uses the same
-explicit sufficient condition, with reality required only on the gap.
+condition. An entire numerator meets it automatically. The local argument
+is now proved by shrinking ellipses for complex noncollapsed gaps and by
+small Cauchy circles at collapse. `sourceLemma12_3_local` constructs an
+admissible winding-one contour inside every supplied analytic gap
+neighborhood. Original-circle and original-circuit versions explicitly
+require the filled-disk condition. Lemma 12.2 also has an adapted local
+contour, with reality required only on the gap.
+
+The same rational counterexample now has a verified adapted contour with
+normalized period zero. This does not change its unit-circle period −1:
+no conclusion is inferred for an arbitrary loop merely contained in a
+possibly punctured analytic domain. A general deformation must remain
+inside the analytic region, as the clarification requires.
 
 ## Equation (2.18): the omitted-disk domain uses the union index
 

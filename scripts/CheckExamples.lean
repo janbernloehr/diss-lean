@@ -49986,3 +49986,193 @@ example : (∮ z in C((0:ℂ),1), sourceLocalContourPole z /
 
 end
 end SourceGapFunctionalChecks
+
+namespace SourceLocalEllipseChecks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal unitInterval
+noncomputable section
+
+-- The branch formula is concrete for a vertical complex gap.
+example : normalizedStandardRoot (2+Complex.I) ((2*Complex.I)^2)
+    (2+Complex.I+Complex.I/2*((2:ℂ)+2⁻¹)) = Complex.I/2*((2:ℂ)⁻¹-2) :=
+  normalizedStandardRoot_joukowski _ _ 2 Complex.I_ne_zero (by norm_num)
+
+-- A non-real parameter outside the unit circle gives the same Jacobian cancellation.
+example : (Complex.I/2*(1-((2*Complex.I)^2)⁻¹)) /
+    normalizedStandardRoot 3 ((2*Complex.I)^2)
+      (3+Complex.I/2*((2*Complex.I)+(2*Complex.I)⁻¹)) = -(2*Complex.I)⁻¹ :=
+  normalizedStandardRoot_joukowski_derivative_div 3 Complex.I (2*Complex.I) Complex.I_ne_zero (by norm_num)
+
+example : standardRootJoukowski (1+Complex.I) Complex.I 2 ∉ standardRootGapSegment (1+Complex.I) Complex.I :=
+  standardRootJoukowski_not_mem_gap _ _ _ Complex.I_ne_zero (by norm_num)
+
+-- The limiting ellipse passes through the midpoint at quarter period.
+example (τ δ : ℂ) : standardRootEllipseMap τ δ 1 (1/4) = τ := by
+  rw [standardRootEllipseMap_radius_one, show (2*Real.pi)*(1/4) = Real.pi/2 by ring]
+  simp
+
+example (τ δ : ℂ) (r : ℝ) : standardRootEllipseMap τ δ r 1 = standardRootEllipseMap τ δ r 0 :=
+  standardRootEllipseMap_one τ δ r
+
+-- The integral of the reciprocal root fixes the orientation and 2π normalization.
+example (τ δ : ℂ) (hδ : δ ≠ 0) (r : ℝ) (hr : 1 < r) :
+    (standardRootEllipseLoop τ δ r (by linarith)).integral
+      (fun z => (normalizedStandardRoot τ ((2*δ)^2) z)⁻¹) = -(2*(Real.pi:ℂ))*Complex.I := by
+  simpa using standardRootEllipseLoop_weighted_integral τ δ r hr hδ (fun _ => 1)
+
+-- A non-entire numerator on [-1,1], with poles inside every enclosing midpoint disk.
+private def localRationalDomain : Set ℂ := {z | z^2+1/16 ≠ 0}
+private def localRational (z : ℂ) : ℂ := (z^2+1/16)⁻¹
+
+private theorem localRational_open : IsOpen localRationalDomain := by
+  exact isOpen_compl_singleton.preimage (show Continuous (fun z : ℂ => z^2+1/16) by fun_prop)
+
+private theorem localRational_gap : standardRootGapSegment 0 1 ⊆ localRationalDomain := by
+  rintro z ⟨t,ht,rfl⟩
+  change ((0:ℂ)+1*(t:ℂ))^2+1/16 ≠ 0
+  simp only [one_mul,zero_add]
+  have h : t^2+1/16 ≠ (0:ℝ) := ne_of_gt (by positivity)
+  have he : (t:ℂ)^2+1/16 = ((t^2+(1:ℝ)/16:ℝ):ℂ) := by push_cast; rfl
+  rw [he]
+  exact_mod_cast h
+
+private theorem localRational_analytic : AnalyticOnNhd ℂ localRational localRationalDomain := by
+  intro z hz
+  exact ((analyticAt_id.pow 2).add analyticAt_const).inv hz
+
+private theorem localRational_real : ∀ z ∈ standardRootGapSegment 0 1, (localRational z).im = 0 := by
+  rintro z ⟨t,ht,rfl⟩
+  simp [localRational,Complex.inv_im,pow_two]
+
+example : ∃ R : ℝ, 1 < R ∧ ∀ r : ℝ, ∀ hr : 1 < r, r ≤ R →
+    ∃ μ ∈ standardRootGapSegment 0 1,
+      (standardRootEllipseLoop 0 1 r (by linarith)).normalizedIntegral
+        (fun z => localRational z/normalizedStandardRoot 0 4 z) = -localRational μ := by
+  obtain ⟨R,hR,z,hz,hm,hest⟩ := exists_standardRootEllipse_local_estimates 0 1 (by norm_num)
+    localRationalDomain localRational_open localRational_gap localRational localRational_analytic
+  refine ⟨R,hR,fun r hr hrR => ?_⟩
+  simpa only [mul_one, show (2:ℂ)^2 = 4 by norm_num] using (hest r hr hrR).2.2 localRational_real
+
+example : ¬∃ R : ℝ, 1 < R ∧ closedBall (0:ℂ) R ⊆ localRationalDomain := by
+  rintro ⟨R,hR,hsub⟩
+  have hz : Complex.I/4 ∈ closedBall (0:ℂ) R := by
+    rw [mem_closedBall_zero_iff]
+    norm_num
+    linarith
+  have h := hsub hz
+  norm_num [localRationalDomain,div_pow,Complex.I_sq] at h
+
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+
+-- Actual source ellipses have winding one for every complex noncollapsed gap.
+example (ψ : CoeffPair p) (m : ℤ) (hg : sourceStandardRootHalfGap hp hp1 ψ m ≠ 0)
+    (r : ℝ) (hr : 1 < r) :
+    (sourceStandardRootEllipseLoop hp hp1 ψ m r (by linarith)).windingIntegral
+      (sourceStandardRootMidpoint hp hp1 ψ m) = 1 :=
+  sourceStandardRootEllipseLoop_winding hp hp1 ψ m hg r hr
+
+-- The original-circle formula has no real-source assumption.
+example (ψ : CoeffPair p) (m : ℤ) (D : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f (closedBall (D.center:ℂ) D.radius)) :
+    (∮ z in C((D.center:ℂ),D.radius), f z/sourceStandardRoot hp hp1 ψ m z) =
+      (-(2*(Real.pi:ℂ))*Complex.I)*(∫ t in (0:ℝ)..1,
+        f (sourceStandardRootMidpoint hp hp1 ψ m+
+          sourceStandardRootHalfGap hp hp1 ψ m*(Real.cos ((2*Real.pi)*t):ℂ))) :=
+  D.standardRoot_local_circle_period f hf
+
+-- Reversed and repeated winding scales the exact period with its sign intact.
+example (ψ : CoeffPair p) (m : ℤ) (D : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f (closedBall (D.center:ℂ) D.radius))
+    (Γ : PiecewiseC1Loop) (hΓ : Γ.Inside (ball (D.center:ℂ) D.radius \ sourcePeriodicSegment hp hp1 ψ m))
+    (hw : Γ.windingIntegral (sourceStandardRootMidpoint hp hp1 ψ m) = -2) :
+    Γ.integral (fun z => f z/sourceStandardRoot hp hp1 ψ m z) =
+      -2*(∮ z in C((D.center:ℂ),D.radius), f z/sourceStandardRoot hp hp1 ψ m z) := by
+  rw [D.standardRoot_local_circuit_eq f hf Γ hΓ,hw]
+  ring
+
+example (ψ : CoeffPair p) (D : SourceCriticalRootPeriodCircle hp hp1 ψ (-3))
+    (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f (closedBall (D.center:ℂ) D.radius)) :
+    SourceLemma12_3Estimates hp hp1 ψ (-3) f (PiecewiseC1Loop.circle (D.center:ℂ) D.radius) :=
+  D.lemma12_3_circle f hf
+
+-- Reality is needed only on the selected gap for the real mean-value conclusion.
+example (ψ : CoeffPair p) (m : ℤ) (D : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f (closedBall (D.center:ℂ) D.radius))
+    (hr : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ m, (f z).im = 0)
+    (Γ : PiecewiseC1Loop) (hΓ : Γ.Inside (ball (D.center:ℂ) D.radius \ sourcePeriodicSegment hp hp1 ψ m))
+    (hw : Γ.windingIntegral (sourceStandardRootMidpoint hp hp1 ψ m) = 1) :
+    ∃ μ ∈ sourcePeriodicSegment hp hp1 ψ m,
+      Γ.normalizedIntegral (fun z => f z/sourceStandardRoot hp hp1 ψ m z) = -f μ := by
+  obtain ⟨z,hz,hm,hb,hmean⟩ := D.lemma12_3_circuit f hf Γ hΓ hw
+  exact hmean hr
+
+-- The collapsed circle formula allows arbitrary complex numerators and centers.
+example (ψ : CoeffPair p) (m : ℤ) (hg : sourceStandardRootHalfGap hp hp1 ψ m = 0)
+    (f : ℂ → ℂ) (c : ℂ) (r : ℝ) (ht : sourceStandardRootMidpoint hp hp1 ψ m ∈ ball c r)
+    (hf : AnalyticOnNhd ℂ f (closedBall c r)) :
+    (∮ z in C(c,r), f z/sourceStandardRoot hp hp1 ψ m z) =
+      (-(2*(Real.pi:ℂ))*Complex.I)*f (sourceStandardRootMidpoint hp hp1 ψ m) :=
+  sourceStandardRoot_collapsed_circle_period hp hp1 ψ m hg f c r ht hf
+
+-- Arbitrary local analytic domains suffice for the canonical-root zero implication.
+example (ψ : CoeffPair p) (hψ : IsRealType (CoeffPair.toMax p ψ)) (m : ℤ)
+    (D : SourceCriticalRootPeriodCircle hp hp1 ψ m)
+    (U : Set ℂ) (hU : IsOpen U) (hgap : sourcePeriodicSegment hp hp1 ψ m ⊆ U)
+    (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f U)
+    (hr : ∀ z ∈ sourcePeriodicSegment hp hp1 ψ m, (f z).im = 0) :
+    ∃ Γ : PiecewiseC1Loop, Γ.Inside ((U ∩ ball (D.center:ℂ) D.radius) \ sourcePeriodicSegment hp hp1 ψ m) ∧
+      Γ.Inside (sourceCanonicalRootDomain hp hp1 ψ) ∧
+      Γ.windingIntegral (sourceStandardRootMidpoint hp hp1 ψ m) = 1 ∧
+      (sourceGapFunctional hp hp1 (m+1) m ψ Γ f = 0 → ∃ μ ∈ sourcePeriodicSegment hp hp1 ψ m, f μ = 0) :=
+  D.lemma12_2_local hψ (m+1) (by omega) U hU hgap f hf hr
+
+-- The earlier pole counterexample now has an admissible local contour with period zero.
+example : ∃ Γ : PiecewiseC1Loop, Γ.Inside ({(1/2:ℂ)}ᶜ \ sourcePeriodicSegment hp hp1 (0:CoeffPair p) 0) ∧
+    Γ.windingIntegral 0 = 1 ∧
+    Γ.normalizedIntegral (fun z => sourceLocalContourPole z/sourceStandardRoot hp hp1 (0:CoeffPair p) 0 z) = 0 := by
+  have hgap : sourcePeriodicSegment hp hp1 (0:CoeffPair p) 0 = {0} := by
+    simpa using sourcePeriodicSegment_zero_source hp hp1 (p := p) 0
+  obtain ⟨Γ,hin,hw,_,_,_,_,hmean⟩ := sourceLemma12_3_local hp hp1 (0:CoeffPair p) 0
+    {(1/2:ℂ)}ᶜ isClosed_singleton.isOpen_compl (by rw [hgap]; simp)
+    sourceLocalContourPole sourceLocalContourPole_analytic
+  have hr : ∀ z ∈ sourcePeriodicSegment hp hp1 (0:CoeffPair p) 0, (sourceLocalContourPole z).im = 0 := by
+    intro z hz
+    rw [hgap,mem_singleton_iff] at hz
+    simp [hz,sourceLocalContourPole_zero]
+  obtain ⟨μ,hμ,hm⟩ := hmean hr
+  rw [hgap,mem_singleton_iff] at hμ
+  simp only [hμ,sourceLocalContourPole_zero,neg_zero] at hm
+  refine ⟨Γ,hin,?_,hm⟩
+  have hm : sourceStandardRootMidpoint hp hp1 (0:CoeffPair p) 0 = 0 := by
+    have h := sourcePeriodicMidpoint_mem_segment hp hp1 (0:CoeffPair p) 0
+    simpa only [hgap,mem_singleton_iff] using h
+  simpa only [hm] using hw
+
+-- Merely avoiding the pole on the unit circle remains insufficient.
+example : ¬SourceLemma12_3Estimates hp hp1 (0:CoeffPair p) 0 sourceLocalContourPole (PiecewiseC1Loop.circle 0 1) := by
+  rintro ⟨z,hz,_,hb,_⟩
+  have hgap : sourcePeriodicSegment hp hp1 (0:CoeffPair p) 0 = {0} := by
+    simpa using sourcePeriodicSegment_zero_source hp hp1 (p := p) 0
+  rw [hgap,mem_singleton_iff] at hz
+  obtain ⟨_,_,_,_,_,_,_,_,hn⟩ := sourceLocalContourPole_counterexample p hp hp1
+  rw [PiecewiseC1Loop.integral_circle,hn,hz,sourceLocalContourPole_zero,norm_zero] at hb
+  norm_num at hb
+
+local instance localEllipseThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example (ψ : CoeffPair (ENNReal.ofReal (3/2))) (m : ℤ) :
+    ∃ Γ : PiecewiseC1Loop, Γ.Inside (univ \ sourcePeriodicSegment (by norm_num) (by norm_num) ψ m) ∧
+      Γ.windingIntegral (sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ m) = 1 ∧
+      SourceLemma12_3Estimates (by norm_num) (by norm_num) ψ m (fun _ => 1) Γ :=
+  sourceLemma12_3_local (by norm_num) (by norm_num) ψ m univ isOpen_univ (subset_univ _) _ (by intro z hz; exact analyticAt_const)
+
+local instance localEllipseFour : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example (ψ : CoeffPair (4:ℝ≥0∞)) (m : ℤ) (U : Set ℂ) (hU : IsOpen U)
+    (hg : sourcePeriodicSegment (by norm_num) (by norm_num) ψ m ⊆ U)
+    (f : ℂ → ℂ) (hf : AnalyticOnNhd ℂ f U) :
+    ∃ Γ : PiecewiseC1Loop, Γ.Inside (U \ sourcePeriodicSegment (by norm_num) (by norm_num) ψ m) ∧
+      Γ.windingIntegral (sourceStandardRootMidpoint (by norm_num) (by norm_num) ψ m) = 1 ∧
+      SourceLemma12_3Estimates (by norm_num) (by norm_num) ψ m f Γ :=
+  sourceLemma12_3_local (by norm_num) (by norm_num) ψ m U hU hg f hf
+
+end
+end SourceLocalEllipseChecks

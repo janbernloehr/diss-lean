@@ -3,10 +3,11 @@
 This audit begins with printed p. 63 of the dissertation. Theorem 12.1,
 including the entire product (2.20) and the normalized periods (2.21), is
 proved on one common neighborhood inside the original Section 11 source
-domain. The scalar formulation (2.22)–(2.23) and the zero-contour implication for
-local numerators on filled original disks are now proved. The complete
-arbitrary-neighborhood and complex-gap assertions in Lemmas 12.2–12.3
-remain the next audit.
+domain. The scalar formulation (2.22)–(2.23) is proved. Lemmas 12.2–12.3
+now have explicit admissibility versions on original filled disks and
+contours constructed in arbitrary analytic gap neighborhoods, including
+complex open and collapsed gaps. Lemma 12.4's full sequence-valued mapping
+and all-index local bounds are next.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -158,3 +159,67 @@ The build retains 21 existing warnings; all new and refactored modules
 and the seventeen focused checks are warning-free. The 156-label source
 inventory and `git diff --check` passed. No admitted proofs, additional
 axioms, or heartbeat overrides were introduced.
+
+## Lemmas 12.2–12.3: arbitrary analytic gap neighborhoods
+
+The contour-domain clarification above is now supported by a positive
+local construction. No enclosing midpoint disk is assumed to lie in the
+numerator's analytic domain. For midpoint τ and nonzero complex half-gap
+δ, put J(u)=τ+δ(u+u⁻¹)/2. For |u|>1 the verified branch identity is
+
+    normalizedStandardRoot(τ,(2δ)²,J(u)) = δ(u⁻¹−u)/2,
+    J′(u)/normalizedStandardRoot(τ,(2δ)²,J(u)) = −1/u.
+
+The image of a circle |u|=r>1 is an actual smooth closed ellipse avoiding
+the gap. Compactness of the unit circle gives a closed annulus 1≤|u|≤R
+whose image lies inside any supplied open gap neighborhood. Holomorphy
+of f(J(u))/u makes the ellipse periods independent of r by the annular
+Cauchy theorem. Uniform continuity on [1,R]×[0,1] gives the limit at r=1,
+where the image is τ+δ cos(2πt). Thus the literal ellipse integral is
+−2πi times the ordinary gap average. At collapse an arbitrarily small
+Cauchy circle gives the same formula.
+
+| Source assertion | Public API | Explicit scope |
+| --- | --- | --- |
+| Local adapted standard-root period | `exists_sourceStandardRoot_local_period` | Every finite p>1, every complex source, any open analytic gap neighborhood; an actual winding-one contour stays inside that region and avoids the gap; collapse included. |
+| Local estimates in Lemma 12.3 | `sourceLemma12_3_local`, `SourceLemma12_3Estimates` | An attained maximum of |f| bounds the 1/(2π)-normalized absolute period; gap reality gives the exact negative mean value with 1/(2πi). |
+| Entire family of small ellipses | `exists_sourceStandardRoot_local_ellipse_estimates` | One R>1 and one maximum point work for all 1<r≤R at each noncollapsed complex gap. |
+| Original outer circle | `SourceCriticalRootPeriodCircle.standardRoot_local_circle_period`, `.lemma12_3_circle` | Local numerator analytic near the filled original disk; all complex open and collapsed gaps. |
+| Original piecewise circuits | `.standardRoot_local_circuit_period`, `.lemma12_3_circuit` | Exact period multiplied by arbitrary winding; the estimates specialize to winding one. |
+| Lemma 12.2 on an adapted local contour | `.lemma12_2_local` | Real source, m≠n, numerator analytic on any open gap neighborhood and real only on the gap; the constructed contour lies in its intersection with the original disk and avoids all periodic gaps. |
+| Lemma 12.2 on original circuits | `.localNumerator_zero_of_functional` | The earlier filled-disk result, with any nonzero winding, remains available. |
+
+The local construction does not assert the estimates for every loop
+merely lying in a multiply connected analytic domain. It supplies the
+contour needed for the local interpretation, while the original-disk
+version proves the formula on every original circuit under its explicit
+sufficient condition. The interior-pole counterexample remains valid.
+The audit does not substitute an unspecified contour-integral axiom for
+these geometric conditions.
+
+Ten modules implement this step: `SourceStandardRootJoukowski`,
+`SourceStandardRootEllipseGeometry`, `SourceStandardRootEllipsePath`,
+`SourceStandardRootEllipsePeriod`, `SourceStandardRootLocalEllipseEstimates`,
+`SourceStandardRootLocalEllipses`, `SourceStandardRootOriginalLocalPeriod`,
+`SourceStandardRootLocalContours`, `SourceLemma12_3`, and
+`SourceLemma12_2LocalContours`. All are exported by `NLS.lean`.
+
+Nineteen focused checks cover complex branch directions and parameters,
+closed paths, limiting midpoint values, normalization, actual winding,
+arbitrary complex sources, reversed repeated circuits, negative indices,
+collapsed gaps without numerator reality, the local zero implication,
+and p=3/2 and p=4. The numerator (z²+1/16)⁻¹ proves the local mean-value
+theorem even though every enclosing midpoint disk contains a pole.
+The earlier z/(z−1/2) example has a new admissible contour of period zero,
+while a separate check refutes Lemma 12.3's conclusions on its unit circle.
+
+Validation: `./scripts/check.sh` passed (6,981 build jobs, the complete
+public example suite, and the axiom audit of 32,768 NLS declarations).
+The build retains 21 existing warnings; the ten new modules and nineteen
+focused checks are warning-free. The source inventory verified 156
+candidate labels, and diff checks passed. No admitted proofs, additional
+axioms, or heartbeat overrides were introduced.
+
+Next: audit Lemma 12.4 on the full original source domain, with an actual
+ℓᵖ-valued map and local bounds uniform in all deleted indices. Existing
+selected-equation analyticity alone does not establish that statement.

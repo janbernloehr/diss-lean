@@ -1,6 +1,59 @@
 # Implementation plan
 
-## Current milestone: scalar psi equations and local contour domains
+## Current milestone: local gap contours and Lemmas 12.2–12.3
+
+The local contour argument now works in arbitrary analytic neighborhoods
+of a gap. The affine Joukowski map sends circles with radius r>1 to
+ellipses avoiding the complex gap. Its normalized-root Jacobian is
+−1/u. Cauchy's theorem on the image annulus and uniform convergence on
+a compact parameter rectangle identify the actual contour period as
+−2πi times the gap's cosine average. No enclosing midpoint disk inside
+the numerator's domain is assumed.
+
+`sourceLemma12_3_local` constructs a genuine piecewise C¹ contour inside
+any supplied open analytic gap neighborhood, with actual winding one.
+Noncollapsed gaps use ellipses; collapsed gaps use small circles. The
+normalized absolute value is bounded by an attained maximum of |f| on
+the actual source gap. If f is real on that gap, its normalized complex
+period is −f(μ) for some point μ in the gap. Every finite p>1 and every
+complex source are covered.
+
+For original isolating disks,
+`SourceCriticalRootPeriodCircle.standardRoot_local_circle_period` and
+`.standardRoot_local_circuit_period` give the exact cosine formula,
+including complex open and collapsed gaps and arbitrary circuit winding.
+`.lemma12_3_circle` and `.lemma12_3_circuit` package both estimates, with
+analyticity near the filled original disk as the explicit sufficient
+condition. Finite piecewise C¹ circuits may have corners and intersections.
+
+`SourceCriticalRootPeriodCircle.lemma12_2_local` proves the zero-functional
+implication on a contour adapted to any analytic neighborhood of a real
+source gap. It divides by the omitted root product only inside the
+intersection with the original disk. The constructed contour avoids
+all periodic gaps and has winding one. For m≠n, Aₘⁿf=0 implies an actual
+zero of f in Gₘ, with reality required only on the gap. Both open and
+collapsed gaps are included; no entire extension of f is used.
+
+These are explicit admissibility versions of Lemmas 12.2–12.3. They do
+not infer the estimates for an arbitrary loop merely contained in a
+possibly punctured analytic domain. The previous pole counterexample
+still has unit-circle period −1; the new construction supplies a small
+admissible contour with period zero. A second rational example has poles
+inside every enclosing midpoint disk but admits the local ellipse
+mean-value theorem. See the [Section 12 audit](coverage/SECTION_12.md).
+
+Next: Lemma 12.4's full original-domain ℓᵖ-valued mapping, analyticity and
+bounds locally uniform in all deleted indices. The dissertation remains
+incomplete.
+
+Validation: `./scripts/check.sh` passed (6,981 build jobs, the complete
+public example suite, and the axiom audit of 32,768 NLS declarations).
+The build retains 21 existing warnings; the ten new modules and nineteen
+focused public checks are warning-free. The source inventory verified
+156 candidate labels, and diff checks passed. No admitted proofs,
+additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: scalar psi equations and local contour domains
 
 The scalar formulation of (2.22)–(2.23) now uses the actual original
 piecewise C¹ circuits. `sourceGapFunctional` is (n−m) times the raw

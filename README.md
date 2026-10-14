@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the scalar psi equation (2.22) now works on arbitrary
-original circuits with its exact unnormalized factor. The zero-contour
-argument extends to local analytic numerators on filled contour disks,
-including collapsed real gaps. A verified interior-pole counterexample
-clarifies the analytic-domain requirement in Lemma 12.3.
-Next: complete the local-neighborhood and complex-gap contour estimates
-in Lemmas 12.2–12.3, then the sequence-valued mapping in Lemma 12.4.
-[The Section 12 audit](coverage/SECTION_12.md) records the precise scope;
-[the source clarification](SOURCE_ERRATA.md) records the counterexample.
+Latest step: shrinking ellipse contours prove the local gap estimates in
+Lemma 12.3 for arbitrary analytic gap neighborhoods and complex gap
+directions. Original circles and circuits are covered under an explicit
+filled-disk condition, including collapsed gaps. Lemma 12.2 now also has
+a contour adapted to any local numerator domain, avoiding all source gaps.
+Next: the full sequence-valued mapping and uniform bounds in Lemma 12.4.
+[The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
+[the source clarification](SOURCE_ERRATA.md) explains contour admissibility.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
