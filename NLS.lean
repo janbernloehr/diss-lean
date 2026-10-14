@@ -3376,3 +3376,6 @@ import NLS.ZakharovShabat.SourceResonantParity
 import NLS.ZakharovShabat.SourceResonantAnalytic
 import NLS.ZakharovShabat.SourceResonantSup
 import NLS.ZakharovShabat.SourceLemma6_8
+import NLS.ZakharovShabat.CubicResonantPotential
+import NLS.ZakharovShabat.SourceCubicResonantPotential
+import NLS.ZakharovShabat.SourceLemma6_8Counterexample

@@ -45805,3 +45805,61 @@ example (φ : CoeffPair 2) :
 
 end
 end SourceLemma68Checks
+
+namespace SourceLemma68CounterexampleChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- These are physical modes 2n and zero, rather than a pair of leading resonant modes.
+example (n : ℤ) (hn : n ≠ 0) (a b : ℂ) :
+    (sourceCubicPotential (p := 2) n a b).fst (2*n) = a ∧
+    (sourceCubicPotential (p := 2) n a b).snd 0 = b ∧
+    (sourceCubicPotential (p := 2) n a b).snd (2*n) = 0 := by
+  simp [show 2*n ≠ 0 by omega]
+
+-- The cubic coefficient identity itself includes p=1, although the counterexample uses p=2.
+example (n : ℤ) (hn : n ≠ 0) (a b : ℂ)
+    (h : ‖weightedPotentialSquareInShift (p := 1) (by norm_num) SpectralWeight.one
+      (unitWeightedPairEquiv (sourceCubicPotential n a b)) n ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ < 1) :
+    sourceResonantBPlusFunction (p := 1) (by norm_num) (sourceCubicPotential n a b) n ((Real.pi : ℂ)*n) -
+      (sourceCubicPotential (p := 1) n a b).snd (2*n) = a*b^2/((2*Real.pi*(n : ℝ) : ℝ) : ℂ)^2 :=
+  sourceCubicPotential_remainder_center (by norm_num) n hn a b h
+
+example (n : ℤ) (t : ℝ) (ht : 0 ≤ t) : ‖sourceCubicPotential (p := 2) n t t‖^2 = 2*t^2 := by
+  simpa [Complex.norm_real,Real.norm_of_nonneg ht,two_mul] using sourceCubicPotential_norm_sq n t t
+
+-- Arbitrarily small original potentials violate every proposed constant and common cutoff.
+example (C : ℝ) (hC : 0 ≤ C) (ε : ℝ) (hε : 0 < ε) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ : CoeffPair 2, ‖φ‖ < ε ∧
+      ∀ K : ℕ, sourcePrintedHilbertRemainderBudget C φ n K <
+        sourceResonantBPlusSup (by norm_num) SpectralWeight.one φ n := by
+  obtain ⟨n,hnM,hn2,φ,hφ,_,_,hb⟩ := exists_sourceRemainder_exceeding_unpowered_budget C hC
+    (Metric.ball 0 ε) Metric.isOpen_ball (by simpa using hε) M
+  refine ⟨n,hnM,hn2,φ,by simpa only [Metric.mem_ball,dist_zero_right] using hφ,?_⟩
+  exact fun K => (sourcePrintedRemainderBudget_le_unpowered C hC φ n K).trans_lt (hb K)
+
+-- Both floor and ceiling half-cutoffs fail for the complete unpowered signed sum.
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ 0 ∈ U ∧
+      ∀ φ ∈ U, ∀ N : ℕ, M ≤ N → 2 ≤ N →
+        Summable (sourceUnpoweredRemainderTail N φ) ∧
+          (∑' n : ℤ, sourceUnpoweredRemainderTail N φ n) ≤ sourcePrintedHilbertRemainderBudget C φ N (N/2) :=
+  not_sourceLemma6_8_printed_sum (fun N => N/2)
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ 0 ∈ U ∧
+      ∀ φ ∈ U, ∀ N : ℕ, M ≤ N → 2 ≤ N →
+        Summable (sourceUnpoweredRemainderTail N φ) ∧
+          (∑' n : ℤ, sourceUnpoweredRemainderTail N φ n) ≤ sourcePrintedHilbertRemainderBudget C φ N ((N+1)/2) :=
+  not_sourceLemma6_8_printed_sum (fun N => (N+1)/2)
+
+-- Replacing only the inner norm with the full pair still cannot repair the absent powers.
+example (κ : ℕ → ℕ) :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ 0 ∈ U ∧
+      ∀ φ ∈ U, ∀ N : ℕ, M ≤ N → 2 ≤ N →
+        Summable (sourceUnpoweredRemainderTail N φ) ∧
+          (∑' n : ℤ, sourceUnpoweredRemainderTail N φ n) ≤ sourceUnpoweredHilbertRemainderBudget C φ N (κ N) :=
+  not_sourceLemma6_8_unpowered_sum κ
+
+end
+end SourceLemma68CounterexampleChecks

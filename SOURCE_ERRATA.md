@@ -1620,6 +1620,23 @@ the explicit floor(N/2) tail, including the boundary, and strict 1<p<∞.
 The diagonal part agrees with the displayed norm structure. Constants depend
 only on p, and exact unit-weight transport introduces no norm comparison loss.
 
-No formal counterexample to the literal off-diagonal display is claimed yet.
-The missing-power and component-factor assertions still require that audit;
-the proved estimate must not be counted as verification of the literal display.
+The missing-power issue is now formally refuted under the locally uniform
+neighborhood-and-cutoff interpretation. `sourceCubicPotential` has physical
+coefficients φ_−(2n)=a and φ_+(0)=b, with all other coefficients zero.
+The actual positive remainder at the center is ab²/(2πn)². At a=b=t>0,
+p=2, its original squared norm is 2t², while even an enlarged budget using
+the full inner pair norm is at most 16C t⁶. The actual remainder is cubic.
+
+`exists_sourceRemainder_exceeding_unpowered_budget` constructs a witness
+inside every original open neighborhood of zero, beyond every proposed
+common cutoff, with small correction and bounded distant full-strip images.
+`not_sourceLemma6_8_printed_sum` refutes the full unpowered signed-tail
+estimate for any tail-cutoff function κ(N), including floor and ceiling
+half-cutoffs. `not_sourceLemma6_8_unpowered_sum` shows that replacing only
+the inner norm with the full pair cannot repair the absent powers.
+
+These are local uniform counterexamples, not a claim that one fixed
+finite-support potential violates every individual potential-dependent
+cutoff. The validity of the positive-component norm factor after restoring
+the p-powers still needs an independent audit. The previously proved
+p-power/full-pair estimate remains valid.

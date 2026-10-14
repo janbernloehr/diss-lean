@@ -5,14 +5,15 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 6.8 now has quantitative bounds for the original
-coefficient functions on full closed strips. All three signed p-power tails
-are summable, with one neighborhood and cutoff, exact original norms,
-and explicit floor-half Fourier tails for 1<p<∞.
-[The Section 6 audit](coverage/SECTION_6.md) distinguishes the proved
-proof-consistent off-diagonal estimate from the different printed display.
-Next is a formal audit of that display's omitted powers and component-norm
-factor. The dissertation remains incomplete.
+Latest milestone: a verified two-mode counterexample refutes the locally
+uniform reading of Lemma 6.8(ii)'s unpowered remainder sum at p=2.
+The actual original coefficient is cubic in its amplitude, while the printed
+budget is sextic. Floor and ceiling half-cutoffs both fail, even if the inner
+component norm is enlarged to the full pair norm.
+[The Section 6 audit](coverage/SECTION_6.md) records the exact scope and
+preserves the valid p-power estimates. Next is an independent audit of the
+component-norm factor after restoring those powers.
+The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 

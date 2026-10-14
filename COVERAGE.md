@@ -3928,3 +3928,40 @@ Next: formally audit the literal Lemma 6.8(ii) display, including its omitted
 powers and positive-component norm factor. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6813 build jobs, the combined public examples, and the axiom audit of 30832 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Original-source audit: Lemma 6.8's omitted powers fail locally at zero
+
+`CubicResonantPotential.lean` solves the correction equation explicitly for
+a potential with first physical mode 2n of amplitude a and second mode zero
+of amplitude b. The corrected vector has only three modes. The positive
+coefficient at every nonzero free center is ab²/(2πn)². The coefficient
+identity holds for arbitrary spectral weights and all finite 1≤p<∞.
+
+`SourceCubicResonantPotential.lean` transports this calculation to the actual
+original period-two potential and coefficient functions. At unit weight,
+p=2, and a=b=t>0, its squared original norm is 2t² and its positive remainder
+norm is t³/(2πn)². Its leading positive coefficient at 2n is zero.
+
+`SourceLemma6_8Counterexample.lean` shows that every open neighborhood of
+zero and every proposed common cutoff contain a witness exceeding the
+printed positive-remainder budget. The correction is small and all distant
+strip images are bounded, so the comparison uses actual coefficient values
+and genuine full-strip suprema. Even enlarging the inner positive-component
+norm to the full pair leaves a budget at most 16C t⁶, which cannot dominate
+the cubic coefficient for sufficiently small t.
+
+The complete unpowered signed-tail estimate is formally negated for every
+tail-cutoff convention κ(N), including floor and ceiling half-cutoffs. Thus
+changing only the inner norm cannot repair the absent left-hand powers.
+The result concerns a locally uniform neighborhood and cutoff; it does not
+claim that one fixed finite-support potential defeats every individual
+potential-dependent cutoff. The valid p-power estimates remain unchanged.
+
+Public checks cover the exact physical modes, the cubic identity at p=1,
+the p=2 source norm, arbitrarily small witnesses, both half-cutoff roundings,
+and failure even with the enlarged inner norm.
+
+Next: independently audit the positive-component norm factor after restoring
+the left-hand powers. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6816 build jobs, the combined public examples, and the axiom audit of 30884 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

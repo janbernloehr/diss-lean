@@ -418,13 +418,37 @@ its boundary; no sharper ceiling-half result is claimed.
 
 The page-41 printed off-diagonal display has neither these left-hand powers
 nor the same inner norm. The formal result follows the p-power and full-pair
-form of the concluding source proof. The literal display is not yet formally
-refuted; see `SOURCE_ERRATA.md` for the precise distinction.
+form of the concluding source proof. The locally uniform unpowered display
+is refuted below; see `SOURCE_ERRATA.md` for the precise distinction.
+
+## Lemma 6.8(ii): formal counterexample to the missing powers
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Exact finite correction | `cubicPotential_bplus`, `cubicPotential_bplus_center` | First mode 2n=a, second mode zero=b; the center coefficient is ab²/(2πn)² for n≠0. |
+| Original source coefficient | `sourceCubicPotential_remainder_center`, `sourceCubicPotential_remainder_norm` | Actual original analytic remainder; equal positive amplitudes give t³/(2πn)². |
+| Exact original norm | `sourceCubicPotential_norm_sq` | At p=2, squared norm is |a|²+|b|². |
+| Sextic budget | `sourceUnpoweredRemainderBudget_cubic_le` | Budget ≤16C t⁶ even with the full inner pair norm, independently of the Fourier-tail cutoff. |
+| Arbitrarily small witnesses | `exists_sourceRemainder_exceeding_unpowered_budget` | Every original open neighborhood of zero and every common cutoff; small correction and bounded distant strip images are included. |
+| Unpowered sum refuted | `not_sourceLemma6_8_unpowered_sum` | Complete signed-tail sum cannot obey even the enlarged inner-norm budget locally uniformly. |
+| Literal budget refuted | `not_sourceLemma6_8_printed_sum` | Positive-remainder part, unit weight, p=2, arbitrary tail-cutoff function κ(N); includes both half-cutoff roundings. |
+
+The contradiction is cubic versus sextic scaling at a fixed chosen distant
+index, with amplitude tending to zero inside the neighborhood. The potential
+may depend on that index and amplitude. This does not establish failure for
+one fixed potential beyond every individually chosen cutoff. The exact
+coefficient formulas themselves allow every finite 1≤p<∞; the local
+counterexample and sum negations are proved at p=2.
+
+Changing the inner norm alone cannot rescue the unpowered display. Whether
+the positive-component factor can be retained after restoring the p-powers
+requires the separate audit below; no necessity claim for that correction
+is inferred from this scaling argument.
 
 ## Remaining source assertions
 
-Continue with the formal audit of the literal Lemma 6.8(ii) display, including
-its omitted powers and positive-component norm factor. Sharper ceiling-cutoff
+Continue with the independent audit of Lemma 6.8(ii)'s positive-component
+norm factor after restoring the left-hand powers. Sharper ceiling-cutoff
 versions of the corrected Propositions 6.1/6.3 estimates remain unproved.
 Existing later results and the candidate-label inventory do not certify this
 section or the dissertation complete.
