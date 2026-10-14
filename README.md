@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 8.4 now gives actual ℓp error sequences for the
-sampled discriminant and its derivative. One neighborhood and one bound
-work for every nearby complex potential and every sampler in the closed
-quarter-pi disks. [The Section 8 audit](coverage/SECTION_8.md) records the scope.
-Next is Lemma 8.5's critical-root asymptotics, product, and continuity.
+Latest milestone: Lemma 8.5 now assembles the canonical critical-root
+ℓp asymptotics, literal derivative product, and continuity at real type.
+Every real gap, including a collapsed gap, has exactly one critical point
+and one strict local extremum. [The Section 8 audit](coverage/SECTION_8.md)
+records the scope. Next is Lemma 8.6's squared-gap midpoint-offset estimate.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

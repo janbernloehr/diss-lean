@@ -260,6 +260,75 @@ potential-dependent samplers, common bounds for different samplers and
 sources, open-disk membership in ℓp, nonreal samples on every closed-disk
 boundary, all signed indices, and the free identities.
 
-Continue with Lemma 8.5 and equation (2.6): critical-root ℓp asymptotics,
-the derivative product, continuity at real type, and the following
-interlacing and unique strict real extrema.
+Lemma 8.5 and the following real-extremum assertions are audited below.
+
+
+## Lemma 8.5 and equation (2.6): canonical critical roots and the derivative product
+
+The statement, formula, and following paragraph on printed p. 51 were
+checked against the PDF. `sourceLemma8_5_data` constructs the pointwise
+result for every finite 1<p<∞ and arbitrary complex original source.
+`sourceLemma8_5` supplies the common original source neighborhood and
+locally uniform bound on the full ℓp displacement norm.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual ordered roots | `SourceLemma8_5Data.ordered`, `.roots` | Canonical coordinates indexed by all integers, in lexicographic order, enumerating exactly all zeros of Δ′. |
+| Exact analytic multiplicities | `.multiplicity` | The number of occurrences of each value in the canonical sequence equals its analytic zero order. Complex repeated roots are retained. |
+| Literal ℓp asymptotics | `.displacement` | The nth coordinate is nπ plus the nth coefficient of the actual `sourceCriticalDisplacement`, an element of ℓp. |
+| Locally uniform norm bound | `sourceLemma8_5` | One open convex U containing the base and zero, and one R≥0, bound the complete displacement sequence for every ψ in U. |
+| Literal product (2.6) | `SourceLemma8_5Data.product` | Symmetric cutoffs over [-M,M], prefactor 2, denominator 1 at n=0 and nπ otherwise; locally uniform convergence on all of ℂ to the actual derivative. |
+
+The product uses the actual canonical roots with their multiplicities,
+including central roots. The limit is proved on the entire spectral plane,
+including free lattice points and zeros. The cutoff M is a natural number;
+this is convergence of symmetric products, not a claim about an unordered
+infinite product. Product convergence is locally uniform in the spectral
+variable for each fixed source. The source-neighborhood assertion bounds
+the displacement norm uniformly over U.
+
+### Continuity at real type
+
+`sourceLemma8_5_real` constructs `SourceLemma8_5RealData` at every
+real-type source, with the ambient domain still the full complex original
+source space.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Coordinate continuity | `SourceLemma8_5RealData.continuous` | Every signed coordinate, under arbitrary complex source perturbations, including at collapsed gaps. |
+| Stronger coordinate analyticity | `.analytic` | Each fixed canonical critical coordinate is complex analytic at the real-type base point. |
+| Full sequence-norm continuity | `.norm_continuity` | The complete actual critical displacement varies continuously in ℓp. |
+| Simultaneous coordinate control | `.exists_uniform_coordinate_neighborhood` | For any positive tolerance, one original open neighborhood bounds the error at every signed index. |
+
+The coordinate continuity rests on the existing spectral-count and
+real-barrier argument. Simplicity of real-type critical roots then gives
+coordinate analyticity by the implicit-root theorem. The full ℓp
+continuity uses the existing uniform-tail argument. These assertions do
+not claim global continuity of lexicographic labels at arbitrary complex
+base points.
+
+### The following real-gap interlacing and strict extrema
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Real critical coordinates | `.real_coordinates` | Every canonical critical coordinate is real at real type. |
+| Indexed interlacing | `.interlacing` | λ_n^-≤λ_n^•≤λ_n^+, expressed as membership in the actual `sourceRealPeriodicGap`. |
+| Unique critical root per gap | `.unique_critical` | Each indexed real gap contains exactly one critical root. |
+| Strict local extremum | `.strict_extremum` | Strict minimum or maximum of x↦Re Δ(x) on a punctured real neighborhood of the canonical critical coordinate. |
+| Unique local extremum per gap | `.unique_extremum` | Exactly one real local extremum in each indexed gap, including singleton collapsed gaps. |
+| Exhaustive extremum characterization | `.all_extrema` | Every real local extremum is a canonical critical coordinate, and conversely. |
+
+At real type Δ is real on the real axis, so the real-part formulation is
+the source's real discriminant. Strictness is asserted in a real
+neighborhood, not merely relative to the gap; it therefore has content
+even when a gap is a singleton. The proof uses nonzero second derivative
+at each real-type critical root and the real second-derivative test,
+together with global gap interlacing and critical-root exhaustion.
+
+Public checks include p=3/2, the zero-index factor, the full free product
+at π/2 with limit -2, ℓp convergence under complex perturbations, uniform
+control of all indices, repeated complex-root multiplicities, exhaustion,
+and the collapsed free gap at index -1.
+
+Continue with Lemma 8.6: critical-point midpoint offsets equal the squared
+gap times a locally bounded ℓp tail, at arbitrary complex source points.

@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Current milestone: Lemma 8.4 and uniform sampled ℓp errors
+## Current milestone: Lemma 8.5, the derivative product, and real extrema
+
+`SourceLemma8_5.lean` assembles the actual canonical critical-root
+sequence in the original source space for every finite p>1. It is
+lexicographically ordered, enumerates exactly all zeros of the actual
+discriminant derivative, and retains every analytic multiplicity. Its
+root displacement is the existing actual ℓp coefficient sequence.
+
+One open convex neighborhood of each complex source contains that source
+and zero, and gives a common bound on the complete displacement norm.
+The literal symmetric products in equation (2.6), with prefactor two and
+denominator one at index zero, converge locally uniformly on the entire
+spectral plane to the derivative. This convergence is asserted for each
+fixed source; the displacement norm bound is locally uniform in sources.
+
+At real-type base points, individual critical coordinates are continuous
+under arbitrary complex perturbations; the package also supplies their
+analyticity and continuity of the full displacement sequence in ℓp.
+Consequently one source neighborhood controls every critical-coordinate
+error simultaneously. Each critical coordinate lies in its indexed real
+gap. Every gap contains exactly one critical point and one strict real
+local extremum, including collapsed gaps; all real local extrema are
+canonical critical coordinates. The precise scope is recorded in
+`coverage/SECTION_8.md`.
+
+Public checks cover p=3/2, the exceptional zero-mode product factor, the
+free product limit -2 at π/2, full sequence-norm convergence under complex
+perturbations, one neighborhood for all signed coordinates, exact repeated
+root multiplicities, exhaustion, and a collapsed negative-index gap.
+The new module and focused public probe compile warning-free.
+
+Next: Lemma 8.6, the locally uniform squared-gap improvement of the
+critical-point midpoint offset at arbitrary complex sources. The
+dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6835 build jobs, the combined public examples, and the axiom audit of 31170 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Lemma 8.4 and uniform sampled ℓp errors
 
 `SourceLemma8_4.lean` constructs the actual sampled discriminant and
 spectral-derivative errors as ℓp sequences in the original source space,

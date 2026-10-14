@@ -46397,3 +46397,74 @@ example (z : ℤ → ℂ) (hz : ∀ n : ℤ, ‖z n-(Real.pi : ℂ)*n‖ ≤ Rea
 end
 end
 end SourceLemma84Checks
+
+namespace SourceLemma85Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Filter Topology
+open scoped ENNReal Classical
+noncomputable section
+private abbrev p85 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource85ThreeHalf : Fact (1 ≤ p85) := ⟨by norm_num [p85,ENNReal.one_le_ofReal]⟩
+
+example (φ : CoeffPair p85) :
+    ∃ U : Set (CoeffPair p85), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ R : ℝ, 0 ≤ R ∧ ∀ ψ ∈ U,
+        ‖sourceCriticalDisplacement (by simp [p85]) (by norm_num [p85,ENNReal.one_lt_ofReal]) ψ‖ ≤ R ∧
+        SourceLemma8_5Data (by simp [p85]) (by norm_num [p85,ENNReal.one_lt_ofReal]) ψ :=
+  sourceLemma8_5 _ _ φ
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The literal product retains its exceptional zero-mode denominator and prefactor two.
+example (φ : CoeffPair p) (z : ℂ) :
+    (2 * ∏ n ∈ Finset.Icc (-(0 : ℤ)) 0,
+      (canonicalCriticalPoints hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n-z)/
+        (if n = 0 then 1 else (Real.pi : ℂ)*n)) =
+      2*(canonicalCriticalPoints hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) 0-z) := by
+  simp
+
+-- The full free product at pi/2 has limit -2, checking both sign and scale.
+example : Tendsto
+    (fun (M : ℕ) => 2 * ∏ n ∈ Finset.Icc (-(M : ℤ)) M,
+      ((Real.pi : ℂ)*n-(Real.pi : ℂ)/2)/(if n = 0 then 1 else (Real.pi : ℂ)*n))
+    atTop (𝓝 (-2 : ℂ)) := by
+  have h := (sourceLemma8_5_data hp hp1 (0 : CoeffPair p)).product.tendsto_at (mem_univ ((Real.pi : ℂ)/2))
+  simpa only [map_zero,canonicalCriticalPoints_zero,discriminant_derivative_zero,
+    Complex.sin_pi_div_two,mul_one] using h
+
+-- Full sequence-norm convergence permits complex approximating potentials.
+example (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (ψ : ℕ → CoeffPair p) (hψ : Tendsto ψ atTop (𝓝 φ)) :
+    Tendsto (fun k => sourceCriticalDisplacement hp hp1 (ψ k)) atTop
+      (𝓝 (sourceCriticalDisplacement hp hp1 φ)) :=
+  (sourceLemma8_5_real hp hp1 φ hφ).norm_continuity.tendsto.comp hψ
+
+-- A single original neighborhood controls every positive, negative, and central coordinate.
+example (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧ ∀ ψ ∈ V, ∀ n : ℤ,
+      ‖canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+        canonicalCriticalPoints hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n‖ < 1/10 :=
+  (sourceLemma8_5_real hp hp1 φ hφ).exists_uniform_coordinate_neighborhood (by norm_num)
+
+-- Repeated complex roots retain their multiplicities in the actual canonical sequence.
+example (φ : CoeffPair p) (z : ℂ)
+    (hz : analyticOrderNatAt (deriv (canonicalDiscriminant hp (periodOnePotential φ))) z = 2) :
+    (∑ᶠ n : ℤ, if canonicalCriticalPoints hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = z then (1 : ℕ) else 0) = 2 :=
+  ((sourceLemma8_5_data hp hp1 φ).multiplicity z).trans hz
+
+-- Every complex critical zero is exactly enumerated.
+example (φ : CoeffPair p) (z : ℂ) (hz : deriv (canonicalDiscriminant hp (periodOnePotential φ)) z = 0) :
+    ∃ n : ℤ, canonicalCriticalPoints hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = z :=
+  ((sourceLemma8_5_data hp hp1 φ).roots z).mp hz
+
+-- The extremum assertion includes the collapsed negative free gap.
+example : ∃! x : ℝ,
+    IsLocalExtr (fun y : ℝ => (canonicalDiscriminant hp (periodOnePotential (0 : CoeffPair p)) y).re) x ∧
+      x = -Real.pi := by
+  have h := (sourceLemma8_5_real hp hp1 (0 : CoeffPair p)
+    (by simpa only [map_zero] using (isRealType_zero (p := p)))).unique_extremum (-1)
+  simpa only [sourceRealPeriodicGap_zero,Int.cast_neg,Int.cast_one,mul_neg,mul_one,mem_singleton_iff] using h
+
+end
+end
+end SourceLemma85Checks

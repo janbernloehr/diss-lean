@@ -3397,3 +3397,4 @@ import NLS.ZakharovShabat.SourcePeriodicEndpointContinuity
 import NLS.ZakharovShabat.SourceLemma8_2
 import NLS.ZakharovShabat.SourceLemma8_3
 import NLS.ZakharovShabat.SourceLemma8_4
+import NLS.ZakharovShabat.SourceLemma8_5
