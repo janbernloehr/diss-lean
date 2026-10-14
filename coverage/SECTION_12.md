@@ -16,7 +16,9 @@ actual original-domain Jacobian, with nonzero diagonals and the full
 locally uniform diagonal/off-diagonal estimates. Lemma 12.6 now gives an
 invertible diagonal plus a compact remainder for that same actual
 Jacobian, with explicit reciprocal inverse and finite-rank norm
-approximations.
+approximations. Lemma 12.7 now proves injectivity of the actual Jacobian
+on the original domain, including the complex kernel reduction, original
+gap interpolation, and literal outer-circle product and decay formulas.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -487,3 +489,75 @@ Implementation: `SourcePsiOriginalJacobianDecomposition`,
 The diagonal limit is asserted for each fixed n, as in the source's
 proof. No uniform-in-n diagonal limit or invertibility of the entire
 Jacobian is asserted here; injectivity is the next lemma.
+
+## Lemma 12.7 on the original real domain
+
+`SourceLemma12_6Data.lemma12_7` proves injectivity of the actual bounded
+root Jacobian at every original Ωᵖ point, for every finite 1<p<∞ and
+every omitted index. It retains the same open connected source domain W,
+the preceding diagonal-plus-compact decomposition, and all earlier data.
+Injectivity holds on the complex deleted Banach space.
+
+Every actual matrix row sums to the bounded derivative applied to an
+arbitrary direction, and every coordinate equals the contour integral of
+its entire numerator variation. For real kernel directions, the original
+contours supply a zero in each retained gap, including collapsed gaps.
+The selected zeros have ℓᵖ displacements and are distinct. Together with
+the original omitted root they define a simple entire interpolation
+product. Interpolation forces the variation to vanish identically;
+evaluation at the distinct original roots then recovers the zero direction.
+Real matrix entries reduce a complex kernel vector to its real and
+imaginary parts, proving the full complex result.
+
+The source's outer-circle proof assertions are also certified: all large
+half-integer-radius circles avoid the entire original disk family; the
+literal root product has its exact sine normalization and tends uniformly
+to one; and φ=(σₙ−z)φₙ/2 satisfies φ/sin(z)→0 uniformly. The exact
+root-resolvent/product factorization is retained. No selected local chart
+or replacement disk family is imposed.
+
+Twenty-two new public checks cover matrix row sums, arbitrary complex
+directions, collapsed gaps, kernel splitting, injectivity, unused root
+fills, simple interpolation zeros, original disk avoidance, literal
+product identities and decay, the retained source domain and preceding
+decomposition, and exponents 3/2 and 4.
+
+Next: Corollary 12.8, invertibility of the actual Jacobian using the
+Fredholm alternative. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (7,013 build jobs, the complete
+public example suite, and the axiom audit of 33,040 NLS declarations).
+The build retains 21 existing warnings. The five new modules and twenty-two
+new public checks are warning-free. The source inventory verified 156
+candidate labels; all 117 local Markdown links and diff checks passed.
+No admitted proofs, additional axioms, or heartbeat overrides were added.
+
+### Proof assertions and public API
+
+| Source assertion (printed pp. 66–67) | Lean implementation |
+| --- | --- |
+| Matrix row sums to the actual bounded derivative | `hasSum_sourcePsiOriginalJacobianRow` |
+| Arbitrary direction equals the variation contour | `SourceLemma12_4Data.originalRootJacobian_apply_variation_contour` |
+| Kernel vector gives zero variation period | `.originalKernel_variation_contour_zero` |
+| Real variation has a zero in every retained gap | `.originalRealKernel_gapZero` |
+| Complex kernel splits into two real kernels | `.originalKernel_realImag` |
+| Original roots are distinct | `SourceIsolatingNeighborhoods.originalRootPlacement_injective` |
+| Gap zeros give a simple ℓᵖ interpolation product | `.originalGapInterpolationProduct` |
+| All outer circles eventually avoid all original disks | `.eventually_centralCircle_avoids_originalDiscs` |
+| Exact sine-normalized product | `sourcePsiCandidate_mul_omitted_div_sin` |
+| Literal product tends uniformly to one | `eventually_centralCircle_sourcePsiRelativeProduct_close` |
+| Exact root-resolvent/product formula | `sourcePsiVariation_div_sin_eq_resolvent_mul_product` |
+| Literal φ/sin quotient tends uniformly to zero | `eventually_centralCircle_sourcePsiVariation_div_sin_small` |
+| Entire variation vanishes | `SourceLemma12_4Data.originalRealKernel_variation_eq_zero` |
+| Complex kernel is trivial; actual Jacobian is injective | `.originalKernel_eq_zero`, `.originalRootJacobian_injective` |
+| Source statement on the retained W | `SourceLemma12_6Data.lemma12_7`, `sourceLemma12_7` |
+
+Implementation: `SourcePsiOriginalKernelContour`,
+`SourcePsiOriginalGapInterpolation`, `SourcePsiOriginalOuterCircles`,
+`SourcePsiOriginalJacobianInjective`, and `SourceLemma12_7`, under
+`NLS/ZakharovShabat/`.
+
+The reality premise in the gap-zero argument is applied to real directions.
+The complex statement follows by splitting the kernel using the already
+proved real matrix entries. No extra hypothesis is imposed on a complex
+kernel vector. Surjectivity is the next source statement, Corollary 12.8.

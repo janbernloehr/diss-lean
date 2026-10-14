@@ -50764,3 +50764,145 @@ example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
 
 end
 end SourceLemma126Checks
+
+namespace SourceLemma127Checks
+noncomputable section
+open Set Metric Complex NLS NLS.ZakharovShabat Filter Topology
+open scoped ENNReal unitInterval
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The row expansion applies to arbitrary complex directions and signed indices.
+example (a : Coeff p) (ψ : CoeffPair p) (h : DeletedCoeff p (-7)) :
+    HasSum (fun r : ℤ => sourcePsiOriginalJacobianEntry hp hp1 (-7) 0 r a ψ*(h:Coeff p) r)
+      ((sourcePsiOriginalRootJacobian hp hp1 (-7) (Coeff.deleteCoordinateTo (-7) a) ψ h:Coeff p) 0) :=
+  hasSum_sourcePsiOriginalJacobianRow hp hp1 (-7) 0 a ψ h
+
+example (n m : ℤ) (a : Coeff p) (ψ : CoeffPair p) (h : DeletedCoeff p n)
+    (hk : sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ h = 0) :
+    (∑' r : ℤ, sourcePsiOriginalJacobianEntry hp hp1 n m r a ψ*(h:Coeff p) r) = 0 := by
+  have he := (hasSum_sourcePsiOriginalJacobianRow hp hp1 n m a ψ h).tsum_eq
+  exact he.trans (by rw [hk]; rfl)
+
+variable {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+  (H : SourceLemma12_4Data hp hp1 W) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+  (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V)
+  (hreal : IsRealType (CoeffPair.toMax p ψ)) (n : ℤ) (a : Coeff p)
+  (ha : a ∈ sourcePsiOriginalRootPlacement D) (haReal : ∀ k : ℤ, (a k).im = 0)
+
+example : Function.Injective (displacedRoots a) := hD.originalRootPlacement_injective a ha
+
+-- The contour formula is for every direction, without a reality assumption on that direction.
+example (m : ℤ) (P : SourceCriticalRootPeriodCircle hp hp1 ψ m) (h : DeletedCoeff p n) :
+    (sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ h:Coeff p) m =
+      ((n-m:ℤ):ℂ)*(∮ z in C((P.center:ℂ),P.radius),
+        sourcePsiCandidateVariation n a (h:Coeff p) z/sourceCanonicalRoot hp hp1 ψ z) :=
+  H.originalRootJacobian_apply_variation_contour ψ hψW hreal n m a P h
+
+example (h : DeletedCoeff p n)
+    (hk : sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ h = 0) :
+    sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ (DeletedCoeff.realPart h) = 0 ∧
+    sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ (DeletedCoeff.imagPart h) = 0 :=
+  H.originalKernel_realImag ψ hψW hreal n a haReal h hk
+
+-- A collapsed gap forces the entire variation to vanish at its single point.
+example (h : DeletedCoeff p n) (hr : ∀ k : ℤ, ((h:Coeff p) k).im = 0)
+    (hk : sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ h = 0)
+    (m : ℤ) (hmn : m ≠ n) (τ : ℂ) (hgap : sourcePeriodicSegment hp hp1 ψ m = {τ}) :
+    sourcePsiCandidateVariation n a (h:Coeff p) τ = 0 := by
+  obtain ⟨z,hz,hzero⟩ := H.originalRealKernel_gapZero hD ψ hψW hψV hreal n a haReal h hr hk m hmn
+  rw [hgap,mem_singleton_iff] at hz
+  exact hz ▸ hzero
+
+example (h : DeletedCoeff p n) (hr : ∀ k : ℤ, ((h:Coeff p) k).im = 0)
+    (hk : sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ h = 0) :
+    sourcePsiCandidateVariation n a (h:Coeff p) = 0 :=
+  H.originalRealKernel_variation_eq_zero hD ψ hψW hψV hreal n a ha haReal h hr hk
+
+example (h : DeletedCoeff p n)
+    (hk : sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ h = 0) : h = 0 :=
+  H.originalKernel_eq_zero hD ψ hψW hψV hreal n a ha haReal h hk
+
+example (h : DeletedCoeff p n) (hh : h ≠ 0) :
+    sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ h ≠ 0 := by
+  intro hk
+  exact hh (H.originalKernel_eq_zero hD ψ hψW hψV hreal n a ha haReal h hk)
+
+example (x y : DeletedCoeff p n)
+    (he : sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ x =
+      sourcePsiOriginalRootJacobian hp hp1 n (Coeff.deleteCoordinateTo n a) ψ y) : x = y :=
+  H.originalRootJacobian_injective hD ψ hψW hψV hreal n a ha haReal he
+
+-- Changing the unused fill, even to a nonreal value, leaves this same injective operator.
+example (z : ℂ) : Function.Injective (sourcePsiOriginalRootJacobian hp hp1 n
+    (Coeff.deleteCoordinateTo n (a+lp.single p n z)) ψ) := by
+  simpa only [map_add,Coeff.deleteCoordinateTo_single_same,add_zero] using
+    H.originalRootJacobian_injective hD ψ hψW hψV hreal n a ha haReal
+
+-- The interpolation sequence is lp and injective; the omitted root need not be the free root.
+example (h : Coeff p) (hgap : ∀ m : ℤ, m ≠ n →
+    ∃ z ∈ sourcePeriodicSegment hp hp1 ψ m, sourcePsiCandidateVariation n a h z = 0) :
+    ∃ ρ : ℤ → ℂ, Memℓp (fun m => ρ m-(Real.pi:ℂ)*m) p ∧
+      ρ n = displacedRoots a n ∧ Function.Injective ρ ∧
+      ∀ z : ℂ, entireSingleSpectralProduct ρ z = 0 → deriv (entireSingleSpectralProduct ρ) z ≠ 0 := by
+  obtain ⟨ρ,hρ,hρn,_,hi,_,hs,_⟩ := hD.originalGapInterpolationProduct ψ hψV n a h ha hgap
+  exact ⟨ρ,hρ,hρn,hi,hs⟩
+
+example : ∃ K : ℕ, ∀ k : ℕ, K ≤ k → ∀ z ∈ sphere (0:ℂ) (centralCircleRadius k),
+    ∀ m : ℤ, z ≠ displacedRoots a m := by
+  obtain ⟨K,hK⟩ := hD.eventually_centralCircle_avoids_originalDiscs
+  refine ⟨K,?_⟩
+  intro k hk z hz m he
+  apply hK k hk z hz m
+  rw [he]
+  exact ha m
+
+-- The literal sine quotient keeps all factors, including the unused numerator root.
+example (z : ℂ) (hz : z ∉ freeLattice) :
+    sourcePsiCandidate n (z,a)*(displacedRoots a n-z)/(2*Complex.sin z) =
+      ∏' m : ℤ, (displacedRoots a m-z)/((Real.pi:ℂ)*m-z) :=
+  sourcePsiCandidate_mul_omitted_div_sin hp hp1 n a z hz
+
+example (ε : ℝ) (hε : 0 < ε) : ∃ K : ℕ, ∀ k : ℕ, K ≤ k →
+    ∀ z ∈ sphere (0:ℂ) (centralCircleRadius k),
+      ‖(∏' m : ℤ, (displacedRoots a m-z)/((Real.pi:ℂ)*m-z))-1‖ ≤ ε :=
+  eventually_centralCircle_sourcePsiRelativeProduct_close hp a ε hε
+
+-- Exterior decay is valid for arbitrary complex directions, independently of the kernel condition.
+example (h : DeletedCoeff p n) (ε : ℝ) (hε : 0 < ε) :
+    ∃ K : ℕ, ∀ k : ℕ, K ≤ k → ∀ z ∈ sphere (0:ℂ) (centralCircleRadius k),
+      ‖((displacedRoots a n-z)*sourcePsiCandidateVariation n a (h:Coeff p) z/2)/Complex.sin z‖ ≤ ε :=
+  eventually_centralCircle_sourcePsiVariation_div_sin_small hp hp1 n a (h:Coeff p) h.property ε hε
+
+example (h : Coeff p) (z : ℂ) (hz : z ∉ freeLattice)
+    (hv : sourcePsiCandidateVariation n a h z = sourcePsiCandidate n (z,a)*
+      ∑' m : ℤ, h m/(displacedRoots a m-z)) :
+    ((displacedRoots a n-z)*sourcePsiCandidateVariation n a h z/2)/Complex.sin z =
+      (∑' m : ℤ, h m/(displacedRoots a m-z)) *
+        ∏' m : ℤ, (displacedRoots a m-z)/((Real.pi:ℂ)*m-z) :=
+  sourcePsiVariation_div_sin_eq_resolvent_mul_product hp hp1 n a h z hz hv
+
+-- Both the original source domain and the preceding decomposition are retained.
+example (H6 : SourceLemma12_6Data hp hp1 W) : SourceLemma12_7Data hp hp1 W := H6.lemma12_7
+example (H7 : SourceLemma12_7Data hp hp1 W) : SourceLemma12_6Data hp hp1 W := H7.previous
+
+example (H7 : SourceLemma12_7Data hp hp1 W) (t : realTypeSourceSubmodule p × RealCoeff p)
+    (htW : (t.1:CoeffPair p) ∈ W) (htΩ : t ∈ sourcePsiOriginalOmega V D)
+    (x y : DeletedCoeff p (-7))
+    (he : sourcePsiOriginalRootJacobian hp hp1 (-7)
+        (Coeff.deleteCoordinateTo (-7) (RealCoeff.complexCLM p t.2)) t.1 x =
+      sourcePsiOriginalRootJacobian hp hp1 (-7)
+        (Coeff.deleteCoordinateTo (-7) (RealCoeff.complexCLM p t.2)) t.1 y) : x = y :=
+  H7.injective hD t htW htΩ (-7) he
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceLemma12_7Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_7 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceLemma12_7Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_7 (by norm_num) (by norm_num)
+
+end
+end SourceLemma127Checks

@@ -1,6 +1,49 @@
 # Implementation plan
 
-## Current milestone: Lemma 12.6 on the original real domain
+## Current milestone: Lemma 12.7 on the original real domain
+
+`SourceLemma12_6Data.lemma12_7` proves injectivity of the actual bounded
+root Jacobian at every original Ωᵖ point, for every finite 1<p<∞ and
+every omitted index. It retains the same open connected source domain W,
+the preceding diagonal-plus-compact decomposition, and all earlier data.
+Injectivity holds on the complex deleted Banach space.
+
+Every actual matrix row sums to the bounded derivative applied to an
+arbitrary direction, and every coordinate equals the contour integral of
+its entire numerator variation. For real kernel directions, the original
+contours supply a zero in each retained gap, including collapsed gaps.
+The selected zeros have ℓᵖ displacements and are distinct. Together with
+the original omitted root they define a simple entire interpolation
+product. Interpolation forces the variation to vanish identically;
+evaluation at the distinct original roots then recovers the zero direction.
+Real matrix entries reduce a complex kernel vector to its real and
+imaginary parts, proving the full complex result.
+
+The source's outer-circle proof assertions are also certified: all large
+half-integer-radius circles avoid the entire original disk family; the
+literal root product has its exact sine normalization and tends uniformly
+to one; and φ=(σₙ−z)φₙ/2 satisfies φ/sin(z)→0 uniformly. The exact
+root-resolvent/product factorization is retained. No selected local chart
+or replacement disk family is imposed.
+
+Twenty-two new public checks cover matrix row sums, arbitrary complex
+directions, collapsed gaps, kernel splitting, injectivity, unused root
+fills, simple interpolation zeros, original disk avoidance, literal
+product identities and decay, the retained source domain and preceding
+decomposition, and exponents 3/2 and 4.
+See the [Section 12 audit](coverage/SECTION_12.md).
+
+Next: Corollary 12.8, invertibility of the actual Jacobian using the
+Fredholm alternative. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (7,013 build jobs, the complete
+public example suite, and the axiom audit of 33,040 NLS declarations).
+The build retains 21 existing warnings. The five new modules and twenty-two
+new public checks are warning-free. The source inventory verified 156
+candidate labels; all 117 local Markdown links and diff checks passed.
+No admitted proofs, additional axioms, or heartbeat overrides were added.
+
+## Previous milestone: Lemma 12.6 on the original real domain
 
 `SourceLemma12_5Data.lemma12_6` proves that the actual bounded root
 Jacobian is a diagonal continuous linear equivalence plus a compact

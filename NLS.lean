@@ -3571,3 +3571,8 @@ import NLS.SequenceSpaces.DeletedFiniteRankApproximation
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianDecomposition
 import NLS.ZakharovShabat.SourcePsiOriginalJacobianFiniteRank
 import NLS.ZakharovShabat.SourceLemma12_6
+import NLS.ZakharovShabat.SourcePsiOriginalKernelContour
+import NLS.ZakharovShabat.SourcePsiOriginalGapInterpolation
+import NLS.ZakharovShabat.SourcePsiOriginalOuterCircles
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianInjective
+import NLS.ZakharovShabat.SourceLemma12_7
