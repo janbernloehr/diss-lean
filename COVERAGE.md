@@ -4186,3 +4186,38 @@ reality of the discriminant derivative's roots. The dissertation remains
 incomplete.
 
 Validation: `./scripts/check.sh` passed: 6832 build jobs, the combined public examples, and the axiom audit of 31092 NLS declarations. The 21 existing warnings are unchanged; both new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 8.3 milestone: original critical-root counts and reality
+
+`SourceLemma8_3.lean` constructs the full critical-root counting statement
+in the original source space for every finite p>1. At every complex base
+point, one open convex neighborhood contains that point and zero, and one
+positive cutoff works for all nearby potentials and every larger cutoff.
+
+Each distant quarter-pi disk contains exactly one root of the actual
+spectral derivative of the discriminant. That root is the canonical
+critical coordinate, is simple, and is unique even in the closed disk.
+The boundary is zero-free. The central disk of radius (K+1/2)π has exactly
+2K+1 roots counted with multiplicity, and its boundary is also zero-free.
+These regions exhaust all derivative zeros. At real-type potentials all
+critical roots, including the central ones, are real.
+
+The central labels are identified with the actual analytic-zero multiset.
+Its cardinality, membership in the open disk, and each point's analytic
+multiplicity are exposed explicitly; central simplicity is not assumed.
+A uniform bound on the imaginary parts also proves that the central disk
+and the earlier height-K box select exactly the same critical roots and
+have the same count. The geometry and proof dependencies are recorded in
+`coverage/SECTION_8.md`.
+
+Public checks cover arbitrary complex sources at p=3/2, one original
+norm ball for all larger cutoffs, negative distant indices, exact central
+multiplicities, the central-box count, exhaustion, off-real nonvanishing
+at real type, and the free central multiset. The new module and focused
+public probe compile warning-free.
+
+Next: Lemma 8.4, the locally uniform sampled ℓp asymptotics of the
+discriminant and its spectral derivative. The dissertation remains
+incomplete.
+
+Validation: `./scripts/check.sh` passed: 6833 build jobs, the combined public examples, and the axiom audit of 31113 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

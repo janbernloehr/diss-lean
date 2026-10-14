@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 8.2 now gives original-source endpoint continuity
-under complex perturbations at real type, strict separation of neighboring
-gaps, and the following discriminant characterization of the real gaps.
-Endpoint displacement sequences are also continuous in ℓp, with one
-neighborhood controlling every index. Collapsed and negative-index gaps
-are included. [The Section 8 audit](coverage/SECTION_8.md) records the scope.
-Next is Lemma 8.3's critical-root counts and reality.
+Latest milestone: Lemma 8.3 now gives locally uniform critical-root
+counts in the original source space: one simple root in every distant
+disk, all central roots with multiplicity, exhaustion, and reality at
+real-type potentials. The counts hold at every larger cutoff on the same
+neighborhood. [The Section 8 audit](coverage/SECTION_8.md) records the scope.
+Next is Lemma 8.4's sampled ℓp asymptotics.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

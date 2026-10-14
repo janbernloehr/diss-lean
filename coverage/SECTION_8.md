@@ -153,5 +153,64 @@ data. Public checks exercise the range below two, arbitrary complex
 approximating sequences, uniform control over all indices, negative-index
 levels, unique gap membership, and the completely collapsed free example.
 
-Continue with Lemma 8.3: locally uniform critical-root counts for Δ′,
-exhaustion of its zeros, and their reality at real type.
+Lemma 8.3 is audited below.
+
+
+## Lemma 8.3: original critical-root counts and reality
+
+The statement and proof on printed p. 50 were checked against the PDF.
+`sourceLemma8_3` constructs `SourceLemma8_3Data` for arbitrary complex
+original sources and every finite 1<p<∞. It gives a positive N and one
+open convex neighborhood U in the original component-sum norm, with both
+the given source and zero in U. All conclusions below use this same U.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Distant root | `SourceLemma8_3Data.distant` | For every ψ in U and signed index with |n|>N, the actual canonical critical coordinate lies in D_n, is a simple zero of Δ′, and is the only zero even in the closed disk. |
+| Distant count | `.distant_counts` | Count one with analytic multiplicity, and a zero-free quarter-pi boundary. |
+| Central count | `.central_counts` | For every ψ in U and every K≥N, exactly 2K+1 zeros with analytic multiplicity, and a zero-free central boundary. |
+| Actual central labels | `.central_labels` | The canonical coordinates indexed by [-K,K], as a multiset, equal `centralCriticalRoots`; repeated roots are retained. |
+| Central size and membership | `.central_roots` | The multiset has cardinality 2K+1 and contains exactly the Δ′ zeros in the open central disk. |
+| Pointwise multiplicities | `.central_multiplicity` | Each point's number of occurrences among the central canonical labels is its analytic zero order inside the disk, and zero outside. |
+| Exhaustion | `.exhaustive` | Every derivative zero lies in the central open disk or a distant D_n with |n|>K, for every K≥N. |
+| Reality | `.real_roots` | For each real-type ψ in U, every zero of Δ′ has zero imaginary part, including central roots. |
+
+### Central geometry
+
+The explicit radius `centralCircleRadius K = K*π + π/2` is the radius of
+the circular region used in the source proof. Open and closed disks give
+the same roots because the boundary is zero-free. The source statement
+calls the central region B_N; the preceding sections also use B_N for
+central boxes. The formalization supplies the circle result and the
+following comparison with the height-K box of Corollary 3.5:
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Uniform imaginary bound | `.imag_bound` | Every critical root of every ψ in U satisfies |Im z|<N. |
+| Disk/box selection | `.central_box_selection` | For a derivative zero, membership in the central open disk is equivalent to membership in `centralSpectralBox K`, for all K≥N. |
+| Box count | `.central_box_count` | The height-K box also contains exactly 2K+1 zeros counted with multiplicity. |
+
+This comparison uses the height-K box, not the separate norm-dependent
+height bound discussed in the earlier source audits. The count does not
+assert that central roots are distinct or simple.
+
+### Proof and validation scope
+
+The existing sine-quotient exterior estimate gives a common Rouché
+inequality, hence the counts and exhaustion. The theorem pulls that
+neighborhood and the canonical-label neighborhood back along the
+continuous complex-linear `periodOnePotential` map. Their intersection
+preserves openness, real convexity, and membership of both source and
+zero. Enlarging one cutoff accommodates the uniform canonical ℓp bound,
+which also controls every imaginary part. The reality argument uses the
+proved real-rooted full-product derivative theorem and the exact identity
+`(Δ²-4)′ = 2ΔΔ′`; complex conjugation symmetry alone is not used to conclude
+that roots are real.
+
+The public examples check the range below two at arbitrary complex base
+points, a common original norm ball for all larger cutoffs, negative
+indices, central multiplicities, the box count, exhaustion, off-real
+nonvanishing for real-type sources, and the exact free central multiset.
+
+Continue with Lemma 8.4: sampled ℓp estimates for Δ and Δ′, locally
+uniform in the original potential and uniform over the sampling sequence.

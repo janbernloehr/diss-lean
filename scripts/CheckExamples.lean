@@ -46252,3 +46252,80 @@ example (x : ℝ) : ‖canonicalDiscriminant hp (periodOnePotential (0 : CoeffPa
 end
 end
 end SourceLemma82Checks
+
+namespace SourceLemma83Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric
+open scoped ENNReal Classical
+noncomputable section
+
+private abbrev p83 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource83ThreeHalf : Fact (1 ≤ p83) := ⟨by norm_num [p83, ENNReal.one_le_ofReal]⟩
+
+-- Arbitrary complex base points below p = 2 are allowed.
+example (φ : CoeffPair p83) :
+    ∃ N : ℕ, 0 < N ∧ ∃ U : Set (CoeffPair p83), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      SourceLemma8_3Data (by simp [p83]) (by norm_num [p83, ENNReal.one_lt_ofReal]) U N :=
+  sourceLemma8_3 _ _ φ
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- One original norm ball controls every central cutoff for every nearby complex source.
+example (φ : CoeffPair p) : ∃ N : ℕ, 0 < N ∧ ∃ ε : ℝ, 0 < ε ∧
+    ∀ ψ : CoeffPair p, dist ψ φ < ε → ∀ K : ℕ, N ≤ K →
+      analyticZeroCount (deriv (canonicalDiscriminant hp (periodOnePotential ψ)))
+        (closedBall 0 ((K : ℝ)*Real.pi+Real.pi/2)) = 2*K+1 := by
+  obtain ⟨N,hN,U,ho,_,hφ,_,D⟩ := sourceLemma8_3 hp hp1 φ
+  obtain ⟨ε,hε,hsub⟩ := Metric.isOpen_iff.mp ho φ hφ
+  exact ⟨N,hN,ε,hε,fun ψ hψ K hK => (D.central_counts ψ (hsub hψ) K hK).1⟩
+
+variable {U : Set (CoeffPair p)} {N : ℕ} (D : SourceLemma8_3Data hp hp1 U N)
+  (ψ : CoeffPair p) (hψ : ψ ∈ U)
+
+-- A negative distant index gives the actual canonical root, uniquely and simply.
+example :
+    let n : ℤ := -(N+1 : ℕ)
+    let ξ := canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n
+    ξ ∈ ball ((Real.pi : ℂ)*n) (Real.pi/4) ∧
+      deriv (canonicalDiscriminant hp (periodOnePotential ψ)) ξ = 0 ∧
+      analyticOrderAt (deriv (canonicalDiscriminant hp (periodOnePotential ψ))) ξ = 1 ∧
+      ∀ z ∈ closedBall ((Real.pi : ℂ)*n) (Real.pi/4),
+        deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z = 0 ↔ z = ξ := by
+  exact D.distant ψ hψ _ (by omega)
+
+-- Central occurrences retain their analytic orders, without a central simplicity hypothesis.
+example (K : ℕ) (hK : N ≤ K) (z : ℂ) (hz : z ∈ ball 0 (centralCircleRadius K)) :
+    (∑ n ∈ Finset.Icc (-(K : ℤ)) K,
+      ({canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n} : Multiset ℂ)).count z =
+      analyticOrderNatAt (deriv (canonicalDiscriminant hp (periodOnePotential ψ))) z := by
+  rw [D.central_multiplicity ψ hψ K hK,if_pos hz]
+
+-- The central disc and height-K box count the same roots, at every larger cutoff.
+example (hN : 0 < N) (K : ℕ) (hK : N ≤ K) :
+    analyticZeroCount (deriv (canonicalDiscriminant hp (periodOnePotential ψ))) (centralSpectralBox K) = 2*K+1 :=
+  D.central_box_count hN ψ hψ K hK
+
+-- Exhaustion excludes every other root, also on the boundaries of the open regions.
+example (K : ℕ) (hK : N ≤ K) (z : ℂ) (hc : z ∉ ball 0 (centralCircleRadius K))
+    (hd : ∀ n : ℤ, K < n.natAbs → z ∉ ball ((Real.pi : ℂ)*n) (Real.pi/4)) :
+    deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z ≠ 0 := by
+  intro hz
+  rcases D.exhaustive ψ hψ K hK z hz with hcentral | ⟨n,hn,hzn⟩
+  · exact hc hcentral
+  · exact hd n hn hzn
+
+-- Reality concerns every derivative zero, rather than only the selected distant coordinates.
+example (hreal : IsRealType (CoeffPair.toMax p ψ)) (z : ℂ) (hz : z.im ≠ 0) :
+    deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z ≠ 0 :=
+  fun hroot => hz (D.real_roots ψ hψ hreal z hroot)
+
+-- The zero potential belongs to the common neighborhood and retains the exact free multiset.
+example (h0 : (0 : CoeffPair p) ∈ U) (K : ℕ) (hK : N ≤ K) :
+    centralCriticalRoots hp hp1 (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) K =
+      ∑ n ∈ Finset.Icc (-(K : ℤ)) K, ({(Real.pi : ℂ)*n} : Multiset ℂ) := by
+  rw [← D.central_labels 0 h0 K hK]
+  simp only [map_zero,canonicalCriticalPoints_zero]
+
+end
+end
+end SourceLemma83Checks
