@@ -46329,3 +46329,71 @@ example (h0 : (0 : CoeffPair p) ∈ U) (K : ℕ) (hK : N ≤ K) :
 end
 end
 end SourceLemma83Checks
+
+namespace SourceLemma84Checks
+open NLS NLS.ZakharovShabat Set Complex
+open scoped ENNReal
+noncomputable section
+private abbrev p84 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource84ThreeHalf : Fact (1 ≤ p84) := ⟨by norm_num [p84,ENNReal.one_le_ofReal]⟩
+
+example (φ : CoeffPair p84) :
+    ∃ U : Set (CoeffPair p84), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ K : ℝ, 0 ≤ K ∧ SourceLemma8_4Data (by simp [p84]) (by norm_num [p84,ENNReal.one_lt_ofReal]) U K :=
+  sourceLemma8_4 _ _ φ
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+  {U : Set (CoeffPair p)} {K : ℝ} (D : SourceLemma8_4Data hp hp1 U K)
+
+-- The sample choices may depend arbitrarily on the potential.
+example (z : CoeffPair p → ℤ → ℂ)
+    (hz : ∀ ψ : CoeffPair p, ∀ n : ℤ, ‖z ψ n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4) :
+    ∀ ψ ∈ U, ‖sourceDiscriminantSampleError hp hp1 ψ (z ψ) (hz ψ)‖ ≤ K ∧
+      ‖sourceDiscriminantDerivativeSampleError hp hp1 ψ (z ψ) (hz ψ)‖ ≤ (4/Real.pi)*K :=
+  fun ψ hψ => D.sampled_norms ψ hψ (z ψ) (hz ψ)
+
+-- The same K applies to unrelated samplers and different nearby source potentials.
+example (ψ χ : CoeffPair p) (hψ : ψ ∈ U) (hχ : χ ∈ U) (z w : ℤ → ℂ)
+    (hz : ∀ n : ℤ, ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4)
+    (hw : ∀ n : ℤ, ‖w n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4) :
+    ‖sourceDiscriminantSampleError hp hp1 ψ z hz-sourceDiscriminantSampleError hp hp1 χ w hw‖ ≤ 2*K := by
+  have ha := (D.sampled_norms ψ hψ z hz).1
+  have hb := (D.sampled_norms χ hχ w hw).1
+  exact (norm_sub_le _ _).trans (by linarith)
+
+-- The open disks printed in the source give actual ℓp membership at every signed index.
+example (ψ : CoeffPair p) (z : ℤ → ℂ)
+    (hz : ∀ n : ℤ, z n ∈ Metric.ball ((Real.pi : ℂ)*n) (Real.pi/4)) :
+    Memℓp (fun n => canonicalDiscriminant hp (periodOnePotential ψ) (z n)-2*cos (z n)) p ∧
+      Memℓp (fun n => deriv (canonicalDiscriminant hp (periodOnePotential ψ)) (z n)+2*sin (z n)) p := by
+  have hzc (n : ℤ) : ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 := by
+    exact (show ‖z n-(Real.pi : ℂ)*n‖ < Real.pi/4 by simpa [Metric.mem_ball,dist_eq_norm] using hz n).le
+  exact ⟨lp.memℓp (sourceDiscriminantSampleError hp hp1 ψ z hzc),
+    lp.memℓp (sourceDiscriminantDerivativeSampleError hp hp1 ψ z hzc)⟩
+
+-- Nonreal samples on every closed-disc boundary are permitted, including negative indices.
+example (ψ : CoeffPair p) :
+    ∃ a b : Coeff p, ∀ n : ℤ,
+      canonicalDiscriminant hp (periodOnePotential ψ) ((Real.pi : ℂ)*n+(Real.pi/4 : ℝ)*Complex.I) =
+        2*cos ((Real.pi : ℂ)*n+(Real.pi/4 : ℝ)*Complex.I)+a n ∧
+      deriv (canonicalDiscriminant hp (periodOnePotential ψ)) ((Real.pi : ℂ)*n+(Real.pi/4 : ℝ)*Complex.I) =
+        -2*sin ((Real.pi : ℂ)*n+(Real.pi/4 : ℝ)*Complex.I)+b n := by
+  let z : ℤ → ℂ := fun n => (Real.pi : ℂ)*n+(Real.pi/4 : ℝ)*Complex.I
+  have hz (n : ℤ) : ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4 := by
+    simp only [z,add_sub_cancel_left,norm_mul,Complex.norm_real,Complex.norm_I,mul_one,
+      Real.norm_of_nonneg (by positivity : 0 ≤ Real.pi/4)]
+    exact le_rfl
+  exact ⟨sourceDiscriminantSampleError hp hp1 ψ z hz,
+    sourceDiscriminantDerivativeSampleError hp hp1 ψ z hz,
+    fun n => ⟨sourceLemma8_4_value hp hp1 ψ z hz n,sourceLemma8_4_derivative hp hp1 ψ z hz n⟩⟩
+
+-- Both actual error sequences vanish at zero potential for every admissible sampler.
+example (z : ℤ → ℂ) (hz : ∀ n : ℤ, ‖z n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4) :
+    sourceDiscriminantSampleError hp hp1 (0 : CoeffPair p) z hz = 0 ∧
+    sourceDiscriminantDerivativeSampleError hp hp1 (0 : CoeffPair p) z hz = 0 := by
+  simp
+
+end
+end
+end SourceLemma84Checks

@@ -212,5 +212,54 @@ points, a common original norm ball for all larger cutoffs, negative
 indices, central multiplicities, the box count, exhaustion, off-real
 nonvanishing for real-type sources, and the exact free central multiset.
 
-Continue with Lemma 8.4: sampled ℓp estimates for Δ and Δ′, locally
-uniform in the original potential and uniform over the sampling sequence.
+Lemma 8.4 is audited below.
+
+
+## Lemma 8.4: sampled discriminant and derivative errors
+
+The statement and proof on printed p. 51 were checked against the PDF.
+`sourceLemma8_4` constructs the result for every finite 1<p<∞ in the
+original `CoeffPair p` space, with arbitrary complex base points.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual value-error sequence | `sourceDiscriminantSampleError` and its `_apply` theorem | The coefficient at n is exactly Δ(z_n)-2 cos(z_n), and the entire sequence is in ℓp. |
+| Actual derivative-error sequence | `sourceDiscriminantDerivativeSampleError` and its `_apply` theorem | The coefficient at n is exactly Δ′(z_n)+2 sin(z_n), with the source's sign and normalization. |
+| Literal value formula | `sourceLemma8_4_value` | Δ(z_n)=2 cos(z_n)+a_n for the actual ℓp error a. |
+| Literal derivative formula | `sourceLemma8_4_derivative` | Δ′(z_n)=-2 sin(z_n)+b_n for the actual ℓp error b. |
+| Whole-disc bounds | `SourceLemma8_4Data.disc_majorants` | For each nearby source, one A in ℓp controls every value error on every quarter-pi disk; (4/π)A controls every derivative error. |
+| Uniform sample norms | `.sampled_norms` | The actual sequences have norms at most K and 4K/π, for all nearby sources and all samplers. |
+| Exact free case | `sourceDiscriminantSampleError_zero`, `sourceDiscriminantDerivativeSampleError_zero` | Both actual sequences are zero for every admissible sampler. |
+
+### Quantifiers and proof
+
+The theorem returns one original open convex neighborhood U containing
+the base point and zero, and one K≥0. For every ψ in U it supplies a
+majorant A with norm at most K before quantifying over n and the point
+in its disk. Thus A can depend on ψ but is independent of the sampling
+sequence; K and U are independent of both. The same K controls any two
+nearby potentials with any two admissible samplers.
+
+Every index is included, without discarding a finite central block. The
+theorem allows the closed-disk bound |z_n-nπ|≤π/4 and therefore includes
+the source's assertion for samples in the open D_n. Sample choices may
+depend arbitrarily on ψ; no continuity or analyticity of a sampler is
+required or asserted.
+
+The proof uses the existing actual parity-product ℓp majorants on the
+larger half-pi disks. Cauchy's estimate on the concentric quarter-pi disks
+gives the factor 1/(π/2-π/4)=4/π. Coefficientwise domination then bounds
+the actual sampled sequences in the same finite ℓp space. Pulling the
+common neighborhood back along `periodOnePotential` preserves openness,
+convexity, and the original source topology. This supplies local uniform
+norm bounds; the theorem does not assert continuity of an arbitrarily
+chosen sampler.
+
+Public checks exercise p=3/2 at arbitrary complex bases, arbitrary
+potential-dependent samplers, common bounds for different samplers and
+sources, open-disk membership in ℓp, nonreal samples on every closed-disk
+boundary, all signed indices, and the free identities.
+
+Continue with Lemma 8.5 and equation (2.6): critical-root ℓp asymptotics,
+the derivative product, continuity at real type, and the following
+interlacing and unique strict real extrema.

@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 8.3 now gives locally uniform critical-root
-counts in the original source space: one simple root in every distant
-disk, all central roots with multiplicity, exhaustion, and reality at
-real-type potentials. The counts hold at every larger cutoff on the same
-neighborhood. [The Section 8 audit](coverage/SECTION_8.md) records the scope.
-Next is Lemma 8.4's sampled ℓp asymptotics.
+Latest milestone: Lemma 8.4 now gives actual ℓp error sequences for the
+sampled discriminant and its derivative. One neighborhood and one bound
+work for every nearby complex potential and every sampler in the closed
+quarter-pi disks. [The Section 8 audit](coverage/SECTION_8.md) records the scope.
+Next is Lemma 8.5's critical-root asymptotics, product, and continuity.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

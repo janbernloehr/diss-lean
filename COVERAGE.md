@@ -4221,3 +4221,38 @@ discriminant and its spectral derivative. The dissertation remains
 incomplete.
 
 Validation: `./scripts/check.sh` passed: 6833 build jobs, the combined public examples, and the axiom audit of 31113 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 8.4 milestone: actual sampled ℓp errors in the original space
+
+`SourceLemma8_4.lean` constructs the actual sampled discriminant and
+spectral-derivative errors as ℓp sequences in the original source space,
+for every finite p>1. The two literal identities retain the free terms
+2 cos λ and -2 sin λ at every signed integer index.
+
+At every complex base point, one open convex source neighborhood contains
+the base point and zero. One K≥0 bounds the value-error norm for every
+nearby potential and every admissible sampling sequence; the derivative
+error has the bound 4K/π. The result holds on the closed quarter-pi disks,
+so includes the open disks stated in the source, central indices, negative
+indices, and boundary samples. The choices of sample points may depend
+arbitrarily on the potential.
+
+For each nearby potential, an ℓp majorant is chosen before any samples
+are chosen. It bounds the value error over every whole disk, and the
+same majorant with factor 4/π bounds the derivative error. These are
+locally uniform sequence-norm estimates, not only pointwise membership
+for a fixed sampler. Both actual error sequences vanish identically at
+zero potential. The precise quantifiers and Cauchy estimate are audited
+in `coverage/SECTION_8.md`.
+
+Public checks cover arbitrary complex bases at p=3/2, potential-dependent
+samplers, a shared bound for different sources and samplers, the printed
+open-disk ℓp membership, nonreal closed-disk boundary samples at all
+signed indices, and both free error sequences. The new module and the
+focused public probe compile warning-free.
+
+Next: Lemma 8.5, the canonical critical-root asymptotics, derivative
+product, real-type continuity, and the following interlacing and strict
+extremum assertions. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6834 build jobs, the combined public examples, and the axiom audit of 31138 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
