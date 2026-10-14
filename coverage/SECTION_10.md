@@ -9,7 +9,9 @@ Lemma 10.4 is covered with the selected-root index correction, actual
 side traces, improper endpoint limits and the sharp constant one.
 Lemma 10.5 is covered on the unchanged common domain, with literal
 symmetric cutoffs, paired absolute convergence, both analytic domains
-and nonvanishing. Corollary 10.6 and later statements remain to be audited.
+and nonvanishing. Corollary 10.6 is covered with its full displacement
+space, literal unordered quotient product and printed closed-disk domain.
+Equation (2.13), Lemma 10.7 and later statements remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -540,3 +542,87 @@ and paired versus individual convergence at the same genuine domain point.
 
 Next: Corollary 10.6, the quotient product with variable displaced roots.
 The dissertation remains incomplete.
+
+
+## Corollary 10.6: literal product and all root parameters
+
+The source on printed p. 57, visually checked, states that
+
+    ∏_{m≠n} (σ_m−λ)/w_m(λ)
+
+is analytic on
+
+    (ℂ \ ⋃_{m≠n} closure(U_m)) × ℓᵖ × V_φ.
+
+The bar over U_m is present in the printed formula. The displacement
+parameter is a=σ−σ⁰, where σ⁰_m=mπ. `exists_displacedRoots_iff_memℓp`
+proves that `Coeff p` represents exactly this affine root space. No root
+ordering, distinctness, size bound or numerator nonvanishing condition is
+added. The omitted index ranges over all integers, including zero and
+negative indices; p ranges over every finite exponent greater than one.
+
+`sourceSingleRootQuotientPartialProduct` is the literal product over
+[-N,N] with n erased. The existing finite quotient identity cancels both
+π_n prefactors and every π_m factor exactly, including at early cutoffs.
+`SourceSingleRootQuotientCommonDomain.lean` proves local uniform convergence
+of these cutoffs in λ, a and ψ, hence uniform convergence on every compact
+subset of the triple domain. The numerator is jointly entire and the
+omitted-root denominator is analytic and nonzero there.
+
+## Corollary 10.6: individual absolute convergence and unordered products
+
+Unlike the separate factors in Lemma 10.5, the quotient factors have
+absolutely summable individual deviations from one. For noncentral m,
+put e_m=w_m/(πm)−1. The existing midpoint correction b_m and square-root
+correction r_m satisfy
+
+    e_m = b_m − λ/(πm) + r_m.
+
+If d_m=a_m/(πm)−b_m−r_m, then exactly
+
+    (σ_m−λ)/w_m(λ)−1 = d_m/(1+e_m)
+
+where the denominator is nonzero. Hölder gives a_m/(πm)∈ℓ¹, and both b
+and r already belong to ℓ¹. The normalized root errors e belong to ℓ²
+and tend to zero along the cofinite filter. Eventually |1+e_m|≥1/2,
+so the individual quotient error is bounded by 2|d_m|. The finitely many
+remaining indices cause no summability problem.
+
+`summable_norm_sourceSingleRootQuotientFactor_sub_one` proves the absolute
+summability. `hasProd_sourceSingleRootQuotient_subtype` identifies the
+unconditional product over {m∈ℤ | m≠n} with the analytic quotient on the
+natural domain. `tendsto_finset_sourceSingleRootQuotient` gives convergence
+over all finite subsets with n erased. These assertions do not rely on
+choosing positive/negative pairs or a particular enumeration. The product
+identity is asserted only where the unomitted actual gaps are avoided;
+no analyticity is claimed for totalized division at excluded gap points.
+
+## Corollary 10.6: unchanged domains and degeneracy checks
+
+`SourceLemma10_5Data.quotients` constructs `SourceCorollary10_6Data` on
+exactly the supplied W. Its local `SourceSingleRootQuotientNeighborhoods`
+extends the earlier omitted-root package, preserving the same V, D and c.
+Both the quotient and the literal unordered product are jointly analytic
+on the printed closed-disk complement times all a and V. The larger open
+moving-gap domain and the whole selected disk are also covered. In
+particular, the selected gap's endpoints and collapsed case are included.
+
+The free quotient is one at every point of its natural domain, including
+λ=nπ. The omitted coordinate a_n has no effect on the function. Every
+unomitted numerator root remains a zero. The explicit displacement
+
+    a_0=i, a_{−1}=π+i, a_m=0 otherwise
+
+has σ_0=σ_{−1}=i. At zero source, i lies in the actual natural domain;
+with n=−1 the quotient equals zero. Thus a collision between the omitted
+root and an unomitted root is allowed, and does not create a pole.
+
+Public checks cover the complete package at p=3/2, the same-domain transfer,
+literal finite normalization, unordered product identity, convergence over
+all finite subsets, joint compact convergence, printed closed-disk
+analyticity, selected-gap analyticity, arbitrary omitted-coordinate changes,
+free values at nπ and i, and the explicit collision at p=3/2.
+The source statement requires no new correction.
+
+Next: equation (2.13) and Lemma 10.7, the canonical-root product and its
+analytic domains. The dissertation remains incomplete.

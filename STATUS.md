@@ -1,6 +1,56 @@
 # Implementation status
 
-## Current milestone: Lemma 10.5 on the unchanged common domain
+## Current milestone: Corollary 10.6 with an unconditional quotient product
+
+`SourceCorollary10_6.lean` proves joint analyticity of the literal quotient
+product for every finite p>1, every omitted integer index and every ℓᵖ
+root-displacement sequence. `SourceLemma10_5Data.quotients` preserves the
+supplied common domain W exactly. The local packages retain the original
+V, isolating disks D and distance constant c from Lemma 10.5.
+
+The source's displayed domain is the complement of the CLOSED unomitted
+disks, times the full displacement space, times V. Both the analytic
+quotient and the literal unordered product are analytic on that domain.
+They are also jointly analytic on the open moving-gap domain and on the
+whole selected disk. No distinctness, ordering, smallness or nonvanishing
+condition is imposed on numerator roots.
+
+`SourceSingleRootQuotientAbsolute.lean` proves absolute summability of
+INDIVIDUAL quotient-factor deviations. The nonsummable free spectral
+terms cancel between numerator and denominator; the remaining displacement,
+midpoint and square-root corrections form an ℓ¹ sequence. The normalized
+denominator factors tend to one, so division preserves the tail bound.
+Thus this product converges unconditionally, without the pairing required
+for the separate numerator and standard-root products. Its `HasProd` value
+is exactly the previously constructed analytic quotient. The net of all
+finite products with n erased converges to that same value.
+
+`SourceSingleRootQuotientCommonDomain.lean` also proves local uniform
+convergence of the literal symmetric cutoffs in all three variables,
+uniform convergence on compact subsets of the triple domain, and
+spectral analyticity for each fixed source and displacement sequence.
+The normalization factors cancel at every finite cutoff, including
+cutoffs which do not yet contain the omitted index.
+
+`SourceSingleRootQuotientNormalization.lean` identifies the displacement
+parameters with exactly the root sequences σ−σ⁰∈ℓᵖ. The free quotient is
+one on its actual domain, including its selected collapsed gap. The
+omitted displacement coordinate is irrelevant. An explicit finitely
+supported example has the roots at −1 and 0 collide at i; the quotient
+with −1 omitted is defined there and equals zero. This checks that
+nonvanishing of the denominator has not become an incorrect nonvanishing
+assertion for the quotient. Public checks also instantiate the complete
+package and the collision example at p=3/2.
+
+The printed Corollary 10.6 on p. 57 requires no new correction. Its exact
+product, domain and quantifiers are audited in `coverage/SECTION_10.md`.
+
+Next: equation (2.13) and Lemma 10.7, the canonical-root product and its
+analytic domains. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,861 build jobs, the full public example suite, and the axiom audit of 31,626 NLS declarations). The build retains 21 existing warnings; the four new modules and focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+## Previous milestone: Lemma 10.5 on the unchanged common domain
 
 `SourceLemma10_5.lean` proves convergence, analyticity and nonvanishing of
 the literal omitted standard-root product for every finite p>1 and every

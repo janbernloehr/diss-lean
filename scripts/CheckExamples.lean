@@ -47380,3 +47380,126 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
 
 end
 end SourceLemma105Checks
+
+namespace SourceCorollary106Checks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex Filter Topology
+open scoped ENNReal
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- Root data are exactly the full affine ℓᵖ space in the source.
+example (roots : ℤ → ℂ) : (∃ a : Coeff p, displacedRoots a = roots) ↔
+    Memℓp (fun m : ℤ => roots m-(Real.pi:ℂ)*m) p := exists_displacedRoots_iff_memℓp roots
+
+-- The finite product has no normalization factor left over, at every cutoff.
+example (ψ : CoeffPair p) (a : Coeff p) (z : ℂ) (N : ℕ) :
+    sourceSingleRootQuotientPartialProduct hp hp1 (-1) N (z,(a,ψ)) =
+      ∏ m ∈ (Finset.Icc (-(N:ℤ)) N).erase (-1),
+        (displacedRoots a m-z)/sourceStandardRoot hp hp1 ψ m z := rfl
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_5Data hp hp1 W) :
+    SourceCorollary10_6Data hp hp1 W := h.quotients
+
+-- Joint analyticity is for the literal unordered product, on its open triple domain.
+example {W : Set (CoeffPair p)} (h : SourceLemma10_5Data hp hp1 W) :
+    AnalyticOnNhd ℂ (fun q : ℂ × (Coeff p × CoeffPair p) =>
+      ∏' m : {m : ℤ // m ≠ -1},
+        (displacedRoots q.2.1 m-q.1)/sourceStandardRoot hp hp1 q.2.2 m q.1)
+      (sourceSingleRootQuotientJointDomain hp hp1 W (-1)) := h.quotientTprod (-1)
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_5Data hp hp1 W)
+    (K : Set (ℂ × (Coeff p × CoeffPair p))) (hK : IsCompact K)
+    (hsub : K ⊆ sourceSingleRootQuotientJointDomain hp hp1 W (-1)) :
+    TendstoUniformlyOn (sourceSingleRootQuotientPartialProduct hp hp1 (-1))
+      (sourceSingleRootQuotientJointProduct hp hp1 (-1)) atTop K :=
+  h.quotientCompact (-1) K hK hsub
+
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceSingleRootQuotientNeighborhoods hp hp1 V D c) :
+    AnalyticOnNhd ℂ (fun q : ℂ × (Coeff p × CoeffPair p) =>
+      ∏' m : {m : ℤ // m ≠ -1},
+        (displacedRoots q.2.1 m-q.1)/sourceStandardRoot hp hp1 q.2.2 m q.1)
+      ((⋃ m : ℤ, ⋃ (_ : m ≠ -1), closure (D m))ᶜ ×ˢ (univ ×ˢ V)) := hD.literal_product (-1)
+
+-- Every earlier isolating family retains the same disks and permits every displacement.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceSingleRootQuotientNeighborhoods hp hp1 V D c) (n : ℤ) :
+    AnalyticOnNhd ℂ (sourceSingleRootQuotientJointProduct hp hp1 n)
+      ((⋃ m : ℤ, ⋃ (_ : m ≠ n), closure (D m))ᶜ ×ˢ (univ ×ˢ V)) := hD.quotient_joint n
+
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceSingleRootQuotientNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (a : Coeff p) (z : ℂ)
+    (hz : z ∈ sourcePeriodicSegment hp hp1 ψ (-1)) :
+    AnalyticAt ℂ (sourceSingleRootQuotientJointProduct hp hp1 (-1)) (z,(a,ψ)) :=
+  hD.quotient_disk (-1) (z,(a,ψ)) ⟨hD.gap ψ hψ (-1) hz,mem_univ _,hψ⟩
+
+-- Absolute convergence is individual, and convergence holds for all finite subsets.
+example (ψ : CoeffPair p) (a : Coeff p) (z : ℂ) :
+    Summable (fun m : ℤ => ‖sourceSingleRootQuotientFactor hp hp1 ψ a z (-1) m-1‖) :=
+  summable_norm_sourceSingleRootQuotientFactor_sub_one hp hp1 ψ a z (-1)
+
+example (ψ : CoeffPair p) (a : Coeff p) (z : ℂ)
+    (hz : z ∈ sourceStandardRootOmittedDomain hp hp1 ψ (-1)) :
+    Tendsto (fun s : Finset ℤ => ∏ m ∈ s.erase (-1),
+      (displacedRoots a m-z)/sourceStandardRoot hp hp1 ψ m z) atTop
+      (𝓝 (sourceSingleRootQuotientJointProduct hp hp1 (-1) (z,(a,ψ)))) :=
+  tendsto_finset_sourceSingleRootQuotient hp hp1 ψ a z (-1) hz
+
+example (ψ : CoeffPair p) (a : Coeff p) (z : ℂ)
+    (hz : z ∈ sourceStandardRootOmittedDomain hp hp1 ψ (-1)) :
+    (∏' m : {m : ℤ // m ≠ -1},
+      (displacedRoots a m-z)/sourceStandardRoot hp hp1 ψ m z) =
+        sourceSingleRootQuotientJointProduct hp hp1 (-1) (z,(a,ψ)) :=
+  (hasProd_sourceSingleRootQuotient_subtype hp hp1 ψ a z (-1) hz).tprod_eq
+
+-- The omitted coordinate is irrelevant, with no restriction on its size.
+example (ψ : CoeffPair p) (n : ℤ) (z : ℂ) (a b : Coeff p)
+    (hab : ∀ m : ℤ, m ≠ n → a m = b m) :
+    sourceSingleRootQuotientJointProduct hp hp1 n (z,(a,ψ)) =
+      sourceSingleRootQuotientJointProduct hp hp1 n (z,(b,ψ)) :=
+  sourceSingleRootQuotient_eq_of_off_index hp hp1 ψ n z a b hab
+
+-- Free normalization works at the selected collapsed gap and at a genuine off-gap point.
+example (n : ℤ) : sourceSingleRootQuotientJointProduct hp hp1 n
+    ((Real.pi:ℂ)*n,(0,0)) = 1 :=
+  sourceSingleRootQuotient_zero_free hp hp1 n _
+    (sourceStandardRootOmittedDomain_zero_source_contains_center hp hp1 n)
+
+example : sourceSingleRootQuotientPartialProduct hp hp1 (-1) 0 (Complex.I,(0,0)) = 1 := by
+  simp [sourceSingleRootQuotientPartialProduct,displacedRoots,sourceStandardRoot_zero_source]
+
+example : (∏' m : {m : ℤ // m ≠ -1},
+    (displacedRoots (0 : Coeff p) m-Complex.I)/sourceStandardRoot hp hp1 0 m Complex.I) = 1 := by
+  have hz := sourceStandardRootOmittedDomain_zero_source_contains_I hp hp1 (-1)
+  rw [(hasProd_sourceSingleRootQuotient_subtype hp hp1 0 0 Complex.I (-1) hz).tprod_eq]
+  exact sourceSingleRootQuotient_zero_free hp hp1 (-1) Complex.I hz
+
+-- An unomitted numerator zero may coincide with the omitted root at a valid spectral point.
+example : ∃ a : Coeff p, displacedRoots a (-1) = Complex.I ∧ displacedRoots a 0 = Complex.I ∧
+    Complex.I ∈ sourceStandardRootOmittedDomain hp hp1 (0 : CoeffPair p) (-1) ∧
+    sourceSingleRootQuotientJointProduct hp hp1 (-1) (Complex.I,(a,0)) = 0 :=
+  exists_sourceSingleRootQuotient_colliding_roots_zero hp hp1
+
+end
+
+local instance pThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+    IsOpen W ∧ IsConnected W ∧ realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    SourceCorollary10_6Data (by simp) (by norm_num [ENNReal.one_lt_ofReal]) W :=
+  sourceCorollary10_6 (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+
+example : ∃ a : Coeff (ENNReal.ofReal (3/2 : ℝ)),
+    displacedRoots a (-1) = Complex.I ∧ displacedRoots a 0 = Complex.I ∧
+    Complex.I ∈ sourceStandardRootOmittedDomain (p := ENNReal.ofReal (3/2 : ℝ))
+      (by simp) (by norm_num [ENNReal.one_lt_ofReal]) 0 (-1) ∧
+    sourceSingleRootQuotientJointProduct (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+      (-1) (Complex.I,(a,0)) = 0 :=
+  exists_sourceSingleRootQuotient_colliding_roots_zero (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+
+end
+end SourceCorollary106Checks
