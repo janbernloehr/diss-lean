@@ -5,11 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 8.5 now assembles the canonical critical-root
-ℓp asymptotics, literal derivative product, and continuity at real type.
-Every real gap, including a collapsed gap, has exactly one critical point
-and one strict local extremum. [The Section 8 audit](coverage/SECTION_8.md)
-records the scope. Next is Lemma 8.6's squared-gap midpoint-offset estimate.
+Latest milestone: Lemma 8.6 now gives the locally uniform squared-gap
+midpoint-offset estimate at arbitrary complex sources, including collapsed
+gaps. Its actual ℓp coefficient and nonzero denominator are explicit.
+The printed proof's +4 factor is corrected to -4 with a formal counterexample.
+[The Section 8 audit](coverage/SECTION_8.md) records the scope.
+Next is Lemma 9.1's Dirichlet and Neumann characteristic functions.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

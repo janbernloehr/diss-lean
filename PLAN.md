@@ -1,6 +1,42 @@
 # Implementation plan
 
-## Current milestone: Lemma 8.5, the derivative product, and real extrema
+## Current milestone: Lemma 8.6 and the squared-gap midpoint offset
+
+`SourceLemma8_6.lean` proves the squared-gap midpoint-offset estimate
+in the original source space for every finite p>1. At each arbitrary
+complex source, one open convex neighborhood contains that source and
+zero, and one positive cutoff and one norm bound work throughout it.
+
+The coefficient is the actual deleted-product derivative divided by
+four times the offset coefficient on the tail, extended by zero at
+central indices. It belongs to ℓp and has a uniformly bounded full norm.
+The denominator has a uniform positive lower bound on that tail. The
+actual critical-point midpoint offset equals the squared gap times this
+coefficient. Complex collapsed gaps are included; the proof does not
+divide by a gap. A pointwise quadratic norm bound and the vanishing of
+the entire coefficient sequence at zero potential are also exposed.
+
+The literal deleted products converge locally uniformly on the whole
+spectral plane for each fixed source, including at removed and repeated
+roots. Their normalization forces the midpoint factorization's prefactor
+to be -4. A formal free-potential counterexample refutes the printed +4
+at λ=π/2. The correction affects the displayed proof identity, while
+Lemma 8.6's conclusion remains valid. See `SOURCE_ERRATA.md` and the
+precise quantifiers in `coverage/SECTION_8.md`.
+
+Public checks cover arbitrary complex bases at p=3/2, negative tail
+indices, complex collapsed gaps, an explicit quadratic bound, the free
+coefficient sequence, the zero-index product normalization, the value
+at removed free double roots, and the printed-sign counterexample.
+The new module and focused public probe compile warning-free.
+
+Next: Lemma 9.1, the Dirichlet and Neumann characteristic products,
+continuity at real type, and interlacing. The dissertation remains
+incomplete.
+
+Validation: `./scripts/check.sh` passed: 6836 build jobs, the combined public examples, and the axiom audit of 31195 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Lemma 8.5, the derivative product, and real extrema
 
 `SourceLemma8_5.lean` assembles the actual canonical critical-root
 sequence in the original source space for every finite p>1. It is

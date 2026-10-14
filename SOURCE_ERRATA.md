@@ -1,5 +1,33 @@
 # Source discrepancies
 
+## Lemma 8.6: sign of the midpoint factorization
+
+Source: [dissertation, printed pp. 51–52](https://janbernloehr.de/Download/fs16/diss.pdf#page=51),
+visually checked. The proof begins with
+
+```
+Δ(λ)^2 - 4 = +4 ((τ_n - λ)^2 - γ_n^2/4) Δ_n(λ),
+Δ_n(λ) = (1/π_n^2) ∏_{m≠n} ((λ_m^+ - λ)(λ_m^- - λ))/π_m^2.
+```
+
+With this literal deleted-product normalization, the prefactor must be
+**-4**, consistent with the full product in Lemma 8.1(iv).
+`sourceDeletedPeriodicProduct_formula` identifies the actual deleted
+product as the limit of these symmetric cutoffs on the entire spectral
+plane. `sourceDiscriminant_midpoint_factorization` proves the corrected
+identity for every original source, every index, and every spectral value.
+
+`sourceLemma8_6_printed_factorization_false` refutes the printed identity
+at zero potential, n=0, λ=π/2: the left side is -4 and the printed right
+side is +4. This is independent of the parity-product normalization
+issue in Lemma 8.1.
+
+The sign correction leaves the squared-gap conclusion of Lemma 8.6
+unchanged: after differentiation at a critical point the nonzero overall
+factor cancels. `sourceLemma8_6` proves that conclusion on a common
+original open convex neighborhood, with a uniformly bounded actual ℓp
+tail coefficient and a denominator bounded away from zero.
+
 ## Equation (2.4) and Lemma 8.1: incompatible parity-product prefactors
 
 Source: [dissertation, printed p. 48](https://janbernloehr.de/Download/fs16/diss.pdf#page=48),

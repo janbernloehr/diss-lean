@@ -88,8 +88,8 @@ simultaneous estimates, actual orders, cutoff normalization, and both
 printed counterexamples.
 
 Lemma 8.2 and its following real-gap characterization are audited below.
-Later Section 8 results and the remaining dissertation are not certified
-complete by this audit.
+Subsequent Section 8 results are audited below; the remaining dissertation
+is not certified complete by this audit.
 
 
 ## Lemma 8.2(i): continuity at real type under complex perturbations
@@ -330,5 +330,62 @@ at π/2 with limit -2, ℓp convergence under complex perturbations, uniform
 control of all indices, repeated complex-root multiplicities, exhaustion,
 and the collapsed free gap at index -1.
 
-Continue with Lemma 8.6: critical-point midpoint offsets equal the squared
-gap times a locally bounded ℓp tail, at arbitrary complex source points.
+## Lemma 8.6: the squared-gap midpoint-offset estimate
+
+The statement and proof are on printed pp. 51–52. `sourceLemma8_6`
+covers every finite 1<p<∞ and every complex original base potential φ.
+It constructs N>0, an original open convex neighborhood U containing
+both φ and zero, and K≥0. These choices precede ψ∈U and the signed index
+n with |n|>N; the same choices work for every such ψ and n.
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Actual ℓp coefficient | `sourceCriticalGapTailCoefficient` | Deleted-product derivative divided by 4 times the offset coefficient on the tail, with central coefficients set to zero. |
+| Exact coefficient formula | `sourceCriticalGapTailCoefficient_apply` | Exposes the quotient and cutoff at every signed index. |
+| Uniform full norm | `SourceLemma8_6Data.coefficient_norm` | The complete actual masked sequence has norm at most K for every ψ∈U. |
+| Uniform denominator bound | `.denominator_lower_bound`, `.denominator_ne_zero` | The offset coefficient has norm at least one, hence the full quotient denominator is nonzero on the common tail. |
+| Exact squared-gap identity | `.offset` | λ_n^•−τ_n=γ_n² a_n for the actual critical point, midpoint, gap, and masked coefficient. |
+| Complex collapsed gaps | `.collapsed_gap` | If γ_n=0 then λ_n^•=τ_n, without a real-type assumption. |
+| Quadratic norm bound | `.norm_offset_le` | The actual offset norm is at most K times the squared gap norm. |
+| Free coefficient | `sourceCriticalGapTailCoefficient_zero` | The entire actual sequence is zero at the free source for every cutoff. |
+
+The common neighborhood is the pullback, under `periodOnePotential`,
+of the intersection of the existing ambient neighborhoods for the
+squared-gap coefficient and its denominator lower bound. Increasing the
+cutoff and setting central terms to zero can only decrease the ℓp norm.
+There is no local boundedness assertion for the unmasked quotient at
+central indices, where its denominator may vanish. The tail identity
+uses no division by the gap and makes no simplicity assumption on a
+collapsed pair. It makes no assertion that all complex labels are
+continuous or analytic at arbitrary base points.
+
+The underlying estimate differentiates the deleted-pair factorization
+at the actual critical root. Local ℓp bounds on the deleted-product value
+and derivative, together with the critical displacement, force the
+offset coefficient to approach two and give its uniform lower bound.
+The coefficient then belongs to ℓp with a locally uniform norm bound.
+
+### Literal deleted product and corrected proof identity
+
+`sourceDeletedPeriodicProduct_formula` expands the product over
+[-M,M] with n removed and the outer factor 1/π_n², where π_0=1 and
+π_m=mπ otherwise. Its limit is the actual entire deleted product,
+locally uniformly on all of ℂ for each fixed source. This includes the
+removed roots and repeated roots; it is not merely a quotient formula
+away from those roots. No locally uniform source dependence of the
+ordered deleted products is asserted here.
+
+`sourceDiscriminant_midpoint_factorization` proves
+Δ²−4=−4((τ_n−λ)²−γ_n²/4)Δ_n(λ). The printed +4 is false already
+at zero potential, n=0, λ=π/2, as formally proved by
+`sourceLemma8_6_printed_factorization_false`. The common nonzero factor
+cancels from the differentiated critical-point identity, so the lemma's
+stated squared-gap estimate survives. See [the erratum](../SOURCE_ERRATA.md).
+
+Public checks cover p=3/2 and arbitrary complex bases, negative distant
+indices, complex collapsed gaps, an explicit bound K/100 when the gap
+norm is at most 1/10, the free coefficient sequence, zero-index product
+normalization, the value one at every removed free double root, and the
+printed-sign counterexample.
+
+Next: Lemma 9.1 and the Dirichlet and Neumann characteristic functions.

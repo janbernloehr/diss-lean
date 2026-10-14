@@ -46468,3 +46468,84 @@ example : ∃! x : ℝ,
 end
 end
 end SourceLemma85Checks
+
+
+namespace SourceLemma86Checks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+noncomputable section
+private abbrev p86 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource86ThreeHalf : Fact (1 ≤ p86) := ⟨by norm_num [p86,ENNReal.one_le_ofReal]⟩
+
+-- The neighborhood is centered at an arbitrary complex original potential below p = 2.
+example (φ : CoeffPair p86) :
+    ∃ N : ℕ, 0 < N ∧ ∃ U : Set (CoeffPair p86), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ K : ℝ, 0 ≤ K ∧ SourceLemma8_6Data (by simp [p86]) (by norm_num [p86,ENNReal.one_lt_ofReal]) U N K :=
+  sourceLemma8_6 _ _ φ
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+  {U : Set (CoeffPair p)} {N : ℕ} {K : ℝ} (D : SourceLemma8_6Data hp hp1 U N K)
+  (ψ : CoeffPair p) (hψ : ψ ∈ U)
+
+-- The negative tail uses a genuinely nonzero coefficient denominator.
+example :
+    4*canonicalCriticalOffsetCoefficient hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) (-(N+1 : ℕ)) ≠ 0 :=
+  D.denominator_ne_zero ψ hψ _ (by omega)
+
+-- Complex collapsed gaps are included, with no real-type assumption.
+example (n : ℤ) (hn : N < n.natAbs) (hgap : sourcePeriodicGapDisplacement hp hp1 ψ n = 0) :
+    canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n =
+      canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n :=
+  D.collapsed_gap ψ hψ n hn hgap
+
+-- A gap bound yields an explicit quadratic bound on the actual offset.
+example (n : ℤ) (hn : N < n.natAbs) (hgap : ‖sourcePeriodicGapDisplacement hp hp1 ψ n‖ ≤ 1/10)
+    (hK : 0 ≤ K) :
+    ‖canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+      canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n‖ ≤ K/100 := by
+  apply (D.norm_offset_le ψ hψ n hn).trans
+  have hs : ‖sourcePeriodicGapDisplacement hp hp1 ψ n‖^2 ≤ (1 : ℝ)/100 := by
+    nlinarith [norm_nonneg (sourcePeriodicGapDisplacement hp hp1 ψ n)]
+  nlinarith [mul_le_mul_of_nonneg_right hs hK]
+
+-- The actual masked quotient is exactly zero at the free source, at every cutoff.
+example (M : ℕ) : sourceCriticalGapTailCoefficient hp hp1 M (0 : CoeffPair p) = 0 := by simp
+
+-- The printed plus sign fails already for the zero potential and lambda = pi/2.
+example : ¬(canonicalDiscriminant hp (periodOnePotential (0 : CoeffPair p)) ((Real.pi : ℂ)/2))^2-4 =
+      4*((canonicalPeriodicMidpoint hp hp1 (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) 0-
+        (Real.pi : ℂ)/2)^2-(sourcePeriodicGapDisplacement hp hp1 (0 : CoeffPair p) 0)^2/4)*
+        canonicalDeletedPeriodicProduct hp hp1 (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) 0 ((Real.pi : ℂ)/2) :=
+  sourceLemma8_6_printed_factorization_false hp hp1
+
+end
+end
+end SourceLemma86Checks
+
+namespace SourceLemma86ProductChecks
+open NLS NLS.ZakharovShabat Set Filter
+open scoped ENNReal
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- Deleting the zero pair leaves outer denominator one, including at the removed roots.
+example (φ : CoeffPair p) :
+    TendstoLocallyUniformlyOn
+      (fun (M : ℕ) (z : ℂ) =>
+        ∏ m ∈ (Finset.Icc (-(M : ℤ)) M).erase 0,
+          (canonicalPeriodicLeft hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) m-z)*
+          (canonicalPeriodicRight hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) m-z)/
+          (if m = 0 then 1 else ((Real.pi : ℂ)*m)^2))
+      (canonicalDeletedPeriodicProduct hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) 0)
+      atTop univ := by
+  simpa only [ite_true,div_one] using sourceDeletedPeriodicProduct_formula hp hp1 φ 0
+
+-- The deleted product at a removed free double root is one, not zero or undefined.
+example (n : ℤ) :
+    canonicalDeletedPeriodicProduct hp hp1 (periodOnePotential (0 : CoeffPair p))
+      (periodOnePotential_mem 0) n ((Real.pi : ℂ)*n) = 1 := by
+  simp only [map_zero,canonicalDeletedPeriodicProduct_zero,freeSineQuotient_sq_center]
+
+end
+end SourceLemma86ProductChecks
