@@ -3,9 +3,10 @@
 This audit begins with printed p. 61 of the dissertation. The contour
 construction, equation (2.16), and independence of general admissible
 counterclockwise piecewise C¹ circuits are proved on the unchanged common
-source domain from Section 10. Each indexed action is analytic on W and
-has the stated real sign and zero-gap criterion. The gradient in equation
-(2.17) and the full Lemma 11.1 remain next.
+source domain from Section 10. The full Lemma 11.1 is now proved there:
+analyticity, the exact complex Fréchet gradient in equation (2.17), zero
+action at complex collapsed gaps, and real nonnegativity with the exact
+zero-gap criterion. The analytic zero sets Z_n and Theorem 11.2 are next.
 
 ## One neighborhood for all original contours
 
@@ -119,15 +120,83 @@ results. `sourceEquation2_16` provides the full public definition package
 for every finite p>1, with the literal weighted quotient circuit formula,
 analyticity, real agreement and complex germ agreement.
 
+## Lemma 11.1 and equation (2.17)
+
+`SourceEquation2_16Data.actionGradients` upgrades the existing package on
+the same W. `SourceLemma11_1Data.previous` retains the literal action
+formula, contour independence, analyticity and agreement with the existing
+actions. `sourceLemma11_1` constructs the full package for every finite
+p>1, on the unchanged open connected neighborhood of the real-type locus.
+
+For any original isolating family over an open source neighborhood V,
+any ψ∈V∩W, any signed n, any finite piecewise C¹ loop Γ inside D_n\G_n(ψ)
+with winding integral one about the actual midpoint, and any complex
+source direction v, `.gradient` proves the literal identity
+
+`(fderiv ℂ (sourceIndexedAction n) ψ) v = -(1/π) * Γ.integral (Δ_v/Q)`.
+
+Here Δ_v is the actual source Fréchet derivative of the discriminant
+applied to v, and Q is the actual canonical root. Both derivatives and
+integrals refer to the existing definitions. There is no reality,
+noncollapsed-gap, nesting, or supplied-homotopy hypothesis. The only local
+restriction is the original open isolating source neighborhood V; W is
+not replaced or shrunk.
+
+The proof uses the following common-domain results:
+
+| Step | Public API | Scope |
+| --- | --- | --- |
+| Differentiate Q²=Δ²−4 | `SourceEquation2_15Data.root_joint_fderiv` | Full joint Fréchet derivative at every point of the retained moving-gap complement. |
+| Source and spectral root derivatives | `.root_source_fderiv`, `.root_spectral_deriv` | Both restrictions of that same joint derivative, at complex sources. |
+| Interchange the relevant derivatives | `.criticalRatio_source_fderiv_eq_spectral` | ∂_v(Δ′/Q)=∂_z(Δ_v/Q) pointwise off all gaps. |
+| Differentiate the action circle | `.fderiv_actionCircle_eq_gradient_integral` | Every positive circle avoiding the gaps at a source in W. |
+| Identify the indexed derivative | `SourceEquation2_16Data.original_circle_gradient` | Local equality to the fixed original-circle action identifies the actual indexed derivative. |
+| Allow arbitrary circuits | `.circuit_gradient` | The variation quotient's outer-circle period computes every winding-one contour in the original cut disk. |
+| Complex collapsed gaps | `.indexedAction_zero_of_gap_zero` | Every collapsed canonical gap in W has zero indexed action. |
+
+The outer-circle comparison is
+`PiecewiseC1Loop.integral_eq_outerCircleIntegral_mul_winding_of_starConvex_cut`.
+It combines the previous cut-disk primitive argument with Cauchy-Goursat
+on the annulus between an enclosing inner circle and the original outer
+circle. This preserves the entire original disk in the general-circuit
+gradient proof.
+
+For a collapsed complex gap, the continued quotient from Lemma 10.11 is
+analytic throughout the selected original disk. A smaller filled circle
+lies strictly inside that disk; its weighted continued integrand has zero
+integral and agrees with the actual action integrand on the circle. This
+proves `.collapsed` without replacing the totalized quotient at its
+singular point or imposing source reality.
+
+`.real_properties` states real values, nonnegativity, and the equivalence
+between zero action and zero **canonical gap** on the whole real locus.
+`.action_pos_of_real_gap_ne_zero` gives strict positivity on every real
+open gap. These follow through the proved agreement with the existing
+real action and its real-gap integral results.
+
 ## Remaining source assertions
 
-The exact Fréchet gradient in equation (2.17) still needs to be established
-at all complex sources of W, as does the complex collapsed-gap zero
-consequence in the proof of Lemma 11.1. Theorem 11.2 and its permitted later
-shrink of W are separate. The full lemma and dissertation are not yet
-complete.
+Next are the analytic zero sets Z_n and Theorem 11.2's analytic normalized
+actions, positivity and asymptotic estimates. That theorem permits a later
+shrink of W; no such shrink was used in Lemma 11.1. The dissertation
+remains incomplete.
 
 ## Validation
+
+The full Lemma 11.1 step has eleven focused checks: unchanged W and
+equation (2.16), joint root and mixed derivatives at complex sources,
+the original central circle and general-circuit gradient formulas,
+complex collapsed central gaps, canonical-gap real properties and strict
+positivity, preservation of the older complex-action germs, the nonzero
+identity ∮z(1/z)′ dz=−2πi checking the integration-by-parts sign, and p=3/2.
+The full `./scripts/check.sh` gate passed: 6,942 build jobs, the complete
+public example suite, and the axiom audit of 32,375 NLS declarations.
+There are 21 existing build warnings; the six new modules and eleven
+focused checks are warning-free. No admitted proofs, additional axioms
+or heartbeat overrides were introduced. The 156-label source inventory
+and `git diff --check` also passed.
+
+The preceding equation (2.16) step:
 
 The equation (2.16) step has eleven focused public checks: unchanged W and
 Lemma 10.11, general winding at complex sources, different isolating
@@ -142,7 +211,6 @@ or heartbeat overrides were introduced. The 156-label source inventory
 and `git diff --check` also passed.
 
 The preceding contour-construction step:
-
 
 Nine public examples check the unchanged-domain upgrade, simultaneous
 quantifiers, all-gap avoidance, central winding, both signed tails, the

@@ -49012,3 +49012,116 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceEquation216Checks
+
+namespace SourceLemma111Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- The full lemma retains W and the complete contour-independent action package.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_16Data hp hp1 W) :
+    SourceLemma11_1Data hp hp1 W ∧ SourceEquation2_16Data hp hp1 W :=
+  ⟨H.actionGradients,H.actionGradients.previous⟩
+
+-- The root identity is differentiated in the full product space at complex sources.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_15Data hp hp1 W)
+    (t : ℂ × CoeffPair p) (ht : t ∈ sourceCanonicalRootJointDomain hp hp1 W)
+    (v : ℂ × CoeffPair p) :
+    (fderiv ℂ (sourceCanonicalRootJointProduct hp hp1) t) v =
+      canonicalDiscriminant hp (periodOnePotential t.2) t.1 / sourceCanonicalRoot hp hp1 t.2 t.1 *
+        (fderiv ℂ (fun q : ℂ × CoeffPair p =>
+          canonicalDiscriminant hp (periodOnePotential q.2) q.1) t) v :=
+  H.root_joint_fderiv t ht v
+
+-- Source differentiation of Δ'/Q equals spectral differentiation of Δ_v/Q, without a real base.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_15Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ)
+    (v : CoeffPair p) :
+    (fderiv ℂ (fun χ : CoeffPair p => sourceCriticalRootRatioJoint hp hp1 (z,χ)) ψ) v =
+      deriv (fun w : ℂ =>
+        (fderiv ℂ (fun χ : CoeffPair p => canonicalDiscriminant hp (periodOnePotential χ) w) ψ) v /
+          sourceCanonicalRoot hp hp1 ψ w) z :=
+  H.criticalRatio_source_fderiv_eq_spectral ψ hψ z hz v
+
+-- A fixed original central circle computes the actual indexed Fréchet derivative.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (H : SourceEquation2_16Data hp hp1 W) (hV : IsOpen V)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V)
+    (a R : ℝ) (hR : 0 < R) (he : D 0 = ball (a : ℂ) R) (v : CoeffPair p) :
+    (fderiv ℂ (sourceIndexedAction hp hp1 0) ψ) v = -(Real.pi : ℂ)⁻¹*
+      (∮ z in C((a : ℂ),R),
+        (fderiv ℂ (fun χ : CoeffPair p => canonicalDiscriminant hp (periodOnePotential χ) z) ψ) v /
+          sourceCanonicalRoot hp hp1 ψ z) :=
+  H.original_circle_gradient hV hD ψ hψW hψV 0 a R hR he v
+
+-- The complete gradient formula allows arbitrary corners and no supplied homotopy.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W) (hV : IsOpen V)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (n : ℤ) (Γ : PiecewiseC1Loop)
+    (hin : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n))
+    (hw : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = 1)
+    (v : CoeffPair p) :
+    (fderiv ℂ (sourceIndexedAction hp hp1 n) ψ) v = -(Real.pi : ℂ)⁻¹*Γ.integral (fun z =>
+      (fderiv ℂ (fun χ : CoeffPair p => canonicalDiscriminant hp (periodOnePotential χ) z) ψ) v /
+        sourceCanonicalRoot hp hp1 ψ z) :=
+  H.gradient hV hD ψ hψW hψV n Γ hin hw v
+
+-- The zero implication includes a complex collapsed central gap, with no reality assumption.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0 = 0) :
+    sourceIndexedAction hp hp1 0 ψ = 0 := H.collapsed ψ hψ 0 hg
+
+-- The real zero criterion is stated using the literal canonical gap, not an auxiliary coefficient.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (n : ℤ) :
+    0 ≤ (sourceIndexedAction hp hp1 n φ).re ∧ (sourceIndexedAction hp hp1 n φ).im = 0 ∧
+      (sourceIndexedAction hp hp1 n φ = 0 ↔
+        canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n = 0) :=
+  H.real_properties φ hφ n
+
+-- In particular the real action is strictly positive whenever the gap is open.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0) :
+    0 < (sourceIndexedAction hp hp1 n φ).re := H.action_pos_of_real_gap_ne_zero φ hφ n hg
+
+-- The preceding agreement with the older complex action is retained.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W) (n : ℤ)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (hφW : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∩ sourceComplexActionDomain hp hp1 n ∧
+      EqOn (sourceIndexedAction hp hp1 n) (sourceComplexAction hp hp1 n) U :=
+  H.previous.complex_germs n φ hφ hφW
+
+-- A nonzero pole integral checks the sign of the integration-by-parts step.
+example : (∮ z in C((0 : ℂ),1), z*deriv (fun w : ℂ => w⁻¹) z) = -(2*Real.pi*Complex.I) := by
+  have ha : AnalyticOnNhd ℂ (fun w : ℂ => w⁻¹) {w | w ≠ 0} :=
+    fun w hw => analyticAt_id.inv hw
+  have hs : sphere (0 : ℂ) 1 ⊆ {w : ℂ | w ≠ 0} := by
+    intro w hw he
+    subst w
+    simp at hw
+  rw [circleIntegral_mul_deriv_eq_neg_of_analyticOnNhd
+    (fun w : ℂ => w⁻¹) {w | w ≠ 0} ha (0 : ℂ) 1 (by norm_num) hs]
+  have hpole := circleIntegral.integral_sub_inv_of_mem_ball
+    (show (0 : ℂ) ∈ ball (0 : ℂ) 1 from mem_ball_self (by norm_num))
+  simpa only [sub_zero] using congrArg Neg.neg hpole
+
+local instance source111ThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceLemma11_1Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceLemma11_1 (by norm_num) (by norm_num)
+
+end
+end SourceLemma111Checks

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: equation (2.16) now defines one indexed action on the unchanged
-common source domain. Lean proves that every admissible counterclockwise
-piecewise C¹ circuit in any original isolating family gives the same literal
-integral. The action is analytic throughout W, agrees with the existing real
-action, and agrees with the earlier complex action near every real source.
-Next: the exact gradient formula (2.17) in Lemma 11.1.
+Latest step: Lean proves the full Lemma 11.1 on the unchanged common
+source domain. Every indexed action has the exact complex Fréchet gradient
+from equation (2.17), computed on arbitrary admissible piecewise C¹ circuits.
+Complex collapsed gaps have zero action. Real actions are nonnegative and
+vanish exactly at collapsed gaps, with strict positivity on open gaps.
+Next: the analytic zero sets Z_n and Theorem 11.2's normalized actions.
 [The Section 11 audit](coverage/SECTION_11.md) records the precise scope;
 [Section 10](coverage/SECTION_10.md) retains the preceding results.
 The dissertation remains incomplete.

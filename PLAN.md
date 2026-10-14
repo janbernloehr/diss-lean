@@ -1,6 +1,43 @@
 # Implementation plan
 
-## Current milestone: equation (2.16), contour-independent indexed actions
+## Current milestone: full Lemma 11.1 on the retained domain
+
+Six modules complete Lemma 11.1 for every finite p>1 on the unchanged
+common source domain W. The indexed actions retain equation (2.16) and
+analyticity on W. Their actual complex Fréchet derivatives equal the
+negative 1/π integral of the discriminant variation divided by the
+canonical root, on every admissible counterclockwise finite piecewise C¹
+circuit in every original open isolating neighborhood.
+
+The proof differentiates the canonical-root square identity on the
+retained joint domain, identifies the source derivative of Δ′/Q with the
+spectral derivative of Δ_v/Q, and differentiates under a fixed circle.
+Integration by parts gives the exact minus sign in equation (2.17).
+An outer-circle winding formula then transfers the result to arbitrary
+circuits with corners. No real-base restriction or supplied homotopy is
+needed for the gradient theorem.
+
+The same W also supports zero action at every collapsed complex gap,
+including the central gap: Lemma 10.11's continued quotient is analytic
+through the filled inner disk. On every real source, the actions are real
+and nonnegative, vanish exactly when the literal canonical gap vanishes,
+and are strictly positive when that gap is open.
+
+`SourceEquation2_16Data.actionGradients` preserves W and all preceding
+contour and action identifications. `sourceLemma11_1` supplies the complete
+public package. Eleven focused checks cover domain retention, the joint
+root derivative, the mixed derivative identity at complex sources, original
+central circles, general-circuit gradients, complex collapsed gaps, the
+real zero criterion and strict positivity, older-action agreement, a
+nonzero integration-by-parts sign check, and p=3/2.
+
+Next: the analytic zero sets Z_n and Theorem 11.2's normalized actions.
+The dissertation remains incomplete. See the updated
+[Section 11 audit](coverage/SECTION_11.md).
+
+Validation: `./scripts/check.sh` passed (6,942 build jobs, the complete public example suite, and the axiom audit of 32,375 NLS declarations). The build retains 21 existing warnings; the six new modules and eleven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: equation (2.16), contour-independent indexed actions
 
 Five modules define one indexed action on the unchanged common source
 domain for every finite p>1. Its value is the literal 1/π integral of

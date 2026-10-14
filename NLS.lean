@@ -3499,3 +3499,9 @@ import NLS.ZakharovShabat.SourceIndexedAction
 import NLS.ZakharovShabat.SourceActionPiecewiseContour
 import NLS.ZakharovShabat.SourceIndexedActionAnalytic
 import NLS.ZakharovShabat.SourceEquation2_16
+import NLS.ZakharovShabat.SourceCanonicalRootCommonFDeriv
+import NLS.ZakharovShabat.SourceCriticalRootRatioCommonFDeriv
+import NLS.ZakharovShabat.SourceActionCommonGradient
+import NLS.ComplexAnalysis.PiecewiseContourOuterPeriod
+import NLS.ZakharovShabat.SourceIndexedActionGradient
+import NLS.ZakharovShabat.SourceLemma11_1
