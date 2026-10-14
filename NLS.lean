@@ -3403,3 +3403,7 @@ import NLS.ZakharovShabat.SourceLemma9_1
 import NLS.ZakharovShabat.SourceLemma9_1Auxiliary
 import NLS.ZakharovShabat.SourceAuxiliaryCharacteristicNormalization
 import NLS.ZakharovShabat.SourceLemma9_2
+import NLS.ZakharovShabat.SpectralSetDistance
+import NLS.ZakharovShabat.SourceIsolatingDiscDistance
+import NLS.ZakharovShabat.SourceLemma10_1
+import NLS.ZakharovShabat.SourceIsolatingDomainCounterexample

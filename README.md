@@ -5,11 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 9.2 now gives the normalized analytic
-anti-discriminant, its identity at every Dirichlet zero, and locally uniform
-bounds on both complete sampled ℓp sequences. Central indices and multiple
-roots are included. [The Section 9 audit](coverage/SECTION_9.md) records
-the scope. Next is Lemma 10.1's common isolating neighborhoods.
+Latest milestone: the corrected Lemma 10.1 provides common isolating
+disks on an open connected neighborhood of all real-type sources, including
+the literal two-sided disk-distance bounds. The printed all-complex domain
+is formally refuted by the constant source (iπ,iπ), whose zero eigenvalue
+has algebraic multiplicity at least four. [The Section 10 audit](coverage/SECTION_10.md)
+records the theorem and correction. Next is Lemma 10.2's analytic symmetric
+spectral coordinates.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

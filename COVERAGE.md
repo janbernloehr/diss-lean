@@ -4413,3 +4413,49 @@ domain near real-type sources, including an audit of its printed domain.
 The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6840 build jobs, the combined public examples, and the axiom audit of 31294 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Lemma 10.1 milestone: quantitative isolation and the corrected real-type domain
+
+`SourceLemma10_1.lean` proves the common isolating-neighborhood theorem
+on an open connected neighborhood of the entire real-type locus, for
+every finite p>1 in the original source norm. Every point of that domain,
+including complex points, has one open connected neighborhood carrying
+one fixed family of positive-radius disks centered on the real line.
+The full straight periodic gap and all actual Dirichlet, Neumann, and
+critical coordinates lie in their assigned disk for every nearby source.
+The disks equal the free quarter-pi disks outside one finite block.
+
+The literal distance estimate (2.7) is included: one c≥1 bounds the
+infimum distance between any two distinct disks above and below by
+c and c⁻¹ times the absolute index difference. `SpectralSetDistance.lean`
+identifies that distance as the greatest lower bound of all point-pair
+distances. `SourceIsolatingDiscDistance.lean` proves the stronger pointwise
+bounds, including central and mixed pairs. Halving the central margins
+creates positive separation even if the original disjoint disks touch.
+A uniform lattice-offset bound converts this margin to index-scale bounds.
+
+The printed all-complex domain is false. In
+`SourceIsolatingDomainCounterexample.lean`, the smooth constant source
+(iπ,iπ) has four independent generalized eigenvectors at spectral value
+zero: both raw Fourier blocks at +1 and -1 are square-zero. Its actual
+algebraic multiplicity is therefore at least four. Any disjoint family
+containing every indexed periodic pair would force multiplicity at most
+two. Thus this source has no isolating family, even allowing arbitrary
+set shapes. `not_sourceLemma10_1_all_complex` formally refutes the printed
+domain at every finite p>1. Replacing FL_c^p by FL_r^p agrees with the
+preceding paragraph, proof, and union construction on printed p. 54.
+The correction and complete quantifiers are recorded in `SOURCE_ERRATA.md`
+and `coverage/SECTION_10.md`.
+
+Public checks cover p=3/2, the common global and local neighborhoods,
+zero potential and collapsed gaps, all actual cluster coordinates,
+central and negative-index set distances, real centers and the exact free
+tail, tangent-disk shrinking, the greatest-lower-bound characterization,
+and the four-dimensional obstruction to the printed domain. All four
+new modules and the focused public probe compile warning-free.
+
+Next: Lemma 10.2, analytic periodic power sums, midpoint and squared-gap
+coordinates, and their locally uniform original sequence bounds on a
+common almost-real domain. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6844 build jobs, the combined public examples, and the axiom audit of 31359 NLS declarations. The 21 existing warnings are unchanged; all four new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

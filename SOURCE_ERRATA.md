@@ -1,5 +1,44 @@
 # Source discrepancies
 
+## Lemma 10.1: the domain must be a neighborhood of real-type sources
+
+Source: [dissertation, printed p. 54](https://janbernloehr.de/Download/fs16/diss.pdf#page=54),
+visually checked. The statement prints an open connected neighborhood of
+FL_c^p. The preceding paragraph, the proof's base potentials, and its final
+union all use FL_r^p. The printed all-complex version is false.
+
+`sourceCollisionPotential` is the constant source (iπ,iπ), with just the
+zero Fourier coefficient in each component. Period doubling preserves it
+exactly. On raw frequency k, the actual coefficient operator has block
+
+```
+[ -π k   iπ ]
+[   iπ   π k ],
+```
+
+whose square vanishes when k=+1 or -1. All four component modes at those
+two frequencies belong to the second periodic root space and are linearly
+independent. `four_le_sourceCollisionMultiplicity` therefore gives actual
+algebraic multiplicity at least four at zero, for every finite exponent.
+This argument uses the operator and its domain, without a guessed
+constant-potential discriminant formula.
+
+`periodicMultiplicity_le_two_of_disjoint_clusters` shows that any disjoint
+sets containing all actual indexed periodic pairs force each spectral
+multiplicity to be at most two. Hence
+`sourceCollisionPotential_not_isolatable` rules out an isolating family
+for this source even if disk shape and real centering are dropped.
+`not_sourceLemma10_1_all_complex` formally refutes a neighborhood covering
+all complex sources at every finite p>1; openness and connectedness are
+not needed for the contradiction.
+
+The proved replacement is FL_r^p. `sourceLemma10_1` constructs an open
+connected complex neighborhood of that entire locus, with one common
+real-centered disk family on each local open connected neighborhood,
+including the infimum-distance comparison (2.7) and the exact free tail.
+This correction preserves complex perturbations throughout the resulting
+domain; it does not restrict all nearby potentials to be real.
+
 ## Following Lemma 9.1: exchanged auxiliary monodromy labels
 
 Source: [dissertation, printed p. 53](https://janbernloehr.de/Download/fs16/diss.pdf#page=53),

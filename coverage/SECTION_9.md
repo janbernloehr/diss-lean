@@ -204,6 +204,7 @@ samplers, nonreal boundary points at every signed index, exact physical
 off-diagonal normalization, both Hilbert inclusion directions, and joint
 continuous-extension uniqueness.
 
-Next: Lemma 10.1, common isolating neighborhoods and their global connected
-domain near real-type sources. The printed domain must also be audited.
-This document does not certify the remaining dissertation complete.
+Lemma 10.1 is now audited separately in [Section 10](SECTION_10.md),
+including its literal distance bounds and a counterexample to the printed
+all-complex domain. This document does not certify the remaining
+dissertation complete.

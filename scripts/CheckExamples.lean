@@ -46801,3 +46801,90 @@ example (F : ℂ × CoeffPair p → ℂ) (hF : Continuous F)
 
 end
 end SourceLemma92NormalizationChecks
+
+
+namespace SourceLemma101Checks
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+noncomputable section
+private abbrev p101 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource101ThreeHalf : Fact (1 ≤ p101) := ⟨by norm_num [p101,ENNReal.one_le_ofReal]⟩
+
+-- One connected original domain contains every real source below two, with a common local family.
+example : ∃ W : Set (CoeffPair p101), IsOpen W ∧ IsConnected W ∧ realTypeSourceLocus p101 ⊆ W ∧
+    ∀ ψ ∈ W, ∃ V : Set (CoeffPair p101), IsOpen V ∧ IsConnected V ∧ ψ ∈ V ∧ V ⊆ W ∧
+      ∃ D c, SourceIsolatingNeighborhoods (by simp [p101])
+        (by norm_num [p101,ENNReal.one_lt_ofReal]) V D c := by
+  obtain ⟨W,ho,hc,hR,h⟩ := sourceLemma10_1 (p := p101) (by simp [p101])
+    (by norm_num [p101,ENNReal.one_lt_ofReal])
+  refine ⟨W,ho,hc,hR,?_⟩
+  intro ψ hψ
+  obtain ⟨V,hvo,hvc,hψV,hVW,φ,_,N,ε,_,_,c,hD⟩ := h ψ hψ
+  exact ⟨V,hvo,hvc,hψV,hVW,_,c,hD⟩
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The free base and every collapsed gap are included in the local construction.
+example : ∃ N : ℕ, ∃ ε : ℝ, 0 < ε ∧ ε ≤ Real.pi/4 ∧
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ 0 ∈ V ∧ ∃ c : ℝ,
+      SourceIsolatingNeighborhoods hp hp1 V (sourceIsolatingDisc hp hp1 0 N ε) c :=
+  exists_local_source_quantitative_isolating_discs hp hp1 0 (by simp)
+
+variable {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+  (h : SourceIsolatingNeighborhoods hp hp1 V D c)
+
+-- Actual Dirichlet, Neumann, and critical coordinates share the full straight gap's disk.
+example (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) :
+    canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ n ∈ D n ∧
+    canonicalPeriodOneBoundaryRoots hp hp1 .neumann ψ n ∈ D n ∧
+    canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ∈ D n ∧
+    sourcePeriodicSegment hp hp1 ψ n ⊆ D n :=
+  ⟨h.cluster ψ hψ n (Or.inr (Or.inr (Or.inl rfl))),
+   h.cluster ψ hψ n (Or.inr (Or.inr (Or.inr (Or.inl rfl)))),
+   h.cluster ψ hψ n (Or.inr (Or.inr (Or.inr (Or.inr rfl)))),h.gap ψ hψ n⟩
+
+-- The literal infimum-distance estimate includes central and negative indices with one constant.
+example : c⁻¹ ≤ spectralSetDistance (D 0) (D (-1)) ∧ spectralSetDistance (D 0) (D (-1)) ≤ c := by
+  simpa using h.set_distance 0 (-1) (by norm_num)
+
+-- Real centers, positive radii, and exact tail disks are part of the same family.
+example : (∀ n, ∃ a r : ℝ, 0 < r ∧ D n = ball (a : ℂ) r) ∧
+    ∃ N : ℕ, ∀ n : ℤ, N < n.natAbs → D n = refinedResonantDisk n := ⟨h.discs,h.tail⟩
+
+example (i j : ℤ) (hij : i ≠ j) : Disjoint (D i) (D j) := h.disjoint i j hij
+
+-- At the constant complex source, even arbitrary shapes cannot isolate the periodic pairs.
+example : 4 ≤ periodicAlgebraicMultiplicity hp
+    (periodOnePotential (sourceCollisionPotential (p := p))) 0 := four_le_sourceCollisionMultiplicity hp
+example : ¬ ∃ D : ℤ → Set ℂ,
+    (∀ n, sourceSpectralCluster hp hp1 (sourceCollisionPotential (p := p)) n ⊆ D n) ∧
+    (∀ i j, i ≠ j → Disjoint (D i) (D j)) := sourceCollisionPotential_not_isolatable hp hp1
+
+-- The all-complex printed domain is formally impossible at every finite p>1.
+example : ¬ ∃ W : Set (CoeffPair p), Set.univ ⊆ W ∧
+    ∀ ψ ∈ W, ∃ V : Set (CoeffPair p), ψ ∈ V ∧
+      ∃ D c, SourceIsolatingNeighborhoods hp hp1 V D c := not_sourceLemma10_1_all_complex hp hp1
+end
+
+-- Set distance is the greatest lower bound of actual point-pair distances.
+example (s t : Set ℂ) (hs : s.Nonempty) (ht : t.Nonempty) :
+    IsGLB {r : ℝ | ∃ z ∈ s, ∃ w ∈ t, dist z w = r} (spectralSetDistance s t) :=
+  spectralSetDistance_isGLB hs ht
+
+-- Tangent full disks still give strictly separated smaller disks.
+example (z w : ℂ) (hz : z ∈ ball (0 : ℂ) (1/2)) (hw : w ∈ ball (2 : ℂ) (1/2)) :
+    1 ≤ dist z w := by
+  have hd : Disjoint (ball (0 : ℂ) 1) (ball (2 : ℂ) 1) :=
+    ball_disjoint_ball (by norm_num [dist_eq_norm])
+  have hs := shrunk_disjoint_balls_pointwise_separation 0 2 z w 1 1 (1/2) (1/2)
+    (by norm_num) (by norm_num) hd (by simpa only [show (1 : ℝ)-1/2=1/2 by norm_num] using hz)
+    (by simpa only [show (1 : ℝ)-1/2=1/2 by norm_num] using hw)
+  norm_num at hs
+  exact hs
+
+-- The counterexample's four Fourier coordinates are independent below two as well.
+example : Function.Injective (collisionFourModeEmbedding (p := p101)) := collisionFourModeEmbedding_injective
+
+end
+end SourceLemma101Checks
