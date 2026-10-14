@@ -49356,3 +49356,159 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceEquation218Checks
+
+namespace SourceEquation219Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology MeasureTheory
+open scoped ENNReal
+noncomputable section
+
+-- Every result is added to the existing original domain, without a smaller replacement.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W)
+    (ho : IsOpen W) (hc : IsConnected W) (hr : realTypeSourceLocus p ⊆ W) :
+    SourceEquation2_19Data hp hp1 W ∧ SourceLemma11_1Data hp hp1 W :=
+  ⟨H.gapFormulas ho hc.isPreconnected hr,H.previous⟩
+
+-- Endpoint singularities are integrable for the actual complex-gap integrand.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    IntervalIntegrable (fun t : ℝ =>
+      (canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+        sourceStandardRootMidpoint hp hp1 ψ n-sourceStandardRootHalfGap hp hp1 ψ n*(t:ℂ))^2 /
+        (Real.sqrt (1-t^2):ℂ)*sourceActionChi hp hp1 n ψ
+          (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(t:ℂ))) volume (-1) 1 :=
+  H.previous.chi_gap_weighted_integrable ψ hψ n _ _
+
+-- The unnormalized weighted action formula also includes collapsed complex gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourceIndexedAction hp hp1 n ψ = (2/(Real.pi:ℂ)) * ∫ t in (-1:ℝ)..1,
+      (canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n-
+        sourceStandardRootMidpoint hp hp1 ψ n-sourceStandardRootHalfGap hp hp1 ψ n*(t:ℂ))^2 /
+        (Real.sqrt (1-t^2):ℂ)*sourceActionChi hp hp1 n ψ
+          (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(t:ℂ)) :=
+  H.action_integral ψ hψ n
+
+-- Normalized endpoint integrability also holds without an open-gap assumption.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    IntervalIntegrable (fun t : ℝ =>
+      (sourceActionCriticalCoordinate hp hp1 n ψ-(t:ℂ))^2/(Real.sqrt (1-t^2):ℂ)*
+        sourceActionChi hp hp1 n ψ
+          (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(t:ℂ))) volume (-1) 1 := by
+  simpa only [one_mul] using H.previous.chi_gap_weighted_integrable ψ hψ n (sourceActionCriticalCoordinate hp hp1 n ψ) 1
+
+-- Equation (2.19) has precisely the actual canonical gap and factor four.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0) :
+    4*sourceIndexedAction hp hp1 n ψ /
+        (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2 =
+      (2/(Real.pi:ℂ)) * ∫ t in (-1:ℝ)..1,
+        (sourceActionCriticalCoordinate hp hp1 n ψ-(t:ℂ))^2/(Real.sqrt (1-t^2):ℂ)*
+          sourceActionChi hp hp1 n ψ
+            (sourceStandardRootMidpoint hp hp1 ψ n+sourceStandardRootHalfGap hp hp1 ψ n*(t:ℂ)) :=
+  H.normalized_integral ψ hψ n hg
+
+-- The critical-coordinate identity includes complex and collapsed gaps.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourceActionCriticalCoordinate hp hp1 n ψ =
+      2*canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n*
+        sourceCriticalGapQuotient hp hp1 ψ n := H.previous.actionCriticalCoordinate_eq_gap_mul ψ hψ n
+
+-- The filled factor is analytic on ALL of W, with no source-reality restriction.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W) (n : ℤ) :
+    AnalyticOnNhd ℂ (sourceNormalizedIndexedAction hp hp1 n) W ∧
+      AnalyticOnNhd ℝ (sourceNormalizedIndexedAction hp hp1 n) W :=
+  ⟨H.analytic n,(H.analytic n).restrictScalars⟩
+
+-- Exact action factorization holds even when the selected complex gap collapses.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourceIndexedAction hp hp1 n ψ =
+      (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n)^2*
+        sourceNormalizedIndexedAction hp hp1 n ψ := H.factorization ψ hψ n
+
+-- The collapsed limit allows every complex approach in the original W minus Z_n.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W)
+    (φ : CoeffPair p) (hφ : φ ∈ W)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) 0 = 0) :
+    Tendsto (fun ψ : CoeffPair p => 4*sourceIndexedAction hp hp1 0 ψ /
+      (canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0)^2)
+      (𝓝[W \ {ψ | canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0 = 0}] φ)
+      (𝓝 (sourceActionChi hp hp1 0 φ (sourceStandardRootMidpoint hp hp1 φ 0))) :=
+  H.collapsed_limit φ hφ 0 hg
+
+-- Arbitrary original local circles compute the same filled normalized function.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W) (hVW : V ⊆ W)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (C : SourceActionContourFamily hp hp1 V D) (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) :
+    sourceNormalizedIndexedAction hp hp1 n ψ =
+      sourceNormalizedActionCircleCandidate hp hp1 n (C.center n : ℂ) (C.radius n) ψ :=
+  C.normalizedIndexedAction_eq_circleCandidate H.previous hVW hD ψ hψ n
+
+-- On the smaller positivity domain this is the existing Theorem 11.2 function.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W₀)
+    (Hn : SourceTheorem11_2Data hp hp1 W₀ W) (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) :
+    sourceNormalizedIndexedAction hp hp1 n ψ = sourceNormalizedActionComplexExtension hp hp1 n ψ :=
+  H.normalized_eq_theorem11_2 Hn ψ hψ n
+
+-- The midpoint value is itself analytic on the original domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun ψ => sourceActionChi hp hp1 n ψ (sourceStandardRootMidpoint hp hp1 ψ n)) W :=
+  H.midpointChi_analytic n
+
+-- The principal root's collapsed square is exactly the source's midpoint value.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W₀ W : Set (CoeffPair p)} (H : SourceEquation2_19Data hp hp1 W₀)
+    (Hn : SourceTheorem11_2Data hp hp1 W₀ W) (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = 0) :
+    (sourceNormalizedActionRoot hp hp1 n ψ)^2 =
+      sourceActionChi hp hp1 n ψ (sourceStandardRootMidpoint hp hp1 ψ n) :=
+  H.normalizedRoot_sq_eq_chi_of_gap_zero Hn ψ hψ n hg
+
+-- Nonzero free normalization, despite every free gap and action being zero.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) (n : ℤ) :
+    sourceNormalizedIndexedAction hp hp1 n (0 : CoeffPair p) = 1/4 :=
+  sourceNormalizedIndexedAction_zero_source hp hp1 n
+
+-- A genuinely complex integrand checks the phase in the change of variables.
+example : (∫ t in (-1:ℝ)..1, Complex.I/(Real.sqrt (1-t^2):ℂ)) = (Real.pi:ℂ)*Complex.I := by
+  rw [integral_div_sqrt_one_sub_sq_eq_cosine (fun _ => Complex.I)]
+  simp
+
+-- The weighted second moment gives the exact leading normalized value, for every complex shift.
+example (u : ℂ) : (2/(Real.pi:ℂ))*(∫ t in (-1:ℝ)..1,
+    (u-(t:ℂ))^2/(Real.sqrt (1-t^2):ℂ)) = 1+2*u^2 := by
+  rw [integral_div_sqrt_one_sub_sq_eq_cosine (fun t : ℝ => (u-(t:ℂ))^2),
+    integral_shifted_cos_sq_complex]
+  have hp : (Real.pi:ℂ) ≠ 0 := Complex.ofReal_ne_zero.mpr Real.pi_ne_zero
+  field_simp
+  ring
+
+local instance source219ThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceEquation2_19Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceEquation2_19 (by norm_num) (by norm_num)
+
+local instance source219Four : Fact (1 ≤ (4 : ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (4 : ℝ≥0∞) ⊆ W ∧
+      SourceEquation2_19Data (p := (4 : ℝ≥0∞)) (by norm_num) (by norm_num) W :=
+  sourceEquation2_19 (by norm_num) (by norm_num)
+
+end
+end SourceEquation219Checks

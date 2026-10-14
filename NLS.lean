@@ -3514,3 +3514,9 @@ import NLS.ZakharovShabat.SourceActionChi
 import NLS.ComplexAnalysis.PiecewiseContourCongruence
 import NLS.ZakharovShabat.SourceActionChiContour
 import NLS.ZakharovShabat.SourceEquation2_18
+import NLS.ComplexAnalysis.ComplexArcsineIntegral
+import NLS.ZakharovShabat.SourceActionChiCosine
+import NLS.ZakharovShabat.SourceActionChiGapIntegral
+import NLS.ZakharovShabat.SourceNormalizedActionCommonKernel
+import NLS.ZakharovShabat.SourceNormalizedIndexedActionCommon
+import NLS.ZakharovShabat.SourceEquation2_19

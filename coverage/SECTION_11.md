@@ -10,8 +10,10 @@ zero-gap criterion. The analytic zero sets Z_n and the full statement of
 Theorem 11.2 are also proved. Equation (2.18), the literal deleted product
 and its recentered action formula are now proved on the original domain.
 The fixed-domain disk index is corrected as documented in
-[`SOURCE_ERRATA.md`](../SOURCE_ERRATA.md). Equation (2.19) and the ensuing
-original-domain extension claims remain before Section 12.
+[`SOURCE_ERRATA.md`](../SOURCE_ERRATA.md). Equation (2.19), the complex
+weighted gap integral, the collapsed limit and analytic extension are
+also proved on the original domain. The remaining p. 62 estimates still
+need comparison on that full domain before Section 12.
 
 ## One neighborhood for all original contours
 
@@ -283,19 +285,81 @@ The printed fixed domain has U_n under a union over m≠n. The formal
 fixed-domain statement uses U_m, agreeing with Corollary 10.6 and the
 deleted product. It does not claim the incorrect printed domain.
 
+## Equation (2.19) and extension on the original domain
+
+`SourceEquation2_18Data.gapFormulas` upgrades the existing open connected
+W containing the entire real-type source locus. It keeps that W and its
+full preceding package. `sourceEquation2_19` is the public existence
+theorem for every finite p>1.
+
+Write τ_n for the canonical midpoint, δ_n=γ_n/2 for the half-gap,
+λ_t=τ_n+δ_n t, and t_n=(critical_n−τ_n)/δ_n. All quantities use their
+actual existing definitions, with `sourceActionCriticalCoordinate` for
+t_n and the literal `sourceActionChi` for χ_n.
+
+| Assertion | Public API | Exact scope |
+| --- | --- | --- |
+| Weighted gap integral | `.action_integral` | I_n=(2/π)∫[-1,1](critical_n−τ_n−δ_n t)²χ_n(λ_t)/sqrt(1−t²) dt for every complex ψ∈W, including zero gaps. |
+| Equation (2.19) | `.normalized_integral` | 4I_n/γ_n²=(2/π)∫[-1,1](t_n−t)²χ_n(λ_t)/sqrt(1−t²) dt whenever the actual canonical gap is nonzero. |
+| Endpoint integrability | `SourceEquation2_18Data.chi_gap_weighted_integrable` | Both complex weighted integrands are interval integrable, not just assigned a totalized integral. |
+| Critical coordinate | `.previous.actionCriticalCoordinate_eq_gap_mul` | t_n=2γ_n B_n with the actual ℓᵖ coefficient from Lemma 10.10, also at collapse. |
+| Filled normalized action | `sourceNormalizedIndexedAction`, `.analytic` | The literal indexed quotient off zero gaps, χ_n(τ_n)/4 at zero gaps, analytic on all of the original W. |
+| Factorization through collapse | `.factorization` | I_n=γ_n² F_n at every complex point of the original W. |
+| Collapsed limit | `.collapsed_limit` | 4I_n/γ_n² tends to χ_n(τ_n) along arbitrary complex approaches within W outside the selected zero-gap set. |
+| Midpoint regularity | `.midpointChi_analytic` | χ_n(τ_n) is analytic on the same original W. |
+| Compatibility with Theorem 11.2 | `.normalized_eq_theorem11_2` | F_n equals the previously established normalized extension on that theorem's smaller domain. |
+| Collapsed principal root | `.normalizedRoot_sq_eq_chi_of_gap_zero` | On the smaller domain, ξ_n²=χ_n(τ_n) at zero gaps. |
+| Free normalization | `sourceNormalizedIndexedAction_zero_source` | F_n(0)=1/4 for every signed index. |
+
+The regular numerator `(critical_n−z)²χ_n(z)` is jointly analytic through
+the selected gap. Its cosine mean is analytic using only the midpoint
+and squared gap. Equality to the action holds on real sources, with a
+separate collapsed-gap argument, and propagates across the entire
+original connected W by real-form uniqueness and the analytic identity
+theorem. No analytic labeling of individual endpoints is assumed.
+
+`integral_div_sqrt_one_sub_sq_eq_cosine` proves the complex-valued
+arccos substitution directly. `intervalIntegrable_div_sqrt_one_sub_sq`
+uses the integrable inverse-square-root weight and a continuous complex
+numerator; the values assigned at the two singular endpoints do not
+affect the integral. This proves the source's literal weighted formulas.
+
+For extension, `SourceEquation2_18Data.normalizedKernel_joint` establishes
+joint analyticity of the existing rationalized kernel at all complex
+sources in W. Its denominators remain nonzero on the original local
+circles. The resulting candidates equal the actual indexed quotient at
+nonzero gaps and the Cauchy midpoint value at zero gaps. Thus the explicit
+filled function agrees locally with an analytic circle integral and is
+analytic on all W. This proves the extension assertion on every original
+V_φ⊆W; it is independent of the old complex-action chart domain.
+
 ## Remaining source assertions
 
-The theorem uses the established rationalized circle construction for
-analytic extension through collapsed gaps. It does not require the source's
-particular removability proof. Equation (2.19), the preceding weighted
-gap-integral formula for complex sources, their original-domain
-quantifiers and the stated collapsed limit still need a separate
-comparison. In particular, the established smaller-domain Theorem 11.2
-does not by itself prove the proof's extension claim on every original
-V_φ. Section 12 follows that audit.
+The original-domain integral and extension assertions after (2.18)–(2.19)
+are now proved. The following p. 62 claims still need a separate audit:
+the locally uniform literal supremum of |χ_n−1| over G_n in
+ℓ^(p/2)+ℓ^(1+), and the ensuing normalized-action estimate on the full
+original domain. Theorem 11.2's estimates on its common smaller domain
+remain established. They are not substituted for these stronger-domain
+intermediate assertions. Section 12 follows this comparison.
 The dissertation remains incomplete.
 
 ## Validation
+
+The equation (2.19) step has eighteen focused checks covering the original
+domain, both weighted identities and endpoint integrability, the exact
+critical coordinate, analytic extension, factorization and collapsed
+limits, original circles, compatibility with Theorem 11.2, midpoint
+analyticity, the collapsed root square, free normalization, complex
+integral constants, and p=3/2 and p=4. All pass without warnings.
+The full `./scripts/check.sh` gate passed: 6,957 build jobs, the complete
+public example suite, and the axiom audit of 32,536 NLS declarations.
+There are 21 existing build warnings; the six new modules and eighteen
+focused checks are warning-free. No admitted proofs, additional axioms
+or heartbeat overrides were introduced. The 156-label source inventory
+and `git diff --check` also passed.
+
+The preceding equation (2.18) step:
 
 The equation (2.18) step has ten focused checks: unchanged-domain
 retention, the full critical displacement's analyticity, the moving and

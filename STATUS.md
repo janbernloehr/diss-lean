@@ -1,6 +1,50 @@
 # Implementation status
 
-## Current milestone: equation (2.18), deleted product and recentered actions
+## Current milestone: equation (2.19) and the original-domain extension
+
+Six modules prove equation (2.19), its preceding weighted gap-integral
+formula and the analytic collapsed-gap extension for every finite p>1.
+`SourceEquation2_18Data.gapFormulas` retains the original open connected
+source domain W and its entire preceding action package.
+
+The actual indexed action equals the complex gap integral with the
+literal inverse-square-root weight and factor 2/π. Away from zero gaps,
+4I_n/γ_n² equals the stated integral with t_n=(critical_n−τ_n)/(γ_n/2).
+Both weighted integrands are genuinely integrable at their endpoints.
+The exact identity t_n=2γ_n B_n retains Lemma 10.10's actual ℓᵖ coefficient.
+
+The proof establishes the regular cosine mean at real sources, including
+collapsed gaps, and continues the identity throughout the original
+connected complex domain. Analyticity of the midpoint and squared gap
+suffices; no analytic choice of endpoint labels is assumed. A complex
+change-of-variables theorem then yields the literal weighted formula.
+
+`sourceNormalizedIndexedAction` equals the actual indexed quotient off
+zero gaps and χ_n(τ_n)/4 at zero gaps. Local agreement with the existing
+rationalized circle candidate proves analyticity on all of W. Thus
+4I_n/γ_n² tends to χ_n(τ_n) along arbitrary complex approaches within W
+with nonzero selected gap. The midpoint value is itself analytic on W.
+The function agrees with the extension in Theorem 11.2 on that theorem's
+smaller domain; at a collapsed gap its principal root squares to χ_n(τ_n).
+At zero potential the filled normalized action is exactly 1/4 for all n.
+
+`sourceEquation2_19` supplies the complete package. Eighteen focused
+checks cover the unchanged domain, both integral identities and their
+integrability, the critical coordinate, analytic extension and exact
+factorization, complex collapsed limits, original circles, compatibility
+with Theorem 11.2, midpoint analyticity, the collapsed root square, free
+normalization, nonzero complex integral and shifted-moment constants,
+and p=3/2 and p=4.
+
+Next: audit the remaining p. 62 locally uniform χ_n and normalized-action
+estimates on the full original domain, then Section 12. The smaller-domain
+Theorem 11.2 estimates remain proved; they do not by themselves settle
+those original-domain proof assertions. The dissertation remains
+incomplete. See the [Section 11 audit](coverage/SECTION_11.md).
+
+Validation: `./scripts/check.sh` passed (6,957 build jobs, the complete public example suite, and the axiom audit of 32,536 NLS declarations). The build retains 21 existing warnings; the six new modules and eighteen focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: equation (2.18), deleted product and recentered actions
 
 Five modules prove equation (2.18), its literal deleted product χ_n,
 and the following recentered action formula for every finite p>1.
