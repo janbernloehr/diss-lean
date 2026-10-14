@@ -1,6 +1,47 @@
 # Implementation status
 
-## Current milestone: Lemma 9.1 and ordinary and auxiliary characteristics
+## Current milestone: Lemma 9.2 and the full anti-discriminant sample bounds
+
+`SourceLemma9_2.lean` proves the anti-discriminant assertions for every
+finite p>1 in the original source space. The anti-discriminant is jointly
+analytic in the spectral parameter and source; it agrees exactly with
+the physical Hilbert monodromy off-diagonal sum in both exponent-inclusion
+directions. Finite Fourier agreement determines the jointly continuous
+extension uniquely.
+
+The shifted-discriminant-square identity holds at every actual Dirichlet
+zero, including multiple zeros. This strengthens the printed simple-root
+statement: the global characteristic identity passes to all sources by
+density before any root is selected.
+
+Both actual Dirichlet sample sequences—the anti-discriminant values and
+the spectral-derivative values—are constructed as elements of ℓp. One
+original open neighborhood of each arbitrary complex base and one K≥0
+bound both complete sequence norms. Central indices are included by a
+uniform compact spectral-ball estimate; the assertion is not only a
+distant-tail estimate. Both sequences vanish identically at zero potential.
+
+On that same neighborhood, one ℓp majorant per source, chosen before any
+spectral samples, bounds the value throughout every closed half-pi disk
+and the derivative throughout every closed quarter-pi disk, with factor
+4/π for the derivative. The exact quantifiers and the central-index
+argument are recorded in `coverage/SECTION_9.md`.
+
+Public checks cover arbitrary complex bases at p=3/2, arbitrary Dirichlet
+zeros without simplicity, central and negative sample indices, both free
+sequences, potential-dependent disk samplers, nonreal boundary samples,
+physical normalization, both Hilbert inclusion directions, and extension
+uniqueness. The new module and focused public probe compile warning-free.
+The auxiliary label correction from Lemma 9.1 is retained; no additional
+correction to Lemma 9.2 is needed.
+
+Next: Lemma 10.1, common isolating neighborhoods and their global connected
+domain near real-type sources, including an audit of its printed domain.
+The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6840 build jobs, the combined public examples, and the axiom audit of 31294 NLS declarations. The 21 existing warnings are unchanged; the new module and focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Lemma 9.1 and ordinary and auxiliary characteristics
 
 `SourceLemma9_1.lean` proves all three ordinary assertions for every
 finite p>1. Both characteristics are jointly analytic in the spectral

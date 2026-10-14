@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 9.1 now packages the ordinary and auxiliary
-characteristic products, exact spectral multiplicities, real-type continuity,
-and interlacing. One neighborhood controls all four root sequences.
-The auxiliary monodromy formulas' exchanged D*/N* labels are documented
-with an explicit counterexample. [The Section 9 audit](coverage/SECTION_9.md)
-records the scope. Next is Lemma 9.2's anti-discriminant estimates.
+Latest milestone: Lemma 9.2 now gives the normalized analytic
+anti-discriminant, its identity at every Dirichlet zero, and locally uniform
+bounds on both complete sampled ℓp sequences. Central indices and multiple
+roots are included. [The Section 9 audit](coverage/SECTION_9.md) records
+the scope. Next is Lemma 10.1's common isolating neighborhoods.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

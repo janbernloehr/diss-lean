@@ -46703,3 +46703,101 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
 
 end
 end SourceLemma91NormalizationChecks
+
+
+namespace SourceLemma92Checks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+noncomputable section
+private abbrev p92 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource92ThreeHalf : Fact (1 ≤ p92) := ⟨by norm_num [p92,ENNReal.one_le_ofReal]⟩
+
+-- The entire sampled sequences are bounded locally near arbitrary complex original sources below two.
+example (φ : CoeffPair p92) :
+    ∃ U : Set (CoeffPair p92), IsOpen U ∧ φ ∈ U ∧ ∃ K : ℝ, 0 ≤ K ∧
+      SourceLemma9_2Data (by simp [p92]) (by norm_num [p92,ENNReal.one_lt_ofReal]) U K :=
+  sourceLemma9_2 _ _ φ
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The identity holds at any Dirichlet zero, without simplicity or an analytic root branch.
+example (φ : CoeffPair p) (z : ℂ) (hz : periodOneBoundaryCharacteristic hp hp1 .dirichlet φ z = 0) :
+    (canonicalDiscriminant hp (periodOnePotential φ) z)^2-4 =
+      (sourceAntiDiscriminantCandidate hp hp1 φ z)^2 :=
+  sourceLemma9_2_identity hp hp1 φ z hz
+
+-- A common bound controls both complete actual sampled sequences, including central index zero.
+example {U : Set (CoeffPair p)} {K : ℝ} (D : SourceLemma9_2Data hp hp1 U K)
+    (ψ : CoeffPair p) (hψ : ψ ∈ U) :
+    ‖sourceAntiDiscriminantCandidate hp hp1 ψ (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ 0)‖ ≤ K ∧
+      ‖deriv (sourceAntiDiscriminantCandidate hp hp1 ψ) (canonicalPeriodOneBoundaryRoots hp hp1 .dirichlet ψ (-1))‖ ≤ K := by
+  constructor
+  · exact (lp.norm_apply_le_norm ((zero_lt_one.trans hp1).ne')
+      (sourceDirichletAntiDiscriminantSamples hp hp1 ψ) 0).trans (D.value_norm ψ hψ)
+  · exact (lp.norm_apply_le_norm ((zero_lt_one.trans hp1).ne')
+      (sourceDirichletAntiDiscriminantDerivativeSamples hp hp1 ψ) (-1)).trans (D.derivative_norm ψ hψ)
+
+-- At the free potential both actual sequences vanish, not only their distant tails.
+example : sourceDirichletAntiDiscriminantSamples hp hp1 (0 : CoeffPair p) = 0 ∧
+    sourceDirichletAntiDiscriminantDerivativeSamples hp hp1 (0 : CoeffPair p) = 0 := by simp
+
+-- Potential-dependent samples are allowed anywhere in the closed quarter-pi disks.
+example (φ : CoeffPair p) (z : CoeffPair p → ℤ → ℂ)
+    (hz : ∀ ψ n, ‖z ψ n-(Real.pi : ℂ)*n‖ ≤ Real.pi/4) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ Convex ℝ U ∧ φ ∈ U ∧ 0 ∈ U ∧
+      ∃ K : ℝ, 0 ≤ K ∧ ∀ ψ ∈ U, ∃ a b : Coeff p,
+        ‖a‖ ≤ K ∧ ‖b‖ ≤ (4/Real.pi)*K ∧
+        (∀ n, a n = sourceAntiDiscriminantCandidate hp hp1 ψ (z ψ n)) ∧
+        (∀ n, b n = deriv (sourceAntiDiscriminantCandidate hp hp1 ψ) (z ψ n)) := by
+  obtain ⟨U,ho,hc,hφ,h0,K,hK,h⟩ := exists_uniform_sampled_sourceAntiDiscriminant hp hp1 φ
+  exact ⟨U,ho,hc,hφ,h0,K,hK,fun ψ hψ => h ψ hψ (z ψ) (hz ψ)⟩
+
+end
+end
+end SourceLemma92Checks
+
+namespace SourceLemma92NormalizationChecks
+open NLS NLS.ZakharovShabat Set
+open scoped ENNReal
+noncomputable section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+-- The same majorant works on nonreal boundary points in every signed disk.
+example {U : Set (CoeffPair p)} {K : ℝ} (D : SourceLemma9_2Data hp hp1 U K)
+    (ψ : CoeffPair p) (hψ : ψ ∈ U) :
+    ∃ A : Coeff p, ‖A‖ ≤ K ∧ ∀ n : ℤ,
+      ‖sourceAntiDiscriminantCandidate hp hp1 ψ ((Real.pi : ℂ)*n+Complex.I*(Real.pi/2 : ℝ))‖ ≤ ‖A n‖ ∧
+      ‖deriv (sourceAntiDiscriminantCandidate hp hp1 ψ) ((Real.pi : ℂ)*n+Complex.I*(Real.pi/4 : ℝ))‖ ≤
+        (4/Real.pi)*‖A n‖ := by
+  obtain ⟨A,hA,hv,hd⟩ := D.disc_majorant ψ hψ
+  refine ⟨A,hA,fun n => ⟨hv n _ ?_,hd n _ ?_⟩⟩ <;>
+    simp only [add_sub_cancel_left,norm_mul,Complex.norm_I,one_mul,Complex.norm_real,
+      Real.norm_of_nonneg (by positivity : (0 : ℝ) ≤ Real.pi/2),
+      Real.norm_of_nonneg (by positivity : (0 : ℝ) ≤ Real.pi/4),le_refl]
+
+-- Physical normalization is the off-diagonal sum, not its negative or a scalar multiple.
+example (φ : CoeffPair 2) (z : ℂ) :
+    sourceAntiDiscriminantCandidate (by simp) (by norm_num) φ z =
+      (l2Monodromy (sourcePhysicalL2 φ) z) 0 1+(l2Monodromy (sourcePhysicalL2 φ) z) 1 0 :=
+  sourceAntiDiscriminantCandidate_eq_l2 φ z
+
+-- Both directions of the exponent inclusion retain exactly that physical normalization.
+example (hp2 : p ≤ 2) (φ : CoeffPair p) (z : ℂ) :
+    sourceAntiDiscriminantCandidate hp hp1 φ z =
+      l2AntiDiscriminant (sourcePhysicalL2 (CoeffPair.exponentInclusion hp2 φ)) z :=
+  sourceAntiDiscriminant_eq_l2_of_le_two hp hp1 hp2 φ z
+example (h2p : 2 ≤ p) (φ : CoeffPair 2) (z : ℂ) :
+    sourceAntiDiscriminantCandidate hp hp1 (CoeffPair.exponentInclusion h2p φ) z =
+      l2AntiDiscriminant (sourcePhysicalL2 φ) z :=
+  sourceAntiDiscriminant_eq_l2_of_two_le hp hp1 h2p φ z
+
+-- Jointly continuous alternatives agreeing on finite Fourier inputs coincide everywhere.
+example (F : ℂ × CoeffPair p → ℂ) (hF : Continuous F)
+    (hfinite : ∀ z : ℂ, ∀ a : (ℤ →₀ ℂ) × (ℤ →₀ ℂ),
+      F (z,CoeffPair.ofFinsupp (p := p) a) = classicalAntiDiscriminant (finiteSourceCurve a) z)
+    (φ : CoeffPair p) (z : ℂ) : F (z,φ) = sourceAntiDiscriminantCandidate hp hp1 φ z :=
+  congrFun (sourceAntiDiscriminant_unique_joint_continuous hp hp1 F hF hfinite) (z,φ)
+
+end
+end SourceLemma92NormalizationChecks
