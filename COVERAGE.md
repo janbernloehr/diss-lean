@@ -5422,3 +5422,38 @@ The dissertation remains incomplete. See the
 [Section 11 audit](coverage/SECTION_11.md).
 
 Validation: `./scripts/check.sh` passed (6,946 build jobs, the complete public example suite, and the axiom audit of 32,429 NLS declarations). The build retains 21 existing warnings; the four new modules and fifteen focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Section 11: equation (2.18), deleted product and recentered actions
+
+Five modules prove equation (2.18), its literal deleted product χ_n,
+and the following recentered action formula for every finite p>1.
+`SourceLemma11_1Data.actionChi` retains the existing open source domain W
+and the full preceding action theorem. `sourceEquation2_18` supplies the
+open connected domain containing the entire real-type source locus.
+
+The actual ℓᵖ critical displacement is analytic on W, allowing its
+substitution into Corollary 10.6. Thus χ_n is jointly analytic on the
+full moving complement of the other gaps, throughout every original
+selected disk, and on the fixed complement of the other closed disks.
+The latter uses U_m under the union over m≠n; the printed U_n is an index
+typo, visually checked and recorded in `SOURCE_ERRATA.md`.
+
+The literal quotient factorization has exactly the factor −i. Subtracting
+the vanishing unweighted period gives the actual indexed action as
+(i/π) times the integral of (critical_n−z)²χ_n/w_n on every admissible
+finite piecewise C¹ winding-one circuit in the original cut disk.
+Complex sources, central indices and collapsed gaps are included.
+No original disk or source neighborhood is replaced.
+
+Ten focused checks cover domain retention, sequence-valued analyticity,
+both joint and original fixed domains, the selected disk, exact quotient
+normalization, arbitrary central circuits, χ_0(0)=1 at the free collapsed
+gap, the nonzero free quotient −i at z=i, and p=3/2.
+
+Next: equation (2.19), its preceding weighted gap-integral formula for
+complex sources, the collapsed limit and extension claims on every
+original V_φ. These are not inferred from the smaller-domain Theorem 11.2.
+Section 12 follows that audit. The dissertation remains incomplete.
+See the [Section 11 audit](coverage/SECTION_11.md).
+
+Validation: `./scripts/check.sh` passed (6,951 build jobs, the complete public example suite, and the axiom audit of 32,456 NLS declarations). The build retains 21 existing warnings; the five new modules and ten focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.

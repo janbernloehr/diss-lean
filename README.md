@@ -5,12 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves Theorem 11.2 on one complex neighborhood for all
-indices. The actual indexed actions admit analytic squared-gap factors
-and nonvanishing principal roots, with positive uniform lower bounds and
-locally uniform ℓ^(p/2)+ℓ^(1+) asymptotics. The original Lemma 11.1 domain
-and its analytic collapsed-gap zero sets are retained.
-Next: audit formulas (2.18)–(2.19), then Section 12.
+Latest step: Lean proves equation (2.18) with the literal deleted product
+χ_n, its joint analyticity on the unchanged complex source domain, and
+the recentered action formula on every admissible original circuit.
+The fixed-domain statement corrects the source's U_n/U_m index typo,
+recorded in `SOURCE_ERRATA.md`. Theorem 11.2 remains proved on one common
+neighborhood for all indices.
+Next: equation (2.19), its collapsed-gap limit and original-domain
+extension claims, then Section 12.
 [The Section 11 audit](coverage/SECTION_11.md) records the precise scope;
 [Section 10](coverage/SECTION_10.md) retains the preceding results.
 The dissertation remains incomplete.

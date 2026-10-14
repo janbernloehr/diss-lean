@@ -3509,3 +3509,8 @@ import NLS.ZakharovShabat.SourceActionGapZeroLocus
 import NLS.ZakharovShabat.SourceIndexedActionCommonCharts
 import NLS.ZakharovShabat.SourceNormalizedIndexedActionLocal
 import NLS.ZakharovShabat.SourceTheorem11_2
+import NLS.ZakharovShabat.SourceCriticalDisplacementCommonAnalytic
+import NLS.ZakharovShabat.SourceActionChi
+import NLS.ComplexAnalysis.PiecewiseContourCongruence
+import NLS.ZakharovShabat.SourceActionChiContour
+import NLS.ZakharovShabat.SourceEquation2_18

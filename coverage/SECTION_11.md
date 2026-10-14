@@ -7,8 +7,11 @@ source domain from Section 10. The full Lemma 11.1 is now proved there:
 analyticity, the exact complex Fréchet gradient in equation (2.17), zero
 action at complex collapsed gaps, and real nonnegativity with the exact
 zero-gap criterion. The analytic zero sets Z_n and the full statement of
-Theorem 11.2 are also proved. The intermediate proof formulas (2.18)–(2.19)
-remain to be compared on their exact printed domains before Section 12.
+Theorem 11.2 are also proved. Equation (2.18), the literal deleted product
+and its recentered action formula are now proved on the original domain.
+The fixed-domain disk index is corrected as documented in
+[`SOURCE_ERRATA.md`](../SOURCE_ERRATA.md). Equation (2.19) and the ensuing
+original-domain extension claims remain before Section 12.
 
 ## One neighborhood for all original contours
 
@@ -242,16 +245,71 @@ all complex points, rather than only at the real centers used to establish
 existence. As a consequence, `.action_eq_zero_iff_gap_zero` also proves
 the exact complex zero-gap criterion throughout W.
 
+## Equation (2.18): the literal deleted product and recentered actions
+
+`sourceActionChi hp hp1 n ψ z` is the actual unordered product over
+integers m≠n of `(critical_m(ψ)−z)/w_m(ψ,z)`. Its equality to the
+established analytic quotient is proved on the full moving complement
+of the other gap segments. No division by the selected critical factor
+is used to define it. The free value is one everywhere in that omitted
+domain, including at the selected collapsed gap.
+
+`SourceSimpleSpectralDomainData.criticalDisplacement_analytic` assembles
+coordinate analyticity and the locally uniform ℓᵖ bound into analyticity
+of the entire critical displacement. Substituting that map into
+Corollary 10.6 proves joint spectral/source analyticity of χ_n.
+
+`SourceLemma11_1Data.actionChi` upgrades any existing open W on the same
+W. The public existence theorem `sourceEquation2_18` retains an open
+connected neighborhood of the entire real-type source locus, for every
+finite p>1, and the full preceding Lemma 11.1 package. Its assertions are:
+
+| Assertion | Public API | Scope |
+| --- | --- | --- |
+| Literal product factorization Δ′/Q=−i(critical_n−z)χ_n/w_n | `.factorization` | Every spectral point off all actual gaps, at complex sources. |
+| Joint analyticity of χ_n | `.joint` | The full moving complement of all gaps except n, over the unchanged W. |
+| Original fixed domain | `.fixed` | `(ℂ ∖ ⋃_{m≠n} closure(D_m)) × V` for every original isolating family on V⊆W. |
+| Through the selected disk | `.disk` | All of D_n×V, including both gap endpoints and collapsed gaps. |
+| Recentered action formula | `.circuit` | I_n=(i/π)∮(critical_n−z)²χ_n/w_n on every finite piecewise C¹ winding-one circuit in the original D_n minus its gap, for ψ∈V∩W. |
+
+The circuit proof subtracts critical_n times the vanishing unweighted
+period from the weighted action integral. The factorization then gives
+the exact i/π normalization. `PiecewiseC1Loop.integral_congr` transfers
+pointwise identities along the actual contour pieces without imposing
+global integrability or continuity. No reality, noncollapsed-gap or
+prescribed-homotopy hypothesis is added to the recentered formula.
+
+The printed fixed domain has U_n under a union over m≠n. The formal
+fixed-domain statement uses U_m, agreeing with Corollary 10.6 and the
+deleted product. It does not claim the incorrect printed domain.
+
 ## Remaining source assertions
 
 The theorem uses the established rationalized circle construction for
 analytic extension through collapsed gaps. It does not require the source's
-particular removability proof. The exact printed intermediate formulas
-(2.18) and (2.19), their original-domain quantifiers and the stated collapsed
-limit still need a separate comparison. Section 12 follows that audit.
+particular removability proof. Equation (2.19), the preceding weighted
+gap-integral formula for complex sources, their original-domain
+quantifiers and the stated collapsed limit still need a separate
+comparison. In particular, the established smaller-domain Theorem 11.2
+does not by itself prove the proof's extension claim on every original
+V_φ. Section 12 follows that audit.
 The dissertation remains incomplete.
 
 ## Validation
+
+The equation (2.18) step has ten focused checks: unchanged-domain
+retention, the full critical displacement's analyticity, the moving and
+fixed omitted domains, the entire selected original disk, exact quotient
+factorization, general central circuits, the nonzero free value χ_0(0)=1,
+the actual free quotient −i at z=i, and p=3/2. All pass without warnings.
+The full `./scripts/check.sh` gate passed: 6,951 build jobs, the complete
+public example suite, and the axiom audit of 32,456 NLS declarations.
+There are 21 existing build warnings; the five new modules and ten
+focused checks are warning-free. No admitted proofs, additional axioms
+or heartbeat overrides were introduced. The 156-label source inventory
+and `git diff --check` also passed.
+
+The preceding Theorem 11.2 step:
 
 The Theorem 11.2 step has fifteen focused checks: retention of the original
 domain and lemma, the literal analytic zero locus and relative closedness,

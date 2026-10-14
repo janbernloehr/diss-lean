@@ -49269,3 +49269,90 @@ example : ∃ W₀ W : Set (CoeffPair (4 : ℝ≥0∞)), IsOpen W₀ ∧ IsConne
 
 end
 end SourceTheorem112Checks
+
+namespace SourceEquation218Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex
+open scoped ENNReal
+noncomputable section
+
+-- The full existing action theorem survives on precisely the same W.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceLemma11_1Data hp hp1 W) (hW : IsOpen W) :
+    SourceEquation2_18Data hp hp1 W ∧ SourceLemma11_1Data hp hp1 W :=
+  ⟨H.actionChi hW,(H.actionChi hW).previous⟩
+
+-- The whole critical sequence, not merely one coordinate, is analytic on W.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceSimpleSpectralDomainData hp hp1 W) (hW : IsOpen W) :
+    AnalyticOnNhd ℂ (sourceCriticalDisplacement hp hp1) W := H.criticalDisplacement_analytic hW
+
+-- Arbitrary complex points of the full moving omitted-gap domain are included.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p => sourceActionChi hp hp1 n t.2 t.1)
+      (sourceStandardRootOmittedJointDomain hp hp1 W n) := H.joint n
+
+-- The fixed complement removes the OTHER original closed disks, indexed by m.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W) (hVW : V ⊆ W)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p => sourceActionChi hp hp1 n t.2 t.1)
+      ((⋃ m : ℤ, ⋃ (_ : m ≠ n), closure (D m))ᶜ ×ˢ V) := H.fixed hVW hD n
+
+-- The entire original selected disk, including both endpoints, is retained.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W) (hVW : V ⊆ W)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (n : ℤ) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p => sourceActionChi hp hp1 n t.2 t.1)
+      (D n ×ˢ V) := H.disk hVW hD n
+
+-- Exact quotient factorization uses the actual product and the minus-i sign.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W)
+    (ψ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z / sourceCanonicalRoot hp hp1 ψ z =
+      -Complex.I*((canonicalCriticalPoints hp hp1 (periodOnePotential ψ)
+        (periodOnePotential_mem ψ) n-z)/sourceStandardRoot hp hp1 ψ n z)*
+          sourceActionChi hp hp1 n ψ z := H.factorization ψ n z hz
+
+-- The central action formula allows complex sources, collapsed gaps and corners.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (H : SourceEquation2_18Data hp hp1 W)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V)
+    (Γ : PiecewiseC1Loop) (hΓ : Γ.Inside (D 0 \ sourcePeriodicSegment hp hp1 ψ 0))
+    (hw : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) = 1) :
+    sourceIndexedAction hp hp1 0 ψ = Complex.I/(Real.pi : ℂ)*Γ.integral (fun z =>
+      (canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0-z)^2 /
+        sourceStandardRoot hp hp1 ψ 0 z*sourceActionChi hp hp1 0 ψ z) :=
+  H.circuit hD ψ hψW hψV 0 Γ hΓ hw
+
+-- Nonzero free value at the selected collapsed gap: omitting n is essential here.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    sourceActionChi hp hp1 0 (0 : CoeffPair p) 0 = 1 := by
+  apply sourceActionChi_zero_source
+  intro m hm hz
+  rw [sourcePeriodicSegment_zero_source,mem_singleton_iff] at hz
+  have hmC : (m : ℂ) ≠ 0 := by exact_mod_cast hm
+  exact (mul_ne_zero (Complex.ofReal_ne_zero.mpr Real.pi_ne_zero) hmC) hz.symm
+
+-- At z=i the actual free quotient is -i, so the sign check is not a zero identity.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p) :
+    deriv (canonicalDiscriminant hp (periodOnePotential (0 : CoeffPair p))) Complex.I /
+      sourceCanonicalRoot hp hp1 (0 : CoeffPair p) Complex.I = -Complex.I := by
+  have hz := sourceCanonicalRootDomain_of_im_ne_zero hp hp1 (0 : CoeffPair p)
+    (by simp) Complex.I (by simp)
+  rw [sourceCriticalRootRatio_eq_selectedFactor_mul_chi hp hp1 0 0 Complex.I hz,
+    sourceActionChi_zero_source hp hp1 0 Complex.I (fun m _ => hz m)]
+  simp only [map_zero,canonicalCriticalPoints_zero,sourceStandardRoot_zero_source]
+  norm_num
+
+local instance source218ThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceEquation2_18Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceEquation2_18 (by norm_num) (by norm_num)
+
+end
+end SourceEquation218Checks

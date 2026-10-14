@@ -1,5 +1,21 @@
 # Source discrepancies
 
+## Equation (2.18): the omitted-disk domain uses the union index
+
+Source: [dissertation, printed p. 62](https://janbernloehr.de/Download/fs16/diss.pdf#page=62),
+visually checked. The sentence after (2.18) places the closed disk U_n
+under a union indexed by m≠n. The deleted product defining χ_n instead
+ranges over m≠n, and Corollary 10.6 removes the corresponding other
+closed disks U_m. The consistent domain is therefore
+`(ℂ ∖ ⋃_{m≠n} closure(U_m)) × V_φ`.
+
+`SourceEquation2_18Data.fixed` proves analyticity on this corrected
+fixed domain for every original isolating family, and `.disk` proves
+analyticity throughout U_n×V_φ. The stronger `.joint` assertion holds
+on the full moving complement of the other gap segments. The original
+source domain and disks are unchanged. This records the index correction;
+it does not assert the printed domain with U_n in the union.
+
 ## Lemma 10.5 proof: paired indices and absolute convergence
 
 Source: [dissertation, printed p. 57](https://janbernloehr.de/Download/fs16/diss.pdf#page=57),
