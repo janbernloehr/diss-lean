@@ -25,8 +25,10 @@ is now proved for every finite p>2 and every proposed stronger exponent,
 using actual real sources and original disk families. Remark 10.9 is
 resolved with the corrected expansion. Lemma 10.10 is now covered on
 the unchanged common domain, with actual analytic coefficients and one
-locally uniform full-sequence bound. Equation (2.15) and later statements
-remain to be audited.
+locally uniform full-sequence bound. Equation (2.15) is now covered with
+its literal absolutely convergent product, exact -i normalization, and
+spectral and joint analyticity on the original domains. Admissible paths
+and Lemma 10.11 remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -1215,3 +1217,50 @@ Next: equation (2.15), admissible paths, and Lemma 10.11. The dissertation
 remains incomplete.
 
 Validation: `./scripts/check.sh` passed (6,911 build jobs, the complete public example suite, and the axiom audit of 32,074 NLS declarations). The build retains 21 existing warnings; the three new modules and six focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Equation (2.15): full product and analytic domains
+
+`SourceCriticalRootRatioProduct.lean` proves the literal identity
+
+    Δ′(z,ψ) / canonicalRoot(z,ψ) = -i * product_m ((critical_m(ψ)−z)/w_m(z,ψ)).
+
+The product runs over all integers and is an unconditional `HasProd`,
+not only a symmetric paired limit. Individual factor deviations from one
+are absolutely summable. The normalized symmetric cutoff products also
+converge to the actual quotient. These facts hold for every complex source
+at every spectral point outside its periodic gap segments.
+
+The proof specializes the existing absolute quotient-factor estimate to
+the actual critical displacement. Inserting a singleton into the omitted
+product gives the full product without requiring nonzero numerator
+factors. The selected-factor identity fixes the printed -i normalization.
+In particular, a zero critical numerator factor makes both the quotient
+and product zero. At the free source off the gaps, the product is one and
+the quotient is -i.
+
+`SourceCriticalRootRatioCommonDomain.lean` derives joint analyticity of
+the actual quotient from the joint discriminant derivative and canonical
+root on the retained moving-gap domain. The literal product is i times
+that quotient on this open domain and is therefore jointly analytic too.
+For any original isolating family, both functions are analytic on the
+complement of the union of closed disks times the original source
+neighborhood. The closure bars in the printed p.59 domain were checked
+against the rendered PDF. Fixing a source gives the stated spectral
+analyticity on the complement of the union of all gap segments.
+
+The same module proves analyticity of the selected omitted critical
+factor through its selected gap on the retained W, ready for the
+removability argument in Lemma 10.11. This does not yet assert an extension
+across all collapsed gaps or the admissible-path integral statement.
+
+`SourceEquation2_15.lean` retains `SourceLemma10_10Data` together with the
+literal product, normalization, convergence and both analytic domains.
+`SourceLemma10_10Data.criticalRootProduct` works on any existing common W
+without shrinking it; `sourceEquation2_15` constructs the open connected
+common domain containing the entire real-type locus. Seven public checks
+cover complex sources, zero factors, the free sign, literal cutoff limits,
+the retained closed-disk domain and p=3/2.
+
+Next: admissible paths and Lemma 10.11. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,914 build jobs, the complete public example suite, and the axiom audit of 32,104 NLS declarations). The build retains 21 existing warnings; the three new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.

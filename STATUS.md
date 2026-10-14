@@ -1,6 +1,31 @@
 # Implementation status
 
-## Current milestone: Lemma 10.10 on the unchanged common domain
+## Current milestone: equation (2.15) on the unchanged common domain
+
+Three modules complete equation (2.15) and its following analytic-domain
+assertions on the unchanged common source domain for every finite p>1.
+The literal product of (critical_m−z)/w_m(z), over all signed indices,
+equals i times the actual discriminant derivative divided by the canonical
+root. Thus the source's -i normalization holds exactly. The individual
+factor deviations from one are absolutely summable, and symmetric finite
+products converge to the same normalized quotient.
+
+The proof allows numerator factors to vanish. Both the actual quotient
+and the literal product are jointly analytic on the full moving-gap
+complement. They also retain the original fixed domain: the complement
+of the union of closed isolating disks times the original neighborhood.
+`SourceLemma10_10Data.criticalRootProduct` preserves W and the preceding
+critical-offset conclusions. `sourceEquation2_15` constructs the common
+open connected neighborhood of the entire real-type locus.
+
+Seven public checks cover preservation of W, arbitrary complex source
+points, symmetric cutoff convergence, a zero numerator factor, the free
+product one and quotient -i, the original closed-disk domain, and p=3/2.
+Next: admissible paths and Lemma 10.11. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,914 build jobs, the complete public example suite, and the axiom audit of 32,104 NLS declarations). The build retains 21 existing warnings; the three new modules and seven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: Lemma 10.10 on the unchanged common domain
 
 Three modules complete Lemma 10.10 on the unchanged common almost-real
 source domain for every finite p>1. At every source in that domain and

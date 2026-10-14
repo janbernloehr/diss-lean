@@ -48475,3 +48475,91 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
 
 end
 end SourceLemma1010CommonDomainChecks
+
+namespace SourceEquation215ProductChecks
+open NLS NLS.ZakharovShabat Set Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- The complete domain is retained, including the preceding critical-offset conclusion.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceLemma10_10Data hp hp1 W) :
+    SourceEquation2_15Data hp hp1 W ∧
+      ∀ ψ ∈ W, ∀ n : ℤ,
+        canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n =
+          canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n +
+            (sourcePeriodicGapDisplacement hp hp1 ψ n)^2*sourceCriticalGapQuotient hp hp1 ψ n :=
+  ⟨h.criticalRootProduct,h.exact_offset⟩
+
+-- No reality assumption is required at a point of the moving joint domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceEquation2_15Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    DifferentiableAt ℂ (sourceCriticalRootRatioJoint hp hp1) (z,ψ) ∧
+      HasProd (fun m : ℤ => (canonicalCriticalPoints hp hp1
+        (periodOnePotential ψ) (periodOnePotential_mem ψ) m-z)/sourceStandardRoot hp hp1 ψ m z)
+        (Complex.I*sourceCriticalRootRatioJoint hp hp1 (z,ψ)) :=
+  ⟨(h.joint.2 (z,ψ) ⟨hψ,hz⟩).differentiableAt,h.product ψ z hz⟩
+
+-- The literal symmetric products have the actual quotient as their normalized limit.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ) :
+    Tendsto (fun N : ℕ => -Complex.I*(∏ m ∈ Finset.Icc (-(N : ℤ)) N,
+      (canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m-z)/
+        sourceStandardRoot hp hp1 ψ m z)) atTop
+      (𝓝 (deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z/sourceCanonicalRoot hp hp1 ψ z)) :=
+  sourceCriticalRootRatio_symmetricProducts hp hp1 ψ z hz
+
+-- A zero numerator factor is allowed; both the quotient and the full product vanish.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (ψ : CoeffPair p) (n : ℤ) (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 ψ)
+    (hc : canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n = z) :
+    sourceCriticalRootRatioJoint hp hp1 (z,ψ) = 0 ∧
+      (∏' m : ℤ, (canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) m-z)/
+        sourceStandardRoot hp hp1 ψ m z) = 0 := by
+  have hzero : sourceCriticalRootRatioJoint hp hp1 (z,ψ) = 0 := by
+    change deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z/sourceCanonicalRoot hp hp1 ψ z = 0
+    rw [sourceCriticalRootRatio_eq_selectedFactor_mul_extension hp hp1 ψ n z hz,hc,sub_self,zero_div,zero_mul]
+  refine ⟨hzero,?_⟩
+  rw [(sourceCriticalRootRatio_hasProd hp hp1 ψ z hz).tprod_eq,hzero,mul_zero]
+
+-- At the free source, the full product is exactly one and the quotient is -i.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (z : ℂ) (hz : z ∈ sourceCanonicalRootDomain hp hp1 (0 : CoeffPair p)) :
+    (∏' m : ℤ, (canonicalCriticalPoints hp hp1
+      (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) m-z)/
+        sourceStandardRoot hp hp1 (0 : CoeffPair p) m z) = 1 ∧
+      sourceCriticalRootRatioJoint hp hp1 (z,0) = -Complex.I := by
+  have hf (m : ℤ) : (canonicalCriticalPoints hp hp1
+      (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) m-z)/
+        sourceStandardRoot hp hp1 (0 : CoeffPair p) m z = 1 := by
+    have hd := sourceStandardRoot_ne_zero_off_segment hp hp1 (0 : CoeffPair p) m z (hz m)
+    rw [sourceStandardRoot_zero_source] at hd
+    simp only [map_zero,canonicalCriticalPoints_zero,sourceStandardRoot_zero_source]
+    exact div_self hd
+  have hpdt : (∏' m : ℤ, (canonicalCriticalPoints hp hp1
+      (periodOnePotential (0 : CoeffPair p)) (periodOnePotential_mem 0) m-z)/
+        sourceStandardRoot hp hp1 (0 : CoeffPair p) m z) = 1 := by simp only [hf,tprod_one]
+  refine ⟨hpdt,?_⟩
+  change deriv (canonicalDiscriminant hp (periodOnePotential (0 : CoeffPair p))) z/
+    sourceCanonicalRoot hp hp1 (0 : CoeffPair p) z = _
+  rw [sourceCriticalRootRatio_product hp hp1 0 z hz,hpdt,mul_one]
+
+-- Arbitrary original disk families retain joint product analyticity on the printed domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceEquation2_15Data hp hp1 W) (hVW : V ⊆ W)
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c) :
+    AnalyticOnNhd ℂ (fun t : ℂ × CoeffPair p => ∏' m : ℤ,
+      (canonicalCriticalPoints hp hp1 (periodOnePotential t.2) (periodOnePotential_mem t.2) m-t.1)/
+        sourceStandardRoot hp hp1 t.2 m t.1) ((⋃ m : ℤ, closure (D m))ᶜ ×ˢ V) :=
+  h.previous.previous.previous.criticalRatioLiteralClosedFixed hVW hD
+
+local instance source215ThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceEquation2_15Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceEquation2_15 (by norm_num) (by norm_num)
+
+end
+end SourceEquation215ProductChecks

@@ -5,11 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves Lemma 10.10 on the unchanged common source
-domain for every finite p>1. The critical-point offset is exactly a
-squared gap times an analytic coefficient, with a locally uniform ℓp
-bound at every source and every index, including collapsed central gaps.
-Next: equation (2.15) and the remaining Section 10 audit.
+Latest step: Lean proves equation (2.15), including its literal infinite
+product, absolute factor convergence, exact -i normalization, and spectral
+and joint analyticity on the unchanged common source domain. The result
+retains the original closed isolating disks and permits zero numerator
+factors. Next: admissible paths and Lemma 10.11.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
