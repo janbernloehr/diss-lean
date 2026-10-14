@@ -3965,3 +3965,45 @@ Next: independently audit the positive-component norm factor after restoring
 the left-hand powers. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed: 6816 build jobs, the combined public examples, and the axiom audit of 30884 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Original-source audit: Lemma 6.8's component factor fails independently
+
+`ReverseCubicResonantPotential.lean` gives the complementary two-mode
+calculation: first physical mode zero has amplitude a, and second mode −2n
+has amplitude b. A three-mode vector solves the correction equation exactly.
+The negative coefficient at a nonzero free center is a²b/(2πn)². These
+coefficient identities hold for every finite 1≤p<∞ and every spectral weight.
+
+`SourceReverseCubicPotential.lean` identifies the actual original source
+remainder, component norms, distance from the fixed constant background
+(1,0), and Fourier tails. At p=2 and a=1, b=t>0, the source distance from
+that background is t. Every positive Fourier cutoff removes the constant
+first component, leaving a squared tail norm at most t². The squared
+negative remainder at the center is t²/(2πn)^4.
+
+`SourceLemma6_8ComponentCounterexample.lean` restores the correct powers
+on the left but retains the printed positive-component inner norm. This
+budget is at most 2C t⁴, so it cannot control the quadratic squared remainder.
+Every original open neighborhood of the same background and every common
+cutoff contain a witness, with a small correction and bounded distant
+strip images. The complete squared signed-tail estimate is formally
+negated for every tail convention κ(N)≥1 when N≥2, including both floor
+and ceiling half-cutoffs.
+
+This is independent of the previously proved missing-power counterexample.
+Restoring only the powers cannot repair the component factor; changing only
+the inner norm cannot repair the missing powers. The valid p-power/full-pair
+estimate remains available. Both refutations concern locally uniform
+neighborhoods and cutoffs; neither asserts failure beyond every individual
+cutoff for one fixed finite-support potential. No optimal norm replacement
+or sharp constant is claimed.
+
+Public checks verify the fixed background, physical mode signs, distinct
+component amplitudes, the coefficient formula at p=1, arbitrarily close
+original witnesses, and both half-cutoff versions of the correctly squared
+sum negation.
+
+Next: Lemma 6.9's determinant zeros and displacement estimates in the
+original source realization. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6819 build jobs, the combined public examples, and the axiom audit of 30937 NLS declarations. The 21 existing warnings are unchanged; all three new modules and the focused public probe compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.

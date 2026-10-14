@@ -1637,6 +1637,24 @@ the inner norm with the full pair cannot repair the absent powers.
 
 These are local uniform counterexamples, not a claim that one fixed
 finite-support potential violates every individual potential-dependent
-cutoff. The validity of the positive-component norm factor after restoring
-the p-powers still needs an independent audit. The previously proved
-p-power/full-pair estimate remains valid.
+cutoff. The previously proved p-power/full-pair estimate remains valid.
+
+The component factor is now independently refuted with the left-hand
+powers restored. `sourceReverseCubicPotential` has physical coefficients
+φ_−(0)=1 and φ_+(−2n)=t. Its source distance to the same constant background
+(1,0) is t; every positive cutoff removes that background. The actual
+negative squared remainder at the center is t²/(2πn)^4, whereas the printed
+positive-component budget is at most 2C t⁴.
+
+`exists_sourceRemainder_exceeding_component_budget` gives witnesses in
+every original open neighborhood of that background, beyond every common
+cutoff, with small correction and bounded distant strip images.
+`not_sourceLemma6_8_positive_component_sum` formally negates the correctly
+squared full signed-tail bound with that budget, for every κ(N)≥1 when
+N≥2, including both half-cutoff roundings. This failure is separate from
+the absent-power issue: restoring just the powers is insufficient.
+
+The second counterexample is again locally uniform, not a single fixed
+perturbation violating all its individual cutoffs. The full pair norm is a
+proved sufficient replacement; no uniquely necessary replacement or optimal
+constant is asserted.

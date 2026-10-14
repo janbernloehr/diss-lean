@@ -45863,3 +45863,60 @@ example (κ : ℕ → ℕ) :
 
 end
 end SourceLemma68CounterexampleChecks
+
+namespace SourceLemma68ComponentChecks
+open NLS NLS.ZakharovShabat
+open scoped ENNReal
+noncomputable section
+
+-- The background is fixed independently of the chosen high index.
+example (n : ℤ) : sourceReverseCubicPotential (p := 2) n 1 0 = sourceConstantPotential 1 0 := by
+  apply unitWeightedPairEquiv.injective
+  simp only [unitWeightedPairEquiv_sourceReverseCubicPotential,unitWeightedPairEquiv_sourceConstantPotential]
+  apply weightedPair_ext <;> intro k <;> simp [constantSpectralPotential]
+
+-- The negative leading coefficient vanishes; the small component is at physical frequency -2n.
+example (n : ℤ) (hn : n ≠ 0) (t : ℝ) :
+    (sourceReverseCubicPotential (p := 2) n 1 t).fst 0 = 1 ∧
+    (sourceReverseCubicPotential (p := 2) n 1 t).snd (-(2*n)) = t ∧
+    (sourceReverseCubicPotential (p := 2) n 1 t).fst (-(2*n)) = 0 := by
+  simp [show -(2*n) ≠ 0 by omega]
+
+example (n : ℤ) (t : ℝ) (ht : 0 ≤ t) :
+    ‖(sourceReverseCubicPotential (p := 2) n 1 t).fst‖ = 1 ∧
+    ‖(sourceReverseCubicPotential (p := 2) n 1 t).snd‖ = t := by
+  simpa only [norm_one,Complex.norm_real,Real.norm_of_nonneg ht] using sourceReverseCubicPotential_component_norms (p := 2) n 1 t
+
+-- The coefficient identity is valid at the analytic endpoint p=1 too.
+example (n : ℤ) (hn : n ≠ 0) (a b : ℂ)
+    (h : ‖weightedPotentialSquareInShift (p := 1) (by norm_num) SpectralWeight.one
+      (unitWeightedPairEquiv (sourceReverseCubicPotential n a b)) n ((Real.pi : ℂ)*n) (center_mem_resonantStrip n)‖ < 1) :
+    sourceResonantBMinusFunction (p := 1) (by norm_num) (sourceReverseCubicPotential n a b) n ((Real.pi : ℂ)*n) -
+      (sourceReverseCubicPotential (p := 1) n a b).fst (-(2*n)) = a^2*b/((2*Real.pi*(n : ℝ) : ℝ) : ℂ)^2 :=
+  sourceReverseCubicPotential_remainder_center (by norm_num) n hn a b h
+
+-- Every ball around the same background contains a witness beyond any common cutoff.
+example (C : ℝ) (hC : 0 ≤ C) (ε : ℝ) (hε : 0 < ε) (M : ℕ) :
+    ∃ n : ℕ, M ≤ n ∧ 2 ≤ n ∧ ∃ φ : CoeffPair 2, ‖φ-sourceConstantPotential 1 0‖ < ε ∧
+      ∀ K : ℕ, 1 ≤ K → sourcePositiveComponentHilbertBudget C φ n K <
+        (sourceResonantBMinusSup (by norm_num) SpectralWeight.one φ n)^2 := by
+  obtain ⟨n,hnM,hn2,φ,hφ,_,_,hb⟩ := exists_sourceRemainder_exceeding_component_budget C hC
+    (Metric.ball (sourceConstantPotential 1 0) ε) Metric.isOpen_ball (by simpa using hε) M
+  exact ⟨n,hnM,hn2,φ,by simpa only [Metric.mem_ball,dist_eq_norm] using hφ,hb⟩
+
+-- Correctly squared sums still fail with the positive-component budget, for both half-cutoffs.
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ sourceConstantPotential 1 0 ∈ U ∧
+      ∀ φ ∈ U, ∀ N : ℕ, M ≤ N → 2 ≤ N →
+        Summable (sourceSquaredNegativeRemainderTail N φ) ∧
+          (∑' n : ℤ, sourceSquaredNegativeRemainderTail N φ n) ≤ sourcePositiveComponentHilbertBudget C φ N (N/2) :=
+  not_sourceLemma6_8_positive_component_sum (fun N => N/2) (by intro N hN; omega)
+example :
+    ¬ ∃ C : ℝ, 0 ≤ C ∧ ∃ M : ℕ, ∃ U : Set (CoeffPair 2), IsOpen U ∧ sourceConstantPotential 1 0 ∈ U ∧
+      ∀ φ ∈ U, ∀ N : ℕ, M ≤ N → 2 ≤ N →
+        Summable (sourceSquaredNegativeRemainderTail N φ) ∧
+          (∑' n : ℤ, sourceSquaredNegativeRemainderTail N φ n) ≤ sourcePositiveComponentHilbertBudget C φ N ((N+1)/2) :=
+  not_sourceLemma6_8_positive_component_sum (fun N => (N+1)/2) (by intro N hN; omega)
+
+end
+end SourceLemma68ComponentChecks

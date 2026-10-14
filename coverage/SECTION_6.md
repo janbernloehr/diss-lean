@@ -440,15 +440,46 @@ one fixed potential beyond every individually chosen cutoff. The exact
 coefficient formulas themselves allow every finite 1≤p<∞; the local
 counterexample and sum negations are proved at p=2.
 
-Changing the inner norm alone cannot rescue the unpowered display. Whether
-the positive-component factor can be retained after restoring the p-powers
-requires the separate audit below; no necessity claim for that correction
-is inferred from this scaling argument.
+Changing the inner norm alone cannot rescue the unpowered display. The
+separate argument below tests the positive-component factor after the
+p-powers have been restored.
+
+## Lemma 6.8(ii): independent component-factor counterexample
+
+| Assertion | Entry point | Scope |
+| --- | --- | --- |
+| Reversed two-mode calculation | `reverseCubicPotential_bminus`, `reverseCubicPotential_bminus_center` | First mode zero=a, second mode −2n=b; negative center coefficient a²b/(2πn)². |
+| Actual source remainder | `sourceReverseCubicPotential_remainder_center`, `sourceReverseCubicPotential_remainder_norm_sq` | At a=1, b=t, squared remainder t²/(2πn)^4. |
+| Exact component norms | `sourceReverseCubicPotential_component_norms` | Original first norm ‖a‖ and second norm ‖b‖. |
+| Fixed background | `sourceReverseCubicPotential_distance_sq` | Original p=2 squared distance to the same constant potential (1,0) is ‖b‖² for a=1. |
+| Background removed by the tail | `sourceReverseCubicPotential_tail_norm_sq_le` | Every cutoff K≥1 gives squared tail norm ≤‖b‖². |
+| Quartic budget | `sourcePositiveComponentBudget_reverse_le` | The printed negative-remainder component budget is at most 2C t⁴. |
+| Arbitrarily close witnesses | `exists_sourceRemainder_exceeding_component_budget` | Every original open neighborhood of (1,0), every common cutoff, small correction, and bounded distant strip images. |
+| Correctly squared sum refuted | `not_sourceLemma6_8_positive_component_sum` | Unit weight, p=2, complete signed tail, any κ(N)≥1 for N≥2; includes floor and ceiling half-cutoffs. |
+
+The left-hand powers are correct in this counterexample. The budget being
+tested is specifically
+
+```
+C (‖φ_+‖^4/N + ‖R_K φ‖^4) ‖φ_-‖².
+```
+
+At the constructed potentials, the first component is fixed, the second
+component has size t, and the cutoff removes the fixed background. Thus
+its quartic order cannot dominate the actual quadratic squared remainder.
+This establishes a separate defect in the component factor, without
+reusing the unpowered cubic-versus-sextic comparison.
+
+The coefficient identities include p=1; the counterexample and sum
+negation use p=2. This is a locally uniform failure near a fixed background,
+not an assertion that one fixed perturbed potential defeats every individual
+cutoff. The full pair norm is a proved sufficient replacement, with no
+claim of optimality or a sharp constant.
 
 ## Remaining source assertions
 
-Continue with the independent audit of Lemma 6.8(ii)'s positive-component
-norm factor after restoring the left-hand powers. Sharper ceiling-cutoff
-versions of the corrected Propositions 6.1/6.3 estimates remain unproved.
-Existing later results and the candidate-label inventory do not certify this
-section or the dissertation complete.
+Continue with Lemma 6.9's determinant zeros and displacement estimates in
+the original source realization. Sharper ceiling-cutoff versions of the
+corrected Propositions 6.1/6.3 estimates remain unproved. Existing later
+results and the candidate-label inventory do not certify this section or
+the dissertation complete.

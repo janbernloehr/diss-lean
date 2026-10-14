@@ -5,15 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: a verified two-mode counterexample refutes the locally
-uniform reading of Lemma 6.8(ii)'s unpowered remainder sum at p=2.
-The actual original coefficient is cubic in its amplitude, while the printed
-budget is sextic. Floor and ceiling half-cutoffs both fail, even if the inner
-component norm is enlarged to the full pair norm.
-[The Section 6 audit](coverage/SECTION_6.md) records the exact scope and
-preserves the valid p-power estimates. Next is an independent audit of the
-component-norm factor after restoring those powers.
-The dissertation remains incomplete.
+Latest milestone: Lemma 6.8(ii)'s positive-component norm factor is now
+independently refuted locally near the fixed potential (1,0), even after
+restoring the left-hand powers. The actual squared remainder is quadratic
+in a small perturbation, while that budget is quartic. Both half-cutoff
+roundings fail. The proved p-power/full-pair estimate remains valid.
+[The Section 6 audit](coverage/SECTION_6.md) records the exact local scope.
+Next are Lemma 6.9's determinant zeros and displacement estimates in the
+original source realization. The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).
 
