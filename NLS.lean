@@ -3559,3 +3559,11 @@ import NLS.ZakharovShabat.SourcePsiOriginalZetaAsymptotic
 import NLS.ZakharovShabat.SourceEquation2_26
 import NLS.ZakharovShabat.SourcePsiOriginalEquationSup
 import NLS.SequenceSpaces.ThreeSequenceMajorant
+import NLS.ZakharovShabat.SourcePsiOriginalJacobian
+import NLS.ZakharovShabat.SourcePsiOriginalOmega
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianContour
+import NLS.ZakharovShabat.SourcePsiOriginalZetaRegular
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianNonzero
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianDiagonal
+import NLS.ZakharovShabat.SourcePsiOriginalJacobianOffDiagonal
+import NLS.ZakharovShabat.SourceLemma12_5

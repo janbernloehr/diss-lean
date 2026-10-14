@@ -50481,3 +50481,162 @@ example : sourcePsiZeta (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num)
 
 end
 end SourceEquation226Checks
+
+namespace SourceLemma125Checks
+noncomputable section
+open Set Metric Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+private def freeCircle (m : ℤ) : SourceCriticalRootPeriodCircle hp hp1 (0:CoeffPair p) m where
+  center := Real.pi*m
+  radius := Real.pi/4
+  radius_pos := by positivity
+  gap := by
+    rw [sourcePeriodicSegment_zero_source]
+    intro z hz
+    rw [mem_singleton_iff] at hz
+    subst z
+    simpa using (show 0 < Real.pi/4 by positivity)
+  other := by
+    intro k hkm z hz
+    rw [sourcePeriodicSegment_zero_source,mem_singleton_iff] at hz
+    subst z
+    simp only [mul_re,ofReal_re,intCast_re,ofReal_im,intCast_im,mul_zero,sub_zero]
+    rcases lt_or_gt_of_ne hkm with hlt | hgt
+    · left
+      have hk : (k:ℝ)+1 ≤ m := by exact_mod_cast (show k+1 ≤ m by omega)
+      nlinarith [Real.pi_pos]
+    · right
+      have hk : (m:ℝ)+1 ≤ k := by exact_mod_cast (show m+1 ≤ k by omega)
+      nlinarith [Real.pi_pos]
+
+variable {W : Set (CoeffPair p)} (H : SourceLemma12_4Data hp hp1 W)
+
+include H in
+private theorem free_entry (h0 : (0:CoeffPair p) ∈ W) (n m r : ℤ) (hmn : m ≠ n) (hrn : r ≠ n) :
+    sourcePsiOriginalJacobianEntry hp hp1 n m r 0 0 = if m = r then 2 else 0 := by
+  rw [H.originalJacobianEntry_eq_contour_deriv 0 h0 n m r 0 (freeCircle hp hp1 m)]
+  have he : (fun z : ℂ => sourcePsiEquationCoordinate hp hp1 n m
+      (0+lp.single p r z) 0 ((freeCircle hp hp1 m).center:ℂ) (freeCircle hp hp1 m).radius) =
+      (fun z : ℂ => z*(if m = r then 2 else 0)) := by
+    funext z
+    simpa [freeCircle] using sourcePsiEquationCoordinate_single_zero_eq hp hp1 m n r hmn hrn
+      (Real.pi/4) (by positivity) (by nlinarith [Real.pi_pos]) z
+  rw [he]
+  simpa using ((hasDerivAt_id (0:ℂ)).mul_const (if m = r then 2 else 0)).deriv
+
+-- Actual derivatives of the actual equation recover the free matrix.
+example (h0 : (0:CoeffPair p) ∈ W) (n m : ℤ) (hmn : m ≠ n) :
+    sourcePsiOriginalJacobianEntry hp hp1 n m m 0 0 = 2 := by
+  simpa using free_entry hp hp1 H h0 n m m hmn hmn
+
+example (h0 : (0:CoeffPair p) ∈ W) (n m r : ℤ) (hmn : m ≠ n) (hrn : r ≠ n) (hmr : m ≠ r) :
+    sourcePsiOriginalJacobianEntry hp hp1 n m r 0 0 = 0 := by
+  simpa [hmr] using free_entry hp hp1 H h0 n m r hmn hrn
+
+example (h0 : (0:CoeffPair p) ∈ W) : sourcePsiOriginalJacobianEntry hp hp1 (-7) 0 0 0 0 = 2 := by
+  simpa using free_entry hp hp1 H h0 (-7) 0 0 (by norm_num) (by norm_num)
+
+-- The unused root fill may be nonzero, even nonreal and far from its disk.
+example (h0 : (0:CoeffPair p) ∈ W) :
+    sourcePsiOriginalJacobianEntry hp hp1 0 1 1 (lp.single p 0 (100*Complex.I)) 0 = 2 := by
+  have he := sourcePsiOriginalJacobianEntry_add_single_deleted hp hp1 0 1 1 (0:Coeff p) 0 (100*Complex.I)
+  simpa using he.trans (by simpa using free_entry hp hp1 H h0 0 1 1 (by norm_num) (by norm_num))
+
+example (n r : ℤ) (a : Coeff p) (ψ : CoeffPair p) :
+    sourcePsiOriginalJacobianEntry hp hp1 n n r a ψ = 0 := by simp
+
+example (n m : ℤ) (a : Coeff p) (ψ : CoeffPair p) :
+    sourcePsiOriginalJacobianEntry hp hp1 n m n a ψ = 0 := by simp
+
+-- No real source or placement assumption is needed to identify the bounded derivative.
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (n : ℤ) (a : DeletedCoeff p n) :
+    HasFDerivAt (fun b => sourcePsiOriginalEquation hp hp1 n b ψ)
+      (sourcePsiOriginalRootJacobian hp hp1 n a ψ) a :=
+  H.originalRootJacobian_hasFDerivAt ψ hψ n a
+
+example (ψ : CoeffPair p) (hψ : ψ ∈ W) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (a : Coeff p) (ha : ∀ k : ℤ, (a k).im = 0) (n m r : ℤ) :
+    (sourcePsiOriginalJacobianEntry hp hp1 n m r a ψ).im = 0 :=
+  H.originalJacobianEntry_real ψ hψ hreal n m r a ha
+
+variable {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+  (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+
+example : IsOpen (sourcePsiOriginalRootPlacement (p := p) D) := hD.isOpen_originalRootPlacement
+
+example (hV : IsOpen V) : IsOpen (sourcePsiOriginalOmega V D) := hD.isOpen_originalOmega hV
+
+-- No zero-fill condition is imposed on the unused coordinate.
+example (a : Coeff p) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+    (d r : ℝ) (hr : 0 < r) (he : D 0 = ball (d:ℂ) r) (z : ℂ) (hz : z ∈ closedBall (d:ℂ) r) :
+    z ≠ displacedRoots a (-7) :=
+  hD.originalRootPlacement_avoids_closedBall a ha 0 (-7) (by norm_num) d r hr he z hz
+
+-- The selected root can be on its gap, but it always avoids its original circle.
+example (a : Coeff p) (ha : a ∈ sourcePsiOriginalRootPlacement D) (m : ℤ)
+    (d r : ℝ) (hr : 0 < r) (he : D m = ball (d:ℂ) r) (z : ℂ) (hz : z ∈ sphere (d:ℂ) r) :
+    z ≠ displacedRoots a m := hD.originalRootPlacement_avoids_sphere a ha m m d r hr he z hz
+
+example (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n m : ℤ) (hmn : m ≠ n) (a : Coeff p) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+    (haReal : ∀ k : ℤ, (a k).im = 0) :
+    sourcePsiOriginalJacobianEntry hp hp1 n m m a ψ ≠ 0 :=
+  H.originalJacobianEntry_diagonal_ne_zero hD ψ hψW hψV hreal n m hmn a ha haReal
+
+-- At a collapsed gap, the actual diagonal is evaluated at that one point.
+example (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (hreal : IsRealType (CoeffPair.toMax p ψ))
+    (n m : ℤ) (hmn : m ≠ n) (a : Coeff p) (ha : a ∈ sourcePsiOriginalRootPlacement D)
+    (haReal : ∀ k : ℤ, (a k).im = 0) (τ : ℂ) (hgap : sourcePeriodicSegment hp hp1 ψ m = {τ}) :
+    sourcePsiOriginalJacobianEntry hp hp1 n m m a ψ =
+      -(2*(Real.pi:ℂ)*Complex.I)*(((n-m:ℤ):ℂ)*sourcePsiZeta hp hp1 n m a ψ τ) := by
+  obtain ⟨μ,hμ,hvalue⟩ := H.originalJacobianEntry_diagonal_meanValue hD ψ hψW hψV hreal n m hmn a ha haReal
+  rw [hgap,mem_singleton_iff] at hμ
+  exact hμ ▸ hvalue
+
+-- One neighborhood works for all indices at once in the original real topology.
+example (hW : IsOpen W) (hV : IsOpen V) (t₀ : realTypeSourceSubmodule p × RealCoeff p)
+    (hW₀ : (t₀.1:CoeffPair p) ∈ W) (hΩ₀ : t₀ ∈ sourcePsiOriginalOmega V D) :
+    ∃ U : Set (realTypeSourceSubmodule p × RealCoeff p), IsOpen U ∧ t₀ ∈ U ∧
+      U ⊆ sourcePsiOriginalOmega V D ∧ ∃ K C : ℝ, 0 ≤ K ∧ 0 ≤ C ∧
+        ∀ t ∈ U, SourcePsiOriginalJacobianBounds hp hp1 (RealCoeff.complexCLM p t.2) t.1 K C :=
+  (H.lemma12_5 hW).originalOmega hD hV t₀ hW₀ hΩ₀
+
+-- The diagonal sequence remainder really belongs to lp; its omitted coordinate is zero.
+example (a : Coeff p) (ψ : CoeffPair p) (K C : ℝ)
+    (B : SourcePsiOriginalJacobianBounds hp hp1 a ψ K C) (n : ℤ) :
+    ∃ R : ℤ → ℂ, ∃ S : DeletedCoeff p n, ‖S‖ ≤ C ∧ ∀ m : ℤ, m ≠ n →
+      sourcePsiOriginalJacobianEntry hp hp1 n m m a ψ = 2+R m+(S:Coeff p) m ∧
+        ‖R m‖ ≤ K/‖((n-m:ℤ):ℂ)‖ := by
+  obtain ⟨R,S,_,hSn,hS,he⟩ := B.diagonal n
+  exact ⟨R,⟨S,hSn⟩,hS,he⟩
+
+-- The common row majorant forces all weighted off-diagonal rows to vanish at infinity,
+-- simultaneously for every omitted index and column, at each fixed point.
+example (a : Coeff p) (ψ : CoeffPair p) (K C : ℝ)
+    (B : SourcePsiOriginalJacobianBounds hp hp1 a ψ K C) (δ : ℝ) (hδ : 0 < δ) :
+    ∃ M : ℕ, ∀ m : ℤ, M ≤ m.natAbs → ∀ n r : ℤ, m ≠ r →
+      ‖((m-r:ℤ):ℂ)*sourcePsiOriginalJacobianEntry hp hp1 n m r a ψ‖ < δ := by
+  obtain ⟨E,_,_,hE⟩ := B.off_diagonal
+  obtain ⟨M,hM⟩ := Coeff.exists_cutoff_norm_apply_lt hp E hδ
+  exact ⟨M,fun m hm n r hmr => (hE n m r hmr).trans_lt (hM m hm)⟩
+
+example (a : Coeff p) (ψ : CoeffPair p) (K C : ℝ)
+    (B : SourcePsiOriginalJacobianBounds hp hp1 a ψ K C) :
+    ∃ E : Coeff p, ∀ m : ℤ, E m = (sourcePsiOriginalOffDiagonalRowSup hp hp1 a ψ m:ℂ) := by
+  obtain ⟨E,_,hE,_⟩ := B.off_diagonal
+  exact ⟨E,hE⟩
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceLemma12_5Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_5 (by norm_num) (by norm_num)
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (4:ℝ≥0∞)), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus _ ⊆ W ∧ SourceLemma12_5Data (by norm_num) (by norm_num) W :=
+  sourceLemma12_5 (by norm_num) (by norm_num)
+
+end
+end SourceLemma125Checks

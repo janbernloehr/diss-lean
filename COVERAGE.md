@@ -5777,3 +5777,50 @@ The build retains 21 existing warnings; the eight new modules and seventeen
 focused public checks are warning-free. The source inventory verified
 156 candidate labels, and diff checks passed. No admitted proofs,
 additional axioms, or heartbeat overrides were introduced.
+
+## Lemma 12.5 on the original real domain
+
+`SourceLemma12_4Data.lemma12_5` proves Lemma 12.5 for the actual bounded
+root derivative of the original equation, retaining the preceding source
+domain W. `sourcePsiOriginalOmega` uses the full real source and full real
+ℓᵖ root input, with every root in its assigned original disk before any
+omitted index is chosen. This domain is open, including its infinite tail
+placement condition.
+
+Every matrix entry is real on real data, and every retained diagonal is
+nonzero. The exact contour formulas use the literal double-omitted product.
+The diagonal mean-value point belongs to the selected gap Gₘ, including
+collapsed gaps. Analyticity is proved on a neighborhood of the closed
+original disk, and root placement supplies every required separation.
+The unused root fill does not change the actual derivative.
+
+One neighborhood and constants K,C work for every omitted index n.
+The diagonal is exactly 2+Rₘ+Sₘ, with |Rₘ|≤K/|n−m| and an actual ℓᵖ
+sequence S of norm at most C; both errors vanish at the omitted coordinate.
+A common ℓᵖ row majorant controls |m−r||Qₘᵣⁿ| for every n and column r.
+The literal supremum over all off-diagonal columns and omitted equations
+is itself an ℓᵖ sequence with the same local norm bound. All central rows
+and columns are included, for every finite 1<p<∞.
+
+Twenty focused public examples check the free matrix (diagonal 2 and
+zero off-diagonal), negative and central indices, arbitrary unused-root
+fills, deleted rows and columns, bounded differentiation without reality
+or placement restrictions, original-domain openness and separation,
+collapsed-gap evaluation, local uniformity, actual supremum sequences,
+and exponents 3/2 and 4. A consequence verifies simultaneous vanishing
+of every weighted off-diagonal row at infinity at a fixed point.
+See the [Section 12 audit](coverage/SECTION_12.md).
+
+Printed p. 66 names Gₙ in its final nonvanishing sentence; the required
+interval is Gₘ. This index typo is recorded in [SOURCE_ERRATA.md](SOURCE_ERRATA.md).
+No additional mathematical assumption is imposed.
+
+Next: Lemma 12.6 for this actual original-domain Jacobian: an invertible
+diagonal plus a compact remainder. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (7,004 build jobs, the complete
+public example suite, and the axiom audit of 32,972 NLS declarations).
+The build retains 21 existing warnings. The eight new modules and twenty
+new public checks are warning-free. The source inventory verified 156
+candidate labels; all 100 local Markdown links and diff checks passed.
+No admitted proofs, additional axioms, or heartbeat overrides were added.

@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: the literal auxiliary products (2.24)–(2.25) and the exact
-asymptotic decomposition (2.26) are proved on the original source domain
-and isolating disks. One neighborhood controls every omitted index,
-including arbitrary root inputs and collisions. The actual sequence
-of suprema over all omitted equations is also locally bounded in ℓᵖ.
-Next: Lemma 12.5's Jacobian assertions on the original real domain Ωᵖ.
+Latest step: Lemma 12.5 is proved for the actual Jacobian on the original
+real domain Ωᵖ. Its entries are real, every retained diagonal is nonzero,
+and the diagonal/off-diagonal estimates are locally uniform in every
+omitted index. The full original disk family and every finite 1<p<∞ are
+retained. The actual weighted off-diagonal row suprema belong to ℓᵖ.
+Next: Lemma 12.6's invertible diagonal and compact remainder.
 [The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
 [the source clarifications](SOURCE_ERRATA.md) explain domain assumptions.
 The dissertation remains incomplete.

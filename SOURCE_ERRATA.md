@@ -1,5 +1,19 @@
 # Source discrepancies
 
+## Lemma 12.5: the nonvanishing sentence names the wrong gap
+
+Printed p. 66 (visually checked) obtains a mean-value point μ∈Gₘ and
+then says ζₘⁿ does not vanish on Gₙ. The interval needed in that argument
+is Gₘ. Every other numerator root lies in its own separated disk, so
+ζₘⁿ is nonzero on the selected gap Gₘ, including a collapsed gap.
+
+`SourceIsolatingNeighborhoods.originalZeta_ne_zero_on_gap` proves that
+statement for the literal double-omitted product on the original disks.
+`SourceLemma12_4Data.originalJacobianEntry_diagonal_meanValue` uses an
+actual μ∈Gₘ, and `.originalJacobianEntry_diagonal_ne_zero` concludes the
+printed nonzero diagonal assertion. The index correction introduces no
+new hypothesis and does not change the statement of Lemma 12.5.
+
 ## Lemma 12.4: arbitrary root inputs need not remain in the isolating disks
 
 Printed p. 64 writes σₖ∈Uₖ after (2.24), while Lemma 12.4 allows every

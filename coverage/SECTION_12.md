@@ -11,7 +11,9 @@ source domain for arbitrary root inputs, with actual ℓᵖ-valued complex
 and real analyticity and bounds locally uniform in every deleted index.
 The literal auxiliary products (2.24)–(2.25), the full original-disk
 asymptotic (2.26), and the actual equation-index supremum sequence in
-Lemma 12.4's proof are now also certified.
+Lemma 12.4's proof are now also certified. Lemma 12.5 now holds for the
+actual original-domain Jacobian, with nonzero diagonals and the full
+locally uniform diagonal/off-diagonal estimates.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -355,3 +357,69 @@ compact-slice helper, and eighteen focused public checks are warning-free.
 The source inventory verified 156 candidate labels, and diff checks
 passed. No admitted proofs, additional axioms, or heartbeat overrides
 were introduced.
+
+## Lemma 12.5 on the original real domain
+
+`SourceLemma12_4Data.lemma12_5` proves Lemma 12.5 for the actual bounded
+root derivative of the original equation, retaining the preceding source
+domain W. `sourcePsiOriginalOmega` uses the full real source and full real
+ℓᵖ root input, with every root in its assigned original disk before any
+omitted index is chosen. This domain is open, including its infinite tail
+placement condition.
+
+Every matrix entry is real on real data, and every retained diagonal is
+nonzero. The exact contour formulas use the literal double-omitted product.
+The diagonal mean-value point belongs to the selected gap Gₘ, including
+collapsed gaps. Analyticity is proved on a neighborhood of the closed
+original disk, and root placement supplies every required separation.
+The unused root fill does not change the actual derivative.
+
+One neighborhood and constants K,C work for every omitted index n.
+The diagonal is exactly 2+Rₘ+Sₘ, with |Rₘ|≤K/|n−m| and an actual ℓᵖ
+sequence S of norm at most C; both errors vanish at the omitted coordinate.
+A common ℓᵖ row majorant controls |m−r||Qₘᵣⁿ| for every n and column r.
+The literal supremum over all off-diagonal columns and omitted equations
+is itself an ℓᵖ sequence with the same local norm bound. All central rows
+and columns are included, for every finite 1<p<∞.
+
+Twenty focused public examples check the free matrix (diagonal 2 and
+zero off-diagonal), negative and central indices, arbitrary unused-root
+fills, deleted rows and columns, bounded differentiation without reality
+or placement restrictions, original-domain openness and separation,
+collapsed-gap evaluation, local uniformity, actual supremum sequences,
+and exponents 3/2 and 4. A consequence verifies simultaneous vanishing
+of every weighted off-diagonal row at infinity at a fixed point.
+See the [Section 12 audit](SECTION_12.md).
+
+Printed p. 66 names Gₙ in its final nonvanishing sentence; the required
+interval is Gₘ. This index typo is recorded in [SOURCE_ERRATA.md](../SOURCE_ERRATA.md).
+No additional mathematical assumption is imposed.
+
+Next: Lemma 12.6 for this actual original-domain Jacobian: an invertible
+diagonal plus a compact remainder. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (7,004 build jobs, the complete
+public example suite, and the axiom audit of 32,972 NLS declarations).
+The build retains 21 existing warnings. The eight new modules and twenty
+new public checks are warning-free. The source inventory verified 156
+candidate labels; all 100 local Markdown links and diff checks passed.
+No admitted proofs, additional axioms, or heartbeat overrides were added.
+
+| Assertion | Public API |
+| --- | --- |
+| Actual bounded derivative and directional entries | `SourceLemma12_4Data.originalRootJacobian_hasFDerivAt`, `.originalJacobianEntry_hasDerivAt` |
+| Full original Ωᵖ is open | `SourceIsolatingNeighborhoods.isOpen_originalOmega` |
+| Actual entries agree with original contour integrals | `SourceLemma12_4Data.originalJacobianEntry_contour`, `.originalJacobianEntry_diagonal_contour` |
+| Literal ζ is analytic near the closed selected disk | `SourceCorollary10_6Data.originalZeta_analyticOnNhd` |
+| Nonzero product on the selected gap | `SourceIsolatingNeighborhoods.originalZeta_ne_zero_on_gap` |
+| Diagonal mean value and nonvanishing | `SourceLemma12_4Data.originalJacobianEntry_diagonal_meanValue`, `.originalJacobianEntry_diagonal_ne_zero` |
+| Exact 2+R+S diagonal with uniform bounds | `SourceLemma12_4Data.originalJacobian_diagonal_decomposition` |
+| Common off-diagonal row majorant | `SourceLemma12_4Data.originalJacobian_offDiagonal_commonMajorant` |
+| Literal weighted row supremum in ℓᵖ | `SourceLemma12_4Data.originalJacobian_offDiagonal_rowSup` |
+| Source statement on the retained W | `SourceLemma12_4Data.lemma12_5`, `sourceLemma12_5` |
+
+The eight new modules are `SourcePsiOriginalJacobian`,
+`SourcePsiOriginalOmega`, `SourcePsiOriginalJacobianContour`,
+`SourcePsiOriginalZetaRegular`, `SourcePsiOriginalJacobianNonzero`,
+`SourcePsiOriginalJacobianDiagonal`, `SourcePsiOriginalJacobianOffDiagonal`,
+and `SourceLemma12_5`, under `NLS/ZakharovShabat/`.
