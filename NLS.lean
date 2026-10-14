@@ -3494,3 +3494,8 @@ import NLS.ComplexAnalysis.ConnectedSetInBall
 import NLS.ZakharovShabat.SourcePeriodicSegmentComplexStability
 import NLS.ZakharovShabat.SourceActionContourFamily
 import NLS.ZakharovShabat.SourceSection11Contours
+import NLS.ComplexAnalysis.PiecewiseContourPeriod
+import NLS.ZakharovShabat.SourceIndexedAction
+import NLS.ZakharovShabat.SourceActionPiecewiseContour
+import NLS.ZakharovShabat.SourceIndexedActionAnalytic
+import NLS.ZakharovShabat.SourceEquation2_16

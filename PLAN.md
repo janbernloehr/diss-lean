@@ -1,6 +1,44 @@
 # Implementation plan
 
-## Current milestone: Section 11 simultaneous action contours
+## Current milestone: equation (2.16), contour-independent indexed actions
+
+Five modules define one indexed action on the unchanged common source
+domain for every finite p>1. Its value is the literal 1/π integral of
+λΔ′/canonicalRoot on every admissible counterclockwise finite piecewise C¹
+circuit in every original isolating disk family. Circuits may have corners;
+neither a supplied homotopy nor nesting of the compared disks is required.
+
+The proof first subtracts a reciprocal pole with coefficient equal to the
+circle period divided by 2πi. The remainder has a primitive on the entire
+disk minus its selected gap. Every contour integral therefore equals the
+circle period times its winding integral. Comparing original circles from
+different real-centered disk families then gives a single choice-independent
+`sourceIndexedAction`. The simultaneous inner circles from the preceding
+step compute this same function on their common source neighborhood.
+
+The indexed action is analytic on all of W and agrees with the existing
+`sourceRealAction` on every real source. Hence it is real and nonnegative
+there, and zero exactly when the corresponding gap is zero. It also agrees
+with `sourceComplexAction` on a complex neighborhood of every real point
+of W, and throughout any connected overlap containing a real point. No
+containment of W in the earlier complex chart domain is assumed.
+
+`SourceSection11ContourData.defineActions` preserves W and the full
+preceding package. `sourceEquation2_16` supplies the public common-domain
+statement, including the literal circuit formula, analyticity and the
+bridges to existing actions. Eleven focused public checks cover arbitrary
+winding, distinct isolating families, the central circuit formula, retained
+W, simultaneous circles, nonzero real actions, complex germ and overlap
+agreement, a nonzero repeated-winding integral, and p=3/2.
+
+Next: the exact gradient formula (2.17) in Lemma 11.1 on the same W,
+including the complex collapsed-gap consequence used in its proof.
+The full lemma and dissertation remain incomplete. See the updated
+[Section 11 audit](coverage/SECTION_11.md).
+
+Validation: `./scripts/check.sh` passed (6,936 build jobs, the complete public example suite, and the axiom audit of 32,351 NLS declarations). The build retains 21 existing warnings; the five new modules and eleven focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: Section 11 simultaneous action contours
 
 Four modules prove the contour setup at the start of Section 11 on the
 unchanged common source domain, for every finite p>1. Around any complex

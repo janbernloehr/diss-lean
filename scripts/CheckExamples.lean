@@ -48908,3 +48908,107 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnect
 
 end
 end SourceSection11ContourChecks
+
+namespace SourceEquation216Checks
+open NLS NLS.ZakharovShabat NLS.ComplexAnalysis Set Metric Complex Filter Topology
+open scoped ENNReal
+noncomputable section
+
+-- Equation (2.16) extends the same W and retains full Lemma 10.11.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceSection11ContourData hp hp1 W) (hW : IsOpen W) :
+    SourceEquation2_16Data hp hp1 W ∧ SourceLemma10_11Data hp hp1 W :=
+  ⟨h.defineActions hW,(h.defineActions hW).previous.previous⟩
+
+-- General winding, at an arbitrary complex source and with collapsed gaps allowed.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (n : ℤ) (Γ : PiecewiseC1Loop) (hin : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n)) :
+    sourceActionContour hp hp1 ψ Γ = sourceIndexedAction hp hp1 n ψ * Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) :=
+  hD.actionContour_eq_mul_winding ψ hψ n Γ hin
+
+-- Circuits can lie in different original disk families; no nesting or homotopy is supplied.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V U : Set (CoeffPair p)} {D E : ℤ → Set ℂ} {c d : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (hE : SourceIsolatingNeighborhoods hp hp1 U E d)
+    (ψ : CoeffPair p) (hψV : ψ ∈ V) (hψU : ψ ∈ U) (n : ℤ)
+    (Γ Λ : PiecewiseC1Loop)
+    (hΓ : Γ.Inside (D n \ sourcePeriodicSegment hp hp1 ψ n))
+    (hΛ : Λ.Inside (E n \ sourcePeriodicSegment hp hp1 ψ n))
+    (hwΓ : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = 1)
+    (hwΛ : Λ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) = 1) :
+    sourceActionContour hp hp1 ψ Γ = sourceActionContour hp hp1 ψ Λ :=
+  sourceActionContour_eq_of_original_circuits hD hE ψ hψV hψU n Γ Λ hΓ hΛ hwΓ hwΛ
+
+-- The central action is literally 1/π times the weighted quotient integral.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W V : Set (CoeffPair p)} (h : SourceEquation2_16Data hp hp1 W)
+    {D : ℤ → Set ℂ} {c : ℝ} (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψW : ψ ∈ W) (hψV : ψ ∈ V) (Γ : PiecewiseC1Loop)
+    (hin : Γ.Inside (D 0 \ sourcePeriodicSegment hp hp1 ψ 0))
+    (hw : Γ.windingIntegral
+      (canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0) = 1) :
+    sourceIndexedAction hp hp1 0 ψ = (Real.pi : ℂ)⁻¹*Γ.integral
+      (fun z => z*deriv (canonicalDiscriminant hp (periodOnePotential ψ)) z / sourceCanonicalRoot hp hp1 ψ z) :=
+  h.circuit hD ψ hψW hψV 0 Γ hin hw
+
+-- The whole retained W, not just a smaller real-base chart, is the analytic domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceEquation2_16Data hp hp1 W) (n : ℤ) :
+    AnalyticOnNhd ℂ (sourceIndexedAction hp hp1 n) W := h.analytic n
+
+-- All simultaneously chosen inner circles compute the same indexed function.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (C : SourceActionContourFamily hp hp1 V D) (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) (n : ℤ) :
+    sourceIndexedAction hp hp1 n ψ = sourceActionCircle hp hp1 ψ (C.center n : ℂ) (C.radius n) :=
+  C.indexedAction_eq_circle hD ψ hψ n
+
+-- An open real gap gives a nonzero actual indexed action; the definition is not a default zero.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (n : ℤ) (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ))
+    (hg : sourcePeriodicGapDisplacement hp hp1 φ n ≠ 0) :
+    sourceIndexedAction hp hp1 n φ ≠ 0 :=
+  fun hz => hg ((sourceIndexedAction_nonneg_and_eq_zero_iff_gap_zero hp hp1 n φ hφ).2.2.mp hz)
+
+-- The older complex action and the new indexed one agree on an actual complex neighborhood.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceEquation2_16Data hp hp1 W) (n : ℤ)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (hφW : φ ∈ W) :
+    ∃ U : Set (CoeffPair p), IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∩ sourceComplexActionDomain hp hp1 n ∧
+      EqOn (sourceIndexedAction hp hp1 n) (sourceComplexAction hp hp1 n) U :=
+  h.complex_germs n φ hφ hφW
+
+-- Connected overlap propagation does not assume W lies inside the older chart domain.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceEquation2_16Data hp hp1 W) (hW : IsOpen W) (n : ℤ)
+    (U : Set (CoeffPair p)) (hU : IsPreconnected U) (hUW : U ⊆ W)
+    (hUD : U ⊆ sourceComplexActionDomain hp hp1 n)
+    (φ : CoeffPair p) (hφ : IsRealType (CoeffPair.toMax p φ)) (hφU : φ ∈ U) :
+    EqOn (sourceIndexedAction hp hp1 n) (sourceComplexAction hp hp1 n) U :=
+  h.previous.indexedAction_eq_complexAction_on_overlap hW n U hU hUW hUD φ hφ hφU
+
+-- Literal path integration detects repeated winding: k turns of 1/z give k·2πi.
+example (k : ℕ) :
+    (PiecewiseC1Loop.repeatPath k (circlePath (0 : ℂ) 1)
+      ((circlePath_contDiffOn (0 : ℂ) 1).of_le (by norm_num))).integral (fun z => z⁻¹) =
+        (k : ℂ)*(2*Real.pi*Complex.I) := by
+  rw [PiecewiseC1Loop.integral_repeatPath,curveIntegral_circlePath]
+  have hpole := circleIntegral.integral_sub_inv_of_mem_ball
+    (show (0 : ℂ) ∈ ball (0 : ℂ) 1 from mem_ball_self (by norm_num))
+  simpa only [sub_zero] using congrArg ((k : ℂ)*·) hpole
+
+local instance source216ThreeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceEquation2_16Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceEquation2_16 (by norm_num) (by norm_num)
+
+end
+end SourceEquation216Checks

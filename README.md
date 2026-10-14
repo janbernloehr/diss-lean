@@ -5,13 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves the simultaneous action-contour setup at the
-start of Section 11 on the unchanged common source domain. One neighborhood
-of any complex source supports every signed index, with positively oriented
-circles and fixed open annuli inside the original isolating disks. The
-literal action integrand is jointly analytic on those annuli, and the
-chosen circle actions are analytic on the common neighborhood.
-Next: general circuit independence in equation (2.16), then Lemma 11.1.
+Latest step: equation (2.16) now defines one indexed action on the unchanged
+common source domain. Lean proves that every admissible counterclockwise
+piecewise C¹ circuit in any original isolating family gives the same literal
+integral. The action is analytic throughout W, agrees with the existing real
+action, and agrees with the earlier complex action near every real source.
+Next: the exact gradient formula (2.17) in Lemma 11.1.
 [The Section 11 audit](coverage/SECTION_11.md) records the precise scope;
 [Section 10](coverage/SECTION_10.md) retains the preceding results.
 The dissertation remains incomplete.
