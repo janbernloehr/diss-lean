@@ -1,6 +1,53 @@
 # Implementation status
 
-## Current milestone: Lemma 6.9 in the original source space
+## Current milestone: Theorem 7.1 on one original action-angle neighborhood
+
+`SourceActionCommonNeighborhood.lean` proves that every scalar action is
+complex and real analytic on one open neighborhood of the entire real
+source locus. The argument evaluates the actual analytic rectangular
+sequence map and its action-radius identity. It works for every finite
+p>1, including 1<p<2, without an extra indexed action-domain condition.
+
+`SourceRealThetaPhase.lean` fixes the real angle orientation by dividing
+the signed eta coordinate by the canonical gap and including the beta
+correction. Its unit phase defines an actual `Real.Angle`, a class modulo
+2π. Canonical half-gap charts identify that class with their real theta
+representative. Squaring the phase gives the existing complex analytic
+phase modulo π.
+
+`SourceThetaSpectralPhase.lean` proves that this oriented phase is the
+exponential of the literal left-anchored spectral integral plus the beta
+correction. The result includes periodic Dirichlet terminals. It retains
+the actual/model integrability and admissible-path conditions; it does not
+assert integrability for arbitrary paths.
+
+`SourceTheorem7_1.lean` constructs `SourceTheorem7_1Data` for every finite
+p>1. One original neighborhood supports all action extensions and every
+open-gap angle's analytic phase and local representatives. The local
+representatives are real on real input, stay in that same neighborhood,
+and have the actual logarithmic angle differential. At a real base point,
+the representative agrees with the real angle modulo 2π. The actions
+retain their real nonnegative values and exact closed-gap zero criterion.
+
+All three canonical relations use the actual regular source cotangents.
+Their Fourier pairings converge absolutely throughout the full exponent
+range. Only the angle gap must be open for the mixed bracket; both angle
+gaps must be open for angle-angle commutation. Action-action commutation
+also covers collapsed gaps. No canonical values or finite-source spectral
+computations are assumptions of the constructed theorem.
+
+Public checks exercise the common neighborhood at p=3/2, the doubled real
+angle phase, local derivative agreement, precise bracket domains, literal
+absolutely convergent Fourier formulas, and the opposite signs of the two
+periodic endpoints when the corrections vanish.
+
+Next: Section 8's Lemma 8.1, auditing the source discriminant products,
+analytic extension, and uniform exterior asymptotics. The dissertation
+remains incomplete.
+
+Validation: `./scripts/check.sh` passed: 6826 build jobs, the combined public examples, and the axiom audit of 31030 NLS declarations. The 21 existing warnings are unchanged; all four new modules and both focused public probes compiled warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed.
+
+## Previous milestone: Lemma 6.9 in the original source space
 
 `SourceResonantDeterminant.lean` forms the determinant from the actual original
 analytic coefficients and identifies it with both basis orders of the source

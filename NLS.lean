@@ -3385,3 +3385,7 @@ import NLS.ZakharovShabat.SourceLemma6_8ComponentCounterexample
 import NLS.ZakharovShabat.SourceResonantDeterminant
 import NLS.ZakharovShabat.SourceLemma6_9
 import NLS.ZakharovShabat.SourceLemma6_9Counterexample
+import NLS.ZakharovShabat.SourceActionCommonNeighborhood
+import NLS.ZakharovShabat.SourceRealThetaPhase
+import NLS.ZakharovShabat.SourceThetaSpectralPhase
+import NLS.ZakharovShabat.SourceTheorem7_1

@@ -5,13 +5,13 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 6.9 now connects the actual original determinant,
-its two roots counted with multiplicity, the full-strip factor-six gap bound,
-and the corrected displacement estimate on one original neighborhood.
-The printed displacement budget is formally refuted for any choice of these
-counted root labels. [The Section 6 audit](coverage/SECTION_6.md) records
-both the valid statements and the correction's exact scope.
-Next is Chapter 2's Theorem 7.1 and its action-angle assertions.
+Latest milestone: Theorem 7.1 now has one original neighborhood for all
+analytic action extensions and open-gap angle charts, for every finite p>1.
+The real angles are actual classes modulo 2π, compatible with the complex
+analytic phase modulo π and the literal spectral integral. All three
+canonical bracket identities use the actual regular source cotangents.
+[The Section 7 audit](coverage/SECTION_7.md) records the exact scope.
+Next is Lemma 8.1's discriminant products and exterior asymptotics.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

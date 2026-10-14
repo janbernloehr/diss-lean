@@ -45998,3 +45998,110 @@ example :
 
 end
 end SourceLemma69Checks
+
+namespace SourceTheorem71Checks
+open NLS NLS.ZakharovShabat NLS.Poisson
+open scoped ENNReal
+noncomputable section
+
+private abbrev p71 : ℝ≥0∞ := ENNReal.ofReal (3/2)
+local instance factSource71ThreeHalf : Fact (1 ≤ p71) := ⟨by norm_num [p71, ENNReal.one_le_ofReal, ENNReal.one_lt_ofReal]⟩
+
+-- Below p=2, one open original neighborhood serves every scalar action.
+example : ∃ W : Set (CoeffPair p71), IsOpen W ∧ realTypeSourceLocus p71 ⊆ W ∧
+    ∀ n : ℤ, AnalyticOnNhd ℂ (sourceComplexAction (by norm_num [p71, ENNReal.one_le_ofReal, ENNReal.one_lt_ofReal]) (by norm_num [p71, ENNReal.one_le_ofReal, ENNReal.one_lt_ofReal]) n) W ∧
+      AnalyticOnNhd ℝ (sourceComplexAction (by norm_num [p71, ENNReal.one_le_ofReal, ENNReal.one_lt_ofReal]) (by norm_num [p71, ENNReal.one_le_ofReal, ENNReal.one_lt_ofReal]) n) W := by
+  obtain ⟨W₀,B,V,W,s,D⟩ := sourceTheorem7_1 (p := p71) (by norm_num [p71, ENNReal.one_le_ofReal, ENNReal.one_lt_ofReal]) (by norm_num [p71, ENNReal.one_le_ofReal, ENNReal.one_lt_ofReal])
+  exact ⟨W,D.source_open,D.real_subset,D.actions_analytic⟩
+
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+  {W₀ B V W : Set (CoeffPair p)} {s : (k : ℤ) → CoeffPair p → DeletedCoeff p k}
+  (D : SourceTheorem7_1Data hp hp1 W₀ B V W s)
+
+-- The real angle is a class modulo 2pi, whose doubled phase is the analytic modulo-pi phase.
+example (n : ℤ) (φ : realTypeSourceLocus p)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    Complex.exp (2*Complex.I*((sourceAngularThetaRealAngle hp hp1 n s φ.val).toReal : ℂ)) =
+      sourceAngularThetaAnalyticPhase hp hp1 n s φ.val := by
+  have h := D.real_angle_phase n φ hg
+  rw [← h.2.1,← h.2.2,← Complex.exp_nat_mul]
+  congr 1
+  push_cast
+  ring
+
+-- Local representatives stay inside the same W and recover the actual angle differential.
+example (n : ℤ) (φ : CoeffPair p) (hφ : φ ∈ W)
+    (hg : canonicalPeriodicGap hp hp1 (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0) :
+    ∃ U : Set (CoeffPair p), ∃ θ : CoeffPair p → ℂ, IsOpen U ∧ φ ∈ U ∧ U ⊆ W ∧
+      AnalyticOnNhd ℂ θ U ∧ ∀ ψ ∈ U, fderiv ℂ θ ψ = sourceAngularThetaDifferential hp hp1 n s ψ := by
+  obtain ⟨U,θ,ho,hm,hs,ha,_,hdata,_⟩ := D.local_angles n φ hφ hg
+  exact ⟨U,θ,ho,hm,hs,ha,fun ψ hψ => (hdata ψ hψ).2.2.1⟩
+
+-- An action gap may be collapsed in the mixed identity; only the angle's gap is required open.
+example (n m : ℤ) (φ : realTypeSourceLocus p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    (D.angular.thetaRegularCotangent n φ hn).bivector (sourceActionRegularCotangent hp hp1 m φ) =
+      if n = m then 1 else 0 := (D.canonical n m φ).2.2 hn
+
+-- These are actual absolutely convergent Fourier brackets, including below two.
+example (n m : ℤ) (φ : realTypeSourceLocus p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0) :
+    let L := sourceAngularThetaDifferential hp hp1 n s φ.val
+    let M := fderiv ℂ (sourceComplexAction hp hp1 m) φ.val
+    Summable (fun k : ℤ => ‖L (CoeffPair.inlCLM (lp.single p k 1)) * M (CoeffPair.inrCLM (lp.single p (-k) 1)) -
+      L (CoeffPair.inrCLM (lp.single p k 1)) * M (CoeffPair.inlCLM (lp.single p (-k) 1))‖) ∧
+    -Complex.I*(∑' k : ℤ, (L (CoeffPair.inlCLM (lp.single p k 1)) * M (CoeffPair.inrCLM (lp.single p (-k) 1)) -
+      L (CoeffPair.inrCLM (lp.single p k 1)) * M (CoeffPair.inlCLM (lp.single p (-k) 1)))) =
+        if n = m then 1 else 0 :=
+  ⟨D.angular.thetaAction_pairing_summable_norm n m φ hn,D.angular.thetaAction_fourier_bracket_eq_kronecker n m φ hn⟩
+
+-- Both open-gap conditions are present for angle-angle commutation.
+example (n m : ℤ) (φ : realTypeSourceLocus p)
+    (hn : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) n ≠ 0)
+    (hm : canonicalPeriodicGap hp hp1 (periodOnePotential φ.val) (periodOnePotential_mem φ.val) m ≠ 0) :
+    (D.angular.thetaRegularCotangent n φ hn).bivector (D.angular.thetaRegularCotangent m φ hm) = 0 :=
+  (D.canonical n m φ).2.1 hn hm
+
+end
+end
+end SourceTheorem71Checks
+
+namespace SourceTheorem71EndpointChecks
+open NLS NLS.ZakharovShabat
+noncomputable section
+-- With no correction, the left endpoint has phase +1 and the right endpoint phase -1.
+example (φ : CoeffPair 2) (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k)
+    (hg : canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0)
+    (hμ : canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n =
+      canonicalPeriodicLeft (by norm_num) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem φ) n)
+    (hw : sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ
+      (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n) = 0)
+    (hR : sourceAngularEtaRemainder (by norm_num) (by norm_num) n s φ = 0)
+    (hβ : sourceAngularBetaCorrection (by norm_num) (by norm_num) n s φ = 0) :
+    sourceAngularThetaRealPhase (by norm_num) (by norm_num) n s φ = 1 := by
+  have hS : sourceDirichletEtaSineNumerator (by norm_num) (by norm_num) n φ = 0 := by
+    simp only [sourceDirichletEtaSineNumerator,hw,zero_div]
+  simp only [sourceAngularThetaRealPhase,sourceGapWeightedEtaCoordinate,
+    hS,mul_zero,add_zero,hR,hβ,Complex.exp_zero,mul_one,hμ]
+  apply (div_eq_one_iff_eq hg).mpr
+  dsimp only [canonicalPeriodicMidpoint,canonicalPeriodicGap]
+  ring
+example (φ : CoeffPair 2) (n : ℤ) (s : (k : ℤ) → CoeffPair 2 → DeletedCoeff 2 k)
+    (hg : canonicalPeriodicGap (by norm_num) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem φ) n ≠ 0)
+    (hμ : canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n =
+      canonicalPeriodicRight (by norm_num) (by norm_num) (periodOnePotential φ) (periodOnePotential_mem φ) n)
+    (hw : sourceAntiDiscriminantCandidate (by norm_num) (by norm_num) φ
+      (canonicalPeriodOneBoundaryRoots (by norm_num) (by norm_num) .dirichlet φ n) = 0)
+    (hR : sourceAngularEtaRemainder (by norm_num) (by norm_num) n s φ = 0)
+    (hβ : sourceAngularBetaCorrection (by norm_num) (by norm_num) n s φ = 0) :
+    sourceAngularThetaRealPhase (by norm_num) (by norm_num) n s φ = -1 := by
+  have hS : sourceDirichletEtaSineNumerator (by norm_num) (by norm_num) n φ = 0 := by
+    simp only [sourceDirichletEtaSineNumerator,hw,zero_div]
+  simp only [sourceAngularThetaRealPhase,sourceGapWeightedEtaCoordinate,
+    hS,mul_zero,add_zero,hR,hβ,Complex.exp_zero,mul_one,hμ]
+  apply (div_eq_iff hg).mpr
+  dsimp only [canonicalPeriodicMidpoint,canonicalPeriodicGap]
+  ring
+end
+end SourceTheorem71EndpointChecks

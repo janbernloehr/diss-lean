@@ -509,8 +509,8 @@ Finitely many central labels remain unspecified by this high-frequency result.
 
 ## Remaining source assertions
 
-Continue with Chapter 2's Theorem 7.1, auditing the existing action-angle
-construction against its common-neighborhood and Poisson-bracket assertions.
+Chapter 2's Theorem 7.1 is now audited in [Section 7](SECTION_7.md).
+The next source step is Lemma 8.1's discriminant assertions.
 Sharper ceiling-cutoff versions of the corrected Propositions 6.1/6.3 and
 Lemma 6.9 estimates remain unproved. Existing later results and the
 candidate-label inventory do not certify the dissertation complete.
