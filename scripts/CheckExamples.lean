@@ -47668,3 +47668,126 @@ example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))), IsOpen W ∧ IsC
   sourceLemma10_7 (by simp) (by norm_num [ENNReal.one_lt_ofReal])
 end
 end SourceLemma107Checks
+
+namespace SourceLemma108EstimateChecks
+noncomputable section
+open NLS NLS.ZakharovShabat Set Metric Complex Filter Topology
+open scoped ENNReal
+section
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+example {W : Set (CoeffPair p)} (h : SourceLemma10_7Data hp hp1 W) :
+    SourceLemma10_8Estimates hp hp1 W := h.quotientEstimates
+
+-- The original nonempty disks are used even though the tail adapter has empty central disks.
+example {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (hD : SourceIsolatingNeighborhoods hp hp1 V D c)
+    (ψ : CoeffPair p) (hψ : ψ ∈ V) :
+    closure (D (-1)) ⊆ sourceStandardRootOmittedDomain hp hp1 ψ (-1) ∧
+      IsCompact (closure (D (-1))) :=
+  ⟨hD.closedDisc_subset_omittedDomain ψ hψ (-1),hD.isCompact_closedDisc (-1)⟩
+
+example (N : ℕ) : sourceIsolatingDisc hp hp1 (0 : CoeffPair p) N 0 0 = ∅ := by
+  simp [sourceIsolatingDisc_zero_margin]
+
+variable {U : Set (Coeff p × CoeffPair p)} {D : ℤ → Set ℂ} {c R H M : ℝ} {N K : ℕ}
+variable (h : SourceQuotientDiscEstimates hp hp1 U D c R H M N K)
+
+example (t : Coeff p × CoeffPair p) (ht : t ∈ U) (n : ℤ) (z : ℂ) (hz : z ∈ D n) :
+    ‖sourceSingleRootQuotientJointProduct hp hp1 n (z,t)-1‖ ≤ sourceQuotientDiscSup hp hp1 D t n ∧
+    (∏' m : {m : ℤ // m ≠ n}, (displacedRoots t.1 m-z)/sourceStandardRoot hp hp1 t.2 m z) =
+      sourceSingleRootQuotientJointProduct hp hp1 n (z,t) :=
+  ⟨h.norm_le_sup t ht n z hz,h.product_eq t ht n z hz⟩
+
+-- This is the least upper bound of the actual nonempty disk image, not an arbitrary majorant.
+example (t : Coeff p × CoeffPair p) (ht : t ∈ U) (n : ℤ) :
+    IsLUB ((fun z => ‖sourceSingleRootQuotientJointProduct hp hp1 n (z,t)-1‖) '' D n)
+      (sourceQuotientDiscSup hp hp1 D t n) :=
+  isLUB_csSup ((h.nonempty n).image _) (h.sup_bddAbove t ht n)
+
+example (h0 : (0,0) ∈ U) (n : ℤ) : sourceQuotientDiscSup hp hp1 D (0,0) n = 0 := h.free_sup_zero h0 n
+
+example {q : ℝ≥0∞} [Fact (1 ≤ q)] (hq1 : 1 < q) (hq : q ≠ ⊤)
+    (t : Coeff p × CoeffPair p) (ht : t ∈ U) (α : Coeff q)
+    (hα : ∀ m : ℤ, displacedRoots t.1 m-
+      canonicalPeriodicMidpoint hp hp1 (periodOnePotential t.2) (periodOnePotential_mem t.2) m = α m) :
+    ∃ A : Coeff q, ∃ B : Coeff (ENNReal.ofReal (p.toReal/2)),
+      ∀ n : ℤ, (sourceQuotientDiscSup hp hp1 D t n : ℂ) = A n+B n := by
+  obtain ⟨_,_,_,_,hb⟩ := h.supDecomposition hq1 hq ‖α‖ (norm_nonneg _)
+  obtain ⟨A,B,he,_,_⟩ := hb (t,α) ⟨ht,le_rfl,hα⟩
+  exact ⟨A,B,he⟩
+
+-- One endpoint remainder is shared by both projections, rather than chosen anew for each exponent.
+example (t : Coeff p × CoeffPair p) (ht : t ∈ U) (α : Coeff 1)
+    (hα : ∀ m : ℤ, displacedRoots t.1 m-
+      canonicalPeriodicMidpoint hp hp1 (periodOnePotential t.2) (periodOnePotential_mem t.2) m = α m) :
+    ∃ A : Coeff (ENNReal.ofReal (p.toReal/2)), ∃ B : CoeffOnePlus,
+      (∀ n : ℤ, (sourceQuotientDiscSup hp hp1 D t n : ℂ) = A n+B.1 n) ∧
+      ∀ n : ℤ, CoeffOnePlus.toCoeff 2 (by norm_num) (by norm_num) B n =
+        CoeffOnePlus.toCoeff 3 (by norm_num) (by norm_num) B n := by
+  obtain ⟨A,B,he,_,_⟩ := h.supDecomposition_one ‖α‖ (norm_nonneg _)
+  exact ⟨A (t,α),B (t,α),he (t,α) ⟨ht,le_rfl,hα⟩,fun _ => rfl⟩
+
+example (a : Coeff p) :
+    ∃ Lp Lg : ℝ, 0 ≤ Lp ∧ 0 ≤ Lg ∧ ∀ t ∈ U ∩ (ball a 1 ×ˢ univ),
+      ∃ A : Coeff ⊤, ∃ B : Coeff (ENNReal.ofReal (p.toReal/2)),
+        (∀ n : ℤ, (sourceQuotientDiscSup hp hp1 D t n : ℂ) = A n+B n) ∧
+          ‖A‖ ≤ Lp ∧ ‖B‖ ≤ Lg := by
+  obtain ⟨Lp,Lg,hLp,hLg,hb⟩ := h.supDecomposition_originalTopology a
+  exact ⟨Lp,Lg,hLp,hLg,hb ⊤ le_top⟩
+
+example (ψ : CoeffPair p) (n : ℤ) :
+    sourceQuotientDiscSup hp hp1 D (0,ψ) n =
+      sSup ((fun z => ‖freeSineQuotient n z /
+        sourceStandardRootOmittedJointProduct hp hp1 n (z,ψ)-1‖) '' D n) :=
+  sourceQuotientDiscSup_free_eq hp hp1 D ψ n
+
+example : freeSineQuotient (-1) (-(Real.pi:ℂ)) = -1 := by
+  simpa using freeSineQuotient_center (-1)
+
+-- Open neighborhoods of zero really do contain non-real sources.
+private theorem exists_nonreal_in_open {W : Set (CoeffPair p)} (hW : IsOpen W) (h0 : 0 ∈ W) :
+    ∃ ψ ∈ W, ¬ IsRealType (CoeffPair.toMax p ψ) := by
+  let E : ℂ →L[ℂ] CoeffPair p := (CoeffPair.toMax p).symm.toContinuousLinearMap.comp
+    ((lp.singleContinuousLinearMap ℂ (fun _ : ℤ => ℂ) p 0).prod 0)
+  let f : ℝ → CoeffPair p := fun t => E (t:ℂ)
+  have hf : Continuous f := E.continuous.comp Complex.continuous_ofReal
+  have ho : IsOpen (f ⁻¹' W) := hW.preimage hf
+  have hz : (0:ℝ) ∈ f ⁻¹' W := by simpa [f] using h0
+  obtain ⟨ε,hε,hsub⟩ := Metric.mem_nhds_iff.mp (ho.mem_nhds hz)
+  have ht : ε/2 ∈ ball (0:ℝ) ε := by
+    rw [mem_ball,Real.dist_eq,sub_zero,abs_of_pos (by positivity : 0 < ε/2)]
+    linarith
+  refine ⟨f (ε/2),hsub ht,?_⟩
+  intro hr
+  have he := hr 0
+  change (0 : Coeff p) 0 = (starRingEnd ℂ) ((lp.single p 0 ((ε/2:ℝ):ℂ) : Coeff p) (-0)) at he
+  have hzero : (ε/2:ℝ) = 0 := by simpa using he.symm
+  linarith
+
+example : ∃ W : Set (CoeffPair p), SourceLemma10_8Estimates hp hp1 W ∧
+    ∃ ψ ∈ W, ¬ IsRealType (CoeffPair.toMax p ψ) := by
+  obtain ⟨W,ho,_,hr,h⟩ := sourceLemma10_8_estimates hp hp1
+  exact ⟨W,h,exists_nonreal_in_open ho (hr (by simp [realTypeSourceLocus]))⟩
+
+end
+local instance pThreeHalvesFact : Fact (1 ≤ ENNReal.ofReal (3/2 : ℝ)) :=
+  ⟨by norm_num [ENNReal.one_le_ofReal]⟩
+
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2 : ℝ))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2 : ℝ)) ⊆ W ∧
+    SourceLemma10_8Estimates (by simp) (by norm_num [ENNReal.one_lt_ofReal]) W :=
+  sourceLemma10_8_estimates (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+
+-- A genuine collision forces error at least one in a central selected disk at p=3/2.
+example : ∃ a : Coeff (ENNReal.ofReal (3/2 : ℝ)),
+    displacedRoots a 0 = -(Real.pi:ℂ) ∧ displacedRoots a (-1) = -(Real.pi:ℂ) ∧
+    ∃ U : Set (Coeff (ENNReal.ofReal (3/2 : ℝ)) × CoeffPair (ENNReal.ofReal (3/2 : ℝ))),
+      IsOpen U ∧ (a,0) ∈ U ∧ ∃ D : ℤ → Set ℂ, ∃ c R H M : ℝ, ∃ N K : ℕ,
+        SourceQuotientDiscEstimates (by simp) (by norm_num [ENNReal.one_lt_ofReal]) U D c R H M N K ∧
+        1 ≤ K ∧ -(Real.pi:ℂ) ∈ D (-1) ∧
+          1 ≤ sourceQuotientDiscSup (by simp) (by norm_num [ENNReal.one_lt_ofReal]) D (a,0) (-1) :=
+  exists_sourceQuotientDiscSup_collision (by simp) (by norm_num [ENNReal.one_lt_ofReal])
+
+end
+end SourceLemma108EstimateChecks

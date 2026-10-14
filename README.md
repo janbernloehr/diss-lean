@@ -5,13 +5,14 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest milestone: Lemma 10.7 proves the canonical root's analytic domains,
-locally uniform product convergence and continuous opposite boundary values
-on every closed gap. The same source domain and isolating disks are retained.
-Collapsed gaps give simple zeros of the analytic continuation; the exact
-free normalization and Figure 2.4 signs are checked, including negative
-indices. [The Section 10 audit](coverage/SECTION_10.md) records the scope
-and boundary conventions. Next is Lemma 10.8's quotient-product estimate.
+Latest step: Lemma 10.8 now has exact quotient-supremum decompositions
+on every original isolating disk, including the finite central disks,
+for every source in the common complex domain. The ℓ(1+) endpoint uses
+a single sequence for all projection exponents. Local uniformity in the
+original root topology is proved for q≥p, including infinity. The printed
+q<p uniformity and the free-sine display’s general q remain under audit.
+[The Section 10 audit](coverage/SECTION_10.md) records the proved scope
+and the remaining work.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),
 and [source discrepancies and unresolved bounds](SOURCE_ERRATA.md).

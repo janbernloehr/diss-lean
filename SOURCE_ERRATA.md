@@ -1873,3 +1873,18 @@ The second counterexample is again locally uniform, not a single fixed
 perturbation violating all its individual cutoffs. The full pair norm is a
 proved sufficient replacement; no uniquely necessary replacement or optimal
 constant is asserted.
+## Lemma 10.8: unresolved local-uniformity scope (pages 58–59)
+
+This is an open audit item, not a declared counterexample. The implemented
+quotient estimate tracks the ℓq norm of σ−τ explicitly and proves uniform
+supremum decompositions on bounded families of such offsets. For q≥p,
+including infinity, local uniformity in the original ℓp root topology is
+proved. For q<p, the proof does not establish that the stronger ℓq offset
+norm is bounded on an ℓp neighborhood. The printed assertion in that
+range still needs to be resolved.
+
+The free-sine consequence is proved unconditionally with q=p. The printed
+display retains q; a general-q version requires corresponding information
+about the free offset σ⁰−τ. No such stronger information is inferred from
+an arbitrary numerator sequence. See `coverage/SECTION_10.md` for the
+precise theorem scope and remaining audit requirements.

@@ -4746,3 +4746,50 @@ Next: Lemma 10.8, the quotient-product asymptotic estimate with its sequence
 exponents and local uniformity. The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed (6,865 build jobs, the full public example suite, and the axiom audit of 31,689 NLS declarations). The build retains 21 existing warnings; the four new modules and focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.
+
+
+## Lemma 10.8 progress: estimates on every original disk
+
+`SourceLemma10_8Estimates.lean` extends the quotient-product estimates to
+every source in the unchanged Lemma 10.7 domain W and every original
+isolating disk. The family V, D, c is chosen before the numerator roots
+and target exponent. This is a substantial part of Lemma 10.8; the printed
+local-uniformity wording for q<p remains under audit.
+
+`SourceQuotientClosedDiscs.lean` proves that the original closed selected
+disk avoids every other gap and is compact. Joint analyticity supplies a
+common bound on any finite set of these disks near an arbitrary numerator
+sequence and arbitrary complex source in W. The geometry package combines
+this finite head with the original free tail, preserving every actual disk
+and the original distance constant. Its auxiliary empty central disks are
+used only to adapt the existing tail estimates, never as the actual disks.
+
+`SourceQuotientDiscSupDecomposition.lean` defines the literal supremum of
+the quotient error over D_n, proves it is finite and nonnegative, and gives
+exact sequence decompositions with uniform norm bounds on bounded offset
+families. For finite q>1 the two summands are in ℓq and ℓ(p/2), including
+p/2<1. At q=1 there is one fixed ℓ(p/2) + ℓ(1+) pair: its ℓ(1+) summand
+belongs to every finite exponent above one and is chosen before the
+projection exponent. Zero summands supply the source's three-term notation.
+
+`SourceQuotientOriginalTopology.lean` proves local uniformity in the
+original ℓp root topology for every q≥p, including infinity. The same
+joint neighborhood and bounds work for all these q. The free-numerator
+consequence has q=p with no additional offset hypothesis, on every disk.
+Its filled sine quotient includes the removable center and agrees with the
+printed expression away from it. The actual unordered product equals the
+analytic quotient on every selected disk.
+
+Concrete checks include zero supremum at the free source, a numerator
+collision giving error at least one at a negative free center inside a
+central selected disk, p=3/2, the infinity target, a shared endpoint
+remainder at exponents two and three, and actual non-real sources in W.
+The focused examples and seven new modules compile without new warnings.
+
+Remaining for Lemma 10.8: resolve the original-topology assertion when
+q<p and the free-sine display's unspecialized q. The current bounds track
+the ℓq offset norm explicitly; they do not prove that this norm is locally
+bounded in ℓp when q<p. These are open source-audit items, not declared
+counterexamples. Remark 10.9 and later statements remain ahead.
+
+Validation: `./scripts/check.sh` passed (6,872 build jobs, the full public example suite, and the axiom audit of 31,764 NLS declarations). The build retains 21 existing warnings; the seven new modules and focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs or additional axioms were introduced.

@@ -1,6 +1,6 @@
 # Section 10: potentials of almost real type
 
-This audit follows the source statements and proofs on printed pp. 54–58.
+This audit follows the source statements and proofs on printed pp. 54–59.
 The neighborhood assertion is proved with the real-type locus used in
 the proof. The printed all-complex version has a formal counterexample.
 Lemmas 10.2 and 10.3 are covered on the same common domain, including the
@@ -13,7 +13,10 @@ and nonvanishing. Corollary 10.6 is covered with its full displacement
 space, literal unordered quotient product and printed closed-disk domain.
 Equation (2.13), Lemma 10.7 and equation (2.14) are covered on the same
 common domain, including collapsed gaps, actual side limits and Figure 2.4
-on the real locus. Lemma 10.8 and later statements remain to be audited.
+on the real locus. Lemma 10.8 has full-disk supremum decompositions and
+precise bounded-offset estimates; its q<p local-uniformity wording and
+the free-sine display’s general q remain under audit. Later statements
+remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
 
@@ -737,3 +740,103 @@ figure signs. No new source correction is required.
 
 Next: Lemma 10.8, the quotient-product asymptotic estimate with its sequence
 exponents and local uniformity. The dissertation remains incomplete.
+
+## Lemma 10.8: supremum estimates on the complete original disk family
+
+The displayed statement and proof on printed pp. 58–59 were visually
+checked. Let a=σ−σ⁰ be the original ℓp numerator displacement and let
+α=σ−τ be its offset from the source midpoints. The source's introduction
+defines a sum of sequence classes as an exact decomposition, and ℓ(1+)
+as membership in every finite exponent r>1.
+
+`SourceLemma10_8Estimates` retains the whole Lemma 10.7 package on exactly
+the supplied W. At each φ in W it keeps the original V, disk family D
+and distance constant c. This family is chosen before a and before the
+target exponent. Near each (a,φ), one open joint neighborhood supplies
+all the estimates below. No real-type or near-zero restriction is added.
+
+The positive distance inequality extends to the closure of each disk.
+Consequently, its closure avoids every other actual gap and lies in the
+selected omitted-root domain. Each closed disk is compact. Applying joint
+continuity over finitely many such compact slices gives a common local
+bound for the finite central part of the quotient error.
+
+For the tail, `SourceQuotientAsymptoticGeometry` uses an auxiliary free
+family with empty central disks and the usual quarter-π tail disks.
+This is only an adapter to the existing tail estimates: every auxiliary
+disk is a subset of the corresponding actual D_n, and all tail disks
+agree exactly. The actual central disks remain nonempty and are covered
+by the separate finite bound. The original separation constant is retained.
+
+`sourceQuotientDiscSup` is literally
+
+    E_n(a,ψ) = sup { |Q_n(λ,a,ψ)−1| : λ ∈ D_n }.
+
+Its defining set is nonempty and bounded above. Every pointwise error is
+at most E_n, and E_n is at most any upper bound for the disk image. This
+is the least upper bound, not just a chosen dominating sequence. The
+unordered product from Corollary 10.6 equals Q_n on each actual D_n.
+
+## Lemma 10.8: exact sequence classes and uniformity proved so far
+
+For each T≥0, consider the family of parameters in the joint neighborhood
+for which α∈ℓq and ||α||q≤T. The bounds are uniform on this family:
+
+| Offset exponent | Exact decomposition of E | Uniform bound |
+| --- | --- | --- |
+| 1<q<∞ | A_q+B_(p/2) | Separate bounds on both sequence norms |
+| q=1 | A_(p/2)+B_(1+) | One pair chosen first; every finite r>1 projection of B has a uniform bound |
+| q≥p, including ∞ | A_q+B_(p/2) | Locally uniform in the original ℓp root topology, with the same neighborhood and bounds for all q≥p |
+
+The q=1 construction does not merely choose unrelated remainders for
+different r. It gives functions into the actual `CoeffOnePlus` space,
+then bounds every projection of those fixed functions. When p/2>1, the
+whole endpoint sequence can be placed in ℓ(p/2); when p/2≤1, it belongs
+to every ℓr for r>1. These alternatives give a genuine fixed pair and
+cover the quasi-Banach range. Adding a zero component gives the printed
+three-term decomposition at every finite q≥1.
+
+For q≥p, the offset's original ℓp norm is bounded locally by the root
+displacement norm and the midpoint-displacement bound. Contractive
+sequence inclusion supplies q=∞ as well. For q<p, the proof currently
+requires an explicit bound on ||α||q. It does not claim that this stronger
+norm is locally bounded in the weaker ℓp topology.
+
+For the free numerator a=0, α=−(τ−σ⁰) belongs to ℓp with a local norm
+bound. The filled sine quotient divided by the omitted standard-root
+product therefore has a full-disk supremum decomposition with q=p,
+locally uniformly in the source. Away from λ=nπ the filled quotient
+equals the printed sin(λ)/(λ−nπ); at the center it uses the removable
+value cos(nπ), including the negative-index sign.
+
+## Lemma 10.8: concrete checks and remaining source audit
+
+Public checks instantiate the complete estimate package at p=3/2,
+test the q=∞ target, identify the literal least upper bound, and project
+one fixed endpoint remainder at both r=2 and r=3. An open neighborhood
+of zero in W is shown to contain an actual non-real source, so the
+general complex-source coverage is not vacuous.
+
+At free source with free roots the supremum is zero on every actual disk.
+An explicit finitely supported numerator displacement moves the zeroth
+root onto −π, colliding with the −1 root. In the quotient with −1 omitted,
+the numerator vanishes at −π while the omitted denominator is nonzero.
+The actual selected central disk contains −π, and its supremum is at
+least one. This witnesses that the finite head has not been discarded.
+
+Two source claims remain unresolved in the audit:
+
+1. The statement says “locally uniformly on ℓp × V_φ” even for q<p.
+   The proof through Appendix D.6 has explicit dependence on ||σ−τ||q.
+   A bound on that norm cannot simply be inferred from the original
+   ℓp topology. The current theorem proves bounded-offset uniformity
+   and the original-topology assertion for q≥p; it does not settle the
+   remaining printed assertion or declare a formal counterexample.
+2. The free-sine display retains q without an explicit free-offset
+   hypothesis. The proved unconditional consequence uses q=p.
+   A general-q specialization is justified whenever the free offset
+   satisfies the corresponding membership and norm bounds, but those
+   stronger bounds are not inferred from the arbitrary numerator's α.
+
+Lemma 10.8 is therefore not marked fully audited. Resolve these two
+points next, then proceed to Remark 10.9 and Lemma 10.10.
