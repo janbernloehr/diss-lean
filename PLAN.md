@@ -1,6 +1,55 @@
 # Implementation plan
 
-## Current milestone: Lemma 12.4 on the original source domain
+## Current milestone: literal auxiliary products and uniform suprema
+
+The literal products (2.24)–(2.25) and the asymptotic (2.26) are now
+proved on the original source domain and original isolating disks.
+`sourcePsiZeta` uses the absolutely convergent double-omitted product.
+The factorization of the actual contour integrand remains valid when
+numerator roots coincide or the unused numerator root equals the
+evaluation point. The older quotient representation retains its explicit
+denominator-avoidance hypothesis.
+
+For every finite p>1, every complex base source φ in W and every full
+ℓᵖ input a₀, one open neighborhood and constants K,C work before choosing
+the omitted index n. The weighted literal product splits exactly as
+i/π plus a reciprocal-distance term bounded by K/|n−m| and a sequence
+term. The actual disk suprema of the latter form an ℓᵖ sequence of norm
+at most C, with zero at m=n. The entire finite head is included, and the
+preceding source domain is unchanged.
+
+Uniform coordinate replacement uses compact single-coordinate insertions
+at the base input and contractive deletion of nearby perturbations.
+The l^(p/2) quotient contribution embeds into ℓᵖ even for 1<p<2.
+The unused root is fixed at the base midpoint in its original disk;
+the remaining roots are unrestricted.
+
+The stronger assertion in Lemma 12.4's proof is also certified:
+`SourceLemma12_4Data.originalEquation_indexSup` constructs the literal
+sequence sup_{n≠m}|Fₘⁿ(ψ,deleteₙ a)|. A common ℓᵖ majorant controls all
+n at once, and this supremum sequence is locally bounded in the full
+original parameter topology.
+
+Eighteen focused checks exercise removable numerator-division points,
+retained-root collisions, arbitrary double-omitted products, independence
+of the unused root fill, exact asymptotic decomposition, actual disk
+suprema and equation-index suprema, and exponents 3/2 and 4.
+See the [Section 12 audit](coverage/SECTION_12.md).
+
+Next: Lemma 12.5's actual Jacobian on the original real domain Ωᵖ,
+including nonzero diagonals and the stated diagonal/off-diagonal
+asymptotics. Existing restricted tail results do not by themselves
+certify that full assertion. The dissertation remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,996 build jobs, the complete
+public example suite, and the axiom audit of 32,893 NLS declarations).
+The build retains 21 existing warnings. The seven new modules, extended
+compact-slice helper, and eighteen focused public checks are warning-free.
+The source inventory verified 156 candidate labels, and diff checks
+passed. No admitted proofs, additional axioms, or heartbeat overrides
+were introduced.
+
+## Previous milestone: Lemma 12.4 on the original source domain
 
 `SourceSection11OriginalEstimates.lemma12_4` proves the sequence-valued
 mapping assertion on the entire supplied original W, retaining the

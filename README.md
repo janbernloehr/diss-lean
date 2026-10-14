@@ -5,12 +5,12 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lemma 12.4 now gives an actual ℓᵖ-valued psi equation on
-the full original source domain, with complex and real analyticity,
-bounds locally uniform in every deleted index, and exact agreement with
-original circles and circuits. Arbitrary root inputs and collisions are
-included. The Theorem 12.1 family solves this sequence-valued equation.
-Next: the auxiliary-product asymptotics (2.24)–(2.26) and Lemma 12.5.
+Latest step: the literal auxiliary products (2.24)–(2.25) and the exact
+asymptotic decomposition (2.26) are proved on the original source domain
+and isolating disks. One neighborhood controls every omitted index,
+including arbitrary root inputs and collisions. The actual sequence
+of suprema over all omitted equations is also locally bounded in ℓᵖ.
+Next: Lemma 12.5's Jacobian assertions on the original real domain Ωᵖ.
 [The Section 12 audit](coverage/SECTION_12.md) records the exact scope;
 [the source clarifications](SOURCE_ERRATA.md) explain domain assumptions.
 The dissertation remains incomplete.

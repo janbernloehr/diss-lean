@@ -9,6 +9,9 @@ contours constructed in arbitrary analytic gap neighborhoods, including
 complex open and collapsed gaps. Lemma 12.4 now holds on the full original
 source domain for arbitrary root inputs, with actual ℓᵖ-valued complex
 and real analyticity and bounds locally uniform in every deleted index.
+The literal auxiliary products (2.24)–(2.25), the full original-disk
+asymptotic (2.26), and the actual equation-index supremum sequence in
+Lemma 12.4's proof are now also certified.
 Existing later psi modules are ingredients, not a completeness claim for
 every subsequent statement or proof assertion in this section.
 
@@ -278,7 +281,77 @@ focused public checks are warning-free. The source inventory verified
 156 candidate labels, and diff checks passed. No admitted proofs,
 additional axioms, or heartbeat overrides were introduced.
 
-Next: audit the literal auxiliary products and asymptotic (2.24)–(2.26),
-then the Jacobian assertions in Lemma 12.5. The new proof establishes
-Lemma 12.4 without assuming that intermediate asymptotic; it does not
-certify the rest of Section 12.
+The initial mapping proof established Lemma 12.4 directly, without
+assuming (2.26). The following milestone now certifies that intermediate
+asymptotic and the stronger supremum statement used by the printed proof.
+
+## Literal auxiliary products and uniform suprema, (2.24)–(2.26)
+
+For arbitrary full ℓᵖ root input a and complex source ψ, define
+
+    ζₘⁿ(z) = (i/wₙ(z)) ∏_{k≠m,n} (σₖ−z)/wₖ(z).
+
+The deviations of the individual factors from one are absolutely
+summable. The product is unconditional, with an exact subtype-indexed
+`HasProd` statement. Its cross-multiplied relation to the single-omitted
+quotient permits vanishing numerator factors. The actual contour
+integrand equals ((σₘ−z)/wₘ(z))ζₘⁿ(z) everywhere off the periodic gaps,
+without assuming σₙ≠z or excluding retained-root collisions.
+
+The expression iQₘ/(σₙ−z) equals this product when σₙ≠z. At σₙ=z it
+may have a removable division point. The example n=0, m=1, a₀=i,
+ψ=0, z=i has literal ζ₁⁰=−1 and actual integrand −1, while the old
+totalized quotient equals zero. The new public checks verify these
+values and membership of z=i in the full gap complement.
+
+Fix any original isolating family D near any complex base φ∈W, and
+let ξₙ=τₙ(φ). Define the reciprocal-distance term by
+
+    Rₘⁿ(z) = i ((n−m)/(ξₙ−z) − 1/π).
+
+The sequence term S is the exact remainder in
+
+    (n−m)ζₘⁿ(z) = i/π + Rₘⁿ(z) + Sₘⁿ(z).
+
+One neighborhood of every full input/source pair and constants K,C
+precede all choices of n. For m≠n and every z∈Dₘ, |Rₘⁿ(z)|≤K/|n−m|.
+The sequence Eₘⁿ=sup_{z∈Dₘ}|Sₘⁿ(z)|, with Eₙⁿ=0, is an actual ℓᵖ
+sequence and has norm at most C. This includes the original finite
+head, complex gaps and collapse. W is not replaced by a root-input
+dependent domain, and no retained root-location restriction is imposed.
+
+The quotient error on all original disks first has a local ℓᵖ bound
+from its exact ℓᵖ+l^(p/2) decomposition. The second summand embeds
+contractively into ℓᵖ, also for p<2. Compact base insertions and
+contractive deletion of nearby perturbations give one bound for every
+replacement of coordinate n by the fixed midpoint displacement.
+Original disk separation then supplies the reciprocal estimate.
+
+For the stronger assertion in the proof of Lemma 12.4, a common
+ℓᵖ majorant controls Fₘⁿ(ψ,deleteₙ a) for all n simultaneously.
+The actual sequence Bₘ=sup_{n≠m}|Fₘⁿ(ψ,deleteₙ a)| is locally bounded
+in ℓᵖ. This conclusion uses a common coordinate majorant, rather than
+inferring membership of a supremum from separate sequence norm bounds.
+
+| Assertion | Public API |
+| --- | --- |
+| Absolute convergence and literal double-omitted product | `summable_norm_sourcePsiDoubleOmittedFactor_sub_one`, `hasProd_sourcePsiDoubleOmitted_subtype` |
+| (2.24) including numerator collisions | `sourcePsiContourIntegrandJoint_eq_zeta` |
+| (2.25), with its exact minus sign | `sourcePsi_zetaSingle_eq_product` |
+| Exact decomposition into i/π, R, and S | `sourcePsi_zeta_decomposition` |
+| Uniform estimates on every supplied original disk family | `SourceCorollary10_6Data.zeta_originalAsymptotic_sup` |
+| (2.26) throughout the unchanged original source domain | `SourceLemma12_4Data.equation2_26` |
+| Common sequence majorant for all omitted equations | `SourceCorollary10_6Data.originalEquation_commonMajorant` |
+| Actual supremum over all omitted equations | `SourceLemma12_4Data.originalEquation_indexSup` |
+
+Next: Lemma 12.5's actual Jacobian on the original real domain Ωᵖ,
+including nonzero diagonal entries and the full diagonal/off-diagonal
+asymptotics. Existing restricted tail results do not certify all of this.
+
+Validation: `./scripts/check.sh` passed (6,996 build jobs, the complete
+public example suite, and the axiom audit of 32,893 NLS declarations).
+The build retains 21 existing warnings. The seven new modules, extended
+compact-slice helper, and eighteen focused public checks are warning-free.
+The source inventory verified 156 candidate labels, and diff checks
+passed. No admitted proofs, additional axioms, or heartbeat overrides
+were introduced.

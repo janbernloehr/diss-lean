@@ -50329,3 +50329,155 @@ example {W₀ : Set (CoeffPair p)} {s : (n : ℤ) → CoeffPair p → DeletedCoe
 
 end
 end SourceLemma124Checks
+
+namespace SourceEquation226Checks
+noncomputable section
+open Set Metric Complex NLS NLS.ZakharovShabat
+open scoped ENNReal
+variable {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+
+private theorem free_domain (z : ℂ) (hz : z.im ≠ 0) :
+    z ∈ sourceCanonicalRootDomain hp hp1 (0:CoeffPair p) := by
+  intro k hk
+  rw [sourcePeriodicSegment_zero_source,mem_singleton_iff] at hk
+  apply hz
+  rw [hk]
+  simp
+
+private theorem free_zeta (n m : ℤ) (z : ℂ) (hz : z.im ≠ 0) :
+    sourcePsiZeta hp hp1 n m (0:Coeff p) 0 z = Complex.I/((Real.pi:ℂ)*n-z) := by
+  have hf (k : ℤ) : sourcePsiDoubleOmittedFactor hp hp1 n m (0:Coeff p) 0 z k = 1 := by
+    by_cases hk : k = n ∨ k = m
+    · simp [sourcePsiDoubleOmittedFactor,hk]
+    · have hne : (Real.pi:ℂ)*k-z ≠ 0 := by
+        intro he
+        apply hz
+        have hi := congrArg Complex.im he
+        simpa using hi
+      simp [sourcePsiDoubleOmittedFactor,hk,sourceStandardRoot_zero_source,displacedRoots,hne]
+  simp only [sourcePsiZeta,sourcePsiDoubleOmittedProduct,sourceStandardRoot_zero_source,hf,tprod_one,mul_one]
+
+private theorem zeta_at_unused_root :
+    sourcePsiZeta hp hp1 0 1 (lp.single p 0 Complex.I) 0 Complex.I = -1 := by
+  have he := sourcePsiZeta_congr hp hp1 0 1 (lp.single p 0 Complex.I) (0:Coeff p)
+    (fun k hk _ => by
+      change (lp.single p 0 Complex.I:Coeff p) k = 0
+      exact lp.single_apply_ne _ _ _ hk) (0:CoeffPair p) Complex.I
+  rw [he,free_zeta hp hp1 0 1 Complex.I (by simp)]
+  simp
+
+-- The unused numerator root can lie on the evaluation point off all gaps.
+example : displacedRoots (lp.single p 0 Complex.I:Coeff p) 0 = Complex.I := by simp [displacedRoots]
+
+example : Complex.I ∈ sourceCanonicalRootDomain hp hp1 (0:CoeffPair p) :=
+  free_domain hp hp1 Complex.I (by simp)
+
+example : sourcePsiZeta hp hp1 0 1 (lp.single p 0 Complex.I) 0 Complex.I = -1 := zeta_at_unused_root hp hp1
+
+-- The old ratio has a spurious zero here; it is not the literal product.
+example : sourcePsiGapRegularFactor hp hp1 0 1 (lp.single p 0 Complex.I) 0 Complex.I = 0 := by
+  simp [sourcePsiGapRegularFactor,displacedRoots]
+
+example : sourcePsiGapRegularFactor hp hp1 0 1 (lp.single p 0 Complex.I) 0 Complex.I ≠
+    sourcePsiZeta hp hp1 0 1 (lp.single p 0 Complex.I) 0 Complex.I := by
+  rw [zeta_at_unused_root hp hp1]
+  simp [sourcePsiGapRegularFactor,displacedRoots]
+
+example : sourcePsiContourIntegrandJoint hp hp1 0 (Complex.I,(lp.single p 0 Complex.I,0)) = -1 := by
+  rw [sourcePsiContourIntegrandJoint_eq_zeta hp hp1 0 1 (by norm_num) _ _ _ (free_domain hp hp1 Complex.I (by simp)),
+    zeta_at_unused_root hp hp1,sourceStandardRoot_zero_source]
+  have hn : (Real.pi:ℂ)-Complex.I ≠ 0 := by
+    intro h
+    have hi := congrArg Complex.im h
+    simp at hi
+  simp [displacedRoots,lp.single_apply,hn]
+
+-- A retained root collides with the evaluation point; the factorization still holds.
+example : sourcePsiContourIntegrandJoint hp hp1 0 ((Real.pi:ℂ)+Complex.I,(lp.single p 1 Complex.I,0)) = 0 := by
+  rw [sourcePsiContourIntegrandJoint_eq_zeta hp hp1 0 1 (by norm_num) _ _ _
+    (free_domain hp hp1 ((Real.pi:ℂ)+Complex.I) (by simp))]
+  simp [displacedRoots]
+
+example (a : Coeff p) (ψ : CoeffPair p) (z : ℂ) :
+    HasProd (fun k : {k : ℤ // k ≠ -3 ∧ k ≠ 7} =>
+      (displacedRoots a k-z)/sourceStandardRoot hp hp1 ψ k z)
+      (sourcePsiDoubleOmittedProduct hp hp1 (-3) 7 a ψ z) :=
+  hasProd_sourcePsiDoubleOmitted_subtype hp hp1 (-3) 7 a ψ z
+
+example (a : Coeff p) (ψ : CoeffPair p) (z : ℂ) (n m : ℤ) :
+    Summable (fun k => ‖sourcePsiDoubleOmittedFactor hp hp1 n m a ψ z k-1‖) :=
+  summable_norm_sourcePsiDoubleOmittedFactor_sub_one hp hp1 n m a ψ z
+
+example (n m : ℤ) (a : DeletedCoeff p n) (ψ : CoeffPair p) (z ξ η : ℂ) :
+    sourcePsiZeta hp hp1 n m (sourcePsiFillDeletedRoot n a ξ) ψ z =
+      sourcePsiZeta hp hp1 n m (sourcePsiFillDeletedRoot n a η) ψ z := by
+  rw [sourcePsiZeta_fillDeletedRoot,sourcePsiZeta_fillDeletedRoot]
+
+example (φ ψ : CoeffPair p) (a : Coeff p) (n m : ℤ) (z : ℂ) :
+    ((n-m:ℤ):ℂ)*sourcePsiZeta hp hp1 n m a ψ z-Complex.I/(Real.pi:ℂ) =
+      sourcePsiZetaReciprocalTerm hp hp1 φ n m z+sourcePsiZetaSequenceTerm hp hp1 φ n m a ψ z := by
+  rw [sourcePsi_zeta_decomposition hp hp1 φ n m a ψ z]
+  ring
+
+-- At free data the sequence remainder vanishes exactly.
+example (n m : ℤ) (z : ℂ) (hz : z.im ≠ 0) :
+    sourcePsiZetaSequenceTerm hp hp1 (0:CoeffPair p) n m (0:Coeff p) 0 z = 0 := by
+  simp only [sourcePsiZetaSequenceTerm,sourcePsiZetaReciprocalTerm,free_zeta hp hp1 n m z hz,
+    sourceStandardRootMidpoint,map_zero,canonicalPeriodicMidpoint_zero]
+  ring
+
+-- One common sequence dominates all omitted equations of the same full input.
+example {W : Set (CoeffPair p)} (H : SourceLemma12_4Data hp hp1 W) (hW : IsOpen W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) (a : Coeff p) :
+    ∃ B : Coeff p, ∀ n m : ℤ, m ≠ n →
+      ‖(sourcePsiOriginalEquation hp hp1 n (Coeff.deleteCoordinateTo n a) φ:Coeff p) m‖ ≤ ‖B m‖ := by
+  obtain ⟨U,_,hbase,_,C,_,hb⟩ := H.originalEquation_indexSup hW φ hφ a
+  obtain ⟨B,_,_,hb⟩ := hb (a,φ) hbase
+  exact ⟨B,hb⟩
+
+example {W : Set (CoeffPair p)} (H : SourceLemma12_4Data hp hp1 W) (hW : IsOpen W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) (a : Coeff p) :
+    Memℓp (fun m => (sourcePsiOriginalEquationIndexSup hp hp1 a φ m : ℂ)) p := by
+  obtain ⟨U,_,hbase,_,C,_,hb⟩ := H.originalEquation_indexSup hW φ hφ a
+  obtain ⟨B,_,he,_⟩ := hb (a,φ) hbase
+  have heq : (fun m => (sourcePsiOriginalEquationIndexSup hp hp1 a φ m : ℂ)) = B := by funext m; exact (he m).symm
+  rw [heq]
+  exact lp.memℓp B
+
+-- In (2.26), actual disk suprema have an lp bound before choosing n.
+example {W : Set (CoeffPair p)} (H : SourceLemma12_4Data hp hp1 W) (hW : IsOpen W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) (a : Coeff p) :
+    ∃ D : ℤ → Set ℂ, ∃ C : ℝ, 0 ≤ C ∧ ∀ n : ℤ, ∃ E : Coeff p, ‖E‖ ≤ C ∧
+      ∀ m, E m = (sourcePsiZetaSequenceDiscSup hp hp1 φ D n a φ m : ℂ) := by
+  obtain ⟨V,_,_,_,D,c,_,U,_,hbase,_,K,C,_,hC,hb⟩ := H.equation2_26 hW φ hφ a
+  refine ⟨D,C,hC,?_⟩
+  intro n
+  obtain ⟨E,hE,he,_,_⟩ := hb (a,φ) hbase n
+  exact ⟨E,hE,he⟩
+
+-- Constants control a full neighborhood, not just deleted inputs passing through the base.
+example {W : Set (CoeffPair p)} (H : SourceLemma12_4Data hp hp1 W) (hW : IsOpen W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) (a : Coeff p) :
+    ∃ U : Set (Coeff p × CoeffPair p), IsOpen U ∧ (a,φ) ∈ U ∧
+      ∃ C : ℝ, 0 < C ∧ ∀ t ∈ U,
+        (∑' m : ℤ, ‖(sourcePsiOriginalEquationIndexSup hp hp1 t.1 t.2 m : ℂ)‖^p.toReal) < C := by
+  obtain ⟨U,hU,hbase,_,C,hC,hb⟩ := H.originalEquation_indexSup hW φ hφ a
+  refine ⟨U,hU,hbase,C^p.toReal+1,by positivity,?_⟩
+  intro t ht
+  obtain ⟨B,hB,he,_⟩ := hb t ht
+  have hp0 := ENNReal.toReal_pos (zero_lt_one.trans hp1).ne' hp
+  have heq : (fun m => ‖(sourcePsiOriginalEquationIndexSup hp hp1 t.1 t.2 m : ℂ)‖^p.toReal) =
+      (fun m => ‖B m‖^p.toReal) := by funext m; rw [he]
+  rw [heq,← lp.norm_rpow_eq_tsum hp0]
+  exact (Real.rpow_le_rpow (norm_nonneg _) hB hp0.le).trans_lt (lt_add_one _)
+
+local instance threeHalves : Fact (1 ≤ ENNReal.ofReal (3/2)) := ⟨by norm_num⟩
+example : sourcePsiZeta (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num)
+    0 1 (lp.single _ 0 Complex.I) 0 Complex.I = -1 := zeta_at_unused_root _ _
+
+local instance four : Fact (1 ≤ (4:ℝ≥0∞)) := ⟨by norm_num⟩
+example : sourcePsiZeta (p := (4:ℝ≥0∞)) (by norm_num) (by norm_num)
+    0 1 (lp.single _ 0 Complex.I) 0 Complex.I = -1 := zeta_at_unused_root _ _
+
+end
+end SourceEquation226Checks

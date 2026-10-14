@@ -40,4 +40,37 @@ theorem exists_uniform_bound_near_compact_slice
   obtain ⟨b,hbs,hq⟩ := mem_iUnion₂.mp hmem
   exact (hb b (a,y) hq j).trans (Finset.single_le_sum (fun b _ => hC b) hbs)
 
+/-- A monotone bound predicate, including existence of sequence majorants,
+can be made uniform near a compact slice. -/
+theorem exists_uniform_property_near_compact_slice
+    {A B : Type*} [TopologicalSpace A] [TopologicalSpace B]
+    (K : Set A) (hK : IsCompact K) (x : B) (P : A × B → ℝ → Prop)
+    (hmono : ∀ q C D, C ≤ D → P q C → P q D)
+    (hlocal : ∀ a ∈ K, ∃ U : Set (A × B), IsOpen U ∧ (a,x) ∈ U ∧
+      ∃ C : ℝ, 0 ≤ C ∧ ∀ q ∈ U, P q C) :
+    ∃ V : Set B, IsOpen V ∧ x ∈ V ∧ ∃ C : ℝ, 0 ≤ C ∧
+      ∀ y ∈ V, ∀ a ∈ K, P (a,y) C := by
+  classical
+  choose U ho hx C hC hb using fun a : K => hlocal a a.property
+  obtain ⟨s,hs⟩ := hK.elim_finite_subcover
+    (fun a : K => (fun b : A => (b,x)) ⁻¹' U a)
+    (fun a => (ho a).preimage (continuous_id.prodMk continuous_const)) (by
+      intro a ha
+      exact mem_iUnion.mpr ⟨⟨a,ha⟩,hx ⟨a,ha⟩⟩)
+  let T : Set (A × B) := ⋃ a ∈ s, U a
+  have hT : IsOpen T := isOpen_biUnion (fun a _ => ho a)
+  have hslice : K ×ˢ ({x} : Set B) ⊆ T := by
+    rintro ⟨a,y⟩ ⟨ha,hy⟩
+    have hyx : y = x := mem_singleton_iff.mp hy
+    subst y
+    simpa only [T,mem_iUnion,mem_preimage] using hs ha
+  obtain ⟨W,V,_,hV,hKW,hxV,hWV⟩ :=
+    generalized_tube_lemma hK isCompact_singleton hT hslice
+  refine ⟨V,hV,hxV (mem_singleton x),∑ a ∈ s, C a,
+    Finset.sum_nonneg (fun a _ => hC a),?_⟩
+  intro y hy a ha
+  have hmem : (a,y) ∈ T := hWV ⟨hKW ha,hy⟩
+  obtain ⟨b,hbs,hq⟩ := mem_iUnion₂.mp hmem
+  exact hmono (a,y) (C b) _ (Finset.single_le_sum (fun b _ => hC b) hbs) (hb b (a,y) hq)
+
 end NLS.ComplexAnalysis

@@ -17,8 +17,28 @@ Public checks include a shift of 100i with exact equation response 200i,
 and a shift by π that makes the first and second retained roots coincide.
 The local map remains analytic at that collision.
 
-This repairs the use of the auxiliary root in the mapping proof; the
-precise asymptotic (2.26) remains the next separate audit.
+The precise asymptotic (2.26) is now also proved with the same repair.
+The unused coordinate is replaced by the fixed base midpoint. One
+neighborhood controls all replacements of an arbitrary full input;
+contractive coordinate deletion and compact base insertions preserve
+the local sequence bounds. The reciprocal-distance error and the actual
+disk-supremum ℓᵖ error are separately bounded, uniformly in the unused
+index, on the original disks at every complex base in W.
+
+The literal double-omitted product must also be distinguished from the
+ratio iQₘ/(σₙ−z) at σₙ=z. The ratio identity has an explicit avoidance
+condition. At zero source, n=0, m=1, s₀=i and z=i, the literal ζ₁⁰ and
+the contour integrand both equal −1. Lean's totalized quotient at its
+zero denominator equals zero instead. Public checks verify both values
+and that z=i lies off every free gap. The new product factorization is
+valid on the full gap complement, including this point and retained-root
+collisions. No division by a possibly vanishing numerator factor is used.
+
+Finally, the printed assertion sup_{n≠m}|Fₘⁿ|=ℓᵖₘ is proved as an actual
+supremum sequence: for each full input a, evaluate Fⁿ on its coordinate
+deletion. A common ℓᵖ majorant controls every n before taking that
+supremum. Uniform bounds on the norms of separate sequences alone would
+not justify this assertion.
 
 ## Lemma 12.3: the numerator's analytic domain must allow the contour deformation
 

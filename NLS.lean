@@ -3552,3 +3552,10 @@ import NLS.ZakharovShabat.SourcePsiOriginalSequenceBound
 import NLS.ZakharovShabat.SourcePsiOriginalEquation
 import NLS.ZakharovShabat.SourcePsiOriginalEquationAnalytic
 import NLS.ZakharovShabat.SourceLemma12_4
+import NLS.ZakharovShabat.SourcePsiDoubleOmittedProduct
+import NLS.ZakharovShabat.SourcePsiOriginalQuotientError
+import NLS.ZakharovShabat.SourcePsiOriginalRatioEstimate
+import NLS.ZakharovShabat.SourcePsiOriginalZetaAsymptotic
+import NLS.ZakharovShabat.SourceEquation2_26
+import NLS.ZakharovShabat.SourcePsiOriginalEquationSup
+import NLS.SequenceSpaces.ThreeSequenceMajorant
