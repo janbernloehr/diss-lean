@@ -23,7 +23,9 @@ The printed integer-kernel replacement is refuted by an actual real
 source counterexample at p=8, arbitrarily near zero. Full p/2 optimality
 is now proved for every finite p>2 and every proposed stronger exponent,
 using actual real sources and original disk families. Remark 10.9 is
-resolved with the corrected expansion; Lemma 10.10 and later statements
+resolved with the corrected expansion. Lemma 10.10 is now covered on
+the unchanged common domain, with actual analytic coefficients and one
+locally uniform full-sequence bound. Equation (2.15) and later statements
 remain to be audited.
 
 ## Lemma 10.1: precise domain and quantifiers
@@ -1168,3 +1170,48 @@ Next: Lemma 10.10, equation (2.15), and the remaining Section 10 statements.
 The dissertation remains incomplete.
 
 Validation: `./scripts/check.sh` passed (6,908 build jobs, the complete public example suite, and the axiom audit of 32,050 NLS declarations). The build retains 21 existing warnings; the six new modules and nine focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Lemma 10.10: all critical offsets on the unchanged common domain
+
+`SourceLemma10_10.lean` proves the source statement for every finite p>1
+on the same common W as the preceding Section 10 data. Its exact identity
+is
+
+    critical_n = midpoint_n + gap_n² * sourceCriticalGapQuotient(ψ)_n.
+
+The coefficient is the actual deleted-product derivative quotient,
+not a sequence selected separately for each estimate. It belongs to ℓp;
+each coordinate is complex analytic on W. For every φ∈W there is an open
+connected V with φ∈V⊆W and a positive K, chosen before ψ∈V and n∈ℤ,
+such that the full coefficient norm is at most K.
+`SourceLemma10_10Data.locally_uniform_powerSum` also gives a common bound
+for the literal sum over all signed indices of |a_n|^p. Thus the result
+has the local uniformity in the original source topology required by the
+printed statement and its proof.
+
+`SourceCriticalGapCommonIsolation.lean` proves nonvanishing of the
+quadratic offset coefficient for an arbitrary original isolating family.
+The deleted periodic product is nonzero at the critical root. At a
+collapsed gap, spectral exhaustiveness and disjointness identify the
+critical root with the common endpoint; at an open gap, the existing
+quadratic identity supplies nonvanishing. Both cases include central
+indices and complex sources.
+
+`SourceCriticalGapCommonAnalytic.lean` composes the jointly analytic
+deleted product and its spectral derivative with the critical-root graph.
+The denominator is nonzero throughout W, so the quotient is analytic
+even where the selected gap vanishes. A finite block is uniformly bounded
+on one neighborhood. Combining this with the existing distant-root ℓp
+estimate proves the full-sequence bound in `SourceLemma10_10.lean`.
+
+`SourceLemma10_8Estimates.criticalOffsets` upgrades any existing open W
+without shrinking it, and retains all preceding common-domain data.
+`sourceLemma10_10` constructs the resulting open connected neighborhood
+of the entire real-type locus. Six public checks include complex central
+collapsed gaps, preservation of W, simultaneous all-index identities and
+power-sum bounds, p=3/2, and arbitrarily small real-base neighborhoods.
+
+Next: equation (2.15), admissible paths, and Lemma 10.11. The dissertation
+remains incomplete.
+
+Validation: `./scripts/check.sh` passed (6,911 build jobs, the complete public example suite, and the axiom audit of 32,074 NLS declarations). The build retains 21 existing warnings; the three new modules and six focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.

@@ -5,12 +5,11 @@ Fourier Transform for the dNLS Equation* (2016).
 
 Source: <https://janbernloehr.de/Download/fs16/diss.pdf>
 
-Latest step: Lean proves full p/2 optimality in Remark 10.9 for every
-finite p>2. Every stronger exponent fails for some actual real potential
-arbitrarily near zero, simultaneously for the squared gaps, lattice sum,
-and original-disk quotient suprema. The printed remainder formula remains
-refuted; the corrected moving-denominator Taylor expansion remains proved.
-Next: Lemma 10.10 and the remaining Section 10 audit.
+Latest step: Lean proves Lemma 10.10 on the unchanged common source
+domain for every finite p>1. The critical-point offset is exactly a
+squared gap times an analytic coefficient, with a locally uniform ℓp
+bound at every source and every index, including collapsed central gaps.
+Next: equation (2.15) and the remaining Section 10 audit.
 [The Section 10 audit](coverage/SECTION_10.md) records the precise scope.
 The dissertation remains incomplete.
 See [implementation status](STATUS.md), [coverage audit](COVERAGE.md),

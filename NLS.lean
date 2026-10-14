@@ -3471,3 +3471,6 @@ import NLS.ZakharovShabat.SourceMidpointTaylorLowerBound
 import NLS.ZakharovShabat.SourceMidpointQuotientSup
 import NLS.ZakharovShabat.SourceMidpointQuotientSharpness
 import NLS.ZakharovShabat.SourceRemark10_9Optimality
+import NLS.ZakharovShabat.SourceCriticalGapCommonIsolation
+import NLS.ZakharovShabat.SourceCriticalGapCommonAnalytic
+import NLS.ZakharovShabat.SourceLemma10_10

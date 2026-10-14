@@ -48411,3 +48411,67 @@ example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
 
 end
 end SourceRemark109OptimalityChecks
+
+namespace SourceLemma1010CommonDomainChecks
+open NLS NLS.ZakharovShabat Set Metric
+open scoped ENNReal
+noncomputable section
+
+-- Existing W survives the upgrade, with its original omitted products retained.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (hW : IsOpen W) (h : SourceLemma10_8Estimates hp hp1 W) :
+    SourceLemma10_5Data hp hp1 W ∧ SourceLemma10_10Data hp hp1 W :=
+  ⟨h.previous.previous.roots,h.criticalOffsets hW⟩
+
+-- Arbitrary complex basepoints in W have one bound, chosen before all nearby sources and indices.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceLemma10_10Data hp hp1 W)
+    (φ : CoeffPair p) (hφ : φ ∈ W) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ IsConnected V ∧ φ ∈ V ∧ V ⊆ W ∧
+      ∃ K : ℝ, 0 < K ∧ ∀ ψ ∈ V,
+        (∑' n : ℤ, ‖sourceCriticalGapQuotient hp hp1 ψ n‖^p.toReal) ≤ K ∧
+        ∀ n : ℤ, canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n =
+          canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n +
+            (sourcePeriodicGapDisplacement hp hp1 ψ n)^2*sourceCriticalGapQuotient hp hp1 ψ n := by
+  obtain ⟨V,ho,hc,hφV,hVW,K,hK,hbound⟩ := h.locally_uniform_powerSum φ hφ
+  exact ⟨V,ho,hc,hφV,hVW,K,hK,fun ψ hψ => ⟨hbound ψ hψ,h.exact_offset ψ (hVW hψ)⟩⟩
+
+-- A collapsed central gap is allowed at a complex source, without a reality hypothesis.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {W : Set (CoeffPair p)} (h : SourceLemma10_10Data hp hp1 W)
+    (ψ : CoeffPair p) (hψ : ψ ∈ W) (hg : sourcePeriodicGapDisplacement hp hp1 ψ 0 = 0) :
+    canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0 =
+      canonicalPeriodicMidpoint hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) 0 ∧
+    DifferentiableAt ℂ (fun χ : CoeffPair p => sourceCriticalGapQuotient hp hp1 χ 0) ψ :=
+  ⟨h.critical_eq_midpoint_of_gap_zero ψ hψ 0 hg,(h.analytic 0 ψ hψ).differentiableAt⟩
+
+-- The indexed common endpoint is identified using the original arbitrary isolating family.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] {hp : p ≠ ⊤} {hp1 : 1 < p}
+    {V : Set (CoeffPair p)} {D : ℤ → Set ℂ} {c : ℝ}
+    (h : SourceIsolatingNeighborhoods hp hp1 V D c) (ψ : CoeffPair p) (hψ : ψ ∈ V)
+    (n : ℤ) (hc : canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n =
+      canonicalPeriodicRight hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n) :
+    canonicalCriticalPoints hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n =
+      canonicalPeriodicLeft hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ∧
+    canonicalCriticalOffsetCoefficient hp hp1 (periodOnePotential ψ) (periodOnePotential_mem ψ) n ≠ 0 :=
+  ⟨h.criticalPoint_eq_of_collapsedGap ψ hψ n hc,h.criticalOffsetCoefficient_ne_zero ψ hψ n⟩
+
+-- The source statement includes exponents strictly below two.
+local instance source1010ThreeHalves : Fact (1 ≤ (ENNReal.ofReal (3/2))) := ⟨by norm_num⟩
+example : ∃ W : Set (CoeffPair (ENNReal.ofReal (3/2))), IsOpen W ∧ IsConnected W ∧
+    realTypeSourceLocus (ENNReal.ofReal (3/2)) ⊆ W ∧
+      SourceLemma10_10Data (p := ENNReal.ofReal (3/2)) (by norm_num) (by norm_num) W :=
+  sourceLemma10_10 (by norm_num) (by norm_num)
+
+-- Arbitrarily small source neighborhoods at a real base inherit the full coefficient bound.
+example {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ⊤) (hp1 : 1 < p)
+    (φ : CoeffPair p) (hr : IsRealType (CoeffPair.toMax p φ)) (ε : ℝ) (hε : 0 < ε) :
+    ∃ V : Set (CoeffPair p), IsOpen V ∧ φ ∈ V ∧ V ⊆ ball φ ε ∧
+      ∃ K : ℝ, 0 < K ∧ ∀ ψ ∈ V, ‖sourceCriticalGapQuotient hp hp1 ψ‖ ≤ K := by
+  obtain ⟨W,_,_,hreal,h⟩ := sourceLemma10_10 hp hp1
+  obtain ⟨V,ho,_,hφV,_,K,hK,hb⟩ := h.locally_uniform φ (hreal hr)
+  exact ⟨V ∩ ball φ ε,ho.inter isOpen_ball,⟨hφV,mem_ball_self hε⟩,
+    fun _ hψ => hψ.2,K,hK,fun ψ hψ => hb ψ hψ.1⟩
+
+end
+end SourceLemma1010CommonDomainChecks

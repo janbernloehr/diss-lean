@@ -1,6 +1,32 @@
 # Implementation status
 
-## Current milestone: full half-exponent optimality in Remark 10.9
+## Current milestone: Lemma 10.10 on the unchanged common domain
+
+Three modules complete Lemma 10.10 on the unchanged common almost-real
+source domain for every finite p>1. At every source in that domain and
+all signed indices, the actual critical root equals the midpoint plus
+the squared gap times `sourceCriticalGapQuotient`. Each coordinate of
+this coefficient is analytic, including across collapsed complex gaps.
+A finite central block and the distant-root estimate give one local ℓp
+norm bound and one bound for the literal sum of coefficient p-th powers.
+The neighborhood and bound precede every nearby source and every index.
+
+`SourceLemma10_8Estimates.criticalOffsets` retains the earlier domain and
+Section 10 package. `sourceLemma10_10` constructs the common open connected
+domain containing the entire real-type locus. The result includes central
+indices and complex sources; it does not require division by a gap or a
+reality assumption at the point being estimated.
+
+Six public checks cover the retained domain, one simultaneous power-sum
+bound and exact formula, a collapsed central complex gap with analytic
+coefficient, indexed endpoint identification, p=3/2, and arbitrarily small
+neighborhoods of real basepoints. The next source item is equation (2.15),
+followed by admissible paths and Lemma 10.11. The dissertation remains
+incomplete.
+
+Validation: `./scripts/check.sh` passed (6,911 build jobs, the complete public example suite, and the axiom audit of 32,074 NLS declarations). The build retains 21 existing warnings; the three new modules and six focused public checks are warning-free. The source inventory verified 156 candidate labels, and `git diff --check` passed. No admitted proofs, additional axioms, or heartbeat overrides were introduced.
+
+## Previous milestone: full half-exponent optimality in Remark 10.9
 
 Six modules prove the full p/2 optimality assertion for actual source
 potentials. For every finite p>2, every r<p/2, and every open neighborhood
